@@ -196,8 +196,9 @@ public:
     QMap<int, int>              tAlbumsCount;
     QMap<YearMonth, int>        dAlbumsCount;
     QMap<int, int>              fAlbumsCount;
-    //Unconfirmed face counts
+    // Unconfirmed face counts
     QMap<int, int>              uAlbumsCount;
+    QList<int>                  toUpdatedFaces;
 
 public:
 

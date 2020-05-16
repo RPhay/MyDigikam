@@ -53,7 +53,7 @@ function(GetKF5ApplicationMd5Sums
 
         # Extract MD5 sums of KF5 application directly from server.
         execute_process(COMMAND
-                        wget -q -O - -o /dev/null http://download.kde.org/stable/applications/${version}/src/${name}-${version}.tar.xz.mirrorlist
+                        wget -q -O - -o /dev/null http://download.kde.org/stable/release-service/${version}/src/${name}-${version}.tar.xz.mirrorlist
                         COMMAND
                         grep "MD5 Hash"
                         COMMAND
@@ -66,14 +66,14 @@ function(GetKF5ApplicationMd5Sums
         )
 
         if(NOT ${wgetresult} MATCHES 0)
-            message(FATAL_ERROR "Cannot download MD5 sum for ${name}!")
+            message(WARNING "Cannot download MD5 sum for ${name}!")
         endif()
 
     elseif(APPLE)
 
         # Extract MD5 sums of KF5 application directly from server.
         execute_process(COMMAND
-                            wget -q -O - -o /dev/null http://download.kde.org/stable/applications/${version}/src/${name}-${version}.tar.xz.mirrorlist
+                            wget -q -O - -o /dev/null http://download.kde.org/stable/release-service/${version}/src/${name}-${version}.tar.xz.mirrorlist
                         COMMAND
                             grep "MD5 Hash"
                         COMMAND
@@ -94,14 +94,14 @@ function(GetKF5ApplicationMd5Sums
         )
 
         if(NOT ${wgetresult} MATCHES 0)
-            message(FATAL_ERROR "Cannot download MD5 sum for ${name}!")
+            message(WARNING "Cannot download MD5 sum for ${name}!")
         endif()
 
     else() # Linux
 
         # Extract MD5 sums of KF5 application directly from server.
         execute_process(COMMAND
-                        wget -q -O - -o /dev/null http://download.kde.org/stable/applications/${version}/src/${name}-${version}.tar.xz.mirrorlist
+                        wget -q -O - -o /dev/null http://download.kde.org/stable/release-service/${version}/src/${name}-${version}.tar.xz.mirrorlist
                         COMMAND
                         grep "MD5 Hash"
                         COMMAND
@@ -114,7 +114,7 @@ function(GetKF5ApplicationMd5Sums
         )
 
         if(NOT ${wgetresult} MATCHES 0)
-            message(FATAL_ERROR "Cannot download MD5 sum for ${name}!")
+            message(WARNING "Cannot download MD5 sum for ${name}!")
         endif()
 
     endif()
@@ -153,7 +153,6 @@ add_subdirectory(ext_qtav)
 add_subdirectory(ext_kf5_frameworks)
 add_subdirectory(ext_marble)
 add_subdirectory(ext_libksane)
-add_subdirectory(ext_kcalcore)
 add_subdirectory(ext_ffmpeg)
 add_subdirectory(ext_drmingw)
 add_subdirectory(ext_imagemagick)

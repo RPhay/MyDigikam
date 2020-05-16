@@ -83,9 +83,8 @@ extern "C"
 
 // Local includes
 
-#include "dimg.h"
 #include "digikam_debug.h"
-#include "digikam_config.h"
+#include "dimg.h"
 #include "dimgloaderobserver.h"
 #include "pgfutils.h"
 #include "metaengine.h"
@@ -98,6 +97,7 @@ bool DImgPGFLoader::save(const QString& filePath, DImgLoaderObserver* const obse
     m_observer = observer;
 
 #ifdef Q_OS_WIN
+
     HANDLE fd = CreateFileW((LPCWSTR)filePath.utf16(), GENERIC_READ | GENERIC_WRITE, 0,
                             NULL, CREATE_ALWAYS, FILE_ATTRIBUTE_NORMAL, 0);
 
@@ -105,6 +105,7 @@ bool DImgPGFLoader::save(const QString& filePath, DImgLoaderObserver* const obse
     {
         qCWarning(DIGIKAM_DIMG_LOG_PGF) << "Error: Could not open destination file.";
         qCWarning(DIGIKAM_DIMG_LOG_PGF) << "Last error code:" << GetLastError();
+
         return false;
     }
 
@@ -116,6 +117,7 @@ bool DImgPGFLoader::save(const QString& filePath, DImgLoaderObserver* const obse
     if (fd == -1)
     {
         qCWarning(DIGIKAM_DIMG_LOG_PGF) << "Error: Could not open destination file.";
+
         return false;
     }
 
@@ -168,11 +170,15 @@ bool DImgPGFLoader::save(const QString& filePath, DImgLoaderObserver* const obse
         }
 
 #ifdef PGFCodecVersionID
+
 #   if PGFCodecVersionID < 0x061142
+
         header.background.rgbtBlue  = 0;
         header.background.rgbtGreen = 0;
         header.background.rgbtRed   = 0;
+
 #   endif
+
 #endif
 
         pgf.SetHeader(header);
@@ -189,11 +195,17 @@ bool DImgPGFLoader::save(const QString& filePath, DImgLoaderObserver* const obse
         UINT32 nWrittenBytes = 0;
 
 #ifdef PGFCodecVersionID
+
 #   if PGFCodecVersionID >= 0x061124
+
         pgf.Write(&stream, &nWrittenBytes, CallbackForLibPGF, this);
+
 #   endif
+
 #else
+
         pgf.Write(&stream, 0, CallbackForLibPGF, &nWrittenBytes, this);
+
 #endif
 
         qCDebug(DIGIKAM_DIMG_LOG_PGF) << "PGF width     = " << header.width;
@@ -205,9 +217,13 @@ bool DImgPGFLoader::save(const QString& filePath, DImgLoaderObserver* const obse
         qCDebug(DIGIKAM_DIMG_LOG_PGF) << "Bytes Written = " << nWrittenBytes;
 
 #ifdef Q_OS_WIN
+
         CloseHandle(fd);
+
 #else
+
         close(fd);
+
 #endif
         // TODO: Store ICC profile in an appropriate place in the image
         storeColorProfileInMetadata();
@@ -234,9 +250,13 @@ bool DImgPGFLoader::save(const QString& filePath, DImgLoaderObserver* const obse
         qCWarning(DIGIKAM_DIMG_LOG_PGF) << "Error: Opening and saving PGF image failed (" << err << ")!";
 
 #ifdef Q_OS_WIN
+
         CloseHandle(fd);
+
 #else
+
         close(fd);
+
 #endif
 
         return false;

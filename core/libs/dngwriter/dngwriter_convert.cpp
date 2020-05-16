@@ -1234,17 +1234,7 @@ int DNGWriter::convert()
 
             qCDebug(DIGIKAM_GENERAL_LOG) << "DNGWriter: Setting modification date from meta data: " << date.toString();
 
-            // don't touch access time
-
-            QT_STATBUF st;
-
-            if (QT_STAT(QFile::encodeName(dngFilePath).constData(), &st) == 0)
-            {
-                struct utimbuf ut;
-                ut.actime  = st.st_atime;
-                ut.modtime = date.toTime_t();
-                utime(QFile::encodeName(dngFilePath).constData(), &ut);
-            }
+            DFileOperations::setModificationTime(dngFilePath, date);
         }
     }
 

@@ -93,7 +93,7 @@ cmake --build . --config RelWithDebInfo --target ext_knotifications      -- -j$C
 cmake --build . --config RelWithDebInfo --target ext_marble              -- -j$CPU_CORES
 
 # Calendar support
-cmake --build . --config RelWithDebInfo --target ext_kcalcore            -- -j$CPU_CORES
+cmake --build . --config RelWithDebInfo --target ext_kcalendarcore       -- -j$CPU_CORES
 
 #################################################################################################
 
