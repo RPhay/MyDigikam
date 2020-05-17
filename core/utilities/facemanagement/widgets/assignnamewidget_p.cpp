@@ -504,11 +504,10 @@ void AssignNameWidget::Private::setAddTagsWidgetContents(T* const widget)
 
 void AssignNameWidget::Private::updateContents()
 {
-    if (!isValid())
+    if (!isValid() || mode == AssignNameWidget::IgnoredMode)
     {
         return;
     }
-
     if      (comboBox)
     {
         setAddTagsWidgetContents(comboBox);
