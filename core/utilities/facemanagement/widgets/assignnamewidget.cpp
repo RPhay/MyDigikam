@@ -175,8 +175,20 @@ AssignNameWidget::VisualStyle AssignNameWidget::visualStyle() const
 
 void AssignNameWidget::setUserData(const ItemInfo& info, const QVariant& faceIdentifier)
 {
-    d->info           = info;
-    d->faceIdentifier = faceIdentifier;
+    d->info            = info;
+    d->faceIdentifier  = faceIdentifier;
+
+    FaceTagsIface face = FaceTagsIface::fromVariant(faceIdentifier);
+
+    if      (face.type() == FaceTagsIface::IgnoredName)
+    {
+        setMode(AssignNameWidget::IgnoredMode);
+    }
+
+    else if (mode() != AssignNameWidget::UnconfirmedEditMode)
+    {
+        setMode(AssignNameWidget::UnconfirmedEditMode);
+    }
 }
 
 ItemInfo AssignNameWidget::info() const
