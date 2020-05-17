@@ -426,7 +426,27 @@
   <url type="donation">https://www.digikam.org/donation</url>
   <screenshots>
     <screenshot type="default">
-      <caption>Photo management in digiKam</caption>
+      <caption>digiKam Batch Queue Manager</caption>
+      <caption xml:lang="x-test">xxdigiKam Batch Queue Managerxx</caption>
+      <image>https://www.digikam.org/img/content/about/overview_bqm.png</image>
+    </screenshot>
+    <screenshot type="default">
+      <caption>digiKam Image Editor</caption>
+      <caption xml:lang="x-test">xxdigiKam Image Editorxx</caption>
+      <image>https://www.digikam.org/img/content/about/overview_imageeditor.png</image>
+    </screenshot>
+    <screenshot type="default">
+      <caption>digiKam Import From Camera</caption>
+      <caption xml:lang="x-test">xxdigiKam Import From Cameraxx</caption>
+      <image>https://www.digikam.org/img/content/about/overview_import.png</image>
+    </screenshot>
+    <screenshot type="default">
+      <caption>digiKam Light Table</caption>
+      <caption xml:lang="x-test">xxdigiKam Light Tablexx</caption>
+      <image>https://www.digikam.org/img/content/about/overview_lighttable.png</image>
+    </screenshot>
+    <screenshot type="default">
+      <caption>digiKam Tags View</caption>
       <caption xml:lang="ca">Gestió de les fotografies al digiKam</caption>
       <caption xml:lang="ca-valencia">Gestió de les fotografies al digiKam</caption>
       <caption xml:lang="cs">Správa fotografií v digiKamu</caption>
@@ -450,13 +470,13 @@
       <caption xml:lang="sl">Program za upravljanje zbirk fotografij</caption>
       <caption xml:lang="sv">Fotohantering i Digikam</caption>
       <caption xml:lang="uk">Керування фотографіями у digiKam</caption>
-      <caption xml:lang="x-test">xxPhoto management in digiKamxx</caption>
+      <caption xml:lang="x-test">xxdigiKam Tags Viewxx</caption>
       <caption xml:lang="zh-CN">digiKam 的照片管理</caption>
       <caption xml:lang="zh-TW">digiKam 中的圖片管理</caption>
       <image>https://www.digikam.org/img/content/about/overview_tagsview.png</image>
     </screenshot>
   </screenshots>
-  <developer_name>digiKam Project</developer_name>
+  <developer_name>digiKam Team</developer_name>
   <developer_name xml:lang="ar">مشروع «دِجي‌كام»</developer_name>
   <developer_name xml:lang="bs">digiKam Projekt</developer_name>
   <developer_name xml:lang="ca">Projecte digiKam</developer_name>
@@ -485,7 +505,7 @@
   <developer_name xml:lang="sv">Digikam-projektet</developer_name>
   <developer_name xml:lang="tr">digiKam Projesi</developer_name>
   <developer_name xml:lang="uk">Проєкт digiKam</developer_name>
-  <developer_name xml:lang="x-test">xxdigiKam Projectxx</developer_name>
+  <developer_name xml:lang="x-test">xxdigiKam Teamxx</developer_name>
   <developer_name xml:lang="zh-CN">digiKam 项目</developer_name>
   <developer_name xml:lang="zh-TW">digiKam 專案</developer_name>
   <project_group>KDE</project_group>
