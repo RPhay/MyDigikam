@@ -332,6 +332,18 @@ void AssignNameWidget::Private::updateLayout()
             break;
         }
 
+        case IgnoredMode:
+        {
+            layout->addWidget(confirmButton, 0, 0);
+            layout->addWidget(rejectButton,  0, 1);
+
+            confirmButton->setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Minimum);
+            rejectButton->setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Minimum);
+            setToolButtonStyles(Qt::ToolButtonIconOnly);
+
+            break;
+        }
+
         case ConfirmedMode:
         {
             layout->addWidget(clickLabel, 0, 0);
