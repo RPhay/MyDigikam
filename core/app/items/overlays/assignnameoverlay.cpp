@@ -272,7 +272,8 @@ bool AssignNameOverlay::checkIndex(const QModelIndex& index) const
         return false;
     }
 
-    return FaceTagsIface::fromVariant(extraData).isUnconfirmedType();
+    return FaceTagsIface::fromVariant(extraData).isUnconfirmedType() ||
+           FaceTagsIface::fromVariant(extraData).isIgnoredName() ;
 }
 
 void AssignNameOverlay::showOnIndex(const QModelIndex& index)
