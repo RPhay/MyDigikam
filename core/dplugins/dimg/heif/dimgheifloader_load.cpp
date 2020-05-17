@@ -120,7 +120,10 @@ bool DImgHEIFLoader::load(const QString& filePath, DImgLoaderObserver* const obs
         return false;
     }
 
-    return (readHEICImageByID(heif_context, primary_image_id));
+    bool ret = readHEICImageByID(heif_context, primary_image_id);
+    heif_context_free(heif_context);
+
+    return ret;
 }
 
 bool DImgHEIFLoader::readHEICColorProfile(struct heif_image_handle* const image_handle)
@@ -321,6 +324,8 @@ bool DImgHEIFLoader::readHEICImageByID(struct heif_context* const heif_context,
 
     if (!isHeifSuccess(&error))
     {
+        loadingFailed();
+
         return false;
     }
 
@@ -353,6 +358,7 @@ bool DImgHEIFLoader::readHEICImageByID(struct heif_context* const heif_context,
 
             if (!isHeifSuccess(&error))
             {
+                loadingFailed();
                 heif_image_handle_release(image_handle);
 
                 return false;
@@ -403,6 +409,7 @@ bool DImgHEIFLoader::readHEICImageByHandle(struct heif_image_handle* image_handl
 
     if (!isHeifSuccess(&error))
     {
+        loadingFailed();
         heif_image_handle_release(image_handle);
 
         return false;
@@ -429,8 +436,10 @@ bool DImgHEIFLoader::readHEICImageByHandle(struct heif_image_handle* image_handl
 
     if (!QSize(imageWidth(), imageHeight()).isValid())
     {
+        loadingFailed();
         heif_image_release(heif_image);
         heif_image_handle_release(image_handle);
+
         return false;
     }
 
@@ -443,6 +452,7 @@ bool DImgHEIFLoader::readHEICImageByHandle(struct heif_image_handle* image_handl
     if (!ptr || stride <= 0)
     {
         qWarning() << "HEIC data pixels information not valid!";
+        loadingFailed();
         heif_image_release(heif_image);
         heif_image_handle_release(image_handle);
 
@@ -467,6 +477,7 @@ bool DImgHEIFLoader::readHEICImageByHandle(struct heif_image_handle* image_handl
     else
     {
         qWarning() << "Color bits depth: " << colorDepth << ": not supported!";
+        loadingFailed();
         heif_image_release(heif_image);
         heif_image_handle_release(image_handle);
 
@@ -482,6 +493,16 @@ bool DImgHEIFLoader::readHEICImageByHandle(struct heif_image_handle* image_handl
     else
     {
         data = new_failureTolerant(imageWidth(), imageHeight(), 4); // 8 bits/color/pixel
+    }
+
+    if (!data)
+    {
+        qWarning() << "Cannot allocate memory!";
+        loadingFailed();
+        heif_image_release(heif_image);
+        heif_image_handle_release(image_handle);
+
+        return false;
     }
 
     if (m_observer)
@@ -558,10 +579,9 @@ bool DImgHEIFLoader::readHEICImageByHandle(struct heif_image_handle* image_handl
 
             if (!m_observer->continueQuery())
             {
+                loadingFailed();
                 heif_image_release(heif_image);
                 heif_image_handle_release(image_handle);
-
-                loadingFailed();
 
                 return false;
             }

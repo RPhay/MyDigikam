@@ -737,4 +737,9 @@ BUGFIXES:
 701 ==> 421361 - Removing a keyboard shortcut crashes Digikam.
 702 ==> 421387 - Camera Leica V-Lux (Typ 114) not supported.
 703 ==> 421023 - Face tagging quirky in digiKam 7.0.0-beta3.
-704 ==> 
+704 ==> 421560 - Undo not working in ImageEditor RC.
+705 ==> 421559 - HEIC: Failed to open the data source: Too many open files (errno = 24).
+706 ==> 421464 - XPkeywords not being updated.
+707 ==> 421521 - Wrong EXIF photograph properties shown when there is no EXIF data at all.
+708 ==> 421646 - Impossible to add new tag.
+709 ==> 

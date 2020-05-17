@@ -170,7 +170,7 @@ size_t DImg::allocateData() const
                    (quint64)m_priv->height *
                    (quint64)(m_priv->sixteenBit ? 8 : 4);
 
-    if (size > (quint64)std::numeric_limits<size_t>::max())
+    if (size > ((quint64)std::numeric_limits<size_t>::max()))
     {
         m_priv->null = true;
 
