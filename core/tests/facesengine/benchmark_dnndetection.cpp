@@ -59,7 +59,7 @@ private Q_SLOTS:
 private:
 
     void showCVMat(const cv::Mat& cvimage);
-    QList<QRectF> detectFaces(const QImage& img);
+    QList<QRectF> detectFaces(const QString& imagePath);
     void extractFaces(const QImage& img, QImage& imgScaled, const QList<QRectF>& faces);
 
 private:
@@ -77,7 +77,7 @@ MainWindow::MainWindow(const QDir &directory, QWidget *parent)
 {
     setWindowTitle(QLatin1String("Face detection Test"));
 
-    m_detector = new OpenCVDNNFaceDetector(DetectorNNModel::SSDMOBILENET);
+    m_detector = new OpenCVDNNFaceDetector(DetectorNNModel::YOLO);
 
     QWidget* const mainWidget = new QWidget(this);
 
@@ -93,7 +93,12 @@ MainWindow::MainWindow(const QDir &directory, QWidget *parent)
     QScrollArea* facesArea = new QScrollArea(this);
     m_croppedfaceLayout = new QVBoxLayout(facesArea);
     facesArea->setLayout(m_croppedfaceLayout);
+    facesArea->setWidgetResizable(true);
+    facesArea->setAlignment(Qt::AlignRight);
+    facesArea->setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOn);
+    facesArea->setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
 
+    // TODO add control panel to adjust detection hyper parameters
     QWidget* const controlPanel = new QWidget;
 
     QSizePolicy spImage(QSizePolicy::Preferred, QSizePolicy::Preferred);
@@ -105,7 +110,7 @@ MainWindow::MainWindow(const QDir &directory, QWidget *parent)
     m_paddedImage->setSizePolicy(spPadded);
 
 
-    QSizePolicy spFaces(QSizePolicy::Fixed, QSizePolicy::Fixed);
+    QSizePolicy spFaces(QSizePolicy::Preferred, QSizePolicy::Preferred);
     spFaces.setVerticalPolicy(QSizePolicy::Expanding);
     facesArea->setSizePolicy(spFaces);
 
@@ -189,7 +194,7 @@ void MainWindow::slotDetectFaces(const QListWidgetItem* imageItem)
         delete wItem;
     }
 
-    QList<QRectF> faces = detectFaces(img);
+    QList<QRectF> faces = detectFaces(imagePath);
 
     extractFaces(img, imgScaled, faces);
 
@@ -212,8 +217,18 @@ void MainWindow::showCVMat(const cv::Mat& cvimage)
     }
 }
 
-QList<QRectF> MainWindow::detectFaces(const QImage& img)
+QList<QRectF> MainWindow::detectFaces(const QString& imagePath)
 {
+    QImage img(imagePath);
+/*
+    cv::Mat img;
+    img = cv::imread(imagePath.toStdString());
+
+    if(! img.data )
+    {
+        qDebug() <<  "Open cv Could not open or find the image";
+    }
+*/
     QList<QRectF> faces;
 
     try

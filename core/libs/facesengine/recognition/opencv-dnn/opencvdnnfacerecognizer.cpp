@@ -148,11 +148,14 @@ cv::Mat OpenCVDNNFaceRecognizer::prepareForRecognition(const QImage& inputImage)
     return cvImage;
 }
 
+// TODO focus on this shit
 int OpenCVDNNFaceRecognizer::recognize(const cv::Mat& inputImage)
 {
     int predictedLabel = -1;
     double confidence  = 0;
+
     d->dnn()->predict(inputImage, predictedLabel, confidence, d->m_extractor);
+
     qCDebug(DIGIKAM_FACESENGINE_LOG) << "predictedLabel: " << predictedLabel << ", confidence: " << confidence;
 
     /**
@@ -167,6 +170,8 @@ int OpenCVDNNFaceRecognizer::recognize(const cv::Mat& inputImage)
     return predictedLabel;
 }
 
+
+// TODO: complete this function
 void OpenCVDNNFaceRecognizer::cluster(const std::vector<cv::Mat>& images,
                                       std::vector<int>& clusteredIndices,
                                       QStringList dataset,
@@ -315,6 +320,7 @@ void OpenCVDNNFaceRecognizer::cluster(const std::vector<cv::Mat>& images,
     }
 }
 
+// TODO review this, and rename to avoid misleading
 void OpenCVDNNFaceRecognizer::train(const std::vector<cv::Mat>& images,
                                     const std::vector<int>& labels,
                                     const QString& context,
