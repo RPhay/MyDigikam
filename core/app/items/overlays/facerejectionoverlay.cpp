@@ -57,7 +57,7 @@ QIcon FaceRejectionOverlayButton::icon()
 
 void FaceRejectionOverlayButton::updateToolTip()
 {
-    setToolTip(i18nc("@info:tooltip", "If this is not a face, click to reject it."));
+    setToolTip(i18nc("@info:tooltip", "If this is not a face, click to delete it."));
 }
 
 // --------------------------------------------------------------------
