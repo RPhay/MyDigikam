@@ -117,6 +117,12 @@ public:
     static QString attributeForType(Type type);
 
     /**
+     * Returns the Face Type corresponding to
+     * the given TagId.
+     */
+    static Type typeForId(int tagId);
+
+    /**
      * Return the Type for the given attribute. To distinguish between UnknownName
      * and UnconfirmedName, the tagId must be given.
      */
