@@ -154,6 +154,8 @@ AssignNameWidget::Mode FaceGroup::Private::assignWidgetMode(FaceTagsIface::Type 
             return AssignNameWidget::UnconfirmedEditMode;
 
         case FaceTagsIface::Type::IgnoredName:
+            return AssignNameWidget::IgnoredMode;
+
         case FaceTagsIface::ConfirmedName:
             return AssignNameWidget::ConfirmedMode;
 
