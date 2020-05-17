@@ -174,7 +174,7 @@ TagEditDlg::TagEditDlg(QWidget* const parent, TAlbum* const album, bool create)
             }
         }
 
-        d->titleEdit->completerModel()->addItems(tagPaths);
+        d->titleEdit->completerModel()->setList(tagPaths);
     }
     else
     {

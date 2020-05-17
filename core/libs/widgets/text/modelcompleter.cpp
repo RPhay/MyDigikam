@@ -84,7 +84,7 @@ ModelCompleter::ModelCompleter(QObject* const parent)
     setCompletionColumn(0);
 
     d->delayedModelTimer = new QTimer(this);
-    d->delayedModelTimer->setInterval(500);
+    d->delayedModelTimer->setInterval(1000);
     d->delayedModelTimer->setSingleShot(true);
 
     connect(d->delayedModelTimer, SIGNAL(timeout()),
@@ -146,14 +146,13 @@ QAbstractItemModel* ModelCompleter::itemModel() const
 
 void ModelCompleter::addItem(const QString& item)
 {
-    QStringList stringList = d->stringModel->stringList();
-    d->stringModel->setStringList(stringList << item);
-    d->stringModel->sort(0);
+    QStringList list = d->stringModel->stringList();
+    setList(list << item);
 }
 
-void ModelCompleter::addItems(const QStringList& items)
+void ModelCompleter::setList(const QStringList& list)
 {
-    d->stringModel->setStringList(items);
+    d->stringModel->setStringList(list);
     d->stringModel->sort(0);
 }
 
@@ -164,11 +163,9 @@ QStringList ModelCompleter::items() const
 
 void ModelCompleter::slotDelayedModelTimer()
 {
-    QStringList stringList = d->idToTextHash.values();
-    stringList.removeDuplicates();
-    stringList.sort();
-
-    d->stringModel->setStringList(stringList);
+    QStringList list = d->idToTextHash.values();
+    list.removeDuplicates();
+    setList(list);
 }
 
 void ModelCompleter::slotRowsInserted(const QModelIndex& parent, int start, int end)
