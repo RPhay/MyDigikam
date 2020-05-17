@@ -240,8 +240,14 @@ void AssignNameOverlay::updateFace()
     }
 
     QVariant extraData = index().data(ItemModel::ExtraDataRole);
-    assignNameWidget()->setCurrentFace(FaceTagsIface::fromVariant(extraData));
+
+    /**
+     * The order to plug these functions is important, since
+     * setUserData() controls how the Overlay appears on
+     * a particular face.
+     */
     assignNameWidget()->setUserData(ItemModel::retrieveItemInfo(index()), extraData);
+    assignNameWidget()->setCurrentFace(FaceTagsIface::fromVariant(extraData));
 }
 
 /*
