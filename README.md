@@ -8,7 +8,7 @@
 | Flatpak Build | [![FlatPak Build Status](https://binary-factory.kde.org/view/Flatpak/job/Digikam_flatpak/badge/icon)](https://binary-factory.kde.org/view/Flatpak/job/Digikam_flatpak/)                                 |
 | Coverity Scan | [![Coverity Scan Status](https://scan.coverity.com/projects/285/badge.svg)](https://scan.coverity.com/projects/digikam)                                                                                 |
 
-If you are reading this on Github, be aware that this is just a mirror. Our real code repository [is located here](https://invent.kde.org/kde/digikam)
+If you are reading this on Github, be aware that this is just a mirror. Our real code repository [is located here](https://invent.kde.org/graphics/digikam)
 
 Developers, if you want to contribute, see the online [API documentation here](https://www.digikam.org/api)
 
