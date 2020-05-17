@@ -450,23 +450,7 @@ FaceTagsIface FaceTagsEditor::changeTag(const FaceTagsIface& face, int newTagId)
 
     FaceTagsIface newFace = face;
     newFace.setTagId(newTagId);
-
-    if      (FaceTags::isTheUnknownPerson(newTagId))
-    {
-        newFace.setType(FaceTagsIface::UnknownName);
-    }
-    else if (FaceTags::isTheUnconfirmedPerson(newTagId))
-    {
-        newFace.setType(FaceTagsIface::UnconfirmedName);
-    }
-    else if (FaceTags::isTheIgnoredPerson(newTagId))
-    {
-        newFace.setType(FaceTagsIface::IgnoredName);
-    }
-    else
-    {
-        newFace.setType(FaceTagsIface::ConfirmedName);
-    }
+    newFace.setType(FaceTagsIface::typeForId(newTagId));
 
     ItemTagPair newPair(newFace.imageId(), newFace.tagId());
 
