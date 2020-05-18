@@ -95,11 +95,11 @@ CaptionsMap DMetadata::getItemComments(const DMetadataSettingsContainer& setting
         const std::string myStr = entry.namespaceName.toStdString();
         const char* nameSpace   = myStr.data();
 
-        switch(entry.subspace)
+        switch (entry.subspace)
         {
             case NamespaceEntry::XMP:
             {
-                switch(entry.specialOpts)
+                switch (entry.specialOpts)
                 {
                     case NamespaceEntry::COMMENT_ALTLANG:
                     {
@@ -261,7 +261,7 @@ bool DMetadata::setItemComments(const CaptionsMap& comments, const DMetadataSett
                     removeXmpTag(nameSpace);
                 }
 
-                switch(entry.specialOpts)
+                switch (entry.specialOpts)
                 {
                     case NamespaceEntry::COMMENT_ALTLANG:
                     {

@@ -64,7 +64,7 @@ bool DMetadata::getItemTagsPath(QStringList& tagsPath,
                     const std::string myStr = currentNamespace.toStdString();
                     const char* nameSpace   = myStr.data();
 
-                    switch(currentOpts)
+                    switch (currentOpts)
                     {
                         case NamespaceEntry::TAG_XMPBAG:
                             tagsPath = getXmpTagStringBag(nameSpace, false);
@@ -197,7 +197,7 @@ bool DMetadata::setItemTagsPath(const QStringList& tagsPath, const DMetadataSett
             newList.append(tagPath.split(QLatin1Char('/')).last());
         }
 
-        switch(entry.subspace)
+        switch (entry.subspace)
         {
             case NamespaceEntry::XMP:
             {
@@ -219,7 +219,7 @@ bool DMetadata::setItemTagsPath(const QStringList& tagsPath, const DMetadataSett
                 const std::string myStr = entry.namespaceName.toStdString();
                 const char* nameSpace   = myStr.data();
 
-                switch(entry.specialOpts)
+                switch (entry.specialOpts)
                 {
                     case NamespaceEntry::TAG_XMPSEQ:
 
