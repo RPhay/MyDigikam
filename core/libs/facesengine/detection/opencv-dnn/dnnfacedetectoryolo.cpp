@@ -132,6 +132,9 @@ void DNNFaceDetectorYOLO::postprocess(const std::vector<cv::Mat>& outs,
         }
     }
 
+    qDebug() << "nb of doubtbox = " << doubtBoxes.size();
+    qDebug() << "nb of goodbox = "  << goodBoxes.size();
+
     if (goodBoxes.empty())
     {
         boxes       = doubtBoxes;

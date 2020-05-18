@@ -142,7 +142,9 @@ set(facesengine_database_LIB_SRCS recognition/recognitiondatabase.cpp
 if(DNN_RECOGNITION)
 
     add_definitions(-DUSE_DNN_RECOGNITION_BACKEND)
-    include_directories(${CMAKE_CURRENT_SOURCE_DIR}/recognition/opencv-dnn)
+    include_directories(${CMAKE_CURRENT_SOURCE_DIR}/recognition/opencv-dnn
+                        # For testing TODO: remove later
+                        ${CMAKE_CURRENT_SOURCE_DIR}/facerecognition)
 
     set(facesengine_database_LIB_SRCS ${facesengine_database_LIB_SRCS}
 
@@ -155,6 +157,9 @@ if(DNN_RECOGNITION)
                                       recognition/opencv-dnn/facerec_dnnborrowed.cpp
                                       recognition/opencv-dnn/dnnfaceextractor.cpp
                                       recognition/opencv-dnn/dnndbscan.cpp
+
+                                      # Testing, TODO: remove later
+                                      facerecognition/facerecognizer.cpp
     )
 
 else()
