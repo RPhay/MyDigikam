@@ -32,9 +32,6 @@
 // Local includes
 
 #include "digikam_opencv.h"
-#include "facepreprocessor.h"
-
-using namespace Digikam;
 
 namespace RecognitionTest
 {
@@ -45,20 +42,15 @@ class FaceExtractor
 
 public:
 
-    explicit FaceExtractor(Preprocessor* const p);
+    explicit FaceExtractor();
     ~FaceExtractor();
 
     void getFaceEmbedding(const cv::Mat& faceImage, std::vector<float>& vecdata);
 
 private:
 
-    Preprocessor* preprocessor;
-
-    cv::dnn::Net  net;
-
-    cv::Size      imageSize;
-    float         scaleFactor;
-    cv::Scalar    meanValToSubtract;
+    class Private;
+    Private* d;
 };
 
 } // namespace RecognitionTest

@@ -35,14 +35,41 @@
 // Local includes
 
 #include "digikam_debug.h"
+#include "recognitionpreprocessor.h"
 
 using namespace Digikam;
 
 namespace RecognitionTest
 {
 
-FaceExtractor::FaceExtractor(Preprocessor* const p)
-    : preprocessor(p)
+class FaceExtractor::Private
+{
+public:
+
+    Private()
+        : preprocessor(new RecognitionPreprocessor)
+    {
+        preprocessor->init(PreprocessorSelection::OPENFACE);
+    }
+
+    ~Private()
+    {
+
+    }
+
+public:
+
+    RecognitionPreprocessor* preprocessor;
+
+    cv::dnn::Net  net;
+
+    cv::Size      imageSize;
+    float         scaleFactor;
+    cv::Scalar    meanValToSubtract;
+};
+
+FaceExtractor::FaceExtractor()
+    : d(new Private)
 {
     // Read pretrained neural network for face recognition
 
@@ -57,13 +84,13 @@ FaceExtractor::FaceExtractor(Preprocessor* const p)
     QString nnmodel   = QStandardPaths::locate(QStandardPaths::GenericDataLocation,
                                                QLatin1String("digikam/facesengine/openface_nn4.small2.v1.t7"));
     qCDebug(DIGIKAM_FACEDB_LOG) << nnmodel;
-    net               = cv::dnn::readNetFromTorch(nnmodel.toStdString());
 
+    d->net               = cv::dnn::readNetFromTorch(nnmodel.toStdString());
     // As we use OpenFace, we need to set appropriate values for image color space and image size
 
-    imageSize         = cv::Size(96, 96);
-    scaleFactor       = 1.0F / 255.0F;
-    meanValToSubtract = cv::Scalar(0.0, 0.0, 0.0);
+    d->imageSize         = cv::Size(96, 96);
+    d->scaleFactor       = 1.0F / 255.0F;
+    d->meanValToSubtract = cv::Scalar(0.0, 0.0, 0.0);
 }
 
 FaceExtractor::~FaceExtractor()
@@ -80,16 +107,17 @@ void FaceExtractor::getFaceEmbedding(const cv::Mat& faceImage, std::vector<float
 /*
     cv::Mat alignedFace = faceImage;
 */
-    cv::Mat alignedFace = preprocessor->preprocess(faceImage);
+    cv::Mat alignedFace = d->preprocessor->preprocess(faceImage);
 
     qCDebug(DIGIKAM_FACEDB_LOG) << "Finish aligning face in " << timer.elapsed() << " ms";
     qCDebug(DIGIKAM_FACEDB_LOG) << "Start neural network";
 
     timer.start();
     cv::Mat face_descriptors;
-    cv::Mat blob     = cv::dnn::blobFromImage(alignedFace, scaleFactor, imageSize, meanValToSubtract);
-    net.setInput(blob);
-    face_descriptors = net.forward();
+    cv::Mat blob     = cv::dnn::blobFromImage(alignedFace, d->scaleFactor, d->imageSize, d->meanValToSubtract);
+
+    d->net.setInput(blob);
+    face_descriptors = d->net.forward();
 
     qCDebug(DIGIKAM_FACEDB_LOG) << "Finish computing face embedding in "
                                 << timer.elapsed() << " ms";
