@@ -421,9 +421,9 @@ int AdvancedMetadataTab::getModelIndex()
     }
     else
     {
-        // for 3 metadata types:
-        // read operation  = 3*0 + (0, 1, 2)
-        // write operation = 3*1 + (0, 1, 2) = (3, 4 ,5)
+        // for 4 metadata types:
+        // read operation  = 4*0 + (0, 1, 2, 3)
+        // write operation = 4*1 + (0, 1, 2, 3) = (4, 5 ,6, 7)
 
         return (
                 (d->metadataTypeSize * d->operationType->currentIndex()) +
