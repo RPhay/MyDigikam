@@ -308,56 +308,58 @@ bool DMetadata::setItemColorLabel(int colorId, const DMetadataSettingsContainer&
         {
             case NamespaceEntry::XMP:
 
-                if (supportXmp())
+                if (!supportXmp())
                 {
-                    if (QLatin1String(nameSpace) == QLatin1String("Xmp.xmp.Label"))
+                    continue;
+                }
+
+                if (QLatin1String(nameSpace) == QLatin1String("Xmp.xmp.Label"))
+                {
+                    // LightRoom use this XMP tags to store Color Labels name
+                    // Values are limited : see bug #358193.
+
+                    QString LRLabel;
+
+                    switch (colorId)
                     {
-                        // LightRoom use this XMP tags to store Color Labels name
-                        // Values are limited : see bug #358193.
+                        case BlueLabel:
+                            LRLabel = QLatin1String("Blue");
+                            break;
 
-                        QString LRLabel;
+                        case GreenLabel:
+                            LRLabel = QLatin1String("Green");
+                            break;
 
-                        switch (colorId)
+                        case RedLabel:
+                            LRLabel = QLatin1String("Red");
+                            break;
+
+                        case YellowLabel:
+                            LRLabel = QLatin1String("Yellow");
+                            break;
+
+                        case MagentaLabel:
+                            LRLabel = QLatin1String("Purple");
+                            break;
+                    }
+
+                    if (!LRLabel.isEmpty())
+                    {
+                        if (!setXmpTagString(nameSpace, LRLabel))
                         {
-                            case BlueLabel:
-                                LRLabel = QLatin1String("Blue");
-                                break;
-
-                            case GreenLabel:
-                                LRLabel = QLatin1String("Green");
-                                break;
-
-                            case RedLabel:
-                                LRLabel = QLatin1String("Red");
-                                break;
-
-                            case YellowLabel:
-                                LRLabel = QLatin1String("Yellow");
-                                break;
-
-                            case MagentaLabel:
-                                LRLabel = QLatin1String("Purple");
-                                break;
-                        }
-
-                        if (!LRLabel.isEmpty())
-                        {
-                            if (!setXmpTagString(nameSpace, LRLabel))
-                            {
-                                return false;
-                            }
-                        }
-                        else
-                        {
-                            removeXmpTag(nameSpace);
+                            return false;
                         }
                     }
                     else
                     {
-                        if (!setXmpTagString(nameSpace, QString::number(colorId)))
-                        {
-                            return false;
-                        }
+                        removeXmpTag(nameSpace);
+                    }
+                }
+                else
+                {
+                    if (!setXmpTagString(nameSpace, QString::number(colorId)))
+                    {
+                        return false;
                     }
                 }
 
@@ -416,6 +418,11 @@ bool DMetadata::setItemRating(int rating, const DMetadataSettingsContainer& sett
         switch (entry.subspace)
         {
             case NamespaceEntry::XMP:
+
+                if (!supportXmp())
+                {
+                    continue;
+                }
 
                 if (!setXmpTagString(nameSpace, QString::number(entry.convertRatio.at(rating))))
                 {

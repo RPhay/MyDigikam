@@ -251,6 +251,11 @@ bool DMetadata::setItemComments(const CaptionsMap& comments, const DMetadataSett
         {
             case NamespaceEntry::XMP:
             {
+                if (!supportXmp())
+                {
+                    continue;
+                }
+
                 if (entry.namespaceName.contains(QLatin1String("Xmp.")))
                 {
                     removeXmpTag(nameSpace);
