@@ -65,55 +65,94 @@ int DMetadata::getItemPickLabel() const
     return -1;
 }
 
-int DMetadata::getItemColorLabel() const
+int DMetadata::getItemColorLabel(const DMetadataSettingsContainer& settings) const
 {
     if (getFilePath().isEmpty())
     {
         return -1;
     }
 
-    if (hasXmp())
-    {
-        QString value = getXmpTagString("Xmp.digiKam.ColorLabel", false);
-        QString label = getXmpTagString("Xmp.xmp.Label", false);
+    bool xmpSupported  = hasXmp();
+    bool iptcSupported = hasIptc();
+    bool exivSupported = hasExif();
 
-        if (value.isEmpty() && label.isEmpty())
+    for (NamespaceEntry entry : settings.getReadMapping(NamespaceEntry::DM_COLORLABEL_CONTAINER()))
+    {
+        if (entry.isDisabled)
         {
-            // Nikon NX use this XMP tags to store Color Labels
-            value = getXmpTagString("Xmp.photoshop.Urgency", false);
+            continue;
         }
 
-        if (!value.isEmpty())
-        {
-            bool ok      = false;
-            long colorId = value.toLong(&ok);
+        const std::string myStr = entry.namespaceName.toStdString();
+        const char* nameSpace   = myStr.data();
+        QString value;
 
-            if (ok && (colorId >= NoColorLabel) && (colorId <= WhiteLabel))
-            {
-                return colorId;
-            }
+        switch (entry.subspace)
+        {
+            case NamespaceEntry::XMP:
+
+                if (xmpSupported)
+                {
+                    value = getXmpTagString(nameSpace, false);
+                }
+
+                break;
+
+            case NamespaceEntry::IPTC:
+
+                if (iptcSupported)
+                {
+                    value = QString::fromUtf8(getIptcTagData(nameSpace));
+                }
+
+                break;
+
+            case NamespaceEntry::EXIF:
+
+                if (exivSupported)
+                {
+                    value = getExifTagString(nameSpace, false);
+                }
+
+                break;
+
+            default:
+                break;
+        }
+
+        if (value.isEmpty())
+        {
+            continue;
+        }
+
+        bool ok      = false;
+        long colorId = value.toLong(&ok);
+
+        if (ok && (colorId >= NoColorLabel) && (colorId <= WhiteLabel))
+        {
+            return colorId;
         }
 
         // LightRoom use this tag to store color name as string.
         // Values are limited : see bug #358193.
 
-        if      (label == QLatin1String("Blue"))
+        if      (value == QLatin1String("Blue"))
         {
             return BlueLabel;
         }
-        else if (label == QLatin1String("Green"))
+        else if (value == QLatin1String("Green"))
         {
             return GreenLabel;
         }
-        else if (label == QLatin1String("Red"))
+        else if (value == QLatin1String("Red"))
         {
             return RedLabel;
         }
-        else if (label == QLatin1String("Yellow"))
+        else if (value == QLatin1String("Yellow"))
         {
             return YellowLabel;
         }
-        else if (label == QLatin1String("Purple"))
+        else if (value == QLatin1String("Purple"))
         {
             return MagentaLabel;
         }
@@ -237,7 +276,7 @@ bool DMetadata::setItemPickLabel(int pickId) const
     return true;
 }
 
-bool DMetadata::setItemColorLabel(int colorId) const
+bool DMetadata::setItemColorLabel(int colorId, const DMetadataSettingsContainer& settings) const
 {
     if ((colorId < NoColorLabel) || (colorId > WhiteLabel))
     {
@@ -248,58 +287,96 @@ bool DMetadata::setItemColorLabel(int colorId) const
 
     //qCDebug(DIGIKAM_METAENGINE_LOG) << getFilePath() << " ==> Color Label: " << colorId;
 
-    if (supportXmp())
+    QList<NamespaceEntry> toWrite = settings.getReadMapping(NamespaceEntry::DM_COLORLABEL_CONTAINER());
+
+    if (!settings.unifyReadWrite())
     {
-        if (!setXmpTagString("Xmp.digiKam.ColorLabel", QString::number(colorId)))
+        toWrite = settings.getWriteMapping(NamespaceEntry::DM_COLORLABEL_CONTAINER());
+    }
+
+    for (NamespaceEntry entry : toWrite)
+    {
+        if (entry.isDisabled)
         {
-            return false;
+            continue;
         }
 
-        // Nikon NX use this XMP tags to store Color Labels
+        const std::string myStr = entry.namespaceName.toStdString();
+        const char* nameSpace   = myStr.data();
 
-        if (!setXmpTagString("Xmp.photoshop.Urgency", QString::number(colorId)))
+        switch (entry.subspace)
         {
-            return false;
-        }
+            case NamespaceEntry::XMP:
 
-        // LightRoom use this XMP tags to store Color Labels name
-        // Values are limited : see bug #358193.
+                if (supportXmp())
+                {
+                    if (QLatin1String(nameSpace) == QLatin1String("Xmp.xmp.Label"))
+                    {
+                        // LightRoom use this XMP tags to store Color Labels name
+                        // Values are limited : see bug #358193.
 
-        QString LRLabel;
+                        QString LRLabel;
 
-        switch(colorId)
-        {
-            case BlueLabel:
-                LRLabel = QLatin1String("Blue");
+                        switch (colorId)
+                        {
+                            case BlueLabel:
+                                LRLabel = QLatin1String("Blue");
+                                break;
+
+                            case GreenLabel:
+                                LRLabel = QLatin1String("Green");
+                                break;
+
+                            case RedLabel:
+                                LRLabel = QLatin1String("Red");
+                                break;
+
+                            case YellowLabel:
+                                LRLabel = QLatin1String("Yellow");
+                                break;
+
+                            case MagentaLabel:
+                                LRLabel = QLatin1String("Purple");
+                                break;
+                        }
+
+                        if (!LRLabel.isEmpty())
+                        {
+                            if (!setXmpTagString(nameSpace, LRLabel))
+                            {
+                                return false;
+                            }
+                        }
+                        else
+                        {
+                            removeXmpTag(nameSpace);
+                        }
+                    }
+                    else
+                    {
+                        if (!setXmpTagString(nameSpace, QString::number(colorId)))
+                        {
+                            return false;
+                        }
+                    }
+                }
+
                 break;
 
-            case GreenLabel:
-                LRLabel = QLatin1String("Green");
+            case NamespaceEntry::EXIF:
+
+                if (!setExifTagString(nameSpace, QString::number(colorId)))
+                {
+                    return false;
+                }
+
                 break;
 
-            case RedLabel:
-                LRLabel = QLatin1String("Red");
+            case NamespaceEntry::IPTC:
                 break;
 
-            case YellowLabel:
-                LRLabel = QLatin1String("Yellow");
+            default:
                 break;
-
-            case MagentaLabel:
-                LRLabel = QLatin1String("Purple");
-                break;
-        }
-
-        if (!LRLabel.isEmpty())
-        {
-            if (!setXmpTagString("Xmp.xmp.Label", LRLabel))
-            {
-                return false;
-            }
-        }
-        else
-        {
-            removeXmpTag("Xmp.xmp.Label");
         }
     }
 
@@ -336,7 +413,7 @@ bool DMetadata::setItemRating(int rating, const DMetadataSettingsContainer& sett
         const std::string myStr = entry.namespaceName.toStdString();
         const char* nameSpace   = myStr.data();
 
-        switch(entry.subspace)
+        switch (entry.subspace)
         {
             case NamespaceEntry::XMP:
 

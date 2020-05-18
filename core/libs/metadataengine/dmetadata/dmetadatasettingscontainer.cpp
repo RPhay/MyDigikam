@@ -52,6 +52,11 @@ QString NamespaceEntry::DM_COMMENT_CONTAINER()
     return QString::fromUtf8(I18N_NOOP("Comment"));
 }
 
+QString NamespaceEntry::DM_COLORLABEL_CONTAINER()
+{
+    return QString::fromUtf8(I18N_NOOP("Color Label"));
+}
+
 // ------------------------------------------------------------
 
 bool dmcompare(NamespaceEntry& e1, NamespaceEntry e2)
@@ -113,6 +118,7 @@ DMetadataSettingsContainer::DMetadataSettingsContainer()
     addMapping(NamespaceEntry::DM_TAG_CONTAINER());
     addMapping(NamespaceEntry::DM_RATING_CONTAINER());
     addMapping(NamespaceEntry::DM_COMMENT_CONTAINER());
+    addMapping(NamespaceEntry::DM_COLORLABEL_CONTAINER());
 }
 
 DMetadataSettingsContainer::DMetadataSettingsContainer(const DMetadataSettingsContainer& other)
@@ -208,6 +214,7 @@ void DMetadataSettingsContainer::defaultValues()
     defaultTagValues();
     defaultRatingValues();
     defaultCommentValues();
+    defaultColorLabelValues();
 }
 
 void DMetadataSettingsContainer::addMapping(const QString& key)
@@ -446,6 +453,37 @@ void DMetadataSettingsContainer::defaultCommentValues()
 
     d->writeMappings[NamespaceEntry::DM_COMMENT_CONTAINER()]
         = QList<NamespaceEntry>(getReadMapping(NamespaceEntry::DM_COMMENT_CONTAINER()));
+}
+
+void DMetadataSettingsContainer::defaultColorLabelValues()
+{
+    NamespaceEntry commNs1;
+    commNs1.namespaceName   = QLatin1String("Xmp.digiKam.ColorLabel");
+    commNs1.nsType          = NamespaceEntry::COLORLABEL;
+    commNs1.specialOpts     = NamespaceEntry::NO_OPTS;
+    commNs1.index           = 0;
+    commNs1.subspace        = NamespaceEntry::XMP;
+
+    NamespaceEntry commNs2;
+    commNs2.namespaceName   = QLatin1String("Xmp.xmp.Label");
+    commNs2.nsType          = NamespaceEntry::COLORLABEL;
+    commNs2.specialOpts     = NamespaceEntry::NO_OPTS;
+    commNs2.index           = 1;
+    commNs2.subspace        = NamespaceEntry::XMP;
+
+    NamespaceEntry commNs3;
+    commNs3.namespaceName   = QLatin1String("Xmp.photoshop.Urgency");
+    commNs3.nsType          = NamespaceEntry::COLORLABEL;
+    commNs3.specialOpts     = NamespaceEntry::NO_OPTS;
+    commNs3.index           = 2;
+    commNs3.subspace        = NamespaceEntry::XMP;
+
+     getReadMapping(NamespaceEntry::DM_COLORLABEL_CONTAINER()) << commNs1
+                                                               << commNs2
+                                                               << commNs3;
+
+    d->writeMappings[NamespaceEntry::DM_COLORLABEL_CONTAINER()]
+        = QList<NamespaceEntry>(getReadMapping(NamespaceEntry::DM_COLORLABEL_CONTAINER()));
 }
 
 void DMetadataSettingsContainer::readOneGroup(KConfigGroup& group, const QString& name, QList<NamespaceEntry>& container)
