@@ -73,7 +73,6 @@ int DMetadata::getItemColorLabel(const DMetadataSettingsContainer& settings) con
     }
 
     bool xmpSupported  = hasXmp();
-    bool iptcSupported = hasIptc();
     bool exivSupported = hasExif();
 
     for (NamespaceEntry entry : settings.getReadMapping(NamespaceEntry::DM_COLORLABEL_CONTAINER()))
@@ -99,12 +98,6 @@ int DMetadata::getItemColorLabel(const DMetadataSettingsContainer& settings) con
                 break;
 
             case NamespaceEntry::IPTC:
-
-                if (iptcSupported)
-                {
-                    value = QString::fromUtf8(getIptcTagData(nameSpace));
-                }
-
                 break;
 
             case NamespaceEntry::EXIF:
