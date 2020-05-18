@@ -16,7 +16,7 @@ class FaceRecognizer
 {
 public:
 
-    FaceRecognizer();
+    explicit FaceRecognizer(bool debug = false);
     ~FaceRecognizer();
 
 private:

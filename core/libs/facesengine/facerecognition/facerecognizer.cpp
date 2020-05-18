@@ -19,12 +19,13 @@ using namespace Digikam;
 namespace RecognitionTest
 {
 
-class FaceRecognizer::Private
+class Q_DECL_HIDDEN FaceRecognizer::Private
 {
 public:
 
-    Private()
-        : extractor(new FaceExtractor)
+    Private(bool debug)
+        : debugMode(debug),
+          extractor(new FaceExtractor)
     {
     }
 
@@ -34,11 +35,13 @@ public:
     }
 
 public:
+
+    bool           debugMode;
     FaceExtractor* extractor;
 };
 
-FaceRecognizer::FaceRecognizer()
-    : d(new Private)
+FaceRecognizer::FaceRecognizer(bool debug)
+    : d(new Private(debug))
 {
 
 }

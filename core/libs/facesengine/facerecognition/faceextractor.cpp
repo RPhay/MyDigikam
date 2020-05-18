@@ -42,7 +42,7 @@ using namespace Digikam;
 namespace RecognitionTest
 {
 
-class FaceExtractor::Private
+class Q_DECL_HIDDEN FaceExtractor::Private
 {
 public:
 
