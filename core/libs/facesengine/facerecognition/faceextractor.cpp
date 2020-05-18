@@ -47,14 +47,13 @@ class FaceExtractor::Private
 public:
 
     Private()
-        : preprocessor(new RecognitionPreprocessor)
+        : preprocessor(nullptr)
     {
-        preprocessor->init(PreprocessorSelection::OPENFACE);
     }
 
     ~Private()
     {
-
+        delete preprocessor;
     }
 
 public:
@@ -80,9 +79,11 @@ FaceExtractor::FaceExtractor()
                                              QLatin1String("digikam/facesengine/dnnface/deep-residual-networks/ResNet-50-model.caffemodel"));
     net = cv::dnn::readNetFromCaffe(nnproto, nnmodel);
 */
+    d->preprocessor = new RecognitionPreprocessor;
+    d->preprocessor->init(PreprocessorSelection::OPENFACE);
 
-    QString nnmodel   = QStandardPaths::locate(QStandardPaths::GenericDataLocation,
-                                               QLatin1String("digikam/facesengine/openface_nn4.small2.v1.t7"));
+    QString nnmodel = QStandardPaths::locate(QStandardPaths::GenericDataLocation,
+                                             QLatin1String("digikam/facesengine/openface_nn4.small2.v1.t7"));
     qCDebug(DIGIKAM_FACEDB_LOG) << nnmodel;
 
     d->net               = cv::dnn::readNetFromTorch(nnmodel.toStdString());
@@ -95,6 +96,7 @@ FaceExtractor::FaceExtractor()
 
 FaceExtractor::~FaceExtractor()
 {
+    delete d;
 }
 
 void FaceExtractor::getFaceEmbedding(const cv::Mat& faceImage, std::vector<float>& vecdata)

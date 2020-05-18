@@ -11,8 +11,7 @@
 //#include "facedb.h"
 #include "dnnfacemodel.h"
 #include "digikam_debug.h"
-#include "dnnfaceextractor.h"
-#include "recognitionpreprocessor.h"
+#include "faceextractor.h"
 //#include "dnndbscan.h"
 
 using namespace Digikam;
@@ -25,15 +24,17 @@ class FaceRecognizer::Private
 public:
 
     Private()
+        : extractor(new FaceExtractor)
     {
     }
 
     ~Private()
     {
+        delete extractor;
     }
 
 public:
-
+    FaceExtractor* extractor;
 };
 
 FaceRecognizer::FaceRecognizer()
