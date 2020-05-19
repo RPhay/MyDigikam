@@ -51,7 +51,7 @@ bool DImgHEIFLoader::load(const QString& filePath, DImgLoaderObserver* const obs
 
     bool loadToMemory = false;
 
-    FILE* const file  = fopen(QFile::encodeName(filePath).constData(), "rb");
+    FILE* file        = fopen(QFile::encodeName(filePath).constData(), "rb");
 
 #ifdef Q_OS_WIN
 
@@ -113,7 +113,7 @@ bool DImgHEIFLoader::load(const QString& filePath, DImgLoaderObserver* const obs
 
     if (loadToMemory)
     {
-        QByteArray buffer
+        QByteArray buffer;
         QFile memFile(filePath);
 
         if (!memFile.open(QIODevice::ReadOnly))
