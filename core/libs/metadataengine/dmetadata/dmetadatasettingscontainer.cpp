@@ -184,6 +184,8 @@ void DMetadataSettingsContainer::readFromConfig(KConfigGroup& group)
     {
         defaultValues();
     }
+
+    d->unifyReadWrite = group.readEntry(QLatin1String("unifyReadWrite"), true);
 }
 
 void DMetadataSettingsContainer::writeToConfig(KConfigGroup& group) const
@@ -202,6 +204,7 @@ void DMetadataSettingsContainer::writeToConfig(KConfigGroup& group) const
         writeOneGroup(group, writeNameSpace.arg(str), getWriteMapping(str));
     }
 
+    group.writeEntry(QLatin1String("unifyReadWrite"), d->unifyReadWrite);
     group.sync();
 }
 
