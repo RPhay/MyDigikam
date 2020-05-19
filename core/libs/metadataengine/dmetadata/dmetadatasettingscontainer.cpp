@@ -54,7 +54,7 @@ QString NamespaceEntry::DM_COMMENT_CONTAINER()
 
 QString NamespaceEntry::DM_COLORLABEL_CONTAINER()
 {
-    return QString::fromUtf8(I18N_NOOP("Color Label"));
+    return QString::fromUtf8(I18N_NOOP("Color label"));
 }
 
 // ------------------------------------------------------------
