@@ -35,6 +35,7 @@
 // Local includes
 
 #include "digikam_debug.h"
+#include "digikam_config.h"
 #include "dimg.h"
 #include "dimgloaderobserver.h"
 #include "metaengine.h"
@@ -48,7 +49,19 @@ bool DImgHEIFLoader::load(const QString& filePath, DImgLoaderObserver* const obs
 
     readMetadata(filePath);
 
-    FILE* const file = fopen(QFile::encodeName(filePath).constData(), "rb");
+    bool loadToMemory = false;
+
+    FILE* const file  = fopen(QFile::encodeName(filePath).constData(), "rb");
+
+#ifdef Q_OS_WIN
+
+    if (!file)
+    {
+        file         = _wfopen((const wchar_t*)filePath.utf16(), L"rb");
+        loadToMemory = true;
+    }
+
+#endif
 
     if (!file)
     {
@@ -96,9 +109,38 @@ bool DImgHEIFLoader::load(const QString& filePath, DImgLoaderObserver* const obs
     heif_item_id primary_image_id;
 
     struct heif_context* const heif_context = heif_context_alloc();
-    struct heif_error error                 = heif_context_read_from_file(heif_context,
-                                                                          QFile::encodeName(filePath).constData(),
-                                                                          nullptr);
+    struct heif_error error;
+    QByteArray buffer;
+
+    if (loadToMemory)
+    {
+        QFile memFile(filePath);
+
+        if (!memFile.open(QIODevice::ReadOnly))
+        {
+            qWarning() << "Error: Could not load into memory.";
+            loadingFailed();
+
+            return false;
+        }
+
+        buffer = memFile.readAll();
+        memFile.close();
+
+        qDebug() << "HEIF loading file to memory buffer";
+
+        error = heif_context_read_from_memory(heif_context,
+                                              (void*)buffer.data(),
+                                              buffer.size(),
+                                              nullptr);
+    }
+    else
+    {
+
+        error = heif_context_read_from_file(heif_context,
+                                            QFile::encodeName(filePath).constData(),
+                                            nullptr);
+    }
 
     if (!isHeifSuccess(&error))
     {
