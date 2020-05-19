@@ -32,6 +32,7 @@ install(FILES
               ${CMAKE_SOURCE_DIR}/core/libs/dplugins/core/dplugingeneric.h
               ${CMAKE_SOURCE_DIR}/core/libs/dplugins/core/dpluginrawimport.h
               ${CMAKE_SOURCE_DIR}/core/libs/dplugins/setup/dpluginloader.h
+              ${CMAKE_SOURCE_DIR}/core/libs/dplugins/setup/dpluginaboutdlg.h
               ${CMAKE_SOURCE_DIR}/core/libs/dplugins/iface/dinfointerface.h
               ${CMAKE_SOURCE_DIR}/core/libs/dplugins/iface/dmetainfoiface.h
               ${CMAKE_SOURCE_DIR}/core/libs/dplugins/widgets/ditemslist.h
