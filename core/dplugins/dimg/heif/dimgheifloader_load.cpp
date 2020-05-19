@@ -110,10 +110,10 @@ bool DImgHEIFLoader::load(const QString& filePath, DImgLoaderObserver* const obs
 
     struct heif_context* const heif_context = heif_context_alloc();
     struct heif_error error;
-    QByteArray buffer;
 
     if (loadToMemory)
     {
+        QByteArray buffer
         QFile memFile(filePath);
 
         if (!memFile.open(QIODevice::ReadOnly))
