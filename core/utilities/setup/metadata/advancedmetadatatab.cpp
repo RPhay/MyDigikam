@@ -181,6 +181,10 @@ void AdvancedMetadataTab::slotAddNewNamespace()
     {
         entry.nsType = NamespaceEntry::COMMENT;
     }
+    else if (d->metadataType->currentData().toString() == NamespaceEntry::DM_COLORLABEL_CONTAINER())
+    {
+        entry.nsType = NamespaceEntry::COLORLABEL;
+    }
 
     entry.isDefault  = false;
     entry.subspace   = NamespaceEntry::XMP;
@@ -417,9 +421,9 @@ int AdvancedMetadataTab::getModelIndex()
     }
     else
     {
-        // for 3 metadata types:
-        // read operation  = 3*0 + (0, 1, 2)
-        // write operation = 3*1 + (0, 1, 2) = (3, 4 ,5)
+        // for 4 metadata types:
+        // read operation  = 4*0 + (0, 1, 2, 3)
+        // write operation = 4*1 + (0, 1, 2, 3) = (4, 5, 6, 7)
 
         return (
                 (d->metadataTypeSize * d->operationType->currentIndex()) +
@@ -434,11 +438,11 @@ QList<NamespaceEntry>& AdvancedMetadataTab::getCurrentContainer()
 
     if (currentIndex >= d->metadataTypeSize)
     {
-        return d->container.getWriteMapping(QString::fromUtf8(d->metadataType->currentData().toByteArray()));
+        return d->container.getWriteMapping(d->metadataType->currentData().toString());
     }
     else
     {
-        return d->container.getReadMapping(QString::fromUtf8(d->metadataType->currentData().toByteArray()));
+        return d->container.getReadMapping(d->metadataType->currentData().toString());
     }
 }
 
@@ -448,7 +452,7 @@ void AdvancedMetadataTab::setModels()
 
     foreach (const QString& str, keys)
     {
-        d->metadataType->addItem(str, str);
+        d->metadataType->addItem(i18n(str.toUtf8().constData()), str);
     }
 
     d->metadataTypeSize = keys.size();

@@ -742,4 +742,7 @@ BUGFIXES:
 706 ==> 421464 - XPkeywords not being updated.
 707 ==> 421521 - Wrong EXIF photograph properties shown when there is no EXIF data at all.
 708 ==> 421646 - Impossible to add new tag.
-709 ==> 
+709 ==> 418806 - digikam:colorlabel in xmp sidecar files not compatible with external programs.
+710 ==> 421693 - Digikam only read xmp:Label during first import then prioritizes its digiKam:ColorLabel over the xmp:Label.
+711 ==> 421712 - Sidebar text turns white or disappear.
+712 ==> 
