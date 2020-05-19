@@ -438,11 +438,11 @@ QList<NamespaceEntry>& AdvancedMetadataTab::getCurrentContainer()
 
     if (currentIndex >= d->metadataTypeSize)
     {
-        return d->container.getWriteMapping(QString::fromUtf8(d->metadataType->currentData().toByteArray()));
+        return d->container.getWriteMapping(d->metadataType->currentData().toString());
     }
     else
     {
-        return d->container.getReadMapping(QString::fromUtf8(d->metadataType->currentData().toByteArray()));
+        return d->container.getReadMapping(d->metadataType->currentData().toString());
     }
 }
 
