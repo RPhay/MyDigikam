@@ -33,6 +33,7 @@
 #include <QMenu>
 #include <QAction>
 #include <QIcon>
+#include <QDesktopServices>
 #include <QApplication>
 #include <QPointer>
 
@@ -185,13 +186,19 @@ void TableView::slotItemActivated(const QModelIndex& tableViewIndex)
 
     if (qApp->queryKeyboardModifiers() != Qt::MetaModifier)
     {
-        if (ApplicationSettings::instance()->getItemLeftClickAction() == ApplicationSettings::ShowPreview)
+        int leftClickAction = ApplicationSettings::instance()->getItemLeftClickAction();
+
+        if      (leftClickAction == ApplicationSettings::ShowPreview)
         {
             emit signalPreviewRequested(info);
         }
-        else
+        else if (leftClickAction == ApplicationSettings::StartEditor)
         {
             d->imageViewUtilities->openInfos(info, allItemInfos(), currentAlbum());
+        }
+        else
+        {
+            QDesktopServices::openUrl(info.fileUrl());
         }
     }
     else

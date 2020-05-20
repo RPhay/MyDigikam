@@ -26,6 +26,7 @@
 
 // Qt includes
 
+#include <QDesktopServices>
 #include <QPointer>
 #include <QAction>
 #include <QMenu>
@@ -315,15 +316,21 @@ void ImportIconView::activated(const CamItemInfo& info, Qt::KeyboardModifiers)
         return;
     }
 
-    if (ImportSettings::instance()->getItemLeftClickAction() == ImportSettings::ShowPreview)
+    int leftClickAction = ImportSettings::instance()->getItemLeftClickAction();
+
+    if      (leftClickAction == ImportSettings::ShowPreview)
     {
         emit previewRequested(info, false);
     }
-    else
+    else if (leftClickAction == ImportSettings::StartEditor)
     {
 /*      TODO
         openFile(info);
 */
+    }
+    else
+    {
+        QDesktopServices::openUrl(info.url());
     }
 }
 

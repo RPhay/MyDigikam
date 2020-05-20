@@ -46,7 +46,8 @@ public:
     enum ItemLeftClickAction
     {
         ShowPreview = 0,
-        StartEditor
+        StartEditor,
+        OpenDefault
     };
 
 Q_SIGNALS:

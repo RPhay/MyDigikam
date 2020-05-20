@@ -502,8 +502,9 @@ SetupCamera::SetupCamera(QWidget* const parent)
 
     QLabel* const leftClickLabel = new QLabel(i18n("Thumbnail click action:"), iconViewGroup);
     d->leftClickActionComboBox   = new QComboBox(iconViewGroup);
-    d->leftClickActionComboBox->addItem(i18n("Show embedded preview"), ImportSettings::ShowPreview);
-    d->leftClickActionComboBox->addItem(i18n("Start image editor"), ImportSettings::StartEditor);
+    d->leftClickActionComboBox->addItem(i18n("Show embedded preview"),         ImportSettings::ShowPreview);
+    d->leftClickActionComboBox->addItem(i18n("Start image editor"),            ImportSettings::StartEditor);
+    d->leftClickActionComboBox->addItem(i18n("Open With Default Application"), ImportSettings::OpenDefault);
     d->leftClickActionComboBox->setToolTip(i18n("Choose what should happen when you click on a thumbnail."));
 
     d->iconViewFontSelect = new DFontSelect(i18n("Icon View font:"), panel);
