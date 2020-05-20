@@ -33,7 +33,6 @@
 #include <QMenu>
 #include <QAction>
 #include <QIcon>
-#include <QDesktopServices>
 #include <QApplication>
 #include <QPointer>
 
@@ -198,7 +197,7 @@ void TableView::slotItemActivated(const QModelIndex& tableViewIndex)
         }
         else
         {
-            QDesktopServices::openUrl(info.fileUrl());
+            d->imageViewUtilities->openInfosWithDefaultApplication(QList<ItemInfo>() << info);
         }
     }
     else
