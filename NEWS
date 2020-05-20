@@ -749,4 +749,5 @@ BUGFIXES:
 712 ==> 421791 - Single tag present in Xmp.dc.subject in XMP sidecar when multiple tags present in Xmp.lr.hierachicalSubject and database.
 713 ==> 419472 - Flatpak in distribute.kde.org is outdated.
 714 ==> 404642 - digiKam flatpak: Please include mysql driver (for using an external mysql db).
-715 ==> 
+715 ==> 421801 - Feature Request - Please Add "Open With Default Application" to "Thumbnail Click Action" in Conf > Views > Icons section.
+716 ==> 
