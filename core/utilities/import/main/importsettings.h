@@ -86,8 +86,8 @@ public:
     void setImageSeparationMode(int mode);
     int  getImageSeparationMode() const;
 
-    void setItemLeftClickAction(const ItemLeftClickAction action);
-    ItemLeftClickAction getItemLeftClickAction() const;
+    void setItemLeftClickAction(int action);
+    int  getItemLeftClickAction() const;
 
     void setDefaultIconSize(int val);
     int  getDefaultIconSize() const;

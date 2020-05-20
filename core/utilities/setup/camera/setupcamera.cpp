@@ -715,7 +715,7 @@ void SetupCamera::readSettings()
     d->iconShowCoordinatesBox->setChecked(settings->getIconShowCoordinates());
     d->iconViewFontSelect->setFont(settings->getIconViewFont());
 
-    d->leftClickActionComboBox->setCurrentIndex((int)settings->getItemLeftClickAction());
+    d->leftClickActionComboBox->setCurrentIndex(settings->getItemLeftClickAction());
 
     d->previewLoadFullImageSize->setChecked(settings->getPreviewLoadFullImageSize());
     d->previewItemsWhileDownload->setChecked(settings->getPreviewItemsWhileDownload());
@@ -806,9 +806,7 @@ void SetupCamera::applySettings()
     settings->setIconShowCoordinates(d->iconShowCoordinatesBox->isChecked());
     settings->setIconViewFont(d->iconViewFontSelect->font());
 
-    settings->setItemLeftClickAction((ImportSettings::ItemLeftClickAction)
-                                     d->leftClickActionComboBox->currentIndex());
-
+    settings->setItemLeftClickAction(d->leftClickActionComboBox->currentIndex());
     settings->setPreviewLoadFullImageSize(d->previewLoadFullImageSize->isChecked());
     settings->setPreviewItemsWhileDownload(d->previewItemsWhileDownload->isChecked());
     settings->setPreviewShowIcons(d->previewShowIcons->isChecked());

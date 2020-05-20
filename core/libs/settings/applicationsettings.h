@@ -216,8 +216,8 @@ public:
     void setImageSeparationSortOrder(int order);
     int  getImageSeparationSortOrder() const;
 
-    void setItemLeftClickAction(const ItemLeftClickAction action);
-    ItemLeftClickAction getItemLeftClickAction() const;
+    void setItemLeftClickAction(int action);
+    int  getItemLeftClickAction() const;
 
     void setIconShowName(bool val);
     bool getIconShowName() const;

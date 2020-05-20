@@ -395,8 +395,7 @@ void SetupAlbumView::applySettings()
     settings->setIconShowImageFormat(d->iconShowFormatBox->isChecked());
     settings->setIconViewFont(d->iconViewFontSelect->font());
 
-    settings->setItemLeftClickAction((ApplicationSettings::ItemLeftClickAction)
-                                     d->leftClickActionComboBox->currentIndex());
+    settings->setItemLeftClickAction(d->leftClickActionComboBox->currentIndex());
 
     PreviewSettings previewSettings;
     previewSettings.quality           = d->previewFastPreview->isChecked() ? PreviewSettings::FastPreview : PreviewSettings::HighQualityPreview;
@@ -469,7 +468,7 @@ void SetupAlbumView::readSettings()
     d->iconShowFormatBox->setChecked(settings->getIconShowImageFormat());
     d->iconViewFontSelect->setFont(settings->getIconViewFont());
 
-    d->leftClickActionComboBox->setCurrentIndex((int)settings->getItemLeftClickAction());
+    d->leftClickActionComboBox->setCurrentIndex(settings->getItemLeftClickAction());
 
     PreviewSettings previewSettings = settings->getPreviewSettings();
 
