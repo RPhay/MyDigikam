@@ -89,6 +89,23 @@ target_link_libraries(benchmark_dnndetection
 
 # -----------------------------------------------------------------------------
 
+# -----------------------------------------------------------------------------
+
+set(dnnrecognition_SRCS benchmark_dnnrecognition.cpp)
+add_executable(benchmark_dnnrecognition ${dnnrecognition_SRCS})
+
+target_link_libraries(benchmark_dnnrecognition
+
+                      digikamcore
+                      digikamgui
+                      digikamfacesengine
+                      digikamdatabase
+
+                      ${COMMON_TEST_LINK}
+)
+
+# -----------------------------------------------------------------------------
+
 set(align_SRCS align.cpp
                ${CMAKE_CURRENT_SOURCE_DIR}/../../libs/facesengine/alignment/congealing/funnelreal.cpp
 )

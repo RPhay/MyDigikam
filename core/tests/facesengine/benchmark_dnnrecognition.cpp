@@ -3,8 +3,8 @@
  * This file is a part of digiKam project
  * https://www.digikam.org
  *
- * Date        : 2020-05-13
- * Description : Testing tool for different variations in dnn face detection of face engines
+ * Date        : 2020-05-20
+ * Description : Testing tool for dnn face recognition of face engines
  *
  * Copyright (C) 2020 by Nghia Duong <minhnghiaduong997 at gmail dot com>
  *
@@ -67,7 +67,6 @@ private:
     OpenCVDNNFaceDetector* m_detector;
 
     QLabel*                m_fullImage;
-    QLabel*                m_paddedImage;
     QListWidget*           m_imageListView;
     QVBoxLayout*           m_croppedfaceLayout;
 };
@@ -87,9 +86,6 @@ MainWindow::MainWindow(const QDir &directory, QWidget *parent)
     m_fullImage = new QLabel;
     m_fullImage->setScaledContents(true);
 
-    m_paddedImage = new QLabel;
-    m_paddedImage->setScaledContents(true);
-
     QScrollArea* facesArea = new QScrollArea(this);
     m_croppedfaceLayout = new QVBoxLayout(facesArea);
     facesArea->setLayout(m_croppedfaceLayout);
@@ -105,10 +101,6 @@ MainWindow::MainWindow(const QDir &directory, QWidget *parent)
     spImage.setVerticalPolicy(QSizePolicy::Expanding);
     m_fullImage->setSizePolicy(spImage);
 
-    QSizePolicy spPadded(QSizePolicy::Preferred, QSizePolicy::Preferred);
-    spPadded.setVerticalPolicy(QSizePolicy::Expanding);
-    m_paddedImage->setSizePolicy(spPadded);
-
 
     QSizePolicy spFaces(QSizePolicy::Preferred, QSizePolicy::Preferred);
     spFaces.setVerticalPolicy(QSizePolicy::Expanding);
@@ -120,7 +112,6 @@ MainWindow::MainWindow(const QDir &directory, QWidget *parent)
 
     QHBoxLayout* processingLayout = new QHBoxLayout(imageArea);
     processingLayout->addWidget(m_fullImage);
-    processingLayout->addWidget(m_paddedImage);
     processingLayout->addWidget(facesArea);
     processingLayout->addWidget(controlPanel);
 
@@ -174,7 +165,6 @@ MainWindow::MainWindow(const QDir &directory, QWidget *parent)
 MainWindow::~MainWindow()
 {
     delete m_fullImage;
-    delete m_paddedImage;
     delete m_imageListView;
     delete m_croppedfaceLayout;
 }
@@ -211,8 +201,6 @@ void MainWindow::showCVMat(const cv::Mat& cvimage)
         QPixmap p;
         cv::cvtColor(cvimage, rgb, (-2*cvimage.channels()+10));
         p.convertFromImage(QImage(rgb.data, rgb.cols, rgb.rows, QImage::Format_RGB888));
-
-        m_paddedImage->setPixmap(p);
         //resize(cvimage.cols, cvimage.rows);
     }
 }
@@ -249,7 +237,7 @@ QList<QRectF> MainWindow::detectFaces(const QString& imagePath)
 
 
         // debug padded image
-        showCVMat(cvImage);
+        //showCVMat(cvImage);
 
         qDebug() << "(Input CV) Found " << absRects.size() << " faces, in " << elapsedDetection << "ms";
     }
@@ -338,6 +326,5 @@ int main(int argc, char* argv[])
    return app.exec();
 }
 
-#include "benchmark_dnndetection.moc"
-
+#include "benchmark_dnnrecognition.moc"
 
