@@ -6,5 +6,5 @@ Bundle must be deployed automatically on Discover Kdeapps testing source reposit
 - Repository:    https://distribute.kde.org/kdeapps.flatpakrepo
 - Discover:      https://userbase.kde.org/Discover
 
-https://imgur.com/IHxNhDT
-https://imgur.com/KWNjWBe
+[![](https://i.imgur.com/IHxNhDT.png "Settings Kdeapps testings source repository in Discovery Application")](https://imgur.com/IHxNhDT)
+[![](https://i.imgur.com/KWNjWBe.png "digiKam FlatPak bundle Properties in Discovery Application")](https://imgur.com/KWNjWBe)
