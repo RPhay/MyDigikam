@@ -751,4 +751,5 @@ BUGFIXES:
 714 ==> 404642 - digiKam flatpak: Please include mysql driver (for using an external mysql db).
 715 ==> 421801 - Feature Request - Please Add "Open With Default Application" to "Thumbnail Click Action" in Conf > Views > Icons section.
 716 ==> 388422 - DBVersion setting does not exist.
-717 ==> 
+717 ==> 421808 - Ignored directory does not clean up database.
+718 ==> 

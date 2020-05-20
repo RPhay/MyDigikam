@@ -511,7 +511,7 @@ void CollectionScanner::scanForStaleAlbums(const QList<int>& locationIdsToScan)
 
     for (it3 = albumList.constBegin() ; it3 != albumList.constEnd() ; ++it3)
     {
-        if (!locationIdsToScan.contains((*it3).albumRootId))
+        if (!locationIdsToScan.contains((*it3).albumRootId) || toBeDeleted.contains((*it3).id))
         {
             continue;
         }
@@ -542,8 +542,12 @@ void CollectionScanner::scanForStaleAlbums(const QList<int>& locationIdsToScan)
 
             if (!dirExist || d->ignoreDirectory.contains(fileInfo.fileName()))
             {
-                toBeDeleted      << (*it3).id;
-                d->scannedAlbums << (*it3).id;
+                // We have an ignored album, all sub-albums have to be ignored
+
+                QList<int> subAlbums = CoreDbAccess().db()->getAlbumAndSubalbumsForPath((*it3).albumRootId,
+                                                                                        (*it3).relativePath);
+                toBeDeleted      << subAlbums;
+                d->scannedAlbums << subAlbums;
             }
         }
     }
