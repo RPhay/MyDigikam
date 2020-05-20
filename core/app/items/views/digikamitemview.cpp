@@ -30,7 +30,6 @@
 
 // Qt includes
 
-#include <QDesktopServices>
 #include <QApplication>
 #include <QPointer>
 #include <QMenu>
@@ -451,7 +450,7 @@ void DigikamItemView::activated(const ItemInfo& info, Qt::KeyboardModifiers modi
         }
         else
         {
-            QDesktopServices::openUrl(info.fileUrl());
+            d->utilities->openInfosWithDefaultApplication(QList<ItemInfo>() << info);
         }
     }
     else
