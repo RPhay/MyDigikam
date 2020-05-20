@@ -41,8 +41,11 @@
 // lib digikam includes
 #include "opencvdnnfacedetector.h"
 #include "facedetector.h"
+#include "faceextractor.h"
+#include "facerecognizer.h"
 
 using namespace Digikam;
+using namespace RecognitionTest;
 
 class MainWindow : public QMainWindow
 {
@@ -69,6 +72,7 @@ private:
     QLabel*                m_fullImage;
     QListWidget*           m_imageListView;
     QVBoxLayout*           m_croppedfaceLayout;
+    QVBoxLayout*           m_alignedfaceLayout;
 };
 
 MainWindow::MainWindow(const QDir &directory, QWidget *parent)
@@ -86,6 +90,7 @@ MainWindow::MainWindow(const QDir &directory, QWidget *parent)
     m_fullImage = new QLabel;
     m_fullImage->setScaledContents(true);
 
+    // cropped face area
     QScrollArea* facesArea = new QScrollArea(this);
     m_croppedfaceLayout = new QVBoxLayout(facesArea);
     facesArea->setLayout(m_croppedfaceLayout);
@@ -93,6 +98,15 @@ MainWindow::MainWindow(const QDir &directory, QWidget *parent)
     facesArea->setAlignment(Qt::AlignRight);
     facesArea->setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOn);
     facesArea->setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
+
+    // aligned face area
+    QScrollArea* alignedFacesArea = new QScrollArea(this);
+    m_alignedfaceLayout = new QVBoxLayout(alignedFacesArea);
+    alignedFacesArea->setLayout(m_alignedfaceLayout);
+    alignedFacesArea->setWidgetResizable(true);
+    alignedFacesArea->setAlignment(Qt::AlignRight);
+    alignedFacesArea->setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOn);
+    alignedFacesArea->setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
 
     // TODO add control panel to adjust detection hyper parameters
     QWidget* const controlPanel = new QWidget;
@@ -106,6 +120,10 @@ MainWindow::MainWindow(const QDir &directory, QWidget *parent)
     spFaces.setVerticalPolicy(QSizePolicy::Expanding);
     facesArea->setSizePolicy(spFaces);
 
+    QSizePolicy spAlignedFaces(QSizePolicy::Preferred, QSizePolicy::Preferred);
+    spAlignedFaces.setVerticalPolicy(QSizePolicy::Expanding);
+    alignedFacesArea->setSizePolicy(spAlignedFaces);
+
     QSizePolicy spControl(QSizePolicy::Preferred, QSizePolicy::Preferred);
     spControl.setVerticalPolicy(QSizePolicy::Expanding);
     controlPanel->setSizePolicy(spControl);
@@ -113,6 +131,7 @@ MainWindow::MainWindow(const QDir &directory, QWidget *parent)
     QHBoxLayout* processingLayout = new QHBoxLayout(imageArea);
     processingLayout->addWidget(m_fullImage);
     processingLayout->addWidget(facesArea);
+    processingLayout->addWidget(alignedFacesArea);
     processingLayout->addWidget(controlPanel);
 
     // Itemlist erea
@@ -167,6 +186,7 @@ MainWindow::~MainWindow()
     delete m_fullImage;
     delete m_imageListView;
     delete m_croppedfaceLayout;
+    delete m_alignedfaceLayout;
 }
 
 void MainWindow::slotDetectFaces(const QListWidgetItem* imageItem)
@@ -177,8 +197,14 @@ void MainWindow::slotDetectFaces(const QListWidgetItem* imageItem)
     QImage imgScaled(img.scaled(416, 416, Qt::KeepAspectRatio));
 
     // clear faces layout
-    QLayoutItem *wItem;
+    QLayoutItem* wItem;
     while ((wItem = m_croppedfaceLayout->takeAt(0)) != nullptr)
+    {
+        delete wItem->widget();
+        delete wItem;
+    }
+
+    while ((wItem = m_alignedfaceLayout->takeAt(0)) != nullptr)
     {
         delete wItem->widget();
         delete wItem;
