@@ -90,7 +90,11 @@ install(FILES
 
               ${CMAKE_SOURCE_DIR}/core/libs/threadimageio/preview/previewsettings.h
               ${CMAKE_SOURCE_DIR}/core/libs/threadimageio/fileio/loadingdescription.h
+              ${CMAKE_SOURCE_DIR}/core/libs/threadimageio/fileio/loadsavethread.h
               ${CMAKE_SOURCE_DIR}/core/libs/threadimageio/thumb/thumbnailinfo.h
+              ${CMAKE_SOURCE_DIR}/core/libs/threadimageio/thumb/thumbnailloadthread.h
+              ${CMAKE_SOURCE_DIR}/core/libs/threadimageio/engine/managedloadsavethread.h
+              ${CMAKE_SOURCE_DIR}/core/libs/threads/dynamicthread.h
 
               ${CMAKE_SOURCE_DIR}/core/libs/dialogs/dmessagebox.h
               ${CMAKE_SOURCE_DIR}/core/libs/progressmanager/dhistoryview.h
