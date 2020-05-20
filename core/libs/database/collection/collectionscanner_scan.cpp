@@ -611,9 +611,7 @@ void CollectionScanner::scanForStaleAlbums(const QList<int>& locationIdsToScan)
 
 #endif
 
-                    // Make sure ignored directories are not used in renaming operations
-
-                    if (dirExist && d->ignoreDirectory.contains(fileInfo.fileName()))
+                    if (dirExist)
                     {
                         // Just set a new root/relativePath to the album. Further scanning will care for all cases or error.
 
