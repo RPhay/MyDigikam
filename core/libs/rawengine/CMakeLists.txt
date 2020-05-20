@@ -47,11 +47,16 @@ add_definitions(-DDCRAW_VERBOSE)
 # Flag used into LibRaw to be not thread-safe. Never use this mode.
 #add_definitions(-DLIBRAW_NOTHREADS)
 
+# Flags to enable extra codecs
+add_definitions(-DUSE_X3FTOOLS)
+add_definitions(-DUSE_6BY9RPI)
+
 # No need a Flag to export library symbols, as we use a static version for the unit tests.
 add_definitions(-DLIBRAW_NODLL)
 
 if(WIN32)
     add_definitions(-DLIBRAW_WIN32_DLLDEFS)
+    add_definitions(-DLIBRAW_WIN32_UNICODEPATHS)
 endif()
 
 include_directories(${CMAKE_BINARY_DIR}/core/libs/rawengine/libraw/

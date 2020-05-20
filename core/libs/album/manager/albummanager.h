@@ -816,7 +816,9 @@ private Q_SLOTS:
 
 Q_SIGNALS:
 
-    void signalFaceCountsDirty(const QMap<int, int>&, const QMap<int, int>&);
+    void signalFaceCountsDirty(const QMap<int, int>& faceCount,
+                               const QMap<int, int>& uFaceCount,
+                               const QList<int>& toUpdatedFaces);
 
     //@}
 

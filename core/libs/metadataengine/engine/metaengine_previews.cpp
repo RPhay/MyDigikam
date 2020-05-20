@@ -106,10 +106,18 @@ MetaEnginePreviews::MetaEnginePreviews(const QString& filePath)
 
     try
     {
-#ifdef Q_OS_WIN
+#if defined Q_OS_WIN && defined EXV_UNICODE_PATH
+
         Exiv2::Image::AutoPtr image = Exiv2::ImageFactory::open((const wchar_t*)filePath.utf16());
+
+#elif defined Q_OS_WIN
+
+        Exiv2::Image::AutoPtr image = Exiv2::ImageFactory::open(QFile::encodeName(filePath).constData());
+
 #else
+
         Exiv2::Image::AutoPtr image = Exiv2::ImageFactory::open(filePath.toUtf8().constData());
+
 #endif
 
 #if EXIV2_TEST_VERSION(0,27,99)

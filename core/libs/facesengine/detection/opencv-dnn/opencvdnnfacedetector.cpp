@@ -78,6 +78,7 @@ int OpenCVDNNFaceDetector::recommendedImageSizeForDetection()
     return 800;
 }
 
+// TODO prepareForDetection give different performances
 cv::Mat OpenCVDNNFaceDetector::prepareForDetection(const DImg& inputImage, cv::Size& paddedSize) const
 {
     if (inputImage.isNull() || !inputImage.size().isValid())

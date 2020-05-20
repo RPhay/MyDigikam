@@ -58,6 +58,7 @@
 #include "abstractalbummodel.h"
 #include "coredbaccess.h"
 #include "digikamapp.h"
+#include "dservicemenu.h"
 #include "dfileoperations.h"
 #include "iteminfo.h"
 #include "itemfiltermodel.h"
@@ -315,7 +316,7 @@ void ContextMenuHelper::addServicesMenu(const QList<QUrl>& selectedItems)
 
 #else // Q_OS_WIN
 
-    KService::List offers = DFileOperations::servicesForOpenWith(selectedItems);
+    KService::List offers = DServiceMenu::servicesForOpenWith(selectedItems);
 
     if (!offers.isEmpty())
     {
@@ -413,7 +414,7 @@ void ContextMenuHelper::slotOpenWith(QAction* action)
 
             if (!dlg->text().isEmpty())
             {
-                DFileOperations::runFiles(dlg->text(), list);
+                DServiceMenu::runFiles(dlg->text(), list);
             }
 
             delete dlg;
@@ -430,7 +431,7 @@ void ContextMenuHelper::slotOpenWith(QAction* action)
         service = d->servicesMap[name];
     }
 
-    DFileOperations::runFiles(service.data(), list);
+    DServiceMenu::runFiles(service.data(), list);
 
 #endif // Q_OS_WIN
 

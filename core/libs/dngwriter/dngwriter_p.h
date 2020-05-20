@@ -25,19 +25,6 @@
 
 #include "dngwriter.h"
 
-// C ansi includes
-
-extern "C"
-{
-#include <sys/stat.h>
-
-#ifndef Q_CC_MSVC
-#   include <utime.h>
-#else
-#   include <sys/utime.h>
-#endif
-}
-
 // Qt includes
 
 #include <QImage>
@@ -48,7 +35,6 @@ extern "C"
 #include <QIODevice>
 #include <QTemporaryFile>
 #include <QDateTime>
-#include <qplatformdefs.h>
 
 // Local includes
 
@@ -83,6 +69,7 @@ extern "C"
 
 #include "digikam_debug.h"
 #include "dngwriterhost.h"
+#include "dfileoperations.h"
 #include "dmetadata.h"
 
 #define CHUNK 65536

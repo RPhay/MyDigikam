@@ -31,6 +31,7 @@
 // Local includes
 
 #include "digikam_debug.h"
+#include "digikam_config.h"
 
 namespace Digikam
 {
@@ -483,7 +484,11 @@ bool DRawDecoder::Private::loadFromLibraw(const QString& filePath, QByteArray& i
     qCDebug(DIGIKAM_RAWENGINE_LOG) << filePath;
     qCDebug(DIGIKAM_RAWENGINE_LOG) << m_parent->m_decoderSettings;
 
-    int ret = raw->open_file((const char*)(QFile::encodeName(filePath)).constData());
+#ifdef Q_OS_WIN
+    int ret = raw->open_file((const wchar_t*)filePath.utf16());
+#else
+    int ret = raw->open_file(filePath.toUtf8().constData());
+#endif
 
     if (ret != LIBRAW_SUCCESS)
     {

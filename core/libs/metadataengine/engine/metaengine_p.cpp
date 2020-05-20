@@ -159,12 +159,22 @@ bool MetaEngine::Private::saveToXMPSidecar(const QFileInfo& finfo) const
     try
     {
         Exiv2::Image::AutoPtr image;
-#ifdef Q_OS_WIN
+
+#if defined Q_OS_WIN && defined EXV_UNICODE_PATH
+
         image = Exiv2::ImageFactory::create(Exiv2::ImageType::xmp,
                                             (const wchar_t*)filePath.utf16());
+
+#elif defined Q_OS_WIN
+
+        image = Exiv2::ImageFactory::create(Exiv2::ImageType::xmp,
+                                            QFile::encodeName(filePath).constData());
+
 #else
+
         image = Exiv2::ImageFactory::create(Exiv2::ImageType::xmp,
                                             filePath.toUtf8().constData());
+
 #endif
 
 #if EXIV2_TEST_VERSION(0,27,99)
@@ -270,10 +280,19 @@ bool MetaEngine::Private::saveToFile(const QFileInfo& finfo) const
     try
     {
         Exiv2::Image::AutoPtr image;
-#ifdef Q_OS_WIN
+
+#if defined Q_OS_WIN && defined EXV_UNICODE_PATH
+
         image = Exiv2::ImageFactory::open((const wchar_t*)finfo.filePath().utf16());
+
+#elif defined Q_OS_WIN
+
+        image = Exiv2::ImageFactory::open(QFile::encodeName(finfo.filePath()).constData());
+
 #else
+
         image = Exiv2::ImageFactory::open(finfo.filePath().toUtf8().constData());
+
 #endif
 
 #if EXIV2_TEST_VERSION(0,27,99)
@@ -437,17 +456,23 @@ bool MetaEngine::Private::saveOperations(const QFileInfo& finfo, Exiv2::Image::A
             // Don't touch access and modification timestamp of file.
 
 #ifdef Q_OS_WIN64
+
             struct __utimbuf64 ut;
             struct __stat64    st;
             int ret = _wstat64((const wchar_t*)filePath.utf16(), &st);
+
 #elif defined Q_OS_WIN
+
             struct _utimbuf    ut;
             struct _stat       st;
             int ret = _wstat((const wchar_t*)filePath.utf16(), &st);
+
 #else
+
             struct utimbuf     ut;
             QT_STATBUF         st;
             int ret = QT_STAT(filePath.toUtf8().constData(), &st);
+
 #endif
 
             if (ret == 0)
@@ -461,11 +486,17 @@ bool MetaEngine::Private::saveOperations(const QFileInfo& finfo, Exiv2::Image::A
             if (ret == 0)
             {
 #ifdef Q_OS_WIN64
+
                 _wutime64((const wchar_t*)filePath.utf16(), &ut);
+
 #elif defined Q_OS_WIN
+
                 _wutime((const wchar_t*)filePath.utf16(), &ut);
+
 #else
+
                 ::utime(filePath.toUtf8().constData(), &ut);
+
 #endif
             }
 

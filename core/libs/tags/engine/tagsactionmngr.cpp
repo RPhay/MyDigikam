@@ -327,10 +327,10 @@ void TagsActionMngr::slotTagActionChanged()
         ks = QKeySequence(lst.first());
     }
 
-    updateTagShortcut(tagId, ks);
+    updateTagShortcut(tagId, ks, false);
 }
 
-void TagsActionMngr::updateTagShortcut(int tagId, const QKeySequence& ks)
+void TagsActionMngr::updateTagShortcut(int tagId, const QKeySequence& ks, bool delAction)
 {
     if (!tagId)
     {
@@ -350,12 +350,12 @@ void TagsActionMngr::updateTagShortcut(int tagId, const QKeySequence& ks)
 
     if (ks.isEmpty())
     {
-        removeTagActionShortcut(tagId);
+        removeTagActionShortcut(tagId, delAction);
         tprop.removeProperties(TagPropertyName::tagKeyboardShortcut());
     }
     else
     {
-        removeTagActionShortcut(tagId);
+        removeTagActionShortcut(tagId, delAction);
         tprop.setProperty(TagPropertyName::tagKeyboardShortcut(), ks.toString());
         createTagActionShortcut(tagId);
     }
@@ -374,7 +374,7 @@ void TagsActionMngr::slotAlbumDeleted(Album* album)
     qCDebug(DIGIKAM_GENERAL_LOG) << "Delete Shortcut assigned to tag " << album->id();
 }
 
-bool TagsActionMngr::removeTagActionShortcut(int tagId)
+bool TagsActionMngr::removeTagActionShortcut(int tagId, bool delAction)
 {
     if (!d->tagsActionMap.contains(tagId))
     {
@@ -392,7 +392,10 @@ bool TagsActionMngr::removeTagActionShortcut(int tagId)
                 ac->takeAction(act);
             }
 
-            delete act;
+            if (delAction)
+            {
+                delete act;
+            }
         }
     }
 

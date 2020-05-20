@@ -105,6 +105,7 @@
 #include "editortooliface.h"
 #include "exposurecontainer.h"
 #include "dfileoperations.h"
+#include "dservicemenu.h"
 #include "filereadwritelock.h"
 #include "filesaveoptionsbox.h"
 #include "filesaveoptionsdlg.h"

@@ -53,10 +53,6 @@
 #   include <QDBusPendingCall>
 #endif
 
-// KDE includes
-
-#include <kmimetypetrader.h>
-
 // Local includes
 
 #include "digikam_debug.h"
@@ -88,8 +84,6 @@ bool DFileOperations::localFileRename(const QString& source,
 
 #ifndef Q_OS_WIN
 
-    QByteArray dstFileName = QFile::encodeName(dest);
-
     // Store old permissions:
     // Just get the current umask.
 
@@ -107,32 +101,16 @@ bool DFileOperations::localFileRename(const QString& source,
 
     QT_STATBUF stbuf;
 
-    if (QT_STAT(dstFileName.constData(), &stbuf) == 0)
+    if (QT_STAT(dest.toUtf8().constData(), &stbuf) == 0)
     {
         filePermissions = stbuf.st_mode;
     }
 
 #endif // Q_OS_WIN
 
-    QT_STATBUF st;
-
-    if (QT_STAT(QFile::encodeName(source).constData(), &st) == 0)
+    if (!ignoreSettings && !MetaEngineSettings::instance()->settings().updateFileTimeStamp)
     {
-        // See bug #329608: Restore file modification time from original file
-        // only if updateFileTimeStamp for Setup/Metadata is turned off.
-
-        if (!ignoreSettings && !MetaEngineSettings::instance()->settings().updateFileTimeStamp)
-        {
-            struct utimbuf ut;
-            ut.modtime = st.st_mtime;
-            ut.actime  = st.st_atime;
-
-            if (::utime(QFile::encodeName(orgPath).constData(), &ut) != 0)
-            {
-                qCWarning(DIGIKAM_GENERAL_LOG) << "Failed to restore modification time for file"
-                                               << dest;
-            }
-        }
+        copyModificationTime(source, orgPath);
     }
 
     // remove dest file if it exist
@@ -153,10 +131,10 @@ bool DFileOperations::localFileRename(const QString& source,
 
     // restore permissions
 
-    if (::chmod(dstFileName.constData(), filePermissions) != 0)
+    if (::chmod(dest.toUtf8().constData(), filePermissions) != 0)
     {
         qCWarning(DIGIKAM_GENERAL_LOG) << "Failed to restore file permissions for file"
-                                       << dstFileName;
+                                       << dest;
     }
 
 #endif // Q_OS_WIN
@@ -226,234 +204,6 @@ QUrl DFileOperations::getUniqueFileUrl(const QUrl& orgUrl,
     }
 
     return destUrl;
-}
-
-bool DFileOperations::runFiles(KService* const service,
-                               const QList<QUrl>& urls)
-{
-    return (runFiles(service->exec(), urls, service));
-}
-
-bool DFileOperations::runFiles(const QString& appCmd,
-                               const QList<QUrl>& urls,
-                               KService* const service)
-{
-    QRegExp split(QLatin1String(" +(?=(?:[^\"]*\"[^\"]*\")*[^\"]*$)"));
-    QStringList cmdList = appCmd.split(split, QString::SkipEmptyParts);
-    QList<QUrl> urlList = urls;
-
-    if (cmdList.isEmpty() || urlList.isEmpty())
-    {
-        return false;
-    }
-
-    if (!appCmd.contains(QLatin1String("%f"), Qt::CaseInsensitive) &&
-        !appCmd.contains(QLatin1String("%u"), Qt::CaseInsensitive) &&
-        !appCmd.contains(QLatin1String("%d"), Qt::CaseInsensitive))
-    {
-        cmdList << QLatin1String("%f");
-    }
-
-    QString exec;
-    QString name;
-    QString icon;
-    QString term;
-
-    QStringList dirs;
-    QStringList files;
-    QStringList cmdArgs;
-    QStringList termOpts;
-
-    bool useTerminal = false;
-    bool openNewRun  = false;
-
-    if (service)
-    {
-        name = service->desktopEntryName();
-        icon = service->icon();
-
-#ifdef Q_OS_LINUX
-
-        if (service->terminal())
-        {
-            termOpts = service->terminalOptions().split(split, QString::SkipEmptyParts);
-            term     = QStandardPaths::findExecutable(QLatin1String("konsole"));
-
-            if (term.isEmpty())
-            {
-                term = QStandardPaths::findExecutable(QLatin1String("xterm"));
-                termOpts.replaceInStrings(QLatin1String("--noclose"),
-                                          QLatin1String("-hold"));
-            }
-
-            useTerminal = !term.isEmpty();
-        }
-
-#endif // Q_OS_LINUX
-
-    }
-
-    QProcess* const process = new QProcess();
-    QProcessEnvironment env = adjustedEnvironmentForAppImage();
-
-    foreach (const QUrl& url, urlList)
-    {
-        dirs  << url.adjusted(QUrl::RemoveFilename).toLocalFile();
-        files << url.toLocalFile();
-    }
-
-    foreach (const QString& cmdString, cmdList)
-    {
-        QString cmd = cmdString;
-
-        if (cmd.startsWith(QLatin1Char('"')) && cmd.endsWith(QLatin1Char('"')))
-        {
-            cmd.remove(0, 1).chop(1);
-        }
-
-        if (exec.isEmpty() && cmd.contains(QLatin1Char('=')))
-        {
-            QStringList envList = cmd.split(QLatin1Char('='), QString::SkipEmptyParts);
-
-            if (envList.count() == 2)
-            {
-                env.insert(envList[0], envList[1]);
-            }
-
-            continue;
-        }
-        else if (exec.isEmpty())
-        {
-            exec = cmd;
-            continue;
-        }
-
-        if      (cmd == QLatin1String("%c"))
-        {
-            cmdArgs << name;
-        }
-        else if (cmd == QLatin1String("%i"))
-        {
-            cmdArgs << icon;
-        }
-        else if (cmd == QLatin1String("%f"))
-        {
-            cmdArgs << files.first();
-            openNewRun = true;
-        }
-        else if (cmd == QLatin1String("%F"))
-        {
-            cmdArgs << files;
-        }
-        else if (cmd == QLatin1String("%u"))
-        {
-            cmdArgs << files.first();
-            openNewRun = true;
-        }
-        else if (cmd == QLatin1String("%U"))
-        {
-            cmdArgs << files;
-        }
-        else if (cmd == QLatin1String("%d"))
-        {
-            cmdArgs << dirs.first();
-            openNewRun = true;
-        }
-        else if (cmd == QLatin1String("%D"))
-        {
-            cmdArgs << dirs;
-        }
-        else
-        {
-            cmdArgs << cmd;
-        }
-    }
-
-    process->setProcessEnvironment(env);
-
-    if (useTerminal)
-    {
-        termOpts << QLatin1String("-e") << exec << cmdArgs;
-        process->start(term, termOpts);
-    }
-    else
-    {
-        process->start(exec, cmdArgs);
-    }
-
-    bool ret = true;
-    ret     &= process->waitForStarted();
-
-    if (openNewRun)
-    {
-        urlList.removeFirst();
-
-        if (!urlList.isEmpty())
-        {
-            ret &= runFiles(appCmd, urlList, service);
-        }
-    }
-
-    return ret;
-}
-
-KService::List DFileOperations::servicesForOpenWith(const QList<QUrl>& urls)
-{
-    // This code is inspired by KonqMenuActions:
-    // kdebase/apps/lib/konq/konq_menuactions.cpp
-
-    QStringList    mimeTypes;
-    KService::List offers;
-
-    foreach (const QUrl& item, urls)
-    {
-        const QString mimeType = QMimeDatabase().mimeTypeForFile(item.toLocalFile(),
-                                                                 QMimeDatabase::MatchExtension).name();
-
-        if (!mimeTypes.contains(mimeType))
-        {
-            mimeTypes << mimeType;
-        }
-    }
-
-    if (!mimeTypes.isEmpty())
-    {
-        // Query trader
-
-        const QString firstMimeType      = mimeTypes.takeFirst();
-        const QString constraintTemplate = QLatin1String("'%1' in ServiceTypes");
-        QStringList constraints;
-
-        foreach (const QString& mimeType, mimeTypes)
-        {
-            constraints << constraintTemplate.arg(mimeType);
-        }
-
-        offers = KMimeTypeTrader::self()->query(firstMimeType,
-                                                QLatin1String("Application"),
-                                                constraints.join(QLatin1String(" and ")));
-
-        // remove duplicate service entries
-
-        QSet<QString> seenApps;
-
-        for (KService::List::iterator it = offers.begin(); it != offers.end();)
-        {
-            const QString appName((*it)->name());
-
-            if (!seenApps.contains(appName))
-            {
-                seenApps.insert(appName);
-                ++it;
-            }
-            else
-            {
-                it = offers.erase(it);
-            }
-        }
-    }
-
-    return offers;
 }
 
 void DFileOperations::openInFileManager(const QList<QUrl>& urls)
@@ -637,10 +387,8 @@ bool DFileOperations::renameFile(const QString& srcFile,
 bool DFileOperations::copyFile(const QString& srcFile,
                                const QString& dstFile)
 {
-    QT_STATBUF st;
     QString tmpFile;
 
-    int stat = QT_STAT(QFile::encodeName(srcFile).constData(), &st);
     int path = dstFile.lastIndexOf(QLatin1Char('/'));
     int dot  = dstFile.lastIndexOf(QLatin1Char('.'));
     dot      = (path > dot) ? -1 : dot;
@@ -657,20 +405,132 @@ bool DFileOperations::copyFile(const QString& srcFile,
         QFile::remove(tmpFile);
     }
 
-    if (ret && (stat == 0))
+    if (ret)
     {
-        struct utimbuf ut;
-        ut.modtime = st.st_mtime;
-        ut.actime  = st.st_atime;
-
-        if (::utime(QFile::encodeName(dstFile).constData(), &ut) != 0)
-        {
-            qCWarning(DIGIKAM_GENERAL_LOG) << "Failed to restore modification time for file"
-                                           << dstFile;
-        }
+        copyModificationTime(srcFile, dstFile);
     }
 
     return ret;
+}
+
+bool DFileOperations::copyModificationTime(const QString& srcFile,
+                                           const QString& dstFile)
+{
+#ifdef Q_OS_WIN64
+
+    struct __utimbuf64 ut;
+    struct __stat64    st;
+    int ret = _wstat64((const wchar_t*)srcFile.utf16(), &st);
+
+#elif defined Q_OS_WIN
+
+    struct _utimbuf    ut;
+    struct _stat       st;
+    int ret = _wstat((const wchar_t*)srcFile.utf16(), &st);
+
+#else
+
+    struct utimbuf     ut;
+    QT_STATBUF         st;
+    int ret = QT_STAT(srcFile.toUtf8().constData(), &st);
+
+#endif
+
+    if (ret == 0)
+    {
+        ut.modtime = st.st_mtime;
+        ut.actime  = st.st_atime;
+
+#ifdef Q_OS_WIN64
+
+        ret = _wutime64((const wchar_t*)dstFile.utf16(), &ut);
+
+#elif defined Q_OS_WIN
+
+        ret = _wutime((const wchar_t*)dstFile.utf16(), &ut);
+
+#else
+
+        ret = ::utime(dstFile.toUtf8().constData(), &ut);
+
+#endif
+    }
+
+    if (ret != 0)
+    {
+        qCWarning(DIGIKAM_GENERAL_LOG) << "Failed to restore modification time for file"
+                                       << dstFile;
+        return false;
+    }
+
+    return true;
+}
+
+bool DFileOperations::setModificationTime(const QString& srcFile,
+                                          const QDateTime& dateTime)
+{
+    int modtime;
+    QDateTime unixDate;
+    unixDate.setDate(QDate(1970, 1, 1));
+    unixDate.setTime(QTime(0, 0, 0, 0));
+
+    if (dateTime < unixDate)
+    {
+        modtime = -(dateTime.secsTo(unixDate) + (60 * 60));
+    }
+    else
+    {
+        modtime = dateTime.toTime_t();
+    }
+
+#ifdef Q_OS_WIN64
+
+    struct __utimbuf64 ut;
+    struct __stat64    st;
+    int ret = _wstat64((const wchar_t*)srcFile.utf16(), &st);
+
+#elif defined Q_OS_WIN
+
+    struct _utimbuf    ut;
+    struct _stat       st;
+    int ret = _wstat((const wchar_t*)srcFile.utf16(), &st);
+
+#else
+
+    struct utimbuf     ut;
+    QT_STATBUF         st;
+    int ret = QT_STAT(srcFile.toUtf8().constData(), &st);
+
+#endif
+
+    if (ret == 0)
+    {
+        ut.modtime = modtime;
+        ut.actime  = st.st_atime;
+
+#ifdef Q_OS_WIN64
+
+        ret        = _wutime64((const wchar_t*)srcFile.utf16(), &ut);
+
+#elif defined Q_OS_WIN
+
+        ret        = _wutime((const wchar_t*)srcFile.utf16(), &ut);
+
+#else
+
+        ret        = ::utime(srcFile.toUtf8().constData(), &ut);
+
+#endif
+    }
+
+    if (ret != 0)
+    {
+        qCWarning(DIGIKAM_GENERAL_LOG) << "Failed to set modification time for file"
+                                       << srcFile;
+        return false;
+    }
+
+    return true;
 }
 
 } // namespace Digikam

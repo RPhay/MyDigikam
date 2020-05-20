@@ -257,8 +257,8 @@ public:
     uchar*      scanLine(uint i) const;
     bool        hasAlpha()       const;
     bool        sixteenBit()     const;
-    uint        numBytes()       const;
-    uint        numPixels()      const;
+    quint64     numBytes()       const;
+    quint64     numPixels()      const;
 
     /**
      * Return the number of bytes depth of one pixel : 4 (non sixteenBit) or 8 (sixteen)
