@@ -87,10 +87,8 @@ SetupCollections::SetupCollections(QWidget* const parent)
 
     // --------------------------------------------------------
 
-    QWidget* const albumPanel      = new QWidget(tab);
-    QVBoxLayout* const albumLayout = new QVBoxLayout(albumPanel);
-    QGroupBox* const albumPathBox  = new QGroupBox(i18n("Root Album Folders"), albumPanel);
-    QVBoxLayout* const pathLayout  = new QVBoxLayout(albumPathBox);
+    QGroupBox* const albumPathBox  = new QGroupBox(i18n("Root Album Folders"), tab);
+    QVBoxLayout* const albumLayout = new QVBoxLayout(albumPathBox);
 
 #ifndef Q_OS_WIN
 
@@ -118,11 +116,11 @@ SetupCollections::SetupCollections(QWidget* const parent)
     albumPathLabel->setWordWrap(true);
 
     d->collectionView              = new SetupCollectionTreeView(albumPathBox);
-    d->collectionModel             = new SetupCollectionModel(albumPanel);
+    d->collectionModel             = new SetupCollectionModel(albumPathBox);
     d->collectionView->setModel(d->collectionModel);
 
     d->monitoringBox               = new QCheckBox(i18n("Monitor the albums for external "
-                                                        "changes (requires restart)"), albumPanel);
+                                                        "changes (requires restart)"), albumPathBox);
 
     QLabel* const monitoringNote   = new QLabel(i18n("<b>Note: Album monitoring consumes system resources and "
                                                      "can slow down digiKam. If you are using MacOS and network "
@@ -130,16 +128,14 @@ SetupCollections::SetupCollections(QWidget* const parent)
     monitoringNote->setWordWrap(true);
     monitoringNote->setFrameStyle(QFrame::StyledPanel | QFrame::Raised);
 
-    pathLayout->addWidget(albumPathLabel);
-    pathLayout->addWidget(d->collectionView);
-    pathLayout->addWidget(d->monitoringBox);
-    pathLayout->addWidget(monitoringNote);
-    pathLayout->setContentsMargins(spacing, spacing, spacing, spacing);
-    pathLayout->setSpacing(spacing);
+    albumLayout->addWidget(albumPathLabel);
+    albumLayout->addWidget(d->collectionView);
+    albumLayout->addWidget(d->monitoringBox);
+    albumLayout->addWidget(monitoringNote);
+    albumLayout->setContentsMargins(spacing, spacing, spacing, spacing);
+    albumLayout->setSpacing(spacing);
 
-    albumLayout->addWidget(albumPathBox);
-
-    tab->insertTab(Collections, albumPanel, i18nc("@title:tab", "Collection Settings"));
+    tab->insertTab(Collections, albumPathBox, i18nc("@title:tab", "Collection Settings"));
 
     // --------------------------------------------------------
 
