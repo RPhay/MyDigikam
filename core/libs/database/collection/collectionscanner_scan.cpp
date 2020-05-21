@@ -693,9 +693,7 @@ void CollectionScanner::scanAlbum(const CollectionLocation& location, const QStr
         {
             // filter with name filter
 
-            QString suffix(info.suffix().toLower());
-
-            if (!d->nameFilters.contains(suffix))
+            if (!d->nameFilters.contains(info.suffix().toLower()))
             {
                 continue;
             }
@@ -708,8 +706,8 @@ void CollectionScanner::scanAlbum(const CollectionLocation& location, const QStr
 
                 itemIdSet.remove(scanInfos.at(index).id);
 
-                bool hasSidecar = (settings.useXMPSidecar4Reading           &&
-                                   (list.contains(info.fileName() + xmpExt) ||
+                bool hasSidecar = (settings.useXMPSidecar4Reading                  &&
+                                   (list.contains(info.fileName() + xmpExt)        ||
                                     list.contains(info.completeBaseName() + xmpExt)));
 
                 scanFileNormal(info, scanInfos.at(index), hasSidecar);
