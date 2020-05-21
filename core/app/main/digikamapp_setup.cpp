@@ -755,6 +755,12 @@ void DigikamApp::setupActions()
 
     // -----------------------------------------------------------
 
+    d->scanNewItemsAction = new QAction(QIcon::fromTheme(QLatin1String("view-refresh")), i18n("Scan for new Items"), this);
+    connect(d->scanNewItemsAction, SIGNAL(triggered()), this, SLOT(slotScanNewItems()));
+    ac->addAction(QLatin1String("scan_newitems"), d->scanNewItemsAction);
+
+    // -----------------------------------------------------------
+
     QAction* const cameraAction = new QAction(i18n("Add Camera Manually..."), this);
     connect(cameraAction, SIGNAL(triggered()), this, SLOT(slotSetupCamera()));
     ac->addAction(QLatin1String("camera_add"), cameraAction);
