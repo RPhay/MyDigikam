@@ -91,12 +91,17 @@ MainWindow::MainWindow(const QDir &directory, QWidget *parent)
     m_paddedImage->setScaledContents(true);
 
     QScrollArea* facesArea = new QScrollArea(this);
-    m_croppedfaceLayout = new QVBoxLayout(facesArea);
-    facesArea->setLayout(m_croppedfaceLayout);
     facesArea->setWidgetResizable(true);
     facesArea->setAlignment(Qt::AlignRight);
     facesArea->setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOn);
     facesArea->setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
+
+    QWidget* croppedFacesWidgets = new QWidget(this);
+    m_croppedfaceLayout          = new QVBoxLayout(this);
+
+    croppedFacesWidgets->setLayout(m_croppedfaceLayout);
+    facesArea->setWidget(croppedFacesWidgets);
+
 
     // TODO add control panel to adjust detection hyper parameters
     QWidget* const controlPanel = new QWidget;
@@ -298,7 +303,7 @@ void MainWindow::extractFaces(const QImage& img, QImage& imgScaled, const QList<
 QCommandLineParser* parseOptions(const QCoreApplication& app)
 {
     QCommandLineParser* parser = new QCommandLineParser();
-    parser->addOption(QCommandLineOption(QLatin1String("data-set"), QLatin1String("Data set folder"), QLatin1String("path relative to data folder")));
+    parser->addOption(QCommandLineOption(QLatin1String("dataset"), QLatin1String("Data set folder"), QLatin1String("path relative to data folder")));
     parser->addHelpOption();
     parser->process(app);
 
@@ -315,14 +320,14 @@ int main(int argc, char* argv[])
 
    QCommandLineParser* parser = parseOptions(app);
 
-   if (! parser->isSet(QLatin1String("data-set")))
+   if (! parser->isSet(QLatin1String("dataset")))
    {
        qWarning("Data set is not set !!!");
 
        return 1;
    }
 
-   QDir dataset(parser->value(QLatin1String("data-set")));
+   QDir dataset(parser->value(QLatin1String("dataset")));
 
    MainWindow* window = new MainWindow(dataset, nullptr);
 
