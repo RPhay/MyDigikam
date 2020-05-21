@@ -75,27 +75,27 @@ SetupDatabase::SetupDatabase(QWidget* const parent)
     : QScrollArea(parent),
       d(new Private)
 {
-    const int spacing            = QApplication::style()->pixelMetric(QStyle::PM_DefaultLayoutSpacing);
+    const int spacing         = QApplication::style()->pixelMetric(QStyle::PM_DefaultLayoutSpacing);
 
-    QWidget* const settingsPanel = new QWidget(viewport());
-    setWidget(settingsPanel);
+    QWidget* const panel      = new QWidget(viewport());
+    setWidget(panel);
     setWidgetResizable(true);
 
     // --------------------------------------------------------
 
-    QVBoxLayout* settingsLayout  = new QVBoxLayout(settingsPanel);
-    d->databaseWidget            = new DatabaseSettingsWidget;
-    settingsLayout->addWidget(d->databaseWidget);
+    QVBoxLayout* const layout = new QVBoxLayout(panel);
+    d->databaseWidget         = new DatabaseSettingsWidget(panel);
+    layout->addWidget(d->databaseWidget);
 
     if (!CoreDbSchemaUpdater::isUniqueHashUpToDate())
     {
         createUpdateBox();
-        settingsLayout->addStretch(10);
-        settingsLayout->addWidget(d->updateBox);
+        layout->addStretch(10);
+        layout->addWidget(d->updateBox);
     }
 
-    settingsLayout->setContentsMargins(spacing, spacing, spacing, spacing);
-    settingsLayout->setSpacing(spacing);
+    layout->setContentsMargins(spacing, spacing, spacing, spacing);
+    layout->setSpacing(spacing);
 
     // --------------------------------------------------------
 
