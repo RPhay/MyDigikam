@@ -61,26 +61,31 @@ private Q_SLOTS:
 
 private:
 
-    void showCVMat(const cv::Mat& cvimage);
+    QLabel* showCVMat(const cv::Mat& cvimage);
     QList<QRectF> detectFaces(const QString& imagePath);
     void extractFaces(const QImage& img, QImage& imgScaled, const QList<QRectF>& faces);
 
 private:
 
     OpenCVDNNFaceDetector* m_detector;
+    FaceRecognizer*        m_recognizer;
+    FaceExtractor*         m_extractor;
 
     QLabel*                m_fullImage;
     QListWidget*           m_imageListView;
     QVBoxLayout*           m_croppedfaceLayout;
-    QVBoxLayout*           m_alignedfaceLayout;
+    QVBoxLayout*           m_preprocessedLayout;
+    QVBoxLayout*           m_alignedLayout;
 };
 
 MainWindow::MainWindow(const QDir &directory, QWidget *parent)
     : QMainWindow(parent)
 {
-    setWindowTitle(QLatin1String("Face detection Test"));
+    setWindowTitle(QLatin1String("Face recognition Test"));
 
-    m_detector = new OpenCVDNNFaceDetector(DetectorNNModel::YOLO);
+    m_detector   = new OpenCVDNNFaceDetector(DetectorNNModel::YOLO);
+    m_recognizer = new FaceRecognizer(true);
+    m_extractor  = new FaceExtractor();
 
     QWidget* const mainWidget = new QWidget(this);
 
@@ -99,10 +104,19 @@ MainWindow::MainWindow(const QDir &directory, QWidget *parent)
     facesArea->setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOn);
     facesArea->setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
 
+    // preprocessed face area
+    QScrollArea* preprocessedFacesArea = new QScrollArea(this);
+    m_preprocessedLayout = new QVBoxLayout(preprocessedFacesArea);
+    preprocessedFacesArea->setLayout(m_preprocessedLayout);
+    preprocessedFacesArea->setWidgetResizable(true);
+    preprocessedFacesArea->setAlignment(Qt::AlignRight);
+    preprocessedFacesArea->setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOn);
+    preprocessedFacesArea->setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
+
     // aligned face area
     QScrollArea* alignedFacesArea = new QScrollArea(this);
-    m_alignedfaceLayout = new QVBoxLayout(alignedFacesArea);
-    alignedFacesArea->setLayout(m_alignedfaceLayout);
+    m_alignedLayout = new QVBoxLayout(alignedFacesArea);
+    alignedFacesArea->setLayout(m_alignedLayout);
     alignedFacesArea->setWidgetResizable(true);
     alignedFacesArea->setAlignment(Qt::AlignRight);
     alignedFacesArea->setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOn);
@@ -113,24 +127,17 @@ MainWindow::MainWindow(const QDir &directory, QWidget *parent)
 
     QSizePolicy spImage(QSizePolicy::Preferred, QSizePolicy::Preferred);
     spImage.setVerticalPolicy(QSizePolicy::Expanding);
+
     m_fullImage->setSizePolicy(spImage);
-
-
-    QSizePolicy spFaces(QSizePolicy::Preferred, QSizePolicy::Preferred);
-    spFaces.setVerticalPolicy(QSizePolicy::Expanding);
-    facesArea->setSizePolicy(spFaces);
-
-    QSizePolicy spAlignedFaces(QSizePolicy::Preferred, QSizePolicy::Preferred);
-    spAlignedFaces.setVerticalPolicy(QSizePolicy::Expanding);
-    alignedFacesArea->setSizePolicy(spAlignedFaces);
-
-    QSizePolicy spControl(QSizePolicy::Preferred, QSizePolicy::Preferred);
-    spControl.setVerticalPolicy(QSizePolicy::Expanding);
-    controlPanel->setSizePolicy(spControl);
+    facesArea->setSizePolicy(spImage);
+    preprocessedFacesArea->setSizePolicy(spImage);
+    alignedFacesArea->setSizePolicy(spImage);
+    controlPanel->setSizePolicy(spImage);
 
     QHBoxLayout* processingLayout = new QHBoxLayout(imageArea);
     processingLayout->addWidget(m_fullImage);
     processingLayout->addWidget(facesArea);
+    processingLayout->addWidget(preprocessedFacesArea);
     processingLayout->addWidget(alignedFacesArea);
     processingLayout->addWidget(controlPanel);
 
@@ -183,10 +190,15 @@ MainWindow::MainWindow(const QDir &directory, QWidget *parent)
 
 MainWindow::~MainWindow()
 {
+    delete m_detector;
+    delete m_recognizer;
+    delete m_extractor;
+
     delete m_fullImage;
     delete m_imageListView;
     delete m_croppedfaceLayout;
-    delete m_alignedfaceLayout;
+    delete m_preprocessedLayout;
+    delete m_alignedLayout;
 }
 
 void MainWindow::slotDetectFaces(const QListWidgetItem* imageItem)
@@ -204,7 +216,13 @@ void MainWindow::slotDetectFaces(const QListWidgetItem* imageItem)
         delete wItem;
     }
 
-    while ((wItem = m_alignedfaceLayout->takeAt(0)) != nullptr)
+    while ((wItem = m_preprocessedLayout->takeAt(0)) != nullptr)
+    {
+        delete wItem->widget();
+        delete wItem;
+    }
+
+    while ((wItem = m_alignedLayout->takeAt(0)) != nullptr)
     {
         delete wItem->widget();
         delete wItem;
@@ -219,16 +237,22 @@ void MainWindow::slotDetectFaces(const QListWidgetItem* imageItem)
 }
 
 
-void MainWindow::showCVMat(const cv::Mat& cvimage)
+QLabel* MainWindow::showCVMat(const cv::Mat& cvimage)
 {
+    QLabel* image = nullptr;
     if(cvimage.cols*cvimage.rows != 0)
     {
         cv::Mat rgb;
         QPixmap p;
         cv::cvtColor(cvimage, rgb, (-2*cvimage.channels()+10));
         p.convertFromImage(QImage(rgb.data, rgb.cols, rgb.rows, QImage::Format_RGB888));
+
+        image = new QLabel;
+        image->setPixmap(p);
         //resize(cvimage.cols, cvimage.rows);
     }
+
+    return image;
 }
 
 QList<QRectF> MainWindow::detectFaces(const QString& imagePath)
@@ -301,17 +325,29 @@ void MainWindow::extractFaces(const QImage& img, QImage& imgScaled, const QList<
 
     foreach (const QRectF& rr, faces)
     {
-        QLabel* const label = new QLabel;
-        label->setScaledContents(false);
+        QLabel* const croppedFace = new QLabel;
+        croppedFace->setScaledContents(false);
 
         QRect rectDraw      = FaceDetector::toAbsoluteRect(rr, imgScaled.size());
-        QRect r             = FaceDetector::toAbsoluteRect(rr, img.size());
-        QImage part         = img.copy(r);
-        label->setPixmap(QPixmap::fromImage(part.scaled(qMin(img.size().width(), 100),
-                                                        qMin(img.size().width(), 100),
-                                                        Qt::KeepAspectRatio)));
-        m_croppedfaceLayout->addWidget(label);
+        QRect rect          = FaceDetector::toAbsoluteRect(rr, img.size());
+        QImage part         = img.copy(rect);
+
+        // Show cropped faces
+        croppedFace->setPixmap(QPixmap::fromImage(part.scaled(qMin(img.size().width(), 100),
+                                                              qMin(img.size().width(), 100),
+                                                              Qt::KeepAspectRatio)));
+        m_croppedfaceLayout->addWidget(croppedFace);
         painter.drawRect(rectDraw);
+
+        // Show preprocessed faces
+        cv::Mat cvPreprocessedFace = m_recognizer->prepareForRecognition(part);
+
+        m_preprocessedLayout->addWidget(showCVMat(cvPreprocessedFace));
+
+        // Show aligned faces
+        cv::Mat cvAlignedFace = m_extractor->alignFace(cvPreprocessedFace);
+
+        m_alignedLayout->addWidget(showCVMat(cvAlignedFace));
     }
 }
 

@@ -8,11 +8,12 @@
 // Local library
 
 #include "digikam_opencv.h"
+#include "digikam_export.h"
 
 namespace RecognitionTest
 {
-
-class FaceRecognizer
+// TODO remove export macro after testing
+class DIGIKAM_GUI_EXPORT FaceRecognizer
 {
 public:
 
@@ -35,6 +36,8 @@ public:
      *  If the identity cannot be recognized, returns -1.
      */
     int recognize(const cv::Mat& inputImage);
+
+
 
 private:
 

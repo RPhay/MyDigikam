@@ -103,20 +103,11 @@ MainWindow::MainWindow(const QDir &directory, QWidget *parent)
 
     QSizePolicy spImage(QSizePolicy::Preferred, QSizePolicy::Preferred);
     spImage.setVerticalPolicy(QSizePolicy::Expanding);
+
     m_fullImage->setSizePolicy(spImage);
-
-    QSizePolicy spPadded(QSizePolicy::Preferred, QSizePolicy::Preferred);
-    spPadded.setVerticalPolicy(QSizePolicy::Expanding);
-    m_paddedImage->setSizePolicy(spPadded);
-
-
-    QSizePolicy spFaces(QSizePolicy::Preferred, QSizePolicy::Preferred);
-    spFaces.setVerticalPolicy(QSizePolicy::Expanding);
-    facesArea->setSizePolicy(spFaces);
-
-    QSizePolicy spControl(QSizePolicy::Preferred, QSizePolicy::Preferred);
-    spControl.setVerticalPolicy(QSizePolicy::Expanding);
-    controlPanel->setSizePolicy(spControl);
+    m_paddedImage->setSizePolicy(spImage);
+    facesArea->setSizePolicy(spImage);
+    controlPanel->setSizePolicy(spImage);
 
     QHBoxLayout* processingLayout = new QHBoxLayout(imageArea);
     processingLayout->addWidget(m_fullImage);
@@ -173,6 +164,8 @@ MainWindow::MainWindow(const QDir &directory, QWidget *parent)
 
 MainWindow::~MainWindow()
 {
+    delete m_detector;
+
     delete m_fullImage;
     delete m_paddedImage;
     delete m_imageListView;

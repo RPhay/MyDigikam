@@ -32,18 +32,22 @@
 // Local includes
 
 #include "digikam_opencv.h"
+#include "digikam_export.h"
 
 namespace RecognitionTest
 {
 // Clone of DNNFaceExtractor
 // TODO change it back when finish
-class FaceExtractor
+// TODO remove export macro after testing
+class DIGIKAM_GUI_EXPORT FaceExtractor
 {
 
 public:
 
     explicit FaceExtractor();
     ~FaceExtractor();
+
+    cv::Mat alignFace(const cv::Mat& inputImage);
 
     void getFaceEmbedding(const cv::Mat& faceImage, std::vector<float>& vecdata);
 

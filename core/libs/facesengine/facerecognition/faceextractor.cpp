@@ -99,6 +99,11 @@ FaceExtractor::~FaceExtractor()
     delete d;
 }
 
+cv::Mat FaceExtractor::alignFace(const cv::Mat& inputImage)
+{
+    return d->preprocessor->preprocess(inputImage);
+}
+
 void FaceExtractor::getFaceEmbedding(const cv::Mat& faceImage, std::vector<float>& vecdata)
 {
     qCDebug(DIGIKAM_FACEDB_LOG) << "faceImage channels: " << faceImage.channels();
