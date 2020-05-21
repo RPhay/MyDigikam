@@ -27,7 +27,6 @@
 
 #include <QLabel>
 #include <QStyle>
-#include <QGroupBox>
 #include <QCheckBox>
 #include <QLineEdit>
 #include <QWhatsThis>
@@ -87,8 +86,8 @@ SetupCollections::SetupCollections(QWidget* const parent)
 
     // --------------------------------------------------------
 
-    QGroupBox* const albumPathBox  = new QGroupBox(i18n("Root Album Folders"), tab);
-    QVBoxLayout* const albumLayout = new QVBoxLayout(albumPathBox);
+    QWidget* const albumPanel      = new QWidget(tab);
+    QVBoxLayout* const albumLayout = new QVBoxLayout(albumPanel);
 
 #ifndef Q_OS_WIN
 
@@ -101,7 +100,7 @@ SetupCollections::SetupCollections(QWidget* const parent)
                                                      "<p>Important: You need to mount the share natively on your "
                                                      "system before to setup a remote collection.</p>"
                                                      "<p></p>"),
-                                               albumPathBox);
+                                               albumPanel);
 
 #else
 
@@ -109,18 +108,18 @@ SetupCollections::SetupCollections(QWidget* const parent)
                                                      "your images. Write access is necessary to be able "
                                                      "to edit images in these albums.</p>"
                                                      "<p></p>"),
-                                                albumPathBox);
+                                                albumPanel);
 
 #endif
 
     albumPathLabel->setWordWrap(true);
 
-    d->collectionView              = new SetupCollectionTreeView(albumPathBox);
-    d->collectionModel             = new SetupCollectionModel(albumPathBox);
+    d->collectionView              = new SetupCollectionTreeView(albumPanel);
+    d->collectionModel             = new SetupCollectionModel(albumPanel);
     d->collectionView->setModel(d->collectionModel);
 
     d->monitoringBox               = new QCheckBox(i18n("Monitor the albums for external "
-                                                        "changes (requires restart)"), albumPathBox);
+                                                        "changes (requires restart)"), albumPanel);
 
     QLabel* const monitoringNote   = new QLabel(i18n("<b>Note: Album monitoring consumes system resources and "
                                                      "can slow down digiKam. If you are using MacOS and network "
@@ -135,7 +134,7 @@ SetupCollections::SetupCollections(QWidget* const parent)
     albumLayout->setContentsMargins(spacing, spacing, spacing, spacing);
     albumLayout->setSpacing(spacing);
 
-    tab->insertTab(Collections, albumPathBox, i18nc("@title:tab", "Collection Settings"));
+    tab->insertTab(Collections, albumPanel, i18nc("@title:tab", "Root Album Folders"));
 
     // --------------------------------------------------------
 
