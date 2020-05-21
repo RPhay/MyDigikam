@@ -9,6 +9,9 @@
 
 #include "digikam_opencv.h"
 #include "digikam_export.h"
+#include "identity.h"
+
+using namespace Digikam;
 
 namespace RecognitionTest
 {
@@ -37,7 +40,18 @@ public:
      */
     int recognize(const cv::Mat& inputImage);
 
+    /**
+     * @brief findIdenity : look for an identity based on the face image
+     * @param inputImage
+     * @return
+     */
+    Identity findIdenity(const cv::Mat& inputImage);
 
+    /**
+     * @brief saveIdentity : save identity with label and face embedding
+     * @param id
+     */
+    void saveIdentity(const Identity& id);
 
 private:
 

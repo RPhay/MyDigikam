@@ -4,6 +4,8 @@
 // Qt includes
 
 #include <QElapsedTimer>
+#include <QJsonArray>
+#include <QJsonDocument>
 
 // Local includes
 
@@ -116,6 +118,32 @@ int FaceRecognizer::recognize(const cv::Mat& inputImage)
     }
 
     return predictedLabel;
+}
+
+Identity FaceRecognizer::findIdenity(const cv::Mat& inputImage)
+{
+    std::vector<float> faceEmbedding = d->extractor->getFaceEmbedding(inputImage);
+
+    // TODO: scan database for face
+
+    Identity id;
+
+    QJsonArray jsonFaceEmbedding;
+
+    for (size_t i = 0; i < faceEmbedding.size(); ++i)
+    {
+        jsonFaceEmbedding << faceEmbedding[i];
+    }
+
+    // TODO add face embedding to identity
+    id.setAttribute(QLatin1String("faceEmbedding"), QString::fromLatin1(QJsonDocument(jsonFaceEmbedding).toJson(QJsonDocument::Compact)));
+
+    return id;
+}
+
+void FaceRecognizer::saveIdentity(const Identity& id)
+{
+    // TODO save identity
 }
 
 }
