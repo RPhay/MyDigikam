@@ -498,16 +498,6 @@ void CollectionScanner::scanForStaleAlbums(const QList<int>& locationIdsToScan)
     QSet<QString> ignorePaths;
     QList<int> toBeDeleted;
 
-/*
-    // See bug #231598
-    QHash<int, CollectionLocation> albumRoots;
-
-    foreach (const CollectionLocation& location, locations)
-    {
-        albumRoots[location.id()] = location;
-    }
-*/
-
     QList<AlbumShortInfo>::const_iterator it3;
 
     for (it3 = albumList.constBegin() ; it3 != albumList.constEnd() ; ++it3)
