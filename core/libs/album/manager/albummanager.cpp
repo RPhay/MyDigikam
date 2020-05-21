@@ -53,28 +53,28 @@ AlbumManager::AlbumManager()
 
     // these operations are pretty fast, no need for long queuing
     d->scanPAlbumsTimer = new QTimer(this);
-    d->scanPAlbumsTimer->setInterval(50);
+    d->scanPAlbumsTimer->setInterval(150);
     d->scanPAlbumsTimer->setSingleShot(true);
 
     connect(d->scanPAlbumsTimer, SIGNAL(timeout()),
             this, SLOT(scanPAlbums()));
 
     d->scanTAlbumsTimer = new QTimer(this);
-    d->scanTAlbumsTimer->setInterval(50);
+    d->scanTAlbumsTimer->setInterval(150);
     d->scanTAlbumsTimer->setSingleShot(true);
 
     connect(d->scanTAlbumsTimer, SIGNAL(timeout()),
             this, SLOT(scanTAlbums()));
 
     d->scanSAlbumsTimer = new QTimer(this);
-    d->scanSAlbumsTimer->setInterval(50);
+    d->scanSAlbumsTimer->setInterval(150);
     d->scanSAlbumsTimer->setSingleShot(true);
 
     connect(d->scanSAlbumsTimer, SIGNAL(timeout()),
             this, SLOT(scanSAlbums()));
 
     d->updatePAlbumsTimer = new QTimer(this);
-    d->updatePAlbumsTimer->setInterval(50);
+    d->updatePAlbumsTimer->setInterval(150);
     d->updatePAlbumsTimer->setSingleShot(true);
 
     connect(d->updatePAlbumsTimer, SIGNAL(timeout()),

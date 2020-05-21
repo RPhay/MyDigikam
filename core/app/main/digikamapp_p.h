@@ -260,6 +260,7 @@ public:
         viewCMViewAction(nullptr),
         bqmAction(nullptr),
         maintenanceAction(nullptr),
+        scanNewItemsAction(nullptr),
         qualityAction(nullptr),
         advSearchAction(nullptr),
         addCameraSeparatorAction(nullptr),
@@ -386,6 +387,7 @@ public:
     /// Tools Actions
     QAction*                            bqmAction;
     QAction*                            maintenanceAction;
+    QAction*                            scanNewItemsAction;
     QAction*                            qualityAction;
     QAction*                            advSearchAction;
 

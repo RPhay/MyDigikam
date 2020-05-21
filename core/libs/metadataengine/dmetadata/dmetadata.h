@@ -159,8 +159,9 @@ public: // Labels helpers
     int  getItemPickLabel()                                                                                             const;
     bool setItemPickLabel(int pickId)                                                                                   const;
 
-    int  getItemColorLabel()                                                                                            const;
-    bool setItemColorLabel(int colorId)                                                                                 const;
+    int  getItemColorLabel(const DMetadataSettingsContainer& settings = DMetadataSettings::instance()->settings())      const;
+    bool setItemColorLabel(int colorId,
+                           const DMetadataSettingsContainer& settings = DMetadataSettings::instance()->settings())      const;
 
 public: // Template helpers
 

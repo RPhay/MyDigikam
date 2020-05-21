@@ -38,14 +38,6 @@ class SetupDatabase : public QScrollArea
 
 public:
 
-    enum AlbumTab
-    {
-        DbSettings = 0,
-        IgnoreDirs
-    };
-
-public:
-
     explicit SetupDatabase(QWidget* const parent = nullptr);
     virtual ~SetupDatabase();
 
@@ -60,7 +52,6 @@ private Q_SLOTS:
 
     void upgradeUniqueHashes();
     void showHashInformation();
-    void slotShowCurrentIgnoredDirectoriesSettings() const;
 
 private:
 

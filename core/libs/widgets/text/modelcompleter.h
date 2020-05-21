@@ -60,6 +60,7 @@ public:
     QAbstractItemModel* itemModel() const;
 
     void addItem(const QString& item);
+    void setList(const QStringList& list);
     QStringList items()             const;
 
 Q_SIGNALS:

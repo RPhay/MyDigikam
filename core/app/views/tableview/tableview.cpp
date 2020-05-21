@@ -185,13 +185,19 @@ void TableView::slotItemActivated(const QModelIndex& tableViewIndex)
 
     if (qApp->queryKeyboardModifiers() != Qt::MetaModifier)
     {
-        if (ApplicationSettings::instance()->getItemLeftClickAction() == ApplicationSettings::ShowPreview)
+        int leftClickAction = ApplicationSettings::instance()->getItemLeftClickAction();
+
+        if      (leftClickAction == ApplicationSettings::ShowPreview)
         {
             emit signalPreviewRequested(info);
         }
-        else
+        else if (leftClickAction == ApplicationSettings::StartEditor)
         {
             d->imageViewUtilities->openInfos(info, allItemInfos(), currentAlbum());
+        }
+        else
+        {
+            d->imageViewUtilities->openInfosWithDefaultApplication(QList<ItemInfo>() << info);
         }
     }
     else
