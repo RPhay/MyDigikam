@@ -79,9 +79,11 @@ public:
 
     enum NamespaceType
     {
-        TAGS    = 0,
-        RATING  = 1,
-        COMMENT = 2
+        TAGS       = 0,
+        RATING     = 1,
+        COMMENT    = 2,
+     // PICKLABEL  = 3,
+        COLORLABEL = 4
     };
 
 public:
@@ -123,6 +125,7 @@ public:
     static QString DM_TAG_CONTAINER();
     static QString DM_RATING_CONTAINER();
     static QString DM_COMMENT_CONTAINER();
+    static QString DM_COLORLABEL_CONTAINER();
 
 public:
 
@@ -191,6 +194,7 @@ private:
     void defaultTagValues();
     void defaultRatingValues();
     void defaultCommentValues();
+    void defaultColorLabelValues();
     void readOneGroup(KConfigGroup& group, const QString& name, QList<NamespaceEntry>& container);
     void writeOneGroup(KConfigGroup& group, const QString& name, QList<NamespaceEntry>& container)  const;
 

@@ -37,6 +37,15 @@ namespace Digikam
 
 class DIGIKAM_GUI_EXPORT SetupCollections : public QScrollArea
 {
+    Q_OBJECT
+
+public:
+
+    enum CollectionsTab
+    {
+        Collections = 0,
+        IgnoreDirs
+    };
 
 public:
 
@@ -48,6 +57,10 @@ public:
 private:
 
     void readSettings();
+
+private Q_SLOTS:
+
+    void slotShowCurrentIgnoredDirectoriesSettings() const;
 
 private:
 

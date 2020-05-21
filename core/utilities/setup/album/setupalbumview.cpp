@@ -210,8 +210,9 @@ SetupAlbumView::SetupAlbumView(QWidget* const parent)
 
     QLabel* leftClickLabel     = new QLabel(i18n("Thumbnail click action:"), iwpanel);
     d->leftClickActionComboBox = new QComboBox(iwpanel);
-    d->leftClickActionComboBox->addItem(i18n("Show preview"),       ApplicationSettings::ShowPreview);
-    d->leftClickActionComboBox->addItem(i18n("Start image editor"), ApplicationSettings::StartEditor);
+    d->leftClickActionComboBox->addItem(i18n("Show preview"),                  ApplicationSettings::ShowPreview);
+    d->leftClickActionComboBox->addItem(i18n("Start image editor"),            ApplicationSettings::StartEditor);
+    d->leftClickActionComboBox->addItem(i18n("Open With Default Application"), ApplicationSettings::OpenDefault);
     d->leftClickActionComboBox->setToolTip(i18n("Choose what should happen when you click on a thumbnail."));
 
     d->iconViewFontSelect      = new DFontSelect(i18n("Icon View font:"), iwpanel);
@@ -394,8 +395,7 @@ void SetupAlbumView::applySettings()
     settings->setIconShowImageFormat(d->iconShowFormatBox->isChecked());
     settings->setIconViewFont(d->iconViewFontSelect->font());
 
-    settings->setItemLeftClickAction((ApplicationSettings::ItemLeftClickAction)
-                                     d->leftClickActionComboBox->currentIndex());
+    settings->setItemLeftClickAction(d->leftClickActionComboBox->currentIndex());
 
     PreviewSettings previewSettings;
     previewSettings.quality           = d->previewFastPreview->isChecked() ? PreviewSettings::FastPreview : PreviewSettings::HighQualityPreview;
@@ -468,7 +468,7 @@ void SetupAlbumView::readSettings()
     d->iconShowFormatBox->setChecked(settings->getIconShowImageFormat());
     d->iconViewFontSelect->setFont(settings->getIconViewFont());
 
-    d->leftClickActionComboBox->setCurrentIndex((int)settings->getItemLeftClickAction());
+    d->leftClickActionComboBox->setCurrentIndex(settings->getItemLeftClickAction());
 
     PreviewSettings previewSettings = settings->getPreviewSettings();
 

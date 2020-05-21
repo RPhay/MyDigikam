@@ -86,7 +86,7 @@ ScanController::ScanController()
 
     d->relaxedTimer = new QTimer(this);
     d->relaxedTimer->setSingleShot(true);
-    d->relaxedTimer->setInterval(500);
+    d->relaxedTimer->setInterval(250);
 
     connect(d->relaxedTimer, &QTimer::timeout,
             this, &ScanController::slotRelaxedScanning);

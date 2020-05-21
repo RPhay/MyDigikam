@@ -141,7 +141,7 @@ public:
     int                                 imageSortOrder;
     int                                 imageSortBy;
     int                                 imageSeparationMode;
-    ImportSettings::ItemLeftClickAction itemLeftClickAction;
+    int                                 itemLeftClickAction;
 
     // Import icon-view tooltip settings
     bool                                showToolTips;
@@ -424,12 +424,12 @@ int ImportSettings::getImageSeparationMode() const
     return d->imageSeparationMode;
 }
 
-void ImportSettings::setItemLeftClickAction(const ItemLeftClickAction action)
+void ImportSettings::setItemLeftClickAction(int action)
 {
     d->itemLeftClickAction = action;
 }
 
-ImportSettings::ItemLeftClickAction ImportSettings::getItemLeftClickAction() const
+int ImportSettings::getItemLeftClickAction() const
 {
     return d->itemLeftClickAction;
 }

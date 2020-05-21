@@ -30,6 +30,7 @@
 // Qt includes
 
 #include <QPainter>
+#include <QPainterPath>
 
 // KDE includes
 

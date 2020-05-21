@@ -40,6 +40,7 @@ void DigikamApp::setupSelectToolsAction()
     actionModel->addAction(d->openTagMngrAction,          mainCategory);
     actionModel->addAction(d->bqmAction,                  mainCategory);
     actionModel->addAction(d->maintenanceAction,          mainCategory);
+    actionModel->addAction(d->scanNewItemsAction,         mainCategory);
     actionModel->addAction(d->ltAction,                   mainCategory);
     actionModel->addAction(d->advSearchAction,            mainCategory);
 
@@ -92,6 +93,7 @@ void DigikamApp::slotMaintenance()
     if (dlg->exec() == QDialog::Accepted)
     {
         d->maintenanceAction->setEnabled(false);
+        d->scanNewItemsAction->setEnabled(false);
 
         MaintenanceMngr* const mngr = new MaintenanceMngr(this);
 
@@ -102,9 +104,24 @@ void DigikamApp::slotMaintenance()
     }
 }
 
+void DigikamApp::slotScanNewItems()
+{
+    d->maintenanceAction->setEnabled(false);
+    d->scanNewItemsAction->setEnabled(false);
+
+    NewItemsFinder* const tool = new NewItemsFinder(NewItemsFinder::ScanDeferredFiles);
+
+    connect(tool, SIGNAL(signalComplete()),
+            this, SLOT(slotMaintenanceDone()));
+
+    tool->start();
+}
+
 void DigikamApp::slotMaintenanceDone()
 {
     d->maintenanceAction->setEnabled(true);
+    d->scanNewItemsAction->setEnabled(true);
+
     d->view->refreshView();
 
     if (LightTableWindow::lightTableWindowCreated())

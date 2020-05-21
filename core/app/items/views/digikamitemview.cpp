@@ -469,13 +469,19 @@ void DigikamItemView::activated(const ItemInfo& info, Qt::KeyboardModifiers modi
 
     if (modifiers != Qt::MetaModifier)
     {
-        if (ApplicationSettings::instance()->getItemLeftClickAction() == ApplicationSettings::ShowPreview)
+        int leftClickAction = ApplicationSettings::instance()->getItemLeftClickAction();
+
+        if      (leftClickAction == ApplicationSettings::ShowPreview)
         {
             emit previewRequested(info);
         }
-        else
+        else if (leftClickAction == ApplicationSettings::StartEditor)
         {
             openFile(info);
+        }
+        else
+        {
+            d->utilities->openInfosWithDefaultApplication(QList<ItemInfo>() << info);
         }
     }
     else
