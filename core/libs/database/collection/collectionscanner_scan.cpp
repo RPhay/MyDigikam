@@ -495,23 +495,14 @@ void CollectionScanner::scanForStaleAlbums(const QList<int>& locationIdsToScan)
     }
 
     QList<AlbumShortInfo> albumList = CoreDbAccess().db()->getAlbumShortInfos();
+    QSet<QString> ignorePaths;
     QList<int> toBeDeleted;
-
-/*
-    // See bug #231598
-    QHash<int, CollectionLocation> albumRoots;
-
-    foreach (const CollectionLocation& location, locations)
-    {
-        albumRoots[location.id()] = location;
-    }
-*/
 
     QList<AlbumShortInfo>::const_iterator it3;
 
     for (it3 = albumList.constBegin() ; it3 != albumList.constEnd() ; ++it3)
     {
-        if (!locationIdsToScan.contains((*it3).albumRootId) || toBeDeleted.contains((*it3).id))
+        if (!locationIdsToScan.contains((*it3).albumRootId))
         {
             continue;
         }
@@ -540,14 +531,13 @@ void CollectionScanner::scanForStaleAlbums(const QList<int>& locationIdsToScan)
             // let digikam think that ignored directories got deleted
             // (if they already exist in the database, this will delete them)
 
-            if (!dirExist || d->ignoreDirectory.contains(fileInfo.fileName()))
+            if (!dirExist                                      ||
+                ignorePaths.contains(fileInfo.path())          ||
+                d->ignoreDirectory.contains(fileInfo.fileName()))
             {
-                // We have an ignored album, all sub-albums have to be ignored
-
-                QList<int> subAlbums = CoreDbAccess().db()->getAlbumAndSubalbumsForPath((*it3).albumRootId,
-                                                                                        (*it3).relativePath);
-                toBeDeleted      << subAlbums;
-                d->scannedAlbums << subAlbums;
+                ignorePaths      << fileInfo.filePath();
+                toBeDeleted      << (*it3).id;
+                d->scannedAlbums << (*it3).id;
             }
         }
     }
@@ -703,9 +693,7 @@ void CollectionScanner::scanAlbum(const CollectionLocation& location, const QStr
         {
             // filter with name filter
 
-            QString suffix(info.suffix().toLower());
-
-            if (!d->nameFilters.contains(suffix))
+            if (!d->nameFilters.contains(info.suffix().toLower()))
             {
                 continue;
             }
@@ -718,8 +706,8 @@ void CollectionScanner::scanAlbum(const CollectionLocation& location, const QStr
 
                 itemIdSet.remove(scanInfos.at(index).id);
 
-                bool hasSidecar = (settings.useXMPSidecar4Reading           &&
-                                   (list.contains(info.fileName() + xmpExt) ||
+                bool hasSidecar = (settings.useXMPSidecar4Reading                  &&
+                                   (list.contains(info.fileName() + xmpExt)        ||
                                     list.contains(info.completeBaseName() + xmpExt)));
 
                 scanFileNormal(info, scanInfos.at(index), hasSidecar);
