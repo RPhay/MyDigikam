@@ -49,7 +49,11 @@ public:
 
     cv::Mat alignFace(const cv::Mat& inputImage);
 
-    void getFaceEmbedding(const cv::Mat& faceImage, std::vector<float>& vecdata);
+    std::vector<float> getFaceEmbedding(const cv::Mat& faceImage);
+
+    static double cosineDistance(std::vector<float> v1, std::vector<float> v2);
+
+    static double L2Distance(std::vector<float> v1, std::vector<float> v2);
 
 private:
 

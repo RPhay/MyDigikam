@@ -46,7 +46,6 @@ public:
 FaceRecognizer::FaceRecognizer(bool debug)
     : d(new Private(debug))
 {
-
 }
 
 FaceRecognizer::~FaceRecognizer()

@@ -67,6 +67,33 @@ public:
     cv::Scalar    meanValToSubtract;
 };
 
+double FaceExtractor::cosineDistance(std::vector<float> v1,
+                                     std::vector<float> v2)
+{
+    assert(v1.size() == v2.size());
+
+    double scalarProduct = std::inner_product(v1.begin(), v1.end(), v2.begin(), 0.0);
+    double normV1        = sqrt(std::inner_product(v1.begin(), v1.end(), v1.begin(), 0.0));
+    double normV2        = sqrt(std::inner_product(v2.begin(), v2.end(), v2.begin(), 0.0));
+
+    return (scalarProduct / (normV1 * normV2));
+}
+
+double FaceExtractor::L2Distance(std::vector<float> v1,
+                                 std::vector<float> v2)
+{
+    assert(v1.size() == v2.size());
+
+    double sqrDistance = 0;
+
+    for (size_t i = 0; i < v1.size(); ++i)
+    {
+        sqrDistance += pow((v1[i] - v2[i]), 2);
+    }
+
+    return sqrt(sqrDistance);
+}
+
 FaceExtractor::FaceExtractor()
     : d(new Private)
 {
@@ -104,7 +131,7 @@ cv::Mat FaceExtractor::alignFace(const cv::Mat& inputImage)
     return d->preprocessor->preprocess(inputImage);
 }
 
-void FaceExtractor::getFaceEmbedding(const cv::Mat& faceImage, std::vector<float>& vecdata)
+std::vector<float> FaceExtractor::getFaceEmbedding(const cv::Mat& faceImage)
 {
     qCDebug(DIGIKAM_FACEDB_LOG) << "faceImage channels: " << faceImage.channels();
     qCDebug(DIGIKAM_FACEDB_LOG) << "faceImage size: (" << faceImage.rows << ", " << faceImage.cols << ")\n";
@@ -137,13 +164,17 @@ void FaceExtractor::getFaceEmbedding(const cv::Mat& faceImage, std::vector<float
     qCDebug(DIGIKAM_FACEDB_LOG) << "Face descriptors size: (" << face_descriptors.rows
                                 << ", " << face_descriptors.cols << ")";
 
+    std::vector<float> faceEmbedding;
+
     for (int i = 0 ; i < face_descriptors.rows ; ++i)
     {
         for (int j = 0 ; j < face_descriptors.cols ; ++j)
         {
-            vecdata.push_back(face_descriptors.at<float>(i,j));
+            faceEmbedding.push_back(face_descriptors.at<float>(i,j));
         }
     }
+
+    return faceEmbedding;
 }
 
 } // namespace RecognitionTest
