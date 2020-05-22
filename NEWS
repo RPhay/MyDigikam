@@ -7,7 +7,8 @@ FaceManagement: New Neural Network engine based on OpenCV Deep Learning module t
 FaceManagement: Face Scan dialog contents is now simplified and embeded into left side-bar tab.
 SlideShow     : Add new shuffle mode.
 HTMLGallery   : Add new theme "Html5Responsive".
-General       : All bundles have switched to last Qt 5.14.2. Linux and MacOS use QtWebEngine instead QtWebKit.
+General       : Code compile with Qt5.15 framework.
+General       : All bundles have switched to last Qt 5.14.2 LTS. Linux and MacOS use QtWebEngine instead QtWebKit.
 General       : All bundles have switched to last KF5 5.70.0. Fix support for Gimp XCF files >= 2.10.
 General       : New FlatPak bundle processed by the KDE continuous integration stream.
 General       : Add Microsoft Visual C++ support and a Continuous Integration workflow to check code with this compiler.
@@ -753,4 +754,5 @@ BUGFIXES:
 716 ==> 388422 - DBVersion setting does not exist.
 717 ==> 421808 - Ignored directory does not clean up database.
 718 ==> 421853 - Single button to refresh collection.
-719 ==> 
+719 ==> 421817 - digiKam fails to compile with Qt 5.15.
+720 ==> 
