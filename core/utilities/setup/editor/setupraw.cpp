@@ -289,7 +289,7 @@ void SetupRaw::slotAboutRawImportPlugin()
         {
             if (raw->iid() == iid)
             {
-                QPointer<DPluginAboutDlg> dlg = new DPluginAboutDlg(dynamic_cast<DPlugin*>(raw));
+                QPointer<DPluginAboutDlg> dlg = new DPluginAboutDlg(p);
                 dlg->exec();
                 delete dlg;
             }
