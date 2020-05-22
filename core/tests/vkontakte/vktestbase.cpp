@@ -23,12 +23,16 @@
 
 #include "vktestbase.h"
 
-#include "vkontakte_vkapi.h"
+// Qt includes
 
 #include <QEventLoop>
 #include <QFile>
 #include <QTextStream>
 #include <QtTest/QTest>
+
+// Local includes
+
+#include "vkontakte_vkapi.h"
 
 #define VK_APP_ID   "2446321"
 

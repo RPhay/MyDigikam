@@ -24,9 +24,13 @@
 #ifndef DIGIKAM_VKONTAKTE_TEST_USERINFO_H
 #define DIGIKAM_VKONTAKTE_TEST_USERINFO_H
 
-#include "vktestbase.h"
+// Qt includes
 
 #include <QObject>
+
+// Local includes
+
+#include "vktestbase.h"
 
 /*
  * What is tested here:

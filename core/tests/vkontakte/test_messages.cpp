@@ -23,11 +23,15 @@
 
 #include "test_messages.h"
 
+// KDE includes
+
+#include <qtest_kde.h>
+
+// Local includes
+
 #include "vkontakte_messageslistjob.h"
 #include "vkontakte_allmessageslistjob.h"
 #include "vkontakte_discussionslistjob.h"
-
-#include <qtest_kde.h>
 
 using namespace Vkontakte;
 

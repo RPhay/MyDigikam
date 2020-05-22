@@ -23,13 +23,17 @@
 
 #include "test_photos.h"
 
+// Qt incudes
+
+#include <QtTest>
+#include <QImage>
+
+// Local includes
+
 #include "vkontakte_uploadphotosjob.h"
 #include "vkontakte_photolistjob.h"
 #include "vkontakte_photojob.h"
 #include "vkontakte_createalbumjob.h"
-
-#include <QtTest/QtTest>
-#include <QtGui/QImage>
 
 #define ALBUM1_NAME     (QStringLiteral("__album for unit testing of libkvkontakte #1"))
 

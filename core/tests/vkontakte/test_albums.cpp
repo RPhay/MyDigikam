@@ -23,12 +23,16 @@
 
 #include "test_albums.h"
 
+// Qt includes
+
+#include <QtTest>
+
+// Local includes
+
 #include "vkontakte_createalbumjob.h"
 #include "vkontakte_albumlistjob.h"
 #include "vkontakte_editalbumjob.h"
 #include "vkontakte_deletealbumjob.h"
-
-#include <QtTest/QtTest>
 
 #define ALBUM1_NAME     (QStringLiteral("__album for unit testing of libkvkontakte #1"))
 #define ALBUM2_NAME     (QStringLiteral("__album for unit testing of libkvkontakte #2"))

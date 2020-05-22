@@ -23,9 +23,13 @@
 
 #include "test_friends.h"
 
-#include "vkontakte_friendlistjob.h"
+// KDE includes
 
 #include <qtest_kde.h>
+
+// Local includes
+
+#include "vkontakte_friendlistjob.h"
 
 using namespace Vkontakte;
 

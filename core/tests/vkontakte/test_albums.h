@@ -24,12 +24,16 @@
 #ifndef DIGIKAM_VKONTAKTE_TEST_ALBUMS_H
 #define DIGIKAM_VKONTAKTE_TEST_ALBUMS_H
 
-#include "vktestbase.h"
+// Qt includes
 
 #include <QObject>
 #include <QVector>
 
-/*
+// Local includes
+
+#include "vktestbase.h"
+
+/**
  * What is tested here:
  *   class AlbumListJob
  *   class CreateAlbumJob - tested in initTestCase()

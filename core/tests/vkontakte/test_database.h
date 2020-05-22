@@ -24,11 +24,15 @@
 #ifndef DIGIKAM_VKONTAKTE_TEST_DATABASE_H
 #define DIGIKAM_VKONTAKTE_TEST_DATABASE_H
 
-#include "vktestbase.h"
+// Qt includes
 
 #include <QObject>
 
-/*
+// Local includes
+
+#include "vktestbase.h"
+
+/**
  * What is tested here:
  *   class CidsNamesJob
  */

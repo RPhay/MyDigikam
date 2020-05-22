@@ -24,12 +24,17 @@
 #ifndef DIGIKAM_VKONTAKTE_VKTESTBASE_H
 #define DIGIKAM_VKONTAKTE_VKTESTBASE_H
 
-#include "vkontakte_apppermissions.h"
+// Qt includes
 
 #include <QObject>
 #include <QVector>
 
-namespace Vkontakte {
+// Local includes
+
+#include "vkontakte_apppermissions.h"
+
+namespace Vkontakte
+{
     class VkApi;
 }
 
@@ -38,17 +43,22 @@ class VkTestBase : public QObject
     Q_OBJECT
 
 public:
+
     VkTestBase();
     virtual ~VkTestBase();
 
 protected:
+
     void authenticate(Vkontakte::AppPermissions::Value permissions);
     QString accessToken() const;
 
 private:
+
     QString getSavedToken() const;
 
-    Vkontakte::VkApi *m_vkapi;
+private:
+
+    Vkontakte::VkApi* m_vkapi;
 };
 
 #endif // DIGIKAM_VKONTAKTE_VKTESTBASE_H

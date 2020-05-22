@@ -23,9 +23,13 @@
 
 #include "test_frequentrequests.h"
 
-#include "vkontakte_userinfojob.h"
+// Qt includes
 
-#include <QtTest/QtTest>
+#include <QtTest>
+
+// Local includes
+
+#include "vkontakte_userinfojob.h"
 
 using namespace Vkontakte;
 

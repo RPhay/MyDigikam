@@ -23,12 +23,16 @@
 
 #include "test_notes.h"
 
+// KDE includes
+
+#include <qtest_kde.h>
+
+// Local includes
+
 #include "vkontakte_noteaddjob.h"
 #include "vkontakte_noteslistjob.h"
 #include "vkontakte_allnoteslistjob.h"
 #include "vkontakte_notejob.h"
-
-#include <qtest_kde.h>
 
 #define NOTE1_NAME     "__note for unit testing of libkvkontakte #1"
 #define NOTE2_NAME     "__note for unit testing of libkvkontakte #2"

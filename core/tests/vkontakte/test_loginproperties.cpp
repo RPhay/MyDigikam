@@ -23,11 +23,15 @@
 
 #include "test_loginproperties.h"
 
+// KDE includes
+
+#include <qtest_kde.h>
+
+// Local includes
+
 #include "vkontakte_getapplicationpermissionsjob.h"
 #include "vkontakte_getvariablejob.h"
 #include "vkontakte_userinfojob.h"
-
-#include <qtest_kde.h>
 
 using namespace Vkontakte;
 

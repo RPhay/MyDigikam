@@ -23,10 +23,14 @@
 
 #include "test_userinfo.h"
 
-#include "vkontakte_userinfojob.h"
+// Qt includes
 
-#include <QtTest/QtTest>
+#include <QtTest>
 #include <QList>
+
+// Local includes
+
+#include "vkontakte_userinfojob.h"
 
 using namespace Vkontakte;
 

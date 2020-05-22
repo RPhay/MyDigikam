@@ -23,9 +23,13 @@
 
 #include "test_database.h"
 
-#include "vkontakte_cidsnamesjob.h"
+// KDE includes
 
 #include <qtest_kde.h>
+
+// Local includes
+
+#include "vkontakte_cidsnamesjob.h"
 
 using namespace Vkontakte;
 

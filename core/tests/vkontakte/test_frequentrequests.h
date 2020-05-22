@@ -24,11 +24,15 @@
 #ifndef DIGIKAM_VKONTAKTE_TEST_FREQUENTREQUESTS_H
 #define DIGIKAM_VKONTAKTE_TEST_FREQUENTREQUESTS_H
 
-#include "vktestbase.h"
+// Qt includes
 
 #include <QObject>
 
-/*
+// Local includes
+
+#include "vktestbase.h"
+
+/**
  * Here we verify that everything works if several requests are sent
  * at a frequency of more than 3 requests per second.
  */
