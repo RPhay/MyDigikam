@@ -23,7 +23,7 @@
 
 #include "vkontakte_noteslistjob.h"
 
-#include <QtCore/QVariant>
+#include <QVariant>
 #include <qjson/qobjecthelper.h>
 
 namespace Vkontakte

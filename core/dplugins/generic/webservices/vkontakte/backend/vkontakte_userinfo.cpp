@@ -24,7 +24,7 @@
 #include "vkontakte_userinfo.h"
 #include "vkontakte_util.h"
 
-#include <QtCore/QStringList>
+#include <QStringList>
 
 namespace Vkontakte
 {

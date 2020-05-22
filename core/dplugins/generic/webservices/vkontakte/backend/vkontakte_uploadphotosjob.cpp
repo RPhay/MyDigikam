@@ -26,7 +26,7 @@
 #include "vkontakte_photopostjob.h"
 #include "vkontakte_savephotojob.h"
 
-#include <QtCore/QDebug>
+#include <QDebug>
 
 namespace Vkontakte
 {

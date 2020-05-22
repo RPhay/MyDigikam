@@ -24,7 +24,7 @@
 #include "vkontakte_messageinfo.h"
 #include "vkontakte_util.h"
 
-#include <QtCore/QRegExp>
+#include <QRegExp>
 
 namespace Vkontakte
 {

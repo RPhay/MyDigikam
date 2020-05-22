@@ -24,13 +24,13 @@
 #include "vkontakte_photopostjob.h"
 
 #include <KIO/Job>
-#include <KLocalizedString>
+#include <klocalizedstring.h>
 
-#include <QtCore/QFile>
-#include <QtCore/QFileInfo>
-#include <QtCore/QMimeDatabase>
-#include <QtCore/QMimeType>
-#include <QtCore/QJsonDocument>
+#include <QFile>
+#include <QFileInfo>
+#include <QMimeDatabase>
+#include <QMimeType>
+#include <QJsonDocument>
 #include <QtNetwork/QNetworkAccessManager>
 #include <QtNetwork/QNetworkReply>
 #include <QtNetwork/QHttpMultiPart>
@@ -173,7 +173,7 @@ void PhotoPostJob::parseNetworkResponse(QNetworkReply *reply)
         // A communication error has occurred
         setError(reply->error());
         setErrorText(KIO::buildErrorString(error(), QString()));
-//         kWarning() << "Network error: " << reply->errorString();
+//         qCWarning(DIGIKAM_WEBSERVICES_LOG) << "Network error: " << reply->errorString();
     }
     else
     {

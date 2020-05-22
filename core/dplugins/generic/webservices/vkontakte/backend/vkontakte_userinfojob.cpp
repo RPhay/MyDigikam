@@ -24,7 +24,7 @@
 #include "vkontakte_userinfojob.h"
 #include "vkontakte_util.h"
 
-#include <QtCore/QJsonArray>
+#include <QJsonArray>
 
 namespace Vkontakte
 {

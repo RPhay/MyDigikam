@@ -26,7 +26,7 @@
 #include "vkontakte_userinfojob.h"
 
 #include <QtTest/QtTest>
-#include <QtCore/QList>
+#include <QList>
 
 using namespace Vkontakte;
 

@@ -24,7 +24,7 @@
 #ifndef DIGIKAM_VKONTAKTE_GETINFOJOB_H
 #define DIGIKAM_VKONTAKTE_GETINFOJOB_H
 
-#include <QtCore/QVariantMap>
+#include <QVariantMap>
 
 #include "vkontakte_jobs.h"
 

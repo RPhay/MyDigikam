@@ -24,8 +24,8 @@
 
 #include "vkontakte_util.h"
 
-#include <QtCore/QString>
-#include <QtCore/QMap>
+#include <QString>
+#include <QMap>
 
 // KDateTime unixTimeToKDateTime(const QString &unixTime)
 // {

@@ -42,7 +42,7 @@
 #include <QProgressBar>
 #include <QDialogButtonBox>
 
-#include <KLocalizedString>
+#include <klocalizedstring.h>
 
 #include "vkontakte_util.h"
 

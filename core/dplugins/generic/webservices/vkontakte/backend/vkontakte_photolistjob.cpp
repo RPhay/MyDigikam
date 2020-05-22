@@ -24,7 +24,7 @@
 #include "vkontakte_photolistjob.h"
 #include "vkontakte_util.h"
 
-#include <QtCore/QJsonArray>
+#include <QJsonArray>
 
 namespace Vkontakte
 {

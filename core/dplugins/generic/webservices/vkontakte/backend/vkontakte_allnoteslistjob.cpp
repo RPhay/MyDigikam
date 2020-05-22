@@ -23,8 +23,8 @@
 
 #include "vkontakte_allnoteslistjob.h"
 
-#include <KDebug>
-#include <KLocalizedString>
+#include "digikam_debug.h"
+#include <klocalizedstring.h>
 
 namespace Vkontakte
 {
@@ -75,7 +75,7 @@ void AllNotesListJob::jobFinished(KJob *kjob)
     if (job->error()) {
         setError(job->error());
         setErrorText(job->errorText());
-        kWarning() << "Job error: " << job->errorString();
+        qCWarning(DIGIKAM_WEBSERVICES_LOG) << "Job error: " << job->errorString();
         return;
     }
 
@@ -93,7 +93,7 @@ void AllNotesListJob::jobFinished(KJob *kjob)
         doKill();
         setError(KJob::UserDefinedError + 1);
         setErrorText(i18n("The number of notes has changed between requests."));
-        kWarning() << "Job error: " << job->errorString();
+        qCWarning(DIGIKAM_WEBSERVICES_LOG) << "Job error: " << job->errorString();
         emitResult();
         return;
     }

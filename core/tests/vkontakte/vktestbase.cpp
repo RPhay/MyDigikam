@@ -25,9 +25,9 @@
 
 #include "vkontakte_vkapi.h"
 
-#include <QtCore/QEventLoop>
-#include <QtCore/QFile>
-#include <QtCore/QTextStream>
+#include <QEventLoop>
+#include <QFile>
+#include <QTextStream>
 #include <QtTest/QTest>
 
 #define VK_APP_ID   "2446321"

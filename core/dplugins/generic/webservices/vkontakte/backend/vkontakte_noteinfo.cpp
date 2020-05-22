@@ -24,7 +24,7 @@
 #include "vkontakte_noteinfo.h"
 #include "vkontakte_util.h"
 
-#include <KLocalizedString>
+#include <klocalizedstring.h>
 
 namespace Vkontakte
 {
