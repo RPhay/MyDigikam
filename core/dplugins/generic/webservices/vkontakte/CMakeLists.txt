@@ -14,8 +14,60 @@ include_directories($<TARGET_PROPERTY:Qt5::Widgets,INTERFACE_INCLUDE_DIRECTORIES
 
                     $<TARGET_PROPERTY:KF5::ConfigCore,INTERFACE_INCLUDE_DIRECTORIES>
                     $<TARGET_PROPERTY:KF5::I18n,INTERFACE_INCLUDE_DIRECTORIES>
-                    $<TARGET_PROPERTY:KF5::Vkontakte,INTERFACE_INCLUDE_DIRECTORIES>
+                    $<TARGET_PROPERTY:KF5::KIOCore,INTERFACE_INCLUDE_DIRECTORIES>
 )
+
+if(ENABLE_QWEBENGINE)
+    include_directories($<TARGET_PROPERTY:Qt5::WebEngineWidgets,INTERFACE_INCLUDE_DIRECTORIES>)
+else()
+    include_directories($<TARGET_PROPERTY:Qt5::WebKitWidgets,INTERFACE_INCLUDE_DIRECTORIES>)
+endif()
+
+# --------------------------------------------------------------------------------
+
+set(libvkontakte_SRCS
+    ${CMAKE_CURRENT_SOURCE_DIR}/backend/vkontakte_vkapi.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/backend/vkontakte_getapplicationpermissionsjob.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/backend/vkontakte_authenticationdialog.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/backend/vkontakte_util.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/backend/vkontakte_jobs.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/backend/vkontakte_userinfo.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/backend/vkontakte_userinfojob.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/backend/vkontakte_albuminfo.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/backend/vkontakte_albumlistjob.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/backend/vkontakte_createalbumjob.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/backend/vkontakte_editalbumjob.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/backend/vkontakte_deletealbumjob.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/backend/vkontakte_photoinfo.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/backend/vkontakte_photolistjob.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/backend/vkontakte_photojob.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/backend/vkontakte_getphotouploadserverjob.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/backend/vkontakte_photopostjob.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/backend/vkontakte_savephotojob.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/backend/vkontakte_uploadphotosjob.cpp
+
+#    ${CMAKE_CURRENT_SOURCE_DIR}/backend/vkontakte_friendlistjob.cpp
+#    ${CMAKE_CURRENT_SOURCE_DIR}/backend/vkontakte_noteslistjob.cpp
+#    ${CMAKE_CURRENT_SOURCE_DIR}/backend/vkontakte_allnoteslistjob.cpp
+#    ${CMAKE_CURRENT_SOURCE_DIR}/backend/vkontakte_notejob.cpp
+#    ${CMAKE_CURRENT_SOURCE_DIR}/backend/vkontakte_getvariablejob.cpp
+#    ${CMAKE_CURRENT_SOURCE_DIR}/backend/vkontakte_userinfofulljob.cpp
+#    ${CMAKE_CURRENT_SOURCE_DIR}/backend/vkontakte_cidsnamesjob.cpp
+#    ${CMAKE_CURRENT_SOURCE_DIR}/backend/vkontakte_getinfojob.cpp
+#    ${CMAKE_CURRENT_SOURCE_DIR}/backend/vkontakte_messageinfo.cpp
+#    ${CMAKE_CURRENT_SOURCE_DIR}/backend/vkontakte_discussionslistjob.cpp
+#    ${CMAKE_CURRENT_SOURCE_DIR}/backend/vkontakte_messageslistjob.cpp
+#    ${CMAKE_CURRENT_SOURCE_DIR}/backend/vkontakte_noteinfo.cpp
+#    ${CMAKE_CURRENT_SOURCE_DIR}/backend/vkontakte_noteaddjob.cpp
+#    ${CMAKE_CURRENT_SOURCE_DIR}/backend/vkontakte_allmessageslistjob.cpp
+#    ${CMAKE_CURRENT_SOURCE_DIR}/backend/vkontakte_groupinfo.cpp
+#    ${CMAKE_CURRENT_SOURCE_DIR}/backend/vkontakte_grouplistjob.cpp
+)
+
+# For unit-tests and plugin
+add_library(vkontaktebackend STATIC ${libvkontakte_SRCS})
+
+# --------------------------------------------------------------------------------
 
 set(vkontakteplugin_SRCS
     ${CMAKE_CURRENT_SOURCE_DIR}/vkalbumchooser.cpp
@@ -27,5 +79,5 @@ set(vkontakteplugin_SRCS
 
 DIGIKAM_ADD_GENERIC_PLUGIN(NAME    VKontakte
                            SOURCES ${vkontakteplugin_SRCS}
-                           DEPENDS KF5::Vkontakte
+                           DEPENDS vkontaktebackend ${QWEB_BACKEND} KF5::KIOCore
 )
