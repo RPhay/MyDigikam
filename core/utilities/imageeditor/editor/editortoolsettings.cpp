@@ -449,9 +449,14 @@ void EditorToolSettings::slotAboutPlugin()
     {
         if (d->tool->plugin())
         {
-            QPointer<DPluginAboutDlg> dlg = new DPluginAboutDlg(dynamic_cast<DPlugin*>(d->tool->plugin()));
-            dlg->exec();
-            delete dlg;
+            DPlugin* const p = dynamic_cast<DPlugin*>(d->tool->plugin());
+
+            if (p)
+            {
+                QPointer<DPluginAboutDlg> dlg = new DPluginAboutDlg(p);
+                dlg->exec();
+                delete dlg;
+            }
         }
     }
 }
