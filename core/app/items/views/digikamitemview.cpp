@@ -222,7 +222,7 @@ void DigikamItemView::dragDropSort(const ItemInfo& pick, const QList<ItemInfo>& 
         return;
     }
 
-    ItemInfoList infoList = allItemInfos(false);
+    ItemInfoList infoList  = allItemInfos(false);
     qlonglong counter      = pick.manualOrder();
     bool order             = (ApplicationSettings::instance()->
                                 getImageSorting() == Qt::AscendingOrder);
@@ -235,7 +235,7 @@ void DigikamItemView::dragDropSort(const ItemInfo& pick, const QList<ItemInfo>& 
 
     foreach (ItemInfo info, infoList)
     {
-        if (!found && info.id() == pick.id())
+        if      (!found && info.id() == pick.id())
         {
             foreach (ItemInfo dropInfo, infos)
             {
