@@ -64,7 +64,7 @@ bool DMetadata::getItemTagsPath(QStringList& tagsPath,
                     const std::string myStr = currentNamespace.toStdString();
                     const char* nameSpace   = myStr.data();
 
-                    switch(currentOpts)
+                    switch (currentOpts)
                     {
                         case NamespaceEntry::TAG_XMPBAG:
                             tagsPath = getXmpTagStringBag(nameSpace, false);
@@ -197,61 +197,64 @@ bool DMetadata::setItemTagsPath(const QStringList& tagsPath, const DMetadataSett
             newList.append(tagPath.split(QLatin1Char('/')).last());
         }
 
-        switch(entry.subspace)
+        switch (entry.subspace)
         {
             case NamespaceEntry::XMP:
-
-                if (supportXmp())
+            {
+                if (!supportXmp())
                 {
-                    if (entry.tagPaths != NamespaceEntry::TAG)
+                    continue;
+                }
+
+                if (entry.tagPaths != NamespaceEntry::TAG)
+                {
+                    newList = tagsPath;
+
+                    if (entry.separator.compare(QLatin1String("/")) != 0)
                     {
-                        newList = tagsPath;
-
-                        if (entry.separator.compare(QLatin1String("/")) != 0)
-                        {
-                            newList = newList.replaceInStrings(QLatin1String("/"), entry.separator);
-                        }
-                    }
-
-                    const std::string myStr = entry.namespaceName.toStdString();
-                    const char* nameSpace   = myStr.data();
-
-                    switch(entry.specialOpts)
-                    {
-                        case NamespaceEntry::TAG_XMPSEQ:
-
-                            if (!setXmpTagStringSeq(nameSpace, newList))
-                            {
-                                qCDebug(DIGIKAM_METAENGINE_LOG) << "Setting image paths failed" << nameSpace;
-                                return false;
-                            }
-
-                            break;
-
-                        case NamespaceEntry::TAG_XMPBAG:
-
-                            if (!setXmpTagStringBag(nameSpace, newList))
-                            {
-                                qCDebug(DIGIKAM_METAENGINE_LOG) << "Setting image paths failed" << nameSpace;
-                                return false;
-                            }
-
-                            break;
-
-                        case NamespaceEntry::TAG_ACDSEE:
-
-                            if (!setACDSeeTagsPath(newList))
-                            {
-                                qCDebug(DIGIKAM_METAENGINE_LOG) << "Setting image paths failed" << nameSpace;
-                                return false;
-                            }
-
-                        default:
-                            break;
+                        newList = newList.replaceInStrings(QLatin1String("/"), entry.separator);
                     }
                 }
 
+                const std::string myStr = entry.namespaceName.toStdString();
+                const char* nameSpace   = myStr.data();
+
+                switch (entry.specialOpts)
+                {
+                    case NamespaceEntry::TAG_XMPSEQ:
+
+                        if (!setXmpTagStringSeq(nameSpace, newList))
+                        {
+                            qCDebug(DIGIKAM_METAENGINE_LOG) << "Setting image paths failed" << nameSpace;
+                            return false;
+                        }
+
+                        break;
+
+                    case NamespaceEntry::TAG_XMPBAG:
+
+                        if (!setXmpTagStringBag(nameSpace, newList))
+                        {
+                            qCDebug(DIGIKAM_METAENGINE_LOG) << "Setting image paths failed" << nameSpace;
+                            return false;
+                        }
+
+                        break;
+
+                    case NamespaceEntry::TAG_ACDSEE:
+
+                        if (!setACDSeeTagsPath(newList))
+                        {
+                            qCDebug(DIGIKAM_METAENGINE_LOG) << "Setting image paths failed" << nameSpace;
+                            return false;
+                        }
+
+                    default:
+                        break;
+                }
+
                 break;
+            }
 
             case NamespaceEntry::IPTC:
 

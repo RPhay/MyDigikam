@@ -22,10 +22,10 @@ ExternalProject_Add(ext_imagemagick
                                              --without-threads
                                              --without-perl
                                              --without-x
+                                             --without-heic
                                              --disable-docs
                                              --disable-static
                                              --with-magick-plus-plus
-                                             --with-heic
                                              --with-flif
                                              --with-jbig
                                              --with-webp

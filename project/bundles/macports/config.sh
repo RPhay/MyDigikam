@@ -52,7 +52,7 @@ MP_BUILDTEMP=~/mptemp
 ########################################################################
 
 # URL to git repository to checkout digiKam source code
-DK_GITURL="git@invent.kde.org:kde/digikam.git"
+DK_GITURL="git@invent.kde.org:graphics/digikam.git"
 
 # digiKam tarball information
 DK_URL="http://download.kde.org/stable/digikam"

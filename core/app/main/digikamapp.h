@@ -175,6 +175,7 @@ private:
 private Q_SLOTS:
 
     void slotMaintenance();
+    void slotScanNewItems();
     void slotMaintenanceDone();
     void slotDatabaseMigration();
 //@}

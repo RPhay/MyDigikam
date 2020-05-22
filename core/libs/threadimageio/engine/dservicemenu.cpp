@@ -253,7 +253,7 @@ KService::List DServiceMenu::servicesForOpenWith(const QList<QUrl>& urls)
 
         QSet<QString> seenApps;
 
-        for (KService::List::iterator it = offers.begin(); it != offers.end();)
+        for (KService::List::iterator it = offers.begin() ; it != offers.end() ; )
         {
             const QString appName((*it)->name());
 

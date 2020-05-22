@@ -311,7 +311,7 @@ public:
     int                                          imageSorting;
     int                                          imageSeparationMode;
     int                                          imageSeparationSortOrder;
-    ApplicationSettings::ItemLeftClickAction     itemLeftClickAction;
+    int                                          itemLeftClickAction;
 
     /// Baloo settings
     bool                                         syncToDigikam;

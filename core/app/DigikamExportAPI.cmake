@@ -32,6 +32,7 @@ install(FILES
               ${CMAKE_SOURCE_DIR}/core/libs/dplugins/core/dplugingeneric.h
               ${CMAKE_SOURCE_DIR}/core/libs/dplugins/core/dpluginrawimport.h
               ${CMAKE_SOURCE_DIR}/core/libs/dplugins/setup/dpluginloader.h
+              ${CMAKE_SOURCE_DIR}/core/libs/dplugins/setup/dpluginaboutdlg.h
               ${CMAKE_SOURCE_DIR}/core/libs/dplugins/iface/dinfointerface.h
               ${CMAKE_SOURCE_DIR}/core/libs/dplugins/iface/dmetainfoiface.h
               ${CMAKE_SOURCE_DIR}/core/libs/dplugins/widgets/ditemslist.h
@@ -89,7 +90,11 @@ install(FILES
 
               ${CMAKE_SOURCE_DIR}/core/libs/threadimageio/preview/previewsettings.h
               ${CMAKE_SOURCE_DIR}/core/libs/threadimageio/fileio/loadingdescription.h
+              ${CMAKE_SOURCE_DIR}/core/libs/threadimageio/fileio/loadsavethread.h
               ${CMAKE_SOURCE_DIR}/core/libs/threadimageio/thumb/thumbnailinfo.h
+              ${CMAKE_SOURCE_DIR}/core/libs/threadimageio/thumb/thumbnailloadthread.h
+              ${CMAKE_SOURCE_DIR}/core/libs/threadimageio/engine/managedloadsavethread.h
+              ${CMAKE_SOURCE_DIR}/core/libs/threads/dynamicthread.h
 
               ${CMAKE_SOURCE_DIR}/core/libs/dialogs/dmessagebox.h
               ${CMAKE_SOURCE_DIR}/core/libs/progressmanager/dhistoryview.h

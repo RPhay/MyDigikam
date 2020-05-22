@@ -24,7 +24,7 @@ APP_IMG_DIR="/digikam.appdir"
 ########################################################################
 
 # URL to git repository to checkout digiKam source code
-DK_GITURL="git@invent.kde.org:kde/digikam.git"
+DK_GITURL="git@invent.kde.org:graphics/digikam.git"
 
 # Location to build source code.
 DK_BUILDTEMP=$BUILDING_DIR/dktemp
