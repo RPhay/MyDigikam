@@ -25,7 +25,7 @@
 
 #include <klocalizedstring.h>
 
-#include <QDebug>
+#include "digikam_debug.h"
 #include <QJsonValue>
 
 namespace Vkontakte
@@ -53,7 +53,7 @@ void EditAlbumJob::handleData(const QJsonValue &data)
     {
         setError(1);
         setErrorText(i18n("Failed to edit album"));
-        qWarning() << "Failed to edit album";
+        qCWarning(DIGIKAM_WEBSERVICES_LOG) << "Failed to edit album";
     }
 }
 

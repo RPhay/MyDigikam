@@ -25,7 +25,7 @@
 #include "vkontakte_uploadphotosjob.h"
 
 #include <QVariant>
-#include <QDebug>
+#include "digikam_debug.h"
 
 namespace Vkontakte
 {
@@ -71,7 +71,7 @@ void GetPhotoUploadServerJob::prepareQueryItems()
             {
                 setError(KJob::UserDefinedError);
                 setErrorText(QStringLiteral("m_aid not set."));
-                qWarning() << "m_aid not set.";
+                qCWarning(DIGIKAM_WEBSERVICES_LOG) << "m_aid not set.";
             }
 
             addQueryItem(QStringLiteral("aid"), QString::number(m_aid));
@@ -88,7 +88,7 @@ void GetPhotoUploadServerJob::prepareQueryItems()
             {
                 setError(KJob::UserDefinedError);
                 setErrorText(QStringLiteral("Only one parameter m_uid or m_gid should be set."));
-                qWarning() << "Only one parameter m_uid or m_gid should be set.";
+                qCWarning(DIGIKAM_WEBSERVICES_LOG) << "Only one parameter m_uid or m_gid should be set.";
             }
 
             if (m_uid != -1)
@@ -100,7 +100,7 @@ void GetPhotoUploadServerJob::prepareQueryItems()
         default:
             setError(KJob::UserDefinedError);
             setErrorText(QStringLiteral("Unsupported m_dest."));
-            qWarning() << "Unsupported m_dest.";
+            qCWarning(DIGIKAM_WEBSERVICES_LOG) << "Unsupported m_dest.";
             break;
     }
 }

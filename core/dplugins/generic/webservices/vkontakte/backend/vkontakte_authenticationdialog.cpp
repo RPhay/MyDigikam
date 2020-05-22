@@ -44,6 +44,7 @@
 
 #include <klocalizedstring.h>
 
+#include "digikam_debug.h"
 #include "vkontakte_util.h"
 
 namespace Vkontakte
@@ -161,7 +162,7 @@ void AuthenticationDialog::start()
         .arg(d->appId)
         .arg(appPermissionsToStringList(d->permissions).join(QStringLiteral(",")))
         .arg(d->displayMode);
-    qDebug() << "Showing" << url;
+    qCDebug(DIGIKAM_WEBSERVICES_LOG) << "Showing" << url;
     d->webView->setUrl(QUrl::fromUserInput(url));
     show();
 }
@@ -179,7 +180,7 @@ void AuthenticationDialog::showErrorDialog()
 
 void AuthenticationDialog::urlChanged(const QUrl &url)
 {
-    qDebug() << "Navigating to" << url;
+    qCDebug(DIGIKAM_WEBSERVICES_LOG) << "Navigating to" << url;
     if (url.host() == QStringLiteral("oauth.vk.com") && url.path() == QStringLiteral("/blank.html"))
     {
         const QUrlQuery query(url);

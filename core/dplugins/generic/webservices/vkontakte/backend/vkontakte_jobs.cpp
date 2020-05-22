@@ -27,7 +27,7 @@
 #include <KIO/Job>
 #include <KIO/StoredTransferJob>
 
-#include <QDebug>
+#include "digikam_debug.h"
 #include <QTimer>
 #include <QUrl>
 #include <QUrlQuery>
@@ -83,7 +83,7 @@ bool VkontakteJob::handleError(const QJsonValue &data)
 
     if (data.isUndefined())
     {
-        qWarning() << "Response from server has unexpected format";
+        qCWarning(DIGIKAM_WEBSERVICES_LOG) << "Response from server has unexpected format";
     }
     else
     {
@@ -92,7 +92,7 @@ bool VkontakteJob::handleError(const QJsonValue &data)
         error_code = errorMap[QStringLiteral("error_code")].toInt();
         error_msg = errorMap[QStringLiteral("error_msg")].toString();
 
-        qWarning() << "An error of type" << error_code << "occurred:" << error_msg;
+        qCWarning(DIGIKAM_WEBSERVICES_LOG) << "An error of type" << error_code << "occurred:" << error_msg;
     }
 
     if (error_code == 6)
@@ -150,7 +150,7 @@ KJob* VkontakteJob::createHttpJob()
     // TODO: Save KUrl to reuse it if we need to retry the HTTP request
 //     m_url = url;
 
-    qDebug() << "Starting request" << url;
+    qCDebug(DIGIKAM_WEBSERVICES_LOG) << "Starting request" << url;
 
     if (m_httpPost)
         return KIO::storedHttpPost(QByteArray(), url, KIO::HideProgressInfo);
@@ -181,17 +181,17 @@ void VkontakteJob::jobFinished(KJob *kjob)
         setErrorText(i18n(
             "Internal error: No valid instance of KIO::StoredTransferJob "
             "passed into VkontakteJob::jobFinished."));
-        qWarning() << "KIO::StoredTransferJob is null";
+        qCWarning(DIGIKAM_WEBSERVICES_LOG) << "KIO::StoredTransferJob is null";
     }
     else if (job->error())
     {
         setError(job->error());
         setErrorText(KIO::buildErrorString(error(), job->errorText()));
-        qWarning() << "Job error:" << job->errorString();
+        qCWarning(DIGIKAM_WEBSERVICES_LOG) << "Job error:" << job->errorString();
     }
     else
     {
-        qDebug() << "Got data:" << job->data();
+        qCDebug(DIGIKAM_WEBSERVICES_LOG) << "Got data:" << job->data();
 
         QJsonParseError parseError;
         QJsonDocument data = QJsonDocument::fromJson(job->data(), &parseError);
@@ -218,8 +218,8 @@ void VkontakteJob::jobFinished(KJob *kjob)
         }
         else
         {
-            qWarning() << "Unable to parse JSON data:" << parseError.errorString();
-            qDebug() << "Received data:" << job->data();
+            qCWarning(DIGIKAM_WEBSERVICES_LOG) << "Unable to parse JSON data:" << parseError.errorString();
+            qCDebug(DIGIKAM_WEBSERVICES_LOG) << "Received data:" << job->data();
             setError(KJob::UserDefinedError);
             setErrorText(
                 i18n("Unable to parse data returned by the VKontakte server: %1",

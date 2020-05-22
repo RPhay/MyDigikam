@@ -22,7 +22,7 @@
 
 #include <KIO/Job>
 
-#include <QDebug>
+#include "digikam_debug.h"
 #include <QtGui/QImage>
 
 namespace Vkontakte
@@ -48,7 +48,7 @@ PhotoJob::~PhotoJob()
 
 void PhotoJob::start()
 {
-    qDebug() << "Starting photo download" << d->url;
+    qCDebug(DIGIKAM_WEBSERVICES_LOG) << "Starting photo download" << d->url;
     KIO::StoredTransferJob * const job = KIO::storedGet(d->url, KIO::Reload, KIO::HideProgressInfo);
     m_job = job;
     connect(job, SIGNAL(result(KJob*)), this, SLOT(jobFinished(KJob*)));
@@ -63,7 +63,7 @@ void PhotoJob::jobFinished(KJob *kjob)
     {
         setError(job->error());
         setErrorText(KIO::buildErrorString(error(), job->errorText()));
-        qWarning() << "Job error:" << job->errorString();
+        qCWarning(DIGIKAM_WEBSERVICES_LOG) << "Job error:" << job->errorString();
     }
     else
         d->photo = QImage::fromData(job->data());

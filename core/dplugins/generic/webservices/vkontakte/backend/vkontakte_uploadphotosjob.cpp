@@ -26,7 +26,7 @@
 #include "vkontakte_photopostjob.h"
 #include "vkontakte_savephotojob.h"
 
-#include <QDebug>
+#include "digikam_debug.h"
 
 namespace Vkontakte
 {
@@ -98,7 +98,7 @@ void UploadPhotosJob::serverJobFinished(KJob *kjob)
     if (job->error()) {
         setError(job->error());
         setErrorText(job->errorText());
-        qWarning() << "Job error: " << job->errorString();
+        qCWarning(DIGIKAM_WEBSERVICES_LOG) << "Job error: " << job->errorString();
 
         // It is safe to emit result here because there are no jobs
         // running in parallel with this one.
@@ -160,7 +160,7 @@ void UploadPhotosJob::postJobFinished(KJob *kjob)
     if (job->error()) {
         setError(job->error());
         setErrorText(job->errorText());
-        qWarning() << "Job error: " << job->errorString();
+        qCWarning(DIGIKAM_WEBSERVICES_LOG) << "Job error: " << job->errorString();
     }
 
     if (error()) {
@@ -201,7 +201,7 @@ void UploadPhotosJob::saveJobFinished(KJob *kjob)
     if (job->error()) {
         setError(job->error());
         setErrorText(job->errorText());
-        qWarning() << "Job error: " << job->errorString();
+        qCWarning(DIGIKAM_WEBSERVICES_LOG) << "Job error: " << job->errorString();
     }
 
     if (error()) {
