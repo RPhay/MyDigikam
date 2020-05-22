@@ -264,7 +264,7 @@ bool HTMLWidget::eventFilter(QObject* object, QEvent* event)
         {
             QMouseEvent* const e = dynamic_cast<QMouseEvent*>(event);
 
-            if (e && s->currentMouseMode == MouseModeRegionSelection)
+            if (e && (s->currentMouseMode == MouseModeRegionSelection))
             {
                 if (!d->firstSelectionPoint.hasCoordinates())
                 {
