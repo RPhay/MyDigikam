@@ -21,13 +21,13 @@
  *
  * ============================================================ */
 
-#ifndef VKTESTBASE_H
-#define VKTESTBASE_H
+#ifndef DIGIKAM_VKONTAKTE_VKTESTBASE_H
+#define DIGIKAM_VKONTAKTE_VKTESTBASE_H
 
 #include "vkontakte_apppermissions.h"
 
-#include <QtCore/QObject>
-#include <QtCore/QVector>
+#include <QObject>
+#include <QVector>
 
 namespace Vkontakte {
     class VkApi;
@@ -51,4 +51,4 @@ private:
     Vkontakte::VkApi *m_vkapi;
 };
 
-#endif // VKTESTBASE_H
+#endif // DIGIKAM_VKONTAKTE_VKTESTBASE_H

@@ -21,16 +21,14 @@
  *
  * ============================================================ */
 
-#ifndef VKAPI_H
-#define VKAPI_H
+#ifndef DIGIKAM_VKONTAKTE_VKAPI_H
+#define DIGIKAM_VKONTAKTE_VKAPI_H
 
 #include "vkontakte_apppermissions.h"
 
 // Qt includes
 
 #include <QObject>
-
-
 
 class QWidget;
 class KJob;
@@ -96,4 +94,4 @@ private:
 
 } // namespace Vkontakte
 
-#endif // VKAPI_H
+#endif // DIGIKAM_VKONTAKTE_VKAPI_H

@@ -22,9 +22,8 @@
  *
  * ============================================================ */
 
-// This file is not available to library's users
-#ifndef UTIL_H
-#define UTIL_H
+#ifndef DIGIKAM_VKONTAKTE_UTIL_H
+#define DIGIKAM_VKONTAKTE_UTIL_H
 
 #include "vkontakte_apppermissions.h"
 
@@ -39,4 +38,4 @@ QStringList appPermissionsToStringList(Vkontakte::AppPermissions::Value permissi
 
 QString joinIntegers(const QList<int> &list);
 
-#endif // UTIL_H
+#endif // DIGIKAM_VKONTAKTE_UTIL_H

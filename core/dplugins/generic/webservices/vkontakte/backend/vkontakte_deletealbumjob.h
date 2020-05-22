@@ -21,8 +21,8 @@
  *
  * ============================================================ */
 
-#ifndef DELETEALBUMJOB_H
-#define DELETEALBUMJOB_H
+#ifndef DIGIKAM_VKONTAKTE_DELETEALBUMJOB_H
+#define DIGIKAM_VKONTAKTE_DELETEALBUMJOB_H
 
 #include "vkontakte_jobs.h"
 
@@ -45,4 +45,4 @@ private:
 
 } /* namespace Vkontakte */
 
-#endif // DELETEALBUMJOB_H
+#endif // DIGIKAM_VKONTAKTE_DELETEALBUMJOB_H

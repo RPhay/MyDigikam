@@ -21,8 +21,8 @@
  *
  * ============================================================ */
 
-#ifndef EDITALBUMJOB_H
-#define EDITALBUMJOB_H
+#ifndef DIGIKAM_VKONTAKTE_EDITALBUMJOB_H
+#define DIGIKAM_VKONTAKTE_EDITALBUMJOB_H
 
 #include "vkontakte_jobs.h"
 #include "vkontakte_albuminfo.h"
@@ -48,4 +48,4 @@ private:
 
 } /* namespace Vkontakte */
 
-#endif // EDITALBUMJOB_H
+#endif // DIGIKAM_VKONTAKTE_EDITALBUMJOB_H

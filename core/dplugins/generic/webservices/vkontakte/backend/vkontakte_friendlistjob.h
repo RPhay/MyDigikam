@@ -21,8 +21,8 @@
  *
  * ============================================================ */
 
-#ifndef FRIENDLISTJOB_H
-#define FRIENDLISTJOB_H
+#ifndef DIGIKAM_VKONTAKTE_FRIENDLISTJOB_H
+#define DIGIKAM_VKONTAKTE_FRIENDLISTJOB_H
 
 #include "vkontakte_jobs.h"
 #include "vkontakte_userinfo.h"
@@ -50,4 +50,4 @@ private:
 
 } /* namespace Vkontakte */
 
-#endif // FRIENDLISTJOB_H
+#endif // DIGIKAM_VKONTAKTE_FRIENDLISTJOB_H

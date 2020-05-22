@@ -21,11 +21,11 @@
  *
  * ============================================================ */
 
-#ifndef PHOTOPOSTJOB_H
-#define PHOTOPOSTJOB_H
+#ifndef DIGIKAM_VKONTAKTE_PHOTOPOSTJOB_H
+#define DIGIKAM_VKONTAKTE_PHOTOPOSTJOB_H
 
-#include <QtCore/QStringList>
-#include <QtCore/QVariantMap>
+#include <QStringList>
+#include <QVariantMap>
 
 #include "vkontakte_jobs.h"
 #include "vkontakte_uploadphotosjob.h"
@@ -68,4 +68,4 @@ private:
 
 } /* namespace Vkontakte */
 
-#endif // PHOTOPOSTJOB_H
+#endif // DIGIKAM_VKONTAKTE_PHOTOPOSTJOB_H

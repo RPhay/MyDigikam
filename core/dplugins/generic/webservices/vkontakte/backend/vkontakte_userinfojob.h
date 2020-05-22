@@ -21,15 +21,15 @@
  *
  * ============================================================ */
 
-#ifndef USERINFOJOB_H
-#define USERINFOJOB_H
+#ifndef DIGIKAM_VKONTAKTE_USERINFOJOB_H
+#define DIGIKAM_VKONTAKTE_USERINFOJOB_H
 
 #include "vkontakte_jobs.h"
 #include "vkontakte_userinfo.h"
 
-#include <QtCore/QStringList>
-#include <QtCore/QJsonDocument>
-#include <QtCore/QJsonObject>
+#include <QStringList>
+#include <QJsonDocument>
+#include <QJsonObject>
 
 namespace Vkontakte
 {
@@ -87,4 +87,4 @@ private:
 
 } /* namespace Vkontakte */
 
-#endif // USERINFOJOB_H
+#endif // DIGIKAM_VKONTAKTE_USERINFOJOB_H

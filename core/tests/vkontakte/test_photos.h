@@ -21,17 +21,13 @@
  *
  * ============================================================ */
 
-#ifndef TEST_PHOTOS_H
-#define TEST_PHOTOS_H
+#ifndef DIGIKAM_VKONTAKTE_TEST_PHOTOS_H
+#define DIGIKAM_VKONTAKTE_TEST_PHOTOS_H
 
 #include "vktestbase.h"
 
-#include <QtCore/QObject>
-#include <QtCore/QVector>
-
-namespace KIPIVkontaktePlugin {
-    class VkApi;
-}
+#include <QObject>
+#include <QVector>
 
 /*
  * What is tested here:
@@ -57,4 +53,4 @@ private:
     int m_photoId;
 };
 
-#endif // TEST_PHOTOS_H
+#endif // DIGIKAM_VKONTAKTE_TEST_PHOTOS_H

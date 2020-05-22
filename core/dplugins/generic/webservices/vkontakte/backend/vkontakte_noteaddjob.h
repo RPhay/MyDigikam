@@ -21,8 +21,8 @@
  *
  * ============================================================ */
 
-#ifndef NOTEADDJOB_H
-#define NOTEADDJOB_H
+#ifndef DIGIKAM_VKONTAKTE_NOTEADDJOB_H
+#define DIGIKAM_VKONTAKTE_NOTEADDJOB_H
 
 #include "vkontakte_jobs.h"
 #include "vkontakte_noteinfo.h"
@@ -52,4 +52,4 @@ private:
 
 } /* namespace Vkontakte */
 
-#endif // NOTEADDJOB_H
+#endif // DIGIKAM_VKONTAKTE_NOTEADDJOB_H

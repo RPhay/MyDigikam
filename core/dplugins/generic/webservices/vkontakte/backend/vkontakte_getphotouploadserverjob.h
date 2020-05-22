@@ -21,8 +21,8 @@
  *
  * ============================================================ */
 
-#ifndef GETPHOTOUPLOADSERVERJOB_H
-#define GETPHOTOUPLOADSERVERJOB_H
+#ifndef DIGIKAM_VKONTAKTE_GETPHOTOUPLOADSERVERJOB_H
+#define DIGIKAM_VKONTAKTE_GETPHOTOUPLOADSERVERJOB_H
 
 #include "vkontakte_jobs.h"
 #include "vkontakte_uploadphotosjob.h"
@@ -58,4 +58,4 @@ private:
 
 } /* namespace Vkontakte */
 
-#endif // GETPHOTOUPLOADSERVERJOB_H
+#endif // DIGIKAM_VKONTAKTE_GETPHOTOUPLOADSERVERJOB_H

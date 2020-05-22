@@ -21,10 +21,10 @@
  *
  * ============================================================ */
 
-#ifndef GETVARIABLEJOB_H
-#define GETVARIABLEJOB_H
+#ifndef DIGIKAM_VKONTAKTE_GETVARIABLEJOB_H
+#define DIGIKAM_VKONTAKTE_GETVARIABLEJOB_H
 
-#include <QtCore/QVariant>
+#include <QVariant>
 
 #include "vkontakte_jobs.h"
 
@@ -53,4 +53,4 @@ private:
 
 } /* namespace Vkontakte */
 
-#endif // GETVARIABLEJOB_H
+#endif // DIGIKAM_VKONTAKTE_GETVARIABLEJOB_H

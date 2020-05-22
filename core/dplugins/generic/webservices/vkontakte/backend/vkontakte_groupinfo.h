@@ -21,13 +21,10 @@
  *
  * ============================================================ */
 
-#ifndef GROUPINFO_H
-#define GROUPINFO_H
+#ifndef DIGIKAM_VKONTAKTE_GROUPINFO_H
+#define DIGIKAM_VKONTAKTE_GROUPINFO_H
 
-#include <QtCore/QSharedPointer>
-//#include <KDE/KDateTime>
-
-
+#include <QSharedPointer>
 
 namespace Vkontakte
 {
@@ -87,4 +84,4 @@ typedef QSharedPointer<GroupInfo> GroupInfoPtr;
 
 } /* namespace Vkontakte */
 
-#endif // GROUPINFO_H
+#endif // DIGIKAM_VKONTAKTE_GROUPINFO_H

@@ -21,16 +21,12 @@
  *
  * ============================================================ */
 
-#ifndef TEST_FRIENDS_H
-#define TEST_FRIENDS_H
+#ifndef DIGIKAM_VKONTAKTE_TEST_FRIENDS_H
+#define DIGIKAM_VKONTAKTE_TEST_FRIENDS_H
 
 #include "vktestbase.h"
 
-#include <QtCore/QObject>
-
-namespace KIPIVkontaktePlugin {
-    class VkApi;
-}
+#include <QObject>
 
 /*
  * What is tested here:
@@ -49,4 +45,4 @@ private Q_SLOTS:
     void testFriendListJob();
 };
 
-#endif // TEST_FRIENDS_H
+#endif // DIGIKAM_VKONTAKTE_TEST_FRIENDS_H

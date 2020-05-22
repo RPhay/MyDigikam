@@ -21,8 +21,8 @@
  *
  * ============================================================ */
 
-#ifndef GROUPLISTJOB_H
-#define GROUPLISTJOB_H
+#ifndef DIGIKAM_VKONTAKTE_GROUPLISTJOB_H
+#define DIGIKAM_VKONTAKTE_GROUPLISTJOB_H
 
 #include "vkontakte_jobs.h"
 #include "vkontakte_groupinfo.h"
@@ -53,4 +53,4 @@ private:
 
 } /* namespace Vkontakte */
 
-#endif // GROUPLISTJOB_H
+#endif // DIGIKAM_VKONTAKTE_GROUPLISTJOB_H

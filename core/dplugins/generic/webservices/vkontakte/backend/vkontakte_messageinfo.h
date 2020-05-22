@@ -21,8 +21,8 @@
  *
  * ============================================================ */
 
-#ifndef MESSAGEINFO_H
-#define MESSAGEINFO_H
+#ifndef DIGIKAM_VKONTAKTE_MESSAGEINFO_H
+#define DIGIKAM_VKONTAKTE_MESSAGEINFO_H
 
 #include <KDE/KDateTime>
 
@@ -121,4 +121,4 @@ public:
 
 } /* namespace Vkontakte */
 
-#endif // MESSAGEINFO_H
+#endif // DIGIKAM_VKONTAKTE_MESSAGEINFO_H

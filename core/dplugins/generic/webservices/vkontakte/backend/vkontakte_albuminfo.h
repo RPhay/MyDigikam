@@ -21,11 +21,11 @@
  *
  * ============================================================ */
 
-#ifndef ALBUMINFO_H
-#define ALBUMINFO_H
+#ifndef DIGIKAM_VKONTAKTE_ALBUMINFO_H
+#define DIGIKAM_VKONTAKTE_ALBUMINFO_H
 
-#include <QtCore/QJsonObject>
-#include <QtCore/QSharedDataPointer>
+#include <QJsonObject>
+#include <QSharedDataPointer>
 
 namespace Vkontakte
 {
@@ -71,4 +71,4 @@ private:
 
 } /* namespace Vkontakte */
 
-#endif // ALBUMINFO_H
+#endif // DIGIKAM_VKONTAKTE_ALBUMINFO_H

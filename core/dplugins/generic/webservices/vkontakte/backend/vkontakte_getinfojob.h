@@ -21,8 +21,8 @@
  *
  * ============================================================ */
 
-#ifndef GETINFOJOB_H
-#define GETINFOJOB_H
+#ifndef DIGIKAM_VKONTAKTE_GETINFOJOB_H
+#define DIGIKAM_VKONTAKTE_GETINFOJOB_H
 
 #include <QtCore/QVariantMap>
 
@@ -50,4 +50,4 @@ private:
 
 } /* namespace Vkontakte */
 
-#endif // GETINFOJOB_H
+#endif // DIGIKAM_VKONTAKTE_GETINFOJOB_H

@@ -21,8 +21,8 @@
  *
  * ============================================================ */
 
-#ifndef CREATEALBUMJOB_H
-#define CREATEALBUMJOB_H
+#ifndef DIGIKAM_VKONTAKTE_CREATEALBUMJOB_H
+#define DIGIKAM_VKONTAKTE_CREATEALBUMJOB_H
 
 #include "vkontakte_jobs.h"
 #include "vkontakte_albuminfo.h"
@@ -52,4 +52,4 @@ private:
 
 } /* namespace Vkontakte */
 
-#endif // CREATEALBUMJOB_H
+#endif // DIGIKAM_VKONTAKTE_CREATEALBUMJOB_H

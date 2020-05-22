@@ -21,8 +21,8 @@
  *
  * ============================================================ */
 
-#ifndef VKONTAKTEJOBS_H
-#define VKONTAKTEJOBS_H
+#ifndef DIGIKAM_VKONTAKTE_JOBS_H
+#define DIGIKAM_VKONTAKTE_JOBS_H
 
 #include <KJob>
 
@@ -100,4 +100,4 @@ private Q_SLOTS:
 
 } /* namespace Vkontakte */
 
-#endif // VKONTAKTEJOBS_H
+#endif // DIGIKAM_VKONTAKTE_JOBS_H

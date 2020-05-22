@@ -21,15 +21,15 @@
  *
  * ============================================================ */
 
-#ifndef SAVEPHOTOJOB_H
-#define SAVEPHOTOJOB_H
+#ifndef DIGIKAM_VKONTAKTE_SAVEPHOTOJOB_H
+#define DIGIKAM_VKONTAKTE_SAVEPHOTOJOB_H
 
 #include "vkontakte_jobs.h"
 #include "vkontakte_photoinfo.h"
 #include "vkontakte_uploadphotosjob.h"
 
-#include <QtCore/QVariantMap>
-#include <QtCore/QJsonValue>
+#include <QVariantMap>
+#include <QJsonValue>
 
 namespace Vkontakte
 {
@@ -58,4 +58,4 @@ private:
 
 } /* namespace Vkontakte */
 
-#endif // SAVEPHOTOJOB_H
+#endif // DIGIKAM_VKONTAKTE_SAVEPHOTOJOB_H

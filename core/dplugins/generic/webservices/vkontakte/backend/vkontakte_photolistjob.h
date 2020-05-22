@@ -21,8 +21,8 @@
  *
  * ============================================================ */
 
-#ifndef PHOTOLISTJOB_H
-#define PHOTOLISTJOB_H
+#ifndef DIGIKAM_VKONTAKTE_PHOTOLISTJOB_H
+#define DIGIKAM_VKONTAKTE_PHOTOLISTJOB_H
 
 #include "vkontakte_jobs.h"
 #include "vkontakte_photoinfo.h"
@@ -54,4 +54,4 @@ private:
 
 } /* namespace Vkontakte */
 
-#endif // PHOTOLISTJOB_H
+#endif // DIGIKAM_VKONTAKTE_PHOTOLISTJOB_H

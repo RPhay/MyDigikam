@@ -21,10 +21,10 @@
  *
  * ============================================================ */
 
-#ifndef CIDSNAMESJOB_H
-#define CIDSNAMESJOB_H
+#ifndef DIGIKAM_VKONTAKTE_CIDSNAMESJOB_H
+#define DIGIKAM_VKONTAKTE_CIDSNAMESJOB_H
 
-#include <QtCore/QMap>
+#include <QMap>
 
 #include "vkontakte_jobs.h"
 #include "vkontakte_qintlist.h"
@@ -52,4 +52,4 @@ private:
 
 } /* namespace Vkontakte */
 
-#endif // CIDSNAMESJOB_H
+#endif // DIGIKAM_VKONTAKTE_CIDSNAMESJOB_H

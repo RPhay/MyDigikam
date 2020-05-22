@@ -21,8 +21,8 @@
  *
  * ============================================================ */
 
-#ifndef GETAPPLICATIONPERMISSIONSJOB_H
-#define GETAPPLICATIONPERMISSIONSJOB_H
+#ifndef DIGIKAM_VKONTAKTE_GETAPPLICATIONPERMISSIONSJOB_H
+#define DIGIKAM_VKONTAKTE_GETAPPLICATIONPERMISSIONSJOB_H
 
 #include "vkontakte_jobs.h"
 
@@ -47,4 +47,4 @@ private:
 
 } /* namespace Vkontakte */
 
-#endif // GETAPPLICATIONPERMISSIONSJOB_H
+#endif // DIGIKAM_VKONTAKTE_GETAPPLICATIONPERMISSIONSJOB_H

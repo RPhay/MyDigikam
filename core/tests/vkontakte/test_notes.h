@@ -21,17 +21,13 @@
  *
  * ============================================================ */
 
-#ifndef TEST_NOTES_H
-#define TEST_NOTES_H
+#ifndef DIGIKAM_VKONTAKTE_TEST_NOTES_H
+#define DIGIKAM_VKONTAKTE_TEST_NOTES_H
 
 #include "vktestbase.h"
 
-#include <QtCore/QObject>
-#include <QtCore/QVector>
-
-namespace KIPIVkontaktePlugin {
-    class VkApi;
-}
+#include <QObject>
+#include <QVector>
 
 /*
  * What is tested here:
@@ -58,4 +54,4 @@ private:
     QVector<int> m_noteIds;
 };
 
-#endif // TEST_NOTES_H
+#endif // DIGIKAM_VKONTAKTE_TEST_NOTES_H

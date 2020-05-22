@@ -21,16 +21,12 @@
  *
  * ============================================================ */
 
-#ifndef TEST_DATABASE_H
-#define TEST_DATABASE_H
+#ifndef DIGIKAM_VKONTAKTE_TEST_DATABASE_H
+#define DIGIKAM_VKONTAKTE_TEST_DATABASE_H
 
 #include "vktestbase.h"
 
-#include <QtCore/QObject>
-
-namespace KIPIVkontaktePlugin {
-    class VkApi;
-}
+#include <QObject>
 
 /*
  * What is tested here:
@@ -50,4 +46,4 @@ private Q_SLOTS:
     void testCitiesById();
 };
 
-#endif // TEST_DATABASE_H
+#endif // DIGIKAM_VKONTAKTE_TEST_DATABASE_H

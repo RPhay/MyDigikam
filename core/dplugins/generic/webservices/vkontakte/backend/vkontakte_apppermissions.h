@@ -21,8 +21,8 @@
  *
  * ============================================================ */
 
-#ifndef APPPERMISSIONS_H
-#define APPPERMISSIONS_H
+#ifndef DIGIKAM_VKONTAKTE_APPPERMISSIONS_H
+#define DIGIKAM_VKONTAKTE_APPPERMISSIONS_H
 
 namespace Vkontakte
 {
@@ -88,4 +88,4 @@ inline AppPermissions::Value& operator|=(AppPermissions::Value& a, AppPermission
 } // namespace AppPermissions
 } // namespace Vkontakte
 
-#endif // APPPERMISSIONS_H
+#endif // DIGIKAM_VKONTAKTE_APPPERMISSIONS_H

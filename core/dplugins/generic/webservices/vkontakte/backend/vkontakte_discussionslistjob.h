@@ -21,8 +21,8 @@
  *
  * ============================================================ */
 
-#ifndef DISCUSSIONSLISTJOB_H
-#define DISCUSSIONSLISTJOB_H
+#ifndef DIGIKAM_VKONTAKTE_DISCUSSIONSLISTJOB_H
+#define DIGIKAM_VKONTAKTE_DISCUSSIONSLISTJOB_H
 
 #include "vkontakte_jobs.h"
 #include "vkontakte_messageinfo.h"
@@ -60,4 +60,4 @@ private:
 
 } /* namespace Vkontakte */
 
-#endif // DISCUSSIONSLISTJOB_H
+#endif // DIGIKAM_VKONTAKTE_DISCUSSIONSLISTJOB_H

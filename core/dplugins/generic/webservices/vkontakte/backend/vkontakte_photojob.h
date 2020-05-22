@@ -18,8 +18,8 @@
  * License along with this library.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-#ifndef PHOTOJOBBASE_H
-#define PHOTOJOBBASE_H
+#ifndef DIGIKAM_VKONTAKTE_PHOTOJOBBASE_H
+#define DIGIKAM_VKONTAKTE_PHOTOJOBBASE_H
 
 #include "vkontakte_jobs.h"
 #include "vkontakte_userinfo.h"
@@ -48,4 +48,4 @@ private:
 
 } /* namespace Vkontakte */
 
-#endif // PHOTOJOBBASE_H
+#endif // DIGIKAM_VKONTAKTE_PHOTOJOBBASE_H

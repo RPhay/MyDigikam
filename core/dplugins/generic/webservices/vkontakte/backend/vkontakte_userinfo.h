@@ -21,14 +21,12 @@
  *
  * ============================================================ */
 
-#ifndef USERINFO_H
-#define USERINFO_H
+#ifndef DIGIKAM_VKONTAKTE_USERINFO_H
+#define DIGIKAM_VKONTAKTE_USERINFO_H
 
-#include <QtCore/QMetaType>
-#include <QtCore/QJsonObject>
-#include <QtCore/QSharedDataPointer>
-
-
+#include <QMetaType>
+#include <QJsonObject>
+#include <QSharedDataPointer>
 
 namespace Vkontakte
 {
@@ -103,4 +101,4 @@ private:
 
 Q_DECLARE_METATYPE(Vkontakte::UserInfo)
 
-#endif // USERINFO_H
+#endif // DIGIKAM_VKONTAKTE_USERINFO_H

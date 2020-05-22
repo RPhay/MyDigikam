@@ -21,16 +21,12 @@
  *
  * ============================================================ */
 
-#ifndef TEST_USERINFO_H
-#define TEST_USERINFO_H
+#ifndef DIGIKAM_VKONTAKTE_TEST_USERINFO_H
+#define DIGIKAM_VKONTAKTE_TEST_USERINFO_H
 
 #include "vktestbase.h"
 
-#include <QtCore/QObject>
-
-namespace KIPIVkontaktePlugin {
-    class VkApi;
-}
+#include <QObject>
 
 /*
  * What is tested here:
@@ -50,4 +46,4 @@ private Q_SLOTS:
     void testSelfUserInfoJob();
 };
 
-#endif // TEST_USERINFO_H
+#endif // DIGIKAM_VKONTAKTE_TEST_USERINFO_H

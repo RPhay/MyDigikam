@@ -21,14 +21,12 @@
  *
  * ============================================================ */
 
-#ifndef PHOTOINFO_H
-#define PHOTOINFO_H
+#ifndef DIGIKAM_VKONTAKTE_PHOTOINFO_H
+#define DIGIKAM_VKONTAKTE_PHOTOINFO_H
 
-#include <QtCore/QJsonObject>
-#include <QtCore/QSharedDataPointer>
-#include <QtCore/QUrl>
-
-
+#include <QJsonObject>
+#include <QSharedDataPointer>
+#include <QUrl>
 
 namespace Vkontakte
 {
@@ -61,4 +59,4 @@ private:
 
 } /* namespace Vkontakte */
 
-#endif // PHOTOINFO_H
+#endif // DIGIKAM_VKONTAKTE_PHOTOINFO_H

@@ -21,17 +21,13 @@
  *
  * ============================================================ */
 
-#ifndef TEST_MESSAGES_H
-#define TEST_MESSAGES_H
+#ifndef DIGIKAM_VKONTAKTE_TEST_MESSAGES_H
+#define DIGIKAM_VKONTAKTE_TEST_MESSAGES_H
 
 #include "vktestbase.h"
 
-#include <QtCore/QObject>
-#include <QtCore/QVector>
-
-namespace KIPIVkontaktePlugin {
-    class VkApi;
-}
+#include <QObject>
+#include <QVector>
 
 /*
  * What is tested here:
@@ -54,4 +50,4 @@ private Q_SLOTS:
     void testDiscussionsListJob();
 };
 
-#endif // TEST_MESSAGES_H
+#endif // DIGIKAM_VKONTAKTE_TEST_MESSAGES_H

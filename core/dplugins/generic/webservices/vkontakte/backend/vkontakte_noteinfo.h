@@ -21,12 +21,10 @@
  *
  * ============================================================ */
 
-#ifndef NOTEINFO_H
-#define NOTEINFO_H
+#ifndef DIGIKAM_VKONTAKTE_NOTEINFO_H
+#define DIGIKAM_VKONTAKTE_NOTEINFO_H
 
 #include <KDE/KDateTime>
-
-
 
 namespace Vkontakte
 {
@@ -127,4 +125,4 @@ typedef QSharedPointer<NoteInfo> NoteInfoPtr;
 
 } /* namespace Vkontakte */
 
-#endif // NOTEINFO_H
+#endif // DIGIKAM_VKONTAKTE_NOTEINFO_H

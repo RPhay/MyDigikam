@@ -21,16 +21,12 @@
  *
  * ============================================================ */
 
-#ifndef TEST_FREQUENTREQUESTS_H
-#define TEST_FREQUENTREQUESTS_H
+#ifndef DIGIKAM_VKONTAKTE_TEST_FREQUENTREQUESTS_H
+#define DIGIKAM_VKONTAKTE_TEST_FREQUENTREQUESTS_H
 
 #include "vktestbase.h"
 
-#include <QtCore/QObject>
-
-namespace KIPIVkontaktePlugin {
-    class VkApi;
-}
+#include <QObject>
 
 /*
  * Here we verify that everything works if several requests are sent
@@ -49,4 +45,4 @@ private Q_SLOTS:
     void testUserInfoJob();
 };
 
-#endif // TEST_FREQUENTREQUESTS_H
+#endif // DIGIKAM_VKONTAKTE_TEST_FREQUENTREQUESTS_H

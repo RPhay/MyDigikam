@@ -21,16 +21,12 @@
  *
  * ============================================================ */
 
-#ifndef TEST_LOGINPROPERTIES_H
-#define TEST_LOGINPROPERTIES_H
+#ifndef DIGIKAM_VKONTAKTE_TEST_LOGINPROPERTIES_H
+#define DIGIKAM_VKONTAKTE_TEST_LOGINPROPERTIES_H
 
 #include "vktestbase.h"
 
-#include <QtCore/QObject>
-
-namespace KIPIVkontaktePlugin {
-    class VkApi;
-}
+#include <QObject>
 
 /*
  * What is tested here:
@@ -51,4 +47,4 @@ private Q_SLOTS:
     void testGetVariableJob();
 };
 
-#endif // TEST_LOGINPROPERTIES_H
+#endif // DIGIKAM_VKONTAKTE_TEST_LOGINPROPERTIES_H

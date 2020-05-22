@@ -22,14 +22,12 @@
  *
  * ============================================================ */
 
-#ifndef AUTHENTICATIONDIALOG_H
-#define AUTHENTICATIONDIALOG_H
+#ifndef DIGIKAM_VKONTAKTE_AUTHENTICATIONDIALOG_H
+#define DIGIKAM_VKONTAKTE_AUTHENTICATIONDIALOG_H
 
 #include "vkontakte_apppermissions.h"
 
-#include <QtWidgets/QDialog>
-
-
+#include <QDialog>
 
 namespace Vkontakte
 {
@@ -63,4 +61,4 @@ private:
 
 } /* namespace Vkontakte */
 
-#endif // AUTHENTICATIONDIALOG_H
+#endif // DIGIKAM_VKONTAKTE_AUTHENTICATIONDIALOG_H

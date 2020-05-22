@@ -21,8 +21,8 @@
  *
  * ============================================================ */
 
-#ifndef MESSAGESLISTJOB_H
-#define MESSAGESLISTJOB_H
+#ifndef DIGIKAM_VKONTAKTE_MESSAGESLISTJOB_H
+#define DIGIKAM_VKONTAKTE_MESSAGESLISTJOB_H
 
 #include "vkontakte_jobs.h"
 #include "vkontakte_messageinfo.h"
@@ -71,4 +71,4 @@ private:
 
 } /* namespace Vkontakte */
 
-#endif // MESSAGESLISTJOB_H
+#endif // DIGIKAM_VKONTAKTE_MESSAGESLISTJOB_H
