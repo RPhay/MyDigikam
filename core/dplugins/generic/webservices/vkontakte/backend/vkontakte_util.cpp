@@ -27,12 +27,12 @@
 #include <QString>
 #include <QMap>
 
-// KDateTime unixTimeToKDateTime(const QString &unixTime)
-// {
-//     KDateTime res;
-//     res.setTime_t(unixTime.toLongLong());
-//     return res;
-// }
+QDateTime unixTimeToQDateTime(const QString& unixTime)
+{
+    QDateTime res;
+    res.setTime_t(unixTime.toLongLong());
+    return res;
+}
 
 static QMap<Vkontakte::AppPermissions::Value, const char*> initAppPermissionStrings()
 {

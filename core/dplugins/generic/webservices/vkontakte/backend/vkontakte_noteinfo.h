@@ -24,7 +24,7 @@
 #ifndef DIGIKAM_VKONTAKTE_NOTEINFO_H
 #define DIGIKAM_VKONTAKTE_NOTEINFO_H
 
-#include <KDE/KDateTime>
+#include <QDateTime>
 
 namespace Vkontakte
 {
@@ -97,9 +97,9 @@ public:
      */
     QString dateString() const;
     /**
-     * Returns the creation date/time in KDateTime
+     * Returns the creation date/time in QDateTime
      */
-    KDateTime date() const;
+    QDateTime date() const;
 
     void setNcom(int ncom);
     int ncom() const;

@@ -68,9 +68,9 @@ QString MessageInfo::dateString() const
     return d->date;
 }
 
-KDateTime MessageInfo::date() const
+QDateTime MessageInfo::date() const
 {
-    return unixTimeToKDateTime(d->date);
+    return unixTimeToQDateTime(d->date);
 }
 
 void MessageInfo::setUid(int uid)

@@ -27,15 +27,16 @@
 
 #include "vkontakte_apppermissions.h"
 
+#include <QDateTime>
 #include <QStringList>
 
 /**
- * Convert a QString containing a UNIX timestamp to a KDateTime object
+ * Convert a QString containing a UNIX timestamp to a QDateTime object
  */
-// KDateTime unixTimeToKDateTime(const QString &unixTime);
+QDateTime unixTimeToQDateTime(const QString& unixTime);
 
 QStringList appPermissionsToStringList(Vkontakte::AppPermissions::Value permissions);
 
-QString joinIntegers(const QList<int> &list);
+QString joinIntegers(const QList<int>& list);
 
 #endif // DIGIKAM_VKONTAKTE_UTIL_H

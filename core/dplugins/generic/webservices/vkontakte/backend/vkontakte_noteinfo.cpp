@@ -122,9 +122,9 @@ QString NoteInfo::dateString() const
     return d->date;
 }
 
-KDateTime NoteInfo::date() const
+QDateTime NoteInfo::date() const
 {
-    return unixTimeToKDateTime(d->date);
+    return unixTimeToQDateTime(d->date);
 }
 
 void NoteInfo::setNcom (int ncom)
