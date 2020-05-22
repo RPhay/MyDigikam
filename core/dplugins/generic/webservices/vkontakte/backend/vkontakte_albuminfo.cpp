@@ -76,32 +76,32 @@ bool AlbumInfo::isEmpty() const
 
 int AlbumInfo::aid() const
 {
-    return d->jsonData.value(QStringLiteral("aid")).toInt(-1);
+    return d->jsonData.value(QLatin1String("aid")).toInt(-1);
 }
 
 QString AlbumInfo::title() const
 {
-    return d->jsonData.value(QStringLiteral("title")).toString();
+    return d->jsonData.value(QLatin1String("title")).toString();
 }
 
 QString AlbumInfo::description() const
 {
-    return d->jsonData.value(QStringLiteral("description")).toString();
+    return d->jsonData.value(QLatin1String("description")).toString();
 }
 
 int AlbumInfo::size() const
 {
-    return d->jsonData.value(QStringLiteral("size")).toInt(-1);
+    return d->jsonData.value(QLatin1String("size")).toInt(-1);
 }
 
 int AlbumInfo::privacy() const
 {
-    return d->jsonData.value(QStringLiteral("privacy")).toInt(PRIVACY_UNKNOWN);
+    return d->jsonData.value(QLatin1String("privacy")).toInt(PRIVACY_UNKNOWN);
 }
 
 int AlbumInfo::commentPrivacy() const
 {
-    return d->jsonData.value(QStringLiteral("comment_privacy")).toInt(PRIVACY_UNKNOWN);
+    return d->jsonData.value(QLatin1String("comment_privacy")).toInt(PRIVACY_UNKNOWN);
 }
 
 } // namespace Vkontakte

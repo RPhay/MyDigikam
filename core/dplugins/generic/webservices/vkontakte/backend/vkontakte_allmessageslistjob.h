@@ -24,6 +24,8 @@
 #ifndef DIGIKAM_VKONTAKTE_ALLMESSAGESLISTJOB_H
 #define DIGIKAM_VKONTAKTE_ALLMESSAGESLISTJOB_H
 
+// Local includes
+
 #include "vkontakte_messageslistjob.h"
 
 namespace Vkontakte
@@ -32,7 +34,9 @@ namespace Vkontakte
 class AllMessagesListJob : public KJobWithSubjobs
 {
     Q_OBJECT
+
 public:
+
     /**
      * @brief ...
      *
@@ -42,7 +46,7 @@ public:
      * @param filters ... Defaults to 0.
      * @param timeOffset ... Defaults to 0.
      **/
-    explicit AllMessagesListJob(const QString &accessToken,
+    explicit AllMessagesListJob(const QString& accessToken,
                        int out = -1, int previewLength = 0,
                        int filters = 0, int timeOffset = 0);
     ~AllMessagesListJob();
@@ -50,17 +54,20 @@ public:
     void start() Q_DECL_OVERRIDE;
 
     QList<MessageInfoPtr> list() const;
-    int count() const;
+    int count()                  const;
 
 protected:
+
     void startNewJob(int offset, int count, int out);
 
 private Q_SLOTS:
-    void jobFinished(KJob *kjob);
+
+    void jobFinished(KJob* kjob);
 
 private:
+
     class Private;
-    Private * const d;
+    Private* const d;
 };
 
 } // namespace Vkontakte

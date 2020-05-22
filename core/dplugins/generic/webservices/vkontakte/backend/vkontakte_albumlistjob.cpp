@@ -22,10 +22,15 @@
  * ============================================================ */
 
 #include "vkontakte_albumlistjob.h"
-#include "vkontakte_util.h"
+
+// Qt includes
 
 #include <QJsonArray>
 #include <QJsonObject>
+
+// Local includes
+
+#include "vkontakte_util.h"
 
 namespace Vkontakte
 {
@@ -33,17 +38,23 @@ namespace Vkontakte
 class Q_DECL_HIDDEN AlbumListJob::Private
 {
 public:
+
     QList<AlbumInfo> list;
 };
 
-AlbumListJob::AlbumListJob(const QString &accessToken, int uid, const QList<int> &aids)
-    : VkontakteJob(accessToken, QStringLiteral("photos.getAlbums"))
-    , d(new Private)
+AlbumListJob::AlbumListJob(const QString& accessToken, int uid, const QList<int>& aids)
+    : VkontakteJob(accessToken, QLatin1String("photos.getAlbums")),
+      d(new Private)
 {
     if (uid != -1)
-        addQueryItem(QStringLiteral("uid"), QString::number(uid));
+    {
+        addQueryItem(QLatin1String("uid"), QString::number(uid));
+    }
+
     if (!aids.empty())
-        addQueryItem(QStringLiteral("aids"), joinIntegers(aids));
+    {
+        addQueryItem(QLatin1String("aids"), joinIntegers(aids));
+    }
 }
 
 AlbumListJob::~AlbumListJob()
@@ -51,7 +62,7 @@ AlbumListJob::~AlbumListJob()
     delete d;
 }
 
-void AlbumListJob::handleData(const QJsonValue &data)
+void AlbumListJob::handleData(const QJsonValue& data)
 {
     if (!data.isArray())
     {
@@ -59,7 +70,7 @@ void AlbumListJob::handleData(const QJsonValue &data)
         return;
     }
 
-    foreach (const QJsonValue &item, data.toArray())
+    foreach (const QJsonValue& item, data.toArray())
     {
         if (!item.isObject())
         {

@@ -24,6 +24,8 @@
 #ifndef DIGIKAM_VKONTAKTE_ALBUMLISTJOB_H
 #define DIGIKAM_VKONTAKTE_ALBUMLISTJOB_H
 
+// Local includes
+
 #include "vkontakte_jobs.h"
 #include "vkontakte_albuminfo.h"
 
@@ -34,20 +36,23 @@ namespace Vkontakte
 class AlbumListJob : public VkontakteJob
 {
     Q_OBJECT
+
 public:
-    explicit AlbumListJob(const QString &accessToken, int uid = -1, const QList<int> &aids = QList<int>());
+
+    explicit AlbumListJob(const QString& accessToken, int uid = -1, const QList<int>& aids = QList<int>());
     ~AlbumListJob();
 
     QList<AlbumInfo> list() const;
 
 protected:
-    void handleData(const QJsonValue &data) Q_DECL_OVERRIDE;
 
-    void handleItem(const QVariant &data);
+    void handleData(const QJsonValue& data) Q_DECL_OVERRIDE;
+    void handleItem(const QVariant& data);
 
 private:
+
     class Private;
-    Private * const d;
+    Private* const d;
 };
 
 } // namespace Vkontakte
