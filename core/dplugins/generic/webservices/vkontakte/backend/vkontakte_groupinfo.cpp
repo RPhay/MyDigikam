@@ -133,4 +133,4 @@ QString GroupInfo::photoBig() const
     return d->photoBig;
 }
 
-} /* namespace Vkontakte */
+} // namespace Vkontakte

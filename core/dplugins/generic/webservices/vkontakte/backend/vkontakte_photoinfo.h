@@ -57,6 +57,6 @@ private:
     QSharedDataPointer<Private> d;
 };
 
-} /* namespace Vkontakte */
+} // namespace Vkontakte
 
 #endif // DIGIKAM_VKONTAKTE_PHOTOINFO_H

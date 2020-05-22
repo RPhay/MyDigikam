@@ -68,4 +68,4 @@ AlbumInfo CreateAlbumJob::album() const
     return d->album;
 }
 
-} /* namespace Vkontakte */
+} // namespace Vkontakte

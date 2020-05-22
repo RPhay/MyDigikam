@@ -59,4 +59,4 @@ NoteInfoPtr NoteJob::noteInfo()
     return d->noteInfo;
 }
 
-} /* namespace Vkontakte */
+} // namespace Vkontakte

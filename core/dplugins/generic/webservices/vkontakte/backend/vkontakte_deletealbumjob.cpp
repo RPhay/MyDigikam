@@ -48,4 +48,4 @@ void DeleteAlbumJob::handleData(const QJsonValue &data)
     }
 }
 
-} /* namespace Vkontakte */
+} // namespace Vkontakte

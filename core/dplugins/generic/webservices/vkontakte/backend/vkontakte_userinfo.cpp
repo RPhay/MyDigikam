@@ -154,4 +154,4 @@ QStringList UserInfo::allQueryFields()
     return fields;
 }
 
-} /* namespace Vkontakte */
+} // namespace Vkontakte

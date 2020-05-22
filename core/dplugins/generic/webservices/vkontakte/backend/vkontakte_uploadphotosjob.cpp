@@ -232,4 +232,4 @@ QList<PhotoInfo> UploadPhotosJob::list() const
     return d->list;
 }
 
-} /* namespace Vkontakte */
+} // namespace Vkontakte

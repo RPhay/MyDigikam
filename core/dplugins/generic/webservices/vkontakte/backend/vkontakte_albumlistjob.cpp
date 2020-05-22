@@ -77,4 +77,4 @@ QList<AlbumInfo> AlbumListJob::list() const
     return d->list;
 }
 
-} /* namespace Vkontakte */
+} // namespace Vkontakte

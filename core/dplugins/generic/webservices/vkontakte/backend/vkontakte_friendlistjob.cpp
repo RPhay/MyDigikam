@@ -64,4 +64,4 @@ void FriendListJob::handleData(const QVariant &data)
     }
 }
 
-} /* namespace Vkontakte */
+} // namespace Vkontakte

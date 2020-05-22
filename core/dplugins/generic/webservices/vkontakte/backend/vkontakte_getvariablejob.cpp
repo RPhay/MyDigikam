@@ -54,4 +54,4 @@ QVariant GetVariableJob::variable() const
     return d->variable;
 }
 
-} /* namespace Vkontakte */
+} // namespace Vkontakte

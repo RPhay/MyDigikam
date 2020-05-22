@@ -221,4 +221,4 @@ QVariantMap PhotoPostJob::response() const
     return m_response;
 }
 
-} /* namespace Vkontakte */
+} // namespace Vkontakte

@@ -69,4 +69,4 @@ QMap<int, QString> CidsNamesJob::names() const
     return d->names;
 }
 
-} /* namespace Vkontakte */
+} // namespace Vkontakte

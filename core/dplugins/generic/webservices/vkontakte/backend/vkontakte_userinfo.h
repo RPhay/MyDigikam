@@ -97,7 +97,7 @@ private:
     QSharedDataPointer<Private> d;
 };
 
-} /* namespace Vkontakte */
+} // namespace Vkontakte
 
 Q_DECLARE_METATYPE(Vkontakte::UserInfo)
 

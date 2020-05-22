@@ -82,6 +82,6 @@ private:
 
 typedef QSharedPointer<GroupInfo> GroupInfoPtr;
 
-} /* namespace Vkontakte */
+} // namespace Vkontakte
 
 #endif // DIGIKAM_VKONTAKTE_GROUPINFO_H

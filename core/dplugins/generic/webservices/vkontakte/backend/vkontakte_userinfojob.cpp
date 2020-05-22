@@ -110,4 +110,4 @@ void UserInfoJob::handleData(const QJsonValue &data)
     }
 }
 
-} /* namespace Vkontakte */
+} // namespace Vkontakte

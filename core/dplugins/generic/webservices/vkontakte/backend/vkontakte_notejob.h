@@ -47,6 +47,6 @@ private:
     Private * const d;
 };
 
-} /* namespace Vkontakte */
+} // namespace Vkontakte
 
 #endif // DIGIKAM_VKONTAKTE_NOTEJOB_H

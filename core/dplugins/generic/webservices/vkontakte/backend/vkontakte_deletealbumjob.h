@@ -43,6 +43,6 @@ private:
     Private * const d; // not used
 };
 
-} /* namespace Vkontakte */
+} // namespace Vkontakte
 
 #endif // DIGIKAM_VKONTAKTE_DELETEALBUMJOB_H

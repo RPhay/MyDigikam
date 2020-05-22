@@ -91,4 +91,4 @@ int MessagesListJob::out() const
     return d->out;
 }
 
-} /* namespace Vkontakte */
+} // namespace Vkontakte

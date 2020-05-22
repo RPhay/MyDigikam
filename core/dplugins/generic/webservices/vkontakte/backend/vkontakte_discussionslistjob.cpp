@@ -77,4 +77,4 @@ int DiscussionsListJob::totalCount() const
     return d->totalCount;
 }
 
-} /* namespace Vkontakte */
+} // namespace Vkontakte

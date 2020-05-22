@@ -86,4 +86,4 @@ void GroupListJob::handleData(const QVariant &data)
     }
 }
 
-} /* namespace Vkontakte */
+} // namespace Vkontakte

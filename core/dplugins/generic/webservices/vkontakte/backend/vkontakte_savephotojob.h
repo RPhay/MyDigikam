@@ -56,6 +56,6 @@ private:
     QList<PhotoInfo> m_list;
 };
 
-} /* namespace Vkontakte */
+} // namespace Vkontakte
 
 #endif // DIGIKAM_VKONTAKTE_SAVEPHOTOJOB_H

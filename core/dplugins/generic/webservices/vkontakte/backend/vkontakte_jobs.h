@@ -98,6 +98,6 @@ private Q_SLOTS:
     void slotRetry();
 };
 
-} /* namespace Vkontakte */
+} // namespace Vkontakte
 
 #endif // DIGIKAM_VKONTAKTE_JOBS_H

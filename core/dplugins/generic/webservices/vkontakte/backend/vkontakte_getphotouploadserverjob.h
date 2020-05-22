@@ -56,6 +56,6 @@ private:
     int m_uid;
 };
 
-} /* namespace Vkontakte */
+} // namespace Vkontakte
 
 #endif // DIGIKAM_VKONTAKTE_GETPHOTOUPLOADSERVERJOB_H

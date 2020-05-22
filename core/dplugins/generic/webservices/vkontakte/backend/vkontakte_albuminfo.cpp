@@ -22,6 +22,9 @@
  * ============================================================ */
 
 #include "vkontakte_albuminfo.h"
+
+// Local includes
+
 #include "vkontakte_util.h"
 
 namespace Vkontakte
@@ -30,15 +33,18 @@ namespace Vkontakte
 class Q_DECL_HIDDEN AlbumInfo::Private : public QSharedData
 {
 public:
+
     QJsonObject jsonData;
 };
+
+// --------------------------------------------------------------------
 
 AlbumInfo::AlbumInfo()
     : d()
 {
 }
 
-AlbumInfo::AlbumInfo(const QJsonObject &jsonData)
+AlbumInfo::AlbumInfo(const QJsonObject& jsonData)
     : d(new Private)
 {
     d->jsonData = jsonData;
@@ -53,7 +59,7 @@ AlbumInfo::~AlbumInfo()
 {
 }
 
-AlbumInfo &AlbumInfo::operator=(const AlbumInfo &other)
+AlbumInfo& AlbumInfo::operator=(const AlbumInfo& other)
 {
     if (this != &other)
     {
@@ -98,4 +104,4 @@ int AlbumInfo::commentPrivacy() const
     return d->jsonData.value(QStringLiteral("comment_privacy")).toInt(PRIVACY_UNKNOWN);
 }
 
-} /* namespace Vkontakte */
+} // namespace Vkontakte

@@ -81,4 +81,4 @@ QList<PhotoInfo> PhotoListJob::list() const
     return d->list;
 }
 
-} /* namespace Vkontakte */
+} // namespace Vkontakte

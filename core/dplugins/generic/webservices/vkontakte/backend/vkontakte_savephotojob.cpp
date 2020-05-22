@@ -123,4 +123,4 @@ QList<PhotoInfo> SavePhotoJob::list() const
     return m_list;
 }
 
-} /* namespace Vkontakte */
+} // namespace Vkontakte

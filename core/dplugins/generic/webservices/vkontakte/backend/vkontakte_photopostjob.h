@@ -66,6 +66,6 @@ private:
     QVariantMap m_response;
 };
 
-} /* namespace Vkontakte */
+} // namespace Vkontakte
 
 #endif // DIGIKAM_VKONTAKTE_PHOTOPOSTJOB_H

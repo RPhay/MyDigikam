@@ -54,4 +54,4 @@ QVariantMap GetInfoJob::info()
     return d->info;
 }
 
-} /* namespace Vkontakte */
+} // namespace Vkontakte

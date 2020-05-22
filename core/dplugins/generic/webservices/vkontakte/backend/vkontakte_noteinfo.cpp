@@ -177,4 +177,4 @@ bool NoteInfo::canComment() const
     return d->canComment;
 }
 
-} /* namespace Vkontakte */
+} // namespace Vkontakte

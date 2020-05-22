@@ -222,4 +222,4 @@ void AuthenticationDialog::loadFinished(bool ok)
     }
 }
 
-} /* namespace Vkontakte */
+} // namespace Vkontakte

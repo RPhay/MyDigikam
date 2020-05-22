@@ -96,4 +96,4 @@ QUrl PhotoInfo::urlMaxResolution() const
     return QUrl();
 }
 
-} /* namespace Vkontakte */
+} // namespace Vkontakte

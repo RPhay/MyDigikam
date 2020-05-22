@@ -185,4 +185,4 @@ bool MessageInfoPtr::operator<(const MessageInfoPtr &o) const
     return (*this)->mid() < o->mid();
 }
 
-} /* namespace Vkontakte */
+} // namespace Vkontakte

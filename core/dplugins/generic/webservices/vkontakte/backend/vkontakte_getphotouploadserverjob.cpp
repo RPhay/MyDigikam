@@ -126,4 +126,4 @@ QUrl GetPhotoUploadServerJob::uploadUrl() const
     return m_uploadUrl;
 }
 
-} /* namespace Vkontakte */
+} // namespace Vkontakte

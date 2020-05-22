@@ -147,4 +147,4 @@ int AllMessagesListJob::count() const
     return d->list.size();
 }
 
-} /* namespace Vkontakte */
+} // namespace Vkontakte

@@ -123,6 +123,6 @@ private:
 
 typedef QSharedPointer<NoteInfo> NoteInfoPtr;
 
-} /* namespace Vkontakte */
+} // namespace Vkontakte
 
 #endif // DIGIKAM_VKONTAKTE_NOTEINFO_H

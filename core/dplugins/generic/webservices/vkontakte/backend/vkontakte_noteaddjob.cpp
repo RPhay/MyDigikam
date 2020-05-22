@@ -60,4 +60,4 @@ int NoteAddJob::nid() const
     return d->nid;
 }
 
-} /* namespace Vkontakte */
+} // namespace Vkontakte

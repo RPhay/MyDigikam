@@ -230,4 +230,4 @@ void VkontakteJob::jobFinished(KJob *kjob)
     m_job = 0;
 }
 
-} /* namespace Vkontakte */
+} // namespace Vkontakte

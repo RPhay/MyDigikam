@@ -117,6 +117,6 @@ public:
     bool operator<(const MessageInfoPtr &o) const;
 };
 
-} /* namespace Vkontakte */
+} // namespace Vkontakte
 
 #endif // DIGIKAM_VKONTAKTE_MESSAGEINFO_H

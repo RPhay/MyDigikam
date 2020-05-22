@@ -24,6 +24,8 @@
 #ifndef DIGIKAM_VKONTAKTE_ALBUMINFO_H
 #define DIGIKAM_VKONTAKTE_ALBUMINFO_H
 
+// Qt includes
+
 #include <QJsonObject>
 #include <QSharedDataPointer>
 
@@ -34,41 +36,45 @@ namespace Vkontakte
 class AlbumInfo
 {
 public:
+
     enum
     {
-        PRIVACY_UNKNOWN = -1,
-        PRIVACY_PUBLIC = 0,
-        PRIVACY_FRIENDS = 1,
+        PRIVACY_UNKNOWN            = -1,
+        PRIVACY_PUBLIC             = 0,
+        PRIVACY_FRIENDS            = 1,
         PRIVACY_FRIENDS_OF_FRIENDS = 2,
-        PRIVACY_PRIVATE = 3
+        PRIVACY_PRIVATE            = 3
     };
 
+public:
+
     AlbumInfo();
-    AlbumInfo(const AlbumInfo &other);
-    AlbumInfo(const QJsonObject &jsonData);
+    AlbumInfo(const AlbumInfo& other);
+    AlbumInfo(const QJsonObject& jsonData);
     ~AlbumInfo();
 
-    AlbumInfo &operator=(const AlbumInfo &other);
+    AlbumInfo& operator=(const AlbumInfo& other);
 
-    bool isEmpty() const;
+    bool isEmpty()        const;
 
-    int aid() const;
-    QString title() const;
+    int aid()             const;
+    QString title()       const;
     QString description() const;
 
     /**
      * @brief Returns number of photos in the album
      */
-    int size() const;
+    int size()            const;
 
-    int privacy() const;
-    int commentPrivacy() const;
+    int privacy()         const;
+    int commentPrivacy()  const;
 
 private:
+
     class Private;
     QSharedDataPointer<Private> d;
 };
 
-} /* namespace Vkontakte */
+} // namespace Vkontakte
 
 #endif // DIGIKAM_VKONTAKTE_ALBUMINFO_H

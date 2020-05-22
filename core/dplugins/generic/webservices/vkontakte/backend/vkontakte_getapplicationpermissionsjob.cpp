@@ -60,4 +60,4 @@ int GetApplicationPermissionsJob::permissions() const
     return d->permissions;
 }
 
-} /* namespace Vkontakte */
+} // namespace Vkontakte

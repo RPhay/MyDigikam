@@ -77,4 +77,4 @@ QImage PhotoJob::photo() const
     return d->photo;
 }
 
-} /* namespace Vkontakte */
+} // namespace Vkontakte

@@ -83,4 +83,4 @@ int NotesListJob::totalCount() const
     return d->totalCount;
 }
 
-} /* namespace Vkontakte */
+} // namespace Vkontakte
