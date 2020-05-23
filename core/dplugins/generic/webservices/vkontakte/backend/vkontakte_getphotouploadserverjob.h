@@ -36,24 +36,26 @@ namespace Vkontakte
 class GetPhotoUploadServerJob : public VkontakteJob
 {
 public:
-    GetPhotoUploadServerJob(const QString &accessToken, Vkontakte::UploadPhotosJob::Dest m_dest);
+
+    GetPhotoUploadServerJob(const QString& accessToken, Vkontakte::UploadPhotosJob::Dest m_dest);
 
     void initUploadAlbum(int aid, int gid = -1);
-
     QUrl uploadUrl() const;
 
 protected:
+
+    void prepareQueryItems()                override;
+    void handleData(const QJsonValue& data) override;
+
     static QString getMethod(enum UploadPhotosJob::Dest dest);
-    void prepareQueryItems() override;
-    void handleData(const QJsonValue &data) override;
 
 private:
-    UploadPhotosJob::Dest m_dest;
-    QUrl m_uploadUrl;
 
-    int m_aid;
-    int m_gid;
-    int m_uid;
+    UploadPhotosJob::Dest m_dest;
+    QUrl                  m_uploadUrl;
+    int                   m_aid;
+    int                   m_gid;
+    int                   m_uid;
 };
 
 } // namespace Vkontakte

@@ -51,8 +51,8 @@ AlbumInfo::AlbumInfo(const QJsonObject& jsonData)
 }
 
 AlbumInfo::AlbumInfo(const AlbumInfo &other)
+    : d(other.d)
 {
-    d = other.d;
 }
 
 AlbumInfo::~AlbumInfo()

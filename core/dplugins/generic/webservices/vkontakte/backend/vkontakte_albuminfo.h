@@ -50,7 +50,7 @@ public:
 
     AlbumInfo();
     AlbumInfo(const AlbumInfo& other);
-    AlbumInfo(const QJsonObject& jsonData);
+    explicit AlbumInfo(const QJsonObject& jsonData);
     ~AlbumInfo();
 
     AlbumInfo& operator=(const AlbumInfo& other);

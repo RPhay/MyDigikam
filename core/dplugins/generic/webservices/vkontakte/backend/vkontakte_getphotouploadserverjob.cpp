@@ -22,25 +22,26 @@
  * ============================================================ */
 
 #include "vkontakte_getphotouploadserverjob.h"
-#include "vkontakte_uploadphotosjob.h"
 
 // Qt includes
 
 #include <QVariant>
 
+// Local includes
+
+#include "vkontakte_uploadphotosjob.h"
 #include "digikam_debug.h"
 
 namespace Vkontakte
 {
 
-GetPhotoUploadServerJob::GetPhotoUploadServerJob(const QString &accessToken, Vkontakte::UploadPhotosJob::Dest dest)
-    : VkontakteJob(accessToken, getMethod(dest))
+GetPhotoUploadServerJob::GetPhotoUploadServerJob(const QString& accessToken, Vkontakte::UploadPhotosJob::Dest dest)
+    : VkontakteJob(accessToken, getMethod(dest)),
+      m_dest(dest),
+      m_aid(-1),
+      m_gid(-1),
+      m_uid(-1)
 {
-    m_dest = dest;
-
-    m_aid = -1;
-    m_gid = -1;
-    m_uid = -1;
 }
 
 void GetPhotoUploadServerJob::initUploadAlbum(int aid, int gid)
@@ -55,13 +56,24 @@ QString GetPhotoUploadServerJob::getMethod(Vkontakte::UploadPhotosJob::Dest dest
     switch (dest)
     {
         case Vkontakte::UploadPhotosJob::DEST_ALBUM:
+        {
             return QLatin1String("photos.getUploadServer");
+        }
+
         case Vkontakte::UploadPhotosJob::DEST_PROFILE:
+        {
             return QLatin1String("photos.getProfileUploadServer");
+        }
+
         case Vkontakte::UploadPhotosJob::DEST_WALL:
+        {
             return QLatin1String("photos.getWallUploadServer");
+        }
+
         default:
+        {
             return QLatin1String("");
+        }
     }
 }
 
@@ -70,45 +82,63 @@ void GetPhotoUploadServerJob::prepareQueryItems()
     switch (m_dest)
     {
         case Vkontakte::UploadPhotosJob::DEST_ALBUM:
+        {
             if (m_aid == -1)
             {
                 setError(KJob::UserDefinedError);
-                setErrorText(QStringLiteral("m_aid not set."));
+                setErrorText(QLatin1String("m_aid not set."));
                 qCWarning(DIGIKAM_WEBSERVICES_LOG) << "m_aid not set.";
             }
 
-            addQueryItem(QStringLiteral("aid"), QString::number(m_aid));
+            addQueryItem(QLatin1String("aid"), QString::number(m_aid));
+
             if (m_gid != -1)
-                addQueryItem(QStringLiteral("gid"), QString::number(m_gid));
+            {
+                addQueryItem(QLatin1String("gid"), QString::number(m_gid));
+            }
+
+        }
             break;
 
         case Vkontakte::UploadPhotosJob::DEST_PROFILE:
+        {
             // photos.getProfileUploadServer has not parameters
             break;
+        }
 
         case Vkontakte::UploadPhotosJob::DEST_WALL:
-            if (m_uid != -1 && m_gid != -1)
+        {
+            if ((m_uid != -1) && (m_gid != -1))
             {
                 setError(KJob::UserDefinedError);
-                setErrorText(QStringLiteral("Only one parameter m_uid or m_gid should be set."));
+                setErrorText(QLatin1String("Only one parameter m_uid or m_gid should be set."));
                 qCWarning(DIGIKAM_WEBSERVICES_LOG) << "Only one parameter m_uid or m_gid should be set.";
             }
 
             if (m_uid != -1)
-                addQueryItem(QStringLiteral("uid"), QString::number(m_uid));
+            {
+                addQueryItem(QLatin1String("uid"), QString::number(m_uid));
+            }
+
             if (m_gid != -1)
-                addQueryItem(QStringLiteral("gid"), QString::number(m_gid));
+            {
+                addQueryItem(QLatin1String("gid"), QString::number(m_gid));
+            }
+
             break;
+        }
 
         default:
+        {
             setError(KJob::UserDefinedError);
-            setErrorText(QStringLiteral("Unsupported m_dest."));
+            setErrorText(QLatin1String("Unsupported m_dest."));
             qCWarning(DIGIKAM_WEBSERVICES_LOG) << "Unsupported m_dest.";
             break;
+        }
     }
 }
 
-void GetPhotoUploadServerJob::handleData(const QJsonValue &data)
+void GetPhotoUploadServerJob::handleData(const QJsonValue& data)
 {
     if (!data.isObject())
     {
@@ -117,10 +147,11 @@ void GetPhotoUploadServerJob::handleData(const QJsonValue &data)
 
     // TODO: simplify this code
     QJsonObject object = data.toObject();
-    if (object.contains(QStringLiteral("upload_url")) &&
-        object.value(QStringLiteral("upload_url")).isString())
+
+    if (object.contains(QLatin1String("upload_url")) &&
+        object.value(QLatin1String("upload_url")).isString())
     {
-        m_uploadUrl = QUrl(object.value(QStringLiteral("upload_url")).toString());
+        m_uploadUrl = QUrl(object.value(QLatin1String("upload_url")).toString());
     }
 }
 
