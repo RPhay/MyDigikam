@@ -180,7 +180,7 @@ void ProfileConversionToolPlugin::slotUpdateColorSpaceMenu()
 
         QStringList profileList = ProfileConversionTool::favoriteProfiles();
 
-#if QT_VERSION < QT_VERSION_CHECK(5, 14, 0)
+#if (QT_VERSION < QT_VERSION_CHECK(5, 14, 0))
 
         QSet<QString> favoriteProfilePaths = QSet<QString>::fromList(profileList);
 
