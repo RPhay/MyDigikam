@@ -41,11 +41,12 @@ class TestFrequentRequests : public VkTestBase
     Q_OBJECT
 
 public:
+
     TestFrequentRequests();
 
 private Q_SLOTS:
-    void initTestCase();
 
+    void initTestCase();
     void testUserInfoJob();
 };
 

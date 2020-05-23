@@ -33,7 +33,7 @@
 
 #include "vktestbase.h"
 
-/*
+/**
  * What is tested here:
  *   class NotesListJob
  *   class AllNotesListJob
@@ -45,16 +45,18 @@ class TestNotes : public VkTestBase
     Q_OBJECT
 
 public:
+
     TestNotes();
 
 private Q_SLOTS:
-    void initTestCase();
 
+    void initTestCase();
     void testNotesListJob();
     void testAllNotesListJob();
     void testNoteJob();
 
 private:
+
     QVector<int> m_noteIds;
 };
 

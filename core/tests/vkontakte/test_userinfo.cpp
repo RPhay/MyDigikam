@@ -46,8 +46,7 @@ void TestUserInfo::initTestCase()
 
 void TestUserInfo::testUserInfoJob()
 {
-    Vkontakte::UserInfoJob* const job = new Vkontakte::UserInfoJob(
-        accessToken(), 1);
+    Vkontakte::UserInfoJob* const job = new Vkontakte::UserInfoJob(accessToken(), 1);
     job->exec();
     QVERIFY(!job->error());
 
@@ -60,13 +59,16 @@ void TestUserInfo::testUserInfoJob()
     QCOMPARE(user.lastName(), QString::fromUtf8("Дуров"));
     QCOMPARE(user.nickName(), QString::fromUtf8(""));
     QCOMPARE(user.sex(), 2);
+
     // TODO: verify that "online" status is received from server
 //     QCOMPARE(user.birthday(), QDate(1984, 10, 10));
 //     QCOMPARE(user.countryId(), 1); // Russia
 //     QCOMPARE(user.countryString(), QString::fromUtf8("Россия"));
 //     QCOMPARE(user.cityId(), 2); // Saint-Petersburg
 //     QCOMPARE(user.cityString(), QString::fromUtf8("Санкт-Петербург"));
+
     QCOMPARE(user.domain(), QStringLiteral("durov"));
+
 //     QCOMPARE(user.hasMobile(), true);
 //     QCOMPARE(user.homePhone(), QString(""));
 //     QCOMPARE(user.mobilePhone(), QString(""));
@@ -93,6 +95,7 @@ void TestUserInfo::testSelfUserInfoJob()
     const UserInfo user = res.at(0);
     QVERIFY(user.userId() > 0);
     QVERIFY(!user.domain().isEmpty());
+
     // Timezone is returned only for the current user
 //     QVERIFY(user.timezone() != static_cast<int>(UserInfo::INVALID_TIMEZONE));
 }

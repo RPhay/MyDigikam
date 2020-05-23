@@ -32,7 +32,7 @@
 
 #include "vktestbase.h"
 
-/*
+/**
  * What is tested here:
  *   class FriendListJob
  */
@@ -41,11 +41,12 @@ class TestFriends : public VkTestBase
     Q_OBJECT
 
 public:
+
     TestFriends();
 
 private Q_SLOTS:
-    void initTestCase();
 
+    void initTestCase();
     void testFriendListJob();
 };
 

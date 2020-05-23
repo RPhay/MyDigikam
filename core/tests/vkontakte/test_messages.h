@@ -44,11 +44,12 @@ class TestMessages : public VkTestBase
     Q_OBJECT
 
 public:
+
     TestMessages();
 
 private Q_SLOTS:
-    void initTestCase();
 
+    void initTestCase();
     void testMessagesListJob();
     void testAllMessagesListJob();
     void testDiscussionsListJob();

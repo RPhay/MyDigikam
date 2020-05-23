@@ -45,16 +45,18 @@ class TestAlbums : public VkTestBase
     Q_OBJECT
 
 public:
+
     TestAlbums();
 
 private Q_SLOTS:
-    void initTestCase();
 
+    void initTestCase();
     void testListJob();
     void testEditJob();
     void testDeleteJob();
 
 private:
+
     QVector<int> m_albumIds;
 };
 

@@ -44,28 +44,26 @@ void TestDatabaseMethods::initTestCase()
 
 void TestDatabaseMethods::testCountriesById()
 {
-    CidsNamesJob* const job = new CidsNamesJob(
-        "database.getCountriesById", QString(), QIntList() << 1 << 2 << 3);
+    CidsNamesJob* const job = new CidsNamesJob("database.getCountriesById", QString(), QIntList() << 1 << 2 << 3);
     job->exec();
     QVERIFY(!job->error());
 
     QMap<int, QString> names = job->names();
     QCOMPARE(names.size(), 3);
-    QCOMPARE(names[1], QString::fromUtf8("Россия")); // Russia
-    QCOMPARE(names[2], QString::fromUtf8("Украина")); // Ukraine
+    QCOMPARE(names[1], QString::fromUtf8("Россия"));   // Russia
+    QCOMPARE(names[2], QString::fromUtf8("Украина"));  // Ukraine
     QCOMPARE(names[3], QString::fromUtf8("Беларусь")); // Belarus
 }
 
 void TestDatabaseMethods::testCitiesById()
 {
-    CidsNamesJob* const job = new CidsNamesJob(
-        "database.getCitiesById", QString(), QIntList() << 1 << 2 << 4);
+    CidsNamesJob* const job = new CidsNamesJob("database.getCitiesById", QString(), QIntList() << 1 << 2 << 4);
     job->exec();
     QVERIFY(!job->error());
 
     QMap<int, QString> names = job->names();
     QCOMPARE(names.size(), 3);
-    QCOMPARE(names[1], QString::fromUtf8("Москва")); // Moscow
+    QCOMPARE(names[1], QString::fromUtf8("Москва"));          // Moscow
     QCOMPARE(names[2], QString::fromUtf8("Санкт-Петербург")); // Saint-Petersburg
     QCOMPARE(names[4], QString::fromUtf8("Herzliya"));
 }

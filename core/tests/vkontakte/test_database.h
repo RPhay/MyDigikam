@@ -41,11 +41,12 @@ class TestDatabaseMethods : public VkTestBase
     Q_OBJECT
 
 public:
+
     TestDatabaseMethods();
 
 private Q_SLOTS:
-    void initTestCase();
 
+    void initTestCase();
     void testCountriesById();
     void testCitiesById();
 };

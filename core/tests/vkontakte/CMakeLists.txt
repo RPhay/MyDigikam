@@ -16,13 +16,12 @@ target_link_libraries(testhelper Qt5::Core Qt5::Test)
 
 function(add_vk_test name)
 
-    ecm_add_test(
-        ${name}.cpp
-        LINK_LIBRARIES testhelper
-                       digikamcore
-                       vkontaktebackend
-                       ${COMMON_TEST_LINK}
-                       KF5::KIOCore
+    ecm_add_test(${name}.cpp
+                 LINK_LIBRARIES testhelper
+                                digikamcore
+                                vkontaktebackend
+                                ${COMMON_TEST_LINK}
+                                KF5::KIOCore
     )
 
 endfunction(add_vk_test)

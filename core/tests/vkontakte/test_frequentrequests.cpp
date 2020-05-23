@@ -46,10 +46,10 @@ void TestFrequentRequests::initTestCase()
 void TestFrequentRequests::testUserInfoJob()
 {
     // Send 20 requests without delays
-    for (int i = 0; i < 20; ++i)
+
+    for (int i = 0 ; i < 20 ; ++i)
     {
-        Vkontakte::UserInfoJob* const job = new Vkontakte::UserInfoJob(
-            accessToken(), 1);
+        Vkontakte::UserInfoJob* const job = new Vkontakte::UserInfoJob(accessToken(), 1);
         job->exec();
         QVERIFY(!job->error());
     }

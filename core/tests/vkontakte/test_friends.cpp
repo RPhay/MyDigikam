@@ -54,4 +54,3 @@ void TestFriends::testFriendListJob()
 }
 
 QTEST_KDEMAIN(TestFriends, GUI)
-#include "test_friends.h"

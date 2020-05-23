@@ -44,15 +44,17 @@ class TestPhotos : public VkTestBase
     Q_OBJECT
 
 public:
+
     TestPhotos();
 
 private Q_SLOTS:
-    void initTestCase();
 
+    void initTestCase();
     void testPhotoListJob();
     void testUploadMultiple();
 
 private:
+
     int m_albumId;
     int m_photoId;
 };

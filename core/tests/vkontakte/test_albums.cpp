@@ -34,8 +34,8 @@
 #include "vkontakte_editalbumjob.h"
 #include "vkontakte_deletealbumjob.h"
 
-#define ALBUM1_NAME     (QStringLiteral("__album for unit testing of libkvkontakte #1"))
-#define ALBUM2_NAME     (QStringLiteral("__album for unit testing of libkvkontakte #2"))
+#define ALBUM1_NAME (QLatin1String("__album for unit testing of digiKam #1"))
+#define ALBUM2_NAME (QLatin1String("__album for unit testing of digiKam #2"))
 
 using namespace Vkontakte;
 
@@ -53,10 +53,12 @@ void TestAlbums::initTestCase()
     albumNames << ALBUM1_NAME;
     albumNames << ALBUM2_NAME;
 
-    foreach (const QString &name, albumNames) {
-        CreateAlbumJob* const job = new CreateAlbumJob(
-            accessToken(), name, QStringLiteral("Description for %1").arg(name),
-            AlbumInfo::PRIVACY_PRIVATE, AlbumInfo::PRIVACY_PRIVATE);
+    foreach (const QString& name, albumNames)
+    {
+        CreateAlbumJob* const job = new CreateAlbumJob(accessToken(),
+                                                       name,
+                                                       QString::fromUtf8("Description for %1").arg(name),
+                                                       AlbumInfo::PRIVACY_PRIVATE, AlbumInfo::PRIVACY_PRIVATE);
         job->exec();
         QVERIFY(!job->error());
 
@@ -81,13 +83,15 @@ void TestAlbums::testEditJob()
 {
     const int albumId = m_albumIds[0];
     const QString newTitle(QStringLiteral("what's up?"));
-    const QString newDescription(QStringLiteral("my description"));
+    const QString newDescription(QLatin1String("my description"));
 
     // Change album title, description and permissions
     {
-        EditAlbumJob* const job = new EditAlbumJob(
-            accessToken(), albumId, newTitle, newDescription,
-            AlbumInfo::PRIVACY_PUBLIC, AlbumInfo::PRIVACY_FRIENDS);
+        EditAlbumJob* const job = new EditAlbumJob(accessToken(),
+                                                   albumId,
+                                                   newTitle,
+                                                   newDescription,
+                                                   AlbumInfo::PRIVACY_PUBLIC, AlbumInfo::PRIVACY_FRIENDS);
         job->exec();
         QVERIFY(!job->error());
     }

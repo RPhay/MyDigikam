@@ -34,8 +34,8 @@
 #include "vkontakte_allnoteslistjob.h"
 #include "vkontakte_notejob.h"
 
-#define NOTE1_NAME     "__note for unit testing of libkvkontakte #1"
-#define NOTE2_NAME     "__note for unit testing of libkvkontakte #2"
+#define NOTE1_NAME "__note for unit testing of digiKam #1"
+#define NOTE2_NAME "__note for unit testing of digiKam #2"
 
 using namespace Vkontakte;
 
@@ -53,9 +53,9 @@ void TestNotes::initTestCase()
     noteNames << NOTE1_NAME;
     noteNames << NOTE2_NAME;
 
-    foreach (const QString &name, noteNames) {
-        NoteAddJob* const job = new NoteAddJob(
-            accessToken(), name, QString("Text for %1").arg(name));
+    foreach (const QString& name, noteNames)
+    {
+        NoteAddJob* const job = new NoteAddJob(accessToken(), name, QString::fromUtf8("Text for %1").arg(name));
         job->exec();
         QVERIFY(!job->error());
 
