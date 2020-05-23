@@ -51,6 +51,8 @@ set(libwso2_SRCS
     #o2/src/o2skydrive.cpp
     #o2/src/o2hubic.cpp
     #o2/src/o2uber.cpp
+    #o2/src/o2msgraph.cpp
+    #o2/src/o2vimeo.cpp
 )
 
 # Used by digikamcore
