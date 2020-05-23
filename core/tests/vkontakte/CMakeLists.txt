@@ -26,10 +26,10 @@ function(add_vk_test name)
 
 endfunction(add_vk_test)
 
-add_vk_test(test_userinfo)
-add_vk_test(test_albums)
-add_vk_test(test_photos)
-add_vk_test(test_frequentrequests)
+# add_vk_test(test_userinfo)
+# add_vk_test(test_albums)
+# add_vk_test(test_photos)
+# add_vk_test(test_frequentrequests)
 
 # add_vk_test(test_notes)
 # add_vk_test(test_database)
