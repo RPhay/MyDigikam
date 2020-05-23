@@ -48,7 +48,6 @@ set(libvkontakte_SRCS
 
 # Not used (old implementation or not ported)
 #    ${CMAKE_CURRENT_SOURCE_DIR}/backend/attic/vkontakte_notejob.cpp
-#    ${CMAKE_CURRENT_SOURCE_DIR}/backend/attic/vkontakte_userinfofulljob.cpp
 #    ${CMAKE_CURRENT_SOURCE_DIR}/backend/attic/vkontakte_cidsnamesjob.cpp
 #    ${CMAKE_CURRENT_SOURCE_DIR}/backend/attic/vkontakte_messageinfo.cpp
 #    ${CMAKE_CURRENT_SOURCE_DIR}/backend/attic/vkontakte_discussionslistjob.cpp
