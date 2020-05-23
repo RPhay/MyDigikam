@@ -177,7 +177,7 @@ void AuthenticationDialog::start()
         "display=%3&"
         "response_type=token")
         .arg(d->appId)
-        .arg(appPermissionsToStringList(d->permissions).join(QStringLiteral(",")))
+        .arg(appPermissionsToStringList(d->permissions).join(QLatin1String(",")))
         .arg(d->displayMode);
 
     qCDebug(DIGIKAM_WEBSERVICES_LOG) << "Showing" << url;

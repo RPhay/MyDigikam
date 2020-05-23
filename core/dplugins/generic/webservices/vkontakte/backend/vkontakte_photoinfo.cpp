@@ -69,19 +69,19 @@ PhotoInfo &PhotoInfo::operator=(const PhotoInfo& other)
 
 int PhotoInfo::pid() const
 {
-    return d->jsonData.value(QStringLiteral("pid")).toInt(-1);
+    return d->jsonData.value(QLatin1String("pid")).toInt(-1);
 }
 
 QUrl PhotoInfo::urlMaxResolution() const
 {
     // Photo URLs in the order of decresing size
     QStringList srcKeys;
-    srcKeys.append(QStringLiteral("src_xxxbig"));
-    srcKeys.append(QStringLiteral("src_xxbig"));
-    srcKeys.append(QStringLiteral("src_xbig"));
-    srcKeys.append(QStringLiteral("src_big"));
-    srcKeys.append(QStringLiteral("src"));
-    srcKeys.append(QStringLiteral("src_small"));
+    srcKeys.append(QLatin1String("src_xxxbig"));
+    srcKeys.append(QLatin1String("src_xxbig"));
+    srcKeys.append(QLatin1String("src_xbig"));
+    srcKeys.append(QLatin1String("src_big"));
+    srcKeys.append(QLatin1String("src"));
+    srcKeys.append(QLatin1String("src_small"));
 
     foreach (const QString& key, srcKeys)
     {

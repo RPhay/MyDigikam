@@ -47,15 +47,15 @@ public:
 // does not seem to be useful.
 PhotoListJob::PhotoListJob(const QString& accessToken,
                            int uid, int aid, const QList<int>& pids)
-    : VkontakteJob(accessToken, QStringLiteral("photos.get")),
+    : VkontakteJob(accessToken, QLatin1String("photos.get")),
       d(new Private)
 {
-    addQueryItem(QStringLiteral("uid"), QString::number(uid));
-    addQueryItem(QStringLiteral("aid"), QString::number(aid));
+    addQueryItem(QLatin1String("uid"), QString::number(uid));
+    addQueryItem(QLatin1String("aid"), QString::number(aid));
 
     if (!pids.empty())
     {
-        addQueryItem(QStringLiteral("pids"), joinIntegers(pids));
+        addQueryItem(QLatin1String("pids"), joinIntegers(pids));
     }
 }
 

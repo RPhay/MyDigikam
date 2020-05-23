@@ -76,8 +76,8 @@ void PhotoPostJob::handleError(const QJsonValue& data)
     {
         const QVariantMap errorMap = data.toVariant().toMap();
 
-        error_code = errorMap[QStringLiteral("error_code")].toInt();
-        error_msg  = errorMap[QStringLiteral("error_msg")].toString();
+        error_code = errorMap[QLatin1String("error_code")].toInt();
+        error_msg  = errorMap[QLatin1String("error_msg")].toString();
 
         qCWarning(DIGIKAM_WEBSERVICES_LOG) << "An error of type" << error_code << "occurred:" << error_msg;
     }
@@ -90,7 +90,7 @@ void PhotoPostJob::handleError(const QJsonValue& data)
             "Response from the VKontakte server has unexpected format. "
             "Please report this problem against product libkvkontakte "
             "at the <a href=\"%1\">KDE bug tracker</b>.",
-            QStringLiteral("http://bugs.kde.org/")));
+            QLatin1String("http://bugs.kde.org/")));
     }
     else
     {
@@ -114,7 +114,7 @@ bool PhotoPostJob::appendFile(QHttpMultiPart* multiPart, const QString& header, 
 
     QHttpPart imagePart;
     imagePart.setHeader(QNetworkRequest::ContentDispositionHeader,
-                        QVariant(QStringLiteral("form-data; name=\"%1\"; filename=\"%2\"")
+                        QVariant(QString::fromUtf8("form-data; name=\"%1\"; filename=\"%2\"")
                             .arg(header).arg(fileInfo.fileName())));
     imagePart.setHeader(QNetworkRequest::ContentLengthHeader, QVariant(fileInfo.size()));
     imagePart.setHeader(QNetworkRequest::ContentTypeHeader, QVariant(mime));
@@ -139,7 +139,7 @@ void PhotoPostJob::start()
     if (!m_ok)
     {
         setError(UserDefinedError);
-        setErrorText(QStringLiteral("Internal error"));
+        setErrorText(QLatin1String("Internal error"));
         emitResult();
     }
 
@@ -152,7 +152,7 @@ void PhotoPostJob::start()
             // "file1" .. "file5"
             for (int i = 0 ; i < m_files.size() ; i++)
             {
-                if (!appendFile(multiPart, QStringLiteral("file%1").arg(i + 1), m_files[i]))
+                if (!appendFile(multiPart, QString::fromLatin1("file%1").arg(i + 1), m_files[i]))
                 {
                     m_ok = false;
                     break;
@@ -166,7 +166,7 @@ void PhotoPostJob::start()
         case Vkontakte::UploadPhotosJob::DEST_WALL:
         {
             // "photo"
-            if (!appendFile(multiPart, QStringLiteral("photo"), m_files[0]))
+            if (!appendFile(multiPart, QLatin1String("photo"), m_files[0]))
             {
                 m_ok = false;
             }
@@ -184,7 +184,7 @@ void PhotoPostJob::start()
     if (!m_ok)
     {
         setError(UserDefinedError);
-        setErrorText(QStringLiteral("Could not attach file"));
+        setErrorText(QLatin1String("Could not attach file"));
         emitResult();
     }
 
@@ -224,9 +224,9 @@ void PhotoPostJob::parseNetworkResponse(QNetworkReply *reply)
                 // Something went wrong, but there is no valid object "error"
                 handleError(QJsonValue::Undefined);
             }
-            else if (object.contains(QStringLiteral("error")))
+            else if (object.contains(QLatin1String("error")))
             {
-                handleError(object.value(QStringLiteral("error")));
+                handleError(object.value(QLatin1String("error")));
             }
             else
             {

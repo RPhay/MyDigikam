@@ -38,10 +38,10 @@ CreateAlbumJob::CreateAlbumJob(const QString& accessToken,
                                const QString& description,
                                int privacy,
                                int comment_privacy)
-    : VkontakteJob(accessToken, QStringLiteral("photos.createAlbum"), true),
+    : VkontakteJob(accessToken, QLatin1String("photos.createAlbum"), true),
       d(new Private)
 {
-    addQueryItem(QStringLiteral("title"), title);
+    addQueryItem(QLatin1String("title"), title);
 
     if (!description.isEmpty())
     {

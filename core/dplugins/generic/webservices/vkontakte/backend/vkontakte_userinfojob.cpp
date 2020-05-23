@@ -44,7 +44,7 @@ public:
 
 // http://vk.com/dev/users.get
 UserInfoJob::UserInfoJob(const QString& accessToken)
-    : VkontakteJob(accessToken, QStringLiteral("users.get")),
+    : VkontakteJob(accessToken, QLatin1String("users.get")),
       d(new Private)
 {
     // The complete list of fields
@@ -54,19 +54,19 @@ UserInfoJob::UserInfoJob(const QString& accessToken)
 }
 
 UserInfoJob::UserInfoJob(const QString& accessToken, int uid)
-    : VkontakteJob(accessToken, QStringLiteral("users.get")),
+    : VkontakteJob(accessToken, QLatin1String("users.get")),
       d(new Private)
 {
     setFields(UserInfo::allQueryFields()); // TODO: do not pull extra fields by default
-    addQueryItem(QStringLiteral("user_ids"), QString::number(uid));
+    addQueryItem(QLatin1String("user_ids"), QString::number(uid));
 }
 
 UserInfoJob::UserInfoJob(const QString& accessToken, const QList<int>& uids)
-    : VkontakteJob(accessToken, QStringLiteral("users.get")),
+    : VkontakteJob(accessToken, QLatin1String("users.get")),
       d(new Private)
 {
     setFields(UserInfo::allQueryFields()); // TODO: do not pull extra fields by default
-    addQueryItem(QStringLiteral("user_ids"), joinIntegers(uids));
+    addQueryItem(QLatin1String("user_ids"), joinIntegers(uids));
 
     // TODO: make this working for more than 1000 uids
     // ("users.get" allows requesting only 1000 users at once)
@@ -91,7 +91,7 @@ void UserInfoJob::prepareQueryItems()
 {
     if (!d->fields.isEmpty())
     {
-        addQueryItem(QStringLiteral("fields"), d->fields.join(QStringLiteral(",")));
+        addQueryItem(QLatin1String("fields"), d->fields.join(QLatin1String(",")));
     }
 }
 

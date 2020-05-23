@@ -73,37 +73,37 @@ UserInfo &UserInfo::operator=(const UserInfo& other)
 
 int UserInfo::userId() const
 {
-    return d->jsonData.value(QStringLiteral("uid")).toInt(-1);
+    return d->jsonData.value(QLatin1String("uid")).toInt(-1);
 }
 
 QString UserInfo::firstName() const
 {
-    return d->jsonData.value(QStringLiteral("first_name")).toString();
+    return d->jsonData.value(QLatin1String("first_name")).toString();
 }
 
 QString UserInfo::lastName() const
 {
-    return d->jsonData.value(QStringLiteral("last_name")).toString();
+    return d->jsonData.value(QLatin1String("last_name")).toString();
 }
 
 QString UserInfo::nickName() const
 {
-    return d->jsonData.value(QStringLiteral("nick_name")).toString();
+    return d->jsonData.value(QLatin1String("nick_name")).toString();
 }
 
 QString UserInfo::domain() const
 {
-    return d->jsonData.value(QStringLiteral("domain")).toString();
+    return d->jsonData.value(QLatin1String("domain")).toString();
 }
 
 int UserInfo::sex() const
 {
-    return d->jsonData.value(QStringLiteral("sex")).toInt(-1);
+    return d->jsonData.value(QLatin1String("sex")).toInt(-1);
 }
 
 bool UserInfo::online() const
 {
-    return d->jsonData.value(QStringLiteral("online")).toBool(false);
+    return d->jsonData.value(QLatin1String("online")).toBool(false);
 }
 
 // static
@@ -111,53 +111,53 @@ QStringList UserInfo::allQueryFields()
 {
     QStringList fields;
 
-    fields << QStringLiteral("sex")
-           << QStringLiteral("bdate")
-           << QStringLiteral("city")
-           << QStringLiteral("country")
-           << QStringLiteral("photo_50")
-           << QStringLiteral("photo_100")
-           << QStringLiteral("photo_200_orig")
-           << QStringLiteral("photo_200")
-           << QStringLiteral("photo_400_orig")
-           << QStringLiteral("photo_max")
-           << QStringLiteral("photo_max_orig")
-           << QStringLiteral("photo_id")
-           << QStringLiteral("online")
-           << QStringLiteral("online_mobile")
-           << QStringLiteral("domain")
-           << QStringLiteral("has_mobile")
-           << QStringLiteral("contacts")
-           << QStringLiteral("connections")
-           << QStringLiteral("site")
-           << QStringLiteral("education")
-           << QStringLiteral("universities")
-           << QStringLiteral("schools")
-           << QStringLiteral("can_post")
-           << QStringLiteral("can_see_all_posts")
-           << QStringLiteral("can_see_audio")
-           << QStringLiteral("can_write_private_message")
-           << QStringLiteral("status")
-           << QStringLiteral("last_seen")
-           << QStringLiteral("common_count")
-           << QStringLiteral("relation")
-           << QStringLiteral("relatives")
-           << QStringLiteral("counters")
-           << QStringLiteral("screen_name")
-           << QStringLiteral("maiden_name")
-           << QStringLiteral("timezone")
-           << QStringLiteral("occupation")
-           << QStringLiteral("activities")
-           << QStringLiteral("interests")
-           << QStringLiteral("music")
-           << QStringLiteral("movies")
-           << QStringLiteral("tv")
-           << QStringLiteral("books")
-           << QStringLiteral("games")
-           << QStringLiteral("about")
-           << QStringLiteral("quotes")
-           << QStringLiteral("personal")
-           << QStringLiteral("friends_status");
+    fields << QLatin1String("sex")
+           << QLatin1String("bdate")
+           << QLatin1String("city")
+           << QLatin1String("country")
+           << QLatin1String("photo_50")
+           << QLatin1String("photo_100")
+           << QLatin1String("photo_200_orig")
+           << QLatin1String("photo_200")
+           << QLatin1String("photo_400_orig")
+           << QLatin1String("photo_max")
+           << QLatin1String("photo_max_orig")
+           << QLatin1String("photo_id")
+           << QLatin1String("online")
+           << QLatin1String("online_mobile")
+           << QLatin1String("domain")
+           << QLatin1String("has_mobile")
+           << QLatin1String("contacts")
+           << QLatin1String("connections")
+           << QLatin1String("site")
+           << QLatin1String("education")
+           << QLatin1String("universities")
+           << QLatin1String("schools")
+           << QLatin1String("can_post")
+           << QLatin1String("can_see_all_posts")
+           << QLatin1String("can_see_audio")
+           << QLatin1String("can_write_private_message")
+           << QLatin1String("status")
+           << QLatin1String("last_seen")
+           << QLatin1String("common_count")
+           << QLatin1String("relation")
+           << QLatin1String("relatives")
+           << QLatin1String("counters")
+           << QLatin1String("screen_name")
+           << QLatin1String("maiden_name")
+           << QLatin1String("timezone")
+           << QLatin1String("occupation")
+           << QLatin1String("activities")
+           << QLatin1String("interests")
+           << QLatin1String("music")
+           << QLatin1String("movies")
+           << QLatin1String("tv")
+           << QLatin1String("books")
+           << QLatin1String("games")
+           << QLatin1String("about")
+           << QLatin1String("quotes")
+           << QLatin1String("personal")
+           << QLatin1String("friends_status");
 
     return fields;
 }

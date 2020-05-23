@@ -41,15 +41,15 @@ SavePhotoJob::SavePhotoJob(const QString& accessToken,
     {
         case Vkontakte::UploadPhotosJob::DEST_ALBUM:
         {
-            addQueryItem(QStringLiteral("aid"),         photoIdData[QStringLiteral("aid")].toString());
-            addQueryItem(QStringLiteral("server"),      photoIdData[QStringLiteral("server")].toString());
-            addQueryItem(QStringLiteral("photos_list"), photoIdData[QStringLiteral("photos_list")].toString());
-            addQueryItem(QStringLiteral("hash"),        photoIdData[QStringLiteral("hash")].toString());
+            addQueryItem(QLatin1String("aid"),         photoIdData[QLatin1String("aid")].toString());
+            addQueryItem(QLatin1String("server"),      photoIdData[QLatin1String("server")].toString());
+            addQueryItem(QLatin1String("photos_list"), photoIdData[QLatin1String("photos_list")].toString());
+            addQueryItem(QLatin1String("hash"),        photoIdData[QLatin1String("hash")].toString());
 
             // TODO: may be "gid" will also be in "photoIdData", so this argument is unnecessary?
             if (gid != -1)
             {
-                addQueryItem(QStringLiteral("gid"), QString::number(gid));
+                addQueryItem(QLatin1String("gid"), QString::number(gid));
             }
 
             break;
@@ -57,9 +57,9 @@ SavePhotoJob::SavePhotoJob(const QString& accessToken,
 
         case Vkontakte::UploadPhotosJob::DEST_PROFILE:
         {
-            addQueryItem(QStringLiteral("server"), photoIdData[QStringLiteral("server")].toString());
-            addQueryItem(QStringLiteral("photo"),  photoIdData[QStringLiteral("photos")].toString());
-            addQueryItem(QStringLiteral("hash"),   photoIdData[QStringLiteral("hash")].toString());
+            addQueryItem(QLatin1String("server"), photoIdData[QLatin1String("server")].toString());
+            addQueryItem(QLatin1String("photo"),  photoIdData[QLatin1String("photos")].toString());
+            addQueryItem(QLatin1String("hash"),   photoIdData[QLatin1String("hash")].toString());
             break;
         }
 
@@ -67,9 +67,9 @@ SavePhotoJob::SavePhotoJob(const QString& accessToken,
         {
             // TODO: support optional parameters "uid" and "gid" (for posting to other users' and groups' walls)
             // TODO: for posting onto a wall, we must also call the "wall.post" VK method
-            addQueryItem(QStringLiteral("server"), photoIdData[QStringLiteral("server")].toString());
-            addQueryItem(QStringLiteral("photo"),  photoIdData[QStringLiteral("photo")].toString());
-            addQueryItem(QStringLiteral("hash"),   photoIdData[QStringLiteral("hash")].toString());
+            addQueryItem(QLatin1String("server"), photoIdData[QLatin1String("server")].toString());
+            addQueryItem(QLatin1String("photo"),  photoIdData[QLatin1String("photo")].toString());
+            addQueryItem(QLatin1String("hash"),   photoIdData[QLatin1String("hash")].toString());
             break;
         }
 
