@@ -46,11 +46,6 @@ public:
 protected:
 
     void handleData(const QJsonValue& data) override;
-
-private:
-
-    class Private;
-    Private* const d; // not used
 };
 
 } // namespace Vkontakte

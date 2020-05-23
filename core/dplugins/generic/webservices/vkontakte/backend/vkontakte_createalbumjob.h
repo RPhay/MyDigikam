@@ -32,8 +32,6 @@
 namespace Vkontakte
 {
 
-// NOTE: This class is too simple to expand, not using Pimpl here
-
 class CreateAlbumJob : public VkontakteJob
 {
 public:

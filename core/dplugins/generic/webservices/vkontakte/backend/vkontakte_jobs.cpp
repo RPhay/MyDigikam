@@ -101,9 +101,8 @@ bool VkontakteJob::handleError(const QJsonValue& data)
     else
     {
         const QVariantMap errorMap = data.toVariant().toMap();
-
-        error_code = errorMap[QLatin1String("error_code")].toInt();
-        error_msg  = errorMap[QLatin1String("error_msg")].toString();
+        error_code                 = errorMap[QLatin1String("error_code")].toInt();
+        error_msg                  = errorMap[QLatin1String("error_msg")].toString();
 
         qCWarning(DIGIKAM_WEBSERVICES_LOG) << "An error of type" << error_code << "occurred:" << error_msg;
     }
@@ -123,18 +122,16 @@ bool VkontakteJob::handleError(const QJsonValue& data)
 
         if (data.isUndefined())
         {
-            setErrorText(i18n(
-                "Response from the VKontakte server has unexpected format. "
-                "Please report this problem against product libkvkontakte "
-                "at the <a href=\"%1\">KDE bug tracker</b>.",
-                QLatin1String("http://bugs.kde.org/")));
+            setErrorText(i18n("Response from the VKontakte server has unexpected format. "
+                              "Please report this problem against product digiKam "
+                              "at the <a href=\"%1\">KDE bug tracker</b>.",
+                         QLatin1String("http://bugs.kde.org/")));
         }
         else
         {
-            setErrorText(i18n(
-                "The VKontakte server returned an error "
-                "of type <i>%1</i> in reply to method %2: <i>%3</i>",
-                error_code, m_method, error_msg));
+            setErrorText(i18n("The VKontakte server returned an error "
+                              "of type <i>%1</i> in reply to method %2: <i>%3</i>",
+                         error_code, m_method, error_msg));
         }
 
         return false;
@@ -153,7 +150,7 @@ KJob* VkontakteJob::createHttpJob()
 
     prepareQueryItems();
 
-    foreach (const QueryItem &item, m_queryItems)
+    foreach (const QueryItem& item, m_queryItems)
     {
         query.addQueryItem(item.first, item.second);
     }
@@ -165,7 +162,7 @@ KJob* VkontakteJob::createHttpJob()
 
     url.setQuery(query);
 
-    // TODO: Save KUrl to reuse it if we need to retry the HTTP request
+    // TODO: Save QUrl to reuse it if we need to retry the HTTP request
 //     m_url = url;
 
     qCDebug(DIGIKAM_WEBSERVICES_LOG) << "Starting request" << url;
@@ -200,12 +197,12 @@ void VkontakteJob::jobFinished(KJob* kjob)
     KIO::StoredTransferJob* const job = dynamic_cast<KIO::StoredTransferJob*>(kjob);
     Q_ASSERT(job);
 
-    if      (job == 0)
+    if      (job == nullptr)
     {
         setError(-1);
-        setErrorText(i18n(
-            "Internal error: No valid instance of KIO::StoredTransferJob "
-            "passed into VkontakteJob::jobFinished."));
+        setErrorText(i18n("Internal error: No valid instance of KIO::StoredTransferJob "
+                          "passed into VkontakteJob::jobFinished."));
+
         qCWarning(DIGIKAM_WEBSERVICES_LOG) << "KIO::StoredTransferJob is null";
     }
     else if (job->error())
@@ -249,15 +246,16 @@ void VkontakteJob::jobFinished(KJob* kjob)
         {
             qCWarning(DIGIKAM_WEBSERVICES_LOG) << "Unable to parse JSON data:" << parseError.errorString();
             qCDebug(DIGIKAM_WEBSERVICES_LOG) << "Received data:" << job->data();
+
             setError(KJob::UserDefinedError);
-            setErrorText(
-                i18n("Unable to parse data returned by the VKontakte server: %1",
-                parseError.errorString()));
+            setErrorText(i18n("Unable to parse data returned by the VKontakte server: %1",
+                         parseError.errorString()));
         }
     }
 
     emitResult();
-    m_job = 0;
+
+    m_job = nullptr;
 }
 
 } // namespace Vkontakte

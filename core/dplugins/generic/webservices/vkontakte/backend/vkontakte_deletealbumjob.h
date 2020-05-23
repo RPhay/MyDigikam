@@ -31,8 +31,6 @@
 namespace Vkontakte
 {
 
-// NOTE: This class is too simple to expand, not using Pimpl here
-
 class DeleteAlbumJob : public VkontakteJob
 {
 public:
@@ -42,11 +40,6 @@ public:
 protected:
 
     void handleData(const QJsonValue& data) override;
-
-private:
-
-    class Private;
-    Private* const d; // not used
 };
 
 } // namespace Vkontakte

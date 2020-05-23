@@ -40,12 +40,12 @@ typedef QPair<QString, QString> QueryItem;
 class KJobWithSubjob : public KJob
 {
 protected:
-    
+
     /**
      * Kill the currentjobs and its subjobs
      */
     bool doKill() override;
- 
+
     /**
      * Pointer to the running job
      */
@@ -55,16 +55,16 @@ protected:
 class KJobWithSubjobs : public KJob
 {
 protected:
-    
+
     /**
      * Kill the currentjobs and its subjobs
      */
     bool doKill() override;
 
-    /** 
+    /**
      * Pointers to running jobs
      */
-    QList<KJob *> m_jobs;
+    QList<KJob*> m_jobs;
 };
 
 /**
@@ -107,7 +107,9 @@ private:
      * Check for a return error and set the appropriate error messages
      */
 
-    // Returns "true" if we will retry the call.
+    /**
+     * Returns "true" if we will retry the call.
+     */
     bool handleError(const QJsonValue& data);
 
     virtual void handleData(const QJsonValue& data) = 0;
@@ -120,17 +122,17 @@ private:
     // TODO: cache url in a member variable
     KJob* createHttpJob();
 
+private Q_SLOTS:
+
+    void jobFinished(KJob* kjob);
+    void slotRetry();
+
 private:
 
     QString          m_accessToken;         ///< Vkontakte Access token
     QString          m_method;
     bool             m_httpPost;
     QList<QueryItem> m_queryItems;          ///< The query items
-
-private Q_SLOTS:
-
-    void jobFinished(KJob* kjob);
-    void slotRetry();
 };
 
 } // namespace Vkontakte

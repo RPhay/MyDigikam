@@ -50,7 +50,7 @@ public:
 protected:
 
     void authenticate(Vkontakte::AppPermissions::Value permissions);
-    QString accessToken() const;
+    QString accessToken()   const;
 
 private:
 

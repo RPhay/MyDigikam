@@ -35,9 +35,8 @@
 
 using namespace Vkontakte;
 
-const AppPermissions::Value testPermissions =
-    AppPermissions::Photos | AppPermissions::Offline |
-    AppPermissions::Notes | AppPermissions::Messages;
+const AppPermissions::Value testPermissions = AppPermissions::Photos | AppPermissions::Offline |
+                                              AppPermissions::Notes  | AppPermissions::Messages;
 
 TestLoginProperties::TestLoginProperties()
     : VkTestBase()
@@ -61,28 +60,34 @@ void TestLoginProperties::testGetApplicationPermissionsJob()
 void TestLoginProperties::testGetVariableJob()
 {
     // Retrieve user info with UserInfoJob
-    Vkontakte::UserInfoJob* const job = new Vkontakte::UserInfoJob(accessToken());
-    job->exec();
-    QVERIFY(!job->error());
+    Vkontakte::UserInfoJob* const job1 = new Vkontakte::UserInfoJob(accessToken());
+    job1->exec();
+    QVERIFY(!job1->error());
 
-    QList<UserInfoPtr> res = job->userInfo();
+    QList<UserInfoPtr> res = job1->userInfo();
     QCOMPARE(res.size(), 1);
 
     const UserInfoPtr user = res.at(0);
 
     // Test GetVariableJob
-    foreach (int index, QList<int>() << 1280 << 1281) {
-        GetVariableJob* const job = new GetVariableJob(accessToken(), index);
-        job->exec();
-        QVERIFY(!job->error());
+    foreach (int index, QList<int>() << 1280 << 1281)
+    {
+        GetVariableJob* const job2 = new GetVariableJob(accessToken(), index);
+        job2->exec();
+        QVERIFY(!job2->error());
 
-        int type = static_cast<int>(job->variable().type());
-        if (index == 1280) {
+        int type = static_cast<int>(job2->variable().type());
+
+        if (index == 1280)
+        {
             QCOMPARE(type, static_cast<int>(QMetaType::ULongLong));
-            QCOMPARE(job->variable().toInt(), user->uid());
-        } else { // 1281
+            QCOMPARE(job2->variable().toInt(), user->uid());
+        }
+        else
+        {
+            // 1281
             QCOMPARE(type, static_cast<int>(QMetaType::QString));
-            QCOMPARE(job->variable().toString(), QString("%1 %2").arg(user->firstName()).arg(user->lastName()));
+            QCOMPARE(job2->variable().toString(), QString::fromUtf8("%1 %2").arg(user->firstName()).arg(user->lastName()));
         }
     }
 }

@@ -37,8 +37,7 @@ EditAlbumJob::EditAlbumJob(const QString& accessToken,
                            const QString& description,
                            int privacy,
                            int comment_privacy)
-    : VkontakteJob(accessToken, QLatin1String("photos.editAlbum"), true),
-      d(nullptr)
+    : VkontakteJob(accessToken, QLatin1String("photos.editAlbum"), true)
 {
     addQueryItem(QLatin1String("aid"),   QString::number(aid));
     addQueryItem(QLatin1String("title"), title);

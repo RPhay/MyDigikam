@@ -42,11 +42,12 @@ class TestLoginProperties : public VkTestBase
     Q_OBJECT
 
 public:
+
     TestLoginProperties();
 
 private Q_SLOTS:
-    void initTestCase();
 
+    void initTestCase();
     void testGetApplicationPermissionsJob();
     void testGetVariableJob();
 };

@@ -28,16 +28,16 @@
 #include <QEventLoop>
 #include <QFile>
 #include <QTextStream>
-#include <QtTest/QTest>
+#include <QTest>
 
 // Local includes
 
 #include "vkontakte_vkapi.h"
 
-#define VK_APP_ID   "2446321"
+#define VK_APP_ID "2446321"
 
 VkTestBase::VkTestBase()
-    : m_vkapi(new Vkontakte::VkApi(0))
+    : m_vkapi(new Vkontakte::VkApi(nullptr))
 {
 }
 
@@ -51,7 +51,8 @@ VkTestBase::~VkTestBase()
 
 QString VkTestBase::getSavedToken() const
 {
-    QFile file(QStringLiteral(AUTOTESTS_API_TOKEN_PATH));
+    QFile file(QLatin1String(AUTOTESTS_API_TOKEN_PATH));
+
     if (!file.open(QIODevice::ReadOnly | QIODevice::Text))
     {
         return QString();
@@ -59,15 +60,17 @@ QString VkTestBase::getSavedToken() const
 
     QTextStream in(&file);
     QString line = in.readLine();
+
     return line.trimmed();
 }
 
 void VkTestBase::authenticate(Vkontakte::AppPermissions::Value permissions)
 {
-    m_vkapi->setAppId(QStringLiteral(VK_APP_ID)); // TODO: library should better not crash if setAppId is not called
+    m_vkapi->setAppId(QLatin1String(VK_APP_ID)); // TODO: library should better not crash if setAppId is not called
     m_vkapi->setRequiredPermissions(permissions);
 
     QString token = getSavedToken();
+
     if (!token.isEmpty())
     {
         m_vkapi->setInitialAccessToken(token);
@@ -77,8 +80,13 @@ void VkTestBase::authenticate(Vkontakte::AppPermissions::Value permissions)
 
     // Wait for any outcome of the authentication process, including failure
     QEventLoop loop;
-    connect(m_vkapi, SIGNAL(authenticated()), &loop, SLOT(quit()));
-    connect(m_vkapi, SIGNAL(canceled()), &loop, SLOT(quit()));
+
+    connect(m_vkapi, SIGNAL(authenticated()),
+            &loop, SLOT(quit()));
+
+    connect(m_vkapi, SIGNAL(canceled()),
+            &loop, SLOT(quit()));
+
     loop.exec();
 
     QVERIFY(m_vkapi->isAuthenticated());
