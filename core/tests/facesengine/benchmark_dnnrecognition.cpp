@@ -38,6 +38,7 @@
 #include <QPen>
 #include <QPainter>
 #include <QLineEdit>
+#include <QPushButton>
 #include <QDebug>
 
 
@@ -59,34 +60,43 @@ public:
     explicit MainWindow(const QDir& directory, QWidget *parent = nullptr);
     ~MainWindow();
 
-private Q_SLOTS:
-
-    void slotDetectFaces(const QListWidgetItem* imageItem);
-
 private:
 
-    QLabel* showCVMat(const cv::Mat& cvimage);
+    QIcon showCVMat(const cv::Mat& cvimage);
     QList<QRectF> detectFaces(const QString& imagePath);
     void extractFaces(const QImage& img, QImage& imgScaled, const QList<QRectF>& faces);
 
+    QWidget* setupFullImageArea();
+    QWidget* setupCroppedFaceArea();
+    QWidget* setupPreprocessedFaceArea();
+    QWidget* setupAlignedFaceArea();
     QWidget* setupControlPanel();
+    QWidget* setupImageList(const QDir& directory);
+
+private Q_SLOTS:
+
+    void slotDetectFaces(const QListWidgetItem* imageItem);
+    void slotSaveIdentity();
 
 private:
 
     OpenCVDNNFaceDetector* m_detector;
     FaceRecognizer*        m_recognizer;
     FaceExtractor*         m_extractor;
+    Identity               m_currentIdenity;
 
     QLabel*                m_fullImage;
     QListWidget*           m_imageListView;
-    QVBoxLayout*           m_croppedfaceLayout;
-    QVBoxLayout*           m_preprocessedLayout;
-    QVBoxLayout*           m_alignedLayout;
+    QListWidget*           m_croppedfaceList;
+    //QVBoxLayout*           m_preprocessedList;
+    QListWidget*           m_preprocessedList;
+    QListWidget*           m_alignedList;
 
     // control panel
     QLineEdit*             m_imageLabel;
     QLabel*                m_similarityLabel;
     QLabel*                m_recognizationInfo;
+    QPushButton*           m_applyButton;
 };
 
 MainWindow::MainWindow(const QDir &directory, QWidget *parent)
@@ -98,121 +108,24 @@ MainWindow::MainWindow(const QDir &directory, QWidget *parent)
     m_recognizer = new FaceRecognizer(true);
     m_extractor  = new FaceExtractor();
 
-    QWidget* const mainWidget = new QWidget(this);
-
     // Image erea
-    QWidget* const imageArea = new QWidget(mainWidget);
+    QWidget*     const imageArea        = new QWidget(this);
+    QHBoxLayout*       processingLayout = new QHBoxLayout(imageArea);
 
-    m_fullImage = new QLabel;
-    m_fullImage->setScaledContents(true);
-
-    // cropped face area
-    QScrollArea* facesArea = new QScrollArea(this);
-    facesArea->setWidgetResizable(true);
-    facesArea->setAlignment(Qt::AlignRight);
-    facesArea->setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOn);
-    facesArea->setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
-
-    QWidget* croppedFacesWidgets = new QWidget(this);
-    m_croppedfaceLayout          = new QVBoxLayout(this);
-
-    croppedFacesWidgets->setLayout(m_croppedfaceLayout);
-    facesArea->setWidget(croppedFacesWidgets);
-
-    // preprocessed face area
-    QScrollArea* preprocessedFacesArea = new QScrollArea(this);
-    preprocessedFacesArea->setWidgetResizable(true);
-    preprocessedFacesArea->setAlignment(Qt::AlignRight);
-    preprocessedFacesArea->setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOn);
-    preprocessedFacesArea->setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
-
-    QWidget* preprocessedFacesWidgets = new QWidget(this);
-    m_preprocessedLayout              = new QVBoxLayout(this);
-
-    preprocessedFacesWidgets->setLayout(m_preprocessedLayout);
-    preprocessedFacesArea->setWidget(preprocessedFacesWidgets);
-
-    // aligned face area
-    QScrollArea* alignedFacesArea = new QScrollArea(this);
-    alignedFacesArea->setWidgetResizable(true);
-    alignedFacesArea->setAlignment(Qt::AlignRight);
-    alignedFacesArea->setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOn);
-    alignedFacesArea->setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
-
-    QWidget* alignedFacesWidgets = new QWidget(this);
-    m_alignedLayout              = new QVBoxLayout(this);
-
-    alignedFacesWidgets->setLayout(m_alignedLayout);
-    alignedFacesArea->setWidget(alignedFacesWidgets);
-
-    // TODO add control panel to adjust detection hyper parameters
-    QWidget* controlPanel = setupControlPanel();
-
-    QSizePolicy spImage(QSizePolicy::Preferred, QSizePolicy::Preferred);
-    spImage.setVerticalPolicy(QSizePolicy::Expanding);
-    spImage.setHorizontalStretch(3);
-    m_fullImage->setSizePolicy(spImage);
-
-    spImage.setHorizontalStretch(1);
-
-    facesArea->setSizePolicy(spImage);
-    preprocessedFacesArea->setSizePolicy(spImage);
-    alignedFacesArea->setSizePolicy(spImage);
-
-    spImage.setHorizontalPolicy(QSizePolicy::Preferred);
-    spImage.setHorizontalStretch(2);
-    controlPanel->setSizePolicy(spImage);
-
-    QHBoxLayout* processingLayout = new QHBoxLayout(imageArea);
-    processingLayout->addWidget(m_fullImage);
-    processingLayout->addWidget(facesArea);
-    processingLayout->addWidget(preprocessedFacesArea);
-    processingLayout->addWidget(alignedFacesArea);
-    processingLayout->addWidget(controlPanel);
-
-    // Itemlist erea
-    QScrollArea* const itemsArea = new QScrollArea;
-    itemsArea->setWidgetResizable(true);
-    itemsArea->setAlignment(Qt::AlignBottom);
-    itemsArea->setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
-    itemsArea->setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOn);
+    processingLayout->addWidget(setupFullImageArea());
+    processingLayout->addWidget(setupCroppedFaceArea());
+    processingLayout->addWidget(setupPreprocessedFaceArea());
+    processingLayout->addWidget(setupAlignedFaceArea());
+    processingLayout->addWidget(setupControlPanel());
 
     QSizePolicy spHigh(QSizePolicy::Preferred, QSizePolicy::Preferred);
     spHigh.setVerticalPolicy(QSizePolicy::Expanding);
     imageArea->setSizePolicy(spHigh);
 
-    QSizePolicy spLow(QSizePolicy::Preferred, QSizePolicy::Preferred);
-    spLow.setVerticalPolicy(QSizePolicy::Fixed);
-    itemsArea->setSizePolicy(spLow);
-
+    QWidget*     const mainWidget = new QWidget(this);
     QVBoxLayout* const mainLayout = new QVBoxLayout(mainWidget);
     mainLayout->addWidget(imageArea);
-    mainLayout->addWidget(itemsArea);
-
-    m_imageListView = new QListWidget(mainWidget);
-    m_imageListView->setViewMode(QListView::IconMode);
-    m_imageListView->setIconSize(QSize(200, 150));
-    m_imageListView->setResizeMode(QListWidget::Adjust);
-    m_imageListView->setFlow(QListView::LeftToRight);
-    m_imageListView->setWrapping(false);
-    m_imageListView->setDragEnabled(false);
-
-    QStringList subjects = directory.entryList(QDir::Files | QDir::NoDotAndDotDot);
-
-    for (QStringList::const_iterator iter  = subjects.cbegin();
-                                     iter != subjects.cend();
-                                   ++iter)
-    {
-        QString filePath = directory.filePath(*iter);
-        QListWidgetItem* item = new QListWidgetItem(QIcon(filePath), filePath);
-
-        m_imageListView->addItem(item);
-    }
-
-    connect(m_imageListView, &QListWidget::currentItemChanged,
-            this,            &MainWindow::slotDetectFaces);
-
-    itemsArea->setWidget(m_imageListView);
+    mainLayout->addWidget(setupImageList(directory));
 
     setCentralWidget(mainWidget);
 }
@@ -225,13 +138,14 @@ MainWindow::~MainWindow()
 
     delete m_fullImage;
     delete m_imageListView;
-    delete m_croppedfaceLayout;
-    delete m_preprocessedLayout;
-    delete m_alignedLayout;
+    delete m_croppedfaceList;
+    delete m_preprocessedList;
+    delete m_alignedList;
 
     delete m_recognizationInfo;
     delete m_imageLabel;
     delete m_similarityLabel;
+    delete m_applyButton;
 }
 
 void MainWindow::slotDetectFaces(const QListWidgetItem* imageItem)
@@ -242,22 +156,19 @@ void MainWindow::slotDetectFaces(const QListWidgetItem* imageItem)
     QImage imgScaled(img.scaled(416, 416, Qt::KeepAspectRatio));
 
     // clear faces layout
-    QLayoutItem* wItem;
-    while ((wItem = m_croppedfaceLayout->takeAt(0)) != nullptr)
+    QListWidgetItem* wItem;
+    while ((wItem = m_croppedfaceList->item(0)) != nullptr)
     {
-        delete wItem->widget();
         delete wItem;
     }
 
-    while ((wItem = m_preprocessedLayout->takeAt(0)) != nullptr)
+    while ((wItem = m_preprocessedList->item(0)) != nullptr)
     {
-        delete wItem->widget();
         delete wItem;
     }
 
-    while ((wItem = m_alignedLayout->takeAt(0)) != nullptr)
+    while ((wItem = m_alignedList->item(0)) != nullptr)
     {
-        delete wItem->widget();
         delete wItem;
     }
 
@@ -270,9 +181,8 @@ void MainWindow::slotDetectFaces(const QListWidgetItem* imageItem)
 }
 
 
-QLabel* MainWindow::showCVMat(const cv::Mat& cvimage)
+QIcon MainWindow::showCVMat(const cv::Mat& cvimage)
 {
-    QLabel* image = nullptr;
     if(cvimage.cols*cvimage.rows != 0)
     {
         cv::Mat rgb;
@@ -280,26 +190,16 @@ QLabel* MainWindow::showCVMat(const cv::Mat& cvimage)
         cv::cvtColor(cvimage, rgb, (-2*cvimage.channels()+10));
         p.convertFromImage(QImage(rgb.data, rgb.cols, rgb.rows, QImage::Format_RGB888));
 
-        image = new QLabel;
-        image->setPixmap(p);
-        //resize(cvimage.cols, cvimage.rows);
+        return QIcon(p);
     }
 
-    return image;
+    return QIcon();
 }
 
 QList<QRectF> MainWindow::detectFaces(const QString& imagePath)
 {
     QImage img(imagePath);
-/*
-    cv::Mat img;
-    img = cv::imread(imagePath.toStdString());
 
-    if(! img.data )
-    {
-        qDebug() <<  "Open cv Could not open or find the image";
-    }
-*/
     QList<QRectF> faces;
 
     try
@@ -317,10 +217,6 @@ QList<QRectF> MainWindow::detectFaces(const QString& imagePath)
                                                               QSize(cvImage.cols - 2*paddedSize.width,
                                                               cvImage.rows - 2*paddedSize.height));
         elapsedDetection = timer.elapsed();
-
-
-        // debug padded image
-        //showCVMat(cvImage);
 
         qDebug() << "(Input CV) Found " << absRects.size() << " faces, in " << elapsedDetection << "ms";
     }
@@ -358,29 +254,29 @@ void MainWindow::extractFaces(const QImage& img, QImage& imgScaled, const QList<
 
     foreach (const QRectF& rr, faces)
     {
-        QLabel* const croppedFace = new QLabel;
-        croppedFace->setScaledContents(false);
-
         QRect rectDraw      = FaceDetector::toAbsoluteRect(rr, imgScaled.size());
         QRect rect          = FaceDetector::toAbsoluteRect(rr, img.size());
         QImage part         = img.copy(rect);
 
         // Show cropped faces
-        croppedFace->setPixmap(QPixmap::fromImage(part.scaled(qMin(img.size().width(), 100),
-                                                              qMin(img.size().width(), 100),
-                                                              Qt::KeepAspectRatio)));
-        m_croppedfaceLayout->addWidget(croppedFace);
+        QIcon croppedFace(QPixmap::fromImage(part.scaled(qMin(img.size().width(), 100),
+                                                         qMin(img.size().width(), 100),
+                                                         Qt::KeepAspectRatio)));
+        //croppedFace->setScaledContents(false);
+
+        m_croppedfaceList->addItem(new QListWidgetItem(croppedFace, QLatin1String("")));
         painter.drawRect(rectDraw);
 
         // Show preprocessed faces
         cv::Mat cvPreprocessedFace = m_recognizer->prepareForRecognition(part);
 
-        m_preprocessedLayout->addWidget(showCVMat(cvPreprocessedFace));
+        //m_preprocessedList->addItem(showCVMat(cvPreprocessedFace));
 
+        m_preprocessedList->addItem(new QListWidgetItem(showCVMat(cvPreprocessedFace), QLatin1String("")));
         // Show aligned faces
         cv::Mat cvAlignedFace = m_extractor->alignFace(cvPreprocessedFace);
 
-        m_alignedLayout->addWidget(showCVMat(cvAlignedFace));
+        m_alignedList->addItem(new QListWidgetItem(showCVMat(cvAlignedFace), QLatin1String("")));
 
         // get face embedding
         //std::vector<float> faceEmbedding = m_extractor->getFaceEmbedding(cvPreprocessedFace);
@@ -389,24 +285,180 @@ void MainWindow::extractFaces(const QImage& img, QImage& imgScaled, const QList<
     }
 }
 
+QWidget* MainWindow::setupFullImageArea()
+{
+    m_fullImage = new QLabel;
+    m_fullImage->setScaledContents(true);
+
+    QSizePolicy spImage(QSizePolicy::Preferred, QSizePolicy::Expanding);
+    spImage.setHorizontalStretch(3);
+    m_fullImage->setSizePolicy(spImage);
+
+    return m_fullImage;
+}
+
+QWidget* MainWindow::setupCroppedFaceArea()
+{
+    QScrollArea* facesArea = new QScrollArea(this);
+    facesArea->setWidgetResizable(true);
+    facesArea->setAlignment(Qt::AlignRight);
+    facesArea->setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOn);
+    facesArea->setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
+
+    QSizePolicy spImage(QSizePolicy::Preferred, QSizePolicy::Expanding);
+    spImage.setHorizontalStretch(1);
+
+    facesArea->setSizePolicy(spImage);
+
+    m_croppedfaceList = new QListWidget(this);
+
+    m_croppedfaceList->setViewMode(QListView::IconMode);
+    m_croppedfaceList->setIconSize(QSize(200, 150));
+    m_croppedfaceList->setResizeMode(QListWidget::Adjust);
+    m_croppedfaceList->setFlow(QListView::TopToBottom);
+    m_croppedfaceList->setWrapping(false);
+    m_croppedfaceList->setDragEnabled(false);
+
+/*
+    connect(m_croppedfaceList, &QListWidget::currentItemChanged,
+            this,            &MainWindow::slotDetectFaces);
+*/
+    facesArea->setWidget(m_croppedfaceList);
+
+    return facesArea;
+}
+
+QWidget* MainWindow::setupPreprocessedFaceArea()
+{
+    // preprocessed face area
+    QScrollArea* preprocessedFacesArea = new QScrollArea(this);
+    preprocessedFacesArea->setWidgetResizable(true);
+    preprocessedFacesArea->setAlignment(Qt::AlignRight);
+    preprocessedFacesArea->setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOn);
+    preprocessedFacesArea->setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
+
+    QSizePolicy spImage(QSizePolicy::Preferred, QSizePolicy::Expanding);
+    spImage.setHorizontalStretch(1);
+
+    preprocessedFacesArea->setSizePolicy(spImage);
+
+    m_preprocessedList = new QListWidget();
+
+    m_preprocessedList->setViewMode(QListView::IconMode);
+    m_preprocessedList->setIconSize(QSize(200, 150));
+    m_preprocessedList->setResizeMode(QListWidget::Adjust);
+    m_preprocessedList->setFlow(QListView::TopToBottom);
+    m_preprocessedList->setWrapping(false);
+    m_preprocessedList->setDragEnabled(false);
+
+    preprocessedFacesArea->setWidget(m_preprocessedList);
+
+    return preprocessedFacesArea;
+}
+
+QWidget* MainWindow::setupAlignedFaceArea()
+{
+    // aligned face area
+    QScrollArea* alignedFacesArea = new QScrollArea(this);
+    alignedFacesArea->setWidgetResizable(true);
+    alignedFacesArea->setAlignment(Qt::AlignRight);
+    alignedFacesArea->setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOn);
+    alignedFacesArea->setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
+
+    QSizePolicy spImage(QSizePolicy::Preferred, QSizePolicy::Expanding);
+    spImage.setHorizontalStretch(1);
+
+    alignedFacesArea->setSizePolicy(spImage);
+
+    m_alignedList = new QListWidget(this);
+
+    m_alignedList->setViewMode(QListView::IconMode);
+    m_alignedList->setIconSize(QSize(200, 150));
+    m_alignedList->setResizeMode(QListWidget::Adjust);
+    m_alignedList->setFlow(QListView::TopToBottom);
+    m_alignedList->setWrapping(false);
+    m_alignedList->setDragEnabled(false);
+
+    alignedFacesArea->setWidget(m_alignedList);
+
+    return alignedFacesArea;
+}
+
 QWidget* MainWindow::setupControlPanel()
 {
     QWidget* controlPanel = new QWidget();
 
+    QSizePolicy spImage(QSizePolicy::Preferred, QSizePolicy::Expanding);
+    spImage.setHorizontalStretch(2);
+
+    controlPanel->setSizePolicy(spImage);
+
     m_recognizationInfo = new QLabel(this);
     m_imageLabel        = new QLineEdit(this);
     m_similarityLabel   = new QLabel(this);
+    m_applyButton       = new QPushButton(this);
+    m_applyButton->setText(QLatin1String("Apply"));
 
     QFormLayout* layout   = new QFormLayout(this);
     layout->addRow(new QLabel(QLatin1String("Reconized :")), m_recognizationInfo);
     layout->addRow(new QLabel(QLatin1String("Identity :")),  m_imageLabel);
     layout->addRow(new QLabel(QLatin1String("Similarity distance :")), m_similarityLabel);
+    layout->insertRow(3, m_applyButton);
 
     controlPanel->setLayout(layout);
+
+    connect(m_applyButton, &QPushButton::clicked,
+            this,          &MainWindow::slotSaveIdentity);
 
     return controlPanel;
 }
 
+QWidget* MainWindow::setupImageList(const QDir& directory)
+{
+    // Itemlist erea
+    QScrollArea* itemsArea = new QScrollArea;
+    itemsArea->setWidgetResizable(true);
+    itemsArea->setAlignment(Qt::AlignBottom);
+    itemsArea->setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
+    itemsArea->setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOn);
+
+    QSizePolicy spLow(QSizePolicy::Preferred, QSizePolicy::Fixed);
+    itemsArea->setSizePolicy(spLow);
+
+    m_imageListView = new QListWidget(this);
+    m_imageListView->setViewMode(QListView::IconMode);
+    m_imageListView->setIconSize(QSize(200, 150));
+    m_imageListView->setResizeMode(QListWidget::Adjust);
+    m_imageListView->setFlow(QListView::LeftToRight);
+    m_imageListView->setWrapping(false);
+    m_imageListView->setDragEnabled(false);
+
+    QStringList subjects = directory.entryList(QDir::Files | QDir::NoDotAndDotDot);
+
+    for (QStringList::const_iterator iter  = subjects.cbegin();
+                                     iter != subjects.cend();
+                                   ++iter)
+    {
+        QString filePath = directory.filePath(*iter);
+        QListWidgetItem* item = new QListWidgetItem(QIcon(filePath), filePath);
+
+        m_imageListView->addItem(item);
+    }
+
+    connect(m_imageListView, &QListWidget::currentItemChanged,
+            this,            &MainWindow::slotDetectFaces);
+
+    itemsArea->setWidget(m_imageListView);
+
+    return itemsArea;
+}
+
+void MainWindow::slotSaveIdentity()
+{
+    m_currentIdenity.setAttribute(QLatin1String("fullname"), m_imageLabel->text());
+
+    m_recognizer->saveIdentity(m_currentIdenity);
+}
 
 QCommandLineParser* parseOptions(const QCoreApplication& app)
 {
