@@ -23,22 +23,29 @@
 
 #include "vkontakte_deletealbumjob.h"
 
+// Qt includes
+
+#include <QJsonValue>
+
+// KDE include
+
 #include <klocalizedstring.h>
 
+// Local includes
+
 #include "digikam_debug.h"
-#include <QJsonValue>
 
 namespace Vkontakte
 {
 
-DeleteAlbumJob::DeleteAlbumJob(const QString &accessToken, int aid)
-    : VkontakteJob(accessToken, QStringLiteral("photos.deleteAlbum"), true)
-    , d(0)
+DeleteAlbumJob::DeleteAlbumJob(const QString& accessToken, int aid)
+    : VkontakteJob(accessToken, QLatin1String("photos.deleteAlbum"), true),
+      d(nullptr)
 {
-    addQueryItem(QStringLiteral("aid"), QString::number(aid));
+    addQueryItem(QLatin1String("aid"), QString::number(aid));
 }
 
-void DeleteAlbumJob::handleData(const QJsonValue &data)
+void DeleteAlbumJob::handleData(const QJsonValue& data)
 {
     if (data.toInt(-1) != 1)
     {

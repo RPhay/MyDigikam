@@ -29,22 +29,34 @@ namespace Vkontakte
 class Q_DECL_HIDDEN CreateAlbumJob::Private
 {
 public:
+
     AlbumInfo album;
 };
 
-CreateAlbumJob::CreateAlbumJob(const QString &accessToken,
-                               const QString &title, const QString &description,
-                               int privacy, int comment_privacy)
-    : VkontakteJob(accessToken, QStringLiteral("photos.createAlbum"), true)
-    , d(new Private)
+CreateAlbumJob::CreateAlbumJob(const QString& accessToken,
+                               const QString& title,
+                               const QString& description,
+                               int privacy,
+                               int comment_privacy)
+    : VkontakteJob(accessToken, QStringLiteral("photos.createAlbum"), true),
+      d(new Private)
 {
     addQueryItem(QStringLiteral("title"), title);
+
     if (!description.isEmpty())
-        addQueryItem(QStringLiteral("description"), description);
+    {
+        addQueryItem(QLatin1String("description"), description);
+    }
+
     if (privacy != AlbumInfo::PRIVACY_UNKNOWN)
-        addQueryItem(QStringLiteral("privacy"), QString::number(privacy));
+    {
+        addQueryItem(QLatin1String("privacy"), QString::number(privacy));
+    }
+
     if (comment_privacy != AlbumInfo::PRIVACY_UNKNOWN)
-        addQueryItem(QStringLiteral("comment_privacy"), QString::number(comment_privacy));
+    {
+        addQueryItem(QLatin1String("comment_privacy"), QString::number(comment_privacy));
+    }
 }
 
 CreateAlbumJob::~CreateAlbumJob()
@@ -52,7 +64,7 @@ CreateAlbumJob::~CreateAlbumJob()
     delete d;
 }
 
-void CreateAlbumJob::handleData(const QJsonValue &data)
+void CreateAlbumJob::handleData(const QJsonValue& data)
 {
     if (!data.isObject())
     {

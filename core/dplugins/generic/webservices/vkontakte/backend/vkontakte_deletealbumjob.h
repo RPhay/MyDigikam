@@ -24,21 +24,27 @@
 #ifndef DIGIKAM_VKONTAKTE_DELETEALBUMJOB_H
 #define DIGIKAM_VKONTAKTE_DELETEALBUMJOB_H
 
+// Local includes
+
 #include "vkontakte_jobs.h"
 
 namespace Vkontakte
 {
 
-// This class is too simple to expand, not using Pimpl here
+// NOTE: This class is too simple to expand, not using Pimpl here
+
 class DeleteAlbumJob : public VkontakteJob
 {
 public:
-    DeleteAlbumJob(const QString &accessToken, int aid);
+
+    explicit DeleteAlbumJob(const QString& accessToken, int aid);
 
 protected:
-    void handleData(const QJsonValue &data) override;
+
+    void handleData(const QJsonValue& data) override;
 
 private:
+
     class Private;
     Private* const d; // not used
 };

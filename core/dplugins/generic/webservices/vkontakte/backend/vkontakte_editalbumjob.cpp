@@ -31,23 +31,35 @@
 namespace Vkontakte
 {
 
-EditAlbumJob::EditAlbumJob(const QString &accessToken,
-                           int aid, const QString &title, const QString &description,
-                           int privacy, int comment_privacy)
-    : VkontakteJob(accessToken, QStringLiteral("photos.editAlbum"), true)
-    , d(0)
+EditAlbumJob::EditAlbumJob(const QString& accessToken,
+                           int aid,
+                           const QString& title,
+                           const QString& description,
+                           int privacy,
+                           int comment_privacy)
+    : VkontakteJob(accessToken, QLatin1String("photos.editAlbum"), true),
+      d(nullptr)
 {
-    addQueryItem(QStringLiteral("aid"), QString::number(aid));
-    addQueryItem(QStringLiteral("title"), title);
+    addQueryItem(QLatin1String("aid"),   QString::number(aid));
+    addQueryItem(QLatin1String("title"), title);
+
     if (!description.isEmpty())
-        addQueryItem(QStringLiteral("description"), description);
+    {
+        addQueryItem(QLatin1String("description"), description);
+    }
+
     if (privacy != AlbumInfo::PRIVACY_UNKNOWN)
-        addQueryItem(QStringLiteral("privacy"), QString::number(privacy));
+    {
+        addQueryItem(QLatin1String("privacy"), QString::number(privacy));
+    }
+
     if (comment_privacy != AlbumInfo::PRIVACY_UNKNOWN)
-        addQueryItem(QStringLiteral("comment_privacy"), QString::number(comment_privacy));
+    {
+        addQueryItem(QLatin1String("comment_privacy"), QString::number(comment_privacy));
+    }
 }
 
-void EditAlbumJob::handleData(const QJsonValue &data)
+void EditAlbumJob::handleData(const QJsonValue& data)
 {
     if (data.toInt(-1) != 1)
     {

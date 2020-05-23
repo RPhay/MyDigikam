@@ -24,6 +24,8 @@
 #ifndef DIGIKAM_VKONTAKTE_EDITALBUMJOB_H
 #define DIGIKAM_VKONTAKTE_EDITALBUMJOB_H
 
+// Local includes
+
 #include "vkontakte_jobs.h"
 #include "vkontakte_albuminfo.h"
 
@@ -33,15 +35,20 @@ namespace Vkontakte
 class EditAlbumJob : public VkontakteJob
 {
 public:
-    EditAlbumJob(const QString &accessToken,
-                 int aid, const QString &title, const QString &description = QString(),
+
+    EditAlbumJob(const QString& accessToken,
+                 int aid,
+                 const QString& title,
+                 const QString& description = QString(),
                  int privacy = AlbumInfo::PRIVACY_UNKNOWN,
                  int comment_privacy = AlbumInfo::PRIVACY_UNKNOWN);
 
 protected:
-    void handleData(const QJsonValue &data) override;
+
+    void handleData(const QJsonValue& data) override;
 
 private:
+
     class Private;
     Private* const d; // not used
 };

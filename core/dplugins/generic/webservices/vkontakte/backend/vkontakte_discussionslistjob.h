@@ -24,6 +24,8 @@
 #ifndef DIGIKAM_VKONTAKTE_DISCUSSIONSLISTJOB_H
 #define DIGIKAM_VKONTAKTE_DISCUSSIONSLISTJOB_H
 
+// Local includes
+
 #include "vkontakte_jobs.h"
 #include "vkontakte_messageinfo.h"
 
@@ -33,6 +35,7 @@ namespace Vkontakte
 class DiscussionsListJob : public VkontakteJob
 {
 public:
+
     /**
      * @brief Constructs a job to retrieve an array of discussions from vk.com.
      *
@@ -40,20 +43,23 @@ public:
      * @param offset Offset in the list of all discussions. Defaults to 0.
      * @param count Number of discussions to retrieve. Defaults to 100.
      * @param previewLength 0 means to not truncate messages. Defaults to 0.
-     **/
-    explicit DiscussionsListJob(const QString &accessToken,
-                       int offset = 0, int count = 100, int previewLength = 0);
+     */
+    explicit DiscussionsListJob(const QString& accessToken,
+                                int offset = 0,
+                                int count = 100,
+                                int previewLength = 0);
     ~DiscussionsListJob();
 
     QList<MessageInfoPtr> list() const;
     int totalCount() const;
 
 protected:
-    void handleData(const QVariant &data) override;
 
-    void handleItem(const QVariant &data);
+    void handleData(const QVariant& data) override;
+    void handleItem(const QVariant& data);
 
 private:
+
     class Private;
     Private* const d;
 };

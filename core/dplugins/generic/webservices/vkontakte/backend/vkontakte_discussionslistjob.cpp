@@ -23,6 +23,8 @@
 
 #include "vkontakte_discussionslistjob.h"
 
+// Qt includes
+
 #include <qjson/qobjecthelper.h>
 
 namespace Vkontakte
@@ -31,16 +33,17 @@ namespace Vkontakte
 class Q_DECL_HIDDEN DiscussionsListJob::Private
 {
 public:
-    int totalCount; // number of all discussions, not only discussions retrieved in this request
+
+    int                   totalCount; ///< number of all discussions, not only discussions retrieved in this request
     QList<MessageInfoPtr> list;
 };
 
-DiscussionsListJob::DiscussionsListJob(const QString &accessToken, int offset, int count, int previewLength)
-    : VkontakteJob(accessToken, "messages.getDialogs")
-    , d(new Private)
+DiscussionsListJob::DiscussionsListJob(const QString& accessToken, int offset, int count, int previewLength)
+    : VkontakteJob(accessToken, "messages.getDialogs"),
+      d(new Private)
 {
-    addQueryItem("offset", QString::number(offset));
-    addQueryItem("count", QString::number(count));
+    addQueryItem("offset",         QString::number(offset));
+    addQueryItem("count",          QString::number(count));
     addQueryItem("preview_length", QString::number(previewLength));
 }
 
@@ -49,20 +52,23 @@ DiscussionsListJob::~DiscussionsListJob()
     delete d;
 }
 
-void DiscussionsListJob::handleItem(const QVariant &data)
+void DiscussionsListJob::handleItem(const QVariant& data)
 {
     MessageInfoPtr item(new MessageInfo());
     QJson::QObjectHelper::qvariant2qobject(data.toMap(), item.data());
     d->list.append(item);
 }
 
-void DiscussionsListJob::handleData(const QVariant &data)
+void DiscussionsListJob::handleData(const QVariant& data)
 {
     QVariantList list = data.toList();
-    d->totalCount = list[0].toInt();
+    d->totalCount     = list[0].toInt();
     list.pop_front();
-    foreach(const QVariant &item, list)
+
+    foreach (const QVariant& item, list)
+    {
         handleItem(item);
+    }
 
     qSort(d->list); // sort by message ID (which should be equivalent to sorting by date)
 }

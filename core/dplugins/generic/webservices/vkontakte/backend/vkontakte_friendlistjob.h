@@ -24,6 +24,8 @@
 #ifndef DIGIKAM_VKONTAKTE_FRIENDLISTJOB_H
 #define DIGIKAM_VKONTAKTE_FRIENDLISTJOB_H
 
+// Local includes
+
 #include "vkontakte_jobs.h"
 #include "vkontakte_userinfo.h"
 
@@ -34,16 +36,20 @@ namespace Vkontakte
 class FriendListJob : public VkontakteJob
 {
     Q_OBJECT
+
 public:
-    explicit FriendListJob(const QString &accessToken, int uid = -1);
+
+    explicit FriendListJob(const QString& accessToken, int uid = -1);
     ~FriendListJob();
 
     QList<UserInfoPtr> list() const;
 
 protected:
-    void handleData(const QVariant &data) override;
+
+    void handleData(const QVariant& data) override;
 
 private:
+
     class Private;
     Private* const d;
 };

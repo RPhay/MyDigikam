@@ -24,18 +24,23 @@
 #ifndef DIGIKAM_VKONTAKTE_CREATEALBUMJOB_H
 #define DIGIKAM_VKONTAKTE_CREATEALBUMJOB_H
 
+// Local includes
+
 #include "vkontakte_jobs.h"
 #include "vkontakte_albuminfo.h"
 
 namespace Vkontakte
 {
 
-// This class is too simple to expand, not using Pimpl here
+// NOTE: This class is too simple to expand, not using Pimpl here
+
 class CreateAlbumJob : public VkontakteJob
 {
 public:
-    CreateAlbumJob(const QString &accessToken,
-                   const QString &title, const QString &description = QString(),
+
+    explicit CreateAlbumJob(const QString& accessToken,
+                   const QString& title,
+                   const QString& description = QString(),
                    int privacy = AlbumInfo::PRIVACY_UNKNOWN,
                    int comment_privacy = AlbumInfo::PRIVACY_UNKNOWN);
     ~CreateAlbumJob();
@@ -43,9 +48,11 @@ public:
     AlbumInfo album() const;
 
 protected:
-    void handleData(const QJsonValue &data) override;
+
+    void handleData(const QJsonValue& data) override;
 
 private:
+
     class Private;
     Private* const d;
 };

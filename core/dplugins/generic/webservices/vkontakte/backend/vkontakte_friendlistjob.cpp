@@ -23,6 +23,8 @@
 
 #include "vkontakte_friendlistjob.h"
 
+// Qt includes
+
 #include <qjson/qobjecthelper.h>
 
 namespace Vkontakte
@@ -31,16 +33,20 @@ namespace Vkontakte
 class Q_DECL_HIDDEN FriendListJob::Private
 {
 public:
+
     QList<UserInfoPtr> list;
 };
 
 // http://vk.com/dev/friends.get
-FriendListJob::FriendListJob(const QString &accessToken, int uid)
-    : VkontakteJob(accessToken, "friends.get")
-    , d(new Private)
+FriendListJob::FriendListJob(const QString& accessToken, int uid)
+    : VkontakteJob(accessToken, "friends.get"),
+      d(new Private)
 {
     if (uid != -1)
+    {
         addQueryItem("uid", QString::number(uid));
+    }
+
     addQueryItem("fields", UserInfo::allQueryFields().join(","));
 }
 
@@ -54,9 +60,9 @@ QList<UserInfoPtr> FriendListJob::list() const
     return d->list;
 }
 
-void FriendListJob::handleData(const QVariant &data)
+void FriendListJob::handleData(const QVariant& data)
 {
-    foreach(const QVariant &user, data.toList())
+    foreach (const QVariant& user, data.toList())
     {
         UserInfoPtr userInfo(new UserInfo());
         QJson::QObjectHelper::qvariant2qobject(user.toMap(), userInfo.data());
