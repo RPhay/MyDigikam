@@ -53,8 +53,8 @@ UserInfo::UserInfo(const QJsonObject& jsonData)
 }
 
 UserInfo::UserInfo(const UserInfo& other)
+    : d(other.d)
 {
-    d = other.d;
 }
 
 UserInfo::~UserInfo()

@@ -53,7 +53,7 @@ class MessageInfo : public QObject
 
 public:
 
-    explicit MessageInfo();
+    MessageInfo();
     ~MessageInfo();
 
     /**

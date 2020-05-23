@@ -54,7 +54,7 @@ public:
      * @brief Construct a job to retrieve the data of the currently authenticaed user.
      * @param accessToken The access token to access data on vkontakte.
     */
-    UserInfoJob(const QString& accessToken);
+    explicit UserInfoJob(const QString& accessToken);
 
     /**
     * @brief Construct a job to retrieve the data of user with the given uid.
@@ -74,7 +74,7 @@ public:
     void setFields(const QStringList& fields);
 
 protected:
-    
+
     /**
      * @brief Handles the data returned by the VkontakteGetJob
      * @param data A JSON string containing the data.

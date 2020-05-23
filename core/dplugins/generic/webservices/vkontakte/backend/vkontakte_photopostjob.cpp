@@ -48,14 +48,12 @@ namespace Vkontakte
 
 PhotoPostJob::PhotoPostJob(Vkontakte::UploadPhotosJob::Dest dest,
                            const QUrl& url, const QStringList& files)
+    : m_dest(dest),
+      m_url(url),
+      m_files(files),
+      m_ok(true)
 {
-    m_url   = url;
-    m_files = files;
-    m_dest  = dest;
-
     setCapabilities(KJob::Killable);
-
-    m_ok = true;
 
     if ((files.size() <= 0) || (files.size() > 5))
     {

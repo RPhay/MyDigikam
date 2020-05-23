@@ -51,7 +51,7 @@ class GroupInfo : public QObject
 
 public:
 
-    explicit GroupInfo();
+    GroupInfo();
     ~GroupInfo();
 
     void setGid(int gid);

@@ -51,7 +51,7 @@ class NoteInfo : public QObject
 
 public:
 
-    explicit NoteInfo();
+    NoteInfo();
     ~NoteInfo();
 
     void setNid(int nid);

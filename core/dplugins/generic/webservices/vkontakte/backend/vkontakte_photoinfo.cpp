@@ -49,8 +49,8 @@ PhotoInfo::PhotoInfo(const QJsonObject& jsonData)
 }
 
 PhotoInfo::PhotoInfo(const PhotoInfo& other)
+    : d(other.d)
 {
-    d = other.d;
 }
 
 PhotoInfo::~PhotoInfo()
