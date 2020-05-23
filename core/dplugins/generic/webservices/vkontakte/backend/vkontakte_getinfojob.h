@@ -38,16 +38,19 @@ namespace Vkontakte
 class GetInfoJob : public VkontakteJob
 {
 public:
-    // This class was never used in KDE 4, will be removed in the KF5 version
-    Q_DECL_DEPRECATED GetInfoJob(const QString &accessToken, const QString &method);
+
+    // This class was never used, will be removed later
+    Q_DECL_DEPRECATED GetInfoJob(const QString& accessToken, const QString& method);
     ~GetInfoJob();
 
     QVariantMap info();
 
 protected:
-    void handleData(const QVariant &data) override;
+
+    void handleData(const QVariant& data) override;
 
 private:
+
     class Private;
     Private* const d;
 };

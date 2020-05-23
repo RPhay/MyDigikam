@@ -29,13 +29,14 @@ namespace Vkontakte
 class Q_DECL_HIDDEN GetInfoJob::Private
 {
 public:
+
     QVariantMap info;
 };
 
 // example 'method': "messages.getLongPollServer"
-GetInfoJob::GetInfoJob(const QString &accessToken, const QString &method)
-    : VkontakteJob(accessToken, method)
-    , d(new Private)
+GetInfoJob::GetInfoJob(const QString& accessToken, const QString& method)
+    : VkontakteJob(accessToken, method),
+      d(new Private)
 {
 }
 
@@ -44,7 +45,7 @@ GetInfoJob::~GetInfoJob()
     delete d;
 }
 
-void GetInfoJob::handleData(const QVariant &data)
+void GetInfoJob::handleData(const QVariant& data)
 {
      d->info = data.toMap();
 }

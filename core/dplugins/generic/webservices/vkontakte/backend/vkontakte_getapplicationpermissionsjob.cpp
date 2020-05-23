@@ -34,14 +34,15 @@ namespace Vkontakte
 class Q_DECL_HIDDEN GetApplicationPermissionsJob::Private
 {
 public:
+
     int permissions;
 };
 
 // http://vk.com/dev/account.getAppPermissions
 // http://vk.com/dev/permissions
-GetApplicationPermissionsJob::GetApplicationPermissionsJob(const QString &accessToken)
-    : VkontakteJob(accessToken, QStringLiteral("account.getAppPermissions"))
-    , d(new Private)
+GetApplicationPermissionsJob::GetApplicationPermissionsJob(const QString& accessToken)
+    : VkontakteJob(accessToken, QLatin1String("account.getAppPermissions")),
+      d(new Private)
 {
 }
 
@@ -50,7 +51,7 @@ GetApplicationPermissionsJob::~GetApplicationPermissionsJob()
     delete d;
 }
 
-void GetApplicationPermissionsJob::handleData(const QJsonValue &data)
+void GetApplicationPermissionsJob::handleData(const QJsonValue& data)
 {
     d->permissions = data.toInt(-1);
 

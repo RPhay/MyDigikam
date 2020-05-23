@@ -34,15 +34,18 @@ namespace Vkontakte
 class GetApplicationPermissionsJob : public VkontakteJob
 {
 public:
-    GetApplicationPermissionsJob(const QString &accessToken);
+
+    explicit GetApplicationPermissionsJob(const QString& accessToken);
     ~GetApplicationPermissionsJob();
 
     int permissions() const;
 
 protected:
-    void handleData(const QJsonValue &data) override;
+
+    void handleData(const QJsonValue& data) override;
 
 private:
+
     class Private;
     Private* const d;
 };
