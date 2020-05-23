@@ -25,9 +25,13 @@
 #ifndef DIGIKAM_VKONTAKTE_AUTHENTICATIONDIALOG_H
 #define DIGIKAM_VKONTAKTE_AUTHENTICATIONDIALOG_H
 
-#include "vkontakte_apppermissions.h"
+// Qt includes
 
 #include <QDialog>
+
+// Local includes
+
+#include "vkontakte_apppermissions.h"
 
 namespace Vkontakte
 {
@@ -35,28 +39,33 @@ namespace Vkontakte
 class AuthenticationDialog : public QDialog
 {
     Q_OBJECT
+
 public:
-    AuthenticationDialog(QWidget *parent);
+
+    explicit AuthenticationDialog(QWidget* const parent);
     ~AuthenticationDialog();
 
-    void setAppId(const QString &appId);
-    void Q_DECL_DEPRECATED setPermissions(const QStringList &permissions);
+    void setAppId(const QString& appId);
+    void Q_DECL_DEPRECATED setPermissions(const QStringList& permissions);
     void setPermissions(Vkontakte::AppPermissions::Value permissions);
-    void setDisplayMode(const QString &displayMode);
+    void setDisplayMode(const QString& displayMode);
     void start();
 
 Q_SIGNALS:
-    void authenticated(const QString &accessToken);
+
+    void authenticated(const QString& accessToken);
     void canceled();
 
 private Q_SLOTS:
-    void urlChanged(const QUrl &url);
+
+    void urlChanged(const QUrl& url);
     void loadFinished(bool ok);
     void showErrorDialog();
 
 private:
+
     class Private;
-    Private * const d;
+    Private* const d;
 };
 
 } // namespace Vkontakte

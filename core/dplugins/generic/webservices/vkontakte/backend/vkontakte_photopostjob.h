@@ -46,7 +46,7 @@ public:
     // files.size <= 5
     PhotoPostJob(Vkontakte::UploadPhotosJob::Dest dest, const QUrl &url, const QStringList &files);
 
-    void start() Q_DECL_OVERRIDE;
+    void start() override;
     QVariantMap response() const;
 
 protected:

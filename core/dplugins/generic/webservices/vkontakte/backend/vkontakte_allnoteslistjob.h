@@ -24,6 +24,8 @@
 #ifndef DIGIKAM_VKONTAKTE_ALLNOTESLISTJOB_H
 #define DIGIKAM_VKONTAKTE_ALLNOTESLISTJOB_H
 
+// Local includes
+
 #include "vkontakte_noteslistjob.h"
 
 namespace Vkontakte
@@ -32,24 +34,29 @@ namespace Vkontakte
 class AllNotesListJob : public KJobWithSubjobs
 {
     Q_OBJECT
+
 public:
-    AllNotesListJob(const QString &accessToken, int uid);
+
+    explicit AllNotesListJob(const QString& accessToken, int uid);
     ~AllNotesListJob();
 
-    void start() Q_DECL_OVERRIDE;
+    void start() override;
 
     QList<NoteInfoPtr> list() const;
-    int count() const;
+    int count()               const;
 
 protected:
+
     void startNewJob(int offset, int count);
 
 private Q_SLOTS:
-    void jobFinished(KJob *kjob);
+
+    void jobFinished(KJob* kjob);
 
 private:
+
     class Private;
-    Private * const d;
+    Private* const d;
 };
 
 } // namespace Vkontakte

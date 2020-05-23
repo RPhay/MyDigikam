@@ -44,8 +44,8 @@ public:
 
 protected:
     static QString getMethod(enum UploadPhotosJob::Dest dest);
-    void prepareQueryItems() Q_DECL_OVERRIDE;
-    void handleData(const QJsonValue &data) Q_DECL_OVERRIDE;
+    void prepareQueryItems() override;
+    void handleData(const QJsonValue &data) override;
 
 private:
     UploadPhotosJob::Dest m_dest;

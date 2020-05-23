@@ -49,7 +49,7 @@ public:
 protected:
     QString getMethod(Vkontakte::UploadPhotosJob::Dest dest);
     void handleItem(const QJsonValue &item);
-    void handleData(const QJsonValue &data) Q_DECL_OVERRIDE;
+    void handleData(const QJsonValue &data) override;
 
 private:
     UploadPhotosJob::Dest m_dest;

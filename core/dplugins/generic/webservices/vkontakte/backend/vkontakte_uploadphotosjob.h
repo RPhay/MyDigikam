@@ -46,7 +46,7 @@ public:
                     const QStringList &files, bool saveBig, int aid, int gid = -1);
     ~UploadPhotosJob();
 
-    void start() Q_DECL_OVERRIDE;
+    void start() override;
 
     QList<PhotoInfo> list() const;
 
@@ -71,7 +71,7 @@ private Q_SLOTS:
 
 private:
     class Private;
-    Private * const d;
+    Private* const d;
 };
 
 } // namespace Vkontakte

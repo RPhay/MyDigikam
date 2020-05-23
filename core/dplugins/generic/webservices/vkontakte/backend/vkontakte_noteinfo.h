@@ -118,7 +118,7 @@ public:
 
 private:
     class Private;
-    Private * const d;
+    Private* const d;
 };
 
 typedef QSharedPointer<NoteInfo> NoteInfoPtr;

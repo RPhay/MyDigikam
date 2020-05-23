@@ -24,7 +24,11 @@
 #ifndef DIGIKAM_VKONTAKTE_CIDSNAMESJOB_H
 #define DIGIKAM_VKONTAKTE_CIDSNAMESJOB_H
 
+// Qt includes
+
 #include <QMap>
+
+// Local includes
 
 #include "vkontakte_jobs.h"
 #include "vkontakte_qintlist.h"
@@ -35,19 +39,22 @@ namespace Vkontakte
 class CidsNamesJob : public VkontakteJob
 {
 public:
-    CidsNamesJob(const QString &method,
-                 const QString &accessToken,
-                 const QIntList &cids);
+
+    explicit CidsNamesJob(const QString& method,
+                          const QString& accessToken,
+                          const QIntList& cids);
     ~CidsNamesJob();
 
     QMap<int, QString> names() const;
 
 protected:
-    void handleData(const QVariant &data) Q_DECL_OVERRIDE;
+
+    void handleData(const QVariant& data) override;
 
 private:
+
     class Private;
-    Private * const d;
+    Private* const d;
 };
 
 } // namespace Vkontakte

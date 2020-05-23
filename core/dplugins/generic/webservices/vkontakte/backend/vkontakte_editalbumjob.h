@@ -39,11 +39,11 @@ public:
                  int comment_privacy = AlbumInfo::PRIVACY_UNKNOWN);
 
 protected:
-    void handleData(const QJsonValue &data) Q_DECL_OVERRIDE;
+    void handleData(const QJsonValue &data) override;
 
 private:
     class Private;
-    Private * const d; // not used
+    Private* const d; // not used
 };
 
 } // namespace Vkontakte

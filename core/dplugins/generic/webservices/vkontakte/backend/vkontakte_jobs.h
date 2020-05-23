@@ -37,7 +37,7 @@ class KJobWithSubjob : public KJob
 {
 protected:
     /** Kill the currentjobs and its subjobs */
-    bool doKill() Q_DECL_OVERRIDE;
+    bool doKill() override;
 
     QPointer<KJob> m_job; /** Pointer to the running job */
 };
@@ -46,7 +46,7 @@ class KJobWithSubjobs : public KJob
 {
 protected:
     /** Kill the currentjobs and its subjobs */
-    bool doKill() Q_DECL_OVERRIDE;
+    bool doKill() override;
 
     QList<KJob *> m_jobs; /** Pointers to running jobs */
 };
@@ -67,7 +67,7 @@ public:
      * */
     VkontakteJob(const QString &accessToken, const QString &method, bool httpPost = false);
 
-    void start() Q_DECL_OVERRIDE;
+    void start() override;
 
     enum JobErrorType { AuthenticationProblem = KJob::UserDefinedError + 42 };
 

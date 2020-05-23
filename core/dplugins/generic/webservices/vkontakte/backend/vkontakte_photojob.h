@@ -41,7 +41,7 @@ public:
     PhotoJob(const QUrl &urlString);
     ~PhotoJob();
 
-    void start() Q_DECL_OVERRIDE;
+    void start() override;
     QImage photo() const;
 
 private Q_SLOTS:
@@ -49,7 +49,7 @@ private Q_SLOTS:
 
 private:
     class Private;
-    Private * const d;
+    Private* const d;
 };
 
 } // namespace Vkontakte

@@ -46,7 +46,7 @@ public:
 
 protected:
 
-    void handleData(const QJsonValue& data) Q_DECL_OVERRIDE;
+    void handleData(const QJsonValue& data) override;
     void handleItem(const QVariant& data);
 
 private:

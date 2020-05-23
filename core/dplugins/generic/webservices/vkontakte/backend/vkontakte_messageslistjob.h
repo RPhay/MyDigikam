@@ -60,13 +60,13 @@ public:
     int out() const;
 
 protected:
-    void handleData(const QVariant &data) Q_DECL_OVERRIDE;
+    void handleData(const QVariant &data) override;
 
     void handleItem(const QVariant &data);
 
 private:
     class Private;
-    Private * const d;
+    Private* const d;
 };
 
 } // namespace Vkontakte

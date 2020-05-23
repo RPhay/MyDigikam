@@ -45,11 +45,11 @@ protected:
     * @brief Handles the data returned by VkontakteJob
     * @param data JSON value containing an array of photos.
     */
-    void handleData(const QJsonValue &data) Q_DECL_OVERRIDE;
+    void handleData(const QJsonValue &data) override;
 
 private:
     class Private;
-    Private * const d;
+    Private* const d;
 };
 
 } // namespace Vkontakte

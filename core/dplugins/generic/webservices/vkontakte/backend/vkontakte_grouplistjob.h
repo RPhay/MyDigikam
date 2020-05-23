@@ -44,11 +44,11 @@ public:
 
 protected:
     GroupInfoPtr handleSingleData(const QVariant &data);
-    void handleData(const QVariant &data) Q_DECL_OVERRIDE;
+    void handleData(const QVariant &data) override;
 
 private:
     class Private;
-    Private * const d;
+    Private* const d;
 };
 
 } // namespace Vkontakte
