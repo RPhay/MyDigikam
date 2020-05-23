@@ -37,17 +37,21 @@ namespace Vkontakte
 class PhotoJob : public KJobWithSubjob
 {
     Q_OBJECT
+
 public:
-    PhotoJob(const QUrl &urlString);
+
+    explicit PhotoJob(const QUrl& url);
     ~PhotoJob();
 
     void start() override;
     QImage photo() const;
 
 private Q_SLOTS:
-    void jobFinished(KJob *kjob);
+
+    void jobFinished(KJob* kjob);
 
 private:
+
     class Private;
     Private* const d;
 };

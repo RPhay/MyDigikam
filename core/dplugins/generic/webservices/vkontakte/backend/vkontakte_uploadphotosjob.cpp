@@ -55,7 +55,7 @@ public:
 };
 
 UploadPhotosJob::UploadPhotosJob(const QString& accessToken,
-                                 const QStringList &files, bool saveBig, int aid, int gid)
+                                 const QStringList& files, bool saveBig, int aid, int gid)
     : KJobWithSubjobs()
     , d(new Private)
 {
@@ -182,7 +182,7 @@ void UploadPhotosJob::postJobFinished(KJob *kjob)
     m_jobs.removeAll(job);
 }
 
-void UploadPhotosJob::startSaveJob(const QVariantMap &photoIdData)
+void UploadPhotosJob::startSaveJob(const QVariantMap& photoIdData)
 {
     SavePhotoJob *job = new SavePhotoJob(d->accessToken, d->dest, photoIdData);
     m_jobs.append(job);

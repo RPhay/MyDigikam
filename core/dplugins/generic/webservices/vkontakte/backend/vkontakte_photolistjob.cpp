@@ -37,6 +37,7 @@ namespace Vkontakte
 class Q_DECL_HIDDEN PhotoListJob::Private
 {
 public:
+
     QList<PhotoInfo> list;
 };
 
@@ -45,14 +46,17 @@ public:
 // The API also allows to set "limit" and "offset", but that
 // does not seem to be useful.
 PhotoListJob::PhotoListJob(const QString& accessToken,
-                           int uid, int aid, const QList<int> &pids)
-    : VkontakteJob(accessToken, QStringLiteral("photos.get"))
-    , d(new Private)
+                           int uid, int aid, const QList<int>& pids)
+    : VkontakteJob(accessToken, QStringLiteral("photos.get")),
+      d(new Private)
 {
     addQueryItem(QStringLiteral("uid"), QString::number(uid));
     addQueryItem(QStringLiteral("aid"), QString::number(aid));
+
     if (!pids.empty())
+    {
         addQueryItem(QStringLiteral("pids"), joinIntegers(pids));
+    }
 }
 
 PhotoListJob::~PhotoListJob()

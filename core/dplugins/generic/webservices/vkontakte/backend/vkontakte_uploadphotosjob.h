@@ -47,7 +47,7 @@ public:
     };
 
     UploadPhotosJob(const QString& accessToken,
-                    const QStringList &files, bool saveBig, int aid, int gid = -1);
+                    const QStringList& files, bool saveBig, int aid, int gid = -1);
     ~UploadPhotosJob();
 
     void start() override;
@@ -63,7 +63,7 @@ protected:
     bool mayStartPostJob();
 
     void startPostJob(int offset, int count);
-    void startSaveJob(const QVariantMap &photoIdData);
+    void startSaveJob(const QVariantMap& photoIdData);
 
 Q_SIGNALS:
     void progress(int);

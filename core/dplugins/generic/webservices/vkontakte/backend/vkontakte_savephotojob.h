@@ -46,7 +46,7 @@ class SavePhotoJob : public VkontakteJob
 public:
     SavePhotoJob(const QString& accessToken,
                  UploadPhotosJob::Dest dest,
-                 const QVariantMap &photoIdData, int gid = -1);
+                 const QVariantMap& photoIdData, int gid = -1);
 
     QList<PhotoInfo> list() const;
 

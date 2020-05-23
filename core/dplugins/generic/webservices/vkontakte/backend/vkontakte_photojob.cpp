@@ -41,11 +41,12 @@ namespace Vkontakte
 class Q_DECL_HIDDEN PhotoJob::Private
 {
 public:
-    QUrl url;
+
+    QUrl   url;
     QImage photo;
 };
 
-PhotoJob::PhotoJob(const QUrl &url)
+PhotoJob::PhotoJob(const QUrl& url)
     : d(new Private)
 {
     d->url = url;
@@ -59,16 +60,20 @@ PhotoJob::~PhotoJob()
 void PhotoJob::start()
 {
     qCDebug(DIGIKAM_WEBSERVICES_LOG) << "Starting photo download" << d->url;
-    KIO::StoredTransferJob * const job = KIO::storedGet(d->url, KIO::Reload, KIO::HideProgressInfo);
-    m_job = job;
-    connect(job, SIGNAL(result(KJob*)), this, SLOT(jobFinished(KJob*)));
+    KIO::StoredTransferJob* const job = KIO::storedGet(d->url, KIO::Reload, KIO::HideProgressInfo);
+    m_job                             = job;
+
+    connect(job, SIGNAL(result(KJob*)),
+            this, SLOT(jobFinished(KJob*)));
+
     job->start();
 }
 
-void PhotoJob::jobFinished(KJob *kjob)
+void PhotoJob::jobFinished(KJob* kjob)
 {
-    KIO::StoredTransferJob *job = dynamic_cast<KIO::StoredTransferJob *>(kjob);
+    KIO::StoredTransferJob* const job = dynamic_cast<KIO::StoredTransferJob*>(kjob);
     Q_ASSERT(job);
+
     if (job && job->error())
     {
         setError(job->error());
@@ -76,7 +81,9 @@ void PhotoJob::jobFinished(KJob *kjob)
         qCWarning(DIGIKAM_WEBSERVICES_LOG) << "Job error:" << job->errorString();
     }
     else
+    {
         d->photo = QImage::fromData(job->data());
+    }
 
     emitResult();
     m_job = 0;

@@ -57,7 +57,7 @@ UserInfoJob::UserInfoJob(const QString& accessToken, int uid)
     addQueryItem(QStringLiteral("user_ids"), QString::number(uid));
 }
 
-UserInfoJob::UserInfoJob(const QString& accessToken, const QList<int> &uids)
+UserInfoJob::UserInfoJob(const QString& accessToken, const QList<int>& uids)
     : VkontakteJob(accessToken, QStringLiteral("users.get"))
     , d(new Private)
 {
@@ -78,7 +78,7 @@ QList<UserInfo> UserInfoJob::userInfo() const
     return d->userInfo;
 }
 
-void UserInfoJob::setFields(const QStringList &fields)
+void UserInfoJob::setFields(const QStringList& fields)
 {
     d->fields = fields;
 }

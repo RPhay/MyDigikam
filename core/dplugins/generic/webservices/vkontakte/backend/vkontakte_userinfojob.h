@@ -61,7 +61,7 @@ public:
     */
     UserInfoJob(const QString& accessToken, int uid);
 
-    UserInfoJob(const QString& accessToken, const QList<int> &uids);
+    UserInfoJob(const QString& accessToken, const QList<int>& uids);
 
     ~UserInfoJob();
 
@@ -70,7 +70,7 @@ public:
     */
     QList<UserInfo> userInfo() const;
 
-    void setFields(const QStringList &fields);
+    void setFields(const QStringList& fields);
 
 protected:
     /**

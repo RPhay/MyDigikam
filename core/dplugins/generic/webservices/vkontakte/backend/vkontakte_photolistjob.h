@@ -35,14 +35,17 @@ namespace Vkontakte
 class PhotoListJob : public VkontakteJob
 {
     Q_OBJECT
+
 public:
-    PhotoListJob(const QString& accessToken,
-                 int uid, int aid, const QList<int> &pids = QList<int>());
+
+    explicit PhotoListJob(const QString& accessToken,
+                          int uid, int aid, const QList<int>& pids = QList<int>());
     ~PhotoListJob();
 
     QList<PhotoInfo> list() const;
 
 protected:
+
     /**
     * @brief Handles the data returned by VkontakteJob
     * @param data JSON value containing an array of photos.
@@ -50,6 +53,7 @@ protected:
     void handleData(const QJsonValue& data) override;
 
 private:
+
     class Private;
     Private* const d;
 };

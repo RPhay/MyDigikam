@@ -47,17 +47,20 @@ namespace Vkontakte
 {
 
 PhotoPostJob::PhotoPostJob(Vkontakte::UploadPhotosJob::Dest dest,
-                           const QUrl &url, const QStringList &files)
+                           const QUrl& url, const QStringList& files)
 {
-    m_url = url;
+    m_url   = url;
     m_files = files;
-    m_dest = dest;
+    m_dest  = dest;
 
     setCapabilities(KJob::Killable);
 
     m_ok = true;
-    if (files.size() <= 0 || files.size() > 5)
+
+    if ((files.size() <= 0) || (files.size() > 5))
+    {
         m_ok = false;
+    }
 }
 
 void PhotoPostJob::handleError(const QJsonValue& data)
@@ -74,7 +77,7 @@ void PhotoPostJob::handleError(const QJsonValue& data)
         const QVariantMap errorMap = data.toVariant().toMap();
 
         error_code = errorMap[QStringLiteral("error_code")].toInt();
-        error_msg = errorMap[QStringLiteral("error_msg")].toString();
+        error_msg  = errorMap[QStringLiteral("error_msg")].toString();
 
         qCWarning(DIGIKAM_WEBSERVICES_LOG) << "An error of type" << error_code << "occurred:" << error_msg;
     }
@@ -98,11 +101,14 @@ void PhotoPostJob::handleError(const QJsonValue& data)
     }
 }
 
-bool PhotoPostJob::appendFile(QHttpMultiPart *multiPart, const QString& header, const QString& path)
+bool PhotoPostJob::appendFile(QHttpMultiPart* multiPart, const QString& header, const QString& path)
 {
     QString mime = QMimeDatabase().mimeTypeForUrl(QUrl(path)).name();
+    
     if (mime.isEmpty())
+    {
         return false;
+    }
 
     QFileInfo fileInfo(path);
 
@@ -112,7 +118,8 @@ bool PhotoPostJob::appendFile(QHttpMultiPart *multiPart, const QString& header, 
                             .arg(header).arg(fileInfo.fileName())));
     imagePart.setHeader(QNetworkRequest::ContentLengthHeader, QVariant(fileInfo.size()));
     imagePart.setHeader(QNetworkRequest::ContentTypeHeader, QVariant(mime));
-    QFile *file = new QFile(path);
+    QFile* const file = new QFile(path);
+
     if (!file->open(QIODevice::ReadOnly))
     {
         delete file;
@@ -123,6 +130,7 @@ bool PhotoPostJob::appendFile(QHttpMultiPart *multiPart, const QString& header, 
     file->setParent(multiPart); // we cannot delete the file now, so delete it with the multiPart
 
     multiPart->append(imagePart);
+    
     return true;
 }
 
@@ -135,27 +143,42 @@ void PhotoPostJob::start()
         emitResult();
     }
 
-    QHttpMultiPart* multiPart = new QHttpMultiPart(QHttpMultiPart::FormDataType);
+    QHttpMultiPart* const multiPart = new QHttpMultiPart(QHttpMultiPart::FormDataType);
+
     switch (m_dest)
     {
         case Vkontakte::UploadPhotosJob::DEST_ALBUM:
+        {
             // "file1" .. "file5"
-            for (int i = 0; i < m_files.size(); i ++)
+            for (int i = 0 ; i < m_files.size() ; i++)
+            {
                 if (!appendFile(multiPart, QStringLiteral("file%1").arg(i + 1), m_files[i]))
                 {
                     m_ok = false;
                     break;
                 }
+            }
+
             break;
+        }
+
         case Vkontakte::UploadPhotosJob::DEST_PROFILE:
         case Vkontakte::UploadPhotosJob::DEST_WALL:
+        {
             // "photo"
             if (!appendFile(multiPart, QStringLiteral("photo"), m_files[0]))
+            {
                 m_ok = false;
+            }
+
             break;
+        }
+
         default:
+        {
             m_ok = false;
             break;
+        }
     }
 
     if (!m_ok)
@@ -166,11 +189,12 @@ void PhotoPostJob::start()
     }
 
     QNetworkAccessManager* manager = new QNetworkAccessManager(this);
+
     connect(manager, SIGNAL(finished(QNetworkReply*)),
             this, SLOT(parseNetworkResponse(QNetworkReply*)));
 
     qCDebug(DIGIKAM_WEBSERVICES_LOG) << "Starting POST request" << m_url;
-    QNetworkReply *reply = manager->post(QNetworkRequest(m_url), multiPart);
+    QNetworkReply* const reply = manager->post(QNetworkRequest(m_url), multiPart);
     multiPart->setParent(reply); // delete the multiPart with the reply
 }
 
@@ -185,16 +209,17 @@ void PhotoPostJob::parseNetworkResponse(QNetworkReply *reply)
     }
     else
     {
-        QByteArray ba = reply->readAll();
+        QByteArray ba      = reply->readAll();
         qCDebug(DIGIKAM_WEBSERVICES_LOG) << "Got data:" << ba;
 
         QJsonParseError parseError;
         QJsonDocument data = QJsonDocument::fromJson(ba, &parseError);
+
         if (parseError.error == QJsonParseError::NoError)
         {
             const QJsonObject object = data.object();
 
-            if (!data.isObject())
+            if      (!data.isObject())
             {
                 // Something went wrong, but there is no valid object "error"
                 handleError(QJsonValue::Undefined);

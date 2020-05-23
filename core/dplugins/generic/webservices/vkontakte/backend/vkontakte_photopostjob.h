@@ -46,28 +46,37 @@ namespace Vkontakte
 class PhotoPostJob : public KJob
 {
     Q_OBJECT
+
 public:
+
     // files.size <= 5
-    PhotoPostJob(Vkontakte::UploadPhotosJob::Dest dest, const QUrl &url, const QStringList &files);
+    explicit PhotoPostJob(Vkontakte::UploadPhotosJob::Dest dest, const QUrl& url, const QStringList& files);
 
     void start() override;
     QVariantMap response() const;
 
 protected:
-    /** Check for a return error and set the appropriate error messages */
+
+    /**
+     * Check for a return error and set the appropriate error messages 
+     */
     void handleError(const QJsonValue& data);
 
 private Q_SLOTS:
-    void parseNetworkResponse(QNetworkReply *reply);
+
+    void parseNetworkResponse(QNetworkReply* reply);
 
 private:
-    bool appendFile(QHttpMultiPart *multiPart, const QString& header, const QString& path);
+
+    bool appendFile(QHttpMultiPart* multiPart, const QString& header, const QString& path);
+
+private:
 
     UploadPhotosJob::Dest m_dest;
-    QUrl m_url;
-    QStringList m_files;
-    bool m_ok;
-    QVariantMap m_response;
+    QUrl                  m_url;
+    QStringList           m_files;
+    bool                  m_ok;
+    QVariantMap           m_response;
 };
 
 } // namespace Vkontakte
