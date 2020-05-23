@@ -40,19 +40,31 @@ typedef QPair<QString, QString> QueryItem;
 class KJobWithSubjob : public KJob
 {
 protected:
-    /** Kill the currentjobs and its subjobs */
+    
+    /**
+     * Kill the currentjobs and its subjobs
+     */
     bool doKill() override;
-
-    QPointer<KJob> m_job; /** Pointer to the running job */
+ 
+    /**
+     * Pointer to the running job
+     */
+    QPointer<KJob> m_job;
 };
 
 class KJobWithSubjobs : public KJob
 {
 protected:
-    /** Kill the currentjobs and its subjobs */
+    
+    /**
+     * Kill the currentjobs and its subjobs
+     */
     bool doKill() override;
 
-    QList<KJob *> m_jobs; /** Pointers to running jobs */
+    /** 
+     * Pointers to running jobs
+     */
+    QList<KJob *> m_jobs;
 };
 
 /**
@@ -61,7 +73,16 @@ protected:
 class VkontakteJob : public KJobWithSubjob
 {
     Q_OBJECT
+
 public:
+
+    enum JobErrorType
+    {
+        AuthenticationProblem = KJob::UserDefinedError + 42
+    };
+
+public:
+
     /**
      * Constructor that sets the path and the accesstoken
      *
@@ -69,36 +90,46 @@ public:
      * @param accessToken The accessToken to access our data on vkontakte
      * @param httpPost Whether to make a POST http request instead of GET ("false" by default)
      * */
-    VkontakteJob(const QString &accessToken, const QString &method, bool httpPost = false);
+    VkontakteJob(const QString& accessToken, const QString& method, bool httpPost = false);
 
     void start() override;
 
-    enum JobErrorType { AuthenticationProblem = KJob::UserDefinedError + 42 };
-
 protected:
-    /** Add a query item to the list */
-    void addQueryItem(const QString &key, const QString &value);
+
+    /**
+     * Add a query item to the list
+     */
+    void addQueryItem(const QString& key, const QString& value);
 
 private:
-    /** Check for a return error and set the appropriate error messages */
+    
+    /**
+     * Check for a return error and set the appropriate error messages
+     */
+
     // Returns "true" if we will retry the call.
-    bool handleError(const QJsonValue &data);
+    bool handleError(const QJsonValue& data);
 
-    virtual void handleData(const QJsonValue &data) = 0;
+    virtual void handleData(const QJsonValue& data) = 0;
 
-    /** Called right before sending request to server */
+    /**
+     * Called right before sending request to server
+     */
     virtual void prepareQueryItems() {}
 
     // TODO: cache url in a member variable
     KJob* createHttpJob();
 
-    QString m_accessToken;         /** Vkontakte Access token */
-    QString m_method;
-    bool m_httpPost;
-    QList<QueryItem> m_queryItems; /** The query items */
+private:
+
+    QString          m_accessToken;         ///< Vkontakte Access token
+    QString          m_method;
+    bool             m_httpPost;
+    QList<QueryItem> m_queryItems;          ///< The query items
 
 private Q_SLOTS:
-    void jobFinished(KJob *kjob);
+
+    void jobFinished(KJob* kjob);
     void slotRetry();
 };
 

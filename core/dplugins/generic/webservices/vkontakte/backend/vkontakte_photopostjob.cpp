@@ -60,7 +60,7 @@ PhotoPostJob::PhotoPostJob(Vkontakte::UploadPhotosJob::Dest dest,
         m_ok = false;
 }
 
-void PhotoPostJob::handleError(const QJsonValue &data)
+void PhotoPostJob::handleError(const QJsonValue& data)
 {
     int error_code = -1;
     QString error_msg;
@@ -98,7 +98,7 @@ void PhotoPostJob::handleError(const QJsonValue &data)
     }
 }
 
-bool PhotoPostJob::appendFile(QHttpMultiPart *multiPart, const QString &header, const QString &path)
+bool PhotoPostJob::appendFile(QHttpMultiPart *multiPart, const QString& header, const QString& path)
 {
     QString mime = QMimeDatabase().mimeTypeForUrl(QUrl(path)).name();
     if (mime.isEmpty())

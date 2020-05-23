@@ -29,23 +29,23 @@ namespace Vkontakte
 class Q_DECL_HIDDEN GroupInfo::Private
 {
 public:
-    int gid;
 
-    QString name;
-    QString screenName;
-    bool isClosed;
-    bool isAdmin;
-    QString photo;
-    QString photoMedium;
-    QString photoBig;
+    int         gid;
+    QString     name;
+    QString     screenName;
+    bool        isClosed;
+    bool        isAdmin;
+    QString     photo;
+    QString     photoMedium;
+    QString     photoBig;
 };
 
 GroupInfo::GroupInfo()
     : d(new Private)
 {
-    d->gid = -1;
+    d->gid      = -1;
     d->isClosed = true;
-    d->isAdmin = false;
+    d->isAdmin  = false;
 }
 
 GroupInfo::~GroupInfo()
@@ -63,7 +63,7 @@ int GroupInfo::gid() const
     return d->gid;
 }
 
-void GroupInfo::setName(const QString &name)
+void GroupInfo::setName(const QString& name)
 {
     d->name = name;
 }
@@ -73,7 +73,7 @@ QString GroupInfo::name() const
     return d->name;
 }
 
-void GroupInfo::setScreenName(const QString &screenName)
+void GroupInfo::setScreenName(const QString& screenName)
 {
     d->screenName = screenName;
 }
@@ -103,7 +103,7 @@ bool GroupInfo::isAdmin() const
     return d->isAdmin;
 }
 
-void GroupInfo::setPhoto(const QString &photo)
+void GroupInfo::setPhoto(const QString& photo)
 {
     d->photo = photo;
 }
@@ -113,7 +113,7 @@ QString GroupInfo::photo() const
     return d->photo;
 }
 
-void GroupInfo::setPhotoMedium(const QString &photoMedium)
+void GroupInfo::setPhotoMedium(const QString& photoMedium)
 {
     d->photoMedium = photoMedium;
 }
@@ -123,7 +123,7 @@ QString GroupInfo::photoMedium() const
     return d->photoMedium;
 }
 
-void GroupInfo::setPhotoBig(const QString &photoBig)
+void GroupInfo::setPhotoBig(const QString& photoBig)
 {
     d->photoBig = photoBig;
 }

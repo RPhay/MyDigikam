@@ -54,7 +54,7 @@ public:
     int workingPostJobs;
 };
 
-UploadPhotosJob::UploadPhotosJob(const QString &accessToken,
+UploadPhotosJob::UploadPhotosJob(const QString& accessToken,
                                  const QStringList &files, bool saveBig, int aid, int gid)
     : KJobWithSubjobs()
     , d(new Private)

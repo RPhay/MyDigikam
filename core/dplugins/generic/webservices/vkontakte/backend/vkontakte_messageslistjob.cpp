@@ -39,7 +39,7 @@ public:
     QList<MessageInfoPtr> list;
 };
 
-MessagesListJob::MessagesListJob(const QString &accessToken,
+MessagesListJob::MessagesListJob(const QString& accessToken,
                                  int out,
                                  int offset, int count, int previewLength,
                                  int filters, int timeOffset)
@@ -62,19 +62,19 @@ MessagesListJob::~MessagesListJob()
     delete d;
 }
 
-void MessagesListJob::handleItem(const QVariant &data)
+void MessagesListJob::handleItem(const QVariant& data)
 {
     MessageInfoPtr item(new MessageInfo());
     QJson::QObjectHelper::qvariant2qobject(data.toMap(), item.data());
     d->list.append(item);
 }
 
-void MessagesListJob::handleData(const QVariant &data)
+void MessagesListJob::handleData(const QVariant& data)
 {
     QVariantList list = data.toList();
     d->totalCount = list[0].toInt();
     list.pop_front();
-    foreach(const QVariant &item, list)
+    foreach(const QVariant& item, list)
         handleItem(item);
 }
 

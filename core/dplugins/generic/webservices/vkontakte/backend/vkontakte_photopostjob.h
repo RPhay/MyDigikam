@@ -55,13 +55,13 @@ public:
 
 protected:
     /** Check for a return error and set the appropriate error messages */
-    void handleError(const QJsonValue &data);
+    void handleError(const QJsonValue& data);
 
 private Q_SLOTS:
     void parseNetworkResponse(QNetworkReply *reply);
 
 private:
-    bool appendFile(QHttpMultiPart *multiPart, const QString &header, const QString &path);
+    bool appendFile(QHttpMultiPart *multiPart, const QString& header, const QString& path);
 
     UploadPhotosJob::Dest m_dest;
     QUrl m_url;

@@ -39,7 +39,7 @@ public:
 };
 
 // http://vk.com/dev/users.get
-UserInfoJob::UserInfoJob(const QString &accessToken)
+UserInfoJob::UserInfoJob(const QString& accessToken)
     : VkontakteJob(accessToken, QStringLiteral("users.get"))
     , d(new Private)
 {
@@ -49,7 +49,7 @@ UserInfoJob::UserInfoJob(const QString &accessToken)
     // TODO: support "counters" request (probably in another KJob)
 }
 
-UserInfoJob::UserInfoJob(const QString &accessToken, int uid)
+UserInfoJob::UserInfoJob(const QString& accessToken, int uid)
     : VkontakteJob(accessToken, QStringLiteral("users.get"))
     , d(new Private)
 {
@@ -57,7 +57,7 @@ UserInfoJob::UserInfoJob(const QString &accessToken, int uid)
     addQueryItem(QStringLiteral("user_ids"), QString::number(uid));
 }
 
-UserInfoJob::UserInfoJob(const QString &accessToken, const QList<int> &uids)
+UserInfoJob::UserInfoJob(const QString& accessToken, const QList<int> &uids)
     : VkontakteJob(accessToken, QStringLiteral("users.get"))
     , d(new Private)
 {
@@ -91,7 +91,7 @@ void UserInfoJob::prepareQueryItems()
     }
 }
 
-void UserInfoJob::handleData(const QJsonValue &data)
+void UserInfoJob::handleData(const QJsonValue& data)
 {
     if (!data.isArray())
     {
@@ -99,7 +99,7 @@ void UserInfoJob::handleData(const QJsonValue &data)
         return;
     }
 
-    foreach (const QJsonValue &item, data.toArray())
+    foreach (const QJsonValue& item, data.toArray())
     {
         if (!item.isObject())
         {

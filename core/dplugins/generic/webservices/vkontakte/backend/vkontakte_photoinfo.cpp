@@ -82,7 +82,7 @@ QUrl PhotoInfo::urlMaxResolution() const
     srcKeys.append(QStringLiteral("src"));
     srcKeys.append(QStringLiteral("src_small"));
 
-    foreach (const QString &key, srcKeys)
+    foreach (const QString& key, srcKeys)
     {
         if (!d->jsonData.contains(key))
         {

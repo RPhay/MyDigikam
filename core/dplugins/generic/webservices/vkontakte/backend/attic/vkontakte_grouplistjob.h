@@ -21,37 +21,42 @@
  *
  * ============================================================ */
 
-#include "vkontakte_getvariablejob.h"
+#ifndef DIGIKAM_VKONTAKTE_GROUPLISTJOB_H
+#define DIGIKAM_VKONTAKTE_GROUPLISTJOB_H
+
+// Local includes
+
+#include "vkontakte_jobs.h"
+#include "vkontakte_groupinfo.h"
 
 namespace Vkontakte
 {
 
-class Q_DECL_HIDDEN GetVariableJob::Private
+// http://vk.com/dev/groups.get
+// TODO: for how many groups does this method work?
+class GroupListJob : public VkontakteJob
 {
+    Q_OBJECT
+
 public:
-    QVariant variable;
+
+    // This class was never used, will be removed later
+    Q_DECL_DEPRECATED explicit GroupListJob(const QString& accessToken, int uid = -1, bool extended = true);
+    ~GroupListJob();
+
+    QList<GroupInfoPtr> list() const;
+
+protected:
+
+    GroupInfoPtr handleSingleData(const QVariant& data);
+    void handleData(const QVariant& data) override;
+
+private:
+
+    class Private;
+    Private* const d;
 };
 
-GetVariableJob::GetVariableJob(const QString &accessToken, int index)
-    : VkontakteJob(accessToken, "getVariable")
-    , d(new Private)
-{
-    addQueryItem("key", QString::number(index));
-}
-
-GetVariableJob::~GetVariableJob()
-{
-    delete d;
-}
-
-void GetVariableJob::handleData(const QVariant &data)
-{
-    d->variable = data;
-}
-
-QVariant GetVariableJob::variable() const
-{
-    return d->variable;
-}
-
 } // namespace Vkontakte
+
+#endif // DIGIKAM_VKONTAKTE_GROUPLISTJOB_H

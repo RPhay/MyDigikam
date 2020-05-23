@@ -44,7 +44,7 @@ public:
 //
 // The API also allows to set "limit" and "offset", but that
 // does not seem to be useful.
-PhotoListJob::PhotoListJob(const QString &accessToken,
+PhotoListJob::PhotoListJob(const QString& accessToken,
                            int uid, int aid, const QList<int> &pids)
     : VkontakteJob(accessToken, QStringLiteral("photos.get"))
     , d(new Private)
@@ -60,7 +60,7 @@ PhotoListJob::~PhotoListJob()
     delete d;
 }
 
-void PhotoListJob::handleData(const QJsonValue &data)
+void PhotoListJob::handleData(const QJsonValue& data)
 {
     if (!data.isArray())
     {
@@ -68,7 +68,7 @@ void PhotoListJob::handleData(const QJsonValue &data)
         return;
     }
 
-    foreach (const QJsonValue &item, data.toArray())
+    foreach (const QJsonValue& item, data.toArray())
     {
         if (!item.isObject())
         {

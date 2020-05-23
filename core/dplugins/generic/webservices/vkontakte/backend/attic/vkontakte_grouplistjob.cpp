@@ -33,20 +33,26 @@ namespace Vkontakte
 class Q_DECL_HIDDEN GroupListJob::Private
 {
 public:
+
     QList<GroupInfoPtr> list;
-    bool extended;
+    bool                extended;
 };
 
-GroupListJob::GroupListJob(const QString &accessToken, int uid, bool extended)
-    : VkontakteJob(accessToken, "groups.get")
-    , d(new Private)
+GroupListJob::GroupListJob(const QString& accessToken, int uid, bool extended)
+    : VkontakteJob(accessToken, "groups.get"),
+      d(new Private)
 {
     d->extended = extended;
 
     if (uid != -1)
+    {
         addQueryItem("uid", QString::number(uid));
+    }
+
     if (extended)
+    {
         addQueryItem("extended", "1");
+    }
 }
 
 GroupListJob::~GroupListJob()
@@ -59,27 +65,31 @@ QList<GroupInfoPtr> GroupListJob::list() const
     return d->list;
 }
 
-GroupInfoPtr GroupListJob::handleSingleData(const QVariant &data)
+GroupInfoPtr GroupListJob::handleSingleData(const QVariant& data)
 {
      GroupInfoPtr info = GroupInfoPtr(new GroupInfo());
      QJson::QObjectHelper::qvariant2qobject(data.toMap(), info.data());
+
      return info;
 }
 
-void GroupListJob::handleData(const QVariant &data)
+void GroupListJob::handleData(const QVariant& data)
 {
     if (d->extended)
     {
         QVariantList dataList = data.toList();
         dataList.pop_front(); // total count (unused)
-        foreach(const QVariant &item, dataList)
+
+        foreach (const QVariant& item, dataList)
+        {
             d->list.append(handleSingleData(item));
+        }
     }
     else
     {
         // TODO: test with both extended={true, false}
 
-        foreach(const QVariant &item, data.toList())
+        foreach (const QVariant& item, data.toList())
         {
             GroupInfoPtr group = GroupInfoPtr(new GroupInfo());
             group->setGid(item.toInt());

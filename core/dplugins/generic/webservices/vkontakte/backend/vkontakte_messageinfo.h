@@ -59,7 +59,7 @@ public:
      * Set the creation time of the note
      * @param createdTime Time as UNIX timestamp
      */
-    void setDateString(const QString &createdDate);
+    void setDateString(const QString& createdDate);
     /**
      * Returns the creation date/time as a UNIX timestamp
      */
@@ -75,7 +75,7 @@ public:
     void setMid(int mid);
     int mid() const;
 
-    void setTitle(const QString &title);
+    void setTitle(const QString& title);
     QString title() const;
 
     /**
@@ -83,7 +83,7 @@ public:
      **/
     QString coreTitle() const;
 
-    void setBody(const QString &body);
+    void setBody(const QString& body);
     QString body() const;
 
     void setReadState(int readState);
@@ -92,10 +92,10 @@ public:
     void setOut(int out);
     int out() const;
 
-    void setChatId(const QString &chatId);
+    void setChatId(const QString& chatId);
     QString chatId() const;
 
-    void setChatActive(const QString &chatActive);
+    void setChatActive(const QString& chatActive);
     QString chatActive() const;
 
     QString remoteId() const;
@@ -116,7 +116,7 @@ public:
     /**
      * @brief Compares by message ID (MessageInfo::m_mid)
      **/
-    bool operator<(const MessageInfoPtr &o) const;
+    bool operator<(const MessageInfoPtr& o) const;
 };
 
 } // namespace Vkontakte

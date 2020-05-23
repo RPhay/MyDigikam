@@ -38,7 +38,7 @@ public:
     QList<NoteInfoPtr> list;
 };
 
-NotesListJob::NotesListJob(const QString &accessToken,
+NotesListJob::NotesListJob(const QString& accessToken,
                            int uid, int offset, int count)
     : VkontakteJob(accessToken, "notes.get")
     , d(new Private)
@@ -59,19 +59,19 @@ NotesListJob::~NotesListJob()
     delete d;
 }
 
-void NotesListJob::handleItem(const QVariant &data)
+void NotesListJob::handleItem(const QVariant& data)
 {
     NoteInfoPtr item(new NoteInfo());
     QJson::QObjectHelper::qvariant2qobject(data.toMap(), item.data());
     d->list.append(item);
 }
 
-void NotesListJob::handleData(const QVariant &data)
+void NotesListJob::handleData(const QVariant& data)
 {
     QVariantList list = data.toList();
     d->totalCount = list[0].toInt();
     list.pop_front();
-    foreach(const QVariant &item, list)
+    foreach(const QVariant& item, list)
         handleItem(item);
 }
 

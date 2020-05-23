@@ -47,7 +47,10 @@ namespace Vkontakte
 bool KJobWithSubjob::doKill()
 {
     if (m_job)
+    {
         m_job->kill(KJob::Quietly);
+    }
+
     return KJob::doKill();
 }
 
@@ -55,8 +58,11 @@ bool KJobWithSubjob::doKill()
 
 bool KJobWithSubjobs::doKill()
 {
-    foreach(KJob *job, m_jobs)
+    foreach (KJob* const job, m_jobs)
+    {
         job->kill(KJob::Quietly);
+    }
+
     m_jobs.clear();
 
     return KJob::doKill();
@@ -67,23 +73,23 @@ bool KJobWithSubjobs::doKill()
 /*
  * VkontakteJobs base class
  */
-VkontakteJob::VkontakteJob(const QString &accessToken, const QString &method, bool httpPost)
-    : m_accessToken(accessToken)
-    , m_method(method)
-    , m_httpPost(httpPost)
+VkontakteJob::VkontakteJob(const QString& accessToken, const QString& method, bool httpPost)
+    : m_accessToken(accessToken),
+      m_method(method),
+      m_httpPost(httpPost)
 {
     setCapabilities(KJob::Killable);
 }
 
-void VkontakteJob::addQueryItem(const QString &key, const QString &value)
+void VkontakteJob::addQueryItem(const QString& key, const QString& value)
 {
     QueryItem item;
-    item.first = key;
+    item.first  = key;
     item.second = value;
     m_queryItems.append(item);
 }
 
-bool VkontakteJob::handleError(const QJsonValue &data)
+bool VkontakteJob::handleError(const QJsonValue& data)
 {
     int error_code = -1;
     QString error_msg;
@@ -96,8 +102,8 @@ bool VkontakteJob::handleError(const QJsonValue &data)
     {
         const QVariantMap errorMap = data.toVariant().toMap();
 
-        error_code = errorMap[QStringLiteral("error_code")].toInt();
-        error_msg = errorMap[QStringLiteral("error_msg")].toString();
+        error_code = errorMap[QLatin1String("error_code")].toInt();
+        error_msg  = errorMap[QLatin1String("error_msg")].toString();
 
         qCWarning(DIGIKAM_WEBSERVICES_LOG) << "An error of type" << error_code << "occurred:" << error_msg;
     }
@@ -108,6 +114,7 @@ bool VkontakteJob::handleError(const QJsonValue &data)
         // VK API limit the rate of requests to 3 requests per second,
         // so it should be OK if we wait for 340 ms.
         QTimer::singleShot(340, this, SLOT(slotRetry()));
+
         return true;
     }
     else
@@ -120,7 +127,7 @@ bool VkontakteJob::handleError(const QJsonValue &data)
                 "Response from the VKontakte server has unexpected format. "
                 "Please report this problem against product libkvkontakte "
                 "at the <a href=\"%1\">KDE bug tracker</b>.",
-                QStringLiteral("http://bugs.kde.org/")));
+                QLatin1String("http://bugs.kde.org/")));
         }
         else
         {
@@ -129,6 +136,7 @@ bool VkontakteJob::handleError(const QJsonValue &data)
                 "of type <i>%1</i> in reply to method %2: <i>%3</i>",
                 error_code, m_method, error_msg));
         }
+
         return false;
     }
 }
@@ -136,20 +144,23 @@ bool VkontakteJob::handleError(const QJsonValue &data)
 KJob* VkontakteJob::createHttpJob()
 {
     QUrl url;
-    url.setScheme(QStringLiteral("https"));
-    url.setHost(QStringLiteral("api.vk.com"));
-    url.setPath(QStringLiteral("/method/") + m_method);
+    url.setScheme(QLatin1String("https"));
+    url.setHost(QLatin1String("api.vk.com"));
+    url.setPath(QLatin1String("/method/") + m_method);
 
     // Collect query items in "query"
     QUrlQuery query;
 
     prepareQueryItems();
+
     foreach (const QueryItem &item, m_queryItems)
+    {
         query.addQueryItem(item.first, item.second);
+    }
 
     if (!m_accessToken.isEmpty())
     {
-        query.addQueryItem(QStringLiteral("access_token"), m_accessToken);
+        query.addQueryItem(QLatin1String("access_token"), m_accessToken);
     }
 
     url.setQuery(query);
@@ -160,15 +171,22 @@ KJob* VkontakteJob::createHttpJob()
     qCDebug(DIGIKAM_WEBSERVICES_LOG) << "Starting request" << url;
 
     if (m_httpPost)
+    {
         return KIO::storedHttpPost(QByteArray(), url, KIO::HideProgressInfo);
+    }
     else
+    {
         return KIO::storedGet(url, KIO::Reload, KIO::HideProgressInfo);
+    }
 }
 
 void VkontakteJob::start()
 {
     m_job = createHttpJob();
-    connect(m_job, SIGNAL(result(KJob*)), this, SLOT(jobFinished(KJob*)));
+
+    connect(m_job, SIGNAL(result(KJob*)),
+            this, SLOT(jobFinished(KJob*)));
+
     m_job->start();
 }
 
@@ -177,12 +195,12 @@ void VkontakteJob::slotRetry()
     start();
 }
 
-void VkontakteJob::jobFinished(KJob *kjob)
+void VkontakteJob::jobFinished(KJob* kjob)
 {
-    KIO::StoredTransferJob *job = dynamic_cast<KIO::StoredTransferJob *>(kjob);
+    KIO::StoredTransferJob* const job = dynamic_cast<KIO::StoredTransferJob*>(kjob);
     Q_ASSERT(job);
 
-    if (job == 0)
+    if      (job == 0)
     {
         setError(-1);
         setErrorText(i18n(
@@ -202,25 +220,29 @@ void VkontakteJob::jobFinished(KJob *kjob)
 
         QJsonParseError parseError;
         QJsonDocument data = QJsonDocument::fromJson(job->data(), &parseError);
+        
         if (parseError.error == QJsonParseError::NoError)
         {
             const QJsonObject object = data.object();
 
-            if (!data.isObject() ||
-                (!object.contains(QStringLiteral("response")) && !object.contains(QStringLiteral("error"))))
+            if      (!data.isObject() ||
+                     (!object.contains(QLatin1String("response")) && !object.contains(QLatin1String("error"))))
             {
                 // Something went wrong, but there is no valid object "error"
                 handleError(QJsonValue::Undefined);
             }
-            else if (object.contains(QStringLiteral("error")))
+            else if (object.contains(QLatin1String("error")))
             {
-                bool willRetry = handleError(object.value(QStringLiteral("error")));
+                bool willRetry = handleError(object.value(QLatin1String("error")));
+                
                 if (willRetry)
+                {
                     return;
+                }
             }
             else
             {
-                handleData(object.value(QStringLiteral("response")));
+                handleData(object.value(QLatin1String("response")));
             }
         }
         else
@@ -233,6 +255,7 @@ void VkontakteJob::jobFinished(KJob *kjob)
                 parseError.errorString()));
         }
     }
+
     emitResult();
     m_job = 0;
 }

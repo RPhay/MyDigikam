@@ -30,7 +30,7 @@
 namespace Vkontakte
 {
 
-SavePhotoJob::SavePhotoJob(const QString &accessToken,
+SavePhotoJob::SavePhotoJob(const QString& accessToken,
                            UploadPhotosJob::Dest dest,
                            const QVariantMap &photoIdData, int gid)
     : VkontakteJob(accessToken, getMethod(dest), true)
@@ -83,7 +83,7 @@ QString SavePhotoJob::getMethod(Vkontakte::UploadPhotosJob::Dest dest)
     }
 }
 
-void SavePhotoJob::handleItem(const QJsonValue &item)
+void SavePhotoJob::handleItem(const QJsonValue& item)
 {
     if (!item.isObject())
     {
@@ -95,7 +95,7 @@ void SavePhotoJob::handleItem(const QJsonValue &item)
     m_list.append(PhotoInfo(item.toObject()));
 }
 
-void SavePhotoJob::handleData(const QJsonValue &data)
+void SavePhotoJob::handleData(const QJsonValue& data)
 {
     switch (m_dest)
     {
@@ -106,7 +106,7 @@ void SavePhotoJob::handleData(const QJsonValue &data)
                 return;
             }
 
-            foreach (const QJsonValue &item, data.toArray())
+            foreach (const QJsonValue& item, data.toArray())
             {
                 handleItem(item);
             }

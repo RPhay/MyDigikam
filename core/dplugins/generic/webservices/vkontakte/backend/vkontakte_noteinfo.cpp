@@ -84,7 +84,7 @@ int NoteInfo::uid() const
     return d->uid;
 }
 
-void NoteInfo::setTitle(const QString &title)
+void NoteInfo::setTitle(const QString& title)
 {
     d->title = title;
 }
@@ -94,7 +94,7 @@ QString NoteInfo::title() const
     return d->title;
 }
 
-void NoteInfo::setText(const QString &text)
+void NoteInfo::setText(const QString& text)
 {
     d->text = text;
 }
@@ -104,7 +104,7 @@ QString NoteInfo::text() const
     return QString(d->text).remove(QChar::ByteOrderMark);
 }
 
-void NoteInfo::setTextWiki(const QString &textWiki)
+void NoteInfo::setTextWiki(const QString& textWiki)
 {
     d->textWiki = textWiki;
 }
@@ -114,7 +114,7 @@ QString NoteInfo::textWiki() const
     return d->textWiki;
 }
 
-void NoteInfo::setDateString(const QString &createdDate)
+void NoteInfo::setDateString(const QString& createdDate)
 {
     d->date = createdDate;
 }

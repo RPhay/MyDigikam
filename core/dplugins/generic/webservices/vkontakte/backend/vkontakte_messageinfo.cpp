@@ -60,7 +60,7 @@ MessageInfo::~MessageInfo()
     delete d;
 }
 
-void MessageInfo::setDateString(const QString &createdDate)
+void MessageInfo::setDateString(const QString& createdDate)
 {
     d->date = createdDate;
 }
@@ -95,7 +95,7 @@ int MessageInfo::mid() const
     return d->mid;
 }
 
-void MessageInfo::setTitle(const QString &title)
+void MessageInfo::setTitle(const QString& title)
 {
     // vk.com puts "..." into the title when the subject is not specified
     QRegExp rx("(Re(\\(\\d+\\))?: )?( ?)\\.\\.\\.( ?)");
@@ -115,7 +115,7 @@ QString MessageInfo::coreTitle() const
     return res;
 }
 
-void MessageInfo::setBody(const QString &body)
+void MessageInfo::setBody(const QString& body)
 {
     d->body = body;
 
@@ -152,7 +152,7 @@ int MessageInfo::out() const
     return d->out;
 }
 
-void MessageInfo::setChatId(const QString &chatId)
+void MessageInfo::setChatId(const QString& chatId)
 {
     d->chatId = chatId;
 }
@@ -162,7 +162,7 @@ QString MessageInfo::chatId() const
     return d->chatId;
 }
 
-void MessageInfo::setChatActive(const QString &chatActive)
+void MessageInfo::setChatActive(const QString& chatActive)
 {
     d->chatActive = chatActive;
 }
@@ -182,7 +182,7 @@ MessageInfoPtr::MessageInfoPtr(MessageInfo* ptr)
 {
 }
 
-bool MessageInfoPtr::operator<(const MessageInfoPtr &o) const
+bool MessageInfoPtr::operator<(const MessageInfoPtr& o) const
 {
     return (*this)->mid() < o->mid();
 }

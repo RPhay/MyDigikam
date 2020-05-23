@@ -36,7 +36,7 @@ public:
     int nid;
 };
 
-NoteAddJob::NoteAddJob(const QString &accessToken, const QString &title, const QString &text)
+NoteAddJob::NoteAddJob(const QString& accessToken, const QString& title, const QString& text)
     : VkontakteJob(accessToken, "notes.add", true)
     , d(new Private)
 {
@@ -52,7 +52,7 @@ NoteAddJob::~NoteAddJob()
     delete d;
 }
 
-void NoteAddJob::handleData(const QVariant &data)
+void NoteAddJob::handleData(const QVariant& data)
 {
     d->nid = data.toMap()["nid"].toInt();
 }

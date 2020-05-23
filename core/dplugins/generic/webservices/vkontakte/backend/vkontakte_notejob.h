@@ -36,13 +36,13 @@ class NoteJob : public VkontakteJob
 {
     Q_OBJECT
 public:
-    NoteJob(const QString &accessToken, int nid);
+    NoteJob(const QString& accessToken, int nid);
     ~NoteJob();
 
     NoteInfoPtr noteInfo();
     
 protected:
-    void handleData(const QVariant &data) override;
+    void handleData(const QVariant& data) override;
     
 private:
     class Private;

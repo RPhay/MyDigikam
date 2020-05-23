@@ -52,16 +52,16 @@ public:
     * @brief Construct a job to retrieve the data of the currently authenticaed user.
     * @param accessToken The access token to access data on vkontakte.
     */
-    UserInfoJob(const QString &accessToken);
+    UserInfoJob(const QString& accessToken);
 
     /**
     * @brief Construct a job to retrieve the data of user with the given uid.
     * @param accessToken The access token to access data on vkontakte.
     * @param uid The user ID
     */
-    UserInfoJob(const QString &accessToken, int uid);
+    UserInfoJob(const QString& accessToken, int uid);
 
-    UserInfoJob(const QString &accessToken, const QList<int> &uids);
+    UserInfoJob(const QString& accessToken, const QList<int> &uids);
 
     ~UserInfoJob();
 
@@ -77,7 +77,7 @@ protected:
     * @brief Handles the data returned by the VkontakteGetJob
     * @param data A JSON string containing the data.
     */
-    void handleData(const QJsonValue &data) override;
+    void handleData(const QJsonValue& data) override;
 
     /**
      * @brief Prepares m_queryItems by several addQueryItem calls

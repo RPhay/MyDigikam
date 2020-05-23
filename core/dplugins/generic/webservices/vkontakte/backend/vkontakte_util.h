@@ -34,13 +34,18 @@
 
 #include "vkontakte_apppermissions.h"
 
+namespace Vkontakte
+{
+
 /**
  * Convert a QString containing a UNIX timestamp to a QDateTime object
  */
-QDateTime unixTimeToQDateTime(const QString& unixTime);
+QDateTime   unixTimeToQDateTime(const QString& unixTime);
 
 QStringList appPermissionsToStringList(Vkontakte::AppPermissions::Value permissions);
 
-QString joinIntegers(const QList<int>& list);
+QString     joinIntegers(const QList<int>& list);
+
+} // namespace Vkontakte
 
 #endif // DIGIKAM_VKONTAKTE_UTIL_H

@@ -21,38 +21,38 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_VKONTAKTE_GROUPLISTJOB_H
-#define DIGIKAM_VKONTAKTE_GROUPLISTJOB_H
-
-// Local includes
-
-#include "vkontakte_jobs.h"
-#include "vkontakte_groupinfo.h"
+#include "vkontakte_getvariablejob.h"
 
 namespace Vkontakte
 {
 
-// http://vk.com/dev/groups.get
-// TODO: for how many groups does this method work?
-class GroupListJob : public VkontakteJob
+class Q_DECL_HIDDEN GetVariableJob::Private
 {
-    Q_OBJECT
 public:
-    // This class was never used in KDE 4, will be removed in the KF5 version
-    Q_DECL_DEPRECATED explicit GroupListJob(const QString &accessToken, int uid = -1, bool extended = true);
-    ~GroupListJob();
 
-    QList<GroupInfoPtr> list() const;
-
-protected:
-    GroupInfoPtr handleSingleData(const QVariant &data);
-    void handleData(const QVariant &data) override;
-
-private:
-    class Private;
-    Private* const d;
+    QVariant variable;
 };
 
-} // namespace Vkontakte
+GetVariableJob::GetVariableJob(const QString& accessToken, int index)
+    : VkontakteJob(accessToken, "getVariable"),
+      d(new Private)
+{
+    addQueryItem("key", QString::number(index));
+}
 
-#endif // DIGIKAM_VKONTAKTE_GROUPLISTJOB_H
+GetVariableJob::~GetVariableJob()
+{
+    delete d;
+}
+
+void GetVariableJob::handleData(const QVariant& data)
+{
+    d->variable = data;
+}
+
+QVariant GetVariableJob::variable() const
+{
+    return d->variable;
+}
+
+} // namespace Vkontakte

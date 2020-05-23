@@ -63,7 +63,7 @@ public:
      * Set the subject of the note
      * @param subject the subject
      */
-    void setTitle(const QString &title);
+    void setTitle(const QString& title);
     /**
      * Returns the subject of the note.
      */
@@ -73,7 +73,7 @@ public:
      * Set the actual content of the note
      * @param text The actual content of the note
      */
-    void setText( const QString &text);
+    void setText( const QString& text);
     /**
      * Returns the content of the note.
      */
@@ -83,7 +83,7 @@ public:
      * Set the actual content of the note
      * @param textWiki The actual content of the note
      */
-    void setTextWiki( const QString &textWiki);
+    void setTextWiki( const QString& textWiki);
     /**
      * Returns the content of the note.
      */
@@ -93,7 +93,7 @@ public:
      * Set the creation time of the note
      * @param createdTime Time as UNIX timestamp
      */
-    void setDateString(const QString &createdDate);
+    void setDateString(const QString& createdDate);
     /**
      * Returns the creation date/time as a UNIX timestamp
      */

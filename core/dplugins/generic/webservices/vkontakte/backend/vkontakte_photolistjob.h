@@ -36,7 +36,7 @@ class PhotoListJob : public VkontakteJob
 {
     Q_OBJECT
 public:
-    PhotoListJob(const QString &accessToken,
+    PhotoListJob(const QString& accessToken,
                  int uid, int aid, const QList<int> &pids = QList<int>());
     ~PhotoListJob();
 
@@ -47,7 +47,7 @@ protected:
     * @brief Handles the data returned by VkontakteJob
     * @param data JSON value containing an array of photos.
     */
-    void handleData(const QJsonValue &data) override;
+    void handleData(const QJsonValue& data) override;
 
 private:
     class Private;

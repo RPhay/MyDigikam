@@ -46,7 +46,7 @@ public:
         DEST_WALL
     };
 
-    UploadPhotosJob(const QString &accessToken,
+    UploadPhotosJob(const QString& accessToken,
                     const QStringList &files, bool saveBig, int aid, int gid = -1);
     ~UploadPhotosJob();
 

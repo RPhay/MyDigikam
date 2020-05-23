@@ -50,34 +50,36 @@ class GroupInfo : public QObject
     Q_PROPERTY(QString photo_big WRITE setPhotoBig READ photoBig)
 
 public:
-    GroupInfo();
+
+    explicit GroupInfo();
     ~GroupInfo();
 
     void setGid(int gid);
-    int gid() const;
+    int gid()               const;
 
-    void setName(const QString &name);
-    QString name() const;
+    void setName(const QString& name);
+    QString name()          const;
 
-    void setScreenName(const QString &screenName);
-    QString screenName() const;
+    void setScreenName(const QString& screenName);
+    QString screenName()    const;
 
     void setClosed(bool closed);
-    bool isClosed() const;
+    bool isClosed()         const;
 
     void setAdmin(bool admin);
-    bool isAdmin() const;
+    bool isAdmin()          const;
 
-    void setPhoto(const QString &photo);
-    QString photo() const;
+    void setPhoto(const QString& photo);
+    QString photo()         const;
 
-    void setPhotoMedium(const QString &photoMedium);
-    QString photoMedium() const;
+    void setPhotoMedium(const QString& photoMedium);
+    QString photoMedium()   const;
 
-    void setPhotoBig(const QString &photoBig);
-    QString photoBig() const;
+    void setPhotoBig(const QString& photoBig);
+    QString photoBig()      const;
 
 private:
+
     class Private;
     Private* const d;
 };

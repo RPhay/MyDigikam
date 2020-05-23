@@ -44,7 +44,7 @@ namespace Vkontakte
 class SavePhotoJob : public VkontakteJob
 {
 public:
-    SavePhotoJob(const QString &accessToken,
+    SavePhotoJob(const QString& accessToken,
                  UploadPhotosJob::Dest dest,
                  const QVariantMap &photoIdData, int gid = -1);
 
@@ -52,8 +52,8 @@ public:
 
 protected:
     QString getMethod(Vkontakte::UploadPhotosJob::Dest dest);
-    void handleItem(const QJsonValue &item);
-    void handleData(const QJsonValue &data) override;
+    void handleItem(const QJsonValue& item);
+    void handleData(const QJsonValue& data) override;
 
 private:
     UploadPhotosJob::Dest m_dest;

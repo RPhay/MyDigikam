@@ -41,16 +41,19 @@ class GetVariableJob : public VkontakteJob
 {
 
 public:
+
     // "getVariable" is deprecated, please use "users.get" with empty user_ids
-    Q_DECL_DEPRECATED GetVariableJob(const QString &accessToken, int index);
+    Q_DECL_DEPRECATED GetVariableJob(const QString& accessToken, int index);
     ~GetVariableJob();
 
     QVariant variable() const;
 
 protected:
-    void handleData(const QVariant &data) override;
-    
+
+    void handleData(const QVariant& data) override;
+
 private:
+
     class Private;
     Private* const d;
 };

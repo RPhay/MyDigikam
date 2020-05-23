@@ -29,10 +29,14 @@
 #include <QString>
 #include <QMap>
 
+namespace Vkontakte
+{
+
 QDateTime unixTimeToQDateTime(const QString& unixTime)
 {
     QDateTime res;
     res.setTime_t(unixTime.toLongLong());
+
     return res;
 }
 
@@ -74,8 +78,10 @@ QStringList appPermissionsToStringList(Vkontakte::AppPermissions::Value permissi
 {
     QStringList res;
 
-    foreach (Vkontakte::AppPermissions::Value key, appPermissionToString.keys()) {
-        if (permissions & key) {
+    foreach (Vkontakte::AppPermissions::Value key, appPermissionToString.keys())
+    {
+        if (permissions & key)
+        {
             res << QString::fromUtf8(appPermissionToString.value(key));
         }
     }
@@ -83,9 +89,10 @@ QStringList appPermissionsToStringList(Vkontakte::AppPermissions::Value permissi
     return res;
 }
 
-QString joinIntegers(const QList<int> &list)
+QString joinIntegers(const QList<int>& list)
 {
     QString res;
+
     foreach (int x, list)
     {
         if (!res.isEmpty())
@@ -98,3 +105,5 @@ QString joinIntegers(const QList<int> &list)
 
     return res;
 }
+
+} // namespace Vkontakte

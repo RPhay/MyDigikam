@@ -59,7 +59,7 @@ VkApi::~VkApi()
 {
 }
 
-void VkApi::setAppId(const QString &appId)
+void VkApi::setAppId(const QString& appId)
 {
     d->appId = appId;
 }

@@ -24,6 +24,8 @@
 #ifndef DIGIKAM_VKONTAKTE_GETPHOTOUPLOADSERVERJOB_H
 #define DIGIKAM_VKONTAKTE_GETPHOTOUPLOADSERVERJOB_H
 
+// Local includes
+
 #include "vkontakte_jobs.h"
 #include "vkontakte_uploadphotosjob.h"
 

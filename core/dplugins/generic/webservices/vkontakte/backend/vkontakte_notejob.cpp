@@ -37,7 +37,7 @@ public:
 };
 
 // http://vk.com/dev/notes.getById
-NoteJob::NoteJob(const QString &accessToken, int nid)
+NoteJob::NoteJob(const QString& accessToken, int nid)
     : VkontakteJob(accessToken, "notes.getById")
     , d(new Private)
 {
@@ -50,7 +50,7 @@ NoteJob::~NoteJob()
     delete d;
 }
 
-void NoteJob::handleData(const QVariant &data)
+void NoteJob::handleData(const QVariant& data)
 {
     d->noteInfo = NoteInfoPtr(new NoteInfo());
     QJson::QObjectHelper::qvariant2qobject(data.toMap(), d->noteInfo.data());

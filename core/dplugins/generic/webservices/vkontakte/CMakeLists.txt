@@ -50,10 +50,8 @@ set(libvkontakte_SRCS
 #    ${CMAKE_CURRENT_SOURCE_DIR}/backend/vkontakte_noteslistjob.cpp
 #    ${CMAKE_CURRENT_SOURCE_DIR}/backend/vkontakte_allnoteslistjob.cpp
 #    ${CMAKE_CURRENT_SOURCE_DIR}/backend/vkontakte_notejob.cpp
-#    ${CMAKE_CURRENT_SOURCE_DIR}/backend/vkontakte_getvariablejob.cpp
 #    ${CMAKE_CURRENT_SOURCE_DIR}/backend/vkontakte_userinfofulljob.cpp
 #    ${CMAKE_CURRENT_SOURCE_DIR}/backend/vkontakte_cidsnamesjob.cpp
-#    ${CMAKE_CURRENT_SOURCE_DIR}/backend/vkontakte_getinfojob.cpp
 #    ${CMAKE_CURRENT_SOURCE_DIR}/backend/vkontakte_messageinfo.cpp
 #    ${CMAKE_CURRENT_SOURCE_DIR}/backend/vkontakte_discussionslistjob.cpp
 #    ${CMAKE_CURRENT_SOURCE_DIR}/backend/vkontakte_messageslistjob.cpp
@@ -61,7 +59,10 @@ set(libvkontakte_SRCS
 #    ${CMAKE_CURRENT_SOURCE_DIR}/backend/vkontakte_noteaddjob.cpp
 #    ${CMAKE_CURRENT_SOURCE_DIR}/backend/vkontakte_allmessageslistjob.cpp
 #    ${CMAKE_CURRENT_SOURCE_DIR}/backend/vkontakte_groupinfo.cpp
-#    ${CMAKE_CURRENT_SOURCE_DIR}/backend/vkontakte_grouplistjob.cpp
+
+#    ${CMAKE_CURRENT_SOURCE_DIR}/backend/attic/vkontakte_getvariablejob.cpp           # Deprecated
+#    ${CMAKE_CURRENT_SOURCE_DIR}/backend/attic/vkontakte_getinfojob.cpp               # Deprecated
+#    ${CMAKE_CURRENT_SOURCE_DIR}/backend/attic/vkontakte_grouplistjob.cpp             # Deprecated
 )
 
 # For unit-tests and plugin
