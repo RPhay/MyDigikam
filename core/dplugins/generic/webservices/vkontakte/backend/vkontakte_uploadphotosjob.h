@@ -39,15 +39,18 @@ namespace Vkontakte
 class UploadPhotosJob : public KJobWithSubjobs
 {
     Q_OBJECT
+
 public:
-    enum Dest {
+
+    enum Dest
+    {
         DEST_ALBUM = 1,
         DEST_PROFILE,
         DEST_WALL
     };
 
-    UploadPhotosJob(const QString& accessToken,
-                    const QStringList& files, bool saveBig, int aid, int gid = -1);
+    explicit UploadPhotosJob(const QString& accessToken,
+                             const QStringList& files, bool saveBig, int aid, int gid = -1);
     ~UploadPhotosJob();
 
     void start() override;
@@ -55,8 +58,11 @@ public:
     QList<PhotoInfo> list() const;
 
 protected:
+
     static const int MAX_POST_JOBS;
     static const int REQUEST_FILES_COUNT;
+
+protected:
 
     int getMaxRequestFilesCount() const;
 
@@ -66,14 +72,17 @@ protected:
     void startSaveJob(const QVariantMap& photoIdData);
 
 Q_SIGNALS:
+
     void progress(int);
 
 private Q_SLOTS:
-    void serverJobFinished(KJob *);
-    void postJobFinished(KJob *);
-    void saveJobFinished(KJob *);
+
+    void serverJobFinished(KJob*);
+    void postJobFinished(KJob*);
+    void saveJobFinished(KJob*);
 
 private:
+
     class Private;
     Private* const d;
 };

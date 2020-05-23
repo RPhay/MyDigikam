@@ -47,10 +47,12 @@ namespace Vkontakte
 class UserInfoJob : public VkontakteJob
 {
     Q_OBJECT
+
 public:
+
     /**
-    * @brief Construct a job to retrieve the data of the currently authenticaed user.
-    * @param accessToken The access token to access data on vkontakte.
+     * @brief Construct a job to retrieve the data of the currently authenticaed user.
+     * @param accessToken The access token to access data on vkontakte.
     */
     UserInfoJob(const QString& accessToken);
 
@@ -62,29 +64,30 @@ public:
     UserInfoJob(const QString& accessToken, int uid);
 
     UserInfoJob(const QString& accessToken, const QList<int>& uids);
-
     ~UserInfoJob();
 
     /**
-    * @return A pointer to a userInfo object about the currently authenticated user.
-    */
+     * @return A pointer to a userInfo object about the currently authenticated user.
+     */
     QList<UserInfo> userInfo() const;
 
     void setFields(const QStringList& fields);
 
 protected:
+    
     /**
-    * @brief Handles the data returned by the VkontakteGetJob
-    * @param data A JSON string containing the data.
-    */
+     * @brief Handles the data returned by the VkontakteGetJob
+     * @param data A JSON string containing the data.
+     */
     void handleData(const QJsonValue& data) override;
 
     /**
      * @brief Prepares m_queryItems by several addQueryItem calls
-     **/
-    void prepareQueryItems() override;
+     */
+    void prepareQueryItems()                override;
 
 private:
+
     class Private;
     Private* const d;
 };

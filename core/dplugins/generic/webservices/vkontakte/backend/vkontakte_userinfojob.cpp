@@ -22,11 +22,14 @@
  * ============================================================ */
 
 #include "vkontakte_userinfojob.h"
-#include "vkontakte_util.h"
 
 // Qt includes
 
 #include <QJsonArray>
+
+// Local includes
+
+#include "vkontakte_util.h"
 
 namespace Vkontakte
 {
@@ -34,14 +37,15 @@ namespace Vkontakte
 class Q_DECL_HIDDEN UserInfoJob::Private
 {
 public:
+
     QList<UserInfo> userInfo;
-    QStringList fields;
+    QStringList     fields;
 };
 
 // http://vk.com/dev/users.get
 UserInfoJob::UserInfoJob(const QString& accessToken)
-    : VkontakteJob(accessToken, QStringLiteral("users.get"))
-    , d(new Private)
+    : VkontakteJob(accessToken, QStringLiteral("users.get")),
+      d(new Private)
 {
     // The complete list of fields
     setFields(UserInfo::allQueryFields()); // TODO: do not pull extra fields by default
@@ -50,16 +54,16 @@ UserInfoJob::UserInfoJob(const QString& accessToken)
 }
 
 UserInfoJob::UserInfoJob(const QString& accessToken, int uid)
-    : VkontakteJob(accessToken, QStringLiteral("users.get"))
-    , d(new Private)
+    : VkontakteJob(accessToken, QStringLiteral("users.get")),
+      d(new Private)
 {
     setFields(UserInfo::allQueryFields()); // TODO: do not pull extra fields by default
     addQueryItem(QStringLiteral("user_ids"), QString::number(uid));
 }
 
 UserInfoJob::UserInfoJob(const QString& accessToken, const QList<int>& uids)
-    : VkontakteJob(accessToken, QStringLiteral("users.get"))
-    , d(new Private)
+    : VkontakteJob(accessToken, QStringLiteral("users.get")),
+      d(new Private)
 {
     setFields(UserInfo::allQueryFields()); // TODO: do not pull extra fields by default
     addQueryItem(QStringLiteral("user_ids"), joinIntegers(uids));

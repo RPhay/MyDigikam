@@ -38,21 +38,22 @@ namespace Vkontakte
 class Q_DECL_HIDDEN VkApi::Private
 {
 public:
-    QWidget* parent;
-    QString appId;
+
+    QWidget*                         parent;
+    QString                          appId;
     Vkontakte::AppPermissions::Value requiredPermissions;
-    QString accessToken;
-    bool authenticated;
+    QString                          accessToken;
+    bool                             authenticated;
 };
 
 VkApi::VkApi(QWidget* const parent)
     : d(new Private)
 {
-    d->parent = parent;
-    d->appId = QString();
+    d->parent              = parent;
+    d->appId               = QString();
     d->requiredPermissions = Vkontakte::AppPermissions::NoPermissions;
-    d->accessToken = QString();
-    d->authenticated = false;
+    d->accessToken         = QString();
+    d->authenticated       = false;
 }
 
 VkApi::~VkApi()
@@ -73,8 +74,11 @@ void VkApi::setInitialAccessToken(const QString& accessToken)
 {
     // Does nothing if m_accessToken is already set, because this function
     // is only for parameter initialization from a configuration file.
+    
     if (d->accessToken.isEmpty())
+    {
         d->accessToken = accessToken;
+    }
 }
 
 QString VkApi::accessToken() const
@@ -85,7 +89,9 @@ QString VkApi::accessToken() const
 void VkApi::startAuthentication(bool forceLogout)
 {
     if (forceLogout)
+    {
         d->accessToken.clear();
+    }
 
     if (!d->accessToken.isEmpty())
     {
@@ -118,6 +124,7 @@ void VkApi::slotApplicationPermissionCheckDone(KJob* kjob)
     Q_ASSERT(job);
 
     bool havePermissions = true;
+
     if (!job || job->error())
     {
         // There was some error enumerating permissions, need to start over for sure
@@ -125,8 +132,7 @@ void VkApi::slotApplicationPermissionCheckDone(KJob* kjob)
     }
     else
     {
-        Vkontakte::AppPermissions::Value availablePermissions =
-            static_cast<Vkontakte::AppPermissions::Value>(job->permissions());
+        Vkontakte::AppPermissions::Value availablePermissions = static_cast<Vkontakte::AppPermissions::Value>(job->permissions());
 
         if ((availablePermissions & d->requiredPermissions) != d->requiredPermissions)
         {

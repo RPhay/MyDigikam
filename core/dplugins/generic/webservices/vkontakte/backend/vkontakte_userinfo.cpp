@@ -37,6 +37,7 @@ namespace Vkontakte
 class Q_DECL_HIDDEN UserInfo::Private : public QSharedData
 {
 public:
+
     QJsonObject jsonData;
 };
 
@@ -51,7 +52,7 @@ UserInfo::UserInfo(const QJsonObject& jsonData)
     d->jsonData = jsonData;
 }
 
-UserInfo::UserInfo(const UserInfo &other)
+UserInfo::UserInfo(const UserInfo& other)
 {
     d = other.d;
 }
@@ -60,7 +61,7 @@ UserInfo::~UserInfo()
 {
 }
 
-UserInfo &UserInfo::operator=(const UserInfo &other)
+UserInfo &UserInfo::operator=(const UserInfo& other)
 {
     if (this != &other)
     {
@@ -109,6 +110,7 @@ bool UserInfo::online() const
 QStringList UserInfo::allQueryFields()
 {
     QStringList fields;
+
     fields << QStringLiteral("sex")
            << QStringLiteral("bdate")
            << QStringLiteral("city")
@@ -156,6 +158,7 @@ QStringList UserInfo::allQueryFields()
            << QStringLiteral("quotes")
            << QStringLiteral("personal")
            << QStringLiteral("friends_status");
+
     return fields;
 }
 

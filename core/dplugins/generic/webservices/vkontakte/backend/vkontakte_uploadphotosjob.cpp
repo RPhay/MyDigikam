@@ -33,39 +33,40 @@
 namespace Vkontakte
 {
 
-const int UploadPhotosJob::MAX_POST_JOBS = 2;
+const int UploadPhotosJob::MAX_POST_JOBS       = 2;
 const int UploadPhotosJob::REQUEST_FILES_COUNT = 1; // <= 5
 
 class Q_DECL_HIDDEN UploadPhotosJob::Private
 {
 public:
-    QString accessToken;
-    QStringList files;
-    int aid;
-    int gid;
-    bool saveBig;
+
+    QString               accessToken;
+    QStringList           files;
+    int                   aid;
+    int                   gid;
+    bool                  saveBig;
 
     UploadPhotosJob::Dest dest;
 
-    QUrl uploadUrl;
-    QList<PhotoInfo> list;
+    QUrl                  uploadUrl;
+    QList<PhotoInfo>      list;
 
-    QList<PhotoPostJob *> pendingPostJobs;
-    int workingPostJobs;
+    QList<PhotoPostJob*>  pendingPostJobs;
+    int                   workingPostJobs;
 };
 
 UploadPhotosJob::UploadPhotosJob(const QString& accessToken,
                                  const QStringList& files, bool saveBig, int aid, int gid)
-    : KJobWithSubjobs()
-    , d(new Private)
+    : KJobWithSubjobs(),
+      d(new Private)
 {
-    d->accessToken = accessToken;
-    d->files = files;
-    d->aid = aid;
-    d->gid = gid;
-    d->saveBig = saveBig;
+    d->accessToken     = accessToken;
+    d->files           = files;
+    d->aid             = aid;
+    d->gid             = gid;
+    d->saveBig         = saveBig;
     d->workingPostJobs = 0;
-    d->dest = Vkontakte::UploadPhotosJob::DEST_ALBUM;
+    d->dest            = Vkontakte::UploadPhotosJob::DEST_ALBUM;
 }
 
 UploadPhotosJob::~UploadPhotosJob()
@@ -82,22 +83,29 @@ void UploadPhotosJob::start()
 {
     emit progress(0);
 
-    GetPhotoUploadServerJob *job = new GetPhotoUploadServerJob(d->accessToken, d->dest);
+    GetPhotoUploadServerJob* const job = new GetPhotoUploadServerJob(d->accessToken, d->dest);
     job->initUploadAlbum(d->aid, d->gid);
 
     m_jobs.append(job);
-    connect(job, SIGNAL(result(KJob*)), this, SLOT(serverJobFinished(KJob*)));
+
+    connect(job, SIGNAL(result(KJob*)),
+            this, SLOT(serverJobFinished(KJob*)));
+
     job->start();
 }
 
 void UploadPhotosJob::serverJobFinished(KJob *kjob)
 {
-    GetPhotoUploadServerJob *job = dynamic_cast<GetPhotoUploadServerJob *>(kjob);
+    GetPhotoUploadServerJob* const job = dynamic_cast<GetPhotoUploadServerJob*>(kjob);
     Q_ASSERT(job);
 
-    if(!job) return;
+    if(!job)
+    {
+        return;
+    }
 
-    if (job->error()) {
+    if (job->error())
+    {
         setError(job->error());
         setErrorText(job->errorText());
         qCWarning(DIGIKAM_WEBSERVICES_LOG) << "Job error: " << job->errorString();
@@ -110,12 +118,14 @@ void UploadPhotosJob::serverJobFinished(KJob *kjob)
         return;
     }
 
-    d->uploadUrl = job->uploadUrl();
-
-    int totalCount = d->files.size();
+    d->uploadUrl          = job->uploadUrl();
+    int totalCount        = d->files.size();
     int requestFilesCount = getMaxRequestFilesCount();
-    for (int offset = 0; offset < totalCount; offset += requestFilesCount)
+
+    for (int offset = 0 ; offset < totalCount ; offset += requestFilesCount)
+    {
         startPostJob(offset, qMin(requestFilesCount, totalCount - offset));
+    }
 
     // Remove as the last step to avoid the situation when m_jobs is empty but
     // there is something left to do.
@@ -124,96 +134,116 @@ void UploadPhotosJob::serverJobFinished(KJob *kjob)
 
 bool UploadPhotosJob::mayStartPostJob()
 {
-    return d->workingPostJobs < MAX_POST_JOBS;
+    return (d->workingPostJobs < MAX_POST_JOBS);
 }
 
 void UploadPhotosJob::startPostJob(int offset, int count)
 {
-    PhotoPostJob *job = new PhotoPostJob(d->dest, d->uploadUrl, d->files.mid(offset, count));
+    PhotoPostJob* const job = new PhotoPostJob(d->dest, d->uploadUrl, d->files.mid(offset, count));
     m_jobs.append(job);
-    connect(job, SIGNAL(result(KJob*)), this, SLOT(postJobFinished(KJob*)));
+
+    connect(job, SIGNAL(result(KJob*)),
+            this, SLOT(postJobFinished(KJob*)));
 
     if (mayStartPostJob())
     {
-        d->workingPostJobs ++;
+        d->workingPostJobs++;
         job->start();
     }
     else
+    {
         d->pendingPostJobs.append(job);
+    }
 }
 
-void UploadPhotosJob::postJobFinished(KJob *kjob)
+void UploadPhotosJob::postJobFinished(KJob* kjob)
 {
-    PhotoPostJob *job = dynamic_cast<PhotoPostJob *>(kjob);
+    PhotoPostJob* const job = dynamic_cast<PhotoPostJob*>(kjob);
     Q_ASSERT(job);
 
-    if (!job) return;
+    if (!job)
+    {
+        return;
+    }
 
     // start one pending job if possible
     if (mayStartPostJob() && !d->pendingPostJobs.empty())
     {
-        PhotoPostJob *nextJob = d->pendingPostJobs.first();
+        PhotoPostJob* const nextJob = d->pendingPostJobs.first();
         d->pendingPostJobs.removeAll(nextJob);
 
         d->workingPostJobs ++;
         nextJob->start();
     }
 
-    if (job->error()) {
+    if (job->error())
+    {
         setError(job->error());
         setErrorText(job->errorText());
         qCWarning(DIGIKAM_WEBSERVICES_LOG) << "Job error: " << job->errorString();
     }
 
-    if (error()) {
+    if (error())
+    {
         if (m_jobs.size() == 1)
         {
             emitResult();
         }
 
-        d->workingPostJobs --;
+        d->workingPostJobs--;
         m_jobs.removeAll(job);
+
         return;
     }
 
     startSaveJob(job->response());
 
-    d->workingPostJobs --;
+    d->workingPostJobs--;
     m_jobs.removeAll(job);
 }
 
 void UploadPhotosJob::startSaveJob(const QVariantMap& photoIdData)
 {
-    SavePhotoJob *job = new SavePhotoJob(d->accessToken, d->dest, photoIdData);
+    SavePhotoJob* const job = new SavePhotoJob(d->accessToken, d->dest, photoIdData);
     m_jobs.append(job);
-    connect(job, SIGNAL(result(KJob*)), this, SLOT(saveJobFinished(KJob*)));
+
+    connect(job, SIGNAL(result(KJob*)),
+            this, SLOT(saveJobFinished(KJob*)));
+
     job->start();
 }
 
-void UploadPhotosJob::saveJobFinished(KJob *kjob)
+void UploadPhotosJob::saveJobFinished(KJob* kjob)
 {
     // TODO: Try to preserve the original order of photos.
     // This task might be difficult when MAX_POST_JOBS > 1
 
-    SavePhotoJob *job = dynamic_cast<SavePhotoJob *>(kjob);
+    SavePhotoJob* const job = dynamic_cast<SavePhotoJob*>(kjob);
     Q_ASSERT(job);
 
-    if (!job) return;
+    if (!job)
+    {
+        return;
+    }
 
-    if (job->error()) {
+    if (job->error())
+    {
         setError(job->error());
         setErrorText(job->errorText());
         qCWarning(DIGIKAM_WEBSERVICES_LOG) << "Job error: " << job->errorString();
     }
 
-    if (error()) {
+    if (error())
+    {
         // All subjobs have finished
+
         if (m_jobs.size() == 1)
         {
             emitResult();
         }
 
         m_jobs.removeAll(job);
+
         return;
     }
 

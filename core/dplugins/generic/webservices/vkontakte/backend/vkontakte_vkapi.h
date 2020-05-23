@@ -49,7 +49,8 @@ class VkApi : public QObject
     Q_OBJECT
 
 public:
-    VkApi(QWidget* const parent);
+
+    explicit VkApi(QWidget* const parent);
     ~VkApi();
 
     /**
@@ -82,14 +83,17 @@ public:
     bool isAuthenticated();
 
 Q_SIGNALS:
+
     void authenticated();
     void canceled();
 
 protected Q_SLOTS:
+
     void slotApplicationPermissionCheckDone(KJob* kjob);
     void slotAuthenticationDialogDone(const QString& accessToken);
 
 private:
+
     class Private;
     Private* const d;
 };

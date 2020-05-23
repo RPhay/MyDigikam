@@ -37,17 +37,20 @@ namespace Vkontakte
 class UserInfo
 {
 public:
+
     enum
     {
         INVALID_TIMEZONE = 42
     };
 
+public:
+
     UserInfo();
-    UserInfo(const UserInfo &other);
-    UserInfo(const QJsonObject& jsonData);
+    UserInfo(const UserInfo& other);
+    explicit UserInfo(const QJsonObject& jsonData);
     ~UserInfo();
 
-    UserInfo &operator=(const UserInfo &other);
+    UserInfo &operator=(const UserInfo& other);
 
     /**
      * @brief Returns integer user ID at VK.
@@ -57,7 +60,7 @@ public:
      *
      * Returns -1 for uninitialized object or on server error.
      */
-    int userId() const;
+    int userId()        const;
 
     /**
      * @brief Returns user's first name in the default language.
@@ -80,21 +83,22 @@ public:
     QString lastName() const;
 
     QString nickName() const;
-    QString domain() const;
+    QString domain()   const;
 
-    int sex() const;
+    int sex()          const;
 
-    bool online() const;
+    bool online()      const;
 
     /**
-    * @brief Returns the stringlist of all possible field groups
-    * that may be requested in VK API method "users.get".
-    *
-    * @return The list of strings to pass as "fields" argument to a method.
-    **/
+     * @brief Returns the stringlist of all possible field groups
+     * that may be requested in VK API method "users.get".
+     *
+     * @return The list of strings to pass as "fields" argument to a method.
+     */
     static QStringList allQueryFields();
 
 private:
+
     class Private;
     QSharedDataPointer<Private> d;
 };
