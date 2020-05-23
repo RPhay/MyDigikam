@@ -51,7 +51,7 @@ public:
      * @brief saveIdentity : save identity with label and face embedding
      * @param id
      */
-    void saveIdentity(const Identity& id);
+    void saveIdentity(Identity& id);
 
 private:
 

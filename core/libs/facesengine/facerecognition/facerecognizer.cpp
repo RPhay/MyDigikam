@@ -27,7 +27,8 @@ public:
 
     Private(bool debug)
         : debugMode(debug),
-          extractor(new FaceExtractor)
+          extractor(new FaceExtractor),
+          identityCounter(0)
     {
     }
 
@@ -43,6 +44,9 @@ public:
     float          threshold = 15000.0;
 
     FaceExtractor* extractor;
+
+    int            identityCounter;
+    QHash<QString, Identity> faceLibrary;
 };
 
 FaceRecognizer::FaceRecognizer(bool debug)
@@ -126,8 +130,32 @@ Identity FaceRecognizer::findIdenity(const cv::Mat& inputImage)
 
     // TODO: scan database for face
 
-    Identity id;
+    for (QHash<QString, Identity>::iterator iter  = d->faceLibrary.begin();
+                                            iter != d->faceLibrary.end();
+                                          ++iter)
+    {
+        QJsonArray jsonFaceEmbedding = QJsonDocument::fromJson(iter.value().attribute(QLatin1String("faceEmbedding")).toLatin1()).array();
 
+        qDebug() << "face embedding of" << iter.key() << ":" << jsonFaceEmbedding;
+
+        std::vector<float> recordedFaceEmbedding;
+
+        for (int i = 0; i < jsonFaceEmbedding.size(); ++i)
+        {
+            recordedFaceEmbedding.push_back(static_cast<float>(jsonFaceEmbedding[i].toDouble()));
+        }
+
+        double cosDistance = FaceExtractor::cosineDistance(recordedFaceEmbedding, faceEmbedding);
+
+        qDebug() << "cosine distance with" << iter.key() << ":" << cosDistance;
+
+        if (cosDistance > 0.7)
+        {
+            return iter.value();
+        }
+    }
+
+    // new identity
     QJsonArray jsonFaceEmbedding;
 
     for (size_t i = 0; i < faceEmbedding.size(); ++i)
@@ -135,15 +163,27 @@ Identity FaceRecognizer::findIdenity(const cv::Mat& inputImage)
         jsonFaceEmbedding << faceEmbedding[i];
     }
 
+    Identity id;
+
     // TODO add face embedding to identity
     id.setAttribute(QLatin1String("faceEmbedding"), QString::fromLatin1(QJsonDocument(jsonFaceEmbedding).toJson(QJsonDocument::Compact)));
 
     return id;
 }
 
-void FaceRecognizer::saveIdentity(const Identity& id)
+void FaceRecognizer::saveIdentity(Identity& id)
 {
     // TODO save identity
+    if (id.attribute(QLatin1String("fullName")).isEmpty())
+    {
+        qWarning() << "idenitity is empty";
+
+        return;
+    }
+
+    id.setId(++d->identityCounter);
+
+    d->faceLibrary[id.attribute(QLatin1String("faceEmbedding"))] = id;
 }
 
 }

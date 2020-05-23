@@ -161,6 +161,7 @@ if(DNN_RECOGNITION)
                                       # Testing, TODO: remove later
                                       facerecognition/facerecognizer.cpp
                                       facerecognition/faceextractor.cpp
+                                      facerecognition/facedatabase.cpp
     )
 
 else()

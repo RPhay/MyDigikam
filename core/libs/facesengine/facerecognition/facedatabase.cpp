@@ -10,7 +10,7 @@ class Q_DECL_HIDDEN FaceDatabase::Private
 public:
     Private()
     {
-        db = QSqlDatabase::addDatabase(QLatin1String("Face"));
+        db = QSqlDatabase::addDatabase(QLatin1String("QSQLITE"));
         db.setHostName(QLatin1String("localhost"));
         db.setDatabaseName(QLatin1String("testfacedb"));
         db.setUserName(QLatin1String("admin"));
