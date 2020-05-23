@@ -379,7 +379,7 @@ QList<QUrl> DBInfoIface::currentAlbumItems() const
     if (imageList.isEmpty())
     {
         Album* const currAlbum = d->albumManager->currentAlbums().first();
-        imageList = d->resolveGroupsFromAlbums(albumItems(currAlbum));
+        imageList              = d->resolveGroupsFromAlbums(albumItems(currAlbum));
     }
 
     return imageList;
