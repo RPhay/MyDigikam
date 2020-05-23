@@ -426,12 +426,16 @@ bool AlbumFilterModel::lessThan(const QModelIndex& left, const QModelIndex& righ
                                                        : (leftAlbum->id() != FaceTags::unknownPersonTagId());
         }
 
-        if ((leftAlbum->id() == FaceTags::ignoredPersonTagId()) != (rightAlbum->id() == FaceTags::ignoredPersonTagId()))
+        /// Verify this, to prevent auto-creation of Ignored Tag.
+        if (FaceTags::existsIgnoredPerson())
         {
-            // ignored tag albums go to the bottom, regardless of sort role
+            if ((leftAlbum->id() == FaceTags::ignoredPersonTagId()) != (rightAlbum->id() == FaceTags::ignoredPersonTagId()))
+            {
+                // ignored tag albums go to the bottom, regardless of sort role
 
-            return (sortOrder() == Qt::AscendingOrder) ? (leftAlbum->id() != FaceTags::ignoredPersonTagId())
-                                                       : (leftAlbum->id() == FaceTags::ignoredPersonTagId());
+                return (sortOrder() == Qt::AscendingOrder) ? (leftAlbum->id() != FaceTags::ignoredPersonTagId())
+                                                        : (leftAlbum->id() == FaceTags::ignoredPersonTagId());
+            }
         }
     }
 
