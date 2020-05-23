@@ -24,6 +24,8 @@
 #ifndef DIGIKAM_VKONTAKTE_GETAPPLICATIONPERMISSIONSJOB_H
 #define DIGIKAM_VKONTAKTE_GETAPPLICATIONPERMISSIONSJOB_H
 
+// Local includes
+
 #include "vkontakte_jobs.h"
 
 namespace Vkontakte

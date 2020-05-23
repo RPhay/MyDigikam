@@ -22,6 +22,9 @@
  * ============================================================ */
 
 #include "vkontakte_photoinfo.h"
+
+// Local includes
+
 #include "vkontakte_util.h"
 
 namespace Vkontakte

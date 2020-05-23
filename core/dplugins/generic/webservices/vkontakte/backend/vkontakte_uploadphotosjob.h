@@ -24,7 +24,11 @@
 #ifndef DIGIKAM_VKONTAKTE_UPLOADPHOTOSJOB_H
 #define DIGIKAM_VKONTAKTE_UPLOADPHOTOSJOB_H
 
+// Qt includes
+
 #include <QVariantMap>
+
+// Local includes
 
 #include "vkontakte_jobs.h"
 #include "vkontakte_photoinfo.h"

@@ -24,6 +24,8 @@
 #ifndef DIGIKAM_VKONTAKTE_NOTEJOB_H
 #define DIGIKAM_VKONTAKTE_NOTEJOB_H
 
+// Local includes
+
 #include "vkontakte_jobs.h"
 #include "vkontakte_noteinfo.h"
 

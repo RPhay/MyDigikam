@@ -24,6 +24,8 @@
 
 #include "vkontakte_util.h"
 
+// Qt includes
+
 #include <QString>
 #include <QMap>
 

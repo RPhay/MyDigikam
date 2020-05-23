@@ -22,10 +22,12 @@
  * ============================================================ */
 
 #include "vkontakte_uploadphotosjob.h"
+
+// Local includes
+
 #include "vkontakte_getphotouploadserverjob.h"
 #include "vkontakte_photopostjob.h"
 #include "vkontakte_savephotojob.h"
-
 #include "digikam_debug.h"
 
 namespace Vkontakte

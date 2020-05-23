@@ -24,9 +24,13 @@
 #ifndef DIGIKAM_VKONTAKTE_JOBS_H
 #define DIGIKAM_VKONTAKTE_JOBS_H
 
-#include <KJob>
+// Qt includes
 
 #include <QPointer>
+
+// KDE includes
+
+#include <KJob>
 
 namespace Vkontakte
 {

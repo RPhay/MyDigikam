@@ -24,6 +24,8 @@
 #ifndef DIGIKAM_VKONTAKTE_USERINFO_H
 #define DIGIKAM_VKONTAKTE_USERINFO_H
 
+// Qt includes
+
 #include <QMetaType>
 #include <QJsonObject>
 #include <QSharedDataPointer>

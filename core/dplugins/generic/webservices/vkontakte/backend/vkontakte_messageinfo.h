@@ -24,6 +24,8 @@
 #ifndef DIGIKAM_VKONTAKTE_MESSAGEINFO_H
 #define DIGIKAM_VKONTAKTE_MESSAGEINFO_H
 
+// Qt includes
+
 #include <QDateTime>
 
 namespace Vkontakte

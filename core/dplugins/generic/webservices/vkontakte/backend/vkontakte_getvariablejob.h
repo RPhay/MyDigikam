@@ -24,7 +24,11 @@
 #ifndef DIGIKAM_VKONTAKTE_GETVARIABLEJOB_H
 #define DIGIKAM_VKONTAKTE_GETVARIABLEJOB_H
 
+// Qt includes
+
 #include <QVariant>
+
+// Local includes
 
 #include "vkontakte_jobs.h"
 

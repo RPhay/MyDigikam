@@ -27,7 +27,7 @@
 
 #include <QPointer>
 
-// LibKvkontakte includes
+// Local includes
 
 #include "vkontakte_authenticationdialog.h"
 #include "vkontakte_getapplicationpermissionsjob.h"

@@ -24,6 +24,8 @@
 #include "vkontakte_noteinfo.h"
 #include "vkontakte_util.h"
 
+// KDE includes
+
 #include <klocalizedstring.h>
 
 namespace Vkontakte

@@ -23,6 +23,8 @@
 
 #include "vkontakte_notejob.h"
 
+// Qt includes
+
 #include <qjson/qobjecthelper.h>
 
 namespace Vkontakte

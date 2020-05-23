@@ -25,10 +25,14 @@
 #ifndef DIGIKAM_VKONTAKTE_UTIL_H
 #define DIGIKAM_VKONTAKTE_UTIL_H
 
-#include "vkontakte_apppermissions.h"
+// Qt includes
 
 #include <QDateTime>
 #include <QStringList>
+
+// Local includes
+
+#include "vkontakte_apppermissions.h"
 
 /**
  * Convert a QString containing a UNIX timestamp to a QDateTime object

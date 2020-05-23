@@ -24,12 +24,16 @@
 #ifndef DIGIKAM_VKONTAKTE_USERINFOJOB_H
 #define DIGIKAM_VKONTAKTE_USERINFOJOB_H
 
-#include "vkontakte_jobs.h"
-#include "vkontakte_userinfo.h"
+// Qt includes
 
 #include <QStringList>
 #include <QJsonDocument>
 #include <QJsonObject>
+
+// Local includes
+
+#include "vkontakte_jobs.h"
+#include "vkontakte_userinfo.h"
 
 namespace Vkontakte
 {

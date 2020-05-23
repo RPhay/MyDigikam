@@ -23,6 +23,8 @@
 
 #include "vkontakte_noteslistjob.h"
 
+// Qt includes
+
 #include <QVariant>
 #include <qjson/qobjecthelper.h>
 

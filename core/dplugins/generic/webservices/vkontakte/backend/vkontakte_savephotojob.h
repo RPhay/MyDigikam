@@ -24,12 +24,16 @@
 #ifndef DIGIKAM_VKONTAKTE_SAVEPHOTOJOB_H
 #define DIGIKAM_VKONTAKTE_SAVEPHOTOJOB_H
 
-#include "vkontakte_jobs.h"
-#include "vkontakte_photoinfo.h"
-#include "vkontakte_uploadphotosjob.h"
+// Qt includes
 
 #include <QVariantMap>
 #include <QJsonValue>
+
+// Local includes
+
+#include "vkontakte_jobs.h"
+#include "vkontakte_photoinfo.h"
+#include "vkontakte_uploadphotosjob.h"
 
 namespace Vkontakte
 {

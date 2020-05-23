@@ -24,6 +24,8 @@
 #ifndef DIGIKAM_VKONTAKTE_PHOTOINFO_H
 #define DIGIKAM_VKONTAKTE_PHOTOINFO_H
 
+// Qt includes
+
 #include <QJsonObject>
 #include <QSharedDataPointer>
 #include <QUrl>

@@ -23,16 +23,23 @@
 
 #include "vkontakte_jobs.h"
 
-#include <klocalizedstring.h>
-#include <KIO/Job>
-#include <KIO/StoredTransferJob>
+// Qt includes
 
-#include "digikam_debug.h"
 #include <QTimer>
 #include <QUrl>
 #include <QUrlQuery>
 #include <QJsonDocument>
 #include <QJsonObject>
+
+// KDE includes
+
+#include <klocalizedstring.h>
+#include <KIO/Job>
+#include <KIO/StoredTransferJob>
+
+// Local includes
+
+#include "digikam_debug.h"
 
 namespace Vkontakte
 {

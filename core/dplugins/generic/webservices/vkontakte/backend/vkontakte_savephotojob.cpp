@@ -23,6 +23,8 @@
 
 #include "vkontakte_savephotojob.h"
 
+// Qt includes
+
 #include <QJsonArray>
 
 namespace Vkontakte

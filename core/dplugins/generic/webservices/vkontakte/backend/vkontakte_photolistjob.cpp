@@ -22,9 +22,14 @@
  * ============================================================ */
 
 #include "vkontakte_photolistjob.h"
-#include "vkontakte_util.h"
+
+// Qt includes
 
 #include <QJsonArray>
+
+// Local includes
+
+#include "vkontakte_util.h"
 
 namespace Vkontakte
 {

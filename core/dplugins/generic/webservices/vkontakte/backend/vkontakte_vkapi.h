@@ -24,11 +24,13 @@
 #ifndef DIGIKAM_VKONTAKTE_VKAPI_H
 #define DIGIKAM_VKONTAKTE_VKAPI_H
 
-#include "vkontakte_apppermissions.h"
-
 // Qt includes
 
 #include <QObject>
+
+// Local includes
+
+#include "vkontakte_apppermissions.h"
 
 class QWidget;
 class KJob;

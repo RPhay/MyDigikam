@@ -24,6 +24,8 @@
 #ifndef DIGIKAM_VKONTAKTE_GROUPINFO_H
 #define DIGIKAM_VKONTAKTE_GROUPINFO_H
 
+// Qt includes
+
 #include <QSharedPointer>
 
 namespace Vkontakte

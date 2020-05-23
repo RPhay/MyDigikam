@@ -23,8 +23,7 @@
 
 #include "vkontakte_photopostjob.h"
 
-#include <KIO/Job>
-#include <klocalizedstring.h>
+// Qt includes
 
 #include <QFile>
 #include <QFileInfo>
@@ -34,6 +33,13 @@
 #include <QNetworkAccessManager>
 #include <QNetworkReply>
 #include <QHttpMultiPart>
+
+// KDE includes
+
+#include <KIO/Job>
+#include <klocalizedstring.h>
+
+// Local includes
 
 #include "digikam_debug.h"
 

@@ -24,6 +24,8 @@
 #ifndef DIGIKAM_VKONTAKTE_GROUPLISTJOB_H
 #define DIGIKAM_VKONTAKTE_GROUPLISTJOB_H
 
+// Local includes
+
 #include "vkontakte_jobs.h"
 #include "vkontakte_groupinfo.h"
 

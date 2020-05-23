@@ -24,7 +24,10 @@
 #include "vkontakte_getphotouploadserverjob.h"
 #include "vkontakte_uploadphotosjob.h"
 
+// Qt includes
+
 #include <QVariant>
+
 #include "digikam_debug.h"
 
 namespace Vkontakte

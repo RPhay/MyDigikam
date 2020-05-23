@@ -23,6 +23,8 @@
 
 #include "vkontakte_getapplicationpermissionsjob.h"
 
+// Qt includes
+
 #include <QVariant>
 #include <QJsonValue>
 

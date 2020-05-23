@@ -22,9 +22,14 @@
  * ============================================================ */
 
 #include "vkontakte_userinfo.h"
-#include "vkontakte_util.h"
+
+// Qt includes
 
 #include <QStringList>
+
+// Local includes
+
+#include "vkontakte_util.h"
 
 namespace Vkontakte
 {
