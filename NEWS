@@ -755,4 +755,5 @@ BUGFIXES:
 717 ==> 421808 - Ignored directory does not clean up database.
 718 ==> 421853 - Single button to refresh collection.
 719 ==> 421817 - digiKam fails to compile with Qt 5.15.
-720 ==> 
+720 ==> 421941 - Slideshow option does not respect sort order across collections.
+721 ==> 

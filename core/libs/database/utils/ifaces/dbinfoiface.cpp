@@ -374,12 +374,12 @@ QList<QUrl> DBInfoIface::currentAlbumItems() const
         return QList<QUrl>();
     }
 
-    Album* const currAlbum = d->albumManager->currentAlbums().first();
-    QList<QUrl> imageList  = d->resolveGroupsFromAlbums(albumItems(currAlbum));
+    QList<QUrl> imageList = DigikamApp::instance()->view()->allUrls(d->includeGroupedFromSelected());
 
     if (imageList.isEmpty())
     {
-        imageList = DigikamApp::instance()->view()->allUrls(d->includeGroupedFromSelected());
+        Album* const currAlbum = d->albumManager->currentAlbums().first();
+        imageList = d->resolveGroupsFromAlbums(albumItems(currAlbum));
     }
 
     return imageList;
