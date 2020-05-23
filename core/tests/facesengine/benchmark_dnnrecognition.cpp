@@ -28,6 +28,7 @@
 #include <QScrollArea>
 #include <QHBoxLayout>
 #include <QVBoxLayout>
+#include <QFormLayout>
 #include <QListWidget>
 #include <QListWidgetItem>
 #include <QDir>
@@ -36,13 +37,16 @@
 #include <QLabel>
 #include <QPen>
 #include <QPainter>
+#include <QLineEdit>
 #include <QDebug>
+
 
 // lib digikam includes
 #include "opencvdnnfacedetector.h"
 #include "facedetector.h"
 #include "faceextractor.h"
 #include "facerecognizer.h"
+#include "identity.h"
 
 using namespace Digikam;
 using namespace RecognitionTest;
@@ -65,6 +69,8 @@ private:
     QList<QRectF> detectFaces(const QString& imagePath);
     void extractFaces(const QImage& img, QImage& imgScaled, const QList<QRectF>& faces);
 
+    QWidget* setupControlPanel();
+
 private:
 
     OpenCVDNNFaceDetector* m_detector;
@@ -76,6 +82,11 @@ private:
     QVBoxLayout*           m_croppedfaceLayout;
     QVBoxLayout*           m_preprocessedLayout;
     QVBoxLayout*           m_alignedLayout;
+
+    // control panel
+    QLineEdit*             m_imageLabel;
+    QLabel*                m_similarityLabel;
+    QLabel*                m_recognizationInfo;
 };
 
 MainWindow::MainWindow(const QDir &directory, QWidget *parent)
@@ -135,15 +146,21 @@ MainWindow::MainWindow(const QDir &directory, QWidget *parent)
     alignedFacesArea->setWidget(alignedFacesWidgets);
 
     // TODO add control panel to adjust detection hyper parameters
-    QWidget* const controlPanel = new QWidget;
+    QWidget* controlPanel = setupControlPanel();
 
     QSizePolicy spImage(QSizePolicy::Preferred, QSizePolicy::Preferred);
     spImage.setVerticalPolicy(QSizePolicy::Expanding);
-
+    spImage.setHorizontalStretch(3);
     m_fullImage->setSizePolicy(spImage);
+
+    spImage.setHorizontalStretch(1);
+
     facesArea->setSizePolicy(spImage);
     preprocessedFacesArea->setSizePolicy(spImage);
     alignedFacesArea->setSizePolicy(spImage);
+
+    spImage.setHorizontalPolicy(QSizePolicy::Preferred);
+    spImage.setHorizontalStretch(2);
     controlPanel->setSizePolicy(spImage);
 
     QHBoxLayout* processingLayout = new QHBoxLayout(imageArea);
@@ -211,6 +228,10 @@ MainWindow::~MainWindow()
     delete m_croppedfaceLayout;
     delete m_preprocessedLayout;
     delete m_alignedLayout;
+
+    delete m_recognizationInfo;
+    delete m_imageLabel;
+    delete m_similarityLabel;
 }
 
 void MainWindow::slotDetectFaces(const QListWidgetItem* imageItem)
@@ -360,7 +381,30 @@ void MainWindow::extractFaces(const QImage& img, QImage& imgScaled, const QList<
         cv::Mat cvAlignedFace = m_extractor->alignFace(cvPreprocessedFace);
 
         m_alignedLayout->addWidget(showCVMat(cvAlignedFace));
+
+        // get face embedding
+        //std::vector<float> faceEmbedding = m_extractor->getFaceEmbedding(cvPreprocessedFace);
+
+        //qDebug() << "face embedding of size" << faceEmbedding.size() << ":" << faceEmbedding;
     }
+}
+
+QWidget* MainWindow::setupControlPanel()
+{
+    QWidget* controlPanel = new QWidget();
+
+    m_recognizationInfo = new QLabel(this);
+    m_imageLabel        = new QLineEdit(this);
+    m_similarityLabel   = new QLabel(this);
+
+    QFormLayout* layout   = new QFormLayout(this);
+    layout->addRow(new QLabel(QLatin1String("Reconized :")), m_recognizationInfo);
+    layout->addRow(new QLabel(QLatin1String("Identity :")),  m_imageLabel);
+    layout->addRow(new QLabel(QLatin1String("Similarity distance :")), m_similarityLabel);
+
+    controlPanel->setLayout(layout);
+
+    return controlPanel;
 }
 
 
