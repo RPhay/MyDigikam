@@ -59,6 +59,13 @@ public:
     static int            ignoredPersonTagId();
 
     /**
+     * Method to check whether the Ignored Tag has been created
+     * or not. Will be used by other classes. Needed because
+     * unlike Unconfirmed and Unknown, Ignored is not created
+     * automatically at startup.
+     */
+    static bool           existsIgnoredPerson();
+    /**
      * A method to return a list of all person tags in the DB
      */
     static QList<int>     allPersonTags();

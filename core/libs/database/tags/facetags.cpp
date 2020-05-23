@@ -492,4 +492,16 @@ int FaceTags::ignoredPersonTagId()
     return ignoredPersonTagId;
 }
 
+bool FaceTags::existsIgnoredPerson()
+{
+    QList<int> ids = TagsCache::instance()->tagsWithPropertyCached(TagPropertyName::ignoredPerson());
+
+    if (!ids.isEmpty())
+    {
+        return true;
+    }
+
+    return false;
+}
+
 } // Namespace Digikam
