@@ -333,17 +333,6 @@ void ItemMarkerTiler::slotSourceModelRowsAboutToBeRemoved(const QModelIndex& par
 {
     // TODO: emit signalTilesOrSelectionChanged(); in rowsWereRemoved
 
-#if QT_VERSION < 0x040600
-
-    // removeMarkerIndexFromGrid does not work in Qt 4.5 because the model has already deleted all
-    // the data of the item, but we need the items coordinates to work efficiently
-
-    setDirty();
-
-    return;
-
-#else
-
     if (isDirty())
     {
         return;
@@ -360,8 +349,6 @@ void ItemMarkerTiler::slotSourceModelRowsAboutToBeRemoved(const QModelIndex& par
 
         removeMarkerIndexFromGrid(itemIndex, true);
     }
-
-#endif
 }
 
 void ItemMarkerTiler::slotThumbnailAvailableForIndex(const QPersistentModelIndex& index, const QPixmap& pixmap)
