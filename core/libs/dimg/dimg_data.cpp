@@ -80,18 +80,19 @@ void DImg::putImageData(uint width, uint height, bool sixteenBit, bool alpha, uc
     // replace data
 
     delete [] m_priv->data;
+    m_priv->data = nullptr;
 
     if (null)
     {
         // image is null - no data
 
-        m_priv->data = nullptr;
+        return;
     }
     else if (copyData)
     {
         size_t size = allocateData();
 
-        if (data)
+        if (m_priv->data && data)
         {
             memcpy(m_priv->data, data, size);
         }
