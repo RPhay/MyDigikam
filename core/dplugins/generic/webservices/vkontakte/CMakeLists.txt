@@ -46,23 +46,25 @@ set(libvkontakte_SRCS
     ${CMAKE_CURRENT_SOURCE_DIR}/backend/vkontakte_savephotojob.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/backend/vkontakte_uploadphotosjob.cpp
 
-#    ${CMAKE_CURRENT_SOURCE_DIR}/backend/vkontakte_friendlistjob.cpp
-#    ${CMAKE_CURRENT_SOURCE_DIR}/backend/vkontakte_noteslistjob.cpp
-#    ${CMAKE_CURRENT_SOURCE_DIR}/backend/vkontakte_allnoteslistjob.cpp
-#    ${CMAKE_CURRENT_SOURCE_DIR}/backend/vkontakte_notejob.cpp
-#    ${CMAKE_CURRENT_SOURCE_DIR}/backend/vkontakte_userinfofulljob.cpp
-#    ${CMAKE_CURRENT_SOURCE_DIR}/backend/vkontakte_cidsnamesjob.cpp
-#    ${CMAKE_CURRENT_SOURCE_DIR}/backend/vkontakte_messageinfo.cpp
-#    ${CMAKE_CURRENT_SOURCE_DIR}/backend/vkontakte_discussionslistjob.cpp
-#    ${CMAKE_CURRENT_SOURCE_DIR}/backend/vkontakte_messageslistjob.cpp
-#    ${CMAKE_CURRENT_SOURCE_DIR}/backend/vkontakte_noteinfo.cpp
-#    ${CMAKE_CURRENT_SOURCE_DIR}/backend/vkontakte_noteaddjob.cpp
-#    ${CMAKE_CURRENT_SOURCE_DIR}/backend/vkontakte_allmessageslistjob.cpp
-#    ${CMAKE_CURRENT_SOURCE_DIR}/backend/vkontakte_groupinfo.cpp
+# Not used (old implementation or not ported)
+#    ${CMAKE_CURRENT_SOURCE_DIR}/backend/attic/vkontakte_notejob.cpp
+#    ${CMAKE_CURRENT_SOURCE_DIR}/backend/attic/vkontakte_userinfofulljob.cpp
+#    ${CMAKE_CURRENT_SOURCE_DIR}/backend/attic/vkontakte_cidsnamesjob.cpp
+#    ${CMAKE_CURRENT_SOURCE_DIR}/backend/attic/vkontakte_messageinfo.cpp
+#    ${CMAKE_CURRENT_SOURCE_DIR}/backend/attic/vkontakte_discussionslistjob.cpp
+#    ${CMAKE_CURRENT_SOURCE_DIR}/backend/attic/vkontakte_messageslistjob.cpp
+#    ${CMAKE_CURRENT_SOURCE_DIR}/backend/attic/vkontakte_noteinfo.cpp
+#    ${CMAKE_CURRENT_SOURCE_DIR}/backend/attic/vkontakte_noteaddjob.cpp
+#    ${CMAKE_CURRENT_SOURCE_DIR}/backend/attic/vkontakte_allmessageslistjob.cpp
+#    ${CMAKE_CURRENT_SOURCE_DIR}/backend/attic/vkontakte_groupinfo.cpp
+#    ${CMAKE_CURRENT_SOURCE_DIR}/backend/attic/vkontakte_allnoteslistjob.cpp
+#    ${CMAKE_CURRENT_SOURCE_DIR}/backend/attic/vkontakte_noteslistjob.cpp
+#    ${CMAKE_CURRENT_SOURCE_DIR}/backend/attic/vkontakte_friendlistjob.cpp
 
-#    ${CMAKE_CURRENT_SOURCE_DIR}/backend/attic/vkontakte_getvariablejob.cpp           # Deprecated
-#    ${CMAKE_CURRENT_SOURCE_DIR}/backend/attic/vkontakte_getinfojob.cpp               # Deprecated
-#    ${CMAKE_CURRENT_SOURCE_DIR}/backend/attic/vkontakte_grouplistjob.cpp             # Deprecated
+# Deprecated classes
+#    ${CMAKE_CURRENT_SOURCE_DIR}/backend/deprecated/vkontakte_getvariablejob.cpp
+#    ${CMAKE_CURRENT_SOURCE_DIR}/backend/deprecated/vkontakte_getinfojob.cpp
+#    ${CMAKE_CURRENT_SOURCE_DIR}/backend/deprecated/vkontakte_grouplistjob.cpp
 )
 
 # For unit-tests and plugin
