@@ -37,12 +37,13 @@ namespace Vkontakte
 class PhotoInfo
 {
 public:
+
     PhotoInfo();
-    PhotoInfo(const PhotoInfo &other);
-    PhotoInfo(const QJsonObject &jsonData);
+    PhotoInfo(const PhotoInfo& other);
+    explicit PhotoInfo(const QJsonObject& jsonData);
     ~PhotoInfo();
 
-    PhotoInfo &operator=(const PhotoInfo &other);
+    PhotoInfo& operator=(const PhotoInfo& other);
 
     /**
      * @brief Returns the integer ID of the photo
@@ -55,6 +56,7 @@ public:
     QUrl urlMaxResolution() const;
 
 private:
+
     class Private;
     QSharedDataPointer<Private> d;
 };

@@ -33,16 +33,17 @@ namespace Vkontakte
 class Q_DECL_HIDDEN NoteJob::Private
 {
 public:
+
     NoteInfoPtr noteInfo;
 };
 
 // http://vk.com/dev/notes.getById
 NoteJob::NoteJob(const QString& accessToken, int nid)
-    : VkontakteJob(accessToken, "notes.getById")
-    , d(new Private)
+    : VkontakteJob(accessToken, "notes.getById"),
+      d(new Private)
 {
-    addQueryItem("nid", QString::number(nid));
-    addQueryItem("need_wiki", "1"); // works only for current user's notes
+    addQueryItem("nid",       QString::number(nid));
+    addQueryItem("need_wiki", "1");                     // works only for current user's notes
 }
 
 NoteJob::~NoteJob()

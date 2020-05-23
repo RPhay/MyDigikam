@@ -38,16 +38,20 @@ namespace Vkontakte
 class NoteAddJob : public VkontakteJob
 {
     Q_OBJECT
+
 public:
-    NoteAddJob(const QString& accessToken, const QString& title, const QString& text);
+
+    explicit NoteAddJob(const QString& accessToken, const QString& title, const QString& text);
     ~NoteAddJob();
 
     int nid() const;
 
 protected:
+
     void handleData(const QVariant& data) override;
-    
+
 private:
+
     class Private;
     Private* const d;
 };

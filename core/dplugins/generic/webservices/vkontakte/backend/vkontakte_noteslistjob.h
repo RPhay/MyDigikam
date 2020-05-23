@@ -35,30 +35,33 @@ namespace Vkontakte
 class NotesListJob : public VkontakteJob
 {
     Q_OBJECT
+
 public:
+
     /**
-    * @brief Construct a job to retrieve the data of user with the given uid.
-    * @param accessToken The access token to access data on vkontakte.
-    * @param uid The user ID
-    * @param offset Offset in the list of all notes
-    * @param count Number of notes to retrieve (limited to 100)
-    **/
-    NotesListJob(const QString& accessToken, int uid, int offset, int count);
+     * @brief Construct a job to retrieve the data of user with the given uid.
+     * @param accessToken The access token to access data on vkontakte.
+     * @param uid The user ID
+     * @param offset Offset in the list of all notes
+     * @param count Number of notes to retrieve (limited to 100)
+     */
+    explicit NotesListJob(const QString& accessToken, int uid, int offset, int count);
     ~NotesListJob();
 
     QList<NoteInfoPtr> list() const;
-    int totalCount() const;
+    int totalCount()          const;
 
 protected:
-    /**
-    * @brief Handles the data returned by the VkontakteGetJob
-    * @param data A JSON string containing the data.
-    */
-    void handleData(const QVariant& data) override;
 
+    /**
+     * @brief Handles the data returned by the VkontakteGetJob
+     * @param data A JSON string containing the data.
+     */
+    void handleData(const QVariant& data) override;
     void handleItem(const QVariant& data);
 
 private:
+
     class Private;
     Private* const d;
 };

@@ -44,7 +44,7 @@ public:
 
     UserInfo();
     UserInfo(const UserInfo &other);
-    UserInfo(const QJsonObject &jsonData);
+    UserInfo(const QJsonObject& jsonData);
     ~UserInfo();
 
     UserInfo &operator=(const UserInfo &other);

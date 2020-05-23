@@ -36,6 +36,7 @@ namespace Vkontakte
 class MessagesListJob : public VkontakteJob
 {
 public:
+
     /**
      * @brief Constructs a job to retrieve an array of messages from vk.com.
      *
@@ -54,7 +55,7 @@ public:
     ~MessagesListJob();
 
     QList<MessageInfoPtr> list() const;
-    int totalCount() const;
+    int totalCount()             const;
 
     /**
      * @brief Used by AllMessagesListJob
@@ -62,11 +63,12 @@ public:
     int out() const;
 
 protected:
-    void handleData(const QVariant& data) override;
 
+    void handleData(const QVariant& data) override;
     void handleItem(const QVariant& data);
 
 private:
+
     class Private;
     Private* const d;
 };

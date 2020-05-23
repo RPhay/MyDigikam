@@ -33,6 +33,7 @@ namespace Vkontakte
 class Q_DECL_HIDDEN PhotoInfo::Private : public QSharedData
 {
 public:
+
     QJsonObject jsonData;
 };
 
@@ -41,13 +42,13 @@ PhotoInfo::PhotoInfo()
 {
 }
 
-PhotoInfo::PhotoInfo(const QJsonObject &jsonData)
+PhotoInfo::PhotoInfo(const QJsonObject& jsonData)
     : d(new Private)
 {
     d->jsonData = jsonData;
 }
 
-PhotoInfo::PhotoInfo(const PhotoInfo &other)
+PhotoInfo::PhotoInfo(const PhotoInfo& other)
 {
     d = other.d;
 }
@@ -56,7 +57,7 @@ PhotoInfo::~PhotoInfo()
 {
 }
 
-PhotoInfo &PhotoInfo::operator=(const PhotoInfo &other)
+PhotoInfo &PhotoInfo::operator=(const PhotoInfo& other)
 {
     if (this != &other)
     {
@@ -90,6 +91,7 @@ QUrl PhotoInfo::urlMaxResolution() const
         }
 
         QJsonValue value = d->jsonData.value(key);
+
         if (value.isString())
         {
             return QUrl(value.toString());

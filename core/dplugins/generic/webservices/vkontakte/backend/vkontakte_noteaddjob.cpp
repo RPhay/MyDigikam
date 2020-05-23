@@ -33,17 +33,18 @@ namespace Vkontakte
 class Q_DECL_HIDDEN NoteAddJob::Private
 {
 public:
+
     int nid;
 };
 
 NoteAddJob::NoteAddJob(const QString& accessToken, const QString& title, const QString& text)
-    : VkontakteJob(accessToken, "notes.add", true)
-    , d(new Private)
+    : VkontakteJob(accessToken, "notes.add", true),
+      d(new Private)
 {
     d->nid = -1;
 
-    addQueryItem("title", title);
-    addQueryItem("text", text);
+    addQueryItem("title",   title);
+    addQueryItem("text",    text);
     addQueryItem("privacy", "3");
 }
 

@@ -52,7 +52,8 @@ class MessageInfo : public QObject
     Q_PROPERTY(QString chat_active WRITE setChatActive READ chatActive)
 
 public:
-    MessageInfo();
+
+    explicit MessageInfo();
     ~MessageInfo();
 
     /**
@@ -60,10 +61,12 @@ public:
      * @param createdTime Time as UNIX timestamp
      */
     void setDateString(const QString& createdDate);
+
     /**
      * Returns the creation date/time as a UNIX timestamp
      */
     QString dateString() const;
+
     /**
      * Returns the creation date/time in QDateTime
      */
@@ -101,6 +104,7 @@ public:
     QString remoteId() const;
 
 private:
+
     class Private;
     Private* const d;
 };
@@ -111,7 +115,8 @@ private:
 class MessageInfoPtr : public QSharedPointer<MessageInfo>
 {
 public:
-    explicit MessageInfoPtr(MessageInfo *ptr);
+
+    explicit MessageInfoPtr(MessageInfo* const ptr);
 
     /**
      * @brief Compares by message ID (MessageInfo::m_mid)

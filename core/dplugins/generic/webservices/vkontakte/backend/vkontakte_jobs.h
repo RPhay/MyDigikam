@@ -102,7 +102,7 @@ protected:
     void addQueryItem(const QString& key, const QString& value);
 
 private:
-    
+
     /**
      * Check for a return error and set the appropriate error messages
      */

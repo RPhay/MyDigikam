@@ -220,7 +220,7 @@ void VkontakteJob::jobFinished(KJob* kjob)
 
         QJsonParseError parseError;
         QJsonDocument data = QJsonDocument::fromJson(job->data(), &parseError);
-        
+
         if (parseError.error == QJsonParseError::NoError)
         {
             const QJsonObject object = data.object();
@@ -234,7 +234,7 @@ void VkontakteJob::jobFinished(KJob* kjob)
             else if (object.contains(QLatin1String("error")))
             {
                 bool willRetry = handleError(object.value(QLatin1String("error")));
-                
+
                 if (willRetry)
                 {
                     return;

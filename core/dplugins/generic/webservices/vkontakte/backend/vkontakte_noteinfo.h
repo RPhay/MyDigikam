@@ -50,7 +50,8 @@ class NoteInfo : public QObject
     Q_PROPERTY(bool can_comment WRITE setCanComment READ canComment)
 
 public:
-    NoteInfo();
+
+    explicit NoteInfo();
     ~NoteInfo();
 
     void setNid(int nid);
@@ -74,6 +75,7 @@ public:
      * @param text The actual content of the note
      */
     void setText( const QString& text);
+
     /**
      * Returns the content of the note.
      */
@@ -84,6 +86,7 @@ public:
      * @param textWiki The actual content of the note
      */
     void setTextWiki( const QString& textWiki);
+
     /**
      * Returns the content of the note.
      */
@@ -94,10 +97,12 @@ public:
      * @param createdTime Time as UNIX timestamp
      */
     void setDateString(const QString& createdDate);
+
     /**
      * Returns the creation date/time as a UNIX timestamp
      */
     QString dateString() const;
+
     /**
      * Returns the creation date/time in QDateTime
      */
@@ -119,6 +124,7 @@ public:
     bool canComment() const;
 
 private:
+
     class Private;
     Private* const d;
 };

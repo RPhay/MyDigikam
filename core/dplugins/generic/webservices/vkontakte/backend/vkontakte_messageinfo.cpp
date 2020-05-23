@@ -34,14 +34,14 @@ namespace Vkontakte
 class Q_DECL_HIDDEN MessageInfo::Private
 {
 public:
+
     QString date;
-    int uid;
-    int mid;
+    int     uid;
+    int     mid;
     QString title;
     QString body;
-    int readState;
-    int out;
-
+    int     readState;
+    int     out;
     QString chatId;
     QString chatActive;
 };
@@ -49,10 +49,10 @@ public:
 MessageInfo::MessageInfo()
     : d(new Private)
 {
-    d->uid = -1;
-    d->mid = -1;
+    d->uid       = -1;
+    d->mid       = -1;
     d->readState = 0;
-    d->out = 0;
+    d->out       = 0;
 }
 
 MessageInfo::~MessageInfo()
@@ -99,8 +99,11 @@ void MessageInfo::setTitle(const QString& title)
 {
     // vk.com puts "..." into the title when the subject is not specified
     QRegExp rx("(Re(\\(\\d+\\))?: )?( ?)\\.\\.\\.( ?)");
+
     if (!rx.exactMatch(title))
+    {
         d->title = title;
+    }
 }
 
 QString MessageInfo::title() const
@@ -112,13 +115,13 @@ QString MessageInfo::coreTitle() const
 {
     QString res = d->title;
     res.remove(QRegExp("^Re(\\(\\d+\\))?: "));
+
     return res;
 }
 
 void MessageInfo::setBody(const QString& body)
 {
     d->body = body;
-
     d->body.remove('\n');
     d->body.replace("<br>", "\n");
     d->body.replace("&lt;", "<");
@@ -174,17 +177,17 @@ QString MessageInfo::chatActive() const
 
 QString MessageInfo::remoteId() const
 {
-    return QString("priv_mid%1").arg(mid(), 6, 10, QLatin1Char('0'));
+    return QString::fromUtf8("priv_mid%1").arg(mid(), 6, 10, QLatin1Char('0'));
 }
 
-MessageInfoPtr::MessageInfoPtr(MessageInfo* ptr)
+MessageInfoPtr::MessageInfoPtr(MessageInfo* const ptr)
     : QSharedPointer<MessageInfo>(ptr)
 {
 }
 
 bool MessageInfoPtr::operator<(const MessageInfoPtr& o) const
 {
-    return (*this)->mid() < o->mid();
+    return ((*this)->mid() < o->mid());
 }
 
 } // namespace Vkontakte

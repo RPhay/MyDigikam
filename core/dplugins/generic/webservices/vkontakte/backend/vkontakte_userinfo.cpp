@@ -45,7 +45,7 @@ UserInfo::UserInfo()
 {
 }
 
-UserInfo::UserInfo(const QJsonObject &jsonData)
+UserInfo::UserInfo(const QJsonObject& jsonData)
     : d(new Private)
 {
     d->jsonData = jsonData;

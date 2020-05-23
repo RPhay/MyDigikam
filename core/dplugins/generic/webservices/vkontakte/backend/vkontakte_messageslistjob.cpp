@@ -33,9 +33,9 @@ namespace Vkontakte
 class Q_DECL_HIDDEN MessagesListJob::Private
 {
 public:
-    int out;
 
-    int totalCount; // number of all messages, not only messages retrieved in this request
+    int                   out;
+    int                   totalCount; ///< number of all messages, not only messages retrieved in this request
     QList<MessageInfoPtr> list;
 };
 
@@ -43,18 +43,18 @@ MessagesListJob::MessagesListJob(const QString& accessToken,
                                  int out,
                                  int offset, int count, int previewLength,
                                  int filters, int timeOffset)
-    : VkontakteJob(accessToken, "messages.get")
-    , d(new Private)
+    : VkontakteJob(accessToken, "messages.get"),
+      d(new Private)
 {
-    d->out = out;
+    d->out        = out;
     d->totalCount = 0;
 
-    addQueryItem("out", QString::number(out));
-    addQueryItem("offset", QString::number(offset));
-    addQueryItem("count", QString::number(count));
-    addQueryItem("filters", QString::number(filters));
-    addQueryItem("preview_length", QString::number(previewLength));
-    addQueryItem("time_offset", QString::number(timeOffset));
+    addQueryItem("out",             QString::number(out));
+    addQueryItem("offset",          QString::number(offset));
+    addQueryItem("count",           QString::number(count));
+    addQueryItem("filters",         QString::number(filters));
+    addQueryItem("preview_length",  QString::number(previewLength));
+    addQueryItem("time_offset",     QString::number(timeOffset));
 }
 
 MessagesListJob::~MessagesListJob()
@@ -72,10 +72,13 @@ void MessagesListJob::handleItem(const QVariant& data)
 void MessagesListJob::handleData(const QVariant& data)
 {
     QVariantList list = data.toList();
-    d->totalCount = list[0].toInt();
+    d->totalCount     = list[0].toInt();
     list.pop_front();
-    foreach(const QVariant& item, list)
+
+    foreach (const QVariant& item, list)
+    {
         handleItem(item);
+    }
 }
 
 QList<MessageInfoPtr> MessagesListJob::list() const

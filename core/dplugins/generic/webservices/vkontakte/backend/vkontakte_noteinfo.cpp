@@ -34,29 +34,30 @@ namespace Vkontakte
 class Q_DECL_HIDDEN NoteInfo::Private
 {
 public:
-    int nid;          /* Vkontakte id of the note. */
-    int uid;        /* Creator of the note. */
-    QString title;     /* Subject of the note. */
-    QString text;     /* Actual content of the note. */
+
+    int     nid;            ///< Vkontakte id of the note.
+    int     uid;            ///< Creator of the note.
+    QString title;          ///< Subject of the note.
+    QString text;           ///< Actual content of the note.
     QString textWiki;
-    QString date; /* Creation time of the note. */
-    int ncom; /* Number of comments. */
-    int readNcom; /* Number of read comments. */
-    int privacy;
-    int commentPrivacy;
-    int canComment;
+    QString date;           ///< Creation time of the note.
+    int     ncom;           ///< Number of comments.
+    int     readNcom;       ///< Number of read comments.
+    int     privacy;
+    int     commentPrivacy;
+    int     canComment;
 };
 
 NoteInfo::NoteInfo()
     : d(new Private)
 {
-    d->nid = -1;
-    d->uid = -1;
-    d->ncom = -1;
-    d->readNcom = -1;
-    d->privacy = -1;
-    d->commentPrivacy = -1;
-    d->canComment = false;
+    d->nid              = -1;
+    d->uid              = -1;
+    d->ncom             = -1;
+    d->readNcom         = -1;
+    d->privacy          = -1;
+    d->commentPrivacy   = -1;
+    d->canComment       = false;
 }
 
 NoteInfo::~NoteInfo()
