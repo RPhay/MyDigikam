@@ -675,10 +675,6 @@ if(DIGIKAM_CAN_BE_COMPILED)
 
     include_directories(${OpenCV_INCLUDE_DIRS})
 
-    if(LensFun_FOUND)
-        include_directories(${LENSFUN_INCLUDE_DIRS})
-    endif()
-
     if(ImageMagick_FOUND)
         include_directories(${ImageMagick_INCLUDE_DIRS})
     endif()

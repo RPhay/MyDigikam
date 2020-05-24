@@ -142,24 +142,30 @@ set(libdimgfilters_SRCS
 
 # TODO is this hack anymore required?
 if(CMAKE_COMPILER_IS_GNUCXX)
+
     exec_program(${CMAKE_CXX_COMPILER} ARGS ${CMAKE_CXX_COMPILER_ARG1} -dumpversion OUTPUT_VARIABLE GCC_VERSION)
 
     if (${GCC_VERSION} VERSION_LESS "4.3.0")
         message(STATUS "Adjusting compilation flags for GCC version (${GCC_VERSION} )")
         add_definitions(-fno-tree-pre)
     endif()
+
 endif()
 
 
 if(Lqr-1_FOUND)
+
     set(libdimgfilters_SRCS
         ${libdimgfilters_SRCS}
         filters/transform/contentawarefilter.cpp
     )
+
     include_directories(${LQR-1_INCLUDE_DIRS})
+
 endif()
 
 if(LensFun_FOUND)
+
     set(libdimgfilters_SRCS
         ${libdimgfilters_SRCS}
         ${CMAKE_CURRENT_SOURCE_DIR}/filters/lens/lensfunfilter.cpp
@@ -167,16 +173,21 @@ if(LensFun_FOUND)
         ${CMAKE_CURRENT_SOURCE_DIR}/filters/lens/lensfuniface.cpp
         ${CMAKE_CURRENT_SOURCE_DIR}/filters/lens/lensfunsettings.cpp
     )
+
     include_directories(${LENSFUN_INCLUDE_DIRS})
+
 endif()
 
 if(Eigen3_FOUND)
+
     set(libdimgfilters_SRCS
         ${libdimgfilters_SRCS}
         ${CMAKE_CURRENT_SOURCE_DIR}/filters/sharp/refocusfilter.cpp
         ${CMAKE_CURRENT_SOURCE_DIR}/filters/sharp/refocusmatrix.cpp
     )
+
     include_directories(${EIGEN3_INCLUDE_DIR})
+
 endif()
 
 set(libdimgloaders_SRCS
@@ -190,18 +201,22 @@ set(libdimgloaders_SRCS
 # JPEG2000 support
 
 if(Jasper_FOUND)
+
     set(libdimgloaders_SRCS
         ${libdimgloaders_SRCS}
         ${CMAKE_CURRENT_SOURCE_DIR}/loaders/jp2ksettings.cpp
     )
+
 endif()
 
 # HEIF support
 if(X265_FOUND)
+
     set(libdimgloaders_SRCS
         ${libdimgloaders_SRCS}
         ${CMAKE_CURRENT_SOURCE_DIR}/loaders/heifsettings.cpp
     )
+
 endif()
 
 include_directories(
@@ -215,7 +230,9 @@ include_directories(
 )
 
 if(X11_FOUND)
+
     include_directories($<TARGET_PROPERTY:Qt5::X11Extras,INTERFACE_INCLUDE_DIRECTORIES>)
+
 endif()
 
 # Don't process automoc on LibCImg headers
@@ -223,7 +240,9 @@ endif()
 file(GLOB_RECURSE cimg_headers ${CMAKE_CURRENT_SOURCE_DIR}/filters/greycstoration/cimg/*.h)
 
 foreach(_file ${cimg_headers})
+
     set_property(SOURCE ${_file} PROPERTY SKIP_AUTOMOC ON)
+
 endforeach()
 
 # Used by digikamcore
