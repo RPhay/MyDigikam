@@ -113,6 +113,7 @@ else() #Linux
                                               -DBUILD_TESTS=OFF
                                               -DBUILD_PLAYERS=OFF
                                               -DBUILD_QT5OPENGL=ON
+                                              -DBUILD_QML=OFF
 
         BUILD_COMMAND cd <SOURCE_DIR>/build && $(MAKE)
 

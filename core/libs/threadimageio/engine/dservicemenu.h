@@ -21,8 +21,8 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_SERVICE_MENU_H
-#define DIGIKAM_SERVICE_MENU_H
+#ifndef DIGIKAM_DSERVICE_MENU_H
+#define DIGIKAM_DSERVICE_MENU_H
 
 // Qt includes
 
@@ -65,4 +65,4 @@ public:
 
 } // namespace Digikam
 
-#endif // DIGIKAM_SERVICE_MENU_H
+#endif // DIGIKAM_DSERVICE_MENU_H

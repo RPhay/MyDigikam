@@ -70,12 +70,12 @@ int ApplicationSettings::getImageSeparationSortOrder() const
     return d->imageSeparationSortOrder;
 }
 
-void ApplicationSettings::setItemLeftClickAction(const ItemLeftClickAction action)
+void ApplicationSettings::setItemLeftClickAction(int action)
 {
     d->itemLeftClickAction = action;
 }
 
-ApplicationSettings::ItemLeftClickAction ApplicationSettings::getItemLeftClickAction() const
+int ApplicationSettings::getItemLeftClickAction() const
 {
     return d->itemLeftClickAction;
 }

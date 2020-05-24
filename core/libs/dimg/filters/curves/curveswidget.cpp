@@ -42,6 +42,7 @@
 #include <QFontMetrics>
 #include <QPaintEvent>
 #include <QMouseEvent>
+#include <QPainterPath>
 
 // KDE includes
 
