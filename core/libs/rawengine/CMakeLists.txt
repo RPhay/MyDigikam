@@ -174,12 +174,12 @@ add_library(libraw STATIC
 #################################
 
 set(librawengine_SRCS
-    drawdecoder.cpp
-    drawdecoder_p.cpp
-    drawdecodersettings.cpp
-    drawdecoderwidget.cpp
-    drawinfo.cpp
-    drawfiles.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/drawdecoder.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/drawdecoder_p.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/drawdecodersettings.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/drawdecoderwidget.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/drawinfo.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/drawfiles.cpp
 )
 
 include_directories(
