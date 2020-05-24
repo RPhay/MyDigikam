@@ -55,7 +55,7 @@ public:
 
     void selectFirstItem();
     QTreeWidgetItem* firstItem();
-
+    void removeDuplicates();
 private :
 
     void drawRow(QPainter* p, const QStyleOptionViewItem& opt, const QModelIndex& index) const override;

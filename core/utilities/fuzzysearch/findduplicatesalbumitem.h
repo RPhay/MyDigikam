@@ -28,6 +28,7 @@
 
 #include <QTreeWidget>
 #include <QUrl>
+#include <QList>
 
 // Local includes
 
@@ -74,6 +75,7 @@ public:
     void setThumb(const QPixmap& pix, bool hasThumb = true);
 
     bool operator<(const QTreeWidgetItem& other) const override;
+    QList<ItemInfo> duplicatedItems();
 
 private:
 

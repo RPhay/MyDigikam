@@ -30,6 +30,7 @@
 #include <QApplication>
 #include <QString>
 #include <QIcon>
+#include <QElapsedTimer>
 
 // KDE includes
 
@@ -111,21 +112,27 @@ void FingerPrintsGenerator::slotStart()
     }
 
     // Get all item IDs from albums.
-
+    QElapsedTimer timer;
+    timer.start();
     QList<qlonglong> itemIds;
 
-    for (AlbumList::ConstIterator it = d->albumList.constBegin() ;
-         !canceled() && (it != d->albumList.constEnd()) ; ++it)
-    {
-        if ((*it)->type() == Album::PHYSICAL)
-        {
-            itemIds << CoreDbAccess().db()->getItemIDsInAlbum((*it)->id());
+    auto *db = CoreDbAccess().db();
+    for (auto *album : d->albumList) {
+        if (canceled()) {
+            break;
         }
-        else if ((*it)->type() == Album::TAG)
+
+        if (album->type() == Album::PHYSICAL)
         {
-            itemIds << CoreDbAccess().db()->getItemIDsInTag((*it)->id());
+            itemIds << db->getItemIDsInAlbum(album->id());
+        }
+        else if (album->type() == Album::TAG)
+        {
+            itemIds << db->getItemIDsInTag(album->id());
         }
     }
+
+    qDebug() << "[Tomaz] Elapsed Timer" << timer.elapsed();
 
     QApplication::restoreOverrideCursor();
 

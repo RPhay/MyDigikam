@@ -127,6 +127,7 @@ void MaintenanceThread::generateFingerprints(const QList<qlonglong>& itemIds, bo
     data->setImageIds(itemIds);
     data->setRebuildAllFingerprints(rebuildAll);
 
+    qDebug() << "maximumNumberOfThreads" << maximumNumberOfThreads();
     for (int i = 1 ; i <= (maximumNumberOfThreads()) ; ++i)
     {
         FingerprintsTask* const t = new FingerprintsTask();

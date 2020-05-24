@@ -37,6 +37,7 @@
 #include <QStyle>
 #include <QTimer>
 #include <QElapsedTimer>
+#include <QMessageBox>
 
 // KDE includes
 
@@ -92,12 +93,13 @@ public:
     QLabel*              albumTagRelationLabel;
 
     DIntRangeBox*        similarityRange;
-
+    DIntRangeBox*        rmSimilarityRange;
     SqueezedComboBox*    searchResultRestriction;
     SqueezedComboBox*    albumTagRelation;
 
     QPushButton*         scanDuplicatesBtn;
     QPushButton*         updateFingerPrtBtn;
+    QPushButton*         removeDuplicates;
 
     FindDuplicatesAlbum* listView;
 
@@ -204,6 +206,14 @@ FindDuplicatesView::FindDuplicatesView(QWidget* const parent)
 
     d->albumTagRelation->setCurrentIndex(d->albumTagRelation->findData(relation));
 
+    d->removeDuplicates = new QPushButton(i18nc("@label:listbox", "Remove Duplicates"));
+    d->rmSimilarityRange = new DIntRangeBox(this);
+    d->rmSimilarityRange->setSuffix(QLatin1String("%"));
+    d->rmSimilarityRange->setInterval(90,100);
+    auto *removeDuplicatesLayout = new QHBoxLayout();
+    removeDuplicatesLayout->addWidget(d->removeDuplicates);
+    removeDuplicatesLayout->addWidget(d->rmSimilarityRange);
+
     // ---------------------------------------------------------------
 
     QGridLayout* const mainLayout = new QGridLayout();
@@ -217,6 +227,8 @@ FindDuplicatesView::FindDuplicatesView(QWidget* const parent)
     mainLayout->addWidget(d->searchResultRestriction, 4, 2, 1, -1);
     mainLayout->addWidget(d->updateFingerPrtBtn,      5, 0, 1, -1);
     mainLayout->addWidget(d->scanDuplicatesBtn,       6, 0, 1, -1);
+    mainLayout->addLayout(removeDuplicatesLayout,     7, 0, 1, -1);
+
     mainLayout->setRowStretch(0, 10);
     mainLayout->setColumnStretch(2, 10);
     mainLayout->setContentsMargins(spacing, spacing, spacing, spacing);
@@ -242,6 +254,9 @@ FindDuplicatesView::FindDuplicatesView(QWidget* const parent)
 
     connect(d->settings, SIGNAL(setupChanged()),
             this, SLOT(slotApplicationSettingsChanged()));
+
+    connect(d->removeDuplicates, &QPushButton::clicked,
+            this, &FindDuplicatesView::slotRemoveDuplicates);
 }
 
 FindDuplicatesView::~FindDuplicatesView()
@@ -608,6 +623,24 @@ void FindDuplicatesView::resetAlbumsAndTags()
 {
     d->albumSelectors->resetSelection();
     slotCheckForValidSettings();
+}
+
+void FindDuplicatesView::slotRemoveDuplicates() {
+    int result = QMessageBox::warning(this,
+                        i18nc("@title:popup", "Remove Duplicates"),
+                         i18nc("@text:message", "Are you sure that you want to delete all of the supposed duplicated items found?\n"
+                                                "You cannot recover from this, and it's possible that the similarity threshould found"
+                                                "similar, but not equal, images. Continue at your own risk."),
+                        QMessageBox::StandardButton::Ok | QMessageBox::StandardButton::Cancel,
+                         QMessageBox::StandardButton::Cancel); // Default to Cancel so nobody deletes things by mistake.
+
+    if (result != QMessageBox::StandardButton::Ok) {
+        qDebug() << "Cancelling duplicate removal";
+        return;
+    }
+
+    qDebug() << "Removing All Duplicates!";
+    d->listView->removeDuplicates();
 }
 
 } // namespace Digikam

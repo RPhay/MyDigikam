@@ -37,6 +37,8 @@
 // Local includes
 
 #include "findduplicatesalbumitem.h"
+#include "deletedialog.h"
+#include "dio.h"
 
 namespace Digikam
 {
@@ -176,6 +178,39 @@ void FindDuplicatesAlbum::drawRow(QPainter* p,
     }
 
     QTreeWidget::drawRow(p, opt, index);
+}
+
+void FindDuplicatesAlbum::removeDuplicates() {
+    QTreeWidgetItemIterator it(this);
+
+    QList<ItemInfo> duplicatedItems;
+    while (*it)
+    {
+        FindDuplicatesAlbumItem* const item = dynamic_cast<FindDuplicatesAlbumItem*>(*it);
+        duplicatedItems += item->duplicatedItems();
+        ++it;
+    }
+
+
+    DeleteDialog dialog(nullptr);
+
+    DeleteDialogMode::DeleteMode deleteDialogMode = DeleteDialogMode::NoChoiceTrash;
+
+    QList<QUrl> urlList;
+    // Buffer the urls for deletion and imageids for notification of the AlbumManager
+
+    foreach (const ItemInfo& info, duplicatedItems)
+    {
+        urlList  << info.fileUrl();
+    }
+
+    if (!dialog.confirmDeleteList(urlList, DeleteDialogMode::Files, deleteDialogMode))
+    {
+        return;
+    }
+
+    qDebug() << "Removing Everything";
+    DIO::del(duplicatedItems, false);
 }
 
 } // namespace Digikam
