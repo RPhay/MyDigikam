@@ -363,18 +363,48 @@ bool DFileOperations::copyFiles(const QStringList& srcPaths,
 bool DFileOperations::renameFile(const QString& srcFile,
                                  const QString& dstFile)
 {
-    QT_STATBUF st;
-    int stat = QT_STAT(QFile::encodeName(srcFile).constData(), &st);
+#ifdef Q_OS_WIN64
+
+    struct __utimbuf64 ut;
+    struct __stat64    st;
+    int stat = _wstat64((const wchar_t*)srcFile.utf16(), &st);
+
+#elif defined Q_OS_WIN
+
+    struct _utimbuf    ut;
+    struct _stat       st;
+    int stat = _wstat((const wchar_t*)srcFile.utf16(), &st);
+
+#else
+
+    struct utimbuf     ut;
+    QT_STATBUF         st;
+    int stat = QT_STAT(srcFile.toUtf8().constData(), &st);
+
+#endif
 
     bool ret = QFile::rename(srcFile, dstFile);
 
     if (ret && (stat == 0))
     {
-        struct utimbuf ut;
         ut.modtime = st.st_mtime;
         ut.actime  = st.st_atime;
 
-        if (::utime(QFile::encodeName(dstFile).constData(), &ut) != 0)
+#ifdef Q_OS_WIN64
+
+        ret = _wutime64((const wchar_t*)dstFile.utf16(), &ut);
+
+#elif defined Q_OS_WIN
+
+        ret = _wutime((const wchar_t*)dstFile.utf16(), &ut);
+
+#else
+
+        ret = ::utime(dstFile.toUtf8().constData(), &ut);
+
+#endif
+
+        if (ret != 0)
         {
             qCWarning(DIGIKAM_GENERAL_LOG) << "Failed to restore modification time for file"
                                            << dstFile;
