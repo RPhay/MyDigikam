@@ -158,6 +158,8 @@ void MainWindow::slotDetectFaces(const QListWidgetItem* imageItem)
     QImage img(imagePath);
     QImage imgScaled(img.scaled(416, 416, Qt::KeepAspectRatio));
 
+    m_imageLabel->clear();
+    m_recognizationInfo->clear();
     disconnect(m_alignedList, &QListWidget::currentRowChanged,
                this,          &MainWindow::slotIdentify);
 
