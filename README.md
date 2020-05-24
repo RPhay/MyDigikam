@@ -68,11 +68,11 @@ http://www.digikam.org
 
 # Contact
 
-If you have questions, comments, suggestions to make do email at :
+If you have questions, comments, and suggestions, write an email to:
 
 digikam-users@kde.org
 
-If you want contribute to digiKam developments do email at :
+If you want contribute to digiKam developments write an email to:
 
 digikam-devel@kde.org
 
@@ -86,7 +86,7 @@ A mail will automatically be sent to the digiKam development mailing list.
 There is no need to contact directly the digiKam mailing list for a bug report
 or a devel wish.
 
-The current bugs and devel wishes reported to the bugzilla servers can be seen at these urls :
+The current bugs and devel wishes reported to the bugzilla servers can be seen at this url:
 
 * [digiKam](http://bugs.kde.org/buglist.cgi?product=digikam&bug_status=UNCONFIRMED&bug_status=NEW&bug_status=ASSIGNED&bug_status=REOPENED)
 
@@ -114,23 +114,17 @@ In order to compile, just use something like that:
     export QTDIR=/usr/lib/qt5
     export PATH=$QTDIR/bin:$PATH
     cmake .
-    make
+    make -j4
     sudo make install
 
 Usual CMake options :
 
-* `-DCMAKE_INSTALL_PREFIX` : decide where the program will be install on your computer.
-* `-DCMAKE_BUILD_TYPE`     : decide which type of build you want. You can chose between:
-  * `debugfull`.     : for hacking. Include all debug information.
-  * `debug`.
-  * `profile`.
-  * `relwithdebinfo` : default. use gcc `-O2` `-g` options.
-  * `release`        : generate stripped and optimized bin files. For packaging.
-
-Compared to old autoconf options:
-
-* `cmake . -DCMAKE_BUILD_TYPE=debugfull` is equivalent to `./configure --enable-debug=full`
-* `cmake . -DCMAKE_INSTALL_PREFIX=/usr`  is equivalent to `./configure --prefix=/usr`
+* `-DCMAKE_INSTALL_PREFIX`     : decide where the program will be install on your computer.
+* `-DCMAKE_BUILD_TYPE`         : decide which type of build you want. You can chose between:
+  * `debugfull`.               : for hacking. Include all debug information.
+  * `relwithdebinfo`           : default. use gcc `-O2` `-g` options.
+  * `release`                  : generate stripped and optimized bin files. For packaging.
+* `-DCMAKE_INSTALL_PREFIX=/usr`: install program in /usr.
 
 More details can be found [at this url](http://techbase.kde.org/Development/Tutorials/CMake#Environment_Variables)
 

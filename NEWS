@@ -757,4 +757,5 @@ BUGFIXES:
 719 ==> 421817 - digiKam fails to compile with Qt 5.15.
 720 ==> 421941 - Slideshow option does not respect sort order across collections.
 721 ==> 421943 - Wishlist: Search for items without a tag in Advanced search.
-722 ==> 
+722 ==> 420819 - Error while opening database digikam will try to automatically reconnect to the database.
+723 ==> 
