@@ -62,7 +62,7 @@ public:
 
 private:
 
-    QIcon showCVMat(const cv::Mat& cvimage);
+    QPixmap showCVMat(const cv::Mat& cvimage);
     QList<QRectF> detectFaces(const QString& imagePath);
     void extractFaces(const QImage& img, QImage& imgScaled, const QList<QRectF>& faces);
 
@@ -77,13 +77,16 @@ private Q_SLOTS:
 
     void slotDetectFaces(const QListWidgetItem* imageItem);
     void slotSaveIdentity();
+    void slotIdentify(int index);
 
 private:
 
     OpenCVDNNFaceDetector* m_detector;
     FaceRecognizer*        m_recognizer;
     FaceExtractor*         m_extractor;
+    QVector<cv::Mat>       m_preprocessedFaces;
     Identity               m_currentIdenity;
+
 
     QLabel*                m_fullImage;
     QListWidget*           m_imageListView;
@@ -155,6 +158,9 @@ void MainWindow::slotDetectFaces(const QListWidgetItem* imageItem)
     QImage img(imagePath);
     QImage imgScaled(img.scaled(416, 416, Qt::KeepAspectRatio));
 
+    disconnect(m_alignedList, &QListWidget::currentRowChanged,
+               this,          &MainWindow::slotIdentify);
+
     // clear faces layout
     QListWidgetItem* wItem;
     while ((wItem = m_croppedfaceList->item(0)) != nullptr)
@@ -178,10 +184,13 @@ void MainWindow::slotDetectFaces(const QListWidgetItem* imageItem)
 
     // Only setPixmap after finishing drawing bboxes around detected faces
     m_fullImage->setPixmap(QPixmap::fromImage(imgScaled));
+
+    connect(m_alignedList, &QListWidget::currentRowChanged,
+            this         , &MainWindow::slotIdentify);
 }
 
 
-QIcon MainWindow::showCVMat(const cv::Mat& cvimage)
+QPixmap MainWindow::showCVMat(const cv::Mat& cvimage)
 {
     if(cvimage.cols*cvimage.rows != 0)
     {
@@ -190,10 +199,10 @@ QIcon MainWindow::showCVMat(const cv::Mat& cvimage)
         cv::cvtColor(cvimage, rgb, (-2*cvimage.channels()+10));
         p.convertFromImage(QImage(rgb.data, rgb.cols, rgb.rows, QImage::Format_RGB888));
 
-        return QIcon(p);
+        return p;
     }
 
-    return QIcon();
+    return QPixmap();
 }
 
 QList<QRectF> MainWindow::detectFaces(const QString& imagePath)
@@ -252,6 +261,8 @@ void MainWindow::extractFaces(const QImage& img, QImage& imgScaled, const QList<
     paintPen.setWidth(1);
     painter.setPen(paintPen);
 
+    m_preprocessedFaces.clear();
+
     foreach (const QRectF& rr, faces)
     {
         QRect rectDraw      = FaceDetector::toAbsoluteRect(rr, imgScaled.size());
@@ -262,21 +273,19 @@ void MainWindow::extractFaces(const QImage& img, QImage& imgScaled, const QList<
         QIcon croppedFace(QPixmap::fromImage(part.scaled(qMin(img.size().width(), 100),
                                                          qMin(img.size().width(), 100),
                                                          Qt::KeepAspectRatio)));
-        //croppedFace->setScaledContents(false);
 
         m_croppedfaceList->addItem(new QListWidgetItem(croppedFace, QLatin1String("")));
         painter.drawRect(rectDraw);
 
         // Show preprocessed faces
         cv::Mat cvPreprocessedFace = m_recognizer->prepareForRecognition(part);
+        m_preprocessedList->addItem(new QListWidgetItem(QIcon(showCVMat(cvPreprocessedFace)), QLatin1String("")));
 
-        //m_preprocessedList->addItem(showCVMat(cvPreprocessedFace));
+        m_preprocessedFaces << cvPreprocessedFace;
 
-        m_preprocessedList->addItem(new QListWidgetItem(showCVMat(cvPreprocessedFace), QLatin1String("")));
         // Show aligned faces
         cv::Mat cvAlignedFace = m_extractor->alignFace(cvPreprocessedFace);
-
-        m_alignedList->addItem(new QListWidgetItem(showCVMat(cvAlignedFace), QLatin1String("")));
+        m_alignedList->addItem(new QListWidgetItem(QIcon(showCVMat(cvAlignedFace)), QLatin1String("")));
 
         // get face embedding
         //std::vector<float> faceEmbedding = m_extractor->getFaceEmbedding(cvPreprocessedFace);
@@ -319,10 +328,6 @@ QWidget* MainWindow::setupCroppedFaceArea()
     m_croppedfaceList->setWrapping(false);
     m_croppedfaceList->setDragEnabled(false);
 
-/*
-    connect(m_croppedfaceList, &QListWidget::currentItemChanged,
-            this,            &MainWindow::slotDetectFaces);
-*/
     facesArea->setWidget(m_croppedfaceList);
 
     return facesArea;
@@ -453,9 +458,25 @@ QWidget* MainWindow::setupImageList(const QDir& directory)
     return itemsArea;
 }
 
+void MainWindow::slotIdentify(int index)
+{
+    m_currentIdenity = m_recognizer->findIdenity(m_preprocessedFaces[index]);
+
+    if (m_currentIdenity.isNull())
+    {
+        m_recognizationInfo->setText(QLatin1String("Cannot recognized"));
+    }
+    else
+    {
+        m_recognizationInfo->setText(QLatin1String("Recognized"));
+        m_imageLabel->setText(m_currentIdenity.attribute(QLatin1String("fullName")));
+    }
+}
+
 void MainWindow::slotSaveIdentity()
 {
-    m_currentIdenity.setAttribute(QLatin1String("fullname"), m_imageLabel->text());
+    qDebug() << "assign identity" << m_imageLabel->text();
+    m_currentIdenity.setAttribute(QLatin1String("fullName"), m_imageLabel->text());
 
     m_recognizer->saveIdentity(m_currentIdenity);
 }
@@ -474,7 +495,7 @@ QCommandLineParser* parseOptions(const QCoreApplication& app)
 int main(int argc, char* argv[])
 {
     QApplication app(argc, argv);
-    app.setApplicationName(QString::fromLatin1("digikam"));          // for DB init.
+    app.setApplicationName(QString::fromLatin1("digikam"));
 
     // Options for commandline parser
 
@@ -490,11 +511,9 @@ int main(int argc, char* argv[])
    QDir dataset(parser->value(QLatin1String("dataset")));
 
    MainWindow* window = new MainWindow(dataset, nullptr);
-
    window->show();
 
    return app.exec();
 }
 
 #include "benchmark_dnnrecognition.moc"
-

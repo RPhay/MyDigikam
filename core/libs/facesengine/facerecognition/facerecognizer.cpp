@@ -46,7 +46,8 @@ public:
     FaceExtractor* extractor;
 
     int            identityCounter;
-    QHash<QString, Identity> faceLibrary;
+
+    QHash<int, Identity> faceLibrary;
 };
 
 FaceRecognizer::FaceRecognizer(bool debug)
@@ -127,16 +128,17 @@ int FaceRecognizer::recognize(const cv::Mat& inputImage)
 Identity FaceRecognizer::findIdenity(const cv::Mat& inputImage)
 {
     std::vector<float> faceEmbedding = d->extractor->getFaceEmbedding(inputImage);
+    qDebug() << "look for identity of" << faceEmbedding;
 
     // TODO: scan database for face
 
-    for (QHash<QString, Identity>::iterator iter  = d->faceLibrary.begin();
-                                            iter != d->faceLibrary.end();
-                                          ++iter)
+    for (QHash<int, Identity>::iterator iter  = d->faceLibrary.begin();
+                                        iter != d->faceLibrary.end();
+                                      ++iter)
     {
         QJsonArray jsonFaceEmbedding = QJsonDocument::fromJson(iter.value().attribute(QLatin1String("faceEmbedding")).toLatin1()).array();
 
-        qDebug() << "face embedding of" << iter.key() << ":" << jsonFaceEmbedding;
+        qDebug() << "face embedding of" << iter.value().attribute(QLatin1String("fullName")) << ":" << jsonFaceEmbedding;
 
         std::vector<float> recordedFaceEmbedding;
 
@@ -146,8 +148,10 @@ Identity FaceRecognizer::findIdenity(const cv::Mat& inputImage)
         }
 
         double cosDistance = FaceExtractor::cosineDistance(recordedFaceEmbedding, faceEmbedding);
+        double l2Distance  = FaceExtractor::L2Distance(recordedFaceEmbedding, faceEmbedding);
 
-        qDebug() << "cosine distance with" << iter.key() << ":" << cosDistance;
+        qDebug() << "cosine distance with" << iter.value().attribute(QLatin1String("fullName")) << ":" << cosDistance;
+        qDebug() << "L2     distance with" << iter.value().attribute(QLatin1String("fullName")) << ":" << l2Distance;
 
         if (cosDistance > 0.7)
         {
@@ -165,6 +169,8 @@ Identity FaceRecognizer::findIdenity(const cv::Mat& inputImage)
 
     Identity id;
 
+    qDebug() << "Cannot find identity";
+
     // TODO add face embedding to identity
     id.setAttribute(QLatin1String("faceEmbedding"), QString::fromLatin1(QJsonDocument(jsonFaceEmbedding).toJson(QJsonDocument::Compact)));
 
@@ -181,9 +187,12 @@ void FaceRecognizer::saveIdentity(Identity& id)
         return;
     }
 
-    id.setId(++d->identityCounter);
+    if (id.isNull())
+    {
+        id.setId(++d->identityCounter);
+    }
 
-    d->faceLibrary[id.attribute(QLatin1String("faceEmbedding"))] = id;
+    d->faceLibrary[id.id()] = id;
 }
 
 }
