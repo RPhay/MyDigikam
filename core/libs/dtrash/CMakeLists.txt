@@ -7,9 +7,9 @@
 APPLY_COMMON_POLICIES()
 
 set(libdtrash_SRCS
-    ${CMAKE_SOURCE_DIR}/core/libs/dtrash/dtrash.cpp
-    ${CMAKE_SOURCE_DIR}/core/libs/dtrash/dtrashiteminfo.cpp
-    ${CMAKE_SOURCE_DIR}/core/libs/dtrash/dtrashitemmodel.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/dtrash.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/dtrashiteminfo.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/dtrashitemmodel.cpp
 )
 
 include_directories(

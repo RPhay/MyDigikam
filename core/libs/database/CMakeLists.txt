@@ -173,26 +173,26 @@ if(Marble_FOUND)
 endif()
 
 # enable exceptions
-kde_source_files_enable_exceptions(history/itemhistorygraph.cpp
-                                   history/itemhistorygraphmodel.cpp
+kde_source_files_enable_exceptions(${CMAKE_CURRENT_SOURCE_DIR}/history/itemhistorygraph.cpp
+                                   ${CMAKE_CURRENT_SOURCE_DIR}/history/itemhistorygraphmodel.cpp
 )
 
 set(libdatabasemodels_SRCS
-    models/itemfiltermodel.cpp
-    models/itemfiltermodel_p.cpp
-    models/itemfiltermodelthreads.cpp
-    models/itemfiltersettings.cpp
-    models/itemversionsmodel.cpp
-    models/itemthumbnailmodel.cpp
-    models/itemsortsettings.cpp
-    models/itemlistmodel.cpp
-    models/itemmodel.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/models/itemfiltermodel.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/models/itemfiltermodel_p.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/models/itemfiltermodelthreads.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/models/itemfiltersettings.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/models/itemversionsmodel.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/models/itemthumbnailmodel.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/models/itemsortsettings.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/models/itemlistmodel.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/models/itemmodel.cpp
 )
 
 set(libhaar_SRCS
-    haar/haar.cpp
-    haar/haariface.cpp
-    haar/haariface_p.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/haar/haar.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/haar/haariface.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/haar/haariface_p.cpp
 )
 
 # Used by digikamdatabase

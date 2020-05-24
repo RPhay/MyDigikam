@@ -8,10 +8,10 @@
 APPLY_COMMON_POLICIES()
 
 set(libversionmanager_SRCS
-    versionmanager.cpp
-    versionmanagersettings.cpp
-    versionnamingscheme.cpp
-    versionfileoperation.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/versionmanager.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/versionmanagersettings.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/versionnamingscheme.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/versionfileoperation.cpp
 )
 
 include_directories(

@@ -8,16 +8,16 @@
 APPLY_COMMON_POLICIES()
 
 set(libnotificationmanager_SRCS
-    dnotificationwrapper.cpp
-    dnotificationpopup.cpp
-    dnotificationwidget.cpp
-    dnotificationwidget_p.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/dnotificationwrapper.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/dnotificationpopup.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/dnotificationwidget.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/dnotificationwidget_p.cpp
 )
 
 if(APPLE)
     set(libnotificationmanager_SRCS
         ${libnotificationmanager_SRCS}
-        macnotification.mm
+        ${CMAKE_CURRENT_SOURCE_DIR}/macnotification.mm
     )
 endif()
 

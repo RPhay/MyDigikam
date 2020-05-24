@@ -16,10 +16,10 @@ include_directories($<TARGET_PROPERTY:Qt5::Widgets,INTERFACE_INCLUDE_DIRECTORIES
 )
 
 set(libtimeadjust_SRCS
-    clockphotodialog.cpp
-    detbyclockphotobutton.cpp
-    timeadjustcontainer.cpp
-    timeadjustsettings.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/clockphotodialog.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/detbyclockphotobutton.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/timeadjustcontainer.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/timeadjustsettings.cpp
 )
 
 # Used by digikamcore

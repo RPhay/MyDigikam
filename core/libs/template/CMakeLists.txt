@@ -8,12 +8,12 @@
 APPLY_COMMON_POLICIES()
 
 set(libtemplate_SRCS
-    templatemanager.cpp
-    templatelist.cpp
-    templateselector.cpp
-    templateviewer.cpp
-    templatepanel.cpp
-    subjectedit.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/templatemanager.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/templatelist.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/templateselector.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/templateviewer.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/templatepanel.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/subjectedit.cpp
 )
 
 include_directories(

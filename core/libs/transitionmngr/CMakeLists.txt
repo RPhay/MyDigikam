@@ -7,22 +7,22 @@
 APPLY_COMMON_POLICIES()
 
 set(libtransitionmngr_SRCS
-    effectpreview.cpp
-    effectmngr.cpp
-    effectmngr_p.cpp
-    effectmngr_p_pan.cpp
-    effectmngr_p_zoom.cpp
-    frameutils.cpp
-    transitionpreview.cpp
-    transitionmngr.cpp
-    transitionmngr_p.cpp
-    transitionmngr_p_abstract.cpp
-    transitionmngr_p_blur.cpp
-    transitionmngr_p_lines.cpp
-    transitionmngr_p_push.cpp
-    transitionmngr_p_slide.cpp
-    transitionmngr_p_squares.cpp
-    transitionmngr_p_swap.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/effectpreview.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/effectmngr.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/effectmngr_p.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/effectmngr_p_pan.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/effectmngr_p_zoom.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/frameutils.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/transitionpreview.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/transitionmngr.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/transitionmngr_p.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/transitionmngr_p_abstract.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/transitionmngr_p_blur.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/transitionmngr_p_lines.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/transitionmngr_p_push.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/transitionmngr_p_slide.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/transitionmngr_p_squares.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/transitionmngr_p_swap.cpp
 )
 
 include_directories(
