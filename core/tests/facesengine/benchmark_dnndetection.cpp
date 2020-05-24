@@ -52,15 +52,23 @@ public:
     explicit MainWindow(const QDir& directory, QWidget *parent = nullptr);
     ~MainWindow();
 
+private:
+
+    QPixmap showCVMat(const cv::Mat& cvimage);
+    QList<QRectF> detectFaces(const QString& imagePath);
+    void extractFaces(const QImage& img, QImage& imgScaled, const QList<QRectF>& faces);
+
+    QWidget* setupFullImageArea();
+    QWidget* setupPaddedImage();
+    QWidget* setupCroppedFaceArea();
+
+    QWidget* setupImageList(const QDir& directory);
+
 private Q_SLOTS:
 
     void slotDetectFaces(const QListWidgetItem* imageItem);
 
-private:
 
-    void showCVMat(const cv::Mat& cvimage);
-    QList<QRectF> detectFaces(const QString& imagePath);
-    void extractFaces(const QImage& img, QImage& imgScaled, const QList<QRectF>& faces);
 
 private:
 
@@ -69,7 +77,7 @@ private:
     QLabel*                m_fullImage;
     QLabel*                m_paddedImage;
     QListWidget*           m_imageListView;
-    QVBoxLayout*           m_croppedfaceLayout;
+    QListWidget*           m_croppedfaceList;
 };
 
 MainWindow::MainWindow(const QDir &directory, QWidget *parent)
@@ -79,90 +87,26 @@ MainWindow::MainWindow(const QDir &directory, QWidget *parent)
 
     m_detector = new OpenCVDNNFaceDetector(DetectorNNModel::YOLO);
 
-    QWidget* const mainWidget = new QWidget(this);
-
     // Image erea
-    QWidget* const imageArea = new QWidget(mainWidget);
-
-    m_fullImage = new QLabel;
-    m_fullImage->setScaledContents(true);
-
-    m_paddedImage = new QLabel;
-    m_paddedImage->setScaledContents(true);
-
-    QScrollArea* facesArea = new QScrollArea(this);
-    facesArea->setWidgetResizable(true);
-    facesArea->setAlignment(Qt::AlignRight);
-    facesArea->setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOn);
-    facesArea->setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
-
-    QWidget* croppedFacesWidgets = new QWidget(this);
-    m_croppedfaceLayout          = new QVBoxLayout(this);
-
-    croppedFacesWidgets->setLayout(m_croppedfaceLayout);
-    facesArea->setWidget(croppedFacesWidgets);
-
+    QWidget* const imageArea    = new QWidget(this);
 
     // TODO add control panel to adjust detection hyper parameters
     QWidget* const controlPanel = new QWidget;
 
-    QSizePolicy spImage(QSizePolicy::Preferred, QSizePolicy::Preferred);
-    spImage.setVerticalPolicy(QSizePolicy::Expanding);
-
-    m_fullImage->setSizePolicy(spImage);
-    m_paddedImage->setSizePolicy(spImage);
-    facesArea->setSizePolicy(spImage);
-    controlPanel->setSizePolicy(spImage);
-
     QHBoxLayout* processingLayout = new QHBoxLayout(imageArea);
-    processingLayout->addWidget(m_fullImage);
-    processingLayout->addWidget(m_paddedImage);
-    processingLayout->addWidget(facesArea);
+    processingLayout->addWidget(setupFullImageArea());
+    processingLayout->addWidget(setupPaddedImage());
+    processingLayout->addWidget(setupCroppedFaceArea());
     processingLayout->addWidget(controlPanel);
 
-    // Itemlist erea
-    QScrollArea* const itemsArea = new QScrollArea;
-    itemsArea->setWidgetResizable(true);
-    itemsArea->setAlignment(Qt::AlignBottom);
-    itemsArea->setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
-    itemsArea->setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOn);
-
-    QSizePolicy spHigh(QSizePolicy::Preferred, QSizePolicy::Preferred);
-    spHigh.setVerticalPolicy(QSizePolicy::Expanding);
+    QSizePolicy spHigh(QSizePolicy::Preferred, QSizePolicy::Expanding);
     imageArea->setSizePolicy(spHigh);
 
-    QSizePolicy spLow(QSizePolicy::Preferred, QSizePolicy::Preferred);
-    spLow.setVerticalPolicy(QSizePolicy::Fixed);
-    itemsArea->setSizePolicy(spLow);
-
+    QWidget*     const mainWidget = new QWidget(this);
     QVBoxLayout* const mainLayout = new QVBoxLayout(mainWidget);
+
     mainLayout->addWidget(imageArea);
-    mainLayout->addWidget(itemsArea);
-
-    m_imageListView = new QListWidget(mainWidget);
-    m_imageListView->setViewMode(QListView::IconMode);
-    m_imageListView->setIconSize(QSize(200, 150));
-    m_imageListView->setResizeMode(QListWidget::Adjust);
-    m_imageListView->setFlow(QListView::LeftToRight);
-    m_imageListView->setWrapping(false);
-    m_imageListView->setDragEnabled(false);
-
-    QStringList subjects = directory.entryList(QDir::Files | QDir::NoDotAndDotDot);
-
-    for (QStringList::const_iterator iter  = subjects.cbegin();
-                                     iter != subjects.cend();
-                                   ++iter)
-    {
-        QString filePath = directory.filePath(*iter);
-        QListWidgetItem* item = new QListWidgetItem(QIcon(filePath), filePath);
-
-        m_imageListView->addItem(item);
-    }
-
-    connect(m_imageListView, &QListWidget::currentItemChanged,
-            this,            &MainWindow::slotDetectFaces);
-
-    itemsArea->setWidget(m_imageListView);
+    mainLayout->addWidget(setupImageList(directory));
 
     setCentralWidget(mainWidget);
 }
@@ -170,11 +114,10 @@ MainWindow::MainWindow(const QDir &directory, QWidget *parent)
 MainWindow::~MainWindow()
 {
     delete m_detector;
-
     delete m_fullImage;
     delete m_paddedImage;
     delete m_imageListView;
-    delete m_croppedfaceLayout;
+    delete m_croppedfaceList;
 }
 
 void MainWindow::slotDetectFaces(const QListWidgetItem* imageItem)
@@ -185,10 +128,9 @@ void MainWindow::slotDetectFaces(const QListWidgetItem* imageItem)
     QImage imgScaled(img.scaled(416, 416, Qt::KeepAspectRatio));
 
     // clear faces layout
-    QLayoutItem *wItem;
-    while ((wItem = m_croppedfaceLayout->takeAt(0)) != nullptr)
+    QListWidgetItem *wItem;
+    while ((wItem = m_croppedfaceList->item(0)) != nullptr)
     {
-        delete wItem->widget();
         delete wItem;
     }
 
@@ -201,7 +143,7 @@ void MainWindow::slotDetectFaces(const QListWidgetItem* imageItem)
 }
 
 
-void MainWindow::showCVMat(const cv::Mat& cvimage)
+QPixmap MainWindow::showCVMat(const cv::Mat& cvimage)
 {
     if(cvimage.cols*cvimage.rows != 0)
     {
@@ -210,9 +152,10 @@ void MainWindow::showCVMat(const cv::Mat& cvimage)
         cv::cvtColor(cvimage, rgb, (-2*cvimage.channels()+10));
         p.convertFromImage(QImage(rgb.data, rgb.cols, rgb.rows, QImage::Format_RGB888));
 
-        m_paddedImage->setPixmap(p);
-        //resize(cvimage.cols, cvimage.rows);
+        return p;
     }
+
+    return QPixmap();
 }
 
 QList<QRectF> MainWindow::detectFaces(const QString& imagePath)
@@ -247,7 +190,7 @@ QList<QRectF> MainWindow::detectFaces(const QString& imagePath)
 
 
         // debug padded image
-        showCVMat(cvImage);
+        m_paddedImage->setPixmap(showCVMat(cvImage));
 
         qDebug() << "(Input CV) Found " << absRects.size() << " faces, in " << elapsedDetection << "ms";
     }
@@ -285,18 +228,113 @@ void MainWindow::extractFaces(const QImage& img, QImage& imgScaled, const QList<
 
     foreach (const QRectF& rr, faces)
     {
-        QLabel* const label = new QLabel;
-        label->setScaledContents(false);
+        QRect  rectDraw      = FaceDetector::toAbsoluteRect(rr, imgScaled.size());
+        QRect  rect          = FaceDetector::toAbsoluteRect(rr, img.size());
+        QImage part         = img.copy(rect);
 
-        QRect rectDraw      = FaceDetector::toAbsoluteRect(rr, imgScaled.size());
-        QRect r             = FaceDetector::toAbsoluteRect(rr, img.size());
-        QImage part         = img.copy(r);
-        label->setPixmap(QPixmap::fromImage(part.scaled(qMin(img.size().width(), 100),
-                                                        qMin(img.size().width(), 100),
-                                                        Qt::KeepAspectRatio)));
-        m_croppedfaceLayout->addWidget(label);
+        // Show cropped faces
+        QIcon croppedFace(QPixmap::fromImage(part.scaled(qMin(img.size().width(), 100),
+                                                         qMin(img.size().width(), 100),
+                                                         Qt::KeepAspectRatio)));
+
+        m_croppedfaceList->addItem(new QListWidgetItem(croppedFace, QLatin1String("")));
         painter.drawRect(rectDraw);
     }
+}
+
+QWidget* MainWindow::setupFullImageArea()
+{
+    m_fullImage = new QLabel;
+    m_fullImage->setScaledContents(true);
+
+    QSizePolicy spImage(QSizePolicy::Preferred, QSizePolicy::Expanding);
+    spImage.setHorizontalStretch(3);
+    m_fullImage->setSizePolicy(spImage);
+
+    return m_fullImage;
+}
+
+QWidget* MainWindow::setupPaddedImage()
+{
+    m_paddedImage = new QLabel;
+    m_paddedImage->setScaledContents(true);
+
+    QSizePolicy spImage(QSizePolicy::Preferred, QSizePolicy::Expanding);
+    spImage.setHorizontalStretch(3);
+    m_paddedImage->setSizePolicy(spImage);
+
+    return m_paddedImage;
+}
+
+QWidget* MainWindow::setupCroppedFaceArea()
+{
+    QScrollArea* facesArea = new QScrollArea(this);
+    facesArea->setWidgetResizable(true);
+    facesArea->setAlignment(Qt::AlignRight);
+    facesArea->setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOn);
+    facesArea->setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
+
+    QSizePolicy spImage(QSizePolicy::Preferred, QSizePolicy::Expanding);
+    spImage.setHorizontalStretch(1);
+
+    facesArea->setSizePolicy(spImage);
+
+    m_croppedfaceList = new QListWidget(this);
+
+    m_croppedfaceList->setViewMode(QListView::IconMode);
+    m_croppedfaceList->setIconSize(QSize(200, 150));
+    m_croppedfaceList->setResizeMode(QListWidget::Adjust);
+    m_croppedfaceList->setFlow(QListView::TopToBottom);
+    m_croppedfaceList->setWrapping(false);
+    m_croppedfaceList->setDragEnabled(false);
+
+/*
+    connect(m_croppedfaceList, &QListWidget::currentItemChanged,
+            this,            &MainWindow::slotDetectFaces);
+*/
+    facesArea->setWidget(m_croppedfaceList);
+
+    return facesArea;
+}
+
+QWidget* MainWindow::setupImageList(const QDir& directory)
+{
+    // Itemlist erea
+    QScrollArea* itemsArea = new QScrollArea;
+    itemsArea->setWidgetResizable(true);
+    itemsArea->setAlignment(Qt::AlignBottom);
+    itemsArea->setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
+    itemsArea->setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOn);
+
+    QSizePolicy spLow(QSizePolicy::Preferred, QSizePolicy::Fixed);
+    itemsArea->setSizePolicy(spLow);
+
+    m_imageListView = new QListWidget(this);
+    m_imageListView->setViewMode(QListView::IconMode);
+    m_imageListView->setIconSize(QSize(200, 150));
+    m_imageListView->setResizeMode(QListWidget::Adjust);
+    m_imageListView->setFlow(QListView::LeftToRight);
+    m_imageListView->setWrapping(false);
+    m_imageListView->setDragEnabled(false);
+
+    QStringList subjects = directory.entryList(QDir::Files | QDir::NoDotAndDotDot);
+
+    for (QStringList::const_iterator iter  = subjects.cbegin();
+                                     iter != subjects.cend();
+                                   ++iter)
+    {
+        QString filePath = directory.filePath(*iter);
+        QListWidgetItem* item = new QListWidgetItem(QIcon(filePath), filePath);
+
+        m_imageListView->addItem(item);
+    }
+
+    connect(m_imageListView, &QListWidget::currentItemChanged,
+            this,            &MainWindow::slotDetectFaces);
+
+    itemsArea->setWidget(m_imageListView);
+
+    return itemsArea;
 }
 
 
