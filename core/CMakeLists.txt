@@ -6,7 +6,6 @@
 # Redistribution and use is allowed according to the terms of the BSD license.
 # For details see the accompanying COPYING-CMAKE-SCRIPTS file.
 
-APPLY_COMMON_POLICIES()
 
 # ==============================================================================
 
@@ -242,6 +241,8 @@ configure_file(${CMAKE_CURRENT_SOURCE_DIR}/app/utils/digikam_opencv.h.cmake.in
                ${CMAKE_CURRENT_BINARY_DIR}/app/utils/digikam_opencv.h)
 
 # -- optionals -----------------------------------------------------------------
+
+APPLY_COMMON_POLICIES()
 
 find_package(FLEX)                                 # For Panorama tool.
 find_package(BISON)                                # For Panorama tool.
