@@ -148,7 +148,7 @@ std::vector<float> FaceExtractor::getFaceEmbedding(const cv::Mat& faceImage)
 
     timer.start();
     cv::Mat face_descriptors;
-    cv::Mat blob     = cv::dnn::blobFromImage(alignedFace, d->scaleFactor, d->imageSize, d->meanValToSubtract);
+    cv::Mat blob     = cv::dnn::blobFromImage(alignedFace, d->scaleFactor, d->imageSize, cv::Scalar(), true, false);
 
     d->net.setInput(blob);
     face_descriptors = d->net.forward();

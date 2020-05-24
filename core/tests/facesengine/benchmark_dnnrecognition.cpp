@@ -52,6 +52,9 @@
 using namespace Digikam;
 using namespace RecognitionTest;
 
+// TODO: Recognition is incorrect where human are wearing glasses
+// TODO: Verify cosnine distance Vs L2 distance
+
 class MainWindow : public QMainWindow
 {
     Q_OBJECT
