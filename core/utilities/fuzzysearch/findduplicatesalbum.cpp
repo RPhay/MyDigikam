@@ -180,14 +180,14 @@ void FindDuplicatesAlbum::drawRow(QPainter* p,
     QTreeWidget::drawRow(p, opt, index);
 }
 
-void FindDuplicatesAlbum::removeDuplicates() {
+void FindDuplicatesAlbum::removeDuplicates(int minThreshould, int maxThreshould) {
     QTreeWidgetItemIterator it(this);
 
     QList<ItemInfo> duplicatedItems;
     while (*it)
     {
         FindDuplicatesAlbumItem* const item = dynamic_cast<FindDuplicatesAlbumItem*>(*it);
-        duplicatedItems += item->duplicatedItems();
+        duplicatedItems += item->duplicatedItems(minThreshould, maxThreshould);
         ++it;
     }
 
@@ -210,6 +210,7 @@ void FindDuplicatesAlbum::removeDuplicates() {
     }
 
     qDebug() << "Removing Everything";
+    // This should run in a different thread =/
     DIO::del(duplicatedItems, false);
 }
 

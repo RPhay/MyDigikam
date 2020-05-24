@@ -75,7 +75,7 @@ public:
     void setThumb(const QPixmap& pix, bool hasThumb = true);
 
     bool operator<(const QTreeWidgetItem& other) const override;
-    QList<ItemInfo> duplicatedItems();
+    QList<ItemInfo> duplicatedItems(int minThreshould, int maxThreshould);
 
 private:
 

@@ -640,7 +640,9 @@ void FindDuplicatesView::slotRemoveDuplicates() {
     }
 
     qDebug() << "Removing All Duplicates!";
-    d->listView->removeDuplicates();
+    d->rmSimilarityRange->minValue();
+    d->rmSimilarityRange->maxValue();
+    d->listView->removeDuplicates(d->rmSimilarityRange->minValue(), d->rmSimilarityRange->maxValue());
 }
 
 } // namespace Digikam
