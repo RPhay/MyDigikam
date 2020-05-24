@@ -456,6 +456,8 @@ void FindDuplicatesView::enableControlWidgets(bool val)
     d->albumTagRelationLabel->setEnabled(val);
     d->restrictResultsLabel->setEnabled(val);
     d->similarityLabel->setEnabled(val);
+    d->rmSimilarityRange->setEnabled(val);
+    d->removeDuplicates->setEnabled(val);
 }
 
 void FindDuplicatesView::slotFindDuplicates()

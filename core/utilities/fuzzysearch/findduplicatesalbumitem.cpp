@@ -112,7 +112,7 @@ QList<ItemInfo> FindDuplicatesAlbumItem::duplicatedItems(int minThreshould, int 
         }
 
         ItemInfo info(imageId);
-        int currentThreshould = info.similarityTo(refImage);
+        int currentThreshould = info.similarityTo(refImage) * 100;
         if (currentThreshould >= minThreshould && currentThreshould <= maxThreshould) {
             toRemove.append(info);
         }
