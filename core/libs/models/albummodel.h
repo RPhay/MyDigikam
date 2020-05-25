@@ -78,7 +78,6 @@ public:
     TAlbum*              albumForIndex(const QModelIndex& index)    const;
     void                 setColumnHeader(const QString& header);
     void                 setTagCount(TagCountMode mode);
-    const QMap<int,int>& getUnconfirmedFaceCount()                  const;
 
 protected:
 
