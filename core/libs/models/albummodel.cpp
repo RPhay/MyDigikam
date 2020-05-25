@@ -151,6 +151,18 @@ QVariant TagModel::decorationRoleData(Album* album) const
     return pix;
 }
 
+QVariant TagModel::fontRoleData(Album* a) const
+{
+    if (m_unconfirmedFaceCount.contains(a->id())  &&
+        a->id() != FaceTags::unknownPersonTagId())
+    {
+        QFont font;
+        font.setBold(true);
+        return font;
+    }
+    return QVariant();
+}
+
 Album* TagModel::albumForId(int id) const
 {
     return AlbumManager::instance()->findTAlbum(id);
