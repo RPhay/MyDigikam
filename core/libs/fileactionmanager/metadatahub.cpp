@@ -793,17 +793,17 @@ void MetadataHub::adjustFaceRectangles(const ItemInfo& info, bool rotatedPixels,
         }
     }
 
-    if (!rotatedPixels)
-    {
-        newSize = info.dimensions();
-    }
-
     /**
      * Write medatada
      */
     load(info);
 
     // Adjusted newSize
+
+    if (!rotatedPixels)
+    {
+        newSize = info.dimensions();
+    }
 
     loadFaceTags(info, newSize);
     write(info.filePath(), MetadataHub::WRITE_ALL, true);
