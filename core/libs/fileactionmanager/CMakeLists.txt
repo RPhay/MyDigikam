@@ -8,16 +8,16 @@
 APPLY_COMMON_POLICIES()
 
 set(fileactionmanager_SRCS
-    metadatahub.cpp
-    metadatahubmngr.cpp
-    metadatastatusbar.cpp
-    fileactionprogress.cpp
-    fileactionmngr.cpp
-    fileactionmngr_p.cpp
-    iteminfotasksplitter.cpp
-    databaseworkeriface.cpp
-    fileworkeriface.cpp
-    fileactionimageinfolist.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/metadatahub.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/metadatahubmngr.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/metadatastatusbar.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/fileactionprogress.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/fileactionmngr.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/fileactionmngr_p.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/iteminfotasksplitter.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/databaseworkeriface.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/fileworkeriface.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/fileactionimageinfolist.cpp
 )
 
 include_directories(

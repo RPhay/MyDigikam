@@ -8,11 +8,11 @@
 APPLY_COMMON_POLICIES()
 
 set(libdthread_SRCS
-    actionthreadbase.cpp
-    threadmanager.cpp
-    workerobject.cpp
-    dynamicthread.cpp
-    parallelworkers.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/actionthreadbase.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/threadmanager.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/workerobject.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/dynamicthread.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/parallelworkers.cpp
 )
 
 include_directories(

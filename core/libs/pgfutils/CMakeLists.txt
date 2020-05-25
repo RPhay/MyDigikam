@@ -22,13 +22,13 @@ include_directories(
 )
 
 set(libpgfutils_SRCS
-    pgfutils.cpp
-    libpgf/Decoder.cpp
-    libpgf/Encoder.cpp
-    libpgf/PGFimage.cpp
-    libpgf/PGFstream.cpp
-    libpgf/Subband.cpp
-    libpgf/WaveletTransform.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/pgfutils.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/libpgf/Decoder.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/libpgf/Encoder.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/libpgf/PGFimage.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/libpgf/PGFstream.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/libpgf/Subband.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/libpgf/WaveletTransform.cpp
 )
 
 # Don't process automoc on Libpgf headers

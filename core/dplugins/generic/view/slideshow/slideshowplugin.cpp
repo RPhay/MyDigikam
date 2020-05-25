@@ -126,6 +126,9 @@ void SlideShowPlugin::setup(QObject* const parent)
         connect(slideShowAllAction, SIGNAL(triggered()),
                 this, SLOT(slotMenuSlideShowAll()));
 
+        connect(slideShowActions->menuAction(), SIGNAL(triggered()),
+                slideShowAllAction, SLOT(trigger()));
+
         // Action show selection
 
         QAction* const slideShowSelectionAction = new QAction(i18n("Selection"), ac);

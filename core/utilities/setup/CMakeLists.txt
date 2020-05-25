@@ -18,10 +18,10 @@ include_directories($<TARGET_PROPERTY:Qt5::Sql,INTERFACE_INCLUDE_DIRECTORIES>
 
 
 set(libsetupshowfoto_SRCS
-    editor/setupeditoriface.cpp
-    editor/setupiofiles.cpp
-    editor/setupraw.cpp
-    setupicc.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/editor/setupeditoriface.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/editor/setupiofiles.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/editor/setupraw.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/setupicc.cpp
 )
 
 # Used by digikamcore
@@ -35,39 +35,39 @@ target_compile_definitions(core_setupcommon_obj
 # ---------------------------------------------------------------------
 
 set(libsetup_SRCS
-    setup.cpp
-    setuptooltip.cpp
-    setuptemplate.cpp
-    setupmisc.cpp
-    setupplugins.cpp
-    setuplighttable.cpp
-    setupdatabase.cpp
-    setupimagequalitysorter.cpp
-    setuputils.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/setup.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/setuptooltip.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/setuptemplate.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/setupmisc.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/setupplugins.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/setuplighttable.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/setupdatabase.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/setupimagequalitysorter.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/setuputils.cpp
 
-    editor/setupeditor.cpp
-    editor/setupversioning.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/editor/setupeditor.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/editor/setupversioning.cpp
 
-    album/setupalbumview.cpp
-    album/setupcategory.cpp
-    album/setupmime.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/album/setupalbumview.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/album/setupcategory.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/album/setupmime.cpp
 
-    metadata/setupmetadata.cpp
-    metadata/advancedmetadatatab.cpp
-    metadata/namespacelistview.cpp
-    metadata/namespaceeditdlg.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/metadata/setupmetadata.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/metadata/advancedmetadatatab.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/metadata/namespacelistview.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/metadata/namespaceeditdlg.cpp
 
-    collections/setupcollections.cpp
-    collections/setupcollectionview.cpp
-    collections/dwitemdelegate.cpp
-    collections/dwitemdelegate_p.cpp
-    collections/dwitemdelegatepool.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/collections/setupcollections.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/collections/setupcollectionview.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/collections/dwitemdelegate.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/collections/dwitemdelegate_p.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/collections/dwitemdelegatepool.cpp
 
-    camera/importfilterdlg.cpp
-    camera/setupcamera.cpp
-    camera/cameraselection.cpp
-    camera/cameralist.cpp
-    camera/cameratype.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/camera/importfilterdlg.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/camera/setupcamera.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/camera/cameraselection.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/camera/cameralist.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/camera/cameratype.cpp
 )
 
 # Used by digikamgui

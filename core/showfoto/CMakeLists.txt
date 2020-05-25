@@ -16,33 +16,33 @@ include_directories(BEFORE
 )
 
 set(showfoto_SRCS
-    setup/showfotosetuptooltip.cpp
-    setup/showfotosetupmisc.cpp
-    setup/showfotosetupmetadata.cpp
-    setup/showfotosetupraw.cpp
-    setup/showfotosetupplugins.cpp
-    setup/showfotosetup.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/setup/showfotosetuptooltip.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/setup/showfotosetupmisc.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/setup/showfotosetupmetadata.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/setup/showfotosetupraw.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/setup/showfotosetupplugins.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/setup/showfotosetup.cpp
 
-    thumbbar/showfotoiteminfo.cpp
-    thumbbar/showfotoimagemodel.cpp
-    thumbbar/showfotothumbnailmodel.cpp
-    thumbbar/showfotofiltermodel.cpp
-    thumbbar/showfotodragdrophandler.cpp
-    thumbbar/showfotokineticscroller.cpp
-    thumbbar/showfotoitemsortsettings.cpp
-    thumbbar/showfotocoordinatesoverlay.cpp
-    thumbbar/itemviewshowfotodelegate.cpp
-    thumbbar/showfotodelegate.cpp
-    thumbbar/showfototooltipfiller.cpp
-    thumbbar/showfotocategorizedview.cpp
-    thumbbar/showfotothumbnailbar.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/thumbbar/showfotoiteminfo.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/thumbbar/showfotoimagemodel.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/thumbbar/showfotothumbnailmodel.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/thumbbar/showfotofiltermodel.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/thumbbar/showfotodragdrophandler.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/thumbbar/showfotokineticscroller.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/thumbbar/showfotoitemsortsettings.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/thumbbar/showfotocoordinatesoverlay.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/thumbbar/itemviewshowfotodelegate.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/thumbbar/showfotodelegate.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/thumbbar/showfototooltipfiller.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/thumbbar/showfotocategorizedview.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/thumbbar/showfotothumbnailbar.cpp
 
-    main/showfotosettings.cpp
-    main/main.cpp
-    main/showfoto.cpp
-    main/showfoto_setup.cpp
-    main/showfoto_config.cpp
-    main/showfoto_import.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/main/showfotosettings.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/main/main.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/main/showfoto.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/main/showfoto_setup.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/main/showfoto_config.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/main/showfoto_import.cpp
 )
 
 file(GLOB ICONS_SRCS "${CMAKE_CURRENT_SOURCE_DIR}/../data/icons/apps/*-apps-showfoto.png")
@@ -135,7 +135,7 @@ if(APPLE)
 
 endif()
 
-install(TARGETS  showfoto                          ${INSTALL_TARGETS_DEFAULT_ARGS})
-install(PROGRAMS main/org.kde.showfoto.desktop     DESTINATION ${XDG_APPS_INSTALL_DIR})
-install(FILES    main/org.kde.showfoto.appdata.xml DESTINATION ${KDE_INSTALL_METAINFODIR})
-install(FILES    main/showfotoui5.rc               DESTINATION ${KXMLGUI_INSTALL_DIR}/showfoto)
+install(TARGETS  showfoto                                                      ${INSTALL_TARGETS_DEFAULT_ARGS})
+install(PROGRAMS ${CMAKE_CURRENT_SOURCE_DIR}/main/org.kde.showfoto.desktop     DESTINATION ${XDG_APPS_INSTALL_DIR})
+install(FILES    ${CMAKE_CURRENT_SOURCE_DIR}/main/org.kde.showfoto.appdata.xml DESTINATION ${KDE_INSTALL_METAINFODIR})
+install(FILES    ${CMAKE_CURRENT_SOURCE_DIR}/main/showfotoui5.rc               DESTINATION ${KXMLGUI_INSTALL_DIR}/showfoto)

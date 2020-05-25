@@ -8,16 +8,16 @@
 APPLY_COMMON_POLICIES()
 
 set(libprogressmanager_SRCS
-    dhistoryview.cpp
-    dprogresswdg.cpp
-    overlaywidget.cpp
-    progressview.cpp
-    progressmanager.cpp
-    statusbarprogresswidget.cpp
-    statusprogressbar.cpp
-    workingwidget.cpp
-    dworkingpixmap.cpp
-    dlogoaction.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/dhistoryview.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/dprogresswdg.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/overlaywidget.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/progressview.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/progressmanager.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/statusbarprogresswidget.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/statusprogressbar.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/workingwidget.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/dworkingpixmap.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/dlogoaction.cpp
 )
 
 include_directories(

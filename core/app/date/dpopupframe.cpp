@@ -83,7 +83,7 @@ public:
     }
 
 
-    bool eventFilter(QObject* object, QEvent* event) Q_DECL_OVERRIDE
+    bool eventFilter(QObject* object, QEvent* event) override
     {
         Q_UNUSED(object);
 

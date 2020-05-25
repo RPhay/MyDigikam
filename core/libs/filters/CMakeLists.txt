@@ -8,13 +8,13 @@
 APPLY_COMMON_POLICIES()
 
 set(libfilters_SRCS
-    filterstatusbar.cpp
-    geolocationfilter.cpp
-    textfilter.cpp
-    mimefilter.cpp
-    colorlabelfilter.cpp
-    picklabelfilter.cpp
-    ratingfilter.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/filterstatusbar.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/geolocationfilter.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/textfilter.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/mimefilter.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/colorlabelfilter.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/picklabelfilter.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/ratingfilter.cpp
 )
 
 include_directories(

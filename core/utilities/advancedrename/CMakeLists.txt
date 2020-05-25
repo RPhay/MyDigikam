@@ -25,7 +25,12 @@ file(GLOB libadvancedrename_UI
 ki18n_wrap_ui(libadvancedrename_SRCS ${libadvancedrename_UI})
 
 # TODO for internal use, prefer complete include paths instead of this
-include_directories(common/ parser/options/ parser/options/database/ parser/options/database/keys/ parser/modifiers/)
+include_directories(${CMAKE_CURRENT_SOURCE_DIR}/common
+                    ${CMAKE_CURRENT_SOURCE_DIR}/parser/options
+                    ${CMAKE_CURRENT_SOURCE_DIR}/parser/options/database
+                    ${CMAKE_CURRENT_SOURCE_DIR}/parser/options/database/keys
+                    ${CMAKE_CURRENT_SOURCE_DIR}/parser/modifiers
+)
 
 include_directories(
     $<TARGET_PROPERTY:KF5::I18n,INTERFACE_INCLUDE_DIRECTORIES>

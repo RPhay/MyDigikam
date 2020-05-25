@@ -32,44 +32,44 @@ endif()
 # ------------------------------------------------------------------------------------
 
 set(libeditorwidgets_SRCS
-    widgets/imageguidewidget.cpp
-    widgets/imagepreviewitem.cpp
-    widgets/previewtoolbar.cpp
-    widgets/previewlist.cpp
-    widgets/imageregionwidget.cpp
-    widgets/imageregionitem.cpp
-    widgets/rubberitem.cpp
-    widgets/canvas.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/widgets/imageguidewidget.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/widgets/imagepreviewitem.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/widgets/previewtoolbar.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/widgets/previewlist.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/widgets/imageregionwidget.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/widgets/imageregionitem.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/widgets/rubberitem.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/widgets/canvas.cpp
 )
 
 set(libeditordlg_SRCS
-    dialogs/colorcorrectiondlg.cpp
-    dialogs/softproofdialog.cpp
-    dialogs/versioningpromptusersavedlg.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/dialogs/colorcorrectiondlg.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/dialogs/softproofdialog.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/dialogs/versioningpromptusersavedlg.cpp
 )
 
 set(libeditorcore_SRCS
-    core/undocache.cpp
-    core/undoaction.cpp
-    core/undomanager.cpp
-    core/editorcore.cpp
-    core/iccpostloadingmanager.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/core/undocache.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/core/undoaction.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/core/undomanager.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/core/editorcore.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/core/iccpostloadingmanager.cpp
 )
 
 set(libeditoriface_SRCS
-    editor/editortool.cpp
-    editor/editortooliface.cpp
-    editor/editorstackview.cpp
-    editor/editortoolsettings.cpp
-    editor/editorwindow.cpp
-    editor/imageiface.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/editor/editortool.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/editor/editortooliface.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/editor/editorstackview.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/editor/editortoolsettings.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/editor/editorwindow.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/editor/imageiface.cpp
 )
 
 # Used by digikamcore
 add_library(core_imageeditor_obj OBJECT ${libeditorcore_SRCS}
-                                   ${libeditordlg_SRCS}
-                                   ${libeditoriface_SRCS}
-                                   ${libeditorwidgets_SRCS}
+                                        ${libeditordlg_SRCS}
+                                        ${libeditoriface_SRCS}
+                                        ${libeditorwidgets_SRCS}
 )
 
 target_compile_definitions(core_imageeditor_obj
@@ -80,10 +80,10 @@ target_compile_definitions(core_imageeditor_obj
 # ------------------------------------------------------------------------------------
 
 set(libeditorgui_SRCS
-    main/imagewindow.cpp
-    main/imagewindow_setup.cpp
-    main/imagewindow_config.cpp
-    main/imagewindow_import.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/main/imagewindow.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/main/imagewindow_setup.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/main/imagewindow_config.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/main/imagewindow_import.cpp
 )
 
 # Used by digikamgui
@@ -94,4 +94,4 @@ target_compile_definitions(gui_imageeditorgui_obj
                            digikamgui_EXPORTS
 )
 
-install(FILES main/imageeditorui5.rc DESTINATION ${KXMLGUI_INSTALL_DIR}/digikam)
+install(FILES ${CMAKE_CURRENT_SOURCE_DIR}/main/imageeditorui5.rc DESTINATION ${KXMLGUI_INSTALL_DIR}/digikam)

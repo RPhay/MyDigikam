@@ -7,8 +7,8 @@
 APPLY_COMMON_POLICIES()
 
 set(libdragdrop_SRCS
-    abstractitemdragdrophandler.cpp
-    dragdropimplementations.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/abstractitemdragdrophandler.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/dragdropimplementations.cpp
 )
 
 include_directories(

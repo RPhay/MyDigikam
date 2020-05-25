@@ -8,28 +8,28 @@
 APPLY_COMMON_POLICIES()
 
 set(libtags_SRCS
-    widgets/addtagscombobox.cpp
-    widgets/addtagslineedit.cpp
-    widgets/tagcheckview.cpp
-    widgets/tagfolderview.cpp
-    widgets/tagslineeditoverlay.cpp
-    widgets/tagspopupmenu.cpp
-    widgets/tageditdlg.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/widgets/addtagscombobox.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/widgets/addtagslineedit.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/widgets/tagcheckview.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/widgets/tagfolderview.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/widgets/tagslineeditoverlay.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/widgets/tagspopupmenu.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/widgets/tageditdlg.cpp
 
-    engine/tagscompleter.cpp
-    engine/tagmodificationhelper.cpp
-    engine/tagsactionmngr.cpp
-    engine/taggingaction.cpp
-    engine/taggingactionfactory.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/engine/tagscompleter.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/engine/tagmodificationhelper.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/engine/tagsactionmngr.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/engine/taggingaction.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/engine/taggingactionfactory.cpp
 
-    manager/tagsmanager.cpp
-    manager/tagpropwidget.cpp
-    manager/taglist.cpp
-    manager/tagmngrtreeview.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/manager/tagsmanager.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/manager/tagpropwidget.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/manager/taglist.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/manager/tagmngrtreeview.cpp
 
-    manager/models/tagmngrlistview.cpp
-    manager/models/tagmngrlistmodel.cpp
-    manager/models/tagmngrlistitem.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/manager/models/tagmngrlistview.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/manager/models/tagmngrlistmodel.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/manager/models/tagmngrlistitem.cpp
 )
 
 include_directories(

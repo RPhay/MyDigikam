@@ -8,19 +8,19 @@
 APPLY_COMMON_POLICIES()
 
 set(libsearchwindow_SRCS
-    searchwindow.cpp
-    searchview.cpp
-    searchgroup.cpp
-    searchfieldgroup.cpp
-    searchfields.cpp
-    searchutilities.cpp
-    ratingsearchutilities.cpp
-    choicesearchutilities.cpp
-    searchfolderview.cpp
-    searchtabheader.cpp
-    searchmodificationhelper.cpp
-    editablesearchtreeview.cpp
-    visibilitycontroller.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/searchwindow.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/searchview.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/searchgroup.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/searchfieldgroup.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/searchfields.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/searchutilities.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/ratingsearchutilities.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/choicesearchutilities.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/searchfolderview.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/searchtabheader.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/searchmodificationhelper.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/editablesearchtreeview.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/visibilitycontroller.cpp
 )
 
 include_directories($<TARGET_PROPERTY:Qt5::Gui,INTERFACE_INCLUDE_DIRECTORIES>

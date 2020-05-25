@@ -305,6 +305,11 @@ void FileActionMngrDatabaseWorker::setExifOrientation(FileActionItemInfoList inf
                 break;
             }
 
+            MetadataHub hub;
+            hub.adjustFaceRectangles(info, false,
+                                           orientation,
+                                           info.orientation());
+
             info.setOrientation(orientation);
         }
     }
