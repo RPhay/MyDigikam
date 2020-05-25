@@ -124,3 +124,8 @@ install(FILES
 
               ${CMAKE_INSTALL_INCLUDEDIR}/digikam
 )
+
+configure_file(${CMAKE_CURRENT_SOURCE_DIR}/../cmake/templates/DigikamPluginConfig.cmake.in ${CMAKE_CURRENT_BINARY_DIR}/DigikamPluginConfig.cmake)
+
+install(FILES ${CMAKE_CURRENT_BINARY_DIR}/DigikamPluginConfig.cmake
+        DESTINATION "${CMAKE_INSTALL_LIBDIR}/cmake/DigikamPlugin")
