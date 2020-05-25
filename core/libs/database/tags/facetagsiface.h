@@ -74,6 +74,11 @@ public:
     int       tagId()                           const;
     TagRegion region()                          const;
 
+    bool      isInvalidFace()                   const
+    {
+        return (type() == InvalidFace);
+    }
+
     bool      isUnknownName()                   const
     {
         return (type() == UnknownName);
