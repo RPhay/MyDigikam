@@ -758,4 +758,6 @@ BUGFIXES:
 720 ==> 421941 - Slideshow option does not respect sort order across collections.
 721 ==> 421943 - Wishlist: Search for items without a tag in Advanced search.
 722 ==> 420819 - Error while opening database digikam will try to automatically reconnect to the database.
-723 ==> 
+723 ==> 421210 - digiKam 5.9.0-1+b1 refuses to start since LMDE4 Debbie upgrade.
+724 ==> 
+
