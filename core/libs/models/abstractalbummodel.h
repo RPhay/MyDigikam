@@ -186,7 +186,7 @@ protected:
     virtual QVariant decorationRoleData(Album* a)   const;
 
     /// For subclassing convenience: A part of the implementation of data()
-    virtual QVariant fontRoleData(Album* a) const;
+    virtual QVariant fontRoleData(Album* a)         const;
 
     /// For subclassing convenience: A part of the implementation of data()
     virtual QVariant sortRoleData(Album* a)         const;
