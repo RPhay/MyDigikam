@@ -81,13 +81,14 @@ public:
 
 protected:
 
-    virtual QVariant albumData(Album* a, int role)  const override;
-    virtual QVariant decorationRoleData(Album* a)   const override;
-    virtual Album*   albumForId(int id)             const override;
+    virtual QVariant     albumData(Album* a, int role)              const override;
+    virtual QVariant     decorationRoleData(Album* a)               const override;
+    virtual Album*       albumForId(int id)                         const override;
+    virtual QVariant     fontRoleData(Album* a)                     const override;
 
 private:
 
-    QMap<int, int> m_unconfirmedFaceCount;
+    QMap<int, int>       m_unconfirmedFaceCount;
 };
 
 // ------------------------------------------------------------------
