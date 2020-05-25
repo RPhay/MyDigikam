@@ -140,6 +140,9 @@ QVariant AbstractAlbumModel::albumData(Album* a, int role) const
             // reimplement in subclasses
             return decorationRoleData(a);
 
+        case Qt::FontRole:
+            return fontRoleData(a);
+
         case AlbumTitleRole:
             return a->title();
 
@@ -430,6 +433,11 @@ Album::Type AbstractAlbumModel::albumType() const
 }
 
 QVariant AbstractAlbumModel::decorationRoleData(Album*) const
+{
+    return QVariant();
+}
+
+QVariant AbstractAlbumModel::fontRoleData(Album*) const
 {
     return QVariant();
 }
