@@ -724,6 +724,91 @@ void Digikam::MetadataHub::setFaceTags(QMultiMap<QString, QVariant> newFaceTags,
     }
 }
 
+void MetadataHub::adjustFaceRectangles(const ItemInfo& info, bool rotatedPixels,
+                                                             int newOrientation,
+                                                             int oldOrientation)
+{
+    /**
+     *  Get all faces from database and rotate them
+     */
+    QList<FaceTagsIface> facesList = FaceTagsEditor().databaseFaces(info.id());
+
+    if (facesList.isEmpty())
+    {
+        return;
+    }
+
+    QSize newSize = info.dimensions();
+    QMultiMap<QString, QRect> adjustedFaces;
+
+    foreach (const FaceTagsIface& dface, facesList)
+    {
+        QRect faceRect = dface.region().toRect();
+        QString name   = FaceTags::faceNameForTag(dface.tagId());
+
+        TagRegion::reverseToOrientation(faceRect,
+                                        oldOrientation,
+                                        info.dimensions());
+
+        newSize = TagRegion::adjustToOrientation(faceRect,
+                                                 newOrientation,
+                                                 info.dimensions());
+
+        if (dface.tagId() == FaceTags::unknownPersonTagId())
+        {
+            name.clear();
+        }
+
+        adjustedFaces.insertMulti(name, faceRect);
+    }
+
+    /**
+     *  Delete all old faces and add rotated ones
+     */
+    FaceTagsEditor().removeAllFaces(info.id());
+
+    QMultiMap<QString, QRect>::ConstIterator it = adjustedFaces.constBegin();
+
+    for ( ; it != adjustedFaces.constEnd() ; ++it)
+    {
+        TagRegion region(it.value());
+
+        if (it.key().isEmpty())
+        {
+            int tagId = FaceTags::unknownPersonTagId();
+            FaceTagsIface face(FaceTagsIface::UnknownName, info.id(), tagId, region);
+
+            FaceTagsEditor().addManually(face);
+        }
+        else
+        {
+            int tagId = FaceTags::getOrCreateTagForPerson(it.key());
+
+            if (!tagId)
+            {
+                qCDebug(DIGIKAM_GENERAL_LOG) << "Failed to create a person tag for name" << it.key();
+            }
+
+            FaceTagsEditor().add(info.id(), tagId, region, false);
+        }
+    }
+
+    if (!rotatedPixels)
+    {
+        newSize = info.dimensions();
+    }
+
+    /**
+     * Write medatada
+     */
+    load(info);
+
+    // Adjusted newSize
+
+    loadFaceTags(info, newSize);
+    write(info.filePath(), MetadataHub::WRITE_ALL, true);
+}
+
 // NOTE: Unused code
 //void MetadataHub::load(const DMetadata& metadata)
 //{
