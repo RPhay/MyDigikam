@@ -6,6 +6,7 @@
 # Redistribution and use is allowed according to the terms of the BSD license.
 # For details see the accompanying COPYING-CMAKE-SCRIPTS file.
 
+APPLY_COMMON_POLICIES()
 
 # ==============================================================================
 
@@ -242,8 +243,6 @@ configure_file(${CMAKE_CURRENT_SOURCE_DIR}/app/utils/digikam_opencv.h.cmake.in
 
 # -- optionals -----------------------------------------------------------------
 
-APPLY_COMMON_POLICIES()
-
 find_package(FLEX)                                 # For Panorama tool.
 find_package(BISON)                                # For Panorama tool.
 
@@ -255,13 +254,16 @@ find_package(Marble)                               # For geolocation support.
 find_package(PkgConfig)
 find_package(Jasper)                               # For JPEG 2000 support.
 find_package(Eigen3)                               # For Refocus tool.
-find_package(OpenGL)                               # For Presentation tool.
+
+# -- ImageMagick rules --------------------------------------------------------
 
 find_package(ImageMagick COMPONENTS Magick++ MagickCore)
 
 if(ImageMagick_Magick++_FOUND)
     add_definitions(${ImageMagick_Magick++_DEFINITIONS})
 endif()
+
+# -- X11 rules ----------------------------------------------------------------
 
 # For Monitor Profiles management with LCMS
 find_package(X11)
@@ -272,6 +274,16 @@ if(X11_FOUND)
 else()
     set(HAVE_X11 FALSE)
 endif()
+
+# -- OpenGL rules -------------------------------------------------------------
+
+if(POLICY CMP0072)
+    # Prefers Legacy OpenGL by default when available introduced in CMake version 3.11
+    # Details: https://cmake.org/cmake/help/git-stage/policy/CMP0072.html
+    cmake_policy(SET CMP0072 OLD)
+endif()
+
+find_package(OpenGL)                               # For Presentation tool.
 
 # decide if Presentation tool can be built with OpenGL
 if(OPENGL_FOUND AND OPENGL_GLU_FOUND AND Qt5OpenGL_FOUND)
