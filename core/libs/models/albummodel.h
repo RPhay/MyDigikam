@@ -75,9 +75,10 @@ public:
     /// Create a model containing all tags
     explicit TagModel(RootAlbumBehavior rootBehavior = IncludeRootAlbum, QObject* const parent = nullptr);
 
-    TAlbum* albumForIndex(const QModelIndex& index) const;
-    void    setColumnHeader(const QString& header);
-    void    setTagCount(TagCountMode mode);
+    TAlbum*              albumForIndex(const QModelIndex& index)    const;
+    void                 setColumnHeader(const QString& header);
+    void                 setTagCount(TagCountMode mode);
+    const QMap<int,int>& getUnconfirmedFaceCount()                  const;
 
 protected:
 
