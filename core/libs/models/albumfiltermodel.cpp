@@ -437,6 +437,16 @@ bool AlbumFilterModel::lessThan(const QModelIndex& left, const QModelIndex& righ
                                                         : (leftAlbum->id() == FaceTags::ignoredPersonTagId());
             }
         }
+
+        /**
+         * Implementation to sort Tags that contain
+         * Unconfirmed Faces, according to the Unconfirmed
+         * Face Count.
+         */
+        QMap<int,int> unconfirmedFaceCount = AlbumManager::instance()->getUnconfirmedFaceCount();
+        if (unconfirmedFaceCount.contains(leftAlbum->id()) || unconfirmedFaceCount.contains(rightAlbum->id()))
+             return (sortOrder() == Qt::AscendingOrder) ? (unconfirmedFaceCount.value(leftAlbum->id()) > unconfirmedFaceCount.value(rightAlbum->id()))
+                                                        : (unconfirmedFaceCount.value(leftAlbum->id()) < unconfirmedFaceCount.value(rightAlbum->id()));
     }
 
     if (leftAlbum->isTrashAlbum() != rightAlbum->isTrashAlbum())
