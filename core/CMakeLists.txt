@@ -285,6 +285,10 @@ endif()
 
 find_package(OpenGL)                               # For Presentation tool.
 
+message(STATUS "OpenGL found;               ${OPENGL_FOUND}")
+message(STATUS "OpenGL GLU extension found; ${OPENGL_GLU_FOUND}")
+message(STATUS "OpenGL Qt5 found;           ${Qt5OpenGL_FOUND}")
+
 # decide if Presentation tool can be built with OpenGL
 if(OPENGL_FOUND AND OPENGL_GLU_FOUND AND Qt5OpenGL_FOUND)
     set(HAVE_OPENGL TRUE)
