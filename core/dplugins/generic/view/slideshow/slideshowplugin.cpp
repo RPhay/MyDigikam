@@ -229,23 +229,15 @@ void SlideShowPlugin::slotShowManual()
 {
     DPluginAction* const ac = dynamic_cast<DPluginAction*>(sender());
 
-    QUrl startFrom;
-
-    if (ac)
-    {
-        startFrom = ac->data().toUrl();
-
-        ac->setData(QVariant());
-
-        if (!startFrom.isValid())
-        {
-            return;
-        }
-    }
-    else
+    if (!ac)
     {
         return;
     }
+
+    QUrl startFrom;
+
+    startFrom = ac->data().toUrl();
+    ac->setData(QVariant());
 
     SlideShowSettings* const settings = new SlideShowSettings();
     settings->iface                   = infoIface(ac);
@@ -253,7 +245,7 @@ void SlideShowPlugin::slotShowManual()
     settings->exifRotate              = MetaEngineSettings::instance()->settings().exifRotate;
     settings->fileList                = settings->iface->currentAlbumItems();
 
-    slideshow(settings, false, startFrom);
+    slideshow(settings, !startFrom.isValid(), startFrom);
 }
 
 void SlideShowPlugin::slideshow(SlideShowSettings* const settings, bool autoPlayEnabled, const QUrl& startFrom)
