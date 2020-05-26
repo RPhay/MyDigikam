@@ -566,6 +566,8 @@ void SlideShowLoader::mousePressEvent(QMouseEvent* e)
         // EndView => close Slideshow view.
 
         close();
+
+        return;
     }
 
     if      (e->button() == Qt::LeftButton)
