@@ -766,4 +766,5 @@ BUGFIXES:
 727 ==> 398288 - digiKam no write access to folder.
 728 ==> 421478 - Files written outside proper directories.
 729 ==> 422087 - Move to different album does not move the original picture.
-730 ==> 
+730 ==> 343458 - A tool like pixelize (e.g. for my favourite images).
+731 ==> 
