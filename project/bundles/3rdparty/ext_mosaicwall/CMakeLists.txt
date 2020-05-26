@@ -14,9 +14,9 @@ ExternalProject_Add(ext_mosaicwall
 #    GIT_REPOSITORY https://github.com/scheckmedia/ImageMosaicWall.git
     GIT_REPOSITORY https://github.com/cgilles/ImageMosaicWall.git
 
-    INSTALL_DIR ${PREFIX_ext_gmicqt}
+    INSTALL_DIR ${PREFIX_ext_mosaicwall}
 
-    CMAKE_ARGS -DCMAKE_INSTALL_PREFIX=${PREFIX_ext_gmicqt} -DCMAKE_BUILD_TYPE=RelWithDebInfo
+    CMAKE_ARGS -DCMAKE_INSTALL_PREFIX=${PREFIX_ext_mosaicwall} -DCMAKE_BUILD_TYPE=RelWithDebInfo
 
     UPDATE_COMMAND ""
 )
