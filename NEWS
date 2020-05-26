@@ -763,4 +763,6 @@ BUGFIXES:
 724 ==> 421945 - Existing face tags not rotated with image.
 725 ==> 422015 - Canon THM files (and likely others) are ignored by Sidecar management unless named very specifically.
 726 ==> 114223 - New tool to build photomosaic using ImageMosaicWall.
-727 ==> 
+727 ==> 398288 - digiKam no write access to folder.
+728 ==> 421478 - Files written outside proper directories.
+729 ==> 
