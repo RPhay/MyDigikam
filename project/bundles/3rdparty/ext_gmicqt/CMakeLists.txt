@@ -6,10 +6,17 @@
 # For details see the accompanying COPYING-CMAKE-SCRIPTS file.
 #
 
-SET(PREFIX_ext_gmicqt "${EXTPREFIX}")
+set(PREFIX_ext_gmicqt "${EXTPREFIX}")
+
+if (APPLE)
+    set(FFTW_SUPPORT OFF)
+else()
+    set(FFTW_SUPPORT ON)
+endif()
 
 set(GmicQt_Conf -DGMIC_QT_HOST=digikam
                 -DENABLE_ASAN=OFF
+                -DENABLE_FFTW3=${FFTW_SUPPORT}
                 ${GLOBAL_PROFILE}
 )
 
