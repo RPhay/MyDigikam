@@ -765,4 +765,5 @@ BUGFIXES:
 726 ==> 114223 - New tool to build photomosaic using ImageMosaicWall.
 727 ==> 398288 - digiKam no write access to folder.
 728 ==> 421478 - Files written outside proper directories.
-729 ==> 
+729 ==> 422087 - Move to different album does not move the original picture.
+730 ==> 
