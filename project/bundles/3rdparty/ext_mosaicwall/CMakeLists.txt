@@ -11,7 +11,8 @@ SET(PREFIX_ext_mosaicwall "${EXTPREFIX}")
 ExternalProject_Add(ext_mosaicwall
 
     DOWNLOAD_DIR ${EXTERNALS_DOWNLOAD_DIR}
-    GIT_REPOSITORY https://github.com/scheckmedia/ImageMosaicWall.git
+#    GIT_REPOSITORY https://github.com/scheckmedia/ImageMosaicWall.git
+    GIT_REPOSITORY https://github.com/cgilles/ImageMosaicWall.git
 
     INSTALL_DIR ${PREFIX_ext_gmicqt}
 
