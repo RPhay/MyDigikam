@@ -18,7 +18,7 @@ include_directories(
 
 #------------------------------------------------------------------------
 
-ecm_add_tests(renamecustomizertest.cpp
+ecm_add_tests(${CMAKE_CURRENT_SOURCE_DIR}/renamecustomizertest.cpp
 
               NAME_PREFIX
 
@@ -34,7 +34,7 @@ ecm_add_tests(renamecustomizertest.cpp
 
 #------------------------------------------------------------------------
 
-ecm_add_tests(cameranamehelpertest.cpp
+ecm_add_tests(${CMAKE_CURRENT_SOURCE_DIR}/cameranamehelpertest.cpp
 
               NAME_PREFIX
 
@@ -51,7 +51,7 @@ ecm_add_tests(cameranamehelpertest.cpp
 
 #------------------------------------------------------------------------
 
-ecm_add_tests(advancedrenametest.cpp
+ecm_add_tests(${CMAKE_CURRENT_SOURCE_DIR}/advancedrenametest.cpp
 
               NAME_PREFIX
 

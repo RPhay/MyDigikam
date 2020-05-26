@@ -8,7 +8,7 @@ APPLY_COMMON_POLICIES()
 
 add_subdirectory(examples)
 
-add_library(libfakeserver STATIC fakeserver/fakeserver.cpp)
+add_library(libfakeserver STATIC ${CMAKE_CURRENT_SOURCE_DIR}/fakeserver/fakeserver.cpp)
 
 target_link_libraries(libfakeserver ${COMMON_TEST_LINK})
 
@@ -18,7 +18,7 @@ macro(mediawiki_executable_tests)
 
     foreach(_testname ${ARGN})
 
-        ecm_add_tests(${_testname}.cpp
+        ecm_add_tests(${CMAKE_CURRENT_SOURCE_DIR}/${_testname}.cpp
 
                       NAME_PREFIX
 

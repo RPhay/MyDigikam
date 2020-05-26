@@ -21,7 +21,7 @@ include_directories(
 
 #------------------------------------------------------------------------
 
-set(testdimgloader_SRCS testdimgloader.cpp)
+set(testdimgloader_SRCS ${CMAKE_CURRENT_SOURCE_DIR}/testdimgloader.cpp)
 add_executable(testdimgloader ${testdimgloader_SRCS})
 ecm_mark_nongui_executable(testdimgloader)
 
@@ -34,7 +34,7 @@ target_link_libraries(testdimgloader
 
 #------------------------------------------------------------------------
 
-set(testequalizefilter_SRCS testequalizefilter.cpp)
+set(testequalizefilter_SRCS ${CMAKE_CURRENT_SOURCE_DIR}/testequalizefilter.cpp)
 add_executable(testequalizefilter ${testequalizefilter_SRCS})
 ecm_mark_nongui_executable(testequalizefilter)
 
@@ -47,7 +47,7 @@ target_link_libraries(testequalizefilter
 
 #------------------------------------------------------------------------
 
-set(testcolorbalancefilter_SRCS testcolorbalancefilter.cpp)
+set(testcolorbalancefilter_SRCS ${CMAKE_CURRENT_SOURCE_DIR}/testcolorbalancefilter.cpp)
 add_executable(testcolorbalancefilter ${testcolorbalancefilter_SRCS})
 ecm_mark_nongui_executable(testcolorbalancefilter)
 
@@ -62,7 +62,7 @@ target_link_libraries(testcolorbalancefilter
 
 if(ImageMagick_Magick++_FOUND)
 
-    set(magickloader_SRCS magickloader.cpp)
+    set(magickloader_SRCS ${CMAKE_CURRENT_SOURCE_DIR}/magickloader.cpp)
     add_executable(magickloader ${magickloader_SRCS})
 
     target_link_libraries(magickloader
@@ -76,7 +76,7 @@ endif()
 
 #------------------------------------------------------------------------
 
-ecm_add_tests(dimgfilteractiontest.cpp
+ecm_add_tests(${CMAKE_CURRENT_SOURCE_DIR}/dimgfilteractiontest.cpp
 
               GUI
 
@@ -93,7 +93,7 @@ ecm_add_tests(dimgfilteractiontest.cpp
 
 #------------------------------------------------------------------------
 
-ecm_add_tests(dimgfreerotationtest.cpp
+ecm_add_tests(${CMAKE_CURRENT_SOURCE_DIR}/dimgfreerotationtest.cpp
 
               GUI
 
@@ -110,9 +110,9 @@ ecm_add_tests(dimgfreerotationtest.cpp
 
 #------------------------------------------------------------------------
 
-add_library(libabstracthistory STATIC dimgabstracthistorytest.cpp)
+add_library(libabstracthistory STATIC ${CMAKE_CURRENT_SOURCE_DIR}/dimgabstracthistorytest.cpp)
 
-ecm_add_tests(dimghistorytest.cpp
+ecm_add_tests(${CMAKE_CURRENT_SOURCE_DIR}/dimghistorytest.cpp
 
               GUI
 
@@ -135,7 +135,7 @@ ecm_add_tests(dimghistorytest.cpp
 
 if(NOT MSVC)
 
-    ecm_add_tests(dimghistorygraphtest.cpp
+    ecm_add_tests(${CMAKE_CURRENT_SOURCE_DIR}/dimghistorygraphtest.cpp
 
                   NAME_PREFIX
 

@@ -12,7 +12,7 @@ include_directories(
     $<TARGET_PROPERTY:Qt5::Core,INTERFACE_INCLUDE_DIRECTORIES>
 )
 
-add_executable(IOJobsTest iojobstest.cpp)
+add_executable(IOJobsTest ${CMAKE_CURRENT_SOURCE_DIR}/iojobstest.cpp)
 
 ecm_mark_nongui_executable(IOJobsTest)
 

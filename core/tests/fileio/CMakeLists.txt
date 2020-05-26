@@ -17,7 +17,7 @@ include_directories(
 
 #------------------------------------------------------------------------
 
-set(pgfscaled_SRCS pgfscaled.cpp ${pgfutils_SRCS})
+set(pgfscaled_SRCS ${CMAKE_CURRENT_SOURCE_DIR}/pgfscaled.cpp ${pgfutils_SRCS})
 add_executable(pgfscaled ${pgfscaled_SRCS})
 ecm_mark_nongui_executable(pgfscaled)
 
@@ -29,7 +29,7 @@ target_link_libraries(pgfscaled
 
 #------------------------------------------------------------------------
 
-set(qtpgftest_SRCS qtpgftest.cpp ${pgfutils_SRCS})
+set(qtpgftest_SRCS ${CMAKE_CURRENT_SOURCE_DIR}/qtpgftest.cpp ${pgfutils_SRCS})
 add_executable(qtpgftest ${qtpgftest_SRCS})
 ecm_mark_nongui_executable(qtpgftest)
 
@@ -41,7 +41,7 @@ target_link_libraries(qtpgftest
 
 #------------------------------------------------------------------------
 
-set(loadpgfdata_SRCS loadpgfdata.cpp ${pgfutils_SRCS})
+set(loadpgfdata_SRCS ${CMAKE_CURRENT_SOURCE_DIR}/loadpgfdata.cpp ${pgfutils_SRCS})
 add_executable(loadpgfdata ${loadpgfdata_SRCS})
 ecm_mark_nongui_executable(loadpgfdata)
 
@@ -53,7 +53,7 @@ target_link_libraries(loadpgfdata
 
 #------------------------------------------------------------------------
 
-set(loadsavethreadtest_SRCS loadsavethreadtest.cpp)
+set(loadsavethreadtest_SRCS ${CMAKE_CURRENT_SOURCE_DIR}/loadsavethreadtest.cpp)
 add_executable(loadsavethreadtest ${loadsavethreadtest_SRCS})
 ecm_mark_nongui_executable(loadsavethreadtest)
 
@@ -65,7 +65,7 @@ target_link_libraries(loadsavethreadtest
 
 #------------------------------------------------------------------------
 
-ecm_add_tests(filesaveoptionsboxtest.cpp
+ecm_add_tests(${CMAKE_CURRENT_SOURCE_DIR}/filesaveoptionsboxtest.cpp
 
               NAME_PREFIX
 
@@ -81,7 +81,7 @@ ecm_add_tests(filesaveoptionsboxtest.cpp
 
 #------------------------------------------------------------------------
 
-ecm_add_tests(statesavingobjecttest.cpp
+ecm_add_tests(${CMAKE_CURRENT_SOURCE_DIR}/statesavingobjecttest.cpp
 
               NAME_PREFIX
 

@@ -22,8 +22,8 @@ remove_definitions(
 # =======================================================
 # Twitter demo test tool
 
-set(twdemo_SRCS ${CMAKE_CURRENT_SOURCE_DIR}/../../../../libs/dplugins/webservices/o2/examples/twitterdemo/tweeter.cpp
-                ${CMAKE_CURRENT_SOURCE_DIR}/../../../../libs/dplugins/webservices/o2/examples/twitterdemo/main.cpp
+set(twdemo_SRCS ${CMAKE_SOURCE_DIR}/core/libs/dplugins/webservices/o2/examples/twitterdemo/tweeter.cpp
+                ${CMAKE_SOURCE_DIR}/core/libs/dplugins/webservices/o2/examples/twitterdemo/main.cpp
 )
 
 add_executable(twdemo ${twdemo_SRCS})
