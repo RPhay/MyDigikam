@@ -234,9 +234,7 @@ void SlideShowPlugin::slotShowManual()
         return;
     }
 
-    QUrl startFrom;
-
-    startFrom = ac->data().toUrl();
+    QUrl startFrom(ac->data().toUrl());
     ac->setData(QVariant());
 
     SlideShowSettings* const settings = new SlideShowSettings();
