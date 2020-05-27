@@ -768,4 +768,5 @@ BUGFIXES:
 729 ==> 422087 - Move to different album does not move the original picture.
 730 ==> 343458 - A tool like pixelize (e.g. for my favourite images).
 731 ==> 422105 - When exiting full screen view by ESC, picture skips back to first viewed after a sequence.
-732 ==> 
+732 ==> 406583 - Cannot write special characters (è, í, ó) in Tag search box.
+733 ==> 
