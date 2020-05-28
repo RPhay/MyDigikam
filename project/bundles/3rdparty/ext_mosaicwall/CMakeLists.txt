@@ -8,15 +8,39 @@
 
 SET(PREFIX_ext_mosaicwall "${EXTPREFIX}")
 
-ExternalProject_Add(ext_mosaicwall
+if (MINGW)
 
-    DOWNLOAD_DIR ${EXTERNALS_DOWNLOAD_DIR}
-#    GIT_REPOSITORY https://github.com/scheckmedia/ImageMosaicWall.git
-    GIT_REPOSITORY https://github.com/cgilles/ImageMosaicWall.git
+    ExternalProject_Add(ext_mosaicwall
 
-    INSTALL_DIR ${PREFIX_ext_mosaicwall}
+        DOWNLOAD_DIR ${EXTERNALS_DOWNLOAD_DIR}
+#       GIT_REPOSITORY https://github.com/scheckmedia/ImageMosaicWall.git
+        GIT_REPOSITORY https://github.com/cgilles/ImageMosaicWall.git
 
-    CMAKE_ARGS -DCMAKE_INSTALL_PREFIX=${PREFIX_ext_mosaicwall} -DCMAKE_BUILD_TYPE=RelWithDebInfo
+        CONFIGURE_COMMAND cp ${CMAKE_CURRENT_SOURCE_DIR}/../../../../bootstrap.mxe <SOURCE_DIR>/. &&
+                          <SOURCE_DIR>/bootstrap.mxe ${MXE_BUILDROOT} RelWithDebInfo ${BASH_OPTIONS}
 
-    UPDATE_COMMAND ""
-)
+        BUILD_COMMAND cd <SOURCE_DIR>/build.mxe && $(MAKE)
+
+        INSTALL_COMMAND cd <SOURCE_DIR>/build.mxe && make install/fast
+
+        BUILD_IN_SOURCE 1
+
+        UPDATE_COMMAND ""
+    )
+
+else() # MacOS and Linux
+
+    ExternalProject_Add(ext_mosaicwall
+
+        DOWNLOAD_DIR ${EXTERNALS_DOWNLOAD_DIR}
+#       GIT_REPOSITORY https://github.com/scheckmedia/ImageMosaicWall.git
+        GIT_REPOSITORY https://github.com/cgilles/ImageMosaicWall.git
+
+        INSTALL_DIR ${PREFIX_ext_mosaicwall}
+
+        CMAKE_ARGS -DCMAKE_INSTALL_PREFIX=${PREFIX_ext_mosaicwall} -DCMAKE_BUILD_TYPE=RelWithDebInfo
+
+        UPDATE_COMMAND ""
+    )
+
+endif()
