@@ -240,13 +240,6 @@ public:
      */
     void setFaceTags(QMultiMap<QString, QVariant> newFaceTags, QSize size);
 
-    /**
-     * Rotate face tags
-     */
-    void adjustFaceRectangles(const ItemInfo& info, bool rotatedPixels,
-                                                    int newOrientation,
-                                                    int oldOrientation);
-
 protected:
 
     /**
