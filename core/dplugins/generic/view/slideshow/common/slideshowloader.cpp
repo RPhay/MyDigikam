@@ -581,7 +581,7 @@ void SlideShowLoader::mousePressEvent(QMouseEvent* e)
         {
             // EndView => backward.
 
-            d->fileIndex = d->settings->count() - 1;
+            d->fileIndex = d->settings->count();
         }
 
         d->osd->pause(true);
