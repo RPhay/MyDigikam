@@ -167,6 +167,10 @@ fi
 cd $BUILDING_DIR
 rm -rf $BUILDING_DIR/* || true
 
+if [ ! -d ${MXE_INSTALL_PREFIX}/lib64 ] ; then
+    ln -s ${MXE_INSTALL_PREFIX}/lib ${MXE_INSTALL_PREFIX}/lib64
+fi
+
 ${MXE_BUILD_TARGETS}-cmake $ORIG_WD/../3rdparty \
                            -DMXE_TOOLCHAIN=${MXE_TOOLCHAIN} \
                            -DMXE_BUILDROOT=${MXE_BUILDROOT} \
