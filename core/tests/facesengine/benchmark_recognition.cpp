@@ -84,6 +84,11 @@ public:
 
     QVector<QListWidgetItem*> splitData(const QDir& dataDir, float splitRatio);
 
+    float getError() const
+    {
+        return m_error;
+    }
+
 private:
 
     cv::Mat preprocess(QImage* faceImg);
@@ -101,7 +106,7 @@ private:
 
 Benchmark::Benchmark()
     : QObject(),
-      m_error(0)
+      m_error(-1)
 {
     m_detector   = new OpenCVDNNFaceDetector(DetectorNNModel::YOLO);
     m_recognizer = new FaceRecognizer(true);
@@ -150,6 +155,46 @@ void Benchmark::registerTrainingSet()
             m_recognizer->saveIdentity(newIdentity);
         }
     }
+}
+
+void Benchmark::verifyTestSet()
+{
+    int nbError = 0;
+    int testSetSize = 0;
+
+    for (QHash<QString, QVector<QImage*> >::iterator iter  = m_trainSet.begin();
+                                                     iter != m_trainSet.end();
+                                                   ++iter)
+    {
+        for (int i = 0; i < iter.value().size(); ++i)
+        {
+            Identity newIdentity = m_recognizer->findIdenity(preprocess(iter.value().at(i)));
+
+            if (newIdentity.isNull() && m_trainSet.contains(iter.key()))
+            {
+                // cannot recognize when label is already register
+                ++nbError;
+            }
+            else if (newIdentity.attribute(QLatin1String("fullName")) != iter.key())
+            {
+                // wrong label
+                ++nbError;
+            }
+
+            ++testSetSize;
+        }
+    }
+
+    if (testSetSize == 0)
+    {
+        qWarning() << "test set is empty";
+
+        return;
+    }
+
+    m_error = float(nbError)/testSetSize;
+
+    qDebug() << "Error" << m_error;
 }
 
 cv::Mat Benchmark::preprocess(QImage* faceImg)
