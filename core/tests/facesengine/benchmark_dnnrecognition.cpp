@@ -41,6 +41,8 @@
 #include <QPushButton>
 #include <QDebug>
 
+#include <QHash>
+
 
 // lib digikam includes
 #include "opencvdnnfacedetector.h"
@@ -54,6 +56,68 @@ using namespace RecognitionTest;
 
 // TODO: Recognition is incorrect where human are wearing glasses
 // TODO: Verify cosnine distance Vs L2 distance
+
+
+static QVector<QListWidgetItem*> splitData(const QDir& dataDir, float splitRatio ,
+                                          QHash<QString, QVector<QImage> >& trainSet,
+                                          QHash<QString, QVector<QImage> >& testSet)
+{
+    qsrand(QTime::currentTime().msec());
+
+    QVector<QListWidgetItem*> imageItems;
+
+    // Each subdirectory in data directory should match with a label
+    QFileInfoList subDirs = dataDir.entryInfoList(QDir::NoDotAndDotDot | QDir::Dirs, QDir::Name);
+
+    for (int i = 0; i < subDirs.size(); ++i)
+    {
+        QDir subDir(subDirs[i].absoluteFilePath());
+
+        QString label = subDirs[i].fileName();
+
+        QFileInfoList filesInfo = subDir.entryInfoList(QDir::Files | QDir::Readable);
+
+        // suffle dataset
+        QList<QFileInfo>::iterator it = filesInfo.begin();
+        QList<QFileInfo>::iterator it1;
+
+        for (int i = 0; i < filesInfo.size(); ++i)
+        {
+            int inc = (int) (float(filesInfo.size()) * qrand() / (RAND_MAX + 1.0));
+
+            it1     = filesInfo.begin();
+            it1    += inc;
+
+            std::swap(*(it++), *(it1));
+         }
+
+        // split train/test
+        for (int i = 0; i < filesInfo.size(); ++i)
+        {
+            QImage img(filesInfo[i].absoluteFilePath());
+
+            if (i < filesInfo.size() * splitRatio)
+            {
+                if (! img.isNull())
+                {
+                    trainSet[label].append(img);
+                    imageItems.append(new QListWidgetItem(QIcon(filesInfo[i].absoluteFilePath()), filesInfo[i].absoluteFilePath()));
+                }
+            }
+            else
+            {
+                if (! img.isNull())
+                {
+                    testSet[label].append(img);
+                    imageItems.append(new QListWidgetItem(QIcon(filesInfo[i].absoluteFilePath()), filesInfo[i].absoluteFilePath()));
+                }
+            }
+        }
+    }
+
+    return imageItems;
+}
+
 
 class MainWindow : public QMainWindow
 {
@@ -443,16 +507,13 @@ QWidget* MainWindow::setupImageList(const QDir& directory)
     m_imageListView->setWrapping(false);
     m_imageListView->setDragEnabled(false);
 
-    QStringList subjects = directory.entryList(QDir::Files | QDir::NoDotAndDotDot);
+    QHash<QString, QVector<QImage> > trainSet, testSet;
 
-    for (QStringList::const_iterator iter  = subjects.cbegin();
-                                     iter != subjects.cend();
-                                   ++iter)
+    QVector<QListWidgetItem*> items = splitData(directory, 0.5, trainSet, testSet);
+
+    for (int i = 0; i < items.size(); ++i)
     {
-        QString filePath = directory.filePath(*iter);
-        QListWidgetItem* item = new QListWidgetItem(QIcon(filePath), filePath);
-
-        m_imageListView->addItem(item);
+        m_imageListView->addItem(items[i]);
     }
 
     connect(m_imageListView, &QListWidget::currentItemChanged,
