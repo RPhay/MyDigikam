@@ -79,6 +79,11 @@ QList<FaceTagsIface> FaceTagsEditor::confirmedFaceTagsIfaces(qlonglong imageId) 
     return databaseFaces(imageId, FaceTagsIface::ConfirmedName);
 }
 
+QList<FaceTagsIface> FaceTagsEditor::ignoredFaceTagsIfaces(qlonglong imageId) const
+{
+    return databaseFaces(imageId, FaceTagsIface::IgnoredName);
+}
+
 QList<FaceTagsIface> FaceTagsEditor::databaseFaces(qlonglong imageid, FaceTagsIface::TypeFlags flags) const
 {
     QList<FaceTagsIface> faces;

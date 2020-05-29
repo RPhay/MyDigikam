@@ -71,6 +71,7 @@ public:
     QList<FaceTagsIface> unconfirmedFaceTagsIfaces(qlonglong imageid)                       const;
     QList<FaceTagsIface> databaseFacesForTraining(qlonglong imageid)                        const;
     QList<FaceTagsIface> confirmedFaceTagsIfaces(qlonglong imageid)                         const;
+    QList<FaceTagsIface> ignoredFaceTagsIfaces(qlonglong imageid)                           const;
 
     /**
      * Returns a list of all tag rectangles for the image. Unlike findAndTagFaces, this does not take a DImg,
