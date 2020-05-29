@@ -247,9 +247,11 @@ FaceTagsIface FaceTagsEditor::confirmName(const FaceTagsIface& face, int tagId, 
 {
     FaceTagsIface newEntry = confirmedEntry(face, tagId, confirmedRegion);
 
-    if (FaceTags::isTheUnknownPerson(newEntry.tagId()))
+    if (FaceTags::isTheUnknownPerson(newEntry.tagId())     ||
+        FaceTags::isTheUnconfirmedPerson(newEntry.tagId()) ||
+        FaceTags::isTheIgnoredPerson(newEntry.tagId()))
     {
-        qCDebug(DIGIKAM_DATABASE_LOG) << "Refusing to confirm unknownPerson tag on face";
+        qCDebug(DIGIKAM_DATABASE_LOG) << "Refusing to confirm tag on face";
         return face;
     }
 
