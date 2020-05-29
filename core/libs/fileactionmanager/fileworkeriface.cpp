@@ -36,6 +36,7 @@
 #include "itemattributeswatch.h"
 #include "iteminfotasksplitter.h"
 #include "collectionscanner.h"
+#include "filereadwritelock.h"
 #include "scancontroller.h"
 #include "faceutils.h"
 #include "jpegutils.h"
@@ -172,6 +173,8 @@ void FileActionMngrFileWorker::transform(FileActionItemInfoList infos, int actio
         {
             break;
         }
+
+        FileWriteLocker lock(info.filePath());
 
         QString path                                    = info.filePath();
         QString format                                  = info.format();
