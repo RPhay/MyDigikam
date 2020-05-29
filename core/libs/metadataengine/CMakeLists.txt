@@ -29,45 +29,45 @@ endif()
 
 set(libdmetadata_SRCS
 
-    engine/metaengine.cpp
-    engine/metaengine_p.cpp
-    engine/metaengine_data.cpp
-    engine/metaengine_data_p.cpp
-    engine/metaengine_exif.cpp
-    engine/metaengine_fileio.cpp
-    engine/metaengine_item.cpp
-    engine/metaengine_comments.cpp
-    engine/metaengine_iptc.cpp
-    engine/metaengine_gps.cpp
-    engine/metaengine_xmp.cpp
-    engine/metaengine_previews.cpp
-    engine/metaengine_rotation.cpp
-    engine/metaenginesettings.cpp
-    engine/metaenginesettingscontainer.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/engine/metaengine.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/engine/metaengine_p.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/engine/metaengine_data.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/engine/metaengine_data_p.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/engine/metaengine_exif.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/engine/metaengine_fileio.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/engine/metaengine_item.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/engine/metaengine_comments.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/engine/metaengine_iptc.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/engine/metaengine_gps.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/engine/metaengine_xmp.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/engine/metaengine_previews.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/engine/metaengine_rotation.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/engine/metaenginesettings.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/engine/metaenginesettingscontainer.cpp
 
-    dmetadata/dmetadata.cpp
-    dmetadata/dmetadata_video.cpp
-    dmetadata/dmetadata_fileio.cpp
-    dmetadata/dmetadata_comments.cpp
-    dmetadata/dmetadata_template.cpp
-    dmetadata/dmetadata_exif.cpp
-    dmetadata/dmetadata_iptc.cpp
-    dmetadata/dmetadata_labels.cpp
-    dmetadata/dmetadata_faces.cpp
-    dmetadata/dmetadata_history.cpp
-    dmetadata/dmetadata_photo.cpp
-    dmetadata/dmetadata_tags.cpp
-    dmetadata/dmetadata_generic.cpp
-    dmetadata/dmetadata_xmp.cpp
-    dmetadata/dmetadatasettings.cpp
-    dmetadata/dmetadatasettingscontainer.cpp
-    dmetadata/geodetictools.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/dmetadata/dmetadata.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/dmetadata/dmetadata_video.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/dmetadata/dmetadata_fileio.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/dmetadata/dmetadata_comments.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/dmetadata/dmetadata_template.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/dmetadata/dmetadata_exif.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/dmetadata/dmetadata_iptc.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/dmetadata/dmetadata_labels.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/dmetadata/dmetadata_faces.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/dmetadata/dmetadata_history.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/dmetadata/dmetadata_photo.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/dmetadata/dmetadata_tags.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/dmetadata/dmetadata_generic.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/dmetadata/dmetadata_xmp.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/dmetadata/dmetadatasettings.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/dmetadata/dmetadatasettingscontainer.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/dmetadata/geodetictools.cpp
 
-    containers/metadatainfo.cpp
-    containers/photoinfocontainer.cpp
-    containers/videoinfocontainer.cpp
-    containers/template.cpp
-    containers/captionvalues.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/containers/metadatainfo.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/containers/photoinfocontainer.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/containers/videoinfocontainer.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/containers/template.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/containers/captionvalues.cpp
 )
 
 include_directories(

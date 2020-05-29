@@ -15,13 +15,13 @@ include_directories($<TARGET_PROPERTY:Qt5::Widgets,INTERFACE_INCLUDE_DIRECTORIES
 )
 
 set(libvideotools_SRCS
-    manager/vidslidesettings.cpp
-    manager/vidslidethread.cpp
-    manager/vidslidetask.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/manager/vidslidesettings.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/manager/vidslidethread.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/manager/vidslidetask.cpp
 
-    player/vidplayerdlg.cpp
-    player/mediaplayerview.cpp
-    player/slidevideo.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/player/vidplayerdlg.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/player/mediaplayerview.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/player/slidevideo.cpp
 )
 
 # Used by digikamcore

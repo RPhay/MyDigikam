@@ -90,6 +90,17 @@ if(o2_WITH_GOOGLE)
     )
 endif(o2_WITH_GOOGLE)
 
+if(o2_WITH_VIMEO)
+    set( o2_SRCS
+        ${o2_SRCS}
+        o2vimeo.cpp
+    )
+    set( o2_HDRS
+        ${o2_HDRS}
+        o2vimeo.h
+    )
+endif(o2_WITH_VIMEO)
+
 if(o2_WITH_FACEBOOK)
     set( o2_SRCS
         ${o2_SRCS}
@@ -163,6 +174,16 @@ if(o2_WITH_SMUGMUG)
     )
 endif(o2_WITH_SMUGMUG)
 
+if(o2_WITH_MSGRAPH)
+    set( o2_SRCS
+        ${o2_SRCS}
+        o2msgraph.cpp
+    )
+    set( o2_HDRS
+        ${o2_HDRS}
+        o2msgraph.h
+    )
+endif(o2_WITH_MSGRAPH)
 
 if(o2_WITH_KEYCHAIN)
     if (Qt5Core_DIR)
@@ -203,6 +224,10 @@ endif(BUILD_SHARED_LIBS AND APPLE AND POLICY CMP0042)
 
 add_library( o2 ${o2_SRCS} ${o2_HDRS} )
 
+if(BUILD_SHARED_LIBS)
+    add_definitions( -DO2_SHARED_LIB )
+endif(BUILD_SHARED_LIBS)
+
 if(o2_WITH_QT5)
     target_link_libraries( o2 Qt5::Core Qt5::Network ${LINK_TARGETS})
 else(o2_WITH_QT5)
@@ -238,3 +263,7 @@ install(FILES ${o2_HDRS}
 message(STATUS "Writing pkg-config file...")
 configure_file(${CMAKE_SOURCE_DIR}/o2.pc.cmake ${CMAKE_BINARY_DIR}/o2.pc @ONLY)
 install(FILES ${CMAKE_BINARY_DIR}/o2.pc DESTINATION "${CMAKE_INSTALL_PREFIX}/lib${o2_LIB_SUFFIX}/pkgconfig/")
+
+configure_file(${CMAKE_SOURCE_DIR}/o2-config.h.cmake ${CMAKE_BINARY_DIR}/o2-config.h @ONLY)
+install(FILES ${CMAKE_BINARY_DIR}/o2-config.h DESTINATION "${CMAKE_INSTALL_PREFIX}/include/o2")
+

@@ -52,8 +52,8 @@
 
 // libkvkontakte includes
 
-#include <Vkontakte/uploadphotosjob.h>
-#include <Vkontakte/vkapi.h>
+#include "vkontakte_uploadphotosjob.h"
+#include "vkontakte_vkapi.h"
 
 // Local includes
 

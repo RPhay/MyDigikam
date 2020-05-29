@@ -69,7 +69,7 @@ public:
     /**
      * @brief Aborts this job quietly.
      */
-    bool doKill() Q_DECL_OVERRIDE;
+    bool doKill() override;
 
 protected:
 

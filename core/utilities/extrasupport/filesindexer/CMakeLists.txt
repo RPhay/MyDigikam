@@ -7,7 +7,7 @@
 
 APPLY_COMMON_POLICIES()
 
-set(baloowrap_SRCS baloowrap.cpp)
+set(baloowrap_SRCS ${CMAKE_CURRENT_SOURCE_DIR}/baloowrap.cpp)
 
 include_directories($<TARGET_PROPERTY:Qt5::Core,INTERFACE_INCLUDE_DIRECTORIES>
 

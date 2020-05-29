@@ -33,6 +33,8 @@ target_link_libraries(testautocrop
 
 if(LensFun_FOUND)
 
+    include_directories(${LENSFUN_INCLUDE_DIRS})
+
     set(testlensfuniface_SRCS testlensfuniface.cpp)
     add_executable(testlensfuniface ${testlensfuniface_SRCS})
     ecm_mark_nongui_executable(testlensfuniface)
