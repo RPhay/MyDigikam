@@ -15,7 +15,7 @@ FlatHub Repository
 Bundle is processed daily by the continuous integration script used by FlatHub server.
 Bundle is deployed automatically on FlatHub repository.
 
-- Status;          https://flathub.org/builds/
+- Status;          https://flathub.org/builds/#/apps/org.kde.digikam
 - Configuration:   https://github.com/flathub/org.kde.digikam
 - Repository:      https://dl.flathub.org/build-repo/
 
