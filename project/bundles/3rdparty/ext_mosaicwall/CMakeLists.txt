@@ -6,6 +6,12 @@
 # For details see the accompanying COPYING-CMAKE-SCRIPTS file.
 #
 
+set(MosaicWall_Conf -DENABLE_DPLUGIN=ON
+                    ${GLOBAL_PROFILE}
+)
+
+JoinListAsString("${MosaicWall_Conf}" " " BASH_OPTIONS)
+
 SET(PREFIX_ext_mosaicwall "${EXTPREFIX}")
 
 if (MINGW)
@@ -38,7 +44,7 @@ else() # MacOS and Linux
 
         INSTALL_DIR ${PREFIX_ext_mosaicwall}
 
-        CMAKE_ARGS -DCMAKE_INSTALL_PREFIX=${PREFIX_ext_mosaicwall} -DCMAKE_BUILD_TYPE=RelWithDebInfo
+        CMAKE_ARGS -DCMAKE_INSTALL_PREFIX=${PREFIX_ext_mosaicwall} -DCMAKE_BUILD_TYPE=RelWithDebInfo -DENABLE_DPLUGIN=ON
 
         UPDATE_COMMAND ""
     )
