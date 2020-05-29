@@ -685,6 +685,10 @@ void Digikam::MetadataHub::loadFaceTags(const ItemInfo& info, const QSize& size)
     //qCDebug(DIGIKAM_GENERAL_LOG) << "Image Dimensions ----------------" << info.dimensions();
 
     QList<FaceTagsIface> facesList = editor.confirmedFaceTagsIfaces(info.id());
+
+    /// ignored faces metadata needs to be written to Images.
+    facesList.append(editor.ignoredFaceTagsIfaces(info.id()));
+
     d->faceTagsList.clear();
 
     if (!facesList.isEmpty())
