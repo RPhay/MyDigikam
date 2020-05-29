@@ -84,10 +84,11 @@ public:
 
     QVector<QListWidgetItem*> splitData(const QDir& dataDir, float splitRatio);
 
-    float getError() const
-    {
-        return m_error;
-    }
+public:
+
+    float m_error;
+    int   m_trainSize;
+    int   m_testSize;
 
 private:
 
@@ -98,15 +99,15 @@ private:
     QHash<QString, QVector<QImage*> > m_trainSet;
     QHash<QString, QVector<QImage*> > m_testSet;
 
-    float m_error;
-
     OpenCVDNNFaceDetector* m_detector;
     FaceRecognizer*        m_recognizer;
 };
 
 Benchmark::Benchmark()
     : QObject(),
-      m_error(-1)
+      m_error(-1),
+      m_trainSize(0),
+      m_testSize(0)
 {
     m_detector   = new OpenCVDNNFaceDetector(DetectorNNModel::YOLO);
     m_recognizer = new FaceRecognizer(true);
@@ -142,6 +143,8 @@ Benchmark::~Benchmark()
 
 void Benchmark::registerTrainingSet()
 {
+    m_trainSize = 0;
+
     for (QHash<QString, QVector<QImage*> >::iterator iter  = m_trainSet.begin();
                                                      iter != m_trainSet.end();
                                                    ++iter)
@@ -153,6 +156,8 @@ void Benchmark::registerTrainingSet()
             newIdentity.setAttribute(QLatin1String("fullName"), iter.key());
 
             m_recognizer->saveIdentity(newIdentity);
+
+            ++m_trainSize;
         }
     }
 }
@@ -160,7 +165,7 @@ void Benchmark::registerTrainingSet()
 void Benchmark::verifyTestSet()
 {
     int nbError = 0;
-    int testSetSize = 0;
+    m_testSize = 0;
 
     for (QHash<QString, QVector<QImage*> >::iterator iter  = m_trainSet.begin();
                                                      iter != m_trainSet.end();
@@ -181,18 +186,18 @@ void Benchmark::verifyTestSet()
                 ++nbError;
             }
 
-            ++testSetSize;
+            ++m_testSize;
         }
     }
 
-    if (testSetSize == 0)
+    if (m_testSize == 0)
     {
         qWarning() << "test set is empty";
 
         return;
     }
 
-    m_error = float(nbError)/testSetSize;
+    m_error = float(nbError)/m_testSize;
 
     qDebug() << "Error" << m_error;
 }
@@ -301,6 +306,7 @@ QCommandLineParser* parseOptions(const QCoreApplication& app)
 {
     QCommandLineParser* parser = new QCommandLineParser();
     parser->addOption(QCommandLineOption(QLatin1String("dataset"), QLatin1String("Data set folder"), QLatin1String("path relative to data folder")));
+    parser->addOption(QCommandLineOption(QLatin1String("split"), QLatin1String("Split ratio"), QLatin1String("split ratio of training data")));
     parser->addHelpOption();
     parser->process(app);
 
@@ -326,8 +332,22 @@ int main(int argc, char* argv[])
 
    QDir dataset(parser->value(QLatin1String("dataset")));
 
-   //MainWindow* window = new MainWindow(dataset, nullptr);
-   //window->show();
+   float splitRatio = 0.8;
+   if (parser->isSet(QLatin1String("split")))
+   {
+       splitRatio = parser->value(QLatin1String("split")).toFloat();
+   }
+
+   Benchmark test;
+
+   test.splitData(dataset, splitRatio);
+
+   test.registerTrainingSet();
+   test.verifyTestSet();
+
+   qDebug() << "Test Finish, recognition error :" << test.m_error
+            << "on total" << test.m_trainSize << "training faces, and"
+                          << test.m_testSize << "test faces";
 
    return app.exec();
 }
