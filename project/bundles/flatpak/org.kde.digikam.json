@@ -12,8 +12,35 @@
     "finish-args": ["--share=ipc", "--socket=cups", "--socket=x11", "--socket=wayland", "--filesystem=host" ],
 
     "modules": [
-        "boost.json",
-        "eigen.json",
+        {
+            "name": "boost",
+            "config-opts": [],
+            "cleanup": [ "/lib/libboost_*.a" ],
+            "sources": [
+                {
+                    "type": "archive",
+                    "url": "https://downloads.sourceforge.net/project/boost/boost/1.69.0/boost_1_69_0.tar.bz2",
+                    "sha256": "8f32d4617390d1c2d16f26a27ab60d97807b35440d45891fa340fc2648b04406"
+                },
+                {
+                    "type": "file",
+                    "path": "boost-configure",
+                    "dest-filename": "configure"
+                }
+            ]
+        },
+        {
+            "name": "eigen",
+            "buildsystem": "cmake-ninja",
+            "builddir": true,
+            "sources": [
+                {
+                    "type": "archive",
+                    "url": "https://bitbucket.org/eigen/eigen/get/3.3.4.tar.bz2",
+                    "sha256": "dd254beb0bafc695d0f62ae1a222ff85b52dbaa3a16f76e781dce22d0d20a4a6"
+                }
+            ]
+        },
         {
             "name": "opencv",
             "buildsystem": "cmake-ninja",
