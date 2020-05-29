@@ -832,13 +832,18 @@ bool DatabaseSettingsWidget::checkDatabasePath()
     QFileInfo path(dbFolder);
 
 #ifdef Q_OS_WIN
+
     // Work around bug #189168
+
     QTemporaryFile temp;
-    temp.setFileTemplate(dbFolder + QLatin1String("XXXXXX"));
+    temp.setFileTemplate(path.filePath() + QLatin1String("/XXXXXX"));
 
     if (!temp.open())
+
 #else
+
     if (!path.isWritable())
+
 #endif
     {
         QMessageBox::information(qApp->activeWindow(), i18n("No Database Write Access"),

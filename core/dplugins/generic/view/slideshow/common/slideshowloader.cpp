@@ -561,17 +561,17 @@ void SlideShowLoader::mousePressEvent(QMouseEvent* e)
 {
     d->osd->toolBar()->closeConfigurationDialog();
 
-    if (d->fileIndex == -1)
-    {
-        // EndView => close Slideshow view.
-
-        close();
-
-        return;
-    }
-
     if      (e->button() == Qt::LeftButton)
     {
+        if (d->fileIndex == -1)
+        {
+            // EndView => close Slideshow view.
+
+            close();
+
+            return;
+        }
+
         d->osd->pause(true);
         slotLoadNextItem();
     }
@@ -581,7 +581,7 @@ void SlideShowLoader::mousePressEvent(QMouseEvent* e)
         {
             // EndView => backward.
 
-            d->fileIndex = d->settings->count() - 1;
+            d->fileIndex = d->settings->count();
         }
 
         d->osd->pause(true);

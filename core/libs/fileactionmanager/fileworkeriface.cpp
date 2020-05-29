@@ -37,6 +37,7 @@
 #include "iteminfotasksplitter.h"
 #include "collectionscanner.h"
 #include "scancontroller.h"
+#include "faceutils.h"
 #include "jpegutils.h"
 #include "dimg.h"
 
@@ -288,10 +289,20 @@ void FileActionMngrFileWorker::transform(FileActionItemInfoList infos, int actio
 
         // Adjust Faces
 
-        MetadataHub hub;
-        hub.adjustFaceRectangles(info, rotatedPixels,
-                                       newOrientation,
-                                       currentOrientation);
+        QSize newSize = FaceUtils().rotateFaces(info, newOrientation,
+                                                      currentOrientation);
+        if (newSize.isValid())
+        {
+            MetadataHub hub;
+            hub.load(info);
+
+            // Adjusted newSize
+
+            newSize = rotatedPixels ? newSize : info.dimensions();
+
+            hub.loadFaceTags(info, newSize);
+            hub.write(info.filePath(), MetadataHub::WRITE_TAGS, true);
+        }
 
         if (rotateByMetadata)
         {

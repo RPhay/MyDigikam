@@ -36,6 +36,7 @@
 #include "fileactionmngr_p.h"
 #include "scancontroller.h"
 #include "disjointmetadata.h"
+#include "faceutils.h"
 
 namespace Digikam
 {
@@ -305,10 +306,10 @@ void FileActionMngrDatabaseWorker::setExifOrientation(FileActionItemInfoList inf
                 break;
             }
 
-            MetadataHub hub;
-            hub.adjustFaceRectangles(info, false,
-                                           orientation,
-                                           info.orientation());
+            // Adjust Faces
+
+            FaceUtils().rotateFaces(info, orientation,
+                                          info.orientation());
 
             info.setOrientation(orientation);
         }
