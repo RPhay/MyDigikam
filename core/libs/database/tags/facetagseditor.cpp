@@ -462,14 +462,14 @@ FaceTagsIface FaceTagsEditor::changeTag(const FaceTagsIface& face, int newTagId)
     ItemTagPair newPair(newFace.imageId(), newFace.tagId());
 
     /**
-     * The new face should be associated with the new tag
-     * only if the new tag corresponds to a Confirmed Person.
+     * We store metadata of FaceTags, if it's a confirmed
+     * or ignored person.
      */
-    bool isConfirmed = !FaceTags::isTheUnknownPerson(newTagId)     &&
-                       !FaceTags::isTheUnconfirmedPerson(newTagId) &&
-                       !FaceTags::isTheIgnoredPerson(newTagId);
+    bool isConfirmedOrIgnored = !FaceTags::isTheUnknownPerson(newTagId) &&
+                                !FaceTags::isTheUnconfirmedPerson(newTagId);
 
-    addFaceAndTag(newPair, newFace, FaceTagsIface::attributesForFlags(newFace.type()), isConfirmed);
+    addFaceAndTag(newPair, newFace, FaceTagsIface::attributesForFlags(newFace.type()),
+                  isConfirmedOrIgnored);
 
     return newFace;
  }
