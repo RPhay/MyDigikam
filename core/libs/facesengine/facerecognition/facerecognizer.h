@@ -45,7 +45,7 @@ public:
      * @param inputImage
      * @return
      */
-    Identity findIdenity(const cv::Mat& inputImage);
+    Identity findIdenity(const cv::Mat& preprocessedImage);
 
     /**
      * @brief newIdentity : construct an instance of Identity with face embedding, and return it
@@ -53,7 +53,7 @@ public:
      * @param inputImage
      * @return
      */
-    Identity newIdentity(const cv::Mat& inputImage);
+    Identity newIdentity(const cv::Mat& preprocessedImage);
 
     /**
      * @brief saveIdentity : save identity with label and face embedding

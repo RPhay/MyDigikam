@@ -125,9 +125,9 @@ int FaceRecognizer::recognize(const cv::Mat& inputImage)
     return predictedLabel;
 }
 
-Identity FaceRecognizer::findIdenity(const cv::Mat& inputImage)
+Identity FaceRecognizer::findIdenity(const cv::Mat& preprocessedImage)
 {
-    std::vector<float> faceEmbedding = d->extractor->getFaceEmbedding(inputImage);
+    std::vector<float> faceEmbedding = d->extractor->getFaceEmbedding(preprocessedImage);
     qDebug() << "look for identity of" << faceEmbedding;
 
     // TODO: scan database for face
@@ -176,9 +176,9 @@ Identity FaceRecognizer::findIdenity(const cv::Mat& inputImage)
     return id;
 }
 
-Identity FaceRecognizer::newIdentity(const cv::Mat& inputImage)
+Identity FaceRecognizer::newIdentity(const cv::Mat& preprocessedImage)
 {
-    std::vector<float> faceEmbedding = d->extractor->getFaceEmbedding(inputImage);
+    std::vector<float> faceEmbedding = d->extractor->getFaceEmbedding(preprocessedImage);
 
     // new identity
     QJsonArray jsonFaceEmbedding;

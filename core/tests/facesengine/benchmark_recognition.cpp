@@ -137,7 +137,19 @@ Benchmark::~Benchmark()
 
 void Benchmark::registerTrainingSet()
 {
+    for (QHash<QString, QVector<QImage*> >::iterator iter  = m_trainSet.begin();
+                                                     iter != m_trainSet.end();
+                                                   ++iter)
+    {
+        for (int i = 0; i < iter.value().size(); ++i)
+        {
+            Identity newIdentity = m_recognizer->newIdentity(preprocess(iter.value().at(i)));
 
+            newIdentity.setAttribute(QLatin1String("fullName"), iter.key());
+
+            m_recognizer->saveIdentity(newIdentity);
+        }
+    }
 }
 
 cv::Mat Benchmark::preprocess(QImage* faceImg)
