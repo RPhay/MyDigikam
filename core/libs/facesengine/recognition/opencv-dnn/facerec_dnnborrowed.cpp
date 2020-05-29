@@ -133,6 +133,7 @@ void DNNFaceRecognizer::predict(cv::InputArray _src,
     cv::Mat src = _src.getMat();    // 254*254
     std::vector<float> vecdata;
     extractor->getFaceEmbedding(src, vecdata);
+
     qCWarning(DIGIKAM_FACESENGINE_LOG) << "m_threshold " << m_threshold;
     qCWarning(DIGIKAM_FACESENGINE_LOG) << "vecdata: " << vecdata[vecdata.size()-2] << " " << vecdata[vecdata.size()-1];
 

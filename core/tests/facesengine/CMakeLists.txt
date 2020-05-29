@@ -88,13 +88,25 @@ target_link_libraries(benchmark_dnndetection
 )
 
 # -----------------------------------------------------------------------------
+set(benchmark_recognition_SRCS benchmark_recognition.cpp)
+add_executable(benchmark_recognition ${benchmark_recognition_SRCS})
+
+target_link_libraries(benchmark_recognition
+
+                      digikamcore
+                      digikamgui
+                      digikamfacesengine
+                      digikamdatabase
+
+                      ${COMMON_TEST_LINK}
+)
 
 # -----------------------------------------------------------------------------
 
-set(dnnrecognition_SRCS benchmark_dnnrecognition.cpp)
-add_executable(benchmark_dnnrecognition ${dnnrecognition_SRCS})
+set(gui_recognition_SRCS gui_recognition.cpp)
+add_executable(gui_recognition ${gui_recognition_SRCS})
 
-target_link_libraries(benchmark_dnnrecognition
+target_link_libraries(gui_recognition
 
                       digikamcore
                       digikamgui

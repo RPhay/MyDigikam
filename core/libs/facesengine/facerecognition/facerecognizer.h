@@ -48,6 +48,14 @@ public:
     Identity findIdenity(const cv::Mat& inputImage);
 
     /**
+     * @brief newIdentity : construct an instance of Identity with face embedding, and return it
+     *                      for idenity register
+     * @param inputImage
+     * @return
+     */
+    Identity newIdentity(const cv::Mat& inputImage);
+
+    /**
      * @brief saveIdentity : save identity with label and face embedding
      * @param id
      */

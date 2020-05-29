@@ -171,8 +171,26 @@ Identity FaceRecognizer::findIdenity(const cv::Mat& inputImage)
 
     qDebug() << "Cannot find identity";
 
-    // TODO add face embedding to identity
     id.setAttribute(QLatin1String("faceEmbedding"), QString::fromLatin1(QJsonDocument(jsonFaceEmbedding).toJson(QJsonDocument::Compact)));
+
+    return id;
+}
+
+Identity FaceRecognizer::newIdentity(const cv::Mat& inputImage)
+{
+    std::vector<float> faceEmbedding = d->extractor->getFaceEmbedding(inputImage);
+
+    // new identity
+    QJsonArray jsonFaceEmbedding;
+
+    for (size_t i = 0; i < faceEmbedding.size(); ++i)
+    {
+        jsonFaceEmbedding << faceEmbedding[i];
+    }
+
+    Identity id;
+    id.setAttribute(QLatin1String("faceEmbedding"),
+                    QString::fromLatin1(QJsonDocument(jsonFaceEmbedding).toJson(QJsonDocument::Compact)));
 
     return id;
 }
