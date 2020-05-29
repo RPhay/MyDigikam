@@ -128,9 +128,13 @@ int FaceRecognizer::recognize(const cv::Mat& inputImage)
 Identity FaceRecognizer::findIdenity(const cv::Mat& preprocessedImage)
 {
     std::vector<float> faceEmbedding = d->extractor->getFaceEmbedding(preprocessedImage);
-    qDebug() << "look for identity of" << faceEmbedding;
+    //qDebug() << "look for identity of" << faceEmbedding;
 
     // TODO: scan database for face
+
+    double maxCosDistance = -1;
+    double minL2Distance  = 1;
+    QHash<int, Identity>::iterator prediction;
 
     for (QHash<int, Identity>::iterator iter  = d->faceLibrary.begin();
                                         iter != d->faceLibrary.end();
@@ -138,7 +142,7 @@ Identity FaceRecognizer::findIdenity(const cv::Mat& preprocessedImage)
     {
         QJsonArray jsonFaceEmbedding = QJsonDocument::fromJson(iter.value().attribute(QLatin1String("faceEmbedding")).toLatin1()).array();
 
-        qDebug() << "face embedding of" << iter.value().attribute(QLatin1String("fullName")) << ":" << jsonFaceEmbedding;
+        //qDebug() << "face embedding of" << iter.value().attribute(QLatin1String("fullName")) << ":" << jsonFaceEmbedding;
 
         std::vector<float> recordedFaceEmbedding;
 
@@ -150,13 +154,32 @@ Identity FaceRecognizer::findIdenity(const cv::Mat& preprocessedImage)
         double cosDistance = FaceExtractor::cosineDistance(recordedFaceEmbedding, faceEmbedding);
         double l2Distance  = FaceExtractor::L2Distance(recordedFaceEmbedding, faceEmbedding);
 
-        qDebug() << "cosine distance with" << iter.value().attribute(QLatin1String("fullName")) << ":" << cosDistance;
-        qDebug() << "L2     distance with" << iter.value().attribute(QLatin1String("fullName")) << ":" << l2Distance;
+        //qDebug() << "cosine distance with" << iter.value().attribute(QLatin1String("fullName")) << ":" << cosDistance;
+        //qDebug() << "L2     distance with" << iter.value().attribute(QLatin1String("fullName")) << ":" << l2Distance;
 
-        if (cosDistance > 0.7)
+/*
+        // verify by Cosine distance
+        if (cosDistance > maxCosDistance)
         {
-            return iter.value();
+            maxCosDistance  = cosDistance;
+            prediction      = iter;
         }
+*/
+        if (l2Distance < minL2Distance)
+        {
+            minL2Distance = l2Distance;
+            prediction    = iter;
+        }
+    }
+/*
+    if (maxCosDistance > 0.7)
+    {
+        return prediction.value();
+    }
+*/
+    if (minL2Distance < 0.7)
+    {
+        return prediction.value();
     }
 
     // new identity
@@ -169,7 +192,7 @@ Identity FaceRecognizer::findIdenity(const cv::Mat& preprocessedImage)
 
     Identity id;
 
-    qDebug() << "Cannot find identity";
+    //qDebug() << "Cannot find identity";
 
     id.setAttribute(QLatin1String("faceEmbedding"), QString::fromLatin1(QJsonDocument(jsonFaceEmbedding).toJson(QJsonDocument::Compact)));
 

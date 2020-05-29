@@ -109,7 +109,7 @@ Benchmark::Benchmark()
       m_trainSize(0),
       m_testSize(0)
 {
-    m_detector   = new OpenCVDNNFaceDetector(DetectorNNModel::YOLO);
+    m_detector   = new OpenCVDNNFaceDetector(DetectorNNModel::SSDMOBILENET);
     m_recognizer = new FaceRecognizer(true);
 }
 
@@ -167,8 +167,8 @@ void Benchmark::verifyTestSet()
     int nbError = 0;
     m_testSize = 0;
 
-    for (QHash<QString, QVector<QImage*> >::iterator iter  = m_trainSet.begin();
-                                                     iter != m_trainSet.end();
+    for (QHash<QString, QVector<QImage*> >::iterator iter  = m_testSet.begin();
+                                                     iter != m_testSet.end();
                                                    ++iter)
     {
         for (int i = 0; i < iter.value().size(); ++i)
@@ -222,7 +222,7 @@ cv::Mat Benchmark::preprocess(QImage* faceImg)
                                                               cvImage.rows - 2*paddedSize.height));
         elapsedDetection = timer.elapsed();
 
-        qDebug() << "(Input CV) Found " << absRects.size() << " faces, in " << elapsedDetection << "ms";
+        //qDebug() << "(Input CV) Found " << absRects.size() << " faces, in " << elapsedDetection << "ms";
     }
     catch (cv::Exception& e)
     {
@@ -245,6 +245,8 @@ cv::Mat Benchmark::preprocess(QImage* faceImg)
 
 QVector<QListWidgetItem*> Benchmark::splitData(const QDir& dataDir, float splitRatio)
 {
+    int nbData = 0;
+
     qsrand(QTime::currentTime().msec());
 
     QVector<QListWidgetItem*> imageItems;
@@ -285,6 +287,7 @@ QVector<QListWidgetItem*> Benchmark::splitData(const QDir& dataDir, float splitR
                 {
                     m_trainSet[label].append(img);
                     imageItems.append(new QListWidgetItem(QIcon(filesInfo[i].absoluteFilePath()), filesInfo[i].absoluteFilePath()));
+                    ++nbData;
                 }
             }
             else
@@ -293,10 +296,13 @@ QVector<QListWidgetItem*> Benchmark::splitData(const QDir& dataDir, float splitR
                 {
                     m_testSet[label].append(img);
                     imageItems.append(new QListWidgetItem(QIcon(filesInfo[i].absoluteFilePath()), filesInfo[i].absoluteFilePath()));
+                    ++nbData;
                 }
             }
         }
     }
+
+    qDebug() << "Parsed dataset with" << nbData << "samples";
 
     return imageItems;
 }
