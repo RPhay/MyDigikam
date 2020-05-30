@@ -305,6 +305,11 @@ void SlideOSD::setCurrentUrl(const QUrl& url)
     raise();
 }
 
+QSize SlideOSD::slideShowSize() const
+{
+    return d->parent->size();
+}
+
 bool SlideOSD::eventFilter(QObject* obj, QEvent* ev)
 {
     if (
