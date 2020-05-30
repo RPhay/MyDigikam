@@ -375,6 +375,16 @@ void DigikamItemView::addAssignNameOverlay(ItemDelegate* delegate)
 
 void DigikamItemView::confirmFaces(const QList<QModelIndex>& indexes, int tagId)
 {
+    /**
+     * You aren't allowed to "confirm" a person as
+     * Ignored. Marking as Ignored is treated as a
+     * changeTag() operation.
+     */
+    if (FaceTags::isTheIgnoredPerson(tagId))
+    {
+        return rejectFaces(indexes);
+    }
+
     QList<ItemInfo>      infos;
     QList<FaceTagsIface> faces;
     QList<QModelIndex>   sourceIndexes;
