@@ -526,7 +526,7 @@ QWidget* MainWindow::setupImageList(const QDir& directory)
 
 void MainWindow::slotIdentify(int index)
 {
-    m_currentIdenity = m_recognizer->findIdenity(m_preprocessedFaces[index]);
+    m_currentIdenity = m_recognizer->findIdenity(m_preprocessedFaces[index], FaceRecognizer::CosDistance, 0.7);
 
     if (m_currentIdenity.isNull())
     {

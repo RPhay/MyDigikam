@@ -125,15 +125,31 @@ int FaceRecognizer::recognize(const cv::Mat& inputImage)
     return predictedLabel;
 }
 
-Identity FaceRecognizer::findIdenity(const cv::Mat& preprocessedImage)
+Identity FaceRecognizer::findIdenity(const cv::Mat& preprocessedImage, ComparisonMetric metric, double threshold)
 {
     std::vector<float> faceEmbedding = d->extractor->getFaceEmbedding(preprocessedImage);
     //qDebug() << "look for identity of" << faceEmbedding;
 
     // TODO: scan database for face
 
-    double maxCosDistance = -1;
-    double minL2Distance  = 1;
+    double bestDistance;
+
+    switch (metric)
+    {
+    case CosDistance:
+        bestDistance = -1;
+        break;
+    case L2Distance:
+        bestDistance = 1;
+        break;
+    case L2NormDistance:
+        bestDistance = 1;
+        break;
+    default:
+        bestDistance = 1;
+        break;
+    }
+
     QHash<int, Identity>::iterator prediction;
 
     for (QHash<int, Identity>::iterator iter  = d->faceLibrary.begin();
@@ -151,40 +167,68 @@ Identity FaceRecognizer::findIdenity(const cv::Mat& preprocessedImage)
             recordedFaceEmbedding.push_back(static_cast<float>(jsonFaceEmbedding[i].toDouble()));
         }
 
-        double cosDistance     = FaceExtractor::cosineDistance(recordedFaceEmbedding, faceEmbedding);
-        double l2Distance      = FaceExtractor::L2Distance(recordedFaceEmbedding, faceEmbedding);
-        double normL2Distance  = FaceExtractor::L2NormDistance(recordedFaceEmbedding, faceEmbedding);
+        double distance;
 
-        //qDebug() << "cosine distance with" << iter.value().attribute(QLatin1String("fullName")) << ":" << cosDistance;
-        //qDebug() << "L2     distance with" << iter.value().attribute(QLatin1String("fullName")) << ":" << l2Distance;
-
-/*
-        // verify by Cosine distance
-        if (cosDistance > maxCosDistance)
+        switch (metric)
         {
-            maxCosDistance  = cosDistance;
-            prediction      = iter;
+        case CosDistance:
+            distance = FaceExtractor::cosineDistance(recordedFaceEmbedding, faceEmbedding);
+
+            if (distance > bestDistance)
+            {
+                bestDistance  = distance;
+                prediction    = iter;
+            }
+
+            break;
+        case L2Distance:
+            distance = FaceExtractor::L2Distance(recordedFaceEmbedding, faceEmbedding);
+
+            if (distance < bestDistance)
+            {
+                bestDistance = distance;
+                prediction   = iter;
+            }
+
+            break;
+        case L2NormDistance:
+            distance = FaceExtractor::L2NormDistance(recordedFaceEmbedding, faceEmbedding);
+
+            if (distance < bestDistance)
+            {
+                bestDistance = distance;
+                prediction   = iter;
+            }
+
+            break;
+        default:
+            break;
         }
-*/
-        if (normL2Distance < minL2Distance)
+    }
+
+    switch (metric)
+    {
+    case CosDistance:
+        if (bestDistance > threshold)
         {
-            minL2Distance = normL2Distance;
-            prediction    = iter;
+            return prediction.value();
         }
+        break;
+    case L2Distance:
+        if (bestDistance < threshold)
+        {
+            return prediction.value();
+        }
+        break;
+    case L2NormDistance:
+        if (bestDistance < threshold)
+        {
+            return prediction.value();
+        }
+        break;
+    default:
+        break;
     }
-/*
-    if (maxCosDistance > 0.7)
-    {
-        return prediction.value();
-    }
-*/
-
-    if (minL2Distance < 0.7)
-    {
-        return prediction.value();
-    }
-
-    qDebug() << "Smallest L2 distance :" << minL2Distance;
 
     // new identity
     QJsonArray jsonFaceEmbedding;

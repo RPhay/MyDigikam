@@ -66,9 +66,7 @@ public:
 
 public:
 
-    void registerTrainingSet();
-
-    void verifyTestSet();
+    void verifyTestSet(FaceRecognizer::ComparisonMetric metric, double threshold);
 
     QVector<QListWidgetItem*> splitData(const QDir& dataDir, float splitRatio);
 
@@ -84,9 +82,11 @@ private:
     cv::Mat preprocess(QImage* faceImg);
 
 private:
-    Q_SLOT void testFetchData();
-    Q_SLOT void testRegisterTrainingSet();
-    Q_SLOT void testVerifyTestSet();
+    Q_SLOT void fetchData();
+    Q_SLOT void registerTrainingSet();
+    Q_SLOT void verifyTestSetCosDistance();
+    Q_SLOT void verifyTestSetL2Distance();
+    Q_SLOT void verifyTestSetL2NormDistance();
 
 
 private:
@@ -170,7 +170,7 @@ void Benchmark::registerTrainingSet()
     qDebug() << "Registered <<  :" << m_trainSize << "faces in training set, with average" << float(elapsedDetection)/m_trainSize << "ms per face.";
 }
 
-void Benchmark::verifyTestSet()
+void Benchmark::verifyTestSet(FaceRecognizer::ComparisonMetric metric, double threshold)
 {
     int nbNotRecognize = 0;
     int nbWrongLabel   = 0;
@@ -185,7 +185,7 @@ void Benchmark::verifyTestSet()
     {
         for (int i = 0; i < iter.value().size(); ++i)
         {
-            Identity newIdentity = m_recognizer->findIdenity(preprocess(iter.value().at(i)));
+            Identity newIdentity = m_recognizer->findIdenity(preprocess(iter.value().at(i)), metric, threshold);
 
             if (newIdentity.isNull() && m_trainSet.contains(iter.key()))
             {
@@ -211,12 +211,14 @@ void Benchmark::verifyTestSet()
         return;
     }
 
-    qDebug() << "Verified <<  :" << m_testSize << "faces in test set, with average" << float(elapsedDetection)/m_testSize << "ms per face.";
-
     m_error = float(nbNotRecognize + nbWrongLabel)/m_testSize;
 
     qDebug() << "nb Not Recognized :" << nbNotRecognize;
-    qDebug() << "nb Not Wrong Label :" << nbWrongLabel;
+    qDebug() << "nb Wrong Label :" << nbWrongLabel;
+
+    qDebug() << "Recognition error :" << m_error
+             << "on total" << m_trainSize << "training faces, and"
+                           << m_testSize << "test faces, (" << float(elapsedDetection)/m_testSize << " face/ms)";
 }
 
 cv::Mat Benchmark::preprocess(QImage* faceImg)
@@ -322,7 +324,7 @@ QVector<QListWidgetItem*> Benchmark::splitData(const QDir& dataDir, float splitR
     return imageItems;
 }
 
-void Benchmark::testFetchData()
+void Benchmark::fetchData()
 {
     if (! m_parser->isSet(QLatin1String("dataset")))
     {
@@ -342,14 +344,19 @@ void Benchmark::testFetchData()
     splitData(dataset, splitRatio);
 }
 
-void Benchmark::testRegisterTrainingSet()
+void Benchmark::verifyTestSetCosDistance()
 {
-    registerTrainingSet();
+    verifyTestSet(FaceRecognizer::CosDistance, 0.7);
 }
 
-void Benchmark::testVerifyTestSet()
+void Benchmark::verifyTestSetL2Distance()
 {
-    verifyTestSet();
+    verifyTestSet(FaceRecognizer::L2Distance, 0.7);
+}
+
+void Benchmark::verifyTestSetL2NormDistance()
+{
+    verifyTestSet(FaceRecognizer::L2NormDistance, 0.7);
 }
 
 QCommandLineParser* parseOptions(const QCoreApplication& app)
@@ -371,10 +378,6 @@ int main(int argc, char** argv)
     benchmark.m_parser = parseOptions(app);
 
     QTest::qExec(&benchmark);
-
-    qDebug() << "Test Finish, recognition error :" << benchmark.m_error
-             << "on total" << benchmark.m_trainSize << "training faces, and"
-                           << benchmark.m_testSize << "test faces";
 }
 
 //QTEST_MAIN(Benchmark)

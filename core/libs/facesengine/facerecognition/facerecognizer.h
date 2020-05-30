@@ -20,6 +20,13 @@ class DIGIKAM_GUI_EXPORT FaceRecognizer
 {
 public:
 
+    enum ComparisonMetric
+    {
+        CosDistance = 0,
+        L2Distance,
+        L2NormDistance,
+    };
+
     /**
      *  @brief FaceRecognizer:Master class to control entire recognition using OpenFace algorithm
      */
@@ -45,7 +52,7 @@ public:
      * @param inputImage
      * @return
      */
-    Identity findIdenity(const cv::Mat& preprocessedImage);
+    Identity findIdenity(const cv::Mat& preprocessedImage, ComparisonMetric metric, double threshold = 0.7);
 
     /**
      * @brief newIdentity : construct an instance of Identity with face embedding, and return it
