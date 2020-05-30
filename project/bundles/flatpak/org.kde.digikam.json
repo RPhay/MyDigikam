@@ -14,6 +14,7 @@
     "modules": [
         {
             "name": "boost",
+            "buildsystem": "simple",
             "config-opts": [],
             "cleanup": [ "/lib/libboost_*.a" ],
             "sources": [
