@@ -24,25 +24,13 @@
 // Qt includes
 #include <QApplication>
 #include <QCommandLineParser>
-#include <QMainWindow>
-#include <QScrollArea>
-#include <QHBoxLayout>
-#include <QVBoxLayout>
-#include <QFormLayout>
-#include <QListWidget>
 #include <QListWidgetItem>
 #include <QDir>
 #include <QImage>
 #include <QElapsedTimer>
-#include <QLabel>
-#include <QPen>
-#include <QPainter>
-#include <QLineEdit>
-#include <QPushButton>
 #include <QDebug>
-
 #include <QHash>
-
+#include <QTest>
 
 // lib digikam includes
 #include "opencvdnnfacedetector.h"
@@ -86,6 +74,7 @@ public:
 
 public:
 
+    QCommandLineParser* m_parser;
     float m_error;
     int   m_trainSize;
     int   m_testSize;
@@ -93,6 +82,12 @@ public:
 private:
 
     cv::Mat preprocess(QImage* faceImg);
+
+private:
+    Q_SLOT void testFetchData();
+    Q_SLOT void testRegisterTrainingSet();
+    Q_SLOT void testVerifyTestSet();
+
 
 private:
 
@@ -105,6 +100,7 @@ private:
 
 Benchmark::Benchmark()
     : QObject(),
+      m_parser(nullptr),
       m_error(-1),
       m_trainSize(0),
       m_testSize(0)
@@ -115,35 +111,44 @@ Benchmark::Benchmark()
 
 Benchmark::~Benchmark()
 {
-    QImage* img;
-
-    for (QHash<QString, QVector<QImage*> >::iterator iter  = m_trainSet.begin();
-                                                     iter != m_trainSet.end();
-                                                   ++iter)
+    for (QHash<QString, QVector<QImage*> >::iterator vector  = m_trainSet.begin();
+                                                     vector != m_trainSet.end();
+                                                   ++vector)
     {
-        while ((img = iter.value().at(0)) != nullptr)
+
+        QVector<QImage*>::iterator img = vector.value().begin();
+
+        while (img != vector.value().end())
         {
-            delete img;
+            delete *img;
+            img = vector.value().erase(img);
         }
     }
 
-    for (QHash<QString, QVector<QImage*> >::iterator iter  = m_testSet.begin();
-                                                     iter != m_testSet.end();
-                                                   ++iter)
+    for (QHash<QString, QVector<QImage*> >::iterator vector  = m_testSet.begin();
+                                                     vector != m_testSet.end();
+                                                   ++vector)
     {
-        while ((img = iter.value().at(0)) != nullptr)
+        QVector<QImage*>::iterator img = vector.value().begin();
+
+        while (img != vector.value().end())
         {
-            delete img;
+            delete *img;
+            img = vector.value().erase(img);
         }
     }
 
     delete m_detector;
     delete m_recognizer;
+    delete m_parser;
 }
 
 void Benchmark::registerTrainingSet()
 {
     m_trainSize = 0;
+
+    QElapsedTimer timer;
+    timer.start();
 
     for (QHash<QString, QVector<QImage*> >::iterator iter  = m_trainSet.begin();
                                                      iter != m_trainSet.end();
@@ -160,6 +165,9 @@ void Benchmark::registerTrainingSet()
             ++m_trainSize;
         }
     }
+
+    unsigned int elapsedDetection = timer.elapsed();
+    qDebug() << "Registered <<  :" << m_trainSize << "faces in training set, with average" << float(elapsedDetection)/m_trainSize << "ms per face.";
 }
 
 void Benchmark::verifyTestSet()
@@ -167,6 +175,9 @@ void Benchmark::verifyTestSet()
     int nbNotRecognize = 0;
     int nbWrongLabel   = 0;
     m_testSize = 0;
+
+    QElapsedTimer timer;
+    timer.start();
 
     for (QHash<QString, QVector<QImage*> >::iterator iter  = m_testSet.begin();
                                                      iter != m_testSet.end();
@@ -191,12 +202,16 @@ void Benchmark::verifyTestSet()
         }
     }
 
+    unsigned int elapsedDetection = timer.elapsed();
+
     if (m_testSize == 0)
     {
         qWarning() << "test set is empty";
 
         return;
     }
+
+    qDebug() << "Verified <<  :" << m_testSize << "faces in test set, with average" << float(elapsedDetection)/m_testSize << "ms per face.";
 
     m_error = float(nbNotRecognize + nbWrongLabel)/m_testSize;
 
@@ -210,10 +225,6 @@ cv::Mat Benchmark::preprocess(QImage* faceImg)
 
     try
     {
-        QElapsedTimer timer;
-        unsigned int elapsedDetection = 0;
-        timer.start();
-
         // NOTE detection with filePath won't work when format is not standard
         // NOTE unexpected behaviour with detecFaces(const QString&)
         cv::Size paddedSize(0, 0);
@@ -222,9 +233,6 @@ cv::Mat Benchmark::preprocess(QImage* faceImg)
         faces                 = FaceDetector::toRelativeRects(absRects,
                                                               QSize(cvImage.cols - 2*paddedSize.width,
                                                               cvImage.rows - 2*paddedSize.height));
-        elapsedDetection = timer.elapsed();
-
-        //qDebug() << "(Input CV) Found " << absRects.size() << " faces, in " << elapsedDetection << "ms";
     }
     catch (cv::Exception& e)
     {
@@ -255,6 +263,9 @@ QVector<QListWidgetItem*> Benchmark::splitData(const QDir& dataDir, float splitR
 
     // Each subdirectory in data directory should match with a label
     QFileInfoList subDirs = dataDir.entryInfoList(QDir::NoDotAndDotDot | QDir::Dirs, QDir::Name);
+
+    QElapsedTimer timer;
+    timer.start();
 
     for (int i = 0; i < subDirs.size(); ++i)
     {
@@ -304,11 +315,42 @@ QVector<QListWidgetItem*> Benchmark::splitData(const QDir& dataDir, float splitR
         }
     }
 
-    qDebug() << "Parsed dataset with" << nbData << "samples";
+    unsigned int elapsedDetection = timer.elapsed();
+
+    qDebug() << "Parsed dataset with" << nbData << "samples, with average" << float(elapsedDetection)/nbData << "ms per image.";;
 
     return imageItems;
 }
 
+void Benchmark::testFetchData()
+{
+    if (! m_parser->isSet(QLatin1String("dataset")))
+    {
+        qWarning("Data set is not set !!!");
+
+        return;
+    }
+
+    QDir dataset(m_parser->value(QLatin1String("dataset")));
+
+    float splitRatio = 0.8;
+    if (m_parser->isSet(QLatin1String("split")))
+    {
+        splitRatio = m_parser->value(QLatin1String("split")).toFloat();
+    }
+
+    splitData(dataset, splitRatio);
+}
+
+void Benchmark::testRegisterTrainingSet()
+{
+    registerTrainingSet();
+}
+
+void Benchmark::testVerifyTestSet()
+{
+    verifyTestSet();
+}
 
 QCommandLineParser* parseOptions(const QCoreApplication& app)
 {
@@ -321,43 +363,20 @@ QCommandLineParser* parseOptions(const QCoreApplication& app)
     return parser;
 }
 
-
-int main(int argc, char* argv[])
+int main(int argc, char** argv)
 {
     QApplication app(argc, argv);
-    app.setApplicationName(QString::fromLatin1("digikam"));
 
-    // Options for commandline parser
+    Benchmark benchmark;
+    benchmark.m_parser = parseOptions(app);
 
-   QCommandLineParser* parser = parseOptions(app);
+    QTest::qExec(&benchmark);
 
-   if (! parser->isSet(QLatin1String("dataset")))
-   {
-       qWarning("Data set is not set !!!");
-
-       return 1;
-   }
-
-   QDir dataset(parser->value(QLatin1String("dataset")));
-
-   float splitRatio = 0.8;
-   if (parser->isSet(QLatin1String("split")))
-   {
-       splitRatio = parser->value(QLatin1String("split")).toFloat();
-   }
-
-   Benchmark test;
-
-   test.splitData(dataset, splitRatio);
-
-   test.registerTrainingSet();
-   test.verifyTestSet();
-
-   qDebug() << "Test Finish, recognition error :" << test.m_error
-            << "on total" << test.m_trainSize << "training faces, and"
-                          << test.m_testSize << "test faces";
-
-   return app.exec();
+    qDebug() << "Test Finish, recognition error :" << benchmark.m_error
+             << "on total" << benchmark.m_trainSize << "training faces, and"
+                           << benchmark.m_testSize << "test faces";
 }
+
+//QTEST_MAIN(Benchmark)
 
 #include "benchmark_recognition.moc"

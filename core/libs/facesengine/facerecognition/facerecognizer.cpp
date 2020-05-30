@@ -151,8 +151,9 @@ Identity FaceRecognizer::findIdenity(const cv::Mat& preprocessedImage)
             recordedFaceEmbedding.push_back(static_cast<float>(jsonFaceEmbedding[i].toDouble()));
         }
 
-        double cosDistance = FaceExtractor::cosineDistance(recordedFaceEmbedding, faceEmbedding);
-        double l2Distance  = FaceExtractor::L2Distance(recordedFaceEmbedding, faceEmbedding);
+        double cosDistance     = FaceExtractor::cosineDistance(recordedFaceEmbedding, faceEmbedding);
+        double l2Distance      = FaceExtractor::L2Distance(recordedFaceEmbedding, faceEmbedding);
+        double normL2Distance  = FaceExtractor::L2NormDistance(recordedFaceEmbedding, faceEmbedding);
 
         //qDebug() << "cosine distance with" << iter.value().attribute(QLatin1String("fullName")) << ":" << cosDistance;
         //qDebug() << "L2     distance with" << iter.value().attribute(QLatin1String("fullName")) << ":" << l2Distance;
@@ -165,9 +166,9 @@ Identity FaceRecognizer::findIdenity(const cv::Mat& preprocessedImage)
             prediction      = iter;
         }
 */
-        if (l2Distance < minL2Distance)
+        if (normL2Distance < minL2Distance)
         {
-            minL2Distance = l2Distance;
+            minL2Distance = normL2Distance;
             prediction    = iter;
         }
     }
@@ -178,7 +179,7 @@ Identity FaceRecognizer::findIdenity(const cv::Mat& preprocessedImage)
     }
 */
 
-    if (minL2Distance < 0.8)
+    if (minL2Distance < 0.7)
     {
         return prediction.value();
     }
