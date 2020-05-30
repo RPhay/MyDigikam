@@ -20,7 +20,7 @@
                 {
                     "type": "archive",
                     "url": "http://downloads.sourceforge.net/project/boost/boost/1.72.0/boost_1_72_0.tar.bz2",
-                    "md5": "8f32d4617390d1c2d16f26a27ab60d97807b35440d45891fa340fc2648b04406"
+                    "md5": "cb40943d2a2cb8ce08d42bc48b0f84f0"
                 }
             ],
             "build-commands": [
