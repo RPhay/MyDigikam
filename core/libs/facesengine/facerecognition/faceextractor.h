@@ -55,6 +55,8 @@ public:
 
     static double L2Distance(std::vector<float> v1, std::vector<float> v2);
 
+    static double L2NormDistance(std::vector<float> v1, std::vector<float> v2);
+
 private:
 
     class Private;

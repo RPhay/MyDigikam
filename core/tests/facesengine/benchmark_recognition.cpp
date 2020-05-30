@@ -164,7 +164,8 @@ void Benchmark::registerTrainingSet()
 
 void Benchmark::verifyTestSet()
 {
-    int nbError = 0;
+    int nbNotRecognize = 0;
+    int nbWrongLabel   = 0;
     m_testSize = 0;
 
     for (QHash<QString, QVector<QImage*> >::iterator iter  = m_testSet.begin();
@@ -178,12 +179,12 @@ void Benchmark::verifyTestSet()
             if (newIdentity.isNull() && m_trainSet.contains(iter.key()))
             {
                 // cannot recognize when label is already register
-                ++nbError;
+                ++nbNotRecognize;
             }
             else if (newIdentity.attribute(QLatin1String("fullName")) != iter.key())
             {
                 // wrong label
-                ++nbError;
+                ++nbWrongLabel;
             }
 
             ++m_testSize;
@@ -197,9 +198,10 @@ void Benchmark::verifyTestSet()
         return;
     }
 
-    m_error = float(nbError)/m_testSize;
+    m_error = float(nbNotRecognize + nbWrongLabel)/m_testSize;
 
-    qDebug() << "Error" << m_error;
+    qDebug() << "nb Not Recognized :" << nbNotRecognize;
+    qDebug() << "nb Not Wrong Label :" << nbWrongLabel;
 }
 
 cv::Mat Benchmark::preprocess(QImage* faceImg)

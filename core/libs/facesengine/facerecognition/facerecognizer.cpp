@@ -177,10 +177,13 @@ Identity FaceRecognizer::findIdenity(const cv::Mat& preprocessedImage)
         return prediction.value();
     }
 */
-    if (minL2Distance < 0.7)
+
+    if (minL2Distance < 0.8)
     {
         return prediction.value();
     }
+
+    qDebug() << "Smallest L2 distance :" << minL2Distance;
 
     // new identity
     QJsonArray jsonFaceEmbedding;

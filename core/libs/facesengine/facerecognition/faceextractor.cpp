@@ -94,6 +94,23 @@ double FaceExtractor::L2Distance(std::vector<float> v1,
     return sqrt(sqrDistance);
 }
 
+double FaceExtractor::L2NormDistance(std::vector<float> v1, std::vector<float> v2)
+{
+    assert(v1.size() == v2.size());
+
+    double normV1        = sqrt(std::inner_product(v1.begin(), v1.end(), v1.begin(), 0.0));
+    double normV2        = sqrt(std::inner_product(v2.begin(), v2.end(), v2.begin(), 0.0));
+
+    double sqrDistance = 0;
+
+    for (size_t i = 0; i < v1.size(); ++i)
+    {
+        sqrDistance += pow((v1[i]/normV1 - v2[i]/normV2), 2);
+    }
+
+    return sqrt(sqrDistance);
+}
+
 FaceExtractor::FaceExtractor()
     : d(new Private)
 {
