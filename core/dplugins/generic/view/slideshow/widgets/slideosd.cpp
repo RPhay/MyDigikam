@@ -35,12 +35,6 @@
 #include <QEvent>
 #include <QStyle>
 
-// Windows includes
-
-#ifdef Q_OS_WIN
-#   include <windows.h>
-#endif
-
 // Local includes
 
 #include "digikam_debug.h"
