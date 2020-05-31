@@ -97,6 +97,7 @@ install(FILES
               ${CMAKE_SOURCE_DIR}/core/libs/threads/dynamicthread.h
 
               ${CMAKE_SOURCE_DIR}/core/libs/dialogs/dmessagebox.h
+              ${CMAKE_SOURCE_DIR}/core/libs/dialogs/imagedialog.h
               ${CMAKE_SOURCE_DIR}/core/libs/progressmanager/dhistoryview.h
 
               # As part of DigikamDatabase
