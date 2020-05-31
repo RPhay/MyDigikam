@@ -106,10 +106,6 @@ struct jpegutils_jpeg_error_mgr : public jpeg_error_mgr
     jmp_buf setjmp_buffer;
 };
 
-static void jpegutils_jpeg_error_exit(j_common_ptr cinfo);
-static void jpegutils_jpeg_emit_message(j_common_ptr cinfo, int msg_level);
-static void jpegutils_jpeg_output_message(j_common_ptr cinfo);
-
 static void jpegutils_jpeg_error_exit(j_common_ptr cinfo)
 {
     jpegutils_jpeg_error_mgr* myerr = static_cast<jpegutils_jpeg_error_mgr*>(cinfo->err);
