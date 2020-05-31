@@ -453,6 +453,10 @@ bool JpegRotator::exifTransform(const MetaEngineRotation& matrix)
                 return false;
             }
 
+            // Set correct image size after the transformation
+
+            m_originalSize = srcImg.size();
+
             qCDebug(DIGIKAM_GENERAL_LOG) << "Lossy transform done for " << src;
         }
 
@@ -661,15 +665,7 @@ bool JpegRotator::performJpegTransform(TransformAction action, const QString& sr
 
     jpeg_stdio_src(&srcinfo, input_file);
     jcopy_markers_setup(&srcinfo, copyoption);
-
     (void) jpeg_read_header(&srcinfo, true);
-
-    // Read original size initially
-
-    if (!m_originalSize.isValid())
-    {
-        m_originalSize = QSize(srcinfo.image_width, srcinfo.image_height);
-    }
 
     jtransform_request_workspace(&srcinfo, &transformoption);
 
@@ -695,6 +691,10 @@ bool JpegRotator::performJpegTransform(TransformAction action, const QString& sr
 
     jcopy_markers_execute(&srcinfo, &dstinfo, copyoption);
     jtransform_execute_transformation(&srcinfo, &dstinfo, src_coef_arrays, &transformoption);
+
+    // Set correct image size after the transformation
+
+    m_originalSize = QSize(dstinfo.image_width, dstinfo.image_height);
 
     // Finish compression and release memory
 
