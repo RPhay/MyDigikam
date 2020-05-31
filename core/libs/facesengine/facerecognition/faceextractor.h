@@ -50,12 +50,15 @@ public:
     cv::Mat alignFace(const cv::Mat& inputImage);
 
     std::vector<float> getFaceEmbedding(const cv::Mat& faceImage);
+    cv::Mat getFaceDescriptor(const cv::Mat& faceImage);
 
     static double cosineDistance(std::vector<float> v1, std::vector<float> v2);
 
     static double L2Distance(std::vector<float> v1, std::vector<float> v2);
 
     static double L2NormDistance(std::vector<float> v1, std::vector<float> v2);
+
+    static cv::Mat vectortomat(const std::vector<float>& vector);
 
 private:
 

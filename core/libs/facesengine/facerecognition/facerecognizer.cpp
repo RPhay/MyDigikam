@@ -69,7 +69,7 @@ public:
                 }
 
                 labels.push_back(i);
-                features.push_back(cv::Mat(recordedFaceEmbedding));
+                features.push_back(FaceExtractor::vectortomat(recordedFaceEmbedding));
 
                 ++size;
             }
@@ -81,7 +81,7 @@ public:
         return size;
     }
 
-    Identity predictSVM(const std::vector<float>& faceEmbedding)
+    Identity predictSVM(cv::Mat faceEmbedding)
     {
         if (!svm->isTrained())
         {
@@ -89,7 +89,7 @@ public:
         }
 
         // perdict
-        float id = svm->predict(cv::Mat(faceEmbedding));
+        float id = svm->predict(faceEmbedding);
 
         return (faceLibrary.begin() + int(id)).value().at(0);
     }
@@ -185,16 +185,16 @@ int FaceRecognizer::recognize(const cv::Mat& inputImage)
 
 Identity FaceRecognizer::findIdenity(const cv::Mat& preprocessedImage, ComparisonMetric metric, double threshold)
 {
+    // Use support vector machine to predict label
+    if (metric == SupportVectorMachine)
+    {
+        return d->predictSVM(d->extractor->getFaceDescriptor(preprocessedImage));
+    }
+
     std::vector<float> faceEmbedding = d->extractor->getFaceEmbedding(preprocessedImage);
     //qDebug() << "look for identity of" << faceEmbedding;
 
     // TODO: scan database for face
-
-    // Use support vector machine to predict label
-    if (metric == SupportVectorMachine)
-    {
-        return d->predictSVM(faceEmbedding);
-    }
 
     double bestDistance;
 
