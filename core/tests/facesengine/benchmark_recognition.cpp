@@ -81,12 +81,13 @@ private:
 
     cv::Mat preprocess(QImage* faceImg);
 
-private:
+public:
     Q_SLOT void fetchData();
     Q_SLOT void registerTrainingSet();
     Q_SLOT void verifyTestSetCosDistance();
     Q_SLOT void verifyTestSetL2Distance();
     Q_SLOT void verifyTestSetL2NormDistance();
+    Q_SLOT void verifyTestSetSupportVectorMachine();
 
 
 private:
@@ -167,7 +168,7 @@ void Benchmark::registerTrainingSet()
     }
 
     unsigned int elapsedDetection = timer.elapsed();
-    qDebug() << "Registered <<  :" << m_trainSize << "faces in training set, with average" << float(elapsedDetection)/m_trainSize << "ms per face.";
+    qDebug() << "Registered <<  :" << m_trainSize << "faces in training set, with average" << float(elapsedDetection)/m_trainSize << "ms/face";
 }
 
 void Benchmark::verifyTestSet(FaceRecognizer::ComparisonMetric metric, double threshold)
@@ -218,7 +219,7 @@ void Benchmark::verifyTestSet(FaceRecognizer::ComparisonMetric metric, double th
 
     qDebug() << "Recognition error :" << m_error
              << "on total" << m_trainSize << "training faces, and"
-                           << m_testSize << "test faces, (" << float(elapsedDetection)/m_testSize << " face/ms)";
+                           << m_testSize << "test faces, (" << float(elapsedDetection)/m_testSize << " ms/face)";
 }
 
 cv::Mat Benchmark::preprocess(QImage* faceImg)
@@ -319,7 +320,7 @@ QVector<QListWidgetItem*> Benchmark::splitData(const QDir& dataDir, float splitR
 
     unsigned int elapsedDetection = timer.elapsed();
 
-    qDebug() << "Parsed dataset with" << nbData << "samples, with average" << float(elapsedDetection)/nbData << "ms per image.";;
+    qDebug() << "Fetched dataset with" << nbData << "samples, with average" << float(elapsedDetection)/nbData << "ms/image.";;
 
     return imageItems;
 }
@@ -359,6 +360,11 @@ void Benchmark::verifyTestSetL2NormDistance()
     verifyTestSet(FaceRecognizer::L2NormDistance, 0.7);
 }
 
+void Benchmark::verifyTestSetSupportVectorMachine()
+{
+    verifyTestSet(FaceRecognizer::SupportVectorMachine, 0.7);
+}
+
 QCommandLineParser* parseOptions(const QCoreApplication& app)
 {
     QCommandLineParser* parser = new QCommandLineParser();
@@ -377,9 +383,15 @@ int main(int argc, char** argv)
     Benchmark benchmark;
     benchmark.m_parser = parseOptions(app);
 
-    QTest::qExec(&benchmark);
+    //QTest::qExec(&benchmark);
+
+    benchmark.fetchData();
+    benchmark.registerTrainingSet();
+    //benchmark.verifyTestSetCosDistance();
+    //benchmark.verifyTestSetL2Distance();
+    //benchmark.verifyTestSetL2NormDistance();
+    benchmark.verifyTestSetSupportVectorMachine();
 }
 
-//QTEST_MAIN(Benchmark)
 
 #include "benchmark_recognition.moc"

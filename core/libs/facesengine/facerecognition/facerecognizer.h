@@ -25,6 +25,7 @@ public:
         CosDistance = 0,
         L2Distance,
         L2NormDistance,
+        SupportVectorMachine,
     };
 
     /**
