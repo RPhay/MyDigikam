@@ -671,6 +671,8 @@ bool JpegRotator::performJpegTransform(TransformAction action, const QString& sr
         m_originalSize = QSize(srcinfo.image_width, srcinfo.image_height);
     }
 
+#if (JPEG_LIB_VERSION >= 80)
+
     if (!jtransform_request_workspace(&srcinfo, &transformoption))
     {
         qCDebug(DIGIKAM_GENERAL_LOG) << "ExifRotate: Transformation is not perfect";
@@ -681,6 +683,12 @@ bool JpegRotator::performJpegTransform(TransformAction action, const QString& sr
 
         return false;
     }
+
+#else
+
+    jtransform_request_workspace(&srcinfo, &transformoption);
+
+#endif
 
     // Read source file as DCT coefficients
 
