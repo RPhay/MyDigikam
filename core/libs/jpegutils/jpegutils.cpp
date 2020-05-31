@@ -150,15 +150,15 @@ bool loadJPEGScaled(QImage& image, const QString& path, int maximumSize)
 
 #ifdef Q_OS_WIN
 
-    FILE* const inputFile = _wfopen((const wchar_t*)path.utf16(), L"rb");
+    FILE* const inFile = _wfopen((const wchar_t*)path.utf16(), L"rb");
 
 #else
 
-    FILE* const inputFile = fopen(path.toUtf8().constData(), "rb");
+    FILE* const inFile = fopen(path.toUtf8().constData(), "rb");
 
 #endif
 
-    if (!inputFile)
+    if (!inFile)
     {
         return false;
     }
@@ -177,20 +177,18 @@ bool loadJPEGScaled(QImage& image, const QString& path, int maximumSize)
     if (setjmp(jerr.setjmp_buffer))
     {
         jpeg_destroy_decompress(&cinfo);
-        fclose(inputFile);
+        fclose(inFile);
         return false;
     }
 
     jpeg_create_decompress(&cinfo);
-    jpeg_stdio_src(&cinfo, inputFile);
-
+    jpeg_stdio_src(&cinfo, inFile);
     jpeg_read_header(&cinfo, true);
 
     int imgSize = qMax(cinfo.image_width, cinfo.image_height);
+    int scale   = 1;
 
     // libjpeg supports 1/1, 1/2, 1/4, 1/8
-
-    int scale = 1;
 
     while (maximumSize*scale*2 <= imgSize)
     {
@@ -245,7 +243,7 @@ bool loadJPEGScaled(QImage& image, const QString& path, int maximumSize)
        ))
     {
         jpeg_destroy_decompress(&cinfo);
-        fclose(inputFile);
+        fclose(inFile);
         return false;
     }
 
@@ -327,7 +325,7 @@ bool loadJPEGScaled(QImage& image, const QString& path, int maximumSize)
     int newy   = maximumSize*cinfo.output_height / newMax;
 */
     jpeg_destroy_decompress(&cinfo);
-    fclose(inputFile);
+    fclose(inFile);
 
     image = img;
 
