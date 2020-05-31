@@ -186,25 +186,7 @@ bool loadJPEGScaled(QImage& image, const QString& path, int maximumSize)
     }
 
     jpeg_create_decompress(&cinfo);
-
-#ifdef Q_OS_WIN
-
-    QFile inFile(path);
-    QByteArray buffer;
-
-    if (inFile.open(QIODevice::ReadOnly))
-    {
-        buffer = inFile.readAll();
-        inFile.close();
-    }
-
-    jpeg_memory_src(&cinfo, (JOCTET*)buffer.data(), buffer.size());
-
-#else  // Q_OS_WIN
-
     jpeg_stdio_src(&cinfo, inputFile);
-
-#endif // Q_OS_WIN
 
     jpeg_read_header(&cinfo, true);
 
@@ -212,7 +194,7 @@ bool loadJPEGScaled(QImage& image, const QString& path, int maximumSize)
 
     // libjpeg supports 1/1, 1/2, 1/4, 1/8
 
-    int scale=1;
+    int scale = 1;
 
     while (maximumSize*scale*2 <= imgSize)
     {
