@@ -82,6 +82,7 @@ install(FILES
               ${CMAKE_SOURCE_DIR}/core/libs/rawengine/drawdecodersettings.h
 
               ${CMAKE_SOURCE_DIR}/core/libs/widgets/files/filesaveconflictbox.h
+              ${CMAKE_SOURCE_DIR}/core/libs/widgets/colors/dcolorselector.h
               ${CMAKE_SOURCE_DIR}/core/libs/widgets/graphicsview/imagezoomsettings.h
               ${CMAKE_SOURCE_DIR}/core/libs/widgets/graphicsview/previewlayout.h
               ${CMAKE_SOURCE_DIR}/core/libs/widgets/graphicsview/dimgpreviewitem.h
