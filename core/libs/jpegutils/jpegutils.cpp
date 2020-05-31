@@ -186,25 +186,7 @@ bool loadJPEGScaled(QImage& image, const QString& path, int maximumSize)
     }
 
     jpeg_create_decompress(&cinfo);
-
-#ifdef Q_OS_WIN
-
-    QFile inFile(path);
-    QByteArray buffer;
-
-    if (inFile.open(QIODevice::ReadOnly))
-    {
-        buffer = inFile.readAll();
-        inFile.close();
-    }
-
-    jpeg_memory_src(&cinfo, (JOCTET*)buffer.data(), buffer.size());
-
-#else  // Q_OS_WIN
-
     jpeg_stdio_src(&cinfo, inputFile);
-
-#endif // Q_OS_WIN
 
     jpeg_read_header(&cinfo, true);
 
@@ -212,7 +194,7 @@ bool loadJPEGScaled(QImage& image, const QString& path, int maximumSize)
 
     // libjpeg supports 1/1, 1/2, 1/4, 1/8
 
-    int scale=1;
+    int scale = 1;
 
     while (maximumSize*scale*2 <= imgSize)
     {
@@ -432,7 +414,7 @@ bool JpegRotator::exifTransform(const MetaEngineRotation& matrix)
 
     QString     dest = m_destFile;
     QString     src  = m_file;
-    QString     dir  = fi.absolutePath();
+    QString     dir  = fi.path();
     QStringList removeLater;
 
     for (int i = 0 ; i < actions.size() ; ++i)
@@ -638,20 +620,13 @@ bool JpegRotator::performJpegTransform(TransformAction action, const QString& sr
     dstinfo.err->emit_message         = jpegutils_jpeg_emit_message;
     dstinfo.err->output_message       = jpegutils_jpeg_output_message;
 
-    FILE* input_file                  = nullptr;
-    FILE* output_file                 = nullptr;
-
-    // To prevent cppcheck warnings.
-    (void)input_file;
-    (void)output_file;
-
 #ifdef Q_OS_WIN
 
-    input_file = _wfopen((const wchar_t*)src.utf16(), L"rb");
+    FILE* const input_file = _wfopen((const wchar_t*)src.utf16(), L"rb");
 
 #else
 
-    input_file = fopen(src.toUtf8().constData(), "rb");
+    FILE* const input_file = fopen(src.toUtf8().constData(), "rb");
 
 #endif
 
@@ -663,11 +638,11 @@ bool JpegRotator::performJpegTransform(TransformAction action, const QString& sr
 
 #ifdef Q_OS_WIN
 
-    output_file = _wfopen((const wchar_t*)dest.utf16(), L"wb");
+    FILE* const output_file = _wfopen((const wchar_t*)dest.utf16(), L"wb");
 
 #else
 
-    output_file = fopen(dest.toUtf8().constData(), "wb");
+    FILE* const output_file = fopen(dest.toUtf8().constData(), "wb");
 
 #endif
 
