@@ -626,7 +626,7 @@ bool JpegRotator::performJpegTransform(TransformAction action, const QString& sr
 
     if (!input_file)
     {
-        qCWarning(DIGIKAM_GENERAL_LOG) << "ExifRotate: Error in opening input file: " << input_file;
+        qCWarning(DIGIKAM_GENERAL_LOG) << "ExifRotate: Error in opening input file: " << src;
         return false;
     }
 
@@ -643,7 +643,7 @@ bool JpegRotator::performJpegTransform(TransformAction action, const QString& sr
     if (!output_file)
     {
         fclose(input_file);
-        qCWarning(DIGIKAM_GENERAL_LOG) << "ExifRotate: Error in opening output file: " << output_file;
+        qCWarning(DIGIKAM_GENERAL_LOG) << "ExifRotate: Error in opening output file: " << dest;
         return false;
     }
 
@@ -671,7 +671,16 @@ bool JpegRotator::performJpegTransform(TransformAction action, const QString& sr
         m_originalSize = QSize(srcinfo.image_width, srcinfo.image_height);
     }
 
-    jtransform_request_workspace(&srcinfo, &transformoption);
+    if (!jtransform_request_workspace(&srcinfo, &transformoption))
+    {
+        qCDebug(DIGIKAM_GENERAL_LOG) << "ExifRotate: Transformation is not perfect";
+        jpeg_destroy_decompress(&srcinfo);
+        jpeg_destroy_compress(&dstinfo);
+        fclose(input_file);
+        fclose(output_file);
+
+        return false;
+    }
 
     // Read source file as DCT coefficients
 

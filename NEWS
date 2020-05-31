@@ -770,4 +770,5 @@ BUGFIXES:
 731 ==> 422105 - When exiting full screen view by ESC, picture skips back to first viewed after a sequence.
 732 ==> 406583 - Cannot write special characters (è, í, ó) in Tag search box.
 733 ==> 422137 - Settings/Slideshow menu item missing.
-734 ==> 
+734 ==> 422279 - Repeatable crash when rotating.
+735 ==> 
