@@ -32,7 +32,6 @@
 #include <QProcess>
 #include <QUrl>
 #include <QList>
-#include <QTemporaryFile>
 
 // KDE includes
 
