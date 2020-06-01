@@ -1608,7 +1608,7 @@ void EditorWindow::setupTempSaveFile(const QUrl& url)
         return;
     }
 
-    m_savingContext.saveTempFileName = m_savingContext.saveTempFile->safeFileName();
+    m_savingContext.saveTempFileName = m_savingContext.saveTempFile->safeFilePath();
     delete m_savingContext.saveTempFile;
     m_savingContext.saveTempFile = nullptr;
 }

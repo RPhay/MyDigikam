@@ -432,9 +432,9 @@ void BatchTool::setOutputUrlFromInputUrl()
 
     temp.setAutoRemove(false);
     temp.open();
-    qCDebug(DIGIKAM_GENERAL_LOG) << "path: " << temp.safeFileName();
+    qCDebug(DIGIKAM_GENERAL_LOG) << "path: " << temp.safeFilePath();
 
-    setOutputUrl(QUrl::fromLocalFile(temp.safeFileName()));
+    setOutputUrl(QUrl::fromLocalFile(temp.safeFilePath()));
 }
 
 bool BatchTool::isRawFile(const QUrl& url) const

@@ -100,7 +100,7 @@ public:
         return open(QIODevice::ReadWrite);
     };
 
-    QString safeFileName() const;
+    QString safeFilePath() const;
 
 protected:
 

@@ -512,7 +512,7 @@ bool SafeTemporaryFile::open(QIODevice::OpenMode mode)
 
  // Workaround for Qt-Bug 74291 with UNC paths
 
-QString SafeTemporaryFile::safeFileName() const
+QString SafeTemporaryFile::safeFilePath() const
 {
     QFileInfo orgInfo(m_templ);
     QFileInfo tmpInfo(fileName());
