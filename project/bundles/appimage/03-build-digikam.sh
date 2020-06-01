@@ -179,7 +179,8 @@ cmake $ORIG_WD/../3rdparty \
       -DEXTERNALS_DOWNLOAD_DIR=$DOWNLOAD_DIR \
       -DENABLE_QTWEBENGINE=$DK_QTWEBENGINE
 
-cmake --build . --config RelWithDebInfo --target ext_gmic_qt -- -j$CPU_CORES
+cmake --build . --config RelWithDebInfo --target ext_gmic_qt    -- -j$CPU_CORES
+cmake --build . --config RelWithDebInfo --target ext_mosaicwall -- -j$CPU_CORES
 
 #################################################################################################
 

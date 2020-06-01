@@ -58,7 +58,7 @@ public:
 public:
 
     explicit IpfsImagesList(QWidget* const parent = nullptr);
-    ~IpfsImagesList() Q_DECL_OVERRIDE {}
+    ~IpfsImagesList() override {}
 
     QList<const IpfsImagesListViewItem*> getPendingItems() const;
 
@@ -76,7 +76,7 @@ class IpfsImagesListViewItem : public DItemsListViewItem
 public:
 
     explicit IpfsImagesListViewItem(DItemsListView* const view, const QUrl& url);
-    ~IpfsImagesListViewItem() Q_DECL_OVERRIDE {}
+    ~IpfsImagesListViewItem() override {}
 
     void setTitle(const QString& str);
     QString Title() const;

@@ -15,7 +15,7 @@ include_directories(
     $<TARGET_PROPERTY:Qt5::Xml,INTERFACE_INCLUDE_DIRECTORIES>
 )
 
-set(browser_SRCS browser.cpp)
+set(browser_SRCS ${CMAKE_CURRENT_SOURCE_DIR}/browser.cpp)
 add_executable(browser ${browser_SRCS})
 
 target_link_libraries(browser

@@ -106,10 +106,6 @@ struct jpegutils_jpeg_error_mgr : public jpeg_error_mgr
     jmp_buf setjmp_buffer;
 };
 
-static void jpegutils_jpeg_error_exit(j_common_ptr cinfo);
-static void jpegutils_jpeg_emit_message(j_common_ptr cinfo, int msg_level);
-static void jpegutils_jpeg_output_message(j_common_ptr cinfo);
-
 static void jpegutils_jpeg_error_exit(j_common_ptr cinfo)
 {
     jpegutils_jpeg_error_mgr* myerr = static_cast<jpegutils_jpeg_error_mgr*>(cinfo->err);
@@ -154,15 +150,15 @@ bool loadJPEGScaled(QImage& image, const QString& path, int maximumSize)
 
 #ifdef Q_OS_WIN
 
-    FILE* const inputFile = _wfopen((const wchar_t*)path.utf16(), L"rb");
+    FILE* const inFile = _wfopen((const wchar_t*)path.utf16(), L"rb");
 
 #else
 
-    FILE* const inputFile = fopen(path.toUtf8().constData(), "rb");
+    FILE* const inFile = fopen(path.toUtf8().constData(), "rb");
 
 #endif
 
-    if (!inputFile)
+    if (!inFile)
     {
         return false;
     }
@@ -181,38 +177,18 @@ bool loadJPEGScaled(QImage& image, const QString& path, int maximumSize)
     if (setjmp(jerr.setjmp_buffer))
     {
         jpeg_destroy_decompress(&cinfo);
-        fclose(inputFile);
+        fclose(inFile);
         return false;
     }
 
     jpeg_create_decompress(&cinfo);
-
-#ifdef Q_OS_WIN
-
-    QFile inFile(path);
-    QByteArray buffer;
-
-    if (inFile.open(QIODevice::ReadOnly))
-    {
-        buffer = inFile.readAll();
-        inFile.close();
-    }
-
-    jpeg_memory_src(&cinfo, (JOCTET*)buffer.data(), buffer.size());
-
-#else  // Q_OS_WIN
-
-    jpeg_stdio_src(&cinfo, inputFile);
-
-#endif // Q_OS_WIN
-
+    jpeg_stdio_src(&cinfo, inFile);
     jpeg_read_header(&cinfo, true);
 
     int imgSize = qMax(cinfo.image_width, cinfo.image_height);
+    int scale   = 1;
 
     // libjpeg supports 1/1, 1/2, 1/4, 1/8
-
-    int scale=1;
 
     while (maximumSize*scale*2 <= imgSize)
     {
@@ -267,7 +243,7 @@ bool loadJPEGScaled(QImage& image, const QString& path, int maximumSize)
        ))
     {
         jpeg_destroy_decompress(&cinfo);
-        fclose(inputFile);
+        fclose(inFile);
         return false;
     }
 
@@ -349,7 +325,7 @@ bool loadJPEGScaled(QImage& image, const QString& path, int maximumSize)
     int newy   = maximumSize*cinfo.output_height / newMax;
 */
     jpeg_destroy_decompress(&cinfo);
-    fclose(inputFile);
+    fclose(inFile);
 
     image = img;
 
@@ -432,7 +408,7 @@ bool JpegRotator::exifTransform(const MetaEngineRotation& matrix)
 
     QString     dest = m_destFile;
     QString     src  = m_file;
-    QString     dir  = fi.absolutePath();
+    QString     dir  = fi.path();
     QStringList removeLater;
 
     for (int i = 0 ; i < actions.size() ; ++i)
@@ -440,7 +416,7 @@ bool JpegRotator::exifTransform(const MetaEngineRotation& matrix)
         SafeTemporaryFile* const temp = new SafeTemporaryFile(dir + QLatin1String("/JpegRotator-XXXXXX.digikamtempfile.jpg"));
         temp->setAutoRemove(false);
         temp->open();
-        QString tempFile = temp->fileName();
+        QString tempFile = temp->safeFilePath();
 
         // Crash fix: a QTemporaryFile is not properly closed until its destructor is called.
 
@@ -638,43 +614,36 @@ bool JpegRotator::performJpegTransform(TransformAction action, const QString& sr
     dstinfo.err->emit_message         = jpegutils_jpeg_emit_message;
     dstinfo.err->output_message       = jpegutils_jpeg_output_message;
 
-    FILE* input_file                  = nullptr;
-    FILE* output_file                 = nullptr;
-
-    // To prevent cppcheck warnings.
-    (void)input_file;
-    (void)output_file;
-
 #ifdef Q_OS_WIN
 
-    input_file = _wfopen((const wchar_t*)src.utf16(), L"rb");
+    FILE* const input_file = _wfopen((const wchar_t*)src.utf16(), L"rb");
 
 #else
 
-    input_file = fopen(src.toUtf8().constData(), "rb");
+    FILE* const input_file = fopen(src.toUtf8().constData(), "rb");
 
 #endif
 
     if (!input_file)
     {
-        qCWarning(DIGIKAM_GENERAL_LOG) << "ExifRotate: Error in opening input file: " << input_file;
+        qCWarning(DIGIKAM_GENERAL_LOG) << "ExifRotate: Error in opening input file: " << src;
         return false;
     }
 
 #ifdef Q_OS_WIN
 
-    output_file = _wfopen((const wchar_t*)dest.utf16(), L"wb");
+    FILE* const output_file = _wfopen((const wchar_t*)dest.utf16(), L"wb");
 
 #else
 
-    output_file = fopen(dest.toUtf8().constData(), "wb");
+    FILE* const output_file = fopen(dest.toUtf8().constData(), "wb");
 
 #endif
 
     if (!output_file)
     {
         fclose(input_file);
-        qCWarning(DIGIKAM_GENERAL_LOG) << "ExifRotate: Error in opening output file: " << output_file;
+        qCWarning(DIGIKAM_GENERAL_LOG) << "ExifRotate: Error in opening output file: " << dest;
         return false;
     }
 
@@ -702,7 +671,24 @@ bool JpegRotator::performJpegTransform(TransformAction action, const QString& sr
         m_originalSize = QSize(srcinfo.image_width, srcinfo.image_height);
     }
 
+#if (JPEG_LIB_VERSION >= 80)
+
+    if (!jtransform_request_workspace(&srcinfo, &transformoption))
+    {
+        qCDebug(DIGIKAM_GENERAL_LOG) << "ExifRotate: Transformation is not perfect";
+        jpeg_destroy_decompress(&srcinfo);
+        jpeg_destroy_compress(&dstinfo);
+        fclose(input_file);
+        fclose(output_file);
+
+        return false;
+    }
+
+#else
+
     jtransform_request_workspace(&srcinfo, &transformoption);
+
+#endif
 
     // Read source file as DCT coefficients
 

@@ -16,7 +16,7 @@ include_directories(
 
 # ----------------------------------------------------------------
 
-ecm_add_tests(test_correlator.cpp
+ecm_add_tests(${CMAKE_CURRENT_SOURCE_DIR}/test_correlator.cpp
 
               NAME_PREFIX
 
@@ -33,7 +33,7 @@ ecm_add_tests(test_correlator.cpp
 
 if(NOT WIN32)
 
-    ecm_add_tests(test_rgparsing.cpp
+    ecm_add_tests(${CMAKE_CURRENT_SOURCE_DIR}/test_rgparsing.cpp
 
                   NAME_PREFIX
 
@@ -50,7 +50,7 @@ endif()
 
 # ----------------------------------------------------------------
 
-ecm_add_tests(test_gpsimageitem.cpp
+ecm_add_tests(${CMAKE_CURRENT_SOURCE_DIR}/test_gpsimageitem.cpp
 
               NAME_PREFIX
 
@@ -65,7 +65,7 @@ ecm_add_tests(test_gpsimageitem.cpp
 
 # ----------------------------------------------------------------
 
-ecm_add_tests(test_rgtagmodel.cpp
+ecm_add_tests(${CMAKE_CURRENT_SOURCE_DIR}/test_rgtagmodel.cpp
 
               NAME_PREFIX
 
@@ -83,7 +83,7 @@ ecm_add_tests(test_rgtagmodel.cpp
 
 # ----------------------------------------------------------------
 
-ecm_add_tests(test_simpletreemodel.cpp
+ecm_add_tests(${CMAKE_CURRENT_SOURCE_DIR}/test_simpletreemodel.cpp
 
               NAME_PREFIX
 

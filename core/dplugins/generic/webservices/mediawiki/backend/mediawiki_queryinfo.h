@@ -71,7 +71,7 @@ public:
     /**
      * @brief Starts the job asynchronously.
      */
-    void start() Q_DECL_OVERRIDE;
+    void start() override;
 
     /**
      * @brief Set the page name.

@@ -6,12 +6,12 @@
 
 APPLY_COMMON_POLICIES()
 
-include_directories(${CMAKE_CURRENT_SOURCE_DIR}/../../libs/rawengine/libraw
+include_directories(${CMAKE_SOURCE_DIR}/core/libs/rawengine/libraw
                     $<TARGET_PROPERTY:Qt5::Core,INTERFACE_INCLUDE_DIRECTORIES>
                     $<TARGET_PROPERTY:Qt5::Gui,INTERFACE_INCLUDE_DIRECTORIES>
 )
 
-set(raw2png_SRCS raw2png.cpp)
+set(raw2png_SRCS ${CMAKE_CURRENT_SOURCE_DIR}/raw2png.cpp)
 add_executable(raw2png ${raw2png_SRCS})
 target_link_libraries(raw2png
 
@@ -20,7 +20,7 @@ target_link_libraries(raw2png
                       ${COMMON_TEST_LINK}
 )
 
-set(libinfo_SRCS libinfo.cpp)
+set(libinfo_SRCS ${CMAKE_CURRENT_SOURCE_DIR}/libinfo.cpp)
 add_executable(libinfo ${libinfo_SRCS})
 target_link_libraries(libinfo
 
@@ -40,7 +40,7 @@ macro(LIBRAW_BUILD_SAMPLES)
     list(GET _temp 0 _target)
     list(GET _temp 1 _ext)
 
-    set(${_target}_SRCS ${CMAKE_CURRENT_SOURCE_DIR}/../../libs/rawengine/libraw/samples/${_filename})
+    set(${_target}_SRCS ${CMAKE_SOURCE_DIR}/core/libs/rawengine/libraw/samples/${_filename})
 
     if (_ext STREQUAL "c")
 

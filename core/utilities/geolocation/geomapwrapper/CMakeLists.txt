@@ -6,8 +6,8 @@
 
 APPLY_COMMON_POLICIES()
 
-set(libgeomapwrapper_SRCS gpsiteminfo.cpp
-                          gpsiteminfosorter.cpp)
+set(libgeomapwrapper_SRCS ${CMAKE_CURRENT_SOURCE_DIR}/gpsiteminfo.cpp
+                          ${CMAKE_CURRENT_SOURCE_DIR}/gpsiteminfosorter.cpp)
 
 include_directories($<TARGET_PROPERTY:Qt5::Widgets,INTERFACE_INCLUDE_DIRECTORIES>
                     $<TARGET_PROPERTY:Qt5::Core,INTERFACE_INCLUDE_DIRECTORIES>

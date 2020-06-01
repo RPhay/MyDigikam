@@ -61,7 +61,7 @@ public:
     /**
      * @brief Starts the job asynchronously.
      */
-    void start() Q_DECL_OVERRIDE;
+    void start() override;
 
 private Q_SLOTS:
 

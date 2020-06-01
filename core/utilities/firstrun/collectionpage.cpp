@@ -212,7 +212,7 @@ bool CollectionPage::checkRootAlbum(QString& rootAlbumFolder)
     // Work around bug #189168
 
     QTemporaryFile temp;
-    temp.setFileTemplate(rootAlbumFolder + QLatin1String("XXXXXX"));
+    temp.setFileTemplate(path.filePath() + QLatin1String("/XXXXXX"));
 
     if (!temp.open())
 

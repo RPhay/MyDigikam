@@ -6,45 +6,30 @@
 # For details see the accompanying COPYING-CMAKE-SCRIPTS file.
 #
 
-SET(PREFIX_ext_gmicqt "${EXTPREFIX}")
+set(PREFIX_ext_gmicqt "${EXTPREFIX}")
 
-SET(GMIC_VERSION v.2.7.1)
+if (APPLE)
+    set(FFTW_SUPPORT OFF)
+else()
+    set(FFTW_SUPPORT ON)
+endif()
 
 set(GmicQt_Conf -DGMIC_QT_HOST=digikam
                 -DENABLE_ASAN=OFF
+                -DENABLE_FFTW3=${FFTW_SUPPORT}
                 ${GLOBAL_PROFILE}
 )
 
 JoinListAsString("${GmicQt_Conf}" " " BASH_OPTIONS)
-
-# Download the gmic sources
-ExternalProject_Add(ext_gmic_base
-    DOWNLOAD_DIR ${EXTERNALS_DOWNLOAD_DIR}
-
-    GIT_REPOSITORY https://github.com/dtschump/gmic.git
-    GIT_TAG ${GMIC_VERSION}
-
-    SOURCE_DIR gmic
-
-    BUILD_IN_SOURCE 1
-
-    CONFIGURE_COMMAND ""
-
-    BUILD_COMMAND $(MAKE) -C <SOURCE_DIR>/src gmic_stdlib.h &&
-                  wget -O <SOURCE_DIR>/src/CImg.h -N https://raw.githubusercontent.com/dtschump/CImg/${GMIC_VERSION}/CImg.h
-
-    INSTALL_COMMAND ""
-)
 
 # Download and build gmic-qt
 if (MINGW)
 
     ExternalProject_Add(ext_gmic_qt
 
-        DEPENDS ext_gmic_base
-
         DOWNLOAD_DIR ${EXTERNALS_DOWNLOAD_DIR}
         GIT_REPOSITORY https://github.com/cgilles/gmic-qt.git
+        GIT_SUBMODULES gmic
         #GIT_TAG ${GMIC_VERSION}
 
         SOURCE_DIR gmic-qt
@@ -65,10 +50,9 @@ else() # MacOS and Linux
 
     ExternalProject_Add(ext_gmic_qt
 
-        DEPENDS ext_gmic_base
-
         DOWNLOAD_DIR ${EXTERNALS_DOWNLOAD_DIR}
         GIT_REPOSITORY https://github.com/cgilles/gmic-qt.git
+        GIT_SUBMODULES gmic
         #GIT_TAG ${GMIC_VERSION}
 
         SOURCE_DIR gmic-qt

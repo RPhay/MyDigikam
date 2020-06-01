@@ -115,7 +115,7 @@ private:
 
     class Private;
     friend class Private;
-    Private * const d;
+    Private* const d;
 
     Q_DISABLE_COPY(PanIconFrame)
 };

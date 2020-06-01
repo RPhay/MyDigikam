@@ -18,7 +18,7 @@ include_directories(
 
 #------------------------------------------------------------------------
 
-set(testautocrop_SRCS testautocrop.cpp)
+set(testautocrop_SRCS ${CMAKE_CURRENT_SOURCE_DIR}/testautocrop.cpp)
 add_executable(testautocrop ${testautocrop_SRCS})
 ecm_mark_nongui_executable(testautocrop)
 
@@ -33,7 +33,9 @@ target_link_libraries(testautocrop
 
 if(LensFun_FOUND)
 
-    set(testlensfuniface_SRCS testlensfuniface.cpp)
+    include_directories(${LENSFUN_INCLUDE_DIRS})
+
+    set(testlensfuniface_SRCS ${CMAKE_CURRENT_SOURCE_DIR}/testlensfuniface.cpp)
     add_executable(testlensfuniface ${testlensfuniface_SRCS})
     ecm_mark_nongui_executable(testlensfuniface)
 
@@ -48,7 +50,7 @@ endif()
 
 #------------------------------------------------------------------------
 
-set(testnrestimate_SRCS testnrestimate.cpp)
+set(testnrestimate_SRCS ${CMAKE_CURRENT_SOURCE_DIR}/testnrestimate.cpp)
 add_executable (testnrestimate ${testnrestimate_SRCS})
 ecm_mark_nongui_executable(testnrestimate)
 

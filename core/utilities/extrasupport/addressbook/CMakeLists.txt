@@ -6,7 +6,7 @@
 
 APPLY_COMMON_POLICIES()
 
-set(akonadiiface_SRCS akonadiiface.cpp)
+set(akonadiiface_SRCS ${CMAKE_CURRENT_SOURCE_DIR}/akonadiiface.cpp)
 
 include_directories($<TARGET_PROPERTY:Qt5::Widgets,INTERFACE_INCLUDE_DIRECTORIES>
                     $<TARGET_PROPERTY:Qt5::Core,INTERFACE_INCLUDE_DIRECTORIES>

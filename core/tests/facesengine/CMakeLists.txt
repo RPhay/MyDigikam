@@ -13,8 +13,7 @@ add_custom_target(datalink ALL
 
 # -----------------------------------------------------------------------------
 
-set(detect_SRCS detect.cpp)
-
+set(detect_SRCS ${CMAKE_CURRENT_SOURCE_DIR}/detect.cpp)
 add_executable(detect ${detect_SRCS})
 
 target_link_libraries(detect
@@ -29,7 +28,7 @@ target_link_libraries(detect
 
 # -----------------------------------------------------------------------------
 
-set(recognize_SRCS recognize.cpp)
+set(recognize_SRCS ${CMAKE_CURRENT_SOURCE_DIR}/recognize.cpp)
 add_executable(recognize ${recognize_SRCS})
 
 target_link_libraries(recognize
@@ -44,7 +43,7 @@ target_link_libraries(recognize
 
 # -----------------------------------------------------------------------------
 
-set(facerec_SRCS face_rec.cpp)
+set(facerec_SRCS ${CMAKE_CURRENT_SOURCE_DIR}/face_rec.cpp)
 add_executable(face_rec ${facerec_SRCS})
 
 target_link_libraries(face_rec
@@ -59,7 +58,7 @@ target_link_libraries(face_rec
 
 # -----------------------------------------------------------------------------
 
-set(facecluster_SRCS face_cluster.cpp)
+set(facecluster_SRCS ${CMAKE_CURRENT_SOURCE_DIR}/face_cluster.cpp)
 add_executable(face_cluster ${facecluster_SRCS})
 
 target_link_libraries(face_cluster
@@ -74,7 +73,7 @@ target_link_libraries(face_cluster
 
 # -----------------------------------------------------------------------------
 
-set(dnndetection_SRCS benchmark_dnndetection.cpp)
+set(dnndetection_SRCS ${CMAKE_CURRENT_SOURCE_DIR}/benchmark_dnndetection.cpp)
 add_executable(benchmark_dnndetection ${dnndetection_SRCS})
 
 target_link_libraries(benchmark_dnndetection
@@ -88,7 +87,7 @@ target_link_libraries(benchmark_dnndetection
 )
 
 # -----------------------------------------------------------------------------
-set(benchmark_recognition_SRCS benchmark_recognition.cpp)
+set(benchmark_recognition_SRCS ${CMAKE_CURRENT_SOURCE_DIR}/benchmark_recognition.cpp)
 add_executable(benchmark_recognition ${benchmark_recognition_SRCS})
 
 target_link_libraries(benchmark_recognition
@@ -103,7 +102,7 @@ target_link_libraries(benchmark_recognition
 
 # -----------------------------------------------------------------------------
 
-set(gui_recognition_SRCS gui_recognition.cpp)
+set(gui_recognition_SRCS ${CMAKE_CURRENT_SOURCE_DIR}/gui_recognition.cpp)
 add_executable(gui_recognition ${gui_recognition_SRCS})
 
 target_link_libraries(gui_recognition
@@ -118,8 +117,8 @@ target_link_libraries(gui_recognition
 
 # -----------------------------------------------------------------------------
 
-set(align_SRCS align.cpp
-               ${CMAKE_CURRENT_SOURCE_DIR}/../../libs/facesengine/alignment/congealing/funnelreal.cpp
+set(align_SRCS ${CMAKE_CURRENT_SOURCE_DIR}/align.cpp
+               ${CMAKE_SOURCE_DIR}/core/libs/facesengine/alignment/congealing/funnelreal.cpp
 )
 add_executable(align ${align_SRCS})
 
@@ -135,7 +134,7 @@ target_link_libraries(align
 
 # -----------------------------------------------------------------------------
 
-set(preprocess_SRCS preprocess.cpp)
+set(preprocess_SRCS ${CMAKE_CURRENT_SOURCE_DIR}/preprocess.cpp)
 add_executable(preprocess ${preprocess_SRCS})
 
 target_link_libraries(preprocess
@@ -150,7 +149,7 @@ target_link_libraries(preprocess
 
 # -----------------------------------------------------------------------------
 
-set(traindb_SRCS traindb.cpp)
+set(traindb_SRCS ${CMAKE_CURRENT_SOURCE_DIR}/traindb.cpp)
 add_executable(traindb ${traindb_SRCS})
 
 target_link_libraries(traindb

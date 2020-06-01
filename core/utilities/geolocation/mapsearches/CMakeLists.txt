@@ -7,8 +7,8 @@
 APPLY_COMMON_POLICIES()
 
 set(libgpssearch_SRCS
-    gpssearchview.cpp
-    gpsmarkertiler.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/gpssearchview.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/gpsmarkertiler.cpp
 )
 
 include_directories($<TARGET_PROPERTY:Qt5::Sql,INTERFACE_INCLUDE_DIRECTORIES>

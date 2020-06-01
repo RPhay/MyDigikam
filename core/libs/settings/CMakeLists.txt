@@ -8,14 +8,14 @@
 APPLY_COMMON_POLICIES()
 
 set(libsettings_SRCS
-    applicationsettings.cpp
-    applicationsettings_p.cpp
-    applicationsettings_albums.cpp
-    applicationsettings_database.cpp
-    applicationsettings_iconview.cpp
-    applicationsettings_mime.cpp
-    applicationsettings_miscs.cpp
-    applicationsettings_tooltips.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/applicationsettings.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/applicationsettings_p.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/applicationsettings_albums.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/applicationsettings_database.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/applicationsettings_iconview.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/applicationsettings_mime.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/applicationsettings_miscs.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/applicationsettings_tooltips.cpp
 )
 
 include_directories(

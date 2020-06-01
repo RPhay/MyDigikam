@@ -49,16 +49,16 @@ bool DImgHEIFLoader::load(const QString& filePath, DImgLoaderObserver* const obs
 
     readMetadata(filePath);
 
-    bool loadToMemory = false;
-
-    FILE* file        = fopen(QFile::encodeName(filePath).constData(), "rb");
+    FILE* file = fopen(QFile::encodeName(filePath).constData(), "rb");
 
 #ifdef Q_OS_WIN
 
+    bool loadToMemory = false;
+
     if (!file)
     {
-        file         = _wfopen((const wchar_t*)filePath.utf16(), L"rb");
-        loadToMemory = true;
+        file          = _wfopen((const wchar_t*)filePath.utf16(), L"rb");
+        loadToMemory  = true;
     }
 
 #endif
@@ -111,6 +111,8 @@ bool DImgHEIFLoader::load(const QString& filePath, DImgLoaderObserver* const obs
     struct heif_context* const heif_context = heif_context_alloc();
     struct heif_error error;
 
+#ifdef Q_OS_WIN
+
     if (loadToMemory)
     {
         QByteArray buffer;
@@ -135,6 +137,9 @@ bool DImgHEIFLoader::load(const QString& filePath, DImgLoaderObserver* const obs
                                               nullptr);
     }
     else
+
+#endif
+
     {
 
         error = heif_context_read_from_file(heif_context,

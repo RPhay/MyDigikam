@@ -17,7 +17,7 @@ include_directories(
 
 # -------------------------------------------------
 
-add_executable(framesencoder framesencoder.cpp)
+add_executable(framesencoder ${CMAKE_CURRENT_SOURCE_DIR}/framesencoder.cpp)
 ecm_mark_nongui_executable(framesencoder)
 
 target_link_libraries(framesencoder
@@ -29,7 +29,7 @@ target_link_libraries(framesencoder
 
 # -------------------------------------------------
 
-add_executable(qtavcodecs qtavcodecs.cpp)
+add_executable(qtavcodecs ${CMAKE_CURRENT_SOURCE_DIR}/qtavcodecs.cpp)
 ecm_mark_nongui_executable(qtavcodecs)
 
 target_link_libraries(qtavcodecs
@@ -41,7 +41,7 @@ target_link_libraries(qtavcodecs
 
 # -------------------------------------------------
 
-add_executable(player player.cpp)
+add_executable(player ${CMAKE_CURRENT_SOURCE_DIR}/player.cpp)
 
 target_link_libraries(player
 
@@ -52,7 +52,7 @@ target_link_libraries(player
 
 # -------------------------------------------------
 
-add_executable(videothumbtest videothumbtest.cpp)
+add_executable(videothumbtest ${CMAKE_CURRENT_SOURCE_DIR}/videothumbtest.cpp)
 ecm_mark_nongui_executable(videothumbtest)
 
 target_link_libraries(videothumbtest

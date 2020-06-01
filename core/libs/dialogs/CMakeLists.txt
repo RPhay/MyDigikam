@@ -29,23 +29,23 @@ else()
 endif()
 
 set(libdialogs_SRCS
-    dprogressdlg.cpp
-    dbusydlg.cpp
-    filesaveoptionsdlg.cpp
-    iccprofileinfodlg.cpp
-    imagedialog.cpp
-    infodlg.cpp
-    libsinfodlg.cpp
-    rawcameradlg.cpp
-    dconfigdlg.cpp
-    dconfigdlgmngr.cpp
-    dconfigdlgmodels.cpp
-    dconfigdlgview.cpp
-    dconfigdlgview_p.cpp
-    dconfigdlgwidgets.cpp
-    dmessagebox.cpp
-    dsplashscreen.cpp
-    webbrowserdlg.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/dprogressdlg.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/dbusydlg.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/filesaveoptionsdlg.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/iccprofileinfodlg.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/imagedialog.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/infodlg.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/libsinfodlg.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/rawcameradlg.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/dconfigdlg.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/dconfigdlgmngr.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/dconfigdlgmodels.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/dconfigdlgview.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/dconfigdlgview_p.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/dconfigdlgwidgets.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/dmessagebox.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/dsplashscreen.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/webbrowserdlg.cpp
 )
 
 # Used by digikamcore
@@ -57,7 +57,7 @@ target_compile_definitions(core_digikamdialogs_obj
 )
 
 set(libdeletedialog_SRCS
-    deletedialog.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/deletedialog.cpp
 )
 
 # Used by digikamgui

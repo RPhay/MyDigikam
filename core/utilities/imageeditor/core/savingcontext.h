@@ -27,13 +27,13 @@
 
 // Qt includes
 
-#include <QString>
-#include <QTemporaryFile>
 #include <QUrl>
+#include <QString>
 
 // Local includes
 
 #include "digikam_export.h"
+#include "filereadwritelock.h"
 #include "versionfileoperation.h"
 
 namespace Digikam
@@ -86,7 +86,7 @@ public:
     QUrl                 destinationURL;
     QUrl                 moveSrcURL;
 
-    QTemporaryFile*      saveTempFile;
+    SafeTemporaryFile*   saveTempFile;
     QString              saveTempFileName;
 
     VersionFileOperation versionFileOperation;

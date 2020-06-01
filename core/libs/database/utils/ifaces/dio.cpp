@@ -282,9 +282,22 @@ void DIO::processJob(IOJobData* const data)
 
             for (int i = 0 ; i < finder.localFiles.length() ; ++i)
             {
-                data->setDestUrl(finder.localFiles.at(i),
-                                 QUrl::fromLocalFile(data->destUrl().toLocalFile() +
-                                                     finder.localFileSuffixes.at(i)));
+                if (finder.localFileModes.at(i))
+                {
+                    data->setDestUrl(finder.localFiles.at(i),
+                                     QUrl::fromLocalFile(data->destUrl().toLocalFile() +
+                                                         finder.localFileSuffixes.at(i)));
+                }
+                else
+                {
+                    QFileInfo basInfo(data->destUrl().toLocalFile());
+
+                    data->setDestUrl(finder.localFiles.at(i),
+                                     QUrl::fromLocalFile(basInfo.path()             +
+                                                         QLatin1Char('/')           +
+                                                         basInfo.completeBaseName() +
+                                                         finder.localFileSuffixes.at(i)));
+                }
             }
         }
     }

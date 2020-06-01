@@ -301,11 +301,11 @@ bool DImgJPEGLoader::load(const QString& filePath, DImgLoaderObserver* const obs
         if (scaledLoadingSize)
         {
             int imgSize = qMax(cinfo.image_width, cinfo.image_height);
+            int scale   = 1;
 
             // libjpeg supports 1/1, 1/2, 1/4, 1/8
-            int scale = 1;
 
-            while (scaledLoadingSize* scale * 2 <= imgSize)
+            while (scaledLoadingSize * scale * 2 <= imgSize)
             {
                 scale *= 2;
             }
@@ -314,9 +314,10 @@ bool DImgJPEGLoader::load(const QString& filePath, DImgLoaderObserver* const obs
             {
                 scale = 8;
             }
-
-            //cinfo.scale_num   = 1;
-            //cinfo.scale_denom = scale;
+/*
+            cinfo.scale_num   = 1;
+            cinfo.scale_denom = scale;
+*/
             cinfo.scale_denom *= scale;
         }
 

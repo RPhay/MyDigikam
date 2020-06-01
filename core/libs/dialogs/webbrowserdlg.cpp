@@ -157,10 +157,8 @@ WebBrowserDlg::WebBrowserDlg(const QUrl& url, QWidget* const parent, bool hideDe
 
     // ----------------------
 /*
-#if QT_VERSION >= 0x050700
     connect(d->browser, SIGNAL(iconChanged(const QIcon&)),
             this, SLOT(slotIconChanged(const QIcon&)));
-#endif
 */
     connect(d->browser, SIGNAL(titleChanged(QString)),
             this, SLOT(slotTitleChanged(QString)));

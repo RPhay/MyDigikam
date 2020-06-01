@@ -35,7 +35,6 @@
 
 #include "digikam_debug.h"
 #include "iteminfo.h"
-#include "dmetadata.h"
 #include "metaenginesettings.h"
 
 namespace Digikam
@@ -45,26 +44,40 @@ SidecarFinder::SidecarFinder(const QList<QUrl>& files)
 {
     // First, the sidecar urls will be added so that they are first copied or renamed.
 
+    QStringList sidecarExtensions;
+    sidecarExtensions << QLatin1String("xmp");
+    sidecarExtensions << MetaEngineSettings::instance()->settings().sidecarExtensions;
+
     foreach (const QUrl& url, files)
     {
-        QString path(url.toLocalFile());
+        QFileInfo info(url.toLocalFile());
 
-        if (!path.endsWith(QLatin1String(".xmp")) && DMetadata::hasSidecar(path))
-        {
-            localFiles << DMetadata::sidecarUrl(url);
-            localFileSuffixes << QLatin1String(".xmp");
-            qCDebug(DIGIKAM_DATABASE_LOG) << "Detected a sidecar" << localFiles.last();
-        }
-
-        foreach (const QString& ext, MetaEngineSettings::instance()->settings().sidecarExtensions)
+        foreach (const QString& ext, sidecarExtensions)
         {
             QString suffix(QLatin1Char('.') + ext);
-            QString sidecarPath(url.toLocalFile() + suffix);
-            QUrl    sidecarUrl(QUrl::fromLocalFile(sidecarPath));
 
-            if (QFileInfo::exists(sidecarPath) && !localFiles.contains(sidecarUrl))
+            if (info.filePath().endsWith(suffix))
             {
-                localFiles        << sidecarUrl;
+                continue;
+            }
+
+            QFileInfo extInfo(info.filePath() + suffix);
+            QFileInfo basInfo(info.path()             +
+                              QLatin1Char('/')        +
+                              info.completeBaseName() + suffix);
+
+            if (extInfo.exists() && !localFiles.contains(QUrl::fromLocalFile(extInfo.filePath())))
+            {
+                localFiles        << QUrl::fromLocalFile(extInfo.filePath());
+                localFileModes    << true;
+                localFileSuffixes << suffix;
+                qCDebug(DIGIKAM_DATABASE_LOG) << "Detected a sidecar" << localFiles.last();
+            }
+
+            if (basInfo.exists() && !localFiles.contains(QUrl::fromLocalFile(basInfo.filePath())))
+            {
+                localFiles        << QUrl::fromLocalFile(basInfo.filePath());
+                localFileModes    << false;
                 localFileSuffixes << suffix;
                 qCDebug(DIGIKAM_DATABASE_LOG) << "Detected a sidecar" << localFiles.last();
             }
@@ -78,6 +91,7 @@ SidecarFinder::SidecarFinder(const QList<QUrl>& files)
         if (!localFiles.contains(url))
         {
             localFiles        << url;
+            localFileModes    << true;
             localFileSuffixes << QString();
         }
     }

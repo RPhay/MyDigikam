@@ -7,10 +7,10 @@
 APPLY_COMMON_POLICIES()
 
 set(libiojobs_SRCS
-    iojob.cpp
-    iojobdata.cpp
-    iojobsthread.cpp
-    iojobsmanager.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/iojob.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/iojobdata.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/iojobsthread.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/iojobsmanager.cpp
 )
 
 include_directories(

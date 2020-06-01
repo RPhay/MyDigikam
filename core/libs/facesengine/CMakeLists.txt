@@ -1,5 +1,5 @@
 #
-# Copyright (c) 2010-2019, Gilles Caulier, <caulier dot gilles at gmail dot com>
+# Copyright (c) 2010-2020, Gilles Caulier, <caulier dot gilles at gmail dot com>
 #
 # Redistribution and use is allowed according to the terms of the BSD license.
 # For details see the accompanying COPYING-CMAKE-SCRIPTS file.
@@ -47,23 +47,23 @@ include_directories(${CMAKE_CURRENT_SOURCE_DIR}/..
 
 # ---------------------------------------------------------------------------
 
-set(facesengine_LIB_SRCS common/identity.cpp
-                         common/dataproviders.cpp
-                         common/opencvmatdata.cpp
+set(facesengine_LIB_SRCS ${CMAKE_CURRENT_SOURCE_DIR}/common/identity.cpp
+                         ${CMAKE_CURRENT_SOURCE_DIR}/common/dataproviders.cpp
+                         ${CMAKE_CURRENT_SOURCE_DIR}/common/opencvmatdata.cpp
 
-                         detection/facedetector.cpp
+                         ${CMAKE_CURRENT_SOURCE_DIR}/detection/facedetector.cpp
 
-                         preprocessing/recognition/recognitionpreprocessor.cpp
-                         preprocessing/recognition/openfacepreprocessor.cpp
+                         ${CMAKE_CURRENT_SOURCE_DIR}/preprocessing/recognition/recognitionpreprocessor.cpp
+                         ${CMAKE_CURRENT_SOURCE_DIR}/preprocessing/recognition/openfacepreprocessor.cpp
 
-                         preprocessing/shape-predictor/matrixoperations.cpp
-                         preprocessing/shape-predictor/pointtransformaffine.cpp
-                         preprocessing/shape-predictor/qdatastreamoverloads.cpp
-                         preprocessing/shape-predictor/fullobjectdetection.cpp
-                         preprocessing/shape-predictor/shapepredictor.cpp
+                         ${CMAKE_CURRENT_SOURCE_DIR}/preprocessing/shape-predictor/matrixoperations.cpp
+                         ${CMAKE_CURRENT_SOURCE_DIR}/preprocessing/shape-predictor/pointtransformaffine.cpp
+                         ${CMAKE_CURRENT_SOURCE_DIR}/preprocessing/shape-predictor/qdatastreamoverloads.cpp
+                         ${CMAKE_CURRENT_SOURCE_DIR}/preprocessing/shape-predictor/fullobjectdetection.cpp
+                         ${CMAKE_CURRENT_SOURCE_DIR}/preprocessing/shape-predictor/shapepredictor.cpp
 
-                         # alignment/flandmark/flandmarkaligner.cpp
-                         # preprocessing/tantriggs/tantriggspreprocessor.cpp
+                         # ${CMAKE_CURRENT_SOURCE_DIR}/alignment/flandmark/flandmarkaligner.cpp
+                         # ${CMAKE_CURRENT_SOURCE_DIR}/preprocessing/tantriggs/tantriggspreprocessor.cpp
 )
 
 if(DNN_DETECTION)
@@ -72,19 +72,19 @@ if(DNN_DETECTION)
     include_directories(${CMAKE_CURRENT_SOURCE_DIR}/detection/opencv-dnn)
 
     set(facesengine_LIB_SRCS ${facesengine_LIB_SRCS}
-                             detection/opencv-dnn/opencvdnnfacedetector.cpp
-                             detection/opencv-dnn/dnnfacedetectorssd.cpp
-                             detection/opencv-dnn/dnnfacedetectoryolo.cpp
-                             detection/opencv-dnn/dnnfacedetectorbase.cpp
+                             ${CMAKE_CURRENT_SOURCE_DIR}/detection/opencv-dnn/opencvdnnfacedetector.cpp
+                             ${CMAKE_CURRENT_SOURCE_DIR}/detection/opencv-dnn/dnnfacedetectorssd.cpp
+                             ${CMAKE_CURRENT_SOURCE_DIR}/detection/opencv-dnn/dnnfacedetectoryolo.cpp
+                             ${CMAKE_CURRENT_SOURCE_DIR}/detection/opencv-dnn/dnnfacedetectorbase.cpp
     )
 
 else()
 
-    include_directories(detection/opencv-face)
+    include_directories(${CMAKE_CURRENT_SOURCE_DIR}/detection/opencv-face)
 
     set(facesengine_LIB_SRCS ${facesengine_LIB_SRCS}
-                             detection/opencv-face/opencvfacedetector.cpp
-                             detection/opencv-face/opencvfacedetector_p.cpp
+                             ${CMAKE_CURRENT_SOURCE_DIR}/detection/opencv-face/opencvfacedetector.cpp
+                             ${CMAKE_CURRENT_SOURCE_DIR}/detection/opencv-face/opencvfacedetector_p.cpp
     )
 
 endif()
@@ -105,37 +105,36 @@ add_library(digikamfacesengine STATIC $<TARGET_OBJECTS:core_digikamfacesengine_o
 
 # ---------------------------------------------------------------------------
 
-set(facesengine_database_LIB_SRCS recognition/recognitiondatabase.cpp
-                                  recognition/recognitiondatabase_p.cpp
-                                  recognition/recognitiondatabase_identity.cpp
-                                  recognition/recognitiondatabase_training.cpp
-                                  recognition/recognitiondatabase_backend.cpp
-                                  recognition/recognitiondatabase_recognize.cpp
-                                  recognition/recognitiontrainingprovider.cpp
+set(facesengine_database_LIB_SRCS ${CMAKE_CURRENT_SOURCE_DIR}/recognition/recognitiondatabase.cpp
+                                  ${CMAKE_CURRENT_SOURCE_DIR}/recognition/recognitiondatabase_p.cpp
+                                  ${CMAKE_CURRENT_SOURCE_DIR}/recognition/recognitiondatabase_identity.cpp
+                                  ${CMAKE_CURRENT_SOURCE_DIR}/recognition/recognitiondatabase_training.cpp
+                                  ${CMAKE_CURRENT_SOURCE_DIR}/recognition/recognitiondatabase_backend.cpp
+                                  ${CMAKE_CURRENT_SOURCE_DIR}/recognition/recognitiondatabase_recognize.cpp
+                                  ${CMAKE_CURRENT_SOURCE_DIR}/recognition/recognitiontrainingprovider.cpp
 
+                                  ${CMAKE_CURRENT_SOURCE_DIR}/alignment/congealing/funnelreal.cpp
 
-                                  alignment/congealing/funnelreal.cpp
-
-                                  facedb/facedbaccess.cpp
-                                  facedb/facedbbackend.cpp
-                                  facedb/facedboperationgroup.cpp
-                                  facedb/facedbschemaupdater.cpp
-                                  facedb/facedb.cpp
-                                  facedb/facedb_identity.cpp
+                                  ${CMAKE_CURRENT_SOURCE_DIR}/facedb/facedbaccess.cpp
+                                  ${CMAKE_CURRENT_SOURCE_DIR}/facedb/facedbbackend.cpp
+                                  ${CMAKE_CURRENT_SOURCE_DIR}/facedb/facedboperationgroup.cpp
+                                  ${CMAKE_CURRENT_SOURCE_DIR}/facedb/facedbschemaupdater.cpp
+                                  ${CMAKE_CURRENT_SOURCE_DIR}/facedb/facedb.cpp
+                                  ${CMAKE_CURRENT_SOURCE_DIR}/facedb/facedb_identity.cpp
 
                                   # Eigen Faces recognition module based on OpenCV (experimental and deprecated)
 
-#                                  recognition/opencv-eigenfaces/eigenfacemodel.cpp
-#                                  recognition/opencv-eigenfaces/opencveigenfacerecognizer.cpp
-#                                  recognition/opencv-eigenfaces/facerec_eigenborrowed.cpp
-#                                  facedb/facedb_eigen.cpp
+#                                  ${CMAKE_CURRENT_SOURCE_DIR}/recognition/opencv-eigenfaces/eigenfacemodel.cpp
+#                                  ${CMAKE_CURRENT_SOURCE_DIR}/recognition/opencv-eigenfaces/opencveigenfacerecognizer.cpp
+#                                  ${CMAKE_CURRENT_SOURCE_DIR}/recognition/opencv-eigenfaces/facerec_eigenborrowed.cpp
+#                                  ${CMAKE_CURRENT_SOURCE_DIR}/facedb/facedb_eigen.cpp
 
                                   # Fisher Faces recognition module based on OpenCV (experimental and deprecated)
 
-#                                  recognition/opencv-fisherfaces/fisherfacemodel.cpp
-#                                  recognition/opencv-fisherfaces/opencvfisherfacerecognizer.cpp
-#                                  recognition/opencv-fisherfaces/facerec_fisherborrowed.cpp
-#                                  facedb/facedb_fisher.cpp
+#                                  ${CMAKE_CURRENT_SOURCE_DIR}/recognition/opencv-fisherfaces/fisherfacemodel.cpp
+#                                  ${CMAKE_CURRENT_SOURCE_DIR}/recognition/opencv-fisherfaces/opencvfisherfacerecognizer.cpp
+#                                  ${CMAKE_CURRENT_SOURCE_DIR}/recognition/opencv-fisherfaces/facerec_fisherborrowed.cpp
+#                                  ${CMAKE_CURRENT_SOURCE_DIR}/facedb/facedb_fisher.cpp
 
 )
 
@@ -150,18 +149,18 @@ if(DNN_RECOGNITION)
 
                                       # Neural NetWork Faces recognition module based on OpenCV DNN
 
-                                      facedb/facedb_dnn.cpp
+                                      ${CMAKE_CURRENT_SOURCE_DIR}/facedb/facedb_dnn.cpp
 
-                                      recognition/opencv-dnn/dnnfacemodel.cpp
-                                      recognition/opencv-dnn/opencvdnnfacerecognizer.cpp
-                                      recognition/opencv-dnn/facerec_dnnborrowed.cpp
-                                      recognition/opencv-dnn/dnnfaceextractor.cpp
-                                      recognition/opencv-dnn/dnndbscan.cpp
+                                      ${CMAKE_CURRENT_SOURCE_DIR}/recognition/opencv-dnn/dnnfacemodel.cpp
+                                      ${CMAKE_CURRENT_SOURCE_DIR}/recognition/opencv-dnn/opencvdnnfacerecognizer.cpp
+                                      ${CMAKE_CURRENT_SOURCE_DIR}/recognition/opencv-dnn/facerec_dnnborrowed.cpp
+                                      ${CMAKE_CURRENT_SOURCE_DIR}/recognition/opencv-dnn/dnnfaceextractor.cpp
+                                      ${CMAKE_CURRENT_SOURCE_DIR}/recognition/opencv-dnn/dnndbscan.cpp
 
                                       # Testing, TODO: remove later
-                                      facerecognition/facerecognizer.cpp
-                                      facerecognition/faceextractor.cpp
-                                      facerecognition/facedatabase.cpp
+                                      ${CMAKE_CURRENT_SOURCE_DIR}/facerecognition/facerecognizer.cpp
+                                      ${CMAKE_CURRENT_SOURCE_DIR}/facerecognition/faceextractor.cpp
+                                      ${CMAKE_CURRENT_SOURCE_DIR}/facerecognition/facedatabase.cpp
     )
 
 else()
@@ -174,12 +173,12 @@ else()
 
                                       # Lpbh Faces recognition module based on OpenCV
 
-                                      recognition/opencv-face/opencv_face.cpp
-                                      facedb/facedb_lbph.cpp
+                                      ${CMAKE_CURRENT_SOURCE_DIR}/recognition/opencv-face/opencv_face.cpp
+                                      ${CMAKE_CURRENT_SOURCE_DIR}/facedb/facedb_lbph.cpp
 
-                                      recognition/opencv-lbph/lbphfacemodel.cpp
-                                      recognition/opencv-lbph/opencvlbphfacerecognizer.cpp
-                                      recognition/opencv-lbph/facerec_borrowed.cpp
+                                      ${CMAKE_CURRENT_SOURCE_DIR}/recognition/opencv-lbph/lbphfacemodel.cpp
+                                      ${CMAKE_CURRENT_SOURCE_DIR}/recognition/opencv-lbph/opencvlbphfacerecognizer.cpp
+                                      ${CMAKE_CURRENT_SOURCE_DIR}/recognition/opencv-lbph/facerec_borrowed.cpp
     )
 
 endif()

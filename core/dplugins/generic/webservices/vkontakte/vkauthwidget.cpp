@@ -36,8 +36,8 @@
 
 // LibKvkontakte includes
 
-#include <Vkontakte/userinfojob.h>
-#include <Vkontakte/vkapi.h>
+#include "vkontakte_userinfojob.h"
+#include "vkontakte_vkapi.h"
 
 namespace DigikamGenericVKontaktePlugin
 {
