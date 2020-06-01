@@ -73,32 +73,38 @@
         and external storage devices (SD cards, USB disks, etc.). The application allows you to configure import settings and rules
         that process and organize imported items on-the-fly.
     </p>
+    <p xml:lang="x-test">xxdigiKam is an advanced open-source digital photo management application that runs on Linux, Windows, and MacOS. The application provides a comprehensive set of tools for importing, managing, editing, and sharing photos and raw files. You can use digiKam’s import capabilities to easily transfer photos, raw files, and videos directly from your camera and external storage devices (SD cards, USB disks, etc.). The application allows you to configure import settings and rules that process and organize imported items on-the-fly.xx</p>
     <p>
         digiKam organizes photos, raw files, and videos into albums. But the application also features powerful tagging tools
         that allow you to assign tags, ratings, and labels to photos and raw files. You can then use filtering functionality to quickly
         find items that match specific criteria.
     </p>
+    <p xml:lang="x-test">xxdigiKam organizes photos, raw files, and videos into albums. But the application also features powerful tagging tools that allow you to assign tags, ratings, and labels to photos and raw files. You can then use filtering functionality to quickly find items that match specific criteria.xx</p>
     <p>
         In addition to filtering functionality, digiKam features powerful searching capabilities that let you search the photo library
         by a wide range of criteria. You can search photos by tags, labels, rating, data, location, and even specific EXIF, IPTC, or XMP metadata.
         You can also combine several criteria for more advanced searches. digiKam rely on Exiv2 library to handle metadata tag contents
         from files to populate the photo library.
     </p>
+    <p xml:lang="x-test">xxIn addition to filtering functionality, digiKam features powerful searching capabilities that let you search the photo library by a wide range of criteria. You can search photos by tags, labels, rating, data, location, and even specific EXIF, IPTC, or XMP metadata. You can also combine several criteria for more advanced searches. digiKam rely on Exiv2 library to handle metadata tag contents from files to populate the photo library.xx</p>
     <p>
         digiKam can handle raw files, and the application uses the excellent LibRaw library for decoding raw files. The library is actively
         maintained and regularly updated to include support for the latest camera models.
         digiKam can also manage video files for cataloging purpose, and the application uses the couple FFmpeg and QtAv libraries to extract
         metadata and play media.
     </p>
+    <p xml:lang="x-test">xxdigiKam can handle raw files, and the application uses the excellent LibRaw library for decoding raw files. The library is actively maintained and regularly updated to include support for the latest camera models. digiKam can also manage video files for cataloging purpose, and the application uses the couple FFmpeg and QtAv libraries to extract metadata and play media.xx</p>
     <p>
         The application provides a comprehensive set of editing tools. This includes basic tools for adjusting colors, cropping, and sharpening
         as well as advanced tools for, curves adjustment, panorama stitching, and much more. A special tool based on Lensfun library permit
         to apply lens corrections automatically on images.
     </p>
+    <p xml:lang="x-test">xxThe application provides a comprehensive set of editing tools. This includes basic tools for adjusting colors, cropping, and sharpening as well as advanced tools for, curves adjustment, panorama stitching, and much more. A special tool based on Lensfun library permit to apply lens corrections automatically on images.xx</p>
     <p>
         Extended functionality in digiKam is implemented via a set of tools based of plugins mechanism (named DPlugins for digiKam Plugins).
         Plugins can be written to import and export contents to remote web-services, add new features to edit image, and batch process photo.
     </p>
+    <p xml:lang="x-test">xxExtended functionality in digiKam is implemented via a set of tools based of plugins mechanism (named DPlugins for digiKam Plugins). Plugins can be written to import and export contents to remote web-services, add new features to edit image, and batch process photo.xx</p>
     <p>Features:</p>
     <p xml:lang="ar">الميزات:</p>
     <p xml:lang="bs">Svojstva:</p>
@@ -427,22 +433,27 @@
   <screenshots>
     <screenshot type="default">
       <caption>digiKam Batch Queue Manager</caption>
+      <caption xml:lang="x-test">xxdigiKam Batch Queue Managerxx</caption>
       <image>https://www.digikam.org/img/content/about/overview_bqm.png</image>
     </screenshot>
     <screenshot type="default">
       <caption>digiKam Image Editor</caption>
+      <caption xml:lang="x-test">xxdigiKam Image Editorxx</caption>
       <image>https://www.digikam.org/img/content/about/overview_imageeditor.png</image>
     </screenshot>
     <screenshot type="default">
       <caption>digiKam Import From Camera</caption>
+      <caption xml:lang="x-test">xxdigiKam Import From Cameraxx</caption>
       <image>https://www.digikam.org/img/content/about/overview_import.png</image>
     </screenshot>
     <screenshot type="default">
       <caption>digiKam Light Table</caption>
+      <caption xml:lang="x-test">xxdigiKam Light Tablexx</caption>
       <image>https://www.digikam.org/img/content/about/overview_lighttable.png</image>
     </screenshot>
     <screenshot type="default">
       <caption>digiKam Tags View</caption>
+      <caption xml:lang="x-test">xxdigiKam Tags Viewxx</caption>
       <image>https://www.digikam.org/img/content/about/overview_tagsview.png</image>
     </screenshot>
   </screenshots>
@@ -458,6 +469,7 @@
     <release date="2019-02-10" version="6.0.0"/>
   </releases>
   <developer_name>digiKam Team</developer_name>
+  <developer_name xml:lang="x-test">xxdigiKam Teamxx</developer_name>
   <project_group>KDE</project_group>
   <provides>
     <binary>digikam</binary>
