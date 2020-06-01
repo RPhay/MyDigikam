@@ -3,7 +3,7 @@
  * This file is a part of digiKam project
  * https://www.digikam.org
  *
- * Date        : 2020-05-20
+ * Date        : 2020-05-25
  * Description : Testing tool for dnn face recognition of face engines
  *
  * Copyright (C) 2020 by Nghia Duong <minhnghiaduong997 at gmail dot com>
@@ -28,6 +28,7 @@
 #include <QDir>
 #include <QImage>
 #include <QElapsedTimer>
+#include <QtConcurrent>
 #include <QDebug>
 #include <QHash>
 #include <QTest>
@@ -131,17 +132,25 @@ void Benchmark::registerTrainingSet()
                                                        iter != m_trainSet.end();
                                                      ++iter)
     {
-        for (int i = 0; i < iter.value().size(); ++i)
+        m_trainSize += iter.value().size();
+
+        // Define lambda function as map function
+        std::function<Identity(const QFileInfo&)> mapFaceIdentity = [iter, this](const QFileInfo& fileInfo)
         {
-            QImage img(iter.value()[i].absoluteFilePath());
+            QImage img(fileInfo.absoluteFilePath());
 
             Identity newIdentity = m_recognizer->newIdentity(preprocess(img));
-
             newIdentity.setAttribute(QLatin1String("fullName"), iter.key());
 
-            m_recognizer->saveIdentity(newIdentity);
+            return newIdentity;
+        };
 
-            ++m_trainSize;
+        //QVector<Identity> identities = QtConcurrent::blockingMapped(iter.value(), mapFaceIdentity)
+
+        for (int i = 0; i < iter.value().size(); ++i)
+        {
+            Identity identity = mapFaceIdentity(iter.value()[i]);
+            m_recognizer->saveIdentity(identity);
         }
     }
 
@@ -162,6 +171,8 @@ void Benchmark::verifyTestSet(FaceRecognizer::ComparisonMetric metric, double th
                                                        iter != m_testSet.end();
                                                      ++iter)
     {
+        m_testSize += iter.value().size();
+
         for (int i = 0; i < iter.value().size(); ++i)
         {
             QImage img(iter.value()[i].absoluteFilePath());
@@ -178,8 +189,6 @@ void Benchmark::verifyTestSet(FaceRecognizer::ComparisonMetric metric, double th
                 // wrong label
                 ++nbWrongLabel;
             }
-
-            ++m_testSize;
         }
     }
 
