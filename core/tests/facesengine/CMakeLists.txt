@@ -8,13 +8,9 @@ APPLY_COMMON_POLICIES()
 
 kde_enable_exceptions()
 
-add_custom_target(datalink ALL
-                  COMMAND ${CMAKE_COMMAND} -E create_symlink ${CMAKE_CURRENT_SOURCE_DIR}/data ${CMAKE_CURRENT_BINARY_DIR}/data)
-
 # -----------------------------------------------------------------------------
 
 set(detect_SRCS detect.cpp)
-
 add_executable(detect ${detect_SRCS})
 
 target_link_libraries(detect
@@ -63,50 +59,6 @@ set(facecluster_SRCS face_cluster.cpp)
 add_executable(face_cluster ${facecluster_SRCS})
 
 target_link_libraries(face_cluster
-
-                      digikamcore
-                      digikamgui
-                      digikamfacesengine
-                      digikamdatabase
-
-                      ${COMMON_TEST_LINK}
-)
-
-# -----------------------------------------------------------------------------
-
-set(dnndetection_SRCS benchmark_dnndetection.cpp)
-add_executable(benchmark_dnndetection ${dnndetection_SRCS})
-
-target_link_libraries(benchmark_dnndetection
-
-                      digikamcore
-                      digikamgui
-                      digikamfacesengine
-                      digikamdatabase
-
-                      ${COMMON_TEST_LINK}
-)
-
-# -----------------------------------------------------------------------------
-set(benchmark_recognition_SRCS benchmark_recognition.cpp)
-add_executable(benchmark_recognition ${benchmark_recognition_SRCS})
-
-target_link_libraries(benchmark_recognition
-
-                      digikamcore
-                      digikamgui
-                      digikamfacesengine
-                      digikamdatabase
-
-                      ${COMMON_TEST_LINK}
-)
-
-# -----------------------------------------------------------------------------
-
-set(gui_recognition_SRCS gui_recognition.cpp)
-add_executable(gui_recognition ${gui_recognition_SRCS})
-
-target_link_libraries(gui_recognition
 
                       digikamcore
                       digikamgui
