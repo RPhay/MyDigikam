@@ -76,9 +76,17 @@ SlideProperties::SlideProperties(SlideShowSettings* const settings, SlideOSD* co
     : QWidget(parent),
       d(new Private)
 {
+    Qt::WindowFlags flags = Qt::FramelessWindowHint  |
+                            Qt::WindowStaysOnTopHint |
+                            Qt::X11BypassWindowManagerHint;
+
+    setWindowFlags(flags);
+    setAttribute(Qt::WA_TranslucentBackground, true);
+    setAttribute(Qt::WA_ShowWithoutActivating, true);
+    setMouseTracking(true);
+
     d->parent   = parent;
     d->settings = settings;
-    setMouseTracking(true);
 }
 
 SlideProperties::~SlideProperties()

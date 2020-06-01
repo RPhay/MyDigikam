@@ -1585,7 +1585,7 @@ void EditorWindow::setupTempSaveFile(const QUrl& url)
 {
     // if the destination url is on local file system, try to set the temp file
     // location to the destination folder, otherwise use a local default
-    QString tempDir = url.adjusted(QUrl::RemoveFilename|QUrl::StripTrailingSlash).toLocalFile();
+    QString tempDir = url.adjusted(QUrl::RemoveFilename | QUrl::StripTrailingSlash).toLocalFile();
 
     if (!url.isLocalFile() || tempDir.isEmpty())
     {
@@ -1608,7 +1608,7 @@ void EditorWindow::setupTempSaveFile(const QUrl& url)
         return;
     }
 
-    m_savingContext.saveTempFileName = m_savingContext.saveTempFile->fileName();
+    m_savingContext.saveTempFileName = m_savingContext.saveTempFile->safeFilePath();
     delete m_savingContext.saveTempFile;
     m_savingContext.saveTempFile = nullptr;
 }

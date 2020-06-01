@@ -52,7 +52,6 @@
 #include <QMessageBox>
 #include <QApplication>
 #include <QMimeType>
-#include <QTemporaryFile>
 #include <QSplitter>
 #include <QAction>
 #include <QUrl>
