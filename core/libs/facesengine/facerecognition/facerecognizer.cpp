@@ -46,15 +46,17 @@ public:
 
     int trainSVM()
     {
-        cv::Mat features, labels;
+        cv::Mat features, label;
 
         int size = 0;
 
-        QHash<QString, QVector<Identity> >::iterator group = faceLibrary.begin();
-        for (int i = 0; i < faceLibrary.size(); ++i)
+        QElapsedTimer timer;
+        timer.start();
+
+        for (int i = 0; i < labels.size(); ++i)
         {
-            for (QVector<Identity>::iterator iter  = (group + i).value().begin();
-                                             iter != (group + i).value().end();
+            for (QVector<Identity>::iterator iter  = faceLibrary[labels[i]].begin();
+                                             iter != faceLibrary[labels[i]].end();
                                            ++iter)
             {
                 QJsonArray jsonFaceEmbedding = QJsonDocument::fromJson(iter->attribute(QLatin1String("faceEmbedding")).toLatin1()).array();
@@ -68,7 +70,7 @@ public:
                     recordedFaceEmbedding.push_back(static_cast<float>(jsonFaceEmbedding[i].toDouble()));
                 }
 
-                labels.push_back(i);
+                label.push_back(i);
                 features.push_back(FaceExtractor::vectortomat(recordedFaceEmbedding));
 
                 ++size;
@@ -76,7 +78,9 @@ public:
 
         }
 
-        svm->train(features, 0, labels);
+        svm->train(features, 0, label);
+
+        qDebug() << "Support vector machine trains" << size << "samples in" << timer.elapsed() << "ms";
 
         return size;
     }
@@ -91,7 +95,7 @@ public:
         // perdict
         float id = svm->predict(faceEmbedding);
 
-        return (faceLibrary.begin() + int(id)).value().at(0);
+        return faceLibrary[labels[int(id)]][0];
     }
 
 public:
@@ -106,6 +110,7 @@ public:
     int            identityCounter;
 
     QHash<QString, QVector<Identity> > faceLibrary;
+    QVector<QString> labels;
 };
 
 FaceRecognizer::FaceRecognizer(bool debug)
@@ -337,8 +342,9 @@ Identity FaceRecognizer::newIdentity(const cv::Mat& preprocessedImage)
 
 void FaceRecognizer::saveIdentity(Identity& id)
 {
+    QString label = id.attribute(QLatin1String("fullName"));
     // TODO save identity
-    if (id.attribute(QLatin1String("fullName")).isEmpty())
+    if (label.isEmpty())
     {
         qWarning() << "idenitity is empty";
 
@@ -350,7 +356,12 @@ void FaceRecognizer::saveIdentity(Identity& id)
         id.setId(++d->identityCounter);
     }
 
-    d->faceLibrary[id.attribute(QLatin1String("fullName"))].append(id);
+    d->faceLibrary[label].append(id);
+
+    if (! d->labels.contains(label))
+    {
+        d->labels.append(label);
+    }
 }
 
 }
