@@ -79,7 +79,7 @@ public:
 
 private:
 
-    cv::Mat preprocess(QImage* faceImg);
+    cv::Mat preprocess(QImage faceImg);
 
 public:
     Q_SLOT void fetchData();
@@ -92,8 +92,8 @@ public:
 
 private:
 
-    QHash<QString, QVector<QImage*> > m_trainSet;
-    QHash<QString, QVector<QImage*> > m_testSet;
+    QHash<QString, QVector<QFileInfo> > m_trainSet;
+    QHash<QString, QVector<QFileInfo> > m_testSet;
 
     OpenCVDNNFaceDetector* m_detector;
     FaceRecognizer*        m_recognizer;
@@ -112,32 +112,8 @@ Benchmark::Benchmark()
 
 Benchmark::~Benchmark()
 {
-    for (QHash<QString, QVector<QImage*> >::iterator vector  = m_trainSet.begin();
-                                                     vector != m_trainSet.end();
-                                                   ++vector)
-    {
-
-        QVector<QImage*>::iterator img = vector.value().begin();
-
-        while (img != vector.value().end())
-        {
-            delete *img;
-            img = vector.value().erase(img);
-        }
-    }
-
-    for (QHash<QString, QVector<QImage*> >::iterator vector  = m_testSet.begin();
-                                                     vector != m_testSet.end();
-                                                   ++vector)
-    {
-        QVector<QImage*>::iterator img = vector.value().begin();
-
-        while (img != vector.value().end())
-        {
-            delete *img;
-            img = vector.value().erase(img);
-        }
-    }
+    m_trainSet.clear();
+    m_testSet.clear();
 
     delete m_detector;
     delete m_recognizer;
@@ -151,13 +127,15 @@ void Benchmark::registerTrainingSet()
     QElapsedTimer timer;
     timer.start();
 
-    for (QHash<QString, QVector<QImage*> >::iterator iter  = m_trainSet.begin();
-                                                     iter != m_trainSet.end();
-                                                   ++iter)
+    for (QHash<QString, QVector<QFileInfo> >::iterator iter  = m_trainSet.begin();
+                                                       iter != m_trainSet.end();
+                                                     ++iter)
     {
         for (int i = 0; i < iter.value().size(); ++i)
         {
-            Identity newIdentity = m_recognizer->newIdentity(preprocess(iter.value().at(i)));
+            QImage img(iter.value()[i].absoluteFilePath());
+
+            Identity newIdentity = m_recognizer->newIdentity(preprocess(img));
 
             newIdentity.setAttribute(QLatin1String("fullName"), iter.key());
 
@@ -180,13 +158,15 @@ void Benchmark::verifyTestSet(FaceRecognizer::ComparisonMetric metric, double th
     QElapsedTimer timer;
     timer.start();
 
-    for (QHash<QString, QVector<QImage*> >::iterator iter  = m_testSet.begin();
-                                                     iter != m_testSet.end();
-                                                   ++iter)
+    for (QHash<QString, QVector<QFileInfo> >::iterator iter  = m_testSet.begin();
+                                                       iter != m_testSet.end();
+                                                     ++iter)
     {
         for (int i = 0; i < iter.value().size(); ++i)
         {
-            Identity newIdentity = m_recognizer->findIdenity(preprocess(iter.value().at(i)), metric, threshold);
+            QImage img(iter.value()[i].absoluteFilePath());
+
+            Identity newIdentity = m_recognizer->findIdenity(preprocess(img), metric, threshold);
 
             if (newIdentity.isNull() && m_trainSet.contains(iter.key()))
             {
@@ -222,7 +202,7 @@ void Benchmark::verifyTestSet(FaceRecognizer::ComparisonMetric metric, double th
                            << m_testSize << "test faces, (" << float(elapsedDetection)/m_testSize << " ms/face)";
 }
 
-cv::Mat Benchmark::preprocess(QImage* faceImg)
+cv::Mat Benchmark::preprocess(QImage faceImg)
 {
     QList<QRectF> faces;
 
@@ -231,7 +211,7 @@ cv::Mat Benchmark::preprocess(QImage* faceImg)
         // NOTE detection with filePath won't work when format is not standard
         // NOTE unexpected behaviour with detecFaces(const QString&)
         cv::Size paddedSize(0, 0);
-        cv::Mat cvImage       = m_detector->prepareForDetection(*faceImg, paddedSize);
+        cv::Mat cvImage       = m_detector->prepareForDetection(faceImg, paddedSize);
         QList<QRect> absRects = m_detector->detectFaces(cvImage, paddedSize);
         faces                 = FaceDetector::toRelativeRects(absRects,
                                                               QSize(cvImage.cols - 2*paddedSize.width,
@@ -248,12 +228,12 @@ cv::Mat Benchmark::preprocess(QImage* faceImg)
 
     if (faces.isEmpty())
     {
-        return (m_recognizer->prepareForRecognition(*faceImg));
+        return (m_recognizer->prepareForRecognition(faceImg));
     }
 
-    QRect rect = FaceDetector::toAbsoluteRect(faces[0], faceImg->size());
+    QRect rect = FaceDetector::toAbsoluteRect(faces[0], faceImg.size());
 
-    return (m_recognizer->prepareForRecognition(faceImg->copy(rect)));
+    return (m_recognizer->prepareForRecognition(faceImg.copy(rect)));
 }
 
 QVector<QListWidgetItem*> Benchmark::splitData(const QDir& dataDir, float splitRatio)
@@ -295,22 +275,22 @@ QVector<QListWidgetItem*> Benchmark::splitData(const QDir& dataDir, float splitR
         // split train/test
         for (int i = 0; i < filesInfo.size(); ++i)
         {
-            QImage* img = new QImage(filesInfo[i].absoluteFilePath());
+            QImage img(filesInfo[i].absoluteFilePath());
 
             if (i < filesInfo.size() * splitRatio)
             {
-                if (! img->isNull())
+                if (! img.isNull())
                 {
-                    m_trainSet[label].append(img);
+                    m_trainSet[label].append(filesInfo[i]);
                     imageItems.append(new QListWidgetItem(QIcon(filesInfo[i].absoluteFilePath()), filesInfo[i].absoluteFilePath()));
                     ++nbData;
                 }
             }
             else
             {
-                if (! img->isNull())
+                if (! img.isNull())
                 {
-                    m_testSet[label].append(img);
+                    m_testSet[label].append(filesInfo[i]);
                     imageItems.append(new QListWidgetItem(QIcon(filesInfo[i].absoluteFilePath()), filesInfo[i].absoluteFilePath()));
                     ++nbData;
                 }
