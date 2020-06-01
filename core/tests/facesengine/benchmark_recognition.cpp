@@ -87,6 +87,7 @@ public:
     Q_SLOT void verifyTestSetCosDistance();
     Q_SLOT void verifyTestSetL2Distance();
     Q_SLOT void verifyTestSetL2NormDistance();
+    Q_SLOT void verifyTestSetSupportVectorMachine();
 
 
 private:
@@ -359,6 +360,11 @@ void Benchmark::verifyTestSetL2NormDistance()
     verifyTestSet(FaceRecognizer::L2NormDistance, 0.7);
 }
 
+void Benchmark::verifyTestSetSupportVectorMachine()
+{
+    verifyTestSet(FaceRecognizer::SupportVectorMachine, 0.7);
+}
+
 QCommandLineParser* parseOptions(const QCoreApplication& app)
 {
     QCommandLineParser* parser = new QCommandLineParser();
@@ -381,9 +387,11 @@ int main(int argc, char** argv)
 
     benchmark.fetchData();
     benchmark.registerTrainingSet();
-    benchmark.verifyTestSetCosDistance();
-    benchmark.verifyTestSetL2Distance();
-    benchmark.verifyTestSetL2NormDistance();
+    //benchmark.verifyTestSetCosDistance();
+    //benchmark.verifyTestSetL2Distance();
+    //benchmark.verifyTestSetL2NormDistance();
+
+    benchmark.verifyTestSetSupportVectorMachine();
 }
 
 

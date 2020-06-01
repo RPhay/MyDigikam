@@ -247,6 +247,7 @@ target_link_libraries(digikamgui
                       opencv_imgproc
                       opencv_imgcodecs
                       opencv_dnn
+                      opencv_ml
                       opencv_flann
 )
 

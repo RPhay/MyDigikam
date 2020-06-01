@@ -111,6 +111,15 @@ double FaceExtractor::L2NormDistance(std::vector<float> v1, std::vector<float> v
     return sqrt(sqrDistance);
 }
 
+cv::Mat FaceExtractor::vectortomat(const std::vector<float>& vector)
+{
+    cv::Mat mat(1, vector.size(), 5);
+
+    memcpy(mat.data, vector.data(), vector.size()*sizeof(float));
+
+    return mat;
+}
+
 FaceExtractor::FaceExtractor()
     : d(new Private)
 {
@@ -131,6 +140,7 @@ FaceExtractor::FaceExtractor()
     qCDebug(DIGIKAM_FACEDB_LOG) << nnmodel;
 
     d->net               = cv::dnn::readNetFromTorch(nnmodel.toStdString());
+    //d->net = cv::dnn::readNetFromTorch(QLatin1String("/home/minhnghiaduong/Documents/Projects/openface.nn4.small2.v1.t7"));
     // As we use OpenFace, we need to set appropriate values for image color space and image size
 
     d->imageSize         = cv::Size(96, 96);
@@ -149,6 +159,26 @@ cv::Mat FaceExtractor::alignFace(const cv::Mat& inputImage)
 }
 
 std::vector<float> FaceExtractor::getFaceEmbedding(const cv::Mat& faceImage)
+{
+    cv::Mat face_descriptors = getFaceDescriptor(faceImage);
+
+    qCDebug(DIGIKAM_FACEDB_LOG) << "Face descriptors size: (" << face_descriptors.rows
+                                << ", " << face_descriptors.cols << ")";
+
+    std::vector<float> faceEmbedding;
+
+    for (int i = 0 ; i < face_descriptors.rows ; ++i)
+    {
+        for (int j = 0 ; j < face_descriptors.cols ; ++j)
+        {
+            faceEmbedding.push_back(face_descriptors.at<float>(i,j));
+        }
+    }
+
+    return faceEmbedding;
+}
+
+cv::Mat FaceExtractor::getFaceDescriptor(const cv::Mat& faceImage)
 {
     qCDebug(DIGIKAM_FACEDB_LOG) << "faceImage channels: " << faceImage.channels();
     qCDebug(DIGIKAM_FACEDB_LOG) << "faceImage size: (" << faceImage.rows << ", " << faceImage.cols << ")\n";
@@ -178,20 +208,11 @@ std::vector<float> FaceExtractor::getFaceEmbedding(const cv::Mat& faceImage)
     net.setInput(blob);
     cv::Mat face_descriptors = net.forward();
 */
-    qCDebug(DIGIKAM_FACEDB_LOG) << "Face descriptors size: (" << face_descriptors.rows
-                                << ", " << face_descriptors.cols << ")";
 
-    std::vector<float> faceEmbedding;
+    //qDebug() << "faceEmbedded channels: " << face_descriptors.channels() << "type" << face_descriptors.type();
+    //qDebug() << "faceEmbedded size: (" << face_descriptors.rows << ", " << face_descriptors.cols << ")\n";
 
-    for (int i = 0 ; i < face_descriptors.rows ; ++i)
-    {
-        for (int j = 0 ; j < face_descriptors.cols ; ++j)
-        {
-            faceEmbedding.push_back(face_descriptors.at<float>(i,j));
-        }
-    }
-
-    return faceEmbedding;
+    return face_descriptors;
 }
 
 } // namespace RecognitionTest
