@@ -416,7 +416,7 @@ bool JpegRotator::exifTransform(const MetaEngineRotation& matrix)
         SafeTemporaryFile* const temp = new SafeTemporaryFile(dir + QLatin1String("/JpegRotator-XXXXXX.digikamtempfile.jpg"));
         temp->setAutoRemove(false);
         temp->open();
-        QString tempFile = temp->fileName();
+        QString tempFile = temp->safeFileName();
 
         // Crash fix: a QTemporaryFile is not properly closed until its destructor is called.
 

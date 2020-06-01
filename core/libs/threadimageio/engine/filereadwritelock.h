@@ -98,11 +98,17 @@ public:
     bool open()
     {
         return open(QIODevice::ReadWrite);
-    }
+    };
+
+    QString safeFileName() const;
 
 protected:
 
     virtual bool open(QIODevice::OpenMode) override;
+
+private:
+
+    QString m_templ;
 };
 
 } // namespace Digikam

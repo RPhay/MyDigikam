@@ -33,6 +33,7 @@
 #include <QMutexLocker>
 #include <QThread>
 #include <QWaitCondition>
+#include <QFileInfo>
 
 // Local includes
 
@@ -497,7 +498,8 @@ SafeTemporaryFile::SafeTemporaryFile()
 }
 
 SafeTemporaryFile::SafeTemporaryFile(const QString& templ)
-    : QTemporaryFile(templ)
+    : QTemporaryFile(templ),
+      m_templ(templ)
 {
 }
 
@@ -506,6 +508,16 @@ bool SafeTemporaryFile::open(QIODevice::OpenMode mode)
     QMutexLocker lock(&static_d->tempFileMutex);
 
     return QTemporaryFile::open(mode);
+}
+
+ // Workaround for Qt-Bug 74291 with UNC paths
+
+QString SafeTemporaryFile::safeFileName() const
+{
+    QFileInfo orgInfo(m_templ);
+    QFileInfo tmpInfo(fileName());
+
+    return (orgInfo.path() + QLatin1Char('/') + tmpInfo.fileName());
 }
 
 } // namespace Digikam
