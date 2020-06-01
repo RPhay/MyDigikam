@@ -390,6 +390,7 @@ int main(int argc, char** argv)
     //benchmark.verifyTestSetCosDistance();
     //benchmark.verifyTestSetL2Distance();
     //benchmark.verifyTestSetL2NormDistance();
+
     benchmark.verifyTestSetSupportVectorMachine();
 }
 
