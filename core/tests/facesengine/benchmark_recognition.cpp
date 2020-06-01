@@ -86,10 +86,10 @@ public:
     Q_SLOT void fetchData();
     Q_SLOT void registerTrainingSet();
     Q_SLOT void verifyTestSetCosDistance();
+    Q_SLOT void verifyTestSetMeanCosDistance();
     Q_SLOT void verifyTestSetL2Distance();
     Q_SLOT void verifyTestSetL2NormDistance();
     Q_SLOT void verifyTestSetSupportVectorMachine();
-
 
 private:
 
@@ -157,6 +157,8 @@ void Benchmark::registerTrainingSet()
 
     unsigned int elapsedDetection = timer.elapsed();
     qDebug() << "Registered <<  :" << m_trainSize << "faces in training set, with average" << float(elapsedDetection)/m_trainSize << "ms/face";
+
+    m_trainSet.clear();
 }
 
 void Benchmark::verifyTestSet(FaceRecognizer::ComparisonMetric metric, double threshold)
@@ -349,6 +351,11 @@ void Benchmark::verifyTestSetCosDistance()
     verifyTestSet(FaceRecognizer::CosDistance, 0.7);
 }
 
+void Benchmark::verifyTestSetMeanCosDistance()
+{
+    verifyTestSet(FaceRecognizer::MeanCosDistance, 0.7);
+}
+
 void Benchmark::verifyTestSetL2Distance()
 {
     verifyTestSet(FaceRecognizer::L2Distance, 0.7);
@@ -389,8 +396,8 @@ int main(int argc, char** argv)
     //benchmark.verifyTestSetCosDistance();
     //benchmark.verifyTestSetL2Distance();
     //benchmark.verifyTestSetL2NormDistance();
-
-    benchmark.verifyTestSetSupportVectorMachine();
+    benchmark.verifyTestSetMeanCosDistance();
+    //benchmark.verifyTestSetSupportVectorMachine();
 }
 
 
