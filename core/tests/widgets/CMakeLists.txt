@@ -14,7 +14,7 @@ include_directories(
 
 ##################################################################
 
-ecm_add_tests(searchtextbartest.cpp
+ecm_add_tests(${CMAKE_CURRENT_SOURCE_DIR}/searchtextbartest.cpp
 
               NAME_PREFIX
 
@@ -29,7 +29,7 @@ ecm_add_tests(searchtextbartest.cpp
 
 ##################################################################
 
-add_executable(ditemslisttest ditemslisttest.cpp)
+add_executable(ditemslisttest ${CMAKE_CURRENT_SOURCE_DIR}/ditemslisttest.cpp)
 
 target_link_libraries(ditemslisttest
 

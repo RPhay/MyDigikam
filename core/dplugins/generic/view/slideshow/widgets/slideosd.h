@@ -48,7 +48,7 @@ class SlideOSD : public QWidget
 
 public:
 
-    explicit SlideOSD(SlideShowSettings* const settings, SlideShowLoader* const parent = nullptr);
+    explicit SlideOSD(SlideShowSettings* const settings, SlideShowLoader* const parent);
     ~SlideOSD();
 
     void setCurrentUrl(const QUrl& url);
@@ -62,6 +62,7 @@ public:
 
 
     SlideToolBar* toolBar()         const;
+    QSize slideShowSize()           const;
 
 private Q_SLOTS:
 

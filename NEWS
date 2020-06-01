@@ -11,6 +11,7 @@ General       : Code compile with Qt5.15 framework.
 General       : All bundles have switched to last Qt 5.14.2 LTS. Linux and MacOS use QtWebEngine instead QtWebKit.
 General       : All bundles have switched to last KF5 5.70.0. Fix support for Gimp XCF files >= 2.10.
 General       : New FlatPak bundle processed by the KDE continuous integration stream.
+General       : New Plugin ImageMosaicWall to create an image based on a bunch of other photos.
 General       : Add Microsoft Visual C++ support and a Continuous Integration workflow to check code with this compiler.
 General       : Table-view is now able to show digiKam Tag-Paths properties.
 Metadata      : New option to write geolocation data in file metadata.
@@ -761,4 +762,13 @@ BUGFIXES:
 723 ==> 421210 - digiKam 5.9.0-1+b1 refuses to start since LMDE4 Debbie upgrade.
 724 ==> 421945 - Existing face tags not rotated with image.
 725 ==> 422015 - Canon THM files (and likely others) are ignored by Sidecar management unless named very specifically.
-726 ==> 
+726 ==> 114223 - New tool to build photomosaic using ImageMosaicWall.
+727 ==> 398288 - digiKam no write access to folder.
+728 ==> 421478 - Files written outside proper directories.
+729 ==> 422087 - Move to different album does not move the original picture.
+730 ==> 343458 - A tool like pixelize (e.g. for my favourite images).
+731 ==> 422105 - When exiting full screen view by ESC, picture skips back to first viewed after a sequence.
+732 ==> 406583 - Cannot write special characters (è, í, ó) in Tag search box.
+733 ==> 422137 - Settings/Slideshow menu item missing.
+734 ==> 422279 - Repeatable crash when rotating.
+735 ==> 

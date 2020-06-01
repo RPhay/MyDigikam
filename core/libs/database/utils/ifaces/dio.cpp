@@ -290,12 +290,12 @@ void DIO::processJob(IOJobData* const data)
                 }
                 else
                 {
-                    QFileInfo info(data->destUrl().toLocalFile());
+                    QFileInfo basInfo(data->destUrl().toLocalFile());
 
                     data->setDestUrl(finder.localFiles.at(i),
-                                     QUrl::fromLocalFile(info.path()             +
-                                                         QLatin1Char('/')        +
-                                                         info.completeBaseName() +
+                                     QUrl::fromLocalFile(basInfo.path()             +
+                                                         QLatin1Char('/')           +
+                                                         basInfo.completeBaseName() +
                                                          finder.localFileSuffixes.at(i)));
                 }
             }

@@ -29,17 +29,9 @@
 #include <QApplication>
 #include <QProgressBar>
 #include <QLayout>
-#include <QScreen>
-#include <QWindow>
 #include <QTimer>
 #include <QEvent>
 #include <QStyle>
-
-// Windows includes
-
-#ifdef Q_OS_WIN
-#   include <windows.h>
-#endif
 
 // Local includes
 
@@ -116,8 +108,8 @@ SlideOSD::SlideOSD(SlideShowSettings* const settings, SlideShowLoader* const par
     setAttribute(Qt::WA_ShowWithoutActivating, true);
     setMouseTracking(true);
 
-    d->settings   = settings;
     d->parent     = parent;
+    d->settings   = settings;
 
     d->slideProps = new SlideProperties(d->settings, this);
     d->slideProps->installEventFilter(d->parent);
@@ -289,20 +281,14 @@ void SlideOSD::setCurrentUrl(const QUrl& url)
     layout()->activate();
     resize(sizeHint());
 
-    QScreen* screen = qApp->primaryScreen();
-
-    if (QWidget* const widget = nativeParentWidget())
-    {
-        if (QWindow* const window = widget->windowHandle())
-        {
-            screen = window->screen();
-        }
-    }
-
-    QRect geometry(screen->availableGeometry());
-    move(10, geometry.bottom() - height());
+    move(10, d->parent->geometry().bottom() - height());
     show();
     raise();
+}
+
+QSize SlideOSD::slideShowSize() const
+{
+    return d->parent->size();
 }
 
 bool SlideOSD::eventFilter(QObject* obj, QEvent* ev)

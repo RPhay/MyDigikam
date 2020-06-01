@@ -323,8 +323,8 @@ void ApplicationSettings::saveSettings()
     group.writeEntry(d->configImageSeparationSortOrderEntry,           (int)d->imageSeparationSortOrder);
 
     group.writeEntry(d->configItemLeftClickActionEntry,                (int)d->itemLeftClickAction);
-    group.writeEntry(d->configDefaultIconSizeEntry,                    QString::number(d->thumbnailSize));
-    group.writeEntry(d->configDefaultTreeIconSizeEntry,                QString::number(d->treeThumbnailSize));
+    group.writeEntry(d->configDefaultIconSizeEntry,                    (int)d->thumbnailSize);
+    group.writeEntry(d->configDefaultTreeIconSizeEntry,                (int)d->treeThumbnailSize);
     group.writeEntry(d->configTreeViewFontEntry,                       d->treeviewFont);
     group.writeEntry(d->configRatingFilterConditionEntry,              d->ratingFilterCond);
     group.writeEntry(d->configAlbumMonitoringEntry,                    d->albumMonitoring);

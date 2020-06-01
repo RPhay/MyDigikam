@@ -73,60 +73,38 @@
         and external storage devices (SD cards, USB disks, etc.). The application allows you to configure import settings and rules
         that process and organize imported items on-the-fly.
     </p>
+    <p xml:lang="x-test">xxdigiKam is an advanced open-source digital photo management application that runs on Linux, Windows, and MacOS. The application provides a comprehensive set of tools for importing, managing, editing, and sharing photos and raw files. You can use digiKam’s import capabilities to easily transfer photos, raw files, and videos directly from your camera and external storage devices (SD cards, USB disks, etc.). The application allows you to configure import settings and rules that process and organize imported items on-the-fly.xx</p>
     <p>
         digiKam organizes photos, raw files, and videos into albums. But the application also features powerful tagging tools
         that allow you to assign tags, ratings, and labels to photos and raw files. You can then use filtering functionality to quickly
         find items that match specific criteria.
     </p>
+    <p xml:lang="x-test">xxdigiKam organizes photos, raw files, and videos into albums. But the application also features powerful tagging tools that allow you to assign tags, ratings, and labels to photos and raw files. You can then use filtering functionality to quickly find items that match specific criteria.xx</p>
     <p>
         In addition to filtering functionality, digiKam features powerful searching capabilities that let you search the photo library
         by a wide range of criteria. You can search photos by tags, labels, rating, data, location, and even specific EXIF, IPTC, or XMP metadata.
         You can also combine several criteria for more advanced searches. digiKam rely on Exiv2 library to handle metadata tag contents
         from files to populate the photo library.
     </p>
+    <p xml:lang="x-test">xxIn addition to filtering functionality, digiKam features powerful searching capabilities that let you search the photo library by a wide range of criteria. You can search photos by tags, labels, rating, data, location, and even specific EXIF, IPTC, or XMP metadata. You can also combine several criteria for more advanced searches. digiKam rely on Exiv2 library to handle metadata tag contents from files to populate the photo library.xx</p>
     <p>
         digiKam can handle raw files, and the application uses the excellent LibRaw library for decoding raw files. The library is actively
         maintained and regularly updated to include support for the latest camera models.
         digiKam can also manage video files for cataloging purpose, and the application uses the couple FFmpeg and QtAv libraries to extract
         metadata and play media.
     </p>
+    <p xml:lang="x-test">xxdigiKam can handle raw files, and the application uses the excellent LibRaw library for decoding raw files. The library is actively maintained and regularly updated to include support for the latest camera models. digiKam can also manage video files for cataloging purpose, and the application uses the couple FFmpeg and QtAv libraries to extract metadata and play media.xx</p>
     <p>
         The application provides a comprehensive set of editing tools. This includes basic tools for adjusting colors, cropping, and sharpening
         as well as advanced tools for, curves adjustment, panorama stitching, and much more. A special tool based on Lensfun library permit
         to apply lens corrections automatically on images.
     </p>
+    <p xml:lang="x-test">xxThe application provides a comprehensive set of editing tools. This includes basic tools for adjusting colors, cropping, and sharpening as well as advanced tools for, curves adjustment, panorama stitching, and much more. A special tool based on Lensfun library permit to apply lens corrections automatically on images.xx</p>
     <p>
         Extended functionality in digiKam is implemented via a set of tools based of plugins mechanism (named DPlugins for digiKam Plugins).
         Plugins can be written to import and export contents to remote web-services, add new features to edit image, and batch process photo.
     </p>
-    <p xml:lang="bs">digiKam je napredna aplikacija za upravljanje digitalnim fotografijama, što čini uvoz i organizaciju digitalnih fotografija "klikom". Fotografije su organizovane u albumima koji mogu biti sortirani hronološki, po rasporedu foldera ili po korisničkim kolekcijama.</p>
-    <p xml:lang="ca">El digiKam és una avançada aplicació per a gestionar les fotografies digitals, la qual fa que la importació i organització de les fotografies digitals sigui una «tasca fàcil». Les fotografies s'organitzen en àlbums, els quals es poden ordenar cronològicament, per disposició de la carpeta o per col·leccions personalitzades.</p>
-    <p xml:lang="ca-valencia">El digiKam és una avançada aplicació per a gestionar les fotografies digitals, la qual fa que la importació i organització de les fotografies digitals siga una «tasca fàcil». Les fotografies s'organitzen en àlbums, els quals es poden ordenar cronològicament, per disposició de la carpeta o per col·leccions personalitzades.</p>
-    <p xml:lang="cs">digiKam je pokročilý správce fotografií, se kterým snadno zvládnete import a uspořádání digitálních fotografií. Obrázky jsou organizovány v albech, která je možné seřadit podle data, podle struktury složek, nebo podle uživatelských sbírek.</p>
-    <p xml:lang="de">digiKam ist eine leistungsfähige Anwendung zur Verwaltung von Digitalbildern. Es stellt eine einfache Oberfläche zum Importieren und Organisieren von Digitalbildern zur Verfügung. Die Bilder werden in Alben organisiert, die chronologisch oder nach Ordnern oder als benutzerdefinierte Sammlungen sortiert werden können.</p>
-    <p xml:lang="el">Το digiKam είναι μια προηγμένη εφαρμογή διαχείρισης φωτογραφιών, που κάνει πανεύκολη την εισαγωγή και οργάνωση φωτογραφιών. Οι φωτογραφίες οργανώνονται σε άλμπουμ με χρονολογική ταξινόμηση, ανάλογα με τη διάταξη του φακέλου ή τις προσαρμοσμένες συλλογές.</p>
-    <p xml:lang="en-GB">digiKam is an advanced digital photo management application, which makes importing and organizing digital photos a "snap". The photos are organized in albums which can be sorted chronologically, by folder layout or by custom collections.</p>
-    <p xml:lang="es">digiKam es una aplicación avanzada de gestión de fotos digitales que facilita la importación y la organización de fotos digitales. Las fotos se organizan en álbumes, que se pueden ordenar cronológicamente, por esquemas de carpetas o por colecciones personalizadas.</p>
-    <p xml:lang="et">digiKam on võimas digitaalfotode haldamise rakendus, mis muudab digitaalfotode importimise ja korraldamise imelihtsaks. Fotod paigutatakse albumitesse, mida saab sortida aja, kataloogide või kohandatud kogude järgi.</p>
-    <p xml:lang="fi">digiKam on edistynyt digikuvien hallintaohjelma, joka tekee digitaalikuvien tuonnista ja järjestelystä vaivatonta. Kuva järjestetään albumeiksi, jotka voi lajitella ajan tai kansioasettelun mukaan tai mukautetuiksi kokoelmiksi.</p>
-    <p xml:lang="fr">digiKam est une application de gestion de photos avancée, qui rend l'import et l'organisation des photos comme un jeu d'enfant. Les photos sont organisées dans des albums qui peuvent être triés de manière chronologique, selon l'organisation des dossiers, ou par collections personnalisées.</p>
-    <p xml:lang="gl">digiKam é unha aplicación de administración avanzada de fotografía dixital que facilita a importación e organización de fotografías dixitais. As fotos organízanse en álbums, que poden ordenarse de maneira cronolóxica, por distribución do cartafol ou por coleccións personalizadas.</p>
-    <p xml:lang="id">digiKam adalah sebuah aplikasi pengelola foto digital dimana pengimporan dan pengorganisasian foto digital "snap". Foto yang diorganisir di album yang bisa disimpan secara kronologis, menurut tataletak folder atau berdasarkan koleksi kustom.</p>
-    <p xml:lang="it">digiKam è un'applicazione per la gestione avanzata delle fotografie digitali, che permette di importare e organizzare le proprie foto in pochi clic. Le foto sono organizzate in album, i quali possono essere ordinati per data, per disposizione delle cartelle o per raccolte personalizzate.</p>
-    <p xml:lang="ko">digiKam은 디지털 사진을 가져오고 관리하는 고급 디지털 사진 관리 프로그램입니다. 사진은 시간순, 폴더별 등 다양한 방법으로 정리할 수 있습니다.</p>
-    <p xml:lang="nl">digiKam is een geavanceerde toepassing voor beheer van digitale foto's, die importeren en organiseren van digitale foto's een "fluitje van een cent" maakt. De foto's zijn georganiseerd in albums die chronologisch, op indeling van mappen of op eigen verzamelingen gesorteerd kunnen zijn.</p>
-    <p xml:lang="nn">digiKam er eit avansert fotohandsamingsprogram som gjer det kjapt og enkelt å importera og organisera digitale bilete. Bileta vert ordna i album som kan sorterast kronologisk, etter mappestruktur eller i eigendefinerte samlingar.</p>
-    <p xml:lang="pl">digiKam jest zaawansowanym programem do zarządzania cyfrowymi zdjęciami, który czyni importowanie i zarządzanie cyfrowymi zdjęciami "drobnostką". Zdjęcia są urządzone w albumy, które można przechowywać chronologicznie, według układu katalogów lub według własnych zbiorów.</p>
-    <p xml:lang="pt">O digiKam é uma aplicação de gestão de fotografias digitais, o que torna a importação e a organização de fotografias digitais extremamente simples. As fotos são organizadas em álbuns, os quais podem ser ordenados de forma cronológica, por disposição das pastas ou com colecções personalizadas.</p>
-    <p xml:lang="pt-BR">DigiKam é um aplicativo para gerenciamento de fotos digitais avançado, que torna muito fácil a importação e organização das suas fotos digitais. As fotos são organizadas em álbuns e ordenadas de forma cronológica, por layout de pastas ou por coleções personalizadas.</p>
-    <p xml:lang="ru">digiKam — приложение для управления фотографиями с расширенным набором возможностей. Фотографии сохраняются в альбомах, что позволяет упорядочивать их в хронологическом порядке, по иерархии папок, а также в  коллекции, определённые пользователем.</p>
-    <p xml:lang="sk">digiKam je pokročilá aplikácia na správu digitálnych fotografií, ktorá zjednodušuje import a správu digitálnych fotografií. Fotografie sú organizované v albumoch, ktoré sa dajú triediť chronologicky, podľa rozloženia priečinkov alebo podľa vlastných zbierok.</p>
-    <p xml:lang="sl">digiKam je napreden program za upravljanje digitalnih fotografij, ki močno poenostavi uvažanje in organiziranje digitalnih fotografij. Fotografije so organizirane v albumih, ki jih lahko razvrstite po času, razporedu map ali zbirkah po meri.</p>
-    <p xml:lang="sv">Digikam är ett avancerat program för hantering av digitala foton, som gör det enkelt att importera och organisera digitala foton. Fotona organiseras i album som kan sorteras kronologiskt, enligt katalogutläggning eller enligt egna samlingar.</p>
-    <p xml:lang="tr">digiKam, resimlerinizi içe aktarma ve düzenlemeyi aniden yapmanızı sağlayan bir gelişmiş resim yönetme uygulamasıdır. Resimleriniz albümlerde düzenlenir ve bu albümler tarihe göre sıralanıp, dizin düzeninde ya da özelleşmiş koleksiyonlarda gösterilebilir.</p>
-    <p xml:lang="uk">digiKam — програма з розширеними можливостями щодо керування цифровими фотографіями, яка робить імпортування і впорядкування цифрових фотографій зовсім простою справою". Програма впорядковує фотографії за альбомами, які можна розташовувати у вікні програму у хронологічному порядку, за теками або за нетиповими збірками.</p>
-    <p xml:lang="x-test">xxdigiKam is an advanced digital photo management application, which makes importing and organizing digital photos a "snap". The photos are organized in albums which can be sorted chronologically, by folder layout or by custom collections.xx</p>
-    <p xml:lang="zh-CN">digiKam 是一种先进的数字照片管理应用程序，它使导入和组织数字照片变得轻而易举。照片按照时间顺序、文件夹布局或自定义集合来排列。</p>
+    <p xml:lang="x-test">xxExtended functionality in digiKam is implemented via a set of tools based of plugins mechanism (named DPlugins for digiKam Plugins). Plugins can be written to import and export contents to remote web-services, add new features to edit image, and batch process photo.xx</p>
     <p>Features:</p>
     <p xml:lang="ar">الميزات:</p>
     <p xml:lang="bs">Svojstva:</p>
@@ -475,67 +453,23 @@
     </screenshot>
     <screenshot type="default">
       <caption>digiKam Tags View</caption>
-      <caption xml:lang="ca">Gestió de les fotografies al digiKam</caption>
-      <caption xml:lang="ca-valencia">Gestió de les fotografies al digiKam</caption>
-      <caption xml:lang="cs">Správa fotografií v digiKamu</caption>
-      <caption xml:lang="de">Fotoverwaltung in digiKam</caption>
-      <caption xml:lang="en-GB">Photo management in digiKam</caption>
-      <caption xml:lang="es">Gestión de fotos en digiKam</caption>
-      <caption xml:lang="et">Fotohaldus digiKamis</caption>
-      <caption xml:lang="fi">Valokuvien hallinta digiKamissä</caption>
-      <caption xml:lang="fr">Gestion de photos dans digiKam</caption>
-      <caption xml:lang="gl">Xestión de fotos en digiKam</caption>
-      <caption xml:lang="id">Pengelolaan foto dalam digiKam</caption>
-      <caption xml:lang="it">Gestione delle foto in digiKam</caption>
-      <caption xml:lang="ko">digiKam으로 사진 관리하기</caption>
-      <caption xml:lang="nl">Fotobeheer in digiKam</caption>
-      <caption xml:lang="nn">Fotohandsaming i digiKam</caption>
-      <caption xml:lang="pa">ਡਿਜਿਕੈਮ ਵਿੱਚ ਫੋਟੋ ਇੰਤਜ਼ਾਮ</caption>
-      <caption xml:lang="pl">Zarządzanie zdjęciami w digiKam</caption>
-      <caption xml:lang="pt">Gestão de Fotografias no digiKam</caption>
-      <caption xml:lang="pt-BR">Gerenciamento de fotos no digiKam</caption>
-      <caption xml:lang="ru">Управление фотографиями  в digiKam</caption>
-      <caption xml:lang="sl">Program za upravljanje zbirk fotografij</caption>
-      <caption xml:lang="sv">Fotohantering i Digikam</caption>
-      <caption xml:lang="uk">Керування фотографіями у digiKam</caption>
       <caption xml:lang="x-test">xxdigiKam Tags Viewxx</caption>
-      <caption xml:lang="zh-CN">digiKam 的照片管理</caption>
-      <caption xml:lang="zh-TW">digiKam 中的圖片管理</caption>
       <image>https://www.digikam.org/img/content/about/overview_tagsview.png</image>
     </screenshot>
   </screenshots>
+  <content_rating type="oars-1.1"/>
+  <releases>
+    <release date="2020-04-22" version="7.0.0-beta3"/>
+    <release date="2020-01-26" version="7.0.0-beta2"/>
+    <release date="2019-12-21" version="7.0.0-beta1"/>
+    <release date="2019-11-09" version="6.4.0"/>
+    <release date="2019-09-08" version="6.3.0"/>
+    <release date="2019-08-04" version="6.2.0"/>
+    <release date="2019-04-14" version="6.1.0"/>
+    <release date="2019-02-10" version="6.0.0"/>
+  </releases>
   <developer_name>digiKam Team</developer_name>
-  <developer_name xml:lang="ar">مشروع «دِجي‌كام»</developer_name>
-  <developer_name xml:lang="bs">digiKam Projekt</developer_name>
-  <developer_name xml:lang="ca">Projecte digiKam</developer_name>
-  <developer_name xml:lang="ca-valencia">Projecte digiKam</developer_name>
-  <developer_name xml:lang="cs">Projekt digiKam</developer_name>
-  <developer_name xml:lang="de">digiKam-Projekt</developer_name>
-  <developer_name xml:lang="el">digiKam Project</developer_name>
-  <developer_name xml:lang="en-GB">digiKam Project</developer_name>
-  <developer_name xml:lang="es">Proyecto digiKam</developer_name>
-  <developer_name xml:lang="et">digiKami projekt</developer_name>
-  <developer_name xml:lang="fi">digiKam-projekti</developer_name>
-  <developer_name xml:lang="fr">Projet digiKam</developer_name>
-  <developer_name xml:lang="gl">Proxecto digiKam</developer_name>
-  <developer_name xml:lang="id">digiKam Project</developer_name>
-  <developer_name xml:lang="it">Progetto digiKam</developer_name>
-  <developer_name xml:lang="ko">digiKam 프로젝트</developer_name>
-  <developer_name xml:lang="nl">digiKam-project</developer_name>
-  <developer_name xml:lang="nn">digiKam-prosjektet</developer_name>
-  <developer_name xml:lang="pa">ਡਿਜਿਕੈਮ ਪਰੋਜੈੱਕਟ</developer_name>
-  <developer_name xml:lang="pl">Projekt digiKam</developer_name>
-  <developer_name xml:lang="pt">Projecto digiKam</developer_name>
-  <developer_name xml:lang="pt-BR">Projeto digiKam</developer_name>
-  <developer_name xml:lang="ru">Проект digiKam</developer_name>
-  <developer_name xml:lang="sk">Projekt digiKamu</developer_name>
-  <developer_name xml:lang="sl">Projekt digiKam</developer_name>
-  <developer_name xml:lang="sv">Digikam-projektet</developer_name>
-  <developer_name xml:lang="tr">digiKam Projesi</developer_name>
-  <developer_name xml:lang="uk">Проєкт digiKam</developer_name>
   <developer_name xml:lang="x-test">xxdigiKam Teamxx</developer_name>
-  <developer_name xml:lang="zh-CN">digiKam 项目</developer_name>
-  <developer_name xml:lang="zh-TW">digiKam 專案</developer_name>
   <project_group>KDE</project_group>
   <provides>
     <binary>digikam</binary>

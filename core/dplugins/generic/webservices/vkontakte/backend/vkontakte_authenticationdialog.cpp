@@ -43,6 +43,7 @@
 #include <QLabel>
 #include <QProgressBar>
 #include <QDialogButtonBox>
+#include <QNetworkCookieJar>
 
 // KDE incudes
 

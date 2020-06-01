@@ -82,6 +82,7 @@ install(FILES
               ${CMAKE_SOURCE_DIR}/core/libs/rawengine/drawdecodersettings.h
 
               ${CMAKE_SOURCE_DIR}/core/libs/widgets/files/filesaveconflictbox.h
+              ${CMAKE_SOURCE_DIR}/core/libs/widgets/colors/dcolorselector.h
               ${CMAKE_SOURCE_DIR}/core/libs/widgets/graphicsview/imagezoomsettings.h
               ${CMAKE_SOURCE_DIR}/core/libs/widgets/graphicsview/previewlayout.h
               ${CMAKE_SOURCE_DIR}/core/libs/widgets/graphicsview/dimgpreviewitem.h
@@ -97,6 +98,7 @@ install(FILES
               ${CMAKE_SOURCE_DIR}/core/libs/threads/dynamicthread.h
 
               ${CMAKE_SOURCE_DIR}/core/libs/dialogs/dmessagebox.h
+              ${CMAKE_SOURCE_DIR}/core/libs/dialogs/imagedialog.h
               ${CMAKE_SOURCE_DIR}/core/libs/progressmanager/dhistoryview.h
 
               # As part of DigikamDatabase
@@ -124,3 +126,8 @@ install(FILES
 
               ${CMAKE_INSTALL_INCLUDEDIR}/digikam
 )
+
+configure_file(${CMAKE_CURRENT_SOURCE_DIR}/../cmake/templates/DigikamPluginConfig.cmake.in ${CMAKE_CURRENT_BINARY_DIR}/DigikamPluginConfig.cmake)
+
+install(FILES ${CMAKE_CURRENT_BINARY_DIR}/DigikamPluginConfig.cmake
+        DESTINATION "${CMAKE_INSTALL_LIBDIR}/cmake/DigikamPlugin")

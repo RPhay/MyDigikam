@@ -23,12 +23,12 @@ remove_definitions(
 # =======================================================
 # Twitter demo test tool
 
-set(sialis_SRCS ${CMAKE_CURRENT_SOURCE_DIR}/../../../../libs/dplugins/webservices/o2/examples/sialis/tweetmodel.cpp
-                ${CMAKE_CURRENT_SOURCE_DIR}/../../../../libs/dplugins/webservices/o2/examples/sialis/twitterapi.cpp
-                ${CMAKE_CURRENT_SOURCE_DIR}/../../../../libs/dplugins/webservices/o2/examples/sialis/main.cpp
+set(sialis_SRCS ${CMAKE_SOURCE_DIR}/core/libs/dplugins/webservices/o2/examples/sialis/tweetmodel.cpp
+                ${CMAKE_SOURCE_DIR}/core/libs/dplugins/webservices/o2/examples/sialis/twitterapi.cpp
+                ${CMAKE_SOURCE_DIR}/core/libs/dplugins/webservices/o2/examples/sialis/main.cpp
 )
 
-qt5_add_resources(QT_RESOURCES ${CMAKE_CURRENT_SOURCE_DIR}/../../../../libs/dplugins/webservices/o2/examples/sialis/main.qml
+qt5_add_resources(QT_RESOURCES ${CMAKE_SOURCE_DIR}/core/libs/dplugins/webservices/o2/examples/sialis/main.qml
 )
 
 add_executable(sialis ${sialis_SRCS})

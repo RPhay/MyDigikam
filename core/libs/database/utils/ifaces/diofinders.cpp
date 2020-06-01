@@ -44,39 +44,22 @@ SidecarFinder::SidecarFinder(const QList<QUrl>& files)
 {
     // First, the sidecar urls will be added so that they are first copied or renamed.
 
-    const QString xmp(QLatin1String(".xmp"));
+    QStringList sidecarExtensions;
+    sidecarExtensions << QLatin1String("xmp");
+    sidecarExtensions << MetaEngineSettings::instance()->settings().sidecarExtensions;
 
     foreach (const QUrl& url, files)
     {
         QFileInfo info(url.toLocalFile());
 
-        if (!info.filePath().endsWith(xmp))
-        {
-            QFileInfo extInfo(info.filePath() + xmp);
-            QFileInfo basInfo(info.path()             +
-                              QLatin1Char('/')        +
-                              info.completeBaseName() + xmp);
-
-            if (extInfo.exists())
-            {
-                localFiles        << QUrl::fromLocalFile(extInfo.filePath());
-                localFileModes    << true;
-                localFileSuffixes << xmp;
-                qCDebug(DIGIKAM_DATABASE_LOG) << "Detected a sidecar" << localFiles.last();
-            }
-
-            if (basInfo.exists())
-            {
-                localFiles        << QUrl::fromLocalFile(basInfo.filePath());
-                localFileModes    << false;
-                localFileSuffixes << xmp;
-                qCDebug(DIGIKAM_DATABASE_LOG) << "Detected a sidecar" << localFiles.last();
-            }
-        }
-
-        foreach (const QString& ext, MetaEngineSettings::instance()->settings().sidecarExtensions)
+        foreach (const QString& ext, sidecarExtensions)
         {
             QString suffix(QLatin1Char('.') + ext);
+
+            if (info.filePath().endsWith(suffix))
+            {
+                continue;
+            }
 
             QFileInfo extInfo(info.filePath() + suffix);
             QFileInfo basInfo(info.path()             +
