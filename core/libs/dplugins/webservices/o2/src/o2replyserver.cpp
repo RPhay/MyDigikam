@@ -111,7 +111,7 @@ QMap<QString, QString> O2ReplyServer::parseQueryParams(QByteArray *data) {
         QString value = QUrl::fromPercentEncoding(QByteArray().append(tokenPair.second.trimmed().toLatin1()));
         queryParams.insert(key, value);
     }
-    return std::move(queryParams);
+    return queryParams;
 }
 
 void O2ReplyServer::closeServer(QTcpSocket *socket, bool hasparameters)
