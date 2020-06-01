@@ -8,13 +8,13 @@
 APPLY_COMMON_POLICIES()
 
 set(libfuzzysearch_SRCS
-    fuzzysearchview.cpp
-    fuzzysearchview_sketch.cpp
-    fuzzysearchview_similar.cpp
-    findduplicatesview.cpp
-    findduplicatesalbum.cpp
-    findduplicatesalbumitem.cpp
-    sketchwidget.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/fuzzysearchview.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/fuzzysearchview_sketch.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/fuzzysearchview_similar.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/findduplicatesview.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/findduplicatesalbum.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/findduplicatesalbumitem.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/sketchwidget.cpp
 )
 
 include_directories($<TARGET_PROPERTY:Qt5::Sql,INTERFACE_INCLUDE_DIRECTORIES>

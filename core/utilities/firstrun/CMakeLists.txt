@@ -8,17 +8,17 @@
 APPLY_COMMON_POLICIES()
 
 set(libfirstrun_SRCS
-    firstrundlg.cpp
-    migratefromdigikam4page.cpp
-    welcomepage.cpp
-    collectionpage.cpp
-    databasepage.cpp
-    rawpage.cpp
-    tooltipspage.cpp
-    previewpage.cpp
-    openfilepage.cpp
-    metadatapage.cpp
-    startscanpage.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/firstrundlg.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/migratefromdigikam4page.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/welcomepage.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/collectionpage.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/databasepage.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/rawpage.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/tooltipspage.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/previewpage.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/openfilepage.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/metadatapage.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/startscanpage.cpp
 )
 
 include_directories($<TARGET_PROPERTY:Qt5::Gui,INTERFACE_INCLUDE_DIRECTORIES>

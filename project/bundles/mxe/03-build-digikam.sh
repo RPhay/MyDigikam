@@ -183,7 +183,8 @@ ${MXE_BUILD_TARGETS}-cmake $ORIG_WD/../3rdparty \
                            -DINSTALL_ROOT=${MXE_INSTALL_PREFIX} \
                            -DEXTERNALS_DOWNLOAD_DIR=$DOWNLOAD_DIR
 
-${MXE_BUILD_TARGETS}-cmake --build . --config RelWithDebInfo --target ext_gmic_qt -- -j$CPU_CORES
+${MXE_BUILD_TARGETS}-cmake --build . --config RelWithDebInfo --target ext_gmic_qt    -- -j$CPU_CORES
+${MXE_BUILD_TARGETS}-cmake --build . --config RelWithDebInfo --target ext_mosaicwall -- -j$CPU_CORES
 
 #################################################################################################
 

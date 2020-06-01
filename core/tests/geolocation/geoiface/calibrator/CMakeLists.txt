@@ -12,7 +12,7 @@ include_directories(
     $<TARGET_PROPERTY:KF5::I18n,INTERFACE_INCLUDE_DIRECTORIES>
 )
 
-set(calibrator_sources calibrator.cpp)
+set(calibrator_sources ${CMAKE_CURRENT_SOURCE_DIR}/calibrator.cpp)
 
 add_executable(geoiface_calibrator ${calibrator_sources})
 

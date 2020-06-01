@@ -6,7 +6,7 @@
 
 APPLY_COMMON_POLICIES()
 
-ecm_add_tests(test_geoparsing.cpp
+ecm_add_tests(${CMAKE_CURRENT_SOURCE_DIR}/test_geoparsing.cpp
 
               NAME_PREFIX
 

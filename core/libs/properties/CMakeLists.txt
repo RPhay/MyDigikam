@@ -23,19 +23,19 @@ if(ENABLE_DBUS)
 endif()
 
 set(libitemproperties_SRCS
-    itempropertiessidebar.cpp
-    itempropertiestab.cpp
-    itemselectionpropertiestab.cpp
-    itempropertiesmetadatatab.cpp
-    itempropertiescolorstab.cpp
-    itempropertiestxtlabel.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/itempropertiessidebar.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/itempropertiestab.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/itemselectionpropertiestab.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/itempropertiesmetadatatab.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/itempropertiescolorstab.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/itempropertiestxtlabel.cpp
 )
 
 if(${Marble_FOUND})
     set(libitemproperties_SRCS
         ${libitemproperties_SRCS}
-        geolocation/itempropertiesgpstab.cpp
-        geolocation/itemgpsmodelhelper.cpp
+        ${CMAKE_CURRENT_SOURCE_DIR}/geolocation/itempropertiesgpstab.cpp
+        ${CMAKE_CURRENT_SOURCE_DIR}/geolocation/itemgpsmodelhelper.cpp
    )
 endif()
 
@@ -48,19 +48,19 @@ target_compile_definitions(core_itemproperties_obj
 )
 
 set(libitemversionssidebar_SRCS
-    history/itempropertiesversionstab.cpp
-    history/versionstreeview.cpp
-    history/versionsoverlays.cpp
-    history/versionsdelegate.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/history/itempropertiesversionstab.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/history/versionstreeview.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/history/versionsoverlays.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/history/versionsdelegate.cpp
 )
 
 set(libitempropertiesdigikam_SRCS
-    itempropertiessidebardb.cpp
-    import/importitempropertiessidebar.cpp
-    import/importitempropertiestab.cpp
-    captions/itemdescedittab.cpp
-    captions/disjointmetadata.cpp
-    captions/captionedit.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/itempropertiessidebardb.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/import/importitempropertiessidebar.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/import/importitempropertiestab.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/captions/itemdescedittab.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/captions/disjointmetadata.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/captions/captionedit.cpp
 )
 
 

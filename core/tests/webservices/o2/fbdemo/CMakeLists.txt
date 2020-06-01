@@ -21,8 +21,8 @@ remove_definitions(
     -DQT_NO_URL_CAST_FROM_STRING
     -DQT_NO_CAST_FROM_BYTEARRAY)
 
-set(fbdemo_SRCS ${CMAKE_CURRENT_SOURCE_DIR}/../../../../libs/dplugins/webservices/o2/examples/facebookdemo/fbdemo.cpp
-                ${CMAKE_CURRENT_SOURCE_DIR}/../../../../libs/dplugins/webservices/o2/examples/facebookdemo/main.cpp
+set(fbdemo_SRCS ${CMAKE_SOURCE_DIR}/core/libs/dplugins/webservices/o2/examples/facebookdemo/fbdemo.cpp
+                ${CMAKE_SOURCE_DIR}/core/libs/dplugins/webservices/o2/examples/facebookdemo/main.cpp
 )
 
 add_executable(fbdemo ${fbdemo_SRCS})

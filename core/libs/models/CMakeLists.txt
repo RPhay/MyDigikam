@@ -25,7 +25,7 @@ endif()
 # ---------------------------------------------------------------------
 
 set(libgenericmodels_SRCS
-    categorizeditemmodel.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/categorizeditemmodel.cpp
 )
 
 # Used by digikamcore
@@ -39,12 +39,12 @@ target_compile_definitions(core_digikamgenericmodels_obj
 # ---------------------------------------------------------------------
 
 set(libalbummodels_SRCS
-    itemalbummodel.cpp
-    itemalbumfiltermodel.cpp
-    abstractalbummodel.cpp
-    albummodel.cpp
-    albumfiltermodel.cpp
-    albummodeldragdrophandler.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/itemalbummodel.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/itemalbumfiltermodel.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/abstractalbummodel.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/albummodel.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/albumfiltermodel.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/albummodeldragdrophandler.cpp
 )
 
 # Used by digikamgui

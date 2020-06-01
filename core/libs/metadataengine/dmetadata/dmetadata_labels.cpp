@@ -201,7 +201,10 @@ int DMetadata::getItemRating(const DMetadataSettingsContainer& settings) const
 
                 if (exivSupported)
                 {
-                    getExifTagLong(nameSpace, rating);
+                    if (!getExifTagLong(nameSpace, rating))
+                    {
+                        continue;
+                    }
                 }
 
                 break;

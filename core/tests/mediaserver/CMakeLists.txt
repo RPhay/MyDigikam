@@ -6,7 +6,7 @@
 
 APPLY_COMMON_POLICIES()
 
-add_executable(dmediaservertest dmediaserver_test.cpp)
+add_executable(dmediaservertest ${CMAKE_CURRENT_SOURCE_DIR}/dmediaserver_test.cpp)
 
 target_link_libraries(dmediaservertest
 

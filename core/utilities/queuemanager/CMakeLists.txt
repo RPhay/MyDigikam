@@ -8,25 +8,25 @@
 APPLY_COMMON_POLICIES()
 
 set(libqueuemanager_SRCS
-    manager/actionthread.cpp
-    manager/task.cpp
-    manager/batchtool.cpp
-    manager/batchtoolutils.cpp
-    manager/batchtoolsfactory.cpp
-    manager/workflowmanager.cpp
-    dplugins/dpluginbqm.cpp
-    dplugins/dpluginconfviewbqm.cpp
-    views/workflowdlg.cpp
-    views/assignedlist.cpp
-    views/queuelist.cpp
-    views/queuepool.cpp
-    views/queuesettingsview.cpp
-    views/queuetooltip.cpp
-    views/toolsettingsview.cpp
-    views/toolslistview.cpp
-    views/toolsview.cpp
-    views/workflowlist.cpp
-    main/queuemgrwindow.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/manager/actionthread.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/manager/task.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/manager/batchtool.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/manager/batchtoolutils.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/manager/batchtoolsfactory.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/manager/workflowmanager.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/dplugins/dpluginbqm.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/dplugins/dpluginconfviewbqm.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/views/workflowdlg.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/views/assignedlist.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/views/queuelist.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/views/queuepool.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/views/queuesettingsview.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/views/queuetooltip.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/views/toolsettingsview.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/views/toolslistview.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/views/toolsview.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/views/workflowlist.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/main/queuemgrwindow.cpp
 )
 
 if(Gphoto2_FOUND)
@@ -53,4 +53,4 @@ target_compile_definitions(gui_queuemanager_obj
                            digikamgui_EXPORTS
 )
 
-install(FILES main/queuemgrwindowui5.rc DESTINATION ${KXMLGUI_INSTALL_DIR}/digikam)
+install(FILES ${CMAKE_CURRENT_SOURCE_DIR}/main/queuemgrwindowui5.rc DESTINATION ${KXMLGUI_INSTALL_DIR}/digikam)

@@ -59,7 +59,7 @@ public:
         mMinimumSize = size;
     }
 
-    QSize minimumSizeHint() const Q_DECL_OVERRIDE
+    QSize minimumSizeHint() const override
     {
         return mMinimumSize.expandedTo(QStackedWidget::minimumSizeHint());
     }

@@ -495,14 +495,13 @@ void CollectionScanner::scanForStaleAlbums(const QList<int>& locationIdsToScan)
     }
 
     QList<AlbumShortInfo> albumList = CoreDbAccess().db()->getAlbumShortInfos();
-    QSet<QString> ignorePaths;
     QList<int> toBeDeleted;
 
     QList<AlbumShortInfo>::const_iterator it3;
 
     for (it3 = albumList.constBegin() ; it3 != albumList.constEnd() ; ++it3)
     {
-        if (!locationIdsToScan.contains((*it3).albumRootId))
+        if (!locationIdsToScan.contains((*it3).albumRootId) || toBeDeleted.contains((*it3).id))
         {
             continue;
         }
@@ -531,13 +530,14 @@ void CollectionScanner::scanForStaleAlbums(const QList<int>& locationIdsToScan)
             // let digikam think that ignored directories got deleted
             // (if they already exist in the database, this will delete them)
 
-            if (!dirExist                                      ||
-                ignorePaths.contains(fileInfo.path())          ||
-                d->ignoreDirectory.contains(fileInfo.fileName()))
+            if (!dirExist || d->ignoreDirectory.contains(fileInfo.fileName()))
             {
-                ignorePaths      << fileInfo.filePath();
-                toBeDeleted      << (*it3).id;
-                d->scannedAlbums << (*it3).id;
+                // We have an ignored album, all sub-albums have to be ignored
+
+                QList<int> subAlbums = CoreDbAccess().db()->getAlbumAndSubalbumsForPath((*it3).albumRootId,
+                                                                                        (*it3).relativePath);
+                toBeDeleted      << subAlbums;
+                d->scannedAlbums << subAlbums;
             }
         }
     }

@@ -36,8 +36,9 @@
 #include "itemattributeswatch.h"
 #include "iteminfotasksplitter.h"
 #include "collectionscanner.h"
-#include "facetagseditor.h"
+#include "filereadwritelock.h"
 #include "scancontroller.h"
+#include "faceutils.h"
 #include "jpegutils.h"
 #include "dimg.h"
 
@@ -173,6 +174,8 @@ void FileActionMngrFileWorker::transform(FileActionItemInfoList infos, int actio
             break;
         }
 
+        FileWriteLocker lock(info.filePath());
+
         QString path                                    = info.filePath();
         QString format                                  = info.format();
         MetaEngine::ImageOrientation currentOrientation = (MetaEngine::ImageOrientation)info.orientation();
@@ -276,18 +279,32 @@ void FileActionMngrFileWorker::transform(FileActionItemInfoList infos, int actio
             }
         }
 
-        adjustFaceRectangles(info, rotatedPixels,
-                                   finalOrientation,
-                                   currentOrientation);
+        int newOrientation = finalOrientation;
 
         if (rotatedPixels)
         {
-            CollectionScanner scanner;
-            scanner.scanFile(info, CollectionScanner::NormalScan);
-
-            // reset for DB. Metadata is already edited.
-
             finalOrientation = MetaEngine::ORIENTATION_NORMAL;
+        }
+
+        // DB rotation
+
+        ItemInfo(info).setOrientation(finalOrientation);
+
+        // Adjust Faces
+
+        QSize newSize = FaceUtils().rotateFaces(info, newOrientation,
+                                                      currentOrientation);
+        if (newSize.isValid())
+        {
+            MetadataHub hub;
+            hub.load(info);
+
+            // Adjusted newSize
+
+            newSize = rotatedPixels ? newSize : info.dimensions();
+
+            hub.loadFaceTags(info, newSize);
+            hub.write(info.filePath(), MetadataHub::WRITE_TAGS, true);
         }
 
         if (rotateByMetadata)
@@ -303,15 +320,14 @@ void FileActionMngrFileWorker::transform(FileActionItemInfoList infos, int actio
             }
         }
 
+        CollectionScanner scanner;
+        scanner.scanFile(info, CollectionScanner::NormalScan);
+
         if (!failedItems.contains(info.name()))
         {
             emit imageDataChanged(path, true, true);
             ItemAttributesWatch::instance()->fileMetadataChanged(info.fileUrl());
         }
-
-        // DB rotation
-
-        ItemInfo(info).setOrientation(finalOrientation);
 
         infos.writtenToOne();
     }
@@ -324,92 +340,6 @@ void FileActionMngrFileWorker::transform(FileActionItemInfoList infos, int actio
     infos.finishedWriting();
 
     ScanController::instance()->resumeCollectionScan();
-}
-
-void FileActionMngrFileWorker::adjustFaceRectangles(const ItemInfo& info, bool rotatedPixels,
-                                                                          int newOrientation,
-                                                                          int oldOrientation)
-{
-    /**
-     *  Get all faces from database and rotate them
-     */
-    QList<FaceTagsIface> facesList = FaceTagsEditor().databaseFaces(info.id());
-
-    if (facesList.isEmpty())
-    {
-        return;
-    }
-
-    QSize newSize = info.dimensions();
-    QMultiMap<QString, QRect> adjustedFaces;
-
-    foreach (const FaceTagsIface& dface, facesList)
-    {
-        QRect faceRect = dface.region().toRect();
-        QString name   = FaceTags::faceNameForTag(dface.tagId());
-
-        TagRegion::reverseToOrientation(faceRect,
-                                        oldOrientation,
-                                        info.dimensions());
-
-        newSize = TagRegion::adjustToOrientation(faceRect,
-                                                 newOrientation,
-                                                 info.dimensions());
-
-        if (dface.tagId() == FaceTags::unknownPersonTagId())
-        {
-            name.clear();
-        }
-
-        adjustedFaces.insertMulti(name, faceRect);
-    }
-
-    /**
-     *  Delete all old faces and add rotated ones
-     */
-    FaceTagsEditor().removeAllFaces(info.id());
-
-    QMultiMap<QString, QRect>::ConstIterator it = adjustedFaces.constBegin();
-
-    for ( ; it != adjustedFaces.constEnd() ; ++it)
-    {
-        TagRegion region(it.value());
-
-        if (it.key().isEmpty())
-        {
-            int tagId = FaceTags::unknownPersonTagId();
-            FaceTagsIface face(FaceTagsIface::UnknownName, info.id(), tagId, region);
-
-            FaceTagsEditor().addManually(face);
-        }
-        else
-        {
-            int tagId = FaceTags::getOrCreateTagForPerson(it.key());
-
-            if (!tagId)
-            {
-                qCDebug(DIGIKAM_GENERAL_LOG) << "Failed to create a person tag for name" << it.key();
-            }
-
-            FaceTagsEditor().add(info.id(), tagId, region, false);
-        }
-    }
-
-    if (!rotatedPixels)
-    {
-        newSize = info.dimensions();
-    }
-
-    /**
-     * Write medatada
-     */
-    MetadataHub hub;
-    hub.load(info);
-
-    // Adjusted newSize
-
-    hub.loadFaceTags(info, newSize);
-    hub.write(info.filePath(), MetadataHub::WRITE_ALL, true);
 }
 
 } // namespace Digikam

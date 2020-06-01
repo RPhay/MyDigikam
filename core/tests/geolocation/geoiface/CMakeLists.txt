@@ -17,7 +17,7 @@ add_subdirectory(demo)
 
 # -- test the primitive datatypes and helper functions -----------------------------------------
 
-ecm_add_tests(test_primitives.cpp
+ecm_add_tests(${CMAKE_CURRENT_SOURCE_DIR}/test_primitives.cpp
 
               NAME_PREFIX
 
@@ -32,7 +32,7 @@ ecm_add_tests(test_primitives.cpp
 
 # -- test the GeoCoordinates class --------------------------------------------------------------
 
-ecm_add_tests(test_geocoordinates.cpp
+ecm_add_tests(${CMAKE_CURRENT_SOURCE_DIR}/test_geocoordinates.cpp
 
               NAME_PREFIX
 
@@ -47,7 +47,7 @@ ecm_add_tests(test_geocoordinates.cpp
 
 # -- test the TileIndex class --------------------------------------------------------------------
 
-ecm_add_tests(test_tileindex.cpp
+ecm_add_tests(${CMAKE_CURRENT_SOURCE_DIR}/test_tileindex.cpp
 
               NAME_PREFIX
 
@@ -64,7 +64,7 @@ ecm_add_tests(test_tileindex.cpp
 
 # do not add this as a test because it only works if there is an internet connection
 #
-#ecm_add_tests(test_lookup_altitude_geonames.cpp
+#ecm_add_tests(${CMAKE_CURRENT_SOURCE_DIR}/test_lookup_altitude_geonames.cpp
 #
 #              NAME_PREFIX
 #
@@ -81,7 +81,7 @@ ecm_add_tests(test_tileindex.cpp
 
 if(NOT WIN32)
 
-    ecm_add_tests(test_itemmarkertiler.cpp
+    ecm_add_tests(${CMAKE_CURRENT_SOURCE_DIR}/test_itemmarkertiler.cpp
 
                   NAME_PREFIX
 
@@ -98,7 +98,7 @@ endif()
 
 # -- test the track management classes -------------------------------------------------------------
 
-ecm_add_tests(test_tracks.cpp
+ecm_add_tests(${CMAKE_CURRENT_SOURCE_DIR}/test_tracks.cpp
 
               NAME_PREFIX
 
@@ -113,7 +113,7 @@ ecm_add_tests(test_tracks.cpp
 
 # -- track loading application for timing tests ----------------------------------------------------
 
-set(loadtrack_sources loadtrack.cpp)
+set(loadtrack_sources ${CMAKE_CURRENT_SOURCE_DIR}/loadtrack.cpp)
 
 add_executable(loadtrack ${loadtrack_sources})
 

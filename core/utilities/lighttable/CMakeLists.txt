@@ -8,14 +8,14 @@
 APPLY_COMMON_POLICIES()
 
 set(liblighttable_SRCS
-    lighttablepreview.cpp
-    lighttableview.cpp
-    lighttablethumbbar.cpp
-    lighttablewindow.cpp
-    lighttablewindow_config.cpp
-    lighttablewindow_setup.cpp
-    lighttablewindow_tools.cpp
-    lighttablewindow_import.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/lighttablepreview.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/lighttableview.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/lighttablethumbbar.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/lighttablewindow.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/lighttablewindow_config.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/lighttablewindow_setup.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/lighttablewindow_tools.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/lighttablewindow_import.cpp
 )
 
 include_directories($<TARGET_PROPERTY:Qt5::PrintSupport,INTERFACE_INCLUDE_DIRECTORIES>
@@ -46,4 +46,4 @@ target_compile_definitions(gui_lighttable_obj
                            digikamgui_EXPORTS
 )
 
-install(FILES lighttablewindowui5.rc DESTINATION ${KXMLGUI_INSTALL_DIR}/digikam)
+install(FILES ${CMAKE_CURRENT_SOURCE_DIR}/lighttablewindowui5.rc DESTINATION ${KXMLGUI_INSTALL_DIR}/digikam)

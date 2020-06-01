@@ -32,8 +32,6 @@
 #include <QPainter>
 #include <QPixmap>
 #include <QLocale>
-#include <QScreen>
-#include <QWindow>
 
 // KDE includes
 
@@ -41,6 +39,7 @@
 
 // Local includes
 
+#include "slideosd.h"
 #include "digikam_debug.h"
 #include "dinfointerface.h"
 #include "itempropertiestab.h"
@@ -57,7 +56,8 @@ public:
     explicit Private()
         : maxStringLen(80),
           paintEnabled(true),
-          settings(nullptr)
+          settings(nullptr),
+          parent(nullptr)
     {
     }
 
@@ -67,14 +67,16 @@ public:
     QUrl                     url;
 
     SlideShowSettings*       settings;
+    SlideOSD*                parent;
 
     DInfoInterface::DInfoMap infoMap;
 };
 
-SlideProperties::SlideProperties(SlideShowSettings* const settings, QWidget* const parent)
+SlideProperties::SlideProperties(SlideShowSettings* const settings, SlideOSD* const parent)
     : QWidget(parent),
       d(new Private)
 {
+    d->parent   = parent;
     d->settings = settings;
     setMouseTracking(true);
 }
@@ -86,19 +88,11 @@ SlideProperties::~SlideProperties()
 
 void SlideProperties::setCurrentUrl(const QUrl& url)
 {
-    QScreen* screen = qApp->primaryScreen();
-
-    if (QWidget* const widget = nativeParentWidget())
-    {
-        if (QWindow* const window = widget->windowHandle())
-        {
-            screen = window->screen();
-        }
-    }
-
-    setFixedSize(screen->availableGeometry().size() / 1.5);
     d->infoMap = d->settings->iface->itemInfo(url);
     d->url     = url;
+
+    move(0, 0);
+    setFixedSize(d->parent->slideShowSize());
 
     update();
 }

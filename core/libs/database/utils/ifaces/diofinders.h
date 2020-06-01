@@ -51,6 +51,7 @@ public:
 public:
 
     QList<QUrl>    localFiles;
+    QList<bool>    localFileModes;
     QList<QString> localFileSuffixes;
 };
 

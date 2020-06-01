@@ -19,7 +19,7 @@ if(ENABLE_DBUS)
     include_directories($<TARGET_PROPERTY:Qt5::DBus,INTERFACE_INCLUDE_DIRECTORIES>)
 endif()
 
-ecm_add_tests(timestampupdatetest.cpp
+ecm_add_tests(${CMAKE_CURRENT_SOURCE_DIR}/timestampupdatetest.cpp
 
               NAME_PREFIX
 

@@ -38,11 +38,13 @@
 namespace DigikamGenericSlideShowPlugin
 {
 
+class SlideOSD;
+
 class SlideProperties : public QWidget
 {
 public:
 
-    explicit SlideProperties(SlideShowSettings* const settings, QWidget* const parent);
+    explicit SlideProperties(SlideShowSettings* const settings, SlideOSD* const parent);
     ~SlideProperties();
 
     void setCurrentUrl(const QUrl& url);

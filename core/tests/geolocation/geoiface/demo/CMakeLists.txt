@@ -16,11 +16,11 @@ include_directories(
 )
 
 set(geoiface_demo_SRCS
-    demo-main.cpp
-    myimageitem.cpp
-    mytreewidget.cpp
-    mydragdrophandler.cpp
-    mainwindow.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/demo-main.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/myimageitem.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/mytreewidget.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/mydragdrophandler.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/mainwindow.cpp
 )
 
 add_executable(geoiface_demo ${geoiface_demo_SRCS})

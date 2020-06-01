@@ -201,12 +201,6 @@ macro(APPLY_COMMON_POLICIES)
         cmake_policy(SET CMP0071 NEW)
     endif()
 
-    if(POLICY CMP0072)
-        # Prefers GLVND by default when available introduced in CMake version 3.11
-        # Details: https://cmake.org/cmake/help/git-stage/policy/CMP0072.html
-        cmake_policy(SET CMP0072 NEW)
-    endif()
-
     if(POLICY CMP0092)
         # MSVC warnings flag rules introduced in CMake version 3.16
         # Details: https://cmake.org/cmake/help/git-stage/policy/CMP0092.html

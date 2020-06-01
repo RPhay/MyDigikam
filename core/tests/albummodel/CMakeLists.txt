@@ -16,7 +16,7 @@ include_directories(
     $<TARGET_PROPERTY:KF5::XmlGui,INTERFACE_INCLUDE_DIRECTORIES>
 )
 
-add_executable(albummodeltest albummodeltest.cpp)
+add_executable(albummodeltest ${CMAKE_CURRENT_SOURCE_DIR}/albummodeltest.cpp)
 
 target_link_libraries(albummodeltest
 
@@ -31,7 +31,7 @@ target_link_libraries(albummodeltest
 # TODO: this test case needs to be re-written, since it depends on database,
 # threading etc, therefore it is not predictable and very hard to fix
 #
-#ecm_add_tests(albummodeltest.cpp
+#ecm_add_tests(${CMAKE_CURRENT_SOURCE_DIR}/albummodeltest.cpp
 #
 #              NAME_PREFIX
 #
