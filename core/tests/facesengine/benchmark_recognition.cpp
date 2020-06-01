@@ -135,7 +135,7 @@ void Benchmark::registerTrainingSet()
         m_trainSize += iter.value().size();
 
         // Define lambda function as map function
-        std::function<Identity(const QFileInfo&)> mapFaceIdentity = [iter, this](const QFileInfo& fileInfo)
+        std::function<Identity(const QFileInfo&)> mapFaceIdentity = [this, iter](const QFileInfo& fileInfo)
         {
             QImage img(fileInfo.absoluteFilePath());
 
@@ -145,6 +145,7 @@ void Benchmark::registerTrainingSet()
             return newIdentity;
         };
 
+        // NOTE: cv::dnn is not reentrant nor threadsafe
         //QVector<Identity> identities = QtConcurrent::blockingMapped(iter.value(), mapFaceIdentity)
 
         for (int i = 0; i < iter.value().size(); ++i)
@@ -173,11 +174,20 @@ void Benchmark::verifyTestSet(FaceRecognizer::ComparisonMetric metric, double th
     {
         m_testSize += iter.value().size();
 
-        for (int i = 0; i < iter.value().size(); ++i)
+        // Define lambda function as map function
+        std::function<Identity(const QFileInfo&)> mapFaceIdentity = [this, metric, threshold, iter](const QFileInfo& fileInfo)
         {
-            QImage img(iter.value()[i].absoluteFilePath());
+            QImage img(fileInfo.absoluteFilePath());
 
             Identity newIdentity = m_recognizer->findIdenity(preprocess(img), metric, threshold);
+            newIdentity.setAttribute(QLatin1String("fullName"), iter.key());
+
+            return newIdentity;
+        };
+
+        for (int i = 0; i < iter.value().size(); ++i)
+        {
+            Identity newIdentity = mapFaceIdentity(iter.value()[i]);
 
             if (newIdentity.isNull() && m_trainSet.contains(iter.key()))
             {
