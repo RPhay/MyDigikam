@@ -44,7 +44,6 @@
 #include <QImage>
 #include <QStringList>
 #include <QApplication>
-#include <QTemporaryFile>
 
 // Local includes
 

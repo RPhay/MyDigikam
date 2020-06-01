@@ -29,7 +29,6 @@
 #include <QDateTime>
 #include <QFileInfo>
 #include <QPolygon>
-#include <QTemporaryFile>
 #include <QWidget>
 #include <QLabel>
 #include <QUuid>
@@ -433,9 +432,9 @@ void BatchTool::setOutputUrlFromInputUrl()
 
     temp.setAutoRemove(false);
     temp.open();
-    qCDebug(DIGIKAM_GENERAL_LOG) << "path: " << temp.fileName();
+    qCDebug(DIGIKAM_GENERAL_LOG) << "path: " << temp.safeFilePath();
 
-    setOutputUrl(QUrl::fromLocalFile(temp.fileName()));
+    setOutputUrl(QUrl::fromLocalFile(temp.safeFilePath()));
 }
 
 bool BatchTool::isRawFile(const QUrl& url) const
