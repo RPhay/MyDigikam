@@ -79,8 +79,8 @@ double FaceExtractor::cosineDistance(std::vector<float> v1,
     return (scalarProduct / (normV1 * normV2));
 }
 
-double FaceExtractor::L2Distance(std::vector<float> v1,
-                                 std::vector<float> v2)
+double FaceExtractor::L2squareDistance(std::vector<float> v1,
+                                       std::vector<float> v2)
 {
     assert(v1.size() == v2.size());
 
@@ -91,10 +91,10 @@ double FaceExtractor::L2Distance(std::vector<float> v1,
         sqrDistance += pow((v1[i] - v2[i]), 2);
     }
 
-    return sqrt(sqrDistance);
+    return sqrDistance;
 }
 
-double FaceExtractor::L2NormDistance(std::vector<float> v1, std::vector<float> v2)
+double FaceExtractor::L2squareNormDistance(std::vector<float> v1, std::vector<float> v2)
 {
     assert(v1.size() == v2.size());
 
@@ -108,7 +108,7 @@ double FaceExtractor::L2NormDistance(std::vector<float> v1, std::vector<float> v
         sqrDistance += pow((v1[i]/normV1 - v2[i]/normV2), 2);
     }
 
-    return sqrt(sqrDistance);
+    return sqrDistance;
 }
 
 cv::Mat FaceExtractor::vectortomat(const std::vector<float>& vector)

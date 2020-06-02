@@ -81,6 +81,7 @@ public:
 private:
 
     cv::Mat preprocess(QImage faceImg);
+    static void saveIdentity(const Identity& id, const QString filePath) const;
 
 public:
     Q_SLOT void fetchData();
@@ -369,6 +370,11 @@ void Benchmark::verifyTestSetL2NormDistance()
 void Benchmark::verifyTestSetSupportVectorMachine()
 {
     verifyTestSet(FaceRecognizer::SupportVectorMachine, 0.7);
+}
+
+void Benchmark::saveIdentity(const Identity& id, const QString filePath) const
+{
+
 }
 
 QCommandLineParser* parseOptions(const QCoreApplication& app)

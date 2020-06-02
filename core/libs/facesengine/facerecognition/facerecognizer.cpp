@@ -209,10 +209,10 @@ Identity FaceRecognizer::findIdenity(const cv::Mat& preprocessedImage, Compariso
         bestDistance = -1;
         break;
     case L2Distance:
-        bestDistance = 1;
+        bestDistance = 2;
         break;
     case L2NormDistance:
-        bestDistance = 1;
+        bestDistance = 2;
         break;
     default:
         bestDistance = 1;
@@ -264,7 +264,7 @@ Identity FaceRecognizer::findIdenity(const cv::Mat& preprocessedImage, Compariso
 
                 break;
             case L2Distance:
-                distance = FaceExtractor::L2Distance(recordedFaceEmbedding, faceEmbedding);
+                distance = FaceExtractor::L2squareDistance(recordedFaceEmbedding, faceEmbedding);
 
                 if (distance < bestDistance)
                 {
@@ -274,7 +274,7 @@ Identity FaceRecognizer::findIdenity(const cv::Mat& preprocessedImage, Compariso
 
                 break;
             case L2NormDistance:
-                distance = FaceExtractor::L2NormDistance(recordedFaceEmbedding, faceEmbedding);
+                distance = FaceExtractor::L2squareNormDistance(recordedFaceEmbedding, faceEmbedding);
 
                 if (distance < bestDistance)
                 {
