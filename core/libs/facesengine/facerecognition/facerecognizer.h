@@ -23,6 +23,7 @@ public:
     enum ComparisonMetric
     {
         CosDistance = 0,
+        MeanCosDistance,
         L2Distance,
         L2NormDistance,
         SupportVectorMachine,

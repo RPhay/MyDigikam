@@ -3,7 +3,7 @@
  * This file is a part of digiKam project
  * https://www.digikam.org
  *
- * Date        : 2020-05-20
+ * Date        : 2020-05-25
  * Description : Testing tool for dnn face recognition of face engines
  *
  * Copyright (C) 2020 by Nghia Duong <minhnghiaduong997 at gmail dot com>
@@ -28,6 +28,7 @@
 #include <QDir>
 #include <QImage>
 #include <QElapsedTimer>
+#include <QtConcurrent>
 #include <QDebug>
 #include <QHash>
 #include <QTest>
@@ -79,21 +80,21 @@ public:
 
 private:
 
-    cv::Mat preprocess(QImage* faceImg);
+    cv::Mat preprocess(QImage faceImg);
 
 public:
     Q_SLOT void fetchData();
     Q_SLOT void registerTrainingSet();
     Q_SLOT void verifyTestSetCosDistance();
+    Q_SLOT void verifyTestSetMeanCosDistance();
     Q_SLOT void verifyTestSetL2Distance();
     Q_SLOT void verifyTestSetL2NormDistance();
     Q_SLOT void verifyTestSetSupportVectorMachine();
 
-
 private:
 
-    QHash<QString, QVector<QImage*> > m_trainSet;
-    QHash<QString, QVector<QImage*> > m_testSet;
+    QHash<QString, QVector<QFileInfo> > m_trainSet;
+    QHash<QString, QVector<QFileInfo> > m_testSet;
 
     OpenCVDNNFaceDetector* m_detector;
     FaceRecognizer*        m_recognizer;
@@ -112,32 +113,8 @@ Benchmark::Benchmark()
 
 Benchmark::~Benchmark()
 {
-    for (QHash<QString, QVector<QImage*> >::iterator vector  = m_trainSet.begin();
-                                                     vector != m_trainSet.end();
-                                                   ++vector)
-    {
-
-        QVector<QImage*>::iterator img = vector.value().begin();
-
-        while (img != vector.value().end())
-        {
-            delete *img;
-            img = vector.value().erase(img);
-        }
-    }
-
-    for (QHash<QString, QVector<QImage*> >::iterator vector  = m_testSet.begin();
-                                                     vector != m_testSet.end();
-                                                   ++vector)
-    {
-        QVector<QImage*>::iterator img = vector.value().begin();
-
-        while (img != vector.value().end())
-        {
-            delete *img;
-            img = vector.value().erase(img);
-        }
-    }
+    m_trainSet.clear();
+    m_testSet.clear();
 
     delete m_detector;
     delete m_recognizer;
@@ -151,19 +128,30 @@ void Benchmark::registerTrainingSet()
     QElapsedTimer timer;
     timer.start();
 
-    for (QHash<QString, QVector<QImage*> >::iterator iter  = m_trainSet.begin();
-                                                     iter != m_trainSet.end();
-                                                   ++iter)
+    for (QHash<QString, QVector<QFileInfo> >::iterator iter  = m_trainSet.begin();
+                                                       iter != m_trainSet.end();
+                                                     ++iter)
     {
-        for (int i = 0; i < iter.value().size(); ++i)
-        {
-            Identity newIdentity = m_recognizer->newIdentity(preprocess(iter.value().at(i)));
+        m_trainSize += iter.value().size();
 
+        // Define lambda function as map function
+        std::function<Identity(const QFileInfo&)> mapFaceIdentity = [this, iter](const QFileInfo& fileInfo)
+        {
+            QImage img(fileInfo.absoluteFilePath());
+
+            Identity newIdentity = m_recognizer->newIdentity(preprocess(img));
             newIdentity.setAttribute(QLatin1String("fullName"), iter.key());
 
-            m_recognizer->saveIdentity(newIdentity);
+            return newIdentity;
+        };
 
-            ++m_trainSize;
+        // NOTE: cv::dnn is not reentrant nor threadsafe
+        //QVector<Identity> identities = QtConcurrent::blockingMapped(iter.value(), mapFaceIdentity)
+
+        for (int i = 0; i < iter.value().size(); ++i)
+        {
+            Identity identity = mapFaceIdentity(iter.value()[i]);
+            m_recognizer->saveIdentity(identity);
         }
     }
 
@@ -180,13 +168,26 @@ void Benchmark::verifyTestSet(FaceRecognizer::ComparisonMetric metric, double th
     QElapsedTimer timer;
     timer.start();
 
-    for (QHash<QString, QVector<QImage*> >::iterator iter  = m_testSet.begin();
-                                                     iter != m_testSet.end();
-                                                   ++iter)
+    for (QHash<QString, QVector<QFileInfo> >::iterator iter  = m_testSet.begin();
+                                                       iter != m_testSet.end();
+                                                     ++iter)
     {
+        m_testSize += iter.value().size();
+
+        // Define lambda function as map function
+        std::function<Identity(const QFileInfo&)> mapFaceIdentity = [this, metric, threshold, iter](const QFileInfo& fileInfo)
+        {
+            QImage img(fileInfo.absoluteFilePath());
+
+            Identity newIdentity = m_recognizer->findIdenity(preprocess(img), metric, threshold);
+            newIdentity.setAttribute(QLatin1String("fullName"), iter.key());
+
+            return newIdentity;
+        };
+
         for (int i = 0; i < iter.value().size(); ++i)
         {
-            Identity newIdentity = m_recognizer->findIdenity(preprocess(iter.value().at(i)), metric, threshold);
+            Identity newIdentity = mapFaceIdentity(iter.value()[i]);
 
             if (newIdentity.isNull() && m_trainSet.contains(iter.key()))
             {
@@ -198,8 +199,6 @@ void Benchmark::verifyTestSet(FaceRecognizer::ComparisonMetric metric, double th
                 // wrong label
                 ++nbWrongLabel;
             }
-
-            ++m_testSize;
         }
     }
 
@@ -222,7 +221,7 @@ void Benchmark::verifyTestSet(FaceRecognizer::ComparisonMetric metric, double th
                            << m_testSize << "test faces, (" << float(elapsedDetection)/m_testSize << " ms/face)";
 }
 
-cv::Mat Benchmark::preprocess(QImage* faceImg)
+cv::Mat Benchmark::preprocess(QImage faceImg)
 {
     QList<QRectF> faces;
 
@@ -231,7 +230,7 @@ cv::Mat Benchmark::preprocess(QImage* faceImg)
         // NOTE detection with filePath won't work when format is not standard
         // NOTE unexpected behaviour with detecFaces(const QString&)
         cv::Size paddedSize(0, 0);
-        cv::Mat cvImage       = m_detector->prepareForDetection(*faceImg, paddedSize);
+        cv::Mat cvImage       = m_detector->prepareForDetection(faceImg, paddedSize);
         QList<QRect> absRects = m_detector->detectFaces(cvImage, paddedSize);
         faces                 = FaceDetector::toRelativeRects(absRects,
                                                               QSize(cvImage.cols - 2*paddedSize.width,
@@ -248,12 +247,12 @@ cv::Mat Benchmark::preprocess(QImage* faceImg)
 
     if (faces.isEmpty())
     {
-        return (m_recognizer->prepareForRecognition(*faceImg));
+        return (m_recognizer->prepareForRecognition(faceImg));
     }
 
-    QRect rect = FaceDetector::toAbsoluteRect(faces[0], faceImg->size());
+    QRect rect = FaceDetector::toAbsoluteRect(faces[0], faceImg.size());
 
-    return (m_recognizer->prepareForRecognition(faceImg->copy(rect)));
+    return (m_recognizer->prepareForRecognition(faceImg.copy(rect)));
 }
 
 QVector<QListWidgetItem*> Benchmark::splitData(const QDir& dataDir, float splitRatio)
@@ -295,22 +294,22 @@ QVector<QListWidgetItem*> Benchmark::splitData(const QDir& dataDir, float splitR
         // split train/test
         for (int i = 0; i < filesInfo.size(); ++i)
         {
-            QImage* img = new QImage(filesInfo[i].absoluteFilePath());
+            QImage img(filesInfo[i].absoluteFilePath());
 
             if (i < filesInfo.size() * splitRatio)
             {
-                if (! img->isNull())
+                if (! img.isNull())
                 {
-                    m_trainSet[label].append(img);
+                    m_trainSet[label].append(filesInfo[i]);
                     imageItems.append(new QListWidgetItem(QIcon(filesInfo[i].absoluteFilePath()), filesInfo[i].absoluteFilePath()));
                     ++nbData;
                 }
             }
             else
             {
-                if (! img->isNull())
+                if (! img.isNull())
                 {
-                    m_testSet[label].append(img);
+                    m_testSet[label].append(filesInfo[i]);
                     imageItems.append(new QListWidgetItem(QIcon(filesInfo[i].absoluteFilePath()), filesInfo[i].absoluteFilePath()));
                     ++nbData;
                 }
@@ -348,6 +347,11 @@ void Benchmark::fetchData()
 void Benchmark::verifyTestSetCosDistance()
 {
     verifyTestSet(FaceRecognizer::CosDistance, 0.7);
+}
+
+void Benchmark::verifyTestSetMeanCosDistance()
+{
+    verifyTestSet(FaceRecognizer::MeanCosDistance, 0.7);
 }
 
 void Benchmark::verifyTestSetL2Distance()
@@ -391,7 +395,9 @@ int main(int argc, char** argv)
     //benchmark.verifyTestSetL2Distance();
     //benchmark.verifyTestSetL2NormDistance();
 
-    benchmark.verifyTestSetSupportVectorMachine();
+    benchmark.verifyTestSetMeanCosDistance();
+    //benchmark.verifyTestSetSupportVectorMachine();
+
 }
 
 
