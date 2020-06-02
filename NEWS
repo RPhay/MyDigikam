@@ -776,4 +776,5 @@ BUGFIXES:
 734 ==> 422279 - Repeatable crash when rotating.
 735 ==> 422347 - Program crash when clone repair.
 736 ==> 403847 - Crash on pict rotation.
-737 ==> 
+737 ==> 414927 - digiKam is no longer working.
+738 ==> 
