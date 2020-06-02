@@ -774,4 +774,5 @@ BUGFIXES:
 732 ==> 406583 - Cannot write special characters (è, í, ó) in Tag search box.
 733 ==> 422137 - Settings/Slideshow menu item missing.
 734 ==> 422279 - Repeatable crash when rotating.
-735 ==> 
+735 ==> 422347 - Program crash when clone repair.
+736 ==> 

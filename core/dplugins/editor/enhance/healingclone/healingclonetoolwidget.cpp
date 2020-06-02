@@ -319,7 +319,7 @@ bool HealingCloneToolWidget::event(QEvent* e)
         return true;
     }
 
-    return QWidget::event(e);
+    return ImageRegionWidget::event(e);
 }
 
 void HealingCloneToolWidget::keyReleaseEvent(QKeyEvent* e)
