@@ -221,6 +221,9 @@ Identity FaceRecognizer::findIdenity(const cv::Mat& preprocessedImage, Compariso
 
     QVector<Identity>::iterator prediction;
 
+    // For mean cosdistance prediction
+    QHash<QString, QVector<double> > cosDistances;
+
     for (QHash<QString, QVector<Identity> >::iterator group  = d->faceLibrary.begin();
                                                       group != d->faceLibrary.end();
                                                     ++group)
@@ -252,6 +255,12 @@ Identity FaceRecognizer::findIdenity(const cv::Mat& preprocessedImage, Compariso
                     bestDistance  = distance;
                     prediction    = iter;
                 }
+
+                break;
+
+            case MeanCosDistance:
+                distance = FaceExtractor::cosineDistance(recordedFaceEmbedding, faceEmbedding);
+                cosDistances[group.key()].append(distance);
 
                 break;
             case L2Distance:
@@ -299,6 +308,36 @@ Identity FaceRecognizer::findIdenity(const cv::Mat& preprocessedImage, Compariso
         {
             return *prediction;
         }
+        break;
+
+    case MeanCosDistance:
+        bestDistance = -1;
+
+        for (QHash<QString, QVector<double> >::iterator iter  = cosDistances.begin();
+                                                        iter != cosDistances.end();
+                                                      ++iter)
+        {
+            double meanCosDistance = 0;
+
+            for (int i = 0; i < iter.value().size(); ++i)
+            {
+                meanCosDistance += iter.value()[i];
+            }
+
+            meanCosDistance /= iter.value().size();
+
+            if (meanCosDistance > bestDistance)
+            {
+                bestDistance = meanCosDistance;
+                prediction   = d->faceLibrary[iter.key()].begin();
+            }
+        }
+
+        if (bestDistance > threshold)
+        {
+            return (*prediction);
+        }
+
         break;
     default:
         break;
