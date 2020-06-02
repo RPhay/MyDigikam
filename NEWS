@@ -775,4 +775,5 @@ BUGFIXES:
 733 ==> 422137 - Settings/Slideshow menu item missing.
 734 ==> 422279 - Repeatable crash when rotating.
 735 ==> 422347 - Program crash when clone repair.
-736 ==> 
+736 ==> 403847 - Crash on pict rotation.
+737 ==> 
