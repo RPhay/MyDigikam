@@ -7,6 +7,7 @@ tests/databases/*/*.db
 
 # Ignore vscode local config
 .vscode
-
+core/tests/facesengine/data
+CMakeLists.txt.user
 # Ignore build folder
 build

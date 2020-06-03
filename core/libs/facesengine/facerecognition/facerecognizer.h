@@ -27,6 +27,7 @@ public:
         L2Distance,
         L2NormDistance,
         SupportVectorMachine,
+        KNN,
     };
 
     /**

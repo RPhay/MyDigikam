@@ -31,10 +31,16 @@ public:
         : debugMode(debug),
           extractor(new FaceExtractor),
           svm(cv::ml::SVM::create()),
+          knn(cv::ml::KNearest::create()),
           identityCounter(0)
     {
         // use linear mapping
         svm->setKernel(cv::ml::SVM::LINEAR);
+
+        // parameterize KNN
+        knn->setAlgorithmType(cv::ml::KNearest::KDTREE);
+        knn->setDefaultK(17);
+        knn->setIsClassifier(true);
     }
 
     ~Private()
@@ -45,7 +51,9 @@ public:
 public:
 
     int trainSVM();
+    int trainKNN();
     Identity predictSVM(cv::Mat faceEmbedding);
+    Identity predictKNN(cv::Mat faceEmbedding, int k);
     Identity predictL2(const std::vector<float>& faceEmbedding, double confidenceThreshold, bool normalized = false);
     Identity predictCosine(const std::vector<float>& faceEmbedding, double confidenceThreshold, bool mean = false);
 
@@ -57,6 +65,7 @@ public:
 
     FaceExtractor* extractor;
     cv::Ptr<cv::ml::SVM> svm;
+    cv::Ptr<cv::ml::KNearest> knn;
 
     int            identityCounter;
 
@@ -66,7 +75,7 @@ public:
 
 int FaceRecognizer::Private::trainSVM()
 {
-    cv::Mat features, label;
+    cv::Mat features, groups;
 
     int size = 0;
 
@@ -90,7 +99,7 @@ int FaceRecognizer::Private::trainSVM()
                 recordedFaceEmbedding.push_back(static_cast<float>(jsonFaceEmbedding[i].toDouble()));
             }
 
-            label.push_back(i);
+            groups.push_back(i);
             features.push_back(FaceExtractor::vectortomat(recordedFaceEmbedding));
 
             ++size;
@@ -98,13 +107,53 @@ int FaceRecognizer::Private::trainSVM()
 
     }
 
-    svm->train(features, 0, label);
+    svm->train(features, cv::ml::ROW_SAMPLE, groups);
 
     qDebug() << "Support vector machine trains" << size << "samples in" << timer.elapsed() << "ms";
 
     return size;
 }
 
+int FaceRecognizer::Private::trainKNN()
+{
+    cv::Mat features, groups;
+
+    int size = 0;
+
+    QElapsedTimer timer;
+    timer.start();
+
+    for (int i = 0; i < labels.size(); ++i)
+    {
+        for (QVector<Identity>::iterator iter  = faceLibrary[labels[i]].begin();
+                                         iter != faceLibrary[labels[i]].end();
+                                       ++iter)
+        {
+            QJsonArray jsonFaceEmbedding = QJsonDocument::fromJson(iter->attribute(QLatin1String("faceEmbedding")).toLatin1()).array();
+
+            //qDebug() << "face embedding of" << iter.value().attribute(QLatin1String("fullName")) << ":" << jsonFaceEmbedding;
+
+            std::vector<float> recordedFaceEmbedding;
+
+            for (int i = 0; i < jsonFaceEmbedding.size(); ++i)
+            {
+                recordedFaceEmbedding.push_back(static_cast<float>(jsonFaceEmbedding[i].toDouble()));
+            }
+
+            groups.push_back(i);
+            features.push_back(FaceExtractor::vectortomat(recordedFaceEmbedding));
+
+            ++size;
+        }
+
+    }
+
+    knn->train(features, cv::ml::ROW_SAMPLE, groups);
+
+    qDebug() << "KNN trains" << size << "samples in" << timer.elapsed() << "ms";
+
+    return size;
+}
 
 Identity FaceRecognizer::Private::predictSVM(cv::Mat faceEmbedding)
 {
@@ -119,6 +168,22 @@ Identity FaceRecognizer::Private::predictSVM(cv::Mat faceEmbedding)
     return faceLibrary[labels[int(id)]][0];
 }
 
+Identity FaceRecognizer::Private::predictKNN(cv::Mat faceEmbedding, int k)
+{
+    if (!knn->isTrained())
+    {
+        trainKNN();
+    }
+
+    cv::Mat input, output;
+    input.push_back(faceEmbedding);
+
+    knn-> findNearest(input, k, output);
+
+    float id = output.at<float>(0,0);
+
+    return faceLibrary[labels[int(id)]][0];
+}
 
 Identity FaceRecognizer::Private::predictL2(const std::vector<float>& faceEmbedding, double confidenceThreshold, bool normalized)
 {
@@ -370,6 +435,14 @@ Identity FaceRecognizer::findIdenity(const cv::Mat& preprocessedImage, Compariso
             break;
         case SupportVectorMachine:
             return d->predictSVM(d->extractor->getFaceDescriptor(preprocessedImage));
+            break;
+        case KNN:
+            if (int(threshold) < 1)
+            {
+                threshold = 17;
+            }
+
+            return d->predictKNN(d->extractor->getFaceDescriptor(preprocessedImage), int(threshold));
             break;
         default:
             break;
