@@ -91,6 +91,7 @@ public:
     Q_SLOT void verifyTestSetL2Distance();
     Q_SLOT void verifyTestSetL2NormDistance();
     Q_SLOT void verifyTestSetSupportVectorMachine();
+    Q_SLOT void verifyTestSetKNN();
 
 private:
 
@@ -360,6 +361,11 @@ void Benchmark::verifyTestSetL2NormDistance()
 void Benchmark::verifyTestSetSupportVectorMachine()
 {
     verifyTestSet(FaceRecognizer::SupportVectorMachine, 0.7);
+}
+
+void Benchmark::verifyTestSetKNN()
+{
+    verifyTestSet(FaceRecognizer::KNN, 17);
 }
 
 void Benchmark::saveIdentity(const Identity& id, const QString& filePath)
