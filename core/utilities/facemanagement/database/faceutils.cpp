@@ -28,6 +28,7 @@
 // Qt includes
 
 #include <QImage>
+#include <QTimer>
 
 // Local includes
 
@@ -35,6 +36,7 @@
 #include "coredbaccess.h"
 #include "coredbconstants.h"
 #include "coredboperationgroup.h"
+#include "coredb.h"
 #include "dimg.h"
 #include "facetags.h"
 #include "iteminfo.h"
