@@ -69,7 +69,7 @@ public:
 
     void verifyTestSet(FaceRecognizer::ComparisonMetric metric, double threshold);
 
-    QVector<QListWidgetItem*> splitData(const QDir& dataDir, float splitRatio);
+    void splitData(const QDir& dataDir, float splitRatio);
 
 public:
 
@@ -81,7 +81,7 @@ public:
 private:
 
     cv::Mat preprocess(QImage faceImg);
-    static void saveIdentity(const Identity& id, const QString filePath) const;
+    static void saveIdentity(const Identity& id, const QString& filePath);
 
 public:
     Q_SLOT void fetchData();
@@ -258,13 +258,11 @@ cv::Mat Benchmark::preprocess(QImage faceImg)
     return (m_recognizer->prepareForRecognition(faceImg.copy(rect)));
 }
 
-QVector<QListWidgetItem*> Benchmark::splitData(const QDir& dataDir, float splitRatio)
+void Benchmark::splitData(const QDir& dataDir, float splitRatio)
 {
     int nbData = 0;
 
     qsrand(QTime::currentTime().msec());
-
-    QVector<QListWidgetItem*> imageItems;
 
     // Each subdirectory in data directory should match with a label
     QFileInfoList subDirs = dataDir.entryInfoList(QDir::NoDotAndDotDot | QDir::Dirs, QDir::Name);
@@ -304,7 +302,6 @@ QVector<QListWidgetItem*> Benchmark::splitData(const QDir& dataDir, float splitR
                 if (! img.isNull())
                 {
                     m_trainSet[label].append(filesInfo[i]);
-                    imageItems.append(new QListWidgetItem(QIcon(filesInfo[i].absoluteFilePath()), filesInfo[i].absoluteFilePath()));
                     ++nbData;
                 }
             }
@@ -313,7 +310,6 @@ QVector<QListWidgetItem*> Benchmark::splitData(const QDir& dataDir, float splitR
                 if (! img.isNull())
                 {
                     m_testSet[label].append(filesInfo[i]);
-                    imageItems.append(new QListWidgetItem(QIcon(filesInfo[i].absoluteFilePath()), filesInfo[i].absoluteFilePath()));
                     ++nbData;
                 }
             }
@@ -323,8 +319,6 @@ QVector<QListWidgetItem*> Benchmark::splitData(const QDir& dataDir, float splitR
     unsigned int elapsedDetection = timer.elapsed();
 
     qDebug() << "Fetched dataset with" << nbData << "samples, with average" << float(elapsedDetection)/nbData << "ms/image.";;
-
-    return imageItems;
 }
 
 void Benchmark::fetchData()
@@ -359,12 +353,12 @@ void Benchmark::verifyTestSetMeanCosDistance()
 
 void Benchmark::verifyTestSetL2Distance()
 {
-    verifyTestSet(FaceRecognizer::L2Distance, 0.7);
+    verifyTestSet(FaceRecognizer::L2Distance, 0.99);
 }
 
 void Benchmark::verifyTestSetL2NormDistance()
 {
-    verifyTestSet(FaceRecognizer::L2NormDistance, 0.7);
+    verifyTestSet(FaceRecognizer::L2NormDistance, 0.99);
 }
 
 void Benchmark::verifyTestSetSupportVectorMachine()
@@ -372,7 +366,7 @@ void Benchmark::verifyTestSetSupportVectorMachine()
     verifyTestSet(FaceRecognizer::SupportVectorMachine, 0.7);
 }
 
-void Benchmark::saveIdentity(const Identity& id, const QString filePath) const
+void Benchmark::saveIdentity(const Identity& id, const QString& filePath)
 {
 
 }
@@ -400,9 +394,9 @@ int main(int argc, char** argv)
     benchmark.fetchData();
     benchmark.registerTrainingSet();
     //benchmark.verifyTestSetCosDistance();
-    //benchmark.verifyTestSetL2Distance();
-    //benchmark.verifyTestSetL2NormDistance();
-    benchmark.verifyTestSetMeanCosDistance();
+    benchmark.verifyTestSetL2Distance();
+    benchmark.verifyTestSetL2NormDistance();
+    //benchmark.verifyTestSetMeanCosDistance();
     //benchmark.verifyTestSetSupportVectorMachine();
 }
 
