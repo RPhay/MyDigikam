@@ -65,6 +65,7 @@ public:
      * automatically at startup.
      */
     static bool           existsIgnoredPerson();
+
     /**
      * A method to return a list of all person tags in the DB
      */
