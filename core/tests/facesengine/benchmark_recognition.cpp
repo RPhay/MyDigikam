@@ -1,4 +1,4 @@
-/* ============================================================
+﻿/* ============================================================
  *
  * This file is a part of digiKam project
  * https://www.digikam.org
@@ -215,7 +215,7 @@ void Benchmark::verifyTestSet(FaceRecognizer::ComparisonMetric metric, double th
     qDebug() << "nb Not Recognized :" << nbNotRecognize;
     qDebug() << "nb Wrong Label :" << nbWrongLabel;
 
-    qDebug() << "Recognition error :" << m_error
+    qDebug() << "Accuracy :" << (100 - (m_error) * 100) << "%"
              << "on total" << m_trainSize << "training faces, and"
                            << m_testSize << "test faces, (" << float(elapsedDetection)/m_testSize << " ms/face)";
 }
@@ -339,12 +339,12 @@ void Benchmark::fetchData()
 
 void Benchmark::verifyTestSetCosDistance()
 {
-    verifyTestSet(FaceRecognizer::CosDistance, 0.7);
+    verifyTestSet(FaceRecognizer::CosDistance, 0.6);
 }
 
 void Benchmark::verifyTestSetMeanCosDistance()
 {
-    verifyTestSet(FaceRecognizer::MeanCosDistance, 0.7);
+    verifyTestSet(FaceRecognizer::MeanCosDistance, 0.6);
 }
 
 void Benchmark::verifyTestSetL2Distance()
@@ -392,14 +392,17 @@ int main(int argc, char** argv)
 
     qDebug() << "Greatest Cosine distance:";
     benchmark.verifyTestSetCosDistance();
+/*
     qDebug() << "Greatest Cosine distance to mean:";
     benchmark.verifyTestSetMeanCosDistance();
     qDebug() << "Smallest L2 distance:";
     benchmark.verifyTestSetL2Distance();
+
     qDebug() << "Smallest normalized L2 distance:";
     benchmark.verifyTestSetL2NormDistance();
     qDebug() << "Support vector machine:";
     benchmark.verifyTestSetSupportVectorMachine();
+*/
 }
 
 
