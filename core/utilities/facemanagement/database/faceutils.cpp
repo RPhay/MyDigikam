@@ -330,17 +330,17 @@ void FaceUtils::addNormalTag(qlonglong imageId, int tagId)
         {
             TAlbum* album = AlbumManager::instance()->findTAlbum(tagId);
 
-        // If Icon is NULL, set the newly added Face as the Icon.
+            // If Icon is NULL, set the newly added Face as the Icon.
             if (album && album->iconId() == 0)
             {
                 QString err;
                 if (!AlbumManager::instance()->updateTAlbumIcon(album, QString(),
-                                                            imageid, err))
-            {
-                qCDebug(DIGIKAM_GENERAL_LOG) << err ;
+                                                                imageId, err))
+                {
+                    qCDebug(DIGIKAM_GENERAL_LOG) << err ;
+                }
             }
         }
-    }
     });
 }
 
