@@ -158,8 +158,6 @@ void Benchmark::registerTrainingSet()
 
     unsigned int elapsedDetection = timer.elapsed();
     qDebug() << "Registered <<  :" << m_trainSize << "faces in training set, with average" << float(elapsedDetection)/m_trainSize << "ms/face";
-
-    m_trainSet.clear();
 }
 
 void Benchmark::verifyTestSet(FaceRecognizer::ComparisonMetric metric, double threshold)
