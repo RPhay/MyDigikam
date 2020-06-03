@@ -44,6 +44,7 @@
 #include "tagscache.h"
 #include "tagregion.h"
 #include "thumbnailloadthread.h"
+#include "albummanager.h"
 
 namespace Digikam
 {
@@ -311,6 +312,31 @@ int FaceUtils::tagForIdentity(const Identity& identity) const
 void FaceUtils::addNormalTag(qlonglong imageid, int tagId)
 {
     FileActionMngr::instance()->assignTag(ItemInfo(imageid), tagId);
+
+    /**
+     * Need to :
+     * Implement Reset Album Icon for Removal.
+     */
+
+    // Automatic Tag Icon Assignment.
+    if (!FaceTags::isTheIgnoredPerson(tagId)     &&
+        !FaceTags::isTheUnknownPerson(tagId)     &&
+        !FaceTags::isTheUnconfirmedPerson(tagId)
+        )
+    {
+        TAlbum* album = AlbumManager::instance()->findTAlbum(tagId);
+
+        // If Icon is NULL, set the newly added Face as the Icon.
+        if (album && album->iconId() == 0)
+        {
+            QString err;
+            if (!AlbumManager::instance()->updateTAlbumIcon(album, QString(),
+                                                            imageid, err))
+            {
+                qCDebug(DIGIKAM_GENERAL_LOG) << err ;
+            }
+        }
+    }
 }
 
 void FaceUtils::removeNormalTag(qlonglong imageId, int tagId)
