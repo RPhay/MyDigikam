@@ -38,7 +38,7 @@ public:
         svm->setKernel(cv::ml::SVM::LINEAR);
 
         // parameterize KNN
-        knn->setAlgorithmType(cv::ml::KNearest::KDTREE);
+        //knn->setAlgorithmType(cv::ml::KNearest::KDTREE);
         knn->setDefaultK(17);
         knn->setIsClassifier(true);
     }
@@ -107,7 +107,7 @@ int FaceRecognizer::Private::trainSVM()
 
     }
 
-    svm->train(features, cv::ml::ROW_SAMPLE, groups);
+    svm->train(features, 0, groups);
 
     qDebug() << "Support vector machine trains" << size << "samples in" << timer.elapsed() << "ms";
 
@@ -148,7 +148,8 @@ int FaceRecognizer::Private::trainKNN()
 
     }
 
-    knn->train(features, cv::ml::ROW_SAMPLE, groups);
+    qDebug() << "Start training KNN";
+    knn->train(features, 0, groups);
 
     qDebug() << "KNN trains" << size << "samples in" << timer.elapsed() << "ms";
 
@@ -176,11 +177,11 @@ Identity FaceRecognizer::Private::predictKNN(cv::Mat faceEmbedding, int k)
     }
 
     cv::Mat input, output;
-    input.push_back(faceEmbedding);
+    //input.push_back(faceEmbedding);
 
-    knn-> findNearest(input, k, output);
+    knn->findNearest(faceEmbedding, k, output);
 
-    float id = output.at<float>(0,0);
+    float id = output.at<float>(0);
 
     return faceLibrary[labels[int(id)]][0];
 }
@@ -439,7 +440,7 @@ Identity FaceRecognizer::findIdenity(const cv::Mat& preprocessedImage, Compariso
         case KNN:
             if (int(threshold) < 1)
             {
-                threshold = 17;
+                threshold = 5;
             }
 
             return d->predictKNN(d->extractor->getFaceDescriptor(preprocessedImage), int(threshold));

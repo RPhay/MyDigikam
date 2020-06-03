@@ -365,7 +365,7 @@ void Benchmark::verifyTestSetSupportVectorMachine()
 
 void Benchmark::verifyTestSetKNN()
 {
-    verifyTestSet(FaceRecognizer::KNN, 17);
+    verifyTestSet(FaceRecognizer::KNN, 5);
 }
 
 void Benchmark::saveIdentity(const Identity& id, const QString& filePath)
@@ -395,10 +395,9 @@ int main(int argc, char** argv)
 
     benchmark.fetchData();
     benchmark.registerTrainingSet();
-
+/*
     qDebug() << "Greatest Cosine distance:";
     benchmark.verifyTestSetCosDistance();
-/*
     qDebug() << "Greatest Cosine distance to mean:";
     benchmark.verifyTestSetMeanCosDistance();
     qDebug() << "Smallest L2 distance:";
@@ -406,10 +405,13 @@ int main(int argc, char** argv)
 
     qDebug() << "Smallest normalized L2 distance:";
     benchmark.verifyTestSetL2NormDistance();
+*/
     qDebug() << "Support vector machine:";
     benchmark.verifyTestSetSupportVectorMachine();
+/*
+    qDebug() << "KNN:";
+    benchmark.verifyTestSetKNN();
 */
 }
-
 
 #include "benchmark_recognition.moc"
