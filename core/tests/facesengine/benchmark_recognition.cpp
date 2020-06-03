@@ -179,9 +179,7 @@ void Benchmark::verifyTestSet(FaceRecognizer::ComparisonMetric metric, double th
         std::function<Identity(const QFileInfo&)> mapFaceIdentity = [this, metric, threshold, iter](const QFileInfo& fileInfo)
         {
             QImage img(fileInfo.absoluteFilePath());
-
             Identity newIdentity = m_recognizer->findIdenity(preprocess(img), metric, threshold);
-            newIdentity.setAttribute(QLatin1String("fullName"), iter.key());
 
             return newIdentity;
         };
@@ -391,11 +389,17 @@ int main(int argc, char** argv)
 
     benchmark.fetchData();
     benchmark.registerTrainingSet();
-    //benchmark.verifyTestSetCosDistance();
+
+    qDebug() << "Greatest Cosine distance:";
+    benchmark.verifyTestSetCosDistance();
+    qDebug() << "Greatest Cosine distance to mean:";
+    benchmark.verifyTestSetMeanCosDistance();
+    qDebug() << "Smallest L2 distance:";
     benchmark.verifyTestSetL2Distance();
+    qDebug() << "Smallest normalized L2 distance:";
     benchmark.verifyTestSetL2NormDistance();
-    //benchmark.verifyTestSetMeanCosDistance();
-    //benchmark.verifyTestSetSupportVectorMachine();
+    qDebug() << "Support vector machine:";
+    benchmark.verifyTestSetSupportVectorMachine();
 }
 
 
