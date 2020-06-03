@@ -54,9 +54,9 @@ public:
 
     static double cosineDistance(std::vector<float> v1, std::vector<float> v2);
 
-    static double L2Distance(std::vector<float> v1, std::vector<float> v2);
+    static double L2squareDistance(std::vector<float> v1, std::vector<float> v2);
 
-    static double L2NormDistance(std::vector<float> v1, std::vector<float> v2);
+    static double L2squareNormDistance(std::vector<float> v1, std::vector<float> v2);
 
     static cv::Mat vectortomat(const std::vector<float>& vector);
 

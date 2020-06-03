@@ -1,4 +1,4 @@
-/* ============================================================
+﻿/* ============================================================
  *
  * This file is a part of digiKam project
  * https://www.digikam.org
@@ -69,7 +69,7 @@ public:
 
     void verifyTestSet(FaceRecognizer::ComparisonMetric metric, double threshold);
 
-    QVector<QListWidgetItem*> splitData(const QDir& dataDir, float splitRatio);
+    void splitData(const QDir& dataDir, float splitRatio);
 
 public:
 
@@ -82,6 +82,8 @@ private:
 
     cv::Mat preprocess(QImage faceImg);
 
+    static void saveIdentity(const Identity& id, const QString& filePath);
+
 public:
     Q_SLOT void fetchData();
     Q_SLOT void registerTrainingSet();
@@ -90,6 +92,7 @@ public:
     Q_SLOT void verifyTestSetL2Distance();
     Q_SLOT void verifyTestSetL2NormDistance();
     Q_SLOT void verifyTestSetSupportVectorMachine();
+    Q_SLOT void verifyTestSetKNN();
 
 private:
 
@@ -180,7 +183,6 @@ void Benchmark::verifyTestSet(FaceRecognizer::ComparisonMetric metric, double th
             QImage img(fileInfo.absoluteFilePath());
 
             Identity newIdentity = m_recognizer->findIdenity(preprocess(img), metric, threshold);
-            newIdentity.setAttribute(QLatin1String("fullName"), iter.key());
 
             return newIdentity;
         };
@@ -216,7 +218,7 @@ void Benchmark::verifyTestSet(FaceRecognizer::ComparisonMetric metric, double th
     qDebug() << "nb Not Recognized :" << nbNotRecognize;
     qDebug() << "nb Wrong Label :" << nbWrongLabel;
 
-    qDebug() << "Recognition error :" << m_error
+    qDebug() << "Accuracy :" << (100 - (m_error) * 100) << "%"
              << "on total" << m_trainSize << "training faces, and"
                            << m_testSize << "test faces, (" << float(elapsedDetection)/m_testSize << " ms/face)";
 }
@@ -255,13 +257,11 @@ cv::Mat Benchmark::preprocess(QImage faceImg)
     return (m_recognizer->prepareForRecognition(faceImg.copy(rect)));
 }
 
-QVector<QListWidgetItem*> Benchmark::splitData(const QDir& dataDir, float splitRatio)
+void Benchmark::splitData(const QDir& dataDir, float splitRatio)
 {
     int nbData = 0;
 
     qsrand(QTime::currentTime().msec());
-
-    QVector<QListWidgetItem*> imageItems;
 
     // Each subdirectory in data directory should match with a label
     QFileInfoList subDirs = dataDir.entryInfoList(QDir::NoDotAndDotDot | QDir::Dirs, QDir::Name);
@@ -301,7 +301,6 @@ QVector<QListWidgetItem*> Benchmark::splitData(const QDir& dataDir, float splitR
                 if (! img.isNull())
                 {
                     m_trainSet[label].append(filesInfo[i]);
-                    imageItems.append(new QListWidgetItem(QIcon(filesInfo[i].absoluteFilePath()), filesInfo[i].absoluteFilePath()));
                     ++nbData;
                 }
             }
@@ -310,7 +309,6 @@ QVector<QListWidgetItem*> Benchmark::splitData(const QDir& dataDir, float splitR
                 if (! img.isNull())
                 {
                     m_testSet[label].append(filesInfo[i]);
-                    imageItems.append(new QListWidgetItem(QIcon(filesInfo[i].absoluteFilePath()), filesInfo[i].absoluteFilePath()));
                     ++nbData;
                 }
             }
@@ -320,8 +318,6 @@ QVector<QListWidgetItem*> Benchmark::splitData(const QDir& dataDir, float splitR
     unsigned int elapsedDetection = timer.elapsed();
 
     qDebug() << "Fetched dataset with" << nbData << "samples, with average" << float(elapsedDetection)/nbData << "ms/image.";;
-
-    return imageItems;
 }
 
 void Benchmark::fetchData()
@@ -346,27 +342,37 @@ void Benchmark::fetchData()
 
 void Benchmark::verifyTestSetCosDistance()
 {
-    verifyTestSet(FaceRecognizer::CosDistance, 0.7);
+    verifyTestSet(FaceRecognizer::CosDistance, 0.6);
 }
 
 void Benchmark::verifyTestSetMeanCosDistance()
 {
-    verifyTestSet(FaceRecognizer::MeanCosDistance, 0.7);
+    verifyTestSet(FaceRecognizer::MeanCosDistance, 0.6);
 }
 
 void Benchmark::verifyTestSetL2Distance()
 {
-    verifyTestSet(FaceRecognizer::L2Distance, 0.7);
+    verifyTestSet(FaceRecognizer::L2Distance, 0.99);
 }
 
 void Benchmark::verifyTestSetL2NormDistance()
 {
-    verifyTestSet(FaceRecognizer::L2NormDistance, 0.7);
+    verifyTestSet(FaceRecognizer::L2NormDistance, 0.99);
 }
 
 void Benchmark::verifyTestSetSupportVectorMachine()
 {
     verifyTestSet(FaceRecognizer::SupportVectorMachine, 0.7);
+}
+
+void Benchmark::verifyTestSetKNN()
+{
+    verifyTestSet(FaceRecognizer::KNN, 5);
+}
+
+void Benchmark::saveIdentity(const Identity& id, const QString& filePath)
+{
+
 }
 
 QCommandLineParser* parseOptions(const QCoreApplication& app)
@@ -391,14 +397,23 @@ int main(int argc, char** argv)
 
     benchmark.fetchData();
     benchmark.registerTrainingSet();
-    //benchmark.verifyTestSetCosDistance();
-    //benchmark.verifyTestSetL2Distance();
-    //benchmark.verifyTestSetL2NormDistance();
-
+/*
+    qDebug() << "Greatest Cosine distance:";
+    benchmark.verifyTestSetCosDistance();
+    qDebug() << "Greatest Cosine distance to mean:";
     benchmark.verifyTestSetMeanCosDistance();
-    //benchmark.verifyTestSetSupportVectorMachine();
+    qDebug() << "Smallest L2 distance:";
+    benchmark.verifyTestSetL2Distance();
 
+    qDebug() << "Smallest normalized L2 distance:";
+    benchmark.verifyTestSetL2NormDistance();
+*/
+    qDebug() << "Support vector machine:";
+    benchmark.verifyTestSetSupportVectorMachine();
+/*
+    qDebug() << "KNN:";
+    benchmark.verifyTestSetKNN();
+*/
 }
-
 
 #include "benchmark_recognition.moc"
