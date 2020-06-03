@@ -311,7 +311,7 @@ int FaceUtils::tagForIdentity(const Identity& identity) const
 
 // --- Editing normal tags, reimplemented with FileActionMngr ---
 
-void FaceUtils::addNormalTag(qlonglong imageid, int tagId)
+void FaceUtils::addNormalTag(qlonglong imageId, int tagId)
 {
     FileActionMngr::instance()->assignTag(ItemInfo(imageid), tagId);
 
