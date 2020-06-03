@@ -347,6 +347,28 @@ void FaceUtils::addNormalTag(qlonglong imageId, int tagId)
 void FaceUtils::removeNormalTag(qlonglong imageId, int tagId)
 {
     FileActionMngr::instance()->removeTag(ItemInfo(imageId), tagId);
+
+    int count = CoreDbAccess().db()->getNumberOfImagesInTagProperties(tagId,
+                                     ImageTagPropertyName::tagRegion());
+
+    /**
+     * If the face just removed was the final face
+     * associated with that Tag, reset Tag Icon.
+     */
+    if (count == 0)
+    {
+        TAlbum* album = AlbumManager::instance()->findTAlbum(tagId);
+
+        if (album && album->iconId() != 0)
+        {
+            QString err;
+            if (!AlbumManager::instance()->updateTAlbumIcon(album, QString(),
+                                                            0, err))
+            {
+                qCDebug(DIGIKAM_GENERAL_LOG) << err ;
+            }
+        }
+    }
 }
 
 void FaceUtils::removeNormalTags(qlonglong imageId, QList<int> tagIds)
