@@ -63,7 +63,7 @@ public:
     ItemInfo                           itemInfo;
 
     QList<QVariant>                    extraValues;
-    QHash<qlonglong, int>              idHash;
+    QMultiHash<qlonglong, int>         idHash;
 
     bool                               keepFilePathCache;
     QHash<QString, qlonglong>          filePathHash;
@@ -300,7 +300,7 @@ QModelIndex ItemModel::indexForImageId(qlonglong id, const QVariant& extraValue)
         return indexForImageId(id);
     }
 
-    QHash<qlonglong, int>::const_iterator it;
+    QMultiHash<qlonglong, int>::const_iterator it;
 
     for (it = d->idHash.constFind(id) ; it != d->idHash.constEnd() && it.key() == id ; ++it)
     {
@@ -316,7 +316,7 @@ QModelIndex ItemModel::indexForImageId(qlonglong id, const QVariant& extraValue)
 QList<QModelIndex> ItemModel::indexesForImageId(qlonglong id) const
 {
     QList<QModelIndex> indexes;
-    QHash<qlonglong, int>::const_iterator it;
+    QMultiHash<qlonglong, int>::const_iterator it;
 
     for (it = d->idHash.constFind(id) ; it != d->idHash.constEnd() && it.key() == id ; ++it)
     {
@@ -339,7 +339,7 @@ int ItemModel::numberOfIndexesForImageId(qlonglong id) const
     }
 
     int count = 0;
-    QHash<qlonglong, int>::const_iterator it;
+    QMultiHash<qlonglong, int>::const_iterator it;
 
     for (it = d->idHash.constFind(id) ; it != d->idHash.constEnd() && it.key() == id ; ++it)
     {
@@ -634,7 +634,7 @@ bool ItemModel::hasImage(qlonglong id, const QVariant& extraValue) const
         return hasImage(id);
     }
 
-    QHash<qlonglong, int>::const_iterator it;
+    QMultiHash<qlonglong, int>::const_iterator it;
 
     for (it = d->idHash.constFind(id) ; it != d->idHash.constEnd() && it.key() == id ; ++it)
     {
@@ -858,7 +858,7 @@ void ItemModel::publiciseInfos(const QList<ItemInfo>& infos, const QList<QVarian
     {
         const ItemInfo& info = d->infos.at(i);
         qlonglong id         = info.id();
-        d->idHash.insertMulti(id, i);
+        d->idHash.insert(id, i);
 
         if (d->keepFilePathCache)
         {
@@ -1067,7 +1067,7 @@ void ItemModel::removeRowPairs(const QList<QPair<int, int> >& toRemove)
         beginRemoveRows(QModelIndex(), begin, end);
 
         // update idHash - which points to indexes of d->infos, and these change now!
-        QHash<qlonglong, int>::iterator it;
+        QMultiHash<qlonglong, int>::iterator it;
 
         for (it = d->idHash.begin() ; it != d->idHash.end() ; )
         {
@@ -1349,7 +1349,7 @@ Qt::ItemFlags ItemModel::flags(const QModelIndex& index) const
 {
     if (!d->isValid(index))
     {
-        return nullptr;
+        return Qt::ItemFlags();
     }
 
     Qt::ItemFlags f = Qt::ItemIsSelectable | Qt::ItemIsEnabled;
