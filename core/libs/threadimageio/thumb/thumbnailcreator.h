@@ -173,6 +173,11 @@ public:
      */
     static QString identifierForDetail(const ThumbnailInfo& info, const QRect& rect);
 
+    /**
+     * Returns the customIdentifier for remove thumbnail from database
+     */
+    static QString identifierForRemove(const ThumbnailInfo& info);
+
 private:
 
     void initialize();

@@ -367,6 +367,14 @@ QString ThumbnailCreator::identifierForDetail(const ThumbnailInfo& info, const Q
     return url.toString();
 }
 
+QString ThumbnailCreator::identifierForRemove(const ThumbnailInfo& info)
+{
+    QUrl url = QUrl::fromLocalFile(info.filePath);
+    url.setScheme(QLatin1String("detail"));
+
+    return (url.toString() + QLatin1Char('%'));
+}
+
 ThumbnailInfo ThumbnailCreator::makeThumbnailInfo(const ThumbnailIdentifier& identifier, const QRect& rect) const
 {
     ThumbnailInfo info;
