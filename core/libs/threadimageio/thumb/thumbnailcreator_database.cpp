@@ -342,13 +342,6 @@ void ThumbnailCreator::deleteFromDatabase(const ThumbnailInfo& info) const
             {
                 continue;
             }
-
-            lastQueryState = access.db()->removeByCustomIdentifier(identifierForRemove(info));
-
-            if (BdEngineBackend::NoErrors != lastQueryState)
-            {
-                continue;
-            }
         }
 
         lastQueryState = access.backend()->commitTransaction();

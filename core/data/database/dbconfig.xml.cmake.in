@@ -865,7 +865,7 @@
             </statement></dbaction>
 
             <dbaction name="Delete_Thumbnail_ByCustomIdentifier"><statement mode="query">
-                DELETE FROM Thumbnails WHERE id IN (SELECT thumbId FROM CustomIdentifiers WHERE identifier LIKE :identifier);
+                DELETE FROM Thumbnails WHERE id IN (SELECT thumbId FROM CustomIdentifiers WHERE identifier=:identifier);
             </statement></dbaction>
 
             <!-- SQlite Migration from Database Version 5 (0.10 - 1.4) to Version 6 (1.5-) -->
@@ -2088,7 +2088,7 @@
 
             <dbaction name="Delete_Thumbnail_ByCustomIdentifier" mode="query">
                 <statement mode="query">
-                    SELECT @thumbsId := thumbId FROM CustomIdentifiers WHERE identifier LIKE :identifier;
+                    SELECT @thumbsId := thumbId FROM CustomIdentifiers WHERE identifier=:identifier;
                 </statement>
                 <statement mode="query">
                     DELETE FROM UniqueHashes WHERE UniqueHashes.thumbId = @thumbsId;
