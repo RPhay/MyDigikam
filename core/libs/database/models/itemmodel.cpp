@@ -1349,7 +1349,7 @@ Qt::ItemFlags ItemModel::flags(const QModelIndex& index) const
 {
     if (!d->isValid(index))
     {
-        return Qt::ItemFlags();
+        return Qt::NoItemFlags;
     }
 
     Qt::ItemFlags f = Qt::ItemIsSelectable | Qt::ItemIsEnabled;

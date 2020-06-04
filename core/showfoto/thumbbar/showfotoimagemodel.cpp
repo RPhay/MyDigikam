@@ -594,7 +594,7 @@ Qt::ItemFlags ShowfotoItemModel::flags(const QModelIndex& index) const
 {
     if (!d->isValid(index))
     {
-        return nullptr;
+        return Qt::NoItemFlags;
     }
 
     Qt::ItemFlags f = Qt::ItemIsSelectable | Qt::ItemIsEnabled;
