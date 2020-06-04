@@ -403,7 +403,7 @@ public:
         imagePositions   = ItemPositionsNone;
         imageHistory     = ImageHistoryInfoNone;
         videoMetadata    = VideoMetadataNone;
-        customEnum       = (CustomEnum)nullptr;
+        customEnum       = CustomEnum();
     }
 
 public:

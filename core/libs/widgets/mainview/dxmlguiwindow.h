@@ -100,7 +100,7 @@ class DIGIKAM_EXPORT DXmlGuiWindow : public KXmlGuiWindow
 
 public:
 
-    explicit DXmlGuiWindow(QWidget* const parent=nullptr, Qt::WindowFlags f=KDE_DEFAULT_WINDOWFLAGS);
+    explicit DXmlGuiWindow(QWidget* const parent=nullptr, Qt::WindowFlags f = KDE_DEFAULT_WINDOWFLAGS);
     ~DXmlGuiWindow();
 
     /**

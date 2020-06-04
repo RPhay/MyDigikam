@@ -38,7 +38,6 @@ public:
 
     enum HasFlagsEnum
     {
-        HasNothing        = 0,
         HasCoordinates    = 1,
         HasAltitude       = 2,
         HasIsInterpolated = 4,
@@ -52,7 +51,7 @@ public:
 public:
 
     GPSDataContainer()
-      : m_hasFlags(HasNothing),
+      : m_hasFlags(HasFlags()),
         m_coordinates(),
         m_nSatellites(-1),
         m_dop(-1),
@@ -131,7 +130,7 @@ public:
 
     inline void clear()
     {
-        m_hasFlags = HasNothing;
+        m_hasFlags = HasFlags();
         m_coordinates.clear();
     }
 
