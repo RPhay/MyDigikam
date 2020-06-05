@@ -29,6 +29,9 @@
 
 #include <vector>
 
+// Qt include
+#include <QJsonArray>
+
 // Local includes
 
 #include "digikam_opencv.h"
@@ -59,6 +62,9 @@ public:
     static double L2squareNormDistance(std::vector<float> v1, std::vector<float> v2);
 
     static cv::Mat vectortomat(const std::vector<float>& vector);
+
+    static QJsonArray encodeVector(const std::vector<float>& vector);
+    static std::vector<float> decodeVector(const QJsonArray& json);
 
 private:
 

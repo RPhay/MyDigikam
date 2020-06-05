@@ -98,8 +98,8 @@ double FaceExtractor::L2squareNormDistance(std::vector<float> v1, std::vector<fl
 {
     assert(v1.size() == v2.size());
 
-    double normV1        = sqrt(std::inner_product(v1.begin(), v1.end(), v1.begin(), 0.0));
-    double normV2        = sqrt(std::inner_product(v2.begin(), v2.end(), v2.begin(), 0.0));
+    double normV1 = sqrt(std::inner_product(v1.begin(), v1.end(), v1.begin(), 0.0));
+    double normV2 = sqrt(std::inner_product(v2.begin(), v2.end(), v2.begin(), 0.0));
 
     double sqrDistance = 0;
 
@@ -118,6 +118,30 @@ cv::Mat FaceExtractor::vectortomat(const std::vector<float>& vector)
     memcpy(mat.data, vector.data(), vector.size()*sizeof(float));
 
     return mat;
+}
+
+QJsonArray FaceExtractor::encodeVector(const std::vector<float>& vector)
+{
+    QJsonArray array;
+
+    for (size_t i = 0; i < vector.size(); ++i)
+    {
+        array << vector[i];
+    }
+
+    return array;
+}
+
+std::vector<float> FaceExtractor::decodeVector(const QJsonArray& json)
+{
+    std::vector<float> vector;
+
+    for (int i = 0; i < json.size(); ++i)
+    {
+        vector.push_back(static_cast<float>(json[i].toDouble()));
+    }
+
+    return vector;
 }
 
 FaceExtractor::FaceExtractor()
