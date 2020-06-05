@@ -318,7 +318,8 @@ void LibRaw::parse_phase_one(int base)
 void LibRaw::parse_mos(int offset)
 {
   char data[40];
-  int skip, from, i, c, neut[4], planes = 0, frot = 0;
+  int from, i, c, neut[4], planes = 0, frot = 0;
+  unsigned skip;
   static const char *mod[] = {
       /* DM22, DM28, DM40, DM56 are somewhere here too */
       "",             //  0
@@ -364,7 +365,7 @@ void LibRaw::parse_mos(int offset)
   float romm_cam[3][3];
 
   fseek(ifp, offset, SEEK_SET);
-  while (1)
+  while (!feof(ifp))
   {
     if (get4() != 0x504b5453)
       break;
@@ -375,7 +376,7 @@ void LibRaw::parse_mos(int offset)
 
     if (!strcmp(data, "CameraObj_camera_type"))
     {
-      stmread(ilm.body, skip, ifp);
+      stmread(ilm.body, (unsigned)skip, ifp);
       if (ilm.body[0])
       {
         if (!strncmp(ilm.body, "Mamiya R", 8))
@@ -415,9 +416,8 @@ void LibRaw::parse_mos(int offset)
     {
       char buffer[sizeof(imgdata.shootinginfo.BodySerial)];
       char *words[4];
-      int nwords;
-      stmread(buffer, skip, ifp);
-      nwords =
+      stmread(buffer, (unsigned)skip, ifp);
+      /*nwords = */
           getwords(buffer, words, 4, sizeof(imgdata.shootinginfo.BodySerial));
       strcpy(imgdata.shootinginfo.BodySerial, words[0]);
     }
@@ -425,9 +425,8 @@ void LibRaw::parse_mos(int offset)
     {
       char buffer[sizeof(imgdata.shootinginfo.InternalBodySerial)];
       char *words[4];
-      int nwords;
-      stmread(buffer, skip, ifp);
-      nwords = getwords(buffer, words, 4,
+      stmread(buffer, (unsigned)skip, ifp);
+      /*nwords =*/ getwords(buffer, words, 4,
                         sizeof(imgdata.shootinginfo.InternalBodySerial));
       strcpy(imgdata.shootinginfo.InternalBodySerial, words[0]);
     }
