@@ -100,7 +100,7 @@ class DIGIKAM_EXPORT DXmlGuiWindow : public KXmlGuiWindow
 
 public:
 
-    explicit DXmlGuiWindow(QWidget* const parent=nullptr, Qt::WindowFlags f = KDE_DEFAULT_WINDOWFLAGS);
+    explicit DXmlGuiWindow(QWidget* const parent = nullptr, Qt::WindowFlags f = Qt::WindowFlags());
     ~DXmlGuiWindow();
 
     /**
@@ -117,7 +117,7 @@ public:
     /**
      * Create common actions from Help menu for all digiKam main windows.
      */
-    void createHelpActions(bool coreOptions=true);
+    void createHelpActions(bool coreOptions = true);
 
     /**
      * Cleanup unwanted actions from action collection.
@@ -195,10 +195,10 @@ protected:
      * with an extra action collection to configure. This method is called by slotEditKeys()
      * which can be re-implement in child class for cutomization.
      */
-    void editKeyboardShortcuts(KActionCollection* const extraac=nullptr, const QString& actitle=QString());
+    void editKeyboardShortcuts(KActionCollection* const extraac = nullptr, const QString& actitle = QString());
 
-    void closeEvent(QCloseEvent* e) override;
-    void keyPressEvent(QKeyEvent* e) override;
+    void closeEvent(QCloseEvent* e)            override;
+    void keyPressEvent(QKeyEvent* e)           override;
     bool eventFilter(QObject* obj, QEvent* ev) override;
 
     /**
