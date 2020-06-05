@@ -211,7 +211,7 @@ void TwTalker::link()
     buffer.append(reply->readAll());
     QString response = fromLatin1(buffer);
 
-    QMap<QString, QString> headers;
+    QMultiMap<QString, QString> headers;
 
     // Discard the first line
     response = response.mid(response.indexOf('\n') + 1).trimmed();
@@ -222,7 +222,7 @@ void TwTalker::link()
         QString headerName = line.left(colon).trimmed();
         QString headerValue = line.mid(colon + 1).trimmed();
 
-        headers.insertMulti(headerName, headerValue);
+        headers.insert(headerName, headerValue);
     }
 
     QString oauthToken = headers[oauth_token];

@@ -86,7 +86,7 @@ bool DMetadata::getItemFacesMap(QMultiMap<QString,QVariant>& faces) const
                     list.at(2).toFloat(),
                     list.at(3).toFloat());
 
-        faces.insertMulti(person, rect);
+        faces.insert(person, rect);
     }
 
     /**
@@ -123,7 +123,7 @@ bool DMetadata::getItemFacesMap(QMultiMap<QString,QVariant>& faces) const
                     w,
                     h);
 
-        faces.insertMulti(person, rect);
+        faces.insert(person, rect);
         qCDebug(DIGIKAM_METAENGINE_LOG) << "Found new rect " << person << " "<< rect;
     }
 
