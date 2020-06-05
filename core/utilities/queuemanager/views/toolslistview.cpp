@@ -342,17 +342,17 @@ void ToolsListView::slotAssignTools()
         return;
     }
 
-    QMap<int, QString> map = itemsToMap(items);
+    QMultiMap<int, QString> map = itemsToMap(items);
     emit signalAssignTools(map);
 }
 
 QMimeData* ToolsListView::mimeData(const QList<QTreeWidgetItem*> items) const
 {
-    QMimeData* const mimeData = new QMimeData();
+    QMimeData* const mimeData   = new QMimeData();
     QByteArray encodedData;
 
     QDataStream stream(&encodedData, QIODevice::WriteOnly);
-    QMap<int, QString> map    = itemsToMap(items);
+    QMultiMap<int, QString> map = itemsToMap(items);
     stream << map;
 
     mimeData->setData(QLatin1String("digikam/batchtoolslist"), encodedData);
@@ -360,9 +360,9 @@ QMimeData* ToolsListView::mimeData(const QList<QTreeWidgetItem*> items) const
     return mimeData;
 }
 
-QMap<int, QString> ToolsListView::itemsToMap(const QList<QTreeWidgetItem*> items) const
+QMultiMap<int, QString> ToolsListView::itemsToMap(const QList<QTreeWidgetItem*> items) const
 {
-    QMap<int, QString> map;
+    QMultiMap<int, QString> map;
 
     foreach (QTreeWidgetItem* const itm, items)
     {
@@ -370,7 +370,7 @@ QMap<int, QString> ToolsListView::itemsToMap(const QList<QTreeWidgetItem*> items
 
         if (tlwi)
         {
-            map.insertMulti((int)(tlwi->tool()->toolGroup()), tlwi->tool()->objectName());
+            map.insert((int)(tlwi->tool()->toolGroup()), tlwi->tool()->objectName());
         }
     }
 
