@@ -198,8 +198,8 @@ void AssignNameWidget::Private::checkWidgets()
             {
                 rejectButton = createToolButton(QIcon::fromTheme(QLatin1String("list-remove")), i18n("Remove"));
 
-                if (FaceTagsIface::fromVariant(faceIdentifier).isUnknownName() ||
-                    FaceTagsIface::fromVariant(faceIdentifier).isInvalidFace() )
+                //TO DO On startup, Unknown faces Reject button shows incorrect tooltip
+                if (FaceTagsIface::fromVariant(faceIdentifier).isUnknownName())
                 {
                     rejectButton->setToolTip(i18nc("@info:tooltip", "Mark this face as Ignored"));
                 }
