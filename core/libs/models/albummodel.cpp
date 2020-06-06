@@ -128,11 +128,10 @@ TAlbum* TagModel::albumForIndex(const QModelIndex& index) const
 
 QVariant TagModel::albumData(Album* a, int role) const
 {
-    if ((role == Qt::DisplayRole)                   &&
-        !a->isRoot()                                &&
-        m_unconfirmedFaceCount.contains(a->id())    &&
-        (a->id() != FaceTags::unknownPersonTagId()) &&
-        (a->id() != FaceTags::ignoredPersonTagId()))
+    if ((role == Qt::DisplayRole)                    &&
+        !a->isRoot()                                 &&
+        m_unconfirmedFaceCount.contains(a->id())     &&
+        (a->id() != FaceTags::unknownPersonTagId()))
     {
         QString res = AbstractCheckableAlbumModel::albumData(a, role).toString() +
                       i18np(" (%1 new)", " (%1 new)", m_unconfirmedFaceCount.value(a->id()));
