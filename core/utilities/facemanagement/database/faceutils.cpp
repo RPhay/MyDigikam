@@ -348,24 +348,30 @@ void FaceUtils::removeNormalTag(qlonglong imageId, int tagId)
 {
     FileActionMngr::instance()->removeTag(ItemInfo(imageId), tagId);
 
-    int count = CoreDbAccess().db()->getNumberOfImagesInTagProperties(tagId,
-                                     ImageTagPropertyName::tagRegion());
-
-    /**
-     * If the face just removed was the final face
-     * associated with that Tag, reset Tag Icon.
-     */
-    if (count == 0)
+    if (!FaceTags::isTheIgnoredPerson(tagId)     &&
+        !FaceTags::isTheUnknownPerson(tagId)     &&
+        !FaceTags::isTheUnconfirmedPerson(tagId)
+        )
     {
-        TAlbum* album = AlbumManager::instance()->findTAlbum(tagId);
+        int count = CoreDbAccess().db()->getNumberOfImagesInTagProperties(tagId,
+                                        ImageTagPropertyName::tagRegion());
 
-        if (album && album->iconId() != 0)
+        /**
+         * If the face just removed was the final face
+         * associated with that Tag, reset Tag Icon.
+         */
+        if (count == 0)
         {
-            QString err;
-            if (!AlbumManager::instance()->updateTAlbumIcon(album, QString(),
-                                                            0, err))
+            TAlbum* album = AlbumManager::instance()->findTAlbum(tagId);
+
+            if (album && album->iconId() != 0)
             {
-                qCDebug(DIGIKAM_GENERAL_LOG) << err ;
+                QString err;
+                if (!AlbumManager::instance()->updateTAlbumIcon(album, QString(),
+                                                                0, err))
+                {
+                    qCDebug(DIGIKAM_GENERAL_LOG) << err ;
+                }
             }
         }
     }
