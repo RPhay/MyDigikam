@@ -78,7 +78,10 @@ void ItemIconView::slotRemoveTag(int tagID)
 {
     FileActionMngr::instance()->removeTags(selectedInfoList(ApplicationSettings::Metadata), QList<int>() << tagID);
 
-    // Give some Time for Tag Removal to take place.
+    /**
+     * Implementation for Automatic Icon Removal.
+     * QTimer to ensure TagRemoval is complete.
+     */
     QTimer::singleShot(200, [=]()
     {
         int count = CoreDbAccess().db()->getNumberOfImagesInTagProperties(tagID,
