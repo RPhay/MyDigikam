@@ -52,14 +52,14 @@ void ItemScanner::fillCommonContainer(qlonglong imageid, ImageCommonContainer* c
                                                                  DatabaseFields::ColorModel);
     }
 
-    if (!imagesFields.isEmpty())
+    if (imagesFields.size() == 4)
     {
         container->fileName             = imagesFields.at(0).toString();
         container->fileModificationDate = imagesFields.at(2).toDateTime();
         container->fileSize             = imagesFields.at(3).toLongLong();
     }
 
-    if (!imageInformationFields.isEmpty())
+    if ((imagesFields.size() == 4) && (imageInformationFields.size() == 9))
     {
         container->rating           = imageInformationFields.at(0).toInt();
         container->creationDate     = imageInformationFields.at(1).toDateTime();
