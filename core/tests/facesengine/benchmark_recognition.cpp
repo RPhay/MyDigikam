@@ -3,7 +3,7 @@
  * This file is a part of digiKam project
  * https://www.digikam.org
  *
- * Date        : 2020-05-25
+ * Date        : 2020-05-20
  * Description : Testing tool for dnn face recognition of face engines
  *
  * Copyright (C) 2020 by Nghia Duong <minhnghiaduong997 at gmail dot com>
@@ -28,7 +28,6 @@
 #include <QDir>
 #include <QImage>
 #include <QElapsedTimer>
-#include <QtConcurrent>
 #include <QDebug>
 #include <QHash>
 #include <QTest>
@@ -80,24 +79,21 @@ public:
 
 private:
 
-    cv::Mat preprocess(QImage faceImg);
-
-    static void saveIdentity(const Identity& id, const QString& filePath);
+    cv::Mat preprocess(QImage* faceImg);
 
 public:
     Q_SLOT void fetchData();
     Q_SLOT void registerTrainingSet();
     Q_SLOT void verifyTestSetCosDistance();
-    Q_SLOT void verifyTestSetMeanCosDistance();
     Q_SLOT void verifyTestSetL2Distance();
     Q_SLOT void verifyTestSetL2NormDistance();
     Q_SLOT void verifyTestSetSupportVectorMachine();
-    Q_SLOT void verifyTestSetKNN();
+    Q_SLOT void verifyTestKNN();
 
 private:
 
-    QHash<QString, QVector<QFileInfo> > m_trainSet;
-    QHash<QString, QVector<QFileInfo> > m_testSet;
+    QHash<QString, QVector<QImage*> > m_trainSet;
+    QHash<QString, QVector<QImage*> > m_testSet;
 
     OpenCVDNNFaceDetector* m_detector;
     FaceRecognizer*        m_recognizer;
@@ -116,8 +112,32 @@ Benchmark::Benchmark()
 
 Benchmark::~Benchmark()
 {
-    m_trainSet.clear();
-    m_testSet.clear();
+    for (QHash<QString, QVector<QImage*> >::iterator vector  = m_trainSet.begin();
+                                                     vector != m_trainSet.end();
+                                                   ++vector)
+    {
+
+        QVector<QImage*>::iterator img = vector.value().begin();
+
+        while (img != vector.value().end())
+        {
+            delete *img;
+            img = vector.value().erase(img);
+        }
+    }
+
+    for (QHash<QString, QVector<QImage*> >::iterator vector  = m_testSet.begin();
+                                                     vector != m_testSet.end();
+                                                   ++vector)
+    {
+        QVector<QImage*>::iterator img = vector.value().begin();
+
+        while (img != vector.value().end())
+        {
+            delete *img;
+            img = vector.value().erase(img);
+        }
+    }
 
     delete m_detector;
     delete m_recognizer;
@@ -131,30 +151,19 @@ void Benchmark::registerTrainingSet()
     QElapsedTimer timer;
     timer.start();
 
-    for (QHash<QString, QVector<QFileInfo> >::iterator iter  = m_trainSet.begin();
-                                                       iter != m_trainSet.end();
-                                                     ++iter)
+    for (QHash<QString, QVector<QImage*> >::iterator iter  = m_trainSet.begin();
+                                                     iter != m_trainSet.end();
+                                                   ++iter)
     {
-        m_trainSize += iter.value().size();
-
-        // Define lambda function as map function
-        std::function<Identity(const QFileInfo&)> mapFaceIdentity = [this, iter](const QFileInfo& fileInfo)
-        {
-            QImage img(fileInfo.absoluteFilePath());
-
-            Identity newIdentity = m_recognizer->newIdentity(preprocess(img));
-            newIdentity.setAttribute(QLatin1String("fullName"), iter.key());
-
-            return newIdentity;
-        };
-
-        // NOTE: cv::dnn is not reentrant nor threadsafe
-        //QVector<Identity> identities = QtConcurrent::blockingMapped(iter.value(), mapFaceIdentity)
-
         for (int i = 0; i < iter.value().size(); ++i)
         {
-            Identity identity = mapFaceIdentity(iter.value()[i]);
-            m_recognizer->saveIdentity(identity);
+            Identity newIdentity = m_recognizer->newIdentity(preprocess(iter.value().at(i)));
+
+            newIdentity.setAttribute(QLatin1String("fullName"), iter.key());
+
+            m_recognizer->saveIdentity(newIdentity);
+
+            ++m_trainSize;
         }
     }
 
@@ -171,25 +180,13 @@ void Benchmark::verifyTestSet(FaceRecognizer::ComparisonMetric metric, double th
     QElapsedTimer timer;
     timer.start();
 
-    for (QHash<QString, QVector<QFileInfo> >::iterator iter  = m_testSet.begin();
-                                                       iter != m_testSet.end();
-                                                     ++iter)
+    for (QHash<QString, QVector<QImage*> >::iterator iter  = m_testSet.begin();
+                                                     iter != m_testSet.end();
+                                                   ++iter)
     {
-        m_testSize += iter.value().size();
-
-        // Define lambda function as map function
-        std::function<Identity(const QFileInfo&)> mapFaceIdentity = [this, metric, threshold, iter](const QFileInfo& fileInfo)
-        {
-            QImage img(fileInfo.absoluteFilePath());
-
-            Identity newIdentity = m_recognizer->findIdenity(preprocess(img), metric, threshold);
-
-            return newIdentity;
-        };
-
         for (int i = 0; i < iter.value().size(); ++i)
         {
-            Identity newIdentity = mapFaceIdentity(iter.value()[i]);
+            Identity newIdentity = m_recognizer->findIdenity(preprocess(iter.value().at(i)), metric, threshold);
 
             if (newIdentity.isNull() && m_trainSet.contains(iter.key()))
             {
@@ -201,6 +198,8 @@ void Benchmark::verifyTestSet(FaceRecognizer::ComparisonMetric metric, double th
                 // wrong label
                 ++nbWrongLabel;
             }
+
+            ++m_testSize;
         }
     }
 
@@ -218,12 +217,12 @@ void Benchmark::verifyTestSet(FaceRecognizer::ComparisonMetric metric, double th
     qDebug() << "nb Not Recognized :" << nbNotRecognize;
     qDebug() << "nb Wrong Label :" << nbWrongLabel;
 
-    qDebug() << "Accuracy :" << (100 - (m_error) * 100) << "%"
+    qDebug() << "Accuracy :" << (1 - m_error) * 100 << "%"
              << "on total" << m_trainSize << "training faces, and"
                            << m_testSize << "test faces, (" << float(elapsedDetection)/m_testSize << " ms/face)";
 }
 
-cv::Mat Benchmark::preprocess(QImage faceImg)
+cv::Mat Benchmark::preprocess(QImage* faceImg)
 {
     QList<QRectF> faces;
 
@@ -232,7 +231,7 @@ cv::Mat Benchmark::preprocess(QImage faceImg)
         // NOTE detection with filePath won't work when format is not standard
         // NOTE unexpected behaviour with detecFaces(const QString&)
         cv::Size paddedSize(0, 0);
-        cv::Mat cvImage       = m_detector->prepareForDetection(faceImg, paddedSize);
+        cv::Mat cvImage       = m_detector->prepareForDetection(*faceImg, paddedSize);
         QList<QRect> absRects = m_detector->detectFaces(cvImage, paddedSize);
         faces                 = FaceDetector::toRelativeRects(absRects,
                                                               QSize(cvImage.cols - 2*paddedSize.width,
@@ -249,12 +248,12 @@ cv::Mat Benchmark::preprocess(QImage faceImg)
 
     if (faces.isEmpty())
     {
-        return (m_recognizer->prepareForRecognition(faceImg));
+        return (m_recognizer->prepareForRecognition(*faceImg));
     }
 
-    QRect rect = FaceDetector::toAbsoluteRect(faces[0], faceImg.size());
+    QRect rect = FaceDetector::toAbsoluteRect(faces[0], faceImg->size());
 
-    return (m_recognizer->prepareForRecognition(faceImg.copy(rect)));
+    return (m_recognizer->prepareForRecognition(faceImg->copy(rect)));
 }
 
 void Benchmark::splitData(const QDir& dataDir, float splitRatio)
@@ -294,21 +293,21 @@ void Benchmark::splitData(const QDir& dataDir, float splitRatio)
         // split train/test
         for (int i = 0; i < filesInfo.size(); ++i)
         {
-            QImage img(filesInfo[i].absoluteFilePath());
+            QImage* img = new QImage(filesInfo[i].absoluteFilePath());
 
             if (i < filesInfo.size() * splitRatio)
             {
-                if (! img.isNull())
+                if (! img->isNull())
                 {
-                    m_trainSet[label].append(filesInfo[i]);
+                    m_trainSet[label].append(img);
                     ++nbData;
                 }
             }
             else
             {
-                if (! img.isNull())
+                if (! img->isNull())
                 {
-                    m_testSet[label].append(filesInfo[i]);
+                    m_testSet[label].append(img);
                     ++nbData;
                 }
             }
@@ -342,22 +341,17 @@ void Benchmark::fetchData()
 
 void Benchmark::verifyTestSetCosDistance()
 {
-    verifyTestSet(FaceRecognizer::CosDistance, 0.6);
-}
-
-void Benchmark::verifyTestSetMeanCosDistance()
-{
-    verifyTestSet(FaceRecognizer::MeanCosDistance, 0.6);
+    verifyTestSet(FaceRecognizer::CosDistance, 0.7);
 }
 
 void Benchmark::verifyTestSetL2Distance()
 {
-    verifyTestSet(FaceRecognizer::L2Distance, 0.99);
+    verifyTestSet(FaceRecognizer::L2Distance, 0.7);
 }
 
 void Benchmark::verifyTestSetL2NormDistance()
 {
-    verifyTestSet(FaceRecognizer::L2NormDistance, 0.99);
+    verifyTestSet(FaceRecognizer::L2NormDistance, 0.7);
 }
 
 void Benchmark::verifyTestSetSupportVectorMachine()
@@ -365,14 +359,9 @@ void Benchmark::verifyTestSetSupportVectorMachine()
     verifyTestSet(FaceRecognizer::SupportVectorMachine, 0.7);
 }
 
-void Benchmark::verifyTestSetKNN()
+void Benchmark::verifyTestKNN()
 {
-    verifyTestSet(FaceRecognizer::KNN, 5);
-}
-
-void Benchmark::saveIdentity(const Identity& id, const QString& filePath)
-{
-
+    verifyTestSet(FaceRecognizer::KNN, 0.7);
 }
 
 QCommandLineParser* parseOptions(const QCoreApplication& app)
@@ -397,23 +386,12 @@ int main(int argc, char** argv)
 
     benchmark.fetchData();
     benchmark.registerTrainingSet();
-/*
-    qDebug() << "Greatest Cosine distance:";
-    benchmark.verifyTestSetCosDistance();
-    qDebug() << "Greatest Cosine distance to mean:";
-    benchmark.verifyTestSetMeanCosDistance();
-    qDebug() << "Smallest L2 distance:";
-    benchmark.verifyTestSetL2Distance();
-
-    qDebug() << "Smallest normalized L2 distance:";
-    benchmark.verifyTestSetL2NormDistance();
-*/
-    qDebug() << "Support vector machine:";
-    benchmark.verifyTestSetSupportVectorMachine();
-/*
-    qDebug() << "KNN:";
-    benchmark.verifyTestSetKNN();
-*/
+    //benchmark.verifyTestSetCosDistance();
+    //benchmark.verifyTestSetL2Distance();
+    //benchmark.verifyTestSetL2NormDistance();
+    //benchmark.verifyTestSetSupportVectorMachine();
+    benchmark.verifyTestKNN();
 }
+
 
 #include "benchmark_recognition.moc"
