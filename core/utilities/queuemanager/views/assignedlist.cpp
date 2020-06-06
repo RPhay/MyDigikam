@@ -390,7 +390,7 @@ void AssignedListView::dropEvent(QDropEvent* e)
         if (ba.size())
         {
             QDataStream ds(ba);
-            QMap<int, QString> map;
+            QMultiMap<int, QString> map;
             ds >> map;
 
             AssignedListViewItem* const preceding = dynamic_cast<AssignedListViewItem*>(itemAt(e->pos()));
@@ -495,7 +495,7 @@ void AssignedListView::slotSettingsChanged(const BatchToolSet& set)
     }
 }
 
-void AssignedListView::slotAssignTools(const QMap<int, QString>& map)
+void AssignedListView::slotAssignTools(const QMultiMap<int, QString>& map)
 {
     if (map.isEmpty())
     {
@@ -505,7 +505,7 @@ void AssignedListView::slotAssignTools(const QMap<int, QString>& map)
     assignTools(map, nullptr);
 }
 
-void AssignedListView::assignTools(const QMap<int, QString>& map, AssignedListViewItem* const preceding)
+void AssignedListView::assignTools(const QMultiMap<int, QString>& map, AssignedListViewItem* const preceding)
 {
     // We pop all items in reverse order to have same order than selection from Batch Tools list.
 

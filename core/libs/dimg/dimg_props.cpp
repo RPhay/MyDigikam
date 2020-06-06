@@ -120,6 +120,19 @@ QSize DImg::originalSize() const
     return size();
 }
 
+QSize DImg::originalRatioSize() const
+{
+    QSize size = originalSize();
+
+    if (((width() < height()) && (size.width() > size.height())) ||
+        ((width() > height()) && (size.width() < size.height())))
+    {
+        size.transpose();
+    }
+
+    return size;
+}
+
 DImg::FORMAT DImg::detectedFormat() const
 {
     if (hasAttribute(QLatin1String("detectedFileFormat")))

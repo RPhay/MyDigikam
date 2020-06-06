@@ -96,7 +96,7 @@ public:
 
 public:
 
-    explicit ThumbBarDock(QWidget* const parent = nullptr, Qt::WindowFlags flags = nullptr);
+    explicit ThumbBarDock(QWidget* const parent = nullptr, Qt::WindowFlags flags = Qt::WindowFlags());
     ~ThumbBarDock();
 
     /**

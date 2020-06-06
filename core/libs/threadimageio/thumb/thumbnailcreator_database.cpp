@@ -326,7 +326,7 @@ void ThumbnailCreator::deleteFromDatabase(const ThumbnailInfo& info) const
 
         if (!info.uniqueHash.isNull())
         {
-            lastQueryState=access.db()->removeByUniqueHash(info.uniqueHash, info.fileSize);
+            lastQueryState = access.db()->removeByUniqueHash(info.uniqueHash, info.fileSize);
 
             if (BdEngineBackend::NoErrors != lastQueryState)
             {
@@ -336,7 +336,7 @@ void ThumbnailCreator::deleteFromDatabase(const ThumbnailInfo& info) const
 
         if (!info.filePath.isNull())
         {
-            lastQueryState=access.db()->removeByFilePath(info.filePath);
+            lastQueryState = access.db()->removeByFilePath(info.filePath);
 
             if (BdEngineBackend::NoErrors != lastQueryState)
             {

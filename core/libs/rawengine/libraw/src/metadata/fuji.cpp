@@ -244,7 +244,7 @@ void LibRaw::parseAdobeRAFMakernote()
           if (!sget2(PrivateMknBuf + posPrivateMknBuf))
             imfRAFDataVersion = sget2(PrivateMknBuf + posPrivateMknBuf + 2);
 
-          for (posWB = 0; posWB < PrivateTagBytes - 16; posWB++)
+          for (posWB = 0; posWB < (int)PrivateTagBytes - 16; posWB++)
           {
             if ((!memcmp(PrivateMknBuf + posWB, "TSNERDTS", 8) &&
                  (sget2(PrivateMknBuf + posWB + 10) > 125)))
@@ -700,7 +700,7 @@ void LibRaw::parseFujiMakernotes(unsigned tag, unsigned type, unsigned len,
         else
         {
           char tbuf[sizeof(imgdata.shootinginfo.InternalBodySerial)];
-          snprintf(tbuf, sizeof(tbuf), "%s %s",
+          snprintf(tbuf, sizeof(tbuf)-1, "%s %s",
                    imgdata.shootinginfo.InternalBodySerial, words[i]);
           strncpy(imgdata.shootinginfo.InternalBodySerial, tbuf,
                   sizeof(imgdata.shootinginfo.InternalBodySerial) - 1);
@@ -736,7 +736,7 @@ void LibRaw::parseFujiMakernotes(unsigned tag, unsigned type, unsigned len,
           year += 1900;
 
         ynum_len = MIN(
-            (sizeof(ynum) - 1),
+            int(sizeof(ynum) - 1),
             (int)strnlen(words[i],
                          sizeof(imgdata.shootinginfo.InternalBodySerial) - 1) -
                 18);
@@ -938,10 +938,11 @@ void LibRaw::parse_fuji(int offset)
     else if (tag == 0x0131) // XTransLayout
     {
       filters = 9;
+      char *xtrans_abs_alias = &xtrans_abs[0][0];
       FORC(36)
       {
         int q = fgetc(ifp);
-        xtrans_abs[0][35 - c] = MAX(0, MIN(q, 2)); /* & 3;*/
+        xtrans_abs_alias[35 - c] = MAX(0, MIN(q, 2)); /* & 3;*/
       }
     }
     else if (tag == 0x2ff0) // WB_GRGBLevels

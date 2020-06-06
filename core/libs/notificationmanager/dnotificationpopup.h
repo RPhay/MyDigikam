@@ -68,7 +68,7 @@ public:
     /**
      * Creates a popup for the specified widget.
      */
-    explicit DNotificationPopup(QWidget* const parent = nullptr, Qt::WindowFlags f = nullptr);
+    explicit DNotificationPopup(QWidget* const parent = nullptr, Qt::WindowFlags f = Qt::WindowFlags());
 
     /**
      * Creates a popup for the specified window.

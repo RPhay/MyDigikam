@@ -412,7 +412,7 @@ QSize FaceUtils::rotateFaces(const ItemInfo& info, int newOrientation,
             name.clear();
         }
 
-        adjustedFaces.insertMulti(name, faceRect);
+        adjustedFaces.insert(name, faceRect);
     }
 
     /**

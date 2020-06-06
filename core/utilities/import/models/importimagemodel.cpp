@@ -66,7 +66,7 @@ public:
     CamItemInfoList                          infos;
     CamItemInfo                              camItemInfo;
 
-    QHash<qlonglong, int>                    idHash;
+    QMultiHash<qlonglong, int>               idHash;
     QHash<QString, qlonglong>                fileUrlHash;
 
     bool                                     keepFileUrlCache;
@@ -99,9 +99,9 @@ public:
 
 public:
 
-    QHash<qlonglong, int> oldIds;
-    QList<CamItemInfo>    newInfos;
-    QList<IntPairList>    modelRemovals;
+    QMultiHash<qlonglong, int> oldIds;
+    QList<CamItemInfo>         newInfos;
+    QList<IntPairList>         modelRemovals;
 };
 
 // ----------------------------------------------------------------------------------------------------
@@ -256,7 +256,7 @@ QList<QModelIndex> ImportItemModel::indexesForCamItemId(qlonglong id) const
 {
     QList<QModelIndex> indexes;
 
-    QHash<qlonglong, int>::const_iterator it;
+    QMultiHash<qlonglong, int>::const_iterator it;
 
     for (it = d->idHash.constFind(id) ; it != d->idHash.constEnd() && it.key() == id ; ++it)
     {
@@ -274,7 +274,7 @@ int ImportItemModel::numberOfIndexesForCamItemInfo(const CamItemInfo& info) cons
 int ImportItemModel::numberOfIndexesForCamItemId(qlonglong id) const
 {
     int count = 0;
-    QHash<qlonglong,int>::const_iterator it;
+    QMultiHash<qlonglong,int>::const_iterator it;
 
     for (it = d->idHash.constFind(id) ; it != d->idHash.constEnd() && it.key() == id ; ++it)
     {
@@ -654,7 +654,7 @@ void ImportItemModel::publiciseInfos(const CamItemInfoList& infos)
 
         info.id      = i;
         qlonglong id = info.id;
-        d->idHash.insertMulti(id, i);
+        d->idHash.insert(id, i);
 
         if (d->keepFileUrlCache)
         {
@@ -841,7 +841,7 @@ void ImportItemModel::removeRowPairs(const QList<QPair<int, int> >& toRemove)
 
         // update idHash - which points to indexes of d->infos
 
-        QHash<qlonglong, int>::iterator it;
+        QMultiHash<qlonglong, int>::iterator it;
 
         for (it = d->idHash.begin() ; it != d->idHash.end() ; )
         {
@@ -915,7 +915,7 @@ void ImportItemModelIncrementalUpdater::appendInfos(const QList<CamItemInfo>& in
     {
         const CamItemInfo& info = infos.at(i);
         bool found              = false;
-        QHash<qlonglong, int>::iterator it;
+        QMultiHash<qlonglong, int>::iterator it;
 
         for (it = oldIds.find(info.id) ; it != oldIds.end() ; ++it)
         {
@@ -995,7 +995,7 @@ QList<QPair<int, int> > ImportItemModelIncrementalUpdater::oldIndexes()
 
             // update idHash - which points to indexes of d->infos, and these change now!
 
-            QHash<qlonglong, int>::iterator it;
+            QMultiHash<qlonglong, int>::iterator it;
 
             for (it = oldIds.begin() ; it != oldIds.end() ; )
             {
@@ -1077,7 +1077,7 @@ Qt::ItemFlags ImportItemModel::flags(const QModelIndex& index) const
 {
     if (!d->isValid(index))
     {
-        return nullptr;
+        return Qt::NoItemFlags;
     }
 
     Qt::ItemFlags f = Qt::ItemIsSelectable | Qt::ItemIsEnabled;

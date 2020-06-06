@@ -760,7 +760,7 @@ void ImageWindow::prepareImageToSave()
                                                  << faceRect.width() << faceRect.height();
                 }
 
-                d->newFaceTags.insertMulti(it.key(), QVariant(faceRect));
+                d->newFaceTags.insert(it.key(), QVariant(faceRect));
             }
         }
 
@@ -787,7 +787,7 @@ void ImageWindow::saveFaceTagsToImage(const ItemInfo& info)
 
         FaceTagsEditor().removeAllFaces(info.id());
 
-        QMap<QString, QVariant>::const_iterator it;
+        QMultiMap<QString, QVariant>::const_iterator it;
 
         for (it = d->newFaceTags.constBegin() ; it != d->newFaceTags.constEnd() ; ++it)
         {

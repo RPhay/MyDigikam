@@ -86,7 +86,7 @@ Q_SIGNALS:
 
 private:
 
-    QMap<QUrl, bool> m_stats;     // Map of type-mime, and file processed.
+    QMultiMap<QUrl, bool> m_stats;     // Map of type-mime, and file processed.
 };
 
 // -------------------------------------------------------------------------

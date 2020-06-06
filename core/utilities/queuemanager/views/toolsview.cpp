@@ -94,8 +94,8 @@ ToolsView::ToolsView(QWidget* const parent)
 
     // --------------------------------------------------------
 
-    connect(d->baseTools, SIGNAL(signalAssignTools(QMap<int,QString>)),
-            this, SIGNAL(signalAssignTools(QMap<int,QString>)));
+    connect(d->baseTools, SIGNAL(signalAssignTools(QMultiMap<int,QString>)),
+            this, SIGNAL(signalAssignTools(QMultiMap<int,QString>)));
 
     connect(d->workflow, SIGNAL(signalAssignQueueSettings(QString)),
             this, SIGNAL(signalAssignQueueSettings(QString)));

@@ -705,7 +705,7 @@ void Digikam::MetadataHub::loadFaceTags(const ItemInfo& info, const QSize& size)
             QRect  temprect = dface.region().toRect();
             TagRegion::reverseToOrientation(temprect, info.orientation(), size);
             QRectF faceRect = TagRegion::absoluteToRelative(temprect, size);
-            d->faceTagsList.insertMulti(faceName, QVariant(faceRect));
+            d->faceTagsList.insert(faceName, QVariant(faceRect));
         }
     }
 }
@@ -724,7 +724,7 @@ void Digikam::MetadataHub::setFaceTags(QMultiMap<QString, QVariant> newFaceTags,
     {
         QRect  temprect = it.value().toRect();
         QRectF faceRect = TagRegion::absoluteToRelative(temprect, size);
-        d->faceTagsList.insertMulti(it.key(), faceRect);
+        d->faceTagsList.insert(it.key(), faceRect);
     }
 }
 

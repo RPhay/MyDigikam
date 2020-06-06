@@ -213,7 +213,7 @@ Qt::ItemFlags AbstractAlbumModel::flags(const QModelIndex& index) const
 {
     if (!index.isValid())
     {
-        return nullptr;
+        return Qt::NoItemFlags;
     }
 
     Album* const a = static_cast<Album*>(index.internalPointer());
