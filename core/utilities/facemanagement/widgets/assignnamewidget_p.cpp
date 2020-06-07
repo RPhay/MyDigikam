@@ -523,4 +523,18 @@ void AssignNameWidget::Private::updateContents()
     }
 }
 
+void AssignNameWidget::Private::updateRejectButtonTooltip()
+{
+    FaceTagsIface face = FaceTagsIface::fromVariant(faceIdentifier);
+
+    if      (face.type() == FaceTagsIface::UnknownName)
+    {
+        rejectButton->setToolTip(i18nc("@info:tooltip", "Mark this face as Ignored"));
+    }
+    else if (face.type() == FaceTagsIface::UnconfirmedName)
+    {
+        rejectButton->setToolTip(i18nc("@info:tooltip", "Reject this suggestion"));
+    }
+}
+
 } // namespace Digikam

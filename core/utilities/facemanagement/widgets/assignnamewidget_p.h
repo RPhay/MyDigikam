@@ -68,6 +68,14 @@ public:
     void         updateModes();
     void         updateContents();
 
+    /**
+     * Reject button shows different Tooltips for
+     * Unconfirmed and Unknown faces, however both
+     * are of type UnconfirmedEditMode.
+     * This method is responsible for the Tooltip updates.
+     */
+    void         updateRejectButtonTooltip();
+
     bool         isValid()                                        const;
 
 private:
