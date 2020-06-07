@@ -108,6 +108,16 @@ AddTagsLineEdit* AssignNameWidget::lineEdit() const
 
 void AssignNameWidget::setMode(Mode mode)
 {
+    /**
+     * Reject tooltip should be updated even if the
+     * same mode is passed, because Unconfirmed and Unknown
+     * Faces have the same mode but different Tooltips.
+     */
+    if (mode == AssignNameWidget::UnconfirmedEditMode)
+    {
+        d->updateRejectButtonTooltip();
+    }
+
     if (mode == d->mode)
     {
         return;
