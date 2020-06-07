@@ -52,6 +52,8 @@ void ItemScanner::fillCommonContainer(qlonglong imageid, ImageCommonContainer* c
                                                                  DatabaseFields::ColorModel);
     }
 
+    // We are already checking the field size in the CoreDB.
+
     if (!imagesFields.isEmpty())
     {
         container->fileName             = imagesFields.at(0).toString();
@@ -59,7 +61,7 @@ void ItemScanner::fillCommonContainer(qlonglong imageid, ImageCommonContainer* c
         container->fileSize             = imagesFields.at(3).toLongLong();
     }
 
-    if (!imageInformationFields.isEmpty())
+    if (!imagesFields.isEmpty() && !imageInformationFields.isEmpty())
     {
         container->rating           = imageInformationFields.at(0).toInt();
         container->creationDate     = imageInformationFields.at(1).toDateTime();

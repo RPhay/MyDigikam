@@ -45,7 +45,8 @@ public:
         overwrite(false),
         srcAlbum(nullptr),
         destAlbum(nullptr),
-        jobTime(QDateTime::currentDateTime())
+        jobTime(QDateTime::currentDateTime()),
+        mutex(QMutex::Recursive)
     {
     }
 
