@@ -35,7 +35,7 @@ public:
           identityCounter(0)
     {
         // use linear mapping
-        svm->setKernel(cv::ml::SVM::POLY);
+        svm->setKernel(cv::ml::SVM::LINEAR);
 
         knn->setAlgorithmType(cv::ml::KNearest::BRUTE_FORCE);
         knn->setIsClassifier(true);

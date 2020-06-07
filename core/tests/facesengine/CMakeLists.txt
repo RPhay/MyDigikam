@@ -11,6 +11,8 @@ kde_enable_exceptions()
 add_custom_target(datalink ALL
                   COMMAND ${CMAKE_COMMAND} -E create_symlink ${CMAKE_CURRENT_SOURCE_DIR}/data ${CMAKE_CURRENT_BINARY_DIR}/data)
 
+add_custom_target(scriptlink ALL
+                  COMMAND ${CMAKE_COMMAND} -E create_symlink ${CMAKE_CURRENT_SOURCE_DIR}/scripts ${CMAKE_CURRENT_BINARY_DIR}/scripts)
 # -----------------------------------------------------------------------------
 
 set(detect_SRCS ${CMAKE_CURRENT_SOURCE_DIR}/detect.cpp)
