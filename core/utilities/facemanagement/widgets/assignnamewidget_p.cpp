@@ -197,16 +197,8 @@ void AssignNameWidget::Private::checkWidgets()
             if (!rejectButton)
             {
                 rejectButton = createToolButton(QIcon::fromTheme(QLatin1String("list-remove")), i18n("Remove"));
+                rejectButton->setToolTip(i18nc("@info:tooltip", "Reject this suggestion"));
 
-                //TO DO On startup, Unknown faces Reject button shows incorrect tooltip
-                if (FaceTagsIface::fromVariant(faceIdentifier).isUnknownName())
-                {
-                    rejectButton->setToolTip(i18nc("@info:tooltip", "Mark this face as Ignored"));
-                }
-                else
-                {
-                    rejectButton->setToolTip(i18nc("@info:tooltip", "Reject this suggestion"));
-                }
                 q->connect(rejectButton, SIGNAL(clicked()),
                            q, SLOT(slotReject()));
             }
