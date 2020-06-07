@@ -277,7 +277,7 @@ Qt::ItemFlags TagMngrListModel::flags(const QModelIndex& index) const
 {
     if (!index.isValid())
     {
-        return nullptr;
+        return Qt::NoItemFlags;
     }
 
     return (

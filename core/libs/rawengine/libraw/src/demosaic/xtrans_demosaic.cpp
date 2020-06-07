@@ -48,7 +48,7 @@ void LibRaw::xtrans_interpolate(int passes)
                                        /* Check against right pattern */
   for (row = 0; row < 6; row++)
     for (col = 0; col < 6; col++)
-      cstat[fcol(row, col)]++;
+      cstat[(unsigned)fcol(row, col)]++;
 
   if (cstat[0] < 6 || cstat[0] > 10 || cstat[1] < 16 || cstat[1] > 24 ||
       cstat[2] < 6 || cstat[2] > 10 || cstat[3])
@@ -224,9 +224,8 @@ void LibRaw::xtrans_interpolate(int passes)
                 g = 2 * rix[0][1] - rix[i << c][1] - rix[-i << c][1];
                 color[h][d] = g + rix[i << c][h] + rix[-i << c][h];
                 if (d > 1)
-                  diff[d] += SQR(rix[i << c][1] - rix[-i << c][1] -
-                                 rix[i << c][h] + rix[-i << c][h]) +
-                             SQR(g);
+                  diff[d] += SQR((float)rix[i << c][1] - (float)rix[-i << c][1] -
+                  (float)rix[i << c][h] + (float)rix[-i << c][h]) + SQR((float)g);
               }
               if (d > 1 && (d & 1))
                 if (diff[d - 1] < diff[d])

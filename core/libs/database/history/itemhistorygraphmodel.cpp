@@ -978,7 +978,7 @@ Qt::ItemFlags ItemHistoryGraphModel::flags(const QModelIndex& index) const
 {
     if (!index.isValid())
     {
-        return nullptr;
+        return Qt::NoItemFlags;
     }
 
     HistoryTreeItem* const item = d->historyItem(index);

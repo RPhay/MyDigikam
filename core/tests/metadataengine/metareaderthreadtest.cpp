@@ -170,7 +170,7 @@ void MetaReaderThread::readMetadata(const QList<QUrl>& list,
 
 void MetaReaderThread::slotStats(const QUrl& url, bool p)
 {
-    m_stats.insertMulti(url, p);
+    m_stats.insert(url, p);
 }
 
 void MetaReaderThread::slotJobFinished()

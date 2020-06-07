@@ -48,7 +48,7 @@ Qt::ItemFlags DragDropModelImplementation::dragDropFlags(const QModelIndex& inde
 
     if (!m_dragDropHandler)
     {
-        return nullptr;
+        return Qt::NoItemFlags;
     }
 
     return (Qt::ItemIsDragEnabled | Qt::ItemIsDropEnabled);

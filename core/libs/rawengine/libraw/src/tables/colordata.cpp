@@ -766,9 +766,9 @@ int LibRaw::adobe_coeff(unsigned make_idx, const char *t_model,
       { 9097,-2726,-1053,-8073,15506,2762,-966,981,7763 } },
     { LIBRAW_CAMERAMAKER_Minolta, "DiMAGE Z2", 0, 0,
       { 11280,-3564,-1370,-4655,12374,2282,-1423,2168,5396 } }, /* DJC */
-    { LIBRAW_CAMERAMAKER_Minolta, "Dynax 5D", 0, 0xffb, // same CamID: "ALPHA 5D", "DYNAX 5D", "MAXXUM 5D", "Alpha Sweet Digital"
+    { LIBRAW_CAMERAMAKER_Minolta, "DG-5D", 0, 0xffb, // same CamID: "ALPHA 5D", "DYNAX 5D", "MAXXUM 5D", "Alpha Sweet Digital"
       { 10284,-3283,-1086,-7957,15762,2316,-829,882,6644 } },
-    { LIBRAW_CAMERAMAKER_Minolta, "Dynax 7D", 0, 0xffb, // same CamID: "ALPHA 7D", "DYNAX 7D", "MAXXUM 7D"
+    { LIBRAW_CAMERAMAKER_Minolta, "DG-7D", 0, 0xffb, // same CamID: "ALPHA 7D", "DYNAX 7D", "MAXXUM 7D"
       { 10239,-3104,-1099,-8037,15727,2451,-927,925,6871 } },
 
     { LIBRAW_CAMERAMAKER_Motorola, "PIXL", 0, 0,
@@ -1697,7 +1697,7 @@ int LibRaw::adobe_coeff(unsigned make_idx, const char *t_model,
   }
   int rblack = black + bl4 + bl64;
 
-  for (i = 0; i < sizeof table / sizeof *table; i++)
+  for (i = 0; i < int(sizeof table / sizeof *table); i++)
   {
 	  if (table[i].m_idx == make_idx)
 	  {
@@ -1723,9 +1723,9 @@ int LibRaw::adobe_coeff(unsigned make_idx, const char *t_model,
 			  {
 				  for (raw_color = j = 0; j < 12; j++)
 					  if (internal_only)
-						  imgdata.color.cam_xyz[0][j] = table[i].trans[j] / 10000.0;
+						  imgdata.color.cam_xyz[j / 3][j % 3] = table[i].trans[j] / 10000.0;
 					  else
-						  imgdata.color.cam_xyz[0][j] = ((double *)cam_xyz)[j] =
+						  imgdata.color.cam_xyz[j / 3][j % 3] = ((double *)cam_xyz)[j] =
 						  table[i].trans[j] / 10000.0;
 				  if (!internal_only)
 					  cam_xyz_coeff(rgb_cam, cam_xyz);

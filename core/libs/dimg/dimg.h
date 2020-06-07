@@ -300,6 +300,12 @@ public:
     QSize       originalSize() const;
 
     /**
+     * Returns the size of the original file
+     * in the same aspect ratio as size().
+     */
+    QSize       originalRatioSize() const;
+
+    /**
      * Returns the file format in form of the FORMAT enum that was detected in the load()
      * method. Other than the format attribute which is written by the DImgLoader,
      * this can include the QIMAGE or NONE values.
