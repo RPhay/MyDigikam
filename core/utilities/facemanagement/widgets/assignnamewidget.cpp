@@ -180,6 +180,10 @@ void AssignNameWidget::setUserData(const ItemInfo& info, const QVariant& faceIde
 
     FaceTagsIface face = FaceTagsIface::fromVariant(faceIdentifier);
 
+    /**
+     * Ignored faces are drawn over with a different
+     * overlay, as Reject button should be disabled.
+     */
     if      (face.type() == FaceTagsIface::IgnoredName)
     {
         setMode(AssignNameWidget::IgnoredMode);
