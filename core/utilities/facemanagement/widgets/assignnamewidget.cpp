@@ -189,7 +189,7 @@ void AssignNameWidget::setUserData(const ItemInfo& info, const QVariant& faceIde
         setMode(AssignNameWidget::IgnoredMode);
     }
 
-    else if (mode() != AssignNameWidget::UnconfirmedEditMode)
+    else
     {
         setMode(AssignNameWidget::UnconfirmedEditMode);
     }
