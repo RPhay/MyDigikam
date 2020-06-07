@@ -65,7 +65,7 @@ public:
 Q_SIGNALS:
 
     void signalAssignQueueSettings(QString);
-    void signalAssignTools(const QMap<int, QString>&);
+    void signalAssignTools(const QMultiMap<int, QString>&);
     void signalHistoryEntryClicked(int, qlonglong);
 
 private Q_SLOTS:

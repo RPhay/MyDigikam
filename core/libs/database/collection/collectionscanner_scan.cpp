@@ -925,7 +925,7 @@ qlonglong CollectionScanner::scanNewFile(const QFileInfo& info, int albumId)
         }
         else
         {
-            // Establishing identity with the unique hsah
+            // Establishing identity with the unique hash
 
             scanner.newFile(albumId);
         }

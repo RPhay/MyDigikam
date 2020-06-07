@@ -271,8 +271,8 @@ void QueueMgrWindow::setupConnections()
     connect(d->assignedList, SIGNAL(signalAssignedToolsChanged(AssignedBatchTools)),
             this, SLOT(slotAssignedToolsChanged(AssignedBatchTools)));
 
-    connect(d->toolsView, SIGNAL(signalAssignTools(QMap<int,QString>)),
-            d->assignedList, SLOT(slotAssignTools(QMap<int,QString>)));
+    connect(d->toolsView, SIGNAL(signalAssignTools(QMultiMap<int,QString>)),
+            d->assignedList, SLOT(slotAssignTools(QMultiMap<int,QString>)));
 
     // -- Queued Items list connections -------------------------------------
 

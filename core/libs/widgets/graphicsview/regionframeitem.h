@@ -71,7 +71,7 @@ public:
      * You can also add QWidget directly. It will be wrapped in a proxy item.
      */
     void             setHudWidget(QGraphicsWidget* const hudWidget);
-    void             setHudWidget(QWidget* const widget, Qt::WindowFlags wFlags = nullptr);
+    void             setHudWidget(QWidget* const widget, Qt::WindowFlags wFlags = Qt::WindowFlags());
     QGraphicsWidget* hudWidget() const;
     void             setHudWidgetVisible(bool visible);
 

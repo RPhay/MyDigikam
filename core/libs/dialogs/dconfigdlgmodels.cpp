@@ -412,7 +412,7 @@ Qt::ItemFlags DConfigDlgWdgModel::flags(const QModelIndex& index) const
 {
     if (!index.isValid())
     {
-        return nullptr;
+        return Qt::NoItemFlags;
     }
 
     Qt::ItemFlags flags = Qt::ItemIsSelectable;

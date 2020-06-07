@@ -222,7 +222,6 @@ static inline void crxFillBuffer(CrxBitstream *bitStrm)
 
 libraw_inline int crxBitstreamGetZeros(CrxBitstream *bitStrm)
 {
-  uint32_t bitData = bitStrm->bitData;
   uint32_t nonZeroBit = 0;
   uint64_t nextData = 0;
   int32_t result = 0;
@@ -1988,7 +1987,7 @@ int LibRaw::crxDecodePlane(void *p, uint32_t planeNumber)
 
 int crxReadSubbandHeaders(crx_data_header_t *hdr, CrxImage *img, CrxTile *tile,
                           CrxPlaneComp *comp, uint8_t **subbandMdatPtr,
-                          uint32_t *mdatSize)
+                          int32_t *hdrSize)
 {
   CrxSubband *band = comp->subBands + img->subbandCount - 1; // set to last band
   uint32_t bandHeight = tile->height;
@@ -2060,12 +2059,11 @@ int crxReadSubbandHeaders(crx_data_header_t *hdr, CrxImage *img, CrxTile *tile,
 
   if (!img->subbandCount)
     return 0;
-  int32_t curSubband = 0;
   int32_t subbandOffset = 0;
   band = comp->subBands;
   for (int curSubband = 0; curSubband < img->subbandCount; curSubband++, band++)
   {
-    if (*mdatSize < 0xC)
+    if (*hdrSize < 0xC)
       return -1;
 
     if (LibRaw::sgetn(2, *subbandMdatPtr) != 0xFF03)
@@ -2074,7 +2072,7 @@ int crxReadSubbandHeaders(crx_data_header_t *hdr, CrxImage *img, CrxTile *tile,
     uint32_t bitData = LibRaw::sgetn(4, *subbandMdatPtr + 8);
     uint32_t subbandSize = LibRaw::sgetn(4, *subbandMdatPtr + 4);
 
-    if (curSubband != bitData >> 28)
+    if ((unsigned)curSubband != bitData >> 28)
     {
       band->dataSize = subbandSize;
       return -1;
@@ -2091,13 +2089,13 @@ int crxReadSubbandHeaders(crx_data_header_t *hdr, CrxImage *img, CrxTile *tile,
     subbandOffset += subbandSize;
 
     *subbandMdatPtr += 0xC;
-    *mdatSize -= 0xC;
+    *hdrSize -= 0xC;
   }
   return 0;
 }
 
 int crxReadImageHeaders(crx_data_header_t *hdr, CrxImage *img, uint8_t *mdatPtr,
-                        uint32_t mdatSize)
+                        int32_t hdrBufSize)
 {
   int nTiles = img->tileRows * img->tileCols;
 
@@ -2196,7 +2194,7 @@ int crxReadImageHeaders(crx_data_header_t *hdr, CrxImage *img, uint8_t *mdatPtr,
   }
 
   uint32_t tileOffset = 0;
-  uint32_t dataSize = mdatSize;
+  int32_t dataSize = hdrBufSize;
   uint8_t *dataPtr = mdatPtr;
   CrxTile *tile = img->tiles;
 
@@ -2207,7 +2205,7 @@ int crxReadImageHeaders(crx_data_header_t *hdr, CrxImage *img, uint8_t *mdatPtr,
 
     if (LibRaw::sgetn(2, dataPtr) != 0xFF01)
       return -1;
-    if (LibRaw::sgetn(2, dataPtr + 8) != curTile)
+    if (LibRaw::sgetn(2, dataPtr + 8) != (unsigned)curTile)
       return -1;
 
     dataSize -= 0xC;
@@ -2242,8 +2240,8 @@ int crxReadImageHeaders(crx_data_header_t *hdr, CrxImage *img, uint8_t *mdatPtr,
       comp->tileFlag = tile->tileFlag;
 
       compOffset += comp->compSize;
-      dataSize -= 0xC;
-      dataPtr += 0xC;
+	  dataSize -= 0xC;
+	  dataPtr += 0xC;
 
       comp->roundedBitsMask = 0;
 
@@ -2263,7 +2261,7 @@ int crxReadImageHeaders(crx_data_header_t *hdr, CrxImage *img, uint8_t *mdatPtr,
 }
 
 int crxSetupImageData(crx_data_header_t *hdr, CrxImage *img, int16_t *outBuf,
-                      uint64_t mdatOffset, uint32_t mdatSize,
+                      uint64_t mdatOffset, uint32_t mdatSize, int32_t hdrBufSize,
                       uint8_t *mdatHdrPtr)
 {
   int IncrBitTable[32] = {0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 0, 0, 1, 0,
@@ -2357,7 +2355,7 @@ int crxSetupImageData(crx_data_header_t *hdr, CrxImage *img, int16_t *outBuf,
     }
 
   // read header
-  return crxReadImageHeaders(hdr, img, mdatHdrPtr, mdatSize);
+  return crxReadImageHeaders(hdr, img, mdatHdrPtr, hdrBufSize);
 }
 
 int crxFreeImageData(CrxImage *img)
@@ -2370,7 +2368,7 @@ int crxFreeImageData(CrxImage *img)
 
   if (img->tiles)
   {
-    for (int32_t curTile = 0; curTile < nTiles; curTile++, tile++)
+    for (int32_t curTile = 0; curTile < nTiles; curTile++)
       if (tile[curTile].comps)
         for (int32_t curPlane = 0; curPlane < img->nPlanes; curPlane++)
           crxFreeSubbandData(img, tile[curTile].comps + curPlane);
@@ -2445,7 +2443,7 @@ void LibRaw::crxLoadRaw()
 
   imgdata.color.maximum = (1 << hdr.nBits) - 1;
 
-  uint8_t *hdrBuf = (uint8_t *)malloc(hdr.mdatHdrSize);
+  uint8_t *hdrBuf = (uint8_t *)malloc(hdr.mdatHdrSize * 2);
 
   // read image header
 #ifdef LIBRAW_USE_OPENMP
@@ -2466,7 +2464,7 @@ void LibRaw::crxLoadRaw()
   // parse and setup the image data
   if (crxSetupImageData(&hdr, &img, (int16_t *)imgdata.rawdata.raw_image,
                         libraw_internal_data.unpacker_data.data_offset,
-                        libraw_internal_data.unpacker_data.data_size, hdrBuf))
+                        libraw_internal_data.unpacker_data.data_size, hdr.mdatHdrSize*2, hdrBuf))
     derror();
   free(hdrBuf);
 
@@ -2527,7 +2525,7 @@ int LibRaw::crxParseImageHeader(uchar *cmp1TagData, int nTrack)
       return -1;
   }
   else if (hdr->nPlanes != 4 || hdr->f_width & 1 || hdr->f_height & 1 ||
-           hdr->tileWidth & 1 || hdr->tileHeight & 1 || hdr->cfaLayout > 3u ||
+           hdr->tileWidth & 1 || hdr->tileHeight & 1 || hdr->cfaLayout > 3 ||
            (hdr->encType && hdr->encType != 1 && hdr->encType != 3) ||
            hdr->nBits == 8)
     return -1;

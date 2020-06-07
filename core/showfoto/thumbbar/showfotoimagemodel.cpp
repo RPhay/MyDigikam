@@ -60,7 +60,7 @@ public:
 public:
 
     ShowfotoItemInfoList                      infos;
-    QHash<qlonglong, int>                     idHash;
+    QMultiHash<qlonglong, int>                idHash;
     QHash<QString, qlonglong>                 fileUrlHash;
 
     bool                                      keepFileUrlCache;
@@ -374,7 +374,7 @@ void ShowfotoItemModel::publiciseInfos(const QList<ShowfotoItemInfo>& infos)
     {
         const ShowfotoItemInfo& info = d->infos.at(i);
         qlonglong id                 = info.id;
-        d->idHash.insertMulti(id, i);
+        d->idHash.insert(id, i);
 
         if (d->keepFileUrlCache)
         {
@@ -486,7 +486,7 @@ void ShowfotoItemModel::removeRowPairs(const QList<QPair<int, int> >& toRemove)
 
         // update idHash - which points to indexes of d->infos
 
-        QHash<qlonglong, int>::iterator it;
+        QMultiHash<qlonglong, int>::iterator it;
 
         for (it = d->idHash.begin() ; it != d->idHash.end() ;)
         {
@@ -594,7 +594,7 @@ Qt::ItemFlags ShowfotoItemModel::flags(const QModelIndex& index) const
 {
     if (!d->isValid(index))
     {
-        return nullptr;
+        return Qt::NoItemFlags;
     }
 
     Qt::ItemFlags f = Qt::ItemIsSelectable | Qt::ItemIsEnabled;

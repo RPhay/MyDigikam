@@ -51,7 +51,7 @@ public:
 public:
 
     GPSDataContainer()
-      : m_hasFlags(nullptr),
+      : m_hasFlags(HasFlags()),
         m_coordinates(),
         m_nSatellites(-1),
         m_dop(-1),
@@ -130,7 +130,7 @@ public:
 
     inline void clear()
     {
-        m_hasFlags = nullptr;
+        m_hasFlags = HasFlags();
         m_coordinates.clear();
     }
 

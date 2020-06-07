@@ -171,7 +171,7 @@ public:
     /**
      * Returns the customIdentifier for the detail thumbnail
      */
-    static QString identifierForDetail(const ThumbnailInfo& identifier, const QRect& rect);
+    static QString identifierForDetail(const ThumbnailInfo& info, const QRect& rect);
 
 private:
 

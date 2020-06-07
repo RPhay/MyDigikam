@@ -91,7 +91,7 @@ public:
 
 Q_SIGNALS:
 
-    void signalAssignTools(const QMap<int, QString>&);
+    void signalAssignTools(const QMultiMap<int, QString>&);
 
 private Q_SLOTS:
 
@@ -105,12 +105,12 @@ private:
     ToolListViewItem* findTool(BatchTool* const tool);
     ToolListViewGroup* findToolGroup(BatchTool::BatchToolGroup group);
 
-    void        startDrag(Qt::DropActions supportedActions)                  override;
-    QStringList mimeTypes()                                            const override;
-    QMimeData*  mimeData(const QList<QTreeWidgetItem*> items)          const override;
+    void        startDrag(Qt::DropActions supportedActions)                       override;
+    QStringList mimeTypes()                                                 const override;
+    QMimeData*  mimeData(const QList<QTreeWidgetItem*> items)               const override;
 
-    void mouseDoubleClickEvent(QMouseEvent*)                                 override;
-    QMap<int, QString> itemsToMap(const QList<QTreeWidgetItem*> items) const;
+    void mouseDoubleClickEvent(QMouseEvent*)                                      override;
+    QMultiMap<int, QString> itemsToMap(const QList<QTreeWidgetItem*> items) const;
 };
 
 } // namespace Digikam

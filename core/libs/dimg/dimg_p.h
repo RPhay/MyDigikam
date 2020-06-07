@@ -144,7 +144,7 @@ public:
 
     static DPluginDImg* pluginsForFile(const QFileInfo& fileInfo, bool magic)
     {
-        QMap<int, DPluginDImg*> pluginMap;
+        QMultiMap<int, DPluginDImg*> pluginMap;
 
         foreach (DPlugin* const p, DPluginLoader::instance()->allPlugins())
         {
@@ -158,7 +158,7 @@ public:
                                           << "Priority:"  << prio
                                           << "Loader:"    << plug->loaderName();
  */
-                pluginMap.insertMulti(prio, plug);
+                pluginMap.insert(prio, plug);
             }
         }
 
@@ -172,7 +172,7 @@ public:
 
     static DPluginDImg* pluginForFormat(const QString& format)
     {
-        QMap<int, DPluginDImg*> pluginMap;
+        QMultiMap<int, DPluginDImg*> pluginMap;
 
         if (!format.isNull())
         {
@@ -183,7 +183,7 @@ public:
 
                 if (plug && ((prio = plug->canWrite(format)) > 0))
                 {
-                    pluginMap.insertMulti(prio, plug);
+                    pluginMap.insert(prio, plug);
                 }
             }
         }

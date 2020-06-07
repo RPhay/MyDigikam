@@ -73,12 +73,26 @@
         and external storage devices (SD cards, USB disks, etc.). The application allows you to configure import settings and rules
         that process and organize imported items on-the-fly.
     </p>
+    <p xml:lang="ca">El digiKam és una aplicació avançada de codi obert de gestió de fotos digitals que funciona al Linux, Windows i MacOS. L'aplicació proporciona un conjunt integrat d'eines per a importar, gestionar, editar i compartir fotos i fitxers RAW. Podeu utilitzar les capacitats d'importació del digiKam pera transferir fotos fàcilment, fitxers RAW i vídeos directament des de la càmera i de dispositius externs d'emmagatzematge (targetes SD, discos USB, etc.). L'aplicació permet configurar paràmetres i regles d'importació que processen i organitzen els elements importats al vol.</p>
+    <p xml:lang="en-GB">digiKam is an advanced open-source digital photo management application that runs on Linux, Windows, and MacOS. The application provides a comprehensive set of tools for importing, managing, editing, and sharing photos and raw files. You can use digiKam’s import capabilities to easily transfer photos, raw files, and videos directly from your camera and external storage devices (SD cards, USB disks, etc.). The application allows you to configure import settings and rules that process and organise imported items on-the-fly.</p>
+    <p xml:lang="nl">digiKam is een geavanceerd opensource digitale toepassing voor fotobeheer die werkt op Linux, Windows en MacOS. De toepassing biedt een uitgebreide set hulpmiddelen voor importeren, beheren, bewerken en delen van foto's en raw-bestanden. U kunt de mogelijkheden voor importen van digiKam gebruiken om foto's, raw-bestanden en video's direct vanaf uw camera en externe opslagapparaten (SD kaarten, USB-sticks, etc.) gemakkelijk te transporteren. De toepassing biedt u importinstellingen en regels te configureren geïmporteerde items bewerken en organiseren on-the-fly.</p>
+    <p xml:lang="pt">O digiKam é uma aplicação de gestão de fotografias digitais em código aberto que funciona no Linux, Windows e MacOS. A aplicação oferece um conjunto abrangente de ferramentas para importar, gerir, editar e partilhar fotografias e ficheiros RAW. Poderá usar as capacidades de importação do digiKam para transferir facilmente as fotografias, ficheiros RAW e vídeos directamente da sua maquina fotográfica e dos dispositivos de armazenamento externos (cartões SD, discos USB, etc.). A aplicação permite-lhe configurar as opções de importação e as regras que processam e organizam os itens importados na hora.</p>
+    <p xml:lang="sl">digiKam je napredni odprtokodni program za upravljanje digitalnih fotografij, ki deluje v sistemih Linux, Windows in MacOS. Program ponuja celovit nabor orodij za uvoz, upravljanje, urejanje in skupno rabo fotografij in surovih datotek. Za lažji prenos fotografij lahko uporabite funkcije uvoza digiKam, surove datoteke in videoposnetke neposredno iz fotoaparata in zunanjih pomnilniških naprav (SD kartice, USB diski itd.). Program omogoča nastavitev uvoza in pravil, ki sproti obdelujejo in organizirajo uvožene predmete.</p>
+    <p xml:lang="sv">Digikam är ett avancerat digitalt fotohanteringsprogram med öppen källkod som kör på Linux, Windows och MacOS. Programmet tillhandahåller en omfattande verktygsuppsättning för att importera, hantera, redigera och dela foton och obehandlade filer. Du kan använda Digikams importmöjligheter för att enkelt överföra foton, obehandlade filer och videor direkt från din kamera eller externa lagringsenheter (SD-kort, USB-minnen, etc.). Programmet låter dig anpassa importinställningar och regler som behandlar och organiserar importerade objekt i farten.</p>
+    <p xml:lang="uk">digiKam — програма для керування цифровими фотографіями із відкритим кодом і широкими можливостями. Програмою можна скористатися у Linux, Windows та MacOS. У програмі передбачено повний набір інструментів для імпортування, керування, редагування та оприлюднення фотографій та файлів цифрових негативів. Ви можете скористатися можливостями digiKam з імпортування для спрощення передавання фотографій, файлів цифрових негативів та відео безпосередньо з камери або зовнішніх пристроїв для зберігання даних (карток SD, дисків USB тощо). У програмі передбачено можливість налаштовування параметрів імпортування та правил динамічної обробки та упорядковування імпортованих записів.</p>
     <p xml:lang="x-test">xxdigiKam is an advanced open-source digital photo management application that runs on Linux, Windows, and MacOS. The application provides a comprehensive set of tools for importing, managing, editing, and sharing photos and raw files. You can use digiKam’s import capabilities to easily transfer photos, raw files, and videos directly from your camera and external storage devices (SD cards, USB disks, etc.). The application allows you to configure import settings and rules that process and organize imported items on-the-fly.xx</p>
     <p>
         digiKam organizes photos, raw files, and videos into albums. But the application also features powerful tagging tools
         that allow you to assign tags, ratings, and labels to photos and raw files. You can then use filtering functionality to quickly
         find items that match specific criteria.
     </p>
+    <p xml:lang="ca">El digiKam organitza les fotos, els fitxers RAW i els vídeos en àlbums. Però l'aplicació també té eines potents d'etiquetatge que permeten assignar etiquetes, valoracions i rètols a les fotos i als fitxers RAW. Després es pot usar la funcionalitat de filtratge per trobar ràpidament elements que coincideixin amb criteris concrets.</p>
+    <p xml:lang="en-GB">digiKam organises photos, raw files, and videos into albums. But the application also features powerful tagging tools that allow you to assign tags, ratings, and labels to photos and raw files. You can then use filtering functionality to quickly find items that match specific criteria.</p>
+    <p xml:lang="nl">digiKam organiseert foto's, raw-bestanden en video's in albums. Maar de toepassing heeft ook krachtige hulpmiddelen voor tags die het toekennen van tags, waarderings en labels aan foto's en raw-bestanden. U kunt dan functies voor filtering gebruiken om snel items te vinden die overeenkomen met specifieke criteria.</p>
+    <p xml:lang="pt">O digiKam organiza as fotos, os ficheiros RAW e os vídeos em álbuns. Contudo, a aplicação também oferece ferramentas poderosas de marcação que lhe permitem atribuir marcas, classificações e legendas às fotografias e ficheiros RAW. Poderá então usar a funcionalidade de filtragem para encontrar rapidamente os itens que correspondam a um dado critério.</p>
+    <p xml:lang="sl">digiKam organizira fotografije, surove datoteke in videoposnetke v albume. Program pa vsebuje tudi močna orodja za označevanje, ki vam omogočajo dodelitev značk, ocene in oznake za fotografije in surove datoteke. Uporabite lahko tudi filtriranje za hitro iskanje elementov, ki ustrezajo določenim kriterijem.</p>
+    <p xml:lang="sv">Digikam organiserar foton, obehandlade filer och videor i album. Men programmet erbjuder också kraftfulla verktyg för etikettering som låter dig tilldela etiketter, betyg och beteckningar till foton och obehandlade filer. Du kan sedan använda filtreringsfunktionerna för att snabbt hitta objekt som motsvarar specifika kriterier.</p>
+    <p xml:lang="uk">У digiKam фотографії, файли цифрових негативів та відео упорядковуються за альбомами. Але, крім того, у програмі передбачено потужні засоби встановлення міток, за допомогою яких ви можете призначати мітки, оцінки та позначки для фотографій і файлів цифрових негативів. Далі, можна скористатися функціональними можливостями з фільтрування для швидкого пошуку записів, які відповідають певним критеріям.</p>
     <p xml:lang="x-test">xxdigiKam organizes photos, raw files, and videos into albums. But the application also features powerful tagging tools that allow you to assign tags, ratings, and labels to photos and raw files. You can then use filtering functionality to quickly find items that match specific criteria.xx</p>
     <p>
         In addition to filtering functionality, digiKam features powerful searching capabilities that let you search the photo library
@@ -86,6 +100,13 @@
         You can also combine several criteria for more advanced searches. digiKam rely on Exiv2 library to handle metadata tag contents
         from files to populate the photo library.
     </p>
+    <p xml:lang="ca">Addicionalment a la funcionalitat de filtratge, el digiKam té capacitats potents de cerca que permeten cercar la biblioteca de fotos per un ampli ventall de criteris. Es poden cercar fotos per etiquetes, rètols, valoracions, dates, ubicacions i inclús metadades específiques EXIF, IPTC o XMP. També es poden combinar diversos criteris per a cerques més avançades. El digiKam compta amb la biblioteca Exiv2 per gestionar el contingut de les etiquetes de metadades dels fitxers per a omplir la biblioteca de fotos.</p>
+    <p xml:lang="en-GB">In addition to filtering functionality, digiKam features powerful searching capabilities that let you search the photo library by a wide range of criteria. You can search photos by tags, labels, rating, data, location, and even specific EXIF, IPTC, or XMP metadata. You can also combine several criteria for more advanced searches. digiKam rely on Exiv2 library to handle metadata tag contents from files to populate the photo library.</p>
+    <p xml:lang="nl">Naast functies voor filteren heeft digiKam krachtige functies voor zoeken die u laten zoeken in de fotobibliotheek met een brede reeks van criteria. U kunt foto's zoeken op tags, labels, waardering, gegevens, locatie en zelfs specifieke EXIF, IPTC of XMP metagegevens. U kunt ook verschillende criteria combineren voor meer geavanceerd zoeken. digiKam is afhankelijk van de Exiv2-bibliotheek om de inhoud van metagegevenstags uit bestanden te behandelen om de fotobibliotheek te bevolken.</p>
+    <p xml:lang="pt">Para além da funcionalidade de filtragem, o digiKam oferece funcionalidades de pesquisa poderosas que lhe permitem consultar a biblioteca de fotografias de acordo com uma grande variedade de critérios. Poderá pesquisar as fotografias por marcas, legendas, classificações, dados, localização e até mesmo alguns meta-dados específicos de EXIF, IPTC ou XMP. Poderá também combinar vários critérios para pesquisas mais avançadas. O digiKam baseia-se na biblioteca Exiv2 para tratar dos conteúdos de marcas dos meta-dados a partir dos ficheiros para preencher a biblioteca de fotografias.</p>
+    <p xml:lang="sl">Poleg filtriranja digiKam odlikuje močne zmožnosti iskanja, ki omogočajo iskanje po knjižnici fotografij po številnih kriterijih. Po fotografijah lahko iščete po značkah, oznakah, ocenah, podatkih, lokaciji in celo specifičnih metapodatkih EXIF, IPTC ali XMP. Kombinirate lahko tudi večkriterijev za bolj napredna iskanja. digiKam se zanaša na knjižnico Exiv2 za obdelavo oznak metapodatkov iz datotek ureditev knjižnice fotografij.</p>
+    <p xml:lang="sv">Förutom filtreringsfunktionaliteten, tillhandahåller Digikam kraftfulla sökmöjligheter som låter dig söka i fotobiblioteket med ett stort antal olika kriterier. Du kan söka efter foton enligt etiketter, beteckningar, data, plats och till och med specifika EXIF-, IPTC- eller XMP-metadata. Du kan också kombinera olika kriterier för mer avancerade sökningar. Digikam förlitar sig på biblioteket Exiv2 för att hantera innehållet i metadatataggar från filer för att fylla i fotobiblioteket.</p>
+    <p xml:lang="uk">Окрім функціональних можливостей із фільтрування, у digiKam передбачено потужні можливості з пошуку, за допомогою яких ви можете виконувати пошук у фотобібліотеці за широким діапазоном критеріїв. Ви можете шукати фотографії за мітками, позначками, оцінками, даними, місцем зйомки і навіть певними метаданими EXIF, IPTC або XMP. Ви також можете поєднувати декілька критеріїв, створюючи складні пошуки. Для обробки вмісту міток метаданих з файлів і заповнення даних фотобібліотеки у digiKam використано бібліотеку Exiv2.</p>
     <p xml:lang="x-test">xxIn addition to filtering functionality, digiKam features powerful searching capabilities that let you search the photo library by a wide range of criteria. You can search photos by tags, labels, rating, data, location, and even specific EXIF, IPTC, or XMP metadata. You can also combine several criteria for more advanced searches. digiKam rely on Exiv2 library to handle metadata tag contents from files to populate the photo library.xx</p>
     <p>
         digiKam can handle raw files, and the application uses the excellent LibRaw library for decoding raw files. The library is actively
@@ -93,17 +114,38 @@
         digiKam can also manage video files for cataloging purpose, and the application uses the couple FFmpeg and QtAv libraries to extract
         metadata and play media.
     </p>
+    <p xml:lang="ca">El digiKam pot gestionar fitxers RAW, i l'aplicació usa l'excel·lent biblioteca LibRaw per a descodificar els fitxers RAW. La biblioteca està mantinguda activament i actualitzada regularment per a incloure el suport per als darrers models de càmeres. El digiKam també pot gestionar fitxers de vídeo per a la catalogació, i l'aplicació usa la parella de biblioteques FFmpeg i QtAv per a extreure les metadades i reproduir els fitxers multimèdia.</p>
+    <p xml:lang="en-GB">digiKam can handle raw files, and the application uses the excellent LibRaw library for decoding raw files. The library is actively maintained and regularly updated to include support for the latest camera models. digiKam can also manage video files for cataloguing purpose, and the application uses the couple FFmpeg and QtAv libraries to extract metadata and play media.</p>
+    <p xml:lang="nl">digiKam kan raw-bestanden behandelen en de toepassing gebruikt de excellente LibRaw-bibliotheek voor het decoderen van raw-bestanden. De bibliotheek wordt actief onderhouden en regelmatig bijgewerkt om ondersteuning voor de nieuwste cameramodellen te bevatten. digiKam kan ook videobestanden beheren voor het catalogiseren en de toepassing gebruikt het koppel FFmpeg- en QtAv-bibliotheken om metagegevens op te halen en media af te spelen.</p>
+    <p xml:lang="pt">O digiKam consegue lidar com ficheiros RAW e a aplicação usa a excelente biblioteca LibRaw para descodificar os ficheiros RAW. A biblioteca é mantida de forma activa e é actualizada regularmente para incluir o suporte para os últimos modelos  de máquinas fotográficas. O digiKam consegue também lidar com ficheiros de vídeo para fins de catalogo e a aplicação usa o par de bibliotecas FFmpeg e QtAv para extrair os meta-dados e reproduzir os conteúdos.</p>
+    <p xml:lang="sl">digiKam lahko obdeluje surove datoteke, tako da uporablja odlično knjižnico LibRaw za dekodiranje surovih datotek. Knjižnica je aktivno vzdrževana in redno posodobljena, tako da zagotavlja podporo najnovejšim modelom kamer. digiKam lahko tudi upravlja tudi z video datotekami za namene katalogizacije in program uporablja par knjižnic FFmpeg in QtAv za pridobivanje metapodatkov in predvajanje medijev.</p>
+    <p xml:lang="sv">Digikam kan hantera obehandlade filer, och programmet använder det utmärkta biblioteket LibRaw för att avkoda obehandlade filer. Biblioteket underhålls aktivt och uppdateras regelbundet för att  inkludera stöd för de senaste kameramodellerna. Digikam kan också hantera videofiler i katalogiseringssyfte, och programmet använder de två biblioteken FFmpeg och QtAv för att extrahera metadata och spela upp media.</p>
+    <p xml:lang="uk">digiKam може працювати із файлами цифрових негативів. Програма використовує чудову бібліотеку LibRaw для декодування файлів цифрових негативів. Ця бібліотека активно розвивається і регулярно оновлюється з метою включення підтримки найсвіжіших моделей цифрових фотоапаратів. Крім того, digiKam може керувати відеофайлами з метою їхньої каталогізації. Програма використовує поєднання бібліотек FFmpeg та QtAv для видобування метаданих та відтворення відео.</p>
     <p xml:lang="x-test">xxdigiKam can handle raw files, and the application uses the excellent LibRaw library for decoding raw files. The library is actively maintained and regularly updated to include support for the latest camera models. digiKam can also manage video files for cataloging purpose, and the application uses the couple FFmpeg and QtAv libraries to extract metadata and play media.xx</p>
     <p>
         The application provides a comprehensive set of editing tools. This includes basic tools for adjusting colors, cropping, and sharpening
         as well as advanced tools for, curves adjustment, panorama stitching, and much more. A special tool based on Lensfun library permit
         to apply lens corrections automatically on images.
     </p>
+    <p xml:lang="ca">L'aplicació proporciona un conjunt integrat d'eines d'edició. Això inclou eines bàsiques per ajustar colors, retallar i definir, així com eines avançades per ajustar corbes, muntar panorames i molt més. Hi ha una eina especial basada en la biblioteca Lensfun que permet aplicar automàticament correccions de les lents a les imatges.</p>
+    <p xml:lang="en-GB">The application provides a comprehensive set of editing tools. This includes basic tools for adjusting colours, cropping, and sharpening as well as advanced tools for, curves adjustment, panorama stitching, and much more. A special tool based on Lensfun library permit to apply lens corrections automatically on images.</p>
+    <p xml:lang="nl">De toepassing biedt een uitgebreide set hulpmiddelen voor bewerking. Dit omvat basis hulpmiddelen voor aanpassen van kleuren, bijsnijden en verscherpen evanals geavanceerde hulpmiddelen voor, aanpassen van krommen, aan elkaar breien voor een panorama en nog veel meer. Een speciaal hulpmiddel gebaseerd op de Lensfun-bibliotheek biedt het automatisch toepassen van lenscorrecties op afbeeldingen.</p>
+    <p xml:lang="pt">A aplicação oferece um conjunto abrangente de ferramentas de edição. Isto inclui ferramentas básicas para ajustar as cores, recortar e aumentar a nitidez, assim como ferramentas avançadas para o ajuste de curvas, o recorte de panoramas e muito mais. Uma ferramenta especial, baseada na biblioteca Lensfun, permite aplicar as correcções de lentes automaticamente nas imagens.</p>
+    <p xml:lang="sl">Program nudi obsežen nabor orodij za urejanje. To vključuje osnovna orodja za prilagajanje barv, obrezovanje in ostrenje kot tudinapredna orodja za nastavitev krivulj, "šivanje panoram" in še veliko več. Posebno orodje, ki temelji na knjižnici Lensfun, omogoča uporabo samodejni popravkov lečja na slikah.</p>
+    <p xml:lang="sv">Programmet tillhandahåller en omfattande uppsättning redigeringsverktyg. Det inkluderar grundverktyg för att justera färger, beskära och förbättra skärpa samt avancerade verktyg för kurvjustering, panoramasammanställning, med mera. Ett specialverktyg baserat på biblioteket Lensfun tillåter att linskorrektion automatiskt utförs för bilder.</p>
+    <p xml:lang="uk">Програма постачається із повним набором засобів для редагування. До цього набору включено інструменти для коригування кольорів, обрізання та збільшення різкості зображення, а також профільні інструменти для коригування кривих, створення панорам тощо. За допомогою спеціального інструмента, заснованого на бібліотеці Lensfun, можна автоматично застосовувати виправлення викривлень, які спричинено оптичними недоліками об'єктива.</p>
     <p xml:lang="x-test">xxThe application provides a comprehensive set of editing tools. This includes basic tools for adjusting colors, cropping, and sharpening as well as advanced tools for, curves adjustment, panorama stitching, and much more. A special tool based on Lensfun library permit to apply lens corrections automatically on images.xx</p>
     <p>
         Extended functionality in digiKam is implemented via a set of tools based of plugins mechanism (named DPlugins for digiKam Plugins).
         Plugins can be written to import and export contents to remote web-services, add new features to edit image, and batch process photo.
     </p>
+    <p xml:lang="ca">Al digiKam s'implementen funcionalitats ampliades a través d'un conjunt d'eines basades en mecanismes de connectors (anomenats DPlugins per «digiKam Plugins»). El connectors es poden escriure per importar i exportar contingut a serveis web remots, afegir funcionalitats noves per editar imatges, i processar fotos en lots.</p>
+    <p xml:lang="en-GB">Extended functionality in digiKam is implemented via a set of tools based of plugins mechanism (named DPlugins for digiKam Plugins). Plugins can be written to import and export contents to remote web-services, add new features to edit image, and batch process photo.</p>
+    <p xml:lang="nl">Uitgebreide functionaliteit in digiKam is geïmplementeerd via een set hulpmiddelen gebaseerd op plug-in-mechanismes (genaamd DPlugins voor digiKam Plugins). Plug-ins kunnen geschreven worden om inhoud van en naar web-services op afstand te im- en exporteren, nieuwe functies toe te voegen om afbeeldingen te bewerken en foto's in bulk te behandelen .</p>
+    <p xml:lang="pt">Está implementada uma funcionalidade estendida no digiKam através de um conjunto de ferramentas baseadas num mecanismo de 'plugins' (chamado de DPlugins para 'digiKam Plugins'). Os 'plugins' podem ser criados para importar e exportar os conteúdos para serviços Web remotos, adicionar novas funcionalidades para editar as imagens e processar as fotografias em lote.</p>
+    <p xml:lang="sl">Razširjena funkcionalnost v digiKamu se izvaja prek nabora orodij, ki temeljijo na mehanizmu vtičnikov (imenovani DPlugins za digiKam Plugins). Vtičniki so lahko napisani za uvoz in izvoz vsebin v oddaljene spletne storitve, dodajanje novi funkcij za urejanje slik in paketno obdelavo fotografij.</p>
+    <p xml:lang="sv">Utökad funktionalitet i Digikam implementeras via en uppsättning verktyg baserat på insticksmekanismen (benämnda DPlugins). Insticksprogram kan skrivas för att importera och exportera innehåll till webbtjänster på nätet, lägga till nya funktioner för att redigera bilder och för att behandla foton i bakgrunden.</p>
+    <p xml:lang="uk">Додаткові функціональні можливості digiKam реалізовано у форматі набору засобів на основі механізмів додатків (які називаються DPlugin, тобто додатки (Plugin) digiKam). Ви самі можете створювати додатки для імпортування та експортування даних на віддалені вебслужби, додавати нові можливості для редагування зображень та пакетної обробки фотографій.</p>
     <p xml:lang="x-test">xxExtended functionality in digiKam is implemented via a set of tools based of plugins mechanism (named DPlugins for digiKam Plugins). Plugins can be written to import and export contents to remote web-services, add new features to edit image, and batch process photo.xx</p>
     <p>Features:</p>
     <p xml:lang="ar">الميزات:</p>
@@ -433,26 +475,61 @@
   <screenshots>
     <screenshot type="default">
       <caption>digiKam Batch Queue Manager</caption>
+      <caption xml:lang="ca">Gestor de la cua de lots del digiKam</caption>
+      <caption xml:lang="en-GB">digiKam Batch Queue Manager</caption>
+      <caption xml:lang="nl">Takenwachtrijbeheer van digiKam</caption>
+      <caption xml:lang="pt">Gestor da Fila de Processamento em Lote do digiKam</caption>
+      <caption xml:lang="sl">digiKam upravljalnik čakalnih vrst paketnih obdelav</caption>
+      <caption xml:lang="sv">Digikams köhantering för bakgrundsbehandling</caption>
+      <caption xml:lang="uk">Керування чергою пакетної обробки digiKam</caption>
       <caption xml:lang="x-test">xxdigiKam Batch Queue Managerxx</caption>
       <image>https://www.digikam.org/img/content/about/overview_bqm.png</image>
     </screenshot>
     <screenshot type="default">
       <caption>digiKam Image Editor</caption>
+      <caption xml:lang="ca">Editor d'imatges del digiKam</caption>
+      <caption xml:lang="en-GB">digiKam Image Editor</caption>
+      <caption xml:lang="nl">Afbeeldingsbewerker van digiKam</caption>
+      <caption xml:lang="pt">Editor de Imagens do digiKam</caption>
+      <caption xml:lang="sl">digiKam urejevalnik slik</caption>
+      <caption xml:lang="sv">Digikams  bildeditor</caption>
+      <caption xml:lang="uk">Редактор зображень digiKam</caption>
       <caption xml:lang="x-test">xxdigiKam Image Editorxx</caption>
       <image>https://www.digikam.org/img/content/about/overview_imageeditor.png</image>
     </screenshot>
     <screenshot type="default">
       <caption>digiKam Import From Camera</caption>
+      <caption xml:lang="ca">Importació des de càmera del digiKam</caption>
+      <caption xml:lang="en-GB">digiKam Import From Camera</caption>
+      <caption xml:lang="nl">Importeren uit camera van digiKam</caption>
+      <caption xml:lang="pt">Importação de Máquinas Fotográficas do digiKam</caption>
+      <caption xml:lang="sl">digiKam uvoz iz kamere</caption>
+      <caption xml:lang="sv">Digikams import från kamera</caption>
+      <caption xml:lang="uk">Імпортування з камери у digiKam</caption>
       <caption xml:lang="x-test">xxdigiKam Import From Cameraxx</caption>
       <image>https://www.digikam.org/img/content/about/overview_import.png</image>
     </screenshot>
     <screenshot type="default">
       <caption>digiKam Light Table</caption>
+      <caption xml:lang="ca">Taula de llum del digiKam</caption>
+      <caption xml:lang="en-GB">digiKam Light Table</caption>
+      <caption xml:lang="nl">Lichttafel van digiKam</caption>
+      <caption xml:lang="pt">Mesa de Luz do digiKam</caption>
+      <caption xml:lang="sl">digiKam osvetljevalna miza</caption>
+      <caption xml:lang="sv">Digikams ljusbord</caption>
+      <caption xml:lang="uk">Стіл із підсвічуванням digiKam</caption>
       <caption xml:lang="x-test">xxdigiKam Light Tablexx</caption>
       <image>https://www.digikam.org/img/content/about/overview_lighttable.png</image>
     </screenshot>
     <screenshot type="default">
       <caption>digiKam Tags View</caption>
+      <caption xml:lang="ca">Vista d'etiquetes del digiKam</caption>
+      <caption xml:lang="en-GB">digiKam Tags View</caption>
+      <caption xml:lang="nl">Weergave van tags van digiKam</caption>
+      <caption xml:lang="pt">Área de Marcas do digiKam</caption>
+      <caption xml:lang="sl">Pogled digiKamovih značk</caption>
+      <caption xml:lang="sv">Digikams etikettvy</caption>
+      <caption xml:lang="uk">Панель перегляду міток digiKam</caption>
       <caption xml:lang="x-test">xxdigiKam Tags Viewxx</caption>
       <image>https://www.digikam.org/img/content/about/overview_tagsview.png</image>
     </screenshot>
@@ -469,6 +546,13 @@
     <release date="2019-02-10" version="6.0.0"/>
   </releases>
   <developer_name>digiKam Team</developer_name>
+  <developer_name xml:lang="ca">Equip del digiKam</developer_name>
+  <developer_name xml:lang="en-GB">digiKam Team</developer_name>
+  <developer_name xml:lang="nl">Team van digiKam</developer_name>
+  <developer_name xml:lang="pt">Equipa do digiKam</developer_name>
+  <developer_name xml:lang="sl">Skupina digiKam</developer_name>
+  <developer_name xml:lang="sv">Digikam-gruppen</developer_name>
+  <developer_name xml:lang="uk">Команда digiKam</developer_name>
   <developer_name xml:lang="x-test">xxdigiKam Teamxx</developer_name>
   <project_group>KDE</project_group>
   <provides>
