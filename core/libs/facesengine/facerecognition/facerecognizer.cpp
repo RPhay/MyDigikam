@@ -153,7 +153,7 @@ public:
         cv::Mat output;
         //input.push_back(faceEmbedding);
 
-        knn->findNearest(faceEmbedding, 5, output);
+        knn->findNearest(faceEmbedding, 3, output);
 
         float id = output.at<float>(0);
 

@@ -79,7 +79,7 @@ public:
 
 private:
 
-    cv::Mat preprocess(QImage* faceImg);
+    bool preprocess(QImage* faceImg, cv::Mat& face);
 
 public:
     Q_SLOT void fetchData();
@@ -157,13 +157,18 @@ void Benchmark::registerTrainingSet()
     {
         for (int i = 0; i < iter.value().size(); ++i)
         {
-            Identity newIdentity = m_recognizer->newIdentity(preprocess(iter.value().at(i)));
+            cv::Mat face;
 
-            newIdentity.setAttribute(QLatin1String("fullName"), iter.key());
+            if (preprocess(iter.value().at(i), face))
+            {
+                Identity newIdentity = m_recognizer->newIdentity(face);
 
-            m_recognizer->saveIdentity(newIdentity);
+                newIdentity.setAttribute(QLatin1String("fullName"), iter.key());
 
-            ++m_trainSize;
+                m_recognizer->saveIdentity(newIdentity);
+
+                ++m_trainSize;
+            }
         }
     }
 
@@ -186,20 +191,25 @@ void Benchmark::verifyTestSet(FaceRecognizer::ComparisonMetric metric, double th
     {
         for (int i = 0; i < iter.value().size(); ++i)
         {
-            Identity newIdentity = m_recognizer->findIdenity(preprocess(iter.value().at(i)), metric, threshold);
+            cv::Mat face;
 
-            if (newIdentity.isNull() && m_trainSet.contains(iter.key()))
+            if (preprocess(iter.value().at(i), face))
             {
-                // cannot recognize when label is already register
-                ++nbNotRecognize;
-            }
-            else if (newIdentity.attribute(QLatin1String("fullName")) != iter.key())
-            {
-                // wrong label
-                ++nbWrongLabel;
-            }
+                Identity newIdentity = m_recognizer->findIdenity(face, metric, threshold);
 
-            ++m_testSize;
+                if (newIdentity.isNull() && m_trainSet.contains(iter.key()))
+                {
+                    // cannot recognize when label is already register
+                    ++nbNotRecognize;
+                }
+                else if (newIdentity.attribute(QLatin1String("fullName")) != iter.key())
+                {
+                    // wrong label
+                    ++nbWrongLabel;
+                }
+
+                ++m_testSize;
+            }
         }
     }
 
@@ -222,7 +232,7 @@ void Benchmark::verifyTestSet(FaceRecognizer::ComparisonMetric metric, double th
                            << m_testSize << "test faces, (" << float(elapsedDetection)/m_testSize << " ms/face)";
 }
 
-cv::Mat Benchmark::preprocess(QImage* faceImg)
+bool Benchmark::preprocess(QImage* faceImg, cv::Mat& face)
 {
     QList<QRectF> faces;
 
@@ -248,12 +258,14 @@ cv::Mat Benchmark::preprocess(QImage* faceImg)
 
     if (faces.isEmpty())
     {
-        return (m_recognizer->prepareForRecognition(*faceImg));
+        return false;
     }
 
     QRect rect = FaceDetector::toAbsoluteRect(faces[0], faceImg->size());
 
-    return (m_recognizer->prepareForRecognition(faceImg->copy(rect)));
+    face = (m_recognizer->prepareForRecognition(faceImg->copy(rect)));
+
+    return true;
 }
 
 void Benchmark::splitData(const QDir& dataDir, float splitRatio)
@@ -386,10 +398,16 @@ int main(int argc, char** argv)
 
     benchmark.fetchData();
     benchmark.registerTrainingSet();
-    //benchmark.verifyTestSetCosDistance();
-    //benchmark.verifyTestSetL2Distance();
+    qDebug() << "Cos distance:";
+    benchmark.verifyTestSetCosDistance();
+
+    qDebug() << "L2 distance:";
+    benchmark.verifyTestSetL2Distance();
     //benchmark.verifyTestSetL2NormDistance();
-    //benchmark.verifyTestSetSupportVectorMachine();
+    qDebug() << "SVM:";
+    benchmark.verifyTestSetSupportVectorMachine();
+
+    qDebug() << "KNN:";
     benchmark.verifyTestKNN();
 }
 
