@@ -119,6 +119,21 @@ target_link_libraries(gui_recognition
 
 # -----------------------------------------------------------------------------
 
+set(kdtree_SRCS ${CMAKE_CURRENT_SOURCE_DIR}/test_kdtree.cpp)
+add_executable(kdtree ${kdtree_SRCS})
+
+target_link_libraries(kdtree
+
+                      digikamcore
+                      digikamgui
+                      digikamfacesengine
+                      digikamdatabase
+
+                      ${COMMON_TEST_LINK}
+)
+
+# -----------------------------------------------------------------------------
+
 set(align_SRCS ${CMAKE_CURRENT_SOURCE_DIR}/align.cpp
                ${CMAKE_SOURCE_DIR}/core/libs/facesengine/alignment/congealing/funnelreal.cpp
 )
