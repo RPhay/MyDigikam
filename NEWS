@@ -782,4 +782,5 @@ BUGFIXES:
 740 ==> 373266 - Albums disappears from view.
 741 ==> 372680 - Cannot delete files from NAS.
 742 ==> 379959 - Could not start database initializer.
-743 ==> 
+743 ==> 420704 - External Editor changes not reflected in Digikam thumbnail.
+744 ==> 
