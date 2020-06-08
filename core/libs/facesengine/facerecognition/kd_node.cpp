@@ -115,39 +115,34 @@ double KDNode::getClosestNeighbors(QMap<double, QVector<KDNode*> >& neighborList
     // add current node to the list
     double distanceToCurrentNode = sqrt(sqrDistance(position, d->position));
 
-    // Don't add self position to list of neighbors
-    if (distanceToCurrentNode > 0)
+    neighborList[distanceToCurrentNode].append(this);
+
+    // limit the size of the Map to maxNbNeighbors
+    int size = 0;
+
+    for (QMap<double, QVector<KDNode*> >::const_iterator iter  = neighborList.cbegin();
+         iter != neighborList.cend();
+         ++iter)
     {
-        neighborList[distanceToCurrentNode].append(this);
+        size += iter.value().size();
+    }
 
-        // limit the size of the Map to maxNbNeighbors
-        int size = 0;
+    if (size > maxNbNeighbors)
+    {
+        // Eliminate the farthest neighbor
+        QMap<double, QVector<KDNode*> >::iterator farthestNodes = (neighborList.end() - 1);
 
-        for (QMap<double, QVector<KDNode*> >::const_iterator iter  = neighborList.cbegin();
-                                                             iter != neighborList.cend();
-                                                           ++iter)
+        if (farthestNodes.value().size() == 1)
         {
-            size += iter.value().size();
+            neighborList.erase(farthestNodes);
+        }
+        else
+        {
+            farthestNodes.value().pop_back();
         }
 
-
-        if (size > maxNbNeighbors)
-        {
-            // Eliminate the farthest neighbor
-            QMap<double, QVector<KDNode*> >::iterator farthestNodes = (neighborList.end() - 1);
-
-            if (farthestNodes.value().size() == 1)
-            {
-                neighborList.erase(farthestNodes);
-            }
-            else
-            {
-                farthestNodes.value().pop_back();
-            }
-
-            // update the searching range
-            sqRange = pow(neighborList.lastKey(), 2);
-        }
+        // update the searching range
+        sqRange = pow(neighborList.lastKey(), 2);
     }
 
     // sub-trees Traversal
