@@ -160,6 +160,7 @@ if(DNN_RECOGNITION)
                                       # Testing, TODO: remove later
                                       ${CMAKE_CURRENT_SOURCE_DIR}/facerecognition/facerecognizer.cpp
                                       ${CMAKE_CURRENT_SOURCE_DIR}/facerecognition/faceextractor.cpp
+                                      ${CMAKE_CURRENT_SOURCE_DIR}/facerecognition/kd_node.cpp
                                       ${CMAKE_CURRENT_SOURCE_DIR}/facerecognition/facedatabase.cpp
     )
 
