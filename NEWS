@@ -779,4 +779,6 @@ BUGFIXES:
 737 ==> 414927 - digiKam is no longer working.
 738 ==> 422502 - Core dumped (Assert failed QList index out of range).
 739 ==> 422530 - Lockups make digikam unuseable (Windows PC/NAS).
-740 ==> 
+740 ==> 373266 - Albums disappears from view.
+741 ==> 
+
