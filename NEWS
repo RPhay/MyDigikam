@@ -784,5 +784,6 @@ BUGFIXES:
 742 ==> 379959 - Could not start database initializer.
 743 ==> 420704 - External Editor changes not reflected in Digikam thumbnail.
 744 ==> 388936 - User Selectable Thumbnail Format.
-745 ==> 
+745 ==> 386294 - DLNA Server as stand-alone package to be deployed on servers.
+746 ==> 
 
