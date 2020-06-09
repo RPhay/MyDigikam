@@ -783,4 +783,6 @@ BUGFIXES:
 741 ==> 372680 - Cannot delete files from NAS.
 742 ==> 379959 - Could not start database initializer.
 743 ==> 420704 - External Editor changes not reflected in Digikam thumbnail.
-744 ==> 
+744 ==> 388936 - User Selectable Thumbnail Format.
+745 ==> 
+
