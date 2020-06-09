@@ -22,26 +22,26 @@
 
 #include "kd_tree.h"
 
-namespace ClearPath
+namespace RecognitionTest
 {
 class KDTree::Private
 {
 public:
     Private(int dim)
         : nbDimension(dim),
-          Root(nullptr)
+          root(nullptr)
     {
     }
 
     ~Private()
     {
-        delete Root;
+        delete root;
     }
 
 public:
 
     int nbDimension;
-    KDNode* Root;
+    KDNode* root;
     QVector<KDNode*> agents;
 };
 
@@ -55,17 +55,17 @@ KDTree::~KDTree()
     delete d;
 }
 
-bool KDTree::add(std::vector<double> position)
+bool KDTree::add(std::vector<double> position, const Digikam::Identity& identity)
 {
-    if (d->Root == nullptr)
+    if (d->root == nullptr)
     {
-        d->Root = new KDNode(position, 0, d->nbDimension);
-        d->agents.append(d->Root);
+        d->root = new KDNode(position, identity, 0, d->nbDimension);
+        d->agents.append(d->root);
     }
     else
     {
         KDNode* pNode = nullptr;
-        if ((pNode = d->Root->insert(position)) != nullptr)
+        if ((pNode = d->root->insert(position, identity)) != nullptr)
         {
             d->agents.append(pNode);
         }
@@ -77,7 +77,7 @@ QMap<double, QVector<KDNode*> > KDTree::getClosestNeighbors(const std::vector<do
 {
     QMap<double, QVector<KDNode*> > closestNeighbors;
 
-    sqRange = d->Root->getClosestNeighbors(closestNeighbors, position, sqRange, maxNbNeighbors);
+    sqRange = d->root->getClosestNeighbors(closestNeighbors, position, sqRange, maxNbNeighbors);
 
     return closestNeighbors;
 }

@@ -38,6 +38,7 @@
 #include "dnnfacemodel.h"
 #include "digikam_debug.h"
 #include "faceextractor.h"
+#include "kd_tree.h"
 //#include "dnndbscan.h"
 
 using namespace Digikam;
@@ -54,7 +55,8 @@ public:
           extractor(new FaceExtractor),
           svm(cv::ml::SVM::create()),
           knn(cv::ml::KNearest::create()),
-          identityCounter(0)
+          identityCounter(0),
+          tree(128)
     {
         // use linear mapping
         svm->setKernel(cv::ml::SVM::LINEAR);
@@ -184,18 +186,19 @@ public:
 
 public:
 
-    bool           debugMode;
+    bool debugMode;
     // TODO verify recognition threshold
-    float          threshold = 15000.0;
+    float threshold = 15000.0;
+    int identityCounter;
 
     FaceExtractor* extractor;
     cv::Ptr<cv::ml::SVM> svm;
     cv::Ptr<cv::ml::KNearest> knn;
 
-    int            identityCounter;
-
     QHash<QString, QVector<Identity> > faceLibrary;
     QVector<QString> labels;
+
+    KDTree tree;
 };
 
 FaceRecognizer::FaceRecognizer(bool debug)

@@ -25,7 +25,7 @@
 
 #include "kd_node.h"
 
-namespace ClearPath
+namespace RecognitionTest
 {
 
 class KDTree
@@ -46,7 +46,7 @@ public:
 
     void update();
 
-    bool add(std::vector<double> position);
+    bool add(std::vector<double> position, const Digikam::Identity& identity);
 
 private:
 

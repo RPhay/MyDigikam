@@ -28,41 +28,46 @@
 // Qt include
 #include <QtMath>
 
-namespace ClearPath
+using namespace Digikam;
+
+namespace RecognitionTest
 {
 
 class Q_DECL_HIDDEN KDNode::Private
 {
 public:
 
-    Private(std::vector<double> nodePos, int splitAxis, int dimension)
-        : splitAxis(splitAxis),
+    Private(std::vector<double> nodePos, const Identity& identity, int splitAxis, int dimension)
+        : identity(identity),
+          splitAxis(splitAxis),
           nbDimension(dimension),
           position(nodePos),
           maxRange(nodePos),
           minRange(nodePos),
-          Parent(nullptr),
-          Left(nullptr),
-          Right(nullptr)
+          parent(nullptr),
+          left(nullptr),
+          right(nullptr)
     {
     }
 
     ~Private()
     {
-        delete Left;
-        delete Right;
+        delete left;
+        delete right;
     }
 
 public:
+
+    Identity identity;
 
     int splitAxis;
     int nbDimension;
     std::vector<double> position;
     std::vector<double> maxRange;
     std::vector<double> minRange;
-    KDNode* Parent;
-    KDNode* Left;
-    KDNode* Right;
+    KDNode* parent;
+    KDNode* left;
+    KDNode* right;
 };
 
 
@@ -80,11 +85,11 @@ double KDNode::sqrDistance(std::vector<double> pos1, std::vector<double> pos2)
     return sqrDistance;
 }
 
-KDNode::KDNode(const std::vector<double>& nodePos, int splitAxis, int dimension)
-    : d(new Private(nodePos, splitAxis, dimension))
+KDNode::KDNode(const std::vector<double>& nodePos, const Identity& identity, int splitAxis, int dimension)
+    : d(new Private(nodePos, identity, splitAxis, dimension))
 {
     Q_ASSERT(splitAxis < dimension);
-    Q_ASSERT(nodePos.size() == dimension);
+    Q_ASSERT(int(nodePos.size()) == dimension);
 }
 
 KDNode::~KDNode()
@@ -92,9 +97,9 @@ KDNode::~KDNode()
     delete d;
 }
 
-KDNode* KDNode::insert(const std::vector<double>& nodePos)
+KDNode* KDNode::insert(const std::vector<double>& nodePos, const Identity& identity)
 {
-    if (nodePos.size() != d->nbDimension)
+    if (int(nodePos.size()) != d->nbDimension)
     {
         return nullptr;
     }
@@ -106,18 +111,18 @@ KDNode* KDNode::insert(const std::vector<double>& nodePos)
         return nullptr;
     }
 
-    KDNode* newNode = new KDNode(nodePos,
+    KDNode* newNode = new KDNode(nodePos, identity,
                                  ((parent->d->splitAxis + 1) % d->nbDimension),
                                  d->nbDimension);
-    newNode->d->Parent = parent;
+    newNode->d->parent = parent;
 
     if (nodePos[parent->d->splitAxis] >= parent->getPosition()[parent->d->splitAxis])
     {
-        parent->d->Right = newNode;
+        parent->d->right = newNode;
     }
     else
     {
-        parent->d->Left = newNode;
+        parent->d->left = newNode;
     }
 
     return newNode;
@@ -128,6 +133,10 @@ std::vector<double> KDNode::getPosition() const
     return d->position;
 }
 
+Identity& KDNode::getIdentity()
+{
+    return d->identity;
+}
 
 double KDNode::getClosestNeighbors(QMap<double, QVector<KDNode*> >& neighborList,
                                    std::vector<double> position,
@@ -143,8 +152,8 @@ double KDNode::getClosestNeighbors(QMap<double, QVector<KDNode*> >& neighborList
     int size = 0;
 
     for (QMap<double, QVector<KDNode*> >::const_iterator iter  = neighborList.cbegin();
-         iter != neighborList.cend();
-         ++iter)
+                                                         iter != neighborList.cend();
+                                                       ++iter)
     {
         size += iter.value().size();
     }
@@ -168,64 +177,64 @@ double KDNode::getClosestNeighbors(QMap<double, QVector<KDNode*> >& neighborList
     }
 
     // sub-trees Traversal
-    double sqrDistanceLeftTree  = 0;
+    double sqrDistanceleftTree  = 0;
 
 
-    if (d->Left == nullptr)
+    if (d->left == nullptr)
     {
-        sqrDistanceLeftTree = DBL_MAX;
+        sqrDistanceleftTree = DBL_MAX;
     }
     else
     {
         for (int i = 0; i < d->nbDimension; ++i)
         {
-            sqrDistanceLeftTree += (pow(qMax(0.0, (d->Left->d->minRange[i] - position[i])), 2) +
-                                    pow(qMax(0.0, (position[i] - d->Left->d->maxRange[i])), 2));
+            sqrDistanceleftTree += (pow(qMax(0.0, (d->left->d->minRange[i] - position[i])), 2) +
+                                    pow(qMax(0.0, (position[i] - d->left->d->maxRange[i])), 2));
         }
     }
 
 
-    double sqrDistanceRightTree = 0;
+    double sqrDistancerightTree = 0;
 
-    if (d->Right == nullptr)
+    if (d->right == nullptr)
     {
-        sqrDistanceRightTree = DBL_MAX;
+        sqrDistancerightTree = DBL_MAX;
     }
     else
     {
         for (int i = 0; i < d->nbDimension; ++i)
         {
-            sqrDistanceRightTree += (pow(qMax(0.0, (d->Right->d->minRange[i] - position[i])), 2) +
-                                     pow(qMax(0.0, (position[i] - d->Right->d->maxRange[i])), 2));
+            sqrDistancerightTree += (pow(qMax(0.0, (d->right->d->minRange[i] - position[i])), 2) +
+                                     pow(qMax(0.0, (position[i] - d->right->d->maxRange[i])), 2));
         }
     }
 
     // traverse the closest area
-    if (sqrDistanceLeftTree < sqrDistanceRightTree)
+    if (sqrDistanceleftTree < sqrDistancerightTree)
     {
-        if (sqrDistanceLeftTree < sqRange)
+        if (sqrDistanceleftTree < sqRange)
         {
-            // traverse Left Tree
-            sqRange = d->Left->getClosestNeighbors(neighborList, position, sqRange, maxNbNeighbors);
+            // traverse left Tree
+            sqRange = d->left->getClosestNeighbors(neighborList, position, sqRange, maxNbNeighbors);
 
-            if (sqrDistanceRightTree < sqRange)
+            if (sqrDistancerightTree < sqRange)
             {
-                // traverse Right Tree
-                sqRange = d->Right->getClosestNeighbors(neighborList, position, sqRange, maxNbNeighbors);
+                // traverse right Tree
+                sqRange = d->right->getClosestNeighbors(neighborList, position, sqRange, maxNbNeighbors);
             }
         }
     }
     else
     {
-        if (sqrDistanceRightTree < sqRange)
+        if (sqrDistancerightTree < sqRange)
         {
             // traverse right Tree
-            sqRange = d->Right->getClosestNeighbors(neighborList, position, sqRange, maxNbNeighbors);
+            sqRange = d->right->getClosestNeighbors(neighborList, position, sqRange, maxNbNeighbors);
 
-            if (sqrDistanceLeftTree < sqRange)
+            if (sqrDistanceleftTree < sqRange)
             {
-                // traverse Left Tree
-                sqRange = d->Left->getClosestNeighbors(neighborList, position, sqRange, maxNbNeighbors);
+                // traverse left Tree
+                sqRange = d->left->getClosestNeighbors(neighborList, position, sqRange, maxNbNeighbors);
             }
         }
     }
@@ -235,7 +244,10 @@ double KDNode::getClosestNeighbors(QMap<double, QVector<KDNode*> >& neighborList
 
 void KDNode::updateRange(std::vector<double> pos)
 {
-    if (pos.size() != d->nbDimension) return;
+    if (int(pos.size()) != d->nbDimension)
+    {
+        return;
+    }
 
     for (int i = 0; i < d->nbDimension; i++)
     {
@@ -258,11 +270,11 @@ KDNode* KDNode::findParent(std::vector<double> nodePos)
 
         if (nodePos[split] >= currentNode->d->position[split])
         {
-            currentNode = currentNode->d->Right;
+            currentNode = currentNode->d->right;
         }
         else
         {
-            currentNode = currentNode->d->Left;
+            currentNode = currentNode->d->left;
         }
     }
 

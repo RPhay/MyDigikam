@@ -28,20 +28,24 @@
 
 #include <vector>
 
+// Local include
+#include "identity.h"
 
-namespace ClearPath
+using namespace Digikam;
+
+namespace RecognitionTest
 {
 
 class KDNode
 {
 public:
 
-    explicit KDNode(const std::vector<double>& nodePos, int splitAxis, int dimension);
+    explicit KDNode(const std::vector<double>& nodePos, const Identity& identity, int splitAxis, int dimension);
     ~KDNode();
 
 public:
 
-    KDNode* insert(const std::vector<double>& nodePos);
+    KDNode* insert(const std::vector<double>& nodePos, const Identity& identity);
 
     std::vector<double> getPosition() const;
 
@@ -49,13 +53,15 @@ public:
                                std::vector<double> position,
                                double sqRange,
                                int maxNbNeighbors);
-
-    static double sqrDistance(std::vector<double> pos1, std::vector<double> pos2);
+    Identity& getIdentity();
 
 private:
+
     void updateRange(std::vector<double>);
 
     KDNode* findParent(std::vector<double> nodePos);
+
+    static double sqrDistance(std::vector<double> pos1, std::vector<double> pos2);
 
 private:
 
