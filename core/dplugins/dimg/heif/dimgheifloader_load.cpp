@@ -151,8 +151,8 @@ bool DImgHEIFLoader::load(const QString& filePath, DImgLoaderObserver* const obs
     if (!isHeifSuccess(&error))
     {
         qWarning() << "Error: Could not read source file.";
-        loadingFailed();
         heif_context_free(heif_context);
+        loadingFailed();
 
         return false;
     }
@@ -162,8 +162,8 @@ bool DImgHEIFLoader::load(const QString& filePath, DImgLoaderObserver* const obs
     if (!isHeifSuccess(&error))
     {
         qWarning() << "Error: Could not load image data.";
-        loadingFailed();
         heif_context_free(heif_context);
+        loadingFailed();
 
         return false;
     }
