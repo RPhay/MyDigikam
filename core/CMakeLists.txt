@@ -696,6 +696,9 @@ if(DIGIKAM_CAN_BE_COMPILED)
 
     include_directories(${OpenCV_INCLUDE_DIRS})
 
+    # for libheif version header
+    include_directories(${CMAKE_CURRENT_BINARY_DIR}/libs/heifutils)
+
     if(ImageMagick_FOUND)
         include_directories(${ImageMagick_INCLUDE_DIRS})
     endif()

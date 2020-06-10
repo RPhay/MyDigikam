@@ -52,8 +52,6 @@ if(HAVE_POSIX_MEMALIGN)
     add_definitions(-DHAVE_POSIX_MEMALIGN)
 endif()
 
-include_directories(${CMAKE_CURRENT_BINARY_DIR}/)
-
 # Libheif compilation rules ##########################################################
 
 set(NUMERIC_VERSION 0x01060200)
