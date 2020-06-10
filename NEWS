@@ -785,5 +785,5 @@ BUGFIXES:
 743 ==> 420704 - External Editor changes not reflected in Digikam thumbnail.
 744 ==> 388936 - User Selectable Thumbnail Format.
 745 ==> 386294 - DLNA Server as stand-alone package to be deployed on servers.
-746 ==> 
-
+746 ==> 420715 - Can't read EXIF from Samsung S10 HEIC-file.
+747 ==> 
