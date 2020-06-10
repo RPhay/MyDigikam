@@ -70,7 +70,6 @@ private:
 
     // Read operations
     bool readHEICColorProfile(struct heif_image_handle* const image_handle);
-    bool readHEICMetadata(struct heif_image_handle* const image_handle);
     bool readHEICImageByID(struct heif_context* const heif_context,
                            heif_item_id image_id);
 
