@@ -86,7 +86,7 @@ public: // Settings helpers
 public: // File I/O helpers
 
     /**
-     * Re-implemented from libMetaEngine to use libraw identify and
+     * Re-implemented from libMetaEngine to use libraw identify, libheif, and
      * ffmpeg probe methods if Exiv2 failed.
      */
     bool load(const QString& filePath)                                                                                        override;
@@ -379,6 +379,12 @@ private:
     QVariant fromIptcOrXmp(const char* const iptcTagName, const char* const xmpTagName)                                 const;
     bool hasValidField(const QVariantList& list)                                                                        const;
     QVariant toStringListVariant(const QStringList& list)                                                               const;
+
+private:
+
+    // Libheif helper methods.
+
+    bool loadUsingLibheif(const QString& filePath);
 };
 
 } // namespace Digikam

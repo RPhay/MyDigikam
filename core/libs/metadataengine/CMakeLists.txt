@@ -47,6 +47,7 @@ set(libdmetadata_SRCS
 
     ${CMAKE_CURRENT_SOURCE_DIR}/dmetadata/dmetadata.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/dmetadata/dmetadata_video.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/dmetadata/dmetadata_heif.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/dmetadata/dmetadata_fileio.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/dmetadata/dmetadata_comments.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/dmetadata/dmetadata_template.cpp

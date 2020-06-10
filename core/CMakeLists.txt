@@ -174,6 +174,10 @@ find_package(EXPAT)    # For DNGWriter: XMP SDK need Expat library to compile.
 find_package(Threads)  # For DNGWriter and LibRaw which needs native threads support.
 find_package(X265)     # For HEIF encoding support.
 
+if(NOT X265_FOUND)
+    set(X265_LIBRARIES "")
+endif()
+
 find_package(exiv2 REQUIRED)
 
 set_package_properties("exiv2"     PROPERTIES
