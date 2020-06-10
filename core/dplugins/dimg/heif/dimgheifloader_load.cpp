@@ -281,22 +281,15 @@ bool DImgHEIFLoader::readHEICImageByID(struct heif_context* const heif_context,
             heif_image_handle_release(image_handle);
             qDebug() << "HEIF preview found in thumbnail chunk";
 
-            return readHEICImageByHandle(thumbnail_handle, heif_image);
+            return readHEICImageByHandle(thumbnail_handle, heif_image, true);
         }
     }
 
-    if (m_loadFlags & LoadImageData)
-    {
-        return readHEICImageByHandle(image_handle, heif_image);
-    }
-
-    heif_image_handle_release(image_handle);
-
-    return true;
+    return readHEICImageByHandle(image_handle, heif_image, (m_loadFlags & LoadImageData));
 }
 
 bool DImgHEIFLoader::readHEICImageByHandle(struct heif_image_handle* image_handle,
-                                           struct heif_image* heif_image)
+                                           struct heif_image* heif_image, bool loadData)
 {
     // Copy HEIF image into data structures.
 
@@ -398,109 +391,112 @@ bool DImgHEIFLoader::readHEICImageByHandle(struct heif_image_handle* image_handl
         return false;
     }
 
-    qDebug() << "Color multiplier:" << colorMul;
-
-    if (m_sixteenBit)
+    if (loadData)
     {
-        data = new_failureTolerant(imageWidth(), imageHeight(), 8); // 16 bits/color/pixel
-    }
-    else
-    {
-        data = new_failureTolerant(imageWidth(), imageHeight(), 4); // 8 bits/color/pixel
-    }
+        qDebug() << "Color multiplier:" << colorMul;
 
-    if (!data)
-    {
-        qWarning() << "Cannot allocate memory!";
-        loadingFailed();
-        heif_image_release(heif_image);
-        heif_image_handle_release(image_handle);
-
-        return false;
-    }
-
-    if (m_observer)
-    {
-        m_observer->progressInfo(0.4F);
-    }
-
-    uchar* dst              = data;
-    unsigned short* dst16   = reinterpret_cast<unsigned short*>(data);
-    uchar* src              = nullptr;
-    unsigned short* src16   = nullptr;
-    unsigned int checkPoint = 0;
-
-    for (unsigned int y = 0 ; y < imageHeight() ; ++y)
-    {
-        src   = reinterpret_cast<unsigned char*>(ptr + (y * stride));
-        src16 = reinterpret_cast<unsigned short*>(src);
-
-        for (unsigned int x = 0 ; x < imageWidth() ; ++x)
+        if (m_sixteenBit)
         {
-            if (!m_sixteenBit)   // 8 bits image.
-            {
-                // Blue
-                dst[0] = src[2];
-                // Green
-                dst[1] = src[1];
-                // Red
-                dst[2] = src[0];
-
-                // Alpha
-
-                if (m_hasAlpha)
-                {
-                    dst[3] = src[3];
-                    src   += 4;
-                }
-                else
-                {
-                    dst[3] = 0xFF;
-                    src   += 3;
-                }
-
-                dst += 4;
-            }
-            else                // 16 bits image.
-            {
-                // Blue
-                dst16[0] = (unsigned short)(src16[2] << colorMul);
-                // Green
-                dst16[1] = (unsigned short)(src16[1] << colorMul);
-                // Red
-                dst16[2] = (unsigned short)(src16[0] << colorMul);
-
-                // Alpha
-
-                if (m_hasAlpha)
-                {
-                    dst16[3] = (unsigned short)(src16[3] << colorMul);
-                    src16   += 4;
-                }
-                else
-                {
-                    dst16[3] = 0xFFFF;
-                    src16   += 3;
-                }
-
-                dst16 += 4;
-            }
+            data = new_failureTolerant(imageWidth(), imageHeight(), 8); // 16 bits/color/pixel
+        }
+        else
+        {
+            data = new_failureTolerant(imageWidth(), imageHeight(), 4); // 8 bits/color/pixel
         }
 
-        if (m_observer && y >= checkPoint)
+        if (!data)
         {
-            checkPoint += granularity(m_observer, y, 0.8F);
+            qWarning() << "Cannot allocate memory!";
+            loadingFailed();
+            heif_image_release(heif_image);
+            heif_image_handle_release(image_handle);
 
-            if (!m_observer->continueQuery())
+            return false;
+        }
+
+        if (m_observer)
+        {
+            m_observer->progressInfo(0.4F);
+        }
+
+        uchar* dst              = data;
+        unsigned short* dst16   = reinterpret_cast<unsigned short*>(data);
+        uchar* src              = nullptr;
+        unsigned short* src16   = nullptr;
+        unsigned int checkPoint = 0;
+
+        for (unsigned int y = 0 ; y < imageHeight() ; ++y)
+        {
+            src   = reinterpret_cast<unsigned char*>(ptr + (y * stride));
+            src16 = reinterpret_cast<unsigned short*>(src);
+
+            for (unsigned int x = 0 ; x < imageWidth() ; ++x)
             {
-                loadingFailed();
-                heif_image_release(heif_image);
-                heif_image_handle_release(image_handle);
+                if (!m_sixteenBit)   // 8 bits image.
+                {
+                    // Blue
+                    dst[0] = src[2];
+                    // Green
+                    dst[1] = src[1];
+                    // Red
+                    dst[2] = src[0];
 
-                return false;
+                    // Alpha
+
+                    if (m_hasAlpha)
+                    {
+                        dst[3] = src[3];
+                        src   += 4;
+                    }
+                    else
+                    {
+                        dst[3] = 0xFF;
+                        src   += 3;
+                    }
+
+                    dst += 4;
+                }
+                else                // 16 bits image.
+                {
+                    // Blue
+                    dst16[0] = (unsigned short)(src16[2] << colorMul);
+                    // Green
+                    dst16[1] = (unsigned short)(src16[1] << colorMul);
+                    // Red
+                    dst16[2] = (unsigned short)(src16[0] << colorMul);
+
+                    // Alpha
+
+                    if (m_hasAlpha)
+                    {
+                        dst16[3] = (unsigned short)(src16[3] << colorMul);
+                        src16   += 4;
+                    }
+                    else
+                    {
+                        dst16[3] = 0xFFFF;
+                        src16   += 3;
+                    }
+
+                        dst16 += 4;
+            }
             }
 
-            m_observer->progressInfo(0.4 + (0.8 * (((float)y) / ((float)imageHeight()))));
+            if (m_observer && y >= checkPoint)
+            {
+                checkPoint += granularity(m_observer, y, 0.8F);
+
+                if (!m_observer->continueQuery())
+                {
+                    loadingFailed();
+                    heif_image_release(heif_image);
+                    heif_image_handle_release(image_handle);
+
+                    return false;
+                }
+
+                m_observer->progressInfo(0.4 + (0.8 * (((float)y) / ((float)imageHeight()))));
+            }
         }
     }
 

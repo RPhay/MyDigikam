@@ -74,7 +74,7 @@ private:
                            heif_item_id image_id);
 
     bool readHEICImageByHandle(struct heif_image_handle* image_handle,
-                               struct heif_image* heif_image);
+                               struct heif_image* heif_image, bool loadData);
 
     // Save operations
     bool saveHEICColorProfile(struct heif_image* const image);
