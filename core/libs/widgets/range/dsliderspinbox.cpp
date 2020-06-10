@@ -765,7 +765,7 @@ QStyleOptionSpinBox DAbstractSliderSpinBox::spinBoxOptions() const
     }
     else
     {
-        opts.activeSubControls = nullptr;
+        opts.activeSubControls = QStyle::SC_None;
     }
 
     return opts;
