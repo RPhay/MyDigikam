@@ -121,6 +121,7 @@ bool DImgHEIFLoader::load(const QString& filePath, DImgLoaderObserver* const obs
         if (!memFile.open(QIODevice::ReadOnly))
         {
             qWarning() << "Error: Could not load into memory.";
+            heif_context_free(heif_context);
             loadingFailed();
 
             return false;
