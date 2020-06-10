@@ -330,12 +330,9 @@ bool DImgHEIFLoader::readHEICImageByHandle(struct heif_image_handle* image_handl
 
     heif_decoding_options_free(decode_options);
 
-    int colorModel             = DImg::COLORMODELUNKNOWN;
-    (void)colorModel; // prevent cppcheck warning.
-
-    int colorDepth             = heif_image_get_bits_per_pixel_range(heif_image, heif_channel_interleaved);
-    imageWidth()               = heif_image_get_width(heif_image, heif_channel_interleaved);
-    imageHeight()              = heif_image_get_height(heif_image, heif_channel_interleaved);
+    int colorDepth = heif_image_get_bits_per_pixel_range(heif_image, heif_channel_interleaved);
+    imageWidth()   = heif_image_get_width(heif_image, heif_channel_interleaved);
+    imageHeight()  = heif_image_get_height(heif_image, heif_channel_interleaved);
 
     qDebug() << "Decoded HEIF image properties: size("
                 << imageWidth() << "x" << imageHeight()
@@ -367,9 +364,9 @@ bool DImgHEIFLoader::readHEICImageByHandle(struct heif_image_handle* image_handl
         return false;
     }
 
-    uchar* data  = nullptr;
-    int colorMul = 1;       // color multiplier
-    colorModel   = DImg::RGB;
+    uchar* data    = nullptr;
+    int colorMul   = 1;       // color multiplier
+    int colorModel = DImg::RGB;
 
     if      (colorDepth == 8)
     {
