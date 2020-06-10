@@ -289,7 +289,7 @@ bool DImgHEIFLoader::readHEICImageByID(struct heif_context* const heif_context,
 }
 
 bool DImgHEIFLoader::readHEICImageByHandle(struct heif_image_handle* image_handle,
-                                           struct heif_image* heif_image, bool loadData)
+                                           struct heif_image* heif_image, bool loadImageData)
 {
     // Copy HEIF image into data structures.
 
@@ -389,7 +389,7 @@ bool DImgHEIFLoader::readHEICImageByHandle(struct heif_image_handle* image_handl
         return false;
     }
 
-    if (loadData)
+    if (loadImageData)
     {
         qDebug() << "Color multiplier:" << colorMul;
 
