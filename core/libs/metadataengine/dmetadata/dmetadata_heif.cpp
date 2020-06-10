@@ -233,7 +233,6 @@ bool DMetadata::loadUsingLibheif(const QString& filePath)
         {
             qWarning() << "Error: Could not load into memory.";
             heif_context_free(heif_context);
-            loadingFailed();
 
             return false;
         }
