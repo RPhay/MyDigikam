@@ -58,7 +58,7 @@ void DImgLoader::setLoadFlags(LoadFlags flags)
 
 bool DImgLoader::hasLoadedData() const
 {
-    return (((m_loadFlags & LoadImageData) || (m_loadFlags & LoadPreview)) && m_image->m_priv->data);
+    return ((m_loadFlags & (LoadImageData | LoadPreview)) && m_image->m_priv->data);
 }
 
 int DImgLoader::granularity(DImgLoaderObserver* const observer, int total, float progressSlice)
