@@ -278,10 +278,23 @@ bool DImgHEIFLoader::readHEICImageByID(struct heif_context* const heif_context,
                 return false;
             }
 
+            // Save the original size, the size
+            // may differ from the decoded image size.
+
+            QSize originalSize(heif_image_handle_get_width(image_handle),
+                               heif_image_handle_get_height(image_handle));
+
             heif_image_handle_release(image_handle);
+
             qDebug() << "HEIF preview found in thumbnail chunk";
 
-            return readHEICImageByHandle(thumbnail_handle, heif_image, true);
+            bool ret = readHEICImageByHandle(thumbnail_handle, heif_image, true);
+
+            // Restore original size.
+
+            imageSetAttribute(QLatin1String("originalSize"), originalSize);
+
+            return ret;
         }
     }
 
