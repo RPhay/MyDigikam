@@ -292,8 +292,8 @@ QImage ThumbnailCreator::loadImageDetail(const ThumbnailInfo& info,
 
         if ((img.width() < acceptableWidth) && (img.height() < acceptableHeight))
         {
-            qDebug(DIGIKAM_GENERAL_LOG) << "Preview image is smaller than the accepted size"
-                                        << QSize(acceptableWidth, acceptableHeight);
+            qDebug(DIGIKAM_GENERAL_LOG) << "Preview image is smaller than the accepted size("
+                                        << acceptableWidth << "x" << acceptableHeight << ")";
             img.reset();
         }
     }
