@@ -667,6 +667,21 @@ if(DIGIKAM_CAN_BE_COMPILED)
     # (CImg.h) and PGF codec
     kde_enable_exceptions()
 
+    # Enforce modern Qt code
+    add_definitions(-DQT_DEPRECATED_WARNINGS
+                    -DQT_USE_QSTRINGBUILDER
+                    -DQT_NO_CAST_TO_ASCII
+                    -DQT_NO_CAST_FROM_ASCII
+                    -DQT_NO_CAST_FROM_BYTEARRAY
+                    -DQT_NO_URL_CAST_FROM_STRING
+                    -DQT_STRICT_ITERATORS
+                    -DQT_NO_NARROWING_CONVERSIONS_IN_CONNECT
+#                    -DQT_DEPRECATED_WARNINGS_SINCE=0x060000
+#                    -DQT_DISABLE_DEPRECATED_BEFORE=0x050E00
+#                    -DQT_NO_FOREACH
+#                    -DQT_NO_KEYWORDS
+    )
+
     # ==========================================================================
     # Includes rules
 
