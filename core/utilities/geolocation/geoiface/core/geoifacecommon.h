@@ -227,9 +227,9 @@ public:
           modificationsAllowed(true),
           selectionRectangle(),
           haveMovingCluster(false),
-          currentMouseMode(nullptr),
-          availableMouseModes(nullptr),
-          visibleMouseModes(nullptr),
+          currentMouseMode(),
+          availableMouseModes(),
+          visibleMouseModes(),
           activeState(false)
     {
     }

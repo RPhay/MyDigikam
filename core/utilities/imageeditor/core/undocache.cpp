@@ -219,7 +219,7 @@ DImg UndoCache::getData(int level) const
 
     qint64 readBytes = file.read((char*)img.bits(), numBytes);
 
-    if ((file.error() != QFileDevice::NoError) || (readBytes != numBytes))
+    if ((file.error() != QFileDevice::NoError) || ((quint64)readBytes != numBytes))
     {
         file.close();
 

@@ -26,6 +26,8 @@ set(DIGIKAMCORE_OBJECTS
             $<TARGET_OBJECTS:core_rawengine_obj>
             $<TARGET_OBJECTS:core_dpluginsinterface_obj>
             $<TARGET_OBJECTS:core_libwso2_obj>
+            $<TARGET_OBJECTS:core_libheif_obj>
+            $<TARGET_OBJECTS:core_libde265_obj>
 
             $<TARGET_OBJECTS:core_libmd5_obj>
             $<TARGET_OBJECTS:core_libxmp_obj>
@@ -251,6 +253,15 @@ if(Lqr-1_FOUND)
     target_link_libraries(digikamcore
                           PRIVATE
                           ${LQR-1_LIBRARIES}
+    )
+
+endif()
+
+if(X265_FOUND)
+
+    target_link_libraries(digikamcore
+                          PRIVATE
+                          ${X265_LIBRARIES}
     )
 
 endif()

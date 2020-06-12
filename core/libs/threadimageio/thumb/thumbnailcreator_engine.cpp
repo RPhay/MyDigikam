@@ -263,10 +263,11 @@ QImage ThumbnailCreator::loadImageDetail(const ThumbnailInfo& info,
         int acceptableWidth  = lround(previews.originalSize().width()  * 0.5);
         int acceptableHeight = lround(previews.originalSize().height() * 0.5);
 
-        if (previews.width() >= acceptableWidth &&  previews.height() >= acceptableHeight)
+        if ((previews.width() >= acceptableWidth) && (previews.height() >= acceptableHeight))
         {
             QImage qimage           = previews.image();
             QRect reducedSizeDetail = TagRegion::mapFromOriginalSize(previews.originalSize(), qimage.size(), detailRect);
+
             return qimage.copy(reducedSizeDetail.intersected(qimage.rect()));
         }
     }
@@ -282,7 +283,22 @@ QImage ThumbnailCreator::loadImageDetail(const ThumbnailInfo& info,
 
     qDebug(DIGIKAM_GENERAL_LOG) << "Try to get thumbnail from DImg preview for" << path;
 
-    if (!img.load(path, loadFlags, d->observer, d->fastRawSettings))
+    if (img.load(path, loadFlags, d->observer, d->fastRawSettings))
+    {
+        // discard if smaller than half preview
+
+        int acceptableWidth  = lround(img.originalRatioSize().width()  * 0.5);
+        int acceptableHeight = lround(img.originalRatioSize().height() * 0.5);
+
+        if ((img.width() < acceptableWidth) && (img.height() < acceptableHeight))
+        {
+            qDebug(DIGIKAM_GENERAL_LOG) << "Preview image is smaller than the accepted size:"
+                                        << acceptableWidth << "x" << acceptableHeight;
+            img.reset();
+        }
+    }
+
+    if (img.isNull())
     {
         qDebug(DIGIKAM_GENERAL_LOG) << "Try to get thumbnail from DImg scaled for" << path;
 

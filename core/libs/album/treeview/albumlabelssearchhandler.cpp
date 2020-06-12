@@ -146,9 +146,9 @@ QString AlbumLabelsSearchHandler::createXMLForCurrentSelection(const QHash<Label
 
     foreach (int rate, selectedLabels[LabelsTreeView::Ratings])
     {
-        if (rate == 0)
+        if (rate == RatingMin)
         {
-            ratings << -1;
+            ratings << NoRating;
         }
 
         ratings << rate;

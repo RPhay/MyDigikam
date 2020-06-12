@@ -7,9 +7,6 @@
 #
 # Copy this script on root folder where are source code
 
-export PATH=$QTDIR/bin:$PATH
-export PKG_CONFIG_PATH=/usr/lib/pkgconfig
-
 #export VERBOSE=1
 
 # We will work on command line using MinGW compiler
