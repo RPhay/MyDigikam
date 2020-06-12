@@ -376,6 +376,7 @@ void ItemIconView::slotAlbumReadMetadata()
     }
 
     MetadataSynchronizer* const tool = new MetadataSynchronizer(AlbumList() << album, MetadataSynchronizer::ReadFromFileToDatabase);
+    tool->setUseMultiCoreCPU(false);
     tool->start();
 }
 
