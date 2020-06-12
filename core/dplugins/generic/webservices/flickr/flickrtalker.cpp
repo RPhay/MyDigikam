@@ -156,7 +156,7 @@ FlickrTalker::FlickrTalker(QWidget* const parent,
 
     /* Initialize photo sets list. */
 
-    m_photoSetsList    = new QLinkedList<FPhotoSet>();
+    m_photoSetsList    = new QList<FPhotoSet>();
 
     d->o1              = new O1(this);
     d->o1->setLocalPort(80);
@@ -952,7 +952,7 @@ void FlickrTalker::parseResponseCreatePhotoSet(const QByteArray& data)
 
             // Set the new id in the photo sets list.
 
-            QLinkedList<FPhotoSet>::iterator it = m_photoSetsList->begin();
+            QList<FPhotoSet>::iterator it = m_photoSetsList->begin();
 
             while (it != m_photoSetsList->end())
             {

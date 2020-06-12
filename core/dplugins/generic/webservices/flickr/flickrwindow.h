@@ -26,15 +26,14 @@
 
 // Qt includes
 
+#include <QUrl>
 #include <QHash>
 #include <QList>
 #include <QPair>
 #include <QLabel>
-#include <QLinkedList>
-#include <QLineEdit>
-#include <QUrl>
-#include <QComboBox>
 #include <QDialog>
+#include <QLineEdit>
+#include <QComboBox>
 
 // Local includes
 
