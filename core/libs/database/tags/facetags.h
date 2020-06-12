@@ -56,6 +56,14 @@ public:
     static int            unconfirmedPersonTagId();
 
     static bool           isTheIgnoredPerson(int tagId);
+
+    /**
+     * Use this method with caution, as it will create
+     * the Ignored Tag, if one doesn't exist already.
+     * This isn't always required, as the Ignored Tag should
+     * only be created when the User wants it to.
+     * Use existsIgnoredPerson() for safety.
+     */
     static int            ignoredPersonTagId();
 
     /**
