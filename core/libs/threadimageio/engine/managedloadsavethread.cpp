@@ -465,6 +465,12 @@ void ManagedLoadSaveThread::prependThumbnailGroup(const QList<LoadingDescription
             }
 
             m_todo.removeAll(existingTask);
+
+            if (index > m_todo.size())
+            {
+                --index;
+            }
+
             delete existingTask;
         }
 

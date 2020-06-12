@@ -8,11 +8,11 @@
 
 set(PREFIX_ext_gmicqt "${EXTPREFIX}")
 
-if (APPLE)
-    set(FFTW_SUPPORT OFF)
-else()
+#if (APPLE)
+#    set(FFTW_SUPPORT OFF)
+#else()
     set(FFTW_SUPPORT ON)
-endif()
+#endif()
 
 set(GmicQt_Conf -DGMIC_QT_HOST=digikam
                 -DENABLE_ASAN=OFF
@@ -30,7 +30,7 @@ if (MINGW)
         DOWNLOAD_DIR ${EXTERNALS_DOWNLOAD_DIR}
         GIT_REPOSITORY https://github.com/cgilles/gmic-qt.git
         GIT_SUBMODULES gmic
-        #GIT_TAG ${GMIC_VERSION}
+        GIT_SUBMODULES CImg
 
         SOURCE_DIR gmic-qt
 
@@ -53,7 +53,7 @@ else() # MacOS and Linux
         DOWNLOAD_DIR ${EXTERNALS_DOWNLOAD_DIR}
         GIT_REPOSITORY https://github.com/cgilles/gmic-qt.git
         GIT_SUBMODULES gmic
-        #GIT_TAG ${GMIC_VERSION}
+        GIT_SUBMODULES CImg
 
         SOURCE_DIR gmic-qt
         INSTALL_DIR ${PREFIX_ext_gmicqt}

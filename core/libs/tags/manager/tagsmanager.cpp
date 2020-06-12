@@ -559,7 +559,7 @@ void TagsManager::slotReadFromImg()
 
     MetadataSynchronizer* const tool = new MetadataSynchronizer(AlbumList(),
                                                                 MetadataSynchronizer::ReadFromFileToDatabase);
-
+    tool->setUseMultiCoreCPU(false);
     tool->setTagsOnly(true);
     tool->start();
 }
