@@ -645,7 +645,7 @@ bool GPCamera::capture(CamItemInfo& itemInfo)
 
     if (info.file.fields & GP_FILE_INFO_MTIME)
     {
-        itemInfo.ctime = QDateTime::fromTime_t(info.file.mtime);
+        itemInfo.ctime = QDateTime::fromSecsSinceEpoch(info.file.mtime);
     }
 
     if (info.file.fields & GP_FILE_INFO_SIZE)
@@ -968,7 +968,7 @@ void GPCamera::getItemInfoInternal(const QString& folder, const QString& itemNam
             {
                 if (cfinfo.file.fields & GP_FILE_INFO_MTIME)
                 {
-                    info.ctime = QDateTime::fromTime_t(cfinfo.file.mtime);
+                    info.ctime = QDateTime::fromSecsSinceEpoch(cfinfo.file.mtime);
                 }
                 else
                 {
@@ -981,7 +981,7 @@ void GPCamera::getItemInfoInternal(const QString& folder, const QString& itemNam
             // Only use properties provided by camera.
             if (cfinfo.file.fields & GP_FILE_INFO_MTIME)
             {
-                info.ctime = QDateTime::fromTime_t(cfinfo.file.mtime);
+                info.ctime = QDateTime::fromSecsSinceEpoch(cfinfo.file.mtime);
             }
             else
             {
@@ -1191,12 +1191,13 @@ bool GPCamera::downloadItem(const QString& folder, const QString& itemName,
 
     file.close();
 
-    if (errorCode == GP_OK && mtime)
+    if ((errorCode == GP_OK) && mtime)
     {
-        DFileOperations::setModificationTime(saveFile, QDateTime::fromTime_t(mtime));
+        DFileOperations::setModificationTime(saveFile, QDateTime::fromSecsSinceEpoch(mtime));
     }
 
     gp_file_unref(cfile);
+
     return true;
 
 #else
@@ -1428,7 +1429,7 @@ bool GPCamera::uploadItem(const QString& folder, const QString& itemName, const 
 
     if (info.file.fields & GP_FILE_INFO_MTIME)
     {
-        itemInfo.ctime = QDateTime::fromTime_t(info.file.mtime);
+        itemInfo.ctime = QDateTime::fromSecsSinceEpoch(info.file.mtime);
     }
 
     if (info.file.fields & GP_FILE_INFO_SIZE)
