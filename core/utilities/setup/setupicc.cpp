@@ -463,7 +463,6 @@ SetupICC::SetupICC(QDialogButtonBox* const dlgBtnBox, QWidget* const parent)
 
     d->defaultPathKU            = new DFileSelector;
     d->iccFolderLabel->setBuddy(d->defaultPathKU);
-    d->defaultPathKU->lineEdit()->setReadOnly(true);
     d->defaultPathKU->setFileDlgMode(QFileDialog::Directory);
     d->defaultPathKU->setWhatsThis(i18n("<p>digiKam searches ICC profiles in default system folders "
                                         "and ships itself a few selected profiles. "
