@@ -187,15 +187,16 @@ void ItemIconView::slotDispatchImageSelected()
 
 void ItemIconView::slotImageWriteMetadata()
 {
-    const ItemInfoList selected     = selectedInfoList(ApplicationSettings::Metadata);
+    const ItemInfoList selected      = selectedInfoList(ApplicationSettings::Metadata);
     MetadataSynchronizer* const tool = new MetadataSynchronizer(selected, MetadataSynchronizer::WriteFromDatabaseToFile);
     tool->start();
 }
 
 void ItemIconView::slotImageReadMetadata()
 {
-    const ItemInfoList selected     = selectedInfoList(ApplicationSettings::Metadata);
+    const ItemInfoList selected      = selectedInfoList(ApplicationSettings::Metadata);
     MetadataSynchronizer* const tool = new MetadataSynchronizer(selected, MetadataSynchronizer::ReadFromFileToDatabase);
+    tool->setUseMultiCoreCPU(false);
     tool->start();
 }
 

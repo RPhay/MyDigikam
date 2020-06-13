@@ -777,4 +777,13 @@ BUGFIXES:
 735 ==> 422347 - Program crash when clone repair.
 736 ==> 403847 - Crash on pict rotation.
 737 ==> 414927 - digiKam is no longer working.
-738 ==> 
+738 ==> 422502 - Core dumped (Assert failed QList index out of range).
+739 ==> 422530 - Lockups make digikam unuseable (Windows PC/NAS).
+740 ==> 373266 - Albums disappears from view.
+741 ==> 372680 - Cannot delete files from NAS.
+742 ==> 379959 - Could not start database initializer.
+743 ==> 420704 - External Editor changes not reflected in Digikam thumbnail.
+744 ==> 388936 - User Selectable Thumbnail Format.
+745 ==> 386294 - DLNA Server as stand-alone package to be deployed on servers.
+746 ==> 420715 - Can't read EXIF from Samsung S10 HEIC-file.
+747 ==> 

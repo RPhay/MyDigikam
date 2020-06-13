@@ -144,8 +144,8 @@ public:
         thumbnailTimer(nullptr),
         thumbnailTimerCount(0),
         thumbnailsHaveBeenLoaded(false),
-        availableExtraActions(nullptr),
-        visibleExtraActions(nullptr),
+        availableExtraActions(),
+        visibleExtraActions(),
         actionStickyMode(nullptr),
         buttonStickyMode(nullptr),
         placeholderWidget(nullptr)

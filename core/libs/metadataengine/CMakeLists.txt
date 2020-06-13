@@ -47,6 +47,7 @@ set(libdmetadata_SRCS
 
     ${CMAKE_CURRENT_SOURCE_DIR}/dmetadata/dmetadata.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/dmetadata/dmetadata_video.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/dmetadata/dmetadata_heif.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/dmetadata/dmetadata_fileio.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/dmetadata/dmetadata_comments.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/dmetadata/dmetadata_template.cpp
@@ -82,6 +83,8 @@ include_directories(
 
 # Used by digikamcore
 add_library(core_dmetadata_obj OBJECT ${libdmetadata_SRCS})
+
+add_dependencies(core_dmetadata_obj core_libheif_obj)
 
 target_compile_definitions(core_dmetadata_obj
                            PRIVATE

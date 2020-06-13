@@ -138,7 +138,7 @@ QLayoutItem* DynamicLayout::takeAt(int index)
 
 Qt::Orientations DynamicLayout::expandingDirections() const
 {
-    return nullptr;
+    return Qt::Orientations();
 }
 
 bool DynamicLayout::hasHeightForWidth() const

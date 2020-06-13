@@ -19,7 +19,7 @@ cd build
 cmake -G "$MAKEFILES_TYPE" . \
       -DCMAKE_BUILD_TYPE=Debug \
       -DCMAKE_INSTALL_PREFIX=/usr \
-      -ENABLE_ASAN=OFF \
+      -DENABLE_ASAN=OFF \
       -DGMIC_QT_HOST=digikam \
       -Wno-dev \
       ..

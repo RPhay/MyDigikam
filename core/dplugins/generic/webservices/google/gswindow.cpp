@@ -604,6 +604,7 @@ void GSWindow::slotStartTransfer()
                 descriptions.removeAll(QLatin1String(""));
                 temp.description         = descriptions.join(QLatin1String("\n\n"));
                 temp.description.replace(QLatin1Char('"'), QLatin1String("\\\""));
+                temp.description         = temp.description.left(1000);
                 break;
         }
 
