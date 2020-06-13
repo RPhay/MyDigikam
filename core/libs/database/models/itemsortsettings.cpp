@@ -269,10 +269,17 @@ int ItemSortSettings::compare(const ItemInfo& left, const ItemInfo& right, SortR
 {
     switch (role)
     {
+        /**
+         * Currently modified SortByFileName, just to check
+         * how it's working.
+         */
         case SortByFileName:
         {
-            return naturalCompare(left.name(), right.name(),
-                                  currentSortOrder, sortCaseSensitivity, strTypeNatural);
+            // return naturalCompare(left.name(), right.name(),
+            //                       currentSortOrder, sortCaseSensitivity, strTypeNatural);
+            FaceTagsEditor fte;
+            return compareByOrder(fte.unconfirmedFaceTagsIfaces(right.id()).size(),
+                                  fte.unconfirmedFaceTagsIfaces(left.id()).size(), currentSortOrder) ;
         }
 
         case SortByFilePath:
