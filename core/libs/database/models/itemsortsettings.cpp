@@ -33,6 +33,7 @@
 
 #include "coredbfields.h"
 #include "iteminfo.h"
+#include "facetagseditor.h"
 
 namespace Digikam
 {
