@@ -38,7 +38,7 @@
 
 // OpenGL headers is not included automatically with ARM targets
 
-#if Q_PROCESSOR_ARM
+#ifdef Q_PROCESSOR_ARM
 #   include <GL/gl.h>
 #endif
 
