@@ -69,6 +69,14 @@ QList<FaceTagsIface> FaceTagsEditor::unconfirmedFaceTagsIfaces(qlonglong imageId
     return databaseFaces(imageId, FaceTagsIface::UnconfirmedTypes);
 }
 
+/**
+ * Method implemented for Sort implementation testing.
+ */
+QList<FaceTagsIface> FaceTagsEditor::unconfirmedNameFaceTagsIfaces(qlonglong imageId) const
+{
+    return databaseFaces(imageId, FaceTagsIface::UnconfirmedName);
+}
+
 QList<FaceTagsIface> FaceTagsEditor::databaseFacesForTraining(qlonglong imageId) const
 {
     return databaseFaces(imageId, FaceTagsIface::FaceForTraining);

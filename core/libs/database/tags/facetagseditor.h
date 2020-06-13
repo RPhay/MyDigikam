@@ -69,6 +69,10 @@ public:
      */
     QList<FaceTagsIface> databaseFaces(qlonglong imageid)                                   const;
     QList<FaceTagsIface> unconfirmedFaceTagsIfaces(qlonglong imageid)                       const;
+
+    // Method implemented for current sort testing, will fix formatting if working appropriately.
+    QList<FaceTagsIface> unconfirmedNameFaceTagsIfaces(qlonglong imageid)                       const;
+
     QList<FaceTagsIface> databaseFacesForTraining(qlonglong imageid)                        const;
     QList<FaceTagsIface> confirmedFaceTagsIfaces(qlonglong imageid)                         const;
     QList<FaceTagsIface> ignoredFaceTagsIfaces(qlonglong imageid)                           const;
