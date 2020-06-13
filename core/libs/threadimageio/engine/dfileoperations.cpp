@@ -510,7 +510,7 @@ bool DFileOperations::setModificationTime(const QString& srcFile,
     }
     else
     {
-        modtime = dateTime.toTime_t();
+        modtime = dateTime.toSecsSinceEpoch();
     }
 
 #ifdef Q_OS_WIN64

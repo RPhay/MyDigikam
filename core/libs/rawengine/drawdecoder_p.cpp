@@ -111,7 +111,7 @@ double DRawDecoder::Private::progressValue() const
 
 void DRawDecoder::Private::fillIndentifyInfo(LibRaw* const raw, DRawInfo& identify)
 {
-    identify.dateTime.setTime_t(raw->imgdata.other.timestamp);
+    identify.dateTime.setSecsSinceEpoch(raw->imgdata.other.timestamp);
     identify.make             = QString::fromUtf8(raw->imgdata.idata.make);
     identify.model            = QString::fromUtf8(raw->imgdata.idata.model);
     identify.owner            = QString::fromUtf8(raw->imgdata.other.artist);
