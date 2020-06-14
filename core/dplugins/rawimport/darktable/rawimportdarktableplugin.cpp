@@ -253,7 +253,7 @@ void DarkTableRawImportPlugin::slotProcessFinished(int code, QProcess::ExitStatu
     if (d->decoded.isNull())
     {
         QString message = i18n("Error to import RAW image with DarkTable\nClose this dialog to load RAW image with native import tool");
-        QMessageBox::information(0, qApp->applicationName(), message);
+        QMessageBox::information(nullptr, qApp->applicationName(), message);
 
         qCDebug(DIGIKAM_GENERAL_LOG) << "Decoded image is null! Load with Native tool...";
         qCDebug(DIGIKAM_GENERAL_LOG) << d->props.filePath;
