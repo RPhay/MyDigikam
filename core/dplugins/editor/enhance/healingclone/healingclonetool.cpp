@@ -127,7 +127,7 @@ HealingCloneTool::HealingCloneTool(QObject* const parent)
     setObjectName(QLatin1String("healing clone"));
     setToolHelp(QLatin1String("healingclonetool.anchor"));
 
-    d->gboxSettings      = new EditorToolSettings(0);
+    d->gboxSettings      = new EditorToolSettings(nullptr);
     d->previewWidget     = new HealingCloneToolWidget;
     refreshImage();
 
