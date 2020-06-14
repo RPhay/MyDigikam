@@ -144,11 +144,12 @@ bool UFRawRawImportPlugin::run(const QString& filePath, const DRawDecoding& /*de
     d->fileInfo = QFileInfo(filePath);
 
     d->ufraw->setProgram(QLatin1String("ufraw"));
-    d->ufraw->setArguments(QStringList() << QLatin1String("--out-depth=16")                              // 16 bits per color per pixels
-                                        << QLatin1String("--out-type=png")                               // PNG output (TIFF output generate multi-layers file)
-                                        << QLatin1String("--overwrite")                                  // Overwrite target temporay file
-                                        << QString::fromUtf8("--output=%1").arg(d->tempFile->fileName()) // Output file
-                                        << filePath);                                                    // Input file
+    d->ufraw->setArguments(QStringList() << QLatin1String("--out-depth=16")   // 16 bits per color per pixels
+                                         << QLatin1String("--out-type=png")   // PNG output (TIFF output generate multi-layers file)
+                                         << QLatin1String("--overwrite")      // Overwrite target temporay file
+                                         << QString::fromUtf8("--output=%1")
+                                                .arg(d->tempFile->fileName()) // Output file
+                                         << filePath);                        // Input file
 
     qCDebug(DIGIKAM_GENERAL_LOG) << "UFRaw arguments:" << d->ufraw->arguments();
 
