@@ -46,7 +46,7 @@ Notice to make release tarballs from GIT
     Note: if .sig files are not generated with GPG, you can process signature computation with the command line
     below. In this example, the GPG key is installed to ~/.gnupg/dkorg-gpg-pwd.txt.
 
-    cat ~/.gnupg/dkorg-gpg-pwd.txt | gpg --batch --yes --passphrase-fd 0 -stabv "tarball_file_to_sign"
+    cat ~/.gnupg/dkorg-gpg-pwd.txt | gpg --batch --yes --passphrase-fd 0 -stabv "tarball_file_to_sign" && mv "tarball_file_to_sign.asc" "tarball_file_to_sign.sig"
 
 8/  Optional: upload tarball and signature to the "pre-release files repository".
 
