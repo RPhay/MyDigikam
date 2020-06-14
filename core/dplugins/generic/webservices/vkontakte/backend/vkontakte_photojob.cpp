@@ -86,7 +86,7 @@ void PhotoJob::jobFinished(KJob* kjob)
     }
 
     emitResult();
-    m_job = 0;
+    m_job = nullptr;
 }
 
 QImage PhotoJob::photo() const
