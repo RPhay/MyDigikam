@@ -127,8 +127,8 @@ HealingCloneTool::HealingCloneTool(QObject* const parent)
     setObjectName(QLatin1String("healing clone"));
     setToolHelp(QLatin1String("healingclonetool.anchor"));
 
-    d->gboxSettings      = new EditorToolSettings(nullptr);
-    d->previewWidget     = new HealingCloneToolWidget;
+    d->gboxSettings  = new EditorToolSettings(nullptr);
+    d->previewWidget = new HealingCloneToolWidget;
     refreshImage();
 
     d->previewWidget->setFocusPolicy(Qt::StrongFocus);
@@ -137,8 +137,8 @@ HealingCloneTool::HealingCloneTool(QObject* const parent)
 
     // --------------------------------------------------------
 
-    QLabel* const label  = new QLabel(i18n("Brush Radius:"));
-    d->radiusInput       = new DIntNumInput();
+    QLabel* const label = new QLabel(i18n("Brush Radius:"));
+    d->radiusInput      = new DIntNumInput();
     d->radiusInput->setRange(0, 200, 1);
     d->radiusInput->setDefaultValue(50);
     d->radiusInput->setWhatsThis(i18n("A radius of 0 has no effect, "
