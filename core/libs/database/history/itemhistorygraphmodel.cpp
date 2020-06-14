@@ -201,7 +201,7 @@ public:
 
 #define if_isItem(class, name, pointer)                                                             \
     if (pointer && static_cast<HistoryTreeItem*>(pointer)->type() == HistoryTreeItem:: class##Type) \
-        for (class* name = static_cast<class*>(pointer) ; name ; name=0)
+        for (class* name = static_cast<class*>(pointer) ; name ; name = nullptr)
 
 // ------------------------------------------------------------------------
 
