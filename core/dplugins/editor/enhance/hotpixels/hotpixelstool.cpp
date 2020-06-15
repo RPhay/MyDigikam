@@ -200,7 +200,7 @@ void HotPixelsTool::writeSettings()
 {
     KSharedConfig::Ptr config = KSharedConfig::openConfig();
     KConfigGroup group        = config->group(d->configGroupName);
-    group.writeEntry(d->configLastBlackFrameFileEntry, d->blackFrameURL.url());
+    group.writeEntry(d->configLastBlackFrameFileEntry, d->blackFrameURL.toLocalFile());
     group.writeEntry(d->configFilterMethodEntry,       d->filterMethodCombo->currentIndex());
     group.sync();
 }
