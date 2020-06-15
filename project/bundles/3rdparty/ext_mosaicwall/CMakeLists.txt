@@ -19,8 +19,8 @@ if (MINGW)
     ExternalProject_Add(ext_mosaicwall
 
         DOWNLOAD_DIR ${EXTERNALS_DOWNLOAD_DIR}
-#       GIT_REPOSITORY https://github.com/scheckmedia/ImageMosaicWall.git
-        GIT_REPOSITORY https://github.com/cgilles/ImageMosaicWall.git
+        GIT_REPOSITORY https://github.com/scheckmedia/ImageMosaicWall.git
+#        GIT_REPOSITORY https://github.com/cgilles/ImageMosaicWall.git
 
         CONFIGURE_COMMAND cp ${CMAKE_CURRENT_SOURCE_DIR}/../../../../bootstrap.mxe <SOURCE_DIR>/. &&
                           <SOURCE_DIR>/bootstrap.mxe ${MXE_BUILDROOT} RelWithDebInfo ${BASH_OPTIONS}
@@ -39,8 +39,8 @@ else() # MacOS and Linux
     ExternalProject_Add(ext_mosaicwall
 
         DOWNLOAD_DIR ${EXTERNALS_DOWNLOAD_DIR}
-#       GIT_REPOSITORY https://github.com/scheckmedia/ImageMosaicWall.git
-        GIT_REPOSITORY https://github.com/cgilles/ImageMosaicWall.git
+        GIT_REPOSITORY https://github.com/scheckmedia/ImageMosaicWall.git
+#        GIT_REPOSITORY https://github.com/cgilles/ImageMosaicWall.git
 
         INSTALL_DIR ${PREFIX_ext_mosaicwall}
 
