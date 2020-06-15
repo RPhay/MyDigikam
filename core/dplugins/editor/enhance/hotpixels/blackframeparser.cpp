@@ -99,8 +99,7 @@ void BlackFrameParser::slotLoadingProgress(const LoadingDescription&, float v)
 
 void BlackFrameParser::slotLoadImageFromUrlComplete(const LoadingDescription&, const DImg& img)
 {
-    DImg image(img);
-    m_Image = image.copyQImage();
+    m_Image = img.copyQImage();
     blackFrameParsing();
 
     emit signalLoadingComplete();
@@ -140,7 +139,7 @@ void BlackFrameParser::blackFrameParsing()
         {
             // Get each point in the image
 
-            QRgb pixrgb = m_Image.pixel(x,y);
+            QRgb pixrgb = m_Image.pixel(x, y);
             QColor color;
             color.setRgb(pixrgb);
 
@@ -148,8 +147,8 @@ void BlackFrameParser::blackFrameParsing()
 
             int       maxValue;
             int       threshold       = DENOM / 10;
-            const int threshold_value = REL_TO_ABS(threshold,255);
-            maxValue                  = (color.red()>color.blue()) ? color.red() : color.blue();
+            const int threshold_value = REL_TO_ABS(threshold, 255);
+            maxValue                  = (color.red() > color.blue()) ? color.red() : color.blue();
 
             if (color.green() > maxValue)
             {
@@ -179,7 +178,7 @@ void BlackFrameParser::blackFrameParsing()
 
     // Now join points together into groups
 
-    consolidatePixels (hpList);
+    consolidatePixels(hpList);
 
     // And notify
 
