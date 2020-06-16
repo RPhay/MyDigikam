@@ -338,6 +338,30 @@ void ItemInfo::setManualOrder(qlonglong value)
     m_data->manualOrderCached = true;
 }
 
+void ItemInfo::setUnconfirmedFaceCount(bool increment)
+{
+    if (!m_data)
+    {
+        return;
+    }
+
+    if (increment)
+    {
+        m_data->unconfirmedFaceCount++;
+        m_data->unconfirmedFaceCountCached = true;
+        return;
+    }
+
+    if (m_data->unconfirmedFaceCount > 0)
+    {
+        m_data->unconfirmedFaceCount--;
+        m_data->unconfirmedFaceCountCached = true;
+        return;
+    }
+
+    return ;
+}
+
 void ItemInfo::setOrientation(int value)
 {
     if (!m_data)
