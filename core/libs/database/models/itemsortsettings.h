@@ -78,6 +78,7 @@ public:
         SortByImageSize,            ///< pixel number
         SortByAspectRatio,          ///< width / height * 100000
         SortBySimilarity,
+        SortByFaces,
         SortByManualOrderAndName,
         SortByManualOrderAndDate
     };

@@ -270,17 +270,10 @@ int ItemSortSettings::compare(const ItemInfo& left, const ItemInfo& right, SortR
 {
     switch (role)
     {
-        /**
-         * Currently modified SortByFileName, just to check
-         * how it's working.
-         */
         case SortByFileName:
         {
-            // return naturalCompare(left.name(), right.name(),
-            //                       currentSortOrder, sortCaseSensitivity, strTypeNatural);
-            FaceTagsEditor fte;
-            return compareByOrder(fte.unconfirmedFaceTagsIfaces(right.id()).size(),
-                                  fte.unconfirmedFaceTagsIfaces(left.id()).size(), currentSortOrder) ;
+            return naturalCompare(left.name(), right.name(),
+                                  currentSortOrder, sortCaseSensitivity, strTypeNatural);
         }
 
         case SortByFilePath:
@@ -326,6 +319,12 @@ int ItemSortSettings::compare(const ItemInfo& left, const ItemInfo& right, SortR
             double leftSimilarity           = left.id()  == leftReferenceImageId  ? 1.1 : left.currentSimilarity();
             double rightSimilarity          = right.id() == rightReferenceImageId ? 1.1 : right.currentSimilarity();
             return compareByOrder(leftSimilarity, rightSimilarity, currentSortOrder);
+        }
+
+        // Implementation to make Unconfirmed Faces of a tag appear before Confirmed faces.
+        case SortByFaces:
+        {
+            return compareByOrder(right.unconfirmedFaceCount(), left.unconfirmedFaceCount(), currentSortOrder);
         }
 
         case SortByManualOrderAndName:
