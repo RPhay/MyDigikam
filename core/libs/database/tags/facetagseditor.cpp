@@ -471,7 +471,7 @@ FaceTagsIface FaceTagsEditor::changeTag(const FaceTagsIface& face, int newTagId,
      * ItemInfo. This counter is used for dynamic sorting,
      * based on Unconfirmed Face Count.
      */
-    if (face.type() == FaceTagsIface::UnconfirmedName)
+    if (face.type() == FaceTagsIface::UnconfirmedName && !info.isNull())
     {
         info.setUnconfirmedFaceCount(false);
     }
