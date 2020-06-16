@@ -182,7 +182,7 @@ SearchField* SearchField::createField(const QString& name, SearchFieldGroup* con
         field->setBetweenText(i18nc("Size of the file ...-...", "-"));
         field->setNumberPrefixAndSuffix(QString(), QLatin1String("MiB"));
         field->setBoundary(0, 1000000, 1, 0.5);
-        field->setFactor(1000 * 1000);
+        field->setFactor(1024 * 1024);
 
         return field;
     }
