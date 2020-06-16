@@ -1177,7 +1177,7 @@ QList<int> SearchXmlCachingReader::valueToIntList()
 
     foreach (const QString& s, list)
     {
-        if (s.contains(QLatin1Char('e')))
+        if (s.contains(QLatin1Char('e'), Qt::CaseInsensitive))
         {
             double val = s.toDouble();
             intList << (int)val;
