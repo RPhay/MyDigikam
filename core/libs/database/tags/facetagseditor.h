@@ -57,31 +57,30 @@ public:
     /**
      * Returns the number of faces present in an image.
      */
-    int                  numberOfFaces(qlonglong imageid)                                   const;
+    int                  numberOfFaces(qlonglong imageid)                                       const;
 
     /**
      * Returns the number of faces a particular person has in the specified image
      */
-    int                  faceCountForPersonInImage(qlonglong imageid, int tagId)            const;
+    int                  faceCountForPersonInImage(qlonglong imageid, int tagId)                const;
 
     /**
      * Reads the FaceTagsIfaces for the given image id from the database
      */
-    QList<FaceTagsIface> databaseFaces(qlonglong imageid)                                   const;
-    QList<FaceTagsIface> unconfirmedFaceTagsIfaces(qlonglong imageid)                       const;
+    QList<FaceTagsIface> databaseFaces(qlonglong imageid)                                       const;
 
     // Method implemented for current sort testing, will fix formatting if working appropriately.
     QList<FaceTagsIface> unconfirmedNameFaceTagsIfaces(qlonglong imageid)                       const;
 
-    QList<FaceTagsIface> databaseFacesForTraining(qlonglong imageid)                        const;
-    QList<FaceTagsIface> confirmedFaceTagsIfaces(qlonglong imageid)                         const;
-    QList<FaceTagsIface> ignoredFaceTagsIfaces(qlonglong imageid)                           const;
+    QList<FaceTagsIface> databaseFacesForTraining(qlonglong imageid)                            const;
+    QList<FaceTagsIface> confirmedFaceTagsIfaces(qlonglong imageid)                             const;
+    QList<FaceTagsIface> ignoredFaceTagsIfaces(qlonglong imageid)                               const;
 
     /**
      * Returns a list of all tag rectangles for the image. Unlike findAndTagFaces, this does not take a DImg,
      * because it returns only a QRect, not a Face, so no need of cropping a face rectangle.
      */
-    QList<QRect>         getTagRects(qlonglong imageid)                                     const;
+    QList<QRect>         getTagRects(qlonglong imageid)                                         const;
 
     // --- Add / Confirm ---
 
