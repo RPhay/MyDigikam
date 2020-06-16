@@ -57,6 +57,7 @@
 #include "itemposition.h"
 #include "itemscanner.h"
 #include "itemtagpair.h"
+#include "facetagseditor.h"
 #include "tagscache.h"
 #include "template.h"
 #include "thumbnailinfo.h"
