@@ -119,7 +119,7 @@ void DatabaseWriter::process(FacePipelineExtendedPackage::Ptr package)
         {
             if (it->roles & FacePipelineFaceTagsIface::ForConfirmation)
             {
-                FacePipelineFaceTagsIface confirmed = FacePipelineFaceTagsIface(utils.confirmName(*it, it->assignedTagId, it->assignedRegion));
+                FacePipelineFaceTagsIface confirmed = FacePipelineFaceTagsIface(utils.confirmName(*it,  package->info, it->assignedTagId, it->assignedRegion));
                 confirmed.roles                    |= FacePipelineFaceTagsIface::Confirmed | FacePipelineFaceTagsIface::ForTraining;
                 add << confirmed;
             }
@@ -137,9 +137,11 @@ void DatabaseWriter::process(FacePipelineExtendedPackage::Ptr package)
                 {
                     add << FacePipelineFaceTagsIface(utils.changeRegion(*it, it->assignedRegion));
                 }
+
+                // Change Tag operation.
                 else if (FaceTags::isPerson(it->assignedTagId))
                 {
-                    add << FacePipelineFaceTagsIface(utils.changeTag(*it, it->assignedTagId));
+                    add << FacePipelineFaceTagsIface(utils.changeTag(*it, it->assignedTagId, package->info));
                 }
                 else
                 {
