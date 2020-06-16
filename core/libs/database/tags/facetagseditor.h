@@ -113,8 +113,8 @@ public:
                               const TagRegion& confirmedRegion = TagRegion());
 
     /**
-     * Use this function to confirmNames if modification of associated
-     * ItemInfo is also required.
+     * Use this function to confirmNames if modification of ItemInfo
+     * associated with the face is also required.
      */
     FaceTagsIface confirmName(const FaceTagsIface& face, ItemInfo& info, int tagId = -1,
                               const TagRegion& confirmedRegion = TagRegion());
