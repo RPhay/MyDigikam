@@ -256,6 +256,11 @@ public:
     QString comment()                                                                   const;
 
     /**
+     * @return the number of Unconfirmed Faces in this item.
+     */
+    int unconfirmedFaceCount()                                                          const;
+
+    /**
      * Set the name (write it to database)
      * @param newName the new name.
      */
@@ -287,6 +292,13 @@ public:
      * Set the visibility flag - triggers between Visible and Hidden
      */
     void setVisible(bool isVisible);
+
+    /**
+     * Modifies the counter for Unconfirmed Faces stored in
+     * the ItemInfo.
+     * @param increment increase the Unconfirmed Face Count by 1 if true, decrements otherwise
+     */
+    void setUnconfirmedFaceCount(bool increment);
 
     /**
      * @todo Supports only VideoMetadataField and ImageMetadataField values for now.
