@@ -152,7 +152,7 @@ public:
     /**
      * Changes the tag of the given entry. Returns the face with the new Tag.
      */
-    FaceTagsIface        changeTag(const FaceTagsIface& face, int newTagId);
+    FaceTagsIface        changeTag(const FaceTagsIface& face, int newTagId, ItemInfo& info);
 
     // --- Utilities ---
 
