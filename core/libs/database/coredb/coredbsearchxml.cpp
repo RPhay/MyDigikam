@@ -1200,7 +1200,15 @@ QList<qlonglong> SearchXmlCachingReader::valueToLongLongList()
 
     foreach (const QString& s, list)
     {
-        qlonglongList << s.toLongLong();
+        if (s.contains(QLatin1Char('e'), Qt::CaseInsensitive))
+        {
+            double val = s.toDouble();
+            qlonglongList << (qlonglong)val;
+        }
+        else
+        {
+            qlonglongList << s.toLongLong();
+        }
     }
 
     return qlonglongList;
