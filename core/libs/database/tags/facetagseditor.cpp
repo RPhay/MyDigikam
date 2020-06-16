@@ -253,7 +253,8 @@ FaceTagsIface FaceTagsEditor::changeSuggestedName(const FaceTagsIface& previousE
     return newEntry;
 }
 
-FaceTagsIface FaceTagsEditor::confirmName(const FaceTagsIface& face, int tagId, const TagRegion& confirmedRegion)
+FaceTagsIface FaceTagsEditor::confirmName(const FaceTagsIface& face, int tagId,
+                                          const TagRegion& confirmedRegion)
 {
     FaceTagsIface newEntry = confirmedEntry(face, tagId, confirmedRegion);
 
