@@ -44,6 +44,7 @@ namespace Digikam
 {
 
 class ItemTagPair;
+class ItemInfo;
 
 class DIGIKAM_DATABASE_EXPORT FaceTagsEditor
 {
