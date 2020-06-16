@@ -289,6 +289,17 @@ FaceTagsIface FaceTagsEditor::confirmName(const FaceTagsIface& face, int tagId,
     return newEntry;
 }
 
+FaceTagsIface FaceTagsEditor::confirmName(const FaceTagsIface& face,  ItemInfo& info, int tagId,
+                                          const TagRegion& confirmedRegion)
+{
+    if (face.type() == FaceTagsIface::UnconfirmedName && !info.isNull())
+    {
+        info.setUnconfirmedFaceCount(false);
+    }
+
+    return confirmName(face, tagId, confirmedRegion);
+}
+
 FaceTagsIface FaceTagsEditor::add(qlonglong imageId, int tagId, const TagRegion& region, bool trainFace)
 {
     qCDebug(DIGIKAM_DATABASE_LOG) << "Adding face with rectangle  " << region.toRect () << " to database";
