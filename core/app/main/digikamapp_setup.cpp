@@ -523,6 +523,7 @@ void DigikamApp::setupActions()
     QAction* const sortByRatingAction             = d->imageSortAction->addAction(i18n("By Rating"));
     QAction* const sortByImageSizeAction          = d->imageSortAction->addAction(i18n("By Image Size"));
     QAction* const sortByAspectRatioAction        = d->imageSortAction->addAction(i18n("By Aspect Ratio"));
+    QAction* const sortByFacesAction              = d->imageSortAction->addAction(i18n("By Face type"));
     QAction* const sortBySimilarityAction         = d->imageSortAction->addAction(i18n("By Similarity"));
     QAction* const sortByManualOrderAndNameAction = d->imageSortAction->addAction(i18n("By Manual and Name"));
     QAction* const sortByManualOrderAndDateAction = d->imageSortAction->addAction(i18n("By Manual and Date"));
@@ -555,6 +556,9 @@ void DigikamApp::setupActions()
 
     connect(sortByAspectRatioAction, &QAction::triggered,
             this, [this]() { d->view->slotSortImages((int)ItemSortSettings::SortByAspectRatio); });
+
+    connect(sortByFacesAction, &QAction::triggered,
+            this, [this]() { d->view->slotSortImages((int)ItemSortSettings::SortByFaces); });
 
     connect(sortBySimilarityAction, &QAction::triggered,
             this, [this]() { d->view->slotSortImages((int)ItemSortSettings::SortBySimilarity); });
