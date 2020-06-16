@@ -225,6 +225,24 @@ QSize ItemInfo::dimensions() const
     return m_data->imageSize;
 }
 
+int ItemInfo::unconfirmedFaceCount() const
+{
+    if (!m_data)
+    {
+        return 0;
+    }
+
+    RETURN_IF_CACHED(unconfirmedFaceCount);
+
+    FaceTagsEditor fte;
+    int count= fte.unconfirmedNameFaceTagsIfaces(m_data->id).count();
+
+    ItemInfoWriteLocker lock;
+    m_data.data()->unconfirmedFaceCountCached = true;
+    m_data.data()->unconfirmedFaceCount = count;
+    return m_data->unconfirmedFaceCount;
+}
+
 int ItemInfo::orientation() const
 {
     if (!m_data)
