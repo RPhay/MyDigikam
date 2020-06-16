@@ -69,7 +69,16 @@ public:
      */
     QList<FaceTagsIface> databaseFaces(qlonglong imageid)                                       const;
 
-    // Method implemented for current sort testing, will fix formatting if working appropriately.
+    /**
+     * Returns list of Unconfirmed and Unknown faces in the Image.
+     * If you want just Unconfirmed Faces, use @see unconfirmedNameFaceTagsIfaces
+     */
+    QList<FaceTagsIface> unconfirmedFaceTagsIfaces(qlonglong imageid)                           const;
+
+    /**
+     * Returns a list of UnconfirmedFaces in the Image.
+     * Different from @see unconfirmedFaceTagsIfaces
+     */
     QList<FaceTagsIface> unconfirmedNameFaceTagsIfaces(qlonglong imageid)                       const;
 
     QList<FaceTagsIface> databaseFacesForTraining(qlonglong imageid)                            const;
