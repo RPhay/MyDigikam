@@ -187,7 +187,7 @@ DConfigDlgTitle::DConfigDlgTitle(QWidget* const parent)
 
     d->headerLayout = new QGridLayout(titleFrame);
     d->headerLayout->setColumnStretch(0, 1);
-    d->headerLayout->setMargin(6);
+    d->headerLayout->setContentsMargins(6, 6, 6, 6);
 
     d->textLabel = new QLabel(titleFrame);
     d->textLabel->setVisible(false);

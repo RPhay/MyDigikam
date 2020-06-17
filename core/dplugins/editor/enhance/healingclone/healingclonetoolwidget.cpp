@@ -290,7 +290,7 @@ void HealingCloneToolWidget::keyPressEvent(QKeyEvent* e)
         emit signalRedoClone();
     }
 
-    QWidget::keyPressEvent(e);
+    ImageRegionWidget::keyPressEvent(e);
 }
 
 bool HealingCloneToolWidget::event(QEvent* e)

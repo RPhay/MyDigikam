@@ -287,8 +287,8 @@ QImage ThumbnailCreator::loadImageDetail(const ThumbnailInfo& info,
     {
         // discard if smaller than half preview
 
-        int acceptableWidth  = lround(img.originalRatioSize().width()  * 0.5);
-        int acceptableHeight = lround(img.originalRatioSize().height() * 0.5);
+        unsigned int acceptableWidth  = lround(img.originalRatioSize().width()  * 0.5);
+        unsigned int acceptableHeight = lround(img.originalRatioSize().height() * 0.5);
 
         if ((img.width() < acceptableWidth) && (img.height() < acceptableHeight))
         {

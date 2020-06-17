@@ -80,7 +80,7 @@ ThumbnailImage ThumbnailCreator::loadFreedesktop(const ThumbnailInfo& info) cons
 
     if (!qimage.isNull())
     {
-        if ((qimage.text(QLatin1String("Thumb::MTime")) == QString::number(info.modificationDate.toTime_t())) &&
+        if ((qimage.text(QLatin1String("Thumb::MTime")) == QString::number(info.modificationDate.toSecsSinceEpoch())) &&
             (qimage.text(QLatin1String("Software"))     == d->digiKamFingerPrint))
         {
             ThumbnailImage info;
@@ -123,7 +123,7 @@ void ThumbnailCreator::storeFreedesktop(const ThumbnailInfo& info, const Thumbna
     }
 
     qimage.setText(QLatin1String("Thumb::URI"),   uri);
-    qimage.setText(QLatin1String("Thumb::MTime"), QString::number(info.modificationDate.toTime_t()));
+    qimage.setText(QLatin1String("Thumb::MTime"), QString::number(info.modificationDate.toSecsSinceEpoch()));
     qimage.setText(QLatin1String("Software"),     d->digiKamFingerPrint);
 
     QTemporaryFile temp;

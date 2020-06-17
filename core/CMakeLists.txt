@@ -634,26 +634,31 @@ if(DIGIKAM_CAN_BE_COMPILED)
     # ==========================================================================
     # Definitions rules
 
+    # TODO: revise dropped compiler flags accordingly with patched source code which fix compilation
+
     # Remove pedantic GCC flag which generate a lots of warnings on the console
     # with qCDebug()
     REMOVE_GCC_COMPILER_WARNINGS("-pedantic")
 
-    # Remove date-time GCC flag which generate a lots of compile warnings
+    # Remove date-time GCC flag which generate a lots of compilation warnings
     REMOVE_GCC_COMPILER_WARNINGS("-Wdate-time")
 
-    # Remove suggest-override GCC flag which generate a lots of compile warnings
+    # Remove suggest-override GCC flag which generate a lots of compilation warnings
     REMOVE_GCC_COMPILER_WARNINGS("-Wsuggest-override")
 
-    # Remove zero-as-null-pointer-constant GCC and CLang flag which generate a lots of compile warnings
+    # Remove cast-align GCC flag which generate a lots of compilation warnings
+    REMOVE_GCC_COMPILER_WARNINGS("-Wcast-align")
+
+    # Remove zero-as-null-pointer-constant GCC and CLang flag which generate a lots of compilation warnings
     REMOVE_COMPILER_WARNINGS("-Wzero-as-null-pointer-constant")
 
-    # Remove deprecated-copy GCC warnings which generate a lots of compile warnings
+    # Remove deprecated-copy GCC warnings which generate a lots of compilation warnings
     DISABLE_GCC_COMPILER_WARNINGS("8.99.99" "-Wno-deprecated-copy")
 
-    # Remove date-time Clang warnings which generate a lots of compile warnings
+    # Remove date-time Clang warnings which generate a lots of compilation warnings
     DISABLE_CLANG_COMPILER_WARNINGS("7.99.99" "-Wdate-time")
 
-    # Remove inconsistent-missing-override Clang warnings which generate a lots of compile warnings
+    # Remove inconsistent-missing-override Clang warnings which generate a lots of compilation warnings
     DISABLE_CLANG_COMPILER_WARNINGS("7.99.99" "-Wno-inconsistent-missing-override")
 
     # translations catalog
@@ -676,7 +681,7 @@ if(DIGIKAM_CAN_BE_COMPILED)
                     -DQT_NO_URL_CAST_FROM_STRING
                     -DQT_STRICT_ITERATORS
                     -DQT_NO_NARROWING_CONVERSIONS_IN_CONNECT
-#                    -DQT_DEPRECATED_WARNINGS_SINCE=0x060000
+                    -DQT_DEPRECATED_WARNINGS_SINCE=0x060000
 #                    -DQT_DISABLE_DEPRECATED_BEFORE=0x050E00
 #                    -DQT_NO_FOREACH
 #                    -DQT_NO_KEYWORDS

@@ -1,4 +1,4 @@
-digiKam 7.0.0-rc - Release date: 2020-05-31
+digiKam 7.0.0 - Release date: 2020-07-12
 
 *****************************************************************************************************
 NEW FEATURES:
@@ -786,4 +786,5 @@ BUGFIXES:
 744 ==> 388936 - User Selectable Thumbnail Format.
 745 ==> 386294 - DLNA Server as stand-alone package to be deployed on servers.
 746 ==> 420715 - Can't read EXIF from Samsung S10 HEIC-file.
-747 ==> 
+747 ==> 423033 - Search for File Size Greater Than 95MB doesn't work and increments must be 0.5MB.
+748 ==> 

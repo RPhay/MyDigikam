@@ -43,7 +43,7 @@ class HealingCloneToolPlugin : public DPluginEditor
 
 public:
 
-    explicit HealingCloneToolPlugin(QObject* const parent = 0);
+    explicit HealingCloneToolPlugin(QObject* const parent = nullptr);
     ~HealingCloneToolPlugin();
 
     QString name()                 const override;

@@ -316,7 +316,7 @@ void TrashView::slotDeleteSelectedItems()
 
 void TrashView::slotRemoveItemsFromModel()
 {
-    disconnect(DIO::instance(), 0, 0, 0);
+    disconnect(DIO::instance(), nullptr, this, nullptr);
 
     if (d->selectedIndexesToRemove.isEmpty())
     {
@@ -331,7 +331,7 @@ void TrashView::slotRemoveItemsFromModel()
 
 void TrashView::slotRemoveAllItemsFromModel()
 {
-    disconnect(DIO::instance(), 0, 0, 0);
+    disconnect(DIO::instance(), nullptr, this, nullptr);
 
     d->model->clearCurrentData();
 }

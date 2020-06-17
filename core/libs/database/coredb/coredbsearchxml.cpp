@@ -1177,7 +1177,8 @@ QList<int> SearchXmlCachingReader::valueToIntList()
 
     foreach (const QString& s, list)
     {
-        intList << s.toInt();
+        double val = s.toDouble();
+        intList << (int)val;
     }
 
     return intList;
@@ -1192,7 +1193,8 @@ QList<qlonglong> SearchXmlCachingReader::valueToLongLongList()
 
     foreach (const QString& s, list)
     {
-        qlonglongList << s.toLongLong();
+        double val = s.toDouble();
+        qlonglongList << (qlonglong)val;
     }
 
     return qlonglongList;

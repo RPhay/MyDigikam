@@ -104,7 +104,7 @@ void DNNFaceDetectorYOLO::postprocess(const std::vector<cv::Mat>& outs,
             // Get the value and location of the maximum score
 
             double confidence;
-            cv::minMaxLoc(scores, 0, &confidence, 0, 0);
+            cv::minMaxLoc(scores, nullptr, &confidence, nullptr, nullptr);
 
             if (confidence > confidenceThreshold)
             {
