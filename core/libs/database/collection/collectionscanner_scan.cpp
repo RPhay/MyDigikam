@@ -150,11 +150,11 @@ void CollectionScanner::finishCompleteScan(const QStringList& albumPaths)
     std::sort(sortedPaths.begin(), sortedPaths.end());
     QStringList::iterator it, it2;
 
-    for (it = sortedPaths.begin() ; it != sortedPaths.end() ;)
+    for (it = sortedPaths.begin() ; it != sortedPaths.end() ; )
     {
         // remove all following entries as long as they have the same beginning (= are subalbums)
 
-        for (it2 = it + 1 ; it2 != sortedPaths.end() && it2->startsWith(*it) ;)
+        for (it2 = it + 1 ; it2 != sortedPaths.end() && it2->startsWith(*it) ; )
         {
             it2 = sortedPaths.erase(it2);
         }
@@ -258,17 +258,17 @@ void CollectionScanner::partialScan(const QString& albumRoot, const QString& alb
         return;
     }
 
-    /*
-        if (CoreDbAccess().backend()->isInTransaction())
-        {
-            // Install ScanController::instance()->suspendCollectionScan around your CoreDbTransaction
+/*
+    if (CoreDbAccess().backend()->isInTransaction())
+    {
+        // Install ScanController::instance()->suspendCollectionScan around your CoreDbTransaction
 
-            qCDebug(DIGIKAM_DATABASE_LOG) << "Detected an active database transaction when starting a collection scan. "
-                             "Please report this error.";
+        qCDebug(DIGIKAM_DATABASE_LOG) << "Detected an active database transaction when starting a collection scan. "
+                         "Please report this error.";
 
-            return;
-        }
-    */
+        return;
+    }
+*/
 
     mainEntryPoint(false);
     d->resetRemovedItemsTime();
@@ -454,15 +454,15 @@ void CollectionScanner::scanAlbumRoot(const CollectionLocation& location)
         emit startScanningAlbumRoot(location.albumRootPath());
     }
 
-    /*
-        QDir dir(location.albumRootPath());
-        QStringList fileList(dir.entryList(QDir::Dirs | QDir::NoDotAndDotDot));
+/*
+    QDir dir(location.albumRootPath());
+    QStringList fileList(dir.entryList(QDir::Dirs | QDir::NoDotAndDotDot));
 
-        for (QStringList::iterator fileIt = fileList.begin(); fileIt != fileList.end(); ++fileIt)
-        {
-            scanAlbum(location, '/' + (*fileIt));
-        }
-    */
+    for (QStringList::iterator fileIt = fileList.begin(); fileIt != fileList.end(); ++fileIt)
+    {
+        scanAlbum(location, '/' + (*fileIt));
+    }
+*/
 
     // scan album that covers the root directory of this album root,
     // all contained albums, and their subalbums recursively.
@@ -522,7 +522,7 @@ void CollectionScanner::scanForStaleAlbums(const QList<int>& locationIdsToScan)
                 QDir dir(fileInfo.dir());
                 dirExist = dir.entryList(QDir::Dirs |
                                          QDir::NoDotAndDotDot)
-                           .contains(fileInfo.fileName());
+                                         .contains(fileInfo.fileName());
             }
 
 #endif
@@ -535,7 +535,7 @@ void CollectionScanner::scanForStaleAlbums(const QList<int>& locationIdsToScan)
                 // We have an ignored album, all sub-albums have to be ignored
 
                 QList<int> subAlbums = CoreDbAccess().db()->getAlbumAndSubalbumsForPath((*it3).albumRootId,
-                                       (*it3).relativePath);
+                                                                                        (*it3).relativePath);
                 toBeDeleted      << subAlbums;
                 d->scannedAlbums << subAlbums;
             }
@@ -600,7 +600,7 @@ void CollectionScanner::scanForStaleAlbums(const QList<int>& locationIdsToScan)
                         QDir dir(fileInfo.dir());
                         dirExist = dir.entryList(QDir::Dirs |
                                                  QDir::NoDotAndDotDot)
-                                   .contains(fileInfo.fileName());
+                                                 .contains(fileInfo.fileName());
                     }
 
 #endif
@@ -703,7 +703,7 @@ void CollectionScanner::scanAlbum(const CollectionLocation& location, const QStr
 
             int index = fileNameIndexHash.value(info.fileName(), -1);
 
-            if (index != -1)
+            if      (index != -1)
             {
                 // mark item as "seen"
 
