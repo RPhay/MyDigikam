@@ -724,13 +724,10 @@ void CollectionScanner::scanAlbum(const CollectionLocation& location, const QStr
             else
             {
                 //qCDebug(DIGIKAM_DATABASE_LOG) << "Adding item " << info.fileName();
-
-                scanNewFile(info, albumID);
-
                 // Read the creation date of each image to determine the oldest one
                 qlonglong imageId = scanNewFile(info, albumID);
-                ItemInfo info(imageId);
-                QDateTime itemDate = info.dateTime();
+                ItemInfo itemInfo(imageId);
+                QDateTime itemDate = itemInfo.dateTime();
 
                 if (itemDate.isValid())
                 {
