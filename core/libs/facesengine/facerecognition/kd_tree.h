@@ -46,7 +46,7 @@ public:
 
     void update();
 
-    bool add(std::vector<double> position, const Digikam::Identity& identity);
+    bool add(const std::vector<double>& position, const Digikam::Identity& identity);
 
 private:
 

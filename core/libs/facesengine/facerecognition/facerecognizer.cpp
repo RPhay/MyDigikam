@@ -52,10 +52,10 @@ public:
 
     Private(bool debug)
         : debugMode(debug),
+          identityCounter(0),
           extractor(new FaceExtractor),
           svm(cv::ml::SVM::create()),
           knn(cv::ml::KNearest::create()),
-          identityCounter(0),
           tree(128)
     {
         // use linear mapping
@@ -183,6 +183,35 @@ public:
 
         return faceLibrary[labels[int(id)]][0];
     }
+
+    void addIndentityToTree(const Identity& id)
+    {
+        QJsonArray jsonFaceEmbedding = QJsonDocument::fromJson(id.attribute(QLatin1String("faceEmbedding")).toLatin1()).array();
+
+        std::vector<double> recordedFaceEmbedding;
+
+        for (int i = 0; i < jsonFaceEmbedding.size(); ++i)
+        {
+            recordedFaceEmbedding.push_back(jsonFaceEmbedding[i].toDouble());
+        }
+
+        tree.add(recordedFaceEmbedding, id);
+    }
+
+    Identity predictKDTree(const std::vector<float>& faceEmbedding)
+    {
+        int k = 5;
+        // Look for K-nearest neighbor which have the sqr distance greater smaller than 1
+        //QMap<double, QVector<KDNode*> > closestNeighbors = tree.getClosestNeighbors(faceEmbedding, 1, k);
+
+        QMap<QString, QPair<double, QVector<Identity> > > votingGroups;
+
+
+
+        return Identity();
+
+    }
+
 
 public:
 
@@ -454,6 +483,9 @@ void FaceRecognizer::saveIdentity(Identity& id)
     {
         d->labels.append(label);
     }
+
+    // Create a KD-Node for this identity
+    d->addIndentityToTree(id);
 }
 
 }

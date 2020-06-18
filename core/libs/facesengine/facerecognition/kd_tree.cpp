@@ -55,7 +55,7 @@ KDTree::~KDTree()
     delete d;
 }
 
-bool KDTree::add(std::vector<double> position, const Digikam::Identity& identity)
+bool KDTree::add(const std::vector<double>& position, const Digikam::Identity& identity)
 {
     if (d->root == nullptr)
     {
