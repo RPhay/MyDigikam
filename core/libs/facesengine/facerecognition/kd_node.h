@@ -40,28 +40,28 @@ class KDNode
 {
 public:
 
-    explicit KDNode(const std::vector<double>& nodePos, const Identity& identity, int splitAxis, int dimension);
+    explicit KDNode(const std::vector<float>& nodePos, const Identity& identity, int splitAxis, int dimension);
     ~KDNode();
 
 public:
 
-    KDNode* insert(const std::vector<double>& nodePos, const Identity& identity);
+    KDNode* insert(const std::vector<float>& nodePos, const Identity& identity);
 
-    std::vector<double> getPosition() const;
+    std::vector<float> getPosition() const;
 
     double getClosestNeighbors(QMap<double, QVector<KDNode*> >& neighborList,
-                               std::vector<double> position,
+                               std::vector<float> position,
                                double sqRange,
                                int maxNbNeighbors);
     Identity& getIdentity();
 
 private:
 
-    void updateRange(std::vector<double>);
+    void updateRange(std::vector<float>);
 
-    KDNode* findParent(std::vector<double> nodePos);
+    KDNode* findParent(std::vector<float> nodePos);
 
-    static double sqrDistance(std::vector<double> pos1, std::vector<double> pos2);
+    //static double sqrDistance(std::vector<float> pos1, std::vector<float> pos2);
 
 private:
 

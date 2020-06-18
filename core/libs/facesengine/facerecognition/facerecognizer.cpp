@@ -188,11 +188,11 @@ public:
     {
         QJsonArray jsonFaceEmbedding = QJsonDocument::fromJson(id.attribute(QLatin1String("faceEmbedding")).toLatin1()).array();
 
-        std::vector<double> recordedFaceEmbedding;
+        std::vector<float> recordedFaceEmbedding;
 
         for (int i = 0; i < jsonFaceEmbedding.size(); ++i)
         {
-            recordedFaceEmbedding.push_back(jsonFaceEmbedding[i].toDouble());
+            recordedFaceEmbedding.push_back(static_cast<float>(jsonFaceEmbedding[i].toDouble()));
         }
 
         tree.add(recordedFaceEmbedding, id);
@@ -202,16 +202,49 @@ public:
     {
         int k = 5;
         // Look for K-nearest neighbor which have the sqr distance greater smaller than 1
-        //QMap<double, QVector<KDNode*> > closestNeighbors = tree.getClosestNeighbors(faceEmbedding, 1, k);
+        QMap<double, QVector<KDNode*> > closestNeighbors = tree.getClosestNeighbors(faceEmbedding, 1.0, k);
 
-        QMap<QString, QPair<double, QVector<Identity> > > votingGroups;
+        QMap<QString, QVector<double> > votingGroups;
 
+        for (QMap<double, QVector<KDNode*> >::const_iterator iter  = closestNeighbors.cbegin();
+                                                             iter != closestNeighbors.cend();
+                                                           ++iter)
+        {
+            for (QVector<KDNode*>::const_iterator node  = iter.value().cbegin();
+                                                  node != iter.value().cend();
+                                                ++node)
+            {
+                QString label = (*node)->getIdentity().attribute(QLatin1String("fullName"));
 
+                votingGroups[label].append(iter.key());
+            }
+        }
 
-        return Identity();
+        double maxScore = 0;
+        QString prediction;
 
+        for (QMap<QString, QVector<double> >::const_iterator group  = votingGroups.cbegin();
+                                                             group != votingGroups.cend();
+                                                           ++group)
+        {
+            double score = 0;
+
+            for (int i = 0; i < group.value().size(); ++i)
+            {
+                score += (1 - group.value()[i]);
+            }
+
+            score /= group.value().size();
+
+            if (score > maxScore)
+            {
+                maxScore = score;
+                prediction = group.key();
+            }
+        }
+
+        return faceLibrary[prediction][0];
     }
-
 
 public:
 

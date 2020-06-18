@@ -33,11 +33,25 @@ using namespace Digikam;
 namespace RecognitionTest
 {
 
+double sqrDistance(std::vector<float> pos1, std::vector<float> pos2)
+{
+    Q_ASSERT(pos1.size() == pos2.size());
+
+    double sqrDistance = 0;
+
+    for (size_t i = 0; i < pos1.size(); ++i)
+    {
+        sqrDistance += pow((pos1[i] - pos2[i]), 2);
+    }
+
+    return sqrDistance;
+}
+
 class Q_DECL_HIDDEN KDNode::Private
 {
 public:
 
-    Private(std::vector<double> nodePos, const Identity& identity, int splitAxis, int dimension)
+    Private(std::vector<float> nodePos, const Identity& identity, int splitAxis, int dimension)
         : identity(identity),
           splitAxis(splitAxis),
           nbDimension(dimension),
@@ -62,30 +76,15 @@ public:
 
     int splitAxis;
     int nbDimension;
-    std::vector<double> position;
-    std::vector<double> maxRange;
-    std::vector<double> minRange;
+    std::vector<float> position;
+    std::vector<float> maxRange;
+    std::vector<float> minRange;
     KDNode* parent;
     KDNode* left;
     KDNode* right;
 };
 
-
-double KDNode::sqrDistance(std::vector<double> pos1, std::vector<double> pos2)
-{
-    Q_ASSERT(pos1.size() == pos2.size());
-
-    double sqrDistance = 0;
-
-    for (size_t i = 0; i < pos1.size(); ++i)
-    {
-        sqrDistance += pow((pos1[i] - pos2[i]), 2);
-    }
-
-    return sqrDistance;
-}
-
-KDNode::KDNode(const std::vector<double>& nodePos, const Identity& identity, int splitAxis, int dimension)
+KDNode::KDNode(const std::vector<float>& nodePos, const Identity& identity, int splitAxis, int dimension)
     : d(new Private(nodePos, identity, splitAxis, dimension))
 {
     Q_ASSERT(splitAxis < dimension);
@@ -97,7 +96,7 @@ KDNode::~KDNode()
     delete d;
 }
 
-KDNode* KDNode::insert(const std::vector<double>& nodePos, const Identity& identity)
+KDNode* KDNode::insert(const std::vector<float>& nodePos, const Identity& identity)
 {
     if (int(nodePos.size()) != d->nbDimension)
     {
@@ -128,7 +127,7 @@ KDNode* KDNode::insert(const std::vector<double>& nodePos, const Identity& ident
     return newNode;
 }
 
-std::vector<double> KDNode::getPosition() const
+std::vector<float> KDNode::getPosition() const
 {
     return d->position;
 }
@@ -139,7 +138,7 @@ Identity& KDNode::getIdentity()
 }
 
 double KDNode::getClosestNeighbors(QMap<double, QVector<KDNode*> >& neighborList,
-                                   std::vector<double> position,
+                                   std::vector<float> position,
                                    double sqRange,
                                    int maxNbNeighbors)
 {
@@ -188,8 +187,8 @@ double KDNode::getClosestNeighbors(QMap<double, QVector<KDNode*> >& neighborList
     {
         for (int i = 0; i < d->nbDimension; ++i)
         {
-            sqrDistanceleftTree += (pow(qMax(0.0, (d->left->d->minRange[i] - position[i])), 2) +
-                                    pow(qMax(0.0, (position[i] - d->left->d->maxRange[i])), 2));
+            sqrDistanceleftTree += (pow(qMax((d->left->d->minRange[i] - position[i]), 0.0f), 2) +
+                                    pow(qMax((position[i] - d->left->d->maxRange[i]), 0.0f), 2));
         }
     }
 
@@ -204,8 +203,8 @@ double KDNode::getClosestNeighbors(QMap<double, QVector<KDNode*> >& neighborList
     {
         for (int i = 0; i < d->nbDimension; ++i)
         {
-            sqrDistancerightTree += (pow(qMax(0.0, (d->right->d->minRange[i] - position[i])), 2) +
-                                     pow(qMax(0.0, (position[i] - d->right->d->maxRange[i])), 2));
+            sqrDistancerightTree += (pow(qMax((d->right->d->minRange[i] - position[i]), 0.0f), 2) +
+                                     pow(qMax((position[i] - d->right->d->maxRange[i]), 0.0f), 2));
         }
     }
 
@@ -242,7 +241,7 @@ double KDNode::getClosestNeighbors(QMap<double, QVector<KDNode*> >& neighborList
     return sqRange;
 }
 
-void KDNode::updateRange(std::vector<double> pos)
+void KDNode::updateRange(std::vector<float> pos)
 {
     if (int(pos.size()) != d->nbDimension)
     {
@@ -256,7 +255,7 @@ void KDNode::updateRange(std::vector<double> pos)
     }
 }
 
-KDNode* KDNode::findParent(std::vector<double> nodePos)
+KDNode* KDNode::findParent(std::vector<float> nodePos)
 {
     KDNode* parent = nullptr;
     KDNode* currentNode = this;
