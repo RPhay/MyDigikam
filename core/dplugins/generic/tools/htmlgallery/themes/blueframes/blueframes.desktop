@@ -21,6 +21,7 @@ Name[ru]=Синие фреймы
 Name[sl]=Modri okvirji
 Name[sv]=Blåa ramar
 Name[uk]=Сині рамки
+Name[x-test]=xxBlue Framesxx
 Name[zh_CN]=蓝色框架
 Comment=A theme variation based Frames theme
 Comment[ca]=Una variació del tema basat en el tema Marcs
@@ -42,6 +43,7 @@ Comment[ru]=Вариант оформления основанный на офо
 Comment[sl]=Variacija teme na osnovi okvirjev
 Comment[sv]=En temavariant baserad på temat Ramar
 Comment[uk]=Варіант теми на основі теми «Рамки»
+Comment[x-test]=xxA theme variation based Frames themexx
 Comment[zh_CN]=基于主题变体的框架主题
 
 [X-HTMLGallery Author]
@@ -71,6 +73,7 @@ Name[sl]=Elizabeth Marmorstein
 Name[sv]=Elizabeth Marmorstein
 Name[tr]=Elizabeth Marmorstein
 Name[uk]=Elizabeth Marmorstein
+Name[x-test]=xxElizabeth Marmorsteinxx
 Name[zh_CN]=Elizabeth Marmorstein
 Url=mailto:purplegamba@cox.net
 
@@ -96,5 +99,6 @@ Name[ru]=Синие фреймы
 Name[sl]=Modri okvirji
 Name[sv]=Blåa ramar
 Name[uk]=Сині рамки
+Name[x-test]=xxBlue Framesxx
 Name[zh_CN]=蓝色框架
 Url=preview.png

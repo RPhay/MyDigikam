@@ -26,6 +26,7 @@ Name[sl]=Sneg
 Name[sv]=Snö
 Name[tr]=Kar
 Name[uk]=Сніг
+Name[x-test]=xxSnowxx
 Name[zh_CN]=雪
 Comment=A perfect match for your mountain holidays
 Comment[ca]=Una coincidència perfecta per a les vostres vacances de muntanya
@@ -53,6 +54,7 @@ Comment[sl]=Popolno ujemanje z vašimi gorskimi počitnicami
 Comment[sv]=En perfekt matchning till fjällsemestern
 Comment[tr]=Dağ tatilleriniz için mükemmel bir eşleşme
 Comment[uk]=Прекрасно пасує до вашої відпустки в горах
+Comment[x-test]=xxA perfect match for your mountain holidaysxx
 Comment[zh_CN]=完美呈现您的游山玩水
 
 [X-HTMLGallery Author]
@@ -82,6 +84,7 @@ Name[sl]=Aurélien Gâteau
 Name[sv]=Aurélien Gâteau
 Name[tr]=Aurélien Gâteau
 Name[uk]=Aurélien Gâteau
+Name[x-test]=xxAurélien Gâteauxx
 Name[zh_CN]=Aurélien Gâteau
 Url=mailto:aurelien.gateau@free.fr
 
@@ -112,5 +115,6 @@ Name[sl]=Sneg
 Name[sv]=Snö
 Name[tr]=Kar
 Name[uk]=Сніг
+Name[x-test]=xxSnowxx
 Name[zh_CN]=雪
 Url=preview.png
