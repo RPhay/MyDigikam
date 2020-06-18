@@ -209,12 +209,19 @@ QHash<LabelsTreeView::Labels, QList<int> > LabelsTreeView::selectedLabels()
         {
             QTreeWidgetItem* const item = (*it);
 
-            if (item->parent() == d->ratings)
+            if      (item->parent() == d->ratings)
+            {
                 selectedRatings << indexFromItem(item).row();
+            }
             else if (item->parent() == d->picks)
+            {
                 selectedPicks << indexFromItem(item).row();
+            }
             else
+            {
                 selectedColors << indexFromItem(item).row();
+            }
+
             ++it;
         }
     }
@@ -222,12 +229,18 @@ QHash<LabelsTreeView::Labels, QList<int> > LabelsTreeView::selectedLabels()
     {
         foreach (QTreeWidgetItem* const item, selectedItems())
         {
-            if (item->parent() == d->ratings)
+            if      (item->parent() == d->ratings)
+            {
                 selectedRatings << indexFromItem(item).row();
+            }
             else if (item->parent() == d->picks)
+            {
                 selectedPicks << indexFromItem(item).row();
+            }
             else
+            {
                 selectedColors << indexFromItem(item).row();
+            }
         }
     }
 
@@ -258,11 +271,14 @@ void LabelsTreeView::doLoadState()
             case 1:
                 d->ratings->setExpanded(false);
                 break;
+
             case 2:
                 d->picks->setExpanded(false);
                 break;
+
             case 3:
                 d->colors->setExpanded(false);
+
             default:
                 break;
         }
@@ -271,25 +287,37 @@ void LabelsTreeView::doLoadState()
     foreach (int rating, selectedRatings)
     {
         if (d->isCheckableTreeView)
+        {
             d->ratings->child(rating)->setCheckState(0, Qt::Checked);
+        }
         else
+        {
             d->ratings->child(rating)->setSelected(true);
+        }
     }
 
     foreach (int pick, selectedPicks)
     {
         if (d->isCheckableTreeView)
+        {
             d->picks->child(pick)->setCheckState(0, Qt::Checked);
+        }
         else
+        {
             d->picks->child(pick)->setSelected(true);
+        }
     }
 
     foreach (int color, selectedColors)
     {
         if (d->isCheckableTreeView)
+        {
             d->colors->child(color)->setCheckState(0, Qt::Checked);
+        }
         else
+        {
             d->colors->child(color)->setSelected(true);
+        }
     }
 
     d->isLoadingState = false;

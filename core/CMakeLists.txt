@@ -174,6 +174,10 @@ find_package(EXPAT)    # For DNGWriter: XMP SDK need Expat library to compile.
 find_package(Threads)  # For DNGWriter and LibRaw which needs native threads support.
 find_package(X265)     # For HEIF encoding support.
 
+if(NOT X265_FOUND)
+    set(X265_LIBRARIES "")
+endif()
+
 find_package(exiv2 REQUIRED)
 
 set_package_properties("exiv2"     PROPERTIES
@@ -663,6 +667,21 @@ if(DIGIKAM_CAN_BE_COMPILED)
     # (CImg.h) and PGF codec
     kde_enable_exceptions()
 
+    # Enforce modern Qt code
+    add_definitions(-DQT_DEPRECATED_WARNINGS
+                    -DQT_USE_QSTRINGBUILDER
+                    -DQT_NO_CAST_TO_ASCII
+                    -DQT_NO_CAST_FROM_ASCII
+                    -DQT_NO_CAST_FROM_BYTEARRAY
+                    -DQT_NO_URL_CAST_FROM_STRING
+                    -DQT_STRICT_ITERATORS
+                    -DQT_NO_NARROWING_CONVERSIONS_IN_CONNECT
+#                    -DQT_DEPRECATED_WARNINGS_SINCE=0x060000
+#                    -DQT_DISABLE_DEPRECATED_BEFORE=0x050E00
+#                    -DQT_NO_FOREACH
+#                    -DQT_NO_KEYWORDS
+    )
+
     # ==========================================================================
     # Includes rules
 
@@ -691,6 +710,9 @@ if(DIGIKAM_CAN_BE_COMPILED)
     include_directories(${CMAKE_CURRENT_BINARY_DIR}/app/utils)
 
     include_directories(${OpenCV_INCLUDE_DIRS})
+
+    # for libheif version header
+    include_directories(${CMAKE_CURRENT_BINARY_DIR}/libs/heifutils)
 
     if(ImageMagick_FOUND)
         include_directories(${ImageMagick_INCLUDE_DIRS})
