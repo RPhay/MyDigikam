@@ -53,6 +53,7 @@ public:
         L2NormDistance,
         SupportVectorMachine,
         KNN,
+        Tree,
     };
 
     /**

@@ -198,9 +198,8 @@ public:
         tree.add(recordedFaceEmbedding, id);
     }
 
-    Identity predictKDTree(const std::vector<float>& faceEmbedding)
+    Identity predictKDTree(const std::vector<float>& faceEmbedding, int k)
     {
-        int k = 5;
         // Look for K-nearest neighbor which have the sqr distance greater smaller than 1
         QMap<double, QVector<KDNode*> > closestNeighbors = tree.getClosestNeighbors(faceEmbedding, 1.0, k);
 
@@ -234,11 +233,11 @@ public:
                 score += (1 - group.value()[i]);
             }
 
-            score /= group.value().size();
+            //score /= group.value().size();
 
             if (score > maxScore)
             {
-                maxScore = score;
+                maxScore   = score;
                 prediction = group.key();
             }
         }
@@ -351,7 +350,11 @@ Identity FaceRecognizer::findIdenity(const cv::Mat& preprocessedImage, Compariso
     }
 
     std::vector<float> faceEmbedding = d->extractor->getFaceEmbedding(preprocessedImage);
-    //qDebug() << "look for identity of" << faceEmbedding;
+
+    if (metric == Tree)
+    {
+        return d->predictKDTree(faceEmbedding, (int)threshold);
+    }
 
     // TODO: scan database for face
 

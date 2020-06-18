@@ -158,10 +158,10 @@ if(DNN_RECOGNITION)
                                       ${CMAKE_CURRENT_SOURCE_DIR}/recognition/opencv-dnn/dnndbscan.cpp
 
                                       # Testing, TODO: remove later
-                                      ${CMAKE_CURRENT_SOURCE_DIR}/facerecognition/facerecognizer.cpp
-                                      ${CMAKE_CURRENT_SOURCE_DIR}/facerecognition/faceextractor.cpp
                                       ${CMAKE_CURRENT_SOURCE_DIR}/facerecognition/kd_node.cpp
                                       ${CMAKE_CURRENT_SOURCE_DIR}/facerecognition/kd_tree.cpp
+                                      ${CMAKE_CURRENT_SOURCE_DIR}/facerecognition/facerecognizer.cpp
+                                      ${CMAKE_CURRENT_SOURCE_DIR}/facerecognition/faceextractor.cpp
                                       ${CMAKE_CURRENT_SOURCE_DIR}/facerecognition/facedatabase.cpp
     )
 
