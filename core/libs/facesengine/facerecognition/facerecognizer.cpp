@@ -88,13 +88,7 @@ public:
                                            ++iter)
             {
                 QJsonArray jsonFaceEmbedding = QJsonDocument::fromJson(iter->attribute(QLatin1String("faceEmbedding")).toLatin1()).array();
-
-                std::vector<float> recordedFaceEmbedding;
-
-                for (int i = 0; i < jsonFaceEmbedding.size(); ++i)
-                {
-                    recordedFaceEmbedding.push_back(static_cast<float>(jsonFaceEmbedding[i].toDouble()));
-                }
+                std::vector<float> recordedFaceEmbedding = FaceExtractor::decodeVector(jsonFaceEmbedding);
 
                 label.push_back(i);
                 features.push_back(FaceExtractor::vectortomat(recordedFaceEmbedding));
@@ -127,13 +121,7 @@ public:
                                            ++iter)
             {
                 QJsonArray jsonFaceEmbedding = QJsonDocument::fromJson(iter->attribute(QLatin1String("faceEmbedding")).toLatin1()).array();
-
-                std::vector<float> recordedFaceEmbedding;
-
-                for (int i = 0; i < jsonFaceEmbedding.size(); ++i)
-                {
-                    recordedFaceEmbedding.push_back(static_cast<float>(jsonFaceEmbedding[i].toDouble()));
-                }
+                std::vector<float> recordedFaceEmbedding = FaceExtractor::decodeVector(jsonFaceEmbedding);
 
                 label.push_back(i);
                 features.push_back(FaceExtractor::vectortomat(recordedFaceEmbedding));
@@ -171,8 +159,6 @@ public:
         }
 
         cv::Mat output;
-        //input.push_back(faceEmbedding);
-
         knn->findNearest(faceEmbedding, 3, output);
 
         float id = output.at<float>(0);
@@ -183,13 +169,7 @@ public:
     void addIndentityToTree(const Identity& id)
     {
         QJsonArray jsonFaceEmbedding = QJsonDocument::fromJson(id.attribute(QLatin1String("faceEmbedding")).toLatin1()).array();
-
-        std::vector<float> recordedFaceEmbedding;
-
-        for (int i = 0; i < jsonFaceEmbedding.size(); ++i)
-        {
-            recordedFaceEmbedding.push_back(static_cast<float>(jsonFaceEmbedding[i].toDouble()));
-        }
+        std::vector<float> recordedFaceEmbedding = FaceExtractor::decodeVector(jsonFaceEmbedding);
 
         tree.add(recordedFaceEmbedding, id);
     }
@@ -357,15 +337,7 @@ Identity FaceRecognizer::findIdenity(const cv::Mat& preprocessedImage, Compariso
                                        ++iter)
         {
             QJsonArray jsonFaceEmbedding = QJsonDocument::fromJson(iter->attribute(QLatin1String("faceEmbedding")).toLatin1()).array();
-
-            //qDebug() << "face embedding of" << iter->attribute(QLatin1String("faceEmbedding")) << ":" << jsonFaceEmbedding;
-
-            std::vector<float> recordedFaceEmbedding;
-
-            for (int i = 0; i < jsonFaceEmbedding.size(); ++i)
-            {
-                recordedFaceEmbedding.push_back(static_cast<float>(jsonFaceEmbedding[i].toDouble()));
-            }
+            std::vector<float> recordedFaceEmbedding = FaceExtractor::decodeVector(jsonFaceEmbedding);
 
             double distance;
 
@@ -432,16 +404,10 @@ Identity FaceRecognizer::findIdenity(const cv::Mat& preprocessedImage, Compariso
     }
 
     // new identity
-    QJsonArray jsonFaceEmbedding;
-
-    for (size_t i = 0; i < faceEmbedding.size(); ++i)
-    {
-        jsonFaceEmbedding << faceEmbedding[i];
-    }
-
-    //qDebug() << "Cannot find identity";
     Identity id;
-    id.setAttribute(QLatin1String("faceEmbedding"), QString::fromLatin1(QJsonDocument(jsonFaceEmbedding).toJson(QJsonDocument::Compact)));
+    QJsonArray jsonFaceEmbedding = FaceExtractor::encodeVector(faceEmbedding);
+    id.setAttribute(QLatin1String("faceEmbedding"),
+                    QString::fromLatin1(QJsonDocument(jsonFaceEmbedding).toJson(QJsonDocument::Compact)));
 
     return id;
 }
@@ -451,14 +417,8 @@ Identity FaceRecognizer::newIdentity(const cv::Mat& preprocessedImage)
     std::vector<float> faceEmbedding = d->extractor->getFaceEmbedding(preprocessedImage);
 
     // new identity
-    QJsonArray jsonFaceEmbedding;
-
-    for (size_t i = 0; i < faceEmbedding.size(); ++i)
-    {
-        jsonFaceEmbedding << faceEmbedding[i];
-    }
-
     Identity id;
+    QJsonArray jsonFaceEmbedding = FaceExtractor::encodeVector(faceEmbedding);
     id.setAttribute(QLatin1String("faceEmbedding"),
                     QString::fromLatin1(QJsonDocument(jsonFaceEmbedding).toJson(QJsonDocument::Compact)));
 
