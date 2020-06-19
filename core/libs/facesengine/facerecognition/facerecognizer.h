@@ -70,13 +70,6 @@ public:
     cv::Mat prepareForRecognition(const QImage& inputImage);
 
     /**
-     *  Try to recognize the given image.
-     *  Returns the identity id.
-     *  If the identity cannot be recognized, returns -1.
-     */
-    int recognize(const cv::Mat& inputImage);
-
-    /**
      * @brief findIdenity : look for an identity based on the face image
      * @param inputImage
      * @return

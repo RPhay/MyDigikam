@@ -89,8 +89,6 @@ public:
             {
                 QJsonArray jsonFaceEmbedding = QJsonDocument::fromJson(iter->attribute(QLatin1String("faceEmbedding")).toLatin1()).array();
 
-                //qDebug() << "face embedding of" << iter.value().attribute(QLatin1String("fullName")) << ":" << jsonFaceEmbedding;
-
                 std::vector<float> recordedFaceEmbedding;
 
                 for (int i = 0; i < jsonFaceEmbedding.size(); ++i)
@@ -129,8 +127,6 @@ public:
                                            ++iter)
             {
                 QJsonArray jsonFaceEmbedding = QJsonDocument::fromJson(iter->attribute(QLatin1String("faceEmbedding")).toLatin1()).array();
-
-                //qDebug() << "face embedding of" << iter.value().attribute(QLatin1String("fullName")) << ":" << jsonFaceEmbedding;
 
                 std::vector<float> recordedFaceEmbedding;
 
@@ -233,8 +229,6 @@ public:
                 score += (1 - group.value()[i]);
             }
 
-            //score /= group.value().size();
-
             if (score > maxScore)
             {
                 maxScore   = score;
@@ -248,8 +242,6 @@ public:
 public:
 
     bool debugMode;
-    // TODO verify recognition threshold
-    float threshold = 15000.0;
     int identityCounter;
 
     FaceExtractor* extractor;
@@ -313,28 +305,6 @@ cv::Mat FaceRecognizer::prepareForRecognition(const QImage& inputImage)
     equalizeHist(cvImage, cvImage);
 */
     return cvImage;
-}
-
-int FaceRecognizer::recognize(const cv::Mat& inputImage)
-{
-    int predictedLabel = -1;
-    double confidence  = 0;
-
-    // TODO predict label
-    //d->dnn()->predict(inputImage, predictedLabel, confidence, d->m_extractor);
-
-    qCDebug(DIGIKAM_FACESENGINE_LOG) << "predictedLabel: " << predictedLabel << ", confidence: " << confidence;
-
-    /**
-     * confidence must be greater than threshold, because distance used is cosine distance
-     * in case that we use euclidean distance, confidence must be less than threshold
-     */
-    if (confidence < d->threshold)
-    {
-        return -1;
-    }
-
-    return predictedLabel;
 }
 
 Identity FaceRecognizer::findIdenity(const cv::Mat& preprocessedImage, ComparisonMetric metric, double threshold)
@@ -469,10 +439,8 @@ Identity FaceRecognizer::findIdenity(const cv::Mat& preprocessedImage, Compariso
         jsonFaceEmbedding << faceEmbedding[i];
     }
 
-    Identity id;
-
     //qDebug() << "Cannot find identity";
-
+    Identity id;
     id.setAttribute(QLatin1String("faceEmbedding"), QString::fromLatin1(QJsonDocument(jsonFaceEmbedding).toJson(QJsonDocument::Compact)));
 
     return id;
@@ -500,7 +468,7 @@ Identity FaceRecognizer::newIdentity(const cv::Mat& preprocessedImage)
 void FaceRecognizer::saveIdentity(Identity& id)
 {
     QString label = id.attribute(QLatin1String("fullName"));
-    // TODO save identity
+    // TODO save identity to database
     if (label.isEmpty())
     {
         qWarning() << "idenitity is empty";

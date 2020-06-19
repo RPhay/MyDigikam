@@ -379,7 +379,7 @@ void Benchmark::verifyTestKNN()
 
 void Benchmark::verifyTestKDTree()
 {
-    verifyTestSet(FaceRecognizer::Tree, 5);
+    verifyTestSet(FaceRecognizer::Tree, 7);
 }
 
 QCommandLineParser* parseOptions(const QCoreApplication& app)
