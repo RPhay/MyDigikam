@@ -42,9 +42,7 @@ public:
      * @param maxNbNeighbors
      * @return Map of N-nearest neighbors, sorted by distance
      */
-    QMap<double, QVector<KDNode*> > getClosestNeighbors(const std::vector<float>& position, double sqRange, int maxNbNeighbors);
-
-    void update();
+    QMap<double, QVector<KDNode*> > getClosestNeighbors(const std::vector<float>& position, double sqRange, int maxNbNeighbors) const;
 
     bool add(const std::vector<float>& position, const Digikam::Identity& identity);
 

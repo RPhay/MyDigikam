@@ -72,152 +72,14 @@ public:
 
 public:
 
-    int trainSVM()
-    {
-        cv::Mat features, label;
+    int trainSVM() const;
+    int trainKNN() const;
 
-        int size = 0;
+    Identity predictSVM(cv::Mat faceEmbedding) const;
+    Identity predictKNN(cv::Mat faceEmbedding) const;
 
-        QElapsedTimer timer;
-        timer.start();
-
-        for (int i = 0; i < labels.size(); ++i)
-        {
-            for (QVector<Identity>::iterator iter  = faceLibrary[labels[i]].begin();
-                                             iter != faceLibrary[labels[i]].end();
-                                           ++iter)
-            {
-                QJsonArray jsonFaceEmbedding = QJsonDocument::fromJson(iter->attribute(QLatin1String("faceEmbedding")).toLatin1()).array();
-                std::vector<float> recordedFaceEmbedding = FaceExtractor::decodeVector(jsonFaceEmbedding);
-
-                label.push_back(i);
-                features.push_back(FaceExtractor::vectortomat(recordedFaceEmbedding));
-
-                ++size;
-            }
-
-        }
-
-        svm->train(features, 0, label);
-
-        qDebug() << "Support vector machine trains" << size << "samples in" << timer.elapsed() << "ms";
-
-        return size;
-    }
-
-    int trainKNN()
-    {
-        cv::Mat features, label;
-
-        int size = 0;
-
-        QElapsedTimer timer;
-        timer.start();
-
-        for (int i = 0; i < labels.size(); ++i)
-        {
-            for (QVector<Identity>::iterator iter  = faceLibrary[labels[i]].begin();
-                                             iter != faceLibrary[labels[i]].end();
-                                           ++iter)
-            {
-                QJsonArray jsonFaceEmbedding = QJsonDocument::fromJson(iter->attribute(QLatin1String("faceEmbedding")).toLatin1()).array();
-                std::vector<float> recordedFaceEmbedding = FaceExtractor::decodeVector(jsonFaceEmbedding);
-
-                label.push_back(i);
-                features.push_back(FaceExtractor::vectortomat(recordedFaceEmbedding));
-
-                ++size;
-            }
-
-        }
-
-        knn->train(features, 0, label);
-
-        qDebug() << "KNN trains" << size << "samples in" << timer.elapsed() << "ms";
-
-        return size;
-    }
-
-    Identity predictSVM(cv::Mat faceEmbedding)
-    {
-        if (!svm->isTrained())
-        {
-            trainSVM();
-        }
-
-        // perdict
-        float id = svm->predict(faceEmbedding);
-
-        return faceLibrary[labels[int(id)]][0];
-    }
-
-    Identity predictKNN(cv::Mat faceEmbedding)
-    {
-        if (!knn->isTrained())
-        {
-            trainKNN();
-        }
-
-        cv::Mat output;
-        knn->findNearest(faceEmbedding, 3, output);
-
-        float id = output.at<float>(0);
-
-        return faceLibrary[labels[int(id)]][0];
-    }
-
-    void addIndentityToTree(const Identity& id)
-    {
-        QJsonArray jsonFaceEmbedding = QJsonDocument::fromJson(id.attribute(QLatin1String("faceEmbedding")).toLatin1()).array();
-        std::vector<float> recordedFaceEmbedding = FaceExtractor::decodeVector(jsonFaceEmbedding);
-
-        tree.add(recordedFaceEmbedding, id);
-    }
-
-    Identity predictKDTree(const std::vector<float>& faceEmbedding, int k)
-    {
-        // Look for K-nearest neighbor which have the sqr distance greater smaller than 1
-        QMap<double, QVector<KDNode*> > closestNeighbors = tree.getClosestNeighbors(faceEmbedding, 1.0, k);
-
-        QMap<QString, QVector<double> > votingGroups;
-
-        for (QMap<double, QVector<KDNode*> >::const_iterator iter  = closestNeighbors.cbegin();
-                                                             iter != closestNeighbors.cend();
-                                                           ++iter)
-        {
-            for (QVector<KDNode*>::const_iterator node  = iter.value().cbegin();
-                                                  node != iter.value().cend();
-                                                ++node)
-            {
-                QString label = (*node)->getIdentity().attribute(QLatin1String("fullName"));
-
-                votingGroups[label].append(iter.key());
-            }
-        }
-
-        double maxScore = 0;
-        QString prediction;
-
-        for (QMap<QString, QVector<double> >::const_iterator group  = votingGroups.cbegin();
-                                                             group != votingGroups.cend();
-                                                           ++group)
-        {
-            double score = 0;
-
-            for (int i = 0; i < group.value().size(); ++i)
-            {
-                score += (1 - group.value()[i]);
-            }
-
-            if (score > maxScore)
-            {
-                maxScore   = score;
-                prediction = group.key();
-            }
-        }
-
-        return faceLibrary[prediction][0];
-    }
+    void addIndentityToTree(const Identity& id);
+    Identity predictKDTree(const std::vector<float>& faceEmbedding, int k) const;
 
 public:
 
@@ -234,6 +96,148 @@ public:
     KDTree tree;
 };
 
+int FaceRecognizer::Private::trainSVM() const
+{
+    cv::Mat features, label;
+    int size = 0;
+
+    QElapsedTimer timer;
+    timer.start();
+
+    for (int i = 0; i < labels.size(); ++i)
+    {
+        for (QVector<Identity>::const_iterator iter  = faceLibrary[labels[i]].cbegin();
+                                               iter != faceLibrary[labels[i]].cend();
+                                             ++iter)
+        {
+            QJsonArray jsonFaceEmbedding = QJsonDocument::fromJson(iter->attribute(QLatin1String("faceEmbedding")).toLatin1()).array();
+            std::vector<float> recordedFaceEmbedding = FaceExtractor::decodeVector(jsonFaceEmbedding);
+
+            label.push_back(i);
+            features.push_back(FaceExtractor::vectortomat(recordedFaceEmbedding));
+
+            ++size;
+        }
+    }
+
+    svm->train(features, 0, label);
+
+    qDebug() << "Support vector machine trains" << size << "samples in" << timer.elapsed() << "ms";
+
+    return size;
+}
+
+int FaceRecognizer::Private::trainKNN() const
+{
+    cv::Mat features, label;
+    int size = 0;
+
+    QElapsedTimer timer;
+    timer.start();
+
+    for (int i = 0; i < labels.size(); ++i)
+    {
+        for (QVector<Identity>::const_iterator iter  = faceLibrary[labels[i]].cbegin();
+                                               iter != faceLibrary[labels[i]].cend();
+                                             ++iter)
+        {
+            QJsonArray jsonFaceEmbedding = QJsonDocument::fromJson(iter->attribute(QLatin1String("faceEmbedding")).toLatin1()).array();
+            std::vector<float> recordedFaceEmbedding = FaceExtractor::decodeVector(jsonFaceEmbedding);
+
+            label.push_back(i);
+            features.push_back(FaceExtractor::vectortomat(recordedFaceEmbedding));
+
+            ++size;
+        }
+    }
+
+    knn->train(features, 0, label);
+
+    qDebug() << "KNN trains" << size << "samples in" << timer.elapsed() << "ms";
+
+    return size;
+}
+
+Identity FaceRecognizer::Private::predictSVM(cv::Mat faceEmbedding) const
+{
+    if (!svm->isTrained())
+    {
+        trainSVM();
+    }
+
+    float id = svm->predict(faceEmbedding);
+
+    return faceLibrary[labels[int(id)]][0];
+}
+
+Identity FaceRecognizer::Private::predictKNN(cv::Mat faceEmbedding) const
+{
+    if (!knn->isTrained())
+    {
+        trainKNN();
+    }
+
+    cv::Mat output;
+    knn->findNearest(faceEmbedding, 3, output);
+
+    float id = output.at<float>(0);
+
+    return faceLibrary[labels[int(id)]][0];
+}
+
+void FaceRecognizer::Private::addIndentityToTree(const Identity& id)
+{
+    QJsonArray jsonFaceEmbedding = QJsonDocument::fromJson(id.attribute(QLatin1String("faceEmbedding")).toLatin1()).array();
+    std::vector<float> recordedFaceEmbedding = FaceExtractor::decodeVector(jsonFaceEmbedding);
+
+    tree.add(recordedFaceEmbedding, id);
+}
+
+Identity FaceRecognizer::Private::predictKDTree(const std::vector<float>& faceEmbedding, int k) const
+{
+    // Look for K-nearest neighbor which have the sqr distance greater smaller than 1
+    QMap<double, QVector<KDNode*> > closestNeighbors = tree.getClosestNeighbors(faceEmbedding, 1.0, k);
+
+    QMap<QString, QVector<double> > votingGroups;
+
+    for (QMap<double, QVector<KDNode*> >::const_iterator iter  = closestNeighbors.cbegin();
+                                                         iter != closestNeighbors.cend();
+                                                       ++iter)
+    {
+        for (QVector<KDNode*>::const_iterator node  = iter.value().cbegin();
+                                              node != iter.value().cend();
+                                            ++node)
+        {
+            QString label = (*node)->getIdentity().attribute(QLatin1String("fullName"));
+
+            votingGroups[label].append(iter.key());
+        }
+    }
+
+    double maxScore = 0;
+    QString prediction;
+
+    for (QMap<QString, QVector<double> >::const_iterator group  = votingGroups.cbegin();
+                                                         group != votingGroups.cend();
+                                                       ++group)
+    {
+        double score = 0;
+
+        for (int i = 0; i < group.value().size(); ++i)
+        {
+            score += (1 - group.value()[i]);
+        }
+
+        if (score > maxScore)
+        {
+            maxScore   = score;
+            prediction = group.key();
+        }
+    }
+
+    return faceLibrary[prediction][0];
+}
+
 FaceRecognizer::FaceRecognizer(bool debug)
     : d(new Private(debug))
 {
@@ -246,7 +250,6 @@ FaceRecognizer::~FaceRecognizer()
 
 cv::Mat FaceRecognizer::prepareForRecognition(const QImage& inputImage)
 {
-    // TODO: verify why have to enum this
     int TargetInputSize = 256;
 
     QImage image(inputImage);
@@ -428,7 +431,7 @@ Identity FaceRecognizer::newIdentity(const cv::Mat& preprocessedImage)
 void FaceRecognizer::saveIdentity(Identity& id)
 {
     QString label = id.attribute(QLatin1String("fullName"));
-    // TODO save identity to database
+
     if (label.isEmpty())
     {
         qWarning() << "idenitity is empty";
@@ -436,6 +439,7 @@ void FaceRecognizer::saveIdentity(Identity& id)
         return;
     }
 
+    // TODO save identity to database
     if (id.isNull())
     {
         id.setId(++d->identityCounter);

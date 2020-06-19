@@ -61,8 +61,6 @@ private:
 
     KDNode* findParent(std::vector<float> nodePos);
 
-    //static double sqrDistance(std::vector<float> pos1, std::vector<float> pos2);
-
 private:
 
     class Private;

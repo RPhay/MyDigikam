@@ -73,7 +73,7 @@ bool KDTree::add(const std::vector<float>& position, const Digikam::Identity& id
     return true;
 }
 
-QMap<double, QVector<KDNode*> > KDTree::getClosestNeighbors(const std::vector<float>& position, double sqRange, int maxNbNeighbors)
+QMap<double, QVector<KDNode*> > KDTree::getClosestNeighbors(const std::vector<float>& position, double sqRange, int maxNbNeighbors) const
 {
     QMap<double, QVector<KDNode*> > closestNeighbors;
 
