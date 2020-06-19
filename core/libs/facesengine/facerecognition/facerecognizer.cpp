@@ -81,6 +81,9 @@ public:
     void addIndentityToTree(const Identity& id);
     Identity predictKDTree(const std::vector<float>& faceEmbedding, int k) const;
 
+    Identity predictCosine(const std::vector<float>& faceEmbedding, double threshold) const;
+    Identity predictL2(const std::vector<float>& faceEmbedding, double threshold) const;
+
 public:
 
     bool debugMode;
@@ -238,6 +241,74 @@ Identity FaceRecognizer::Private::predictKDTree(const std::vector<float>& faceEm
     return faceLibrary[prediction][0];
 }
 
+Identity FaceRecognizer::Private::predictCosine(const std::vector<float>& faceEmbedding, double threshold) const
+{
+    double bestDistance = -1;
+    QVector<Identity>::const_iterator prediction;
+
+    for (QHash<QString, QVector<Identity> >::const_iterator group  = faceLibrary.cbegin();
+                                                            group != faceLibrary.cend();
+                                                          ++group)
+    {
+        for (QVector<Identity>::const_iterator iter  = group.value().cbegin();
+                                               iter != group.value().cend();
+                                             ++iter)
+        {
+            QJsonArray jsonFaceEmbedding = QJsonDocument::fromJson(iter->attribute(QLatin1String("faceEmbedding")).toLatin1()).array();
+            std::vector<float> recordedFaceEmbedding = FaceExtractor::decodeVector(jsonFaceEmbedding);
+
+            double distance = FaceExtractor::cosineDistance(recordedFaceEmbedding, faceEmbedding);
+
+            if (distance > bestDistance)
+            {
+                bestDistance  = distance;
+                prediction    = iter;
+            }
+        }
+    }
+
+    if (bestDistance > threshold)
+    {
+        return *prediction;
+    }
+
+    return Identity();
+}
+
+Identity FaceRecognizer::Private::predictL2(const std::vector<float>& faceEmbedding, double threshold) const
+{
+    double bestDistance = 1;
+    QVector<Identity>::const_iterator prediction;
+
+    for (QHash<QString, QVector<Identity> >::const_iterator group  = faceLibrary.cbegin();
+                                                            group != faceLibrary.cend();
+                                                          ++group)
+    {
+        for (QVector<Identity>::const_iterator iter  = group.value().cbegin();
+                                               iter != group.value().cend();
+                                             ++iter)
+        {
+            QJsonArray jsonFaceEmbedding = QJsonDocument::fromJson(iter->attribute(QLatin1String("faceEmbedding")).toLatin1()).array();
+            std::vector<float> recordedFaceEmbedding = FaceExtractor::decodeVector(jsonFaceEmbedding);
+
+            double distance = FaceExtractor::L2squareDistance(recordedFaceEmbedding, faceEmbedding);
+
+            if (distance < bestDistance)
+            {
+                bestDistance = distance;
+                prediction   = iter;
+            }
+        }
+    }
+
+    if (bestDistance < threshold)
+    {
+        return *prediction;
+    }
+
+    return Identity();
+}
+
 FaceRecognizer::FaceRecognizer(bool debug)
     : d(new Private(debug))
 {
@@ -292,7 +363,9 @@ cv::Mat FaceRecognizer::prepareForRecognition(const QImage& inputImage)
 
 Identity FaceRecognizer::findIdenity(const cv::Mat& preprocessedImage, ComparisonMetric metric, double threshold)
 {
-    // Use support vector machine to predict label
+    // TODO: scan database for face
+
+    // Use ML to predict label
     if (metric == SupportVectorMachine)
     {
         return d->predictSVM(d->extractor->getFaceDescriptor(preprocessedImage));
@@ -303,114 +376,30 @@ Identity FaceRecognizer::findIdenity(const cv::Mat& preprocessedImage, Compariso
     }
 
     std::vector<float> faceEmbedding = d->extractor->getFaceEmbedding(preprocessedImage);
-
-    if (metric == Tree)
-    {
-        return d->predictKDTree(faceEmbedding, (int)threshold);
-    }
-
-    // TODO: scan database for face
-
-    double bestDistance;
-
-    switch (metric)
-    {
-    case CosDistance:
-        bestDistance = -1;
-        break;
-    case L2Distance:
-        bestDistance = 1;
-        break;
-    case L2NormDistance:
-        bestDistance = 1;
-        break;
-    default:
-        bestDistance = 1;
-        break;
-    }
-
-    QVector<Identity>::iterator prediction;
-
-    for (QHash<QString, QVector<Identity> >::iterator group  = d->faceLibrary.begin();
-                                                      group != d->faceLibrary.end();
-                                                    ++group)
-    {
-        for (QVector<Identity>::iterator iter  = group.value().begin();
-                                         iter != group.value().end();
-                                       ++iter)
-        {
-            QJsonArray jsonFaceEmbedding = QJsonDocument::fromJson(iter->attribute(QLatin1String("faceEmbedding")).toLatin1()).array();
-            std::vector<float> recordedFaceEmbedding = FaceExtractor::decodeVector(jsonFaceEmbedding);
-
-            double distance;
-
-            switch (metric)
-            {
-            case CosDistance:
-                distance = FaceExtractor::cosineDistance(recordedFaceEmbedding, faceEmbedding);
-
-                if (distance > bestDistance)
-                {
-                    bestDistance  = distance;
-                    prediction    = iter;
-                }
-
-                break;
-            case L2Distance:
-                distance = FaceExtractor::L2squareDistance(recordedFaceEmbedding, faceEmbedding);
-
-                if (distance < bestDistance)
-                {
-                    bestDistance = distance;
-                    prediction   = iter;
-                }
-
-                break;
-            case L2NormDistance:
-                distance = FaceExtractor::L2squareNormDistance(recordedFaceEmbedding, faceEmbedding);
-
-                if (distance < bestDistance)
-                {
-                    bestDistance = distance;
-                    prediction   = iter;
-                }
-
-                break;
-            default:
-                break;
-            }
-        }
-    }
-
-    switch (metric)
-    {
-    case CosDistance:
-        if (bestDistance > threshold)
-        {
-            return *prediction;
-        }
-        break;
-    case L2Distance:
-        if (bestDistance < threshold)
-        {
-            return *prediction;
-        }
-        break;
-    case L2NormDistance:
-        if (bestDistance < threshold)
-        {
-            return *prediction;
-        }
-        break;
-    default:
-        break;
-    }
-
-    // new identity
     Identity id;
-    QJsonArray jsonFaceEmbedding = FaceExtractor::encodeVector(faceEmbedding);
-    id.setAttribute(QLatin1String("faceEmbedding"),
-                    QString::fromLatin1(QJsonDocument(jsonFaceEmbedding).toJson(QJsonDocument::Compact)));
+
+    switch (metric)
+    {
+        case Tree:
+            id = d->predictKDTree(faceEmbedding, (int)threshold);
+            break;
+        case CosDistance:
+            id = d->predictCosine(faceEmbedding, threshold);
+            break;
+        case L2Distance:
+            id = d->predictL2(faceEmbedding, threshold);
+            break;
+        default:
+            break;
+    }
+
+    if (id.isNull())
+    {
+        // new identity
+        QJsonArray jsonFaceEmbedding = FaceExtractor::encodeVector(faceEmbedding);
+        id.setAttribute(QLatin1String("faceEmbedding"),
+                        QString::fromLatin1(QJsonDocument(jsonFaceEmbedding).toJson(QJsonDocument::Compact)));
+    }
 
     return id;
 }

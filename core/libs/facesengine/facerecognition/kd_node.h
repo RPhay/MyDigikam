@@ -45,14 +45,36 @@ public:
 
 public:
 
+    /**
+     * @brief insert : insert a new node to sub-tree
+     * @param nodePos
+     * @param identity
+     * @return
+     */
     KDNode* insert(const std::vector<float>& nodePos, const Identity& identity);
 
+    /**
+     * @brief getPosition: return vector
+     * @return
+     */
     std::vector<float> getPosition() const;
 
+    /**
+     * @brief getClosestNeighbors : return a list of closest neighbor, limited by maxNbNeighbors and sqRange
+     * @param neighborList
+     * @param position
+     * @param sqRange
+     * @param maxNbNeighbors
+     * @return
+     */
     double getClosestNeighbors(QMap<double, QVector<KDNode*> >& neighborList,
                                std::vector<float> position,
                                double sqRange,
                                int maxNbNeighbors);
+    /**
+     * @brief getIdentity
+     * @return
+     */
     Identity& getIdentity();
 
 private:

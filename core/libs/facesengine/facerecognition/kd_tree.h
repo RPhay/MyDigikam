@@ -44,6 +44,12 @@ public:
      */
     QMap<double, QVector<KDNode*> > getClosestNeighbors(const std::vector<float>& position, double sqRange, int maxNbNeighbors) const;
 
+    /**
+     * @brief add new node to KD-Tree
+     * @param position : K-dimension vector
+     * @param identity : identity of this face vector
+     * @return
+     */
     bool add(const std::vector<float>& position, const Digikam::Identity& identity);
 
 private:
