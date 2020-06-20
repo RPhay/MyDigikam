@@ -356,7 +356,7 @@ void ItemInfo::setManualOrder(qlonglong value)
     m_data->manualOrderCached = true;
 }
 
-void ItemInfo::setUnconfirmedFaceCount(bool increment)
+void ItemInfo::incrementUnconfirmedFaceCount(bool increment)
 {
     if (!m_data)
     {

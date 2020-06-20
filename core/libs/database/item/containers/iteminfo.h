@@ -298,7 +298,7 @@ public:
      * the ItemInfo.
      * @param increment increase the Unconfirmed Face Count by 1 if true, decrements otherwise
      */
-    void setUnconfirmedFaceCount(bool increment);
+    void incrementUnconfirmedFaceCount(bool increment);
 
     /**
      * @todo Supports only VideoMetadataField and ImageMetadataField values for now.

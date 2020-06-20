@@ -294,7 +294,7 @@ FaceTagsIface FaceTagsEditor::confirmName(const FaceTagsIface& face,  ItemInfo& 
 {
     if (face.type() == FaceTagsIface::UnconfirmedName && !info.isNull())
     {
-        info.setUnconfirmedFaceCount(false);
+        info.incrementUnconfirmedFaceCount(false);
     }
 
     return confirmName(face, tagId, confirmedRegion);
@@ -473,7 +473,7 @@ FaceTagsIface FaceTagsEditor::changeTag(const FaceTagsIface& face, int newTagId,
      */
     if (face.type() == FaceTagsIface::UnconfirmedName && !info.isNull())
     {
-        info.setUnconfirmedFaceCount(false);
+        info.incrementUnconfirmedFaceCount(false);
     }
 
     /**
