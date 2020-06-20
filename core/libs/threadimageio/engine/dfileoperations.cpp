@@ -46,6 +46,7 @@
 #include <QMimeDatabase>
 #include <QDesktopServices>
 #include <QFileInfo>
+#include <QDirIterator>
 #include <qplatformdefs.h>
 
 #ifdef HAVE_DBUS
@@ -57,6 +58,7 @@
 
 #include "digikam_debug.h"
 #include "digikam_globals.h"
+#include "progressmanager.h"
 #include "metaenginesettings.h"
 
 namespace Digikam
@@ -307,7 +309,9 @@ void DFileOperations::openInFileManager(const QList<QUrl>& urls)
 
 bool DFileOperations::copyFolderRecursively(const QString& srcPath,
                                             const QString& dstPath,
-                                            const bool* cancel)
+                                            bool* const cancel,
+                                            bool  calculateTotal,
+                                            const QString& itemId)
 {
     QDir srcDir(srcPath);
     QString newCopyPath = dstPath + QLatin1Char('/') + srcDir.dirName();
@@ -315,6 +319,27 @@ bool DFileOperations::copyFolderRecursively(const QString& srcPath,
     if (!srcDir.mkpath(newCopyPath))
     {
         return false;
+    }
+
+    if (calculateTotal && !itemId.isEmpty())
+    {
+        int count = 0;
+
+        QDirIterator it(srcDir.path(), QDir::Files,
+                                       QDirIterator::Subdirectories);
+
+        while (it.hasNext())
+        {
+            it.next();
+            ++count;
+        }
+
+        ProgressItem* const item = ProgressManager::instance()->findItembyId(itemId);
+
+        if (item)
+        {
+            item->incTotalItems(count);
+        }
     }
 
     foreach (const QFileInfo& fileInfo, srcDir.entryInfoList(QDir::Files))
@@ -330,11 +355,21 @@ bool DFileOperations::copyFolderRecursively(const QString& srcPath,
         {
             return false;
         }
+
+        if (!itemId.isEmpty())
+        {
+            ProgressItem* const item = ProgressManager::instance()->findItembyId(itemId);
+
+            if (item)
+            {
+                item->advance(1);
+            }
+        }
     }
 
     foreach (const QFileInfo& fileInfo, srcDir.entryInfoList(QDir::Dirs | QDir::NoDotAndDotDot))
     {
-        if (!copyFolderRecursively(fileInfo.filePath(), newCopyPath, cancel))
+        if (!copyFolderRecursively(fileInfo.filePath(), newCopyPath, cancel, false, itemId))
         {
             return false;
         }
