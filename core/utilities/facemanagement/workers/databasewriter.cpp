@@ -84,6 +84,12 @@ void DatabaseWriter::process(FacePipelineExtendedPackage::Ptr package)
     {
         FaceUtils utils;
 
+        /**
+         * This ensures that the unconfirmed face count, for the
+         * associated image is incremented.
+         */
+        package->info.incrementUnconfirmedFaceCount(true);
+
         for (int i = 0 ; i < package->databaseFaces.size() ; ++i)
         {
             if (package->databaseFaces[i].roles & FacePipelineFaceTagsIface::ForRecognition)
