@@ -72,9 +72,9 @@ public:
      */
     static bool copyFolderRecursively(const QString& srcPath,
                                       const QString& dstPath,
+                                      const QString& itemId = QString(),
                                       bool* const cancel = nullptr,
-                                      bool  calculateTotal = false,
-                                      const QString& itemId = QString());
+                                      bool  countTotal = true);
 
     /**
      * Copy a list of files to another place.

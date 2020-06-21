@@ -309,9 +309,9 @@ void DFileOperations::openInFileManager(const QList<QUrl>& urls)
 
 bool DFileOperations::copyFolderRecursively(const QString& srcPath,
                                             const QString& dstPath,
+                                            const QString& itemId,
                                             bool* const cancel,
-                                            bool  calculateTotal,
-                                            const QString& itemId)
+                                            bool  countTotal)
 {
     QDir srcDir(srcPath);
     QString newCopyPath = dstPath + QLatin1Char('/') + srcDir.dirName();
@@ -321,7 +321,7 @@ bool DFileOperations::copyFolderRecursively(const QString& srcPath,
         return false;
     }
 
-    if (calculateTotal && !itemId.isEmpty())
+    if (countTotal && !itemId.isEmpty())
     {
         int count = 0;
 
@@ -369,7 +369,7 @@ bool DFileOperations::copyFolderRecursively(const QString& srcPath,
 
     foreach (const QFileInfo& fileInfo, srcDir.entryInfoList(QDir::Dirs | QDir::NoDotAndDotDot))
     {
-        if (!copyFolderRecursively(fileInfo.filePath(), newCopyPath, cancel, false, itemId))
+        if (!copyFolderRecursively(fileInfo.filePath(), newCopyPath, itemId, cancel, false))
         {
             return false;
         }
