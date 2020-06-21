@@ -97,9 +97,9 @@ QComboBox* DComboBox::combo() const
     return d->combo;
 }
 
-void DComboBox::addItem(const QString& t, int index)
+void DComboBox::addItem(const QString& t, const QVariant& data)
 {
-    d->combo->addItem(t, index);
+    d->combo->addItem(t, data);
 }
 
 void DComboBox::insertItem(int index, const QString& t, const QVariant& data)
