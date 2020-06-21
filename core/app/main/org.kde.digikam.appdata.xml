@@ -479,6 +479,7 @@
       <caption xml:lang="en-GB">digiKam Batch Queue Manager</caption>
       <caption xml:lang="es">Gestor de la cola de procesos por lotes de digiKam</caption>
       <caption xml:lang="nl">Takenwachtrijbeheer van digiKam</caption>
+      <caption xml:lang="nn">Køhandsamar i digiKam</caption>
       <caption xml:lang="pt">Gestor da Fila de Processamento em Lote do digiKam</caption>
       <caption xml:lang="sl">digiKam upravljalnik čakalnih vrst paketnih obdelav</caption>
       <caption xml:lang="sv">Digikams köhantering för bakgrundsbehandling</caption>
@@ -492,6 +493,7 @@
       <caption xml:lang="en-GB">digiKam Image Editor</caption>
       <caption xml:lang="es">Editor de imágenes de digiKam</caption>
       <caption xml:lang="nl">Afbeeldingsbewerker van digiKam</caption>
+      <caption xml:lang="nn">Biletredigering i digiKam</caption>
       <caption xml:lang="pt">Editor de Imagens do digiKam</caption>
       <caption xml:lang="sl">digiKam urejevalnik slik</caption>
       <caption xml:lang="sv">Digikams  bildeditor</caption>
@@ -505,6 +507,7 @@
       <caption xml:lang="en-GB">digiKam Import From Camera</caption>
       <caption xml:lang="es">Importación de cámara de digiKam</caption>
       <caption xml:lang="nl">Importeren uit camera van digiKam</caption>
+      <caption xml:lang="nn">Import frå kamera i digiKam</caption>
       <caption xml:lang="pt">Importação de Máquinas Fotográficas do digiKam</caption>
       <caption xml:lang="sl">digiKam uvoz iz kamere</caption>
       <caption xml:lang="sv">Digikams import från kamera</caption>
@@ -518,6 +521,7 @@
       <caption xml:lang="en-GB">digiKam Light Table</caption>
       <caption xml:lang="es">Mesa de luz de digiKam</caption>
       <caption xml:lang="nl">Lichttafel van digiKam</caption>
+      <caption xml:lang="nn">Lysbord i digiKam</caption>
       <caption xml:lang="pt">Mesa de Luz do digiKam</caption>
       <caption xml:lang="sl">digiKam osvetljevalna miza</caption>
       <caption xml:lang="sv">Digikams ljusbord</caption>
@@ -531,6 +535,7 @@
       <caption xml:lang="en-GB">digiKam Tags View</caption>
       <caption xml:lang="es">Visor de etiquetas de digiKam</caption>
       <caption xml:lang="nl">Weergave van tags van digiKam</caption>
+      <caption xml:lang="nn">Merkelappvising i digiKam</caption>
       <caption xml:lang="pt">Área de Marcas do digiKam</caption>
       <caption xml:lang="sl">Pogled digiKamovih značk</caption>
       <caption xml:lang="sv">Digikams etikettvy</caption>
@@ -622,6 +627,7 @@
   <developer_name xml:lang="en-GB">digiKam Team</developer_name>
   <developer_name xml:lang="es">Equipo de digiKam</developer_name>
   <developer_name xml:lang="nl">Team van digiKam</developer_name>
+  <developer_name xml:lang="nn">digiKam-laget</developer_name>
   <developer_name xml:lang="pt">Equipa do digiKam</developer_name>
   <developer_name xml:lang="sl">Skupina digiKam</developer_name>
   <developer_name xml:lang="sv">Digikam-gruppen</developer_name>
