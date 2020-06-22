@@ -113,9 +113,6 @@ endif()
 set_property(GLOBAL PROPERTY USE_FOLDERS ON)
 set_property(GLOBAL PROPERTY AUTOGEN_TARGETS_FOLDER "Generated")
 
-#set(CMAKE_LIBRARY_OUTPUT_DIRECTORY "${CMAKE_SOURCE_DIR}/objects")
-#set(AUTOGEN_BUILD_DIR "${CMAKE_SOURCE_DIR}/objects")
-
 ### COMPILATION OPTIONS MANAGEMENT ####################################################################################
 
 # doc and translations options

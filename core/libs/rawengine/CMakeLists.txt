@@ -163,7 +163,7 @@ target_compile_definitions(core_libraw_obj
 if(MSVC)
     target_compile_options(core_libraw_obj PRIVATE /w)
 else()
-    target_compile_options(core_libraw_obj PRIVATE -w -fPIC -O4)
+    target_compile_options(core_libraw_obj PRIVATE -w -O4)
 endif()
 
 # For unit tests.
