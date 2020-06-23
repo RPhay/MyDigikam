@@ -406,15 +406,8 @@ int main(int argc, char** argv)
     //qDebug() << "SVM:";
     //benchmark.verifyTestSetSupportVectorMachine();
 
-    //qDebug() << "KNN:";
-    //benchmark.verifyTestKNN();
-
-    for (int i = 0; i < 10; ++i)
-    {
-        int k = 1 + 2*i;
-        qDebug() << "KDTree, k =" << k;
-        benchmark.verifyTestKDTree(k);
-    }
+    qDebug() << "KNN:";
+    benchmark.verifyTestKNN();
 }
 
 
