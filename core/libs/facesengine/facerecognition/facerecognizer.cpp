@@ -28,6 +28,7 @@
 #include <QElapsedTimer>
 #include <QJsonArray>
 #include <QJsonDocument>
+#include <QFileInfo>
 
 // cv include
 #include <opencv2/ml.hpp>
@@ -55,11 +56,20 @@ public:
           identityCounter(0),
           extractor(new FaceExtractor),
           svm(cv::ml::SVM::create()),
-          knn(cv::ml::KNearest::create()),
           tree(128)
     {
         // use linear mapping
         svm->setKernel(cv::ml::SVM::LINEAR);
+
+        QFileInfo knnWeightsFile(knnFile);
+        if (knnWeightsFile.exists())
+        {
+            knn = cv::ml::KNearest::load(knnFile.toStdString());
+        }
+        else
+        {
+            knn = cv::ml::KNearest::create();
+        }
 
         knn->setAlgorithmType(cv::ml::KNearest::BRUTE_FORCE);
         knn->setIsClassifier(true);
@@ -67,6 +77,8 @@ public:
 
     ~Private()
     {
+        knn->save(knnFile.toStdString());
+
         delete extractor;
     }
 
@@ -95,6 +107,8 @@ public:
 
     QHash<QString, QVector<Identity> > faceLibrary;
     QVector<QString> labels;
+
+    const QString knnFile = QLatin1String("knn.bin");
 
     KDTree tree;
 };

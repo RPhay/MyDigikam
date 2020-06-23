@@ -88,7 +88,7 @@ public:
     Q_SLOT void verifyTestSetL2Distance();
     Q_SLOT void verifyTestSetSupportVectorMachine();
     Q_SLOT void verifyTestKNN();
-    Q_SLOT void verifyTestKDTree();
+    Q_SLOT void verifyTestKDTree(int k);
 
 private:
 
@@ -371,9 +371,9 @@ void Benchmark::verifyTestKNN()
     verifyTestSet(FaceRecognizer::KNN, 0.7);
 }
 
-void Benchmark::verifyTestKDTree()
+void Benchmark::verifyTestKDTree(int k)
 {
-    verifyTestSet(FaceRecognizer::Tree, 7);
+    verifyTestSet(FaceRecognizer::Tree, k);
 }
 
 QCommandLineParser* parseOptions(const QCoreApplication& app)
@@ -406,11 +406,15 @@ int main(int argc, char** argv)
     //qDebug() << "SVM:";
     //benchmark.verifyTestSetSupportVectorMachine();
 
-    qDebug() << "KNN:";
-    benchmark.verifyTestKNN();
+    //qDebug() << "KNN:";
+    //benchmark.verifyTestKNN();
 
-    qDebug() << "KDTree";
-    benchmark.verifyTestKDTree();
+    for (int i = 0; i < 10; ++i)
+    {
+        int k = 1 + 2*i;
+        qDebug() << "KDTree, k =" << k;
+        benchmark.verifyTestKDTree(k);
+    }
 }
 
 
