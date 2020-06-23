@@ -162,7 +162,7 @@ void FaceRecognizer::Private::onlineTrainSVM(const std::vector<float>& inputSamp
 {
     cv::Mat feature, label;
     label.push_back(inputLabel);
-    feature.push_back(inputSample);
+    feature.push_back(FaceExtractor::vectortomat(inputSample));
 
     cv::Ptr<cv::ml::TrainData> trainingSample = cv::ml::TrainData::create(feature, 0, label);
 
@@ -204,7 +204,7 @@ void FaceRecognizer::Private::onlineTrainKNN(const std::vector<float>& inputSamp
 {
     cv::Mat feature, label;
     label.push_back(inputLabel);
-    feature.push_back(inputSample);
+    feature.push_back(FaceExtractor::vectortomat(inputSample));
 
     cv::Ptr<cv::ml::TrainData> trainingSample = cv::ml::TrainData::create(feature, 0, label);
 
@@ -499,6 +499,13 @@ void FaceRecognizer::saveIdentity(Identity& id)
     // TODO: assure that label is unique
     int index = d->labels.indexOf(label);
 
+    if (index < 0)
+    {
+        qWarning() << "Error insert label";
+        return;
+    }
+
+    d->onlineTrainSVM(recordedFaceEmbedding, index);
     d->onlineTrainKNN(recordedFaceEmbedding, index);
 
     // Create a KD-Node for this identity
