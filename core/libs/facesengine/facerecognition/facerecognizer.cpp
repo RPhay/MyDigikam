@@ -55,7 +55,6 @@ public:
         : debugMode(debug),
           identityCounter(0),
           extractor(new FaceExtractor),
-          svm(cv::ml::SVM::create()),
           tree(128)
     {
         QFileInfo svmWeightsFile(svmFile);
@@ -96,7 +95,9 @@ public:
 public:
 
     int trainSVM() const;
+    //void onlineTrainSVM(const std::vector<float>& inputSample, int inputLabel) const;
     int trainKNN() const;
+    void onlineTrainKNN(const std::vector<float>& inputSample, int inputLabel) const;
 
     Identity predictSVM(cv::Mat faceEmbedding) const;
     Identity predictKNN(cv::Mat faceEmbedding) const;
@@ -187,6 +188,18 @@ int FaceRecognizer::Private::trainKNN() const
 
     return size;
 }
+
+void FaceRecognizer::Private::onlineTrainKNN(const std::vector<float>& inputSample, int inputLabel) const
+{
+    cv::Mat feature, label;
+    label.push_back(inputLabel);
+    feature.push_back(inputSample);
+
+    cv::Ptr<cv::ml::TrainData> trainingSample = cv::ml::TrainData::create(feature, 0, label);
+
+    knn->train(trainingSample, cv::ml::StatModel::UPDATE_MODEL);
+}
+
 
 Identity FaceRecognizer::Private::predictSVM(cv::Mat faceEmbedding) const
 {
