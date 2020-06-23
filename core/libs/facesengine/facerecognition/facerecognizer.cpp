@@ -58,6 +58,16 @@ public:
           svm(cv::ml::SVM::create()),
           tree(128)
     {
+        QFileInfo svmWeightsFile(svmFile);
+        if (svmWeightsFile.exists())
+        {
+            svm = cv::ml::SVM::load(svmFile.toStdString());
+        }
+        else
+        {
+            svm = cv::ml::SVM::create();
+        }
+
         // use linear mapping
         svm->setKernel(cv::ml::SVM::LINEAR);
 
@@ -78,6 +88,7 @@ public:
     ~Private()
     {
         knn->save(knnFile.toStdString());
+        svm->save(svmFile.toStdString());
 
         delete extractor;
     }
@@ -108,7 +119,9 @@ public:
     QHash<QString, QVector<Identity> > faceLibrary;
     QVector<QString> labels;
 
+    // TODO put file names to Settings
     const QString knnFile = QLatin1String("knn.bin");
+    const QString svmFile = QLatin1String("svm.bin");
 
     KDTree tree;
 };
