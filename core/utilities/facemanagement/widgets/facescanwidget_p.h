@@ -64,6 +64,7 @@
 #include "dexpanderbox.h"
 #include "facedbaccess.h"
 #include "facedb.h"
+#include "facemanagementhelpdlg.h"
 
 namespace Digikam
 {
@@ -78,6 +79,7 @@ public:
           detectButton(nullptr),
           alreadyScannedBox(nullptr),
           reRecognizeButton(nullptr),
+          helpButton(nullptr),
           tabWidget(nullptr),
           albumSelectors(nullptr),
           accuracyInput(nullptr),
@@ -98,6 +100,7 @@ public:
     QRadioButton*     detectButton;
     SqueezedComboBox* alreadyScannedBox;
     QRadioButton*     reRecognizeButton;
+    QPushButton*      helpButton;
 
     QTabWidget*       tabWidget;
 
