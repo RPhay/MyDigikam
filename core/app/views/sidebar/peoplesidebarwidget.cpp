@@ -152,6 +152,15 @@ void PeopleSideBarWidget::setActive(bool active)
     if (active)
     {
         d->tagFolderView->setCurrentAlbums(QList<Album*>() << d->tagFolderView->currentAlbum());
+
+        if (d->firstVisit)
+        {
+            QString msg = i18n("Welcome to Face Management in DigiKam. "
+                        "If this is your first time using this feature, please consider "
+                        "using the Help Box in the Bottom Left Side Panel.");
+            emit signalNofificationError(msg, DNotificationWidget::Information);
+            d->firstVisit = false;
+        }
     }
 }
 
