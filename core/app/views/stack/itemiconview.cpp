@@ -144,8 +144,8 @@ ItemIconView::ItemIconView(QWidget* const parent, DModelFactory* const modelColl
     connect(d->fuzzySearchSideBar,SIGNAL(signalActive(bool)),
             this, SIGNAL(signalFuzzySidebarActive(bool)));
 
-    connect(d->fuzzySearchSideBar, SIGNAL(signalNofificationError(QString,int)),
-            this, SLOT(slotNofificationError(QString,int)));
+    connect(d->fuzzySearchSideBar, SIGNAL(signalNotificationError(QString,int)),
+            this, SLOT(slotNotificationError(QString,int)));
 
 #ifdef HAVE_MARBLE
     d->gpsSearchSideBar    = new GPSSearchSideBarWidget(d->leftSideBar,
@@ -168,8 +168,8 @@ ItemIconView::ItemIconView(QWidget* const parent, DModelFactory* const modelColl
     connect(d->peopleSideBar, SIGNAL(signalFindDuplicates(QList<TAlbum*>)),
             this, SLOT(slotNewDuplicatesSearch(QList<TAlbum*>)));
 
-    connect(d->peopleSideBar, SIGNAL(signalNofificationError(QString,int)),
-            this, SLOT(slotNofificationError(QString,int)));
+    connect(d->peopleSideBar, SIGNAL(signalNotificationError(QString,int)),
+            this, SLOT(slotNotificationError(QString,int)));
 
     d->leftSideBarWidgets << d->peopleSideBar;
 
