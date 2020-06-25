@@ -178,9 +178,24 @@ void FaceScanWidget::setupUi()
 
     QVBoxLayout* const optionLayout   = new QVBoxLayout;
 
+    QHBoxLayout* const scanOptionLayout = new QHBoxLayout;
+
     d->alreadyScannedBox              = new SqueezedComboBox;
     d->alreadyScannedBox->addSqueezedItem(i18nc("@label:listbox", "Skip images already scanned"),          FaceScanSettings::Skip);
     d->alreadyScannedBox->addSqueezedItem(i18nc("@label:listbox", "Scan again and merge results"),         FaceScanSettings::Merge);
+
+    QString buttonText;
+    d->helpButton = new QPushButton(QIcon::fromTheme(QLatin1String("help-browser")), buttonText);
+    d->helpButton->setToolTip(i18nc("@info","Help"));
+
+    connect(d->helpButton, &QPushButton::clicked, [](){
+        FaceManagementHelpDialog* helpBox = new FaceManagementHelpDialog(qApp->activeWindow());
+    });
+
+    scanOptionLayout->addWidget(d->alreadyScannedBox, 9);
+    scanOptionLayout->addWidget(d->helpButton, 1);
+
+    optionLayout->addLayout(scanOptionLayout);
 
 #ifdef ENABLE_DETECT_AND_RECOGNIZE
 
@@ -204,7 +219,6 @@ void FaceScanWidget::setupUi()
     d->reRecognizeButton->setToolTip(i18nc("@info", "Try again to recognize the people depicted\n"
                                                     "on marked but yet unconfirmed faces."));
 
-    optionLayout->addWidget(d->alreadyScannedBox);
     optionLayout->addWidget(d->detectButton);
 
 #ifdef ENABLE_DETECT_AND_RECOGNIZE
