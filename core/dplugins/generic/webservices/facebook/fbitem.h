@@ -50,7 +50,7 @@ public:
     {
         id.clear();
         name.clear();
-        profileURL = QStringLiteral("https://www.facebook.com");
+        profileURL = QLatin1String("https://www.facebook.com");
         uploadPerm = true;
     }
 

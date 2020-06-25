@@ -71,6 +71,6 @@ void digikamSetDebugFilterRules()
 {
 #ifdef Q_OS_QIN
     // Under Windows, always turn on all debug traces.
-    QLoggingCategory::setFilterRules(QStringLiteral("digikam.*=true"));
+    QLoggingCategory::setFilterRules(QLatin1String("digikam.*=true"));
 #endif
 }

@@ -105,23 +105,23 @@ void DConfigDlgMngr::initMaps()
 {
     if (s_changedMap()->isEmpty())
     {
-        s_changedMap()->insert(QStringLiteral("QCheckBox"),      SIGNAL(stateChanged(int)));
-        s_changedMap()->insert(QStringLiteral("QPushButton"),    SIGNAL(clicked(bool)));
-        s_changedMap()->insert(QStringLiteral("QRadioButton"),   SIGNAL(toggled(bool)));
-        s_changedMap()->insert(QStringLiteral("QGroupBox"),      SIGNAL(toggled(bool)));
-        s_changedMap()->insert(QStringLiteral("QComboBox"),      SIGNAL(activated(int)));
-        s_changedMap()->insert(QStringLiteral("QDateEdit"),      SIGNAL(dateChanged(QDate)));
-        s_changedMap()->insert(QStringLiteral("QTimeEdit"),      SIGNAL(timeChanged(QTime)));
-        s_changedMap()->insert(QStringLiteral("QDateTimeEdit"),  SIGNAL(dateTimeChanged(QDateTime)));
-        s_changedMap()->insert(QStringLiteral("QDial"),          SIGNAL(valueChanged(int)));
-        s_changedMap()->insert(QStringLiteral("QDoubleSpinBox"), SIGNAL(valueChanged(double)));
-        s_changedMap()->insert(QStringLiteral("QLineEdit"),      SIGNAL(textChanged(QString)));
-        s_changedMap()->insert(QStringLiteral("QSlider"),        SIGNAL(valueChanged(int)));
-        s_changedMap()->insert(QStringLiteral("QSpinBox"),       SIGNAL(valueChanged(int)));
-        s_changedMap()->insert(QStringLiteral("QTextEdit"),      SIGNAL(textChanged()));
-        s_changedMap()->insert(QStringLiteral("QTextBrowser"),   SIGNAL(sourceChanged(QString)));
-        s_changedMap()->insert(QStringLiteral("QPlainTextEdit"), SIGNAL(textChanged()));
-        s_changedMap()->insert(QStringLiteral("QTabWidget"),     SIGNAL(currentChanged(int)));
+        s_changedMap()->insert(QLatin1String("QCheckBox"),      SIGNAL(stateChanged(int)));
+        s_changedMap()->insert(QLatin1String("QPushButton"),    SIGNAL(clicked(bool)));
+        s_changedMap()->insert(QLatin1String("QRadioButton"),   SIGNAL(toggled(bool)));
+        s_changedMap()->insert(QLatin1String("QGroupBox"),      SIGNAL(toggled(bool)));
+        s_changedMap()->insert(QLatin1String("QComboBox"),      SIGNAL(activated(int)));
+        s_changedMap()->insert(QLatin1String("QDateEdit"),      SIGNAL(dateChanged(QDate)));
+        s_changedMap()->insert(QLatin1String("QTimeEdit"),      SIGNAL(timeChanged(QTime)));
+        s_changedMap()->insert(QLatin1String("QDateTimeEdit"),  SIGNAL(dateTimeChanged(QDateTime)));
+        s_changedMap()->insert(QLatin1String("QDial"),          SIGNAL(valueChanged(int)));
+        s_changedMap()->insert(QLatin1String("QDoubleSpinBox"), SIGNAL(valueChanged(double)));
+        s_changedMap()->insert(QLatin1String("QLineEdit"),      SIGNAL(textChanged(QString)));
+        s_changedMap()->insert(QLatin1String("QSlider"),        SIGNAL(valueChanged(int)));
+        s_changedMap()->insert(QLatin1String("QSpinBox"),       SIGNAL(valueChanged(int)));
+        s_changedMap()->insert(QLatin1String("QTextEdit"),      SIGNAL(textChanged()));
+        s_changedMap()->insert(QLatin1String("QTextBrowser"),   SIGNAL(sourceChanged(QString)));
+        s_changedMap()->insert(QLatin1String("QPlainTextEdit"), SIGNAL(textChanged()));
+        s_changedMap()->insert(QLatin1String("QTabWidget"),     SIGNAL(currentChanged(int)));
     }
 }
 
