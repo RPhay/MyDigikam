@@ -42,7 +42,7 @@ target_compile_definitions(core_libmd5_obj
 if(MSVC)
     target_compile_options(core_libmd5_obj PRIVATE /w)
 else()
-    target_compile_options(core_libmd5_obj PRIVATE -w -fPIC)
+    target_compile_options(core_libmd5_obj PRIVATE -w)
 endif()
 
 #------------------------------------------------------------------------------------
@@ -79,7 +79,7 @@ target_compile_definitions(core_libxmp_obj
 if(MSVC)
     target_compile_options(core_libxmp_obj PRIVATE /w)
 else()
-    target_compile_options(core_libxmp_obj PRIVATE -w -fPIC)
+    target_compile_options(core_libxmp_obj PRIVATE -w)
 endif()
 
 #------------------------------------------------------------------------------------
@@ -174,7 +174,7 @@ if(MSVC)
 
 else()
 
-    target_compile_options(core_libdng_obj PRIVATE -w -fPIC)
+    target_compile_options(core_libdng_obj PRIVATE -w)
 
 endif()
 

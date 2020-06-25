@@ -197,7 +197,7 @@ bool GalleryConfig::GalleryConfig::useOriginalImageAsFullImage() const
 
 void GalleryConfig::setFullResize(bool v)
 {
-    if (!isImmutable(QStringLiteral("fullResize")))
+    if (!isImmutable(QLatin1String("fullResize")))
         m_fullResize = v;
 }
 

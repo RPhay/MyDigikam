@@ -431,7 +431,7 @@ void PreviewLoadingTask::execute()
     }
     else if (continueQuery())
     {
-        qCWarning(DIGIKAM_GENERAL_LOG) << "Cannot extract preview for" << m_loadingDescription.filePath;
+        qCDebug(DIGIKAM_GENERAL_LOG) << "Cannot extract preview for" << m_loadingDescription.filePath;
     }
     else
     {
