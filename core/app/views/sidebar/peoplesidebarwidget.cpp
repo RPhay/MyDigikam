@@ -65,7 +65,8 @@ public:
         searchModificationHelper(nullptr),
         settingsWdg(nullptr),
         tagFolderView(nullptr),
-        tagSearchBar(nullptr)
+        tagSearchBar(nullptr),
+        firstVisit(true)
     {
     }
 
@@ -74,6 +75,7 @@ public:
     FaceScanWidget*           settingsWdg;
     TagFolderView*            tagFolderView;
     SearchTextBarDb*          tagSearchBar;
+    bool                      firstVisit;
 };
 
 PeopleSideBarWidget::PeopleSideBarWidget(QWidget* const parent,
