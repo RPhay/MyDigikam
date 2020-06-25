@@ -41,11 +41,17 @@ FaceManagementHelpDialog::FaceManagementHelpDialog(QWidget* const parent)
 {
     // should i set this to true? I'm allowing creation of multiple windows.
     setModal(false);
+    setSizePolicy(QSizePolicy::Policy::Preferred, QSizePolicy::Policy::Preferred);
     setWindowTitle(i18n("Face Management in DigiKam"));
 
     QGridLayout* mainLayout = new QGridLayout();
+    QTabWidget* tabWidget = new QTabWidget(this);
 
-    QLabel* const logo      = new QLabel();
+    // --- Information Page -------------------------------------------------------------
+
+    QWidget* infoPage = new QWidget();
+
+    QLabel* const logo      = new QLabel(infoPage);
 
     if (QApplication::applicationName() == QLatin1String("digikam"))
     {
@@ -56,9 +62,7 @@ FaceManagementHelpDialog::FaceManagementHelpDialog(QWidget* const parent)
         logo->setPixmap(QIcon::fromTheme(QLatin1String("showfoto")).pixmap(QSize(48,48)));
     }
 
-    // --------------------------------------------------------
-
-    QLabel* const header    = new QLabel();
+    QLabel* const header    = new QLabel(infoPage);
     header->setWordWrap(true);
     header->setText(i18n("<font size=\"5\">%1</font><br/><b>Version %2</b>"
                          "<p>%3</p><p><i>%4</i></p>",
@@ -67,27 +71,27 @@ FaceManagementHelpDialog::FaceManagementHelpDialog(QWidget* const parent)
                          DAboutData::digiKamSlogan(),
                          DAboutData::digiKamFamily()));
 
-    QLabel* introText = new QLabel();
+    QLabel* introText = new QLabel(infoPage);
     introText->setWordWrap(true);
-    introText->setText(i18n("<hr>The Face Workflow allows you to Detect and Recognize people "
-                        "in your photographs."));
+    introText->setText(i18n("<hr> The Face Workflow allows you to Detect and Recognize people "
+                            "in your photographs."));
 
-    QLabel* const faceDetectionHeader = new QLabel();
+    QLabel* const faceDetectionHeader = new QLabel(infoPage);
     faceDetectionHeader->setWordWrap(false);
     faceDetectionHeader->setText(i18n("<b>Face Detection</b>"));
 
-    QLabel* const faceDetection = new QLabel();
+    QLabel* const faceDetection = new QLabel(infoPage);
     faceDetection->setWordWrap(true);
     faceDetection->setText(i18n("Face Detection allows DigiKam to detect faces in your images. "
                                 "This step is required before being able to recognize faces. "
                                 "Use the \"Search In\" tab "
                                 "to restrict the scan to particular folders."));
 
-    QLabel* const faceRecognitionHeader = new QLabel();
+    QLabel* const faceRecognitionHeader = new QLabel(infoPage);
     faceRecognitionHeader->setWordWrap(false);
     faceRecognitionHeader->setText(i18n("<b>Face Recognition</b>"));
 
-    QLabel* const faceRecognition = new QLabel();
+    QLabel* const faceRecognition = new QLabel(infoPage);
     faceRecognition->setWordWrap(true);
     faceRecognition->setText(i18n("Face Recognition will automatically recognize people in your images. "
                                   "To use this, first manually identify a few Faces detected during "
@@ -96,21 +100,42 @@ FaceManagementHelpDialog::FaceManagementHelpDialog(QWidget* const parent)
     QString documentationLink = i18n(
             "https://docs.kde.org/trunk5/en/extragear-graphics/digikam/using-digikam.html#using-mainwindow-peopleview");
 
-    QLabel* const footerText = new QLabel();
+    QLabel* const footerText = new QLabel(infoPage);
     footerText->setOpenExternalLinks(true);
     footerText->setWordWrap(false);
     footerText->setText(i18n("<hr>For additional information, read the %1 \n"
                              "<br>To ask questions, use our mailing list: digikam-users@kde.org \n",
                              QString::fromLatin1("<a href='%1'>digiKam Online Handbook</a>").arg(documentationLink)));
 
-    mainLayout->addWidget(logo, 0, 0, 1, 1);
-    mainLayout->addWidget(header, 0, 1, 1, 1);
-    mainLayout->addWidget(introText, 1, 0, 1, 2);
-    mainLayout->addWidget(faceDetectionHeader,2, 0, 1, 1);
-    mainLayout->addWidget(faceDetection,2, 1, 1, 1);
-    mainLayout->addWidget(faceRecognitionHeader,3, 0, 1, 1);
-    mainLayout->addWidget(faceRecognition,3, 1, 1, 1);
-    mainLayout->addWidget(footerText, 4,0, 1, 2);
+    QGridLayout* infoPageLayout = new QGridLayout();
+    infoPageLayout->addWidget(logo, 0, 0, 1, 1);
+    infoPageLayout->addWidget(header, 0, 1, 1, 1);
+    infoPageLayout->addWidget(introText, 1, 0, 1, 2);
+    infoPageLayout->addWidget(faceDetectionHeader,2, 0, 1, 1);
+    infoPageLayout->addWidget(faceDetection,2, 1, 1, 1);
+    infoPageLayout->addWidget(faceRecognitionHeader,3, 0, 1, 1);
+    infoPageLayout->addWidget(faceRecognition,3, 1, 1, 1);
+    infoPageLayout->addWidget(footerText, 4,0, 1, 2);
+
+    infoPage->setLayout(infoPageLayout);
+
+    tabWidget->addTab(infoPage, i18n("Info"));
+
+    // --- Face Detection Page ----------------------------------------------------------
+
+    QWidget* faceDetectionPage = new QWidget();
+
+    QGridLayout* faceDetectionPageLayout = new QGridLayout();
+    faceDetectionPage->setLayout(faceDetectionPageLayout);
+    tabWidget->addTab(faceDetectionPage, i18n("Face Detection"));
+
+
+    // QLabel* testImage = new QLabel(infoPage);
+    // QPixmap image = QPixmap(i18n("/home/kartik/test.png"));
+    // image = image.scaled(QSize(400,400));
+    // testImage->setPixmap(image);
+    // pageLayout->addWidget(testImage, 2, 0, 1, 2);
+    mainLayout->addWidget(tabWidget, 0, 0);
     setLayout(mainLayout);
     setVisible(true);
 }
