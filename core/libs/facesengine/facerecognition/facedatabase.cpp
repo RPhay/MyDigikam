@@ -74,6 +74,20 @@ void FaceDatabase::registerLabel(const QString& label)
     d->query.exec();
 }
 
+int FaceDatabase::queryLabel(int id) const
+{
+    d->query.prepare(QLatin1String("SELECT label FROM identity WHERE id = :id"));
+    d->query.bindValue(QLatin1String(":id"), id);
+    d->query.exec();
+
+    if (d->query.size() == 1)
+    {
+        return d->query.value(0).toInt();
+    }
+
+    return -1;
+}
+
 }
 
 

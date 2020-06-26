@@ -39,6 +39,7 @@ public:
 public:
 
     void registerLabel(const QString& label);
+    int queryLabel(int id) const;
 
 private:
 
