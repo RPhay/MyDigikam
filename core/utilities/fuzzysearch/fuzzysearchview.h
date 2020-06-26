@@ -88,7 +88,7 @@ protected:
 
 Q_SIGNALS:
 
-    void signalNofificationError(const QString& message, int type);
+    void signalNotificationError(const QString& message, int type);
 
 private Q_SLOTS:
 

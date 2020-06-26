@@ -106,7 +106,7 @@ Q_SIGNALS:
     /**
      * To dispatch error message to temporized pop-up notification widget hosted with icon-view.
      */
-    void signalNofificationError(const QString& message, int type);
+    void signalNotificationError(const QString& message, int type);
 };
 
 } // namespace Digikam

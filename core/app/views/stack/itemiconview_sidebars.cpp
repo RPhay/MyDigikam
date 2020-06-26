@@ -81,7 +81,7 @@ void ItemIconView::nextRightSideBarTab()
     d->rightSideBar->activeNextTab();
 }
 
-void ItemIconView::slotNofificationError(const QString& message, int type)
+void ItemIconView::slotNotificationError(const QString& message, int type)
 {
     d->errorWidget->setMessageType((DNotificationWidget::MessageType)type);
     d->errorWidget->setText(message);
