@@ -496,7 +496,7 @@ void FaceRecognizer::saveIdentity(Identity& id)
     QJsonArray jsonFaceEmbedding = QJsonDocument::fromJson(id.attribute(QLatin1String("faceEmbedding")).toLatin1()).array();
     std::vector<float> recordedFaceEmbedding = FaceExtractor::decodeVector(jsonFaceEmbedding);
 
-    // TODO: assure that label is unique
+    // TODO: assign index as primary key for label
     int index = d->labels.indexOf(label);
 
     if (index < 0)

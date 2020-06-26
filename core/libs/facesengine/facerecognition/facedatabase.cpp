@@ -23,6 +23,7 @@
 #include "facedatabase.h"
 
 #include <QSqlDatabase>
+#include <QSqlQuery>
 #include <QDebug>
 
 namespace RecognitionTest
@@ -41,15 +42,21 @@ public:
         {
             qDebug() << "Open Face database";
         }
+
+        query.exec(QLatin1String("SET sql_notes = 0"));
+        query.exec(QLatin1String("CREATE TABLE IF NOT EXISTS create table identity (id int primary key, label varchar(20))"));
+        query.exec(QLatin1String("SET sql_notes = 1"));
     }
 
     ~Private()
     {
+        db.close();
     }
 
 public:
 
     QSqlDatabase db;
+    QSqlQuery    query;
 };
 
 
