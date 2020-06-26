@@ -403,11 +403,11 @@ int main(int argc, char** argv)
 
     //qDebug() << "L2 distance:";
     //benchmark.verifyTestSetL2Distance();
-    qDebug() << "SVM:";
-    benchmark.verifyTestSetSupportVectorMachine();
+    //qDebug() << "SVM:";
+    //benchmark.verifyTestSetSupportVectorMachine();
 
-    qDebug() << "KNN:";
-    benchmark.verifyTestKNN();
+    //qDebug() << "KNN:";
+    //benchmark.verifyTestKNN();
 }
 
 

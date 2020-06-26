@@ -32,15 +32,12 @@ class Q_DECL_HIDDEN FaceDatabase::Private
 {
 public:
     Private()
+        : db(QSqlDatabase::addDatabase(QLatin1String("QSQLITE")))
     {
-        db = QSqlDatabase::addDatabase(QLatin1String("QSQLITE"));
-        db.setHostName(QLatin1String("localhost"));
-        db.setDatabaseName(QLatin1String("testfacedb"));
-        db.setUserName(QLatin1String("admin"));
-        db.setPassword(QLatin1String("admin"));
-        if (db.open())
+        db.setDatabaseName(QLatin1String(":memory:"));
+        if (!db.open())
         {
-            qDebug() << "Open Face database";
+            qFatal("Unable to establish a database connection");
         }
 
         query.exec(QLatin1String("SET sql_notes = 0"));

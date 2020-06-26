@@ -39,6 +39,7 @@
 #include "dnnfacemodel.h"
 #include "digikam_debug.h"
 #include "faceextractor.h"
+#include "facedatabase.h"
 #include "kd_tree.h"
 //#include "dnndbscan.h"
 
@@ -125,6 +126,7 @@ public:
     const QString svmFile = QLatin1String("svm.bin");
 
     KDTree tree;
+    FaceDatabase database;
 };
 
 int FaceRecognizer::Private::trainSVM() const
