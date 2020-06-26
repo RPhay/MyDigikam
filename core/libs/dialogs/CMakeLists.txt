@@ -46,6 +46,7 @@ set(libdialogs_SRCS
     ${CMAKE_CURRENT_SOURCE_DIR}/dmessagebox.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/dsplashscreen.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/webbrowserdlg.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/facemanagementhelpdlg.cpp
 )
 
 # Used by digikamcore
