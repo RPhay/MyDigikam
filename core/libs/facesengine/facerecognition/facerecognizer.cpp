@@ -87,8 +87,15 @@ public:
 
     ~Private()
     {
-        knn->save(knnFile.toStdString());
-        svm->save(svmFile.toStdString());
+        if (knn->isTrained())
+        {
+            knn->save(knnFile.toStdString());
+        }
+
+        if (svm->isTrained())
+        {
+            svm->save(svmFile.toStdString());
+        }
 
         delete extractor;
     }

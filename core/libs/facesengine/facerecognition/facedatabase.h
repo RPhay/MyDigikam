@@ -38,7 +38,7 @@ public:
 
 public:
 
-
+    void registerLabel(const QString& label);
 
 private:
 
