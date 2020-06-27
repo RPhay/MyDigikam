@@ -330,7 +330,7 @@ void DIO::createJob(IOJobData* const data)
 
         foreach (const QUrl& url, data->sourceUrls())
         {
-            if (dirList.contains(url.adjusted(QUrl::QUrl::StripTrailingSlash).fileName()))
+            if (dirList.contains(url.adjusted(QUrl::StripTrailingSlash).fileName()))
             {
                 QPointer<QMessageBox> msgBox = new QMessageBox(QMessageBox::Warning,
                         i18n("File conflict"),
