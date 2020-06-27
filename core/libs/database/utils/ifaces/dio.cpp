@@ -336,7 +336,7 @@ void DIO::createJob(IOJobData* const data)
                         i18n("File conflict"),
                         i18n("Files or folders with the same name already exist "
                               "in the target folder.\n\n"
-                              "What action should be performed on a file conflict?"),
+                              "What action is applied in the event of a file conflict?"),
                         QMessageBox::Yes | QMessageBox::No | QMessageBox::Ok | QMessageBox::Cancel,
                         qApp->activeWindow());
 
