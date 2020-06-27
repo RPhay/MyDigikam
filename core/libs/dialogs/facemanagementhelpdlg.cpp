@@ -122,7 +122,7 @@ FaceManagementHelpDialog::FaceManagementHelpDialog(QWidget* const parent)
     QWidget*     faceDetectionPage       = new QWidget();
     QGridLayout* faceDetectionPageLayout = new QGridLayout();
 
-    QPixmap detectFaceOptionImage  = QPixmap(i18n("/home/kartik/detectFaces2.png"));
+    QPixmap detectFaceOptionImage  = QPixmap(i18n("/home/kartik/detectFacesImg.png"));
     detectFaceOptionImage = detectFaceOptionImage.scaled(QSize(350,170));
 
     QLabel* detectFaceOptionLabel  = new QLabel(faceDetectionPage);
@@ -199,8 +199,8 @@ FaceManagementHelpDialog::FaceManagementHelpDialog(QWidget* const parent)
                                   "people.<br>"));
 
     QLabel* identifyLabel        = new QLabel(faceRecogPage);
-    QMovie* identifyImage        = new QMovie(i18n("/home/kartik/tagFace.gif"));
-    identifyImage->setScaledSize(QSize(185,225));
+    QMovie* identifyImage        = new QMovie(i18n("/home/kartik/tagFacesImg.gif"));
+    identifyImage->setScaledSize(QSize(185,245));
     identifyLabel->setMovie(identifyImage);
     identifyImage->start();
     identifyLabel->setAlignment(Qt::AlignHCenter|Qt::AlignVCenter);
@@ -227,7 +227,7 @@ FaceManagementHelpDialog::FaceManagementHelpDialog(QWidget* const parent)
                                   "from the Settings Tab. You can also modify Recognition "
                                   "Accuracy, to find a balance between Accuracy and Speed."));
 
-    QPixmap workOnAllCoresImage  = QPixmap(i18n("/home/kartik/workOnAllCores.png"));
+    QPixmap workOnAllCoresImage  = QPixmap(i18n("/home/kartik/workOnAllCoresImg.png"));
     workOnAllCoresImage          = workOnAllCoresImage.scaled(QSize(445,170));
 
     QLabel* workOnAllCoresLabel  = new QLabel(faceRecogPage);
@@ -250,7 +250,7 @@ FaceManagementHelpDialog::FaceManagementHelpDialog(QWidget* const parent)
     QGridLayout* confirmFacesLayout = new QGridLayout();
 
     QLabel* overlayImgLabel = new QLabel(confirmFacesPage);
-    QPixmap overlayImg(i18n("/home/kartik/overlay.png"));
+    QPixmap overlayImg(i18n("/home/kartik/overlayImg.png"));
     overlayImg = overlayImg.scaled(QSize(185, 235));
     overlayImgLabel->setPixmap(overlayImg);
 
@@ -297,13 +297,14 @@ FaceManagementHelpDialog::FaceManagementHelpDialog(QWidget* const parent)
 
     QLabel* sortText        = new QLabel(confirmFacesPage);
     sortText->setWordWrap(true);
-    sortText->setText(i18n("By default, the Face Suggestions will appear mixed "
-                           "with already Confirmed Results. You can change this "
+    sortText->setText(i18n("By default, Faces are sorted by File Names, and hence "
+                           "Face Suggestions will appear mixed "
+                           "with already Confirmed Results.<br>You can change this "
                            "by modifying the Sort Items Role to \"By Face Type\". "
-                           "This can be accessed through the View Menu."));
+                           "This can be accessed through the View Menu.<br>"));
 
-    QMovie* sortGif         = new QMovie(i18n("/home/kartik/sortFaces.gif"));
-    sortGif->setScaledSize(QSize(425, 250));
+    QMovie* sortGif         = new QMovie(i18n("/home/kartik/sortFacesImg.gif"));
+    sortGif->setScaledSize(QSize(450, 250));
     QLabel* sortGifLabel    = new QLabel(confirmFacesPage);
     sortGifLabel->setMovie(sortGif);
     sortGif->start();
