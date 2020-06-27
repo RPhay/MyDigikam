@@ -37,10 +37,16 @@
 #include "dinfointerface.h"
 #include "ditemslist.h"
 
+// C++ includes
+
+#include <memory>
+
 using namespace Digikam;
 
 namespace DigikamGenericFileCopyPlugin
 {
+
+using ChangeImagePropertiesPtr = std::shared_ptr<struct ChangeImageProperties>;
 
 class FCExportWidget: public QWidget
 {
@@ -85,9 +91,17 @@ public:
      */
     void setTargetUrl(const QUrl& url);
 
+    /**
+     * @brief collects all change settings that should be executed to the images collection
+     * @return properties or nullptr in case of no change necessary
+     */
+    ChangeImagePropertiesPtr getImageChangeProperties() const;
+
 private Q_SLOTS:
 
     void slotLabelUrlChanged();
+
+    void slotFileCopyButtonChanged(bool enabled);
 
 Q_SIGNALS:
 

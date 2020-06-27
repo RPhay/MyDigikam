@@ -234,7 +234,8 @@ void FCExportWindow::slotCopy()
     d->thread->createCopyJobs(d->exportWidget->imagesList()->imageUrls(),
                               d->exportWidget->targetUrl(),
                               d->exportWidget->targetButtonGroup()->checkedId(),
-                              d->exportWidget->overwriteBox()->isChecked());
+                              d->exportWidget->overwriteBox()->isChecked(),
+                              d->exportWidget->getImageChangeProperties());
 
     d->thread->start();
 }

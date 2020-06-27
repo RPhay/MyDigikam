@@ -38,6 +38,8 @@ using namespace Digikam;
 namespace DigikamGenericFileCopyPlugin
 {
 
+using ChangeImagePropertiesPtr = std::shared_ptr<struct ChangeImageProperties>;
+
 class FCTask : public ActionJob
 {
     Q_OBJECT
@@ -55,7 +57,9 @@ public:
 
     explicit FCTask(const QUrl& srcUrl,
                     const QUrl& dstUrl,
-                    int behavior, bool overwrite);
+                    int behavior,
+                    bool overwrite,
+                    const ChangeImagePropertiesPtr& imageProp);
     ~FCTask();
 
 Q_SIGNALS:
@@ -67,6 +71,7 @@ protected:
     void run();
 
 private:
+    bool imageResize(const ChangeImagePropertiesPtr& imageProp, const QString& orgUrl, const QString& destName, QString& err);
 
     class Private;
     Private* const d;

@@ -38,6 +38,8 @@ using namespace Digikam;
 namespace DigikamGenericFileCopyPlugin
 {
 
+using ChangeImagePropertiesPtr = std::shared_ptr<struct ChangeImageProperties>;
+
 class FCThread : public ActionThreadBase
 {
     Q_OBJECT
@@ -49,7 +51,9 @@ public:
 
     void createCopyJobs(const QList<QUrl>& itemsList,
                         const QUrl& dstUrl,
-                        int behavior, bool overwrite);
+                        int behavior,
+                        bool overwrite,
+                        const ChangeImagePropertiesPtr& imageProp);
     void cancel();
 
 Q_SIGNALS:

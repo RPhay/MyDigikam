@@ -23,17 +23,25 @@
  * ============================================================ */
 
 #include "fctask.h"
+#include "fcsettings.h"
 
 // Qt includes
 
 #include <QDir>
 #include <QFile>
 
+// KDE includes
+
+#include <klocalizedstring.h>
+
 // Local includes
 
 #include "digikam_debug.h"
 #include "digikam_config.h"
 #include "dfileoperations.h"
+#include "dimg.h"
+#include "previewloadthread.h"
+#include "dmetadata.h"
 
 namespace DigikamGenericFileCopyPlugin
 {
@@ -53,19 +61,23 @@ public:
     int  behavior;
     bool overwrite;
 
+    ChangeImagePropertiesPtr changeImageProperties;
 };
 
 FCTask::FCTask(const QUrl& srcUrl,
                const QUrl& dstUrl,
-               int behavior, bool overwrite)
+               int behavior,
+               bool overwrite,
+               const ChangeImagePropertiesPtr& imageProp)
     : ActionJob(),
       d(new Private)
 {
-    d->srcUrl    = srcUrl;
-    d->dstUrl    = dstUrl;
-    d->behavior  = behavior;
-    d->overwrite = overwrite;
+    d->srcUrl                = srcUrl;
+    d->dstUrl                = dstUrl;
+    d->behavior              = behavior;
+    d->overwrite             = overwrite;
 
+    d->changeImageProperties = imageProp;
 }
 
 FCTask::~FCTask()
@@ -95,8 +107,21 @@ void FCTask::run()
 
     if      (d->behavior == CopyFile)
     {
-        ok = QFile::copy(d->srcUrl.toLocalFile(),
-                         dest.toLocalFile());
+        if (d->changeImageProperties != nullptr /*adjust image properties is set*/)
+        {
+            QString errString;
+            ok = imageResize(d->changeImageProperties, d->srcUrl.toLocalFile(), dest.toLocalFile(), errString);
+
+            if (!ok)
+            {
+                qCDebug(DIGIKAM_DPLUGIN_GENERIC_LOG) << "Change image error: " << errString;
+            }
+        }
+        else
+        {
+            ok = QFile::copy(d->srcUrl.toLocalFile(),
+                             dest.toLocalFile());
+        }
     }
     else if ((d->behavior == FullSymLink) ||
              (d->behavior == RelativeSymLink))
@@ -132,6 +157,131 @@ void FCTask::run()
     }
 
     emit signalDone();
+}
+
+bool FCTask::imageResize(const ChangeImagePropertiesPtr& imageProp, const QString& orgUrl, const QString& destName, QString& err)
+{
+    QFileInfo fi(orgUrl);
+
+    if (!fi.exists() || !fi.isReadable())
+    {
+        err = i18n("Error opening input file");
+        return false;
+    }
+
+    QFileInfo tmp(destName);
+    QFileInfo tmpDir(tmp.dir().absolutePath());
+
+    qCDebug(DIGIKAM_DPLUGIN_GENERIC_LOG) << "tmpDir: " << tmp.dir().absolutePath();
+
+    if (!tmpDir.exists() || !tmpDir.isWritable())
+    {
+        err = i18n("Error opening temporary folder");
+        return false;
+    }
+
+    DImg img = PreviewLoadThread::loadFastSynchronously(orgUrl, imageProp->imageSize);
+
+    if (img.isNull())
+    {
+        img.load(orgUrl);
+    }
+
+    uint sizeFactor = imageProp->imageSize;
+
+    if (!img.isNull())
+    {
+        uint w = img.width();
+        uint h = img.height();
+
+        if ((w > sizeFactor) || (h > sizeFactor))
+        {
+            if (w > h)
+            {
+                h = (uint)((double)(h * sizeFactor) / w);
+
+                if (h == 0)
+                {
+                    h = 1;
+                }
+
+                w = sizeFactor;
+
+                Q_ASSERT(h <= sizeFactor);
+            }
+            else
+            {
+                w = (uint)((double)(w * sizeFactor) / h);
+
+                if (w == 0)
+                {
+                    w = 1;
+                }
+
+                h = sizeFactor;
+
+                Q_ASSERT(w <= sizeFactor);
+            }
+
+            DImg scaledImg = img.smoothScale(w, h, Qt::IgnoreAspectRatio);
+
+            if ((scaledImg.width() != w) || (scaledImg.height() != h))
+            {
+                err = i18n("Cannot resize image. Aborting.");
+                return false;
+            }
+
+            img = scaledImg;
+        }
+
+        if (imageProp->imageFormat == ImageFormat::JPEG)
+        {
+            img.setAttribute(QLatin1String("quality"), imageProp->imageCompression);
+
+            if (!img.save(destName, QLatin1String("JPEG")))
+            {
+                err = i18n("Cannot save resized image (JPEG). Aborting.");
+                return false;
+            }
+        }
+        else if (imageProp->imageFormat == ImageFormat::PNG)
+        {
+            if (!img.save(destName, QLatin1String("PNG")))
+            {
+                err = i18n("Cannot save resized image (PNG). Aborting.");
+                return false;
+            }
+        }
+
+        DMetadata meta;
+
+        if (!meta.load(destName))
+        {
+            return false;
+        }
+
+        if (imageProp->removeMetadata)
+        {
+            meta.clearExif();
+            meta.clearIptc();
+            meta.clearXmp();
+        }
+        else
+        {
+            meta.setItemOrientation(MetaEngine::ORIENTATION_NORMAL);
+        }
+
+        meta.setMetadataWritingMode((int)DMetadata::WRITE_TO_FILE_ONLY);
+
+        if (!meta.save(destName))
+        {
+            return false;
+        }
+
+        return true;
+    }
+
+    return false;
 }
 
 } // namespace DigikamGenericFileCopyPlugin
