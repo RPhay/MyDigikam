@@ -72,10 +72,11 @@ void CopyOrMoveJob::run()
 
         QFileInfo srcInfo(srcUrl.toLocalFile());
         QDir dstDir(m_data->destUrl().toLocalFile());
+        QString srcName = srcInfo.isFile() ? srcInfo.fileName() : srcInfo.dir().dirName();
 
         if (!srcInfo.exists())
         {
-            emit signalError(i18n("File/Folder %1 does not exist anymore", srcInfo.baseName()));
+            emit signalError(i18n("File/Folder %1 does not exist anymore", srcName));
             continue;
         }
 
@@ -87,8 +88,7 @@ void CopyOrMoveJob::run()
 
         // Checking if there is a file with the same name in destination folder
 
-        QString destenationName = srcInfo.isFile() ? srcInfo.fileName() : srcInfo.dir().dirName();
-        QString destenation     = dstDir.path() + QLatin1Char('/') + destenationName;
+        QString destenation = dstDir.path() + QLatin1Char('/') + srcName;
 
         if (QFileInfo::exists(destenation))
         {
@@ -103,7 +103,7 @@ void CopyOrMoveJob::run()
                     if (!DTrash::deleteImage(destenation, m_data->jobTime()))
                     {
                         emit signalError(i18n("Could not move image %1 to collection trash",
-                                              QDir::toNativeSeparators(destenation)));
+                                              srcName));
 
                         continue;
                     }
@@ -125,7 +125,7 @@ void CopyOrMoveJob::run()
             else
             {
                 emit signalError(i18n("A file or folder named %1 already exists in %2",
-                                      srcInfo.baseName(), QDir::toNativeSeparators(dstDir.path())));
+                                      srcName, QDir::toNativeSeparators(dstDir.path())));
 
                 continue;
             }
@@ -154,8 +154,7 @@ void CopyOrMoveJob::run()
                         }
 
                         emit signalError(i18n("Could not move folder %1 to album %2",
-                                              QDir::toNativeSeparators(srcDir.path()),
-                                              QDir::toNativeSeparators(dstDir.path())));
+                                              srcName, QDir::toNativeSeparators(dstDir.path())));
 
                         continue;
                     }
@@ -163,8 +162,7 @@ void CopyOrMoveJob::run()
                     {
                         emit signalError(i18n("Could not move folder %1 to album %2. "
                                               "The folder %1 was copied as well to album %2",
-                                              QDir::toNativeSeparators(srcDir.path()),
-                                              QDir::toNativeSeparators(dstDir.path())));
+                                              srcName, QDir::toNativeSeparators(dstDir.path())));
                     }
                 }
             }
@@ -173,8 +171,7 @@ void CopyOrMoveJob::run()
                 if (!DFileOperations::renameFile(srcInfo.filePath(), destenation))
                 {
                     emit signalError(i18n("Could not move file %1 to album %2",
-                                          srcInfo.filePath(),
-                                          QDir::toNativeSeparators(dstDir.path())));
+                                          srcName, QDir::toNativeSeparators(dstDir.path())));
 
                     continue;
                 }
@@ -197,8 +194,7 @@ void CopyOrMoveJob::run()
                     }
 
                     emit signalError(i18n("Could not copy folder %1 to album %2",
-                                          QDir::toNativeSeparators(srcDir.path()),
-                                          QDir::toNativeSeparators(dstDir.path())));
+                                          srcName, QDir::toNativeSeparators(dstDir.path())));
 
                     continue;
                 }
@@ -208,8 +204,7 @@ void CopyOrMoveJob::run()
                 if (!DFileOperations::copyFile(srcInfo.filePath(), destenation))
                 {
                     emit signalError(i18n("Could not copy file %1 to album %2",
-                                          QDir::toNativeSeparators(srcInfo.path()),
-                                          QDir::toNativeSeparators(dstDir.path())));
+                                          srcName, QDir::toNativeSeparators(dstDir.path())));
 
                     continue;
                 }
