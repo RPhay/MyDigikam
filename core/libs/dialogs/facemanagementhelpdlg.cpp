@@ -245,6 +245,84 @@ FaceManagementHelpDialog::FaceManagementHelpDialog(QWidget* const parent)
 
     tabWidget->addTab(faceRecogPage, i18n("Face Recognition"));
 
+    // --- Confirm Faces ----------------------------------------------------------------
+    QWidget*     confirmFacesPage   = new QWidget();
+    QGridLayout* confirmFacesLayout = new QGridLayout();
+
+    QLabel* overlayImgLabel = new QLabel(confirmFacesPage);
+    QPixmap overlayImg(i18n("/home/kartik/overlay.png"));
+    overlayImg = overlayImg.scaled(QSize(185, 235));
+    overlayImgLabel->setPixmap(overlayImg);
+
+    QLabel* overlayText     = new QLabel(confirmFacesPage);
+    overlayText->setWordWrap(true);
+    overlayText->setText(i18n("The results of Facial Recognition appear in the form "
+                              "of Unconfirmed Results. These results will show up in "
+                              "the Unconfirmed Tag, as well as in the Tag of the person "
+                              "suggested for each face. <br>"
+                              "Hovering over Unconfirmed Faces will display a few options: <br> "
+                              ""));
+    overlayText->setAlignment(Qt::AlignTop);
+
+    QLabel* confirmIcon     = new QLabel(confirmFacesPage);
+    confirmIcon->setPixmap(QIcon::fromTheme(QLatin1String("dialog-ok-apply")).pixmap(QSize(20,20)));
+    confirmIcon->setAlignment(Qt::AlignTop);
+
+    QLabel* confirmText     = new QLabel(confirmFacesPage);
+    confirmText->setWordWrap(true);
+    confirmText->setText(i18n("The Confirm Button allows you to confirm the suggestion. "
+                              "This would assign the suggested name to the face"));
+    confirmText->setAlignment(Qt::AlignTop);
+
+    QLabel* rejectIcon      = new QLabel(confirmFacesPage);
+    rejectIcon->setPixmap(QIcon::fromTheme(QLatin1String("list-remove")).pixmap(QSize(20,20)));
+    rejectIcon->setAlignment(Qt::AlignTop);
+
+    QLabel* rejectText      = new QLabel(confirmFacesPage);
+    rejectText->setWordWrap(true);
+    rejectText->setText(i18n("Use the Reject Button, if the suggestion is incorrect. "
+                              "This would move the Face back to Unknown."));
+    rejectText->setAlignment(Qt::AlignTop);
+
+
+    QLabel* deleteIcon      = new QLabel(confirmFacesPage);
+    deleteIcon->setPixmap(QIcon::fromTheme(QLatin1String("window-close")).pixmap(QSize(20,20)));
+    deleteIcon->setAlignment(Qt::AlignTop);
+
+    QLabel* deleteText      = new QLabel(confirmFacesPage);
+    deleteText->setWordWrap(true);
+    deleteText->setText(i18n("Use the delete Button, if the suggestion is not a face. "
+                             "This will delete the Face Region from the Database."));
+    deleteText->setAlignment(Qt::AlignTop);
+
+    QLabel* sortText        = new QLabel(confirmFacesPage);
+    sortText->setWordWrap(true);
+    sortText->setText(i18n("By default, the Face Suggestions will appear mixed "
+                           "with already Confirmed Results. You can change this "
+                           "by modifying the Sort Items Role to \"By Face Type\". "
+                           "This can be accessed through the View Menu."));
+
+    QMovie* sortGif         = new QMovie(i18n("/home/kartik/sortFaces.gif"));
+    sortGif->setScaledSize(QSize(425, 250));
+    QLabel* sortGifLabel    = new QLabel(confirmFacesPage);
+    sortGifLabel->setMovie(sortGif);
+    sortGif->start();
+
+    confirmFacesLayout->addWidget(overlayImgLabel, 0, 0, 4, 1);
+    confirmFacesLayout->addWidget(overlayText,     0, 1, 1, 7);
+    confirmFacesLayout->addWidget(confirmIcon,     1, 1, 1, 1);
+    confirmFacesLayout->addWidget(confirmText,     1, 2, 1, 6);
+    confirmFacesLayout->addWidget(rejectIcon,      2, 1, 1, 1);
+    confirmFacesLayout->addWidget(rejectText,      2, 2, 1, 6);
+    confirmFacesLayout->addWidget(deleteIcon,      3, 1, 1, 1);
+    confirmFacesLayout->addWidget(deleteText,      3, 2, 1, 6);
+    confirmFacesLayout->addWidget(sortText,        4, 0, 1, 3);
+    confirmFacesLayout->addWidget(sortGifLabel,    4, 3, 1, 5);
+
+    confirmFacesPage->setLayout(confirmFacesLayout);
+
+    tabWidget->addTab(confirmFacesPage, i18n("Confirm Faces"));
+
     // ----------------------------------------------------------------------------------
 
     mainLayout->addWidget(tabWidget, 0, 0);
