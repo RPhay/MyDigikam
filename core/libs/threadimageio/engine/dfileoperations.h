@@ -53,14 +53,22 @@ public:
                                 bool ignoreSettings = false);
 
     /**
-     * Open file urls to default application relevant of file type-mimes desktop configuration.
+     * Open file urls to default application relevant of
+     * file type-mimes desktop configuration.
      */
     static void openFilesWithDefaultApplication(const QList<QUrl>& urls);
 
     /**
-     * Get unique file url if file exist by appending a counter suffix or return original url.
+     * Get unique file url if file exist by appending a counter suffix
+     * or return original url.
      */
     static QUrl getUniqueFileUrl(const QUrl& orgUrl, bool* const newurl = nullptr);
+
+    /**
+     * Get unique folder url if folder exist by appending a counter suffix
+     * or return original url.
+     */
+    static QUrl getUniqueFolderUrl(const QUrl& orgUrl);
 
     /**
      * Open system file manager and select the item.

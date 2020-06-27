@@ -42,6 +42,7 @@ public:
 
     explicit Private()
       : operation(Unknown),
+        fileConflict(Continue),
         overwrite(false),
         srcAlbum(nullptr),
         destAlbum(nullptr),
@@ -51,6 +52,7 @@ public:
     }
 
     int                operation;
+    int                fileConflict;
 
     bool               overwrite;
 
@@ -194,6 +196,11 @@ void IOJobData::setProgressId(const QString& id)
     d->progressId = id;
 }
 
+void IOJobData::setFileConflict(int fc)
+{
+    d->fileConflict = fc;
+}
+
 int IOJobData::operation() const
 {
     return d->operation;
@@ -202,6 +209,11 @@ int IOJobData::operation() const
 bool IOJobData::overwrite() const
 {
     return d->overwrite;
+}
+
+int IOJobData::fileConflict() const
+{
+    return d->fileConflict;
 }
 
 PAlbum* IOJobData::srcAlbum() const

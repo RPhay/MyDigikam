@@ -92,9 +92,43 @@ void CopyOrMoveJob::run()
 
         if (QFileInfo::exists(destenation))
         {
-            emit signalError(i18n("A file or folder named %1 already exists in %2",
-                                  srcInfo.baseName(), QDir::toNativeSeparators(dstDir.path())));
-            continue;
+            if      (m_data->fileConflict() == IOJobData::Overwrite)
+            {
+                if (srcInfo.isDir())
+                {
+                    continue;
+                }
+                else
+                {
+                    if (!DTrash::deleteImage(destenation, m_data->jobTime()))
+                    {
+                        emit signalError(i18n("Could not move image %1 to collection trash",
+                                              QDir::toNativeSeparators(destenation)));
+
+                        continue;
+                    }
+                }
+            }
+            else if (m_data->fileConflict() == IOJobData::AutoRename)
+            {
+                QUrl destUrl = QUrl::fromLocalFile(destenation);
+
+                if (srcInfo.isDir())
+                {
+                    destenation = DFileOperations::getUniqueFolderUrl(destUrl).toLocalFile();
+                }
+                else
+                {
+                    destenation = DFileOperations::getUniqueFileUrl(destUrl).toLocalFile();
+                }
+            }
+            else
+            {
+                emit signalError(i18n("A file or folder named %1 already exists in %2",
+                                      srcInfo.baseName(), QDir::toNativeSeparators(dstDir.path())));
+
+                continue;
+            }
         }
 
         if ((m_data->operation() == IOJobData::MoveAlbum) ||

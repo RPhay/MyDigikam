@@ -28,7 +28,11 @@
 
 // Qt includes
 
+#include <QDir>
 #include <QFileInfo>
+#include <QMessageBox>
+#include <QApplication>
+#include <QAbstractButton>
 
 // KDE includes
 
@@ -313,6 +317,63 @@ void DIO::createJob(IOJobData* const data)
         return;
     }
 
+    const int operation = data->operation();
+
+    if ((operation == IOJobData::CopyImage) || (operation == IOJobData::CopyAlbum) ||
+        (operation == IOJobData::CopyFiles) || (operation == IOJobData::MoveImage) ||
+        (operation == IOJobData::MoveAlbum) || (operation == IOJobData::MoveFiles))
+    {
+        QDir dir(data->destUrl().toLocalFile());
+        const QStringList& dirList = dir.entryList(QDir::Dirs    |
+                                                   QDir::Files   |
+                                                   QDir::NoDotAndDotDot);
+
+        foreach (const QUrl& url, data->sourceUrls())
+        {
+            if (dirList.contains(url.adjusted(QUrl::QUrl::StripTrailingSlash).fileName()))
+            {
+                QPointer<QMessageBox> msgBox = new QMessageBox(QMessageBox::Warning,
+                        i18n("File conflict"),
+                        i18n("Files or folders with the same name already exist "
+                              "in the target folder.\n\n"
+                              "What action should be performed on a file conflict?"),
+                        QMessageBox::Yes | QMessageBox::No | QMessageBox::Ok | QMessageBox::Cancel,
+                        qApp->activeWindow());
+
+                msgBox->button(QMessageBox::Yes)->setText(i18n("Rename automatically"));
+                msgBox->button(QMessageBox::Yes)->setIcon(QIcon::fromTheme(QLatin1String("document-edit")));
+                msgBox->button(QMessageBox::No)->setText(i18n("Overwrite automatically"));
+                msgBox->button(QMessageBox::No)->setIcon(QIcon::fromTheme(QLatin1String("edit-copy")));
+                msgBox->button(QMessageBox::Ok)->setText(i18n("Continue"));
+                msgBox->button(QMessageBox::Ok)->setIcon(QIcon::fromTheme(QLatin1String("go-next")));
+
+                if ((operation == IOJobData::CopyAlbum) || (operation == IOJobData::MoveAlbum))
+                {
+                    msgBox->button(QMessageBox::No)->hide();
+                }
+
+                int result = msgBox->exec();
+                delete msgBox;
+
+                if      (result == QMessageBox::Cancel)
+                {
+                    delete data;
+                    return;
+                }
+                else if (result == QMessageBox::Yes)
+                {
+                    data->setFileConflict(IOJobData::AutoRename);
+                }
+                else if (result == QMessageBox::No)
+                {
+                    data->setFileConflict(IOJobData::Overwrite);
+                }
+
+                break;
+            }
+        }
+    }
+
     ProgressItem* item = nullptr;
     QString itemString = getItemString(data);
 
@@ -512,8 +573,9 @@ void DIO::slotOneProccessed(const QUrl& url)
 
     // Scan folders for changes
 
-    if (operation == IOJobData::Delete || operation == IOJobData::Trash ||
-        operation == IOJobData::MoveAlbum)
+    if ((operation == IOJobData::Trash)   ||
+        (operation == IOJobData::Delete)  ||
+        (operation == IOJobData::MoveAlbum))
     {
         PAlbum* const album = data->srcAlbum();
         QString scanPath;
@@ -536,9 +598,9 @@ void DIO::slotOneProccessed(const QUrl& url)
         ScanController::instance()->scheduleCollectionScanRelaxed(scanPath);
     }
 
-    if (operation == IOJobData::CopyImage || operation == IOJobData::CopyAlbum ||
-        operation == IOJobData::CopyFiles || operation == IOJobData::MoveImage ||
-        operation == IOJobData::MoveAlbum || operation == IOJobData::MoveFiles)
+    if ((operation == IOJobData::CopyImage) || (operation == IOJobData::CopyAlbum) ||
+        (operation == IOJobData::CopyFiles) || (operation == IOJobData::MoveImage) ||
+        (operation == IOJobData::MoveAlbum) || (operation == IOJobData::MoveFiles))
     {
         QString scanPath = data->destUrl().toLocalFile();
         ScanController::instance()->scheduleCollectionScanRelaxed(scanPath);

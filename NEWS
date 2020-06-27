@@ -789,4 +789,5 @@ BUGFIXES:
 747 ==> 423033 - Search for File Size Greater Than 95MB doesn't work and increments must be 0.5MB.
 748 ==> 423307 - Warnings on face detection with movies.
 749 ==> 422504 - All tagged images does not show in display when names starts with number.
-750 ==> 
+750 ==> 381625 - Copying/Moving files between albums does not give Overwrite/Rename/Cancel options.
+751 ==> 

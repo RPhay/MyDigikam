@@ -62,6 +62,13 @@ public:
         Empty
     };
 
+    enum FileConflict
+    {
+        Continue = 0,
+        AutoRename,
+        Overwrite
+    };
+
 public:
 
     explicit IOJobData(int operation,
@@ -98,9 +105,13 @@ public:
 
     void               setProgressId(const QString& id);
 
+    void               setFileConflict(int fc);
+
     int                operation()                          const;
 
     bool               overwrite()                          const;
+
+    int                fileConflict()                       const;
 
     PAlbum*            srcAlbum()                           const;
     PAlbum*            destAlbum()                          const;
