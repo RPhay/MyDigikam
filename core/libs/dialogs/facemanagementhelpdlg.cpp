@@ -52,15 +52,8 @@ FaceManagementHelpDialog::FaceManagementHelpDialog(QWidget* const parent)
     QWidget* infoPage = new QWidget();
 
     QLabel* const logo      = new QLabel(infoPage);
-
-    if (QApplication::applicationName() == QLatin1String("digikam"))
-    {
-        logo->setPixmap(QIcon::fromTheme(QLatin1String("digikam")).pixmap(QSize(48,48)));
-    }
-    else
-    {
-        logo->setPixmap(QIcon::fromTheme(QLatin1String("showfoto")).pixmap(QSize(48,48)));
-    }
+    logo->setAlignment(Qt::AlignHCenter | Qt::AlignVCenter);
+    logo->setPixmap(QIcon::fromTheme(QLatin1String("digikam")).pixmap(QSize(100,100)));
 
     QLabel* const header    = new QLabel(infoPage);
     header->setWordWrap(true);
@@ -77,25 +70,23 @@ FaceManagementHelpDialog::FaceManagementHelpDialog(QWidget* const parent)
                             "in your photographs."));
 
     QLabel* const faceDetectionHeader = new QLabel(infoPage);
+    faceDetectionHeader->setAlignment(Qt::AlignHCenter | Qt::AlignVCenter);
     faceDetectionHeader->setWordWrap(false);
     faceDetectionHeader->setText(i18n("<b>Face Detection</b>"));
 
     QLabel* const faceDetection = new QLabel(infoPage);
     faceDetection->setWordWrap(true);
     faceDetection->setText(i18n("Face Detection allows DigiKam to detect faces in your images. "
-                                "This step is required before being able to recognize faces. "
-                                "Use the \"Search In\" tab "
-                                "to restrict the scan to particular folders."));
+                                "This step is required before being able to recognize faces."));
 
     QLabel* const faceRecognitionHeader = new QLabel(infoPage);
     faceRecognitionHeader->setWordWrap(false);
+    faceRecognitionHeader->setAlignment(Qt::AlignHCenter | Qt::AlignVCenter);
     faceRecognitionHeader->setText(i18n("<b>Face Recognition</b>"));
 
     QLabel* const faceRecognition = new QLabel(infoPage);
     faceRecognition->setWordWrap(true);
-    faceRecognition->setText(i18n("Face Recognition will automatically recognize people in your images. "
-                                  "To use this, first manually identify a few Faces detected during "
-                                  "Face Detection. These faces should appear in the Unknown Category. "));
+    faceRecognition->setText(i18n("Face Recognition will automatically recognize people in your images. "));
 
     QString documentationLink = i18n(
             "https://docs.kde.org/trunk5/en/extragear-graphics/digikam/using-digikam.html#using-mainwindow-peopleview");
@@ -115,7 +106,10 @@ FaceManagementHelpDialog::FaceManagementHelpDialog(QWidget* const parent)
     infoPageLayout->addWidget(faceDetection,2, 1, 1, 1);
     infoPageLayout->addWidget(faceRecognitionHeader,3, 0, 1, 1);
     infoPageLayout->addWidget(faceRecognition,3, 1, 1, 1);
-    infoPageLayout->addWidget(footerText, 4,0, 1, 2);
+    infoPageLayout->addWidget(footerText, 4, 0, 1, 2);
+    infoPageLayout->setRowStretch(1, 1);
+    infoPageLayout->setRowStretch(2, 1);
+    infoPageLayout->setRowStretch(3, 1);
 
     infoPage->setLayout(infoPageLayout);
 
