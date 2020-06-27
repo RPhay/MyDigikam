@@ -4,9 +4,9 @@
 # Redistribution and use is allowed according to the terms of the BSD license.
 # For details see the accompanying COPYING-CMAKE-SCRIPTS file.
 
-install(FILES pine-pattern.png 
+install(FILES pine-pattern.png
               wood-pattern.png
-              paper-pattern.png 
+              paper-pattern.png
               parque-pattern.png
               ice-pattern.png
               leaf-pattern.png
