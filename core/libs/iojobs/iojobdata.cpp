@@ -43,7 +43,6 @@ public:
     explicit Private()
       : operation(Unknown),
         fileConflict(Continue),
-        overwrite(false),
         srcAlbum(nullptr),
         destAlbum(nullptr),
         jobTime(QDateTime::currentDateTime()),
@@ -53,8 +52,6 @@ public:
 
     int                operation;
     int                fileConflict;
-
-    bool               overwrite;
 
     PAlbum*            srcAlbum;
     PAlbum*            destAlbum;
@@ -140,7 +137,11 @@ IOJobData::IOJobData(int operation,
     : d(new Private)
 {
     d->operation = operation;
-    d->overwrite = overwrite;
+
+    if (overwrite)
+    {
+        d->fileConflict = Overwrite;
+    }
 
     setItemInfos(QList<ItemInfo>() << info);
 
@@ -204,11 +205,6 @@ void IOJobData::setFileConflict(int fc)
 int IOJobData::operation() const
 {
     return d->operation;
-}
-
-bool IOJobData::overwrite() const
-{
-    return d->overwrite;
 }
 
 int IOJobData::fileConflict() const

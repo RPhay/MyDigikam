@@ -556,7 +556,7 @@ void DIO::slotOneProccessed(const QUrl& url)
             QString newName = data->destUrl(url).fileName();
             QString newPath = data->destUrl(url).toLocalFile();
 
-            if (data->overwrite())
+            if (data->fileConflict() == IOJobData::Overwrite)
             {
                 ThumbsDbAccess().db()->removeByFilePath(newPath);
                 LoadingCacheInterface::fileChanged(newPath, false);

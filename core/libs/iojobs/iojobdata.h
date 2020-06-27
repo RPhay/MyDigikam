@@ -109,8 +109,6 @@ public:
 
     int                operation()                          const;
 
-    bool               overwrite()                          const;
-
     int                fileConflict()                       const;
 
     PAlbum*            srcAlbum()                           const;

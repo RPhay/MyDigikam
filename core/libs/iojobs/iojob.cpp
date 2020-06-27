@@ -334,7 +334,7 @@ void RenameFileJob::run()
 
         if (QFileInfo::exists(destUrl.toLocalFile()))
         {
-            if (m_data->overwrite())
+            if (m_data->fileConflict() == IOJobData::Overwrite)
             {
                 if (!DTrash::deleteImage(destUrl.toLocalFile(), m_data->jobTime()))
                 {
