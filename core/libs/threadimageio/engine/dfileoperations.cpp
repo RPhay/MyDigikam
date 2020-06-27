@@ -213,7 +213,7 @@ QUrl DFileOperations::getUniqueFolderUrl(const QUrl& orgUrl)
     int counter = 0;
     QUrl destUrl(orgUrl);
     QFileInfo fi(destUrl.toLocalFile());
-    QRegExp version(QLatin1String("(+)-(\\d+)"));
+    QRegExp version(QLatin1String("(.+)-(\\d+)"));
     QString completeFileName = fi.fileName();
 
     if (version.exactMatch(completeFileName))
