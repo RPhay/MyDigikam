@@ -30,6 +30,7 @@
 #include <QUrl>
 #include <QString>
 #include <QTabWidget>
+#include <QMovie>
 
 #include <klocalizedstring.h>
 
@@ -186,6 +187,63 @@ FaceManagementHelpDialog::FaceManagementHelpDialog(QWidget* const parent)
 
     // --- Face Recognition Page --------------------------------------------------------
 
+    QWidget*     faceRecogPage   = new QWidget();
+    QGridLayout* faceRecogLayout = new QGridLayout();
+
+    QLabel* recogIntroLabel      = new QLabel(faceRecogPage);
+    recogIntroLabel->setWordWrap(true);
+    recogIntroLabel->setText(i18n("Running Face Recognition is similar to Detection, "
+                                  "just select <u>Recognize Faces</u> from the "
+                                  "Face Scan Panel this time. Note that Face Recognition "
+                                  "is only possible if you have manually identified a few "
+                                  "people.<br>"));
+
+    QLabel* identifyLabel        = new QLabel(faceRecogPage);
+    QMovie* identifyImage        = new QMovie(i18n("/home/kartik/tagFace.gif"));
+    identifyImage->setScaledSize(QSize(185,225));
+    identifyLabel->setMovie(identifyImage);
+    identifyImage->start();
+    identifyLabel->setAlignment(Qt::AlignHCenter|Qt::AlignVCenter);
+
+    QLabel* identifyTextLabel    = new QLabel(faceRecogPage);
+    identifyTextLabel->setWordWrap(true);
+    identifyTextLabel->setAlignment(Qt::AlignVCenter);
+    identifyTextLabel->setText(i18n("To manually identify a face, hover on any Unknown "
+                                    "face and use the Text box to give it a name.<br>"
+                                    "This will lead to the creation of a Face Tag "
+                                    "in case a person of that name doesn't exist already.<br>"
+                                    ));
+
+    QLabel* bestResultsLabel     = new QLabel(faceRecogPage);
+    bestResultsLabel->setWordWrap(true);
+    bestResultsLabel->setAlignment(Qt::AlignVCenter);
+    bestResultsLabel->setText(i18n("For best results identify 4-5 faces for each "
+                                   "person you want the scan to recognize.<br>"));
+
+    QLabel* faceRecogFooter      = new QLabel(faceRecogPage);
+    faceRecogFooter->setWordWrap(true);
+    faceRecogFooter->setText(i18n("To increase the speed of Face Recognition, "
+                                  "you may check <u>Work on all processor cores</u> "
+                                  "from the Settings Tab. You can also modify Recognition "
+                                  "Accuracy, to find a balance between Accuracy and Speed."));
+
+    QPixmap workOnAllCoresImage  = QPixmap(i18n("/home/kartik/workOnAllCores.png"));
+    workOnAllCoresImage          = workOnAllCoresImage.scaled(QSize(445,170));
+
+    QLabel* workOnAllCoresLabel  = new QLabel(faceRecogPage);
+    workOnAllCoresLabel->setPixmap(workOnAllCoresImage);
+
+    faceRecogLayout->addWidget(recogIntroLabel,     0, 0, 1, 3);
+    faceRecogLayout->addWidget(identifyLabel,       1, 0, 2, 1);
+    faceRecogLayout->addWidget(identifyTextLabel,   1, 1, 1, 2);
+    faceRecogLayout->addWidget(bestResultsLabel,    2, 1, 1, 2);
+    faceRecogLayout->addWidget(faceRecogFooter,     3, 0, 1, 2);
+    faceRecogLayout->addWidget(workOnAllCoresLabel, 3, 2, 1, 1);
+    faceRecogLayout->setRowStretch(3, 1);
+
+    faceRecogPage->setLayout(faceRecogLayout);
+
+    tabWidget->addTab(faceRecogPage, i18n("Face Recognition"));
 
     // ----------------------------------------------------------------------------------
 
