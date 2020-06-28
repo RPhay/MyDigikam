@@ -6,6 +6,6 @@
 
 install(FILES overlayImg.png
               ignoreImg.png
-              workOnAllCores.png
+              workOnAllCoresImg.png
         DESTINATION ${DATA_INSTALL_DIR}/digikam/data
 )
