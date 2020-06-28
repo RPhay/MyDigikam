@@ -156,8 +156,8 @@ void PeopleSideBarWidget::setActive(bool active)
         if (d->firstVisit)
         {
             QString msg = i18n("Welcome to Face Management in DigiKam. "
-                        "If this is your first time using this feature, please consider "
-                        "using the Help Box in the Bottom Left Side Panel.");
+                               "If this is your first time using this feature, please consider "
+                               "using the Help Box in the Bottom Left Side Panel.");
             emit signalNotificationError(msg, DNotificationWidget::Information);
             d->firstVisit = false;
         }
