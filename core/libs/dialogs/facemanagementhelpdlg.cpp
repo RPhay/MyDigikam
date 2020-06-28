@@ -31,6 +31,8 @@
 #include <QString>
 #include <QTabWidget>
 #include <QMovie>
+#include <QStandardPaths>
+#include <QDebug>
 
 #include <klocalizedstring.h>
 
@@ -122,7 +124,8 @@ FaceManagementHelpDialog::FaceManagementHelpDialog(QWidget* const parent)
     QWidget*     faceDetectionPage       = new QWidget();
     QGridLayout* faceDetectionPageLayout = new QGridLayout();
 
-    QPixmap detectFaceOptionImage  = QPixmap(i18n("/home/kartik/detectFacesImg.png"));
+    // qDebug() << QStandardPaths::locate(QStandardPaths::GenericDataLocation, QLatin1String("digikam/data/OverlayImg.png"));
+    QPixmap detectFaceOptionImage  = QPixmap(QStandardPaths::locate(QStandardPaths::GenericDataLocation, QLatin1String("digikam/data/OverlayImg.png")));
     detectFaceOptionImage = detectFaceOptionImage.scaled(QSize(350,170));
 
     QLabel* detectFaceOptionLabel  = new QLabel(faceDetectionPage);
@@ -190,35 +193,41 @@ FaceManagementHelpDialog::FaceManagementHelpDialog(QWidget* const parent)
     QWidget*     faceRecogPage   = new QWidget();
     QGridLayout* faceRecogLayout = new QGridLayout();
 
-    QLabel* recogIntroLabel      = new QLabel(faceRecogPage);
-    recogIntroLabel->setWordWrap(true);
-    recogIntroLabel->setText(i18n("Running Face Recognition is similar to Detection, "
-                                  "just select <u>Recognize Faces</u> from the "
-                                  "Face Scan Panel this time. Note that Face Recognition "
-                                  "is only possible if you have manually identified a few "
-                                  "people.<br>"));
 
     QLabel* identifyLabel        = new QLabel(faceRecogPage);
-    QMovie* identifyImage        = new QMovie(i18n("/home/kartik/tagFacesImg.gif"));
-    identifyImage->setScaledSize(QSize(185,245));
+    QMovie* identifyImage        = new QMovie(i18n(""));
+    identifyImage->setScaledSize(QSize(185,220));
     identifyLabel->setMovie(identifyImage);
     identifyImage->start();
-    identifyLabel->setAlignment(Qt::AlignHCenter|Qt::AlignVCenter);
+    identifyLabel->setAlignment(Qt::AlignLeft | Qt::AlignVCenter);
 
     QLabel* identifyTextLabel    = new QLabel(faceRecogPage);
     identifyTextLabel->setWordWrap(true);
-    identifyTextLabel->setAlignment(Qt::AlignVCenter);
+    identifyTextLabel->setAlignment(Qt::AlignVCenter | Qt::AlignLeft);
     identifyTextLabel->setText(i18n("To manually identify a face, hover on any Unknown "
-                                    "face and use the Text box to give it a name.<br>"
+                                    "face and use the Text box to give it a name."
                                     "This will lead to the creation of a Face Tag "
-                                    "in case a person of that name doesn't exist already.<br>"
+                                    "in case a person of that name doesn't exist already."
+                                    "For best results identify 4-5 faces for each "
+                                    "person you want the scan to recognize.<br>"
                                     ));
 
-    QLabel* bestResultsLabel     = new QLabel(faceRecogPage);
-    bestResultsLabel->setWordWrap(true);
-    bestResultsLabel->setAlignment(Qt::AlignVCenter);
-    bestResultsLabel->setText(i18n("For best results identify 4-5 faces for each "
-                                   "person you want the scan to recognize.<br>"));
+    QLabel* recogLabel      = new QLabel(faceRecogPage);
+    recogLabel->setWordWrap(true);
+    recogLabel->setText(i18n("Running Face Recognition is similar to Detection, "
+                             "just select <u>Recognize Faces</u> from the "
+                             "Face Scan Panel this time.<br>"
+                             "Face Recognition will work on all Unknown Faces. In case "
+                             "there's a face you don't wish to be recognized, "
+                             "you can mark it as ignored.<br>"
+                             "This leads to the creation of a new <u>Ignored</u> Tag, "
+                             "you can later unmark the Face if needed."));
+
+    QPixmap ignoreImage          = QPixmap(i18n(""));
+    ignoreImage                  = ignoreImage.scaled(QSize(185,230));
+
+    QLabel* ignoreLabel          = new QLabel(faceRecogPage);
+    ignoreLabel->setPixmap(ignoreImage);
 
     QLabel* faceRecogFooter      = new QLabel(faceRecogPage);
     faceRecogFooter->setWordWrap(true);
@@ -227,31 +236,32 @@ FaceManagementHelpDialog::FaceManagementHelpDialog(QWidget* const parent)
                                   "from the Settings Tab. You can also modify Recognition "
                                   "Accuracy, to find a balance between Accuracy and Speed."));
 
-    QPixmap workOnAllCoresImage  = QPixmap(i18n("/home/kartik/workOnAllCoresImg.png"));
+    QPixmap workOnAllCoresImage  = QPixmap(i18n(""));
     workOnAllCoresImage          = workOnAllCoresImage.scaled(QSize(445,170));
 
     QLabel* workOnAllCoresLabel  = new QLabel(faceRecogPage);
     workOnAllCoresLabel->setPixmap(workOnAllCoresImage);
 
-    faceRecogLayout->addWidget(recogIntroLabel,     0, 0, 1, 3);
-    faceRecogLayout->addWidget(identifyLabel,       1, 0, 2, 1);
-    faceRecogLayout->addWidget(identifyTextLabel,   1, 1, 1, 2);
-    faceRecogLayout->addWidget(bestResultsLabel,    2, 1, 1, 2);
-    faceRecogLayout->addWidget(faceRecogFooter,     3, 0, 1, 2);
-    faceRecogLayout->addWidget(workOnAllCoresLabel, 3, 2, 1, 1);
-    faceRecogLayout->setRowStretch(3, 1);
+    faceRecogLayout->addWidget(identifyLabel,       0, 0, 2, 1);
+    faceRecogLayout->addWidget(identifyTextLabel,   0, 1, 2, 3);
+    faceRecogLayout->addWidget(recogLabel,          2, 0, 1, 3);
+    faceRecogLayout->addWidget(ignoreLabel,         2, 3, 1, 1);
+    faceRecogLayout->addWidget(workOnAllCoresLabel, 3, 0, 1, 2);
+    faceRecogLayout->addWidget(faceRecogFooter,     3, 2, 1, 2);
 
     faceRecogPage->setLayout(faceRecogLayout);
 
     tabWidget->addTab(faceRecogPage, i18n("Face Recognition"));
 
     // --- Confirm Faces ----------------------------------------------------------------
+
     QWidget*     confirmFacesPage   = new QWidget();
     QGridLayout* confirmFacesLayout = new QGridLayout();
 
     QLabel* overlayImgLabel = new QLabel(confirmFacesPage);
-    QPixmap overlayImg(i18n("/home/kartik/overlayImg.png"));
-    overlayImg = overlayImg.scaled(QSize(185, 235));
+    QPixmap overlayImg(i18n(""));
+    overlayImg = overlayImg.scaled(QSize(185, 255));
+    overlayImgLabel->setAlignment(Qt::AlignVCenter);
     overlayImgLabel->setPixmap(overlayImg);
 
     QLabel* overlayText     = new QLabel(confirmFacesPage);
@@ -281,7 +291,7 @@ FaceManagementHelpDialog::FaceManagementHelpDialog(QWidget* const parent)
     QLabel* rejectText      = new QLabel(confirmFacesPage);
     rejectText->setWordWrap(true);
     rejectText->setText(i18n("Use the Reject Button, if the suggestion is incorrect. "
-                              "This would move the Face back to Unknown."));
+                             "This would move the Face back to Unknown."));
     rejectText->setAlignment(Qt::AlignTop);
 
 
@@ -301,9 +311,10 @@ FaceManagementHelpDialog::FaceManagementHelpDialog(QWidget* const parent)
                            "Face Suggestions will appear mixed "
                            "with already Confirmed Results.<br>You can change this "
                            "by modifying the Sort Items Role to \"By Face Type\". "
-                           "This can be accessed through the View Menu.<br>"));
+                           "This can be accessed through the View Menu.<br>"
+                           "This allows for batch operations on multiple Faces as shown. <br>"));
 
-    QMovie* sortGif         = new QMovie(i18n("/home/kartik/sortFacesImg.gif"));
+    QMovie* sortGif         = new QMovie(i18n(""));
     sortGif->setScaledSize(QSize(450, 250));
     QLabel* sortGifLabel    = new QLabel(confirmFacesPage);
     sortGifLabel->setMovie(sortGif);
