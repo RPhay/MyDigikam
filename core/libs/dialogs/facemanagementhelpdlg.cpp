@@ -125,7 +125,7 @@ FaceManagementHelpDialog::FaceManagementHelpDialog(QWidget* const parent)
     QGridLayout* faceDetectionPageLayout = new QGridLayout();
 
     // qDebug() << QStandardPaths::locate(QStandardPaths::GenericDataLocation, QLatin1String("digikam/data/OverlayImg.png"));
-    QPixmap detectFaceOptionImage  = QPixmap(QStandardPaths::locate(QStandardPaths::GenericDataLocation, QLatin1String("digikam/data/OverlayImg.png")));
+    QPixmap detectFaceOptionImage  = QPixmap(QStandardPaths::locate(QStandardPaths::GenericDataLocation, QLatin1String("digikam/data/overlayImg.png")));
     detectFaceOptionImage = detectFaceOptionImage.scaled(QSize(350,170));
 
     QLabel* detectFaceOptionLabel  = new QLabel(faceDetectionPage);
