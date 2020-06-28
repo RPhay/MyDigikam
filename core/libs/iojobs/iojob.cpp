@@ -100,6 +100,11 @@ void CopyOrMoveJob::run()
                 }
                 else
                 {
+                    if (srcInfo.filePath() == destenation)
+                    {
+                        continue;
+                    }
+
                     if (!DTrash::deleteImage(destenation, m_data->jobTime()))
                     {
                         emit signalError(i18n("Could not move image %1 to collection trash",
