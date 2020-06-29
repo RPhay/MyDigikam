@@ -155,6 +155,8 @@ void Benchmark::registerTrainingSet()
                                                      iter != m_trainSet.end();
                                                    ++iter)
     {
+        int index = -1;
+
         for (int i = 0; i < iter.value().size(); ++i)
         {
             cv::Mat face;
@@ -163,9 +165,10 @@ void Benchmark::registerTrainingSet()
             {
                 Identity newIdentity = m_recognizer->newIdentity(face);
 
+                newIdentity.setId(index);
                 newIdentity.setAttribute(QLatin1String("fullName"), iter.key());
 
-                m_recognizer->saveIdentity(newIdentity, (i == 0));
+                index = m_recognizer->saveIdentity(newIdentity, (i == 0));
 
                 ++m_trainSize;
             }

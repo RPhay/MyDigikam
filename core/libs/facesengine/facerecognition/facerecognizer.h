@@ -86,9 +86,9 @@ public:
      * @brief saveIdentity : save identity with label and face embedding
      * @param id : identity of face
      * @param newLabel : add new label to database
-     * @return true if successfully registered
+     * @return
      */
-    bool saveIdentity(Identity& id, bool newLabel);
+    int saveIdentity(Identity& id, bool newLabel);
 
 private:
 

@@ -433,43 +433,42 @@ cv::Mat FaceRecognizer::prepareForRecognition(const QImage& inputImage)
 
 Identity FaceRecognizer::findIdenity(const cv::Mat& preprocessedImage, ComparisonMetric metric, double threshold)
 {
-    // TODO: scan database for face
+    Identity id;
 
     // Use ML to predict label
     if (metric == SupportVectorMachine)
     {
-        return d->predictSVM(d->extractor->getFaceDescriptor(preprocessedImage));
+        id = d->predictSVM(d->extractor->getFaceDescriptor(preprocessedImage));
     }
     else if (metric == KNN)
     {
-        return d->predictKNN(d->extractor->getFaceDescriptor(preprocessedImage));
+        id = d->predictKNN(d->extractor->getFaceDescriptor(preprocessedImage));
+    }
+    else
+    {
+        std::vector<float> faceEmbedding = d->extractor->getFaceEmbedding(preprocessedImage);
+
+        switch (metric)
+        {
+            case Tree:
+                id = d->predictKDTree(faceEmbedding, (int)threshold);
+                break;
+            case CosDistance:
+                id = d->predictCosine(faceEmbedding, threshold);
+                break;
+            case L2Distance:
+                id = d->predictL2(faceEmbedding, threshold);
+                break;
+            default:
+                break;
+        }
     }
 
     std::vector<float> faceEmbedding = d->extractor->getFaceEmbedding(preprocessedImage);
-    Identity id;
 
-    switch (metric)
-    {
-        case Tree:
-            id = d->predictKDTree(faceEmbedding, (int)threshold);
-            break;
-        case CosDistance:
-            id = d->predictCosine(faceEmbedding, threshold);
-            break;
-        case L2Distance:
-            id = d->predictL2(faceEmbedding, threshold);
-            break;
-        default:
-            break;
-    }
-
-    if (id.isNull())
-    {
-        // new identity
-        QJsonArray jsonFaceEmbedding = FaceExtractor::encodeVector(faceEmbedding);
-        id.setAttribute(QLatin1String("faceEmbedding"),
-                        QString::fromLatin1(QJsonDocument(jsonFaceEmbedding).toJson(QJsonDocument::Compact)));
-    }
+    QJsonArray jsonFaceEmbedding = FaceExtractor::encodeVector(faceEmbedding);
+    id.setAttribute(QLatin1String("faceEmbedding"),
+                    QString::fromLatin1(QJsonDocument(jsonFaceEmbedding).toJson(QJsonDocument::Compact)));
 
     return id;
 }
@@ -487,7 +486,7 @@ Identity FaceRecognizer::newIdentity(const cv::Mat& preprocessedImage)
     return id;
 }
 
-bool FaceRecognizer::saveIdentity(Identity& id, bool newLabel)
+int FaceRecognizer::saveIdentity(Identity& id, bool newLabel)
 {
     if (newLabel)
     {
@@ -497,18 +496,18 @@ bool FaceRecognizer::saveIdentity(Identity& id, bool newLabel)
         {
             qWarning() << "new Identity isn't labeled";
 
-            return false;
+            return -1;
         }
 
         // register
-        int index     = d->db.registerLabel(label);
+        int index = d->db.registerLabel(label);
 
         id.setId(index);
     }
     else if (id.isNull())
     {
         qWarning() << "new id is null";
-        return false;
+        return -1;
     }
 
     int index = id.id();
@@ -516,7 +515,7 @@ bool FaceRecognizer::saveIdentity(Identity& id, bool newLabel)
     if (index < 0)
     {
         qWarning() << "Error insert label";
-        return false;
+        return -1;
     }
 
     // Online Train ML model
@@ -528,7 +527,7 @@ bool FaceRecognizer::saveIdentity(Identity& id, bool newLabel)
 
     // Create a KD-Node for this identity
     //d->addIndentityToTree(id);
-    return true;
+    return index;
 }
 
 }
