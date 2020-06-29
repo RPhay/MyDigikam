@@ -503,6 +503,8 @@ int FaceRecognizer::saveIdentity(Identity& id, bool newLabel)
         int index = d->db.registerLabel(label);
 
         id.setId(index);
+
+        qDebug() << "label" << label << "registered with key" << index;
     }
     else if (id.isNull())
     {

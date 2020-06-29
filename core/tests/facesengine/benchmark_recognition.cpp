@@ -168,7 +168,10 @@ void Benchmark::registerTrainingSet()
                 newIdentity.setId(index);
                 newIdentity.setAttribute(QLatin1String("fullName"), iter.key());
 
-                index = m_recognizer->saveIdentity(newIdentity, (i == 0));
+                if (index < 0)
+                {
+                    index = m_recognizer->saveIdentity(newIdentity, true);
+                }
 
                 ++m_trainSize;
             }

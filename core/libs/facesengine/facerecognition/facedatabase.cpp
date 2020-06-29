@@ -24,6 +24,7 @@
 
 #include <QSqlDatabase>
 #include <QSqlQuery>
+#include <QSqlError>
 #include <QDebug>
 
 namespace RecognitionTest
@@ -41,7 +42,13 @@ public:
         }
 
         query.exec(QLatin1String("SET sql_notes = 0"));
-        query.exec(QLatin1String("CREATE TABLE IF NOT EXISTS identity (id INTEGER PRIMARY KEY AUTOINCREMENT=0, label VARCHAR(20) NOT NULL)"));
+        bool success = query.exec(QLatin1String("CREATE TABLE IF NOT EXISTS identity (id INTEGER PRIMARY KEY AUTOINCREMENT, label VARCHAR(20) NOT NULL)"));
+
+        if (!success)
+        {
+            qDebug() << "fali to create database" << query.lastError();
+        }
+
         query.exec(QLatin1String("SET sql_notes = 1"));
     }
 
@@ -71,7 +78,11 @@ int FaceDatabase::registerLabel(const QString& label)
 {
     d->query.prepare(QLatin1String("INSERT INTO identity (label) VALUES (:label)"));
     d->query.bindValue(QLatin1String(":label"), label);
-    d->query.exec();
+
+    if (!d->query.exec())
+    {
+        qDebug() << "fail to registered new label, error" << d->query.lastError();
+    }
 
     return d->query.lastInsertId().toInt();
 }
@@ -80,7 +91,15 @@ QString FaceDatabase::queryLabel(int id) const
 {
     d->query.prepare(QLatin1String("SELECT label FROM identity WHERE id = :id"));
     d->query.bindValue(QLatin1String(":id"), id);
-    d->query.exec();
+
+    if(d->query.exec())
+    {
+        qDebug() << "query label successfully";
+    }
+    else
+    {
+        qDebug() << "fail to query label, error" << d->query.lastError();
+    }
 
     if (d->query.size() == 1)
     {
