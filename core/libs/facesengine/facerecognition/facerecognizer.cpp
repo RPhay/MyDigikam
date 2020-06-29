@@ -133,7 +133,7 @@ public:
     const QString svmFile = QLatin1String("svm.bin");
 
     KDTree tree;
-    FaceDatabase database;
+    FaceDatabase db;
 };
 
 int FaceRecognizer::Private::trainSVM() const
@@ -477,48 +477,60 @@ Identity FaceRecognizer::newIdentity(const cv::Mat& preprocessedImage)
     return id;
 }
 
-void FaceRecognizer::saveIdentity(Identity& id)
+bool FaceRecognizer::saveIdentity(Identity& id, bool newLabel)
 {
-    QString label = id.attribute(QLatin1String("fullName"));
-
-    if (label.isEmpty())
+    if (newLabel)
     {
-        qWarning() << "idenitity is empty";
+        QString label = id.attribute(QLatin1String("fullName"));
 
-        return;
+        if (label.isEmpty())
+        {
+            qWarning() << "new Identity isn't labeled";
+
+            return false;
+        }
+
+        // register
+        int index = d->db.registerLabel(label);
+        id.setId(index);
+    }
+    else
+    {
+        if (id.isNull())
+        {
+            qWarning() << "new id is null";
+
+            return false;
+        }
     }
 
-    // TODO save identity to database
-    if (id.isNull())
-    {
-        id.setId(++d->identityCounter);
-    }
-
+    /*
     d->faceLibrary[label].append(id);
 
     if (! d->labels.contains(label))
     {
         d->labels.append(label);
     }
+    */
+    // TODO: assign index as primary key for label
+    int index = id.id();
+
+    if (index < 0)
+    {
+        qWarning() << "Error insert label";
+        return false;
+    }
 
     // Online Train ML model
     QJsonArray jsonFaceEmbedding = QJsonDocument::fromJson(id.attribute(QLatin1String("faceEmbedding")).toLatin1()).array();
     std::vector<float> recordedFaceEmbedding = FaceExtractor::decodeVector(jsonFaceEmbedding);
 
-    // TODO: assign index as primary key for label
-    int index = d->labels.indexOf(label);
-
-    if (index < 0)
-    {
-        qWarning() << "Error insert label";
-        return;
-    }
-
     d->onlineTrainSVM(recordedFaceEmbedding, index);
     d->onlineTrainKNN(recordedFaceEmbedding, index);
 
     // Create a KD-Node for this identity
-    d->addIndentityToTree(id);
+    //d->addIndentityToTree(id);
+    return true;
 }
 
 }

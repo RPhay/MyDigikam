@@ -85,7 +85,7 @@ MainWindow::MainWindow(const QDir &directory, QWidget *parent)
 {
     setWindowTitle(QLatin1String("Face detection Test"));
 
-    m_detector = new OpenCVDNNFaceDetector(DetectorNNModel::YOLO);
+    m_detector = new OpenCVDNNFaceDetector(DetectorNNModel::SSDMOBILENET);
 
     // Image erea
     QWidget* const imageArea    = new QWidget(this);

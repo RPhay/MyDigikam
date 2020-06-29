@@ -544,7 +544,7 @@ void MainWindow::slotSaveIdentity()
     qDebug() << "assign identity" << m_imageLabel->text();
     m_currentIdenity.setAttribute(QLatin1String("fullName"), m_imageLabel->text());
 
-    m_recognizer->saveIdentity(m_currentIdenity);
+    m_recognizer->saveIdentity(m_currentIdenity, false);
 }
 
 QCommandLineParser* parseOptions(const QCoreApplication& app)

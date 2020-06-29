@@ -165,7 +165,7 @@ void Benchmark::registerTrainingSet()
 
                 newIdentity.setAttribute(QLatin1String("fullName"), iter.key());
 
-                m_recognizer->saveIdentity(newIdentity);
+                m_recognizer->saveIdentity(newIdentity, (i == 0));
 
                 ++m_trainSize;
             }

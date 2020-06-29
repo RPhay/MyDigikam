@@ -41,7 +41,7 @@ public:
         }
 
         query.exec(QLatin1String("SET sql_notes = 0"));
-        query.exec(QLatin1String("CREATE TABLE IF NOT EXISTS create table identity (id INTEGER PRIMARY KEY AUTOINCREMENT, label VARCHAR(20) NOT NULL)"));
+        query.exec(QLatin1String("CREATE TABLE IF NOT EXISTS identity (id INTEGER PRIMARY KEY AUTOINCREMENT=0, label VARCHAR(20) NOT NULL)"));
         query.exec(QLatin1String("SET sql_notes = 1"));
     }
 
@@ -67,11 +67,13 @@ FaceDatabase::~FaceDatabase()
     delete d;
 }
 
-void FaceDatabase::registerLabel(const QString& label)
+int FaceDatabase::registerLabel(const QString& label)
 {
     d->query.prepare(QLatin1String("INSERT INTO identity (label) VALUES (:label)"));
     d->query.bindValue(QLatin1String(":label"), label);
     d->query.exec();
+
+    return d->query.lastInsertId().toInt();
 }
 
 int FaceDatabase::queryLabel(int id) const
