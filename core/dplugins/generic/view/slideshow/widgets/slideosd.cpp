@@ -200,9 +200,9 @@ SlideOSD::SlideOSD(SlideShowSettings* const settings, SlideShowLoader* const par
     // ---------------------------------------------------------------
 
     QGridLayout* const grid = new QGridLayout(this);
-    grid->addWidget(d->slideProps,  1, 0, 1, 2);
-    grid->addWidget(d->labelsBox,   2, 0, 1, 1);
-    grid->addWidget(d->progressBox, 3, 0, 1, 1);
+    grid->addWidget(d->slideProps,  0, 0, 1, 2);
+    grid->addWidget(d->labelsBox,   1, 0, 1, 1);
+    grid->addWidget(d->progressBox, 2, 0, 1, 1);
     grid->setRowStretch(0, 10);
     grid->setColumnStretch(1, 10);
     grid->setContentsMargins(QMargins());
@@ -278,11 +278,8 @@ void SlideOSD::setCurrentUrl(const QUrl& url)
 
     // Make the OSD the proper size
 
-    layout()->activate();
-    resize(sizeHint());
-
-    move(10, d->parent->geometry().bottom() - height());
-    show();
+    resize(d->parent->width() - 10, d->parent->height());
+    move(10, 0);
     raise();
 }
 
