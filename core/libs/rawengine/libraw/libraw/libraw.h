@@ -47,7 +47,7 @@ it under the terms of the one of two licenses as you choose:
 /* DLLs: Microsoft or Intel compiler */
 # if defined(_MSC_VER) || defined(__INTEL_COMPILER)
 # ifndef LIBRAW_WIN32_DLLDEFS
-//#  define LIBRAW_WIN32_DLLDEFS
+#  define LIBRAW_WIN32_DLLDEFS
 # endif
 #endif
 
