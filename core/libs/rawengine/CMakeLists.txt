@@ -55,7 +55,6 @@ add_definitions(-DUSE_6BY9RPI)
 add_definitions(-DLIBRAW_NODLL)
 
 if(WIN32)
-    add_definitions(-DLIBRAW_WIN32_DLLDEFS)
     add_definitions(-DLIBRAW_WIN32_UNICODEPATHS)
 endif()
 

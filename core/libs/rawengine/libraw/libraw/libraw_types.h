@@ -98,7 +98,7 @@ typedef unsigned long long UINT64;
 
   typedef unsigned char uchar;
   typedef unsigned short ushort;
-/*
+
 #ifdef LIBRAW_WIN32_DLLDEFS
 #ifdef LIBRAW_NODLL
 #define DllDef
@@ -109,10 +109,9 @@ typedef unsigned long long UINT64;
 #define DllDef __declspec(dllimport)
 #endif
 #endif
-#else
-*/
+#else$
 #define DllDef
-//#endif
+#endif
 
   typedef struct
   {
@@ -712,7 +711,7 @@ typedef unsigned long long UINT64;
   typedef struct
   {
     float latitude[3];     /* Deg,min,sec */
-    float longtitude[3];   /* Deg,min,sec */
+    float longitude[3];    /* Deg,min,sec */
     float gpstimestamp[3]; /* Deg,min,sec */
     float altitude;
     char  altref, latref, longref, gpsstatus;
