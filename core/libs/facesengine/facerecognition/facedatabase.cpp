@@ -76,7 +76,7 @@ int FaceDatabase::registerLabel(const QString& label)
     return d->query.lastInsertId().toInt();
 }
 
-int FaceDatabase::queryLabel(int id) const
+QString FaceDatabase::queryLabel(int id) const
 {
     d->query.prepare(QLatin1String("SELECT label FROM identity WHERE id = :id"));
     d->query.bindValue(QLatin1String(":id"), id);
@@ -84,10 +84,10 @@ int FaceDatabase::queryLabel(int id) const
 
     if (d->query.size() == 1)
     {
-        return d->query.value(0).toInt();
+        return d->query.value(0).toString();
     }
 
-    return -1;
+    return QString();
 }
 
 }

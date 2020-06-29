@@ -103,8 +103,8 @@ public:
 public:
 
     int trainSVM() const;
-    void onlineTrainSVM(const std::vector<float>& inputSample, int inputLabel) const;
     int trainKNN() const;
+    void onlineTrainSVM(const std::vector<float>& inputSample, int inputLabel) const;
     void onlineTrainKNN(const std::vector<float>& inputSample, int inputLabel) const;
 
     Identity predictSVM(cv::Mat faceEmbedding) const;
@@ -228,9 +228,14 @@ Identity FaceRecognizer::Private::predictSVM(cv::Mat faceEmbedding) const
         trainSVM();
     }
 
-    float id = svm->predict(faceEmbedding);
+    int     id    = int(svm->predict(faceEmbedding));
+    QString label = db.queryLabel(id);
 
-    return faceLibrary[labels[int(id)]][0];
+    Identity identity;
+    identity.setId(id);
+    identity.setAttribute(QLatin1String("fullName"), label);
+
+    return identity;
 }
 
 Identity FaceRecognizer::Private::predictKNN(cv::Mat faceEmbedding) const
@@ -243,9 +248,14 @@ Identity FaceRecognizer::Private::predictKNN(cv::Mat faceEmbedding) const
     cv::Mat output;
     knn->findNearest(faceEmbedding, 3, output);
 
-    float id = output.at<float>(0);
+    int     id    = int(output.at<float>(0));
+    QString label = db.queryLabel(id);
 
-    return faceLibrary[labels[int(id)]][0];
+    Identity identity;
+    identity.setId(id);
+    identity.setAttribute(QLatin1String("fullName"), label);
+
+    return identity;
 }
 
 void FaceRecognizer::Private::addIndentityToTree(const Identity& id)
@@ -491,28 +501,16 @@ bool FaceRecognizer::saveIdentity(Identity& id, bool newLabel)
         }
 
         // register
-        int index = d->db.registerLabel(label);
+        int index     = d->db.registerLabel(label);
+
         id.setId(index);
     }
-    else
+    else if (id.isNull())
     {
-        if (id.isNull())
-        {
-            qWarning() << "new id is null";
-
-            return false;
-        }
+        qWarning() << "new id is null";
+        return false;
     }
 
-    /*
-    d->faceLibrary[label].append(id);
-
-    if (! d->labels.contains(label))
-    {
-        d->labels.append(label);
-    }
-    */
-    // TODO: assign index as primary key for label
     int index = id.id();
 
     if (index < 0)

@@ -39,7 +39,7 @@ public:
 public:
 
     int registerLabel(const QString& label);
-    int queryLabel(int id) const;
+    QString queryLabel(int id) const;
 
 private:
 
