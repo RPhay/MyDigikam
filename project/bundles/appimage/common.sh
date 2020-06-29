@@ -108,7 +108,7 @@ RegisterRemoteServers()
 {
 
 SERVER_LIST="\
-git.kde.org \
+invent.kde.org \
 milonia.kde.org \
 "
 
