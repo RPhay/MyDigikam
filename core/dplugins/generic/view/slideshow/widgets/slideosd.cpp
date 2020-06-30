@@ -236,10 +236,10 @@ void SlideOSD::slotStart()
 void SlideOSD::slotUpdateSettings()
 {
     d->labelsBox->setVisible(d->settings->printLabels || d->settings->printRating);
+    d->progressBox->setVisible(d->settings->showProgressIndicator);
     d->ratingWidget->setVisible(d->settings->printRating);
     d->clWidget->setVisible(d->settings->printLabels);
     d->plWidget->setVisible(d->settings->printLabels);
-    d->progressBox->setVisible(d->settings->showProgressIndicator);
     d->progressBar->setMaximum(d->settings->delay);
 }
 
