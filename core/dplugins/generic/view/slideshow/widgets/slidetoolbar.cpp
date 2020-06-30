@@ -269,6 +269,8 @@ void SlideToolBar::slotConfigurationAccepted()
     {
         d->playBtn->animateClick();
     }
+
+    emit signalUpdateSettings();
 }
 
 void SlideToolBar::keyPressEvent(QKeyEvent* e)

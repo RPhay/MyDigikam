@@ -182,9 +182,6 @@ SlideOSD::SlideOSD(SlideShowSettings* const settings, SlideShowLoader* const par
     connect(d->toolBar, SIGNAL(signalPlay()),
             d->parent, SLOT(slotPlay()));
 
-    connect(d->toolBar, SIGNAL(signalPlay()),
-            this, SLOT(slotRechargeSettings()));
-
     connect(d->toolBar, SIGNAL(signalNext()),
             d->parent, SLOT(slotLoadNextItem()));
 
@@ -193,6 +190,9 @@ SlideOSD::SlideOSD(SlideShowSettings* const settings, SlideShowLoader* const par
 
     connect(d->toolBar, SIGNAL(signalClose()),
             d->parent, SLOT(close()));
+
+    connect(d->toolBar, SIGNAL(signalUpdateSettings()),
+            this, SLOT(slotUpdateSettings()));
 
     connect(d->toolBar, SIGNAL(signalScreenSelected(int)),
             d->parent, SLOT(slotScreenSelected(int)));
@@ -233,7 +233,7 @@ void SlideOSD::slotStart()
     pause(!d->settings->autoPlayEnabled);
 }
 
-void SlideOSD::slotRechargeSettings()
+void SlideOSD::slotUpdateSettings()
 {
     d->labelsBox->setVisible(d->settings->printLabels || d->settings->printRating);
     d->ratingWidget->setVisible(d->settings->printRating);
