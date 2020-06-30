@@ -494,6 +494,7 @@
     <screenshot type="default">
       <caption>digiKam Batch Queue Manager</caption>
       <caption xml:lang="ca">Gestor de la cua de lots del digiKam</caption>
+      <caption xml:lang="cs">Správce dávkového zpracování digiKam</caption>
       <caption xml:lang="en-GB">digiKam Batch Queue Manager</caption>
       <caption xml:lang="es">Gestor de la cola de procesos por lotes de digiKam</caption>
       <caption xml:lang="fi">digiKam – Eräajon hallinta</caption>
@@ -511,6 +512,7 @@
     <screenshot type="default">
       <caption>digiKam Image Editor</caption>
       <caption xml:lang="ca">Editor d'imatges del digiKam</caption>
+      <caption xml:lang="cs">Editor obrázků digiKam</caption>
       <caption xml:lang="en-GB">digiKam Image Editor</caption>
       <caption xml:lang="es">Editor de imágenes de digiKam</caption>
       <caption xml:lang="fi">digiKam – Kuvamuokkain</caption>
@@ -545,6 +547,7 @@
     <screenshot type="default">
       <caption>digiKam Light Table</caption>
       <caption xml:lang="ca">Taula de llum del digiKam</caption>
+      <caption xml:lang="cs">Prohlížecí stolek digiKam</caption>
       <caption xml:lang="en-GB">digiKam Light Table</caption>
       <caption xml:lang="es">Mesa de luz de digiKam</caption>
       <caption xml:lang="fi">digiKam – Valotaulu</caption>
@@ -562,6 +565,7 @@
     <screenshot type="default">
       <caption>digiKam Tags View</caption>
       <caption xml:lang="ca">Vista d'etiquetes del digiKam</caption>
+      <caption xml:lang="cs">Pohled na značky digiKam</caption>
       <caption xml:lang="en-GB">digiKam Tags View</caption>
       <caption xml:lang="es">Visor de etiquetas de digiKam</caption>
       <caption xml:lang="fi">digiKam – Luokitusnäkymä</caption>
@@ -657,6 +661,7 @@
   </releases>
   <developer_name>digiKam Team</developer_name>
   <developer_name xml:lang="ca">Equip del digiKam</developer_name>
+  <developer_name xml:lang="cs">Team digiKam</developer_name>
   <developer_name xml:lang="en-GB">digiKam Team</developer_name>
   <developer_name xml:lang="es">Equipo de digiKam</developer_name>
   <developer_name xml:lang="fi">digiKam-työryhmä</developer_name>
