@@ -168,10 +168,7 @@ void Benchmark::registerTrainingSet()
                 newIdentity.setId(index);
                 newIdentity.setAttribute(QLatin1String("fullName"), iter.key());
 
-                if (index < 0)
-                {
-                    index = m_recognizer->saveIdentity(newIdentity, true);
-                }
+                index = m_recognizer->saveIdentity(newIdentity, (index < 0));
 
                 ++m_trainSize;
             }
@@ -409,11 +406,11 @@ int main(int argc, char** argv)
 
     //qDebug() << "L2 distance:";
     //benchmark.verifyTestSetL2Distance();
-    //qDebug() << "SVM:";
-    //benchmark.verifyTestSetSupportVectorMachine();
+    qDebug() << "SVM:";
+    benchmark.verifyTestSetSupportVectorMachine();
 
-    //qDebug() << "KNN:";
-    //benchmark.verifyTestKNN();
+    qDebug() << "KNN:";
+    benchmark.verifyTestKNN();
 }
 
 

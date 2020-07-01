@@ -175,7 +175,16 @@ void FaceRecognizer::Private::onlineTrainSVM(const std::vector<float>& inputSamp
 
     cv::Ptr<cv::ml::TrainData> trainingSample = cv::ml::TrainData::create(feature, 0, label);
 
-    svm->train(trainingSample, cv::ml::StatModel::UPDATE_MODEL);
+    qDebug() << "online train svn";
+
+    if (svm->train(trainingSample, cv::ml::StatModel::UPDATE_MODEL))
+    {
+        qDebug() << "online train svm";
+    }
+    else
+    {
+        qDebug() << "fail online train svm";
+    }
 }
 
 int FaceRecognizer::Private::trainKNN() const
@@ -217,17 +226,28 @@ void FaceRecognizer::Private::onlineTrainKNN(const std::vector<float>& inputSamp
 
     cv::Ptr<cv::ml::TrainData> trainingSample = cv::ml::TrainData::create(feature, 0, label);
 
-    knn->train(trainingSample, cv::ml::StatModel::UPDATE_MODEL);
+
+    if (knn->train(trainingSample, cv::ml::StatModel::UPDATE_MODEL))
+    {
+        qDebug() << "online train knn";
+    }
+    else
+    {
+        qDebug() << "fail online train knn";
+    }
 }
 
 
 Identity FaceRecognizer::Private::predictSVM(cv::Mat faceEmbedding) const
 {
+/*
     if (!svm->isTrained())
     {
-        trainSVM();
+        qDebug() << "svm is not trained";
+        return Identity();
+        //trainSVM();
     }
-
+*/
     int     id    = int(svm->predict(faceEmbedding));
     QString label = db.queryLabel(id);
 
@@ -240,11 +260,14 @@ Identity FaceRecognizer::Private::predictSVM(cv::Mat faceEmbedding) const
 
 Identity FaceRecognizer::Private::predictKNN(cv::Mat faceEmbedding) const
 {
+/*
     if (!knn->isTrained())
     {
-        trainKNN();
+        qDebug() << "knn is not trained";
+        return Identity();
+        //trainKNN();
     }
-
+*/
     cv::Mat output;
     knn->findNearest(faceEmbedding, 3, output);
 
