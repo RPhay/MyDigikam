@@ -126,6 +126,7 @@ public:
 
     Identity predictSVM(cv::Mat faceEmbedding) const;
     Identity predictKNN(cv::Mat faceEmbedding) const;
+    Identity predictMLP(cv::Mat faceEmbedding) const;
 
     void addIndentityToTree(const Identity& id);
     Identity predictKDTree(const std::vector<float>& faceEmbedding, int k) const;
@@ -340,6 +341,38 @@ Identity FaceRecognizer::Private::predictKNN(cv::Mat faceEmbedding) const
 
     int     id    = int(output.at<float>(0));
     QString label = db.queryLabel(id);
+
+    Identity identity;
+    identity.setId(id);
+    identity.setAttribute(QLatin1String("fullName"), label);
+
+    return identity;
+}
+
+Identity FaceRecognizer::Private::predictMLP(cv::Mat faceEmbedding) const
+{
+    if (!mlp->isTrained())
+    {
+        qDebug() << "train mlp";
+        trainMLP();
+    }
+
+    cv::Mat output;
+
+    mlp->predict(faceEmbedding, output);
+
+    float threshold = 0.8f;
+    int id = 0;
+
+    for (int i = 0; i < 16; ++i)
+    {
+        if (output.at<float>(0, i) >= threshold)
+        {
+            id += int(pow(2, i));
+        }
+    }
+
+    QString label = labels[id];
 
     Identity identity;
     identity.setId(id);
