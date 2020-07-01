@@ -83,6 +83,22 @@ public:
 
         knn->setAlgorithmType(cv::ml::KNearest::BRUTE_FORCE);
         knn->setIsClassifier(true);
+
+        mlp = cv::ml::ANN_MLP::create();
+        // use 16 bit to index label
+        int layer_sz[] = { 128, 100, 100, 16 };
+        int nlayers = 4;
+        cv::Mat layer_sizes(1, nlayers, CV_32S, layer_sz);
+
+        int method = cv::ml::ANN_MLP::BACKPROP;
+        double method_param = 0.001;
+        int max_iter = 300;
+
+        mlp->setLayerSizes(layer_sizes);
+        mlp->setActivationFunction(cv::ml::ANN_MLP::SIGMOID_SYM, 0, 0);
+        mlp->setTermCriteria(cv::TermCriteria(cv::TermCriteria::MAX_ITER + (0 > 0 ? cv::TermCriteria::EPS : 0), max_iter, 0));
+        mlp->setTrainMethod(method, method_param);
+
     }
 
     ~Private()
@@ -124,6 +140,7 @@ public:
     FaceExtractor* extractor;
     cv::Ptr<cv::ml::SVM> svm;
     cv::Ptr<cv::ml::KNearest> knn;
+    cv::Ptr<cv::ml::ANN_MLP> mlp;
 
     QHash<QString, QVector<Identity> > faceLibrary;
     QVector<QString> labels;
