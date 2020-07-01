@@ -98,7 +98,6 @@ public:
         mlp->setActivationFunction(cv::ml::ANN_MLP::SIGMOID_SYM, 0, 0);
         mlp->setTermCriteria(cv::TermCriteria(cv::TermCriteria::MAX_ITER + (0 > 0 ? cv::TermCriteria::EPS : 0), max_iter, 0));
         mlp->setTrainMethod(method, method_param);
-
     }
 
     ~Private()
@@ -120,6 +119,8 @@ public:
 
     int trainSVM() const;
     int trainKNN() const;
+    int trainMLP() const;
+
     void onlineTrainSVM(const std::vector<float>& inputSample, int inputLabel) const;
     void onlineTrainKNN(const std::vector<float>& inputSample, int inputLabel) const;
 
@@ -222,6 +223,55 @@ int FaceRecognizer::Private::trainKNN() const
             std::vector<float> recordedFaceEmbedding = FaceExtractor::decodeVector(jsonFaceEmbedding);
 
             label.push_back(i);
+            features.push_back(FaceExtractor::vectortomat(recordedFaceEmbedding));
+
+            ++size;
+        }
+    }
+
+    knn->train(features, 0, label);
+
+    qDebug() << "KNN trains" << size << "samples in" << timer.elapsed() << "ms";
+
+    return size;
+}
+
+
+int FaceRecognizer::Private::trainMLP() const
+{
+    cv::Mat features, label;
+    int size = 0;
+
+    QElapsedTimer timer;
+    timer.start();
+
+    for (int i = 0; i < labels.size(); ++i)
+    {
+        for (QVector<Identity>::const_iterator iter  = faceLibrary[labels[i]].cbegin();
+                                               iter != faceLibrary[labels[i]].cend();
+                                             ++iter)
+        {
+            QJsonArray jsonFaceEmbedding = QJsonDocument::fromJson(iter->attribute(QLatin1String("faceEmbedding")).toLatin1()).array();
+            std::vector<float> recordedFaceEmbedding = FaceExtractor::decodeVector(jsonFaceEmbedding);
+
+            cv::Mat train_response = cv::Mat::zeros(1, 26, CV_32F);
+
+            int index = i;
+            int j = 0;
+
+            while (index > 1)
+            {
+                int newIndex = index / 2;
+
+                train_response.at<float>(0, j) = index - newIndex*2;
+
+                index = newIndex;
+                ++j;
+            }
+
+            train_response.at<float>(0, j) = index;
+
+            label.push_back(train_response);
             features.push_back(FaceExtractor::vectortomat(recordedFaceEmbedding));
 
             ++size;
