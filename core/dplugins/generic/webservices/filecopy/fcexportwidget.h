@@ -43,10 +43,11 @@
 
 using namespace Digikam;
 
+class QSpinBox;
+class QComboBox;
+
 namespace DigikamGenericFileCopyPlugin
 {
-
-using ChangeImagePropertiesPtr = std::shared_ptr<struct ChangeImageProperties>;
 
 class FCExportWidget: public QWidget
 {
@@ -92,10 +93,29 @@ public:
     void setTargetUrl(const QUrl& url);
 
     /**
-     * @brief collects all change settings that should be executed to the images collection
-     * @return properties or nullptr in case of no change necessary
+     * Returns a pointer to the changeImageProperties.
      */
-    ChangeImagePropertiesPtr getImageChangeProperties() const;
+    QCheckBox* changeImagePropertiesBox() const;
+
+    /**
+     * Returns a pointer to the overwrite QCheckBox.
+     */
+    QSpinBox* imageResizeBox() const;
+
+    /**
+     * Returns a pointer to the imageFormat.
+     */
+    QComboBox* imageFormatBox() const;
+
+    /**
+     * Returns a pointer to the imageCompression.
+     */
+    QSpinBox* imageCompressionBox() const;
+
+    /**
+     * Returns a pointer to the removeMetadata.
+     */
+    QCheckBox* removeMetadataBox() const;
 
 private Q_SLOTS:
 

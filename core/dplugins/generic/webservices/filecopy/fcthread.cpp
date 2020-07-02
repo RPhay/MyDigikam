@@ -23,7 +23,6 @@
  * ============================================================ */
 
 #include "fcthread.h"
-#include "fcsettings.h"
 
 // Qt includes
 
@@ -53,13 +52,17 @@ void FCThread::createCopyJobs(const QList<QUrl>& itemsList,
                               const QUrl& dstUrl,
                               int behavior,
                               bool overwrite,
-                              const ChangeImagePropertiesPtr& imageProp)
+                              bool changeImageProperties,
+                              uint imageResize,
+                              uint imageFormat,
+                              uint imageCompression,
+                              bool removeMetadata)
 {
     ActionJobCollection collection;
 
     foreach (const QUrl& srcUrl, itemsList)
     {
-        FCTask* const t = new FCTask(srcUrl, dstUrl, behavior,  overwrite, imageProp);
+        FCTask* const t = new FCTask(srcUrl, dstUrl, behavior,  overwrite, changeImageProperties, imageResize, imageFormat, imageCompression, removeMetadata);
 
         connect(t, SIGNAL(signalUrlProcessed(QUrl,QUrl)),
                 this, SIGNAL(signalUrlProcessed(QUrl,QUrl)));

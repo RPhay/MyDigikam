@@ -23,7 +23,6 @@
  * ============================================================ */
 
 #include "fcexportwidget.h"
-#include "fcsettings.h"
 
 // Qt includes
 
@@ -266,20 +265,29 @@ void FCExportWidget::setTargetUrl(const QUrl& url)
     d->selector->setFileDlgPath(d->targetUrl.toLocalFile());
 }
 
-ChangeImagePropertiesPtr FCExportWidget::getImageChangeProperties() const
+QCheckBox* FCExportWidget::changeImagePropertiesBox() const
 {
-    ChangeImagePropertiesPtr props; // nullptr
+    return d->changeImagesProp;
+}
 
-    if (d->fileCopyButton->isChecked() && Qt::Checked == d->changeImagesProp->checkState())
-    {
-        props = std::make_shared<ChangeImageProperties>();
-        props->imageSize = d->imagesResize->value();
-        props->imageFormat = (ImageFormat)d->imagesFormat->currentIndex();
-        props->imageCompression = d->imageCompression->value();
-        props->removeMetadata = Qt::Checked == d->removeMetadataProp->checkState();
-    }
+QSpinBox* FCExportWidget::imageResizeBox() const
+{
+    return d->imagesResize;
+}
 
-    return props;
+QComboBox* FCExportWidget::imageFormatBox() const
+{
+    return d->imagesFormat;
+}
+
+QSpinBox* FCExportWidget::imageCompressionBox() const
+{
+    return d->imageCompression;
+}
+
+QCheckBox* FCExportWidget::removeMetadataBox() const
+{
+    return d->removeMetadataProp;
 }
 
 DItemsList* FCExportWidget::imagesList() const

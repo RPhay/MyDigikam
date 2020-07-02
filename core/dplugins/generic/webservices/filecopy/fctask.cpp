@@ -23,7 +23,6 @@
  * ============================================================ */
 
 #include "fctask.h"
-#include "fcsettings.h"
 
 // Qt includes
 
@@ -61,14 +60,22 @@ public:
     int  behavior;
     bool overwrite;
 
-    ChangeImagePropertiesPtr changeImageProperties;
+    bool changeImageProperties;
+    uint imageResize;
+    ImageFormat imageFormat;
+    uint imageCompression;
+    bool removeMetadata;
 };
 
 FCTask::FCTask(const QUrl& srcUrl,
                const QUrl& dstUrl,
                int behavior,
                bool overwrite,
-               const ChangeImagePropertiesPtr& imageProp)
+               bool changeImageProperties,
+               uint imageResize,
+               uint imageFormat,
+               uint imageCompression,
+               bool removeMetadata)
     : ActionJob(),
       d(new Private)
 {
@@ -77,7 +84,11 @@ FCTask::FCTask(const QUrl& srcUrl,
     d->behavior              = behavior;
     d->overwrite             = overwrite;
 
-    d->changeImageProperties = imageProp;
+    d->changeImageProperties = changeImageProperties;
+    d->imageResize           = imageResize;
+    d->imageFormat           = static_cast<ImageFormat>(imageFormat);
+    d->imageCompression      = imageCompression;
+    d->removeMetadata        = removeMetadata;
 }
 
 FCTask::~FCTask()
@@ -107,7 +118,7 @@ void FCTask::run()
 
     if      (d->behavior == CopyFile)
     {
-        if (d->changeImageProperties != nullptr /*adjust image properties is set*/)
+        if (d->changeImageProperties)
         {
             QString errString;
             ok = imageResize(d->srcUrl.toLocalFile(), dest.toLocalFile(), errString);
@@ -180,14 +191,14 @@ bool FCTask::imageResize(const QString& orgUrl, const QString& destName, QString
         return false;
     }
 
-    DImg img = PreviewLoadThread::loadFastSynchronously(orgUrl, d->changeImageProperties->imageSize);
+    DImg img = PreviewLoadThread::loadFastSynchronously(orgUrl, d->imageResize);
 
     if (img.isNull())
     {
         img.load(orgUrl);
     }
 
-    uint sizeFactor = d->changeImageProperties->imageSize;
+    uint sizeFactor = d->imageResize;
 
     if (!img.isNull())
     {
@@ -234,9 +245,9 @@ bool FCTask::imageResize(const QString& orgUrl, const QString& destName, QString
             img = scaledImg;
         }
 
-        if (d->changeImageProperties->imageFormat == ImageFormat::JPEG)
+        if (d->imageFormat == ImageFormat::JPEG)
         {
-            img.setAttribute(QLatin1String("quality"), d->changeImageProperties->imageCompression);
+            img.setAttribute(QLatin1String("quality"), d->imageCompression);
 
             if (!img.save(destName, QLatin1String("JPEG")))
             {
@@ -244,7 +255,7 @@ bool FCTask::imageResize(const QString& orgUrl, const QString& destName, QString
                 return false;
             }
         }
-        else if (d->changeImageProperties->imageFormat == ImageFormat::PNG)
+        else if (d->imageFormat == ImageFormat::PNG)
         {
             if (!img.save(destName, QLatin1String("PNG")))
             {
@@ -260,7 +271,7 @@ bool FCTask::imageResize(const QString& orgUrl, const QString& destName, QString
             return false;
         }
 
-        if (d->changeImageProperties->removeMetadata)
+        if (d->removeMetadata)
         {
             meta.clearExif();
             meta.clearIptc();
