@@ -135,6 +135,7 @@ public:
     Identity predictSVM(cv::Mat faceEmbedding) const;
     Identity predictKNN(cv::Mat faceEmbedding) const;
     Identity predictMLP(cv::Mat faceEmbedding, float threshold) const;
+    Identity predictLogisticRegression(cv::Mat faceEmbedding) const;
 
     void addIndentityToTree(const Identity& id);
     Identity predictKDTree(const std::vector<float>& faceEmbedding, int k) const;
@@ -420,6 +421,24 @@ Identity FaceRecognizer::Private::predictMLP(cv::Mat faceEmbedding, float thresh
         identity.setId(id);
         identity.setAttribute(QLatin1String("fullName"), label);
     }
+
+    return identity;
+}
+
+Identity FaceRecognizer::Private::predictLogisticRegression(cv::Mat faceEmbedding) const
+{
+    if (!logisticRegression->isTrained())
+    {
+        qDebug() << "train logistic regression";
+        trainLogisticRegression();
+    }
+
+    int     id    = int(logisticRegression->predict(faceEmbedding));
+    QString label = labels[id];
+
+    Identity identity;
+    identity.setId(id);
+    identity.setAttribute(QLatin1String("fullName"), label);
 
     return identity;
 }
