@@ -110,7 +110,7 @@ void FCTask::run()
         if (d->changeImageProperties != nullptr /*adjust image properties is set*/)
         {
             QString errString;
-            ok = imageResize(d->changeImageProperties, d->srcUrl.toLocalFile(), dest.toLocalFile(), errString);
+            ok = imageResize(d->srcUrl.toLocalFile(), dest.toLocalFile(), errString);
 
             if (!ok)
             {
@@ -159,7 +159,7 @@ void FCTask::run()
     emit signalDone();
 }
 
-bool FCTask::imageResize(const ChangeImagePropertiesPtr& imageProp, const QString& orgUrl, const QString& destName, QString& err)
+bool FCTask::imageResize(const QString& orgUrl, const QString& destName, QString& err)
 {
     QFileInfo fi(orgUrl);
 
@@ -180,14 +180,14 @@ bool FCTask::imageResize(const ChangeImagePropertiesPtr& imageProp, const QStrin
         return false;
     }
 
-    DImg img = PreviewLoadThread::loadFastSynchronously(orgUrl, imageProp->imageSize);
+    DImg img = PreviewLoadThread::loadFastSynchronously(orgUrl, d->changeImageProperties->imageSize);
 
     if (img.isNull())
     {
         img.load(orgUrl);
     }
 
-    uint sizeFactor = imageProp->imageSize;
+    uint sizeFactor = d->changeImageProperties->imageSize;
 
     if (!img.isNull())
     {
@@ -234,9 +234,9 @@ bool FCTask::imageResize(const ChangeImagePropertiesPtr& imageProp, const QStrin
             img = scaledImg;
         }
 
-        if (imageProp->imageFormat == ImageFormat::JPEG)
+        if (d->changeImageProperties->imageFormat == ImageFormat::JPEG)
         {
-            img.setAttribute(QLatin1String("quality"), imageProp->imageCompression);
+            img.setAttribute(QLatin1String("quality"), d->changeImageProperties->imageCompression);
 
             if (!img.save(destName, QLatin1String("JPEG")))
             {
@@ -244,7 +244,7 @@ bool FCTask::imageResize(const ChangeImagePropertiesPtr& imageProp, const QStrin
                 return false;
             }
         }
-        else if (imageProp->imageFormat == ImageFormat::PNG)
+        else if (d->changeImageProperties->imageFormat == ImageFormat::PNG)
         {
             if (!img.save(destName, QLatin1String("PNG")))
             {
@@ -260,7 +260,7 @@ bool FCTask::imageResize(const ChangeImagePropertiesPtr& imageProp, const QStrin
             return false;
         }
 
-        if (imageProp->removeMetadata)
+        if (d->changeImageProperties->removeMetadata)
         {
             meta.clearExif();
             meta.clearIptc();

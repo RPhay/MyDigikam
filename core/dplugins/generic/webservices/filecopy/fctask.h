@@ -71,7 +71,7 @@ protected:
     void run();
 
 private:
-    bool imageResize(const ChangeImagePropertiesPtr& imageProp, const QString& orgUrl, const QString& destName, QString& err);
+    bool imageResize(const QString& orgUrl, const QString& destName, QString& err);
 
     class Private;
     Private* const d;

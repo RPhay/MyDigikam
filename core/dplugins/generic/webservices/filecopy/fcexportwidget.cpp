@@ -65,7 +65,6 @@ public:
         relativeButton(nullptr),
         imageChangeGroupBox(nullptr),
         changeImagesProp(nullptr),
-        addFileProperties(nullptr),
         removeMetadataProp(nullptr),
         imageCompression(nullptr),
         imagesResize(nullptr),
@@ -86,7 +85,6 @@ public:
 
     QGroupBox*     imageChangeGroupBox;
     QCheckBox*     changeImagesProp;
-    QCheckBox*     addFileProperties;
     QCheckBox*     removeMetadataProp;
 
     QSpinBox*      imageCompression;
@@ -141,6 +139,7 @@ FCExportWidget::FCExportWidget(DInfoInterface* const iface, QWidget* const paren
     d->imagesResize->setSuffix(i18n(" px"));
     d->imagesResize->setWhatsThis(i18n("Select the length of the images that are to be sent. "
                                        "The aspect ratio is preserved."));
+    d->imageChangeGroupBox->setEnabled(false);
 
     QLabel* const  labelImagesResize = new QLabel(i18n("Image Length:"), d->imageChangeGroupBox);
     labelImagesResize->setBuddy(d->imagesResize);
@@ -229,7 +228,6 @@ FCExportWidget::FCExportWidget(DInfoInterface* const iface, QWidget* const paren
     layout->addWidget(d->overwrite);
     layout->addWidget(d->imageList);
 
-    layout->addWidget(d->addFileProperties);
     layout->addWidget(d->changeImagesProp);
     layout->addWidget(d->imageChangeGroupBox);
 
@@ -315,7 +313,7 @@ void FCExportWidget::slotFileCopyButtonChanged(bool enabled)
 
     d->changeImagesProp->setEnabled(enabled);
 
-    d->imageChangeGroupBox->setEnabled(enabled);
+    d->imageChangeGroupBox->setEnabled(false); // The changeImagesProp is by default and on each change unchecked
 }
 
 } // namespace DigikamGenericFileCopyPlugin
