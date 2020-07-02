@@ -51,6 +51,7 @@ public:
         L2Distance,
         SupportVectorMachine,
         KNN,
+        MLP,
         Tree,
     };
 

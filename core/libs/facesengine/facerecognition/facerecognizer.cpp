@@ -86,8 +86,8 @@ public:
 
         mlp = cv::ml::ANN_MLP::create();
         // use 16 bit to index label
-        int layer_sz[] = { 128, 100, 100, 16 };
-        int nlayers = 4;
+        int layer_sz[] = { 128, 200, 150, 100, 16 };
+        int nlayers = 5;
         cv::Mat layer_sizes(1, nlayers, CV_32S, layer_sz);
 
         int method = cv::ml::ANN_MLP::BACKPROP;
@@ -126,7 +126,7 @@ public:
 
     Identity predictSVM(cv::Mat faceEmbedding) const;
     Identity predictKNN(cv::Mat faceEmbedding) const;
-    Identity predictMLP(cv::Mat faceEmbedding) const;
+    Identity predictMLP(cv::Mat faceEmbedding, float threshold) const;
 
     void addIndentityToTree(const Identity& id);
     Identity predictKDTree(const std::vector<float>& faceEmbedding, int k) const;
@@ -255,7 +255,7 @@ int FaceRecognizer::Private::trainMLP() const
             QJsonArray jsonFaceEmbedding = QJsonDocument::fromJson(iter->attribute(QLatin1String("faceEmbedding")).toLatin1()).array();
             std::vector<float> recordedFaceEmbedding = FaceExtractor::decodeVector(jsonFaceEmbedding);
 
-            cv::Mat train_response = cv::Mat::zeros(1, 26, CV_32F);
+            cv::Mat train_response = cv::Mat::zeros(1, 16, CV_32F);
 
             int index = i;
             int j = 0;
@@ -279,9 +279,9 @@ int FaceRecognizer::Private::trainMLP() const
         }
     }
 
-    knn->train(features, 0, label);
+    mlp->train(features, 0, label);
 
-    qDebug() << "KNN trains" << size << "samples in" << timer.elapsed() << "ms";
+    qDebug() << "MLP trains" << size << "samples in" << timer.elapsed() << "ms";
 
     return size;
 }
@@ -293,7 +293,6 @@ void FaceRecognizer::Private::onlineTrainKNN(const std::vector<float>& inputSamp
     feature.push_back(FaceExtractor::vectortomat(inputSample));
 
     cv::Ptr<cv::ml::TrainData> trainingSample = cv::ml::TrainData::create(feature, 0, label);
-
 
     if (knn->train(trainingSample, cv::ml::StatModel::UPDATE_MODEL))
     {
@@ -349,7 +348,7 @@ Identity FaceRecognizer::Private::predictKNN(cv::Mat faceEmbedding) const
     return identity;
 }
 
-Identity FaceRecognizer::Private::predictMLP(cv::Mat faceEmbedding) const
+Identity FaceRecognizer::Private::predictMLP(cv::Mat faceEmbedding, float threshold) const
 {
     if (!mlp->isTrained())
     {
@@ -361,7 +360,6 @@ Identity FaceRecognizer::Private::predictMLP(cv::Mat faceEmbedding) const
 
     mlp->predict(faceEmbedding, output);
 
-    float threshold = 0.8f;
     int id = 0;
 
     for (int i = 0; i < 16; ++i)
@@ -372,11 +370,15 @@ Identity FaceRecognizer::Private::predictMLP(cv::Mat faceEmbedding) const
         }
     }
 
-    QString label = labels[id];
-
     Identity identity;
-    identity.setId(id);
-    identity.setAttribute(QLatin1String("fullName"), label);
+
+    if (id < labels.size())
+    {
+        QString label = labels[id];
+
+        identity.setId(id);
+        identity.setAttribute(QLatin1String("fullName"), label);
+    }
 
     return identity;
 }
@@ -567,6 +569,10 @@ Identity FaceRecognizer::findIdenity(const cv::Mat& preprocessedImage, Compariso
     {
         id = d->predictKNN(d->extractor->getFaceDescriptor(preprocessedImage));
     }
+    else if (metric == MLP)
+    {
+        id = d->predictMLP(d->extractor->getFaceDescriptor(preprocessedImage), float(threshold));
+    }
     else
     {
         std::vector<float> faceEmbedding = d->extractor->getFaceEmbedding(preprocessedImage);
@@ -611,6 +617,31 @@ Identity FaceRecognizer::newIdentity(const cv::Mat& preprocessedImage)
 
 int FaceRecognizer::saveIdentity(Identity& id, bool newLabel)
 {
+    QString label = id.attribute(QLatin1String("fullName"));
+
+    if (label.isEmpty())
+    {
+        qWarning() << "idenitity is empty";
+
+        return -1;
+    }
+
+    // TODO save identity to database
+    if (id.isNull())
+    {
+        id.setId(++d->identityCounter);
+    }
+
+    d->faceLibrary[label].append(id);
+
+    if (! d->labels.contains(label))
+    {
+        d->labels.append(label);
+    }
+
+    return d->labels.indexOf(label);
+
+/*
     if (newLabel)
     {
         QString label = id.attribute(QLatin1String("fullName"));
@@ -653,6 +684,7 @@ int FaceRecognizer::saveIdentity(Identity& id, bool newLabel)
     // Create a KD-Node for this identity
     //d->addIndentityToTree(id);
     return index;
+*/
 }
 
 }

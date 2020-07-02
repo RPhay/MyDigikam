@@ -89,6 +89,7 @@ public:
     Q_SLOT void verifyTestSetSupportVectorMachine();
     Q_SLOT void verifyTestKNN();
     Q_SLOT void verifyTestKDTree(int k);
+    Q_SLOT void verifyTestMLP(double threshold);
 
 private:
 
@@ -165,11 +166,17 @@ void Benchmark::registerTrainingSet()
             {
                 Identity newIdentity = m_recognizer->newIdentity(face);
 
+                newIdentity.setAttribute(QLatin1String("fullName"), iter.key());
+
+                m_recognizer->saveIdentity(newIdentity, false);
+             /*
+                Identity newIdentity = m_recognizer->newIdentity(face);
+
                 newIdentity.setId(index);
                 newIdentity.setAttribute(QLatin1String("fullName"), iter.key());
 
                 index = m_recognizer->saveIdentity(newIdentity, (index < 0));
-
+            */
                 ++m_trainSize;
             }
         }
@@ -379,6 +386,11 @@ void Benchmark::verifyTestKDTree(int k)
     verifyTestSet(FaceRecognizer::Tree, k);
 }
 
+void Benchmark::verifyTestMLP(double threshold)
+{
+    verifyTestSet(FaceRecognizer::MLP, threshold);
+}
+
 QCommandLineParser* parseOptions(const QCoreApplication& app)
 {
     QCommandLineParser* parser = new QCommandLineParser();
@@ -406,11 +418,18 @@ int main(int argc, char** argv)
 
     //qDebug() << "L2 distance:";
     //benchmark.verifyTestSetL2Distance();
-    qDebug() << "SVM:";
-    benchmark.verifyTestSetSupportVectorMachine();
+    //qDebug() << "SVM:";
+    //benchmark.verifyTestSetSupportVectorMachine();
 
-    qDebug() << "KNN:";
-    benchmark.verifyTestKNN();
+    //qDebug() << "KNN:";
+    //benchmark.verifyTestKNN();
+
+    for (int i = 1; i < 10; ++i)
+    {
+        double threshold = float(i) / 10.0f;
+        qDebug() << "MLP with threshold:" << threshold;
+        benchmark.verifyTestMLP(threshold);
+    }
 }
 
 
