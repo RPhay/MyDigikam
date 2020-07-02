@@ -86,7 +86,7 @@ public:
 
         mlp = cv::ml::ANN_MLP::create();
         // use 16 bit to index label
-        int layer_sz[] = { 128, 200, 150, 100, 16 };
+        int layer_sz[] = { 128, 200, 250, 150, 16 };
         int nlayers = 5;
         cv::Mat layer_sizes(1, nlayers, CV_32S, layer_sz);
 
@@ -98,6 +98,13 @@ public:
         mlp->setActivationFunction(cv::ml::ANN_MLP::SIGMOID_SYM, 0, 0);
         mlp->setTermCriteria(cv::TermCriteria(cv::TermCriteria::MAX_ITER + (0 > 0 ? cv::TermCriteria::EPS : 0), max_iter, 0));
         mlp->setTrainMethod(method, method_param);
+
+        logisticRegression = cv::ml::LogisticRegression::create();
+        logisticRegression->setLearningRate(0.001);
+        logisticRegression->setIterations(100);
+        logisticRegression->setRegularization(cv::ml::LogisticRegression::REG_L2);
+        logisticRegression->setTrainMethod(cv::ml::LogisticRegression::BATCH);
+        logisticRegression->setMiniBatchSize(1);
     }
 
     ~Private()
@@ -143,6 +150,7 @@ public:
     cv::Ptr<cv::ml::SVM> svm;
     cv::Ptr<cv::ml::KNearest> knn;
     cv::Ptr<cv::ml::ANN_MLP> mlp;
+    cv::Ptr<cv::ml::LogisticRegression> logisticRegression;
 
     QHash<QString, QVector<Identity> > faceLibrary;
     QVector<QString> labels;

@@ -424,12 +424,9 @@ int main(int argc, char** argv)
     //qDebug() << "KNN:";
     //benchmark.verifyTestKNN();
 
-    for (int i = 1; i < 10; ++i)
-    {
-        double threshold = float(i) / 10.0f;
-        qDebug() << "MLP with threshold:" << threshold;
-        benchmark.verifyTestMLP(threshold);
-    }
+    double threshold = 0.5f;
+    qDebug() << "MLP with threshold:" << threshold;
+    benchmark.verifyTestMLP(threshold);
 }
 
 

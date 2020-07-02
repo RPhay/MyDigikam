@@ -52,6 +52,7 @@ public:
         SupportVectorMachine,
         KNN,
         MLP,
+        LogisticRegression,
         Tree,
     };
 
