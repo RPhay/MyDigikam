@@ -127,6 +127,7 @@ public:
     int trainSVM() const;
     int trainKNN() const;
     int trainMLP() const;
+    int trainLogisticRegression() const;
 
     void onlineTrainSVM(const std::vector<float>& inputSample, int inputLabel) const;
     void onlineTrainKNN(const std::vector<float>& inputSample, int inputLabel) const;
@@ -293,6 +294,38 @@ int FaceRecognizer::Private::trainMLP() const
 
     return size;
 }
+
+int FaceRecognizer::Private::trainLogisticRegression() const
+{
+    cv::Mat features, label;
+    int size = 0;
+
+    QElapsedTimer timer;
+    timer.start();
+
+    for (int i = 0; i < labels.size(); ++i)
+    {
+        for (QVector<Identity>::const_iterator iter  = faceLibrary[labels[i]].cbegin();
+                                               iter != faceLibrary[labels[i]].cend();
+                                             ++iter)
+        {
+            QJsonArray jsonFaceEmbedding = QJsonDocument::fromJson(iter->attribute(QLatin1String("faceEmbedding")).toLatin1()).array();
+            std::vector<float> recordedFaceEmbedding = FaceExtractor::decodeVector(jsonFaceEmbedding);
+
+            label.push_back(i);
+            features.push_back(FaceExtractor::vectortomat(recordedFaceEmbedding));
+
+            ++size;
+        }
+    }
+
+    logisticRegression->train(features, 0, label);
+
+    qDebug() << "Logistic regression trains" << size << "samples in" << timer.elapsed() << "ms";
+
+    return size;
+}
+
 
 void FaceRecognizer::Private::onlineTrainKNN(const std::vector<float>& inputSample, int inputLabel) const
 {
