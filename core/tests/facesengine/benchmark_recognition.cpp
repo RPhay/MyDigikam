@@ -90,6 +90,7 @@ public:
     Q_SLOT void verifyTestKNN();
     Q_SLOT void verifyTestKDTree(int k);
     Q_SLOT void verifyTestMLP(double threshold);
+    Q_SLOT void verifyTestLogisticRegression();
 
 private:
 
@@ -391,6 +392,11 @@ void Benchmark::verifyTestMLP(double threshold)
     verifyTestSet(FaceRecognizer::MLP, threshold);
 }
 
+void Benchmark::verifyTestLogisticRegression()
+{
+    verifyTestSet(FaceRecognizer::LogisticRegression, 0);
+}
+
 QCommandLineParser* parseOptions(const QCoreApplication& app)
 {
     QCommandLineParser* parser = new QCommandLineParser();
@@ -424,9 +430,14 @@ int main(int argc, char** argv)
     //qDebug() << "KNN:";
     //benchmark.verifyTestKNN();
 
-    double threshold = 0.5f;
-    qDebug() << "MLP with threshold:" << threshold;
-    benchmark.verifyTestMLP(threshold);
+    //double threshold = 0.5f;
+    //qDebug() << "MLP with threshold:" << threshold;
+    //benchmark.verifyTestMLP(threshold);
+
+    qDebug() << "Logistic regression";
+    benchmark.verifyTestLogisticRegression();
+
+    return 0;
 }
 
 

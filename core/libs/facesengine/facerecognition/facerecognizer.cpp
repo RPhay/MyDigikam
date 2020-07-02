@@ -92,7 +92,7 @@ public:
 
         int method = cv::ml::ANN_MLP::BACKPROP;
         double method_param = 0.001;
-        int max_iter = 300;
+        int max_iter = 10000;
 
         mlp->setLayerSizes(layer_sizes);
         mlp->setActivationFunction(cv::ml::ANN_MLP::SIGMOID_SYM, 0, 0);
@@ -101,8 +101,8 @@ public:
 
         logisticRegression = cv::ml::LogisticRegression::create();
         logisticRegression->setLearningRate(0.001);
-        logisticRegression->setIterations(100);
-        logisticRegression->setRegularization(cv::ml::LogisticRegression::REG_L2);
+        logisticRegression->setIterations(max_iter);
+        logisticRegression->setRegularization(cv::ml::LogisticRegression::REG_DISABLE);
         logisticRegression->setTrainMethod(cv::ml::LogisticRegression::BATCH);
         logisticRegression->setMiniBatchSize(1);
     }
@@ -313,7 +313,7 @@ int FaceRecognizer::Private::trainLogisticRegression() const
             QJsonArray jsonFaceEmbedding = QJsonDocument::fromJson(iter->attribute(QLatin1String("faceEmbedding")).toLatin1()).array();
             std::vector<float> recordedFaceEmbedding = FaceExtractor::decodeVector(jsonFaceEmbedding);
 
-            label.push_back(i);
+            label.push_back(float(i));
             features.push_back(FaceExtractor::vectortomat(recordedFaceEmbedding));
 
             ++size;
@@ -433,7 +433,10 @@ Identity FaceRecognizer::Private::predictLogisticRegression(cv::Mat faceEmbeddin
         trainLogisticRegression();
     }
 
-    int     id    = int(logisticRegression->predict(faceEmbedding));
+    cv::Mat output;
+    int id = logisticRegression->predict(faceEmbedding);
+
+    //int     id    = int(output.at<float>(0));
     QString label = labels[id];
 
     Identity identity;
@@ -632,6 +635,10 @@ Identity FaceRecognizer::findIdenity(const cv::Mat& preprocessedImage, Compariso
     else if (metric == MLP)
     {
         id = d->predictMLP(d->extractor->getFaceDescriptor(preprocessedImage), float(threshold));
+    }
+    else if (metric == LogisticRegression)
+    {
+        id = d->predictLogisticRegression(d->extractor->getFaceDescriptor(preprocessedImage));
     }
     else
     {
