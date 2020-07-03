@@ -42,6 +42,7 @@ namespace Digikam
  */
 class QueueSettings
 {
+
 public:
 
     enum RenamingRule
@@ -58,16 +59,8 @@ public:
 
 public:
 
-    QueueSettings()
-      : useMultiCoreCPU(false),
-        saveAsNewVersion(true),
-        exifSetOrientation(true),
-        useOrgAlbum(true),
-        conflictRule(FileSaveConflictBox::DIFFNAME),
-        renamingRule(USEORIGINAL),
-        rawLoadingRule(DEMOSAICING)
-    {
-    };
+    explicit QueueSettings();
+    ~QueueSettings();
 
 public:
 

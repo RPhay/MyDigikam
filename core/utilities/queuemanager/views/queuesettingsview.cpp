@@ -442,27 +442,30 @@ void QueueSettingsView::slotResetSettings()
     d->rawLoadingButtonGroup->button(QueueSettings::DEMOSAICING)->setChecked(true);
     d->advancedRenameWidget->clearParseString();
     d->rawSettings->resetToDefault();
-    d->jpgSettings->setCompressionValue(75);
-    d->jpgSettings->setSubSamplingValue(1);
-    d->pngSettings->setCompressionValue(9);
-    d->tifSettings->setCompression(false);
+
+    QueueSettings settings;
+    d->jpgSettings->setCompressionValue(settings.ioFileSettings.JPEGCompression);
+    d->jpgSettings->setSubSamplingValue(settings.ioFileSettings.JPEGSubSampling);
+    d->pngSettings->setCompressionValue(settings.ioFileSettings.PNGCompression);
+    d->tifSettings->setCompression(settings.ioFileSettings.TIFFCompression);
 
 #ifdef HAVE_JASPER
 
-    d->j2kSettings->setLossLessCompression(true);
-    d->j2kSettings->setCompressionValue(75);
+    d->j2kSettings->setCompressionValue(settings.ioFileSettings.JPEG2000Compression);
+    d->j2kSettings->setLossLessCompression(settings.ioFileSettings.JPEG2000LossLess);
 
 #endif // HAVE_JASPER
 
+    d->pgfSettings->setCompressionValue(settings.ioFileSettings.PGFCompression);
+    d->pgfSettings->setLossLessCompression(settings.ioFileSettings.PGFLossLess);
+
 #ifdef HAVE_X265
 
-    d->heifSettings->setLossLessCompression(true);
-    d->heifSettings->setCompressionValue(75);
+    d->heifSettings->setCompressionValue(settings.ioFileSettings.HEIFCompression);
+    d->heifSettings->setLossLessCompression(settings.ioFileSettings.HEIFLossLess);
 
 #endif // HAVE_X265
 
-    d->pgfSettings->setLossLessCompression(true);
-    d->pgfSettings->setCompressionValue(3);
     blockSignals(false);
     slotSettingsChanged();
 }
@@ -494,20 +497,21 @@ void QueueSettingsView::slotQueueSelected(int, const QueueSettings& settings, co
 
 #ifdef HAVE_JASPER
 
-    d->j2kSettings->setLossLessCompression(settings.ioFileSettings.JPEG2000LossLess);
     d->j2kSettings->setCompressionValue(settings.ioFileSettings.JPEG2000Compression);
+    d->j2kSettings->setLossLessCompression(settings.ioFileSettings.JPEG2000LossLess);
 
 #endif // HAVE_JASPER
 
+    d->pgfSettings->setCompressionValue(settings.ioFileSettings.PGFCompression);
+    d->pgfSettings->setLossLessCompression(settings.ioFileSettings.PGFLossLess);
+
 #ifdef HAVE_X265
 
-    d->heifSettings->setLossLessCompression(settings.ioFileSettings.HEIFLossLess);
     d->heifSettings->setCompressionValue(settings.ioFileSettings.HEIFCompression);
+    d->heifSettings->setLossLessCompression(settings.ioFileSettings.HEIFLossLess);
 
 #endif // HAVE_X265
 
-    d->pgfSettings->setLossLessCompression(settings.ioFileSettings.PGFLossLess);
-    d->pgfSettings->setCompressionValue(settings.ioFileSettings.PGFCompression);
 }
 
 void QueueSettingsView::slotSettingsChanged()
