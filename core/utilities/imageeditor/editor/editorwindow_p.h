@@ -191,15 +191,17 @@ public:
 
     static const QString         configAutoZoomEntry;
     static const QString         configBackgroundColorEntry;
-    static const QString         configJpeg2000CompressionEntry;
-    static const QString         configJpeg2000LossLessEntry;
     static const QString         configJpegCompressionEntry;
     static const QString         configJpegSubSamplingEntry;
+    static const QString         configPngCompressionEntry;
+    static const QString         configTiffCompressionEntry;
+    static const QString         configJpeg2000CompressionEntry;
+    static const QString         configJpeg2000LossLessEntry;
     static const QString         configPgfCompressionEntry;
     static const QString         configPgfLossLessEntry;
-    static const QString         configPngCompressionEntry;
+    static const QString         configHeifCompressionEntry;
+    static const QString         configHeifLossLessEntry;
     static const QString         configSplitterStateEntry;
-    static const QString         configTiffCompressionEntry;
     static const QString         configUnderExposureColorEntry;
     static const QString         configUnderExposureIndicatorEntry;
     static const QString         configUnderExposurePercentsEntry;
@@ -263,15 +265,17 @@ public:
 
 const QString EditorWindow::Private::configAutoZoomEntry(QLatin1String("AutoZoom"));
 const QString EditorWindow::Private::configBackgroundColorEntry(QLatin1String("BackgroundColor"));
-const QString EditorWindow::Private::configJpeg2000CompressionEntry(QLatin1String("JPEG2000Compression"));
-const QString EditorWindow::Private::configJpeg2000LossLessEntry(QLatin1String("JPEG2000LossLess"));
 const QString EditorWindow::Private::configJpegCompressionEntry(QLatin1String("JPEGCompression"));
 const QString EditorWindow::Private::configJpegSubSamplingEntry(QLatin1String("JPEGSubSampling"));
+const QString EditorWindow::Private::configPngCompressionEntry(QLatin1String("PNGCompression"));
+const QString EditorWindow::Private::configTiffCompressionEntry(QLatin1String("TIFFCompression"));
+const QString EditorWindow::Private::configJpeg2000CompressionEntry(QLatin1String("JPEG2000Compression"));
+const QString EditorWindow::Private::configJpeg2000LossLessEntry(QLatin1String("JPEG2000LossLess"));
 const QString EditorWindow::Private::configPgfCompressionEntry(QLatin1String("PGFCompression"));
 const QString EditorWindow::Private::configPgfLossLessEntry(QLatin1String("PGFLossLess"));
-const QString EditorWindow::Private::configPngCompressionEntry(QLatin1String("PNGCompression"));
+const QString EditorWindow::Private::configHeifCompressionEntry(QLatin1String("HEIFCompression"));
+const QString EditorWindow::Private::configHeifLossLessEntry(QLatin1String("HEIFLossLess"));
 const QString EditorWindow::Private::configSplitterStateEntry(QLatin1String("SplitterState"));
-const QString EditorWindow::Private::configTiffCompressionEntry(QLatin1String("TIFFCompression"));
 const QString EditorWindow::Private::configUnderExposureColorEntry(QLatin1String("UnderExposureColor"));
 const QString EditorWindow::Private::configUnderExposureIndicatorEntry(QLatin1String("UnderExposureIndicator"));
 const QString EditorWindow::Private::configUnderExposurePercentsEntry(QLatin1String("UnderExposurePercentsEntry"));
