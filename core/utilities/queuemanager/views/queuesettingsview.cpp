@@ -311,23 +311,23 @@ QueueSettingsView::QueueSettingsView(QWidget* const parent)
 
 #endif // HAVE_JASPER
 
-#ifdef HAVE_X265
-
     QGroupBox* const  box5   = new QGroupBox;
     QVBoxLayout* const lbox5 = new QVBoxLayout;
-    d->heifSettings          = new HEIFSettings();
-    lbox5->addWidget(d->heifSettings);
+    d->pgfSettings           = new PGFSettings();
+    lbox5->addWidget(d->pgfSettings);
     box5->setLayout(lbox5);
     slay->addWidget(box5);
 
-#endif // HAVE_X265
+#ifdef HAVE_X265
 
     QGroupBox* const  box6   = new QGroupBox;
     QVBoxLayout* const lbox6 = new QVBoxLayout;
-    d->pgfSettings           = new PGFSettings();
-    lbox6->addWidget(d->pgfSettings);
+    d->heifSettings          = new HEIFSettings();
+    lbox6->addWidget(d->heifSettings);
     box6->setLayout(lbox6);
     slay->addWidget(box6);
+
+#endif // HAVE_X265
 
     slay->setContentsMargins(spacing, spacing, spacing, spacing);
     slay->setSpacing(spacing);
@@ -542,20 +542,20 @@ void QueueSettingsView::slotSettingsChanged()
 
 #ifdef HAVE_JASPER
 
-    settings.ioFileSettings.JPEG2000LossLess    = d->j2kSettings->getLossLessCompression();
     settings.ioFileSettings.JPEG2000Compression = d->j2kSettings->getCompressionValue();
+    settings.ioFileSettings.JPEG2000LossLess    = d->j2kSettings->getLossLessCompression();
 
 #endif // HAVE_JASPER
 
+    settings.ioFileSettings.PGFCompression      = d->pgfSettings->getCompressionValue();
+    settings.ioFileSettings.PGFLossLess         = d->pgfSettings->getLossLessCompression();
+
 #ifdef HAVE_X265
 
-    settings.ioFileSettings.HEIFLossLess        = d->heifSettings->getLossLessCompression();
     settings.ioFileSettings.HEIFCompression     = d->heifSettings->getCompressionValue();
+    settings.ioFileSettings.HEIFLossLess        = d->heifSettings->getLossLessCompression();
 
 #endif // HAVE_X265
-
-    settings.ioFileSettings.PGFLossLess         = d->pgfSettings->getLossLessCompression();
-    settings.ioFileSettings.PGFCompression      = d->pgfSettings->getCompressionValue();
 
     emit signalSettingsChanged(settings);
 }
