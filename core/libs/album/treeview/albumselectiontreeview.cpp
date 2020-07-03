@@ -146,8 +146,10 @@ public:
         {
             cmh.addActionNewAlbum(d->albumModificationHelper, album);
             cmh.addAction(QLatin1String("album_openinfilemanager"));
-            cmh.addAction(QLatin1String("album_openinterminal"));
             cmh.addSeparator();
+
+        // --------------------------------------------------------
+
             cmh.addAction(d->rebuildThumbsAction);
             d->albumModificationHelper->bindAlbum(d->rebuildThumbsAction, album);
             return;
@@ -157,7 +159,6 @@ public:
 
         cmh.addActionNewAlbum(d->albumModificationHelper, album);
         cmh.addAction(QLatin1String("album_openinfilemanager"));
-        cmh.addAction(QLatin1String("album_openinterminal"));
         cmh.addSeparator();
 
         // --------------------------------------------------------
