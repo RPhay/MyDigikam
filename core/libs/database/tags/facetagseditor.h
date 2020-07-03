@@ -72,7 +72,7 @@ public:
 
     /**
      * Returns list of Unconfirmed and Unknown faces in the Image.
-     * If you want just Unconfirmed Faces, use @see unconfirmedNameFaceTagsIfaces
+     * If you want just Unconfirmed Faces, @see unconfirmedNameFaceTagsIfaces
      */
     QList<FaceTagsIface> unconfirmedFaceTagsIfaces(qlonglong imageid)                           const;
 
