@@ -39,7 +39,6 @@
 
 // Local includes
 
-#include "slideosd.h"
 #include "digikam_debug.h"
 #include "dinfointerface.h"
 #include "itempropertiestab.h"
@@ -56,8 +55,7 @@ public:
     explicit Private()
         : maxStringLen(80),
           paintEnabled(true),
-          settings(nullptr),
-          parent(nullptr)
+          settings(nullptr)
     {
     }
 
@@ -67,25 +65,15 @@ public:
     QUrl                     url;
 
     SlideShowSettings*       settings;
-    SlideOSD*                parent;
 
     DInfoInterface::DInfoMap infoMap;
 };
 
-SlideProperties::SlideProperties(SlideShowSettings* const settings, SlideOSD* const parent)
+SlideProperties::SlideProperties(SlideShowSettings* const settings, QWidget* const parent)
     : QWidget(parent),
       d(new Private)
 {
-    Qt::WindowFlags flags = Qt::FramelessWindowHint  |
-                            Qt::WindowStaysOnTopHint |
-                            Qt::X11BypassWindowManagerHint;
-
-    setWindowFlags(flags);
-    setAttribute(Qt::WA_TranslucentBackground, true);
-    setAttribute(Qt::WA_ShowWithoutActivating, true);
     setMouseTracking(true);
-
-    d->parent   = parent;
     d->settings = settings;
 }
 
@@ -98,9 +86,6 @@ void SlideProperties::setCurrentUrl(const QUrl& url)
 {
     d->infoMap = d->settings->iface->itemInfo(url);
     d->url     = url;
-
-    move(0, 0);
-    setFixedSize(d->parent->slideShowSize());
 
     update();
 }

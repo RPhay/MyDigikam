@@ -208,6 +208,46 @@ QUrl DFileOperations::getUniqueFileUrl(const QUrl& orgUrl,
     return destUrl;
 }
 
+QUrl DFileOperations::getUniqueFolderUrl(const QUrl& orgUrl)
+{
+    int counter = 0;
+    QUrl destUrl(orgUrl);
+    QFileInfo fi(destUrl.toLocalFile());
+    QRegExp version(QLatin1String("(.+)-(\\d+)"));
+    QString completeFileName = fi.fileName();
+
+    if (version.exactMatch(completeFileName))
+    {
+        completeFileName = version.cap(1);
+        counter          = version.cap(2).toInt();
+    }
+
+    if (fi.exists())
+    {
+        bool fileFound = false;
+
+        do
+        {
+            QFileInfo nfi(destUrl.toLocalFile());
+
+            if (!nfi.exists())
+            {
+                fileFound = false;
+            }
+            else
+            {
+                fileFound = true;
+                destUrl   = destUrl.adjusted(QUrl::RemoveFilename);
+                destUrl.setPath(destUrl.path() + completeFileName +
+                                QString::fromUtf8("-%1").arg(++counter));
+            }
+        }
+        while (fileFound);
+    }
+
+    return destUrl;
+}
+
 void DFileOperations::openInFileManager(const QList<QUrl>& urls)
 {
     if (urls.isEmpty())
