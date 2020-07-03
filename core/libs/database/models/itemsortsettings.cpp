@@ -140,6 +140,7 @@ Qt::SortOrder ItemSortSettings::defaultSortOrderForSortRole(SortRole role)
         case SortByModificationDate:
         case SortByManualOrderAndName:
         case SortByManualOrderAndDate:
+        case SortByFaces:
             return Qt::AscendingOrder;
 
         case SortByRating:
