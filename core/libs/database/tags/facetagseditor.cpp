@@ -490,6 +490,9 @@ FaceTagsIface FaceTagsEditor::changeTag(const FaceTagsIface& face, int newTagId,
     ItemTagPair newPair(newFace.imageId(), newFace.tagId());
 
     /**
+     * NOTE: Ignored Tag is being associated with the Images.
+     * This is to allow storing Ignored information in the metadata
+     * of the image.
      * We store metadata of FaceTags, if it's a confirmed
      * or ignored person.
      */
