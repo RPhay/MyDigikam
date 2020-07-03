@@ -100,17 +100,17 @@ void DatabaseWriter::process(FacePipelineExtendedPackage::Ptr package)
                     // Only perform this call if recognition as results, to prevent crash in QMap. See bug #335624
 
                     tagId = FaceTags::getOrCreateTagForIdentity(package->recognitionResults[i].attributesMap());
-
-                    /**
-                     * This ensures that the unconfirmed face count, for the
-                     * associated image is incremented.
-                     *
-                     * Issue: For group photos, this might lead to repeated counts of faces,
-                     * if Recognition is run without confirming/rejecting all existing suggestions
-                     * for that image.
-                     */
-                    package->info.incrementUnconfirmedFaceCount(true);
                 }
+
+                /**
+                 * This ensures that the unconfirmed face count, for the
+                 * associated image is incremented.
+                 * It's important to check that the Face for which we're incrementing
+                 * wasn't marked as Unconfirmed already. This can happen in photos with
+                 * multiple Faces in it.
+                 */
+                if (package->databaseFaces[i].type() != FaceTagsIface::UnconfirmedName)
+                    package->info.incrementUnconfirmedFaceCount(true);
 
                 package->databaseFaces[i]        = FacePipelineFaceTagsIface(utils.changeSuggestedName(package->databaseFaces[i], tagId));
                 package->databaseFaces[i].roles &= ~FacePipelineFaceTagsIface::ForRecognition;
