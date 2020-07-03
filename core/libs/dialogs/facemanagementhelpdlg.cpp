@@ -125,7 +125,8 @@ FaceManagementHelpDialog::FaceManagementHelpDialog(QWidget* const parent)
     QGridLayout* faceDetectionPageLayout = new QGridLayout();
 
     // qDebug() << QStandardPaths::locate(QStandardPaths::GenericDataLocation, QLatin1String("digikam/data/OverlayImg.png"));
-    QPixmap detectFaceOptionImage  = QPixmap(QStandardPaths::locate(QStandardPaths::GenericDataLocation, QLatin1String("digikam/data/overlayImg.png")));
+    // QPixmap detectFaceOptionImage  = QPixmap(QStandardPaths::locate(QStandardPaths::GenericDataLocation, QLatin1String("digikam/data/detectFacesImg.png")))
+    QPixmap detectFaceOptionImage = QPixmap(QStandardPaths::locate(QStandardPaths::GenericDataLocation, QLatin1String("digikam/data/detectFacesImg.png")));
     detectFaceOptionImage = detectFaceOptionImage.scaled(QSize(350,170));
 
     QLabel* detectFaceOptionLabel  = new QLabel(faceDetectionPage);
@@ -195,7 +196,7 @@ FaceManagementHelpDialog::FaceManagementHelpDialog(QWidget* const parent)
 
 
     QLabel* identifyLabel        = new QLabel(faceRecogPage);
-    QMovie* identifyImage        = new QMovie(i18n(""));
+    QMovie* identifyImage        = new QMovie(QStandardPaths::locate(QStandardPaths::GenericDataLocation, QLatin1String("digikam/data/tagFacesImg.gif")));
     identifyImage->setScaledSize(QSize(185,220));
     identifyLabel->setMovie(identifyImage);
     identifyImage->start();
@@ -223,7 +224,7 @@ FaceManagementHelpDialog::FaceManagementHelpDialog(QWidget* const parent)
                              "This leads to the creation of a new <u>Ignored</u> Tag, "
                              "you can later unmark the Face if needed."));
 
-    QPixmap ignoreImage          = QPixmap(i18n(""));
+    QPixmap ignoreImage          = QPixmap(QStandardPaths::locate(QStandardPaths::GenericDataLocation, QLatin1String("digikam/data/ignoreImg.png")));
     ignoreImage                  = ignoreImage.scaled(QSize(185,230));
 
     QLabel* ignoreLabel          = new QLabel(faceRecogPage);
@@ -236,7 +237,7 @@ FaceManagementHelpDialog::FaceManagementHelpDialog(QWidget* const parent)
                                   "from the Settings Tab. You can also modify Recognition "
                                   "Accuracy, to find a balance between Accuracy and Speed."));
 
-    QPixmap workOnAllCoresImage  = QPixmap(i18n(""));
+    QPixmap workOnAllCoresImage  = QPixmap(QStandardPaths::locate(QStandardPaths::GenericDataLocation, QLatin1String("digikam/data/workOnAllCoresImg.png")));
     workOnAllCoresImage          = workOnAllCoresImage.scaled(QSize(445,170));
 
     QLabel* workOnAllCoresLabel  = new QLabel(faceRecogPage);
@@ -259,9 +260,9 @@ FaceManagementHelpDialog::FaceManagementHelpDialog(QWidget* const parent)
     QGridLayout* confirmFacesLayout = new QGridLayout();
 
     QLabel* overlayImgLabel = new QLabel(confirmFacesPage);
-    QPixmap overlayImg(i18n(""));
-    overlayImg = overlayImg.scaled(QSize(185, 255));
-    overlayImgLabel->setAlignment(Qt::AlignVCenter);
+    QPixmap overlayImg(QStandardPaths::locate(QStandardPaths::GenericDataLocation, QLatin1String("digikam/data/overlayImg.png")));
+    overlayImg = overlayImg.scaled(QSize(210, 285));
+    overlayImgLabel->setAlignment(Qt::AlignTop);
     overlayImgLabel->setPixmap(overlayImg);
 
     QLabel* overlayText     = new QLabel(confirmFacesPage);
@@ -314,7 +315,7 @@ FaceManagementHelpDialog::FaceManagementHelpDialog(QWidget* const parent)
                            "This can be accessed through the View Menu.<br>"
                            "This allows for batch operations on multiple Faces as shown. <br>"));
 
-    QMovie* sortGif         = new QMovie(i18n(""));
+    QMovie* sortGif         = new QMovie(QStandardPaths::locate(QStandardPaths::GenericDataLocation, QLatin1String("digikam/data/sortFacesImg.gif")));
     sortGif->setScaledSize(QSize(450, 250));
     QLabel* sortGifLabel    = new QLabel(confirmFacesPage);
     sortGifLabel->setMovie(sortGif);
