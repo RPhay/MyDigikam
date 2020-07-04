@@ -49,7 +49,7 @@ public:
     QRect faceRect(const QModelIndex& index) const;
     QRect largerFaceRect(const QModelIndex& index) const;
 
-    FaceTagsIface face(const QModelIndex& index) const;
+    static FaceTagsIface face(const QModelIndex& index);
 
 protected:
 

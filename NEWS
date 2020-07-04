@@ -793,5 +793,5 @@ BUGFIXES:
 751 ==> 423618 - Slideshow controls are off screen on smaller screen with dual screen setup.
 752 ==> 422258 - Tags not displayed on multi monitor setup.
 753 ==> 423737 - Album sort in tree view descending instead of ascending.
-754 ==> 
-
+754 ==> 423847 - Root Album Tree View could use the right click refresh option.
+755 ==> 

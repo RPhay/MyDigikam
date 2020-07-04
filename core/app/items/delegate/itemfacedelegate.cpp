@@ -104,7 +104,7 @@ QRect ItemFaceDelegate::largerFaceRect(const QModelIndex& index) const
     return rect.adjusted(-margin, -margin, margin, margin);
 }
 
-FaceTagsIface ItemFaceDelegate::face(const QModelIndex& index) const
+FaceTagsIface ItemFaceDelegate::face(const QModelIndex& index)
 {
     QVariant extraData = index.data(ItemModel::ExtraDataRole);
 
@@ -113,8 +113,7 @@ FaceTagsIface ItemFaceDelegate::face(const QModelIndex& index) const
         return FaceTagsIface();
     }
 
-    FaceTagsIface face = FaceTagsIface::fromVariant(extraData);
-    return face;
+    return FaceTagsIface::fromVariant(extraData);
 }
 
 void ItemFaceDelegate::updateRects()

@@ -757,24 +757,31 @@ void EditorWindow::applyIOSettings()
 
     m_IOFileSettings->JPEGCompression     = JPEGSettings::convertCompressionForLibJpeg(group.readEntry(d->configJpegCompressionEntry, 75));
 
-    m_IOFileSettings->JPEGSubSampling     = group.readEntry(d->configJpegSubSamplingEntry, 1);  // Medium subsampling
+    // Medium subsampling
+    m_IOFileSettings->JPEGSubSampling     = group.readEntry(d->configJpegSubSamplingEntry, 1);
 
-    m_IOFileSettings->PNGCompression      = PNGSettings::convertCompressionForLibPng(group.readEntry(d->configPngCompressionEntry, 1));
+    m_IOFileSettings->PNGCompression      = PNGSettings::convertCompressionForLibPng(group.readEntry(d->configPngCompressionEntry,    9));
 
     // TIFF compression setting.
-    m_IOFileSettings->TIFFCompression     = group.readEntry(d->configTiffCompressionEntry, false);
+    m_IOFileSettings->TIFFCompression     = group.readEntry(d->configTiffCompressionEntry,     false);
 
     // JPEG2000 quality slider settings : 1 - 100
-    m_IOFileSettings->JPEG2000Compression = group.readEntry(d->configJpeg2000CompressionEntry, 100);
+    m_IOFileSettings->JPEG2000Compression = group.readEntry(d->configJpeg2000CompressionEntry, 75);
 
     // JPEG2000 LossLess setting.
-    m_IOFileSettings->JPEG2000LossLess    = group.readEntry(d->configJpeg2000LossLessEntry, true);
+    m_IOFileSettings->JPEG2000LossLess    = group.readEntry(d->configJpeg2000LossLessEntry,    true);
 
     // PGF quality slider settings : 1 - 9
-    m_IOFileSettings->PGFCompression      = group.readEntry(d->configPgfCompressionEntry, 3);
+    m_IOFileSettings->PGFCompression      = group.readEntry(d->configPgfCompressionEntry,      3);
 
     // PGF LossLess setting.
-    m_IOFileSettings->PGFLossLess         = group.readEntry(d->configPgfLossLessEntry, true);
+    m_IOFileSettings->PGFLossLess         = group.readEntry(d->configPgfLossLessEntry,         true);
+
+    // HEIF quality slider settings : 1 - 100
+    m_IOFileSettings->HEIFCompression     = group.readEntry(d->configHeifCompressionEntry,     75);
+
+    // HEIF LossLess setting.
+    m_IOFileSettings->HEIFLossLess        = group.readEntry(d->configHeifLossLessEntry,        true);
 
     // -- RAW images decoding settings ------------------------------------------------------
 
