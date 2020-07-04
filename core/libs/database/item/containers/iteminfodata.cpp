@@ -100,6 +100,7 @@ ItemInfoData::ItemInfoData()
       positionsCached(false),
       groupImageCached(false),
       unconfirmedFaceCountCached(false),
+      faceSuggestionsCached(false),
 
       invalid(false),
 
