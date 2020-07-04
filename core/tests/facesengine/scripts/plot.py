@@ -5,6 +5,7 @@ import matplotlib.pyplot as plt
 import seaborn as sns
 import pandas as pd
 import umap.umap_ as umap
+import json
 
 sns.set(style='white', context='notebook', rc={'figure.figsize':(14,10)})
 #reducer = umap.UMAP()
@@ -44,7 +45,7 @@ plt.tight_layout(h_pad=0.5, w_pad=0.01)
 plt.show()
 
 '''
-
+'''
 reducer = umap.UMAP(random_state=42)
 reducer.fit(digits.data)
 
@@ -52,9 +53,35 @@ print((digits))
 embedding = reducer.transform(digits.data)
 print("embedding")
 print(embedding)
+print("label")
+print(digits.target)
 
 plt.scatter(embedding[:, 0], embedding[:, 1], c=digits.target, cmap='Spectral', s=5)
 plt.gca().set_aspect('equal', 'datalim')
 plt.colorbar(boundaries=np.arange(11)-0.5).set_ticks(np.arange(10))
 plt.title('UMAP projection of the Digits dataset', fontsize=24);
 plt.show()
+'''
+
+
+with open('extendedB.json') as f:
+    jsonData = json.load(f)
+
+faceEmbeddings = []
+labels = []
+for json in jsonData:
+    faceEmbeddings.append(json['faceembedding'])
+    labels.append(json['id'])
+
+reducer = umap.UMAP(random_state=42)
+reducer.fit(faceEmbeddings)
+
+reducedEmbedding = reducer.transform(faceEmbeddings)
+print(reducedEmbedding)
+
+plt.scatter(reducedEmbedding[:, 0], reducedEmbedding[:, 1], c=labels, cmap='Spectral', s=5)
+plt.gca().set_aspect('equal', 'datalim')
+plt.colorbar(boundaries=np.arange(11)-0.5).set_ticks(np.arange(10))
+plt.title('UMAP projection of the Digits dataset', fontsize=24);
+plt.show()
+

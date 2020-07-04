@@ -368,32 +368,22 @@ void Benchmark::fetchData()
 
 void Benchmark::saveData()
 {
-    QFile dataFile(QLatin1String("faceembedding.json"));
-
-    if (!dataFile.open(QIODevice::WriteOnly))
-    {
-        qWarning("Couldn't open save file.");
-        return;
-    }
-
     QDir dataDir(m_parser->value(QLatin1String("dataset")));
     QFileInfoList subDirs = dataDir.entryInfoList(QDir::NoDotAndDotDot | QDir::Dirs, QDir::Name);
 
     QElapsedTimer timer;
     timer.start();
 
+    QJsonArray faceEmbeddingArray;
+
     for (int i = 0; i < subDirs.size(); ++i)
     {
         QDir subDir(subDirs[i].absoluteFilePath());
-
-        QString label = subDirs[i].fileName();
-
         QFileInfoList filesInfo = subDir.entryInfoList(QDir::Files | QDir::Readable);
 
-        // split train/test
-        for (int i = 0; i < filesInfo.size(); ++i)
+        for (int j = 0; j < filesInfo.size(); ++j)
         {
-            QImage* img = new QImage(filesInfo[i].absoluteFilePath());
+            QImage* img = new QImage(filesInfo[j].absoluteFilePath());
 
             if (! img->isNull())
             {
@@ -402,21 +392,29 @@ void Benchmark::saveData()
                 if (preprocess(img, face))
                 {
                     Identity newIdentity = m_recognizer->newIdentity(face);
-                    newIdentity.setAttribute(QLatin1String("fullName"), label);
 
                     QJsonObject identityJson;
-                    identityJson[QLatin1String("id")] = label;
+                    identityJson[QLatin1String("id")] = i;
                     identityJson[QLatin1String("faceembedding")] = QJsonDocument::fromJson(newIdentity.attribute(QLatin1String("faceEmbedding")).toLatin1()).array();
 
-                    QJsonDocument saveDoc(identityJson);
-                    dataFile.write(saveDoc.toJson());
+                    faceEmbeddingArray.append(identityJson);
                 }
             }
         }
     }
 
-    unsigned int elapsedDetection = timer.elapsed();
-    qDebug() << "Save face embedding in" << elapsedDetection << "ms/face";
+    qDebug() << "Save face embedding in" << timer.elapsed() << "ms/face";
+
+    QFile dataFile(dataDir.dirName() + QLatin1String(".json"));
+
+    if (!dataFile.open(QIODevice::WriteOnly))
+    {
+        qWarning("Couldn't open save file.");
+        return;
+    }
+
+    QJsonDocument saveDoc(faceEmbeddingArray);
+    dataFile.write(saveDoc.toJson());
 
     dataFile.close();
 }
