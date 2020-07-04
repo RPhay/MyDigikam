@@ -96,12 +96,12 @@ public:
 
         mlp->setLayerSizes(layer_sizes);
         mlp->setActivationFunction(cv::ml::ANN_MLP::SIGMOID_SYM, 0, 0);
-        mlp->setTermCriteria(cv::TermCriteria(cv::TermCriteria::MAX_ITER + (0 > 0 ? cv::TermCriteria::EPS : 0), max_iter, 0));
+        mlp->setTermCriteria(cv::TermCriteria(cv::TermCriteria::EPS, max_iter, 0));
         mlp->setTrainMethod(method, method_param);
 
         logisticRegression = cv::ml::LogisticRegression::create();
         logisticRegression->setLearningRate(0.001);
-        logisticRegression->setIterations(max_iter);
+        logisticRegression->setTermCriteria(cv::TermCriteria(cv::TermCriteria::EPS, max_iter, 0));
         logisticRegression->setRegularization(cv::ml::LogisticRegression::REG_DISABLE);
         logisticRegression->setTrainMethod(cv::ml::LogisticRegression::BATCH);
         logisticRegression->setMiniBatchSize(1);

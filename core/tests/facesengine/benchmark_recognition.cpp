@@ -31,6 +31,8 @@
 #include <QDebug>
 #include <QHash>
 #include <QTest>
+#include <QJsonObject>
+#include <QJsonDocument>
 
 // lib digikam includes
 #include "opencvdnnfacedetector.h"
@@ -84,6 +86,8 @@ private:
 public:
     Q_SLOT void fetchData();
     Q_SLOT void registerTrainingSet();
+    Q_SLOT void saveData(const QDir& dataDir);
+
     Q_SLOT void verifyTestSetCosDistance();
     Q_SLOT void verifyTestSetL2Distance();
     Q_SLOT void verifyTestSetSupportVectorMachine();
@@ -362,6 +366,61 @@ void Benchmark::fetchData()
     splitData(dataset, splitRatio);
 }
 
+void Benchmark::saveData(const QDir& dataDir)
+{
+    QFile dataFile(QLatin1String("faceembedding.txt"));
+
+    if (!dataFile.open(QIODevice::WriteOnly))
+    {
+        qWarning("Couldn't open save file.");
+        return;
+    }
+
+    QFileInfoList subDirs = dataDir.entryInfoList(QDir::NoDotAndDotDot | QDir::Dirs, QDir::Name);
+
+    QElapsedTimer timer;
+    timer.start();
+
+    for (int i = 0; i < subDirs.size(); ++i)
+    {
+        QDir subDir(subDirs[i].absoluteFilePath());
+
+        QString label = subDirs[i].fileName();
+
+        QFileInfoList filesInfo = subDir.entryInfoList(QDir::Files | QDir::Readable);
+
+        // split train/test
+        for (int i = 0; i < filesInfo.size(); ++i)
+        {
+            QImage* img = new QImage(filesInfo[i].absoluteFilePath());
+
+            if (! img->isNull())
+            {
+                cv::Mat face;
+
+                if (preprocess(img, face))
+                {
+                    Identity newIdentity = m_recognizer->newIdentity(face);
+                    newIdentity.setAttribute(QLatin1String("fullName"), label);
+
+                    QJsonObject identityJson;
+                    identityJson[QLatin1String("id")] = label;
+                    identityJson[QLatin1String("faceembedding")] = QJsonDocument::fromJson(newIdentity.attribute(QLatin1String("faceEmbedding")).toLatin1()).array();
+
+                    QJsonDocument saveDoc(identityJson);
+                    dataFile.write(saveDoc.toJson());
+                }
+            }
+        }
+    }
+
+    unsigned int elapsedDetection = timer.elapsed();
+    qDebug() << "Save face embedding in" << elapsedDetection << "ms/face";
+
+    dataFile.close();
+}
+
+
 void Benchmark::verifyTestSetCosDistance()
 {
     verifyTestSet(FaceRecognizer::CosDistance, 0.7);
@@ -430,9 +489,9 @@ int main(int argc, char** argv)
     //qDebug() << "KNN:";
     //benchmark.verifyTestKNN();
 
-    //double threshold = 0.5f;
-    //qDebug() << "MLP with threshold:" << threshold;
-    //benchmark.verifyTestMLP(threshold);
+    double threshold = 0.5f;
+    qDebug() << "MLP with threshold:" << threshold;
+    benchmark.verifyTestMLP(threshold);
 
     qDebug() << "Logistic regression";
     benchmark.verifyTestLogisticRegression();

@@ -48,8 +48,10 @@ plt.show()
 reducer = umap.UMAP(random_state=42)
 reducer.fit(digits.data)
 
-print(np.shape(digits.data))
+print((digits))
 embedding = reducer.transform(digits.data)
+print("embedding")
+print(embedding)
 
 plt.scatter(embedding[:, 0], embedding[:, 1], c=digits.target, cmap='Spectral', s=5)
 plt.gca().set_aspect('equal', 'datalim')
