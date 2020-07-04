@@ -118,6 +118,7 @@ public:
     QSize                                    imageSize;
     QList<int>                               tagIds;
     int                                      unconfirmedFaceCount;
+    QMap<QString, QString>                   faceSuggestions;
 
     double                                   longitude;
     double                                   latitude;
@@ -147,6 +148,7 @@ public:
     bool                                     positionsCached            : 1;
     bool                                     groupImageCached           : 1;
     bool                                     unconfirmedFaceCountCached : 1;
+    bool                                     faceSuggestionsCached      : 1;
 
     bool                                     invalid                    : 1;
 
