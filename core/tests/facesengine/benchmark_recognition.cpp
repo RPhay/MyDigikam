@@ -86,7 +86,7 @@ private:
 public:
     Q_SLOT void fetchData();
     Q_SLOT void registerTrainingSet();
-    Q_SLOT void saveData(const QDir& dataDir);
+    Q_SLOT void saveData();
 
     Q_SLOT void verifyTestSetCosDistance();
     Q_SLOT void verifyTestSetL2Distance();
@@ -366,9 +366,9 @@ void Benchmark::fetchData()
     splitData(dataset, splitRatio);
 }
 
-void Benchmark::saveData(const QDir& dataDir)
+void Benchmark::saveData()
 {
-    QFile dataFile(QLatin1String("faceembedding.txt"));
+    QFile dataFile(QLatin1String("faceembedding.json"));
 
     if (!dataFile.open(QIODevice::WriteOnly))
     {
@@ -376,6 +376,7 @@ void Benchmark::saveData(const QDir& dataDir)
         return;
     }
 
+    QDir dataDir(m_parser->value(QLatin1String("dataset")));
     QFileInfoList subDirs = dataDir.entryInfoList(QDir::NoDotAndDotDot | QDir::Dirs, QDir::Name);
 
     QElapsedTimer timer;
@@ -474,10 +475,11 @@ int main(int argc, char** argv)
     Benchmark benchmark;
     benchmark.m_parser = parseOptions(app);
 
+    benchmark.saveData();
     //QTest::qExec(&benchmark);
 
-    benchmark.fetchData();
-    benchmark.registerTrainingSet();
+    //benchmark.fetchData();
+    //benchmark.registerTrainingSet();
     //qDebug() << "Cos distance:";
     //benchmark.verifyTestSetCosDistance();
 
@@ -488,14 +490,14 @@ int main(int argc, char** argv)
 
     //qDebug() << "KNN:";
     //benchmark.verifyTestKNN();
-
+/*
     double threshold = 0.5f;
     qDebug() << "MLP with threshold:" << threshold;
     benchmark.verifyTestMLP(threshold);
 
     qDebug() << "Logistic regression";
     benchmark.verifyTestLogisticRegression();
-
+*/
     return 0;
 }
 
