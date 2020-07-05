@@ -120,9 +120,9 @@ void DRawDecoder::Private::fillIndentifyInfo(LibRaw* const raw, DRawInfo& identi
     identify.exposureTime     = raw->imgdata.other.shutter;
     identify.aperture         = raw->imgdata.other.aperture;
     identify.focalLength      = raw->imgdata.other.focal_len;
-    identify.imageSize        = QSize(raw->imgdata.sizes.width, raw->imgdata.sizes.height);
-    identify.fullSize         = QSize(raw->imgdata.sizes.raw_width, raw->imgdata.sizes.raw_height);
-    identify.outputSize       = QSize(raw->imgdata.sizes.iwidth, raw->imgdata.sizes.iheight);
+    identify.imageSize        = QSize(raw->imgdata.sizes.width,      raw->imgdata.sizes.height);
+    identify.fullSize         = QSize(raw->imgdata.sizes.raw_width,  raw->imgdata.sizes.raw_height);
+    identify.outputSize       = QSize(raw->imgdata.sizes.iwidth,     raw->imgdata.sizes.iheight);
     identify.thumbSize        = QSize(raw->imgdata.thumbnail.twidth, raw->imgdata.thumbnail.theight);
     identify.topMargin        = raw->imgdata.sizes.top_margin;
     identify.leftMargin       = raw->imgdata.sizes.left_margin;
@@ -485,9 +485,13 @@ bool DRawDecoder::Private::loadFromLibraw(const QString& filePath, QByteArray& i
     qCDebug(DIGIKAM_RAWENGINE_LOG) << m_parent->m_decoderSettings;
 
 #ifdef Q_OS_WIN
+
     int ret = raw->open_file((const wchar_t*)filePath.utf16());
+
 #else
+
     int ret = raw->open_file(filePath.toUtf8().constData());
+
 #endif
 
     if (ret != LIBRAW_SUCCESS)

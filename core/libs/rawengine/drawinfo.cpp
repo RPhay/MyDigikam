@@ -34,7 +34,7 @@ DRawInfo::DRawInfo()
     exposureTime      = -1.0;
     aperture          = -1.0;
     focalLength       = -1.0;
-    pixelAspectRatio  = 1.0;    // Default value. This can be unavailable (depending of camera model).
+    pixelAspectRatio  = 1.0;    ///< Default value. This can be unavailable (depending of camera model).
     rawColors         = -1;
     rawImages         = -1;
     hasIccProfile     = false;
@@ -64,7 +64,7 @@ DRawInfo::DRawInfo()
         {
             cameraColorMatrix1[x][y] = 0.0;
             cameraColorMatrix2[x][y] = 0.0;
-            cameraXYZMatrix[y][x]    = 0.0;       // NOTE: see B.K.O # 253911 : [y][x] not [x][y]
+            cameraXYZMatrix[y][x]    = 0.0;       ///< NOTE: see B.K.O # 253911 : [y][x] not [x][y]
         }
     }
 }
@@ -75,68 +75,68 @@ DRawInfo::~DRawInfo()
 
 bool DRawInfo::isEmpty()
 {
-    if (make.isEmpty()                  &&
-        model.isEmpty()                 &&
-        filterPattern.isEmpty()         &&
-        colorKeys.isEmpty()             &&
-        DNGVersion.isEmpty()            &&
-        exposureTime     == -1.0        &&
-        aperture         == -1.0        &&
-        focalLength      == -1.0        &&
-        pixelAspectRatio == 1.0         &&
-        sensitivity      == -1.0        &&
-        rawColors        == -1          &&
-        rawImages        == -1          &&
-        blackPoint       == 0           &&
-        blackPointCh[0]  == 0           &&
-        blackPointCh[1]  == 0           &&
-        blackPointCh[2]  == 0           &&
-        blackPointCh[3]  == 0           &&
-        whitePoint       == 0           &&
-        topMargin        == 0           &&
-        leftMargin       == 0           &&
-        !dateTime.isValid()             &&
-        !imageSize.isValid()            &&
-        !fullSize.isValid()             &&
-        !outputSize.isValid()           &&
-        !thumbSize.isValid()            &&
-        cameraColorMatrix1[0][0] == 0.0 &&
-        cameraColorMatrix1[0][1] == 0.0 &&
-        cameraColorMatrix1[0][2] == 0.0 &&
-        cameraColorMatrix1[0][3] == 0.0 &&
-        cameraColorMatrix1[1][0] == 0.0 &&
-        cameraColorMatrix1[1][1] == 0.0 &&
-        cameraColorMatrix1[1][2] == 0.0 &&
-        cameraColorMatrix1[1][3] == 0.0 &&
-        cameraColorMatrix1[2][0] == 0.0 &&
-        cameraColorMatrix1[2][1] == 0.0 &&
-        cameraColorMatrix1[2][2] == 0.0 &&
-        cameraColorMatrix1[2][3] == 0.0 &&
-        cameraColorMatrix2[0][0] == 0.0 &&
-        cameraColorMatrix2[0][1] == 0.0 &&
-        cameraColorMatrix2[0][2] == 0.0 &&
-        cameraColorMatrix2[0][3] == 0.0 &&
-        cameraColorMatrix2[1][0] == 0.0 &&
-        cameraColorMatrix2[1][1] == 0.0 &&
-        cameraColorMatrix2[1][2] == 0.0 &&
-        cameraColorMatrix2[1][3] == 0.0 &&
-        cameraColorMatrix2[2][0] == 0.0 &&
-        cameraColorMatrix2[2][1] == 0.0 &&
-        cameraColorMatrix2[2][2] == 0.0 &&
-        cameraColorMatrix2[2][3] == 0.0 &&
-        cameraXYZMatrix[0][0]    == 0.0 &&
-        cameraXYZMatrix[0][1]    == 0.0 &&
-        cameraXYZMatrix[0][2]    == 0.0 &&
-        cameraXYZMatrix[1][0]    == 0.0 &&
-        cameraXYZMatrix[1][1]    == 0.0 &&
-        cameraXYZMatrix[1][2]    == 0.0 &&
-        cameraXYZMatrix[2][0]    == 0.0 &&
-        cameraXYZMatrix[2][1]    == 0.0 &&
-        cameraXYZMatrix[2][2]    == 0.0 &&
-        cameraXYZMatrix[3][0]    == 0.0 &&
-        cameraXYZMatrix[3][1]    == 0.0 &&
-        cameraXYZMatrix[3][2]    == 0.0 &&
-        orientation              == ORIENTATION_NONE
+    if (make.isEmpty()                                  &&
+        model.isEmpty()                                 &&
+        filterPattern.isEmpty()                         &&
+        colorKeys.isEmpty()                             &&
+        DNGVersion.isEmpty()                            &&
+        (exposureTime     == -1.0)                      &&
+        (aperture         == -1.0)                      &&
+        (focalLength      == -1.0)                      &&
+        (pixelAspectRatio == 1.0)                       &&
+        (sensitivity      == -1.0)                      &&
+        (rawColors        == -1)                        &&
+        (rawImages        == -1)                        &&
+        (blackPoint       == 0)                         &&
+        (blackPointCh[0]  == 0)                         &&
+        (blackPointCh[1]  == 0)                         &&
+        (blackPointCh[2]  == 0)                         &&
+        (blackPointCh[3]  == 0)                         &&
+        (whitePoint       == 0)                         &&
+        (topMargin        == 0)                         &&
+        (leftMargin       == 0)                         &&
+        !dateTime.isValid()                             &&
+        !imageSize.isValid()                            &&
+        !fullSize.isValid()                             &&
+        !outputSize.isValid()                           &&
+        !thumbSize.isValid()                            &&
+        (cameraColorMatrix1[0][0] == 0.0)               &&
+        (cameraColorMatrix1[0][1] == 0.0)               &&
+        (cameraColorMatrix1[0][2] == 0.0)               &&
+        (cameraColorMatrix1[0][3] == 0.0)               &&
+        (cameraColorMatrix1[1][0] == 0.0)               &&
+        (cameraColorMatrix1[1][1] == 0.0)               &&
+        (cameraColorMatrix1[1][2] == 0.0)               &&
+        (cameraColorMatrix1[1][3] == 0.0)               &&
+        (cameraColorMatrix1[2][0] == 0.0)               &&
+        (cameraColorMatrix1[2][1] == 0.0)               &&
+        (cameraColorMatrix1[2][2] == 0.0)               &&
+        (cameraColorMatrix1[2][3] == 0.0)               &&
+        (cameraColorMatrix2[0][0] == 0.0)               &&
+        (cameraColorMatrix2[0][1] == 0.0)               &&
+        (cameraColorMatrix2[0][2] == 0.0)               &&
+        (cameraColorMatrix2[0][3] == 0.0)               &&
+        (cameraColorMatrix2[1][0] == 0.0)               &&
+        (cameraColorMatrix2[1][1] == 0.0)               &&
+        (cameraColorMatrix2[1][2] == 0.0)               &&
+        (cameraColorMatrix2[1][3] == 0.0)               &&
+        (cameraColorMatrix2[2][0] == 0.0)               &&
+        (cameraColorMatrix2[2][1] == 0.0)               &&
+        (cameraColorMatrix2[2][2] == 0.0)               &&
+        (cameraColorMatrix2[2][3] == 0.0)               &&
+        (cameraXYZMatrix[0][0]    == 0.0)               &&
+        (cameraXYZMatrix[0][1]    == 0.0)               &&
+        (cameraXYZMatrix[0][2]    == 0.0)               &&
+        (cameraXYZMatrix[1][0]    == 0.0)               &&
+        (cameraXYZMatrix[1][1]    == 0.0)               &&
+        (cameraXYZMatrix[1][2]    == 0.0)               &&
+        (cameraXYZMatrix[2][0]    == 0.0)               &&
+        (cameraXYZMatrix[2][1]    == 0.0)               &&
+        (cameraXYZMatrix[2][2]    == 0.0)               &&
+        (cameraXYZMatrix[3][0]    == 0.0)               &&
+        (cameraXYZMatrix[3][1]    == 0.0)               &&
+        (cameraXYZMatrix[3][2]    == 0.0)               &&
+        (orientation              == ORIENTATION_NONE)
        )
     {
         return true;
