@@ -8,63 +8,8 @@ import umap.umap_ as umap
 import json
 
 sns.set(style='white', context='notebook', rc={'figure.figsize':(14,10)})
-#reducer = umap.UMAP()
 
-'''
-iris = load_iris()
-#print(iris.DESCR)
-
-iris_df            = pd.DataFrame(iris.data, columns=iris.feature_names)
-iris_df['species'] = pd.Series(iris.target).map(dict(zip(range(3),iris.target_names)))
-
-#sns.pairplot(iris_df, hue='species');
-#plt.show(sns)
-
-embedding = reducer.fit_transform(iris.data)
-#print(embedding.shape)
-
-plt.scatter(embedding[:, 0], embedding[:, 1], c=[sns.color_palette()[x] for x in iris.target])
-plt.gca().set_aspect('equal', 'datalim')
-plt.title('UMAP projection of the Iris dataset', fontsize=24);
-
-plt.show()
-'''
-
-
-digits = load_digits()
-#print(digits.DESCR)
-
-'''
-fig, ax_array = plt.subplots(20, 20)
-axes = ax_array.flatten()
-for i, ax in enumerate(axes):
-    ax.imshow(digits.images[i], cmap='gray_r')
-plt.setp(axes, xticks=[], yticks=[], frame_on=False)
-plt.tight_layout(h_pad=0.5, w_pad=0.01)
-
-plt.show()
-
-'''
-'''
-reducer = umap.UMAP(random_state=42)
-reducer.fit(digits.data)
-
-print((digits))
-embedding = reducer.transform(digits.data)
-print("embedding")
-print(embedding)
-print("label")
-print(digits.target)
-
-plt.scatter(embedding[:, 0], embedding[:, 1], c=digits.target, cmap='Spectral', s=5)
-plt.gca().set_aspect('equal', 'datalim')
-plt.colorbar(boundaries=np.arange(11)-0.5).set_ticks(np.arange(10))
-plt.title('UMAP projection of the Digits dataset', fontsize=24);
-plt.show()
-'''
-
-
-with open('extendedB.json') as f:
+with open('yalefaces.json') as f:
     jsonData = json.load(f)
 
 faceEmbeddings = []
@@ -73,7 +18,12 @@ for json in jsonData:
     faceEmbeddings.append(json['faceembedding'])
     labels.append(json['id'])
 
-reducer = umap.UMAP(random_state=42)
+reducer = umap.UMAP(a=None, angular_rp_forest=False, b=None, force_approximation_algorithm=False, init='spectral', learning_rate=1.0,
+                    local_connectivity=1.0, low_memory=False, metric='euclidean', metric_kwds=None, min_dist=0.01, n_components=2, n_epochs=None,
+                    n_neighbors=50, negative_sample_rate=5, output_metric='euclidean', output_metric_kwds=None, random_state=42, repulsion_strength=1.0,
+                    set_op_mix_ratio=1.0, spread=1.0, target_metric='categorical', target_metric_kwds=None, target_n_neighbors=-1, target_weight=0.5,
+                    transform_queue_size=4.0, transform_seed=42, unique=False, verbose=False)
+
 reducer.fit(faceEmbeddings)
 
 reducedEmbedding = reducer.transform(faceEmbeddings)

@@ -200,6 +200,8 @@ void Benchmark::verifyTestSet(FaceRecognizer::ComparisonMetric metric, double th
     QElapsedTimer timer;
     timer.start();
 
+    QString errorDir = QLatin1String("./Error_images/");
+
     for (QHash<QString, QVector<QImage*> >::iterator iter  = m_testSet.begin();
                                                      iter != m_testSet.end();
                                                    ++iter)
@@ -216,11 +218,13 @@ void Benchmark::verifyTestSet(FaceRecognizer::ComparisonMetric metric, double th
                 {
                     // cannot recognize when label is already register
                     ++nbNotRecognize;
+                    iter.value().at(i)->save(errorDir + iter.key() + QLatin1String("/") + QString::number(i) + QLatin1String(".png"), "PNG");
                 }
                 else if (newIdentity.attribute(QLatin1String("fullName")) != iter.key())
                 {
                     // wrong label
                     ++nbWrongLabel;
+                    iter.value().at(i)->save(errorDir + iter.key() + QLatin1String("/") + QString::number(i) + QLatin1String(".png"), "PNG");
                 }
 
                 ++m_testSize;
@@ -488,6 +492,9 @@ int main(int argc, char** argv)
 
     //qDebug() << "KNN:";
     //benchmark.verifyTestKNN();
+
+    //qDebug() << "KD-Tree:";
+    //benchmark.verifyTestKDTree(5);
 /*
     double threshold = 0.5f;
     qDebug() << "MLP with threshold:" << threshold;

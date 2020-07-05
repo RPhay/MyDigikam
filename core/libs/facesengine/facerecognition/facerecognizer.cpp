@@ -706,8 +706,9 @@ int FaceRecognizer::saveIdentity(Identity& id, bool newLabel)
         d->labels.append(label);
     }
 
-    return d->labels.indexOf(label);
+    d->addIndentityToTree(id);
 
+    return d->labels.indexOf(label);
 /*
     if (newLabel)
     {
