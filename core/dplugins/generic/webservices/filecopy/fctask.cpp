@@ -246,6 +246,8 @@ bool FCTask::imageResize(const QString& orgUrl, const QString& destName)
             return false;
         }
 
+        DFileOperations::copyModificationTime(orgUrl, destFile);
+
         return true;
     }
 
