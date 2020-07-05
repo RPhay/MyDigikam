@@ -90,15 +90,20 @@ void FCTask::run()
     if      (d->settings.behavior == FCContainer::CopyFile)
     {
         QFileInfo srcInfo(d->srcUrl.toLocalFile());
-        QString suffix   = srcInfo.suffix().toUpper();
-        QString mimeName = QMimeDatabase().mimeTypeForFile(d->srcUrl.toLocalFile()).name();
+        QString suffix = srcInfo.suffix().toUpper();
 
-        if (d->settings.changeImageProperties            &&
-            ((suffix == QLatin1String("PGF"))            ||
-             (suffix == QLatin1String("KRA"))            ||
-             (suffix == QLatin1String("HEIC"))           ||
-             (suffix == QLatin1String("HEIF"))           ||
-             mimeName.startsWith(QLatin1String("image/"))))
+        QMimeDatabase mimeDB;
+        QString mimeType(mimeDB.mimeTypeForUrl(d->srcUrl).name());
+
+        if (d->settings.changeImageProperties             &&
+            (
+             mimeType.startsWith(QLatin1String("image/")) ||
+             (suffix == QLatin1String("PGF"))             ||
+             (suffix == QLatin1String("KRA"))             ||
+             (suffix == QLatin1String("HEIC"))            ||
+             (suffix == QLatin1String("HEIF"))
+            )
+           )
         {
             ok = imageResize(d->srcUrl.toLocalFile(), dest.toLocalFile());
         }
