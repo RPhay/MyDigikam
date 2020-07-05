@@ -37,10 +37,6 @@
 #include "dinfointerface.h"
 #include "ditemslist.h"
 
-// C++ includes
-
-#include <memory>
-
 using namespace Digikam;
 
 class QSpinBox;

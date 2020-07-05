@@ -121,7 +121,7 @@ FCExportWidget::FCExportWidget(DInfoInterface* const iface, QWidget* const paren
 
     //---------------------------------------------
 
-    d->changeImagesProp  = new QCheckBox(i18n("Adjust image properties"), this);
+    d->changeImagesProp = new QCheckBox(i18n("Adjust image properties"), this);
     d->changeImagesProp->setChecked(false);
     d->changeImagesProp->setWhatsThis(i18n("If you enable this option, "
                                            "all images to be sent can be "
@@ -129,9 +129,9 @@ FCExportWidget::FCExportWidget(DInfoInterface* const iface, QWidget* const paren
 
     //---------------------------------------------
 
-    d->imageChangeGroupBox = new QGroupBox(i18n("Image Properties"), this);
+    d->imageChangeGroupBox           = new QGroupBox(i18n("Image Properties"), this);
 
-    d->imagesResize = new QSpinBox(d->imageChangeGroupBox);
+    d->imagesResize                  = new QSpinBox(d->imageChangeGroupBox);
     d->imagesResize->setRange(300, 4000);
     d->imagesResize->setSingleStep(1);
     d->imagesResize->setValue(1024);
@@ -149,50 +149,38 @@ FCExportWidget::FCExportWidget(DInfoInterface* const iface, QWidget* const paren
     labelImagesFormat->setWordWrap(false);
     labelImagesFormat->setText(i18n("Image Format:"));
 
-    d->imagesFormat  = new QComboBox(d->imageChangeGroupBox);
+    d->imagesFormat                 = new QComboBox(d->imageChangeGroupBox);
     d->imagesFormat->setEditable(false);
     d->imagesFormat->setWhatsThis(i18n("Select your preferred format to convert image."));
-
-    QMap<ImageFormat, QString> frms;
-    frms[ImageFormat::JPEG] = i18nc("Image format: JPEG", "Jpeg");
-    frms[ImageFormat::PNG]  = i18nc("Image format: PNG",  "Png");
-    QMap<ImageFormat, QString>::const_iterator it2 = frms.constBegin();
-
-    while (it2 != frms.constEnd())
-    {
-        d->imagesFormat->addItem(it2.value(), (int)it2.key());
-        ++it2;
-    }
-
+    d->imagesFormat->addItem(i18nc("Image format: JPEG", "Jpeg"), FCTask::JPEG);
+    d->imagesFormat->addItem(i18nc("Image format: PNG",  "Png"),  FCTask::PNG);
     labelImagesFormat->setBuddy(d->imagesFormat);
 
-    // --------------------
+    //---------------------------------------------
 
-    d->imageCompression = new QSpinBox(d->imageChangeGroupBox);
+    d->imageCompression                 = new QSpinBox(d->imageChangeGroupBox);
     d->imageCompression->setRange(1, 100);
     d->imageCompression->setSingleStep(1);
     d->imageCompression->setValue(75);
-    QString whatsThis = i18n("<p>The new compression value of JPEG images to be sent:</p>");
-    whatsThis         = whatsThis + i18n("<p><b>1</b>: very high compression<br/>"
-                                         "<b>25</b>: high compression<br/>"
-                                         "<b>50</b>: medium compression<br/>"
-                                         "<b>75</b>: low compression (default value)<br/>"
-                                         "<b>100</b>: no compression</p>");
+    d->imageCompression->setWhatsThis(i18n("<p>The new compression value of JPEG images to be sent:</p>"
+                                           "<p><b>1</b>: very high compression<br/>"
+                                           "<b>25</b>: high compression<br/>"
+                                           "<b>50</b>: medium compression<br/>"
+                                           "<b>75</b>: low compression (default value)<br/>"
+                                           "<b>100</b>: no compression</p>"));
 
-    d->imageCompression->setWhatsThis(whatsThis);
-
-    QLabel* const labelImageCompression = new QLabel(i18n("Image quality:"), this);
+    QLabel* const labelImageCompression = new QLabel(i18n("Image quality:"), d->imageChangeGroupBox);
     labelImageCompression->setBuddy(d->imageCompression);
 
-    // --------------------
+    //---------------------------------------------
 
-    d->removeMetadataProp = new QCheckBox(i18n("Remove all metadata"), this);
+    d->removeMetadataProp = new QCheckBox(i18n("Remove all metadata"), d->imageChangeGroupBox);
     d->removeMetadataProp->setWhatsThis(i18n("If you enable this option, all metadata "
                                              "as Exif, Iptc, and Xmp will be removed."));
 
-    // --------------------
+    //---------------------------------------------
 
-    QGridLayout* const grid2  = new QGridLayout(d->imageChangeGroupBox);
+    QGridLayout* const grid2 = new QGridLayout(d->imageChangeGroupBox);
     grid2->addWidget(labelImagesResize,     0, 0, 1, 1);
     grid2->addWidget(d->imagesResize,       0, 1, 1, 2);
     grid2->addWidget(labelImagesFormat,     1, 0, 1, 1);
@@ -208,7 +196,7 @@ FCExportWidget::FCExportWidget(DInfoInterface* const iface, QWidget* const paren
     //---------------------------------------------
 
     // setup image list
-    d->imageList                = new DItemsList(this);
+    d->imageList              = new DItemsList(this);
     d->imageList->setObjectName(QLatin1String("FCExport ImagesList"));
     d->imageList->setIface(iface);
     d->imageList->loadImagesFromCurrentSelection();
@@ -316,12 +304,14 @@ void FCExportWidget::slotFileCopyButtonChanged(bool enabled)
 {
     if (!enabled)
     {
-        d->changeImagesProp->setCheckState(Qt::Unchecked);
+        d->changeImagesProp->setChecked(false);
     }
 
     d->changeImagesProp->setEnabled(enabled);
 
-    d->imageChangeGroupBox->setEnabled(false); // The changeImagesProp is by default and on each change unchecked
+     // The changeImagesProp is by default and on each change unchecked
+
+    d->imageChangeGroupBox->setEnabled(false);
 }
 
 } // namespace DigikamGenericFileCopyPlugin

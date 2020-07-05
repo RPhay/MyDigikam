@@ -55,27 +55,27 @@ public:
     {
     }
 
-    QUrl srcUrl;
-    QUrl dstUrl;
-    int  behavior;
-    bool overwrite;
+    QUrl        srcUrl;
+    QUrl        dstUrl;
+    int         behavior;
+    bool        overwrite;
 
-    bool changeImageProperties;
-    uint imageResize;
+    bool        changeImageProperties;
+    uint        imageResize;
     ImageFormat imageFormat;
-    uint imageCompression;
-    bool removeMetadata;
+    uint        imageCompression;
+    bool        removeMetadata;
 };
 
 FCTask::FCTask(const QUrl& srcUrl,
                const QUrl& dstUrl,
-               int behavior,
-               bool overwrite,
-               bool changeImageProperties,
-               uint imageResize,
-               uint imageFormat,
-               uint imageCompression,
-               bool removeMetadata)
+               int   behavior,
+               bool  overwrite,
+               bool  changeImageProperties,
+               uint  imageResize,
+               uint  imageFormat,
+               uint  imageCompression,
+               bool  removeMetadata)
     : ActionJob(),
       d(new Private)
 {

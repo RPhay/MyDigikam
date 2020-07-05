@@ -49,13 +49,13 @@ public:
 
     void createCopyJobs(const QList<QUrl>& itemsList,
                         const QUrl& dstUrl,
-                        int behavior,
-                        bool overwrite,
-                        bool changeImageProperties,
-                        uint imageResize,
-                        uint imageFormat,
-                        uint imageCompression,
-                        bool removeMetadata);
+                        int   behavior,
+                        bool  overwrite,
+                        bool  changeImageProperties,
+                        uint  imageResize,
+                        uint  imageFormat,
+                        uint  imageCompression,
+                        bool  removeMetadata);
     void cancel();
 
 Q_SIGNALS:

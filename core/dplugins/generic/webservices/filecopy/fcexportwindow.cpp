@@ -56,9 +56,9 @@ class Q_DECL_HIDDEN FCExportWindow::Private
 public:
 
     explicit Private()
+      : exportWidget(nullptr),
+        thread(nullptr)
     {
-        exportWidget = nullptr;
-        thread       = nullptr;
     }
 
     const static QString TARGET_URL_PROPERTY;
@@ -183,9 +183,9 @@ void FCExportWindow::saveSettings()
 {
     KSharedConfigPtr config = KSharedConfig::openConfig();
     KConfigGroup group      = config->group(d->CONFIG_GROUP);
-    group.writeEntry(d->TARGET_URL_PROPERTY, d->exportWidget->targetUrl().url());
-    group.writeEntry(d->TARGET_OVERWRITE,    d->exportWidget->overwriteBox()->isChecked());
-    group.writeEntry(d->TARGET_BEHAVIOR,     d->exportWidget->targetButtonGroup()->checkedId());
+    group.writeEntry(d->TARGET_URL_PROPERTY,     d->exportWidget->targetUrl().url());
+    group.writeEntry(d->TARGET_OVERWRITE,        d->exportWidget->overwriteBox()->isChecked());
+    group.writeEntry(d->TARGET_BEHAVIOR,         d->exportWidget->targetButtonGroup()->checkedId());
 
     group.writeEntry(d->CHANGE_IMAGE_PROPERTIES, d->exportWidget->changeImagePropertiesBox()->isChecked());
     group.writeEntry(d->IMAGE_RESIZE,            d->exportWidget->imageResizeBox()->value());

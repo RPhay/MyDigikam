@@ -38,12 +38,6 @@ using namespace Digikam;
 namespace DigikamGenericFileCopyPlugin
 {
 
-enum class ImageFormat
-{
-    JPEG = 0,
-    PNG
-};
-
 class FCTask : public ActionJob
 {
     Q_OBJECT
@@ -57,17 +51,23 @@ public:
         RelativeSymLink
     };
 
+    enum ImageFormat
+    {
+        JPEG = 0,
+        PNG
+    };
+
 public:
 
     explicit FCTask(const QUrl& srcUrl,
                     const QUrl& dstUrl,
-                    int behavior,
-                    bool overwrite,
-                    bool changeImageProperties,
-                    uint imageResize,
-                    uint imageFormat,
-                    uint imageCompression,
-                    bool removeMetadata);
+                    int   behavior,
+                    bool  overwrite,
+                    bool  changeImageProperties,
+                    uint  imageResize,
+                    uint  imageFormat,
+                    uint  imageCompression,
+                    bool  removeMetadata);
     ~FCTask();
 
 Q_SIGNALS:
@@ -79,6 +79,7 @@ protected:
     void run();
 
 private:
+
     bool imageResize(const QString& orgUrl, const QString& destName, QString& err);
 
     class Private;
