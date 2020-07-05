@@ -96,6 +96,8 @@ void FCTask::run()
         if (d->settings.changeImageProperties            &&
             ((suffix == QLatin1String("PGF"))            ||
              (suffix == QLatin1String("KRA"))            ||
+             (suffix == QLatin1String("HEIC"))           ||
+             (suffix == QLatin1String("HEIF"))           ||
              mimeName.startsWith(QLatin1String("image/"))))
         {
             ok = imageResize(d->srcUrl.toLocalFile(), dest.toLocalFile());
