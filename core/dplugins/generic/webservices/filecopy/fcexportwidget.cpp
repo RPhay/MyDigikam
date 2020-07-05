@@ -188,7 +188,6 @@ FCExportWidget::FCExportWidget(DInfoInterface* const iface, QWidget* const paren
     grid2->addWidget(labelImageCompression, 2, 0, 1, 1);
     grid2->addWidget(d->imageCompression,   2, 1, 1, 2);
     grid2->addWidget(d->removeMetadataProp, 3, 0, 1, 2);
-    grid2->setRowStretch(4, 10);
     grid2->setColumnStretch(2, 10);
     grid2->setSpacing(QApplication::style()->pixelMetric(QStyle::PM_DefaultLayoutSpacing));
     grid2->setAlignment(Qt::AlignTop);
