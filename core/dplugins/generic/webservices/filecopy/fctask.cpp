@@ -180,45 +180,17 @@ bool FCTask::imageResize(const QString& orgUrl, const QString& destName, QString
         img.load(orgUrl);
     }
 
-    uint sizeFactor = d->settings.imageResize;
-
     if (!img.isNull())
     {
-        uint w = img.width();
-        uint h = img.height();
+        uint sizeFactor = d->settings.imageResize;
 
-        if ((w > sizeFactor) || (h > sizeFactor))
+        if ((img.width() > sizeFactor) || (img.height() > sizeFactor))
         {
-            if (w > h)
-            {
-                h = (uint)((double)(h * sizeFactor) / w);
+            DImg scaledImg = img.smoothScale(sizeFactor,
+                                             sizeFactor,
+                                             Qt::KeepAspectRatio);
 
-                if (h == 0)
-                {
-                    h = 1;
-                }
-
-                w = sizeFactor;
-
-                Q_ASSERT(h <= sizeFactor);
-            }
-            else
-            {
-                w = (uint)((double)(w * sizeFactor) / h);
-
-                if (w == 0)
-                {
-                    w = 1;
-                }
-
-                h = sizeFactor;
-
-                Q_ASSERT(w <= sizeFactor);
-            }
-
-            DImg scaledImg = img.smoothScale(w, h, Qt::IgnoreAspectRatio);
-
-            if ((scaledImg.width() != w) || (scaledImg.height() != h))
+            if ((scaledImg.width() > sizeFactor) || (scaledImg.height() > sizeFactor))
             {
                 err = i18n("Cannot resize image. Aborting.");
                 return false;
