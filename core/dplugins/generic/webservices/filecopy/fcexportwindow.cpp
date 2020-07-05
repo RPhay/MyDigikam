@@ -162,11 +162,11 @@ void FCExportWindow::restoreSettings()
     settings.destUrl               = group.readEntry(d->TARGET_URL_PROPERTY,     QUrl());
     settings.behavior              = group.readEntry(d->TARGET_BEHAVIOR,         (int)FCContainer::CopyFile);
     settings.imageFormat           = group.readEntry(d->IMAGE_FORMAT,            (int)FCContainer::JPEG);
+    settings.imageResize           = group.readEntry(d->IMAGE_RESIZE,            1024);
+    settings.imageCompression      = group.readEntry(d->IMAGE_COMPRESSION,       75);
     settings.overwrite             = group.readEntry(d->TARGET_OVERWRITE,        false);
     settings.removeMetadata        = group.readEntry(d->REMOVE_METADATA,         false);
     settings.changeImageProperties = group.readEntry(d->CHANGE_IMAGE_PROPERTIES, false);
-    settings.imageResize           = group.readEntry(d->IMAGE_RESIZE,            1024);
-    settings.imageCompression      = group.readEntry(d->IMAGE_COMPRESSION,       75);
 
     d->exportWidget->setSettings(settings);
 
@@ -185,11 +185,11 @@ void FCExportWindow::saveSettings()
     group.writeEntry(d->TARGET_URL_PROPERTY,     settings.destUrl);
     group.writeEntry(d->TARGET_BEHAVIOR,         settings.behavior);
     group.writeEntry(d->IMAGE_FORMAT,            settings.imageFormat);
+    group.writeEntry(d->IMAGE_RESIZE,            settings.imageResize);
+    group.writeEntry(d->IMAGE_COMPRESSION,       settings.imageCompression);
     group.writeEntry(d->TARGET_OVERWRITE,        settings.overwrite);
     group.writeEntry(d->REMOVE_METADATA,         settings.removeMetadata);
     group.writeEntry(d->CHANGE_IMAGE_PROPERTIES, settings.changeImageProperties);
-    group.writeEntry(d->IMAGE_RESIZE,            settings.imageResize);
-    group.writeEntry(d->IMAGE_COMPRESSION,       settings.imageCompression);
 
     KConfigGroup group2 = config->group(d->DIALOG);
     KWindowConfig::saveWindowSize(windowHandle(), group2);

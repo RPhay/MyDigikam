@@ -54,11 +54,11 @@ public:
     FCContainer()
       : behavior(CopyFile),
         imageFormat(JPEG),
+        imageResize(1024),
+        imageCompression(75),
         overwrite(false),
         removeMetadata(false),
-        changeImageProperties(false),
-        imageResize(1024),
-        imageCompression(75)
+        changeImageProperties(false)
     {
     };
 
@@ -72,14 +72,12 @@ public:
 
     int  behavior;
     int  imageFormat;
+    int  imageResize;
+    int  imageCompression;
 
     bool overwrite;
     bool removeMetadata;
     bool changeImageProperties;
-
-    uint imageResize;
-    uint imageCompression;
-
 };
 
 } // namespace DigikamGenericFileCopyPlugin

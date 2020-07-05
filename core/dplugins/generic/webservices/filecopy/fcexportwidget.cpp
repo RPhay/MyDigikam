@@ -258,11 +258,11 @@ FCContainer FCExportWidget::getSettings() const
     settings.destUrl               = d->targetUrl;
     settings.behavior              = d->targetButtonGroup->checkedId();
     settings.imageFormat           = d->imagesFormat->currentIndex();
+    settings.imageResize           = d->imagesResize->value();
+    settings.imageCompression      = d->imageCompression->value();
     settings.overwrite             = d->overwrite->isChecked();
     settings.removeMetadata        = d->removeMetadataProp->isChecked();
     settings.changeImageProperties = d->changeImagesProp->isChecked();
-    settings.imageResize           = d->imagesResize->value();
-    settings.imageCompression      = d->imageCompression->value();
 
     return settings;
 }
@@ -279,11 +279,11 @@ void FCExportWidget::setSettings(const FCContainer& settings)
     }
 
     d->imagesFormat->setCurrentIndex(settings.imageFormat);
+    d->imagesResize->setValue(settings.imageResize);
+    d->imageCompression->setValue(settings.imageCompression);
     d->overwrite->setChecked(settings.overwrite);
     d->removeMetadataProp->setChecked(settings.removeMetadata);
     d->changeImagesProp->setChecked(settings.changeImageProperties);
-    d->imagesResize->setValue(settings.imageResize);
-    d->imageCompression->setValue(settings.imageCompression);
 }
 
 void FCExportWidget::slotLabelUrlChanged()
