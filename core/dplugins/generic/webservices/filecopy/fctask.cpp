@@ -85,18 +85,18 @@ void FCTask::run()
                  QLatin1Char('/') +
                  d->srcUrl.fileName());
 
-    if (d->settings.overwrite && QFile::exists(dest.toLocalFile()))
-    {
-        QFile::remove(dest.toLocalFile());
-    }
-
     bool ok = false;
 
     if      (d->settings.behavior == FCContainer::CopyFile)
     {
+        QFileInfo srcInfo(d->srcUrl.toLocalFile());
+        QString suffix   = srcInfo.suffix().toUpper();
         QString mimeName = QMimeDatabase().mimeTypeForFile(d->srcUrl.toLocalFile()).name();
 
-        if (d->settings.changeImageProperties && mimeName.startsWith(QLatin1String("image/")))
+        if (d->settings.changeImageProperties            &&
+            ((suffix == QLatin1String("PGF"))            ||
+             (suffix == QLatin1String("KRA"))            ||
+             mimeName.startsWith(QLatin1String("image/"))))
         {
             QString errString;
             ok = imageResize(d->srcUrl.toLocalFile(), dest.toLocalFile(), errString);
@@ -108,6 +108,7 @@ void FCTask::run()
         }
         else
         {
+            deleteTargetFile(dest.toLocalFile());
             ok = QFile::copy(d->srcUrl.toLocalFile(),
                              dest.toLocalFile());
         }
@@ -121,6 +122,7 @@ void FCTask::run()
 
         if (d->settings.behavior == FCContainer::FullSymLink)
         {
+            deleteTargetFile(dest.toLocalFile());
             ok = QFile::link(d->srcUrl.toLocalFile(),
                              dest.toLocalFile());
         }
@@ -129,6 +131,8 @@ void FCTask::run()
             QDir dir(d->settings.destUrl.toLocalFile());
             QString path = dir.relativeFilePath(d->srcUrl.toLocalFile());
             QUrl srcUrl  = QUrl::fromLocalFile(path);
+
+            deleteTargetFile(dest.toLocalFile());
             ok           = QFile::link(srcUrl.toLocalFile(),
                                        dest.toLocalFile());
         }
@@ -230,6 +234,7 @@ bool FCTask::imageResize(const QString& orgUrl, const QString& destName, QString
         if (d->settings.imageFormat == FCContainer::JPEG)
         {
             destFile.append(QLatin1String(".jpeg"));
+            deleteTargetFile(destFile);
 
             img.setAttribute(QLatin1String("quality"), d->settings.imageCompression);
 
@@ -242,6 +247,7 @@ bool FCTask::imageResize(const QString& orgUrl, const QString& destName, QString
         else if (d->settings.imageFormat == FCContainer::PNG)
         {
             destFile.append(QLatin1String(".png"));
+            deleteTargetFile(destFile);
 
             if (!img.save(destFile, QLatin1String("PNG")))
             {
@@ -279,6 +285,14 @@ bool FCTask::imageResize(const QString& orgUrl, const QString& destName, QString
     }
 
     return false;
+}
+
+void FCTask::deleteTargetFile(const QString& filePath)
+{
+    if (d->settings.overwrite && QFile::exists(filePath))
+    {
+        QFile::remove(filePath);
+    }
 }
 
 } // namespace DigikamGenericFileCopyPlugin
