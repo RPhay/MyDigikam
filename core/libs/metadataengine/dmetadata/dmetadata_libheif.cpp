@@ -4,7 +4,7 @@
  * https://www.digikam.org
  *
  * Date        : 2019-09-26
- * Description : item metadata interface - HEIF helpers.
+ * Description : item metadata interface - libheif helpers.
  *
  * Copyright (C) 2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
@@ -34,8 +34,8 @@
 
 // Local includes
 
-#include "digikam_debug.h"
 #include "digikam_config.h"
+#include "digikam_debug.h"
 #include "heif.h"
 
 namespace Digikam

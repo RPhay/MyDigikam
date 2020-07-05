@@ -114,9 +114,13 @@ bool DRawDecoder::loadEmbeddedPreview(QByteArray& imgData, const QString& path)
     LibRaw* const raw = new LibRaw;
 
 #ifdef Q_OS_WIN
+
     int ret           = raw->open_file((const wchar_t*)path.utf16());
+
 #else
+
     int ret           = raw->open_file(path.toUtf8().constData());
+
 #endif
 
     if (ret != LIBRAW_SUCCESS)
@@ -169,9 +173,13 @@ bool DRawDecoder::loadHalfPreview(QImage& image, const QString& path)
     raw->imgdata.params.half_size     = 1;         // Half-size color image (3x faster than -q).
 
 #ifdef Q_OS_WIN
+
     int ret                           = raw->open_file((const wchar_t*)path.utf16());
+
 #else
+
     int ret                           = raw->open_file(path.toUtf8().constData());
+
 #endif
 
     if (ret != LIBRAW_SUCCESS)
@@ -211,9 +219,13 @@ bool DRawDecoder::loadHalfPreview(QByteArray& imgData, const QString& path)
     LibRaw* const raw = new LibRaw;
 
 #ifdef Q_OS_WIN
+
     int ret           = raw->open_file((const wchar_t*)path.utf16());
+
 #else
+
     int ret           = raw->open_file(path.toUtf8().constData());
+
 #endif
 
     if (ret != LIBRAW_SUCCESS)
@@ -348,9 +360,13 @@ bool DRawDecoder::rawFileIdentify(DRawInfo& identify, const QString& path)
     LibRaw* const raw = new LibRaw;
 
 #ifdef Q_OS_WIN
+
     int ret           = raw->open_file((const wchar_t*)path.utf16());
+
 #else
+
     int ret           = raw->open_file(path.toUtf8().constData());
+
 #endif
 
     if (ret != LIBRAW_SUCCESS)
@@ -411,9 +427,13 @@ bool DRawDecoder::extractRAWData(const QString& filePath,
     raw->set_progress_handler(callbackForLibRaw, d);
 
 #ifdef Q_OS_WIN
+
     int ret           = raw->open_file((const wchar_t*)filePath.utf16());
+
 #else
+
     int ret           = raw->open_file(filePath.toUtf8().constData());
+
 #endif
 
     if (ret != LIBRAW_SUCCESS)

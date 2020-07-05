@@ -47,14 +47,18 @@ QMap<QString, QString> s_rawFileExtensionsdWithDesc()
 {
     QMap<QString, QString> map;
 
-    // NOTE: extension list Version 1 and 2 are taken from http://www.cybercom.net/~dcoffin/dcraw/rawphoto.c
-    //
-    //                        Ext                   Descriptions From
-    //                                              www.file-extensions.org
-    //                                              en.wikipedia.org/wiki/RAW_file_format
-    //                                              filext.com
+    /**
+     * NOTE: extension list Version 1 and 2 are taken from http://www.cybercom.net/~dcoffin/dcraw/rawphoto.c
+     *
+     *                        Ext           Descriptions From
+     *                                      www.file-extensions.org
+     *                                      en.wikipedia.org/wiki/RAW_file_format
+     *                                      filext.com
+     */
 
-    // NOTE: VERSION 1
+    /**
+     * NOTE: VERSION 1
+     */
     map.insert(QLatin1String("bay"),  i18n("Casio Digital Camera Raw File Format"));
     map.insert(QLatin1String("bmq"),  i18n("NuCore Raw Image File"));
 
@@ -111,7 +115,9 @@ QMap<QString, QString> s_rawFileExtensionsdWithDesc()
      */
     map.insert(QLatin1String("arw"),  i18n("Sony Digital Camera Raw Image Format"));
 
-    // NOTE: VERSION 2
+    /**
+     * NOTE: VERSION 2
+     */
 
     map.insert(QLatin1String("3fr"),  i18n("Hasselblad Digital Camera Raw Image Format"));
     map.insert(QLatin1String("cine"), i18n("Phantom Software Raw Image File"));
@@ -123,15 +129,21 @@ QMap<QString, QString> s_rawFileExtensionsdWithDesc()
     map.insert(QLatin1String("rw2"),  i18n("Panasonic LX3 Digital Camera Raw Image Format"));
     map.insert(QLatin1String("sti"),  i18n("Sinar Capture Shop Raw Image File"));
 
-    // NOTE: VERSION 3
+    /**
+     * NOTE: VERSION 3
+     */
 
     map.insert(QLatin1String("rwl"),  i18n("Leica Digital Camera Raw Image Format"));
 
-    // NOTE: VERSION 4
+    /**
+     * NOTE: VERSION 4
+     */
 
     map.insert(QLatin1String("srw"),  i18n("Samsung Raw Image Format"));
 
-    // NOTE: VERSION 5
+    /**
+     * NOTE: VERSION 5
+     */
     map.insert(QLatin1String("cr3"),  i18n("Canon Digital Camera RAW Image Format version 3.0"));
 
 /*
@@ -150,7 +162,9 @@ QMap<QString, QString> s_rawFileExtensionsdWithDesc()
 
 int s_rawFileExtensionsVersion()
 {
-    // NOTE: increment this number whenever you change the above strings
+    /**
+     * NOTE: increment this number whenever you change the above strings
+     */
     return 5;
 }
 
