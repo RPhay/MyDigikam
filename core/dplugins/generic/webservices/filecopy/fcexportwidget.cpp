@@ -97,6 +97,8 @@ FCExportWidget::FCExportWidget(DInfoInterface* const iface, QWidget* const paren
 {
     // setup local target selection
 
+    const int spacing           = QApplication::style()->pixelMetric(QStyle::PM_DefaultLayoutSpacing);
+
     DHBox* const hbox           = new DHBox(this);
     QLabel* const locationLabel = new QLabel(hbox);
     locationLabel->setText(i18n("Target location: "));
@@ -189,7 +191,7 @@ FCExportWidget::FCExportWidget(DInfoInterface* const iface, QWidget* const paren
     grid2->addWidget(d->imageCompression,   2, 1, 1, 2);
     grid2->addWidget(d->removeMetadataProp, 3, 0, 1, 2);
     grid2->setColumnStretch(2, 10);
-    grid2->setSpacing(QApplication::style()->pixelMetric(QStyle::PM_DefaultLayoutSpacing));
+    grid2->setSpacing(spacing);
     grid2->setAlignment(Qt::AlignTop);
 
     //---------------------------------------------
@@ -213,11 +215,9 @@ FCExportWidget::FCExportWidget(DInfoInterface* const iface, QWidget* const paren
     layout->addWidget(d->relativeButton);
     layout->addWidget(d->overwrite);
     layout->addWidget(d->imageList);
-
     layout->addWidget(d->changeImagesProp);
     layout->addWidget(d->imageChangeGroupBox);
-
-    layout->setSpacing(QApplication::style()->pixelMetric(QStyle::PM_DefaultLayoutSpacing));
+    layout->setSpacing(spacing);
     layout->setContentsMargins(QMargins());
 
     // ------------------------------------------------------------------------
