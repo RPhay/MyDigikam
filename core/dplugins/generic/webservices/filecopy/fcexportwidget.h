@@ -39,6 +39,9 @@
 
 using namespace Digikam;
 
+class QSpinBox;
+class QComboBox;
+
 namespace DigikamGenericFileCopyPlugin
 {
 
@@ -85,9 +88,36 @@ public:
      */
     void setTargetUrl(const QUrl& url);
 
+    /**
+     * Returns a pointer to the changeImageProperties.
+     */
+    QCheckBox* changeImagePropertiesBox() const;
+
+    /**
+     * Returns a pointer to the overwrite QCheckBox.
+     */
+    QSpinBox* imageResizeBox() const;
+
+    /**
+     * Returns a pointer to the imageFormat.
+     */
+    QComboBox* imageFormatBox() const;
+
+    /**
+     * Returns a pointer to the imageCompression.
+     */
+    QSpinBox* imageCompressionBox() const;
+
+    /**
+     * Returns a pointer to the removeMetadata.
+     */
+    QCheckBox* removeMetadataBox() const;
+
 private Q_SLOTS:
 
     void slotLabelUrlChanged();
+
+    void slotFileCopyButtonChanged(bool enabled);
 
 Q_SIGNALS:
 

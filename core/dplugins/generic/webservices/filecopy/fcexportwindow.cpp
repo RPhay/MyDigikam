@@ -30,6 +30,8 @@
 #include <QCloseEvent>
 #include <QMessageBox>
 #include <QAbstractButton>
+#include <QSpinBox>
+#include <QComboBox>
 
 // KDE includes
 
@@ -54,9 +56,9 @@ class Q_DECL_HIDDEN FCExportWindow::Private
 public:
 
     explicit Private()
+      : exportWidget(nullptr),
+        thread(nullptr)
     {
-        exportWidget = nullptr;
-        thread       = nullptr;
     }
 
     const static QString TARGET_URL_PROPERTY;
@@ -64,17 +66,33 @@ public:
     const static QString TARGET_BEHAVIOR;
     const static QString CONFIG_GROUP;
 
+    const static QString CHANGE_IMAGE_PROPERTIES;
+    const static QString IMAGE_RESIZE;
+    const static QString IMAGE_FORMAT;
+    const static QString IMAGE_COMPRESSION;
+    const static QString REMOVE_METADATA;
+
+    const static QString DIALOG;
+
     FCExportWidget*      exportWidget;
     FCThread*            thread;
 };
 
-const QString FCExportWindow::Private::TARGET_URL_PROPERTY = QLatin1String("targetUrl");
-const QString FCExportWindow::Private::TARGET_OVERWRITE    = QLatin1String("overwrite");
-const QString FCExportWindow::Private::TARGET_BEHAVIOR     = QLatin1String("targetBehavior");
-const QString FCExportWindow::Private::CONFIG_GROUP        = QLatin1String("FileCopyExport");
+const QString FCExportWindow::Private::TARGET_URL_PROPERTY     = QLatin1String("targetUrl");
+const QString FCExportWindow::Private::TARGET_OVERWRITE        = QLatin1String("overwrite");
+const QString FCExportWindow::Private::TARGET_BEHAVIOR         = QLatin1String("targetBehavior");
+const QString FCExportWindow::Private::CONFIG_GROUP            = QLatin1String("FileCopyExport");
+
+const QString FCExportWindow::Private::CHANGE_IMAGE_PROPERTIES = QLatin1String("changeImageProperties");
+const QString FCExportWindow::Private::IMAGE_RESIZE            = QLatin1String("imageResize");
+const QString FCExportWindow::Private::IMAGE_FORMAT            = QLatin1String("imageFormat");
+const QString FCExportWindow::Private::IMAGE_COMPRESSION       = QLatin1String("imageCompression");
+const QString FCExportWindow::Private::REMOVE_METADATA         = QLatin1String("removeMetadata");
+
+const QString FCExportWindow::Private::DIALOG                  = QLatin1String("FileCopy Export Dialog");
 
 FCExportWindow::FCExportWindow(DInfoInterface* const iface, QWidget* const /*parent*/)
-    : WSToolDialog(nullptr, QLatin1String("FileCopy Export Dialog")),
+    : WSToolDialog(nullptr, d->DIALOG),
       d(new Private)
 {
     d->exportWidget = new FCExportWidget(iface, this);
@@ -149,8 +167,14 @@ void FCExportWindow::restoreSettings()
         button->setChecked(true);
     }
 
+    d->exportWidget->changeImagePropertiesBox()->setChecked(group.readEntry(d->CHANGE_IMAGE_PROPERTIES, false));
+    d->exportWidget->imageResizeBox()->setValue(group.readEntry(d->IMAGE_RESIZE, 1024));
+    d->exportWidget->imageFormatBox()->setCurrentIndex(group.readEntry(d->IMAGE_FORMAT, 0));
+    d->exportWidget->imageCompressionBox()->setValue(group.readEntry(d->IMAGE_COMPRESSION, 75));
+    d->exportWidget->removeMetadataBox()->setChecked(group.readEntry(d->REMOVE_METADATA, false));
+
     winId();
-    KConfigGroup group2 = config->group(QLatin1String("FileCopy Export Dialog"));
+    KConfigGroup group2 = config->group(d->DIALOG);
     KWindowConfig::restoreWindowSize(windowHandle(), group2);
     resize(windowHandle()->size());
 }
@@ -159,11 +183,17 @@ void FCExportWindow::saveSettings()
 {
     KSharedConfigPtr config = KSharedConfig::openConfig();
     KConfigGroup group      = config->group(d->CONFIG_GROUP);
-    group.writeEntry(d->TARGET_URL_PROPERTY, d->exportWidget->targetUrl().url());
-    group.writeEntry(d->TARGET_OVERWRITE,    d->exportWidget->overwriteBox()->isChecked());
-    group.writeEntry(d->TARGET_BEHAVIOR,     d->exportWidget->targetButtonGroup()->checkedId());
+    group.writeEntry(d->TARGET_URL_PROPERTY,     d->exportWidget->targetUrl().url());
+    group.writeEntry(d->TARGET_OVERWRITE,        d->exportWidget->overwriteBox()->isChecked());
+    group.writeEntry(d->TARGET_BEHAVIOR,         d->exportWidget->targetButtonGroup()->checkedId());
 
-    KConfigGroup group2 = config->group(QLatin1String("FileCopy Export Dialog"));
+    group.writeEntry(d->CHANGE_IMAGE_PROPERTIES, d->exportWidget->changeImagePropertiesBox()->isChecked());
+    group.writeEntry(d->IMAGE_RESIZE,            d->exportWidget->imageResizeBox()->value());
+    group.writeEntry(d->IMAGE_FORMAT,            d->exportWidget->imageFormatBox()->currentIndex());
+    group.writeEntry(d->IMAGE_COMPRESSION,       d->exportWidget->imageCompressionBox()->value());
+    group.writeEntry(d->REMOVE_METADATA,         d->exportWidget->removeMetadataBox()->isChecked());
+
+    KConfigGroup group2 = config->group(d->DIALOG);
     KWindowConfig::saveWindowSize(windowHandle(), group2);
     config->sync();
 }
@@ -234,7 +264,12 @@ void FCExportWindow::slotCopy()
     d->thread->createCopyJobs(d->exportWidget->imagesList()->imageUrls(),
                               d->exportWidget->targetUrl(),
                               d->exportWidget->targetButtonGroup()->checkedId(),
-                              d->exportWidget->overwriteBox()->isChecked());
+                              d->exportWidget->overwriteBox()->isChecked(),
+                              d->exportWidget->changeImagePropertiesBox()->isChecked(),
+                              d->exportWidget->imageResizeBox()->value(),
+                              d->exportWidget->imageFormatBox()->currentIndex(),
+                              d->exportWidget->imageCompressionBox()->value(),
+                              d->exportWidget->removeMetadataBox()->isChecked());
 
     d->thread->start();
 }

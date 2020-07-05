@@ -28,12 +28,20 @@
 
 #include <QDir>
 #include <QFile>
+#include <QMimeDatabase>
+
+// KDE includes
+
+#include <klocalizedstring.h>
 
 // Local includes
 
 #include "digikam_debug.h"
 #include "digikam_config.h"
 #include "dfileoperations.h"
+#include "previewloadthread.h"
+#include "dmetadata.h"
+#include "dimg.h"
 
 namespace DigikamGenericFileCopyPlugin
 {
@@ -48,24 +56,40 @@ public:
     {
     }
 
-    QUrl srcUrl;
-    QUrl dstUrl;
-    int  behavior;
-    bool overwrite;
+    QUrl        srcUrl;
+    QUrl        dstUrl;
+    int         behavior;
+    bool        overwrite;
 
+    bool        changeImageProperties;
+    uint        imageResize;
+    ImageFormat imageFormat;
+    uint        imageCompression;
+    bool        removeMetadata;
 };
 
 FCTask::FCTask(const QUrl& srcUrl,
                const QUrl& dstUrl,
-               int behavior, bool overwrite)
+               int   behavior,
+               bool  overwrite,
+               bool  changeImageProperties,
+               uint  imageResize,
+               uint  imageFormat,
+               uint  imageCompression,
+               bool  removeMetadata)
     : ActionJob(),
       d(new Private)
 {
-    d->srcUrl    = srcUrl;
-    d->dstUrl    = dstUrl;
-    d->behavior  = behavior;
-    d->overwrite = overwrite;
+    d->srcUrl                = srcUrl;
+    d->dstUrl                = dstUrl;
+    d->behavior              = behavior;
+    d->overwrite             = overwrite;
 
+    d->changeImageProperties = changeImageProperties;
+    d->imageResize           = imageResize;
+    d->imageFormat           = static_cast<ImageFormat>(imageFormat);
+    d->imageCompression      = imageCompression;
+    d->removeMetadata        = removeMetadata;
 }
 
 FCTask::~FCTask()
@@ -95,8 +119,23 @@ void FCTask::run()
 
     if      (d->behavior == CopyFile)
     {
-        ok = QFile::copy(d->srcUrl.toLocalFile(),
-                         dest.toLocalFile());
+        QString mimeName = QMimeDatabase().mimeTypeForFile(d->srcUrl.toLocalFile()).name();
+
+        if (d->changeImageProperties && mimeName.startsWith(QLatin1String("image/")))
+        {
+            QString errString;
+            ok = imageResize(d->srcUrl.toLocalFile(), dest.toLocalFile(), errString);
+
+            if (!ok)
+            {
+                qCDebug(DIGIKAM_DPLUGIN_GENERIC_LOG) << "Change image error: " << errString;
+            }
+        }
+        else
+        {
+            ok = QFile::copy(d->srcUrl.toLocalFile(),
+                             dest.toLocalFile());
+        }
     }
     else if ((d->behavior == FullSymLink) ||
              (d->behavior == RelativeSymLink))
@@ -132,6 +171,139 @@ void FCTask::run()
     }
 
     emit signalDone();
+}
+
+bool FCTask::imageResize(const QString& orgUrl, const QString& destName, QString& err)
+{
+    QFileInfo fi(orgUrl);
+
+    if (!fi.exists() || !fi.isReadable())
+    {
+        err = i18n("Error opening input file");
+        return false;
+    }
+
+    QFileInfo destInfo(destName);
+    QFileInfo tmpDir(destInfo.dir().absolutePath());
+
+    qCDebug(DIGIKAM_DPLUGIN_GENERIC_LOG) << "tmpDir: " << destInfo.dir().absolutePath();
+
+    if (!tmpDir.exists() || !tmpDir.isWritable())
+    {
+        err = i18n("Error opening temporary folder");
+        return false;
+    }
+
+    DImg img = PreviewLoadThread::loadFastSynchronously(orgUrl, d->imageResize);
+
+    if (img.isNull())
+    {
+        img.load(orgUrl);
+    }
+
+    uint sizeFactor = d->imageResize;
+
+    if (!img.isNull())
+    {
+        uint w = img.width();
+        uint h = img.height();
+
+        if ((w > sizeFactor) || (h > sizeFactor))
+        {
+            if (w > h)
+            {
+                h = (uint)((double)(h * sizeFactor) / w);
+
+                if (h == 0)
+                {
+                    h = 1;
+                }
+
+                w = sizeFactor;
+
+                Q_ASSERT(h <= sizeFactor);
+            }
+            else
+            {
+                w = (uint)((double)(w * sizeFactor) / h);
+
+                if (w == 0)
+                {
+                    w = 1;
+                }
+
+                h = sizeFactor;
+
+                Q_ASSERT(w <= sizeFactor);
+            }
+
+            DImg scaledImg = img.smoothScale(w, h, Qt::IgnoreAspectRatio);
+
+            if ((scaledImg.width() != w) || (scaledImg.height() != h))
+            {
+                err = i18n("Cannot resize image. Aborting.");
+                return false;
+            }
+
+            img = scaledImg;
+        }
+
+        QString destFile = destInfo.path()  +
+                           QLatin1Char('/') +
+                           destInfo.completeBaseName();
+
+        if (d->imageFormat == ImageFormat::JPEG)
+        {
+            destFile.append(QLatin1String(".jpeg"));
+
+            img.setAttribute(QLatin1String("quality"), d->imageCompression);
+
+            if (!img.save(destFile, QLatin1String("JPEG")))
+            {
+                err = i18n("Cannot save resized image (JPEG). Aborting.");
+                return false;
+            }
+        }
+        else if (d->imageFormat == ImageFormat::PNG)
+        {
+            destFile.append(QLatin1String(".png"));
+
+            if (!img.save(destFile, QLatin1String("PNG")))
+            {
+                err = i18n("Cannot save resized image (PNG). Aborting.");
+                return false;
+            }
+        }
+
+        DMetadata meta;
+
+        if (!meta.load(destFile))
+        {
+            return false;
+        }
+
+        if (d->removeMetadata)
+        {
+            meta.clearExif();
+            meta.clearIptc();
+            meta.clearXmp();
+        }
+        else
+        {
+            meta.setItemOrientation(MetaEngine::ORIENTATION_NORMAL);
+        }
+
+        meta.setMetadataWritingMode((int)DMetadata::WRITE_TO_FILE_ONLY);
+
+        if (!meta.save(destFile))
+        {
+            return false;
+        }
+
+        return true;
+    }
+
+    return false;
 }
 
 } // namespace DigikamGenericFileCopyPlugin

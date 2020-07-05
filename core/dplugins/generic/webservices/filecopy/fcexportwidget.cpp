@@ -30,6 +30,9 @@
 #include <QRadioButton>
 #include <QVBoxLayout>
 #include <QLabel>
+#include <QGroupBox>
+#include <QSpinBox>
+#include <QComboBox>
 
 // KDE includes
 
@@ -58,7 +61,13 @@ public:
         targetButtonGroup(nullptr),
         fileCopyButton(nullptr),
         symLinkButton(nullptr),
-        relativeButton(nullptr)
+        relativeButton(nullptr),
+        imageChangeGroupBox(nullptr),
+        changeImagesProp(nullptr),
+        removeMetadataProp(nullptr),
+        imageCompression(nullptr),
+        imagesResize(nullptr),
+        imagesFormat(nullptr)
     {
     }
 
@@ -73,6 +82,13 @@ public:
 
     QUrl           targetUrl;
 
+    QGroupBox*     imageChangeGroupBox;
+    QCheckBox*     changeImagesProp;
+    QCheckBox*     removeMetadataProp;
+
+    QSpinBox*      imageCompression;
+    QSpinBox*      imagesResize;
+    QComboBox*     imagesFormat;
 };
 
 FCExportWidget::FCExportWidget(DInfoInterface* const iface, QWidget* const parent)
@@ -80,6 +96,8 @@ FCExportWidget::FCExportWidget(DInfoInterface* const iface, QWidget* const paren
       d(new Private)
 {
     // setup local target selection
+
+    const int spacing           = QApplication::style()->pixelMetric(QStyle::PM_DefaultLayoutSpacing);
 
     DHBox* const hbox           = new DHBox(this);
     QLabel* const locationLabel = new QLabel(hbox);
@@ -103,8 +121,83 @@ FCExportWidget::FCExportWidget(DInfoInterface* const iface, QWidget* const paren
     d->targetButtonGroup->setExclusive(true);
     d->fileCopyButton->setChecked(true);
 
+    //---------------------------------------------
+
+    d->changeImagesProp = new QCheckBox(i18n("Adjust image properties"), this);
+    d->changeImagesProp->setChecked(false);
+    d->changeImagesProp->setWhatsThis(i18n("If you enable this option, "
+                                           "all images to be sent can be "
+                                           "resized and recompressed."));
+
+    //---------------------------------------------
+
+    d->imageChangeGroupBox           = new QGroupBox(i18n("Image Properties"), this);
+
+    d->imagesResize                  = new QSpinBox(d->imageChangeGroupBox);
+    d->imagesResize->setRange(300, 4000);
+    d->imagesResize->setSingleStep(1);
+    d->imagesResize->setValue(1024);
+    d->imagesResize->setSuffix(i18n(" px"));
+    d->imagesResize->setWhatsThis(i18n("Select the length of the images that are to be sent. "
+                                       "The aspect ratio is preserved."));
+    d->imageChangeGroupBox->setEnabled(false);
+
+    QLabel* const  labelImagesResize = new QLabel(i18n("Image Length:"), d->imageChangeGroupBox);
+    labelImagesResize->setBuddy(d->imagesResize);
+
+    //---------------------------------------------
+
+    QLabel* const labelImagesFormat = new QLabel(d->imageChangeGroupBox);
+    labelImagesFormat->setWordWrap(false);
+    labelImagesFormat->setText(i18n("Image Format:"));
+
+    d->imagesFormat                 = new QComboBox(d->imageChangeGroupBox);
+    d->imagesFormat->setEditable(false);
+    d->imagesFormat->setWhatsThis(i18n("Select your preferred format to convert image."));
+    d->imagesFormat->addItem(i18nc("Image format: JPEG", "Jpeg"), FCTask::JPEG);
+    d->imagesFormat->addItem(i18nc("Image format: PNG",  "Png"),  FCTask::PNG);
+    labelImagesFormat->setBuddy(d->imagesFormat);
+
+    //---------------------------------------------
+
+    d->imageCompression                 = new QSpinBox(d->imageChangeGroupBox);
+    d->imageCompression->setRange(1, 100);
+    d->imageCompression->setSingleStep(1);
+    d->imageCompression->setValue(75);
+    d->imageCompression->setWhatsThis(i18n("<p>The new compression value of JPEG images to be sent:</p>"
+                                           "<p><b>1</b>: very high compression<br/>"
+                                           "<b>25</b>: high compression<br/>"
+                                           "<b>50</b>: medium compression<br/>"
+                                           "<b>75</b>: low compression (default value)<br/>"
+                                           "<b>100</b>: no compression</p>"));
+
+    QLabel* const labelImageCompression = new QLabel(i18n("Image quality:"), d->imageChangeGroupBox);
+    labelImageCompression->setBuddy(d->imageCompression);
+
+    //---------------------------------------------
+
+    d->removeMetadataProp = new QCheckBox(i18n("Remove all metadata"), d->imageChangeGroupBox);
+    d->removeMetadataProp->setWhatsThis(i18n("If you enable this option, all metadata "
+                                             "as Exif, Iptc, and Xmp will be removed."));
+
+    //---------------------------------------------
+
+    QGridLayout* const grid2 = new QGridLayout(d->imageChangeGroupBox);
+    grid2->addWidget(labelImagesResize,     0, 0, 1, 1);
+    grid2->addWidget(d->imagesResize,       0, 1, 1, 2);
+    grid2->addWidget(labelImagesFormat,     1, 0, 1, 1);
+    grid2->addWidget(d->imagesFormat,       1, 1, 1, 2);
+    grid2->addWidget(labelImageCompression, 2, 0, 1, 1);
+    grid2->addWidget(d->imageCompression,   2, 1, 1, 2);
+    grid2->addWidget(d->removeMetadataProp, 3, 0, 1, 2);
+    grid2->setColumnStretch(2, 10);
+    grid2->setSpacing(spacing);
+    grid2->setAlignment(Qt::AlignTop);
+
+    //---------------------------------------------
+
     // setup image list
-    d->imageList                = new DItemsList(this);
+    d->imageList              = new DItemsList(this);
     d->imageList->setObjectName(QLatin1String("FCExport ImagesList"));
     d->imageList->setIface(iface);
     d->imageList->loadImagesFromCurrentSelection();
@@ -122,7 +215,9 @@ FCExportWidget::FCExportWidget(DInfoInterface* const iface, QWidget* const paren
     layout->addWidget(d->relativeButton);
     layout->addWidget(d->overwrite);
     layout->addWidget(d->imageList);
-    layout->setSpacing(QApplication::style()->pixelMetric(QStyle::PM_DefaultLayoutSpacing));
+    layout->addWidget(d->changeImagesProp);
+    layout->addWidget(d->imageChangeGroupBox);
+    layout->setSpacing(spacing);
     layout->setContentsMargins(QMargins());
 
     // ------------------------------------------------------------------------
@@ -132,6 +227,13 @@ FCExportWidget::FCExportWidget(DInfoInterface* const iface, QWidget* const paren
 
     connect(d->selector, SIGNAL(signalUrlSelected(QUrl)),
             this, SLOT(slotLabelUrlChanged()));
+
+    connect(d->fileCopyButton, SIGNAL(toggled(bool)),
+            this, SLOT(slotFileCopyButtonChanged(bool)));
+
+    connect(d->changeImagesProp, SIGNAL(toggled(bool)),
+            d->imageChangeGroupBox, SLOT(setEnabled(bool)));
+
 }
 
 FCExportWidget::~FCExportWidget()
@@ -148,6 +250,31 @@ void FCExportWidget::setTargetUrl(const QUrl& url)
 {
     d->targetUrl = url;
     d->selector->setFileDlgPath(d->targetUrl.toLocalFile());
+}
+
+QCheckBox* FCExportWidget::changeImagePropertiesBox() const
+{
+    return d->changeImagesProp;
+}
+
+QSpinBox* FCExportWidget::imageResizeBox() const
+{
+    return d->imagesResize;
+}
+
+QComboBox* FCExportWidget::imageFormatBox() const
+{
+    return d->imagesFormat;
+}
+
+QSpinBox* FCExportWidget::imageCompressionBox() const
+{
+    return d->imageCompression;
+}
+
+QCheckBox* FCExportWidget::removeMetadataBox() const
+{
+    return d->removeMetadataProp;
 }
 
 DItemsList* FCExportWidget::imagesList() const
@@ -170,6 +297,20 @@ void FCExportWidget::slotLabelUrlChanged()
     d->targetUrl = QUrl::fromLocalFile(d->selector->fileDlgPath());
 
     emit signalTargetUrlChanged(d->targetUrl);
+}
+
+void FCExportWidget::slotFileCopyButtonChanged(bool enabled)
+{
+    if (!enabled)
+    {
+        d->changeImagesProp->setChecked(false);
+    }
+
+    d->changeImagesProp->setEnabled(enabled);
+
+     // The changeImagesProp is by default and on each change unchecked
+
+    d->imageChangeGroupBox->setEnabled(false);
 }
 
 } // namespace DigikamGenericFileCopyPlugin
