@@ -51,45 +51,20 @@ class Q_DECL_HIDDEN FCTask::Private
 public:
 
     explicit Private()
-      : behavior(CopyFile),
-        overwrite(false)
     {
     }
 
     QUrl        srcUrl;
-    QUrl        dstUrl;
-    int         behavior;
-    bool        overwrite;
-
-    bool        changeImageProperties;
-    uint        imageResize;
-    ImageFormat imageFormat;
-    uint        imageCompression;
-    bool        removeMetadata;
+    FCContainer settings;
 };
 
 FCTask::FCTask(const QUrl& srcUrl,
-               const QUrl& dstUrl,
-               int   behavior,
-               bool  overwrite,
-               bool  changeImageProperties,
-               uint  imageResize,
-               uint  imageFormat,
-               uint  imageCompression,
-               bool  removeMetadata)
+               const FCContainer& settings)
     : ActionJob(),
       d(new Private)
 {
-    d->srcUrl                = srcUrl;
-    d->dstUrl                = dstUrl;
-    d->behavior              = behavior;
-    d->overwrite             = overwrite;
-
-    d->changeImageProperties = changeImageProperties;
-    d->imageResize           = imageResize;
-    d->imageFormat           = static_cast<ImageFormat>(imageFormat);
-    d->imageCompression      = imageCompression;
-    d->removeMetadata        = removeMetadata;
+    d->srcUrl   = srcUrl;
+    d->settings = settings;
 }
 
 FCTask::~FCTask()
@@ -105,23 +80,23 @@ void FCTask::run()
         return;
     }
 
-    QUrl dest = d->dstUrl.adjusted(QUrl::StripTrailingSlash);
+    QUrl dest = d->settings.destUrl.adjusted(QUrl::StripTrailingSlash);
     dest.setPath(dest.path() +
                  QLatin1Char('/') +
                  d->srcUrl.fileName());
 
-    if (d->overwrite && QFile::exists(dest.toLocalFile()))
+    if (d->settings.overwrite && QFile::exists(dest.toLocalFile()))
     {
         QFile::remove(dest.toLocalFile());
     }
 
     bool ok = false;
 
-    if      (d->behavior == CopyFile)
+    if      (d->settings.behavior == FCContainer::CopyFile)
     {
         QString mimeName = QMimeDatabase().mimeTypeForFile(d->srcUrl.toLocalFile()).name();
 
-        if (d->changeImageProperties && mimeName.startsWith(QLatin1String("image/")))
+        if (d->settings.changeImageProperties && mimeName.startsWith(QLatin1String("image/")))
         {
             QString errString;
             ok = imageResize(d->srcUrl.toLocalFile(), dest.toLocalFile(), errString);
@@ -137,21 +112,21 @@ void FCTask::run()
                              dest.toLocalFile());
         }
     }
-    else if ((d->behavior == FullSymLink) ||
-             (d->behavior == RelativeSymLink))
+    else if ((d->settings.behavior == FCContainer::FullSymLink) ||
+             (d->settings.behavior == FCContainer::RelativeSymLink))
     {
 #ifdef Q_OS_WIN
         dest.setPath(dest.path() + QLatin1String(".lnk"));
 #endif
 
-        if (d->behavior == FullSymLink)
+        if (d->settings.behavior == FCContainer::FullSymLink)
         {
             ok = QFile::link(d->srcUrl.toLocalFile(),
                              dest.toLocalFile());
         }
         else
         {
-            QDir dir(d->dstUrl.toLocalFile());
+            QDir dir(d->settings.destUrl.toLocalFile());
             QString path = dir.relativeFilePath(d->srcUrl.toLocalFile());
             QUrl srcUrl  = QUrl::fromLocalFile(path);
             ok           = QFile::link(srcUrl.toLocalFile(),
@@ -159,7 +134,7 @@ void FCTask::run()
         }
     }
 
-    if (ok && (d->behavior == CopyFile))
+    if (ok && (d->settings.behavior == FCContainer::CopyFile))
     {
         DFileOperations::copyModificationTime(d->srcUrl.toLocalFile(),
                                               dest.toLocalFile());
@@ -194,14 +169,14 @@ bool FCTask::imageResize(const QString& orgUrl, const QString& destName, QString
         return false;
     }
 
-    DImg img = PreviewLoadThread::loadFastSynchronously(orgUrl, d->imageResize);
+    DImg img = PreviewLoadThread::loadFastSynchronously(orgUrl, d->settings.imageResize);
 
     if (img.isNull())
     {
         img.load(orgUrl);
     }
 
-    uint sizeFactor = d->imageResize;
+    uint sizeFactor = d->settings.imageResize;
 
     if (!img.isNull())
     {
@@ -252,11 +227,11 @@ bool FCTask::imageResize(const QString& orgUrl, const QString& destName, QString
                            QLatin1Char('/') +
                            destInfo.completeBaseName();
 
-        if (d->imageFormat == ImageFormat::JPEG)
+        if (d->settings.imageFormat == FCContainer::JPEG)
         {
             destFile.append(QLatin1String(".jpeg"));
 
-            img.setAttribute(QLatin1String("quality"), d->imageCompression);
+            img.setAttribute(QLatin1String("quality"), d->settings.imageCompression);
 
             if (!img.save(destFile, QLatin1String("JPEG")))
             {
@@ -264,7 +239,7 @@ bool FCTask::imageResize(const QString& orgUrl, const QString& destName, QString
                 return false;
             }
         }
-        else if (d->imageFormat == ImageFormat::PNG)
+        else if (d->settings.imageFormat == FCContainer::PNG)
         {
             destFile.append(QLatin1String(".png"));
 
@@ -282,7 +257,7 @@ bool FCTask::imageResize(const QString& orgUrl, const QString& destName, QString
             return false;
         }
 
-        if (d->removeMetadata)
+        if (d->settings.removeMetadata)
         {
             meta.clearExif();
             meta.clearIptc();

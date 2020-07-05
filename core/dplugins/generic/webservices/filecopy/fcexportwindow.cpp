@@ -156,22 +156,19 @@ void FCExportWindow::restoreSettings()
 {
     KSharedConfigPtr config = KSharedConfig::openConfig();
     KConfigGroup group      = config->group(d->CONFIG_GROUP);
-    d->exportWidget->setTargetUrl(group.readEntry(d->TARGET_URL_PROPERTY,            QUrl()));
-    d->exportWidget->overwriteBox()->setChecked(group.readEntry(d->TARGET_OVERWRITE, false));
 
-    int buttonId                  = group.readEntry(d->TARGET_BEHAVIOR, (int)FCTask::CopyFile);
-    QAbstractButton* const button = d->exportWidget->targetButtonGroup()->button(buttonId);
+    FCContainer settings;
 
-    if (button)
-    {
-        button->setChecked(true);
-    }
+    settings.destUrl               = group.readEntry(d->TARGET_URL_PROPERTY,     QUrl());
+    settings.behavior              = group.readEntry(d->TARGET_BEHAVIOR,         (int)FCContainer::CopyFile);
+    settings.imageFormat           = group.readEntry(d->IMAGE_FORMAT,            (int)FCContainer::JPEG);
+    settings.overwrite             = group.readEntry(d->TARGET_OVERWRITE,        false);
+    settings.removeMetadata        = group.readEntry(d->REMOVE_METADATA,         false);
+    settings.changeImageProperties = group.readEntry(d->CHANGE_IMAGE_PROPERTIES, false);
+    settings.imageResize           = group.readEntry(d->IMAGE_RESIZE,            1024);
+    settings.imageCompression      = group.readEntry(d->IMAGE_COMPRESSION,       75);
 
-    d->exportWidget->changeImagePropertiesBox()->setChecked(group.readEntry(d->CHANGE_IMAGE_PROPERTIES, false));
-    d->exportWidget->imageResizeBox()->setValue(group.readEntry(d->IMAGE_RESIZE, 1024));
-    d->exportWidget->imageFormatBox()->setCurrentIndex(group.readEntry(d->IMAGE_FORMAT, 0));
-    d->exportWidget->imageCompressionBox()->setValue(group.readEntry(d->IMAGE_COMPRESSION, 75));
-    d->exportWidget->removeMetadataBox()->setChecked(group.readEntry(d->REMOVE_METADATA, false));
+    d->exportWidget->setSettings(settings);
 
     winId();
     KConfigGroup group2 = config->group(d->DIALOG);
@@ -183,15 +180,16 @@ void FCExportWindow::saveSettings()
 {
     KSharedConfigPtr config = KSharedConfig::openConfig();
     KConfigGroup group      = config->group(d->CONFIG_GROUP);
-    group.writeEntry(d->TARGET_URL_PROPERTY,     d->exportWidget->targetUrl().url());
-    group.writeEntry(d->TARGET_OVERWRITE,        d->exportWidget->overwriteBox()->isChecked());
-    group.writeEntry(d->TARGET_BEHAVIOR,         d->exportWidget->targetButtonGroup()->checkedId());
+    FCContainer settings    = d->exportWidget->getSettings();
 
-    group.writeEntry(d->CHANGE_IMAGE_PROPERTIES, d->exportWidget->changeImagePropertiesBox()->isChecked());
-    group.writeEntry(d->IMAGE_RESIZE,            d->exportWidget->imageResizeBox()->value());
-    group.writeEntry(d->IMAGE_FORMAT,            d->exportWidget->imageFormatBox()->currentIndex());
-    group.writeEntry(d->IMAGE_COMPRESSION,       d->exportWidget->imageCompressionBox()->value());
-    group.writeEntry(d->REMOVE_METADATA,         d->exportWidget->removeMetadataBox()->isChecked());
+    group.writeEntry(d->TARGET_URL_PROPERTY,     settings.destUrl);
+    group.writeEntry(d->TARGET_BEHAVIOR,         settings.behavior);
+    group.writeEntry(d->IMAGE_FORMAT,            settings.imageFormat);
+    group.writeEntry(d->TARGET_OVERWRITE,        settings.overwrite);
+    group.writeEntry(d->REMOVE_METADATA,         settings.removeMetadata);
+    group.writeEntry(d->CHANGE_IMAGE_PROPERTIES, settings.changeImageProperties);
+    group.writeEntry(d->IMAGE_RESIZE,            settings.imageResize);
+    group.writeEntry(d->IMAGE_COMPRESSION,       settings.imageCompression);
 
     KConfigGroup group2 = config->group(d->DIALOG);
     KWindowConfig::saveWindowSize(windowHandle(), group2);
@@ -262,14 +260,7 @@ void FCExportWindow::slotCopy()
     }
 
     d->thread->createCopyJobs(d->exportWidget->imagesList()->imageUrls(),
-                              d->exportWidget->targetUrl(),
-                              d->exportWidget->targetButtonGroup()->checkedId(),
-                              d->exportWidget->overwriteBox()->isChecked(),
-                              d->exportWidget->changeImagePropertiesBox()->isChecked(),
-                              d->exportWidget->imageResizeBox()->value(),
-                              d->exportWidget->imageFormatBox()->currentIndex(),
-                              d->exportWidget->imageCompressionBox()->value(),
-                              d->exportWidget->removeMetadataBox()->isChecked());
+                              d->exportWidget->getSettings());
 
     d->thread->start();
 }

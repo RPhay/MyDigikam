@@ -42,8 +42,8 @@
 
 #include "digikam_debug.h"
 #include "dfileselector.h"
-#include "ditemslist.h"
 #include "wstoolutils.h"
+#include "ditemslist.h"
 #include "dlayoutbox.h"
 #include "fctask.h"
 
@@ -115,9 +115,9 @@ FCExportWidget::FCExportWidget(DInfoInterface* const iface, QWidget* const paren
 
     d->overwrite                = new QCheckBox(i18n("Overwrite existing items in the target"), this);
 
-    d->targetButtonGroup->addButton(d->fileCopyButton, FCTask::CopyFile);
-    d->targetButtonGroup->addButton(d->symLinkButton,  FCTask::FullSymLink);
-    d->targetButtonGroup->addButton(d->relativeButton, FCTask::RelativeSymLink);
+    d->targetButtonGroup->addButton(d->fileCopyButton, FCContainer::CopyFile);
+    d->targetButtonGroup->addButton(d->symLinkButton,  FCContainer::FullSymLink);
+    d->targetButtonGroup->addButton(d->relativeButton, FCContainer::RelativeSymLink);
     d->targetButtonGroup->setExclusive(true);
     d->fileCopyButton->setChecked(true);
 
@@ -154,8 +154,8 @@ FCExportWidget::FCExportWidget(DInfoInterface* const iface, QWidget* const paren
     d->imagesFormat                 = new QComboBox(d->imageChangeGroupBox);
     d->imagesFormat->setEditable(false);
     d->imagesFormat->setWhatsThis(i18n("Select your preferred format to convert image."));
-    d->imagesFormat->addItem(i18nc("Image format: JPEG", "Jpeg"), FCTask::JPEG);
-    d->imagesFormat->addItem(i18nc("Image format: PNG",  "Png"),  FCTask::PNG);
+    d->imagesFormat->addItem(i18nc("Image format: JPEG", "Jpeg"), FCContainer::JPEG);
+    d->imagesFormat->addItem(i18nc("Image format: PNG",  "Png"),  FCContainer::PNG);
     labelImagesFormat->setBuddy(d->imagesFormat);
 
     //---------------------------------------------
@@ -241,55 +241,49 @@ FCExportWidget::~FCExportWidget()
     delete d;
 }
 
-QUrl FCExportWidget::targetUrl() const
-{
-    return d->targetUrl;
-}
-
-void FCExportWidget::setTargetUrl(const QUrl& url)
-{
-    d->targetUrl = url;
-    d->selector->setFileDlgPath(d->targetUrl.toLocalFile());
-}
-
-QCheckBox* FCExportWidget::changeImagePropertiesBox() const
-{
-    return d->changeImagesProp;
-}
-
-QSpinBox* FCExportWidget::imageResizeBox() const
-{
-    return d->imagesResize;
-}
-
-QComboBox* FCExportWidget::imageFormatBox() const
-{
-    return d->imagesFormat;
-}
-
-QSpinBox* FCExportWidget::imageCompressionBox() const
-{
-    return d->imageCompression;
-}
-
-QCheckBox* FCExportWidget::removeMetadataBox() const
-{
-    return d->removeMetadataProp;
-}
-
 DItemsList* FCExportWidget::imagesList() const
 {
     return d->imageList;
 }
 
-QCheckBox* FCExportWidget::overwriteBox() const
+QUrl FCExportWidget::targetUrl() const
 {
-    return d->overwrite;
+    return d->targetUrl;
 }
 
-QButtonGroup* FCExportWidget::targetButtonGroup() const
+FCContainer FCExportWidget::getSettings() const
 {
-    return d->targetButtonGroup;
+    FCContainer settings;
+
+    settings.destUrl               = d->targetUrl;
+    settings.behavior              = d->targetButtonGroup->checkedId();
+    settings.imageFormat           = d->imagesFormat->currentIndex();
+    settings.overwrite             = d->overwrite->isChecked();
+    settings.removeMetadata        = d->removeMetadataProp->isChecked();
+    settings.changeImageProperties = d->changeImagesProp->isChecked();
+    settings.imageResize           = d->imagesResize->value();
+    settings.imageCompression      = d->imageCompression->value();
+
+    return settings;
+}
+
+void FCExportWidget::setSettings(const FCContainer& settings)
+{
+    d->targetUrl                  = settings.destUrl;
+    d->selector->setFileDlgPath(d->targetUrl.toLocalFile());
+    QAbstractButton* const button = d->targetButtonGroup->button(settings.behavior);
+
+    if (button)
+    {
+        button->setChecked(true);
+    }
+
+    d->imagesFormat->setCurrentIndex(settings.imageFormat);
+    d->overwrite->setChecked(settings.overwrite);
+    d->removeMetadataProp->setChecked(settings.removeMetadata);
+    d->changeImagesProp->setChecked(settings.changeImageProperties);
+    d->imagesResize->setValue(settings.imageResize);
+    d->imageCompression->setValue(settings.imageCompression);
 }
 
 void FCExportWidget::slotLabelUrlChanged()

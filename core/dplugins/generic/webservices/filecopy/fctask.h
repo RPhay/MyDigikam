@@ -32,6 +32,7 @@
 // Local includes
 
 #include "actionthreadbase.h"
+#include "fccontainer.h"
 
 using namespace Digikam;
 
@@ -44,30 +45,8 @@ class FCTask : public ActionJob
 
 public:
 
-    enum FileCopyType
-    {
-        CopyFile = 0,
-        FullSymLink,
-        RelativeSymLink
-    };
-
-    enum ImageFormat
-    {
-        JPEG = 0,
-        PNG
-    };
-
-public:
-
     explicit FCTask(const QUrl& srcUrl,
-                    const QUrl& dstUrl,
-                    int   behavior,
-                    bool  overwrite,
-                    bool  changeImageProperties,
-                    uint  imageResize,
-                    uint  imageFormat,
-                    uint  imageCompression,
-                    bool  removeMetadata);
+                    const FCContainer& settings);
     ~FCTask();
 
 Q_SIGNALS:

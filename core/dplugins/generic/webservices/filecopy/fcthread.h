@@ -32,6 +32,7 @@
 // Local includes
 
 #include "actionthreadbase.h"
+#include "fccontainer.h"
 
 using namespace Digikam;
 
@@ -48,14 +49,7 @@ public:
     ~FCThread();
 
     void createCopyJobs(const QList<QUrl>& itemsList,
-                        const QUrl& dstUrl,
-                        int   behavior,
-                        bool  overwrite,
-                        bool  changeImageProperties,
-                        uint  imageResize,
-                        uint  imageFormat,
-                        uint  imageCompression,
-                        bool  removeMetadata);
+                        const FCContainer& settings);
     void cancel();
 
 Q_SIGNALS:

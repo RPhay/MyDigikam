@@ -35,6 +35,7 @@
 // Local includes
 
 #include "dinfointerface.h"
+#include "fccontainer.h"
 #include "ditemslist.h"
 
 using namespace Digikam;
@@ -69,49 +70,19 @@ public:
     DItemsList* imagesList() const;
 
     /**
-     * Returns a pointer to the overwrite QCheckBox.
-     */
-    QCheckBox* overwriteBox() const;
-
-    /**
-     * Returns a pointer to the target QButtonGroup.
-     */
-    QButtonGroup* targetButtonGroup() const;
-
-    /**
      * Returns the currently selected target url. Maybe invalid.
      */
     QUrl targetUrl() const;
 
     /**
-     * Sets the target url this widget should point at.
+     * Returns settings container.
      */
-    void setTargetUrl(const QUrl& url);
+    FCContainer getSettings() const;
 
     /**
-     * Returns a pointer to the changeImageProperties.
+     * Set widget from settings container.
      */
-    QCheckBox* changeImagePropertiesBox() const;
-
-    /**
-     * Returns a pointer to the overwrite QCheckBox.
-     */
-    QSpinBox* imageResizeBox() const;
-
-    /**
-     * Returns a pointer to the imageFormat.
-     */
-    QComboBox* imageFormatBox() const;
-
-    /**
-     * Returns a pointer to the imageCompression.
-     */
-    QSpinBox* imageCompressionBox() const;
-
-    /**
-     * Returns a pointer to the removeMetadata.
-     */
-    QCheckBox* removeMetadataBox() const;
+    void setSettings(const FCContainer& settings);
 
 private Q_SLOTS:
 

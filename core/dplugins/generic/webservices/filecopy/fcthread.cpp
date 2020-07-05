@@ -49,28 +49,13 @@ FCThread::~FCThread()
 }
 
 void FCThread::createCopyJobs(const QList<QUrl>& itemsList,
-                              const QUrl& dstUrl,
-                              int   behavior,
-                              bool  overwrite,
-                              bool  changeImageProperties,
-                              uint  imageResize,
-                              uint  imageFormat,
-                              uint  imageCompression,
-                              bool  removeMetadata)
+                              const FCContainer& settings)
 {
     ActionJobCollection collection;
 
     foreach (const QUrl& srcUrl, itemsList)
     {
-        FCTask* const t = new FCTask(srcUrl,
-                                     dstUrl,
-                                     behavior,
-                                     overwrite,
-                                     changeImageProperties,
-                                     imageResize,
-                                     imageFormat,
-                                     imageCompression,
-                                     removeMetadata);
+        FCTask* const t = new FCTask(srcUrl, settings);
 
         connect(t, SIGNAL(signalUrlProcessed(QUrl,QUrl)),
                 this, SIGNAL(signalUrlProcessed(QUrl,QUrl)));
