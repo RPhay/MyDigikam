@@ -105,6 +105,11 @@ void FCTask::run()
             deleteTargetFile(dest.toLocalFile());
             ok = QFile::copy(d->srcUrl.toLocalFile(),
                              dest.toLocalFile());
+            if (ok)
+            {
+                DFileOperations::copyModificationTime(d->srcUrl.toLocalFile(),
+                                                      dest.toLocalFile());
+            }
         }
     }
     else if ((d->settings.behavior == FCContainer::FullSymLink) ||
@@ -130,12 +135,6 @@ void FCTask::run()
             ok           = QFile::link(srcUrl.toLocalFile(),
                                        dest.toLocalFile());
         }
-    }
-
-    if (ok && (d->settings.behavior == FCContainer::CopyFile))
-    {
-        DFileOperations::copyModificationTime(d->srcUrl.toLocalFile(),
-                                              dest.toLocalFile());
     }
 
     if (ok)
