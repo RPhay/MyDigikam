@@ -28,11 +28,13 @@
 
 #include <QApplication>
 #include <QRadioButton>
+#include <QButtonGroup>
 #include <QVBoxLayout>
-#include <QLabel>
+#include <QCheckBox>
 #include <QGroupBox>
-#include <QSpinBox>
 #include <QComboBox>
+#include <QSpinBox>
+#include <QLabel>
 
 // KDE includes
 

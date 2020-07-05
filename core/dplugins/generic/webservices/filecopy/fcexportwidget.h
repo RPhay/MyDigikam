@@ -27,8 +27,6 @@
 
 // Qt includes
 
-#include <QButtonGroup>
-#include <QCheckBox>
 #include <QWidget>
 #include <QUrl>
 
@@ -39,9 +37,6 @@
 #include "ditemslist.h"
 
 using namespace Digikam;
-
-class QSpinBox;
-class QComboBox;
 
 namespace DigikamGenericFileCopyPlugin
 {

@@ -29,9 +29,6 @@
 #include <QWindow>
 #include <QCloseEvent>
 #include <QMessageBox>
-#include <QAbstractButton>
-#include <QSpinBox>
-#include <QComboBox>
 
 // KDE includes
 
