@@ -151,8 +151,8 @@ bool FCTask::imageResize(const QString& orgUrl, const QString& destName)
 
     if (!fi.exists() || !fi.isReadable())
     {
-        qCDebug(DIGIKAM_DPLUGIN_GENERIC_LOG) << "Error opening input file"
-                                             << fi.filePath();
+        qCDebug(DIGIKAM_WEBSERVICES_LOG) << "Error opening input file"
+                                         << fi.filePath();
         return false;
     }
 
@@ -161,8 +161,8 @@ bool FCTask::imageResize(const QString& orgUrl, const QString& destName)
 
     if (!tmpDir.exists() || !tmpDir.isWritable())
     {
-        qCDebug(DIGIKAM_DPLUGIN_GENERIC_LOG) << "Error opening target folder"
-                                             << tmpDir.dir();
+        qCDebug(DIGIKAM_WEBSERVICES_LOG) << "Error opening target folder"
+                                         << tmpDir.dir();
         return false;
     }
 
@@ -185,7 +185,7 @@ bool FCTask::imageResize(const QString& orgUrl, const QString& destName)
 
             if ((scaledImg.width() > sizeFactor) || (scaledImg.height() > sizeFactor))
             {
-                qCDebug(DIGIKAM_DPLUGIN_GENERIC_LOG) << "Cannot resize image";
+                qCDebug(DIGIKAM_WEBSERVICES_LOG) << "Cannot resize image";
                 return false;
             }
 
@@ -205,7 +205,7 @@ bool FCTask::imageResize(const QString& orgUrl, const QString& destName)
 
             if (!img.save(destFile, QLatin1String("JPEG")))
             {
-                qCDebug(DIGIKAM_DPLUGIN_GENERIC_LOG) << "Cannot save resized image (JPEG)";
+                qCDebug(DIGIKAM_WEBSERVICES_LOG) << "Cannot save resized image (JPEG)";
                 return false;
             }
         }
@@ -216,7 +216,7 @@ bool FCTask::imageResize(const QString& orgUrl, const QString& destName)
 
             if (!img.save(destFile, QLatin1String("PNG")))
             {
-                qCDebug(DIGIKAM_DPLUGIN_GENERIC_LOG) << "Cannot save resized image (PNG)";
+                qCDebug(DIGIKAM_WEBSERVICES_LOG) << "Cannot save resized image (PNG)";
                 return false;
             }
         }

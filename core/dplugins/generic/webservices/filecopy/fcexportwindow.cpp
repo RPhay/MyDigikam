@@ -208,10 +208,11 @@ void FCExportWindow::updateUploadButton()
 {
     bool listNotEmpty = !d->exportWidget->imagesList()->imageUrls().isEmpty();
     startButton()->setEnabled(listNotEmpty && d->exportWidget->targetUrl().isValid());
-
+/*
     qCDebug(DIGIKAM_WEBSERVICES_LOG) << "Updated upload button with listNotEmpty ="
                                      << listNotEmpty << ", targetUrl().isValid() ="
                                      << d->exportWidget->targetUrl().isValid();
+*/
 }
 
 void FCExportWindow::slotCopyingDone(const QUrl& from, const QUrl& to)
