@@ -409,10 +409,13 @@ void ShowFoto::slotDroppedUrls(const QList<QUrl>& droppedUrls, bool dropped)
             // Add extra check of the image extensions that are still
             // unknown in older Qt versions or have an application mime type.
 
-            if (QMimeDatabase().mimeTypeForUrl(url).name().startsWith(QLatin1String("image/")) ||
-                (suffix == QLatin1String("PGF"))                                               ||
-                (suffix == QLatin1String("KRA"))                                               ||
-                (suffix == QLatin1String("HEIC"))                                              ||
+            QMimeDatabase mimeDB;
+            QString mimeType(mimeDB.mimeTypeForUrl(url).name());
+
+            if (mimeType.startsWith(QLatin1String("image/")) ||
+                (suffix == QLatin1String("PGF"))             ||
+                (suffix == QLatin1String("KRA"))             ||
+                (suffix == QLatin1String("HEIC"))            ||
                 (suffix == QLatin1String("HEIF")))
             {
                 imagesUrls << url;
