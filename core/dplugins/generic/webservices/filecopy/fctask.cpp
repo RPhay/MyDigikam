@@ -180,10 +180,10 @@ bool FCTask::imageResize(const QString& orgUrl, const QString& destName, QString
         return false;
     }
 
-    QFileInfo tmp(destName);
-    QFileInfo tmpDir(tmp.dir().absolutePath());
+    QFileInfo destInfo(destName);
+    QFileInfo tmpDir(destInfo.dir().absolutePath());
 
-    qCDebug(DIGIKAM_DPLUGIN_GENERIC_LOG) << "tmpDir: " << tmp.dir().absolutePath();
+    qCDebug(DIGIKAM_DPLUGIN_GENERIC_LOG) << "tmpDir: " << destInfo.dir().absolutePath();
 
     if (!tmpDir.exists() || !tmpDir.isWritable())
     {
@@ -245,11 +245,17 @@ bool FCTask::imageResize(const QString& orgUrl, const QString& destName, QString
             img = scaledImg;
         }
 
+        QString destFile = destInfo.path()  +
+                           QLatin1Char('/') +
+                           destInfo.completeBaseName();
+
         if (d->imageFormat == ImageFormat::JPEG)
         {
+            destFile.append(QLatin1String(".jpeg"));
+
             img.setAttribute(QLatin1String("quality"), d->imageCompression);
 
-            if (!img.save(destName, QLatin1String("JPEG")))
+            if (!img.save(destFile, QLatin1String("JPEG")))
             {
                 err = i18n("Cannot save resized image (JPEG). Aborting.");
                 return false;
@@ -257,7 +263,9 @@ bool FCTask::imageResize(const QString& orgUrl, const QString& destName, QString
         }
         else if (d->imageFormat == ImageFormat::PNG)
         {
-            if (!img.save(destName, QLatin1String("PNG")))
+            destFile.append(QLatin1String(".png"));
+
+            if (!img.save(destFile, QLatin1String("PNG")))
             {
                 err = i18n("Cannot save resized image (PNG). Aborting.");
                 return false;
@@ -266,7 +274,7 @@ bool FCTask::imageResize(const QString& orgUrl, const QString& destName, QString
 
         DMetadata meta;
 
-        if (!meta.load(destName))
+        if (!meta.load(destFile))
         {
             return false;
         }
@@ -284,7 +292,7 @@ bool FCTask::imageResize(const QString& orgUrl, const QString& destName, QString
 
         meta.setMetadataWritingMode((int)DMetadata::WRITE_TO_FILE_ONLY);
 
-        if (!meta.save(destName))
+        if (!meta.save(destFile))
         {
             return false;
         }
