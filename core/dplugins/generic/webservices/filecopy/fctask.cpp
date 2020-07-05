@@ -152,9 +152,9 @@ void FCTask::run()
     emit signalDone();
 }
 
-bool FCTask::imageResize(const QString& orgUrl, const QString& destName)
+bool FCTask::imageResize(const QString& orgPath, const QString& destPath)
 {
-    QFileInfo fi(orgUrl);
+    QFileInfo fi(orgPath);
 
     if (!fi.exists() || !fi.isReadable())
     {
@@ -163,7 +163,7 @@ bool FCTask::imageResize(const QString& orgUrl, const QString& destName)
         return false;
     }
 
-    QFileInfo destInfo(destName);
+    QFileInfo destInfo(destPath);
     QFileInfo tmpDir(destInfo.dir().absolutePath());
 
     if (!tmpDir.exists() || !tmpDir.isWritable())
@@ -173,11 +173,11 @@ bool FCTask::imageResize(const QString& orgUrl, const QString& destName)
         return false;
     }
 
-    DImg img = PreviewLoadThread::loadFastSynchronously(orgUrl, d->settings.imageResize);
+    DImg img = PreviewLoadThread::loadFastSynchronously(orgPath, d->settings.imageResize);
 
     if (img.isNull())
     {
-        img.load(orgUrl);
+        img.load(orgPath);
     }
 
     if (!img.isNull())
@@ -253,7 +253,7 @@ bool FCTask::imageResize(const QString& orgUrl, const QString& destName)
             return false;
         }
 
-        DFileOperations::copyModificationTime(orgUrl, destFile);
+        DFileOperations::copyModificationTime(orgPath, destFile);
 
         return true;
     }
