@@ -28,6 +28,7 @@
 
 #include <QDir>
 #include <QFile>
+#include <QMimeDatabase>
 
 // KDE includes
 
@@ -38,9 +39,9 @@
 #include "digikam_debug.h"
 #include "digikam_config.h"
 #include "dfileoperations.h"
-#include "dimg.h"
 #include "previewloadthread.h"
 #include "dmetadata.h"
+#include "dimg.h"
 
 namespace DigikamGenericFileCopyPlugin
 {
@@ -118,7 +119,9 @@ void FCTask::run()
 
     if      (d->behavior == CopyFile)
     {
-        if (d->changeImageProperties)
+        QString mimeName = QMimeDatabase().mimeTypeForFile(d->srcUrl.toLocalFile()).name();
+
+        if (d->changeImageProperties && mimeName.startsWith(QLatin1String("image/")))
         {
             QString errString;
             ok = imageResize(d->srcUrl.toLocalFile(), dest.toLocalFile(), errString);
