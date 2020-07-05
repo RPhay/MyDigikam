@@ -98,13 +98,7 @@ void FCTask::run()
              (suffix == QLatin1String("KRA"))            ||
              mimeName.startsWith(QLatin1String("image/"))))
         {
-            QString errString;
-            ok = imageResize(d->srcUrl.toLocalFile(), dest.toLocalFile(), errString);
-
-            if (!ok)
-            {
-                qCDebug(DIGIKAM_DPLUGIN_GENERIC_LOG) << "Change image error: " << errString;
-            }
+            ok = imageResize(d->srcUrl.toLocalFile(), dest.toLocalFile());
         }
         else
         {
@@ -152,24 +146,24 @@ void FCTask::run()
     emit signalDone();
 }
 
-bool FCTask::imageResize(const QString& orgUrl, const QString& destName, QString& err)
+bool FCTask::imageResize(const QString& orgUrl, const QString& destName)
 {
     QFileInfo fi(orgUrl);
 
     if (!fi.exists() || !fi.isReadable())
     {
-        err = i18n("Error opening input file");
+        qCDebug(DIGIKAM_DPLUGIN_GENERIC_LOG) << "Error opening input file"
+                                             << fi.filePath();
         return false;
     }
 
     QFileInfo destInfo(destName);
     QFileInfo tmpDir(destInfo.dir().absolutePath());
 
-    qCDebug(DIGIKAM_DPLUGIN_GENERIC_LOG) << "tmpDir: " << destInfo.dir().absolutePath();
-
     if (!tmpDir.exists() || !tmpDir.isWritable())
     {
-        err = i18n("Error opening temporary folder");
+        qCDebug(DIGIKAM_DPLUGIN_GENERIC_LOG) << "Error opening target folder"
+                                             << tmpDir.dir();
         return false;
     }
 
@@ -192,7 +186,7 @@ bool FCTask::imageResize(const QString& orgUrl, const QString& destName, QString
 
             if ((scaledImg.width() > sizeFactor) || (scaledImg.height() > sizeFactor))
             {
-                err = i18n("Cannot resize image. Aborting.");
+                qCDebug(DIGIKAM_DPLUGIN_GENERIC_LOG) << "Cannot resize image";
                 return false;
             }
 
@@ -212,7 +206,7 @@ bool FCTask::imageResize(const QString& orgUrl, const QString& destName, QString
 
             if (!img.save(destFile, QLatin1String("JPEG")))
             {
-                err = i18n("Cannot save resized image (JPEG). Aborting.");
+                qCDebug(DIGIKAM_DPLUGIN_GENERIC_LOG) << "Cannot save resized image (JPEG)";
                 return false;
             }
         }
@@ -223,7 +217,7 @@ bool FCTask::imageResize(const QString& orgUrl, const QString& destName, QString
 
             if (!img.save(destFile, QLatin1String("PNG")))
             {
-                err = i18n("Cannot save resized image (PNG). Aborting.");
+                qCDebug(DIGIKAM_DPLUGIN_GENERIC_LOG) << "Cannot save resized image (PNG)";
                 return false;
             }
         }

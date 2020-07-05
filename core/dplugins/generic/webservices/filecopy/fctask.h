@@ -59,7 +59,7 @@ protected:
 
 private:
 
-    bool imageResize(const QString& orgUrl, const QString& destName, QString& err);
+    bool imageResize(const QString& orgUrl, const QString& destName);
     void deleteTargetFile(const QString& filePath);
 
     class Private;
