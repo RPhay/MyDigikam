@@ -163,6 +163,7 @@ if(DNN_RECOGNITION)
                                       ${CMAKE_CURRENT_SOURCE_DIR}/facerecognition/facerecognizer.cpp
                                       ${CMAKE_CURRENT_SOURCE_DIR}/facerecognition/faceextractor.cpp
                                       ${CMAKE_CURRENT_SOURCE_DIR}/facerecognition/facedatabase.cpp
+                                      ${CMAKE_CURRENT_SOURCE_DIR}/facerecognition/spatial_database.cpp
     )
 
 else()
