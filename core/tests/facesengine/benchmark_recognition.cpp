@@ -477,7 +477,7 @@ int main(int argc, char** argv)
     Benchmark benchmark;
     benchmark.m_parser = parseOptions(app);
 
-    benchmark.saveData();
+    //benchmark.saveData();
     //QTest::qExec(&benchmark);
 
     //benchmark.fetchData();

@@ -23,14 +23,30 @@
 #ifndef SPATIAL_DATABASE_H
 #define SPATIAL_DATABASE_H
 
+#include <vector>
+
 namespace RecognitionTest
 {
-
 
 class SpatialDatabase
 {
 public:
-    SpatialDatabase();
+
+    explicit SpatialDatabase();
+    ~SpatialDatabase();
+
+public:
+
+private:
+
+    bool updateRange(int nodeId, std::vector<float> minRange, std::vector<float> maxRange, std::vector<float> position);
+
+    int findParent(std::vector<float> nodePos);
+
+private:
+
+    class Private;
+    Private* d;
 };
 }
 

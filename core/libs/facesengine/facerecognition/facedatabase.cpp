@@ -46,7 +46,7 @@ public:
 
         if (!success)
         {
-            qDebug() << "fali to create database" << query.lastError();
+            qDebug() << "fail to create database" << query.lastError();
         }
 
         query.exec(QLatin1String("SET sql_notes = 1"));

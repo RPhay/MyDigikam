@@ -34,14 +34,12 @@
 #include <opencv2/ml.hpp>
 
 // Local includes
-//#include "facedbaccess.h"
-//#include "facedb.h"
 #include "dnnfacemodel.h"
 #include "digikam_debug.h"
 #include "faceextractor.h"
 #include "facedatabase.h"
+#include "spatial_database.h"
 #include "kd_tree.h"
-//#include "dnndbscan.h"
 
 using namespace Digikam;
 
@@ -163,6 +161,7 @@ public:
 
     KDTree tree;
     FaceDatabase db;
+    SpatialDatabase treedb;
 };
 
 int FaceRecognizer::Private::trainSVM() const
