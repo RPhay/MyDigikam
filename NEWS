@@ -794,4 +794,5 @@ BUGFIXES:
 752 ==> 422258 - Tags not displayed on multi monitor setup.
 753 ==> 423737 - Album sort in tree view descending instead of ascending.
 754 ==> 423847 - Root Album Tree View could use the right click refresh option.
-755 ==> 
+755 ==> 423393 - Add Rezise photo on plugin "Export to local storage".
+736 ==>
