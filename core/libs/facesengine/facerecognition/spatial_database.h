@@ -39,9 +39,9 @@ public:
 
 private:
 
-    bool updateRange(int nodeId, std::vector<float> minRange, std::vector<float> maxRange, std::vector<float> position);
+    bool updateRange(int nodeId, std::vector<float>& minRange, std::vector<float>& maxRange, const std::vector<float>& position);
 
-    int findParent(std::vector<float> nodePos);
+    int findParent(const std::vector<float>& nodePos);
 
 private:
 

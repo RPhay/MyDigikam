@@ -25,7 +25,10 @@
 #include <QSqlDatabase>
 #include <QSqlQuery>
 #include <QSqlError>
+#include <QJsonDocument>
 #include <QDebug>
+
+#include "faceextractor.h"
 
 namespace RecognitionTest
 {
@@ -50,8 +53,8 @@ public:
                                                                                     "max_range TEXT NOT NULL, "
                                                                                     "min_range TEXT NOT NULL,"
                                                                                     "parent INTEGER NOT NULL REFERENCES kd_tree,"
-                                                                                    "left INTEGER NOT NULL REFERENCES kd_tree,"
-                                                                                    "right INTEGER NOT NULL REFERENCES kd_tree)"));
+                                                                                    "left INTEGER REFERENCES kd_tree,"
+                                                                                    "right INTEGER REFERENCES kd_tree)"));
 
         if (!success)
         {
@@ -87,7 +90,7 @@ SpatialDatabase::~SpatialDatabase()
     delete d;
 }
 
-bool SpatialDatabase::updateRange(int nodeId, std::vector<float> minRange, std::vector<float> maxRange, std::vector<float> position)
+bool SpatialDatabase::updateRange(int nodeId, std::vector<float>& minRange, std::vector<float>& maxRange, const std::vector<float>& position)
 {
     for (size_t i = 0; i < minRange.size(); i++)
     {
@@ -98,5 +101,48 @@ bool SpatialDatabase::updateRange(int nodeId, std::vector<float> minRange, std::
     return true;
 }
 
+int SpatialDatabase::findParent(const std::vector<float>& nodePos)
+{
+    int parent = 1;
+    QVariant currentNode = parent;
+
+    d->query.prepare(QLatin1String("SELECT split_axis, position, max_range, min_range, left, right FROM kd_tree WHERE node_id = :id"));
+
+    while (currentNode.isValid() && ! currentNode.isNull())
+    {
+        parent = currentNode.toInt();
+        d->query.bindValue(QLatin1String(":id"), parent);
+
+        if(! d->query.exec())
+        {
+            qDebug() << "fail to query node, error" << d->query.lastError();
+        }
+
+        if (d->query.size() == 0)
+        {
+            // add root
+        }
+
+        int split = d->query.value(0).toInt();
+
+        std::vector<float> position = FaceExtractor::decodeVector(QJsonDocument::fromJson(d->query.value(1).toByteArray()).array());
+        std::vector<float> maxRange = FaceExtractor::decodeVector(QJsonDocument::fromJson(d->query.value(2).toByteArray()).array());
+        std::vector<float> minRange = FaceExtractor::decodeVector(QJsonDocument::fromJson(d->query.value(3).toByteArray()).array());
+
+        updateRange(parent, minRange, maxRange, nodePos);
+
+        // TODO recursive
+        if (nodePos[split] >= position[split])
+        {
+            currentNode = d->query.value(5).toInt();
+        }
+        else
+        {
+            currentNode = d->query.value(4).toInt();
+        }
+    }
+
+    return parent;
+}
 
 }
