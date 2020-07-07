@@ -96,6 +96,8 @@ public:
     Q_SLOT void verifyTestMLP(double threshold);
     Q_SLOT void verifyTestLogisticRegression();
 
+    Q_SLOT void testWriteDb();
+
 private:
 
     QHash<QString, QVector<QImage*> > m_trainSet;
@@ -459,6 +461,35 @@ void Benchmark::verifyTestLogisticRegression()
     verifyTestSet(FaceRecognizer::LogisticRegression, 0);
 }
 
+void Benchmark::testWriteDb()
+{
+    QDir dataDir(m_parser->value(QLatin1String("dataset")));
+
+    QFile dataFile(dataDir.dirName() + QLatin1String(".json"));
+
+    if (!dataFile.open(QIODevice::ReadOnly))
+    {
+        qWarning("Couldn't open data file.");
+        return;
+    }
+
+    QByteArray saveData = dataFile.readAll();
+    dataFile.close();
+
+    QJsonDocument loadDoc(QJsonDocument::fromJson(saveData));
+
+    QJsonArray data = loadDoc.array();
+
+    for (int i = 0; i < data.size()*0.7; ++i)
+    {
+        QJsonObject object = data[i].toObject();
+
+        std::vector<float> faceEmbedding = FaceExtractor::decodeVector(object[QLatin1String("faceembedding")].toArray());
+
+        m_recognizer->insertData(faceEmbedding, object[QLatin1String("id")].toInt());
+    }
+}
+
 QCommandLineParser* parseOptions(const QCoreApplication& app)
 {
     QCommandLineParser* parser = new QCommandLineParser();
@@ -476,6 +507,8 @@ int main(int argc, char** argv)
 
     Benchmark benchmark;
     benchmark.m_parser = parseOptions(app);
+
+    benchmark.testWriteDb();
 
     //benchmark.saveData();
     //QTest::qExec(&benchmark);

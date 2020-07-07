@@ -92,6 +92,8 @@ public:
      */
     int saveIdentity(Identity& id, bool newLabel);
 
+    bool insertData(const std::vector<float>& nodePos, const int label);
+
 private:
 
     /// Hidden copy constructor and assignment operator.

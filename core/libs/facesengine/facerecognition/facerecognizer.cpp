@@ -754,4 +754,9 @@ int FaceRecognizer::saveIdentity(Identity& id, bool newLabel)
 */
 }
 
+bool FaceRecognizer::insertData(const std::vector<float>& nodePos, const int label)
+{
+    return d->treedb.insert(nodePos, label);
+}
+
 }

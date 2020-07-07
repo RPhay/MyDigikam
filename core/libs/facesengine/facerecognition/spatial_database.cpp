@@ -105,6 +105,7 @@ bool SpatialDatabase::insert(const std::vector<float>& nodePos, const int label)
     // insert node to database
     d->query.prepare(QLatin1String("INSERT INTO kd_tree (label, split_axis, position, max_range, min_range, parent, left, right) "
                                    "VALUES (:label, :split_axis, :position, :max_range, :min_range, :parent, NULL, NULL)"));
+
     d->query.bindValue(QLatin1String(":label"), label);
     d->query.bindValue(QLatin1String(":split_axis"), (parentSplitAxis + 1) % 128);
     d->query.bindValue(QLatin1String(":position"),
@@ -122,6 +123,8 @@ bool SpatialDatabase::insert(const std::vector<float>& nodePos, const int label)
     if (!d->query.exec())
     {
         qDebug() << "fail to registered new node, error" << d->query.lastError();
+
+        return false;
     }
 
     int newNode = d->query.lastInsertId().toInt();
@@ -217,7 +220,10 @@ int SpatialDatabase::findParent(const std::vector<float>& nodePos,bool& leftChil
         std::vector<float> maxRange = FaceExtractor::decodeVector(QJsonDocument::fromJson(d->query.value(2).toByteArray()).array());
         std::vector<float> minRange = FaceExtractor::decodeVector(QJsonDocument::fromJson(d->query.value(3).toByteArray()).array());
 
-        updateRange(parent, minRange, maxRange, nodePos);
+        if(! updateRange(parent, minRange, maxRange, nodePos))
+        {
+            qDebug() << "fail to update range of node";
+        }
 
         if (nodePos[split] >= position[split])
         {
