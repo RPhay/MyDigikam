@@ -27,40 +27,6 @@
 namespace Digikam
 {
 
-void ItemScanner::fillMetadataContainer(qlonglong imageid, ImageMetadataContainer* const container)
-{
-    // read from database
-    QVariantList fields      = CoreDbAccess().db()->getImageMetadata(imageid);
-    // check we have at least one valid field
-    container->allFieldsNull = !hasValidField(fields);
-
-    if (container->allFieldsNull)
-    {
-        return;
-    }
-
-    // DMetadata does all translation work
-    QStringList strings = DMetadata::valuesToString(fields, allImageMetadataFields());
-
-    // associate with hard-coded variables
-    container->make                         = strings.at(0);
-    container->model                        = strings.at(1);
-    container->lens                         = strings.at(2);
-    container->aperture                     = strings.at(3);
-    container->focalLength                  = strings.at(4);
-    container->focalLength35                = strings.at(5);
-    container->exposureTime                 = strings.at(6);
-    container->exposureProgram              = strings.at(7);
-    container->exposureMode                 = strings.at(8);
-    container->sensitivity                  = strings.at(9);
-    container->flashMode                    = strings.at(10);
-    container->whiteBalance                 = strings.at(11);
-    container->whiteBalanceColorTemperature = strings.at(12);
-    container->meteringMode                 = strings.at(13);
-    container->subjectDistance              = strings.at(14);
-    container->subjectDistanceCategory      = strings.at(15);
-}
-
 QString ItemScanner::iptcCorePropertyName(MetadataInfo::Field field)
 {
     // These strings are specified in DBSCHEMA.ods

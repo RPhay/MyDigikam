@@ -232,12 +232,6 @@ protected:
 public:
 
     /**
-     * Returns Photo-metadata container with user-presentable information.
-     * These methods provide the reverse service: Not writing into the db, but reading from the db.
-     */
-    static void fillMetadataContainer(qlonglong imageid, ImageMetadataContainer* const container);
-
-    /**
      * Helper method to return official property name by which
      * IPTC core properties are stored in the database (ItemCopyright and ImageProperties table).
      * Allowed arguments: All MetadataInfo::Fields starting with "IptcCore..."
