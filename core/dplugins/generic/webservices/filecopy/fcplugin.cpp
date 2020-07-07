@@ -7,7 +7,7 @@
  * Description : a plugin to export items to a local storage.
  *
  * Copyright (C) 2018-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
- * Copyright (C) 2019      by Maik Qualmann <metzpinguin at gmail dot com>
+ * Copyright (C) 2019-2020 by Maik Qualmann <metzpinguin at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -86,6 +86,9 @@ QList<DPluginAuthor> FCPlugin::authors() const
             << DPluginAuthor(QString::fromUtf8("Maik Qualmann"),
                              QString::fromUtf8("metzpinguin at gmail dot com"),
                              QString::fromUtf8("(C) 2017-2020"))
+            << DPluginAuthor(QString::fromUtf8("Marcel Mathis"),
+                             QString::fromUtf8("maeseee at gmail dot com"),
+                             QString::fromUtf8("(C) 2020"))
             << DPluginAuthor(QString::fromUtf8("Gilles Caulier"),
                              QString::fromUtf8("caulier dot gilles at gmail dot com"),
                              QString::fromUtf8("(C) 2010-2020"))

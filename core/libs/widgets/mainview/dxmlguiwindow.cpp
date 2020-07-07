@@ -792,7 +792,7 @@ void DXmlGuiWindow::slotHelpContents()
 
 void DXmlGuiWindow::openHandbook()
 {
-    QUrl url = QUrl(QString::fromUtf8("https://docs.kde.org/trunk5/en/extragear-graphics/%1/index.html")
+    QUrl url = QUrl(QString::fromUtf8("https://docs.kde.org/?application=%1")
                .arg(QApplication::applicationName()));
 
     WebBrowserDlg* const browser = new WebBrowserDlg(url, qApp->activeWindow());
