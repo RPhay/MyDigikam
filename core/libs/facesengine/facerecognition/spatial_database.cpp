@@ -98,6 +98,23 @@ bool SpatialDatabase::updateRange(int nodeId, std::vector<float>& minRange, std:
         minRange[i] = std::min(minRange[i], position[i]);
     }
 
+    d->query.prepare(QLatin1String("UPDATE kd_tree SET max_range = :maxrange, min_range = :minrange WHERE node_id = :id"));
+
+    QString::fromLatin1(QJsonDocument(FaceExtractor::encodeVector(minRange)).toJson(QJsonDocument::Compact));
+
+    d->query.bindValue(QLatin1String(":maxrange"),
+                       QString::fromLatin1(QJsonDocument(FaceExtractor::encodeVector(maxRange)).toJson(QJsonDocument::Compact)));
+    d->query.bindValue(QLatin1String(":minrange"),
+                       QString::fromLatin1(QJsonDocument(FaceExtractor::encodeVector(minRange)).toJson(QJsonDocument::Compact)));
+    d->query.bindValue(QLatin1String(":id"), nodeId);
+
+    if(! d->query.exec())
+    {
+        qDebug() << "fail to update range, error" << d->query.lastError();
+
+        return false;
+    }
+
     return true;
 }
 
@@ -120,7 +137,16 @@ int SpatialDatabase::findParent(const std::vector<float>& nodePos)
 
         if (d->query.size() == 0)
         {
-            // add root
+            if (parent == 1)
+            {
+                // add root
+                return 0;
+            }
+            else
+            {
+                // error
+                return -1;
+            }
         }
 
         int split = d->query.value(0).toInt();
@@ -131,7 +157,6 @@ int SpatialDatabase::findParent(const std::vector<float>& nodePos)
 
         updateRange(parent, minRange, maxRange, nodePos);
 
-        // TODO recursive
         if (nodePos[split] >= position[split])
         {
             currentNode = d->query.value(5).toInt();
