@@ -37,11 +37,13 @@ public:
 
 public:
 
+    bool insert(const std::vector<float>& nodePos, const int label);
+
 private:
 
     bool updateRange(int nodeId, std::vector<float>& minRange, std::vector<float>& maxRange, const std::vector<float>& position);
 
-    int findParent(const std::vector<float>& nodePos);
+    int findParent(const std::vector<float>& nodePos, bool& leftChild, int& parentSplitAxis);
 
 private:
 

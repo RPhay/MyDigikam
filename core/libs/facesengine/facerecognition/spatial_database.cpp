@@ -52,7 +52,7 @@ public:
                                                                                     "position TEXT NOT NULL, "
                                                                                     "max_range TEXT NOT NULL, "
                                                                                     "min_range TEXT NOT NULL,"
-                                                                                    "parent INTEGER NOT NULL REFERENCES kd_tree,"
+                                                                                    "parent INTEGER REFERENCES kd_tree,"
                                                                                     "left INTEGER REFERENCES kd_tree,"
                                                                                     "right INTEGER REFERENCES kd_tree)"));
 
@@ -90,6 +90,67 @@ SpatialDatabase::~SpatialDatabase()
     delete d;
 }
 
+bool SpatialDatabase::insert(const std::vector<float>& nodePos, const int label)
+{
+    bool isLeftChild = false;
+    int parentSplitAxis = 0;
+
+    int parentID = findParent(nodePos, isLeftChild, parentSplitAxis);
+
+    if (parentID < 0)
+    {
+        return false;
+    }
+
+    // insert node to database
+    d->query.prepare(QLatin1String("INSERT INTO kd_tree (label, split_axis, position, max_range, min_range, parent, left, right) "
+                                   "VALUES (:label, :split_axis, :position, :max_range, :min_range, :parent, NULL, NULL)"));
+    d->query.bindValue(QLatin1String(":label"), label);
+    d->query.bindValue(QLatin1String(":split_axis"), (parentSplitAxis + 1) % 128);
+    d->query.bindValue(QLatin1String(":position"),
+                       QString::fromLatin1(QJsonDocument(FaceExtractor::encodeVector(nodePos)).toJson(QJsonDocument::Compact)));
+    d->query.bindValue(QLatin1String(":max_range"),
+                       QString::fromLatin1(QJsonDocument(FaceExtractor::encodeVector(nodePos)).toJson(QJsonDocument::Compact)));
+    d->query.bindValue(QLatin1String(":min_range"),
+                       QString::fromLatin1(QJsonDocument(FaceExtractor::encodeVector(nodePos)).toJson(QJsonDocument::Compact)));
+
+    if (parentID > 0)
+    {
+        d->query.bindValue(QLatin1String(":parent"), parentID);
+    }
+
+    if (!d->query.exec())
+    {
+        qDebug() << "fail to registered new node, error" << d->query.lastError();
+    }
+
+    int newNode = d->query.lastInsertId().toInt();
+
+    if (parentID > 0)
+    {
+        // not root -> update parent
+        if (isLeftChild)
+        {
+            d->query.prepare(QLatin1String("UPDATE kd_tree SET left = :child WHERE node_id = :id"));
+        }
+        else
+        {
+            d->query.prepare(QLatin1String("UPDATE kd_tree SET right = :child WHERE node_id = :id"));
+        }
+
+        d->query.bindValue(QLatin1String(":child"), newNode);
+        d->query.bindValue(QLatin1String(":id"), parentID);
+
+        if (!d->query.exec())
+        {
+            qDebug() << "fail to update child to parent, error" << d->query.lastError();
+        }
+    }
+
+    return true;
+}
+
+
 bool SpatialDatabase::updateRange(int nodeId, std::vector<float>& minRange, std::vector<float>& maxRange, const std::vector<float>& position)
 {
     for (size_t i = 0; i < minRange.size(); i++)
@@ -118,7 +179,7 @@ bool SpatialDatabase::updateRange(int nodeId, std::vector<float>& minRange, std:
     return true;
 }
 
-int SpatialDatabase::findParent(const std::vector<float>& nodePos)
+int SpatialDatabase::findParent(const std::vector<float>& nodePos,bool& leftChild, int& parentSplitAxis)
 {
     int parent = 1;
     QVariant currentNode = parent;
@@ -150,6 +211,7 @@ int SpatialDatabase::findParent(const std::vector<float>& nodePos)
         }
 
         int split = d->query.value(0).toInt();
+        parentSplitAxis = split;
 
         std::vector<float> position = FaceExtractor::decodeVector(QJsonDocument::fromJson(d->query.value(1).toByteArray()).array());
         std::vector<float> maxRange = FaceExtractor::decodeVector(QJsonDocument::fromJson(d->query.value(2).toByteArray()).array());
@@ -160,10 +222,12 @@ int SpatialDatabase::findParent(const std::vector<float>& nodePos)
         if (nodePos[split] >= position[split])
         {
             currentNode = d->query.value(5).toInt();
+            leftChild = false;
         }
         else
         {
             currentNode = d->query.value(4).toInt();
+            leftChild = true;
         }
     }
 
