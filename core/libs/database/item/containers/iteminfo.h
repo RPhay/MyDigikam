@@ -260,6 +260,14 @@ public:
      */
     int unconfirmedFaceCount()                                                          const;
 
+
+    /**
+     * @return the map of Tag Region (in XML form) to Suggested Names for all
+     * Faces in the Image.
+     * Used to categorize images based on Face Suggestions.
+     */
+    QMap<QString, QString> getSuggestedNames()                                          const;
+
     /**
      * Set the name (write it to database)
      * @param newName the new name.

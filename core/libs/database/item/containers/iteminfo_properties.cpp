@@ -243,6 +243,25 @@ int ItemInfo::unconfirmedFaceCount() const
     return m_data->unconfirmedFaceCount;
 }
 
+QMap<QString, QString> ItemInfo::getSuggestedNames() const
+{
+    if (!m_data)
+    {
+        return QMap<QString, QString>();
+    }
+
+    RETURN_IF_CACHED(faceSuggestions);
+
+    FaceTagsEditor fte;
+    QMap<QString, QString> faceSuggestions = fte.getSuggestedNames(m_data->id);
+
+    ItemInfoWriteLocker lock;
+    m_data.data()->faceSuggestionsCached = true;
+    m_data.data()->faceSuggestions = faceSuggestions;
+
+    return m_data->faceSuggestions;
+}
+
 int ItemInfo::orientation() const
 {
     if (!m_data)
