@@ -1,4 +1,4 @@
-digiKam 7.0.0 - Release date: 2020-07-12
+digiKam 7.0.0 - Release date: 2020-07-19
 
 *****************************************************************************************************
 NEW FEATURES:
@@ -795,4 +795,4 @@ BUGFIXES:
 753 ==> 423737 - Album sort in tree view descending instead of ascending.
 754 ==> 423847 - Root Album Tree View could use the right click refresh option.
 755 ==> 423393 - Add Rezise photo on plugin "Export to local storage".
-736 ==>
+756 ==>
