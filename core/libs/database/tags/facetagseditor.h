@@ -110,6 +110,15 @@ public:
     FaceTagsIface changeSuggestedName(const FaceTagsIface& previousEntry, int unconfirmedNameTagId);
 
     /**
+     * Returns a Map of Tag Regions (in XML format) to Suggested Name (from Face Recognition)
+     * for the given image.
+     * This function makes read operations to the database, and hence can be inefficient when
+     * called repeatedly. A cached version is provided in ItemInfo, and should be preferred
+     * for intensive operations such as sorting, categorizing etc.
+     */
+    QMap<QString, QString> getSuggestedNames(qlonglong id) const;
+
+    /**
      * Assign the name tag for given face entry.
      * Pass the tagId if it changed or was newly assigned (UnknownName).
      * Pass the new, corrected region if it changed.

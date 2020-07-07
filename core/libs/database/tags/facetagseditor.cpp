@@ -253,6 +253,35 @@ FaceTagsIface FaceTagsEditor::changeSuggestedName(const FaceTagsIface& previousE
     return newEntry;
 }
 
+QMap<QString, QString> FaceTagsEditor::getSuggestedNames(qlonglong id) const
+{
+    QMap<QString, QString> suggestedNames;
+
+    foreach (const ItemTagPair& pair, ItemTagPair::availablePairs(id))
+    {
+        foreach (const QString& regionString, pair.values(ImageTagPropertyName::autodetectedPerson()))
+        {
+            /**
+             * For Unconfirmed Results, the value is stored as a tuple of
+             * (SuggestedId, Property, Region). Look at the digikam.db file
+             * for more details.
+             */
+            QStringList valueList = regionString.split(QLatin1String(","));
+            QString region(valueList.at(2));
+            QString suggestedName = FaceTags::faceNameForTag(valueList.at(0).toInt());
+
+            if (!TagRegion(region).isValid())
+            {
+                continue;
+            }
+
+            suggestedNames.insert(region, suggestedName);
+        }
+    }
+
+    return suggestedNames;
+}
+
 FaceTagsIface FaceTagsEditor::confirmName(const FaceTagsIface& face, int tagId,
                                           const TagRegion& confirmedRegion)
 {
