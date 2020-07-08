@@ -796,4 +796,5 @@ BUGFIXES:
 754 ==> 423847 - Root Album Tree View could use the right click refresh option.
 755 ==> 423393 - Add Rezise photo on plugin "Export to local storage".
 756 ==> 423965 - Wishlist: Update fingerprints as sub option in Maintenance menu.
-757 ==> 
+757 ==> 367784 - Thumbnails Disappear After Tagging.
+758 ==> 
