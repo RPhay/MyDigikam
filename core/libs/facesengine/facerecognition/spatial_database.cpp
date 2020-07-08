@@ -268,6 +268,33 @@ int SpatialDatabase::findParent(const std::vector<float>& nodePos,bool& leftChil
     return parent;
 }
 
+QMap<double, QVector<int> > SpatialDatabase::getClosestNeighbors(std::vector<float> position,
+                                                                 double sqRange,
+                                                                 int maxNbNeighbors)
+{
+    QMap<double, QVector<int> > closestNeighbors;
+
+    DataNode root;
+    d->query.prepare(QLatin1String("SELECT label, position, max_range, min_range, left, right FROM kd_tree WHERE node_id = :id"));
+    d->query.bindValue(QLatin1String(":id"), 1);
+
+    if(d->query.exec() && d->query.last())
+    {
+        // encapsulate data node
+        root.nodeID   = 1;
+        root.label    = d->query.value(0).toInt();
+        root.position = FaceExtractor::decodeVector(QJsonDocument::fromJson(d->query.value(1).toByteArray()).array());
+        root.maxRange = FaceExtractor::decodeVector(QJsonDocument::fromJson(d->query.value(2).toByteArray()).array());
+        root.minRange = FaceExtractor::decodeVector(QJsonDocument::fromJson(d->query.value(3).toByteArray()).array());
+        root.left     = d->query.value(4).toInt();
+        root.right    = d->query.value(5).toInt();
+
+        sqRange = getClosestNeighbors(root, closestNeighbors, position, sqRange, maxNbNeighbors);
+    }
+
+    return closestNeighbors;
+}
+
 double SpatialDatabase::getClosestNeighbors(const DataNode& subTree,
                                             QMap<double, QVector<int> >& neighborList,
                                             std::vector<float> position,

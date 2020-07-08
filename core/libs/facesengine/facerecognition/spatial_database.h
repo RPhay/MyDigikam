@@ -75,18 +75,17 @@ public:
 
     /**
      * @brief getClosestNeighbors : return a list of closest neighbor, limited by maxNbNeighbors and sqRange
+     * @param subTree
      * @param neighborList
      * @param position
      * @param sqRange
      * @param maxNbNeighbors
-     * @param subTree
+
      * @return
      */
-    double getClosestNeighbors(const DataNode& subTree,
-                               QMap<double, QVector<int> >& neighborList,
-                               std::vector<float> position,
-                               double sqRange,
-                               int maxNbNeighbors);
+    QMap<double, QVector<int> > getClosestNeighbors(std::vector<float> position,
+                                                    double sqRange,
+                                                    int maxNbNeighbors);
 
 private:
 
@@ -94,6 +93,21 @@ private:
 
     int findParent(const std::vector<float>& nodePos, bool& leftChild, int& parentSplitAxis);
 
+    /**
+     * @brief getClosestNeighbors : return a list of closest neighbor from a sub tree, limited by maxNbNeighbors and sqRange
+     * @param subTree
+     * @param neighborList
+     * @param position
+     * @param sqRange
+     * @param maxNbNeighbors
+
+     * @return
+     */
+    double getClosestNeighbors(const DataNode& subTree,
+                               QMap<double, QVector<int> >& neighborList,
+                               std::vector<float> position,
+                               double sqRange,
+                               int maxNbNeighbors);
 private:
 
     class Private;
