@@ -23,10 +23,39 @@
 #ifndef SPATIAL_DATABASE_H
 #define SPATIAL_DATABASE_H
 
+// Std includes
 #include <vector>
+// Qt include
+#include <QMap>
 
 namespace RecognitionTest
 {
+
+class DataNode
+{
+public:
+    explicit DataNode()
+        : nodeID(0),
+          label(0),
+          splitAxis(0)
+    {
+    }
+
+    bool isNull() const
+    {
+        return (nodeID == 0);
+    }
+
+public:
+    int nodeID;
+    int label;
+    int splitAxis;
+    int left;
+    int right;
+    std::vector<float> position;
+    std::vector<float> minRange;
+    std::vector<float> maxRange;
+};
 
 class SpatialDatabase
 {
@@ -36,8 +65,28 @@ public:
     ~SpatialDatabase();
 
 public:
-
+    /**
+     * @brief insert : insert a new node to database
+     * @param nodePos
+     * @param label
+     * @return true if successed
+     */
     bool insert(const std::vector<float>& nodePos, const int label);
+
+    /**
+     * @brief getClosestNeighbors : return a list of closest neighbor, limited by maxNbNeighbors and sqRange
+     * @param neighborList
+     * @param position
+     * @param sqRange
+     * @param maxNbNeighbors
+     * @param subTree
+     * @return
+     */
+    double getClosestNeighbors(const DataNode& subTree,
+                               QMap<double, QVector<int> >& neighborList,
+                               std::vector<float> position,
+                               double sqRange,
+                               int maxNbNeighbors);
 
 private:
 
@@ -50,6 +99,7 @@ private:
     class Private;
     Private* d;
 };
+
 }
 
 #endif // SPATIAL_DATABASE_H

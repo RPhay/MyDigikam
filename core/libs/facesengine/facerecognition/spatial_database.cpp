@@ -22,6 +22,9 @@
 
 #include "spatial_database.h"
 
+// std include
+#include <cfloat>
+
 #include <QSqlDatabase>
 #include <QSqlQuery>
 #include <QSqlError>
@@ -32,6 +35,21 @@
 
 namespace RecognitionTest
 {
+
+double sqrDistance1(std::vector<float> pos1, std::vector<float> pos2)
+{
+    Q_ASSERT(pos1.size() == pos2.size());
+
+    double sqrDistance = 0;
+
+    for (size_t i = 0; i < pos1.size(); ++i)
+    {
+        sqrDistance += pow((pos1[i] - pos2[i]), 2);
+    }
+
+    return sqrDistance;
+}
+
 class Q_DECL_HIDDEN SpatialDatabase::Private
 {
 public:
@@ -248,6 +266,144 @@ int SpatialDatabase::findParent(const std::vector<float>& nodePos,bool& leftChil
     }
 
     return parent;
+}
+
+double SpatialDatabase::getClosestNeighbors(const DataNode& subTree,
+                                            QMap<double, QVector<int> >& neighborList,
+                                            std::vector<float> position,
+                                            double sqRange,
+                                            int maxNbNeighbors)
+{
+    if (subTree.isNull())
+    {
+        return sqRange;
+    }
+
+    // add current node to the list
+    const double sqrdistanceToCurrentNode = sqrDistance1(position, subTree.position);
+    neighborList[sqrdistanceToCurrentNode].append(subTree.label);
+
+    // limit the size of the Map to maxNbNeighbors
+    int size = 0;
+
+    for (QMap<double, QVector<int> >::const_iterator iter  = neighborList.cbegin();
+                                                     iter != neighborList.cend();
+                                                   ++iter)
+    {
+        size += iter.value().size();
+    }
+
+    if (size > maxNbNeighbors)
+    {
+        // Eliminate the farthest neighbor
+        QMap<double, QVector<int> >::iterator farthestNodes = (neighborList.end() - 1);
+
+        if (farthestNodes.value().size() == 1)
+        {
+            neighborList.erase(farthestNodes);
+        }
+        else
+        {
+            farthestNodes.value().pop_back();
+        }
+
+        // update the searching range
+        sqRange = neighborList.lastKey();
+    }
+
+    // sub-trees Traversal
+    double sqrDistanceleftTree  = 0;
+    double sqrDistancerightTree = 0;
+    DataNode leftNode;
+    DataNode rightNode;
+
+    if (subTree.left <= 0)
+    {
+        sqrDistanceleftTree = DBL_MAX;
+    }
+    else
+    {
+        d->query.prepare(QLatin1String("SELECT label, position, max_range, min_range, left, right FROM kd_tree WHERE node_id = :id"));
+        d->query.bindValue(QLatin1String(":id"), subTree.left);
+
+        if(d->query.exec() && d->query.last())
+        {
+            // encapsulate data node
+            leftNode.nodeID   = subTree.left;
+            leftNode.label    = d->query.value(0).toInt();
+            leftNode.position = FaceExtractor::decodeVector(QJsonDocument::fromJson(d->query.value(1).toByteArray()).array());
+            leftNode.maxRange = FaceExtractor::decodeVector(QJsonDocument::fromJson(d->query.value(2).toByteArray()).array());
+            leftNode.minRange = FaceExtractor::decodeVector(QJsonDocument::fromJson(d->query.value(3).toByteArray()).array());
+            leftNode.left     = d->query.value(4).toInt();
+            leftNode.right    = d->query.value(5).toInt();
+
+            for (size_t i = 0; i < leftNode.minRange.size(); ++i)
+            {
+                sqrDistanceleftTree += (pow(qMax((leftNode.minRange[i] - position[i]), 0.0f), 2) +
+                                        pow(qMax((position[i] - leftNode.maxRange[i]), 0.0f), 2));
+            }
+        }
+    }
+
+    if (subTree.right <= 0)
+    {
+        sqrDistancerightTree = DBL_MAX;
+    }
+    else
+    {
+        d->query.prepare(QLatin1String("SELECT label, position, max_range, min_range, left, right FROM kd_tree WHERE node_id = :id"));
+        d->query.bindValue(QLatin1String(":id"), subTree.right);
+
+        if(d->query.exec() && d->query.last())
+        {
+            // encapsulate data node
+            rightNode.nodeID   = subTree.right;
+            rightNode.label    = d->query.value(0).toInt();
+            rightNode.position = FaceExtractor::decodeVector(QJsonDocument::fromJson(d->query.value(1).toByteArray()).array());
+            rightNode.maxRange = FaceExtractor::decodeVector(QJsonDocument::fromJson(d->query.value(2).toByteArray()).array());
+            rightNode.minRange = FaceExtractor::decodeVector(QJsonDocument::fromJson(d->query.value(3).toByteArray()).array());
+            rightNode.left     = d->query.value(4).toInt();
+            rightNode.right    = d->query.value(5).toInt();
+
+            for (size_t i = 0; i < rightNode.minRange.size(); ++i)
+            {
+                sqrDistancerightTree += (pow(qMax((rightNode.minRange[i] - position[i]), 0.0f), 2) +
+                                         pow(qMax((position[i] - rightNode.maxRange[i]), 0.0f), 2));
+            }
+        }
+    }
+
+    // traverse the closest area
+    if (sqrDistanceleftTree < sqrDistancerightTree)
+    {
+        if (sqrDistanceleftTree < sqRange)
+        {
+            // traverse left Tree
+            sqRange = getClosestNeighbors(leftNode, neighborList, position, sqRange, maxNbNeighbors);
+
+            if (sqrDistancerightTree < sqRange)
+            {
+                // traverse right Tree
+                sqRange = getClosestNeighbors(rightNode, neighborList, position, sqRange, maxNbNeighbors);
+            }
+        }
+    }
+    else
+    {
+        if (sqrDistancerightTree < sqRange)
+        {
+            // traverse right Tree
+            sqRange = getClosestNeighbors(rightNode, neighborList, position, sqRange, maxNbNeighbors);
+
+            if (sqrDistanceleftTree < sqRange)
+            {
+                // traverse left Tree
+                sqRange = getClosestNeighbors(leftNode, neighborList, position, sqRange, maxNbNeighbors);
+            }
+        }
+    }
+
+    return sqRange;
 }
 
 }
