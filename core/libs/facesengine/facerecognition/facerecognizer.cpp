@@ -759,4 +759,11 @@ bool FaceRecognizer::insertData(const std::vector<float>& nodePos, const int lab
     return d->treedb.insert(nodePos, label);
 }
 
+QMap<double, QVector<int> > FaceRecognizer::getClosestNodes(std::vector<float> position,
+                                                            double sqRange,
+                                                            int maxNbNeighbors)
+{
+    return d->treedb.getClosestNeighbors(position, sqRange, maxNbNeighbors);
+}
+
 }

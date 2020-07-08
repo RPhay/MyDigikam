@@ -97,6 +97,7 @@ public:
     Q_SLOT void verifyTestLogisticRegression();
 
     Q_SLOT void testWriteDb();
+    Q_SLOT void verifyKNearestDb();
 
 private:
 
@@ -490,6 +491,82 @@ void Benchmark::testWriteDb()
     }
 }
 
+void Benchmark::verifyKNearestDb()
+{
+    QDir dataDir(m_parser->value(QLatin1String("dataset")));
+
+    QFile dataFile(dataDir.dirName() + QLatin1String(".json"));
+
+    if (!dataFile.open(QIODevice::ReadOnly))
+    {
+        qWarning("Couldn't open data file.");
+        return;
+    }
+
+    QByteArray saveData = dataFile.readAll();
+    dataFile.close();
+
+    QJsonDocument loadDoc(QJsonDocument::fromJson(saveData));
+
+    QJsonArray data = loadDoc.array();
+
+    int nbCorrect = 0;
+
+    QElapsedTimer timer;
+    timer.start();
+
+    for (int i = 0; i < data.size(); ++i)
+    {
+        QJsonObject object = data[i].toObject();
+
+        std::vector<float> faceEmbedding = FaceExtractor::decodeVector(object[QLatin1String("faceembedding")].toArray());
+
+        int label = object[QLatin1String("id")].toInt();
+
+        QMap<double, QVector<int> > closestNeighbors = m_recognizer->getClosestNodes(faceEmbedding, 1.0, 7);
+
+        QMap<int, QVector<double> > votingGroups;
+
+        for (QMap<double, QVector<int> >::const_iterator iter  = closestNeighbors.cbegin();
+                                                         iter != closestNeighbors.cend();
+                                                       ++iter)
+        {
+            for (int j = 0; j < iter.value().size(); ++j)
+            {
+                votingGroups[iter.value()[j]].append(iter.key());
+            }
+        }
+
+        double maxScore = 0;
+        int prediction;
+
+        for (QMap<int, QVector<double> >::const_iterator group  = votingGroups.cbegin();
+                                                         group != votingGroups.cend();
+                                                       ++group)
+        {
+            double score = 0;
+
+            for (int i = 0; i < group.value().size(); ++i)
+            {
+                score += (1 - group.value()[i]);
+            }
+
+            if (score > maxScore)
+            {
+                maxScore   = score;
+                prediction = group.key();
+            }
+        }
+
+        if (label == prediction)
+        {
+            ++nbCorrect;
+        }
+    }
+
+    qDebug() << "Accuracy" << (float(nbCorrect)/data.size())*100 << "with average" << timer.elapsed() / data.size() << "ms/faceEmbedding";
+}
+
 QCommandLineParser* parseOptions(const QCoreApplication& app)
 {
     QCommandLineParser* parser = new QCommandLineParser();
@@ -508,8 +585,8 @@ int main(int argc, char** argv)
     Benchmark benchmark;
     benchmark.m_parser = parseOptions(app);
 
-    benchmark.testWriteDb();
-
+    //benchmark.testWriteDb();
+    benchmark.verifyKNearestDb();
     //benchmark.saveData();
     //QTest::qExec(&benchmark);
 
