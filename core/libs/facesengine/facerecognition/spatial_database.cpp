@@ -58,12 +58,12 @@ public:
 
         if (!success)
         {
-            qDebug() << "fail to create kd_tree database" << query.lastError();
+            qWarning() << "fail to create kd_tree database" << query.lastError();
         }
 
-        if (! query.exec(QLatin1String("CREATE UNIQUE INDEX idx_node ON kd_tree (node_id)")))
+        if (! query.exec(QLatin1String("CREATE UNIQUE INDEX IF NOT EXISTS idx_node ON kd_tree (node_id)")))
         {
-            qDebug() << "fail to create index on kd_tree database" << query.lastError();
+            qWarning() << "fail to create index on kd_tree database" << query.lastError();
         }
 
         query.exec(QLatin1String("SET sql_notes = 1"));
@@ -122,12 +122,13 @@ bool SpatialDatabase::insert(const std::vector<float>& nodePos, const int label)
 
     if (!d->query.exec())
     {
-        qDebug() << "fail to registered new node, error" << d->query.lastError();
+        qWarning() << "fail to registered new node, error" << d->query.lastError();
 
         return false;
     }
 
     int newNode = d->query.lastInsertId().toInt();
+    //qDebug() << "inserted node" << nodePos << "at index" << newNode << "at" << (isLeftChild?"left":"right") << "of node" << parentID;
 
     if (parentID > 0)
     {
@@ -146,7 +147,7 @@ bool SpatialDatabase::insert(const std::vector<float>& nodePos, const int label)
 
         if (!d->query.exec())
         {
-            qDebug() << "fail to update child to parent, error" << d->query.lastError();
+            qWarning() << "fail to update child to parent, error" << d->query.lastError();
         }
     }
 
@@ -174,7 +175,7 @@ bool SpatialDatabase::updateRange(int nodeId, std::vector<float>& minRange, std:
 
     if(! d->query.exec())
     {
-        qDebug() << "fail to update range, error" << d->query.lastError();
+        qWarning() << "fail to update range, error" << d->query.lastError();
 
         return false;
     }
@@ -187,53 +188,62 @@ int SpatialDatabase::findParent(const std::vector<float>& nodePos,bool& leftChil
     int parent = 1;
     QVariant currentNode = parent;
 
-    d->query.prepare(QLatin1String("SELECT split_axis, position, max_range, min_range, left, right FROM kd_tree WHERE node_id = :id"));
-
     while (currentNode.isValid() && ! currentNode.isNull())
     {
         parent = currentNode.toInt();
+        d->query.prepare(QLatin1String("SELECT split_axis, position, max_range, min_range, left, right FROM kd_tree WHERE node_id = :id"));
         d->query.bindValue(QLatin1String(":id"), parent);
 
         if(! d->query.exec())
         {
-            qDebug() << "fail to query node, error" << d->query.lastError();
+            qWarning() << "fail to query node, error" << d->query.lastError();
+
+            return -1;
         }
 
-        if (d->query.size() == 0)
+        if (! d->query.last())
         {
             if (parent == 1)
             {
                 // add root
+                qDebug() << "Add root";
                 return 0;
             }
-            else
-            {
-                // error
-                return -1;
-            }
+
+            // error
+            qWarning() << "Error query parent =" << parent << d->query.lastError();
+            return -1;
         }
 
         int split = d->query.value(0).toInt();
+/*
+        qDebug() << "split axis" << d->query.value(0).toInt()
+                 << "position"   << d->query.value(1).toString()
+                 << "maxRange"   << d->query.value(2).toString()
+                 << "minRange"   << d->query.value(3).toString()
+                 << "left"       << d->query.value(4)
+                 << "right"      << d->query.value(5);
+*/
         parentSplitAxis = split;
 
         std::vector<float> position = FaceExtractor::decodeVector(QJsonDocument::fromJson(d->query.value(1).toByteArray()).array());
         std::vector<float> maxRange = FaceExtractor::decodeVector(QJsonDocument::fromJson(d->query.value(2).toByteArray()).array());
         std::vector<float> minRange = FaceExtractor::decodeVector(QJsonDocument::fromJson(d->query.value(3).toByteArray()).array());
 
-        if(! updateRange(parent, minRange, maxRange, nodePos))
-        {
-            qDebug() << "fail to update range of node";
-        }
-
         if (nodePos[split] >= position[split])
         {
-            currentNode = d->query.value(5).toInt();
+            currentNode = d->query.value(5);
             leftChild = false;
         }
         else
         {
-            currentNode = d->query.value(4).toInt();
+            currentNode = d->query.value(4);
             leftChild = true;
+        }
+
+        if(! updateRange(parent, minRange, maxRange, nodePos))
+        {
+            qWarning() << "fail to update range of node";
         }
     }
 

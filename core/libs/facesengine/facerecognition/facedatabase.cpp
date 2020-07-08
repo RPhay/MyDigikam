@@ -101,7 +101,7 @@ QString FaceDatabase::queryLabel(int id) const
         qDebug() << "fail to query label, error" << d->query.lastError();
     }
 
-    if (d->query.size() == 1)
+    if (d->query.last())
     {
         return d->query.value(0).toString();
     }
