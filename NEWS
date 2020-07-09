@@ -798,4 +798,5 @@ BUGFIXES:
 756 ==> 423965 - Wishlist: Update fingerprints as sub option in Maintenance menu.
 757 ==> 367784 - Thumbnails Disappear After Tagging.
 758 ==> 397194 - Face tags are not well rendered when coming from Portrait DNG files.
-759 ==> 
+759 ==> 385313 - Crash on attempting to create fingerprints.
+760 ==> 
