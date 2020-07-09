@@ -136,7 +136,7 @@ public:
     Identity predictLogisticRegression(cv::Mat faceEmbedding) const;
 
     void addIndentityToTree(const Identity& id);
-    Identity predictKDTree(const std::vector<float>& faceEmbedding, int k) const;
+    Identity predictKDTree(const cv::Mat& faceEmbedding, int k) const;
 
     Identity predictCosine(const std::vector<float>& faceEmbedding, double threshold) const;
     Identity predictL2(const std::vector<float>& faceEmbedding, double threshold) const;
@@ -448,12 +448,12 @@ Identity FaceRecognizer::Private::predictLogisticRegression(cv::Mat faceEmbeddin
 void FaceRecognizer::Private::addIndentityToTree(const Identity& id)
 {
     QJsonArray jsonFaceEmbedding = QJsonDocument::fromJson(id.attribute(QLatin1String("faceEmbedding")).toLatin1()).array();
-    std::vector<float> recordedFaceEmbedding = FaceExtractor::decodeVector(jsonFaceEmbedding);
+    cv::Mat recordedFaceEmbedding = FaceExtractor::vectortomat(FaceExtractor::decodeVector(jsonFaceEmbedding));
 
     tree.add(recordedFaceEmbedding, id);
 }
 
-Identity FaceRecognizer::Private::predictKDTree(const std::vector<float>& faceEmbedding, int k) const
+Identity FaceRecognizer::Private::predictKDTree(const cv::Mat& faceEmbedding, int k) const
 {
     // Look for K-nearest neighbor which have the sqr distance greater smaller than 1
     QMap<double, QVector<KDNode*> > closestNeighbors = tree.getClosestNeighbors(faceEmbedding, 1.0, k);
@@ -639,15 +639,16 @@ Identity FaceRecognizer::findIdenity(const cv::Mat& preprocessedImage, Compariso
     {
         id = d->predictLogisticRegression(d->extractor->getFaceDescriptor(preprocessedImage));
     }
+    else if (metric == Tree)
+    {
+        id = d->predictKDTree(d->extractor->getFaceDescriptor(preprocessedImage), (int)threshold);
+    }
     else
     {
         std::vector<float> faceEmbedding = d->extractor->getFaceEmbedding(preprocessedImage);
 
         switch (metric)
         {
-            case Tree:
-                id = d->predictKDTree(faceEmbedding, (int)threshold);
-                break;
             case CosDistance:
                 id = d->predictCosine(faceEmbedding, threshold);
                 break;

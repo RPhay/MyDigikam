@@ -28,8 +28,9 @@
 
 #include <vector>
 
-// Local include
+// digiKam include
 #include "identity.h"
+#include "digikam_opencv.h"
 
 using namespace Digikam;
 
@@ -40,7 +41,7 @@ class KDNode
 {
 public:
 
-    explicit KDNode(const std::vector<float>& nodePos, const Identity& identity, int splitAxis, int dimension);
+    explicit KDNode(const cv::Mat& nodePos, const Identity& identity, int splitAxis, int dimension);
     ~KDNode();
 
 public:
@@ -51,13 +52,13 @@ public:
      * @param identity
      * @return
      */
-    KDNode* insert(const std::vector<float>& nodePos, const Identity& identity);
+    KDNode* insert(const cv::Mat& nodePos, const Identity& identity);
 
     /**
      * @brief getPosition: return vector
      * @return
      */
-    std::vector<float> getPosition() const;
+    cv::Mat getPosition() const;
 
     /**
      * @brief getClosestNeighbors : return a list of closest neighbor, limited by maxNbNeighbors and sqRange
@@ -68,7 +69,7 @@ public:
      * @return
      */
     double getClosestNeighbors(QMap<double, QVector<KDNode*> >& neighborList,
-                               std::vector<float> position,
+                               const cv::Mat& position,
                                double sqRange,
                                int maxNbNeighbors);
     /**
@@ -79,9 +80,9 @@ public:
 
 private:
 
-    void updateRange(std::vector<float>);
+    void updateRange(const cv::Mat&);
 
-    KDNode* findParent(std::vector<float> nodePos);
+    KDNode* findParent(const cv::Mat& nodePos);
 
 private:
 

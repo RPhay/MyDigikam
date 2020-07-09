@@ -55,7 +55,7 @@ KDTree::~KDTree()
     delete d;
 }
 
-bool KDTree::add(const std::vector<float>& position, const Digikam::Identity& identity)
+bool KDTree::add(const cv::Mat& position, const Digikam::Identity& identity)
 {
     if (d->root == nullptr)
     {
@@ -73,7 +73,7 @@ bool KDTree::add(const std::vector<float>& position, const Digikam::Identity& id
     return true;
 }
 
-QMap<double, QVector<KDNode*> > KDTree::getClosestNeighbors(const std::vector<float>& position, double sqRange, int maxNbNeighbors) const
+QMap<double, QVector<KDNode*> > KDTree::getClosestNeighbors(const cv::Mat& position, double sqRange, int maxNbNeighbors) const
 {
     QMap<double, QVector<KDNode*> > closestNeighbors;
 

@@ -481,7 +481,10 @@ void Benchmark::testWriteDb()
 
     QJsonArray data = loadDoc.array();
 
-    for (int i = 0; i < data.size()*0.7; ++i)
+    QElapsedTimer timer;
+    timer.start();
+
+    for (int i = 0; i < data.size(); ++i)
     {
         QJsonObject object = data[i].toObject();
 
@@ -489,6 +492,8 @@ void Benchmark::testWriteDb()
 
         m_recognizer->insertData(faceEmbedding, object[QLatin1String("id")].toInt());
     }
+
+    qDebug() << "write face embedding to spatial database with average" << timer.elapsed() /data.size() << "ms/faceEmbedding";
 }
 
 void Benchmark::verifyKNearestDb()
@@ -523,7 +528,7 @@ void Benchmark::verifyKNearestDb()
 
         int label = object[QLatin1String("id")].toInt();
 
-        QMap<double, QVector<int> > closestNeighbors = m_recognizer->getClosestNodes(faceEmbedding, 1.0, 7);
+        QMap<double, QVector<int> > closestNeighbors = m_recognizer->getClosestNodes(faceEmbedding, 1.0, 5);
 
         QMap<int, QVector<double> > votingGroups;
 
@@ -585,7 +590,7 @@ int main(int argc, char** argv)
     Benchmark benchmark;
     benchmark.m_parser = parseOptions(app);
 
-    //benchmark.testWriteDb();
+    benchmark.testWriteDb();
     benchmark.verifyKNearestDb();
     //benchmark.saveData();
     //QTest::qExec(&benchmark);

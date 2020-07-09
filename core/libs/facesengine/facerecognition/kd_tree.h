@@ -42,7 +42,7 @@ public:
      * @param maxNbNeighbors
      * @return Map of N-nearest neighbors, sorted by distance
      */
-    QMap<double, QVector<KDNode*> > getClosestNeighbors(const std::vector<float>& position, double sqRange, int maxNbNeighbors) const;
+    QMap<double, QVector<KDNode*> > getClosestNeighbors(const cv::Mat& position, double sqRange, int maxNbNeighbors) const;
 
     /**
      * @brief add new node to KD-Tree
@@ -50,7 +50,7 @@ public:
      * @param identity : identity of this face vector
      * @return
      */
-    bool add(const std::vector<float>& position, const Digikam::Identity& identity);
+    bool add(const cv::Mat& position, const Digikam::Identity& identity);
 
 private:
 

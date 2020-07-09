@@ -33,13 +33,11 @@ using namespace Digikam;
 namespace RecognitionTest
 {
 
-double sqrDistance(std::vector<float> pos1, std::vector<float> pos2)
+double sqrDistance(const float* pos1, const float* pos2, int dimension)
 {
-    Q_ASSERT(pos1.size() == pos2.size());
-
     double sqrDistance = 0;
 
-    for (size_t i = 0; i < pos1.size(); ++i)
+    for (int i = 0; i < dimension; ++i)
     {
         sqrDistance += pow((pos1[i] - pos2[i]), 2);
     }
@@ -51,7 +49,7 @@ class Q_DECL_HIDDEN KDNode::Private
 {
 public:
 
-    Private(std::vector<float> nodePos, const Identity& identity, int splitAxis, int dimension)
+    Private(cv::Mat nodePos, const Identity& identity, int splitAxis, int dimension)
         : identity(identity),
           splitAxis(splitAxis),
           nbDimension(dimension),
@@ -76,19 +74,19 @@ public:
 
     int splitAxis;
     int nbDimension;
-    std::vector<float> position;
-    std::vector<float> maxRange;
-    std::vector<float> minRange;
+    cv::Mat position;
+    cv::Mat maxRange;
+    cv::Mat minRange;
     KDNode* parent;
     KDNode* left;
     KDNode* right;
 };
 
-KDNode::KDNode(const std::vector<float>& nodePos, const Identity& identity, int splitAxis, int dimension)
+KDNode::KDNode(const cv::Mat& nodePos, const Identity& identity, int splitAxis, int dimension)
     : d(new Private(nodePos, identity, splitAxis, dimension))
 {
     Q_ASSERT(splitAxis < dimension);
-    Q_ASSERT(int(nodePos.size()) == dimension);
+    Q_ASSERT(nodePos.cols == 1 && nodePos.rows == dimension && nodePos.type() == CV_32F);
 }
 
 KDNode::~KDNode()
@@ -96,26 +94,26 @@ KDNode::~KDNode()
     delete d;
 }
 
-KDNode* KDNode::insert(const std::vector<float>& nodePos, const Identity& identity)
+KDNode* KDNode::insert(const cv::Mat& nodePos, const Identity& identity)
 {
-    if (int(nodePos.size()) != d->nbDimension)
+    if (!(nodePos.cols == 1 && nodePos.rows == d->nbDimension && nodePos.type() == CV_32F))
     {
         return nullptr;
     }
 
     KDNode* parent = findParent(nodePos);
-
+/*
     if (nodePos == parent->getPosition())
     {
         return nullptr;
     }
-
+*/
     KDNode* newNode = new KDNode(nodePos, identity,
                                  ((parent->d->splitAxis + 1) % d->nbDimension),
                                  d->nbDimension);
     newNode->d->parent = parent;
 
-    if (nodePos[parent->d->splitAxis] >= parent->getPosition()[parent->d->splitAxis])
+    if (nodePos.at<float>(0, parent->d->splitAxis) >= parent->getPosition().at<float>(0, parent->d->splitAxis))
     {
         parent->d->right = newNode;
     }
@@ -127,7 +125,7 @@ KDNode* KDNode::insert(const std::vector<float>& nodePos, const Identity& identi
     return newNode;
 }
 
-std::vector<float> KDNode::getPosition() const
+cv::Mat KDNode::getPosition() const
 {
     return d->position;
 }
@@ -138,14 +136,14 @@ Identity& KDNode::getIdentity()
 }
 
 double KDNode::getClosestNeighbors(QMap<double, QVector<KDNode*> >& neighborList,
-                                   std::vector<float> position,
+                                   const cv::Mat& position,
                                    double sqRange,
                                    int maxNbNeighbors)
 {
     // add current node to the list
-    double distanceToCurrentNode = sqrt(sqrDistance(position, d->position));
+    double sqrdistanceToCurrentNode = sqrDistance(position.ptr<float>(), d->position.ptr<float>(), d->nbDimension);
 
-    neighborList[distanceToCurrentNode].append(this);
+    neighborList[sqrdistanceToCurrentNode].append(this);
 
     // limit the size of the Map to maxNbNeighbors
     int size = 0;
@@ -172,12 +170,11 @@ double KDNode::getClosestNeighbors(QMap<double, QVector<KDNode*> >& neighborList
         }
 
         // update the searching range
-        sqRange = pow(neighborList.lastKey(), 2);
+        sqRange = neighborList.lastKey();
     }
 
     // sub-trees Traversal
     double sqrDistanceleftTree  = 0;
-
 
     if (d->left == nullptr)
     {
@@ -185,13 +182,16 @@ double KDNode::getClosestNeighbors(QMap<double, QVector<KDNode*> >& neighborList
     }
     else
     {
+        const float* minRange = d->left->d->minRange.ptr<float>();
+        const float* maxRange = d->left->d->maxRange.ptr<float>();
+        const float* pos = position.ptr<float>();
+
         for (int i = 0; i < d->nbDimension; ++i)
         {
-            sqrDistanceleftTree += (pow(qMax((d->left->d->minRange[i] - position[i]), 0.0f), 2) +
-                                    pow(qMax((position[i] - d->left->d->maxRange[i]), 0.0f), 2));
+            sqrDistanceleftTree += (pow(qMax((minRange[i] - pos[i]), 0.0f), 2) +
+                                    pow(qMax((pos[i] - maxRange[i]), 0.0f), 2));
         }
     }
-
 
     double sqrDistancerightTree = 0;
 
@@ -203,8 +203,12 @@ double KDNode::getClosestNeighbors(QMap<double, QVector<KDNode*> >& neighborList
     {
         for (int i = 0; i < d->nbDimension; ++i)
         {
-            sqrDistancerightTree += (pow(qMax((d->right->d->minRange[i] - position[i]), 0.0f), 2) +
-                                     pow(qMax((position[i] - d->right->d->maxRange[i]), 0.0f), 2));
+            const float* minRange = d->right->d->minRange.ptr<float>();
+            const float* maxRange = d->right->d->maxRange.ptr<float>();
+            const float* pos = position.ptr<float>();
+
+            sqrDistancerightTree += (pow(qMax((minRange[i] - pos[i]), 0.0f), 2) +
+                                     pow(qMax((pos[i] - maxRange[i]), 0.0f), 2));
         }
     }
 
@@ -241,21 +245,25 @@ double KDNode::getClosestNeighbors(QMap<double, QVector<KDNode*> >& neighborList
     return sqRange;
 }
 
-void KDNode::updateRange(std::vector<float> pos)
+void KDNode::updateRange(const cv::Mat& pos)
 {
-    if (int(pos.size()) != d->nbDimension)
+    if (!(pos.cols == 1 && pos.rows == d->nbDimension && pos.type() == CV_32F))
     {
         return;
     }
 
-    for (int i = 0; i < d->nbDimension; i++)
+    float* minRange = d->right->d->minRange.ptr<float>();
+    float* maxRange = d->right->d->maxRange.ptr<float>();
+    const float* position = pos.ptr<float>();
+
+    for (int i = 0; i < d->nbDimension; ++i)
     {
-        d->maxRange[i] = std::max(d->maxRange[i], pos[i]);
-        d->minRange[i] = std::min(d->minRange[i], pos[i]);
+        maxRange[i] = std::max(maxRange[i], position[i]);
+        minRange[i] = std::min(minRange[i], position[i]);
     }
 }
 
-KDNode* KDNode::findParent(std::vector<float> nodePos)
+KDNode* KDNode::findParent(const cv::Mat& nodePos)
 {
     KDNode* parent = nullptr;
     KDNode* currentNode = this;
@@ -267,7 +275,7 @@ KDNode* KDNode::findParent(std::vector<float> nodePos)
         int split = currentNode->d->splitAxis;
         parent    = currentNode;
 
-        if (nodePos[split] >= currentNode->d->position[split])
+        if (nodePos.at<float>(0, split) >= currentNode->d->position.at<float>(0, split))
         {
             currentNode = currentNode->d->right;
         }
