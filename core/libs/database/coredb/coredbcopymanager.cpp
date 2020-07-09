@@ -60,7 +60,7 @@ void CoreDbCopyManager::stopProcessing()
 }
 
 void CoreDbCopyManager::copyDatabases(const DbEngineParameters& fromDBParameters,
-                                      DbEngineParameters& toDBParameters)
+                                      const DbEngineParameters& toDBParameters)
 {
     m_isStopProcessing = false;
     DbEngineLocking fromLocking;
@@ -125,7 +125,7 @@ void CoreDbCopyManager::copyDatabases(const DbEngineParameters& fromDBParameters
 
     // Delete all tables
 
-    for (int i = (tablesSize - 1) ; !m_isStopProcessing && (i >= 0) ; --i)
+    for (int i = (tablesSize - 1) ; i >= 0 ; --i)
     {
         if (m_isStopProcessing ||
             (toDBbackend.execDirectSql(QString::fromUtf8("DROP TABLE IF EXISTS %1;").arg(tables[i])) != BdEngineBackend::NoErrors)
@@ -155,7 +155,7 @@ void CoreDbCopyManager::copyDatabases(const DbEngineParameters& fromDBParameters
 
     // loop copying the tables, stop if an error is met
 
-    for (int i = 0 ; !m_isStopProcessing && (i < tablesSize) ; ++i)
+    for (int i = 0 ; i < tablesSize ; ++i)
     {
         if (i < tablesSize)
         {

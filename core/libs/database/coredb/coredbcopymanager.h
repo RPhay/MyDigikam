@@ -56,7 +56,7 @@ public:
     ~CoreDbCopyManager();
 
     void copyDatabases(const DbEngineParameters& fromDBParameters,
-                       DbEngineParameters& toDBParameters);
+                       const DbEngineParameters& toDBParameters);
 
 Q_SIGNALS:
 
