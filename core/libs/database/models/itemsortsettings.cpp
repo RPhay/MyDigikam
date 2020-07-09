@@ -465,6 +465,10 @@ DatabaseFields::Set ItemSortSettings::watchFlags() const
             set |= DatabaseFields::Name;
             break;
 
+        case SortByFaces:
+            // Nothing needed for this.
+            break;
+
         case SortByManualOrderAndName:
         case SortByManualOrderAndDate:
             set |= DatabaseFields::ManualOrder;
@@ -487,6 +491,10 @@ DatabaseFields::Set ItemSortSettings::watchFlags() const
 
         case CategoryByMonth:
             set |= DatabaseFields::CreationDate;
+            break;
+
+        case CategoryByFaces:
+            // nothing needed here.
             break;
     }
 
