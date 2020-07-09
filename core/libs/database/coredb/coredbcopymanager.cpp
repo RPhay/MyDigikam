@@ -277,12 +277,16 @@ bool CoreDbCopyManager::copyTable(CoreDbBackend& fromDBbackend,
         DbEngineAction action                        = toDBbackend.getDBAction(toActionName);
         BdEngineBackend::QueryState queryStateResult = toDBbackend.execDBAction(action, tempBindingMap);
 
-        if (queryStateResult != BdEngineBackend::NoErrors &&
-            toDBbackend.lastSQLError().isValid()          &&
-            !toDBbackend.lastSQLError().nativeErrorCode().isEmpty())
+        if (
+            (queryStateResult != BdEngineBackend::NoErrors) &&
+            toDBbackend.lastSQLError().isValid()            &&
+            !toDBbackend.lastSQLError().nativeErrorCode().isEmpty()
+           )
         {
-            qCDebug(DIGIKAM_COREDB_LOG) << "Core database: error while converting table data. Details: " << toDBbackend.lastSQLError();
-            QString errorMsg = i18n("Error while converting the database.\n Details: %1", toDBbackend.lastSQLError().databaseText());
+            qCDebug(DIGIKAM_COREDB_LOG) << "Core database: error while converting table data. Details:"
+                                        << toDBbackend.lastSQLError();
+            QString errorMsg = i18n("Error while converting the database.\n Details: %1",
+                                    toDBbackend.lastSQLError().databaseText());
             emit finished(CoreDbCopyManager::failed, errorMsg);
             return false;
         }
