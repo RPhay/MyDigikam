@@ -170,6 +170,9 @@ SlideToolBar::SlideToolBar(SlideShowSettings* const settings, QWidget* const par
             this, SLOT(slotMenuSlideShowConfiguration()));
 
     connect(d->configDialog, SIGNAL(finished(int)),
+            this, SIGNAL(signalUpdateSettings()));
+
+    connect(d->configDialog, SIGNAL(finished(int)),
             this, SLOT(slotConfigurationAccepted()));
 }
 
@@ -269,8 +272,6 @@ void SlideToolBar::slotConfigurationAccepted()
     {
         d->playBtn->animateClick();
     }
-
-    emit signalUpdateSettings();
 }
 
 void SlideToolBar::keyPressEvent(QKeyEvent* e)
