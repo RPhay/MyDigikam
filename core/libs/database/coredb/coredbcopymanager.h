@@ -81,7 +81,7 @@ private:
 
 private:
 
-    bool m_isStopProcessing;
+    volatile bool m_isStopProcessing;
 };
 
 } // namespace Digikam
