@@ -590,13 +590,13 @@ int main(int argc, char** argv)
     Benchmark benchmark;
     benchmark.m_parser = parseOptions(app);
 
-    benchmark.testWriteDb();
-    benchmark.verifyKNearestDb();
+    //benchmark.testWriteDb();
+    //benchmark.verifyKNearestDb();
     //benchmark.saveData();
     //QTest::qExec(&benchmark);
 
-    //benchmark.fetchData();
-    //benchmark.registerTrainingSet();
+    benchmark.fetchData();
+    benchmark.registerTrainingSet();
     //qDebug() << "Cos distance:";
     //benchmark.verifyTestSetCosDistance();
 
@@ -608,8 +608,8 @@ int main(int argc, char** argv)
     //qDebug() << "KNN:";
     //benchmark.verifyTestKNN();
 
-    //qDebug() << "KD-Tree:";
-    //benchmark.verifyTestKDTree(5);
+    qDebug() << "KD-Tree:";
+    benchmark.verifyTestKDTree(5);
 /*
     double threshold = 0.5f;
     qDebug() << "MLP with threshold:" << threshold;

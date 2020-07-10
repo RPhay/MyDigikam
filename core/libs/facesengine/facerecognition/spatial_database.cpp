@@ -308,34 +308,38 @@ double SpatialDatabase::getClosestNeighbors(const DataNode& subTree,
 
     // add current node to the list
     const double sqrdistanceToCurrentNode = sqrDistance1(position, subTree.position);
-    neighborList[sqrdistanceToCurrentNode].append(subTree.label);
 
-    // limit the size of the Map to maxNbNeighbors
-    int size = 0;
-
-    for (QMap<double, QVector<int> >::const_iterator iter  = neighborList.cbegin();
-                                                     iter != neighborList.cend();
-                                                   ++iter)
+    if (sqrdistanceToCurrentNode <= sqRange)
     {
-        size += iter.value().size();
-    }
+        neighborList[sqrdistanceToCurrentNode].append(subTree.label);
 
-    if (size > maxNbNeighbors)
-    {
-        // Eliminate the farthest neighbor
-        QMap<double, QVector<int> >::iterator farthestNodes = (neighborList.end() - 1);
+        // limit the size of the Map to maxNbNeighbors
+        int size = 0;
 
-        if (farthestNodes.value().size() == 1)
+        for (QMap<double, QVector<int> >::const_iterator iter  = neighborList.cbegin();
+                                                         iter != neighborList.cend();
+                                                       ++iter)
         {
-            neighborList.erase(farthestNodes);
-        }
-        else
-        {
-            farthestNodes.value().pop_back();
+            size += iter.value().size();
         }
 
-        // update the searching range
-        sqRange = neighborList.lastKey();
+        if (size > maxNbNeighbors)
+        {
+            // Eliminate the farthest neighbor
+            QMap<double, QVector<int> >::iterator farthestNodes = (neighborList.end() - 1);
+
+            if (farthestNodes.value().size() == 1)
+            {
+                neighborList.erase(farthestNodes);
+            }
+            else
+            {
+                farthestNodes.value().pop_back();
+            }
+
+            // update the searching range
+            sqRange = neighborList.lastKey();
+        }
     }
 
     // sub-trees Traversal
