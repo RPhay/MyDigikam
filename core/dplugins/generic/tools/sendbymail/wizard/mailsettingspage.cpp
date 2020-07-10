@@ -139,7 +139,7 @@ MailSettingsPage::MailSettingsPage(QWizard* const dialog, const QString& title)
 
     // --------------------------------------------
 
-    d->attachmentlimit = new QSpinBox(main);
+    d->attachmentlimit      = new QSpinBox(main);
     d->attachmentlimit->setRange(1, 50);
     d->attachmentlimit->setSingleStep(1);
     d->attachmentlimit->setValue(17);
@@ -150,7 +150,7 @@ MailSettingsPage::MailSettingsPage(QWizard* const dialog, const QString& title)
 
     //---------------------------------------------
 
-    d->changeImagesProp  = new QCheckBox(i18n("Adjust image properties"), main);
+    d->changeImagesProp       = new QCheckBox(i18n("Adjust image properties"), main);
     d->changeImagesProp->setChecked(true);
     d->changeImagesProp->setWhatsThis(i18n("If you enable this option, "
                                            "all images to be sent can be "
@@ -161,7 +161,7 @@ MailSettingsPage::MailSettingsPage(QWizard* const dialog, const QString& title)
 
     //---------------------------------------------
 
-    d->imageResize = new QSpinBox(groupBox);
+    d->imageResize      = new QSpinBox(groupBox);
     d->imageResize->setRange(300, 4000);
     d->imageResize->setSingleStep(1);
     d->imageResize->setValue(1024);
@@ -178,7 +178,7 @@ MailSettingsPage::MailSettingsPage(QWizard* const dialog, const QString& title)
     d->labelimageFormat->setWordWrap(false);
     d->labelimageFormat->setText(i18n("Image Format:"));
 
-    d->imageFormat  = new QComboBox(groupBox);
+    d->imageFormat      = new QComboBox(groupBox);
     d->imageFormat->setEditable(false);
     d->imageFormat->setWhatsThis(i18n("Select your preferred format to convert image."));
 
@@ -251,7 +251,7 @@ MailSettingsPage::MailSettingsPage(QWizard* const dialog, const QString& title)
     //---------------------------------------------
 
     connect(d->imageFormat, SIGNAL(activated(int)),
-            this, SLOT(slotimageFormatChanged(int)));
+            this, SLOT(slotImageFormatChanged(int)));
 
     connect(d->changeImagesProp, SIGNAL(toggled(bool)),
             groupBox, SLOT(setEnabled(bool)));
@@ -262,7 +262,7 @@ MailSettingsPage::~MailSettingsPage()
     delete d;
 }
 
-void MailSettingsPage::slotimageFormatChanged(int i)
+void MailSettingsPage::slotImageFormatChanged(int i)
 {
     if (i == MailSettings::JPEG)
     {
@@ -305,7 +305,7 @@ void MailSettingsPage::initializePage()
     d->attachmentlimit->setValue(d->settings->attLimitInMbytes);
     d->removeMetadata->setChecked(d->settings->removeMetadata);
 
-    slotimageFormatChanged(d->imageFormat->currentIndex());
+    slotImageFormatChanged(d->imageFormat->currentIndex());
 }
 
 bool MailSettingsPage::validatePage()

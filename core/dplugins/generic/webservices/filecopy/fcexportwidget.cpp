@@ -133,9 +133,9 @@ FCExportWidget::FCExportWidget(DInfoInterface* const iface, QWidget* const paren
 
     //---------------------------------------------
 
-    d->imageChangeGroupBox = new QGroupBox(i18n("Image Properties"), this);
+    d->imageChangeGroupBox          = new QGroupBox(i18n("Image Properties"), this);
 
-    d->imageResize = new QSpinBox(d->imageChangeGroupBox);
+    d->imageResize                  = new QSpinBox(d->imageChangeGroupBox);
     d->imageResize->setRange(300, 4000);
     d->imageResize->setSingleStep(1);
     d->imageResize->setValue(1024);
@@ -153,7 +153,7 @@ FCExportWidget::FCExportWidget(DInfoInterface* const iface, QWidget* const paren
     labelImageFormat->setWordWrap(false);
     labelImageFormat->setText(i18n("Image Format:"));
 
-    d->imageFormat = new QComboBox(d->imageChangeGroupBox);
+    d->imageFormat                 = new QComboBox(d->imageChangeGroupBox);
     d->imageFormat->setEditable(false);
     d->imageFormat->setWhatsThis(i18n("Select your preferred format to convert image."));
     d->imageFormat->addItem(i18nc("Image format: JPEG", "Jpeg"), FCContainer::JPEG);
@@ -162,7 +162,7 @@ FCExportWidget::FCExportWidget(DInfoInterface* const iface, QWidget* const paren
 
     //---------------------------------------------
 
-    d->imageCompression = new QSpinBox(d->imageChangeGroupBox);
+    d->imageCompression                 = new QSpinBox(d->imageChangeGroupBox);
     d->imageCompression->setRange(1, 100);
     d->imageCompression->setSingleStep(1);
     d->imageCompression->setValue(75);
