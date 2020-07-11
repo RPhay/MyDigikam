@@ -309,6 +309,13 @@ public:
     void incrementUnconfirmedFaceCount(bool increment);
 
     /**
+     * Adds a Tag Region -> Suggested Name pair to this Image.
+     * This method is called during Face Recognition, to add Faces to images, as
+     * the faces get recognized.
+     */
+    void addSuggestedName(const QString& region, const QString& suggestedName)          const;
+
+    /**
      * @todo Supports only VideoMetadataField and ImageMetadataField values for now.
      */
     DatabaseFieldsHashRaw getDatabaseFieldsRaw(const DatabaseFields::Set& requestedSet) const;

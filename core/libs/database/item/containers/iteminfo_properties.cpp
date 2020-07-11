@@ -399,6 +399,17 @@ void ItemInfo::incrementUnconfirmedFaceCount(bool increment)
     return ;
 }
 
+void ItemInfo::addSuggestedName(const QString& region, const QString& suggestedName) const
+{
+    if (!m_data || suggestedName == QLatin1String("Unknown"))
+    {
+        return;
+    }
+
+    m_data.data()->faceSuggestionsCached = true;
+    m_data.data()->faceSuggestions.insert(region, suggestedName);
+}
+
 void ItemInfo::setOrientation(int value)
 {
     if (!m_data)
