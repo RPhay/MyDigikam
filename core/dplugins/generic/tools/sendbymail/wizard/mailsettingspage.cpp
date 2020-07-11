@@ -55,12 +55,7 @@ class Q_DECL_HIDDEN MailSettingsPage::Private
 public:
 
     explicit Private(QWizard* const dialog)
-      : labelMailAgent(nullptr),
-        labelimageResize(nullptr),
-        labelimageFormat(nullptr),
-        labelAttachmentLimit(nullptr),
-        labelImageCompression(nullptr),
-        mailAgentName(nullptr),
+      : mailAgentName(nullptr),
         imageFormat(nullptr),
         changeImagesProp(nullptr),
         addFileProperties(nullptr),
@@ -80,12 +75,6 @@ public:
             iface    = wizard->iface();
         }
     }
-
-    QLabel*         labelMailAgent;
-    QLabel*         labelimageResize;
-    QLabel*         labelimageFormat;
-    QLabel*         labelAttachmentLimit;
-    QLabel*         labelImageCompression;
 
     QComboBox*      mailAgentName;
     QComboBox*      imageFormat;
@@ -108,14 +97,15 @@ MailSettingsPage::MailSettingsPage(QWizard* const dialog, const QString& title)
       d(new Private(dialog))
 {
     QWidget* const main = new QWidget(this);
+    const int spacing   = QApplication::style()->pixelMetric(QStyle::PM_DefaultLayoutSpacing);
 
     // --------------------
 
-    d->labelMailAgent = new QLabel(main);
-    d->labelMailAgent->setWordWrap(false);
-    d->labelMailAgent->setText(i18n("Mail program:"));
+    QLabel* const labelMailAgent = new QLabel(main);
+    labelMailAgent->setWordWrap(false);
+    labelMailAgent->setText(i18n("Mail program:"));
 
-    d->mailAgentName  = new QComboBox(main);
+    d->mailAgentName             = new QComboBox(main);
     d->mailAgentName->setEditable(false);
     d->mailAgentName->setWhatsThis(i18n("Select your preferred external mail client program here."));
 
@@ -128,7 +118,7 @@ MailSettingsPage::MailSettingsPage(QWizard* const dialog, const QString& title)
         ++it;
     }
 
-    d->labelMailAgent->setBuddy(d->mailAgentName);
+    labelMailAgent->setBuddy(d->mailAgentName);
 
     //---------------------------------------------
 
@@ -139,14 +129,14 @@ MailSettingsPage::MailSettingsPage(QWizard* const dialog, const QString& title)
 
     // --------------------------------------------
 
-    d->attachmentlimit      = new QSpinBox(main);
+    d->attachmentlimit                 = new QSpinBox(main);
     d->attachmentlimit->setRange(1, 50);
     d->attachmentlimit->setSingleStep(1);
     d->attachmentlimit->setValue(17);
     d->attachmentlimit->setSuffix(i18n(" MB"));
 
-    d->labelAttachmentLimit = new QLabel(i18n("Maximum email size limit:"), main);
-    d->labelAttachmentLimit->setBuddy(d->attachmentlimit);
+    QLabel* const labelAttachmentLimit = new QLabel(i18n("Maximum email size limit:"), main);
+    labelAttachmentLimit->setBuddy(d->attachmentlimit);
 
     //---------------------------------------------
 
@@ -161,7 +151,7 @@ MailSettingsPage::MailSettingsPage(QWizard* const dialog, const QString& title)
 
     //---------------------------------------------
 
-    d->imageResize      = new QSpinBox(groupBox);
+    d->imageResize                 = new QSpinBox(groupBox);
     d->imageResize->setRange(300, 4000);
     d->imageResize->setSingleStep(1);
     d->imageResize->setValue(1024);
@@ -169,16 +159,16 @@ MailSettingsPage::MailSettingsPage(QWizard* const dialog, const QString& title)
     d->imageResize->setWhatsThis(i18n("Select the length of the images that are to be sent. "
                                        "The aspect ratio is preserved."));
 
-    d->labelimageResize = new QLabel(i18n("Image Length:"), groupBox);
-    d->labelimageResize->setBuddy(d->imageResize);
+    QLabel* const labelImageResize = new QLabel(i18n("Image Length:"), groupBox);
+    labelImageResize->setBuddy(d->imageResize);
 
     //---------------------------------------------
 
-    d->labelimageFormat = new QLabel(groupBox);
-    d->labelimageFormat->setWordWrap(false);
-    d->labelimageFormat->setText(i18n("Image Format:"));
+    QLabel* const labelImageFormat = new QLabel(groupBox);
+    labelImageFormat->setWordWrap(false);
+    labelImageFormat->setText(i18n("Image Format:"));
 
-    d->imageFormat      = new QComboBox(groupBox);
+    d->imageFormat                 = new QComboBox(groupBox);
     d->imageFormat->setEditable(false);
     d->imageFormat->setWhatsThis(i18n("Select your preferred format to convert image."));
 
@@ -191,11 +181,11 @@ MailSettingsPage::MailSettingsPage(QWizard* const dialog, const QString& title)
         ++it2;
     }
 
-    d->labelimageFormat->setBuddy(d->imageFormat);
+    labelImageFormat->setBuddy(d->imageFormat);
 
     // --------------------
 
-    d->imageCompression = new QSpinBox(groupBox);
+    d->imageCompression                 = new QSpinBox(groupBox);
     d->imageCompression->setRange(1, 100);
     d->imageCompression->setSingleStep(1);
     d->imageCompression->setValue(75);
@@ -208,8 +198,8 @@ MailSettingsPage::MailSettingsPage(QWizard* const dialog, const QString& title)
 
     d->imageCompression->setWhatsThis(whatsThis);
 
-    d->labelImageCompression = new QLabel(i18n("Image quality:"), this);
-    d->labelImageCompression->setBuddy(d->imageCompression);
+    QLabel* const labelImageCompression = new QLabel(i18n("Image quality:"), this);
+    labelImageCompression->setBuddy(d->imageCompression);
 
     // --------------------
 
@@ -219,31 +209,31 @@ MailSettingsPage::MailSettingsPage(QWizard* const dialog, const QString& title)
 
     // --------------------
 
-    grid2->addWidget(d->labelimageResize,      0, 0, 1, 1);
-    grid2->addWidget(d->imageResize,           0, 1, 1, 2);
-    grid2->addWidget(d->labelimageFormat,      1, 0, 1, 1);
-    grid2->addWidget(d->imageFormat,           1, 1, 1, 2);
-    grid2->addWidget(d->labelImageCompression, 2, 0, 1, 1);
-    grid2->addWidget(d->imageCompression,      2, 1, 1, 2);
-    grid2->addWidget(d->removeMetadata,        3, 0, 1, 2);
+    grid2->addWidget(labelImageResize,      0, 0, 1, 1);
+    grid2->addWidget(d->imageResize,        0, 1, 1, 2);
+    grid2->addWidget(labelImageFormat,      1, 0, 1, 1);
+    grid2->addWidget(d->imageFormat,        1, 1, 1, 2);
+    grid2->addWidget(labelImageCompression, 2, 0, 1, 1);
+    grid2->addWidget(d->imageCompression,   2, 1, 1, 2);
+    grid2->addWidget(d->removeMetadata,     3, 0, 1, 2);
     grid2->setRowStretch(4, 10);
     grid2->setColumnStretch(2, 10);
-    grid2->setSpacing(QApplication::style()->pixelMetric(QStyle::PM_DefaultLayoutSpacing));
+    grid2->setSpacing(spacing);
     grid2->setAlignment(Qt::AlignTop);
 
     // --------------------
 
     QGridLayout* const grid = new QGridLayout(main);
-    grid->setSpacing(QApplication::style()->pixelMetric(QStyle::PM_DefaultLayoutSpacing));
-    grid->addWidget(d->labelMailAgent,      0, 0, 1, 1);
-    grid->addWidget(d->mailAgentName,       0, 1, 1, 2);
-    grid->addWidget(d->labelAttachmentLimit,1, 0, 1, 1);
-    grid->addWidget(d->attachmentlimit,     1, 1, 1, 4);
-    grid->addWidget(d->addFileProperties,   2, 0, 1, 4);
-    grid->addWidget(d->changeImagesProp,    3, 0, 1, 4);
-    grid->addWidget(groupBox,               4, 0, 1, 4);
+    grid->addWidget(labelMailAgent,       0, 0, 1, 1);
+    grid->addWidget(d->mailAgentName,     0, 1, 1, 2);
+    grid->addWidget(labelAttachmentLimit, 1, 0, 1, 1);
+    grid->addWidget(d->attachmentlimit,   1, 1, 1, 4);
+    grid->addWidget(d->addFileProperties, 2, 0, 1, 4);
+    grid->addWidget(d->changeImagesProp,  3, 0, 1, 4);
+    grid->addWidget(groupBox,             4, 0, 1, 4);
     grid->setRowStretch(5, 10);
     grid->setColumnStretch(3, 10);
+    grid->setSpacing(spacing);
 
     setPageWidget(main);
     setLeftBottomPix(QIcon::fromTheme(QLatin1String("mail-attachment")));
