@@ -157,10 +157,7 @@ void CoreDbCopyManager::copyDatabases(const DbEngineParameters& fromDBParameters
 
     for (int i = 0 ; i < tablesSize ; ++i)
     {
-        if (i < tablesSize)
-        {
-            emit stepStarted(i18n(QString::fromUtf8("Copy %1...").arg(tables[i]).toLatin1().constData()));
-        }
+        emit stepStarted(i18n(QString::fromUtf8("Copy %1...").arg(tables[i]).toLatin1().constData()));
 
         // Now perform the copy action
 
