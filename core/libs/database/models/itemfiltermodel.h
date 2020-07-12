@@ -130,8 +130,10 @@ public:
         CategoryFormatRole          = ItemModel::FilterModelRoles + 4,
         /// Returns the date of the index which is used for category
         CategoryDateRole            = ItemModel::FilterModelRoles + 5,
+        /// Returns the suggested name for the face in this index
+        CategoryFaceRole            = ItemModel::FilterModelRoles + 6,
         /// Returns true if the given image is a group leader, and the group is opened
-        GroupIsOpenRole             = ItemModel::FilterModelRoles + 6,
+        GroupIsOpenRole             = ItemModel::FilterModelRoles + 7,
         ItemFilterModelPointerRole  = ItemModel::FilterModelRoles + 50
     };
 
