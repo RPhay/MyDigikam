@@ -43,6 +43,7 @@ namespace Digikam
 class ImageChangeset;
 class ItemFilterModel;
 class ImageTagChangeset;
+class FaceTagsIface;
 
 class DIGIKAM_DATABASE_EXPORT ItemFilterModelPrepareHook
 {
@@ -261,7 +262,17 @@ protected:
      *  Return negative if category of left < category right,
      *  Return 0 if left and right are in the same category, else return positive.
      */
-    virtual int compareInfosCategories(const ItemInfo& left, const ItemInfo& right)         const;
+
+    virtual int compareInfosCategories(const ItemInfo& left, const ItemInfo& right)          const;
+
+    /**
+     * In order to be able to Categorize by Faces, it's necessary to pass in the
+     * face as well. One image may have multiple Faces in it, hence just the ItemInfo
+     * isn't sufficient.
+     */
+    virtual int compareInfosCategories(const ItemInfo& left, const ItemInfo& right,
+                                       const FaceTagsIface& leftFace,
+                                       const FaceTagsIface& rightFace)                       const;
 
     /** Reimplement to customize sorting. Do not take categories into account here.
      */
