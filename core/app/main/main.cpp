@@ -106,7 +106,7 @@ int main(int argc, char* argv[])
     // https://bugs.kde.org/show_bug.cgi?id=423632
 
     // When analyzing with Heaptrack it was found
-    // that a big memory hole is created in
+    // that a big memory leak is created in
     // libpocl when OpenCL is active.
 
     qputenv("OPENCV_OPENCL_RUNTIME", "disabled");
