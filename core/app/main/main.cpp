@@ -130,7 +130,7 @@ int main(int argc, char* argv[])
 
 #endif
 
-#ifndef Q_OS_OSX
+#ifndef Q_OS_MACOS
 
     app.setAttribute(Qt::AA_UseHighDpiPixmaps, true);
 

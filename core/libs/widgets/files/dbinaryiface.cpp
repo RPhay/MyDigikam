@@ -202,7 +202,7 @@ void DBinaryIface::slotNavigateAndCheck()
     }
     else
     {
-#if defined Q_OS_OSX
+#if defined Q_OS_MACOS
         start = QUrl::fromLocalFile(QLatin1String("/Applications/"));
 #elif defined Q_OS_WIN
         start = QUrl::fromLocalFile(QLatin1String("C:/Program Files/"));

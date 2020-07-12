@@ -160,7 +160,7 @@ QFileDialog::Option DFileDialog::getNativeFileDialogOption()
         group = config->group(QLatin1String("ImageViewer Settings"));
     }
 
-#ifdef Q_OS_OSX
+#ifdef Q_OS_MACOS
     bool useNativeFileDialog  = group.readEntry(QLatin1String("Use Native File Dialog"), true);
 #else
     bool useNativeFileDialog  = group.readEntry(QLatin1String("Use Native File Dialog"), false);

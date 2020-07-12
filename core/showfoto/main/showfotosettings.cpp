@@ -287,7 +287,7 @@ void ShowfotoSettings::readSettings()
 
     d->showSplash              = group.readEntry(d->configShowSplash,              true);
 
-#ifdef Q_OS_OSX
+#ifdef Q_OS_MACOS
     d->nativeFileDialog        = group.readEntry(d->configNativeFileDialog,        true);
 #else
     d->nativeFileDialog        = group.readEntry(d->configNativeFileDialog,        false);

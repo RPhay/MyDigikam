@@ -89,7 +89,7 @@ ExpoBlendingIntroPage::ExpoBlendingIntroPage(ExpoBlendingManager* const mngr, QW
     d->binariesWidget->addBinary(d->mngr->alignBinary());
     d->binariesWidget->addBinary(d->mngr->enfuseBinary());
 
-#ifdef Q_OS_OSX
+#ifdef Q_OS_MACOS
     // Hugin bundle PKG install
     d->binariesWidget->addDirectory(QLatin1String("/Applications/Hugin/HuginTools"));
     d->binariesWidget->addDirectory(QLatin1String("/Applications/Hugin/Hugin.app/Contents/MacOS"));
