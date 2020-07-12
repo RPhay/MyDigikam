@@ -132,6 +132,13 @@ void ItemAlbumFilterModel::setItemFilterSettings(const ItemFilterSettings& s)
 
 int ItemAlbumFilterModel::compareInfosCategories(const ItemInfo& left, const ItemInfo& right) const
 {
+    FaceTagsIface leftFace, rightFace;
+    return compareInfosCategories(left, right, leftFace, rightFace);
+}
+
+int ItemAlbumFilterModel::compareInfosCategories(const ItemInfo& left, const ItemInfo& right,
+                                                 const FaceTagsIface& leftFace, const FaceTagsIface& rightFace) const
+{
     Q_D(const ItemAlbumFilterModel);
 
     switch (d->sorter.categorizationMode)

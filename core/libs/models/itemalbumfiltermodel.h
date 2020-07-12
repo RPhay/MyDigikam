@@ -56,6 +56,10 @@ protected:
 
     virtual int compareInfosCategories(const ItemInfo& left, const ItemInfo& right) const;
 
+    virtual int compareInfosCategories(const ItemInfo& left, const ItemInfo& right,
+                                       const FaceTagsIface& leftFace,
+                                       const FaceTagsIface& rightFace)              const;
+
 protected Q_SLOTS:
 
     void slotAlbumRenamed(Album* album);
