@@ -276,11 +276,11 @@ protected:
 
     /** Reimplement to customize sorting. Do not take categories into account here.
      */
-    virtual bool infosLessThan(const ItemInfo& left, const ItemInfo& right)                 const;
+    virtual bool infosLessThan(const ItemInfo& left, const ItemInfo& right)                  const;
 
     /** Returns a unique identifier for the category if info. The string need not be for user display.
      */
-    virtual QString categoryIdentifier(const ItemInfo& info)                                const;
+    virtual QString categoryIdentifier(const ItemInfo& info, const FaceTagsIface& face)      const;
 
 protected Q_SLOTS:
 
