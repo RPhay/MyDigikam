@@ -73,11 +73,6 @@ export IOLIBS=$DIR/usr/lib/libgphoto2_port
 export QT_XCB_FORCE_SOFTWARE_OPENGL=1
 export QTWEBENGINE_CHROMIUM_FLAGS="--disable-gpu"
 
-# OpenCV crash with face engine with OpenCL support
-# https://bugs.kde.org/show_bug.cgi?id=423632
-export OPENCV_OPENCL_RUNTIME=disabled
-export OPENCV_OPENCL_DEVICE=null
-
 # code to disable Plasma desktopk detection with QDesktopService
 export APPIMAGE_ORIGINAL_KDE_FULL_SESSION=$KDE_FULL_SESSION
 export APPIMAGE_ORIGINAL_DESKTOP_SESSION=$DESKTOP_SESSION
