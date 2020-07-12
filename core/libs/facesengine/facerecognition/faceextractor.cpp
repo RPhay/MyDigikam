@@ -189,17 +189,9 @@ std::vector<float> FaceExtractor::getFaceEmbedding(const cv::Mat& faceImage)
     qCDebug(DIGIKAM_FACEDB_LOG) << "Face descriptors size: (" << face_descriptors.rows
                                 << ", " << face_descriptors.cols << ")";
 
-    std::vector<float> faceEmbedding;
+    const float* data = face_descriptors.ptr<float>();
 
-    for (int i = 0 ; i < face_descriptors.rows ; ++i)
-    {
-        for (int j = 0 ; j < face_descriptors.cols ; ++j)
-        {
-            faceEmbedding.push_back(face_descriptors.at<float>(i,j));
-        }
-    }
-
-    return faceEmbedding;
+    return std::vector<float>(data, data + face_descriptors.cols);
 }
 
 cv::Mat FaceExtractor::getFaceDescriptor(const cv::Mat& faceImage)
