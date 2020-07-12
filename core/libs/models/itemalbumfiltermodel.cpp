@@ -37,6 +37,7 @@
 #include "coredbchangesets.h"
 #include "coredbwatch.h"
 #include "itemalbummodel.h"
+#include "facetagsiface.h"
 
 namespace Digikam
 {
@@ -190,7 +191,7 @@ int ItemAlbumFilterModel::compareInfosCategories(const ItemInfo& left, const Ite
         }
         default:
         {
-            return ItemFilterModel::compareInfosCategories(left, right);
+            return ItemFilterModel::compareInfosCategories(left, right, leftFace, rightFace);
         }
     }
 }
