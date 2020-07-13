@@ -309,7 +309,7 @@ double SpatialDatabase::getClosestNeighbors(const DataNode& subTree,
     // add current node to the list
     const double sqrdistanceToCurrentNode = sqrDistance1(position, subTree.position);
 
-    if (sqrdistanceToCurrentNode <= sqRange)
+    if (sqrdistanceToCurrentNode < sqRange)
     {
         neighborList[sqrdistanceToCurrentNode].append(subTree.label);
 
