@@ -26,7 +26,6 @@
 
 // Qt includes
 
-#include <QWindow>
 #include <QCloseEvent>
 #include <QMessageBox>
 
@@ -34,7 +33,7 @@
 
 #include <klocalizedstring.h>
 #include <ksharedconfig.h>
-#include <kwindowconfig.h>
+#include <kconfiggroup.h>
 
 // Local includes
 
@@ -162,11 +161,6 @@ void FCExportWindow::restoreSettings()
     settings.changeImageProperties = group.readEntry(d->CHANGE_IMAGE_PROPERTIES, false);
 
     d->exportWidget->setSettings(settings);
-
-    winId();
-    KConfigGroup group2 = config->group(objectName());
-    KWindowConfig::restoreWindowSize(windowHandle(), group2);
-    resize(windowHandle()->size());
 }
 
 void FCExportWindow::saveSettings()
@@ -183,10 +177,6 @@ void FCExportWindow::saveSettings()
     group.writeEntry(d->TARGET_OVERWRITE,        settings.overwrite);
     group.writeEntry(d->REMOVE_METADATA,         settings.removeMetadata);
     group.writeEntry(d->CHANGE_IMAGE_PROPERTIES, settings.changeImageProperties);
-
-    KConfigGroup group2 = config->group(objectName());
-    KWindowConfig::saveWindowSize(windowHandle(), group2);
-    config->sync();
 }
 
 void FCExportWindow::slotImageListChanged()

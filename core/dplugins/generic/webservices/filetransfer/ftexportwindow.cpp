@@ -26,16 +26,14 @@
 
 // Qt includes
 
-#include <QWindow>
 #include <QCloseEvent>
-#include <QMenu>
 #include <QMessageBox>
 
 // KDE includes
 
 #include <klocalizedstring.h>
 #include <ksharedconfig.h>
-#include <kwindowconfig.h>
+#include <kconfiggroup.h>
 #include <kio/job.h>
 #include <kio/copyjob.h>
 
@@ -136,11 +134,6 @@ void FTExportWindow::restoreSettings()
     KConfigGroup group      = config->group(d->CONFIG_GROUP);
     d->exportWidget->setHistory(group.readEntry(d->HISTORY_URL_PROPERTY, QList<QUrl>()));
     d->exportWidget->setTargetUrl(group.readEntry(d->TARGET_URL_PROPERTY, QUrl()));
-
-    winId();
-    KConfigGroup group2 = config->group(QLatin1String("Kio Export Dialog"));
-    KWindowConfig::restoreWindowSize(windowHandle(), group2);
-    resize(windowHandle()->size());
 }
 
 void FTExportWindow::saveSettings()
@@ -149,10 +142,6 @@ void FTExportWindow::saveSettings()
     KConfigGroup group      = config->group(d->CONFIG_GROUP);
     group.writeEntry(d->HISTORY_URL_PROPERTY, d->exportWidget->history());
     group.writeEntry(d->TARGET_URL_PROPERTY,  d->exportWidget->targetUrl().url());
-
-    KConfigGroup group2 = config->group(QLatin1String("Kio Export Dialog"));
-    KWindowConfig::saveWindowSize(windowHandle(), group2);
-    config->sync();
 }
 
 void FTExportWindow::slotImageListChanged()
