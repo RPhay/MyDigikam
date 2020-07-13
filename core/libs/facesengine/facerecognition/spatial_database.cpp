@@ -24,7 +24,7 @@
 
 // std include
 #include <cfloat>
-
+#include <iostream>
 #include <QSqlDatabase>
 #include <QSqlQuery>
 #include <QSqlError>
@@ -125,11 +125,11 @@ bool SpatialDatabase::insert(const cv::Mat& nodePos, const int label)
     d->query.bindValue(QLatin1String(":label"), label);
     d->query.bindValue(QLatin1String(":split_axis"), (parentSplitAxis + 1) % 128);
     d->query.bindValue(QLatin1String(":position"),
-                       QByteArray::fromRawData((char*)nodePos.ptr<float>(), (sizeof(float) * nodePos.cols)));
+                       QByteArray::fromRawData((char*)nodePos.ptr<float>(), (sizeof(float) * 128)));
     d->query.bindValue(QLatin1String(":max_range"),
-                       QByteArray::fromRawData((char*)nodePos.ptr<float>(), (sizeof(float) * nodePos.cols)));
+                       QByteArray::fromRawData((char*)nodePos.ptr<float>(), (sizeof(float) * 128)));
     d->query.bindValue(QLatin1String(":min_range"),
-                       QByteArray::fromRawData((char*)nodePos.ptr<float>(), (sizeof(float) * nodePos.cols)));
+                       QByteArray::fromRawData((char*)nodePos.ptr<float>(), (sizeof(float) * 128)));
 
     if (parentID > 0)
     {
@@ -186,9 +186,9 @@ bool SpatialDatabase::updateRange(int nodeId, cv::Mat& minRange, cv::Mat& maxRan
     d->query.prepare(QLatin1String("UPDATE kd_tree SET max_range = :maxrange, min_range = :minrange WHERE node_id = :id"));
 
     d->query.bindValue(QLatin1String(":maxrange"),
-                       QByteArray::fromRawData((char*)max, (sizeof(float) * maxRange.cols)));
+                       QByteArray::fromRawData((char*)max, (sizeof(float) * 128)));
     d->query.bindValue(QLatin1String(":minrange"),
-                      QByteArray::fromRawData((char*)min, (sizeof(float) * maxRange.cols)));
+                      QByteArray::fromRawData((char*)min, (sizeof(float) * 128)));
     d->query.bindValue(QLatin1String(":id"), nodeId);
 
     if(! d->query.exec())
@@ -234,19 +234,16 @@ int SpatialDatabase::findParent(const cv::Mat& nodePos,bool& leftChild, int& par
         }
 
         int split = d->query.value(0).toInt();
-/*
+
         qDebug() << "split axis" << d->query.value(0).toInt()
-                 << "position"   << d->query.value(1).toString()
-                 << "maxRange"   << d->query.value(2).toString()
-                 << "minRange"   << d->query.value(3).toString()
                  << "left"       << d->query.value(4)
                  << "right"      << d->query.value(5);
-*/
+
         parentSplitAxis = split;
-        // TODO
-        cv::Mat position(1, 128, CV_32F, d->query.value(1).toByteArray().data());
-        cv::Mat maxRange(1, 128, CV_32F, d->query.value(2).toByteArray().data());
-        cv::Mat minRange(1, 128, CV_32F, d->query.value(3).toByteArray().data());
+
+        cv::Mat position = cv::Mat(1, 128, CV_32F, d->query.value(1).toByteArray().data()).clone();
+        cv::Mat maxRange = cv::Mat(1, 128, CV_32F, d->query.value(2).toByteArray().data()).clone();
+        cv::Mat minRange = cv::Mat(1, 128, CV_32F, d->query.value(3).toByteArray().data()).clone();
 
         if (nodePos.at<float>(0, split) >= position.at<float>(0, split))
         {
@@ -259,10 +256,18 @@ int SpatialDatabase::findParent(const cv::Mat& nodePos,bool& leftChild, int& par
             leftChild = true;
         }
 
+        std::cout << "position:" << position << std::endl;
+        std::cout << "maxRange:" << maxRange << std::endl;
+        std::cout << "minRange:" << minRange << std::endl;
+
         if(! updateRange(parent, minRange, maxRange, nodePos))
         {
             qWarning() << "fail to update range of node";
         }
+
+        std::cout << "new maxRange:" << maxRange << std::endl;
+        std::cout << "new minRange:" << minRange << std::endl;
+
     }
 
     return parent;
@@ -283,9 +288,9 @@ QMap<double, QVector<int> > SpatialDatabase::getClosestNeighbors(const cv::Mat& 
         // encapsulate data node
         root.nodeID   = 1;
         root.label    = d->query.value(0).toInt();
-        root.position = cv::Mat(1, 128, CV_32F, d->query.value(1).toByteArray().data());
-        root.maxRange = cv::Mat(1, 128, CV_32F, d->query.value(2).toByteArray().data());
-        root.minRange = cv::Mat(1, 128, CV_32F, d->query.value(3).toByteArray().data());
+        root.position = cv::Mat(1, 128, CV_32F, d->query.value(1).toByteArray().data()).clone();
+        root.maxRange = cv::Mat(1, 128, CV_32F, d->query.value(2).toByteArray().data()).clone();
+        root.minRange = cv::Mat(1, 128, CV_32F, d->query.value(3).toByteArray().data()).clone();
         root.left     = d->query.value(4).toInt();
         root.right    = d->query.value(5).toInt();
 
@@ -362,9 +367,9 @@ double SpatialDatabase::getClosestNeighbors(const DataNode& subTree,
             // encapsulate data node
             leftNode.nodeID   = subTree.left;
             leftNode.label    = d->query.value(0).toInt();
-            leftNode.position = cv::Mat(1, 128, CV_32F, d->query.value(1).toByteArray().data());
-            leftNode.maxRange = cv::Mat(1, 128, CV_32F, d->query.value(2).toByteArray().data());
-            leftNode.minRange = cv::Mat(1, 128, CV_32F, d->query.value(3).toByteArray().data());
+            leftNode.position = cv::Mat(1, 128, CV_32F, d->query.value(1).toByteArray().data()).clone();
+            leftNode.maxRange = cv::Mat(1, 128, CV_32F, d->query.value(2).toByteArray().data()).clone();
+            leftNode.minRange = cv::Mat(1, 128, CV_32F, d->query.value(3).toByteArray().data()).clone();
             leftNode.left     = d->query.value(4).toInt();
             leftNode.right    = d->query.value(5).toInt();
 
@@ -374,7 +379,7 @@ double SpatialDatabase::getClosestNeighbors(const DataNode& subTree,
 
             for (int i = 0; i < 128; ++i)
             {
-                sqrDistancerightTree += (pow(qMax((minRange[i] - pos[i]), 0.0f), 2) +
+                sqrDistanceleftTree += (pow(qMax((minRange[i] - pos[i]), 0.0f), 2) +
                                          pow(qMax((pos[i] - maxRange[i]), 0.0f), 2));
             }
         }
@@ -394,9 +399,9 @@ double SpatialDatabase::getClosestNeighbors(const DataNode& subTree,
             // encapsulate data node
             rightNode.nodeID   = subTree.right;
             rightNode.label    = d->query.value(0).toInt();
-            rightNode.position = cv::Mat(1, 128, CV_32F, d->query.value(1).toByteArray().data());
-            rightNode.maxRange = cv::Mat(1, 128, CV_32F, d->query.value(2).toByteArray().data());
-            rightNode.minRange = cv::Mat(1, 128, CV_32F, d->query.value(3).toByteArray().data());
+            rightNode.position = cv::Mat(1, 128, CV_32F, d->query.value(1).toByteArray().data()).clone();
+            rightNode.maxRange = cv::Mat(1, 128, CV_32F, d->query.value(2).toByteArray().data()).clone();
+            rightNode.minRange = cv::Mat(1, 128, CV_32F, d->query.value(3).toByteArray().data()).clone();
             rightNode.left     = d->query.value(4).toInt();
             rightNode.right    = d->query.value(5).toInt();
 

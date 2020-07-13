@@ -528,7 +528,7 @@ void Benchmark::verifyKNearestDb()
 
         int label = object[QLatin1String("id")].toInt();
 
-        QMap<double, QVector<int> > closestNeighbors = m_recognizer->getClosestNodes(FaceExtractor::vectortomat(faceEmbedding), 1.0, 5);
+        QMap<double, QVector<int> > closestNeighbors = m_recognizer->getClosestNodes(FaceExtractor::vectortomat(faceEmbedding), 1.0, 1);
 
         QMap<int, QVector<double> > votingGroups;
 
@@ -590,13 +590,12 @@ int main(int argc, char** argv)
     Benchmark benchmark;
     benchmark.m_parser = parseOptions(app);
 
-    //benchmark.testWriteDb();
-    //benchmark.verifyKNearestDb();
-    //benchmark.saveData();
-    //QTest::qExec(&benchmark);
+    benchmark.saveData();
+    benchmark.testWriteDb();
+    benchmark.verifyKNearestDb();
 
-    benchmark.fetchData();
-    benchmark.registerTrainingSet();
+    //benchmark.fetchData();
+    //benchmark.registerTrainingSet();
     //qDebug() << "Cos distance:";
     //benchmark.verifyTestSetCosDistance();
 
@@ -608,8 +607,8 @@ int main(int argc, char** argv)
     //qDebug() << "KNN:";
     //benchmark.verifyTestKNN();
 
-    qDebug() << "KD-Tree:";
-    benchmark.verifyTestKDTree(5);
+    //qDebug() << "KD-Tree:";
+    //benchmark.verifyTestKDTree(5);
 /*
     double threshold = 0.5f;
     qDebug() << "MLP with threshold:" << threshold;
