@@ -73,7 +73,7 @@ public:
      * @param label
      * @return true if successed
      */
-    bool insert(const cv::Mat& nodePos, const int label);
+    bool insert(const cv::Mat& nodePos, const int label) const;
 
     /**
      * @brief getClosestNeighbors : return a list of closest neighbor, limited by maxNbNeighbors and sqRange
@@ -87,13 +87,13 @@ public:
      */
     QMap<double, QVector<int> > getClosestNeighbors(const cv::Mat& position,
                                                     double sqRange,
-                                                    int maxNbNeighbors);
+                                                    int maxNbNeighbors) const;
 
 private:
 
-    bool updateRange(int nodeId, cv::Mat& minRange, cv::Mat& maxRange, const cv::Mat& position);
+    bool updateRange(int nodeId, cv::Mat& minRange, cv::Mat& maxRange, const cv::Mat& position) const;
 
-    int findParent(const cv::Mat& nodePos, bool& leftChild, int& parentSplitAxis);
+    int findParent(const cv::Mat& nodePos, bool& leftChild, int& parentSplitAxis) const;
 
     /**
      * @brief getClosestNeighbors : return a list of closest neighbor from a sub tree, limited by maxNbNeighbors and sqRange
@@ -109,7 +109,7 @@ private:
                                QMap<double, QVector<int> >& neighborList,
                                const cv::Mat& position,
                                double sqRange,
-                               int maxNbNeighbors);
+                               int maxNbNeighbors) const;
 private:
 
     class Private;

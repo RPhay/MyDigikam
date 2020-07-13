@@ -62,7 +62,7 @@ public:
 
         query.exec(QLatin1String("SET sql_notes = 0"));
         bool success = query.exec(QLatin1String("CREATE TABLE IF NOT EXISTS kd_tree (node_id INTEGER PRIMARY KEY AUTOINCREMENT, "
-                                                                                    "label INTEGER NOT NULL,"
+                                                                                    "label INTEGER NOT NULL REFERENCES identity,"
                                                                                     "split_axis INTEGER NOT NULL, "
                                                                                     "position BLOB NOT NULL, "
                                                                                     "max_range BLOB NOT NULL, "
@@ -105,7 +105,7 @@ SpatialDatabase::~SpatialDatabase()
     delete d;
 }
 
-bool SpatialDatabase::insert(const cv::Mat& nodePos, const int label)
+bool SpatialDatabase::insert(const cv::Mat& nodePos, const int label) const
 {
     bool isLeftChild = false;
     int parentSplitAxis = 0;
@@ -169,7 +169,7 @@ bool SpatialDatabase::insert(const cv::Mat& nodePos, const int label)
 }
 
 
-bool SpatialDatabase::updateRange(int nodeId, cv::Mat& minRange, cv::Mat& maxRange, const cv::Mat& position)
+bool SpatialDatabase::updateRange(int nodeId, cv::Mat& minRange, cv::Mat& maxRange, const cv::Mat& position) const
 {
     float* min = minRange.ptr<float>();
     float* max = maxRange.ptr<float>();
@@ -199,7 +199,7 @@ bool SpatialDatabase::updateRange(int nodeId, cv::Mat& minRange, cv::Mat& maxRan
     return true;
 }
 
-int SpatialDatabase::findParent(const cv::Mat& nodePos,bool& leftChild, int& parentSplitAxis)
+int SpatialDatabase::findParent(const cv::Mat& nodePos,bool& leftChild, int& parentSplitAxis) const
 {
     int parent = 1;
     QVariant currentNode = parent;
@@ -264,7 +264,7 @@ int SpatialDatabase::findParent(const cv::Mat& nodePos,bool& leftChild, int& par
 
 QMap<double, QVector<int> > SpatialDatabase::getClosestNeighbors(const cv::Mat& position,
                                                                  double sqRange,
-                                                                 int maxNbNeighbors)
+                                                                 int maxNbNeighbors) const
 {
     QMap<double, QVector<int> > closestNeighbors;
 
@@ -293,7 +293,7 @@ double SpatialDatabase::getClosestNeighbors(const DataNode& subTree,
                                             QMap<double, QVector<int> >& neighborList,
                                             const cv::Mat& position,
                                             double sqRange,
-                                            int maxNbNeighbors)
+                                            int maxNbNeighbors) const
 {
     if (subTree.isNull())
     {

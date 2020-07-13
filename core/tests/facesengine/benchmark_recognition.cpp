@@ -528,7 +528,7 @@ void Benchmark::verifyKNearestDb()
 
         int label = object[QLatin1String("id")].toInt();
 
-        QMap<double, QVector<int> > closestNeighbors = m_recognizer->getClosestNodes(FaceExtractor::vectortomat(faceEmbedding), 1.0, 1);
+        QMap<double, QVector<int> > closestNeighbors = m_recognizer->getClosestNodes(FaceExtractor::vectortomat(faceEmbedding), 1.0, 5);
 
         QMap<int, QVector<double> > votingGroups;
 
@@ -591,7 +591,7 @@ int main(int argc, char** argv)
     benchmark.m_parser = parseOptions(app);
 
     //benchmark.saveData();
-    benchmark.testWriteDb();
+    //benchmark.testWriteDb();
     benchmark.verifyKNearestDb();
 
     //benchmark.fetchData();

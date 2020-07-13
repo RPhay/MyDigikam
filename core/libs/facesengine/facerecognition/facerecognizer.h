@@ -54,6 +54,7 @@ public:
         MLP,
         LogisticRegression,
         Tree,
+        DB,
     };
 
     /**

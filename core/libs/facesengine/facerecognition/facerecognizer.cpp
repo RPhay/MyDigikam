@@ -141,6 +141,7 @@ public:
     Identity predictCosine(const std::vector<float>& faceEmbedding, double threshold) const;
     Identity predictL2(const std::vector<float>& faceEmbedding, double threshold) const;
 
+    Identity predictDb(const cv::Mat& faceEmbedding, int k) const;
 public:
 
     bool debugMode;
@@ -498,6 +499,53 @@ Identity FaceRecognizer::Private::predictKDTree(const cv::Mat& faceEmbedding, in
     return faceLibrary[prediction][0];
 }
 
+Identity FaceRecognizer::Private::predictDb(const cv::Mat& faceEmbedding, int k) const
+{
+    QMap<double, QVector<int> > closestNeighbors = treedb.getClosestNeighbors(faceEmbedding, 1.0, k);
+
+    QMap<int, QVector<double> > votingGroups;
+
+    for (QMap<double, QVector<int> >::const_iterator iter  = closestNeighbors.cbegin();
+                                                     iter != closestNeighbors.cend();
+                                                   ++iter)
+    {
+        for (int i = 0; i < iter.value().size(); ++i)
+        {
+            votingGroups[iter.value()[i]].append(iter.key());
+        }
+    }
+
+    double maxScore = 0;
+    int prediction;
+
+    for (QMap<int, QVector<double> >::const_iterator group  = votingGroups.cbegin();
+                                                     group != votingGroups.cend();
+                                                   ++group)
+    {
+        double score = 0;
+
+        for (int i = 0; i < group.value().size(); ++i)
+        {
+            score += (1 - group.value()[i]);
+        }
+
+        if (score > maxScore)
+        {
+            maxScore   = score;
+            prediction = group.key();
+        }
+    }
+
+    QString label = db.queryLabel(prediction);
+
+    Identity identity;
+    identity.setId(prediction);
+    identity.setAttribute(QLatin1String("fullName"), label);
+
+    return identity;
+}
+
+
 Identity FaceRecognizer::Private::predictCosine(const std::vector<float>& faceEmbedding, double threshold) const
 {
     double bestDistance = -1;
@@ -643,6 +691,10 @@ Identity FaceRecognizer::findIdenity(const cv::Mat& preprocessedImage, Compariso
     {
         id = d->predictKDTree(d->extractor->getFaceDescriptor(preprocessedImage), (int)threshold);
     }
+    else if (metric == DB)
+    {
+        id = d->predictDb(d->extractor->getFaceDescriptor(preprocessedImage), (int)threshold);
+    }
     else
     {
         std::vector<float> faceEmbedding = d->extractor->getFaceEmbedding(preprocessedImage);
@@ -684,6 +736,7 @@ Identity FaceRecognizer::newIdentity(const cv::Mat& preprocessedImage)
 
 int FaceRecognizer::saveIdentity(Identity& id, bool newLabel)
 {
+/*
     QString label = id.attribute(QLatin1String("fullName"));
 
     if (label.isEmpty())
@@ -709,7 +762,7 @@ int FaceRecognizer::saveIdentity(Identity& id, bool newLabel)
     d->addIndentityToTree(id);
 
     return d->labels.indexOf(label);
-/*
+*/
     if (newLabel)
     {
         QString label = id.attribute(QLatin1String("fullName"));
@@ -742,17 +795,18 @@ int FaceRecognizer::saveIdentity(Identity& id, bool newLabel)
         return -1;
     }
 
-    // Online Train ML model
     QJsonArray jsonFaceEmbedding = QJsonDocument::fromJson(id.attribute(QLatin1String("faceEmbedding")).toLatin1()).array();
-    std::vector<float> recordedFaceEmbedding = FaceExtractor::decodeVector(jsonFaceEmbedding);
+    cv::Mat recordedFaceEmbedding = FaceExtractor::vectortomat(FaceExtractor::decodeVector(jsonFaceEmbedding));
 
-    d->onlineTrainSVM(recordedFaceEmbedding, index);
-    d->onlineTrainKNN(recordedFaceEmbedding, index);
+    if (d->treedb.insert(recordedFaceEmbedding, index))
+    {
+        qWarning() << "Error insert face embedding";
+        return -1;
+    }
 
     // Create a KD-Node for this identity
     //d->addIndentityToTree(id);
     return index;
-*/
 }
 
 bool FaceRecognizer::insertData(const cv::Mat& nodePos, const int label)
