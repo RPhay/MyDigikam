@@ -209,12 +209,12 @@ double KDNode::getClosestNeighbors(QMap<double, QVector<KDNode*> >& neighborList
     }
     else
     {
+        const float* minRange = d->right->d->minRange.ptr<float>();
+        const float* maxRange = d->right->d->maxRange.ptr<float>();
+        const float* pos = position.ptr<float>();
+
         for (int i = 0; i < d->nbDimension; ++i)
         {
-            const float* minRange = d->right->d->minRange.ptr<float>();
-            const float* maxRange = d->right->d->maxRange.ptr<float>();
-            const float* pos = position.ptr<float>();
-
             sqrDistancerightTree += (pow(qMax((minRange[i] - pos[i]), 0.0f), 2) +
                                      pow(qMax((pos[i] - maxRange[i]), 0.0f), 2));
         }

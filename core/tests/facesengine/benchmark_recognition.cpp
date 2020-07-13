@@ -490,7 +490,7 @@ void Benchmark::testWriteDb()
 
         std::vector<float> faceEmbedding = FaceExtractor::decodeVector(object[QLatin1String("faceembedding")].toArray());
 
-        m_recognizer->insertData(faceEmbedding, object[QLatin1String("id")].toInt());
+        m_recognizer->insertData(FaceExtractor::vectortomat(faceEmbedding), object[QLatin1String("id")].toInt());
     }
 
     qDebug() << "write face embedding to spatial database with average" << timer.elapsed() /data.size() << "ms/faceEmbedding";
@@ -528,7 +528,7 @@ void Benchmark::verifyKNearestDb()
 
         int label = object[QLatin1String("id")].toInt();
 
-        QMap<double, QVector<int> > closestNeighbors = m_recognizer->getClosestNodes(faceEmbedding, 1.0, 5);
+        QMap<double, QVector<int> > closestNeighbors = m_recognizer->getClosestNodes(FaceExtractor::vectortomat(faceEmbedding), 1.0, 5);
 
         QMap<int, QVector<double> > votingGroups;
 

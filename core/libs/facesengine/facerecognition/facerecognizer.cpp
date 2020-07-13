@@ -755,12 +755,12 @@ int FaceRecognizer::saveIdentity(Identity& id, bool newLabel)
 */
 }
 
-bool FaceRecognizer::insertData(const std::vector<float>& nodePos, const int label)
+bool FaceRecognizer::insertData(const cv::Mat& nodePos, const int label)
 {
     return d->treedb.insert(nodePos, label);
 }
 
-QMap<double, QVector<int> > FaceRecognizer::getClosestNodes(std::vector<float> position,
+QMap<double, QVector<int> > FaceRecognizer::getClosestNodes(const cv::Mat& position,
                                                             double sqRange,
                                                             int maxNbNeighbors)
 {

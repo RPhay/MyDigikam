@@ -36,13 +36,11 @@
 namespace RecognitionTest
 {
 
-double sqrDistance1(std::vector<float> pos1, std::vector<float> pos2)
+double sqrDistance1(const float* pos1, const float* pos2, int dimension)
 {
-    Q_ASSERT(pos1.size() == pos2.size());
-
     double sqrDistance = 0;
 
-    for (size_t i = 0; i < pos1.size(); ++i)
+    for (int i = 0; i < dimension; ++i)
     {
         sqrDistance += pow((pos1[i] - pos2[i]), 2);
     }
@@ -67,9 +65,9 @@ public:
         bool success = query.exec(QLatin1String("CREATE TABLE IF NOT EXISTS kd_tree (node_id INTEGER PRIMARY KEY AUTOINCREMENT, "
                                                                                     "label INTEGER NOT NULL,"
                                                                                     "split_axis INTEGER NOT NULL, "
-                                                                                    "position TEXT NOT NULL, "
-                                                                                    "max_range TEXT NOT NULL, "
-                                                                                    "min_range TEXT NOT NULL,"
+                                                                                    "position BLOB NOT NULL, "
+                                                                                    "max_range BLOB NOT NULL, "
+                                                                                    "min_range BLOB NOT NULL,"
                                                                                     "parent INTEGER REFERENCES kd_tree,"
                                                                                     "left INTEGER REFERENCES kd_tree,"
                                                                                     "right INTEGER REFERENCES kd_tree)"));
@@ -108,7 +106,7 @@ SpatialDatabase::~SpatialDatabase()
     delete d;
 }
 
-bool SpatialDatabase::insert(const std::vector<float>& nodePos, const int label)
+bool SpatialDatabase::insert(const cv::Mat& nodePos, const int label)
 {
     bool isLeftChild = false;
     int parentSplitAxis = 0;
@@ -127,11 +125,11 @@ bool SpatialDatabase::insert(const std::vector<float>& nodePos, const int label)
     d->query.bindValue(QLatin1String(":label"), label);
     d->query.bindValue(QLatin1String(":split_axis"), (parentSplitAxis + 1) % 128);
     d->query.bindValue(QLatin1String(":position"),
-                       QString::fromLatin1(QJsonDocument(FaceExtractor::encodeVector(nodePos)).toJson(QJsonDocument::Compact)));
+                       QByteArray::fromRawData((char*)nodePos.ptr<float>(), (sizeof(float) * nodePos.cols)));
     d->query.bindValue(QLatin1String(":max_range"),
-                       QString::fromLatin1(QJsonDocument(FaceExtractor::encodeVector(nodePos)).toJson(QJsonDocument::Compact)));
+                       QByteArray::fromRawData((char*)nodePos.ptr<float>(), (sizeof(float) * nodePos.cols)));
     d->query.bindValue(QLatin1String(":min_range"),
-                       QString::fromLatin1(QJsonDocument(FaceExtractor::encodeVector(nodePos)).toJson(QJsonDocument::Compact)));
+                       QByteArray::fromRawData((char*)nodePos.ptr<float>(), (sizeof(float) * nodePos.cols)));
 
     if (parentID > 0)
     {
@@ -173,22 +171,24 @@ bool SpatialDatabase::insert(const std::vector<float>& nodePos, const int label)
 }
 
 
-bool SpatialDatabase::updateRange(int nodeId, std::vector<float>& minRange, std::vector<float>& maxRange, const std::vector<float>& position)
+bool SpatialDatabase::updateRange(int nodeId, cv::Mat& minRange, cv::Mat& maxRange, const cv::Mat& position)
 {
-    for (size_t i = 0; i < minRange.size(); i++)
+    float* min = minRange.ptr<float>();
+    float* max = maxRange.ptr<float>();
+    const float* pos = position.ptr<float>();
+
+    for (int i = 0; i < position.cols; ++i)
     {
-        maxRange[i] = std::max(maxRange[i], position[i]);
-        minRange[i] = std::min(minRange[i], position[i]);
+        max[i] = std::max(max[i], pos[i]);
+        min[i] = std::min(min[i], pos[i]);
     }
 
     d->query.prepare(QLatin1String("UPDATE kd_tree SET max_range = :maxrange, min_range = :minrange WHERE node_id = :id"));
 
-    QString::fromLatin1(QJsonDocument(FaceExtractor::encodeVector(minRange)).toJson(QJsonDocument::Compact));
-
     d->query.bindValue(QLatin1String(":maxrange"),
-                       QString::fromLatin1(QJsonDocument(FaceExtractor::encodeVector(maxRange)).toJson(QJsonDocument::Compact)));
+                       QByteArray::fromRawData((char*)max, (sizeof(float) * maxRange.cols)));
     d->query.bindValue(QLatin1String(":minrange"),
-                       QString::fromLatin1(QJsonDocument(FaceExtractor::encodeVector(minRange)).toJson(QJsonDocument::Compact)));
+                      QByteArray::fromRawData((char*)min, (sizeof(float) * maxRange.cols)));
     d->query.bindValue(QLatin1String(":id"), nodeId);
 
     if(! d->query.exec())
@@ -201,12 +201,12 @@ bool SpatialDatabase::updateRange(int nodeId, std::vector<float>& minRange, std:
     return true;
 }
 
-int SpatialDatabase::findParent(const std::vector<float>& nodePos,bool& leftChild, int& parentSplitAxis)
+int SpatialDatabase::findParent(const cv::Mat& nodePos,bool& leftChild, int& parentSplitAxis)
 {
     int parent = 1;
     QVariant currentNode = parent;
 
-    while (currentNode.isValid() && ! currentNode.isNull())
+    while (currentNode.isValid() && !currentNode.isNull())
     {
         parent = currentNode.toInt();
         d->query.prepare(QLatin1String("SELECT split_axis, position, max_range, min_range, left, right FROM kd_tree WHERE node_id = :id"));
@@ -243,12 +243,12 @@ int SpatialDatabase::findParent(const std::vector<float>& nodePos,bool& leftChil
                  << "right"      << d->query.value(5);
 */
         parentSplitAxis = split;
+        // TODO
+        cv::Mat position(1, 128, CV_32F, d->query.value(1).toByteArray().data());
+        cv::Mat maxRange(1, 128, CV_32F, d->query.value(2).toByteArray().data());
+        cv::Mat minRange(1, 128, CV_32F, d->query.value(3).toByteArray().data());
 
-        std::vector<float> position = FaceExtractor::decodeVector(QJsonDocument::fromJson(d->query.value(1).toByteArray()).array());
-        std::vector<float> maxRange = FaceExtractor::decodeVector(QJsonDocument::fromJson(d->query.value(2).toByteArray()).array());
-        std::vector<float> minRange = FaceExtractor::decodeVector(QJsonDocument::fromJson(d->query.value(3).toByteArray()).array());
-
-        if (nodePos[split] >= position[split])
+        if (nodePos.at<float>(0, split) >= position.at<float>(0, split))
         {
             currentNode = d->query.value(5);
             leftChild = false;
@@ -268,7 +268,7 @@ int SpatialDatabase::findParent(const std::vector<float>& nodePos,bool& leftChil
     return parent;
 }
 
-QMap<double, QVector<int> > SpatialDatabase::getClosestNeighbors(std::vector<float> position,
+QMap<double, QVector<int> > SpatialDatabase::getClosestNeighbors(const cv::Mat& position,
                                                                  double sqRange,
                                                                  int maxNbNeighbors)
 {
@@ -283,9 +283,9 @@ QMap<double, QVector<int> > SpatialDatabase::getClosestNeighbors(std::vector<flo
         // encapsulate data node
         root.nodeID   = 1;
         root.label    = d->query.value(0).toInt();
-        root.position = FaceExtractor::decodeVector(QJsonDocument::fromJson(d->query.value(1).toByteArray()).array());
-        root.maxRange = FaceExtractor::decodeVector(QJsonDocument::fromJson(d->query.value(2).toByteArray()).array());
-        root.minRange = FaceExtractor::decodeVector(QJsonDocument::fromJson(d->query.value(3).toByteArray()).array());
+        root.position = cv::Mat(1, 128, CV_32F, d->query.value(1).toByteArray().data());
+        root.maxRange = cv::Mat(1, 128, CV_32F, d->query.value(2).toByteArray().data());
+        root.minRange = cv::Mat(1, 128, CV_32F, d->query.value(3).toByteArray().data());
         root.left     = d->query.value(4).toInt();
         root.right    = d->query.value(5).toInt();
 
@@ -297,7 +297,7 @@ QMap<double, QVector<int> > SpatialDatabase::getClosestNeighbors(std::vector<flo
 
 double SpatialDatabase::getClosestNeighbors(const DataNode& subTree,
                                             QMap<double, QVector<int> >& neighborList,
-                                            std::vector<float> position,
+                                            const cv::Mat& position,
                                             double sqRange,
                                             int maxNbNeighbors)
 {
@@ -307,7 +307,7 @@ double SpatialDatabase::getClosestNeighbors(const DataNode& subTree,
     }
 
     // add current node to the list
-    const double sqrdistanceToCurrentNode = sqrDistance1(position, subTree.position);
+    const double sqrdistanceToCurrentNode = sqrDistance1(position.ptr<float>(), subTree.position.ptr<float>(), 128);
 
     if (sqrdistanceToCurrentNode < sqRange)
     {
@@ -362,16 +362,20 @@ double SpatialDatabase::getClosestNeighbors(const DataNode& subTree,
             // encapsulate data node
             leftNode.nodeID   = subTree.left;
             leftNode.label    = d->query.value(0).toInt();
-            leftNode.position = FaceExtractor::decodeVector(QJsonDocument::fromJson(d->query.value(1).toByteArray()).array());
-            leftNode.maxRange = FaceExtractor::decodeVector(QJsonDocument::fromJson(d->query.value(2).toByteArray()).array());
-            leftNode.minRange = FaceExtractor::decodeVector(QJsonDocument::fromJson(d->query.value(3).toByteArray()).array());
+            leftNode.position = cv::Mat(1, 128, CV_32F, d->query.value(1).toByteArray().data());
+            leftNode.maxRange = cv::Mat(1, 128, CV_32F, d->query.value(2).toByteArray().data());
+            leftNode.minRange = cv::Mat(1, 128, CV_32F, d->query.value(3).toByteArray().data());
             leftNode.left     = d->query.value(4).toInt();
             leftNode.right    = d->query.value(5).toInt();
 
-            for (size_t i = 0; i < leftNode.minRange.size(); ++i)
+            const float* minRange = leftNode.minRange.ptr<float>();
+            const float* maxRange = leftNode.maxRange.ptr<float>();
+            const float* pos = position.ptr<float>();
+
+            for (int i = 0; i < 128; ++i)
             {
-                sqrDistanceleftTree += (pow(qMax((leftNode.minRange[i] - position[i]), 0.0f), 2) +
-                                        pow(qMax((position[i] - leftNode.maxRange[i]), 0.0f), 2));
+                sqrDistancerightTree += (pow(qMax((minRange[i] - pos[i]), 0.0f), 2) +
+                                         pow(qMax((pos[i] - maxRange[i]), 0.0f), 2));
             }
         }
     }
@@ -390,16 +394,20 @@ double SpatialDatabase::getClosestNeighbors(const DataNode& subTree,
             // encapsulate data node
             rightNode.nodeID   = subTree.right;
             rightNode.label    = d->query.value(0).toInt();
-            rightNode.position = FaceExtractor::decodeVector(QJsonDocument::fromJson(d->query.value(1).toByteArray()).array());
-            rightNode.maxRange = FaceExtractor::decodeVector(QJsonDocument::fromJson(d->query.value(2).toByteArray()).array());
-            rightNode.minRange = FaceExtractor::decodeVector(QJsonDocument::fromJson(d->query.value(3).toByteArray()).array());
+            rightNode.position = cv::Mat(1, 128, CV_32F, d->query.value(1).toByteArray().data());
+            rightNode.maxRange = cv::Mat(1, 128, CV_32F, d->query.value(2).toByteArray().data());
+            rightNode.minRange = cv::Mat(1, 128, CV_32F, d->query.value(3).toByteArray().data());
             rightNode.left     = d->query.value(4).toInt();
             rightNode.right    = d->query.value(5).toInt();
 
-            for (size_t i = 0; i < rightNode.minRange.size(); ++i)
+            const float* minRange = rightNode.minRange.ptr<float>();
+            const float* maxRange = rightNode.maxRange.ptr<float>();
+            const float* pos = position.ptr<float>();
+
+            for (int i = 0; i < 128; ++i)
             {
-                sqrDistancerightTree += (pow(qMax((rightNode.minRange[i] - position[i]), 0.0f), 2) +
-                                         pow(qMax((position[i] - rightNode.maxRange[i]), 0.0f), 2));
+                sqrDistancerightTree += (pow(qMax((minRange[i] - pos[i]), 0.0f), 2) +
+                                         pow(qMax((pos[i] - maxRange[i]), 0.0f), 2));
             }
         }
     }
