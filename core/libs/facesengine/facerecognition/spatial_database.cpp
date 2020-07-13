@@ -24,7 +24,6 @@
 
 // std include
 #include <cfloat>
-#include <iostream>
 #include <QSqlDatabase>
 #include <QSqlQuery>
 #include <QSqlError>
@@ -144,7 +143,6 @@ bool SpatialDatabase::insert(const cv::Mat& nodePos, const int label)
     }
 
     int newNode = d->query.lastInsertId().toInt();
-    //qDebug() << "inserted node" << nodePos << "at index" << newNode << "at" << (isLeftChild?"left":"right") << "of node" << parentID;
 
     if (parentID > 0)
     {
@@ -224,7 +222,6 @@ int SpatialDatabase::findParent(const cv::Mat& nodePos,bool& leftChild, int& par
             if (parent == 1)
             {
                 // add root
-                qDebug() << "Add root";
                 return 0;
             }
 
@@ -234,11 +231,11 @@ int SpatialDatabase::findParent(const cv::Mat& nodePos,bool& leftChild, int& par
         }
 
         int split = d->query.value(0).toInt();
-
+/*
         qDebug() << "split axis" << d->query.value(0).toInt()
                  << "left"       << d->query.value(4)
                  << "right"      << d->query.value(5);
-
+*/
         parentSplitAxis = split;
 
         cv::Mat position = cv::Mat(1, 128, CV_32F, d->query.value(1).toByteArray().data()).clone();
@@ -256,18 +253,10 @@ int SpatialDatabase::findParent(const cv::Mat& nodePos,bool& leftChild, int& par
             leftChild = true;
         }
 
-        std::cout << "position:" << position << std::endl;
-        std::cout << "maxRange:" << maxRange << std::endl;
-        std::cout << "minRange:" << minRange << std::endl;
-
         if(! updateRange(parent, minRange, maxRange, nodePos))
         {
             qWarning() << "fail to update range of node";
         }
-
-        std::cout << "new maxRange:" << maxRange << std::endl;
-        std::cout << "new minRange:" << minRange << std::endl;
-
     }
 
     return parent;

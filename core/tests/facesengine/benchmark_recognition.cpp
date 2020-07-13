@@ -590,7 +590,7 @@ int main(int argc, char** argv)
     Benchmark benchmark;
     benchmark.m_parser = parseOptions(app);
 
-    benchmark.saveData();
+    //benchmark.saveData();
     benchmark.testWriteDb();
     benchmark.verifyKNearestDb();
 
