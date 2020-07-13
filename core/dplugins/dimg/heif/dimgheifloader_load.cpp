@@ -330,6 +330,7 @@ bool DImgHEIFLoader::readHEICImageByHandle(struct heif_image_handle* image_handl
     if (!isHeifSuccess(&error))
     {
         loadingFailed();
+        heif_image_release(heif_image);
         heif_image_handle_release(image_handle);
         heif_decoding_options_free(decode_options);
 
