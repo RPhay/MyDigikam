@@ -100,15 +100,15 @@ public:
 
 public:
 
-    int trainSVM() const;
-    int trainKNN() const;
+    bool trainSVM() const;
+    bool trainKNN() const;
 
     int predictSVM(cv::Mat faceEmbedding) const;
     int predictKNN(cv::Mat faceEmbedding) const;
 
-    void addIndentityToTree(const Identity& id);
     int predictKDTree(const cv::Mat& faceEmbedding, int k) const;
     int predictDb(const cv::Mat& faceEmbedding, int k) const;
+
 public:
 
     bool debugMode;
@@ -131,104 +131,51 @@ public:
     KDTree tree;
 };
 
-int FaceRecognizer::Private::trainSVM() const
+bool FaceRecognizer::Private::trainSVM() const
 {
-    cv::Mat features, label;
-    int size = 0;
-
     QElapsedTimer timer;
     timer.start();
 
-    for (int i = 0; i < labels.size(); ++i)
-    {
-        for (QVector<Identity>::const_iterator iter  = faceLibrary[labels[i]].cbegin();
-                                               iter != faceLibrary[labels[i]].cend();
-                                             ++iter)
-        {
-            QJsonArray jsonFaceEmbedding = QJsonDocument::fromJson(iter->attribute(QLatin1String("faceEmbedding")).toLatin1()).array();
-            std::vector<float> recordedFaceEmbedding = FaceExtractor::decodeVector(jsonFaceEmbedding);
+    svm->train(embeddingDb.trainData());
 
-            label.push_back(i);
-            features.push_back(FaceExtractor::vectortomat(recordedFaceEmbedding));
+    qDebug() << "Support vector machine trains in" << timer.elapsed() << "ms";
 
-            ++size;
-        }
-    }
-
-    svm->train(features, 0, label);
-
-    qDebug() << "Support vector machine trains" << size << "samples in" << timer.elapsed() << "ms";
-
-    return size;
+    return (svm->isTrained());
 }
 
-int FaceRecognizer::Private::trainKNN() const
+bool FaceRecognizer::Private::trainKNN() const
 {
-    cv::Mat features, label;
-    int size = 0;
-
     QElapsedTimer timer;
     timer.start();
 
-    for (int i = 0; i < labels.size(); ++i)
-    {
-        for (QVector<Identity>::const_iterator iter  = faceLibrary[labels[i]].cbegin();
-                                               iter != faceLibrary[labels[i]].cend();
-                                             ++iter)
-        {
-            QJsonArray jsonFaceEmbedding = QJsonDocument::fromJson(iter->attribute(QLatin1String("faceEmbedding")).toLatin1()).array();
-            std::vector<float> recordedFaceEmbedding = FaceExtractor::decodeVector(jsonFaceEmbedding);
+    knn->train(embeddingDb.trainData());
 
-            label.push_back(i);
-            features.push_back(FaceExtractor::vectortomat(recordedFaceEmbedding));
+    qDebug() << "KNN trains in" << timer.elapsed() << "ms";
 
-            ++size;
-        }
-    }
-
-    knn->train(features, 0, label);
-
-    qDebug() << "KNN trains" << size << "samples in" << timer.elapsed() << "ms";
-
-    return size;
+    return (knn->isTrained());
 }
 
 int FaceRecognizer::Private::predictSVM(cv::Mat faceEmbedding) const
 {
-/*
     if (!svm->isTrained())
     {
-        qDebug() << "svm is not trained";
-        return Identity();
-        //trainSVM();
+        trainSVM();
     }
-*/
-    return (int(svm->predict(faceEmbedding)));
 
+    return (int(svm->predict(faceEmbedding)));
 }
 
 int FaceRecognizer::Private::predictKNN(cv::Mat faceEmbedding) const
 {
-/*
     if (!knn->isTrained())
     {
-        qDebug() << "knn is not trained";
-        return Identity();
-        //trainKNN();
+        trainKNN();
     }
-*/
+
     cv::Mat output;
     knn->findNearest(faceEmbedding, 3, output);
 
     return (int(output.at<float>(0)));
-}
-
-void FaceRecognizer::Private::addIndentityToTree(const Identity& id)
-{
-    QJsonArray jsonFaceEmbedding = QJsonDocument::fromJson(id.attribute(QLatin1String("faceEmbedding")).toLatin1()).array();
-    cv::Mat recordedFaceEmbedding = FaceExtractor::vectortomat(FaceExtractor::decodeVector(jsonFaceEmbedding));
-
-    tree.add(recordedFaceEmbedding, id);
 }
 
 int FaceRecognizer::Private::predictKDTree(const cv::Mat& faceEmbedding, int k) const
@@ -454,7 +401,7 @@ int FaceRecognizer::saveIdentity(Identity& id, bool newLabel)
     }
 */
     // Create a KD-Node for this identity
-    d->addIndentityToTree(id);
+    d->tree.add(recordedFaceEmbedding, id);
     d->embeddingDb.insert(recordedFaceEmbedding, index);
 
     return index;
