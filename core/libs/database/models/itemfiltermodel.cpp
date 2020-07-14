@@ -888,9 +888,26 @@ int ItemFilterModel::compareCategories(const QModelIndex& left, const QModelInde
     qlonglong leftGroupImageId  = leftInfo.groupImageId();
     qlonglong rightGroupImageId = rightInfo.groupImageId();
 
+    QVariant leftExtraData = left.data(ItemModel::ExtraDataRole);
+    QVariant rightExtraData = right.data(ItemModel::ExtraDataRole);
+
+    FaceTagsIface leftFace;
+    FaceTagsIface rightFace;
+
+    if (!leftExtraData.isNull())
+    {
+        leftFace = FaceTagsIface::fromVariant(leftExtraData);
+    }
+
+    if (!rightExtraData.isNull())
+    {
+        rightFace = FaceTagsIface::fromVariant(rightExtraData);
+    }
+
     return compareInfosCategories(
                                   (leftGroupImageId  == -1) ? leftInfo  : ItemInfo(leftGroupImageId),
                                   (rightGroupImageId == -1) ? rightInfo : ItemInfo(rightGroupImageId)
+                                  , leftFace, rightFace
                                  );
 }
 
