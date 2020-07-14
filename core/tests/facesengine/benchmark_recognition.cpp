@@ -574,8 +574,8 @@ int main(int argc, char** argv)
 
     benchmark.fetchData();
     benchmark.registerTrainingSet();
-    //qDebug() << "SVM:";
-    //benchmark.verifyTestSetSupportVectorMachine();
+    qDebug() << "SVM:";
+    benchmark.verifyTestSetSupportVectorMachine();
 
     //qDebug() << "KNN:";
     //benchmark.verifyTestKNN();
@@ -583,8 +583,8 @@ int main(int argc, char** argv)
     //qDebug() << "KD-Tree:";
     //benchmark.verifyTestKDTree(5);
 
-    qDebug() << "Database";
-    benchmark.verifyTestDb(3);
+    //qDebug() << "Database";
+    //benchmark.verifyTestDb(3);
 
     return 0;
 }

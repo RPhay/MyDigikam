@@ -118,9 +118,6 @@ public:
     cv::Ptr<cv::ml::SVM> svm;
     cv::Ptr<cv::ml::KNearest> knn;
 
-    QHash<QString, QVector<Identity> > faceLibrary;
-    QVector<QString> labels;
-
     // TODO put file names to Settings
     const QString knnFile = QLatin1String("knn.bin");
     const QString svmFile = QLatin1String("svm.bin");
@@ -136,7 +133,9 @@ bool FaceRecognizer::Private::trainSVM() const
     QElapsedTimer timer;
     timer.start();
 
-    svm->train(embeddingDb.trainData());
+    cv::Ptr<cv::ml::TrainData> trainData = embeddingDb.trainData();
+    qDebug() << "train samples:" << trainData->getNSamples();
+    svm->train(trainData);
 
     qDebug() << "Support vector machine trains in" << timer.elapsed() << "ms";
 
