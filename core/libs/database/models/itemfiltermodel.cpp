@@ -343,7 +343,7 @@ QVariant ItemFilterModel::data(const QModelIndex& index, int role) const
         // Attention: This breaks should there ever be another filter model between this and the ItemModel
 
         case DCategorizedSortFilterProxyModel::CategoryDisplayRole:
-            return categoryIdentifier(d->imageModel->imageInfoRef(mapToSource(index)));
+            return categoryIdentifier(d->imageModel->imageInfoRef(mapToSource(index)), face);
 
         case CategorizationModeRole:
             return d->sorter.categorizationMode;
