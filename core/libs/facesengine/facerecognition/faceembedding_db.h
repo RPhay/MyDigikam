@@ -28,7 +28,13 @@ namespace RecognitionTest
 class FaceEmbeddingDb
 {
 public:
-    FaceEmbeddingDb();
+    explicit FaceEmbeddingDb();
+    ~FaceEmbeddingDb();
+
+private:
+
+    class Private;
+    Private* d;
 };
 }
 #endif // FACEEMBEDDING_DB_H

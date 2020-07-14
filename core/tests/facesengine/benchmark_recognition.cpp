@@ -614,7 +614,7 @@ int main(int argc, char** argv)
     //benchmark.verifyTestKDTree(5);
 
     qDebug() << "Database";
-    benchmark.verifyTestDb(5);
+    benchmark.verifyTestDb(3);
 /*
     double threshold = 0.5f;
     qDebug() << "MLP with threshold:" << threshold;

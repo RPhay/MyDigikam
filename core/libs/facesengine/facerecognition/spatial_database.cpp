@@ -27,7 +27,6 @@
 #include <QSqlDatabase>
 #include <QSqlQuery>
 #include <QSqlError>
-#include <QJsonDocument>
 #include <QDebug>
 
 #include "faceextractor.h"
