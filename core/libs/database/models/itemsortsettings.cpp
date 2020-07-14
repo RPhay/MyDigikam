@@ -155,7 +155,8 @@ Qt::SortOrder ItemSortSettings::defaultSortOrderForSortRole(SortRole role)
     }
 }
 
-int ItemSortSettings::compareCategories(const ItemInfo& left, const ItemInfo& right) const
+int ItemSortSettings::compareCategories(const ItemInfo& left, const ItemInfo& right,
+                                        const FaceTagsIface& leftFace, const FaceTagsIface& rightFace) const
 {
     switch (categorizationMode)
     {
@@ -196,6 +197,29 @@ int ItemSortSettings::compareCategories(const ItemInfo& left, const ItemInfo& ri
             return compareByOrder(left.dateTime().date(),
                                   right.dateTime().date(),
                                   currentCategorizationSortOrder);
+        }
+
+        case CategoryByFaces:
+        {
+            QMap<QString, QString> leftMap  = left.getSuggestedNames();
+            QMap<QString, QString> rightMap = right.getSuggestedNames();
+
+            const QString leftValue  = leftMap.value(leftFace.region().toXml());
+            const QString rightValue = rightMap.value(rightFace.region().toXml());
+
+            if (leftValue.isEmpty()  && !rightValue.isEmpty())
+                return 1;
+
+            if (!leftValue.isEmpty() && rightValue.isEmpty())
+                return -1;
+
+            if (leftValue.isEmpty()  && rightValue.isEmpty())
+                return 0;
+
+            // Compare alphabetically based on the Suggested Name
+            return naturalCompare(leftValue, rightValue,
+                                  currentCategorizationSortOrder, categorizationCaseSensitivity,
+                                  strTypeNatural);
         }
 
         default:

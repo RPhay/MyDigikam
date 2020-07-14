@@ -95,8 +95,10 @@ public:
      * Return -1 if left is less than right, 0 if both fall in the same category,
      * and 1 if left is greater than right.
      * Adheres to set categorization mode and current category sort order.
+     * Face passed in to allow Categorization by Faces. Pass in an empty
+     * Face if not needed.
      */
-    int compareCategories(const ItemInfo& left, const ItemInfo& right) const;
+    int compareCategories(const ItemInfo& left, const ItemInfo& right, const FaceTagsIface& leftFace, const FaceTagsIface& rightFace) const;
 
     /**
      * Returns true if left is less than right.
