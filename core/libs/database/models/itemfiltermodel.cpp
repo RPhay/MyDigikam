@@ -326,6 +326,18 @@ QVariant ItemFilterModel::data(const QModelIndex& index, int role) const
         return QVariant();
     }
 
+    /**
+     * Keeping track of the Face (if any) associated with this Model Index
+     * is important to allow categorization by Face.
+     */
+    QVariant extraData = d->imageModel->data(mapToSource(index), ItemModel::ExtraDataRole);
+
+    FaceTagsIface face;
+    if (!extraData.isNull())
+    {
+        face = FaceTagsIface::fromVariant(extraData);
+    }
+
     switch (role)
     {
         // Attention: This breaks should there ever be another filter model between this and the ItemModel
