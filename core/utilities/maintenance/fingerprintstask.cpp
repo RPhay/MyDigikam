@@ -60,7 +60,7 @@ FingerprintsTask::FingerprintsTask()
     : ActionJob(),
       d(new Private)
 {
-    QPixmap okPix = QIcon::fromTheme(QLatin1String("dialog-ok")).pixmap(22, 22);
+    QPixmap okPix = QIcon::fromTheme(QLatin1String("dialog-ok-apply")).pixmap(22, 22);
     d->okImage    = okPix.toImage();
 }
 
