@@ -296,7 +296,13 @@ bool DImgHEIFLoader::readHEICImageByID(struct heif_context* const heif_context,
 
             return ret;
         }
+
+        // Image has no preview, load image normally
+
+        return readHEICImageByHandle(image_handle, heif_image, true);
     }
+
+    // Load image data or only image metadata
 
     return readHEICImageByHandle(image_handle, heif_image, (m_loadFlags & LoadImageData));
 }
