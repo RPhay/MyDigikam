@@ -95,9 +95,11 @@ void FingerprintsTask::run()
 
         ItemInfo info(id);
 
-        if ((info.isVisible() && info.category() == DatabaseItem::Category::Image) &&
-            !m_cancel                                                              &&
-            (d->data->getRebuildAllFingerprints()                                  ||
+        if (info.isVisible()                                              &&
+            (info.category() == DatabaseItem::Category::Image)            &&
+            !info.filePath().isEmpty()                                    &&
+            !m_cancel                                                     &&
+            (d->data->getRebuildAllFingerprints()                         ||
              SimilarityDbAccess().db()->hasDirtyOrMissingFingerprint(info)))
         {
             qCDebug(DIGIKAM_GENERAL_LOG) << "Updating fingerprints for file:" << info.filePath();
