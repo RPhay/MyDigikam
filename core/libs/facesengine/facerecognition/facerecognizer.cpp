@@ -39,7 +39,7 @@
 #include "faceextractor.h"
 #include "facedatabase.h"
 #include "spatial_database.h"
-#include "kd_tree.h"
+#include "faceembedding_db.h"
 
 using namespace Digikam;
 
@@ -54,7 +54,7 @@ public:
         : debugMode(debug),
           identityCounter(0),
           extractor(new FaceExtractor),
-          tree(128)
+          tree(embeddingDb.reconstructTree())
     {
         QFileInfo svmWeightsFile(svmFile);
         if (svmWeightsFile.exists())
@@ -125,9 +125,10 @@ public:
     const QString knnFile = QLatin1String("knn.bin");
     const QString svmFile = QLatin1String("svm.bin");
 
-    KDTree tree;
     FaceDatabase db;
+    FaceEmbeddingDb embeddingDb;
     SpatialDatabase treedb;
+    KDTree tree;
 };
 
 int FaceRecognizer::Private::trainSVM() const
@@ -432,33 +433,6 @@ Identity FaceRecognizer::newIdentity(const cv::Mat& preprocessedImage)
 
 int FaceRecognizer::saveIdentity(Identity& id, bool newLabel)
 {
-/*
-    QString label = id.attribute(QLatin1String("fullName"));
-
-    if (label.isEmpty())
-    {
-        qWarning() << "idenitity is empty";
-
-        return -1;
-    }
-
-    // TODO save identity to database
-    if (id.isNull())
-    {
-        id.setId(++d->identityCounter);
-    }
-
-    d->faceLibrary[label].append(id);
-
-    if (! d->labels.contains(label))
-    {
-        d->labels.append(label);
-    }
-
-    d->addIndentityToTree(id);
-
-    return d->labels.indexOf(label);
-*/
     if (newLabel)
     {
         QString label = id.attribute(QLatin1String("fullName"));
