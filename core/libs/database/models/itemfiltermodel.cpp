@@ -969,7 +969,16 @@ int ItemFilterModel::compareInfosCategories(const ItemInfo& left, const ItemInfo
     // Note: reimplemented in ItemAlbumFilterModel
     Q_D(const ItemFilterModel);
 
-    return d->sorter.compareCategories(left, right);
+    FaceTagsIface leftFace, rightFace;
+    return d->sorter.compareCategories(left, right, leftFace, rightFace);
+}
+
+int ItemFilterModel::compareInfosCategories(const ItemInfo& left, const ItemInfo& right, const FaceTagsIface& leftFace, const FaceTagsIface& rightFace) const
+{
+    // Note: reimplemented in ItemAlbumFilterModel
+    Q_D(const ItemFilterModel);
+
+    return d->sorter.compareCategories(left, right, leftFace, rightFace);
 }
 
 // Feel free to optimize. QString::number is 3x slower.
