@@ -95,6 +95,7 @@ public:
     Q_SLOT void verifyTestKDTree(int k);
     Q_SLOT void verifyTestMLP(double threshold);
     Q_SLOT void verifyTestLogisticRegression();
+    Q_SLOT void verifyTestDb(int k);
 
     Q_SLOT void testWriteDb();
     Q_SLOT void verifyKNearestDb();
@@ -172,19 +173,20 @@ void Benchmark::registerTrainingSet()
 
             if (preprocess(iter.value().at(i), face))
             {
+            /*
                 Identity newIdentity = m_recognizer->newIdentity(face);
 
                 newIdentity.setAttribute(QLatin1String("fullName"), iter.key());
 
                 m_recognizer->saveIdentity(newIdentity, false);
-             /*
+             */
                 Identity newIdentity = m_recognizer->newIdentity(face);
 
                 newIdentity.setId(index);
                 newIdentity.setAttribute(QLatin1String("fullName"), iter.key());
 
                 index = m_recognizer->saveIdentity(newIdentity, (index < 0));
-            */
+
                 ++m_trainSize;
             }
         }
@@ -203,8 +205,6 @@ void Benchmark::verifyTestSet(FaceRecognizer::ComparisonMetric metric, double th
     QElapsedTimer timer;
     timer.start();
 
-    QString errorDir = QLatin1String("./Error_images/");
-
     for (QHash<QString, QVector<QImage*> >::iterator iter  = m_testSet.begin();
                                                      iter != m_testSet.end();
                                                    ++iter)
@@ -221,13 +221,11 @@ void Benchmark::verifyTestSet(FaceRecognizer::ComparisonMetric metric, double th
                 {
                     // cannot recognize when label is already register
                     ++nbNotRecognize;
-                    iter.value().at(i)->save(errorDir + iter.key() + QLatin1String("/") + QString::number(i) + QLatin1String(".png"), "PNG");
                 }
                 else if (newIdentity.attribute(QLatin1String("fullName")) != iter.key())
                 {
                     // wrong label
                     ++nbWrongLabel;
-                    iter.value().at(i)->save(errorDir + iter.key() + QLatin1String("/") + QString::number(i) + QLatin1String(".png"), "PNG");
                 }
 
                 ++m_testSize;
@@ -462,6 +460,11 @@ void Benchmark::verifyTestLogisticRegression()
     verifyTestSet(FaceRecognizer::LogisticRegression, 0);
 }
 
+void Benchmark::verifyTestDb(int k)
+{
+    verifyTestSet(FaceRecognizer::DB, k);
+}
+
 void Benchmark::testWriteDb()
 {
     QDir dataDir(m_parser->value(QLatin1String("dataset")));
@@ -592,10 +595,10 @@ int main(int argc, char** argv)
 
     //benchmark.saveData();
     //benchmark.testWriteDb();
-    benchmark.verifyKNearestDb();
+    //benchmark.verifyKNearestDb();
 
-    //benchmark.fetchData();
-    //benchmark.registerTrainingSet();
+    benchmark.fetchData();
+    benchmark.registerTrainingSet();
     //qDebug() << "Cos distance:";
     //benchmark.verifyTestSetCosDistance();
 
@@ -609,6 +612,9 @@ int main(int argc, char** argv)
 
     //qDebug() << "KD-Tree:";
     //benchmark.verifyTestKDTree(5);
+
+    qDebug() << "Database";
+    benchmark.verifyTestDb(5);
 /*
     double threshold = 0.5f;
     qDebug() << "MLP with threshold:" << threshold;

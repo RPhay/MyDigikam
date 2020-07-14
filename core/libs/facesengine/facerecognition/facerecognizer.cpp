@@ -798,7 +798,7 @@ int FaceRecognizer::saveIdentity(Identity& id, bool newLabel)
     QJsonArray jsonFaceEmbedding = QJsonDocument::fromJson(id.attribute(QLatin1String("faceEmbedding")).toLatin1()).array();
     cv::Mat recordedFaceEmbedding = FaceExtractor::vectortomat(FaceExtractor::decodeVector(jsonFaceEmbedding));
 
-    if (d->treedb.insert(recordedFaceEmbedding, index))
+    if (! d->treedb.insert(recordedFaceEmbedding, index))
     {
         qWarning() << "Error insert face embedding";
         return -1;

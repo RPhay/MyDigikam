@@ -33,8 +33,14 @@ class Q_DECL_HIDDEN FaceDatabase::Private
 {
 public:
     Private()
-        : db(QSqlDatabase::addDatabase(QLatin1String("QSQLITE")))
+        : db(QSqlDatabase::addDatabase(QLatin1String("QSQLITE"), QLatin1String("identity"))),
+          query(db)
     {
+        if (!db.isValid())
+        {
+            qFatal("identity database doesn't have a valid driver");
+        }
+
         db.setDatabaseName(QLatin1String("localface.db"));
         if (!db.open())
         {
@@ -92,11 +98,7 @@ QString FaceDatabase::queryLabel(int id) const
     d->query.prepare(QLatin1String("SELECT label FROM identity WHERE id = :id"));
     d->query.bindValue(QLatin1String(":id"), id);
 
-    if(d->query.exec())
-    {
-        qDebug() << "query label successfully";
-    }
-    else
+    if(! d->query.exec())
     {
         qDebug() << "fail to query label, error" << d->query.lastError();
     }
@@ -105,6 +107,8 @@ QString FaceDatabase::queryLabel(int id) const
     {
         return d->query.value(0).toString();
     }
+
+    qDebug() << "face database: query return null";
 
     return QString();
 }

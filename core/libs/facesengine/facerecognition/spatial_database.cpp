@@ -51,8 +51,14 @@ class Q_DECL_HIDDEN SpatialDatabase::Private
 {
 public:
     Private()
-        : db(QSqlDatabase::addDatabase(QLatin1String("QSQLITE")))
+        : db(QSqlDatabase::addDatabase(QLatin1String("QSQLITE"), QLatin1String("kd_tree"))),
+          query(db)
     {
+        if (!db.isValid())
+        {
+            qFatal("kdtree database doesn't have a valid driver");
+        }
+
         db.setDatabaseName(QLatin1String("localface.db"));
         if (!db.open())
         {
