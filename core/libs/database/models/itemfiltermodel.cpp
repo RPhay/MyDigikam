@@ -1041,6 +1041,7 @@ QString ItemFilterModel::categoryIdentifier(const ItemInfo& i, const FaceTagsIfa
 
     qlonglong groupedImageId = i.groupImageId();
     ItemInfo info = groupedImageId == -1 ? i : ItemInfo(groupedImageId);
+    const QMap<QString, QString> map = info.getSuggestedNames();
 
     switch (d->sorter.categorizationMode)
     {
@@ -1058,6 +1059,18 @@ QString ItemFilterModel::categoryIdentifier(const ItemInfo& i, const FaceTagsIfa
 
         case ItemSortSettings::CategoryByMonth:
             return info.dateTime().date().toString(QLatin1String("MMyyyy"));
+
+        case ItemSortSettings::CategoryByFaces:
+            /// No face in image.
+            if (face.isNull())
+                return QStringLiteral("No Face");
+
+            /// Suggested Name exists for Region.
+            if (!map.value(face.region().toXml()).isEmpty())
+                return map.value(face.region().toXml());
+
+            /// Region is Confirmed. Appending TagId, to prevent multiple Confirmed categories.
+            return QStringLiteral("Confirmed(%1)").arg(face.tagId());
 
         default:
             return QString();
