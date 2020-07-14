@@ -40,6 +40,7 @@ namespace Digikam
 {
 
 class ItemInfo;
+class FaceTagsIface;
 
 namespace DatabaseFields
 {
