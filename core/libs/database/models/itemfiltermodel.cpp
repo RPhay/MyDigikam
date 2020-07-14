@@ -1030,7 +1030,7 @@ static inline QString fastNumberToString(int id)
     return QLatin1String(c);
 }
 
-QString ItemFilterModel::categoryIdentifier(const ItemInfo& i) const
+QString ItemFilterModel::categoryIdentifier(const ItemInfo& i, const FaceTagsIface& face) const
 {
     Q_D(const ItemFilterModel);
 
