@@ -362,6 +362,26 @@ QVariant ItemFilterModel::data(const QModelIndex& index, int role) const
         case CategoryDateRole:
             return d->imageModel->imageInfoRef(mapToSource(index)).dateTime();
 
+        case CategoryFaceRole:
+            if (extraData.isNull())
+            {
+                return QStringLiteral("No face");
+            }
+
+            if (face.type() == FaceTagsIface::UnknownName)
+            {
+                return QStringLiteral("Unknown");
+            }
+
+            if (face.type() == FaceTagsIface::ConfirmedName)
+            {
+                QString name = FaceTags::faceNameForTag(face.tagId());
+                name += QStringLiteral(" [Confirmed]");
+                return name;
+            }
+
+            return d->imageModel->imageInfoRef(mapToSource(index)).getSuggestedNames().value(face.region().toXml());
+
         case GroupIsOpenRole:
             return (d->groupFilter.isAllOpen() ||
                     d->groupFilter.isOpen(d->imageModel->imageInfoRef(mapToSource(index)).id()));
