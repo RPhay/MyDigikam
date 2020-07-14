@@ -799,4 +799,5 @@ BUGFIXES:
 757 ==> 367784 - Thumbnails Disappear After Tagging.
 758 ==> 397194 - Face tags are not well rendered when coming from Portrait DNG files.
 759 ==> 385313 - Crash on attempting to create fingerprints.
-760 ==> 
+760 ==> 417014 - Unable to edit slideshow o'n Mac.
+761 ==> 
