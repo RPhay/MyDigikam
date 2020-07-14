@@ -23,6 +23,8 @@
 #ifndef FACEEMBEDDING_DB_H
 #define FACEEMBEDDING_DB_H
 
+#include "digikam_opencv.h"
+
 namespace RecognitionTest
 {
 class FaceEmbeddingDb
@@ -31,6 +33,14 @@ public:
     explicit FaceEmbeddingDb();
     ~FaceEmbeddingDb();
 
+public:
+    /**
+     * @brief insert : insert a new face embedding to database
+     * @param faceEmbedding
+     * @param label
+     * @return true if successed
+     */
+    bool insert(const cv::Mat& faceEmbedding, const int label) const;
 private:
 
     class Private;

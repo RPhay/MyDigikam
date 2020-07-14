@@ -78,7 +78,32 @@ public:
 };
 
 FaceEmbeddingDb::FaceEmbeddingDb()
+    : d(new Private())
 {
-
 }
+
+FaceEmbeddingDb::~FaceEmbeddingDb()
+{
+    delete d;
+}
+
+bool FaceEmbeddingDb::insert(const cv::Mat& faceEmbedding, const int label) const
+{
+    d->query.prepare(QLatin1String("INSERT INTO face_embedding (label, faceEmbedding) "
+                                   "VALUES (:label, :faceEmbedding)"));
+
+    d->query.bindValue(QLatin1String(":label"), label);
+    d->query.bindValue(QLatin1String(":faceEmbedding"),
+                       QByteArray::fromRawData((char*)faceEmbedding.ptr<float>(), (sizeof(float) * 128)));
+
+    if (!d->query.exec())
+    {
+        qWarning() << "fail to registered new face embedding, error" << d->query.lastError();
+
+        return false;
+    }
+
+    return true;
+}
+
 }
