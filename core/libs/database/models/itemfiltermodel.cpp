@@ -36,6 +36,8 @@
 #include "coredbwatch.h"
 #include "iteminfolist.h"
 #include "itemmodel.h"
+#include "facetagsiface.h"
+#include "facetags.h"
 
 namespace Digikam
 {
