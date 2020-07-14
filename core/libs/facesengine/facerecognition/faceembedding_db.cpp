@@ -105,7 +105,7 @@ KDTree FaceEmbeddingDb::reconstructTree() const
     KDTree tree(128);
 
     // favor new data
-    if (d->query.exec(QLatin1String("SELECT label, embedding FROM face_embedding ORDER BY label")))
+    if (d->query.exec(QLatin1String("SELECT label, embedding FROM face_embedding")))
     {
         if (d->query.last())
         {
@@ -122,6 +122,26 @@ KDTree FaceEmbeddingDb::reconstructTree() const
     }
 
     return tree;
+}
+
+cv::Ptr<cv::ml::TrainData> FaceEmbeddingDb::trainData() const
+{
+    cv::Mat feature, label;
+
+    if (d->query.exec(QLatin1String("SELECT label, embedding FROM face_embedding")))
+    {
+        if (d->query.last())
+        {
+            do
+            {
+                label.push_back(d->query.value(0).toInt());
+                feature.push_back(cv::Mat(1, 128, CV_32F, d->query.value(1).toByteArray().data()).clone());
+            }
+            while(d->query.previous());
+        }
+    }
+
+    return cv::ml::TrainData::create(feature, 0, label);
 }
 
 }

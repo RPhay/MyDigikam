@@ -105,12 +105,7 @@ KDNode* KDNode::insert(const cv::Mat& nodePos, const Identity& identity)
     }
 
     KDNode* parent = findParent(nodePos);
-/*
-    if (nodePos == parent->getPosition())
-    {
-        return nullptr;
-    }
-*/
+
     KDNode* newNode = new KDNode(nodePos, identity,
                                  ((parent->d->splitAxis + 1) % d->nbDimension),
                                  d->nbDimension);

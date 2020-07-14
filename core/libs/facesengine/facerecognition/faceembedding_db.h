@@ -24,6 +24,7 @@
 #define FACEEMBEDDING_DB_H
 
 #include "digikam_opencv.h"
+#include "opencv2/ml.hpp"
 
 #include "kd_tree.h"
 
@@ -49,6 +50,8 @@ public:
      * @return
      */
     KDTree reconstructTree() const;
+
+    cv::Ptr<cv::ml::TrainData> trainData() const;
 
 private:
 
