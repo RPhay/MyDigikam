@@ -51,7 +51,7 @@ scan-build cmake -G "Unix Makefiles" . \
       -DENABLE_MEDIAPLAYER=ON \
       -DENABLE_DBUS=ON \
       -DENABLE_APPSTYLES=ON \
-      -DENABLE_QWEBENGINE=OFF \
+      -DENABLE_QWEBENGINE=ON \
       -Wno-dev \
       ..
 
