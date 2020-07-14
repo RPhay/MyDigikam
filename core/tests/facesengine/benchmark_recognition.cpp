@@ -88,13 +88,9 @@ public:
     Q_SLOT void registerTrainingSet();
     Q_SLOT void saveData();
 
-    Q_SLOT void verifyTestSetCosDistance();
-    Q_SLOT void verifyTestSetL2Distance();
     Q_SLOT void verifyTestSetSupportVectorMachine();
     Q_SLOT void verifyTestKNN();
     Q_SLOT void verifyTestKDTree(int k);
-    Q_SLOT void verifyTestMLP(double threshold);
-    Q_SLOT void verifyTestLogisticRegression();
     Q_SLOT void verifyTestDb(int k);
 
     Q_SLOT void testWriteDb();
@@ -424,20 +420,9 @@ void Benchmark::saveData()
     dataFile.close();
 }
 
-
-void Benchmark::verifyTestSetCosDistance()
-{
-    verifyTestSet(FaceRecognizer::CosDistance, 0.7);
-}
-
-void Benchmark::verifyTestSetL2Distance()
-{
-    verifyTestSet(FaceRecognizer::L2Distance, 0.7);
-}
-
 void Benchmark::verifyTestSetSupportVectorMachine()
 {
-    verifyTestSet(FaceRecognizer::SupportVectorMachine, 0.7);
+    verifyTestSet(FaceRecognizer::SVM, 0.7);
 }
 
 void Benchmark::verifyTestKNN()
@@ -448,16 +433,6 @@ void Benchmark::verifyTestKNN()
 void Benchmark::verifyTestKDTree(int k)
 {
     verifyTestSet(FaceRecognizer::Tree, k);
-}
-
-void Benchmark::verifyTestMLP(double threshold)
-{
-    verifyTestSet(FaceRecognizer::MLP, threshold);
-}
-
-void Benchmark::verifyTestLogisticRegression()
-{
-    verifyTestSet(FaceRecognizer::LogisticRegression, 0);
 }
 
 void Benchmark::verifyTestDb(int k)
@@ -599,11 +574,6 @@ int main(int argc, char** argv)
 
     benchmark.fetchData();
     benchmark.registerTrainingSet();
-    //qDebug() << "Cos distance:";
-    //benchmark.verifyTestSetCosDistance();
-
-    //qDebug() << "L2 distance:";
-    //benchmark.verifyTestSetL2Distance();
     //qDebug() << "SVM:";
     //benchmark.verifyTestSetSupportVectorMachine();
 
@@ -615,14 +585,7 @@ int main(int argc, char** argv)
 
     qDebug() << "Database";
     benchmark.verifyTestDb(3);
-/*
-    double threshold = 0.5f;
-    qDebug() << "MLP with threshold:" << threshold;
-    benchmark.verifyTestMLP(threshold);
 
-    qDebug() << "Logistic regression";
-    benchmark.verifyTestLogisticRegression();
-*/
     return 0;
 }
 

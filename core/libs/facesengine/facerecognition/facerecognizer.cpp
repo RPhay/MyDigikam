@@ -81,28 +81,6 @@ public:
 
         knn->setAlgorithmType(cv::ml::KNearest::BRUTE_FORCE);
         knn->setIsClassifier(true);
-
-        mlp = cv::ml::ANN_MLP::create();
-        // use 16 bit to index label
-        int layer_sz[] = { 128, 200, 250, 150, 16 };
-        int nlayers = 5;
-        cv::Mat layer_sizes(1, nlayers, CV_32S, layer_sz);
-
-        int method = cv::ml::ANN_MLP::BACKPROP;
-        double method_param = 0.001;
-        int max_iter = 10000;
-
-        mlp->setLayerSizes(layer_sizes);
-        mlp->setActivationFunction(cv::ml::ANN_MLP::SIGMOID_SYM, 0, 0);
-        mlp->setTermCriteria(cv::TermCriteria(cv::TermCriteria::EPS, max_iter, 0));
-        mlp->setTrainMethod(method, method_param);
-
-        logisticRegression = cv::ml::LogisticRegression::create();
-        logisticRegression->setLearningRate(0.001);
-        logisticRegression->setTermCriteria(cv::TermCriteria(cv::TermCriteria::EPS, max_iter, 0));
-        logisticRegression->setRegularization(cv::ml::LogisticRegression::REG_DISABLE);
-        logisticRegression->setTrainMethod(cv::ml::LogisticRegression::BATCH);
-        logisticRegression->setMiniBatchSize(1);
     }
 
     ~Private()
@@ -124,23 +102,12 @@ public:
 
     int trainSVM() const;
     int trainKNN() const;
-    int trainMLP() const;
-    int trainLogisticRegression() const;
-
-    void onlineTrainSVM(const std::vector<float>& inputSample, int inputLabel) const;
-    void onlineTrainKNN(const std::vector<float>& inputSample, int inputLabel) const;
 
     Identity predictSVM(cv::Mat faceEmbedding) const;
     Identity predictKNN(cv::Mat faceEmbedding) const;
-    Identity predictMLP(cv::Mat faceEmbedding, float threshold) const;
-    Identity predictLogisticRegression(cv::Mat faceEmbedding) const;
 
     void addIndentityToTree(const Identity& id);
     Identity predictKDTree(const cv::Mat& faceEmbedding, int k) const;
-
-    Identity predictCosine(const std::vector<float>& faceEmbedding, double threshold) const;
-    Identity predictL2(const std::vector<float>& faceEmbedding, double threshold) const;
-
     Identity predictDb(const cv::Mat& faceEmbedding, int k) const;
 public:
 
@@ -150,8 +117,6 @@ public:
     FaceExtractor* extractor;
     cv::Ptr<cv::ml::SVM> svm;
     cv::Ptr<cv::ml::KNearest> knn;
-    cv::Ptr<cv::ml::ANN_MLP> mlp;
-    cv::Ptr<cv::ml::LogisticRegression> logisticRegression;
 
     QHash<QString, QVector<Identity> > faceLibrary;
     QVector<QString> labels;
@@ -196,26 +161,6 @@ int FaceRecognizer::Private::trainSVM() const
     return size;
 }
 
-void FaceRecognizer::Private::onlineTrainSVM(const std::vector<float>& inputSample, int inputLabel) const
-{
-    cv::Mat feature, label;
-    label.push_back(inputLabel);
-    feature.push_back(FaceExtractor::vectortomat(inputSample));
-
-    cv::Ptr<cv::ml::TrainData> trainingSample = cv::ml::TrainData::create(feature, 0, label);
-
-    qDebug() << "online train svn";
-
-    if (svm->train(trainingSample, cv::ml::StatModel::UPDATE_MODEL))
-    {
-        qDebug() << "online train svm";
-    }
-    else
-    {
-        qDebug() << "fail online train svm";
-    }
-}
-
 int FaceRecognizer::Private::trainKNN() const
 {
     cv::Mat features, label;
@@ -246,106 +191,6 @@ int FaceRecognizer::Private::trainKNN() const
 
     return size;
 }
-
-
-int FaceRecognizer::Private::trainMLP() const
-{
-    cv::Mat features, label;
-    int size = 0;
-
-    QElapsedTimer timer;
-    timer.start();
-
-    for (int i = 0; i < labels.size(); ++i)
-    {
-        for (QVector<Identity>::const_iterator iter  = faceLibrary[labels[i]].cbegin();
-                                               iter != faceLibrary[labels[i]].cend();
-                                             ++iter)
-        {
-            QJsonArray jsonFaceEmbedding = QJsonDocument::fromJson(iter->attribute(QLatin1String("faceEmbedding")).toLatin1()).array();
-            std::vector<float> recordedFaceEmbedding = FaceExtractor::decodeVector(jsonFaceEmbedding);
-
-            cv::Mat train_response = cv::Mat::zeros(1, 16, CV_32F);
-
-            int index = i;
-            int j = 0;
-
-            while (index > 1)
-            {
-                int newIndex = index / 2;
-
-                train_response.at<float>(0, j) = index - newIndex*2;
-
-                index = newIndex;
-                ++j;
-            }
-
-            train_response.at<float>(0, j) = index;
-
-            label.push_back(train_response);
-            features.push_back(FaceExtractor::vectortomat(recordedFaceEmbedding));
-
-            ++size;
-        }
-    }
-
-    mlp->train(features, 0, label);
-
-    qDebug() << "MLP trains" << size << "samples in" << timer.elapsed() << "ms";
-
-    return size;
-}
-
-int FaceRecognizer::Private::trainLogisticRegression() const
-{
-    cv::Mat features, label;
-    int size = 0;
-
-    QElapsedTimer timer;
-    timer.start();
-
-    for (int i = 0; i < labels.size(); ++i)
-    {
-        for (QVector<Identity>::const_iterator iter  = faceLibrary[labels[i]].cbegin();
-                                               iter != faceLibrary[labels[i]].cend();
-                                             ++iter)
-        {
-            QJsonArray jsonFaceEmbedding = QJsonDocument::fromJson(iter->attribute(QLatin1String("faceEmbedding")).toLatin1()).array();
-            std::vector<float> recordedFaceEmbedding = FaceExtractor::decodeVector(jsonFaceEmbedding);
-
-            label.push_back(float(i));
-            features.push_back(FaceExtractor::vectortomat(recordedFaceEmbedding));
-
-            ++size;
-        }
-    }
-
-    logisticRegression->train(features, 0, label);
-
-    qDebug() << "Logistic regression trains" << size << "samples in" << timer.elapsed() << "ms";
-
-    return size;
-}
-
-
-void FaceRecognizer::Private::onlineTrainKNN(const std::vector<float>& inputSample, int inputLabel) const
-{
-    cv::Mat feature, label;
-    label.push_back(inputLabel);
-    feature.push_back(FaceExtractor::vectortomat(inputSample));
-
-    cv::Ptr<cv::ml::TrainData> trainingSample = cv::ml::TrainData::create(feature, 0, label);
-
-    if (knn->train(trainingSample, cv::ml::StatModel::UPDATE_MODEL))
-    {
-        qDebug() << "online train knn";
-    }
-    else
-    {
-        qDebug() << "fail online train knn";
-    }
-}
-
 
 Identity FaceRecognizer::Private::predictSVM(cv::Mat faceEmbedding) const
 {
@@ -382,62 +227,6 @@ Identity FaceRecognizer::Private::predictKNN(cv::Mat faceEmbedding) const
 
     int     id    = int(output.at<float>(0));
     QString label = db.queryLabel(id);
-
-    Identity identity;
-    identity.setId(id);
-    identity.setAttribute(QLatin1String("fullName"), label);
-
-    return identity;
-}
-
-Identity FaceRecognizer::Private::predictMLP(cv::Mat faceEmbedding, float threshold) const
-{
-    if (!mlp->isTrained())
-    {
-        qDebug() << "train mlp";
-        trainMLP();
-    }
-
-    cv::Mat output;
-
-    mlp->predict(faceEmbedding, output);
-
-    int id = 0;
-
-    for (int i = 0; i < 16; ++i)
-    {
-        if (output.at<float>(0, i) >= threshold)
-        {
-            id += int(pow(2, i));
-        }
-    }
-
-    Identity identity;
-
-    if (id < labels.size())
-    {
-        QString label = labels[id];
-
-        identity.setId(id);
-        identity.setAttribute(QLatin1String("fullName"), label);
-    }
-
-    return identity;
-}
-
-Identity FaceRecognizer::Private::predictLogisticRegression(cv::Mat faceEmbedding) const
-{
-    if (!logisticRegression->isTrained())
-    {
-        qDebug() << "train logistic regression";
-        trainLogisticRegression();
-    }
-
-    cv::Mat output;
-    int id = logisticRegression->predict(faceEmbedding);
-
-    //int     id    = int(output.at<float>(0));
-    QString label = labels[id];
 
     Identity identity;
     identity.setId(id);
@@ -545,75 +334,6 @@ Identity FaceRecognizer::Private::predictDb(const cv::Mat& faceEmbedding, int k)
     return identity;
 }
 
-
-Identity FaceRecognizer::Private::predictCosine(const std::vector<float>& faceEmbedding, double threshold) const
-{
-    double bestDistance = -1;
-    QVector<Identity>::const_iterator prediction;
-
-    for (QHash<QString, QVector<Identity> >::const_iterator group  = faceLibrary.cbegin();
-                                                            group != faceLibrary.cend();
-                                                          ++group)
-    {
-        for (QVector<Identity>::const_iterator iter  = group.value().cbegin();
-                                               iter != group.value().cend();
-                                             ++iter)
-        {
-            QJsonArray jsonFaceEmbedding = QJsonDocument::fromJson(iter->attribute(QLatin1String("faceEmbedding")).toLatin1()).array();
-            std::vector<float> recordedFaceEmbedding = FaceExtractor::decodeVector(jsonFaceEmbedding);
-
-            double distance = FaceExtractor::cosineDistance(recordedFaceEmbedding, faceEmbedding);
-
-            if (distance > bestDistance)
-            {
-                bestDistance  = distance;
-                prediction    = iter;
-            }
-        }
-    }
-
-    if (bestDistance > threshold)
-    {
-        return *prediction;
-    }
-
-    return Identity();
-}
-
-Identity FaceRecognizer::Private::predictL2(const std::vector<float>& faceEmbedding, double threshold) const
-{
-    double bestDistance = 1;
-    QVector<Identity>::const_iterator prediction;
-
-    for (QHash<QString, QVector<Identity> >::const_iterator group  = faceLibrary.cbegin();
-                                                            group != faceLibrary.cend();
-                                                          ++group)
-    {
-        for (QVector<Identity>::const_iterator iter  = group.value().cbegin();
-                                               iter != group.value().cend();
-                                             ++iter)
-        {
-            QJsonArray jsonFaceEmbedding = QJsonDocument::fromJson(iter->attribute(QLatin1String("faceEmbedding")).toLatin1()).array();
-            std::vector<float> recordedFaceEmbedding = FaceExtractor::decodeVector(jsonFaceEmbedding);
-
-            double distance = FaceExtractor::L2squareDistance(recordedFaceEmbedding, faceEmbedding);
-
-            if (distance < bestDistance)
-            {
-                bestDistance = distance;
-                prediction   = iter;
-            }
-        }
-    }
-
-    if (bestDistance < threshold)
-    {
-        return *prediction;
-    }
-
-    return Identity();
-}
-
 FaceRecognizer::FaceRecognizer(bool debug)
     : d(new Private(debug))
 {
@@ -671,21 +391,13 @@ Identity FaceRecognizer::findIdenity(const cv::Mat& preprocessedImage, Compariso
     Identity id;
 
     // Use ML to predict label
-    if (metric == SupportVectorMachine)
+    if (metric == SVM)
     {
         id = d->predictSVM(d->extractor->getFaceDescriptor(preprocessedImage));
     }
     else if (metric == KNN)
     {
         id = d->predictKNN(d->extractor->getFaceDescriptor(preprocessedImage));
-    }
-    else if (metric == MLP)
-    {
-        id = d->predictMLP(d->extractor->getFaceDescriptor(preprocessedImage), float(threshold));
-    }
-    else if (metric == LogisticRegression)
-    {
-        id = d->predictLogisticRegression(d->extractor->getFaceDescriptor(preprocessedImage));
     }
     else if (metric == Tree)
     {
@@ -694,22 +406,6 @@ Identity FaceRecognizer::findIdenity(const cv::Mat& preprocessedImage, Compariso
     else if (metric == DB)
     {
         id = d->predictDb(d->extractor->getFaceDescriptor(preprocessedImage), (int)threshold);
-    }
-    else
-    {
-        std::vector<float> faceEmbedding = d->extractor->getFaceEmbedding(preprocessedImage);
-
-        switch (metric)
-        {
-            case CosDistance:
-                id = d->predictCosine(faceEmbedding, threshold);
-                break;
-            case L2Distance:
-                id = d->predictL2(faceEmbedding, threshold);
-                break;
-            default:
-                break;
-        }
     }
 
     std::vector<float> faceEmbedding = d->extractor->getFaceEmbedding(preprocessedImage);

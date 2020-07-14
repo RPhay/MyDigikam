@@ -47,12 +47,8 @@ public:
 
     enum ComparisonMetric
     {
-        CosDistance = 0,
-        L2Distance,
-        SupportVectorMachine,
+        SVM = 0,
         KNN,
-        MLP,
-        LogisticRegression,
         Tree,
         DB,
     };
