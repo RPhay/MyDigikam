@@ -34,6 +34,7 @@ namespace Digikam
 class Album;
 class ItemAlbumModel;
 class ItemAlbumFilterModelPrivate;
+class FaceTagsIface;
 
 class ItemAlbumFilterModel : public ItemFilterModel
 {
