@@ -89,11 +89,11 @@ FaceEmbeddingDb::~FaceEmbeddingDb()
 
 bool FaceEmbeddingDb::insert(const cv::Mat& faceEmbedding, const int label) const
 {
-    d->query.prepare(QLatin1String("INSERT INTO face_embedding (label, faceEmbedding) "
-                                   "VALUES (:label, :faceEmbedding)"));
+    d->query.prepare(QLatin1String("INSERT INTO face_embedding (label, embedding) "
+                                   "VALUES (:label, :embedding)"));
 
     d->query.bindValue(QLatin1String(":label"), label);
-    d->query.bindValue(QLatin1String(":faceEmbedding"),
+    d->query.bindValue(QLatin1String(":embedding"),
                        QByteArray::fromRawData((char*)faceEmbedding.ptr<float>(), (sizeof(float) * 128)));
 
     if (!d->query.exec())
@@ -104,6 +104,30 @@ bool FaceEmbeddingDb::insert(const cv::Mat& faceEmbedding, const int label) cons
     }
 
     return true;
+}
+
+KDTree FaceEmbeddingDb::reconstructTree() const
+{
+    KDTree tree(128);
+
+    if (d->query.exec(QLatin1String("SELECT label, embedding FROM face_embedding")))
+    {
+        if (d->query.last())
+        {
+            // favor new data
+            do
+            {
+                Identity id;
+                id.setId(d->query.value(0).toInt());
+                cv::Mat recordedFaceEmbedding = cv::Mat(1, 128, CV_32F, d->query.value(1).toByteArray().data()).clone();
+
+                tree.add(recordedFaceEmbedding, id);
+            }
+            while(d->query.previous());
+        }
+    }
+
+    return tree;
 }
 
 }

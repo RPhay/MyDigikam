@@ -25,6 +25,8 @@
 
 #include "digikam_opencv.h"
 
+#include "kd_tree.h"
+
 namespace RecognitionTest
 {
 class FaceEmbeddingDb
@@ -41,6 +43,13 @@ public:
      * @return true if successed
      */
     bool insert(const cv::Mat& faceEmbedding, const int label) const;
+
+    /**
+     * @brief reconstructTree: reconstruct KD-Tree from data in the database
+     * @return
+     */
+    KDTree reconstructTree() const;
+
 private:
 
     class Private;
