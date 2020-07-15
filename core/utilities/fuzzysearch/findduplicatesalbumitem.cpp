@@ -96,7 +96,6 @@ QList<ItemInfo> FindDuplicatesAlbumItem::duplicatedItems(int minThreshould, int 
         return {};
     }
 
-    qDebug() << "Removing duplicates:" << itemCount();
     SearchXmlReader reader(d->album->query());
     reader.readToFirstField();
 
@@ -107,13 +106,15 @@ QList<ItemInfo> FindDuplicatesAlbumItem::duplicatedItems(int minThreshould, int 
 
     foreach (const qlonglong& imageId, list)
     {
-        if (imageId == refImage) {
+        if (imageId == refImage)
+        {
             continue;
         }
 
         ItemInfo info(imageId);
         int currentThreshould = info.similarityTo(refImage) * 100;
-        if (currentThreshould >= minThreshould && currentThreshould <= maxThreshould) {
+        if (currentThreshould >= minThreshould && currentThreshould <= maxThreshould)
+        {
             toRemove.append(info);
         }
     }

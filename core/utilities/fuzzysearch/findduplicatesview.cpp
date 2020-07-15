@@ -628,15 +628,17 @@ void FindDuplicatesView::resetAlbumsAndTags()
 }
 
 void FindDuplicatesView::slotRemoveDuplicates() {
-    int result = QMessageBox::warning(this,
-                        i18nc("@title:popup", "Remove Duplicates"),
-                         i18nc("@text:message", "Are you sure that you want to delete all of the supposed duplicated items found?\n"
-                                                "You cannot recover from this, and it's possible that the similarity threshould found"
-                                                "similar, but not equal, images. Continue at your own risk."),
-                        QMessageBox::StandardButton::Ok | QMessageBox::StandardButton::Cancel,
-                         QMessageBox::StandardButton::Cancel); // Default to Cancel so nobody deletes things by mistake.
+    int result = QMessageBox::warning(
+        this,
+        i18nc("@title:popup", "Remove Duplicates"),
+        i18nc("@text:message", "Are you sure that you want to delete all of the supposed duplicated items found?\n"
+                               "You cannot recover from this, and it's possible that the similarity threshould found"
+                               "similar, but not equal, images. Continue at your own risk."),
+        QMessageBox::StandardButton::Ok | QMessageBox::StandardButton::Cancel,
+        QMessageBox::StandardButton::Cancel); // Default to Cancel so nobody deletes things by mistake.
 
-    if (result != QMessageBox::StandardButton::Ok) {
+    if (result != QMessageBox::StandardButton::Ok)
+    {
         qDebug() << "Cancelling duplicate removal";
         return;
     }
