@@ -50,52 +50,47 @@ class Q_DECL_HIDDEN FaceRecognizer::Private
 {
 public:
 
-    Private(bool debug)
-        : debugMode(debug),
+    Private(Classifier method, bool debug)
+        : method(method),
+          debugMode(debug),
           identityCounter(0),
           extractor(new FaceExtractor),
-          tree(embeddingDb.reconstructTree())
+          facedb(new FaceDatabase),
+          embeddingDb(new FaceEmbeddingDb),
+          treedb(nullptr),
+          tree(nullptr)
     {
-        QFileInfo svmWeightsFile(svmFile);
-        if (svmWeightsFile.exists())
+        switch (method)
         {
-            svm = cv::ml::SVM::load(svmFile.toStdString());
-        }
-        else
-        {
-            svm = cv::ml::SVM::create();
-        }
+            case SVM:
+                svm = cv::ml::SVM::create();
+                svm->setKernel(cv::ml::SVM::LINEAR);
 
-        // use linear mapping
-        svm->setKernel(cv::ml::SVM::LINEAR);
-        QFileInfo knnWeightsFile(knnFile);
+                break;
+            case OpenCV_KNN:
+                knn = cv::ml::KNearest::create();
 
-        if (knnWeightsFile.exists())
-        {
-            knn = cv::ml::KNearest::load(knnFile.toStdString());
+                knn->setAlgorithmType(cv::ml::KNearest::BRUTE_FORCE);
+                knn->setIsClassifier(true);
+                break;
+            case Tree:
+                tree = embeddingDb->reconstructTree();
+                break;
+            case DB:
+                treedb = new SpatialDatabase();
+                break;
+            default:
+                qFatal("Invalid classifier");
         }
-        else
-        {
-            knn = cv::ml::KNearest::create();
-        }
-
-        knn->setAlgorithmType(cv::ml::KNearest::BRUTE_FORCE);
-        knn->setIsClassifier(true);
     }
 
     ~Private()
     {
-        if (knn->isTrained())
-        {
-            knn->save(knnFile.toStdString());
-        }
-
-        if (svm->isTrained())
-        {
-            svm->save(svmFile.toStdString());
-        }
-
         delete extractor;
+        delete tree;
+        delete facedb;
+        delete embeddingDb;
+        delete treedb;
     }
 
 public:
@@ -111,6 +106,7 @@ public:
 
 public:
 
+    Classifier method;
     bool debugMode;
     int identityCounter;
 
@@ -118,24 +114,24 @@ public:
     cv::Ptr<cv::ml::SVM> svm;
     cv::Ptr<cv::ml::KNearest> knn;
 
-    // TODO put file names to Settings
-    const QString knnFile = QLatin1String("knn.bin");
-    const QString svmFile = QLatin1String("svm.bin");
+    FaceDatabase* facedb;
+    FaceEmbeddingDb* embeddingDb;
+    SpatialDatabase* treedb;
 
-    FaceDatabase db;
-    FaceEmbeddingDb embeddingDb;
-    SpatialDatabase treedb;
-    KDTree tree;
+    KDTree* tree;
 };
 
 bool FaceRecognizer::Private::trainSVM() const
 {
+    if (svm->empty())
+    {
+        return false;
+    }
+
     QElapsedTimer timer;
     timer.start();
 
-    cv::Ptr<cv::ml::TrainData> trainData = embeddingDb.trainData();
-    qDebug() << "train samples:" << trainData->getNSamples();
-    svm->train(trainData);
+    svm->train(embeddingDb->trainData());
 
     qDebug() << "Support vector machine trains in" << timer.elapsed() << "ms";
 
@@ -144,10 +140,15 @@ bool FaceRecognizer::Private::trainSVM() const
 
 bool FaceRecognizer::Private::trainKNN() const
 {
+    if (knn->empty())
+    {
+        return false;
+    }
+
     QElapsedTimer timer;
     timer.start();
 
-    knn->train(embeddingDb.trainData());
+    knn->train(embeddingDb->trainData());
 
     qDebug() << "KNN trains in" << timer.elapsed() << "ms";
 
@@ -158,7 +159,10 @@ int FaceRecognizer::Private::predictSVM(cv::Mat faceEmbedding) const
 {
     if (!svm->isTrained())
     {
-        trainSVM();
+        if (!trainSVM())
+        {
+            return -1;
+        }
     }
 
     return (int(svm->predict(faceEmbedding)));
@@ -168,7 +172,10 @@ int FaceRecognizer::Private::predictKNN(cv::Mat faceEmbedding) const
 {
     if (!knn->isTrained())
     {
-        trainKNN();
+        if (!trainKNN())
+        {
+            return -1;
+        }
     }
 
     cv::Mat output;
@@ -179,8 +186,13 @@ int FaceRecognizer::Private::predictKNN(cv::Mat faceEmbedding) const
 
 int FaceRecognizer::Private::predictKDTree(const cv::Mat& faceEmbedding, int k) const
 {
+    if (! tree)
+    {
+        return -1;
+    }
+
     // Look for K-nearest neighbor which have the sqr distance greater smaller than 1
-    QMap<double, QVector<KDNode*> > closestNeighbors = tree.getClosestNeighbors(faceEmbedding, 1.0, k);
+    QMap<double, QVector<KDNode*> > closestNeighbors = tree->getClosestNeighbors(faceEmbedding, 1.0, k);
 
     QMap<int, QVector<double> > votingGroups;
 
@@ -224,7 +236,12 @@ int FaceRecognizer::Private::predictKDTree(const cv::Mat& faceEmbedding, int k) 
 
 int FaceRecognizer::Private::predictDb(const cv::Mat& faceEmbedding, int k) const
 {
-    QMap<double, QVector<int> > closestNeighbors = treedb.getClosestNeighbors(faceEmbedding, 1.0, k);
+    if (!treedb)
+    {
+        return -1;
+    }
+
+    QMap<double, QVector<int> > closestNeighbors = treedb->getClosestNeighbors(faceEmbedding, 1.0, k);
 
     QMap<int, QVector<double> > votingGroups;
 
@@ -262,8 +279,8 @@ int FaceRecognizer::Private::predictDb(const cv::Mat& faceEmbedding, int k) cons
     return prediction;
 }
 
-FaceRecognizer::FaceRecognizer(bool debug)
-    : d(new Private(debug))
+FaceRecognizer::FaceRecognizer(Classifier method, bool debug)
+    : d(new Private(method, debug))
 {
 }
 
@@ -314,27 +331,27 @@ cv::Mat FaceRecognizer::prepareForRecognition(const QImage& inputImage)
     return cvImage;
 }
 
-Identity FaceRecognizer::findIdenity(const cv::Mat& preprocessedImage, ComparisonMetric metric, double threshold)
+Identity FaceRecognizer::findIdenity(const cv::Mat& preprocessedImage)
 {
     int id;
 
-    switch (metric)
+    switch (d->method)
     {
         case SVM:
             id = d->predictSVM(d->extractor->getFaceDescriptor(preprocessedImage));
             break;
-        case KNN:
+        case OpenCV_KNN:
             id = d->predictKNN(d->extractor->getFaceDescriptor(preprocessedImage));
             break;
         case Tree:
-            id = d->predictKDTree(d->extractor->getFaceDescriptor(preprocessedImage), (int)threshold);
+            id = d->predictKDTree(d->extractor->getFaceDescriptor(preprocessedImage), 3);
             break;
         case DB:
-            id = d->predictDb(d->extractor->getFaceDescriptor(preprocessedImage), (int)threshold);
+            id = d->predictDb(d->extractor->getFaceDescriptor(preprocessedImage), 3);
             break;
     }
 
-    QString label = d->db.queryLabel(id);
+    QString label = d->facedb->queryLabel(id);
 
     Identity identity;
     identity.setId(id);
@@ -370,11 +387,9 @@ int FaceRecognizer::saveIdentity(Identity& id, bool newLabel)
         }
 
         // register
-        int index = d->db.registerLabel(label);
+        int index = d->facedb->registerLabel(label);
 
         id.setId(index);
-
-        qDebug() << "label" << label << "registered with key" << index;
     }
     else if (id.isNull())
     {
@@ -392,30 +407,45 @@ int FaceRecognizer::saveIdentity(Identity& id, bool newLabel)
 
     QJsonArray jsonFaceEmbedding = QJsonDocument::fromJson(id.attribute(QLatin1String("faceEmbedding")).toLatin1()).array();
     cv::Mat recordedFaceEmbedding = FaceExtractor::vectortomat(FaceExtractor::decodeVector(jsonFaceEmbedding));
-/*
-    if (! d->treedb.insert(recordedFaceEmbedding, index))
+
+    d->embeddingDb->insert(recordedFaceEmbedding, index);
+
+    if (d->method == DB)
     {
-        qWarning() << "Error insert face embedding";
-        return -1;
+        if (! d->treedb->insert(recordedFaceEmbedding, index))
+        {
+            qWarning() << "Error insert face embedding";
+            return -1;
+        }
     }
-*/
-    // Create a KD-Node for this identity
-    d->tree.add(recordedFaceEmbedding, id);
-    d->embeddingDb.insert(recordedFaceEmbedding, index);
+    else if(d->method == Tree)
+    {
+        d->tree->add(recordedFaceEmbedding, id);
+    }
 
     return index;
 }
 
 bool FaceRecognizer::insertData(const cv::Mat& nodePos, const int label)
 {
-    return d->treedb.insert(nodePos, label);
+    if (!d->treedb)
+    {
+        return false;
+    }
+
+    return d->treedb->insert(nodePos, label);
 }
 
 QMap<double, QVector<int> > FaceRecognizer::getClosestNodes(const cv::Mat& position,
                                                             double sqRange,
                                                             int maxNbNeighbors)
 {
-    return d->treedb.getClosestNeighbors(position, sqRange, maxNbNeighbors);
+    if (!d->treedb)
+    {
+        return QMap<double, QVector<int> >();
+    }
+
+    return d->treedb->getClosestNeighbors(position, sqRange, maxNbNeighbors);
 }
 
 }

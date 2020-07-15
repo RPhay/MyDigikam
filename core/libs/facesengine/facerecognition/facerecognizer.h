@@ -45,10 +45,10 @@ class DIGIKAM_GUI_EXPORT FaceRecognizer
 {
 public:
 
-    enum ComparisonMetric
+    enum Classifier
     {
         SVM = 0,
-        KNN,
+        OpenCV_KNN,
         Tree,
         DB,
     };
@@ -56,7 +56,7 @@ public:
     /**
      *  @brief FaceRecognizer:Master class to control entire recognition using OpenFace algorithm
      */
-    explicit FaceRecognizer(bool debug = false);
+    explicit FaceRecognizer(Classifier method, bool debug = false);
     ~FaceRecognizer();
 
 public:
@@ -71,7 +71,7 @@ public:
      * @param inputImage
      * @return
      */
-    Identity findIdenity(const cv::Mat& preprocessedImage, ComparisonMetric metric, double threshold = 0.7);
+    Identity findIdenity(const cv::Mat& preprocessedImage);
 
     /**
      * @brief newIdentity : construct an instance of Identity with face embedding, and return it
@@ -90,6 +90,7 @@ public:
     int saveIdentity(Identity& id, bool newLabel);
 
     bool insertData(const cv::Mat& nodePos, const int label);
+
     QMap<double, QVector<int> > getClosestNodes(const cv::Mat& position,
                                                 double sqRange,
                                                 int maxNbNeighbors);

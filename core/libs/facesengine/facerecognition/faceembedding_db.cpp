@@ -100,9 +100,9 @@ bool FaceEmbeddingDb::insert(const cv::Mat& faceEmbedding, const int label) cons
     return true;
 }
 
-KDTree FaceEmbeddingDb::reconstructTree() const
+KDTree* FaceEmbeddingDb::reconstructTree() const
 {
-    KDTree tree(128);
+    KDTree* tree = new KDTree(128);
 
     // favor new data
     if (d->query.exec(QLatin1String("SELECT label, embedding FROM face_embedding")))
@@ -115,7 +115,7 @@ KDTree FaceEmbeddingDb::reconstructTree() const
                 id.setId(d->query.value(0).toInt());
                 cv::Mat recordedFaceEmbedding = cv::Mat(1, 128, CV_32F, d->query.value(1).toByteArray().data()).clone();
 
-                tree.add(recordedFaceEmbedding, id);
+                tree->add(recordedFaceEmbedding, id);
             }
             while(d->query.previous());
         }

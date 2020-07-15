@@ -49,7 +49,7 @@ public:
      * @brief reconstructTree: reconstruct KD-Tree from data in the database
      * @return
      */
-    KDTree reconstructTree() const;
+    KDTree* reconstructTree() const;
 
     cv::Ptr<cv::ml::TrainData> trainData() const;
 

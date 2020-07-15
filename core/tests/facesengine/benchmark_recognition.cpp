@@ -44,31 +44,21 @@
 using namespace Digikam;
 using namespace RecognitionTest;
 
-// TODO: Recognition is incorrect where human are wearing glasses
-// TODO: Verify cosnine distance Vs L2 distance
-
-
-
 /**
  * @brief The Benchmark class: a benchmark especially made for testing the performance of face recognition module
- * on faces images. The dataset should contain only face data (un-cropped or cropped). It's not built for other purposes.
- *
- * If the faces are already cropped, the photo will be passed directly the FaceRecognizer for face recognition.
- * If the faces are un-cropped in original image, it will pass through FaceDetector before it landing on Facerecognizer
- *
- * These 2 types of images can be easily detected by FaceDetector because FaceDetector cannot detected already cropped face.
+ * on faces images. The dataset should contain only face data. It's not built for other purposes.
  */
 class Benchmark : public QObject
 {
     Q_OBJECT
 public:
 
-    Benchmark();
+    Benchmark(FaceRecognizer::Classifier classifier);
     ~Benchmark();
 
 public:
 
-    void verifyTestSet(FaceRecognizer::ComparisonMetric metric, double threshold);
+    void verifyTestSet();
 
     void splitData(const QDir& dataDir, float splitRatio);
 
@@ -88,11 +78,6 @@ public:
     Q_SLOT void registerTrainingSet();
     Q_SLOT void saveData();
 
-    Q_SLOT void verifyTestSetSupportVectorMachine();
-    Q_SLOT void verifyTestKNN();
-    Q_SLOT void verifyTestKDTree(int k);
-    Q_SLOT void verifyTestDb(int k);
-
     Q_SLOT void testWriteDb();
     Q_SLOT void verifyKNearestDb();
 
@@ -105,7 +90,7 @@ private:
     FaceRecognizer*        m_recognizer;
 };
 
-Benchmark::Benchmark()
+Benchmark::Benchmark(FaceRecognizer::Classifier classifier)
     : QObject(),
       m_parser(nullptr),
       m_error(-1),
@@ -113,7 +98,7 @@ Benchmark::Benchmark()
       m_testSize(0)
 {
     m_detector   = new OpenCVDNNFaceDetector(DetectorNNModel::SSDMOBILENET);
-    m_recognizer = new FaceRecognizer(true);
+    m_recognizer = new FaceRecognizer(classifier, true);
 }
 
 Benchmark::~Benchmark()
@@ -169,13 +154,6 @@ void Benchmark::registerTrainingSet()
 
             if (preprocess(iter.value().at(i), face))
             {
-            /*
-                Identity newIdentity = m_recognizer->newIdentity(face);
-
-                newIdentity.setAttribute(QLatin1String("fullName"), iter.key());
-
-                m_recognizer->saveIdentity(newIdentity, false);
-             */
                 Identity newIdentity = m_recognizer->newIdentity(face);
 
                 newIdentity.setId(index);
@@ -192,7 +170,7 @@ void Benchmark::registerTrainingSet()
     qDebug() << "Registered <<  :" << m_trainSize << "faces in training set, with average" << float(elapsedDetection)/m_trainSize << "ms/face";
 }
 
-void Benchmark::verifyTestSet(FaceRecognizer::ComparisonMetric metric, double threshold)
+void Benchmark::verifyTestSet()
 {
     int nbNotRecognize = 0;
     int nbWrongLabel   = 0;
@@ -211,7 +189,7 @@ void Benchmark::verifyTestSet(FaceRecognizer::ComparisonMetric metric, double th
 
             if (preprocess(iter.value().at(i), face))
             {
-                Identity newIdentity = m_recognizer->findIdenity(face, metric, threshold);
+                Identity newIdentity = m_recognizer->findIdenity(face);
 
                 if (newIdentity.isNull() && m_trainSet.contains(iter.key()))
                 {
@@ -420,26 +398,6 @@ void Benchmark::saveData()
     dataFile.close();
 }
 
-void Benchmark::verifyTestSetSupportVectorMachine()
-{
-    verifyTestSet(FaceRecognizer::SVM, 0.7);
-}
-
-void Benchmark::verifyTestKNN()
-{
-    verifyTestSet(FaceRecognizer::KNN, 0.7);
-}
-
-void Benchmark::verifyTestKDTree(int k)
-{
-    verifyTestSet(FaceRecognizer::Tree, k);
-}
-
-void Benchmark::verifyTestDb(int k)
-{
-    verifyTestSet(FaceRecognizer::DB, k);
-}
-
 void Benchmark::testWriteDb()
 {
     QDir dataDir(m_parser->value(QLatin1String("dataset")));
@@ -565,7 +523,7 @@ int main(int argc, char** argv)
 {
     QApplication app(argc, argv);
 
-    Benchmark benchmark;
+    Benchmark benchmark(FaceRecognizer::Tree);
     benchmark.m_parser = parseOptions(app);
 
     //benchmark.saveData();
@@ -573,18 +531,8 @@ int main(int argc, char** argv)
     //benchmark.verifyKNearestDb();
 
     benchmark.fetchData();
-    benchmark.registerTrainingSet();
-    qDebug() << "SVM:";
-    benchmark.verifyTestSetSupportVectorMachine();
-
-    //qDebug() << "KNN:";
-    //benchmark.verifyTestKNN();
-
-    //qDebug() << "KD-Tree:";
-    //benchmark.verifyTestKDTree(5);
-
-    //qDebug() << "Database";
-    //benchmark.verifyTestDb(3);
+    qDebug() << "KD-Tree:";
+    benchmark.verifyTestSet();
 
     return 0;
 }
