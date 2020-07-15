@@ -50,10 +50,8 @@ class Q_DECL_HIDDEN FaceRecognizer::Private
 {
 public:
 
-    Private(Classifier method, bool debug)
+    Private(Classifier method)
         : method(method),
-          debugMode(debug),
-          identityCounter(0),
           extractor(new FaceExtractor),
           facedb(new FaceDatabase),
           embeddingDb(new FaceEmbeddingDb),
@@ -65,11 +63,9 @@ public:
             case SVM:
                 svm = cv::ml::SVM::create();
                 svm->setKernel(cv::ml::SVM::LINEAR);
-
                 break;
             case OpenCV_KNN:
                 knn = cv::ml::KNearest::create();
-
                 knn->setAlgorithmType(cv::ml::KNearest::BRUTE_FORCE);
                 knn->setIsClassifier(true);
                 break;
@@ -107,8 +103,6 @@ public:
 public:
 
     Classifier method;
-    bool debugMode;
-    int identityCounter;
 
     FaceExtractor* extractor;
     cv::Ptr<cv::ml::SVM> svm;
@@ -279,8 +273,8 @@ int FaceRecognizer::Private::predictDb(const cv::Mat& faceEmbedding, int k) cons
     return prediction;
 }
 
-FaceRecognizer::FaceRecognizer(Classifier method, bool debug)
-    : d(new Private(method, debug))
+FaceRecognizer::FaceRecognizer(Classifier method)
+    : d(new Private(method))
 {
 }
 
@@ -333,7 +327,7 @@ cv::Mat FaceRecognizer::prepareForRecognition(const QImage& inputImage)
 
 Identity FaceRecognizer::findIdenity(const cv::Mat& preprocessedImage)
 {
-    int id;
+    int id = -1;
 
     switch (d->method)
     {
@@ -351,11 +345,14 @@ Identity FaceRecognizer::findIdenity(const cv::Mat& preprocessedImage)
             break;
     }
 
-    QString label = d->facedb->queryLabel(id);
-
     Identity identity;
     identity.setId(id);
-    identity.setAttribute(QLatin1String("fullName"), label);
+
+    if (id > 0)
+    {
+        QString label = d->facedb->queryLabel(id);
+        identity.setAttribute(QLatin1String("fullName"), label);
+    }
 
     return identity;
 }

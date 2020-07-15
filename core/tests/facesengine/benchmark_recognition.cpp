@@ -98,7 +98,7 @@ Benchmark::Benchmark(FaceRecognizer::Classifier classifier)
       m_testSize(0)
 {
     m_detector   = new OpenCVDNNFaceDetector(DetectorNNModel::SSDMOBILENET);
-    m_recognizer = new FaceRecognizer(classifier, true);
+    m_recognizer = new FaceRecognizer(classifier);
 }
 
 Benchmark::~Benchmark()
@@ -531,7 +531,7 @@ int main(int argc, char** argv)
     //benchmark.verifyKNearestDb();
 
     benchmark.fetchData();
-    qDebug() << "KD-Tree:";
+    //benchmark.registerTrainingSet();
     benchmark.verifyTestSet();
 
     return 0;

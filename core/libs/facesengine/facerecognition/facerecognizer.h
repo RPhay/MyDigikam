@@ -56,7 +56,7 @@ public:
     /**
      *  @brief FaceRecognizer:Master class to control entire recognition using OpenFace algorithm
      */
-    explicit FaceRecognizer(Classifier method, bool debug = false);
+    explicit FaceRecognizer(Classifier method);
     ~FaceRecognizer();
 
 public:

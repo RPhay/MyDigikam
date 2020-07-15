@@ -175,7 +175,7 @@ MainWindow::MainWindow(const QDir &directory, QWidget *parent)
     setWindowTitle(QLatin1String("Face recognition Test"));
 
     m_detector   = new OpenCVDNNFaceDetector(DetectorNNModel::SSDMOBILENET);
-    m_recognizer = new FaceRecognizer(FaceRecognizer::Tree, true);
+    m_recognizer = new FaceRecognizer(FaceRecognizer::Tree);
     m_extractor  = new FaceExtractor();
 
     // Image erea
