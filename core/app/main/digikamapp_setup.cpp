@@ -598,6 +598,7 @@ void DigikamApp::setupActions()
     QAction* const separateByAlbumAction  = d->imageSeparationAction->addAction(i18n("By Album"));
     QAction* const separateByFormatAction = d->imageSeparationAction->addAction(i18n("By Format"));
     QAction* const separateByMonthAction  = d->imageSeparationAction->addAction(i18n("By Month"));
+    QAction* const separateByFacesAction  = d->imageSeparationAction->addAction(i18n("By Faces"));
 
     connect(noCategoriesAction, &QAction::triggered,
             this, [this]() { d->view->slotSeparateImages((int)ItemSortSettings::OneCategory); });
