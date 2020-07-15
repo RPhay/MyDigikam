@@ -45,6 +45,7 @@
 #include "itemmodel.h"
 #include "itemscanner.h"
 #include "searchfolderview.h"
+#include "facetagsiface.h"
 
 namespace Digikam
 {
@@ -166,6 +167,10 @@ void ItemCategoryDrawer::drawCategory(const QModelIndex& index, int /*sortRole*/
 
         case ItemSortSettings::CategoryByMonth:
             textForMonth(index, &header, &subLine);
+            break;
+
+        case ItemSortSettings::CategoryByFaces:
+            textForFace(index, &header, &subLine);
             break;
     }
 
