@@ -611,6 +611,9 @@ void DigikamApp::setupActions()
     connect(separateByMonthAction, &QAction::triggered,
             this, [this]() { d->view->slotSeparateImages((int)ItemSortSettings::CategoryByMonth); });
 
+    connect(separateByFacesAction, &QAction::triggered,
+            this, [this]() { d->view->slotSeparateImages((int)ItemSortSettings::CategoryByFaces); });
+
     // -----------------------------------------------------------------
 
     d->imageSeparationSortOrderAction                   = new KSelectAction(i18n("Item Separation Order"), this);
