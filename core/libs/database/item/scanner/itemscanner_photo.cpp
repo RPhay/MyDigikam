@@ -348,7 +348,7 @@ void ItemScanner::scanTags()
 
     if (pickId != -1)
     {
-        qCDebug(DIGIKAM_DATABASE_LOG) << "Pick Label found : " << pickId;
+        qCDebug(DIGIKAM_DATABASE_LOG) << "Pick Label found :" << pickId;
 
         int tagId = TagsCache::instance()->tagForPickLabel((PickLabel)pickId);
 
@@ -356,11 +356,11 @@ void ItemScanner::scanTags()
         {
             d->commit.tagIds << tagId;
             d->commit.hasPickTag = true;
-            qCDebug(DIGIKAM_DATABASE_LOG) << "Assigned Pick Label Tag  : " << tagId;
+            qCDebug(DIGIKAM_DATABASE_LOG) << "Assigned Pick Label Tag :" << tagId;
         }
         else
         {
-            qCDebug(DIGIKAM_DATABASE_LOG) << "Cannot find Pick Label Tag for : " << pickId;
+            qCDebug(DIGIKAM_DATABASE_LOG) << "Cannot find Pick Label Tag for :" << pickId;
         }
     }
 
@@ -370,7 +370,7 @@ void ItemScanner::scanTags()
 
     if (colorId != -1)
     {
-        qCDebug(DIGIKAM_DATABASE_LOG) << "Color Label found : " << colorId;
+        qCDebug(DIGIKAM_DATABASE_LOG) << "Color Label found :" << colorId;
 
         int tagId = TagsCache::instance()->tagForColorLabel((ColorLabel)colorId);
 
@@ -378,11 +378,11 @@ void ItemScanner::scanTags()
         {
             d->commit.tagIds << tagId;
             d->commit.hasColorTag = true;
-            qCDebug(DIGIKAM_DATABASE_LOG) << "Assigned Color Label Tag  : " << tagId;
+            qCDebug(DIGIKAM_DATABASE_LOG) << "Assigned Color Label Tag :" << tagId;
         }
         else
         {
-            qCDebug(DIGIKAM_DATABASE_LOG) << "Cannot find Color Label Tag for : " << colorId;
+            qCDebug(DIGIKAM_DATABASE_LOG) << "Cannot find Color Label Tag for :" << colorId;
         }
     }
 }
