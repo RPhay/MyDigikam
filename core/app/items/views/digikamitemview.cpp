@@ -328,6 +328,8 @@ void DigikamItemView::setFaceMode(bool on)
         setItemDelegate(d->faceDelegate);
         // grouping is not very much compatible with faces
         imageFilterModel()->setAllGroupsOpen(true);
+        // by default, Face View is categorized by Faces.
+        imageFilterModel()->setCategorizationMode(ItemSortSettings::CategoryByFaces);
     }
     else
     {
@@ -335,7 +337,10 @@ void DigikamItemView::setFaceMode(bool on)
         setItemDelegate(d->normalDelegate);
 
         bool open = ApplicationSettings::instance()->getAllGroupsOpen();
+        int separationOrder = ApplicationSettings::instance()->getImageSeparationMode();
+
         imageFilterModel()->setAllGroupsOpen(open);
+        imageFilterModel()->setCategorizationMode((ItemSortSettings::CategorizationMode)separationOrder);
     }
 }
 
