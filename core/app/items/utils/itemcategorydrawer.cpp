@@ -271,6 +271,13 @@ void ItemCategoryDrawer::textForMonth(const QModelIndex& index, QString* header,
     *subLine   = i18np("1 Item", "%1 Items", count);
 }
 
+void ItemCategoryDrawer::textForFace(const QModelIndex& index, QString* header, QString* subLine) const
+{
+    *header    = index.data(ItemFilterModel::CategoryFaceRole).toString();
+    int count  = d->view->categoryRange(index).height();
+    *subLine   = i18np("1 Item", "%1 Items", count);
+}
+
 void ItemCategoryDrawer::textForPAlbum(PAlbum* album, bool recursive, int count, QString* header, QString* subLine) const
 {
     Q_UNUSED(recursive);
