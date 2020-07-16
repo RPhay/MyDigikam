@@ -321,10 +321,13 @@ FaceTagsIface FaceTagsEditor::confirmName(const FaceTagsIface& face, int tagId,
 FaceTagsIface FaceTagsEditor::confirmName(const FaceTagsIface& face,  ItemInfo& info, int tagId,
                                           const TagRegion& confirmedRegion)
 {
+    /**
+     * Update ItemInfo Properties confirming an Unconfirmed Face.
+     * This ensures that sorting/categorization based on Faces is updated.
+     */
     if (face.type() == FaceTagsIface::UnconfirmedName && !info.isNull())
     {
         info.incrementUnconfirmedFaceCount(false);
-
         info.removeSuggestedName(face.region().toXml());
     }
 
@@ -497,10 +500,9 @@ FaceTagsIface FaceTagsEditor::changeTag(const FaceTagsIface& face, int newTagId,
     }
 
     /**
-     * If the old tag was Unconfirmed, then decrement
-     * counter of Unconfirmed Faces associated with the
-     * ItemInfo. This counter is used for dynamic sorting,
-     * based on Unconfirmed Face Count.
+     * Update ItemInfo Properties if the old tag
+     * was Unconfirmed. This ensures that sorting/categorization
+     * based on Faces is updated.
      */
     if (face.type() == FaceTagsIface::UnconfirmedName && !info.isNull())
     {
