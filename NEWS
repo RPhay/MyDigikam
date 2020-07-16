@@ -8,4 +8,5 @@ NEW FEATURES:
 BUGFIXES:
 
 001 ==> 421043 - Faces Detection crashes digiKam.
+002 ==> 363599 - Media File ctime Changes Even When Only Writing To XMP Sidecar File.
 002 ==> 
