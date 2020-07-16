@@ -155,7 +155,7 @@ QStringList WelcomePageView::featuresTabContent() const
     newFeatures << i18n("New plugin ImageMosaicWall to create an image based on a bunch of other photos.");
     newFeatures << i18n("Face Scan dialog contents is now simplified and embedded into left sidebar.");
     newFeatures << i18n("Add support for Gimp XCF files >= 2.10.");
-    newFeatures << i18n("Add Flatpak bundle support for Linux plateforms.");
+    newFeatures << i18n("Add Flatpak bundle support for Linux platforms.");
     newFeatures << i18n("Table-view is now able to show digiKam Tag-Paths properties.");
     newFeatures << i18n("Add option to write geolocation information in file metadata.");
     newFeatures << i18n("Add color label support for advanced metadata settings.");
@@ -163,21 +163,21 @@ QStringList WelcomePageView::featuresTabContent() const
     newFeatures << i18n("Improved support for UNC network paths under Windows.");
     newFeatures << i18n("Improved support for Unicode paths under Windows.");
     newFeatures << i18n("Update internal RAW engine to last Libraw 0.20.0 release including Canon CR3 and Sony A7R4 support.");
-    newFeatures << i18n("New camera supported:"
-                        "Canon CR3, PowerShot G5 X Mark II, G7 X Mark III, SX70 HS, EOS R, EOS RP, EOS 90D, EOS 250D, EOS M6 Mark II, EOS M50, EOS M200, EOS 1DX Mark III (lossless files only)"
-                        "DJI Mavic Air, Air2, Osmo Action,"
-                        "FujiFilm Fujifilm compressed/16bit, GFX 100, X-A7, X-Pro3, X100V, X-T4, X-T200,"
-                        "GoPro Fusion, HERO5, HERO6, HERO7, HERO8,"
-                        "Hasselblad L1D-20c, X1D II 50C,"
-                        "Leica D-LUX7, Q-P, Q2, V-LUX5, C-Lux / CAM-DC25, SL2, M10 Monochrom,"
-                        "Nikon D780, Z50, P950,"
-                        "Olympus TG-6, E-M5 Mark III, E-PL10, E-M1 Mark III,"
-                        "Panasonic Panasonic 14-bit, DC-FZ1000 II, DC-G90, DC-S1, DC-S1R, DC-S1H, DC-TZ95,"
-                        "PhaseOne IQ4 150MP,"
-                        "Rapsberry Pi RAW+JPEG format,"
-                        "Ricoh GR III,"
-                        "Sony A7R IV, A9 II, ILCE-6100, ILCE-6600, RX0 II, RX100 VII,"
-                        "Zenit M,"
+    newFeatures << i18n("New camera supported: "
+                        "Canon CR3, PowerShot G5 X Mark II, G7 X Mark III, SX70 HS, EOS R, EOS RP, EOS 90D, EOS 250D, EOS M6 Mark II, EOS M50, EOS M200, EOS 1DX Mark III (lossless files only) "
+                        "DJI Mavic Air, Air2, Osmo Action, "
+                        "FujiFilm Fujifilm compressed/16bit, GFX 100, X-A7, X-Pro3, X100V, X-T4, X-T200, "
+                        "GoPro Fusion, HERO5, HERO6, HERO7, HERO8, "
+                        "Hasselblad L1D-20c, X1D II 50C, "
+                        "Leica D-LUX7, Q-P, Q2, V-LUX5, C-Lux / CAM-DC25, SL2, M10 Monochrom, "
+                        "Nikon D780, Z50, P950, "
+                        "Olympus TG-6, E-M5 Mark III, E-PL10, E-M1 Mark III, "
+                        "Panasonic Panasonic 14-bit, DC-FZ1000 II, DC-G90, DC-S1, DC-S1R, DC-S1H, DC-TZ95, "
+                        "PhaseOne IQ4 150MP, "
+                        "Rapsberry Pi RAW+JPEG format, "
+                        "Ricoh GR III, "
+                        "Sony A7R IV, A9 II, ILCE-6100, ILCE-6600, RX0 II, RX100 VII, "
+                        "Zenit M, "
                         "also multiple modern smartphones.");
 
     // Add new features here...
