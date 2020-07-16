@@ -410,6 +410,17 @@ void ItemInfo::addSuggestedName(const QString& region, const QString& suggestedN
     m_data.data()->faceSuggestions.insert(region, suggestedName);
 }
 
+void ItemInfo::removeSuggestedName(const QString& region) const
+{
+    if (!m_data)
+    {
+        return;
+    }
+
+    m_data.data()->faceSuggestions.remove(region);
+    m_data.data()->faceSuggestionsCached = true;
+}
+
 void ItemInfo::setOrientation(int value)
 {
     if (!m_data)

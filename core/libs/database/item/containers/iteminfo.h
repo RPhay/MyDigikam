@@ -316,6 +316,13 @@ public:
     void addSuggestedName(const QString& region, const QString& suggestedName)          const;
 
     /**
+     * Removes the region from the Map associated with this image.
+     * This will be called whenever a user Confirms/Rejects
+     * Face Suggestions.
+     */
+    void removeSuggestedName(const QString& region)                                     const;
+
+    /**
      * @todo Supports only VideoMetadataField and ImageMetadataField values for now.
      */
     DatabaseFieldsHashRaw getDatabaseFieldsRaw(const DatabaseFields::Set& requestedSet) const;
