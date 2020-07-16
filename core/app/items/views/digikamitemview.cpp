@@ -436,7 +436,7 @@ void DigikamItemView::activated(const ItemInfo& info, Qt::KeyboardModifiers modi
         return;
     }
 
-    if (modifiers != Qt::MetaModifier)
+    if (modifiers != Qt::AltModifier)
     {
         int leftClickAction = ApplicationSettings::instance()->getItemLeftClickAction();
 

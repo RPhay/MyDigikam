@@ -183,7 +183,7 @@ void TableView::slotItemActivated(const QModelIndex& tableViewIndex)
         return;
     }
 
-    if (qApp->queryKeyboardModifiers() != Qt::MetaModifier)
+    if (qApp->queryKeyboardModifiers() != Qt::AltModifier)
     {
         int leftClickAction = ApplicationSettings::instance()->getItemLeftClickAction();
 
