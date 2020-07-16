@@ -324,6 +324,8 @@ FaceTagsIface FaceTagsEditor::confirmName(const FaceTagsIface& face,  ItemInfo& 
     if (face.type() == FaceTagsIface::UnconfirmedName && !info.isNull())
     {
         info.incrementUnconfirmedFaceCount(false);
+
+        info.removeSuggestedName(face.region().toXml());
     }
 
     return confirmName(face, tagId, confirmedRegion);
@@ -503,6 +505,7 @@ FaceTagsIface FaceTagsEditor::changeTag(const FaceTagsIface& face, int newTagId,
     if (face.type() == FaceTagsIface::UnconfirmedName && !info.isNull())
     {
         info.incrementUnconfirmedFaceCount(false);
+        info.removeSuggestedName(face.region().toXml());
     }
 
     /**
