@@ -1,3 +1,42 @@
+2020-07-13 Alex Tutubalin <lexa@lexa.ru>
+ * LibRaw 0.20-RC1
+
+ * New processing flag LIBRAW_PROCESSING_PROVIDE_NONSTANDARD_WB
+   If set (default is not), LibRaw will provide non-standard WB settings in 
+   color.cam_mul[], and in color.WB_Coeffs/WBCT_Coeffs.
+   Right now only Sony DSC-F828 affected: camera-recorded white balance is
+   not applicable for normal processing (apply WB before demosaic), it should 
+   be used after RGBE to RGB conversion.
+
+ * New processing flag: LIBRAW_PROCESSING_CAMERAWB_FALLBACK_TO_DAYLIGHT
+   If set (default is not), LibRaw::dcraw_process() will fallback to
+   daylight WB (excluding some very specific cases like Canon D30). 
+   This is how LibRaw 0.19 (and older) works.
+   If not set: LibRaw::dcraw_process() will fallback to auto-WB if
+   camera-WB is requested, but no acceptable white balance was parsed from metadata.
+
+ * API-datastruct: clarified behavior with use_camera_wb=1 setting.
+
+ * identify(): recovered fsize and flen difference
+
+2020-06-29 Alex Tutubalin <lexa@lexa.ru>
+ * LibRaw 0.20-RC1
+ * RC1
+  - fixed typo in normalize_model.cpp 
+  - speedup: ppg interpolate: const loop invariant 
+  - Thumbnail size range check (CVE-2020-15503)
+    Thanks to Jennifer Gehrke of Recurity Labs GmbH for problem report.
+  - fixed possible overflows in canon and sigma makernotes parsers
+  - WB preset indexes tables converted to self-bounds-checking arrays
+
+2020-06-17 Alex Tutubalin <lexa@lexa.ru>
+ * LibRaw 0.20-Beta3
+ * Beta2 fixes:
+   -Fixed several UBs found by OSS Fuzz
+   -Fixed several problems found by other fuzzers.
+   -Overall code cleanup: debug statements removed
+   -Fixed typo in longitude (member of parsed GPS structure), update required for code that uses it. 
+
 2020-05-29 Alex Tutubalin <lexa@lexa.ru>
  * LibRaw 0.20-Beta2
  * Beta2 fixes:

@@ -26,7 +26,6 @@
 
 // Qt includes
 
-#include <QWindow>
 #include <QCloseEvent>
 #include <QMessageBox>
 
@@ -34,7 +33,7 @@
 
 #include <klocalizedstring.h>
 #include <ksharedconfig.h>
-#include <kwindowconfig.h>
+#include <kconfiggroup.h>
 
 // Local includes
 
@@ -69,8 +68,6 @@ public:
     const static QString IMAGE_COMPRESSION;
     const static QString REMOVE_METADATA;
 
-    const static QString DIALOG;
-
     FCExportWidget*      exportWidget;
     FCThread*            thread;
 };
@@ -86,10 +83,8 @@ const QString FCExportWindow::Private::IMAGE_FORMAT            = QLatin1String("
 const QString FCExportWindow::Private::IMAGE_COMPRESSION       = QLatin1String("imageCompression");
 const QString FCExportWindow::Private::REMOVE_METADATA         = QLatin1String("removeMetadata");
 
-const QString FCExportWindow::Private::DIALOG                  = QLatin1String("FileCopy Export Dialog");
-
 FCExportWindow::FCExportWindow(DInfoInterface* const iface, QWidget* const /*parent*/)
-    : WSToolDialog(nullptr, d->DIALOG),
+    : WSToolDialog(nullptr, QLatin1String("FileCopy Export Dialog")),
       d(new Private)
 {
     d->exportWidget = new FCExportWidget(iface, this);
@@ -166,11 +161,6 @@ void FCExportWindow::restoreSettings()
     settings.changeImageProperties = group.readEntry(d->CHANGE_IMAGE_PROPERTIES, false);
 
     d->exportWidget->setSettings(settings);
-
-    winId();
-    KConfigGroup group2 = config->group(d->DIALOG);
-    KWindowConfig::restoreWindowSize(windowHandle(), group2);
-    resize(windowHandle()->size());
 }
 
 void FCExportWindow::saveSettings()
@@ -187,10 +177,6 @@ void FCExportWindow::saveSettings()
     group.writeEntry(d->TARGET_OVERWRITE,        settings.overwrite);
     group.writeEntry(d->REMOVE_METADATA,         settings.removeMetadata);
     group.writeEntry(d->CHANGE_IMAGE_PROPERTIES, settings.changeImageProperties);
-
-    KConfigGroup group2 = config->group(d->DIALOG);
-    KWindowConfig::saveWindowSize(windowHandle(), group2);
-    config->sync();
 }
 
 void FCExportWindow::slotImageListChanged()

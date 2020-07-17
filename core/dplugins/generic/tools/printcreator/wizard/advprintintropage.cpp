@@ -108,7 +108,7 @@ AdvPrintIntroPage::AdvPrintIntroPage(QWizard* const dialog, const QString& title
     d->binSearch = new DBinarySearch(binaryBox);
     d->binSearch->addBinary(d->gimpBin);
 
-#ifdef Q_OS_OSX
+#ifdef Q_OS_MACOS
 
     // Gimp bundle PKG install
 

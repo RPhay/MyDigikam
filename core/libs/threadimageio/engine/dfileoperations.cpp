@@ -298,7 +298,7 @@ void DFileOperations::openInFileManager(const QList<QUrl>& urls)
         return;
     }
 
-#elif defined Q_OS_OSX
+#elif defined Q_OS_MACOS
 
     QStringList args;
     args << QLatin1String("-e");

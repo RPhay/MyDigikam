@@ -136,7 +136,7 @@ void DatabaseSettingsWidget::setupMainArea()
     d->dbBinariesWidget->addDirectory(QLatin1String("/usr/sbin"));
 #endif
 
-#ifdef Q_OS_OSX
+#ifdef Q_OS_MACOS
     // Std Macports install
     d->dbBinariesWidget->addDirectory(QLatin1String("/opt/local/bin"));
     d->dbBinariesWidget->addDirectory(QLatin1String("/opt/local/sbin"));

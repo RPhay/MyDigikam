@@ -910,7 +910,7 @@ void SetupICC::slotShowDefaultSearchPaths()
                         QDir::rootPath(),
                         existingPaths);
 
-#elif defined (Q_OS_OSX)
+#elif defined (Q_OS_MACOS)
 
     QString text = i18n("On Mac OS X, the default search paths include "
                         "<ul>"

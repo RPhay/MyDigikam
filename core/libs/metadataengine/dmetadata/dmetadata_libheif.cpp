@@ -63,6 +63,8 @@ void s_readHEICMetadata(struct heif_context* const heif_context, heif_item_id im
 
     if (!s_isHeifSuccess(&error1))
     {
+        heif_image_handle_release(image_handle);
+
         return;
     }
 

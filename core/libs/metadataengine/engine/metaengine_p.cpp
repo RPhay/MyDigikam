@@ -146,10 +146,10 @@ void MetaEngine::Private::copyPrivateData(const Private* const other)
 
 bool MetaEngine::Private::saveToXMPSidecar(const QFileInfo& finfo) const
 {
-    QString filePath = MetaEngine::sidecarFilePathForFile(finfo.filePath(),
-                                                          useCompatibleFileName);
+    QString xmpFile = MetaEngine::sidecarFilePathForFile(finfo.filePath(),
+                                                         useCompatibleFileName);
 
-    if (filePath.isEmpty())
+    if (xmpFile.isEmpty())
     {
         return false;
     }
@@ -163,17 +163,17 @@ bool MetaEngine::Private::saveToXMPSidecar(const QFileInfo& finfo) const
 #if defined Q_OS_WIN && defined EXV_UNICODE_PATH
 
         image = Exiv2::ImageFactory::create(Exiv2::ImageType::xmp,
-                                            (const wchar_t*)filePath.utf16());
+                                            (const wchar_t*)xmpFile.utf16());
 
 #elif defined Q_OS_WIN
 
         image = Exiv2::ImageFactory::create(Exiv2::ImageType::xmp,
-                                            QFile::encodeName(filePath).constData());
+                                            QFile::encodeName(xmpFile).constData());
 
 #else
 
         image = Exiv2::ImageFactory::create(Exiv2::ImageType::xmp,
-                                            filePath.toUtf8().constData());
+                                            xmpFile.toUtf8().constData());
 
 #endif
 
@@ -451,7 +451,15 @@ bool MetaEngine::Private::saveOperations(const QFileInfo& finfo, Exiv2::Image::A
             qCDebug(DIGIKAM_METAENGINE_LOG) << "Support for writing metadata is limited for file" << finfo.fileName();
         }
 
+#ifdef _XMP_SUPPORT_
+
+        if (!updateFileTimeStamp && (image->imageType() != Exiv2::ImageType::xmp))
+#else
+
         if (!updateFileTimeStamp)
+
+#endif
+
         {
             // Don't touch access and modification timestamp of file.
 
@@ -459,19 +467,19 @@ bool MetaEngine::Private::saveOperations(const QFileInfo& finfo, Exiv2::Image::A
 
             struct __utimbuf64 ut;
             struct __stat64    st;
-            int ret = _wstat64((const wchar_t*)filePath.utf16(), &st);
+            int ret = _wstat64((const wchar_t*)finfo.filePath().utf16(), &st);
 
 #elif defined Q_OS_WIN
 
             struct _utimbuf    ut;
             struct _stat       st;
-            int ret = _wstat((const wchar_t*)filePath.utf16(), &st);
+            int ret = _wstat((const wchar_t*)finfo.filePath().utf16(), &st);
 
 #else
 
             struct utimbuf     ut;
             QT_STATBUF         st;
-            int ret = QT_STAT(filePath.toUtf8().constData(), &st);
+            int ret = QT_STAT(finfo.filePath().toUtf8().constData(), &st);
 
 #endif
 
@@ -487,15 +495,15 @@ bool MetaEngine::Private::saveOperations(const QFileInfo& finfo, Exiv2::Image::A
             {
 #ifdef Q_OS_WIN64
 
-                _wutime64((const wchar_t*)filePath.utf16(), &ut);
+                _wutime64((const wchar_t*)finfo.filePath().utf16(), &ut);
 
 #elif defined Q_OS_WIN
 
-                _wutime((const wchar_t*)filePath.utf16(), &ut);
+                _wutime((const wchar_t*)finfo.filePath().utf16(), &ut);
 
 #else
 
-                ::utime(filePath.toUtf8().constData(), &ut);
+                ::utime(finfo.filePath().toUtf8().constData(), &ut);
 
 #endif
             }
