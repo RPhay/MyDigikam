@@ -32,7 +32,8 @@ void RecognitionDatabase::Private::applyParameters()
 {
 
 #ifdef USE_DNN_RECOGNITION_BACKEND
-
+/*
+    // current version of faces engine doesn't have any parameter
     if (recognizeAlgorithm == RecognitionDatabase::RecognizeAlgorithm::DNN)
     {
         float threshold = 0.8F;
@@ -48,6 +49,7 @@ void RecognitionDatabase::Private::applyParameters()
 
         OpenCVDNNFaceRecognizer::m_threshold = threshold;
     }
+*/
 
 #else
 
@@ -164,7 +166,7 @@ void RecognitionDatabase::setRecognizerThreshold(float threshold)
 
 #ifdef USE_DNN_RECOGNITION_BACKEND
 
-    OpenCVDNNFaceRecognizer::m_threshold = threshold;
+    //OpenCVDNNFaceRecognizer::m_threshold = threshold;
 
 #else
 

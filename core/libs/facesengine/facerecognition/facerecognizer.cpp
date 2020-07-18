@@ -30,11 +30,7 @@
 #include <QJsonDocument>
 #include <QFileInfo>
 
-// cv include
-#include <opencv2/ml.hpp>
-
 // Local includes
-#include "dnnfacemodel.h"
 #include "digikam_debug.h"
 #include "faceextractor.h"
 #include "facedatabase.h"

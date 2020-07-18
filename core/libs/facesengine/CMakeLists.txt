@@ -149,13 +149,13 @@ if(DNN_RECOGNITION)
 
                                       # Neural NetWork Faces recognition module based on OpenCV DNN
 
-                                      ${CMAKE_CURRENT_SOURCE_DIR}/facedb/facedb_dnn.cpp
+                                      #${CMAKE_CURRENT_SOURCE_DIR}/facedb/facedb_dnn.cpp
 
-                                      ${CMAKE_CURRENT_SOURCE_DIR}/recognition/opencv-dnn/dnnfacemodel.cpp
-                                      ${CMAKE_CURRENT_SOURCE_DIR}/recognition/opencv-dnn/opencvdnnfacerecognizer.cpp
-                                      ${CMAKE_CURRENT_SOURCE_DIR}/recognition/opencv-dnn/facerec_dnnborrowed.cpp
-                                      ${CMAKE_CURRENT_SOURCE_DIR}/recognition/opencv-dnn/dnnfaceextractor.cpp
-                                      ${CMAKE_CURRENT_SOURCE_DIR}/recognition/opencv-dnn/dnndbscan.cpp
+                                      #${CMAKE_CURRENT_SOURCE_DIR}/recognition/opencv-dnn/dnnfacemodel.cpp
+                                      #${CMAKE_CURRENT_SOURCE_DIR}/recognition/opencv-dnn/opencvdnnfacerecognizer.cpp
+                                      #${CMAKE_CURRENT_SOURCE_DIR}/recognition/opencv-dnn/facerec_dnnborrowed.cpp
+                                      #${CMAKE_CURRENT_SOURCE_DIR}/recognition/opencv-dnn/dnnfaceextractor.cpp
+                                      #${CMAKE_CURRENT_SOURCE_DIR}/recognition/opencv-dnn/dnndbscan.cpp
 
                                       # Testing, TODO: remove later
                                       ${CMAKE_CURRENT_SOURCE_DIR}/facerecognition/kd_node.cpp

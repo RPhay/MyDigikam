@@ -56,7 +56,7 @@ public:
     /**
      *  @brief FaceRecognizer:Master class to control entire recognition using OpenFace algorithm
      */
-    explicit FaceRecognizer(Classifier method);
+    explicit FaceRecognizer(Classifier method = Tree);
     ~FaceRecognizer();
 
 public:

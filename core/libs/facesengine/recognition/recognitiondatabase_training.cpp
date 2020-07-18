@@ -30,13 +30,13 @@ namespace Digikam
 
 #ifdef USE_DNN_RECOGNITION_BACKEND
 
-void RecognitionDatabase::Private::train(OpenCVDNNFaceRecognizer* const r,
+void RecognitionDatabase::Private::train(FaceRecognizer* const recognizer,
                                          const QList<Identity>& identitiesToBeTrained,
                                          TrainingDataProvider* const data,
                                          const QString& trainingContext)
 {
     qCDebug(DIGIKAM_FACESENGINE_LOG) << "Training using opencv DNN";
-    trainIdentityBatchDNN(r, identitiesToBeTrained, data, trainingContext, this);
+    trainIdentityBatchDNN(recognizer, identitiesToBeTrained, data, trainingContext, this);
 }
 
 #else
@@ -272,7 +272,7 @@ static void trainSingle(Recognizer* const r,
 
 #ifdef USE_DNN_RECOGNITION_BACKEND
 
-void trainIdentityBatchDNN(OpenCVDNNFaceRecognizer* const r,
+void trainIdentityBatchDNN(FaceRecognizer* const recognizer,
                            const QList<Identity>& identitiesToBeTrained,
                            TrainingDataProvider* const data,
                            const QString& trainingContext,
@@ -312,7 +312,8 @@ void trainIdentityBatchDNN(OpenCVDNNFaceRecognizer* const r,
 
         try
         {
-            r->train(images, labels, trainingContext, images_rgb);
+            // TODO : investigate this routine
+            //recognizer->train(images, labels, trainingContext, images_rgb);
         }
         catch (cv::Exception& e)
         {

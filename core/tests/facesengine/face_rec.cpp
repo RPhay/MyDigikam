@@ -293,8 +293,6 @@ int main(int argc, char* argv[])
         idMap[i]                          = db.addIdentityDebug(attributes);
     }
 
-    db.createDNNDebug(); // Create OpenCVDNNFaceRecognizer instance without loading recognition database
-
     // Init FaceDetector used for detecting faces and bounding box
     // before recognizing
 

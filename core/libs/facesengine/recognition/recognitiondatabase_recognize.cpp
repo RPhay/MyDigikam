@@ -30,22 +30,23 @@ namespace Digikam
 
 #ifdef USE_DNN_RECOGNITION_BACKEND
 
-void RecognitionDatabase::Private::clear(OpenCVDNNFaceRecognizer* const,
+void RecognitionDatabase::Private::clear(FaceRecognizer* const,
                                          const QList<int>& idsToClear,
                                          const QString& trainingContext)
 {
     // force later reload
-
+    // TODO : investigate this routine
     delete opencvdnn;
     opencvdnn = nullptr;
 
     if (idsToClear.isEmpty())
     {
-        FaceDbAccess().db()->clearDNNTraining(trainingContext);
+        // TODO: reimplement facedb
+        //FaceDbAccess().db()->clearDNNTraining(trainingContext);
     }
     else
     {
-        FaceDbAccess().db()->clearDNNTraining(idsToClear, trainingContext);
+        //FaceDbAccess().db()->clearDNNTraining(idsToClear, trainingContext);
     }
 }
 
@@ -154,17 +155,6 @@ void RecognitionDatabase::activeFaceRecognizer(RecognizeAlgorithm algorithmType)
     }
 }
 
-void RecognitionDatabase::createDNNDebug()
-{
-
-#ifdef USE_DNN_RECOGNITION_BACKEND
-
-    d->createDNNDebug();
-
-#endif
-
-}
-
 QList<Identity> RecognitionDatabase::recognizeFaces(ImageListProvider* const images)
 {
     if (!d || !d->dbAvailable)
@@ -187,7 +177,8 @@ QList<Identity> RecognitionDatabase::recognizeFaces(ImageListProvider* const ima
 
             if (d->recognizeAlgorithm == RecognizeAlgorithm::DNN)
             {
-                id = d->dnn()->recognize(d->preprocessingChainRGB(images->image()));
+                // TODO : implement this routine
+                //id = d->dnn()->recognize(d->preprocessingChainRGB(images->image()));
             }
 
 #else
@@ -253,7 +244,8 @@ void RecognitionDatabase::clusterFaces(const QList<QImage>& images,
 
 #ifdef USE_DNN_RECOGNITION_BACKEND
 
-    d->dnn()->cluster(preprocessedImages, clusteredIndices, dataset, nbOfClusters);
+    // TODO: remove cluster function
+   // d->dnn()->cluster(preprocessedImages, clusteredIndices, dataset, nbOfClusters);
 
 #else
 

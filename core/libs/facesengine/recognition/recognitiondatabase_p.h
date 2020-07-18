@@ -48,7 +48,8 @@ NOTE: experimental and deprecated
 */
 
 #ifdef USE_DNN_RECOGNITION_BACKEND
-#   include "opencvdnnfacerecognizer.h"
+//#   include "opencvdnnfacerecognizer.h"
+#   include "facerecognizer.h"
 #else
 #   include "opencvlbphfacerecognizer.h"
 #endif
@@ -61,6 +62,8 @@ NOTE: experimental and deprecated
 #include "facedb.h"
 #include "funnelreal.h"
 #include "dataproviders.h"
+
+using namespace RecognitionTest;
 
 namespace Digikam
 {
@@ -110,9 +113,8 @@ public:
 
 #ifdef USE_DNN_RECOGNITION_BACKEND
 
-    OpenCVDNNFaceRecognizer*    dnn()                { return getObjectOrCreate(opencvdnn);           }
-    OpenCVDNNFaceRecognizer*    dnnConst() const     { return opencvdnn;                              }
-    void                        createDNNDebug()     { opencvdnn = new OpenCVDNNFaceRecognizer(true); }
+    FaceRecognizer*             dnn()                { return getObjectOrCreate(opencvdnn);           }
+    FaceRecognizer*             dnnConst() const     { return opencvdnn;                              }
 
 #else
 
@@ -141,7 +143,7 @@ public:
 
 #ifdef USE_DNN_RECOGNITION_BACKEND
 
-    void train(OpenCVDNNFaceRecognizer* const r,
+    void train(FaceRecognizer* const recognizer,
                const QList<Identity>& identitiesToBeTrained,
                TrainingDataProvider* const data,
                const QString& trainingContext);
@@ -175,7 +177,7 @@ public:
 
 #ifdef USE_DNN_RECOGNITION_BACKEND
 
-    void clear(OpenCVDNNFaceRecognizer* const,
+    void clear(FaceRecognizer* const recognizer,
                const QList<int>& idsToClear,
                const QString& trainingContext);
 
@@ -217,7 +219,7 @@ private:
 
 #ifdef USE_DNN_RECOGNITION_BACKEND
 
-    OpenCVDNNFaceRecognizer*    opencvdnn;
+    FaceRecognizer*   opencvdnn;
 
 #else
 
@@ -239,7 +241,7 @@ private:
 
 #ifdef USE_DNN_RECOGNITION_BACKEND
 
-void trainIdentityBatchDNN(OpenCVDNNFaceRecognizer* const r,
+void trainIdentityBatchDNN(FaceRecognizer* const recognizer,
                            const QList<Identity>& identitiesToBeTrained,
                            TrainingDataProvider* const data,
                            const QString& trainingContext,

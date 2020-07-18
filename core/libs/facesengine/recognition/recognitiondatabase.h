@@ -208,11 +208,6 @@ public:
     void activeFaceRecognizer(RecognizeAlgorithm algorithmType);
 
     /**
-     * Create dnn model with debug set to True (used for CLI standalone test)
-     */
-    void createDNNDebug();
-
-    /**
      * Performs recognition.
      * The face details to be recognized are passed by the provider.
      * For each entry in the provider, in 1-to-1 mapping,

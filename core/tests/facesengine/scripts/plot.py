@@ -11,7 +11,7 @@ import json
 
 sns.set(style='white', context='notebook', rc={'figure.figsize':(14,10)})
 
-with open('extendedB.json') as f:
+with open('Error_images.json') as f:
     jsonData = json.load(f)
 
 faceEmbeddings = []
@@ -20,6 +20,18 @@ for json in jsonData:
     faceEmbeddings.append(json['faceembedding'])
     labels.append(json['id'])
 
+reducer = umap.UMAP(n_neighbors=15, metric='euclidean', min_dist=0.1, n_components=2, transform_seed=42)
+reducer.fit(faceEmbeddings)
+
+reducedEmbedding = reducer.transform(faceEmbeddings)
+
+plt.scatter(reducedEmbedding[:, 0], reducedEmbedding[:, 1], c=labels, cmap='Spectral', s=5)
+plt.gca().set_aspect('equal', 'datalim')
+plt.colorbar(boundaries=np.arange(11)-0.5).set_ticks(np.arange(10))
+plt.title('UMAP projection of the face embedding from Extended Yale B dataset', fontsize=24);
+plt.show()
+
+'''
 for i in range(1, 50):
     X_train, X_test, y_train, y_test = train_test_split(faceEmbeddings,
                                                         labels,
@@ -38,7 +50,6 @@ for i in range(1, 50):
     print(i*2)
     print(svc.score(reduced_X_test, y_test), knn.score(reduced_X_test, y_test))
 
-'''
 # split face embedding to train and test sets
 X_train, X_test, y_train, y_test = train_test_split(faceEmbeddings,
                                                     labels,
