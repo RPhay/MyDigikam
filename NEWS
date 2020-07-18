@@ -10,4 +10,5 @@ BUGFIXES:
 001 ==> 421043 - Faces Detection crashes digiKam.
 002 ==> 363599 - Media File ctime Changes Even When Only Writing To XMP Sidecar File.
 003 ==> 412578 - Manual geotagging is difficult and time-consuming.
-004 ==> 
+004 ==> 424365 - Bad selected folder when adding photos to export.
+005 ==> 
