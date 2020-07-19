@@ -95,6 +95,8 @@ public:
                                                 double sqRange,
                                                 int maxNbNeighbors);
 
+    void setNbNeighBors(int k);
+
 private:
 
     /// Hidden copy constructor and assignment operator.

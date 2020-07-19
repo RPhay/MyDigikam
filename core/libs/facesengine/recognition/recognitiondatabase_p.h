@@ -114,7 +114,7 @@ public:
 #ifdef USE_DNN_RECOGNITION_BACKEND
 
     FaceRecognizer*             dnn()                { return getObjectOrCreate(opencvdnn);           }
-    FaceRecognizer*             dnnConst() const     { return opencvdnn;                              }
+    //FaceRecognizer*             dnnConst() const     { return opencvdnn;                              }
 
 #else
 
@@ -142,12 +142,12 @@ public:
     // --- Faces Training management (recognitiondatabase_training.cpp) ----------------------------------
 
 #ifdef USE_DNN_RECOGNITION_BACKEND
-
+/*
     void train(FaceRecognizer* const recognizer,
                const QList<Identity>& identitiesToBeTrained,
                TrainingDataProvider* const data,
                const QString& trainingContext);
-
+*/
 #else
 
     void train(OpenCVLBPHFaceRecognizer* const r,
@@ -176,11 +176,11 @@ public:
     // --- Recognition management (recognitiondatabase_recognize.cpp) ------------------------------------
 
 #ifdef USE_DNN_RECOGNITION_BACKEND
-
+/*
     void clear(FaceRecognizer* const recognizer,
                const QList<int>& idsToClear,
                const QString& trainingContext);
-
+*/
 #else
 
     void clear(OpenCVLBPHFaceRecognizer* const,
@@ -240,13 +240,13 @@ private:
 // --- Static Training methods (recognitiondatabase_training.cpp) ----------------------------------------
 
 #ifdef USE_DNN_RECOGNITION_BACKEND
-
+/*
 void trainIdentityBatchDNN(FaceRecognizer* const recognizer,
                            const QList<Identity>& identitiesToBeTrained,
                            TrainingDataProvider* const data,
                            const QString& trainingContext,
                            RecognitionDatabase::Private* const d);
-
+*/
 #else
 
 void trainIdentityBatchLBPH(OpenCVLBPHFaceRecognizer* const r,

@@ -52,7 +52,8 @@ public:
           facedb(new FaceDatabase),
           embeddingDb(new FaceEmbeddingDb),
           treedb(nullptr),
-          tree(nullptr)
+          tree(nullptr),
+          kNeighbors(3)
     {
         switch (method)
         {
@@ -91,7 +92,7 @@ public:
     bool trainKNN() const;
 
     int predictSVM(cv::Mat faceEmbedding) const;
-    int predictKNN(cv::Mat faceEmbedding) const;
+    int predictKNN(cv::Mat faceEmbedding, int k) const;
 
     int predictKDTree(const cv::Mat& faceEmbedding, int k) const;
     int predictDb(const cv::Mat& faceEmbedding, int k) const;
@@ -109,7 +110,9 @@ public:
     SpatialDatabase* treedb;
 
     KDTree* tree;
+    int kNeighbors;
 };
+
 
 bool FaceRecognizer::Private::trainSVM() const
 {
@@ -158,7 +161,7 @@ int FaceRecognizer::Private::predictSVM(cv::Mat faceEmbedding) const
     return (int(svm->predict(faceEmbedding)));
 }
 
-int FaceRecognizer::Private::predictKNN(cv::Mat faceEmbedding) const
+int FaceRecognizer::Private::predictKNN(cv::Mat faceEmbedding, int k) const
 {
     if (!knn->isTrained())
     {
@@ -169,7 +172,7 @@ int FaceRecognizer::Private::predictKNN(cv::Mat faceEmbedding) const
     }
 
     cv::Mat output;
-    knn->findNearest(faceEmbedding, 3, output);
+    knn->findNearest(faceEmbedding, k, output);
 
     return (int(output.at<float>(0)));
 }
@@ -279,6 +282,11 @@ FaceRecognizer::~FaceRecognizer()
     delete d;
 }
 
+void FaceRecognizer::setNbNeighBors(int k)
+{
+    d->kNeighbors = k;
+}
+
 cv::Mat FaceRecognizer::prepareForRecognition(const QImage& inputImage)
 {
     int TargetInputSize = 256;
@@ -331,13 +339,13 @@ Identity FaceRecognizer::findIdenity(const cv::Mat& preprocessedImage)
             id = d->predictSVM(d->extractor->getFaceDescriptor(preprocessedImage));
             break;
         case OpenCV_KNN:
-            id = d->predictKNN(d->extractor->getFaceDescriptor(preprocessedImage));
+            id = d->predictKNN(d->extractor->getFaceDescriptor(preprocessedImage), d->kNeighbors);
             break;
         case Tree:
-            id = d->predictKDTree(d->extractor->getFaceDescriptor(preprocessedImage), 3);
+            id = d->predictKDTree(d->extractor->getFaceDescriptor(preprocessedImage), d->kNeighbors);
             break;
         case DB:
-            id = d->predictDb(d->extractor->getFaceDescriptor(preprocessedImage), 3);
+            id = d->predictDb(d->extractor->getFaceDescriptor(preprocessedImage), d->kNeighbors);
             break;
     }
 

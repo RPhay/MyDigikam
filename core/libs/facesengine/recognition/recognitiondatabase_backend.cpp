@@ -32,24 +32,23 @@ void RecognitionDatabase::Private::applyParameters()
 {
 
 #ifdef USE_DNN_RECOGNITION_BACKEND
-/*
+
     // current version of faces engine doesn't have any parameter
     if (recognizeAlgorithm == RecognitionDatabase::RecognizeAlgorithm::DNN)
     {
-        float threshold = 0.8F;
+        int k = 3;
 
-        if      (parameters.contains(QLatin1String("threshold")))
+        if      (parameters.contains(QLatin1String("k-nearest")))
         {
-            threshold = parameters.value(QLatin1String("threshold")).toFloat();
+            k = parameters.value(QLatin1String("k-nearest")).toInt();
         }
         else if (parameters.contains(QLatin1String("accuracy")))
         {
-            threshold = parameters.value(QLatin1String("accuracy")).toFloat();
+            k = parameters.value(QLatin1String("accuracy")).toInt();
         }
 
-        OpenCVDNNFaceRecognizer::m_threshold = threshold;
+        dnn()->setNbNeighBors(k);
     }
-*/
 
 #else
 
