@@ -160,21 +160,6 @@ void RecognitionDatabase::setParameters(const QVariantMap& parameters)
     d->applyParameters();
 }
 
-void RecognitionDatabase::setRecognizerThreshold(float threshold)
-{
-
-#ifdef USE_DNN_RECOGNITION_BACKEND
-
-    //OpenCVDNNFaceRecognizer::m_threshold = threshold;
-
-#else
-
-    Q_UNUSED(threshold)
-
-#endif
-
-}
-
 QVariantMap RecognitionDatabase::parameters() const
 {
     if (!d || !d->dbAvailable)

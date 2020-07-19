@@ -189,7 +189,6 @@ public:
      */
     void        setParameter(const QString& parameter, const QVariant& value);
     void        setParameters(const QVariantMap& parameters);
-    void        setRecognizerThreshold(float threshold);
     QVariantMap parameters() const;
 
 public:

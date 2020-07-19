@@ -141,64 +141,58 @@ public:
 
     // --- Faces Training management (recognitiondatabase_training.cpp) ----------------------------------
 
-#ifdef USE_DNN_RECOGNITION_BACKEND
-/*
-    void train(FaceRecognizer* const recognizer,
-               const QList<Identity>& identitiesToBeTrained,
+    void train(const QList<Identity>& identitiesToBeTrained,
                TrainingDataProvider* const data,
                const QString& trainingContext);
-*/
-#else
 
-    void train(OpenCVLBPHFaceRecognizer* const r,
-               const QList<Identity>& identitiesToBeTrained,
-               TrainingDataProvider* const data,
-               const QString& trainingContext);
+#ifdef USE_DNN_RECOGNITION_BACKEND
+    void trainIdentityBatchDNN(const QList<Identity>& identitiesToBeTrained,
+                               TrainingDataProvider* const data,
+                               const QString& trainingContext);
+#else
+    void trainIdentityBatchLBPH(const QList<Identity>& identitiesToBeTrained,
+                                TrainingDataProvider* const data,
+                                const QString& trainingContext);
 
 #endif
-
 /*
     NOTE: experimental and deprecated
 
-    void train(OpenCVEIGENFaceRecognizer* const r,
-               const QList<Identity>& identitiesToBeTrained,
-               TrainingDataProvider* const data,
-               const QString& trainingContext);
+    void trainIdentityBatchEIGEN(const QList<Identity>& identitiesToBeTrained,
+                                 TrainingDataProvider* const data,
+                                 const QString& trainingContext);
 
-    void train(OpenCVFISHERFaceRecognizer* const r,
-               const QList<Identity>& identitiesToBeTrained,
-               TrainingDataProvider* const data,
-               const QString& trainingContext);
+    void trainIdentityBatchFISHER(const QList<Identity>& identitiesToBeTrained,
+                                  TrainingDataProvider* const data,
+                                  const QString& trainingContext);
 */
 
 public:
 
     // --- Recognition management (recognitiondatabase_recognize.cpp) ------------------------------------
 
-#ifdef USE_DNN_RECOGNITION_BACKEND
-/*
-    void clear(FaceRecognizer* const recognizer,
-               const QList<int>& idsToClear,
+    void clear(const QList<int>& idsToClear,
                const QString& trainingContext);
-*/
+
+#ifdef USE_DNN_RECOGNITION_BACKEND
+
+    void clearDNN(const QList<int>& idsToClear,
+                  const QString& trainingContext);
+
 #else
 
-    void clear(OpenCVLBPHFaceRecognizer* const,
-               const QList<int>& idsToClear,
-               const QString& trainingContext);
+    void clearLBPH(const QList<int>& idsToClear,
+                   const QString& trainingContext);
 
 #endif
 
 /*
     NOTE: experimental and deprecated
 
-    void clear(OpenCVEIGENFaceRecognizer* const,
-               const QList<int>& idsToClear,
-               const QString& trainingContext);
+    void clearEIGEN(const QList<int>& idsToClear,
+                    const QString& trainingContext);
 
-    void clear(OpenCVFISHERFaceRecognizer* const,
-               const QList<int>& idsToClear,
-               const QString& trainingContext);
+    void clearFISHER();
 */
 
 public:
@@ -236,42 +230,6 @@ private:
 
     FunnelReal*                 funnel;
 };
-
-// --- Static Training methods (recognitiondatabase_training.cpp) ----------------------------------------
-
-#ifdef USE_DNN_RECOGNITION_BACKEND
-/*
-void trainIdentityBatchDNN(FaceRecognizer* const recognizer,
-                           const QList<Identity>& identitiesToBeTrained,
-                           TrainingDataProvider* const data,
-                           const QString& trainingContext,
-                           RecognitionDatabase::Private* const d);
-*/
-#else
-
-void trainIdentityBatchLBPH(OpenCVLBPHFaceRecognizer* const r,
-                            const QList<Identity>& identitiesToBeTrained,
-                            TrainingDataProvider* const data,
-                            const QString& trainingContext,
-                            RecognitionDatabase::Private* const d);
-
-#endif
-
-/*
-    NOTE: experimental and deprecated
-
-void trainIdentityBatchEIGEN(OpenCVEIGENFaceRecognizer* const r,
-                             const QList<Identity>& identitiesToBeTrained,
-                             TrainingDataProvider* const data,
-                             const QString& trainingContext,
-                             RecognitionDatabase::Private* const d);
-
-void trainIdentityBatchFISHER(OpenCVFISHERFaceRecognizer* const r,
-                              const QList<Identity>& identitiesToBeTrained,
-                              TrainingDataProvider* const data,
-                              const QString& trainingContext,
-                              RecognitionDatabase::Private* const d);
-*/
 
 } // namespace Digikam
 

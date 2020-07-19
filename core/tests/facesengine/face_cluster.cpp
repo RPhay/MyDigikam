@@ -327,7 +327,7 @@ int main(int argc, char* argv[])
     RecognitionDatabase db;
     db.activeFaceRecognizer(RecognitionDatabase::RecognizeAlgorithm::DNN);
 
-    db.setRecognizerThreshold(0.91F);       // This is sensitive for the performance of face clustering
+    //db.setRecognizerThreshold(0.91F);       // This is sensitive for the performance of face clustering
 
     // Construct test set, data set
 
