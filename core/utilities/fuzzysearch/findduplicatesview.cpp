@@ -93,7 +93,6 @@ public:
     QLabel*              albumTagRelationLabel;
 
     DIntRangeBox*        similarityRange;
-    DIntRangeBox*        rmSimilarityRange;
     SqueezedComboBox*    searchResultRestriction;
     SqueezedComboBox*    albumTagRelation;
 
@@ -207,12 +206,8 @@ FindDuplicatesView::FindDuplicatesView(QWidget* const parent)
     d->albumTagRelation->setCurrentIndex(d->albumTagRelation->findData(relation));
 
     d->removeDuplicates = new QPushButton(i18nc("@label:listbox", "Remove Duplicates"));
-    d->rmSimilarityRange = new DIntRangeBox(this);
-    d->rmSimilarityRange->setSuffix(QLatin1String("%"));
-    d->rmSimilarityRange->setInterval(90,100);
     auto *removeDuplicatesLayout = new QHBoxLayout();
     removeDuplicatesLayout->addWidget(d->removeDuplicates);
-    removeDuplicatesLayout->addWidget(d->rmSimilarityRange);
 
     // ---------------------------------------------------------------
 
@@ -456,7 +451,6 @@ void FindDuplicatesView::enableControlWidgets(bool val)
     d->albumTagRelationLabel->setEnabled(val);
     d->restrictResultsLabel->setEnabled(val);
     d->similarityLabel->setEnabled(val);
-    d->rmSimilarityRange->setEnabled(val);
     d->removeDuplicates->setEnabled(val);
 }
 
@@ -644,9 +638,7 @@ void FindDuplicatesView::slotRemoveDuplicates() {
     }
 
     qDebug() << "Removing All Duplicates!";
-    d->rmSimilarityRange->minValue();
-    d->rmSimilarityRange->maxValue();
-    d->listView->removeDuplicates(d->rmSimilarityRange->minValue(), d->rmSimilarityRange->maxValue());
+    d->listView->removeDuplicates();
 }
 
 } // namespace Digikam

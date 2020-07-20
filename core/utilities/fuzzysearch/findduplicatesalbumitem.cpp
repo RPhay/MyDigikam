@@ -90,7 +90,7 @@ bool FindDuplicatesAlbumItem::hasValidThumbnail() const
     return d->hasThumb;
 }
 
-QList<ItemInfo> FindDuplicatesAlbumItem::duplicatedItems(int minThreshould, int maxThreshould)
+QList<ItemInfo> FindDuplicatesAlbumItem::duplicatedItems()
 {
     if (itemCount() <= 1) {
         return {};
@@ -111,12 +111,7 @@ QList<ItemInfo> FindDuplicatesAlbumItem::duplicatedItems(int minThreshould, int 
             continue;
         }
 
-        ItemInfo info(imageId);
-        int currentThreshould = info.similarityTo(refImage) * 100;
-        if (currentThreshould >= minThreshould && currentThreshould <= maxThreshould)
-        {
-            toRemove.append(info);
-        }
+        toRemove.append(ItemInfo(imageId));
     }
     return toRemove;
 }
