@@ -211,6 +211,8 @@ FindDuplicatesView::FindDuplicatesView(QWidget* const parent)
 
     // ---------------------------------------------------------------
 
+    d->removeDuplicates->setEnabled(false);
+
     QGridLayout* const mainLayout = new QGridLayout();
     mainLayout->addWidget(d->listView,                0, 0, 1, -1);
     mainLayout->addWidget(d->albumTagRelationLabel,   1, 0, 1,  2);
@@ -489,6 +491,12 @@ void FindDuplicatesView::slotFindDuplicates()
 
     connect(finder, SIGNAL(signalComplete()),
             this, SLOT(slotComplete()));
+
+    connect(finder, &DuplicatesFinder::signalComplete, this, [this]{
+        d->removeDuplicates->setEnabled(true); });
+
+    connect(finder, &DuplicatesFinder::signalCanceled, this, [this]{
+        d->removeDuplicates->setEnabled(false); });
 
     finder->start();
 }
