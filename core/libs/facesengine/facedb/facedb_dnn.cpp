@@ -27,6 +27,8 @@
 namespace Digikam
 {
 
+
+/*
 void FaceDb::updateDNNFaceModel(DNNFaceModel& model)
 {
     qCDebug(DIGIKAM_FACEDB_LOG) << "updateDNNFaceModel";
@@ -193,5 +195,5 @@ void FaceDb::clearDNNTraining(const QList<int>& identities, const QString& conte
         }
     }
 }
-
+*/
 } // namespace Digikam
