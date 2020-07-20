@@ -594,15 +594,11 @@
             </dbaction>
 
             <dbaction name="CreateFaceDBFaceMatrices" mode="transaction">
-                <statement mode="plain">CREATE TABLE FaceMatrices
-                    (id INTEGER PRIMARY KEY,
-                    identity INTEGER,
+                <statement mode="plain">CREATE TABLE IF NOT EXISTS FaceMatrices
+                    (id INTEGER PRIMARY KEY AUTOINCREMENT,
+                    identity INTEGER NOT NULL REFERENCES Identities,
                     context TEXT,
-                    type INTEGER,
-                    rows INTEGER,
-                    cols INTEGER,
-                    data BLOB,
-                    vecdata BLOB);
+                    embedding BLOB NOT NULL);
                 </statement>
             </dbaction>
 
@@ -1755,13 +1751,9 @@
             <dbaction name="CreateFaceDBFaceMatrices" mode="transaction">
                 <statement mode="plain">CREATE TABLE IF NOT EXISTS FaceMatrices
                     (id INTEGER PRIMARY KEY AUTO_INCREMENT,
-                    identity INTEGER,
+                    identity INTEGER NOT NULL REFERENCES Identities,
                     `context` LONGTEXT CHARACTER SET utf8 COLLATE utf8_general_ci,
-                    `type` INTEGER,
-                    `rows` INTEGER,
-                    `cols` INTEGER,
-                    `data` LONGBLOB,
-                    vecdata LONGBLOB)
+                    embedding LONGBLOB NOT NULL)
                     ENGINE InnoDB;
                 </statement>
             </dbaction>
