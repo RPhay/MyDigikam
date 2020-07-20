@@ -343,6 +343,10 @@ void ItemInfo::setOrientation(int value)
     }
 
     CoreDbAccess().db()->changeItemInformation(m_data->id, QVariantList() << value, DatabaseFields::Orientation);
+
+    ItemInfoWriteLocker lock;
+    m_data->orientation       = value;
+    m_data->orientationCached = true;
 }
 
 void ItemInfo::setName(const QString& newName)
