@@ -111,21 +111,19 @@ void FingerPrintsGenerator::slotStart()
     }
 
     // Get all item IDs from albums.
+
     QList<qlonglong> itemIds;
 
-    auto *db = CoreDbAccess().db();
-    for (auto *album : d->albumList) {
-        if (canceled()) {
-            break;
-        }
-
-        if (album->type() == Album::PHYSICAL)
+    for (AlbumList::ConstIterator it = d->albumList.constBegin() ;
+         !canceled() && (it != d->albumList.constEnd()) ; ++it)
+    {
+        if ((*it)->type() == Album::PHYSICAL)
         {
-            itemIds << db->getItemIDsInAlbum(album->id());
+            itemIds << CoreDbAccess().db()->getItemIDsInAlbum((*it)->id());
         }
-        else if (album->type() == Album::TAG)
+        else if ((*it)->type() == Album::TAG)
         {
-            itemIds << db->getItemIDsInTag(album->id());
+            itemIds << CoreDbAccess().db()->getItemIDsInTag((*it)->id());
         }
     }
 
