@@ -112,6 +112,7 @@ public:
     QString                                  format;
     QDateTime                                creationDate;
     QDateTime                                modificationDate;
+    int                                      orientation;
     qlonglong                                fileSize;
     qlonglong                                manualOrder;
     QString                                  uniqueHash;
@@ -138,6 +139,7 @@ public:
     bool                                     formatCached           : 1;
     bool                                     creationDateCached     : 1;
     bool                                     modificationDateCached : 1;
+    bool                                     orientationCached      : 1;
     bool                                     fileSizeCached         : 1;
     bool                                     manualOrderCached      : 1;
     bool                                     uniqueHashCached       : 1;
