@@ -64,7 +64,18 @@ public:
 
 public:
 
-
+    // --- Backend parameters (facesengine_interface_setup.cpp) --------------------------
+    /**
+     * Tunes backend parameters.
+     * Available parameters:
+     * "accuracy", synonymous: "threshold", range: 0-1, type: float
+     * Determines recognition threshold, 0->accept very insecure recognitions, 1-> be very sure about a recognition.
+     *
+     * "k-nearest" : limit the number of nearest neighbors for KNN
+     */
+    void        setParameter(const QString& parameter, const QVariant& value);
+    void        setParameters(const QVariantMap& parameters);
+    QVariantMap parameters() const;
 
 private:
 

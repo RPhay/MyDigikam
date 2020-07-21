@@ -9,6 +9,7 @@
  * Copyright (C)      2010 by Aditya Bhatt <adityabhatt1991 at gmail dot com>
  * Copyright (C) 2010-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
  * Copyright (C)      2019 by Thanh Trung Dinh <dinhthanhtrung1996 at gmail dot com>
+ * Copyright (C)      2020 by Nghia Duong <minhnghiaduong997 at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -62,32 +63,60 @@ void FacesEngineInterface::Private::applyParameters()
         {
             if ((it.key() == QLatin1String("threshold")) || (it.key() == QLatin1String("accuracy")))
             {
-                if (recognizeAlgorithm == RecognitionDatabase::RecognizeAlgorithm::LBP)
-                {
-                    lbph()->setThreshold(it.value().toFloat());
-                }
+                lbph()->setThreshold(it.value().toFloat());
 /*
                 NOTE: experimental and deprecated
 
-                else if (recognizeAlgorithm == RecognitionDatabase::RecognizeAlgorithm::EigenFace)
-                {
-                    eigen()->setThreshold(it.value().toFloat());
-                }
-                else if (recognizeAlgorithm == RecognitionDatabase::RecognizeAlgorithm::FisherFace)
-                {
-                    fisher()->setThreshold(it.value().toFloat());
-                }
+                eigen()->setThreshold(it.value().toFloat());
+                fisher()->setThreshold(it.value().toFloat());
 */
-                else
-                {
-                    qCCritical(DIGIKAM_FACESENGINE_LOG) << "No obvious recognize algorithm";
-                }
             }
         }
     }
 
 #endif
+}
 
+void FacesEngineInterface::setParameter(const QString& parameter, const QVariant& value)
+{
+    if (!d || !d->dbAvailable)
+    {
+        return;
+    }
+
+    QMutexLocker lock(&d->mutex);
+
+    d->parameters.insert(parameter, value);
+    d->applyParameters();
+}
+
+void FacesEngineInterface::setParameters(const QVariantMap& parameters)
+{
+    if (!d || !d->dbAvailable)
+    {
+        return;
+    }
+
+    QMutexLocker lock(&d->mutex);
+
+    for (QVariantMap::const_iterator it = parameters.begin() ; it != parameters.end() ; ++it)
+    {
+        d->parameters.insert(it.key(), it.value());
+    }
+
+    d->applyParameters();
+}
+
+QVariantMap FacesEngineInterface::parameters() const
+{
+    if (!d || !d->dbAvailable)
+    {
+        return QVariantMap();
+    }
+
+    QMutexLocker lock(&d->mutex);
+
+    return d->parameters;
 }
 
 } // namespace Digikam
