@@ -85,7 +85,6 @@ urpmi --auto \
       glibc-devel \
       mysql-devel \
       eigen3-devel \
-      openssl-devel \
       cppunit-devel \
       libstdc++-devel \
       libstdc++-static-devel \
@@ -149,7 +148,7 @@ urpmi --auto \
 echo -e "---------- Clean-up Old Packages\n"
 
 # Remove system based devel package to prevent conflict with new one.
-urpme --auto --force ${LIBSUFFIX}qt5core5 || true
+urpme --auto --force ${LIBSUFFIX}qt5core5 lib64openssl-devel || true
 
 #################################################################################################
 
@@ -189,6 +188,8 @@ cmake $ORIG_WD/../3rdparty \
 # NOTE: The order to compile each component here is very important.
 
 #cmake --build . --config RelWithDebInfo --target ext_libicu        -- -j$CPU_CORES
+
+cmake --build . --config RelWithDebInfo --target ext_openssl       -- -j$CPU_CORES
 cmake --build . --config RelWithDebInfo --target ext_qt            -- -j$CPU_CORES    # depend of tiff, png, jpeg
 
 if [[ $DK_QTWEBENGINE = 0 ]] ; then
