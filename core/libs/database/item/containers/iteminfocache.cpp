@@ -292,6 +292,11 @@ void ItemInfoCache::slotImageChanged(const ImageChangeset& changeset)
                 (*it)->modificationDateCached = false;
             }
 
+            if (changes & DatabaseFields::Orientation)
+            {
+                (*it)->orientationCached = false;
+            }
+
             if (changes & DatabaseFields::FileSize)
             {
                 (*it)->fileSizeCached = false;
