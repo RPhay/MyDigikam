@@ -29,6 +29,43 @@
 
 #include "facesengine_interface.h"
 
+// Qt includes
+
+#include <QMutex>
+#include <QMutexLocker>
+#include <QUuid>
+#include <QDir>
+#include <QStandardPaths>
+
+// Local includes
+
+#include "digikam_config.h"
+#include "digikam_debug.h"
+
+/*
+NOTE: experimental and deprecated
+#include "opencvfisherfacerecognizer.h"
+#include "opencveigenfacerecognizer.h"
+*/
+
+#ifdef USE_DNN_RECOGNITION_BACKEND
+//#   include "opencvdnnfacerecognizer.h"
+#   include "facerecognizer.h"
+#else
+#   include "opencvlbphfacerecognizer.h"
+#endif
+
+#include "recognitiontrainingprovider.h"
+#include "coredbaccess.h"
+#include "dbengineparameters.h"
+#include "facedbaccess.h"
+#include "facedboperationgroup.h"
+#include "facedb.h"
+#include "funnelreal.h"
+#include "dataproviders.h"
+
+using namespace RecognitionTest;
+
 namespace Digikam
 {
 
@@ -40,8 +77,60 @@ public:
     ~Private();
 
 public:
+/*
+    NOTE: experimental and deprecated
 
+    OpenCVEIGENFaceRecognizer*  eigen();
+    OpenCVEIGENFaceRecognizer*  eigenConst() const;
+
+    OpenCVFISHERFaceRecognizer* fisher();
+    OpenCVFISHERFaceRecognizer* fisherConst() const;
+*/
+
+#ifdef USE_DNN_RECOGNITION_BACKEND
+
+    FaceRecognizer*             dnn();
+    FaceRecognizer*             dnnConst() const;
+
+#else
+
+    OpenCVLBPHFaceRecognizer*   lbph();
+    OpenCVLBPHFaceRecognizer*   lbphConst() const;
+
+#endif
+
+public:
+
+    // --- Backend parameters (facesengine_interface_setup.cpp) --------------------------
+    void applyParameters();
+
+public:
+
+    bool            dbAvailable;
+    mutable QMutex  mutex;
+    QVariantMap     parameters;
+
+private:
+
+#ifdef USE_DNN_RECOGNITION_BACKEND
+
+    FaceRecognizer* opencvdnn;
+
+#else
+
+    OpenCVLBPHFaceRecognizer*   opencvlbph;
+
+/*
+    NOTE: experimental and deprecated
+
+    OpenCVFISHERFaceRecognizer* opencvfisher;
+    OpenCVEIGENFaceRecognizer*  opencveigen;
+*/
+
+#endif
+
+    FunnelReal* funnel;
 };
 
-}
+} // namespace Digikam
 #endif // FACESENGINE_INTERFACE_P_H

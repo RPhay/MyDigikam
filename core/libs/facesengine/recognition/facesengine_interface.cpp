@@ -23,12 +23,48 @@
  *
  * ============================================================ */
 
-#include "facesengine_interface.h"
+#include "facesengine_interface_p.h"
+
+// faces engine include
+#include "facedbaccess.h"
+#include "facedb.h"
 
 namespace Digikam
 {
+
 FacesEngineInterface::FacesEngineInterface()
+    : d(new Private())
+{
+}
+
+FacesEngineInterface::~FacesEngineInterface()
+{
+    delete d;
+}
+
+bool FacesEngineInterface::integrityCheck()
 {
 
+    if (!d || !d->dbAvailable)
+    {
+        return false;
+    }
+
+    QMutexLocker lock(&d->mutex);
+
+    return FaceDbAccess().db()->integrityCheck();
 }
+
+void FacesEngineInterface::vacuum()
+{
+    if (!d || !d->dbAvailable)
+    {
+        return;
+    }
+
+    QMutexLocker lock(&d->mutex);
+
+    return FaceDbAccess().db()->vacuum();
 }
+
+} // namespace Digikam

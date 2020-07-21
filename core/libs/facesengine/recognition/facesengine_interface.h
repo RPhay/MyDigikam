@@ -42,19 +42,39 @@
 
 namespace Digikam
 {
+
 class DIGIKAM_GUI_EXPORT FacesEngineInterface
 {
 public:
-    FacesEngineInterface();
+
+    explicit FacesEngineInterface();
+    ~FacesEngineInterface();
+
+public:
+
+    /**
+     * Checks the integrity and returns true if everything is fine.
+     */
+    bool integrityCheck();
+
+    /**
+     * Shrinks the database.
+     */
+    void vacuum();
+
+public:
+
+
 
 private:
 
-    // Hidden assignment operator.
-    FacesEngineInterface& operator=(const FacesEngineInterface&);
-
     class Private;
     Private* d;
+
+    // Hidden assignment operator.
+    FacesEngineInterface& operator=(const FacesEngineInterface&);
 };
-}
+
+} // namespace Digikam
 
 #endif // FACESENGINE_INTERFACE_H
