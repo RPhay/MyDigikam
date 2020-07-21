@@ -265,8 +265,17 @@ QImage ThumbnailCreator::loadImageDetail(const ThumbnailInfo& info,
 
         if ((previews.width() >= acceptableWidth) && (previews.height() >= acceptableHeight))
         {
-            QImage qimage           = previews.image();
-            QRect reducedSizeDetail = TagRegion::mapFromOriginalSize(previews.originalSize(), qimage.size(), detailRect);
+            QImage qimage = previews.image();
+            QSize orgSize = previews.originalSize();
+            qimage        = exifRotate(qimage, exifOrientation(info, metadata, true, false));
+
+            if (((qimage.width() < qimage.height()) && (orgSize.width() > orgSize.height())) ||
+                ((qimage.width() > qimage.height()) && (orgSize.width() < orgSize.height())))
+            {
+                orgSize.transpose();
+            }
+
+            QRect reducedSizeDetail = TagRegion::mapFromOriginalSize(orgSize, qimage.size(), detailRect);
 
             return qimage.copy(reducedSizeDetail.intersected(qimage.rect()));
         }
