@@ -179,6 +179,21 @@ cd $BUILDING_DIR
 rm -rf $BUILDING_DIR/* || true
 
 cmake $ORIG_WD/../3rdparty \
+      -DCMAKE_INSTALL_PREFIX:PATH=/opt/cmake \
+      -DINSTALL_ROOT=/opt/cmake \
+      -DEXTERNALS_DOWNLOAD_DIR=$DOWNLOAD_DIR
+
+# Install new cmake recent version to /opt
+
+cmake --build . --config RelWithDebInfo --target ext_cmake        -- -j$CPU_CORES
+
+#################################################################################################
+
+cd $BUILDING_DIR
+
+rm -rf $BUILDING_DIR/* || true
+
+/opt/cmake/bin/cmake $ORIG_WD/../3rdparty \
       -DCMAKE_INSTALL_PREFIX:PATH=/usr \
       -DINSTALL_ROOT=/usr \
       -DEXTERNALS_DOWNLOAD_DIR=$DOWNLOAD_DIR \
@@ -189,14 +204,14 @@ cmake $ORIG_WD/../3rdparty \
 
 #cmake --build . --config RelWithDebInfo --target ext_libicu        -- -j$CPU_CORES
 
-cmake --build . --config RelWithDebInfo --target ext_openssl       -- -j$CPU_CORES
-cmake --build . --config RelWithDebInfo --target ext_qt            -- -j$CPU_CORES    # depend of tiff, png, jpeg
+/opt/cmake/bin/cmake --build . --config RelWithDebInfo --target ext_openssl       -- -j$CPU_CORES
+/opt/cmake/bin/cmake --build . --config RelWithDebInfo --target ext_qt            -- -j$CPU_CORES    # depend of tiff, png, jpeg
 
 if [[ $DK_QTWEBENGINE = 0 ]] ; then
-    cmake --build . --config RelWithDebInfo --target ext_qtwebkit  -- -j$CPU_CORES    # depend of Qt and libicu
+    /opt/cmake/bin/cmake --build . --config RelWithDebInfo --target ext_qtwebkit  -- -j$CPU_CORES    # depend of Qt and libicu
 fi
 
-cmake --build . --config RelWithDebInfo --target ext_opencv        -- -j$CPU_CORES
+/opt/cmake/bin/cmake --build . --config RelWithDebInfo --target ext_opencv        -- -j$CPU_CORES
 
 #################################################################################################
 
