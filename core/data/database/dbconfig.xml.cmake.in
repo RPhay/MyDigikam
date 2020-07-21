@@ -1753,7 +1753,7 @@
                     (id INTEGER PRIMARY KEY AUTO_INCREMENT,
                     identity INTEGER NOT NULL REFERENCES Identities,
                     `context` LONGTEXT CHARACTER SET utf8 COLLATE utf8_general_ci,
-                    embedding LONGBLOB NOT NULL)
+                    embedding BLOB NOT NULL)
                     ENGINE InnoDB;
                 </statement>
             </dbaction>
