@@ -13,4 +13,5 @@ BUGFIXES:
 004 ==> 424365 - Bad selected folder when adding photos to export.
 005 ==> 424482 - Album view crashes creating thumbnails.
 006 ==> 424463 - Incorrect face thumbnail.
-007 ==> 
+007 ==> 424540 - Option "regular expression" does not work.
+008 ==> 
