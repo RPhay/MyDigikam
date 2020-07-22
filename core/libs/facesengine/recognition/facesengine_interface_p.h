@@ -77,29 +77,6 @@ public:
     ~Private();
 
 public:
-/*
-    NOTE: experimental and deprecated
-
-    OpenCVEIGENFaceRecognizer*  eigen();
-    OpenCVEIGENFaceRecognizer*  eigenConst() const;
-
-    OpenCVFISHERFaceRecognizer* fisher();
-    OpenCVFISHERFaceRecognizer* fisherConst() const;
-*/
-
-#ifdef USE_DNN_RECOGNITION_BACKEND
-
-    FaceRecognizer*             dnn();
-    FaceRecognizer*             dnnConst() const;
-
-#else
-
-    OpenCVLBPHFaceRecognizer*   lbph();
-    OpenCVLBPHFaceRecognizer*   lbphConst() const;
-
-#endif
-
-public:
 
     // --- Backend parameters (facesengine_interface_setup.cpp) --------------------------
     void applyParameters();
@@ -112,25 +89,26 @@ public:
 
 private:
 
+    FunnelReal* funnel;
+
 #ifdef USE_DNN_RECOGNITION_BACKEND
 
-    FaceRecognizer* opencvdnn;
+    FaceRecognizer* recognizer;
 
 #else
 
-    OpenCVLBPHFaceRecognizer*   opencvlbph;
+    OpenCVLBPHFaceRecognizer*   recognizer;
 
 /*
     NOTE: experimental and deprecated
 
-    OpenCVFISHERFaceRecognizer* opencvfisher;
-    OpenCVEIGENFaceRecognizer*  opencveigen;
+    OpenCVFISHERFaceRecognizer* recognizer;
+    OpenCVEIGENFaceRecognizer*  recognizer;
 */
 
 #endif
-
-    FunnelReal* funnel;
 };
 
 } // namespace Digikam
+
 #endif // FACESENGINE_INTERFACE_P_H

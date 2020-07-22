@@ -46,30 +46,17 @@ void FacesEngineInterface::Private::applyParameters()
         k = parameters.value(QLatin1String("accuracy")).toInt();
     }
 
-    dnn()->setNbNeighBors(k);
+    recognizer->setNbNeighBors(k);
 
 #else
 
-    if (
-        lbphConst()
-/*
-    NOTE: experimental and deprecated
-        || eigenConst()
-        || fisherConst()
-*/
-       )
+    if (recognizer)
     {
         for (QVariantMap::const_iterator it = parameters.constBegin() ; it != parameters.constEnd() ; ++it)
         {
             if ((it.key() == QLatin1String("threshold")) || (it.key() == QLatin1String("accuracy")))
             {
-                lbph()->setThreshold(it.value().toFloat());
-/*
-                NOTE: experimental and deprecated
-
-                eigen()->setThreshold(it.value().toFloat());
-                fisher()->setThreshold(it.value().toFloat());
-*/
+                recognizer->setThreshold(it.value().toFloat());
             }
         }
     }

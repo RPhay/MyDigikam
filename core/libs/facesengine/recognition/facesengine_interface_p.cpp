@@ -28,7 +28,7 @@
 
 namespace Digikam
 {
-
+/*
 template <class T>
 T* getObjectOrCreate(T* &ptr)
 {
@@ -40,7 +40,7 @@ T* getObjectOrCreate(T* &ptr)
 
     return ptr;
 }
-
+*/
 FacesEngineInterface::Private::Private()
 {
 }
@@ -48,54 +48,5 @@ FacesEngineInterface::Private::Private()
 FacesEngineInterface::Private::~Private()
 {
 }
-
-/*
-NOTE: experimental and deprecated
-
-OpenCVEIGENFaceRecognizer* FacesEngineInterface::Private::eigen()
-{
-    return getObjectOrCreate(opencveigen);
-}
-OpenCVEIGENFaceRecognizer* FacesEngineInterface::Private::eigenConst() const
-{
-    return opencveigen;
-}
-
-OpenCVFISHERFaceRecognizer* FacesEngineInterface::Private::fisher()
-{
-    return getObjectOrCreate(opencvfisher);
-}
-
-OpenCVFISHERFaceRecognizer* FacesEngineInterface::Private::fisherConst() const
-{
-    return opencvfisher;
-}
-*/
-
-#ifdef USE_DNN_RECOGNITION_BACKEND
-
-FaceRecognizer* FacesEngineInterface::Private::dnn()
-{
-    return getObjectOrCreate(opencvdnn);
-}
-
-FaceRecognizer* FacesEngineInterface::Private::dnnConst() const
-{
-    return opencvdnn;
-}
-
-#else
-
-OpenCVLBPHFaceRecognizer* FacesEngineInterface::Private::lbph()
-{
-    return getObjectOrCreate(opencvlbph);
-}
-
-OpenCVLBPHFaceRecognizer* FacesEngineInterface::Private::lbphConst() const
-{
-    return opencvlbph;
-}
-
-#endif
 
 } // namespace Digikam
