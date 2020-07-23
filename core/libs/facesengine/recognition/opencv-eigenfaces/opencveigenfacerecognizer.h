@@ -62,7 +62,7 @@ public:
      * Returns the identity id.
      * If the identity cannot be recognized, returns -1.
      */
-    int recognize(const cv::Mat& inputImage);
+    int recognize(const QImage& inputImage);
 
     /**
      * Trains the given images, representing faces of the given matched identities.

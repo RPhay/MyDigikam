@@ -104,7 +104,7 @@ QList<Identity> RecognitionDatabase::recognizeFaces(ImageListProvider* const ima
 
             if (d->recognizeAlgorithm == RecognizeAlgorithm::LBP)
             {
-                id = d->lbph()->recognize(d->preprocessingChain(images->image()));
+                //id = d->lbph()->recognize(d->preprocessingChain(images->image()));
             }
 
 #endif

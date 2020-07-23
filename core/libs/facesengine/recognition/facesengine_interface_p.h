@@ -89,17 +89,16 @@ public:
 
 public:
 
-    bool            dbAvailable;
-    mutable QMutex  mutex;
-    QVariantMap     parameters;
-
-private:
+    bool                 dbAvailable;
+    mutable QMutex       mutex;
+    QVariantMap          parameters;
+    QHash<int, Identity> identityCache;
 
     FunnelReal* funnel;
 
 #ifdef USE_DNN_RECOGNITION_BACKEND
 
-    FaceRecognizer* recognizer;
+    FaceRecognizer*             recognizer;
 
 #else
 

@@ -107,6 +107,27 @@ public:
     void train(const Identity& identityToBeTrained, const QList<QImage>& images,
                const QString& trainingContext);
 
+    // TODO implement clear training after implementing database management
+
+    // --- Recognition management (facesengine_interface_recognize.cpp) -------------------
+
+    /**
+     * Returns the recommended size if you want to scale face images for recognition.
+     * Larger images can be passed, but may be downscaled.
+     */
+    // TODO : review to see if this function is necessary
+    //int recommendedImageSize(const QSize& availableSize = QSize()) const;
+
+    /**
+     * Performs recognition.
+     * The face details to be recognized are passed by the provider.
+     * For each entry in the provider, in 1-to-1 mapping,
+     * a recognized identity or the null identity is returned.
+     */
+    QList<Identity> recognizeFaces(ImageListProvider* const images);
+    QList<Identity> recognizeFaces(const QList<QImage>& images);
+    Identity        recognizeFace(const QImage& image);
+
 private:
 
     class Private;

@@ -130,11 +130,11 @@ cv::Mat OpenCVEIGENFaceRecognizer::prepareForRecognition(const QImage& inputImag
     return cvImage;
 }
 
-int OpenCVEIGENFaceRecognizer::recognize(const cv::Mat& inputImage)
+int OpenCVEIGENFaceRecognizer::recognize(const QImage& inputImage)
 {
     int predictedLabel = -1;
     double confidence  = 0;
-    d->eigen()->predict(inputImage, predictedLabel, confidence);
+    d->eigen()->predict(prepareForRecognition(inputImage), predictedLabel, confidence);
     qCDebug(DIGIKAM_FACESENGINE_LOG) << predictedLabel << confidence;
 
     if (confidence > d->m_threshold)

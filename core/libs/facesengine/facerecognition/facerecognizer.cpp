@@ -459,25 +459,40 @@ void FaceRecognizer::train(const QList<QImage>& images,
                                        image != images.cend();
                                      ++image)
     {
-        try
-        {
-            cv::Mat faceEmbedding = d->extractor->getFaceDescriptor(prepareForRecognition(*image));
+        cv::Mat faceEmbedding = d->extractor->getFaceDescriptor(prepareForRecognition(*image));
 
-            // TODO register context
-            if (!insertData(faceEmbedding, label, context))
-            {
-                qWarning() << "Fail to register a face of identity" << label;
-            }
-        }
-        catch (cv::Exception& e)
+        if (!insertData(faceEmbedding, label, context))
         {
-            qCCritical(DIGIKAM_FACESENGINE_LOG) << "cv::Exception:" << e.what();
-        }
-        catch (...)
-        {
-            qCCritical(DIGIKAM_FACESENGINE_LOG) << "Default exception from OpenCV";
+            qWarning() << "Fail to register a face of identity" << label;
         }
     }
+}
+
+int FaceRecognizer::recognize(const QImage& inputImage)
+{
+    int id = -1;
+
+    cv::Mat faceEmbedding = d->extractor->getFaceDescriptor(prepareForRecognition(inputImage));
+
+    switch (d->method)
+    {
+        case SVM:
+            id = d->predictSVM(faceEmbedding);
+            break;
+        case OpenCV_KNN:
+            id = d->predictKNN(faceEmbedding, d->kNeighbors);
+            break;
+        case Tree:
+            id = d->predictKDTree(faceEmbedding, d->kNeighbors);
+            break;
+        case DB:
+            id = d->predictDb(faceEmbedding, d->kNeighbors);
+            break;
+        default:
+            qWarning() << "Not recognized classifying method";
+    }
+
+    return id;
 }
 
 

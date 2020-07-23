@@ -130,11 +130,11 @@ cv::Mat OpenCVFISHERFaceRecognizer::prepareForRecognition(const QImage& inputIma
     return cvImage;
 }
 
-int OpenCVFISHERFaceRecognizer::recognize(const cv::Mat& inputImage)
+int OpenCVFISHERFaceRecognizer::recognize(const QImage& inputImage)
 {
     int predictedLabel = -1;
     double confidence  = 0;
-    d->fisher()->predict(inputImage, predictedLabel, confidence);
+    d->fisher()->predict(prepareForRecognition(inputImage), predictedLabel, confidence);
     qCDebug(DIGIKAM_FACESENGINE_LOG) << predictedLabel << confidence;
 
     if (confidence > d->m_threshold)

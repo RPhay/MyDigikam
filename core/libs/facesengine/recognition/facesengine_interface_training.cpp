@@ -56,6 +56,8 @@ void FacesEngineInterface::Private::trainIdentityBatch(const QList<Identity>& id
     }
 }
 
+// -------------------------------------------------------------------------------------
+
 void FacesEngineInterface::train(const QList<Identity>& identitiesToBeTrained,
                                  TrainingDataProvider* const data,
                                  const QString& trainingContext)
@@ -74,7 +76,7 @@ void FacesEngineInterface::train(const Identity& identityToBeTrained,
                                  TrainingDataProvider* const data,
                                  const QString& trainingContext)
 {
-    train(QList<Identity>() << identityToBeTrained, data, trainingContext);
+    train( (QList<Identity>() << identityToBeTrained), data, trainingContext );
 }
 
 void FacesEngineInterface::train(const Identity& identityToBeTrained,
