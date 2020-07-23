@@ -77,6 +77,36 @@ public:
     void        setParameters(const QVariantMap& parameters);
     QVariantMap parameters() const;
 
+    // --- Faces Training management (facesengine_interface_training.cpp) ----------------------------------------------------
+    /**
+     * Performs training.
+     * The identities which have new images to be trained are given.
+     * An empty list means that all identities are checked.
+     *
+     * All needed data will be queried from the provider.
+     *
+     * An identifier for the current training context is given,
+     * which can identify the application or group of collections.
+     * (It is assumed that training from different contexts is based on
+     * non-overlapping collections of images. Keep it always constant for your app.)
+     */
+    void train(const QList<Identity>& identitiesToBeTrained, TrainingDataProvider* const data,
+               const QString& trainingContext);
+    void train(const Identity& identityToBeTrained, TrainingDataProvider* const data,
+               const QString& trainingContext);
+
+    /**
+     * Performs training by using image data directly.
+     *
+     * These are convenience functions for simple setups.
+     * If you want good performance and/or a more versatile implementation, be sure to
+     * implement your own TrainingDataProvider and use one of the above functions.
+     */
+    void train(const Identity& identityToBeTrained, const QImage& image,
+               const QString& trainingContext);
+    void train(const Identity& identityToBeTrained, const QList<QImage>& images,
+               const QString& trainingContext);
+
 private:
 
     class Private;

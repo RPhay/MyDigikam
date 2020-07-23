@@ -56,4 +56,44 @@ void FacesEngineInterface::Private::trainIdentityBatch(const QList<Identity>& id
     }
 }
 
+void FacesEngineInterface::train(const QList<Identity>& identitiesToBeTrained,
+                                 TrainingDataProvider* const data,
+                                 const QString& trainingContext)
+{
+    if (!d || !d->dbAvailable)
+    {
+        return;
+    }
+
+    QMutexLocker lock(&d->mutex);
+
+    d->trainIdentityBatch(identitiesToBeTrained, data, trainingContext);
+}
+
+void FacesEngineInterface::train(const Identity& identityToBeTrained,
+                                 TrainingDataProvider* const data,
+                                 const QString& trainingContext)
+{
+    train(QList<Identity>() << identityToBeTrained, data, trainingContext);
+}
+
+void FacesEngineInterface::train(const Identity& identityToBeTrained,
+                                 const QImage& image,
+                                 const QString& trainingContext)
+{
+    RecognitionTrainingProvider* const data = new RecognitionTrainingProvider(identityToBeTrained,
+                                                                              QList<QImage>() << image);
+    train(identityToBeTrained, data, trainingContext);
+    delete data;
+}
+
+void FacesEngineInterface::train(const Identity& identityToBeTrained,
+                                 const QList<QImage>& images,
+                                 const QString& trainingContext)
+{
+    RecognitionTrainingProvider* const data = new RecognitionTrainingProvider(identityToBeTrained, images);
+    train(identityToBeTrained, data, trainingContext);
+    delete data;
+}
+
 } // namespace Digikam
