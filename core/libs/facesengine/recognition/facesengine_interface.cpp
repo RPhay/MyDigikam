@@ -44,7 +44,6 @@ FacesEngineInterface::~FacesEngineInterface()
 
 bool FacesEngineInterface::integrityCheck()
 {
-
     if (!d || !d->dbAvailable)
     {
         return false;

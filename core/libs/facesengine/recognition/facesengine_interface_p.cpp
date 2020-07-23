@@ -42,11 +42,53 @@ T* getObjectOrCreate(T* &ptr)
 }
 */
 FacesEngineInterface::Private::Private()
+    : mutex(QMutex::Recursive),
+      recognizer(nullptr),
+      funnel(nullptr)
 {
+#ifdef USE_DNN_RECOGNITION_BACKEND
+
+    recognizer = new FaceRecognizer(FaceRecognizer::Tree);
+
+#else
+
+    recognizer = new OpenCVLBPHFaceRecognizer();
+/*
+    NOTE: experimental and deprecated
+
+    recognizer = new OpenCVFISHERFaceRecognizer();
+    recognizer = new OpenCVEIGENFaceRecognizer();
+*/
+
+#endif
+
+    DbEngineParameters params = CoreDbAccess::parameters().faceParameters();
+    params.setFaceDatabasePath(CoreDbAccess::parameters().faceParameters().getFaceDatabaseNameOrDir());
+    FaceDbAccess::setParameters(params);
+
+    dbAvailable               = FaceDbAccess::checkReadyForUse(nullptr);
+
+    if (dbAvailable)
+    {
+        qCDebug(DIGIKAM_FACESENGINE_LOG) << "Face database ready for use";
+/*
+        TODO :  load identity Cache
+        foreach (const Identity& identity, FaceDbAccess().db()->identities())
+        {
+            identityCache[identity.id()] = identity;
+        }
+*/
+    }
+    else
+    {
+        qCDebug(DIGIKAM_FACESENGINE_LOG) << "Failed to initialize face database";
+    }
 }
 
 FacesEngineInterface::Private::~Private()
 {
+    delete recognizer;
+    delete funnel;
 }
 
 } // namespace Digikam
