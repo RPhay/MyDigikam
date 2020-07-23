@@ -89,7 +89,7 @@ public:
      */
     int saveIdentity(Identity& id, bool newLabel);
 
-    bool insertData(const cv::Mat& position, const int label);
+    bool insertData(const cv::Mat& position, const int label, const QString& context = QString());
 
     /**
      * @brief train : register data corresponding an identity to recognizer

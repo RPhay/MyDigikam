@@ -417,9 +417,9 @@ int FaceRecognizer::saveIdentity(Identity& id, bool newLabel)
     return index;
 }
 
-bool FaceRecognizer::insertData(const cv::Mat& nodePos, const int label)
+bool FaceRecognizer::insertData(const cv::Mat& nodePos, const int label, const QString& context)
 {
-    int nodeId = d->embeddingDb->insert(nodePos, label);
+    int nodeId = d->embeddingDb->insert(nodePos, label, context);
 
     if (nodeId < 0)
     {
@@ -464,7 +464,7 @@ void FaceRecognizer::train(const QList<QImage>& images,
             cv::Mat faceEmbedding = d->extractor->getFaceDescriptor(prepareForRecognition(*image));
 
             // TODO register context
-            if (!insertData(faceEmbedding, label))
+            if (!insertData(faceEmbedding, label, context))
             {
                 qWarning() << "Fail to register a face of identity" << label;
             }

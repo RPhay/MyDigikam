@@ -43,7 +43,7 @@ public:
      * @param label
      * @return id of newly inserted entry
      */
-    int insert(const cv::Mat& faceEmbedding, const int label) const;
+    int insert(const cv::Mat& faceEmbedding, const int label, const QString& context) const;
 
     /**
      * @brief reconstructTree: reconstruct KD-Tree from data in the database

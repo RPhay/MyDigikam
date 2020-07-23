@@ -51,6 +51,7 @@ public:
         query.exec(QLatin1String("SET sql_notes = 0"));
         bool success = query.exec(QLatin1String("CREATE TABLE IF NOT EXISTS face_embedding (id INTEGER PRIMARY KEY AUTOINCREMENT,"
                                                                                             "label INTEGER NOT NULL REFERENCES identity,"
+                                                                                            "context TEXT,"
                                                                                             "embedding BLOB NOT NULL)"));
 
         if (!success)
@@ -82,12 +83,13 @@ FaceEmbeddingDb::~FaceEmbeddingDb()
     delete d;
 }
 
-int FaceEmbeddingDb::insert(const cv::Mat& faceEmbedding, const int label) const
+int FaceEmbeddingDb::insert(const cv::Mat& faceEmbedding, const int label, const QString& context) const
 {
-    d->query.prepare(QLatin1String("INSERT INTO face_embedding (label, embedding) "
-                                   "VALUES (:label, :embedding)"));
+    d->query.prepare(QLatin1String("INSERT INTO face_embedding (label, context, embedding) "
+                                   "VALUES (:label, :context, :embedding)"));
 
     d->query.bindValue(QLatin1String(":label"), label);
+    d->query.bindValue(QLatin1String(":context"), context);
     d->query.bindValue(QLatin1String(":embedding"),
                        QByteArray::fromRawData((char*)faceEmbedding.ptr<float>(), (sizeof(float) * 128)));
 
