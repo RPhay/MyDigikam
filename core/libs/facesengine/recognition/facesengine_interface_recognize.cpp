@@ -69,4 +69,24 @@ QList<Identity> FacesEngineInterface::recognizeFaces(ImageListProvider* const im
     return result;
 }
 
+QList<Identity> FacesEngineInterface::recognizeFaces(const QList<QImage>& images)
+{
+    QListImageListProvider provider(images);
+
+    return recognizeFaces(&provider);
+}
+
+Identity FacesEngineInterface::recognizeFace(const QImage& image)
+{
+    QList<Identity> result = recognizeFaces(QList<QImage>() << image);
+
+    if (result.isEmpty())
+    {
+        return Identity();
+    }
+
+    return result.first();
+}
+
+
 } // namespace Digikam
