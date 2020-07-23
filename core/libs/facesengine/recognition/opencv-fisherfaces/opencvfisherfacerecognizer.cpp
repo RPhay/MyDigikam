@@ -145,17 +145,41 @@ int OpenCVFISHERFaceRecognizer::recognize(const cv::Mat& inputImage)
     return predictedLabel;
 }
 
-void OpenCVFISHERFaceRecognizer::train(const std::vector<cv::Mat>& images,
-                                       const std::vector<int>& labels,
+void OpenCVFISHERFaceRecognizer::train(const QList<QImage>& images,
+                                       const int label,
                                        const QString& context)
 {
-    if (images.empty() || (labels.size() != images.size()))
+    std::vector<int>     labels;
+    std::vector<cv::Mat> preprocessedImages;
+
+    preprocessedImages.reserve(images.size());
+
+    for (QList<QImage>::const_iterator image  = images.begin();
+                                       image != images.end();
+                                     ++image)
+    {
+        try
+        {
+            labels.push_back(label);
+            preprocessedImages.push_back(prepareForRecognition(*image));
+        }
+        catch (cv::Exception& e)
+        {
+            qCCritical(DIGIKAM_FACESENGINE_LOG) << "cv::Exception preparing image for Fisherfaces:" << e.what();
+        }
+        catch (...)
+        {
+            qCCritical(DIGIKAM_FACESENGINE_LOG) << "Default exception from OpenCV";
+        }
+    }
+
+    if (preprocessedImages.empty() || (labels.size() != preprocessedImages.size()))
     {
         qCDebug(DIGIKAM_FACESENGINE_LOG) << "Fisherfaces Train: nothing to train...";
         return;
     }
 
-    d->fisher().update(images, labels, context);
+    d->fisher().update(preprocessedImages, labels, context);
     qCDebug(DIGIKAM_FACESENGINE_LOG) << "Fisherfaces Train: Adding model to Facedb";
 
     /*

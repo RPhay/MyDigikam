@@ -50,6 +50,7 @@ NOTE: experimental and deprecated
 
 #ifdef USE_DNN_RECOGNITION_BACKEND
 #   include "facerecognizer.h"
+using namespace RecognitionTest;
 #else
 #   include "opencvlbphfacerecognizer.h"
 #endif
@@ -62,8 +63,7 @@ NOTE: experimental and deprecated
 #include "facedb.h"
 #include "funnelreal.h"
 #include "dataproviders.h"
-
-using namespace RecognitionTest;
+#include "identity.h"
 
 namespace Digikam
 {

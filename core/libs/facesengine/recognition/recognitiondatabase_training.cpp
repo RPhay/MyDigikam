@@ -125,6 +125,7 @@ void RecognitionDatabase::Private::trainIdentityBatchLBPH(const QList<Identity>&
                                                           TrainingDataProvider* const data,
                                                           const QString& trainingContext)
 {
+/*
     foreach (const Identity& identity, identitiesToBeTrained)
     {
         std::vector<int>     labels;
@@ -168,6 +169,7 @@ void RecognitionDatabase::Private::trainIdentityBatchLBPH(const QList<Identity>&
             qCCritical(DIGIKAM_FACESENGINE_LOG) << "Default exception from OpenCV";
         }
     }
+*/
 }
 
 #endif

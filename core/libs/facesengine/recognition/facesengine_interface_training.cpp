@@ -26,7 +26,8 @@
 
 #include "facesengine_interface_p.h"
 
-#ifdef USE_DNN_RECOGNITION_BACKEND
+namespace Digikam
+{
 
 void FacesEngineInterface::Private::trainIdentityBatch(const QList<Identity>& identitiesToBeTrained,
                                                        TrainingDataProvider* const data,
@@ -38,12 +39,21 @@ void FacesEngineInterface::Private::trainIdentityBatch(const QList<Identity>& id
 
         QList<QImage> images = imageList->images();
 
-        qCDebug(DIGIKAM_FACESENGINE_LOG) << "DNN Training" << images.size() << "images for identity" << identity.id();
+        qCDebug(DIGIKAM_FACESENGINE_LOG) << "Training" << images.size() << "images for identity" << identity.id();
 
-        recognizer->train(images, identity.id(), trainingContext);
+        try
+        {
+            recognizer->train(images, identity.id(), trainingContext);
+        }
+        catch (cv::Exception& e)
+        {
+            qCCritical(DIGIKAM_FACESENGINE_LOG) << "cv::Exception training Recognizer:" << e.what();
+        }
+        catch (...)
+        {
+            qCCritical(DIGIKAM_FACESENGINE_LOG) << "Default exception from OpenCV";
+        }
     }
 }
 
-#else
-
-#endif
+} // namespace Digikam

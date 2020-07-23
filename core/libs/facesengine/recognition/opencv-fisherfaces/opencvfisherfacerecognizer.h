@@ -67,8 +67,8 @@ public:
     /**
      * Trains the given images, representing faces of the given matched identities.
      */
-    void train(const std::vector<cv::Mat>& images,
-               const std::vector<int>& labels,
+    void train(const QList<QImage>& images,
+               const int label,
                const QString& context);
 
 private:
