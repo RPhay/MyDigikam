@@ -90,7 +90,16 @@ public:
     int saveIdentity(Identity& id, bool newLabel);
 
     bool insertData(const cv::Mat& position, const int label);
-    bool insertData(const cv::Mat& positions, const cv::Mat& labels);
+
+    /**
+     * @brief train : register data corresponding an identity to recognizer
+     * @param images
+     * @param label
+     * @param context
+     */
+    void train(const QList<QImage>& images,
+               const int label,
+               const QString& context);
 
     QMap<double, QVector<int> > getClosestNodes(const cv::Mat& position,
                                                 double sqRange,

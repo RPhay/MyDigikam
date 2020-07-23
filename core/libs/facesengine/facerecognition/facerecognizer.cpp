@@ -409,33 +409,9 @@ int FaceRecognizer::saveIdentity(Identity& id, bool newLabel)
     QJsonArray jsonFaceEmbedding = QJsonDocument::fromJson(id.attribute(QLatin1String("faceEmbedding")).toLatin1()).array();
     cv::Mat recordedFaceEmbedding = FaceExtractor::vectortomat(FaceExtractor::decodeVector(jsonFaceEmbedding));
 
-    int nodeId = d->embeddingDb->insert(recordedFaceEmbedding, index);
-
-    if (nodeId < 0)
+    if (!insertData(recordedFaceEmbedding, index))
     {
-        qWarning() << "error when registered face embedding";
-    }
-
-    if (d->method == DB)
-    {
-        if (! d->treedb->insert(recordedFaceEmbedding, index))
-        {
-            qWarning() << "Error insert face embedding";
-            return -1;
-        }
-    }
-    else if(d->method == Tree)
-    {
-        KDNode* newNode = d->tree->add(recordedFaceEmbedding, index);
-
-        if (newNode)
-        {
-            newNode->setNodeId(nodeId);
-        }
-        else
-        {
-            qWarning() << "fail to insert new node";
-        }
+        return -1;
     }
 
     return index;
@@ -475,10 +451,35 @@ bool FaceRecognizer::insertData(const cv::Mat& nodePos, const int label)
     return true;
 }
 
-bool FaceRecognizer::insertData(const cv::Mat& positions, const cv::Mat& labels)
+void FaceRecognizer::train(const QList<QImage>& images,
+                           const int label,
+                           const QString& context)
 {
-    // TODO
-    return true;
+    for (QList<QImage>::const_iterator image  = images.cbegin();
+                                       image != images.cend();
+                                     ++image)
+    {
+        try
+        {
+            cv::Mat faceEmbedding = d->extractor->getFaceDescriptor(prepareForRecognition(*image));
+
+            // TODO register context
+            if (!insertData(faceEmbedding, label))
+            {
+                qWarning() << "Fail to register a face of identity" << label;
+            }
+        }
+        catch (cv::Exception& e)
+        {
+            qCCritical(DIGIKAM_FACESENGINE_LOG) << "cv::Exception:" << e.what();
+        }
+        catch (...)
+        {
+            qCCritical(DIGIKAM_FACESENGINE_LOG) << "Default exception from OpenCV";
+        }
+    }
+
+
 }
 
 
