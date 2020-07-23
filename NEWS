@@ -15,4 +15,5 @@ BUGFIXES:
 006 ==> 424463 - Incorrect face thumbnail.
 007 ==> 424540 - Option "regular expression" does not work.
 008 ==> 424501 - Right click >> Open in File Manager does not work.
-009 ==> 
+009 ==> 424553 - Authenticating to Flickr does not work.
+010 ==> 
