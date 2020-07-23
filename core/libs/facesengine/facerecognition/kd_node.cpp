@@ -31,8 +31,6 @@
 
 #include "faceextractor.h"
 
-using namespace Digikam;
-
 namespace RecognitionTest
 {
 
@@ -52,8 +50,9 @@ class Q_DECL_HIDDEN KDNode::Private
 {
 public:
 
-    Private(cv::Mat nodePos, const Identity& identity, int splitAxis, int dimension)
-        : identity(identity),
+    Private(cv::Mat nodePos, const int identity, int splitAxis, int dimension)
+        : nodeID(-1),
+          identity(identity),
           splitAxis(splitAxis),
           nbDimension(dimension),
           position(nodePos),
@@ -73,7 +72,8 @@ public:
 
 public:
 
-    Identity identity;
+    int nodeID;
+    int identity;
 
     int splitAxis;
     int nbDimension;
@@ -85,7 +85,7 @@ public:
     KDNode* right;
 };
 
-KDNode::KDNode(const cv::Mat& nodePos, const Identity& identity, int splitAxis, int dimension)
+KDNode::KDNode(const cv::Mat& nodePos, const int identity, int splitAxis, int dimension)
     : d(new Private(nodePos, identity, splitAxis, dimension))
 {
     Q_ASSERT(splitAxis < dimension);
@@ -97,7 +97,7 @@ KDNode::~KDNode()
     delete d;
 }
 
-KDNode* KDNode::insert(const cv::Mat& nodePos, const Identity& identity)
+KDNode* KDNode::insert(const cv::Mat& nodePos, const int identity)
 {
     if (!(nodePos.rows == 1 && nodePos.cols == d->nbDimension && nodePos.type() == CV_32F))
     {
@@ -131,9 +131,14 @@ cv::Mat KDNode::getPosition() const
     return d->position;
 }
 
-Identity& KDNode::getIdentity()
+int KDNode::getIdentity()
 {
     return d->identity;
+}
+
+void KDNode::setNodeId(int id)
+{
+    d->nodeID = id;
 }
 
 double KDNode::getClosestNeighbors(QMap<double, QVector<KDNode*> >& neighborList,

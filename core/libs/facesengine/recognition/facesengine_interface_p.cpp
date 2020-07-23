@@ -43,8 +43,8 @@ T* getObjectOrCreate(T* &ptr)
 */
 FacesEngineInterface::Private::Private()
     : mutex(QMutex::Recursive),
-      recognizer(nullptr),
-      funnel(nullptr)
+      funnel(nullptr),
+      recognizer(nullptr)
 {
 #ifdef USE_DNN_RECOGNITION_BACKEND
 

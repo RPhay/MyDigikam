@@ -49,7 +49,8 @@ public:
 
 
         query.exec(QLatin1String("SET sql_notes = 0"));
-        bool success = query.exec(QLatin1String("CREATE TABLE IF NOT EXISTS face_embedding (label INTEGER NOT NULL REFERENCES identity,"
+        bool success = query.exec(QLatin1String("CREATE TABLE IF NOT EXISTS face_embedding (id INTEGER PRIMARY KEY AUTOINCREMENT,"
+                                                                                            "label INTEGER NOT NULL REFERENCES identity,"
                                                                                             "embedding BLOB NOT NULL)"));
 
         if (!success)
@@ -81,7 +82,7 @@ FaceEmbeddingDb::~FaceEmbeddingDb()
     delete d;
 }
 
-bool FaceEmbeddingDb::insert(const cv::Mat& faceEmbedding, const int label) const
+int FaceEmbeddingDb::insert(const cv::Mat& faceEmbedding, const int label) const
 {
     d->query.prepare(QLatin1String("INSERT INTO face_embedding (label, embedding) "
                                    "VALUES (:label, :embedding)"));
@@ -94,10 +95,10 @@ bool FaceEmbeddingDb::insert(const cv::Mat& faceEmbedding, const int label) cons
     {
         qWarning() << "fail to registered new face embedding, error" << d->query.lastError();
 
-        return false;
+        return -1;
     }
 
-    return true;
+    return d->query.lastInsertId().toInt();;
 }
 
 KDTree* FaceEmbeddingDb::reconstructTree() const
@@ -105,17 +106,26 @@ KDTree* FaceEmbeddingDb::reconstructTree() const
     KDTree* tree = new KDTree(128);
 
     // favor new data
-    if (d->query.exec(QLatin1String("SELECT label, embedding FROM face_embedding")))
+    if (d->query.exec(QLatin1String("SELECT id, label, embedding FROM face_embedding")))
     {
         if (d->query.last())
         {
             do
             {
-                Identity id;
-                id.setId(d->query.value(0).toInt());
-                cv::Mat recordedFaceEmbedding = cv::Mat(1, 128, CV_32F, d->query.value(1).toByteArray().data()).clone();
+                int nodeId = d->query.value(0).toInt();
+                int identity = d->query.value(1).toInt();
+                cv::Mat recordedFaceEmbedding = cv::Mat(1, 128, CV_32F, d->query.value(2).toByteArray().data()).clone();
 
-                tree->add(recordedFaceEmbedding, id);
+                KDNode* newNode = tree->add(recordedFaceEmbedding, identity);
+
+                if (newNode)
+                {
+                    newNode->setNodeId(nodeId);
+                }
+                else
+                {
+                    qWarning() << "Error insert node" << nodeId;
+                }
             }
             while(d->query.previous());
         }

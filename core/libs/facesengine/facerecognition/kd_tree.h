@@ -50,7 +50,7 @@ public:
      * @param identity : identity of this face vector
      * @return
      */
-    bool add(const cv::Mat& position, const Digikam::Identity& identity);
+    KDNode* add(const cv::Mat& position, const int identity);
 
 private:
 

@@ -41,9 +41,9 @@ public:
      * @brief insert : insert a new face embedding to database
      * @param faceEmbedding
      * @param label
-     * @return true if successed
+     * @return id of newly inserted entry
      */
-    bool insert(const cv::Mat& faceEmbedding, const int label) const;
+    int insert(const cv::Mat& faceEmbedding, const int label) const;
 
     /**
      * @brief reconstructTree: reconstruct KD-Tree from data in the database

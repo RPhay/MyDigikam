@@ -179,7 +179,7 @@ int FaceRecognizer::Private::predictKNN(cv::Mat faceEmbedding, int k) const
 
 int FaceRecognizer::Private::predictKDTree(const cv::Mat& faceEmbedding, int k) const
 {
-    if (! tree)
+    if (!tree)
     {
         return -1;
     }
@@ -197,7 +197,7 @@ int FaceRecognizer::Private::predictKDTree(const cv::Mat& faceEmbedding, int k) 
                                               node != iter.value().cend();
                                             ++node)
         {
-            int label = (*node)->getIdentity().id();
+            int label = (*node)->getIdentity();
 
             votingGroups[label].append(iter.key());
         }
@@ -409,7 +409,12 @@ int FaceRecognizer::saveIdentity(Identity& id, bool newLabel)
     QJsonArray jsonFaceEmbedding = QJsonDocument::fromJson(id.attribute(QLatin1String("faceEmbedding")).toLatin1()).array();
     cv::Mat recordedFaceEmbedding = FaceExtractor::vectortomat(FaceExtractor::decodeVector(jsonFaceEmbedding));
 
-    d->embeddingDb->insert(recordedFaceEmbedding, index);
+    int nodeId = d->embeddingDb->insert(recordedFaceEmbedding, index);
+
+    if (nodeId < 0)
+    {
+        qWarning() << "error when registered face embedding";
+    }
 
     if (d->method == DB)
     {
@@ -421,7 +426,16 @@ int FaceRecognizer::saveIdentity(Identity& id, bool newLabel)
     }
     else if(d->method == Tree)
     {
-        d->tree->add(recordedFaceEmbedding, id);
+        KDNode* newNode = d->tree->add(recordedFaceEmbedding, index);
+
+        if (newNode)
+        {
+            newNode->setNodeId(nodeId);
+        }
+        else
+        {
+            qWarning() << "fail to insert new node";
+        }
     }
 
     return index;
@@ -429,13 +443,44 @@ int FaceRecognizer::saveIdentity(Identity& id, bool newLabel)
 
 bool FaceRecognizer::insertData(const cv::Mat& nodePos, const int label)
 {
-    if (!d->treedb)
+    int nodeId = d->embeddingDb->insert(nodePos, label);
+
+    if (nodeId < 0)
     {
-        return false;
+        qWarning() << "error inserting face embedding to database";
     }
 
-    return d->treedb->insert(nodePos, label);
+    if (d->method == DB)
+    {
+        if (! d->treedb->insert(nodePos, label))
+        {
+            qWarning() << "Error insert face embedding";
+            return false;
+        }
+    }
+    else if(d->method == Tree)
+    {
+        KDNode* newNode = d->tree->add(nodePos, label);
+
+        if (newNode)
+        {
+            newNode->setNodeId(nodeId);
+        }
+        else
+        {
+            qWarning() << "Error insert new node" << nodeId;
+        }
+    }
+
+    return true;
 }
+
+bool FaceRecognizer::insertData(const cv::Mat& positions, const cv::Mat& labels)
+{
+    // TODO
+    return true;
+}
+
 
 QMap<double, QVector<int> > FaceRecognizer::getClosestNodes(const cv::Mat& position,
                                                             double sqRange,

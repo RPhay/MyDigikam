@@ -89,7 +89,8 @@ public:
      */
     int saveIdentity(Identity& id, bool newLabel);
 
-    bool insertData(const cv::Mat& nodePos, const int label);
+    bool insertData(const cv::Mat& position, const int label);
+    bool insertData(const cv::Mat& positions, const cv::Mat& labels);
 
     QMap<double, QVector<int> > getClosestNodes(const cv::Mat& position,
                                                 double sqRange,

@@ -29,10 +29,7 @@
 #include <vector>
 
 // digiKam include
-#include "identity.h"
 #include "digikam_opencv.h"
-
-using namespace Digikam;
 
 namespace RecognitionTest
 {
@@ -41,7 +38,7 @@ class KDNode
 {
 public:
 
-    explicit KDNode(const cv::Mat& nodePos, const Identity& identity, int splitAxis, int dimension);
+    explicit KDNode(const cv::Mat& nodePos, const int identity, int splitAxis, int dimension);
     ~KDNode();
 
 public:
@@ -52,7 +49,7 @@ public:
      * @param identity
      * @return
      */
-    KDNode* insert(const cv::Mat& nodePos, const Identity& identity);
+    KDNode* insert(const cv::Mat& nodePos, const int identity);
 
     /**
      * @brief getPosition: return vector
@@ -76,7 +73,13 @@ public:
      * @brief getIdentity
      * @return
      */
-    Identity& getIdentity();
+    int getIdentity();
+
+    /**
+     * @brief setNodeId : set database entry id of node
+     * @param id
+     */
+    void setNodeId(int id);
 
 private:
 

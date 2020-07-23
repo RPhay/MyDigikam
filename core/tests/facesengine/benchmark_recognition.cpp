@@ -531,7 +531,7 @@ int main(int argc, char** argv)
     //benchmark.verifyKNearestDb();
 
     benchmark.fetchData();
-    //benchmark.registerTrainingSet();
+    benchmark.registerTrainingSet();
     benchmark.verifyTestSet();
 
     return 0;

@@ -24,6 +24,7 @@
 
 namespace RecognitionTest
 {
+
 class KDTree::Private
 {
 public:
@@ -35,14 +36,14 @@ public:
 
     ~Private()
     {
-        delete root;
+        nodes.clear();
     }
 
 public:
 
     int nbDimension;
     KDNode* root;
-    QVector<KDNode*> agents;
+    QVector<KDNode*> nodes;
 };
 
 KDTree::KDTree(int dim)
@@ -55,30 +56,39 @@ KDTree::~KDTree()
     delete d;
 }
 
-bool KDTree::add(const cv::Mat& position, const Digikam::Identity& identity)
+KDNode* KDTree::add(const cv::Mat& position, const int identity)
 {
     if (d->root == nullptr)
     {
         d->root = new KDNode(position, identity, 0, d->nbDimension);
-        d->agents.append(d->root);
+        d->nodes.append(d->root);
+
+        return d->root;
     }
     else
     {
         KDNode* pNode = nullptr;
         if ((pNode = d->root->insert(position, identity)) != nullptr)
         {
-            d->agents.append(pNode);
+            d->nodes.append(pNode);
+
+            return pNode;
         }
     }
-    return true;
+
+    return nullptr;
 }
 
 QMap<double, QVector<KDNode*> > KDTree::getClosestNeighbors(const cv::Mat& position, double sqRange, int maxNbNeighbors) const
 {
     QMap<double, QVector<KDNode*> > closestNeighbors;
 
-    sqRange = d->root->getClosestNeighbors(closestNeighbors, position, sqRange, maxNbNeighbors);
+    if (d->root)
+    {
+        sqRange = d->root->getClosestNeighbors(closestNeighbors, position, sqRange, maxNbNeighbors);
+    }
 
     return closestNeighbors;
 }
-}
+
+} // namespace RecognitionTest
