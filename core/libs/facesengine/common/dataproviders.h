@@ -48,10 +48,11 @@ public:
 
     virtual ~ImageListProvider();
 
-    virtual int    size() const           = 0;
-    virtual bool   atEnd() const          = 0;
-    virtual void   proceed(int steps = 1) = 0;
-    virtual QImage image()                = 0;
+    virtual int           size() const           = 0;
+    virtual bool          atEnd() const          = 0;
+    virtual void          proceed(int steps = 1) = 0;
+    virtual QImage        image()                = 0;
+    virtual QList<QImage> images()               = 0;
 };
 
 // ----------------------------------------------------------------------------------------
@@ -70,10 +71,11 @@ public:
 
 public:
 
-    virtual int    size()  const          override;
-    virtual bool   atEnd() const          override;
-    virtual void   proceed(int steps = 1) override;
-    virtual QImage image()                override;
+    virtual int           size()  const          override;
+    virtual bool          atEnd() const          override;
+    virtual void          proceed(int steps = 1) override;
+    virtual QImage        image()                override;
+    virtual QList<QImage> images()               override;
 
 public:
 
@@ -91,6 +93,7 @@ public:
     virtual bool   atEnd() const          override;
     virtual void   proceed(int steps = 1) override;
     virtual QImage image()                override;
+    virtual QList<QImage> images()        override;
 };
 
 // ----------------------------------------------------------------------------------------

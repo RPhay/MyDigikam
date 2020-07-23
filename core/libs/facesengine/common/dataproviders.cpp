@@ -68,6 +68,11 @@ QImage QListImageListProvider::image()
     return *it;
 }
 
+QList<QImage> QListImageListProvider::images()
+{
+    return list;
+}
+
 // ----------------------------------------------------------------------------------------
 
 int  EmptyImageListProvider::size()  const
@@ -88,6 +93,11 @@ void EmptyImageListProvider::proceed(int steps)
 QImage EmptyImageListProvider::image()
 {
     return QImage();
+}
+
+QList<QImage> EmptyImageListProvider::images()
+{
+    return QList<QImage>();
 }
 
 // ----------------------------------------------------------------------------------------

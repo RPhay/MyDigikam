@@ -27,59 +27,23 @@
 #include "facesengine_interface_p.h"
 
 #ifdef USE_DNN_RECOGNITION_BACKEND
-/*
+
 void FacesEngineInterface::Private::trainIdentityBatch(const QList<Identity>& identitiesToBeTrained,
                                                        TrainingDataProvider* const data,
                                                        const QString& trainingContext)
 {
     foreach (const Identity& identity, identitiesToBeTrained)
     {
-        std::vector<int>     labels;
-        std::vector<cv::Mat> images;
-        std::vector<cv::Mat> images_rgb;
-
         ImageListProvider* const imageList = data->newImages(identity);
-        images.reserve(imageList->size());
 
-        for ( ; !imageList->atEnd() ; imageList->proceed())
-        {
-            try
-            {
-                cv::Mat cvImage     = preprocessingChain(imageList->image());
-                cv::Mat cvImage_rgb = preprocessingChainRGB(imageList->image());
-
-                labels.push_back(identity.id());
-                images.push_back(cvImage);
-                images_rgb.push_back(cvImage_rgb);
-            }
-            catch (cv::Exception& e)
-            {
-                qCCritical(DIGIKAM_FACESENGINE_LOG) << "cv::Exception preparing image for DNN:" << e.what();
-            }
-            catch (...)
-            {
-                qCCritical(DIGIKAM_FACESENGINE_LOG) << "Default exception from OpenCV";
-            }
-        }
+        QList<QImage> images = imageList->images();
 
         qCDebug(DIGIKAM_FACESENGINE_LOG) << "DNN Training" << images.size() << "images for identity" << identity.id();
 
-        try
-        {
-            // TODO : investigate this routine
-            //recognizer->train(images, labels, trainingContext, images_rgb);
-        }
-        catch (cv::Exception& e)
-        {
-            qCCritical(DIGIKAM_FACESENGINE_LOG) << "cv::Exception training DNN Recognizer:" << e.what();
-        }
-        catch (...)
-        {
-            qCCritical(DIGIKAM_FACESENGINE_LOG) << "Default exception from OpenCV";
-        }
+        recognizer->train(images, identity.id(), trainingContext);
     }
 }
-*/
+
 #else
 
 #endif

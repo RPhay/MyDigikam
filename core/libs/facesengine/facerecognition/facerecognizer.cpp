@@ -478,8 +478,6 @@ void FaceRecognizer::train(const QList<QImage>& images,
             qCCritical(DIGIKAM_FACESENGINE_LOG) << "Default exception from OpenCV";
         }
     }
-
-
 }
 
 

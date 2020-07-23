@@ -97,9 +97,7 @@ public:
      * @param label
      * @param context
      */
-    void train(const QList<QImage>& images,
-               const int label,
-               const QString& context);
+    void train(const QList<QImage>& images, const int label, const QString& context);
 
     QMap<double, QVector<int> > getClosestNodes(const cv::Mat& position,
                                                 double sqRange,
