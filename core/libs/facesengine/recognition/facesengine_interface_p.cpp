@@ -46,22 +46,6 @@ FacesEngineInterface::Private::Private()
       funnel(nullptr),
       recognizer(nullptr)
 {
-#ifdef USE_DNN_RECOGNITION_BACKEND
-
-    recognizer = new FaceRecognizer(FaceRecognizer::Tree);
-
-#else
-
-    recognizer = new OpenCVLBPHFaceRecognizer();
-/*
-    NOTE: experimental and deprecated
-
-    recognizer = new OpenCVFISHERFaceRecognizer();
-    recognizer = new OpenCVEIGENFaceRecognizer();
-*/
-
-#endif
-
     DbEngineParameters params = CoreDbAccess::parameters().faceParameters();
     params.setFaceDatabasePath(CoreDbAccess::parameters().faceParameters().getFaceDatabaseNameOrDir());
     FaceDbAccess::setParameters(params);
@@ -83,6 +67,22 @@ FacesEngineInterface::Private::Private()
     {
         qCDebug(DIGIKAM_FACESENGINE_LOG) << "Failed to initialize face database";
     }
+
+#ifdef USE_DNN_RECOGNITION_BACKEND
+
+    recognizer = new FaceRecognizer(FaceRecognizer::Tree);
+
+#else
+
+    recognizer = new OpenCVLBPHFaceRecognizer();
+/*
+    NOTE: experimental and deprecated
+
+    recognizer = new OpenCVFISHERFaceRecognizer();
+    recognizer = new OpenCVEIGENFaceRecognizer();
+*/
+
+#endif
 }
 
 FacesEngineInterface::Private::~Private()

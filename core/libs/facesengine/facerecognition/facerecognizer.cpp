@@ -444,6 +444,7 @@ bool FaceRecognizer::insertData(const cv::Mat& nodePos, const int label, const Q
         if (newNode)
         {
             newNode->setNodeId(nodeId);
+            qDebug() << "inserted node of id" << nodeId;
         }
         else
         {

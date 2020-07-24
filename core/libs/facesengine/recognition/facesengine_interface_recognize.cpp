@@ -46,6 +46,8 @@ QList<Identity> FacesEngineInterface::recognizeFaces(ImageListProvider* const im
         try
         {
             id = d->recognizer->recognize(images->image());
+
+            qDebug() << "id" << id;
         }
         catch (cv::Exception& e)
         {

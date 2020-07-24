@@ -39,7 +39,9 @@
 #include "facedetector.h"
 #include "faceextractor.h"
 #include "facerecognizer.h"
-#include "identity.h"
+#include "facesengine_interface.h"
+#include "dbengineparameters.h"
+#include "coredbaccess.h"
 
 using namespace Digikam;
 using namespace RecognitionTest;
@@ -71,7 +73,7 @@ public:
 
 private:
 
-    bool preprocess(QImage* faceImg, cv::Mat& face);
+    QImage detect(QImage* faceImg);
 
 public:
     Q_SLOT void fetchData();
@@ -87,7 +89,7 @@ private:
     QHash<QString, QVector<QImage*> > m_testSet;
 
     OpenCVDNNFaceDetector* m_detector;
-    FaceRecognizer*        m_recognizer;
+    FacesEngineInterface*  m_recognizer;
 };
 
 Benchmark::Benchmark(FaceRecognizer::Classifier classifier)
@@ -97,8 +99,14 @@ Benchmark::Benchmark(FaceRecognizer::Classifier classifier)
       m_trainSize(0),
       m_testSize(0)
 {
+    DbEngineParameters prm = DbEngineParameters::parametersFromConfig();
+    CoreDbAccess::setParameters(prm, CoreDbAccess::MainApplication);
+
     m_detector   = new OpenCVDNNFaceDetector(DetectorNNModel::SSDMOBILENET);
-    m_recognizer = new FaceRecognizer(classifier);
+    m_recognizer = new FacesEngineInterface();
+
+    m_recognizer->clearAllTraining();
+    m_recognizer->deleteIdentities(m_recognizer->allIdentities());
 }
 
 Benchmark::~Benchmark()
@@ -146,24 +154,28 @@ void Benchmark::registerTrainingSet()
                                                      iter != m_trainSet.end();
                                                    ++iter)
     {
-        int index = -1;
+        QMap<QString, QString> attributes;
+        attributes[QLatin1String("fullName")] = iter.key();
+
+        Identity newIdentity = m_recognizer->addIdentity(attributes);
+
+        qDebug() << "add new identity to database" << newIdentity.id();
+
+        QList<QImage> trainImages;
 
         for (int i = 0; i < iter.value().size(); ++i)
         {
-            cv::Mat face;
+            QImage croppedFace = detect(iter.value().at(i));
 
-            if (preprocess(iter.value().at(i), face))
+            if (!croppedFace.isNull())
             {
-                Identity newIdentity = m_recognizer->newIdentity(face);
-
-                newIdentity.setId(index);
-                newIdentity.setAttribute(QLatin1String("fullName"), iter.key());
-
-                index = m_recognizer->saveIdentity(newIdentity, (index < 0));
+                trainImages << croppedFace;
 
                 ++m_trainSize;
             }
         }
+
+        m_recognizer->train(newIdentity, trainImages, QLatin1String("train face classifier"));
     }
 
     unsigned int elapsedDetection = timer.elapsed();
@@ -185,11 +197,11 @@ void Benchmark::verifyTestSet()
     {
         for (int i = 0; i < iter.value().size(); ++i)
         {
-            cv::Mat face;
+            QImage croppedFace = detect(iter.value().at(i));
 
-            if (preprocess(iter.value().at(i), face))
+            if (!croppedFace.isNull())
             {
-                Identity newIdentity = m_recognizer->findIdenity(face);
+                Identity newIdentity = m_recognizer->recognizeFace(croppedFace);
 
                 if (newIdentity.isNull() && m_trainSet.contains(iter.key()))
                 {
@@ -226,7 +238,7 @@ void Benchmark::verifyTestSet()
                            << m_testSize << "test faces, (" << float(elapsedDetection)/m_testSize << " ms/face)";
 }
 
-bool Benchmark::preprocess(QImage* faceImg, cv::Mat& face)
+QImage Benchmark::detect(QImage* faceImg)
 {
     QList<QRectF> faces;
 
@@ -252,14 +264,12 @@ bool Benchmark::preprocess(QImage* faceImg, cv::Mat& face)
 
     if (faces.isEmpty())
     {
-        return false;
+        return QImage();
     }
 
     QRect rect = FaceDetector::toAbsoluteRect(faces[0], faceImg->size());
 
-    face = (m_recognizer->prepareForRecognition(faceImg->copy(rect)));
-
-    return true;
+    return faceImg->copy(rect);
 }
 
 void Benchmark::splitData(const QDir& dataDir, float splitRatio)
@@ -367,9 +377,10 @@ void Benchmark::saveData()
             if (! img->isNull())
             {
                 cv::Mat face;
-
+            /*
                 if (preprocess(img, face))
                 {
+
                     Identity newIdentity = m_recognizer->newIdentity(face);
 
                     QJsonObject identityJson;
@@ -378,6 +389,7 @@ void Benchmark::saveData()
 
                     faceEmbeddingArray.append(identityJson);
                 }
+            */
             }
         }
     }
@@ -426,7 +438,7 @@ void Benchmark::testWriteDb()
 
         std::vector<float> faceEmbedding = FaceExtractor::decodeVector(object[QLatin1String("faceembedding")].toArray());
 
-        m_recognizer->insertData(FaceExtractor::vectortomat(faceEmbedding), object[QLatin1String("id")].toInt());
+        //m_recognizer->insertData(FaceExtractor::vectortomat(faceEmbedding), object[QLatin1String("id")].toInt());
     }
 
     qDebug() << "write face embedding to spatial database with average" << timer.elapsed() /data.size() << "ms/faceEmbedding";
@@ -464,7 +476,7 @@ void Benchmark::verifyKNearestDb()
 
         int label = object[QLatin1String("id")].toInt();
 
-        QMap<double, QVector<int> > closestNeighbors = m_recognizer->getClosestNodes(FaceExtractor::vectortomat(faceEmbedding), 1.0, 5);
+        QMap<double, QVector<int> > closestNeighbors /*= m_recognizer->getClosestNodes(FaceExtractor::vectortomat(faceEmbedding), 1.0, 5)*/;
 
         QMap<int, QVector<double> > votingGroups;
 

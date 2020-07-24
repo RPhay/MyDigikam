@@ -195,6 +195,7 @@ Identity FacesEngineInterface::addIdentity(const QMap<QString, QString>& attribu
 {
     if (!d || !d->dbAvailable)
     {
+        qDebug() << "Faces engine is available" << d->dbAvailable;
         return Identity();
     }
 
