@@ -42,12 +42,18 @@
 #include "facedbbackend.h"
 #include "opencvmatdata.h"
 
+#ifdef USE_DNN_RECOGNITION_BACKEND
+
+// TODO: rechange namespace
+#include "kd_tree.h"
+using namespace RecognitionTest;
+
+#endif
+
 namespace Digikam
 {
 
 #ifdef USE_DNN_RECOGNITION_BACKEND
-
-class KDTree;
 
 #else
 

@@ -24,8 +24,88 @@
 
 #include "facedb_p.h"
 
+using namespace RecognitionTest;
+
 namespace Digikam
 {
+
+int FaceDb::insertFaceVector(const cv::Mat& faceEmbedding,
+                             const int label,
+                             const QString& context) const
+{
+    QVariantList insertingValues;
+    QVariant     insertedId;
+
+    insertingValues << label
+                    << context
+                    << QByteArray::fromRawData((char*)faceEmbedding.ptr<float>(), (sizeof(float) * 128));
+
+    d->db->execSql(QLatin1String("INSERT INTO FaceMatrices (identity, `context`, embedding) "
+                                 "VALUES (?,?,?);"),
+                   insertingValues, nullptr, &insertedId);
+
+    qCDebug(DIGIKAM_FACEDB_LOG) << "Commit compressed face mat data " << insertedId
+                                << " for identity " << label;
+
+
+    return insertedId.toInt();
+}
+
+KDTree* FaceDb::reconstructTree() const
+{
+    KDTree* tree = new KDTree(128);
+
+    qCDebug(DIGIKAM_FACEDB_LOG) << "Loading KD-Tree";
+    DbEngineSqlQuery query = d->db->execQuery(QLatin1String("SELECT id, identity, embedding "
+                                                            "FROM FaceMatrices;"));
+
+    // favor new data
+    if (query.last())
+    {
+        do
+        {
+            int nodeId   = query.value(0).toInt();
+            int identity = query.value(1).toInt();
+            cv::Mat recordedFaceEmbedding = cv::Mat(1, 128, CV_32F, query.value(2).toByteArray().data()).clone();
+
+            KDNode* newNode = tree->add(recordedFaceEmbedding, identity);
+
+            if (newNode)
+            {
+                newNode->setNodeId(nodeId);
+            }
+            else
+            {
+                qWarning() << "Error insert node" << nodeId;
+            }
+        }
+        while(query.previous());
+    }
+
+    return tree;
+}
+
+cv::Ptr<cv::ml::TrainData> FaceDb::trainData() const
+{
+    cv::Mat feature, label;
+
+    qCDebug(DIGIKAM_FACEDB_LOG) << "Loading KD-Tree";
+    DbEngineSqlQuery query = d->db->execQuery(QLatin1String("SELECT identity, embedding "
+                                                            "FROM FaceMatrices;"));
+
+
+    if (query.last())
+    {
+        do
+        {
+            label.push_back(query.value(0).toInt());
+            feature.push_back(cv::Mat(1, 128, CV_32F, query.value(1).toByteArray().data()).clone());
+        }
+        while(query.previous());
+    }
+
+    return cv::ml::TrainData::create(feature, 0, label);
+}
 
 /*
 void FaceDb::updateDNNFaceModel(DNNFaceModel& model)

@@ -100,7 +100,7 @@ int FaceEmbeddingDb::insert(const cv::Mat& faceEmbedding, const int label, const
         return -1;
     }
 
-    return d->query.lastInsertId().toInt();;
+    return d->query.lastInsertId().toInt();
 }
 
 KDTree* FaceEmbeddingDb::reconstructTree() const
