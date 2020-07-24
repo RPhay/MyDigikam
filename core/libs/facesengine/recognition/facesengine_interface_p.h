@@ -89,6 +89,18 @@ public:
 
     void clear(const QList<int>& idsToClear, const QString& trainingContext);
 
+    // --- Identity management (facesengine_interface_identity.cpp) -----------------------------------------
+
+    bool     identityContains(const Identity& identity,
+                              const QString& attribute,
+                              const QString& value)                   const;
+
+    Identity findByAttribute(const QString& attribute,
+                             const QString& value)                    const;
+
+    Identity findByAttributes(const QString& attribute,
+                              const QMap<QString, QString>& valueMap) const;
+
 public:
 
     bool                 dbAvailable;

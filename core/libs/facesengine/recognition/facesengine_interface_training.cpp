@@ -98,8 +98,9 @@ void FacesEngineInterface::Private::clear(const QList<int>& idsToClear, const QS
         FaceDbAccess().db()->clearEIGENTraining(idsToClear, trainingContext);
     }
 
-    recognizer = new OpenCVFISHERFaceRecognizer();
     recognizer = new OpenCVEIGENFaceRecognizer();
+
+    recognizer = new OpenCVFISHERFaceRecognizer();
 */
 
 #endif
