@@ -339,12 +339,11 @@ void RecognitionDatabase::Private::clearDNN(const QList<int>& idsToClear,
 
     if (idsToClear.isEmpty())
     {
-        // TODO: reimplement facedb
-        //FaceDbAccess().db()->clearDNNTraining(trainingContext);
+        FaceDbAccess().db()->clearDNNTraining(trainingContext);
     }
     else
     {
-        //FaceDbAccess().db()->clearDNNTraining(idsToClear, trainingContext);
+        FaceDbAccess().db()->clearDNNTraining(idsToClear, trainingContext);
     }
 }
 

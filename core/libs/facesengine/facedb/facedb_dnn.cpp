@@ -27,7 +27,6 @@
 namespace Digikam
 {
 
-
 /*
 void FaceDb::updateDNNFaceModel(DNNFaceModel& model)
 {
@@ -165,6 +164,7 @@ DNNFaceModel FaceDb::dnnFaceModel(bool debug) const
 
     return model;
 }
+*/
 
 void FaceDb::clearDNNTraining(const QString& context)
 {
@@ -174,7 +174,7 @@ void FaceDb::clearDNNTraining(const QString& context)
     }
     else
     {
-        d->db->execSql(QLatin1String("DELETE FROM FaceMatrices WHERE `context`=?;"),
+        d->db->execSql(QLatin1String("DELETE FROM FaceMatrices WHERE 'context'=?;"),
                        context);
     }
 }
@@ -190,10 +190,10 @@ void FaceDb::clearDNNTraining(const QList<int>& identities, const QString& conte
         }
         else
         {
-            d->db->execSql(QLatin1String("DELETE FROM FaceMatrices WHERE identity=? AND `context`=?;"),
+            d->db->execSql(QLatin1String("DELETE FROM FaceMatrices WHERE identity=? AND 'context'=?;"),
                            id, context);
         }
     }
 }
-*/
+
 } // namespace Digikam

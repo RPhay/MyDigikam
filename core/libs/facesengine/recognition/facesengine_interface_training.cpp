@@ -56,6 +56,56 @@ void FacesEngineInterface::Private::trainIdentityBatch(const QList<Identity>& id
     }
 }
 
+void FacesEngineInterface::Private::clear(const QList<int>& idsToClear, const QString& trainingContext)
+{
+    delete recognizer;
+
+#ifdef USE_DNN_RECOGNITION_BACKEND
+
+    if (idsToClear.isEmpty())
+    {
+        FaceDbAccess().db()->clearDNNTraining(trainingContext);
+    }
+    else
+    {
+        FaceDbAccess().db()->clearDNNTraining(idsToClear, trainingContext);
+    }
+
+    recognizer = new FaceRecognizer(FaceRecognizer::Tree);
+
+#else
+
+    if (idsToClear.isEmpty())
+    {
+        FaceDbAccess().db()->clearLBPHTraining(trainingContext);
+    }
+    else
+    {
+        FaceDbAccess().db()->clearLBPHTraining(idsToClear, trainingContext);
+    }
+
+    recognizer = new OpenCVLBPHFaceRecognizer();
+
+/*
+    NOTE: experimental and deprecated
+
+    if (idsToClear.isEmpty())
+    {
+        FaceDbAccess().db()->clearEIGENTraining(trainingContext);
+    }
+    else
+    {
+        FaceDbAccess().db()->clearEIGENTraining(idsToClear, trainingContext);
+    }
+
+    recognizer = new OpenCVFISHERFaceRecognizer();
+    recognizer = new OpenCVEIGENFaceRecognizer();
+*/
+
+#endif
+}
+
+
 // -------------------------------------------------------------------------------------
 
 void FacesEngineInterface::train(const QList<Identity>& identitiesToBeTrained,
@@ -96,6 +146,42 @@ void FacesEngineInterface::train(const Identity& identityToBeTrained,
     RecognitionTrainingProvider* const data = new RecognitionTrainingProvider(identityToBeTrained, images);
     train(identityToBeTrained, data, trainingContext);
     delete data;
+}
+
+// -------------------------------------------------------------------------------------
+
+
+void FacesEngineInterface::clearAllTraining(const QString& trainingContext)
+{
+    if (!d || !d->dbAvailable)
+    {
+        return;
+    }
+
+    QMutexLocker lock(&d->mutex);
+
+    FaceDbAccess().db()->clearIdentities();
+
+    d->clear(QList<int>(), trainingContext);
+}
+
+void FacesEngineInterface::clearTraining(const QList<Identity>& identitiesToClean,
+                                        const QString& trainingContext)
+{
+    if (!d || !d->dbAvailable || identitiesToClean.isEmpty())
+    {
+        return;
+    }
+
+    QMutexLocker lock(&d->mutex);
+    QList<int>   ids;
+
+    foreach (const Identity& id, identitiesToClean)
+    {
+        ids << id.id();
+    }
+
+    d->clear(ids, trainingContext);
 }
 
 } // namespace Digikam

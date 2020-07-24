@@ -107,7 +107,17 @@ public:
     void train(const Identity& identityToBeTrained, const QList<QImage>& images,
                const QString& trainingContext);
 
-    // TODO implement clear training after implementing database management
+    /**
+     * Deletes the training data for all identities,
+     * leaving the identities as such in the database.
+     */
+    void clearAllTraining(const QString& trainingContext = QString());
+
+    /**
+     * Deletes the training data for the given identity,
+     * leaving the identity as such in the database.
+     */
+    void clearTraining(const QList<Identity>& identitiesToClean, const QString& trainingContext = QString());
 
     // --- Recognition management (facesengine_interface_recognize.cpp) -------------------
 

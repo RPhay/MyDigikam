@@ -87,6 +87,8 @@ public:
                             TrainingDataProvider* const data,
                             const QString& trainingContext);
 
+    void clear(const QList<int>& idsToClear, const QString& trainingContext);
+
 public:
 
     bool                 dbAvailable;
