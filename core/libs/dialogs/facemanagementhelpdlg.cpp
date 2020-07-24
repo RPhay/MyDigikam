@@ -229,10 +229,10 @@ FaceManagementHelpDialog::FaceManagementHelpDialog(QWidget* const parent)
 
     QLabel* faceRecogFooter      = new QLabel(faceRecogPage);
     faceRecogFooter->setWordWrap(true);
-    faceRecogFooter->setText(i18n("To increase the speed of Face Recognition, "
-                                  "you may check <u>Work on all processor cores</u> "
-                                  "from the Settings Tab. You can also modify Recognition "
-                                  "Accuracy, to find a balance between Accuracy and Speed."));
+    faceRecogFooter->setText(i18n("The Face Accuracy Slider allows you to control the "
+                                  "accuracy of the Recognition Algorithm. A higher specificity "
+                                  "implies higher accuracy, however this results in a smaller set "
+                                  "of results."));
 
     QPixmap workOnAllCoresImage  = QPixmap(QStandardPaths::locate(QStandardPaths::GenericDataLocation, QLatin1String("digikam/data/workOnAllCoresImg.png")));
     workOnAllCoresImage          = workOnAllCoresImage.scaled(QSize(445,170));
