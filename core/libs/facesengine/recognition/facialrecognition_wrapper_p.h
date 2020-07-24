@@ -61,7 +61,6 @@ using namespace RecognitionTest;
 #include "facedbaccess.h"
 #include "facedboperationgroup.h"
 #include "facedb.h"
-#include "funnelreal.h"
 #include "dataproviders.h"
 #include "identity.h"
 
@@ -107,8 +106,6 @@ public:
     mutable QMutex       mutex;
     QVariantMap          parameters;
     QHash<int, Identity> identityCache;
-
-    FunnelReal* funnel;
 
 #ifdef USE_DNN_RECOGNITION_BACKEND
 

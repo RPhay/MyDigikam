@@ -43,7 +43,6 @@ T* getObjectOrCreate(T* &ptr)
 */
 FacialRecognitionWrapper::Private::Private()
     : mutex(QMutex::Recursive),
-      funnel(nullptr),
       recognizer(nullptr)
 {
     DbEngineParameters params = CoreDbAccess::parameters().faceParameters();
@@ -88,7 +87,6 @@ FacialRecognitionWrapper::Private::Private()
 FacialRecognitionWrapper::Private::~Private()
 {
     delete recognizer;
-    delete funnel;
 }
 
 } // namespace Digikam
