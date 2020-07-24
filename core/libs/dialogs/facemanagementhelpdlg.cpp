@@ -32,7 +32,6 @@
 #include <QTabWidget>
 #include <QMovie>
 #include <QStandardPaths>
-#include <QDebug>
 
 #include <klocalizedstring.h>
 
@@ -338,7 +337,6 @@ FaceManagementHelpDialog::FaceManagementHelpDialog(QWidget* const parent)
 
     mainLayout->addWidget(tabWidget, 0, 0);
     setLayout(mainLayout);
-    setVisible(true);
 }
 
 FaceManagementHelpDialog::~FaceManagementHelpDialog()
