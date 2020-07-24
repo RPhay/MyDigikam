@@ -305,18 +305,24 @@ FaceManagementHelpDialog::FaceManagementHelpDialog(QWidget* const parent)
 
     QLabel* sortText        = new QLabel(confirmFacesPage);
     sortText->setWordWrap(true);
-    sortText->setText(i18n("By default, Faces are sorted by File Names, and hence "
-                           "Face Suggestions will appear mixed "
-                           "with already Confirmed Results.<br>You can change this "
-                           "by modifying the Sort Items Role to \"By Face Type\". "
-                           "This can be accessed through the View Menu.<br>"
-                           "This allows for batch operations on multiple Faces as shown. <br>"));
+    sortText->setText(i18n("<b>Face Categorization and Sorting</b> <br>"
+                           "By default, Faces will appear Categorized based on their "
+                           "name. You may change this behaviour, by going to "
+                           "<u>View -> Separate Items.</u> <br>"
+                           "Note that using a different Categorization Order will "
+                           "lead to Confirmed and Unconfirmed Faces appearing "
+                           "mixed with one another. To change this behaviour "
+                           "you may modify the Sorting order within each category "
+                           "by going to <u>View -> Sort Items -> By Face Type</u>."));
 
-    QMovie* sortGif         = new QMovie(QStandardPaths::locate(QStandardPaths::GenericDataLocation, QLatin1String("digikam/data/sortFacesImg.gif")));
-    sortGif->setScaledSize(QSize(450, 250));
-    QLabel* sortGifLabel    = new QLabel(confirmFacesPage);
-    sortGifLabel->setMovie(sortGif);
-    sortGif->start();
+    QLabel* improveResults  = new QLabel(confirmFacesPage);
+    improveResults->setWordWrap(true);
+    improveResults->setText(i18n("<br> <b> Improving Results of Face Recognition </b> <br>"
+                                 "Apart from using the settings mentioned in the last page, "
+                                 "Face Results may also be improved by Rebuilding the Training Data. "
+                                 "This may be done through Tools->Maintanence->Detect and Recognize Faces"
+                                 "->Clear and rebuild all training data."));
+    improveResults->setAlignment(Qt::AlignTop);
 
     confirmFacesLayout->addWidget(overlayImgLabel, 0, 0, 4, 1);
     confirmFacesLayout->addWidget(overlayText,     0, 1, 1, 7);
@@ -326,8 +332,8 @@ FaceManagementHelpDialog::FaceManagementHelpDialog(QWidget* const parent)
     confirmFacesLayout->addWidget(rejectText,      2, 2, 1, 6);
     confirmFacesLayout->addWidget(deleteIcon,      3, 1, 1, 1);
     confirmFacesLayout->addWidget(deleteText,      3, 2, 1, 6);
-    confirmFacesLayout->addWidget(sortText,        4, 0, 1, 3);
-    confirmFacesLayout->addWidget(sortGifLabel,    4, 3, 1, 5);
+    confirmFacesLayout->addWidget(sortText,        4, 0, 1, 8);
+    confirmFacesLayout->addWidget(improveResults,  5, 0, 1, 8);
 
     confirmFacesPage->setLayout(confirmFacesLayout);
 
