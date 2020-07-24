@@ -24,8 +24,6 @@
 #define FACEEMBEDDING_DB_H
 
 #include "digikam_opencv.h"
-#include "opencv2/ml.hpp"
-
 #include "kd_tree.h"
 
 namespace RecognitionTest
@@ -51,6 +49,10 @@ public:
      */
     KDTree* reconstructTree() const;
 
+    /**
+     * @brief trainData: extract train data from database
+     * @return
+     */
     cv::Ptr<cv::ml::TrainData> trainData() const;
 
 private:

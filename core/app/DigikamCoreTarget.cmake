@@ -154,6 +154,7 @@ target_link_libraries(digikamcore
                       opencv_imgproc
                       opencv_imgcodecs
                       opencv_dnn
+                      opencv_ml
                       opencv_flann
 )
 

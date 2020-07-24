@@ -76,6 +76,7 @@
 #include <opencv2/objdetect.hpp>
 #include <opencv2/flann.hpp>
 #include <opencv2/dnn.hpp>
+#include "opencv2/ml.hpp"
 
 // Restore warnings
 #if !defined(__APPLE__) && defined(__GNUC__)

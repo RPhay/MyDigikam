@@ -47,7 +47,7 @@ namespace Digikam
 
 #ifdef USE_DNN_RECOGNITION_BACKEND
 
-//class DNNFaceModel;
+class KDTree;
 
 #else
 
@@ -104,8 +104,30 @@ public:
 
     // --- OpenCV DNN
 
-    //void updateDNNFaceModel(DNNFaceModel& model);
-    //DNNFaceModel dnnFaceModel(bool debug)   const;
+    /**
+     * @brief insertFaceVector : insert a new face embedding to database
+     * @param faceEmbedding
+     * @param label
+     * @return id of newly inserted entry
+     */
+    int insertFaceVector(const cv::Mat& faceEmbedding, const int label, const QString& context) const;
+
+    /**
+     * @brief reconstructTree: reconstruct KD-Tree from data in the database
+     * @return
+     */
+    KDTree* reconstructTree() const;
+
+    /**
+     * @brief trainData: extract train data from database
+     * @return
+     */
+    cv::Ptr<cv::ml::TrainData> trainData() const;
+
+    /**
+     * @brief clearDNNTraining : clear all trained data in the database
+     * @param context
+     */
     void clearDNNTraining(const QString& context = QString());
     void clearDNNTraining(const QList<int>& identities, const QString& context = QString());
 

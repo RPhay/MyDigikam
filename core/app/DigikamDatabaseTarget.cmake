@@ -50,6 +50,7 @@ target_link_libraries(digikamdatabase
                       opencv_imgproc
                       opencv_imgcodecs
                       opencv_dnn
+                      opencv_ml
                       opencv_flann
 )
 
