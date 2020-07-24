@@ -74,13 +74,14 @@ QString RecognitionBenchmarker::result() const
     return s;
 }
 
+// TODO: investigate this method
 void RecognitionBenchmarker::process(FacePipelineExtendedPackage::Ptr package)
 {
     FaceUtils utils;
 
     for (int i = 0 ; i < package->databaseFaces.size() ; ++i)
     {
-        Identity identity  = utils.identityForTag(package->databaseFaces[i].tagId(), database);
+        Identity identity  = utils.identityForTag(package->databaseFaces[i].tagId(), recognizer);
         Statistics& result = results[package->databaseFaces[i].tagId()];
         result.knownFaces++;
 

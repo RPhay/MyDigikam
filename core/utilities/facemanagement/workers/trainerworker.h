@@ -56,7 +56,7 @@ Q_SIGNALS:
 
 protected:
 
-    RecognitionDatabase          database;
+    FacialRecognitionWrapper     recognizer;
     FaceItemRetriever            imageRetriever;
     FacePipeline::Private* const d;
 };

@@ -105,12 +105,12 @@ add_library(digikamfacesengine STATIC $<TARGET_OBJECTS:core_digikamfacesengine_o
 
 # ---------------------------------------------------------------------------
 
-set(facesengine_database_LIB_SRCS ${CMAKE_CURRENT_SOURCE_DIR}/recognition/recognitiondatabase.cpp
-                                  ${CMAKE_CURRENT_SOURCE_DIR}/recognition/recognitiondatabase_p.cpp
-                                  ${CMAKE_CURRENT_SOURCE_DIR}/recognition/recognitiondatabase_identity.cpp
-                                  ${CMAKE_CURRENT_SOURCE_DIR}/recognition/recognitiondatabase_training.cpp
-                                  ${CMAKE_CURRENT_SOURCE_DIR}/recognition/recognitiondatabase_backend.cpp
-                                  ${CMAKE_CURRENT_SOURCE_DIR}/recognition/recognitiondatabase_recognize.cpp
+set(facesengine_database_LIB_SRCS #${CMAKE_CURRENT_SOURCE_DIR}/recognition/recognitiondatabase.cpp
+                                  #${CMAKE_CURRENT_SOURCE_DIR}/recognition/recognitiondatabase_p.cpp
+                                  #${CMAKE_CURRENT_SOURCE_DIR}/recognition/recognitiondatabase_identity.cpp
+                                  #${CMAKE_CURRENT_SOURCE_DIR}/recognition/recognitiondatabase_training.cpp
+                                  #${CMAKE_CURRENT_SOURCE_DIR}/recognition/recognitiondatabase_backend.cpp
+                                  #${CMAKE_CURRENT_SOURCE_DIR}/recognition/recognitiondatabase_recognize.cpp
                                   ${CMAKE_CURRENT_SOURCE_DIR}/recognition/recognitiontrainingprovider.cpp
 
                                   #Replacement of RecognitionDatabase

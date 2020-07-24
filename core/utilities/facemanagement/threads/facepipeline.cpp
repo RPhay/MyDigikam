@@ -267,14 +267,6 @@ QThread::Priority FacePipeline::priority() const
     return d->priority;
 }
 
-void FacePipeline::activeFaceRecognizer(RecognitionDatabase::RecognizeAlgorithm algorithmType)
-{
-    if (d->recognitionWorker != nullptr)
-    {
-        d->recognitionWorker->activeFaceRecognizer(algorithmType);
-    }
-}
-
 void FacePipeline::cancel()
 {
     d->stop();

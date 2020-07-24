@@ -68,7 +68,7 @@ protected:
     QMap<int, Statistics>        results;
 
     FacePipeline::Private* const d;
-    RecognitionDatabase          database;
+    FacialRecognitionWrapper     recognizer;
 };
 
 } // namespace Digikam

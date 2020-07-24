@@ -43,7 +43,7 @@
 
 // Local includes
 
-#include "recognitiondatabase.h"
+#include "facialrecognition_wrapper.h"
 #include "digikam_debug.h"
 #include "coredb.h"
 #include "album.h"
@@ -120,7 +120,7 @@ FacesDetector::FacesDetector(const FaceScanSettings& settings, ProgressItem* con
     if (settings.task == FaceScanSettings::RetrainAll)
     {
         // clear all training data in the database
-        RecognitionDatabase().clearAllTraining(QLatin1String("digikam"));
+        FacialRecognitionWrapper().clearAllTraining(QLatin1String("digikam"));
         d->pipeline.plugRetrainingDatabaseFilter();
         d->pipeline.plugTrainer();
         d->pipeline.construct();
@@ -190,7 +190,6 @@ FacesDetector::FacesDetector(const FaceScanSettings& settings, ProgressItem* con
             //d->pipeline.plugRerecognizingDatabaseFilter();
             qCDebug(DIGIKAM_GENERAL_LOG) << "recognize algorithm: " << (int)settings.recognizeAlgorithm;
             d->pipeline.plugFaceRecognizer();
-            d->pipeline.activeFaceRecognizer(settings.recognizeAlgorithm);
         }
 
         d->pipeline.plugDatabaseWriter(writeMode);
@@ -201,7 +200,6 @@ FacesDetector::FacesDetector(const FaceScanSettings& settings, ProgressItem* con
     {
         d->pipeline.plugRerecognizingDatabaseFilter();
         d->pipeline.plugFaceRecognizer();
-        d->pipeline.activeFaceRecognizer(settings.recognizeAlgorithm);
         d->pipeline.plugDatabaseWriter(FacePipeline::NormalWrite);
         d->pipeline.setDetectionAccuracy(settings.accuracy);
         d->pipeline.construct();

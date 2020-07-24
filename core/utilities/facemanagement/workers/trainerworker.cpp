@@ -79,10 +79,12 @@ TrainerWorker::TrainerWorker(FacePipeline::Private* const d)
     KSharedConfig::Ptr config                    = KSharedConfig::openConfig();
     KConfigGroup group                           = config->group(QLatin1String("Face Management Settings"));
 
-    RecognitionDatabase::RecognizeAlgorithm algo =
-            (RecognitionDatabase::RecognizeAlgorithm)group.readEntry(QLatin1String("Recognize Algorithm"),
+/*
+    TODO: remove this entry in config
+
+    (RecognitionDatabase::RecognizeAlgorithm)group.readEntry(QLatin1String("Recognize Algorithm"),
                                                                      (int)RecognitionDatabase::RecognizeAlgorithm::DNN);
-    database.activeFaceRecognizer(algo);
+*/
 }
 
 TrainerWorker::~TrainerWorker()
@@ -90,6 +92,7 @@ TrainerWorker::~TrainerWorker()
     wait();    // protect detector
 }
 
+// TODO: investigate this method
 void TrainerWorker::process(FacePipelineExtendedPackage::Ptr package)
 {
     //qCDebug(DIGIKAM_GENERAL_LOG) << "TrainerWorker: processing one package";
@@ -109,7 +112,7 @@ void TrainerWorker::process(FacePipelineExtendedPackage::Ptr package)
             dbFace.setType(FaceTagsIface::FaceForTraining);
             toTrain << dbFace;
 
-            Identity identity    = utils.identityForTag(dbFace.tagId(), database);
+            Identity identity    = utils.identityForTag(dbFace.tagId(), recognizer);
 
             identities  << identity.id();
 
@@ -142,7 +145,7 @@ void TrainerWorker::process(FacePipelineExtendedPackage::Ptr package)
             provider.imagesToTrain[identities[i]].list << images[i];
         }
 
-        database.train(identitySet, &provider, QLatin1String("digikam"));
+        recognizer.train(identitySet, &provider, QLatin1String("digikam"));
     }
 
     utils.removeFaces(toTrain);

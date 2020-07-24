@@ -47,11 +47,7 @@ RecognitionWorker::~RecognitionWorker()
     wait();    // protect database
 }
 
-void RecognitionWorker::activeFaceRecognizer(RecognitionDatabase::RecognizeAlgorithm algorithmType)
-{
-    database.activeFaceRecognizer(algorithmType);
-}
-
+// TODO: investigate this method
 void RecognitionWorker::process(FacePipelineExtendedPackage::Ptr package)
 {
     FaceUtils     utils;
@@ -68,7 +64,7 @@ void RecognitionWorker::process(FacePipelineExtendedPackage::Ptr package)
         images = imageRetriever.getThumbnails(package->filePath, package->databaseFaces.toFaceTagsIfaceList());
     }
 
-    package->recognitionResults  = database.recognizeFaces(images);
+    package->recognitionResults  = recognizer.recognizeFaces(images);
     package->processFlags       |= FacePipelinePackage::ProcessedByRecognizer;
 
     emit processed(package);
@@ -76,7 +72,7 @@ void RecognitionWorker::process(FacePipelineExtendedPackage::Ptr package)
 
 void RecognitionWorker::setThreshold(double threshold)
 {
-    database.setParameter(QLatin1String("threshold"), threshold);
+    recognizer.setParameter(QLatin1String("threshold"), threshold);
 }
 
 void RecognitionWorker::aboutToDeactivate()

@@ -42,15 +42,12 @@ public:
     explicit RecognitionWorker(FacePipeline::Private* const d);
     ~RecognitionWorker();
 
-    /**
-     * Set the face recognition algorithm type
-     */
-    void activeFaceRecognizer(RecognitionDatabase::RecognizeAlgorithm  algorithmType);
-
 public Q_SLOTS:
 
     void process(FacePipelineExtendedPackage::Ptr package);
     void setThreshold(double threshold);
+
+    // TODO: add set K-Nearest method
 
 protected:
 
@@ -63,7 +60,7 @@ Q_SIGNALS:
 protected:
 
     FaceItemRetriever            imageRetriever;
-    RecognitionDatabase          database;
+    FacialRecognitionWrapper     recognizer;
     FacePipeline::Private* const d;
 };
 
