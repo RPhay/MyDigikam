@@ -24,14 +24,14 @@
  *
  * ============================================================ */
 
-#include "facesengine_interface_p.h"
+#include "facialrecognition_wrapper_p.h"
 
 namespace Digikam
 {
 /**
  * NOTE: Takes care that there may be multiple values of attribute in identity's attributes
  */
-bool FacesEngineInterface::Private::identityContains(const Identity& identity,
+bool FacialRecognitionWrapper::Private::identityContains(const Identity& identity,
                                                     const QString& attribute,
                                                     const QString& value)
 {
@@ -49,7 +49,7 @@ bool FacesEngineInterface::Private::identityContains(const Identity& identity,
     return false;
 }
 
-Identity FacesEngineInterface::Private::findByAttribute(const QString& attribute,
+Identity FacialRecognitionWrapper::Private::findByAttribute(const QString& attribute,
                                                        const QString& value) const
 {
     foreach (const Identity& identity, identityCache)
@@ -66,7 +66,7 @@ Identity FacesEngineInterface::Private::findByAttribute(const QString& attribute
 /**
  * NOTE: Takes care that there may be multiple values of attribute in valueMap
  */
-Identity FacesEngineInterface::Private::findByAttributes(const QString& attribute,
+Identity FacialRecognitionWrapper::Private::findByAttributes(const QString& attribute,
                                                         const QMap<QString, QString>& valueMap) const
 {
     QMap<QString, QString>::const_iterator it = valueMap.find(attribute);
@@ -87,7 +87,7 @@ Identity FacesEngineInterface::Private::findByAttributes(const QString& attribut
 
 // -----------------------------------------------------------------------
 
-QList<Identity> FacesEngineInterface::allIdentities() const
+QList<Identity> FacialRecognitionWrapper::allIdentities() const
 {
     if (!d || !d->dbAvailable)
     {
@@ -99,7 +99,7 @@ QList<Identity> FacesEngineInterface::allIdentities() const
     return (d->identityCache.values());
 }
 
-Identity FacesEngineInterface::identity(int id) const
+Identity FacialRecognitionWrapper::identity(int id) const
 {
     if (!d || !d->dbAvailable)
     {
@@ -111,7 +111,7 @@ Identity FacesEngineInterface::identity(int id) const
     return (d->identityCache.value(id));
 }
 
-Identity FacesEngineInterface::findIdentity(const QString& attribute, const QString& value) const
+Identity FacialRecognitionWrapper::findIdentity(const QString& attribute, const QString& value) const
 {
     if (!d || !d->dbAvailable || attribute.isEmpty())
     {
@@ -123,7 +123,7 @@ Identity FacesEngineInterface::findIdentity(const QString& attribute, const QStr
     return (d->findByAttribute(attribute, value));
 }
 
-Identity FacesEngineInterface::findIdentity(const QMap<QString, QString>& attributes) const
+Identity FacialRecognitionWrapper::findIdentity(const QMap<QString, QString>& attributes) const
 {
     if (!d || !d->dbAvailable || attributes.isEmpty())
     {
@@ -191,7 +191,7 @@ Identity FacesEngineInterface::findIdentity(const QMap<QString, QString>& attrib
     return Identity();
 }
 
-Identity FacesEngineInterface::addIdentity(const QMap<QString, QString>& attributes)
+Identity FacialRecognitionWrapper::addIdentity(const QMap<QString, QString>& attributes)
 {
     if (!d || !d->dbAvailable)
     {
@@ -231,7 +231,7 @@ Identity FacesEngineInterface::addIdentity(const QMap<QString, QString>& attribu
     return identity;
 }
 
-Identity FacesEngineInterface::addIdentityDebug(const QMap<QString, QString>& attributes)
+Identity FacialRecognitionWrapper::addIdentityDebug(const QMap<QString, QString>& attributes)
 {
     Identity identity;
     {
@@ -244,7 +244,7 @@ Identity FacesEngineInterface::addIdentityDebug(const QMap<QString, QString>& at
     return identity;
 }
 
-void FacesEngineInterface::addIdentityAttributes(int id, const QMap<QString, QString>& attributes)
+void FacialRecognitionWrapper::addIdentityAttributes(int id, const QMap<QString, QString>& attributes)
 {
     if (!d || !d->dbAvailable)
     {
@@ -264,7 +264,7 @@ void FacesEngineInterface::addIdentityAttributes(int id, const QMap<QString, QSt
     }
 }
 
-void FacesEngineInterface::addIdentityAttribute(int id, const QString& attribute, const QString& value)
+void FacialRecognitionWrapper::addIdentityAttribute(int id, const QString& attribute, const QString& value)
 {
     if (!d || !d->dbAvailable)
     {
@@ -283,7 +283,7 @@ void FacesEngineInterface::addIdentityAttribute(int id, const QString& attribute
     }
 }
 
-void FacesEngineInterface::setIdentityAttributes(int id, const QMap<QString, QString>& attributes)
+void FacialRecognitionWrapper::setIdentityAttributes(int id, const QMap<QString, QString>& attributes)
 {
     if (!d || !d->dbAvailable)
     {
@@ -300,7 +300,7 @@ void FacesEngineInterface::setIdentityAttributes(int id, const QMap<QString, QSt
     }
 }
 
-void FacesEngineInterface::deleteIdentity(const Identity& identityToBeDeleted)
+void FacialRecognitionWrapper::deleteIdentity(const Identity& identityToBeDeleted)
 {
     if (!d || !d->dbAvailable || identityToBeDeleted.isNull())
     {
@@ -313,7 +313,7 @@ void FacesEngineInterface::deleteIdentity(const Identity& identityToBeDeleted)
     d->identityCache.remove(identityToBeDeleted.id());
 }
 
-void FacesEngineInterface::deleteIdentities(QList<Identity> identitiesToBeDeleted)
+void FacialRecognitionWrapper::deleteIdentities(QList<Identity> identitiesToBeDeleted)
 {
     QList<Identity>::iterator identity = identitiesToBeDeleted.begin();
 

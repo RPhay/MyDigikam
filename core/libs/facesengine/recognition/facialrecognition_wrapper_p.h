@@ -24,10 +24,10 @@
  *
  * ============================================================ */
 
-#ifndef FACESENGINE_INTERFACE_P_H
-#define FACESENGINE_INTERFACE_P_H
+#ifndef FACIAL_RECOGNITION_WRAPPER_P_H
+#define FACIAL_RECOGNITION_WRAPPER_P_H
 
-#include "facesengine_interface.h"
+#include "facialrecognition_wrapper.h"
 
 // Qt includes
 
@@ -68,7 +68,7 @@ using namespace RecognitionTest;
 namespace Digikam
 {
 
-class Q_DECL_HIDDEN FacesEngineInterface::Private
+class Q_DECL_HIDDEN FacialRecognitionWrapper::Private
 {
 public:
 
@@ -130,4 +130,4 @@ public:
 
 } // namespace Digikam
 
-#endif // FACESENGINE_INTERFACE_P_H
+#endif // FACIAL_RECOGNITION_WRAPPER_P_H

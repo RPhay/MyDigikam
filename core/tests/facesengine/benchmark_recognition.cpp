@@ -39,7 +39,7 @@
 #include "facedetector.h"
 #include "faceextractor.h"
 #include "facerecognizer.h"
-#include "facesengine_interface.h"
+#include "facialrecognition_wrapper.h"
 #include "dbengineparameters.h"
 #include "coredbaccess.h"
 
@@ -89,7 +89,7 @@ private:
     QHash<QString, QVector<QImage*> > m_testSet;
 
     OpenCVDNNFaceDetector* m_detector;
-    FacesEngineInterface*  m_recognizer;
+    FacialRecognitionWrapper*  m_recognizer;
 };
 
 Benchmark::Benchmark(FaceRecognizer::Classifier classifier)
@@ -103,7 +103,7 @@ Benchmark::Benchmark(FaceRecognizer::Classifier classifier)
     CoreDbAccess::setParameters(prm, CoreDbAccess::MainApplication);
 
     m_detector   = new OpenCVDNNFaceDetector(DetectorNNModel::SSDMOBILENET);
-    m_recognizer = new FacesEngineInterface();
+    m_recognizer = new FacialRecognitionWrapper();
 
     m_recognizer->clearAllTraining();
     m_recognizer->deleteIdentities(m_recognizer->allIdentities());

@@ -24,7 +24,7 @@
  *
  * ============================================================ */
 
-#include "facesengine_interface_p.h"
+#include "facialrecognition_wrapper_p.h"
 
 namespace Digikam
 {
@@ -41,7 +41,7 @@ T* getObjectOrCreate(T* &ptr)
     return ptr;
 }
 */
-FacesEngineInterface::Private::Private()
+FacialRecognitionWrapper::Private::Private()
     : mutex(QMutex::Recursive),
       funnel(nullptr),
       recognizer(nullptr)
@@ -85,7 +85,7 @@ FacesEngineInterface::Private::Private()
 #endif
 }
 
-FacesEngineInterface::Private::~Private()
+FacialRecognitionWrapper::Private::~Private()
 {
     delete recognizer;
     delete funnel;

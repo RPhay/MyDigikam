@@ -24,11 +24,11 @@
  *
  * ============================================================ */
 
-#include "facesengine_interface_p.h"
+#include "facialrecognition_wrapper_p.h"
 namespace Digikam
 {
 
-QList<Identity> FacesEngineInterface::recognizeFaces(ImageListProvider* const images)
+QList<Identity> FacialRecognitionWrapper::recognizeFaces(ImageListProvider* const images)
 {
     if (!d || !d->dbAvailable)
     {
@@ -71,14 +71,14 @@ QList<Identity> FacesEngineInterface::recognizeFaces(ImageListProvider* const im
     return result;
 }
 
-QList<Identity> FacesEngineInterface::recognizeFaces(const QList<QImage>& images)
+QList<Identity> FacialRecognitionWrapper::recognizeFaces(const QList<QImage>& images)
 {
     QListImageListProvider provider(images);
 
     return recognizeFaces(&provider);
 }
 
-Identity FacesEngineInterface::recognizeFace(const QImage& image)
+Identity FacialRecognitionWrapper::recognizeFace(const QImage& image)
 {
     QList<Identity> result = recognizeFaces(QList<QImage>() << image);
 

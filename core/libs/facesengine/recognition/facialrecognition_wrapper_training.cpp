@@ -24,12 +24,12 @@
  *
  * ============================================================ */
 
-#include "facesengine_interface_p.h"
+#include "facialrecognition_wrapper_p.h"
 
 namespace Digikam
 {
 
-void FacesEngineInterface::Private::trainIdentityBatch(const QList<Identity>& identitiesToBeTrained,
+void FacialRecognitionWrapper::Private::trainIdentityBatch(const QList<Identity>& identitiesToBeTrained,
                                                        TrainingDataProvider* const data,
                                                        const QString& trainingContext)
 {
@@ -56,7 +56,7 @@ void FacesEngineInterface::Private::trainIdentityBatch(const QList<Identity>& id
     }
 }
 
-void FacesEngineInterface::Private::clear(const QList<int>& idsToClear, const QString& trainingContext)
+void FacialRecognitionWrapper::Private::clear(const QList<int>& idsToClear, const QString& trainingContext)
 {
     delete recognizer;
 
@@ -109,7 +109,7 @@ void FacesEngineInterface::Private::clear(const QList<int>& idsToClear, const QS
 
 // -------------------------------------------------------------------------------------
 
-void FacesEngineInterface::train(const QList<Identity>& identitiesToBeTrained,
+void FacialRecognitionWrapper::train(const QList<Identity>& identitiesToBeTrained,
                                  TrainingDataProvider* const data,
                                  const QString& trainingContext)
 {
@@ -123,14 +123,14 @@ void FacesEngineInterface::train(const QList<Identity>& identitiesToBeTrained,
     d->trainIdentityBatch(identitiesToBeTrained, data, trainingContext);
 }
 
-void FacesEngineInterface::train(const Identity& identityToBeTrained,
+void FacialRecognitionWrapper::train(const Identity& identityToBeTrained,
                                  TrainingDataProvider* const data,
                                  const QString& trainingContext)
 {
     train( (QList<Identity>() << identityToBeTrained), data, trainingContext );
 }
 
-void FacesEngineInterface::train(const Identity& identityToBeTrained,
+void FacialRecognitionWrapper::train(const Identity& identityToBeTrained,
                                  const QImage& image,
                                  const QString& trainingContext)
 {
@@ -140,7 +140,7 @@ void FacesEngineInterface::train(const Identity& identityToBeTrained,
     delete data;
 }
 
-void FacesEngineInterface::train(const Identity& identityToBeTrained,
+void FacialRecognitionWrapper::train(const Identity& identityToBeTrained,
                                  const QList<QImage>& images,
                                  const QString& trainingContext)
 {
@@ -152,7 +152,7 @@ void FacesEngineInterface::train(const Identity& identityToBeTrained,
 // -------------------------------------------------------------------------------------
 
 
-void FacesEngineInterface::clearAllTraining(const QString& trainingContext)
+void FacialRecognitionWrapper::clearAllTraining(const QString& trainingContext)
 {
     if (!d || !d->dbAvailable)
     {
@@ -166,7 +166,7 @@ void FacesEngineInterface::clearAllTraining(const QString& trainingContext)
     d->clear(QList<int>(), trainingContext);
 }
 
-void FacesEngineInterface::clearTraining(const QList<Identity>& identitiesToClean,
+void FacialRecognitionWrapper::clearTraining(const QList<Identity>& identitiesToClean,
                                         const QString& trainingContext)
 {
     if (!d || !d->dbAvailable || identitiesToClean.isEmpty())

@@ -25,12 +25,12 @@
  * ============================================================ */
 
 
-#include "facesengine_interface_p.h"
+#include "facialrecognition_wrapper_p.h"
 
 namespace Digikam
 {
 
-void FacesEngineInterface::Private::applyParameters()
+void FacialRecognitionWrapper::Private::applyParameters()
 {
 
 #ifdef USE_DNN_RECOGNITION_BACKEND
@@ -64,7 +64,7 @@ void FacesEngineInterface::Private::applyParameters()
 #endif
 }
 
-void FacesEngineInterface::setParameter(const QString& parameter, const QVariant& value)
+void FacialRecognitionWrapper::setParameter(const QString& parameter, const QVariant& value)
 {
     if (!d || !d->dbAvailable)
     {
@@ -77,7 +77,7 @@ void FacesEngineInterface::setParameter(const QString& parameter, const QVariant
     d->applyParameters();
 }
 
-void FacesEngineInterface::setParameters(const QVariantMap& parameters)
+void FacialRecognitionWrapper::setParameters(const QVariantMap& parameters)
 {
     if (!d || !d->dbAvailable)
     {
@@ -94,7 +94,7 @@ void FacesEngineInterface::setParameters(const QVariantMap& parameters)
     d->applyParameters();
 }
 
-QVariantMap FacesEngineInterface::parameters() const
+QVariantMap FacialRecognitionWrapper::parameters() const
 {
     if (!d || !d->dbAvailable)
     {

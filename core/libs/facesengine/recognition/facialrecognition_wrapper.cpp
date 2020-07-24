@@ -23,7 +23,7 @@
  *
  * ============================================================ */
 
-#include "facesengine_interface_p.h"
+#include "facialrecognition_wrapper_p.h"
 
 // faces engine include
 #include "facedbaccess.h"
@@ -32,17 +32,17 @@
 namespace Digikam
 {
 
-FacesEngineInterface::FacesEngineInterface()
+FacialRecognitionWrapper::FacialRecognitionWrapper()
     : d(new Private())
 {
 }
 
-FacesEngineInterface::~FacesEngineInterface()
+FacialRecognitionWrapper::~FacialRecognitionWrapper()
 {
     delete d;
 }
 
-bool FacesEngineInterface::integrityCheck()
+bool FacialRecognitionWrapper::integrityCheck()
 {
     if (!d || !d->dbAvailable)
     {
@@ -54,7 +54,7 @@ bool FacesEngineInterface::integrityCheck()
     return FaceDbAccess().db()->integrityCheck();
 }
 
-void FacesEngineInterface::vacuum()
+void FacialRecognitionWrapper::vacuum()
 {
     if (!d || !d->dbAvailable)
     {

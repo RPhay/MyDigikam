@@ -114,12 +114,12 @@ set(facesengine_database_LIB_SRCS ${CMAKE_CURRENT_SOURCE_DIR}/recognition/recogn
                                   ${CMAKE_CURRENT_SOURCE_DIR}/recognition/recognitiontrainingprovider.cpp
 
                                   #Replacement of RecognitionDatabase
-                                  ${CMAKE_CURRENT_SOURCE_DIR}/recognition/facesengine_interface.cpp
-                                  ${CMAKE_CURRENT_SOURCE_DIR}/recognition/facesengine_interface_p.cpp
-                                  ${CMAKE_CURRENT_SOURCE_DIR}/recognition/facesengine_interface_setup.cpp
-                                  ${CMAKE_CURRENT_SOURCE_DIR}/recognition/facesengine_interface_training.cpp
-                                  ${CMAKE_CURRENT_SOURCE_DIR}/recognition/facesengine_interface_recognize.cpp
-                                  ${CMAKE_CURRENT_SOURCE_DIR}/recognition/facesengine_interface_identity.cpp
+                                  ${CMAKE_CURRENT_SOURCE_DIR}/recognition/facialrecognition_wrapper.cpp
+                                  ${CMAKE_CURRENT_SOURCE_DIR}/recognition/facialrecognition_wrapper_p.cpp
+                                  ${CMAKE_CURRENT_SOURCE_DIR}/recognition/facialrecognition_wrapper_setup.cpp
+                                  ${CMAKE_CURRENT_SOURCE_DIR}/recognition/facialrecognition_wrapper_training.cpp
+                                  ${CMAKE_CURRENT_SOURCE_DIR}/recognition/facialrecognition_wrapper_recognize.cpp
+                                  ${CMAKE_CURRENT_SOURCE_DIR}/recognition/facialrecognition_wrapper_identity.cpp
 
                                   ${CMAKE_CURRENT_SOURCE_DIR}/alignment/congealing/funnelreal.cpp
 

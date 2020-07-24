@@ -23,8 +23,8 @@
  *
  * ============================================================ */
 
-#ifndef FACESENGINE_INTERFACE_H
-#define FACESENGINE_INTERFACE_H
+#ifndef FACIAL_RECOGNITION_WRAPPER_H
+#define FACIAL_RECOGNITION_WRAPPER_H
 
 // Qt includes
 
@@ -43,12 +43,12 @@
 namespace Digikam
 {
 
-class DIGIKAM_GUI_EXPORT FacesEngineInterface
+class DIGIKAM_GUI_EXPORT FacialRecognitionWrapper
 {
 public:
 
-    explicit FacesEngineInterface();
-    ~FacesEngineInterface();
+    explicit FacialRecognitionWrapper();
+    ~FacialRecognitionWrapper();
 
 public:
 
@@ -197,9 +197,9 @@ private:
     Private* d;
 
     // Hidden assignment operator.
-    FacesEngineInterface& operator=(const FacesEngineInterface&);
+    FacialRecognitionWrapper& operator=(const FacialRecognitionWrapper&);
 };
 
 } // namespace Digikam
 
-#endif // FACESENGINE_INTERFACE_H
+#endif // FACIAL_RECOGNITION_WRAPPER_H
