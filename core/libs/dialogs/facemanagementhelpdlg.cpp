@@ -229,7 +229,9 @@ FaceManagementHelpDialog::FaceManagementHelpDialog(QWidget* const parent)
 
     QLabel* faceRecogFooter      = new QLabel(faceRecogPage);
     faceRecogFooter->setWordWrap(true);
-    faceRecogFooter->setText(i18n("The Face Accuracy Slider allows you to control the "
+    faceRecogFooter->setText(i18n("You may select <u> Work on all processor cores </u>"
+                                  "in order to increase the speed of Face Recognition <br>"
+                                  "The Face Accuracy Slider allows you to control the "
                                   "accuracy of the Recognition Algorithm. A higher specificity "
                                   "implies higher accuracy, however this results in a smaller set "
                                   "of results."));
@@ -259,7 +261,7 @@ FaceManagementHelpDialog::FaceManagementHelpDialog(QWidget* const parent)
     QLabel* overlayImgLabel = new QLabel(confirmFacesPage);
     QPixmap overlayImg(QStandardPaths::locate(QStandardPaths::GenericDataLocation, QLatin1String("digikam/data/overlayImg.png")));
     overlayImg = overlayImg.scaled(QSize(210, 285));
-    overlayImgLabel->setAlignment(Qt::AlignTop);
+    overlayImgLabel->setAlignment(Qt::AlignVCenter);
     overlayImgLabel->setPixmap(overlayImg);
 
     QLabel* overlayText     = new QLabel(confirmFacesPage);
