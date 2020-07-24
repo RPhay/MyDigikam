@@ -37,6 +37,9 @@
 #include "spatial_database.h"
 #include "faceembedding_db.h"
 
+#include "facedbaccess.h"
+#include "facedb.h"
+
 using namespace Digikam;
 
 namespace RecognitionTest
@@ -50,7 +53,7 @@ public:
         : method(method),
           extractor(new FaceExtractor),
           facedb(new FaceDatabase),
-          embeddingDb(new FaceEmbeddingDb),
+          //embeddingDb(new FaceEmbeddingDb),
           treedb(nullptr),
           tree(nullptr),
           kNeighbors(3)
@@ -67,7 +70,7 @@ public:
                 knn->setIsClassifier(true);
                 break;
             case Tree:
-                tree = embeddingDb->reconstructTree();
+                tree = FaceDbAccess().db()->reconstructTree();
                 break;
             case DB:
                 treedb = new SpatialDatabase();
@@ -82,7 +85,7 @@ public:
         delete extractor;
         delete tree;
         delete facedb;
-        delete embeddingDb;
+        //delete embeddingDb;
         delete treedb;
     }
 
@@ -106,7 +109,7 @@ public:
     cv::Ptr<cv::ml::KNearest> knn;
 
     FaceDatabase* facedb;
-    FaceEmbeddingDb* embeddingDb;
+    //FaceEmbeddingDb* embeddingDb;
     SpatialDatabase* treedb;
 
     KDTree* tree;
@@ -124,7 +127,7 @@ bool FaceRecognizer::Private::trainSVM() const
     QElapsedTimer timer;
     timer.start();
 
-    svm->train(embeddingDb->trainData());
+    svm->train(FaceDbAccess().db()->trainData());
 
     qDebug() << "Support vector machine trains in" << timer.elapsed() << "ms";
 
@@ -141,7 +144,7 @@ bool FaceRecognizer::Private::trainKNN() const
     QElapsedTimer timer;
     timer.start();
 
-    knn->train(embeddingDb->trainData());
+    knn->train(FaceDbAccess().db()->trainData());
 
     qDebug() << "KNN trains in" << timer.elapsed() << "ms";
 
@@ -419,7 +422,7 @@ int FaceRecognizer::saveIdentity(Identity& id, bool newLabel)
 
 bool FaceRecognizer::insertData(const cv::Mat& nodePos, const int label, const QString& context)
 {
-    int nodeId = d->embeddingDb->insert(nodePos, label, context);
+    int nodeId = FaceDbAccess().db()->insertFaceVector(nodePos, label, context);
 
     if (nodeId < 0)
     {
