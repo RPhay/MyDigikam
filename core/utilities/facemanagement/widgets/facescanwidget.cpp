@@ -190,6 +190,7 @@ void FaceScanWidget::setupUi()
 
     connect(d->helpButton, &QPushButton::clicked, [](){
         FaceManagementHelpDialog* helpBox = new FaceManagementHelpDialog(qApp->activeWindow());
+        helpBox->show();
     });
 
     scanOptionLayout->addWidget(d->alreadyScannedBox, 9);
