@@ -33,7 +33,7 @@ namespace Digikam
  */
 bool FacesEngineInterface::Private::identityContains(const Identity& identity,
                                                     const QString& attribute,
-                                                    const QString& value) const
+                                                    const QString& value)
 {
     const QMap<QString, QString> map          = identity.attributesMap();
     QMap<QString, QString>::const_iterator it = map.constFind(attribute);
@@ -86,5 +86,230 @@ Identity FacesEngineInterface::Private::findByAttributes(const QString& attribut
 }
 
 // -----------------------------------------------------------------------
+
+QList<Identity> FacesEngineInterface::allIdentities() const
+{
+    if (!d || !d->dbAvailable)
+    {
+        return QList<Identity>();
+    }
+
+    QMutexLocker lock(&d->mutex);
+
+    return (d->identityCache.values());
+}
+
+Identity FacesEngineInterface::identity(int id) const
+{
+    if (!d || !d->dbAvailable)
+    {
+        return Identity();
+    }
+
+    QMutexLocker lock(&d->mutex);
+
+    return (d->identityCache.value(id));
+}
+
+Identity FacesEngineInterface::findIdentity(const QString& attribute, const QString& value) const
+{
+    if (!d || !d->dbAvailable || attribute.isEmpty())
+    {
+        return Identity();
+    }
+
+    QMutexLocker lock(&d->mutex);
+
+    return (d->findByAttribute(attribute, value));
+}
+
+Identity FacesEngineInterface::findIdentity(const QMap<QString, QString>& attributes) const
+{
+    if (!d || !d->dbAvailable || attributes.isEmpty())
+    {
+        return Identity();
+    }
+
+    QMutexLocker lock(&d->mutex);
+
+    Identity match;
+
+    // First and foremost, UUID
+
+    QString uuid = attributes.value(QLatin1String("uuid"));
+    match        = d->findByAttribute(QLatin1String("uuid"), uuid);
+
+    if (!match.isNull())
+    {
+        return match;
+    }
+
+    // A negative UUID match, with a given UUID, precludes any further search
+
+    if (!uuid.isNull())
+    {
+        return Identity();
+    }
+
+    // full name
+
+    match = d->findByAttributes(QLatin1String("fullName"), attributes);
+
+    if (!match.isNull())
+    {
+        return match;
+    }
+
+    // name
+
+    match = d->findByAttributes(QLatin1String("name"), attributes);
+
+    if (!match.isNull())
+    {
+        return match;
+    }
+
+    QMap<QString, QString>::const_iterator it;
+
+    for (it = attributes.begin() ; it != attributes.end() ; ++it)
+    {
+        if ((it.key() == QLatin1String("uuid"))     ||
+            (it.key() == QLatin1String("fullName")) ||
+            (it.key() == QLatin1String("name")))
+        {
+            continue;
+        }
+
+        match = d->findByAttribute(it.key(), it.value());
+
+        if (!match.isNull())
+        {
+            return match;
+        }
+    }
+
+    return Identity();
+}
+
+Identity FacesEngineInterface::addIdentity(const QMap<QString, QString>& attributes)
+{
+    if (!d || !d->dbAvailable)
+    {
+        return Identity();
+    }
+
+    QMutexLocker lock(&d->mutex);
+
+    if (attributes.contains(QLatin1String("uuid")))
+    {
+        Identity matchByUuid = findIdentity(QLatin1String("uuid"), attributes.value(QLatin1String("uuid")));
+
+        if (!matchByUuid.isNull())
+        {
+            // This situation is not well defined.
+
+            qCDebug(DIGIKAM_FACESENGINE_LOG) << "Called addIdentity with a given UUID, and there is such a UUID already in the database."
+                                             << "The existing identity is returned without adjusting properties!";
+
+            return matchByUuid;
+        }
+    }
+
+    Identity identity;
+    {
+        FaceDbOperationGroup group;
+        int id = FaceDbAccess().db()->addIdentity();
+        identity.setId(id);
+        identity.setAttributesMap(attributes);
+        identity.setAttribute(QLatin1String("uuid"), QUuid::createUuid().toString());
+        FaceDbAccess().db()->updateIdentity(identity);
+    }
+
+    d->identityCache[identity.id()] = identity;
+
+    return identity;
+}
+
+Identity FacesEngineInterface::addIdentityDebug(const QMap<QString, QString>& attributes)
+{
+    Identity identity;
+    {
+        identity.setId(attributes[QLatin1String("name")].toInt());
+        identity.setAttributesMap(attributes);
+        identity.setAttribute(QLatin1String("uuid"), QUuid::createUuid().toString());
+    }
+
+    d->identityCache[identity.id()] = identity;
+    return identity;
+}
+
+void FacesEngineInterface::addIdentityAttributes(int id, const QMap<QString, QString>& attributes)
+{
+    if (!d || !d->dbAvailable)
+    {
+        return;
+    }
+
+    QMutexLocker lock(&d->mutex);
+
+    QHash<int, Identity>::iterator it = d->identityCache.find(id);
+
+    if (it != d->identityCache.end())
+    {
+        QMap<QString, QString> map = it->attributesMap();
+        map.unite(attributes);
+        it->setAttributesMap(map);
+        FaceDbAccess().db()->updateIdentity(*it);
+    }
+}
+
+void FacesEngineInterface::addIdentityAttribute(int id, const QString& attribute, const QString& value)
+{
+    if (!d || !d->dbAvailable)
+    {
+        return;
+    }
+
+    QMutexLocker lock(&d->mutex);
+    QHash<int, Identity>::iterator it = d->identityCache.find(id);
+
+    if (it != d->identityCache.end())
+    {
+        QMap<QString, QString> map = it->attributesMap();
+        map.insertMulti(attribute, value);
+        it->setAttributesMap(map);
+        FaceDbAccess().db()->updateIdentity(*it);
+    }
+}
+
+void FacesEngineInterface::setIdentityAttributes(int id, const QMap<QString, QString>& attributes)
+{
+    if (!d || !d->dbAvailable)
+    {
+            return;
+    }
+
+    QMutexLocker lock(&d->mutex);
+    QHash<int, Identity>::iterator it = d->identityCache.find(id);
+
+    if (it != d->identityCache.end())
+    {
+        it->setAttributesMap(attributes);
+        FaceDbAccess().db()->updateIdentity(*it);
+    }
+}
+
+void FacesEngineInterface::deleteIdentity(const Identity& identityToBeDeleted)
+{
+    if (!d || !d->dbAvailable || identityToBeDeleted.isNull())
+    {
+        return;
+    }
+
+    QMutexLocker lock(&d->mutex);
+
+    FaceDbAccess().db()->deleteIdentity(identityToBeDeleted.id());
+    d->identityCache.remove(identityToBeDeleted.id());
+}
 
 } // namespace Digikam

@@ -77,6 +77,54 @@ public:
     void        setParameters(const QVariantMap& parameters);
     QVariantMap parameters() const;
 
+    // --- Identity management (facesengine_interface_identity.cpp) -----------------------------------------
+
+    /// NOTE: For the documentation of standard attributes, see identity.h
+
+    /**
+     * Returns all identities known to the database
+     */
+    QList<Identity> allIdentities()  const;
+    Identity        identity(int id) const;
+
+    /**
+     * Finds the first identity with matching attribute - value.
+     * Returns a null identity if no match is found or attribute is empty.
+     */
+    Identity findIdentity(const QString& attribute, const QString& value) const;
+
+    /**
+     * Finds the identity matching the given attributes.
+     * Attributes are first checked with knowledge of their meaning.
+     * Secondly, all unknown attributes are used.
+     * Returns a null Identity if no match is possible or the map is empty.
+     */
+    Identity findIdentity(const QMap<QString, QString>& attributes) const;
+
+    /**
+     * Adds a new identity with the specified attributes.
+     * Please note that a UUID is automatically generated.
+     */
+    Identity addIdentity(const QMap<QString, QString>& attributes);
+
+    /**
+     * This is the debug version of addIdentity, so the identity is only added
+     * to identityCache, but not into the recognition database.
+     */
+    Identity addIdentityDebug(const QMap<QString, QString>& attributes);
+
+    /**
+     * Adds or sets, resp., the attributes of an identity.
+     */
+    void addIdentityAttributes(int id, const QMap<QString, QString>& attributes);
+    void addIdentityAttribute(int id, const QString& attribute, const QString& value);
+    void setIdentityAttributes(int id, const QMap<QString, QString>& attributes);
+
+    /**
+     * Deletes an identity from the database.
+     */
+    void deleteIdentity(const Identity& identityToBeDeleted);
+
     // --- Faces Training management (facesengine_interface_training.cpp) ----------------------------------------------------
     /**
      * Performs training.

@@ -91,9 +91,9 @@ public:
 
     // --- Identity management (facesengine_interface_identity.cpp) -----------------------------------------
 
-    bool     identityContains(const Identity& identity,
-                              const QString& attribute,
-                              const QString& value)                   const;
+    static bool identityContains(const Identity& identity,
+                                 const QString& attribute,
+                                 const QString& value)                     ;
 
     Identity findByAttribute(const QString& attribute,
                              const QString& value)                    const;

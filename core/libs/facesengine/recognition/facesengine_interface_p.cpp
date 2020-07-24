@@ -71,13 +71,13 @@ FacesEngineInterface::Private::Private()
     if (dbAvailable)
     {
         qCDebug(DIGIKAM_FACESENGINE_LOG) << "Face database ready for use";
-/*
-        TODO :  load identity Cache
+
+        // Load identity cache
+        // TODO: load cache dynamically
         foreach (const Identity& identity, FaceDbAccess().db()->identities())
         {
             identityCache[identity.id()] = identity;
         }
-*/
     }
     else
     {
