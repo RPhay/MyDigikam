@@ -98,8 +98,8 @@ typedef unsigned long long UINT64;
 
   typedef unsigned char uchar;
   typedef unsigned short ushort;
-/*
-#ifdef LIBRAW_WIN32_DLLDEFS
+
+/*#ifdef LIBRAW_WIN32_DLLDEFS
 #ifdef LIBRAW_NODLL
 #define DllDef
 #else
@@ -967,6 +967,35 @@ typedef unsigned long long UINT64;
 #ifdef __cplusplus
 }
 #endif
+
+#if defined (LIBRAW_LIBRARY_BUILD) && defined(__cplusplus)
+
+class libraw_static_table_t
+{
+public:
+    libraw_static_table_t(const int *a, const unsigned s): data(a),_size(s) {}
+    libraw_static_table_t(): data(0),_size(0){}
+    libraw_static_table_t(const libraw_static_table_t& s) : data(s.data), _size(s._size) {}
+    unsigned size() const { return _size; }
+    libraw_static_table_t& operator = (const libraw_static_table_t& s)
+    {
+        _size = s._size;
+        data = s.data;
+        return *this;
+    }
+    int operator [] (unsigned idx) const
+    {
+        if (idx < _size) return data[idx];
+        if(_size>0 && data) return data[0];
+        return 0;
+    }
+private:
+    const int *data;
+    unsigned _size;
+};
+
+#endif
+
 
 /* Byte order */
 #if defined(__POWERPC__)

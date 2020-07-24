@@ -306,7 +306,7 @@ IccProfile IccSettings::Private::profileFromWindowSystem(QWidget* const widget)
 #elif defined Q_OS_WIN
     //TODO
     Q_UNUSED(widget);
-#elif defined Q_OS_OSX
+#elif defined Q_OS_MACOS
     //TODO
     Q_UNUSED(widget);
 #else

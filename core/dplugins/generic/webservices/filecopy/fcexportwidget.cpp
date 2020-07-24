@@ -68,8 +68,8 @@ public:
         changeImagesProp(nullptr),
         removeMetadataProp(nullptr),
         imageCompression(nullptr),
-        imagesResize(nullptr),
-        imagesFormat(nullptr)
+        imageResize(nullptr),
+        imageFormat(nullptr)
     {
     }
 
@@ -89,8 +89,8 @@ public:
     QCheckBox*     removeMetadataProp;
 
     QSpinBox*      imageCompression;
-    QSpinBox*      imagesResize;
-    QComboBox*     imagesFormat;
+    QSpinBox*      imageResize;
+    QComboBox*     imageFormat;
 };
 
 FCExportWidget::FCExportWidget(DInfoInterface* const iface, QWidget* const parent)
@@ -133,32 +133,32 @@ FCExportWidget::FCExportWidget(DInfoInterface* const iface, QWidget* const paren
 
     //---------------------------------------------
 
-    d->imageChangeGroupBox           = new QGroupBox(i18n("Image Properties"), this);
+    d->imageChangeGroupBox          = new QGroupBox(i18n("Image Properties"), this);
 
-    d->imagesResize                  = new QSpinBox(d->imageChangeGroupBox);
-    d->imagesResize->setRange(300, 4000);
-    d->imagesResize->setSingleStep(1);
-    d->imagesResize->setValue(1024);
-    d->imagesResize->setSuffix(i18n(" px"));
-    d->imagesResize->setWhatsThis(i18n("Select the length of the images that are to be sent. "
+    d->imageResize                  = new QSpinBox(d->imageChangeGroupBox);
+    d->imageResize->setRange(300, 4000);
+    d->imageResize->setSingleStep(1);
+    d->imageResize->setValue(1024);
+    d->imageResize->setSuffix(i18n(" px"));
+    d->imageResize->setWhatsThis(i18n("Select the length of the images that are to be sent. "
                                        "The aspect ratio is preserved."));
     d->imageChangeGroupBox->setEnabled(false);
 
-    QLabel* const  labelImagesResize = new QLabel(i18n("Image Length:"), d->imageChangeGroupBox);
-    labelImagesResize->setBuddy(d->imagesResize);
+    QLabel* const  labelImageResize = new QLabel(i18n("Image Length:"), d->imageChangeGroupBox);
+    labelImageResize->setBuddy(d->imageResize);
 
     //---------------------------------------------
 
-    QLabel* const labelImagesFormat = new QLabel(d->imageChangeGroupBox);
-    labelImagesFormat->setWordWrap(false);
-    labelImagesFormat->setText(i18n("Image Format:"));
+    QLabel* const labelImageFormat = new QLabel(d->imageChangeGroupBox);
+    labelImageFormat->setWordWrap(false);
+    labelImageFormat->setText(i18n("Image Format:"));
 
-    d->imagesFormat                 = new QComboBox(d->imageChangeGroupBox);
-    d->imagesFormat->setEditable(false);
-    d->imagesFormat->setWhatsThis(i18n("Select your preferred format to convert image."));
-    d->imagesFormat->addItem(i18nc("Image format: JPEG", "Jpeg"), FCContainer::JPEG);
-    d->imagesFormat->addItem(i18nc("Image format: PNG",  "Png"),  FCContainer::PNG);
-    labelImagesFormat->setBuddy(d->imagesFormat);
+    d->imageFormat                 = new QComboBox(d->imageChangeGroupBox);
+    d->imageFormat->setEditable(false);
+    d->imageFormat->setWhatsThis(i18n("Select your preferred format to convert image."));
+    d->imageFormat->addItem(i18nc("Image format: JPEG", "Jpeg"), FCContainer::JPEG);
+    d->imageFormat->addItem(i18nc("Image format: PNG",  "Png"),  FCContainer::PNG);
+    labelImageFormat->setBuddy(d->imageFormat);
 
     //---------------------------------------------
 
@@ -185,10 +185,10 @@ FCExportWidget::FCExportWidget(DInfoInterface* const iface, QWidget* const paren
     //---------------------------------------------
 
     QGridLayout* const grid2 = new QGridLayout(d->imageChangeGroupBox);
-    grid2->addWidget(labelImagesResize,     0, 0, 1, 1);
-    grid2->addWidget(d->imagesResize,       0, 1, 1, 2);
-    grid2->addWidget(labelImagesFormat,     1, 0, 1, 1);
-    grid2->addWidget(d->imagesFormat,       1, 1, 1, 2);
+    grid2->addWidget(labelImageResize,      0, 0, 1, 1);
+    grid2->addWidget(d->imageResize,        0, 1, 1, 2);
+    grid2->addWidget(labelImageFormat,      1, 0, 1, 1);
+    grid2->addWidget(d->imageFormat,        1, 1, 1, 2);
     grid2->addWidget(labelImageCompression, 2, 0, 1, 1);
     grid2->addWidget(d->imageCompression,   2, 1, 1, 2);
     grid2->addWidget(d->removeMetadataProp, 3, 0, 1, 2);
@@ -199,7 +199,7 @@ FCExportWidget::FCExportWidget(DInfoInterface* const iface, QWidget* const paren
     //---------------------------------------------
 
     // setup image list
-    d->imageList              = new DItemsList(this);
+    d->imageList = new DItemsList(this);
     d->imageList->setObjectName(QLatin1String("FCExport ImagesList"));
     d->imageList->setIface(iface);
     d->imageList->loadImagesFromCurrentSelection();
@@ -259,8 +259,8 @@ FCContainer FCExportWidget::getSettings() const
 
     settings.destUrl               = d->targetUrl;
     settings.behavior              = d->targetButtonGroup->checkedId();
-    settings.imageFormat           = d->imagesFormat->currentIndex();
-    settings.imageResize           = d->imagesResize->value();
+    settings.imageFormat           = d->imageFormat->currentIndex();
+    settings.imageResize           = d->imageResize->value();
     settings.imageCompression      = d->imageCompression->value();
     settings.overwrite             = d->overwrite->isChecked();
     settings.removeMetadata        = d->removeMetadataProp->isChecked();
@@ -280,8 +280,8 @@ void FCExportWidget::setSettings(const FCContainer& settings)
         button->setChecked(true);
     }
 
-    d->imagesFormat->setCurrentIndex(settings.imageFormat);
-    d->imagesResize->setValue(settings.imageResize);
+    d->imageFormat->setCurrentIndex(settings.imageFormat);
+    d->imageResize->setValue(settings.imageResize);
     d->imageCompression->setValue(settings.imageCompression);
     d->overwrite->setChecked(settings.overwrite);
     d->removeMetadataProp->setChecked(settings.removeMetadata);

@@ -130,6 +130,7 @@ endfunction()
 
 # this list must be dependency-ordered
 
+add_subdirectory(ext_cmake)
 add_subdirectory(ext_jpeg)
 add_subdirectory(ext_jasper)
 add_subdirectory(ext_png)

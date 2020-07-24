@@ -55,14 +55,14 @@ WelcomePage::WelcomePage(QWizard* const dlg)
                                "</qt>",
                                QLatin1String(digikam_version_short));
 
-#if defined Q_OS_WIN || defined Q_OS_OSX
+#if defined Q_OS_WIN || defined Q_OS_MACOS
 
     // Windows settings place.
 
     QString newPlace = QLatin1String("~/Local Settings/");
     QString oldPlace = QLatin1String("~/AppData/Local/");
 
-#if defined Q_OS_OSX
+#if defined Q_OS_MACOS
 
     // MacOS settings place.
 

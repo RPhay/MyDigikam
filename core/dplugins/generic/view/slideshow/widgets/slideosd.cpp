@@ -228,6 +228,7 @@ SlideOSD::~SlideOSD()
 
 void SlideOSD::slotStart()
 {
+    d->settings->suffleImages();
     d->parent->slotLoadNextItem();
     d->progressTimer->start(d->refresh);
     pause(!d->settings->autoPlayEnabled);
@@ -241,6 +242,7 @@ void SlideOSD::slotUpdateSettings()
     d->clWidget->setVisible(d->settings->printLabels);
     d->plWidget->setVisible(d->settings->printLabels);
     d->progressBar->setMaximum(d->settings->delay);
+    d->settings->suffleImages();
 }
 
 SlideToolBar* SlideOSD::toolBar() const

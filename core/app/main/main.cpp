@@ -102,6 +102,16 @@ int main(int argc, char* argv[])
         qputenv("QT_AUTO_SCREEN_SCALE_FACTOR", "1");
     }
 
+    // OpenCV crash with face engine with OpenCL support
+    // https://bugs.kde.org/show_bug.cgi?id=423632
+
+    // When analyzing with Heaptrack it was found
+    // that a big memory leak is created in
+    // libpocl when OpenCL is active.
+
+    qputenv("OPENCV_OPENCL_RUNTIME", "disabled");
+    qputenv("OPENCV_OPENCL_DEVICE",  "null");
+
 #ifdef HAVE_QWEBENGINE
 
     QApplication::setAttribute(Qt::AA_ShareOpenGLContexts, true);
@@ -120,7 +130,7 @@ int main(int argc, char* argv[])
 
 #endif
 
-#ifndef Q_OS_OSX
+#ifndef Q_OS_MACOS
 
     app.setAttribute(Qt::AA_UseHighDpiPixmaps, true);
 
