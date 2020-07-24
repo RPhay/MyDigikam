@@ -312,4 +312,17 @@ void FacesEngineInterface::deleteIdentity(const Identity& identityToBeDeleted)
     d->identityCache.remove(identityToBeDeleted.id());
 }
 
+void FacesEngineInterface::deleteIdentities(QList<Identity> identitiesToBeDeleted)
+{
+    QList<Identity>::iterator identity = identitiesToBeDeleted.begin();
+
+    while (identity != identitiesToBeDeleted.end())
+    {
+        deleteIdentity(*identity);
+
+        identity = identitiesToBeDeleted.erase(identity);
+    }
+}
+
+
 } // namespace Digikam

@@ -125,6 +125,11 @@ public:
      */
     void deleteIdentity(const Identity& identityToBeDeleted);
 
+    /**
+     * Deletes a list of identities from the database.
+     */
+    void deleteIdentities(QList<Identity> identitiesToBeDeleted);
+
     // --- Faces Training management (facesengine_interface_training.cpp) ----------------------------------------------------
     /**
      * Performs training.
