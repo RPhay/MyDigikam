@@ -37,6 +37,7 @@
 // Local includes
 
 #include "recognitiondatabase.h"
+#include "facialrecognition_wrapper.h"
 #include "coredbaccess.h"
 #include "dbengineparameters.h"
 
@@ -82,7 +83,7 @@ int main(int argc, char** argv)
     app.setApplicationName(QString::fromLatin1("digikam"));          // for DB init.
     DbEngineParameters prm    = DbEngineParameters::parametersFromConfig();
     CoreDbAccess::setParameters(prm, CoreDbAccess::MainApplication);
-    RecognitionDatabase db;
+    FacialRecognitionWrapper recognizer;
 
     if (QString::fromLatin1(argv[1]) == QString::fromLatin1("identify"))
     {
@@ -91,7 +92,7 @@ int main(int argc, char** argv)
 
         QElapsedTimer timer;
         timer.start();
-        QList<Identity> identities = db.recognizeFaces(images);
+        QList<Identity> identities = recognizer.recognizeFaces(images);
         int elapsed                = timer.elapsed();
 
         qDebug() << "Recognition took " << elapsed
@@ -111,20 +112,20 @@ int main(int argc, char** argv)
 
         QStringList paths    = toPaths(argv, 3, argc);
         QList<QImage> images = toImages(paths);
-        Identity identity    = db.findIdentity(QString::fromLatin1("name"), name);
+        Identity identity    = recognizer.findIdentity(QString::fromLatin1("name"), name);
 
         if (identity.isNull())
         {
             qDebug() << "Adding new identity to database for name " << name;
             QMap<QString, QString> attributes;
             attributes[QString::fromLatin1("name")] = name;
-            identity                                = db.addIdentity(attributes);
+            identity                                = recognizer.addIdentity(attributes);
         }
 
         QElapsedTimer timer;
         timer.start();
 
-        db.train(identity, images, QString::fromLatin1("test application"));
+        recognizer.train(identity, images, QString::fromLatin1("test application"));
 
         int elapsed = timer.elapsed();
         qDebug() << "Training took " << elapsed << " for "
@@ -159,11 +160,11 @@ int main(int argc, char** argv)
         {
             QMap<QString, QString> attributes;
             attributes[QString::fromLatin1("name")] = QString::number(i);
-            Identity identity                       = db.findIdentity(attributes);
+            Identity identity                       = recognizer.findIdentity(attributes);
 
             if (identity.isNull())
             {
-                Identity identity2 = db.addIdentity(attributes);
+                Identity identity2 = recognizer.addIdentity(attributes);
                 idMap[i]           = identity2;
                 qDebug() << "Created identity " << identity2.id() << " for ORL directory " << i;
             }
@@ -175,7 +176,7 @@ int main(int argc, char** argv)
             }
         }
 
-        db.clearTraining(trainingToBeCleared, trainingContext);
+        recognizer.clearTraining(trainingToBeCleared, trainingContext);
         QMap<int, QStringList> trainingImages, recognitionImages;
 
         for (int i = 1 ; i <= OrlIdentities ; ++i)
@@ -214,7 +215,7 @@ int main(int argc, char** argv)
         for (QMap<int, QStringList>::const_iterator it = trainingImages.constBegin() ;
              it != trainingImages.constEnd() ; ++it)
         {
-            Identity identity = db.findIdentity(QString::fromLatin1("name"), QString::number(it.key()));
+            Identity identity = recognizer.findIdentity(QString::fromLatin1("name"), QString::number(it.key()));
 
             if (identity.isNull())
             {
@@ -223,7 +224,7 @@ int main(int argc, char** argv)
 
             QList<QImage> images = toImages(it.value());
             qDebug() << "Training ORL directory " << it.key();
-            db.train(identity, images, trainingContext);
+            recognizer.train(identity, images, trainingContext);
             totalTrained        += images.size();
         }
 
@@ -241,7 +242,7 @@ int main(int argc, char** argv)
         {
             Identity identity       = idMap.value(it.key());
             QList<QImage> images    = toImages(it.value());
-            QList<Identity> results = db.recognizeFaces(images);
+            QList<Identity> results = recognizer.recognizeFaces(images);
 
             qDebug() << "Result for " << it.value().first()
                      << " is identity " << results.first().id();

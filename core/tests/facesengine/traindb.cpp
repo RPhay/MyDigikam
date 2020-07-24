@@ -32,7 +32,7 @@
 
 // Local includes
 
-#include "recognitiondatabase.h"
+#include "facialrecognition_wrapper.h"
 #include "coredbaccess.h"
 #include "dbengineparameters.h"
 
@@ -47,7 +47,7 @@ class Q_DECL_HIDDEN Runnable : public QRunnable
 {
 public:
 
-    Runnable(int number, RecognitionDatabase db)
+    Runnable(int number, FacialRecognitionWrapper db)
         : number(number),
           db(db)
     {
@@ -94,8 +94,8 @@ public:
 
 public:
 
-    const int           number;
-    RecognitionDatabase db;
+    const int                number;
+    FacialRecognitionWrapper db;
 };
 
 int main(int argc, char** argv)
@@ -105,7 +105,7 @@ int main(int argc, char** argv)
     app.setApplicationName(QString::fromLatin1("digikam"));          // for DB init.
     DbEngineParameters prm    = DbEngineParameters::parametersFromConfig();
     CoreDbAccess::setParameters(prm, CoreDbAccess::MainApplication);
-    RecognitionDatabase db;
+    FacialRecognitionWrapper db;
 
     QThreadPool pool;
     pool.setMaxThreadCount(101);

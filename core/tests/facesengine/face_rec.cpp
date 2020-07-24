@@ -46,7 +46,7 @@
 #include "dimg.h"
 #include "facescansettings.h"
 #include "facedetector.h"
-#include "recognitiondatabase.h"
+#include "facialrecognition_wrapper.h"
 #include "coredbaccess.h"
 #include "dbengineparameters.h"
 
@@ -262,8 +262,7 @@ int main(int argc, char* argv[])
 
     DbEngineParameters prm = DbEngineParameters::parametersFromConfig();
     CoreDbAccess::setParameters(prm, CoreDbAccess::MainApplication);
-    RecognitionDatabase db;
-    db.activeFaceRecognizer(RecognitionDatabase::RecognizeAlgorithm::DNN);
+    FacialRecognitionWrapper recognizer;
 
     // Construct training set, test set
 
@@ -289,7 +288,7 @@ int main(int argc, char* argv[])
     {
         QMap<QString, QString> attributes;
         attributes[QLatin1String("name")] = QString::number(i);
-        idMap[i]                          = db.addIdentityDebug(attributes);
+        idMap[i]                          = recognizer.addIdentityDebug(attributes);
     }
 
     // Init FaceDetector used for detecting faces and bounding box
@@ -308,7 +307,7 @@ int main(int argc, char* argv[])
     for (QMap<unsigned, QStringList>::const_iterator it = trainingset.constBegin() ;
          it != trainingset.constEnd() ; ++it)
     {
-        Identity identity = db.findIdentity(QString::fromLatin1("name"), QString::number(it.key()));
+        Identity identity = recognizer.findIdentity(QString::fromLatin1("name"), QString::number(it.key()));
 
         if (identity.isNull())
         {
@@ -318,8 +317,7 @@ int main(int argc, char* argv[])
         QList<QImage> images = toImages(it.value());
         qDebug() << "Training directory " << it.key();
 
-        db.activeFaceRecognizer(RecognitionDatabase::RecognizeAlgorithm::DNN);
-        db.train(identity, images, trainingContext);
+        recognizer.train(identity, images, trainingContext);
         totalTrained        += images.size();
     }
 
@@ -330,7 +328,7 @@ int main(int argc, char* argv[])
     {
         Identity identity       = idMap.value(it.key());
         QList<QImage> images    = toImages(it.value());
-        QList<Identity> results = db.recognizeFaces(images);
+        QList<Identity> results = recognizer.recognizeFaces(images);
 
         qDebug() << "Result for " << it.value().first() << " is identity " << results.first().id();
 
@@ -405,7 +403,7 @@ int main(int argc, char* argv[])
         QElapsedTimer timer;
         timer.start();
 
-        db.train(identity, faces, trainingContext);
+        recognizer.train(identity, faces, trainingContext);
 
         elapsedTraining += timer.elapsed();
     }
@@ -453,7 +451,7 @@ int main(int argc, char* argv[])
         QElapsedTimer timer;
         timer.start();
 
-        QList<Identity> results = db.recognizeFaces(faces);
+        QList<Identity> results = recognizer.recognizeFaces(faces);
         elapsedTesting         += timer.elapsed();
 
         // qDebug() << "Result for " << it.value().first() << " is identity " << results.first().id();

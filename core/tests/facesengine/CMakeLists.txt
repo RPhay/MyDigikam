@@ -60,18 +60,18 @@ target_link_libraries(face_rec
 
 # -----------------------------------------------------------------------------
 
-set(facecluster_SRCS ${CMAKE_CURRENT_SOURCE_DIR}/face_cluster.cpp)
-add_executable(face_cluster ${facecluster_SRCS})
+#set(facecluster_SRCS ${CMAKE_CURRENT_SOURCE_DIR}/face_cluster.cpp)
+#add_executable(face_cluster ${facecluster_SRCS})
 
-target_link_libraries(face_cluster
+#target_link_libraries(face_cluster
 
-                      digikamcore
-                      digikamgui
-                      digikamfacesengine
-                      digikamdatabase
+#                      digikamcore
+#                      digikamgui
+#                      digikamfacesengine
+#                      digikamdatabase
 
-                      ${COMMON_TEST_LINK}
-)
+#                      ${COMMON_TEST_LINK}
+#)
 
 # -----------------------------------------------------------------------------
 

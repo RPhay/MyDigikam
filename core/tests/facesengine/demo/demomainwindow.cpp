@@ -38,6 +38,7 @@
 // Local includes
 
 #include "recognitiondatabase.h"
+#include "facialrecognition_wrapper.h"
 #include "facedetector.h"
 #include "demofaceitem.h"
 #include "dfiledialog.h"
@@ -70,7 +71,7 @@ public:
     QGraphicsPixmapItem* lastPhotoItem;
     QList<FaceItem*>     faceitems;
 
-    RecognitionDatabase  database;
+    FacialRecognitionWrapper  database;
     FaceDetector*        detector;
     QImage               currentPhoto;
     double               scale;
