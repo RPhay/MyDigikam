@@ -17,4 +17,38 @@ BUGFIXES:
 008 ==> 424501 - Right click >> Open in File Manager does not work.
 009 ==> 424553 - Authenticating to Flickr does not work.
 010 ==> 422078 - Album creation date is modification date of the folder.
-011 ==> 
+011 ==> 409685 - ImageEditor can only be invoked once.
+012 ==> 411723 - Trying to edit the date of a video kills digiKam.
+013 ==> 412022 - Editor not show images.
+014 ==> 412417 - digiKam fails to start - update fails.
+015 ==> 412590 - New files are not showing in album.
+016 ==> 412917 - On macOS Mojave image editor opens withouth toolbars.
+017 ==> 413242 - Image editor launches only once on Kubuntu 19.10.
+018 ==> 413464 - Crash in Windows 10 when 'browsing' images before initial 'import' complete.
+019 ==> 413508 - digiKam crasched.
+020 ==> 414186 - digiKam crashes when loading pictures from pCloudDrive.
+021 ==> 415103 - "Preview on mouse-over" setting is not saved.
+022 ==> 415783 - Rejected face keep coming up as faces when detected faces again.
+023 ==> 415873 - Database Path wrong after adaption (/ instead of \).
+024 ==> 416180 - Number of "new items" not updated after face recognition.
+025 ==> 416560 - Crash on adding a smb folder.
+026 ==> 417330 - It is impossible to move an album to a collection or album not visible in the albums list.
+027 ==> 417738 - Cannot rename album.
+028 ==> 418337 - Crash after resume.
+029 ==> 419316 - digiKam displays "Lens: unavailable" for all lenses used on Canon EOS M6 Mark II camera.
+030 ==> 419555 - Image editor is not displayed when opened after editing an image.
+031 ==> 419847 - If user/group opens digiKam without write access to databases, system will hang with high CPU and write attempts.
+032 ==> 420401 - Face region bounding boxes are in wrong location if photo Orientation != Horizontal.
+033 ==> 420403 - Delete does not always move all files to trash.
+034 ==> 420510 - Metadata / Views settings not applied correctly?
+035 ==> 420667 - Portrait SX70HS RAW files have wrong orientation.
+036 ==> 420923 - Nor auto-scroll either children album expansion is possible while drag and drop photos to the album tree.
+037 ==> 421674 - digiKam 7.0.0 beta 3 macOS startup very slow.
+038 ==> 422112 - XMP file moves end up as inconsistent if an xmp file already exists at destination.
+039 ==> 423146 - Fonts Too Large with Laptop Screen after New Install.
+040 ==> 423722 - uninstallation will delete all files under installation directory.
+041 ==> 
+
+
+
+
