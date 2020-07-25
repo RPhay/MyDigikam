@@ -47,7 +47,39 @@ BUGFIXES:
 038 ==> 422112 - XMP file moves end up as inconsistent if an xmp file already exists at destination.
 039 ==> 423146 - Fonts Too Large with Laptop Screen after New Install.
 040 ==> 423722 - uninstallation will delete all files under installation directory.
-041 ==> 
+041 ==> 190315 - 23hq.com service not work.
+042 ==> 308243 - Inconsistent reset behaviour within curve tools.
+043 ==> 380966 - Copy and paste text in comment field.
+044 ==> 396382 - Editor window empty.
+045 ==> 396740 - Empty image editor after closing and re-opening.
+046 ==> 396913 - Crashing when changing the timestamp for exif creation in bulk.
+047 ==> 399705 - cannot copy coordinates from map.
+048 ==> 400926 - Reverse Geocoding gives no results.
+049 ==> 400938 - Light table: Empty window when opened again.
+050 ==> 400962 - Image editor doesn't display the image.
+051 ==> 402754 - Light Table pops up empty second time it has been activated from digiKam.
+052 ==> 403207 - Image editor shows white screen.
+053 ==> 403233 - Geolocation-Editor does not work.
+054 ==> 403238 - digiKam Editor Blank Screen for 2nd image opening in same session.
+056 ==> 404495 - Message 'Google Maps cannot be loaded properly'.
+057 ==> 406675 - Failed to update the database schema from version 9 to version 10.
+058 ==> 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
