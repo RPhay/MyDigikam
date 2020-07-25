@@ -670,10 +670,10 @@ void CollectionScanner::scanAlbum(const CollectionLocation& location, const QStr
                                             QDir::Name | QDir::DirsLast);
 
     const QString xmpExt(QLatin1String(".xmp"));
-    int counter = -1;
 
-    QDate albumDate;
+    int counter          = -1;
     bool updateAlbumDate = false;
+    QDate albumDate      = QFileInfo(dir.path()).lastModified().date();
 
     foreach (const QString& entry, list)
     {
@@ -734,14 +734,7 @@ void CollectionScanner::scanAlbum(const CollectionLocation& location, const QStr
 
                 if (itemDate.isValid())
                 {
-                    if (!updateAlbumDate)
-                    {
-                        // The album date should get updated. Therefor initialize the date with the already set value of the album creation date.
-                        // In the case of a newer date, this could be wrong and the change date of the folder is used.
-
-                        QFileInfo fileInfoAlbum(location.albumRootPath() + album);
-                        albumDate = fileInfoAlbum.lastModified().date();
-                    }
+                    // Change album date only if the item date is older.
 
                     if (itemDate < albumDate)
                     {
