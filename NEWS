@@ -16,4 +16,5 @@ BUGFIXES:
 007 ==> 424540 - Option "regular expression" does not work.
 008 ==> 424501 - Right click >> Open in File Manager does not work.
 009 ==> 424553 - Authenticating to Flickr does not work.
-010 ==> 
+010 ==> 422078 - Album creation date is modification date of the folder.
+011 ==> 
