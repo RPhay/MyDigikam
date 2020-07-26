@@ -368,9 +368,8 @@ SearchField* SearchField::createField(const QString& name, SearchFieldGroup* con
         SearchFieldChoice* const field = new SearchFieldChoice(parent);
         field->setFieldName(name);
         field->setText(i18n("Camera"), i18n("The make of the camera"));
-        QStringList make = CoreDbAccess().db()->getListFromImageMetadata(DatabaseFields::Make);
 
-        make.removeDuplicates();
+        QStringList make = CoreDbAccess().db()->getListFromImageMetadata(DatabaseFields::Make);
         QMap<QString, QString> makeMap;
 
         for (int i = 0 ; i < make.count() ; ++i)
@@ -400,9 +399,8 @@ SearchField* SearchField::createField(const QString& name, SearchFieldGroup* con
         SearchFieldChoice* const field = new SearchFieldChoice(parent);
         field->setFieldName(name);
         field->setText(i18n("Camera"), i18n("The model of the camera"));
-        QStringList model = CoreDbAccess().db()->getListFromImageMetadata(DatabaseFields::Model);
 
-        model.removeDuplicates();
+        QStringList model = CoreDbAccess().db()->getListFromImageMetadata(DatabaseFields::Model);
         QMap<QString, QString> modelMap;
 
         for (int i = 0 ; i < model.count() ; ++i)
