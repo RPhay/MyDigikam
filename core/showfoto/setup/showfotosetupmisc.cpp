@@ -187,11 +187,14 @@ SetupMisc::SetupMisc(QWidget* const parent)
     d->applicationStyle       = new QComboBox(appStyleHbox);
     d->applicationStyle->setToolTip(i18n("Set this option to choose the default window decoration and looks."));
 
-    QStringList styleList     = QStyleFactory::keys();
+    QStringList styleList = QStyleFactory::keys();
 
     for (int i = 0 ; i < styleList.count() ; ++i)
     {
-        d->applicationStyle->addItem(styleList.at(i));
+        if (styleList.at(i).compare(QLatin1String("windowsvista"), Qt::CaseInsensitive) != 0)
+        {
+            d->applicationStyle->addItem(styleList.at(i), styleList.at(i).toLower());
+        }
     }
 
 #ifndef HAVE_APPSTYLE_SUPPORT
@@ -284,7 +287,7 @@ void SetupMisc::readSettings()
 
 #ifdef HAVE_APPSTYLE_SUPPORT
 
-    d->applicationStyle->setCurrentIndex(d->applicationStyle->findText(d->settings->getApplicationStyle(), Qt::MatchFixedString));
+    d->applicationStyle->setCurrentIndex(d->applicationStyle->findData(d->settings->getApplicationStyle().toLower()));
 
 #endif
 
