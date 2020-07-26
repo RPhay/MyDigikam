@@ -78,12 +78,23 @@ BUGFIXES:
 070 ==> 390359 - Landscape crop size is not remembered like portrait crop size.
 071 ==> 393539 - Wishlist: Option to save rotation information (pixel, EXIF-flag) to the file always, instead of sidecar.
 072 ==> 393838 - Right click on map doesn't offer "copy coordinates".
-073 ==> 
-074 ==> 
-075 ==> 
-076 ==> 
-077 ==> 
-078 ==> 
-079 ==> 
-080 ==> 
-081 ==> 
+073 ==> 267553 - SETUP : Starting digikam with "--database-directory" prompts for new database folder after any configuration change.
+074 ==> 365098 - Crash when sorting on import window.
+075 ==> 365123 - Crash on export to Facebook.
+076 ==> 374397 - Wrong Map icon (32px).
+077 ==> 374432 - digiKam Incorrectly Reports Free Disk Space; off by 1000x.
+078 ==> 374472 - Crash on Import after going into shell.
+079 ==> 374560 - Lens Model and Make are not displayed anymore.
+080 ==> 374988 - digiKam-root-tag.
+081 ==> 375910 - Crash when Opening Geolocation Editor.
+082 ==> 377248 - Wrong space reported in tooltip during import.
+083 ==> 378116 - Themes icon washout.
+084 ==> 378724 - digiKam - Direct crash when rotate left is choosed.
+085 ==> 379511 - Introduce additional sidecar types and fix bug in mime setup [patch].
+086 ==> 380261 - digiKam crash when click on button "add a collection".
+087 ==> 380395 - digiKam crask after startup.
+088 ==> 
+089 ==> 
+090 ==> 
+091 ==> 
+
