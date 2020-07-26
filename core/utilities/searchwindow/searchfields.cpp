@@ -370,19 +370,23 @@ SearchField* SearchField::createField(const QString& name, SearchFieldGroup* con
         field->setText(i18n("Camera"), i18n("The make of the camera"));
         QStringList make = CoreDbAccess().db()->getListFromImageMetadata(DatabaseFields::Make);
 
+        make.removeDuplicates();
+        QMap<QString, QString> makeMap;
+
         for (int i = 0 ; i < make.count() ; ++i)
         {
-            ItemPropertiesTab::shortenedMakeInfo(make[i]);
-            make[i] = make[i].trimmed();
+            QString shortName = make[i];
+            ItemPropertiesTab::shortenedMakeInfo(shortName);
+            shortName         = shortName.trimmed();
+            makeMap.insert(shortName, make[i]);
         }
 
-        make.removeDuplicates();
-        make += make;
-        make.sort();
+        make.clear();
+        QMap<QString, QString>::const_iterator it;
 
-        for (int i = 0 ; i < make.count() ; i += 2)
+        for (it = makeMap.constBegin() ; it != makeMap.constEnd() ; ++it)
         {
-            make[i] = QLatin1Char('*') + make[i] + QLatin1Char('*');
+            make << it.value() << it.key();
         }
 
         field->setChoice(make);
@@ -414,8 +418,7 @@ SearchField* SearchField::createField(const QString& name, SearchFieldGroup* con
 
         for (it = modelMap.constBegin() ; it != modelMap.constEnd() ; ++it)
         {
-            model << it.value();
-            model << it.key();
+            model << it.value() << it.key();
         }
 
         field->setChoice(model);
