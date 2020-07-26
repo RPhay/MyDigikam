@@ -64,4 +64,5 @@ BUGFIXES:
 056 ==> 404495 - Message 'Google Maps cannot be loaded properly'.
 057 ==> 406675 - Failed to update the database schema from version 9 to version 10.
 058 ==> 424668 - Advanced Search finds all cameras of a similar model depending on search order.
-059 ==> 
+059 ==> 424666 - Windows de-install deletes shortcuts.
+060 ==> 
