@@ -128,4 +128,5 @@ BUGFIXES:
 120 ==> 363736 - Crash when changing folders.
 121 ==> 364153 - Crash during geotagging (repeatable 100%).
 122 ==> 364635 - digiKam crashes on startup.
-123 ==> 
+123 ==> 424666 - Windows de-install deletes shortcuts.
+124 ==> 
