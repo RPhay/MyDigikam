@@ -93,8 +93,39 @@ BUGFIXES:
 085 ==> 379511 - Introduce additional sidecar types and fix bug in mime setup [patch].
 086 ==> 380261 - digiKam crash when click on button "add a collection".
 087 ==> 380395 - digiKam crask after startup.
-088 ==> 
-089 ==> 
-090 ==> 
-091 ==> 
-
+088 ==> 351260 - Crash with sqlite backend.
+089 ==> 351261 - Crashing by tagging.
+090 ==> 351374 - Crashed while scanning.
+091 ==> 351400 - digiKam crash when tagging.
+092 ==> 352174 - Crash when choosing an icon for a new tag.
+093 ==> 352313 - digiKam crashes when using page up or page down to switch between pictures every third to Fifth time.
+094 ==> 353131 - HUGIN error "pto2mk" mising with digiKam 13.0 AND "component information" lacks information of HUGIN's components.
+095 ==> 353236 - digiKam dies after tagging multiple files.
+096 ==> 353456 - Picture taken with camera with GPS off -> appears as geolocalised.
+097 ==> 353457 - Panorama tool does not work anymore after updating Hugin to Hugin 2015.
+098 ==> 354725 - Panorama reports missing component with hugin 2015.
+099 ==> 354874 - digiKam crashes during batch-rename.
+100 ==> 355154 - Crash on while exporting.
+101 ==> 355745 - Crash on Export to social network.
+102 ==> 355903 - digiKam crashes when saving modified pictures.
+103 ==> 355950 - Crash on changing metadata.
+104 ==> 356229 - Batch manager can't import curve file.
+105 ==> 356282 - digiKam stop to export photo.
+106 ==> 356598 - Change folder view.
+107 ==> 357078 - Tool tips unreadable due to bad contrast of font against background box.
+108 ==> 357149 - digiKam crashes while writing Exif metadata.
+109 ==> 357340 - digiKam crashes when modifying picture.
+110 ==> 357421 - Crashes using Image Editor.
+111 ==> 358356 - digiKam collapsed.
+112 ==> 358488 - digiKam crashed after tag.
+113 ==> 358829 - digiKam crash when clicking on thumbnail.
+114 ==> 359540 - digiKam crash.
+115 ==> 359674 - Showfoto - EditorWindow-Et2833.digikamtempfile.
+116 ==> 359977 - The sudden closure of digiKam when browsing directories.
+117 ==> 360665 - digiKam crashed.
+118 ==> 361310 - digiKam crashes when using align_image_stack.
+119 ==> 361523 - Nikon Coolpix P610: "Failed to detect camera with GPhoto2 from Solid information".
+120 ==> 363736 - Crash when changing folders.
+121 ==> 364153 - Crash during geotagging (repeatable 100%).
+122 ==> 364635 - digiKam crashes on startup.
+123 ==> 
