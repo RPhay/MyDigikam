@@ -63,24 +63,5 @@ BUGFIXES:
 054 ==> 403238 - digiKam Editor Blank Screen for 2nd image opening in same session.
 056 ==> 404495 - Message 'Google Maps cannot be loaded properly'.
 057 ==> 406675 - Failed to update the database schema from version 9 to version 10.
-058 ==> 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+058 ==> 424668 - Advanced Search finds all cameras of a similar model depending on search order.
+059 ==> 

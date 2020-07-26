@@ -398,19 +398,24 @@ SearchField* SearchField::createField(const QString& name, SearchFieldGroup* con
         field->setText(i18n("Camera"), i18n("The model of the camera"));
         QStringList model = CoreDbAccess().db()->getListFromImageMetadata(DatabaseFields::Model);
 
+        model.removeDuplicates();
+        QMap<QString, QString> modelMap;
+
         for (int i = 0 ; i < model.count() ; ++i)
         {
-            ItemPropertiesTab::shortenedModelInfo(model[i]);
-            model[i] = model[i].trimmed();
+            QString shortName = model[i];
+            ItemPropertiesTab::shortenedModelInfo(shortName);
+            shortName         = shortName.trimmed();
+            modelMap.insert(shortName, model[i]);
         }
 
-        model.removeDuplicates();
-        model += model;
-        model.sort();
+        model.clear();
+        QMap<QString, QString>::const_iterator it;
 
-        for (int i = 0 ; i < model.count() ; i += 2)
+        for (it = modelMap.constBegin() ; it != modelMap.constEnd() ; ++it)
         {
-            model[i] = QLatin1Char('*') + model[i] + QLatin1Char('*');
+            model << it.value();
+            model << it.key();
         }
 
         field->setChoice(model);
