@@ -65,4 +65,25 @@ BUGFIXES:
 057 ==> 406675 - Failed to update the database schema from version 9 to version 10.
 058 ==> 424668 - Advanced Search finds all cameras of a similar model depending on search order.
 059 ==> 424666 - Windows de-install deletes shortcuts.
-060 ==> 
+060 ==> 314386 - digiKam crashes on startup with large collections.
+061 ==> 382366 - Dark theme: dark icons on dark background.
+062 ==> 382630 - digiKam segfaults at start.
+063 ==> 384200 - digiKam segfault when changing image metadata in bulk.
+064 ==> 385507 - digiKam crash at startup.
+065 ==> 385844 - Showfoto crashed on close.
+066 ==> 386322 - digiKam crashed on opening.
+067 ==> 387515 - Crash on start-up.
+068 ==> 388447 - Context menu in map is inactive.
+069 ==> 389047 - Make previous/next buttons work when opening a single Photo.
+070 ==> 390359 - Landscape crop size is not remembered like portrait crop size.
+071 ==> 393539 - Wishlist: Option to save rotation information (pixel, EXIF-flag) to the file always, instead of sidecar.
+072 ==> 393838 - Right click on map doesn't offer "copy coordinates".
+073 ==> 
+074 ==> 
+075 ==> 
+076 ==> 
+077 ==> 
+078 ==> 
+079 ==> 
+080 ==> 
+081 ==> 
