@@ -41,7 +41,7 @@ class DIGIKAM_EXPORT SystemSettingsWidget : public QWidget
 public:
 
     explicit SystemSettingsWidget(QWidget* const parent);
-    virtual ~SystemSettingsWidget();
+    ~SystemSettingsWidget();
 
 public:
 
