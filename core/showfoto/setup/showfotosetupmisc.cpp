@@ -50,6 +50,7 @@
 #include "dlayoutbox.h"
 #include "dfontselect.h"
 #include "showfotosettings.h"
+#include "systemsettingswidget.h"
 
 using namespace Digikam;
 
@@ -76,30 +77,33 @@ public:
         applicationStyle(nullptr),
         applicationIcon(nullptr),
         applicationFont(nullptr),
+        systemSettingsWidget(nullptr),
         settings(ShowfotoSettings::instance())
     {
     }
 
-    QTabWidget*          tab;
+    QTabWidget*           tab;
 
-    QLabel*              sidebarTypeLabel;
-    QLabel*              applicationStyleLabel;
-    QLabel*              applicationIconLabel;
+    QLabel*               sidebarTypeLabel;
+    QLabel*               applicationStyleLabel;
+    QLabel*               applicationIconLabel;
 
-    QCheckBox*           showSplash;
-    QCheckBox*           nativeFileDialog;
-    QCheckBox*           itemCenter;
-    QCheckBox*           showMimeOverImage;
-    QCheckBox*           showCoordinates;
-    QCheckBox*           sortReverse;
+    QCheckBox*            showSplash;
+    QCheckBox*            nativeFileDialog;
+    QCheckBox*            itemCenter;
+    QCheckBox*            showMimeOverImage;
+    QCheckBox*            showCoordinates;
+    QCheckBox*            sortReverse;
 
-    QComboBox*           sidebarType;
-    QComboBox*           sortOrderComboBox;
-    QComboBox*           applicationStyle;
-    QComboBox*           applicationIcon;
-    DFontSelect*         applicationFont;
+    QComboBox*            sidebarType;
+    QComboBox*            sortOrderComboBox;
+    QComboBox*            applicationStyle;
+    QComboBox*            applicationIcon;
+    DFontSelect*          applicationFont;
 
-    ShowfotoSettings*    settings;
+    SystemSettingsWidget* systemSettingsWidget;
+
+    ShowfotoSettings*     settings;
 };
 
 // --------------------------------------------------------
@@ -264,6 +268,12 @@ SetupMisc::SetupMisc(QWidget* const parent)
 
     d->tab->insertTab(Appearance, appearancePanel, i18nc("@title:tab", "Appearance"));
 
+    // -- System Options --------------------------------------------------------
+
+    d->systemSettingsWidget = new SystemSettingsWidget(d->tab);
+
+    d->tab->insertTab(System, d->systemSettingsWidget, i18nc("@title:tab", "System"));
+
     // --------------------------------------------------------
 
     readSettings();
@@ -276,6 +286,8 @@ SetupMisc::~SetupMisc()
 
 void SetupMisc::readSettings()
 {
+    d->systemSettingsWidget->readSettings();
+
     d->showSplash->setChecked(d->settings->getShowSplash());
     d->nativeFileDialog->setChecked(d->settings->getNativeFileDialog());
     d->itemCenter->setChecked(d->settings->getItemCenter());
@@ -297,6 +309,8 @@ void SetupMisc::readSettings()
 
 void SetupMisc::applySettings()
 {
+    d->systemSettingsWidget->saveSettings();
+
     d->settings->setShowSplash(d->showSplash->isChecked());
     d->settings->setNativeFileDialog(d->nativeFileDialog->isChecked());
     d->settings->setItemCenter(d->itemCenter->isChecked());

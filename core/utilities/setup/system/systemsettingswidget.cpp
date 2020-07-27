@@ -71,6 +71,11 @@ SystemSettingsWidget::SystemSettingsWidget(QWidget* const parent)
     d->useHighDpiPixmapsCheck = new QCheckBox(i18n("Use pixmaps with high DPI resolution"), this);
     d->disableOpenCLCheck     = new QCheckBox(i18n("Disable hardware acceleration OpenCL"), this);
 
+    if (qApp->applicationName() == QLatin1String("showfoto"))
+    {
+        d->disableOpenCLCheck->hide();
+    }
+
     QLabel* const systemNote  = new QLabel(i18n("<b>Note: All changes to these settings only take effect "
                                                 "after restarting digiKam. Some settings are hardware "
                                                 "dependent and may have no effect.</b>"), this);

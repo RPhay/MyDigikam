@@ -66,6 +66,7 @@ using namespace Magick;
 #include "digikam_debug.h"
 #include "digikam_version.h"
 #include "digikam_globals.h"
+#include "systemsettings.h"
 #include "metaengine.h"
 #include "dmessagebox.h"
 #include "albummanager.h"
@@ -83,7 +84,6 @@ using namespace Magick;
 #include "applicationsettings.h"
 #include "similaritydbaccess.h"
 #include "databaseserverstarter.h"
-#include "systemsettings.h"
 
 #ifdef Q_OS_WIN
 #   include <windows.h>
