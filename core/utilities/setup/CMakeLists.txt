@@ -25,7 +25,6 @@ set(libsetupshowfoto_SRCS
 
     ${CMAKE_CURRENT_SOURCE_DIR}/system/systemsettingswidget.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/system/systemsettings.cpp
-
 )
 
 # Used by digikamcore
@@ -72,9 +71,6 @@ set(libsetup_SRCS
     ${CMAKE_CURRENT_SOURCE_DIR}/camera/cameraselection.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/camera/cameralist.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/camera/cameratype.cpp
-
-    ${CMAKE_CURRENT_SOURCE_DIR}/system/systemsettingswidget.cpp
-    ${CMAKE_CURRENT_SOURCE_DIR}/system/systemsettings.cpp
 )
 
 # Used by digikamgui
