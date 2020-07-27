@@ -3,12 +3,10 @@
  * This file is a part of digiKam project
  * https://www.digikam.org
  *
- * Date        : 2004-08-23
- * Description : mics configuration setup tab
+ * Date        : 2020-27-07
+ * Description : system settings widget
  *
- * Copyright (C) 2004      by Renchi Raju <renchi dot raju at gmail dot com>
- * Copyright (C) 2005-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
- * Copyright (C) 2017      by Simon Frei <freisim93 at gmail dot com>
+ * Copyright (C) 2020 by Maik Qualmann <metzpinguin at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -23,39 +21,32 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_SETUP_MISC_H
-#define DIGIKAM_SETUP_MISC_H
+#ifndef DIGIKAM_SYSTEM_SETTINGS_WIDGET_H
+#define DIGIKAM_SYSTEM_SETTINGS_WIDGET_H
 
 // Qt includes
 
-#include <QScrollArea>
+#include <QWidget>
+
+// Local includes
+
+#include "digikam_export.h"
 
 namespace Digikam
 {
 
-class SetupMisc : public QScrollArea
+class DIGIKAM_GUI_EXPORT SystemSettingsWidget : public QWidget
 {
 
 public:
 
-    enum MiscTab
-    {
-        Behaviour = 0,
-        Appearance,
-        Grouping,
-        System
-    };
+    explicit SystemSettingsWidget(QWidget* const parent);
+    virtual ~SystemSettingsWidget();
 
 public:
 
-    explicit SetupMisc(QWidget* const parent = nullptr);
-    ~SetupMisc();
-
-    void applySettings();
-
-private:
-
     void readSettings();
+    void saveSettings();
 
 private:
 
@@ -65,4 +56,4 @@ private:
 
 } // namespace Digikam
 
-#endif // DIGIKAM_SETUP_MISC_H
+#endif // DIGIKAM_SYSTEM_SETTINGS_WIDGET_H
