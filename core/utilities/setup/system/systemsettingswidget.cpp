@@ -77,8 +77,8 @@ SystemSettingsWidget::SystemSettingsWidget(QWidget* const parent)
     }
 
     QLabel* const systemNote  = new QLabel(i18n("<b>Note: All changes to these settings only take effect "
-                                                "after restarting digiKam. Some settings are hardware "
-                                                "dependent and may have no effect.</b>"), this);
+                                                "after the restart. Some settings are hardware dependent "
+                                                "and may have no effect.</b>"), this);
     systemNote->setWordWrap(true);
     systemNote->setFrameStyle(QFrame::StyledPanel | QFrame::Raised);
 
