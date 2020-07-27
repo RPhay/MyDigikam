@@ -98,10 +98,8 @@ int main(int argc, char* argv[])
     SystemSettings system(QLatin1String("digikam"));
     system.readSettings();
 
-    if (system.useHighDpiPixmaps)
-    {
-        QCoreApplication::setAttribute(Qt::AA_UseHighDpiPixmaps);
-    }
+    QCoreApplication::setAttribute(Qt::AA_UseHighDpiPixmaps,
+                                   system.useHighDpiPixmaps);
 
     if (system.useHighDpiScaling)
     {
