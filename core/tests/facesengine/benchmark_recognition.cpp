@@ -535,6 +535,8 @@ int main(int argc, char** argv)
 {
     QApplication app(argc, argv);
 
+    app.setApplicationName(QString::fromLatin1("digikam"));          // for DB init.
+
     Benchmark benchmark(FaceRecognizer::Tree);
     benchmark.m_parser = parseOptions(app);
 

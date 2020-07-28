@@ -164,7 +164,6 @@ FaceExtractor::FaceExtractor()
     qCDebug(DIGIKAM_FACEDB_LOG) << nnmodel;
 
     d->net               = cv::dnn::readNetFromTorch(nnmodel.toStdString());
-    //d->net = cv::dnn::readNetFromTorch(QLatin1String("/home/minhnghiaduong/Documents/Projects/openface.nn4.small2.v1.t7"));
     // As we use OpenFace, we need to set appropriate values for image color space and image size
 
     d->imageSize         = cv::Size(96, 96);

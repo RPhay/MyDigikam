@@ -40,7 +40,7 @@ namespace Digikam
 
 int FaceDbSchemaUpdater::schemaVersion()
 {
-    return 3;
+    return 4;
 }
 
 // -------------------------------------------------------------------------------------
@@ -225,6 +225,10 @@ bool FaceDbSchemaUpdater::makeUpdates()
         {
             updateV2ToV3();
         }
+        else if (d->currentVersion == 3)
+        {
+            updateV3ToV4();
+        }
     }
 
     return true;
@@ -236,7 +240,7 @@ bool FaceDbSchemaUpdater::createDatabase()
     if (createTables() && createIndices() && createTriggers())
     {
         d->currentVersion         = schemaVersion();
-        d->currentRequiredVersion = 3;
+        d->currentRequiredVersion = 4;
         return true;
     }
     else
@@ -252,6 +256,7 @@ bool FaceDbSchemaUpdater::createTables()
 #ifdef USE_DNN_RECOGNITION_BACKEND
 
             d->dbAccess->backend()->execDBAction(d->dbAccess->backend()->getDBAction(QLatin1String("CreateFaceDBFaceMatrices"))) &&
+            d->dbAccess->backend()->execDBAction(d->dbAccess->backend()->getDBAction(QLatin1String("CreateFaceDBKDTree")))       &&
 
 #else
 
@@ -294,6 +299,30 @@ bool FaceDbSchemaUpdater::updateV2ToV3()
     d->currentVersion         = 3;
     d->currentRequiredVersion = 3;
     d->dbAccess->backend()->execDBAction(d->dbAccess->backend()->getDBAction(QLatin1String("CreateFaceDBFaceMatrices")));
+
+    return true;
+}
+
+bool FaceDbSchemaUpdater::updateV3ToV4()
+{
+    if(!(d->dbAccess->backend()->execDBAction(d->dbAccess->backend()->getDBAction(QLatin1String("CreateFaceDBFaceMatrices")))))
+    {
+        qDebug() << "fail to recreate FaceMatrices table";
+
+        return false;
+    }
+
+    if (!(d->dbAccess->backend()->execDBAction(d->dbAccess->backend()->getDBAction(QLatin1String("CreateFaceDBKDTree")))))
+    {
+        qDebug() << "fail to create KDTree table";
+
+        return false;
+    }
+
+    d->currentVersion         = 4;
+    d->currentRequiredVersion = 4;
+
+    // TODO: retrain recognized identities
 
     return true;
 }

@@ -594,11 +594,25 @@
             </dbaction>
 
             <dbaction name="CreateFaceDBFaceMatrices" mode="transaction">
-                <statement mode="plain">CREATE TABLE IF NOT EXISTS FaceMatrices
-                    (id INTEGER PRIMARY KEY AUTOINCREMENT,
-                    identity INTEGER NOT NULL REFERENCES Identities,
-                    context TEXT,
-                    embedding BLOB NOT NULL);
+                <statement mode="plain">DROP TABLE IF EXISTS FaceMatrices;</statement>
+                <statement mode="plain">CREATE TABLE FaceMatrices
+                (id INTEGER PRIMARY KEY,
+                identity INTEGER NOT NULL,
+                context TEXT,
+                embedding BLOB NOT NULL);
+                </statement>
+            </dbaction>
+
+            <dbaction name="CreateFaceDBKDTree" mode="transaction">
+                <statement mode="plain">CREATE TABLE IF NOT EXISTS KDTree
+                    (id INTEGER PRIMARY KEY,
+                    split_axis INTEGER NOT NULL,
+                    position INTEGER NOT NULL,
+                    max_range BLOB NOT NULL,
+                    min_range BLOB NOT NULL,
+                    parent INTEGER,
+                    left INTEGER,
+                    right INTEGER);
                 </statement>
             </dbaction>
 
@@ -1749,11 +1763,32 @@
             </dbaction>
 
             <dbaction name="CreateFaceDBFaceMatrices" mode="transaction">
-                <statement mode="plain">CREATE TABLE IF NOT EXISTS FaceMatrices
+                <statement mode="plain">DROP TABLE IF EXISTS FaceMatrices;
+                </statement>
+                <statement mode="plain">CREATE TABLE FaceMatrices
                     (id INTEGER PRIMARY KEY AUTO_INCREMENT,
-                    identity INTEGER NOT NULL REFERENCES Identities,
-                    `context` LONGTEXT CHARACTER SET utf8 COLLATE utf8_general_ci,
-                    embedding BLOB NOT NULL)
+                    identity INTEGER NOT NULL,
+                    context LONGTEXT CHARACTER SET utf8 COLLATE utf8_general_ci,
+                    embedding BLOB NOT NULL,
+                    CONSTRAINT FaceEmbedding_Identities FOREIGN KEY (identity) REFERENCES Identities (id) ON DELETE CASCADE ON UPDATE CASCADE)
+                    ENGINE InnoDB;
+                </statement>
+            </dbaction>
+
+            <dbaction name="CreateFaceDBKDTree" mode="transaction">
+                <statement mode="plain">CREATE TABLE IF NOT EXISTS KDTree
+                    (id INTEGER PRIMARY KEY AUTO_INCREMENT,
+                    split_axis INTEGER NOT NULL,
+                    position INTEGER NOT NULL,
+                    max_range BLOB NOT NULL,
+                    min_range BLOB NOT NULL,
+                    parent INTEGER,
+                    left INTEGER,
+                    right INTEGER,
+                    CONSTRAINT Node_position FOREIGN KEY (position) REFERENCES FaceMatrices (id) ON DELETE CASCADE ON UPDATE CASCADE,
+                    CONSTRAINT Parent_node FOREIGN KEY (parent) REFERENCES KDTree (id) ON DELETE CASCADE ON UPDATE CASCADE,
+                    CONSTRAINT Left_node FOREIGN KEY (left) REFERENCES KDTree (id) ON DELETE CASCADE ON UPDATE CASCADE,
+                    CONSTRAINT Right_node FOREIGN KEY (right) REFERENCES KDTree (id) ON DELETE CASCADE ON UPDATE CASCADE)
                     ENGINE InnoDB;
                 </statement>
             </dbaction>

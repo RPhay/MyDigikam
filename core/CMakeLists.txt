@@ -40,7 +40,7 @@ option(ENABLE_MYSQLSUPPORT               "Build digiKam with MySQL dabatase supp
 option(ENABLE_INTERNALMYSQL              "Build digiKam with internal MySQL server executable (default=ON)"                   ON)
 
 # Developer options:
-option(ENABLE_DIGIKAM_MODELTEST          "Enable ModelTest on some models for debugging (default=OFF)"                        OFF)
+option(ENABLE_DIGIKAM_MODELTEST          "Enable ModelTest on some models for debugging (default=OFF)"                        ON)
 
 # Packaging options:
 if(MINGW)

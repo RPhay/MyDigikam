@@ -424,7 +424,7 @@ bool FaceRecognizer::insertData(const cv::Mat& nodePos, const int label, const Q
 {
     int nodeId = FaceDbAccess().db()->insertFaceVector(nodePos, label, context);
 
-    if (nodeId < 0)
+    if (nodeId <= 0)
     {
         qWarning() << "error inserting face embedding to database";
     }
@@ -449,6 +449,8 @@ bool FaceRecognizer::insertData(const cv::Mat& nodePos, const int label, const Q
         else
         {
             qWarning() << "Error insert new node" << nodeId;
+
+            return false;
         }
     }
 

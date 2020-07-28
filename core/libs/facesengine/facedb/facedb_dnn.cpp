@@ -33,22 +33,27 @@ int FaceDb::insertFaceVector(const cv::Mat& faceEmbedding,
                              const int label,
                              const QString& context) const
 {
-    QVariantList insertingValues;
-    QVariant     insertedId;
+    QVariantList bindingValues;
 
-    insertingValues << label
-                    << context
-                    << QByteArray::fromRawData((char*)faceEmbedding.ptr<float>(), (sizeof(float) * 128));
+    bindingValues << label;
+    bindingValues << context;
+    bindingValues << QByteArray::fromRawData((char*)faceEmbedding.ptr<float>(), (sizeof(float) * 128));
 
-    d->db->execSql(QLatin1String("INSERT INTO FaceMatrices (identity, `context`, embedding) "
-                                 "VALUES (?,?,?);"),
-                   insertingValues, nullptr, &insertedId);
+    DbEngineSqlQuery query = d->db->execQuery(QLatin1String("INSERT INTO FaceMatrices (identity, context, embedding) "
+                                                            "VALUES (?,?,?);"),
+                                              bindingValues);
 
-    qCDebug(DIGIKAM_FACEDB_LOG) << "Commit compressed face mat data " << insertedId
-                                << " for identity " << label;
+    if (query.lastInsertId().isNull())
+    {
+        qWarning() << "fail to insert face embedding, last query" << query.lastQuery() << "bound values" << query.boundValues() << query.lastError();
+    }
+    else
+    {
+        qCDebug(DIGIKAM_FACEDB_LOG) << "Commit compressed face mat data " << query.lastInsertId()
+                                    << " for identity " << label;
+    }
 
-
-    return insertedId.toInt();
+    return query.lastInsertId().toInt();
 }
 
 KDTree* FaceDb::reconstructTree() const
@@ -56,8 +61,10 @@ KDTree* FaceDb::reconstructTree() const
     KDTree* tree = new KDTree(128);
 
     qCDebug(DIGIKAM_FACEDB_LOG) << "Loading KD-Tree";
-    DbEngineSqlQuery query = d->db->execQuery(QLatin1String("SELECT id, identity, embedding "
-                                                            "FROM FaceMatrices;"));
+    DbEngineSqlQuery query = d->db->execQuery(QLatin1String("SELECT id, identity, embedding FROM FaceMatrices;"));
+
+    qDebug() << "list of table" << d->db->tables();
+    qDebug() << "select face matrice error" << query.lastQuery() << query.lastError();
 
     // favor new data
     if (query.last())

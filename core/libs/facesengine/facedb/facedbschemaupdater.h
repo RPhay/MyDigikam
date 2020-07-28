@@ -58,6 +58,7 @@ private:
     bool createTriggers();
     bool updateV1ToV2();
     bool updateV2ToV3();
+    bool updateV3ToV4();
 
 private:
 
