@@ -47,7 +47,7 @@ public:
 
     bool addPair(const QString& name,
                  const QString& value,
-                 const QString& type = QStringLiteral("text/plain"));
+                 const QString& type = QLatin1String("text/plain"));
 
     bool addFile(const QString& name,
                  const QString& path);

@@ -403,16 +403,20 @@ void ShowFoto::slotDroppedUrls(const QList<QUrl>& droppedUrls, bool dropped)
         if (drop.isValid())
         {
             QFileInfo info(drop.toLocalFile());
-            QString ext(info.suffix().toUpper());
+            QString suffix(info.suffix().toUpper());
             QUrl url(QUrl::fromLocalFile(info.canonicalFilePath()));
 
             // Add extra check of the image extensions that are still
             // unknown in older Qt versions or have an application mime type.
 
-            if (QMimeDatabase().mimeTypeForUrl(url).name().startsWith(QLatin1String("image/")) ||
-                (ext == QLatin1String("HEIC"))                                                   ||
-                (ext == QLatin1String("HEIF"))                                                   ||
-                (ext == QLatin1String("KRA")))
+            QMimeDatabase mimeDB;
+            QString mimeType(mimeDB.mimeTypeForUrl(url).name());
+
+            if (mimeType.startsWith(QLatin1String("image/")) ||
+                (suffix == QLatin1String("PGF"))             ||
+                (suffix == QLatin1String("KRA"))             ||
+                (suffix == QLatin1String("HEIC"))            ||
+                (suffix == QLatin1String("HEIF")))
             {
                 imagesUrls << url;
             }
@@ -522,7 +526,7 @@ void ShowFoto::slotChanged()
 {
     QString mpixels;
     QSize dims(m_canvas->imageWidth(), m_canvas->imageHeight());
-    mpixels.setNum(dims.width()*dims.height()/1000000.0, 'f', 2);
+    mpixels = QLocale().toString(dims.width()*dims.height()/1000000.0, 'f', 1);
     QString str = (!dims.isValid()) ? i18nc("unknown image dimensions", "Unknown")
                                     : i18nc("%1 width, %2 height, %3 mpixels", "%1x%2 (%3Mpx)",
                                             dims.width(),dims.height(),mpixels);

@@ -149,7 +149,7 @@ public:
 
 public Q_SLOTS:
 
-    void slotNofificationError(const QString& message, int type);
+    void slotNotificationError(const QString& message, int type);
 
     void slotLeftSideBarActivate(QWidget* widget);
     void slotLeftSideBarActivate(SidebarWidget* widget);

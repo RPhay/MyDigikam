@@ -51,12 +51,14 @@ add_definitions(-DDCRAW_VERBOSE)
 add_definitions(-DUSE_X3FTOOLS)
 add_definitions(-DUSE_6BY9RPI)
 
-# No need a Flag to export library symbols, as we use a static version for the unit tests.
-add_definitions(-DLIBRAW_NODLL)
 
 if(WIN32)
-    add_definitions(-DLIBRAW_WIN32_DLLDEFS)
+    # We need native UTF-16 encoding path support
     add_definitions(-DLIBRAW_WIN32_UNICODEPATHS)
+
+    # No need a Flag to export library symbols, as we use a static version for the unit tests.
+    add_definitions(-DLIBRAW_WIN32_DLLDEFS)
+    add_definitions(-DLIBRAW_NODLL)
 endif()
 
 include_directories(${CMAKE_BINARY_DIR}/core/libs/rawengine/libraw/
@@ -163,7 +165,7 @@ target_compile_definitions(core_libraw_obj
 if(MSVC)
     target_compile_options(core_libraw_obj PRIVATE /w)
 else()
-    target_compile_options(core_libraw_obj PRIVATE -w -fPIC -O4)
+    target_compile_options(core_libraw_obj PRIVATE -w -O4)
 endif()
 
 # For unit tests.

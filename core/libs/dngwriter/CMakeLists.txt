@@ -42,10 +42,14 @@ target_compile_definitions(core_libmd5_obj
 if(MSVC)
     target_compile_options(core_libmd5_obj PRIVATE /w)
 else()
-    target_compile_options(core_libmd5_obj PRIVATE -w -fPIC)
+    target_compile_options(core_libmd5_obj PRIVATE -w)
 endif()
 
 #------------------------------------------------------------------------------------
+
+if(MINGW)
+    add_definitions("-D_POSIX_THREAD_SAFE_FUNCTIONS")
+endif()
 
 set(libxmp_SRCS
     ${CMAKE_CURRENT_SOURCE_DIR}/extra/xmp_sdk/common/XML_Node.cpp
@@ -79,7 +83,7 @@ target_compile_definitions(core_libxmp_obj
 if(MSVC)
     target_compile_options(core_libxmp_obj PRIVATE /w)
 else()
-    target_compile_options(core_libxmp_obj PRIVATE -w -fPIC)
+    target_compile_options(core_libxmp_obj PRIVATE -w)
 endif()
 
 #------------------------------------------------------------------------------------
@@ -174,7 +178,7 @@ if(MSVC)
 
 else()
 
-    target_compile_options(core_libdng_obj PRIVATE -w -fPIC)
+    target_compile_options(core_libdng_obj PRIVATE -w)
 
 endif()
 

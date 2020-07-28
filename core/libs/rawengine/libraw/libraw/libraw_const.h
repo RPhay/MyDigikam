@@ -20,7 +20,14 @@ it under the terms of the one of two licenses as you choose:
 #define LIBRAW_DEFAULT_ADJUST_MAXIMUM_THRESHOLD 0.75
 #define LIBRAW_DEFAULT_AUTO_BRIGHTNESS_THRESHOLD 0.01
 /* limit allocation size, default is 2Gb */
+#ifndef LIBRAW_MAX_ALLOC_MB_DEFAULT
 #define LIBRAW_MAX_ALLOC_MB_DEFAULT 2048L
+#endif
+
+/* limit thumbnail size, default is 512Mb*/
+#ifndef LIBRAW_MAX_THUMBNAIL_MB
+#define LIBRAW_MAX_THUMBNAIL_MB 512L
+#endif
 
 /* Check if enough file space exists before tag read */
 #ifndef LIBRAW_NO_IOSPACE_CHECK
@@ -510,7 +517,9 @@ enum LibRaw_processing_options
   LIBRAW_PROCESSING_DNG_STAGE2 = 1 << 21,
   LIBRAW_PROCESSING_DNG_STAGE3 = 1 << 22,
   LIBRAW_PROCESSING_DNG_ALLOWSIZECHANGE = 1 << 23,
-  LIBRAW_PROCESSING_DNG_DISABLEWBADJUST = 1 << 24
+  LIBRAW_PROCESSING_DNG_DISABLEWBADJUST = 1 << 24,
+  LIBRAW_PROCESSING_PROVIDE_NONSTANDARD_WB = 1 << 25,
+  LIBRAW_PROCESSING_CAMERAWB_FALLBACK_TO_DAYLIGHT = 1 << 26
 };
 
 enum LibRaw_decoder_flags

@@ -13,6 +13,7 @@ set(libqueuemanager_SRCS
     ${CMAKE_CURRENT_SOURCE_DIR}/manager/batchtool.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/manager/batchtoolutils.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/manager/batchtoolsfactory.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/manager/queuesettings.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/manager/workflowmanager.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/dplugins/dpluginbqm.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/dplugins/dpluginconfviewbqm.cpp

@@ -66,6 +66,7 @@ using namespace Magick;
 #include "digikam_debug.h"
 #include "digikam_version.h"
 #include "digikam_globals.h"
+#include "systemsettings.h"
 #include "metaengine.h"
 #include "dmessagebox.h"
 #include "albummanager.h"
@@ -94,17 +95,37 @@ using namespace Digikam;
 
 int main(int argc, char* argv[])
 {
-    // Enable scaling on high DPI displays,
-    // accept the user setting when it is set.
+    SystemSettings system(QLatin1String("digikam"));
+    system.readSettings();
 
-    if (qgetenv("QT_AUTO_SCREEN_SCALE_FACTOR").isNull())
+    QCoreApplication::setAttribute(Qt::AA_UseHighDpiPixmaps,
+                                   system.useHighDpiPixmaps);
+
+    if (system.useHighDpiScaling)
     {
-        qputenv("QT_AUTO_SCREEN_SCALE_FACTOR", "1");
+        QCoreApplication::setAttribute(Qt::AA_EnableHighDpiScaling);
+    }
+    else
+    {
+        QCoreApplication::setAttribute(Qt::AA_DisableHighDpiScaling);
+    }
+
+    // OpenCV crash with face engine with OpenCL support
+    // https://bugs.kde.org/show_bug.cgi?id=423632
+
+    // When analyzing with Heaptrack it was found
+    // that a big memory leak is created in
+    // libpocl when OpenCL is active.
+
+    if (system.disableOpenCL)
+    {
+        qputenv("OPENCV_OPENCL_RUNTIME", "disabled");
+        qputenv("OPENCV_OPENCL_DEVICE",  "null");
     }
 
 #ifdef HAVE_QWEBENGINE
 
-    QApplication::setAttribute(Qt::AA_ShareOpenGLContexts, true);
+    QCoreApplication::setAttribute(Qt::AA_ShareOpenGLContexts);
 
 #endif
 
@@ -117,12 +138,6 @@ int main(int argc, char* argv[])
 #ifdef HAVE_IMAGE_MAGICK
 
     InitializeMagick(nullptr);
-
-#endif
-
-#ifndef Q_OS_OSX
-
-    app.setAttribute(Qt::AA_UseHighDpiPixmaps, true);
 
 #endif
 

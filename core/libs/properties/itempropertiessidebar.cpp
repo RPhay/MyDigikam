@@ -265,8 +265,7 @@ void ItemPropertiesSideBar::setImagePropertiesInformation(const QUrl& url)
         colorMode = DImg::colorModelToString(img.originalColorModel());
     }
 
-    QString mpixels;
-    mpixels.setNum(dims.width()*dims.height()/1000000.0, 'f', 2);
+    QString mpixels = QLocale().toString(dims.width()*dims.height()/1000000.0, 'f', 1);
     str = (!dims.isValid()) ? i18n("Unknown") : i18n("%1x%2 (%3Mpx)",
             dims.width(), dims.height(), mpixels);
     m_propertiesTab->setItemDimensions(str);

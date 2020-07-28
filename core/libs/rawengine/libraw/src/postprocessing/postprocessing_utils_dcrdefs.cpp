@@ -54,7 +54,6 @@ void LibRaw::convert_to_rgb()
   prof_desc_len = snprintf(NULL, 0, "%s gamma %g toe slope %g", name[output_color - 1], floorf(1000.f/gamm[0]+.5f)/1000.f, floorf(gamm[1]*1000.0f+.5f)/1000.f) + 1;
   prof_desc = (char *)malloc(prof_desc_len);
   sprintf(prof_desc, "%s gamma %g toe slope %g", name[output_color - 1], floorf(1000.f/gamm[0]+.5f)/1000.f, floorf(gamm[1]*1000.0f+.5f)/1000.f);
-//  printf ("==>> desc: =%s=\n", prof_desc);
 
   gamma_curve(gamm[0], gamm[1], 0, 0);
   memcpy(out_cam, rgb_cam, sizeof out_cam);
@@ -116,7 +115,11 @@ void LibRaw::scale_colors()
 
   if (user_mul[0])
     memcpy(pre_mul, user_mul, sizeof pre_mul);
-  if (use_auto_wb || (use_camera_wb && cam_mul[0] <= 0.00001f))
+  if (use_auto_wb || (use_camera_wb && 
+      (cam_mul[0] < -0.5  // LibRaw 0.19 and older: fallback to auto only if cam_mul[0] is set to -1
+          || (cam_mul[0] <= 0.00001f  // New default: fallback to auto if no cam_mul parsed from metadata
+              && !(imgdata.params.raw_processing_options & LIBRAW_PROCESSING_CAMERAWB_FALLBACK_TO_DAYLIGHT))
+          )))
   {
     memset(dsum, 0, sizeof dsum);
     bottom = MIN(greybox[1] + greybox[3], height);

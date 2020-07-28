@@ -240,9 +240,9 @@ void TrackCorrelatorThread::run()
             {
                 const TrackManager::TrackPoint& dataPointBefore = fileList.at(lastIndexPair.first).points.at(lastIndexPair.second);
                 const TrackManager::TrackPoint& dataPointAfter  = fileList.at(firstIndexPair.first).points.at(firstIndexPair.second);
-                const uint tBefore                              = dataPointBefore.dateTime.toTime_t();
-                const uint tAfter                               = dataPointAfter.dateTime.toTime_t();
-                const uint tCor                                 = itemDateTime.toTime_t();
+                const uint tBefore                              = dataPointBefore.dateTime.toSecsSinceEpoch();
+                const uint tAfter                               = dataPointAfter.dateTime.toSecsSinceEpoch();
+                const uint tCor                                 = itemDateTime.toSecsSinceEpoch();
 
                 if (tCor-tBefore != 0)
                 {

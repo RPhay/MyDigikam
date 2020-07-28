@@ -100,9 +100,9 @@ public:
 
 public:
 
-    QProgressDialog*         m_authProgressDlg;
-    QLinkedList <FPhotoSet>* m_photoSetsList;
-    FPhotoSet                m_selectedPhotoSet;
+    QProgressDialog*  m_authProgressDlg;
+    QList<FPhotoSet>* m_photoSetsList;
+    FPhotoSet         m_selectedPhotoSet;
 
 Q_SIGNALS:
 

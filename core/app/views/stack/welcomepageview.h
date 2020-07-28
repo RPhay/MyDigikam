@@ -49,7 +49,9 @@
 
 namespace Digikam
 {
+
 #ifdef HAVE_QWEBENGINE
+
 class WelcomePageViewPage : public QWebEnginePage
 {
     Q_OBJECT
@@ -57,7 +59,7 @@ class WelcomePageViewPage : public QWebEnginePage
 public:
 
     explicit WelcomePageViewPage(QObject* const parent = nullptr);
-    virtual ~WelcomePageViewPage();
+    ~WelcomePageViewPage();
 
     bool acceptNavigationRequest(const QUrl&, QWebEnginePage::NavigationType, bool);
 
@@ -70,9 +72,13 @@ Q_SIGNALS:
 // -------------------------------------------------------------------
 
 class WelcomePageView : public QWebEngineView
+
 #else
+
 class WelcomePageView : public QWebView
+
 #endif
+
 {
     Q_OBJECT
 

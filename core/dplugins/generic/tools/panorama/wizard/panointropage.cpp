@@ -140,7 +140,7 @@ PanoIntroPage::PanoIntroPage(PanoManager* const mngr, QWizard* const dlg)
 
     d->mngr->checkBinaries();
 
-#ifdef Q_OS_OSX
+#ifdef Q_OS_MACOS
 
     // Hugin bundle PKG install
 

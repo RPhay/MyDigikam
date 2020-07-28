@@ -309,7 +309,7 @@ bool DImgPGFLoader::load(const QString& filePath, DImgLoaderObserver* const obse
 
             if (observer)
             {
-                observer->progressInfo(1.0);
+                observer->progressInfo(1.0F);
             }
         }
 

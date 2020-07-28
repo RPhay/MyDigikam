@@ -579,16 +579,16 @@ void FlickrWindow::slotCreateNewPhotoSet()
         QString id;
         int i                               = 0;
         id                                  = QLatin1String("UNDEFINED_") + QString::number(i);
-        QLinkedList<FPhotoSet>::iterator it = d->talker->m_photoSetsList->begin();
+        QList<FPhotoSet>::const_iterator it = d->talker->m_photoSetsList->constBegin();
 
-        while (it != d->talker->m_photoSetsList->end())
+        while (it != d->talker->m_photoSetsList->constEnd())
         {
             FPhotoSet fps2 = *it;
 
             if (fps2.id == id)
             {
                 id = QLatin1String("UNDEFINED_") + QString::number(++i);
-                it = d->talker->m_photoSetsList->begin();
+                it = d->talker->m_photoSetsList->constBegin();
             }
 
             ++it;
@@ -625,15 +625,15 @@ void FlickrWindow::slotPopulatePhotoSetComboBox()
 
     if (d->talker && d->talker->m_photoSetsList)
     {
-        QLinkedList <FPhotoSet>* const list = d->talker->m_photoSetsList;
+        QList<FPhotoSet>* const list = d->talker->m_photoSetsList;
         d->albumsListComboBox->clear();
         d->albumsListComboBox->insertItem(0, i18n("Photostream Only"));
         d->albumsListComboBox->insertSeparator(1);
-        QLinkedList<FPhotoSet>::iterator it = list->begin();
+        QList<FPhotoSet>::const_iterator it = list->constBegin();
         int index                           = 2;
         int curr_index                      = 0;
 
-        while (it != list->end())
+        while (it != list->constEnd())
         {
             FPhotoSet photoSet = *it;
             QString name       = photoSet.title;
@@ -786,9 +786,9 @@ void FlickrWindow::slotAddPhotoNext()
     }
     else
     {
-        QLinkedList<FPhotoSet>::iterator it = d->talker->m_photoSetsList->begin();
+        QList<FPhotoSet>::const_iterator it = d->talker->m_photoSetsList->constBegin();
 
-        while (it != d->talker->m_photoSetsList->end())
+        while (it != d->talker->m_photoSetsList->constEnd())
         {
             if (it->id == selectedPhotoSetId)
             {

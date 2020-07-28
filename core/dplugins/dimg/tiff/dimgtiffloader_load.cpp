@@ -297,7 +297,7 @@ bool DImgTIFFLoader::load(const QString& filePath, DImgLoaderObserver* const obs
                         return false;
                     }
 
-                    observer->progressInfo(0.1 + (0.8 * (((float)st) / ((float)num_of_strips))));
+                    observer->progressInfo(0.1F + (0.8F * (((float)st) / ((float)num_of_strips))));
                 }
 
                 bytesRead = TIFFReadEncodedStrip(tif, st, strip.data(), strip_size);
@@ -538,7 +538,7 @@ bool DImgTIFFLoader::load(const QString& filePath, DImgLoaderObserver* const obs
                         return false;
                     }
 
-                    observer->progressInfo(0.1 + (0.8 * (((float)st) / ((float)num_of_strips))));
+                    observer->progressInfo(0.1F + (0.8F * (((float)st) / ((float)num_of_strips))));
                 }
 
                 bytesRead = TIFFReadEncodedStrip(tif, st, strip.data(), strip_size);
@@ -745,7 +745,7 @@ bool DImgTIFFLoader::load(const QString& filePath, DImgLoaderObserver* const obs
                         return false;
                     }
 
-                    observer->progressInfo(0.1 + (0.8 * (((float)row) / ((float)h))));
+                    observer->progressInfo(0.1F + (0.8F * (((float)row) / ((float)h))));
                 }
 
                 img.row_offset  = row;
@@ -804,7 +804,7 @@ bool DImgTIFFLoader::load(const QString& filePath, DImgLoaderObserver* const obs
 
     if (observer)
     {
-        observer->progressInfo(1.0);
+        observer->progressInfo(1.0F);
     }
 
     imageWidth()  = w;

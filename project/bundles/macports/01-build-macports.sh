@@ -84,8 +84,8 @@ if [ -d "$INSTALL_PREFIX" ] ; then
     if echo "$answer" | grep -iq "^r" ;then
 
         echo "---------- Removing existing $INSTALL_PREFIX"
-        mv $INSTALL_PREFIX $INSTALL_PREFIX.old
-        rm -rf $INSTALL_PREFIX.old
+        mv $INSTALL_PREFIX $INSTALL_PREFIX.old || true
+        rm -rf $INSTALL_PREFIX.old || true
 
     elif echo "$answer" | grep -iq "^c" ;then
 
@@ -108,7 +108,7 @@ if [[ $CONTINUE_INSTALL == 0 ]]; then
 
     echo "---------- Creating $INSTALL_PREFIX"
 
-    mkdir "$INSTALL_PREFIX"
+    mkdir -p "$INSTALL_PREFIX"
 
     if [ $? -ne 0 ] ; then
 

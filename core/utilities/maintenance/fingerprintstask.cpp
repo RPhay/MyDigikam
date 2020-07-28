@@ -60,7 +60,7 @@ FingerprintsTask::FingerprintsTask()
     : ActionJob(),
       d(new Private)
 {
-    QPixmap okPix = QIcon::fromTheme(QLatin1String("dialog-ok")).pixmap(22, 22);
+    QPixmap okPix = QIcon::fromTheme(QLatin1String("dialog-ok-apply")).pixmap(22, 22);
     d->okImage    = okPix.toImage();
 }
 
@@ -95,9 +95,11 @@ void FingerprintsTask::run()
 
         ItemInfo info(id);
 
-        if ((info.isVisible() && info.category() == DatabaseItem::Category::Image) &&
-            !m_cancel                                                              &&
-            (d->data->getRebuildAllFingerprints()                                  ||
+        if (info.isVisible()                                              &&
+            (info.category() == DatabaseItem::Category::Image)            &&
+            !info.filePath().isEmpty()                                    &&
+            !m_cancel                                                     &&
+            (d->data->getRebuildAllFingerprints()                         ||
              SimilarityDbAccess().db()->hasDirtyOrMissingFingerprint(info)))
         {
             qCDebug(DIGIKAM_GENERAL_LOG) << "Updating fingerprints for file:" << info.filePath();

@@ -51,9 +51,8 @@ QByteArray DImg::getUniqueHash()
     FileReadLocker lock(filePath);
 
     DMetadata meta(getMetadata());
-    QByteArray ba    = meta.getExifEncoded();
-
-    QByteArray hash  = DImg::createUniqueHash(filePath, ba);
+    QByteArray ba   = meta.getExifEncoded();
+    QByteArray hash = createUniqueHash(filePath, ba);
     setAttribute(QLatin1String("uniqueHash"), hash);
 
     return hash;
@@ -64,7 +63,7 @@ QByteArray DImg::getUniqueHash(const QString& filePath)
     DMetadata meta(filePath);
     QByteArray ba = meta.getExifEncoded();
 
-    return DImg::createUniqueHash(filePath, ba);
+    return DImg().createUniqueHash(filePath, ba);
 }
 
 QByteArray DImg::getUniqueHashV2()
@@ -89,7 +88,7 @@ QByteArray DImg::getUniqueHashV2()
 
     FileReadLocker lock(filePath);
 
-    QByteArray hash = DImg::createUniqueHashV2(filePath);
+    QByteArray hash = createUniqueHashV2(filePath);
     setAttribute(QLatin1String("uniqueHashV2"), hash);
 
     return hash;
@@ -97,7 +96,7 @@ QByteArray DImg::getUniqueHashV2()
 
 QByteArray DImg::getUniqueHashV2(const QString& filePath)
 {
-    return DImg::createUniqueHashV2(filePath);
+    return DImg().createUniqueHashV2(filePath);
 }
 
 QByteArray DImg::createImageUniqueId()
@@ -480,7 +479,7 @@ int DImg::exifOrientation(const QString& filePath)
                                            (preview.isValid() && preview.toBool()));
 }
 
-QByteArray DImg::createUniqueHash(const QString& filePath, const QByteArray& ba)
+QByteArray DImg::createUniqueHash(const QString& filePath, const QByteArray& ba) const
 {
     // Create the unique ID
 
@@ -513,7 +512,7 @@ QByteArray DImg::createUniqueHash(const QString& filePath, const QByteArray& ba)
     return hash;
 }
 
-QByteArray DImg::createUniqueHashV2(const QString& filePath)
+QByteArray DImg::createUniqueHashV2(const QString& filePath) const
 {
     QFile file(filePath);
 

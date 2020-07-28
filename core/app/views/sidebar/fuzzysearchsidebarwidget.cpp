@@ -76,8 +76,8 @@ FuzzySearchSideBarWidget::FuzzySearchSideBarWidget(QWidget* const parent,
     d->fuzzySearchView        = new FuzzySearchView(searchModel, searchModificationHelper, this);
     d->fuzzySearchView->setConfigGroup(getConfigGroup());
 
-    connect(d->fuzzySearchView, SIGNAL(signalNofificationError(QString,int)),
-            this, SIGNAL(signalNofificationError(QString,int)));
+    connect(d->fuzzySearchView, SIGNAL(signalNotificationError(QString,int)),
+            this, SIGNAL(signalNotificationError(QString,int)));
 
     QVBoxLayout* const layout = new QVBoxLayout(this);
 

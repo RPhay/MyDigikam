@@ -246,7 +246,7 @@ AlbumList AlbumSelectTabs::selectedAlbums() const
     list << d->labelsSearchHandler->albumForSelectedItems();
 
     // Remove all null albums.
-    list.removeAll(0);
+    list.removeAll(nullptr);
 
     qCDebug(DIGIKAM_GENERAL_LOG) << list.count() << " albums selected";
 

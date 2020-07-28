@@ -180,7 +180,7 @@ SearchField* SearchField::createField(const QString& name, SearchFieldGroup* con
         field->setFieldName(name);
         field->setText(i18n("File Size"), i18n("Size of the file"));
         field->setBetweenText(i18nc("Size of the file ...-...", "-"));
-        field->setNumberPrefixAndSuffix(QString(), QLatin1String("MB"));
+        field->setNumberPrefixAndSuffix(QString(), QLatin1String("MiB"));
         field->setBoundary(0, 1000000, 1, 0.5);
         field->setFactor(1024 * 1024);
 
@@ -368,21 +368,24 @@ SearchField* SearchField::createField(const QString& name, SearchFieldGroup* con
         SearchFieldChoice* const field = new SearchFieldChoice(parent);
         field->setFieldName(name);
         field->setText(i18n("Camera"), i18n("The make of the camera"));
+
         QStringList make = CoreDbAccess().db()->getListFromImageMetadata(DatabaseFields::Make);
+        QMap<QString, QString> makeMap;
 
         for (int i = 0 ; i < make.count() ; ++i)
         {
-            ItemPropertiesTab::shortenedMakeInfo(make[i]);
-            make[i] = make[i].trimmed();
+            QString shortName = make[i];
+            ItemPropertiesTab::shortenedMakeInfo(shortName);
+            shortName         = shortName.trimmed();
+            makeMap.insert(shortName, make[i]);
         }
 
-        make.removeDuplicates();
-        make += make;
-        make.sort();
+        make.clear();
+        QMap<QString, QString>::const_iterator it;
 
-        for (int i = 0 ; i < make.count() ; i += 2)
+        for (it = makeMap.constBegin() ; it != makeMap.constEnd() ; ++it)
         {
-            make[i] = QLatin1Char('*') + make[i] + QLatin1Char('*');
+            make << it.value() << it.key();
         }
 
         field->setChoice(make);
@@ -396,21 +399,24 @@ SearchField* SearchField::createField(const QString& name, SearchFieldGroup* con
         SearchFieldChoice* const field = new SearchFieldChoice(parent);
         field->setFieldName(name);
         field->setText(i18n("Camera"), i18n("The model of the camera"));
+
         QStringList model = CoreDbAccess().db()->getListFromImageMetadata(DatabaseFields::Model);
+        QMap<QString, QString> modelMap;
 
         for (int i = 0 ; i < model.count() ; ++i)
         {
-            ItemPropertiesTab::shortenedModelInfo(model[i]);
-            model[i] = model[i].trimmed();
+            QString shortName = model[i];
+            ItemPropertiesTab::shortenedModelInfo(shortName);
+            shortName         = shortName.trimmed();
+            modelMap.insert(shortName, model[i]);
         }
 
-        model.removeDuplicates();
-        model += model;
-        model.sort();
+        model.clear();
+        QMap<QString, QString>::const_iterator it;
 
-        for (int i = 0 ; i < model.count() ; i += 2)
+        for (it = modelMap.constBegin() ; it != modelMap.constEnd() ; ++it)
         {
-            model[i] = QLatin1Char('*') + model[i] + QLatin1Char('*');
+            model << it.value() << it.key();
         }
 
         field->setChoice(model);

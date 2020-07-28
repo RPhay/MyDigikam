@@ -194,7 +194,7 @@ void PeopleSideBarWidget::slotScanForFaces()
     }
     else
     {
-        emit signalNofificationError(i18n("Face recognition is aborted, because "
+        emit signalNotificationError(i18n("Face recognition is aborted, because "
                                           "there are no identities to recognize. "
                                           "Please add new identities."),
                                      DNotificationWidget::Information);

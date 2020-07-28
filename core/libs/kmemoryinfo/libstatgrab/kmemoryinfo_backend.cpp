@@ -213,9 +213,9 @@ int get_mem_stats(Digikam::KMemoryInfo::KMemoryInfoData* const data)
 #endif // Q_OS_SOLARIS
 
 #if defined(Q_OS_LINUX) || defined(Q_OS_CYGWIN)
-    char*              line_ptr = 0;
+    char*              line_ptr = nullptr;
     unsigned long long value;
-    FILE*              f        = 0;
+    FILE*              f        = nullptr;
 #endif // defined(Q_OS_LINUX) || defined(Q_OS_CYGWIN)
 
 #if defined(Q_OS_FREEBSD) || defined(Q_OS_DFBSD)
@@ -243,7 +243,7 @@ int get_mem_stats(Digikam::KMemoryInfo::KMemoryInfoData* const data)
     MEMORYSTATUSEX memstats;
 #endif
 
-#ifdef Q_OS_OSX
+#ifdef Q_OS_MACOS
     Q_UNUSED(data);
 #endif
 
@@ -559,7 +559,7 @@ int get_mem_stats(Digikam::KMemoryInfo::KMemoryInfoData* const data)
 int get_swap_stats(Digikam::KMemoryInfo::KMemoryInfoData* const data)
 {
 
-#ifdef Q_OS_OSX
+#ifdef Q_OS_MACOS
     Q_UNUSED(data);
 #endif
 
@@ -575,9 +575,11 @@ int get_swap_stats(Digikam::KMemoryInfo::KMemoryInfoData* const data)
 #endif // Q_OS_SOLARIS
 
 #if defined(Q_OS_LINUX) //|| defined(Q_OS_CYGWIN)
-    FILE*              f        = 0;
-    char*              line_ptr = 0;
+
+    FILE*              f        = nullptr;
+    char*              line_ptr = nullptr;
     unsigned long long value;
+
 #endif // defined(Q_OS_LINUX)
 
 #if defined(Q_OS_FREEBSD)

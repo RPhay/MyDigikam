@@ -320,7 +320,7 @@ void LibRaw::parsePentaxMakernotes(int base, unsigned tag, unsigned type,
   }
   else if (tag == 0x003f)
   {
-    unsigned a = fgetc(ifp) << 8;
+    unsigned a = unsigned(fgetc(ifp)) << 8;
     ilm.LensID = a | fgetc(ifp);
   }
   else if (tag == 0x0047)
@@ -430,10 +430,10 @@ void LibRaw::parsePentaxMakernotes(int base, unsigned tag, unsigned type,
   {
     int wb_ind;
     getc(ifp);
-    for (int wb_cnt = 0; wb_cnt < nPentax_wb_list2; wb_cnt++)
+    for (int wb_cnt = 0; wb_cnt < Pentax_wb_list2.size(); wb_cnt++)
     {
       wb_ind = getc(ifp);
-      if (wb_ind >= 0 && wb_ind < nPentax_wb_list2)
+      if (wb_ind >= 0 && wb_ind < Pentax_wb_list2.size() )
         FORC4 icWBC[Pentax_wb_list2[wb_ind]][RGGB_2_RGBG(c)] = get2();
     }
   }

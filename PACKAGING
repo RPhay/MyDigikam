@@ -16,9 +16,10 @@ Notice to make release tarballs from GIT
     Note: after a stable release, the NEWS file is moved from the root directory to the project sub-directory
     with the release IDs as file-name suffix. The NEWS file from the root directory is cleaned for the next release.
 
-5/  Update ChangeLog file using git2cl script from root directory.
-    Extract all contents and append only new lines to ChangeLog file since the last release done previously.
-    Register the new release info on top of file including release date.
+5/  Update ChangeLog file using git2cl script from root source code directory.
+
+    ./git2cl > ChangeLog
+
     Commit to GIT.
 
 6/  Tag Git vith the release version in this format: vX.Y.Z-suffix.
@@ -45,7 +46,7 @@ Notice to make release tarballs from GIT
     Note: if .sig files are not generated with GPG, you can process signature computation with the command line
     below. In this example, the GPG key is installed to ~/.gnupg/dkorg-gpg-pwd.txt.
 
-    cat ~/.gnupg/dkorg-gpg-pwd.txt | gpg --batch --yes --passphrase-fd 0 -stabv "tarball_file_to_sign"
+    cat ~/.gnupg/dkorg-gpg-pwd.txt | gpg --batch --yes --passphrase-fd 0 -stabv "tarball_file_to_sign" && mv "tarball_file_to_sign.asc" "tarball_file_to_sign.sig"
 
 8/  Optional: upload tarball and signature to the "pre-release files repository".
 

@@ -62,6 +62,7 @@ public:
     QString prepareForLike(const QString& str) const;
 
     void addIntField(const QString& name);
+    void addLongField(const QString& name);
     void addDoubleField(const QString& name);
     void addStringField(const QString& name);
     void addDateField(const QString& name);

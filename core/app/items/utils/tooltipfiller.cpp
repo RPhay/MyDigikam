@@ -114,8 +114,7 @@ QString ToolTipFiller::imageInfoTipContents(const ItemInfo& info)
             }
             else
             {
-                QString mpixels;
-                mpixels.setNum(commonInfo.width*commonInfo.height/1000000.0, 'f', 2);
+                QString mpixels = QLocale().toString(commonInfo.width*commonInfo.height/1000000.0, 'f', 1);
                 str = i18nc("width x height (megapixels Mpx)", "%1x%2 (%3Mpx)",
                             commonInfo.width, commonInfo.height, mpixels);
             }

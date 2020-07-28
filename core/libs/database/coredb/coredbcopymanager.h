@@ -56,7 +56,7 @@ public:
     ~CoreDbCopyManager();
 
     void copyDatabases(const DbEngineParameters& fromDBParameters,
-                       DbEngineParameters& toDBParameters);
+                       const DbEngineParameters& toDBParameters);
 
 Q_SIGNALS:
 
@@ -81,7 +81,7 @@ private:
 
 private:
 
-    bool m_isStopProcessing;
+    volatile bool m_isStopProcessing;
 };
 
 } // namespace Digikam

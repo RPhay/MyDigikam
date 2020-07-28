@@ -132,7 +132,7 @@ Album* Album::prev() const
 
 Album* Album::childAtRow(int row) const
 {
-    return m_childCache.value(row, 0);
+    return m_childCache.value(row, nullptr);
 }
 
 AlbumList Album::childAlbums(bool recursive)
@@ -280,7 +280,7 @@ void Album::removeExtraData(const void* const key)
 
 void* Album::extraData(const void* const key) const
 {
-    return m_extraMap.value(key, 0);
+    return m_extraMap.value(key, nullptr);
 }
 
 bool Album::isRoot() const

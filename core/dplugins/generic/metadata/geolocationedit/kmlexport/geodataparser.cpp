@@ -124,12 +124,12 @@ bool GeoDataParser::matchDate(const QDateTime& photoDateTime, int maxGapTime, in
             double alt1                   = prevGPSPoint.altitude();
             double lon1                   = prevGPSPoint.longitude();
             double lat1                   = prevGPSPoint.latitude();
-            uint   t1                     = prevDateTime.toTime_t();
+            uint   t1                     = prevDateTime.toSecsSinceEpoch();
             double alt2                   = nextGPSPoint.altitude();
             double lon2                   = nextGPSPoint.longitude();
             double lat2                   = nextGPSPoint.latitude();
-            uint   t2                     = nextDateTime.toTime_t();
-            uint   tCor                   = cameraGMTDateTime.toTime_t();
+            uint   t2                     = nextDateTime.toSecsSinceEpoch();
+            uint   tCor                   = cameraGMTDateTime.toSecsSinceEpoch();
 
             if (tCor-t1 != 0)
             {

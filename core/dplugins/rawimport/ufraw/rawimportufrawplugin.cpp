@@ -144,11 +144,12 @@ bool UFRawRawImportPlugin::run(const QString& filePath, const DRawDecoding& /*de
     d->fileInfo = QFileInfo(filePath);
 
     d->ufraw->setProgram(QLatin1String("ufraw"));
-    d->ufraw->setArguments(QStringList() << QLatin1String("--out-depth=16")                              // 16 bits per color per pixels
-                                        << QLatin1String("--out-type=png")                               // PNG output (TIFF output generate multi-layers file)
-                                        << QLatin1String("--overwrite")                                  // Overwrite target temporay file
-                                        << QString::fromUtf8("--output=%1").arg(d->tempFile->fileName()) // Output file
-                                        << filePath);                                                    // Input file
+    d->ufraw->setArguments(QStringList() << QLatin1String("--out-depth=16")   // 16 bits per color per pixels
+                                         << QLatin1String("--out-type=png")   // PNG output (TIFF output generate multi-layers file)
+                                         << QLatin1String("--overwrite")      // Overwrite target temporay file
+                                         << QString::fromUtf8("--output=%1")
+                                            .arg(d->tempFile->fileName())     // Output file
+                                         << filePath);                        // Input file
 
     qCDebug(DIGIKAM_GENERAL_LOG) << "UFRaw arguments:" << d->ufraw->arguments();
 
@@ -191,7 +192,7 @@ void UFRawRawImportPlugin::slotProcessFinished(int code, QProcess::ExitStatus st
     if (d->decoded.isNull())
     {
         QString message = i18n("Error to import RAW image with UFRaw\nClose this dialog to load RAW image with native import tool");
-        QMessageBox::information(0, qApp->applicationName(), message);
+        QMessageBox::information(nullptr, qApp->applicationName(), message);
 
         qCDebug(DIGIKAM_GENERAL_LOG) << "Decoded image is null! Load with Native tool...";
         qCDebug(DIGIKAM_GENERAL_LOG) << d->props.filePath;

@@ -38,6 +38,7 @@
 
 #include "digikam_debug.h"
 #include "digikam_config.h"
+#include "albummanager.h"
 #include "maintenancesettings.h"
 #include "newitemsfinder.h"
 #include "thumbsgenerator.h"
@@ -125,6 +126,19 @@ void MaintenanceMngr::slotToolCompleted(ProgressItem* tool)
     if      (tool == dynamic_cast<ProgressItem*>(d->newItemsFinder))
     {
         d->newItemsFinder = nullptr;
+
+        // Update albums and tags for the other tools
+
+        if (d->settings.wholeAlbums)
+        {
+            d->settings.albums = AlbumManager::instance()->allPAlbums();
+        }
+
+        if (d->settings.wholeTags)
+        {
+            d->settings.tags = AlbumManager::instance()->allTAlbums();
+        }
+
         stage2();
     }
     else if (tool == dynamic_cast<ProgressItem*>(d->databaseCleaner))

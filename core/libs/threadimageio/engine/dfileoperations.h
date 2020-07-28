@@ -53,14 +53,22 @@ public:
                                 bool ignoreSettings = false);
 
     /**
-     * Open file urls to default application relevant of file type-mimes desktop configuration.
+     * Open file urls to default application relevant of
+     * file type-mimes desktop configuration.
      */
     static void openFilesWithDefaultApplication(const QList<QUrl>& urls);
 
     /**
-     * Get unique file url if file exist by appending a counter suffix or return original url.
+     * Get unique file url if file exist by appending a counter suffix
+     * or return original url.
      */
     static QUrl getUniqueFileUrl(const QUrl& orgUrl, bool* const newurl = nullptr);
+
+    /**
+     * Get unique folder url if folder exist by appending a counter suffix
+     * or return original url.
+     */
+    static QUrl getUniqueFolderUrl(const QUrl& orgUrl);
 
     /**
      * Open system file manager and select the item.
@@ -72,7 +80,9 @@ public:
      */
     static bool copyFolderRecursively(const QString& srcPath,
                                       const QString& dstPath,
-                                      const bool* cancel = nullptr);
+                                      const QString& itemId = QString(),
+                                      bool* const cancel = nullptr,
+                                      bool  countTotal = true);
 
     /**
      * Copy a list of files to another place.

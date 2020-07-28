@@ -36,6 +36,12 @@
 #include "kbimageloader.h"
 #include "kbeffect.h"
 
+// OpenGL headers is not included automatically with ARM targets
+
+#ifdef Q_PROCESSOR_ARM
+#   include <GL/gl.h>
+#endif
+
 #ifdef HAVE_MEDIAPLAYER
 #   include "presentationaudiowidget.h"
 #endif

@@ -53,6 +53,7 @@
 #include "dlayoutbox.h"
 #include "dfontselect.h"
 #include "applicationsettings.h"
+#include "systemsettingswidget.h"
 
 namespace Digikam
 {
@@ -84,6 +85,7 @@ public:
         applicationIcon(nullptr),
         applicationFont(nullptr),
         minimumSimilarityBound(nullptr),
+        systemSettingsWidget(nullptr),
         groupingButtons(QHash<int, QButtonGroup*>())
     {
     }
@@ -114,6 +116,8 @@ public:
     DFontSelect*              applicationFont;
 
     QSpinBox*                 minimumSimilarityBound;
+
+    SystemSettingsWidget*     systemSettingsWidget;
 
     QHash<int, QButtonGroup*> groupingButtons;
 };
@@ -367,6 +371,12 @@ SetupMisc::SetupMisc(QWidget* const parent)
 
     d->tab->insertTab(Grouping, groupingPanel, i18nc("@title:tab", "Grouping"));
 
+    // -- System Options --------------------------------------------------------
+
+    d->systemSettingsWidget = new SystemSettingsWidget(d->tab);
+
+    d->tab->insertTab(System, d->systemSettingsWidget, i18nc("@title:tab", "System"));
+
     // --------------------------------------------------------
 
     readSettings();
@@ -380,6 +390,8 @@ SetupMisc::~SetupMisc()
 
 void SetupMisc::applySettings()
 {
+    d->systemSettingsWidget->saveSettings();
+
     ApplicationSettings* const settings = ApplicationSettings::instance();
 
     settings->setShowSplashScreen(d->showSplashCheck->isChecked());
@@ -416,6 +428,8 @@ void SetupMisc::applySettings()
 
 void SetupMisc::readSettings()
 {
+    d->systemSettingsWidget->readSettings();
+
     ApplicationSettings* const settings = ApplicationSettings::instance();
 
     d->showSplashCheck->setChecked(settings->getShowSplashScreen());

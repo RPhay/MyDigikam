@@ -41,7 +41,13 @@ DActiveLabel::DActiveLabel(const QUrl& url, const QString& imgPath, QWidget* con
     setFocusPolicy(Qt::NoFocus);
     setTextInteractionFlags(Qt::LinksAccessibleByMouse);
     setSizePolicy(QSizePolicy(QSizePolicy::Minimum, QSizePolicy::Minimum));
-    QImage img = QImage(imgPath);
+
+    QImage img;
+
+    if (!imgPath.isEmpty())
+    {
+        img.load(imgPath);
+    }
 
     updateData(url, img);
 }

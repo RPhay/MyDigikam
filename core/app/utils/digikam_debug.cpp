@@ -24,6 +24,7 @@
  * ============================================================ */
 
 #include "digikam_debug.h"
+#include "digikam_config.h"
 
 Q_LOGGING_CATEGORY(DIGIKAM_GENERAL_LOG,         "digikam.general",            QtInfoMsg)
 Q_LOGGING_CATEGORY(DIGIKAM_WIDGETS_LOG,         "digikam.widgets",            QtInfoMsg)
@@ -71,6 +72,6 @@ void digikamSetDebugFilterRules()
 {
 #ifdef Q_OS_QIN
     // Under Windows, always turn on all debug traces.
-    QLoggingCategory::setFilterRules(QStringLiteral("digikam.*=true"));
+    QLoggingCategory::setFilterRules(QLatin1String("digikam.*=true"));
 #endif
 }

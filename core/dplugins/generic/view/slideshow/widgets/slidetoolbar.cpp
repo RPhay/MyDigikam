@@ -170,6 +170,9 @@ SlideToolBar::SlideToolBar(SlideShowSettings* const settings, QWidget* const par
             this, SLOT(slotMenuSlideShowConfiguration()));
 
     connect(d->configDialog, SIGNAL(finished(int)),
+            this, SIGNAL(signalUpdateSettings()));
+
+    connect(d->configDialog, SIGNAL(finished(int)),
             this, SLOT(slotConfigurationAccepted()));
 }
 
