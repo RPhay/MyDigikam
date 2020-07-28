@@ -145,8 +145,6 @@ public:
     bool                                     tagIdsCached               : 1;
     bool                                     positionsCached            : 1;
     bool                                     groupImageCached           : 1;
-    bool                                     unconfirmedFaceCountCached : 1;
-    bool                                     faceSuggestionsCached      : 1;
 
     bool                                     invalid                    : 1;
 
