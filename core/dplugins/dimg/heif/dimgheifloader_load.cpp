@@ -513,7 +513,7 @@ bool DImgHEIFLoader::readHEICImageByHandle(struct heif_image_handle* image_handl
                     return false;
                 }
 
-                m_observer->progressInfo(0.4 + (0.8 * (((float)y) / ((float)imageHeight()))));
+                m_observer->progressInfo(0.4F + (0.8F * (((float)y) / ((float)imageHeight()))));
             }
         }
     }

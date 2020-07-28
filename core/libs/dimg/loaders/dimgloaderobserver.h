@@ -70,7 +70,7 @@ public:
      */
     virtual float granularity()
     {
-        return 1.0;
+        return 1.0F;
     };
 };
 
