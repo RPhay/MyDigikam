@@ -117,8 +117,6 @@ public:
     QString                                  uniqueHash;
     QSize                                    imageSize;
     QList<int>                               tagIds;
-    int                                      unconfirmedFaceCount;
-    QMap<QString, QString>                   faceSuggestions;
 
     double                                   longitude;
     double                                   latitude;
