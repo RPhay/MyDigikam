@@ -33,9 +33,7 @@
 // Local includes
 #include "digikam_debug.h"
 #include "faceextractor.h"
-#include "facedatabase.h"
 #include "spatial_database.h"
-#include "faceembedding_db.h"
 
 #include "facedbaccess.h"
 #include "facedb.h"
@@ -52,8 +50,6 @@ public:
     Private(Classifier method)
         : method(method),
           extractor(new FaceExtractor),
-          facedb(new FaceDatabase),
-          //embeddingDb(new FaceEmbeddingDb),
           treedb(nullptr),
           tree(nullptr),
           kNeighbors(3)
@@ -84,8 +80,6 @@ public:
     {
         delete extractor;
         delete tree;
-        delete facedb;
-        //delete embeddingDb;
         delete treedb;
     }
 
@@ -108,8 +102,6 @@ public:
     cv::Ptr<cv::ml::SVM> svm;
     cv::Ptr<cv::ml::KNearest> knn;
 
-    FaceDatabase* facedb;
-    //FaceEmbeddingDb* embeddingDb;
     SpatialDatabase* treedb;
 
     KDTree* tree;
@@ -330,94 +322,6 @@ cv::Mat FaceRecognizer::prepareForRecognition(const QImage& inputImage)
     equalizeHist(cvImage, cvImage);
 */
     return cvImage;
-}
-
-Identity FaceRecognizer::findIdenity(const cv::Mat& preprocessedImage)
-{
-    int id = -1;
-
-    switch (d->method)
-    {
-        case SVM:
-            id = d->predictSVM(d->extractor->getFaceDescriptor(preprocessedImage));
-            break;
-        case OpenCV_KNN:
-            id = d->predictKNN(d->extractor->getFaceDescriptor(preprocessedImage), d->kNeighbors);
-            break;
-        case Tree:
-            id = d->predictKDTree(d->extractor->getFaceDescriptor(preprocessedImage), d->kNeighbors);
-            break;
-        case DB:
-            id = d->predictDb(d->extractor->getFaceDescriptor(preprocessedImage), d->kNeighbors);
-            break;
-    }
-
-    Identity identity;
-    identity.setId(id);
-
-    if (id > 0)
-    {
-        QString label = d->facedb->queryLabel(id);
-        identity.setAttribute(QLatin1String("fullName"), label);
-    }
-
-    return identity;
-}
-
-Identity FaceRecognizer::newIdentity(const cv::Mat& preprocessedImage)
-{
-    std::vector<float> faceEmbedding = d->extractor->getFaceEmbedding(preprocessedImage);
-
-    // new identity
-    Identity id;
-    QJsonArray jsonFaceEmbedding = FaceExtractor::encodeVector(faceEmbedding);
-    id.setAttribute(QLatin1String("faceEmbedding"),
-                    QString::fromLatin1(QJsonDocument(jsonFaceEmbedding).toJson(QJsonDocument::Compact)));
-
-    return id;
-}
-
-int FaceRecognizer::saveIdentity(Identity& id, bool newLabel)
-{
-    if (newLabel)
-    {
-        QString label = id.attribute(QLatin1String("fullName"));
-
-        if (label.isEmpty())
-        {
-            qWarning() << "new Identity isn't labeled";
-
-            return -1;
-        }
-
-        // register
-        int index = d->facedb->registerLabel(label);
-
-        id.setId(index);
-    }
-    else if (id.isNull())
-    {
-        qWarning() << "new id is null";
-        return -1;
-    }
-
-    int index = id.id();
-
-    if (index < 0)
-    {
-        qWarning() << "Error insert label";
-        return -1;
-    }
-
-    QJsonArray jsonFaceEmbedding = QJsonDocument::fromJson(id.attribute(QLatin1String("faceEmbedding")).toLatin1()).array();
-    cv::Mat recordedFaceEmbedding = FaceExtractor::vectortomat(FaceExtractor::decodeVector(jsonFaceEmbedding));
-
-    if (!insertData(recordedFaceEmbedding, index))
-    {
-        return -1;
-    }
-
-    return index;
 }
 
 bool FaceRecognizer::insertData(const cv::Mat& nodePos, const int label, const QString& context)

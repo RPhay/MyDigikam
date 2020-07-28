@@ -55,7 +55,7 @@ class Benchmark : public QObject
     Q_OBJECT
 public:
 
-    Benchmark(FaceRecognizer::Classifier classifier);
+    Benchmark();
     ~Benchmark();
 
 public:
@@ -92,7 +92,7 @@ private:
     FacialRecognitionWrapper*  m_recognizer;
 };
 
-Benchmark::Benchmark(FaceRecognizer::Classifier classifier)
+Benchmark::Benchmark()
     : QObject(),
       m_parser(nullptr),
       m_error(-1),
@@ -537,7 +537,7 @@ int main(int argc, char** argv)
 
     app.setApplicationName(QString::fromLatin1("digikam"));          // for DB init.
 
-    Benchmark benchmark(FaceRecognizer::Tree);
+    Benchmark benchmark;
     benchmark.m_parser = parseOptions(app);
 
     //benchmark.saveData();

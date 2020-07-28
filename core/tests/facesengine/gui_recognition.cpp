@@ -355,11 +355,6 @@ void MainWindow::extractFaces(const QImage& img, QImage& imgScaled, const QList<
         // Show aligned faces
         cv::Mat cvAlignedFace = m_extractor->alignFace(cvPreprocessedFace);
         m_alignedList->addItem(new QListWidgetItem(QIcon(showCVMat(cvAlignedFace)), QLatin1String("")));
-
-        // get face embedding
-        //std::vector<float> faceEmbedding = m_extractor->getFaceEmbedding(cvPreprocessedFace);
-
-        //qDebug() << "face embedding of size" << faceEmbedding.size() << ":" << faceEmbedding;
     }
 }
 
@@ -526,7 +521,8 @@ QWidget* MainWindow::setupImageList(const QDir& directory)
 
 void MainWindow::slotIdentify(int index)
 {
-    m_currentIdenity = m_recognizer->findIdenity(m_preprocessedFaces[index]);
+    // TODO : fix this
+    //m_currentIdenity = m_recognizer->findIdenity(m_preprocessedFaces[index]);
 
     if (m_currentIdenity.isNull())
     {
@@ -544,7 +540,7 @@ void MainWindow::slotSaveIdentity()
     qDebug() << "assign identity" << m_imageLabel->text();
     m_currentIdenity.setAttribute(QLatin1String("fullName"), m_imageLabel->text());
 
-    m_recognizer->saveIdentity(m_currentIdenity, false);
+    //m_recognizer->saveIdentity(m_currentIdenity, false);
 }
 
 QCommandLineParser* parseOptions(const QCoreApplication& app)

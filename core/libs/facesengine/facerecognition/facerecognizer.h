@@ -67,28 +67,12 @@ public:
     cv::Mat prepareForRecognition(const QImage& inputImage);
 
     /**
-     * @brief findIdenity : look for an identity based on the face image
-     * @param inputImage
+     * @brief insertData: insert new data to recognizer
+     * @param position
+     * @param label
+     * @param context
      * @return
      */
-    Identity findIdenity(const cv::Mat& preprocessedImage);
-
-    /**
-     * @brief newIdentity : construct an instance of Identity with face embedding, and return it
-     *                      for idenity register
-     * @param inputImage
-     * @return
-     */
-    Identity newIdentity(const cv::Mat& preprocessedImage);
-
-    /**
-     * @brief saveIdentity : save identity with label and face embedding
-     * @param id : identity of face
-     * @param newLabel : add new label to database
-     * @return
-     */
-    int saveIdentity(Identity& id, bool newLabel);
-
     bool insertData(const cv::Mat& position, const int label, const QString& context = QString());
 
     /**
