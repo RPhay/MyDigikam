@@ -249,11 +249,11 @@ double KDNode::getClosestNeighbors(QMap<double, QVector<KDNode*> >& neighborList
             }
         }
     }
-
-    //qDebug() << "distance to node" << sqrdistanceToCurrentNode;
-    //qDebug() << "distance to left tree" << sqrDistanceleftTree;
-    //qDebug() << "distance to right tree" << sqrDistancerightTree;
-
+/*
+    qDebug() << "distance to node" << sqrdistanceToCurrentNode;
+    qDebug() << "distance to left tree" << sqrDistanceleftTree;
+    qDebug() << "distance to right tree" << sqrDistancerightTree;
+*/
     return sqRange;
 }
 

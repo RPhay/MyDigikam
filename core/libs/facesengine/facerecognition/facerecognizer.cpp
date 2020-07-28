@@ -129,7 +129,7 @@ bool FaceRecognizer::Private::trainSVM() const
 
     svm->train(FaceDbAccess().db()->trainData());
 
-    qDebug() << "Support vector machine trains in" << timer.elapsed() << "ms";
+    qCDebug(DIGIKAM_FACEDB_LOG) << "Support vector machine trains in" << timer.elapsed() << "ms";
 
     return (svm->isTrained());
 }
@@ -146,7 +146,7 @@ bool FaceRecognizer::Private::trainKNN() const
 
     knn->train(FaceDbAccess().db()->trainData());
 
-    qDebug() << "KNN trains in" << timer.elapsed() << "ms";
+    qCDebug(DIGIKAM_FACEDB_LOG) << "KNN trains in" << timer.elapsed() << "ms";
 
     return (knn->isTrained());
 }
@@ -444,7 +444,6 @@ bool FaceRecognizer::insertData(const cv::Mat& nodePos, const int label, const Q
         if (newNode)
         {
             newNode->setNodeId(nodeId);
-            qDebug() << "inserted node of id" << nodeId;
         }
         else
         {
@@ -465,7 +464,7 @@ void FaceRecognizer::train(const QList<QImage>& images,
                                        image != images.cend();
                                      ++image)
     {
-        cv::Mat faceEmbedding = d->extractor->getFaceDescriptor(prepareForRecognition(*image));
+        cv::Mat faceEmbedding = d->extractor->getFaceDescriptor(prepareForRecognition(*image)).clone();
 
         if (!insertData(faceEmbedding, label, context))
         {
@@ -478,7 +477,7 @@ int FaceRecognizer::recognize(const QImage& inputImage)
 {
     int id = -1;
 
-    cv::Mat faceEmbedding = d->extractor->getFaceDescriptor(prepareForRecognition(inputImage));
+    cv::Mat faceEmbedding = d->extractor->getFaceDescriptor(prepareForRecognition(inputImage)).clone();
 
     switch (d->method)
     {

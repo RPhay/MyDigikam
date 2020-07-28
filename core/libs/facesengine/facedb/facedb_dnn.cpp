@@ -49,7 +49,7 @@ int FaceDb::insertFaceVector(const cv::Mat& faceEmbedding,
     }
     else
     {
-        qCDebug(DIGIKAM_FACEDB_LOG) << "Commit compressed face mat data " << query.lastInsertId()
+        qCDebug(DIGIKAM_FACEDB_LOG) << "Commit face mat data " << query.lastInsertId().toInt()
                                     << " for identity " << label;
     }
 
@@ -58,13 +58,8 @@ int FaceDb::insertFaceVector(const cv::Mat& faceEmbedding,
 
 KDTree* FaceDb::reconstructTree() const
 {
-    KDTree* tree = new KDTree(128);
-
-    qCDebug(DIGIKAM_FACEDB_LOG) << "Loading KD-Tree";
+    KDTree* tree           = new KDTree(128);
     DbEngineSqlQuery query = d->db->execQuery(QLatin1String("SELECT id, identity, embedding FROM FaceMatrices;"));
-
-    qDebug() << "list of table" << d->db->tables();
-    qDebug() << "select face matrice error" << query.lastQuery() << query.lastError();
 
     // favor new data
     if (query.last())
@@ -95,11 +90,8 @@ KDTree* FaceDb::reconstructTree() const
 cv::Ptr<cv::ml::TrainData> FaceDb::trainData() const
 {
     cv::Mat feature, label;
-
-    qCDebug(DIGIKAM_FACEDB_LOG) << "Loading KD-Tree";
     DbEngineSqlQuery query = d->db->execQuery(QLatin1String("SELECT identity, embedding "
                                                             "FROM FaceMatrices;"));
-
 
     if (query.last())
     {
