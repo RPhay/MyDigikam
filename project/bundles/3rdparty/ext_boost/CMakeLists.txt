@@ -10,8 +10,8 @@ SET(PREFIX_ext_boost "${EXTPREFIX}")
 
 ExternalProject_Add( ext_boost
     DOWNLOAD_DIR ${EXTERNALS_DOWNLOAD_DIR}
-    URL http://downloads.sourceforge.net/project/boost/boost/1.72.0/boost_1_72_0.tar.bz2
-    URL_MD5 cb40943d2a2cb8ce08d42bc48b0f84f0
+    URL http://downloads.sourceforge.net/project/boost/boost/1.73.0/boost_1_73_0.tar.bz2
+    URL_MD5 9273c8c4576423562bbe84574b07b2bd
     CONFIGURE_COMMAND <SOURCE_DIR>/bootstrap.sh --prefix=${PREFIX_ext_boost} --with-libraries=system
     BUILD_COMMAND <SOURCE_DIR>/b2 install
     INSTALL_COMMAND ""

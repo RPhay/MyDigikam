@@ -781,7 +781,7 @@ bool ExpoBlendingThread::startEnfuse(const QList<QUrl>& inUrls, QUrl& outUrl,
 
     outUrl.setPath(outUrl.adjusted(QUrl::RemoveFilename).path() +
                                    QLatin1String(".digiKam-expoblending-tmp-") +
-                                   QString::number(QDateTime::currentDateTime().toTime_t()) + ext);
+                                   QString::number(QDateTime::currentDateTime().toSecsSinceEpoch()) + ext);
 
     d->enfuseProcess.reset(new QProcess());
     d->enfuseProcess->setProcessChannelMode(QProcess::MergedChannels);

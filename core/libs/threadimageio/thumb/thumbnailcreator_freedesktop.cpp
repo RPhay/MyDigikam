@@ -35,11 +35,16 @@ ThumbnailInfo ThumbnailCreator::fileThumbnailInfo(const QString& path)
     QFileInfo fileInfo(path);
     info.isAccessible = fileInfo.exists();
     info.fileName     = fileInfo.fileName();
+    QString suffix    = fileInfo.suffix().toUpper();
 
     QMimeDatabase mimeDB;
     QString mimeType(mimeDB.mimeTypeForFile(path).name());
 
-    if      (mimeType.startsWith(QLatin1String("image/")))
+    if      (mimeType.startsWith(QLatin1String("image/")) ||
+             (suffix == QLatin1String("PGF"))             ||
+             (suffix == QLatin1String("KRA"))             ||
+             (suffix == QLatin1String("HEIC"))            ||
+             (suffix == QLatin1String("HEIF")))
     {
         info.mimeType = QLatin1String("image");
     }
@@ -80,7 +85,7 @@ ThumbnailImage ThumbnailCreator::loadFreedesktop(const ThumbnailInfo& info) cons
 
     if (!qimage.isNull())
     {
-        if ((qimage.text(QLatin1String("Thumb::MTime")) == QString::number(info.modificationDate.toTime_t())) &&
+        if ((qimage.text(QLatin1String("Thumb::MTime")) == QString::number(info.modificationDate.toSecsSinceEpoch())) &&
             (qimage.text(QLatin1String("Software"))     == d->digiKamFingerPrint))
         {
             ThumbnailImage info;
@@ -123,7 +128,7 @@ void ThumbnailCreator::storeFreedesktop(const ThumbnailInfo& info, const Thumbna
     }
 
     qimage.setText(QLatin1String("Thumb::URI"),   uri);
-    qimage.setText(QLatin1String("Thumb::MTime"), QString::number(info.modificationDate.toTime_t()));
+    qimage.setText(QLatin1String("Thumb::MTime"), QString::number(info.modificationDate.toSecsSinceEpoch()));
     qimage.setText(QLatin1String("Software"),     d->digiKamFingerPrint);
 
     QTemporaryFile temp;

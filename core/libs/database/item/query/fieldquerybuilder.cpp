@@ -105,6 +105,37 @@ void FieldQueryBuilder::addIntField(const QString& name)
     }
 }
 
+void FieldQueryBuilder::addLongField(const QString& name)
+{
+    if ((relation == SearchXml::Interval) || (relation == SearchXml::IntervalOpen))
+    {
+        QList<qlonglong> values = reader.valueToLongLongList();
+
+        if (values.size() != 2)
+        {
+            qCWarning(DIGIKAM_DATABASE_LOG) << "Relation Interval requires a list of two values";
+            return;
+        }
+
+        sql += QLatin1String(" (") + name + QLatin1Char(' ');
+        ItemQueryBuilder::addSqlRelation(sql,
+                                          relation == SearchXml::Interval ? SearchXml::GreaterThanOrEqual : SearchXml::GreaterThan);
+        sql += QLatin1String(" ? AND ") + name + QLatin1Char(' ');
+        ItemQueryBuilder::addSqlRelation(sql,
+                                          relation == SearchXml::Interval ? SearchXml::LessThanOrEqual : SearchXml::LessThan);
+        sql += QLatin1String(" ?) ");
+
+        *boundValues << values.first() << values.last();
+    }
+    else
+    {
+        sql += QLatin1String(" (") + name + QLatin1Char(' ');
+        ItemQueryBuilder::addSqlRelation(sql, relation);
+        sql += QLatin1String(" ?) ");
+        *boundValues << reader.valueToLongLong();
+    }
+}
+
 void FieldQueryBuilder::addDoubleField(const QString& name)
 {
     if ((relation == SearchXml::Interval) || (relation == SearchXml::IntervalOpen))
@@ -280,7 +311,7 @@ void FieldQueryBuilder::addLongListField(const QString& name)
     }
     else
     {
-        addIntField(name);
+        addLongField(name);
     }
 }
 

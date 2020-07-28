@@ -47,6 +47,12 @@
 #include "glviewerhelpdlg.h"
 #include "digikam_debug.h"
 
+// OpenGL headers is not included automatically with ARM targets
+
+#ifdef Q_PROCESSOR_ARM
+#   include <GL/gl.h>
+#endif
+
 #ifndef GL_TEXTURE_RECTANGLE_ARB
 #   define GL_TEXTURE_RECTANGLE_ARB   0x84F5
 #endif

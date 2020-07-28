@@ -59,9 +59,9 @@ i18nlangs.each_line do |lang|
         for part in ['digikam']
 
             if isWindows
-                `svn cat svn://anonsvn.kde.org/home/kde/#{branch}/l10n-kf5/#{lang}/messages/extragear-graphics/#{part}.po > #{part}.po`
+                `svn cat svn://anonsvn.kde.org/home/kde/#{branch}/l10n-kf5/#{lang}/messages/digikam/#{part}.po > #{part}.po`
             else
-                `svn cat svn://anonsvn.kde.org/home/kde/#{branch}/l10n-kf5/#{lang}/messages/extragear-graphics/#{part}.po 2> /dev/null | tee #{part}.po `
+                `svn cat svn://anonsvn.kde.org/home/kde/#{branch}/l10n-kf5/#{lang}/messages/digikam/#{part}.po 2> /dev/null | tee #{part}.po `
             end
 
             if FileTest.size( "#{part}.po" ) == 0

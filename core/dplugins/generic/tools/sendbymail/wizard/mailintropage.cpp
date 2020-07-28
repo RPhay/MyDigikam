@@ -131,7 +131,7 @@ MailIntroPage::MailIntroPage(QWizard* const dialog, const QString& title)
     d->binSearch->addBinary(d->sylphBin);
     d->binSearch->addBinary(d->thundBin);
 
-#ifdef Q_OS_OSX
+#ifdef Q_OS_MACOS
 
     // Std Macports install
 

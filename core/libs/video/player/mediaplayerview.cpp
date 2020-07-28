@@ -233,6 +233,7 @@ MediaPlayerView::MediaPlayerView(QWidget* const parent)
     d->loopPlay       = new QPushButton(hbox);
     d->loopPlay->setIcon(QIcon::fromTheme(QLatin1String("media-playlist-normal")));
     d->loopPlay->setSizePolicy(QSizePolicy::Minimum, QSizePolicy::Minimum);
+    d->loopPlay->setToolTip(i18n("Toggle playing in a loop"));
     d->loopPlay->setFocusPolicy(Qt::NoFocus);
     d->loopPlay->setMinimumSize(22, 22);
     d->loopPlay->setCheckable(true);

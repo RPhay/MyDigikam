@@ -38,8 +38,6 @@
 
 #include "filereadwritelock.h"
 #include "metaenginesettings.h"
-#include "drawinfo.h"
-#include "drawdecoder.h"
 #include "digikam_version.h"
 #include "digikam_globals.h"
 #include "digikam_debug.h"
@@ -92,73 +90,6 @@ bool DMetadata::applyChanges(bool setVersion) const
     FileWriteLocker lock(getFilePath());
 
     return MetaEngine::applyChanges(setVersion);
-}
-
-bool DMetadata::loadUsingRawEngine(const QString& filePath)
-{
-    DRawInfo identify;
-
-    if (DRawDecoder::rawFileIdentify(identify, filePath))
-    {
-        long int num = 1;
-        long int den = 1;
-
-        if (!identify.model.isNull())
-        {
-            setExifTagString("Exif.Image.Model", identify.model);
-        }
-
-        if (!identify.make.isNull())
-        {
-            setExifTagString("Exif.Image.Make", identify.make);
-        }
-
-        if (!identify.owner.isNull())
-        {
-            setExifTagString("Exif.Image.Artist", identify.owner);
-        }
-
-        if (identify.sensitivity != -1)
-        {
-            setExifTagLong("Exif.Photo.ISOSpeedRatings", lroundf(identify.sensitivity));
-        }
-
-        if (identify.dateTime.isValid())
-        {
-            setImageDateTime(identify.dateTime, false);
-        }
-
-        if (identify.exposureTime != -1.0)
-        {
-            convertToRationalSmallDenominator(identify.exposureTime, &num, &den);
-            setExifTagRational("Exif.Photo.ExposureTime", num, den);
-        }
-
-        if (identify.aperture != -1.0)
-        {
-            convertToRational(identify.aperture, &num, &den, 8);
-            setExifTagRational("Exif.Photo.ApertureValue", num, den);
-        }
-
-        if (identify.focalLength != -1.0)
-        {
-            convertToRational(identify.focalLength, &num, &den, 8);
-            setExifTagRational("Exif.Photo.FocalLength", num, den);
-        }
-
-        if (identify.imageSize.isValid())
-        {
-            setItemDimensions(identify.imageSize);
-        }
-
-        // A RAW image is always uncalibrated. */
-
-        setItemColorWorkSpace(WORKSPACE_UNCALIBRATED);
-
-        return true;
-    }
-
-    return false;
 }
 
 } // namespace Digikam

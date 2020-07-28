@@ -1048,8 +1048,7 @@ void RatioCropTool::updateCropInfo()
     d->imageSelection = img->copy(getNormalizedRegion());
     d->histogramBox->histogram()->updateData(d->imageSelection);
 
-    QString mpixels;
-    mpixels.setNum(d->widthInput->value() * d->heightInput->value() / 1000000.0, 'f', 2);
+    QString mpixels = QLocale().toString(d->widthInput->value() * d->heightInput->value() / 1000000.0, 'f', 1);
     d->resLabel->setText(i18nc("width x height (megapixels Mpx)", "%1x%2 (%3Mpx)",
                          d->widthInput->value(), d->heightInput->value(), mpixels));
 }

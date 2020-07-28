@@ -354,7 +354,7 @@ void DXmlGuiWindow::createSidebarActions()
 void DXmlGuiWindow::createSettingsActions()
 {
     d->showMenuBarAction   = KStandardAction::showMenubar(this, SLOT(slotShowMenuBar()), actionCollection());
-#ifdef Q_OS_OSX
+#ifdef Q_OS_MACOS
     // Under MacOS the menu bar visibility is managed by desktop.
 
     d->showMenuBarAction->setVisible(false);
@@ -792,7 +792,7 @@ void DXmlGuiWindow::slotHelpContents()
 
 void DXmlGuiWindow::openHandbook()
 {
-    QUrl url = QUrl(QString::fromUtf8("https://docs.kde.org/trunk5/en/extragear-graphics/%1/index.html")
+    QUrl url = QUrl(QString::fromUtf8("https://docs.kde.org/?application=%1")
                .arg(QApplication::applicationName()));
 
     WebBrowserDlg* const browser = new WebBrowserDlg(url, qApp->activeWindow());

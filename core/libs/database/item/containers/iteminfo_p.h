@@ -69,35 +69,35 @@ namespace Digikam
 MetadataInfo::Field DatabaseVideoMetadataFieldsToMetadataInfoField(const DatabaseFields::VideoMetadata videoMetadataField);
 MetadataInfo::Field DatabaseImageMetadataFieldsToMetadataInfoField(const DatabaseFields::ImageMetadata imageMetadataField);
 
-#define RETURN_IF_CACHED(x)                             \
-    if (m_data->x##Cached)                              \
-    {                                                   \
-        ItemInfoReadLocker lock;                        \
-        if (m_data->x##Cached)                          \
-        {                                               \
-            return m_data->x;                           \
-        }                                               \
+#define RETURN_IF_CACHED(x)                            \
+    {                                                  \
+        ItemInfoReadLocker lock;                       \
+        if (m_data->x##Cached)                         \
+        {                                              \
+            return m_data->x;                          \
+        }                                              \
     }
 
-#define RETURN_ASPECTRATIO_IF_IMAGESIZE_CACHED()        \
-    if (m_data->imageSizeCached)                        \
-    {                                                   \
-        ItemInfoReadLocker lock;                        \
-        if (m_data->imageSizeCached)                    \
-        {                                               \
-            return (double)m_data->imageSize.width()/   \
-                           m_data->imageSize.height();  \
-        }                                               \
+#define RETURN_ASPECTRATIO_IF_IMAGESIZE_CACHED()       \
+    {                                                  \
+        ItemInfoReadLocker lock;                       \
+        if (m_data->imageSizeCached)                   \
+        {                                              \
+            return (double)m_data->imageSize.width()/  \
+                           m_data->imageSize.height(); \
+        }                                              \
     }
 
-#define STORE_IN_CACHE_AND_RETURN(x, retrieveMethod)    \
-    ItemInfoWriteLocker lock;                           \
-    m_data.data()->x##Cached = true;                    \
-    if (!values.isEmpty())                              \
-    {                                                   \
-        m_data.data()->x = retrieveMethod;              \
-    }                                                   \
-    return m_data->x;
+#define STORE_IN_CACHE_AND_RETURN(x, retrieveMethod)   \
+    {                                                  \
+        ItemInfoWriteLocker lock;                      \
+        if (!values.isEmpty())                         \
+        {                                              \
+            m_data.data()->x##Cached = true;           \
+            m_data.data()->x         = retrieveMethod; \
+        }                                              \
+        return m_data->x;                              \
+    }
 
 } // namespace Digikam
 

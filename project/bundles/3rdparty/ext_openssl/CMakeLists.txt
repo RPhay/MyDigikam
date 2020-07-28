@@ -1,4 +1,4 @@
-# Script to build OpenSSL for digiKam bundle.
+# Script to build OpenSSL.
 #
 # Copyright (c) 2015-2020 by Gilles Caulier  <caulier dot gilles at gmail dot com>
 #
@@ -9,13 +9,19 @@
 SET(EXTPREFIX_openssl "${EXTPREFIX}")
 
 ExternalProject_Add(ext_openssl
-    DOWNLOAD_DIR ${EXTERNALS_DOWNLOAD_DIR}
-    URL https://github.com/janbar/openssl-cmake/archive/1.1.1.tar.gz
-    URL_MD5 214a26666f61d12e0dffafb22b5fc26a
+
+    GIT_REPOSITORY https://github.com/flagarde/openssl-cmake.git
+
+    INSTALL_DIR ${EXTPREFIX_openssl}
 
     CMAKE_ARGS -DCMAKE_INSTALL_PREFIX=${EXTPREFIX_openssl}
                -DCMAKE_BUILD_TYPE=${GLOBAL_BUILD_TYPE}
+               -DCMAKE_POSITION_INDEPENDENT_CODE=TRUE
+               -DWITH_APPS=OFF
+               -DWITH_DOCS=OFF
                ${GLOBAL_PROFILE}
+
+    BUILD_COMMAND ${BUILD_CLI}
 
     UPDATE_COMMAND ""
     ALWAYS 0

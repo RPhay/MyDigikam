@@ -91,7 +91,7 @@ void UndoManager::addAction(UndoAction* const action)
 
     // If the _last_ action was irreversible, we need to snapshot it
 
-    UndoAction* const lastAction               = d->undoActions.isEmpty() ? 0 : d->undoActions.last();
+    UndoAction* const lastAction               = d->undoActions.isEmpty() ? nullptr : d->undoActions.last();
 
     d->undoActions << action;
 

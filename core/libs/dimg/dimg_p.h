@@ -142,7 +142,7 @@ public:
         delete [] lanczos_func;
     }
 
-    static DPluginDImg* pluginsForFile(const QFileInfo& fileInfo, bool magic)
+    static DPluginDImg* pluginForFile(const QFileInfo& fileInfo, bool magic)
     {
         QMultiMap<int, DPluginDImg*> pluginMap;
 

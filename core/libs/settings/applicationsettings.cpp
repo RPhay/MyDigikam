@@ -225,7 +225,7 @@ void ApplicationSettings::readSettings()
     d->showPermanentDeleteDialog         = group.readEntry(d->configShowPermanentDeleteDialogEntry,                   true);
     d->sidebarApplyDirectly              = group.readEntry(d->configApplySidebarChangesDirectlyEntry,                 false);
 
-#ifdef Q_OS_OSX
+#ifdef Q_OS_MACOS
     d->useNativeFileDialog               = group.readEntry(d->configUseNativeFileDialogEntry,                         true);
 #else
     d->useNativeFileDialog               = group.readEntry(d->configUseNativeFileDialogEntry,                         false);

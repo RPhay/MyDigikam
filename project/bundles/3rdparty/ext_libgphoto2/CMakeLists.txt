@@ -10,8 +10,8 @@ SET(EXTPREFIX_libgphoto2 "${EXTPREFIX}")
 
 ExternalProject_Add(ext_libgphoto2
     DOWNLOAD_DIR ${EXTERNALS_DOWNLOAD_DIR}
-    URL http://downloads.sourceforge.net/project/gphoto/libgphoto/2.5.24/libgphoto2-2.5.24.tar.bz2
-    URL_MD5 063632d839b71698e99da0ccd19bc9f6
+    URL http://downloads.sourceforge.net/project/gphoto/libgphoto/2.5.24/libgphoto2-2.5.25.tar.bz2
+    URL_MD5 39999aa4bdd3bf849b5716153c659405
 
     INSTALL_DIR ${EXTPREFIX_libgphoto2}
     CONFIGURE_COMMAND <SOURCE_DIR>/configure --prefix ${EXTPREFIX_libgphoto2}

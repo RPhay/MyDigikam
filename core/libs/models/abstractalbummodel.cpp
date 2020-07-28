@@ -979,17 +979,38 @@ void AbstractCheckableAlbumModel::setTristate(bool isTristate)
 {
     if (isTristate)
     {
-        d->extraFlags |= Qt::ItemIsTristate;
+        d->extraFlags |= 
+
+#if (QT_VERSION >= QT_VERSION_CHECK(5, 12, 0))
+        Qt::ItemIsAutoTristate;
+#else
+        Qt::ItemIsTristate;
+#endif
+        
     }
     else
     {
-        d->extraFlags &= ~Qt::ItemIsTristate;
+        d->extraFlags &= ~
+
+#if (QT_VERSION >= QT_VERSION_CHECK(5, 12, 0))
+        Qt::ItemIsAutoTristate;
+#else
+        Qt::ItemIsTristate;
+#endif
+
     }
 }
 
 bool AbstractCheckableAlbumModel::isTristate() const
 {
-    return d->extraFlags & Qt::ItemIsTristate;
+    return d->extraFlags &
+
+#if (QT_VERSION >= QT_VERSION_CHECK(5, 12, 0))
+        Qt::ItemIsAutoTristate;
+#else
+        Qt::ItemIsTristate;
+#endif
+
 }
 
 void AbstractCheckableAlbumModel::setAddExcludeTristate(bool b)

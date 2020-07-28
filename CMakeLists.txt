@@ -17,7 +17,7 @@ message(STATUS "CMake version: ${VERSION_CMAKE_INFO}")
 
 # digiKam version
 set(DIGIKAM_MAJOR_VERSION "7")
-set(DIGIKAM_MINOR_VERSION "0")
+set(DIGIKAM_MINOR_VERSION "1")
 set(DIGIKAM_PATCH_VERSION "0")
 
 # Suffix to add at end of version string. Usual values are:
@@ -27,7 +27,7 @@ set(DIGIKAM_PATCH_VERSION "0")
 # "-beta3" : beta3 release.
 # "-rc"    : release candidate.
 # ""       : final release. Can be used in production.
-set(DIGIKAM_SUFFIX_VERSION "-rc")
+set(DIGIKAM_SUFFIX_VERSION "")
 
 # ==============================================================================
 # Set env. variables accordingly.
@@ -112,9 +112,6 @@ endif()
 
 set_property(GLOBAL PROPERTY USE_FOLDERS ON)
 set_property(GLOBAL PROPERTY AUTOGEN_TARGETS_FOLDER "Generated")
-
-#set(CMAKE_LIBRARY_OUTPUT_DIRECTORY "${CMAKE_SOURCE_DIR}/objects")
-#set(AUTOGEN_BUILD_DIR "${CMAKE_SOURCE_DIR}/objects")
 
 ### COMPILATION OPTIONS MANAGEMENT ####################################################################################
 

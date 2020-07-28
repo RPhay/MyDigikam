@@ -139,7 +139,7 @@ class FPhotoSet
 public:
 
     FPhotoSet()
-      : id(QStringLiteral("-1"))
+      : id(QLatin1String("-1"))
     {
     }
 

@@ -147,7 +147,7 @@ void DImgRAWLoader::setWaitingDataProgress(double value)
 {
     if (m_observer)
     {
-        m_observer->progressInfo(value);
+        m_observer->progressInfo((float)value);
     }
 }
 
@@ -178,7 +178,7 @@ bool DImgRAWLoader::loadedFromRawData(const QByteArray& data,
         {
             if (observer && h == checkpoint)
             {
-                checkpoint += granularity(observer, height, 1.0);
+                checkpoint += granularity(observer, height, 1.0F);
 
                 if (!observer->continueQuery())
                 {
@@ -186,7 +186,7 @@ bool DImgRAWLoader::loadedFromRawData(const QByteArray& data,
                     return false;
                 }
 
-                observer->progressInfo(0.7 + 0.2 * (((float)h) / ((float)height)));
+                observer->progressInfo(0.7F + 0.2F * (((float)h) / ((float)height)));
             }
 
             for (int w = 0 ; w < width ; ++w)
@@ -234,7 +234,7 @@ bool DImgRAWLoader::loadedFromRawData(const QByteArray& data,
 
             if (observer && h == checkpoint)
             {
-                checkpoint += granularity(observer, height, 1.0);
+                checkpoint += granularity(observer, height, 1.0F);
 
                 if (!observer->continueQuery())
                 {
@@ -242,7 +242,7 @@ bool DImgRAWLoader::loadedFromRawData(const QByteArray& data,
                     return false;
                 }
 
-                observer->progressInfo(0.7 + 0.2 * (((float)h) / ((float)height)));
+                observer->progressInfo(0.7F + 0.2F * (((float)h) / ((float)height)));
             }
 
             for (int w = 0 ; w < width ; ++w)

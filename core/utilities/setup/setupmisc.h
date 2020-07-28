@@ -42,7 +42,8 @@ public:
     {
         Behaviour = 0,
         Appearance,
-        Grouping
+        Grouping,
+        System
     };
 
 public:

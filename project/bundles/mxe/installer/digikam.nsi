@@ -345,7 +345,7 @@
         Delete "$SMPROGRAMS\$StartMenuFolder\Showfoto.lnk"
         Delete "$SMPROGRAMS\$StartMenuFolder\The ${MY_PRODUCT} HomePage.url"
 
-        RMDir /r "$SMPROGRAMS\$StartMenuFolder"
+        RMDir "$SMPROGRAMS\$StartMenuFolder"
 
         ;Remove registry entries
 

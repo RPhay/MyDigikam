@@ -278,7 +278,7 @@ bool DImgPNGLoader::load(const QString& filePath, DImgLoaderObserver* const obse
 
         if (observer)
         {
-            observer->progressInfo(1.0);
+            observer->progressInfo(1.0F);
         }
 
         imageWidth()  = cleanupData->size.width();
@@ -559,7 +559,7 @@ bool DImgPNGLoader::load(const QString& filePath, DImgLoaderObserver* const obse
                     }
 
                     // use 10% - 80% for progress while reading rows
-                    observer->progressInfo(0.1 + (0.7 * (((float)y) / ((float)height))));
+                    observer->progressInfo(0.1F + (0.7F * (((float)y) / ((float)height))));
                 }
 
                 png_read_rows(png_ptr, lines + y, nullptr, 1);
@@ -679,7 +679,7 @@ bool DImgPNGLoader::load(const QString& filePath, DImgLoaderObserver* const obse
 
     if (observer)
     {
-        observer->progressInfo(1.0);
+        observer->progressInfo(1.0F);
     }
 
     imageWidth()  = width;

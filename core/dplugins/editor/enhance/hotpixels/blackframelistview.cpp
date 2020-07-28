@@ -45,7 +45,7 @@ BlackFrameListViewItem::BlackFrameListViewItem(QTreeWidget* const parent, const 
       QTreeWidgetItem(parent),
       m_blackFrameURL(url)
 {
-    QPointer<BlackFrameParser> m_parser = new BlackFrameParser(parent);
+    m_parser = new BlackFrameParser(this);
     m_parser->parseBlackFrame(url);
 
     connect(m_parser, SIGNAL(signalParsed(QList<HotPixel>)),

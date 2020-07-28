@@ -488,7 +488,7 @@ void ImportItemPropertiesTab::setCurrentItem(const CamItemInfo& itemInfo, const 
         dims = QSize(itemInfo.width, itemInfo.height);
     }
 
-    mpixels.setNum(dims.width()*dims.height()/1000000.0, 'f', 2);
+    mpixels = QLocale().toString(dims.width()*dims.height()/1000000.0, 'f', 1);
     str = (!dims.isValid()) ? unknown : i18n("%1x%2 (%3Mpx)",
             dims.width(), dims.height(), mpixels);
     d->labelImageDimensions->setAdjustedText(str);

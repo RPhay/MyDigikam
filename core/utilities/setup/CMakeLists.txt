@@ -22,6 +22,9 @@ set(libsetupshowfoto_SRCS
     ${CMAKE_CURRENT_SOURCE_DIR}/editor/setupiofiles.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/editor/setupraw.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/setupicc.cpp
+
+    ${CMAKE_CURRENT_SOURCE_DIR}/system/systemsettingswidget.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/system/systemsettings.cpp
 )
 
 # Used by digikamcore

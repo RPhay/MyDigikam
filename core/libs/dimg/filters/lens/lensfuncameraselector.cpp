@@ -749,7 +749,7 @@ void LensFunCameraSelector::slotModelChanged()
 void LensFunCameraSelector::slotModelSelected()
 {
     QVariant v = d->model->itemData(d->model->currentIndex());
-    d->iface->setUsedCamera(d->metadataUsage->isChecked() && d->passiveMetadataUsage ? 0 :
+    d->iface->setUsedCamera(d->metadataUsage->isChecked() && d->passiveMetadataUsage ? nullptr :
                             v.value<LensFunIface::DevicePtr>());
     emit signalLensSettingsChanged();
 }
@@ -757,7 +757,7 @@ void LensFunCameraSelector::slotModelSelected()
 void LensFunCameraSelector::slotLensSelected()
 {
     QVariant v = d->lens->itemData(d->lens->currentIndex());
-    d->iface->setUsedLens(d->metadataUsage->isChecked() && d->passiveMetadataUsage ? 0 :
+    d->iface->setUsedLens(d->metadataUsage->isChecked() && d->passiveMetadataUsage ? nullptr :
                           v.value<LensFunIface::LensPtr>());
 
     LensFunContainer settings = d->iface->settings();

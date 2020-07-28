@@ -236,7 +236,7 @@ bool DImgJPEG2000Loader::save(const QString& filePath, DImgLoaderObserver* const
                 return false;
             }
 
-            observer->progressInfo(0.1 + (0.8 * (((float)y) / ((float)imageHeight()))));
+            observer->progressInfo(0.1F + (0.8F * (((float)y) / ((float)imageHeight()))));
         }
 
         for (x = 0 ; x < (long)imageWidth() ; ++x)
@@ -345,7 +345,7 @@ bool DImgJPEG2000Loader::save(const QString& filePath, DImgLoaderObserver* const
 
     if (observer)
     {
-        observer->progressInfo(1.0);
+        observer->progressInfo(1.0F);
     }
 
     jas_image_destroy(jp2_image);

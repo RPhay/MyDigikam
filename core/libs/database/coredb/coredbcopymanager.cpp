@@ -60,7 +60,7 @@ void CoreDbCopyManager::stopProcessing()
 }
 
 void CoreDbCopyManager::copyDatabases(const DbEngineParameters& fromDBParameters,
-                                      DbEngineParameters& toDBParameters)
+                                      const DbEngineParameters& toDBParameters)
 {
     m_isStopProcessing = false;
     DbEngineLocking fromLocking;
@@ -115,7 +115,9 @@ void CoreDbCopyManager::copyDatabases(const DbEngineParameters& fromDBParameters
 
     DbEngineAction action                        = toDBbackend.getDBAction(QString::fromUtf8("Migrate_Cleanup_Prepare"));
     BdEngineBackend::QueryState queryStateResult = toDBbackend.execDBAction(action);
+
     // Accept SQL error because the foreign key may not exist.
+
     if (queryStateResult == BdEngineBackend::ConnectionError)
     {
         emit finished(CoreDbCopyManager::failed, i18n("Error while preparing the target database."));
@@ -123,10 +125,11 @@ void CoreDbCopyManager::copyDatabases(const DbEngineParameters& fromDBParameters
 
     // Delete all tables
 
-    for (int i = (tablesSize - 1); m_isStopProcessing || i >= 0; --i)
+    for (int i = (tablesSize - 1) ; i >= 0 ; --i)
     {
-        if ( m_isStopProcessing ||
-             toDBbackend.execDirectSql(QString::fromUtf8("DROP TABLE IF EXISTS %1;").arg(tables[i])) != BdEngineBackend::NoErrors)
+        if (m_isStopProcessing ||
+            (toDBbackend.execDirectSql(QString::fromUtf8("DROP TABLE IF EXISTS %1;").arg(tables[i])) != BdEngineBackend::NoErrors)
+           )
         {
             emit finished(CoreDbCopyManager::failed, i18n("Error while scrubbing the target database."));
             fromDBbackend.close();
@@ -137,12 +140,12 @@ void CoreDbCopyManager::copyDatabases(const DbEngineParameters& fromDBParameters
 
     // Then create the schema
 
-    CoreDB       albumDB(&toDBbackend);
+    CoreDB              albumDB(&toDBbackend);
     CoreDbSchemaUpdater updater(&albumDB, &toDBbackend, toDBParameters);
 
     emit stepStarted(i18n("Create Schema..."));
 
-    if (!updater.update())
+    if (m_isStopProcessing || !updater.update())
     {
         emit finished(CoreDbCopyManager::failed, i18n("Error while creating the database schema."));
         fromDBbackend.close();
@@ -152,18 +155,15 @@ void CoreDbCopyManager::copyDatabases(const DbEngineParameters& fromDBParameters
 
     // loop copying the tables, stop if an error is met
 
-    for (int i = 0; m_isStopProcessing || i < tablesSize; ++i)
+    for (int i = 0 ; i < tablesSize ; ++i)
     {
-        if (i < tablesSize)
-        {
-            emit stepStarted(i18n(QString::fromUtf8("Copy %1...").arg(tables[i]).toLatin1().constData()));
-        }
+        emit stepStarted(i18n(QString::fromUtf8("Copy %1...").arg(tables[i]).toLatin1().constData()));
 
         // Now perform the copy action
 
-        if ( m_isStopProcessing ||
-             !copyTable(fromDBbackend, QString::fromUtf8("Migrate_Read_%1").arg(tables[i]),
-                        toDBbackend, QString::fromUtf8("Migrate_Write_%1").arg(tables[i]))
+        if (m_isStopProcessing ||
+            !copyTable(fromDBbackend, QString::fromUtf8("Migrate_Read_%1").arg(tables[i]),
+                       toDBbackend, QString::fromUtf8("Migrate_Write_%1").arg(tables[i]))
            )
         {
             handleClosing(m_isStopProcessing, fromDBbackend, toDBbackend);
@@ -232,7 +232,7 @@ bool CoreDbCopyManager::copyTable(CoreDbBackend& fromDBbackend,
 
     int columnCount = result.record().count();
 
-    for (int i = 0; i < columnCount; ++i)
+    for (int i = 0 ; i < columnCount ; ++i)
     {
         //qCDebug(DIGIKAM_COREDB_LOG) << "Column: ["<< result.record().fieldName(i) << "]";
         columnNames.append(result.record().fieldName(i));
@@ -246,7 +246,7 @@ bool CoreDbCopyManager::copyTable(CoreDbBackend& fromDBbackend,
                                     << "] isActive [" << result.isActive()
                                     << "] result size: [" << result.size() << "]";
 
-        if (m_isStopProcessing == true)
+        if (m_isStopProcessing)
         {
             return false;
         }
@@ -274,12 +274,16 @@ bool CoreDbCopyManager::copyTable(CoreDbBackend& fromDBbackend,
         DbEngineAction action                        = toDBbackend.getDBAction(toActionName);
         BdEngineBackend::QueryState queryStateResult = toDBbackend.execDBAction(action, tempBindingMap);
 
-        if (queryStateResult != BdEngineBackend::NoErrors &&
-            toDBbackend.lastSQLError().isValid()          &&
-            !toDBbackend.lastSQLError().nativeErrorCode().isEmpty())
+        if (
+            (queryStateResult != BdEngineBackend::NoErrors) &&
+            toDBbackend.lastSQLError().isValid()            &&
+            !toDBbackend.lastSQLError().nativeErrorCode().isEmpty()
+           )
         {
-            qCDebug(DIGIKAM_COREDB_LOG) << "Core database: error while converting table data. Details: " << toDBbackend.lastSQLError();
-            QString errorMsg = i18n("Error while converting the database.\n Details: %1", toDBbackend.lastSQLError().databaseText());
+            qCDebug(DIGIKAM_COREDB_LOG) << "Core database: error while converting table data. Details:"
+                                        << toDBbackend.lastSQLError();
+            QString errorMsg = i18n("Error while converting the database.\n Details: %1",
+                                    toDBbackend.lastSQLError().databaseText());
             emit finished(CoreDbCopyManager::failed, errorMsg);
             return false;
         }

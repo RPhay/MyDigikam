@@ -4,7 +4,7 @@
  * https://www.digikam.org
  *
  * Date        : 2019-09-26
- * Description : item metadata interface - HEIF helpers.
+ * Description : item metadata interface - libheif helpers.
  *
  * Copyright (C) 2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
@@ -34,8 +34,8 @@
 
 // Local includes
 
-#include "digikam_debug.h"
 #include "digikam_config.h"
+#include "digikam_debug.h"
 #include "heif.h"
 
 namespace Digikam
@@ -57,12 +57,14 @@ void s_readHEICMetadata(struct heif_context* const heif_context, heif_item_id im
                         QByteArray& exif, QByteArray& iptc, QByteArray& xmp)
 {
     struct heif_image_handle* image_handle = nullptr;
-    struct heif_error error                = heif_context_get_image_handle(heif_context,
+    struct heif_error error1               = heif_context_get_image_handle(heif_context,
                                                                            image_id,
                                                                            &image_handle);
 
-    if (!s_isHeifSuccess(&error))
+    if (!s_isHeifSuccess(&error1))
     {
+        heif_image_handle_release(image_handle);
+
         return;
     }
 
@@ -90,11 +92,11 @@ void s_readHEICMetadata(struct heif_context* const heif_context, heif_item_id im
                 QByteArray exifChunk;
                 exifChunk.resize((int)length);
 
-                struct heif_error error = heif_image_handle_get_metadata(image_handle,
-                                                                         dataIds[i],
-                                                                         exifChunk.data());
+                struct heif_error error2 = heif_image_handle_get_metadata(image_handle,
+                                                                          dataIds[i],
+                                                                          exifChunk.data());
 
-                if ((error.code == 0) && (length > 4))
+                if ((error2.code == 0) && (length > 4))
                 {
                     // The first 4 bytes indicate the
                     // offset to the start of the TIFF header of the Exif data.
@@ -122,11 +124,11 @@ void s_readHEICMetadata(struct heif_context* const heif_context, heif_item_id im
 
                 iptc.resize((int)length);
 
-                struct heif_error error = heif_image_handle_get_metadata(image_handle,
-                                                                         dataIds[i],
-                                                                         iptc.data());
+                struct heif_error error3 = heif_image_handle_get_metadata(image_handle,
+                                                                          dataIds[i],
+                                                                          iptc.data());
 
-                if (error.code == 0)
+                if (error3.code == 0)
                 {
                     qDebug() << "HEIF iptc container found with size:" << length;
                 }
@@ -147,11 +149,11 @@ void s_readHEICMetadata(struct heif_context* const heif_context, heif_item_id im
 
                 xmp.resize((int)length);
 
-                struct heif_error error = heif_image_handle_get_metadata(image_handle,
-                                                                         dataIds[i],
-                                                                         xmp.data());
+                struct heif_error error4 = heif_image_handle_get_metadata(image_handle,
+                                                                          dataIds[i],
+                                                                          xmp.data());
 
-                if (error.code == 0)
+                if (error4.code == 0)
                 {
                     qDebug() << "HEIF xmp container found with size:" << length;
                 }

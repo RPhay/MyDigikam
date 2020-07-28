@@ -46,6 +46,7 @@
 #include <QMimeDatabase>
 #include <QDesktopServices>
 #include <QFileInfo>
+#include <QDirIterator>
 #include <qplatformdefs.h>
 
 #ifdef HAVE_DBUS
@@ -57,6 +58,7 @@
 
 #include "digikam_debug.h"
 #include "digikam_globals.h"
+#include "progressmanager.h"
 #include "metaenginesettings.h"
 
 namespace Digikam
@@ -206,6 +208,46 @@ QUrl DFileOperations::getUniqueFileUrl(const QUrl& orgUrl,
     return destUrl;
 }
 
+QUrl DFileOperations::getUniqueFolderUrl(const QUrl& orgUrl)
+{
+    int counter = 0;
+    QUrl destUrl(orgUrl);
+    QFileInfo fi(destUrl.toLocalFile());
+    QRegExp version(QLatin1String("(.+)-(\\d+)"));
+    QString completeFileName = fi.fileName();
+
+    if (version.exactMatch(completeFileName))
+    {
+        completeFileName = version.cap(1);
+        counter          = version.cap(2).toInt();
+    }
+
+    if (fi.exists())
+    {
+        bool fileFound = false;
+
+        do
+        {
+            QFileInfo nfi(destUrl.toLocalFile());
+
+            if (!nfi.exists())
+            {
+                fileFound = false;
+            }
+            else
+            {
+                fileFound = true;
+                destUrl   = destUrl.adjusted(QUrl::RemoveFilename);
+                destUrl.setPath(destUrl.path() + completeFileName +
+                                QString::fromUtf8("-%1").arg(++counter));
+            }
+        }
+        while (fileFound);
+    }
+
+    return destUrl;
+}
+
 void DFileOperations::openInFileManager(const QList<QUrl>& urls)
 {
     if (urls.isEmpty())
@@ -256,7 +298,7 @@ void DFileOperations::openInFileManager(const QList<QUrl>& urls)
         return;
     }
 
-#elif defined Q_OS_OSX
+#elif defined Q_OS_MACOS
 
     QStringList args;
     args << QLatin1String("-e");
@@ -307,7 +349,9 @@ void DFileOperations::openInFileManager(const QList<QUrl>& urls)
 
 bool DFileOperations::copyFolderRecursively(const QString& srcPath,
                                             const QString& dstPath,
-                                            const bool* cancel)
+                                            const QString& itemId,
+                                            bool* const cancel,
+                                            bool  countTotal)
 {
     QDir srcDir(srcPath);
     QString newCopyPath = dstPath + QLatin1Char('/') + srcDir.dirName();
@@ -315,6 +359,27 @@ bool DFileOperations::copyFolderRecursively(const QString& srcPath,
     if (!srcDir.mkpath(newCopyPath))
     {
         return false;
+    }
+
+    if (countTotal && !itemId.isEmpty())
+    {
+        int count = 0;
+
+        QDirIterator it(srcDir.path(), QDir::Files,
+                                       QDirIterator::Subdirectories);
+
+        while (it.hasNext())
+        {
+            it.next();
+            ++count;
+        }
+
+        ProgressItem* const item = ProgressManager::instance()->findItembyId(itemId);
+
+        if (item)
+        {
+            item->incTotalItems(count);
+        }
     }
 
     foreach (const QFileInfo& fileInfo, srcDir.entryInfoList(QDir::Files))
@@ -330,11 +395,21 @@ bool DFileOperations::copyFolderRecursively(const QString& srcPath,
         {
             return false;
         }
+
+        if (!itemId.isEmpty())
+        {
+            ProgressItem* const item = ProgressManager::instance()->findItembyId(itemId);
+
+            if (item)
+            {
+                item->advance(1);
+            }
+        }
     }
 
     foreach (const QFileInfo& fileInfo, srcDir.entryInfoList(QDir::Dirs | QDir::NoDotAndDotDot))
     {
-        if (!copyFolderRecursively(fileInfo.filePath(), newCopyPath, cancel))
+        if (!copyFolderRecursively(fileInfo.filePath(), newCopyPath, itemId, cancel, false))
         {
             return false;
         }
@@ -510,7 +585,7 @@ bool DFileOperations::setModificationTime(const QString& srcFile,
     }
     else
     {
-        modtime = dateTime.toTime_t();
+        modtime = dateTime.toSecsSinceEpoch();
     }
 
 #ifdef Q_OS_WIN64

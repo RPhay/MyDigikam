@@ -356,7 +356,7 @@ void ItemViewImportDelegate::drawImageSize(QPainter* p, const QRect& dimsRect, c
     {
         p->setFont(d->fontXtra);
         QString mpixels, resolution;
-        mpixels.setNum(dims.width()*dims.height()/1000000.0, 'f', 2);
+        mpixels = QLocale().toString(dims.width()*dims.height()/1000000.0, 'f', 1);
 
         if (dims.isValid())
         {

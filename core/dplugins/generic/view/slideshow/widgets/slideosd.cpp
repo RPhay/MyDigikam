@@ -182,9 +182,6 @@ SlideOSD::SlideOSD(SlideShowSettings* const settings, SlideShowLoader* const par
     connect(d->toolBar, SIGNAL(signalPlay()),
             d->parent, SLOT(slotPlay()));
 
-    connect(d->toolBar, SIGNAL(signalPlay()),
-            this, SLOT(slotRechargeSettings()));
-
     connect(d->toolBar, SIGNAL(signalNext()),
             d->parent, SLOT(slotLoadNextItem()));
 
@@ -194,15 +191,18 @@ SlideOSD::SlideOSD(SlideShowSettings* const settings, SlideShowLoader* const par
     connect(d->toolBar, SIGNAL(signalClose()),
             d->parent, SLOT(close()));
 
+    connect(d->toolBar, SIGNAL(signalUpdateSettings()),
+            this, SLOT(slotUpdateSettings()));
+
     connect(d->toolBar, SIGNAL(signalScreenSelected(int)),
             d->parent, SLOT(slotScreenSelected(int)));
 
     // ---------------------------------------------------------------
 
     QGridLayout* const grid = new QGridLayout(this);
-    grid->addWidget(d->slideProps,  1, 0, 1, 2);
-    grid->addWidget(d->labelsBox,   2, 0, 1, 1);
-    grid->addWidget(d->progressBox, 3, 0, 1, 1);
+    grid->addWidget(d->slideProps,  0, 0, 1, 2);
+    grid->addWidget(d->labelsBox,   1, 0, 1, 1);
+    grid->addWidget(d->progressBox, 2, 0, 1, 1);
     grid->setRowStretch(0, 10);
     grid->setColumnStretch(1, 10);
     grid->setContentsMargins(QMargins());
@@ -228,19 +228,21 @@ SlideOSD::~SlideOSD()
 
 void SlideOSD::slotStart()
 {
+    d->settings->suffleImages();
     d->parent->slotLoadNextItem();
     d->progressTimer->start(d->refresh);
     pause(!d->settings->autoPlayEnabled);
 }
 
-void SlideOSD::slotRechargeSettings()
+void SlideOSD::slotUpdateSettings()
 {
     d->labelsBox->setVisible(d->settings->printLabels || d->settings->printRating);
+    d->progressBox->setVisible(d->settings->showProgressIndicator);
     d->ratingWidget->setVisible(d->settings->printRating);
     d->clWidget->setVisible(d->settings->printLabels);
     d->plWidget->setVisible(d->settings->printLabels);
-    d->progressBox->setVisible(d->settings->showProgressIndicator);
     d->progressBar->setMaximum(d->settings->delay);
+    d->settings->suffleImages();
 }
 
 SlideToolBar* SlideOSD::toolBar() const
@@ -278,11 +280,8 @@ void SlideOSD::setCurrentUrl(const QUrl& url)
 
     // Make the OSD the proper size
 
-    layout()->activate();
-    resize(sizeHint());
-
-    move(10, d->parent->geometry().bottom() - height());
-    show();
+    resize(d->parent->width() - 10, d->parent->height());
+    move(10, 0);
     raise();
 }
 

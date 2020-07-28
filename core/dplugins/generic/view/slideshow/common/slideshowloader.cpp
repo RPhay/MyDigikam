@@ -794,8 +794,6 @@ void SlideShowLoader::slotPause()
 
 void SlideShowLoader::slotPlay()
 {
-    d->settings->suffleImages();
-
 #ifdef HAVE_MEDIAPLAYER
 
     if (currentIndex() == VideoView)

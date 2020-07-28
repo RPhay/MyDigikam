@@ -8,7 +8,7 @@
  *
  * Copyright (C) 2006-2009 by Johannes Wienke <languitar at semipol dot de>
  * Copyright (C) 2011-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
- * Copyright (C) 2019      by Maik Qualmann <metzpinguin at gmail dot com>
+ * Copyright (C) 2019-2020 by Maik Qualmann <metzpinguin at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -26,16 +26,14 @@
 
 // Qt includes
 
-#include <QWindow>
 #include <QCloseEvent>
 #include <QMessageBox>
-#include <QAbstractButton>
 
 // KDE includes
 
 #include <klocalizedstring.h>
 #include <ksharedconfig.h>
-#include <kwindowconfig.h>
+#include <kconfiggroup.h>
 
 // Local includes
 
@@ -54,9 +52,9 @@ class Q_DECL_HIDDEN FCExportWindow::Private
 public:
 
     explicit Private()
+      : exportWidget(nullptr),
+        thread(nullptr)
     {
-        exportWidget = nullptr;
-        thread       = nullptr;
     }
 
     const static QString TARGET_URL_PROPERTY;
@@ -64,14 +62,26 @@ public:
     const static QString TARGET_BEHAVIOR;
     const static QString CONFIG_GROUP;
 
+    const static QString CHANGE_IMAGE_PROPERTIES;
+    const static QString IMAGE_RESIZE;
+    const static QString IMAGE_FORMAT;
+    const static QString IMAGE_COMPRESSION;
+    const static QString REMOVE_METADATA;
+
     FCExportWidget*      exportWidget;
     FCThread*            thread;
 };
 
-const QString FCExportWindow::Private::TARGET_URL_PROPERTY = QLatin1String("targetUrl");
-const QString FCExportWindow::Private::TARGET_OVERWRITE    = QLatin1String("overwrite");
-const QString FCExportWindow::Private::TARGET_BEHAVIOR     = QLatin1String("targetBehavior");
-const QString FCExportWindow::Private::CONFIG_GROUP        = QLatin1String("FileCopyExport");
+const QString FCExportWindow::Private::TARGET_URL_PROPERTY     = QLatin1String("targetUrl");
+const QString FCExportWindow::Private::TARGET_OVERWRITE        = QLatin1String("overwrite");
+const QString FCExportWindow::Private::TARGET_BEHAVIOR         = QLatin1String("targetBehavior");
+const QString FCExportWindow::Private::CONFIG_GROUP            = QLatin1String("FileCopyExport");
+
+const QString FCExportWindow::Private::CHANGE_IMAGE_PROPERTIES = QLatin1String("changeImageProperties");
+const QString FCExportWindow::Private::IMAGE_RESIZE            = QLatin1String("imageResize");
+const QString FCExportWindow::Private::IMAGE_FORMAT            = QLatin1String("imageFormat");
+const QString FCExportWindow::Private::IMAGE_COMPRESSION       = QLatin1String("imageCompression");
+const QString FCExportWindow::Private::REMOVE_METADATA         = QLatin1String("removeMetadata");
 
 FCExportWindow::FCExportWindow(DInfoInterface* const iface, QWidget* const /*parent*/)
     : WSToolDialog(nullptr, QLatin1String("FileCopy Export Dialog")),
@@ -138,34 +148,35 @@ void FCExportWindow::restoreSettings()
 {
     KSharedConfigPtr config = KSharedConfig::openConfig();
     KConfigGroup group      = config->group(d->CONFIG_GROUP);
-    d->exportWidget->setTargetUrl(group.readEntry(d->TARGET_URL_PROPERTY,            QUrl()));
-    d->exportWidget->overwriteBox()->setChecked(group.readEntry(d->TARGET_OVERWRITE, false));
 
-    int buttonId                  = group.readEntry(d->TARGET_BEHAVIOR, (int)FCTask::CopyFile);
-    QAbstractButton* const button = d->exportWidget->targetButtonGroup()->button(buttonId);
+    FCContainer settings;
 
-    if (button)
-    {
-        button->setChecked(true);
-    }
+    settings.destUrl               = group.readEntry(d->TARGET_URL_PROPERTY,     QUrl());
+    settings.behavior              = group.readEntry(d->TARGET_BEHAVIOR,         (int)FCContainer::CopyFile);
+    settings.imageFormat           = group.readEntry(d->IMAGE_FORMAT,            (int)FCContainer::JPEG);
+    settings.imageResize           = group.readEntry(d->IMAGE_RESIZE,            1024);
+    settings.imageCompression      = group.readEntry(d->IMAGE_COMPRESSION,       75);
+    settings.overwrite             = group.readEntry(d->TARGET_OVERWRITE,        false);
+    settings.removeMetadata        = group.readEntry(d->REMOVE_METADATA,         false);
+    settings.changeImageProperties = group.readEntry(d->CHANGE_IMAGE_PROPERTIES, false);
 
-    winId();
-    KConfigGroup group2 = config->group(QLatin1String("FileCopy Export Dialog"));
-    KWindowConfig::restoreWindowSize(windowHandle(), group2);
-    resize(windowHandle()->size());
+    d->exportWidget->setSettings(settings);
 }
 
 void FCExportWindow::saveSettings()
 {
     KSharedConfigPtr config = KSharedConfig::openConfig();
     KConfigGroup group      = config->group(d->CONFIG_GROUP);
-    group.writeEntry(d->TARGET_URL_PROPERTY, d->exportWidget->targetUrl().url());
-    group.writeEntry(d->TARGET_OVERWRITE,    d->exportWidget->overwriteBox()->isChecked());
-    group.writeEntry(d->TARGET_BEHAVIOR,     d->exportWidget->targetButtonGroup()->checkedId());
+    FCContainer settings    = d->exportWidget->getSettings();
 
-    KConfigGroup group2 = config->group(QLatin1String("FileCopy Export Dialog"));
-    KWindowConfig::saveWindowSize(windowHandle(), group2);
-    config->sync();
+    group.writeEntry(d->TARGET_URL_PROPERTY,     settings.destUrl);
+    group.writeEntry(d->TARGET_BEHAVIOR,         settings.behavior);
+    group.writeEntry(d->IMAGE_FORMAT,            settings.imageFormat);
+    group.writeEntry(d->IMAGE_RESIZE,            settings.imageResize);
+    group.writeEntry(d->IMAGE_COMPRESSION,       settings.imageCompression);
+    group.writeEntry(d->TARGET_OVERWRITE,        settings.overwrite);
+    group.writeEntry(d->REMOVE_METADATA,         settings.removeMetadata);
+    group.writeEntry(d->CHANGE_IMAGE_PROPERTIES, settings.changeImageProperties);
 }
 
 void FCExportWindow::slotImageListChanged()
@@ -183,10 +194,11 @@ void FCExportWindow::updateUploadButton()
 {
     bool listNotEmpty = !d->exportWidget->imagesList()->imageUrls().isEmpty();
     startButton()->setEnabled(listNotEmpty && d->exportWidget->targetUrl().isValid());
-
+/*
     qCDebug(DIGIKAM_WEBSERVICES_LOG) << "Updated upload button with listNotEmpty ="
                                      << listNotEmpty << ", targetUrl().isValid() ="
                                      << d->exportWidget->targetUrl().isValid();
+*/
 }
 
 void FCExportWindow::slotCopyingDone(const QUrl& from, const QUrl& to)
@@ -232,9 +244,7 @@ void FCExportWindow::slotCopy()
     }
 
     d->thread->createCopyJobs(d->exportWidget->imagesList()->imageUrls(),
-                              d->exportWidget->targetUrl(),
-                              d->exportWidget->targetButtonGroup()->checkedId(),
-                              d->exportWidget->overwriteBox()->isChecked());
+                              d->exportWidget->getSettings());
 
     d->thread->start();
 }

@@ -8,7 +8,7 @@
  *
  * Copyright (C) 2012      by Smit Mehta <smit dot meh at gmail dot com>
  * Copyright (C) 2006-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
- * Copyright (C) 2019      by Maik Qualmann <metzpinguin at gmail dot com>
+ * Copyright (C) 2019-2020 by Maik Qualmann <metzpinguin at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -32,6 +32,7 @@
 // Local includes
 
 #include "actionthreadbase.h"
+#include "fccontainer.h"
 
 using namespace Digikam;
 
@@ -44,18 +45,8 @@ class FCTask : public ActionJob
 
 public:
 
-    enum FileCopyType
-    {
-        CopyFile = 0,
-        FullSymLink,
-        RelativeSymLink
-    };
-
-public:
-
     explicit FCTask(const QUrl& srcUrl,
-                    const QUrl& dstUrl,
-                    int behavior, bool overwrite);
+                    const FCContainer& settings);
     ~FCTask();
 
 Q_SIGNALS:
@@ -67,6 +58,9 @@ protected:
     void run();
 
 private:
+
+    bool imageResize(const QString& orgPath, const QString& destPath);
+    void deleteTargetFile(const QString& filePath);
 
     class Private;
     Private* const d;

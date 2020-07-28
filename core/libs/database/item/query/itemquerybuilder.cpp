@@ -383,7 +383,7 @@ bool ItemQueryBuilder::buildField(QString& sql, SearchXmlCachingReader& reader, 
     }
     else if (name == QLatin1String("filesize"))
     {
-        fieldQuery.addIntField(QLatin1String("Images.fileSize"));
+        fieldQuery.addLongField(QLatin1String("Images.fileSize"));
     }
     else if (name == QLatin1String("rating"))
     {

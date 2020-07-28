@@ -108,7 +108,7 @@ bool DImg::load(const QString& filePath,
         return false;
     }
 
-    DPluginDImg* plugin             = m_priv->pluginsForFile(fileInfo, false);
+    DPluginDImg* plugin             = m_priv->pluginForFile(fileInfo, false);
     DImgLoader::LoadFlags loadFlags = (DImgLoader::LoadFlags)loadFlagsInt;
     setAttribute(QLatin1String("originalFilePath"), filePath);
 
@@ -145,7 +145,7 @@ bool DImg::load(const QString& filePath,
 
     // In the second step we check the magic bytes to find the right loader.
 
-    plugin = m_priv->pluginsForFile(fileInfo, true);
+    plugin = m_priv->pluginForFile(fileInfo, true);
 
     if (observer && !observer->continueQuery())
     {
@@ -176,7 +176,7 @@ bool DImg::load(const QString& filePath,
 
     if (!plugin && !(loadFlags & DImgLoader::LoadPreview))
     {
-        qCWarning(DIGIKAM_DIMG_LOG) << filePath << ": Unknown image format !!!";
+        qCDebug(DIGIKAM_DIMG_LOG) << filePath << ": Unknown image format !!!";
         return false;
     }
 
@@ -315,7 +315,7 @@ DImg::FORMAT DImg::fileFormat(const QString& filePath)
         return format;
     }
 
-    DPluginDImg* const plugin = DImg::Private::pluginsForFile(fileInfo, false);
+    DPluginDImg* const plugin = DImg::Private::pluginForFile(fileInfo, false);
 
     if (plugin)
     {
