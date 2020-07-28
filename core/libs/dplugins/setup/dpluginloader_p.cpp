@@ -78,7 +78,7 @@ QFileInfoList DPluginLoader::Private::pluginEntriesList() const
 
     qCDebug(DIGIKAM_GENERAL_LOG) << "Parsing plugins from" << path;
 
-#ifdef Q_OS_OSX
+#ifdef Q_OS_MACOS
     QString filter(QLatin1String("*.dylib *.so"));
 #elif defined Q_OS_WIN
     QString filter(QLatin1String("*.dll"));

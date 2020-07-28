@@ -356,7 +356,7 @@ bool DImgPNGLoader::save(const QString& filePath, DImgLoaderObserver* const obse
                 return false;
             }
 
-            observer->progressInfo(0.2 + (0.8 * (((float)y) / ((float)imageHeight()))));
+            observer->progressInfo(0.2F + (0.8F * (((float)y) / ((float)imageHeight()))));
         }
 
         j = 0;

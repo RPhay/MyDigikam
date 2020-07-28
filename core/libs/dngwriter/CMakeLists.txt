@@ -47,6 +47,10 @@ endif()
 
 #------------------------------------------------------------------------------------
 
+if(MINGW)
+    add_definitions("-D_POSIX_THREAD_SAFE_FUNCTIONS")
+endif()
+
 set(libxmp_SRCS
     ${CMAKE_CURRENT_SOURCE_DIR}/extra/xmp_sdk/common/XML_Node.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/extra/xmp_sdk/common/UnicodeConversions.cpp

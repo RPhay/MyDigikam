@@ -27,40 +27,6 @@
 namespace Digikam
 {
 
-void ItemScanner::fillMetadataContainer(qlonglong imageid, ImageMetadataContainer* const container)
-{
-    // read from database
-    QVariantList fields      = CoreDbAccess().db()->getImageMetadata(imageid);
-    // check we have at least one valid field
-    container->allFieldsNull = !hasValidField(fields);
-
-    if (container->allFieldsNull)
-    {
-        return;
-    }
-
-    // DMetadata does all translation work
-    QStringList strings = DMetadata::valuesToString(fields, allImageMetadataFields());
-
-    // associate with hard-coded variables
-    container->make                         = strings.at(0);
-    container->model                        = strings.at(1);
-    container->lens                         = strings.at(2);
-    container->aperture                     = strings.at(3);
-    container->focalLength                  = strings.at(4);
-    container->focalLength35                = strings.at(5);
-    container->exposureTime                 = strings.at(6);
-    container->exposureProgram              = strings.at(7);
-    container->exposureMode                 = strings.at(8);
-    container->sensitivity                  = strings.at(9);
-    container->flashMode                    = strings.at(10);
-    container->whiteBalance                 = strings.at(11);
-    container->whiteBalanceColorTemperature = strings.at(12);
-    container->meteringMode                 = strings.at(13);
-    container->subjectDistance              = strings.at(14);
-    container->subjectDistanceCategory      = strings.at(15);
-}
-
 QString ItemScanner::iptcCorePropertyName(MetadataInfo::Field field)
 {
     // These strings are specified in DBSCHEMA.ods
@@ -382,7 +348,7 @@ void ItemScanner::scanTags()
 
     if (pickId != -1)
     {
-        qCDebug(DIGIKAM_DATABASE_LOG) << "Pick Label found : " << pickId;
+        qCDebug(DIGIKAM_DATABASE_LOG) << "Pick Label found :" << pickId;
 
         int tagId = TagsCache::instance()->tagForPickLabel((PickLabel)pickId);
 
@@ -390,11 +356,11 @@ void ItemScanner::scanTags()
         {
             d->commit.tagIds << tagId;
             d->commit.hasPickTag = true;
-            qCDebug(DIGIKAM_DATABASE_LOG) << "Assigned Pick Label Tag  : " << tagId;
+            qCDebug(DIGIKAM_DATABASE_LOG) << "Assigned Pick Label Tag :" << tagId;
         }
         else
         {
-            qCDebug(DIGIKAM_DATABASE_LOG) << "Cannot find Pick Label Tag for : " << pickId;
+            qCDebug(DIGIKAM_DATABASE_LOG) << "Cannot find Pick Label Tag for :" << pickId;
         }
     }
 
@@ -404,7 +370,7 @@ void ItemScanner::scanTags()
 
     if (colorId != -1)
     {
-        qCDebug(DIGIKAM_DATABASE_LOG) << "Color Label found : " << colorId;
+        qCDebug(DIGIKAM_DATABASE_LOG) << "Color Label found :" << colorId;
 
         int tagId = TagsCache::instance()->tagForColorLabel((ColorLabel)colorId);
 
@@ -412,11 +378,11 @@ void ItemScanner::scanTags()
         {
             d->commit.tagIds << tagId;
             d->commit.hasColorTag = true;
-            qCDebug(DIGIKAM_DATABASE_LOG) << "Assigned Color Label Tag  : " << tagId;
+            qCDebug(DIGIKAM_DATABASE_LOG) << "Assigned Color Label Tag :" << tagId;
         }
         else
         {
-            qCDebug(DIGIKAM_DATABASE_LOG) << "Cannot find Color Label Tag for : " << colorId;
+            qCDebug(DIGIKAM_DATABASE_LOG) << "Cannot find Color Label Tag for :" << colorId;
         }
     }
 }

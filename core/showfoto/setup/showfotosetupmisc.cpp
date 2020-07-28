@@ -34,6 +34,7 @@
 #include <QVBoxLayout>
 #include <QStyleFactory>
 #include <QApplication>
+#include <QDirIterator>
 #include <QStyle>
 #include <QComboBox>
 #include <QFile>
@@ -49,6 +50,7 @@
 #include "dlayoutbox.h"
 #include "dfontselect.h"
 #include "showfotosettings.h"
+#include "systemsettingswidget.h"
 
 using namespace Digikam;
 
@@ -75,30 +77,33 @@ public:
         applicationStyle(nullptr),
         applicationIcon(nullptr),
         applicationFont(nullptr),
+        systemSettingsWidget(nullptr),
         settings(ShowfotoSettings::instance())
     {
     }
 
-    QTabWidget*          tab;
+    QTabWidget*           tab;
 
-    QLabel*              sidebarTypeLabel;
-    QLabel*              applicationStyleLabel;
-    QLabel*              applicationIconLabel;
+    QLabel*               sidebarTypeLabel;
+    QLabel*               applicationStyleLabel;
+    QLabel*               applicationIconLabel;
 
-    QCheckBox*           showSplash;
-    QCheckBox*           nativeFileDialog;
-    QCheckBox*           itemCenter;
-    QCheckBox*           showMimeOverImage;
-    QCheckBox*           showCoordinates;
-    QCheckBox*           sortReverse;
+    QCheckBox*            showSplash;
+    QCheckBox*            nativeFileDialog;
+    QCheckBox*            itemCenter;
+    QCheckBox*            showMimeOverImage;
+    QCheckBox*            showCoordinates;
+    QCheckBox*            sortReverse;
 
-    QComboBox*           sidebarType;
-    QComboBox*           sortOrderComboBox;
-    QComboBox*           applicationStyle;
-    QComboBox*           applicationIcon;
-    DFontSelect*         applicationFont;
+    QComboBox*            sidebarType;
+    QComboBox*            sortOrderComboBox;
+    QComboBox*            applicationStyle;
+    QComboBox*            applicationIcon;
+    DFontSelect*          applicationFont;
 
-    ShowfotoSettings*    settings;
+    SystemSettingsWidget* systemSettingsWidget;
+
+    ShowfotoSettings*     settings;
 };
 
 // --------------------------------------------------------
@@ -186,11 +191,14 @@ SetupMisc::SetupMisc(QWidget* const parent)
     d->applicationStyle       = new QComboBox(appStyleHbox);
     d->applicationStyle->setToolTip(i18n("Set this option to choose the default window decoration and looks."));
 
-    QStringList styleList     = QStyleFactory::keys();
+    QStringList styleList = QStyleFactory::keys();
 
     for (int i = 0 ; i < styleList.count() ; ++i)
     {
-        d->applicationStyle->addItem(styleList.at(i));
+        if (styleList.at(i).compare(QLatin1String("windowsvista"), Qt::CaseInsensitive) != 0)
+        {
+            d->applicationStyle->addItem(styleList.at(i), styleList.at(i).toLower());
+        }
     }
 
 #ifndef HAVE_APPSTYLE_SUPPORT
@@ -205,28 +213,42 @@ SetupMisc::SetupMisc(QWidget* const parent)
     d->applicationIcon         = new QComboBox(iconThemeHbox);
     d->applicationIcon->setToolTip(i18n("Set this option to choose the default icon theme."));
 
-    d->applicationIcon->addItem(i18n("Use Icon Theme From System"), QString());
-
-    const QString indexTheme = QLatin1String("/index.theme");
-    const QString breezeDark = QLatin1String("/breeze-dark");
-    const QString breeze     = QLatin1String("/breeze");
-
-    bool foundBreezeDark     = false;
-    bool foundBreeze         = false;
+    QMap<QString, QString> iconThemes;
+    QMap<QString, QString> themeWhiteList;
+    themeWhiteList.insert(QLatin1String("adwaita"),         i18nc("icon theme", "Adwaita"));
+    themeWhiteList.insert(QLatin1String("breeze"),          i18nc("icon theme", "Breeze"));
+    themeWhiteList.insert(QLatin1String("breeze-dark"),     i18nc("icon theme", "Breeze Dark"));
+    themeWhiteList.insert(QLatin1String("faenza"),          i18nc("icon theme", "Faenza"));
+    themeWhiteList.insert(QLatin1String("faenza-ambiance"), i18nc("icon theme", "Ambiance"));
+    themeWhiteList.insert(QLatin1String("humanity"),        i18nc("icon theme", "Humanity"));
+    themeWhiteList.insert(QLatin1String("oxygen"),          i18nc("icon theme", "Oxygen"));
 
     foreach (const QString& path, QIcon::themeSearchPaths())
     {
-        if (!foundBreeze && QFile::exists(path + breeze + indexTheme))
-        {
-            d->applicationIcon->addItem(i18n("Breeze"), breeze.mid(1));
-            foundBreeze = true;
-        }
+        QDirIterator it(path, QDir::Dirs       |
+                              QDir::NoSymLinks |
+                              QDir::NoDotAndDotDot);
 
-        if (!foundBreezeDark && QFile::exists(path + breezeDark + indexTheme))
+        while (it.hasNext())
         {
-            d->applicationIcon->addItem(i18n("Breeze Dark"), breezeDark.mid(1));
-            foundBreezeDark = true;
+            if (QFile::exists(it.next() + QLatin1String("/index.theme")))
+            {
+                QString iconKey = it.fileInfo().fileName().toLower();
+
+                if (themeWhiteList.contains(iconKey))
+                {
+                    iconThemes[themeWhiteList.value(iconKey)] = it.fileInfo().fileName();
+                }
+            }
         }
+    }
+
+    QMap<QString, QString>::const_iterator it = iconThemes.constBegin();
+    d->applicationIcon->addItem(i18n("Use Icon Theme From System"), QString());
+
+    for ( ; it != iconThemes.constEnd() ; ++it)
+    {
+        d->applicationIcon->addItem(it.key(), it.value());
     }
 
     d->applicationFont = new DFontSelect(i18n("Application font:"), appearancePanel);
@@ -246,6 +268,12 @@ SetupMisc::SetupMisc(QWidget* const parent)
 
     d->tab->insertTab(Appearance, appearancePanel, i18nc("@title:tab", "Appearance"));
 
+    // -- System Options --------------------------------------------------------
+
+    d->systemSettingsWidget = new SystemSettingsWidget(d->tab);
+
+    d->tab->insertTab(System, d->systemSettingsWidget, i18nc("@title:tab", "System"));
+
     // --------------------------------------------------------
 
     readSettings();
@@ -258,6 +286,8 @@ SetupMisc::~SetupMisc()
 
 void SetupMisc::readSettings()
 {
+    d->systemSettingsWidget->readSettings();
+
     d->showSplash->setChecked(d->settings->getShowSplash());
     d->nativeFileDialog->setChecked(d->settings->getNativeFileDialog());
     d->itemCenter->setChecked(d->settings->getItemCenter());
@@ -269,7 +299,7 @@ void SetupMisc::readSettings()
 
 #ifdef HAVE_APPSTYLE_SUPPORT
 
-    d->applicationStyle->setCurrentIndex(d->applicationStyle->findText(d->settings->getApplicationStyle(), Qt::MatchFixedString));
+    d->applicationStyle->setCurrentIndex(d->applicationStyle->findData(d->settings->getApplicationStyle().toLower()));
 
 #endif
 
@@ -279,6 +309,8 @@ void SetupMisc::readSettings()
 
 void SetupMisc::applySettings()
 {
+    d->systemSettingsWidget->saveSettings();
+
     d->settings->setShowSplash(d->showSplash->isChecked());
     d->settings->setNativeFileDialog(d->nativeFileDialog->isChecked());
     d->settings->setItemCenter(d->itemCenter->isChecked());

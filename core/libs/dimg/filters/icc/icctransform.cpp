@@ -731,7 +731,7 @@ void IccTransform::transform(DImg& image, const TransformDescription& descriptio
             if (observer && (p <= checkPoint))
             {
                 checkPoint -= granularity;
-                observer->progressInfo(0.1 + 0.9 * (1.0 - float(p) / float(pixels)));
+                observer->progressInfo(0.1F + 0.9F * (1.0F - float(p) / float(pixels)));
             }
         }
     }
@@ -751,7 +751,7 @@ void IccTransform::transform(DImg& image, const TransformDescription& descriptio
             if (observer && (p <= checkPoint))
             {
                 checkPoint -= granularity;
-                observer->progressInfo(0.1 + 0.9 * (1.0 - float(p) / float(pixels)));
+                observer->progressInfo(0.1F + 0.9F * (1.0F - float(p) / float(pixels)));
             }
         }
     }

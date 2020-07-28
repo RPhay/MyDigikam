@@ -3469,7 +3469,8 @@ QStringList CoreDB::getListFromImageMetadata(DatabaseFields::ImageMetadata field
     }
 
     QString sql = QString::fromUtf8("SELECT DISTINCT %1 FROM ImageMetadata "
-                                    "INNER JOIN Images ON imageid=Images.id;");
+                                    "INNER JOIN Images ON imageid=Images.id "
+                                    " WHERE Images.status=1;");
 
     sql = sql.arg(fieldName.first());
     d->db->execSql(sql, &values);

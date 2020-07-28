@@ -157,7 +157,7 @@ int SlideShowSettings::count() const
 
 void SlideShowSettings::suffleImages()
 {
-    if (suffle)
+    if (suffle && autoPlayEnabled)
     {
         if (originalFileList.isEmpty())
         {

@@ -50,7 +50,7 @@ public:
 
 private Q_SLOTS:
 
-    void slotImagesFormatChanged(int);
+    void slotImageFormatChanged(int);
 
 private:
 

@@ -39,7 +39,7 @@ public:
     GimpBinary()
         : DBinaryIface(
 
-#ifdef Q_OS_OSX
+#ifdef Q_OS_MACOS
 
                        QLatin1String("GIMP-bin"),
 

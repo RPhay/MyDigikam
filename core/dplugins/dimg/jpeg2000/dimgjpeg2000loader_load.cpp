@@ -540,7 +540,7 @@ bool DImgJPEG2000Loader::load(const QString& filePath, DImgLoaderObserver* const
                     return false;
                 }
 
-                observer->progressInfo(0.1 + (0.8 * (((float)y) / ((float)imageHeight()))));
+                observer->progressInfo(0.1F + (0.8F * (((float)y) / ((float)imageHeight()))));
             }
         }
     }
@@ -596,7 +596,7 @@ bool DImgJPEG2000Loader::load(const QString& filePath, DImgLoaderObserver* const
 
     if (observer)
     {
-        observer->progressInfo(1.0);
+        observer->progressInfo(1.0F);
     }
 
     imageData() = data.take();

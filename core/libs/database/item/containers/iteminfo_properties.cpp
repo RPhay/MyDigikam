@@ -269,14 +269,11 @@ int ItemInfo::orientation() const
         return 0; // ORIENTATION_UNSPECIFIED
     }
 
+    RETURN_IF_CACHED(orientation)
+
     QVariantList values = CoreDbAccess().db()->getItemInformation(m_data->id, DatabaseFields::Orientation);
 
-    if (values.isEmpty())
-    {
-        return 0;
-    }
-
-    return values.first().toInt();
+    STORE_IN_CACHE_AND_RETURN(orientation, values.first().toInt());
 }
 
 QUrl ItemInfo::fileUrl() const
@@ -429,6 +426,10 @@ void ItemInfo::setOrientation(int value)
     }
 
     CoreDbAccess().db()->changeItemInformation(m_data->id, QVariantList() << value, DatabaseFields::Orientation);
+
+    ItemInfoWriteLocker lock;
+    m_data->orientation       = value;
+    m_data->orientationCached = true;
 }
 
 void ItemInfo::setName(const QString& newName)

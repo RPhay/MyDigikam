@@ -170,7 +170,7 @@
                 "-DJAS_ENABLE_PROGRAMS=OFF"
             ],
             "builddir": true,
-            "sources": [ { "type": "git", "url": "https://github.com/mdadams/jasper.git", "tag": "version-2.0.16" } ]
+            "sources": [ { "type": "git", "url": "https://github.com/mdadams/jasper.git", "tag": "version-2.0.17" } ]
         },
         {
             "name": "exiv2",
@@ -199,7 +199,7 @@
                 "-DEXIV2_ENABLE_WIN_UNICODE=OFF"
             ],
             "builddir": true,
-            "sources": [ { "type": "git", "url": "https://github.com/Exiv2/exiv2.git", "branch": "0.27-maintenance" } ]
+            "sources": [ { "type": "git", "url": "https://github.com/Exiv2/exiv2.git", "tag": "0.27.3" } ]
         },
         {
             "name": "marble",
@@ -214,7 +214,7 @@
                 "-DBUILD_TESTING=OFF"
             ],
             "builddir": true,
-            "sources": [ { "type": "git", "url": "https://invent.kde.org/education/marble.git", "tag": "v20.04.0" } ]
+            "sources": [ { "type": "git", "url": "https://invent.kde.org/education/marble.git", "tag": "v20.04.3" } ]
         },
         {
             "name": "qtav",
