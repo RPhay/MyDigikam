@@ -178,7 +178,7 @@ bool DImgJPEGLoader::load(const QString& filePath, DImgLoaderObserver* const obs
 
     // If an error occurs during reading, libjpeg will jump here
 
-    if (__builtin_setjmp(jerr.setjmp_buffer))
+    if (setjmp(jerr.setjmp_buffer))
     {
         jpeg_destroy_decompress(&cinfo);
 

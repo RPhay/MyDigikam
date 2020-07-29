@@ -62,7 +62,7 @@ void DImgJPEGLoader::dimg_jpeg_error_exit(j_common_ptr cinfo)
 
     qCWarning(DIGIKAM_DIMG_LOG_JPEG) << buffer;
 
-    __builtin_longjmp(myerr->setjmp_buffer, 1);
+    longjmp(myerr->setjmp_buffer, 1);
 }
 
 void DImgJPEGLoader::dimg_jpeg_emit_message(j_common_ptr cinfo, int msg_level)
