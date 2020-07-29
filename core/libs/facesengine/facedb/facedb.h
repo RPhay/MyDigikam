@@ -7,6 +7,7 @@
  *
  * Copyright (C) 2012-2013 by Marcel Wiesweg <marcel dot wiesweg at gmx dot de>
  * Copyright (C) 2010-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C)      2020 by Nghia Duong <minhnghiaduong997 at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -131,11 +132,58 @@ public:
     cv::Ptr<cv::ml::TrainData> trainData() const;
 
     /**
+     * @brief insertToTreeDb : insert a new node to spatial database
+     * @param nodeID
+     * @param label
+     * @param faceEmbedding
+     * @return true if successed
+     */
+    bool insertToTreeDb(const int nodeID, const cv::Mat& faceEmbedding) const;
+
+    /**
+     * @brief getClosestNeighbors : return a list of closest neighbor, limited by maxNbNeighbors and sqRange
+     * @param subTree
+     * @param neighborList
+     * @param position
+     * @param sqRange
+     * @param maxNbNeighbors
+
+     * @return
+     */
+    QMap<double, QVector<int> > getClosestNeighborsTreeDb(const cv::Mat& position,
+                                                          double sqRange,
+                                                          int maxNbNeighbors) const;
+
+    /**
      * @brief clearDNNTraining : clear all trained data in the database
      * @param context
      */
     void clearDNNTraining(const QString& context = QString());
     void clearDNNTraining(const QList<int>& identities, const QString& context = QString());
+
+private:
+
+    class DataNode;
+
+    void updateRangeTreeDb(int nodeId, cv::Mat& minRange, cv::Mat& maxRange, const cv::Mat& position) const;
+
+    int findParentTreeDb(const cv::Mat& nodePos, bool& leftChild, int& parentSplitAxis) const;
+
+    /**
+     * @brief getClosestNeighborsTreeDb : return a list of closest neighbor from a sub tree, limited by maxNbNeighbors and sqRange
+     * @param subTree
+     * @param neighborList
+     * @param position
+     * @param sqRange
+     * @param maxNbNeighbors
+
+     * @return
+     */
+    double getClosestNeighborsTreeDb(const DataNode& subTree,
+                                    QMap<double, QVector<int> >& neighborList,
+                                    const cv::Mat& position,
+                                    double sqRange,
+                                    int maxNbNeighbors) const;
 
 #else
 
