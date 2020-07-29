@@ -62,27 +62,23 @@ KDTree* FaceDb::reconstructTree() const
     KDTree* tree           = new KDTree(128);
     DbEngineSqlQuery query = d->db->execQuery(QLatin1String("SELECT id, identity, embedding FROM FaceMatrices;"));
 
-    // favor new data
-    if (query.last())
+    while (query.next())
     {
-        do
+        int nodeId   = query.value(0).toInt();
+        int identity = query.value(1).toInt();
+        cv::Mat recordedFaceEmbedding = cv::Mat(1, 128, CV_32F, query.value(2).toByteArray().data()).clone();
+
+        KDNode* newNode = tree->add(recordedFaceEmbedding, identity);
+
+        if (newNode)
         {
-            int nodeId   = query.value(0).toInt();
-            int identity = query.value(1).toInt();
-            cv::Mat recordedFaceEmbedding = cv::Mat(1, 128, CV_32F, query.value(2).toByteArray().data()).clone();
-
-            KDNode* newNode = tree->add(recordedFaceEmbedding, identity);
-
-            if (newNode)
-            {
-                newNode->setNodeId(nodeId);
-            }
-            else
-            {
-                qWarning() << "Error insert node" << nodeId;
-            }
+            qDebug() << "get node" << nodeId << "from DB, for identity" << identity;
+            newNode->setNodeId(nodeId);
         }
-        while(query.previous());
+        else
+        {
+            qWarning() << "Error insert node" << nodeId;
+        }
     }
 
     return tree;
@@ -94,14 +90,10 @@ cv::Ptr<cv::ml::TrainData> FaceDb::trainData() const
     DbEngineSqlQuery query = d->db->execQuery(QLatin1String("SELECT identity, embedding "
                                                             "FROM FaceMatrices;"));
 
-    if (query.last())
+    while (query.next())
     {
-        do
-        {
-            label.push_back(query.value(0).toInt());
-            feature.push_back(cv::Mat(1, 128, CV_32F, query.value(1).toByteArray().data()).clone());
-        }
-        while(query.previous());
+        label.push_back(query.value(0).toInt());
+        feature.push_back(cv::Mat(1, 128, CV_32F, query.value(1).toByteArray().data()).clone());
     }
 
     return cv::ml::TrainData::create(feature, 0, label);
