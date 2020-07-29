@@ -50,7 +50,7 @@ public:
     Private(Classifier method)
         : method(method),
           extractor(new FaceExtractor),
-          treedb(nullptr),
+          //treedb(nullptr),
           tree(nullptr),
           kNeighbors(3)
     {
@@ -69,7 +69,7 @@ public:
                 tree = FaceDbAccess().db()->reconstructTree();
                 break;
             case DB:
-                treedb = new SpatialDatabase();
+                //treedb = new SpatialDatabase();
                 break;
             default:
                 qFatal("Invalid classifier");
@@ -80,7 +80,7 @@ public:
     {
         delete extractor;
         delete tree;
-        delete treedb;
+        //delete treedb;
     }
 
 public:
@@ -102,7 +102,7 @@ public:
     cv::Ptr<cv::ml::SVM> svm;
     cv::Ptr<cv::ml::KNearest> knn;
 
-    SpatialDatabase* treedb;
+    //SpatialDatabase* treedb;
 
     KDTree* tree;
     int kNeighbors;
@@ -224,12 +224,7 @@ int FaceRecognizer::Private::predictKDTree(const cv::Mat& faceEmbedding, int k) 
 
 int FaceRecognizer::Private::predictDb(const cv::Mat& faceEmbedding, int k) const
 {
-    if (!treedb)
-    {
-        return -1;
-    }
-
-    QMap<double, QVector<int> > closestNeighbors = treedb->getClosestNeighbors(faceEmbedding, 1.0, k);
+    QMap<double, QVector<int> > closestNeighbors = FaceDbAccess().db()->getClosestNeighborsTreeDb(faceEmbedding, 1.0, k);
 
     QMap<int, QVector<double> > votingGroups;
 
@@ -335,7 +330,7 @@ bool FaceRecognizer::insertData(const cv::Mat& nodePos, const int label, const Q
 
     if (d->method == DB)
     {
-        if (! d->treedb->insert(nodePos, label))
+        if (! FaceDbAccess().db()->insertToTreeDb(nodeId, nodePos))
         {
             qWarning() << "Error insert face embedding";
             return false;
@@ -409,12 +404,7 @@ QMap<double, QVector<int> > FaceRecognizer::getClosestNodes(const cv::Mat& posit
                                                             double sqRange,
                                                             int maxNbNeighbors)
 {
-    if (!d->treedb)
-    {
-        return QMap<double, QVector<int> >();
-    }
-
-    return d->treedb->getClosestNeighbors(position, sqRange, maxNbNeighbors);
+    return FaceDbAccess().db()->getClosestNeighborsTreeDb(position, sqRange, maxNbNeighbors);
 }
 
 }
