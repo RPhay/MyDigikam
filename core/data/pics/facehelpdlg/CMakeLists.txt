@@ -8,7 +8,6 @@ install(FILES detectFacesImg.png
               overlayImg.png
               ignoreImg.png
               workOnAllCoresImg.png
-              sortFacesImg.gif
               tagFacesImg.gif
         DESTINATION ${DATA_INSTALL_DIR}/digikam/data
 )
