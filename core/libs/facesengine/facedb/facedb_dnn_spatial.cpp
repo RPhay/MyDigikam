@@ -3,7 +3,7 @@
  * This file is a part of digiKam
  *
  * Date        : 02-02-2012
- * Description : Face database interface to train identities.
+ * Description : Face database interface for spatial storage of face embedding.
  *
  * Copyright (C) 2012-2013 by Marcel Wiesweg <marcel dot wiesweg at gmx dot de>
  * Copyright (C) 2010-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
@@ -76,8 +76,11 @@ bool FaceDb::insertToTreeDb(const int nodeID, const cv::Mat& faceEmbedding) cons
 
     if (parentID < 0)
     {
+        qDebug() << "fail to find parent node";
         return false;
     }
+
+    qDebug() << "parent node" << parentID;
 
     QVariantList bindingValues;
 
@@ -94,6 +97,11 @@ bool FaceDb::insertToTreeDb(const int nodeID, const cv::Mat& faceEmbedding) cons
 
     int newNode = query.lastInsertId().toInt();
 
+    if (newNode <= 0)
+    {
+        qDebug() << "error insert into treedb" << query.lastError();
+    }
+
     if (parentID > 0)
     {
         bindingValues.clear();
@@ -102,7 +110,6 @@ bool FaceDb::insertToTreeDb(const int nodeID, const cv::Mat& faceEmbedding) cons
         // not root -> update parent
         if (isLeftChild)
         {
-
             d->db->execQuery(QLatin1String("UPDATE KDTree SET left = ? WHERE id = ?;"), bindingValues);
         }
         else
@@ -124,7 +131,7 @@ QMap<double, QVector<int> > FaceDb::getClosestNeighborsTreeDb(const cv::Mat& pos
 
     DbEngineSqlQuery query = d->db->execQuery(QLatin1String("SELECT position, max_range, min_range, left, right "
                                                             "FROM KDTree WHERE id = 1"));
-    if(query.last())
+    if(query.next())
     {
         // encapsulate data node
         root.nodeID     = 1;
@@ -149,6 +156,11 @@ QMap<double, QVector<int> > FaceDb::getClosestNeighborsTreeDb(const cv::Mat& pos
     return closestNeighbors;
 }
 
+void FaceDb::clearTreeDb() const
+{
+    d->db->execSql(QLatin1String("DELETE FROM KDTree;"));
+}
+
 void FaceDb::updateRangeTreeDb(int nodeId, cv::Mat& minRange, cv::Mat& maxRange, const cv::Mat& position) const
 {
     float* min = minRange.ptr<float>();
@@ -167,7 +179,10 @@ void FaceDb::updateRangeTreeDb(int nodeId, cv::Mat& minRange, cv::Mat& maxRange,
     bindingValues << QByteArray::fromRawData((char*)min, (sizeof(float) * 128));
     bindingValues << nodeId;
 
+    qDebug() << "update range";
     d->db->execQuery(QLatin1String("UPDATE KDTree SET max_range = ?, min_range = ? WHERE id = ?;"), bindingValues);
+
+    qDebug() << "updated range";
 }
 
 int FaceDb::findParentTreeDb(const cv::Mat& nodePos, bool& leftChild, int& parentSplitAxis) const
@@ -186,11 +201,11 @@ int FaceDb::findParentTreeDb(const cv::Mat& nodePos, bool& leftChild, int& paren
                                                                 "FROM KDTree WHERE id = ?"),
                                                   bindingValues);
 
-        if (! query.last())
+        if (! query.next())
         {
             if (parent == 1)
             {
-                // add root
+                qDebug() << "add root";
                 return 0;
             }
 
@@ -210,8 +225,8 @@ int FaceDb::findParentTreeDb(const cv::Mat& nodePos, bool& leftChild, int& paren
         int embeddingId     = query.value(1).toInt();
         cv::Mat maxRange    = cv::Mat(1, 128, CV_32F, query.value(2).toByteArray().data()).clone();
         cv::Mat minRange    = cv::Mat(1, 128, CV_32F, query.value(3).toByteArray().data()).clone();
-        int left            = query.value(4).toInt();
-        int right           = query.value(5).toInt();
+        QVariant left       = query.value(4);
+        QVariant right      = query.value(5);
 
         bindingValues.clear();
         bindingValues << embeddingId;
@@ -219,8 +234,9 @@ int FaceDb::findParentTreeDb(const cv::Mat& nodePos, bool& leftChild, int& paren
         query = d->db->execQuery(QLatin1String("SELECT embedding FROM FaceMatrices WHERE id = ?"),
                                  bindingValues);
 
-        if (! query.last())
+        if (! query.next())
         {
+            qDebug() << "fail to find parent face embedding" << query.lastError();
             return -1;
         }
 
@@ -309,7 +325,7 @@ double FaceDb::getClosestNeighborsTreeDb(const DataNode& subTree,
                                                                 "FROM KDTree WHERE id = ?"),
                                                   bindingValues);
 
-        if (query.last())
+        if (query.next())
         {
             // encapsulate data node
             leftNode.nodeID   = subTree.left;
@@ -325,7 +341,7 @@ double FaceDb::getClosestNeighborsTreeDb(const DataNode& subTree,
             query = d->db->execQuery(QLatin1String("SELECT identity, embedding FROM FaceMatrices WHERE id = ?"),
                                      bindingValues);
 
-            if (query.last())
+            if (query.next())
             {
                 leftNode.label    = query.value(0).toInt();
                 leftNode.position = cv::Mat(1, 128, CV_32F, query.value(1).toByteArray().data()).clone();
@@ -356,7 +372,7 @@ double FaceDb::getClosestNeighborsTreeDb(const DataNode& subTree,
                                                                 "FROM KDTree WHERE id = ?"),
                                                   bindingValues);
 
-        if (query.last())
+        if (query.next())
         {
             // encapsulate data node
             rightNode.nodeID   = subTree.right;
@@ -372,7 +388,7 @@ double FaceDb::getClosestNeighborsTreeDb(const DataNode& subTree,
             query = d->db->execQuery(QLatin1String("SELECT identity, embedding FROM FaceMatrices WHERE id = ?"),
                                      bindingValues);
 
-            if (query.last())
+            if (query.next())
             {
                 leftNode.label    = query.value(0).toInt();
                 leftNode.position = cv::Mat(1, 128, CV_32F, query.value(1).toByteArray().data()).clone();

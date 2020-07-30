@@ -154,6 +154,8 @@ public:
                                                           double sqRange,
                                                           int maxNbNeighbors) const;
 
+    void clearTreeDb() const;
+
     /**
      * @brief clearDNNTraining : clear all trained data in the database
      * @param context
@@ -163,11 +165,10 @@ public:
 
 private:
 
-    class DataNode;
-
     void updateRangeTreeDb(int nodeId, cv::Mat& minRange, cv::Mat& maxRange, const cv::Mat& position) const;
-
     int findParentTreeDb(const cv::Mat& nodePos, bool& leftChild, int& parentSplitAxis) const;
+
+    class DataNode;
 
     /**
      * @brief getClosestNeighborsTreeDb : return a list of closest neighbor from a sub tree, limited by maxNbNeighbors and sqRange

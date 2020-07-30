@@ -188,7 +188,6 @@ FacesDetector::FacesDetector(const FaceScanSettings& settings, ProgressItem* con
         if (settings.task == FaceScanSettings::DetectAndRecognize)
         {
             //d->pipeline.plugRerecognizingDatabaseFilter();
-            qCDebug(DIGIKAM_GENERAL_LOG) << "recognize algorithm: " << (int)settings.recognizeAlgorithm;
             d->pipeline.plugFaceRecognizer();
         }
 

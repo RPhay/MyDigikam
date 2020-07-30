@@ -3,7 +3,7 @@
  * This file is a part of digiKam
  *
  * Date        : 02-02-2012
- * Description : Face database interface to train identities.
+ * Description : Face database interface to train face recognizer.
  *
  * Copyright (C) 2012-2013 by Marcel Wiesweg <marcel dot wiesweg at gmx dot de>
  * Copyright (C) 2010-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>

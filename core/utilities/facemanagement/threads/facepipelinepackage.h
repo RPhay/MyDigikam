@@ -38,7 +38,7 @@
 #include "dimg.h"
 #include "loadingdescription.h"
 #include "iteminfo.h"
-#include "recognitiondatabase.h"
+//#include "recognitiondatabase.h"
 
 namespace Digikam
 {

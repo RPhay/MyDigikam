@@ -29,7 +29,6 @@
 
 #include "album.h"
 #include "iteminfo.h"
-#include "recognitiondatabase.h"
 
 namespace Digikam
 {
@@ -78,8 +77,6 @@ public:
     ScanTask                                task;
 
     AlreadyScannedHandling                  alreadyScannedHandling;
-
-    RecognitionDatabase::RecognizeAlgorithm recognizeAlgorithm;
 };
 
 } // namespace Digikam

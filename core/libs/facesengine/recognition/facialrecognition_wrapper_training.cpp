@@ -71,7 +71,9 @@ void FacialRecognitionWrapper::Private::clear(const QList<int>& idsToClear, cons
         FaceDbAccess().db()->clearDNNTraining(idsToClear, trainingContext);
     }
 
-    recognizer = new FaceRecognizer(FaceRecognizer::Tree);
+    FaceDbAccess().db()->clearTreeDb();
+
+    recognizer = new FaceRecognizer(FaceRecognizer::DB);
 
 #else
 

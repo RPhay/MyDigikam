@@ -33,7 +33,7 @@
 // Local includes
 #include "digikam_debug.h"
 #include "faceextractor.h"
-#include "spatial_database.h"
+//#include "spatial_database.h"
 
 #include "facedbaccess.h"
 #include "facedb.h"
@@ -52,6 +52,7 @@ public:
           extractor(new FaceExtractor),
           //treedb(nullptr),
           tree(nullptr),
+          trainData(nullptr),
           kNeighbors(3)
     {
         switch (method)
@@ -59,11 +60,13 @@ public:
             case SVM:
                 svm = cv::ml::SVM::create();
                 svm->setKernel(cv::ml::SVM::LINEAR);
+                trainData = FaceDbAccess().db()->trainData();
                 break;
             case OpenCV_KNN:
                 knn = cv::ml::KNearest::create();
                 knn->setAlgorithmType(cv::ml::KNearest::BRUTE_FORCE);
                 knn->setIsClassifier(true);
+                trainData = FaceDbAccess().db()->trainData();
                 break;
             case Tree:
                 tree = FaceDbAccess().db()->reconstructTree();
@@ -102,6 +105,8 @@ public:
     cv::Ptr<cv::ml::SVM> svm;
     cv::Ptr<cv::ml::KNearest> knn;
 
+    cv::Ptr<cv::ml::TrainData> trainData;
+
     //SpatialDatabase* treedb;
 
     KDTree* tree;
@@ -119,7 +124,7 @@ bool FaceRecognizer::Private::trainSVM() const
     QElapsedTimer timer;
     timer.start();
 
-    svm->train(FaceDbAccess().db()->trainData());
+    svm->train(trainData);
 
     qCDebug(DIGIKAM_FACEDB_LOG) << "Support vector machine trains in" << timer.elapsed() << "ms";
 
@@ -136,7 +141,7 @@ bool FaceRecognizer::Private::trainKNN() const
     QElapsedTimer timer;
     timer.start();
 
-    knn->train(FaceDbAccess().db()->trainData());
+    knn->train(trainData);
 
     qCDebug(DIGIKAM_FACEDB_LOG) << "KNN trains in" << timer.elapsed() << "ms";
 
@@ -350,6 +355,10 @@ bool FaceRecognizer::insertData(const cv::Mat& nodePos, const int label, const Q
 
             return false;
         }
+    }
+    else
+    {
+        // TODO: append more data to traindata and retrain model
     }
 
     return true;

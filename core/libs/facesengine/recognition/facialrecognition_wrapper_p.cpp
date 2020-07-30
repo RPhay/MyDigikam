@@ -69,7 +69,7 @@ FacialRecognitionWrapper::Private::Private()
 
 #ifdef USE_DNN_RECOGNITION_BACKEND
 
-    recognizer = new FaceRecognizer(FaceRecognizer::Tree);
+    recognizer = new FaceRecognizer(FaceRecognizer::DB);
 
 #else
 
