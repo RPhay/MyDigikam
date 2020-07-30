@@ -131,5 +131,5 @@ BUGFIXES:
 123 ==> 424688 - Ignore Directories not working (Win10 64bit).
 124 ==> 424758 - Face Tags on Samsung photos are rotated 180 degrees.
 125 ==> 347937 - SETUP : Collections added as "Removable Media" change as "Local Collections".
-126 ==> 
-
+126 ==> 416266 - digiKam crashes during face detection.
+127 ==> 
