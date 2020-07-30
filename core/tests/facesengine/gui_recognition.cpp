@@ -47,16 +47,13 @@
 // lib digikam includes
 #include "opencvdnnfacedetector.h"
 #include "facedetector.h"
-#include "faceextractor.h"
-#include "facerecognizer.h"
+#include "dnnfaceextractor.h"
+#include "opencvdnnfacerecognizer.h"
 #include "identity.h"
 
 using namespace Digikam;
-using namespace RecognitionTest;
 
 // TODO: Recognition is incorrect where human are wearing glasses
-// TODO: Verify cosnine distance Vs L2 distance
-
 
 static QVector<QListWidgetItem*> splitData(const QDir& dataDir, float splitRatio ,
                                           QHash<QString, QVector<QImage> >& trainSet,
@@ -149,8 +146,8 @@ private Q_SLOTS:
 private:
 
     OpenCVDNNFaceDetector* m_detector;
-    FaceRecognizer*        m_recognizer;
-    FaceExtractor*         m_extractor;
+    OpenCVDNNFaceRecognizer* m_recognizer;
+    DNNFaceExtractor*      m_extractor;
     QVector<cv::Mat>       m_preprocessedFaces;
     Identity               m_currentIdenity;
 
@@ -175,8 +172,8 @@ MainWindow::MainWindow(const QDir &directory, QWidget *parent)
     setWindowTitle(QLatin1String("Face recognition Test"));
 
     m_detector   = new OpenCVDNNFaceDetector(DetectorNNModel::SSDMOBILENET);
-    m_recognizer = new FaceRecognizer(FaceRecognizer::Tree);
-    m_extractor  = new FaceExtractor();
+    m_recognizer = new OpenCVDNNFaceRecognizer(OpenCVDNNFaceRecognizer::Tree);
+    m_extractor  = new DNNFaceExtractor();
 
     // Image erea
     QWidget*     const imageArea        = new QWidget(this);

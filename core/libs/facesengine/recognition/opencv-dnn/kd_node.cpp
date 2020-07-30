@@ -29,9 +29,9 @@
 #include <QtMath>
 #include <QDebug>
 
-#include "faceextractor.h"
+#include "dnnfaceextractor.h"
 
-namespace RecognitionTest
+namespace Digikam
 {
 
 double sqrDistance(const float* pos1, const float* pos2, int dimension)

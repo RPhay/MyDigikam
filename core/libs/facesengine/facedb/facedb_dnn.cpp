@@ -25,8 +25,6 @@
 
 #include "facedb_p.h"
 
-using namespace RecognitionTest;
-
 namespace Digikam
 {
 

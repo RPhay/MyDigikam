@@ -37,15 +37,13 @@
 // lib digikam includes
 #include "opencvdnnfacedetector.h"
 #include "facedetector.h"
-#include "faceextractor.h"
-#include "facerecognizer.h"
+#include "dnnfaceextractor.h"
+#include "opencvdnnfacerecognizer.h"
 #include "facialrecognition_wrapper.h"
 #include "dbengineparameters.h"
 #include "coredbaccess.h"
 
 using namespace Digikam;
-using namespace RecognitionTest;
-
 /**
  * @brief The Benchmark class: a benchmark especially made for testing the performance of face recognition module
  * on faces images. The dataset should contain only face data. It's not built for other purposes.
@@ -436,9 +434,9 @@ void Benchmark::testWriteDb()
     {
         QJsonObject object = data[i].toObject();
 
-        std::vector<float> faceEmbedding = FaceExtractor::decodeVector(object[QLatin1String("faceembedding")].toArray());
+        std::vector<float> faceEmbedding = DNNFaceExtractor::decodeVector(object[QLatin1String("faceembedding")].toArray());
 
-        //m_recognizer->insertData(FaceExtractor::vectortomat(faceEmbedding), object[QLatin1String("id")].toInt());
+        //m_recognizer->insertData(DNNFaceExtractor::vectortomat(faceEmbedding), object[QLatin1String("id")].toInt());
     }
 
     qDebug() << "write face embedding to spatial database with average" << timer.elapsed() /data.size() << "ms/faceEmbedding";
@@ -472,11 +470,11 @@ void Benchmark::verifyKNearestDb()
     {
         QJsonObject object = data[i].toObject();
 
-        std::vector<float> faceEmbedding = FaceExtractor::decodeVector(object[QLatin1String("faceembedding")].toArray());
+        std::vector<float> faceEmbedding = DNNFaceExtractor::decodeVector(object[QLatin1String("faceembedding")].toArray());
 
         int label = object[QLatin1String("id")].toInt();
 
-        QMap<double, QVector<int> > closestNeighbors /*= m_recognizer->getClosestNodes(FaceExtractor::vectortomat(faceEmbedding), 1.0, 5)*/;
+        QMap<double, QVector<int> > closestNeighbors /*= m_recognizer->getClosestNodes(DNNFaceExtractor::vectortomat(faceEmbedding), 1.0, 5)*/;
 
         QMap<int, QVector<double> > votingGroups;
 

@@ -143,9 +143,7 @@ set(facesengine_database_LIB_SRCS ${CMAKE_CURRENT_SOURCE_DIR}/recognition/recogn
 if(DNN_RECOGNITION)
 
     add_definitions(-DUSE_DNN_RECOGNITION_BACKEND)
-    include_directories(${CMAKE_CURRENT_SOURCE_DIR}/recognition/opencv-dnn
-                        # For testing TODO: remove later
-                        ${CMAKE_CURRENT_SOURCE_DIR}/facerecognition)
+    include_directories(${CMAKE_CURRENT_SOURCE_DIR}/recognition/opencv-dnn)
 
     set(facesengine_database_LIB_SRCS ${facesengine_database_LIB_SRCS}
 
@@ -154,20 +152,13 @@ if(DNN_RECOGNITION)
                                       ${CMAKE_CURRENT_SOURCE_DIR}/facedb/facedb_dnn.cpp
                                       ${CMAKE_CURRENT_SOURCE_DIR}/facedb/facedb_dnn_spatial.cpp
 
-                                      #${CMAKE_CURRENT_SOURCE_DIR}/recognition/opencv-dnn/dnnfacemodel.cpp
-                                      #${CMAKE_CURRENT_SOURCE_DIR}/recognition/opencv-dnn/opencvdnnfacerecognizer.cpp
-                                      #${CMAKE_CURRENT_SOURCE_DIR}/recognition/opencv-dnn/facerec_dnnborrowed.cpp
-                                      #${CMAKE_CURRENT_SOURCE_DIR}/recognition/opencv-dnn/dnnfaceextractor.cpp
-                                      #${CMAKE_CURRENT_SOURCE_DIR}/recognition/opencv-dnn/dnndbscan.cpp
-
-                                      # Testing, TODO: remove later
-                                      ${CMAKE_CURRENT_SOURCE_DIR}/facerecognition/kd_node.cpp
-                                      ${CMAKE_CURRENT_SOURCE_DIR}/facerecognition/kd_tree.cpp
-                                      ${CMAKE_CURRENT_SOURCE_DIR}/facerecognition/facerecognizer.cpp
-                                      ${CMAKE_CURRENT_SOURCE_DIR}/facerecognition/faceextractor.cpp
-                                      ${CMAKE_CURRENT_SOURCE_DIR}/facerecognition/facedatabase.cpp
-                                      ${CMAKE_CURRENT_SOURCE_DIR}/facerecognition/faceembedding_db.cpp
-                                      ${CMAKE_CURRENT_SOURCE_DIR}/facerecognition/spatial_database.cpp
+                                      ${CMAKE_CURRENT_SOURCE_DIR}/recognition/opencv-dnn/kd_node.cpp
+                                      ${CMAKE_CURRENT_SOURCE_DIR}/recognition/opencv-dnn/kd_tree.cpp
+                                      ${CMAKE_CURRENT_SOURCE_DIR}/recognition/opencv-dnn/opencvdnnfacerecognizer.cpp
+                                      ${CMAKE_CURRENT_SOURCE_DIR}/recognition/opencv-dnn/dnnfaceextractor.cpp
+                                      ${CMAKE_CURRENT_SOURCE_DIR}/recognition/opencv-dnn/facedatabase.cpp
+                                      ${CMAKE_CURRENT_SOURCE_DIR}/recognition/opencv-dnn/faceembedding_db.cpp
+                                      ${CMAKE_CURRENT_SOURCE_DIR}/recognition/opencv-dnn/spatial_database.cpp
     )
 
 else()

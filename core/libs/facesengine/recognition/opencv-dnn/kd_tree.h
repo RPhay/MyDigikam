@@ -2,8 +2,8 @@
  *
  * This file is a part of digiKam
  *
- * Date        : 2019-07-13
- * Description : Implementation of 1NF database for face embedding storage
+ * Date        : 2019-06-08
+ * Description : Implementation of KD-Tree for vector space partitioning
  *
  * Copyright (C) 2020 by Nghia Duong <minhnghiaduong997 at gmail dot com>
  *
@@ -20,45 +20,44 @@
  *
  * ============================================================ */
 
-#ifndef FACEEMBEDDING_DB_H
-#define FACEEMBEDDING_DB_H
+#ifndef KD_TREE_H
+#define KD_TREE_H
 
-#include "digikam_opencv.h"
-#include "kd_tree.h"
+#include "kd_node.h"
 
-namespace RecognitionTest
+namespace Digikam
 {
-class FaceEmbeddingDb
+
+class KDTree
 {
 public:
-    explicit FaceEmbeddingDb();
-    ~FaceEmbeddingDb();
 
-public:
+    explicit KDTree(int dim);
+    ~KDTree();
+
     /**
-     * @brief insert : insert a new face embedding to database
-     * @param faceEmbedding
-     * @param label
-     * @return id of newly inserted entry
+     *
+     * @param position
+     * @param sqRange
+     * @param maxNbNeighbors
+     * @return Map of N-nearest neighbors, sorted by distance
      */
-    int insert(const cv::Mat& faceEmbedding, const int label, const QString& context) const;
+    QMap<double, QVector<KDNode*> > getClosestNeighbors(const cv::Mat& position, double sqRange, int maxNbNeighbors) const;
 
     /**
-     * @brief reconstructTree: reconstruct KD-Tree from data in the database
+     * @brief add new node to KD-Tree
+     * @param position : K-dimension vector
+     * @param identity : identity of this face vector
      * @return
      */
-    KDTree* reconstructTree() const;
-
-    /**
-     * @brief trainData: extract train data from database
-     * @return
-     */
-    cv::Ptr<cv::ml::TrainData> trainData() const;
+    KDNode* add(const cv::Mat& position, const int identity);
 
 private:
 
     class Private;
     Private* d;
 };
+
 }
-#endif // FACEEMBEDDING_DB_H
+
+#endif // KD_TREE_H

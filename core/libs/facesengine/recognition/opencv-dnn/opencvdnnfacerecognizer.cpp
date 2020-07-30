@@ -22,7 +22,7 @@
  *
  * ============================================================ */
 
-#include "facerecognizer.h"
+#include "opencvdnnfacerecognizer.h"
 
 // Qt includes
 #include <QElapsedTimer>
@@ -32,27 +32,26 @@
 
 // Local includes
 #include "digikam_debug.h"
-#include "faceextractor.h"
+#include "dnnfaceextractor.h"
+#include "kd_tree.h"
 //#include "spatial_database.h"
 
 #include "facedbaccess.h"
 #include "facedb.h"
 
-using namespace Digikam;
-
-namespace RecognitionTest
+namespace Digikam
 {
 
-class Q_DECL_HIDDEN FaceRecognizer::Private
+class Q_DECL_HIDDEN OpenCVDNNFaceRecognizer::Private
 {
 public:
 
     Private(Classifier method)
         : method(method),
-          extractor(new FaceExtractor),
+          extractor(new DNNFaceExtractor),
           //treedb(nullptr),
-          tree(nullptr),
           trainData(nullptr),
+          tree(nullptr),
           kNeighbors(3)
     {
         switch (method)
@@ -101,7 +100,7 @@ public:
 
     Classifier method;
 
-    FaceExtractor* extractor;
+    DNNFaceExtractor* extractor;
     cv::Ptr<cv::ml::SVM> svm;
     cv::Ptr<cv::ml::KNearest> knn;
 
@@ -114,7 +113,7 @@ public:
 };
 
 
-bool FaceRecognizer::Private::trainSVM() const
+bool OpenCVDNNFaceRecognizer::Private::trainSVM() const
 {
     if (svm->empty())
     {
@@ -131,7 +130,7 @@ bool FaceRecognizer::Private::trainSVM() const
     return (svm->isTrained());
 }
 
-bool FaceRecognizer::Private::trainKNN() const
+bool OpenCVDNNFaceRecognizer::Private::trainKNN() const
 {
     if (knn->empty())
     {
@@ -148,7 +147,7 @@ bool FaceRecognizer::Private::trainKNN() const
     return (knn->isTrained());
 }
 
-int FaceRecognizer::Private::predictSVM(cv::Mat faceEmbedding) const
+int OpenCVDNNFaceRecognizer::Private::predictSVM(cv::Mat faceEmbedding) const
 {
     if (!svm->isTrained())
     {
@@ -161,7 +160,7 @@ int FaceRecognizer::Private::predictSVM(cv::Mat faceEmbedding) const
     return (int(svm->predict(faceEmbedding)));
 }
 
-int FaceRecognizer::Private::predictKNN(cv::Mat faceEmbedding, int k) const
+int OpenCVDNNFaceRecognizer::Private::predictKNN(cv::Mat faceEmbedding, int k) const
 {
     if (!knn->isTrained())
     {
@@ -177,7 +176,7 @@ int FaceRecognizer::Private::predictKNN(cv::Mat faceEmbedding, int k) const
     return (int(output.at<float>(0)));
 }
 
-int FaceRecognizer::Private::predictKDTree(const cv::Mat& faceEmbedding, int k) const
+int OpenCVDNNFaceRecognizer::Private::predictKDTree(const cv::Mat& faceEmbedding, int k) const
 {
     if (!tree)
     {
@@ -227,7 +226,7 @@ int FaceRecognizer::Private::predictKDTree(const cv::Mat& faceEmbedding, int k) 
     return prediction;
 }
 
-int FaceRecognizer::Private::predictDb(const cv::Mat& faceEmbedding, int k) const
+int OpenCVDNNFaceRecognizer::Private::predictDb(const cv::Mat& faceEmbedding, int k) const
 {
     QMap<double, QVector<int> > closestNeighbors = FaceDbAccess().db()->getClosestNeighborsTreeDb(faceEmbedding, 1.0, k);
 
@@ -267,22 +266,22 @@ int FaceRecognizer::Private::predictDb(const cv::Mat& faceEmbedding, int k) cons
     return prediction;
 }
 
-FaceRecognizer::FaceRecognizer(Classifier method)
+OpenCVDNNFaceRecognizer::OpenCVDNNFaceRecognizer(Classifier method)
     : d(new Private(method))
 {
 }
 
-FaceRecognizer::~FaceRecognizer()
+OpenCVDNNFaceRecognizer::~OpenCVDNNFaceRecognizer()
 {
     delete d;
 }
 
-void FaceRecognizer::setNbNeighBors(int k)
+void OpenCVDNNFaceRecognizer::setNbNeighBors(int k)
 {
     d->kNeighbors = k;
 }
 
-cv::Mat FaceRecognizer::prepareForRecognition(const QImage& inputImage)
+cv::Mat OpenCVDNNFaceRecognizer::prepareForRecognition(const QImage& inputImage)
 {
     int TargetInputSize = 256;
 
@@ -324,7 +323,7 @@ cv::Mat FaceRecognizer::prepareForRecognition(const QImage& inputImage)
     return cvImage;
 }
 
-bool FaceRecognizer::insertData(const cv::Mat& nodePos, const int label, const QString& context)
+bool OpenCVDNNFaceRecognizer::insertData(const cv::Mat& nodePos, const int label, const QString& context)
 {
     int nodeId = FaceDbAccess().db()->insertFaceVector(nodePos, label, context);
 
@@ -364,7 +363,7 @@ bool FaceRecognizer::insertData(const cv::Mat& nodePos, const int label, const Q
     return true;
 }
 
-void FaceRecognizer::train(const QList<QImage>& images,
+void OpenCVDNNFaceRecognizer::train(const QList<QImage>& images,
                            const int label,
                            const QString& context)
 {
@@ -381,7 +380,7 @@ void FaceRecognizer::train(const QList<QImage>& images,
     }
 }
 
-int FaceRecognizer::recognize(const QImage& inputImage)
+int OpenCVDNNFaceRecognizer::recognize(const QImage& inputImage)
 {
     int id = -1;
 
@@ -409,7 +408,7 @@ int FaceRecognizer::recognize(const QImage& inputImage)
 }
 
 
-QMap<double, QVector<int> > FaceRecognizer::getClosestNodes(const cv::Mat& position,
+QMap<double, QVector<int> > OpenCVDNNFaceRecognizer::getClosestNodes(const cv::Mat& position,
                                                             double sqRange,
                                                             int maxNbNeighbors)
 {

@@ -73,7 +73,7 @@ void FacialRecognitionWrapper::Private::clear(const QList<int>& idsToClear, cons
 
     FaceDbAccess().db()->clearTreeDb();
 
-    recognizer = new FaceRecognizer(FaceRecognizer::DB);
+    recognizer = new OpenCVDNNFaceRecognizer(OpenCVDNNFaceRecognizer::DB);
 
 #else
 

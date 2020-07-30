@@ -31,7 +31,7 @@
 // digiKam include
 #include "digikam_opencv.h"
 
-namespace RecognitionTest
+namespace Digikam
 {
 
 class KDNode

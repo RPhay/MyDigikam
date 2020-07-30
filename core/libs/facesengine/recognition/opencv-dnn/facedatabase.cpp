@@ -27,7 +27,7 @@
 #include <QSqlError>
 #include <QDebug>
 
-namespace RecognitionTest
+namespace Digikam
 {
 class Q_DECL_HIDDEN FaceDatabase::Private
 {

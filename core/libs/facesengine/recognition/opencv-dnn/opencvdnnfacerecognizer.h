@@ -23,8 +23,8 @@
  * ============================================================ */
 
 
-#ifndef FACERECOGNIZER_H
-#define FACERECOGNIZER_H
+#ifndef OPENCV_DNN_FACERECOGNIZER_H
+#define OPENCV_DNN_FACERECOGNIZER_H
 
 // Qt include
 
@@ -36,12 +36,10 @@
 #include "digikam_export.h"
 #include "identity.h"
 
-using namespace Digikam;
-
-namespace RecognitionTest
+namespace Digikam
 {
 // TODO remove export macro after testing
-class DIGIKAM_GUI_EXPORT FaceRecognizer
+class DIGIKAM_GUI_EXPORT OpenCVDNNFaceRecognizer
 {
 public:
 
@@ -54,10 +52,10 @@ public:
     };
 
     /**
-     *  @brief FaceRecognizer:Master class to control entire recognition using OpenFace algorithm
+     *  @brief OpenCVDNNFaceRecognizer:Master class to control entire recognition using OpenFace algorithm
      */
-    explicit FaceRecognizer(Classifier method = Tree);
-    ~FaceRecognizer();
+    explicit OpenCVDNNFaceRecognizer(Classifier method = Tree);
+    ~OpenCVDNNFaceRecognizer();
 
 public:
 
@@ -100,12 +98,12 @@ public:
 private:
 
     /// Hidden copy constructor and assignment operator.
-    FaceRecognizer(const FaceRecognizer&);
-    FaceRecognizer& operator=(const FaceRecognizer&);
+    OpenCVDNNFaceRecognizer(const OpenCVDNNFaceRecognizer&);
+    OpenCVDNNFaceRecognizer& operator=(const OpenCVDNNFaceRecognizer&);
 
     class Private;
     Private* d;
 };
 
 }
-#endif // FACERECOGNIZER_H
+#endif // OPENCV_DNN_FACERECOGNIZER_H

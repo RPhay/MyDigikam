@@ -27,7 +27,7 @@
 namespace Digikam
 {
 
-double sqrDistance1(const float* pos1, const float* pos2, int dimension)
+double sqrDistanceVector(const float* pos1, const float* pos2, int dimension)
 {
     double sqrDistance = 0;
 
@@ -271,7 +271,7 @@ double FaceDb::getClosestNeighborsTreeDb(const DataNode& subTree,
     }
 
     // add current node to the list
-    const double sqrdistanceToCurrentNode = sqrDistance1(position.ptr<float>(), subTree.position.ptr<float>(), 128);
+    const double sqrdistanceToCurrentNode = sqrDistanceVector(position.ptr<float>(), subTree.position.ptr<float>(), 128);
 
     if (sqrdistanceToCurrentNode < sqRange)
     {

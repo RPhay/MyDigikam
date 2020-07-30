@@ -23,8 +23,8 @@
  *
  * ============================================================ */
 
-#ifndef FACE_EXTRACTOR_H
-#define FACE_EXTRACTOR_H
+#ifndef DNN_FACE_EXTRACTOR_H
+#define DNN_FACE_EXTRACTOR_H
 
 // C++ includes
 
@@ -38,18 +38,16 @@
 #include "digikam_opencv.h"
 #include "digikam_export.h"
 
-namespace RecognitionTest
+namespace Digikam
 {
-// Clone of DNNFaceExtractor
-// TODO change it back when finish
 // TODO remove export macro after testing
-class DIGIKAM_GUI_EXPORT FaceExtractor
+class DIGIKAM_GUI_EXPORT DNNFaceExtractor
 {
 
 public:
 
-    explicit FaceExtractor();
-    ~FaceExtractor();
+    explicit DNNFaceExtractor();
+    ~DNNFaceExtractor();
 
     cv::Mat alignFace(const cv::Mat& inputImage);
 
@@ -73,6 +71,6 @@ private:
     Private* d;
 };
 
-} // namespace RecognitionTest
+} // namespace Digikam
 
-#endif // FACE_EXTRACTOR_H
+#endif // DNN_FACE_EXTRACTOR_H

@@ -22,7 +22,7 @@
 
 #include "kd_tree.h"
 
-namespace RecognitionTest
+namespace Digikam
 {
 
 class KDTree::Private

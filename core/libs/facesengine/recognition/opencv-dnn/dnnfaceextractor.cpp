@@ -22,7 +22,7 @@
  *
  * ============================================================ */
 
-#include "faceextractor.h"
+#include "dnnfaceextractor.h"
 
 // Qt includes
 
@@ -37,12 +37,10 @@
 #include "digikam_debug.h"
 #include "recognitionpreprocessor.h"
 
-using namespace Digikam;
-
-namespace RecognitionTest
+namespace Digikam
 {
 
-class Q_DECL_HIDDEN FaceExtractor::Private
+class Q_DECL_HIDDEN DNNFaceExtractor::Private
 {
 public:
 
@@ -67,8 +65,8 @@ public:
     cv::Scalar    meanValToSubtract;
 };
 
-double FaceExtractor::cosineDistance(std::vector<float> v1,
-                                     std::vector<float> v2)
+double DNNFaceExtractor::cosineDistance(std::vector<float> v1,
+                                        std::vector<float> v2)
 {
     assert(v1.size() == v2.size());
 
@@ -79,8 +77,8 @@ double FaceExtractor::cosineDistance(std::vector<float> v1,
     return (scalarProduct / (normV1 * normV2));
 }
 
-double FaceExtractor::L2squareDistance(std::vector<float> v1,
-                                       std::vector<float> v2)
+double DNNFaceExtractor::L2squareDistance(std::vector<float> v1,
+                                          std::vector<float> v2)
 {
     assert(v1.size() == v2.size());
 
@@ -94,7 +92,7 @@ double FaceExtractor::L2squareDistance(std::vector<float> v1,
     return sqrDistance;
 }
 
-double FaceExtractor::L2squareNormDistance(std::vector<float> v1, std::vector<float> v2)
+double DNNFaceExtractor::L2squareNormDistance(std::vector<float> v1, std::vector<float> v2)
 {
     assert(v1.size() == v2.size());
 
@@ -111,7 +109,7 @@ double FaceExtractor::L2squareNormDistance(std::vector<float> v1, std::vector<fl
     return sqrDistance;
 }
 
-cv::Mat FaceExtractor::vectortomat(const std::vector<float>& vector)
+cv::Mat DNNFaceExtractor::vectortomat(const std::vector<float>& vector)
 {
     cv::Mat mat(1, vector.size(), 5);
 
@@ -120,7 +118,7 @@ cv::Mat FaceExtractor::vectortomat(const std::vector<float>& vector)
     return mat;
 }
 
-QJsonArray FaceExtractor::encodeVector(const std::vector<float>& vector)
+QJsonArray DNNFaceExtractor::encodeVector(const std::vector<float>& vector)
 {
     QJsonArray array;
 
@@ -132,7 +130,7 @@ QJsonArray FaceExtractor::encodeVector(const std::vector<float>& vector)
     return array;
 }
 
-std::vector<float> FaceExtractor::decodeVector(const QJsonArray& json)
+std::vector<float> DNNFaceExtractor::decodeVector(const QJsonArray& json)
 {
     std::vector<float> vector;
 
@@ -144,7 +142,7 @@ std::vector<float> FaceExtractor::decodeVector(const QJsonArray& json)
     return vector;
 }
 
-FaceExtractor::FaceExtractor()
+DNNFaceExtractor::DNNFaceExtractor()
     : d(new Private)
 {
     // Read pretrained neural network for face recognition
@@ -171,17 +169,17 @@ FaceExtractor::FaceExtractor()
     d->meanValToSubtract = cv::Scalar(0.0, 0.0, 0.0);
 }
 
-FaceExtractor::~FaceExtractor()
+DNNFaceExtractor::~DNNFaceExtractor()
 {
     delete d;
 }
 
-cv::Mat FaceExtractor::alignFace(const cv::Mat& inputImage)
+cv::Mat DNNFaceExtractor::alignFace(const cv::Mat& inputImage)
 {
     return d->preprocessor->preprocess(inputImage);
 }
 
-std::vector<float> FaceExtractor::getFaceEmbedding(const cv::Mat& faceImage)
+std::vector<float> DNNFaceExtractor::getFaceEmbedding(const cv::Mat& faceImage)
 {
     cv::Mat face_descriptors = getFaceDescriptor(faceImage);
 
@@ -193,7 +191,7 @@ std::vector<float> FaceExtractor::getFaceEmbedding(const cv::Mat& faceImage)
     return std::vector<float>(data, data + face_descriptors.cols);
 }
 
-cv::Mat FaceExtractor::getFaceDescriptor(const cv::Mat& faceImage)
+cv::Mat DNNFaceExtractor::getFaceDescriptor(const cv::Mat& faceImage)
 {
     qCDebug(DIGIKAM_FACEDB_LOG) << "faceImage channels: " << faceImage.channels();
     qCDebug(DIGIKAM_FACEDB_LOG) << "faceImage size: (" << faceImage.rows << ", " << faceImage.cols << ")\n";

@@ -34,7 +34,7 @@
 
 #ifdef USE_DNN_RECOGNITION_BACKEND
 
-//#   include "kd_tree.h"
+#   include "kd_tree.h"
 
 #else
 

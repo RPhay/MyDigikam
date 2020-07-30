@@ -25,9 +25,7 @@
 
 #include "identity.h"
 
-using namespace Digikam;
-
-namespace RecognitionTest
+namespace Digikam
 {
 
 class FaceDatabase

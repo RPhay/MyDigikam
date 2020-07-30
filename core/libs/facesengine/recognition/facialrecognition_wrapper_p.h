@@ -49,8 +49,7 @@ NOTE: experimental and deprecated
 */
 
 #ifdef USE_DNN_RECOGNITION_BACKEND
-#   include "facerecognizer.h"
-using namespace RecognitionTest;
+#   include "opencvdnnfacerecognizer.h"
 #else
 #   include "opencvlbphfacerecognizer.h"
 #endif
@@ -109,7 +108,7 @@ public:
 
 #ifdef USE_DNN_RECOGNITION_BACKEND
 
-    FaceRecognizer*             recognizer;
+    OpenCVDNNFaceRecognizer*    recognizer;
 
 #else
 
