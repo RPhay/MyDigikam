@@ -36,7 +36,6 @@
 
 // Local includes
 
-#include "recognitiondatabase.h"
 #include "facialrecognition_wrapper.h"
 #include "coredbaccess.h"
 #include "dbengineparameters.h"

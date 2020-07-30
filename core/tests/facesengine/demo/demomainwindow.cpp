@@ -37,7 +37,6 @@
 
 // Local includes
 
-#include "recognitiondatabase.h"
 #include "facialrecognition_wrapper.h"
 #include "facedetector.h"
 #include "demofaceitem.h"

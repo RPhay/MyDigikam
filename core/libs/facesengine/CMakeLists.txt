@@ -156,8 +156,6 @@ if(DNN_RECOGNITION)
                                       ${CMAKE_CURRENT_SOURCE_DIR}/recognition/opencv-dnn/kd_tree.cpp
                                       ${CMAKE_CURRENT_SOURCE_DIR}/recognition/opencv-dnn/opencvdnnfacerecognizer.cpp
                                       ${CMAKE_CURRENT_SOURCE_DIR}/recognition/opencv-dnn/dnnfaceextractor.cpp
-                                      ${CMAKE_CURRENT_SOURCE_DIR}/recognition/opencv-dnn/facedatabase.cpp
-                                      ${CMAKE_CURRENT_SOURCE_DIR}/recognition/opencv-dnn/faceembedding_db.cpp
                                       ${CMAKE_CURRENT_SOURCE_DIR}/recognition/opencv-dnn/spatial_database.cpp
     )
 
