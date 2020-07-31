@@ -134,6 +134,7 @@ BUGFIXES:
 126 ==> 416266 - digiKam crashes during face detection.
 127 ==> 403073 - Can't remove a removable media when digiKam run.
 128 ==> 414737 - DigiKam becomes unresponsive when clicking on NFS-mounted photos.
-129 ==> 
+129 ==> 364231 - Support JPEG2000 using OpenJPEG to replace LibJasper.
+130 ==> 
 
 
