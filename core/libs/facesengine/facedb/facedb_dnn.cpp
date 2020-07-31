@@ -70,12 +70,11 @@ KDTree* FaceDb::reconstructTree() const
 
         if (newNode)
         {
-            qDebug() << "get node" << nodeId << "from DB, for identity" << identity;
             newNode->setNodeId(nodeId);
         }
         else
         {
-            qWarning() << "Error insert node" << nodeId;
+            qCWarning(DIGIKAM_FACEDB_LOG) << "Error insert node" << nodeId;
         }
     }
 

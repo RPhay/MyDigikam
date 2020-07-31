@@ -48,22 +48,20 @@ public:
     Private(Classifier method)
         : method(method),
           extractor(new DNNFaceExtractor),
-          trainData(nullptr),
           tree(nullptr),
-          kNeighbors(3)
+          kNeighbors(3),
+          newDataAdded(true)
     {
         switch (method)
         {
             case SVM:
                 svm = cv::ml::SVM::create();
                 svm->setKernel(cv::ml::SVM::LINEAR);
-                trainData = FaceDbAccess().db()->trainData();
                 break;
             case OpenCV_KNN:
                 knn = cv::ml::KNearest::create();
                 knn->setAlgorithmType(cv::ml::KNearest::BRUTE_FORCE);
                 knn->setIsClassifier(true);
-                trainData = FaceDbAccess().db()->trainData();
                 break;
             case Tree:
                 tree = FaceDbAccess().db()->reconstructTree();
@@ -83,11 +81,11 @@ public:
 
 public:
 
-    bool trainSVM() const;
-    bool trainKNN() const;
+    bool trainSVM();
+    bool trainKNN();
 
-    int predictSVM(cv::Mat faceEmbedding) const;
-    int predictKNN(cv::Mat faceEmbedding, int k) const;
+    int predictSVM(cv::Mat faceEmbedding);
+    int predictKNN(cv::Mat faceEmbedding, int k);
 
     int predictKDTree(const cv::Mat& faceEmbedding, int k) const;
     int predictDb(const cv::Mat& faceEmbedding, int k) const;
@@ -100,68 +98,62 @@ public:
     cv::Ptr<cv::ml::SVM> svm;
     cv::Ptr<cv::ml::KNearest> knn;
 
-    cv::Ptr<cv::ml::TrainData> trainData;
-
     KDTree* tree;
     int kNeighbors;
+
+    bool newDataAdded;
 };
 
 
-bool OpenCVDNNFaceRecognizer::Private::trainSVM() const
+bool OpenCVDNNFaceRecognizer::Private::trainSVM()
 {
-    if (svm->empty())
-    {
-        return false;
-    }
-
     QElapsedTimer timer;
     timer.start();
 
-    svm->train(trainData);
+    svm->train(FaceDbAccess().db()->trainData());
 
     qCDebug(DIGIKAM_FACEDB_LOG) << "Support vector machine trains in" << timer.elapsed() << "ms";
 
     return (svm->isTrained());
 }
 
-bool OpenCVDNNFaceRecognizer::Private::trainKNN() const
+bool OpenCVDNNFaceRecognizer::Private::trainKNN()
 {
-    if (knn->empty())
-    {
-        return false;
-    }
-
     QElapsedTimer timer;
     timer.start();
 
-    knn->train(trainData);
+    knn->train(FaceDbAccess().db()->trainData());
 
     qCDebug(DIGIKAM_FACEDB_LOG) << "KNN trains in" << timer.elapsed() << "ms";
 
     return (knn->isTrained());
 }
 
-int OpenCVDNNFaceRecognizer::Private::predictSVM(cv::Mat faceEmbedding) const
+int OpenCVDNNFaceRecognizer::Private::predictSVM(cv::Mat faceEmbedding)
 {
-    if (!svm->isTrained())
+    if (newDataAdded)
     {
         if (!trainSVM())
         {
             return -1;
         }
+
+        newDataAdded = false;
     }
 
     return (int(svm->predict(faceEmbedding)));
 }
 
-int OpenCVDNNFaceRecognizer::Private::predictKNN(cv::Mat faceEmbedding, int k) const
+int OpenCVDNNFaceRecognizer::Private::predictKNN(cv::Mat faceEmbedding, int k)
 {
-    if (!knn->isTrained())
+    if (newDataAdded)
     {
         if (!trainKNN())
         {
             return -1;
         }
+
+        newDataAdded = false;
     }
 
     cv::Mat output;
@@ -349,17 +341,13 @@ bool OpenCVDNNFaceRecognizer::insertData(const cv::Mat& nodePos, const int label
             return false;
         }
     }
-    else
-    {
-        // TODO: append more data to traindata and retrain model
-    }
 
     return true;
 }
 
 void OpenCVDNNFaceRecognizer::train(const QList<QImage>& images,
-                           const int label,
-                           const QString& context)
+                                    const int            label,
+                                    const QString&       context)
 {
     for (QList<QImage>::const_iterator image  = images.cbegin();
                                        image != images.cend();
@@ -372,6 +360,8 @@ void OpenCVDNNFaceRecognizer::train(const QList<QImage>& images,
             qWarning() << "Fail to register a face of identity" << label;
         }
     }
+
+    d->newDataAdded = true;
 }
 
 int OpenCVDNNFaceRecognizer::recognize(const QImage& inputImage)
