@@ -140,4 +140,5 @@ BUGFIXES:
 132 ==> 417140 - Map panel shows white rectangle when using Google Maps.
 133 ==> 423312 - Qt 5.15.0 compilation warnings trace.
 134 ==> 422495 - Can't register more than one IPTC keyword.
-135 ==> 
+135 ==> 422124 - Manage manually versions.
+136 ==> 
