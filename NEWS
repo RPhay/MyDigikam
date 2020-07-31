@@ -133,5 +133,7 @@ BUGFIXES:
 125 ==> 347937 - SETUP : Collections added as "Removable Media" change as "Local Collections".
 126 ==> 416266 - digiKam crashes during face detection.
 127 ==> 403073 - Can't remove a removable media when digiKam run.
-128 ==> 
+128 ==> 414737 - DigiKam becomes unresponsive when clicking on NFS-mounted photos.
+129 ==> 
+
 
