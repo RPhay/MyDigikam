@@ -141,4 +141,10 @@ BUGFIXES:
 133 ==> 423312 - Qt 5.15.0 compilation warnings trace.
 134 ==> 422495 - Can't register more than one IPTC keyword.
 135 ==> 422124 - Manage manually versions.
-136 ==> 
+136 ==> 412591 - New unwanted window opens with map tab.
+137 ==> 405764 - Albums disappear when "sshfs - transport endpoint is not connected".
+138 ==> 399148 - Digikam sometimes crashes when writing metadata (Tags or Geo coordinates).
+139 ==> 378971 - Incorrect handling of DateTimeOriginal tags when editing NEF (Nikon RAW).
+140 ==> 
+
+
