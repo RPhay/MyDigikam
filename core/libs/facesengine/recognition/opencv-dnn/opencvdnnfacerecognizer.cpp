@@ -34,7 +34,6 @@
 #include "digikam_debug.h"
 #include "dnnfaceextractor.h"
 #include "kd_tree.h"
-//#include "spatial_database.h"
 
 #include "facedbaccess.h"
 #include "facedb.h"
@@ -49,7 +48,6 @@ public:
     Private(Classifier method)
         : method(method),
           extractor(new DNNFaceExtractor),
-          //treedb(nullptr),
           trainData(nullptr),
           tree(nullptr),
           kNeighbors(3)
@@ -71,7 +69,6 @@ public:
                 tree = FaceDbAccess().db()->reconstructTree();
                 break;
             case DB:
-                //treedb = new SpatialDatabase();
                 break;
             default:
                 qFatal("Invalid classifier");
@@ -82,7 +79,6 @@ public:
     {
         delete extractor;
         delete tree;
-        //delete treedb;
     }
 
 public:
@@ -105,8 +101,6 @@ public:
     cv::Ptr<cv::ml::KNearest> knn;
 
     cv::Ptr<cv::ml::TrainData> trainData;
-
-    //SpatialDatabase* treedb;
 
     KDTree* tree;
     int kNeighbors;

@@ -148,7 +148,6 @@ if(DNN_RECOGNITION)
     set(facesengine_database_LIB_SRCS ${facesengine_database_LIB_SRCS}
 
                                       # Neural NetWork Faces recognition module based on OpenCV DNN
-
                                       ${CMAKE_CURRENT_SOURCE_DIR}/facedb/facedb_dnn.cpp
                                       ${CMAKE_CURRENT_SOURCE_DIR}/facedb/facedb_dnn_spatial.cpp
 
@@ -156,7 +155,6 @@ if(DNN_RECOGNITION)
                                       ${CMAKE_CURRENT_SOURCE_DIR}/recognition/opencv-dnn/kd_tree.cpp
                                       ${CMAKE_CURRENT_SOURCE_DIR}/recognition/opencv-dnn/opencvdnnfacerecognizer.cpp
                                       ${CMAKE_CURRENT_SOURCE_DIR}/recognition/opencv-dnn/dnnfaceextractor.cpp
-                                      ${CMAKE_CURRENT_SOURCE_DIR}/recognition/opencv-dnn/spatial_database.cpp
     )
 
 else()
