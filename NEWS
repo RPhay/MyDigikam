@@ -136,7 +136,6 @@ BUGFIXES:
 128 ==> 414737 - DigiKam becomes unresponsive when clicking on NFS-mounted photos.
 129 ==> 364231 - Support JPEG2000 using OpenJPEG to replace LibJasper.
 130 ==> 397718 - String comparison type field - meaning is unclear.
-131 ==> 
-
-
+131 ==> 410438 - No access to attached Storage device.
+132 ==> 
 
