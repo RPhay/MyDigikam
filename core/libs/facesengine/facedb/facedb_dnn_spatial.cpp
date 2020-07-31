@@ -76,11 +76,9 @@ bool FaceDb::insertToTreeDb(const int nodeID, const cv::Mat& faceEmbedding) cons
 
     if (parentID < 0)
     {
-        qDebug() << "fail to find parent node";
+        qCWarning(DIGIKAM_FACEDB_LOG) << "fail to find parent node";
         return false;
     }
-
-    qDebug() << "parent node" << parentID;
 
     QVariantList bindingValues;
 
@@ -99,7 +97,7 @@ bool FaceDb::insertToTreeDb(const int nodeID, const cv::Mat& faceEmbedding) cons
 
     if (newNode <= 0)
     {
-        qDebug() << "error insert into treedb" << query.lastError();
+        qCWarning(DIGIKAM_FACEDB_LOG) << "error insert into treedb" << query.lastError();
     }
 
     if (parentID > 0)
@@ -108,13 +106,15 @@ bool FaceDb::insertToTreeDb(const int nodeID, const cv::Mat& faceEmbedding) cons
         bindingValues << newNode;
         bindingValues << parentID;
         // not root -> update parent
+
+        QSqlQuery query;
         if (isLeftChild)
         {
-            d->db->execQuery(QLatin1String("UPDATE KDTree SET left = ? WHERE id = ?;"), bindingValues);
+            query = d->db->execQuery(QLatin1String("UPDATE KDTree SET left = ? WHERE id = ?;"), bindingValues);
         }
         else
         {
-            d->db->execQuery(QLatin1String("UPDATE KDTree SET right = ? WHERE id = ?;"), bindingValues);
+            query = d->db->execQuery(QLatin1String("UPDATE KDTree SET right = ? WHERE id = ?;"), bindingValues);
         }
     }
 
@@ -147,8 +147,11 @@ QMap<double, QVector<int> > FaceDb::getClosestNeighborsTreeDb(const cv::Mat& pos
         query = d->db->execQuery(QLatin1String("SELECT identity, embedding FROM FaceMatrices WHERE id = ?"),
                                  bindingValues);
 
-        root.label    = query.value(0).toInt();
-        root.position = cv::Mat(1, 128, CV_32F, query.value(1).toByteArray().data()).clone();
+        if(query.next())
+        {
+            root.label    = query.value(0).toInt();
+            root.position = cv::Mat(1, 128, CV_32F, query.value(1).toByteArray().data()).clone();
+        }
 
         sqRange = getClosestNeighborsTreeDb(root, closestNeighbors, position, sqRange, maxNbNeighbors);
     }
@@ -179,10 +182,7 @@ void FaceDb::updateRangeTreeDb(int nodeId, cv::Mat& minRange, cv::Mat& maxRange,
     bindingValues << QByteArray::fromRawData((char*)min, (sizeof(float) * 128));
     bindingValues << nodeId;
 
-    qDebug() << "update range";
-    d->db->execQuery(QLatin1String("UPDATE KDTree SET max_range = ?, min_range = ? WHERE id = ?;"), bindingValues);
-
-    qDebug() << "updated range";
+    DbEngineSqlQuery query = d->db->execQuery(QLatin1String("UPDATE KDTree SET max_range = ?, min_range = ? WHERE id = ?;"), bindingValues);
 }
 
 int FaceDb::findParentTreeDb(const cv::Mat& nodePos, bool& leftChild, int& parentSplitAxis) const
@@ -205,7 +205,7 @@ int FaceDb::findParentTreeDb(const cv::Mat& nodePos, bool& leftChild, int& paren
         {
             if (parent == 1)
             {
-                qDebug() << "add root";
+                //qDebug() << "add root";
                 return 0;
             }
 
@@ -219,14 +219,14 @@ int FaceDb::findParentTreeDb(const cv::Mat& nodePos, bool& leftChild, int& paren
                  << "right"      << query.value(5);
     */
 
-        int split = query.value(0).toInt();
-        parentSplitAxis = split;
+        int split        = query.value(0).toInt();
+        parentSplitAxis  = split;
 
-        int embeddingId     = query.value(1).toInt();
-        cv::Mat maxRange    = cv::Mat(1, 128, CV_32F, query.value(2).toByteArray().data()).clone();
-        cv::Mat minRange    = cv::Mat(1, 128, CV_32F, query.value(3).toByteArray().data()).clone();
-        QVariant left       = query.value(4);
-        QVariant right      = query.value(5);
+        int embeddingId  = query.value(1).toInt();
+        cv::Mat maxRange = cv::Mat(1, 128, CV_32F, query.value(2).toByteArray().data()).clone();
+        cv::Mat minRange = cv::Mat(1, 128, CV_32F, query.value(3).toByteArray().data()).clone();
+        QVariant left    = query.value(4);
+        QVariant right   = query.value(5);
 
         bindingValues.clear();
         bindingValues << embeddingId;
@@ -236,7 +236,7 @@ int FaceDb::findParentTreeDb(const cv::Mat& nodePos, bool& leftChild, int& paren
 
         if (! query.next())
         {
-            qDebug() << "fail to find parent face embedding" << query.lastError();
+            qCWarning(DIGIKAM_FACEDB_LOG) << "fail to find parent face embedding" << query.lastError();
             return -1;
         }
 
@@ -270,7 +270,7 @@ double FaceDb::getClosestNeighborsTreeDb(const DataNode& subTree,
         return sqRange;
     }
 
-    // add current node to the list
+    // try to add current node to the list
     const double sqrdistanceToCurrentNode = sqrDistanceVector(position.ptr<float>(), subTree.position.ptr<float>(), 128);
 
     if (sqrdistanceToCurrentNode < sqRange)
@@ -307,14 +307,14 @@ double FaceDb::getClosestNeighborsTreeDb(const DataNode& subTree,
     }
 
     // sub-trees Traversal
-    double sqrDistanceleftTree  = 0;
-    double sqrDistancerightTree = 0;
+    double sqrDistanceLeftTree  = 0;
+    double sqrDistanceRightTree = 0;
     DataNode leftNode;
     DataNode rightNode;
 
     if (subTree.left <= 0)
     {
-        sqrDistanceleftTree = DBL_MAX;
+        sqrDistanceLeftTree = DBL_MAX;
     }
     else
     {
@@ -348,11 +348,11 @@ double FaceDb::getClosestNeighborsTreeDb(const DataNode& subTree,
 
                 const float* minRange = leftNode.minRange.ptr<float>();
                 const float* maxRange = leftNode.maxRange.ptr<float>();
-                const float* position      = leftNode.position.ptr<float>();
+                const float* position = leftNode.position.ptr<float>();
 
                 for (int i = 0; i < 128; ++i)
                 {
-                    sqrDistanceleftTree += (pow(qMax((minRange[i] - position[i]), 0.0f), 2) +
+                    sqrDistanceLeftTree += (pow(qMax((minRange[i] - position[i]), 0.0f), 2) +
                                             pow(qMax((position[i] - maxRange[i]), 0.0f), 2));
                 }
             }
@@ -361,7 +361,7 @@ double FaceDb::getClosestNeighborsTreeDb(const DataNode& subTree,
 
     if (subTree.right <= 0)
     {
-        sqrDistancerightTree = DBL_MAX;
+        sqrDistanceRightTree = DBL_MAX;
     }
     else
     {
@@ -390,16 +390,16 @@ double FaceDb::getClosestNeighborsTreeDb(const DataNode& subTree,
 
             if (query.next())
             {
-                leftNode.label    = query.value(0).toInt();
-                leftNode.position = cv::Mat(1, 128, CV_32F, query.value(1).toByteArray().data()).clone();
+                rightNode.label    = query.value(0).toInt();
+                rightNode.position = cv::Mat(1, 128, CV_32F, query.value(1).toByteArray().data()).clone();
 
-                const float* minRange = leftNode.minRange.ptr<float>();
-                const float* maxRange = leftNode.maxRange.ptr<float>();
-                const float* position      = leftNode.position.ptr<float>();
+                const float* minRange = rightNode.minRange.ptr<float>();
+                const float* maxRange = rightNode.maxRange.ptr<float>();
+                const float* position = rightNode.position.ptr<float>();
 
                 for (int i = 0; i < 128; ++i)
                 {
-                    sqrDistancerightTree += (pow(qMax((minRange[i] - position[i]), 0.0f), 2) +
+                    sqrDistanceRightTree += (pow(qMax((minRange[i] - position[i]), 0.0f), 2) +
                                              pow(qMax((position[i] - maxRange[i]), 0.0f), 2));
                 }
             }
@@ -407,14 +407,14 @@ double FaceDb::getClosestNeighborsTreeDb(const DataNode& subTree,
     }
 
     // traverse the closest area
-    if (sqrDistanceleftTree < sqrDistancerightTree)
+    if (sqrDistanceLeftTree < sqrDistanceRightTree)
     {
-        if (sqrDistanceleftTree < sqRange)
+        if (sqrDistanceLeftTree < sqRange)
         {
             // traverse left Tree
             sqRange = getClosestNeighborsTreeDb(leftNode, neighborList, position, sqRange, maxNbNeighbors);
 
-            if (sqrDistancerightTree < sqRange)
+            if (sqrDistanceRightTree < sqRange)
             {
                 // traverse right Tree
                 sqRange = getClosestNeighborsTreeDb(rightNode, neighborList, position, sqRange, maxNbNeighbors);
@@ -423,12 +423,12 @@ double FaceDb::getClosestNeighborsTreeDb(const DataNode& subTree,
     }
     else
     {
-        if (sqrDistancerightTree < sqRange)
+        if (sqrDistanceRightTree < sqRange)
         {
             // traverse right Tree
             sqRange = getClosestNeighborsTreeDb(rightNode, neighborList, position, sqRange, maxNbNeighbors);
 
-            if (sqrDistanceleftTree < sqRange)
+            if (sqrDistanceLeftTree < sqRange)
             {
                 // traverse left Tree
                 sqRange = getClosestNeighborsTreeDb(leftNode, neighborList, position, sqRange, maxNbNeighbors);
