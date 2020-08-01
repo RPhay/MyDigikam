@@ -869,7 +869,18 @@ bool ItemQueryBuilder::buildField(QString& sql, SearchXmlCachingReader& reader, 
                 }
                 else // InTree
                 {
-                    selectQuery += QString::fromUtf8("(%1tagid=? OR %1tagid IN (SELECT id FROM TagsTree WHERE pid=?)) AND ");
+                    if (CoreDbAccess().backend()->databaseType() == BdEngineBackend::DbType::SQLite)
+                    {
+                        selectQuery += QString::fromUtf8("(%1tagid=? OR %1tagid IN (SELECT id FROM TagsTree WHERE pid=?)) AND ");
+                    }
+                    else
+                    {
+                        selectQuery += QString::fromUtf8("(%1tagid=? OR %1tagid IN (SELECT ita.id FROM Tags AS ita "
+                                                         "JOIN (Tags AS tp JOIN Tags AS tc ON tc.lft "
+                                                         "BETWEEN tp.lft AND tp.rgt) ON tc.id=ita.id "
+                                                         "WHERE tp.id=?)) AND ");
+                    }
+
                     *boundValues << tagId << tagId;
                 }
             }

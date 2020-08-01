@@ -145,6 +145,5 @@ BUGFIXES:
 137 ==> 405764 - Albums disappear when "sshfs - transport endpoint is not connected".
 138 ==> 399148 - Digikam sometimes crashes when writing metadata (Tags or Geo coordinates).
 139 ==> 378971 - Incorrect handling of DateTimeOriginal tags when editing NEF (Nikon RAW).
-140 ==> 
-
-
+140 ==> 424691 - Thumbnails not showing for face tags.
+141 ==> 

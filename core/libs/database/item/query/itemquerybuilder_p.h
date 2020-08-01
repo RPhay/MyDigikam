@@ -49,6 +49,8 @@
 #include "digikam_debug.h"
 #include "coredbaccess.h"
 #include "coredb.h"
+#include "coredbbackend.h"
+#include "dbenginebackend.h"
 #include "fieldquerybuilder.h"
 
 namespace Digikam
