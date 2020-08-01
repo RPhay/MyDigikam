@@ -156,5 +156,10 @@ BUGFIXES:
 148 ==> 406979 - Specific PNG crashes digiKam.
 149 ==> 408592 - "Broken PNG Image" cause digiKam to crash under Windows 64 bit.
 150 ==> 411763 - When I enter in "Tags" tab in "No tags" mode, the program is crashing every time.
-151 ==> 
+151 ==> 372762 - List of face tags are not sorted by recently uses.
+152 ==> 380403 - License of plugins interface.
+153 ==> 374686 - HTML Gallery tool must support modern HTML5 tags.
+154 ==> 
+
+
 
