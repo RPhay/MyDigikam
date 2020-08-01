@@ -147,4 +147,5 @@ BUGFIXES:
 139 ==> 378971 - Incorrect handling of DateTimeOriginal tags when editing NEF (Nikon RAW).
 140 ==> 424691 - Thumbnails not showing for face tags.
 141 ==> 419079 - Star rating on TIFF images destroys the image.
-142 ==> 
+142 ==> 401459 - Turning and cutting in one step.
+143 ==> 
