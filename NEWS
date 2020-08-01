@@ -149,5 +149,5 @@ BUGFIXES:
 141 ==> 419079 - Star rating on TIFF images destroys the image.
 142 ==> 401459 - Turning and cutting in one step.
 143 ==> 396995 - Colorize Captions/tags and Filter Tags from right panels to differentiate views.
-144 ==> 
-
+144 ==> 406584 - digiKam crashes after scanning for new items.
+145 ==> 
