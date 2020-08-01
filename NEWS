@@ -143,7 +143,8 @@ BUGFIXES:
 135 ==> 422124 - Manage manually versions.
 136 ==> 412591 - New unwanted window opens with map tab.
 137 ==> 405764 - Albums disappear when "sshfs - transport endpoint is not connected".
-138 ==> 399148 - Digikam sometimes crashes when writing metadata (Tags or Geo coordinates).
+138 ==> 399148 - digiKam sometimes crashes when writing metadata (Tags or Geo coordinates).
 139 ==> 378971 - Incorrect handling of DateTimeOriginal tags when editing NEF (Nikon RAW).
 140 ==> 424691 - Thumbnails not showing for face tags.
-141 ==> 
+141 ==> 419079 - Star rating on TIFF images destroys the image.
+142 ==> 
