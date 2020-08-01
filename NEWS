@@ -152,5 +152,9 @@ BUGFIXES:
 144 ==> 406584 - digiKam crashes after scanning for new items.
 145 ==> 400552 - Marking multiple pictures.
 146 ==> 405856 - Misplaced selection.
-147 ==> 
+147 ==> 382706 - Assigning tag to NEF-file results in crash + config disappearing.
+148 ==> 406979 - Specific PNG crashes digiKam.
+149 ==> 408592 - "Broken PNG Image" cause digiKam to crash under Windows 64 bit.
+150 ==> 411763 - When I enter in "Tags" tab in "No tags" mode, the program is crashing every time.
+151 ==> 
 
