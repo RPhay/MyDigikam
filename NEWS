@@ -150,4 +150,7 @@ BUGFIXES:
 142 ==> 401459 - Turning and cutting in one step.
 143 ==> 396995 - Colorize Captions/tags and Filter Tags from right panels to differentiate views.
 144 ==> 406584 - digiKam crashes after scanning for new items.
-145 ==> 
+145 ==> 400552 - Marking multiple pictures.
+146 ==> 405856 - Misplaced selection.
+147 ==> 
+
