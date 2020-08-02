@@ -174,7 +174,7 @@ void PrintHelper::print(DImg& doc)
 
     QPrintDialog* const dialog          = new QPrintDialog(&printer, d->parent);
     dialog->setWindowTitle(i18n("Print Image"));
-    PrintOptionsPage* const optionsPage = new PrintOptionsPage(dialog, doc.size());
+    PrintOptionsPage* const optionsPage = new PrintOptionsPage(d->parent, doc.size());
     optionsPage->loadConfig();
     dialog->setOptionTabs(QList<QWidget*>() << optionsPage);
 

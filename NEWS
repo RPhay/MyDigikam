@@ -161,6 +161,5 @@ BUGFIXES:
 153 ==> 374686 - HTML Gallery tool must support modern HTML5 tags.
 154 ==> 378393 - Rename LUT3D.
 155 ==> 412374 - KRA (Krita) files thumbnails not rendered.
-156 ==> 
-
-
+156 ==> 374161 - Color management options not visible in simple print dialog.
+157 ==> 

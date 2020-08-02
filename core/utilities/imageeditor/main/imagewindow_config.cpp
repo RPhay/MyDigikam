@@ -33,7 +33,7 @@ void ImageWindow::slotSetup()
 
 void ImageWindow::slotSetupICC()
 {
-    Setup::execSinglePage(nullptr, Setup::ICCPage);
+    Setup::execSinglePage(this, Setup::ICCPage);
 }
 
 void ImageWindow::slotSetupChanged()
