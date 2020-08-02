@@ -162,4 +162,6 @@ BUGFIXES:
 154 ==> 378393 - Rename LUT3D.
 155 ==> 412374 - KRA (Krita) files thumbnails not rendered.
 156 ==> 374161 - Color management options not visible in simple print dialog.
-157 ==> 
+157 ==> 375572 - Don't keep the splash screen always on top while launching.
+158 ==> 
+
