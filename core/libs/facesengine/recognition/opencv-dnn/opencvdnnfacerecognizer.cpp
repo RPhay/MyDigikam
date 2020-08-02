@@ -315,14 +315,14 @@ bool OpenCVDNNFaceRecognizer::insertData(const cv::Mat& nodePos, const int label
 
     if (nodeId <= 0)
     {
-        qWarning() << "error inserting face embedding to database";
+        qCWarning(DIGIKAM_FACEDB_LOG) << "error inserting face embedding to database";
     }
 
     if (d->method == DB)
     {
         if (! FaceDbAccess().db()->insertToTreeDb(nodeId, nodePos))
         {
-            qWarning() << "Error insert face embedding";
+            qCWarning(DIGIKAM_FACEDB_LOG) << "Error insert face embedding";
             return false;
         }
     }
@@ -336,7 +336,7 @@ bool OpenCVDNNFaceRecognizer::insertData(const cv::Mat& nodePos, const int label
         }
         else
         {
-            qWarning() << "Error insert new node" << nodeId;
+            qCWarning(DIGIKAM_FACEDB_LOG) << "Error insert new node" << nodeId;
 
             return false;
         }
@@ -357,7 +357,7 @@ void OpenCVDNNFaceRecognizer::train(const QList<QImage>& images,
 
         if (!insertData(faceEmbedding, label, context))
         {
-            qWarning() << "Fail to register a face of identity" << label;
+            qCWarning(DIGIKAM_FACEDB_LOG) << "Fail to register a face of identity" << label;
         }
     }
 
@@ -385,18 +385,10 @@ int OpenCVDNNFaceRecognizer::recognize(const QImage& inputImage)
             id = d->predictDb(faceEmbedding, d->kNeighbors);
             break;
         default:
-            qWarning() << "Not recognized classifying method";
+            qCWarning(DIGIKAM_FACEDB_LOG) << "Not recognized classifying method";
     }
 
     return id;
-}
-
-
-QMap<double, QVector<int> > OpenCVDNNFaceRecognizer::getClosestNodes(const cv::Mat& position,
-                                                            double sqRange,
-                                                            int maxNbNeighbors)
-{
-    return FaceDbAccess().db()->getClosestNeighborsTreeDb(position, sqRange, maxNbNeighbors);
 }
 
 }

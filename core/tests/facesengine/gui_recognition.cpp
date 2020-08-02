@@ -171,7 +171,7 @@ MainWindow::MainWindow(const QDir &directory, QWidget *parent)
 {
     setWindowTitle(QLatin1String("Face recognition Test"));
 
-    m_detector   = new OpenCVDNNFaceDetector(DetectorNNModel::SSDMOBILENET);
+    m_detector   = new OpenCVDNNFaceDetector(DetectorNNModel::YOLO);
     m_recognizer = new OpenCVDNNFaceRecognizer(OpenCVDNNFaceRecognizer::Tree);
     m_extractor  = new DNNFaceExtractor();
 

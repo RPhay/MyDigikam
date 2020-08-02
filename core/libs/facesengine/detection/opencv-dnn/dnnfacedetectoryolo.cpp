@@ -35,6 +35,7 @@
 #include <QStandardPaths>
 #include <QList>
 #include <QRect>
+#include <QElapsedTimer>
 
 // Local includes
 
@@ -64,6 +65,8 @@ void DNNFaceDetectorYOLO::detectFaces(const cv::Mat& inputImage,
                                       const cv::Size& paddedSize,
                                       std::vector<cv::Rect>& detectedBboxes)
 {
+    QElapsedTimer timer;
+
     if (inputImage.empty())
     {
         qCDebug(DIGIKAM_FACESENGINE_LOG) << "Invalid image given, not detecting faces.";
@@ -73,9 +76,17 @@ void DNNFaceDetectorYOLO::detectFaces(const cv::Mat& inputImage,
     cv::Mat inputBlob = cv::dnn::blobFromImage(inputImage, scaleFactor, inputImageSize, meanValToSubtract, true, false);
     net.setInput(inputBlob);
     std::vector<cv::Mat> outs;
+
+    timer.start();
     net.forward(outs, getOutputsNames());
 
+    qDebug() << "forward YOLO detection in" << timer.elapsed() << "ms";
+
+    timer.start();
+
     postprocess(outs, paddedSize, detectedBboxes);
+
+    qDebug() << "postprocess YOLO detection in" << timer.elapsed() << "ms";
 }
 
 void DNNFaceDetectorYOLO::postprocess(const std::vector<cv::Mat>& outs,

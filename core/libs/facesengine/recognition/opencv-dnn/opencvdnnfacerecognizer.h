@@ -89,10 +89,6 @@ public:
     // TODO verify workflow to economize this routine
     int recognize(const QImage& inputImage);
 
-    QMap<double, QVector<int> > getClosestNodes(const cv::Mat& position,
-                                                double sqRange,
-                                                int maxNbNeighbors);
-
     void setNbNeighBors(int k);
 
 private:
