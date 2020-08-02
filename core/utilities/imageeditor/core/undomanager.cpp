@@ -242,7 +242,7 @@ void UndoManager::undoStep(bool saveRedo, bool execute, bool flyingRollback)
 
             needSnapshot = irreversible;
         }
-        else
+        else if (irreversible)
         {
             // Undoing an irreversible with next redo reversible:
             // Here, no snapshot was made in addAction, but we need it now
