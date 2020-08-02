@@ -391,4 +391,18 @@ int OpenCVDNNFaceRecognizer::recognize(const QImage& inputImage)
     return id;
 }
 
+void OpenCVDNNFaceRecognizer::clearTraining(const QList<int>& idsToClear, const QString& trainingContext)
+{
+    if (idsToClear.isEmpty())
+    {
+        FaceDbAccess().db()->clearDNNTraining(trainingContext);
+    }
+    else
+    {
+        FaceDbAccess().db()->clearDNNTraining(idsToClear, trainingContext);
+    }
+
+    //FaceDbAccess().db()->clearTreeDb();
+}
+
 }

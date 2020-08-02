@@ -188,4 +188,10 @@ void OpenCVFISHERFaceRecognizer::train(const QList<QImage>& images,
      */
 }
 
+void OpenCVFISHERFaceRecognizer::clearTraining(const QList<int>& idsToClear, const QString& trainingContext)
+{
+    Q_UNUSED(idsToClear);
+    Q_UNUSED(trainingContext);
+}
+
 } // namespace Digikam

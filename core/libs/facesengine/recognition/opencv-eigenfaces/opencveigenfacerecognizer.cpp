@@ -186,4 +186,16 @@ void OpenCVEIGENFaceRecognizer::train(const QList<QImage>& images,
     FaceDbAccess().db()->updateEIGENFaceModel(d->eigen(), preprocessedImages);
 }
 
+void OpenCVEIGENFaceRecognizer::clearTraining(const QList<int>& idsToClear, const QString& trainingContext)
+{
+    if (idsToClear.isEmpty())
+    {
+        FaceDbAccess().db()->clearEIGENTraining(trainingContext);
+    }
+    else
+    {
+        FaceDbAccess().db()->clearEIGENTraining(idsToClear, trainingContext);
+    }
+}
+
 } // namespace Digikam

@@ -71,6 +71,11 @@ public:
                const int label,
                const QString& context);
 
+    /**
+     * Clear trained data
+     */
+    void clearTraining(const QList<int>& idsToClear, const QString& trainingContext);
+
 private:
 
     // Hidden copy constructor and assignment operator.

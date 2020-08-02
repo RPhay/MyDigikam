@@ -193,4 +193,16 @@ void OpenCVLBPHFaceRecognizer::train(const QList<QImage>& images,
     FaceDbAccess().db()->updateLBPHFaceModel(d->lbph());
 }
 
+void OpenCVLBPHFaceRecognizer::clearTraining(const QList<int>& idsToClear, const QString& trainingContext)
+{
+    if (idsToClear.isEmpty())
+    {
+        FaceDbAccess().db()->clearLBPHTraining(trainingContext);
+    }
+    else
+    {
+        FaceDbAccess().db()->clearLBPHTraining(idsToClear, trainingContext);
+    }
+}
+
 } // namespace Digikam

@@ -58,47 +58,20 @@ void FacialRecognitionWrapper::Private::trainIdentityBatch(const QList<Identity>
 
 void FacialRecognitionWrapper::Private::clear(const QList<int>& idsToClear, const QString& trainingContext)
 {
+    recognizer->clearTraining(idsToClear, trainingContext);
+
     delete recognizer;
 
 #ifdef USE_DNN_RECOGNITION_BACKEND
-
-    if (idsToClear.isEmpty())
-    {
-        FaceDbAccess().db()->clearDNNTraining(trainingContext);
-    }
-    else
-    {
-        FaceDbAccess().db()->clearDNNTraining(idsToClear, trainingContext);
-    }
-
-    FaceDbAccess().db()->clearTreeDb();
 
     recognizer = new OpenCVDNNFaceRecognizer(OpenCVDNNFaceRecognizer::SVM);
 
 #else
 
-    if (idsToClear.isEmpty())
-    {
-        FaceDbAccess().db()->clearLBPHTraining(trainingContext);
-    }
-    else
-    {
-        FaceDbAccess().db()->clearLBPHTraining(idsToClear, trainingContext);
-    }
-
     recognizer = new OpenCVLBPHFaceRecognizer();
 
 /*
     NOTE: experimental and deprecated
-
-    if (idsToClear.isEmpty())
-    {
-        FaceDbAccess().db()->clearEIGENTraining(trainingContext);
-    }
-    else
-    {
-        FaceDbAccess().db()->clearEIGENTraining(idsToClear, trainingContext);
-    }
 
     recognizer = new OpenCVEIGENFaceRecognizer();
 
