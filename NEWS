@@ -163,5 +163,9 @@ BUGFIXES:
 155 ==> 412374 - KRA (Krita) files thumbnails not rendered.
 156 ==> 374161 - Color management options not visible in simple print dialog.
 157 ==> 375572 - Don't keep the splash screen always on top while launching.
-158 ==> 
+158 ==> 404899 - File transfer tool error without processing items.
+159 ==> 403050 - Export to remote storage does not work.
+160 ==> 397856 - Export to remote storage: transfer not done.
+161 ==> 
+
 
