@@ -166,6 +166,6 @@ BUGFIXES:
 158 ==> 404899 - File transfer tool error without processing items.
 159 ==> 403050 - Export to remote storage does not work.
 160 ==> 397856 - Export to remote storage: transfer not done.
-161 ==> 
-
-
+161 ==> 413905 - Some icon / picture are not displayed in maps but picture have GPS data.
+162 ==> 353458 - Some pictures have geolocalisation data, but the «geolocalised» tag is not attached.
+163 ==> 
