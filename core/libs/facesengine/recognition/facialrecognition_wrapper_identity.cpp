@@ -32,8 +32,8 @@ namespace Digikam
  * NOTE: Takes care that there may be multiple values of attribute in identity's attributes
  */
 bool FacialRecognitionWrapper::Private::identityContains(const Identity& identity,
-                                                    const QString& attribute,
-                                                    const QString& value)
+                                                         const QString&  attribute,
+                                                         const QString&  value)
 {
     const QMap<QString, QString> map          = identity.attributesMap();
     QMap<QString, QString>::const_iterator it = map.constFind(attribute);
@@ -50,7 +50,7 @@ bool FacialRecognitionWrapper::Private::identityContains(const Identity& identit
 }
 
 Identity FacialRecognitionWrapper::Private::findByAttribute(const QString& attribute,
-                                                       const QString& value) const
+                                                            const QString& value) const
 {
     foreach (const Identity& identity, identityCache)
     {
@@ -67,7 +67,7 @@ Identity FacialRecognitionWrapper::Private::findByAttribute(const QString& attri
  * NOTE: Takes care that there may be multiple values of attribute in valueMap
  */
 Identity FacialRecognitionWrapper::Private::findByAttributes(const QString& attribute,
-                                                        const QMap<QString, QString>& valueMap) const
+                                                             const QMap<QString, QString>& valueMap) const
 {
     QMap<QString, QString>::const_iterator it = valueMap.find(attribute);
 

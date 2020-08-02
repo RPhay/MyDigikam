@@ -85,7 +85,10 @@ public:
     KDNode* right;
 };
 
-KDNode::KDNode(const cv::Mat& nodePos, const int identity, int splitAxis, int dimension)
+KDNode::KDNode(const cv::Mat& nodePos,
+               const int      identity,
+               int            splitAxis,
+               int            dimension)
     : d(new Private(nodePos, identity, splitAxis, dimension))
 {
     Q_ASSERT(splitAxis < dimension);
@@ -99,7 +102,9 @@ KDNode::~KDNode()
 
 KDNode* KDNode::insert(const cv::Mat& nodePos, const int identity)
 {
-    if (!(nodePos.rows == 1 && nodePos.cols == d->nbDimension && nodePos.type() == CV_32F))
+    if (!(nodePos.rows   == 1              &&
+          nodePos.cols   == d->nbDimension &&
+          nodePos.type() == CV_32F))
     {
         return nullptr;
     }
@@ -142,9 +147,9 @@ void KDNode::setNodeId(int id)
 }
 
 double KDNode::getClosestNeighbors(QMap<double, QVector<KDNode*> >& neighborList,
-                                   const cv::Mat& position,
-                                   double sqRange,
-                                   int maxNbNeighbors)
+                                   const cv::Mat&                   position,
+                                   double                           sqRange,
+                                   int                              maxNbNeighbors)
 {
     // add current node to the list
     double sqrdistanceToCurrentNode = sqrDistance(position.ptr<float>(), d->position.ptr<float>(), d->nbDimension);
@@ -192,7 +197,7 @@ double KDNode::getClosestNeighbors(QMap<double, QVector<KDNode*> >& neighborList
     {
         const float* minRange = d->left->d->minRange.ptr<float>();
         const float* maxRange = d->left->d->maxRange.ptr<float>();
-        const float* pos = position.ptr<float>();
+        const float* pos      = position.ptr<float>();
 
         for (int i = 0; i < d->nbDimension; ++i)
         {
@@ -211,7 +216,7 @@ double KDNode::getClosestNeighbors(QMap<double, QVector<KDNode*> >& neighborList
     {
         const float* minRange = d->right->d->minRange.ptr<float>();
         const float* maxRange = d->right->d->maxRange.ptr<float>();
-        const float* pos = position.ptr<float>();
+        const float* pos      = position.ptr<float>();
 
         for (int i = 0; i < d->nbDimension; ++i)
         {
@@ -259,7 +264,9 @@ double KDNode::getClosestNeighbors(QMap<double, QVector<KDNode*> >& neighborList
 
 void KDNode::updateRange(const cv::Mat& pos)
 {
-    if (!(pos.rows == 1 && pos.cols == d->nbDimension && pos.type() == CV_32F))
+    if (!(pos.rows   == 1              &&
+          pos.cols   == d->nbDimension &&
+          pos.type() == CV_32F))
     {
         return;
     }

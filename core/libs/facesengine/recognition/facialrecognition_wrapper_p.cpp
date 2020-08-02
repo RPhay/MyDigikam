@@ -41,6 +41,7 @@ T* getObjectOrCreate(T* &ptr)
     return ptr;
 }
 */
+
 FacialRecognitionWrapper::Private::Private()
     : mutex(QMutex::Recursive),
       recognizer(nullptr)

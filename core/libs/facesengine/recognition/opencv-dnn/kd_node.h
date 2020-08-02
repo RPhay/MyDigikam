@@ -38,7 +38,10 @@ class KDNode
 {
 public:
 
-    explicit KDNode(const cv::Mat& nodePos, const int identity, int splitAxis, int dimension);
+    explicit KDNode(const cv::Mat& nodePos,
+                    const int      identity,
+                    int            splitAxis,
+                    int            dimension);
     ~KDNode();
 
 public:
@@ -66,9 +69,9 @@ public:
      * @return
      */
     double getClosestNeighbors(QMap<double, QVector<KDNode*> >& neighborList,
-                               const cv::Mat& position,
-                               double sqRange,
-                               int maxNbNeighbors);
+                               const cv::Mat&                   position,
+                               double                           sqRange,
+                               int                              maxNbNeighbors);
     /**
      * @brief getIdentity
      * @return

@@ -179,19 +179,7 @@ cv::Mat DNNFaceExtractor::alignFace(const cv::Mat& inputImage)
     return d->preprocessor->preprocess(inputImage);
 }
 
-std::vector<float> DNNFaceExtractor::getFaceEmbedding(const cv::Mat& faceImage)
-{
-    cv::Mat face_descriptors = getFaceDescriptor(faceImage);
-
-    qCDebug(DIGIKAM_FACEDB_LOG) << "Face descriptors size: (" << face_descriptors.rows
-                                << ", " << face_descriptors.cols << ")";
-
-    const float* data = face_descriptors.ptr<float>();
-
-    return std::vector<float>(data, data + face_descriptors.cols);
-}
-
-cv::Mat DNNFaceExtractor::getFaceDescriptor(const cv::Mat& faceImage)
+cv::Mat DNNFaceExtractor::getFaceEmbedding(const cv::Mat& faceImage)
 {
     qCDebug(DIGIKAM_FACEDB_LOG) << "faceImage channels: " << faceImage.channels();
     qCDebug(DIGIKAM_FACEDB_LOG) << "faceImage size: (" << faceImage.rows << ", " << faceImage.cols << ")\n";
@@ -222,10 +210,7 @@ cv::Mat DNNFaceExtractor::getFaceDescriptor(const cv::Mat& faceImage)
     cv::Mat face_descriptors = net.forward();
 */
 
-    //qDebug() << "faceEmbedded channels: " << face_descriptors.channels() << "type" << face_descriptors.type();
-    //qDebug() << "faceEmbedded size: (" << face_descriptors.rows << ", " << face_descriptors.cols << ")\n";
-
     return face_descriptors;
 }
 
-} // namespace RecognitionTest
+} // namespace Digikam

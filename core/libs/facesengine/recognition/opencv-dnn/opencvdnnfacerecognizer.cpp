@@ -26,8 +26,6 @@
 
 // Qt includes
 #include <QElapsedTimer>
-#include <QJsonArray>
-#include <QJsonDocument>
 #include <QFileInfo>
 
 // Local includes
@@ -353,7 +351,7 @@ void OpenCVDNNFaceRecognizer::train(const QList<QImage>& images,
                                        image != images.cend();
                                      ++image)
     {
-        cv::Mat faceEmbedding = d->extractor->getFaceDescriptor(prepareForRecognition(*image)).clone();
+        cv::Mat faceEmbedding = d->extractor->getFaceEmbedding(prepareForRecognition(*image)).clone();
 
         if (!insertData(faceEmbedding, label, context))
         {
@@ -368,7 +366,7 @@ int OpenCVDNNFaceRecognizer::recognize(const QImage& inputImage)
 {
     int id = -1;
 
-    cv::Mat faceEmbedding = d->extractor->getFaceDescriptor(prepareForRecognition(inputImage)).clone();
+    cv::Mat faceEmbedding = d->extractor->getFaceEmbedding(prepareForRecognition(inputImage)).clone();
 
     switch (d->method)
     {

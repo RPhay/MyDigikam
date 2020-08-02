@@ -86,7 +86,9 @@ void FacialRecognitionWrapper::setParameters(const QVariantMap& parameters)
 
     QMutexLocker lock(&d->mutex);
 
-    for (QVariantMap::const_iterator it = parameters.begin() ; it != parameters.end() ; ++it)
+    for (QVariantMap::const_iterator it  = parameters.begin() ;
+                                     it != parameters.end() ;
+                                   ++it)
     {
         d->parameters.insert(it.key(), it.value());
     }

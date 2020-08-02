@@ -89,8 +89,14 @@ public:
     // TODO verify workflow to economize this routine
     int recognize(const QImage& inputImage);
 
+    /**
+     * clear specified trained data
+     */
     void clearTraining(const QList<int>& idsToClear, const QString& trainingContext);
 
+    /**
+     * set K parameter of K-Nearest neighbors algorithm
+     */
     void setNbNeighBors(int k);
 
 private:
