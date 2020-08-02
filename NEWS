@@ -133,7 +133,7 @@ BUGFIXES:
 125 ==> 347937 - SETUP : Collections added as "Removable Media" change as "Local Collections".
 126 ==> 416266 - digiKam crashes during face detection.
 127 ==> 403073 - Can't remove a removable media when digiKam run.
-128 ==> 414737 - DigiKam becomes unresponsive when clicking on NFS-mounted photos.
+128 ==> 414737 - digiKam becomes unresponsive when clicking on NFS-mounted photos.
 129 ==> 364231 - Support JPEG2000 using OpenJPEG to replace LibJasper.
 130 ==> 397718 - String comparison type field - meaning is unclear.
 131 ==> 410438 - No access to attached Storage device.
@@ -160,7 +160,7 @@ BUGFIXES:
 152 ==> 380403 - License of plugins interface.
 153 ==> 374686 - HTML Gallery tool must support modern HTML5 tags.
 154 ==> 378393 - Rename LUT3D.
-155 ==> 
-
+155 ==> 412374 - KRA (Krita) files thumbnails not rendered.
+156 ==> 
 
 
