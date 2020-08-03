@@ -241,12 +241,14 @@ void UndoManager::undoStep(bool saveRedo, bool execute, bool flyingRollback)
             {
                 // Undoing from the tip of the list:
                 // Save the "last", current state for the redo operation
+
                 needSnapshot = true;
-            } 
-            else 
+            }
+            else
             {
                 // Undoing an irreversible with next redo reversible:
                 // Here, no snapshot was made in addAction, but we need it now
+
                 needSnapshot = dynamic_cast<UndoActionReversible *>(d->redoActions.last());
             }
         }
