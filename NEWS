@@ -172,5 +172,6 @@ BUGFIXES:
 164 ==> 219403 - Create calendar pdf output takes hours.
 165 ==> 398195 - "Ignored folders" are not saved.
 166 ==> 329464 - Add automatic pic "repairs" (dust, fusels).
-167 ==> 
-
+167 ==> 411014 - Thumbnail Support for AFPHOTO files.
+168 ==> 389194 - New file types for digiKam
+169 ==> 
