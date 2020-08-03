@@ -171,5 +171,6 @@ BUGFIXES:
 163 ==> 372568 - Krita (.kra) thumbnails are not showed.
 164 ==> 219403 - Create calendar pdf output takes hours.
 165 ==> 398195 - "Ignored folders" are not saved.
-166 ==> 
+166 ==> 329464 - Add automatic pic "repairs" (dust, fusels).
+167 ==> 
 
