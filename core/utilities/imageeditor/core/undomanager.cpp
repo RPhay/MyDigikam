@@ -235,19 +235,20 @@ void UndoManager::undoStep(bool saveRedo, bool execute, bool flyingRollback)
     {
         bool needSnapshot = false;
 
-        if (d->redoActions.isEmpty())
+        if (irreversible)
         {
-            // Undoing from the tip of the list:
-            // Save the "last", current state for the redo operation
-
-            needSnapshot = irreversible;
-        }
-        else
-        {
-            // Undoing an irreversible with next redo reversible:
-            // Here, no snapshot was made in addAction, but we need it now
-
-            needSnapshot = dynamic_cast<UndoActionReversible*>(d->redoActions.last());
+            if (d->redoActions.isEmpty())
+            {
+                // Undoing from the tip of the list:
+                // Save the "last", current state for the redo operation
+                needSnapshot = true;
+            } 
+            else 
+            {
+                // Undoing an irreversible with next redo reversible:
+                // Here, no snapshot was made in addAction, but we need it now
+                needSnapshot = dynamic_cast<UndoActionReversible *>(d->redoActions.last());
+            }
         }
 
         if (needSnapshot)
