@@ -175,4 +175,6 @@ BUGFIXES:
 167 ==> 411014 - Thumbnail Support for AFPHOTO files.
 168 ==> 389194 - New file types for digiKam
 169 ==> 114272 - Calendar information from Akonady as source for geolocation.
-170 ==> 
+170 ==> 371635 - Unable to use keyboard only to process imported photos.
+171 ==> 
+
