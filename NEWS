@@ -174,4 +174,5 @@ BUGFIXES:
 166 ==> 329464 - Add automatic pic "repairs" (dust, fusels).
 167 ==> 411014 - Thumbnail Support for AFPHOTO files.
 168 ==> 389194 - New file types for digiKam
-169 ==> 
+169 ==> 114272 - Calendar information from Akonady as source for geolocation.
+170 ==> 
