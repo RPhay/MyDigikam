@@ -178,5 +178,5 @@ BUGFIXES:
 170 ==> 371635 - Unable to use keyboard only to process imported photos.
 171 ==> 374012 - Binary "Exif.Photo.UserComment" converted to "METADATA-START" caption at import.
 172 ==> 422240 - Description caption appears as "binary comment".
-173 ==> 
-
+173 ==> 424934 - Making an album a part of itself will fill the hard-drive with copies of itself.
+174 ==> 

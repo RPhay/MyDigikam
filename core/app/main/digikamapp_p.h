@@ -86,6 +86,7 @@
 #include "categorizeditemmodel.h"
 #include "collectionscanner.h"
 #include "collectionmanager.h"
+#include "collectionlocation.h"
 #include "componentsinfodlg.h"
 #include "coredbthumbinfoprovider.h"
 #include "dio.h"

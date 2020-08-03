@@ -139,6 +139,18 @@ void DigikamApp::slotImportAddFolders()
         return;
     }
 
+    foreach (const QUrl& url, urls)
+    {
+        if (!CollectionManager::instance()->locationForUrl(url).isNull())
+        {
+            QMessageBox::warning(this, qApp->applicationName(),
+                                 i18n("The folder %1 is already part of a "
+                                      "collection and cannot be imported!",
+                                      QDir::toNativeSeparators(url.toLocalFile())));
+            return;
+        }
+    }
+
     QList<Album*> albumList = AlbumManager::instance()->currentAlbums();
     Album* album            = nullptr;
 
