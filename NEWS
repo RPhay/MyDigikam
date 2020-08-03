@@ -177,5 +177,6 @@ BUGFIXES:
 169 ==> 114272 - Calendar information from Akonady as source for geolocation.
 170 ==> 371635 - Unable to use keyboard only to process imported photos.
 171 ==> 374012 - Binary "Exif.Photo.UserComment" converted to "METADATA-START" caption at import.
-172 ==> 
+172 ==> 422240 - Description caption appears as "binary comment".
+173 ==> 
 
