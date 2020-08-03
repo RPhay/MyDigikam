@@ -169,4 +169,6 @@ BUGFIXES:
 161 ==> 413905 - Some icon / picture are not displayed in maps but picture have GPS data.
 162 ==> 353458 - Some pictures have geolocalisation data, but the «geolocalised» tag is not attached.
 163 ==> 372568 - Krita (.kra) thumbnails are not showed.
-164 ==> 
+164 ==> 219403 - Create calendar pdf output takes hours.
+165 ==> 
+
