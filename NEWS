@@ -189,4 +189,6 @@ BUGFIXES:
 181 ==> 301543 - Support for .ora and .kra file format in digiKam (at least read only).
 182 ==> 388116 - Add possibility to switch with the mouse between images in preview mode.
 183 ==> 217494 - Separate export to File-System with remote and local sections.
-184 ==> 
+184 ==> 404613 - Docs are missing.
+185 ==> 
+
