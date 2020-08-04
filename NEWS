@@ -184,6 +184,6 @@ BUGFIXES:
 176 ==> 386591 - Cannot save changes in geolocation coordinates to .RW2 RAW files from a Panasonic FZ300 camera.
 177 ==> 393449 - Failure to build from source (CMake error).
 178 ==> 387004 - Rename on import is inconsistent jpg to raw.
-179 ==> 
-180 ==> 
+179 ==> 377739 - index.docbook:13: element link: validity error : IDREF attribute linkend references an unknownID "using-mainwindow-mapview".
+180 ==> 377597 - digiKam 5.5 fails to build @ docs/sv.
 181 ==> 
