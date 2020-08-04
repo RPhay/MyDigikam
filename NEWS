@@ -188,5 +188,5 @@ BUGFIXES:
 180 ==> 377597 - digiKam 5.5 fails to build @ docs/sv.
 181 ==> 301543 - Support for .ora and .kra file format in digiKam (at least read only).
 182 ==> 388116 - Add possibility to switch with the mouse between images in preview mode.
-183 ==> 
-
+183 ==> 217494 - Separate export to File-System with remote and local sections.
+184 ==> 
