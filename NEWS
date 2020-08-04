@@ -190,5 +190,6 @@ BUGFIXES:
 182 ==> 388116 - Add possibility to switch with the mouse between images in preview mode.
 183 ==> 217494 - Separate export to File-System with remote and local sections.
 184 ==> 404613 - Docs are missing.
-185 ==> 
-
+185 ==> 395141 - Map does not show location if picture is selected before opening map.
+186 ==> 389620 - Right panel - Map - Image location isn't shown properly on the map until user switches to previous/next image.
+187 ==> 
