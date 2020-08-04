@@ -180,4 +180,5 @@ BUGFIXES:
 172 ==> 422240 - Description caption appears as "binary comment".
 173 ==> 424934 - Making an album a part of itself will fill the hard-drive with copies of itself.
 174 ==> 372041 - "Add Folders" attempts to import parent directory AND target dir.
-175 ==> 
+175 ==> 262403 - BQM DNG tool : Add Aptina Camera Sensors support.
+176 ==> 
