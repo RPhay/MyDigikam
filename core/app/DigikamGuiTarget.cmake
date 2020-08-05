@@ -230,6 +230,7 @@ target_link_libraries(digikamgui
                       Qt5::Widgets
                       Qt5::Sql
                       Qt5::PrintSupport
+                      Qt5::Concurrent
 
                       KF5::XmlGui
                       KF5::Solid

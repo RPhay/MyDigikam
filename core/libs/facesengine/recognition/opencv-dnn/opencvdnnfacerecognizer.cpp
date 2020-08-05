@@ -26,7 +26,8 @@
 
 // Qt includes
 #include <QElapsedTimer>
-#include <QFileInfo>
+#include <QtConcurrent>
+#include <QFuture>
 
 // Local includes
 #include "digikam_debug.h"
@@ -383,8 +384,21 @@ void OpenCVDNNFaceRecognizer::train(const QList<QImage>& images,
                                     const int            label,
                                     const QString&       context)
 {
+    auto redisterTraining = [this, label, context](const QImage& image)
+    {
+        cv::Mat faceEmbedding = d->extractor->getFaceEmbedding(prepareForRecognition(image)).clone();
+
+        if (!d->insertData(faceEmbedding, label, context))
+        {
+            qCWarning(DIGIKAM_FACEDB_LOG) << "Fail to register a face of identity" << label;
+        }
+    };
+
+    QFuture<void> future = QtConcurrent::map(images, redisterTraining);
+    future.waitForFinished();
+
     // parallel loop
-    cv::parallel_for_(cv::Range(0,images.size()), ParallelProcessor(d, images, label, context));
+    //cv::parallel_for_(cv::Range(0,images.size()), ParallelProcessor(d, images, label, context));
 /*
     for (QList<QImage>::const_iterator image  = images.cbegin();
                                        image != images.cend();
