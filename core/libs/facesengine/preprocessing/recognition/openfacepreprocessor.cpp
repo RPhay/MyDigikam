@@ -97,7 +97,7 @@ void OpenfacePreprocessor::init()
     qCDebug(DIGIKAM_FACEDB_LOG) << "Finish reading shape predictor file";
 }
 
-cv::Mat OpenfacePreprocessor::process(const cv::Mat& image)
+cv::Mat OpenfacePreprocessor::process(const cv::Mat& image) const
 {
     int type = image.type();
     qCDebug(DIGIKAM_FACEDB_LOG) << "type: " << type;

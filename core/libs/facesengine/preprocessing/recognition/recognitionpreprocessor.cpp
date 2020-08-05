@@ -40,7 +40,7 @@ public:
     ~Private();
 
     void init(PreprocessorSelection mode);
-    cv::Mat preprocess(const cv::Mat& image);
+    cv::Mat preprocess(const cv::Mat& image) const;
 
 private:
 
@@ -82,7 +82,7 @@ void RecognitionPreprocessor::Private::init(PreprocessorSelection mode)
     }
 }
 
-cv::Mat RecognitionPreprocessor::Private::preprocess(const cv::Mat& image)
+cv::Mat RecognitionPreprocessor::Private::preprocess(const cv::Mat& image) const
 {
     switch (preprocessingMode)
     {
@@ -119,7 +119,7 @@ void RecognitionPreprocessor::init(PreprocessorSelection mode)
     d->init(mode);
 }
 
-cv::Mat RecognitionPreprocessor::preprocess(const cv::Mat& image)
+cv::Mat RecognitionPreprocessor::preprocess(const cv::Mat& image) const
 {
     return d->preprocess(image);
 }

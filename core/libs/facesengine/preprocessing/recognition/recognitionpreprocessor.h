@@ -48,7 +48,7 @@ public:
 
     void init(PreprocessorSelection mode);
 
-    virtual cv::Mat preprocess(const cv::Mat& image);
+    virtual cv::Mat preprocess(const cv::Mat& image) const;
 
 private:
 

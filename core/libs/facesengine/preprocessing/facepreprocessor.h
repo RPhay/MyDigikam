@@ -45,7 +45,7 @@ public:
     {
     }
 
-    virtual cv::Mat preprocess(const cv::Mat& image) = 0;
+    virtual cv::Mat preprocess(const cv::Mat& image) const = 0;
 };
 
 } // namespace Digikam

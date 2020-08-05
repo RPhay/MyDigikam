@@ -109,16 +109,16 @@ class OpenCVDNNFaceRecognizer::ParallelProcessor : public cv::ParallelLoopBody
 private:
 
     const QList<QImage>& images;
-    std::vector<int>& ids;
+    int label;
     const QString& context;
 
     OpenCVDNNFaceRecognizer::Private* d;
 
 public:
 
-    ParallelProcessor(OpenCVDNNFaceRecognizer::Private* d, const QList<QImage>& images, std::vector<int>& ids, const QString& context)
+    ParallelProcessor(OpenCVDNNFaceRecognizer::Private* d, const QList<QImage>& images, int label, const QString& context)
         : images(images),
-          ids(ids),
+          label(label),
           context(context),
           d(d)
     {
@@ -130,9 +130,9 @@ public:
         {
             cv::Mat faceEmbedding = d->extractor->getFaceEmbedding(OpenCVDNNFaceRecognizer::prepareForRecognition(images[i])).clone();
 
-            if (!d->insertData(faceEmbedding, ids[i], context))
+            if (!d->insertData(faceEmbedding, label, context))
             {
-                qCWarning(DIGIKAM_FACEDB_LOG) << "Fail to register a face of identity" << ids[i];
+                qCWarning(DIGIKAM_FACEDB_LOG) << "Fail to register a face of identity" << label;
             }
         }
     }
@@ -383,6 +383,9 @@ void OpenCVDNNFaceRecognizer::train(const QList<QImage>& images,
                                     const int            label,
                                     const QString&       context)
 {
+    // parallel loop
+    //cv::parallel_for_(cv::Range(0,images.size()), ParallelProcessor(d, images, label, context));
+
     for (QList<QImage>::const_iterator image  = images.cbegin();
                                        image != images.cend();
                                      ++image)

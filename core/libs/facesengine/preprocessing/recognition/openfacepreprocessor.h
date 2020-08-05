@@ -46,7 +46,7 @@ public:
 
     void init();
 
-    cv::Mat process(const cv::Mat& image);
+    cv::Mat process(const cv::Mat& image) const;
 
 private:
 
