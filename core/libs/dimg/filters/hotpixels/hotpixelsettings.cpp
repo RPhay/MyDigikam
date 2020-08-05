@@ -1,0 +1,199 @@
+/* ============================================================
+ *
+ * This file is a part of digiKam project
+ * https://www.digikam.org
+ *
+ * Date        : 2020-08-05)
+ * Description : HotPixel settings view.
+ *
+ * Copyright (C) 2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ *
+ * This program is free software; you can redistribute it
+ * and/or modify it under the terms of the GNU General
+ * Public License as published by the Free Software Foundation;
+ * either version 2, or (at your option)
+ * any later version.
+ *
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+ * ============================================================ */
+
+#include "hotpixelsettings.h"
+
+// Qt includes
+
+#include <QGridLayout>
+#include <QLabel>
+#include <QString>
+#include <QFile>
+#include <QTextStream>
+#include <QCheckBox>
+#include <QUrl>
+#include <QApplication>
+#include <QStyle>
+
+// KDE includes
+
+#include <kconfiggroup.h>
+#include <klocalizedstring.h>
+
+// Local includes
+
+#include "dnuminput.h"
+#include "digikam_debug.h"
+#include "dexpanderbox.h"
+
+namespace Digikam
+{
+
+class Q_DECL_HIDDEN HotPixelSettings::Private
+{
+public:
+
+    explicit Private()
+      : bInput(nullptr),
+        cInput(nullptr),
+        gInput(nullptr)
+    {
+    }
+
+    static const QString configBrightnessAdjustmentEntry;
+    static const QString configContrastAdjustmentEntry;
+    static const QString configGammaAdjustmentEntry;
+
+    DIntNumInput*        bInput;
+    DIntNumInput*        cInput;
+
+    DDoubleNumInput*     gInput;
+};
+
+const QString HotPixelSettings::Private::configBrightnessAdjustmentEntry(QLatin1String("BrightnessAdjustment"));
+const QString HotPixelSettings::Private::configContrastAdjustmentEntry(QLatin1String("ContrastAdjustment"));
+const QString HotPixelSettings::Private::configGammaAdjustmentEntry(QLatin1String("GammaAdjustment"));
+
+// --------------------------------------------------------
+
+HotPixelSettings::HotPixelSettings(QWidget* const parent)
+    : QWidget(parent),
+      d(new Private)
+{
+    const int spacing = QApplication::style()->pixelMetric(QStyle::PM_DefaultLayoutSpacing);
+
+    QGridLayout* grid = new QGridLayout(parent);
+
+    QLabel* const label2 = new QLabel(i18n("Brightness:"));
+    d->bInput            = new DIntNumInput();
+    d->bInput->setRange(-100, 100, 1);
+    d->bInput->setDefaultValue(0);
+    d->bInput->setWhatsThis(i18n("Set here the brightness adjustment of the image."));
+
+    QLabel* const label3 = new QLabel(i18n("Contrast:"));
+    d->cInput            = new DIntNumInput();
+    d->cInput->setRange(-100, 100, 1);
+    d->cInput->setDefaultValue(0);
+    d->cInput->setWhatsThis(i18n("Set here the contrast adjustment of the image."));
+
+    QLabel* const label4 = new QLabel(i18n("Gamma:"));
+    d->gInput            = new DDoubleNumInput();
+    d->gInput->setDecimals(2);
+    d->gInput->setRange(0.1, 3.0, 0.01);
+    d->gInput->setDefaultValue(1.0);
+    d->gInput->setWhatsThis(i18n("Set here the gamma adjustment of the image."));
+
+    // -------------------------------------------------------------
+
+    grid->addWidget(label2,    0, 0, 1, 5);
+    grid->addWidget(d->bInput, 1, 0, 1, 5);
+    grid->addWidget(label3,    2, 0, 1, 5);
+    grid->addWidget(d->cInput, 3, 0, 1, 5);
+    grid->addWidget(label4,    4, 0, 1, 5);
+    grid->addWidget(d->gInput, 5, 0, 1, 5);
+    grid->setRowStretch(6, 10);
+    grid->setContentsMargins(spacing, spacing, spacing, spacing);
+    grid->setSpacing(spacing);
+
+    // -------------------------------------------------------------
+
+    connect(d->bInput, SIGNAL(valueChanged(int)),
+            this, SIGNAL(signalSettingsChanged()));
+
+    connect(d->cInput, SIGNAL(valueChanged(int)),
+            this, SIGNAL(signalSettingsChanged()));
+
+    connect(d->gInput, SIGNAL(valueChanged(double)),
+            this, SIGNAL(signalSettingsChanged()));
+}
+
+HotPixelSettings::~HotPixelSettings()
+{
+    delete d;
+}
+
+HotPixelContainer HotPixelSettings::settings() const
+{
+    HotPixelContainer prm;
+/*
+    prm.brightness = (double)d->bInput->value() / 250.0;
+    prm.contrast   = (double)(d->cInput->value() / 100.0) + 1.00;
+    prm.gamma      = d->gInput->value();
+*/
+    return prm;
+}
+
+void HotPixelSettings::setSettings(const HotPixelContainer& settings)
+{
+    blockSignals(true);
+/*
+    d->bInput->setValue((int)(settings.brightness * 250.0));
+    d->cInput->setValue((int)((settings.contrast - 1.0) * 100.0));
+    d->gInput->setValue(settings.gamma);
+*/
+    blockSignals(false);
+}
+
+void HotPixelSettings::resetToDefault()
+{
+    blockSignals(true);
+    d->bInput->slotReset();
+    d->cInput->slotReset();
+    d->gInput->slotReset();
+    blockSignals(false);
+}
+
+HotPixelContainer HotPixelSettings::defaultSettings() const
+{
+    HotPixelContainer prm;
+/*
+    prm.brightness = (double)(d->bInput->defaultValue() / 250.0);
+    prm.contrast   = (double)(d->cInput->defaultValue() / 100.0) + 1.00;
+    prm.gamma      = d->gInput->defaultValue();
+*/
+    return prm;
+}
+
+void HotPixelSettings::readSettings(KConfigGroup& group)
+{
+    HotPixelContainer prm;
+    HotPixelContainer defaultPrm = defaultSettings();
+/*
+    prm.brightness = group.readEntry(d->configBrightnessAdjustmentEntry, defaultPrm.brightness);
+    prm.contrast   = group.readEntry(d->configContrastAdjustmentEntry,   defaultPrm.contrast);
+    prm.gamma      = group.readEntry(d->configGammaAdjustmentEntry,      defaultPrm.gamma);
+*/
+    setSettings(prm);
+}
+
+void HotPixelSettings::writeSettings(KConfigGroup& group)
+{
+    HotPixelContainer prm = settings();
+/*
+    group.writeEntry(d->configBrightnessAdjustmentEntry, prm.brightness);
+    group.writeEntry(d->configContrastAdjustmentEntry,   prm.contrast);
+    group.writeEntry(d->configGammaAdjustmentEntry,      prm.gamma);
+*/
+}
+
+} // namespace Digikam

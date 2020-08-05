@@ -70,6 +70,7 @@ set(libdimgfilters_SRCS
     ${CMAKE_CURRENT_SOURCE_DIR}/filters/cb/cbsettings.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/filters/bcg/bcgfilter.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/filters/bcg/bcgsettings.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/filters/bcg/bcgcontainer.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/filters/bw/bwsepiafilter.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/filters/bw/bwsepiasettings.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/filters/bw/tonalityfilter.cpp
@@ -84,6 +85,8 @@ set(libdimgfilters_SRCS
     ${CMAKE_CURRENT_SOURCE_DIR}/filters/hotpixels/hotpixel.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/filters/hotpixels/hotpixelfixer.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/filters/hotpixels/hotpixelsweights.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/filters/hotpixels/hotpixelsettings.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/filters/hotpixels/hotpixelcontainer.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/filters/icc/iccmanager.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/filters/icc/iccprofile.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/filters/icc/iccprofilesettings.cpp

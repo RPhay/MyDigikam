@@ -41,49 +41,6 @@
 namespace Digikam
 {
 
-BCGContainer::BCGContainer()
-{
-    channel    = LuminosityChannel;
-    brightness = 0.0;
-    contrast   = 0.0;
-    gamma      = 1.0;
-}
-
-bool BCGContainer::isDefault() const
-{
-    return (*this == BCGContainer());
-}
-
-bool BCGContainer::operator==(const BCGContainer& other) const
-{
-    return (
-            (channel    == other.channel)    &&
-            (brightness == other.brightness) &&
-            (contrast   == other.contrast)   &&
-            (gamma      == other.gamma)
-           );
-}
-
-void BCGContainer::writeToFilterAction(FilterAction& action, const QString& prefix) const
-{
-    action.addParameter(prefix + QLatin1String("channel"),    channel);
-    action.addParameter(prefix + QLatin1String("brightness"), brightness);
-    action.addParameter(prefix + QLatin1String("contrast"),   contrast);
-    action.addParameter(prefix + QLatin1String("gamma"),      gamma);
-}
-
-BCGContainer BCGContainer::fromFilterAction(const FilterAction& action, const QString& prefix)
-{
-    BCGContainer settings;
-    settings.channel    = action.parameter(prefix + QLatin1String("channel"),    settings.channel);
-    settings.brightness = action.parameter(prefix + QLatin1String("brightness"), settings.brightness);
-    settings.contrast   = action.parameter(prefix + QLatin1String("contrast"),   settings.contrast);
-    settings.gamma      = action.parameter(prefix + QLatin1String("gamma"),      settings.gamma);
-    return settings;
-}
-
-// -----------------------------------------------------------------------------------------------
-
 class Q_DECL_HIDDEN BCGFilter::Private
 {
 public:
