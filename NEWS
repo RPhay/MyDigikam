@@ -195,5 +195,6 @@ BUGFIXES:
 187 ==> 319492 - Scan of new items seems to ignore or badly interpret jpeg EXIF information.
 188 ==> 275571 - Export light table selection.
 189 ==> 389274 - Export selected Images to a local folder.
-190 ==> 
-
+190 ==> 378066 - Export to remote folder does not work.
+191 ==> 373820 - Export to Remote Storage tool does not work on non-linux systems.
+192 ==> 
