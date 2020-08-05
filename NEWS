@@ -193,5 +193,6 @@ BUGFIXES:
 185 ==> 395141 - Map does not show location if picture is selected before opening map.
 186 ==> 389620 - Right panel - Map - Image location isn't shown properly on the map until user switches to previous/next image.
 187 ==> 319492 - Scan of new items seems to ignore or badly interpret jpeg EXIF information.
-188 ==> 
+188 ==> 275571 - Export light table selection.
+189 ==> 
 
