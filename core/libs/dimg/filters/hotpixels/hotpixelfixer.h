@@ -22,8 +22,8 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_EDITOR_HOT_PIXEL_FIXER_H
-#define DIGIKAM_EDITOR_HOT_PIXEL_FIXER_H
+#ifndef DIGIKAM_HOT_PIXEL_FIXER_H
+#define DIGIKAM_HOT_PIXEL_FIXER_H
 
 // Qt includes
 
@@ -35,16 +35,17 @@
 
 // Local includes
 
+#include "digikam_export.h"
 #include "dimgthreadedfilter.h"
 #include "hotpixel.h"
 #include "hotpixelsweights.h"
 
 using namespace Digikam;
 
-namespace DigikamEditorHotPixelsToolPlugin
+namespace Digikam
 {
 
-class HotPixelFixer : public DImgThreadedFilter
+class DIGIKAM_EXPORT HotPixelFixer : public DImgThreadedFilter
 {
 
 public:
@@ -132,6 +133,6 @@ private:
     QList<HotPixel> m_hpList;
 };
 
-} // namespace DigikamEditorHotPixelsToolPlugin
+} // namespace Digikam
 
-#endif // DIGIKAM_EDITOR_HOT_PIXEL_FIXER_H
+#endif // DIGIKAM_HOT_PIXEL_FIXER_H

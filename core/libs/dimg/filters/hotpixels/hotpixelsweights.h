@@ -22,19 +22,24 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_EDITOR_HOT_PIXELS_WEIGHTS_H
-#define DIGIKAM_EDITOR_HOT_PIXELS_WEIGHTS_H
+#ifndef DIGIKAM_HOT_PIXELS_WEIGHTS_H
+#define DIGIKAM_HOT_PIXELS_WEIGHTS_H
 
 // Qt includes
 
 #include <QList>
 #include <QRect>
 
-namespace DigikamEditorHotPixelsToolPlugin
+// Local includes
+
+#include "digikam_export.h"
+
+namespace Digikam
 {
 
-class HotPixelsWeights
+class DIGIKAM_EXPORT HotPixelsWeights
 {
+
 public:
 
     HotPixelsWeights();
@@ -146,6 +151,6 @@ private:
     QList<QPoint> mPositions;
 };
 
-} // namespace DigikamEditorHotPixelsToolPlugin
+} // namespace Digikam
 
-#endif // DIGIKAM_EDITOR_HOT_PIXELS_WEIGHTS_H
+#endif // DIGIKAM_HOT_PIXELS_WEIGHTS_H

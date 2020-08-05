@@ -37,7 +37,7 @@
 
 #include <klocalizedstring.h>
 
-namespace DigikamEditorHotPixelsToolPlugin
+namespace Digikam
 {
 
 BlackFrameListViewItem::BlackFrameListViewItem(QTreeWidget* const parent, const QUrl& url)
@@ -169,4 +169,4 @@ void BlackFrameListView::slotParsed(const QList<HotPixel>& hotPixels, const QUrl
     emit signalBlackFrameSelected(hotPixels, blackFrameURL);
 }
 
-} // namespace DigikamEditorHotPixelsToolPlugin
+} // namespace Digikam

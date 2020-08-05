@@ -32,7 +32,7 @@
 
 #include <QScopedArrayPointer>
 
-namespace DigikamEditorHotPixelsToolPlugin
+namespace Digikam
 {
 
 HotPixelsWeights::HotPixelsWeights()
@@ -352,4 +352,4 @@ double HotPixelsWeights::polyTerm (const size_t i_coeff, const int x, const int 
     return (double)result;
 }
 
-} // namespace DigikamEditorHotPixelsToolPlugin
+} // namespace Digikam

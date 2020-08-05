@@ -26,8 +26,8 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_EDITOR_BLACK_FRAME_PARSER_H
-#define DIGIKAM_EDITOR_BLACK_FRAME_PARSER_H
+#ifndef DIGIKAM_BLACK_FRAME_PARSER_H
+#define DIGIKAM_BLACK_FRAME_PARSER_H
 
 // Qt includes
 
@@ -40,16 +40,17 @@
 
 // Local includes
 
+#include "digikam_export.h"
 #include "dimg.h"
 #include "loadsavethread.h"
 #include "hotpixel.h"
 
 using namespace Digikam;
 
-namespace DigikamEditorHotPixelsToolPlugin
+namespace Digikam
 {
 
-class BlackFrameParser: public QObject
+class DIGIKAM_EXPORT BlackFrameParser: public QObject
 {
     Q_OBJECT
 
@@ -90,6 +91,6 @@ private:
     LoadSaveThread* m_imageLoaderThread;
 };
 
-} // namespace DigikamEditorHotPixelsToolPlugin
+} // namespace Digikam
 
-#endif // DIGIKAM_EDITOR_BLACK_FRAME_PARSER_H
+#endif // DIGIKAM_BLACK_FRAME_PARSER_H

@@ -22,8 +22,8 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_EDITOR_BLACK_FRAME_LIST_VIEW_H
-#define DIGIKAM_EDITOR_BLACK_FRAME_LIST_VIEW_H
+#ifndef DIGIKAM_BLACK_FRAME_LIST_VIEW_H
+#define DIGIKAM_BLACK_FRAME_LIST_VIEW_H
 
 // Qt includes
 
@@ -38,14 +38,15 @@
 
 // Local includes
 
+#include "digikam_export.h"
 #include "blackframeparser.h"
 #include "hotpixel.h"
 
-namespace DigikamEditorHotPixelsToolPlugin
+namespace Digikam
 {
 
-class BlackFrameListViewItem : public QObject,
-                               public QTreeWidgetItem
+class DIGIKAM_EXPORT BlackFrameListViewItem : public QObject,
+                                              public QTreeWidgetItem
 {
     Q_OBJECT
 
@@ -92,7 +93,7 @@ private:
 
 //-----------------------------------------------------------------------------------
 
-class BlackFrameListView : public QTreeWidget
+class DIGIKAM_EXPORT BlackFrameListView : public QTreeWidget
 {
     Q_OBJECT
 
@@ -110,6 +111,6 @@ private Q_SLOTS:
     void slotParsed(const QList<HotPixel>&, const QUrl&);
 };
 
-} // namespace DigikamEditorHotPixelsToolPlugin
+} // namespace Digikam
 
-#endif // DIGIKAM_EDITOR_BLACK_FRAME_LIST_VIEW_H
+#endif // DIGIKAM_BLACK_FRAME_LIST_VIEW_H
