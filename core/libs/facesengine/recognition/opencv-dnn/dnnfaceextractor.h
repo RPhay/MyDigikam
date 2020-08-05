@@ -49,7 +49,7 @@ public:
     explicit DNNFaceExtractor();
     ~DNNFaceExtractor();
 
-    cv::Mat alignFace(const cv::Mat& inputImage);
+    cv::Mat alignFace(const cv::Mat& inputImage) const;
     cv::Mat getFaceEmbedding(const cv::Mat& faceImage);
 
     static double cosineDistance(std::vector<float> v1, std::vector<float> v2);

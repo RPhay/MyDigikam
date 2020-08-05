@@ -31,6 +31,7 @@
 #include <QDataStream>
 #include <QStandardPaths>
 #include <QElapsedTimer>
+#include <QMutex>
 
 // Local includes
 
@@ -59,6 +60,7 @@ public:
     RecognitionPreprocessor* preprocessor;
 
     cv::dnn::Net  net;
+    QMutex        mutex;
 
     cv::Size      imageSize;
     float         scaleFactor;
@@ -174,7 +176,7 @@ DNNFaceExtractor::~DNNFaceExtractor()
     delete d;
 }
 
-cv::Mat DNNFaceExtractor::alignFace(const cv::Mat& inputImage)
+cv::Mat DNNFaceExtractor::alignFace(const cv::Mat& inputImage) const
 {
     return d->preprocessor->preprocess(inputImage);
 }
@@ -189,7 +191,7 @@ cv::Mat DNNFaceExtractor::getFaceEmbedding(const cv::Mat& faceImage)
 /*
     cv::Mat alignedFace = faceImage;
 */
-    cv::Mat alignedFace = d->preprocessor->preprocess(faceImage);
+    cv::Mat alignedFace = alignFace(faceImage);
 
     qCDebug(DIGIKAM_FACEDB_LOG) << "Finish aligning face in " << timer.elapsed() << " ms";
     qCDebug(DIGIKAM_FACEDB_LOG) << "Start neural network";
@@ -198,8 +200,12 @@ cv::Mat DNNFaceExtractor::getFaceEmbedding(const cv::Mat& faceImage)
     cv::Mat face_descriptors;
     cv::Mat blob     = cv::dnn::blobFromImage(alignedFace, d->scaleFactor, d->imageSize, cv::Scalar(), true, false);
 
-    d->net.setInput(blob);
-    face_descriptors = d->net.forward();
+    d->mutex.lock();
+    {
+        d->net.setInput(blob);
+        face_descriptors = d->net.forward();
+    }
+    d->mutex.unlock();
 
     qCDebug(DIGIKAM_FACEDB_LOG) << "Finish computing face embedding in "
                                 << timer.elapsed() << " ms";
