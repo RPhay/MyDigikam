@@ -28,10 +28,10 @@
 #include <QGridLayout>
 #include <QLabel>
 #include <QString>
-#include <QFile>
+#include <QIcon>
 #include <QTextStream>
-#include <QCheckBox>
-#include <QUrl>
+#include <QProgressBar>
+#include <QPushButton>
 #include <QApplication>
 #include <QStyle>
 
@@ -41,10 +41,11 @@
 #include <klocalizedstring.h>
 
 // Local includes
-
-#include "dnuminput.h"
+ 
 #include "digikam_debug.h"
-#include "dexpanderbox.h"
+#include "hotpixelfixer.h"
+#include "blackframelistview.h"
+#include "dcombobox.h"
 
 namespace Digikam
 {
@@ -54,25 +55,26 @@ class Q_DECL_HIDDEN HotPixelSettings::Private
 public:
 
     explicit Private()
-      : bInput(nullptr),
-        cInput(nullptr),
-        gInput(nullptr)
+      : blackFrameButton(nullptr),
+        progressBar(nullptr),
+        filterMethodCombo(nullptr),
+        blackFrameListView(nullptr)
     {
     }
 
-    static const QString configBrightnessAdjustmentEntry;
-    static const QString configContrastAdjustmentEntry;
-    static const QString configGammaAdjustmentEntry;
+    static const QString configGroupName;
+    static const QString configLastBlackFrameFileEntry;
+    static const QString configFilterMethodEntry;
 
-    DIntNumInput*        bInput;
-    DIntNumInput*        cInput;
-
-    DDoubleNumInput*     gInput;
+    QPushButton*         blackFrameButton;
+    QProgressBar*        progressBar;
+    DComboBox*           filterMethodCombo;
+    BlackFrameListView*  blackFrameListView;
 };
 
-const QString HotPixelSettings::Private::configBrightnessAdjustmentEntry(QLatin1String("BrightnessAdjustment"));
-const QString HotPixelSettings::Private::configContrastAdjustmentEntry(QLatin1String("ContrastAdjustment"));
-const QString HotPixelSettings::Private::configGammaAdjustmentEntry(QLatin1String("GammaAdjustment"));
+const QString HotPixelSettings::Private::configGroupName(QLatin1String("hotpixels Tool"));
+const QString HotPixelSettings::Private::configLastBlackFrameFileEntry(QLatin1String("Last Black Frame File"));
+const QString HotPixelSettings::Private::configFilterMethodEntry(QLatin1String("Filter Method"));
 
 // --------------------------------------------------------
 
@@ -80,51 +82,43 @@ HotPixelSettings::HotPixelSettings(QWidget* const parent)
     : QWidget(parent),
       d(new Private)
 {
-    const int spacing = QApplication::style()->pixelMetric(QStyle::PM_DefaultLayoutSpacing);
+    const int spacing       = QApplication::style()->pixelMetric(QStyle::PM_DefaultLayoutSpacing);    QGridLayout* const grid = new QGridLayout(parent);
 
-    QGridLayout* grid = new QGridLayout(parent);
+    QLabel* const filterMethodLabel = new QLabel(i18n("Filter:"), this);
+    d->filterMethodCombo            = new DComboBox(this);
+    d->filterMethodCombo->addItem(i18nc("average filter mode", "Average"));
+    d->filterMethodCombo->addItem(i18nc("linear filter mode", "Linear"));
+    d->filterMethodCombo->addItem(i18nc("quadratic filter mode", "Quadratic"));
+    d->filterMethodCombo->addItem(i18nc("cubic filter mode", "Cubic"));
+    d->filterMethodCombo->setDefaultIndex(HotPixelFixer::QUADRATIC_INTERPOLATION);
 
-    QLabel* const label2 = new QLabel(i18n("Brightness:"));
-    d->bInput            = new DIntNumInput();
-    d->bInput->setRange(-100, 100, 1);
-    d->bInput->setDefaultValue(0);
-    d->bInput->setWhatsThis(i18n("Set here the brightness adjustment of the image."));
+    d->blackFrameButton = new QPushButton(i18n("Black Frame..."), this);
+    d->blackFrameButton->setIcon(QIcon::fromTheme(QLatin1String("document-open")));
+    d->blackFrameButton->setWhatsThis(i18n("Use this button to add a new black frame file which will "
+                                           "be used by the hot pixels removal filter.") );
 
-    QLabel* const label3 = new QLabel(i18n("Contrast:"));
-    d->cInput            = new DIntNumInput();
-    d->cInput->setRange(-100, 100, 1);
-    d->cInput->setDefaultValue(0);
-    d->cInput->setWhatsThis(i18n("Set here the contrast adjustment of the image."));
-
-    QLabel* const label4 = new QLabel(i18n("Gamma:"));
-    d->gInput            = new DDoubleNumInput();
-    d->gInput->setDecimals(2);
-    d->gInput->setRange(0.1, 3.0, 0.01);
-    d->gInput->setDefaultValue(1.0);
-    d->gInput->setWhatsThis(i18n("Set here the gamma adjustment of the image."));
+    d->blackFrameListView = new BlackFrameListView(this);
 
     // -------------------------------------------------------------
 
-    grid->addWidget(label2,    0, 0, 1, 5);
-    grid->addWidget(d->bInput, 1, 0, 1, 5);
-    grid->addWidget(label3,    2, 0, 1, 5);
-    grid->addWidget(d->cInput, 3, 0, 1, 5);
-    grid->addWidget(label4,    4, 0, 1, 5);
-    grid->addWidget(d->gInput, 5, 0, 1, 5);
-    grid->setRowStretch(6, 10);
+    grid->addWidget(filterMethodLabel,     0, 0, 1, 1);
+    grid->addWidget(d->filterMethodCombo,  0, 1, 1, 1);
+    grid->addWidget(d->blackFrameButton,   0, 2, 1, 1);
+    grid->addWidget(d->blackFrameListView, 1, 0, 2, 3);
+    grid->setRowStretch(3, 10);
     grid->setContentsMargins(spacing, spacing, spacing, spacing);
     grid->setSpacing(spacing);
 
     // -------------------------------------------------------------
 
-    connect(d->bInput, SIGNAL(valueChanged(int)),
-            this, SIGNAL(signalSettingsChanged()));
+    connect(d->filterMethodCombo, SIGNAL(activated(int)),
+            this, SLOT(slotPreview()));
 
-    connect(d->cInput, SIGNAL(valueChanged(int)),
-            this, SIGNAL(signalSettingsChanged()));
+    connect(d->blackFrameButton, SIGNAL(clicked()),
+            this, SLOT(slotAddBlackFrame()));
 
-    connect(d->gInput, SIGNAL(valueChanged(double)),
-            this, SIGNAL(signalSettingsChanged()));
+    connect(d->blackFrameListView, SIGNAL(signalBlackFrameSelected(QList<HotPixelProps>,QUrl)),
+            this, SLOT(slotBlackFrame(QList<HotPixelProps>,QUrl)));
 }
 
 HotPixelSettings::~HotPixelSettings()
@@ -135,42 +129,27 @@ HotPixelSettings::~HotPixelSettings()
 HotPixelContainer HotPixelSettings::settings() const
 {
     HotPixelContainer prm;
-/*
-    prm.brightness = (double)d->bInput->value() / 250.0;
-    prm.contrast   = (double)(d->cInput->value() / 100.0) + 1.00;
-    prm.gamma      = d->gInput->value();
-*/
+    prm.filterMethod = (HotPixelFixer::InterpolationMethod)d->filterMethodCombo->currentIndex();
     return prm;
 }
 
 void HotPixelSettings::setSettings(const HotPixelContainer& settings)
 {
-    blockSignals(true);
-/*
-    d->bInput->setValue((int)(settings.brightness * 250.0));
-    d->cInput->setValue((int)((settings.contrast - 1.0) * 100.0));
-    d->gInput->setValue(settings.gamma);
-*/
-    blockSignals(false);
+    d->filterMethodCombo->blockSignals(true);
+    d->filterMethodCombo->setCurrentIndex(settings.filterMethod);
+    d->filterMethodCombo->blockSignals(false);
 }
 
 void HotPixelSettings::resetToDefault()
 {
-    blockSignals(true);
-    d->bInput->slotReset();
-    d->cInput->slotReset();
-    d->gInput->slotReset();
-    blockSignals(false);
+    d->filterMethodCombo->blockSignals(true);
+    d->filterMethodCombo->slotReset();
+    d->filterMethodCombo->blockSignals(false);
 }
 
 HotPixelContainer HotPixelSettings::defaultSettings() const
 {
     HotPixelContainer prm;
-/*
-    prm.brightness = (double)(d->bInput->defaultValue() / 250.0);
-    prm.contrast   = (double)(d->cInput->defaultValue() / 100.0) + 1.00;
-    prm.gamma      = d->gInput->defaultValue();
-*/
     return prm;
 }
 
@@ -178,22 +157,17 @@ void HotPixelSettings::readSettings(KConfigGroup& group)
 {
     HotPixelContainer prm;
     HotPixelContainer defaultPrm = defaultSettings();
-/*
-    prm.brightness = group.readEntry(d->configBrightnessAdjustmentEntry, defaultPrm.brightness);
-    prm.contrast   = group.readEntry(d->configContrastAdjustmentEntry,   defaultPrm.contrast);
-    prm.gamma      = group.readEntry(d->configGammaAdjustmentEntry,      defaultPrm.gamma);
-*/
+
+    prm.blackFramePath           = group.readEntry(d->configLastBlackFrameFileEntry, defaultPrm.blackFramePath);
+    prm.filterMethod             = (HotPixelFixer::InterpolationMethod)group.readEntry(d->configFilterMethodEntry,       (int)defaultPrm.filterMethod);
     setSettings(prm);
 }
 
 void HotPixelSettings::writeSettings(KConfigGroup& group)
 {
     HotPixelContainer prm = settings();
-/*
-    group.writeEntry(d->configBrightnessAdjustmentEntry, prm.brightness);
-    group.writeEntry(d->configContrastAdjustmentEntry,   prm.contrast);
-    group.writeEntry(d->configGammaAdjustmentEntry,      prm.gamma);
-*/
+    group.writeEntry(d->configLastBlackFrameFileEntry, prm.blackFramePath);
+    group.writeEntry(d->configFilterMethodEntry,       (int)prm.filterMethod);
 }
 
 } // namespace Digikam

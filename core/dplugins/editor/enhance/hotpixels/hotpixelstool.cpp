@@ -79,13 +79,12 @@ public:
 
     QPushButton*         blackFrameButton;
     QProgressBar*        progressBar;
-    QList<HotPixelProps> hotPixelsList;
+    DComboBox*           filterMethodCombo;
+    BlackFrameListView*  blackFrameListView;
 
+    QList<HotPixelProps> hotPixelsList;
     QUrl                 blackFrameURL;
 
-    DComboBox*           filterMethodCombo;
-
-    BlackFrameListView*  blackFrameListView;
     ImageRegionWidget*   previewWidget;
     EditorToolSettings*  gboxSettings;
 };
