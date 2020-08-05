@@ -544,7 +544,7 @@ int main(int argc, char** argv)
 
     benchmark.fetchData();
     benchmark.registerTrainingSet();
-    benchmark.verifyTestSet();
+    //benchmark.verifyTestSet();
 
     return 0;
 }

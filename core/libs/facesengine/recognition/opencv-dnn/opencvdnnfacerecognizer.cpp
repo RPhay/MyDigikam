@@ -384,8 +384,8 @@ void OpenCVDNNFaceRecognizer::train(const QList<QImage>& images,
                                     const QString&       context)
 {
     // parallel loop
-    //cv::parallel_for_(cv::Range(0,images.size()), ParallelProcessor(d, images, label, context));
-
+    cv::parallel_for_(cv::Range(0,images.size()), ParallelProcessor(d, images, label, context));
+/*
     for (QList<QImage>::const_iterator image  = images.cbegin();
                                        image != images.cend();
                                      ++image)
@@ -397,7 +397,7 @@ void OpenCVDNNFaceRecognizer::train(const QList<QImage>& images,
             qCWarning(DIGIKAM_FACEDB_LOG) << "Fail to register a face of identity" << label;
         }
     }
-
+*/
     d->newDataAdded = true;
 }
 
