@@ -4,7 +4,7 @@
  * https://www.digikam.org
  *
  * Date        : 2005-03-27
- * Description : Threaded image filter to fix hot pixels
+ * Description : HotPixel properties.
  *
  * Copyright (C) 2005-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
  * Copyright (C) 2005-2006 by Unai Garro <ugarro at users dot sourceforge dot net>
@@ -22,32 +22,32 @@
  *
  * ============================================================ */
 
-#include "hotpixel.h"
+#include "hotpixelprops.h"
 
 namespace Digikam
 {
 
-int HotPixel::y() const
+int HotPixelProps::y() const
 {
     return rect.y();
 }
 
-int HotPixel::x() const
+int HotPixelProps::x() const
 {
     return rect.x();
 }
 
-int HotPixel::width() const
+int HotPixelProps::width() const
 {
     return rect.width();
 }
 
-int HotPixel::height() const
+int HotPixelProps::height() const
 {
     return rect.height();
 }
 
-bool HotPixel::operator==(const HotPixel& p) const
+bool HotPixelProps::operator==(const HotPixelProps& p) const
 {
     // we can say they're same hotpixel spot if they
     // touch (next to) each other horizontally or vertically, not diagonal corners
@@ -67,7 +67,7 @@ bool HotPixel::operator==(const HotPixel& p) const
 */
 }
 
-bool HotPixel::diagonal(const QRect& r1, const QRect& r2) const
+bool HotPixelProps::diagonal(const QRect& r1, const QRect& r2) const
 {
     // locate next-to positions
 

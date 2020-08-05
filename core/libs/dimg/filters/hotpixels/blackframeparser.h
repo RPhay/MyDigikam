@@ -43,7 +43,7 @@
 #include "digikam_export.h"
 #include "dimg.h"
 #include "loadsavethread.h"
-#include "hotpixel.h"
+#include "hotpixelprops.h"
 
 using namespace Digikam;
 
@@ -67,7 +67,7 @@ public:
 
 Q_SIGNALS:
 
-    void signalParsed(const QList<HotPixel>&);
+    void signalParsed(const QList<HotPixelProps>&);
     void signalLoadingProgress(float);
     void signalLoadingComplete();
 
@@ -79,8 +79,8 @@ private Q_SLOTS:
 private:
 
     void blackFrameParsing();
-    void consolidatePixels (QList<HotPixel>& list);
-    void validateAndConsolidate(HotPixel* const a, HotPixel* const b);
+    void consolidatePixels (QList<HotPixelProps>& list);
+    void validateAndConsolidate(HotPixelProps* const a, HotPixelProps* const b);
 
 private:
 

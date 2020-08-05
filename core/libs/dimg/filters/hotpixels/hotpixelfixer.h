@@ -37,7 +37,7 @@
 
 #include "digikam_export.h"
 #include "dimgthreadedfilter.h"
-#include "hotpixel.h"
+#include "hotpixelprops.h"
 #include "hotpixelsweights.h"
 
 using namespace Digikam;
@@ -70,7 +70,7 @@ public:
     explicit HotPixelFixer(QObject* const parent = nullptr);
     explicit HotPixelFixer(DImg* const orgImage,
                            QObject* const parent,
-                           const QList<HotPixel>& hpList,
+                           const QList<HotPixelProps>& hpList,
                            int interpolationMethod);
     ~HotPixelFixer();
 
@@ -105,11 +105,11 @@ private:
     virtual void filterImage()                       override;
 
     void interpolate(DImg& img,
-                     HotPixel& hp,
+                     HotPixelProps& hp,
                      int method);
 
     void weightPixels(DImg& img,
-                      HotPixel& px,
+                      HotPixelProps& px,
                       int method,
                       Direction dir,
                       int maxComponent);
@@ -128,9 +128,9 @@ private:
 
 private:
 
-    int             m_interpolationMethod;
+    int                  m_interpolationMethod;
 
-    QList<HotPixel> m_hpList;
+    QList<HotPixelProps> m_hpList;
 };
 
 } // namespace Digikam

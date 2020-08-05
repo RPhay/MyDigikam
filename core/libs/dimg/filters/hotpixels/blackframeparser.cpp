@@ -123,7 +123,7 @@ void BlackFrameParser::blackFrameParsing()
 {
     // Now find the hot pixels and store them in a list
 
-    QList<HotPixel> hpList;
+    QList<HotPixelProps> hpList;
 
     // If you accidentally open a normal image for a black frame, the tool and host application will
     // freeze due to heavy calculation.
@@ -159,7 +159,7 @@ void BlackFrameParser::blackFrameParsing()
 
             if (maxValue > threshold_value)
             {
-                HotPixel point;
+                HotPixelProps point;
                 point.rect       = QRect (x, y, 1, 1);
 
                 // TODO: check this
@@ -188,7 +188,7 @@ void BlackFrameParser::blackFrameParsing()
 /**
  * Consolidate adjacent points into larger points.
  */
-void BlackFrameParser::consolidatePixels(QList<HotPixel>& list)
+void BlackFrameParser::consolidatePixels(QList<HotPixelProps>& list)
 {
     if (list.isEmpty())
     {
@@ -197,15 +197,15 @@ void BlackFrameParser::consolidatePixels(QList<HotPixel>& list)
 
     // Consolidate horizontally.
 
-    QList<HotPixel>::iterator it, prevPointIt;
+    QList<HotPixelProps>::iterator it, prevPointIt;
 
     prevPointIt = list.begin();
     it          = list.begin();
     ++it;
 
-    HotPixel tmp;
-    HotPixel point;
-    HotPixel point_below;
+    HotPixelProps tmp;
+    HotPixelProps point;
+    HotPixelProps point_below;
 
     for ( ; it != list.end() ; ++it)
     {
@@ -214,7 +214,7 @@ void BlackFrameParser::consolidatePixels(QList<HotPixel>& list)
             point = (*it);
             tmp   = point;
 
-            QList<HotPixel>::iterator point_below_it;
+            QList<HotPixelProps>::iterator point_below_it;
 
             // find any intersecting hot pixels below tmp
 
@@ -250,7 +250,7 @@ void BlackFrameParser::consolidatePixels(QList<HotPixel>& list)
     }
 }
 
-void BlackFrameParser::validateAndConsolidate(HotPixel* const a, HotPixel* const b)
+void BlackFrameParser::validateAndConsolidate(HotPixelProps* const a, HotPixelProps* const b)
 {
     a->luminosity = qMax(a->luminosity, b->luminosity);
 }

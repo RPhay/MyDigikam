@@ -48,11 +48,11 @@ BlackFrameListViewItem::BlackFrameListViewItem(QTreeWidget* const parent, const 
     m_parser = new BlackFrameParser(this);
     m_parser->parseBlackFrame(url);
 
-    connect(m_parser, SIGNAL(signalParsed(QList<HotPixel>)),
-            this, SLOT(slotParsed(QList<HotPixel>)));
+    connect(m_parser, SIGNAL(signalParsed(QList<HotPixelProps>)),
+            this, SLOT(slotParsed(QList<HotPixelProps>)));
 
-    connect(this, SIGNAL(signalParsed(QList<HotPixel>,QUrl)),
-            parent, SLOT(slotParsed(QList<HotPixel>,QUrl)));
+    connect(this, SIGNAL(signalParsed(QList<HotPixelProps>,QUrl)),
+            parent, SLOT(slotParsed(QList<HotPixelProps>,QUrl)));
 
     connect(m_parser, SIGNAL(signalLoadingProgress(float)),
             this, SIGNAL(signalLoadingProgress(float)));
@@ -72,7 +72,7 @@ void BlackFrameListViewItem::activate()
     emit signalParsed(m_hotPixels, m_blackFrameURL);
 }
 
-void BlackFrameListViewItem::slotParsed(const QList<HotPixel>& hotPixels)
+void BlackFrameListViewItem::slotParsed(const QList<HotPixelProps>& hotPixels)
 {
     m_hotPixels = hotPixels;
     m_image     = m_parser->image();
@@ -89,7 +89,7 @@ void BlackFrameListViewItem::slotParsed(const QList<HotPixel>& hotPixels)
 
     m_blackFrameDesc = QString::fromUtf8("<p><b>%1</b>:<p>").arg(m_blackFrameURL.fileName());
 
-    for (QList <HotPixel>::const_iterator it = m_hotPixels.constBegin() ;
+    for (QList <HotPixelProps>::const_iterator it = m_hotPixels.constBegin() ;
          it != m_hotPixels.constEnd() ; ++it)
     {
         m_blackFrameDesc.append( QString::fromUtf8("[%1,%2] ").arg((*it).x()).arg((*it).y()) );
@@ -119,7 +119,7 @@ QPixmap BlackFrameListViewItem::thumb(const QSize& size)
 
     // Draw hot pixels one by one
 
-    QList<HotPixel>::const_iterator it;
+    QList<HotPixelProps>::const_iterator it;
 
     for (it = m_hotPixels.constBegin() ; it != m_hotPixels.constEnd() ; ++it)
     {
@@ -164,7 +164,7 @@ BlackFrameListView::~BlackFrameListView()
 {
 }
 
-void BlackFrameListView::slotParsed(const QList<HotPixel>& hotPixels, const QUrl& blackFrameURL)
+void BlackFrameListView::slotParsed(const QList<HotPixelProps>& hotPixels, const QUrl& blackFrameURL)
 {
     emit signalBlackFrameSelected(hotPixels, blackFrameURL);
 }

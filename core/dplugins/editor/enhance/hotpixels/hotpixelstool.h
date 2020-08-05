@@ -35,7 +35,7 @@
 // Local includes
 
 #include "editortool.h"
-#include "hotpixel.h"
+#include "hotpixelprops.h"
 
 class QUrl;
 
@@ -59,7 +59,7 @@ private Q_SLOTS:
 
     void slotLoadingProgress(float v);
     void slotLoadingComplete();
-    void slotBlackFrame(const QList<HotPixel>& hpList, const QUrl& blackFrameURL);
+    void slotBlackFrame(const QList<HotPixelProps>& hpList, const QUrl& blackFrameURL);
     void slotAddBlackFrame();
     void slotResetSettings();
 

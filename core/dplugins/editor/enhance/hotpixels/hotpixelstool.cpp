@@ -79,7 +79,7 @@ public:
 
     QPushButton*         blackFrameButton;
     QProgressBar*        progressBar;
-    QList<HotPixel>      hotPixelsList;
+    QList<HotPixelProps> hotPixelsList;
 
     QUrl                 blackFrameURL;
 
@@ -157,8 +157,8 @@ HotPixelsTool::HotPixelsTool(QObject* const parent)
     connect(d->blackFrameButton, SIGNAL(clicked()),
             this, SLOT(slotAddBlackFrame()));
 
-    connect(d->blackFrameListView, SIGNAL(signalBlackFrameSelected(QList<HotPixel>,QUrl)),
-            this, SLOT(slotBlackFrame(QList<HotPixel>,QUrl)));
+    connect(d->blackFrameListView, SIGNAL(signalBlackFrameSelected(QList<HotPixelProps>,QUrl)),
+            this, SLOT(slotBlackFrame(QList<HotPixelProps>,QUrl)));
 }
 
 HotPixelsTool::~HotPixelsTool()
@@ -252,13 +252,13 @@ void HotPixelsTool::preparePreview()
     DImg image              = d->previewWidget->getOriginalRegionImage();
     int interpolationMethod = d->filterMethodCombo->currentIndex();
 
-    QList<HotPixel> hotPixelsRegion;
+    QList<HotPixelProps> hotPixelsRegion;
     QRect area = d->previewWidget->getOriginalImageRegionToRender();
 
-    for (QList<HotPixel>::const_iterator it = d->hotPixelsList.constBegin() ;
+    for (QList<HotPixelProps>::const_iterator it = d->hotPixelsList.constBegin() ;
          it != d->hotPixelsList.constEnd() ; ++it)
     {
-        HotPixel hp = (*it);
+        HotPixelProps hp = (*it);
 
         if (area.contains( hp.rect ))
         {
@@ -289,14 +289,14 @@ void HotPixelsTool::setFinalImage()
     iface.setOriginal(i18n("Hot Pixels Correction"), filter()->filterAction(), filter()->getTargetImage());
 }
 
-void HotPixelsTool::slotBlackFrame(const QList<HotPixel>& hpList, const QUrl& blackFrameURL)
+void HotPixelsTool::slotBlackFrame(const QList<HotPixelProps>& hpList, const QUrl& blackFrameURL)
 {
     d->blackFrameURL = blackFrameURL;
     d->hotPixelsList = hpList;
 
     QPolygon pointList(d->hotPixelsList.size());
-    QList <HotPixel>::const_iterator it;
-    int i = 0;
+    QList <HotPixelProps>::const_iterator it;
+    int i            = 0;
 
     for (it = d->hotPixelsList.constBegin() ; it != d->hotPixelsList.constEnd() ; ++it, ++i)
     {

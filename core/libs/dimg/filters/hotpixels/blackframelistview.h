@@ -40,7 +40,7 @@
 
 #include "digikam_export.h"
 #include "blackframeparser.h"
-#include "hotpixel.h"
+#include "hotpixelprops.h"
 
 namespace Digikam
 {
@@ -57,7 +57,7 @@ public:
 
 Q_SIGNALS:
 
-    void signalParsed(const QList<HotPixel>&, const QUrl&);
+    void signalParsed(const QList<HotPixelProps>&, const QUrl&);
     void signalLoadingProgress(float);
     void signalLoadingComplete();
 
@@ -71,24 +71,24 @@ private:
 
 private Q_SLOTS:
 
-    void slotParsed(const QList<HotPixel>&);
+    void slotParsed(const QList<HotPixelProps>&);
 
 private:
 
     /// Data contained within each listview item
 
-    QImage            m_thumb;
-    QImage            m_image;
+    QImage               m_thumb;
+    QImage               m_image;
 
-    QSize             m_imageSize;
+    QSize                m_imageSize;
 
-    QList<HotPixel>   m_hotPixels;
+    QList<HotPixelProps> m_hotPixels;
 
-    QString           m_blackFrameDesc;
+    QString              m_blackFrameDesc;
 
-    QUrl              m_blackFrameURL;
+    QUrl                 m_blackFrameURL;
 
-    BlackFrameParser* m_parser;
+    BlackFrameParser*    m_parser;
 };
 
 //-----------------------------------------------------------------------------------
@@ -104,11 +104,11 @@ public:
 
 Q_SIGNALS:
 
-    void signalBlackFrameSelected(const QList<HotPixel>&, const QUrl&);
+    void signalBlackFrameSelected(const QList<HotPixelProps>&, const QUrl&);
 
 private Q_SLOTS:
 
-    void slotParsed(const QList<HotPixel>&, const QUrl&);
+    void slotParsed(const QList<HotPixelProps>&, const QUrl&);
 };
 
 } // namespace Digikam

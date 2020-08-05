@@ -4,7 +4,7 @@
  * https://www.digikam.org
  *
  * Date        : 2005-03-27
- * Description : Threaded image filter to fix hot pixels
+ * Description : HotPixel properties.
  *
  * Copyright (C) 2005-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
  * Copyright (C) 2005-2006 by Unai Garro <ugarro at users dot sourceforge dot net>
@@ -22,8 +22,8 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_HOT_PIXEL_H
-#define DIGIKAM_HOT_PIXEL_H
+#ifndef DIGIKAM_HOT_PIXEL_PROPS_H
+#define DIGIKAM_HOT_PIXEL_PROPS_H
 
 // Qt includes
 
@@ -36,7 +36,7 @@
 namespace Digikam
 {
 
-class DIGIKAM_EXPORT HotPixel
+class DIGIKAM_EXPORT HotPixelProps
 {
 
 public:
@@ -51,7 +51,7 @@ public:
     int width()                                     const;
     int height()                                    const;
 
-    bool operator==(const HotPixel& p)              const;
+    bool operator==(const HotPixelProps& p)         const;
 
 private:
 
@@ -60,4 +60,4 @@ private:
 
 } // namespace Digikam
 
-#endif // DIGIKAM_HOT_PIXEL_H
+#endif // DIGIKAM_HOT_PIXEL_PROPS_H

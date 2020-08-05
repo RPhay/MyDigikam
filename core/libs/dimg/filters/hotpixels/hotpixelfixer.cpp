@@ -71,7 +71,7 @@ HotPixelFixer::HotPixelFixer(QObject* const parent)
 
 HotPixelFixer::HotPixelFixer(DImg* const orgImage,
                              QObject* const parent,
-                             const QList<HotPixel>& hpList,
+                             const QList<HotPixelProps>& hpList,
                              int interpolationMethod)
     : DImgThreadedFilter(orgImage, parent, QLatin1String("HotPixels")),
       m_interpolationMethod(interpolationMethod),
@@ -95,7 +95,7 @@ Digikam::FilterAction HotPixelFixer::filterAction()
     DefaultFilterAction<HotPixelFixer> action;
     action.addParameter(QLatin1String("interpolationMethod"), m_interpolationMethod);
 
-    foreach (const HotPixel& hp, m_hpList)
+    foreach (const HotPixelProps& hp, m_hpList)
     {
         QString hpString = QString::fromUtf8("%1-%2x%3-%4x%5").arg(hp.luminosity)
                                                               .arg(hp.rect.x()).arg(hp.rect.y())
@@ -115,7 +115,7 @@ void HotPixelFixer::readParameters(const FilterAction& action)
     {
         if (exp.exactMatch(var.toString()))
         {
-            HotPixel hp;
+            HotPixelProps hp;
             hp.luminosity = exp.cap(1).toInt();
             hp.rect       = QRect(exp.cap(2).toInt(), exp.cap(3).toInt(),
                                   exp.cap(4).toInt(), exp.cap(5).toInt());
@@ -126,12 +126,12 @@ void HotPixelFixer::readParameters(const FilterAction& action)
 
 void HotPixelFixer::filterImage()
 {
-    QList <HotPixel>::ConstIterator it;
-    QList <HotPixel>::ConstIterator end(m_hpList.constEnd());
+    QList <HotPixelProps>::ConstIterator it;
+    QList <HotPixelProps>::ConstIterator end(m_hpList.constEnd());
 
     for (it = m_hpList.constBegin() ; it != end ; ++it)
     {
-        HotPixel hp = *it;
+        HotPixelProps hp = *it;
         interpolate(m_orgImage, hp, m_interpolationMethod);
     }
 
@@ -141,7 +141,7 @@ void HotPixelFixer::filterImage()
 /**
  * Interpolates a pixel block
  */
-void HotPixelFixer::interpolate(DImg& img, HotPixel& hp, int method)
+void HotPixelFixer::interpolate(DImg& img, HotPixelProps& hp, int method)
 {
     const int xPos = hp.x();
     const int yPos = hp.y();
@@ -246,7 +246,7 @@ void HotPixelFixer::interpolate(DImg& img, HotPixel& hp, int method)
     }
 }
 
-void HotPixelFixer::weightPixels(DImg& img, HotPixel& px, int method, Direction dir, int maxComponent)
+void HotPixelFixer::weightPixels(DImg& img, HotPixelProps& px, int method, Direction dir, int maxComponent)
 {
     // TODO: implement direction here too
 
@@ -263,19 +263,19 @@ void HotPixelFixer::weightPixels(DImg& img, HotPixel& px, int method, Direction 
                 break;
 
             case LINEAR_INTERPOLATION:
-                polynomeOrder=1;
+                polynomeOrder = 1;
                 break;
 
             case QUADRATIC_INTERPOLATION:
-                polynomeOrder=2;
+                polynomeOrder = 2;
                 break;
 
             case CUBIC_INTERPOLATION:
-                polynomeOrder=3;
+                polynomeOrder = 3;
                 break;
         }
 
-        if (polynomeOrder<0)
+        if (polynomeOrder < 0)
         {
             return;
         }
