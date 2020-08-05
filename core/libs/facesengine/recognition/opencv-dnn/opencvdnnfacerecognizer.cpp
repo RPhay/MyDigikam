@@ -88,6 +88,8 @@ public:
     int predictKDTree(const cv::Mat& faceEmbedding, int k) const;
     int predictDb(const cv::Mat& faceEmbedding, int k) const;
 
+    bool insertData(const cv::Mat& position, const int label, const QString& context = QString());
+
 public:
 
     Classifier method;
@@ -100,6 +102,40 @@ public:
     int kNeighbors;
 
     bool newDataAdded;
+};
+
+class OpenCVDNNFaceRecognizer::ParallelProcessor : public cv::ParallelLoopBody
+{
+private:
+
+    const QList<QImage>& images;
+    std::vector<int>& ids;
+    const QString& context;
+
+    OpenCVDNNFaceRecognizer::Private* d;
+
+public:
+
+    ParallelProcessor(OpenCVDNNFaceRecognizer::Private* d, const QList<QImage>& images, std::vector<int>& ids, const QString& context)
+        : images(images),
+          ids(ids),
+          context(context),
+          d(d)
+    {
+    }
+
+    void operator()(const cv::Range& range) const
+    {
+        for(int i = range.start; i < range.end; ++i)
+        {
+            cv::Mat faceEmbedding = d->extractor->getFaceEmbedding(OpenCVDNNFaceRecognizer::prepareForRecognition(images[i])).clone();
+
+            if (!d->insertData(faceEmbedding, ids[i], context))
+            {
+                qCWarning(DIGIKAM_FACEDB_LOG) << "Fail to register a face of identity" << ids[i];
+            }
+        }
+    }
 };
 
 
@@ -307,7 +343,7 @@ cv::Mat OpenCVDNNFaceRecognizer::prepareForRecognition(const QImage& inputImage)
     return cvImage;
 }
 
-bool OpenCVDNNFaceRecognizer::insertData(const cv::Mat& nodePos, const int label, const QString& context)
+bool OpenCVDNNFaceRecognizer::Private::insertData(const cv::Mat& nodePos, const int label, const QString& context)
 {
     int nodeId = FaceDbAccess().db()->insertFaceVector(nodePos, label, context);
 
@@ -316,7 +352,7 @@ bool OpenCVDNNFaceRecognizer::insertData(const cv::Mat& nodePos, const int label
         qCWarning(DIGIKAM_FACEDB_LOG) << "error inserting face embedding to database";
     }
 
-    if (d->method == DB)
+    if (method == DB)
     {
         if (! FaceDbAccess().db()->insertToTreeDb(nodeId, nodePos))
         {
@@ -324,9 +360,9 @@ bool OpenCVDNNFaceRecognizer::insertData(const cv::Mat& nodePos, const int label
             return false;
         }
     }
-    else if(d->method == Tree)
+    else if(method == Tree)
     {
-        KDNode* newNode = d->tree->add(nodePos, label);
+        KDNode* newNode = tree->add(nodePos, label);
 
         if (newNode)
         {
@@ -353,7 +389,7 @@ void OpenCVDNNFaceRecognizer::train(const QList<QImage>& images,
     {
         cv::Mat faceEmbedding = d->extractor->getFaceEmbedding(prepareForRecognition(*image)).clone();
 
-        if (!insertData(faceEmbedding, label, context))
+        if (!d->insertData(faceEmbedding, label, context))
         {
             qCWarning(DIGIKAM_FACEDB_LOG) << "Fail to register a face of identity" << label;
         }

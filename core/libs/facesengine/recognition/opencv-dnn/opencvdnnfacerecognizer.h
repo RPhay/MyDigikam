@@ -62,16 +62,7 @@ public:
     /**
      *  Returns a cvMat created from the inputImage, optimized for recognition
      */
-    cv::Mat prepareForRecognition(const QImage& inputImage);
-
-    /**
-     * @brief insertData: insert new data to recognizer
-     * @param position
-     * @param label
-     * @param context
-     * @return
-     */
-    bool insertData(const cv::Mat& position, const int label, const QString& context = QString());
+    static cv::Mat prepareForRecognition(const QImage& inputImage);
 
     /**
      * @brief train : register data corresponding an identity to recognizer
@@ -104,6 +95,8 @@ private:
     /// Hidden copy constructor and assignment operator.
     OpenCVDNNFaceRecognizer(const OpenCVDNNFaceRecognizer&);
     OpenCVDNNFaceRecognizer& operator=(const OpenCVDNNFaceRecognizer&);
+
+    class ParallelProcessor;
 
     class Private;
     Private* d;

@@ -47,14 +47,20 @@ namespace Digikam
 DNNFaceDetectorYOLO::DNNFaceDetectorYOLO()
     : DNNFaceDetectorBase(1.0F / 255.0F, cv::Scalar(0.0, 0.0, 0.0), cv::Size(416, 416))
 {
+/*
     QString nnmodel = QStandardPaths::locate(QStandardPaths::GenericDataLocation,
                                              QLatin1String("digikam/facesengine/yolov3-face.cfg"));
     QString nndata  = QStandardPaths::locate(QStandardPaths::GenericDataLocation,
                                              QLatin1String("digikam/facesengine/yolov3-wider_16000.weights"));
+*/
+    QString nnmodel = QLatin1String("/home/minhnghiaduong/Documents/Projects/yolov4.cfg");
+    QString nndata  = QLatin1String("/home/minhnghiaduong/Documents/Projects/yolov4.weights");
 
-    qCDebug(DIGIKAM_FACEDB_LOG) << "nnmodel: " << nnmodel << ", nndata " << nndata;
+    qDebug() << "nnmodel: " << nnmodel << ", nndata " << nndata;
 
     net             = cv::dnn::readNetFromDarknet(nnmodel.toStdString(), nndata.toStdString());
+    net.setPreferableBackend(cv::dnn::DNN_BACKEND_DEFAULT);
+    net.setPreferableTarget(cv::dnn::DNN_TARGET_CPU);
 }
 
 DNNFaceDetectorYOLO::~DNNFaceDetectorYOLO()
