@@ -25,6 +25,9 @@
  * ============================================================ */
 
 #include "facialrecognition_wrapper_p.h"
+
+#include <QtConcurrent>
+
 namespace Digikam
 {
 
@@ -37,15 +40,13 @@ QList<Identity> FacialRecognitionWrapper::recognizeFaces(ImageListProvider* cons
 
     QMutexLocker lock(&d->mutex);
 
-    QList<Identity> result;
-
-    for ( ; !images->atEnd() ; images->proceed())
+    std::function<Identity(const QImage&)> recognizeIdentity = [this](const QImage& image)
     {
         int id = -1;
 
         try
         {
-            id = d->recognizer->recognize(images->image());
+            id = d->recognizer->recognize(image);
 
             qDebug() << "predicted id" << id;
         }
@@ -60,15 +61,15 @@ QList<Identity> FacialRecognitionWrapper::recognizeFaces(ImageListProvider* cons
 
         if (id == -1)
         {
-            result << Identity();
+            return Identity();
         }
         else
         {
-            result << d->identityCache.value(id);
+            return d->identityCache.value(id);
         }
-    }
+    };
 
-    return result;
+    return QtConcurrent::blockingMapped(images->images(), recognizeIdentity);
 }
 
 QList<Identity> FacialRecognitionWrapper::recognizeFaces(const QList<QImage>& images)

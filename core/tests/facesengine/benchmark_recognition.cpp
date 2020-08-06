@@ -193,27 +193,32 @@ void Benchmark::verifyTestSet()
                                                      iter != m_testSet.end();
                                                    ++iter)
     {
+        QList<QImage> croppedFaces;
+
         for (int i = 0; i < iter.value().size(); ++i)
         {
             QImage croppedFace = detect(iter.value().at(i));
 
             if (!croppedFace.isNull())
             {
-                Identity newIdentity = m_recognizer->recognizeFace(croppedFace);
-
-                if (newIdentity.isNull() && m_trainSet.contains(iter.key()))
-                {
-                    // cannot recognize when label is already register
-                    ++nbNotRecognize;
-                }
-                else if (newIdentity.attribute(QLatin1String("fullName")) != iter.key())
-                {
-                    // wrong label
-                    ++nbWrongLabel;
-                }
-
+                croppedFaces << croppedFace;
                 ++m_testSize;
             }
+        }
+
+        QList<Identity> predictions = m_recognizer->recognizeFaces(croppedFaces);
+
+        for (int i = 0; i < predictions.size(); ++i)
+
+        if (predictions[i].isNull() && m_trainSet.contains(iter.key()))
+        {
+            // cannot recognize when label is already register
+            ++nbNotRecognize;
+        }
+        else if (predictions[i].attribute(QLatin1String("fullName")) != iter.key())
+        {
+            // wrong label
+            ++nbWrongLabel;
         }
     }
 
@@ -544,7 +549,7 @@ int main(int argc, char** argv)
 
     benchmark.fetchData();
     benchmark.registerTrainingSet();
-    //benchmark.verifyTestSet();
+    benchmark.verifyTestSet();
 
     return 0;
 }

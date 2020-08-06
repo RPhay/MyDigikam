@@ -96,8 +96,6 @@ private:
     OpenCVDNNFaceRecognizer(const OpenCVDNNFaceRecognizer&);
     OpenCVDNNFaceRecognizer& operator=(const OpenCVDNNFaceRecognizer&);
 
-    class ParallelProcessor;
-
     class Private;
     Private* d;
 };
