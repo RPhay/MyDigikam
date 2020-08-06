@@ -41,13 +41,13 @@
 
 // Qt includes
 
-#include <QImage>
 #include <QStringList>
 #include <QApplication>
 
 // Local includes
 
 #include "digikam_debug.h"
+#include "dcolor.h"
 
 namespace Digikam
 {
@@ -99,21 +99,21 @@ void BlackFrameParser::slotLoadingProgress(const LoadingDescription&, float v)
 
 void BlackFrameParser::slotLoadImageFromUrlComplete(const LoadingDescription&, const DImg& img)
 {
-    m_Image = img.copyQImage();
+    m_image = img;
     blackFrameParsing();
 
     emit signalLoadingComplete();
 }
 
-void BlackFrameParser::parseBlackFrame(QImage& img)
+void BlackFrameParser::parseBlackFrame(DImg& img)
 {
-    m_Image = img;
+    m_image = img;
     blackFrameParsing();
 }
 
-QImage BlackFrameParser::image() const
+DImg BlackFrameParser::image() const
 {
-    return m_Image;
+    return m_image;
 }
 
 /**
@@ -133,15 +133,15 @@ void BlackFrameParser::blackFrameParsing()
 
     const int maxHotPixels = 1000;
 
-    for (int y = 0 ; y < m_Image.height() ; ++y)
+    for (int y = 0 ; y < (int)m_image.height() ; ++y)
     {
-        for (int x = 0 ; x < m_Image.width() ; ++x)
+        for (int x = 0 ; x < (int)m_image.width() ; ++x)
         {
             // Get each point in the image
 
-            QRgb pixrgb = m_Image.pixel(x, y);
+            DColor pixrgb = m_image.getPixelColor(x, y);
             QColor color;
-            color.setRgb(pixrgb);
+            color.setRgb(pixrgb.getQColor().rgb());
 
             // Find maximum component value.
 

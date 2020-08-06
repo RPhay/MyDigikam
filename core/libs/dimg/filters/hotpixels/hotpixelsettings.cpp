@@ -90,7 +90,7 @@ HotPixelSettings::HotPixelSettings(QWidget* const parent)
     : QWidget(parent),
       d(new Private)
 {
-    const int spacing       = QApplication::style()->pixelMetric(QStyle::PM_DefaultLayoutSpacing);    QGridLayout* const grid = new QGridLayout(parent);
+    const int spacing               = QApplication::style()->pixelMetric(QStyle::PM_DefaultLayoutSpacing);    QGridLayout* const grid = new QGridLayout(parent);
 
     QLabel* const filterMethodLabel = new QLabel(i18n("Filter:"), this);
     d->filterMethodCombo            = new DComboBox(this);
@@ -145,31 +145,31 @@ HotPixelContainer HotPixelSettings::settings() const
     prm.blackFrameUrl = d->blackFrameURL;
     prm.hotPixelsList = d->hotPixelsList;
     prm.filterMethod  = (HotPixelFixer::InterpolationMethod)d->filterMethodCombo->currentIndex();
+
     return prm;
 }
 
 void HotPixelSettings::setSettings(const HotPixelContainer& settings)
 {
-    d->filterMethodCombo->blockSignals(true);
+    blockSignals(true);
     d->blackFrameURL = settings.blackFrameUrl;
     d->hotPixelsList = settings.hotPixelsList;
     d->filterMethodCombo->setCurrentIndex(settings.filterMethod);
-    d->filterMethodCombo->blockSignals(false);
+    blockSignals(false);
 }
 
 void HotPixelSettings::resetToDefault()
 {
-    d->filterMethodCombo->blockSignals(true);
+    blockSignals(true);
     d->blackFrameURL = QUrl();
     d->hotPixelsList = QList<HotPixelProps>();
     d->filterMethodCombo->slotReset();
-    d->filterMethodCombo->blockSignals(false);
+    blockSignals(false);
 }
 
 HotPixelContainer HotPixelSettings::defaultSettings() const
 {
-    HotPixelContainer prm;
-    return prm;
+    return HotPixelContainer();
 }
 
 void HotPixelSettings::readSettings(KConfigGroup& group)
@@ -182,11 +182,11 @@ void HotPixelSettings::readSettings(KConfigGroup& group)
 
     QStringList hplst            = group.readEntry(d->configHotPixelsListEntry, QStringList());
     prm.hotPixelsList            = HotPixelProps::fromStringList(hplst);
-    
+
     prm.filterMethod             = (HotPixelFixer::InterpolationMethod)group.readEntry(d->configFilterMethodEntry, (int)defaultPrm.filterMethod);
 
     setSettings(prm);
-    
+
     if (d->blackFrameURL.isValid())
     {
         loadBlackFrame();
@@ -197,7 +197,7 @@ void HotPixelSettings::writeSettings(KConfigGroup& group)
 {
     HotPixelContainer prm = settings();
     group.writeEntry(d->configLastBlackFrameFileEntry, prm.blackFrameUrl);
-    
+
     QStringList hplst     = HotPixelProps::toStringList(prm.hotPixelsList);
     group.writeEntry(d->configHotPixelsListEntry,      hplst);
 
@@ -257,7 +257,7 @@ void HotPixelSettings::slotBlackFrame(const QList<HotPixelProps>& hpList, const 
     {
         pointList.setPoint(i, (*it).rect.center());
     }
-    
+
     emit signalHotPixels(pointList);
 }
 

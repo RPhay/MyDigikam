@@ -74,35 +74,12 @@ void BlackFrameListViewItem::activate()
 
 void BlackFrameListViewItem::slotParsed(const QList<HotPixelProps>& hotPixels)
 {
-    m_hotPixels = hotPixels;
-    m_image     = m_parser->image();
-    m_imageSize = m_image.size();
-    m_thumb     = thumb(QSize(THUMB_WIDTH, THUMB_WIDTH/3*2)).toImage();
-    setIcon(0, QPixmap::fromImage(m_thumb));
+    m_hotPixels  = hotPixels;
 
-    if (!m_imageSize.isEmpty())
-    {
-        setText(1, QString::fromUtf8("%1x%2").arg(m_imageSize.width()).arg(m_imageSize.height()));
-    }
-
-    setText(2, QString::number(m_hotPixels.count()));
-
-    m_blackFrameDesc = QString::fromUtf8("<p><b>%1</b>:<p>").arg(m_blackFrameURL.fileName());
-
-    for (QList <HotPixelProps>::const_iterator it = m_hotPixels.constBegin() ;
-         it != m_hotPixels.constEnd() ; ++it)
-    {
-        m_blackFrameDesc.append( QString::fromUtf8("[%1,%2] ").arg((*it).x()).arg((*it).y()) );
-    }
-
-    emit signalParsed(m_hotPixels, m_blackFrameURL);
-}
-
-QPixmap BlackFrameListViewItem::thumb(const QSize& size)
-{
     // First scale it down to the size
 
-    QPixmap thumb = QPixmap::fromImage(m_image.scaled(size, Qt::KeepAspectRatio, Qt::SmoothTransformation));
+    QSize size   = QSize(THUMB_WIDTH, THUMB_WIDTH/3*2);
+    QImage thumb = m_parser->image().smoothScale(size, Qt::KeepAspectRatio).copyQImage();
 
     // And draw the hot pixel positions on the thumb
 
@@ -114,8 +91,8 @@ QPixmap BlackFrameListViewItem::thumb(const QSize& size)
     float hpThumbX, hpThumbY;
     QRect hpRect;
 
-    xRatio = (float)size.width()  / (float)m_image.width();
-    yRatio = (float)size.height() / (float)m_image.height();
+    xRatio = (float)size.width()  / (float)m_parser->image().width();
+    yRatio = (float)size.height() / (float)m_parser->image().height();
 
     // Draw hot pixels one by one
 
@@ -137,7 +114,24 @@ QPixmap BlackFrameListViewItem::thumb(const QSize& size)
         p.drawPoint((int) hpThumbX + 1, (int) hpThumbY - 1);
     }
 
-    return thumb;
+    setIcon(0, QPixmap::fromImage(thumb));
+
+    if (!m_parser->image().size().isEmpty())
+    {
+        setText(1, QString::fromUtf8("%1x%2").arg(m_parser->image().width()).arg(m_parser->image().height()));
+    }
+
+    setText(2, QString::number(m_hotPixels.count()));
+
+    m_blackFrameDesc = QString::fromUtf8("<p><b>%1</b>:<p>").arg(m_blackFrameURL.fileName());
+
+    for (QList <HotPixelProps>::const_iterator it = m_hotPixels.constBegin() ;
+         it != m_hotPixels.constEnd() ; ++it)
+    {
+        m_blackFrameDesc.append(QString::fromUtf8("[%1,%2] ").arg((*it).x()).arg((*it).y()));
+    }
+
+    emit signalParsed(m_hotPixels, m_blackFrameURL);
 }
 
 // ----------------------------------------------------------------------------

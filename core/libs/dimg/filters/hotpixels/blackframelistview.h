@@ -32,7 +32,6 @@
 #include <QString>
 #include <QSize>
 #include <QPoint>
-#include <QPixmap>
 #include <QUrl>
 #include <QTreeWidget>
 
@@ -65,10 +64,6 @@ protected:
 
     void activate();
 
-private:
-
-    QPixmap thumb(const QSize& size);
-
 private Q_SLOTS:
 
     void slotParsed(const QList<HotPixelProps>&);
@@ -76,11 +71,6 @@ private Q_SLOTS:
 private:
 
     /// Data contained within each listview item
-
-    QImage               m_thumb;
-    QImage               m_image;
-
-    QSize                m_imageSize;
 
     QList<HotPixelProps> m_hotPixels;
 

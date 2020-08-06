@@ -32,7 +32,6 @@
 // Qt includes
 
 #include <QList>
-#include <QImage>
 #include <QObject>
 #include <QString>
 #include <QRect>
@@ -61,9 +60,9 @@ public:
 
     void parseHotPixels(const QString& file);
     void parseBlackFrame(const QUrl& url);
-    void parseBlackFrame(QImage& img);
+    void parseBlackFrame(DImg& img);
 
-    QImage image() const;
+    DImg image() const;
 
 Q_SIGNALS:
 
@@ -86,7 +85,7 @@ private:
 
     QString         m_tempFilePath;
 
-    QImage          m_Image;
+    DImg            m_image;
 
     LoadSaveThread* m_imageLoaderThread;
 };
