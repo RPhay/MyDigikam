@@ -34,6 +34,7 @@
 #include <QPushButton>
 #include <QApplication>
 #include <QStyle>
+#include <QPointer>
 
 // KDE includes
 
@@ -46,6 +47,8 @@
 #include "hotpixelfixer.h"
 #include "blackframelistview.h"
 #include "dcombobox.h"
+#include "imagedialog.h"
+#include "blackframelistview.h"
 
 namespace Digikam
 {
@@ -64,16 +67,21 @@ public:
 
     static const QString configGroupName;
     static const QString configLastBlackFrameFileEntry;
+    static const QString configHotPixelsListEntry;
     static const QString configFilterMethodEntry;
 
     QPushButton*         blackFrameButton;
     QProgressBar*        progressBar;
     DComboBox*           filterMethodCombo;
     BlackFrameListView*  blackFrameListView;
+
+    QList<HotPixelProps> hotPixelsList;
+    QUrl                 blackFrameURL;
 };
 
 const QString HotPixelSettings::Private::configGroupName(QLatin1String("hotpixels Tool"));
 const QString HotPixelSettings::Private::configLastBlackFrameFileEntry(QLatin1String("Last Black Frame File"));
+const QString HotPixelSettings::Private::configHotPixelsListEntry(QLatin1String("Hot Pixels List"));
 const QString HotPixelSettings::Private::configFilterMethodEntry(QLatin1String("Filter Method"));
 
 // --------------------------------------------------------
@@ -92,11 +100,13 @@ HotPixelSettings::HotPixelSettings(QWidget* const parent)
     d->filterMethodCombo->addItem(i18nc("cubic filter mode", "Cubic"));
     d->filterMethodCombo->setDefaultIndex(HotPixelFixer::QUADRATIC_INTERPOLATION);
 
-    d->blackFrameButton = new QPushButton(i18n("Black Frame..."), this);
+    d->blackFrameButton   = new QPushButton(i18n("Black Frame..."), this);
     d->blackFrameButton->setIcon(QIcon::fromTheme(QLatin1String("document-open")));
     d->blackFrameButton->setWhatsThis(i18n("Use this button to add a new black frame file which will "
                                            "be used by the hot pixels removal filter.") );
 
+    d->progressBar        = new QProgressBar(this);
+    d->progressBar->setVisible(false);
     d->blackFrameListView = new BlackFrameListView(this);
 
     // -------------------------------------------------------------
@@ -129,13 +139,17 @@ HotPixelSettings::~HotPixelSettings()
 HotPixelContainer HotPixelSettings::settings() const
 {
     HotPixelContainer prm;
-    prm.filterMethod = (HotPixelFixer::InterpolationMethod)d->filterMethodCombo->currentIndex();
+    prm.blackFrameUrl = d->blackFrameURL;
+    prm.hotPixelsList = d->hotPixelsList;
+    prm.filterMethod  = (HotPixelFixer::InterpolationMethod)d->filterMethodCombo->currentIndex();
     return prm;
 }
 
 void HotPixelSettings::setSettings(const HotPixelContainer& settings)
 {
     d->filterMethodCombo->blockSignals(true);
+    d->blackFrameURL = settings.blackFrameUrl;
+    d->hotPixelsList = settings.hotPixelsList;
     d->filterMethodCombo->setCurrentIndex(settings.filterMethod);
     d->filterMethodCombo->blockSignals(false);
 }
@@ -143,6 +157,8 @@ void HotPixelSettings::setSettings(const HotPixelContainer& settings)
 void HotPixelSettings::resetToDefault()
 {
     d->filterMethodCombo->blockSignals(true);
+    d->blackFrameURL = QUrl();
+    d->hotPixelsList = QList<HotPixelProps>();
     d->filterMethodCombo->slotReset();
     d->filterMethodCombo->blockSignals(false);
 }
@@ -158,16 +174,88 @@ void HotPixelSettings::readSettings(KConfigGroup& group)
     HotPixelContainer prm;
     HotPixelContainer defaultPrm = defaultSettings();
 
-    prm.blackFramePath           = group.readEntry(d->configLastBlackFrameFileEntry, defaultPrm.blackFramePath);
-    prm.filterMethod             = (HotPixelFixer::InterpolationMethod)group.readEntry(d->configFilterMethodEntry,       (int)defaultPrm.filterMethod);
+    prm.blackFrameUrl            = group.readEntry(d->configLastBlackFrameFileEntry,
+                                                   defaultPrm.blackFrameUrl);
+
+    QStringList hplst            = group.readEntry(d->configHotPixelsListEntry, QStringList());
+    prm.hotPixelsList            = HotPixelProps::fromStringList(hplst);
+    
+    prm.filterMethod             = (HotPixelFixer::InterpolationMethod)group.readEntry(d->configFilterMethodEntry, (int)defaultPrm.filterMethod);
+
     setSettings(prm);
+    
+    if (d->blackFrameURL.isValid())
+    {
+        loadBlackFrame();
+    }
 }
 
 void HotPixelSettings::writeSettings(KConfigGroup& group)
 {
     HotPixelContainer prm = settings();
-    group.writeEntry(d->configLastBlackFrameFileEntry, prm.blackFramePath);
+    group.writeEntry(d->configLastBlackFrameFileEntry, prm.blackFrameUrl);
+    
+    QStringList hplst     = HotPixelProps::toStringList(prm.hotPixelsList);
+    group.writeEntry(d->configHotPixelsListEntry,      hplst);
+
     group.writeEntry(d->configFilterMethodEntry,       (int)prm.filterMethod);
+}
+
+void HotPixelSettings::slotAddBlackFrame()
+{
+    QUrl url = ImageDialog::getImageURL(qApp->activeWindow(), d->blackFrameURL, i18n("Select Black Frame Image"));
+
+    if (!url.isEmpty())
+    {
+        // Load the selected file and insert into the list.
+
+        d->blackFrameURL = url;
+        loadBlackFrame();
+    }
+}
+
+#ifndef __clang_analyzer__
+// NOTE: disable false positive report from scan build about "item" instance creation
+
+void HotPixelSettings::loadBlackFrame()
+{
+    d->progressBar->setVisible(true);
+    QPointer<BlackFrameListViewItem> item = new BlackFrameListViewItem(d->blackFrameListView, d->blackFrameURL);
+
+    connect(item, SIGNAL(signalLoadingProgress(float)),
+            this, SLOT(slotLoadingProgress(float)));
+
+    connect(item, SIGNAL(signalLoadingComplete()),
+            this, SLOT(slotLoadingComplete()));
+}
+
+#endif
+
+void HotPixelSettings::slotLoadingProgress(float v)
+{
+    d->progressBar->setValue((int)(v*100));
+}
+
+void HotPixelSettings::slotLoadingComplete()
+{
+    d->progressBar->setVisible(false);
+}
+
+void HotPixelSettings::slotBlackFrame(const QList<HotPixelProps>& hpList, const QUrl& blackFrameURL)
+{
+    d->blackFrameURL = blackFrameURL;
+    d->hotPixelsList = hpList;
+
+    QPolygon pointList(d->hotPixelsList.size());
+    QList <HotPixelProps>::const_iterator it;
+    int i            = 0;
+
+    for (it = d->hotPixelsList.constBegin() ; it != d->hotPixelsList.constEnd() ; ++it, ++i)
+    {
+        pointList.setPoint(i, (*it).rect.center());
+    }
+    
+    emit signalHotPixels(pointList);
 }
 
 } // namespace Digikam

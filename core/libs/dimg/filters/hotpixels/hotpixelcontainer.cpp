@@ -44,22 +44,25 @@ bool HotPixelContainer::isDefault() const
 bool HotPixelContainer::operator==(const HotPixelContainer& other) const
 {
     return (
-            (blackFramePath    == other.blackFramePath) &&
-            (filterMethod      == other.filterMethod)
+            (blackFrameUrl == other.blackFrameUrl) &&
+            (hotPixelsList == other.hotPixelsList)  &&
+            (filterMethod  == other.filterMethod)
            );
 }
 
 void HotPixelContainer::writeToFilterAction(FilterAction& action, const QString& prefix) const
 {
-    action.addParameter(prefix + QLatin1String("blackframepath"), blackFramePath);
+    action.addParameter(prefix + QLatin1String("blackframeurl"),  blackFrameUrl);
+    action.addParameter(prefix + QLatin1String("hotpixelslist"),  HotPixelProps::toStringList(hotPixelsList));
     action.addParameter(prefix + QLatin1String("filtermethod"),   (int)filterMethod);
 }
 
 HotPixelContainer HotPixelContainer::fromFilterAction(const FilterAction& action, const QString& prefix)
 {
     HotPixelContainer settings;
-    settings.blackFramePath = action.parameter(prefix + QLatin1String("blackframepath"),                                   settings.blackFramePath);
-    settings.filterMethod   = (HotPixelFixer::InterpolationMethod)action.parameter(prefix + QLatin1String("filtermethod"), (int)settings.filterMethod);
+    settings.blackFrameUrl = action.parameter(prefix + QLatin1String("blackframeurl"),                                   settings.blackFrameUrl);
+    settings.hotPixelsList = HotPixelProps::fromStringList(action.parameter(prefix + QLatin1String("hotpixelslist"), QStringList()));
+    settings.filterMethod  = (HotPixelFixer::InterpolationMethod)action.parameter(prefix + QLatin1String("filtermethod"), (int)settings.filterMethod);
 
     return settings;
 }

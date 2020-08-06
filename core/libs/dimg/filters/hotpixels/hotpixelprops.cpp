@@ -24,6 +24,10 @@
 
 #include "hotpixelprops.h"
 
+// Qt includes
+
+#include <QRegExp>
+
 namespace Digikam
 {
 
@@ -82,6 +86,59 @@ bool HotPixelProps::diagonal(const QRect& r1, const QRect& r2) const
             (bottom && left)    ||
             (bottom && right)
            );
+}
+
+QString HotPixelProps::toString() const
+{
+    return (QString::fromUtf8("%1-%2x%3-%4x%5").arg(luminosity)
+                                               .arg(rect.x()).arg(rect.y())
+                                               .arg(rect.width())
+                                               .arg(rect.height()));
+}
+
+bool HotPixelProps::fromString(const QString& str)
+{
+    QRegExp exp(QLatin1String("(\\d+)-(\\d+)x(\\d+)-(\\d+)x(\\d+)"));
+
+    if (exp.exactMatch(str))
+    {
+        luminosity = exp.cap(1).toInt();
+        rect       = QRect(exp.cap(2).toInt(), exp.cap(3).toInt(),
+                           exp.cap(4).toInt(), exp.cap(5).toInt());
+
+        return true;
+    }
+    
+    return false;
+}
+
+QStringList HotPixelProps::toStringList(const QList<HotPixelProps>& lst)
+{
+    QStringList hplst;
+
+    foreach (const HotPixelProps& hp, lst)
+    {
+        hplst << hp.toString();
+    }
+    
+    return hplst;
+}
+
+QList<HotPixelProps> HotPixelProps::fromStringList(const QStringList& hplst)
+{
+    QList<HotPixelProps> lst;
+
+    foreach (const QString& str, hplst)
+    {
+        HotPixelProps hp;
+
+        if (hp.fromString(str))
+        {
+            lst << hp;
+        }
+    }
+
+    return lst;
 }
 
 } // namespace Digikam

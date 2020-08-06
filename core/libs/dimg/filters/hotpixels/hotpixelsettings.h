@@ -27,11 +27,15 @@
 // Local includes
 
 #include <QWidget>
+#include <QPolygon>
+#include <QList>
+#include <QUrl>
 
 // Local includes
 
 #include "digikam_export.h"
 #include "hotpixelcontainer.h"
+#include "hotpixelprops.h"
 
 class KConfigGroup;
 
@@ -59,6 +63,18 @@ public:
 Q_SIGNALS:
 
     void signalSettingsChanged();
+    void signalHotPixels(const QPolygon& pointList);
+
+private Q_SLOTS:
+    
+    void slotAddBlackFrame();
+    void slotLoadingProgress(float v);
+    void slotLoadingComplete();
+    void slotBlackFrame(const QList<HotPixelProps>& hpList, const QUrl& blackFrameURL);
+
+private:
+    
+    void loadBlackFrame();
 
 private:
 

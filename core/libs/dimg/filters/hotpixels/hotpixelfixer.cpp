@@ -97,10 +97,7 @@ Digikam::FilterAction HotPixelFixer::filterAction()
 
     foreach (const HotPixelProps& hp, m_hpList)
     {
-        QString hpString = QString::fromUtf8("%1-%2x%3-%4x%5").arg(hp.luminosity)
-                                                              .arg(hp.rect.x()).arg(hp.rect.y())
-                                                              .arg(hp.rect.width()).arg(hp.rect.height());
-        action.addParameter(QLatin1String("hotPixel"), hpString);
+        action.addParameter(QLatin1String("hotPixel"), hp.toString());
     }
 
     return std::move(action);
@@ -109,16 +106,13 @@ Digikam::FilterAction HotPixelFixer::filterAction()
 void HotPixelFixer::readParameters(const FilterAction& action)
 {
     m_interpolationMethod = action.parameter(QLatin1String("interpolationMethod")).toInt();
-    QRegExp exp(QLatin1String("(\\d+)-(\\d+)x(\\d+)-(\\d+)x(\\d+)"));
 
     foreach (const QVariant& var, action.parameters().values(QLatin1String("hotPixel")))
     {
-        if (exp.exactMatch(var.toString()))
+        HotPixelProps hp;
+
+        if (hp.fromString(var.toString()))
         {
-            HotPixelProps hp;
-            hp.luminosity = exp.cap(1).toInt();
-            hp.rect       = QRect(exp.cap(2).toInt(), exp.cap(3).toInt(),
-                                  exp.cap(4).toInt(), exp.cap(5).toInt());
             m_hpList << hp;
         }
     }

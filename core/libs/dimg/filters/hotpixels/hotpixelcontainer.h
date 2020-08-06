@@ -27,6 +27,8 @@
 // Qt includes
 
 #include <QString>
+#include <QUrl>
+#include <QList>
 
 // Local includes
 
@@ -53,8 +55,8 @@ public:
 
 public:
 
-    QString                            blackFramePath;
-
+    QUrl                               blackFrameUrl;
+    QList<HotPixelProps>               hotPixelsList;
     HotPixelFixer::InterpolationMethod filterMethod;
 };
 

@@ -28,6 +28,7 @@
 // Qt includes
 
 #include <QRect>
+#include <QList>
 
 // Local includes
 
@@ -46,16 +47,24 @@ public:
 
 public:
 
-    int y()                                         const;
-    int x()                                         const;
-    int width()                                     const;
-    int height()                                    const;
+    int y()                                                     const;
+    int x()                                                     const;
+    int width()                                                 const;
+    int height()                                                const;
 
-    bool operator==(const HotPixelProps& p)         const;
+    bool operator==(const HotPixelProps& p)                     const;
+    
+    QString toString()                                          const;
+    bool fromString(const QString& str);
 
+public:
+
+    static QStringList toStringList(const QList<HotPixelProps>& lst);
+    static QList<HotPixelProps> fromStringList(const QStringList& hplst);
+    
 private:
 
-    bool diagonal(const QRect& r1, const QRect& r2) const;
+    bool diagonal(const QRect& r1, const QRect& r2)             const;
 };
 
 } // namespace Digikam
