@@ -114,15 +114,13 @@ HotPixelSettings::HotPixelSettings(QWidget* const parent)
     grid->addWidget(filterMethodLabel,     0, 0, 1, 1);
     grid->addWidget(d->filterMethodCombo,  0, 1, 1, 1);
     grid->addWidget(d->blackFrameButton,   0, 2, 1, 1);
-    grid->addWidget(d->blackFrameListView, 1, 0, 2, 3);
+    grid->addWidget(d->progresBar,         1, 0, 2, 3);
+    grid->addWidget(d->blackFrameListView, 2, 0, 2, 3);
     grid->setRowStretch(3, 10);
     grid->setContentsMargins(spacing, spacing, spacing, spacing);
     grid->setSpacing(spacing);
 
     // -------------------------------------------------------------
-
-    connect(d->filterMethodCombo, SIGNAL(activated(int)),
-            this, SLOT(slotPreview()));
 
     connect(d->blackFrameButton, SIGNAL(clicked()),
             this, SLOT(slotAddBlackFrame()));
@@ -134,6 +132,11 @@ HotPixelSettings::HotPixelSettings(QWidget* const parent)
 HotPixelSettings::~HotPixelSettings()
 {
     delete d;
+}
+
+QString HotPixelSettings::configGroupName() const
+{
+    return d->configGroupName;
 }
 
 HotPixelContainer HotPixelSettings::settings() const
