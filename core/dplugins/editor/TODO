@@ -15,7 +15,7 @@ color
   /whitebalance             DONE          TODO             DONE                  DONE
   /Invert                    NO           TODO              NO                   DONE
   /Convert 8/16 bits         NO           TODO              NO                   DONE
-  /Convert 16/18 bits        NO           TODO              NO                   DONE
+  /Convert 16/8 bits         NO           TODO              NO                   DONE
 
 decorate
   /border                   DONE          TODO              NO                   DONE
