@@ -43,7 +43,7 @@ enhance
   /autocorrection           DONE          TODO             DONE                  DONE
   /distortion               DONE          TODO             TODO                  TODO
   /vignetting               DONE          TODO              NO                   DONE
-  /hotpixels                DONE          TODO             DONE                  TODO
+  /hotpixels                DONE          TODO             DONE                  DONE
 
 transform
   /ratiocrop                DONE          TODO              NO                    NO

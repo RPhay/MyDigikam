@@ -11,6 +11,7 @@ add_subdirectory(noisereduction)
 add_subdirectory(redeyecorrection)
 add_subdirectory(restoration)
 add_subdirectory(sharpen)
+add_subdirectory(hotpixels)
 
 if(LensFun_FOUND)
     add_subdirectory(lensautofix)

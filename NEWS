@@ -3,6 +3,7 @@ evSSdigiKam 7.1.0 - Release date: 2020-08-30
 *****************************************************************************************************
 NEW FEATURES:
 
+QueueManager: add new tool to fix hot pixels from images.
 
 *****************************************************************************************************
 BUGFIXES:
@@ -198,7 +199,8 @@ BUGFIXES:
 190 ==> 378066 - Export to remote folder does not work.
 191 ==> 373820 - Export to Remote Storage tool does not work on non-linux systems.
 192 ==> 377249 - Moving a photo to album in different collection deletes its folder.
-193 ==> 425085 = Export to flickr dialog only allows a single file to be selected.
+193 ==> 425085 - Export to flickr dialog only allows a single file to be selected.
 194 ==> 397334 - digiKam crashes after deleting unused tags.
 195 ==> 425100 - No photos show up when selecting a face tag in "People" panel.
-196 ==> 
+196 ==> 388707 - Add Hot pixel removal in Batch Queue Manager Workflow.
+197 ==> 

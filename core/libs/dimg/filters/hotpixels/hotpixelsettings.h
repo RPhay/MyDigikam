@@ -66,7 +66,6 @@ Q_SIGNALS:
 
     void signalSettingsChanged();
     void signalHotPixels(const QPolygon& pointList);
-    void signalFilterMethodChanged();
 
 private Q_SLOTS:
     
