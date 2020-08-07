@@ -200,4 +200,5 @@ BUGFIXES:
 192 ==> 377249 - Moving a photo to album in different collection deletes its folder.
 193 ==> 425085 = Export to flickr dialog only allows a single file to be selected.
 194 ==> 397334 - digiKam crashes after deleting unused tags.
-195 ==> 
+195 ==> 425100 - No photos show up when selecting a face tag in "People" panel.
+196 ==> 
