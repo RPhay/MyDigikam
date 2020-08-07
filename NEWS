@@ -203,4 +203,5 @@ BUGFIXES:
 194 ==> 397334 - digiKam crashes after deleting unused tags.
 195 ==> 425100 - No photos show up when selecting a face tag in "People" panel.
 196 ==> 388707 - Add Hot pixel removal in Batch Queue Manager Workflow.
-197 ==> 
+197 ==> 425122 - ShowFoto can open .heic files but is not offered in Dolphin context menu.
+198 ==> 
