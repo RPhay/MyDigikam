@@ -156,6 +156,8 @@ void HotPixelSettings::setSettings(const HotPixelContainer& settings)
     d->hotPixelsList = settings.hotPixelsList;
     d->filterMethodCombo->setCurrentIndex(settings.filterMethod);
     blockSignals(false);
+
+    loadBlackFrame();
 }
 
 void HotPixelSettings::resetToDefault()
@@ -248,10 +250,10 @@ void HotPixelSettings::slotBlackFrame(const QList<HotPixelProps>& hpList, const 
 {
     d->blackFrameURL = blackFrameURL;
     d->hotPixelsList = hpList;
+    int i            = 0;
 
     QPolygon pointList(d->hotPixelsList.size());
     QList <HotPixelProps>::const_iterator it;
-    int i            = 0;
 
     for (it = d->hotPixelsList.constBegin() ; it != d->hotPixelsList.constEnd() ; ++it, ++i)
     {
