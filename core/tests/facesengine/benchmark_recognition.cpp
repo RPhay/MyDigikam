@@ -201,25 +201,38 @@ void Benchmark::verifyTestSet()
 
             if (!croppedFace.isNull())
             {
-                croppedFaces << croppedFace;
+                Identity prediction = m_recognizer->recognizeFace(croppedFace);
+                if (prediction.isNull() && m_trainSet.contains(iter.key()))
+                {
+                    // cannot recognize when label is already register
+                    ++nbNotRecognize;
+                }
+                else if (prediction.attribute(QLatin1String("fullName")) != iter.key())
+                {
+                    // wrong label
+                    ++nbWrongLabel;
+                }
+
                 ++m_testSize;
             }
         }
-
+/*
         QList<Identity> predictions = m_recognizer->recognizeFaces(croppedFaces);
 
         for (int i = 0; i < predictions.size(); ++i)
-
-        if (predictions[i].isNull() && m_trainSet.contains(iter.key()))
         {
-            // cannot recognize when label is already register
-            ++nbNotRecognize;
+            if (predictions[i].isNull() && m_trainSet.contains(iter.key()))
+            {
+                // cannot recognize when label is already register
+                ++nbNotRecognize;
+            }
+            else if (predictions[i].attribute(QLatin1String("fullName")) != iter.key())
+            {
+                // wrong label
+                ++nbWrongLabel;
+            }
         }
-        else if (predictions[i].attribute(QLatin1String("fullName")) != iter.key())
-        {
-            // wrong label
-            ++nbWrongLabel;
-        }
+*/
     }
 
     unsigned int elapsedDetection = timer.elapsed();

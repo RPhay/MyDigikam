@@ -69,7 +69,9 @@ QList<Identity> FacialRecognitionWrapper::recognizeFaces(ImageListProvider* cons
         }
     };
 
-    return QtConcurrent::blockingMapped(images->images(), recognizeIdentity);
+    QFuture<Identity> future = QtConcurrent::mapped(images->images(), recognizeIdentity);
+
+    return future.results();
 }
 
 QList<Identity> FacialRecognitionWrapper::recognizeFaces(const QList<QImage>& images)
