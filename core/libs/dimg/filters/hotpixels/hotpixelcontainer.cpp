@@ -4,7 +4,7 @@
  * https://www.digikam.org
  *
  * Date        : 2020-08-05
- * Description : HotPixel settings container.
+ * Description : HotPixel filter settings container.
  *
  * Copyright (C) 2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *

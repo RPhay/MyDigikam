@@ -60,7 +60,7 @@ public:
 
     void parseHotPixels(const QString& file);
     void parseBlackFrame(const QUrl& url);
-    void parseBlackFrame(DImg& img);
+    void parseBlackFrame(const DImg& img);
 
     DImg image() const;
 
@@ -78,7 +78,7 @@ private Q_SLOTS:
 private:
 
     void blackFrameParsing();
-    void consolidatePixels (QList<HotPixelProps>& list);
+    void consolidatePixels(QList<HotPixelProps>& list);
     void validateAndConsolidate(HotPixelProps* const a, HotPixelProps* const b);
 
 private:

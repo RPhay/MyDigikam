@@ -99,15 +99,14 @@ void BlackFrameParser::slotLoadingProgress(const LoadingDescription&, float v)
 
 void BlackFrameParser::slotLoadImageFromUrlComplete(const LoadingDescription&, const DImg& img)
 {
-    m_image = img;
-    blackFrameParsing();
+    parseBlackFrame(img);
 
     emit signalLoadingComplete();
 }
 
-void BlackFrameParser::parseBlackFrame(DImg& img)
+void BlackFrameParser::parseBlackFrame(const DImg& img)
 {
-    m_image = img;
+    m_image = img.copy();
     blackFrameParsing();
 }
 
@@ -195,12 +194,12 @@ void BlackFrameParser::consolidatePixels(QList<HotPixelProps>& list)
         return;
     }
 
+    qCDebug(DIGIKAM_DIMG_LOG) << "Consolidate hp list of" << list.size() << "items";
+
     // Consolidate horizontally.
 
-    QList<HotPixelProps>::iterator it, prevPointIt;
+    QList<HotPixelProps>::iterator it = list.begin();
 
-    prevPointIt = list.begin();
-    it          = list.begin();
     ++it;
 
     HotPixelProps tmp;
@@ -209,38 +208,36 @@ void BlackFrameParser::consolidatePixels(QList<HotPixelProps>& list)
 
     for ( ; it != list.end() ; ++it)
     {
-        while (1)
+        while (it != list.end())
         {
             point = (*it);
             tmp   = point;
 
-            QList<HotPixelProps>::iterator point_below_it;
+            QList<HotPixelProps>::iterator point_below_it = list.end();
 
             // find any intersecting hot pixels below tmp
 
             int i = list.indexOf(tmp);
 
-            if (i == -1)
-            {
-                point_below_it = list.end();
-            }
-            else
+            qCDebug(DIGIKAM_DIMG_LOG) << "Processing hp index" << i;
+
+            if (i != -1)
             {
                 point_below_it = list.begin() + i;
-            }
 
-            if (point_below_it != list.end())
-            {
-                point_below =* point_below_it;
-                validateAndConsolidate(&point, &point_below);
+                if (point_below_it != list.end())
+                {
+                    point_below =* point_below_it;
+                    validateAndConsolidate(&point, &point_below);
 
-                point.rect.setX(qMin(point.x(), point_below.x()));
-                point.rect.setWidth(qMax(point.x() + point.width(),
-                                         point_below.x() + point_below.width()) - point.x());
-                point.rect.setHeight(qMax(point.y() + point.height(),
+                    point.rect.setX(qMin(point.x(), point_below.x()));
+                    point.rect.setWidth(qMax(point.x() + point.width(),
+                                             point_below.x() + point_below.width()) - point.x());
+                    point.rect.setHeight(qMax(point.y() + point.height(),
                                           point_below.y() + point_below.height()) - point.y());
-                *it         = point;
-                list.erase(point_below_it); // TODO: Check! this could remove it++?
+                    (*it)       = point;
+                    list.erase(point_below_it); // TODO: Check! this could remove it++?
+                }
             }
             else
             {

@@ -31,6 +31,7 @@
 // Qt includes
 
 #include <QList>
+#include <QPolygon>
 
 // Local includes
 
@@ -57,10 +58,7 @@ public:
 
 private Q_SLOTS:
 
-    void slotLoadingProgress(float v);
-    void slotLoadingComplete();
-    void slotBlackFrame(const QList<HotPixelProps>& hpList, const QUrl& blackFrameURL);
-    void slotAddBlackFrame();
+    void slotHotPixels(const QPolygon&);
     void slotResetSettings();
 
 private:

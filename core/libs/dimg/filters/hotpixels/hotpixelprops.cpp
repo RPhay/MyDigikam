@@ -4,7 +4,7 @@
  * https://www.digikam.org
  *
  * Date        : 2005-03-27
- * Description : HotPixel properties.
+ * Description : HotPixel properties container.
  *
  * Copyright (C) 2005-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
  * Copyright (C) 2005-2006 by Unai Garro <ugarro at users dot sourceforge dot net>
@@ -53,22 +53,20 @@ int HotPixelProps::height() const
 
 bool HotPixelProps::operator==(const HotPixelProps& p) const
 {
-    // we can say they're same hotpixel spot if they
-    // touch (next to) each other horizontally or vertically, not diagonal corners
-
-    return (rect.intersects(p.rect));
-/*
+    /**
+     * NOTE:we can say they're same hotpixel spot if they
+     * touch (next to) each other horizontally or vertically, not diagonal corners
+     */
     return (
-            (rect != p.rect)                &&
+            (rect != p.rect)                                &&
             (
-             (x() + width() >= p.x())    &&
-             (x() <= p.x() + p.width())  &&
-             (y() + height() >= p.y())   &&
-             (y() <= p.y() + p.height())
-            )                               &&
+             ((x() + width())  >= p.x())                &&
+             ( x()             <= (p.x() + p.width()))  &&
+             ((y() + height()) >= p.y())                &&
+             ( y()             <= (p.y() + p.height()))
+            )                                               &&
             !diagonal(rect, p.rect)
            );
-*/
 }
 
 bool HotPixelProps::diagonal(const QRect& r1, const QRect& r2) const
@@ -108,7 +106,7 @@ bool HotPixelProps::fromString(const QString& str)
 
         return true;
     }
-    
+
     return false;
 }
 
@@ -120,7 +118,7 @@ QStringList HotPixelProps::toStringList(const QList<HotPixelProps>& lst)
     {
         hplst << hp.toString();
     }
-    
+
     return hplst;
 }
 
