@@ -199,4 +199,5 @@ BUGFIXES:
 191 ==> 373820 - Export to Remote Storage tool does not work on non-linux systems.
 192 ==> 377249 - Moving a photo to album in different collection deletes its folder.
 193 ==> 425085 = Export to flickr dialog only allows a single file to be selected.
-194 ==> 
+194 ==> 397334 - digiKam crashes after deleting unused tags.
+195 ==> 
