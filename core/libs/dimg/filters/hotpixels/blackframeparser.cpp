@@ -60,11 +60,6 @@ BlackFrameParser::BlackFrameParser(QObject* const parent)
 
 BlackFrameParser::~BlackFrameParser()
 {
-    if (!m_tempFilePath.isEmpty())
-    {
-        QFile::remove(m_tempFilePath);
-    }
-
     delete m_imageLoaderThread;
 }
 
@@ -75,6 +70,11 @@ void BlackFrameParser::parseHotPixels(const QString& file)
 
 void BlackFrameParser::parseBlackFrame(const QUrl& url)
 {
+    if (url.isEmpty())
+    {
+        return;
+    }
+
     QString localFile = url.toLocalFile();
 
     if (!m_imageLoaderThread)

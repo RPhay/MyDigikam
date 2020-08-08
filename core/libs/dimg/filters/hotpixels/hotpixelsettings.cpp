@@ -116,7 +116,7 @@ HotPixelSettings::HotPixelSettings(QWidget* const parent)
     grid->addWidget(d->blackFrameButton,   0, 2, 1, 1);
     grid->addWidget(d->progressBar,        1, 0, 1, 3);
     grid->addWidget(d->blackFrameListView, 2, 0, 2, 3);
-    grid->setRowStretch(4, 10);
+    grid->setRowStretch(3, 10);
     grid->setContentsMargins(spacing, spacing, spacing, spacing);
     grid->setSpacing(spacing);
 

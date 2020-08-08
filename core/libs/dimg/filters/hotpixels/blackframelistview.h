@@ -54,15 +54,13 @@ public:
     explicit BlackFrameListViewItem(QTreeWidget* const parent, const QUrl& url);
     ~BlackFrameListViewItem();
 
+    void emitSlotParsed();
+
 Q_SIGNALS:
 
     void signalParsed(const QList<HotPixelProps>&, const QUrl&);
     void signalLoadingProgress(float);
     void signalLoadingComplete();
-
-protected:
-
-    void activate();
 
 private Q_SLOTS:
 
@@ -73,8 +71,6 @@ private:
     /// Data contained within each listview item
 
     QList<HotPixelProps> m_hotPixels;
-
-    QString              m_blackFrameDesc;
 
     QUrl                 m_blackFrameURL;
 
@@ -98,6 +94,7 @@ Q_SIGNALS:
 
 private Q_SLOTS:
 
+    void slotSelectionChanged();
     void slotParsed(const QList<HotPixelProps>&, const QUrl&);
 };
 

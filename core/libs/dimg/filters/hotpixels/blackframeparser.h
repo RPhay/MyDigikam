@@ -83,8 +83,6 @@ private:
 
 private:
 
-    QString         m_tempFilePath;
-
     DImg            m_image;
 
     LoadSaveThread* m_imageLoaderThread;
