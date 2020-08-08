@@ -35,6 +35,7 @@
 #include <QApplication>
 #include <QStyle>
 #include <QPointer>
+#include <QMessageBox>
 
 // KDE includes
 
@@ -76,7 +77,7 @@ public:
     BlackFrameListView*  blackFrameListView;
 
     QList<HotPixelProps> hotPixelsList;
-    QUrl                 blackFrameURL;
+    QUrl                 blackFrameUrl;
 };
 
 const QString HotPixelSettings::Private::configGroupName(QLatin1String("hotpixels Tool"));
@@ -142,7 +143,7 @@ QString HotPixelSettings::configGroupName() const
 HotPixelContainer HotPixelSettings::settings() const
 {
     HotPixelContainer prm;
-    prm.blackFrameUrl = d->blackFrameURL;
+    prm.blackFrameUrl = d->blackFrameUrl;
     prm.hotPixelsList = d->hotPixelsList;
     prm.filterMethod  = (HotPixelFixer::InterpolationMethod)d->filterMethodCombo->currentIndex();
 
@@ -152,7 +153,7 @@ HotPixelContainer HotPixelSettings::settings() const
 void HotPixelSettings::setSettings(const HotPixelContainer& settings)
 {
     blockSignals(true);
-    d->blackFrameURL = settings.blackFrameUrl;
+    d->blackFrameUrl = settings.blackFrameUrl;
     d->hotPixelsList = settings.hotPixelsList;
     d->filterMethodCombo->setCurrentIndex(settings.filterMethod);
     blockSignals(false);
@@ -163,7 +164,7 @@ void HotPixelSettings::setSettings(const HotPixelContainer& settings)
 void HotPixelSettings::resetToDefault()
 {
     blockSignals(true);
-    d->blackFrameURL = QUrl();
+    d->blackFrameUrl = QUrl();
     d->hotPixelsList = QList<HotPixelProps>();
     d->filterMethodCombo->slotReset();
     blockSignals(false);
@@ -189,7 +190,7 @@ void HotPixelSettings::readSettings(KConfigGroup& group)
 
     setSettings(prm);
 
-    if (d->blackFrameURL.isValid())
+    if (d->blackFrameUrl.isValid() && !d->blackFrameListView->contains(d->blackFrameUrl))
     {
         loadBlackFrame();
     }
@@ -208,13 +209,21 @@ void HotPixelSettings::writeSettings(KConfigGroup& group)
 
 void HotPixelSettings::slotAddBlackFrame()
 {
-    QUrl url = ImageDialog::getImageURL(qApp->activeWindow(), d->blackFrameURL, i18n("Select Black Frame Image"));
+    QUrl url = ImageDialog::getImageURL(qApp->activeWindow(), d->blackFrameUrl, i18n("Select Black Frame Image"));
 
     if (!url.isEmpty())
     {
+        if (d->blackFrameListView->contains(url))
+        {
+            QMessageBox::information(this, i18n("Black Frame Parser"),
+                                     i18n("This black frame image is already present in the list of parsed items."));
+
+            return;
+        }
+
         // Load the selected file and insert into the list.
 
-        d->blackFrameURL = url;
+        d->blackFrameUrl = url;
         loadBlackFrame();
     }
 }
@@ -225,7 +234,7 @@ void HotPixelSettings::slotAddBlackFrame()
 void HotPixelSettings::loadBlackFrame()
 {
     d->progressBar->setVisible(true);
-    QPointer<BlackFrameListViewItem> item = new BlackFrameListViewItem(d->blackFrameListView, d->blackFrameURL);
+    QPointer<BlackFrameListViewItem> item = new BlackFrameListViewItem(d->blackFrameListView, d->blackFrameUrl);
 
     connect(item, SIGNAL(signalLoadingProgress(float)),
             this, SLOT(slotLoadingProgress(float)));
@@ -246,9 +255,9 @@ void HotPixelSettings::slotLoadingComplete()
     d->progressBar->setVisible(false);
 }
 
-void HotPixelSettings::slotBlackFrame(const QList<HotPixelProps>& hpList, const QUrl& blackFrameURL)
+void HotPixelSettings::slotBlackFrame(const QList<HotPixelProps>& hpList, const QUrl& blackFrameUrl)
 {
-    d->blackFrameURL = blackFrameURL;
+    d->blackFrameUrl = blackFrameUrl;
     d->hotPixelsList = hpList;
     int i            = 0;
 

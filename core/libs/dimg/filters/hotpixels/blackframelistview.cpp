@@ -47,7 +47,7 @@ namespace Digikam
 BlackFrameListViewItem::BlackFrameListViewItem(QTreeWidget* const parent, const QUrl& url)
     : QObject(parent),
       QTreeWidgetItem(parent),
-      m_blackFrameURL(url)
+      m_blackFrameUrl(url)
 {
     m_parser = new BlackFrameParser(this);
     m_parser->parseBlackFrame(url);
@@ -69,6 +69,11 @@ BlackFrameListViewItem::~BlackFrameListViewItem()
 {
 }
 
+QUrl BlackFrameListViewItem::frameUrl() const
+{
+    return m_blackFrameUrl;
+}
+
 void BlackFrameListViewItem::slotParsed(const QList<HotPixelProps>& hotPixels)
 {
     m_hotPixels  = hotPixels;
@@ -84,8 +89,10 @@ void BlackFrameListViewItem::slotParsed(const QList<HotPixelProps>& hotPixels)
 
     // Take scaling into account
 
-    float xRatio, yRatio;
-    float hpThumbX, hpThumbY;
+    float xRatio   = 0.0;
+    float yRatio   = 0.0;
+    float hpThumbX = 0.0;
+    float hpThumbY = 0.0;
     QRect hpRect;
 
     xRatio = (float)size.width()  / (float)m_parser->image().width();
@@ -113,25 +120,25 @@ void BlackFrameListViewItem::slotParsed(const QList<HotPixelProps>& hotPixels)
 
     // Preview
 
-    setIcon(0, QPixmap::fromImage(thumb));
+    setIcon(PREVIEW, QPixmap::fromImage(thumb));
 
     // Image size
 
     if (!m_parser->image().size().isEmpty())
     {
-        setText(1, QString::fromUtf8("%1x%2").arg(m_parser->image().width()).arg(m_parser->image().height()));
+        setText(SIZE, QString::fromUtf8("%1x%2").arg(m_parser->image().width()).arg(m_parser->image().height()));
     }
 
     // Amount of hot pixels
 
-    setText(2, QString::number(m_hotPixels.count()));
+    setText(HOTPIXELS, QString::number(m_hotPixels.count()));
 
     // Descriptions as tooltip (file name, camera model, and hot pixels list)
 
-    DMetadata meta(m_blackFrameURL.toLocalFile());
+    DMetadata meta(m_blackFrameUrl.toLocalFile());
     PhotoInfoContainer info = meta.getPhotographInformation();
 
-    QString blackFrameDesc  = i18n("<p>File Name: %1<p>", m_blackFrameURL.fileName());
+    QString blackFrameDesc  = i18n("<p>File Name: %1<p>", m_blackFrameUrl.fileName());
     blackFrameDesc.append(i18n("<p>Make/Model: %1/%2</p>", info.make, info.model));
 
     QString hplist;
@@ -144,14 +151,16 @@ void BlackFrameListViewItem::slotParsed(const QList<HotPixelProps>& hotPixels)
 
     blackFrameDesc.append(i18n("<p>Hot Pixels: %1</p>", hplist));
 
-    setToolTip(0, blackFrameDesc);
+    setToolTip(PREVIEW,   blackFrameDesc);
+    setToolTip(SIZE,      blackFrameDesc);
+    setToolTip(HOTPIXELS, blackFrameDesc);
 
-    emitSlotParsed();
+    emitParsedData();
 }
 
-void BlackFrameListViewItem::emitSlotParsed()
+void BlackFrameListViewItem::emitParsedData()
 {
-    emit signalParsed(m_hotPixels, m_blackFrameURL);
+    emit signalParsed(m_hotPixels, m_blackFrameUrl);
 }
 
 // ----------------------------------------------------------------------------
@@ -170,7 +179,7 @@ BlackFrameListView::BlackFrameListView(QWidget* const parent)
     labels.append(i18n("Preview"));
     labels.append(i18n("Size"));
     labels.append(i18nc("This is a column which will contain the amount of HotPixels "
-                        "found in the black frame file", "HP"));
+                        "found in the black frame file", "Hot Pixels"));
     setHeaderLabels(labels);
 
     connect(this, SIGNAL(itemSelectionChanged()),
@@ -181,19 +190,38 @@ BlackFrameListView::~BlackFrameListView()
 {
 }
 
+bool BlackFrameListView::contains(const QUrl& url)
+{
+    QTreeWidgetItemIterator it(this);
+
+    while (*it)
+    {
+        BlackFrameListViewItem* const item = dynamic_cast<BlackFrameListViewItem*>(*it);
+
+        if (item && (item->frameUrl() == url))
+        {
+            return true;
+        }
+
+        ++it;
+    }
+
+    return false;
+}
+
 void BlackFrameListView::slotSelectionChanged()
 {
     BlackFrameListViewItem* const item = dynamic_cast<BlackFrameListViewItem*>(currentItem());
 
     if (item)
     {
-        item->emitSlotParsed();
+        item->emitParsedData();
     }
 }
 
-void BlackFrameListView::slotParsed(const QList<HotPixelProps>& hotPixels, const QUrl& blackFrameURL)
+void BlackFrameListView::slotParsed(const QList<HotPixelProps>& hotPixels, const QUrl& blackFrameUrl)
 {
-    emit signalBlackFrameSelected(hotPixels, blackFrameURL);
+    emit signalBlackFrameSelected(hotPixels, blackFrameUrl);
 }
 
 } // namespace Digikam

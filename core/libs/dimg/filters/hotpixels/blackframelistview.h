@@ -51,10 +51,20 @@ class DIGIKAM_EXPORT BlackFrameListViewItem : public QObject,
 
 public:
 
+    enum BlackFrameColumn
+    {
+        PREVIEW = 0,
+        SIZE    = 1,
+        HOTPIXELS
+    };
+
+public:
+
     explicit BlackFrameListViewItem(QTreeWidget* const parent, const QUrl& url);
     ~BlackFrameListViewItem();
 
-    void emitSlotParsed();
+    QUrl frameUrl() const;
+    void emitParsedData();
 
 Q_SIGNALS:
 
@@ -72,7 +82,7 @@ private:
 
     QList<HotPixelProps> m_hotPixels;
 
-    QUrl                 m_blackFrameURL;
+    QUrl                 m_blackFrameUrl;
 
     BlackFrameParser*    m_parser;
 };
@@ -87,6 +97,8 @@ public:
 
     explicit BlackFrameListView(QWidget* const parent=nullptr);
     ~BlackFrameListView();
+
+    bool contains(const QUrl& url);
 
 Q_SIGNALS:
 
