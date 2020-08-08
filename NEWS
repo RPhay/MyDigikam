@@ -206,5 +206,5 @@ BUGFIXES:
 197 ==> 425122 - ShowFoto can open .heic files but is not offered in Dolphin context menu.
 198 ==> 224241 - Film grain effect is not realistic.
 199 ==> 273754 - Unintuitive change of image resolution.
-200 ==> 
-
+200 ==> 286276 - Use .thm file as sidecar files for video files.
+201 ==> 
