@@ -33,7 +33,7 @@
 
 #include <ksharedconfig.h>
 #include <klocalizedstring.h>
-#include "kconfiggroup.h"
+#include <kconfiggroup.h>
 
 // Local includes
 
