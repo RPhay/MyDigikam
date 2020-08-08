@@ -59,10 +59,7 @@ BlackFrameListViewItem::BlackFrameListViewItem(QTreeWidget* const parent, const 
             parent, SLOT(slotParsed(QList<HotPixelProps>,QUrl)));
 
     connect(m_parser, SIGNAL(signalLoadingProgress(float)),
-            this, SIGNAL(signalLoadingProgress(float)));
-
-    connect(m_parser, SIGNAL(signalLoadingComplete()),
-            this, SIGNAL(signalLoadingComplete()));
+            this, SLOT(slotLoadingProgress(float)));
 }
 
 BlackFrameListViewItem::~BlackFrameListViewItem()
@@ -72,6 +69,12 @@ BlackFrameListViewItem::~BlackFrameListViewItem()
 QUrl BlackFrameListViewItem::frameUrl() const
 {
     return m_blackFrameUrl;
+}
+
+void BlackFrameListViewItem::slotLoadingProgress(float v)
+{
+    setText(SIZE,      i18n("Loading Frame"));
+    setText(HOTPIXELS, QString::fromLatin1("%1 %").arg((int)(v*100)));
 }
 
 void BlackFrameListViewItem::slotParsed(const QList<HotPixelProps>& hotPixels)

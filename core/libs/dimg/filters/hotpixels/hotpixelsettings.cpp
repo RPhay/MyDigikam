@@ -30,7 +30,6 @@
 #include <QString>
 #include <QIcon>
 #include <QTextStream>
-#include <QProgressBar>
 #include <QPushButton>
 #include <QApplication>
 #include <QStyle>
@@ -60,7 +59,6 @@ public:
 
     explicit Private()
       : blackFrameButton(nullptr),
-        progressBar(nullptr),
         filterMethodCombo(nullptr),
         blackFrameListView(nullptr)
     {
@@ -72,7 +70,6 @@ public:
     static const QString configFilterMethodEntry;
 
     QPushButton*         blackFrameButton;
-    QProgressBar*        progressBar;
     DComboBox*           filterMethodCombo;
     BlackFrameListView*  blackFrameListView;
 
@@ -95,10 +92,10 @@ HotPixelSettings::HotPixelSettings(QWidget* const parent)
 
     QLabel* const filterMethodLabel = new QLabel(i18n("Filter:"), this);
     d->filterMethodCombo            = new DComboBox(this);
-    d->filterMethodCombo->addItem(i18nc("average filter mode", "Average"));
-    d->filterMethodCombo->addItem(i18nc("linear filter mode", "Linear"));
+    d->filterMethodCombo->addItem(i18nc("average filter mode",   "Average"));
+    d->filterMethodCombo->addItem(i18nc("linear filter mode",    "Linear"));
     d->filterMethodCombo->addItem(i18nc("quadratic filter mode", "Quadratic"));
-    d->filterMethodCombo->addItem(i18nc("cubic filter mode", "Cubic"));
+    d->filterMethodCombo->addItem(i18nc("cubic filter mode",     "Cubic"));
     d->filterMethodCombo->setDefaultIndex(HotPixelFixer::QUADRATIC_INTERPOLATION);
 
     d->blackFrameButton   = new QPushButton(i18n("Black Frame..."), this);
@@ -106,8 +103,6 @@ HotPixelSettings::HotPixelSettings(QWidget* const parent)
     d->blackFrameButton->setWhatsThis(i18n("Use this button to add a new black frame file which will "
                                            "be used by the hot pixels removal filter.") );
 
-    d->progressBar        = new QProgressBar(this);
-    d->progressBar->setVisible(false);
     d->blackFrameListView = new BlackFrameListView(this);
 
     // -------------------------------------------------------------
@@ -115,9 +110,8 @@ HotPixelSettings::HotPixelSettings(QWidget* const parent)
     grid->addWidget(filterMethodLabel,     0, 0, 1, 1);
     grid->addWidget(d->filterMethodCombo,  0, 1, 1, 1);
     grid->addWidget(d->blackFrameButton,   0, 2, 1, 1);
-    grid->addWidget(d->progressBar,        1, 0, 1, 3);
-    grid->addWidget(d->blackFrameListView, 2, 0, 2, 3);
-    grid->setRowStretch(3, 10);
+    grid->addWidget(d->blackFrameListView, 1, 0, 2, 3);
+    grid->setRowStretch(2, 10);
     grid->setContentsMargins(spacing, spacing, spacing, spacing);
     grid->setSpacing(spacing);
 
@@ -233,27 +227,10 @@ void HotPixelSettings::slotAddBlackFrame()
 
 void HotPixelSettings::loadBlackFrame()
 {
-    d->progressBar->setVisible(true);
     QPointer<BlackFrameListViewItem> item = new BlackFrameListViewItem(d->blackFrameListView, d->blackFrameUrl);
-
-    connect(item, SIGNAL(signalLoadingProgress(float)),
-            this, SLOT(slotLoadingProgress(float)));
-
-    connect(item, SIGNAL(signalLoadingComplete()),
-            this, SLOT(slotLoadingComplete()));
 }
 
 #endif
-
-void HotPixelSettings::slotLoadingProgress(float v)
-{
-    d->progressBar->setValue((int)(v*100));
-}
-
-void HotPixelSettings::slotLoadingComplete()
-{
-    d->progressBar->setVisible(false);
-}
 
 void HotPixelSettings::slotBlackFrame(const QList<HotPixelProps>& hpList, const QUrl& blackFrameUrl)
 {

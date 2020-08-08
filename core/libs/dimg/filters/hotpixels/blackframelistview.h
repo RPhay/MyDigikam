@@ -69,12 +69,11 @@ public:
 Q_SIGNALS:
 
     void signalParsed(const QList<HotPixelProps>&, const QUrl&);
-    void signalLoadingProgress(float);
-    void signalLoadingComplete();
 
 private Q_SLOTS:
 
     void slotParsed(const QList<HotPixelProps>&);
+    void slotLoadingProgress(float);
 
 private:
 

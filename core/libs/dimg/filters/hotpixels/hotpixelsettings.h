@@ -59,7 +59,7 @@ public:
 
     void readSettings(KConfigGroup& group);
     void writeSettings(KConfigGroup& group);
-    
+
     QString configGroupName() const;
 
 Q_SIGNALS:
@@ -68,14 +68,12 @@ Q_SIGNALS:
     void signalHotPixels(const QPolygon& pointList);
 
 private Q_SLOTS:
-    
+
     void slotAddBlackFrame();
-    void slotLoadingProgress(float v);
-    void slotLoadingComplete();
     void slotBlackFrame(const QList<HotPixelProps>& hpList, const QUrl& blackFrameURL);
 
 private:
-    
+
     void loadBlackFrame();
 
 private:
