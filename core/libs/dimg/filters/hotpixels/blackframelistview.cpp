@@ -100,11 +100,11 @@ void BlackFrameListViewItem::slotParsed(const QList<HotPixelProps>& hotPixels)
 
     // Draw hot pixels one by one
 
-    QList<HotPixelProps>::const_iterator it;
+    QList<HotPixelProps>::const_iterator it1;
 
-    for (it = m_hotPixels.constBegin() ; it != m_hotPixels.constEnd() ; ++it)
+    for (it1 = m_hotPixels.constBegin() ; it1 != m_hotPixels.constEnd() ; ++it1)
     {
-        hpRect   = (*it).rect;
+        hpRect   = (*it1).rect;
         hpThumbX = (hpRect.x() + hpRect.width()  / 2) * xRatio;
         hpThumbY = (hpRect.y() + hpRect.height() / 2) * yRatio;
 
@@ -143,10 +143,10 @@ void BlackFrameListViewItem::slotParsed(const QList<HotPixelProps>& hotPixels)
 
     QString hplist;
 
-    for (QList <HotPixelProps>::const_iterator it = m_hotPixels.constBegin() ;
-         it != m_hotPixels.constEnd() ; ++it)
+    for (QList <HotPixelProps>::const_iterator it2 = m_hotPixels.constBegin() ;
+         it2 != m_hotPixels.constEnd() ; ++it2)
     {
-        hplist.append(QString::fromUtf8("[%1,%2] ").arg((*it).x()).arg((*it).y()));
+        hplist.append(QString::fromUtf8("[%1,%2] ").arg((*it2).x()).arg((*it2).y()));
     }
 
     blackFrameDesc.append(i18n("<p>Hot Pixels: %1</p>", hplist));
