@@ -79,6 +79,8 @@ public:
         CNFujicolorSuperia1600
     };
 
+public:
+
     class ListItem : public QListWidgetItem
     {
     public:
@@ -88,6 +90,8 @@ public:
         {
         }
     };
+
+public:
 
     explicit FilmContainer();
     explicit FilmContainer(CNFilmProfile profile, double gamma, bool sixteenBit);
@@ -110,6 +114,8 @@ public:
 
     LevelsContainer toLevels()                  const;
     CBContainer     toCB()                      const;
+
+public:
 
     static const QMap<int, QString> profileMap;
     static QList<ListItem*> profileItemList(QListWidget* const view);
@@ -134,8 +140,8 @@ class DIGIKAM_EXPORT FilmFilter: public DImgThreadedFilter
 {
 public:
 
-    explicit FilmFilter(QObject* const parent=nullptr);
-    explicit FilmFilter(DImg* const orgImage, QObject* const parent=nullptr, const FilmContainer& settings=FilmContainer());
+    explicit FilmFilter(QObject* const parent = nullptr);
+    explicit FilmFilter(DImg* const orgImage, QObject* const parent = nullptr, const FilmContainer& settings = FilmContainer());
     virtual ~FilmFilter();
 
     static QString FilterIdentifier()

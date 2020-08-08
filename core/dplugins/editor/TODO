@@ -5,17 +5,18 @@ Editor tools pending task
 color
   /adjustcurves             DONE          TODO             DONE                  DONE
   /adjustlevels             DONE          TODO             DONE                  TODO
-  /autocorrectiontool       DONE          TODO             DONE                  DONE
-  /bcgtool                  DONE          TODO             DONE                  DONE
-  /bwsepiatool              DONE          TODO             DONE                  DONE
-  /cbtool                   DONE          TODO             DONE                  DONE
+  /autocorrection           DONE          TODO             DONE                  DONE
+  /bcg                      DONE          TODO             DONE                  DONE
+  /bwsepia                  DONE          TODO             DONE                  DONE
+  /cb                       DONE          TODO             DONE                  DONE
   /channelmixer             DONE          TODO             DONE                  DONE
   /hsltool                  DONE          TODO             DONE                  DONE
-  /profileconversiontool    DONE          TODO             DONE                  DONE
+  /profileconversion        DONE          TODO             DONE                  DONE
   /whitebalance             DONE          TODO             DONE                  DONE
   /Invert                    NO           TODO              NO                   DONE
   /Convert 8/16 bits         NO           TODO              NO                   DONE
   /Convert 16/8 bits         NO           TODO              NO                   DONE
+  /Film                     DONE          TODO             DONE                  TODO
 
 decorate
   /border                   DONE          TODO              NO                   DONE
@@ -33,23 +34,24 @@ filters
   /filmgrain                DONE          DONE             DONE                  DONE
 
 enhance
-  /noisereductiontool       DONE          DONE             DONE                  DONE
-  /sharpentool              DONE          DONE             DONE                  DONE
+  /noisereduction           DONE          DONE             DONE                  DONE
+  /sharpen                  DONE          DONE             DONE                  DONE
   /restoration              DONE          TODO             DONE                  DONE
-  /blurtool                 DONE          DONE             DONE                  DONE
+  /blur                     DONE          DONE             DONE                  DONE
   /localcontrast            DONE          DONE             DONE                  DONE
   /redeyetool               DONE          DONE             DONE                  DONE
-  /inpainting               DONE          TODO              NO                    NO
+  /healingclone             DONE          TODO              NO                    NO
   /autocorrection           DONE          TODO             DONE                  DONE
   /distortion               DONE          TODO             TODO                  TODO
   /vignetting               DONE          TODO              NO                   DONE
   /hotpixels                DONE          TODO             DONE                  DONE
 
 transform
+  /autocrop                  NO           TODO              NO                   TODO
   /ratiocrop                DONE          TODO              NO                    NO
-  /resizetool               DONE          TODO             TODO                  DONE
+  /resize                   DONE          TODO             TODO                  DONE
   /freerotation             DONE          TODO              NO                   DONE
   /perspective               NO           TODO              NO                    NO
-  /sheartool                DONE          TODO              NO                   TODO
+  /shear                    DONE          TODO              NO                   TODO
   /contentawareresizing     DONE          TODO             TODO                  TODO
 
