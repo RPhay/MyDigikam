@@ -115,7 +115,15 @@ static void jpegutils_jpeg_error_exit(j_common_ptr cinfo)
 
     qCDebug(DIGIKAM_GENERAL_LOG) << "Jpegutils error, aborting operation:" << buffer;
 
+ #ifdef __MINGW32__
+
+    __builtin_longjmp(myerr->setjmp_buffer, 1);
+
+#else
+
     longjmp(myerr->setjmp_buffer, 1);
+
+#endif
 }
 
 static void jpegutils_jpeg_emit_message(j_common_ptr cinfo, int msg_level)
@@ -174,7 +182,15 @@ bool loadJPEGScaled(QImage& image, const QString& path, int maximumSize)
     cinfo.err->emit_message   = jpegutils_jpeg_emit_message;
     cinfo.err->output_message = jpegutils_jpeg_output_message;
 
+#ifdef __MINGW32__
+
+    if (__builtin_setjmp(jerr.setjmp_buffer))
+
+#else
+
     if (setjmp(jerr.setjmp_buffer))
+
+#endif
     {
         jpeg_destroy_decompress(&cinfo);
         fclose(inFile);

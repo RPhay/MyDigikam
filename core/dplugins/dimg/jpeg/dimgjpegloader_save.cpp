@@ -128,7 +128,15 @@ bool DImgJPEGLoader::save(const QString& filePath, DImgLoaderObserver* const obs
 
     // If an error occurs during writing, libjpeg will jump here
 
+#ifdef __MINGW32__
+
+    if (__builtin_setjmp(jerr.setjmp_buffer))
+
+#else
+
     if (setjmp(jerr.setjmp_buffer))
+
+#endif
     {
         jpeg_destroy_compress(&cinfo);
         delete cleanupData;
