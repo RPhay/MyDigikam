@@ -208,5 +208,6 @@ BUGFIXES:
 199 ==> 273754 - Unintuitive change of image resolution.
 200 ==> 286276 - Use .thm file as sidecar files for video files.
 201 ==> 424605 - Cannot use Image Mosaic Wall on Windows.
-202 ==> 
+202 ==> 425150 - Option to filter images by orientation, resolution, ISO.
+203 ==> 
 
