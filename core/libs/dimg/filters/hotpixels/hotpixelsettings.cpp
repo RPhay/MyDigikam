@@ -100,8 +100,19 @@ HotPixelSettings::HotPixelSettings(QWidget* const parent)
 
     d->blackFrameButton   = new QPushButton(i18n("Black Frame..."), this);
     d->blackFrameButton->setIcon(QIcon::fromTheme(QLatin1String("document-open")));
-    d->blackFrameButton->setWhatsThis(i18n("Use this button to add a new black frame file which will "
-                                           "be used by the hot pixels removal filter.") );
+    d->blackFrameButton->setWhatsThis(i18n("<p>Use this button to add a new black frame file which will "
+                                           "be used by the hot pixels removal filter.</p>"
+                                           "<p>The Black Frame subtraction method is the most accurate "
+                                           "\"Hot Pixels\" and \"Stuck Pixels\" removal. First you have to "
+                                           "create a \"Black Frame\" as a reference. This is easy to do. "
+                                           "When you finish taking your long exposure shots, put a lens cap "
+                                           "on the camera and take one \"dark\" image with the same exposure "
+                                           "time as the images before. This image will be all dark, but with "
+                                           "close examination you will see that it has the Hot and Stuck Pixels "
+                                           "(colored dots). These are positioned at the same places as on your "
+                                           "previous shots. This tool will parse black frame, detect hot pixels, "
+                                           "and create a list of positions where image must be corrected to "
+                                           "eliminate wrong colors in these pixels.</p>"));
 
     d->blackFrameListView = new BlackFrameListView(this);
 
