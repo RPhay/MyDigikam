@@ -47,6 +47,7 @@ set(libdimgfilters_SRCS
     ${CMAKE_CURRENT_SOURCE_DIR}/filters/raw/drawdecoding.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/filters/decorate/borderfilter.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/filters/decorate/bordersettings.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/filters/decorate/bordercontainer.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/filters/decorate/texturefilter.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/filters/film/filmfilter.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/filters/fx/blurfilter.cpp
