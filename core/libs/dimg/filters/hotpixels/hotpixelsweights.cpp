@@ -36,26 +36,104 @@ namespace Digikam
 {
 
 HotPixelsWeights::HotPixelsWeights()
-  : mHeight(0),
-    mWidth(0),
-    mCoefficientNumber(0),
-    mTwoDim(false),
-    mPolynomeOrder(0),
-    mWeightMatrices(nullptr),
-    mPositions(QList<QPoint>())
+    : m_height(0),
+      m_width(0),
+      m_coefficientNumber(0),
+      m_twoDim(false),
+      m_polynomeOrder(0),
+      m_weightMatrices(nullptr),
+      m_positions(QList<QPoint>())
 {
 }
 
 HotPixelsWeights::HotPixelsWeights(const HotPixelsWeights& w)
-  : mHeight(0),
-    mWidth(0),
-    mCoefficientNumber(0),
-    mTwoDim(false),
-    mPolynomeOrder(0),
-    mWeightMatrices(nullptr),
-    mPositions(QList<QPoint>())
+    : m_height(0),
+      m_width(0),
+      m_coefficientNumber(0),
+      m_twoDim(false),
+      m_polynomeOrder(0),
+      m_weightMatrices(nullptr),
+      m_positions(QList<QPoint>())
 {
     (*this) = w;
+}
+
+HotPixelsWeights::~HotPixelsWeights()
+{
+    if (!m_weightMatrices)
+    {
+        return;
+    }
+
+    for (int i = 0 ; i < m_positions.count() ; ++i)
+    {
+        for (unsigned int j = 0 ; j < m_height ; ++j)
+        {
+            delete [] m_weightMatrices[i][j];
+        }
+    }
+
+    delete [] m_weightMatrices;
+}
+
+unsigned int HotPixelsWeights::height() const
+{
+    return m_height;
+}
+
+unsigned int HotPixelsWeights::polynomeOrder() const
+{
+    return m_polynomeOrder;
+}
+
+bool HotPixelsWeights::twoDim() const
+{
+    return m_twoDim;
+}
+
+unsigned int HotPixelsWeights::width() const
+{
+    return m_width;
+}
+
+void HotPixelsWeights::setHeight(int h)
+{
+    m_height = h;
+}
+
+void HotPixelsWeights::setPolynomeOrder(int order)
+{
+    m_polynomeOrder = order;
+}
+
+void HotPixelsWeights::setTwoDim(bool td)
+{
+    m_twoDim = td;
+}
+
+void HotPixelsWeights::setWidth(int w)
+{
+    m_width = w;
+}
+
+double** HotPixelsWeights::operator[](int n) const
+{
+    return m_weightMatrices[n];
+}
+
+const QList<QPoint> HotPixelsWeights::positions() const
+{
+    return m_positions;
+}
+
+int HotPixelsWeights::coefficientNumber() const
+{
+    return m_coefficientNumber;
+}
+
+double** * HotPixelsWeights::weightMatrices() const
+{
+    return m_weightMatrices;
 }
 
 HotPixelsWeights& HotPixelsWeights::operator=(const HotPixelsWeights& w)
@@ -67,12 +145,12 @@ HotPixelsWeights& HotPixelsWeights::operator=(const HotPixelsWeights& w)
         return *this;
     }
 
-    mHeight            = w.height();
-    mWidth             = w.width();
-    mPositions         = w.positions();
-    mCoefficientNumber = w.coefficientNumber();
-    mTwoDim            = w.twoDim();
-    mPolynomeOrder     = w.polynomeOrder();
+    m_height            = w.height();
+    m_width             = w.width();
+    m_positions         = w.positions();
+    m_coefficientNumber = w.coefficientNumber();
+    m_twoDim            = w.twoDim();
+    m_polynomeOrder     = w.polynomeOrder();
 
     // Allocate memory and copy weights
     // if the original one was calculated
@@ -85,25 +163,25 @@ HotPixelsWeights& HotPixelsWeights::operator=(const HotPixelsWeights& w)
     {
         double** * const origMatrices = w.weightMatrices();
 
-        // Allocate mPositions.count() matrices
+        // Allocate m_positions.count() matrices
 
-        mWeightMatrices               = new double** [mPositions.count()];
+        m_weightMatrices               = new double** [m_positions.count()];
 
-        for (int i = 0 ; i < mPositions.count() ; ++i)
+        for (int i = 0 ; i < m_positions.count() ; ++i)
         {
-            // Allocate mHeight rows on each position
+            // Allocate m_height rows on each position
 
-            mWeightMatrices[i] = new double*[mHeight];
+            m_weightMatrices[i] = new double*[m_height];
 
-            for (uint j = 0 ; j < mHeight ; ++j)
+            for (uint j = 0 ; j < m_height ; ++j)
             {
-                // Allocate mWidth columns on each row
+                // Allocate m_width columns on each row
 
-                mWeightMatrices[i][j] = new double[mWidth];
+                m_weightMatrices[i][j] = new double[m_width];
 
-                for (uint k = 0 ; k < mWidth ; ++k)
+                for (uint k = 0 ; k < m_width ; ++k)
                 {
-                    mWeightMatrices[i][j][k] = origMatrices[i][j][k];
+                    m_weightMatrices[i][j][k] = origMatrices[i][j][k];
                 }
             }
         }
@@ -114,17 +192,17 @@ HotPixelsWeights& HotPixelsWeights::operator=(const HotPixelsWeights& w)
 
 void HotPixelsWeights::calculateHotPixelsWeights()
 {
-    mCoefficientNumber = (mTwoDim ? ((size_t)mPolynomeOrder + 1) * ((size_t)mPolynomeOrder + 1)
-                                  :  (size_t)mPolynomeOrder + 1);
+    m_coefficientNumber = (m_twoDim ? ((size_t)m_polynomeOrder + 1) * ((size_t)m_polynomeOrder + 1)
+                                  :  (size_t)m_polynomeOrder + 1);
     size_t  ix, iy, i, j;
     int     x, y;
 
     // Determine coordinates of pixels to be sampled
 
-    if (mTwoDim)
+    if (m_twoDim)
     {
 
-        int iPolynomeOrder = (int) mPolynomeOrder; // lets avoid signed/unsigned comparison warnings
+        int iPolynomeOrder = (int) m_polynomeOrder; // lets avoid signed/unsigned comparison warnings
         int iHeight        = (int) height();
         int iWidth         = (int) width();
 
@@ -142,7 +220,7 @@ void HotPixelsWeights::calculateHotPixelsWeights()
                    )
                 {
                     QPoint position(x,y);
-                    mPositions.append(position);
+                    m_positions.append(position);
                 }
             }
         }
@@ -152,102 +230,102 @@ void HotPixelsWeights::calculateHotPixelsWeights()
         // In the one-dimensional case, only the y coordinate and y size is used.
 
         // cppcheck-suppress signConversion
-        for (y = (-1)*mPolynomeOrder ; y < 0 ; ++y)
+        for (y = (-1)*m_polynomeOrder ; y < 0 ; ++y)
         {
             QPoint position(0, y);
-            mPositions.append(position);
+            m_positions.append(position);
         }
 
-        for (y = (int)height() ; (y < (int)height() + (int)mPolynomeOrder) ; ++y)
+        for (y = (int)height() ; (y < (int)height() + (int)m_polynomeOrder) ; ++y)
         {
             QPoint position(0, y);
-            mPositions.append(position);
+            m_positions.append(position);
         }
     }
 
     // Allocate memory.
 
-    QScopedArrayPointer<double> matrix (new double[mCoefficientNumber * mCoefficientNumber]);
-    QScopedArrayPointer<double> vector0(new double[mPositions.count() * mCoefficientNumber]);
-    QScopedArrayPointer<double> vector1(new double[mPositions.count() * mCoefficientNumber]);
+    QScopedArrayPointer<double> matrix (new double[m_coefficientNumber * m_coefficientNumber]);
+    QScopedArrayPointer<double> vector0(new double[m_positions.count() * m_coefficientNumber]);
+    QScopedArrayPointer<double> vector1(new double[m_positions.count() * m_coefficientNumber]);
 
     // Calculate coefficient matrix and vectors
 
-    for (iy = 0 ; iy < mCoefficientNumber ; ++iy)
+    for (iy = 0 ; iy < m_coefficientNumber ; ++iy)
     {
-        for (ix = 0 ; ix < mCoefficientNumber ; ++ix)
+        for (ix = 0 ; ix < m_coefficientNumber ; ++ix)
         {
-            matrix[(int)(iy* mCoefficientNumber + ix)] = 0.0;
+            matrix[(int)(iy* m_coefficientNumber + ix)] = 0.0;
         }
 
-        for (j = 0 ; j < (size_t)mPositions.count() ; ++j)
+        for (j = 0 ; j < (size_t)m_positions.count() ; ++j)
         {
-            vector0[(int)(iy * mPositions.count() + j)] = polyTerm(iy, mPositions.at((int)j).x(),
-                                                                   mPositions.at((int)j).y(), mPolynomeOrder);
+            vector0[(int)(iy * m_positions.count() + j)] = polyTerm(iy, m_positions.at((int)j).x(),
+                                                                   m_positions.at((int)j).y(), m_polynomeOrder);
 
-            for (ix = 0 ; ix < mCoefficientNumber ; ++ix)
+            for (ix = 0 ; ix < m_coefficientNumber ; ++ix)
             {
-                matrix[(int)(iy* mCoefficientNumber + ix)] += (vector0[(int)(iy * mPositions.count() + j)] *
-                                                              polyTerm(ix, mPositions.at((int)j).x(), mPositions.at((int)j).y(), mPolynomeOrder));
+                matrix[(int)(iy* m_coefficientNumber + ix)] += (vector0[(int)(iy * m_positions.count() + j)] *
+                                                              polyTerm(ix, m_positions.at((int)j).x(), m_positions.at((int)j).y(), m_polynomeOrder));
             }
         }
     }
 
     // Invert matrix.
 
-    matrixInv (matrix.data(), mCoefficientNumber);
+    matrixInv (matrix.data(), m_coefficientNumber);
 
     // Multiply inverse matrix with vector.
 
-    for (iy = 0 ; iy < mCoefficientNumber ; ++iy)
+    for (iy = 0 ; iy < m_coefficientNumber ; ++iy)
     {
-        for (j = 0 ; j < (size_t)mPositions.count() ; ++j)
+        for (j = 0 ; j < (size_t)m_positions.count() ; ++j)
         {
-            vector1[(int)(iy * mPositions.count() + j)] = 0.0;
+            vector1[(int)(iy * m_positions.count() + j)] = 0.0;
 
-            for (ix = 0 ; ix < mCoefficientNumber ; ++ix)
+            for (ix = 0 ; ix < m_coefficientNumber ; ++ix)
             {
-                vector1[(int)(iy * mPositions.count() + j)] += matrix[(int)(iy  * mCoefficientNumber + ix)] *
-                                                               vector0[(int)(ix * mPositions.count() + j)];
+                vector1[(int)(iy * m_positions.count() + j)] += matrix[(int)(iy  * m_coefficientNumber + ix)] *
+                                                               vector0[(int)(ix * m_positions.count() + j)];
             }
         }
     }
 
     // Store weights
 
-    // Allocate mPositions.count() matrices.
+    // Allocate m_positions.count() matrices.
 
-    mWeightMatrices = new double** [mPositions.count()];
+    m_weightMatrices = new double** [m_positions.count()];
 
-    for (i = 0 ; i < (size_t)mPositions.count() ; ++i)
+    for (i = 0 ; i < (size_t)m_positions.count() ; ++i)
     {
-        // Allocate mHeight rows on each position
+        // Allocate m_height rows on each position
 
-        mWeightMatrices[i] = new double*[mHeight];
+        m_weightMatrices[i] = new double*[m_height];
 
-        for (j = 0 ; j < mHeight ; ++j)
+        for (j = 0 ; j < m_height ; ++j)
         {
-            // Allocate mWidth columns on each row
+            // Allocate m_width columns on each row
 
-            mWeightMatrices[i][j] = new double[mWidth];
+            m_weightMatrices[i][j] = new double[m_width];
         }
     }
 
-    for (y = 0 ; y < (int)mHeight ; ++y)
+    for (y = 0 ; y < (int)m_height ; ++y)
     {
-        for (x = 0 ; x < (int)mWidth ; ++x)
+        for (x = 0 ; x < (int)m_width ; ++x)
         {
-            for (j = 0 ; j < (size_t)mPositions.count() ; ++j)
+            for (j = 0 ; j < (size_t)m_positions.count() ; ++j)
             {
-                mWeightMatrices[j][y][x] = 0.0;
+                m_weightMatrices[j][y][x] = 0.0;
 
-                for (iy = 0 ; iy < mCoefficientNumber ; ++iy)
+                for (iy = 0 ; iy < m_coefficientNumber ; ++iy)
                 {
-                    mWeightMatrices[j][y][x] += vector1[(int)(iy * mPositions.count() + j)] *
-                                                polyTerm(iy, x, y, mPolynomeOrder);
+                    m_weightMatrices[j][y][x] += vector1[(int)(iy * m_positions.count() + j)] *
+                                                polyTerm(iy, x, y, m_polynomeOrder);
                 }
 
-                mWeightMatrices[j][y][x] *= (double)mPositions.count();
+                m_weightMatrices[j][y][x] *= (double)m_positions.count();
             }
         }
     }
@@ -256,10 +334,10 @@ void HotPixelsWeights::calculateHotPixelsWeights()
 bool HotPixelsWeights::operator==(const HotPixelsWeights& ws) const
 {
     return (
-            (mHeight        == ws.height())        &&
-            (mWidth         == ws.width())         &&
-            (mPolynomeOrder == ws.polynomeOrder()) &&
-            (mTwoDim        == ws.twoDim())
+            (m_height        == ws.height())        &&
+            (m_width         == ws.width())         &&
+            (m_polynomeOrder == ws.polynomeOrder()) &&
+            (m_twoDim        == ws.twoDim())
            );
 }
 

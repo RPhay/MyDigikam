@@ -44,91 +44,33 @@ public:
 
     HotPixelsWeights();
     HotPixelsWeights(const HotPixelsWeights& w);
+    ~HotPixelsWeights();
+
     HotPixelsWeights& operator=(const HotPixelsWeights& w);
+    bool operator==(const HotPixelsWeights& ws) const;
+    double** operator[](int n)                  const;
 
-    ~HotPixelsWeights()
-    {
-        if (!mWeightMatrices)
-        {
-            return;
-        }
+    unsigned int height()                       const;
+    void setHeight(int h);
 
-        for (int i = 0 ; i < mPositions.count() ; ++i)
-        {
-            for (unsigned int j = 0 ; j < mHeight ; ++j)
-            {
-                delete [] mWeightMatrices[i][j];
-            }
-        }
+    unsigned int polynomeOrder()                const;
+    void setPolynomeOrder(int order);
 
-        delete [] mWeightMatrices;
-    }
+    bool twoDim() const;
+    void setTwoDim(bool td);
 
-    unsigned int height()                       const
-    {
-        return mHeight;
-    };
+    void setWidth(int w);
+    unsigned int width()                        const;
 
-    unsigned int polynomeOrder()                const
-    {
-        return mPolynomeOrder;
-    };
-
-    bool twoDim() const
-    {
-        return mTwoDim;
-    };
-
-    unsigned int width()                        const
-    {
-        return mWidth;
-    };
-
-    void setHeight(int h)
-    {
-        mHeight = h;
-    };
-
-    void setPolynomeOrder(int order)
-    {
-        mPolynomeOrder = order;
-    };
-
-    void setTwoDim(bool td)
-    {
-        mTwoDim = td;
-    };
-
-    void setWidth(int w)
-    {
-        mWidth = w;
-    };
+    const QList<QPoint> positions()             const;
 
     void calculateHotPixelsWeights();
 
-    bool operator==(const HotPixelsWeights& ws) const;
-
-    double** operator[](int n) const
-    {
-        return mWeightMatrices[n];
-    };
-
-    const QList<QPoint> positions()             const
-    {
-        return mPositions;
-    };
-
 protected:
 
-    int coefficientNumber()                     const
-    {
-        return mCoefficientNumber;
-    };
+    int coefficientNumber()                     const;
 
-    double** * weightMatrices()                 const
-    {
-        return mWeightMatrices;
-    };
+    double** * weightMatrices()                 const;
 
 private:
 
@@ -142,13 +84,13 @@ private:
 
 private:
 
-    unsigned int  mHeight;
-    unsigned int  mWidth;
-    unsigned int  mCoefficientNumber;
-    bool          mTwoDim;
-    unsigned int  mPolynomeOrder;
-    double** *    mWeightMatrices;   ///< Stores a list of weight matrices
-    QList<QPoint> mPositions;
+    unsigned int  m_height;
+    unsigned int  m_width;
+    unsigned int  m_coefficientNumber;
+    bool          m_twoDim;
+    unsigned int  m_polynomeOrder;
+    double** *    m_weightMatrices;   ///< Stores a list of weight matrices
+    QList<QPoint> m_positions;
 };
 
 } // namespace Digikam
