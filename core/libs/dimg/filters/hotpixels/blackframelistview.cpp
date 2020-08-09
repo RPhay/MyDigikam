@@ -141,7 +141,7 @@ void BlackFrameListViewItem::slotParsed(const QList<HotPixelProps>& hotPixels)
     DMetadata meta(m_blackFrameUrl.toLocalFile());
     PhotoInfoContainer info = meta.getPhotographInformation();
 
-    QString blackFrameDesc  = i18n("<p>File Name: %1<p>", m_blackFrameUrl.fileName());
+    QString blackFrameDesc  = i18n("<p>File Name: %1</p>", m_blackFrameUrl.fileName());
     blackFrameDesc.append(i18n("<p>Make/Model: %1/%2</p>", info.make, info.model));
 
     QString hplist;
