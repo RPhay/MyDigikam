@@ -45,7 +45,6 @@
  
 #include "digikam_debug.h"
 #include "hotpixelfixer.h"
-#include "blackframelistview.h"
 #include "dcombobox.h"
 #include "imagedialog.h"
 #include "blackframelistview.h"
