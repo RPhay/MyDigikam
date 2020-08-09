@@ -90,6 +90,16 @@ public:
      */
     void setNbNeighBors(int k);
 
+    /**
+     * @brief register training data for unit test
+     */
+    bool registerTrainingData(const cv::Mat& preprocessedImage, int label);
+
+    /**
+     * @brief predict label of test data for unit test
+     */
+    int verifyTestData(const cv::Mat& preprocessedImage);
+
 private:
 
     /// Hidden copy constructor and assignment operator.

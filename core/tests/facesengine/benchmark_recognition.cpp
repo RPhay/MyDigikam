@@ -88,6 +88,7 @@ private:
 
     OpenCVDNNFaceDetector* m_detector;
     FacialRecognitionWrapper*  m_recognizer;
+    OpenCVDNNFaceRecognizer* recognizerTest;
 };
 
 Benchmark::Benchmark()
@@ -105,6 +106,8 @@ Benchmark::Benchmark()
 
     m_recognizer->clearAllTraining();
     m_recognizer->deleteIdentities(m_recognizer->allIdentities());
+
+    recognizerTest = new OpenCVDNNFaceRecognizer(OpenCVDNNFaceRecognizer::Tree);
 }
 
 Benchmark::~Benchmark()
@@ -138,6 +141,7 @@ Benchmark::~Benchmark()
 
     delete m_detector;
     delete m_recognizer;
+    delete recognizerTest;
     delete m_parser;
 }
 
@@ -167,13 +171,20 @@ void Benchmark::registerTrainingSet()
 
             if (!croppedFace.isNull())
             {
-                trainImages << croppedFace;
+                cv::Mat preprocessedFace;
+
+                preprocessedFace = recognizerTest->prepareForRecognition(croppedFace);
+
+                if (!recognizerTest->registerTrainingData(preprocessedFace, newIdentity.id()))
+                {
+                    qDebug() << "fail to register training data";
+                }
 
                 ++m_trainSize;
             }
         }
 
-        m_recognizer->train(newIdentity, trainImages, QLatin1String("train face classifier"));
+        //m_recognizer->train(newIdentity, trainImages, QLatin1String("train face classifier"));
     }
 
     unsigned int elapsedDetection = timer.elapsed();
@@ -201,7 +212,15 @@ void Benchmark::verifyTestSet()
 
             if (!croppedFace.isNull())
             {
-                Identity prediction = m_recognizer->recognizeFace(croppedFace);
+                cv::Mat preprocessedFace;
+
+                preprocessedFace = recognizerTest->prepareForRecognition(croppedFace);
+
+                int label = recognizerTest->verifyTestData(preprocessedFace);
+                Identity prediction = m_recognizer->identity(label);
+
+                //Identity prediction = m_recognizer->recognizeFace(croppedFace);
+
                 if (prediction.isNull() && m_trainSet.contains(iter.key()))
                 {
                     // cannot recognize when label is already register
@@ -211,6 +230,7 @@ void Benchmark::verifyTestSet()
                 {
                     // wrong label
                     ++nbWrongLabel;
+                    qDebug() << "Error prediction" << prediction.attribute(QLatin1String("fullName")) << "diff" << iter.key();
                 }
 
                 ++m_testSize;

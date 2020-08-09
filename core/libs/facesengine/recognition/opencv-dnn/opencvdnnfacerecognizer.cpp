@@ -412,4 +412,35 @@ void OpenCVDNNFaceRecognizer::clearTraining(const QList<int>& idsToClear, const 
     //FaceDbAccess().db()->clearTreeDb();
 }
 
+bool OpenCVDNNFaceRecognizer::registerTrainingData(const cv::Mat& preprocessedImage, int label)
+{
+    cv::Mat faceEmbedding = d->extractor->getFaceEmbedding(preprocessedImage).clone();
+
+    if(d->method == Tree)
+    {
+        KDNode* newNode = d->tree->add(faceEmbedding, label);
+
+        if (!newNode)
+        {
+            qWarning() << "Error insert new node";
+
+            return false;
+        }
+    }
+
+    return true;
+}
+
+int OpenCVDNNFaceRecognizer::verifyTestData(const cv::Mat& preprocessedImage)
+{
+    int id = -1;
+
+    if(d->method == Tree)
+    {
+        id = d->predictKDTree(d->extractor->getFaceEmbedding(preprocessedImage), 3);
+    }
+
+    return id;
+}
+
 }
