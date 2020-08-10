@@ -50,6 +50,9 @@
 #include "dnnfaceextractor.h"
 #include "opencvdnnfacerecognizer.h"
 #include "identity.h"
+#include "coredbaccess.h"
+#include "dbengineparameters.h"
+#include "facialrecognition_wrapper.h"
 
 using namespace Digikam;
 
@@ -146,6 +149,7 @@ private Q_SLOTS:
 private:
 
     OpenCVDNNFaceDetector* m_detector;
+    FacialRecognitionWrapper* recognitionWrapper;
     OpenCVDNNFaceRecognizer* m_recognizer;
     DNNFaceExtractor*      m_extractor;
     QVector<cv::Mat>       m_preprocessedFaces;
@@ -169,7 +173,12 @@ private:
 MainWindow::MainWindow(const QDir &directory, QWidget *parent)
     : QMainWindow(parent)
 {
+    DbEngineParameters prm = DbEngineParameters::parametersFromConfig();
+    CoreDbAccess::setParameters(prm, CoreDbAccess::MainApplication);
+
     setWindowTitle(QLatin1String("Face recognition Test"));
+
+    recognitionWrapper = new FacialRecognitionWrapper();
 
     m_detector   = new OpenCVDNNFaceDetector(DetectorNNModel::YOLO);
     m_recognizer = new OpenCVDNNFaceRecognizer(OpenCVDNNFaceRecognizer::Tree);
@@ -199,6 +208,7 @@ MainWindow::MainWindow(const QDir &directory, QWidget *parent)
 
 MainWindow::~MainWindow()
 {
+    delete recognitionWrapper;
     delete m_detector;
     delete m_recognizer;
     delete m_extractor;
