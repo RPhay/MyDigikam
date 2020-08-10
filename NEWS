@@ -213,4 +213,6 @@ BUGFIXES:
 204 ==> 424786 - Scroll Bars cover up sort icons.
 205 ==> 159477 - "Robust metadata support", "Exception resistance", "Versioning", "Outside Program Interference".
 206 ==> 425193 - panorama tool seems to miss components to run.
+207 ==> 375560 - interruptable BQM.
+208 ==> 
 
