@@ -191,7 +191,7 @@ cv::Mat DNNFaceExtractor::getFaceEmbedding(const cv::Mat& faceImage)
 /*
     cv::Mat alignedFace = faceImage;
 */
-    cv::Mat alignedFace = alignFace(faceImage);
+    cv::Mat alignedFace = d->preprocessor->preprocess(faceImage);
 
     qCDebug(DIGIKAM_FACEDB_LOG) << "Finish aligning face in " << timer.elapsed() << " ms";
     qCDebug(DIGIKAM_FACEDB_LOG) << "Start neural network";
@@ -199,13 +199,16 @@ cv::Mat DNNFaceExtractor::getFaceEmbedding(const cv::Mat& faceImage)
     timer.start();
     cv::Mat face_descriptors;
     cv::Mat blob     = cv::dnn::blobFromImage(alignedFace, d->scaleFactor, d->imageSize, cv::Scalar(), true, false);
-
+/*
     d->mutex.lock();
     {
         d->net.setInput(blob);
         face_descriptors = d->net.forward();
     }
     d->mutex.unlock();
+*/
+    d->net.setInput(blob);
+    face_descriptors = d->net.forward();
 
     qCDebug(DIGIKAM_FACEDB_LOG) << "Finish computing face embedding in "
                                 << timer.elapsed() << " ms";

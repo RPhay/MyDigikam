@@ -414,7 +414,7 @@ void OpenCVDNNFaceRecognizer::clearTraining(const QList<int>& idsToClear, const 
 
 bool OpenCVDNNFaceRecognizer::registerTrainingData(const cv::Mat& preprocessedImage, int label)
 {
-    cv::Mat faceEmbedding = d->extractor->getFaceEmbedding(preprocessedImage).clone();
+    cv::Mat faceEmbedding = d->extractor->getFaceEmbedding(preprocessedImage);
 
     if(d->method == Tree)
     {

@@ -72,6 +72,7 @@ public:
 private:
 
     QImage detect(QImage* faceImg);
+    bool preprocess(QImage* faceImg, cv::Mat& face);
 
 public:
     Q_SLOT void fetchData();
@@ -167,14 +168,12 @@ void Benchmark::registerTrainingSet()
 
         for (int i = 0; i < iter.value().size(); ++i)
         {
-            QImage croppedFace = detect(iter.value().at(i));
+            //QImage croppedFace = detect(iter.value().at(i));
 
-            if (!croppedFace.isNull())
+            cv::Mat preprocessedFace;
+
+            if (preprocess(iter.value().at(i), preprocessedFace))
             {
-                cv::Mat preprocessedFace;
-
-                preprocessedFace = recognizerTest->prepareForRecognition(croppedFace);
-
                 if (!recognizerTest->registerTrainingData(preprocessedFace, newIdentity.id()))
                 {
                     qDebug() << "fail to register training data";
@@ -208,14 +207,12 @@ void Benchmark::verifyTestSet()
 
         for (int i = 0; i < iter.value().size(); ++i)
         {
-            QImage croppedFace = detect(iter.value().at(i));
+            //QImage croppedFace = detect(iter.value().at(i));
 
-            if (!croppedFace.isNull())
+            cv::Mat preprocessedFace;
+
+            if (preprocess(iter.value().at(i), preprocessedFace))
             {
-                cv::Mat preprocessedFace;
-
-                preprocessedFace = recognizerTest->prepareForRecognition(croppedFace);
-
                 int label = recognizerTest->verifyTestData(preprocessedFace);
                 Identity prediction = m_recognizer->identity(label);
 
@@ -307,6 +304,43 @@ QImage Benchmark::detect(QImage* faceImg)
 
     return faceImg->copy(rect);
 }
+
+bool Benchmark::preprocess(QImage* faceImg, cv::Mat& face)
+{
+    QList<QRectF> faces;
+
+    try
+    {
+        // NOTE detection with filePath won't work when format is not standard
+        // NOTE unexpected behaviour with detecFaces(const QString&)
+        cv::Size paddedSize(0, 0);
+        cv::Mat cvImage       = m_detector->prepareForDetection(*faceImg, paddedSize);
+        QList<QRect> absRects = m_detector->detectFaces(cvImage, paddedSize);
+        faces                 = FaceDetector::toRelativeRects(absRects,
+                                                              QSize(cvImage.cols - 2*paddedSize.width,
+                                                              cvImage.rows - 2*paddedSize.height));
+    }
+    catch (cv::Exception& e)
+    {
+        qWarning() << "cv::Exception:" << e.what();
+    }
+    catch(...)
+    {
+        qWarning() << "Default exception from OpenCV";
+    }
+
+    if (faces.isEmpty())
+    {
+        return false;
+    }
+
+    QRect rect = FaceDetector::toAbsoluteRect(faces[0], faceImg->size());
+
+    face = (recognizerTest->prepareForRecognition(faceImg->copy(rect)));
+
+    return true;
+}
+
 
 void Benchmark::splitData(const QDir& dataDir, float splitRatio)
 {
