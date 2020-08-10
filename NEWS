@@ -211,5 +211,6 @@ BUGFIXES:
 202 ==> 425150 - Option to filter images by orientation, resolution, ISO.
 203 ==> 425138 - Unable to add local collection.
 204 ==> 424786 - Scroll Bars cover up sort icons.
-205 ==> 
+205 ==> 159477 - "Robust metadata support", "Exception resistance", "Versioning", "Outside Program Interference".
+206 ==> 
 
