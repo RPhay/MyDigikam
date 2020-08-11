@@ -71,7 +71,7 @@ public:
 
 private:
 
-    QImage detect(QImage* faceImg);
+    QImage detect(const QImage& faceImg);
     bool preprocess(QImage* faceImg, cv::Mat& face);
 
 public:
@@ -84,8 +84,8 @@ public:
 
 private:
 
-    QHash<QString, QVector<QImage*> > m_trainSet;
-    QHash<QString, QVector<QImage*> > m_testSet;
+    QHash<QString, QVector<cv::Mat> > m_trainSet;
+    QHash<QString, QVector<cv::Mat> > m_testSet;
 
     OpenCVDNNFaceDetector* m_detector;
     FacialRecognitionWrapper*  m_recognizer;
@@ -113,8 +113,9 @@ Benchmark::Benchmark()
 
 Benchmark::~Benchmark()
 {
-    for (QHash<QString, QVector<QImage*> >::iterator vector  = m_trainSet.begin();
-                                                     vector != m_trainSet.end();
+/*
+    for (QHash<QString, QVector<QImage> >::iterator vector  = m_trainSet.begin();
+                                                    vector != m_trainSet.end();
                                                    ++vector)
     {
 
@@ -139,7 +140,7 @@ Benchmark::~Benchmark()
             img = vector.value().erase(img);
         }
     }
-
+*/
     delete m_detector;
     delete m_recognizer;
     delete recognizerTest;
@@ -153,7 +154,7 @@ void Benchmark::registerTrainingSet()
     QElapsedTimer timer;
     timer.start();
 
-    for (QHash<QString, QVector<QImage*> >::iterator iter  = m_trainSet.begin();
+    for (QHash<QString, QVector<cv::Mat> >::iterator iter  = m_trainSet.begin();
                                                      iter != m_trainSet.end();
                                                    ++iter)
     {
@@ -170,17 +171,12 @@ void Benchmark::registerTrainingSet()
         {
             //QImage croppedFace = detect(iter.value().at(i));
 
-            cv::Mat preprocessedFace;
-
-            if (preprocess(iter.value().at(i), preprocessedFace))
+            if (!recognizerTest->registerTrainingData(iter.value().at(i), newIdentity.id()))
             {
-                if (!recognizerTest->registerTrainingData(preprocessedFace, newIdentity.id()))
-                {
-                    qDebug() << "fail to register training data";
-                }
-
-                ++m_trainSize;
+                qDebug() << "fail to register training data";
             }
+
+            ++m_trainSize;
         }
 
         //m_recognizer->train(newIdentity, trainImages, QLatin1String("train face classifier"));
@@ -199,8 +195,8 @@ void Benchmark::verifyTestSet()
     QElapsedTimer timer;
     timer.start();
 
-    for (QHash<QString, QVector<QImage*> >::iterator iter  = m_testSet.begin();
-                                                     iter != m_testSet.end();
+    for (QHash<QString, QVector<cv::Mat> >::iterator iter  = m_testSet.begin();
+                                                    iter != m_testSet.end();
                                                    ++iter)
     {
         QList<QImage> croppedFaces;
@@ -209,29 +205,22 @@ void Benchmark::verifyTestSet()
         {
             //QImage croppedFace = detect(iter.value().at(i));
 
-            cv::Mat preprocessedFace;
+            int label = recognizerTest->verifyTestData(iter.value().at(i));
+            Identity prediction = m_recognizer->identity(label);
 
-            if (preprocess(iter.value().at(i), preprocessedFace))
+            if (prediction.isNull() && m_trainSet.contains(iter.key()))
             {
-                int label = recognizerTest->verifyTestData(preprocessedFace);
-                Identity prediction = m_recognizer->identity(label);
-
-                //Identity prediction = m_recognizer->recognizeFace(croppedFace);
-
-                if (prediction.isNull() && m_trainSet.contains(iter.key()))
-                {
-                    // cannot recognize when label is already register
-                    ++nbNotRecognize;
-                }
-                else if (prediction.attribute(QLatin1String("fullName")) != iter.key())
-                {
-                    // wrong label
-                    ++nbWrongLabel;
-                    qDebug() << "Error prediction" << prediction.attribute(QLatin1String("fullName")) << "diff" << iter.key();
-                }
-
-                ++m_testSize;
+                // cannot recognize when label is already register
+                ++nbNotRecognize;
             }
+            else if (prediction.attribute(QLatin1String("fullName")) != iter.key())
+            {
+                // wrong label
+                ++nbWrongLabel;
+                qDebug() << "Error prediction" << prediction.attribute(QLatin1String("fullName")) << "diff" << iter.key();
+            }
+
+            ++m_testSize;
         }
 /*
         QList<Identity> predictions = m_recognizer->recognizeFaces(croppedFaces);
@@ -271,8 +260,13 @@ void Benchmark::verifyTestSet()
                            << m_testSize << "test faces, (" << float(elapsedDetection)/m_testSize << " ms/face)";
 }
 
-QImage Benchmark::detect(QImage* faceImg)
+QImage Benchmark::detect(const QImage& faceImg)
 {
+    if (faceImg.isNull())
+    {
+        return faceImg;
+    }
+
     QList<QRectF> faces;
 
     try
@@ -280,7 +274,7 @@ QImage Benchmark::detect(QImage* faceImg)
         // NOTE detection with filePath won't work when format is not standard
         // NOTE unexpected behaviour with detecFaces(const QString&)
         cv::Size paddedSize(0, 0);
-        cv::Mat cvImage       = m_detector->prepareForDetection(*faceImg, paddedSize);
+        cv::Mat cvImage       = m_detector->prepareForDetection(faceImg, paddedSize);
         QList<QRect> absRects = m_detector->detectFaces(cvImage, paddedSize);
         faces                 = FaceDetector::toRelativeRects(absRects,
                                                               QSize(cvImage.cols - 2*paddedSize.width,
@@ -300,9 +294,9 @@ QImage Benchmark::detect(QImage* faceImg)
         return QImage();
     }
 
-    QRect rect = FaceDetector::toAbsoluteRect(faces[0], faceImg->size());
+    QRect rect = FaceDetector::toAbsoluteRect(faces[0], faceImg.size());
 
-    return faceImg->copy(rect);
+    return faceImg.copy(rect);
 }
 
 bool Benchmark::preprocess(QImage* faceImg, cv::Mat& face)
@@ -336,7 +330,31 @@ bool Benchmark::preprocess(QImage* faceImg, cv::Mat& face)
 
     QRect rect = FaceDetector::toAbsoluteRect(faces[0], faceImg->size());
 
-    face = (recognizerTest->prepareForRecognition(faceImg->copy(rect)));
+    QImage croppedFace = faceImg->copy(rect);
+
+    cv::Mat cvImageWrapper;
+
+    switch (croppedFace.format())
+    {
+        case QImage::Format_RGB32:
+        case QImage::Format_ARGB32:
+        case QImage::Format_ARGB32_Premultiplied:
+
+            // I think we can ignore premultiplication when converting to grayscale
+
+            cvImageWrapper = cv::Mat(croppedFace.height(), croppedFace.width(), CV_8UC4, croppedFace.scanLine(0), croppedFace.bytesPerLine());
+            cv::cvtColor(cvImageWrapper, face, CV_RGBA2RGB);
+
+            break;
+
+        default:
+            croppedFace = croppedFace.convertToFormat(QImage::Format_RGB888);
+            face        = cv::Mat(croppedFace.height(), croppedFace.width(), CV_8UC3, croppedFace.scanLine(0), croppedFace.bytesPerLine());
+
+            //cvtColor(cvImageWrapper, cvImage, CV_RGB2GRAY);
+
+            break;
+    }
 
     return true;
 }
@@ -380,20 +398,21 @@ void Benchmark::splitData(const QDir& dataDir, float splitRatio)
         for (int i = 0; i < filesInfo.size(); ++i)
         {
             QImage* img = new QImage(filesInfo[i].absoluteFilePath());
+            cv::Mat preprocessedFace;
 
             if (i < filesInfo.size() * splitRatio)
             {
-                if (! img->isNull())
+                if (!img->isNull() && preprocess(img, preprocessedFace))
                 {
-                    m_trainSet[label].append(img);
+                    m_trainSet[label].append(preprocessedFace.clone());
                     ++nbData;
                 }
             }
             else
             {
-                if (! img->isNull())
+                if (!img->isNull() && preprocess(img, preprocessedFace))
                 {
-                    m_testSet[label].append(img);
+                    m_testSet[label].append(preprocessedFace.clone());
                     ++nbData;
                 }
             }

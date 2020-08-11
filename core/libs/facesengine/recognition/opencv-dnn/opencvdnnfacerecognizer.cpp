@@ -303,10 +303,21 @@ cv::Mat OpenCVDNNFaceRecognizer::prepareForRecognition(const QImage& inputImage)
             break;
     }
 /*
-    resize(cvImage, cvImage, Size(256, 256), (0, 0), (0, 0), INTER_LINEAR);
+    resize(cvImage, cvImage, Size(256, 256), (0, 0), (0, 0), cv::INTER_LINEAR);
     equalizeHist(cvImage, cvImage);
 */
     return cvImage;
+}
+
+cv::Mat OpenCVDNNFaceRecognizer::prepareForRecognition(const cv::Mat& cvInputImage)
+{
+    int TargetInputSize = 256;
+
+    cv::Mat cvOutputImage;
+
+    cv::resize(cvInputImage, cvOutputImage, cv::Size(TargetInputSize, TargetInputSize));
+
+    return cvOutputImage;
 }
 
 bool OpenCVDNNFaceRecognizer::Private::insertData(const cv::Mat& nodePos, const int label, const QString& context)
