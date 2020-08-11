@@ -215,4 +215,5 @@ BUGFIXES:
 206 ==> 425193 - panorama tool seems to miss components to run.
 207 ==> 375560 - interruptable BQM.
 208 ==> 425237 - No way to show back the hidden menu bar.
-209 ==> 
+209 ==> 425220 - LightTable "put into bin" function deletes pictures unrecoverable.
+210 ==> 
