@@ -242,9 +242,7 @@ void OpenCVDNNFaceDetector::resizeBboxToStandardHumanFace(int& width, int& heigh
 QList<QRect> OpenCVDNNFaceDetector::detectFaces(const cv::Mat& inputImage,
                                                 const cv::Size& paddedSize)
 {
-    std::vector<cv::Rect> detectedBboxes;
-
-    m_inferenceEngine->detectFaces(inputImage, paddedSize, detectedBboxes);
+    std::vector<cv::Rect> detectedBboxes = cvDetectFaces(inputImage, paddedSize);
 
     QList<QRect> results;
 /*
@@ -266,6 +264,16 @@ QList<QRect> OpenCVDNNFaceDetector::detectFaces(const cv::Mat& inputImage,
     cv::waitKey(0);
 */
     return results;
+}
+
+std::vector<cv::Rect> OpenCVDNNFaceDetector::cvDetectFaces(const cv::Mat& inputImage,
+                                                           const cv::Size& paddedSize)
+{
+    std::vector<cv::Rect> detectedBboxes;
+
+    m_inferenceEngine->detectFaces(inputImage, paddedSize, detectedBboxes);
+
+    return detectedBboxes;
 }
 
 } // namespace Digikam
