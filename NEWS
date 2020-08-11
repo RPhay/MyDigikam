@@ -214,5 +214,5 @@ BUGFIXES:
 205 ==> 159477 - "Robust metadata support", "Exception resistance", "Versioning", "Outside Program Interference".
 206 ==> 425193 - panorama tool seems to miss components to run.
 207 ==> 375560 - interruptable BQM.
-208 ==> 
-
+208 ==> 425237 - No way to show back the hidden menu bar.
+209 ==> 
