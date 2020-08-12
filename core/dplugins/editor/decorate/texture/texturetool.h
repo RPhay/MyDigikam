@@ -49,7 +49,7 @@ public:
 
 private:
 
-    QString getTexturePath(int texture);
+    QString getTexturePath(int texture) const;
 
 private Q_SLOTS:
 

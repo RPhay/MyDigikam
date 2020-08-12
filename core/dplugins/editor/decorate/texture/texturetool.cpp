@@ -109,13 +109,13 @@ TextureTool::TextureTool(QObject* const parent)
 
     // -------------------------------------------------------------
 
-    d->gboxSettings  = new EditorToolSettings(nullptr);
-    d->previewWidget = new ImageRegionWidget;
+    d->gboxSettings      = new EditorToolSettings(nullptr);
+    d->previewWidget     = new ImageRegionWidget;
 
     // -------------------------------------------------------------
 
-    QLabel* label1 = new QLabel(i18n("Type:"));
-    d->textureType = new DComboBox;
+    QLabel* const label1 = new QLabel(i18n("Type:"));
+    d->textureType       = new DComboBox;
     d->textureType->addItem(i18n("Paper"));
     d->textureType->addItem(i18n("Paper 2"));
     d->textureType->addItem(i18n("Fabric"));
@@ -137,17 +137,17 @@ TextureTool::TextureTool(QObject* const parent)
 
     // -------------------------------------------------------------
 
-    QLabel* label2 = new QLabel(i18n("Relief:"));
-    d->blendGain   = new DIntNumInput;
+    QLabel* const label2 = new QLabel(i18n("Relief:"));
+    d->blendGain         = new DIntNumInput;
     d->blendGain->setRange(1, 255, 1);
     d->blendGain->setDefaultValue(200);
     d->blendGain->setWhatsThis(i18n("Set here the relief gain used to merge texture and image."));
 
     // -------------------------------------------------------------
 
-    const int spacing = d->gboxSettings->spacingHint();
+    const int spacing             = d->gboxSettings->spacingHint();
 
-    QGridLayout* mainLayout = new QGridLayout;
+    QGridLayout* const mainLayout = new QGridLayout;
     mainLayout->addWidget(label1,         0, 0, 1, 1);
     mainLayout->addWidget(d->textureType, 0, 1, 1, 1);
     mainLayout->addWidget(label2,         1, 0, 1, 2);
@@ -242,7 +242,7 @@ void TextureTool::setFinalImage()
     iface.setOriginal(i18n("Texture"), filter()->filterAction(), filter()->getTargetImage());
 }
 
-QString TextureTool::getTexturePath(int texture)
+QString TextureTool::getTexturePath(int texture) const
 {
     QString pattern;
 
