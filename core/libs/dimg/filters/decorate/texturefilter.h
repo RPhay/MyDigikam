@@ -34,6 +34,7 @@
 
 #include "digikam_export.h"
 #include "dimgthreadedfilter.h"
+#include "texturecontainer.h"
 
 namespace Digikam
 {
@@ -82,9 +83,7 @@ private:
 
 private:
 
-    int     m_blendGain;
-
-    QString m_texturePath;
+    TextureContainer m_settings;
 };
 
 } // namespace Digikam

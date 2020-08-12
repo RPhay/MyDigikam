@@ -30,7 +30,6 @@
 #include <QImage>
 #include <QLabel>
 #include <QIcon>
-#include <QStandardPaths>
 
 // KDE includes
 
@@ -53,28 +52,6 @@ namespace DigikamEditorTextureToolPlugin
 
 class Q_DECL_HIDDEN TextureTool::Private
 {
-public:
-
-    enum TextureTypes
-    {
-        PaperTexture=0,
-        Paper2Texture,
-        FabricTexture,
-        BurlapTexture,
-        BricksTexture,
-        Bricks2Texture,
-        CanvasTexture,
-        MarbleTexture,
-        Marble2Texture,
-        BlueJeanTexture,
-        CellWoodTexture,
-        MetalWireTexture,
-        ModernTexture,
-        WallTexture,
-        MossTexture,
-        StoneTexture
-    };
-
 public:
 
     explicit Private()
@@ -132,8 +109,8 @@ TextureTool::TextureTool(QObject* const parent)
     d->textureType->addItem(i18n("Wall"));
     d->textureType->addItem(i18n("Moss"));
     d->textureType->addItem(i18n("Stone"));
-    d->textureType->setDefaultIndex(Private::PaperTexture);
-    d->textureType->setWhatsThis( i18n("Set here the texture type to apply to image."));
+    d->textureType->setDefaultIndex(TextureContainer::PaperTexture);
+    d->textureType->setWhatsThis(i18n("Set here the texture type to apply to image."));
 
     // -------------------------------------------------------------
 
@@ -216,7 +193,7 @@ void TextureTool::slotResetSettings()
 void TextureTool::preparePreview()
 {
     DImg image      = d->previewWidget->getOriginalRegionImage();
-    QString texture = getTexturePath( d->textureType->currentIndex() );
+    QString texture = TextureContainer::getTexturePath(d->textureType->currentIndex());
     int b           = 255 - d->blendGain->value();
 
     setFilter(new TextureFilter(&image, this, b, texture));
@@ -225,7 +202,7 @@ void TextureTool::preparePreview()
 void TextureTool::prepareFinal()
 {
     ImageIface iface;
-    QString texture = getTexturePath( d->textureType->currentIndex() );
+    QString texture = TextureContainer::getTexturePath(d->textureType->currentIndex());
     int b           = 255 - d->blendGain->value();
 
     setFilter(new TextureFilter(iface.original(), this, b, texture));
@@ -240,80 +217,6 @@ void TextureTool::setFinalImage()
 {
     ImageIface iface;
     iface.setOriginal(i18n("Texture"), filter()->filterAction(), filter()->getTargetImage());
-}
-
-QString TextureTool::getTexturePath(int texture) const
-{
-    QString pattern;
-
-    switch (texture)
-    {
-        case Private::PaperTexture:
-            pattern = QLatin1String("paper-texture");
-            break;
-
-        case Private::Paper2Texture:
-            pattern = QLatin1String("paper2-texture");
-            break;
-
-        case Private::FabricTexture:
-            pattern = QLatin1String("fabric-texture");
-            break;
-
-        case Private::BurlapTexture:
-            pattern = QLatin1String("burlap-texture");
-            break;
-
-        case Private::BricksTexture:
-            pattern = QLatin1String("bricks-texture");
-            break;
-
-        case Private::Bricks2Texture:
-            pattern = QLatin1String("bricks2-texture");
-            break;
-
-        case Private::CanvasTexture:
-            pattern = QLatin1String("canvas-texture");
-            break;
-
-        case Private::MarbleTexture:
-            pattern = QLatin1String("marble-texture");
-            break;
-
-        case Private::Marble2Texture:
-            pattern = QLatin1String("marble2-texture");
-            break;
-
-        case Private::BlueJeanTexture:
-            pattern = QLatin1String("bluejean-texture");
-            break;
-
-        case Private::CellWoodTexture:
-            pattern = QLatin1String("cellwood-texture");
-            break;
-
-        case Private::MetalWireTexture:
-            pattern = QLatin1String("metalwire-texture");
-            break;
-
-        case Private::ModernTexture:
-            pattern = QLatin1String("modern-texture");
-            break;
-
-        case Private::WallTexture:
-            pattern = QLatin1String("wall-texture");
-            break;
-
-        case Private::MossTexture:
-            pattern = QLatin1String("moss-texture");
-            break;
-
-        case Private::StoneTexture:
-            pattern = QLatin1String("stone-texture");
-            break;
-    }
-
-    return (QStandardPaths::locate(QStandardPaths::GenericDataLocation, QLatin1String("digikam/data/") + pattern + QLatin1String(".png")));
 }
 
 } // namespace DigikamEditorTextureToolPlugin
