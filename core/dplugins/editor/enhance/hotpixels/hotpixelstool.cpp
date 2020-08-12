@@ -154,7 +154,9 @@ void HotPixelsTool::preparePreview()
         }
     }
 
-    setFilter(dynamic_cast<DImgThreadedFilter*>(new HotPixelFixer(&image, this, hotPixelsRegion, prm.filterMethod)));
+    prm.hotPixelsList = hotPixelsRegion;
+
+    setFilter(dynamic_cast<DImgThreadedFilter*>(new HotPixelFixer(&image, this, prm)));
 }
 
 void HotPixelsTool::prepareFinal()
@@ -162,7 +164,7 @@ void HotPixelsTool::prepareFinal()
     HotPixelContainer prm = d->hpSettings->settings();
 
     ImageIface iface;
-    setFilter(dynamic_cast<DImgThreadedFilter*>(new HotPixelFixer(iface.original(), this, prm.hotPixelsList, prm.filterMethod)));
+    setFilter(dynamic_cast<DImgThreadedFilter*>(new HotPixelFixer(iface.original(), this, prm)));
 }
 
 void HotPixelsTool::setPreviewImage()

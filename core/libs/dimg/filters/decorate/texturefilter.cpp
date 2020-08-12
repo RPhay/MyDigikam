@@ -49,12 +49,10 @@ TextureFilter::TextureFilter(QObject* const parent)
     initFilter();
 }
 
-TextureFilter::TextureFilter(DImg* const orgImage, QObject* const parent, int blendGain, const QString& texturePath)
-    : DImgThreadedFilter(orgImage, parent, QLatin1String("Texture"))
+TextureFilter::TextureFilter(DImg* const orgImage, QObject* const parent, const TextureContainer& settings)
+    : DImgThreadedFilter(orgImage, parent, QLatin1String("Texture")),
+      m_settings(settings)
 {
-      m_settings.blendGain   = blendGain;
-      m_settings.texturePath = texturePath;
-
     initFilter();
 }
 

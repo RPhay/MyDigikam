@@ -62,8 +62,7 @@ namespace Digikam
 {
 
 HotPixelFixer::HotPixelFixer(QObject* const parent)
-    : DImgThreadedFilter(parent),
-      m_interpolationMethod(TWODIM_DIRECTION)
+    : DImgThreadedFilter(parent)
 
 {
     initFilter();
@@ -71,11 +70,9 @@ HotPixelFixer::HotPixelFixer(QObject* const parent)
 
 HotPixelFixer::HotPixelFixer(DImg* const orgImage,
                              QObject* const parent,
-                             const QList<HotPixelProps>& hpList,
-                             int interpolationMethod)
+                             const HotPixelContainer& settings)
     : DImgThreadedFilter(orgImage, parent, QLatin1String("HotPixels")),
-      m_interpolationMethod(interpolationMethod),
-      m_hpList(hpList)
+      m_settings(settings)
 {
     initFilter();
 }
@@ -93,9 +90,9 @@ QString HotPixelFixer::DisplayableName()
 Digikam::FilterAction HotPixelFixer::filterAction()
 {
     DefaultFilterAction<HotPixelFixer> action;
-    action.addParameter(QLatin1String("interpolationMethod"), m_interpolationMethod);
+    action.addParameter(QLatin1String("interpolationMethod"), m_settings.filterMethod);
 
-    foreach (const HotPixelProps& hp, m_hpList)
+    foreach (const HotPixelProps& hp, m_settings.hotPixelsList)
     {
         action.addParameter(QLatin1String("hotPixel"), hp.toString());
     }
@@ -105,7 +102,7 @@ Digikam::FilterAction HotPixelFixer::filterAction()
 
 void HotPixelFixer::readParameters(const FilterAction& action)
 {
-    m_interpolationMethod = action.parameter(QLatin1String("interpolationMethod")).toInt();
+    m_settings.filterMethod = (HotPixelContainer::InterpolationMethod)action.parameter(QLatin1String("interpolationMethod")).toInt();
 
     foreach (const QVariant& var, action.parameters().values(QLatin1String("hotPixel")))
     {
@@ -113,7 +110,7 @@ void HotPixelFixer::readParameters(const FilterAction& action)
 
         if (hp.fromString(var.toString()))
         {
-            m_hpList << hp;
+            m_settings.hotPixelsList << hp;
         }
     }
 }
@@ -121,12 +118,12 @@ void HotPixelFixer::readParameters(const FilterAction& action)
 void HotPixelFixer::filterImage()
 {
     QList <HotPixelProps>::ConstIterator it;
-    QList <HotPixelProps>::ConstIterator end(m_hpList.constEnd());
+    QList <HotPixelProps>::ConstIterator end(m_settings.hotPixelsList.constEnd());
 
-    for (it = m_hpList.constBegin() ; it != end ; ++it)
+    for (it = m_settings.hotPixelsList.constBegin() ; it != end ; ++it)
     {
         HotPixelProps hp = *it;
-        interpolate(m_orgImage, hp, m_interpolationMethod);
+        interpolate(m_orgImage, hp, m_settings.filterMethod);
     }
 
     m_destImage = m_orgImage;
@@ -145,7 +142,7 @@ void HotPixelFixer::interpolate(DImg& img, HotPixelProps& hp, int method)
 
     switch (method)
     {
-        case AVERAGE_INTERPOLATION:
+        case HotPixelContainer::AVERAGE_INTERPOLATION:
         {
             // We implement the bidimendional one first.
             // TODO: implement the rest of directions (V & H) here
@@ -226,21 +223,25 @@ void HotPixelFixer::interpolate(DImg& img, HotPixelProps& hp, int method)
             break;
         }
 
-        case LINEAR_INTERPOLATION:
-            weightPixels(img, hp, LINEAR_INTERPOLATION, TWODIM_DIRECTION, sixtBits ? 65535: 255);
+        case HotPixelContainer::LINEAR_INTERPOLATION:
+            weightPixels(img, hp, HotPixelContainer::LINEAR_INTERPOLATION, HotPixelContainer::TWODIM_DIRECTION, sixtBits ? 65535: 255);
             break;
 
-        case QUADRATIC_INTERPOLATION:
-            weightPixels(img, hp, QUADRATIC_INTERPOLATION, TWODIM_DIRECTION, sixtBits ? 65535 : 255);
+        case HotPixelContainer::QUADRATIC_INTERPOLATION:
+            weightPixels(img, hp, HotPixelContainer::QUADRATIC_INTERPOLATION, HotPixelContainer::TWODIM_DIRECTION, sixtBits ? 65535 : 255);
             break;
 
-        case CUBIC_INTERPOLATION:
-            weightPixels(img, hp, CUBIC_INTERPOLATION, TWODIM_DIRECTION, sixtBits ? 65535 : 255);
+        case HotPixelContainer::CUBIC_INTERPOLATION:
+            weightPixels(img, hp, HotPixelContainer::CUBIC_INTERPOLATION, HotPixelContainer::TWODIM_DIRECTION, sixtBits ? 65535 : 255);
             break;
     }
 }
 
-void HotPixelFixer::weightPixels(DImg& img, HotPixelProps& px, int method, Direction dir, int maxComponent)
+void HotPixelFixer::weightPixels(DImg& img,
+                                 HotPixelProps& px,
+                                 int method,
+                                 HotPixelContainer::Direction dir,
+                                 int maxComponent)
 {
     // TODO: implement direction here too
 
@@ -253,18 +254,18 @@ void HotPixelFixer::weightPixels(DImg& img, HotPixelProps& px, int method, Direc
 
         switch (method)
         {
-            case AVERAGE_INTERPOLATION:  // Gilles: to prevent warnings from compiler.
+            case HotPixelContainer::AVERAGE_INTERPOLATION:  // Gilles: to prevent warnings from compiler.
                 break;
 
-            case LINEAR_INTERPOLATION:
+            case HotPixelContainer::LINEAR_INTERPOLATION:
                 polynomeOrder = 1;
                 break;
 
-            case QUADRATIC_INTERPOLATION:
+            case HotPixelContainer::QUADRATIC_INTERPOLATION:
                 polynomeOrder = 2;
                 break;
 
-            case CUBIC_INTERPOLATION:
+            case HotPixelContainer::CUBIC_INTERPOLATION:
                 polynomeOrder = 3;
                 break;
         }
@@ -277,10 +278,10 @@ void HotPixelFixer::weightPixels(DImg& img, HotPixelProps& px, int method, Direc
         // In the one-dimensional case, the width must be 1,
         // and the size must be stored in height
 
-        w.setWidth(dir == TWODIM_DIRECTION ? px.width() : 1);
-        w.setHeight(dir == HORIZONTAL_DIRECTION ? px.width() : px.height());
+        w.setWidth(dir == HotPixelContainer::TWODIM_DIRECTION ? px.width() : 1);
+        w.setHeight(dir == HotPixelContainer::HORIZONTAL_DIRECTION ? px.width() : px.height());
         w.setPolynomeOrder(polynomeOrder);
-        w.setTwoDim(dir == TWODIM_DIRECTION);
+        w.setTwoDim(dir == HotPixelContainer::TWODIM_DIRECTION);
 
         // TODO: check this, it must not recalculate existing calculated weights
         // for now I don't think it is finding the duplicates fine, so it uses
@@ -310,11 +311,11 @@ void HotPixelFixer::weightPixels(DImg& img, HotPixelProps& px, int method, Direc
                     {
                         // In the one-dimensional case, only the y coordinate is used.
 
-                        const int xx = px.x() + ((dir == VERTICAL_DIRECTION) ? x
-                                                                             : (dir == HORIZONTAL_DIRECTION) ? w.positions().at((int)i).y()
-                                                                                                             : w.positions().at((int)i).x());
-                        const int yy = px.y() + ((dir == HORIZONTAL_DIRECTION) ? y
-                                                                               : w.positions().at((int)i).y());
+                        const int xx = px.x() + ((dir == HotPixelContainer::VERTICAL_DIRECTION) ? x
+                                                                                                : (dir == HotPixelContainer::HORIZONTAL_DIRECTION) ? w.positions().at((int)i).y()
+                                                                                                                                                   : w.positions().at((int)i).x());
+                        const int yy = px.y() + ((dir == HotPixelContainer::HORIZONTAL_DIRECTION) ? y
+                                                                                                  : w.positions().at((int)i).y());
 
                         if (validPoint (img,QPoint(xx, yy)))
                         {
@@ -322,11 +323,11 @@ void HotPixelFixer::weightPixels(DImg& img, HotPixelProps& px, int method, Direc
 
                             double weight;
 
-                            if      (dir == VERTICAL_DIRECTION)
+                            if      (dir == HotPixelContainer::VERTICAL_DIRECTION)
                             {
                                 weight = w[(int)i][y][0];
                             }
-                            else if (dir == HORIZONTAL_DIRECTION)
+                            else if (dir == HotPixelContainer::HORIZONTAL_DIRECTION)
                             {
                                 weight = w[(int)i][0][x];
                             }

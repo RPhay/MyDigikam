@@ -192,20 +192,22 @@ void TextureTool::slotResetSettings()
 
 void TextureTool::preparePreview()
 {
-    DImg image      = d->previewWidget->getOriginalRegionImage();
-    QString texture = TextureContainer::getTexturePath(d->textureType->currentIndex());
-    int b           = 255 - d->blendGain->value();
+    DImg image           = d->previewWidget->getOriginalRegionImage();
+    TextureContainer settings;
+    settings.texturePath = TextureContainer::getTexturePath(d->textureType->currentIndex());
+    int blendGain        = 255 - d->blendGain->value();
 
-    setFilter(new TextureFilter(&image, this, b, texture));
+    setFilter(new TextureFilter(&image, this, settings));
 }
 
 void TextureTool::prepareFinal()
 {
     ImageIface iface;
-    QString texture = TextureContainer::getTexturePath(d->textureType->currentIndex());
-    int b           = 255 - d->blendGain->value();
+    TextureContainer settings;
+    settings.texturePath = TextureContainer::getTexturePath(d->textureType->currentIndex());
+    settings.blendGain   = 255 - d->blendGain->value();
 
-    setFilter(new TextureFilter(iface.original(), this, b, texture));
+    setFilter(new TextureFilter(iface.original(), this, settings));
 }
 
 void TextureTool::setPreviewImage()

@@ -33,7 +33,7 @@
 // Local includes
 
 #include "digikam_export.h"
-#include "hotpixelfixer.h"
+#include "hotpixelprops.h"
 
 namespace Digikam
 {
@@ -45,19 +45,38 @@ class DIGIKAM_EXPORT HotPixelContainer
 
 public:
 
+    enum InterpolationMethod
+    {
+        AVERAGE_INTERPOLATION   = 0,
+        LINEAR_INTERPOLATION    = 1,
+        QUADRATIC_INTERPOLATION = 2,
+        CUBIC_INTERPOLATION     = 3
+    };
+
+    enum Direction
+    {
+        TWODIM_DIRECTION        = 0,
+        VERTICAL_DIRECTION      = 1,
+        HORIZONTAL_DIRECTION    = 2
+    };
+
+public:
+
     explicit HotPixelContainer();
 
     bool isDefault() const;
     bool operator==(const HotPixelContainer& other)                                   const;
 
     void writeToFilterAction(FilterAction& action, const QString& prefix = QString()) const;
-    static HotPixelContainer fromFilterAction(const FilterAction& action, const QString& prefix = QString());
+
+    static HotPixelContainer fromFilterAction(const FilterAction& action,
+                                              const QString& prefix = QString());
 
 public:
 
-    QUrl                               blackFrameUrl;
-    QList<HotPixelProps>               hotPixelsList;
-    HotPixelFixer::InterpolationMethod filterMethod;
+    QUrl                 blackFrameUrl;
+    QList<HotPixelProps> hotPixelsList;
+    InterpolationMethod  filterMethod;
 };
 
 } // namespace Digikam

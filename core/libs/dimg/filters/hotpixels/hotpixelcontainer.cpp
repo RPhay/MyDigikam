@@ -32,7 +32,7 @@ namespace Digikam
 {
 
 HotPixelContainer::HotPixelContainer()
-    : filterMethod(HotPixelFixer::QUADRATIC_INTERPOLATION)
+    : filterMethod(QUADRATIC_INTERPOLATION)
 {
 }
 
@@ -45,7 +45,7 @@ bool HotPixelContainer::operator==(const HotPixelContainer& other) const
 {
     return (
             (blackFrameUrl == other.blackFrameUrl) &&
-            (hotPixelsList == other.hotPixelsList)  &&
+            (hotPixelsList == other.hotPixelsList) &&
             (filterMethod  == other.filterMethod)
            );
 }
@@ -60,9 +60,9 @@ void HotPixelContainer::writeToFilterAction(FilterAction& action, const QString&
 HotPixelContainer HotPixelContainer::fromFilterAction(const FilterAction& action, const QString& prefix)
 {
     HotPixelContainer settings;
-    settings.blackFrameUrl = action.parameter(prefix + QLatin1String("blackframeurl"),                                   settings.blackFrameUrl);
+    settings.blackFrameUrl = action.parameter(prefix + QLatin1String("blackframeurl"),                               settings.blackFrameUrl);
     settings.hotPixelsList = HotPixelProps::fromStringList(action.parameter(prefix + QLatin1String("hotpixelslist"), QStringList()));
-    settings.filterMethod  = (HotPixelFixer::InterpolationMethod)action.parameter(prefix + QLatin1String("filtermethod"), (int)settings.filterMethod);
+    settings.filterMethod  = (InterpolationMethod)action.parameter(prefix + QLatin1String("filtermethod"),           (int)settings.filterMethod);
 
     return settings;
 }

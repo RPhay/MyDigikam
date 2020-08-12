@@ -79,7 +79,7 @@ void HotPixels::slotAssignSettings2Widget()
     HotPixelContainer prm;
     prm.blackFrameUrl = settings()[QLatin1String("BlackFrameUrl")].toUrl();
     prm.hotPixelsList = HotPixelProps::fromStringList(settings()[QLatin1String("HotPixelsList")].toStringList());
-    prm.filterMethod  = (HotPixelFixer::InterpolationMethod)settings()[QLatin1String("FilterMethod")].toInt();
+    prm.filterMethod  = (HotPixelContainer::InterpolationMethod)settings()[QLatin1String("FilterMethod")].toInt();
     m_settingsView->setSettings(prm);
 }
 
@@ -106,9 +106,9 @@ bool HotPixels::toolOperations()
 
     prm.blackFrameUrl = settings()[QLatin1String("BlackFrameUrl")].toUrl();
     prm.hotPixelsList = HotPixelProps::fromStringList(settings()[QLatin1String("HotPixelsList")].toStringList());
-    prm.filterMethod  = (HotPixelFixer::InterpolationMethod)settings()[QLatin1String("FilterMethod")].toInt();
+    prm.filterMethod  = (HotPixelContainer::InterpolationMethod)settings()[QLatin1String("FilterMethod")].toInt();
 
-    HotPixelFixer hpf(&image(), nullptr, prm.hotPixelsList, (int)prm.filterMethod);
+    HotPixelFixer hpf(&image(), nullptr, prm);
     applyFilter(&hpf);
 
     return (savefromDImg());

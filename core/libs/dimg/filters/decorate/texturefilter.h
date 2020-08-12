@@ -46,9 +46,8 @@ public:
 
     explicit TextureFilter(QObject* const parent = nullptr);
     explicit TextureFilter(DImg* const orgImage,
-                           QObject* const parent=nullptr,
-                           int blendGain=200,
-                           const QString& texturePath=QString());
+                           QObject* const parent = nullptr,
+                           const TextureContainer& settings = TextureContainer());
 
     ~TextureFilter();
 

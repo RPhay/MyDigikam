@@ -39,6 +39,7 @@
 #include "dimgthreadedfilter.h"
 #include "hotpixelprops.h"
 #include "hotpixelsweights.h"
+#include "hotpixelcontainer.h"
 
 using namespace Digikam;
 
@@ -50,28 +51,10 @@ class DIGIKAM_EXPORT HotPixelFixer : public DImgThreadedFilter
 
 public:
 
-    enum InterpolationMethod
-    {
-        AVERAGE_INTERPOLATION   = 0,
-        LINEAR_INTERPOLATION    = 1,
-        QUADRATIC_INTERPOLATION = 2,
-        CUBIC_INTERPOLATION     = 3
-    };
-
-    enum Direction
-    {
-        TWODIM_DIRECTION        = 0,
-        VERTICAL_DIRECTION      = 1,
-        HORIZONTAL_DIRECTION    = 2
-    };
-
-public:
-
     explicit HotPixelFixer(QObject* const parent = nullptr);
     explicit HotPixelFixer(DImg* const orgImage,
                            QObject* const parent,
-                           const QList<HotPixelProps>& hpList,
-                           int interpolationMethod);
+                           const HotPixelContainer& settings);
     ~HotPixelFixer();
 
     static QString          FilterIdentifier()
@@ -111,7 +94,7 @@ private:
     void weightPixels(DImg& img,
                       HotPixelProps& px,
                       int method,
-                      Direction dir,
+                      HotPixelContainer::Direction dir,
                       int maxComponent);
 
     inline bool validPoint(DImg& img, const QPoint& p)
@@ -124,13 +107,12 @@ private:
                );
     };
 
-    QList <HotPixelsWeights> mWeightList;
 
 private:
 
-    int                  m_interpolationMethod;
+    QList<HotPixelsWeights> m_weightList;
 
-    QList<HotPixelProps> m_hpList;
+    HotPixelContainer       m_settings;
 };
 
 } // namespace Digikam

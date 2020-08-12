@@ -87,7 +87,8 @@ HotPixelSettings::HotPixelSettings(QWidget* const parent)
     : QWidget(parent),
       d(new Private)
 {
-    const int spacing               = QApplication::style()->pixelMetric(QStyle::PM_DefaultLayoutSpacing);    QGridLayout* const grid = new QGridLayout(parent);
+    const int spacing               = QApplication::style()->pixelMetric(QStyle::PM_DefaultLayoutSpacing);
+    QGridLayout* const grid         = new QGridLayout(parent);
 
     QLabel* const filterMethodLabel = new QLabel(i18n("Filter:"), this);
     d->filterMethodCombo            = new DComboBox(this);
@@ -95,7 +96,7 @@ HotPixelSettings::HotPixelSettings(QWidget* const parent)
     d->filterMethodCombo->addItem(i18nc("linear filter mode",    "Linear"));
     d->filterMethodCombo->addItem(i18nc("quadratic filter mode", "Quadratic"));
     d->filterMethodCombo->addItem(i18nc("cubic filter mode",     "Cubic"));
-    d->filterMethodCombo->setDefaultIndex(HotPixelFixer::QUADRATIC_INTERPOLATION);
+    d->filterMethodCombo->setDefaultIndex(HotPixelContainer::QUADRATIC_INTERPOLATION);
 
     d->blackFrameButton   = new QPushButton(i18n("Black Frame..."), this);
     d->blackFrameButton->setIcon(QIcon::fromTheme(QLatin1String("document-open")));
@@ -149,7 +150,7 @@ HotPixelContainer HotPixelSettings::settings() const
     HotPixelContainer prm;
     prm.blackFrameUrl = d->blackFrameUrl;
     prm.hotPixelsList = d->hotPixelsList;
-    prm.filterMethod  = (HotPixelFixer::InterpolationMethod)d->filterMethodCombo->currentIndex();
+    prm.filterMethod  = (HotPixelContainer::InterpolationMethod)d->filterMethodCombo->currentIndex();
 
     return prm;
 }
@@ -190,7 +191,7 @@ void HotPixelSettings::readSettings(KConfigGroup& group)
     QStringList hplst            = group.readEntry(d->configHotPixelsListEntry, QStringList());
     prm.hotPixelsList            = HotPixelProps::fromStringList(hplst);
 
-    prm.filterMethod             = (HotPixelFixer::InterpolationMethod)group.readEntry(d->configFilterMethodEntry, (int)defaultPrm.filterMethod);
+    prm.filterMethod             = (HotPixelContainer::InterpolationMethod)group.readEntry(d->configFilterMethodEntry, (int)defaultPrm.filterMethod);
 
     setSettings(prm);
 
