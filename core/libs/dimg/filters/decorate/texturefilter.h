@@ -60,12 +60,12 @@ public:
 
     static QList<int>       SupportedVersions()
     {
-        return QList<int>() << 1;
+        return QList<int>() << 2;
     }
 
     static int              CurrentVersion()
     {
-        return 1;
+        return 2;
     }
 
     virtual QString         filterIdentifier()                          const override

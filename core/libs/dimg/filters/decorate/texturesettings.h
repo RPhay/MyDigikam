@@ -3,12 +3,11 @@
  * This file is a part of digiKam project
  * https://www.digikam.org
  *
- * Date        : 2005-05-25
- * Description : texture settings container.
+ * Date        : 2005-03-10
+ * Description : Texture settings view.
  *
  * Copyright (C) 2005-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
  * Copyright (C) 2006-2010 by Marcel Wiesweg <marcel dot wiesweg at gmx dot de>
- * Copyright (C) 2010      by Martin Klapetek <martin dot klapetek at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -23,58 +22,53 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_TEXTURE_CONTAINER_H
-#define DIGIKAM_TEXTURE_CONTAINER_H
+#ifndef DIGIKAM_TEXTURE_SETTINGS_H
+#define DIGIKAM_TEXTURE_SETTINGS_H
 
-// Qt includes
+// Local includes
 
-#include <QString>
+#include <QWidget>
 
 // Local includes
 
 #include "digikam_export.h"
+#include "texturecontainer.h"
+
+class KConfigGroup;
 
 namespace Digikam
 {
 
-class DIGIKAM_EXPORT TextureContainer
+class DIGIKAM_EXPORT TextureSettings : public QWidget
 {
+    Q_OBJECT
 
 public:
 
-    enum TextureTypes
-    {
-        PaperTexture=0,
-        Paper2Texture,
-        FabricTexture,
-        BurlapTexture,
-        BricksTexture,
-        Bricks2Texture,
-        CanvasTexture,
-        MarbleTexture,
-        Marble2Texture,
-        BlueJeanTexture,
-        CellWoodTexture,
-        MetalWireTexture,
-        ModernTexture,
-        WallTexture,
-        MossTexture,
-        StoneTexture
-    };
+    explicit TextureSettings(QWidget* const parent);
+    ~TextureSettings();
 
-public:
+    TextureContainer defaultSettings() const;
+    void resetToDefault();
 
-    explicit TextureContainer();
-    ~TextureContainer();
+    TextureContainer settings()        const;
+    void setSettings(const TextureContainer& settings);
 
-    static QString getTexturePath(int texture);
+    void readSettings(KConfigGroup& group);
+    void writeSettings(KConfigGroup& group);
 
-public:
+Q_SIGNALS:
 
-    int blendGain;
-    int textureType;
+    void signalSettingsChanged();
+
+private Q_SLOTS:
+
+private:
+
+    class Private;
+    Private* const d;
 };
 
 } // namespace Digikam
 
-#endif // DIGIKAM_TEXTURE_CONTAINER_H
+#endif // DIGIKAM_TEXTURE_SETTINGS_H

@@ -54,7 +54,6 @@ public:
 
     explicit Private()
       : configGroupName(QLatin1String("border Tool")),
-
         gboxSettings(nullptr),
         previewWidget(nullptr),
         settingsView(nullptr)

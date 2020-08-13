@@ -72,6 +72,8 @@ public:
     explicit BorderContainer();
     ~BorderContainer();
 
+    static QString getBorderPath(int border);
+
 public:
 
     bool    preserveAspectRatio;

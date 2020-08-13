@@ -47,10 +47,6 @@ public:
     explicit TextureTool(QObject* const parent);
     ~TextureTool();
 
-private:
-
-    QString getTexturePath(int texture) const;
-
 private Q_SLOTS:
 
     void slotResetSettings();
