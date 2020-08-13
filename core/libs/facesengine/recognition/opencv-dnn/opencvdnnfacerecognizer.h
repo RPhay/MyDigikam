@@ -75,7 +75,7 @@ public:
      * @param label
      * @param context
      */
-    void train(const QList<QImage>& images, const int label, const QString& context);
+    void train(const QList<QImage*>& images, const int label, const QString& context);
 
     /**
      * Try to recognize the given image.
@@ -83,7 +83,7 @@ public:
      * If the identity cannot be recognized, returns -1.
      */
     // TODO verify workflow to economize this routine
-    int recognize(const QImage& inputImage);
+    int recognize(QImage& inputImage);
 
     /**
      * clear specified trained data

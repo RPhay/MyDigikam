@@ -40,7 +40,7 @@ QList<Identity> FacialRecognitionWrapper::recognizeFaces(ImageListProvider* cons
 
     QMutexLocker lock(&d->mutex);
 
-    std::function<Identity(const QImage&)> recognizeIdentity = [this](const QImage& image)
+    std::function<Identity(QImage&)> recognizeIdentity = [this](QImage& image)
     {
         int id = -1;
 
@@ -69,9 +69,17 @@ QList<Identity> FacialRecognitionWrapper::recognizeFaces(ImageListProvider* cons
         }
     };
 
-    QFuture<Identity> future = QtConcurrent::mapped(images->images(), recognizeIdentity);
+    QList<QImage> trainImages = images->images();
 
-    return future.results();
+    // TODO parallize
+    QList<Identity> results;
+
+    for (int i = 0; i < trainImages.size(); ++i)
+    {
+        results << recognizeIdentity(trainImages[i]);
+    }
+
+    return results;
 }
 
 QList<Identity> FacialRecognitionWrapper::recognizeFaces(const QList<QImage>& images)

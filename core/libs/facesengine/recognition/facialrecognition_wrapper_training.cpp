@@ -43,7 +43,8 @@ void FacialRecognitionWrapper::Private::trainIdentityBatch(const QList<Identity>
 
         try
         {
-            recognizer->train(images, identity.id(), trainingContext);
+            // Convert QList<QImage> into Qlist<QImage*>
+            //recognizer->train(images, identity.id(), trainingContext);
         }
         catch (cv::Exception& e)
         {

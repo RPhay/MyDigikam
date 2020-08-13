@@ -334,15 +334,13 @@ bool OpenCVDNNFaceRecognizer::Private::insertData(const cv::Mat& nodePos, const 
     return true;
 }
 
-void OpenCVDNNFaceRecognizer::train(const QList<QImage>& images,
-                                    const int            label,
-                                    const QString&       context)
+void OpenCVDNNFaceRecognizer::train(const QList<QImage*>& images,
+                                    const int             label,
+                                    const QString&        context)
 {
-    auto registerTraining = [this, label, context](const QImage& image)
+    auto registerTraining = [this, label, context](QImage& image)
     {
-        // FIX ME
-        QImage temp = image.copy();
-        cv::Mat faceEmbedding = d->extractor->getFaceEmbedding(prepareForRecognition(temp)).clone();
+        cv::Mat faceEmbedding = d->extractor->getFaceEmbedding(prepareForRecognition(image)).clone();
 
         if (!d->insertData(faceEmbedding, label, context))
         {
@@ -355,20 +353,17 @@ void OpenCVDNNFaceRecognizer::train(const QList<QImage>& images,
 
     for (int i = 0; i < images.size(); ++i)
     {
-        registerTraining(images[i]);
+        registerTraining(*images[i]);
     }
-
 
     d->newDataAdded = true;
 }
 
-int OpenCVDNNFaceRecognizer::recognize(const QImage& inputImage)
+int OpenCVDNNFaceRecognizer::recognize(QImage& inputImage)
 {
     int id = -1;
 
-    // FIX ME
-    QImage temp = inputImage.copy();
-    cv::Mat faceEmbedding = d->extractor->getFaceEmbedding(prepareForRecognition(temp)).clone();
+    cv::Mat faceEmbedding = d->extractor->getFaceEmbedding(prepareForRecognition(inputImage)).clone();
 
     switch (d->method)
     {
