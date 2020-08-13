@@ -398,20 +398,27 @@ void Benchmark::splitData(const QDir& dataDir, float splitRatio)
         for (int i = 0; i < filesInfo.size(); ++i)
         {
             QImage* img = new QImage(filesInfo[i].absoluteFilePath());
-            cv::Mat preprocessedFace;
+
+            QImage croppedFace = detect(*img);
 
             if (i < filesInfo.size() * splitRatio)
             {
-                if (!img->isNull() && preprocess(img, preprocessedFace))
+                if (!croppedFace.isNull())
                 {
+                    cv::Mat preprocessedFace;
+                    preprocessedFace = OpenCVDNNFaceRecognizer::prepareForRecognition(croppedFace);
+
                     m_trainSet[label].append(preprocessedFace.clone());
                     ++nbData;
                 }
             }
             else
             {
-                if (!img->isNull() && preprocess(img, preprocessedFace))
+                if (!croppedFace.isNull())
                 {
+                    cv::Mat preprocessedFace;
+                    preprocessedFace = OpenCVDNNFaceRecognizer::prepareForRecognition(croppedFace);
+
                     m_testSet[label].append(preprocessedFace.clone());
                     ++nbData;
                 }

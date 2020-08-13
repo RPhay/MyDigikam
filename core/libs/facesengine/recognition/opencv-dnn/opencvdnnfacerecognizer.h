@@ -62,7 +62,7 @@ public:
     /**
      *  Returns a cvMat created from the inputImage, optimized for recognition
      */
-    static cv::Mat prepareForRecognition(const QImage& inputImage);
+    static cv::Mat prepareForRecognition(QImage& inputImage);
 
     /**
      *  Returns a cvMat created from the cvinputImage, optimized for recognition

@@ -267,41 +267,32 @@ void OpenCVDNNFaceRecognizer::setNbNeighBors(int k)
     d->kNeighbors = k;
 }
 
-cv::Mat OpenCVDNNFaceRecognizer::prepareForRecognition(const QImage& inputImage)
+cv::Mat OpenCVDNNFaceRecognizer::prepareForRecognition(QImage& inputImage)
 {
-    int TargetInputSize = 256;
-
-    QImage image(inputImage);
-
-    if ((inputImage.width() > TargetInputSize) || (inputImage.height() > TargetInputSize))
-    {
-        image = inputImage.scaled(TargetInputSize, TargetInputSize, Qt::IgnoreAspectRatio);
-    }
-
     cv::Mat cvImage;    // = cv::Mat(image.height(), image.width(), CV_8UC3);
     cv::Mat cvImageWrapper;
 
-    switch (image.format())
+    switch (inputImage.format())
     {
         case QImage::Format_RGB32:
         case QImage::Format_ARGB32:
         case QImage::Format_ARGB32_Premultiplied:
 
             // I think we can ignore premultiplication when converting to grayscale
-
-            cvImageWrapper = cv::Mat(image.height(), image.width(), CV_8UC4, image.scanLine(0), image.bytesPerLine());
-            cvtColor(cvImageWrapper, cvImage, CV_RGBA2RGB);
+            cvImageWrapper = cv::Mat(inputImage.height(), inputImage.width(), CV_8UC4, inputImage.scanLine(0), inputImage.bytesPerLine());
+            cv::cvtColor(cvImageWrapper, cvImage, CV_RGBA2RGB);
 
             break;
 
         default:
-            image          = image.convertToFormat(QImage::Format_RGB888);
-            cvImage        = cv::Mat(image.height(), image.width(), CV_8UC3, image.scanLine(0), image.bytesPerLine());
+            inputImage = inputImage.convertToFormat(QImage::Format_RGB888);
+            cvImage = cv::Mat(inputImage.height(), inputImage.width(), CV_8UC3, inputImage.scanLine(0), inputImage.bytesPerLine());
 
             //cvtColor(cvImageWrapper, cvImage, CV_RGB2GRAY);
 
             break;
     }
+
 /*
     resize(cvImage, cvImage, Size(256, 256), (0, 0), (0, 0), cv::INTER_LINEAR);
     equalizeHist(cvImage, cvImage);
@@ -362,7 +353,9 @@ void OpenCVDNNFaceRecognizer::train(const QList<QImage>& images,
 {
     auto registerTraining = [this, label, context](const QImage& image)
     {
-        cv::Mat faceEmbedding = d->extractor->getFaceEmbedding(prepareForRecognition(image)).clone();
+        // FIX ME
+        QImage temp = image.copy();
+        cv::Mat faceEmbedding = d->extractor->getFaceEmbedding(prepareForRecognition(temp)).clone();
 
         if (!d->insertData(faceEmbedding, label, context))
         {
@@ -386,7 +379,9 @@ int OpenCVDNNFaceRecognizer::recognize(const QImage& inputImage)
 {
     int id = -1;
 
-    cv::Mat faceEmbedding = d->extractor->getFaceEmbedding(prepareForRecognition(inputImage)).clone();
+    // FIX ME
+    QImage temp = inputImage.copy();
+    cv::Mat faceEmbedding = d->extractor->getFaceEmbedding(prepareForRecognition(temp)).clone();
 
     switch (d->method)
     {
