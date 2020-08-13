@@ -272,26 +272,13 @@ cv::Mat OpenCVDNNFaceRecognizer::prepareForRecognition(QImage& inputImage)
     cv::Mat cvImage;    // = cv::Mat(image.height(), image.width(), CV_8UC3);
     cv::Mat cvImageWrapper;
 
-    switch (inputImage.format())
+    if(inputImage.format() != QImage::Format_ARGB32_Premultiplied)
     {
-        case QImage::Format_RGB32:
-        case QImage::Format_ARGB32:
-        case QImage::Format_ARGB32_Premultiplied:
-
-            // I think we can ignore premultiplication when converting to grayscale
-            cvImageWrapper = cv::Mat(inputImage.height(), inputImage.width(), CV_8UC4, inputImage.scanLine(0), inputImage.bytesPerLine());
-            cv::cvtColor(cvImageWrapper, cvImage, CV_RGBA2RGB);
-
-            break;
-
-        default:
-            inputImage = inputImage.convertToFormat(QImage::Format_RGB888);
-            cvImage = cv::Mat(inputImage.height(), inputImage.width(), CV_8UC3, inputImage.scanLine(0), inputImage.bytesPerLine());
-
-            //cvtColor(cvImageWrapper, cvImage, CV_RGB2GRAY);
-
-            break;
+        inputImage = inputImage.convertToFormat(QImage::Format_ARGB32_Premultiplied);
     }
+
+    cvImageWrapper = cv::Mat(inputImage.height(), inputImage.width(), CV_8UC4, inputImage.scanLine(0), inputImage.bytesPerLine());
+    cv::cvtColor(cvImageWrapper, cvImage, CV_RGBA2RGB);
 
 /*
     resize(cvImage, cvImage, Size(256, 256), (0, 0), (0, 0), cv::INTER_LINEAR);
