@@ -68,10 +68,10 @@ public:
      * @param maxNbNeighbors
      * @return
      */
-    double getClosestNeighbors(QMap<double, QVector<KDNode*> >& neighborList,
-                               const cv::Mat&                   position,
-                               double                           sqRange,
-                               int                              maxNbNeighbors);
+    double getClosestNeighbors(QMap<double, QVector<int> >& neighborList,
+                               const cv::Mat&               position,
+                               double                       sqRange,
+                               int                          maxNbNeighbors) const;
     /**
      * @brief getIdentity
      * @return

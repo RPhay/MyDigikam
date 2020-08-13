@@ -23,6 +23,7 @@
 #include "kd_tree.h"
 
 #include <QMutex>
+#include <QDebug>
 
 namespace Digikam
 {
@@ -86,13 +87,17 @@ KDNode* KDTree::add(const cv::Mat& position, const int identity)
     return newNode;
 }
 
-QMap<double, QVector<KDNode*> > KDTree::getClosestNeighbors(const cv::Mat& position, double sqRange, int maxNbNeighbors) const
+QMap<double, QVector<int> > KDTree::getClosestNeighbors(const cv::Mat& position, double sqRange, int maxNbNeighbors) const
 {
-    QMap<double, QVector<KDNode*> > closestNeighbors;
+    QMap<double, QVector<int> > closestNeighbors;
 
     if (d->root)
     {
         sqRange = d->root->getClosestNeighbors(closestNeighbors, position, sqRange, maxNbNeighbors);
+    }
+    else
+    {
+        qDebug() << "root is null";
     }
 
     return closestNeighbors;

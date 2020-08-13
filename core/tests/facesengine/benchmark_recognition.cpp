@@ -105,8 +105,8 @@ Benchmark::Benchmark()
     m_detector   = new OpenCVDNNFaceDetector(DetectorNNModel::SSDMOBILENET);
     m_recognizer = new FacialRecognitionWrapper();
 
-    m_recognizer->clearAllTraining();
-    m_recognizer->deleteIdentities(m_recognizer->allIdentities());
+    //m_recognizer->clearAllTraining();
+    //m_recognizer->deleteIdentities(m_recognizer->allIdentities());
 
     recognizerTest = new OpenCVDNNFaceRecognizer(OpenCVDNNFaceRecognizer::Tree);
 }
@@ -206,7 +206,6 @@ void Benchmark::verifyTestSet()
 
             if (id == -1)
             {
-                qDebug() << "fail to recognize";
                 return Identity();
             }
             else
@@ -656,7 +655,7 @@ int main(int argc, char** argv)
     //benchmark.verifyKNearestDb();
 
     benchmark.fetchData();
-    benchmark.registerTrainingSet();
+    //benchmark.registerTrainingSet();
     benchmark.verifyTestSet();
 
     return 0;

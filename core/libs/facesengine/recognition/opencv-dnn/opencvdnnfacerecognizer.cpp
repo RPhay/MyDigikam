@@ -24,6 +24,8 @@
 
 #include "opencvdnnfacerecognizer.h"
 
+#include <iostream>
+
 // Qt includes
 #include <QElapsedTimer>
 #include <QtConcurrent>
@@ -170,26 +172,32 @@ int OpenCVDNNFaceRecognizer::Private::predictKDTree(const cv::Mat& faceEmbedding
     }
 
     // Look for K-nearest neighbor which have the sqr distance greater smaller than 1
-    QMap<double, QVector<KDNode*> > closestNeighbors = tree->getClosestNeighbors(faceEmbedding, 1.0, k);
+    QMap<double, QVector<int> > closestNeighbors = tree->getClosestNeighbors(faceEmbedding, 1.0, k);
 
     QMap<int, QVector<double> > votingGroups;
 
-    for (QMap<double, QVector<KDNode*> >::const_iterator iter  = closestNeighbors.cbegin();
-                                                         iter != closestNeighbors.cend();
-                                                       ++iter)
+    if (closestNeighbors.isEmpty())
     {
-        for (QVector<KDNode*>::const_iterator node  = iter.value().cbegin();
-                                              node != iter.value().cend();
-                                            ++node)
+        qDebug() << "voting group is empty";
+        //std::cout << "face embedding" << faceEmbedding << std::endl;
+    }
+
+    for (QMap<double, QVector<int> >::const_iterator iter  = closestNeighbors.cbegin();
+                                                     iter != closestNeighbors.cend();
+                                                   ++iter)
+    {
+        for (QVector<int>::const_iterator node  = iter.value().cbegin();
+                                          node != iter.value().cend();
+                                        ++node)
         {
-            int label = (*node)->getIdentity();
+            int label = (*node);
 
             votingGroups[label].append(iter.key());
         }
     }
 
     double maxScore = 0;
-    int prediction;
+    int prediction  = -1;
 
     for (QMap<int, QVector<double> >::const_iterator group  = votingGroups.cbegin();
                                                      group != votingGroups.cend();

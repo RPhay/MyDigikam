@@ -146,23 +146,23 @@ void KDNode::setNodeId(int id)
     d->nodeID = id;
 }
 
-double KDNode::getClosestNeighbors(QMap<double, QVector<KDNode*> >& neighborList,
-                                   const cv::Mat&                   position,
-                                   double                           sqRange,
-                                   int                              maxNbNeighbors)
+double KDNode::getClosestNeighbors(QMap<double, QVector<int> >& neighborList,
+                                   const cv::Mat&               position,
+                                   double                       sqRange,
+                                   int                          maxNbNeighbors) const
 {
     // add current node to the list
     double sqrdistanceToCurrentNode = sqrDistance(position.ptr<float>(), d->position.ptr<float>(), d->nbDimension);
 
     if (sqrdistanceToCurrentNode <= sqRange)
     {
-        neighborList[sqrdistanceToCurrentNode].append(this);
+        neighborList[sqrdistanceToCurrentNode].append(d->identity);
         // limit the size of the Map to maxNbNeighbors
         int size = 0;
 
-        for (QMap<double, QVector<KDNode*> >::const_iterator iter  = neighborList.cbegin();
-                                                             iter != neighborList.cend();
-                                                           ++iter)
+        for (QMap<double, QVector<int> >::const_iterator iter  = neighborList.cbegin();
+                                                         iter != neighborList.cend();
+                                                       ++iter)
         {
             size += iter.value().size();
         }
@@ -170,7 +170,7 @@ double KDNode::getClosestNeighbors(QMap<double, QVector<KDNode*> >& neighborList
         if (size > maxNbNeighbors)
         {
             // Eliminate the farthest neighbor
-            QMap<double, QVector<KDNode*> >::iterator farthestNodes = (neighborList.end() - 1);
+            QMap<double, QVector<int> >::iterator farthestNodes = (neighborList.end() - 1);
 
             if (farthestNodes.value().size() == 1)
             {
