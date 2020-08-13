@@ -24,15 +24,15 @@
 // Qt includes
 #include <QApplication>
 #include <QCommandLineParser>
-#include <QListWidgetItem>
 #include <QDir>
 #include <QImage>
 #include <QElapsedTimer>
 #include <QDebug>
 #include <QHash>
-#include <QTest>
 #include <QJsonObject>
 #include <QJsonDocument>
+#include <QtConcurrent>
+#include <QFuture>
 
 // lib digikam includes
 #include "opencvdnnfacedetector.h"
@@ -187,6 +187,57 @@ void Benchmark::verifyTestSet()
                                                    iter != m_testSet.end();
                                                  ++iter)
     {
+        std::function<Identity(QImage*)> recognizeIdentity = [this](QImage* image)
+        {
+            int id = -1;
+
+            try
+            {
+                id = recognizerTest->recognize(*image);
+            }
+            catch (cv::Exception& e)
+            {
+                qWarning() << "cv::Exception:" << e.what();
+            }
+            catch (...)
+            {
+                qWarning() << "Default exception from OpenCV";
+            }
+
+            if (id == -1)
+            {
+                qDebug() << "fail to recognize";
+                return Identity();
+            }
+            else
+            {
+                return  m_recognizer->identity(id);
+            }
+        };
+
+        QFuture<Identity> future = QtConcurrent::mapped(iter.value(), recognizeIdentity);
+
+        future.waitForFinished();
+
+        QList<Identity> predictions = future.results();
+
+        for (int i = 0; i < predictions.size(); ++i)
+        {
+            if (predictions[i].isNull() && m_trainSet.contains(iter.key()))
+            {
+                // cannot recognize when label is already register
+                ++nbNotRecognize;
+            }
+            else if (predictions[i].attribute(QLatin1String("fullName")) != iter.key())
+            {
+                // wrong label
+                ++nbWrongLabel;
+            }
+        }
+
+        m_testSize += predictions.size();
+
+/*
         for (int i = 0; i < iter.value().size(); ++i)
         {
             int label           = recognizerTest->recognize(*iter.value().at(i));
@@ -204,22 +255,6 @@ void Benchmark::verifyTestSet()
             }
 
             ++m_testSize;
-        }
-/*
-        QList<Identity> predictions = m_recognizer->recognizeFaces(croppedFaces);
-
-        for (int i = 0; i < predictions.size(); ++i)
-        {
-            if (predictions[i].isNull() && m_trainSet.contains(iter.key()))
-            {
-                // cannot recognize when label is already register
-                ++nbNotRecognize;
-            }
-            else if (predictions[i].attribute(QLatin1String("fullName")) != iter.key())
-            {
-                // wrong label
-                ++nbWrongLabel;
-            }
         }
 */
     }

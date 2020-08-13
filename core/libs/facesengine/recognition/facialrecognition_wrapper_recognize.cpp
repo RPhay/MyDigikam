@@ -71,7 +71,7 @@ QList<Identity> FacialRecognitionWrapper::recognizeFaces(ImageListProvider* cons
 
     QList<QImage> trainImages = images->images();
 
-    // TODO parallize
+    // TODO parallelize
     QList<Identity> results;
 
     for (int i = 0; i < trainImages.size(); ++i)

@@ -48,7 +48,7 @@ public:
         : method(method),
           extractor(new DNNFaceExtractor),
           tree(nullptr),
-          kNeighbors(3),
+          kNeighbors(5),
           newDataAdded(true)
     {
         switch (method)
