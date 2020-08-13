@@ -164,19 +164,7 @@ void Benchmark::registerTrainingSet()
         Identity newIdentity = m_recognizer->addIdentity(attributes);
 
         qDebug() << "add new identity to database" << newIdentity.id();
-/*
-        for (int i = 0; i < iter.value().size(); ++i)
-        {
-            //QImage croppedFace = detect(iter.value().at(i));
 
-            if (!recognizerTest->registerTrainingData(iter.value().at(i), newIdentity.id()))
-            {
-                qDebug() << "fail to register training data";
-            }
-
-            ++m_trainSize;
-        }
-*/
         recognizerTest->train(iter.value(), newIdentity.id(), QLatin1String("train face classifier"));
 
         m_trainSize += iter.value().size();

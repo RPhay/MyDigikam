@@ -199,16 +199,13 @@ cv::Mat DNNFaceExtractor::getFaceEmbedding(const cv::Mat& faceImage)
     timer.start();
     cv::Mat face_descriptors;
     cv::Mat blob     = cv::dnn::blobFromImage(alignedFace, d->scaleFactor, d->imageSize, cv::Scalar(), true, false);
-/*
+
     d->mutex.lock();
     {
         d->net.setInput(blob);
         face_descriptors = d->net.forward();
     }
     d->mutex.unlock();
-*/
-    d->net.setInput(blob);
-    face_descriptors = d->net.forward();
 
     qCDebug(DIGIKAM_FACEDB_LOG) << "Finish computing face embedding in "
                                 << timer.elapsed() << " ms";

@@ -29,9 +29,9 @@
 namespace Digikam
 {
 
-void FacialRecognitionWrapper::Private::trainIdentityBatch(const QList<Identity>& identitiesToBeTrained,
-                                                       TrainingDataProvider* const data,
-                                                       const QString& trainingContext)
+void FacialRecognitionWrapper::Private::trainIdentityBatch(const QList<Identity>&      identitiesToBeTrained,
+                                                           TrainingDataProvider* const data,
+                                                           const QString&              trainingContext)
 {
     foreach (const Identity& identity, identitiesToBeTrained)
     {
@@ -43,7 +43,7 @@ void FacialRecognitionWrapper::Private::trainIdentityBatch(const QList<Identity>
 
         try
         {
-            // Convert QList<QImage> into Qlist<QImage*>
+            // TODO Convert QList<QImage> into Qlist<QImage*>
             //recognizer->train(images, identity.id(), trainingContext);
         }
         catch (cv::Exception& e)

@@ -338,9 +338,9 @@ void OpenCVDNNFaceRecognizer::train(const QList<QImage*>& images,
                                     const int             label,
                                     const QString&        context)
 {
-    auto registerTraining = [this, label, context](QImage& image)
+    auto registerTraining = [this, label, context](QImage* image)
     {
-        cv::Mat faceEmbedding = d->extractor->getFaceEmbedding(prepareForRecognition(image)).clone();
+        cv::Mat faceEmbedding = d->extractor->getFaceEmbedding(prepareForRecognition(*image)).clone();
 
         if (!d->insertData(faceEmbedding, label, context))
         {
@@ -348,13 +348,8 @@ void OpenCVDNNFaceRecognizer::train(const QList<QImage*>& images,
         }
     };
 
-    //QFuture<void> future = QtConcurrent::map(images, registerTraining);
-    //future.waitForFinished();
-
-    for (int i = 0; i < images.size(); ++i)
-    {
-        registerTraining(*images[i]);
-    }
+    QFuture<void> future = QtConcurrent::map(images, registerTraining);
+    future.waitForFinished();
 
     d->newDataAdded = true;
 }
