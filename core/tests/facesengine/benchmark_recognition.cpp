@@ -71,7 +71,7 @@ public:
 
 private:
 
-    QImage detect(const QImage& faceImg);
+    QImage* detect(const QImage& faceImg);
     bool preprocess(QImage* faceImg, cv::Mat& face);
 
 public:
@@ -84,8 +84,8 @@ public:
 
 private:
 
-    QHash<QString, QVector<cv::Mat> > m_trainSet;
-    QHash<QString, QVector<cv::Mat> > m_testSet;
+    QHash<QString, QList<QImage*> > m_trainSet;
+    QHash<QString, QList<QImage*> > m_testSet;
 
     OpenCVDNNFaceDetector* m_detector;
     FacialRecognitionWrapper*  m_recognizer;
@@ -154,9 +154,9 @@ void Benchmark::registerTrainingSet()
     QElapsedTimer timer;
     timer.start();
 
-    for (QHash<QString, QVector<cv::Mat> >::iterator iter  = m_trainSet.begin();
-                                                     iter != m_trainSet.end();
-                                                   ++iter)
+    for (QHash<QString, QList<QImage*> >::iterator iter  = m_trainSet.begin();
+                                                   iter != m_trainSet.end();
+                                                 ++iter)
     {
         QMap<QString, QString> attributes;
         attributes[QLatin1String("fullName")] = iter.key();
@@ -164,9 +164,7 @@ void Benchmark::registerTrainingSet()
         Identity newIdentity = m_recognizer->addIdentity(attributes);
 
         qDebug() << "add new identity to database" << newIdentity.id();
-
-        QList<QImage> trainImages;
-
+/*
         for (int i = 0; i < iter.value().size(); ++i)
         {
             //QImage croppedFace = detect(iter.value().at(i));
@@ -178,8 +176,10 @@ void Benchmark::registerTrainingSet()
 
             ++m_trainSize;
         }
+*/
+        recognizerTest->train(iter.value(), newIdentity.id(), QLatin1String("train face classifier"));
 
-        //m_recognizer->train(newIdentity, trainImages, QLatin1String("train face classifier"));
+        m_trainSize += iter.value().size();
     }
 
     unsigned int elapsedDetection = timer.elapsed();
@@ -195,17 +195,13 @@ void Benchmark::verifyTestSet()
     QElapsedTimer timer;
     timer.start();
 
-    for (QHash<QString, QVector<cv::Mat> >::iterator iter  = m_testSet.begin();
-                                                    iter != m_testSet.end();
-                                                   ++iter)
+    for (QHash<QString, QList<QImage*> >::iterator iter  = m_testSet.begin();
+                                                   iter != m_testSet.end();
+                                                 ++iter)
     {
-        QList<QImage> croppedFaces;
-
         for (int i = 0; i < iter.value().size(); ++i)
         {
-            //QImage croppedFace = detect(iter.value().at(i));
-
-            int label = recognizerTest->verifyTestData(iter.value().at(i));
+            int label           = recognizerTest->recognize(*iter.value().at(i));
             Identity prediction = m_recognizer->identity(label);
 
             if (prediction.isNull() && m_trainSet.contains(iter.key()))
@@ -217,7 +213,6 @@ void Benchmark::verifyTestSet()
             {
                 // wrong label
                 ++nbWrongLabel;
-                qDebug() << "Error prediction" << prediction.attribute(QLatin1String("fullName")) << "diff" << iter.key();
             }
 
             ++m_testSize;
@@ -260,11 +255,11 @@ void Benchmark::verifyTestSet()
                            << m_testSize << "test faces, (" << float(elapsedDetection)/m_testSize << " ms/face)";
 }
 
-QImage Benchmark::detect(const QImage& faceImg)
+QImage* Benchmark::detect(const QImage& faceImg)
 {
     if (faceImg.isNull())
     {
-        return faceImg;
+        return nullptr;
     }
 
     QList<QRectF> faces;
@@ -291,12 +286,15 @@ QImage Benchmark::detect(const QImage& faceImg)
 
     if (faces.isEmpty())
     {
-        return QImage();
+        return nullptr;
     }
 
-    QRect rect = FaceDetector::toAbsoluteRect(faces[0], faceImg.size());
+    QRect rect          = FaceDetector::toAbsoluteRect(faces[0], faceImg.size());
 
-    return faceImg.copy(rect);
+    QImage* croppedFace = new QImage();
+    *croppedFace        = faceImg.copy(rect);
+
+    return croppedFace;
 }
 
 bool Benchmark::preprocess(QImage* faceImg, cv::Mat& face)
@@ -397,29 +395,23 @@ void Benchmark::splitData(const QDir& dataDir, float splitRatio)
         // split train/test
         for (int i = 0; i < filesInfo.size(); ++i)
         {
-            QImage* img = new QImage(filesInfo[i].absoluteFilePath());
+            QImage img(filesInfo[i].absoluteFilePath());
 
-            QImage croppedFace = detect(*img);
+            QImage* croppedFace = detect(img);
 
             if (i < filesInfo.size() * splitRatio)
             {
-                if (!croppedFace.isNull())
+                if (croppedFace && !croppedFace->isNull())
                 {
-                    cv::Mat preprocessedFace;
-                    preprocessedFace = OpenCVDNNFaceRecognizer::prepareForRecognition(croppedFace);
-
-                    m_trainSet[label].append(preprocessedFace.clone());
+                    m_trainSet[label].append(croppedFace);
                     ++nbData;
                 }
             }
             else
             {
-                if (!croppedFace.isNull())
+                if (croppedFace && !croppedFace->isNull())
                 {
-                    cv::Mat preprocessedFace;
-                    preprocessedFace = OpenCVDNNFaceRecognizer::prepareForRecognition(croppedFace);
-
-                    m_testSet[label].append(preprocessedFace.clone());
+                    m_testSet[label].append(croppedFace);
                     ++nbData;
                 }
             }
