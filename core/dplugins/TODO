@@ -2,7 +2,7 @@ Editor and BQM Tools Pending Tasks
 ----------------------------------
 
                         Multithreaded   Multicore    Zommable Preview        Port to BQM     Remark
-                        
+
 
 color
   /adjustcurves             done          TODO             done                  done
@@ -23,7 +23,7 @@ color
 decorate
   /border                   done          TODO              no                   done
   /inserttext               TODO          TODO              no                   TODO       Factoring with BQM Watermark tool
-  /texture                  done          TODO             done                  TODO
+  /texture                  done          TODO             done                  done
 
 filters
   /colorfx                  done          TODO             done                  done

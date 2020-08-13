@@ -4,6 +4,7 @@ evSSdigiKam 7.1.0 - Release date: 2020-08-30
 NEW FEATURES:
 
 QueueManager: add new tool to fix hot pixels from images.
+QueueManager: add new tool to apply texture over images.
 
 *****************************************************************************************************
 BUGFIXES:
