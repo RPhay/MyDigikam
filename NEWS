@@ -223,4 +223,6 @@ BUGFIXES:
 213 ==> 425308 - Show always currently displayed folder in light table.
 214 ==> 150584 - Calendar, Borders, and Texture not working.
 215 ==> 425329 - Tags in Tags tab, and keywords in Metadata, don't match.
-216 ==> 
+216 ==> 418829 - Thumbnails of moved images not visible.
+217 ==> 
+218 ==> 
