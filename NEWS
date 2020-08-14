@@ -220,4 +220,5 @@ BUGFIXES:
 210 ==> 374379 - After drag-n-dropping photos the view shifts to far down.
 211 ==> 425223 - Typo on Maintenance panel for processors.
 212 ==> 416757 - Tags incorrectly displayed when deleted from Edit Metadata / IPTC.
-213 ==> 
+213 ==> 150584 - Calendar, Borders, and Texture not working.
+214 ==> 
