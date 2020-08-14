@@ -444,6 +444,16 @@ int OpenCVDNNFaceRecognizer::recognize(QImage* inputImage)
     return id;
 }
 
+QVector<int> OpenCVDNNFaceRecognizer::recognize(const QList<QImage*>& inputImages)
+{
+    QVector<int> ids;
+
+    cv::parallel_for_(cv::Range(0, inputImages.size()), Private::ParallelRecognizer(d, inputImages, ids));
+
+    return ids;
+}
+
+
 void OpenCVDNNFaceRecognizer::clearTraining(const QList<int>& idsToClear, const QString& trainingContext)
 {
     if (idsToClear.isEmpty())

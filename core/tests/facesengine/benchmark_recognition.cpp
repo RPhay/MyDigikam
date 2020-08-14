@@ -187,6 +187,7 @@ void Benchmark::verifyTestSet()
                                                    iter != m_testSet.end();
                                                  ++iter)
     {
+/*
         std::function<Identity(QImage*)> recognizeIdentity = [this](QImage* image)
         {
             int id = -1;
@@ -217,19 +218,19 @@ void Benchmark::verifyTestSet()
         QFuture<Identity> future = QtConcurrent::mapped(iter.value(), recognizeIdentity);
 
         future.waitForFinished();
+*/
+        QVector<int> ids = recognizerTest->recognize(iter.value());
 
-        QList<Identity> predictions = future.results();
-
-        for (int i = 0; i < predictions.size(); ++i)
+        for (int i = 0; i < ids.size(); ++i)
         {
-            //Identity prediction = recognizeIdentity(iter.value().at(i));
+            Identity prediction = m_recognizer->identity(ids[i]);
 
-            if (predictions[i].isNull() && m_trainSet.contains(iter.key()))
+            if (prediction.isNull() && m_trainSet.contains(iter.key()))
             {
                 // cannot recognize when label is already register
                 ++nbNotRecognize;
             }
-            else if (predictions[i].attribute(QLatin1String("fullName")) != iter.key())
+            else if (prediction.attribute(QLatin1String("fullName")) != iter.key())
             {
                 // wrong label
                 ++nbWrongLabel;

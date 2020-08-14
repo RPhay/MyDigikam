@@ -86,6 +86,13 @@ public:
     int recognize(QImage* inputImage);
 
     /**
+     * Try to recognize a list of given images.
+     * Returns a list of identity ids.
+     * If an identity cannot be recognized, returns -1.
+     */
+    QVector<int> recognize(const QList<QImage*>& inputImages);
+
+    /**
      * clear specified trained data
      */
     void clearTraining(const QList<int>& idsToClear, const QString& trainingContext);
