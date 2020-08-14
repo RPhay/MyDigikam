@@ -71,7 +71,7 @@ QString TexturePlugin::description() const
 
 QString TexturePlugin::details() const
 {
-    return i18n("<p>This Batch Queue Manager tool can can apply a texture over images.</p>");
+    return i18n("<p>This Batch Queue Manager tool can apply a texture over images.</p>");
 }
 
 QList<DPluginAuthor> TexturePlugin::authors() const
