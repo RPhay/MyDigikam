@@ -105,6 +105,61 @@ public:
     int kNeighbors;
 
     bool newDataAdded;
+
+public:
+
+    class ParallelRecognizer;
+};
+
+class OpenCVDNNFaceRecognizer::Private::ParallelRecognizer : public cv::ParallelLoopBody
+{
+private:
+
+    const QList<QImage*>& images;
+    QVector<int>& ids;
+
+    OpenCVDNNFaceRecognizer::Private* const d;
+
+public:
+
+    ParallelRecognizer(OpenCVDNNFaceRecognizer::Private* d,
+                       const QList<QImage*>& images,
+                       QVector<int>& ids)
+        : images(images),
+          ids(ids),
+          d(d)
+    {
+    }
+
+    void operator()(const cv::Range& range) const
+    {
+        for(int i = range.start; i < range.end; ++i)
+        {
+            int id = -1;
+
+            cv::Mat faceEmbedding = d->extractor->getFaceEmbedding(OpenCVDNNFaceRecognizer::prepareForRecognition(*images[i]));
+
+            switch (d->method)
+            {
+                case SVM:
+                    id = d->predictSVM(faceEmbedding);
+                    break;
+                case OpenCV_KNN:
+                    id = d->predictKNN(faceEmbedding, d->kNeighbors);
+                    break;
+                case Tree:
+                    id = d->predictKDTree(faceEmbedding, d->kNeighbors);
+                    break;
+                case DB:
+                    id = d->predictDb(faceEmbedding, d->kNeighbors);
+                    break;
+                default:
+                    qCWarning(DIGIKAM_FACEDB_LOG) << "Not recognized classifying method";
+            }
+
+            ids << id;
+        }
+    }
 };
 
 bool OpenCVDNNFaceRecognizer::Private::trainSVM()
@@ -348,7 +403,7 @@ void OpenCVDNNFaceRecognizer::train(const QList<QImage*>& images,
 {
     auto registerTraining = [this, label, context](QImage* image)
     {
-        cv::Mat faceEmbedding = d->extractor->getFaceEmbedding(prepareForRecognition(*image)).clone();
+        cv::Mat faceEmbedding = d->extractor->getFaceEmbedding(prepareForRecognition(*image));
 
         if (!d->insertData(faceEmbedding, label, context))
         {
@@ -362,11 +417,11 @@ void OpenCVDNNFaceRecognizer::train(const QList<QImage*>& images,
     d->newDataAdded = true;
 }
 
-int OpenCVDNNFaceRecognizer::recognize(QImage& inputImage)
+int OpenCVDNNFaceRecognizer::recognize(QImage* inputImage)
 {
     int id = -1;
 
-    cv::Mat faceEmbedding = d->extractor->getFaceEmbedding(prepareForRecognition(inputImage)).clone();
+    cv::Mat faceEmbedding = d->extractor->getFaceEmbedding(prepareForRecognition(*inputImage));
 
     switch (d->method)
     {

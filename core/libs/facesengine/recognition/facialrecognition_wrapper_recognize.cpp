@@ -46,7 +46,7 @@ QList<Identity> FacialRecognitionWrapper::recognizeFaces(ImageListProvider* cons
 
         try
         {
-            id = d->recognizer->recognize(image);
+            id = d->recognizer->recognize(&image);
 
             qDebug() << "predicted id" << id;
         }

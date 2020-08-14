@@ -28,13 +28,14 @@
 // Qt include
 #include <QtMath>
 #include <QDebug>
+#include <QMutex>
 
 #include "dnnfaceextractor.h"
 
 namespace Digikam
 {
 
-double sqrDistance(const float* pos1, const float* pos2, int dimension)
+double sqrDistance(const float* const pos1, const float* const pos2, int dimension)
 {
     double sqrDistance = 0;
 
@@ -83,6 +84,8 @@ public:
     KDNode* parent;
     KDNode* left;
     KDNode* right;
+
+    QMutex mutex;
 };
 
 KDNode::KDNode(const cv::Mat& nodePos,
@@ -151,8 +154,10 @@ double KDNode::getClosestNeighbors(QMap<double, QVector<int> >& neighborList,
                                    double                       sqRange,
                                    int                          maxNbNeighbors) const
 {
+    d->mutex.lock();
     // add current node to the list
-    double sqrdistanceToCurrentNode = sqrDistance(position.ptr<float>(), d->position.ptr<float>(), d->nbDimension);
+    double sqrdistanceToCurrentNode;
+    sqrdistanceToCurrentNode = sqrDistance(position.ptr<float>(), d->position.ptr<float>(), d->nbDimension);
 
     if (sqrdistanceToCurrentNode <= sqRange)
     {
@@ -195,9 +200,9 @@ double KDNode::getClosestNeighbors(QMap<double, QVector<int> >& neighborList,
     }
     else
     {
-        const float* minRange = d->left->d->minRange.ptr<float>();
-        const float* maxRange = d->left->d->maxRange.ptr<float>();
-        const float* pos      = position.ptr<float>();
+        const float* const minRange = d->left->d->minRange.ptr<float>();
+        const float* const maxRange = d->left->d->maxRange.ptr<float>();
+        const float* const pos      = position.ptr<float>();
 
         for (int i = 0; i < d->nbDimension; ++i)
         {
@@ -214,9 +219,9 @@ double KDNode::getClosestNeighbors(QMap<double, QVector<int> >& neighborList,
     }
     else
     {
-        const float* minRange = d->right->d->minRange.ptr<float>();
-        const float* maxRange = d->right->d->maxRange.ptr<float>();
-        const float* pos      = position.ptr<float>();
+        const float* const minRange = d->right->d->minRange.ptr<float>();
+        const float* const maxRange = d->right->d->maxRange.ptr<float>();
+        const float* const pos      = position.ptr<float>();
 
         for (int i = 0; i < d->nbDimension; ++i)
         {
@@ -259,6 +264,8 @@ double KDNode::getClosestNeighbors(QMap<double, QVector<int> >& neighborList,
     qDebug() << "distance to left tree" << sqrDistanceleftTree;
     qDebug() << "distance to right tree" << sqrDistancerightTree;
 */
+    d->mutex.unlock();
+
     return sqRange;
 }
 

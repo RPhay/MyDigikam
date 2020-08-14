@@ -193,7 +193,7 @@ void Benchmark::verifyTestSet()
 
             try
             {
-                id = recognizerTest->recognize(*image);
+                id = recognizerTest->recognize(image);
             }
             catch (cv::Exception& e)
             {
@@ -222,6 +222,8 @@ void Benchmark::verifyTestSet()
 
         for (int i = 0; i < predictions.size(); ++i)
         {
+            //Identity prediction = recognizeIdentity(iter.value().at(i));
+
             if (predictions[i].isNull() && m_trainSet.contains(iter.key()))
             {
                 // cannot recognize when label is already register
@@ -234,7 +236,7 @@ void Benchmark::verifyTestSet()
             }
         }
 
-        m_testSize += predictions.size();
+        m_testSize += iter.value().size();
 
 /*
         for (int i = 0; i < iter.value().size(); ++i)

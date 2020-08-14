@@ -90,16 +90,20 @@ KDNode* KDTree::add(const cv::Mat& position, const int identity)
 QMap<double, QVector<int> > KDTree::getClosestNeighbors(const cv::Mat& position, double sqRange, int maxNbNeighbors) const
 {
     QMap<double, QVector<int> > closestNeighbors;
-
+    d->mutex.lock();
+    {
     if (d->root)
     {
         sqRange = d->root->getClosestNeighbors(closestNeighbors, position, sqRange, maxNbNeighbors);
-    }
-    else
-    {
-        qDebug() << "root is null";
+
+        if (closestNeighbors.isEmpty())
+        {
+            qDebug() << "can't find any neighbor, with sqrange" << sqRange;
+        }
     }
 
+    }
+    d->mutex.unlock();
     return closestNeighbors;
 }
 

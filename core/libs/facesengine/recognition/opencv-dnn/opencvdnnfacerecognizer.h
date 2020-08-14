@@ -83,7 +83,7 @@ public:
      * If the identity cannot be recognized, returns -1.
      */
     // TODO verify workflow to economize this routine
-    int recognize(QImage& inputImage);
+    int recognize(QImage* inputImage);
 
     /**
      * clear specified trained data
