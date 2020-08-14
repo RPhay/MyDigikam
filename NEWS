@@ -222,4 +222,5 @@ BUGFIXES:
 212 ==> 416757 - Tags incorrectly displayed when deleted from Edit Metadata / IPTC.
 213 ==> 425308 - Show always currently displayed folder in light table.
 214 ==> 150584 - Calendar, Borders, and Texture not working.
-215 ==> 
+215 ==> 425329 - Tags in Tags tab, and keywords in Metadata, don't match.
+216 ==> 
