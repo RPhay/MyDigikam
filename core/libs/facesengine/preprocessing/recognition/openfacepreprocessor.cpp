@@ -97,7 +97,7 @@ void OpenfacePreprocessor::init()
     qCDebug(DIGIKAM_FACEDB_LOG) << "Finish reading shape predictor file";
 }
 
-cv::Mat OpenfacePreprocessor::process(const cv::Mat& image) const
+cv::Mat OpenfacePreprocessor::process(const cv::Mat& image)
 {
     int type = image.type();
     qCDebug(DIGIKAM_FACEDB_LOG) << "type: " << type;
@@ -120,7 +120,10 @@ cv::Mat OpenfacePreprocessor::process(const cv::Mat& image) const
 
     cv::Rect new_rect(0, 0, image.cols, image.rows);
     cv::Mat landmarks(3,2, CV_32F);
+
+    mutex.lock();
     FullObjectDetection object = sp(gray, new_rect);
+    mutex.unlock();
 
     for (size_t i = 0 ; i < outerEyesNosePositions.size() ; ++i)
     {

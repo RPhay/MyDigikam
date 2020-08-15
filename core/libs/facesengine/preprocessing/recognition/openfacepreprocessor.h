@@ -28,6 +28,9 @@
 
 #include <array>
 
+// Qt includes
+#include <QMutex>
+
 // Local includes
 
 #include "digikam_opencv.h"
@@ -46,7 +49,7 @@ public:
 
     void init();
 
-    cv::Mat process(const cv::Mat& image) const;
+    cv::Mat process(const cv::Mat& image);
 
 private:
 
@@ -56,6 +59,8 @@ private:
     std::array<int, 3>     outerEyesNosePositions;
 
     RedEye::ShapePredictor sp;
+
+    QMutex                 mutex;
 };
 
 } // namespace Digikam
