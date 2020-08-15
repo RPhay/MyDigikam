@@ -89,6 +89,8 @@ KDNode* KDTree::add(const cv::Mat& position, const int identity)
 
 QMap<double, QVector<int> > KDTree::getClosestNeighbors(const cv::Mat& position, double sqRange, int maxNbNeighbors) const
 {
+    // TODO : verify if we need a mutex for reading
+
     QMap<double, QVector<int> > closestNeighbors;
 
     if (d->root)

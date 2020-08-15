@@ -28,7 +28,6 @@
 // Qt include
 #include <QtMath>
 #include <QDebug>
-#include <QMutex>
 
 #include "dnnfaceextractor.h"
 
@@ -84,8 +83,6 @@ public:
     KDNode* parent;
     KDNode* left;
     KDNode* right;
-
-    QMutex mutex;
 };
 
 KDNode::KDNode(const cv::Mat& nodePos,
@@ -154,12 +151,9 @@ double KDNode::getClosestNeighbors(QMap<double, QVector<int> >& neighborList,
                                    double                       sqRange,
                                    int                          maxNbNeighbors) const
 {
-    //d->mutex.lock();
     // add current node to the list
     double sqrdistanceToCurrentNode;
     sqrdistanceToCurrentNode = sqrDistance(position.ptr<float>(), d->position.ptr<float>(), d->nbDimension);
-
-    //d->mutex.unlock();
 
     if (sqrdistanceToCurrentNode <= sqRange)
     {
@@ -192,8 +186,6 @@ double KDNode::getClosestNeighbors(QMap<double, QVector<int> >& neighborList,
             sqRange = neighborList.lastKey();
         }
     }
-
-    //d->mutex.lock();
 
     // sub-trees Traversal
     double sqrDistanceleftTree  = 0;
@@ -233,7 +225,6 @@ double KDNode::getClosestNeighbors(QMap<double, QVector<int> >& neighborList,
                                      pow(qMax((pos[i] - maxRange[i]), 0.0f), 2));
         }
     }
-    //d->mutex.unlock();
 
     // traverse the closest area
     if (sqrDistanceleftTree < sqrDistancerightTree)
