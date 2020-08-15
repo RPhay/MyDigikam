@@ -64,15 +64,15 @@ public:
     ~BlackFrameListViewItem();
 
     QUrl frameUrl() const;
-    void emitParsedData();
+    void emitHotPixelsParsed();
 
 Q_SIGNALS:
 
-    void signalParsed(const QList<HotPixelProps>&, const QUrl&);
+    void signalHotPixelsParsed(const QList<HotPixelProps>&, const QUrl&);
 
 private Q_SLOTS:
 
-    void slotParsed(const QList<HotPixelProps>&);
+    void slotHotPixelsParsed(const QList<HotPixelProps>&);
     void slotLoadingProgress(float);
 
 private:
@@ -106,7 +106,7 @@ Q_SIGNALS:
 private Q_SLOTS:
 
     void slotSelectionChanged();
-    void slotParsed(const QList<HotPixelProps>&, const QUrl&);
+    void slotHotPixelsParsed(const QList<HotPixelProps>&, const QUrl&);
 };
 
 } // namespace Digikam

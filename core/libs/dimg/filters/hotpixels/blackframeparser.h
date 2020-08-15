@@ -66,7 +66,7 @@ public:
 
 Q_SIGNALS:
 
-    void signalParsed(const QList<HotPixelProps>&);
+    void signalHotPixelsParsed(const QList<HotPixelProps>&);
     void signalLoadingProgress(float);
     void signalLoadingComplete();
 

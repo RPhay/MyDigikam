@@ -181,7 +181,7 @@ void BlackFrameParser::blackFrameParsing()
 
     // And notify
 
-    emit signalParsed(hpList);
+    emit signalHotPixelsParsed(hpList);
 }
 
 /**
