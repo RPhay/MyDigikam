@@ -142,7 +142,7 @@ void WhiteBalanceTool::slotPickerColorButtonActived()
 
 void WhiteBalanceTool::slotColorSelectedFromOriginal(const DColor& color)
 {
-    if ( d->settingsView->pickTemperatureIsOn() )
+    if ( d->settingsView->pickTemperatureIsChecked() )
     {
         WBContainer settings = d->settingsView->settings();
         DColor dc            = color;
@@ -151,7 +151,7 @@ void WhiteBalanceTool::slotColorSelectedFromOriginal(const DColor& color)
         WBFilter::autoWBAdjustementFromColor(tc, settings.temperature, settings.green);
         d->settingsView->setSettings(settings);
 
-        d->settingsView->setOnPickTemperature(false);
+        d->settingsView->setCheckedPickTemperature(false);
     }
     else
     {
