@@ -33,6 +33,7 @@
 #include <QJsonDocument>
 #include <QtConcurrent>
 #include <QFuture>
+#include <QThread>
 
 // lib digikam includes
 #include "opencvdnnfacedetector.h"
@@ -105,21 +106,20 @@ Benchmark::Benchmark()
     m_detector   = new OpenCVDNNFaceDetector(DetectorNNModel::SSDMOBILENET);
     m_recognizer = new FacialRecognitionWrapper();
 
-    //m_recognizer->clearAllTraining();
-    //m_recognizer->deleteIdentities(m_recognizer->allIdentities());
+    m_recognizer->clearAllTraining();
+    m_recognizer->deleteIdentities(m_recognizer->allIdentities());
 
     recognizerTest = new OpenCVDNNFaceRecognizer(OpenCVDNNFaceRecognizer::Tree);
 }
 
 Benchmark::~Benchmark()
 {
-/*
-    for (QHash<QString, QVector<QImage> >::iterator vector  = m_trainSet.begin();
-                                                    vector != m_trainSet.end();
-                                                   ++vector)
+    for (QHash<QString, QList<QImage*> >::iterator vector  = m_trainSet.begin();
+                                                   vector != m_trainSet.end();
+                                                 ++vector)
     {
 
-        QVector<QImage*>::iterator img = vector.value().begin();
+        QList<QImage*>::iterator img = vector.value().begin();
 
         while (img != vector.value().end())
         {
@@ -128,11 +128,11 @@ Benchmark::~Benchmark()
         }
     }
 
-    for (QHash<QString, QVector<QImage*> >::iterator vector  = m_testSet.begin();
-                                                     vector != m_testSet.end();
-                                                   ++vector)
+    for (QHash<QString, QList<QImage*> >::iterator vector  = m_testSet.begin();
+                                                   vector != m_testSet.end();
+                                                 ++vector)
     {
-        QVector<QImage*>::iterator img = vector.value().begin();
+        QList<QImage*>::iterator img = vector.value().begin();
 
         while (img != vector.value().end())
         {
@@ -140,7 +140,7 @@ Benchmark::~Benchmark()
             img = vector.value().erase(img);
         }
     }
-*/
+
     delete m_detector;
     delete m_recognizer;
     delete recognizerTest;
@@ -187,38 +187,6 @@ void Benchmark::verifyTestSet()
                                                    iter != m_testSet.end();
                                                  ++iter)
     {
-/*
-        std::function<Identity(QImage*)> recognizeIdentity = [this](QImage* image)
-        {
-            int id = -1;
-
-            try
-            {
-                id = recognizerTest->recognize(image);
-            }
-            catch (cv::Exception& e)
-            {
-                qWarning() << "cv::Exception:" << e.what();
-            }
-            catch (...)
-            {
-                qWarning() << "Default exception from OpenCV";
-            }
-
-            if (id == -1)
-            {
-                return Identity();
-            }
-            else
-            {
-                return  m_recognizer->identity(id);
-            }
-        };
-
-        QFuture<Identity> future = QtConcurrent::mapped(iter.value(), recognizeIdentity);
-
-        future.waitForFinished();
-*/
         QVector<int> ids = recognizerTest->recognize(iter.value());
 
         for (int i = 0; i < ids.size(); ++i)
@@ -238,27 +206,6 @@ void Benchmark::verifyTestSet()
         }
 
         m_testSize += iter.value().size();
-
-/*
-        for (int i = 0; i < iter.value().size(); ++i)
-        {
-            int label           = recognizerTest->recognize(*iter.value().at(i));
-            Identity prediction = m_recognizer->identity(label);
-
-            if (prediction.isNull() && m_trainSet.contains(iter.key()))
-            {
-                // cannot recognize when label is already register
-                ++nbNotRecognize;
-            }
-            else if (prediction.attribute(QLatin1String("fullName")) != iter.key())
-            {
-                // wrong label
-                ++nbWrongLabel;
-            }
-
-            ++m_testSize;
-        }
-*/
     }
 
     unsigned int elapsedDetection = timer.elapsed();
@@ -658,7 +605,9 @@ int main(int argc, char** argv)
     //benchmark.verifyKNearestDb();
 
     benchmark.fetchData();
-    //benchmark.registerTrainingSet();
+    benchmark.registerTrainingSet();
+    QThread::msleep(3000);
+
     benchmark.verifyTestSet();
 
     return 0;

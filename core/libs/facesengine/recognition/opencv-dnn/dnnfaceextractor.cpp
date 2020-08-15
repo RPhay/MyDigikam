@@ -183,38 +183,40 @@ cv::Mat DNNFaceExtractor::alignFace(const cv::Mat& inputImage) const
 
 cv::Mat DNNFaceExtractor::getFaceEmbedding(const cv::Mat& faceImage)
 {
-    qCDebug(DIGIKAM_FACEDB_LOG) << "faceImage channels: " << faceImage.channels();
-    qCDebug(DIGIKAM_FACEDB_LOG) << "faceImage size: (" << faceImage.rows << ", " << faceImage.cols << ")\n";
-
-    QElapsedTimer timer;
-    timer.start();
-/*
-    cv::Mat alignedFace = faceImage;
-*/
-    cv::Mat alignedFace = d->preprocessor->preprocess(faceImage);
-
-    qCDebug(DIGIKAM_FACEDB_LOG) << "Finish aligning face in " << timer.elapsed() << " ms";
-    qCDebug(DIGIKAM_FACEDB_LOG) << "Start neural network";
-
-    timer.start();
     cv::Mat face_descriptors;
-    cv::Mat blob     = cv::dnn::blobFromImage(alignedFace, d->scaleFactor, d->imageSize, cv::Scalar(), true, false);
 
     d->mutex.lock();
     {
+        qCDebug(DIGIKAM_FACEDB_LOG) << "faceImage channels: " << faceImage.channels();
+        qCDebug(DIGIKAM_FACEDB_LOG) << "faceImage size: (" << faceImage.rows << ", " << faceImage.cols << ")\n";
+
+        QElapsedTimer timer;
+        timer.start();
+    /*
+        cv::Mat alignedFace = faceImage;
+    */
+        cv::Mat alignedFace = alignFace(faceImage);
+
+        qCDebug(DIGIKAM_FACEDB_LOG) << "Finish aligning face in " << timer.elapsed() << " ms";
+        qCDebug(DIGIKAM_FACEDB_LOG) << "Start neural network";
+
+        timer.start();
+        cv::Mat blob     = cv::dnn::blobFromImage(alignedFace, d->scaleFactor, d->imageSize, cv::Scalar(), true, false);
+
         d->net.setInput(blob);
         face_descriptors = d->net.forward();
+
+
+        qCDebug(DIGIKAM_FACEDB_LOG) << "Finish computing face embedding in "
+                                    << timer.elapsed() << " ms";
+        /*
+        cv::Mat blob = cv::dnn::blobFromImage(faceImage, 1.0 / 255, cv::Size(96, 96), cv::Scalar(0,0,0), false, true, CV_32F); // work for openface.nn4
+        cv::Mat blob = cv::dnn::blobFromImage(faceImage, 1.0 / 255, cv::Size(224,224), cv::Scalar(0,0,0), false, true, CV_32F);
+        net.setInput(blob);
+        cv::Mat face_descriptors = net.forward();
+    */
     }
     d->mutex.unlock();
-
-    qCDebug(DIGIKAM_FACEDB_LOG) << "Finish computing face embedding in "
-                                << timer.elapsed() << " ms";
-/*
-    cv::Mat blob = cv::dnn::blobFromImage(faceImage, 1.0 / 255, cv::Size(96, 96), cv::Scalar(0,0,0), false, true, CV_32F); // work for openface.nn4
-    cv::Mat blob = cv::dnn::blobFromImage(faceImage, 1.0 / 255, cv::Size(224,224), cv::Scalar(0,0,0), false, true, CV_32F);
-    net.setInput(blob);
-    cv::Mat face_descriptors = net.forward();
-*/
 
     return face_descriptors;
 }

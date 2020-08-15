@@ -154,10 +154,12 @@ double KDNode::getClosestNeighbors(QMap<double, QVector<int> >& neighborList,
                                    double                       sqRange,
                                    int                          maxNbNeighbors) const
 {
-    d->mutex.lock();
+    //d->mutex.lock();
     // add current node to the list
     double sqrdistanceToCurrentNode;
     sqrdistanceToCurrentNode = sqrDistance(position.ptr<float>(), d->position.ptr<float>(), d->nbDimension);
+
+    //d->mutex.unlock();
 
     if (sqrdistanceToCurrentNode <= sqRange)
     {
@@ -190,6 +192,8 @@ double KDNode::getClosestNeighbors(QMap<double, QVector<int> >& neighborList,
             sqRange = neighborList.lastKey();
         }
     }
+
+    //d->mutex.lock();
 
     // sub-trees Traversal
     double sqrDistanceleftTree  = 0;
@@ -229,6 +233,7 @@ double KDNode::getClosestNeighbors(QMap<double, QVector<int> >& neighborList,
                                      pow(qMax((pos[i] - maxRange[i]), 0.0f), 2));
         }
     }
+    //d->mutex.unlock();
 
     // traverse the closest area
     if (sqrDistanceleftTree < sqrDistancerightTree)
@@ -264,7 +269,6 @@ double KDNode::getClosestNeighbors(QMap<double, QVector<int> >& neighborList,
     qDebug() << "distance to left tree" << sqrDistanceleftTree;
     qDebug() << "distance to right tree" << sqrDistancerightTree;
 */
-    d->mutex.unlock();
 
     return sqRange;
 }
