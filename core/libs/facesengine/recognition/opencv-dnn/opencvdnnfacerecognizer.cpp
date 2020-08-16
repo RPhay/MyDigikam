@@ -28,7 +28,6 @@
 
 // Qt includes
 #include <QElapsedTimer>
-#include <QtConcurrent>
 #include <QFuture>
 
 // Local includes
@@ -438,20 +437,6 @@ void OpenCVDNNFaceRecognizer::train(const QList<QImage*>& images,
                                     const int             label,
                                     const QString&        context)
 {
-/*
-    auto registerTraining = [this, label, context](QImage* image)
-    {
-        cv::Mat faceEmbedding = d->extractor->getFaceEmbedding(prepareForRecognition(*image));
-
-        if (!d->insertData(faceEmbedding, label, context))
-        {
-            qCWarning(DIGIKAM_FACEDB_LOG) << "Fail to register a face of identity" << label;
-        }
-    };
-
-    QFuture<void> future = QtConcurrent::map(images, registerTraining);
-    future.waitForFinished();
-*/
     cv::parallel_for_(cv::Range(0, images.size()), Private::ParallelTrainer(d, images, label, context));
 
     d->newDataAdded = true;

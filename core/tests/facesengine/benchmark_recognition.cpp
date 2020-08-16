@@ -31,9 +31,6 @@
 #include <QHash>
 #include <QJsonObject>
 #include <QJsonDocument>
-#include <QtConcurrent>
-#include <QFuture>
-#include <QThread>
 
 // lib digikam includes
 #include "opencvdnnfacedetector.h"
@@ -90,7 +87,6 @@ private:
 
     OpenCVDNNFaceDetector* m_detector;
     FacialRecognitionWrapper*  m_recognizer;
-    OpenCVDNNFaceRecognizer* recognizerTest;
 };
 
 Benchmark::Benchmark()
@@ -108,15 +104,12 @@ Benchmark::Benchmark()
 
     m_recognizer->clearAllTraining();
     m_recognizer->deleteIdentities(m_recognizer->allIdentities());
-
-    //recognizerTest = new OpenCVDNNFaceRecognizer(OpenCVDNNFaceRecognizer::Tree);
 }
 
 Benchmark::~Benchmark()
 {
     delete m_detector;
     delete m_recognizer;
-    delete recognizerTest;
     delete m_parser;
 }
 
@@ -140,8 +133,6 @@ void Benchmark::registerTrainingSet()
 
         m_recognizer->train(newIdentity, iter.value(), QLatin1String("train face classifier"));
 
-        //recognizerTest->train(iter.value(), newIdentity.id(), QLatin1String("train face classifier"));
-
         m_trainSize += iter.value().size();
     }
 
@@ -162,8 +153,6 @@ void Benchmark::verifyTestSet()
                                                    iter != m_testSet.end();
                                                  ++iter)
     {
-        //QVector<int> ids = recognizerTest->recognize(iter.value());
-
         QList<Identity> predictions = m_recognizer->recognizeFaces(iter.value());
 
         for (int i = 0; i < predictions.size(); ++i)
@@ -583,8 +572,6 @@ int main(int argc, char** argv)
 
     benchmark.fetchData();
     benchmark.registerTrainingSet();
-    QThread::msleep(3000);
-
     benchmark.verifyTestSet();
 
     return 0;

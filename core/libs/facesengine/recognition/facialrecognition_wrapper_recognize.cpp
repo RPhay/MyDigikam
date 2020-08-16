@@ -26,8 +26,6 @@
 
 #include "facialrecognition_wrapper_p.h"
 
-#include <QtConcurrent>
-
 namespace Digikam
 {
 
