@@ -26,6 +26,7 @@
 
 // Qt includes
 
+#include <QByteArray>
 #include <QString>
 #include <QDateTime>
 #include <QSize>
@@ -220,6 +221,11 @@ public:
      * The output dimensions in pixels.
      */
     QSize            outputSize;
+
+    /**
+     * Xmp metadata container extracted from RAW file, if present.
+     */
+    QByteArray       xmpData;
 };
 
 //! qDebug() stream operator. Writes container @a c to the debug output in a nicely formatted way.
