@@ -35,7 +35,7 @@ void FacialRecognitionWrapper::Private::applyParameters()
 
 #ifdef USE_DNN_RECOGNITION_BACKEND
 
-    int k = 3;
+    int k = 5;
 
     if      (parameters.contains(QLatin1String("k-nearest")))
     {

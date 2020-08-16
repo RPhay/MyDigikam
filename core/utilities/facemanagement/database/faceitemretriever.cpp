@@ -41,32 +41,39 @@ void FaceItemRetriever::cancel()
     catcher->cancel();
 }
 
-QList<QImage> FaceItemRetriever::getDetails(const DImg& src, const QList<QRectF>& rects) const
+QList<QImage*> FaceItemRetriever::getDetails(const DImg& src, const QList<QRectF>& rects) const
 {
-    QList<QImage> images;
+    QList<QImage*> images;
 
     foreach (const QRectF& rect, rects)
     {
-        images << src.copyQImage(rect);
+        QImage* croppedFace = new QImage();
+        (*croppedFace)      = src.copyQImage(rect);
+
+        images << croppedFace;
     }
 
     return images;
 }
 
-QList<QImage> FaceItemRetriever::getDetails(const DImg& src, const QList<FaceTagsIface>& faces) const
+QList<QImage*> FaceItemRetriever::getDetails(const DImg& src, const QList<FaceTagsIface>& faces) const
 {
-    QList<QImage> images;
+    QList<QImage*> images;
 
     foreach (const FaceTagsIface& face, faces)
     {
-        QRect rect = TagRegion::mapFromOriginalSize(src, face.region().toRect());
-        images << src.copyQImage(rect);
+        QRect rect          = TagRegion::mapFromOriginalSize(src, face.region().toRect());
+
+        QImage* croppedFace = new QImage();
+        (*croppedFace)      = src.copyQImage(rect);
+
+        images << croppedFace;
     }
 
     return images;
 }
 
-QList<QImage> FaceItemRetriever::getThumbnails(const QString& filePath, const QList<FaceTagsIface>& faces) const
+QList<QImage*> FaceItemRetriever::getThumbnails(const QString& filePath, const QList<FaceTagsIface>& faces) const
 {
     Q_UNUSED(filePath)
     thumbnailCatcher()->setActive(true);
@@ -79,9 +86,20 @@ QList<QImage> FaceItemRetriever::getThumbnails(const QString& filePath, const QL
     }
 
     QList<QImage> images = catcher->waitForThumbnails();
+
+    QList<QImage*> croppedFaces;
+
+    for (int i = 0; i < images.size(); ++i)
+    {
+        QImage* croppedFace = new QImage();
+        (*croppedFace)      = images[i].copy();
+
+        croppedFaces << croppedFace;
+    }
+
     thumbnailCatcher()->setActive(false);
 
-    return images;
+    return croppedFaces;
 }
 
 } // namespace Digikam

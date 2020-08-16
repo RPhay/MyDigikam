@@ -37,14 +37,14 @@ void FacialRecognitionWrapper::Private::trainIdentityBatch(const QList<Identity>
     {
         ImageListProvider* const imageList = data->newImages(identity);
 
-        QList<QImage> images = imageList->images();
+        QList<QImage*> images = imageList->images();
 
         qCDebug(DIGIKAM_FACESENGINE_LOG) << "Training" << images.size() << "images for identity" << identity.id();
 
         try
         {
-            // TODO Convert QList<QImage> into Qlist<QImage*>
-            //recognizer->train(images, identity.id(), trainingContext);
+            // TODO: correct recognizer argument in other recognier
+            recognizer->train(images, identity.id(), trainingContext);
         }
         catch (cv::Exception& e)
         {
@@ -86,8 +86,8 @@ void FacialRecognitionWrapper::Private::clear(const QList<int>& idsToClear, cons
 // -------------------------------------------------------------------------------------
 
 void FacialRecognitionWrapper::train(const QList<Identity>& identitiesToBeTrained,
-                                 TrainingDataProvider* const data,
-                                 const QString& trainingContext)
+                                     TrainingDataProvider* const data,
+                                     const QString& trainingContext)
 {
     if (!d || !d->dbAvailable)
     {
@@ -100,25 +100,25 @@ void FacialRecognitionWrapper::train(const QList<Identity>& identitiesToBeTraine
 }
 
 void FacialRecognitionWrapper::train(const Identity& identityToBeTrained,
-                                 TrainingDataProvider* const data,
-                                 const QString& trainingContext)
+                                     TrainingDataProvider* const data,
+                                     const QString& trainingContext)
 {
     train( (QList<Identity>() << identityToBeTrained), data, trainingContext );
 }
 
 void FacialRecognitionWrapper::train(const Identity& identityToBeTrained,
-                                 const QImage& image,
-                                 const QString& trainingContext)
+                                     QImage* image,
+                                     const QString& trainingContext)
 {
     RecognitionTrainingProvider* const data = new RecognitionTrainingProvider(identityToBeTrained,
-                                                                              QList<QImage>() << image);
+                                                                              QList<QImage*>() << image);
     train(identityToBeTrained, data, trainingContext);
     delete data;
 }
 
 void FacialRecognitionWrapper::train(const Identity& identityToBeTrained,
-                                 const QList<QImage>& images,
-                                 const QString& trainingContext)
+                                     const QList<QImage*>& images,
+                                     const QString& trainingContext)
 {
     RecognitionTrainingProvider* const data = new RecognitionTrainingProvider(identityToBeTrained, images);
     train(identityToBeTrained, data, trainingContext);
@@ -143,7 +143,7 @@ void FacialRecognitionWrapper::clearAllTraining(const QString& trainingContext)
 }
 
 void FacialRecognitionWrapper::clearTraining(const QList<Identity>& identitiesToClean,
-                                        const QString& trainingContext)
+                                             const QString& trainingContext)
 {
     if (!d || !d->dbAvailable || identitiesToClean.isEmpty())
     {

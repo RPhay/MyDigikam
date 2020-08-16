@@ -38,10 +38,10 @@ public:
     explicit FaceItemRetriever(FacePipeline::Private* const d);
     void cancel();
 
-    ThumbnailImageCatcher* thumbnailCatcher()                                               const;
-    QList<QImage> getDetails(const DImg& src, const QList<QRectF>& rects)                   const;
-    QList<QImage> getDetails(const DImg& src, const QList<FaceTagsIface>& faces)            const;
-    QList<QImage> getThumbnails(const QString& filePath, const QList<FaceTagsIface>& faces) const;
+    ThumbnailImageCatcher* thumbnailCatcher()                                                const;
+    QList<QImage*> getDetails(const DImg& src, const QList<QRectF>& rects)                   const;
+    QList<QImage*> getDetails(const DImg& src, const QList<FaceTagsIface>& faces)            const;
+    QList<QImage*> getThumbnails(const QString& filePath, const QList<FaceTagsIface>& faces) const;
 
 protected:
 

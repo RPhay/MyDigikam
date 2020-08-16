@@ -70,7 +70,7 @@ public:
     QGraphicsPixmapItem* lastPhotoItem;
     QList<FaceItem*>     faceitems;
 
-    FacialRecognitionWrapper  database;
+    FacialRecognitionWrapper database;
     FaceDetector*        detector;
     QImage               currentPhoto;
     double               scale;
@@ -248,7 +248,11 @@ void MainWindow::slotRecognise()
     {
         QElapsedTimer timer;
         timer.start();
-        Identity identity = d->database.recognizeFace(d->currentPhoto.copy(item->originalRect()));
+
+        QImage* face = new QImage();
+        *face = d->currentPhoto.copy(item->originalRect());
+
+        Identity identity = d->database.recognizeFace(face);
         int elapsed       = timer.elapsed();
 
         qDebug() << "Recognition took " << elapsed << " for Face #" << i+1;
@@ -301,7 +305,10 @@ void MainWindow::slotUpdateDatabase()
                 qDebug() << "Found existing identity ID " << identity.id() << " from database for name " << name;
             }
 
-            d->database.train(identity, d->currentPhoto.copy(item->originalRect()), QString::fromLatin1("test application"));
+            QImage* face = new QImage();
+            *face        = d->currentPhoto.copy(item->originalRect());
+
+            d->database.train(identity, face, QString::fromLatin1("test application"));
 
             int elapsed = timer.elapsed();
 

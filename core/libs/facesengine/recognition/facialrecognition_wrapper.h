@@ -155,9 +155,9 @@ public:
      * If you want good performance and/or a more versatile implementation, be sure to
      * implement your own TrainingDataProvider and use one of the above functions.
      */
-    void train(const Identity& identityToBeTrained, const QImage& image,
+    void train(const Identity& identityToBeTrained, QImage* image,
                const QString& trainingContext);
-    void train(const Identity& identityToBeTrained, const QList<QImage>& images,
+    void train(const Identity& identityToBeTrained, const QList<QImage*>& images,
                const QString& trainingContext);
 
     /**
@@ -188,8 +188,8 @@ public:
      * a recognized identity or the null identity is returned.
      */
     QList<Identity> recognizeFaces(ImageListProvider* const images);
-    QList<Identity> recognizeFaces(const QList<QImage>& images);
-    Identity        recognizeFace(const QImage& image);
+    QList<Identity> recognizeFaces(const QList<QImage*>& images);
+    Identity        recognizeFace(QImage* image);
 
 private:
 

@@ -54,13 +54,13 @@ QStringList toPaths(char** argv, int startIndex, int argc)
     return files;
 }
 
-QList<QImage> toImages(const QStringList& paths)
+QList<QImage*> toImages(const QStringList& paths)
 {
-    QList<QImage> images;
+    QList<QImage*> images;
 
     foreach (const QString& path, paths)
     {
-        images << QImage(path);
+        images << new QImage(path);
     }
 
     return images;
@@ -86,8 +86,8 @@ int main(int argc, char** argv)
 
     if (QString::fromLatin1(argv[1]) == QString::fromLatin1("identify"))
     {
-        QStringList paths    = toPaths(argv, 2, argc);
-        QList<QImage> images = toImages(paths);
+        QStringList paths     = toPaths(argv, 2, argc);
+        QList<QImage*> images = toImages(paths);
 
         QElapsedTimer timer;
         timer.start();
@@ -109,9 +109,9 @@ int main(int argc, char** argv)
         QString name = QString::fromLocal8Bit(argv[2]);
         qDebug() << "Training " << name;
 
-        QStringList paths    = toPaths(argv, 3, argc);
-        QList<QImage> images = toImages(paths);
-        Identity identity    = recognizer.findIdentity(QString::fromLatin1("name"), name);
+        QStringList paths     = toPaths(argv, 3, argc);
+        QList<QImage*> images = toImages(paths);
+        Identity identity     = recognizer.findIdentity(QString::fromLatin1("name"), name);
 
         if (identity.isNull())
         {
@@ -221,7 +221,7 @@ int main(int argc, char** argv)
                 qDebug() << "Identity management failed for ORL person " << it.key();
             }
 
-            QList<QImage> images = toImages(it.value());
+            QList<QImage*> images = toImages(it.value());
             qDebug() << "Training ORL directory " << it.key();
             recognizer.train(identity, images, trainingContext);
             totalTrained        += images.size();
@@ -239,9 +239,9 @@ int main(int argc, char** argv)
         for (QMap<int, QStringList>::const_iterator it = recognitionImages.constBegin() ;
              it != recognitionImages.constEnd() ; ++it)
         {
-            Identity identity       = idMap.value(it.key());
-            QList<QImage> images    = toImages(it.value());
-            QList<Identity> results = recognizer.recognizeFaces(images);
+            Identity identity        = idMap.value(it.key());
+            QList<QImage*> images    = toImages(it.value());
+            QList<Identity> results  = recognizer.recognizeFaces(images);
 
             qDebug() << "Result for " << it.value().first()
                      << " is identity " << results.first().id();

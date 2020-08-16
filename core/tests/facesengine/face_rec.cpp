@@ -169,15 +169,18 @@ QImage retrieveFace(const DImg& image, const QList<QRectF>& rects)
     return face;
 }
 
-QList<QImage> retrieveFaces(const QList<QImage>& images, const QList<QRectF>& rects)
+QList<QImage*> retrieveFaces(const QList<QImage>& images, const QList<QRectF>& rects)
 {
-    QList<QImage> faces;
+    QList<QImage*> faces;
     unsigned index = 0;
 
     foreach (const QRectF& rect, rects)
     {
         DImg temp(images.at(index));
-        faces << temp.copyQImage(rect);
+        QImage* croppedFace = new QImage();
+        *croppedFace        = temp.copyQImage(rect);
+
+        faces << croppedFace;
         ++index;
     }
 
@@ -396,7 +399,7 @@ int main(int argc, char* argv[])
             }
         }
 
-        QList<QImage> faces = retrieveFaces(detectedFaces, bboxes);
+        QList<QImage*> faces = retrieveFaces(detectedFaces, bboxes);
 
         // Start timing for benchmark training
 
@@ -444,7 +447,7 @@ int main(int argc, char* argv[])
             imagePaths << imagePath;
         }
 
-        QList<QImage> faces = retrieveFaces(detectedFaces, bboxes);
+        QList<QImage*> faces = retrieveFaces(detectedFaces, bboxes);
 
         // Start timing for benchmark testing
 

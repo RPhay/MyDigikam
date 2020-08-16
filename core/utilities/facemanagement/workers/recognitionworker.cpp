@@ -50,8 +50,8 @@ RecognitionWorker::~RecognitionWorker()
 // TODO: investigate this method
 void RecognitionWorker::process(FacePipelineExtendedPackage::Ptr package)
 {
-    FaceUtils     utils;
-    QList<QImage> images;
+    FaceUtils      utils;
+    QList<QImage*> images;
 
     if (package->processFlags & FacePipelinePackage::ProcessedByDetector)
     {
@@ -64,6 +64,7 @@ void RecognitionWorker::process(FacePipelineExtendedPackage::Ptr package)
         images = imageRetriever.getThumbnails(package->filePath, package->databaseFaces.toFaceTagsIfaceList());
     }
 
+    // NOTE: cropped faces will be deleted by training provider
     package->recognitionResults  = recognizer.recognizeFaces(images);
     package->processFlags       |= FacePipelinePackage::ProcessedByRecognizer;
 

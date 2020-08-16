@@ -109,38 +109,11 @@ Benchmark::Benchmark()
     m_recognizer->clearAllTraining();
     m_recognizer->deleteIdentities(m_recognizer->allIdentities());
 
-    recognizerTest = new OpenCVDNNFaceRecognizer(OpenCVDNNFaceRecognizer::Tree);
+    //recognizerTest = new OpenCVDNNFaceRecognizer(OpenCVDNNFaceRecognizer::Tree);
 }
 
 Benchmark::~Benchmark()
 {
-    for (QHash<QString, QList<QImage*> >::iterator vector  = m_trainSet.begin();
-                                                   vector != m_trainSet.end();
-                                                 ++vector)
-    {
-
-        QList<QImage*>::iterator img = vector.value().begin();
-
-        while (img != vector.value().end())
-        {
-            delete *img;
-            img = vector.value().erase(img);
-        }
-    }
-
-    for (QHash<QString, QList<QImage*> >::iterator vector  = m_testSet.begin();
-                                                   vector != m_testSet.end();
-                                                 ++vector)
-    {
-        QList<QImage*>::iterator img = vector.value().begin();
-
-        while (img != vector.value().end())
-        {
-            delete *img;
-            img = vector.value().erase(img);
-        }
-    }
-
     delete m_detector;
     delete m_recognizer;
     delete recognizerTest;
@@ -165,7 +138,9 @@ void Benchmark::registerTrainingSet()
 
         qDebug() << "add new identity to database" << newIdentity.id();
 
-        recognizerTest->train(iter.value(), newIdentity.id(), QLatin1String("train face classifier"));
+        m_recognizer->train(newIdentity, iter.value(), QLatin1String("train face classifier"));
+
+        //recognizerTest->train(iter.value(), newIdentity.id(), QLatin1String("train face classifier"));
 
         m_trainSize += iter.value().size();
     }
@@ -187,18 +162,20 @@ void Benchmark::verifyTestSet()
                                                    iter != m_testSet.end();
                                                  ++iter)
     {
-        QVector<int> ids = recognizerTest->recognize(iter.value());
+        //QVector<int> ids = recognizerTest->recognize(iter.value());
 
-        for (int i = 0; i < ids.size(); ++i)
+        QList<Identity> predictions = m_recognizer->recognizeFaces(iter.value());
+
+        for (int i = 0; i < predictions.size(); ++i)
         {
-            Identity prediction = m_recognizer->identity(ids[i]);
+            //Identity prediction = m_recognizer->identity(ids[i]);
 
-            if (prediction.isNull() && m_trainSet.contains(iter.key()))
+            if (predictions[i].isNull() && m_trainSet.contains(iter.key()))
             {
                 // cannot recognize when label is already register
                 ++nbNotRecognize;
             }
-            else if (prediction.attribute(QLatin1String("fullName")) != iter.key())
+            else if (predictions[i].attribute(QLatin1String("fullName")) != iter.key())
             {
                 // wrong label
                 ++nbWrongLabel;

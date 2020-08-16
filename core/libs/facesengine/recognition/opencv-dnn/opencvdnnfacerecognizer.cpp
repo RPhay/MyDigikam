@@ -123,12 +123,6 @@ public:
           ids(ids),
           d(d)
     {
-/*
-        for (int i = 0; i < images.size(); ++i)
-        {
-            preprocessedFaces.push_back(OpenCVDNNFaceRecognizer::prepareForRecognition(*images[i]).clone());
-        }
-*/
     }
 
     void operator()(const cv::Range& range) const
@@ -163,7 +157,6 @@ public:
 
 private:
     const QList<QImage*>& images;
-    //std::vector<cv::Mat> preprocessedFaces;
     QVector<int>& ids;
     OpenCVDNNFaceRecognizer::Private* const d;
 };
@@ -181,12 +174,6 @@ public:
           context(context),
           d(d)
     {
-        /*
-        for (int i = 0; i < images.size(); ++i)
-        {
-            preprocessedFaces.push_back(OpenCVDNNFaceRecognizer::prepareForRecognition(*images[i]).clone());
-        }
-        */
     }
 
     void operator()(const cv::Range& range) const
@@ -204,7 +191,6 @@ public:
 
 private:
     const QList<QImage*>& images;
-    //std::vector<cv::Mat> preprocessedFaces;
     const int& id;
     const QString& context;
 

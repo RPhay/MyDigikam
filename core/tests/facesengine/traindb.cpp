@@ -55,8 +55,8 @@ public:
 
     virtual void run()
     {
-        QImage image(256, 256, QImage::Format_ARGB32);
-        image.fill(Qt::red);
+        QImage* image = new QImage(256, 256, QImage::Format_ARGB32);
+        image->fill(Qt::red);
 
         Identity identity;
 
@@ -120,8 +120,8 @@ int main(int argc, char** argv)
 
     // Process recognition in database.
 
-    QImage image(256, 256, QImage::Format_ARGB32);
-    QList<Identity> list = db.recognizeFaces(QList<QImage>() << image);
+    QImage* image = new QImage(256, 256, QImage::Format_ARGB32);
+    QList<Identity> list = db.recognizeFaces(QList<QImage*>() << image);
 
     if (!list.isEmpty())
     {

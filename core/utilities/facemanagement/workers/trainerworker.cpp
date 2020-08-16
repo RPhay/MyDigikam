@@ -112,7 +112,7 @@ void TrainerWorker::process(FacePipelineExtendedPackage::Ptr package)
             dbFace.setType(FaceTagsIface::FaceForTraining);
             toTrain << dbFace;
 
-            Identity identity    = utils.identityForTag(dbFace.tagId(), recognizer);
+            Identity identity = utils.identityForTag(dbFace.tagId(), recognizer);
 
             identities  << identity.id();
 
@@ -125,7 +125,7 @@ void TrainerWorker::process(FacePipelineExtendedPackage::Ptr package)
 
     if (!toTrain.isEmpty())
     {
-        QList<QImage> images;
+        QList<QImage*> images;
 
         if (package->image.isNull())
         {
@@ -145,6 +145,7 @@ void TrainerWorker::process(FacePipelineExtendedPackage::Ptr package)
             provider.imagesToTrain[identities[i]].list << images[i];
         }
 
+        // NOTE: cropped faces will be deleted by training provider
         recognizer.train(identitySet, &provider, QLatin1String("digikam"));
     }
 

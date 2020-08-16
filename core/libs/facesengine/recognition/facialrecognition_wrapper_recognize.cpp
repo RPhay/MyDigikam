@@ -40,58 +40,40 @@ QList<Identity> FacialRecognitionWrapper::recognizeFaces(ImageListProvider* cons
 
     QMutexLocker lock(&d->mutex);
 
-    std::function<Identity(QImage&)> recognizeIdentity = [this](QImage& image)
+    QVector<int> ids;
+    try
     {
-        int id = -1;
+        ids = d->recognizer->recognize(images->images());
+    }
+    catch (cv::Exception& e)
+    {
+        qCCritical(DIGIKAM_FACESENGINE_LOG) << "cv::Exception:" << e.what();
+    }
+    catch (...)
+    {
+        qCCritical(DIGIKAM_FACESENGINE_LOG) << "Default exception from OpenCV";
+    }
 
-        try
-        {
-            id = d->recognizer->recognize(&image);
-
-            qDebug() << "predicted id" << id;
-        }
-        catch (cv::Exception& e)
-        {
-            qCCritical(DIGIKAM_FACESENGINE_LOG) << "cv::Exception:" << e.what();
-        }
-        catch (...)
-        {
-            qCCritical(DIGIKAM_FACESENGINE_LOG) << "Default exception from OpenCV";
-        }
-
-        if (id == -1)
-        {
-            return Identity();
-        }
-        else
-        {
-            return d->identityCache.value(id);
-        }
-    };
-
-    QList<QImage> trainImages = images->images();
-
-    // TODO parallelize
     QList<Identity> results;
 
-    for (int i = 0; i < trainImages.size(); ++i)
+    for (int i = 0; i < ids.size(); ++i)
     {
-        results << recognizeIdentity(trainImages[i]);
+        results << d->identityCache.value(ids.at(i));
     }
 
     return results;
 }
 
-QList<Identity> FacialRecognitionWrapper::recognizeFaces(const QList<QImage>& images)
+QList<Identity> FacialRecognitionWrapper::recognizeFaces(const QList<QImage*>& images)
 {
     QListImageListProvider provider(images);
 
     return recognizeFaces(&provider);
 }
 
-Identity FacialRecognitionWrapper::recognizeFace(const QImage& image)
+Identity FacialRecognitionWrapper::recognizeFace(QImage* image)
 {
-    QList<Identity> result = recognizeFaces(QList<QImage>() << image);
+    QList<Identity> result = recognizeFaces(QList<QImage*>() << image);
 
     if (result.isEmpty())
     {

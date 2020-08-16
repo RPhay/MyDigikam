@@ -32,10 +32,21 @@ ImageListProvider::~ImageListProvider()
 
 // ----------------------------------------------------------------------------------------
 
-QListImageListProvider::QListImageListProvider(const QList<QImage>& lst)
+QListImageListProvider::QListImageListProvider(const QList<QImage*>& lst)
     : list(lst),
       it(list.constBegin())
 {
+}
+
+QListImageListProvider::~QListImageListProvider()
+{
+    QList<QImage*>::iterator img = list.begin();
+
+    while (img != list.end())
+    {
+        delete *img;
+        img = list.erase(img);
+    }
 }
 
 QListImageListProvider::QListImageListProvider()
@@ -63,12 +74,12 @@ void QListImageListProvider::reset()
     it = list.constBegin();
 }
 
-QImage QListImageListProvider::image()
+QImage* QListImageListProvider::image()
 {
     return *it;
 }
 
-QList<QImage> QListImageListProvider::images()
+QList<QImage*> QListImageListProvider::images()
 {
     return list;
 }
@@ -90,14 +101,14 @@ void EmptyImageListProvider::proceed(int steps)
     Q_UNUSED(steps)
 }
 
-QImage EmptyImageListProvider::image()
+QImage* EmptyImageListProvider::image()
 {
-    return QImage();
+    return nullptr;
 }
 
-QList<QImage> EmptyImageListProvider::images()
+QList<QImage*> EmptyImageListProvider::images()
 {
-    return QList<QImage>();
+    return QList<QImage*>();
 }
 
 // ----------------------------------------------------------------------------------------

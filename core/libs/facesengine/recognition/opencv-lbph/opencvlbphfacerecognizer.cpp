@@ -136,11 +136,11 @@ cv::Mat OpenCVLBPHFaceRecognizer::prepareForRecognition(const QImage& inputImage
     return cvImage;
 }
 
-int OpenCVLBPHFaceRecognizer::recognize(const QImage& inputImage)
+int OpenCVLBPHFaceRecognizer::recognize(QImage* inputImage)
 {
     int predictedLabel = -1;
     double confidence  = 0;
-    d->lbph()->predict(prepareForRecognition(inputImage), predictedLabel, confidence);
+    d->lbph()->predict(prepareForRecognition(*inputImage), predictedLabel, confidence);
     qCDebug(DIGIKAM_FACESENGINE_LOG) << predictedLabel << confidence;
 
     if (confidence > d->m_threshold)
@@ -151,7 +151,19 @@ int OpenCVLBPHFaceRecognizer::recognize(const QImage& inputImage)
     return predictedLabel;
 }
 
-void OpenCVLBPHFaceRecognizer::train(const QList<QImage>& images,
+QVector<int> OpenCVLBPHFaceRecognizer::recognize(const QList<QImage*>& inputImages)
+{
+    QVector<int> predictions;
+
+    for (int i = 0; i < inputImages.size(); ++i)
+    {
+        predictions << recognize(inputImages[i]);
+    }
+
+    return predictions;
+}
+
+void OpenCVLBPHFaceRecognizer::train(const QList<QImage*>& images,
                                      const int label,
                                      const QString& context)
 {
@@ -160,14 +172,12 @@ void OpenCVLBPHFaceRecognizer::train(const QList<QImage>& images,
 
     preprocessedImages.reserve(images.size());
 
-    for (QList<QImage>::const_iterator image  = images.begin();
-                                       image != images.end();
-                                     ++image)
+    for (int i = 0; i < images.size(); ++i)
     {
         try
         {
             labels.push_back(label);
-            preprocessedImages.push_back(prepareForRecognition(*image));
+            preprocessedImages.push_back(prepareForRecognition(*images[i]));
         }
         catch (cv::Exception& e)
         {

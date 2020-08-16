@@ -48,11 +48,11 @@ public:
 
     virtual ~ImageListProvider();
 
-    virtual int           size() const           = 0;
-    virtual bool          atEnd() const          = 0;
-    virtual void          proceed(int steps = 1) = 0;
-    virtual QImage        image()                = 0;
-    virtual QList<QImage> images()               = 0;
+    virtual int            size() const           = 0;
+    virtual bool           atEnd() const          = 0;
+    virtual void           proceed(int steps = 1) = 0;
+    virtual QImage*        image()                = 0;
+    virtual QList<QImage*> images()               = 0;
 };
 
 // ----------------------------------------------------------------------------------------
@@ -64,23 +64,25 @@ class DIGIKAM_EXPORT QListImageListProvider : public ImageListProvider
 {
 public:
 
-    explicit QListImageListProvider(const QList<QImage>& lst);
+    explicit QListImageListProvider(const QList<QImage*>& lst);
     QListImageListProvider();
+
+    ~QListImageListProvider();
 
     void reset();
 
 public:
 
-    virtual int           size()  const          override;
-    virtual bool          atEnd() const          override;
-    virtual void          proceed(int steps = 1) override;
-    virtual QImage        image()                override;
-    virtual QList<QImage> images()               override;
+    virtual int            size()  const          override;
+    virtual bool           atEnd() const          override;
+    virtual void           proceed(int steps = 1) override;
+    virtual QImage*        image()                override;
+    virtual QList<QImage*> images()               override;
 
 public:
 
-    QList<QImage>                 list;
-    QList<QImage>::const_iterator it;
+    QList<QImage*>                 list;
+    QList<QImage*>::const_iterator it;
 };
 
 // ----------------------------------------------------------------------------------------
@@ -89,11 +91,11 @@ class DIGIKAM_EXPORT EmptyImageListProvider : public ImageListProvider
 {
 public:
 
-    virtual int    size()  const          override;
-    virtual bool   atEnd() const          override;
-    virtual void   proceed(int steps = 1) override;
-    virtual QImage image()                override;
-    virtual QList<QImage> images()        override;
+    virtual int     size()  const          override;
+    virtual bool    atEnd() const          override;
+    virtual void    proceed(int steps = 1) override;
+    virtual QImage* image()                override;
+    virtual QList<QImage*> images()        override;
 };
 
 // ----------------------------------------------------------------------------------------

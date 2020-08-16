@@ -62,12 +62,19 @@ public:
      * Returns the identity id.
      * If the identity cannot be recognized, returns -1.
      */
-    int recognize(const QImage& inputImage);
+    int recognize(QImage* inputImage);
+
+    /**
+     * Try to recognize a list of given images.
+     * Returns a list of identity ids.
+     * If an identity cannot be recognized, returns -1.
+     */
+    QVector<int> recognize(const QList<QImage*>& inputImages);
 
     /**
      * Trains the given images, representing faces of the given matched identities.
      */
-    void train(const QList<QImage>& images,
+    void train(const QList<QImage*>& images,
                const int label,
                const QString& context);
 
