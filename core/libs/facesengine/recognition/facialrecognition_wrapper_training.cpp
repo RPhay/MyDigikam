@@ -43,7 +43,6 @@ void FacialRecognitionWrapper::Private::trainIdentityBatch(const QList<Identity>
 
         try
         {
-            // TODO: correct recognizer argument in other recognier
             recognizer->train(images, identity.id(), trainingContext);
         }
         catch (cv::Exception& e)

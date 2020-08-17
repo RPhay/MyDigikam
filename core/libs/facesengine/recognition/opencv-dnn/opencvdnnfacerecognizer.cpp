@@ -47,11 +47,15 @@ public:
 
     Private(Classifier method)
         : method(method),
-          extractor(new DNNFaceExtractor),
           tree(nullptr),
           kNeighbors(5),
           newDataAdded(true)
     {
+        for (int i = 0; i < 10; ++i)
+        {
+            extractors << new DNNFaceExtractor;
+        }
+
         switch (method)
         {
             case SVM:
@@ -75,7 +79,14 @@ public:
 
     ~Private()
     {
-        delete extractor;
+        QVector<DNNFaceExtractor*>::iterator extractor = extractors.begin();
+
+        while (extractor != extractors.end())
+        {
+            delete *extractor;
+            extractor = extractors.erase(extractor);
+        }
+
         delete tree;
     }
 
@@ -96,7 +107,7 @@ public:
 
     Classifier method;
 
-    DNNFaceExtractor* extractor;
+    QVector<DNNFaceExtractor*> extractors;
     cv::Ptr<cv::ml::SVM> svm;
     cv::Ptr<cv::ml::KNearest> knn;
 
@@ -130,7 +141,7 @@ public:
         {
             int id = -1;
 
-            cv::Mat faceEmbedding = d->extractor->getFaceEmbedding(OpenCVDNNFaceRecognizer::prepareForRecognition(*images[i]));
+            cv::Mat faceEmbedding = d->extractors[i%(d->extractors.size())]->getFaceEmbedding(OpenCVDNNFaceRecognizer::prepareForRecognition(*images[i]));
 
             switch (d->method)
             {
@@ -179,7 +190,7 @@ public:
     {
         for(int i = range.start; i < range.end; ++i)
         {
-            cv::Mat faceEmbedding = d->extractor->getFaceEmbedding(OpenCVDNNFaceRecognizer::prepareForRecognition(*images[i]));
+            cv::Mat faceEmbedding = d->extractors[i%(d->extractors.size())]->getFaceEmbedding(OpenCVDNNFaceRecognizer::prepareForRecognition(*images[i]));
 
             if (!d->insertData(faceEmbedding, id, context))
             {
@@ -446,7 +457,7 @@ int OpenCVDNNFaceRecognizer::recognize(QImage* inputImage)
 {
     int id = -1;
 
-    cv::Mat faceEmbedding = d->extractor->getFaceEmbedding(prepareForRecognition(*inputImage));
+    cv::Mat faceEmbedding = d->extractors[0]->getFaceEmbedding(prepareForRecognition(*inputImage));
 
     switch (d->method)
     {
@@ -495,7 +506,7 @@ void OpenCVDNNFaceRecognizer::clearTraining(const QList<int>& idsToClear, const 
 
 bool OpenCVDNNFaceRecognizer::registerTrainingData(const cv::Mat& preprocessedImage, int label)
 {
-    cv::Mat faceEmbedding = d->extractor->getFaceEmbedding(preprocessedImage);
+    cv::Mat faceEmbedding = d->extractors[0]->getFaceEmbedding(preprocessedImage);
 
     if(d->method == Tree)
     {
@@ -518,7 +529,7 @@ int OpenCVDNNFaceRecognizer::verifyTestData(const cv::Mat& preprocessedImage)
 
     if(d->method == Tree)
     {
-        id = d->predictKDTree(d->extractor->getFaceEmbedding(preprocessedImage), 3);
+        id = d->predictKDTree(d->extractors[0]->getFaceEmbedding(preprocessedImage), 3);
     }
 
     return id;

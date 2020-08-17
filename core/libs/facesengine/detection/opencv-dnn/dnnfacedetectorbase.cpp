@@ -74,7 +74,7 @@ void DNNFaceDetectorBase::selectBbox(const cv::Size& paddedSize,
                                      std::vector<float>& goodConfidences,
                                      std::vector<cv::Rect>& goodBoxes,
                                      std::vector<float>& doubtConfidences,
-                                     std::vector<cv::Rect>& doubtBoxes)
+                                     std::vector<cv::Rect>& doubtBoxes) const
 {
     int width        = right  - left;
     int height       = bottom - top;
@@ -119,7 +119,7 @@ void DNNFaceDetectorBase::selectBbox(const cv::Size& paddedSize,
     }
 }
 
-void DNNFaceDetectorBase::correctBbox(cv::Rect& bbox, const cv::Size& paddedSize)
+void DNNFaceDetectorBase::correctBbox(cv::Rect& bbox, const cv::Size& paddedSize) const
 {
     // TODO: Should the box be cropped to square or not???
 

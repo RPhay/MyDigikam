@@ -74,7 +74,7 @@ void DNNFaceDetectorSSD::detectFaces(const cv::Mat& inputImage,
 
 void DNNFaceDetectorSSD::postprocess(cv::Mat detection,
                                      const cv::Size& paddedSize,
-                                     std::vector<cv::Rect>& detectedBboxes)
+                                     std::vector<cv::Rect>& detectedBboxes) const
 {
     std::vector<float> goodConfidences, doubtConfidences, confidences;
     std::vector<cv::Rect> goodBoxes, doubtBoxes, boxes;
@@ -136,7 +136,6 @@ void DNNFaceDetectorSSD::postprocess(cv::Mat detection,
     {
         cv::Rect bbox = boxes[indices[i]];
         correctBbox(bbox, paddedSize);
-        //qDebug() << "box" << indices[i] << "(" << bbox.x << ", " << bbox.y << ") with confidence" << confidences[indices[i]];
         detectedBboxes.push_back(cv::Rect(bbox.x, bbox.y, bbox.width, bbox.height));
     }
 }

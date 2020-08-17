@@ -60,10 +60,10 @@ protected:
                     int top,
                     int bottom,
                     std::vector<float>& goodConfidences, std::vector<cv::Rect>& goodBoxes,
-                    std::vector<float>& doubtConfidences, std::vector<cv::Rect>& doubtBoxes);
+                    std::vector<float>& doubtConfidences, std::vector<cv::Rect>& doubtBoxes) const;
 
     void correctBbox(cv::Rect& bbox,
-                     const cv::Size& paddedSize);
+                     const cv::Size& paddedSize) const;
 
 public:
 

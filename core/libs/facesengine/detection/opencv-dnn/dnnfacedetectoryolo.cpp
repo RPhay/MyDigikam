@@ -97,7 +97,7 @@ void DNNFaceDetectorYOLO::detectFaces(const cv::Mat& inputImage,
 
 void DNNFaceDetectorYOLO::postprocess(const std::vector<cv::Mat>& outs,
                                       const cv::Size& paddedSize,
-                                      std::vector<cv::Rect>& detectedBboxes)
+                                      std::vector<cv::Rect>& detectedBboxes) const
 {
     std::vector<float>    goodConfidences;
     std::vector<float>    doubtConfidences;
@@ -180,7 +180,7 @@ void DNNFaceDetectorYOLO::postprocess(const std::vector<cv::Mat>& outs,
 
 /** Get the names of the output layers
  */
-std::vector<cv::String> DNNFaceDetectorYOLO::getOutputsNames()
+std::vector<cv::String> DNNFaceDetectorYOLO::getOutputsNames() const
 {
     static std::vector<cv::String> names;
 

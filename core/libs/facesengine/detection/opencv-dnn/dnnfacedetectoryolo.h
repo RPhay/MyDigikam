@@ -51,11 +51,11 @@ public:
 
 private:
 
-    std::vector<cv::String> getOutputsNames();
+    std::vector<cv::String> getOutputsNames() const;
 
     void postprocess(const std::vector<cv::Mat>& outs,
                      const cv::Size& paddedSize,
-                     std::vector<cv::Rect>& detectedBboxes);
+                     std::vector<cv::Rect>& detectedBboxes) const;
 };
 
 } // namespace Digikam
