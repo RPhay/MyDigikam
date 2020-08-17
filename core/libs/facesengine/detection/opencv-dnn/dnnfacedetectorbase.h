@@ -29,6 +29,9 @@
 
 #include <vector>
 
+// Qt includes
+#include <QMutex>
+
 // Local includes
 
 #include "digikam_opencv.h"
@@ -77,6 +80,8 @@ protected:
     cv::Size     inputImageSize;
 
     cv::dnn::Net net;
+
+    QMutex       mutex;
 };
 
 } // namespace Digikam

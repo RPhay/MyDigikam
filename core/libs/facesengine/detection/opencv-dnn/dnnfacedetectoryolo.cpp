@@ -80,13 +80,16 @@ void DNNFaceDetectorYOLO::detectFaces(const cv::Mat& inputImage,
     }
 
     cv::Mat inputBlob = cv::dnn::blobFromImage(inputImage, scaleFactor, inputImageSize, meanValToSubtract, true, false);
-    net.setInput(inputBlob);
     std::vector<cv::Mat> outs;
 
-    timer.start();
-    net.forward(outs, getOutputsNames());
-
-    qDebug() << "forward YOLO detection in" << timer.elapsed() << "ms";
+    mutex.lock();
+    {
+        net.setInput(inputBlob);
+        timer.start();
+        net.forward(outs, getOutputsNames());
+        qDebug() << "forward YOLO detection in" << timer.elapsed() << "ms";
+    }
+    mutex.unlock();
 
     timer.start();
 

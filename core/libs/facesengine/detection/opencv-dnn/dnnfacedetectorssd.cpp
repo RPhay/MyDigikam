@@ -65,9 +65,15 @@ void DNNFaceDetectorSSD::detectFaces(const cv::Mat& inputImage,
         return;
     }
 
+    cv::Mat detection;
     cv::Mat inputBlob = cv::dnn::blobFromImage(inputImage, scaleFactor, inputImageSize, meanValToSubtract, true, false);
-    net.setInput(inputBlob);
-    cv::Mat detection = net.forward();
+
+    mutex.lock();
+    {
+        net.setInput(inputBlob);
+        detection = net.forward();
+    }
+    mutex.unlock();
 
     postprocess(detection, paddedSize, detectedBboxes);
 }
