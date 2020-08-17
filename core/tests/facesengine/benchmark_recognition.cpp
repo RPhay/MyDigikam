@@ -85,7 +85,7 @@ private:
     QHash<QString, QList<QImage*> > m_trainSet;
     QHash<QString, QList<QImage*> > m_testSet;
 
-    OpenCVDNNFaceDetector* m_detector;
+    FaceDetector* m_detector;
     FacialRecognitionWrapper*  m_recognizer;
 };
 
@@ -99,7 +99,7 @@ Benchmark::Benchmark()
     DbEngineParameters prm = DbEngineParameters::parametersFromConfig();
     CoreDbAccess::setParameters(prm, CoreDbAccess::MainApplication);
 
-    m_detector   = new OpenCVDNNFaceDetector(DetectorNNModel::SSDMOBILENET);
+    m_detector   = new FaceDetector();
     m_recognizer = new FacialRecognitionWrapper();
 
     m_recognizer->clearAllTraining();
@@ -200,27 +200,7 @@ QImage* Benchmark::detect(const QImage& faceImg)
         return nullptr;
     }
 
-    QList<QRectF> faces;
-
-    try
-    {
-        // NOTE detection with filePath won't work when format is not standard
-        // NOTE unexpected behaviour with detecFaces(const QString&)
-        cv::Size paddedSize(0, 0);
-        cv::Mat cvImage       = m_detector->prepareForDetection(faceImg, paddedSize);
-        QList<QRect> absRects = m_detector->detectFaces(cvImage, paddedSize);
-        faces                 = FaceDetector::toRelativeRects(absRects,
-                                                              QSize(cvImage.cols - 2*paddedSize.width,
-                                                              cvImage.rows - 2*paddedSize.height));
-    }
-    catch (cv::Exception& e)
-    {
-        qWarning() << "cv::Exception:" << e.what();
-    }
-    catch(...)
-    {
-        qWarning() << "Default exception from OpenCV";
-    }
+    QList<QRectF> faces = m_detector->detectFaces(faceImg);
 
     if (faces.isEmpty())
     {
@@ -237,27 +217,7 @@ QImage* Benchmark::detect(const QImage& faceImg)
 
 bool Benchmark::preprocess(QImage* faceImg, cv::Mat& face)
 {
-    QList<QRectF> faces;
-
-    try
-    {
-        // NOTE detection with filePath won't work when format is not standard
-        // NOTE unexpected behaviour with detecFaces(const QString&)
-        cv::Size paddedSize(0, 0);
-        cv::Mat cvImage       = m_detector->prepareForDetection(*faceImg, paddedSize);
-        QList<QRect> absRects = m_detector->detectFaces(cvImage, paddedSize);
-        faces                 = FaceDetector::toRelativeRects(absRects,
-                                                              QSize(cvImage.cols - 2*paddedSize.width,
-                                                              cvImage.rows - 2*paddedSize.height));
-    }
-    catch (cv::Exception& e)
-    {
-        qWarning() << "cv::Exception:" << e.what();
-    }
-    catch(...)
-    {
-        qWarning() << "Default exception from OpenCV";
-    }
+    QList<QRectF> faces = m_detector->detectFaces(*faceImg);
 
     if (faces.isEmpty())
     {
@@ -330,6 +290,8 @@ void Benchmark::splitData(const QDir& dataDir, float splitRatio)
             std::swap(*(it++), *(it1));
          }
 
+        QString faceDir = QLatin1String("./cropped_face/");
+
         // split train/test
         for (int i = 0; i < filesInfo.size(); ++i)
         {
@@ -341,6 +303,7 @@ void Benchmark::splitData(const QDir& dataDir, float splitRatio)
             {
                 if (croppedFace && !croppedFace->isNull())
                 {
+                    croppedFace->save(faceDir + label + QLatin1String("_") + QString::number(i) + QLatin1String(".png"), "PNG");
                     m_trainSet[label].append(croppedFace);
                     ++nbData;
                 }
@@ -349,6 +312,7 @@ void Benchmark::splitData(const QDir& dataDir, float splitRatio)
             {
                 if (croppedFace && !croppedFace->isNull())
                 {
+                    croppedFace->save(faceDir + label + QLatin1String("_") + QString::number(i) + QLatin1String(".png"), "PNG");
                     m_testSet[label].append(croppedFace);
                     ++nbData;
                 }
@@ -571,8 +535,8 @@ int main(int argc, char** argv)
     //benchmark.verifyKNearestDb();
 
     benchmark.fetchData();
-    benchmark.registerTrainingSet();
-    benchmark.verifyTestSet();
+    //benchmark.registerTrainingSet();
+    //benchmark.verifyTestSet();
 
     return 0;
 }

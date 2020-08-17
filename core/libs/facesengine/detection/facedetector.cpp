@@ -194,7 +194,7 @@ FaceDetector& FaceDetector::operator=(const FaceDetector& other)
 
 FaceDetector::~FaceDetector()
 {
-    // TODO Why Not delete d ???
+    // TODO: implement reference counter
 }
 
 QString FaceDetector::backendIdentifier() const
