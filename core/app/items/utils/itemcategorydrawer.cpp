@@ -359,15 +359,16 @@ void ItemCategoryDrawer::textForSAlbum(SAlbum* salbum, int count, QString* heade
 
 void ItemCategoryDrawer::textForDAlbum(DAlbum* album, int count, QString* header, QString* subLine) const
 {
+    QString year = QLocale().toString(album->date(), QLatin1String("yyyy"));
+
     if (album->range() == DAlbum::Month)
     {
         *header = i18nc("Month String - Year String", "%1 %2",
-                        QLocale().toString(album->date(), QLatin1String("MMMM")),
-                        QLocale().toString(album->date(), QLatin1String("yyyy")));
+                        QLocale().standaloneMonthName(album->date().month(), QLocale::LongFormat), year);
     }
     else
     {
-        *header = QLocale().toString(album->date(), QLatin1String("yyyy"));
+        *header = year;
     }
 
     *subLine = i18np("1 Item", "%1 Items", count);
