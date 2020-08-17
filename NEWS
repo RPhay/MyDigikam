@@ -225,4 +225,5 @@ BUGFIXES:
 215 ==> 425329 - Tags in Tags tab, and keywords in Metadata, don't match.
 216 ==> 418829 - Thumbnails of moved images not visible.
 217 ==> 425423 - White screen at beginning of Presentation should be avoided.
-218 ==> 
+218 ==> 425424 - Allow seting max resolution for export to filesystems.
+219 ==> 
