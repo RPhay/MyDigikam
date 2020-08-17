@@ -133,6 +133,7 @@ public:
           ids(ids),
           d(d)
     {
+        ids.resize(images.size());
     }
 
     void operator()(const cv::Range& range) const
@@ -161,7 +162,7 @@ public:
                     qCWarning(DIGIKAM_FACEDB_LOG) << "Not recognized classifying method";
             }
 
-            ids << id;
+            ids[i] = id;
         }
     }
 
@@ -171,7 +172,7 @@ private:
     OpenCVDNNFaceRecognizer::Private* const d;
 };
 
-class OpenCVDNNFaceRecognizer::Private::ParallelTrainer
+class OpenCVDNNFaceRecognizer::Private::ParallelTrainer: public cv::ParallelLoopBody
 {
 public:
 

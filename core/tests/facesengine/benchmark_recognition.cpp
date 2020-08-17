@@ -69,7 +69,10 @@ public:
 
 private:
 
-    QImage* detect(const QImage& faceImg);
+    QImage* detect(const QImage& image);
+
+    QList<QImage*> detect(const QList<QImage*>& images);
+
     bool preprocess(QImage* faceImg, cv::Mat& face);
 
 public:
@@ -87,6 +90,42 @@ private:
 
     FaceDetector* m_detector;
     FacialRecognitionWrapper*  m_recognizer;
+};
+
+// NOTE: dnn face detector can be parallelized but it takes longer than a single thread
+class ParallelDetector: public cv::ParallelLoopBody
+{
+public:
+
+    ParallelDetector(FaceDetector* detector,
+                     const QList<QImage*>& images,
+                     QVector<QList<QRectF> >& rects)
+        : m_detector(detector),
+          m_images(images),
+          m_rects(rects)
+    {
+        m_rects.resize(images.size());
+    }
+
+    void operator()(const cv::Range& range) const
+    {
+        for(int i = range.start; i < range.end; ++i)
+        {
+            if (m_images[i]->isNull())
+            {
+                m_rects[i] = QList<QRectF>();
+            }
+            else
+            {
+                m_rects[i] = m_detector->detectFaces(*m_images[i]);
+            }
+        }
+    }
+
+private:
+    FaceDetector*            m_detector;
+    const QList<QImage*>&    m_images;
+    QVector<QList<QRectF> >& m_rects;
 };
 
 Benchmark::Benchmark()
@@ -215,6 +254,33 @@ QImage* Benchmark::detect(const QImage& faceImg)
     return croppedFace;
 }
 
+QList<QImage*> Benchmark::detect(const QList<QImage*>& images)
+{
+    QVector<QList<QRectF> > faces;
+
+    cv::parallel_for_(cv::Range(0, images.size()), ParallelDetector(m_detector, images, faces));
+
+    QList<QImage*> croppedFaces;
+
+    for (int i = 0; i < faces.size(); ++i)
+    {
+        if (faces[i].isEmpty())
+        {
+            croppedFaces << nullptr;
+        }
+        else
+        {
+            QRect rect          = FaceDetector::toAbsoluteRect(faces[i][0], images[i]->size());
+            QImage* croppedFace = new QImage();
+            *croppedFace        = images[i]->copy(rect);
+
+            croppedFaces << croppedFace;
+        }
+    }
+
+    return croppedFaces;
+}
+
 bool Benchmark::preprocess(QImage* faceImg, cv::Mat& face)
 {
     QList<QRectF> faces = m_detector->detectFaces(*faceImg);
@@ -291,19 +357,58 @@ void Benchmark::splitData(const QDir& dataDir, float splitRatio)
          }
 
         QString faceDir = QLatin1String("./cropped_face/");
+/*
+        QList<QImage*> images;
+
+        for (int i = 0; i < filesInfo.size(); ++i)
+        {
+            images << new QImage(filesInfo[i].absoluteFilePath());
+        }
+
+        QList<QImage*> croppedFaces = detect(images);
 
         // split train/test
+        for (int i = 0; i < croppedFaces.size(); ++i)
+        {
+            if (croppedFaces[i])
+            {
+                croppedFaces[i]->save(faceDir + label + QLatin1String("_") + QString::number(i) + QLatin1String(".png"), "PNG");
+            }
+
+            if (i < filesInfo.size() * splitRatio)
+            {
+                if (croppedFaces[i] && !croppedFaces[i]->isNull())
+                {
+                    m_trainSet[label].append(croppedFaces[i]);
+                    ++nbData;
+                }
+            }
+            else
+            {
+                if (croppedFaces[i] && !croppedFaces[i]->isNull())
+                {
+                    m_testSet[label].append(croppedFaces[i]);
+                    ++nbData;
+                }
+            }
+        }
+*/
         for (int i = 0; i < filesInfo.size(); ++i)
         {
             QImage img(filesInfo[i].absoluteFilePath());
 
             QImage* croppedFace = detect(img);
 
+            // Save cropped face for detection testing
+            if (croppedFace)
+            {
+                //croppedFace->save(faceDir + label + QLatin1String("_") + QString::number(i) + QLatin1String(".png"), "PNG");
+            }
+
             if (i < filesInfo.size() * splitRatio)
             {
                 if (croppedFace && !croppedFace->isNull())
                 {
-                    croppedFace->save(faceDir + label + QLatin1String("_") + QString::number(i) + QLatin1String(".png"), "PNG");
                     m_trainSet[label].append(croppedFace);
                     ++nbData;
                 }
@@ -312,7 +417,6 @@ void Benchmark::splitData(const QDir& dataDir, float splitRatio)
             {
                 if (croppedFace && !croppedFace->isNull())
                 {
-                    croppedFace->save(faceDir + label + QLatin1String("_") + QString::number(i) + QLatin1String(".png"), "PNG");
                     m_testSet[label].append(croppedFace);
                     ++nbData;
                 }
@@ -535,8 +639,8 @@ int main(int argc, char** argv)
     //benchmark.verifyKNearestDb();
 
     benchmark.fetchData();
-    //benchmark.registerTrainingSet();
-    //benchmark.verifyTestSet();
+    benchmark.registerTrainingSet();
+    benchmark.verifyTestSet();
 
     return 0;
 }
