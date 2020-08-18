@@ -229,4 +229,5 @@ BUGFIXES:
 219 ==> 425448 - Cannot switch input text in different languages.
 220 ==> 425432 - Year separated with dot in title over icons when month selected.
 221 ==> 425425 - No shortcuts available for Slideshow entries anymore in Configure Keyboard Shortcuts.
-222 ==> 
+222 ==> 388680 - Untranslatable " (auto-detected)" in camera name.
+223 ==> 

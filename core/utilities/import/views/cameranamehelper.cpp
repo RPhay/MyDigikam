@@ -27,9 +27,13 @@
 
 #include <QRegExp>
 
+// KDE includes
+
+#include <klocalizedstring.h>
+
 namespace
 {
-static const QString STR_AUTO_DETECTED(QLatin1String("auto-detected"));
+static const QString STR_AUTO_DETECTED(i18nc("in camera model string", "auto-detected"));
 
 static QRegExp REGEXP_CAMERA_NAME(QLatin1String("^(.*)\\s*\\((.*)\\)\\s*$"), Qt::CaseInsensitive);
 static QRegExp REGEXP_MODES(QLatin1String("^(ptp|normal|mtp)(\\s+mode)?$"), Qt::CaseInsensitive);
