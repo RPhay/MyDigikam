@@ -58,6 +58,6 @@ private:
     Private* d;
 };
 
-}
+} // namespace Digikam
 
 #endif // KD_TREE_H

@@ -70,10 +70,7 @@ public:
     static cv::Mat prepareForRecognition(const cv::Mat& cvinputImage);
 
     /**
-     * @brief train : register data corresponding an identity to recognizer
-     * @param images
-     * @param label
-     * @param context
+     * Register faces corresponding to an identity
      */
     void train(const QList<QImage*>& images, const int label, const QString& context);
 

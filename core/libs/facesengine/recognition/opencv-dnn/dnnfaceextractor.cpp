@@ -61,7 +61,6 @@ public:
 
     cv::dnn::Net  net;
     QMutex        mutex;
-    QMutex        preprocessingMutex;
 
     cv::Size      imageSize;
     float         scaleFactor;
@@ -193,8 +192,8 @@ cv::Mat DNNFaceExtractor::getFaceEmbedding(const cv::Mat& faceImage)
 
     timer.start();
     /*
-            alignedFace = faceImage;
-        */
+        alignedFace = faceImage;
+    */
     alignedFace = d->preprocessor->preprocess(faceImage);
 
     qCDebug(DIGIKAM_FACEDB_LOG) << "Finish aligning face in " << timer.elapsed() << " ms";

@@ -168,7 +168,8 @@ public:
 
 private:
     const QList<QImage*>& images;
-    QVector<int>& ids;
+    QVector<int>&         ids;
+
     OpenCVDNNFaceRecognizer::Private* const d;
 };
 
@@ -202,8 +203,8 @@ public:
 
 private:
     const QList<QImage*>& images;
-    const int& id;
-    const QString& context;
+    const int&            id;
+    const QString&        context;
 
     OpenCVDNNFaceRecognizer::Private* const d;
 };
@@ -278,12 +279,6 @@ int OpenCVDNNFaceRecognizer::Private::predictKDTree(const cv::Mat& faceEmbedding
     QMap<double, QVector<int> > closestNeighbors = tree->getClosestNeighbors(faceEmbedding, 1.0, k);
 
     QMap<int, QVector<double> > votingGroups;
-
-    if (closestNeighbors.isEmpty())
-    {
-        qDebug() << "voting group is empty";
-        //std::cout << "face embedding" << faceEmbedding << std::endl;
-    }
 
     for (QMap<double, QVector<int> >::const_iterator iter  = closestNeighbors.cbegin();
                                                      iter != closestNeighbors.cend();
@@ -515,7 +510,7 @@ bool OpenCVDNNFaceRecognizer::registerTrainingData(const cv::Mat& preprocessedIm
 
         if (!newNode)
         {
-            qWarning() << "Error insert new node";
+            qCWarning(DIGIKAM_FACEDB_LOG) << "Error insert new node";
 
             return false;
         }

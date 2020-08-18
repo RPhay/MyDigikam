@@ -47,40 +47,29 @@ public:
 public:
 
     /**
-     * @brief insert : insert a new node to sub-tree
-     * @param nodePos
-     * @param identity
-     * @return
+     * Insert a new node to the sub-tree
      */
     KDNode* insert(const cv::Mat& nodePos, const int identity);
 
     /**
-     * @brief getPosition: return vector
-     * @return
+     * Return position vector of a node
      */
     cv::Mat getPosition() const;
 
     /**
-     * @brief getClosestNeighbors : return a list of closest neighbor, limited by maxNbNeighbors and sqRange
-     * @param neighborList
-     * @param position
-     * @param sqRange
-     * @param maxNbNeighbors
-     * @return
+     * Return a list of closest neighbors, limited by maxNbNeighbors and sqRange
      */
     double getClosestNeighbors(QMap<double, QVector<int> >& neighborList,
                                const cv::Mat&               position,
                                double                       sqRange,
                                int                          maxNbNeighbors) const;
     /**
-     * @brief getIdentity
-     * @return
+     * Return identity of the node
      */
     int getIdentity();
 
     /**
-     * @brief setNodeId : set database entry id of node
-     * @param id
+     * Set database entry ID of the node
      */
     void setNodeId(int id);
 
@@ -96,6 +85,6 @@ private:
     Private* d;
 };
 
-}
+} // namespace Digikam
 
 #endif // KD_NODE_H

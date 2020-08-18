@@ -74,9 +74,9 @@ public:
 
     int nodeID;
     int identity;
-
     int splitAxis;
     int nbDimension;
+
     cv::Mat position;
     cv::Mat maxRange;
     cv::Mat minRange;
@@ -255,11 +255,6 @@ double KDNode::getClosestNeighbors(QMap<double, QVector<int> >& neighborList,
             }
         }
     }
-/*
-    qDebug() << "distance to node" << sqrdistanceToCurrentNode;
-    qDebug() << "distance to left tree" << sqrDistanceleftTree;
-    qDebug() << "distance to right tree" << sqrDistancerightTree;
-*/
 
     return sqRange;
 }
@@ -286,15 +281,15 @@ void KDNode::updateRange(const cv::Mat& pos)
 
 KDNode* KDNode::findParent(const cv::Mat& nodePos)
 {
-    KDNode* parent = nullptr;
+    KDNode* parent      = nullptr;
     KDNode* currentNode = this;
 
     while (currentNode != nullptr)
     {
         currentNode->updateRange(nodePos);
 
-        int split = currentNode->d->splitAxis;
-        parent    = currentNode;
+        int split       = currentNode->d->splitAxis;
+        parent          = currentNode;
 
         if (nodePos.at<float>(0, split) >= currentNode->d->position.at<float>(0, split))
         {
@@ -309,4 +304,4 @@ KDNode* KDNode::findParent(const cv::Mat& nodePos)
     return parent;
 }
 
-}
+} // namespace Digikam

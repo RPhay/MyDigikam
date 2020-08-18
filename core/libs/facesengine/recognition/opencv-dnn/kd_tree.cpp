@@ -39,16 +39,14 @@ public:
 
     ~Private()
     {
-        nodes.clear();
+        delete root;
     }
 
 public:
 
-    int nbDimension;
+    int     nbDimension;
     KDNode* root;
-    QVector<KDNode*> nodes;
-
-    QMutex mutex;
+    QMutex  mutex;
 };
 
 KDTree::KDTree(int dim)
@@ -70,16 +68,12 @@ KDNode* KDTree::add(const cv::Mat& position, const int identity)
         if (d->root == nullptr)
         {
             d->root = new KDNode(position, identity, 0, d->nbDimension);
-            d->nodes.append(d->root);
 
             newNode = d->root;
         }
         else
         {
-            if ((newNode = d->root->insert(position, identity)) != nullptr)
-            {
-                d->nodes.append(newNode);
-            }
+            newNode = d->root->insert(position, identity);
         }
     }
     d->mutex.unlock();
@@ -96,14 +90,9 @@ QMap<double, QVector<int> > KDTree::getClosestNeighbors(const cv::Mat& position,
     if (d->root)
     {
         sqRange = d->root->getClosestNeighbors(closestNeighbors, position, sqRange, maxNbNeighbors);
-
-        if (closestNeighbors.isEmpty())
-        {
-            qDebug() << "can't find any neighbor, with sqrange" << sqRange;
-        }
     }
 
     return closestNeighbors;
 }
 
-} // namespace RecognitionTest
+} // namespace Digikam
