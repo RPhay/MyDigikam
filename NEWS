@@ -228,4 +228,5 @@ BUGFIXES:
 218 ==> 425424 - Allow seting max resolution for export to filesystems.
 219 ==> 425448 - Cannot switch input text in different languages.
 220 ==> 425432 - Year separated with dot in title over icons when month selected.
-221 ==> 
+221 ==> 425425 - No shortcuts available for Slideshow entries anymore in Configure Keyboard Shortcuts.
+222 ==> 
