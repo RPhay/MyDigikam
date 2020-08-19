@@ -670,7 +670,10 @@ void CollectionScanner::scanAlbum(const CollectionLocation& location, const QStr
                                             QDir::Name | QDir::DirsLast);
 
     const QString xmpExt(QLatin1String(".xmp"));
-    int counter = -1;
+
+    int counter          = -1;
+    bool updateAlbumDate = false;
+    QDate albumDate      = QFileInfo(dir.path()).lastModified().date();
 
     foreach (const QString& entry, list)
     {
@@ -722,7 +725,23 @@ void CollectionScanner::scanAlbum(const CollectionLocation& location, const QStr
             {
                 //qCDebug(DIGIKAM_DATABASE_LOG) << "Adding item " << info.fileName();
 
-                scanNewFile(info, albumID);
+                // Read the creation date of each image to determine the oldest one
+
+                qlonglong imageId  = scanNewFile(info, albumID);
+
+                ItemInfo itemInfo(imageId);
+                QDate itemDate     = itemInfo.dateTime().date();
+
+                if (itemDate.isValid())
+                {
+                    // Change album date only if the item date is older.
+
+                    if (itemDate < albumDate)
+                    {
+                        albumDate       = itemDate;
+                        updateAlbumDate = true;
+                    }
+                }
 
                 // emit signals for scanned files with much higher granularity
 
@@ -761,6 +780,13 @@ void CollectionScanner::scanAlbum(const CollectionLocation& location, const QStr
 
             scanAlbum(location, subAlbum + info.fileName());
         }
+    }
+
+    if (updateAlbumDate)
+    {
+        // Write the new album date from the image information
+
+        CoreDbAccess().db()->setAlbumDate(albumID, albumDate);
     }
 
     if (d->wantSignals && counter)

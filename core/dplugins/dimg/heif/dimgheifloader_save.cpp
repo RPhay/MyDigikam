@@ -355,7 +355,7 @@ bool DImgHEIFLoader::save(const QString& filePath, DImgLoaderObserver* const obs
                 return false;
             }
 
-            m_observer->progressInfo(0.1 + (0.8 * (((float)y) / ((float)imageHeight()))));
+            m_observer->progressInfo(0.1F + (0.8F * (((float)y) / ((float)imageHeight()))));
         }
     }
 

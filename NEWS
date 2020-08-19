@@ -16,4 +16,120 @@ BUGFIXES:
 007 ==> 424540 - Option "regular expression" does not work.
 008 ==> 424501 - Right click >> Open in File Manager does not work.
 009 ==> 424553 - Authenticating to Flickr does not work.
-010 ==> 
+010 ==> 422078 - Album creation date is modification date of the folder.
+011 ==> 409685 - ImageEditor can only be invoked once.
+012 ==> 411723 - Trying to edit the date of a video kills digiKam.
+013 ==> 412022 - Editor not show images.
+014 ==> 412417 - digiKam fails to start - update fails.
+015 ==> 412590 - New files are not showing in album.
+016 ==> 412917 - On macOS Mojave image editor opens withouth toolbars.
+017 ==> 413242 - Image editor launches only once on Kubuntu 19.10.
+018 ==> 413464 - Crash in Windows 10 when 'browsing' images before initial 'import' complete.
+019 ==> 413508 - digiKam crasched.
+020 ==> 414186 - digiKam crashes when loading pictures from pCloudDrive.
+021 ==> 415103 - "Preview on mouse-over" setting is not saved.
+022 ==> 415783 - Rejected face keep coming up as faces when detected faces again.
+023 ==> 415873 - Database Path wrong after adaption (/ instead of \).
+024 ==> 416180 - Number of "new items" not updated after face recognition.
+025 ==> 416560 - Crash on adding a smb folder.
+026 ==> 417330 - It is impossible to move an album to a collection or album not visible in the albums list.
+027 ==> 417738 - Cannot rename album.
+028 ==> 418337 - Crash after resume.
+029 ==> 419316 - digiKam displays "Lens: unavailable" for all lenses used on Canon EOS M6 Mark II camera.
+030 ==> 419555 - Image editor is not displayed when opened after editing an image.
+031 ==> 419847 - If user/group opens digiKam without write access to databases, system will hang with high CPU and write attempts.
+032 ==> 420401 - Face region bounding boxes are in wrong location if photo Orientation != Horizontal.
+033 ==> 420403 - Delete does not always move all files to trash.
+034 ==> 420510 - Metadata / Views settings not applied correctly?
+035 ==> 420667 - Portrait SX70HS RAW files have wrong orientation.
+036 ==> 420923 - Nor auto-scroll either children album expansion is possible while drag and drop photos to the album tree.
+037 ==> 421674 - digiKam 7.0.0 beta 3 macOS startup very slow.
+038 ==> 422112 - XMP file moves end up as inconsistent if an xmp file already exists at destination.
+039 ==> 423146 - Fonts Too Large with Laptop Screen after New Install.
+040 ==> 423722 - uninstallation will delete all files under installation directory.
+041 ==> 190315 - 23hq.com service not work.
+042 ==> 308243 - Inconsistent reset behaviour within curve tools.
+043 ==> 380966 - Copy and paste text in comment field.
+044 ==> 396382 - Editor window empty.
+045 ==> 396740 - Empty image editor after closing and re-opening.
+046 ==> 396913 - Crashing when changing the timestamp for exif creation in bulk.
+047 ==> 399705 - cannot copy coordinates from map.
+048 ==> 400926 - Reverse Geocoding gives no results.
+049 ==> 400938 - Light table: Empty window when opened again.
+050 ==> 400962 - Image editor doesn't display the image.
+051 ==> 402754 - Light Table pops up empty second time it has been activated from digiKam.
+052 ==> 403207 - Image editor shows white screen.
+053 ==> 403233 - Geolocation-Editor does not work.
+054 ==> 403238 - digiKam Editor Blank Screen for 2nd image opening in same session.
+056 ==> 404495 - Message 'Google Maps cannot be loaded properly'.
+057 ==> 406675 - Failed to update the database schema from version 9 to version 10.
+058 ==> 424668 - Advanced Search finds all cameras of a similar model depending on search order.
+059 ==> 424666 - Windows de-install deletes shortcuts.
+060 ==> 314386 - digiKam crashes on startup with large collections.
+061 ==> 382366 - Dark theme: dark icons on dark background.
+062 ==> 382630 - digiKam segfaults at start.
+063 ==> 384200 - digiKam segfault when changing image metadata in bulk.
+064 ==> 385507 - digiKam crash at startup.
+065 ==> 385844 - Showfoto crashed on close.
+066 ==> 386322 - digiKam crashed on opening.
+067 ==> 387515 - Crash on start-up.
+068 ==> 388447 - Context menu in map is inactive.
+069 ==> 389047 - Make previous/next buttons work when opening a single Photo.
+070 ==> 390359 - Landscape crop size is not remembered like portrait crop size.
+071 ==> 393539 - Wishlist: Option to save rotation information (pixel, EXIF-flag) to the file always, instead of sidecar.
+072 ==> 393838 - Right click on map doesn't offer "copy coordinates".
+073 ==> 267553 - SETUP : Starting digikam with "--database-directory" prompts for new database folder after any configuration change.
+074 ==> 365098 - Crash when sorting on import window.
+075 ==> 365123 - Crash on export to Facebook.
+076 ==> 374397 - Wrong Map icon (32px).
+077 ==> 374432 - digiKam Incorrectly Reports Free Disk Space; off by 1000x.
+078 ==> 374472 - Crash on Import after going into shell.
+079 ==> 374560 - Lens Model and Make are not displayed anymore.
+080 ==> 374988 - digiKam-root-tag.
+081 ==> 375910 - Crash when Opening Geolocation Editor.
+082 ==> 377248 - Wrong space reported in tooltip during import.
+083 ==> 378116 - Themes icon washout.
+084 ==> 378724 - digiKam - Direct crash when rotate left is choosed.
+085 ==> 379511 - Introduce additional sidecar types and fix bug in mime setup [patch].
+086 ==> 380261 - digiKam crash when click on button "add a collection".
+087 ==> 380395 - digiKam crask after startup.
+088 ==> 351260 - Crash with sqlite backend.
+089 ==> 351261 - Crashing by tagging.
+090 ==> 351374 - Crashed while scanning.
+091 ==> 351400 - digiKam crash when tagging.
+092 ==> 352174 - Crash when choosing an icon for a new tag.
+093 ==> 352313 - digiKam crashes when using page up or page down to switch between pictures every third to Fifth time.
+094 ==> 353131 - HUGIN error "pto2mk" mising with digiKam 13.0 AND "component information" lacks information of HUGIN's components.
+095 ==> 353236 - digiKam dies after tagging multiple files.
+096 ==> 353456 - Picture taken with camera with GPS off -> appears as geolocalised.
+097 ==> 353457 - Panorama tool does not work anymore after updating Hugin to Hugin 2015.
+098 ==> 354725 - Panorama reports missing component with hugin 2015.
+099 ==> 354874 - digiKam crashes during batch-rename.
+100 ==> 355154 - Crash on while exporting.
+101 ==> 355745 - Crash on Export to social network.
+102 ==> 355903 - digiKam crashes when saving modified pictures.
+103 ==> 355950 - Crash on changing metadata.
+104 ==> 356229 - Batch manager can't import curve file.
+105 ==> 356282 - digiKam stop to export photo.
+106 ==> 356598 - Change folder view.
+107 ==> 357078 - Tool tips unreadable due to bad contrast of font against background box.
+108 ==> 357149 - digiKam crashes while writing Exif metadata.
+109 ==> 357340 - digiKam crashes when modifying picture.
+110 ==> 357421 - Crashes using Image Editor.
+111 ==> 358356 - digiKam collapsed.
+112 ==> 358488 - digiKam crashed after tag.
+113 ==> 358829 - digiKam crash when clicking on thumbnail.
+114 ==> 359540 - digiKam crash.
+115 ==> 359674 - Showfoto - EditorWindow-Et2833.digikamtempfile.
+116 ==> 359977 - The sudden closure of digiKam when browsing directories.
+117 ==> 360665 - digiKam crashed.
+118 ==> 361310 - digiKam crashes when using align_image_stack.
+119 ==> 361523 - Nikon Coolpix P610: "Failed to detect camera with GPhoto2 from Solid information".
+120 ==> 363736 - Crash when changing folders.
+121 ==> 364153 - Crash during geotagging (repeatable 100%).
+122 ==> 364635 - digiKam crashes on startup.
+123 ==> 424688 - Ignore Directories not working (Win10 64bit).
+124 ==> 424758 - Face Tags on Samsung photos are rotated 180 degrees.
+125 ==> 347937 - SETUP : Collections added as "Removable Media" change as "Local Collections".
+126 ==> 
+

@@ -119,7 +119,7 @@ void RawProcessingFilter::postProgress(int)
 
     if (m_observer)
     {
-        m_observer->progressInfo(float(modulateProgress(20)) / 100);
+        m_observer->progressInfo(float(modulateProgress(20)) / 100.0F);
     }
 }
 

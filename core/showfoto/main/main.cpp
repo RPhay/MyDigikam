@@ -62,6 +62,7 @@ using namespace Magick;
 #include "digikam_debug.h"
 #include "digikam_globals.h"
 #include "digikam_version.h"
+#include "systemsettings.h"
 #include "metaengine.h"
 #include "daboutdata.h"
 #include "showfoto.h"
@@ -76,17 +77,24 @@ using namespace Digikam;
 
 int main(int argc, char* argv[])
 {
-    // Enable scaling on high DPI displays,
-    // accept the user setting when it is set.
+    SystemSettings system(QLatin1String("showfoto"));
+    system.readSettings();
 
-    if (qgetenv("QT_AUTO_SCREEN_SCALE_FACTOR").isNull())
+    QCoreApplication::setAttribute(Qt::AA_UseHighDpiPixmaps,
+                                   system.useHighDpiPixmaps);
+
+    if (system.useHighDpiScaling)
     {
-        qputenv("QT_AUTO_SCREEN_SCALE_FACTOR", "1");
+        QCoreApplication::setAttribute(Qt::AA_EnableHighDpiScaling);
+    }
+    else
+    {
+        QCoreApplication::setAttribute(Qt::AA_DisableHighDpiScaling);
     }
 
 #ifdef HAVE_QWEBENGINE
 
-    QApplication::setAttribute(Qt::AA_ShareOpenGLContexts, true);
+    QCoreApplication::setAttribute(Qt::AA_ShareOpenGLContexts);
 
 #endif
 
@@ -99,12 +107,6 @@ int main(int argc, char* argv[])
 #ifdef HAVE_IMAGE_MAGICK
 
     InitializeMagick(nullptr);
-
-#endif
-
-#ifndef Q_OS_MACOS
-
-    app.setAttribute(Qt::AA_UseHighDpiPixmaps, true);
 
 #endif
 

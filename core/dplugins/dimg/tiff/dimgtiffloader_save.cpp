@@ -227,7 +227,7 @@ bool DImgTIFFLoader::save(const QString& filePath, DImgLoaderObserver* const obs
                 return false;
             }
 
-            observer->progressInfo(0.1 + (0.8 * (((float)y) / ((float)h))));
+            observer->progressInfo(0.1F + (0.8F * (((float)y) / ((float)h))));
         }
 
         i = 0;
@@ -367,7 +367,7 @@ bool DImgTIFFLoader::save(const QString& filePath, DImgLoaderObserver* const obs
 
     if (observer)
     {
-        observer->progressInfo(1.0);
+        observer->progressInfo(1.0F);
     }
 
     imageSetAttribute(QLatin1String("savedFormat"), QLatin1String("TIFF"));

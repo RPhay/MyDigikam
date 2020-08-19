@@ -144,7 +144,7 @@ void ItemIconView::slotDispatchImageSelected()
     if (d->needDispatchSelection)
     {
         // the list of ItemInfos of currently selected items, currentItem first
-        const ItemInfoList list      = selectedInfoList(true, true);
+        const ItemInfoList list      = selectedInfoList(true, false);
         const ItemInfoList allImages = allInfo(true);
 
         if (list.isEmpty())

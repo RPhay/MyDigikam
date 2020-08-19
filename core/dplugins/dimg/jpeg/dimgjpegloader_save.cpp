@@ -279,7 +279,7 @@ bool DImgJPEGLoader::save(const QString& filePath, DImgLoaderObserver* const obs
                 }
 
                 // use 0-20% for pseudo-progress, now fill 20-100%
-                observer->progressInfo(0.2 + (0.8 * (((float)j) / ((float)h))));
+                observer->progressInfo(0.2F + (0.8F * (((float)j) / ((float)h))));
             }
 
             dstPtr = line;
@@ -316,7 +316,7 @@ bool DImgJPEGLoader::save(const QString& filePath, DImgLoaderObserver* const obs
                 }
 
                 // use 0-20% for pseudo-progress, now fill 20-100%
-                observer->progressInfo(0.2 + (0.8 * (((float)j) / ((float)h))));
+                observer->progressInfo(0.2F + (0.8F * (((float)j) / ((float)h))));
             }
 
             dstPtr = line;

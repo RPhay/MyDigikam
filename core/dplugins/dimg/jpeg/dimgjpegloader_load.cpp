@@ -199,7 +199,7 @@ bool DImgJPEGLoader::load(const QString& filePath, DImgLoaderObserver* const obs
 
         if (observer)
         {
-            observer->progressInfo(1.0);
+            observer->progressInfo(1.0F);
         }
 
         imageWidth()  = cleanupData->size.width();
@@ -427,7 +427,7 @@ bool DImgJPEGLoader::load(const QString& filePath, DImgLoaderObserver* const obs
                         return false;
                     }
 
-                    observer->progressInfo(0.1 + (0.8 * (((float)l) / ((float)h))));
+                    observer->progressInfo(0.1F + (0.8F * (((float)l) / ((float)h))));
                 }
 
                 jpeg_read_scanlines(&cinfo, &line[0], cinfo.rec_outbuf_height);
@@ -478,7 +478,7 @@ bool DImgJPEGLoader::load(const QString& filePath, DImgLoaderObserver* const obs
                         return false;
                     }
 
-                    observer->progressInfo(0.1 + (0.8 * (((float)l) / ((float)h))));
+                    observer->progressInfo(0.1F + (0.8F * (((float)l) / ((float)h))));
                 }
 
                 jpeg_read_scanlines(&cinfo, line, cinfo.rec_outbuf_height);
@@ -530,7 +530,7 @@ bool DImgJPEGLoader::load(const QString& filePath, DImgLoaderObserver* const obs
                         return false;
                     }
 
-                    observer->progressInfo(0.1 + (0.8 * (((float)l) / ((float)h))));
+                    observer->progressInfo(0.1F + (0.8F * (((float)l) / ((float)h))));
                 }
 
                 jpeg_read_scanlines(&cinfo, &line[0], cinfo.rec_outbuf_height);
@@ -614,7 +614,7 @@ bool DImgJPEGLoader::load(const QString& filePath, DImgLoaderObserver* const obs
 
     if (observer)
     {
-        observer->progressInfo(1.0);
+        observer->progressInfo(1.0F);
     }
 
     imageWidth()  = w;
