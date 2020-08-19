@@ -22,8 +22,6 @@
  *
  * ============================================================ */
 
-#define THUMB_WIDTH 150
-
 #include "blackframelistview.h"
 
 // Qt includes
@@ -40,133 +38,10 @@
 // Local includes
 
 #include "dmetadata.h"
+#include "blackframelistviewitem.h"
 
 namespace Digikam
 {
-
-BlackFrameListViewItem::BlackFrameListViewItem(QTreeWidget* const parent, const QUrl& url)
-    : QObject(parent),
-      QTreeWidgetItem(parent),
-      m_blackFrameUrl(url)
-{
-    m_parser = new BlackFrameParser(this);
-    m_parser->parseBlackFrame(url);
-
-    connect(m_parser, SIGNAL(signalHotPixelsParsed(QList<HotPixelProps>)),
-            this, SLOT(slotHotPixelsParsed(QList<HotPixelProps>)));
-
-    connect(this, SIGNAL(signalHotPixelsParsed(QList<HotPixelProps>,QUrl)),
-            parent, SLOT(slotHotPixelsParsed(QList<HotPixelProps>,QUrl)));
-
-    connect(m_parser, SIGNAL(signalLoadingProgress(float)),
-            this, SLOT(slotLoadingProgress(float)));
-}
-
-BlackFrameListViewItem::~BlackFrameListViewItem()
-{
-}
-
-QUrl BlackFrameListViewItem::frameUrl() const
-{
-    return m_blackFrameUrl;
-}
-
-void BlackFrameListViewItem::slotLoadingProgress(float v)
-{
-    setText(SIZE,      i18n("Loading Frame"));
-    setText(HOTPIXELS, QString::fromLatin1("%1 %").arg((int)(v*100)));
-}
-
-void BlackFrameListViewItem::slotHotPixelsParsed(const QList<HotPixelProps>& hotPixels)
-{
-    m_hotPixels  = hotPixels;
-
-    // First scale it down to the size
-
-    QSize size   = QSize(THUMB_WIDTH, THUMB_WIDTH/3*2);
-    QImage thumb = m_parser->image().smoothScale(size, Qt::KeepAspectRatio).copyQImage();
-
-    // And draw the hot pixel positions on the thumb
-
-    QPainter p(&thumb);
-
-    // Take scaling into account
-
-    float xRatio   = 0.0;
-    float yRatio   = 0.0;
-    float hpThumbX = 0.0;
-    float hpThumbY = 0.0;
-    QRect hpRect;
-
-    xRatio = (float)size.width()  / (float)m_parser->image().width();
-    yRatio = (float)size.height() / (float)m_parser->image().height();
-
-    // Draw hot pixels one by one
-
-    QList<HotPixelProps>::const_iterator it1;
-
-    for (it1 = m_hotPixels.constBegin() ; it1 != m_hotPixels.constEnd() ; ++it1)
-    {
-        hpRect   = (*it1).rect;
-        hpThumbX = (hpRect.x() + hpRect.width()  / 2) * xRatio;
-        hpThumbY = (hpRect.y() + hpRect.height() / 2) * yRatio;
-
-        p.setPen(QPen(Qt::black));
-        p.drawLine((int) hpThumbX,      (int) hpThumbY - 1, (int) hpThumbX, (int) hpThumbY + 1);
-        p.drawLine((int) hpThumbX  - 1, (int) hpThumbY, (int) hpThumbX + 1, (int) hpThumbY);
-        p.setPen(QPen(Qt::white));
-        p.drawPoint((int) hpThumbX - 1, (int) hpThumbY - 1);
-        p.drawPoint((int) hpThumbX + 1, (int) hpThumbY + 1);
-        p.drawPoint((int) hpThumbX - 1, (int) hpThumbY + 1);
-        p.drawPoint((int) hpThumbX + 1, (int) hpThumbY - 1);
-    }
-
-    // Preview
-
-    setIcon(PREVIEW, QPixmap::fromImage(thumb));
-
-    // Image size
-
-    if (!m_parser->image().size().isEmpty())
-    {
-        setText(SIZE, QString::fromUtf8("%1x%2").arg(m_parser->image().width()).arg(m_parser->image().height()));
-    }
-
-    // Amount of hot pixels
-
-    setText(HOTPIXELS, QString::number(m_hotPixels.count()));
-
-    // Descriptions as tooltip (file name, camera model, and hot pixels list)
-
-    DMetadata meta(m_blackFrameUrl.toLocalFile());
-    PhotoInfoContainer info = meta.getPhotographInformation();
-
-    QString blackFrameDesc  = i18n("<p>File Name: %1</p>", m_blackFrameUrl.fileName());
-    blackFrameDesc.append(i18n("<p>Make/Model: %1/%2</p>", info.make, info.model));
-
-    QString hplist;
-
-    for (QList <HotPixelProps>::const_iterator it2 = m_hotPixels.constBegin() ;
-         it2 != m_hotPixels.constEnd() ; ++it2)
-    {
-        hplist.append(QString::fromUtf8("[%1,%2] ").arg((*it2).x()).arg((*it2).y()));
-    }
-
-    blackFrameDesc.append(i18n("<p>Hot Pixels: %1</p>", hplist));
-
-    setToolTip(PREVIEW,   blackFrameDesc);
-    setToolTip(SIZE,      blackFrameDesc);
-    setToolTip(HOTPIXELS, blackFrameDesc);
-
-    emitHotPixelsParsed();
-}
-
-void BlackFrameListViewItem::emitHotPixelsParsed()
-{
-    emit signalHotPixelsParsed(m_hotPixels, m_blackFrameUrl);
-}
-
-// ----------------------------------------------------------------------------
 
 BlackFrameListView::BlackFrameListView(QWidget* const parent)
     : QTreeWidget(parent)
@@ -176,7 +51,7 @@ BlackFrameListView::BlackFrameListView(QWidget* const parent)
     setSelectionMode(QAbstractItemView::SingleSelection);
     setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Expanding);
     setAllColumnsShowFocus(true);
-    setIconSize(QSize(THUMB_WIDTH, THUMB_WIDTH));
+    setIconSize(QSize(BlackFrameListViewItem::THUMB_WIDTH, BlackFrameListViewItem::THUMB_WIDTH));
 
     QStringList labels;
     labels.append(i18n("Preview"));

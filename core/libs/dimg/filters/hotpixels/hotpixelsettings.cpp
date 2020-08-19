@@ -48,6 +48,7 @@
 #include "dcombobox.h"
 #include "imagedialog.h"
 #include "blackframelistview.h"
+#include "blackframelistviewitem.h"
 
 namespace Digikam
 {
