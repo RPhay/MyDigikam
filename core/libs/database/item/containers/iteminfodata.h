@@ -129,7 +129,6 @@ public:
     //! group leader, if the image is grouped
     qlonglong                                groupImage;
 
-<<<<<<< HEAD
     bool                                     hasCoordinates             : 1;
     bool                                     hasAltitude                : 1;
 
@@ -142,6 +141,7 @@ public:
     bool                                     formatCached               : 1;
     bool                                     creationDateCached         : 1;
     bool                                     modificationDateCached     : 1;
+    bool                                     orientationCached          : 1;
     bool                                     fileSizeCached             : 1;
     bool                                     manualOrderCached          : 1;
     bool                                     uniqueHashCached           : 1;
@@ -153,30 +153,6 @@ public:
     bool                                     faceSuggestionsCached      : 1;
 
     bool                                     invalid                    : 1;
-=======
-    bool                                     hasCoordinates         : 1;
-    bool                                     hasAltitude            : 1;
-
-    bool                                     defaultTitleCached     : 1;
-    bool                                     defaultCommentCached   : 1;
-    bool                                     pickLabelCached        : 1;
-    bool                                     colorLabelCached       : 1;
-    bool                                     ratingCached           : 1;
-    bool                                     categoryCached         : 1;
-    bool                                     formatCached           : 1;
-    bool                                     creationDateCached     : 1;
-    bool                                     modificationDateCached : 1;
-    bool                                     orientationCached      : 1;
-    bool                                     fileSizeCached         : 1;
-    bool                                     manualOrderCached      : 1;
-    bool                                     uniqueHashCached       : 1;
-    bool                                     imageSizeCached        : 1;
-    bool                                     tagIdsCached           : 1;
-    bool                                     positionsCached        : 1;
-    bool                                     groupImageCached       : 1;
-
-    bool                                     invalid                : 1;
->>>>>>> 83d795d9ba691b7871f0332e164101e01dbaf10e
 
     // These two are initially true because we assume the data is there.
     // Once we query the data and find out it is missing, we set them to false.
