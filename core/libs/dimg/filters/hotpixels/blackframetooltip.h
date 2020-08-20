@@ -24,14 +24,13 @@
 #ifndef DIGIKAM_BLACK_FRAME_TOOL_TIP_H
 #define DIGIKAM_BLACK_FRAME_TOOL_TIP_H
 
-// Qt includes
-
-#include <QTreeWidgetItem>
-
 // Local includes
 
 #include "ditemtooltip.h"
 #include "digikam_export.h"
+
+class QTreeWidgetItem;
+class QTreeWidget;
 
 namespace Digikam
 {
@@ -40,10 +39,11 @@ class DIGIKAM_EXPORT BlackFrameToolTip : public DItemToolTip
 {
 public:
 
-    explicit BlackFrameToolTip(QTreeWidgetItem* const item);
+    explicit BlackFrameToolTip(QTreeWidget* const view);
     ~BlackFrameToolTip();
 
-    void setToolTip(const QString& tip);
+    void setToolTipString(const QString& tip);
+    void setItem(QTreeWidgetItem* const item);
 
     void show();
 

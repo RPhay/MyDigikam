@@ -64,7 +64,9 @@ public:
     explicit BlackFrameListViewItem(QTreeWidget* const parent, const QUrl& url);
     ~BlackFrameListViewItem();
 
-    QUrl frameUrl() const;
+    QUrl    frameUrl()      const;
+    QString toolTipString() const;
+
     void emitHotPixelsParsed();
 
 Q_SIGNALS:
@@ -85,6 +87,8 @@ private:
     QUrl                 m_blackFrameUrl;
 
     BlackFrameParser*    m_parser;
+
+    QString              m_toolTipStr;
 };
 
 } // namespace Digikam

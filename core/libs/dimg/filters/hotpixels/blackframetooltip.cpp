@@ -25,7 +25,8 @@
 
 // Qt includes
 
-#include <QWidget>
+#include <QTreeWidget>
+#include <QTreeWidgetItem>
 #include <QString>
 #include <QRect>
 
@@ -37,20 +38,22 @@ class Q_DECL_HIDDEN BlackFrameToolTip::Private
 public:
 
     explicit Private()
-      : item(nullptr)
+      : view(nullptr),
+        item(nullptr)
     {
     }
 
     QString          tip;
 
+    QTreeWidget*     view;
     QTreeWidgetItem* item;
 };
 
-BlackFrameToolTip::BlackFrameToolTip(QTreeWidgetItem* const item)
+BlackFrameToolTip::BlackFrameToolTip(QTreeWidget* const view)
     : DItemToolTip(),
       d(new Private)
 {
-    d->item = item;
+    d->view = view;
 }
 
 BlackFrameToolTip::~BlackFrameToolTip()
@@ -58,9 +61,23 @@ BlackFrameToolTip::~BlackFrameToolTip()
     delete d;
 }
 
-void BlackFrameToolTip::setToolTip(const QString& tip)
+void BlackFrameToolTip::setToolTipString(const QString& tip)
 {
     d->tip = tip;
+}
+
+void BlackFrameToolTip::setItem(QTreeWidgetItem* const item)
+{
+    d->item = item;
+
+    if (!d->item)
+    {
+        hide();
+    }
+    else
+    {
+        show();
+    }
 }
 
 void BlackFrameToolTip::show()
@@ -81,13 +98,8 @@ QRect BlackFrameToolTip::repositionRect()
         return QRect();
     }
 
-    if (!d->item->treeWidget())
-    {
-        return QRect();
-    }
-
-    QRect rect = d->item->treeWidget()->visualItemRect(d->item);
-    rect.moveTopLeft(d->item->treeWidget()->mapToGlobal(rect.topLeft()));
+    QRect rect = d->view->visualItemRect(d->item);
+    rect.moveTopLeft(d->view->viewport()->mapToGlobal(rect.topLeft()));
 
     return rect;
 }

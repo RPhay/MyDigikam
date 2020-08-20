@@ -33,6 +33,7 @@
 #include <QImage>
 #include <QRect>
 #include <QSize>
+#include <QLocale>
 
 // KDE includes
 
@@ -41,6 +42,8 @@
 // Local includes
 
 #include "dmetadata.h"
+#include "ditemtooltip.h"
+#include "itempropertiestab.h"
 
 namespace Digikam
 {
@@ -50,7 +53,7 @@ BlackFrameListViewItem::BlackFrameListViewItem(QTreeWidget* const parent, const 
       QTreeWidgetItem(parent),
       m_blackFrameUrl(url)
 {
-    m_parser = new BlackFrameParser(this);
+    m_parser  = new BlackFrameParser(this);
     m_parser->parseBlackFrame(url);
 
     connect(m_parser, SIGNAL(signalHotPixelsParsed(QList<HotPixelProps>)),
@@ -70,6 +73,11 @@ BlackFrameListViewItem::~BlackFrameListViewItem()
 QUrl BlackFrameListViewItem::frameUrl() const
 {
     return m_blackFrameUrl;
+}
+
+QString BlackFrameListViewItem::toolTipString() const
+{
+    return m_toolTipStr;
 }
 
 void BlackFrameListViewItem::slotLoadingProgress(float v)
@@ -139,12 +147,34 @@ void BlackFrameListViewItem::slotHotPixelsParsed(const QList<HotPixelProps>& hot
 
     // Descriptions as tooltip (file name, camera model, and hot pixels list)
 
+    QString value;
+    QString header = i18n("Black Frame");
+
     DMetadata meta(m_blackFrameUrl.toLocalFile());
     PhotoInfoContainer info = meta.getPhotographInformation();
 
-    QString blackFrameDesc  = i18n("<p>File Name: %1</p>", m_blackFrameUrl.fileName());
-    blackFrameDesc.append(i18n("<p>Make/Model: %1/%2</p>", info.make, info.model));
-    blackFrameDesc.append(i18n("<p>Serial Number: %1</p>", meta.getCameraSerialNumber()));
+    m_toolTipStr.clear();
+
+    DToolTipStyleSheet cnt;
+    QString tip = cnt.tipHeader;
+
+    m_toolTipStr += cnt.headBeg + header + cnt.headEnd;
+
+    m_toolTipStr += cnt.cellBeg + i18n("File Name:") + cnt.cellMid;
+    m_toolTipStr += m_blackFrameUrl.fileName() + cnt.cellEnd;
+
+    QString make  = info.make;
+    QString model = info.model;
+    ItemPropertiesTab::shortenedMakeInfo(make);
+    ItemPropertiesTab::shortenedModelInfo(model);
+    m_toolTipStr += cnt.cellBeg + i18n("Make/Model:") + cnt.cellMid;
+    m_toolTipStr += QString::fromUtf8("%1/%2").arg(make).arg(model) + cnt.cellEnd;
+
+    m_toolTipStr += cnt.cellBeg + i18n("Created:") + cnt.cellMid;
+    m_toolTipStr += QLocale().toString(info.dateTime, QLocale::ShortFormat) + cnt.cellEnd;
+
+    m_toolTipStr += cnt.cellBeg + i18n("Serial Number:") + cnt.cellMid;
+    m_toolTipStr += meta.getCameraSerialNumber() + cnt.cellEnd;
 
     QString hplist;
 
@@ -154,11 +184,9 @@ void BlackFrameListViewItem::slotHotPixelsParsed(const QList<HotPixelProps>& hot
         hplist.append(QString::fromUtf8("[%1,%2] ").arg((*it2).x()).arg((*it2).y()));
     }
 
-    blackFrameDesc.append(i18n("<p>Hot Pixels: %1</p>", hplist));
-
-    setToolTip(PREVIEW,   blackFrameDesc);
-    setToolTip(SIZE,      blackFrameDesc);
-    setToolTip(HOTPIXELS, blackFrameDesc);
+    m_toolTipStr += cnt.cellBeg + i18n("Hot Pixels:") + cnt.cellMid;
+    m_toolTipStr += cnt.elidedText(hplist, Qt::ElideRight) + cnt.cellEnd;
+    m_toolTipStr += cnt.tipFooter;
 
     emitHotPixelsParsed();
 }

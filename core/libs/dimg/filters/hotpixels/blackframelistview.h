@@ -29,12 +29,14 @@
 
 #include <QList>
 #include <QUrl>
+#include <QTimer>
 #include <QTreeWidget>
 
 // Local includes
 
 #include "digikam_export.h"
 #include "hotpixelprops.h"
+#include "blackframetooltip.h"
 
 namespace Digikam
 {
@@ -58,6 +60,24 @@ private Q_SLOTS:
 
     void slotSelectionChanged();
     void slotHotPixelsParsed(const QList<HotPixelProps>&, const QUrl&);
+    void slotToolTip();
+
+private:
+
+    void hideToolTip();
+    bool acceptToolTip(const QPoint& pos)                         const;
+
+    void mouseMoveEvent(QMouseEvent*)                                   override;
+    void wheelEvent(QWheelEvent*)                                       override;
+    void keyPressEvent(QKeyEvent*)                                      override;
+    void focusOutEvent(QFocusEvent*)                                    override;
+    void leaveEvent(QEvent*)                                            override;
+
+private:
+
+    QTimer*            m_toolTipTimer;
+    BlackFrameToolTip* m_toolTip;
+    QTreeWidgetItem*   m_toolTipItem;
 };
 
 } // namespace Digikam
