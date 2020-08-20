@@ -447,4 +447,20 @@ QFont ApplicationSettings::getApplicationFont() const
     return d->applicationFont;
 }
 
+bool ApplicationSettings::getHelpBoxNotificationSeen() {
+    KSharedConfigPtr config = KSharedConfig::openConfig();
+    KConfigGroup group      = config->group("Notification Messages");
+    bool value              = group.readEntry("HelpBoxNotifSeen", false);
+
+    return value;
+}
+
+void ApplicationSettings::setHelpBoxNotificationSeen(bool val) {
+    KSharedConfigPtr config = KSharedConfig::openConfig();
+    KConfigGroup group      = config->group("Notification Messages");
+
+    group.writeEntry("HelpBoxNotifSeen", val);
+    config->sync();
+}
+
 } // namespace Digikam
