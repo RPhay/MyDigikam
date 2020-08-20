@@ -86,6 +86,7 @@ set(libdimgfilters_SRCS
     ${CMAKE_CURRENT_SOURCE_DIR}/filters/hotpixels/blackframeparser.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/filters/hotpixels/blackframelistview.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/filters/hotpixels/blackframelistviewitem.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/filters/hotpixels/blackframetooltip.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/filters/hotpixels/hotpixelprops.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/filters/hotpixels/hotpixelfixer.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/filters/hotpixels/hotpixelsweights.cpp
