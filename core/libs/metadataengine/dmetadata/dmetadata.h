@@ -346,7 +346,12 @@ public: // Photo helpers
      */
     QString getLensDescription()                                                                                        const;
 
-    PhotoInfoContainer getPhotographInformation() const;
+    /**
+     * Return a string with Camera serial number.
+     */
+    QString getCameraSerialNumber()                                                                                     const;
+
+    PhotoInfoContainer getPhotographInformation()                                                                       const;
 
     static double apexApertureToFNumber(double aperture);
     static double apexShutterSpeedToExposureTime(double shutterSpeed);
