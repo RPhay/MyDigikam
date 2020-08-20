@@ -66,8 +66,7 @@ public:
         searchModificationHelper(nullptr),
         settingsWdg(nullptr),
         tagFolderView(nullptr),
-        tagSearchBar(nullptr),
-        firstVisit(true)
+        tagSearchBar(nullptr)
     {
     }
 
