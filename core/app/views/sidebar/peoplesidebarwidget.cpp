@@ -52,6 +52,7 @@
 #include "facescanwidget.h"
 #include "facesdetector.h"
 #include "dnotificationwidget.h"
+#include "applicationsettings.h"
 
 namespace Digikam
 {
@@ -75,7 +76,6 @@ public:
     FaceScanWidget*           settingsWdg;
     TagFolderView*            tagFolderView;
     SearchTextBarDb*          tagSearchBar;
-    bool                      firstVisit;
 };
 
 PeopleSideBarWidget::PeopleSideBarWidget(QWidget* const parent,
@@ -153,13 +153,13 @@ void PeopleSideBarWidget::setActive(bool active)
     {
         d->tagFolderView->setCurrentAlbums(QList<Album*>() << d->tagFolderView->currentAlbum());
 
-        if (d->firstVisit)
+        if (!ApplicationSettings::instance()->getHelpBoxNotificationSeen())
         {
             QString msg = i18n("Welcome to Face Management in DigiKam. "
                                "If this is your first time using this feature, please consider "
                                "using the Help Box in the Bottom Left Side Panel.");
             emit signalNotificationError(msg, DNotificationWidget::Information);
-            d->firstVisit = false;
+            ApplicationSettings::instance()->setHelpBoxNotificationSeen(true);
         }
     }
 }
