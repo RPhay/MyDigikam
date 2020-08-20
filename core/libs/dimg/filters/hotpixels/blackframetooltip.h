@@ -31,11 +31,12 @@
 // Local includes
 
 #include "ditemtooltip.h"
+#include "digikam_export.h"
 
 namespace Digikam
 {
 
-class BlackFrameToolTip : public DItemToolTip
+class DIGIKAM_EXPORT BlackFrameToolTip : public DItemToolTip
 {
 public:
 
