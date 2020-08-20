@@ -144,6 +144,7 @@ void BlackFrameListViewItem::slotHotPixelsParsed(const QList<HotPixelProps>& hot
 
     QString blackFrameDesc  = i18n("<p>File Name: %1</p>", m_blackFrameUrl.fileName());
     blackFrameDesc.append(i18n("<p>Make/Model: %1/%2</p>", info.make, info.model));
+    blackFrameDesc.append(i18n("<p>Serial Number: %1</p>", meta.getCameraSerialNumber()));
 
     QString hplist;
 
