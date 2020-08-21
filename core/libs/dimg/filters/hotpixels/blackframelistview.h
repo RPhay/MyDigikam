@@ -29,14 +29,12 @@
 
 #include <QList>
 #include <QUrl>
-#include <QTimer>
 #include <QTreeWidget>
 
 // Local includes
 
 #include "digikam_export.h"
 #include "hotpixelprops.h"
-#include "blackframetooltip.h"
 
 namespace Digikam
 {
@@ -77,9 +75,8 @@ private:
 
 private:
 
-    QTimer*            m_toolTipTimer;
-    BlackFrameToolTip* m_toolTip;
-    QTreeWidgetItem*   m_toolTipItem;
+    class Private;
+    Private* const d;
 };
 
 } // namespace Digikam

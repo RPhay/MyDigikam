@@ -44,40 +44,61 @@
 #include "dmetadata.h"
 #include "ditemtooltip.h"
 #include "itempropertiestab.h"
+#include "blackframeparser.h"
 
 namespace Digikam
 {
 
+class Q_DECL_HIDDEN BlackFrameListViewItem::Private
+{
+public:
+
+    explicit Private()
+      : parser(nullptr)
+    {
+    }
+
+    QList<HotPixelProps> hotPixels;
+
+    QUrl                 blackFrameUrl;
+
+    BlackFrameParser*    parser;
+
+    QString              toolTipStr;
+};
+
 BlackFrameListViewItem::BlackFrameListViewItem(QTreeWidget* const parent, const QUrl& url)
     : QObject(parent),
       QTreeWidgetItem(parent),
-      m_blackFrameUrl(url)
+      d(new Private)
 {
-    m_parser  = new BlackFrameParser(this);
-    m_parser->parseBlackFrame(url);
+    d->blackFrameUrl = url;
+    d->parser        = new BlackFrameParser(this);
+    d->parser->parseBlackFrame(url);
 
-    connect(m_parser, SIGNAL(signalHotPixelsParsed(QList<HotPixelProps>)),
+    connect(d->parser, SIGNAL(signalHotPixelsParsed(QList<HotPixelProps>)),
             this, SLOT(slotHotPixelsParsed(QList<HotPixelProps>)));
 
     connect(this, SIGNAL(signalHotPixelsParsed(QList<HotPixelProps>,QUrl)),
             parent, SLOT(slotHotPixelsParsed(QList<HotPixelProps>,QUrl)));
 
-    connect(m_parser, SIGNAL(signalLoadingProgress(float)),
+    connect(d->parser, SIGNAL(signalLoadingProgress(float)),
             this, SLOT(slotLoadingProgress(float)));
 }
 
 BlackFrameListViewItem::~BlackFrameListViewItem()
 {
+    delete d;
 }
 
 QUrl BlackFrameListViewItem::frameUrl() const
 {
-    return m_blackFrameUrl;
+    return d->blackFrameUrl;
 }
 
 QString BlackFrameListViewItem::toolTipString() const
 {
-    return m_toolTipStr;
+    return d->toolTipStr;
 }
 
 void BlackFrameListViewItem::slotLoadingProgress(float v)
@@ -88,12 +109,12 @@ void BlackFrameListViewItem::slotLoadingProgress(float v)
 
 void BlackFrameListViewItem::slotHotPixelsParsed(const QList<HotPixelProps>& hotPixels)
 {
-    m_hotPixels  = hotPixels;
+    d->hotPixels  = hotPixels;
 
     // First scale it down to the size
 
     QSize size   = QSize(THUMB_WIDTH, THUMB_WIDTH/3*2);
-    QImage thumb = m_parser->image().smoothScale(size, Qt::KeepAspectRatio).copyQImage();
+    QImage thumb = d->parser->image().smoothScale(size, Qt::KeepAspectRatio).copyQImage();
 
     // And draw the hot pixel positions on the thumb
 
@@ -107,14 +128,14 @@ void BlackFrameListViewItem::slotHotPixelsParsed(const QList<HotPixelProps>& hot
     float hpThumbY = 0.0;
     QRect hpRect;
 
-    xRatio = (float)size.width()  / (float)m_parser->image().width();
-    yRatio = (float)size.height() / (float)m_parser->image().height();
+    xRatio = (float)size.width()  / (float)d->parser->image().width();
+    yRatio = (float)size.height() / (float)d->parser->image().height();
 
     // Draw hot pixels one by one
 
     QList<HotPixelProps>::const_iterator it1;
 
-    for (it1 = m_hotPixels.constBegin() ; it1 != m_hotPixels.constEnd() ; ++it1)
+    for (it1 = d->hotPixels.constBegin() ; it1 != d->hotPixels.constEnd() ; ++it1)
     {
         hpRect   = (*it1).rect;
         hpThumbX = (hpRect.x() + hpRect.width()  / 2) * xRatio;
@@ -136,64 +157,64 @@ void BlackFrameListViewItem::slotHotPixelsParsed(const QList<HotPixelProps>& hot
 
     // Image size
 
-    if (!m_parser->image().size().isEmpty())
+    if (!d->parser->image().size().isEmpty())
     {
-        setText(SIZE, QString::fromUtf8("%1x%2").arg(m_parser->image().width()).arg(m_parser->image().height()));
+        setText(SIZE, QString::fromUtf8("%1x%2").arg(d->parser->image().width()).arg(d->parser->image().height()));
     }
 
     // Amount of hot pixels
 
-    setText(HOTPIXELS, QString::number(m_hotPixels.count()));
+    setText(HOTPIXELS, QString::number(d->hotPixels.count()));
 
     // Descriptions as tooltip (file name, camera model, and hot pixels list)
 
     QString value;
     QString header = i18n("Black Frame");
 
-    DMetadata meta(m_blackFrameUrl.toLocalFile());
+    DMetadata meta(d->blackFrameUrl.toLocalFile());
     PhotoInfoContainer info = meta.getPhotographInformation();
 
-    m_toolTipStr.clear();
+    d->toolTipStr.clear();
 
     DToolTipStyleSheet cnt;
     QString tip = cnt.tipHeader;
 
-    m_toolTipStr += cnt.headBeg + header + cnt.headEnd;
+    d->toolTipStr += cnt.headBeg + header + cnt.headEnd;
 
-    m_toolTipStr += cnt.cellBeg + i18n("File Name:") + cnt.cellMid;
-    m_toolTipStr += m_blackFrameUrl.fileName() + cnt.cellEnd;
+    d->toolTipStr += cnt.cellBeg + i18n("File Name:") + cnt.cellMid;
+    d->toolTipStr += d->blackFrameUrl.fileName() + cnt.cellEnd;
 
     QString make  = info.make;
     QString model = info.model;
     ItemPropertiesTab::shortenedMakeInfo(make);
     ItemPropertiesTab::shortenedModelInfo(model);
-    m_toolTipStr += cnt.cellBeg + i18n("Make/Model:") + cnt.cellMid;
-    m_toolTipStr += QString::fromUtf8("%1/%2").arg(make).arg(model) + cnt.cellEnd;
+    d->toolTipStr += cnt.cellBeg + i18n("Make/Model:") + cnt.cellMid;
+    d->toolTipStr += QString::fromUtf8("%1/%2").arg(make).arg(model) + cnt.cellEnd;
 
-    m_toolTipStr += cnt.cellBeg + i18n("Created:") + cnt.cellMid;
-    m_toolTipStr += QLocale().toString(info.dateTime, QLocale::ShortFormat) + cnt.cellEnd;
+    d->toolTipStr += cnt.cellBeg + i18n("Created:") + cnt.cellMid;
+    d->toolTipStr += QLocale().toString(info.dateTime, QLocale::ShortFormat) + cnt.cellEnd;
 
-    m_toolTipStr += cnt.cellBeg + i18n("Serial Number:") + cnt.cellMid;
-    m_toolTipStr += meta.getCameraSerialNumber() + cnt.cellEnd;
+    d->toolTipStr += cnt.cellBeg + i18n("Serial Number:") + cnt.cellMid;
+    d->toolTipStr += meta.getCameraSerialNumber() + cnt.cellEnd;
 
     QString hplist;
 
-    for (QList <HotPixelProps>::const_iterator it2 = m_hotPixels.constBegin() ;
-         it2 != m_hotPixels.constEnd() ; ++it2)
+    for (QList <HotPixelProps>::const_iterator it2 = d->hotPixels.constBegin() ;
+         it2 != d->hotPixels.constEnd() ; ++it2)
     {
         hplist.append(QString::fromUtf8("[%1,%2] ").arg((*it2).x()).arg((*it2).y()));
     }
 
-    m_toolTipStr += cnt.cellBeg + i18n("Hot Pixels:") + cnt.cellMid;
-    m_toolTipStr += cnt.elidedText(hplist, Qt::ElideRight) + cnt.cellEnd;
-    m_toolTipStr += cnt.tipFooter;
+    d->toolTipStr += cnt.cellBeg + i18n("Hot Pixels:") + cnt.cellMid;
+    d->toolTipStr += cnt.elidedText(hplist, Qt::ElideRight) + cnt.cellEnd;
+    d->toolTipStr += cnt.tipFooter;
 
     emitHotPixelsParsed();
 }
 
 void BlackFrameListViewItem::emitHotPixelsParsed()
 {
-    emit signalHotPixelsParsed(m_hotPixels, m_blackFrameUrl);
+    emit signalHotPixelsParsed(d->hotPixels, d->blackFrameUrl);
 }
 
 } // namespace Digikam

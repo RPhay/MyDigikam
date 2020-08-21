@@ -8,7 +8,7 @@
  *
  * Copyright (C) 2005-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
  * Copyright (C) 2005-2006 by Unai Garro <ugarro at users dot sourceforge dot net>
- * Copyright (C) 2015      by Mohamed_Anwer <m_dot_anwer at gmx dot com>
+ * Copyright (C) 2015      by Mohamed_Anwer <d->dot_anwer at gmx dot com>
  *
  * Part of the algorithm for finding the hot pixels was based on
  * the code of jpegpixi, which was released under the GPL license,
@@ -48,19 +48,37 @@
 
 #include "digikam_debug.h"
 #include "dcolor.h"
+#include "dimg.h"
+#include "loadsavethread.h"
+
 
 namespace Digikam
 {
 
+class Q_DECL_HIDDEN BlackFrameParser::Private
+{
+public:
+
+    explicit Private()
+      : imageLoaderThread(nullptr)
+    {
+    }
+
+    DImg            image;
+
+    LoadSaveThread* imageLoaderThread;
+};
+
 BlackFrameParser::BlackFrameParser(QObject* const parent)
     : QObject(parent),
-      m_imageLoaderThread(nullptr)
+      d(new Private)
 {
 }
 
 BlackFrameParser::~BlackFrameParser()
 {
-    delete m_imageLoaderThread;
+    delete d->imageLoaderThread;
+    delete d;
 }
 
 void BlackFrameParser::parseHotPixels(const QString& file)
@@ -77,19 +95,19 @@ void BlackFrameParser::parseBlackFrame(const QUrl& url)
 
     QString localFile = url.toLocalFile();
 
-    if (!m_imageLoaderThread)
+    if (!d->imageLoaderThread)
     {
-        m_imageLoaderThread = new LoadSaveThread();
+        d->imageLoaderThread = new LoadSaveThread();
 
-        connect(m_imageLoaderThread, SIGNAL(signalLoadingProgress(LoadingDescription,float)),
+        connect(d->imageLoaderThread, SIGNAL(signalLoadingProgress(LoadingDescription,float)),
                 this, SLOT(slotLoadingProgress(LoadingDescription,float)));
 
-        connect(m_imageLoaderThread, SIGNAL(signalImageLoaded(LoadingDescription,DImg)),
+        connect(d->imageLoaderThread, SIGNAL(signalImageLoaded(LoadingDescription,DImg)),
                 this, SLOT(slotLoadImageFromUrlComplete(LoadingDescription,DImg)));
     }
 
     LoadingDescription desc = LoadingDescription(localFile, DRawDecoding());
-    m_imageLoaderThread->load(desc);
+    d->imageLoaderThread->load(desc);
 }
 
 void BlackFrameParser::slotLoadingProgress(const LoadingDescription&, float v)
@@ -106,13 +124,13 @@ void BlackFrameParser::slotLoadImageFromUrlComplete(const LoadingDescription&, c
 
 void BlackFrameParser::parseBlackFrame(const DImg& img)
 {
-    m_image = img.copy();
+    d->image = img.copy();
     blackFrameParsing();
 }
 
 DImg BlackFrameParser::image() const
 {
-    return m_image;
+    return d->image;
 }
 
 /**
@@ -132,13 +150,13 @@ void BlackFrameParser::blackFrameParsing()
 
     const int maxHotPixels = 1000;
 
-    for (int y = 0 ; y < (int)m_image.height() ; ++y)
+    for (int y = 0 ; y < (int)d->image.height() ; ++y)
     {
-        for (int x = 0 ; x < (int)m_image.width() ; ++x)
+        for (int x = 0 ; x < (int)d->image.width() ; ++x)
         {
             // Get each point in the image
 
-            DColor pixrgb = m_image.getPixelColor(x, y);
+            DColor pixrgb = d->image.getPixelColor(x, y);
             QColor color;
             color.setRgb(pixrgb.getQColor().rgb());
 

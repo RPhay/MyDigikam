@@ -35,7 +35,6 @@
 // Local includes
 
 #include "digikam_export.h"
-#include "blackframeparser.h"
 #include "hotpixelprops.h"
 
 namespace Digikam
@@ -80,15 +79,8 @@ private Q_SLOTS:
 
 private:
 
-    /// Data contained within each listview item
-
-    QList<HotPixelProps> m_hotPixels;
-
-    QUrl                 m_blackFrameUrl;
-
-    BlackFrameParser*    m_parser;
-
-    QString              m_toolTipStr;
+    class Private;
+    Private* const d;
 };
 
 } // namespace Digikam

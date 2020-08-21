@@ -26,10 +26,8 @@
 
 // Qt includes
 
-#include <QList>
 #include <QPointer>
-#include <QPainter>
-#include <QPixmap>
+#include <QTimer>
 
 // KDE includes
 
@@ -39,13 +37,30 @@
 
 #include "dmetadata.h"
 #include "blackframelistviewitem.h"
+#include "blackframetooltip.h"
 
 namespace Digikam
 {
 
+ class Q_DECL_HIDDEN BlackFrameListView::Private
+{
+public:
+
+    explicit Private()
+      : toolTipTimer(nullptr),
+        toolTip(nullptr),
+        toolTipItem(nullptr)
+    {
+    }
+
+    QTimer*            toolTipTimer;
+    BlackFrameToolTip* toolTip;
+    QTreeWidgetItem*   toolTipItem;
+};
+
 BlackFrameListView::BlackFrameListView(QWidget* const parent)
     : QTreeWidget(parent),
-      m_toolTipItem(nullptr)
+      d(new Private)
 {
     setColumnCount(3);
     setRootIsDecorated(false);
@@ -62,19 +77,20 @@ BlackFrameListView::BlackFrameListView(QWidget* const parent)
                         "found in the black frame file", "Hot Pixels"));
     setHeaderLabels(labels);
 
-    m_toolTip      = new BlackFrameToolTip(this);
-    m_toolTipTimer = new QTimer(this);
+    d->toolTip      = new BlackFrameToolTip(this);
+    d->toolTipTimer = new QTimer(this);
 
     connect(this, SIGNAL(itemSelectionChanged()),
             this, SLOT(slotSelectionChanged()));
 
-    connect(m_toolTipTimer, SIGNAL(timeout()),
+    connect(d->toolTipTimer, SIGNAL(timeout()),
             this, SLOT(slotToolTip()));
 }
 
 BlackFrameListView::~BlackFrameListView()
 {
-    delete m_toolTip;
+    delete d->toolTip;
+    delete d;
 }
 
 bool BlackFrameListView::contains(const QUrl& url)
@@ -134,8 +150,8 @@ void BlackFrameListView::slotHotPixelsParsed(const QList<HotPixelProps>& hotPixe
 
 void BlackFrameListView::hideToolTip()
 {
-    m_toolTipItem = nullptr;
-    m_toolTipTimer->stop();
+    d->toolTipItem = nullptr;
+    d->toolTipTimer->stop();
     slotToolTip();
 }
 
@@ -151,7 +167,7 @@ bool BlackFrameListView::acceptToolTip(const QPoint& pos) const
 
 void BlackFrameListView::slotToolTip()
 {
-    m_toolTip->setItem(m_toolTipItem);
+    d->toolTip->setItem(d->toolTipItem);
 }
 
 void BlackFrameListView::mouseMoveEvent(QMouseEvent* e)
@@ -166,20 +182,20 @@ void BlackFrameListView::mouseMoveEvent(QMouseEvent* e)
             return;
         }
 
-        if (item != m_toolTipItem)
+        if (item != d->toolTipItem)
         {
             hideToolTip();
 
             if (acceptToolTip(e->pos()))
             {
-                m_toolTipItem = item;
-                m_toolTip->setToolTipString(item->toolTipString());
-                m_toolTipTimer->setSingleShot(true);
-                m_toolTipTimer->start(500);
+                d->toolTipItem = item;
+                d->toolTip->setToolTipString(item->toolTipString());
+                d->toolTipTimer->setSingleShot(true);
+                d->toolTipTimer->start(500);
             }
         }
 
-        if ((item == m_toolTipItem) && !acceptToolTip(e->pos()))
+        if ((item == d->toolTipItem) && !acceptToolTip(e->pos()))
         {
             hideToolTip();
         }

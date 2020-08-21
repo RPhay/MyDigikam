@@ -40,9 +40,8 @@
 // Local includes
 
 #include "digikam_export.h"
-#include "dimg.h"
-#include "loadsavethread.h"
 #include "hotpixelprops.h"
+#include "loadingdescription.h"
 
 using namespace Digikam;
 
@@ -83,9 +82,8 @@ private:
 
 private:
 
-    DImg            m_image;
-
-    LoadSaveThread* m_imageLoaderThread;
+    class Private;
+    Private* const d;
 };
 
 } // namespace Digikam
