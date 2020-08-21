@@ -29,14 +29,13 @@ install(FILES ${CMAKE_CURRENT_SOURCE_DIR}/dnnface/res10_300x300_ssd_iter_140000_
 # Face detection Yolo model data files
 # Disabled as SSD model are lightweight compared to Yolo model and provide very good results.
 
-# TODO: finalise this routine
-install(FILES ${CMAKE_CURRENT_SOURCE_DIR}/dnnface/yolov3-face.cfg
-        DESTINATION ${DATA_INSTALL_DIR}/digikam/facesengine
-)
+#install(FILES ${CMAKE_CURRENT_SOURCE_DIR}/dnnface/yolov3-face.cfg
+#        DESTINATION ${DATA_INSTALL_DIR}/digikam/facesengine
+#)
 
-install(FILES ${CMAKE_CURRENT_SOURCE_DIR}/dnnface/yolov3-wider_16000.weights
-        DESTINATION ${DATA_INSTALL_DIR}/digikam/facesengine
-)
+#install(FILES ${CMAKE_CURRENT_SOURCE_DIR}/dnnface/yolov3-wider_16000.weights
+#        DESTINATION ${DATA_INSTALL_DIR}/digikam/facesengine
+#)
 
 # ---------------------------------------------------------------
 
