@@ -4,7 +4,7 @@
  * https://www.digikam.org
  *
  * Date        : 2005-07-05
- * Description : a ListView to display black frames
+ * Description : a list view to display black frames
  *
  * Copyright (C) 2005-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
  * Copyright (C) 2005-2006 by Unai Garro <ugarro at users dot sourceforge dot net>
@@ -51,6 +51,8 @@ public:
     ~BlackFrameListView();
 
     bool contains(const QUrl& url);
+
+    QList<QUrl> itemUrls();
 
 Q_SIGNALS:
 
