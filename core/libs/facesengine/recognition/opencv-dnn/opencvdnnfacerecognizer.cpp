@@ -114,7 +114,7 @@ public:
 
     KDTree* tree;
     int kNeighbors;
-    int threshold;
+    float threshold;
 
     bool newDataAdded;
 
@@ -375,7 +375,7 @@ void OpenCVDNNFaceRecognizer::setNbNeighBors(int k)
     d->kNeighbors = k;
 }
 
-void OpenCVDNNFaceRecognizer::setThreshold(int threshold)
+void OpenCVDNNFaceRecognizer::setThreshold(float threshold)
 {
     d->threshold = threshold;
 }
