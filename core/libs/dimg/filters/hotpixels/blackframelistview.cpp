@@ -112,24 +112,23 @@ bool BlackFrameListView::contains(const QUrl& url)
     return false;
 }
 
-QList<QUrl> BlackFrameListView::itemUrls()
+bool BlackFrameListView::isSelected(const QUrl& url)
 {
-    QList<QUrl> urls;
     QTreeWidgetItemIterator it(this);
 
     while (*it)
     {
         BlackFrameListViewItem* const item = dynamic_cast<BlackFrameListViewItem*>(*it);
 
-        if (item)
+        if (item && item->isSelected() && (item->frameUrl() == url))
         {
-            urls << item->frameUrl();
+            return true;
         }
 
         ++it;
     }
 
-    return urls;
+    return false;
 }
 
 void BlackFrameListView::slotSelectionChanged()
@@ -143,9 +142,12 @@ void BlackFrameListView::slotSelectionChanged()
 }
 
 void BlackFrameListView::slotHotPixelsParsed(const QList<HotPixelProps>& hotPixels,
-                                             const QUrl& blackFrameUrl)
+                                             const QUrl& url)
 {
-    emit signalBlackFrameSelected(hotPixels, blackFrameUrl);
+    if (isSelected(url))
+    {
+        emit signalBlackFrameSelected(hotPixels, url);
+    }
 }
 
 void BlackFrameListView::hideToolTip()

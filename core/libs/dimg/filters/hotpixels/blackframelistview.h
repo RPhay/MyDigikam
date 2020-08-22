@@ -49,8 +49,7 @@ public:
     ~BlackFrameListView();
 
     bool contains(const QUrl& url);
-
-    QList<QUrl> itemUrls();
+    bool isSelected(const QUrl& url);
 
 Q_SIGNALS:
 

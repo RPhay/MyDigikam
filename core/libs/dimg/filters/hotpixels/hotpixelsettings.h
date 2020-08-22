@@ -60,7 +60,7 @@ public:
     void readSettings(KConfigGroup& group);
     void writeSettings(KConfigGroup& group);
 
-    QString configGroupName() const;
+    QString configGroupName()            const;
 
 Q_SIGNALS:
 
@@ -70,11 +70,11 @@ Q_SIGNALS:
 private Q_SLOTS:
 
     void slotAddBlackFrame();
-    void slotBlackFrame(const QList<HotPixelProps>& hpList, const QUrl& blackFrameUrl);
+    void slotBlackFrame(const QList<HotPixelProps>& hpList, const QUrl& url);
 
 private:
 
-    void loadBlackFrame();
+    void loadBlackFrame(const QUrl& url, bool selected);
 
 private:
 
