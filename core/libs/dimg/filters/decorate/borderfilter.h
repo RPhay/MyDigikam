@@ -29,99 +29,16 @@
 
 // Qt includes
 
-#include <QColor>
 #include <QImage>
-#include <QString>
 
 // Local includes
 
-#include "digikam_export.h"
 #include "dimgthreadedfilter.h"
 #include "digikam_globals.h"
+#include "bordercontainer.h"
 
 namespace Digikam
 {
-
-class DIGIKAM_EXPORT BorderContainer
-{
-
-public:
-
-    enum BorderTypes
-    {
-        SolidBorder = 0,
-        NiepceBorder,
-        BeveledBorder,
-        PineBorder,
-        WoodBorder,
-        PaperBorder,
-        ParqueBorder,
-        IceBorder,
-        LeafBorder,
-        MarbleBorder,
-        RainBorder,
-        CratersBorder,
-        DriedBorder,
-        PinkBorder,
-        StoneBorder,
-        ChalkBorder,
-        GraniteBorder,
-        RockBorder,
-        WallBorder
-    };
-
-public:
-
-    explicit BorderContainer()
-      : preserveAspectRatio(true),
-        orgWidth(0),
-        orgHeight(0),
-        borderType(0),
-        borderWidth1(0),
-        borderWidth2(0),
-        borderWidth3(0),
-        borderWidth4(0),
-        borderPercent(0.1),
-        solidColor(QColor(0, 0, 0)),
-        niepceBorderColor(QColor(255, 255, 255)),
-        niepceLineColor(QColor(0, 0, 0)),
-        bevelUpperLeftColor(QColor(192, 192, 192)),
-        bevelLowerRightColor(QColor(128, 128, 128)),
-        decorativeFirstColor(QColor(0, 0, 0)),
-        decorativeSecondColor(QColor(0, 0, 0))
-    {
-    };
-
-    ~BorderContainer()
-    {
-    };
-
-public:
-
-    bool    preserveAspectRatio;
-
-    int     orgWidth;
-    int     orgHeight;
-
-    int     borderType;
-
-    int     borderWidth1;
-    int     borderWidth2;
-    int     borderWidth3;
-    int     borderWidth4;
-
-    double  borderPercent;
-
-    QString borderPath;
-
-    QColor  solidColor;
-    QColor  niepceBorderColor;
-    QColor  niepceLineColor;
-    QColor  bevelUpperLeftColor;
-    QColor  bevelLowerRightColor;
-    QColor  decorativeFirstColor;
-    QColor  decorativeSecondColor;
-};
 
 class DIGIKAM_EXPORT BorderFilter : public DImgThreadedFilter
 {

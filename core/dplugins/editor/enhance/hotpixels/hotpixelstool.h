@@ -26,16 +26,15 @@
 #ifndef DIGIKAM_EDITOR_HOT_PIXELS_TOOL_H
 #define DIGIKAM_EDITOR_HOT_PIXELS_TOOL_H
 
-#define MAX_PIXEL_DEPTH 4
-
 // Qt includes
 
 #include <QList>
+#include <QPolygon>
 
 // Local includes
 
 #include "editortool.h"
-#include "hotpixel.h"
+#include "hotpixelprops.h"
 
 class QUrl;
 
@@ -57,10 +56,7 @@ public:
 
 private Q_SLOTS:
 
-    void slotLoadingProgress(float v);
-    void slotLoadingComplete();
-    void slotBlackFrame(const QList<HotPixel>& hpList, const QUrl& blackFrameURL);
-    void slotAddBlackFrame();
+    void slotHotPixels(const QPolygon&);
     void slotResetSettings();
 
 private:

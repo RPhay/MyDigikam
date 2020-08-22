@@ -312,7 +312,7 @@ PresentationWidget::PresentationWidget(PresentationContainer* const sharedData)
     }
 
     d->timer->setSingleShot(true);
-    d->timer->start(10);
+    d->timer->start(100);
 
     // -- hide cursor when not moved --------------------
 

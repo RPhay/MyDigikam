@@ -107,10 +107,10 @@ public:
 
 private:
 
-    DImgFilterManager();                                    // Disable
-    ~DImgFilterManager();                                   // Disable
-    DImgFilterManager(const DImgFilterManager&);            // Disable
-    DImgFilterManager& operator=(const DImgFilterManager&); // Disable
+    DImgFilterManager();                                    ///< Disable
+    ~DImgFilterManager();                                   ///< Disable
+    DImgFilterManager(const DImgFilterManager&);            ///< Disable
+    DImgFilterManager& operator=(const DImgFilterManager&); ///< Disable
 
 private:
 

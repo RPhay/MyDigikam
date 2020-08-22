@@ -301,6 +301,88 @@ QString DMetadata::getLensDescription() const
     return lens;
 }
 
+QString DMetadata::getCameraSerialNumber() const
+{
+    QString sn = getExifTagString("Exif.Image.CameraSerialNumber");
+
+    if (sn.isEmpty())
+    {
+        sn = getExifTagString("Exif.Canon.SerialNumber");
+    }
+
+    if (sn.isEmpty())
+    {
+        sn = getExifTagString("Exif.Fujifilm.SerialNumber");
+    }
+
+    if (sn.isEmpty())
+    {
+        sn = getExifTagString("Exif.Nikon3.SerialNumber");
+    }
+
+    if (sn.isEmpty())
+    {
+        sn = getExifTagString("Exif.Nikon3.SerialNO");
+    }
+
+    if (sn.isEmpty())
+    {
+        sn = getExifTagString("Exif.OlympusEq.SerialNumber");
+    }
+
+    if (sn.isEmpty())
+    {
+        sn = getExifTagString("Exif.Olympus.SerialNumber2");
+    }
+
+    if (sn.isEmpty())
+    {
+        sn = getExifTagString("Exif.OlympusEq.InternalSerialNumber");
+    }
+
+    if (sn.isEmpty())
+    {
+        sn = getExifTagString("Exif.Panasonic.InternalSerialNumber");
+    }
+
+    if (sn.isEmpty())
+    {
+        sn = getExifTagString("Exif.Sigma.SerialNumber");
+    }
+
+    if (sn.isEmpty())
+    {
+        sn = getExifTagString("Exif.Sigma.SerialNumber");
+    }
+
+    if (sn.isEmpty())
+    {
+        sn = getExifTagString("Exif.Sigma.SerialNumber");
+    }
+
+    if (sn.isEmpty())
+    {
+        sn = getExifTagString("Exif.Pentax.SerialNumber");
+    }
+
+    if (sn.isEmpty())
+    {
+        sn = getXmpTagString("Xmp.exifEX.BodySerialNumber");
+    }
+
+    if (sn.isEmpty())
+    {
+        sn = getXmpTagString("Xmp.aux.SerialNumber");
+    }
+
+    if (sn.isEmpty())
+    {
+        sn = getXmpTagString("Xmp.MicrosoftPhoto.CameraSerialNumber");
+    }
+
+    return sn;
+}
+
 double DMetadata::apexApertureToFNumber(double aperture)
 {
     // convert from APEX. See Exif spec, Annex C.

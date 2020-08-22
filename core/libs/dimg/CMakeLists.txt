@@ -47,7 +47,10 @@ set(libdimgfilters_SRCS
     ${CMAKE_CURRENT_SOURCE_DIR}/filters/raw/drawdecoding.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/filters/decorate/borderfilter.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/filters/decorate/bordersettings.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/filters/decorate/bordercontainer.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/filters/decorate/texturecontainer.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/filters/decorate/texturefilter.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/filters/decorate/texturesettings.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/filters/film/filmfilter.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/filters/fx/blurfilter.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/filters/fx/blurfxfilter.cpp
@@ -70,6 +73,7 @@ set(libdimgfilters_SRCS
     ${CMAKE_CURRENT_SOURCE_DIR}/filters/cb/cbsettings.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/filters/bcg/bcgfilter.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/filters/bcg/bcgsettings.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/filters/bcg/bcgcontainer.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/filters/bw/bwsepiafilter.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/filters/bw/bwsepiasettings.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/filters/bw/tonalityfilter.cpp
@@ -79,6 +83,15 @@ set(libdimgfilters_SRCS
     ${CMAKE_CURRENT_SOURCE_DIR}/filters/hsl/hslfilter.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/filters/hsl/hslsettings.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/filters/hsl/hspreviewwidget.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/filters/hotpixels/blackframeparser.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/filters/hotpixels/blackframelistview.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/filters/hotpixels/blackframelistviewitem.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/filters/hotpixels/blackframetooltip.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/filters/hotpixels/hotpixelprops.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/filters/hotpixels/hotpixelfixer.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/filters/hotpixels/hotpixelsweights.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/filters/hotpixels/hotpixelsettings.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/filters/hotpixels/hotpixelcontainer.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/filters/icc/iccmanager.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/filters/icc/iccprofile.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/filters/icc/iccprofilesettings.cpp

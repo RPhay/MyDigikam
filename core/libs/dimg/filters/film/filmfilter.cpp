@@ -295,7 +295,7 @@ LevelsContainer FilmContainer::toLevels() const
 
         if (d->applyBalance)
         {
-            l.gamma[i]   = gammaForChannel(i);
+            l.gamma[i] = gammaForChannel(i);
         }
         else
         {
@@ -413,16 +413,19 @@ void FilmFilter::filterImage()
 
     // level the image first, this removes the orange mask and corrects
     // colors according to the density ranges of the film profile
+
     LevelsFilter(l, this, m_orgImage, tmpLevel, 0, 40);
 
     // in case of a linear raw scan, gamma needs to be
     // applied after leveling the image, otherwise the image will
     // look too bright. The standard value is 2.2, but 1.8 is also
     // frequently found in literature
+
     gamma.gamma = d->film.gamma();
     CBFilter(gamma, this, tmpLevel, tmpGamma, 40, 80);
 
     // invert the image to have a positive image
+
     InvertFilter(this, tmpGamma, tmpInv, 80, 100);
 
     m_destImage = tmpInv;

@@ -34,6 +34,7 @@
 
 #include "digikam_export.h"
 #include "dimgthreadedfilter.h"
+#include "texturecontainer.h"
 
 namespace Digikam
 {
@@ -45,9 +46,8 @@ public:
 
     explicit TextureFilter(QObject* const parent = nullptr);
     explicit TextureFilter(DImg* const orgImage,
-                           QObject* const parent=nullptr,
-                           int blendGain=200,
-                           const QString& texturePath=QString());
+                           QObject* const parent = nullptr,
+                           const TextureContainer& settings = TextureContainer());
 
     ~TextureFilter();
 
@@ -60,12 +60,12 @@ public:
 
     static QList<int>       SupportedVersions()
     {
-        return QList<int>() << 1;
+        return QList<int>() << 2;
     }
 
     static int              CurrentVersion()
     {
-        return 1;
+        return 2;
     }
 
     virtual QString         filterIdentifier()                          const override
@@ -82,9 +82,7 @@ private:
 
 private:
 
-    int     m_blendGain;
-
-    QString m_texturePath;
+    TextureContainer m_settings;
 };
 
 } // namespace Digikam

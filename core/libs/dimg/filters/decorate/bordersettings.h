@@ -45,8 +45,8 @@ class DIGIKAM_EXPORT BorderSettings : public QWidget
 
 public:
 
-    explicit BorderSettings(QWidget* parent);
-    virtual ~BorderSettings();
+    explicit BorderSettings(QWidget* const parent);
+    ~BorderSettings();
 
     BorderContainer defaultSettings() const;
     void resetToDefault();
@@ -56,8 +56,6 @@ public:
 
     void readSettings(KConfigGroup& group);
     void writeSettings(KConfigGroup& group);
-
-    static QString getBorderPath(int border);
 
 Q_SIGNALS:
 

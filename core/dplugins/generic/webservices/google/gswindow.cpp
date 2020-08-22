@@ -44,7 +44,7 @@
 
 #include <klocalizedstring.h>
 #include <ksharedconfig.h>
-#include <kwindowconfig.h>
+#include <kconfiggroup.h>
 
 // Local includes
 
@@ -320,12 +320,6 @@ void GSWindow::readSettings()
     {
         d->widget->m_tagsBGrp->button(grp.readEntry("Tag Paths", 0))->setChecked(true);
     }
-
-    KConfigGroup dialogGroup = config->group(QString::fromLatin1("%1Export Dialog").arg(d->serviceName));
-
-    winId();
-    KWindowConfig::restoreWindowSize(windowHandle(), dialogGroup);
-    resize(windowHandle()->size());
 }
 
 void GSWindow::writeSettings()
@@ -355,10 +349,6 @@ void GSWindow::writeSettings()
     {
         grp.writeEntry("Tag Paths", d->widget->m_tagsBGrp->checkedId());
     }
-
-    KConfigGroup dialogGroup = config->group(QString::fromLatin1("%1Export Dialog").arg(d->serviceName));
-    KWindowConfig::saveWindowSize(windowHandle(), dialogGroup);
-    config->sync();
 }
 
 void GSWindow::slotSetUserName(const QString& msg)

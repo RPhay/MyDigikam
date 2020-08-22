@@ -124,7 +124,6 @@ void DigikamApp::setupStatusBar()
 
 void DigikamApp::setupActions()
 {
-
     KActionCollection* const ac = actionCollection();
 
     d->solidCameraActionGroup   = new QActionGroup(this);
@@ -162,7 +161,7 @@ void DigikamApp::setupActions()
     connect(d->forwardActionMenu->menu(), SIGNAL(aboutToShow()),
             this, SLOT(slotAboutToShowForwardMenu()));
 
-     connect(d->forwardActionMenu, &QAction::triggered,
+    connect(d->forwardActionMenu, &QAction::triggered,
             this, [this]() { d->view->slotAlbumHistoryForward(1); });
 
     // -----------------------------------------------------------------
@@ -509,7 +508,7 @@ void DigikamApp::setupActions()
 
     // -----------------------------------------------------------
 
-    d->imageSortAction                   = new KSelectAction(i18n("&Sort Items"), this);
+    d->imageSortAction     = new KSelectAction(i18n("&Sort Items"), this);
     d->imageSortAction->setWhatsThis(i18n("The value by which the images in one album are sorted in the thumbnail view"));
     ac->addAction(QLatin1String("image_sort"), d->imageSortAction);
 
@@ -571,7 +570,7 @@ void DigikamApp::setupActions()
 
     // -----------------------------------------------------------
 
-    d->imageSortOrderAction                   = new KSelectAction(i18n("Item Sort &Order"), this);
+    d->imageSortOrderAction             = new KSelectAction(i18n("Item Sort &Order"), this);
     d->imageSortOrderAction->setWhatsThis(i18n("Defines whether images are sorted in ascending or descending manner."));
     ac->addAction(QLatin1String("image_sort_order"), d->imageSortOrderAction);
 
@@ -588,7 +587,7 @@ void DigikamApp::setupActions()
 
     // -----------------------------------------------------------
 
-    d->imageSeparationAction                   = new KSelectAction(i18n("Separate Items"), this);
+    d->imageSeparationAction              = new KSelectAction(i18n("Separate Items"), this);
     d->imageSeparationAction->setWhatsThis(i18n("The categories in which the images in the thumbnail view are displayed"));
     ac->addAction(QLatin1String("image_separation"), d->imageSeparationAction);
 
@@ -617,7 +616,7 @@ void DigikamApp::setupActions()
 
     // -----------------------------------------------------------------
 
-    d->imageSeparationSortOrderAction                   = new KSelectAction(i18n("Item Separation Order"), this);
+    d->imageSeparationSortOrderAction        = new KSelectAction(i18n("Item Separation Order"), this);
     d->imageSeparationSortOrderAction->setWhatsThis(i18n("The sort order of the groups of separated items"));
     ac->addAction(QLatin1String("image_separation_sort_order"), d->imageSeparationSortOrderAction);
 

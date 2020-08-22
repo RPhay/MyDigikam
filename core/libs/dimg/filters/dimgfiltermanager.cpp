@@ -87,7 +87,7 @@
 
 #ifdef HAVE_LIBLQR_1
 #   include "contentawarefilter.h"
-#endif /* HAVE_LIBLQR_1 */
+#endif // HAVE_LIBLQR_1
 
 #ifdef HAVE_LENSFUN
 #   include "lensfunfilter.h"
@@ -132,7 +132,7 @@ public:
 
 void DImgFilterManager::Private::setupCoreGenerators()
 {
-    //Please keep this list sorted alphabetically
+    // Please keep this list sorted alphabetically
     coreGenerators
             << ImgFilterPtr(new BasicDImgFilterGenerator<AntiVignettingFilter>())
             << ImgFilterPtr(new BasicDImgFilterGenerator<AutoExpoFilter>())
@@ -147,7 +147,9 @@ void DImgFilterManager::Private::setupCoreGenerators()
             << ImgFilterPtr(new BasicDImgFilterGenerator<ColorFXFilter>())
 
 #ifdef HAVE_LIBLQR_1
+
             << ImgFilterPtr(new BasicDImgFilterGenerator<ContentAwareFilter>())
+
 #endif // HAVE_LIBLQR_1
 
             << ImgFilterPtr(new BasicDImgFilterGenerator<CurvesFilter>())
@@ -165,7 +167,9 @@ void DImgFilterManager::Private::setupCoreGenerators()
             << ImgFilterPtr(new BasicDImgFilterGenerator<LensDistortionFilter>())
 
 #ifdef HAVE_LENSFUN
+
             << ImgFilterPtr(new BasicDImgFilterGenerator<LensFunFilter>())
+
 #endif // HAVE_LENSFUN
 
             << ImgFilterPtr(new BasicDImgFilterGenerator<LevelsFilter>())
@@ -178,7 +182,9 @@ void DImgFilterManager::Private::setupCoreGenerators()
             << ImgFilterPtr(new BasicDImgFilterGenerator<RedEyeCorrectionFilter>())
 
 #ifdef HAVE_EIGEN3
+
             << ImgFilterPtr(new BasicDImgFilterGenerator<RefocusFilter>())
+
 #endif // HAVE_EIGEN3
 
             << ImgFilterPtr(new BasicDImgFilterGenerator<SharpenFilter>())
