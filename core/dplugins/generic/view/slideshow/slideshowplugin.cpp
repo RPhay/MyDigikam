@@ -34,6 +34,8 @@
 // KDE includes
 
 #include <klocalizedstring.h>
+#include <kactioncollection.h>
+#include <kxmlguiwindow.h>
 
 // Local includes
 
@@ -112,15 +114,15 @@ void SlideShowPlugin::setup(QObject* const parent)
 
     if (iface && (parent->objectName() == QLatin1String("Digikam")))
     {
-        QMenu* const slideShowActions = new QMenu(i18n("Slideshow"), nullptr);
+
+        QMenu* const slideShowActions = new QMenu(i18n("Slideshow"));
         slideShowActions->setIcon(icon());
         ac->setMenu(slideShowActions);
 
         // Action show all
 
-        QAction* const slideShowAllAction = new QAction(i18n("All"), ac);
+        QAction* const slideShowAllAction = new QAction(i18n("Play All"), ac);
         slideShowAllAction->setObjectName(QLatin1String("slideshow_all"));
-        slideShowAllAction->setShortcut(Qt::Key_F9);
         slideShowActions->addAction(slideShowAllAction);
 
         connect(slideShowAllAction, SIGNAL(triggered()),
@@ -128,9 +130,8 @@ void SlideShowPlugin::setup(QObject* const parent)
 
         // Action show selection
 
-        QAction* const slideShowSelectionAction = new QAction(i18n("Selection"), ac);
+        QAction* const slideShowSelectionAction = new QAction(i18n("Play Selection"), ac);
         slideShowSelectionAction->setObjectName(QLatin1String("slideshow_selected"));
-        slideShowSelectionAction->setShortcut(Qt::ALT + Qt::Key_F9);
         slideShowActions->addAction(slideShowSelectionAction);
 
         connect(slideShowSelectionAction, SIGNAL(triggered()),
@@ -138,9 +139,8 @@ void SlideShowPlugin::setup(QObject* const parent)
 
         // Action show recursive
 
-        QAction* const slideShowRecursiveAction = new QAction(i18n("With All Sub-Albums"), ac);
+        QAction* const slideShowRecursiveAction = new QAction(i18n("Play With Sub-Albums"), ac);
         slideShowRecursiveAction->setObjectName(QLatin1String("slideshow_recursive"));
-        slideShowRecursiveAction->setShortcut(Qt::SHIFT + Qt::Key_F9);
         slideShowActions->addAction(slideShowRecursiveAction);
 
         connect(slideShowRecursiveAction, SIGNAL(triggered()),
@@ -148,6 +148,24 @@ void SlideShowPlugin::setup(QObject* const parent)
 
         connect(ac, SIGNAL(triggered(bool)),
                 this, SLOT(slotShowManual()));
+
+        // See bug #425425: register all sub-actions to collection instance to be able to edit keyboard shorcuts
+
+        KXmlGuiWindow* const gui = dynamic_cast<KXmlGuiWindow*>(parent);
+
+        if (gui)
+        {
+            KActionCollection* const collection = gui->actionCollection();
+            collection->setShortcutsConfigurable(slideShowActions->menuAction(), false);
+
+            collection->addAction(slideShowAllAction->objectName(),       slideShowAllAction);
+            collection->addAction(slideShowSelectionAction->objectName(), slideShowSelectionAction);
+            collection->addAction(slideShowRecursiveAction->objectName(), slideShowRecursiveAction);
+
+            collection->setDefaultShortcut(slideShowAllAction,       Qt::Key_F9);
+            collection->setDefaultShortcut(slideShowSelectionAction, Qt::ALT + Qt::Key_F9);
+            collection->setDefaultShortcut(slideShowRecursiveAction, Qt::SHIFT + Qt::Key_F9);
+        }
     }
     else
     {

@@ -4,7 +4,7 @@
  * https://www.digikam.org
  *
  * Date        : 2009-11-21
- * Description : Wavelets Noise Reduction batch tool.
+ * Description : Anti-vignetting batch tool.
  *
  * Copyright (C) 2009-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
@@ -67,12 +67,12 @@ BatchToolSettings AntiVignetting::defaultSettings()
     AntiVignettingContainer defaultPrm = m_settingsView->defaultSettings();
 
     prm.insert(QLatin1String("addvignetting"), (bool)defaultPrm.addvignetting);
-    prm.insert(QLatin1String("density"), (double)defaultPrm.density);
-    prm.insert(QLatin1String("power"), (double)defaultPrm.power);
-    prm.insert(QLatin1String("innerradius"), (double)defaultPrm.innerradius);
-    prm.insert(QLatin1String("outerradius"), (double)defaultPrm.outerradius);
-    prm.insert(QLatin1String("xshift"), (double)defaultPrm.xshift);
-    prm.insert(QLatin1String("yshift"), (double)defaultPrm.yshift);
+    prm.insert(QLatin1String("density"),       (double)defaultPrm.density);
+    prm.insert(QLatin1String("power"),         (double)defaultPrm.power);
+    prm.insert(QLatin1String("innerradius"),   (double)defaultPrm.innerradius);
+    prm.insert(QLatin1String("outerradius"),   (double)defaultPrm.outerradius);
+    prm.insert(QLatin1String("xshift"),        (double)defaultPrm.xshift);
+    prm.insert(QLatin1String("yshift"),        (double)defaultPrm.yshift);
 
     return prm;
 }
@@ -96,12 +96,12 @@ void AntiVignetting::slotSettingsChanged()
     AntiVignettingContainer currentPrm = m_settingsView->settings();
 
     prm.insert(QLatin1String("addvignetting"), (bool)currentPrm.addvignetting);
-    prm.insert(QLatin1String("density"), (double)currentPrm.density);
-    prm.insert(QLatin1String("power"), (double)currentPrm.power);
-    prm.insert(QLatin1String("innerradius"), (double)currentPrm.innerradius);
-    prm.insert(QLatin1String("outerradius"), (double)currentPrm.outerradius);
-    prm.insert(QLatin1String("xshift"), (double)currentPrm.xshift);
-    prm.insert(QLatin1String("yshift"), (double)currentPrm.yshift);
+    prm.insert(QLatin1String("density"),       (double)currentPrm.density);
+    prm.insert(QLatin1String("power"),         (double)currentPrm.power);
+    prm.insert(QLatin1String("innerradius"),   (double)currentPrm.innerradius);
+    prm.insert(QLatin1String("outerradius"),   (double)currentPrm.outerradius);
+    prm.insert(QLatin1String("xshift"),        (double)currentPrm.xshift);
+    prm.insert(QLatin1String("yshift"),        (double)currentPrm.yshift);
 
     BatchTool::slotSettingsChanged(prm);
 }

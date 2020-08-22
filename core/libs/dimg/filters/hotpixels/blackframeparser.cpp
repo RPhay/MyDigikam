@@ -8,7 +8,7 @@
  *
  * Copyright (C) 2005-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
  * Copyright (C) 2005-2006 by Unai Garro <ugarro at users dot sourceforge dot net>
- * Copyright (C) 2015      by Mohamed_Anwer <m_dot_anwer at gmx dot com>
+ * Copyright (C) 2015      by Mohamed_Anwer <d->dot_anwer at gmx dot com>
  *
  * Part of the algorithm for finding the hot pixels was based on
  * the code of jpegpixi, which was released under the GPL license,
@@ -41,31 +41,44 @@
 
 // Qt includes
 
-#include <QImage>
 #include <QStringList>
 #include <QApplication>
 
 // Local includes
 
 #include "digikam_debug.h"
+#include "dcolor.h"
+#include "dimg.h"
+#include "loadsavethread.h"
 
-namespace DigikamEditorHotPixelsToolPlugin
+
+namespace Digikam
 {
+
+class Q_DECL_HIDDEN BlackFrameParser::Private
+{
+public:
+
+    explicit Private()
+      : imageLoaderThread(nullptr)
+    {
+    }
+
+    DImg            image;
+
+    LoadSaveThread* imageLoaderThread;
+};
 
 BlackFrameParser::BlackFrameParser(QObject* const parent)
     : QObject(parent),
-      m_imageLoaderThread(nullptr)
+      d(new Private)
 {
 }
 
 BlackFrameParser::~BlackFrameParser()
 {
-    if (!m_tempFilePath.isEmpty())
-    {
-        QFile::remove(m_tempFilePath);
-    }
-
-    delete m_imageLoaderThread;
+    delete d->imageLoaderThread;
+    delete d;
 }
 
 void BlackFrameParser::parseHotPixels(const QString& file)
@@ -75,21 +88,26 @@ void BlackFrameParser::parseHotPixels(const QString& file)
 
 void BlackFrameParser::parseBlackFrame(const QUrl& url)
 {
+    if (url.isEmpty())
+    {
+        return;
+    }
+
     QString localFile = url.toLocalFile();
 
-    if (!m_imageLoaderThread)
+    if (!d->imageLoaderThread)
     {
-        m_imageLoaderThread = new LoadSaveThread();
+        d->imageLoaderThread = new LoadSaveThread();
 
-        connect(m_imageLoaderThread, SIGNAL(signalLoadingProgress(LoadingDescription,float)),
+        connect(d->imageLoaderThread, SIGNAL(signalLoadingProgress(LoadingDescription,float)),
                 this, SLOT(slotLoadingProgress(LoadingDescription,float)));
 
-        connect(m_imageLoaderThread, SIGNAL(signalImageLoaded(LoadingDescription,DImg)),
+        connect(d->imageLoaderThread, SIGNAL(signalImageLoaded(LoadingDescription,DImg)),
                 this, SLOT(slotLoadImageFromUrlComplete(LoadingDescription,DImg)));
     }
 
     LoadingDescription desc = LoadingDescription(localFile, DRawDecoding());
-    m_imageLoaderThread->load(desc);
+    d->imageLoaderThread->load(desc);
 }
 
 void BlackFrameParser::slotLoadingProgress(const LoadingDescription&, float v)
@@ -99,21 +117,20 @@ void BlackFrameParser::slotLoadingProgress(const LoadingDescription&, float v)
 
 void BlackFrameParser::slotLoadImageFromUrlComplete(const LoadingDescription&, const DImg& img)
 {
-    m_Image = img.copyQImage();
-    blackFrameParsing();
+    parseBlackFrame(img);
 
     emit signalLoadingComplete();
 }
 
-void BlackFrameParser::parseBlackFrame(QImage& img)
+void BlackFrameParser::parseBlackFrame(const DImg& img)
 {
-    m_Image = img;
+    d->image = img.copy();
     blackFrameParsing();
 }
 
-QImage BlackFrameParser::image() const
+DImg BlackFrameParser::image() const
 {
-    return m_Image;
+    return d->image;
 }
 
 /**
@@ -123,7 +140,7 @@ void BlackFrameParser::blackFrameParsing()
 {
     // Now find the hot pixels and store them in a list
 
-    QList<HotPixel> hpList;
+    QList<HotPixelProps> hpList;
 
     // If you accidentally open a normal image for a black frame, the tool and host application will
     // freeze due to heavy calculation.
@@ -133,15 +150,15 @@ void BlackFrameParser::blackFrameParsing()
 
     const int maxHotPixels = 1000;
 
-    for (int y = 0 ; y < m_Image.height() ; ++y)
+    for (int y = 0 ; y < (int)d->image.height() ; ++y)
     {
-        for (int x = 0 ; x < m_Image.width() ; ++x)
+        for (int x = 0 ; x < (int)d->image.width() ; ++x)
         {
             // Get each point in the image
 
-            QRgb pixrgb = m_Image.pixel(x, y);
+            DColor pixrgb = d->image.getPixelColor(x, y);
             QColor color;
-            color.setRgb(pixrgb);
+            color.setRgb(pixrgb.getQColor().rgb());
 
             // Find maximum component value.
 
@@ -159,7 +176,7 @@ void BlackFrameParser::blackFrameParsing()
 
             if (maxValue > threshold_value)
             {
-                HotPixel point;
+                HotPixelProps point;
                 point.rect       = QRect (x, y, 1, 1);
 
                 // TODO: check this
@@ -182,65 +199,63 @@ void BlackFrameParser::blackFrameParsing()
 
     // And notify
 
-    emit signalParsed(hpList);
+    emit signalHotPixelsParsed(hpList);
 }
 
 /**
  * Consolidate adjacent points into larger points.
  */
-void BlackFrameParser::consolidatePixels(QList<HotPixel>& list)
+void BlackFrameParser::consolidatePixels(QList<HotPixelProps>& list)
 {
     if (list.isEmpty())
     {
         return;
     }
 
+    qCDebug(DIGIKAM_DIMG_LOG) << "Consolidate hp list of" << list.size() << "items";
+
     // Consolidate horizontally.
 
-    QList<HotPixel>::iterator it, prevPointIt;
+    QList<HotPixelProps>::iterator it = list.begin();
 
-    prevPointIt = list.begin();
-    it          = list.begin();
     ++it;
 
-    HotPixel tmp;
-    HotPixel point;
-    HotPixel point_below;
+    HotPixelProps tmp;
+    HotPixelProps point;
+    HotPixelProps point_below;
 
     for ( ; it != list.end() ; ++it)
     {
-        while (1)
+        while (it != list.end())
         {
             point = (*it);
             tmp   = point;
 
-            QList<HotPixel>::iterator point_below_it;
+            QList<HotPixelProps>::iterator point_below_it = list.end();
 
             // find any intersecting hot pixels below tmp
 
             int i = list.indexOf(tmp);
 
-            if (i == -1)
-            {
-                point_below_it = list.end();
-            }
-            else
+            qCDebug(DIGIKAM_DIMG_LOG) << "Processing hp index" << i;
+
+            if (i != -1)
             {
                 point_below_it = list.begin() + i;
-            }
 
-            if (point_below_it != list.end())
-            {
-                point_below =* point_below_it;
-                validateAndConsolidate(&point, &point_below);
+                if (point_below_it != list.end())
+                {
+                    point_below =* point_below_it;
+                    validateAndConsolidate(&point, &point_below);
 
-                point.rect.setX(qMin(point.x(), point_below.x()));
-                point.rect.setWidth(qMax(point.x() + point.width(),
-                                         point_below.x() + point_below.width()) - point.x());
-                point.rect.setHeight(qMax(point.y() + point.height(),
+                    point.rect.setX(qMin(point.x(), point_below.x()));
+                    point.rect.setWidth(qMax(point.x() + point.width(),
+                                             point_below.x() + point_below.width()) - point.x());
+                    point.rect.setHeight(qMax(point.y() + point.height(),
                                           point_below.y() + point_below.height()) - point.y());
-                *it         = point;
-                list.erase(point_below_it); // TODO: Check! this could remove it++?
+                    (*it)       = point;
+                    list.erase(point_below_it); // TODO: Check! this could remove it++?
+                }
             }
             else
             {
@@ -250,9 +265,9 @@ void BlackFrameParser::consolidatePixels(QList<HotPixel>& list)
     }
 }
 
-void BlackFrameParser::validateAndConsolidate(HotPixel* const a, HotPixel* const b)
+void BlackFrameParser::validateAndConsolidate(HotPixelProps* const a, HotPixelProps* const b)
 {
     a->luminosity = qMax(a->luminosity, b->luminosity);
 }
 
-} // namespace DigikamEditorHotPixelsToolPlugin
+} // namespace Digikam

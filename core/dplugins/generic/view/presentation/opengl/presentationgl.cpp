@@ -282,7 +282,7 @@ PresentationGL::PresentationGL(PresentationContainer* const sharedData)
             this, SLOT(slotTimeOut()));
 
     d->timer->setSingleShot(true);
-    d->timer->start(10);
+    d->timer->start(100);
 
     // -- hide cursor when not moved --------------------
 
@@ -371,6 +371,14 @@ void PresentationGL::initializeGL()
     d->texture[0] = new QOpenGLTexture(QOpenGLTexture::Target2D);
     d->texture[1] = new QOpenGLTexture(QOpenGLTexture::Target2D);
     d->texture[2] = new QOpenGLTexture(QOpenGLTexture::Target2D); // end screen texture
+
+    QImage black(width(), height(), QImage::Format_RGB32);
+    black.fill(QColor(0, 0, 0).rgb());
+
+    d->texture[0]->setData(black);
+    d->texture[0]->setMinificationFilter(QOpenGLTexture::Linear);
+    d->texture[0]->setMagnificationFilter(QOpenGLTexture::Linear);
+    d->texture[0]->bind();
 }
 
 void PresentationGL::paintGL()

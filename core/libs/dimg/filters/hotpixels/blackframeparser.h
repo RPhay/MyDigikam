@@ -26,13 +26,12 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_EDITOR_BLACK_FRAME_PARSER_H
-#define DIGIKAM_EDITOR_BLACK_FRAME_PARSER_H
+#ifndef DIGIKAM_BLACK_FRAME_PARSER_H
+#define DIGIKAM_BLACK_FRAME_PARSER_H
 
 // Qt includes
 
 #include <QList>
-#include <QImage>
 #include <QObject>
 #include <QString>
 #include <QRect>
@@ -40,16 +39,16 @@
 
 // Local includes
 
-#include "dimg.h"
-#include "loadsavethread.h"
-#include "hotpixel.h"
+#include "digikam_export.h"
+#include "hotpixelprops.h"
+#include "loadingdescription.h"
 
 using namespace Digikam;
 
-namespace DigikamEditorHotPixelsToolPlugin
+namespace Digikam
 {
 
-class BlackFrameParser: public QObject
+class DIGIKAM_EXPORT BlackFrameParser: public QObject
 {
     Q_OBJECT
 
@@ -60,13 +59,13 @@ public:
 
     void parseHotPixels(const QString& file);
     void parseBlackFrame(const QUrl& url);
-    void parseBlackFrame(QImage& img);
+    void parseBlackFrame(const DImg& img);
 
-    QImage image() const;
+    DImg image() const;
 
 Q_SIGNALS:
 
-    void signalParsed(const QList<HotPixel>&);
+    void signalHotPixelsParsed(const QList<HotPixelProps>&);
     void signalLoadingProgress(float);
     void signalLoadingComplete();
 
@@ -78,18 +77,15 @@ private Q_SLOTS:
 private:
 
     void blackFrameParsing();
-    void consolidatePixels (QList<HotPixel>& list);
-    void validateAndConsolidate(HotPixel* const a, HotPixel* const b);
+    void consolidatePixels(QList<HotPixelProps>& list);
+    void validateAndConsolidate(HotPixelProps* const a, HotPixelProps* const b);
 
 private:
 
-    QString         m_tempFilePath;
-
-    QImage          m_Image;
-
-    LoadSaveThread* m_imageLoaderThread;
+    class Private;
+    Private* const d;
 };
 
-} // namespace DigikamEditorHotPixelsToolPlugin
+} // namespace Digikam
 
-#endif // DIGIKAM_EDITOR_BLACK_FRAME_PARSER_H
+#endif // DIGIKAM_BLACK_FRAME_PARSER_H

@@ -172,6 +172,8 @@ void DRawDecoder::Private::fillIndentifyInfo(LibRaw* const raw, DRawInfo& identi
             identify.cameraMult[c] = raw->imgdata.color.cam_mul[c];
         }
     }
+
+    identify.xmpData = QByteArray(raw->imgdata.idata.xmpdata, raw->imgdata.idata.xmplen);
 }
 
 bool DRawDecoder::Private::loadFromLibraw(const QString& filePath, QByteArray& imageData,

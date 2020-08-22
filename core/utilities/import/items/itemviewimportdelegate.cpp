@@ -272,18 +272,23 @@ QRect ItemViewImportDelegate::drawThumbnail(QPainter* p, const QRect& thumbRect,
         return QRect();
     }
 
-    QRect r = thumbRect;
+    QRect r      = thumbRect;
+    double ratio = thumbnail.devicePixelRatio();
+    int thumbW   = qRound((double)thumbnail.width()  / ratio);
+    int thumbH   = qRound((double)thumbnail.height() / ratio);
 
-    QRect actualPixmapRect(r.x() + (r.width()-thumbnail.width())/2,
-                           r.y() + (r.height()-thumbnail.height())/2,
-                           thumbnail.width(), thumbnail.height());
+    QRect actualPixmapRect(r.x() + (r.width()  - thumbW) / 2,
+                           r.y() + (r.height() - thumbH) / 2,
+                           thumbW, thumbH);
 
     QPixmap borderPix = thumbnailBorderPixmap(actualPixmapRect.size());
-    p->drawPixmap(actualPixmapRect.x()-3, actualPixmapRect.y()-3, borderPix);
 
-    p->drawPixmap(r.x() + (r.width()-thumbnail.width())/2,
-                  r.y() + (r.height()-thumbnail.height())/2,
-                  thumbnail);
+    p->drawPixmap(actualPixmapRect.x() - 3,
+                  actualPixmapRect.y() - 3, borderPix);
+
+    p->drawPixmap(r.x() + (r.width()  - thumbW) / 2,
+                  r.y() + (r.height() - thumbH) / 2,
+                  thumbW, thumbH, thumbnail);
 
     return actualPixmapRect;
 }

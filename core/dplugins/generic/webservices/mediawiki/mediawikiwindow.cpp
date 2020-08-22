@@ -44,7 +44,7 @@
 
 #include <klocalizedstring.h>
 #include <ksharedconfig.h>
-#include <kwindowconfig.h>
+#include <kconfiggroup.h>
 
 // MediaWiki includes
 
@@ -168,11 +168,6 @@ void MediaWikiWindow::readSettings()
     KConfigGroup group      = config->group(QLatin1String("MediaWiki export settings"));
 
     d->widget->readSettings(group);
-
-    winId();
-    KConfigGroup group2 = config->group(QLatin1String("MediaWiki export dialog"));
-    KWindowConfig::restoreWindowSize(windowHandle(), group2);
-    resize(windowHandle()->size());
 }
 
 void MediaWikiWindow::saveSettings()
@@ -181,10 +176,6 @@ void MediaWikiWindow::saveSettings()
     KConfigGroup group      = config->group(QLatin1String("MediaWiki export settings"));
 
     d->widget->saveSettings(group);
-
-    KConfigGroup group2     = config->group(QLatin1String("MediaWiki export dialog"));
-    KWindowConfig::saveWindowSize(windowHandle(), group2);
-    config->sync();
 }
 
 void MediaWikiWindow::slotFinished()

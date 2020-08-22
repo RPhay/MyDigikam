@@ -542,6 +542,9 @@ void DIO::slotOneProccessed(const QUrl& url)
                 access.db()->addItemTag(id, needTaggingTag);
             }
 
+            access.db()->removeAllImageRelationsFrom(info.id(),
+                                                     DatabaseRelation::Grouped);
+
             access.db()->removeItems(QList<qlonglong>() << info.id(),
                                      QList<int>() << info.albumId());
         }

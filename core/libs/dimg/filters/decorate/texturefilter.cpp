@@ -44,18 +44,15 @@ namespace Digikam
 {
 
 TextureFilter::TextureFilter(QObject* const parent)
-    : DImgThreadedFilter(parent),
-      m_blendGain(200)
+    : DImgThreadedFilter(parent)
 {
     initFilter();
 }
 
-TextureFilter::TextureFilter(DImg* const orgImage, QObject* const parent, int blendGain, const QString& texturePath)
+TextureFilter::TextureFilter(DImg* const orgImage, QObject* const parent, const TextureContainer& settings)
     : DImgThreadedFilter(orgImage, parent, QLatin1String("Texture")),
-      m_blendGain(blendGain),
-      m_texturePath(texturePath)
+      m_settings(settings)
 {
-
     initFilter();
 }
 
@@ -94,13 +91,14 @@ void TextureFilter::filterImage()
 {
     // Texture tile.
 
-    int w           = m_orgImage.width();
-    int h           = m_orgImage.height();
-    int bytesDepth  = m_orgImage.bytesDepth();
-    bool sixteenBit = m_orgImage.sixteenBit();
-
-    qCDebug(DIGIKAM_DIMG_LOG) << "Texture File: " << m_texturePath;
-    DImg texture(m_texturePath);
+    int w               = m_orgImage.width();
+    int h               = m_orgImage.height();
+    int bytesDepth      = m_orgImage.bytesDepth();
+    bool sixteenBit     = m_orgImage.sixteenBit();
+    QString texturePath = TextureContainer::getTexturePath(m_settings.textureType);
+    
+    qCDebug(DIGIKAM_DIMG_LOG) << "Texture File: " << texturePath;
+    DImg texture(texturePath);
 
     if (texture.isNull())
     {
@@ -127,18 +125,18 @@ void TextureFilter::filterImage()
     uint   offset;
 
     DColor teData, transData, inData, outData;
-    uchar* ptr=nullptr, *dptr=nullptr, *tptr=nullptr;
+    uchar* ptr = nullptr, *dptr = nullptr, *tptr = nullptr;
     int    progress;
 
     int blendGain;
 
     if (sixteenBit)
     {
-        blendGain = (m_blendGain + 1) * 256 - 1;
+        blendGain = (m_settings.blendGain + 1) * 256 - 1;
     }
     else
     {
-        blendGain = m_blendGain;
+        blendGain = m_settings.blendGain;
     }
 
     // Make textured transparent layout.
@@ -159,7 +157,7 @@ void TextureFilter::filterImage()
 
             // in the old algorithm, this was
             //teData.channel.red   = (teData.channel.red * (255 - m_blendGain) +
-            //      transData.channel.red * m_blendGain) >> 8;
+            //      transData.channel.red * m_setting.blendGain) >> 8;
             // but transdata was uninitialized, its components were apparently 0,
             // so I removed the part after the "+".
 
@@ -234,16 +232,16 @@ FilterAction TextureFilter::filterAction()
     FilterAction action(FilterIdentifier(), CurrentVersion());
     action.setDisplayableName(DisplayableName());
 
-    action.addParameter(QLatin1String("blendGain"),   m_blendGain);
-    action.addParameter(QLatin1String("texturePath"), m_texturePath);
+    action.addParameter(QLatin1String("blendGain"),   m_settings.blendGain);
+    action.addParameter(QLatin1String("textureType"), m_settings.textureType);
 
     return action;
 }
 
 void TextureFilter::readParameters(const Digikam::FilterAction& action)
 {
-    m_blendGain   = action.parameter(QLatin1String("blendGain")).toInt();
-    m_texturePath = action.parameter(QLatin1String("texturePath")).toString();
+    m_settings.blendGain   = action.parameter(QLatin1String("blendGain")).toInt();
+    m_settings.textureType = action.parameter(QLatin1String("textureType")).toInt();
 }
 
 } // namespace Digikam

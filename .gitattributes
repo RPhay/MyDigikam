@@ -1,2 +1,11 @@
+# Windows batch files must be in CRLF to not make cmd.exe freak out
+*.cmd text eol=crlf
+*.bat text eol=crlf
+
+# Make sure Windows .lnk shortcuts are binary
+*.lnk binary
+# Patch files must be checked out in CRLF on Windows for patch to work
+*.patch text=auto
+*.diff text=auto
 core/data/facesengine/dnnface/yolov3-wider_16000.weights filter=lfs diff=lfs merge=lfs -text
 core/tests/facesengine/scripts/facenet_opencv_dnn/models/20180402-114759/model-20180402-114759.ckpt-275.data-00000-of-00001 filter=lfs diff=lfs merge=lfs -text

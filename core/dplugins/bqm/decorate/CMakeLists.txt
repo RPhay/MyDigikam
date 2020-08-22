@@ -6,4 +6,4 @@
 
 add_subdirectory(border)
 add_subdirectory(watermark)
-
+add_subdirectory(texture)

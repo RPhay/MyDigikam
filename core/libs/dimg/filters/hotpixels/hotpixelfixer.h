@@ -22,8 +22,8 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_EDITOR_HOT_PIXEL_FIXER_H
-#define DIGIKAM_EDITOR_HOT_PIXEL_FIXER_H
+#ifndef DIGIKAM_HOT_PIXEL_FIXER_H
+#define DIGIKAM_HOT_PIXEL_FIXER_H
 
 // Qt includes
 
@@ -35,42 +35,26 @@
 
 // Local includes
 
+#include "digikam_export.h"
 #include "dimgthreadedfilter.h"
-#include "hotpixel.h"
+#include "hotpixelprops.h"
 #include "hotpixelsweights.h"
+#include "hotpixelcontainer.h"
 
 using namespace Digikam;
 
-namespace DigikamEditorHotPixelsToolPlugin
+namespace Digikam
 {
 
-class HotPixelFixer : public DImgThreadedFilter
+class DIGIKAM_EXPORT HotPixelFixer : public DImgThreadedFilter
 {
-
-public:
-
-    enum InterpolationMethod
-    {
-        AVERAGE_INTERPOLATION   = 0,
-        LINEAR_INTERPOLATION    = 1,
-        QUADRATIC_INTERPOLATION = 2,
-        CUBIC_INTERPOLATION     = 3
-    };
-
-    enum Direction
-    {
-        TWODIM_DIRECTION        = 0,
-        VERTICAL_DIRECTION      = 1,
-        HORIZONTAL_DIRECTION    = 2
-    };
 
 public:
 
     explicit HotPixelFixer(QObject* const parent = nullptr);
     explicit HotPixelFixer(DImg* const orgImage,
                            QObject* const parent,
-                           const QList<HotPixel>& hpList,
-                           int interpolationMethod);
+                           const HotPixelContainer& settings);
     ~HotPixelFixer();
 
     static QString          FilterIdentifier()
@@ -104,13 +88,13 @@ private:
     virtual void filterImage()                       override;
 
     void interpolate(DImg& img,
-                     HotPixel& hp,
+                     HotPixelProps& hp,
                      int method);
 
     void weightPixels(DImg& img,
-                      HotPixel& px,
+                      HotPixelProps& px,
                       int method,
-                      Direction dir,
+                      HotPixelContainer::Direction dir,
                       int maxComponent);
 
     inline bool validPoint(DImg& img, const QPoint& p)
@@ -123,15 +107,14 @@ private:
                );
     };
 
-    QList <HotPixelsWeights> mWeightList;
 
 private:
 
-    int             m_interpolationMethod;
+    QList<HotPixelsWeights> m_weightList;
 
-    QList<HotPixel> m_hpList;
+    HotPixelContainer       m_settings;
 };
 
-} // namespace DigikamEditorHotPixelsToolPlugin
+} // namespace Digikam
 
-#endif // DIGIKAM_EDITOR_HOT_PIXEL_FIXER_H
+#endif // DIGIKAM_HOT_PIXEL_FIXER_H

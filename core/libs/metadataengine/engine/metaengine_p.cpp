@@ -875,7 +875,6 @@ void MetaEngine::Private::loadSidecarData(Exiv2::Image::AutoPtr xmpsidecar)
 
     ExifMetaEngineMergeHelper exifWritebackHelper;
     exifWritebackHelper << QLatin1String("Exif.Image.DateTime")
-                        << QLatin1String("Exif.Image.DateTime")
                         << QLatin1String("Exif.Photo.DateTimeOriginal")
                         << QLatin1String("Exif.Photo.DateTimeDigitized")
                         << QLatin1String("Exif.Image.Orientation")

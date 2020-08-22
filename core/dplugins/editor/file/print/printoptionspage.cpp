@@ -6,7 +6,8 @@
  * Date        : 2009-02-06
  * Description : image editor printing interface.
  *
- * Copyright (C) 2009 by Angelo Naselli <anaselli at linux dot it>
+ * Copyright (C) 2009      by Angelo Naselli <anaselli at linux dot it>
+ * Copyright (C) 2009-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -72,31 +73,30 @@ class Q_DECL_HIDDEN PrintOptionsPage::Private : public Ui_PrintOptionsPage
 public:
 
     explicit Private()
-      : mParent(nullptr),
-        mConfigDialogManager(nullptr),
+      : parent(nullptr),
+        configDialogManager(nullptr),
         colorManaged(nullptr),
         cmPreferences(nullptr),
         cmEnabled(false)
     {
     }
 
-    QWidget*              mParent;
-    QSize                 mImageSize;
-    QButtonGroup          mScaleGroup;
-    QButtonGroup          mPositionGroup;
-    DConfigDlgMngr* mConfigDialogManager;
-    IccProfile            outputProfile;
-    QCheckBox*            colorManaged;
-    QPushButton*          cmPreferences;
-    bool                  cmEnabled;
+    QWidget*        parent;
+    QSize           imageSize;
+    QButtonGroup    scaleGroup;
+    QButtonGroup    positionGroup;
+    DConfigDlgMngr* configDialogManager;
+    IccProfile      outputProfile;
+    QCheckBox*      colorManaged;
+    QPushButton*    cmPreferences;
+    bool            cmEnabled;
 
 public:
 
     void initColorManagement()
     {
         QHBoxLayout* const hlay = new QHBoxLayout(cmbox);
-        colorManaged            = new QCheckBox(i18n("Use Color Management for Printing"),
-                                                cmbox);
+        colorManaged            = new QCheckBox(i18n("Use Color Management for Printing"), cmbox);
         colorManaged->setChecked(false);
         cmPreferences           = new QPushButton(i18n("Settings..."), cmbox);
         QWidget* const space    = new QWidget(cmbox);
@@ -131,9 +131,9 @@ public:
         layout->setContentsMargins(QMargins());
         layout->setSpacing(1);
 
-        for (int row = 0; row < 3; ++row)
+        for (int row = 0 ; row < 3 ; ++row)
         {
-            for (int col = 0; col < 3; ++col)
+            for (int col = 0 ; col < 3 ; ++col)
             {
                 QToolButton* const button = new QToolButton(mPositionFrame);
                 button->setFixedSize(40, 40);
@@ -142,7 +142,7 @@ public:
 
                 Qt::Alignment alignment;
 
-                if (row == 0)
+                if      (row == 0)
                 {
                     alignment = Qt::AlignTop;
                 }
@@ -155,7 +155,7 @@ public:
                     alignment = Qt::AlignBottom;
                 }
 
-                if (col == 0)
+                if      (col == 0)
                 {
                     alignment |= Qt::AlignLeft;
                 }
@@ -168,7 +168,7 @@ public:
                     alignment |= Qt::AlignRight;
                 }
 
-                mPositionGroup.addButton(button, int (alignment));
+                positionGroup.addButton(button, int (alignment));
             }
         }
     }
@@ -180,18 +180,18 @@ PrintOptionsPage::PrintOptionsPage(QWidget* const parent,
       d(new Private)
 {
     d->setupUi(this);
-    d->mParent              = parent;
-    d->mImageSize           = imageSize;
-    d->mConfigDialogManager = new DConfigDlgMngr(this, PrintConfig::self());
+    d->parent              = parent;
+    d->imageSize           = imageSize;
+    d->configDialogManager = new DConfigDlgMngr(this, PrintConfig::self());
 
     d->initPositionFrame();
 
-    //color management
+    // Color management support
     d->initColorManagement();
 
-    d->mScaleGroup.addButton(d->mNoScale,     NoScale);
-    d->mScaleGroup.addButton(d->mScaleToPage, ScaleToPage);
-    d->mScaleGroup.addButton(d->mScaleTo,     ScaleToCustomSize);
+    d->scaleGroup.addButton(d->mNoScale,     NoScale);
+    d->scaleGroup.addButton(d->mScaleToPage, ScaleToPage);
+    d->scaleGroup.addButton(d->mScaleTo,     ScaleToCustomSize);
 
     connect(d->kcfg_PrintWidth, SIGNAL(valueChanged(double)),
             this, SLOT(adjustHeightToRatio()));
@@ -231,7 +231,7 @@ IccProfile PrintOptionsPage::outputProfile() const
 
 Qt::Alignment PrintOptionsPage::alignment() const
 {
-    int id = d->mPositionGroup.checkedId();
+    int id = d->positionGroup.checkedId();
     qCWarning(DIGIKAM_DPLUGIN_EDITOR_LOG) << "alignment=" << id;
 
     return Qt::Alignment(id);
@@ -239,7 +239,7 @@ Qt::Alignment PrintOptionsPage::alignment() const
 
 PrintOptionsPage::ScaleMode PrintOptionsPage::scaleMode() const
 {
-    return PrintOptionsPage::ScaleMode(d->mScaleGroup.checkedId());
+    return PrintOptionsPage::ScaleMode(d->scaleGroup.checkedId());
 }
 
 bool PrintOptionsPage::enlargeSmallerImages() const
@@ -269,11 +269,11 @@ void PrintOptionsPage::adjustWidthToRatio()
         return;
     }
 
-    double width = d->mImageSize.width() * d->kcfg_PrintHeight->value() /
-                   d->mImageSize.height();
+    double width = d->imageSize.width() * d->kcfg_PrintHeight->value() /
+                   d->imageSize.height();
 
     const QSignalBlocker blocker(d->kcfg_PrintWidth);
-    d->kcfg_PrintWidth->setValue(width ? width : 1.);
+    d->kcfg_PrintWidth->setValue(width ? width : 1.0);
 }
 
 void PrintOptionsPage::adjustHeightToRatio()
@@ -283,8 +283,8 @@ void PrintOptionsPage::adjustHeightToRatio()
         return;
     }
 
-    double height = d->mImageSize.height() * d->kcfg_PrintWidth->value() /
-                    d->mImageSize.width();
+    double height = d->imageSize.height() * d->kcfg_PrintWidth->value() /
+                    d->imageSize.width();
 
     const QSignalBlocker blocker(d->kcfg_PrintHeight);
     d->kcfg_PrintHeight->setValue(height ? height : 1.0);
@@ -292,7 +292,7 @@ void PrintOptionsPage::adjustHeightToRatio()
 
 void PrintOptionsPage::loadConfig()
 {
-    QAbstractButton* button = d->mPositionGroup.button(PrintConfig::printPosition());
+    QAbstractButton* button = d->positionGroup.button(PrintConfig::printPosition());
 
     if (button)
     {
@@ -303,7 +303,7 @@ void PrintOptionsPage::loadConfig()
         qCWarning(DIGIKAM_DPLUGIN_EDITOR_LOG) << "Unknown button for position group";
     }
 
-    button = d->mScaleGroup.button(PrintConfig::printScaleMode());
+    button = d->scaleGroup.button(PrintConfig::printScaleMode());
 
     if (button)
     {
@@ -314,7 +314,7 @@ void PrintOptionsPage::loadConfig()
         qCWarning(DIGIKAM_DPLUGIN_EDITOR_LOG) << "Unknown button for scale group";
     }
 
-    d->mConfigDialogManager->updateWidgets();
+    d->configDialogManager->updateWidgets();
 
     if (d->kcfg_PrintKeepRatio->isChecked())
     {
@@ -329,13 +329,13 @@ void PrintOptionsPage::loadConfig()
 
 void PrintOptionsPage::saveConfig()
 {
-    int position        = d->mPositionGroup.checkedId();
+    int position        = d->positionGroup.checkedId();
     PrintConfig::setPrintPosition(position);
 
-    ScaleMode scaleMode = ScaleMode(d->mScaleGroup.checkedId());
+    ScaleMode scaleMode = ScaleMode(d->scaleGroup.checkedId());
     PrintConfig::setPrintScaleMode(scaleMode);
 
-    d->mConfigDialogManager->updateSettings();
+    d->configDialogManager->updateSettings();
 
     PrintConfig::self()->save();
 }
@@ -354,10 +354,15 @@ void PrintOptionsPage::slotAlertSettings(bool t)
 
 void PrintOptionsPage::slotSetupDlg()
 {
-    EditorWindow* const editor = dynamic_cast<EditorWindow*>(d->mParent);
+qDebug() << "pipo1";
+    EditorWindow* const editor = dynamic_cast<EditorWindow*>(d->parent);
 
     if (editor)
+    {
+qDebug() << "pipo2";
+
         editor->slotSetupICC();
+    }
 }
 
 } // namespace DigiKam

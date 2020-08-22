@@ -41,7 +41,7 @@
 
 #include <klocalizedstring.h>
 #include <ksharedconfig.h>
-#include <kwindowconfig.h>
+#include <kconfiggroup.h>
 
 // Local includes
 
@@ -258,11 +258,6 @@ void FbWindow::readSettings()
     d->currentAlbumID = grp.readEntry("Current Album", QString());
     d->dimensionSpB->setValue(grp.readEntry("Maximum Width", 1600));
     d->imageQualitySpB->setValue(grp.readEntry("Image Quality", 85));
-
-    winId();
-    KConfigGroup dialogGroup = config->group("Facebook Export Dialog");
-    KWindowConfig::restoreWindowSize(windowHandle(), dialogGroup);
-    resize(windowHandle()->size());
 }
 
 void FbWindow::writeSettings()
@@ -274,11 +269,6 @@ void FbWindow::writeSettings()
     grp.writeEntry("Resize",        d->resizeChB->isChecked());
     grp.writeEntry("Maximum Width", d->dimensionSpB->value());
     grp.writeEntry("Image Quality", d->imageQualitySpB->value());
-
-    KConfigGroup dialogGroup = config->group("Facebook Export Dialog");
-    KWindowConfig::saveWindowSize(windowHandle(), dialogGroup);
-
-    config->sync();
 }
 
 void FbWindow::authenticate(bool forceLogin)

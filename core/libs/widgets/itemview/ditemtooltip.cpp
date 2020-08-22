@@ -110,7 +110,7 @@ QString DToolTipStyleSheet::breakString(const QString& input) const
 
     while (i < str.length())
     {
-        if (count >= maxStringLength && str.at(i).isSpace())
+        if ((count >= maxStringLength) && str.at(i).isSpace())
         {
             count = 0;
             br.append(QLatin1String("<br/>"));
@@ -288,7 +288,7 @@ void DItemToolTip::reposition()
 
             // recalculate x
 
-            if (d->corner == 0)
+            if      (d->corner == 0)
             {
                 pos.setX(rect.right() + 5);
             }

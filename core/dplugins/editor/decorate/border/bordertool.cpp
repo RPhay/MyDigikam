@@ -35,7 +35,7 @@
 
 #include <klocalizedstring.h>
 #include <ksharedconfig.h>
-#include "kconfiggroup.h"
+#include <kconfiggroup.h>
 
 // Local includes
 
@@ -54,7 +54,6 @@ public:
 
     explicit Private()
       : configGroupName(QLatin1String("border Tool")),
-
         gboxSettings(nullptr),
         previewWidget(nullptr),
         settingsView(nullptr)
