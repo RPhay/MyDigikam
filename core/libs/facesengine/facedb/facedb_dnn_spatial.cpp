@@ -154,7 +154,7 @@ QMap<double, QVector<int> > FaceDb::getClosestNeighborsTreeDb(const cv::Mat& pos
             root.position = cv::Mat(1, 128, CV_32F, query.value(1).toByteArray().data()).clone();
         }
 
-        sqRange = getClosestNeighborsTreeDb(root, closestNeighbors, position, sqRange, maxNbNeighbors);
+        getClosestNeighborsTreeDb(root, closestNeighbors, position, sqRange, maxNbNeighbors);
     }
 
     return closestNeighbors;

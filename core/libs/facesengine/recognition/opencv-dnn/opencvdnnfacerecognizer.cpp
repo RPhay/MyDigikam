@@ -49,7 +49,7 @@ public:
         : method(method),
           tree(nullptr),
           kNeighbors(5),
-          threshold(0.7),
+          threshold(0.5),
           newDataAdded(true)
     {
         for (int i = 0; i < 10; ++i)
@@ -322,7 +322,7 @@ int OpenCVDNNFaceRecognizer::Private::predictKDTree(const cv::Mat& faceEmbedding
 
 int OpenCVDNNFaceRecognizer::Private::predictDb(const cv::Mat& faceEmbedding, int k) const
 {
-    QMap<double, QVector<int> > closestNeighbors = FaceDbAccess().db()->getClosestNeighborsTreeDb(faceEmbedding, 1.0, k);
+    QMap<double, QVector<int> > closestNeighbors = FaceDbAccess().db()->getClosestNeighborsTreeDb(faceEmbedding, threshold, k);
 
     QMap<int, QVector<double> > votingGroups;
 
@@ -337,7 +337,7 @@ int OpenCVDNNFaceRecognizer::Private::predictDb(const cv::Mat& faceEmbedding, in
     }
 
     double maxScore = 0;
-    int prediction;
+    int prediction  = -1;
 
     for (QMap<int, QVector<double> >::const_iterator group  = votingGroups.cbegin();
                                                      group != votingGroups.cend();

@@ -195,7 +195,6 @@ Identity FacialRecognitionWrapper::addIdentity(const QMap<QString, QString>& att
 {
     if (!d || !d->dbAvailable)
     {
-        qDebug() << "Faces engine is available" << d->dbAvailable;
         return Identity();
     }
 

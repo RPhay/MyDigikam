@@ -585,7 +585,7 @@ void Benchmark::verifyKNearestDb()
         }
 
         double maxScore = 0;
-        int prediction;
+        int prediction  = -1;
 
         for (QMap<int, QVector<double> >::const_iterator group  = votingGroups.cbegin();
                                                          group != votingGroups.cend();
