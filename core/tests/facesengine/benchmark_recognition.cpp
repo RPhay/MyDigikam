@@ -141,7 +141,7 @@ Benchmark::Benchmark()
     m_detector   = new FaceDetector();
     m_recognizer = new FacialRecognitionWrapper();
 
-    m_recognizer->clearAllTraining();
+    m_recognizer->clearAllTraining(QLatin1String("train face classifier"));
     m_recognizer->deleteIdentities(m_recognizer->allIdentities());
 }
 

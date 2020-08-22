@@ -49,7 +49,7 @@ public:
         : method(method),
           tree(nullptr),
           kNeighbors(5),
-          threshold(0.5),
+          threshold(0.7),
           newDataAdded(true)
     {
         for (int i = 0; i < 10; ++i)
