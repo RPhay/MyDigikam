@@ -46,7 +46,9 @@ public:
     explicit DataNode()
         : nodeID(0),
           label(0),
-          splitAxis(0)
+          splitAxis(0),
+          left(-1),
+          right(-1)
     {
     }
 
@@ -107,7 +109,6 @@ bool FaceDb::insertToTreeDb(const int nodeID, const cv::Mat& faceEmbedding) cons
         bindingValues << parentID;
         // not root -> update parent
 
-        QSqlQuery query;
         if (isLeftChild)
         {
             query = d->db->execQuery(QLatin1String("UPDATE KDTree SET left = ? WHERE id = ?;"), bindingValues);

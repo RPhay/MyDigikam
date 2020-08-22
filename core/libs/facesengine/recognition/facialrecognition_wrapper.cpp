@@ -37,9 +37,20 @@ FacialRecognitionWrapper::FacialRecognitionWrapper()
 {
 }
 
+FacialRecognitionWrapper::FacialRecognitionWrapper(const FacialRecognitionWrapper& other)
+{
+    d = other.d;
+    ++(d->ref);
+}
+
 FacialRecognitionWrapper::~FacialRecognitionWrapper()
 {
-    delete d;
+    --(d->ref);
+
+    if (d->ref == 0)
+    {
+        delete d;
+    }
 }
 
 bool FacialRecognitionWrapper::integrityCheck()

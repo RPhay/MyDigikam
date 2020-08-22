@@ -48,6 +48,8 @@ class DIGIKAM_GUI_EXPORT FacialRecognitionWrapper
 public:
 
     explicit FacialRecognitionWrapper();
+    FacialRecognitionWrapper(const FacialRecognitionWrapper&);
+
     ~FacialRecognitionWrapper();
 
 public:

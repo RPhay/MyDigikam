@@ -49,6 +49,10 @@ public:
     explicit DNNFaceExtractor();
     ~DNNFaceExtractor();
 
+    // movable:
+    DNNFaceExtractor(DNNFaceExtractor && other) noexcept = default;
+    DNNFaceExtractor& operator=(DNNFaceExtractor && other) noexcept = default;
+
     cv::Mat alignFace(const cv::Mat& inputImage) const;
     cv::Mat getFaceEmbedding(const cv::Mat& faceImage);
 

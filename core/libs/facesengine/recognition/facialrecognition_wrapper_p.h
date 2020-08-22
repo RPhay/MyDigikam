@@ -70,7 +70,7 @@ class Q_DECL_HIDDEN FacialRecognitionWrapper::Private
 {
 public:
 
-    Private();
+    explicit Private();
     ~Private();
 
 public:
@@ -102,6 +102,7 @@ public:
 public:
 
     bool                 dbAvailable;
+    int                  ref;
     mutable QMutex       mutex;
     QVariantMap          parameters;
     QHash<int, Identity> identityCache;
