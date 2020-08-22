@@ -36,6 +36,10 @@ HotPixelContainer::HotPixelContainer()
 {
 }
 
+HotPixelContainer::~HotPixelContainer()
+{
+}
+
 bool HotPixelContainer::isDefault() const
 {
     return (*this == HotPixelContainer());
