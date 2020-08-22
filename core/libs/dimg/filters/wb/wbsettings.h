@@ -59,8 +59,8 @@ public:
     void loadSettings();
     void saveAsSettings();
 
-    bool pickTemperatureIsOn();
-    void setOnPickTemperature(bool b);
+    bool pickTemperatureIsChecked();
+    void setCheckedPickTemperature(bool b);
 
     void showAdvancedButtons(bool b);
 

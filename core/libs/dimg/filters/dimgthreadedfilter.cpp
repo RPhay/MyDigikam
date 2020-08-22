@@ -206,7 +206,9 @@ void DImgThreadedFilter::startFilterDirectly()
         {
             // TODO: User notification
             qCCritical(DIGIKAM_DIMG_LOG) << "Caught out-of-memory exception! Aborting operation" << ex.what();
+
             emit finished(false);
+
             return;
         }
 

@@ -381,12 +381,12 @@ WBSettings::~WBSettings()
     delete d;
 }
 
-bool WBSettings::pickTemperatureIsOn()
+bool WBSettings::pickTemperatureIsChecked()
 {
     return d->pickTemperature->isChecked();
 }
 
-void WBSettings::setOnPickTemperature(bool b)
+void WBSettings::setCheckedPickTemperature(bool b)
 {
     d->pickTemperature->setChecked(b);
 }

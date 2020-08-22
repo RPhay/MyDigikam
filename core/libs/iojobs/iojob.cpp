@@ -463,29 +463,25 @@ void EmptyDTrashItemsJob::run()
         return;
     }
 
+    QList<int> albumsFromImages;
+    QList<qlonglong> imagesToRemove;
+
+    foreach (const DTrashItemInfo& item, m_data->trashItems())
+    {
+        QFile::remove(item.trashPath);
+        QFile::remove(item.jsonFilePath);
+
+        imagesToRemove   << item.imageId;
+        albumsFromImages << ItemInfo(item.imageId).albumId();
+
+        emit signalOneProccessed(QUrl());
+    }
+
     {
         CoreDbOperationGroup group;
         group.setMaximumTime(200);
 
-        QList<int> albumsFromImages;
-        QList<qlonglong> imagesToRemove;
-
-        foreach (const DTrashItemInfo& item, m_data->trashItems())
-        {
-            QFile::remove(item.trashPath);
-            QFile::remove(item.jsonFilePath);
-
-            imagesToRemove   << item.imageId;
-            albumsFromImages << ItemInfo(item.imageId).albumId();
-
-            CoreDbAccess().db()->removeAllImageRelationsFrom(item.imageId,
-                                                             DatabaseRelation::Grouped);
-            group.allowLift();
-
-            emit signalOneProccessed(QUrl());
-        }
-
-         CoreDbAccess().db()->removeItemsPermanently(imagesToRemove, albumsFromImages);
+        CoreDbAccess().db()->removeItemsPermanently(imagesToRemove, albumsFromImages);
     }
 
     emit signalDone();

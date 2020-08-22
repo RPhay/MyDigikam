@@ -35,7 +35,7 @@
 
 #include <klocalizedstring.h>
 #include <ksharedconfig.h>
-#include <kwindowconfig.h>
+#include <kconfiggroup.h>
 
 // Local includes
 
@@ -187,11 +187,6 @@ void DBWindow::readSettings()
     d->widget->getOriginalCheckBox()->setChecked(grp.readEntry("Upload Original", false));
     d->widget->getDimensionSpB()->setValue(grp.readEntry("Maximum Width",         1600));
     d->widget->getImgQualitySpB()->setValue(grp.readEntry("Image Quality",        90));
-
-    winId();
-    KConfigGroup dialogGroup = config->group("Dropbox Export Dialog");
-    KWindowConfig::restoreWindowSize(windowHandle(), dialogGroup);
-    resize(windowHandle()->size());
 }
 
 void DBWindow::writeSettings()
@@ -204,11 +199,6 @@ void DBWindow::writeSettings()
     grp.writeEntry("Upload Original", d->widget->getOriginalCheckBox()->isChecked());
     grp.writeEntry("Maximum Width",   d->widget->getDimensionSpB()->value());
     grp.writeEntry("Image Quality",   d->widget->getImgQualitySpB()->value());
-
-    KConfigGroup dialogGroup = config->group("Dropbox Export Dialog");
-    KWindowConfig::saveWindowSize(windowHandle(), dialogGroup);
-
-    config->sync();
 }
 
 void DBWindow::slotSetUserName(const QString& msg)

@@ -37,7 +37,7 @@
 
 #include <klocalizedstring.h>
 #include <ksharedconfig.h>
-#include <kwindowconfig.h>
+#include <kconfiggroup.h>
 
 // Local includes
 
@@ -311,11 +311,6 @@ void ImgurWindow::readSettings()
     KConfigGroup groupAuth  = config->group("Imgur Auth");
     d->username             = groupAuth.readEntry("username", QString());
     slotApiAuthorized(!d->username.isEmpty(), d->username);
-
-    winId();
-    KConfigGroup groupDialog = config->group("Imgur Dialog");
-    KWindowConfig::restoreWindowSize(windowHandle(), groupDialog);
-    resize(windowHandle()->size());
 }
 
 void ImgurWindow::saveSettings()
@@ -323,10 +318,6 @@ void ImgurWindow::saveSettings()
     KSharedConfigPtr config = KSharedConfig::openConfig();
     KConfigGroup groupAuth  = config->group("Imgur Auth");
     groupAuth.writeEntry("username", d->username);
-
-    KConfigGroup groupDialog = config->group("Imgur Dialog");
-    KWindowConfig::saveWindowSize(windowHandle(), groupDialog);
-    config->sync();
 }
 
 } // namespace DigikamGenericImgUrPlugin

@@ -178,7 +178,16 @@ bool DImgJPEGLoader::load(const QString& filePath, DImgLoaderObserver* const obs
 
     // If an error occurs during reading, libjpeg will jump here
 
+#ifdef __MINGW32__  // krazy:exclude=cpp
+
+    if (__builtin_setjmp(jerr.setjmp_buffer))
+
+#else
+
     if (setjmp(jerr.setjmp_buffer))
+
+#endif
+
     {
         jpeg_destroy_decompress(&cinfo);
 

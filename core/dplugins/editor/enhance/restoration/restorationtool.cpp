@@ -39,7 +39,7 @@
 
 // KDE includes
 
-#include "kconfiggroup.h"
+#include <kconfiggroup.h>
 #include <klocalizedstring.h>
 #include <ksharedconfig.h>
 

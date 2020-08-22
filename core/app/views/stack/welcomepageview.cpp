@@ -148,11 +148,13 @@ void WelcomePageView::slotUrlOpen(const QUrl& url)
 QStringList WelcomePageView::featuresTabContent() const
 {
     QStringList newFeatures;
-    newFeatures << i18n("More than 700 reports closed on bugzilla.");
+    newFeatures << i18n("More than 900 files closed on bugzilla.");
     newFeatures << i18n("New Neural Network engine based on OpenCV Deep Learning module to detect and recognize faces.");
     newFeatures << i18n("Update Slideshow to plugin with new shuffle mode.");
     newFeatures << i18n("Add new theme Html5Responsive for HtmlGallery plugin.");
     newFeatures << i18n("New plugin ImageMosaicWall to create an image based on a bunch of other photos.");
+    newFeatures << i18n("add new batch queue manager tool to fix hot pixels from images.");
+    newFeatures << i18n("add new batch queue manager tool to apply texture over images.");
     newFeatures << i18n("Face Scan dialog contents is now simplified and embedded into left sidebar.");
     newFeatures << i18n("Add support for Gimp XCF files >= 2.10.");
     newFeatures << i18n("Add Flatpak bundle support for Linux platforms.");

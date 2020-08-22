@@ -35,7 +35,7 @@ class Q_DECL_HIDDEN FilmProfile
 {
 public:
 
-    explicit FilmProfile(double rdm=0.0, double gdm=0.0, double bdm=0.0)
+    explicit FilmProfile(double rdm = 0.0, double gdm = 0.0, double bdm = 0.0)
         : redDmax(rdm),
           greenDmax(gdm),
           blueDmax(bdm),

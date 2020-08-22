@@ -49,7 +49,7 @@ public:
      * to start the threaded computation.
      * To run filter without to use multithreading, call startFilterDirectly().
      */
-    explicit DImgThreadedFilter(QObject* const parent=nullptr, const QString& name = QString());
+    explicit DImgThreadedFilter(QObject* const parent = nullptr, const QString& name = QString());
 
     /**
      * Constructs a filter with all arguments (ready to use).
@@ -57,7 +57,8 @@ public:
      * You need to call startFilter() to start the threaded computation.
      * To run filter without to use multithreading, call startFilterDirectly().
      */
-    DImgThreadedFilter(DImg* const orgImage, QObject* const parent,
+    DImgThreadedFilter(DImg* const orgImage,
+                       QObject* const parent,
                        const QString& name = QString());
 
     ~DImgThreadedFilter();
@@ -72,8 +73,10 @@ public:
     /**
      * Initializes the filter for use as a slave and directly starts computation (in-thread)
      */
-    void setupAndStartDirectly(const DImg& orgImage, DImgThreadedFilter* const master,
-                               int progressBegin = 0, int progressEnd = 100);
+    void setupAndStartDirectly(const DImg& orgImage,
+                               DImgThreadedFilter* const master,
+                               int progressBegin = 0,
+                               int progressEnd = 100);
 
     void setOriginalImage(const DImg& orgImage);
     void setFilterName(const QString& name);
@@ -97,7 +100,7 @@ public:
      * the difference.
      * See Blur filter loop implementation for example to see how to use this method with QtConcurrents API.
      */
-    QList<int> multithreadedSteps(int stop, int start=0)                        const;
+    QList<int> multithreadedSteps(int stop, int start = 0)                      const;
 
     /**
      * Start the threaded computation.
@@ -219,14 +222,20 @@ protected:
      * Any derived filter class that is publicly available to other filters
      * should implement an additional constructor using this constructor.
      */
-    DImgThreadedFilter(DImgThreadedFilter* const master, const DImg& orgImage, const DImg& destImage,
-                       int progressBegin=0, int progressEnd=100, const QString& name=QString());
+    DImgThreadedFilter(DImgThreadedFilter* const master,
+                       const DImg& orgImage,
+                       const DImg& destImage,
+                       int progressBegin = 0,
+                       int progressEnd = 100,
+                       const QString& name = QString());
 
     /**
      * Initialize the filter for use as a slave - reroutes progress info to master.
      * Note: Computation will be started from setupFilter().
      */
-    void initSlave(DImgThreadedFilter* const master, int progressBegin = 0, int progressEnd = 100);
+    void initSlave(DImgThreadedFilter* const master,
+                   int progressBegin = 0,
+                   int progressEnd = 100);
 
     /**
      * Inform the master that there is currently a slave. At destruction of the slave, call with slave=0.
@@ -271,7 +280,7 @@ protected:
          */
         void supportOlderVersionIf(int version, bool condition)
         {
-            if (condition && version <= m_version)
+            if (condition && (version <= m_version))
             {
                 m_version = version;
             }

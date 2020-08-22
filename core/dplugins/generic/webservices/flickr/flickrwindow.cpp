@@ -40,8 +40,9 @@
 
 // KDE includes
 
+#include <klocalizedstring.h>
 #include <ksharedconfig.h>
-#include <kwindowconfig.h>
+#include <kconfiggroup.h>
 
 // Local includes
 
@@ -387,11 +388,6 @@ void FlickrWindow::readSettings(QString uname)
     d->resizeCheckBox->setChecked(grp.readEntry("Resize",            false));
     d->dimensionSpinBox->setValue(grp.readEntry("Maximum Width",     1600));
     d->imageQualitySpinBox->setValue(grp.readEntry("Image Quality",  85));
-
-    winId();
-    KConfigGroup dialogGroup = config->group(QString::fromLatin1("%1Export Dialog").arg(d->serviceName));
-    KWindowConfig::restoreWindowSize(windowHandle(), dialogGroup);
-    resize(windowHandle()->size());
 }
 
 void FlickrWindow::writeSettings()
@@ -425,10 +421,6 @@ void FlickrWindow::writeSettings()
     grp.writeEntry("Upload Original",                   d->originalCheckBox->isChecked());
     grp.writeEntry("Maximum Width",                     d->dimensionSpinBox->value());
     grp.writeEntry("Image Quality",                     d->imageQualitySpinBox->value());
-
-    KConfigGroup dialogGroup = config->group(QString::fromLatin1("%1Export Dialog").arg(d->serviceName));
-    KWindowConfig::saveWindowSize(windowHandle(), dialogGroup);
-    config->sync();
 }
 
 void FlickrWindow::slotLinkingSucceeded()

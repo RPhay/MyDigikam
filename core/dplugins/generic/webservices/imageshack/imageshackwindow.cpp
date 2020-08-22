@@ -51,7 +51,7 @@
 
 #include <klocalizedstring.h>
 #include <ksharedconfig.h>
-#include <kwindowconfig.h>
+#include <kconfiggroup.h>
 
 // Local includes
 
@@ -201,11 +201,8 @@ void ImageShackWindow::closeEvent(QCloseEvent* e)
 
 void ImageShackWindow::readSettings()
 {
-    winId();
     KSharedConfigPtr config = KSharedConfig::openConfig();
     KConfigGroup group      = config->group("ImageShack Settings");
-    KWindowConfig::restoreWindowSize(windowHandle(), group);
-    resize(windowHandle()->size());
 
     if (group.readEntry("Private", false))
     {
@@ -226,11 +223,9 @@ void ImageShackWindow::saveSettings()
 {
     KSharedConfigPtr config = KSharedConfig::openConfig();
     KConfigGroup group      = config->group("ImageShack Settings");
-    KWindowConfig::saveWindowSize(windowHandle(), group);
 
     group.writeEntry("Private", d->widget->d->privateImagesChb->isChecked());
     group.writeEntry("Rembar",  d->widget->d->remBarChb->isChecked());
-    group.sync();
 }
 
 void ImageShackWindow::slotStartTransfer()

@@ -42,7 +42,7 @@
 
 #include <klocalizedstring.h>
 #include <ksharedconfig.h>
-#include <kwindowconfig.h>
+#include <kconfiggroup.h>
 
 // Local includes
 
@@ -379,21 +379,6 @@ void SmugWindow::readSettings()
 
     d->widget->m_dimensionSpB->setValue(grp.readEntry("Maximum Width", 1600));
     d->widget->m_imageQualitySpB->setValue(grp.readEntry("Image Quality", 85));
-
-    if (d->import)
-    {
-        winId();
-        KConfigGroup dialogGroup = config->group("Smug Import Dialog");
-        KWindowConfig::restoreWindowSize(windowHandle(), dialogGroup);
-        resize(windowHandle()->size());
-    }
-    else
-    {
-        winId();
-        KConfigGroup dialogGroup = config->group("Smug Export Dialog");
-        KWindowConfig::restoreWindowSize(windowHandle(), dialogGroup);
-        resize(windowHandle()->size());
-    }
 }
 
 void SmugWindow::writeSettings()
@@ -408,19 +393,6 @@ void SmugWindow::writeSettings()
     grp.writeEntry("Resize",          d->widget->m_resizeChB->isChecked());
     grp.writeEntry("Maximum Width",   d->widget->m_dimensionSpB->value());
     grp.writeEntry("Image Quality",   d->widget->m_imageQualitySpB->value());
-
-    if (d->import)
-    {
-        KConfigGroup dialogGroup = config->group("Smug Import Dialog");
-        KWindowConfig::saveWindowSize(windowHandle(), dialogGroup);
-    }
-    else
-    {
-        KConfigGroup dialogGroup = config->group("Smug Export Dialog");
-        KWindowConfig::saveWindowSize(windowHandle(), dialogGroup);
-    }
-
-    config->sync();
 }
 
 void SmugWindow::slotLoginProgress(int step, int maxStep, const QString &label)

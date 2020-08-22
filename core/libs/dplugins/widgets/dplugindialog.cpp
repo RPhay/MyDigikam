@@ -120,7 +120,6 @@ void DPluginDialog::saveDialogSize()
     KSharedConfigPtr config = KSharedConfig::openConfig();
     KConfigGroup group      = config->group(objectName());
     DXmlGuiWindow::saveWindowSize(windowHandle(), group);
-    config->sync();
 }
 
 } // namespace Digikam

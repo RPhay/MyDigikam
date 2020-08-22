@@ -3,6 +3,8 @@ evSSdigiKam 7.1.0 - Release date: 2020-08-30
 *****************************************************************************************************
 NEW FEATURES:
 
+QueueManager: add new tool to fix hot pixels from images.
+QueueManager: add new tool to apply texture over images.
 
 *****************************************************************************************************
 BUGFIXES:
@@ -130,4 +132,102 @@ BUGFIXES:
 122 ==> 364635 - digiKam crashes on startup.
 123 ==> 424688 - Ignore Directories not working (Win10 64bit).
 124 ==> 424758 - Face Tags on Samsung photos are rotated 180 degrees.
-125 ==> 
+125 ==> 347937 - SETUP : Collections added as "Removable Media" change as "Local Collections".
+126 ==> 416266 - digiKam crashes during face detection.
+127 ==> 403073 - Can't remove a removable media when digiKam run.
+128 ==> 414737 - digiKam becomes unresponsive when clicking on NFS-mounted photos.
+129 ==> 364231 - Support JPEG2000 using OpenJPEG to replace LibJasper.
+130 ==> 397718 - String comparison type field - meaning is unclear.
+131 ==> 410438 - No access to attached Storage device.
+132 ==> 417140 - Map panel shows white rectangle when using Google Maps.
+133 ==> 423312 - Qt 5.15.0 compilation warnings trace.
+134 ==> 422495 - Can't register more than one IPTC keyword.
+135 ==> 422124 - Manage manually versions.
+136 ==> 412591 - New unwanted window opens with map tab.
+137 ==> 405764 - Albums disappear when "sshfs - transport endpoint is not connected".
+138 ==> 399148 - digiKam sometimes crashes when writing metadata (Tags or Geo coordinates).
+139 ==> 378971 - Incorrect handling of DateTimeOriginal tags when editing NEF (Nikon RAW).
+140 ==> 424691 - Thumbnails not showing for face tags.
+141 ==> 419079 - Star rating on TIFF images destroys the image.
+142 ==> 401459 - Turning and cutting in one step.
+143 ==> 396995 - Colorize Captions/tags and Filter Tags from right panels to differentiate views.
+144 ==> 406584 - digiKam crashes after scanning for new items.
+145 ==> 400552 - Marking multiple pictures.
+146 ==> 405856 - Misplaced selection.
+147 ==> 382706 - Assigning tag to NEF-file results in crash + config disappearing.
+148 ==> 406979 - Specific PNG crashes digiKam.
+149 ==> 408592 - "Broken PNG Image" cause digiKam to crash under Windows 64 bit.
+150 ==> 411763 - When I enter in "Tags" tab in "No tags" mode, the program is crashing every time.
+151 ==> 372762 - List of face tags are not sorted by recently uses.
+152 ==> 380403 - License of plugins interface.
+153 ==> 374686 - HTML Gallery tool must support modern HTML5 tags.
+154 ==> 378393 - Rename LUT3D.
+155 ==> 412374 - KRA (Krita) files thumbnails not rendered.
+156 ==> 374161 - Color management options not visible in simple print dialog.
+157 ==> 375572 - Don't keep the splash screen always on top while launching.
+158 ==> 404899 - File transfer tool error without processing items.
+159 ==> 403050 - Export to remote storage does not work.
+160 ==> 397856 - Export to remote storage: transfer not done.
+161 ==> 413905 - Some icon / picture are not displayed in maps but picture have GPS data.
+162 ==> 353458 - Some pictures have geolocalisation data, but the «geolocalised» tag is not attached.
+163 ==> 372568 - Krita (.kra) thumbnails are not showed.
+164 ==> 219403 - Create calendar pdf output takes hours.
+165 ==> 398195 - "Ignored folders" are not saved.
+166 ==> 329464 - Add automatic pic "repairs" (dust, fusels).
+167 ==> 411014 - Thumbnail Support for AFPHOTO files.
+168 ==> 389194 - New file types for digiKam
+169 ==> 114272 - Calendar information from Akonady as source for geolocation.
+170 ==> 371635 - Unable to use keyboard only to process imported photos.
+171 ==> 374012 - Binary "Exif.Photo.UserComment" converted to "METADATA-START" caption at import.
+172 ==> 422240 - Description caption appears as "binary comment".
+173 ==> 424934 - Making an album a part of itself will fill the hard-drive with copies of itself.
+174 ==> 372041 - "Add Folders" attempts to import parent directory AND target dir.
+175 ==> 262403 - BQM DNG tool : Add Aptina Camera Sensors support.
+176 ==> 386591 - Cannot save changes in geolocation coordinates to .RW2 RAW files from a Panasonic FZ300 camera.
+177 ==> 393449 - Failure to build from source (CMake error).
+178 ==> 387004 - Rename on import is inconsistent jpg to raw.
+179 ==> 377739 - index.docbook:13: element link: validity error : IDREF attribute linkend references an unknownID "using-mainwindow-mapview".
+180 ==> 377597 - digiKam 5.5 fails to build @ docs/sv.
+181 ==> 301543 - Support for .ora and .kra file format in digiKam (at least read only).
+182 ==> 388116 - Add possibility to switch with the mouse between images in preview mode.
+183 ==> 217494 - Separate export to File-System with remote and local sections.
+184 ==> 404613 - Docs are missing.
+185 ==> 395141 - Map does not show location if picture is selected before opening map.
+186 ==> 389620 - Right panel - Map - Image location isn't shown properly on the map until user switches to previous/next image.
+187 ==> 319492 - Scan of new items seems to ignore or badly interpret jpeg EXIF information.
+188 ==> 275571 - Export light table selection.
+189 ==> 389274 - Export selected Images to a local folder.
+190 ==> 378066 - Export to remote folder does not work.
+191 ==> 373820 - Export to Remote Storage tool does not work on non-linux systems.
+192 ==> 377249 - Moving a photo to album in different collection deletes its folder.
+193 ==> 425085 - Export to flickr dialog only allows a single file to be selected.
+194 ==> 397334 - digiKam crashes after deleting unused tags.
+195 ==> 425100 - No photos show up when selecting a face tag in "People" panel.
+196 ==> 388707 - Add Hot pixel removal in Batch Queue Manager Workflow.
+197 ==> 425122 - ShowFoto can open .heic files but is not offered in Dolphin context menu.
+198 ==> 224241 - Film grain effect is not realistic.
+199 ==> 273754 - Unintuitive change of image resolution.
+200 ==> 286276 - Use .thm file as sidecar files for video files.
+201 ==> 424605 - Cannot use Image Mosaic Wall on Windows.
+202 ==> 425150 - Option to filter images by orientation, resolution, ISO.
+203 ==> 425138 - Unable to add local collection.
+204 ==> 424786 - Scroll Bars cover up sort icons.
+205 ==> 159477 - "Robust metadata support", "Exception resistance", "Versioning", "Outside Program Interference".
+206 ==> 425193 - panorama tool seems to miss components to run.
+207 ==> 375560 - interruptable BQM.
+208 ==> 425237 - No way to show back the hidden menu bar.
+209 ==> 425220 - LightTable "put into bin" function deletes pictures unrecoverable.
+210 ==> 374379 - After drag-n-dropping photos the view shifts to far down.
+211 ==> 425223 - Typo on Maintenance panel for processors.
+212 ==> 416757 - Tags incorrectly displayed when deleted from Edit Metadata / IPTC.
+213 ==> 425308 - Show always currently displayed folder in light table.
+214 ==> 150584 - Calendar, Borders, and Texture not working.
+215 ==> 425329 - Tags in Tags tab, and keywords in Metadata, don't match.
+216 ==> 418829 - Thumbnails of moved images not visible.
+217 ==> 425423 - White screen at beginning of Presentation should be avoided.
+218 ==> 425424 - Allow seting max resolution for export to filesystems.
+219 ==> 425448 - Cannot switch input text in different languages.
+220 ==> 425432 - Year separated with dot in title over icons when month selected.
+221 ==> 425425 - No shortcuts available for Slideshow entries anymore in Configure Keyboard Shortcuts.
+222 ==> 388680 - Untranslatable " (auto-detected)" in camera name.
+223 ==> 

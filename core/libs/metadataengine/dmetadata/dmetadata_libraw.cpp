@@ -100,6 +100,13 @@ bool DMetadata::loadUsingRawEngine(const QString& filePath)
 
         setItemColorWorkSpace(WORKSPACE_UNCALIBRATED);
 
+        // Handle XMP metadata byte-array
+
+        if (!identify.xmpData.isEmpty())
+        {
+            setXmp(identify.xmpData);
+        }
+
         return true;
     }
 
