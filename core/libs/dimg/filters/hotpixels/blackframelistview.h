@@ -50,16 +50,20 @@ public:
 
     bool contains(const QUrl& url);
     bool isSelected(const QUrl& url);
+    QUrl currentUrl();
 
 Q_SIGNALS:
 
     void signalBlackFrameSelected(const QList<HotPixelProps>&, const QUrl&);
+    void signalBlackFrameRemoved(const QUrl&);
+    void signalClearBlackFrameList();
 
 private Q_SLOTS:
 
     void slotSelectionChanged();
     void slotHotPixelsParsed(const QList<HotPixelProps>&, const QUrl&);
     void slotToolTip();
+    void slotContextMenu();
 
 private:
 

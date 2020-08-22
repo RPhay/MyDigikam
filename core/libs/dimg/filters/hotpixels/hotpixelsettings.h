@@ -70,7 +70,9 @@ Q_SIGNALS:
 private Q_SLOTS:
 
     void slotAddBlackFrame();
-    void slotBlackFrame(const QList<HotPixelProps>& hpList, const QUrl& url);
+    void slotBlackFrameSelected(const QList<HotPixelProps>& hpList, const QUrl& url);
+    void slotBlackFrameRemoved(const QUrl& url);
+    void slotClearBlackFrameList();
 
 private:
 

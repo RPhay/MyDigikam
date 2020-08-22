@@ -28,6 +28,8 @@
 
 #include <QPointer>
 #include <QTimer>
+#include <QMenu>
+#include <QAction>
 
 // KDE includes
 
@@ -69,6 +71,7 @@ BlackFrameListView::BlackFrameListView(QWidget* const parent)
     setAllColumnsShowFocus(true);
     setIconSize(QSize(BlackFrameListViewItem::THUMB_WIDTH, BlackFrameListViewItem::THUMB_WIDTH));
     viewport()->setMouseTracking(true);
+    setContextMenuPolicy(Qt::CustomContextMenu);
 
     QStringList labels;
     labels.append(i18n("Preview"));
@@ -85,6 +88,9 @@ BlackFrameListView::BlackFrameListView(QWidget* const parent)
 
     connect(d->toolTipTimer, SIGNAL(timeout()),
             this, SLOT(slotToolTip()));
+
+    connect(this, SIGNAL(customContextMenuRequested(QPoint)),
+            this, SLOT(slotContextMenu()));
 }
 
 BlackFrameListView::~BlackFrameListView()
@@ -129,6 +135,25 @@ bool BlackFrameListView::isSelected(const QUrl& url)
     }
 
     return false;
+}
+
+QUrl BlackFrameListView::currentUrl()
+{
+    QTreeWidgetItemIterator it(this);
+
+    while (*it)
+    {
+        BlackFrameListViewItem* const item = dynamic_cast<BlackFrameListViewItem*>(*it);
+
+        if (item && item->isSelected())
+        {
+            return item->frameUrl();
+        }
+
+        ++it;
+    }
+
+    return QUrl();
 }
 
 void BlackFrameListView::slotSelectionChanged()
@@ -231,6 +256,47 @@ void BlackFrameListView::leaveEvent(QEvent* e)
 {
     hideToolTip();
     QTreeWidget::leaveEvent(e);
+}
+
+void BlackFrameListView::slotContextMenu()
+{
+    if (!viewport()->isEnabled())
+    {
+        return;
+    }
+
+    QMenu popmenu(this);
+
+    QAction* const removeAction = new QAction(QIcon::fromTheme(QLatin1String("edit-delete")), i18n("Remove Black Frame"), this);
+    QAction* const clearAction  = new QAction(QIcon::fromTheme(QLatin1String("edit-clear")),  i18n("Clear List"),         this);
+
+    popmenu.addAction(removeAction);
+    popmenu.addSeparator();
+    popmenu.addAction(clearAction);
+
+    QAction* const choice = popmenu.exec(QCursor::pos());
+
+    if      (choice == removeAction)
+    {
+        QList<QTreeWidgetItem*> list = selectedItems();
+
+        if (!list.isEmpty())
+        {
+            BlackFrameListViewItem* const item = dynamic_cast<BlackFrameListViewItem*>(list.first());
+
+            if (item)
+            {
+                QUrl url = item->frameUrl();
+                delete item;
+                emit signalBlackFrameRemoved(url);
+            }
+        }
+    }
+    else if (choice == clearAction)
+    {
+        clear();
+        emit signalClearBlackFrameList();
+    }
 }
 
 } // namespace Digikam

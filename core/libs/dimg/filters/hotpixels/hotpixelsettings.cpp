@@ -136,7 +136,13 @@ HotPixelSettings::HotPixelSettings(QWidget* const parent)
             this, SLOT(slotAddBlackFrame()));
 
     connect(d->blackFrameListView, SIGNAL(signalBlackFrameSelected(QList<HotPixelProps>,QUrl)),
-            this, SLOT(slotBlackFrame(QList<HotPixelProps>,QUrl)));
+            this, SLOT(slotBlackFrameSelected(QList<HotPixelProps>,QUrl)));
+
+    connect(d->blackFrameListView, SIGNAL(signalBlackFrameRemoved(QUrl)),
+            this, SLOT(slotBlackFrameRemoved(QUrl)));
+
+    connect(d->blackFrameListView, SIGNAL(signalClearBlackFrameList()),
+            this, SLOT(slotClearBlackFrameList()));
 }
 
 HotPixelSettings::~HotPixelSettings()
@@ -184,7 +190,7 @@ HotPixelContainer HotPixelSettings::defaultSettings() const
 
 void HotPixelSettings::readSettings(KConfigGroup& group)
 {
-    d->allBlackFrameUrls = group.readEntry(d->configAllBlackFrameFilesEntry, QList<QUrl>());
+    d->allBlackFrameUrls         = group.readEntry(d->configAllBlackFrameFilesEntry, QList<QUrl>());
 
     HotPixelContainer prm;
     HotPixelContainer defaultPrm = defaultSettings();
@@ -259,7 +265,7 @@ void HotPixelSettings::loadBlackFrame(const QUrl& url, bool selected)
 
 #endif
 
-void HotPixelSettings::slotBlackFrame(const QList<HotPixelProps>& hpList, const QUrl& url)
+void HotPixelSettings::slotBlackFrameSelected(const QList<HotPixelProps>& hpList, const QUrl& url)
 {
     if (d->blackFrameListView->isSelected(url))
     {
@@ -277,6 +283,18 @@ void HotPixelSettings::slotBlackFrame(const QList<HotPixelProps>& hpList, const 
 
         emit signalHotPixels(pointList);
     }
+}
+
+void HotPixelSettings::slotBlackFrameRemoved(const QUrl& url)
+{
+    d->allBlackFrameUrls.removeAll(url);
+    d->currentBlackFrameUrl = d->blackFrameListView->currentUrl();
+}
+
+void HotPixelSettings::slotClearBlackFrameList()
+{
+    d->allBlackFrameUrls.clear();
+    d->currentBlackFrameUrl = QUrl();
 }
 
 } // namespace Digikam
