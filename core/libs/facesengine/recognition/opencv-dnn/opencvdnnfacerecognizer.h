@@ -100,6 +100,11 @@ public:
     void setNbNeighBors(int k);
 
     /**
+     * set maximum square distance of 2 vector
+     */
+    void setThreshold(int threshold);
+
+    /**
      * @brief register training data for unit test
      */
     bool registerTrainingData(const cv::Mat& preprocessedImage, int label);

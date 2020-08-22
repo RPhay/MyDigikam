@@ -41,9 +41,13 @@ void FacialRecognitionWrapper::Private::applyParameters()
     {
         k = parameters.value(QLatin1String("k-nearest")).toInt();
     }
+    else if (parameters.contains(QLatin1String("threshold")))
+    {
+        recognizer->setThreshold(parameters.value(QLatin1String("threshold")).toFloat());
+    }
     else if (parameters.contains(QLatin1String("accuracy")))
     {
-        k = parameters.value(QLatin1String("accuracy")).toInt();
+        recognizer->setThreshold(parameters.value(QLatin1String("accuracy")).toFloat());
     }
 
     recognizer->setNbNeighBors(k);
