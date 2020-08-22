@@ -49,9 +49,7 @@ public:
     explicit DNNFaceExtractor();
     ~DNNFaceExtractor();
 
-    // movable:
-    DNNFaceExtractor(DNNFaceExtractor && other) noexcept = default;
-    DNNFaceExtractor& operator=(DNNFaceExtractor && other) noexcept = default;
+    DNNFaceExtractor(const DNNFaceExtractor&);
 
     cv::Mat alignFace(const cv::Mat& inputImage) const;
     cv::Mat getFaceEmbedding(const cv::Mat& faceImage);
@@ -74,6 +72,9 @@ private:
 
     class Private;
     Private* d;
+
+    // Hidden assignment operator.
+    DNNFaceExtractor& operator=(const DNNFaceExtractor&);
 };
 
 } // namespace Digikam

@@ -46,7 +46,8 @@ class Q_DECL_HIDDEN DNNFaceExtractor::Private
 public:
 
     Private()
-        : preprocessor(nullptr)
+        : preprocessor(nullptr),
+          ref(1)
     {
     }
 
@@ -65,6 +66,8 @@ public:
     cv::Size      imageSize;
     float         scaleFactor;
     cv::Scalar    meanValToSubtract;
+
+    int           ref;
 };
 
 double DNNFaceExtractor::cosineDistance(std::vector<float> v1,
@@ -171,9 +174,20 @@ DNNFaceExtractor::DNNFaceExtractor()
     d->meanValToSubtract = cv::Scalar(0.0, 0.0, 0.0);
 }
 
+DNNFaceExtractor::DNNFaceExtractor(const DNNFaceExtractor& other)
+{
+    d = other.d;
+    ++(d->ref);
+}
+
 DNNFaceExtractor::~DNNFaceExtractor()
 {
-    delete d;
+    --(d->ref);
+
+    if(d->ref == 0)
+    {
+        delete d;
+    }
 }
 
 cv::Mat DNNFaceExtractor::alignFace(const cv::Mat& inputImage) const

@@ -83,6 +83,10 @@ private:
 
     class Private;
     Private* d;
+
+    // Hidden copy constructor and assignment operator
+    KDNode(const KDNode&);
+    KDNode& operator=(const KDNode&);
 };
 
 } // namespace Digikam

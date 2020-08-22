@@ -28,7 +28,7 @@
 namespace Digikam
 {
 
-class KDTree::Private
+class Q_DECL_HIDDEN KDTree::Private
 {
 public:
     Private(int dim)
