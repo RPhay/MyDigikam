@@ -89,7 +89,7 @@ QMap<double, QVector<int> > KDTree::getClosestNeighbors(const cv::Mat& position,
 
     if (d->root)
     {
-        sqRange = d->root->getClosestNeighbors(closestNeighbors, position, sqRange, maxNbNeighbors);
+        d->root->getClosestNeighbors(closestNeighbors, position, sqRange, maxNbNeighbors);
     }
 
     return closestNeighbors;

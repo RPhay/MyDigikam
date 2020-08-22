@@ -56,6 +56,10 @@ private:
 
     class Private;
     Private* d;
+
+    // Hidden copy constructor and assignment operator
+    KDTree(const KDTree&);
+    KDTree& operator=(const KDTree&);
 };
 
 } // namespace Digikam

@@ -346,7 +346,7 @@ void Benchmark::splitData(const QDir& dataDir, float splitRatio)
         QList<QFileInfo>::iterator it = filesInfo.begin();
         QList<QFileInfo>::iterator it1;
 
-        for (int i = 0; i < filesInfo.size(); ++i)
+        for (int j = 0; j < filesInfo.size(); ++j)
         {
             int inc = (int) (float(filesInfo.size()) * qrand() / (RAND_MAX + 1.0));
 
@@ -356,7 +356,7 @@ void Benchmark::splitData(const QDir& dataDir, float splitRatio)
             std::swap(*(it++), *(it1));
          }
 
-        QString faceDir = QLatin1String("./cropped_face/");
+        //QString faceDir = QLatin1String("./cropped_face/");
 /*
         QList<QImage*> images;
 
@@ -393,9 +393,9 @@ void Benchmark::splitData(const QDir& dataDir, float splitRatio)
             }
         }
 */
-        for (int i = 0; i < filesInfo.size(); ++i)
+        for (int j = 0; j < filesInfo.size(); ++j)
         {
-            QImage img(filesInfo[i].absoluteFilePath());
+            QImage img(filesInfo[j].absoluteFilePath());
 
             QImage* croppedFace = detect(img);
 
@@ -405,7 +405,7 @@ void Benchmark::splitData(const QDir& dataDir, float splitRatio)
                 //croppedFace->save(faceDir + label + QLatin1String("_") + QString::number(i) + QLatin1String(".png"), "PNG");
             }
 
-            if (i < filesInfo.size() * splitRatio)
+            if (j < filesInfo.size() * splitRatio)
             {
                 if (croppedFace && !croppedFace->isNull())
                 {
@@ -593,9 +593,9 @@ void Benchmark::verifyKNearestDb()
         {
             double score = 0;
 
-            for (int i = 0; i < group.value().size(); ++i)
+            for (int j = 0; j < group.value().size(); ++j)
             {
-                score += (1 - group.value()[i]);
+                score += (1 - group.value()[j]);
             }
 
             if (score > maxScore)

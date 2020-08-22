@@ -59,8 +59,8 @@ using namespace Digikam;
 // TODO: Recognition is incorrect where human are wearing glasses
 
 static QVector<QListWidgetItem*> splitData(const QDir& dataDir, float splitRatio ,
-                                          QHash<QString, QVector<QImage> >& trainSet,
-                                          QHash<QString, QVector<QImage> >& testSet)
+                                           QHash<QString, QVector<QImage> >& trainSet,
+                                           QHash<QString, QVector<QImage> >& testSet)
 {
     qsrand(QTime::currentTime().msec());
 
@@ -81,7 +81,7 @@ static QVector<QListWidgetItem*> splitData(const QDir& dataDir, float splitRatio
         QList<QFileInfo>::iterator it = filesInfo.begin();
         QList<QFileInfo>::iterator it1;
 
-        for (int i = 0; i < filesInfo.size(); ++i)
+        for (int j = 0; j < filesInfo.size(); ++j)
         {
             int inc = (int) (float(filesInfo.size()) * qrand() / (RAND_MAX + 1.0));
 
@@ -92,16 +92,16 @@ static QVector<QListWidgetItem*> splitData(const QDir& dataDir, float splitRatio
          }
 
         // split train/test
-        for (int i = 0; i < filesInfo.size(); ++i)
+        for (int j = 0; i < filesInfo.size(); ++j)
         {
-            QImage img(filesInfo[i].absoluteFilePath());
+            QImage img(filesInfo[j].absoluteFilePath());
 
-            if (i < filesInfo.size() * splitRatio)
+            if (j < filesInfo.size() * splitRatio)
             {
                 if (! img.isNull())
                 {
                     trainSet[label].append(img);
-                    imageItems.append(new QListWidgetItem(QIcon(filesInfo[i].absoluteFilePath()), filesInfo[i].absoluteFilePath()));
+                    imageItems.append(new QListWidgetItem(QIcon(filesInfo[j].absoluteFilePath()), filesInfo[j].absoluteFilePath()));
                 }
             }
             else
@@ -109,7 +109,7 @@ static QVector<QListWidgetItem*> splitData(const QDir& dataDir, float splitRatio
                 if (! img.isNull())
                 {
                     testSet[label].append(img);
-                    imageItems.append(new QListWidgetItem(QIcon(filesInfo[i].absoluteFilePath()), filesInfo[i].absoluteFilePath()));
+                    imageItems.append(new QListWidgetItem(QIcon(filesInfo[j].absoluteFilePath()), filesInfo[j].absoluteFilePath()));
                 }
             }
         }
