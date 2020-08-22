@@ -322,7 +322,7 @@ void HotPixelsWeights::calculateHotPixelsWeights()
                 for (iy = 0 ; iy < m_coefficientNumber ; ++iy)
                 {
                     m_weightMatrices[j][y][x] += vector1[(int)(iy * m_positions.count() + j)] *
-                                                polyTerm(iy, x, y, m_polynomeOrder);
+                                                 polyTerm(iy, x, y, m_polynomeOrder);
                 }
 
                 m_weightMatrices[j][y][x] *= (double)m_positions.count();

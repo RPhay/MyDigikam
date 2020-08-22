@@ -250,9 +250,6 @@ void HotPixelSettings::slotAddBlackFrame()
     }
 }
 
-#ifndef __clang_analyzer__
-// NOTE: disable false positive report from scan build about "item" instance creation
-
 void HotPixelSettings::loadBlackFrame(const QUrl& url, bool selected)
 {
     QPointer<BlackFrameListViewItem> item = new BlackFrameListViewItem(d->blackFrameListView, url);
@@ -262,8 +259,6 @@ void HotPixelSettings::loadBlackFrame(const QUrl& url, bool selected)
         d->blackFrameListView->setCurrentItem(item);
     }
 }
-
-#endif
 
 void HotPixelSettings::slotBlackFrameSelected(const QList<HotPixelProps>& hpList, const QUrl& url)
 {

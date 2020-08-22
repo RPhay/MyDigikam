@@ -282,7 +282,7 @@ PresentationGL::PresentationGL(PresentationContainer* const sharedData)
             this, SLOT(slotTimeOut()));
 
     d->timer->setSingleShot(true);
-    d->timer->start(10);
+    d->timer->start(100);
 
     // -- hide cursor when not moved --------------------
 
