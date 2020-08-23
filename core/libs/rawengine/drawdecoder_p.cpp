@@ -36,7 +36,7 @@
 namespace Digikam
 {
 
-int callbackForLibRaw(void* data, enum LibRaw_progress p, int iteration, int expected)
+int s_progressCallbackForLibRaw(void* data, enum LibRaw_progress p, int iteration, int expected)
 {
     if (data)
     {
@@ -185,7 +185,7 @@ bool DRawDecoder::Private::loadFromLibraw(const QString& filePath, QByteArray& i
 
     // Set progress call back function.
 
-    raw->set_progress_handler(callbackForLibRaw, this);
+    raw->set_progress_handler(s_progressCallbackForLibRaw, this);
 
     QByteArray deadpixelPath = QFile::encodeName(m_parent->m_decoderSettings.deadPixelMap);
     QByteArray cameraProfile = QFile::encodeName(m_parent->m_decoderSettings.inputProfile);

@@ -65,7 +65,7 @@ namespace Digikam
 
 extern "C"
 {
-    int callbackForLibRaw(void* data, enum LibRaw_progress p, int iteration, int expected);
+    int s_progressCallbackForLibRaw(void* data, enum LibRaw_progress p, int iteration, int expected);
 }
 
 class Q_DECL_HIDDEN DRawDecoder::Private

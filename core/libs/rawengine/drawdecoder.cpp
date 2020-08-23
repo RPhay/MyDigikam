@@ -424,7 +424,7 @@ bool DRawDecoder::extractRAWData(const QString& filePath,
 
     // Set progress call back function.
 
-    raw->set_progress_handler(callbackForLibRaw, d);
+    raw->set_progress_handler(s_progressCallbackForLibRaw, d);
 
 #ifdef Q_OS_WIN
 
