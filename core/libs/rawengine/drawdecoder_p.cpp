@@ -36,11 +36,11 @@
 namespace Digikam
 {
 
-int s_progressCallbackForLibRaw(void* data, enum LibRaw_progress p, int iteration, int expected)
+int s_progressCallbackForLibRaw(void* context, enum LibRaw_progress p, int iteration, int expected)
 {
-    if (data)
+    if (context)
     {
-        DRawDecoder::Private* const d = static_cast<DRawDecoder::Private*>(data);
+        DRawDecoder::Private* const d = static_cast<DRawDecoder::Private*>(context);
 
         if (d)
         {
@@ -49,6 +49,19 @@ int s_progressCallbackForLibRaw(void* data, enum LibRaw_progress p, int iteratio
     }
 
     return 0;
+}
+
+void s_exifParserCallbackForLibRaw(void* context, int tag, int type, int len, unsigned int ord, void* ifp, INT64 base)
+{
+    if (context)
+    {
+        DRawDecoder::Private* const d = static_cast<DRawDecoder::Private*>(context);
+
+        if (d)
+        {
+            d->exifParserCallback(tag, type, len, ord, ifp, base);
+        }
+    }
 }
 
 // --------------------------------------------------------------------------------------------------
@@ -75,12 +88,12 @@ void DRawDecoder::Private::createPPMHeader(QByteArray& imgData, libraw_processed
 
 int DRawDecoder::Private::progressCallback(enum LibRaw_progress p, int iteration, int expected)
 {
-    qCDebug(DIGIKAM_RAWENGINE_LOG) << "LibRaw progress: " << libraw_strprogress(p) << " pass "
-                                   << iteration << " of " << expected;
+    qCDebug(DIGIKAM_RAWENGINE_LOG) << "LibRaw progress:" << libraw_strprogress(p) << "pass"
+                                   << iteration << "of" << expected;
 
     // post a little change in progress indicator to show raw processor activity.
 
-    setProgress(progressValue()+0.01);
+    setProgress(progressValue() + 0.01);
 
     // Clean processing termination by user...
 
@@ -96,6 +109,11 @@ int DRawDecoder::Private::progressCallback(enum LibRaw_progress p, int iteration
     // Return 0 to continue processing...
 
     return 0;
+}
+
+void DRawDecoder::Private::exifParserCallback(int tag, int type, int len, unsigned int ord, void* ifp, INT64 base)
+{
+    qDebug() << "LibRaw Exif Parser:" << "tag:" << tag << "type:" << type << "len:" << len << "ord:" << ord << "ifp:" << ifp << "base:" << base;
 }
 
 void DRawDecoder::Private::setProgress(double value)
@@ -186,6 +204,7 @@ bool DRawDecoder::Private::loadFromLibraw(const QString& filePath, QByteArray& i
     // Set progress call back function.
 
     raw->set_progress_handler(s_progressCallbackForLibRaw, this);
+    raw->set_exifparser_handler(s_exifParserCallbackForLibRaw, this);
 
     QByteArray deadpixelPath = QFile::encodeName(m_parent->m_decoderSettings.deadPixelMap);
     QByteArray cameraProfile = QFile::encodeName(m_parent->m_decoderSettings.inputProfile);
