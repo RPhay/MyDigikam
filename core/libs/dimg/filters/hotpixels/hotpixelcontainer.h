@@ -63,6 +63,7 @@ public:
 public:
 
     explicit HotPixelContainer();
+    ~HotPixelContainer();
 
     bool isDefault() const;
     bool operator==(const HotPixelContainer& other)                                   const;

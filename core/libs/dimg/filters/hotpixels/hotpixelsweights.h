@@ -89,7 +89,7 @@ private:
     unsigned int  m_coefficientNumber;
     bool          m_twoDim;
     unsigned int  m_polynomeOrder;
-    double** *    m_weightMatrices;   ///< Stores a list of weight matrices
+    double** *    m_weightMatrices;     ///< Stores a list of weight matrices
     QList<QPoint> m_positions;
 };
 
