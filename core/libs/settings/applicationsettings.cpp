@@ -226,9 +226,13 @@ void ApplicationSettings::readSettings()
     d->sidebarApplyDirectly              = group.readEntry(d->configApplySidebarChangesDirectlyEntry,                 false);
 
 #ifdef Q_OS_MACOS
+
     d->useNativeFileDialog               = group.readEntry(d->configUseNativeFileDialogEntry,                         true);
+
 #else
+
     d->useNativeFileDialog               = group.readEntry(d->configUseNativeFileDialogEntry,                         false);
+
 #endif
 
     d->drawFramesToGrouped               = group.readEntry(d->configDrawFramesToGroupedEntry,                         true);
@@ -237,16 +241,20 @@ void ApplicationSettings::readSettings()
     d->stringComparisonType              = (StringComparisonType) group.readEntry(d->configStringComparisonTypeEntry, (int) Natural);
 
 #ifdef HAVE_APPSTYLE_SUPPORT
+
     QString applicationStyle             = qApp->style()->objectName();
 
     if (applicationStyle.compare(QLatin1String("windowsvista"), Qt::CaseInsensitive) == 0)
     {
-        applicationStyle                 = QLatin1String("Windows");
+        applicationStyle                 = QLatin1String("Fusion");
     }
 
     setApplicationStyle(group.readEntry(d->configApplicationStyleEntry, applicationStyle));
+
 #else
+
     setApplicationStyle(QLatin1String("Fusion"));
+
 #endif
 
     d->applicationIcon                   = group.readEntry(d->configIconThemeEntry,                                   QString());
