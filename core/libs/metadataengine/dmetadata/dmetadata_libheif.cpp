@@ -75,13 +75,13 @@ void s_readHEICMetadata(struct heif_context* const heif_context, heif_item_id im
                                                                  dataIds,
                                                                  10);
 
-    qDebug() << "Found" << count << "HEIF metadata chunck";
+    qDebug(DIGIKAM_METAENGINE_LOG) << "Found" << count << "HEIF metadata chunck";
 
     if (count > 0)
     {
         for (int i = 0 ; i < count ; ++i)
         {
-            qDebug() << "Parsing HEIF metadata chunck:" << heif_image_handle_get_metadata_type(image_handle, dataIds[i]);
+            qDebug(DIGIKAM_METAENGINE_LOG) << "Parsing HEIF metadata chunck:" << heif_image_handle_get_metadata_type(image_handle, dataIds[i]);
 
             if (QLatin1String(heif_image_handle_get_metadata_type(image_handle, dataIds[i])) == QLatin1String("Exif"))
             {
@@ -110,7 +110,7 @@ void s_readHEICMetadata(struct heif_context* const heif_context, heif_item_id im
                     {
                         // Copy the real exif data into the byte array
 
-                        qDebug() << "HEIF exif container found with size:" << length - skip;
+                        qDebug(DIGIKAM_METAENGINE_LOG) << "HEIF exif container found with size:" << length - skip;
                         exif.append((char*)(exifChunk.data() + skip), exifChunk.size() - skip);
                     }
                 }
@@ -130,7 +130,7 @@ void s_readHEICMetadata(struct heif_context* const heif_context, heif_item_id im
 
                 if (error3.code == 0)
                 {
-                    qDebug() << "HEIF iptc container found with size:" << length;
+                    qDebug(DIGIKAM_METAENGINE_LOG) << "HEIF iptc container found with size:" << length;
                 }
                 else
                 {
@@ -155,7 +155,7 @@ void s_readHEICMetadata(struct heif_context* const heif_context, heif_item_id im
 
                 if (error4.code == 0)
                 {
-                    qDebug() << "HEIF xmp container found with size:" << length;
+                    qDebug(DIGIKAM_METAENGINE_LOG) << "HEIF xmp container found with size:" << length;
                 }
                 else
                 {
@@ -242,7 +242,7 @@ bool DMetadata::loadUsingLibheif(const QString& filePath)
         buffer = memFile.readAll();
         memFile.close();
 
-        qDebug() << "HEIF loading file to memory buffer";
+        qDebug(DIGIKAM_METAENGINE_LOG) << "HEIF loading file to memory buffer";
 
         error = heif_context_read_from_memory(heif_context,
                                               (void*)buffer.data(),
