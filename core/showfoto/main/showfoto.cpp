@@ -919,7 +919,7 @@ DInfoInterface* ShowFoto::infoIface(DPluginAction* const)
 {
     DMetaInfoIface* const iface = new DMetaInfoIface(this, d->thumbBar->urls());
 
-    qDebug() << "ShowFoto::infoIface: nb of file" << d->thumbBar->urls().size();
+    qCDebug(DIGIKAM_GENERAL_LOG) << "ShowFoto::infoIface: nb of file" << d->thumbBar->urls().size();
 
     connect(iface, SIGNAL(signalItemChanged(QUrl)),
             this, SLOT(slotChanged()));
