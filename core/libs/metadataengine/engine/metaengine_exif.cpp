@@ -195,6 +195,12 @@ QString MetaEngine::getExifComment(bool readDescription) const
 
     try
     {
+        // Since Exiv2-0.27.3 empty comment fields are output
+        // as "binary comment". As workaround we filter it out.
+
+        QStringList blackList;
+        blackList << QLatin1String("binary comment");
+
         if (!d->exifMetadata().empty())
         {
             Exiv2::ExifData exifData(d->exifMetadata());
@@ -203,11 +209,12 @@ QString MetaEngine::getExifComment(bool readDescription) const
 
             if (it != exifData.end())
             {
-                QString exifComment = d->convertCommentValue(*it);
+                QString exifComment    = d->convertCommentValue(*it);
+                QString trimmedComment = exifComment.trimmed();
 
                 // some cameras fill the UserComment with whitespace
 
-                if (!exifComment.isEmpty() && !exifComment.trimmed().isEmpty())
+                if (!exifComment.isEmpty() && !trimmedComment.isEmpty() && !blackList.contains(trimmedComment))
                 {
                     return exifComment;
                 }
@@ -220,16 +227,14 @@ QString MetaEngine::getExifComment(bool readDescription) const
 
                 if (it2 != exifData.end())
                 {
-                    QString exifComment = d->convertCommentValue(*it2);
+                    QString exifComment    = d->convertCommentValue(*it2);
+                    QString trimmedComment = exifComment.trimmed();
 
                     // Some cameras fill in nonsense default values
 
-                    QStringList blackList;
                     blackList << QLatin1String("SONY DSC"); // + whitespace
                     blackList << QLatin1String("OLYMPUS DIGITAL CAMERA");
                     blackList << QLatin1String("MINOLTA DIGITAL CAMERA");
-
-                    QString trimmedComment = exifComment.trimmed();
 
                     // some cameras fill the UserComment with whitespace
 

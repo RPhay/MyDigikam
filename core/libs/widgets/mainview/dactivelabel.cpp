@@ -42,14 +42,14 @@ DActiveLabel::DActiveLabel(const QUrl& url, const QString& imgPath, QWidget* con
     setTextInteractionFlags(Qt::LinksAccessibleByMouse);
     setSizePolicy(QSizePolicy(QSizePolicy::Minimum, QSizePolicy::Minimum));
 
-    QImage img;
-
-    if (!imgPath.isEmpty())
+    if (imgPath.isEmpty())
     {
-        img.load(imgPath);
+        updateData(url, QImage());
     }
-
-    updateData(url, img);
+    else
+    {
+        updateData(url, QImage(imgPath));
+    }
 }
 
 DActiveLabel::~DActiveLabel()
