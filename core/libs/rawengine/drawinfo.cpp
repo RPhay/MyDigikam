@@ -68,6 +68,10 @@ DRawInfo::DRawInfo()
             cameraXYZMatrix[y][x]    = 0.0;       ///< NOTE: see B.K.O # 253911 : [y][x] not [x][y]
         }
     }
+
+    latitude  = 0.0;
+    longitude = 0.0;
+    altitude  = 0.0;
 }
 
 DRawInfo::~DRawInfo()
@@ -99,6 +103,9 @@ bool DRawInfo::isEmpty()
         (whitePoint       == 0)                         &&
         (topMargin        == 0)                         &&
         (leftMargin       == 0)                         &&
+        (latitude         == 0.0)                       &&
+        (longitude        == 0.0)                       &&
+        (altitude         == 0.0)                       &&
         !dateTime.isValid()                             &&
         !imageSize.isValid()                            &&
         !fullSize.isValid()                             &&

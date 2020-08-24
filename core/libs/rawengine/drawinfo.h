@@ -168,6 +168,13 @@ public:
     float            cameraXYZMatrix[4][3];
 
     /**
+     * GPS information
+     */
+    double           latitude;
+    double           longitude;
+    double           altitude;
+
+    /**
      * The used Color Keys
      */
     QString          colorKeys;

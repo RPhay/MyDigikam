@@ -1140,7 +1140,7 @@ public:
      * Get GPS location information set in the item, in the GPSCoordinate format
      * as described in the XMP specification. Returns a null string in the information cannot be found.
      */
-    QString getGPSLatitudeString() const;
+    QString getGPSLatitudeString()  const;
     QString getGPSLongitudeString() const;
 
     /**
@@ -1148,7 +1148,7 @@ public:
      * where the sign determines the direction ref (North + / South - ; East + / West -).
      * Returns true if the information is available.
      */
-    bool getGPSLatitudeNumber(double* const latitude) const;
+    bool getGPSLatitudeNumber(double* const latitude)   const;
     bool getGPSLongitudeNumber(double* const longitude) const;
 
     /**
@@ -1202,6 +1202,12 @@ public:
     static void convertToRationalSmallDenominator(const double number,
                                                   long int* const numerator,
                                                   long int* const denominator);
+
+    /**
+     * Converts degrees values as a double representation. This code take a care about hemisphere position.
+     */
+    static double convertDegreeAngleToDouble(double degrees, double minutes, double seconds);
+
 
     /**
      * Converts a GPS position stored as rationals in Exif to the form described

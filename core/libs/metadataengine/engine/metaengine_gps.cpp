@@ -791,6 +791,16 @@ void MetaEngine::convertToRationalSmallDenominator(const double number, long int
     }
 }
 
+double MetaEngine::convertDegreeAngleToDouble(double degrees, double minutes, double seconds)
+{
+    if (degrees > 0.0)
+    {
+        return (degrees + (minutes / 60.0) + (seconds / 3600.0));
+    }
+
+    return (degrees - (minutes / 60.0) - (seconds / 3600.0));
+}
+
 QString MetaEngine::convertToGPSCoordinateString(const long int numeratorDegrees, const long int denominatorDegrees,
                                                  const long int numeratorMinutes, const long int denominatorMinutes,
                                                  const long int numeratorSeconds, const long int denominatorSeconds,

@@ -32,6 +32,7 @@
 
 #include "digikam_debug.h"
 #include "digikam_config.h"
+#include "metaengine.h"
 
 namespace Digikam
 {
@@ -140,6 +141,13 @@ void DRawDecoder::Private::fillIndentifyInfo(LibRaw* const raw, DRawInfo& identi
     identify.exposureTime     = raw->imgdata.other.shutter;
     identify.aperture         = raw->imgdata.other.aperture;
     identify.focalLength      = raw->imgdata.other.focal_len;
+    identify.latitude         = MetaEngine::convertDegreeAngleToDouble(raw->imgdata.other.parsed_gps.latitude[0],
+                                                                       raw->imgdata.other.parsed_gps.latitude[1],
+                                                                       raw->imgdata.other.parsed_gps.latitude[2]);
+    identify.longitude        = MetaEngine::convertDegreeAngleToDouble(raw->imgdata.other.parsed_gps.longitude[0],
+                                                                       raw->imgdata.other.parsed_gps.longitude[1],
+                                                                       raw->imgdata.other.parsed_gps.longitude[2]);
+    identify.altitude         = raw->imgdata.other.parsed_gps.altitude;
     identify.imageSize        = QSize(raw->imgdata.sizes.width,      raw->imgdata.sizes.height);
     identify.fullSize         = QSize(raw->imgdata.sizes.raw_width,  raw->imgdata.sizes.raw_height);
     identify.outputSize       = QSize(raw->imgdata.sizes.iwidth,     raw->imgdata.sizes.iheight);

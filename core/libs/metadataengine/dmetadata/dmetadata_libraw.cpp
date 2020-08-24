@@ -125,6 +125,8 @@ bool DMetadata::loadUsingRawEngine(const QString& filePath)
             setIccProfile(IccProfile(identify.iccData));
         }
 
+        setGPSInfo(identify.altitude, identify.latitude, identify.longitude);
+
         return true;
     }
 
