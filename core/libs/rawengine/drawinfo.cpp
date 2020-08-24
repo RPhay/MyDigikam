@@ -35,7 +35,7 @@ DRawInfo::DRawInfo()
     aperture          = -1.0;
     focalLength       = -1.0;
     pixelAspectRatio  = 1.0;    ///< Default value. This can be unavailable (depending of camera model).
-    baselineExposure  = -1.0;
+    baselineExposure  = -999.0;
     rawColors         = -1;
     rawImages         = -1;
     hasIccProfile     = false;
@@ -97,7 +97,7 @@ bool DRawInfo::isEmpty()
         (aperture         == -1.0)                      &&
         (focalLength      == -1.0)                      &&
         (pixelAspectRatio == 1.0)                       &&
-        (baselineExposure == -1.0)                      &&
+        (baselineExposure == -999.0)                    &&
         (sensitivity      == -1.0)                      &&
         (rawColors        == -1)                        &&
         (rawImages        == -1)                        &&
