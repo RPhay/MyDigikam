@@ -158,7 +158,7 @@ void Benchmark::registerTrainingSet()
 
     QElapsedTimer timer;
     timer.start();
-
+/*
     QMap<QString, QString> attributes;
     attributes[QLatin1String("fullName")] = m_trainSet.begin().key();
 
@@ -169,8 +169,8 @@ void Benchmark::registerTrainingSet()
     m_recognizer->train(newIdentity, m_trainSet.begin().value(), QLatin1String("train face classifier"));
 
     m_trainSize += m_trainSet.begin().value().size();
+*/
 
-/*
     for (QHash<QString, QList<QImage*> >::iterator iter  = m_trainSet.begin();
                                                    iter != m_trainSet.end();
                                                  ++iter)
@@ -186,7 +186,7 @@ void Benchmark::registerTrainingSet()
 
         m_trainSize += iter.value().size();
     }
-*/
+
     unsigned int elapsedDetection = timer.elapsed();
     qDebug() << "Registered <<  :" << m_trainSize << "faces in training set, with average" << float(elapsedDetection)/m_trainSize << "ms/face";
 }
@@ -212,7 +212,7 @@ void Benchmark::verifyTestSet()
 
             if (predictions[i].isNull())
             {
-                if (iter.key() == m_trainSet.begin().key())
+                if (m_trainSet.contains(iter.key()))
                 {
                     // cannot recognize when label is already register
                     ++nbNotRecognize;

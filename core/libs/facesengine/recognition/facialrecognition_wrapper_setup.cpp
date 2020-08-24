@@ -36,7 +36,7 @@ void FacialRecognitionWrapper::Private::applyParameters()
 #ifdef USE_DNN_RECOGNITION_BACKEND
 
     int k = 5;
-    float threshold = 0.7;
+    float threshold = 0.6;
 
     if      (parameters.contains(QLatin1String("k-nearest")))
     {
@@ -51,8 +51,9 @@ void FacialRecognitionWrapper::Private::applyParameters()
         threshold = parameters.value(QLatin1String("accuracy")).toFloat();
     }
 
-    // squared distance
-    threshold = pow(threshold, 2);
+    threshold = 1.0 - threshold;
+
+    qDebug() << "recognition threshold" << threshold;
 
     recognizer->setNbNeighBors(k);
     recognizer->setThreshold(threshold);

@@ -296,6 +296,8 @@ int OpenCVDNNFaceRecognizer::Private::predictKDTree(const cv::Mat& faceEmbedding
         }
     }
 
+    qDebug() << "voting group" << votingGroups;
+
     double maxScore = 0;
     int prediction  = -1;
 
