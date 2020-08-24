@@ -69,6 +69,11 @@ bool DMetadata::loadUsingRawEngine(const QString& filePath)
             setExifTagString("Exif.Image.Software", identify.software);
         }
 
+        if (identify.serialNumber != 0)
+        {
+            setExifTagLong("Exif.Image.ImageNumber", identify.serialNumber);
+        }
+
         if (identify.sensitivity != -1)
         {
             setExifTagLong("Exif.Photo.ISOSpeedRatings", lroundf(identify.sensitivity));

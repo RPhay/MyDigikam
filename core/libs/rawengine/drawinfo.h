@@ -193,6 +193,11 @@ public:
     QString          software;
 
     /**
+     * Serial number of raw image.
+     */
+    unsigned int     serialNumber;
+
+    /**
      * The demosaising filter pattern.
      */
     QString          filterPattern;

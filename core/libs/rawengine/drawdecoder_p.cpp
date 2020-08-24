@@ -134,6 +134,7 @@ void DRawDecoder::Private::fillIndentifyInfo(LibRaw* const raw, DRawInfo& identi
     identify.model            = QString::fromUtf8(raw->imgdata.idata.model);
     identify.owner            = QString::fromUtf8(raw->imgdata.other.artist);
     identify.software         = QString::fromUtf8(raw->imgdata.idata.software);
+    identify.serialNumber     = raw->imgdata.other.shot_order;
     identify.DNGVersion       = QString::number(raw->imgdata.idata.dng_version);
     identify.sensitivity      = raw->imgdata.other.iso_speed;
     identify.exposureTime     = raw->imgdata.other.shutter;

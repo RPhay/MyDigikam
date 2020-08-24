@@ -54,6 +54,7 @@ DRawInfo::DRawInfo()
     }
 
     whitePoint        = 0;
+    serialNumber      = 0;
     topMargin         = 0;
     leftMargin        = 0;
     orientation       = ORIENTATION_NONE;
@@ -79,6 +80,7 @@ bool DRawInfo::isEmpty()
         model.isEmpty()                                 &&
         owner.isEmpty()                                 &&
         software.isEmpty()                              &&
+        (serialNumber     == 0)                         &&
         filterPattern.isEmpty()                         &&
         colorKeys.isEmpty()                             &&
         DNGVersion.isEmpty()                            &&
