@@ -77,6 +77,8 @@ bool DRawInfo::isEmpty()
 {
     if (make.isEmpty()                                  &&
         model.isEmpty()                                 &&
+        owner.isEmpty()                                 &&
+        software.isEmpty()                              &&
         filterPattern.isEmpty()                         &&
         colorKeys.isEmpty()                             &&
         DNGVersion.isEmpty()                            &&

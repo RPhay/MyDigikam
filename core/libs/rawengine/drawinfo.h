@@ -61,12 +61,12 @@ public:
     /**
      * Standard constructor
      */
-    DRawInfo();
+    explicit DRawInfo();
 
     /**
      * Standard destructor
      */
-    virtual ~DRawInfo();
+    ~DRawInfo();
 
     /**
      * Return 'true' if container is empty, else 'false'
@@ -186,6 +186,11 @@ public:
      * The artist name who have picture owner.
      */
     QString          owner;
+
+    /**
+     * The software name which create picture.
+     */
+    QString          software;
 
     /**
      * The demosaising filter pattern.

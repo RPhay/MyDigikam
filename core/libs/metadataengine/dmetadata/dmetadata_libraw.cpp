@@ -64,6 +64,11 @@ bool DMetadata::loadUsingRawEngine(const QString& filePath)
             setExifTagString("Exif.Image.Artist", identify.owner);
         }
 
+        if (!identify.software.isNull())
+        {
+            setExifTagString("Exif.Image.Software", identify.software);
+        }
+
         if (identify.sensitivity != -1)
         {
             setExifTagLong("Exif.Photo.ISOSpeedRatings", lroundf(identify.sensitivity));
