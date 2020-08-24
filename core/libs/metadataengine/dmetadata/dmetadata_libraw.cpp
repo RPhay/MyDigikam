@@ -35,6 +35,7 @@
 #include "digikam_debug.h"
 #include "drawinfo.h"
 #include "drawdecoder.h"
+#include "iccprofile.h"
 
 namespace Digikam
 {
@@ -105,6 +106,13 @@ bool DMetadata::loadUsingRawEngine(const QString& filePath)
         if (!identify.xmpData.isEmpty())
         {
             setXmp(identify.xmpData);
+        }
+
+       // Handle ICC color profile byte-array
+
+        if (!identify.iccData.isEmpty())
+        {
+            setIccProfile(IccProfile(identify.iccData));
         }
 
         return true;

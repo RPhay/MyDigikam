@@ -192,14 +192,14 @@ void DRawDecoder::Private::fillIndentifyInfo(LibRaw* const raw, DRawInfo& identi
     }
 
     identify.xmpData = QByteArray(raw->imgdata.idata.xmpdata, raw->imgdata.idata.xmplen);
+    identify.iccData = QByteArray((char*)raw->imgdata.color.profile, raw->imgdata.color.profile_length);
 }
 
 bool DRawDecoder::Private::loadFromLibraw(const QString& filePath, QByteArray& imageData,
                                           int& width, int& height, int& rgbmax)
 {
-    m_parent->m_cancel = false;
-
-    LibRaw* const raw = new LibRaw;
+    m_parent->m_cancel       = false;
+    LibRaw* const raw        = new LibRaw;
 
     // Set progress call back function.
 
@@ -312,11 +312,10 @@ bool DRawDecoder::Private::loadFromLibraw(const QString& filePath, QByteArray& i
             /*
              * Convert between Temperature and RGB.
              */
-            double T;
-            double RGB[3];
-            double xD, yD, X, Y, Z;
+            double RGB[3] = { 0.0 };
+            double xD = 0.0, yD = 0.0, X = 0.0, Y = 0.0, Z = 0.0;
+            double T = m_parent->m_decoderSettings.customWhiteBalance;
             DRawInfo identify;
-            T = m_parent->m_decoderSettings.customWhiteBalance;
 
             // -----------------------------------------------------------------------
             // Here starts the code picked and adapted from ufraw (0.12.1)
@@ -337,7 +336,7 @@ bool DRawDecoder::Private::loadFromLibraw(const QString& filePath, QByteArray& i
 
             // Fit for CIE Daylight illuminant
 
-            if (T <= 4000)
+            if      (T <= 4000)
             {
                 xD = 0.27475e9/(T*T*T) - 0.98598e6/(T*T) + 1.17444e3/T + 0.145986;
             }

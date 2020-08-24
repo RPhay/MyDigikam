@@ -226,6 +226,11 @@ public:
      * Xmp metadata container extracted from RAW file, if present.
      */
     QByteArray       xmpData;
+
+    /**
+     * ICC color profilr container extracted from RAW file, if present.
+     */
+    QByteArray       iccData;
 };
 
 //! qDebug() stream operator. Writes container @a c to the debug output in a nicely formatted way.
