@@ -74,6 +74,13 @@ bool DMetadata::loadUsingRawEngine(const QString& filePath)
             setExifTagString("Exif.Image.Software", identify.firmware);
         }
 
+        if (!identify.DNGVersion.isNull())
+        {
+            QByteArray ba = identify.DNGVersion.toLatin1();
+            ba.truncate(4);
+            setExifTagData("Exif.Image.DNGVersion", ba);
+        }
+
         if (identify.serialNumber != 0)
         {
             setExifTagLong("Exif.Image.ImageNumber", identify.serialNumber);
