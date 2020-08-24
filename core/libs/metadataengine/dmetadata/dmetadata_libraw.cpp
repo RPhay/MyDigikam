@@ -126,6 +126,7 @@ bool DMetadata::loadUsingRawEngine(const QString& filePath)
         }
 
         setGPSInfo(identify.altitude, identify.latitude, identify.longitude);
+        setExifComment(identify.description);
 
         return true;
     }

@@ -83,6 +83,7 @@ bool DRawInfo::isEmpty()
     if (make.isEmpty()                                  &&
         model.isEmpty()                                 &&
         owner.isEmpty()                                 &&
+        description.isEmpty()                           &&
         software.isEmpty()                              &&
         (serialNumber     == 0)                         &&
         filterPattern.isEmpty()                         &&

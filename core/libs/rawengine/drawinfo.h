@@ -200,6 +200,11 @@ public:
     QString          software;
 
     /**
+     * The image description of raw image.
+     */
+    QString          description;
+
+    /**
      * Serial number of raw image.
      */
     unsigned int     serialNumber;
