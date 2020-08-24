@@ -101,6 +101,12 @@ bool DMetadata::loadUsingRawEngine(const QString& filePath)
             setExifTagLong("Exif.Photo.ISOSpeedRatings", lroundf(identify.sensitivity));
         }
 
+        if (identify.baselineExposure != -1.0)
+        {
+            convertToRational(identify.baselineExposure, &num, &den, 8);
+            setExifTagRational("Exif.Image.BaselineExposure", num, den);
+        }
+
         if (identify.dateTime.isValid())
         {
             setImageDateTime(identify.dateTime, false);

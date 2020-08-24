@@ -151,6 +151,11 @@ public:
     float            pixelAspectRatio;
 
     /**
+     * Exposure compensation to be applied during raw conversion.
+     */
+    float            baselineExposure;
+
+    /**
      * White color balance settings.
      */
     double           daylightMult[3];

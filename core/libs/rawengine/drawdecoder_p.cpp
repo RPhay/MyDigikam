@@ -162,6 +162,7 @@ void DRawDecoder::Private::fillIndentifyInfo(LibRaw* const raw, DRawInfo& identi
     identify.hasIccProfile        = raw->imgdata.color.profile ? true : false;
     identify.isDecodable          = true;
     identify.pixelAspectRatio     = raw->imgdata.sizes.pixel_aspect;
+    identify.baselineExposure     = raw->imgdata.color.dng_levels.baseline_exposure;
     identify.rawColors            = raw->imgdata.idata.colors;
     identify.rawImages            = raw->imgdata.idata.raw_count;
     identify.blackPoint           = raw->imgdata.color.black;
