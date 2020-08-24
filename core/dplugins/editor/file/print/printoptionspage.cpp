@@ -354,13 +354,10 @@ void PrintOptionsPage::slotAlertSettings(bool t)
 
 void PrintOptionsPage::slotSetupDlg()
 {
-qDebug() << "pipo1";
     EditorWindow* const editor = dynamic_cast<EditorWindow*>(d->parent);
 
     if (editor)
     {
-qDebug() << "pipo2";
-
         editor->slotSetupICC();
     }
 }

@@ -35,6 +35,7 @@ DRawInfo::DRawInfo()
     aperture          = -1.0;
     focalLength       = -1.0;
     pixelAspectRatio  = 1.0;    ///< Default value. This can be unavailable (depending of camera model).
+    baselineExposure  = -999.0;
     rawColors         = -1;
     rawImages         = -1;
     hasIccProfile     = false;
@@ -54,6 +55,7 @@ DRawInfo::DRawInfo()
     }
 
     whitePoint        = 0;
+    serialNumber      = 0;
     topMargin         = 0;
     leftMargin        = 0;
     orientation       = ORIENTATION_NONE;
@@ -67,6 +69,10 @@ DRawInfo::DRawInfo()
             cameraXYZMatrix[y][x]    = 0.0;       ///< NOTE: see B.K.O # 253911 : [y][x] not [x][y]
         }
     }
+
+    latitude  = 0.0;
+    longitude = 0.0;
+    altitude  = 0.0;
 }
 
 DRawInfo::~DRawInfo()
@@ -77,13 +83,21 @@ bool DRawInfo::isEmpty()
 {
     if (make.isEmpty()                                  &&
         model.isEmpty()                                 &&
+        owner.isEmpty()                                 &&
+        description.isEmpty()                           &&
+        software.isEmpty()                              &&
+        firmware.isEmpty()                              &&
+        (serialNumber     == 0)                         &&
         filterPattern.isEmpty()                         &&
         colorKeys.isEmpty()                             &&
         DNGVersion.isEmpty()                            &&
+        uniqueCameraModel.isEmpty()                     &&
+        localizedCameraModel.isEmpty()                  &&
         (exposureTime     == -1.0)                      &&
         (aperture         == -1.0)                      &&
         (focalLength      == -1.0)                      &&
         (pixelAspectRatio == 1.0)                       &&
+        (baselineExposure == -999.0)                    &&
         (sensitivity      == -1.0)                      &&
         (rawColors        == -1)                        &&
         (rawImages        == -1)                        &&
@@ -95,6 +109,9 @@ bool DRawInfo::isEmpty()
         (whitePoint       == 0)                         &&
         (topMargin        == 0)                         &&
         (leftMargin       == 0)                         &&
+        (latitude         == 0.0)                       &&
+        (longitude        == 0.0)                       &&
+        (altitude         == 0.0)                       &&
         !dateTime.isValid()                             &&
         !imageSize.isValid()                            &&
         !fullSize.isValid()                             &&
@@ -137,7 +154,9 @@ bool DRawInfo::isEmpty()
         (cameraXYZMatrix[3][1]    == 0.0)               &&
         (cameraXYZMatrix[3][2]    == 0.0)               &&
         (orientation              == ORIENTATION_NONE)  &&
-        xmpData.isEmpty()
+        xmpData.isEmpty()                               &&
+        iccData.isEmpty()                               &&
+        thumbnail.isNull()
        )
     {
         return true;

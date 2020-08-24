@@ -129,7 +129,7 @@ bool MetaEngine::supportXmp()
 
 bool MetaEngine::supportMetadataWritting(const QString& typeMime)
 {
-    if (typeMime == QLatin1String("image/jpeg"))
+    if      (typeMime == QLatin1String("image/jpeg"))
     {
         return true;
     }

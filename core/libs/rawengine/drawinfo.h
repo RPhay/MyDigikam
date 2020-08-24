@@ -31,6 +31,7 @@
 #include <QDateTime>
 #include <QSize>
 #include <QDebug>
+#include <QImage>
 
 // Local includes
 
@@ -61,12 +62,12 @@ public:
     /**
      * Standard constructor
      */
-    DRawInfo();
+    explicit DRawInfo();
 
     /**
      * Standard destructor
      */
-    virtual ~DRawInfo();
+    ~DRawInfo();
 
     /**
      * Return 'true' if container is empty, else 'false'
@@ -151,6 +152,11 @@ public:
     float            pixelAspectRatio;
 
     /**
+     * Exposure compensation to be applied during raw conversion.
+     */
+    float            baselineExposure;
+
+    /**
      * White color balance settings.
      */
     double           daylightMult[3];
@@ -166,6 +172,13 @@ public:
     float            cameraColorMatrix1[3][4];
     float            cameraColorMatrix2[3][4];
     float            cameraXYZMatrix[4][3];
+
+    /**
+     * GPS information
+     */
+    double           latitude;
+    double           longitude;
+    double           altitude;
 
     /**
      * The used Color Keys
@@ -188,6 +201,26 @@ public:
     QString          owner;
 
     /**
+     * The software name which process raw image.
+     */
+    QString          software;
+
+    /**
+     * The Firware name or version which create raw image.
+     */
+    QString          firmware;
+
+    /**
+     * The image description of raw image.
+     */
+    QString          description;
+
+    /**
+     * Serial number of raw image.
+     */
+    unsigned int     serialNumber;
+
+    /**
      * The demosaising filter pattern.
      */
     QString          filterPattern;
@@ -196,6 +229,16 @@ public:
      * The DNG version. NOTE: it is only shown with DNG RAW files.
      */
     QString          DNGVersion;
+
+    /**
+     * Non-localized name for the camera model that created the raw file
+     */
+    QString          uniqueCameraModel;
+
+    /**
+     * Localized name for the camera model that created the raw file
+     */
+    QString          localizedCameraModel;
 
     /**
      * Date & time when the picture has been taken.
@@ -226,6 +269,16 @@ public:
      * Xmp metadata container extracted from RAW file, if present.
      */
     QByteArray       xmpData;
+
+    /**
+     * ICC color profilr container extracted from RAW file, if present.
+     */
+    QByteArray       iccData;
+
+    /**
+     * Thumbnail image extracted from raw file.
+     */
+    QImage           thumbnail;
 };
 
 //! qDebug() stream operator. Writes container @a c to the debug output in a nicely formatted way.
