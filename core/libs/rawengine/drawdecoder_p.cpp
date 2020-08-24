@@ -209,6 +209,7 @@ void DRawDecoder::Private::fillIndentifyInfo(LibRaw* const raw, DRawInfo& identi
 
     identify.xmpData              = QByteArray(raw->imgdata.idata.xmpdata, raw->imgdata.idata.xmplen);
     identify.iccData              = QByteArray((char*)raw->imgdata.color.profile, raw->imgdata.color.profile_length);
+    identify.thumbnail            = QImage::fromData((const uchar*)raw->imgdata.thumbnail.thumb, raw->imgdata.thumbnail.tlength);
 }
 
 bool DRawDecoder::Private::loadFromLibraw(const QString& filePath, QByteArray& imageData,

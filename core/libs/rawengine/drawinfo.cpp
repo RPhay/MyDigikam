@@ -155,7 +155,8 @@ bool DRawInfo::isEmpty()
         (cameraXYZMatrix[3][2]    == 0.0)               &&
         (orientation              == ORIENTATION_NONE)  &&
         xmpData.isEmpty()                               &&
-        iccData.isEmpty()
+        iccData.isEmpty()                               &&
+        thumbnail.isNull()
        )
     {
         return true;

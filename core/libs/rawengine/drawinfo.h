@@ -31,6 +31,7 @@
 #include <QDateTime>
 #include <QSize>
 #include <QDebug>
+#include <QImage>
 
 // Local includes
 
@@ -273,6 +274,11 @@ public:
      * ICC color profilr container extracted from RAW file, if present.
      */
     QByteArray       iccData;
+
+    /**
+     * Thumbnail image extracted from raw file.
+     */
+    QImage           thumbnail;
 };
 
 //! qDebug() stream operator. Writes container @a c to the debug output in a nicely formatted way.

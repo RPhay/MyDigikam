@@ -156,6 +156,12 @@ bool DMetadata::loadUsingRawEngine(const QString& filePath)
         setGPSInfo(identify.altitude, identify.latitude, identify.longitude);
         setExifComment(identify.description);
 
+        if (!identify.thumbnail.isNull())
+        {
+            QImage thumb = identify.thumbnail.scaled(160, 120, Qt::KeepAspectRatio, Qt::SmoothTransformation);
+            setExifThumbnail(thumb);
+        }
+
         return true;
     }
 
