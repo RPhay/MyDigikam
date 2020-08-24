@@ -793,7 +793,7 @@ void MetaEngine::convertToRationalSmallDenominator(const double number, long int
 
 QString MetaEngine::convertToGPSCoordinateString(const long int numeratorDegrees, const long int denominatorDegrees,
                                                  const long int numeratorMinutes, const long int denominatorMinutes,
-                                                 const long int numeratorSeconds, long int denominatorSeconds,
+                                                 const long int numeratorSeconds, const long int denominatorSeconds,
                                                  const char directionReference)
 {
     /**
@@ -805,18 +805,19 @@ QString MetaEngine::convertToGPSCoordinateString(const long int numeratorDegrees
      */
 
     QString coordinate;
+    long int denSecs = denominatorSeconds;
 
     // be relaxed with seconds of 0/0
 
-    if ((denominatorSeconds == 0) &&
-        (numeratorSeconds   == 0))
+    if ((denSecs          == 0) &&
+        (numeratorSeconds == 0))
     {
-        denominatorSeconds = 1;
+        denSecs = 1;
     }
 
     if ((denominatorDegrees == 1) &&
         (denominatorMinutes == 1) &&
-        (denominatorSeconds == 1))
+        (denSecs            == 1))
     {
         // use form DDD,MM,SSk
 
@@ -825,7 +826,7 @@ QString MetaEngine::convertToGPSCoordinateString(const long int numeratorDegrees
     }
     else if ((denominatorDegrees == 1)   &&
              (denominatorMinutes == 100) &&
-             (denominatorSeconds == 1))
+             (denSecs            == 1))
     {
         // use form DDD,MM.mmk
 
@@ -843,7 +844,7 @@ QString MetaEngine::convertToGPSCoordinateString(const long int numeratorDegrees
     }
     else if ((denominatorDegrees == 0) ||
              (denominatorMinutes == 0) ||
-             (denominatorSeconds == 0))
+             (denSecs            == 0))
     {
         // Invalid. 1/0 is everything but 0. As is 0/0.
 
@@ -854,11 +855,11 @@ QString MetaEngine::convertToGPSCoordinateString(const long int numeratorDegrees
         // use form DDD,MM.mmk
 
         coordinate             = QLatin1String("%1,%2%3");
-        double degrees         = (double)numeratorDegrees / (double)denominatorDegrees;
+        double degrees         = (double)numeratorDegrees  / (double)denominatorDegrees;
         double wholeDegrees    = trunc(degrees);
-        double minutes         = (double)numeratorMinutes / (double)denominatorMinutes;
+        double minutes         = (double)numeratorMinutes  / (double)denominatorMinutes;
         minutes               += (degrees - wholeDegrees) * 60.0;
-        minutes               += ((double)numeratorSeconds / (double)denominatorSeconds) / 60.0;
+        minutes               += ((double)numeratorSeconds / (double)denSecs) / 60.0;
         QString minutesString  = QString::number(minutes, 'f', 8);
 
         while (minutesString.endsWith(QLatin1String("0")) && !minutesString.endsWith(QLatin1String(".0")))

@@ -1212,7 +1212,7 @@ public:
                                                 const long int numeratorMinutes,
                                                 const long int denominatorMinutes,
                                                 const long int numeratorSeconds,
-                                                long int denominatorSeconds,
+                                                const long int denominatorSeconds,
                                                 const char directionReference);
 
     /**
