@@ -90,6 +90,8 @@ bool DRawInfo::isEmpty()
         filterPattern.isEmpty()                         &&
         colorKeys.isEmpty()                             &&
         DNGVersion.isEmpty()                            &&
+        uniqueCameraModel.isEmpty()                     &&
+        localizedCameraModel.isEmpty()                  &&
         (exposureTime     == -1.0)                      &&
         (aperture         == -1.0)                      &&
         (focalLength      == -1.0)                      &&

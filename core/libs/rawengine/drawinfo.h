@@ -225,6 +225,16 @@ public:
     QString          DNGVersion;
 
     /**
+     * Non-localized name for the camera model that created the raw file
+     */
+    QString          uniqueCameraModel;
+
+    /**
+     * Localized name for the camera model that created the raw file
+     */
+    QString          localizedCameraModel;
+
+    /**
      * Date & time when the picture has been taken.
      */
     QDateTime        dateTime;

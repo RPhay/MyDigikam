@@ -81,6 +81,16 @@ bool DMetadata::loadUsingRawEngine(const QString& filePath)
             setExifTagData("Exif.Image.DNGVersion", ba);
         }
 
+        if (!identify.uniqueCameraModel.isNull())
+        {
+            setExifTagString("Exif.Image.UniqueCameraModel", identify.uniqueCameraModel);
+        }
+
+        if (!identify.localizedCameraModel.isNull())
+        {
+            setExifTagData("Exif.Image.LocalizedCameraModel", identify.localizedCameraModel.toLatin1());
+        }
+
         if (identify.serialNumber != 0)
         {
             setExifTagLong("Exif.Image.ImageNumber", identify.serialNumber);
