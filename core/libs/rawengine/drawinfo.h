@@ -195,9 +195,14 @@ public:
     QString          owner;
 
     /**
-     * The software name which create picture.
+     * The software name which process raw image.
      */
     QString          software;
+
+    /**
+     * The Firware name or version which create raw image.
+     */
+    QString          firmware;
 
     /**
      * The image description of raw image.

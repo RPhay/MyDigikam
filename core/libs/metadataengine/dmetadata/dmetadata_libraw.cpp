@@ -66,7 +66,12 @@ bool DMetadata::loadUsingRawEngine(const QString& filePath)
 
         if (!identify.software.isNull())
         {
-            setExifTagString("Exif.Image.Software", identify.software);
+            setExifTagString("Exif.Image.ProcessingSoftware", identify.software);
+        }
+
+        if (!identify.firmware.isNull())
+        {
+            setExifTagString("Exif.Image.Software", identify.firmware);
         }
 
         if (identify.serialNumber != 0)

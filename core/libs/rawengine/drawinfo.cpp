@@ -85,6 +85,7 @@ bool DRawInfo::isEmpty()
         owner.isEmpty()                                 &&
         description.isEmpty()                           &&
         software.isEmpty()                              &&
+        firmware.isEmpty()                              &&
         (serialNumber     == 0)                         &&
         filterPattern.isEmpty()                         &&
         colorKeys.isEmpty()                             &&
