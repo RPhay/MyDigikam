@@ -248,11 +248,15 @@ void LoadingCache::removeLoadingProcess(LoadingProcess* const process)
 
 void LoadingCache::notifyNewLoadingProcess(LoadingProcess* const process, const LoadingDescription& description)
 {
+    Q_UNUSED(process);
+    Q_UNUSED(description);
+/*
     for (QMap<QString, LoadingProcess*>::const_iterator it = d->loadingDict.constBegin() ;
          it != d->loadingDict.constEnd() ; ++it)
     {
         it.value()->notifyNewLoadingProcess(process, description);
     }
+*/
 }
 
 void LoadingCache::setCacheSize(int megabytes)
