@@ -745,7 +745,7 @@ void MetaEngine::convertToRationalSmallDenominator(const double number, long int
      */
 
     int      lastnum = 500; // this is _not_ the largest possible denominator
-    long int num, approx, bestnum=0, bestdenom=1;
+    long int num, approx, bestnum = 0, bestdenom = 1;
     double   value, error, leasterr, criterion;
 
     value = fractional;
@@ -832,7 +832,7 @@ QString MetaEngine::convertToGPSCoordinateString(const long int numeratorDegrees
         coordinate             = QLatin1String("%1,%2%3");
         double minutes         = (double)numeratorMinutes / (double)denominatorMinutes;
         minutes               += (double)numeratorSeconds / 60.0;
-        QString minutesString =  QString::number(minutes, 'f', 8);
+        QString minutesString  = QString::number(minutes, 'f', 8);
 
         while (minutesString.endsWith(QLatin1String("0")) && !minutesString.endsWith(QLatin1String(".0")))
         {

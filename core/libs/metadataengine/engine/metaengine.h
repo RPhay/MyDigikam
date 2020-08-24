@@ -1204,7 +1204,7 @@ public:
                                                   long int* const denominator);
 
     /**
-     *Converts a GPS position stored as rationals in Exif to the form described
+     * Converts a GPS position stored as rationals in Exif to the form described
      * as GPSCoordinate in the XMP specification, either in the from "256,45,34N" or "256,45.566667N"
      */
     static QString convertToGPSCoordinateString(const long int numeratorDegrees,
