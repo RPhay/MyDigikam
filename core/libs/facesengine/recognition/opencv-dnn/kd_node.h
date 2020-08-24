@@ -61,7 +61,7 @@ public:
      */
     double getClosestNeighbors(QMap<double, QVector<int> >& neighborList,
                                const cv::Mat&               position,
-                               double                       sqRange,
+                               float                        sqRange,
                                int                          maxNbNeighbors) const;
     /**
      * Return identity of the node

@@ -42,7 +42,7 @@ public:
      * @param maxNbNeighbors
      * @return Map of N-nearest neighbors, sorted by distance
      */
-    QMap<double, QVector<int> > getClosestNeighbors(const cv::Mat& position, double sqRange, int maxNbNeighbors) const;
+    QMap<double, QVector<int> > getClosestNeighbors(const cv::Mat& position, float sqRange, int maxNbNeighbors) const;
 
     /**
      * @brief add new node to KD-Tree

@@ -97,10 +97,10 @@ public:
     bool trainKNN();
 
     int predictSVM(cv::Mat faceEmbedding);
-    int predictKNN(cv::Mat faceEmbedding, int k);
+    int predictKNN(cv::Mat faceEmbedding);
 
-    int predictKDTree(const cv::Mat& faceEmbedding, int k) const;
-    int predictDb(const cv::Mat& faceEmbedding, int k) const;
+    int predictKDTree(const cv::Mat& faceEmbedding) const;
+    int predictDb(const cv::Mat& faceEmbedding) const;
 
     bool insertData(const cv::Mat& position, const int label, const QString& context = QString());
 
@@ -152,13 +152,13 @@ public:
                     id = d->predictSVM(faceEmbedding);
                     break;
                 case OpenCV_KNN:
-                    id = d->predictKNN(faceEmbedding, d->kNeighbors);
+                    id = d->predictKNN(faceEmbedding);
                     break;
                 case Tree:
-                    id = d->predictKDTree(faceEmbedding, d->kNeighbors);
+                    id = d->predictKDTree(faceEmbedding);
                     break;
                 case DB:
-                    id = d->predictDb(faceEmbedding, d->kNeighbors);
+                    id = d->predictDb(faceEmbedding);
                     break;
                 default:
                     qCWarning(DIGIKAM_FACEDB_LOG) << "Not recognized classifying method";
@@ -252,7 +252,7 @@ int OpenCVDNNFaceRecognizer::Private::predictSVM(cv::Mat faceEmbedding)
     return (int(svm->predict(faceEmbedding)));
 }
 
-int OpenCVDNNFaceRecognizer::Private::predictKNN(cv::Mat faceEmbedding, int k)
+int OpenCVDNNFaceRecognizer::Private::predictKNN(cv::Mat faceEmbedding)
 {
     if (newDataAdded)
     {
@@ -265,12 +265,12 @@ int OpenCVDNNFaceRecognizer::Private::predictKNN(cv::Mat faceEmbedding, int k)
     }
 
     cv::Mat output;
-    knn->findNearest(faceEmbedding, k, output);
+    knn->findNearest(faceEmbedding, kNeighbors, output);
 
     return (int(output.at<float>(0)));
 }
 
-int OpenCVDNNFaceRecognizer::Private::predictKDTree(const cv::Mat& faceEmbedding, int k) const
+int OpenCVDNNFaceRecognizer::Private::predictKDTree(const cv::Mat& faceEmbedding) const
 {
     if (!tree)
     {
@@ -278,7 +278,7 @@ int OpenCVDNNFaceRecognizer::Private::predictKDTree(const cv::Mat& faceEmbedding
     }
 
     // Look for K-nearest neighbor which have the sqr distance greater smaller than the threshold
-    QMap<double, QVector<int> > closestNeighbors = tree->getClosestNeighbors(faceEmbedding, threshold, k);
+    QMap<double, QVector<int> > closestNeighbors = tree->getClosestNeighbors(faceEmbedding, threshold, kNeighbors);
 
     QMap<int, QVector<double> > votingGroups;
 
@@ -320,9 +320,9 @@ int OpenCVDNNFaceRecognizer::Private::predictKDTree(const cv::Mat& faceEmbedding
     return prediction;
 }
 
-int OpenCVDNNFaceRecognizer::Private::predictDb(const cv::Mat& faceEmbedding, int k) const
+int OpenCVDNNFaceRecognizer::Private::predictDb(const cv::Mat& faceEmbedding) const
 {
-    QMap<double, QVector<int> > closestNeighbors = FaceDbAccess().db()->getClosestNeighborsTreeDb(faceEmbedding, threshold, k);
+    QMap<double, QVector<int> > closestNeighbors = FaceDbAccess().db()->getClosestNeighborsTreeDb(faceEmbedding, threshold, kNeighbors);
 
     QMap<int, QVector<double> > votingGroups;
 
@@ -468,13 +468,13 @@ int OpenCVDNNFaceRecognizer::recognize(QImage* inputImage)
             id = d->predictSVM(faceEmbedding);
             break;
         case OpenCV_KNN:
-            id = d->predictKNN(faceEmbedding, d->kNeighbors);
+            id = d->predictKNN(faceEmbedding);
             break;
         case Tree:
-            id = d->predictKDTree(faceEmbedding, d->kNeighbors);
+            id = d->predictKDTree(faceEmbedding);
             break;
         case DB:
-            id = d->predictDb(faceEmbedding, d->kNeighbors);
+            id = d->predictDb(faceEmbedding);
             break;
         default:
             qCWarning(DIGIKAM_FACEDB_LOG) << "Not recognized classifying method";
@@ -532,7 +532,7 @@ int OpenCVDNNFaceRecognizer::verifyTestData(const cv::Mat& preprocessedImage)
 
     if(d->method == Tree)
     {
-        id = d->predictKDTree(d->extractors[0]->getFaceEmbedding(preprocessedImage), 3);
+        id = d->predictKDTree(d->extractors[0]->getFaceEmbedding(preprocessedImage));
     }
 
     return id;

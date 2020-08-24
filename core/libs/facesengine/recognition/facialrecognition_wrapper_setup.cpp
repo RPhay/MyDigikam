@@ -51,7 +51,9 @@ void FacialRecognitionWrapper::Private::applyParameters()
         threshold = parameters.value(QLatin1String("accuracy")).toFloat();
     }
 
-    qDebug() << "recognition threshold" << threshold;
+    // squared distance
+    threshold = pow(threshold, 2);
+
     recognizer->setNbNeighBors(k);
     recognizer->setThreshold(threshold);
 

@@ -34,7 +34,7 @@
 namespace Digikam
 {
 
-double sqrDistance(const float* const pos1, const float* const pos2, int dimension)
+float sqrDistance(const float* const pos1, const float* const pos2, int dimension)
 {
     double sqrDistance = 0;
 
@@ -43,7 +43,7 @@ double sqrDistance(const float* const pos1, const float* const pos2, int dimensi
         sqrDistance += pow((pos1[i] - pos2[i]), 2);
     }
 
-    return sqrDistance;
+    return float(sqrDistance);
 }
 
 class Q_DECL_HIDDEN KDNode::Private
@@ -148,7 +148,7 @@ void KDNode::setNodeId(int id)
 
 double KDNode::getClosestNeighbors(QMap<double, QVector<int> >& neighborList,
                                    const cv::Mat&               position,
-                                   double                       sqRange,
+                                   float                        sqRange,
                                    int                          maxNbNeighbors) const
 {
     // add current node to the list
