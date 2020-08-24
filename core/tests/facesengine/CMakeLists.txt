@@ -103,6 +103,20 @@ target_link_libraries(benchmark_recognition
 )
 
 # -----------------------------------------------------------------------------
+set(convert_SRCS ${CMAKE_CURRENT_SOURCE_DIR}/convert_format.cpp)
+add_executable(convert_format ${convert_SRCS})
+
+target_link_libraries(convert_format
+
+                      digikamcore
+                      digikamgui
+                      digikamfacesengine
+                      digikamdatabase
+
+                      ${COMMON_TEST_LINK}
+)
+
+# -----------------------------------------------------------------------------
 
 set(gui_recognition_SRCS ${CMAKE_CURRENT_SOURCE_DIR}/gui_recognition.cpp)
 add_executable(gui_recognition ${gui_recognition_SRCS})

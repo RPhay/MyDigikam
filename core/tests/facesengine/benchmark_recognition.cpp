@@ -159,6 +159,18 @@ void Benchmark::registerTrainingSet()
     QElapsedTimer timer;
     timer.start();
 
+    QMap<QString, QString> attributes;
+    attributes[QLatin1String("fullName")] = m_trainSet.begin().key();
+
+    Identity newIdentity = m_recognizer->addIdentity(attributes);
+
+    qDebug() << "add new identity to database" << newIdentity.id();
+
+    m_recognizer->train(newIdentity, m_trainSet.begin().value(), QLatin1String("train face classifier"));
+
+    m_trainSize += m_trainSet.begin().value().size();
+
+/*
     for (QHash<QString, QList<QImage*> >::iterator iter  = m_trainSet.begin();
                                                    iter != m_trainSet.end();
                                                  ++iter)
@@ -174,7 +186,7 @@ void Benchmark::registerTrainingSet()
 
         m_trainSize += iter.value().size();
     }
-
+*/
     unsigned int elapsedDetection = timer.elapsed();
     qDebug() << "Registered <<  :" << m_trainSize << "faces in training set, with average" << float(elapsedDetection)/m_trainSize << "ms/face";
 }
@@ -198,10 +210,13 @@ void Benchmark::verifyTestSet()
         {
             //Identity prediction = m_recognizer->identity(ids[i]);
 
-            if (predictions[i].isNull() && m_trainSet.contains(iter.key()))
+            if (predictions[i].isNull())
             {
-                // cannot recognize when label is already register
-                ++nbNotRecognize;
+                if (iter.key() == m_trainSet.begin().key())
+                {
+                    // cannot recognize when label is already register
+                    ++nbNotRecognize;
+                }
             }
             else if (predictions[i].attribute(QLatin1String("fullName")) != iter.key())
             {
