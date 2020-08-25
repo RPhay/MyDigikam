@@ -38,6 +38,7 @@ DRawInfo::DRawInfo()
     baselineExposure        = -999.0F;       ///< -999 is an invalid exposure.
     ambientTemperature      = -1000.0F;      ///< -1000 is an invalid temperature.
     exposureIndex           = -1.0F;         ///< Valid value is unsigned.
+    flashUsed               = -1;            ///< Valid value is unsigned.
     rawColors               = -1;
     rawImages               = -1;
     hasIccProfile           = false;

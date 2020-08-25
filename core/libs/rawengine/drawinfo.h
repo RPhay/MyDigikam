@@ -157,6 +157,11 @@ public:
     float            ambientTemperature;
 
     /**
+     * Describe how flash has been used by camera.
+     */
+    int              flashUsed;
+
+    /**
      * Exposure Index from the camera.
      */
     float            exposureIndex;
