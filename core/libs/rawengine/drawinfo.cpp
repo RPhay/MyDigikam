@@ -36,7 +36,14 @@ DRawInfo::DRawInfo()
     focalLength             = -1.0F;
     pixelAspectRatio        = 1.0F;          ///< Default value. This can be unavailable (depending of camera model).
     baselineExposure        = -999.0F;       ///< -999 is an invalid exposure.
+
     ambientTemperature      = -1000.0F;      ///< -1000 is an invalid temperature.
+    ambientHumidity         = -1000.0F;      ///< -1000 is an invalid humidity.
+    ambientPressure         = -1000.0F;      ///< -1000 is an invalid pressure.
+    ambientWaterDepth       = 1000.0F;       ///<  1000 is an invalid water depth.
+    ambientAcceleration     = -1000.0F;      ///< -1000 is an invalid acceleration.
+    ambientElevationAngle   = -1000.0F;      ///< -1000 is an invalid angle.
+
     exposureIndex           = -1.0F;         ///< Valid value is unsigned.
     flashUsed               = -1;            ///< Valid value is unsigned.
     rawColors               = -1;

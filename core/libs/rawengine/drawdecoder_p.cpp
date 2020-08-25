@@ -168,7 +168,14 @@ void DRawDecoder::Private::fillIndentifyInfo(LibRaw* const raw, DRawInfo& identi
     identify.isDecodable           = true;
     identify.pixelAspectRatio      = raw->imgdata.sizes.pixel_aspect;
     identify.baselineExposure      = raw->imgdata.color.dng_levels.baseline_exposure;
+
     identify.ambientTemperature    = raw->imgdata.makernotes.common.exifAmbientTemperature;
+    identify.ambientHumidity       = raw->imgdata.makernotes.common.exifHumidity;
+    identify.ambientPressure       = raw->imgdata.makernotes.common.exifPressure;
+    identify.ambientWaterDepth     = raw->imgdata.makernotes.common.exifWaterDepth;
+    identify.ambientAcceleration   = raw->imgdata.makernotes.common.exifAcceleration;
+    identify.ambientElevationAngle = raw->imgdata.makernotes.common.exifCameraElevationAngle;
+
     identify.exposureIndex         = raw->imgdata.makernotes.common.exifExposureIndex;
     identify.flashUsed             = (int)raw->imgdata.color.flash_used;
     identify.rawColors             = raw->imgdata.idata.colors;

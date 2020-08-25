@@ -152,9 +152,34 @@ public:
     float            baselineExposure;
 
     /**
-     * Ambient temperature in Celcius degrees from the camera.
+     * Ambient temperature in Celcius degrees.
      */
     float            ambientTemperature;
+
+    /**
+     * Ambient relative humidity in percent.
+     */
+    float            ambientHumidity;
+
+    /**
+     * Ambient air pressure in hPa or mbar.
+     */
+    float            ambientPressure;
+
+    /**
+     * Depth under water in metres, negative for above water.
+     */
+    float            ambientWaterDepth;
+
+    /**
+     * Directionless camera acceleration in units of mGal, or 10-5 m/s2.
+     */
+    float            ambientAcceleration;
+
+    /**
+     * Camera elevation angle in degrees.
+     */
+    float            ambientElevationAngle;
 
     /**
      * Describe how flash has been used by camera.

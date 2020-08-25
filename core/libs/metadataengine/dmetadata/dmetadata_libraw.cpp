@@ -159,6 +159,36 @@ bool DMetadata::loadUsingRawEngine(const QString& filePath)
             setExifTagRational("Exif.Photo.AmbientTemperature", num, den);
         }
 
+        if (identify.ambientHumidity != -1000.0F)
+        {
+            convertToRational(identify.ambientHumidity, &num, &den, 8);
+            setExifTagRational("Exif.Photo.0x9401", num, den);
+        }
+
+        if (identify.ambientPressure != -1000.0F)
+        {
+            convertToRational(identify.ambientPressure, &num, &den, 8);
+            setExifTagRational("Exif.Photo.0x9402", num, den);
+        }
+
+        if (identify.ambientWaterDepth != 1000.0F)
+        {
+            convertToRational(identify.ambientWaterDepth, &num, &den, 8);
+            setExifTagRational("Exif.Photo.0x9403", num, den);
+        }
+
+        if (identify.ambientAcceleration != -1000.0F)
+        {
+            convertToRational(identify.ambientAcceleration, &num, &den, 8);
+            setExifTagRational("Exif.Photo.0x9404", num, den);
+        }
+
+        if (identify.ambientElevationAngle != -1000.0F)
+        {
+            convertToRational(identify.ambientElevationAngle, &num, &den, 8);
+            setExifTagRational("Exif.Photo.0x9405", num, den);
+        }
+
         if (identify.exposureIndex != -1.0F)
         {
             convertToRational(identify.exposureIndex, &num, &den, 8);
