@@ -173,7 +173,7 @@ double KDNode::getClosestNeighbors(QMap<double, QVector<int> >& neighborList,
     double cosDistanceToCurrentNode = cosDistance(position.ptr<float>(), d->position.ptr<float>(), d->nbDimension);
 
     // NOTE: both Euclidian distance and cosine distance can help to avoid error in similarity prediction
-    if (sqrDistanceToCurrentNode <= sqRange && cosDistanceToCurrentNode > cosThreshold)
+    if (sqrDistanceToCurrentNode < sqRange && cosDistanceToCurrentNode > cosThreshold)
     {
         neighborList[sqrDistanceToCurrentNode].append(d->identity);
         // limit the size of the Map to maxNbNeighbors

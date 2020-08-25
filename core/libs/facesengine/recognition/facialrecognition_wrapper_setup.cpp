@@ -51,7 +51,7 @@ void FacialRecognitionWrapper::Private::applyParameters()
         threshold = parameters.value(QLatin1String("accuracy")).toFloat();
     }
 
-    threshold = 1.0 - threshold;
+    threshold = 1 - threshold;
 
     qDebug() << "recognition threshold" << threshold;
 

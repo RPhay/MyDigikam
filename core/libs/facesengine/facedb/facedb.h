@@ -138,12 +138,14 @@ public:
      * @param neighborList
      * @param position
      * @param sqRange
+     * @param cosThreshold
      * @param maxNbNeighbors
 
      * @return
      */
     QMap<double, QVector<int> > getClosestNeighborsTreeDb(const cv::Mat& position,
-                                                          double sqRange,
+                                                          float sqRange,
+                                                          float cosThreshold,
                                                           int maxNbNeighbors) const;
 
     void clearTreeDb() const;
@@ -168,6 +170,7 @@ private:
      * @param neighborList
      * @param position
      * @param sqRange
+     * @param cosThreshold
      * @param maxNbNeighbors
 
      * @return
@@ -175,7 +178,8 @@ private:
     double getClosestNeighborsTreeDb(const DataNode& subTree,
                                     QMap<double, QVector<int> >& neighborList,
                                     const cv::Mat& position,
-                                    double sqRange,
+                                    float sqRange,
+                                    float cosThreshold,
                                     int maxNbNeighbors) const;
 
 #else

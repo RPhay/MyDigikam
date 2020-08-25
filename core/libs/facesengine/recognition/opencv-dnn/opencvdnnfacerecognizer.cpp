@@ -49,7 +49,7 @@ public:
         : method(method),
           tree(nullptr),
           kNeighbors(5),
-          threshold(0.7),
+          threshold(0.4),
           newDataAdded(true)
     {
         for (int i = 0; i < 10; ++i)
@@ -278,7 +278,7 @@ int OpenCVDNNFaceRecognizer::Private::predictKDTree(const cv::Mat& faceEmbedding
     }
 
     // Look for K-nearest neighbor which have the cosine distance greater greater than the threshold
-    QMap<double, QVector<int> > closestNeighbors = tree->getClosestNeighbors(faceEmbedding, 1, threshold, kNeighbors);
+    QMap<double, QVector<int> > closestNeighbors = tree->getClosestNeighbors(faceEmbedding, threshold, 0.8, kNeighbors);
 
     QMap<int, QVector<double> > votingGroups;
 
@@ -307,7 +307,7 @@ int OpenCVDNNFaceRecognizer::Private::predictKDTree(const cv::Mat& faceEmbedding
 
         for (int i = 0; i < group.value().size(); ++i)
         {
-            score += (1 - group.value()[i]);
+            score += (threshold - group.value()[i]);
         }
 
         if (score > maxScore)
@@ -322,7 +322,7 @@ int OpenCVDNNFaceRecognizer::Private::predictKDTree(const cv::Mat& faceEmbedding
 
 int OpenCVDNNFaceRecognizer::Private::predictDb(const cv::Mat& faceEmbedding) const
 {
-    QMap<double, QVector<int> > closestNeighbors = FaceDbAccess().db()->getClosestNeighborsTreeDb(faceEmbedding, 1, kNeighbors);
+    QMap<double, QVector<int> > closestNeighbors = FaceDbAccess().db()->getClosestNeighborsTreeDb(faceEmbedding, threshold, 0.8, kNeighbors);
 
     QMap<int, QVector<double> > votingGroups;
 
@@ -347,7 +347,7 @@ int OpenCVDNNFaceRecognizer::Private::predictDb(const cv::Mat& faceEmbedding) co
 
         for (int i = 0; i < group.value().size(); ++i)
         {
-            score += (1 - group.value()[i]);
+            score += (threshold - group.value()[i]);
         }
 
         if (score > maxScore)
