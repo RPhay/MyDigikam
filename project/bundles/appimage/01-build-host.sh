@@ -172,6 +172,10 @@ if [ ! -d $DOWNLOAD_DIR ] ; then
     mkdir $DOWNLOAD_DIR
 fi
 
+if [ ! -d /opt/cmake ] ; then
+    mkdir /opt/cmake
+fi
+
 #################################################################################################
 
 cd $BUILDING_DIR
