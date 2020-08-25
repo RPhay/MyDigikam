@@ -35,6 +35,7 @@
 #include "digikam_debug.h"
 #include "drawinfo.h"
 #include "drawdecoder.h"
+#include "iccprofile.h"
 
 namespace Digikam
 {
@@ -63,9 +64,47 @@ bool DMetadata::loadUsingRawEngine(const QString& filePath)
             setExifTagString("Exif.Image.Artist", identify.owner);
         }
 
+        if (!identify.software.isNull())
+        {
+            setExifTagString("Exif.Image.ProcessingSoftware", identify.software);
+        }
+
+        if (!identify.firmware.isNull())
+        {
+            setExifTagString("Exif.Image.Software", identify.firmware);
+        }
+
+        if (!identify.DNGVersion.isNull())
+        {
+            QByteArray ba = identify.DNGVersion.toLatin1();
+            ba.truncate(4);
+            setExifTagData("Exif.Image.DNGVersion", ba);
+        }
+
+        if (!identify.uniqueCameraModel.isNull())
+        {
+            setExifTagString("Exif.Image.UniqueCameraModel", identify.uniqueCameraModel);
+        }
+
+        if (!identify.localizedCameraModel.isNull())
+        {
+            setExifTagData("Exif.Image.LocalizedCameraModel", identify.localizedCameraModel.toLatin1());
+        }
+
+        if (identify.serialNumber != 0)
+        {
+            setExifTagLong("Exif.Image.ImageNumber", identify.serialNumber);
+        }
+
         if (identify.sensitivity != -1)
         {
             setExifTagLong("Exif.Photo.ISOSpeedRatings", lroundf(identify.sensitivity));
+        }
+
+        if (identify.baselineExposure != -999.0)
+        {
+            convertToRational(identify.baselineExposure, &num, &den, 8);
+            setExifTagRational("Exif.Image.BaselineExposure", num, den);
         }
 
         if (identify.dateTime.isValid())
@@ -105,6 +144,22 @@ bool DMetadata::loadUsingRawEngine(const QString& filePath)
         if (!identify.xmpData.isEmpty())
         {
             setXmp(identify.xmpData);
+        }
+
+       // Handle ICC color profile byte-array
+
+        if (!identify.iccData.isEmpty())
+        {
+            setIccProfile(IccProfile(identify.iccData));
+        }
+
+        setGPSInfo(identify.altitude, identify.latitude, identify.longitude);
+        setExifComment(identify.description);
+
+        if (!identify.thumbnail.isNull())
+        {
+            QImage thumb = identify.thumbnail.scaled(160, 120, Qt::KeepAspectRatio, Qt::SmoothTransformation);
+            setExifThumbnail(thumb);
         }
 
         return true;

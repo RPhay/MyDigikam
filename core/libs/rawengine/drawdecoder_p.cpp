@@ -32,15 +32,16 @@
 
 #include "digikam_debug.h"
 #include "digikam_config.h"
+#include "metaengine.h"
 
 namespace Digikam
 {
 
-int callbackForLibRaw(void* data, enum LibRaw_progress p, int iteration, int expected)
+int s_progressCallbackForLibRaw(void* context, enum LibRaw_progress p, int iteration, int expected)
 {
-    if (data)
+    if (context)
     {
-        DRawDecoder::Private* const d = static_cast<DRawDecoder::Private*>(data);
+        DRawDecoder::Private* const d = static_cast<DRawDecoder::Private*>(context);
 
         if (d)
         {
@@ -49,6 +50,19 @@ int callbackForLibRaw(void* data, enum LibRaw_progress p, int iteration, int exp
     }
 
     return 0;
+}
+
+void s_exifParserCallbackForLibRaw(void* context, int tag, int type, int len, unsigned int ord, void* ifp, INT64 base)
+{
+    if (context)
+    {
+        DRawDecoder::Private* const d = static_cast<DRawDecoder::Private*>(context);
+
+        if (d)
+        {
+            d->exifParserCallback(tag, type, len, ord, ifp, base);
+        }
+    }
 }
 
 // --------------------------------------------------------------------------------------------------
@@ -75,12 +89,12 @@ void DRawDecoder::Private::createPPMHeader(QByteArray& imgData, libraw_processed
 
 int DRawDecoder::Private::progressCallback(enum LibRaw_progress p, int iteration, int expected)
 {
-    qCDebug(DIGIKAM_RAWENGINE_LOG) << "LibRaw progress: " << libraw_strprogress(p) << " pass "
-                                   << iteration << " of " << expected;
+    qCDebug(DIGIKAM_RAWENGINE_LOG) << "LibRaw progress:" << libraw_strprogress(p) << "pass"
+                                   << iteration << "of" << expected;
 
     // post a little change in progress indicator to show raw processor activity.
 
-    setProgress(progressValue()+0.01);
+    setProgress(progressValue() + 0.01);
 
     // Clean processing termination by user...
 
@@ -98,6 +112,11 @@ int DRawDecoder::Private::progressCallback(enum LibRaw_progress p, int iteration
     return 0;
 }
 
+void DRawDecoder::Private::exifParserCallback(int tag, int type, int len, unsigned int ord, void* ifp, INT64 base)
+{
+    qDebug() << "LibRaw Exif Parser:" << "tag:" << tag << "type:" << type << "len:" << len << "ord:" << ord << "ifp:" << ifp << "base:" << base;
+}
+
 void DRawDecoder::Private::setProgress(double value)
 {
     m_progress = value;
@@ -112,34 +131,49 @@ double DRawDecoder::Private::progressValue() const
 void DRawDecoder::Private::fillIndentifyInfo(LibRaw* const raw, DRawInfo& identify)
 {
     identify.dateTime.setSecsSinceEpoch(raw->imgdata.other.timestamp);
-    identify.make             = QString::fromUtf8(raw->imgdata.idata.make);
-    identify.model            = QString::fromUtf8(raw->imgdata.idata.model);
-    identify.owner            = QString::fromUtf8(raw->imgdata.other.artist);
-    identify.DNGVersion       = QString::number(raw->imgdata.idata.dng_version);
-    identify.sensitivity      = raw->imgdata.other.iso_speed;
-    identify.exposureTime     = raw->imgdata.other.shutter;
-    identify.aperture         = raw->imgdata.other.aperture;
-    identify.focalLength      = raw->imgdata.other.focal_len;
-    identify.imageSize        = QSize(raw->imgdata.sizes.width,      raw->imgdata.sizes.height);
-    identify.fullSize         = QSize(raw->imgdata.sizes.raw_width,  raw->imgdata.sizes.raw_height);
-    identify.outputSize       = QSize(raw->imgdata.sizes.iwidth,     raw->imgdata.sizes.iheight);
-    identify.thumbSize        = QSize(raw->imgdata.thumbnail.twidth, raw->imgdata.thumbnail.theight);
-    identify.topMargin        = raw->imgdata.sizes.top_margin;
-    identify.leftMargin       = raw->imgdata.sizes.left_margin;
-    identify.hasIccProfile    = raw->imgdata.color.profile ? true : false;
-    identify.isDecodable      = true;
-    identify.pixelAspectRatio = raw->imgdata.sizes.pixel_aspect;
-    identify.rawColors        = raw->imgdata.idata.colors;
-    identify.rawImages        = raw->imgdata.idata.raw_count;
-    identify.blackPoint       = raw->imgdata.color.black;
+    identify.make                 = QString::fromUtf8(raw->imgdata.idata.make);
+    identify.model                = QString::fromUtf8(raw->imgdata.idata.model);
+    identify.owner                = QString::fromUtf8(raw->imgdata.other.artist);
+    identify.software             = QString::fromUtf8(raw->imgdata.idata.software);
+    identify.firmware             = QString::fromUtf8(raw->imgdata.color.model2);
+    identify.description          = QString::fromUtf8(raw->imgdata.other.desc);
+    identify.serialNumber         = raw->imgdata.other.shot_order;
+    identify.DNGVersion           = QString::number(raw->imgdata.idata.dng_version);
+    identify.uniqueCameraModel    = QString::fromUtf8(raw->imgdata.color.UniqueCameraModel);
+    identify.localizedCameraModel = QString::fromUtf8(raw->imgdata.color.LocalizedCameraModel);
+    identify.model                = QString::fromUtf8(raw->imgdata.idata.model);
+    identify.sensitivity          = raw->imgdata.other.iso_speed;
+    identify.exposureTime         = raw->imgdata.other.shutter;
+    identify.aperture             = raw->imgdata.other.aperture;
+    identify.focalLength          = raw->imgdata.other.focal_len;
+    identify.latitude             = MetaEngine::convertDegreeAngleToDouble(raw->imgdata.other.parsed_gps.latitude[0],
+                                                                           raw->imgdata.other.parsed_gps.latitude[1],
+                                                                           raw->imgdata.other.parsed_gps.latitude[2]);
+    identify.longitude            = MetaEngine::convertDegreeAngleToDouble(raw->imgdata.other.parsed_gps.longitude[0],
+                                                                           raw->imgdata.other.parsed_gps.longitude[1],
+                                                                           raw->imgdata.other.parsed_gps.longitude[2]);
+    identify.altitude             = raw->imgdata.other.parsed_gps.altitude;
+    identify.imageSize            = QSize(raw->imgdata.sizes.width,      raw->imgdata.sizes.height);
+    identify.fullSize             = QSize(raw->imgdata.sizes.raw_width,  raw->imgdata.sizes.raw_height);
+    identify.outputSize           = QSize(raw->imgdata.sizes.iwidth,     raw->imgdata.sizes.iheight);
+    identify.thumbSize            = QSize(raw->imgdata.thumbnail.twidth, raw->imgdata.thumbnail.theight);
+    identify.topMargin            = raw->imgdata.sizes.top_margin;
+    identify.leftMargin           = raw->imgdata.sizes.left_margin;
+    identify.hasIccProfile        = raw->imgdata.color.profile ? true : false;
+    identify.isDecodable          = true;
+    identify.pixelAspectRatio     = raw->imgdata.sizes.pixel_aspect;
+    identify.baselineExposure     = raw->imgdata.color.dng_levels.baseline_exposure;
+    identify.rawColors            = raw->imgdata.idata.colors;
+    identify.rawImages            = raw->imgdata.idata.raw_count;
+    identify.blackPoint           = raw->imgdata.color.black;
 
     for (int ch = 0 ; ch < 4 ; ++ch)
     {
         identify.blackPointCh[ch] = raw->imgdata.color.cblack[ch];
     }
 
-    identify.whitePoint       = raw->imgdata.color.maximum;
-    identify.orientation      = (DRawInfo::ImageOrientation)raw->imgdata.sizes.flip;
+    identify.whitePoint           = raw->imgdata.color.maximum;
+    identify.orientation          = (DRawInfo::ImageOrientation)raw->imgdata.sizes.flip;
 
     memcpy(&identify.cameraColorMatrix1, &raw->imgdata.color.cmatrix, sizeof(raw->imgdata.color.cmatrix));
     memcpy(&identify.cameraColorMatrix2, &raw->imgdata.color.rgb_cam, sizeof(raw->imgdata.color.rgb_cam));
@@ -173,19 +207,21 @@ void DRawDecoder::Private::fillIndentifyInfo(LibRaw* const raw, DRawInfo& identi
         }
     }
 
-    identify.xmpData = QByteArray(raw->imgdata.idata.xmpdata, raw->imgdata.idata.xmplen);
+    identify.xmpData              = QByteArray(raw->imgdata.idata.xmpdata, raw->imgdata.idata.xmplen);
+    identify.iccData              = QByteArray((char*)raw->imgdata.color.profile, raw->imgdata.color.profile_length);
+    identify.thumbnail            = QImage::fromData((const uchar*)raw->imgdata.thumbnail.thumb, raw->imgdata.thumbnail.tlength);
 }
 
 bool DRawDecoder::Private::loadFromLibraw(const QString& filePath, QByteArray& imageData,
                                           int& width, int& height, int& rgbmax)
 {
-    m_parent->m_cancel = false;
-
-    LibRaw* const raw = new LibRaw;
+    m_parent->m_cancel       = false;
+    LibRaw* const raw        = new LibRaw;
 
     // Set progress call back function.
 
-    raw->set_progress_handler(callbackForLibRaw, this);
+    raw->set_progress_handler(s_progressCallbackForLibRaw, this);
+    raw->set_exifparser_handler(s_exifParserCallbackForLibRaw, this);
 
     QByteArray deadpixelPath = QFile::encodeName(m_parent->m_decoderSettings.deadPixelMap);
     QByteArray cameraProfile = QFile::encodeName(m_parent->m_decoderSettings.inputProfile);
@@ -293,11 +329,10 @@ bool DRawDecoder::Private::loadFromLibraw(const QString& filePath, QByteArray& i
             /*
              * Convert between Temperature and RGB.
              */
-            double T;
-            double RGB[3];
-            double xD, yD, X, Y, Z;
+            double RGB[3] = { 0.0 };
+            double xD = 0.0, yD = 0.0, X = 0.0, Y = 0.0, Z = 0.0;
+            double T = m_parent->m_decoderSettings.customWhiteBalance;
             DRawInfo identify;
-            T = m_parent->m_decoderSettings.customWhiteBalance;
 
             // -----------------------------------------------------------------------
             // Here starts the code picked and adapted from ufraw (0.12.1)
@@ -318,7 +353,7 @@ bool DRawDecoder::Private::loadFromLibraw(const QString& filePath, QByteArray& i
 
             // Fit for CIE Daylight illuminant
 
-            if (T <= 4000)
+            if      (T <= 4000)
             {
                 xD = 0.27475e9/(T*T*T) - 0.98598e6/(T*T) + 1.17444e3/T + 0.145986;
             }
