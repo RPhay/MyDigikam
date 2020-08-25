@@ -5,6 +5,9 @@
  *
  * Date        : 2007-05-02
  * Description : RAW file identification information container
+ * Note:         this container permit to not expose the rest of
+ *               digiKam code to libraw API and use Qt internal
+ *               containers when possible.
  *
  * Copyright (C) 2007-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
@@ -185,6 +188,11 @@ public:
      * Describe how flash has been used by camera.
      */
     int              flashUsed;
+
+    /**
+     * The metering mode used by camera.
+     */
+    int              meteringMode;
 
     /**
      * Exposure Index from the camera.

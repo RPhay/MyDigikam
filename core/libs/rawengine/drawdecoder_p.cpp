@@ -178,6 +178,7 @@ void DRawDecoder::Private::fillIndentifyInfo(LibRaw* const raw, DRawInfo& identi
 
     identify.exposureIndex         = raw->imgdata.makernotes.common.exifExposureIndex;
     identify.flashUsed             = (int)raw->imgdata.color.flash_used;
+    identify.meteringMode          = raw->imgdata.shootinginfo.MeteringMode;
     identify.rawColors             = raw->imgdata.idata.colors;
     identify.rawImages             = raw->imgdata.idata.raw_count;
     identify.blackPoint            = raw->imgdata.color.black;
