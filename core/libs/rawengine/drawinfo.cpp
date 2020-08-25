@@ -30,50 +30,51 @@ namespace Digikam
 
 DRawInfo::DRawInfo()
 {
-    sensitivity       = -1.0;
-    exposureTime      = -1.0;
-    aperture          = -1.0;
-    focalLength       = -1.0;
-    pixelAspectRatio  = 1.0;    ///< Default value. This can be unavailable (depending of camera model).
-    baselineExposure  = -999.0;
-    rawColors         = -1;
-    rawImages         = -1;
-    hasIccProfile     = false;
-    isDecodable       = false;
-    daylightMult[0]   = 0.0;
-    daylightMult[1]   = 0.0;
-    daylightMult[2]   = 0.0;
-    cameraMult[0]     = 0.0;
-    cameraMult[1]     = 0.0;
-    cameraMult[2]     = 0.0;
-    cameraMult[3]     = 0.0;
-    blackPoint        = 0;
+    sensitivity        = -1.0F;
+    exposureTime       = -1.0F;
+    aperture           = -1.0F;
+    focalLength        = -1.0F;
+    pixelAspectRatio   = 1.0F;    ///< Default value. This can be unavailable (depending of camera model).
+    baselineExposure   = -999.0F;
+    ambientTemperature = -1000.0F;
+    rawColors          = -1;
+    rawImages          = -1;
+    hasIccProfile      = false;
+    isDecodable        = false;
+    daylightMult[0]    = 0.0F;
+    daylightMult[1]    = 0.0F;
+    daylightMult[2]    = 0.0F;
+    cameraMult[0]      = 0.0F;
+    cameraMult[1]      = 0.0F;
+    cameraMult[2]      = 0.0F;
+    cameraMult[3]      = 0.0F;
+    blackPoint         = 0;
 
     for (int ch = 0 ; ch < 4 ; ++ch)
     {
         blackPointCh[ch] = 0;
     }
 
-    whitePoint        = 0;
-    serialNumber      = 0;
-    topMargin         = 0;
-    leftMargin        = 0;
-    orientation       = ORIENTATION_NONE;
+    whitePoint         = 0;
+    serialNumber       = 0;
+    topMargin          = 0;
+    leftMargin         = 0;
+    orientation        = ORIENTATION_NONE;
 
     for (int x = 0 ; x < 3 ; ++x)
     {
         for (int y = 0 ; y < 4 ; ++y)
         {
-            cameraColorMatrix1[x][y] = 0.0;
-            cameraColorMatrix2[x][y] = 0.0;
-            cameraXYZMatrix[y][x]    = 0.0;       ///< NOTE: see B.K.O # 253911 : [y][x] not [x][y]
+            cameraColorMatrix1[x][y] = 0.0F;
+            cameraColorMatrix2[x][y] = 0.0F;
+            cameraXYZMatrix[y][x]    = 0.0F;       ///< NOTE: see B.K.O # 253911 : [y][x] not [x][y]
         }
     }
 
-    latitude          = 0.0;
-    longitude         = 0.0;
-    altitude          = 0.0;
-    hasGpsInfo        = false;
+    latitude           = 0.0F;
+    longitude          = 0.0F;
+    altitude           = 0.0F;
+    hasGpsInfo         = false;
 }
 
 DRawInfo::~DRawInfo()
@@ -102,6 +103,7 @@ bool DRawInfo::isEmpty()
         (focalLength      == -1.0)                      &&
         (pixelAspectRatio == 1.0)                       &&
         (baselineExposure == -999.0)                    &&
+        (ambientTemperature == 0.0)                     &&
         (sensitivity      == -1.0)                      &&
         (rawColors        == -1)                        &&
         (rawImages        == -1)                        &&

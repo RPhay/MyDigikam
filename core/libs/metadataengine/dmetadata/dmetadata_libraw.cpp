@@ -116,10 +116,16 @@ bool DMetadata::loadUsingRawEngine(const QString& filePath)
             setExifTagLong("Exif.Photo.ISOSpeedRatings", lroundf(identify.sensitivity));
         }
 
-        if (identify.baselineExposure != -999.0)
+        if (identify.baselineExposure != -999.0F)
         {
             convertToRational(identify.baselineExposure, &num, &den, 8);
             setExifTagRational("Exif.Image.BaselineExposure", num, den);
+        }
+
+        if (identify.ambientTemperature != -1000.0F)
+        {
+            convertToRational(identify.ambientTemperature, &num, &den, 8);
+            setExifTagRational("Exif.Photo.AmbientTemperature", num, den);
         }
 
         if (identify.dateTime.isValid())
@@ -127,19 +133,19 @@ bool DMetadata::loadUsingRawEngine(const QString& filePath)
             setImageDateTime(identify.dateTime, false);
         }
 
-        if (identify.exposureTime != -1.0)
+        if (identify.exposureTime != -1.0F)
         {
             convertToRationalSmallDenominator(identify.exposureTime, &num, &den);
             setExifTagRational("Exif.Photo.ExposureTime", num, den);
         }
 
-        if (identify.aperture != -1.0)
+        if (identify.aperture != -1.0F)
         {
             convertToRational(identify.aperture, &num, &den, 8);
             setExifTagRational("Exif.Photo.ApertureValue", num, den);
         }
 
-        if (identify.focalLength != -1.0)
+        if (identify.focalLength != -1.0F)
         {
             convertToRational(identify.focalLength, &num, &den, 8);
             setExifTagRational("Exif.Photo.FocalLength", num, den);

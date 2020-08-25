@@ -157,6 +157,11 @@ public:
     float            baselineExposure;
 
     /**
+     * Ambient temperature in Celcius degrees from the camera.
+     */
+    float            ambientTemperature;
+
+    /**
      * White color balance settings.
      */
     double           daylightMult[3];
