@@ -46,6 +46,11 @@ public:
 
 public:
 
+    static float sqrDistance(const float* const pos1, const float* const pos2, int dimension);
+    static float cosDistance(const float* const pos1, const float* const pos2, int dimension);
+
+public:
+
     /**
      * Insert a new node to the sub-tree
      */
@@ -62,6 +67,7 @@ public:
     double getClosestNeighbors(QMap<double, QVector<int> >& neighborList,
                                const cv::Mat&               position,
                                float                        sqRange,
+                               float                        cosThreshold,
                                int                          maxNbNeighbors) const;
     /**
      * Return identity of the node
