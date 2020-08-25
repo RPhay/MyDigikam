@@ -179,6 +179,7 @@ public:
     double           latitude;
     double           longitude;
     double           altitude;
+    bool             hasGpsInfo;          ///< true if GPS info are parsed from RAW file.
 
     /**
      * The used Color Keys

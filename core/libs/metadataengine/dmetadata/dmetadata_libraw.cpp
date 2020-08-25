@@ -153,8 +153,15 @@ bool DMetadata::loadUsingRawEngine(const QString& filePath)
             setIccProfile(IccProfile(identify.iccData));
         }
 
-        setGPSInfo(identify.altitude, identify.latitude, identify.longitude);
-        setExifComment(identify.description);
+        if (identify.hasGpsInfo)
+        {
+            setGPSInfo(identify.altitude, identify.latitude, identify.longitude);
+        }
+
+        if (!identify.description.isEmpty())
+        {
+            setExifComment(identify.description);
+        }
 
         if (!identify.thumbnail.isNull())
         {

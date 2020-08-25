@@ -70,9 +70,10 @@ DRawInfo::DRawInfo()
         }
     }
 
-    latitude  = 0.0;
-    longitude = 0.0;
-    altitude  = 0.0;
+    latitude          = 0.0;
+    longitude         = 0.0;
+    altitude          = 0.0;
+    hasGpsInfo        = false;
 }
 
 DRawInfo::~DRawInfo()
@@ -112,6 +113,7 @@ bool DRawInfo::isEmpty()
         (latitude         == 0.0)                       &&
         (longitude        == 0.0)                       &&
         (altitude         == 0.0)                       &&
+        (!hasGpsInfo)                                   &&
         !dateTime.isValid()                             &&
         !imageSize.isValid()                            &&
         !fullSize.isValid()                             &&
