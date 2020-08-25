@@ -34,9 +34,10 @@ DRawInfo::DRawInfo()
     exposureTime       = -1.0F;
     aperture           = -1.0F;
     focalLength        = -1.0F;
-    pixelAspectRatio   = 1.0F;    ///< Default value. This can be unavailable (depending of camera model).
-    baselineExposure   = -999.0F;
-    ambientTemperature = -1000.0F;
+    pixelAspectRatio   = 1.0F;          ///< Default value. This can be unavailable (depending of camera model).
+    baselineExposure   = -999.0F;       ///< -999 is an invalid exposure.
+    ambientTemperature = -1000.0F;      ///< -1000 is an invalid temperature.
+    exposureIndex      = -1.0F;         ///< Valid value is unsigned.
     rawColors          = -1;
     rawImages          = -1;
     hasIccProfile      = false;
@@ -79,99 +80,6 @@ DRawInfo::DRawInfo()
 
 DRawInfo::~DRawInfo()
 {
-}
-
-bool DRawInfo::isEmpty()
-{
-    if (make.isEmpty()                                  &&
-        model.isEmpty()                                 &&
-        owner.isEmpty()                                 &&
-        description.isEmpty()                           &&
-        software.isEmpty()                              &&
-        firmware.isEmpty()                              &&
-        (serialNumber     == 0)                         &&
-        filterPattern.isEmpty()                         &&
-        colorKeys.isEmpty()                             &&
-        DNGVersion.isEmpty()                            &&
-        uniqueCameraModel.isEmpty()                     &&
-        localizedCameraModel.isEmpty()                  &&
-        imageID.isEmpty()                               &&
-        rawDataUniqueID.isEmpty()                       &&
-        originalRawFileName.isEmpty()                   &&
-        (exposureTime     == -1.0)                      &&
-        (aperture         == -1.0)                      &&
-        (focalLength      == -1.0)                      &&
-        (pixelAspectRatio == 1.0)                       &&
-        (baselineExposure == -999.0)                    &&
-        (ambientTemperature == 0.0)                     &&
-        (sensitivity      == -1.0)                      &&
-        (rawColors        == -1)                        &&
-        (rawImages        == -1)                        &&
-        (blackPoint       == 0)                         &&
-        (blackPointCh[0]  == 0)                         &&
-        (blackPointCh[1]  == 0)                         &&
-        (blackPointCh[2]  == 0)                         &&
-        (blackPointCh[3]  == 0)                         &&
-        (whitePoint       == 0)                         &&
-        (topMargin        == 0)                         &&
-        (leftMargin       == 0)                         &&
-        (latitude         == 0.0)                       &&
-        (longitude        == 0.0)                       &&
-        (altitude         == 0.0)                       &&
-        (!hasGpsInfo)                                   &&
-        !dateTime.isValid()                             &&
-        !imageSize.isValid()                            &&
-        !fullSize.isValid()                             &&
-        !outputSize.isValid()                           &&
-        !thumbSize.isValid()                            &&
-        (cameraColorMatrix1[0][0] == 0.0)               &&
-        (cameraColorMatrix1[0][1] == 0.0)               &&
-        (cameraColorMatrix1[0][2] == 0.0)               &&
-        (cameraColorMatrix1[0][3] == 0.0)               &&
-        (cameraColorMatrix1[1][0] == 0.0)               &&
-        (cameraColorMatrix1[1][1] == 0.0)               &&
-        (cameraColorMatrix1[1][2] == 0.0)               &&
-        (cameraColorMatrix1[1][3] == 0.0)               &&
-        (cameraColorMatrix1[2][0] == 0.0)               &&
-        (cameraColorMatrix1[2][1] == 0.0)               &&
-        (cameraColorMatrix1[2][2] == 0.0)               &&
-        (cameraColorMatrix1[2][3] == 0.0)               &&
-        (cameraColorMatrix2[0][0] == 0.0)               &&
-        (cameraColorMatrix2[0][1] == 0.0)               &&
-        (cameraColorMatrix2[0][2] == 0.0)               &&
-        (cameraColorMatrix2[0][3] == 0.0)               &&
-        (cameraColorMatrix2[1][0] == 0.0)               &&
-        (cameraColorMatrix2[1][1] == 0.0)               &&
-        (cameraColorMatrix2[1][2] == 0.0)               &&
-        (cameraColorMatrix2[1][3] == 0.0)               &&
-        (cameraColorMatrix2[2][0] == 0.0)               &&
-        (cameraColorMatrix2[2][1] == 0.0)               &&
-        (cameraColorMatrix2[2][2] == 0.0)               &&
-        (cameraColorMatrix2[2][3] == 0.0)               &&
-        (cameraXYZMatrix[0][0]    == 0.0)               &&
-        (cameraXYZMatrix[0][1]    == 0.0)               &&
-        (cameraXYZMatrix[0][2]    == 0.0)               &&
-        (cameraXYZMatrix[1][0]    == 0.0)               &&
-        (cameraXYZMatrix[1][1]    == 0.0)               &&
-        (cameraXYZMatrix[1][2]    == 0.0)               &&
-        (cameraXYZMatrix[2][0]    == 0.0)               &&
-        (cameraXYZMatrix[2][1]    == 0.0)               &&
-        (cameraXYZMatrix[2][2]    == 0.0)               &&
-        (cameraXYZMatrix[3][0]    == 0.0)               &&
-        (cameraXYZMatrix[3][1]    == 0.0)               &&
-        (cameraXYZMatrix[3][2]    == 0.0)               &&
-        (orientation              == ORIENTATION_NONE)  &&
-        xmpData.isEmpty()                               &&
-        iccData.isEmpty()                               &&
-        thumbnail.isNull()
-       )
-    {
-        return true;
-    }
-    else
-    {
-        return false;
-    }
 }
 
 QDebug operator<<(QDebug dbg, const DRawInfo& c)

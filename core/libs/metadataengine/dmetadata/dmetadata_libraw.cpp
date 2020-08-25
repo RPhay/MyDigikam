@@ -128,6 +128,12 @@ bool DMetadata::loadUsingRawEngine(const QString& filePath)
             setExifTagRational("Exif.Photo.AmbientTemperature", num, den);
         }
 
+        if (identify.exposureIndex != -1.0F)
+        {
+            convertToRational(identify.exposureIndex, &num, &den, 8);
+            setExifTagRational("Exif.Photo.ExposureIndex", num, den);
+        }
+
         if (identify.dateTime.isValid())
         {
             setImageDateTime(identify.dateTime, false);

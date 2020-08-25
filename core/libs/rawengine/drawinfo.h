@@ -69,11 +69,6 @@ public:
      */
     ~DRawInfo();
 
-    /**
-     * Return 'true' if container is empty, else 'false'
-     */
-    bool isEmpty();
-
 public:
 
     /**
@@ -160,6 +155,11 @@ public:
      * Ambient temperature in Celcius degrees from the camera.
      */
     float            ambientTemperature;
+
+    /**
+     * Exposure Index from the camera.
+     */
+    float            exposureIndex;
 
     /**
      * White color balance settings.
