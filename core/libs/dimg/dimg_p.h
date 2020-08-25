@@ -165,7 +165,7 @@ public:
 
 // ----------------------------------------------------------------------------
 
-class DIGIKAM_EXPORT DImgStatic
+class DIGIKAM_EXPORT DImgStaticPriv
 {
 public:
 

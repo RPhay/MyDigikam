@@ -300,7 +300,7 @@ QVariant DImg::fileOriginData() const
 {
     QVariantMap map;
 
-    foreach (const QString& key, DImgStatic::fileOriginAttributes())
+    foreach (const QString& key, DImgStaticPriv::fileOriginAttributes())
     {
         QVariant attr = attribute(key);
 
@@ -358,7 +358,7 @@ void DImg::setFileOriginData(const QVariant& data)
 {
     QVariantMap map = data.toMap();
 
-    foreach (const QString& key, DImgStatic::fileOriginAttributes())
+    foreach (const QString& key, DImgStaticPriv::fileOriginAttributes())
     {
         removeAttribute(key);
         QVariant attr = map.value(key);
