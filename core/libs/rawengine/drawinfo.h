@@ -195,6 +195,11 @@ public:
     int              meteringMode;
 
     /**
+     * The exposure program used by camera.
+     */
+    int              exposureProgram;
+
+    /**
      * Exposure Index from the camera.
      */
     float            exposureIndex;

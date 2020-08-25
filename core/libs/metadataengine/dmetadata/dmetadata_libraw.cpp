@@ -147,6 +147,11 @@ bool DMetadata::loadUsingRawEngine(const QString& filePath)
             setExifTagLong("Exif.Image.MeteringMode", identify.meteringMode);
         }
 
+        if (identify.exposureProgram != -1)
+        {
+            setExifTagLong("Exif.Photo.ExposureProgram", identify.exposureProgram);
+        }
+
         if (identify.sensitivity != -1)
         {
             setExifTagLong("Exif.Photo.ISOSpeedRatings", lroundf(identify.sensitivity));

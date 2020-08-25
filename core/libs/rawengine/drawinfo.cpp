@@ -47,6 +47,8 @@ DRawInfo::DRawInfo()
     exposureIndex           = -1.0F;         ///< Valid value is unsigned.
     flashUsed               = -1;            ///< Valid value is unsigned.
     meteringMode            = -1;            ///< Valid value is unsigned.
+    exposureProgram         = -1;            ///< Valid value is unsigned.
+
     rawColors               = -1;
     rawImages               = -1;
     hasIccProfile           = false;
