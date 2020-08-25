@@ -126,6 +126,12 @@ bool DMetadata::loadUsingRawEngine(const QString& filePath)
             setExifTagLong("Exif.Photo.FocalLengthIn35mmFilm", identify.focalLengthIn35mmFilm);
         }
 
+        if (identify.maxAperture != -1.0F)
+        {
+            convertToRational(identify.maxAperture, &num, &den, 8);
+            setExifTagRational("Exif.Image.MaxApertureValue", num, den);
+        }
+
         if (identify.serialNumber != 0)
         {
             setExifTagLong("Exif.Image.ImageNumber", identify.serialNumber);

@@ -78,6 +78,7 @@ DRawInfo::DRawInfo()
     hasGpsInfo              = false;
 
     focalLengthIn35mmFilm   = -1;         ///< Valid value is unsigned.
+    maxAperture             = -1.0F;      ///< Valid value is unsigned.
 }
 
 DRawInfo::~DRawInfo()

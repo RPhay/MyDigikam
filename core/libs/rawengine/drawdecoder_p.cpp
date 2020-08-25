@@ -227,6 +227,7 @@ void DRawDecoder::Private::fillIndentifyInfo(LibRaw* const raw, DRawInfo& identi
     identify.lensMake              = QString::fromUtf8(raw->imgdata.lens.LensMake);
     identify.lensSerial            = QString::fromUtf8(raw->imgdata.lens.LensSerial);
     identify.focalLengthIn35mmFilm = raw->imgdata.lens.FocalLengthIn35mmFormat;
+    identify.maxAperture           = raw->imgdata.lens.EXIF_MaxAp;
 }
 
 bool DRawDecoder::Private::loadFromLibraw(const QString& filePath, QByteArray& imageData,

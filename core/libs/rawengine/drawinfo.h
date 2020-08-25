@@ -302,12 +302,13 @@ public:
     QImage           thumbnail;
 
     /**
-     * Description of lens as strings.
+     * Description of lens properties.
      */
     QString          lensModel;
     QString          lensMake;
     QString          lensSerial;
-    unsigned int     focalLengthIn35mmFilm;
+    int              focalLengthIn35mmFilm;
+    float            maxAperture;
 };
 
 //! qDebug() stream operator. Writes container @a c to the debug output in a nicely formatted way.
