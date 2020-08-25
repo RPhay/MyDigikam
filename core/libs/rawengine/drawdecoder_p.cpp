@@ -150,7 +150,7 @@ void DRawDecoder::Private::fillIndentifyInfo(LibRaw* const raw, DRawInfo& identi
     identify.aperture              = raw->imgdata.other.aperture;
     identify.focalLength           = raw->imgdata.other.focal_len;
 
-    identify.hasGpsInfo            = raw->imgdata.other.parsed_gps.gpsparsed;
+    identify.hasGpsInfo            = (raw->imgdata.other.parsed_gps.gpsparsed == 1) ? true : false;
     identify.latitude              = MetaEngine::convertDegreeAngleToDouble(raw->imgdata.other.parsed_gps.latitude[0],
                                                                             raw->imgdata.other.parsed_gps.latitude[1],
                                                                             raw->imgdata.other.parsed_gps.latitude[2]);

@@ -93,7 +93,7 @@ bool DMetadata::loadUsingRawEngine(const QString& filePath)
 
         if (!identify.imageID.isNull())
         {
-            setExifTagData("Exif.Image.ImageID", identify.imageID.toLatin1());
+            setExifTagString("Exif.Image.ImageID", identify.imageID);
         }
 
         if (!identify.rawDataUniqueID.isNull())
@@ -108,17 +108,17 @@ bool DMetadata::loadUsingRawEngine(const QString& filePath)
 
         if (!identify.lensModel.isNull())
         {
-            setExifTagData("Exif.Photo.LensModel", identify.lensModel.toLatin1());
+            setExifTagString("Exif.Photo.LensModel", identify.lensModel);
         }
 
         if (!identify.lensMake.isNull())
         {
-            setExifTagData("Exif.Photo.LensMake", identify.lensMake.toLatin1());
+            setExifTagString("Exif.Photo.LensMake", identify.lensMake);
         }
 
         if (!identify.lensSerial.isNull())
         {
-            setExifTagData("Exif.Photo.LensSerialNumber", identify.lensSerial.toLatin1());
+            setExifTagString("Exif.Photo.LensSerialNumber", identify.lensSerial);
         }
 
         if (identify.focalLengthIn35mmFilm != -1)
@@ -204,14 +204,14 @@ bool DMetadata::loadUsingRawEngine(const QString& filePath)
             setXmp(identify.xmpData);
         }
 
-       // Handle ICC color profile byte-array
+        // Handle ICC color profile byte-array
 
         if (!identify.iccData.isEmpty())
         {
             setIccProfile(IccProfile(identify.iccData));
         }
 
-        // Hansdle GPS information
+        // Handle GPS information
 
         if (identify.hasGpsInfo)
         {
