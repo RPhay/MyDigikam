@@ -267,7 +267,7 @@ protected:
 
 public:
 
-    // NOTE: declared public to be called externally by callbackForLibRaw() static method.
+    // NOTE: declared public to be called externally by s_progressCallbackForLibRaw() static method.
     class Private;
 
 private:

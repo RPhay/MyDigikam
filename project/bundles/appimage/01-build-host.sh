@@ -172,6 +172,10 @@ if [ ! -d $DOWNLOAD_DIR ] ; then
     mkdir $DOWNLOAD_DIR
 fi
 
+if [ ! -d /opt/cmake ] ; then
+    mkdir /opt/cmake
+fi
+
 #################################################################################################
 
 cd $BUILDING_DIR
@@ -202,9 +206,9 @@ rm -rf $BUILDING_DIR/* || true
 # Low level libraries and Qt5 dependencies
 # NOTE: The order to compile each component here is very important.
 
-#cmake --build . --config RelWithDebInfo --target ext_libicu        -- -j$CPU_CORES
+#/opt/cmake/bin/cmake --build . --config RelWithDebInfo --target ext_libicu        -- -j$CPU_CORES
+#/opt/cmake/bin/cmake --build . --config RelWithDebInfo --target ext_openssl       -- -j$CPU_CORES
 
-/opt/cmake/bin/cmake --build . --config RelWithDebInfo --target ext_openssl       -- -j$CPU_CORES
 /opt/cmake/bin/cmake --build . --config RelWithDebInfo --target ext_qt            -- -j$CPU_CORES    # depend of tiff, png, jpeg
 
 if [[ $DK_QTWEBENGINE = 0 ]] ; then

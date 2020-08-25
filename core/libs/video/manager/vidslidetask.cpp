@@ -88,7 +88,6 @@ public:
 public:
 
     VidSlideSettings*           settings;
-
     AVDemuxer                   demuxer;
     Packet                      apkt;
     int                         astream;
@@ -218,9 +217,9 @@ AudioFrame VidSlideTask::Private::nextAudioFrame(const AudioFormat& afmt)
 
         if (aframe.format() != afmt)
         {
-            qDebug() << "Audio transcoding:";
-            qDebug() << "current format =" << aframe.format();
-            qDebug() << "target format  =" << afmt;
+            qCDebug(DIGIKAM_GENERAL_LOG) << "Audio transcoding:";
+            qCDebug(DIGIKAM_GENERAL_LOG) << "current format =" << aframe.format();
+            qCDebug(DIGIKAM_GENERAL_LOG) << "target format  =" << afmt;
 /*
             adec->resampler()->setOutAudioFormat(afmt);
             adec->resampler()->prepare();
