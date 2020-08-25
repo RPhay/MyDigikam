@@ -307,6 +307,7 @@ public:
     QString          lensModel;
     QString          lensMake;
     QString          lensSerial;
+    unsigned int     focalLengthIn35mmFilm;
 };
 
 //! qDebug() stream operator. Writes container @a c to the debug output in a nicely formatted way.

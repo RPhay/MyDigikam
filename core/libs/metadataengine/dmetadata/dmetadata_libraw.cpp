@@ -121,6 +121,11 @@ bool DMetadata::loadUsingRawEngine(const QString& filePath)
             setExifTagData("Exif.Photo.LensSerialNumber", identify.lensSerial.toLatin1());
         }
 
+        if (identify.focalLengthIn35mmFilm != -1)
+        {
+            setExifTagLong("Exif.Photo.FocalLengthIn35mmFilm", identify.focalLengthIn35mmFilm);
+        }
+
         if (identify.serialNumber != 0)
         {
             setExifTagLong("Exif.Image.ImageNumber", identify.serialNumber);
