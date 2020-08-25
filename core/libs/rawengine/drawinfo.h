@@ -300,6 +300,13 @@ public:
      * Thumbnail image extracted from raw file.
      */
     QImage           thumbnail;
+
+    /**
+     * Description of lens as strings.
+     */
+    QString          lensModel;
+    QString          lensMake;
+    QString          lensSerial;
 };
 
 //! qDebug() stream operator. Writes container @a c to the debug output in a nicely formatted way.

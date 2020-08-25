@@ -222,6 +222,10 @@ void DRawDecoder::Private::fillIndentifyInfo(LibRaw* const raw, DRawInfo& identi
     }
 
     identify.thumbnail            = QImage::fromData((const uchar*)raw->imgdata.thumbnail.thumb, raw->imgdata.thumbnail.tlength);
+
+    identify.lensModel            = QString::fromUtf8(raw->imgdata.lens.Lens);
+    identify.lensMake             = QString::fromUtf8(raw->imgdata.lens.LensMake);
+    identify.lensSerial           = QString::fromUtf8(raw->imgdata.lens.LensSerial);
 }
 
 bool DRawDecoder::Private::loadFromLibraw(const QString& filePath, QByteArray& imageData,

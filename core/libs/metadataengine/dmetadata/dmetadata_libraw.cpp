@@ -106,6 +106,21 @@ bool DMetadata::loadUsingRawEngine(const QString& filePath)
             setExifTagData("Exif.Image.OriginalRawFileName", identify.originalRawFileName.toLatin1());
         }
 
+        if (!identify.lensModel.isNull())
+        {
+            setExifTagData("Exif.Photo.LensModel", identify.lensModel.toLatin1());
+        }
+
+        if (!identify.lensMake.isNull())
+        {
+            setExifTagData("Exif.Photo.LensMake", identify.lensMake.toLatin1());
+        }
+
+        if (!identify.lensSerial.isNull())
+        {
+            setExifTagData("Exif.Photo.LensSerialNumber", identify.lensSerial.toLatin1());
+        }
+
         if (identify.serialNumber != 0)
         {
             setExifTagLong("Exif.Image.ImageNumber", identify.serialNumber);
