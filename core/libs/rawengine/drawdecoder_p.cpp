@@ -131,49 +131,67 @@ double DRawDecoder::Private::progressValue() const
 void DRawDecoder::Private::fillIndentifyInfo(LibRaw* const raw, DRawInfo& identify)
 {
     identify.dateTime.setSecsSinceEpoch(raw->imgdata.other.timestamp);
-    identify.make                 = QString::fromUtf8(raw->imgdata.idata.make);
-    identify.model                = QString::fromUtf8(raw->imgdata.idata.model);
-    identify.owner                = QString::fromUtf8(raw->imgdata.other.artist);
-    identify.software             = QString::fromUtf8(raw->imgdata.idata.software);
-    identify.firmware             = QString::fromUtf8(raw->imgdata.color.model2);
-    identify.description          = QString::fromUtf8(raw->imgdata.other.desc);
-    identify.serialNumber         = raw->imgdata.other.shot_order;
-    identify.DNGVersion           = QString::number(raw->imgdata.idata.dng_version);
-    identify.uniqueCameraModel    = QString::fromUtf8(raw->imgdata.color.UniqueCameraModel);
-    identify.localizedCameraModel = QString::fromUtf8(raw->imgdata.color.LocalizedCameraModel);
-    identify.model                = QString::fromUtf8(raw->imgdata.idata.model);
-    identify.sensitivity          = raw->imgdata.other.iso_speed;
-    identify.exposureTime         = raw->imgdata.other.shutter;
-    identify.aperture             = raw->imgdata.other.aperture;
-    identify.focalLength          = raw->imgdata.other.focal_len;
-    identify.latitude             = MetaEngine::convertDegreeAngleToDouble(raw->imgdata.other.parsed_gps.latitude[0],
-                                                                           raw->imgdata.other.parsed_gps.latitude[1],
-                                                                           raw->imgdata.other.parsed_gps.latitude[2]);
-    identify.longitude            = MetaEngine::convertDegreeAngleToDouble(raw->imgdata.other.parsed_gps.longitude[0],
-                                                                           raw->imgdata.other.parsed_gps.longitude[1],
-                                                                           raw->imgdata.other.parsed_gps.longitude[2]);
-    identify.altitude             = raw->imgdata.other.parsed_gps.altitude;
-    identify.imageSize            = QSize(raw->imgdata.sizes.width,      raw->imgdata.sizes.height);
-    identify.fullSize             = QSize(raw->imgdata.sizes.raw_width,  raw->imgdata.sizes.raw_height);
-    identify.outputSize           = QSize(raw->imgdata.sizes.iwidth,     raw->imgdata.sizes.iheight);
-    identify.thumbSize            = QSize(raw->imgdata.thumbnail.twidth, raw->imgdata.thumbnail.theight);
-    identify.topMargin            = raw->imgdata.sizes.top_margin;
-    identify.leftMargin           = raw->imgdata.sizes.left_margin;
-    identify.hasIccProfile        = raw->imgdata.color.profile ? true : false;
-    identify.isDecodable          = true;
-    identify.pixelAspectRatio     = raw->imgdata.sizes.pixel_aspect;
-    identify.baselineExposure     = raw->imgdata.color.dng_levels.baseline_exposure;
-    identify.rawColors            = raw->imgdata.idata.colors;
-    identify.rawImages            = raw->imgdata.idata.raw_count;
-    identify.blackPoint           = raw->imgdata.color.black;
+    identify.make                  = QString::fromUtf8(raw->imgdata.idata.make);
+    identify.model                 = QString::fromUtf8(raw->imgdata.idata.model);
+    identify.owner                 = QString::fromUtf8(raw->imgdata.other.artist);
+    identify.software              = QString::fromUtf8(raw->imgdata.idata.software);
+    identify.firmware              = QString::fromUtf8(raw->imgdata.color.model2);
+    identify.description           = QString::fromUtf8(raw->imgdata.other.desc);
+    identify.serialNumber          = raw->imgdata.other.shot_order;
+    identify.DNGVersion            = QString::number(raw->imgdata.idata.dng_version);
+    identify.uniqueCameraModel     = QString::fromUtf8(raw->imgdata.color.UniqueCameraModel);
+    identify.localizedCameraModel  = QString::fromUtf8(raw->imgdata.color.LocalizedCameraModel);
+    identify.imageID               = QString::fromUtf8(raw->imgdata.color.ImageUniqueID);
+    identify.rawDataUniqueID       = QString::fromUtf8(raw->imgdata.color.RawDataUniqueID);
+    identify.originalRawFileName   = QString::fromUtf8(raw->imgdata.color.RawDataUniqueID);
+    identify.model                 = QString::fromUtf8(raw->imgdata.idata.model);
+    identify.sensitivity           = raw->imgdata.other.iso_speed;
+    identify.exposureTime          = raw->imgdata.other.shutter;
+    identify.aperture              = raw->imgdata.other.aperture;
+    identify.focalLength           = raw->imgdata.other.focal_len;
+
+    identify.hasGpsInfo            = (raw->imgdata.other.parsed_gps.gpsparsed == 1) ? true : false;
+    identify.latitude              = MetaEngine::convertDegreeAngleToDouble(raw->imgdata.other.parsed_gps.latitude[0],
+                                                                            raw->imgdata.other.parsed_gps.latitude[1],
+                                                                            raw->imgdata.other.parsed_gps.latitude[2]);
+    identify.longitude             = MetaEngine::convertDegreeAngleToDouble(raw->imgdata.other.parsed_gps.longitude[0],
+                                                                            raw->imgdata.other.parsed_gps.longitude[1],
+                                                                            raw->imgdata.other.parsed_gps.longitude[2]);
+    identify.altitude              = raw->imgdata.other.parsed_gps.altitude;
+    identify.imageSize             = QSize(raw->imgdata.sizes.width,      raw->imgdata.sizes.height);
+    identify.fullSize              = QSize(raw->imgdata.sizes.raw_width,  raw->imgdata.sizes.raw_height);
+    identify.outputSize            = QSize(raw->imgdata.sizes.iwidth,     raw->imgdata.sizes.iheight);
+    identify.thumbSize             = QSize(raw->imgdata.thumbnail.twidth, raw->imgdata.thumbnail.theight);
+    identify.topMargin             = raw->imgdata.sizes.top_margin;
+    identify.leftMargin            = raw->imgdata.sizes.left_margin;
+    identify.hasIccProfile         = raw->imgdata.color.profile ? true : false;
+    identify.isDecodable           = true;
+    identify.pixelAspectRatio      = raw->imgdata.sizes.pixel_aspect;
+    identify.baselineExposure      = raw->imgdata.color.dng_levels.baseline_exposure;
+
+    identify.ambientTemperature    = raw->imgdata.makernotes.common.exifAmbientTemperature;
+    identify.ambientHumidity       = raw->imgdata.makernotes.common.exifHumidity;
+    identify.ambientPressure       = raw->imgdata.makernotes.common.exifPressure;
+    identify.ambientWaterDepth     = raw->imgdata.makernotes.common.exifWaterDepth;
+    identify.ambientAcceleration   = raw->imgdata.makernotes.common.exifAcceleration;
+    identify.ambientElevationAngle = raw->imgdata.makernotes.common.exifCameraElevationAngle;
+
+    identify.exposureIndex         = raw->imgdata.makernotes.common.exifExposureIndex;
+    identify.flashUsed             = (int)raw->imgdata.color.flash_used;
+    identify.meteringMode          = raw->imgdata.shootinginfo.MeteringMode;
+    identify.exposureProgram       = raw->imgdata.shootinginfo.ExposureProgram;
+
+    identify.rawColors             = raw->imgdata.idata.colors;
+    identify.rawImages             = raw->imgdata.idata.raw_count;
+    identify.blackPoint            = raw->imgdata.color.black;
 
     for (int ch = 0 ; ch < 4 ; ++ch)
     {
-        identify.blackPointCh[ch] = raw->imgdata.color.cblack[ch];
+        identify.blackPointCh[ch]  = raw->imgdata.color.cblack[ch];
     }
 
-    identify.whitePoint           = raw->imgdata.color.maximum;
-    identify.orientation          = (DRawInfo::ImageOrientation)raw->imgdata.sizes.flip;
+    identify.whitePoint            = raw->imgdata.color.maximum;
+    identify.orientation           = (DRawInfo::ImageOrientation)raw->imgdata.sizes.flip;
 
     memcpy(&identify.cameraColorMatrix1, &raw->imgdata.color.cmatrix, sizeof(raw->imgdata.color.cmatrix));
     memcpy(&identify.cameraColorMatrix2, &raw->imgdata.color.rgb_cam, sizeof(raw->imgdata.color.rgb_cam));
@@ -191,12 +209,12 @@ void DRawDecoder::Private::fillIndentifyInfo(LibRaw* const raw, DRawInfo& identi
             identify.filterPattern.append(QLatin1Char(raw->imgdata.idata.cdesc[raw->COLOR(i >> 1, i & 1)]));
         }
 
-        identify.colorKeys = QLatin1String(raw->imgdata.idata.cdesc);
+        identify.colorKeys         = QLatin1String(raw->imgdata.idata.cdesc);
     }
 
     for (int c = 0 ; c < raw->imgdata.idata.colors ; ++c)
     {
-        identify.daylightMult[c] = raw->imgdata.color.pre_mul[c];
+        identify.daylightMult[c]   = raw->imgdata.color.pre_mul[c];
     }
 
     if (raw->imgdata.color.cam_mul[0] > 0)
@@ -207,9 +225,20 @@ void DRawDecoder::Private::fillIndentifyInfo(LibRaw* const raw, DRawInfo& identi
         }
     }
 
-    identify.xmpData              = QByteArray(raw->imgdata.idata.xmpdata, raw->imgdata.idata.xmplen);
-    identify.iccData              = QByteArray((char*)raw->imgdata.color.profile, raw->imgdata.color.profile_length);
-    identify.thumbnail            = QImage::fromData((const uchar*)raw->imgdata.thumbnail.thumb, raw->imgdata.thumbnail.tlength);
+    identify.xmpData               = QByteArray(raw->imgdata.idata.xmpdata, raw->imgdata.idata.xmplen);
+
+    if (identify.hasIccProfile)
+    {
+        identify.iccData           = QByteArray((char*)raw->imgdata.color.profile, raw->imgdata.color.profile_length);
+    }
+
+    identify.thumbnail             = QImage::fromData((const uchar*)raw->imgdata.thumbnail.thumb, raw->imgdata.thumbnail.tlength);
+
+    identify.lensModel             = QString::fromUtf8(raw->imgdata.lens.Lens);
+    identify.lensMake              = QString::fromUtf8(raw->imgdata.lens.LensMake);
+    identify.lensSerial            = QString::fromUtf8(raw->imgdata.lens.LensSerial);
+    identify.focalLengthIn35mmFilm = raw->imgdata.lens.FocalLengthIn35mmFormat;
+    identify.maxAperture           = raw->imgdata.lens.EXIF_MaxAp;
 }
 
 bool DRawDecoder::Private::loadFromLibraw(const QString& filePath, QByteArray& imageData,
