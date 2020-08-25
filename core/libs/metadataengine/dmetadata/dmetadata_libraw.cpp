@@ -91,6 +91,21 @@ bool DMetadata::loadUsingRawEngine(const QString& filePath)
             setExifTagData("Exif.Image.LocalizedCameraModel", identify.localizedCameraModel.toLatin1());
         }
 
+        if (!identify.imageID.isNull())
+        {
+            setExifTagData("Exif.Image.ImageID", identify.imageID.toLatin1());
+        }
+
+        if (!identify.rawDataUniqueID.isNull())
+        {
+            setExifTagData("Exif.Image.RawDataUniqueID", identify.rawDataUniqueID.toLatin1());
+        }
+
+        if (!identify.originalRawFileName.isNull())
+        {
+            setExifTagData("Exif.Image.OriginalRawFileName", identify.originalRawFileName.toLatin1());
+        }
+
         if (identify.serialNumber != 0)
         {
             setExifTagLong("Exif.Image.ImageNumber", identify.serialNumber);
@@ -153,15 +168,21 @@ bool DMetadata::loadUsingRawEngine(const QString& filePath)
             setIccProfile(IccProfile(identify.iccData));
         }
 
+        // Hansdle GPS information
+
         if (identify.hasGpsInfo)
         {
             setGPSInfo(identify.altitude, identify.latitude, identify.longitude);
         }
 
+        // Handle image description
+
         if (!identify.description.isEmpty())
         {
             setExifComment(identify.description);
         }
+
+        // Handle thumbnail image
 
         if (!identify.thumbnail.isNull())
         {

@@ -94,6 +94,9 @@ bool DRawInfo::isEmpty()
         DNGVersion.isEmpty()                            &&
         uniqueCameraModel.isEmpty()                     &&
         localizedCameraModel.isEmpty()                  &&
+        imageID.isEmpty()                               &&
+        rawDataUniqueID.isEmpty()                       &&
+        originalRawFileName.isEmpty()                   &&
         (exposureTime     == -1.0)                      &&
         (aperture         == -1.0)                      &&
         (focalLength      == -1.0)                      &&

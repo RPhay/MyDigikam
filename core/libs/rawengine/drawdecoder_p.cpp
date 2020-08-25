@@ -141,6 +141,9 @@ void DRawDecoder::Private::fillIndentifyInfo(LibRaw* const raw, DRawInfo& identi
     identify.DNGVersion           = QString::number(raw->imgdata.idata.dng_version);
     identify.uniqueCameraModel    = QString::fromUtf8(raw->imgdata.color.UniqueCameraModel);
     identify.localizedCameraModel = QString::fromUtf8(raw->imgdata.color.LocalizedCameraModel);
+    identify.imageID              = QString::fromUtf8(raw->imgdata.color.ImageUniqueID);
+    identify.rawDataUniqueID      = QString::fromUtf8(raw->imgdata.color.RawDataUniqueID);
+    identify.originalRawFileName  = QString::fromUtf8(raw->imgdata.color.RawDataUniqueID);
     identify.model                = QString::fromUtf8(raw->imgdata.idata.model);
     identify.sensitivity          = raw->imgdata.other.iso_speed;
     identify.exposureTime         = raw->imgdata.other.shutter;
