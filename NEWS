@@ -5,6 +5,7 @@ NEW FEATURES:
 
 QueueManager: add new tool to fix hot pixels from images.
 QueueManager: add new tool to apply texture over images.
+Metadata:     better Exif and Xmp metadata support with CR3 file using libraw info parser.
 
 *****************************************************************************************************
 BUGFIXES:
@@ -231,4 +232,5 @@ BUGFIXES:
 221 ==> 425425 - No shortcuts available for Slideshow entries anymore in Configure Keyboard Shortcuts.
 222 ==> 388680 - Untranslatable " (auto-detected)" in camera name.
 223 ==> 425644 - Various Observations Regarding Image Viewing.
-224 ==> 
+224 ==> 424860 - No EXIF display on CR3 images.
+225 ==> 
