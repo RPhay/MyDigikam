@@ -28,7 +28,6 @@
 // Qt includes
 
 #include <QString>
-#include <QSaveFile>
 
 // Local includes
 
@@ -261,16 +260,8 @@ bool DMetadata::loadUsingRawEngine(const QString& filePath)
 
         // Handle thumbnail image
 
-        qDebug() << "thumbnail size:" << identify.thumbnail.size();
-
         if (!identify.thumbnail.isNull())
         {
-/*
-            QSaveFile file(QLatin1String("/home/gilles/thumb.dat"));
-            file.open(QIODevice::WriteOnly);
-            file.write(identify.thumbnail);
-            file.commit();
-*/
             QImage thumb = QImage::fromData(identify.thumbnail);
 
             if (!thumb.isNull())

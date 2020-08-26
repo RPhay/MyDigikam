@@ -28,7 +28,7 @@ QString link(const QString &path, const QString &fileName)
 {
     QFile in(path + QLatin1Char('/') + fileName);
     if (!in.open(QIODevice::ReadOnly)) {
-        qDebug() << "failed to read" << path << fileName << in.fileName();
+        qDebug() << ">> Failed to read" << path << fileName << in.fileName();
         return QString();
     }
 
