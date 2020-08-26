@@ -105,33 +105,94 @@ bool DImgQImageLoader::load(const QString& filePath, DImgLoaderObserver* const o
             colorModel    = DImg::RGB;
             originalDepth = 8;
             break;
+
+#if (QT_VERSION >= QT_VERSION_CHECK(5, 12, 0))
+
+        case QImage::Format_RGBA64:
+        case QImage::Format_RGBA64_Premultiplied:
+            colorModel    = DImg::RGB;
+            originalDepth = 16;
+            break;
+
+#endif
+
     }
 
-    m_hasAlpha        = image.hasAlphaChannel();
-    QImage target     = image.convertToFormat(QImage::Format_ARGB32);
-    uint w            = target.width();
-    uint h            = target.height();
-    uchar* const data = new_failureTolerant(w, h, 4);
+    uint w      = 0;
+    uint h      = 0;
+    uchar* data = nullptr;
 
-    if (!data)
+    if (originalDepth != 16)
     {
-        qCWarning(DIGIKAM_DIMG_LOG_QIMAGE) << "Failed to allocate memory for loading" << filePath;
-        loadingFailed();
-        return false;
+        qCDebug(DIGIKAM_DIMG_LOG_QIMAGE) << filePath << "is a 8 bits per color per pixels QImage";
+
+        m_hasAlpha         = image.hasAlphaChannel();
+        QImage target      = image.convertToFormat(QImage::Format_ARGB32);
+        w                  = target.width();
+        h                  = target.height();
+        uchar* const data8 = new_failureTolerant(w, h, 4);
+
+        if (!data8)
+        {
+            qCWarning(DIGIKAM_DIMG_LOG_QIMAGE) << "Failed to allocate memory for loading" << filePath;
+            loadingFailed();
+            return false;
+        }
+
+        uint*  sptr = reinterpret_cast<uint*>(target.bits());
+        uchar* dptr = data8;
+
+        for (uint i = 0 ; i < w * h ; ++i)
+        {
+            dptr[0] = qBlue(*sptr);
+            dptr[1] = qGreen(*sptr);
+            dptr[2] = qRed(*sptr);
+            dptr[3] = qAlpha(*sptr);
+
+            dptr += 4;
+            sptr++;
+        }
+
+        data = data8;
     }
-
-    uint*  sptr = reinterpret_cast<uint*>(target.bits());
-    uchar* dptr = data;
-
-    for (uint i = 0 ; i < w * h ; ++i)
+    else
     {
-        dptr[0] = qBlue(*sptr);
-        dptr[1] = qGreen(*sptr);
-        dptr[2] = qRed(*sptr);
-        dptr[3] = qAlpha(*sptr);
 
-        dptr += 4;
-        sptr++;
+#if (QT_VERSION >= QT_VERSION_CHECK(5, 12, 0))
+
+        qCDebug(DIGIKAM_DIMG_LOG_QIMAGE) << filePath << "is a 16 bits per color per pixels QImage";
+
+        m_hasAlpha           = image.hasAlphaChannel();
+        QImage target        = image.convertToFormat(QImage::Format_RGBA64);
+        w                    = target.width();
+        h                    = target.height();
+        ushort* const data16 = reinterpret_cast<ushort*>(new_failureTolerant(w, h, 8));
+
+        if (!data16)
+        {
+            qCWarning(DIGIKAM_DIMG_LOG_QIMAGE) << "Failed to allocate memory for loading" << filePath;
+            loadingFailed();
+            return false;
+        }
+
+        uint*   sptr = reinterpret_cast<uint*>(target.bits());
+        ushort* dptr = data16;
+
+        for (uint i = 0 ; i < w * h ; ++i)
+        {
+            dptr[0] = qAlpha(*sptr);
+            dptr[2] = qBlue(*sptr);
+            dptr[4] = qGreen(*sptr);
+            dptr[6] = qRed(*sptr);
+
+            dptr += 8;
+            sptr++;
+        }
+
+        data = reinterpret_cast<uchar*>(data16);
+
+#endif
+
     }
 
     if (observer)
