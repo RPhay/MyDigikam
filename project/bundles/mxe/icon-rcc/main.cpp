@@ -28,16 +28,16 @@ QString link(const QString &path, const QString &fileName)
 {
     QFile in(path + QLatin1Char('/') + fileName);
     if (!in.open(QIODevice::ReadOnly)) {
-        qDebug() << ">> Failed to read" << path << fileName << in.fileName();
+        qDebug() << "failed to read" << path << fileName << in.fileName();
         return QString();
     }
 
-    QString firstLine = in.readLine();
+    QString firstLine = QString::fromLocal8Bit(in.readLine());
     if (firstLine.isEmpty()) {
         qDebug() << in.fileName() << "line could not be read...";
         return QString();
     }
-    QRegularExpression fNameReg(QStringLiteral("(.*\\.(?:svg|png|gif|ico))"));
+    QRegularExpression fNameReg(QStringLiteral("(.*\\.(?:svg|png|gif|ico))$"));
     QRegularExpressionMatch match = fNameReg.match(firstLine);
     if (!match.hasMatch()) {
         return QString();
