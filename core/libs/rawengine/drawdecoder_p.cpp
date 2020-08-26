@@ -114,7 +114,15 @@ int DRawDecoder::Private::progressCallback(enum LibRaw_progress p, int iteration
 
 void DRawDecoder::Private::exifParserCallback(int tag, int type, int len, unsigned int ord, void* ifp, INT64 base)
 {
-    qDebug() << "LibRaw Exif Parser:" << "tag:" << tag << "type:" << type << "len:" << len << "ord:" << ord << "ifp:" << ifp << "base:" << base;
+    // Note: see https://github.com/LibRaw/LibRaw/issues/323 for details
+
+    qCDebug(DIGIKAM_RAWENGINE_LOG) << "LibRaw Exif Parser:"
+                                   << "tag:"  << tag
+                                   << "type:" << type
+                                   << "len:"  << len
+                                   << "ord:"  << ord
+                                   << "ifp:"  << ifp
+                                   << "base:" << base;
 }
 
 void DRawDecoder::Private::setProgress(double value)
