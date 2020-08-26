@@ -131,8 +131,7 @@ public:
         width(0),
         height(0),
         data(nullptr),
-        lanczos_func(nullptr),
-        mutex(QMutex::Recursive)
+        lanczos_func(nullptr)
     {
     }
 
