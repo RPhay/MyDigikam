@@ -262,8 +262,12 @@ bool DMetadata::loadUsingRawEngine(const QString& filePath)
 
         if (!identify.thumbnail.isNull())
         {
-            QImage thumb = identify.thumbnail.scaled(160, 120, Qt::KeepAspectRatio, Qt::SmoothTransformation);
-            setExifThumbnail(thumb);
+            QImage thumb = QImage::fromData(identify.thumbnail);
+
+            if (!thumb.isNull())
+            {
+                setExifThumbnail(thumb.scaled(160, 120, Qt::KeepAspectRatio, Qt::SmoothTransformation));
+            }
         }
 
         // Handle XMP metadata byte-array
