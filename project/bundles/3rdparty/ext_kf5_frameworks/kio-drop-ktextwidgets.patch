@@ -129,3 +129,27 @@ index 5265a07b..80ab0d4b 100644
  };
  
  #endif // NETPREF_H
+diff --git a/src/widgets/renamedialog.cpp b/src/widgets/renamedialog.cpp
+index 6b474567..499c017f 100644
+--- a/src/widgets/renamedialog.cpp
++++ b/src/widgets/renamedialog.cpp
+@@ -401,16 +401,16 @@ RenameDialog::RenameDialog(QWidget *parent, const QString &_caption,
+         // check files contents for local files
+         if (d->dest.isLocalFile() && d->src.isLocalFile()) {
+ 
+-            const CompareFilesResult CompareFilesResult = compareFiles(d->src.toLocalFile(), d->dest.toLocalFile());
++            const CompareFilesResult res = compareFiles(d->src.toLocalFile(), d->dest.toLocalFile());
+ 
+             QString text;
+-            switch (CompareFilesResult) {
++            switch (res) {
+                 case CompareFilesResult::Identical: text = i18n("The files are identical."); break;
+                 case CompareFilesResult::PartiallyIdentical: text = i18n("The files seem identical."); break;
+                 case CompareFilesResult::Different: text = i18n("The files are different."); break;
+             }
+             QLabel* filesIdenticalLabel = createLabel(this, text, true);
+-            if (CompareFilesResult == CompareFilesResult::PartiallyIdentical) {
++            if (res == CompareFilesResult::PartiallyIdentical) {
+                 QLabel* pixmapLabel = new QLabel(this);
+                 pixmapLabel->setPixmap(QIcon::fromTheme(QStringLiteral("help-about")).pixmap(QSize(16,16)));
+                 pixmapLabel->setToolTip(
