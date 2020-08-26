@@ -237,13 +237,6 @@ bool DMetadata::loadUsingRawEngine(const QString& filePath)
 
         setItemColorWorkSpace(WORKSPACE_UNCALIBRATED);
 
-        // Handle XMP metadata byte-array
-
-        if (!identify.xmpData.isEmpty())
-        {
-            setXmp(identify.xmpData);
-        }
-
         // Handle ICC color profile byte-array
 
         if (!identify.iccData.isEmpty())
@@ -271,6 +264,13 @@ bool DMetadata::loadUsingRawEngine(const QString& filePath)
         {
             QImage thumb = identify.thumbnail.scaled(160, 120, Qt::KeepAspectRatio, Qt::SmoothTransformation);
             setExifThumbnail(thumb);
+        }
+
+        // Handle XMP metadata byte-array
+
+        if (!identify.xmpData.isEmpty())
+        {
+            setXmp(identify.xmpData);
         }
 
         return true;
