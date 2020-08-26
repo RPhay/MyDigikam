@@ -1,8 +1,8 @@
 diff --git a/autotests/jobtest.h b/autotests/jobtest.h
-index 2b003c33..28b02768 100644
+index f2f06a4f..4f13cfbd 100644
 --- a/autotests/jobtest.h
 +++ b/autotests/jobtest.h
-@@ -24,6 +24,8 @@
+@@ -12,6 +12,8 @@
  #include <QObject>
  #include <kio/job.h>
  
@@ -12,10 +12,10 @@ index 2b003c33..28b02768 100644
  {
      Q_OBJECT
 diff --git a/src/core/slaveinterface.h b/src/core/slaveinterface.h
-index 327f44b3..4f5c34cf 100644
+index 4b743d4b..32cbb944 100644
 --- a/src/core/slaveinterface.h
 +++ b/src/core/slaveinterface.h
-@@ -31,6 +31,8 @@
+@@ -19,6 +19,8 @@
  
  class QUrl;
  
@@ -25,7 +25,7 @@ index 327f44b3..4f5c34cf 100644
  {
  
 diff --git a/src/kcms/kio/CMakeLists.txt b/src/kcms/kio/CMakeLists.txt
-index 3bb827fd..d165fca4 100644
+index 104fdaf7..c8005c3a 100644
 --- a/src/kcms/kio/CMakeLists.txt
 +++ b/src/kcms/kio/CMakeLists.txt
 @@ -1,7 +1,7 @@
@@ -37,7 +37,7 @@ index 3bb827fd..d165fca4 100644
  
  ########### next target ###############
  
-@@ -42,7 +42,7 @@ target_link_libraries(kcm_kio
+@@ -50,7 +50,7 @@ target_link_libraries(kcm_kio
      KF5::KIOWidgets
      KF5::IconThemes
      KF5::ItemViews   # KTreeWidgetSearchLine
@@ -47,17 +47,21 @@ index 3bb827fd..d165fca4 100644
      KF5::I18n)
  
 diff --git a/src/kcms/kio/netpref.cpp b/src/kcms/kio/netpref.cpp
-index de22b977..a63ffac0 100644
+index a874077c..63ee4525 100644
 --- a/src/kcms/kio/netpref.cpp
 +++ b/src/kcms/kio/netpref.cpp
-@@ -10,7 +10,7 @@
+@@ -6,11 +6,11 @@
+ #include <QCheckBox>
+ #include <QGroupBox>
+ #include <QFormLayout>
++#include <QSpinBox>
+ 
  // KDE
  #include <ioslave_defaults.h>
  #include <KLocalizedString>
 -#include <KPluralHandlingSpinBox>
-+#include <QSpinBox>
- #include <kconfig.h>
- #include <kpluginfactory.h>
+ #include <KConfig>
+ #include <KPluginFactory>
  #include <KConfigGroup>
 @@ -39,29 +39,29 @@ KIOPreferences::KIOPreferences(QWidget *parent, const QVariantList &)
      mainLayout->addWidget( gb_Timeout );
@@ -98,7 +102,7 @@ index de22b977..a63ffac0 100644
              this, &KIOPreferences::configChanged);
      timeoutLayout->addRow(i18n("&Server response:"), sb_serverResponse);
 diff --git a/src/kcms/kio/netpref.h b/src/kcms/kio/netpref.h
-index d6d3f9d4..a075c324 100644
+index 5265a07b..80ab0d4b 100644
 --- a/src/kcms/kio/netpref.h
 +++ b/src/kcms/kio/netpref.h
 @@ -6,7 +6,7 @@
