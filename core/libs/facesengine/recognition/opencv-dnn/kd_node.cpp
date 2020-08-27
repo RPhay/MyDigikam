@@ -169,11 +169,11 @@ double KDNode::getClosestNeighbors(QMap<double, QVector<int> >& neighborList,
                                    int                          maxNbNeighbors) const
 {
     // add current node to the list
-    double sqrDistanceToCurrentNode = sqrDistance(position.ptr<float>(), d->position.ptr<float>(), d->nbDimension);
-    double cosDistanceToCurrentNode = cosDistance(position.ptr<float>(), d->position.ptr<float>(), d->nbDimension);
+    const double sqrDistanceToCurrentNode = sqrDistance(position.ptr<float>(), d->position.ptr<float>(), d->nbDimension);
 
     // NOTE: both Euclidian distance and cosine distance can help to avoid error in similarity prediction
-    if (sqrDistanceToCurrentNode < sqRange && cosDistanceToCurrentNode > cosThreshold)
+    if (sqrDistanceToCurrentNode < sqRange &&
+        cosDistance(position.ptr<float>(), d->position.ptr<float>(), d->nbDimension) > cosThreshold)
     {
         neighborList[sqrDistanceToCurrentNode].append(d->identity);
         // limit the size of the Map to maxNbNeighbors
@@ -206,6 +206,7 @@ double KDNode::getClosestNeighbors(QMap<double, QVector<int> >& neighborList,
     }
 
     // sub-trees Traversal
+    // NOTE: DBL_MAX helps avoiding accessing nullptr
     double sqrDistanceleftTree  = 0;
 
     if (d->left == nullptr)
@@ -286,8 +287,8 @@ void KDNode::updateRange(const cv::Mat& pos)
         return;
     }
 
-    float* minRange = d->minRange.ptr<float>();
-    float* maxRange = d->maxRange.ptr<float>();
+    float* minRange       = d->minRange.ptr<float>();
+    float* maxRange       = d->maxRange.ptr<float>();
     const float* position = pos.ptr<float>();
 
     for (int i = 0; i < d->nbDimension; ++i)

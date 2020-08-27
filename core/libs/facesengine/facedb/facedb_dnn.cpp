@@ -44,11 +44,15 @@ int FaceDb::insertFaceVector(const cv::Mat& faceEmbedding,
 
     if (query.lastInsertId().isNull())
     {
-        qWarning() << "fail to insert face embedding, last query" << query.lastQuery() << "bound values" << query.boundValues() << query.lastError();
+        qWarning() << "fail to insert face embedding, last query"
+                   << query.lastQuery()
+                   << "bound values" << query.boundValues()
+                   << query.lastError();
     }
     else
     {
-        qCDebug(DIGIKAM_FACEDB_LOG) << "Commit face mat data " << query.lastInsertId().toInt()
+        qCDebug(DIGIKAM_FACEDB_LOG) << "Commit face mat data "
+                                    << query.lastInsertId().toInt()
                                     << " for identity " << label;
     }
 

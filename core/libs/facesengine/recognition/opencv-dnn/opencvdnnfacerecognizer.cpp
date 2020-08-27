@@ -28,15 +28,13 @@
 
 // Qt includes
 #include <QElapsedTimer>
-#include <QFuture>
 
 // Local includes
 #include "digikam_debug.h"
 #include "dnnfaceextractor.h"
-#include "kd_tree.h"
-
 #include "facedbaccess.h"
 #include "facedb.h"
+#include "kd_tree.h"
 
 namespace Digikam
 {

@@ -23,7 +23,6 @@
 #include "kd_tree.h"
 
 #include <QMutex>
-#include <QDebug>
 
 namespace Digikam
 {

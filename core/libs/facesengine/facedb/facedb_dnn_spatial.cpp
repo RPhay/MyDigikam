@@ -79,7 +79,8 @@ bool FaceDb::insertToTreeDb(const int nodeID, const cv::Mat& faceEmbedding) cons
     bindingValues << parentID;
 
     // insert node to database
-    DbEngineSqlQuery query = d->db->execQuery(QLatin1String("INSERT INTO KDTree (split_axis, position, max_range, min_range, parent, left, right) "
+    DbEngineSqlQuery query = d->db->execQuery(QLatin1String("INSERT INTO KDTree "
+                                                            "(split_axis, position, max_range, min_range, parent, left, right) "
                                                             "VALUES (?, ?, ?, ?, ?, NULL, NULL)"),
                                               bindingValues);
 
@@ -172,7 +173,8 @@ void FaceDb::updateRangeTreeDb(int nodeId, cv::Mat& minRange, cv::Mat& maxRange,
     bindingValues << QByteArray::fromRawData((char*)min, (sizeof(float) * 128));
     bindingValues << nodeId;
 
-    DbEngineSqlQuery query = d->db->execQuery(QLatin1String("UPDATE KDTree SET max_range = ?, min_range = ? WHERE id = ?;"), bindingValues);
+    DbEngineSqlQuery query = d->db->execQuery(QLatin1String("UPDATE KDTree SET max_range = ?, min_range = ? WHERE id = ?;"),
+                                              bindingValues);
 }
 
 int FaceDb::findParentTreeDb(const cv::Mat& nodePos, bool& leftChild, int& parentSplitAxis) const
@@ -263,9 +265,9 @@ double FaceDb::getClosestNeighborsTreeDb(const DataNode& subTree,
 
     // try to add current node to the list
     const float sqrdistanceToCurrentNode = KDNode::sqrDistance(position.ptr<float>(), subTree.position.ptr<float>(), 128);
-    const float cosdistanceToCurrentNode = KDNode::cosDistance(position.ptr<float>(), subTree.position.ptr<float>(), 128);
 
-    if (sqrdistanceToCurrentNode < sqRange && cosdistanceToCurrentNode > cosThreshold)
+    if (sqrdistanceToCurrentNode < sqRange &&
+        KDNode::cosDistance(position.ptr<float>(), subTree.position.ptr<float>(), 128) > cosThreshold)
     {
         neighborList[sqrdistanceToCurrentNode].append(subTree.label);
 
