@@ -234,5 +234,5 @@ BUGFIXES:
 223 ==> 425644 - Various Observations Regarding Image Viewing.
 224 ==> 424860 - No EXIF display on CR3 images.
 225 ==> 425824 - PayPal donation links are not displayed.
-226 ==> 
-
+226 ==> 425879 - Import: view -> sort order sorts only oldest day.
+227 ==> 
