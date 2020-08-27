@@ -57,7 +57,7 @@ bool MetaEngine::canWriteIptc(const QString& filePath)
 
 #endif
 
-        Exiv2::AccessMode mode = image->checkMode(Exiv2::mdIptc);
+        Exiv2::AccessMode mode      = image->checkMode(Exiv2::mdIptc);
 
         return ((mode == Exiv2::amWrite) || (mode == Exiv2::amReadWrite));
     }
@@ -65,7 +65,7 @@ bool MetaEngine::canWriteIptc(const QString& filePath)
     {
         std::string s(e.what());
         qCCritical(DIGIKAM_METAENGINE_LOG) << "Cannot check Iptc access mode using Exiv2 (Error #"
-                                  << e.code() << ": " << s.c_str() << ")";
+                                           << e.code() << ": " << s.c_str() << ")";
     }
     catch(...)
     {
@@ -275,7 +275,7 @@ MetaEngine::MetaDataMap MetaEngine::getIptcTagsDataList(const QStringList& iptcK
 
         return metaDataMap;
     }
-    catch (Exiv2::AnyError& e)
+    catch(Exiv2::AnyError& e)
     {
         d->printExiv2ExceptionError(QLatin1String("Cannot parse Iptc metadata using Exiv2 "), e);
     }
@@ -321,7 +321,7 @@ QString MetaEngine::getIptcTagDescription(const char* iptcTagName)
 
         return QString::fromLocal8Bit( Exiv2::IptcDataSets::dataSetDesc(ik.tag(), ik.record()) );
     }
-    catch (Exiv2::AnyError& e)
+    catch(Exiv2::AnyError& e)
     {
         d->printExiv2ExceptionError(QLatin1String("Cannot get metadata tag description using Exiv2 "), e);
     }
@@ -385,7 +385,7 @@ bool MetaEngine::setIptcTagData(const char* iptcTagName, const QByteArray& data)
 
     try
     {
-        Exiv2::DataValue val((Exiv2::byte *)data.data(), data.size());
+        Exiv2::DataValue val((Exiv2::byte*)data.data(), data.size());
         d->iptcMetadata()[iptcTagName] = val;
 
         return true;
@@ -569,8 +569,7 @@ bool MetaEngine::setIptcTagsStringList(const char* iptcTagName, int maxSize,
             // Also remove new values to avoid duplicates. They will be added again below.
 
             if ((key == QLatin1String(iptcTagName)) &&
-                (oldvals.contains(val) || newvals.contains(val))
-               )
+                (oldvals.contains(val) || newvals.contains(val)))
             {
                 it2 = iptcData.erase(it2);
             }
@@ -866,8 +865,8 @@ bool MetaEngine::setIptcSubCategories(const QStringList& oldSubCategories, const
 
     try
     {
-        QStringList oldkeys = oldSubCategories;
-        QStringList newkeys = newSubCategories;
+        QStringList oldkeys           = oldSubCategories;
+        QStringList newkeys           = newSubCategories;
 
         // Remove all old Sub Categories.
 
