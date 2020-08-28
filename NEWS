@@ -244,4 +244,6 @@ BUGFIXES:
 232 ==> 199148 - Iptc ascii versus unicode problem.
 233 ==> 324329 - IPTC encoding problem with non English language.
 234 ==> 425877 - FAQ hopelessly outdated.
-235 ==> 
+235 ==> 370558 - Please allow Unicode input to IPTC tags.
+236 ==> 
+
