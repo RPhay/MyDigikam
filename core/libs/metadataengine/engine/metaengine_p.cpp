@@ -943,7 +943,7 @@ QString MetaEngine::Private::extractIptcTagString(const Exiv2::IptcData& iptcDat
     QString charSet = QLatin1String(iptcData.detectCharset());
     QString value;
 
-    QMutexLocker lock(&s_metaEngineMutex);
+    // NOTE: no need mutex lock here as this method is always called from a top level function by a parent mutex lock
 
     try
     {
