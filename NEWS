@@ -235,4 +235,6 @@ BUGFIXES:
 224 ==> 424860 - No EXIF display on CR3 images.
 225 ==> 425824 - PayPal donation links are not displayed.
 226 ==> 425879 - Import: view -> sort order sorts only oldest day.
-227 ==> 
+227 ==> 379050 - Umlauts and accented characters in IPTC metadata not correct.
+228 ==> 379581 - Unicode support to IPTC metadata is not consistent on the UI.
+229 ==> 
