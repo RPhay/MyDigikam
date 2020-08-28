@@ -194,12 +194,6 @@ MetaEngine::MetaDataMap MetaEngine::getIptcTagsDataList(const QStringList& iptcK
         for (Exiv2::IptcData::const_iterator md = iptcData.begin(); md != iptcData.end(); ++md)
         {
             QString key = QString::fromLocal8Bit(md->key().c_str());
-
-            // Decode the tag value with a user friendly output.
-
-            std::ostringstream os;
-            os << *md;
-
             QString value;
 
             if (key == QLatin1String("Iptc.Envelope.CharacterSet"))
@@ -217,6 +211,10 @@ MetaEngine::MetaDataMap MetaEngine::getIptcTagsDataList(const QStringList& iptcK
                 else
                 {
                     // No characterset want mean ASCII-latin1
+                    // Decode the tag value with a user friendly output.
+
+                    std::ostringstream os;
+                    os << *md;
                     value = QLatin1String(os.str().c_str());
                 }
             }
@@ -459,19 +457,22 @@ QString MetaEngine::getIptcTagString(const char* iptcTagName, bool escapeCR) con
 
         if (it != iptcData.end())
         {
-            std::ostringstream os;
-            os << *it;
             QString tagValue;
 
             if ((it->typeId() == Exiv2::string) && !charSet.isNull())
             {
                 // Perform Utf8 conversion from std::string
                 // TODO: check if a parse of charset content can improve the string conversion if not Utf8 use.
+
                 tagValue = QString::fromStdString(it->toString());
             }
             else
             {
                 // No characterset want mean ASCII-latin1
+                // Decode the tag value with a user friendly output.
+
+                std::ostringstream os;
+                os << *it;
                 tagValue = QLatin1String(os.str().c_str());
             }
 
