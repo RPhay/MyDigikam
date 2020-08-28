@@ -189,6 +189,7 @@ MetaEngine::MetaDataMap MetaEngine::getIptcTagsDataList(const QStringList& iptcK
 
         QString     ifDItemName;
         MetaDataMap metaDataMap;
+        QString     charSet = QLatin1String(iptcData.detectCharset());
 
         for (Exiv2::IptcData::const_iterator md = iptcData.begin(); md != iptcData.end(); ++md)
         {
@@ -203,11 +204,21 @@ MetaEngine::MetaDataMap MetaEngine::getIptcTagsDataList(const QStringList& iptcK
 
             if (key == QLatin1String("Iptc.Envelope.CharacterSet"))
             {
-                value = QLatin1String(iptcData.detectCharset());
+                value = charSet;
             }
             else
             {
-                value = QString::fromUtf8(os.str().c_str());
+                if ((md->typeId() == Exiv2::string) && !charSet.isNull())
+                {
+                    // Perform Utf8 conversion from std::string
+                    // TODO: check if a parse of charset content can improve the string conversion if not Utf8 use.
+                    value = QString::fromStdString(md->toString());
+                }
+                else
+                {
+                    // No characterset want mean ASCII-latin1
+                    value = QLatin1String(os.str().c_str());
+                }
             }
 
             // To make a string just on one line.
@@ -444,12 +455,25 @@ QString MetaEngine::getIptcTagString(const char* iptcTagName, bool escapeCR) con
         Exiv2::IptcKey  iptcKey(iptcTagName);
         Exiv2::IptcData iptcData(d->iptcMetadata());
         Exiv2::IptcData::const_iterator it = iptcData.findKey(iptcKey);
+        QString charSet = QLatin1String(iptcData.detectCharset());
 
         if (it != iptcData.end())
         {
             std::ostringstream os;
             os << *it;
-            QString tagValue(QLatin1String(os.str().c_str()));
+            QString tagValue;
+
+            if ((it->typeId() == Exiv2::string) && !charSet.isNull())
+            {
+                // Perform Utf8 conversion from std::string
+                // TODO: check if a parse of charset content can improve the string conversion if not Utf8 use.
+                tagValue = QString::fromStdString(it->toString());
+            }
+            else
+            {
+                // No characterset want mean ASCII-latin1
+                tagValue = QLatin1String(os.str().c_str());
+            }
 
             if (escapeCR)
             {

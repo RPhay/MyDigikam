@@ -235,10 +235,11 @@ BUGFIXES:
 223 ==> 425644 - Various Observations Regarding Image Viewing.
 224 ==> 424860 - No EXIF display on CR3 images.
 225 ==> 425824 - PayPal donation links are not displayed.
-226 ==> 304187 - XMP sidecar files do not write Unicode characters in the Dublin Core section.
-227 ==> 132244 - Special Chars in Keywords decode wrong in IPTC.
-228 ==> 155733 - Make it possible to write/read unicode (or UTF-8) in IPTC metadata.
-229 ==> 199148 - Iptc ascii versus unicode problem.
-230 ==> 
-
-
+226 ==> 425879 - Import: view -> sort order sorts only oldest day.
+227 ==> 379050 - Umlauts and accented characters in IPTC metadata not correct.
+228 ==> 379581 - Unicode support to IPTC metadata is not consistent on the UI.
+229 ==> 304187 - XMP sidecar files do not write Unicode characters in the Dublin Core section.
+230 ==> 132244 - Special Chars in Keywords decode wrong in IPTC.
+231 ==> 155733 - Make it possible to write/read unicode (or UTF-8) in IPTC metadata.
+232 ==> 199148 - Iptc ascii versus unicode problem.
+233 ==> 
