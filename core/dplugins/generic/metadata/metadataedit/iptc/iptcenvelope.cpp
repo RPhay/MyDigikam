@@ -161,12 +161,7 @@ IPTCEnvelope::IPTCEnvelope(QWidget* const parent)
       d(new Private)
 {
     QGridLayout* const grid = new QGridLayout(this);
-
-    // IPTC only accept printable Ascii char.
-    QRegExp asciiRx(QLatin1String("[\x20-\x7F]+$"));
-    QValidator* const asciiValidator = new QRegExpValidator(asciiRx, this);
-
-    QString dateFormat  = QLocale().dateFormat(QLocale::ShortFormat);
+    QString dateFormat      = QLocale().dateFormat(QLocale::ShortFormat);
 
     if (!dateFormat.contains(QLatin1String("yyyy")))
     {
@@ -181,51 +176,47 @@ IPTCEnvelope::IPTCEnvelope(QWidget* const parent)
     d->destinationCheck = new QCheckBox(i18n("Destination:"), this);
     d->destinationEdit  = new QPlainTextEdit(this);
 /*
-    d->specialInstructionEdit->setValidator(asciiValidator);
-    d->specialInstructionEdit->document()->setMaxLength;
+    FIXME
+    d->destinationEdit->document()->setMaxLength(1024);
 */
     d->destinationEdit->setWhatsThis(i18n("Enter the envelope destination. "
-                                          "This field is limited to 1024 ASCII characters."));
+                                          "This field is limited to 1024 characters."));
 
     // --------------------------------------------------------
 
     d->unoIDCheck = new QCheckBox(i18n("U.N.O ID:"), this);
     d->unoIDEdit  = new QLineEdit(this);
     d->unoIDEdit->setClearButtonEnabled(true);
-    d->unoIDEdit->setValidator(asciiValidator);
     d->unoIDEdit->setMaxLength(80);
     d->unoIDEdit->setWhatsThis(i18n("Set here the Unique Name of Object identifier. "
-                                  "This field is limited to 80 ASCII characters."));
+                                    "This field is limited to 80 characters."));
 
     // --------------------------------------------------------
 
     d->productIDCheck = new QCheckBox(i18n("Product ID:"), this);
     d->productIDEdit  = new QLineEdit(this);
     d->productIDEdit->setClearButtonEnabled(true);
-    d->productIDEdit->setValidator(asciiValidator);
     d->productIDEdit->setMaxLength(32);
     d->productIDEdit->setWhatsThis(i18n("Set here the product identifier. "
-                                         "This field is limited to 32 ASCII characters."));
+                                         "This field is limited to 32 characters."));
 
     // --------------------------------------------------------
 
     d->serviceIDCheck = new QCheckBox(i18n("Service ID:"), this);
     d->serviceIDEdit  = new QLineEdit(this);
     d->serviceIDEdit->setClearButtonEnabled(true);
-    d->serviceIDEdit->setValidator(asciiValidator);
     d->serviceIDEdit->setMaxLength(10);
     d->serviceIDEdit->setWhatsThis(i18n("Set here the service identifier. "
-                                         "This field is limited to 10 ASCII characters."));
+                                         "This field is limited to 10 characters."));
 
     // --------------------------------------------------------
 
     d->envelopeIDCheck = new QCheckBox(i18n("Envelope ID:"), this);
     d->envelopeIDEdit  = new QLineEdit(this);
     d->envelopeIDEdit->setClearButtonEnabled(true);
-    d->envelopeIDEdit->setValidator(asciiValidator);
     d->envelopeIDEdit->setMaxLength(8);
     d->envelopeIDEdit->setWhatsThis(i18n("Set here the envelope identifier. "
-                                         "This field is limited to 8 ASCII characters."));
+                                         "This field is limited to 8 characters."));
 
     // --------------------------------------------------------
 
@@ -286,9 +277,7 @@ IPTCEnvelope::IPTCEnvelope(QWidget* const parent)
 
     QLabel* const note = new QLabel(i18n("<b>Note: "
                  "<b><a href='https://en.wikipedia.org/wiki/IPTC_Information_Interchange_Model'>IPTC</a></b> "
-                 "text tags only support the printable "
-                 "<b><a href='https://en.wikipedia.org/wiki/Ascii'>ASCII</a></b> "
-                 "characters and limit string sizes. "
+                 "text tags are limited string sizes. "
                  "Use contextual help for details.</b>"), this);
     note->setOpenExternalLinks(true);
     note->setWordWrap(true);

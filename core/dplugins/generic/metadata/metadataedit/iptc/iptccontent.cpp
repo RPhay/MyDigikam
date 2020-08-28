@@ -82,16 +82,11 @@ IPTCContent::IPTCContent(QWidget* const parent)
 {
     QGridLayout* const grid = new QGridLayout(this);
 
-    // IPTC only accept printable Ascii char.
-    QRegExp asciiRx(QLatin1String("[\x20-\x7F]+$"));
-    QValidator* const asciiValidator = new QRegExpValidator(asciiRx, this);
-
     // --------------------------------------------------------
 
     d->headlineCheck = new QCheckBox(i18n("Headline:"), this);
     d->headlineEdit  = new QLineEdit(this);
     d->headlineEdit->setClearButtonEnabled(true);
-    d->headlineEdit->setValidator(asciiValidator);
     d->headlineEdit->setMaxLength(256);
     d->headlineEdit->setWhatsThis(i18n("Enter here the content synopsis. This field is limited "
                                        "to 256 ASCII characters."));
@@ -102,13 +97,12 @@ IPTCContent::IPTCContent(QWidget* const parent)
     d->captionEdit          = new QPlainTextEdit(this);
     d->syncJFIFCommentCheck = new QCheckBox(i18n("Sync JFIF Comment section"), this);
     d->syncEXIFCommentCheck = new QCheckBox(i18n("Sync EXIF Comment"), this);
-
 /*
-    d->captionEdit->setValidator(asciiValidator);
-    d->captionEdit->setMaxLength(2000);
+    FIXME
+    d->captionEdit->document()->setMaxLength(2000);
 */
     d->captionEdit->setWhatsThis(i18n("Enter the content description. This field is limited "
-                                      "to 2000 ASCII characters."));
+                                      "to 2000 characters."));
 
     // --------------------------------------------------------
 
@@ -120,9 +114,7 @@ IPTCContent::IPTCContent(QWidget* const parent)
 
     QLabel* const note = new QLabel(i18n("<b>Note: "
                  "<b><a href='https://en.wikipedia.org/wiki/IPTC_Information_Interchange_Model'>IPTC</a></b> "
-                 "text tags only support the printable "
-                 "<b><a href='https://en.wikipedia.org/wiki/Ascii'>ASCII</a></b> "
-                 "characters and limit string sizes. "
+                 "text tags are limited string sizes. "
                  "Use contextual help for details.</b>"), this);
     note->setOpenExternalLinks(true);
     note->setWordWrap(true);

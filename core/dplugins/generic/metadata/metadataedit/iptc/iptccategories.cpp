@@ -85,28 +85,22 @@ IPTCCategories::IPTCCategories(QWidget* const parent)
 {
     QGridLayout* const grid = new QGridLayout(this);
 
-    // IPTC only accept printable Ascii char.
-    QRegExp asciiRx(QLatin1String("[\x20-\x7F]+$"));
-    QValidator* const asciiValidator = new QRegExpValidator(asciiRx, this);
-
     // --------------------------------------------------------
 
     d->categoryCheck = new QCheckBox(i18n("Identify subject of content (3 chars max):"), this);
     d->categoryEdit  = new QLineEdit(this);
     d->categoryEdit->setClearButtonEnabled(true);
-    d->categoryEdit->setValidator(asciiValidator);
     d->categoryEdit->setMaxLength(3);
     d->categoryEdit->setWhatsThis(i18n("Set here the category of content. This field is limited "
-                                       "to 3 ASCII characters."));
+                                       "to 3 characters."));
 
     d->subCategoriesCheck = new QCheckBox(i18n("Supplemental categories:"), this);
 
     d->subCategoryEdit = new QLineEdit(this);
     d->subCategoryEdit->setClearButtonEnabled(true);
-    d->subCategoryEdit->setValidator(asciiValidator);
     d->subCategoryEdit->setMaxLength(32);
     d->subCategoryEdit->setWhatsThis(i18n("Enter here a new supplemental category of content. "
-                                          "This field is limited to 32 ASCII characters."));
+                                          "This field is limited to 32 characters."));
 
     d->subCategoriesBox = new QListWidget(this);
     d->subCategoriesBox->setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOn);
@@ -124,9 +118,7 @@ IPTCCategories::IPTCCategories(QWidget* const parent)
 
     QLabel* const note = new QLabel(i18n("<b>Note: "
                  "<b><a href='https://en.wikipedia.org/wiki/IPTC_Information_Interchange_Model'>IPTC</a></b> "
-                 "text tags only support the printable "
-                 "<b><a href='https://en.wikipedia.org/wiki/Ascii'>ASCII</a></b> "
-                 "characters and limit string sizes. "
+                 "text tags are limited string sizes. "
                  "Use contextual help for details.</b>"), this);
     note->setMaximumWidth(150);
     note->setOpenExternalLinks(true);

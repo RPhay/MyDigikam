@@ -126,12 +126,7 @@ IPTCProperties::IPTCProperties(QWidget* const parent)
       d(new Private)
 {
     QGridLayout* const grid = new QGridLayout(this);
-
-    // IPTC only accept printable Ascii char.
-    QRegExp asciiRx(QLatin1String("[\x20-\x7F]+$"));
-    QValidator* const asciiValidator = new QRegExpValidator(asciiRx, this);
-
-    QString dateFormat  = QLocale().dateFormat(QLocale::ShortFormat);
+    QString dateFormat      = QLocale().dateFormat(QLocale::ShortFormat);
 
     if (!dateFormat.contains(QLatin1String("yyyy")))
     {
@@ -236,14 +231,13 @@ IPTCProperties::IPTCProperties(QWidget* const parent)
     d->objectTypeCB       = new QComboBox(this);
     d->objectTypeDescEdit = new QLineEdit(this);
     d->objectTypeDescEdit->setClearButtonEnabled(true);
-    d->objectTypeDescEdit->setValidator(asciiValidator);
     d->objectTypeDescEdit->setMaxLength(64);
     d->objectTypeCB->insertItem(0, i18n("News"));
     d->objectTypeCB->insertItem(1, i18n("Data"));
     d->objectTypeCB->insertItem(2, i18n("Advisory"));
     d->objectTypeCB->setWhatsThis(i18n("Select here the editorial type of content."));
     d->objectTypeDescEdit->setWhatsThis(i18n("Set here the editorial type description of content. "
-                                             "This field is limited to 64 ASCII characters."));
+                                             "This field is limited to 64 characters."));
 
     // --------------------------------------------------------
 
@@ -254,18 +248,15 @@ IPTCProperties::IPTCProperties(QWidget* const parent)
     d->originalTransCheck = new QCheckBox(i18n("Reference:"), this);
     d->originalTransEdit  = new QLineEdit(this);
     d->originalTransEdit->setClearButtonEnabled(true);
-    d->originalTransEdit->setValidator(asciiValidator);
     d->originalTransEdit->setMaxLength(32);
     d->originalTransEdit->setWhatsThis(i18n("Set here the original content transmission "
-                                            "reference. This field is limited to 32 ASCII characters."));
+                                            "reference. This field is limited to 32 characters."));
 
     // --------------------------------------------------------
 
     QLabel* const note = new QLabel(i18n("<b>Note: "
                  "<b><a href='https://en.wikipedia.org/wiki/IPTC_Information_Interchange_Model'>IPTC</a></b> "
-                 "text tags only support the printable "
-                 "<b><a href='https://en.wikipedia.org/wiki/Ascii'>ASCII</a></b> "
-                 "characters and limit string sizes. "
+                 "text tags are limited string sizes. "
                  "Use contextual help for details.</b>"), this);
     note->setOpenExternalLinks(true);
     note->setWordWrap(true);

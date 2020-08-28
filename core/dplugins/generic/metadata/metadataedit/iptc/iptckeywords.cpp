@@ -80,20 +80,15 @@ IPTCKeywords::IPTCKeywords(QWidget* const parent)
 {
     QGridLayout* const grid = new QGridLayout(this);
 
-    // IPTC only accept printable Ascii char.
-    QRegExp asciiRx(QLatin1String("[\x20-\x7F]+$"));
-    QValidator* const asciiValidator = new QRegExpValidator(asciiRx, this);
-
     // --------------------------------------------------------
 
     d->keywordsCheck = new QCheckBox(i18n("Use information retrieval words:"), this);
 
     d->keywordEdit   = new QLineEdit(this);
     d->keywordEdit->setClearButtonEnabled(true);
-    d->keywordEdit->setValidator(asciiValidator);
     d->keywordEdit->setMaxLength(64);
     d->keywordEdit->setWhatsThis(i18n("Enter here a new keyword. "
-                                      "This field is limited to 64 ASCII characters."));
+                                      "This field is limited to 64 characters."));
 
     d->keywordsBox   = new QListWidget(this);
     d->keywordsBox->setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOn);
@@ -111,9 +106,7 @@ IPTCKeywords::IPTCKeywords(QWidget* const parent)
 
     QLabel* const note = new QLabel(i18n("<b>Note: "
                  "<b><a href='https://en.wikipedia.org/wiki/IPTC_Information_Interchange_Model'>IPTC</a></b> "
-                 "text tags only support the printable "
-                 "<b><a href='https://en.wikipedia.org/wiki/Ascii'>ASCII</a></b> "
-                 "characters and limit string sizes. "
+                 "text tags are limited string sizes. "
                  "Use contextual help for details.</b>"), this);
     note->setMaximumWidth(150);
     note->setOpenExternalLinks(true);

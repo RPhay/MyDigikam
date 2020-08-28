@@ -83,19 +83,14 @@ IPTCCredits::IPTCCredits(QWidget* const parent)
 {
     QGridLayout* const grid = new QGridLayout(this);
 
-    // IPTC only accept printable Ascii char.
-    QRegExp asciiRx(QLatin1String("[\x20-\x7F]+$"));
-    QValidator* const asciiValidator = new QRegExpValidator(asciiRx, this);
-
     // --------------------------------------------------------
 
     d->copyrightCheck = new QCheckBox(i18n("Copyright:"), this);
     d->copyrightEdit  = new QLineEdit(this);
     d->copyrightEdit->setClearButtonEnabled(true);
-    d->copyrightEdit->setValidator(asciiValidator);
     d->copyrightEdit->setMaxLength(128);
     d->copyrightEdit->setWhatsThis(i18n("Set here the necessary copyright notice. This field is limited "
-                                        "to 128 ASCII characters."));
+                                        "to 128 characters."));
 
     // --------------------------------------------------------
 
@@ -114,20 +109,18 @@ IPTCCredits::IPTCCredits(QWidget* const parent)
     d->creditCheck = new QCheckBox(i18n("Credit:"), this);
     d->creditEdit  = new QLineEdit(this);
     d->creditEdit->setClearButtonEnabled(true);
-    d->creditEdit->setValidator(asciiValidator);
     d->creditEdit->setMaxLength(32);
     d->creditEdit->setWhatsThis(i18n("Set here the content provider. "
-                                     "This field is limited to 32 ASCII characters."));
+                                     "This field is limited to 32 characters."));
 
     // --------------------------------------------------------
 
     d->sourceCheck = new QCheckBox(i18nc("original owner of content", "Source:"), this);
     d->sourceEdit  = new QLineEdit(this);
     d->sourceEdit->setClearButtonEnabled(true);
-    d->sourceEdit->setValidator(asciiValidator);
     d->sourceEdit->setMaxLength(32);
     d->sourceEdit->setWhatsThis(i18n("Set here the original owner of content. "
-                                     "This field is limited to 32 ASCII characters."));
+                                     "This field is limited to 32 characters."));
 
     // --------------------------------------------------------
 
@@ -139,9 +132,7 @@ IPTCCredits::IPTCCredits(QWidget* const parent)
 
     QLabel* const note = new QLabel(i18n("<b>Note: "
                  "<b><a href='https://en.wikipedia.org/wiki/IPTC_Information_Interchange_Model'>IPTC</a></b> "
-                 "text tags only support the printable "
-                 "<b><a href='https://en.wikipedia.org/wiki/Ascii'>ASCII</a></b> "
-                 "characters and limit string sizes. "
+                 "text tags are limited string sizes. "
                  "Use contextual help for details.</b>"), this);
     note->setOpenExternalLinks(true);
     note->setWordWrap(true);

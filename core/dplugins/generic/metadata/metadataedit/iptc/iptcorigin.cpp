@@ -124,13 +124,7 @@ IPTCOrigin::IPTCOrigin(QWidget* const parent)
       d(new Private)
 {
     QGridLayout* const grid = new QGridLayout(this);
-
-    // IPTC only accept printable Ascii char.
-
-    QRegExp asciiRx(QLatin1String("[\x20-\x7F]+$"));
-    QValidator* const asciiValidator = new QRegExpValidator(asciiRx, this);
-
-    QString dateFormat  = QLocale().dateFormat(QLocale::ShortFormat);
+    QString dateFormat      = QLocale().dateFormat(QLocale::ShortFormat);
 
     if (!dateFormat.contains(QLatin1String("yyyy")))
     {
@@ -202,17 +196,15 @@ IPTCOrigin::IPTCOrigin(QWidget* const parent)
     d->cityCheck = new QCheckBox(i18n("City:"), this);
     d->cityEdit  = new QLineEdit(this);
     d->cityEdit->setClearButtonEnabled(true);
-    d->cityEdit->setValidator(asciiValidator);
     d->cityEdit->setMaxLength(32);
     d->cityEdit->setWhatsThis(i18n("Set here the city of content origin. "
-                                   "This field is limited to 32 ASCII characters."));
+                                   "This field is limited to 32 characters."));
 
     // --------------------------------------------------------
 
     d->sublocationCheck = new QCheckBox(i18n("Sublocation:"), this);
     d->sublocationEdit  = new QLineEdit(this);
     d->sublocationEdit->setClearButtonEnabled(true);
-    d->sublocationEdit->setValidator(asciiValidator);
     d->sublocationEdit->setMaxLength(32);
     d->sublocationEdit->setWhatsThis(i18n("Set here the content location within city. "
                                           "This field is limited to 32 ASCII characters."));
@@ -222,10 +214,9 @@ IPTCOrigin::IPTCOrigin(QWidget* const parent)
     d->provinceCheck = new QCheckBox(i18n("State/Province:"), this);
     d->provinceEdit  = new QLineEdit(this);
     d->provinceEdit->setClearButtonEnabled(true);
-    d->provinceEdit->setValidator(asciiValidator);
     d->provinceEdit->setMaxLength(32);
     d->provinceEdit->setWhatsThis(i18n("Set here the Province or State of content origin. "
-                                       "This field is limited to 32 ASCII characters."));
+                                       "This field is limited to 32 characters."));
 
     // --------------------------------------------------------
 
@@ -251,9 +242,7 @@ IPTCOrigin::IPTCOrigin(QWidget* const parent)
 
     QLabel* const note = new QLabel(i18n("<b>Note: "
                  "<b><a href='https://en.wikipedia.org/wiki/IPTC_Information_Interchange_Model'>IPTC</a></b> "
-                 "text tags only support the printable "
-                 "<b><a href='https://en.wikipedia.org/wiki/Ascii'>ASCII</a></b> "
-                 "characters and limit string sizes. "
+                 "text tags are limited string sizes. "
                  "Use contextual help for details.</b>"), this);
     note->setOpenExternalLinks(true);
     note->setWordWrap(true);

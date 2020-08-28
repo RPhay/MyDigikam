@@ -39,22 +39,14 @@ IPTCSubjects::IPTCSubjects(QWidget* const parent)
 {
     m_iprDefault = QLatin1String("IPTC");
 
-    // Subject string only accept printable Ascii char excepted these one:
-    // - '*' (\x2A)
-    // - ':' (\x3A)
-    // - '?' (\x3F)
-    QRegExp subjectAsciiRx(QLatin1String("[\x20-\x29\x2B-\x39\x3B-\x3E\x40-\x7F]+$"));
-    QValidator* const subjectAsciiValidator = new QRegExpValidator(subjectAsciiRx, this);
-
     // --------------------------------------------------------
 
     m_iprEdit->setText(m_iprDefault);
-    m_iprEdit->setValidator(subjectAsciiValidator);
     m_iprEdit->setWhatsThis(i18n("Enter here the Informative Provider Reference. "
                                  "I.P.R is a name registered with the IPTC/NAA, identifying the "
                                  "provider that provides an indicator of the content. "
                                  "The default value for the I.P.R is \"IPTC\" if a standard Reference "
-                                 "Code is used. This field is limited to 32 ASCII characters."));
+                                 "Code is used. This field is limited to 32 characters."));
 
     // --------------------------------------------------------
 
@@ -68,34 +60,29 @@ IPTCSubjects::IPTCSubjects(QWidget* const parent)
                                  "and corresponding Names taken from a standard lists given "
                                  "by IPTC/NAA. If a standard reference code is used, these lists "
                                  "are the English language reference versions. "
-                                 "This field is limited to 8 ASCII digit code."));
+                                 "This field is limited to 8 digit code."));
 
     // --------------------------------------------------------
 
-    m_nameEdit->setValidator(subjectAsciiValidator);
     m_nameEdit->setWhatsThis(i18n("Enter here the Subject Name. English language is used "
                                   "if you selected a standard IPTC/NAA reference code. "
-                                  "This field is limited to 64 ASCII characters."));
+                                  "This field is limited to 64 characters."));
 
     // --------------------------------------------------------
 
-    m_matterEdit->setValidator(subjectAsciiValidator);
     m_matterEdit->setWhatsThis(i18n("Enter here the Subject Matter Name. English language is used "
                                     "if you selected a standard IPTC/NAA reference code. "
-                                    "This field is limited to 64 ASCII characters."));
+                                    "This field is limited to 64 characters."));
 
     // --------------------------------------------------------
 
-    m_detailEdit->setValidator(subjectAsciiValidator);
     m_detailEdit->setWhatsThis(i18n("Enter here the Subject Detail Name. English language is used "
                                     "if you selected a standard IPTC/NAA reference code. "
-                                    "This field is limited to 64 ASCII characters."));
+                                    "This field is limited to 64 characters."));
 
     m_note->setText(i18n("<b>Note: "
                  "<b><a href='https://en.wikipedia.org/wiki/IPTC_Information_Interchange_Model'>IPTC</a></b> "
-                 "text tags only support the printable "
-                 "<b><a href='https://en.wikipedia.org/wiki/Ascii'>ASCII</a></b> "
-                 "characters and limit string sizes. "
+                 "text tags are limited string sizes. "
                  "Use contextual help for details.</b>"));
 
     m_subjectsCheck->setVisible(true);

@@ -80,58 +80,49 @@ IPTCStatus::IPTCStatus(QWidget* const parent)
 {
     QGridLayout* const grid = new QGridLayout(this);
 
-    // IPTC only accept printable Ascii char.
-    QRegExp asciiRx(QLatin1String("[\x20-\x7F]+$"));
-    QValidator* const asciiValidator = new QRegExpValidator(asciiRx, this);
-
     // --------------------------------------------------------
 
     d->objectNameCheck = new QCheckBox(i18nc("image title", "Title:"), this);
     d->objectNameEdit  = new QLineEdit(this);
     d->objectNameEdit->setClearButtonEnabled(true);
-    d->objectNameEdit->setValidator(asciiValidator);
     d->objectNameEdit->setMaxLength(64);
     d->objectNameEdit->setWhatsThis(i18n("Set here the shorthand reference of content. "
-                                         "This field is limited to 64 ASCII characters."));
+                                         "This field is limited to 64 characters."));
 
     // --------------------------------------------------------
 
     d->statusCheck = new QCheckBox(i18n("Edit Status:"), this);
     d->statusEdit  = new QLineEdit(this);
     d->statusEdit->setClearButtonEnabled(true);
-    d->statusEdit->setValidator(asciiValidator);
     d->statusEdit->setMaxLength(64);
     d->statusEdit->setWhatsThis(i18n("Set here the title of content status. This field is limited "
-                                     "to 64 ASCII characters."));
+                                     "to 64 characters."));
 
     // --------------------------------------------------------
 
     d->JobIDCheck = new QCheckBox(i18n("Job Identifier:"), this);
     d->JobIDEdit  = new QLineEdit(this);
     d->JobIDEdit->setClearButtonEnabled(true);
-    d->JobIDEdit->setValidator(asciiValidator);
     d->JobIDEdit->setMaxLength(32);
     d->JobIDEdit->setWhatsThis(i18n("Set here the string that identifies content that recurs. "
-                                    "This field is limited to 32 ASCII characters."));
+                                    "This field is limited to 32 characters."));
 
     // --------------------------------------------------------
 
     d->specialInstructionCheck = new QCheckBox(i18n("Special Instructions:"), this);
     d->specialInstructionEdit  = new QPlainTextEdit(this);
 /*
-    d->specialInstructionEdit->setValidator(asciiValidator);
-    d->specialInstructionEdit->document()->setMaxLength;
+    FIXME
+    d->specialInstructionEdit->document()->setMaxLength(256);
 */
     d->specialInstructionEdit->setWhatsThis(i18n("Enter the editorial usage instructions. "
-                                                 "This field is limited to 256 ASCII characters."));
+                                                 "This field is limited to 256 characters."));
 
     // --------------------------------------------------------
 
     QLabel* const note = new QLabel(i18n("<b>Note: "
                  "<b><a href='https://en.wikipedia.org/wiki/IPTC_Information_Interchange_Model'>IPTC</a></b> "
-                 "text tags only support the printable "
-                 "<b><a href='https://en.wikipedia.org/wiki/Ascii'>ASCII</a></b> "
-                 "characters and limit string sizes. "
+                 "text tags are limited string sizes. "
                  "Use contextual help for details.</b>"), this);
     note->setOpenExternalLinks(true);
     note->setWordWrap(true);
