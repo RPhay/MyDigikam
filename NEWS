@@ -243,4 +243,5 @@ BUGFIXES:
 231 ==> 155733 - Make it possible to write/read unicode (or UTF-8) in IPTC metadata.
 232 ==> 199148 - Iptc ascii versus unicode problem.
 233 ==> 324329 - IPTC encoding problem with non English language.
-234 ==> 
+234 ==> 425877 - FAQ hopelessly outdated.
+235 ==> 
