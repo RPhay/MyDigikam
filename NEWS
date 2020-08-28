@@ -3,9 +3,10 @@ evSSdigiKam 7.1.0 - Release date: 2020-08-30
 *****************************************************************************************************
 NEW FEATURES:
 
-QueueManager: add new tool to fix hot pixels from images.
-QueueManager: add new tool to apply texture over images.
-Metadata:     better Exif and Xmp metadata support with CR3 file using libraw info parser.
+QueueManager: Add new tool to fix hot pixels from images.
+QueueManager: Add new tool to apply texture over images.
+Metadata:     Better Exif and Xmp metadata support with CR3 file using libraw info parser.
+Metadata:     Better support of Iptc strings encoded as UTF-8 imported to the database.
 
 *****************************************************************************************************
 BUGFIXES:
@@ -234,5 +235,10 @@ BUGFIXES:
 223 ==> 425644 - Various Observations Regarding Image Viewing.
 224 ==> 424860 - No EXIF display on CR3 images.
 225 ==> 425824 - PayPal donation links are not displayed.
-226 ==> 
+226 ==> 304187 - XMP sidecar files do not write Unicode characters in the Dublin Core section.
+227 ==> 132244 - Special Chars in Keywords decode wrong in IPTC.
+228 ==> 155733 - Make it possible to write/read unicode (or UTF-8) in IPTC metadata.
+229 ==> 199148 - Iptc ascii versus unicode problem.
+230 ==> 
+
 
