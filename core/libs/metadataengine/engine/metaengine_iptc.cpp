@@ -508,7 +508,7 @@ QStringList MetaEngine::getIptcTagsStringList(const char* iptcTagName, bool esca
 
                 if (key == QLatin1String(iptcTagName))
                 {
-                    QString tagValue = QString::fromUtf8(it->toString().c_str());
+                    QString tagValue = d->extractIptcTagString(iptcData, *it);
 
                     if (escapeCR)
                     {
@@ -625,13 +625,13 @@ QStringList MetaEngine::getIptcKeywords() const
 
                 if (key == QLatin1String("Iptc.Application2.Keywords"))
                 {
-                    QString val = QString::fromUtf8(it->toString().c_str());
+                    QString val = d->extractIptcTagString(iptcData, *it);
                     keywords.append(val);
                 }
             }
-
-            //qCDebug(DIGIKAM_METAENGINE_LOG) << d->filePath << " ==> Read Iptc Keywords: " << keywords;
-
+/*
+            qCDebug(DIGIKAM_METAENGINE_LOG) << d->filePath << " ==> Read Iptc Keywords: " << keywords;
+*/
             return keywords;
         }
     }
@@ -666,7 +666,7 @@ bool MetaEngine::setIptcKeywords(const QStringList& oldKeywords, const QStringLi
         while (it2 != iptcData.end())
         {
             QString key = QString::fromLocal8Bit(it2->key().c_str());
-            QString val = QString::fromUtf8(it2->toString().c_str());
+            QString val = QString::fromUtf8(it2->toString().c_str());       // FIXME: check charset
 
             // Also remove new keywords to avoid duplicates. They will be added again below.
 
@@ -729,11 +729,12 @@ QStringList MetaEngine::getIptcSubjects() const
 
             for (Exiv2::IptcData::const_iterator it = iptcData.begin() ; it != iptcData.end() ; ++it)
             {
+                QString tagValue = d->extractIptcTagString(iptcData, *it);
                 QString key = QString::fromLocal8Bit(it->key().c_str());
 
                 if (key == QLatin1String("Iptc.Application2.Subject"))
                 {
-                    QString val(QLatin1String(it->toString().c_str()));
+                    QString val = d->extractIptcTagString(iptcData, *it);
                     subjects.append(val);
                 }
             }
@@ -770,7 +771,7 @@ bool MetaEngine::setIptcSubjects(const QStringList& oldSubjects, const QStringLi
         while (it2 != iptcData.end())
         {
             QString key = QString::fromLocal8Bit(it2->key().c_str());
-            QString val = QString::fromUtf8(it2->toString().c_str());
+            QString val = QString::fromUtf8(it2->toString().c_str());               // FIXME: check charset
 
             if (key == QLatin1String("Iptc.Application2.Subject") && oldDef.contains(val))
             {
@@ -833,7 +834,7 @@ QStringList MetaEngine::getIptcSubCategories() const
 
                 if (key == QLatin1String("Iptc.Application2.SuppCategory"))
                 {
-                    QString val(QLatin1String(it->toString().c_str()));
+                    QString val = d->extractIptcTagString(iptcData, *it);
                     subCategories.append(val);
                 }
             }
@@ -870,7 +871,7 @@ bool MetaEngine::setIptcSubCategories(const QStringList& oldSubCategories, const
         while (it2 != iptcData.end())
         {
             QString key = QString::fromLocal8Bit(it2->key().c_str());
-            QString val = QString::fromUtf8(it2->toString().c_str());
+            QString val = QString::fromUtf8(it2->toString().c_str());       // FIXME: check charset
 
             if ((key == QLatin1String("Iptc.Application2.SuppCategory")) && oldSubCategories.contains(val))
             {
@@ -933,7 +934,7 @@ MetaEngine::TagsMap MetaEngine::getIptcTagsList() const
         {
             do
             {
-                QString key = QLatin1String( Exiv2::IptcKey( (*it)->number_, (*it)->recordId_ ).key().c_str() );
+                QString key = QLatin1String(Exiv2::IptcKey( (*it)->number_, (*it)->recordId_ ).key().c_str());
                 QStringList values;
                 values << QLatin1String((*it)->name_) << QLatin1String((*it)->title_) << QLatin1String((*it)->desc_);
                 tagsMap.insert(key, values);
