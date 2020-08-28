@@ -43,6 +43,7 @@ bool MetaEngine::canWriteIptc(const QString& filePath)
 
     try
     {
+
 #if defined Q_OS_WIN && defined EXV_UNICODE_PATH
 
         Exiv2::Image::AutoPtr image = Exiv2::ImageFactory::open((const wchar_t*)filePath.utf16());
@@ -124,7 +125,6 @@ QByteArray MetaEngine::getIptc(bool addIrbHeader) const
             QByteArray data((const char*)c2.pData_, c2.size_);
 
             return data;
-
         }
     }
     catch(Exiv2::AnyError& e)
@@ -189,7 +189,7 @@ MetaEngine::MetaDataMap MetaEngine::getIptcTagsDataList(const QStringList& iptcK
 
         QString     ifDItemName;
         MetaDataMap metaDataMap;
-        QString     charSet = QLatin1String(iptcData.detectCharset());
+        QString     charSet      = QLatin1String(iptcData.detectCharset());
 
         for (Exiv2::IptcData::const_iterator md = iptcData.begin(); md != iptcData.end(); ++md)
         {
@@ -455,7 +455,7 @@ QString MetaEngine::getIptcTagString(const char* iptcTagName, bool escapeCR) con
         Exiv2::IptcKey  iptcKey(iptcTagName);
         Exiv2::IptcData iptcData(d->iptcMetadata());
         Exiv2::IptcData::const_iterator it = iptcData.findKey(iptcKey);
-        QString charSet = QLatin1String(iptcData.detectCharset());
+        QString charSet                    = QLatin1String(iptcData.detectCharset());
 
         if (it != iptcData.end())
         {
@@ -577,7 +577,8 @@ bool MetaEngine::setIptcTagsStringList(const char* iptcTagName, int maxSize,
         QStringList oldvals = oldValues;
         QStringList newvals = newValues;
 
-        qCDebug(DIGIKAM_METAENGINE_LOG) << d->filePath.toLatin1().constData() << " : " << iptcTagName
+        qCDebug(DIGIKAM_METAENGINE_LOG) << d->filePath.toLatin1().constData()
+                                        << " : " << iptcTagName
                                         << " => " << newvals.join(QString::fromLatin1(",")).toLatin1().constData();
 
         // Remove all old values.
@@ -963,7 +964,7 @@ MetaEngine::TagsMap MetaEngine::getIptcTagsList() const
         {
             do
             {
-                QString     key = QLatin1String( Exiv2::IptcKey( (*it)->number_, (*it)->recordId_ ).key().c_str() );
+                QString key = QLatin1String( Exiv2::IptcKey( (*it)->number_, (*it)->recordId_ ).key().c_str() );
                 QStringList values;
                 values << QLatin1String((*it)->name_) << QLatin1String((*it)->title_) << QLatin1String((*it)->desc_);
                 tagsMap.insert(key, values);
