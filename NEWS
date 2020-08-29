@@ -245,5 +245,9 @@ BUGFIXES:
 233 ==> 324329 - IPTC encoding problem with non English language.
 234 ==> 425877 - FAQ hopelessly outdated.
 235 ==> 370558 - Please allow Unicode input to IPTC tags.
-236 ==> 
-
+236 ==> 306822 - digiKam does not geo-information into metadata.
+237 ==> 366406 - Does not write metadata to ORF.
+238 ==> 319735 - HUB: add an option to save geo-location information in image metadata.
+239 ==> 321624 - HUB: add a new option to store GPS data only in database.
+240 ==> 
+241 ==> 
