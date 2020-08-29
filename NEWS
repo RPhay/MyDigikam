@@ -266,7 +266,10 @@ BUGFIXES:
 254 ==> 286133 - digiKam crashed writing geo tags.
 255 ==> 195508 - HUB : Syncing IPTC with UTF-8 characters from XMP after conversion to printable ASCII.
 256 ==> 375980 - Core dump when adding two keywords to an image that only differ in capitalization.
-257 ==> 
-
+257 ==> 339898 - digiKam crashes after importing images.
+258 ==> 240957 - digiKam crash.
+259 ==> 238623 - digiKam crash on deleting picture.
+270 ==> 145497 - Crash when opening first folder.
+27# ==> 
 
 
