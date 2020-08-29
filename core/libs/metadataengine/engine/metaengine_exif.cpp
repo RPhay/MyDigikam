@@ -54,6 +54,7 @@ bool MetaEngine::canWriteExif(const QString& filePath)
 
     try
     {
+
 #if defined Q_OS_WIN && defined EXV_UNICODE_PATH
 
         Exiv2::Image::AutoPtr image = Exiv2::ImageFactory::open((const wchar_t*)filePath.utf16());
@@ -904,8 +905,8 @@ QString MetaEngine::getExifTagString(const char* exifTagName, bool escapeCR) con
             {
                 // See BUG #184156 comment #13
 
-                std::string val  = it->print(&exifData);
-                tagValue         = QString::fromLocal8Bit(val.c_str());
+                std::string val = it->print(&exifData);
+                tagValue        = QString::fromLocal8Bit(val.c_str());
             }
 
             if (escapeCR)
@@ -1234,7 +1235,7 @@ MetaEngine::MetaDataMap MetaEngine::getExifTagsDataList(const QStringList& exifK
 
         return metaDataMap;
     }
-    catch (Exiv2::AnyError& e)
+    catch(Exiv2::AnyError& e)
     {
         d->printExiv2ExceptionError(QLatin1String("Cannot parse EXIF metadata using Exiv2 "), e);
     }
