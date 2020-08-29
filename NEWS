@@ -252,6 +252,16 @@ BUGFIXES:
 240 ==> 425884 - GPS Processing Method: "charset=Ascii" to remove.
 241 ==> 341307 - digiKam crashing on startup.
 242 ==> 339325 - digiKam crashes on startup.
-243 ==> 
+243 ==> 269792 - Write metadata to image doesn't save Geotags.
+244 ==> 158713 - Deleted tag is not removed from IPTC keyword data.
+245 ==> 145914 - Exif and Iptc metadata together.
+246 ==> 234889 - Updates of Metadata on filesystem is incredible slow.
+247 ==> 311137 - Preview missing in metadata editor if opened for lots of images.
+248 ==> 281784 - Handle sidecar files from digikam, ufraw, darktable, etc as one file when moving/copying/renaming.
+249 ==> 300446 - Reread Metadata from jpg's.
+250 ==> 093468 - Show Exif creation date under thumbnail.
+251 ==> 339309 - digiKam crashed when closing.
+252 ==> 
+
 
 
