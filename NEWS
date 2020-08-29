@@ -261,7 +261,9 @@ BUGFIXES:
 249 ==> 300446 - Reread Metadata from jpg's.
 250 ==> 093468 - Show Exif creation date under thumbnail.
 251 ==> 339309 - digiKam crashed when closing.
-252 ==> 
+252 ==> 279403 - Saving Geotagging info fails.
+253 ==> 
+
 
 
 
