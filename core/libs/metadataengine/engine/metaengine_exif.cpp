@@ -1186,6 +1186,18 @@ MetaEngine::MetaDataMap MetaEngine::getExifTagsDataList(const QStringList& exifK
             {
                 tagValue = d->convertCommentValue(*md);
             }
+            else if (key == QLatin1String("Exif.GPSInfo.GPSAreaInformation"))
+            {
+                // NOTE: special cases to render contents of these GPS info tags. See bug #425884.
+
+                tagValue = d->convertCommentValue(*md);
+            }
+            else if (key == QLatin1String("Exif.GPSInfo.GPSProcessingMethod"))
+            {
+                // NOTE: special cases to render contents of these GPS info tags. See bug #425884.
+
+                tagValue = d->convertCommentValue(*md);
+            }
             else if (key == QLatin1String("Exif.Image.0x935c"))
             {
                 tagValue = QString::number(md->value().size());
