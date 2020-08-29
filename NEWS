@@ -264,6 +264,8 @@ BUGFIXES:
 252 ==> 279403 - Saving Geotagging info fails.
 253 ==> 164440 - Allow to choose between googlemaps and openstreetmap for geotagging.
 254 ==> 286133 - digiKam crashed writing geo tags.
-255 ==> 
+255 ==> 195508 - HUB : Syncing IPTC with UTF-8 characters from XMP after conversion to printable ASCII.
+256 ==> 
+
 
 
