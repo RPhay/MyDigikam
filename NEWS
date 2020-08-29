@@ -249,5 +249,5 @@ BUGFIXES:
 237 ==> 366406 - Does not write metadata to ORF.
 238 ==> 319735 - HUB: add an option to save geo-location information in image metadata.
 239 ==> 321624 - HUB: add a new option to store GPS data only in database.
-240 ==> 
+240 ==> 425884 - GPS Processing Method: "charset=Ascii" to remove.
 241 ==> 
