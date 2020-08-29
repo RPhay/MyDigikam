@@ -250,7 +250,7 @@ bool MetaEngine::getGPSAltitude(double* const altitude) const
     try
     {
         double num, den;
-        *altitude=0.0;
+        *altitude = 0.0;
 
         // Try XMP first. Reason: XMP in sidecar may be more up-to-date than EXIF in original image.
 
@@ -303,7 +303,7 @@ bool MetaEngine::getGPSAltitude(double* const altitude) const
                     return false;
                 }
 
-                *altitude = num/den;
+                *altitude = num / den;
             }
             else
             {
@@ -770,7 +770,10 @@ void MetaEngine::convertToRationalSmallDenominator(const double number, long int
             bestdenom = approx;
             leasterr  = error;
 
-            if (leasterr <= criterion) break;
+            if (leasterr <= criterion)
+            {
+                break;
+            }
         }
     }
 
@@ -785,9 +788,9 @@ void MetaEngine::convertToRationalSmallDenominator(const double number, long int
     }
     else
     {
-        bestnum      += bestdenom * (long int)whole;
-        *numerator   =  bestnum;
-        *denominator =  bestdenom;
+        bestnum     += bestdenom * (long int)whole;
+        *numerator   = bestnum;
+        *denominator = bestdenom;
     }
 }
 
@@ -1008,7 +1011,7 @@ bool MetaEngine::convertFromGPSCoordinateString(const QString& gpsString, double
     {
         // form DDD,MM.mmk
 
-        *degrees =  parts[0].toLong();
+        *degrees  = parts[0].toLong();
         *degrees += parts[1].toDouble() / 60.0;
 
         if ((directionReference == 'W') || (directionReference == 'S'))
@@ -1022,7 +1025,7 @@ bool MetaEngine::convertFromGPSCoordinateString(const QString& gpsString, double
     {
         // use form DDD,MM,SSk
 
-        *degrees =  parts[0].toLong();
+        *degrees  = parts[0].toLong();
         *degrees += parts[1].toLong() / 60.0;
         *degrees += parts[2].toLong() / 3600.0;
 
