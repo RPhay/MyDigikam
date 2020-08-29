@@ -26,12 +26,10 @@
 
 #include <QCheckBox>
 #include <QLabel>
-#include <QValidator>
 #include <QGridLayout>
 #include <QApplication>
 #include <QStyle>
 #include <QLineEdit>
-#include <QPlainTextEdit>
 
 // KDE includes
 
@@ -40,6 +38,7 @@
 // Local includes
 
 #include "dmetadata.h"
+#include "limitedtextedit.h"
 
 using namespace Digikam;
 
@@ -62,16 +61,16 @@ public:
         objectNameCheck         = nullptr;
     }
 
-    QCheckBox*      statusCheck;
-    QCheckBox*      JobIDCheck;
-    QCheckBox*      specialInstructionCheck;
-    QCheckBox*      objectNameCheck;
+    QCheckBox*       statusCheck;
+    QCheckBox*       JobIDCheck;
+    QCheckBox*       specialInstructionCheck;
+    QCheckBox*       objectNameCheck;
 
-    QLineEdit*      objectNameEdit;
-    QLineEdit*      statusEdit;
-    QLineEdit*      JobIDEdit;
+    QLineEdit*       objectNameEdit;
+    QLineEdit*       statusEdit;
+    QLineEdit*       JobIDEdit;
 
-    QPlainTextEdit* specialInstructionEdit;
+    LimitedTextEdit* specialInstructionEdit;
 };
 
 IPTCStatus::IPTCStatus(QWidget* const parent)
@@ -110,11 +109,8 @@ IPTCStatus::IPTCStatus(QWidget* const parent)
     // --------------------------------------------------------
 
     d->specialInstructionCheck = new QCheckBox(i18n("Special Instructions:"), this);
-    d->specialInstructionEdit  = new QPlainTextEdit(this);
-/*
-    FIXME
-    d->specialInstructionEdit->document()->setMaxLength(256);
-*/
+    d->specialInstructionEdit  = new LimitedTextEdit(this);
+    d->specialInstructionEdit->setMaxLength(256);
     d->specialInstructionEdit->setWhatsThis(i18n("Enter the editorial usage instructions. "
                                                  "This field is limited to 256 characters."));
 

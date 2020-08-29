@@ -28,7 +28,6 @@
 #include <QLabel>
 #include <QPushButton>
 #include <QTimeEdit>
-#include <QValidator>
 #include <QGridLayout>
 #include <QLineEdit>
 #include <QComboBox>

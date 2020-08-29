@@ -29,7 +29,6 @@
 #include <QMap>
 #include <QPushButton>
 #include <QTimeEdit>
-#include <QValidator>
 #include <QGridLayout>
 #include <QApplication>
 #include <QStyle>

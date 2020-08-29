@@ -26,12 +26,10 @@
 
 #include <QCheckBox>
 #include <QLabel>
-#include <QValidator>
 #include <QGridLayout>
 #include <QApplication>
 #include <QStyle>
 #include <QLineEdit>
-#include <QPlainTextEdit>
 
 // KDE includes
 
@@ -43,6 +41,7 @@
 #include "multistringsedit.h"
 #include "dmetadata.h"
 #include "dexpanderbox.h"
+#include "limitedtextedit.h"
 
 using namespace Digikam;
 
@@ -69,7 +68,7 @@ public:
     QCheckBox*        syncJFIFCommentCheck;
     QCheckBox*        syncEXIFCommentCheck;
 
-    QPlainTextEdit*   captionEdit;
+    LimitedTextEdit*  captionEdit;
 
     QLineEdit*        headlineEdit;
 
@@ -94,13 +93,10 @@ IPTCContent::IPTCContent(QWidget* const parent)
     // --------------------------------------------------------
 
     d->captionCheck         = new QCheckBox(i18nc("content description", "Caption:"), this);
-    d->captionEdit          = new QPlainTextEdit(this);
+    d->captionEdit          = new LimitedTextEdit(this);
     d->syncJFIFCommentCheck = new QCheckBox(i18n("Sync JFIF Comment section"), this);
     d->syncEXIFCommentCheck = new QCheckBox(i18n("Sync EXIF Comment"), this);
-/*
-    FIXME
-    d->captionEdit->document()->setMaxLength(2000);
-*/
+    d->captionEdit->setMaxLength(2000);
     d->captionEdit->setWhatsThis(i18n("Enter the content description. This field is limited "
                                       "to 2000 characters."));
 

@@ -28,14 +28,12 @@
 #include <QLabel>
 #include <QPushButton>
 #include <QTimeEdit>
-#include <QValidator>
 #include <QGridLayout>
 #include <QDateEdit>
 #include <QApplication>
 #include <QStyle>
 #include <QComboBox>
 #include <QLineEdit>
-#include <QPlainTextEdit>
 
 // KDE includes
 
@@ -46,6 +44,7 @@
 #include "squeezedcombobox.h"
 #include "metadatacheckbox.h"
 #include "timezonecombobox.h"
+#include "limitedtextedit.h"
 #include "dmetadata.h"
 
 using namespace Digikam;
@@ -148,7 +147,7 @@ public:
 
     QDateEdit*                     dateSentSel;
 
-    QPlainTextEdit*                destinationEdit;
+    LimitedTextEdit*               destinationEdit;
 
     MetadataCheckBox*              priorityCheck;
     MetadataCheckBox*              formatCheck;
@@ -174,11 +173,8 @@ IPTCEnvelope::IPTCEnvelope(QWidget* const parent)
     // --------------------------------------------------------
 
     d->destinationCheck = new QCheckBox(i18n("Destination:"), this);
-    d->destinationEdit  = new QPlainTextEdit(this);
-/*
-    FIXME
-    d->destinationEdit->document()->setMaxLength(1024);
-*/
+    d->destinationEdit  = new LimitedTextEdit(this);
+    d->destinationEdit->setMaxLength(1024);
     d->destinationEdit->setWhatsThis(i18n("Enter the envelope destination. "
                                           "This field is limited to 1024 characters."));
 
@@ -241,8 +237,8 @@ IPTCEnvelope::IPTCEnvelope(QWidget* const parent)
 
     int index = 0;
 
-    for (Private::FileFormatMap::Iterator it = d->fileFormatMap.begin();
-         it != d->fileFormatMap.end(); ++it)
+    for (Private::FileFormatMap::Iterator it = d->fileFormatMap.begin() ;
+         it != d->fileFormatMap.end() ; ++it)
     {
         d->formatCB->insertSqueezedItem(it.value(), index);
         index++;
@@ -652,8 +648,8 @@ void IPTCEnvelope::applyMetadata(QByteArray& iptcData)
         QString key;
         int i = 0;
 
-        for (Private::FileFormatMap::Iterator it = d->fileFormatMap.begin();
-             it != d->fileFormatMap.end(); ++it)
+        for (Private::FileFormatMap::Iterator it = d->fileFormatMap.begin() ;
+             it != d->fileFormatMap.end() ; ++it)
         {
             if (i == d->formatCB->currentIndex()) key = it.key();
             i++;

@@ -23,10 +23,6 @@
 
 #include "iptcsubjects.h"
 
-// Qt includes
-
-#include <QValidator>
-
 // KDE includes
 
 #include <klocalizedstring.h>
