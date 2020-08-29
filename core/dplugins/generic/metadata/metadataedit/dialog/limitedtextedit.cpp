@@ -48,6 +48,13 @@ int LimitedTextEdit::maxLength() const
     return m_maxLength;
 }
 
+int LimitedTextEdit::leftCharacters() const
+{
+    int left = m_maxLength - toPlainText().length();
+
+    return ((left > 0) ? left : 0);
+}
+
 void LimitedTextEdit::setMaxLength(int length)
 {
     m_maxLength     = length;
@@ -93,8 +100,6 @@ void LimitedTextEdit::keyPressEvent(QKeyEvent* e)
             QPlainTextEdit::keyPressEvent(e);
         }
     }
-
-    emit signalLeftCharacters(m_maxLength - csize -1);
 }
 
 void LimitedTextEdit::insertFromMimeData(const QMimeData* source)
@@ -133,8 +138,6 @@ void LimitedTextEdit::insertFromMimeData(const QMimeData* source)
             scopy.setText(textToPaste);
         }
     }
-
-    emit signalLeftCharacters(m_maxLength - toPlainText().length() - 1);
 
     QPlainTextEdit::insertFromMimeData(&scopy);
 }

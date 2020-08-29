@@ -46,6 +46,7 @@
 #include "timezonecombobox.h"
 #include "limitedtextedit.h"
 #include "dmetadata.h"
+#include "dlayoutbox.h"
 
 using namespace Digikam;
 
@@ -60,6 +61,7 @@ public:
     {
         unoIDCheck       = nullptr;
         unoIDEdit        = nullptr;
+        destinationLeft  = nullptr;
         destinationCheck = nullptr;
         destinationEdit  = nullptr;
         serviceIDCheck   = nullptr;
@@ -147,6 +149,7 @@ public:
 
     QDateEdit*                     dateSentSel;
 
+    QLabel*                        destinationLeft;
     LimitedTextEdit*               destinationEdit;
 
     MetadataCheckBox*              priorityCheck;
@@ -172,8 +175,12 @@ IPTCEnvelope::IPTCEnvelope(QWidget* const parent)
 
     // --------------------------------------------------------
 
-    d->destinationCheck = new QCheckBox(i18n("Destination:"), this);
-    d->destinationEdit  = new LimitedTextEdit(this);
+    DHBox* const destHeader = new DHBox(this);
+    d->destinationCheck     = new QCheckBox(i18n("Destination:"), destHeader);
+    d->destinationLeft      = new QLabel(destHeader);
+    destHeader->setStretchFactor(d->destinationCheck, 10);
+
+    d->destinationEdit      = new LimitedTextEdit(this);
     d->destinationEdit->setMaxLength(1024);
     d->destinationEdit->setWhatsThis(i18n("Enter the envelope destination. "
                                           "This field is limited to 1024 characters."));
@@ -281,7 +288,7 @@ IPTCEnvelope::IPTCEnvelope(QWidget* const parent)
 
     // --------------------------------------------------------
 
-    grid->addWidget(d->destinationCheck,    0, 0, 1, 6);
+    grid->addWidget(destHeader,             0, 0, 1, 6);
     grid->addWidget(d->destinationEdit,     1, 0, 1, 6);
     grid->addWidget(d->unoIDCheck,          2, 0, 1, 1);
     grid->addWidget(d->unoIDEdit,           2, 1, 1, 5);
@@ -376,6 +383,9 @@ IPTCEnvelope::IPTCEnvelope(QWidget* const parent)
     connect(d->destinationEdit, SIGNAL(textChanged()),
             this, SIGNAL(signalModified()));
 
+    connect(d->destinationEdit, SIGNAL(textChanged()),
+            this, SLOT(slotDestinationLeftCharacters()));
+
     connect(d->serviceIDEdit, SIGNAL(textChanged(QString)),
             this, SIGNAL(signalModified()));
 
@@ -418,6 +428,11 @@ void IPTCEnvelope::slotSetTodaySent()
     d->zoneSentSel->setToUTC();
 }
 
+void IPTCEnvelope::slotDestinationLeftCharacters()
+{
+    d->destinationLeft->setText(i18n("%1 left", d->destinationEdit->leftCharacters()));
+}
+
 void IPTCEnvelope::readMetadata(QByteArray& iptcData)
 {
     blockSignals(true);
@@ -441,6 +456,7 @@ void IPTCEnvelope::readMetadata(QByteArray& iptcData)
     }
 
     d->destinationEdit->setEnabled(d->destinationCheck->isChecked());
+    slotDestinationLeftCharacters();
 
     d->envelopeIDEdit->clear();
     d->envelopeIDCheck->setChecked(false);

@@ -42,11 +42,9 @@ public:
     ~LimitedTextEdit();
 
     void setMaxLength(int length);
-    int  maxLength() const;
+    int  maxLength()     const;
 
-Q_SIGNALS:
-
-    void signalLeftCharacters(int);
+    int leftCharacters() const;
 
 protected:
 

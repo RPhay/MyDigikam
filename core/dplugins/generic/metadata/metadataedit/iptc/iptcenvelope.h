@@ -49,6 +49,7 @@ Q_SIGNALS:
 
 private Q_SLOTS:
 
+    void slotDestinationLeftCharacters();
     void slotSetTodaySent();
 
 private:

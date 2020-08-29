@@ -55,6 +55,7 @@ public:
     explicit Private()
     {
         headlineCheck        = nullptr;
+        captionLeft          = nullptr;
         captionEdit          = nullptr;
         writerEdit           = nullptr;
         headlineEdit         = nullptr;
@@ -68,6 +69,7 @@ public:
     QCheckBox*        syncJFIFCommentCheck;
     QCheckBox*        syncEXIFCommentCheck;
 
+    QLabel*           captionLeft;
     LimitedTextEdit*  captionEdit;
 
     QLineEdit*        headlineEdit;
@@ -92,7 +94,11 @@ IPTCContent::IPTCContent(QWidget* const parent)
 
     // --------------------------------------------------------
 
-    d->captionCheck         = new QCheckBox(i18nc("content description", "Caption:"), this);
+    DHBox* const captionHeader = new DHBox(this);
+    d->captionCheck            = new QCheckBox(i18nc("content description", "Caption:"), captionHeader);
+    d->captionLeft             = new QLabel(captionHeader);
+    captionHeader->setStretchFactor(d->captionCheck, 10);
+
     d->captionEdit          = new LimitedTextEdit(this);
     d->syncJFIFCommentCheck = new QCheckBox(i18n("Sync JFIF Comment section"), this);
     d->syncEXIFCommentCheck = new QCheckBox(i18n("Sync EXIF Comment"), this);
@@ -120,7 +126,7 @@ IPTCContent::IPTCContent(QWidget* const parent)
 
     grid->addWidget(d->headlineCheck,                       0, 0, 1, 1);
     grid->addWidget(d->headlineEdit,                        0, 1, 1, 2);
-    grid->addWidget(d->captionCheck,                        1, 0, 1, 3);
+    grid->addWidget(captionHeader,                          1, 0, 1, 3);
     grid->addWidget(d->captionEdit,                         2, 0, 1, 3);
     grid->addWidget(d->syncJFIFCommentCheck,                3, 0, 1, 3);
     grid->addWidget(d->syncEXIFCommentCheck,                5, 0, 1, 3);
@@ -162,6 +168,9 @@ IPTCContent::IPTCContent(QWidget* const parent)
     connect(d->captionEdit, SIGNAL(textChanged()),
             this, SIGNAL(signalModified()));
 
+    connect(d->captionEdit, SIGNAL(textChanged()),
+            this, SLOT(slotCaptionLeftCharacters()));
+
     connect(d->headlineEdit, SIGNAL(textChanged(QString)),
             this, SIGNAL(signalModified()));
 }
@@ -196,6 +205,11 @@ void IPTCContent::setCheckedSyncEXIFComment(bool c)
     d->syncEXIFCommentCheck->setChecked(c);
 }
 
+void IPTCContent::slotCaptionLeftCharacters()
+{
+    d->captionLeft->setText(i18n("%1 left", d->captionEdit->leftCharacters()));
+}
+
 void IPTCContent::readMetadata(QByteArray& iptcData)
 {
     blockSignals(true);
@@ -215,6 +229,7 @@ void IPTCContent::readMetadata(QByteArray& iptcData)
     d->captionEdit->setEnabled(d->captionCheck->isChecked());
     d->syncJFIFCommentCheck->setEnabled(d->captionCheck->isChecked());
     d->syncEXIFCommentCheck->setEnabled(d->captionCheck->isChecked());
+    slotCaptionLeftCharacters();
 
     list = meta.getIptcTagsStringList("Iptc.Application2.Writer", false);
     d->writerEdit->setValues(list);
