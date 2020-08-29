@@ -47,6 +47,10 @@ Q_SIGNALS:
 
     void signalModified();
 
+private Q_SLOTS:
+
+    void slotSpecialInstructionLeftCharacters();
+
 private:
 
     class Private;

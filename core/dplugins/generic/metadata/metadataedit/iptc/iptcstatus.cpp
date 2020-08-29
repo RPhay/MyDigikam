@@ -39,6 +39,7 @@
 
 #include "dmetadata.h"
 #include "limitedtextedit.h"
+#include "dlayoutbox.h"
 
 using namespace Digikam;
 
@@ -55,6 +56,7 @@ public:
         JobIDEdit               = nullptr;
         statusCheck             = nullptr;
         JobIDCheck              = nullptr;
+        specialInstructionLeft  = nullptr;
         specialInstructionEdit  = nullptr;
         specialInstructionCheck = nullptr;
         objectNameEdit          = nullptr;
@@ -70,6 +72,7 @@ public:
     QLineEdit*       statusEdit;
     QLineEdit*       JobIDEdit;
 
+    QLabel*          specialInstructionLeft;
     LimitedTextEdit* specialInstructionEdit;
 };
 
@@ -108,7 +111,11 @@ IPTCStatus::IPTCStatus(QWidget* const parent)
 
     // --------------------------------------------------------
 
-    d->specialInstructionCheck = new QCheckBox(i18n("Special Instructions:"), this);
+    DHBox* const instHeader    = new DHBox(this);
+    d->specialInstructionCheck = new QCheckBox(i18n("Special Instructions:"), instHeader);
+    d->specialInstructionLeft  = new QLabel(instHeader);
+    instHeader->setStretchFactor(d->specialInstructionCheck, 10);
+
     d->specialInstructionEdit  = new LimitedTextEdit(this);
     d->specialInstructionEdit->setMaxLength(256);
     d->specialInstructionEdit->setWhatsThis(i18n("Enter the editorial usage instructions. "
@@ -132,7 +139,7 @@ IPTCStatus::IPTCStatus(QWidget* const parent)
     grid->addWidget(d->statusEdit,              1, 1, 1, 2);
     grid->addWidget(d->JobIDCheck,              2, 0, 1, 1);
     grid->addWidget(d->JobIDEdit,               2, 1, 1, 2);
-    grid->addWidget(d->specialInstructionCheck, 3, 0, 1, 3);
+    grid->addWidget(instHeader,                 3, 0, 1, 3);
     grid->addWidget(d->specialInstructionEdit,  4, 0, 1, 3);
     grid->addWidget(note,                       9, 0, 1, 3);
     grid->setColumnStretch(2, 10);
@@ -181,11 +188,19 @@ IPTCStatus::IPTCStatus(QWidget* const parent)
 
     connect(d->specialInstructionEdit, SIGNAL(textChanged()),
             this, SIGNAL(signalModified()));
+
+    connect(d->specialInstructionEdit, SIGNAL(textChanged()),
+            this, SLOT(slotSpecialInstructionLeftCharacters()));
 }
 
 IPTCStatus::~IPTCStatus()
 {
     delete d;
+}
+
+void IPTCStatus::slotSpecialInstructionLeftCharacters()
+{
+    d->specialInstructionLeft->setText(i18n("%1 left", d->specialInstructionEdit->leftCharacters()));
 }
 
 void IPTCStatus::readMetadata(QByteArray& iptcData)
@@ -244,6 +259,7 @@ void IPTCStatus::readMetadata(QByteArray& iptcData)
     }
 
     d->specialInstructionEdit->setEnabled(d->specialInstructionCheck->isChecked());
+    slotSpecialInstructionLeftCharacters();
 
     blockSignals(false);
 }
