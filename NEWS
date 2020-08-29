@@ -262,8 +262,8 @@ BUGFIXES:
 250 ==> 093468 - Show Exif creation date under thumbnail.
 251 ==> 339309 - digiKam crashed when closing.
 252 ==> 279403 - Saving Geotagging info fails.
-253 ==> 
-
+253 ==> 164440 - Allow to choose between googlemaps and openstreetmap for geotagging.
+254 ==> 
 
 
 
