@@ -65,8 +65,10 @@ public:
     QListWidget* valueBox;
 };
 
-MultiStringsEdit::MultiStringsEdit(QWidget* const parent, const QString& title,
-                                   const QString& desc, int size, bool ascii)
+MultiStringsEdit::MultiStringsEdit(QWidget* const parent,
+                                   const QString& title,
+                                   const QString& desc,
+                                   int size)
     : QWidget(parent),
       d(new Private)
 {
@@ -96,23 +98,9 @@ MultiStringsEdit::MultiStringsEdit(QWidget* const parent, const QString& title,
     d->valueEdit->setClearButtonEnabled(true);
     QString whatsThis = desc;
 
-    if (ascii || (size != -1))
-    {
-        whatsThis.append(i18n(" This field is limited to:"));
-    }
-
-    if (ascii)
-    {
-        // IPTC only accept printable Ascii char.
-
-        QRegExp asciiRx(QLatin1String("[\x20-\x7F]+$"));
-        QValidator* const asciiValidator = new QRegExpValidator(asciiRx, this);
-        d->valueEdit->setValidator(asciiValidator);
-        whatsThis.append(i18n("<p>Printable ASCII characters.</p>"));
-    }
-
     if (size != -1)
     {
+        whatsThis.append(i18n(" This field is limited to:"));
         d->valueEdit->setMaxLength(size);
         whatsThis.append(i18np("<p>1 character.</p>","<p>%1 characters.</p>", size));
     }
@@ -121,13 +109,13 @@ MultiStringsEdit::MultiStringsEdit(QWidget* const parent, const QString& title,
 
     // --------------------------------------------------------
 
-    grid->setAlignment( Qt::AlignTop );
-    grid->addWidget(d->valueCheck,      0, 0, 1, 1);
-    grid->addWidget(d->addValueButton,  0, 1, 1, 1);
-    grid->addWidget(d->delValueButton,  0, 2, 1, 1);
-    grid->addWidget(d->repValueButton,  0, 3, 1, 1);
-    grid->addWidget(d->valueBox,        0, 4, 3, 1);
-    grid->addWidget(d->valueEdit,       2, 0, 1, 4);
+    grid->setAlignment(Qt::AlignTop);
+    grid->addWidget(d->valueCheck,     0, 0, 1, 1);
+    grid->addWidget(d->addValueButton, 0, 1, 1, 1);
+    grid->addWidget(d->delValueButton, 0, 2, 1, 1);
+    grid->addWidget(d->repValueButton, 0, 3, 1, 1);
+    grid->addWidget(d->valueBox,       0, 4, 3, 1);
+    grid->addWidget(d->valueEdit,      2, 0, 1, 4);
     grid->setRowStretch(1, 10);
     grid->setColumnStretch(0, 10);
     grid->setColumnStretch(4, 100);
