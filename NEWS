@@ -271,4 +271,14 @@ BUGFIXES:
 259 ==> 238623 - digiKam crash on deleting picture.
 260 ==> 145497 - Crash when opening first folder.
 261 ==> 420195 - No support for UTF16 characters under Windows.
-262 ==> 
+262 ==> 166557 - Crash on manual insertation of new photos.
+263 ==> 190045 - digiKam crashes on startup.
+264 ==> 132363 - Support for BOTH "jpgComment" and "jpgUser comment" EXIF data.
+265 ==> 190034 - Crash on startup (importing database).
+266 ==> 207955 - digiKam crash database Exiv2
+267 ==> 192024 - Smart sidecard files handling.
+268 ==> 189993 - Filescanner can't handle big collections.
+269 ==> 203967 - digiKam crashed when importing pictures.
+270 ==> 249302 - GROUP : writing metadata to grouped photos not only first one.
+271 ==> 222401 - Write only changed metadata to file using single button or on exit.
+272 ==> 
