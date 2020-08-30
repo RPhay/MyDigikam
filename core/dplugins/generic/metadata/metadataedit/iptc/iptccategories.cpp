@@ -33,6 +33,7 @@
 #include <QStyle>
 #include <QLineEdit>
 #include <QListWidget>
+#include <QToolTip>
 
 // KDE includes
 
@@ -184,6 +185,15 @@ IPTCCategories::IPTCCategories(QWidget* const parent)
 
     connect(d->categoryEdit, SIGNAL(textChanged(QString)),
             this, SIGNAL(signalModified()));
+
+    connect(d->categoryEdit, SIGNAL(textChanged(QString)),
+            this, SLOT(slotLineEditModified()));
+
+    connect(d->subCategoryEdit, SIGNAL(textChanged(QString)),
+            this, SIGNAL(signalModified()));
+
+    connect(d->subCategoryEdit, SIGNAL(textChanged(QString)),
+            this, SLOT(slotLineEditModified()));
 }
 
 IPTCCategories::~IPTCCategories()
@@ -250,6 +260,20 @@ void IPTCCategories::slotAddCategory()
         d->subCategoriesBox->insertItem(d->subCategoriesBox->count(), newCategory);
         d->subCategoryEdit->clear();
     }
+}
+
+void IPTCCategories::slotLineEditModified()
+{
+    QLineEdit* const ledit = dynamic_cast<QLineEdit*>(sender());
+
+    if (!ledit)
+    {
+        return;
+    }
+
+    QToolTip::showText(ledit->mapToGlobal(QPoint(0, (-1)*(ledit->height() + 10))),
+                       i18n("%1 left", ledit->maxLength() - ledit->text().size()),
+                       ledit);
 }
 
 void IPTCCategories::readMetadata(QByteArray& iptcData)

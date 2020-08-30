@@ -31,6 +31,7 @@
 #include <QApplication>
 #include <QStyle>
 #include <QLineEdit>
+#include <QToolTip>
 
 // KDE includes
 
@@ -159,7 +160,6 @@ IPTCCredits::IPTCCredits(QWidget* const parent)
     connect(d->copyrightCheck, SIGNAL(toggled(bool)),
             d->copyrightEdit, SLOT(setEnabled(bool)));
 
-
     connect(d->creditCheck, SIGNAL(toggled(bool)),
             d->creditEdit, SLOT(setEnabled(bool)));
 
@@ -190,17 +190,41 @@ IPTCCredits::IPTCCredits(QWidget* const parent)
 
     connect(d->copyrightEdit, SIGNAL(textChanged(QString)),
             this, SIGNAL(signalModified()));
+    
+    connect(d->copyrightEdit, SIGNAL(textChanged(QString)),
+            this, SLOT(slotLineEditModified()));
 
     connect(d->creditEdit, SIGNAL(textChanged(QString)),
             this, SIGNAL(signalModified()));
 
+    connect(d->creditEdit, SIGNAL(textChanged(QString)),
+            this, SLOT(slotLineEditModified()));
+
     connect(d->sourceEdit, SIGNAL(textChanged(QString)),
             this, SIGNAL(signalModified()));
+
+    connect(d->sourceEdit, SIGNAL(textChanged(QString)),
+            this, SLOT(slotLineEditModified()));
 }
 
 IPTCCredits::~IPTCCredits()
 {
     delete d;
+}
+
+
+void IPTCCredits::slotLineEditModified()
+{
+    QLineEdit* const ledit = dynamic_cast<QLineEdit*>(sender());
+
+    if (!ledit)
+    {
+        return;
+    }
+
+    QToolTip::showText(ledit->mapToGlobal(QPoint(0, (-1)*(ledit->height() + 10))),
+                       i18n("%1 left", ledit->maxLength() - ledit->text().size()),
+                       ledit);
 }
 
 void IPTCCredits::readMetadata(QByteArray& iptcData)

@@ -161,6 +161,9 @@ IPTCContent::IPTCContent(QWidget* const parent)
     connect(d->writerEdit, SIGNAL(signalModified()),
             this, SIGNAL(signalModified()));
 
+    connect(d->writerEdit->valueEdit(), SIGNAL(textChanged(QString)),
+            this, SLOT(slotLineEditModified()));
+
     connect(d->headlineCheck, SIGNAL(toggled(bool)),
             this, SIGNAL(signalModified()));
 
@@ -220,7 +223,6 @@ void IPTCContent::slotLineEditModified()
 
     if (!ledit)
     {
-        qDebug() << "not from a QLineEdit";
         return;
     }
 

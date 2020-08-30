@@ -58,6 +58,8 @@ private Q_SLOTS:
     void slotCheckCategoryToggled(bool checked);
     void slotCheckSubCategoryToggled(bool checked);
 
+    void slotLineEditModified();
+
 private:
 
     void enableWidgets(bool checked1, bool checked2);

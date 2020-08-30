@@ -30,7 +30,6 @@
 #include <QGridLayout>
 #include <QApplication>
 #include <QListWidget>
-#include <QLineEdit>
 
 // KDE includes
 
@@ -184,6 +183,11 @@ MultiStringsEdit::MultiStringsEdit(QWidget* const parent, const QString& title,
 MultiStringsEdit::~MultiStringsEdit()
 {
     delete d;
+}
+
+QLineEdit* MultiStringsEdit::valueEdit() const
+{
+    return d->valueEdit;
 }
 
 void MultiStringsEdit::slotDeleteValue()
