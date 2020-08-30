@@ -61,6 +61,39 @@
 namespace Digikam
 {
 
+static struct heif_error HeifQIODeviceWriter(struct heif_context* /* ctx */,
+                                             const void* data, size_t size, void* userdata)
+{
+    QFile saveFile(QString::fromUtf8(static_cast<const char*>(userdata)));
+    heif_error error;
+
+    if (!saveFile.open(QIODevice::WriteOnly))
+    {
+        error.code    = heif_error_Encoding_error;
+        error.subcode = heif_suberror_Cannot_write_output_data;
+        error.message = QByteArray("File open error").constData();
+
+        return error;
+    }
+
+    error.code          = heif_error_Ok;
+    error.subcode       = heif_suberror_Unspecified;
+    error.message       = QByteArray("Success").constData();
+
+    qint64 bytesWritten = saveFile.write(static_cast<const char*>(data), size);
+
+    if (bytesWritten < static_cast<qint64>(size))
+    {
+        error.code    = heif_error_Encoding_error;
+        error.subcode = heif_suberror_Cannot_write_output_data;
+        error.message = QByteArray("File write error").constData();
+    }
+
+    saveFile.close();
+
+    return error;
+}
+
 int DImgHEIFLoader::x265MaxBitsDepth()
 {
     int maxOutputBitsDepth = -1;
@@ -430,7 +463,11 @@ bool DImgHEIFLoader::save(const QString& filePath, DImgLoaderObserver* const obs
     qDebug() << "HEIF flush to file...";
     qDebug() << "HEIF encoding took:" << timer.elapsed() << "ms";
 
-    error = heif_context_write_to_file(ctx, QFile::encodeName(filePath).constData());
+    heif_writer writer;
+    writer.writer_api_version = 1;
+    writer.write = HeifQIODeviceWriter;
+
+    error = heif_context_write(ctx, &writer, (void*)filePath.toUtf8().constData());
 
     if (!isHeifSuccess(&error))
     {

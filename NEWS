@@ -269,7 +269,6 @@ BUGFIXES:
 257 ==> 339898 - digiKam crashes after importing images.
 258 ==> 240957 - digiKam crash.
 259 ==> 238623 - digiKam crash on deleting picture.
-270 ==> 145497 - Crash when opening first folder.
-27# ==> 
-
-
+260 ==> 145497 - Crash when opening first folder.
+261 ==> 420195 - No support for UTF16 characters under Windows.
+262 ==> 
