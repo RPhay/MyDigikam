@@ -137,13 +137,13 @@ ObjectAttributesEdit::ObjectAttributesEdit(QWidget* const parent, int size)
     d->valueEdit = new QLineEdit(this);
     d->valueEdit->setClearButtonEnabled(true);
     QString whatsThis = i18n("Set here the editorial attribute description of "
-                             "content. This field is limited to 64 characters.");
+                             "content.");
 
     if (size != -1)
     {
-        whatsThis.append(i18n(" This field is limited to:"));
+        whatsThis.append(i18n(" This field is limited to "));
         d->valueEdit->setMaxLength(size);
-        whatsThis.append(i18np("<p>1 character.</p>","<p>%1 characters.</p>", size));
+        whatsThis.append(i18np("%1 character.","%1 characters.", size));
     }
 
     d->valueEdit->setWhatsThis(whatsThis);
@@ -216,6 +216,11 @@ ObjectAttributesEdit::ObjectAttributesEdit(QWidget* const parent, int size)
 ObjectAttributesEdit::~ObjectAttributesEdit()
 {
     delete d;
+}
+
+QLineEdit* ObjectAttributesEdit::valueEdit() const
+{
+    return d->valueEdit;
 }
 
 void ObjectAttributesEdit::slotDeleteValue()

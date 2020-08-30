@@ -421,6 +421,9 @@ IPTCProperties::IPTCProperties(QWidget* const parent)
 
     connect(d->originalTransEdit, SIGNAL(textChanged(QString)),
             this, SLOT(slotLineEditModified()));
+
+    connect(d->objectAttribute->valueEdit(), SIGNAL(textChanged(QString)),
+            this, SLOT(slotLineEditModified()));
 }
 
 IPTCProperties::~IPTCProperties()
