@@ -34,6 +34,7 @@
 #include <QStyle>
 #include <QComboBox>
 #include <QLineEdit>
+#include <QToolTip>
 
 // KDE includes
 
@@ -380,6 +381,9 @@ IPTCEnvelope::IPTCEnvelope(QWidget* const parent)
     connect(d->envelopeIDEdit, SIGNAL(textChanged(QString)),
             this, SIGNAL(signalModified()));
 
+    connect(d->envelopeIDEdit, SIGNAL(textChanged(QString)),
+            this, SLOT(slotLineEditModified()));
+
     connect(d->destinationEdit, SIGNAL(textChanged()),
             this, SIGNAL(signalModified()));
 
@@ -389,11 +393,20 @@ IPTCEnvelope::IPTCEnvelope(QWidget* const parent)
     connect(d->serviceIDEdit, SIGNAL(textChanged(QString)),
             this, SIGNAL(signalModified()));
 
+    connect(d->serviceIDEdit, SIGNAL(textChanged(QString)),
+            this, SLOT(slotLineEditModified()));
+
     connect(d->productIDEdit, SIGNAL(textChanged(QString)),
             this, SIGNAL(signalModified()));
 
+    connect(d->productIDEdit, SIGNAL(textChanged(QString)),
+            this, SLOT(slotLineEditModified()));
+
     connect(d->unoIDEdit, SIGNAL(textChanged(QString)),
             this, SIGNAL(signalModified()));
+
+    connect(d->unoIDEdit, SIGNAL(textChanged(QString)),
+            this, SLOT(slotLineEditModified()));
 
     connect(d->priorityCB, SIGNAL(activated(int)),
             this, SIGNAL(signalModified()));
@@ -431,6 +444,20 @@ void IPTCEnvelope::slotSetTodaySent()
 void IPTCEnvelope::slotDestinationLeftCharacters()
 {
     d->destinationLeft->setText(i18n("%1 left", d->destinationEdit->leftCharacters()));
+}
+
+void IPTCEnvelope::slotLineEditModified()
+{
+    QLineEdit* const ledit = dynamic_cast<QLineEdit*>(sender());
+
+    if (!ledit)
+    {
+        return;
+    }
+
+    QToolTip::showText(ledit->mapToGlobal(QPoint(0, (-1)*(ledit->height() + 10))),
+                       i18n("%1 left", ledit->maxLength() - ledit->text().size()),
+                       ledit);
 }
 
 void IPTCEnvelope::readMetadata(QByteArray& iptcData)

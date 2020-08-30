@@ -35,6 +35,7 @@
 #include <QComboBox>
 #include <QDateEdit>
 #include <QLineEdit>
+#include <QToolTip>
 
 // KDE includes
 
@@ -378,11 +379,20 @@ IPTCOrigin::IPTCOrigin(QWidget* const parent)
     connect(d->cityEdit, SIGNAL(textChanged(QString)),
             this, SIGNAL(signalModified()));
 
+    connect(d->cityEdit, SIGNAL(textChanged(QString)),
+            this, SLOT(slotLineEditModified()));
+
     connect(d->sublocationEdit, SIGNAL(textChanged(QString)),
             this, SIGNAL(signalModified()));
 
+    connect(d->sublocationEdit, SIGNAL(textChanged(QString)),
+            this, SLOT(slotLineEditModified()));
+
     connect(d->provinceEdit, SIGNAL(textChanged(QString)),
             this, SIGNAL(signalModified()));
+
+    connect(d->provinceEdit, SIGNAL(textChanged(QString)),
+            this, SLOT(slotLineEditModified()));
 }
 
 IPTCOrigin::~IPTCOrigin()
@@ -417,6 +427,20 @@ void IPTCOrigin::setCheckedSyncEXIFDate(bool c)
 QDateTime IPTCOrigin::getIPTCCreationDate() const
 {
     return QDateTime(d->dateCreatedSel->date(), d->timeCreatedSel->time());
+}
+
+void IPTCOrigin::slotLineEditModified()
+{
+    QLineEdit* const ledit = dynamic_cast<QLineEdit*>(sender());
+
+    if (!ledit)
+    {
+        return;
+    }
+
+    QToolTip::showText(ledit->mapToGlobal(QPoint(0, (-1)*(ledit->height() + 10))),
+                       i18n("%1 left", ledit->maxLength() - ledit->text().size()),
+                       ledit);
 }
 
 void IPTCOrigin::readMetadata(QByteArray& iptcData)

@@ -190,7 +190,7 @@ IPTCCredits::IPTCCredits(QWidget* const parent)
 
     connect(d->copyrightEdit, SIGNAL(textChanged(QString)),
             this, SIGNAL(signalModified()));
-    
+
     connect(d->copyrightEdit, SIGNAL(textChanged(QString)),
             this, SLOT(slotLineEditModified()));
 
@@ -211,7 +211,6 @@ IPTCCredits::~IPTCCredits()
 {
     delete d;
 }
-
 
 void IPTCCredits::slotLineEditModified()
 {

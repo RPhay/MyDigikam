@@ -30,6 +30,7 @@
 #include <QApplication>
 #include <QStyle>
 #include <QLineEdit>
+#include <QToolTip>
 
 // KDE includes
 
@@ -180,11 +181,20 @@ IPTCStatus::IPTCStatus(QWidget* const parent)
     connect(d->objectNameEdit, SIGNAL(textChanged(QString)),
             this, SIGNAL(signalModified()));
 
+    connect(d->objectNameEdit, SIGNAL(textChanged(QString)),
+            this, SLOT(slotLineEditModified()));
+
     connect(d->statusEdit, SIGNAL(textChanged(QString)),
             this, SIGNAL(signalModified()));
 
+    connect(d->statusEdit, SIGNAL(textChanged(QString)),
+            this, SLOT(slotLineEditModified()));
+
     connect(d->JobIDEdit, SIGNAL(textChanged(QString)),
             this, SIGNAL(signalModified()));
+
+    connect(d->jobIDEdit, SIGNAL(textChanged(QString)),
+            this, SLOT(slotLineEditModified()));
 
     connect(d->specialInstructionEdit, SIGNAL(textChanged()),
             this, SIGNAL(signalModified()));
@@ -201,6 +211,20 @@ IPTCStatus::~IPTCStatus()
 void IPTCStatus::slotSpecialInstructionLeftCharacters()
 {
     d->specialInstructionLeft->setText(i18n("%1 left", d->specialInstructionEdit->leftCharacters()));
+}
+
+void IPTCStatus::slotLineEditModified()
+{
+    QLineEdit* const ledit = dynamic_cast<QLineEdit*>(sender());
+
+    if (!ledit)
+    {
+        return;
+    }
+
+    QToolTip::showText(ledit->mapToGlobal(QPoint(0, (-1)*(ledit->height() + 10))),
+                       i18n("%1 left", ledit->maxLength() - ledit->text().size()),
+                       ledit);
 }
 
 void IPTCStatus::readMetadata(QByteArray& iptcData)

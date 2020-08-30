@@ -32,6 +32,7 @@
 #include <QStyle>
 #include <QLineEdit>
 #include <QListWidget>
+#include <QToolTip>
 
 // KDE includes
 
@@ -171,6 +172,9 @@ IPTCKeywords::IPTCKeywords(QWidget* const parent)
 
     connect(d->repKeywordButton, SIGNAL(clicked()),
             this, SIGNAL(signalModified()));
+
+    connect(d->keywordsEdit, SIGNAL(textChanged(QString)),
+            this, SLOT(slotLineEditModified()));
 }
 
 IPTCKeywords::~IPTCKeywords()
@@ -237,6 +241,20 @@ void IPTCKeywords::slotAddKeyword()
         d->keywordsBox->insertItem(d->keywordsBox->count(), newKeyword);
         d->keywordEdit->clear();
     }
+}
+
+void IPTCKeywords::slotLineEditModified()
+{
+    QLineEdit* const ledit = dynamic_cast<QLineEdit*>(sender());
+
+    if (!ledit)
+    {
+        return;
+    }
+
+    QToolTip::showText(ledit->mapToGlobal(QPoint(0, (-1)*(ledit->height() + 10))),
+                       i18n("%1 left", ledit->maxLength() - ledit->text().size()),
+                       ledit);
 }
 
 void IPTCKeywords::readMetadata(QByteArray& iptcData)
