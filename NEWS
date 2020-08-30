@@ -305,7 +305,7 @@ BUGFIXES:
 293 ==> 168064 - Save tag on raw files.
 294 ==> 224784 - Save changed exif data of raw files in extra file automatically.
 295 ==> 288513 - Use .thm files as sidecar when files are present (typical case for Canon camera about CR2 and MKV files).
-296 ==> 
+296 ==> 425999 - digiKam Crash while Presentation with OpenGL.
 297 ==> 
 298 ==> 
 299 ==> 
