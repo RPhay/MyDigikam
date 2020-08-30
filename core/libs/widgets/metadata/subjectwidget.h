@@ -67,7 +67,7 @@ class DIGIKAM_EXPORT SubjectWidget : public QWidget
 
 public:
 
-    explicit SubjectWidget(QWidget* const parent);
+    explicit SubjectWidget(QWidget* const parent, bool sizesLimited = false);
     ~SubjectWidget();
 
     void setSubjectsList(const QStringList& list);

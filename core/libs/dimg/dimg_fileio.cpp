@@ -108,7 +108,7 @@ bool DImg::load(const QString& filePath,
         return false;
     }
 
-    DPluginDImg* plugin             = m_priv->pluginForFile(fileInfo, false);
+    DPluginDImg* plugin             = DImgStaticPriv::pluginForFile(fileInfo, false);
     DImgLoader::LoadFlags loadFlags = (DImgLoader::LoadFlags)loadFlagsInt;
     setAttribute(QLatin1String("originalFilePath"), filePath);
 
@@ -124,7 +124,7 @@ bool DImg::load(const QString& filePath,
     if (plugin && (!(loadFlags & DImgLoader::LoadPreview) || plugin->previewSupported()))
     {
         qCDebug(DIGIKAM_DIMG_LOG) << filePath << ":" << plugin->loaderName() << "file identified";
-        FORMAT format            = m_priv->loaderNameToFormat(plugin->loaderName());
+        FORMAT format            = DImgStaticPriv::loaderNameToFormat(plugin->loaderName());
         DImgLoader* const loader = plugin->loader(this, rawDecodingSettings);
         setAttribute(QLatin1String("detectedFileFormat"), format);
         loader->setLoadFlags(loadFlags);
@@ -145,7 +145,7 @@ bool DImg::load(const QString& filePath,
 
     // In the second step we check the magic bytes to find the right loader.
 
-    plugin = m_priv->pluginForFile(fileInfo, true);
+    plugin = DImgStaticPriv::pluginForFile(fileInfo, true);
 
     if (observer && !observer->continueQuery())
     {
@@ -155,7 +155,7 @@ bool DImg::load(const QString& filePath,
     if (plugin && (!(loadFlags & DImgLoader::LoadPreview) || plugin->previewSupported()))
     {
         qCDebug(DIGIKAM_DIMG_LOG) << filePath << ":" << plugin->loaderName() << "file identified (magic)";
-        FORMAT format            = m_priv->loaderNameToFormat(plugin->loaderName());
+        FORMAT format            = DImgStaticPriv::loaderNameToFormat(plugin->loaderName());
         DImgLoader* const loader = plugin->loader(this, rawDecodingSettings);
         setAttribute(QLatin1String("detectedFileFormat"), format);
         loader->setLoadFlags(loadFlags);
@@ -270,7 +270,7 @@ bool DImg::save(const QString& filePath, const QString& format, DImgLoaderObserv
 
     FileWriteLocker lock(filePath);
 
-    DPluginDImg* const plug = m_priv->pluginForFormat(frm);
+    DPluginDImg* const plug = DImgStaticPriv::pluginForFormat(frm);
     DImg copyForSave        = copy();
 
     if ((frm == QLatin1String("JPEG")) || (frm == QLatin1String("JPG")) || (frm == QLatin1String("JPE")))
@@ -315,12 +315,12 @@ DImg::FORMAT DImg::fileFormat(const QString& filePath)
         return format;
     }
 
-    DPluginDImg* const plugin = DImg::Private::pluginForFile(fileInfo, false);
+    DPluginDImg* const plugin = DImgStaticPriv::pluginForFile(fileInfo, false);
 
     if (plugin)
     {
         QString name = plugin->loaderName();
-        format       = DImg::Private::loaderNameToFormat(name);
+        format       = DImgStaticPriv::loaderNameToFormat(name);
     }
 
     return format;

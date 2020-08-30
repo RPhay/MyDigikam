@@ -938,6 +938,45 @@ void MetaEngine::Private::loadSidecarData(Exiv2::Image::AutoPtr xmpsidecar)
 
 #endif // _XMP_SUPPORT_
 
+QString MetaEngine::Private::extractIptcTagString(const Exiv2::IptcData& iptcData, const Exiv2::Iptcdatum& iptcTag) const
+{
+    QString charSet = QLatin1String(iptcData.detectCharset());
+    QString value;
+
+    // NOTE: no need mutex lock here as this method is always called from a top level function by a parent mutex lock
+
+    try
+    {
+        if ((iptcTag.typeId() == Exiv2::string) && !charSet.isNull())
+        {
+            // Perform Utf8 conversion from std::string
+            // TODO: check if a parse of charset content can improve the string conversion if not Utf8 use.
+
+            value = QString::fromStdString(iptcTag.toString());
+        }
+        else
+        {
+            // No characterset want mean ASCII-latin1
+            // Decode the tag value with a user friendly output.
+
+            std::ostringstream os;
+            os << iptcTag;
+            value = QLatin1String(os.str().c_str());
+        }
+    }
+    catch(Exiv2::AnyError& e)
+    {
+        printExiv2ExceptionError(QLatin1String("Cannot decode Iptc tag string with right encoding using Exiv2 "), e);
+    }
+    catch(...)
+    {
+        qCCritical(DIGIKAM_METAENGINE_LOG) << "Default exception from Exiv2";
+    }
+
+
+    return value;
+}
+
 } // namespace Digikam
 
 // Restore warnings

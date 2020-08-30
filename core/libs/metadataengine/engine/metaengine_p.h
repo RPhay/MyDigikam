@@ -162,6 +162,11 @@ public:
 
 #endif
 
+    /**
+     * Helper method to decode IPTC tag string contents following characters encoding preset.
+     */
+    QString extractIptcTagString(const Exiv2::IptcData& iptcData, const Exiv2::Iptcdatum& iptcTag) const;
+
 public:
 
     /**

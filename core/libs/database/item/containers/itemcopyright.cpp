@@ -58,7 +58,7 @@ public:
 
 private:
 
-    ItemCopyright* object;
+    ItemCopyright*       object;
 
 public:
 
@@ -477,6 +477,7 @@ void ItemCopyright::setLanguageProperty(const QString& property, const QString& 
 void ItemCopyright::removeProperties(const QString& property)
 {
     // if we have a cache, find out if anything need to be done at all
+
     if (m_cache && copyrightInfo(property).isNull())
     {
         return;
@@ -515,6 +516,7 @@ int ItemCopyright::languageMatch(const QList<CopyrightInfo> infos, const QString
     else
     {
         // en-us => en-
+
         langCode = languageCode.section(QLatin1Char('-'), 0, 0, QString::SectionIncludeTrailingSep);
     }
 
@@ -524,7 +526,7 @@ int ItemCopyright::languageMatch(const QList<CopyrightInfo> infos, const QString
     defaultCodeMatch = -1;
     firstMatch       = -1;
 
-    (void)firstMatch; // Remove clang warning.
+    (void)firstMatch;   // Remove clang warning.
 
     if (infos.isEmpty())
     {

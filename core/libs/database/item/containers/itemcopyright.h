@@ -22,8 +22,8 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_ITEM_COPYRIGHT_H
-#define DIGIKAM_ITEM_COPYRIGHT_H
+#ifndef DIGIKAM_ITEM_COPY_RIGHT_H
+#define DIGIKAM_ITEM_COPY_RIGHT_H
 
 // Qt includes
 
@@ -50,12 +50,10 @@ public:
 
     enum ReplaceMode
     {
-        /// Remove entries for all languages and add one new entry
-        ReplaceAllEntries,
-        /// Only replace the entry with the given language
-        ReplaceLanguageEntry,
-        /// No constraints on adding the entry
-        AddEntryToExisting
+        ReplaceAllEntries,         ///< Remove entries for all languages and add one new entry
+        ReplaceLanguageEntry,      ///< Only replace the entry with the given language
+        AddEntryToExisting         ///< No constraints on adding the entry
+
     };
 
 public:
@@ -173,10 +171,12 @@ public:
      * this is regarded as an entry for the default language (&ldquo;x-default&rdquo;).
      * The ReplaceMode determines how existing entries are handled.
      */
-    void setCopyrightNotice(const QString& notice, const QString& languageCode = QString(),
+    void setCopyrightNotice(const QString& notice,
+                            const QString& languageCode = QString(),
                             ReplaceMode mode = ReplaceLanguageEntry);
 
-    void setRights(const QString& notice, const QString& languageCode = QString(),
+    void setRights(const QString& notice,
+                   const QString& languageCode = QString(),
                    ReplaceMode mode = ReplaceLanguageEntry)
     {
         setCopyrightNotice(notice, languageCode, mode);
@@ -194,7 +194,8 @@ public:
     QString rightsUsageTerms(const QString& languageCode = QString());
     MetaEngine::AltLangMap allRightsUsageTerms();
 
-    void setRightsUsageTerms(const QString& term, const QString& languageCode = QString(),
+    void setRightsUsageTerms(const QString& term,
+                             const QString& languageCode = QString(),
                              ReplaceMode mode = ReplaceLanguageEntry);
 
     void removeRightsUsageTerms();
@@ -231,7 +232,7 @@ public:
         return creatorJobTitle();
     }
 
-    QString byLineTitle() const
+    QString byLineTitle()     const
     {
         return creatorJobTitle();
     }
@@ -308,7 +309,12 @@ protected:
     void    setSimpleProperty(const QString& property, const QString& value);
     QString readLanguageProperty(const QString& property, const QString& languageCode);
     MetaEngine::AltLangMap readLanguageProperties(const QString& property);
-    void    setLanguageProperty(const QString& property, const QString& value, const QString& languageCode, ReplaceMode mode);
+
+    void    setLanguageProperty(const QString& property,
+                                const QString& value,
+                                const QString& languageCode,
+                                ReplaceMode mode);
+
     void    removeProperties(const QString& property);
     void    removeLanguageProperty(const QString& property, const QString& languageCode);
 
@@ -322,4 +328,4 @@ protected:
 
 } // namespace Digikam
 
-#endif // DIGIKAM_ITEM_COPYRIGHT_H
+#endif // DIGIKAM_ITEM_COPY_RIGHT_H

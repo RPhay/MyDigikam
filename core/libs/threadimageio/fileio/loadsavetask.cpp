@@ -470,8 +470,11 @@ void SharedLoadingTask::notifyNewLoadingProcess(LoadingProcess* const process, c
     {
         for (int i = 0 ; i < m_listeners.size() ; ++i)
         {
-            m_listeners.at(i)->loadSaveNotifier()->
-                moreCompleteLoadingAvailable(m_loadingDescription, description);
+            if (m_listeners.at(i)->loadSaveNotifier())
+            {
+                m_listeners.at(i)->loadSaveNotifier()->
+                    moreCompleteLoadingAvailable(m_loadingDescription, description);
+            }
         }
     }
 }

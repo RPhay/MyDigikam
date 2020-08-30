@@ -27,6 +27,7 @@
 // Qt includes
 
 #include <QWidget>
+#include <QLineEdit>
 
 namespace DigikamGenericMetadataEditPlugin
 {
@@ -37,7 +38,7 @@ class ObjectAttributesEdit : public QWidget
 
 public:
 
-    explicit ObjectAttributesEdit(QWidget* const parent, bool ascii=true, int size=-1);
+    explicit ObjectAttributesEdit(QWidget* const parent, int size=-1);
     ~ObjectAttributesEdit();
 
     void setValid(bool v);
@@ -45,6 +46,8 @@ public:
 
     void setValues(const QStringList& values);
     bool getValues(QStringList& oldValues, QStringList& newValues);
+
+    QLineEdit* valueEdit() const;
 
 Q_SIGNALS:
 

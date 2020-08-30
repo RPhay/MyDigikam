@@ -3,11 +3,10 @@
  * This file is a part of digiKam project
  * https://www.digikam.org
  *
- * Date        : 2006-10-15
- * Description : IPTC subjects settings page.
+ * Date        : 2020-08-29
+ * Description : a widget to edit a long text with limited string size.
  *
- * Copyright (C) 2006-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
- * Copyright (C) 2009      by Andi Clemens <andi dot clemens at googlemail dot com>
+ * Copyright (C) 2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -21,41 +20,43 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_IPTC_SUBJECTS_H
-#define DIGIKAM_IPTC_SUBJECTS_H
+#ifndef DIGIKAM_LIMITED_TEXT_EDIT_H
+#define DIGIKAM_LIMITED_TEXT_EDIT_H
 
 // Qt includes
 
-#include <QWidget>
-#include <QByteArray>
-
-// Local includes
-
-#include "subjectwidget.h"
-#include "dmetadata.h"
-
-using namespace Digikam;
+#include <QPlainTextEdit>
+#include <QKeyEvent>
+#include <QMimeData>
 
 namespace DigikamGenericMetadataEditPlugin
 {
 
-class IPTCSubjects : public SubjectWidget
+class LimitedTextEdit : public QPlainTextEdit
 {
     Q_OBJECT
 
 public:
 
-    explicit IPTCSubjects(QWidget* const parent);
-    ~IPTCSubjects();
+    explicit LimitedTextEdit(QWidget* const parent = nullptr);
+    ~LimitedTextEdit();
 
-    void applyMetadata(QByteArray& iptcData);
-    void readMetadata(QByteArray& iptcData);
+    void setMaxLength(int length);
+    int  maxLength()     const;
 
-private Q_SLOTS:
+    int leftCharacters() const;
 
-    void slotLineEditModified();
+protected:
+
+    void insertFromMimeData(const QMimeData* source);
+
+    virtual void keyPressEvent(QKeyEvent* e);
+
+private:
+
+    int m_maxLength;
 };
 
 } // namespace DigikamGenericMetadataEditPlugin
 
-#endif // DIGIKAM_IPTC_SUBJECTS_H
+#endif // DIGIKAM_LIMITED_TEXT_EDIT_H
