@@ -57,7 +57,7 @@ public:
         jobIDEdit               = nullptr;
         statusCheck             = nullptr;
         jobIDCheck              = nullptr;
-        specialInstructionLeft  = nullptr;
+        specialInstructionNote  = nullptr;
         specialInstructionEdit  = nullptr;
         specialInstructionCheck = nullptr;
         objectNameEdit          = nullptr;
@@ -73,7 +73,7 @@ public:
     QLineEdit*       statusEdit;
     QLineEdit*       jobIDEdit;
 
-    QLabel*          specialInstructionLeft;
+    QLabel*          specialInstructionNote;
     LimitedTextEdit* specialInstructionEdit;
 };
 
@@ -114,7 +114,7 @@ IPTCStatus::IPTCStatus(QWidget* const parent)
 
     DHBox* const instHeader    = new DHBox(this);
     d->specialInstructionCheck = new QCheckBox(i18n("Special Instructions:"), instHeader);
-    d->specialInstructionLeft  = new QLabel(instHeader);
+    d->specialInstructionNote  = new QLabel(instHeader);
     instHeader->setStretchFactor(d->specialInstructionCheck, 10);
 
     d->specialInstructionEdit  = new LimitedTextEdit(this);
@@ -211,7 +211,9 @@ IPTCStatus::~IPTCStatus()
 
 void IPTCStatus::slotSpecialInstructionLeftCharacters()
 {
-    d->specialInstructionLeft->setText(i18n("%1 left", d->specialInstructionEdit->leftCharacters()));
+    QToolTip::showText(d->specialInstructionCheck->mapToGlobal(QPoint(0, -10)),
+                       i18np("%1 character left", "%1 characters left", d->specialInstructionEdit->maxLength() - d->specialInstructionEdit->toPlainText().size()),
+                       d->specialInstructionEdit);
 }
 
 void IPTCStatus::slotLineEditModified()
@@ -224,7 +226,7 @@ void IPTCStatus::slotLineEditModified()
     }
 
     QToolTip::showText(ledit->mapToGlobal(QPoint(0, (-1)*(ledit->height() + 10))),
-                       i18n("%1 left", ledit->maxLength() - ledit->text().size()),
+                       i18np("%1 character left", "%1 characters left", ledit->maxLength() - ledit->text().size()),
                        ledit);
 }
 

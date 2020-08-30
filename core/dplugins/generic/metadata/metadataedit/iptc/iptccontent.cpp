@@ -56,7 +56,7 @@ public:
     explicit Private()
     {
         headlineCheck        = nullptr;
-        captionLeft          = nullptr;
+        captionNote          = nullptr;
         captionEdit          = nullptr;
         writerEdit           = nullptr;
         headlineEdit         = nullptr;
@@ -70,7 +70,7 @@ public:
     QCheckBox*        syncJFIFCommentCheck;
     QCheckBox*        syncEXIFCommentCheck;
 
-    QLabel*           captionLeft;
+    QLabel*           captionNote;
     LimitedTextEdit*  captionEdit;
 
     QLineEdit*        headlineEdit;
@@ -97,7 +97,7 @@ IPTCContent::IPTCContent(QWidget* const parent)
 
     DHBox* const captionHeader = new DHBox(this);
     d->captionCheck            = new QCheckBox(i18nc("content description", "Caption:"), captionHeader);
-    d->captionLeft             = new QLabel(captionHeader);
+    d->captionNote             = new QLabel(captionHeader);
     captionHeader->setStretchFactor(d->captionCheck, 10);
 
     d->captionEdit             = new LimitedTextEdit(this);
@@ -215,7 +215,9 @@ void IPTCContent::setCheckedSyncEXIFComment(bool c)
 
 void IPTCContent::slotCaptionLeftCharacters()
 {
-    d->captionLeft->setText(i18n("%1 left", d->captionEdit->leftCharacters()));
+    QToolTip::showText(d->captionCheck->mapToGlobal(QPoint(0, -10)),
+                       i18np("%1 character left", "%1 characters left", d->captionEdit->maxLength() - d->captionEdit->toPlainText().size()),
+                       d->captionEdit);
 }
 
 void IPTCContent::slotLineEditModified()
@@ -228,7 +230,7 @@ void IPTCContent::slotLineEditModified()
     }
 
     QToolTip::showText(ledit->mapToGlobal(QPoint(0, (-1)*(ledit->height() + 10))),
-                       i18n("%1 left", ledit->maxLength() - ledit->text().size()),
+                       i18np("%1 character left", "%1 characters left", ledit->maxLength() - ledit->text().size()),
                        ledit);
 }
 

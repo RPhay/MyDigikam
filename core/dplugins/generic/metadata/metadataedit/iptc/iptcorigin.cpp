@@ -440,7 +440,7 @@ void IPTCOrigin::slotLineEditModified()
     }
 
     QToolTip::showText(ledit->mapToGlobal(QPoint(0, (-1)*(ledit->height() + 10))),
-                       i18n("%1 left", ledit->maxLength() - ledit->text().size()),
+                       i18np("%1 character left", "%1 characters left", ledit->maxLength() - ledit->text().size()),
                        ledit);
 }
 

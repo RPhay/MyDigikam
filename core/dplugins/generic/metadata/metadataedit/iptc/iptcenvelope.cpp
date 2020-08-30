@@ -62,7 +62,7 @@ public:
     {
         unoIDCheck       = nullptr;
         unoIDEdit        = nullptr;
-        destinationLeft  = nullptr;
+        destinationNote  = nullptr;
         destinationCheck = nullptr;
         destinationEdit  = nullptr;
         serviceIDCheck   = nullptr;
@@ -150,7 +150,7 @@ public:
 
     QDateEdit*                     dateSentSel;
 
-    QLabel*                        destinationLeft;
+    QLabel*                        destinationNote;
     LimitedTextEdit*               destinationEdit;
 
     MetadataCheckBox*              priorityCheck;
@@ -178,7 +178,7 @@ IPTCEnvelope::IPTCEnvelope(QWidget* const parent)
 
     DHBox* const destHeader = new DHBox(this);
     d->destinationCheck     = new QCheckBox(i18n("Destination:"), destHeader);
-    d->destinationLeft      = new QLabel(destHeader);
+    d->destinationNote      = new QLabel(destHeader);
     destHeader->setStretchFactor(d->destinationCheck, 10);
 
     d->destinationEdit      = new LimitedTextEdit(this);
@@ -444,7 +444,9 @@ void IPTCEnvelope::slotSetTodaySent()
 
 void IPTCEnvelope::slotDestinationLeftCharacters()
 {
-    d->destinationLeft->setText(i18n("%1 left", d->destinationEdit->leftCharacters()));
+    QToolTip::showText(d->destinationCheck->mapToGlobal(QPoint(0, -10)),
+                       i18np("%1 character left", "%1 characters left", d->destinationEdit->maxLength() - d->destinationEdit->toPlainText().size()),
+                       d->destinationEdit);
 }
 
 void IPTCEnvelope::slotLineEditModified()
@@ -457,7 +459,7 @@ void IPTCEnvelope::slotLineEditModified()
     }
 
     QToolTip::showText(ledit->mapToGlobal(QPoint(0, (-1)*(ledit->height() + 10))),
-                       i18n("%1 left", ledit->maxLength() - ledit->text().size()),
+                       i18np("%1 character left", "%1 characters left", ledit->maxLength() - ledit->text().size()),
                        ledit);
 }
 
