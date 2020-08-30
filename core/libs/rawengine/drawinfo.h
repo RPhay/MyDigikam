@@ -340,9 +340,9 @@ public:
     QByteArray       iccData;
 
     /**
-     * Thumbnail image extracted from raw file.
+     * Thumbnail image data extracted from raw file.
      */
-    QImage           thumbnail;
+    QByteArray       thumbnail;
 
     /**
      * Description of lens properties.

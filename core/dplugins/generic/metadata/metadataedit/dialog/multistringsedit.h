@@ -26,6 +26,7 @@
 // Qt includes
 
 #include <QWidget>
+#include <QLineEdit>
 
 namespace DigikamGenericMetadataEditPlugin
 {
@@ -37,11 +38,13 @@ class MultiStringsEdit : public QWidget
 public:
 
     explicit MultiStringsEdit(QWidget* const parent, const QString& title,
-                              const QString& desc, bool ascii=true, int size=-1);
+                              const QString& desc, int size=-1);
     ~MultiStringsEdit();
 
     void setValues(const QStringList& values);
     bool getValues(QStringList& oldValues, QStringList& newValues);
+
+    QLineEdit* valueEdit() const;
 
 Q_SIGNALS:
 

@@ -131,8 +131,7 @@ public:
         width(0),
         height(0),
         data(nullptr),
-        lanczos_func(nullptr),
-        mutex(QMutex::Recursive)
+        lanczos_func(nullptr)
     {
     }
 
@@ -141,6 +140,33 @@ public:
         delete [] data;
         delete [] lanczos_func;
     }
+
+public:
+
+    bool                    null;
+    bool                    alpha;
+    bool                    sixteenBit;
+
+    unsigned int            width;
+    unsigned int            height;
+
+    unsigned char*          data;
+    LANCZOS_DATA_TYPE*      lanczos_func;
+
+    QMutex                  mutex;
+
+    MetaEngineData          metaData;
+    QMap<QString, QVariant> attributes;
+    QMap<QString, QString>  embeddedText;
+    IccProfile              iccProfile;
+    DImageHistory           imageHistory;
+};
+
+// ----------------------------------------------------------------------------
+
+class DIGIKAM_EXPORT DImgStaticPriv
+{
+public:
 
     static DPluginDImg* pluginForFile(const QFileInfo& fileInfo, bool magic)
     {
@@ -250,26 +276,6 @@ public:
 
         return list;
     }
-
-public:
-
-    bool                    null;
-    bool                    alpha;
-    bool                    sixteenBit;
-
-    unsigned int            width;
-    unsigned int            height;
-
-    unsigned char*          data;
-    LANCZOS_DATA_TYPE*      lanczos_func;
-
-    QMutex                  mutex;
-
-    MetaEngineData          metaData;
-    QMap<QString, QVariant> attributes;
-    QMap<QString, QString>  embeddedText;
-    IccProfile              iccProfile;
-    DImageHistory           imageHistory;
 };
 
 } // namespace Digikam

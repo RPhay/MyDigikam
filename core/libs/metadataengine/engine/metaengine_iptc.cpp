@@ -43,6 +43,7 @@ bool MetaEngine::canWriteIptc(const QString& filePath)
 
     try
     {
+
 #if defined Q_OS_WIN && defined EXV_UNICODE_PATH
 
         Exiv2::Image::AutoPtr image = Exiv2::ImageFactory::open((const wchar_t*)filePath.utf16());
@@ -57,7 +58,7 @@ bool MetaEngine::canWriteIptc(const QString& filePath)
 
 #endif
 
-        Exiv2::AccessMode mode = image->checkMode(Exiv2::mdIptc);
+        Exiv2::AccessMode mode      = image->checkMode(Exiv2::mdIptc);
 
         return ((mode == Exiv2::amWrite) || (mode == Exiv2::amReadWrite));
     }
@@ -65,7 +66,7 @@ bool MetaEngine::canWriteIptc(const QString& filePath)
     {
         std::string s(e.what());
         qCCritical(DIGIKAM_METAENGINE_LOG) << "Cannot check Iptc access mode using Exiv2 (Error #"
-                                  << e.code() << ": " << s.c_str() << ")";
+                                           << e.code() << ": " << s.c_str() << ")";
     }
     catch(...)
     {
@@ -124,7 +125,6 @@ QByteArray MetaEngine::getIptc(bool addIrbHeader) const
             QByteArray data((const char*)c2.pData_, c2.size_);
 
             return data;
-
         }
     }
     catch(Exiv2::AnyError& e)
@@ -193,12 +193,6 @@ MetaEngine::MetaDataMap MetaEngine::getIptcTagsDataList(const QStringList& iptcK
         for (Exiv2::IptcData::const_iterator md = iptcData.begin(); md != iptcData.end(); ++md)
         {
             QString key = QString::fromLocal8Bit(md->key().c_str());
-
-            // Decode the tag value with a user friendly output.
-
-            std::ostringstream os;
-            os << *md;
-
             QString value;
 
             if (key == QLatin1String("Iptc.Envelope.CharacterSet"))
@@ -207,7 +201,7 @@ MetaEngine::MetaDataMap MetaEngine::getIptcTagsDataList(const QStringList& iptcK
             }
             else
             {
-                value = QString::fromUtf8(os.str().c_str());
+                value = d->extractIptcTagString(iptcData, *md);
             }
 
             // To make a string just on one line.
@@ -275,7 +269,7 @@ MetaEngine::MetaDataMap MetaEngine::getIptcTagsDataList(const QStringList& iptcK
 
         return metaDataMap;
     }
-    catch (Exiv2::AnyError& e)
+    catch(Exiv2::AnyError& e)
     {
         d->printExiv2ExceptionError(QLatin1String("Cannot parse Iptc metadata using Exiv2 "), e);
     }
@@ -321,7 +315,7 @@ QString MetaEngine::getIptcTagDescription(const char* iptcTagName)
 
         return QString::fromLocal8Bit( Exiv2::IptcDataSets::dataSetDesc(ik.tag(), ik.record()) );
     }
-    catch (Exiv2::AnyError& e)
+    catch(Exiv2::AnyError& e)
     {
         d->printExiv2ExceptionError(QLatin1String("Cannot get metadata tag description using Exiv2 "), e);
     }
@@ -385,7 +379,7 @@ bool MetaEngine::setIptcTagData(const char* iptcTagName, const QByteArray& data)
 
     try
     {
-        Exiv2::DataValue val((Exiv2::byte *)data.data(), data.size());
+        Exiv2::DataValue val((Exiv2::byte*)data.data(), data.size());
         d->iptcMetadata()[iptcTagName] = val;
 
         return true;
@@ -444,12 +438,11 @@ QString MetaEngine::getIptcTagString(const char* iptcTagName, bool escapeCR) con
         Exiv2::IptcKey  iptcKey(iptcTagName);
         Exiv2::IptcData iptcData(d->iptcMetadata());
         Exiv2::IptcData::const_iterator it = iptcData.findKey(iptcKey);
+        QString charSet                    = QLatin1String(iptcData.detectCharset());
 
         if (it != iptcData.end())
         {
-            std::ostringstream os;
-            os << *it;
-            QString tagValue(QLatin1String(os.str().c_str()));
+            QString tagValue = d->extractIptcTagString(iptcData, *it);
 
             if (escapeCR)
             {
@@ -515,7 +508,7 @@ QStringList MetaEngine::getIptcTagsStringList(const char* iptcTagName, bool esca
 
                 if (key == QLatin1String(iptcTagName))
                 {
-                    QString tagValue = QString::fromUtf8(it->toString().c_str());
+                    QString tagValue = d->extractIptcTagString(iptcData, *it);
 
                     if (escapeCR)
                     {
@@ -553,7 +546,8 @@ bool MetaEngine::setIptcTagsStringList(const char* iptcTagName, int maxSize,
         QStringList oldvals = oldValues;
         QStringList newvals = newValues;
 
-        qCDebug(DIGIKAM_METAENGINE_LOG) << d->filePath.toLatin1().constData() << " : " << iptcTagName
+        qCDebug(DIGIKAM_METAENGINE_LOG) << d->filePath.toLatin1().constData()
+                                        << " : " << iptcTagName
                                         << " => " << newvals.join(QString::fromLatin1(",")).toLatin1().constData();
 
         // Remove all old values.
@@ -569,8 +563,7 @@ bool MetaEngine::setIptcTagsStringList(const char* iptcTagName, int maxSize,
             // Also remove new values to avoid duplicates. They will be added again below.
 
             if ((key == QLatin1String(iptcTagName)) &&
-                (oldvals.contains(val) || newvals.contains(val))
-               )
+                (oldvals.contains(val) || newvals.contains(val)))
             {
                 it2 = iptcData.erase(it2);
             }
@@ -632,13 +625,13 @@ QStringList MetaEngine::getIptcKeywords() const
 
                 if (key == QLatin1String("Iptc.Application2.Keywords"))
                 {
-                    QString val = QString::fromUtf8(it->toString().c_str());
+                    QString val = d->extractIptcTagString(iptcData, *it);
                     keywords.append(val);
                 }
             }
-
-            //qCDebug(DIGIKAM_METAENGINE_LOG) << d->filePath << " ==> Read Iptc Keywords: " << keywords;
-
+/*
+            qCDebug(DIGIKAM_METAENGINE_LOG) << d->filePath << " ==> Read Iptc Keywords: " << keywords;
+*/
             return keywords;
         }
     }
@@ -673,7 +666,7 @@ bool MetaEngine::setIptcKeywords(const QStringList& oldKeywords, const QStringLi
         while (it2 != iptcData.end())
         {
             QString key = QString::fromLocal8Bit(it2->key().c_str());
-            QString val = QString::fromUtf8(it2->toString().c_str());
+            QString val = QString::fromUtf8(it2->toString().c_str());       // FIXME: check charset
 
             // Also remove new keywords to avoid duplicates. They will be added again below.
 
@@ -736,11 +729,12 @@ QStringList MetaEngine::getIptcSubjects() const
 
             for (Exiv2::IptcData::const_iterator it = iptcData.begin() ; it != iptcData.end() ; ++it)
             {
+                QString tagValue = d->extractIptcTagString(iptcData, *it);
                 QString key = QString::fromLocal8Bit(it->key().c_str());
 
                 if (key == QLatin1String("Iptc.Application2.Subject"))
                 {
-                    QString val(QLatin1String(it->toString().c_str()));
+                    QString val = d->extractIptcTagString(iptcData, *it);
                     subjects.append(val);
                 }
             }
@@ -777,7 +771,7 @@ bool MetaEngine::setIptcSubjects(const QStringList& oldSubjects, const QStringLi
         while (it2 != iptcData.end())
         {
             QString key = QString::fromLocal8Bit(it2->key().c_str());
-            QString val = QString::fromUtf8(it2->toString().c_str());
+            QString val = QString::fromUtf8(it2->toString().c_str());               // FIXME: check charset
 
             if (key == QLatin1String("Iptc.Application2.Subject") && oldDef.contains(val))
             {
@@ -840,7 +834,7 @@ QStringList MetaEngine::getIptcSubCategories() const
 
                 if (key == QLatin1String("Iptc.Application2.SuppCategory"))
                 {
-                    QString val(QLatin1String(it->toString().c_str()));
+                    QString val = d->extractIptcTagString(iptcData, *it);
                     subCategories.append(val);
                 }
             }
@@ -866,8 +860,8 @@ bool MetaEngine::setIptcSubCategories(const QStringList& oldSubCategories, const
 
     try
     {
-        QStringList oldkeys = oldSubCategories;
-        QStringList newkeys = newSubCategories;
+        QStringList oldkeys           = oldSubCategories;
+        QStringList newkeys           = newSubCategories;
 
         // Remove all old Sub Categories.
 
@@ -877,7 +871,7 @@ bool MetaEngine::setIptcSubCategories(const QStringList& oldSubCategories, const
         while (it2 != iptcData.end())
         {
             QString key = QString::fromLocal8Bit(it2->key().c_str());
-            QString val = QString::fromUtf8(it2->toString().c_str());
+            QString val = QString::fromUtf8(it2->toString().c_str());       // FIXME: check charset
 
             if ((key == QLatin1String("Iptc.Application2.SuppCategory")) && oldSubCategories.contains(val))
             {
@@ -940,7 +934,7 @@ MetaEngine::TagsMap MetaEngine::getIptcTagsList() const
         {
             do
             {
-                QString     key = QLatin1String( Exiv2::IptcKey( (*it)->number_, (*it)->recordId_ ).key().c_str() );
+                QString key = QLatin1String(Exiv2::IptcKey( (*it)->number_, (*it)->recordId_ ).key().c_str());
                 QStringList values;
                 values << QLatin1String((*it)->name_) << QLatin1String((*it)->title_) << QLatin1String((*it)->desc_);
                 tagsMap.insert(key, values);

@@ -28,12 +28,12 @@
 #include <QCheckBox>
 #include <QLabel>
 #include <QPushButton>
-#include <QValidator>
 #include <QGridLayout>
 #include <QApplication>
 #include <QStyle>
 #include <QLineEdit>
 #include <QListWidget>
+#include <QToolTip>
 
 // KDE includes
 
@@ -85,28 +85,22 @@ IPTCCategories::IPTCCategories(QWidget* const parent)
 {
     QGridLayout* const grid = new QGridLayout(this);
 
-    // IPTC only accept printable Ascii char.
-    QRegExp asciiRx(QLatin1String("[\x20-\x7F]+$"));
-    QValidator* const asciiValidator = new QRegExpValidator(asciiRx, this);
-
     // --------------------------------------------------------
 
     d->categoryCheck = new QCheckBox(i18n("Identify subject of content (3 chars max):"), this);
     d->categoryEdit  = new QLineEdit(this);
     d->categoryEdit->setClearButtonEnabled(true);
-    d->categoryEdit->setValidator(asciiValidator);
     d->categoryEdit->setMaxLength(3);
     d->categoryEdit->setWhatsThis(i18n("Set here the category of content. This field is limited "
-                                       "to 3 ASCII characters."));
+                                       "to 3 characters."));
 
     d->subCategoriesCheck = new QCheckBox(i18n("Supplemental categories:"), this);
 
     d->subCategoryEdit = new QLineEdit(this);
     d->subCategoryEdit->setClearButtonEnabled(true);
-    d->subCategoryEdit->setValidator(asciiValidator);
     d->subCategoryEdit->setMaxLength(32);
     d->subCategoryEdit->setWhatsThis(i18n("Enter here a new supplemental category of content. "
-                                          "This field is limited to 32 ASCII characters."));
+                                          "This field is limited to 32 characters."));
 
     d->subCategoriesBox = new QListWidget(this);
     d->subCategoriesBox->setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOn);
@@ -123,11 +117,10 @@ IPTCCategories::IPTCCategories(QWidget* const parent)
     // --------------------------------------------------------
 
     QLabel* const note = new QLabel(i18n("<b>Note: "
-                 "<b><a href='https://en.wikipedia.org/wiki/IPTC_Information_Interchange_Model'>IPTC</a></b> "
-                 "text tags only support the printable "
-                 "<b><a href='https://en.wikipedia.org/wiki/Ascii'>ASCII</a></b> "
-                 "characters and limit string sizes. "
-                 "Use contextual help for details.</b>"), this);
+                 "<a href='https://en.wikipedia.org/wiki/IPTC_Information_Interchange_Model'>IPTC</a> "
+                 "text tags are limited string sizes. Use contextual help for details. "
+                 "Considere to use <a href='https://en.wikipedia.org/wiki/Extensible_Metadata_Platform'>XMP</a> instead.</b>"),
+                 this);
     note->setMaximumWidth(150);
     note->setOpenExternalLinks(true);
     note->setWordWrap(true);
@@ -193,6 +186,15 @@ IPTCCategories::IPTCCategories(QWidget* const parent)
 
     connect(d->categoryEdit, SIGNAL(textChanged(QString)),
             this, SIGNAL(signalModified()));
+
+    connect(d->categoryEdit, SIGNAL(textChanged(QString)),
+            this, SLOT(slotLineEditModified()));
+
+    connect(d->subCategoryEdit, SIGNAL(textChanged(QString)),
+            this, SIGNAL(signalModified()));
+
+    connect(d->subCategoryEdit, SIGNAL(textChanged(QString)),
+            this, SLOT(slotLineEditModified()));
 }
 
 IPTCCategories::~IPTCCategories()
@@ -259,6 +261,20 @@ void IPTCCategories::slotAddCategory()
         d->subCategoriesBox->insertItem(d->subCategoriesBox->count(), newCategory);
         d->subCategoryEdit->clear();
     }
+}
+
+void IPTCCategories::slotLineEditModified()
+{
+    QLineEdit* const ledit = dynamic_cast<QLineEdit*>(sender());
+
+    if (!ledit)
+    {
+        return;
+    }
+
+    QToolTip::showText(ledit->mapToGlobal(QPoint(0, (-1)*(ledit->height() + 16))),
+                       i18np("%1 character left", "%1 characters left", ledit->maxLength() - ledit->text().size()),
+                       ledit);
 }
 
 void IPTCCategories::readMetadata(QByteArray& iptcData)

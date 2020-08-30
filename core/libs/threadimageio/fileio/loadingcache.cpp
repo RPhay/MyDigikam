@@ -248,15 +248,11 @@ void LoadingCache::removeLoadingProcess(LoadingProcess* const process)
 
 void LoadingCache::notifyNewLoadingProcess(LoadingProcess* const process, const LoadingDescription& description)
 {
-    Q_UNUSED(process);
-    Q_UNUSED(description);
-/*
     for (QMap<QString, LoadingProcess*>::const_iterator it = d->loadingDict.constBegin() ;
          it != d->loadingDict.constEnd() ; ++it)
     {
         it.value()->notifyNewLoadingProcess(process, description);
     }
-*/
 }
 
 void LoadingCache::setCacheSize(int megabytes)
@@ -285,9 +281,13 @@ bool LoadingCache::hasThumbnailPixmap(const QString& cacheKey) const
 void LoadingCache::putThumbnail(const QString& cacheKey, const QImage& thumb, const QString& filePath)
 {
 #if (QT_VERSION >= QT_VERSION_CHECK(5, 10, 0))
+
     int cost = thumb.sizeInBytes();
+
 #else
+
     int cost = thumb.byteCount();
+
 #endif
 
     if (d->thumbnailImageCache.insert(cacheKey, new QImage(thumb), cost))

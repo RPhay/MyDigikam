@@ -96,6 +96,7 @@ void CamItemSortSettings::setSortRole(SortRole role)
 void CamItemSortSettings::setSortOrder(SortOrder order)
 {
     sortOrder = order;
+    setCategorizationSortOrder(order);
 
     if (sortOrder == DefaultOrder)
     {

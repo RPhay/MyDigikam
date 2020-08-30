@@ -78,7 +78,7 @@ public:
     SqueezedComboBox* dataList;
 };
 
-ObjectAttributesEdit::ObjectAttributesEdit(QWidget* const parent, bool ascii, int size)
+ObjectAttributesEdit::ObjectAttributesEdit(QWidget* const parent, int size)
     : QWidget(parent),
       d(new Private)
 {
@@ -137,41 +137,27 @@ ObjectAttributesEdit::ObjectAttributesEdit(QWidget* const parent, bool ascii, in
     d->valueEdit = new QLineEdit(this);
     d->valueEdit->setClearButtonEnabled(true);
     QString whatsThis = i18n("Set here the editorial attribute description of "
-                             "content. This field is limited to 64 ASCII characters.");
-
-    if (ascii || (size != -1))
-    {
-        whatsThis.append(i18n(" This field is limited to:"));
-    }
-
-    if (ascii)
-    {
-        // IPTC only accept printable Ascii char.
-
-        QRegExp asciiRx(QLatin1String("[\x20-\x7F]+$"));
-        QValidator* const asciiValidator = new QRegExpValidator(asciiRx, this);
-        d->valueEdit->setValidator(asciiValidator);
-        whatsThis.append(i18n("<p>Printable ASCII characters.</p>"));
-    }
+                             "content.");
 
     if (size != -1)
     {
+        whatsThis.append(i18n(" This field is limited to "));
         d->valueEdit->setMaxLength(size);
-        whatsThis.append(i18np("<p>1 character.</p>","<p>%1 characters.</p>", size));
+        whatsThis.append(i18np("%1 character.","%1 characters.", size));
     }
 
     d->valueEdit->setWhatsThis(whatsThis);
 
     // --------------------------------------------------------
 
-    grid->setAlignment( Qt::AlignTop );
-    grid->addWidget(d->valueCheck,      0, 0, 1, 1);
-    grid->addWidget(d->addValueButton,  0, 1, 1, 1);
-    grid->addWidget(d->delValueButton,  0, 2, 1, 1);
-    grid->addWidget(d->repValueButton,  0, 3, 1, 1);
-    grid->addWidget(d->valueBox,        0, 4, 4, 1);
-    grid->addWidget(d->dataList,        1, 0, 1, 4);
-    grid->addWidget(d->valueEdit,       2, 0, 1, 4);
+    grid->setAlignment(Qt::AlignTop);
+    grid->addWidget(d->valueCheck,     0, 0, 1, 1);
+    grid->addWidget(d->addValueButton, 0, 1, 1, 1);
+    grid->addWidget(d->delValueButton, 0, 2, 1, 1);
+    grid->addWidget(d->repValueButton, 0, 3, 1, 1);
+    grid->addWidget(d->valueBox,       0, 4, 4, 1);
+    grid->addWidget(d->dataList,       1, 0, 1, 4);
+    grid->addWidget(d->valueEdit,      2, 0, 1, 4);
     grid->setRowStretch(3, 10);
     grid->setColumnStretch(0, 10);
     grid->setColumnStretch(4, 100);
@@ -230,6 +216,11 @@ ObjectAttributesEdit::ObjectAttributesEdit(QWidget* const parent, bool ascii, in
 ObjectAttributesEdit::~ObjectAttributesEdit()
 {
     delete d;
+}
+
+QLineEdit* ObjectAttributesEdit::valueEdit() const
+{
+    return d->valueEdit;
 }
 
 void ObjectAttributesEdit::slotDeleteValue()

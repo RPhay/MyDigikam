@@ -55,6 +55,11 @@ Q_SIGNALS:
 
     void signalModified();
 
+private Q_SLOTS:
+
+    void slotCaptionLeftCharacters();
+    void slotLineEditModified();
+
 private:
 
     class Private;

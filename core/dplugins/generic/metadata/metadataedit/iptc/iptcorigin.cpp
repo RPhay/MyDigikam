@@ -29,13 +29,13 @@
 #include <QMap>
 #include <QPushButton>
 #include <QTimeEdit>
-#include <QValidator>
 #include <QGridLayout>
 #include <QApplication>
 #include <QStyle>
 #include <QComboBox>
 #include <QDateEdit>
 #include <QLineEdit>
+#include <QToolTip>
 
 // KDE includes
 
@@ -124,13 +124,7 @@ IPTCOrigin::IPTCOrigin(QWidget* const parent)
       d(new Private)
 {
     QGridLayout* const grid = new QGridLayout(this);
-
-    // IPTC only accept printable Ascii char.
-
-    QRegExp asciiRx(QLatin1String("[\x20-\x7F]+$"));
-    QValidator* const asciiValidator = new QRegExpValidator(asciiRx, this);
-
-    QString dateFormat  = QLocale().dateFormat(QLocale::ShortFormat);
+    QString dateFormat      = QLocale().dateFormat(QLocale::ShortFormat);
 
     if (!dateFormat.contains(QLatin1String("yyyy")))
     {
@@ -202,17 +196,15 @@ IPTCOrigin::IPTCOrigin(QWidget* const parent)
     d->cityCheck = new QCheckBox(i18n("City:"), this);
     d->cityEdit  = new QLineEdit(this);
     d->cityEdit->setClearButtonEnabled(true);
-    d->cityEdit->setValidator(asciiValidator);
     d->cityEdit->setMaxLength(32);
     d->cityEdit->setWhatsThis(i18n("Set here the city of content origin. "
-                                   "This field is limited to 32 ASCII characters."));
+                                   "This field is limited to 32 characters."));
 
     // --------------------------------------------------------
 
     d->sublocationCheck = new QCheckBox(i18n("Sublocation:"), this);
     d->sublocationEdit  = new QLineEdit(this);
     d->sublocationEdit->setClearButtonEnabled(true);
-    d->sublocationEdit->setValidator(asciiValidator);
     d->sublocationEdit->setMaxLength(32);
     d->sublocationEdit->setWhatsThis(i18n("Set here the content location within city. "
                                           "This field is limited to 32 ASCII characters."));
@@ -222,10 +214,9 @@ IPTCOrigin::IPTCOrigin(QWidget* const parent)
     d->provinceCheck = new QCheckBox(i18n("State/Province:"), this);
     d->provinceEdit  = new QLineEdit(this);
     d->provinceEdit->setClearButtonEnabled(true);
-    d->provinceEdit->setValidator(asciiValidator);
     d->provinceEdit->setMaxLength(32);
     d->provinceEdit->setWhatsThis(i18n("Set here the Province or State of content origin. "
-                                       "This field is limited to 32 ASCII characters."));
+                                       "This field is limited to 32 characters."));
 
     // --------------------------------------------------------
 
@@ -250,11 +241,10 @@ IPTCOrigin::IPTCOrigin(QWidget* const parent)
     // --------------------------------------------------------
 
     QLabel* const note = new QLabel(i18n("<b>Note: "
-                 "<b><a href='https://en.wikipedia.org/wiki/IPTC_Information_Interchange_Model'>IPTC</a></b> "
-                 "text tags only support the printable "
-                 "<b><a href='https://en.wikipedia.org/wiki/Ascii'>ASCII</a></b> "
-                 "characters and limit string sizes. "
-                 "Use contextual help for details.</b>"), this);
+                 "<a href='https://en.wikipedia.org/wiki/IPTC_Information_Interchange_Model'>IPTC</a> "
+                 "text tags are limited string sizes. Use contextual help for details. "
+                 "Considere to use <a href='https://en.wikipedia.org/wiki/Extensible_Metadata_Platform'>XMP</a> instead.</b>"),
+                 this);
     note->setOpenExternalLinks(true);
     note->setWordWrap(true);
     note->setFrameStyle(QFrame::StyledPanel | QFrame::Raised);
@@ -390,11 +380,20 @@ IPTCOrigin::IPTCOrigin(QWidget* const parent)
     connect(d->cityEdit, SIGNAL(textChanged(QString)),
             this, SIGNAL(signalModified()));
 
+    connect(d->cityEdit, SIGNAL(textChanged(QString)),
+            this, SLOT(slotLineEditModified()));
+
     connect(d->sublocationEdit, SIGNAL(textChanged(QString)),
             this, SIGNAL(signalModified()));
 
+    connect(d->sublocationEdit, SIGNAL(textChanged(QString)),
+            this, SLOT(slotLineEditModified()));
+
     connect(d->provinceEdit, SIGNAL(textChanged(QString)),
             this, SIGNAL(signalModified()));
+
+    connect(d->provinceEdit, SIGNAL(textChanged(QString)),
+            this, SLOT(slotLineEditModified()));
 }
 
 IPTCOrigin::~IPTCOrigin()
@@ -429,6 +428,20 @@ void IPTCOrigin::setCheckedSyncEXIFDate(bool c)
 QDateTime IPTCOrigin::getIPTCCreationDate() const
 {
     return QDateTime(d->dateCreatedSel->date(), d->timeCreatedSel->time());
+}
+
+void IPTCOrigin::slotLineEditModified()
+{
+    QLineEdit* const ledit = dynamic_cast<QLineEdit*>(sender());
+
+    if (!ledit)
+    {
+        return;
+    }
+
+    QToolTip::showText(ledit->mapToGlobal(QPoint(0, (-1)*(ledit->height() + 16))),
+                       i18np("%1 character left", "%1 characters left", ledit->maxLength() - ledit->text().size()),
+                       ledit);
 }
 
 void IPTCOrigin::readMetadata(QByteArray& iptcData)

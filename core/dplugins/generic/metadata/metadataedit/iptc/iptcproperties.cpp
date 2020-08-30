@@ -28,13 +28,13 @@
 #include <QLabel>
 #include <QPushButton>
 #include <QTimeEdit>
-#include <QValidator>
 #include <QGridLayout>
 #include <QLineEdit>
 #include <QComboBox>
 #include <QDateEdit>
 #include <QApplication>
 #include <QStyle>
+#include <QToolTip>
 
 // KDE includes
 
@@ -126,12 +126,7 @@ IPTCProperties::IPTCProperties(QWidget* const parent)
       d(new Private)
 {
     QGridLayout* const grid = new QGridLayout(this);
-
-    // IPTC only accept printable Ascii char.
-    QRegExp asciiRx(QLatin1String("[\x20-\x7F]+$"));
-    QValidator* const asciiValidator = new QRegExpValidator(asciiRx, this);
-
-    QString dateFormat  = QLocale().dateFormat(QLocale::ShortFormat);
+    QString dateFormat      = QLocale().dateFormat(QLocale::ShortFormat);
 
     if (!dateFormat.contains(QLatin1String("yyyy")))
     {
@@ -236,37 +231,34 @@ IPTCProperties::IPTCProperties(QWidget* const parent)
     d->objectTypeCB       = new QComboBox(this);
     d->objectTypeDescEdit = new QLineEdit(this);
     d->objectTypeDescEdit->setClearButtonEnabled(true);
-    d->objectTypeDescEdit->setValidator(asciiValidator);
     d->objectTypeDescEdit->setMaxLength(64);
     d->objectTypeCB->insertItem(0, i18n("News"));
     d->objectTypeCB->insertItem(1, i18n("Data"));
     d->objectTypeCB->insertItem(2, i18n("Advisory"));
     d->objectTypeCB->setWhatsThis(i18n("Select here the editorial type of content."));
     d->objectTypeDescEdit->setWhatsThis(i18n("Set here the editorial type description of content. "
-                                             "This field is limited to 64 ASCII characters."));
+                                             "This field is limited to 64 characters."));
 
     // --------------------------------------------------------
 
-    d->objectAttribute = new ObjectAttributesEdit(this, true, 64);
+    d->objectAttribute = new ObjectAttributesEdit(this, 64);
 
     // --------------------------------------------------------
 
     d->originalTransCheck = new QCheckBox(i18n("Reference:"), this);
     d->originalTransEdit  = new QLineEdit(this);
     d->originalTransEdit->setClearButtonEnabled(true);
-    d->originalTransEdit->setValidator(asciiValidator);
     d->originalTransEdit->setMaxLength(32);
     d->originalTransEdit->setWhatsThis(i18n("Set here the original content transmission "
-                                            "reference. This field is limited to 32 ASCII characters."));
+                                            "reference. This field is limited to 32 characters."));
 
     // --------------------------------------------------------
 
     QLabel* const note = new QLabel(i18n("<b>Note: "
-                 "<b><a href='https://en.wikipedia.org/wiki/IPTC_Information_Interchange_Model'>IPTC</a></b> "
-                 "text tags only support the printable "
-                 "<b><a href='https://en.wikipedia.org/wiki/Ascii'>ASCII</a></b> "
-                 "characters and limit string sizes. "
-                 "Use contextual help for details.</b>"), this);
+                 "<a href='https://en.wikipedia.org/wiki/IPTC_Information_Interchange_Model'>IPTC</a> "
+                 "text tags are limited string sizes. Use contextual help for details. "
+                 "Considere to use <a href='https://en.wikipedia.org/wiki/Extensible_Metadata_Platform'>XMP</a> instead.</b>"),
+                 this);
     note->setOpenExternalLinks(true);
     note->setWordWrap(true);
     note->setFrameStyle(QFrame::StyledPanel | QFrame::Raised);
@@ -421,8 +413,17 @@ IPTCProperties::IPTCProperties(QWidget* const parent)
     connect(d->objectTypeDescEdit, SIGNAL(textChanged(QString)),
             this, SIGNAL(signalModified()));
 
+    connect(d->objectTypeDescEdit, SIGNAL(textChanged(QString)),
+            this, SLOT(slotLineEditModified()));
+
     connect(d->originalTransEdit, SIGNAL(textChanged(QString)),
             this, SIGNAL(signalModified()));
+
+    connect(d->originalTransEdit, SIGNAL(textChanged(QString)),
+            this, SLOT(slotLineEditModified()));
+
+    connect(d->objectAttribute->valueEdit(), SIGNAL(textChanged(QString)),
+            this, SLOT(slotLineEditModified()));
 }
 
 IPTCProperties::~IPTCProperties()
@@ -442,6 +443,20 @@ void IPTCProperties::slotSetTodayExpired()
     d->dateExpiredSel->setDate(QDate::currentDate());
     d->timeExpiredSel->setTime(QTime::currentTime());
     d->zoneExpiredSel->setToUTC();
+}
+
+void IPTCProperties::slotLineEditModified()
+{
+    QLineEdit* const ledit = dynamic_cast<QLineEdit*>(sender());
+
+    if (!ledit)
+    {
+        return;
+    }
+
+    QToolTip::showText(ledit->mapToGlobal(QPoint(0, (-1)*(ledit->height() + 16))),
+                       i18np("%1 character left", "%1 characters left", ledit->maxLength() - ledit->text().size()),
+                       ledit);
 }
 
 void IPTCProperties::readMetadata(QByteArray& iptcData)
