@@ -174,8 +174,14 @@ IPTCCredits::IPTCCredits(QWidget* const parent)
     connect(d->bylineEdit, SIGNAL(signalModified()),
             this, SIGNAL(signalModified()));
 
+    connect(d->bylineEdit->valueEdit(), SIGNAL(textChanged(QString)),
+            this, SLOT(slotLineEditModified()));
+
     connect(d->bylineTitleEdit, SIGNAL(signalModified()),
             this, SIGNAL(signalModified()));
+
+    connect(d->bylineTitleEdit->valueEdit(), SIGNAL(textChanged(QString)),
+            this, SLOT(slotLineEditModified()));
 
     connect(d->creditCheck, SIGNAL(toggled(bool)),
             this, SIGNAL(signalModified()));
@@ -185,6 +191,9 @@ IPTCCredits::IPTCCredits(QWidget* const parent)
 
     connect(d->contactEdit, SIGNAL(signalModified()),
             this, SIGNAL(signalModified()));
+
+    connect(d->contactEdit->valueEdit(), SIGNAL(textChanged(QString)),
+            this, SLOT(slotLineEditModified()));
 
     // --------------------------------------------------------
 
