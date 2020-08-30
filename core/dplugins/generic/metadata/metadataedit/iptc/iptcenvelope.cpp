@@ -444,7 +444,7 @@ void IPTCEnvelope::slotSetTodaySent()
 
 void IPTCEnvelope::slotDestinationLeftCharacters()
 {
-    QToolTip::showText(d->destinationCheck->mapToGlobal(QPoint(0, -10)),
+    QToolTip::showText(d->destinationCheck->mapToGlobal(QPoint(0, -16)),
                        i18np("%1 character left", "%1 characters left", d->destinationEdit->maxLength() - d->destinationEdit->toPlainText().size()),
                        d->destinationEdit);
 }
@@ -458,7 +458,7 @@ void IPTCEnvelope::slotLineEditModified()
         return;
     }
 
-    QToolTip::showText(ledit->mapToGlobal(QPoint(0, (-1)*(ledit->height() + 10))),
+    QToolTip::showText(ledit->mapToGlobal(QPoint(0, (-1)*(ledit->height() + 16))),
                        i18np("%1 character left", "%1 characters left", ledit->maxLength() - ledit->text().size()),
                        ledit);
 }

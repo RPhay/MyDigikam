@@ -215,7 +215,7 @@ void IPTCContent::setCheckedSyncEXIFComment(bool c)
 
 void IPTCContent::slotCaptionLeftCharacters()
 {
-    QToolTip::showText(d->captionCheck->mapToGlobal(QPoint(0, -10)),
+    QToolTip::showText(d->captionCheck->mapToGlobal(QPoint(0, -16)),
                        i18np("%1 character left", "%1 characters left", d->captionEdit->maxLength() - d->captionEdit->toPlainText().size()),
                        d->captionEdit);
 }
@@ -229,7 +229,7 @@ void IPTCContent::slotLineEditModified()
         return;
     }
 
-    QToolTip::showText(ledit->mapToGlobal(QPoint(0, (-1)*(ledit->height() + 10))),
+    QToolTip::showText(ledit->mapToGlobal(QPoint(0, (-1)*(ledit->height() + 16))),
                        i18np("%1 character left", "%1 characters left", ledit->maxLength() - ledit->text().size()),
                        ledit);
 }

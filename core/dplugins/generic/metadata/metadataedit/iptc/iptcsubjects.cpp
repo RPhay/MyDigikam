@@ -23,6 +23,10 @@
 
 #include "iptcsubjects.h"
 
+// Qt includes
+
+#include <QToolTip>
+
 // KDE includes
 
 #include <klocalizedstring.h>
@@ -31,7 +35,7 @@ namespace DigikamGenericMetadataEditPlugin
 {
 
 IPTCSubjects::IPTCSubjects(QWidget* const parent)
-    : SubjectWidget(parent)
+    : SubjectWidget(parent, true)
 {
     m_iprDefault = QLatin1String("IPTC");
 
@@ -83,6 +87,21 @@ IPTCSubjects::IPTCSubjects(QWidget* const parent)
 
     m_subjectsCheck->setVisible(true);
     m_subjectsCheck->setEnabled(true);
+
+    connect(m_iprEdit, SIGNAL(textChanged(QString)),
+            this, SLOT(slotLineEditModified()));
+
+    connect(m_refEdit, SIGNAL(textChanged(QString)),
+            this, SLOT(slotLineEditModified()));
+
+    connect(m_nameEdit, SIGNAL(textChanged(QString)),
+            this, SLOT(slotLineEditModified()));
+
+    connect(m_matterEdit, SIGNAL(textChanged(QString)),
+            this, SLOT(slotLineEditModified()));
+
+    connect(m_detailEdit, SIGNAL(textChanged(QString)),
+            this, SLOT(slotLineEditModified()));
 }
 
 IPTCSubjects::~IPTCSubjects()
@@ -112,6 +131,20 @@ void IPTCSubjects::applyMetadata(QByteArray& iptcData)
     }
 
     iptcData = meta.getIptc();
+}
+
+void IPTCSubjects::slotLineEditModified()
+{
+    QLineEdit* const ledit = dynamic_cast<QLineEdit*>(sender());
+
+    if (!ledit)
+    {
+        return;
+    }
+
+    QToolTip::showText(ledit->mapToGlobal(QPoint(0, (-1)*(ledit->height() + 16))),
+                       i18np("%1 character left", "%1 characters left", ledit->maxLength() - ledit->text().size()),
+                       ledit);
 }
 
 } // namespace DigikamGenericMetadataEditPlugin

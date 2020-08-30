@@ -231,7 +231,7 @@ void IPTCCredits::slotLineEditModified()
         return;
     }
 
-    QToolTip::showText(ledit->mapToGlobal(QPoint(0, (-1)*(ledit->height() + 10))),
+    QToolTip::showText(ledit->mapToGlobal(QPoint(0, (-1)*(ledit->height() + 16))),
                        i18np("%1 character left", "%1 characters left", ledit->maxLength() - ledit->text().size()),
                        ledit);
 }

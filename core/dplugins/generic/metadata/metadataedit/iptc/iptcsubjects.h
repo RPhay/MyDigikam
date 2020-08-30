@@ -50,6 +50,10 @@ public:
 
     void applyMetadata(QByteArray& iptcData);
     void readMetadata(QByteArray& iptcData);
+
+private Q_SLOTS:
+
+    void slotLineEditModified();
 };
 
 } // namespace DigikamGenericMetadataEditPlugin
