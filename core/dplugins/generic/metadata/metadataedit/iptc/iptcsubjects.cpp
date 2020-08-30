@@ -77,9 +77,9 @@ IPTCSubjects::IPTCSubjects(QWidget* const parent)
                                     "This field is limited to 64 characters."));
 
     m_note->setText(i18n("<b>Note: "
-                 "<b><a href='https://en.wikipedia.org/wiki/IPTC_Information_Interchange_Model'>IPTC</a></b> "
-                 "text tags are limited string sizes. "
-                 "Use contextual help for details.</b>"));
+                 "<a href='https://en.wikipedia.org/wiki/IPTC_Information_Interchange_Model'>IPTC</a> "
+                 "text tags are limited string sizes. Use contextual help for details. "
+                 "Considere to use <a href='https://en.wikipedia.org/wiki/Extensible_Metadata_Platform'>XMP</a> instead.</b>"));
 
     m_subjectsCheck->setVisible(true);
     m_subjectsCheck->setEnabled(true);
@@ -103,9 +103,13 @@ void IPTCSubjects::applyMetadata(QByteArray& iptcData)
     QStringList newSubjects = subjectsList();
 
     if (m_subjectsCheck->isChecked())
+    {
         meta.setIptcSubjects(meta.getIptcSubjects(), newSubjects);
+    }
     else
+    {
         meta.setIptcSubjects(meta.getIptcSubjects(), QStringList());
+    }
 
     iptcData = meta.getIptc();
 }

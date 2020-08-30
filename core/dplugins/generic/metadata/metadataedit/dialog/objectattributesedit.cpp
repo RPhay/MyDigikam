@@ -137,7 +137,7 @@ ObjectAttributesEdit::ObjectAttributesEdit(QWidget* const parent, int size)
     d->valueEdit = new QLineEdit(this);
     d->valueEdit->setClearButtonEnabled(true);
     QString whatsThis = i18n("Set here the editorial attribute description of "
-                             "content. This field is limited to 64 ASCII characters.");
+                             "content. This field is limited to 64 characters.");
 
     if (size != -1)
     {
