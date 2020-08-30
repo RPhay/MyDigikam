@@ -95,13 +95,13 @@ IPTCCredits::IPTCCredits(QWidget* const parent)
 
     d->bylineEdit  = new MultiStringsEdit(this, i18n("Byline:"),
                                           i18n("Set here the name of content creator."),
-                                          true, 32);
+                                          32);
 
     // --------------------------------------------------------
 
     d->bylineTitleEdit  = new MultiStringsEdit(this, i18n("Byline Title:"),
                                                i18n("Set here the title of content creator."),
-                                               true, 32);
+                                               32);
 
     // --------------------------------------------------------
 
@@ -125,7 +125,7 @@ IPTCCredits::IPTCCredits(QWidget* const parent)
 
     d->contactEdit  = new MultiStringsEdit(this, i18n("Contact:"),
                                            i18n("Set here the person or organization to contact."),
-                                           true, 128);
+                                           128);
 
     // --------------------------------------------------------
 

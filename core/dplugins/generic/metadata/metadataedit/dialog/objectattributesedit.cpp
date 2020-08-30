@@ -78,7 +78,7 @@ public:
     SqueezedComboBox* dataList;
 };
 
-ObjectAttributesEdit::ObjectAttributesEdit(QWidget* const parent, bool ascii, int size)
+ObjectAttributesEdit::ObjectAttributesEdit(QWidget* const parent, int size, bool ascii)
     : QWidget(parent),
       d(new Private)
 {

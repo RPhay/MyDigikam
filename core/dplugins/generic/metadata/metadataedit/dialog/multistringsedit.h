@@ -37,7 +37,7 @@ class MultiStringsEdit : public QWidget
 public:
 
     explicit MultiStringsEdit(QWidget* const parent, const QString& title,
-                              const QString& desc, bool ascii=true, int size=-1);
+                              const QString& desc, int size=-1, bool ascii=false);
     ~MultiStringsEdit();
 
     void setValues(const QStringList& values);

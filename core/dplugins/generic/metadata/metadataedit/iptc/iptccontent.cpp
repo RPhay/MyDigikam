@@ -30,6 +30,7 @@
 #include <QApplication>
 #include <QStyle>
 #include <QLineEdit>
+#include <QToolTip>
 
 // KDE includes
 
@@ -110,7 +111,7 @@ IPTCContent::IPTCContent(QWidget* const parent)
 
     d->writerEdit  = new MultiStringsEdit(this, i18n("Caption Writer:"),
                                           i18n("Enter the name of the caption author."),
-                                          true, 32);
+                                          32);
 
     // --------------------------------------------------------
 
@@ -173,6 +174,9 @@ IPTCContent::IPTCContent(QWidget* const parent)
 
     connect(d->headlineEdit, SIGNAL(textChanged(QString)),
             this, SIGNAL(signalModified()));
+
+    connect(d->headlineEdit, SIGNAL(textChanged(QString)),
+            this, SLOT(slotLineEditModified()));
 }
 
 IPTCContent::~IPTCContent()
@@ -208,6 +212,21 @@ void IPTCContent::setCheckedSyncEXIFComment(bool c)
 void IPTCContent::slotCaptionLeftCharacters()
 {
     d->captionLeft->setText(i18n("%1 left", d->captionEdit->leftCharacters()));
+}
+
+void IPTCContent::slotLineEditModified()
+{
+    QLineEdit* const ledit = dynamic_cast<QLineEdit*>(sender());
+
+    if (!ledit)
+    {
+        qDebug() << "not from a QLineEdit";
+        return;
+    }
+
+    QToolTip::showText(ledit->mapToGlobal(QPoint(0, (-1)*(ledit->height() + 10))),
+                       i18n("%1 left", ledit->maxLength() - ledit->text().size()),
+                       ledit);
 }
 
 void IPTCContent::readMetadata(QByteArray& iptcData)

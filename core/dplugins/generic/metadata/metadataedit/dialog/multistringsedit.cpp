@@ -67,7 +67,7 @@ public:
 };
 
 MultiStringsEdit::MultiStringsEdit(QWidget* const parent, const QString& title,
-                                   const QString& desc, bool ascii, int size)
+                                   const QString& desc, int size, bool ascii)
     : QWidget(parent),
       d(new Private)
 {

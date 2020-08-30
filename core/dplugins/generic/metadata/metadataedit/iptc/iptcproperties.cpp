@@ -240,7 +240,7 @@ IPTCProperties::IPTCProperties(QWidget* const parent)
 
     // --------------------------------------------------------
 
-    d->objectAttribute = new ObjectAttributesEdit(this, true, 64);
+    d->objectAttribute = new ObjectAttributesEdit(this, 64);
 
     // --------------------------------------------------------
 
