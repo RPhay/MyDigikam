@@ -300,4 +300,14 @@ BUGFIXES:
 288 ==> 266684 - Writing metadata needs _hurting_ long times (247141 NOT resolved??).
 289 ==> 420601 - write metadata to a jpg file ok, but not for a jpeg file.
 290 ==> 421919 - Writing metadata not possible if path contains non-ANSI characters.
-291 ==> 
+291 ==> 122697 - Allows rotating of Nikon NEF raw files, but reduces it to only an icon. Original is gone.
+292 ==> 134487 - Keywords are not written to raw files even though they do embed iptc/exif.
+293 ==> 168064 - Save tag on raw files.
+294 ==> 224784 - Save changed exif data of raw files in extra file automatically.
+295 ==> 288513 - Use .thm files as sidecar when files are present (typical case for Canon camera about CR2 and MKV files).
+296 ==> 
+297 ==> 
+298 ==> 
+299 ==> 
+300 ==> 
+301 ==> 
