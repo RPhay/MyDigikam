@@ -58,6 +58,7 @@ private Q_SLOTS:
 
     void slotSetTodayCreated();
     void slotSetTodayDigitalized();
+    void slotLineEditModified();
 
 private:
 

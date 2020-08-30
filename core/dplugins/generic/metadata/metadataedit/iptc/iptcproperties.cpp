@@ -34,6 +34,7 @@
 #include <QDateEdit>
 #include <QApplication>
 #include <QStyle>
+#include <QToolTip>
 
 // KDE includes
 
@@ -411,8 +412,14 @@ IPTCProperties::IPTCProperties(QWidget* const parent)
     connect(d->objectTypeDescEdit, SIGNAL(textChanged(QString)),
             this, SIGNAL(signalModified()));
 
+    connect(d->objectTypeDescEdit, SIGNAL(textChanged(QString)),
+            this, SLOT(slotLineEditModified()));
+
     connect(d->originalTransEdit, SIGNAL(textChanged(QString)),
             this, SIGNAL(signalModified()));
+
+    connect(d->originalTransEdit, SIGNAL(textChanged(QString)),
+            this, SLOT(slotLineEditModified()));
 }
 
 IPTCProperties::~IPTCProperties()
@@ -432,6 +439,20 @@ void IPTCProperties::slotSetTodayExpired()
     d->dateExpiredSel->setDate(QDate::currentDate());
     d->timeExpiredSel->setTime(QTime::currentTime());
     d->zoneExpiredSel->setToUTC();
+}
+
+void IPTCProperties::slotLineEditModified()
+{
+    QLineEdit* const ledit = dynamic_cast<QLineEdit*>(sender());
+
+    if (!ledit)
+    {
+        return;
+    }
+
+    QToolTip::showText(ledit->mapToGlobal(QPoint(0, (-1)*(ledit->height() + 10))),
+                       i18n("%1 left", ledit->maxLength() - ledit->text().size()),
+                       ledit);
 }
 
 void IPTCProperties::readMetadata(QByteArray& iptcData)

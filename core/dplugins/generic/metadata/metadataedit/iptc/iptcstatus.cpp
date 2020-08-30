@@ -30,6 +30,7 @@
 #include <QApplication>
 #include <QStyle>
 #include <QLineEdit>
+#include <QToolTip>
 
 // KDE includes
 
@@ -53,9 +54,9 @@ public:
     explicit Private()
     {
         statusEdit              = nullptr;
-        JobIDEdit               = nullptr;
+        jobIDEdit               = nullptr;
         statusCheck             = nullptr;
-        JobIDCheck              = nullptr;
+        jobIDCheck              = nullptr;
         specialInstructionLeft  = nullptr;
         specialInstructionEdit  = nullptr;
         specialInstructionCheck = nullptr;
@@ -64,13 +65,13 @@ public:
     }
 
     QCheckBox*       statusCheck;
-    QCheckBox*       JobIDCheck;
+    QCheckBox*       jobIDCheck;
     QCheckBox*       specialInstructionCheck;
     QCheckBox*       objectNameCheck;
 
     QLineEdit*       objectNameEdit;
     QLineEdit*       statusEdit;
-    QLineEdit*       JobIDEdit;
+    QLineEdit*       jobIDEdit;
 
     QLabel*          specialInstructionLeft;
     LimitedTextEdit* specialInstructionEdit;
@@ -102,11 +103,11 @@ IPTCStatus::IPTCStatus(QWidget* const parent)
 
     // --------------------------------------------------------
 
-    d->JobIDCheck = new QCheckBox(i18n("Job Identifier:"), this);
-    d->JobIDEdit  = new QLineEdit(this);
-    d->JobIDEdit->setClearButtonEnabled(true);
-    d->JobIDEdit->setMaxLength(32);
-    d->JobIDEdit->setWhatsThis(i18n("Set here the string that identifies content that recurs. "
+    d->jobIDCheck = new QCheckBox(i18n("Job Identifier:"), this);
+    d->jobIDEdit  = new QLineEdit(this);
+    d->jobIDEdit->setClearButtonEnabled(true);
+    d->jobIDEdit->setMaxLength(32);
+    d->jobIDEdit->setWhatsThis(i18n("Set here the string that identifies content that recurs. "
                                     "This field is limited to 32 characters."));
 
     // --------------------------------------------------------
@@ -137,8 +138,8 @@ IPTCStatus::IPTCStatus(QWidget* const parent)
     grid->addWidget(d->objectNameEdit,          0, 1, 1, 2);
     grid->addWidget(d->statusCheck,             1, 0, 1, 1);
     grid->addWidget(d->statusEdit,              1, 1, 1, 2);
-    grid->addWidget(d->JobIDCheck,              2, 0, 1, 1);
-    grid->addWidget(d->JobIDEdit,               2, 1, 1, 2);
+    grid->addWidget(d->jobIDCheck,              2, 0, 1, 1);
+    grid->addWidget(d->jobIDEdit,               2, 1, 1, 2);
     grid->addWidget(instHeader,                 3, 0, 1, 3);
     grid->addWidget(d->specialInstructionEdit,  4, 0, 1, 3);
     grid->addWidget(note,                       9, 0, 1, 3);
@@ -155,8 +156,8 @@ IPTCStatus::IPTCStatus(QWidget* const parent)
     connect(d->statusCheck, SIGNAL(toggled(bool)),
             d->statusEdit, SLOT(setEnabled(bool)));
 
-    connect(d->JobIDCheck, SIGNAL(toggled(bool)),
-            d->JobIDEdit, SLOT(setEnabled(bool)));
+    connect(d->jobIDCheck, SIGNAL(toggled(bool)),
+            d->jobIDEdit, SLOT(setEnabled(bool)));
 
     connect(d->specialInstructionCheck, SIGNAL(toggled(bool)),
             d->specialInstructionEdit, SLOT(setEnabled(bool)));
@@ -169,7 +170,7 @@ IPTCStatus::IPTCStatus(QWidget* const parent)
     connect(d->statusCheck, SIGNAL(toggled(bool)),
             this, SIGNAL(signalModified()));
 
-    connect(d->JobIDCheck, SIGNAL(toggled(bool)),
+    connect(d->jobIDCheck, SIGNAL(toggled(bool)),
             this, SIGNAL(signalModified()));
 
     connect(d->specialInstructionCheck, SIGNAL(toggled(bool)),
@@ -180,11 +181,20 @@ IPTCStatus::IPTCStatus(QWidget* const parent)
     connect(d->objectNameEdit, SIGNAL(textChanged(QString)),
             this, SIGNAL(signalModified()));
 
+    connect(d->objectNameEdit, SIGNAL(textChanged(QString)),
+            this, SLOT(slotLineEditModified()));
+
     connect(d->statusEdit, SIGNAL(textChanged(QString)),
             this, SIGNAL(signalModified()));
 
-    connect(d->JobIDEdit, SIGNAL(textChanged(QString)),
+    connect(d->statusEdit, SIGNAL(textChanged(QString)),
+            this, SLOT(slotLineEditModified()));
+
+    connect(d->jobIDEdit, SIGNAL(textChanged(QString)),
             this, SIGNAL(signalModified()));
+
+    connect(d->jobIDEdit, SIGNAL(textChanged(QString)),
+            this, SLOT(slotLineEditModified()));
 
     connect(d->specialInstructionEdit, SIGNAL(textChanged()),
             this, SIGNAL(signalModified()));
@@ -201,6 +211,20 @@ IPTCStatus::~IPTCStatus()
 void IPTCStatus::slotSpecialInstructionLeftCharacters()
 {
     d->specialInstructionLeft->setText(i18n("%1 left", d->specialInstructionEdit->leftCharacters()));
+}
+
+void IPTCStatus::slotLineEditModified()
+{
+    QLineEdit* const ledit = dynamic_cast<QLineEdit*>(sender());
+
+    if (!ledit)
+    {
+        return;
+    }
+
+    QToolTip::showText(ledit->mapToGlobal(QPoint(0, (-1)*(ledit->height() + 10))),
+                       i18n("%1 left", ledit->maxLength() - ledit->text().size()),
+                       ledit);
 }
 
 void IPTCStatus::readMetadata(QByteArray& iptcData)
@@ -236,17 +260,17 @@ void IPTCStatus::readMetadata(QByteArray& iptcData)
 
     d->statusEdit->setEnabled(d->statusCheck->isChecked());
 
-    d->JobIDEdit->clear();
-    d->JobIDCheck->setChecked(false);
+    d->jobIDEdit->clear();
+    d->jobIDCheck->setChecked(false);
     data = meta.getIptcTagString("Iptc.Application2.FixtureId", false);
 
     if (!data.isNull())
     {
-        d->JobIDEdit->setText(data);
-        d->JobIDCheck->setChecked(true);
+        d->jobIDEdit->setText(data);
+        d->jobIDCheck->setChecked(true);
     }
 
-    d->JobIDEdit->setEnabled(d->JobIDCheck->isChecked());
+    d->jobIDEdit->setEnabled(d->jobIDCheck->isChecked());
 
     d->specialInstructionEdit->clear();
     d->specialInstructionCheck->setChecked(false);
@@ -279,8 +303,8 @@ void IPTCStatus::applyMetadata(QByteArray& iptcData)
     else
         meta.removeIptcTag("Iptc.Application2.EditStatus");
 
-    if (d->JobIDCheck->isChecked())
-        meta.setIptcTagString("Iptc.Application2.FixtureId", d->JobIDEdit->text());
+    if (d->jobIDCheck->isChecked())
+        meta.setIptcTagString("Iptc.Application2.FixtureId", d->jobIDEdit->text());
     else
         meta.removeIptcTag("Iptc.Application2.FixtureId");
 

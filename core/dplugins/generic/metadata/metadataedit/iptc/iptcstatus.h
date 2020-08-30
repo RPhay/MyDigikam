@@ -50,6 +50,7 @@ Q_SIGNALS:
 private Q_SLOTS:
 
     void slotSpecialInstructionLeftCharacters();
+    void slotLineEditModified();
 
 private:
 
