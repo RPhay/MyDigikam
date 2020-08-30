@@ -58,7 +58,7 @@ public:
         repKeywordButton = nullptr;
         keywordsBox      = nullptr;
         keywordsCheck    = nullptr;
-        keywordEdit      = nullptr;
+        keywordsEdit     = nullptr;
     }
 
     QStringList  oldKeywords;
@@ -69,7 +69,7 @@ public:
 
     QCheckBox*   keywordsCheck;
 
-    QLineEdit*   keywordEdit;
+    QLineEdit*   keywordsEdit;
 
     QListWidget* keywordsBox;
 };
@@ -84,10 +84,10 @@ IPTCKeywords::IPTCKeywords(QWidget* const parent)
 
     d->keywordsCheck = new QCheckBox(i18n("Use information retrieval words:"), this);
 
-    d->keywordEdit   = new QLineEdit(this);
-    d->keywordEdit->setClearButtonEnabled(true);
-    d->keywordEdit->setMaxLength(64);
-    d->keywordEdit->setWhatsThis(i18n("Enter here a new keyword. "
+    d->keywordsEdit   = new QLineEdit(this);
+    d->keywordsEdit->setClearButtonEnabled(true);
+    d->keywordsEdit->setMaxLength(64);
+    d->keywordsEdit->setWhatsThis(i18n("Enter here a new keyword. "
                                       "This field is limited to 64 characters."));
 
     d->keywordsBox   = new QListWidget(this);
@@ -117,7 +117,7 @@ IPTCKeywords::IPTCKeywords(QWidget* const parent)
 
     grid->setAlignment( Qt::AlignTop );
     grid->addWidget(d->keywordsCheck,       0, 0, 1, 2);
-    grid->addWidget(d->keywordEdit,         1, 0, 1, 1);
+    grid->addWidget(d->keywordsEdit,         1, 0, 1, 1);
     grid->addWidget(d->keywordsBox,         2, 0, 5, 1);
     grid->addWidget(d->addKeywordButton,    2, 1, 1, 1);
     grid->addWidget(d->delKeywordButton,    3, 1, 1, 1);
@@ -145,7 +145,7 @@ IPTCKeywords::IPTCKeywords(QWidget* const parent)
     // --------------------------------------------------------
 
     connect(d->keywordsCheck, SIGNAL(toggled(bool)),
-            d->keywordEdit, SLOT(setEnabled(bool)));
+            d->keywordsEdit, SLOT(setEnabled(bool)));
 
     connect(d->keywordsCheck, SIGNAL(toggled(bool)),
             d->addKeywordButton, SLOT(setEnabled(bool)));
@@ -193,13 +193,13 @@ void IPTCKeywords::slotDelKeyword()
 
 void IPTCKeywords::slotRepKeyword()
 {
-    QString newKeyword = d->keywordEdit->text();
+    QString newKeyword = d->keywordsEdit->text();
     if (newKeyword.isEmpty()) return;
 
     if (!d->keywordsBox->selectedItems().isEmpty())
     {
         d->keywordsBox->selectedItems()[0]->setText(newKeyword);
-        d->keywordEdit->clear();
+        d->keywordsEdit->clear();
     }
 }
 
@@ -207,7 +207,7 @@ void IPTCKeywords::slotKeywordSelectionChanged()
 {
     if (!d->keywordsBox->selectedItems().isEmpty())
     {
-        d->keywordEdit->setText(d->keywordsBox->selectedItems()[0]->text());
+        d->keywordsEdit->setText(d->keywordsBox->selectedItems()[0]->text());
         d->delKeywordButton->setEnabled(true);
         d->repKeywordButton->setEnabled(true);
     }
@@ -220,7 +220,7 @@ void IPTCKeywords::slotKeywordSelectionChanged()
 
 void IPTCKeywords::slotAddKeyword()
 {
-    QString newKeyword = d->keywordEdit->text();
+    QString newKeyword = d->keywordsEdit->text();
     if (newKeyword.isEmpty()) return;
 
     bool found = false;
@@ -239,7 +239,7 @@ void IPTCKeywords::slotAddKeyword()
     if (!found)
     {
         d->keywordsBox->insertItem(d->keywordsBox->count(), newKeyword);
-        d->keywordEdit->clear();
+        d->keywordsEdit->clear();
     }
 }
 
@@ -273,7 +273,7 @@ void IPTCKeywords::readMetadata(QByteArray& iptcData)
         d->keywordsCheck->setChecked(true);
     }
 
-    d->keywordEdit->setEnabled(d->keywordsCheck->isChecked());
+    d->keywordsEdit->setEnabled(d->keywordsCheck->isChecked());
     d->keywordsBox->setEnabled(d->keywordsCheck->isChecked());
     d->addKeywordButton->setEnabled(d->keywordsCheck->isChecked());
     d->delKeywordButton->setEnabled(d->keywordsCheck->isChecked());

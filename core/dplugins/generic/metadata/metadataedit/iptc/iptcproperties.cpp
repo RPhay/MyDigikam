@@ -441,7 +441,7 @@ void IPTCProperties::slotSetTodayExpired()
     d->zoneExpiredSel->setToUTC();
 }
 
-void IPTCCredits::slotLineEditModified()
+void IPTCProperties::slotLineEditModified()
 {
     QLineEdit* const ledit = dynamic_cast<QLineEdit*>(sender());
 
