@@ -281,4 +281,23 @@ BUGFIXES:
 269 ==> 203967 - digiKam crashed when importing pictures.
 270 ==> 249302 - GROUP : writing metadata to grouped photos not only first one.
 271 ==> 222401 - Write only changed metadata to file using single button or on exit.
-272 ==> 
+272 ==> 247100 - Crash in Exiv2.
+273 ==> 286641 - digiKam crash while loading a new collection.
+274 ==> 264205 - Deleting/renaming image does not delete/rename the XMP sidecar.
+275 ==> 269467 - Writing metadata: strange observation.
+276 ==> 141479 - IPTC Action, no identity import in new IPTC field.
+277 ==> 277574 - Sidecar files are not moved with images moved using digiKam.
+278 ==> 338388 - digiKam doesn't translate GPSAreaInformation metadata character codes to string.
+279 ==> 339593 - Crash on opening.
+280 ==> 279159 - XMP sidecar is not copied along with files.
+281 ==> 281337 - XMP file is not copied when moving images.
+282 ==> 288842 - Tags not deleted from XMP, using Tag-Side-View on the left.
+283 ==> 202144 - Image tags written in meta-data as keyword : tag renaming is not written.
+284 ==> 196515 - Synchronize images doesn't update exif time tags in database.
+285 ==> 295182 - "adjust exif orientation tag" does not change the file.
+286 ==> 318473 - Dont import keywords from Windows Keywords.
+287 ==> 173632 - Transparent update of picture content and metadata after file update and on software start.
+288 ==> 266684 - Writing metadata needs _hurting_ long times (247141 NOT resolved??).
+289 ==> 420601 - write metadata to a jpg file ok, but not for a jpeg file.
+290 ==> 421919 - Writing metadata not possible if path contains non-ANSI characters.
+291 ==> 
