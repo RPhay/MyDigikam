@@ -40,8 +40,13 @@ public:
     explicit XMPCredits(QWidget* const parent);
     ~XMPCredits();
 
-    void applyMetadata(QByteArray& xmpData);
+    void applyMetadata(QByteArray& exifData, QByteArray& xmpData);
     void readMetadata(QByteArray& xmpData);
+
+    bool syncEXIFArtistIsChecked() const;
+    void setCheckedSyncEXIFArtist(bool c);
+
+    QString getXMPByLine()         const;
 
 Q_SIGNALS:
 

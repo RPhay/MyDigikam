@@ -198,6 +198,7 @@ void XMPEditWidget::readSettings()
     d->contentPage->setCheckedSyncJFIFComment(group.readEntry(QLatin1String("All Sync JFIF Comment"),     true));
     d->contentPage->setCheckedSyncEXIFComment(group.readEntry(QLatin1String("All Sync EXIF Comment"),     true));
     d->contentPage->setCheckedSyncEXIFCopyright(group.readEntry(QLatin1String("All Sync EXIF Copyright"), true));
+    d->creditsPage->setCheckedSyncEXIFArtist(group.readEntry(QLatin1String("All Sync EXIF Artist"),       true));
     d->originPage->setCheckedSyncEXIFDate(group.readEntry(QLatin1String("All Sync EXIF Date"),            true));
 }
 
@@ -210,6 +211,7 @@ void XMPEditWidget::saveSettings()
     group.writeEntry(QLatin1String("All Sync JFIF Comment"),   d->contentPage->syncJFIFCommentIsChecked());
     group.writeEntry(QLatin1String("All Sync EXIF Comment"),   d->contentPage->syncEXIFCommentIsChecked());
     group.writeEntry(QLatin1String("All Sync EXIF Copyright"), d->contentPage->syncEXIFCopyrightIsChecked());
+    group.writeEntry(QLatin1String("All Sync EXIF Artists"),   d->creditsPage->syncEXIFArtistIsChecked());
     group.writeEntry(QLatin1String("All Sync EXIF Date"),      d->originPage->syncEXIFDateIsChecked());
     config->sync();
 }
@@ -279,7 +281,7 @@ void XMPEditWidget::apply()
         d->subjectsPage->applyMetadata(d->xmpData);
         d->keywordsPage->applyMetadata(d->xmpData);
         d->categoriesPage->applyMetadata(d->xmpData);
-        d->creditsPage->applyMetadata(d->xmpData);
+        d->creditsPage->applyMetadata(d->exifData, d->xmpData);
         d->statusPage->applyMetadata(d->xmpData);
         d->propertiesPage->applyMetadata(d->xmpData);
 
