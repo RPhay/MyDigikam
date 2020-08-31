@@ -320,3 +320,5 @@ BUGFIXES:
 308 ==> 130943 - Application should display the default EXIF rotation currently used.
 309 ==> 133291 - Upload drops exif informations when asked to resize images.
 310 ==> 289845 - digiKam does not rename .xmp files together with the image files.
+311 ==> 417121 - Crash when switching to google maps in "Edit Geolocation" with v7.0.0-beta-2, beta 1 is ok.
+312 ==> 424618 - When clicking on maps digiKam crash.
