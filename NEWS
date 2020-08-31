@@ -311,4 +311,6 @@ BUGFIXES:
 299 ==> 214708 - [wish] Optionally ignore IPTC in digiKam.
 300 ==> 218730 - Metadata delay write option.
 301 ==> 160229 - Option to preserve file timestamps when updating exif.
-302 ==> 
+302 ==> 132806 - Inconsistency in writing IPTC data.
+303 ==> 
+
