@@ -50,7 +50,7 @@
 
 // Exiv2 includes -------------------------------------------------------
 
-// NOTE: All Exiv2 header must be stay there to not expose external source code to Exiv2 API
+// NOTE: All Exiv2 headers must be stay there to not expose external source code to Exiv2 API
 //       and reduce Exiv2 dependency to client code.
 
 #if defined(Q_CC_CLANG)
@@ -120,7 +120,7 @@ class Q_DECL_HIDDEN MetaEngine::Private
 public:
 
     explicit Private();
-    virtual ~Private();
+    ~Private();
 
     void copyPrivateData(const Private* const other);
 

@@ -255,7 +255,7 @@ public:
     QString          software;
 
     /**
-     * The Firware name or version which create raw image.
+     * The Firmware name or version which create raw image.
      */
     QString          firmware;
 

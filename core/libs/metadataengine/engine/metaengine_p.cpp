@@ -50,6 +50,7 @@ extern "C"
 #include "metaengine_data_p.h"
 
 // Pragma directives to reduce warnings from Exiv2.
+
 #if defined(Q_CC_GNU) && !defined(Q_CC_CLANG)
 #   pragma GCC diagnostic push
 #   pragma GCC diagnostic ignored "-Wdeprecated-declarations"
@@ -493,6 +494,7 @@ bool MetaEngine::Private::saveOperations(const QFileInfo& finfo, Exiv2::Image::A
 
             if (ret == 0)
             {
+
 #ifdef Q_OS_WIN64
 
                 _wutime64((const wchar_t*)finfo.filePath().utf16(), &ut);
@@ -506,6 +508,7 @@ bool MetaEngine::Private::saveOperations(const QFileInfo& finfo, Exiv2::Image::A
                 ::utime(finfo.filePath().toUtf8().constData(), &ut);
 
 #endif
+
             }
 
             qCDebug(DIGIKAM_METAENGINE_LOG) << "File time stamp restored";
@@ -843,6 +846,7 @@ int MetaEngine::Private::getXMPTagsListFromPrefix(const QString& pf, MetaEngine:
 }
 
 #ifdef _XMP_SUPPORT_
+
 void MetaEngine::Private::loadSidecarData(Exiv2::Image::AutoPtr xmpsidecar)
 {
     // Having a sidecar is a special situation.

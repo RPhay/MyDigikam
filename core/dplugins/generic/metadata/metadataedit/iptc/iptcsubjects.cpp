@@ -83,7 +83,7 @@ IPTCSubjects::IPTCSubjects(QWidget* const parent)
     m_note->setText(i18n("<b>Note: "
                  "<a href='https://en.wikipedia.org/wiki/IPTC_Information_Interchange_Model'>IPTC</a> "
                  "text tags are limited string sizes. Use contextual help for details. "
-                 "Considere to use <a href='https://en.wikipedia.org/wiki/Extensible_Metadata_Platform'>XMP</a> instead.</b>"));
+                 "Consider to use <a href='https://en.wikipedia.org/wiki/Extensible_Metadata_Platform'>XMP</a> instead.</b>"));
 
     m_subjectsCheck->setVisible(true);
     m_subjectsCheck->setEnabled(true);

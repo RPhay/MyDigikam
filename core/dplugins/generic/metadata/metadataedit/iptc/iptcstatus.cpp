@@ -127,7 +127,7 @@ IPTCStatus::IPTCStatus(QWidget* const parent)
     QLabel* const note = new QLabel(i18n("<b>Note: "
                  "<a href='https://en.wikipedia.org/wiki/IPTC_Information_Interchange_Model'>IPTC</a> "
                  "text tags are limited string sizes. Use contextual help for details. "
-                 "Considere to use <a href='https://en.wikipedia.org/wiki/Extensible_Metadata_Platform'>XMP</a> instead.</b>"),
+                 "Consider to use <a href='https://en.wikipedia.org/wiki/Extensible_Metadata_Platform'>XMP</a> instead.</b>"),
                  this);
     note->setOpenExternalLinks(true);
     note->setWordWrap(true);
