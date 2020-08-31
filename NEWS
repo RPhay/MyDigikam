@@ -324,3 +324,4 @@ BUGFIXES:
 312 ==> 424618 - When clicking on maps digiKam crash.
 313 ==> 425961 - In pictures taken on certain cameras, garbage data is read into captions field.
 314 ==> 426028 - GPS coordinates manually entered via geolocation are not present in jpeg file.
+315 ==> 412113 - Crash at start, related to QSqlDatabase.
