@@ -306,8 +306,9 @@ BUGFIXES:
 294 ==> 224784 - Save changed exif data of raw files in extra file automatically.
 295 ==> 288513 - Use .thm files as sidecar when files are present (typical case for Canon camera about CR2 and MKV files).
 296 ==> 425999 - digiKam Crash while Presentation with OpenGL.
-297 ==> 
-298 ==> 
-299 ==> 
-300 ==> 
-301 ==> 
+297 ==> 375809 - digiKam froze on opening Settings.
+298 ==> 277512 - Add option "Disable writing metadata in exif/iptc" or "Write metadata only in xmp".
+299 ==> 214708 - [wish] Optionally ignore IPTC in digiKam.
+300 ==> 218730 - Metadata delay write option.
+301 ==> 160229 - Option to preserve file timestamps when updating exif.
+302 ==> 
