@@ -312,5 +312,13 @@ BUGFIXES:
 300 ==> 218730 - Metadata delay write option.
 301 ==> 160229 - Option to preserve file timestamps when updating exif.
 302 ==> 132806 - Inconsistency in writing IPTC data.
-303 ==> 
+303 ==> 308607 - Crashes when autorotating using EXIF data on many pictures.
+304 ==> 335622 - digiKam crash editing EXIF.
+305 ==> 137383 - Sort pictures by creation date even for converted RAW file (from EXIF).
+306 ==> 130728 - Wrong exif and properties data, and broken thumbnail when saving an image.
+307 ==> 309529 - Thumbnails are rotated according to exif tag, images not.
+308 ==> 130943 - Application should display the default EXIF rotation currently used.
+309 ==> 133291 - Upload drops exif informations when asked to resize images.
+310 ==> 289845 - digiKam does not rename .xmp files together with the image files.
+311 ==> 
 
