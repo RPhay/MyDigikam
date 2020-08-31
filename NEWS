@@ -1,4 +1,4 @@
-evSSdigiKam 7.1.0 - Release date: 2020-08-30
+evSSdigiKam 7.1.0 - Release date: 2020-08-31
 
 *****************************************************************************************************
 NEW FEATURES:
@@ -320,5 +320,3 @@ BUGFIXES:
 308 ==> 130943 - Application should display the default EXIF rotation currently used.
 309 ==> 133291 - Upload drops exif informations when asked to resize images.
 310 ==> 289845 - digiKam does not rename .xmp files together with the image files.
-311 ==> 
-
