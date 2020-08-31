@@ -334,7 +334,7 @@ QString XMPCredits::getXMPByLine() const
     QStringList oldv, newv;
     d->bylineEdit->getValues(oldv, newv);
 
-    return (newv.join(QLatin1String("; ")));
+    return (newv.join(QLatin1Char(';')));
 }
 
 void XMPCredits::readMetadata(QByteArray& xmpData)
