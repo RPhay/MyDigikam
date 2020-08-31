@@ -125,7 +125,7 @@ TemplatePanel::TemplatePanel(QWidget* const parent)
                                       "the photographer needs to be protected) the name of a company or organization can also be used. "
                                       "Once saved, this field should not be changed by anyone.</p>"
                                       "<p>To enter more than one name, use <b>semi-colons as separators</b>.</p>"
-                                      "<p>With IPTC, this field is limited to 32 ASCII characters.</p>"));
+                                      "<p>With IPTC, this field is limited to 32 characters.</p>"));
 
     // --------------------------------------------------------
 
@@ -138,7 +138,7 @@ TemplatePanel::TemplatePanel(QWidget* const parent)
                                          "titles such as: Staff Photographer, Freelance Photographer, or Independent Commercial "
                                          "Photographer. Since this is a qualifier for the Author field, the Author field must also "
                                          "be filled out.</p>"
-                                         "<p>With IPTC, this field is limited to 32 ASCII characters.</p>"));
+                                         "<p>With IPTC, this field is limited to 32 characters.</p>"));
 
     // --------------------------------------------------------
 
@@ -152,7 +152,7 @@ TemplatePanel::TemplatePanel(QWidget* const parent)
                                      "such as Reuters or the Associated Press, these organizations could be listed here as they are "
                                      "\"providing\" the image for use by others. If the image is a stock photograph, then the group "
                                      "(agency) involved in supplying the image should be listed here.</p>"
-                                     "<p>With IPTC, this field is limited to 32 ASCII characters.</p>"));
+                                     "<p>With IPTC, this field is limited to 32 characters.</p>"));
 
     // --------------------------------------------------------
 
@@ -175,7 +175,7 @@ TemplatePanel::TemplatePanel(QWidget* const parent)
                                         "(a) the word, Copyright; (b) year of the first publication; and (c) name of the author. "
                                         "You may also wish to include the phrase \"all rights reserved\".</p>"
                                         "<p>With XMP, you can include more than one copyright string using different languages.</p>"
-                                        "<p>With IPTC, this field is limited to 128 ASCII characters.</p>"));
+                                        "<p>With IPTC, this field is limited to 128 characters.</p>"));
 
     // --------------------------------------------------------
 
@@ -204,7 +204,7 @@ TemplatePanel::TemplatePanel(QWidget* const parent)
                                      "\"/\" with a blank space. Use the form \"photographer / agency\" rather than "
                                      "\"photographer/agency.\" Source may also be different from Creator and from the names "
                                      "listed in the Copyright Notice.</p>"
-                                     "<p>With IPTC, this field is limited to 32 ASCII characters.</p>"));
+                                     "<p>With IPTC, this field is limited to 32 characters.</p>"));
 
     // --------------------------------------------------------
 
@@ -215,7 +215,7 @@ TemplatePanel::TemplatePanel(QWidget* const parent)
     label7->setBuddy(d->instructionsEdit);
     d->instructionsEdit->setWhatsThis(i18n("<p>The Instructions field should be used to list editorial "
                                            "instructions concerning the use of photograph.</p>"
-                                           "<p>With IPTC, this field is limited to 256 ASCII characters.</p>"));
+                                           "<p>With IPTC, this field is limited to 256 characters.</p>"));
 
     // --------------------------------------------------------
 

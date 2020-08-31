@@ -91,7 +91,7 @@ IPTCContent::IPTCContent(QWidget* const parent)
     d->headlineEdit->setClearButtonEnabled(true);
     d->headlineEdit->setMaxLength(256);
     d->headlineEdit->setWhatsThis(i18n("Enter here the content synopsis. This field is limited "
-                                       "to 256 ASCII characters."));
+                                       "to 256 characters."));
 
     // --------------------------------------------------------
 

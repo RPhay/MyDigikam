@@ -195,9 +195,10 @@ void XMPEditWidget::readSettings()
     KConfigGroup group        = config->group(QLatin1String("All Metadata Edit Settings"));
 
     showPage(group.readEntry(QLatin1String("All XMP Edit Page"), 0));
-    d->contentPage->setCheckedSyncJFIFComment(group.readEntry(QLatin1String("All Sync JFIF Comment"), true));
-    d->contentPage->setCheckedSyncEXIFComment(group.readEntry(QLatin1String("All Sync EXIF Comment"), true));
-    d->originPage->setCheckedSyncEXIFDate(group.readEntry(QLatin1String("All Sync EXIF Date"), true));
+    d->contentPage->setCheckedSyncJFIFComment(group.readEntry(QLatin1String("All Sync JFIF Comment"),     true));
+    d->contentPage->setCheckedSyncEXIFComment(group.readEntry(QLatin1String("All Sync EXIF Comment"),     true));
+    d->contentPage->setCheckedSyncEXIFCopyright(group.readEntry(QLatin1String("All Sync EXIF Copyright"), true));
+    d->originPage->setCheckedSyncEXIFDate(group.readEntry(QLatin1String("All Sync EXIF Date"),            true));
 }
 
 void XMPEditWidget::saveSettings()
@@ -205,10 +206,11 @@ void XMPEditWidget::saveSettings()
     KSharedConfig::Ptr config = KSharedConfig::openConfig();
     KConfigGroup group        = config->group(QLatin1String("All Metadata Edit Settings"));
 
-    group.writeEntry(QLatin1String("All XMP Edit Page"),     activePageIndex());
-    group.writeEntry(QLatin1String("All Sync JFIF Comment"), d->contentPage->syncJFIFCommentIsChecked());
-    group.writeEntry(QLatin1String("All Sync EXIF Comment"), d->contentPage->syncEXIFCommentIsChecked());
-    group.writeEntry(QLatin1String("All Sync EXIF Date"),    d->originPage->syncEXIFDateIsChecked());
+    group.writeEntry(QLatin1String("All XMP Edit Page"),       activePageIndex());
+    group.writeEntry(QLatin1String("All Sync JFIF Comment"),   d->contentPage->syncJFIFCommentIsChecked());
+    group.writeEntry(QLatin1String("All Sync EXIF Comment"),   d->contentPage->syncEXIFCommentIsChecked());
+    group.writeEntry(QLatin1String("All Sync EXIF Copyright"), d->contentPage->syncEXIFCopyrightIsChecked());
+    group.writeEntry(QLatin1String("All Sync EXIF Date"),      d->originPage->syncEXIFDateIsChecked());
     config->sync();
 }
 
@@ -217,19 +219,19 @@ void XMPEditWidget::slotItemChanged()
     d->page_content->setHeader(d->dlg->currentItemTitleHeader(i18n("<qt>Content Information<br/>"
                      "<i>Use this panel to describe the visual content of the image</i></qt>")));
     d->page_origin->setHeader(d->dlg->currentItemTitleHeader(i18n("<qt>Origin Information<br/>"
-                    "<i>Use this panel for formal descriptive information about the image</i></qt>")));
+                     "<i>Use this panel for formal descriptive information about the image</i></qt>")));
     d->page_credits->setHeader(d->dlg->currentItemTitleHeader(i18n("<qt>Credit Information<br/>"
                      "<i>Use this panel to record copyright information about the image</i></qt>")));
     d->page_subjects->setHeader(d->dlg->currentItemTitleHeader(i18n("<qt>Subject Information<br/>"
-                      "<i>Use this panel to record subject information about the image</i></qt>")));
+                     "<i>Use this panel to record subject information about the image</i></qt>")));
     d->page_keywords->setHeader(d->dlg->currentItemTitleHeader(i18n("<qt>Keyword Information<br/>"
-                      "<i>Use this panel to record keywords relevant to the image</i></qt>")));
+                     "<i>Use this panel to record keywords relevant to the image</i></qt>")));
     d->page_categories->setHeader(d->dlg->currentItemTitleHeader(i18n("<qt>Category Information<br/>"
-                        "<i>Use this panel to record categories relevant to the image</i></qt>")));
+                     "<i>Use this panel to record categories relevant to the image</i></qt>")));
     d->page_status->setHeader(d->dlg->currentItemTitleHeader(i18n("<qt>Status Information<br/>"
-                    "<i>Use this panel to record workflow information</i></qt>")));
+                     "<i>Use this panel to record workflow information</i></qt>")));
     d->page_properties->setHeader(d->dlg->currentItemTitleHeader(i18n("<qt>Status Properties<br/>"
-                      "<i>Use this panel to record workflow properties</i></qt>")));
+                     "<i>Use this panel to record workflow properties</i></qt>")));
 
     DMetadata meta;
     meta.load((*d->dlg->currentItem()).toLocalFile());

@@ -207,7 +207,7 @@ IPTCOrigin::IPTCOrigin(QWidget* const parent)
     d->sublocationEdit->setClearButtonEnabled(true);
     d->sublocationEdit->setMaxLength(32);
     d->sublocationEdit->setWhatsThis(i18n("Set here the content location within city. "
-                                          "This field is limited to 32 ASCII characters."));
+                                          "This field is limited to 32 characters."));
 
     // --------------------------------------------------------
 
