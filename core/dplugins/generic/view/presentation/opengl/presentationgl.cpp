@@ -282,7 +282,7 @@ PresentationGL::PresentationGL(PresentationContainer* const sharedData)
             this, SLOT(slotTimeOut()));
 
     d->timer->setSingleShot(true);
-    d->timer->start(100);
+    d->timer->start(500);
 
     // -- hide cursor when not moved --------------------
 
@@ -376,8 +376,6 @@ void PresentationGL::initializeGL()
     black.fill(QColor(0, 0, 0).rgb());
 
     d->texture[0]->setData(black);
-    d->texture[0]->setMinificationFilter(QOpenGLTexture::Linear);
-    d->texture[0]->setMagnificationFilter(QOpenGLTexture::Linear);
     d->texture[0]->bind();
 }
 
