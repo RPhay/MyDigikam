@@ -136,6 +136,13 @@ LibsInfoDlg::LibsInfoDlg(QWidget* const parent)
     list.insert(i18nc(CONTEXT, "Qt Webkit support"),           SUPPORTED_YES);
 #endif
 
+#ifdef HAVE_QTXMLPATTERNS
+    list.insert(i18nc(CONTEXT, "Rajce support"),               SUPPORTED_YES);
+#else
+    list.insert(i18nc(CONTEXT, "Rajce support"),               SUPPORTED_YES);
+#endif
+
+
     list.insert(i18nc(CONTEXT, "Exiv2"),                       MetaEngine::Exiv2Version());
     list.insert(i18nc(CONTEXT, "Exiv2 supports XMP metadata"), MetaEngine::supportXmp() ?
                 i18n("Yes") : i18n("No"));
