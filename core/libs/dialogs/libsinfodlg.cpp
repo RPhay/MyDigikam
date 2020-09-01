@@ -146,16 +146,6 @@ LibsInfoDlg::LibsInfoDlg(QWidget* const parent)
     list.insert(i18nc(CONTEXT, "Exiv2"),                       MetaEngine::Exiv2Version());
     list.insert(i18nc(CONTEXT, "Exiv2 supports XMP metadata"), MetaEngine::supportXmp() ?
                 i18n("Yes") : i18n("No"));
-    list.insert(i18nc(CONTEXT, "Exiv2 can write to Jpeg"),     MetaEngine::supportMetadataWritting(QLatin1String("image/jpeg")) ?
-                i18n("Yes") : i18n("No"));
-    list.insert(i18nc(CONTEXT, "Exiv2 can write to Tiff"),     MetaEngine::supportMetadataWritting(QLatin1String("image/tiff")) ?
-                i18n("Yes") : i18n("No"));
-    list.insert(i18nc(CONTEXT, "Exiv2 can write to Png"),      MetaEngine::supportMetadataWritting(QLatin1String("image/png")) ?
-                i18n("Yes") : i18n("No"));
-    list.insert(i18nc(CONTEXT, "Exiv2 can write to Jp2"),      MetaEngine::supportMetadataWritting(QLatin1String("image/jp2")) ?
-                i18n("Yes") : i18n("No"));
-    list.insert(i18nc(CONTEXT, "Exiv2 can write to Pgf"),      MetaEngine::supportMetadataWritting(QLatin1String("image/pgf")) ?
-                i18n("Yes") : i18n("No"));
 
 #ifdef HAVE_LENSFUN
     list.insert(i18nc(CONTEXT, "LensFun"),                     LensFunIface::lensFunVersion());
@@ -217,7 +207,8 @@ LibsInfoDlg::LibsInfoDlg(QWidget* const parent)
 
     // TODO: add free memory reported by kmemoryinfo at startup
 
-    listView()->setHeaderLabels(QStringList() << i18nc("Name of the component", "Component") << i18nc("Is supported / version of the component", "Info"));
+    listView()->setHeaderLabels(QStringList() << i18nc("Name of the component", "Component")
+                                              << i18nc("Is supported / version of the component", "Info"));
     setInfoMap(list);
 }
 
@@ -230,13 +221,19 @@ QString LibsInfoDlg::checkTriState(int value) const
     switch(value)
     {
         case true:
+        {
             return i18n("Yes");
+        }
 
         case false:
+        {
             return i18n("No");
+        }
 
         default:
+        {
             return i18n("Unknown");
+        }
     }
 }
 
