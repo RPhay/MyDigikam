@@ -123,7 +123,7 @@ SetupMetadata::SetupMetadata(QWidget* const parent )
     explanation->setWordWrap(true);
     QString txt;
 
-    txt.append(i18n("<p><a href='https://en.wikipedia.org/wiki/Exif'>EXIF</a> - "
+    txt.append(i18n("<p><a href='https://en.wikipedia.org/wiki/Exif'>Exif</a> - "
                     "a standard used by most digital cameras today to store technical "
                     "information (like aperture and shutter speed) about an image.</p>"));
 
