@@ -198,13 +198,13 @@ SetupMetadata::SetupMetadata(QWidget* const parent)
     d->saveCommentsBox   = new QCheckBox;
     d->saveCommentsBox->setText(i18nc("@option:check", "Captions and title"));
     d->saveCommentsBox->setWhatsThis(i18nc("@info:whatsthis", "Turn on this option to store item caption and title "
-                                           "in the JFIF Comment section, the EXIF tag, the XMP tag, "
+                                           "in the JFIF Comment section, the Exif tag, the XMP tag, "
                                            "and the IPTC tag."));
 
     d->saveRatingBox     = new QCheckBox;
     d->saveRatingBox->setText(i18nc("@option:check", "Rating"));
     d->saveRatingBox->setWhatsThis(i18nc("@info:whatsthis", "Turn on this option to store the item rating "
-                                         "in the EXIF tag and the XMP tags."));
+                                         "in the Exif tag and the XMP tags."));
 
     d->savePickLabelBox  = new QCheckBox;
     d->savePickLabelBox->setText(i18nc("@option:check", "Pick label"));
@@ -234,7 +234,7 @@ SetupMetadata::SetupMetadata(QWidget* const parent)
     d->savePosition      = new QCheckBox;
     d->savePosition->setText(i18nc("@option:check", "Geolocation information (GPS)"));
     d->savePosition->setWhatsThis(i18nc("@info:whatsthis", "Turn on this option to store Geolocation information "
-                                        "in the EXIF tag and the XMP tags."));
+                                        "in the Exif tag and the XMP tags."));
 
     fieldsLayout->addWidget(fieldsIconLabel,       0, 0, 2, 3);
     fieldsLayout->addWidget(fieldsLabel,           0, 1, 2, 3);
