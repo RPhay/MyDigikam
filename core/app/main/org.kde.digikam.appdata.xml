@@ -112,7 +112,7 @@
         You can also combine several criteria for more advanced searches. digiKam rely on Exiv2 library to handle metadata tag contents
         from files to populate the photo library.
     </p>
-    <p xml:lang="ca">Addicionalment a la funcionalitat de filtratge, el digiKam té capacitats potents de cerca que permeten cercar la biblioteca de fotos per un ampli ventall de criteris. Es poden cercar fotos per etiquetes, rètols, valoracions, dates, ubicacions i inclús metadades específiques EXIF, IPTC o XMP. També es poden combinar diversos criteris per a cerques més avançades. El digiKam compta amb la biblioteca Exiv2 per a gestionar el contingut de les etiquetes de metadades dels fitxers per a omplir la biblioteca de fotos.</p>
+    <p xml:lang="ca">Addicionalment a la funcionalitat de filtratge, el digiKam té capacitats potents de cerca que permeten cercar la biblioteca de fotos per un ampli ventall de criteris. Es poden cercar fotos per etiquetes, rètols, valoracions, dates, ubicacions i inclús metadades específiques Exif, IPTC o XMP. També es poden combinar diversos criteris per a cerques més avançades. El digiKam compta amb la biblioteca Exiv2 per a gestionar el contingut de les etiquetes de metadades dels fitxers per a omplir la biblioteca de fotos.</p>
     <p xml:lang="ca-valencia">Addicionalment a la funcionalitat de filtratge, el digiKam té capacitats potents de cerca que permeten cercar la biblioteca de fotos per un ampli ventall de criteris. Es poden cercar fotos per etiquetes, rètols, valoracions, dates, ubicacions i inclús metadades específiques EXIF, IPTC o XMP. També es poden combinar diversos criteris per a cerques més avançades. El digiKam compta amb la biblioteca Exiv2 per a gestionar el contingut de les etiquetes de metadades dels fitxers per a omplir la biblioteca de fotos.</p>
     <p xml:lang="en-GB">In addition to filtering functionality, digiKam features powerful searching capabilities that let you search the photo library by a wide range of criteria. You can search photos by tags, labels, rating, data, location, and even specific EXIF, IPTC, or XMP metadata. You can also combine several criteria for more advanced searches. digiKam rely on Exiv2 library to handle metadata tag contents from files to populate the photo library.</p>
     <p xml:lang="es">Además de la funcionalidad de filtrado, digiKam dispone de potentes funciones de búsqueda que le permiten consultar su colección de fotos por una amplia variedad de criterios. Puede buscar fotos por etiquetas, emblemas, valoraciones, datos, ubicación e incluso por metadatos específicos EXIF, IPTC y XMP. También puede combinar varios criterios para realizar búsquedas avanzadas. digiKam depende de la biblioteca Exiv2 para manejar el contenido de las etiquetas de metadatos de los archivos para rellenar la colección de fotos.</p>
@@ -249,7 +249,7 @@
       <li xml:lang="zh-CN">在相册和子相册中组织照片 (支持标签和注释)</li>
       <li>Support for Exif, Iptc, Xmp, Makernotes</li>
       <li xml:lang="bs">Podrška za Exif, Iptc, Xmp, Makernotes</li>
-      <li xml:lang="ca">Implementació per a notes EXIF, IPTC, XMP i del fabricant</li>
+      <li xml:lang="ca">Implementació per a notes Exif, IPTC, XMP i del fabricant</li>
       <li xml:lang="ca-valencia">Implementació per a notes EXIF, IPTC, XMP i del fabricant</li>
       <li xml:lang="cs">Podpora pro Exif, Iptc, Xmp, Makernotes</li>
       <li xml:lang="de">Unterstützung für Exif, Iptc, Xmp und Herstellerbemerkungen</li>
