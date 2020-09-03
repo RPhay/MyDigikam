@@ -31,6 +31,7 @@
 #include <vector>
 
 // Qt include
+
 #include <QJsonArray>
 
 // Local includes

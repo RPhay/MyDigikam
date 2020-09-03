@@ -38,8 +38,8 @@ FacialRecognitionWrapper::FacialRecognitionWrapper()
 }
 
 FacialRecognitionWrapper::FacialRecognitionWrapper(const FacialRecognitionWrapper& other)
+    d(other.d)
 {
-    d = other.d;
     ++(d->ref);
 }
 

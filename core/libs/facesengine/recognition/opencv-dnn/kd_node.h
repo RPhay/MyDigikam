@@ -20,15 +20,20 @@
  *
  * ============================================================ */
 
-#ifndef KD_NODE_H
-#define KD_NODE_H
+#ifndef DIGIKAM_KD_NODE_H
+#define DIGIKAM_KD_NODE_H
+
+// C++ includes
+
+#include <vector>
+
+// Qt includes
 
 #include <QVector>
 #include <QMap>
 
-#include <vector>
+// Local include
 
-// digiKam include
 #include "digikam_opencv.h"
 
 namespace Digikam
@@ -97,4 +102,4 @@ private:
 
 } // namespace Digikam
 
-#endif // KD_NODE_H
+#endif // DIGIKAM_KD_NODE_H

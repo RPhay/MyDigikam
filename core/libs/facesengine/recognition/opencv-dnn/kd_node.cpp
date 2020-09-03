@@ -22,12 +22,17 @@
 
 #include "kd_node.h"
 
-// std include
+// C++ include
+
 #include <cfloat>
 #include <stdio.h>
+
 // Qt include
+
 #include <QtMath>
 #include <QDebug>
+
+// Local includes
 
 #include "dnnfaceextractor.h"
 
@@ -36,7 +41,7 @@ namespace Digikam
 
 float KDNode::sqrDistance(const float* const pos1, const float* const pos2, int dimension)
 {
-    double sqrDistance = 0;
+    double sqrDistance = 0.0;
 
     for (int i = 0; i < dimension; ++i)
     {
