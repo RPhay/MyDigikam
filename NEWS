@@ -9,4 +9,14 @@ FaceManagement: Add face engine clustering support for detection and recognition
 *****************************************************************************************************
 BUGFIXES:
 
-001 ==> 
+001 ==> 415565 - Show face as icon for each person in the People panel.
+002 ==> 415604 - Allow changing a face tag from a person to another.
+003 ==> 392023 - Add "Ignored" group of faces.
+004 ==> 423114 - Deleted Faces don't re-appear in Face Scan with "Skip Images already Scanned".
+005 ==> 384485 - Face Regions are deleted when unconfirmed face suggestion is rejected by user.
+006 ==> 384396 - Display faces sorted by similarity (pre-grouped) instead of album/time/.
+007 ==> 415782 - Face recognition "favors" people with few images: missing faces clustering.
+008 ==> 416630 - Use N nearest neighbor search.
+009 ==> 415895 - DNN Face recognition not working well on a picture.
+010 ==> 
+
