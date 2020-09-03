@@ -80,7 +80,7 @@ bool FaceDb::insertToTreeDb(const int nodeID, const cv::Mat& faceEmbedding) cons
 
     // insert node to database
     DbEngineSqlQuery query = d->db->execQuery(QLatin1String("INSERT INTO KDTree "
-                                                            "(split_axis, position, max_range, min_range, parent, left, right) "
+                                                            "(split_axis, position, max_range, min_range, parent, `left`, `right`) "
                                                             "VALUES (?, ?, ?, ?, ?, NULL, NULL)"),
                                               bindingValues);
 
@@ -120,7 +120,7 @@ QMap<double, QVector<int> > FaceDb::getClosestNeighborsTreeDb(const cv::Mat& pos
 
     DataNode root;
 
-    DbEngineSqlQuery query = d->db->execQuery(QLatin1String("SELECT position, max_range, min_range, left, right "
+    DbEngineSqlQuery query = d->db->execQuery(QLatin1String("SELECT position, max_range, min_range, `left`, `right` "
                                                             "FROM KDTree WHERE id = 1"));
     if(query.next())
     {
@@ -189,7 +189,7 @@ int FaceDb::findParentTreeDb(const cv::Mat& nodePos, bool& leftChild, int& paren
         QVariantList bindingValues;
         bindingValues << parent;
 
-        DbEngineSqlQuery query = d->db->execQuery(QLatin1String("SELECT split_axis, position, max_range, min_range, left, right "
+        DbEngineSqlQuery query = d->db->execQuery(QLatin1String("SELECT split_axis, position, max_range, min_range, `left`, `right` "
                                                                 "FROM KDTree WHERE id = ?"),
                                                   bindingValues);
 
@@ -315,7 +315,7 @@ double FaceDb::getClosestNeighborsTreeDb(const DataNode& subTree,
         QVariantList bindingValues;
         bindingValues << subTree.left;
 
-        DbEngineSqlQuery query = d->db->execQuery(QLatin1String("SELECT position, max_range, min_range, left, right "
+        DbEngineSqlQuery query = d->db->execQuery(QLatin1String("SELECT position, max_range, min_range, `left`, `right` "
                                                                 "FROM KDTree WHERE id = ?"),
                                                   bindingValues);
 
@@ -362,7 +362,7 @@ double FaceDb::getClosestNeighborsTreeDb(const DataNode& subTree,
         QVariantList bindingValues;
         bindingValues << subTree.right;
 
-        DbEngineSqlQuery query = d->db->execQuery(QLatin1String("SELECT position, max_range, min_range, left, right "
+        DbEngineSqlQuery query = d->db->execQuery(QLatin1String("SELECT position, max_range, min_range, `left`, `right` "
                                                                 "FROM KDTree WHERE id = ?"),
                                                   bindingValues);
 
