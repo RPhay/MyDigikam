@@ -75,19 +75,20 @@ public:
     /// Create a model containing all tags
     explicit TagModel(RootAlbumBehavior rootBehavior = IncludeRootAlbum, QObject* const parent = nullptr);
 
-    TAlbum* albumForIndex(const QModelIndex& index) const;
-    void    setColumnHeader(const QString& header);
-    void    setTagCount(TagCountMode mode);
+    TAlbum*              albumForIndex(const QModelIndex& index)    const;
+    void                 setColumnHeader(const QString& header);
+    void                 setTagCount(TagCountMode mode);
 
 protected:
 
-    virtual QVariant albumData(Album* a, int role)  const override;
-    virtual QVariant decorationRoleData(Album* a)   const override;
-    virtual Album*   albumForId(int id)             const override;
+    virtual QVariant     albumData(Album* a, int role)              const override;
+    virtual QVariant     decorationRoleData(Album* a)               const override;
+    virtual Album*       albumForId(int id)                         const override;
+    virtual QVariant     fontRoleData(Album* a)                     const override;
 
 private:
 
-    QMap<int, int> m_unconfirmedFaceCount;
+    QMap<int, int>       m_unconfirmedFaceCount;
 };
 
 // ------------------------------------------------------------------

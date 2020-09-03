@@ -108,6 +108,16 @@ AddTagsLineEdit* AssignNameWidget::lineEdit() const
 
 void AssignNameWidget::setMode(Mode mode)
 {
+    /**
+     * Reject tooltip should be updated even if the
+     * same mode is passed, because Unconfirmed and Unknown
+     * Faces have the same mode but different Tooltips.
+     */
+    if (mode == AssignNameWidget::UnconfirmedEditMode)
+    {
+        d->updateRejectButtonTooltip();
+    }
+
     if (mode == d->mode)
     {
         return;
@@ -175,8 +185,24 @@ AssignNameWidget::VisualStyle AssignNameWidget::visualStyle() const
 
 void AssignNameWidget::setUserData(const ItemInfo& info, const QVariant& faceIdentifier)
 {
-    d->info           = info;
-    d->faceIdentifier = faceIdentifier;
+    d->info            = info;
+    d->faceIdentifier  = faceIdentifier;
+
+    FaceTagsIface face = FaceTagsIface::fromVariant(faceIdentifier);
+
+    /**
+     * Ignored faces are drawn over with a different
+     * overlay, as Reject button should be disabled.
+     */
+    if      (face.type() == FaceTagsIface::IgnoredName)
+    {
+        setMode(AssignNameWidget::IgnoredMode);
+    }
+
+    else
+    {
+        setMode(AssignNameWidget::UnconfirmedEditMode);
+    }
 }
 
 ItemInfo AssignNameWidget::info() const
@@ -192,8 +218,7 @@ QVariant AssignNameWidget::faceIdentifier() const
 void AssignNameWidget::setCurrentFace(const FaceTagsIface& face)
 {
     TAlbum* album = nullptr;
-
-    if (!face.isNull() && !face.isUnknownName())
+    if (!face.isNull() && !face.isUnknownName() && !face.isIgnoredName())
     {
         album = AlbumManager::instance()->findTAlbum(face.tagId());
     }

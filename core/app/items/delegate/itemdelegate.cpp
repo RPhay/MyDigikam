@@ -344,6 +344,7 @@ void ItemDelegate::paint(QPainter* p, const QStyleOptionViewItem& option, const 
     {
         QStringList tagsList = AlbumManager::instance()->tagNames(info.tagIds());
         tagsList.sort();
+        tagsList.removeAll(QStringLiteral("Ignored"));
         QString tags         = tagsList.join(QLatin1String(", "));
         drawTags(p, d->tagRect, tags, isSelected);
     }

@@ -33,6 +33,7 @@
 
 #include "coredbfields.h"
 #include "iteminfo.h"
+#include "facetagseditor.h"
 
 namespace Digikam
 {
@@ -139,6 +140,7 @@ Qt::SortOrder ItemSortSettings::defaultSortOrderForSortRole(SortRole role)
         case SortByModificationDate:
         case SortByManualOrderAndName:
         case SortByManualOrderAndDate:
+        case SortByFaces:
             return Qt::AscendingOrder;
 
         case SortByRating:
@@ -153,7 +155,8 @@ Qt::SortOrder ItemSortSettings::defaultSortOrderForSortRole(SortRole role)
     }
 }
 
-int ItemSortSettings::compareCategories(const ItemInfo& left, const ItemInfo& right) const
+int ItemSortSettings::compareCategories(const ItemInfo& left, const ItemInfo& right,
+                                        const FaceTagsIface& leftFace, const FaceTagsIface& rightFace) const
 {
     switch (categorizationMode)
     {
@@ -194,6 +197,29 @@ int ItemSortSettings::compareCategories(const ItemInfo& left, const ItemInfo& ri
             return compareByOrder(left.dateTime().date(),
                                   right.dateTime().date(),
                                   currentCategorizationSortOrder);
+        }
+
+        case CategoryByFaces:
+        {
+            QMap<QString, QString> leftMap  = left.getSuggestedNames();
+            QMap<QString, QString> rightMap = right.getSuggestedNames();
+
+            const QString leftValue  = leftMap.value(leftFace.region().toXml());
+            const QString rightValue = rightMap.value(rightFace.region().toXml());
+
+            if (leftValue.isEmpty()  && !rightValue.isEmpty())
+                return 1;
+
+            if (!leftValue.isEmpty() && rightValue.isEmpty())
+                return -1;
+
+            if (leftValue.isEmpty()  && rightValue.isEmpty())
+                return 0;
+
+            // Compare alphabetically based on the Suggested Name
+            return naturalCompare(leftValue, rightValue,
+                                  currentCategorizationSortOrder, categorizationCaseSensitivity,
+                                  strTypeNatural);
         }
 
         default:
@@ -318,6 +344,12 @@ int ItemSortSettings::compare(const ItemInfo& left, const ItemInfo& right, SortR
             double leftSimilarity           = left.id()  == leftReferenceImageId  ? 1.1 : left.currentSimilarity();
             double rightSimilarity          = right.id() == rightReferenceImageId ? 1.1 : right.currentSimilarity();
             return compareByOrder(leftSimilarity, rightSimilarity, currentSortOrder);
+        }
+
+        // Implementation to make Unconfirmed Faces of a tag appear before Confirmed faces.
+        case SortByFaces:
+        {
+            return compareByOrder(right.unconfirmedFaceCount(), left.unconfirmedFaceCount(), currentSortOrder);
         }
 
         case SortByManualOrderAndName:
@@ -457,6 +489,10 @@ DatabaseFields::Set ItemSortSettings::watchFlags() const
             set |= DatabaseFields::Name;
             break;
 
+        case SortByFaces:
+            // Nothing needed for this.
+            break;
+
         case SortByManualOrderAndName:
         case SortByManualOrderAndDate:
             set |= DatabaseFields::ManualOrder;
@@ -479,6 +515,10 @@ DatabaseFields::Set ItemSortSettings::watchFlags() const
 
         case CategoryByMonth:
             set |= DatabaseFields::CreationDate;
+            break;
+
+        case CategoryByFaces:
+            // nothing needed here.
             break;
     }
 

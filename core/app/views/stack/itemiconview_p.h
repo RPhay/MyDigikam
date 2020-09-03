@@ -102,6 +102,8 @@
 #include "contextmenuhelper.h"
 #include "albumlabelssearchhandler.h"
 #include "dnotificationwidget.h"
+#include "coredb.h"
+#include "coredbaccess.h"
 
 #ifdef HAVE_MEDIAPLAYER
 #   include "mediaplayerview.h"

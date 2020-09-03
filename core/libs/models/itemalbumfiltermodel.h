@@ -34,6 +34,7 @@ namespace Digikam
 class Album;
 class ItemAlbumModel;
 class ItemAlbumFilterModelPrivate;
+class FaceTagsIface;
 
 class ItemAlbumFilterModel : public ItemFilterModel
 {
@@ -55,6 +56,10 @@ public:
 protected:
 
     virtual int compareInfosCategories(const ItemInfo& left, const ItemInfo& right) const;
+
+    virtual int compareInfosCategories(const ItemInfo& left, const ItemInfo& right,
+                                       const FaceTagsIface& leftFace,
+                                       const FaceTagsIface& rightFace)              const;
 
 protected Q_SLOTS:
 

@@ -43,6 +43,7 @@ namespace Digikam
 class ImageChangeset;
 class ItemFilterModel;
 class ImageTagChangeset;
+class FaceTagsIface;
 
 class DIGIKAM_DATABASE_EXPORT ItemFilterModelPrepareHook
 {
@@ -130,8 +131,10 @@ public:
         CategoryFormatRole          = ItemModel::FilterModelRoles + 4,
         /// Returns the date of the index which is used for category
         CategoryDateRole            = ItemModel::FilterModelRoles + 5,
+        /// Returns the suggested name for the face in this index
+        CategoryFaceRole            = ItemModel::FilterModelRoles + 6,
         /// Returns true if the given image is a group leader, and the group is opened
-        GroupIsOpenRole             = ItemModel::FilterModelRoles + 6,
+        GroupIsOpenRole             = ItemModel::FilterModelRoles + 7,
         ItemFilterModelPointerRole  = ItemModel::FilterModelRoles + 50
     };
 
@@ -259,15 +262,25 @@ protected:
      *  Return negative if category of left < category right,
      *  Return 0 if left and right are in the same category, else return positive.
      */
-    virtual int compareInfosCategories(const ItemInfo& left, const ItemInfo& right)         const;
+
+    virtual int compareInfosCategories(const ItemInfo& left, const ItemInfo& right)          const;
+
+    /**
+     * In order to be able to Categorize by Faces, it's necessary to pass in the
+     * face as well. One image may have multiple Faces in it, hence just the ItemInfo
+     * isn't sufficient.
+     */
+    virtual int compareInfosCategories(const ItemInfo& left, const ItemInfo& right,
+                                       const FaceTagsIface& leftFace,
+                                       const FaceTagsIface& rightFace)                       const;
 
     /** Reimplement to customize sorting. Do not take categories into account here.
      */
-    virtual bool infosLessThan(const ItemInfo& left, const ItemInfo& right)                 const;
+    virtual bool infosLessThan(const ItemInfo& left, const ItemInfo& right)                  const;
 
     /** Returns a unique identifier for the category if info. The string need not be for user display.
      */
-    virtual QString categoryIdentifier(const ItemInfo& info)                                const;
+    virtual QString categoryIdentifier(const ItemInfo& info, const FaceTagsIface& face)      const;
 
 protected Q_SLOTS:
 

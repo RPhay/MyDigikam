@@ -72,6 +72,7 @@ ItemInfoData::ItemInfoData()
       orientation(0),
       fileSize(0),
       manualOrder(0),
+      unconfirmedFaceCount(0),
 
       longitude(0),
       latitude(0),
@@ -100,6 +101,8 @@ ItemInfoData::ItemInfoData()
       tagIdsCached(false),
       positionsCached(false),
       groupImageCached(false),
+      unconfirmedFaceCountCached(false),
+      faceSuggestionsCached(false),
 
       invalid(false),
 

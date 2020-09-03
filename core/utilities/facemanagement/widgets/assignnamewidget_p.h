@@ -50,6 +50,7 @@
 #include "albummanager.h"
 #include "albumtreeview.h"
 #include "facetagsiface.h"
+#include "facetags.h"
 #include "dimg.h"
 #include "iteminfo.h"
 #include "thememanager.h"
@@ -66,6 +67,14 @@ public:
 
     void         updateModes();
     void         updateContents();
+
+    /**
+     * Reject button shows different Tooltips for
+     * Unconfirmed and Unknown faces, however both
+     * are of type UnconfirmedEditMode.
+     * This method is responsible for the Tooltip updates.
+     */
+    void         updateRejectButtonTooltip();
 
     bool         isValid()                                        const;
 

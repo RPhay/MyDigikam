@@ -45,6 +45,7 @@
 #include "itemmodel.h"
 #include "itemscanner.h"
 #include "searchfolderview.h"
+#include "facetagsiface.h"
 
 namespace Digikam
 {
@@ -167,6 +168,10 @@ void ItemCategoryDrawer::drawCategory(const QModelIndex& index, int /*sortRole*/
         case ItemSortSettings::CategoryByMonth:
             textForMonth(index, &header, &subLine);
             break;
+
+        case ItemSortSettings::CategoryByFaces:
+            textForFace(index, &header, &subLine);
+            break;
     }
 
     p->setPen(qApp->palette().color(QPalette::HighlightedText));
@@ -267,6 +272,13 @@ void ItemCategoryDrawer::textForMonth(const QModelIndex& index, QString* header,
 {
     QDate date = index.data(ItemFilterModel::CategoryDateRole).toDate();
     *header    = date.toString(QLatin1String("MMM yyyy"));
+    int count  = d->view->categoryRange(index).height();
+    *subLine   = i18np("1 Item", "%1 Items", count);
+}
+
+void ItemCategoryDrawer::textForFace(const QModelIndex& index, QString* header, QString* subLine) const
+{
+    *header    = index.data(ItemFilterModel::CategoryFaceRole).toString();
     int count  = d->view->categoryRange(index).height();
     *subLine   = i18np("1 Item", "%1 Items", count);
 }

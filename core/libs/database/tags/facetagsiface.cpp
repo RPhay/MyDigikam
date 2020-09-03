@@ -33,6 +33,7 @@
 #include "digikam_debug.h"
 #include "coredbconstants.h"
 #include "tagscache.h"
+#include "facetags.h"
 
 namespace Digikam
 {
@@ -142,12 +143,39 @@ QString FaceTagsIface::attributeForType(Type type)
         return ImageTagPropertyName::tagRegion();
     }
 
+    if (type == FaceTagsIface::IgnoredName)
+    {
+        return ImageTagPropertyName::ignoredFace();
+    }
+
     if (type == FaceTagsIface::FaceForTraining)
     {
         return ImageTagPropertyName::faceToTrain();
     }
 
     return QString();
+}
+
+FaceTagsIface::Type FaceTagsIface::typeForId(int tagId)
+{
+        if      (!FaceTags::isPerson(tagId))
+        {
+            return InvalidFace;
+        }
+        if      (FaceTags::isTheUnknownPerson(tagId))
+        {
+            return UnknownName;
+        }
+        else if (FaceTags::isTheUnconfirmedPerson(tagId))
+        {
+            return UnconfirmedName;
+        }
+        else if (FaceTags::isTheIgnoredPerson(tagId))
+        {
+            return IgnoredName;
+        }
+
+        return ConfirmedName;
 }
 
 FaceTagsIface::Type FaceTagsIface::typeForAttribute(const QString& attribute, int tagId)
@@ -162,6 +190,10 @@ FaceTagsIface::Type FaceTagsIface::typeForAttribute(const QString& attribute, in
         {
             return FaceTagsIface::UnconfirmedName;
         }
+    }
+    else if (attribute == ImageTagPropertyName::ignoredFace())
+    {
+        return FaceTagsIface::IgnoredName;
     }
     else if (attribute == ImageTagPropertyName::tagRegion())
     {

@@ -47,17 +47,17 @@ public:
     explicit DigikamItemView(QWidget* const parent = nullptr);
     ~DigikamItemView();
 
-    ItemViewUtilities* utilities()                                                          const;
+    ItemViewUtilities* utilities()                                                           const;
 
     int  fitToWidthIcons();
 
-    virtual void setThumbnailSize(const ThumbnailSize& size)                                      override;
+    virtual void setThumbnailSize(const ThumbnailSize& size)                                 override;
 
-    ItemInfoList allItemInfos(bool grouping = false)                                        const;
-    ItemInfoList selectedItemInfos(bool grouping = false)                                   const;
-    ItemInfoList selectedItemInfosCurrentFirst(bool grouping = false)                       const;
-    bool          allNeedGroupResolving(const ApplicationSettings::OperationType type)      const;
-    bool          selectedNeedGroupResolving(const ApplicationSettings::OperationType type) const;
+    ItemInfoList  allItemInfos(bool grouping = false)                                        const;
+    ItemInfoList  selectedItemInfos(bool grouping = false)                                   const;
+    ItemInfoList  selectedItemInfosCurrentFirst(bool grouping = false)                       const;
+    bool          allNeedGroupResolving(const ApplicationSettings::OperationType type)       const;
+    bool          selectedNeedGroupResolving(const ApplicationSettings::OperationType type)  const;
 
 public Q_SLOTS:
 
@@ -73,7 +73,26 @@ public Q_SLOTS:
     bool getFaceMode() const;
     void setFaceMode(bool on);
     void confirmFaces(const QList<QModelIndex>& indexes, int tagId);
+
+    /**
+     * Removes the Face from the Database.
+     * You will have to run Facial Detection again,
+     * to recover the face.
+     */
     void removeFaces(const QList<QModelIndex>& indexes);
+
+    /**
+     * This slot is connected to the reject signal of
+     * AssignNameOverlay, and handles two cases.
+     *
+     * If reject is done on an Unknown Face,
+     * it will mark the face as Ignored.
+     *
+     * If reject is done on Unconfirmed suggestions,
+     * the Suggestion is rejected and the face is
+     * marked as Unknown.
+     */
+    void rejectFaces(const QList<QModelIndex>& indexes);
 
     void dragDropSort(const ItemInfo& pick, const QList<ItemInfo>& infos);
 

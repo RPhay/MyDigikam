@@ -82,6 +82,13 @@ TagFolderView::TagFolderView(QWidget* const parent, TagModel* const model)
     setSortingEnabled(true);
     setSelectAlbumOnClick(true);
     setEnableContextMenu(true);
+
+    /// This ensures that the View appears sorted
+    connect(AlbumManager::instance(), &AlbumManager::signalFaceCountsDirty,
+            [=]()
+            {
+                filteredModel()->sort(0, filteredModel()->sortOrder());
+            });
 }
 
 TagFolderView::~TagFolderView()
@@ -114,7 +121,8 @@ void TagFolderView::addCustomContextMenuActions(ContextMenuHelper& cmh, Album* a
     }
 
     if ((tag->id() != FaceTags::unconfirmedPersonTagId()) &&
-        (tag->id() != FaceTags::unknownPersonTagId()))
+        (tag->id() != FaceTags::unknownPersonTagId())     &&
+        (FaceTags::existsIgnoredPerson() && tag->id() != FaceTags::ignoredPersonTagId()))
     {
         cmh.addActionNewTag(tagModificationHelper(), tag);
 

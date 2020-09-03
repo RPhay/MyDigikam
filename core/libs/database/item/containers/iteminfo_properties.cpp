@@ -225,6 +225,43 @@ QSize ItemInfo::dimensions() const
     return m_data->imageSize;
 }
 
+int ItemInfo::unconfirmedFaceCount() const
+{
+    if (!m_data)
+    {
+        return 0;
+    }
+
+    RETURN_IF_CACHED(unconfirmedFaceCount);
+
+    FaceTagsEditor fte;
+    int count= fte.unconfirmedNameFaceTagsIfaces(m_data->id).count();
+
+    ItemInfoWriteLocker lock;
+    m_data.data()->unconfirmedFaceCountCached = true;
+    m_data.data()->unconfirmedFaceCount = count;
+    return m_data->unconfirmedFaceCount;
+}
+
+QMap<QString, QString> ItemInfo::getSuggestedNames() const
+{
+    if (!m_data)
+    {
+        return QMap<QString, QString>();
+    }
+
+    RETURN_IF_CACHED(faceSuggestions);
+
+    FaceTagsEditor fte;
+    QMap<QString, QString> faceSuggestions = fte.getSuggestedNames(m_data->id);
+
+    ItemInfoWriteLocker lock;
+    m_data.data()->faceSuggestionsCached = true;
+    m_data.data()->faceSuggestions = faceSuggestions;
+
+    return m_data->faceSuggestions;
+}
+
 int ItemInfo::orientation() const
 {
     if (!m_data)
@@ -333,6 +370,52 @@ void ItemInfo::setManualOrder(qlonglong value)
     ItemInfoWriteLocker lock;
     m_data->manualOrder       = value;
     m_data->manualOrderCached = true;
+}
+
+void ItemInfo::incrementUnconfirmedFaceCount(bool increment)
+{
+    if (!m_data)
+    {
+        return;
+    }
+
+    if (increment)
+    {
+        m_data->unconfirmedFaceCount++;
+        m_data->unconfirmedFaceCountCached = true;
+        return;
+    }
+
+    if (m_data->unconfirmedFaceCount > 0)
+    {
+        m_data->unconfirmedFaceCount--;
+        m_data->unconfirmedFaceCountCached = true;
+        return;
+    }
+
+    return ;
+}
+
+void ItemInfo::addSuggestedName(const QString& region, const QString& suggestedName) const
+{
+    if (!m_data || suggestedName == QLatin1String("Unknown"))
+    {
+        return;
+    }
+
+    m_data.data()->faceSuggestionsCached = true;
+    m_data.data()->faceSuggestions.insert(region, suggestedName);
+}
+
+void ItemInfo::removeSuggestedName(const QString& region) const
+{
+    if (!m_data)
+    {
+        return;
+    }
+
+    m_data.data()->faceSuggestions.remove(region);
+    m_data.data()->faceSuggestionsCached = true;
 }
 
 void ItemInfo::setOrientation(int value)

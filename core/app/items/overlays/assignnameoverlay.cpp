@@ -240,8 +240,14 @@ void AssignNameOverlay::updateFace()
     }
 
     QVariant extraData = index().data(ItemModel::ExtraDataRole);
-    assignNameWidget()->setCurrentFace(FaceTagsIface::fromVariant(extraData));
+
+    /**
+     * The order to plug these functions is important, since
+     * setUserData() controls how the Overlay appears on
+     * a particular face.
+     */
     assignNameWidget()->setUserData(ItemModel::retrieveItemInfo(index()), extraData);
+    assignNameWidget()->setCurrentFace(FaceTagsIface::fromVariant(extraData));
 }
 
 /*
@@ -266,7 +272,8 @@ bool AssignNameOverlay::checkIndex(const QModelIndex& index) const
         return false;
     }
 
-    return FaceTagsIface::fromVariant(extraData).isUnconfirmedType();
+    return FaceTagsIface::fromVariant(extraData).isUnconfirmedType() ||
+           FaceTagsIface::fromVariant(extraData).isIgnoredName() ;
 }
 
 void AssignNameOverlay::showOnIndex(const QModelIndex& index)

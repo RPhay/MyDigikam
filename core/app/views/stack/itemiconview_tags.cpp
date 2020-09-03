@@ -77,6 +77,42 @@ void ItemIconView::slotAssignTag(int tagID)
 void ItemIconView::slotRemoveTag(int tagID)
 {
     FileActionMngr::instance()->removeTags(selectedInfoList(ApplicationSettings::Metadata), QList<int>() << tagID);
+
+
+    /**
+     * Implementation for Automatic Icon Removal of
+     * Confirmed Tags.
+     * QTimer to ensure TagRemoval is complete.
+     */
+    if (!FaceTags::isTheIgnoredPerson(tagID)     &&
+        !FaceTags::isTheUnknownPerson(tagID)     &&
+        !FaceTags::isTheUnconfirmedPerson(tagID))
+    {
+        QTimer::singleShot(200, [=]()
+        {
+            int count = CoreDbAccess().db()->getNumberOfImagesInTagProperties(tagID,
+                                            ImageTagPropertyName::tagRegion());
+
+            /**
+             * If the face just removed was the final face
+             * associated with that Tag, reset Tag Icon.
+             */
+            if (count == 0)
+            {
+                TAlbum* album = AlbumManager::instance()->findTAlbum(tagID);
+
+                if (album && album->iconId() != 0)
+                {
+                    QString err;
+                    if (!AlbumManager::instance()->updateTAlbumIcon(album, QString(),
+                                                                    0, err))
+                    {
+                        qCDebug(DIGIKAM_GENERAL_LOG) << err ;
+                    }
+                }
+            }
+        });
+    }
 }
 
 

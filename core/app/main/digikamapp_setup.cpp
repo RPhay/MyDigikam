@@ -522,6 +522,7 @@ void DigikamApp::setupActions()
     QAction* const sortByRatingAction             = d->imageSortAction->addAction(i18n("By Rating"));
     QAction* const sortByImageSizeAction          = d->imageSortAction->addAction(i18n("By Image Size"));
     QAction* const sortByAspectRatioAction        = d->imageSortAction->addAction(i18n("By Aspect Ratio"));
+    QAction* const sortByFacesAction              = d->imageSortAction->addAction(i18n("By Face type"));
     QAction* const sortBySimilarityAction         = d->imageSortAction->addAction(i18n("By Similarity"));
     QAction* const sortByManualOrderAndNameAction = d->imageSortAction->addAction(i18n("By Manual and Name"));
     QAction* const sortByManualOrderAndDateAction = d->imageSortAction->addAction(i18n("By Manual and Date"));
@@ -554,6 +555,9 @@ void DigikamApp::setupActions()
 
     connect(sortByAspectRatioAction, &QAction::triggered,
             this, [this]() { d->view->slotSortImages((int)ItemSortSettings::SortByAspectRatio); });
+
+    connect(sortByFacesAction, &QAction::triggered,
+            this, [this]() { d->view->slotSortImages((int)ItemSortSettings::SortByFaces); });
 
     connect(sortBySimilarityAction, &QAction::triggered,
             this, [this]() { d->view->slotSortImages((int)ItemSortSettings::SortBySimilarity); });
@@ -593,6 +597,7 @@ void DigikamApp::setupActions()
     QAction* const separateByAlbumAction  = d->imageSeparationAction->addAction(i18n("By Album"));
     QAction* const separateByFormatAction = d->imageSeparationAction->addAction(i18n("By Format"));
     QAction* const separateByMonthAction  = d->imageSeparationAction->addAction(i18n("By Month"));
+    QAction* const separateByFacesAction  = d->imageSeparationAction->addAction(i18n("By Faces"));
 
     connect(noCategoriesAction, &QAction::triggered,
             this, [this]() { d->view->slotSeparateImages((int)ItemSortSettings::OneCategory); });
@@ -605,6 +610,9 @@ void DigikamApp::setupActions()
 
     connect(separateByMonthAction, &QAction::triggered,
             this, [this]() { d->view->slotSeparateImages((int)ItemSortSettings::CategoryByMonth); });
+
+    connect(separateByFacesAction, &QAction::triggered,
+            this, [this]() { d->view->slotSeparateImages((int)ItemSortSettings::CategoryByFaces); });
 
     // -----------------------------------------------------------------
 

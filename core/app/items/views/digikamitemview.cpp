@@ -222,7 +222,7 @@ void DigikamItemView::dragDropSort(const ItemInfo& pick, const QList<ItemInfo>& 
         return;
     }
 
-    ItemInfoList infoList = allItemInfos(false);
+    ItemInfoList infoList  = allItemInfos(false);
     qlonglong counter      = pick.manualOrder();
     bool order             = (ApplicationSettings::instance()->
                                 getImageSorting() == Qt::AscendingOrder);
@@ -235,7 +235,7 @@ void DigikamItemView::dragDropSort(const ItemInfo& pick, const QList<ItemInfo>& 
 
     foreach (ItemInfo info, infoList)
     {
-        if (!found && info.id() == pick.id())
+        if      (!found && info.id() == pick.id())
         {
             foreach (ItemInfo dropInfo, infos)
             {
@@ -328,6 +328,8 @@ void DigikamItemView::setFaceMode(bool on)
         setItemDelegate(d->faceDelegate);
         // grouping is not very much compatible with faces
         imageFilterModel()->setAllGroupsOpen(true);
+        // by default, Face View is categorized by Faces.
+        imageFilterModel()->setCategorizationMode(ItemSortSettings::CategoryByFaces);
     }
     else
     {
@@ -335,7 +337,10 @@ void DigikamItemView::setFaceMode(bool on)
         setItemDelegate(d->normalDelegate);
 
         bool open = ApplicationSettings::instance()->getAllGroupsOpen();
+        int separationOrder = ApplicationSettings::instance()->getImageSeparationMode();
+
         imageFilterModel()->setAllGroupsOpen(open);
+        imageFilterModel()->setCategorizationMode((ItemSortSettings::CategorizationMode)separationOrder);
     }
 }
 
@@ -370,11 +375,21 @@ void DigikamItemView::addAssignNameOverlay(ItemDelegate* delegate)
             this, SLOT(confirmFaces(QList<QModelIndex>,int)));
 
     connect(nameOverlay, SIGNAL(removeFaces(QList<QModelIndex>)),
-            this, SLOT(removeFaces(QList<QModelIndex>)));
+            this, SLOT(rejectFaces(QList<QModelIndex>)));
 }
 
 void DigikamItemView::confirmFaces(const QList<QModelIndex>& indexes, int tagId)
 {
+    /**
+     * You aren't allowed to "confirm" a person as
+     * Ignored. Marking as Ignored is treated as a
+     * changeTag() operation.
+     */
+    if (FaceTags::isTheIgnoredPerson(tagId))
+    {
+        return rejectFaces(indexes);
+    }
+
     QList<ItemInfo>      infos;
     QList<FaceTagsIface> faces;
     QList<QModelIndex>   sourceIndexes;
@@ -426,6 +441,37 @@ void DigikamItemView::removeFaces(const QList<QModelIndex>& indexes)
     for (int i = 0 ; i < infos.size() ; ++i)
     {
         d->editPipeline.remove(infos[i], faces[i]);
+    }
+}
+
+void DigikamItemView::rejectFaces(const QList<QModelIndex>& indexes)
+{
+    QList<ItemInfo> infos;
+    QList<FaceTagsIface> faces;
+    QList<QModelIndex> sourceIndexes;
+
+    foreach (const QModelIndex& index, indexes)
+    {
+        FaceTagsIface face = d->faceDelegate->face(index);
+        infos << ItemModel::retrieveItemInfo(index);
+        faces << face;
+        sourceIndexes << imageSortFilterModel()->mapToSourceItemModel(index);
+    }
+
+    imageAlbumModel()->removeIndexes(sourceIndexes);
+
+    for (int i = 0 ; i < infos.size() ; i++)
+    {
+        /// Reject face suggestion. Mark as Unknown.
+        if (!FaceTags::isTheUnknownPerson(faces[i].tagId()))
+        {
+            d->editPipeline.editTag(infos[i], faces[i], FaceTags::unknownPersonTagId());
+        }
+        /// Reject signal was sent from an Unknown Face. Mark as Ignored.
+        else
+        {
+            d->editPipeline.editTag(infos[i], faces[i], FaceTags::ignoredPersonTagId());
+        }
     }
 }
 

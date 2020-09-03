@@ -36,6 +36,8 @@
 #include "coredbwatch.h"
 #include "iteminfolist.h"
 #include "itemmodel.h"
+#include "facetagsiface.h"
+#include "facetags.h"
 
 namespace Digikam
 {
@@ -324,12 +326,24 @@ QVariant ItemFilterModel::data(const QModelIndex& index, int role) const
         return QVariant();
     }
 
+    /**
+     * Keeping track of the Face (if any) associated with this Model Index
+     * is important to allow categorization by Face.
+     */
+    QVariant extraData = d->imageModel->data(mapToSource(index), ItemModel::ExtraDataRole);
+
+    FaceTagsIface face;
+    if (!extraData.isNull())
+    {
+        face = FaceTagsIface::fromVariant(extraData);
+    }
+
     switch (role)
     {
         // Attention: This breaks should there ever be another filter model between this and the ItemModel
 
         case DCategorizedSortFilterProxyModel::CategoryDisplayRole:
-            return categoryIdentifier(d->imageModel->imageInfoRef(mapToSource(index)));
+            return categoryIdentifier(d->imageModel->imageInfoRef(mapToSource(index)), face);
 
         case CategorizationModeRole:
             return d->sorter.categorizationMode;
@@ -347,6 +361,26 @@ QVariant ItemFilterModel::data(const QModelIndex& index, int role) const
 
         case CategoryDateRole:
             return d->imageModel->imageInfoRef(mapToSource(index)).dateTime();
+
+        case CategoryFaceRole:
+            if (extraData.isNull())
+            {
+                return QStringLiteral("No face");
+            }
+
+            if (face.type() == FaceTagsIface::UnknownName)
+            {
+                return QStringLiteral("Unknown");
+            }
+
+            if (face.type() == FaceTagsIface::ConfirmedName)
+            {
+                QString name = FaceTags::faceNameForTag(face.tagId());
+                name += QStringLiteral(" [Confirmed]");
+                return name;
+            }
+
+            return d->imageModel->imageInfoRef(mapToSource(index)).getSuggestedNames().value(face.region().toXml());
 
         case GroupIsOpenRole:
             return (d->groupFilter.isAllOpen() ||
@@ -886,9 +920,26 @@ int ItemFilterModel::compareCategories(const QModelIndex& left, const QModelInde
     qlonglong leftGroupImageId  = leftInfo.groupImageId();
     qlonglong rightGroupImageId = rightInfo.groupImageId();
 
+    QVariant leftExtraData = left.data(ItemModel::ExtraDataRole);
+    QVariant rightExtraData = right.data(ItemModel::ExtraDataRole);
+
+    FaceTagsIface leftFace;
+    FaceTagsIface rightFace;
+
+    if (!leftExtraData.isNull())
+    {
+        leftFace = FaceTagsIface::fromVariant(leftExtraData);
+    }
+
+    if (!rightExtraData.isNull())
+    {
+        rightFace = FaceTagsIface::fromVariant(rightExtraData);
+    }
+
     return compareInfosCategories(
                                   (leftGroupImageId  == -1) ? leftInfo  : ItemInfo(leftGroupImageId),
                                   (rightGroupImageId == -1) ? rightInfo : ItemInfo(rightGroupImageId)
+                                  , leftFace, rightFace
                                  );
 }
 
@@ -950,7 +1001,16 @@ int ItemFilterModel::compareInfosCategories(const ItemInfo& left, const ItemInfo
     // Note: reimplemented in ItemAlbumFilterModel
     Q_D(const ItemFilterModel);
 
-    return d->sorter.compareCategories(left, right);
+    FaceTagsIface leftFace, rightFace;
+    return d->sorter.compareCategories(left, right, leftFace, rightFace);
+}
+
+int ItemFilterModel::compareInfosCategories(const ItemInfo& left, const ItemInfo& right, const FaceTagsIface& leftFace, const FaceTagsIface& rightFace) const
+{
+    // Note: reimplemented in ItemAlbumFilterModel
+    Q_D(const ItemFilterModel);
+
+    return d->sorter.compareCategories(left, right, leftFace, rightFace);
 }
 
 // Feel free to optimize. QString::number is 3x slower.
@@ -970,7 +1030,7 @@ static inline QString fastNumberToString(int id)
     return QLatin1String(c);
 }
 
-QString ItemFilterModel::categoryIdentifier(const ItemInfo& i) const
+QString ItemFilterModel::categoryIdentifier(const ItemInfo& i, const FaceTagsIface& face) const
 {
     Q_D(const ItemFilterModel);
 
@@ -981,6 +1041,7 @@ QString ItemFilterModel::categoryIdentifier(const ItemInfo& i) const
 
     qlonglong groupedImageId = i.groupImageId();
     ItemInfo info = groupedImageId == -1 ? i : ItemInfo(groupedImageId);
+    const QMap<QString, QString> map = info.getSuggestedNames();
 
     switch (d->sorter.categorizationMode)
     {
@@ -998,6 +1059,18 @@ QString ItemFilterModel::categoryIdentifier(const ItemInfo& i) const
 
         case ItemSortSettings::CategoryByMonth:
             return info.dateTime().date().toString(QLatin1String("MMyyyy"));
+
+        case ItemSortSettings::CategoryByFaces:
+            /// No face in image.
+            if (face.isNull())
+                return QStringLiteral("No Face");
+
+            /// Suggested Name exists for Region.
+            if (!map.value(face.region().toXml()).isEmpty())
+                return map.value(face.region().toXml());
+
+            /// Region is Confirmed. Appending TagId, to prevent multiple Confirmed categories.
+            return QStringLiteral("Confirmed(%1)").arg(face.tagId());
 
         default:
             return QString();

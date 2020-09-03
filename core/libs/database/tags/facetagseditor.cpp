@@ -69,6 +69,11 @@ QList<FaceTagsIface> FaceTagsEditor::unconfirmedFaceTagsIfaces(qlonglong imageId
     return databaseFaces(imageId, FaceTagsIface::UnconfirmedTypes);
 }
 
+QList<FaceTagsIface> FaceTagsEditor::unconfirmedNameFaceTagsIfaces(qlonglong imageId) const
+{
+    return databaseFaces(imageId, FaceTagsIface::UnconfirmedName);
+}
+
 QList<FaceTagsIface> FaceTagsEditor::databaseFacesForTraining(qlonglong imageId) const
 {
     return databaseFaces(imageId, FaceTagsIface::FaceForTraining);
@@ -77,6 +82,11 @@ QList<FaceTagsIface> FaceTagsEditor::databaseFacesForTraining(qlonglong imageId)
 QList<FaceTagsIface> FaceTagsEditor::confirmedFaceTagsIfaces(qlonglong imageId) const
 {
     return databaseFaces(imageId, FaceTagsIface::ConfirmedName);
+}
+
+QList<FaceTagsIface> FaceTagsEditor::ignoredFaceTagsIfaces(qlonglong imageId) const
+{
+    return databaseFaces(imageId, FaceTagsIface::IgnoredName);
 }
 
 QList<FaceTagsIface> FaceTagsEditor::databaseFaces(qlonglong imageid, FaceTagsIface::TypeFlags flags) const
@@ -243,13 +253,45 @@ FaceTagsIface FaceTagsEditor::changeSuggestedName(const FaceTagsIface& previousE
     return newEntry;
 }
 
-FaceTagsIface FaceTagsEditor::confirmName(const FaceTagsIface& face, int tagId, const TagRegion& confirmedRegion)
+QMap<QString, QString> FaceTagsEditor::getSuggestedNames(qlonglong id) const
+{
+    QMap<QString, QString> suggestedNames;
+
+    foreach (const ItemTagPair& pair, ItemTagPair::availablePairs(id))
+    {
+        foreach (const QString& regionString, pair.values(ImageTagPropertyName::autodetectedPerson()))
+        {
+            /**
+             * For Unconfirmed Results, the value is stored as a tuple of
+             * (SuggestedId, Property, Region). Look at the digikam.db file
+             * for more details.
+             */
+            QStringList valueList = regionString.split(QLatin1String(","));
+            QString region(valueList.at(2));
+            QString suggestedName = FaceTags::faceNameForTag(valueList.at(0).toInt());
+
+            if (!TagRegion(region).isValid() || suggestedName == QLatin1String("Unknown"))
+            {
+                continue;
+            }
+
+            suggestedNames.insert(region, suggestedName);
+        }
+    }
+
+    return suggestedNames;
+}
+
+FaceTagsIface FaceTagsEditor::confirmName(const FaceTagsIface& face, int tagId,
+                                          const TagRegion& confirmedRegion)
 {
     FaceTagsIface newEntry = confirmedEntry(face, tagId, confirmedRegion);
 
-    if (FaceTags::isTheUnknownPerson(newEntry.tagId()))
+    if (FaceTags::isTheUnknownPerson(newEntry.tagId())     ||
+        FaceTags::isTheUnconfirmedPerson(newEntry.tagId()) ||
+        FaceTags::isTheIgnoredPerson(newEntry.tagId()))
     {
-        qCDebug(DIGIKAM_DATABASE_LOG) << "Refusing to confirm unknownPerson tag on face";
+        qCDebug(DIGIKAM_DATABASE_LOG) << "Refusing to confirm tag on face";
         return face;
     }
 
@@ -274,6 +316,22 @@ FaceTagsIface FaceTagsEditor::confirmName(const FaceTagsIface& face, int tagId, 
                   true);
 
     return newEntry;
+}
+
+FaceTagsIface FaceTagsEditor::confirmName(const FaceTagsIface& face,  ItemInfo& info, int tagId,
+                                          const TagRegion& confirmedRegion)
+{
+    /**
+     * Update ItemInfo Properties confirming an Unconfirmed Face.
+     * This ensures that sorting/categorization based on Faces is updated.
+     */
+    if (face.type() == FaceTagsIface::UnconfirmedName && !info.isNull())
+    {
+        info.incrementUnconfirmedFaceCount(false);
+        info.removeSuggestedName(face.region().toXml());
+    }
+
+    return confirmName(face, tagId, confirmedRegion);
 }
 
 FaceTagsIface FaceTagsEditor::add(qlonglong imageId, int tagId, const TagRegion& region, bool trainFace)
@@ -433,6 +491,53 @@ FaceTagsIface FaceTagsEditor::changeRegion(const FaceTagsIface& face, const TagR
 
     // todo: the Training entry is cleared.
 }
+
+FaceTagsIface FaceTagsEditor::changeTag(const FaceTagsIface& face, int newTagId, ItemInfo& info)
+{
+    if(face.isNull() || (face.tagId() == newTagId) || !FaceTags::isPerson(newTagId))
+    {
+        return face;
+    }
+
+    /**
+     * Update ItemInfo Properties if the old tag
+     * was Unconfirmed. This ensures that sorting/categorization
+     * based on Faces is updated.
+     */
+    if (face.type() == FaceTagsIface::UnconfirmedName && !info.isNull())
+    {
+        info.incrementUnconfirmedFaceCount(false);
+        info.removeSuggestedName(face.region().toXml());
+    }
+
+    /**
+     * Since a new Tag is going to be assigned to the Face,
+     * it's important to remove the association between
+     * the face and the old tagId.
+     */
+    removeFace(face);
+
+    FaceTagsIface newFace = face;
+    newFace.setTagId(newTagId);
+    newFace.setType(FaceTagsIface::typeForId(newTagId));
+
+    ItemTagPair newPair(newFace.imageId(), newFace.tagId());
+
+    /**
+     * NOTE: Ignored Tag is being associated with the Images.
+     * This is to allow storing Ignored information in the metadata
+     * of the image.
+     * We store metadata of FaceTags, if it's a confirmed
+     * or ignored person.
+     */
+    bool isConfirmedOrIgnored = !FaceTags::isTheUnknownPerson(newTagId) &&
+                                !FaceTags::isTheUnconfirmedPerson(newTagId);
+
+    addFaceAndTag(newPair, newFace, FaceTagsIface::attributesForFlags(newFace.type()),
+                  isConfirmedOrIgnored);
+
+    return newFace;
+ }
 
 // --- Editing normal tags ---
 

@@ -400,6 +400,23 @@ FaceTagsIface FacePipeline::editRegion(const ItemInfo& info,
     return std::move(face);
 }
 
+FaceTagsIface FacePipeline::editTag(const ItemInfo& info,
+                                    const FaceTagsIface& databaseFace,
+                                    int newTagId)
+{
+    FacePipelineFaceTagsIface face           = FacePipelineFaceTagsIface(databaseFace);
+    face.assignedTagId                       = newTagId;
+    face.assignedRegion                      = TagRegion();
+    face.roles                              |= FacePipelineFaceTagsIface::ForEditing;
+
+    FacePipelineExtendedPackage::Ptr package = d->buildPackage(info, face, DImg());
+
+    package->databaseFaces.setRole(FacePipelineFaceTagsIface::ForEditing);
+    d->send(package);
+
+    return std::move(face);
+}
+
 void FacePipeline::remove(const ItemInfo& info,
                           const FaceTagsIface& databaseFace)
 {

@@ -197,11 +197,29 @@ void AssignNameWidget::Private::checkWidgets()
             if (!rejectButton)
             {
                 rejectButton = createToolButton(QIcon::fromTheme(QLatin1String("list-remove")), i18n("Remove"));
-
-                rejectButton->setToolTip(i18nc("@info:tooltip", "If this is not a face, click to reject it."));
+                rejectButton->setToolTip(i18nc("@info:tooltip", "Reject this suggestion"));
 
                 q->connect(rejectButton, SIGNAL(clicked()),
                            q, SLOT(slotReject()));
+            }
+
+            break;
+        }
+
+        case IgnoredMode:
+        {
+            if (!confirmButton)
+            {
+                confirmButton = createToolButton(QIcon::fromTheme(QLatin1String("dialog-ok-apply")), i18n("Ok"));
+                confirmButton->setToolTip(i18nc("@info:tooltip", "Unmark this face as Ignored"));
+                q->connect(confirmButton, SIGNAL(clicked()),
+                           q, SLOT(slotReject()));
+            }
+
+            if(!rejectButton)
+            {
+                rejectButton = createToolButton(QIcon::fromTheme(QLatin1String("list-remove")), i18n("Reject"));
+                rejectButton->setEnabled(false);
             }
 
             break;
@@ -309,6 +327,18 @@ void AssignNameWidget::Private::updateLayout()
                     break;
                 }
             }
+
+            break;
+        }
+
+        case IgnoredMode:
+        {
+            layout->addWidget(confirmButton, 0, 0);
+            layout->addWidget(rejectButton,  0, 1);
+
+            confirmButton->setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Minimum);
+            rejectButton->setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Minimum);
+            setToolButtonStyles(Qt::ToolButtonIconOnly);
 
             break;
         }
@@ -473,11 +503,10 @@ void AssignNameWidget::Private::setAddTagsWidgetContents(T* const widget)
 
 void AssignNameWidget::Private::updateContents()
 {
-    if (!isValid())
+    if (!isValid() || mode == AssignNameWidget::IgnoredMode)
     {
         return;
     }
-
     if      (comboBox)
     {
         setAddTagsWidgetContents(comboBox);
@@ -491,6 +520,20 @@ void AssignNameWidget::Private::updateContents()
     {
         clickLabel->setText(currentTag ? currentTag->title()
                                        : QString());
+    }
+}
+
+void AssignNameWidget::Private::updateRejectButtonTooltip()
+{
+    FaceTagsIface face = FaceTagsIface::fromVariant(faceIdentifier);
+
+    if      (face.type() == FaceTagsIface::UnknownName)
+    {
+        rejectButton->setToolTip(i18nc("@info:tooltip", "Mark this face as Ignored"));
+    }
+    else if (face.type() == FaceTagsIface::UnconfirmedName)
+    {
+        rejectButton->setToolTip(i18nc("@info:tooltip", "Reject this suggestion"));
     }
 }
 

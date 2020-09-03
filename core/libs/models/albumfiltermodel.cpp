@@ -425,6 +425,28 @@ bool AlbumFilterModel::lessThan(const QModelIndex& left, const QModelIndex& righ
             return (sortOrder() == Qt::AscendingOrder) ? (leftAlbum->id() == FaceTags::unknownPersonTagId())
                                                        : (leftAlbum->id() != FaceTags::unknownPersonTagId());
         }
+
+        /// Verify this, to prevent auto-creation of Ignored Tag.
+        if (FaceTags::existsIgnoredPerson())
+        {
+            if ((leftAlbum->id() == FaceTags::ignoredPersonTagId()) != (rightAlbum->id() == FaceTags::ignoredPersonTagId()))
+            {
+                // ignored tag albums go to the bottom, regardless of sort role
+
+                return (sortOrder() == Qt::AscendingOrder) ? (leftAlbum->id() != FaceTags::ignoredPersonTagId())
+                                                        : (leftAlbum->id() == FaceTags::ignoredPersonTagId());
+            }
+        }
+
+        /**
+         * Implementation to sort Tags that contain
+         * Unconfirmed Faces, according to the Unconfirmed
+         * Face Count.
+         */
+        QMap<int,int> unconfirmedFaceCount = AlbumManager::instance()->getUnconfirmedFaceCount();
+        if (unconfirmedFaceCount.contains(leftAlbum->id()) || unconfirmedFaceCount.contains(rightAlbum->id()))
+             return (sortOrder() == Qt::AscendingOrder) ? (unconfirmedFaceCount.value(leftAlbum->id()) > unconfirmedFaceCount.value(rightAlbum->id()))
+                                                        : (unconfirmedFaceCount.value(leftAlbum->id()) < unconfirmedFaceCount.value(rightAlbum->id()));
     }
 
     if (leftAlbum->isTrashAlbum() != rightAlbum->isTrashAlbum())

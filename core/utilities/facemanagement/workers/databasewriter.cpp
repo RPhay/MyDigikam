@@ -102,6 +102,27 @@ void DatabaseWriter::process(FacePipelineExtendedPackage::Ptr package)
                     tagId = FaceTags::getOrCreateTagForIdentity(package->recognitionResults[i].attributesMap());
                 }
 
+                /**
+                 * Implementation to ensure that:
+                 * 1. Unconfirmed face count, for the associated image is incremented.
+                 * 2. Region of Face gets mapped to Suggested Name in the Associated Image.
+                 * It's important to manually do this, as ItemInfo only reads from Database
+                 * when there's no cached information. Occasionally ItemInfo may not update,
+                 * even if number of Unconfirmed Faces have changed.
+                 *
+                 * It's also important to check that the Face for which we're incrementing
+                 * wasn't marked as Unconfirmed already. This can happen in photos with
+                 * multiple Faces in it.
+                 */
+                if (package->databaseFaces[i].type() != FaceTagsIface::UnconfirmedName)
+                {
+                    package->info.incrementUnconfirmedFaceCount(true);
+
+                    QString region = package->databaseFaces[i].region().toXml();
+                    QString suggestedName = FaceTags::faceNameForTag(tagId);
+                    package->info.addSuggestedName(region, suggestedName);
+                }
+
                 package->databaseFaces[i]        = FacePipelineFaceTagsIface(utils.changeSuggestedName(package->databaseFaces[i], tagId));
                 package->databaseFaces[i].roles &= ~FacePipelineFaceTagsIface::ForRecognition;
            }
@@ -119,7 +140,7 @@ void DatabaseWriter::process(FacePipelineExtendedPackage::Ptr package)
         {
             if (it->roles & FacePipelineFaceTagsIface::ForConfirmation)
             {
-                FacePipelineFaceTagsIface confirmed = FacePipelineFaceTagsIface(utils.confirmName(*it, it->assignedTagId, it->assignedRegion));
+                FacePipelineFaceTagsIface confirmed = FacePipelineFaceTagsIface(utils.confirmName(*it,  package->info, it->assignedTagId, it->assignedRegion));
                 confirmed.roles                    |= FacePipelineFaceTagsIface::Confirmed | FacePipelineFaceTagsIface::ForTraining;
                 add << confirmed;
             }
@@ -136,8 +157,12 @@ void DatabaseWriter::process(FacePipelineExtendedPackage::Ptr package)
                 else if (it->assignedRegion.isValid())
                 {
                     add << FacePipelineFaceTagsIface(utils.changeRegion(*it, it->assignedRegion));
+                }
 
-                    // not implemented: changing tag id
+                // Change Tag operation.
+                else if (FaceTags::isPerson(it->assignedTagId))
+                {
+                    add << FacePipelineFaceTagsIface(utils.changeTag(*it, it->assignedTagId, package->info));
                 }
                 else
                 {

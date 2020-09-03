@@ -185,7 +185,10 @@ protected:
     /// For subclassing convenience: A part of the implementation of data()
     virtual QVariant decorationRoleData(Album* a)   const;
 
-    /// For subclassing convenience: A port of the implementation of data()
+    /// For subclassing convenience: A part of the implementation of data()
+    virtual QVariant fontRoleData(Album* a)         const;
+
+    /// For subclassing convenience: A part of the implementation of data()
     virtual QVariant sortRoleData(Album* a)         const;
 
     /// For subclassing convenience: A part of the implementation of headerData()

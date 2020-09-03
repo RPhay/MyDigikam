@@ -534,6 +534,9 @@ public:
     void setDuplicatesSearchRestrictions(int val);
     int  getDuplicatesSearchRestrictions() const;
 
+    void setHelpBoxNotificationSeen(bool val);
+    bool getHelpBoxNotificationSeen();
+
 private Q_SLOTS:
 
     void applyBalooSettings();

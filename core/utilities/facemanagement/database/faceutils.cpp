@@ -28,6 +28,7 @@
 // Qt includes
 
 #include <QImage>
+#include <QTimer>
 
 // Local includes
 
@@ -35,6 +36,7 @@
 #include "coredbaccess.h"
 #include "coredbconstants.h"
 #include "coredboperationgroup.h"
+#include "coredb.h"
 #include "dimg.h"
 #include "facetags.h"
 #include "iteminfo.h"
@@ -44,6 +46,7 @@
 #include "tagscache.h"
 #include "tagregion.h"
 #include "thumbnailloadthread.h"
+#include "albummanager.h"
 
 namespace Digikam
 {
@@ -308,14 +311,70 @@ int FaceUtils::tagForIdentity(const Identity& identity) const
 
 // --- Editing normal tags, reimplemented with FileActionMngr ---
 
-void FaceUtils::addNormalTag(qlonglong imageid, int tagId)
+void FaceUtils::addNormalTag(qlonglong imageId, int tagId)
 {
-    FileActionMngr::instance()->assignTag(ItemInfo(imageid), tagId);
+    FileActionMngr::instance()->assignTag(ItemInfo(imageId), tagId);
+
+    /**
+     * Implementation for automatic assigning of face as
+     * Tag Icon, if no icon exists currently.
+     * Utilising a QTimer to ensure that a new TAlbum
+     * is given time to be created, before assigning Icon.
+     */
+    QTimer::singleShot(200, [=]()
+    {
+        if (!FaceTags::isTheIgnoredPerson(tagId)     &&
+            !FaceTags::isTheUnknownPerson(tagId)     &&
+            !FaceTags::isTheUnconfirmedPerson(tagId)
+            )
+        {
+            TAlbum* album = AlbumManager::instance()->findTAlbum(tagId);
+
+            // If Icon is NULL, set the newly added Face as the Icon.
+            if (album && album->iconId() == 0)
+            {
+                QString err;
+                if (!AlbumManager::instance()->updateTAlbumIcon(album, QString(),
+                                                                imageId, err))
+                {
+                    qCDebug(DIGIKAM_GENERAL_LOG) << err ;
+                }
+            }
+        }
+    });
 }
 
 void FaceUtils::removeNormalTag(qlonglong imageId, int tagId)
 {
     FileActionMngr::instance()->removeTag(ItemInfo(imageId), tagId);
+
+    if (!FaceTags::isTheIgnoredPerson(tagId)     &&
+        !FaceTags::isTheUnknownPerson(tagId)     &&
+        !FaceTags::isTheUnconfirmedPerson(tagId)
+        )
+    {
+        int count = CoreDbAccess().db()->getNumberOfImagesInTagProperties(tagId,
+                                        ImageTagPropertyName::tagRegion());
+
+        /**
+         * If the face just removed was the final face
+         * associated with that Tag, reset Tag Icon.
+         */
+        if (count == 0)
+        {
+            TAlbum* album = AlbumManager::instance()->findTAlbum(tagId);
+
+            if (album && album->iconId() != 0)
+            {
+                QString err;
+                if (!AlbumManager::instance()->updateTAlbumIcon(album, QString(),
+                                                                0, err))
+                {
+                    qCDebug(DIGIKAM_GENERAL_LOG) << err ;
+                }
+            }
+        }
+    }
 }
 
 void FaceUtils::removeNormalTags(qlonglong imageId, QList<int> tagIds)

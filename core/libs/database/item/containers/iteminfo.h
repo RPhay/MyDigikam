@@ -256,6 +256,19 @@ public:
     QString comment()                                                                   const;
 
     /**
+     * @return the number of Unconfirmed Faces in this item.
+     */
+    int unconfirmedFaceCount()                                                          const;
+
+
+    /**
+     * @return the map of Tag Region (in XML form) to Suggested Names for all
+     * Faces in the Image.
+     * Used to categorize images based on Face Suggestions.
+     */
+    QMap<QString, QString> getSuggestedNames()                                          const;
+
+    /**
      * Set the name (write it to database)
      * @param newName the new name.
      */
@@ -287,6 +300,27 @@ public:
      * Set the visibility flag - triggers between Visible and Hidden
      */
     void setVisible(bool isVisible);
+
+    /**
+     * Modifies the counter for Unconfirmed Faces stored in
+     * the ItemInfo.
+     * @param increment increase the Unconfirmed Face Count by 1 if true, decrements otherwise
+     */
+    void incrementUnconfirmedFaceCount(bool increment);
+
+    /**
+     * Adds a Tag Region -> Suggested Name pair to this Image.
+     * This method is called during Face Recognition, to add Faces to images, as
+     * the faces get recognized.
+     */
+    void addSuggestedName(const QString& region, const QString& suggestedName)          const;
+
+    /**
+     * Removes the region from the Map associated with this image.
+     * This will be called whenever a user Confirms/Rejects
+     * Face Suggestions.
+     */
+    void removeSuggestedName(const QString& region)                                     const;
 
     /**
      * @todo Supports only VideoMetadataField and ImageMetadataField values for now.
