@@ -1783,12 +1783,12 @@
                     max_range BLOB NOT NULL,
                     min_range BLOB NOT NULL,
                     parent INTEGER,
-                    left INTEGER,
-                    right INTEGER,
+                    `left` INTEGER,
+                    `right` INTEGER,
                     CONSTRAINT Node_position FOREIGN KEY (position) REFERENCES FaceMatrices (id) ON DELETE CASCADE ON UPDATE CASCADE,
                     CONSTRAINT Parent_node FOREIGN KEY (parent) REFERENCES KDTree (id) ON DELETE CASCADE ON UPDATE CASCADE,
-                    CONSTRAINT Left_node FOREIGN KEY (left) REFERENCES KDTree (id) ON DELETE CASCADE ON UPDATE CASCADE,
-                    CONSTRAINT Right_node FOREIGN KEY (right) REFERENCES KDTree (id) ON DELETE CASCADE ON UPDATE CASCADE)
+                    CONSTRAINT Left_node FOREIGN KEY (`left`) REFERENCES KDTree (id) ON DELETE CASCADE ON UPDATE CASCADE,
+                    CONSTRAINT Right_node FOREIGN KEY (`right`) REFERENCES KDTree (id) ON DELETE CASCADE ON UPDATE CASCADE)
                     ENGINE InnoDB;
                 </statement>
             </dbaction>
