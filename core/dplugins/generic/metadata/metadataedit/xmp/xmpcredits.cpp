@@ -53,30 +53,32 @@ public:
 
     explicit Private()
     {
-        bylineEdit       = nullptr;
-        bylineTitleEdit  = nullptr;
-        creditEdit       = nullptr;
-        sourceEdit       = nullptr;
-        emailEdit        = nullptr;
-        urlEdit          = nullptr;
-        phoneEdit        = nullptr;
-        addressEdit      = nullptr;
-        postalCodeEdit   = nullptr;
-        cityEdit         = nullptr;
-        countryEdit      = nullptr;
-        bylineTitleCheck = nullptr;
-        creditCheck      = nullptr;
-        sourceCheck      = nullptr;
-        emailCheck       = nullptr;
-        urlCheck         = nullptr;
-        phoneCheck       = nullptr;
-        addressCheck     = nullptr;
-        postalCodeCheck  = nullptr;
-        cityCheck        = nullptr;
-        countryCheck     = nullptr;
-        contactCheck     = nullptr;
+        syncEXIFArtistCheck = nullptr;
+        bylineEdit          = nullptr;
+        bylineTitleEdit     = nullptr;
+        creditEdit          = nullptr;
+        sourceEdit          = nullptr;
+        emailEdit           = nullptr;
+        urlEdit             = nullptr;
+        phoneEdit           = nullptr;
+        addressEdit         = nullptr;
+        postalCodeEdit      = nullptr;
+        cityEdit            = nullptr;
+        countryEdit         = nullptr;
+        bylineTitleCheck    = nullptr;
+        creditCheck         = nullptr;
+        sourceCheck         = nullptr;
+        emailCheck          = nullptr;
+        urlCheck            = nullptr;
+        phoneCheck          = nullptr;
+        addressCheck        = nullptr;
+        postalCodeCheck     = nullptr;
+        cityCheck           = nullptr;
+        countryCheck        = nullptr;
+        contactCheck        = nullptr;
     }
 
+    QCheckBox*        syncEXIFArtistCheck;
     QCheckBox*        bylineTitleCheck;
     QCheckBox*        creditCheck;
     QCheckBox*        sourceCheck;
@@ -115,6 +117,7 @@ XMPCredits::XMPCredits(QWidget* const parent)
 
     d->bylineEdit = new MultiStringsEdit(this, i18n("Byline:"),
                                          i18n("Set here the name of content creator."));
+    d->syncEXIFArtistCheck = new QCheckBox(i18n("Sync Exif Artist"), this);
 
     // --------------------------------------------------------
 
@@ -198,14 +201,15 @@ XMPCredits::XMPCredits(QWidget* const parent)
     // --------------------------------------------------------
 
     grid->addWidget(d->bylineEdit,          0, 0, 1, 3);
-    grid->addWidget(d->bylineTitleCheck,    1, 0, 1, 1);
-    grid->addWidget(d->bylineTitleEdit,     1, 1, 1, 2);
-    grid->addWidget(contactBox,             2, 0, 1, 3);
-    grid->addWidget(d->creditCheck,         3, 0, 1, 1);
-    grid->addWidget(d->creditEdit,          3, 1, 1, 2);
-    grid->addWidget(d->sourceCheck,         4, 0, 1, 1);
-    grid->addWidget(d->sourceEdit,          4, 1, 1, 2);
-    grid->setRowStretch(5, 10);
+    grid->addWidget(d->syncEXIFArtistCheck, 1, 0, 1, 3);
+    grid->addWidget(d->bylineTitleCheck,    2, 0, 1, 1);
+    grid->addWidget(d->bylineTitleEdit,     2, 1, 1, 2);
+    grid->addWidget(contactBox,             3, 0, 1, 3);
+    grid->addWidget(d->creditCheck,         4, 0, 1, 1);
+    grid->addWidget(d->creditEdit,          4, 1, 1, 2);
+    grid->addWidget(d->sourceCheck,         5, 0, 1, 1);
+    grid->addWidget(d->sourceEdit,          5, 1, 1, 2);
+    grid->setRowStretch(6, 10);
     grid->setColumnStretch(2, 10);
     grid->setContentsMargins(QMargins());
     grid->setSpacing(spacing);
@@ -313,6 +317,24 @@ XMPCredits::XMPCredits(QWidget* const parent)
 XMPCredits::~XMPCredits()
 {
     delete d;
+}
+
+bool XMPCredits::syncEXIFArtistIsChecked() const
+{
+    return d->syncEXIFArtistCheck->isChecked();
+}
+
+void XMPCredits::setCheckedSyncEXIFArtist(bool c)
+{
+    d->syncEXIFArtistCheck->setChecked(c);
+}
+
+QString XMPCredits::getXMPByLine() const
+{
+    QStringList oldv, newv;
+    d->bylineEdit->getValues(oldv, newv);
+
+    return (newv.join(QLatin1Char(';')));
 }
 
 void XMPCredits::readMetadata(QByteArray& xmpData)
@@ -491,21 +513,36 @@ void XMPCredits::readMetadata(QByteArray& xmpData)
     blockSignals(false);
 }
 
-void XMPCredits::applyMetadata(QByteArray& xmpData)
+void XMPCredits::applyMetadata(QByteArray& exifData, QByteArray& xmpData)
 {
     QStringList oldList, newList;
     DMetadata meta;
+    meta.setExif(exifData);
     meta.setXmp(xmpData);
 
     if (d->bylineEdit->getValues(oldList, newList))
+    {
         meta.setXmpTagStringSeq("Xmp.dc.creator", newList);
+
+        if (syncEXIFArtistIsChecked())
+        {
+            meta.removeExifTag("Exif.Image.Artist");
+            meta.setExifTagString("Exif.Image.Artist", getXMPByLine());
+        }
+    }
     else
+    {
         meta.removeXmpTag("Xmp.dc.creator");
+    }
 
     if (d->bylineTitleCheck->isChecked())
+    {
         meta.setXmpTagString("Xmp.photoshop.AuthorsPosition", d->bylineTitleEdit->text());
+    }
     else
+    {
         meta.removeXmpTag("Xmp.photoshop.AuthorsPosition");
+    }
 
     // --------------------------------------------------------
 
@@ -589,9 +626,13 @@ void XMPCredits::applyMetadata(QByteArray& xmpData)
     // --------------------------------------------------------
 
     if (d->creditCheck->isChecked())
+    {
         meta.setXmpTagString("Xmp.photoshop.Credit", d->creditEdit->text());
+    }
     else
+    {
         meta.removeXmpTag("Xmp.photoshop.Credit");
+    }
 
     if (d->sourceCheck->isChecked())
     {
@@ -604,7 +645,8 @@ void XMPCredits::applyMetadata(QByteArray& xmpData)
         meta.removeXmpTag("Xmp.dc.source");
     }
 
-    xmpData = meta.getXmp();
+    exifData = meta.getExifEncoded();
+    xmpData  = meta.getXmp();
 }
 
 } // namespace DigikamGenericMetadataEditPlugin

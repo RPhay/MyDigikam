@@ -398,8 +398,13 @@ cat << EOF > "$PROJECTDIR/preinstall"
 #!/bin/bash
 
 if [ -d /Applications/digiKam ] ; then
-    echo "Removing digikam from Applications folder"
+    echo "Removing legacy digikam from Applications folder"
     rm -r /Applications/digiKam
+fi
+
+if [ -d /Applications/digikam.app ] ; then
+    echo "Removing official digikam from Applications folder"
+    rm -r /Applications/digikam.app
 fi
 
 if [ -d "$INSTALL_PREFIX" ] ; then
@@ -422,10 +427,8 @@ echo "---------- Create package post-install script"
 cat << EOF > "$PROJECTDIR/postinstall"
 #!/bin/bash
 
-[[ ! -d /Applications/digiKam ]] && mkdir "/Applications/digiKam"
-
 for app in $INSTALL_PREFIX/Applications/digiKam/*.app ; do
-    ln -s "\$app" /Applications/digiKam/\${app##*/}
+    ln -s "\$app" /Applications/\${app##*/}
 done
 EOF
 

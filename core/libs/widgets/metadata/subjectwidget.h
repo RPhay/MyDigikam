@@ -54,9 +54,9 @@ public:
     {
     }
 
-    QString name;         ///< English and Ascii Name of subject.
-    QString matter;       ///< English and Ascii Matter Name of subject.
-    QString detail;       ///< English and Ascii Detail Name of subject.
+    QString name;         ///< English and Name of subject.
+    QString matter;       ///< English and Matter Name of subject.
+    QString detail;       ///< English and Detail Name of subject.
 };
 
 // --------------------------------------------------------------------------------

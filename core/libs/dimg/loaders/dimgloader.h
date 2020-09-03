@@ -103,7 +103,7 @@ public:
     static qint64 checkAllocation(qint64 fullSize);
 
     template <typename Type> static Type* new_failureTolerant(size_t unsecureSize);
-    template <typename Type> static Type* new_failureTolerant(uint w, uint h, uint typesPerPixel);
+    template <typename Type> static Type* new_failureTolerant(quint64 w, quint64 h, uint typesPerPixel);
 
 protected:
 
@@ -156,9 +156,9 @@ private:
  * 32bit overflow and exceeding the size_t type
  */
 template <typename Type>
-Q_INLINE_TEMPLATE Type* DImgLoader::new_failureTolerant(uint w, uint h, uint typesPerPixel)
+Q_INLINE_TEMPLATE Type* DImgLoader::new_failureTolerant(quint64 w, quint64 h, uint typesPerPixel)
 {
-    quint64 requested = (quint64)w * (quint64)h * (quint64)typesPerPixel;
+    quint64 requested = w * h * (quint64)typesPerPixel;
 
     if (requested >= std::numeric_limits<size_t>::max())
     {

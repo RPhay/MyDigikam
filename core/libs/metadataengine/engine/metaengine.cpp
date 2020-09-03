@@ -127,8 +127,9 @@ bool MetaEngine::supportXmp()
 #endif // _XMP_SUPPORT_
 }
 
-bool MetaEngine::supportMetadataWritting(const QString& typeMime)
+bool MetaEngine::supportMetadataWriting(const QString& /*typeMime*/)
 {
+/* FIXME : use Exiv2 API to return right writings support
     if      (typeMime == QLatin1String("image/jpeg"))
     {
         return true;
@@ -153,8 +154,8 @@ bool MetaEngine::supportMetadataWritting(const QString& typeMime)
     {
         return true;
     }
-
-    return false;
+*/
+    return true;
 }
 
 QString MetaEngine::Exiv2Version()

@@ -158,7 +158,7 @@ XMPOrigin::XMPOrigin(QWidget* const parent)
     d->dateCreatedSel     = new QDateTimeEdit(this);
     d->dateCreatedSel->setDisplayFormat(dateTimeFormat);
 
-    d->syncEXIFDateCheck  = new QCheckBox(i18n("Sync EXIF creation date"), this);
+    d->syncEXIFDateCheck  = new QCheckBox(i18n("Sync Exif creation date"), this);
 
     d->setTodayCreatedBtn = new QPushButton();
     d->setTodayCreatedBtn->setIcon(QIcon::fromTheme(QLatin1String("go-jump-today")));

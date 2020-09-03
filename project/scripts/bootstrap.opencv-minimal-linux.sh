@@ -68,6 +68,7 @@ export OpenCVOptions='-DBUILD_EXAMPLES=OFF \
                       -DWITH_JASPER=OFF \
                       -DWITH_MATLAB=OFF \
                       -DWITH_OPENEXR=OFF \
+                      -DWITH_OPENJPEG=OFF \
                       -DWITH_OPENNI=OFF \
                       -DWITH_OPENMP=OFF \
                       -DWITH_PVAPI=OFF \
