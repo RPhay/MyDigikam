@@ -171,7 +171,7 @@ IPTCOrigin::IPTCOrigin(QWidget* const parent)
     d->timeCreatedSel     = new QTimeEdit(this);
     d->timeCreatedSel->setDisplayFormat(timeFormat);
 
-    d->syncEXIFDateCheck  = new QCheckBox(i18n("Sync EXIF creation date"), this);
+    d->syncEXIFDateCheck  = new QCheckBox(i18n("Sync Exif creation date"), this);
 
     d->setTodayCreatedBtn = new QPushButton();
     d->setTodayCreatedBtn->setIcon(QIcon::fromTheme(QLatin1String("go-jump-today")));
@@ -207,7 +207,7 @@ IPTCOrigin::IPTCOrigin(QWidget* const parent)
     d->sublocationEdit->setClearButtonEnabled(true);
     d->sublocationEdit->setMaxLength(32);
     d->sublocationEdit->setWhatsThis(i18n("Set here the content location within city. "
-                                          "This field is limited to 32 ASCII characters."));
+                                          "This field is limited to 32 characters."));
 
     // --------------------------------------------------------
 

@@ -54,19 +54,21 @@ public:
 
     explicit Private()
     {
-        writerCheck          = nullptr;
-        headlineCheck        = nullptr;
-        captionEdit          = nullptr;
-        writerEdit           = nullptr;
-        headlineEdit         = nullptr;
-        syncJFIFCommentCheck = nullptr;
-        syncEXIFCommentCheck = nullptr;
-        copyrightEdit        = nullptr;
+        writerCheck            = nullptr;
+        headlineCheck          = nullptr;
+        captionEdit            = nullptr;
+        writerEdit             = nullptr;
+        headlineEdit           = nullptr;
+        syncJFIFCommentCheck   = nullptr;
+        syncEXIFCommentCheck   = nullptr;
+        syncEXIFCopyrightCheck = nullptr;
+        copyrightEdit          = nullptr;
     }
 
     QCheckBox*          headlineCheck;
     QCheckBox*          syncJFIFCommentCheck;
     QCheckBox*          syncEXIFCommentCheck;
+    QCheckBox*          syncEXIFCopyrightCheck;
     QCheckBox*          writerCheck;
 
     QLineEdit*          headlineEdit;
@@ -100,7 +102,7 @@ XMPContent::XMPContent(QWidget* const parent)
     QVBoxLayout* const vlay       = new QVBoxLayout(syncOptions);
 
     d->syncJFIFCommentCheck = new QCheckBox(i18n("Sync JFIF Comment section"), syncOptions);
-    d->syncEXIFCommentCheck = new QCheckBox(i18n("Sync EXIF Comment"), syncOptions);
+    d->syncEXIFCommentCheck = new QCheckBox(i18n("Sync Exif Comment"), syncOptions);
 
     vlay->setContentsMargins(spacing, spacing, spacing, spacing);
     vlay->setSpacing(spacing);
@@ -114,8 +116,11 @@ XMPContent::XMPContent(QWidget* const parent)
     d->writerEdit->setClearButtonEnabled(true);
     d->writerEdit->setWhatsThis(i18n("Enter the name of the caption author."));
 
-    d->copyrightEdit = new AltLangStringsEdit(this, i18n("Copyright:"),
+    // --------------------------------------------------------
+
+    d->copyrightEdit          = new AltLangStringsEdit(this, i18n("Copyright:"),
                                               i18n("Enter the necessary copyright notice."));
+    d->syncEXIFCopyrightCheck = new QCheckBox(i18n("Sync Exif Copyright"), this);
 
     // --------------------------------------------------------
 
@@ -127,7 +132,8 @@ XMPContent::XMPContent(QWidget* const parent)
     grid->addWidget(d->writerCheck,                        4, 0, 1, 1);
     grid->addWidget(d->writerEdit,                         4, 1, 1, 2);
     grid->addWidget(d->copyrightEdit,                      5, 0, 1, 3);
-    grid->setRowStretch(6, 10);
+    grid->addWidget(d->syncEXIFCopyrightCheck,             6, 0, 1, 3);
+    grid->setRowStretch(7, 10);
     grid->setColumnStretch(2, 10);
     grid->setContentsMargins(QMargins());
     grid->setSpacing(spacing);
@@ -135,7 +141,7 @@ XMPContent::XMPContent(QWidget* const parent)
     // --------------------------------------------------------
 
     connect(d->captionEdit, SIGNAL(signalDefaultLanguageEnabled(bool)),
-            this, SLOT(slotSyncOptionsEnabled(bool)));
+            this, SLOT(slotSyncCaptionOptionsEnabled(bool)));
 
     connect(d->headlineCheck, SIGNAL(toggled(bool)),
             d->headlineEdit, SLOT(setEnabled(bool)));
@@ -150,6 +156,9 @@ XMPContent::XMPContent(QWidget* const parent)
 
     connect(d->copyrightEdit, SIGNAL(signalToggled(bool)),
             this, SIGNAL(signalModified()));
+    
+    connect(d->copyrightEdit, SIGNAL(signalDefaultLanguageEnabled(bool)),
+            this, SLOT(slotSyncCopyrightOptionsEnabled(bool)));
 
     connect(d->writerCheck, SIGNAL(toggled(bool)),
             this, SIGNAL(signalModified()));
@@ -187,9 +196,19 @@ bool XMPContent::syncEXIFCommentIsChecked() const
     return d->syncEXIFCommentCheck->isChecked();
 }
 
+bool XMPContent::syncEXIFCopyrightIsChecked() const
+{
+    return d->syncEXIFCopyrightCheck->isChecked();
+}
+
 QString XMPContent::getXMPCaption() const
 {
     return d->captionEdit->defaultAltLang();
+}
+
+QString XMPContent::getXMPCopyright() const
+{
+    return d->copyrightEdit->defaultAltLang();
 }
 
 void XMPContent::setCheckedSyncJFIFComment(bool c)
@@ -200,6 +219,11 @@ void XMPContent::setCheckedSyncJFIFComment(bool c)
 void XMPContent::setCheckedSyncEXIFComment(bool c)
 {
     d->syncEXIFCommentCheck->setChecked(c);
+}
+
+void XMPContent::setCheckedSyncEXIFCopyright(bool c)
+{
+    d->syncEXIFCopyrightCheck->setChecked(c);
 }
 
 void XMPContent::readMetadata(QByteArray& xmpData)
@@ -266,9 +290,13 @@ void XMPContent::applyMetadata(QByteArray& exifData, QByteArray& xmpData)
     meta.setXmp(xmpData);
 
     if (d->headlineCheck->isChecked())
+    {
         meta.setXmpTagString("Xmp.photoshop.Headline", d->headlineEdit->text());
+    }
     else
+    {
         meta.removeXmpTag("Xmp.photoshop.Headline");
+    }
 
     DMetadata::AltLangMap oldAltLangMap, newAltLangMap;
 
@@ -277,10 +305,14 @@ void XMPContent::applyMetadata(QByteArray& exifData, QByteArray& xmpData)
         meta.setXmpTagStringListLangAlt("Xmp.dc.description", newAltLangMap);
 
         if (syncEXIFCommentIsChecked())
+        {
             meta.setExifComment(getXMPCaption());
+        }
 
         if (syncJFIFCommentIsChecked())
+        {
             meta.setComments(getXMPCaption().toUtf8());
+        }
     }
     else if (d->captionEdit->isValid())
     {
@@ -288,24 +320,44 @@ void XMPContent::applyMetadata(QByteArray& exifData, QByteArray& xmpData)
     }
 
     if (d->writerCheck->isChecked())
+    {
         meta.setXmpTagString("Xmp.photoshop.CaptionWriter", d->writerEdit->text());
+    }
     else
+    {
         meta.removeXmpTag("Xmp.photoshop.CaptionWriter");
+    }
 
     if (d->copyrightEdit->getValues(oldAltLangMap, newAltLangMap))
+    {
         meta.setXmpTagStringListLangAlt("Xmp.dc.rights", newAltLangMap);
+
+        if (syncEXIFCopyrightIsChecked())
+        {
+            meta.removeExifTag("Exif.Image.Copyright");
+            meta.setExifTagString("Exif.Image.Copyright", getXMPCopyright());
+        }
+    }
     else if (d->copyrightEdit->isValid())
+    {
         meta.removeXmpTag("Xmp.dc.rights");
+    }
 
     exifData = meta.getExifEncoded();
     xmpData  = meta.getXmp();
 }
 
-void XMPContent::slotSyncOptionsEnabled(bool defaultLangAlt)
+void XMPContent::slotSyncCaptionOptionsEnabled(bool defaultLangAlt)
 {
     bool cond = defaultLangAlt & d->captionEdit->isValid();
     d->syncJFIFCommentCheck->setEnabled(cond);
     d->syncEXIFCommentCheck->setEnabled(cond);
+}
+
+void XMPContent::slotSyncCopyrightOptionsEnabled(bool defaultLangAlt)
+{
+    bool cond = defaultLangAlt & d->copyrightEdit->isValid();
+    d->syncEXIFCopyrightCheck->setEnabled(cond);
 }
 
 } // namespace DigikamGenericMetadataEditPlugin

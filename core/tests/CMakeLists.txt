@@ -92,7 +92,6 @@ endif()
 set(COMMON_TEST_LINK Qt5::Core
                      Qt5::Gui
                      Qt5::Xml
-                     Qt5::XmlPatterns
                      Qt5::Widgets
                      Qt5::Concurrent
                      Qt5::Test

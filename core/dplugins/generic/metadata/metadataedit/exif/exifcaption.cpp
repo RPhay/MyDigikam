@@ -119,7 +119,7 @@ EXIFCaption::EXIFCaption(QWidget* const parent)
     d->artistEdit  = new QLineEdit(this);
     d->artistEdit->setClearButtonEnabled(true);
     d->artistEdit->setValidator(asciiValidator);
-    d->artistEdit->setWhatsThis(i18n("Enter the image author's name. "
+    d->artistEdit->setWhatsThis(i18n("Enter the image author's name separated by semi-colons. "
                                      "This field is limited to ASCII characters."));
 
     // --------------------------------------------------------
@@ -141,8 +141,7 @@ EXIFCaption::EXIFCaption(QWidget* const parent)
 
     d->syncJFIFCommentCheck = new QCheckBox(i18n("Sync JFIF Comment section"), this);
     d->syncXMPCaptionCheck  = new QCheckBox(i18n("Sync XMP caption"), this);
-    d->syncIPTCCaptionCheck = new QCheckBox(i18n("Sync IPTC caption (warning: limited to 2000 printable "
-                                                 "Ascii characters)"), this);
+    d->syncIPTCCaptionCheck = new QCheckBox(i18n("Sync IPTC caption (warning: limited to 2000 characters)"), this);
 
     if (!DMetadata::supportXmp())
         d->syncXMPCaptionCheck->setEnabled(false);
@@ -150,7 +149,7 @@ EXIFCaption::EXIFCaption(QWidget* const parent)
     // --------------------------------------------------------
 
     QLabel* const note = new QLabel(i18n("<b>Note: "
-                 "<b><a href='https://en.wikipedia.org/wiki/EXIF'>EXIF</a></b> "
+                 "<b><a href='https://en.wikipedia.org/wiki/EXIF'>Exif</a></b> "
                  "text tags marked by (*) only support printable "
                  "<b><a href='https://en.wikipedia.org/wiki/Ascii'>ASCII</a></b> "
                  "characters.</b>"), this);

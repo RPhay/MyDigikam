@@ -43,13 +43,16 @@ public:
     void applyMetadata(QByteArray& exifData, QByteArray& xmpData);
     void readMetadata(QByteArray& xmpData);
 
-    bool syncJFIFCommentIsChecked() const;
-    bool syncEXIFCommentIsChecked() const;
+    bool syncJFIFCommentIsChecked()   const;
+    bool syncEXIFCommentIsChecked()   const;
+    bool syncEXIFCopyrightIsChecked() const;
 
     void setCheckedSyncJFIFComment(bool c);
     void setCheckedSyncEXIFComment(bool c);
+    void setCheckedSyncEXIFCopyright(bool c);
 
-    QString getXMPCaption() const;
+    QString getXMPCaption()           const;
+    QString getXMPCopyright()         const;
 
 Q_SIGNALS:
 
@@ -57,7 +60,8 @@ Q_SIGNALS:
 
 private Q_SLOTS:
 
-    void slotSyncOptionsEnabled(bool);
+    void slotSyncCaptionOptionsEnabled(bool);
+    void slotSyncCopyrightOptionsEnabled(bool);
 
 private:
 

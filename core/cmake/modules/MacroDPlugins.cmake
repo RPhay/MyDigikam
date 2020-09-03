@@ -74,7 +74,7 @@ macro(DIGIKAM_ADD_GENERIC_PLUGIN)
                           Qt5::Core
                           Qt5::Gui
                           Qt5::Xml
-                          Qt5::XmlPatterns
+                          Qt5::Network
                           Qt5::Widgets
 
                           KF5::XmlGui
@@ -155,7 +155,6 @@ macro(DIGIKAM_ADD_EDITOR_PLUGIN)
                           Qt5::Core
                           Qt5::Gui
                           Qt5::Xml
-                          Qt5::XmlPatterns
                           Qt5::Widgets
 
                           KF5::XmlGui
@@ -238,7 +237,6 @@ macro(DIGIKAM_ADD_BQM_PLUGIN)
                           Qt5::Core
                           Qt5::Gui
                           Qt5::Xml
-                          Qt5::XmlPatterns
                           Qt5::Widgets
                           Qt5::Sql
 
@@ -320,7 +318,6 @@ macro(DIGIKAM_ADD_RAWIMPORT_PLUGIN)
                           Qt5::Core
                           Qt5::Gui
                           Qt5::Xml
-                          Qt5::XmlPatterns
                           Qt5::Widgets
 
                           KF5::XmlGui
@@ -401,7 +398,6 @@ macro(DIGIKAM_ADD_DIMG_PLUGIN)
                           Qt5::Core
                           Qt5::Gui
                           Qt5::Xml
-                          Qt5::XmlPatterns
                           Qt5::Widgets
 
                           KF5::I18n
