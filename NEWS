@@ -1,0 +1,12 @@
+digiKam 7.2.0-beta1 - Release date: 2020-11-08
+
+*****************************************************************************************************
+NEW FEATURES:
+
+FaceManagement: Improve users experience in GUI for face workflow while tagging and manage faces.
+FaceManagement: Add face engine clustering support for detection and recognition processes.
+
+*****************************************************************************************************
+BUGFIXES:
+
+001 ==> 
