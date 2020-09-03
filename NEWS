@@ -326,3 +326,5 @@ BUGFIXES:
 314 ==> 426028 - GPS coordinates manually entered via geolocation are not present in jpeg file.
 315 ==> 412113 - Crash at start, related to QSqlDatabase.
 316 ==> 425810 - Segfault when setting up flickr.
+317 ==> 426054 - Irregular display of thumbs and images in Import from CF card.
+318 ==> 426118 - Tag named -Unknown- cannot be deleted.

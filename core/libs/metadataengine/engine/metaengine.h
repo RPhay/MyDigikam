@@ -197,7 +197,7 @@ public:
     /**
      * Return true if library can write metadata to typeMime file format.
      */
-    static bool supportMetadataWritting(const QString& typeMime);
+    static bool supportMetadataWriting(const QString& typeMime);
 
     /**
      * Return a string version of Exiv2 release in format "major.minor.patch"

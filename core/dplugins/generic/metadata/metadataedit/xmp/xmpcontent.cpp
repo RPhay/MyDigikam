@@ -102,7 +102,7 @@ XMPContent::XMPContent(QWidget* const parent)
     QVBoxLayout* const vlay       = new QVBoxLayout(syncOptions);
 
     d->syncJFIFCommentCheck = new QCheckBox(i18n("Sync JFIF Comment section"), syncOptions);
-    d->syncEXIFCommentCheck = new QCheckBox(i18n("Sync EXIF Comment"), syncOptions);
+    d->syncEXIFCommentCheck = new QCheckBox(i18n("Sync Exif Comment"), syncOptions);
 
     vlay->setContentsMargins(spacing, spacing, spacing, spacing);
     vlay->setSpacing(spacing);
@@ -120,7 +120,7 @@ XMPContent::XMPContent(QWidget* const parent)
 
     d->copyrightEdit          = new AltLangStringsEdit(this, i18n("Copyright:"),
                                               i18n("Enter the necessary copyright notice."));
-    d->syncEXIFCopyrightCheck = new QCheckBox(i18n("Sync EXIF Copyright"), this);
+    d->syncEXIFCopyrightCheck = new QCheckBox(i18n("Sync Exif Copyright"), this);
 
     // --------------------------------------------------------
 

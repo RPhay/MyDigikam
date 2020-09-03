@@ -198,13 +198,13 @@ SetupMetadata::SetupMetadata(QWidget* const parent)
     d->saveCommentsBox   = new QCheckBox;
     d->saveCommentsBox->setText(i18nc("@option:check", "Captions and title"));
     d->saveCommentsBox->setWhatsThis(i18nc("@info:whatsthis", "Turn on this option to store item caption and title "
-                                           "in the JFIF Comment section, the EXIF tag, the XMP tag, "
+                                           "in the JFIF Comment section, the Exif tag, the XMP tag, "
                                            "and the IPTC tag."));
 
     d->saveRatingBox     = new QCheckBox;
     d->saveRatingBox->setText(i18nc("@option:check", "Rating"));
     d->saveRatingBox->setWhatsThis(i18nc("@info:whatsthis", "Turn on this option to store the item rating "
-                                         "in the EXIF tag and the XMP tags."));
+                                         "in the Exif tag and the XMP tags."));
 
     d->savePickLabelBox  = new QCheckBox;
     d->savePickLabelBox->setText(i18nc("@option:check", "Pick label"));
@@ -234,7 +234,7 @@ SetupMetadata::SetupMetadata(QWidget* const parent)
     d->savePosition      = new QCheckBox;
     d->savePosition->setText(i18nc("@option:check", "Geolocation information (GPS)"));
     d->savePosition->setWhatsThis(i18nc("@info:whatsthis", "Turn on this option to store Geolocation information "
-                                        "in the EXIF tag and the XMP tags."));
+                                        "in the Exif tag and the XMP tags."));
 
     fieldsLayout->addWidget(fieldsIconLabel,       0, 0, 2, 3);
     fieldsLayout->addWidget(fieldsLabel,           0, 1, 2, 3);
@@ -269,14 +269,14 @@ SetupMetadata::SetupMetadata(QWidget* const parent)
     d->writeDngFilesBox   = new QCheckBox;
     d->writeDngFilesBox->setText(i18nc("@option:check", "Write metadata to DNG files"));
     d->writeDngFilesBox->setWhatsThis(i18nc("@info:whatsthis", "Turn on this option to write metadata into DNG files."));
-    d->writeDngFilesBox->setEnabled(MetaEngine::supportMetadataWritting(QLatin1String("image/x-raw")));
+    d->writeDngFilesBox->setEnabled(MetaEngine::supportMetadataWriting(QLatin1String("image/x-raw")));
 
     d->writeRawFilesBox   = new QCheckBox;
     d->writeRawFilesBox->setText(i18nc("@option:check", "If possible write metadata to RAW files (experimental)"));
     d->writeRawFilesBox->setWhatsThis(i18nc("@info:whatsthis", "Turn on this option to write metadata into RAW TIFF/EP files. "
                                             "This feature requires the Exiv2 shared library, version >= 0.18.0. It is still "
                                             "experimental, and is disabled by default."));
-    d->writeRawFilesBox->setEnabled(MetaEngine::supportMetadataWritting(QLatin1String("image/x-raw")));
+    d->writeRawFilesBox->setEnabled(MetaEngine::supportMetadataWriting(QLatin1String("image/x-raw")));
 
     d->updateFileTimeStampBox = new QCheckBox;
     d->updateFileTimeStampBox->setText(i18nc("@option:check", "&Update file modification timestamp when files are modified"));
@@ -330,7 +330,7 @@ SetupMetadata::SetupMetadata(QWidget* const parent)
     explanation->setWordWrap(true);
     QString txt;
 
-    txt.append(i18n("<p><a href='https://en.wikipedia.org/wiki/Exif'>EXIF</a> - "
+    txt.append(i18n("<p><a href='https://en.wikipedia.org/wiki/Exif'>Exif</a> - "
                     "a standard used by most digital cameras today to store technical "
                     "information (like aperture and shutter speed) about an image.</p>"));
 

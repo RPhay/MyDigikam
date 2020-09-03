@@ -156,7 +156,7 @@ EXIFDevice::EXIFDevice(QWidget* const parent)
     d->deviceTypeCB->setWhatsThis(i18n("Select here the image input equipment type used to "
                                        "take the picture."));
 
-    QLabel* const warning = new QLabel(i18n("<b>Warning: EXIF <b><a href="
+    QLabel* const warning = new QLabel(i18n("<b>Warning: Exif <b><a href="
                  "'https://en.wikipedia.org/wiki/Exchangeable_image_file_format#MakerNote_data'>"
                  "Makernotes</a></b> can be unreadable if you set "
                  "wrong device manufacturer/model description.</b>"), this);
@@ -322,7 +322,7 @@ EXIFDevice::EXIFDevice(QWidget* const parent)
     // --------------------------------------------------------
 
     QLabel* const note = new QLabel(i18n("<b>Note: "
-                 "<b><a href='https://en.wikipedia.org/wiki/EXIF'>EXIF</a></b> "
+                 "<b><a href='https://en.wikipedia.org/wiki/EXIF'>Exif</a></b> "
                  "text tags marked by (*) only support printable "
                  "<b><a href='https://en.wikipedia.org/wiki/Ascii'>ASCII</a></b> "
                  "characters.</b>"), this);

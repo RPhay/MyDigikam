@@ -117,7 +117,7 @@ XMPCredits::XMPCredits(QWidget* const parent)
 
     d->bylineEdit = new MultiStringsEdit(this, i18n("Byline:"),
                                          i18n("Set here the name of content creator."));
-    d->syncEXIFArtistCheck = new QCheckBox(i18n("Sync EXIF Artist"), this);
+    d->syncEXIFArtistCheck = new QCheckBox(i18n("Sync Exif Artist"), this);
 
     // --------------------------------------------------------
 

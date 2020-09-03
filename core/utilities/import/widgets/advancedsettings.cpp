@@ -125,10 +125,10 @@ AdvancedSettings::AdvancedSettings(QWidget* const parent)
     setWhatsThis(i18n("Set here all options to fix/transform JPEG files automatically "
                       "as they are downloaded."));
     d->autoRotateCheck->setWhatsThis(i18n("Enable this option if you want images automatically "
-                                          "rotated or flipped using EXIF information provided by the camera."));
+                                          "rotated or flipped using Exif information provided by the camera."));
     d->templateSelector->setWhatsThis(i18n("Select here which metadata template you want to apply "
                                            "to images."));
-    d->documentNameCheck->setWhatsThis(i18n("Enable this option to write the document name to the EXIF metadata. "
+    d->documentNameCheck->setWhatsThis(i18n("Enable this option to write the document name to the Exif metadata. "
                                             "The document name is the original file name of the imported file."));
     d->fixDateTimeCheck->setWhatsThis(i18n("Enable this option to set date and time metadata "
                                            "tags to the right values if your camera does not set "

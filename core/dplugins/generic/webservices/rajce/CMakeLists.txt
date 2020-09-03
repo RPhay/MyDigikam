@@ -11,6 +11,7 @@ include(MacroDPlugins)
 
 include_directories($<TARGET_PROPERTY:Qt5::Widgets,INTERFACE_INCLUDE_DIRECTORIES>
                     $<TARGET_PROPERTY:Qt5::Core,INTERFACE_INCLUDE_DIRECTORIES>
+                    $<TARGET_PROPERTY:Qt5::XmlPatterns,INTERFACE_INCLUDE_DIRECTORIES>
 
                     $<TARGET_PROPERTY:KF5::ConfigCore,INTERFACE_INCLUDE_DIRECTORIES>
                     $<TARGET_PROPERTY:KF5::I18n,INTERFACE_INCLUDE_DIRECTORIES>
@@ -30,6 +31,7 @@ set(rajceplugin_SRCS
 
 DIGIKAM_ADD_GENERIC_PLUGIN(NAME    Rajce
                            SOURCES ${rajceplugin_SRCS}
+                           DEPENDS Qt5::XmlPatterns
 )
 
 add_subdirectory(icons)

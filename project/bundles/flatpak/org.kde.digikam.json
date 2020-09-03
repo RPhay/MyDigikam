@@ -93,6 +93,7 @@
                 "-DWITH_JASPER=OFF",
                 "-DWITH_JPEG=OFF",
                 "-DWITH_MATLAB=OFF",
+                "-DWITH_OPENJPEG=OFF",
                 "-DWITH_OPENEXR=OFF",
                 "-DWITH_OPENNI=OFF",
                 "-DWITH_OPENMP=OFF",
