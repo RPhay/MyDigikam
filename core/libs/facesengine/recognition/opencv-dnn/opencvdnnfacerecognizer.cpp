@@ -167,6 +167,7 @@ public:
     }
 
 private:
+
     const QList<QImage*>& images;
     QVector<int>&         ids;
 
@@ -202,14 +203,13 @@ public:
     }
 
 private:
+
     const QList<QImage*>& images;
     const int&            id;
     const QString&        context;
 
     OpenCVDNNFaceRecognizer::Private* const d;
 };
-
-
 
 bool OpenCVDNNFaceRecognizer::Private::trainSVM()
 {

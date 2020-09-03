@@ -175,7 +175,7 @@ DNNFaceExtractor::DNNFaceExtractor()
 }
 
 DNNFaceExtractor::DNNFaceExtractor(const DNNFaceExtractor& other)
-    d(other.d)
+    : d(other.d)
 {
     ++(d->ref);
 }
