@@ -1,12 +1,12 @@
-evSSdigiKam 7.1.0 - Release date: 2020-08-31
+digiKam 7.1.0 - Release date: 2020-08-31
 
 *****************************************************************************************************
 NEW FEATURES:
 
 QueueManager: Add new tool to fix hot pixels from images.
 QueueManager: Add new tool to apply texture over images.
-Metadata:     Better Exif and Xmp metadata support with CR3 file using libraw info parser.
-Metadata:     Better support of Iptc strings encoded as UTF-8 imported to the database.
+Metadata:     Better Exif and XMP metadata support with CR3 file using libraw info parser.
+Metadata:     Add support of IPTC strings encoded as UTF-8 imported to the database.
 
 *****************************************************************************************************
 BUGFIXES:
