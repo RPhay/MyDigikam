@@ -43,7 +43,7 @@ float KDNode::sqrDistance(const float* const pos1, const float* const pos2, int 
 {
     double sqrDistance = 0.0;
 
-    for (int i = 0; i < dimension; ++i)
+    for (int i = 0 ; i < dimension ; ++i)
     {
         sqrDistance += pow((pos1[i] - pos2[i]), 2);
     }
@@ -53,11 +53,11 @@ float KDNode::sqrDistance(const float* const pos1, const float* const pos2, int 
 
 float KDNode::cosDistance(const float* const pos1, const float* const pos2, int dimension)
 {
-    double scalarProduct = 0;
-    double normV1        = 0;
-    double normV2        = 0;
+    double scalarProduct = 0.0;
+    double normV1        = 0.0;
+    double normV2        = 0.0;
 
-    for (int i = 0; i < dimension; ++i)
+    for (int i = 0 ; i < dimension ; ++i)
     {
         scalarProduct += pos1[i] * pos2[i];
         normV1        += pow(pos1[i], 2);
@@ -93,10 +93,10 @@ public:
 
 public:
 
-    int nodeID;
-    int identity;
-    int splitAxis;
-    int nbDimension;
+    int     nodeID;
+    int     identity;
+    int     splitAxis;
+    int     nbDimension;
 
     cv::Mat position;
     cv::Mat maxRange;
@@ -113,7 +113,7 @@ KDNode::KDNode(const cv::Mat& nodePos,
     : d(new Private(nodePos, identity, splitAxis, dimension))
 {
     Q_ASSERT(splitAxis < dimension);
-    Q_ASSERT(nodePos.rows == 1 && nodePos.cols == dimension && nodePos.type() == CV_32F);
+    Q_ASSERT((nodePos.rows == 1) && (nodePos.cols == dimension) && (nodePos.type() == CV_32F));
 }
 
 KDNode::~KDNode()
@@ -123,23 +123,23 @@ KDNode::~KDNode()
 
 KDNode* KDNode::insert(const cv::Mat& nodePos, const int identity)
 {
-    if (!(nodePos.rows   == 1              &&
-          nodePos.cols   == d->nbDimension &&
-          nodePos.type() == CV_32F))
+    if (!((nodePos.rows   == 1)              &&
+          (nodePos.cols   == d->nbDimension) &&
+          (nodePos.type() == CV_32F)))
     {
         return nullptr;
     }
 
-    KDNode* parent = findParent(nodePos);
+    KDNode* parent  = findParent(nodePos);
 
     KDNode* newNode = new KDNode(nodePos, identity,
                                  ((parent->d->splitAxis + 1) % d->nbDimension),
                                  d->nbDimension);
     newNode->d->parent = parent;
-
-    //std::cout << "parent embedding" << parent->getPosition() << std::endl;
-    //std::cout << "node embedding" << nodePos << std::endl;
-
+/*
+    qDebug() << "parent embedding" << parent->getPosition() << std::endl;
+    qDebug() << "node embedding" << nodePos << std::endl;
+*/
     if (nodePos.at<float>(0, parent->d->splitAxis) >= parent->getPosition().at<float>(0, parent->d->splitAxis))
     {
         parent->d->right = newNode;
@@ -174,19 +174,23 @@ double KDNode::getClosestNeighbors(QMap<double, QVector<int> >& neighborList,
                                    int                          maxNbNeighbors) const
 {
     // add current node to the list
+
     const double sqrDistanceToCurrentNode = sqrDistance(position.ptr<float>(), d->position.ptr<float>(), d->nbDimension);
 
     // NOTE: both Euclidian distance and cosine distance can help to avoid error in similarity prediction
-    if (sqrDistanceToCurrentNode < sqRange &&
+
+    if ((sqrDistanceToCurrentNode < sqRange) &&
         cosDistance(position.ptr<float>(), d->position.ptr<float>(), d->nbDimension) > cosThreshold)
     {
         neighborList[sqrDistanceToCurrentNode].append(d->identity);
+
         // limit the size of the Map to maxNbNeighbors
+
         int size = 0;
 
         for (QMap<double, QVector<int> >::const_iterator iter  = neighborList.cbegin();
                                                          iter != neighborList.cend();
-                                                       ++iter)
+                                                         ++iter)
         {
             size += iter.value().size();
         }
@@ -194,6 +198,7 @@ double KDNode::getClosestNeighbors(QMap<double, QVector<int> >& neighborList,
         if (size > maxNbNeighbors)
         {
             // Eliminate the farthest neighbor
+
             QMap<double, QVector<int> >::iterator farthestNodes = (neighborList.end() - 1);
 
             if (farthestNodes.value().size() == 1)
@@ -206,13 +211,15 @@ double KDNode::getClosestNeighbors(QMap<double, QVector<int> >& neighborList,
             }
 
             // update the searching range
+
             sqRange = neighborList.lastKey();
         }
     }
 
     // sub-trees Traversal
     // NOTE: DBL_MAX helps avoiding accessing nullptr
-    double sqrDistanceleftTree  = 0;
+
+    double sqrDistanceleftTree  = 0.0;
 
     if (d->left == nullptr)
     {
@@ -224,14 +231,14 @@ double KDNode::getClosestNeighbors(QMap<double, QVector<int> >& neighborList,
         const float* const maxRange = d->left->d->maxRange.ptr<float>();
         const float* const pos      = position.ptr<float>();
 
-        for (int i = 0; i < d->nbDimension; ++i)
+        for (int i = 0 ; i < d->nbDimension ; ++i)
         {
             sqrDistanceleftTree += (pow(qMax((minRange[i] - pos[i]), 0.0f), 2) +
                                     pow(qMax((pos[i] - maxRange[i]), 0.0f), 2));
         }
     }
 
-    double sqrDistancerightTree = 0;
+    double sqrDistancerightTree = 0.0;
 
     if (d->right == nullptr)
     {
@@ -243,7 +250,7 @@ double KDNode::getClosestNeighbors(QMap<double, QVector<int> >& neighborList,
         const float* const maxRange = d->right->d->maxRange.ptr<float>();
         const float* const pos      = position.ptr<float>();
 
-        for (int i = 0; i < d->nbDimension; ++i)
+        for (int i = 0 ; i < d->nbDimension ; ++i)
         {
             sqrDistancerightTree += (pow(qMax((minRange[i] - pos[i]), 0.0f), 2) +
                                      pow(qMax((pos[i] - maxRange[i]), 0.0f), 2));
@@ -251,17 +258,26 @@ double KDNode::getClosestNeighbors(QMap<double, QVector<int> >& neighborList,
     }
 
     // traverse the closest area
+
     if (sqrDistanceleftTree < sqrDistancerightTree)
     {
         if (sqrDistanceleftTree < sqRange)
         {
             // traverse left Tree
-            sqRange = d->left->getClosestNeighbors(neighborList, position, sqRange, cosThreshold, maxNbNeighbors);
 
-            if (sqrDistancerightTree < sqRange)
+            if (d->left)
             {
-                // traverse right Tree
-                sqRange = d->right->getClosestNeighbors(neighborList, position, sqRange, cosThreshold, maxNbNeighbors);
+                sqRange = d->left->getClosestNeighbors(neighborList, position, sqRange, cosThreshold, maxNbNeighbors);
+
+                if (sqrDistancerightTree < sqRange)
+                {
+                    // traverse right Tree
+
+                    if (d->right)
+                    {
+                        sqRange = d->right->getClosestNeighbors(neighborList, position, sqRange, cosThreshold, maxNbNeighbors);
+                    }
+                }
             }
         }
     }
@@ -270,12 +286,20 @@ double KDNode::getClosestNeighbors(QMap<double, QVector<int> >& neighborList,
         if (sqrDistancerightTree < sqRange)
         {
             // traverse right Tree
-            sqRange = d->right->getClosestNeighbors(neighborList, position, sqRange, cosThreshold, maxNbNeighbors);
 
-            if (sqrDistanceleftTree < sqRange)
+            if (d->right)
             {
-                // traverse left Tree
-                sqRange = d->left->getClosestNeighbors(neighborList, position, sqRange, cosThreshold, maxNbNeighbors);
+                sqRange = d->right->getClosestNeighbors(neighborList, position, sqRange, cosThreshold, maxNbNeighbors);
+
+                if (sqrDistanceleftTree < sqRange)
+                {
+                    // traverse left Tree
+
+                    if (d->left)
+                    {
+                        sqRange = d->left->getClosestNeighbors(neighborList, position, sqRange, cosThreshold, maxNbNeighbors);
+                    }
+                }
             }
         }
     }
@@ -285,9 +309,9 @@ double KDNode::getClosestNeighbors(QMap<double, QVector<int> >& neighborList,
 
 void KDNode::updateRange(const cv::Mat& pos)
 {
-    if (!(pos.rows   == 1              &&
-          pos.cols   == d->nbDimension &&
-          pos.type() == CV_32F))
+    if (!((pos.rows   == 1)              &&
+          (pos.cols   == d->nbDimension) &&
+          (pos.type() == CV_32F)))
     {
         return;
     }
@@ -296,7 +320,7 @@ void KDNode::updateRange(const cv::Mat& pos)
     float* maxRange       = d->maxRange.ptr<float>();
     const float* position = pos.ptr<float>();
 
-    for (int i = 0; i < d->nbDimension; ++i)
+    for (int i = 0 ; i < d->nbDimension ; ++i)
     {
         maxRange[i] = std::max(maxRange[i], position[i]);
         minRange[i] = std::min(minRange[i], position[i]);
