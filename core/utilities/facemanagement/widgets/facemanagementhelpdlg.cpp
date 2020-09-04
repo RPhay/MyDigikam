@@ -23,6 +23,8 @@
 
 #include "facemanagementhelpdlg.h"
 
+// Qt includes
+
 #include <QLabel>
 #include <QApplication>
 #include <QIcon>
@@ -33,24 +35,30 @@
 #include <QMovie>
 #include <QStandardPaths>
 
+// KDE includes
+
 #include <klocalizedstring.h>
 
+// Local includes
+
 #include "daboutdata.h"
+
 namespace Digikam
 {
-FaceManagementHelpDialog::FaceManagementHelpDialog(QWidget* const parent)
+
+FaceManagementHelpDlg::FaceManagementHelpDlg(QWidget* const parent)
     : QDialog(parent)
 {
     setModal(false);
     setSizePolicy(QSizePolicy::Policy::Preferred, QSizePolicy::Policy::Preferred);
     setWindowTitle(i18n("Face Management in DigiKam"));
 
-    QGridLayout* mainLayout = new QGridLayout();
-    QTabWidget*  tabWidget  = new QTabWidget(this);
+    QGridLayout* const mainLayout = new QGridLayout();
+    QTabWidget*  const tabWidget  = new QTabWidget(this);
 
     // --- Information Page -------------------------------------------------------------
 
-    QWidget* infoPage       = new QWidget();
+    QWidget* const infoPage = new QWidget();
 
     QLabel* const logo      = new QLabel(infoPage);
     logo->setAlignment(Qt::AlignHCenter | Qt::AlignVCenter);
@@ -65,7 +73,7 @@ FaceManagementHelpDialog::FaceManagementHelpDialog(QWidget* const parent)
                          DAboutData::digiKamSlogan(),
                          DAboutData::digiKamFamily()));
 
-    QLabel* introText       = new QLabel(infoPage);
+    QLabel* const introText = new QLabel(infoPage);
     introText->setWordWrap(true);
     introText->setText(i18n("<hr> The Face Workflow allows you to Detect and Recognize people "
                             "in your photographs."));
@@ -89,7 +97,7 @@ FaceManagementHelpDialog::FaceManagementHelpDialog(QWidget* const parent)
     faceRecognition->setWordWrap(true);
     faceRecognition->setText(i18n("Face Recognition will automatically recognize people in your images. "));
 
-    // Link to DigiKam documentation
+    // Link to digiKam documentation
     QString documentationLink = i18n(
             "https://docs.kde.org/trunk5/en/extragear-graphics/digikam/using-digikam.html#using-mainwindow-peopleview");
 
@@ -101,7 +109,7 @@ FaceManagementHelpDialog::FaceManagementHelpDialog(QWidget* const parent)
                              "<br>To ask questions, use our mailing list: digikam-users@kde.org \n",
                              QString::fromLatin1("<a href='%1'>digiKam Online Handbook</a>").arg(documentationLink)));
 
-    QGridLayout* infoPageLayout = new QGridLayout();
+    QGridLayout* const infoPageLayout = new QGridLayout();
     infoPageLayout->addWidget(logo,                     0, 0, 1, 1);
     infoPageLayout->addWidget(header,                   0, 1, 1, 1);
     infoPageLayout->addWidget(introText,                1, 0, 1, 2);
@@ -120,16 +128,16 @@ FaceManagementHelpDialog::FaceManagementHelpDialog(QWidget* const parent)
 
     // --- Face Detection Page ----------------------------------------------------------
 
-    QWidget*     faceDetectionPage       = new QWidget();
-    QGridLayout* faceDetectionPageLayout = new QGridLayout();
+    QWidget* const     faceDetectionPage       = new QWidget();
+    QGridLayout* const faceDetectionPageLayout = new QGridLayout();
 
-    QPixmap detectFaceOptionImage = QPixmap(QStandardPaths::locate(QStandardPaths::GenericDataLocation, QLatin1String("digikam/data/detectFacesImg.png")));
-    detectFaceOptionImage = detectFaceOptionImage.scaled(QSize(350,170));
+    QPixmap detectFaceOptionImage  = QPixmap(QStandardPaths::locate(QStandardPaths::GenericDataLocation, QLatin1String("digikam/data/detectFacesImg.png")));
+    detectFaceOptionImage          = detectFaceOptionImage.scaled(QSize(350,170));
 
-    QLabel* detectFaceOptionLabel  = new QLabel(faceDetectionPage);
+    QLabel* const detectFaceOptionLabel = new QLabel(faceDetectionPage);
     detectFaceOptionLabel->setPixmap(detectFaceOptionImage);
 
-    QLabel* detectFaceInfoLabel    = new QLabel(faceDetectionPage);
+    QLabel* const detectFaceInfoLabel   = new QLabel(faceDetectionPage);
     detectFaceInfoLabel->setWordWrap(true);
     detectFaceInfoLabel->setText(i18n("To run Face Detection, select the "
                                       "<u>Detect Faces</u> option in the Face Scan panel "
@@ -138,33 +146,33 @@ FaceManagementHelpDialog::FaceManagementHelpDialog(QWidget* const parent)
                                       "can be fairly time consuming. Make sure you use the "
                                       "<u>Search In</u> tab to restrict the target of the Scan."));
 
-    QLabel* detectIntroLabel       = new QLabel(faceDetectionPage);
+    QLabel* const detectIntroLabel       = new QLabel(faceDetectionPage);
     detectIntroLabel->setWordWrap(true);
     detectIntroLabel->setText(i18n("DigiKam offers two kinds of Face Detection Scans: "));
 
-    QLabel* skipScannedHeaderLabel = new QLabel(faceDetectionPage);
+    QLabel* const skipScannedHeaderLabel = new QLabel(faceDetectionPage);
     skipScannedHeaderLabel->setWordWrap(true);
     skipScannedHeaderLabel->setAlignment(Qt::AlignHCenter | Qt::AlignVCenter);
     skipScannedHeaderLabel->setText(i18n("<b>Skip Images Already Scanned"));
 
-    QLabel* skipScannedLabel       = new QLabel(faceDetectionPage);
+    QLabel* const skipScannedLabel       = new QLabel(faceDetectionPage);
     skipScannedLabel->setWordWrap(true);
     skipScannedLabel->setText(i18n("Choose this option if you haven't scanned yet or "
                                    "if the last scan yielded good results but you would "
                                    "like to scan new images."));
 
-    QLabel* scanAgainHeaderLabel   = new QLabel(faceDetectionPage);
+    QLabel* const scanAgainHeaderLabel   = new QLabel(faceDetectionPage);
     scanAgainHeaderLabel->setWordWrap(true);
     scanAgainHeaderLabel->setAlignment(Qt::AlignHCenter | Qt::AlignVCenter);
     scanAgainHeaderLabel->setText(i18n("<b>Scan Again and Merge"));
 
-    QLabel* scanAgainLabel         = new QLabel(faceDetectionPage);
+    QLabel* const scanAgainLabel         = new QLabel(faceDetectionPage);
     scanAgainLabel->setWordWrap(true);
     scanAgainLabel->setText(i18n("Choose this option if the results "
                                  "of the previous scan weren't accurate. "
                                  "This would rescan all images again, and is time consuming."));
 
-    QLabel* resultsDetectedLabel   = new QLabel(faceDetectionPage);
+    QLabel* const resultsDetectedLabel   = new QLabel(faceDetectionPage);
     resultsDetectedLabel->setWordWrap(true);
     resultsDetectedLabel->setText(i18n("After the Face Scan is complete, you should see a new "
                                        "tag <u>Unknown</u> where the results of the Face Scan "
@@ -188,18 +196,18 @@ FaceManagementHelpDialog::FaceManagementHelpDialog(QWidget* const parent)
 
     // --- Face Recognition Page --------------------------------------------------------
 
-    QWidget*     faceRecogPage   = new QWidget();
-    QGridLayout* faceRecogLayout = new QGridLayout();
+    QWidget* const faceRecogPage       = new QWidget();
+    QGridLayout* const faceRecogLayout = new QGridLayout();
 
 
-    QLabel* identifyLabel        = new QLabel(faceRecogPage);
-    QMovie* identifyImage        = new QMovie(QStandardPaths::locate(QStandardPaths::GenericDataLocation, QLatin1String("digikam/data/tagFacesImg.gif")));
+    QLabel* const identifyLabel        = new QLabel(faceRecogPage);
+    QMovie* const identifyImage        = new QMovie(QStandardPaths::locate(QStandardPaths::GenericDataLocation, QLatin1String("digikam/data/tagFacesImg.gif")));
     identifyImage->setScaledSize(QSize(185,220));
     identifyLabel->setMovie(identifyImage);
     identifyImage->start();
     identifyLabel->setAlignment(Qt::AlignLeft | Qt::AlignVCenter);
 
-    QLabel* identifyTextLabel    = new QLabel(faceRecogPage);
+    QLabel* const identifyTextLabel    = new QLabel(faceRecogPage);
     identifyTextLabel->setWordWrap(true);
     identifyTextLabel->setAlignment(Qt::AlignVCenter | Qt::AlignLeft);
     identifyTextLabel->setText(i18n("To manually identify a face, hover on any Unknown "
@@ -210,7 +218,7 @@ FaceManagementHelpDialog::FaceManagementHelpDialog(QWidget* const parent)
                                     "person you want the scan to recognize.<br>"
                                     ));
 
-    QLabel* recogLabel      = new QLabel(faceRecogPage);
+    QLabel* const recogLabel      = new QLabel(faceRecogPage);
     recogLabel->setWordWrap(true);
     recogLabel->setText(i18n("Running Face Recognition is similar to Detection, "
                              "just select <u>Recognize Faces</u> from the "
@@ -221,13 +229,13 @@ FaceManagementHelpDialog::FaceManagementHelpDialog(QWidget* const parent)
                              "This leads to the creation of a new <u>Ignored</u> Tag, "
                              "you can later unmark the Face if needed."));
 
-    QPixmap ignoreImage          = QPixmap(QStandardPaths::locate(QStandardPaths::GenericDataLocation, QLatin1String("digikam/data/ignoreImg.png")));
-    ignoreImage                  = ignoreImage.scaled(QSize(185,230));
+    QPixmap ignoreImage           = QPixmap(QStandardPaths::locate(QStandardPaths::GenericDataLocation, QLatin1String("digikam/data/ignoreImg.png")));
+    ignoreImage                   = ignoreImage.scaled(QSize(185,230));
 
-    QLabel* ignoreLabel          = new QLabel(faceRecogPage);
+    QLabel* const ignoreLabel     = new QLabel(faceRecogPage);
     ignoreLabel->setPixmap(ignoreImage);
 
-    QLabel* faceRecogFooter      = new QLabel(faceRecogPage);
+    QLabel* const faceRecogFooter = new QLabel(faceRecogPage);
     faceRecogFooter->setWordWrap(true);
     faceRecogFooter->setText(i18n("You may select <u> Work on all processor cores </u>"
                                   "in order to increase the speed of Face Recognition <br>"
@@ -239,7 +247,7 @@ FaceManagementHelpDialog::FaceManagementHelpDialog(QWidget* const parent)
     QPixmap workOnAllCoresImage  = QPixmap(QStandardPaths::locate(QStandardPaths::GenericDataLocation, QLatin1String("digikam/data/workOnAllCoresImg.png")));
     workOnAllCoresImage          = workOnAllCoresImage.scaled(QSize(445,170));
 
-    QLabel* workOnAllCoresLabel  = new QLabel(faceRecogPage);
+    QLabel* const workOnAllCoresLabel = new QLabel(faceRecogPage);
     workOnAllCoresLabel->setPixmap(workOnAllCoresImage);
 
     faceRecogLayout->addWidget(identifyLabel,       0, 0, 2, 1);
@@ -255,16 +263,16 @@ FaceManagementHelpDialog::FaceManagementHelpDialog(QWidget* const parent)
 
     // --- Confirm Faces ----------------------------------------------------------------
 
-    QWidget*     confirmFacesPage   = new QWidget();
-    QGridLayout* confirmFacesLayout = new QGridLayout();
+    QWidget* const confirmFacesPage       = new QWidget();
+    QGridLayout* const confirmFacesLayout = new QGridLayout();
 
-    QLabel* overlayImgLabel = new QLabel(confirmFacesPage);
+    QLabel* const overlayImgLabel = new QLabel(confirmFacesPage);
     QPixmap overlayImg(QStandardPaths::locate(QStandardPaths::GenericDataLocation, QLatin1String("digikam/data/overlayImg.png")));
-    overlayImg = overlayImg.scaled(QSize(210, 285));
+    overlayImg                    = overlayImg.scaled(QSize(210, 285));
     overlayImgLabel->setAlignment(Qt::AlignVCenter);
     overlayImgLabel->setPixmap(overlayImg);
 
-    QLabel* overlayText     = new QLabel(confirmFacesPage);
+    QLabel* const overlayText     = new QLabel(confirmFacesPage);
     overlayText->setWordWrap(true);
     overlayText->setText(i18n("The results of Facial Recognition appear in the form "
                               "of Unconfirmed Results. These results will show up in "
@@ -274,38 +282,38 @@ FaceManagementHelpDialog::FaceManagementHelpDialog(QWidget* const parent)
                               ""));
     overlayText->setAlignment(Qt::AlignTop);
 
-    QLabel* confirmIcon     = new QLabel(confirmFacesPage);
+    QLabel* const confirmIcon    = new QLabel(confirmFacesPage);
     confirmIcon->setPixmap(QIcon::fromTheme(QLatin1String("dialog-ok-apply")).pixmap(QSize(20,20)));
     confirmIcon->setAlignment(Qt::AlignTop);
 
-    QLabel* confirmText     = new QLabel(confirmFacesPage);
+    QLabel* const confirmText    = new QLabel(confirmFacesPage);
     confirmText->setWordWrap(true);
     confirmText->setText(i18n("The Confirm Button allows you to confirm the suggestion. "
                               "This would assign the suggested name to the face"));
     confirmText->setAlignment(Qt::AlignTop);
 
-    QLabel* rejectIcon      = new QLabel(confirmFacesPage);
+    QLabel* const rejectIcon     = new QLabel(confirmFacesPage);
     rejectIcon->setPixmap(QIcon::fromTheme(QLatin1String("list-remove")).pixmap(QSize(20,20)));
     rejectIcon->setAlignment(Qt::AlignTop);
 
-    QLabel* rejectText      = new QLabel(confirmFacesPage);
+    QLabel* const rejectText     = new QLabel(confirmFacesPage);
     rejectText->setWordWrap(true);
     rejectText->setText(i18n("Use the Reject Button, if the suggestion is incorrect. "
                              "This would move the Face back to Unknown."));
     rejectText->setAlignment(Qt::AlignTop);
 
 
-    QLabel* deleteIcon      = new QLabel(confirmFacesPage);
+    QLabel* const deleteIcon     = new QLabel(confirmFacesPage);
     deleteIcon->setPixmap(QIcon::fromTheme(QLatin1String("window-close")).pixmap(QSize(20,20)));
     deleteIcon->setAlignment(Qt::AlignTop);
 
-    QLabel* deleteText      = new QLabel(confirmFacesPage);
+    QLabel* const deleteText     = new QLabel(confirmFacesPage);
     deleteText->setWordWrap(true);
     deleteText->setText(i18n("Use the delete Button, if the suggestion is not a face. "
                              "This will delete the Face Region from the Database."));
     deleteText->setAlignment(Qt::AlignTop);
 
-    QLabel* sortText        = new QLabel(confirmFacesPage);
+    QLabel* const sortText       = new QLabel(confirmFacesPage);
     sortText->setWordWrap(true);
     sortText->setText(i18n("<b>Face Categorization and Sorting</b> <br>"
                            "By default, Faces will appear Categorized based on their "
@@ -317,7 +325,7 @@ FaceManagementHelpDialog::FaceManagementHelpDialog(QWidget* const parent)
                            "you may modify the Sorting order within each category "
                            "by going to <u>View -> Sort Items -> By Face Type</u>."));
 
-    QLabel* improveResults  = new QLabel(confirmFacesPage);
+    QLabel* const improveResults = new QLabel(confirmFacesPage);
     improveResults->setWordWrap(true);
     improveResults->setText(i18n("<br> <b> Improving Results of Face Recognition </b> <br>"
                                  "Apart from using the settings mentioned in the last page, "
@@ -347,7 +355,8 @@ FaceManagementHelpDialog::FaceManagementHelpDialog(QWidget* const parent)
     setLayout(mainLayout);
 }
 
-FaceManagementHelpDialog::~FaceManagementHelpDialog()
+FaceManagementHelpDlg::~FaceManagementHelpDlg()
 {
 }
+
 } // namespace Digikam

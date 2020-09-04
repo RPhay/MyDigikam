@@ -21,35 +21,26 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_FACE_MGMT_DIALOG_H
-#define DIGIKAM_FACE_MGMT_DIALOG_H
+#ifndef DIGIKAM_FACE_MANAGEMENT_HELP_DLG_H
+#define DIGIKAM_FACE_MANAGEMENT_HELP_DLG_H
 
 // Qt Includes
 
 #include <QDialog>
 
-// Local includes
-
-#include "digikam_export.h"
-
 namespace Digikam
 {
 
-class DIGIKAM_EXPORT FaceManagementHelpDialog : public QDialog
+class FaceManagementHelpDlg : public QDialog
 {
     Q_OBJECT
 
 public:
 
-    explicit FaceManagementHelpDialog(QWidget* const parent);
-    ~FaceManagementHelpDialog();
-
-private:
-
-    // class Private;
-    // Private* const d;
+    explicit FaceManagementHelpDlg(QWidget* const parent);
+    ~FaceManagementHelpDlg();
 };
 
 } //namespace Digikam
 
-#endif // DIGIKAM_FACE_MGMT_DIALOG_H
+#endif // DIGIKAM_FACE_MANAGEMENT_HELP_DLG_H
