@@ -92,16 +92,16 @@ void DAboutData::authorsRegistration(KAboutData& aboutData)
                           QLatin1String("https://www.linkedin.com/in/gilles-caulier/")
                         );
 
-    aboutData.addAuthor ( ki18n("Marcel Wiesweg").toString(),
-                          ki18n("Developer and Mentoring").toString(),
-                          QLatin1String("marcel dot wiesweg at gmx dot de"),
-                          QLatin1String("https://www.facebook.com/marcel.wiesweg")
-                        );
-
     aboutData.addAuthor ( ki18n("Maik Qualmann").toString(),
                           ki18n("Developer and Mentoring").toString(),
                           QLatin1String("metzpinguin at gmail dot com"),
                           QLatin1String("https://www.linkedin.com/in/maik-qualmann-2b266717b/")
+                        );
+
+    aboutData.addAuthor ( ki18n("Marcel Wiesweg").toString(),
+                          ki18n("Developer and Mentoring").toString(),
+                          QLatin1String("marcel dot wiesweg at gmx dot de"),
+                          QLatin1String("https://www.facebook.com/marcel.wiesweg")
                         );
 
     aboutData.addAuthor ( ki18n("Mohamed Anwer").toString(),                                    // krazy:exclude=spelling
@@ -120,6 +120,13 @@ void DAboutData::authorsRegistration(KAboutData& aboutData)
                           ki18n("Developer").toString(),
                           QLatin1String("tpr at iki dot fi"),
                           QLatin1String("https://www.linkedin.com/in/teemurytilahti/")
+                        );
+
+    aboutData.addAuthor ( ki18n("Thanh Trung Dinh").toString(),
+                          ki18n("Mentoring, Port web-service tools to OAuth, factoring web service tools, "
+                                "and port faces recognition engine to OpenCV neural network").toString(),
+                          QLatin1String("dinhthanhtrung1996 at gmail dot com"),
+                          QLatin1String("https://www.linkedin.com/in/thanhtrungdinh/")
                         );
 
     // -- Contributors -----------------------------------------------------------
@@ -149,17 +156,18 @@ void DAboutData::authorsRegistration(KAboutData& aboutData)
 
     // -- Students ---------------------------------------------------------------
 
-    aboutData.addCredit ( ki18n("Thanh Trung Dinh").toString(),
-                          ki18n("Port web-service tools to OAuth, factoring web service tools, "
-                                "and port faces recognition engine to OpenCV neural network").toString(),
-                          QLatin1String("dinhthanhtrung1996 at gmail dot com"),
-                          QLatin1String("https://www.linkedin.com/in/thanhtrungdinh/")
-                        );
 
     aboutData.addCredit ( ki18n("Minh Nghĩa Duong").toString(),
-                          ki18n("Port Slideshow tool to plugins interface").toString(),
+                          ki18n("Clustering support and improvement for Face Engine, "
+                                "Port Slideshow tool to plugins interface").toString(),
                           QLatin1String("minhnghiaduong997 at gmail dot com"),
                           QLatin1String("https://www.linkedin.com/in/minh-nghia-duong-2b5bbb15a/")
+                        );
+
+    aboutData.addCredit ( ki18n("Kartik Ramesh").toString(),
+                          ki18n("Face management workflow improvements").toString(),
+                          QLatin1String("kartikx2000 at gmail dot com"),
+                          QLatin1String("https://www.linkedin.com/in/kartikxramesh/")
                         );
 
     aboutData.addCredit ( ki18n("Ahmed Fathi").toString(),
