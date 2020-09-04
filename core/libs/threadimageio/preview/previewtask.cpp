@@ -162,7 +162,7 @@ void PreviewLoadingTask::execute()
                 // Notify other processes that we are now loading this image.
                 // They might be interested - see notifyNewLoadingProcess below
 
-                cache->notifyNewLoadingProcess(this, m_loadingDescription);
+                //cache->notifyNewLoadingProcess(this, m_loadingDescription);
             }
         }
     }
