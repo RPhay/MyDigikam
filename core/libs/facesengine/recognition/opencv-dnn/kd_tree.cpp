@@ -22,6 +22,8 @@
 
 #include "kd_tree.h"
 
+// Qt includes
+
 #include <QMutex>
 
 namespace Digikam
@@ -29,7 +31,9 @@ namespace Digikam
 
 class Q_DECL_HIDDEN KDTree::Private
 {
+
 public:
+
     Private(int dim)
         : nbDimension(dim),
           root(nullptr)
@@ -80,7 +84,10 @@ KDNode* KDTree::add(const cv::Mat& position, const int identity)
     return newNode;
 }
 
-QMap<double, QVector<int> > KDTree::getClosestNeighbors(const cv::Mat& position, float sqRange, float cosThreshold, int maxNbNeighbors) const
+QMap<double, QVector<int> > KDTree::getClosestNeighbors(const cv::Mat& position,
+                                                        float sqRange,
+                                                        float cosThreshold,
+                                                        int maxNbNeighbors) const
 {
     QMap<double, QVector<int> > closestNeighbors;
 

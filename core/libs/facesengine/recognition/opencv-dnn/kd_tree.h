@@ -20,8 +20,10 @@
  *
  * ============================================================ */
 
-#ifndef KD_TREE_H
-#define KD_TREE_H
+#ifndef DIGIKAM_KD_TREE_H
+#define DIGIKAM_KD_TREE_H
+
+// Local includes
 
 #include "kd_node.h"
 
@@ -30,6 +32,7 @@ namespace Digikam
 
 class KDTree
 {
+
 public:
 
     explicit KDTree(int dim);
@@ -53,14 +56,16 @@ public:
 
 private:
 
-    class Private;
-    Private* d;
-
     // Hidden copy constructor and assignment operator
     KDTree(const KDTree&);
     KDTree& operator=(const KDTree&);
+
+private:
+
+    class Private;
+    Private* d;
 };
 
 } // namespace Digikam
 
-#endif // KD_TREE_H
+#endif // DIGIKAM_KD_TREE_H
