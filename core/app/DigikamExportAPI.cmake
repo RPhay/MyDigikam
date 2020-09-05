@@ -102,7 +102,9 @@ install(FILES
 
               ${CMAKE_SOURCE_DIR}/core/libs/dialogs/dmessagebox.h
               ${CMAKE_SOURCE_DIR}/core/libs/dialogs/imagedialog.h
+
               ${CMAKE_SOURCE_DIR}/core/libs/progressmanager/dhistoryview.h
+              ${CMAKE_SOURCE_DIR}/core/libs/progressmanager/dprogresswdg.h
 
               # As part of DigikamDatabase
 
