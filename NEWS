@@ -18,5 +18,5 @@ BUGFIXES:
 007 ==> 415782 - Face recognition "favors" people with few images: missing faces clustering.
 008 ==> 416630 - Use N nearest neighbor search.
 009 ==> 415895 - DNN Face recognition not working well on a picture.
-010 ==> 
-
+010 ==> 344800 - SQLITE : when moving an album to another location tags are lost (NFS storage).
+011 ==> 
