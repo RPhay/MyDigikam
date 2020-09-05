@@ -24,7 +24,6 @@
  *
  * ============================================================ */
 
-
 #include "facialrecognition_wrapper_p.h"
 
 namespace Digikam
@@ -35,7 +34,7 @@ void FacialRecognitionWrapper::Private::applyParameters()
 
 #ifdef USE_DNN_RECOGNITION_BACKEND
 
-    int k = 5;
+    int k           = 5;
     float threshold = 0.6;
 
     if      (parameters.contains(QLatin1String("k-nearest")))
@@ -98,7 +97,7 @@ void FacialRecognitionWrapper::setParameters(const QVariantMap& parameters)
 
     for (QVariantMap::const_iterator it  = parameters.begin() ;
                                      it != parameters.end() ;
-                                   ++it)
+                                     ++it)
     {
         d->parameters.insert(it.key(), it.value());
     }

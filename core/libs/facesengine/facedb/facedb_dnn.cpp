@@ -61,16 +61,15 @@ int FaceDb::insertFaceVector(const cv::Mat& faceEmbedding,
 
 KDTree* FaceDb::reconstructTree() const
 {
-    KDTree* tree           = new KDTree(128);
+    KDTree* const tree     = new KDTree(128);
     DbEngineSqlQuery query = d->db->execQuery(QLatin1String("SELECT id, identity, embedding FROM FaceMatrices;"));
 
     while (query.next())
     {
-        int nodeId   = query.value(0).toInt();
-        int identity = query.value(1).toInt();
+        int nodeId                    = query.value(0).toInt();
+        int identity                  = query.value(1).toInt();
         cv::Mat recordedFaceEmbedding = cv::Mat(1, 128, CV_32F, query.value(2).toByteArray().data()).clone();
-
-        KDNode* newNode = tree->add(recordedFaceEmbedding, identity);
+        KDNode* const newNode         = tree->add(recordedFaceEmbedding, identity);
 
         if (newNode)
         {

@@ -76,16 +76,17 @@ bool FaceDb::integrityCheck()
     switch (d->db->databaseType())
     {
         case BdEngineBackend::DbType::SQLite:
-
+        {
             // For SQLite the integrity check returns a single row with one string column "ok" on success and multiple rows on error.
 
             return(
                     (values.size() == 1) &&
                     (values.first().toString().toLower().compare(QLatin1String("ok")) == 0)
                   );
+        }
 
         case BdEngineBackend::DbType::MySQL:
-
+        {
             // For MySQL, for every checked table, the table name, operation (check), message type (status) and the message text (ok on success)
             // are returned. So we check if there are four elements and if yes, whether the fourth element is "ok".
 
@@ -121,9 +122,12 @@ bool FaceDb::integrityCheck()
             // No error conditions. Db passed the integrity check.
 
             return true;
+        }
 
         default:
+        {
             return false;
+        }
     }
 }
 

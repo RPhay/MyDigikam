@@ -49,9 +49,7 @@ namespace Digikam
 #ifdef USE_DNN_RECOGNITION_BACKEND
 class KDTree;
 #else
-
 class LBPHFaceModel;
-
 #endif
 
 /*

@@ -39,6 +39,7 @@ QList<Identity> FacialRecognitionWrapper::recognizeFaces(ImageListProvider* cons
     QMutexLocker lock(&d->mutex);
 
     QVector<int> ids;
+
     try
     {
         ids = d->recognizer->recognize(images->images());
@@ -54,7 +55,7 @@ QList<Identity> FacialRecognitionWrapper::recognizeFaces(ImageListProvider* cons
 
     QList<Identity> results;
 
-    for (int i = 0; i < ids.size(); ++i)
+    for (int i = 0 ; i < ids.size() ; ++i)
     {
         results << d->identityCache.value(ids.at(i));
     }
@@ -80,6 +81,5 @@ Identity FacialRecognitionWrapper::recognizeFace(QImage* image)
 
     return result.first();
 }
-
 
 } // namespace Digikam

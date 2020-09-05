@@ -22,15 +22,14 @@
  *
  * ============================================================ */
 
-
 #ifndef OPENCV_DNN_FACERECOGNIZER_H
 #define OPENCV_DNN_FACERECOGNIZER_H
 
-// Qt include
+// Qt includes
 
 #include <QImage>
 
-// Local library
+// Local includes
 
 #include "digikam_opencv.h"
 #include "digikam_export.h"
@@ -124,5 +123,6 @@ private:
     Private* d;
 };
 
-}
+} // namespace Digikam
+
 #endif // OPENCV_DNN_FACERECOGNIZER_H

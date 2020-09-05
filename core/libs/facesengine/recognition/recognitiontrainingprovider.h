@@ -51,7 +51,7 @@ public:
 
     ImageListProvider* newImages(const Identity& id) override;
 
-    ImageListProvider* images(const Identity&) override;
+    ImageListProvider* images(const Identity&)       override;
 
 public:
 

@@ -101,11 +101,11 @@ public:
 
 public:
 
-    bool                 dbAvailable;
-    int                  ref;
-    mutable QMutex       mutex;
-    QVariantMap          parameters;
-    QHash<int, Identity> identityCache;
+    bool                        dbAvailable;
+    int                         ref;
+    mutable QMutex              mutex;
+    QVariantMap                 parameters;
+    QHash<int, Identity>        identityCache;
 
 #ifdef USE_DNN_RECOGNITION_BACKEND
 

@@ -36,8 +36,7 @@ void FacialRecognitionWrapper::Private::trainIdentityBatch(const QList<Identity>
     foreach (const Identity& identity, identitiesToBeTrained)
     {
         ImageListProvider* const imageList = data->newImages(identity);
-
-        QList<QImage*> images = imageList->images();
+        QList<QImage*> images              = imageList->images();
 
         qCDebug(DIGIKAM_FACESENGINE_LOG) << "Training" << images.size() << "images for identity" << identity.id();
 

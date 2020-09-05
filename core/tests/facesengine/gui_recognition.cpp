@@ -22,6 +22,7 @@
  * ============================================================ */
 
 // Qt includes
+
 #include <QApplication>
 #include <QCommandLineParser>
 #include <QMainWindow>
@@ -40,11 +41,10 @@
 #include <QLineEdit>
 #include <QPushButton>
 #include <QDebug>
-
 #include <QHash>
 
+// Local includes
 
-// lib digikam includes
 #include "opencvdnnfacedetector.h"
 #include "facedetector.h"
 #include "dnnfaceextractor.h"
@@ -67,21 +67,22 @@ static QVector<QListWidgetItem*> splitData(const QDir& dataDir, float splitRatio
     QVector<QListWidgetItem*> imageItems;
 
     // Each subdirectory in data directory should match with a label
+
     QFileInfoList subDirs = dataDir.entryInfoList(QDir::NoDotAndDotDot | QDir::Dirs, QDir::Name);
 
-    for (int i = 0; i < subDirs.size(); ++i)
+    for (int i = 0 ; i < subDirs.size() ; ++i)
     {
         QDir subDir(subDirs[i].absoluteFilePath());
 
-        QString label = subDirs[i].fileName();
-
+        QString label           = subDirs[i].fileName();
         QFileInfoList filesInfo = subDir.entryInfoList(QDir::Files | QDir::Readable);
 
         // suffle dataset
+
         QList<QFileInfo>::iterator it = filesInfo.begin();
         QList<QFileInfo>::iterator it1;
 
-        for (int j = 0; j < filesInfo.size(); ++j)
+        for (int j = 0 ; j < filesInfo.size() ; ++j)
         {
             int inc = (int) (float(filesInfo.size()) * qrand() / (RAND_MAX + 1.0));
 
@@ -92,13 +93,14 @@ static QVector<QListWidgetItem*> splitData(const QDir& dataDir, float splitRatio
          }
 
         // split train/test
-        for (int j = 0; i < filesInfo.size(); ++j)
+
+        for (int j = 0 ; i < filesInfo.size() ; ++j)
         {
             QImage img(filesInfo[j].absoluteFilePath());
 
-            if (j < filesInfo.size() * splitRatio)
+            if (j < (filesInfo.size() * splitRatio))
             {
-                if (! img.isNull())
+                if (!img.isNull())
                 {
                     trainSet[label].append(img);
                     imageItems.append(new QListWidgetItem(QIcon(filesInfo[j].absoluteFilePath()), filesInfo[j].absoluteFilePath()));
@@ -106,7 +108,7 @@ static QVector<QListWidgetItem*> splitData(const QDir& dataDir, float splitRatio
             }
             else
             {
-                if (! img.isNull())
+                if (!img.isNull())
                 {
                     testSet[label].append(img);
                     imageItems.append(new QListWidgetItem(QIcon(filesInfo[j].absoluteFilePath()), filesInfo[j].absoluteFilePath()));
@@ -122,9 +124,10 @@ static QVector<QListWidgetItem*> splitData(const QDir& dataDir, float splitRatio
 class MainWindow : public QMainWindow
 {
     Q_OBJECT
+
 public:
 
-    explicit MainWindow(const QDir& directory, QWidget *parent = nullptr);
+    explicit MainWindow(const QDir& directory, QWidget* const parent = nullptr);
     ~MainWindow();
 
 private:
@@ -148,29 +151,29 @@ private Q_SLOTS:
 
 private:
 
-    OpenCVDNNFaceDetector* m_detector;
+    OpenCVDNNFaceDetector*    m_detector;
     FacialRecognitionWrapper* recognitionWrapper;
-    OpenCVDNNFaceRecognizer* m_recognizer;
-    DNNFaceExtractor*      m_extractor;
-    QVector<cv::Mat>       m_preprocessedFaces;
-    Identity               m_currentIdenity;
+    OpenCVDNNFaceRecognizer*  m_recognizer;
+    DNNFaceExtractor*         m_extractor;
+    QVector<cv::Mat>          m_preprocessedFaces;
+    Identity                  m_currentIdenity;
 
 
-    QLabel*                m_fullImage;
-    QListWidget*           m_imageListView;
-    QListWidget*           m_croppedfaceList;
-    //QVBoxLayout*           m_preprocessedList;
-    QListWidget*           m_preprocessedList;
-    QListWidget*           m_alignedList;
+    QLabel*                   m_fullImage;
+    QListWidget*              m_imageListView;
+    QListWidget*              m_croppedfaceList;
+    //QVBoxLayout*              m_preprocessedList;
+    QListWidget*              m_preprocessedList;
+    QListWidget*              m_alignedList;
 
     // control panel
-    QLineEdit*             m_imageLabel;
-    QLabel*                m_similarityLabel;
-    QLabel*                m_recognizationInfo;
-    QPushButton*           m_applyButton;
+    QLineEdit*                m_imageLabel;
+    QLabel*                   m_similarityLabel;
+    QLabel*                   m_recognizationInfo;
+    QPushButton*              m_applyButton;
 };
 
-MainWindow::MainWindow(const QDir &directory, QWidget *parent)
+MainWindow::MainWindow(const QDir &directory, QWidget* const parent)
     : QMainWindow(parent)
 {
     DbEngineParameters prm = DbEngineParameters::parametersFromConfig();
@@ -178,13 +181,14 @@ MainWindow::MainWindow(const QDir &directory, QWidget *parent)
 
     setWindowTitle(QLatin1String("Face recognition Test"));
 
-    recognitionWrapper = new FacialRecognitionWrapper();
+    recognitionWrapper     = new FacialRecognitionWrapper();
 
-    m_detector   = new OpenCVDNNFaceDetector(DetectorNNModel::YOLO);
-    m_recognizer = new OpenCVDNNFaceRecognizer(OpenCVDNNFaceRecognizer::Tree);
-    m_extractor  = new DNNFaceExtractor();
+    m_detector             = new OpenCVDNNFaceDetector(DetectorNNModel::YOLO);
+    m_recognizer           = new OpenCVDNNFaceRecognizer(OpenCVDNNFaceRecognizer::Tree);
+    m_extractor            = new DNNFaceExtractor();
 
     // Image erea
+
     QWidget*     const imageArea        = new QWidget(this);
     QHBoxLayout*       processingLayout = new QHBoxLayout(imageArea);
 
@@ -234,11 +238,14 @@ void MainWindow::slotDetectFaces(const QListWidgetItem* imageItem)
 
     m_imageLabel->clear();
     m_recognizationInfo->clear();
+
     disconnect(m_alignedList, &QListWidget::currentRowChanged,
-               this,          &MainWindow::slotIdentify);
+               this, &MainWindow::slotIdentify);
 
     // clear faces layout
-    QListWidgetItem* wItem;
+
+    QListWidgetItem* wItem = nullptr;
+
     while ((wItem = m_croppedfaceList->item(0)) != nullptr)
     {
         delete wItem;
@@ -262,13 +269,12 @@ void MainWindow::slotDetectFaces(const QListWidgetItem* imageItem)
     m_fullImage->setPixmap(QPixmap::fromImage(imgScaled));
 
     connect(m_alignedList, &QListWidget::currentRowChanged,
-            this         , &MainWindow::slotIdentify);
+            this, &MainWindow::slotIdentify);
 }
-
 
 QPixmap MainWindow::showCVMat(const cv::Mat& cvimage)
 {
-    if(cvimage.cols*cvimage.rows != 0)
+    if (cvimage.cols*cvimage.rows != 0)
     {
         cv::Mat rgb;
         QPixmap p;
@@ -309,7 +315,7 @@ QList<QRectF> MainWindow::detectFaces(const QString& imagePath)
     {
         qWarning() << "cv::Exception:" << e.what();
     }
-    catch(...)
+    catch (...)
     {
         qWarning() << "Default exception from OpenCV";
     }
@@ -346,6 +352,7 @@ void MainWindow::extractFaces(const QImage& img, QImage& imgScaled, const QList<
         QImage part         = img.copy(rect);
 
         // Show cropped faces
+
         QIcon croppedFace(QPixmap::fromImage(part.scaled(qMin(img.size().width(), 100),
                                                          qMin(img.size().width(), 100),
                                                          Qt::KeepAspectRatio)));
@@ -354,12 +361,14 @@ void MainWindow::extractFaces(const QImage& img, QImage& imgScaled, const QList<
         painter.drawRect(rectDraw);
 
         // Show preprocessed faces
+
         cv::Mat cvPreprocessedFace = m_recognizer->prepareForRecognition(part);
         m_preprocessedList->addItem(new QListWidgetItem(QIcon(showCVMat(cvPreprocessedFace)), QLatin1String("")));
 
         m_preprocessedFaces << cvPreprocessedFace;
 
         // Show aligned faces
+
         cv::Mat cvAlignedFace = m_extractor->alignFace(cvPreprocessedFace);
         m_alignedList->addItem(new QListWidgetItem(QIcon(showCVMat(cvAlignedFace)), QLatin1String("")));
     }
@@ -379,7 +388,7 @@ QWidget* MainWindow::setupFullImageArea()
 
 QWidget* MainWindow::setupCroppedFaceArea()
 {
-    QScrollArea* facesArea = new QScrollArea(this);
+    QScrollArea* const facesArea = new QScrollArea(this);
     facesArea->setWidgetResizable(true);
     facesArea->setAlignment(Qt::AlignRight);
     facesArea->setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOn);
@@ -407,7 +416,8 @@ QWidget* MainWindow::setupCroppedFaceArea()
 QWidget* MainWindow::setupPreprocessedFaceArea()
 {
     // preprocessed face area
-    QScrollArea* preprocessedFacesArea = new QScrollArea(this);
+
+    QScrollArea* const preprocessedFacesArea = new QScrollArea(this);
     preprocessedFacesArea->setWidgetResizable(true);
     preprocessedFacesArea->setAlignment(Qt::AlignRight);
     preprocessedFacesArea->setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOn);
@@ -435,7 +445,8 @@ QWidget* MainWindow::setupPreprocessedFaceArea()
 QWidget* MainWindow::setupAlignedFaceArea()
 {
     // aligned face area
-    QScrollArea* alignedFacesArea = new QScrollArea(this);
+
+    QScrollArea* const alignedFacesArea = new QScrollArea(this);
     alignedFacesArea->setWidgetResizable(true);
     alignedFacesArea->setAlignment(Qt::AlignRight);
     alignedFacesArea->setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOn);
@@ -462,20 +473,20 @@ QWidget* MainWindow::setupAlignedFaceArea()
 
 QWidget* MainWindow::setupControlPanel()
 {
-    QWidget* controlPanel = new QWidget();
+    QWidget* const controlPanel = new QWidget();
 
     QSizePolicy spImage(QSizePolicy::Preferred, QSizePolicy::Expanding);
     spImage.setHorizontalStretch(2);
 
     controlPanel->setSizePolicy(spImage);
 
-    m_recognizationInfo = new QLabel(this);
-    m_imageLabel        = new QLineEdit(this);
-    m_similarityLabel   = new QLabel(this);
-    m_applyButton       = new QPushButton(this);
+    m_recognizationInfo       = new QLabel(this);
+    m_imageLabel              = new QLineEdit(this);
+    m_similarityLabel         = new QLabel(this);
+    m_applyButton             = new QPushButton(this);
     m_applyButton->setText(QLatin1String("Apply"));
 
-    QFormLayout* layout   = new QFormLayout(this);
+    QFormLayout* const layout = new QFormLayout(this);
     layout->addRow(new QLabel(QLatin1String("Reconized :")), m_recognizationInfo);
     layout->addRow(new QLabel(QLatin1String("Identity :")),  m_imageLabel);
     layout->addRow(new QLabel(QLatin1String("Similarity distance :")), m_similarityLabel);
@@ -484,7 +495,7 @@ QWidget* MainWindow::setupControlPanel()
     controlPanel->setLayout(layout);
 
     connect(m_applyButton, &QPushButton::clicked,
-            this,          &MainWindow::slotSaveIdentity);
+            this, &MainWindow::slotSaveIdentity);
 
     return controlPanel;
 }
@@ -492,7 +503,8 @@ QWidget* MainWindow::setupControlPanel()
 QWidget* MainWindow::setupImageList(const QDir& directory)
 {
     // Itemlist erea
-    QScrollArea* itemsArea = new QScrollArea;
+
+    QScrollArea* const itemsArea = new QScrollArea;
     itemsArea->setWidgetResizable(true);
     itemsArea->setAlignment(Qt::AlignBottom);
     itemsArea->setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
@@ -513,20 +525,20 @@ QWidget* MainWindow::setupImageList(const QDir& directory)
 
     QVector<QListWidgetItem*> items = splitData(directory, 0.5, trainSet, testSet);
 
-    for (int i = 0; i < items.size(); ++i)
+    for (int i = 0 ; i < items.size() ; ++i)
     {
         m_imageListView->addItem(items[i]);
     }
 
     connect(m_imageListView, &QListWidget::currentItemChanged,
-            this,            &MainWindow::slotDetectFaces);
+            this, &MainWindow::slotDetectFaces);
 
     itemsArea->setWidget(m_imageListView);
 
     return itemsArea;
 }
 
-void MainWindow::slotIdentify(int index)
+void MainWindow::slotIdentify(int /*index*/)
 {
     // TODO : fix this
     //m_currentIdenity = m_recognizer->findIdenity(m_preprocessedFaces[index]);
@@ -552,14 +564,13 @@ void MainWindow::slotSaveIdentity()
 
 QCommandLineParser* parseOptions(const QCoreApplication& app)
 {
-    QCommandLineParser* parser = new QCommandLineParser();
+    QCommandLineParser* const parser = new QCommandLineParser();
     parser->addOption(QCommandLineOption(QLatin1String("dataset"), QLatin1String("Data set folder"), QLatin1String("path relative to data folder")));
     parser->addHelpOption();
     parser->process(app);
 
     return parser;
 }
-
 
 int main(int argc, char* argv[])
 {
@@ -568,9 +579,9 @@ int main(int argc, char* argv[])
 
     // Options for commandline parser
 
-   QCommandLineParser* parser = parseOptions(app);
+   QCommandLineParser* const parser = parseOptions(app);
 
-   if (! parser->isSet(QLatin1String("dataset")))
+   if (!parser->isSet(QLatin1String("dataset")))
    {
        qWarning("Data set is not set !!!");
 
@@ -579,7 +590,7 @@ int main(int argc, char* argv[])
 
    QDir dataset(parser->value(QLatin1String("dataset")));
 
-   MainWindow* window = new MainWindow(dataset, nullptr);
+   MainWindow* const window = new MainWindow(dataset, nullptr);
    window->show();
 
    return app.exec();

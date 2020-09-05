@@ -24,12 +24,16 @@
 
 #include "opencvdnnfacerecognizer.h"
 
+// C++ includes
+
 #include <iostream>
 
 // Qt includes
+
 #include <QElapsedTimer>
 
 // Local includes
+
 #include "digikam_debug.h"
 #include "dnnfaceextractor.h"
 #include "facedbaccess.h"
@@ -50,7 +54,7 @@ public:
           threshold(0.4),
           newDataAdded(true)
     {
-        for (int i = 0; i < 10; ++i)
+        for (int i = 0 ; i < 10 ; ++i)
         {
             extractors << new DNNFaceExtractor;
         }
@@ -61,16 +65,20 @@ public:
                 svm = cv::ml::SVM::create();
                 svm->setKernel(cv::ml::SVM::LINEAR);
                 break;
+
             case OpenCV_KNN:
                 knn = cv::ml::KNearest::create();
                 knn->setAlgorithmType(cv::ml::KNearest::BRUTE_FORCE);
                 knn->setIsClassifier(true);
                 break;
+
             case Tree:
                 tree = FaceDbAccess().db()->reconstructTree();
                 break;
+
             case DB:
                 break;
+
             default:
                 qFatal("Invalid classifier");
         }
@@ -104,17 +112,17 @@ public:
 
 public:
 
-    Classifier method;
+    Classifier                 method;
 
     QVector<DNNFaceExtractor*> extractors;
-    cv::Ptr<cv::ml::SVM> svm;
-    cv::Ptr<cv::ml::KNearest> knn;
+    cv::Ptr<cv::ml::SVM>       svm;
+    cv::Ptr<cv::ml::KNearest>  knn;
 
-    KDTree* tree;
-    int kNeighbors;
-    float threshold;
+    KDTree*                    tree;
+    int                        kNeighbors;
+    float                      threshold;
 
-    bool newDataAdded;
+    bool                       newDataAdded;
 
 public:
 
@@ -138,7 +146,7 @@ public:
 
     void operator()(const cv::Range& range) const
     {
-        for(int i = range.start; i < range.end; ++i)
+        for(int i = range.start ; i < range.end ; ++i)
         {
             int id = -1;
 
@@ -149,15 +157,19 @@ public:
                 case SVM:
                     id = d->predictSVM(faceEmbedding);
                     break;
+
                 case OpenCV_KNN:
                     id = d->predictKNN(faceEmbedding);
                     break;
+
                 case Tree:
                     id = d->predictKDTree(faceEmbedding);
                     break;
+
                 case DB:
                     id = d->predictDb(faceEmbedding);
                     break;
+
                 default:
                     qCWarning(DIGIKAM_FACEDB_LOG) << "Not recognized classifying method";
             }
@@ -168,8 +180,8 @@ public:
 
 private:
 
-    const QList<QImage*>& images;
-    QVector<int>&         ids;
+    const QList<QImage*>&                   images;
+    QVector<int>&                           ids;
 
     OpenCVDNNFaceRecognizer::Private* const d;
 };
@@ -191,7 +203,7 @@ public:
 
     void operator()(const cv::Range& range) const
     {
-        for(int i = range.start; i < range.end; ++i)
+        for(int i = range.start ; i < range.end ; ++i)
         {
             cv::Mat faceEmbedding = d->extractors[i%(d->extractors.size())]->getFaceEmbedding(OpenCVDNNFaceRecognizer::prepareForRecognition(*images[i]));
 
@@ -204,9 +216,9 @@ public:
 
 private:
 
-    const QList<QImage*>& images;
-    const int&            id;
-    const QString&        context;
+    const QList<QImage*>&                   images;
+    const int&                              id;
+    const QString&                          context;
 
     OpenCVDNNFaceRecognizer::Private* const d;
 };
@@ -282,11 +294,11 @@ int OpenCVDNNFaceRecognizer::Private::predictKDTree(const cv::Mat& faceEmbedding
 
     for (QMap<double, QVector<int> >::const_iterator iter  = closestNeighbors.cbegin();
                                                      iter != closestNeighbors.cend();
-                                                   ++iter)
+                                                     ++iter)
     {
         for (QVector<int>::const_iterator node  = iter.value().cbegin();
                                           node != iter.value().cend();
-                                        ++node)
+                                          ++node)
         {
             int label = (*node);
 
@@ -294,16 +306,16 @@ int OpenCVDNNFaceRecognizer::Private::predictKDTree(const cv::Mat& faceEmbedding
         }
     }
 
-    double maxScore = 0;
+    double maxScore = 0.0;
     int prediction  = -1;
 
     for (QMap<int, QVector<double> >::const_iterator group  = votingGroups.cbegin();
                                                      group != votingGroups.cend();
-                                                   ++group)
+                                                     ++group)
     {
-        double score = 0;
+        double score = 0.0;
 
-        for (int i = 0; i < group.value().size(); ++i)
+        for (int i = 0 ; i < group.value().size() ; ++i)
         {
             score += (threshold - group.value()[i]);
         }
@@ -326,24 +338,24 @@ int OpenCVDNNFaceRecognizer::Private::predictDb(const cv::Mat& faceEmbedding) co
 
     for (QMap<double, QVector<int> >::const_iterator iter  = closestNeighbors.cbegin();
                                                      iter != closestNeighbors.cend();
-                                                   ++iter)
+                                                     ++iter)
     {
-        for (int i = 0; i < iter.value().size(); ++i)
+        for (int i = 0 ; i < iter.value().size() ; ++i)
         {
             votingGroups[iter.value()[i]].append(iter.key());
         }
     }
 
-    double maxScore = 0;
+    double maxScore = 0.0;
     int prediction  = -1;
 
     for (QMap<int, QVector<double> >::const_iterator group  = votingGroups.cbegin();
                                                      group != votingGroups.cend();
-                                                   ++group)
+                                                     ++group)
     {
-        double score = 0;
+        double score = 0.0;
 
-        for (int i = 0; i < group.value().size(); ++i)
+        for (int i = 0 ; i < group.value().size() ; ++i)
         {
             score += (threshold - group.value()[i]);
         }
@@ -418,17 +430,18 @@ bool OpenCVDNNFaceRecognizer::Private::insertData(const cv::Mat& nodePos, const 
         qCWarning(DIGIKAM_FACEDB_LOG) << "error inserting face embedding to database";
     }
 
-    if (method == DB)
+    if      (method == DB)
     {
         if (! FaceDbAccess().db()->insertToTreeDb(nodeId, nodePos))
         {
             qCWarning(DIGIKAM_FACEDB_LOG) << "Error insert face embedding";
+
             return false;
         }
     }
-    else if(method == Tree)
+    else if (method == Tree)
     {
-        KDNode* newNode = tree->add(nodePos, label);
+        KDNode* const newNode = tree->add(nodePos, label);
 
         if (newNode)
         {
@@ -465,15 +478,19 @@ int OpenCVDNNFaceRecognizer::recognize(QImage* inputImage)
         case SVM:
             id = d->predictSVM(faceEmbedding);
             break;
+
         case OpenCV_KNN:
             id = d->predictKNN(faceEmbedding);
             break;
+
         case Tree:
             id = d->predictKDTree(faceEmbedding);
             break;
+
         case DB:
             id = d->predictDb(faceEmbedding);
             break;
+
         default:
             qCWarning(DIGIKAM_FACEDB_LOG) << "Not recognized classifying method";
     }
@@ -509,9 +526,9 @@ bool OpenCVDNNFaceRecognizer::registerTrainingData(const cv::Mat& preprocessedIm
 {
     cv::Mat faceEmbedding = d->extractors[0]->getFaceEmbedding(preprocessedImage);
 
-    if(d->method == Tree)
+    if (d->method == Tree)
     {
-        KDNode* newNode = d->tree->add(faceEmbedding, label);
+        KDNode* const newNode = d->tree->add(faceEmbedding, label);
 
         if (!newNode)
         {
@@ -528,7 +545,7 @@ int OpenCVDNNFaceRecognizer::verifyTestData(const cv::Mat& preprocessedImage)
 {
     int id = -1;
 
-    if(d->method == Tree)
+    if (d->method == Tree)
     {
         id = d->predictKDTree(d->extractors[0]->getFaceEmbedding(preprocessedImage));
     }
@@ -536,4 +553,4 @@ int OpenCVDNNFaceRecognizer::verifyTestData(const cv::Mat& preprocessedImage)
     return id;
 }
 
-}
+} // namespace Digikam

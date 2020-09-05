@@ -60,14 +60,14 @@ public:
 
     RecognitionPreprocessor* preprocessor;
 
-    cv::dnn::Net  net;
-    QMutex        mutex;
+    cv::dnn::Net             net;
+    QMutex                   mutex;
 
-    cv::Size      imageSize;
-    float         scaleFactor;
-    cv::Scalar    meanValToSubtract;
+    cv::Size                 imageSize;
+    float                    scaleFactor;
+    cv::Scalar               meanValToSubtract;
 
-    int           ref;
+    int                      ref;
 };
 
 double DNNFaceExtractor::cosineDistance(std::vector<float> v1,
@@ -89,7 +89,7 @@ double DNNFaceExtractor::L2squareDistance(std::vector<float> v1,
 
     double sqrDistance = 0;
 
-    for (size_t i = 0; i < v1.size(); ++i)
+    for (size_t i = 0 ; i < v1.size() ; ++i)
     {
         sqrDistance += pow((v1[i] - v2[i]), 2);
     }
@@ -101,12 +101,11 @@ double DNNFaceExtractor::L2squareNormDistance(std::vector<float> v1, std::vector
 {
     assert(v1.size() == v2.size());
 
-    double normV1 = sqrt(std::inner_product(v1.begin(), v1.end(), v1.begin(), 0.0));
-    double normV2 = sqrt(std::inner_product(v2.begin(), v2.end(), v2.begin(), 0.0));
+    double normV1      = sqrt(std::inner_product(v1.begin(), v1.end(), v1.begin(), 0.0));
+    double normV2      = sqrt(std::inner_product(v2.begin(), v2.end(), v2.begin(), 0.0));
+    double sqrDistance = 0.0;
 
-    double sqrDistance = 0;
-
-    for (size_t i = 0; i < v1.size(); ++i)
+    for (size_t i = 0 ; i < v1.size() ; ++i)
     {
         sqrDistance += pow((v1[i]/normV1 - v2[i]/normV2), 2);
     }
@@ -127,7 +126,7 @@ QJsonArray DNNFaceExtractor::encodeVector(const std::vector<float>& vector)
 {
     QJsonArray array;
 
-    for (size_t i = 0; i < vector.size(); ++i)
+    for (size_t i = 0 ; i < vector.size() ; ++i)
     {
         array << vector[i];
     }
@@ -139,7 +138,7 @@ std::vector<float> DNNFaceExtractor::decodeVector(const QJsonArray& json)
 {
     std::vector<float> vector;
 
-    for (int i = 0; i < json.size(); ++i)
+    for (int i = 0 ; i < json.size() ; ++i)
     {
         vector.push_back(static_cast<float>(json[i].toDouble()));
     }

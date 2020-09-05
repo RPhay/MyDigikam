@@ -24,6 +24,7 @@
  * ============================================================ */
 
 #include "facedb_p.h"
+
 namespace Digikam
 {
 
@@ -47,11 +48,11 @@ public:
 
 public:
 
-    int nodeID;
-    int label;
-    int splitAxis;
-    int left;
-    int right;
+    int     nodeID;
+    int     label;
+    int     splitAxis;
+    int     left;
+    int     right;
     cv::Mat position;
     cv::Mat minRange;
     cv::Mat maxRange;
@@ -59,10 +60,9 @@ public:
 
 bool FaceDb::insertToTreeDb(const int nodeID, const cv::Mat& faceEmbedding) const
 {
-    bool isLeftChild = false;
+    bool isLeftChild    = false;
     int parentSplitAxis = 0;
-
-    int parentID = findParentTreeDb(faceEmbedding, isLeftChild, parentSplitAxis);
+    int parentID        = findParentTreeDb(faceEmbedding, isLeftChild, parentSplitAxis);
 
     if (parentID < 0)
     {
@@ -84,7 +84,7 @@ bool FaceDb::insertToTreeDb(const int nodeID, const cv::Mat& faceEmbedding) cons
                                                             "VALUES (?, ?, ?, ?, ?, NULL, NULL)"),
                                               bindingValues);
 
-    int newNode = query.lastInsertId().toInt();
+    int newNode            = query.lastInsertId().toInt();
 
     if (newNode <= 0)
     {
@@ -157,11 +157,11 @@ void FaceDb::clearTreeDb() const
 
 void FaceDb::updateRangeTreeDb(int nodeId, cv::Mat& minRange, cv::Mat& maxRange, const cv::Mat& position) const
 {
-    float* min = minRange.ptr<float>();
-    float* max = maxRange.ptr<float>();
+    float* const min = minRange.ptr<float>();
+    float* const max = maxRange.ptr<float>();
     const float* pos = position.ptr<float>();
 
-    for (int i = 0; i < position.cols; ++i)
+    for (int i = 0 ; i < position.cols ; ++i)
     {
         max[i] = std::max(max[i], pos[i]);
         min[i] = std::min(min[i], pos[i]);
@@ -179,7 +179,7 @@ void FaceDb::updateRangeTreeDb(int nodeId, cv::Mat& minRange, cv::Mat& maxRange,
 
 int FaceDb::findParentTreeDb(const cv::Mat& nodePos, bool& leftChild, int& parentSplitAxis) const
 {
-    int parent = 1;
+    int parent           = 1;
     QVariant currentNode = parent;
 
     while (currentNode.isValid() && !currentNode.isNull())
@@ -205,11 +205,11 @@ int FaceDb::findParentTreeDb(const cv::Mat& nodePos, bool& leftChild, int& paren
             return -1;
         }
 
-    /*
+/*
         qDebug() << "split axis" << query.value(0).toInt()
                  << "left"       << query.value(4)
                  << "right"      << query.value(5);
-    */
+*/
 
         int split        = query.value(0).toInt();
         parentSplitAxis  = split;
@@ -237,12 +237,12 @@ int FaceDb::findParentTreeDb(const cv::Mat& nodePos, bool& leftChild, int& paren
         if (nodePos.at<float>(0, split) >= position.at<float>(0, split))
         {
             currentNode = right;
-            leftChild = false;
+            leftChild   = false;
         }
         else
         {
             currentNode = left;
-            leftChild = true;
+            leftChild   = true;
         }
 
          updateRangeTreeDb(parent, minRange, maxRange, nodePos);
@@ -264,19 +264,21 @@ double FaceDb::getClosestNeighborsTreeDb(const DataNode& subTree,
     }
 
     // try to add current node to the list
+
     const float sqrdistanceToCurrentNode = KDNode::sqrDistance(position.ptr<float>(), subTree.position.ptr<float>(), 128);
 
-    if (sqrdistanceToCurrentNode < sqRange &&
-        KDNode::cosDistance(position.ptr<float>(), subTree.position.ptr<float>(), 128) > cosThreshold)
+    if ((sqrdistanceToCurrentNode < sqRange) &&
+        (KDNode::cosDistance(position.ptr<float>(), subTree.position.ptr<float>(), 128) > cosThreshold))
     {
         neighborList[sqrdistanceToCurrentNode].append(subTree.label);
 
         // limit the size of the Map to maxNbNeighbors
+
         int size = 0;
 
         for (QMap<double, QVector<int> >::const_iterator iter  = neighborList.cbegin();
                                                          iter != neighborList.cend();
-                                                       ++iter)
+                                                         ++iter)
         {
             size += iter.value().size();
         }
@@ -284,6 +286,7 @@ double FaceDb::getClosestNeighborsTreeDb(const DataNode& subTree,
         if (size > maxNbNeighbors)
         {
             // Eliminate the farthest neighbor
+
             QMap<double, QVector<int> >::iterator farthestNodes = (neighborList.end() - 1);
 
             if (farthestNodes.value().size() == 1)
@@ -296,11 +299,13 @@ double FaceDb::getClosestNeighborsTreeDb(const DataNode& subTree,
             }
 
             // update the searching range
+
             sqRange = neighborList.lastKey();
         }
     }
 
     // sub-trees Traversal
+
     double sqrDistanceLeftTree  = 0;
     double sqrDistanceRightTree = 0;
     DataNode leftNode;
@@ -322,6 +327,7 @@ double FaceDb::getClosestNeighborsTreeDb(const DataNode& subTree,
         if (query.next())
         {
             // encapsulate data node
+
             leftNode.nodeID   = subTree.left;
             int embeddingID   = query.value(0).toInt();
             leftNode.maxRange = cv::Mat(1, 128, CV_32F, query.value(1).toByteArray().data()).clone();
@@ -337,8 +343,8 @@ double FaceDb::getClosestNeighborsTreeDb(const DataNode& subTree,
 
             if (query.next())
             {
-                leftNode.label    = query.value(0).toInt();
-                leftNode.position = cv::Mat(1, 128, CV_32F, query.value(1).toByteArray().data()).clone();
+                leftNode.label        = query.value(0).toInt();
+                leftNode.position     = cv::Mat(1, 128, CV_32F, query.value(1).toByteArray().data()).clone();
 
                 const float* minRange = leftNode.minRange.ptr<float>();
                 const float* maxRange = leftNode.maxRange.ptr<float>();
@@ -369,6 +375,7 @@ double FaceDb::getClosestNeighborsTreeDb(const DataNode& subTree,
         if (query.next())
         {
             // encapsulate data node
+
             rightNode.nodeID   = subTree.right;
             int embeddingID    = query.value(0).toInt();
             rightNode.maxRange = cv::Mat(1, 128, CV_32F, query.value(1).toByteArray().data()).clone();
@@ -384,14 +391,14 @@ double FaceDb::getClosestNeighborsTreeDb(const DataNode& subTree,
 
             if (query.next())
             {
-                rightNode.label    = query.value(0).toInt();
-                rightNode.position = cv::Mat(1, 128, CV_32F, query.value(1).toByteArray().data()).clone();
+                rightNode.label       = query.value(0).toInt();
+                rightNode.position    = cv::Mat(1, 128, CV_32F, query.value(1).toByteArray().data()).clone();
 
                 const float* minRange = rightNode.minRange.ptr<float>();
                 const float* maxRange = rightNode.maxRange.ptr<float>();
                 const float* position = rightNode.position.ptr<float>();
 
-                for (int i = 0; i < 128; ++i)
+                for (int i = 0 ; i < 128 ; ++i)
                 {
                     sqrDistanceRightTree += (pow(qMax((minRange[i] - position[i]), 0.0f), 2) +
                                              pow(qMax((position[i] - maxRange[i]), 0.0f), 2));
@@ -401,16 +408,19 @@ double FaceDb::getClosestNeighborsTreeDb(const DataNode& subTree,
     }
 
     // traverse the closest area
+
     if (sqrDistanceLeftTree < sqrDistanceRightTree)
     {
         if (sqrDistanceLeftTree < sqRange)
         {
             // traverse left Tree
+
             sqRange = getClosestNeighborsTreeDb(leftNode, neighborList, position, sqRange, cosThreshold, maxNbNeighbors);
 
             if (sqrDistanceRightTree < sqRange)
             {
                 // traverse right Tree
+
                 sqRange = getClosestNeighborsTreeDb(rightNode, neighborList, position, sqRange, cosThreshold, maxNbNeighbors);
             }
         }
@@ -420,11 +430,13 @@ double FaceDb::getClosestNeighborsTreeDb(const DataNode& subTree,
         if (sqrDistanceRightTree < sqRange)
         {
             // traverse right Tree
+
             sqRange = getClosestNeighborsTreeDb(rightNode, neighborList, position, sqRange, cosThreshold, maxNbNeighbors);
 
             if (sqrDistanceLeftTree < sqRange)
             {
                 // traverse left Tree
+
                 sqRange = getClosestNeighborsTreeDb(leftNode, neighborList, position, sqRange, cosThreshold, maxNbNeighbors);
             }
         }

@@ -25,7 +25,8 @@
 
 #include "facialrecognition_wrapper_p.h"
 
-// faces engine include
+// Local include
+
 #include "facedbaccess.h"
 #include "facedb.h"
 

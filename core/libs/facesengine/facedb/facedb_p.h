@@ -33,13 +33,9 @@
 #include "digikam_debug.h"
 
 #ifdef USE_DNN_RECOGNITION_BACKEND
-
 #   include "kd_tree.h"
-
 #else
-
 #   include "lbphfacemodel.h"
-
 #endif
 
 /*

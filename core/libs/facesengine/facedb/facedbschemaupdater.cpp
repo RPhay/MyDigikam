@@ -306,7 +306,7 @@ bool FaceDbSchemaUpdater::updateV2ToV3()
 
 bool FaceDbSchemaUpdater::updateV3ToV4()
 {
-    if(!(d->dbAccess->backend()->execDBAction(d->dbAccess->backend()->getDBAction(QLatin1String("CreateFaceDBFaceMatrices")))))
+    if (!(d->dbAccess->backend()->execDBAction(d->dbAccess->backend()->getDBAction(QLatin1String("CreateFaceDBFaceMatrices")))))
     {
         qDebug() << "fail to recreate FaceMatrices table";
 

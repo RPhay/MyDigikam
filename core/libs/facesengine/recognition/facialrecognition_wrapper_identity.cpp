@@ -240,6 +240,7 @@ Identity FacialRecognitionWrapper::addIdentityDebug(const QMap<QString, QString>
     }
 
     d->identityCache[identity.id()] = identity;
+
     return identity;
 }
 
@@ -323,6 +324,5 @@ void FacialRecognitionWrapper::deleteIdentities(QList<Identity> identitiesToBeDe
         identity = identitiesToBeDeleted.erase(identity);
     }
 }
-
 
 } // namespace Digikam
