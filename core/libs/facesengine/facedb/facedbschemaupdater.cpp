@@ -158,7 +158,7 @@ bool FaceDbSchemaUpdater::startUpdates()
         {
             // trying to open a database with a more advanced than this FaceDbSchemaUpdater supports
 
-            if (!versionRequired.isEmpty() && versionRequired.toInt() <= schemaVersion())
+            if (!versionRequired.isEmpty() && (versionRequired.toInt() <= schemaVersion()))
             {
                 // version required may be less than current version
 

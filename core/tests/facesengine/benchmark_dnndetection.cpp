@@ -22,6 +22,7 @@
  * ============================================================ */
 
 // Qt includes
+
 #include <QApplication>
 #include <QCommandLineParser>
 #include <QMainWindow>
@@ -38,7 +39,8 @@
 #include <QPainter>
 #include <QDebug>
 
-// lib digikam includes
+// Local includes
+
 #include "opencvdnnfacedetector.h"
 #include "facedetector.h"
 
@@ -49,7 +51,7 @@ class MainWindow : public QMainWindow
     Q_OBJECT
 public:
 
-    explicit MainWindow(const QDir& directory, QWidget *parent = nullptr);
+    explicit MainWindow(const QDir& directory, QWidget* const parent = nullptr);
     ~MainWindow();
 
 private:
@@ -61,14 +63,11 @@ private:
     QWidget* setupFullImageArea();
     QWidget* setupPaddedImage();
     QWidget* setupCroppedFaceArea();
-
     QWidget* setupImageList(const QDir& directory);
 
 private Q_SLOTS:
 
     void slotDetectFaces(const QListWidgetItem* imageItem);
-
-
 
 private:
 
@@ -80,20 +79,22 @@ private:
     QListWidget*           m_croppedfaceList;
 };
 
-MainWindow::MainWindow(const QDir &directory, QWidget *parent)
+MainWindow::MainWindow(const QDir &directory, QWidget* const parent)
     : QMainWindow(parent)
 {
     setWindowTitle(QLatin1String("Face detection Test"));
 
-    m_detector = new OpenCVDNNFaceDetector(DetectorNNModel::YOLO);
+    m_detector                          = new OpenCVDNNFaceDetector(DetectorNNModel::YOLO);
 
-    // Image erea
-    QWidget* const imageArea    = new QWidget(this);
+    // Image area
+
+    QWidget* const imageArea            = new QWidget(this);
 
     // TODO add control panel to adjust detection hyper parameters
-    QWidget* const controlPanel = new QWidget;
 
-    QHBoxLayout* processingLayout = new QHBoxLayout(imageArea);
+    QWidget* const controlPanel         = new QWidget;
+
+    QHBoxLayout* const processingLayout = new QHBoxLayout(imageArea);
     processingLayout->addWidget(setupFullImageArea());
     processingLayout->addWidget(setupPaddedImage());
     processingLayout->addWidget(setupCroppedFaceArea());
@@ -102,8 +103,8 @@ MainWindow::MainWindow(const QDir &directory, QWidget *parent)
     QSizePolicy spHigh(QSizePolicy::Preferred, QSizePolicy::Expanding);
     imageArea->setSizePolicy(spHigh);
 
-    QWidget*     const mainWidget = new QWidget(this);
-    QVBoxLayout* const mainLayout = new QVBoxLayout(mainWidget);
+    QWidget*     const mainWidget       = new QWidget(this);
+    QVBoxLayout* const mainLayout       = new QVBoxLayout(mainWidget);
 
     mainLayout->addWidget(imageArea);
     mainLayout->addWidget(setupImageList(directory));
@@ -128,13 +129,14 @@ void MainWindow::slotDetectFaces(const QListWidgetItem* imageItem)
     QImage imgScaled(img.scaled(416, 416, Qt::KeepAspectRatio));
 
     // clear faces layout
-    QListWidgetItem *wItem;
+    QListWidgetItem* wItem = nullptr;
+
     while ((wItem = m_croppedfaceList->item(0)) != nullptr)
     {
         delete wItem;
     }
 
-    QList<QRectF> faces = detectFaces(imagePath);
+    QList<QRectF> faces    = detectFaces(imagePath);
 
     extractFaces(img, imgScaled, faces);
 
@@ -142,10 +144,9 @@ void MainWindow::slotDetectFaces(const QListWidgetItem* imageItem)
     m_fullImage->setPixmap(QPixmap::fromImage(imgScaled));
 }
 
-
 QPixmap MainWindow::showCVMat(const cv::Mat& cvimage)
 {
-    if(cvimage.cols*cvimage.rows != 0)
+    if ((cvimage.cols * cvimage.rows) != 0)
     {
         cv::Mat rgb;
         QPixmap p;
@@ -165,7 +166,7 @@ QList<QRectF> MainWindow::detectFaces(const QString& imagePath)
     cv::Mat img;
     img = cv::imread(imagePath.toStdString());
 
-    if(! img.data )
+    if (!img.data )
     {
         qDebug() <<  "Open cv Could not open or find the image";
     }
@@ -180,16 +181,18 @@ QList<QRectF> MainWindow::detectFaces(const QString& imagePath)
 
         // NOTE detection with filePath won't work when format is not standard
         // NOTE unexpected behaviour with detecFaces(const QString&)
+
         cv::Size paddedSize(0, 0);
         cv::Mat cvImage       = m_detector->prepareForDetection(img, paddedSize);
         QList<QRect> absRects = m_detector->detectFaces(cvImage, paddedSize);
         faces                 = FaceDetector::toRelativeRects(absRects,
                                                               QSize(cvImage.cols - 2*paddedSize.width,
                                                               cvImage.rows - 2*paddedSize.height));
-        elapsedDetection = timer.elapsed();
+        elapsedDetection      = timer.elapsed();
 
 
         // debug padded image
+
         m_paddedImage->setPixmap(showCVMat(cvImage));
 
         qDebug() << "(Input CV) Found " << absRects.size() << " faces, in " << elapsedDetection << "ms";
@@ -198,7 +201,7 @@ QList<QRectF> MainWindow::detectFaces(const QString& imagePath)
     {
         qWarning() << "cv::Exception:" << e.what();
     }
-    catch(...)
+    catch (...)
     {
         qWarning() << "Default exception from OpenCV";
     }
@@ -228,11 +231,12 @@ void MainWindow::extractFaces(const QImage& img, QImage& imgScaled, const QList<
 
     foreach (const QRectF& rr, faces)
     {
-        QRect  rectDraw      = FaceDetector::toAbsoluteRect(rr, imgScaled.size());
-        QRect  rect          = FaceDetector::toAbsoluteRect(rr, img.size());
-        QImage part         = img.copy(rect);
+        QRect  rectDraw = FaceDetector::toAbsoluteRect(rr, imgScaled.size());
+        QRect  rect     = FaceDetector::toAbsoluteRect(rr, img.size());
+        QImage part     = img.copy(rect);
 
         // Show cropped faces
+
         QIcon croppedFace(QPixmap::fromImage(part.scaled(qMin(img.size().width(), 100),
                                                          qMin(img.size().width(), 100),
                                                          Qt::KeepAspectRatio)));
@@ -268,7 +272,7 @@ QWidget* MainWindow::setupPaddedImage()
 
 QWidget* MainWindow::setupCroppedFaceArea()
 {
-    QScrollArea* facesArea = new QScrollArea(this);
+    QScrollArea* const facesArea = new QScrollArea(this);
     facesArea->setWidgetResizable(true);
     facesArea->setAlignment(Qt::AlignRight);
     facesArea->setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOn);
@@ -299,8 +303,9 @@ QWidget* MainWindow::setupCroppedFaceArea()
 
 QWidget* MainWindow::setupImageList(const QDir& directory)
 {
-    // Itemlist erea
-    QScrollArea* itemsArea = new QScrollArea;
+    // Itemlist area
+
+    QScrollArea* const itemsArea = new QScrollArea;
     itemsArea->setWidgetResizable(true);
     itemsArea->setAlignment(Qt::AlignBottom);
     itemsArea->setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
@@ -321,33 +326,31 @@ QWidget* MainWindow::setupImageList(const QDir& directory)
 
     for (QStringList::const_iterator iter  = subjects.cbegin();
                                      iter != subjects.cend();
-                                   ++iter)
+                                     ++iter)
     {
-        QString filePath = directory.filePath(*iter);
-        QListWidgetItem* item = new QListWidgetItem(QIcon(filePath), filePath);
+        QString filePath            = directory.filePath(*iter);
+        QListWidgetItem* const item = new QListWidgetItem(QIcon(filePath), filePath);
 
         m_imageListView->addItem(item);
     }
 
     connect(m_imageListView, &QListWidget::currentItemChanged,
-            this,            &MainWindow::slotDetectFaces);
+            this, &MainWindow::slotDetectFaces);
 
     itemsArea->setWidget(m_imageListView);
 
     return itemsArea;
 }
 
-
 QCommandLineParser* parseOptions(const QCoreApplication& app)
 {
-    QCommandLineParser* parser = new QCommandLineParser();
+    QCommandLineParser* const parser = new QCommandLineParser();
     parser->addOption(QCommandLineOption(QLatin1String("dataset"), QLatin1String("Data set folder"), QLatin1String("path relative to data folder")));
     parser->addHelpOption();
     parser->process(app);
 
     return parser;
 }
-
 
 int main(int argc, char* argv[])
 {
@@ -356,7 +359,7 @@ int main(int argc, char* argv[])
 
     // Options for commandline parser
 
-   QCommandLineParser* parser = parseOptions(app);
+   QCommandLineParser* const parser = parseOptions(app);
 
    if (! parser->isSet(QLatin1String("dataset")))
    {
@@ -367,7 +370,7 @@ int main(int argc, char* argv[])
 
    QDir dataset(parser->value(QLatin1String("dataset")));
 
-   MainWindow* window = new MainWindow(dataset, nullptr);
+   MainWindow* const window = new MainWindow(dataset, nullptr);
 
    window->show();
 
@@ -375,5 +378,3 @@ int main(int argc, char* argv[])
 }
 
 #include "benchmark_dnndetection.moc"
-
-

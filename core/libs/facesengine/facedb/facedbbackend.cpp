@@ -22,9 +22,10 @@
  *
  * ============================================================ */
 
+#include "facedbbackend.h"
+
 // Local includes
 
-#include "facedbbackend.h"
 #include "dbenginebackend_p.h"
 #include "facedbschemaupdater.h"
 

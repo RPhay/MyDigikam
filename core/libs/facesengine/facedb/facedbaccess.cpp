@@ -207,7 +207,9 @@ void FaceDbAccess::setParameters(const DbEngineParameters& parameters)
 bool FaceDbAccess::checkReadyForUse(InitializationObserver* const observer)
 {
     if (!DbEngineAccess::checkReadyForUse(d->lastError))
+    {
         return false;
+    }
 
     // Create an object with private shortcut constructor
 

@@ -120,7 +120,7 @@ EigenFaceModel FaceDb::eigenFaceModel() const
     DbEngineSqlQuery query = d->db->execQuery(QLatin1String("SELECT id, identity, `context`, `type`, `rows`, `cols`, `data`, vecdata "
                                                             "FROM FaceMatrices;"));
 
-    EigenFaceModel model = EigenFaceModel();
+    EigenFaceModel model   = EigenFaceModel();
     QList<OpenCVMatData>        mats;
     QList<EigenFaceMatMetadata> matMetadata;
 

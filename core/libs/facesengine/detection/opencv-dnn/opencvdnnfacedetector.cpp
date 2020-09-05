@@ -207,7 +207,7 @@ void OpenCVDNNFaceDetector::resizeBboxToStandardHumanFace(int& width, int& heigh
 
     float r = width*1.0/height, rReference;
 
-    if ((r >= minRatioNonFrontalFace*0.9) && r <= (maxRatioFrontalFace * 1.1))
+    if      ((r >= minRatioNonFrontalFace*0.9) && r <= (maxRatioFrontalFace * 1.1))
     {
         rReference = r;
     }

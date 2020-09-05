@@ -350,7 +350,7 @@ double FaceDb::getClosestNeighborsTreeDb(const DataNode& subTree,
                 const float* maxRange = leftNode.maxRange.ptr<float>();
                 const float* position = leftNode.position.ptr<float>();
 
-                for (int i = 0; i < 128; ++i)
+                for (int i = 0 ; i < 128 ; ++i)
                 {
                     sqrDistanceLeftTree += (pow(qMax((minRange[i] - position[i]), 0.0f), 2) +
                                             pow(qMax((position[i] - maxRange[i]), 0.0f), 2));
@@ -391,12 +391,12 @@ double FaceDb::getClosestNeighborsTreeDb(const DataNode& subTree,
 
             if (query.next())
             {
-                rightNode.label       = query.value(0).toInt();
-                rightNode.position    = cv::Mat(1, 128, CV_32F, query.value(1).toByteArray().data()).clone();
+                rightNode.label             = query.value(0).toInt();
+                rightNode.position          = cv::Mat(1, 128, CV_32F, query.value(1).toByteArray().data()).clone();
 
-                const float* minRange = rightNode.minRange.ptr<float>();
-                const float* maxRange = rightNode.maxRange.ptr<float>();
-                const float* position = rightNode.position.ptr<float>();
+                const float* const minRange = rightNode.minRange.ptr<float>();
+                const float* const maxRange = rightNode.maxRange.ptr<float>();
+                const float* const position = rightNode.position.ptr<float>();
 
                 for (int i = 0 ; i < 128 ; ++i)
                 {

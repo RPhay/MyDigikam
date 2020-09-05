@@ -74,6 +74,7 @@ void RecognitionPreprocessor::Private::init(PreprocessorSelection mode)
             ofpreprocessor->init();
             break;
         }
+
         default:
         {
             qCDebug(DIGIKAM_FACEDB_LOG) << "Error unknown preprocessingMode " << preprocessingMode;
@@ -92,6 +93,7 @@ cv::Mat RecognitionPreprocessor::Private::preprocess(const cv::Mat& image) const
 
             return ofpreprocessor->process(image);
         }
+
         default:
         {
             qCDebug(DIGIKAM_FACEDB_LOG) << "Error unknown preprocessingMode " << preprocessingMode;
