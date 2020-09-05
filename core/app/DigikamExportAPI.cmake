@@ -42,6 +42,8 @@ install(FILES
               ${CMAKE_SOURCE_DIR}/core/libs/dplugins/widgets/dsavesettingswidget.h
               ${CMAKE_SOURCE_DIR}/core/libs/dplugins/widgets/dwizarddlg.h
               ${CMAKE_SOURCE_DIR}/core/libs/dplugins/widgets/dwizardpage.h
+              ${CMAKE_SOURCE_DIR}/core/libs/dplugins/webservices/wstooldialog.h
+              ${CMAKE_SOURCE_DIR}/core/libs/dplugins/webservices/wstoolutils.h
 
               ${CMAKE_SOURCE_DIR}/core/utilities/geolocation/geoiface/items/gpsitemcontainer.h
               ${CMAKE_SOURCE_DIR}/core/utilities/geolocation/geoiface/correlator/gpsdatacontainer.h
@@ -81,6 +83,7 @@ install(FILES
               ${CMAKE_SOURCE_DIR}/core/libs/rawengine/drawinfo.h
               ${CMAKE_SOURCE_DIR}/core/libs/rawengine/drawdecodersettings.h
 
+              ${CMAKE_SOURCE_DIR}/core/libs/widgets/mainview/dactivelabel.h
               ${CMAKE_SOURCE_DIR}/core/libs/widgets/files/filesaveconflictbox.h
               ${CMAKE_SOURCE_DIR}/core/libs/widgets/colors/dcolorselector.h
               ${CMAKE_SOURCE_DIR}/core/libs/widgets/graphicsview/imagezoomsettings.h
