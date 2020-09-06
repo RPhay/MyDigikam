@@ -1070,14 +1070,14 @@ QString ItemFilterModel::categoryIdentifier(const ItemInfo& i, const FaceTagsIfa
 
         case ItemSortSettings::CategoryByFaces:
         {
-            /// No face in image.
+            // No face in image.
 
             if (face.isNull())
             {
                 return i18n("No Face");
             }
 
-            /// Suggested Name exists for Region.
+            // Suggested Name exists for Region.
 
             const QMap<QString, QString> map = info.getSuggestedNames();
 
@@ -1086,7 +1086,7 @@ QString ItemFilterModel::categoryIdentifier(const ItemInfo& i, const FaceTagsIfa
                 return map.value(face.region().toXml());
             }
 
-            /// Region is Confirmed. Appending TagId, to prevent multiple Confirmed categories.
+            // Region is Confirmed. Appending TagId, to prevent multiple Confirmed categories.
 
             return i18n("Confirmed(%1)", face.tagId());
         }
