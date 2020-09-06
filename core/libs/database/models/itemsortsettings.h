@@ -79,8 +79,8 @@ public:
         SortByRating,
         SortByImageSize,            ///< pixel number
         SortByAspectRatio,          ///< width / height * 100000
+        SortByFaces,                ///< count of unconfirmed faces
         SortBySimilarity,
-        SortByFaces,                /// Sort by Count of Unconfirmed Faces.
         SortByManualOrderAndName,
         SortByManualOrderAndDate
     };
