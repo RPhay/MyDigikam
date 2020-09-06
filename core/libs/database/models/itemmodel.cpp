@@ -103,7 +103,12 @@ public:
     inline bool extraValueValid(const QModelIndex& index)
     {
         // we assume isValid() being called before, no duplicate checks
-        if (index.row() >= extraValues.size())
+
+        if      (extraValues.size() == 0)
+        {
+            return false;
+        }
+        else if (index.row() >= extraValues.size())
         {
             qCDebug(DIGIKAM_GENERAL_LOG) << "Invalid index for extraData" << index;
             return false;
