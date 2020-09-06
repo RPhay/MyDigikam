@@ -139,16 +139,16 @@ FaceManagementHelpDlg::FaceManagementHelpDlg(QWidget* const parent)
 
     QLabel* const detectFaceInfoLabel   = new QLabel(faceDetectionPage);
     detectFaceInfoLabel->setWordWrap(true);
-    detectFaceInfoLabel->setText(i18n("To run Face Detection, select the "
+    detectFaceInfoLabel->setText(i18n("To run face detection, select the "
                                       "<u>Detect Faces</u> option in the Face Scan panel "
                                       "and then click on <u>Scan Collection for Faces</u> <hr>"
-                                      "<b>Caution: </b> Running Face Detection for the first time "
+                                      "<b>Caution:</b> Running Face Detection for the first time "
                                       "can be fairly time consuming. Make sure you use the "
-                                      "<u>Search In</u> tab to restrict the target of the Scan."));
+                                      "<u>Search In</u> tab to restrict the target of the scan."));
 
     QLabel* const detectIntroLabel       = new QLabel(faceDetectionPage);
     detectIntroLabel->setWordWrap(true);
-    detectIntroLabel->setText(i18n("DigiKam offers two kinds of Face Detection Scans: "));
+    detectIntroLabel->setText(i18n("DigiKam offers two kinds of face detection scans: "));
 
     QLabel* const skipScannedHeaderLabel = new QLabel(faceDetectionPage);
     skipScannedHeaderLabel->setWordWrap(true);
@@ -175,9 +175,9 @@ FaceManagementHelpDlg::FaceManagementHelpDlg(QWidget* const parent)
     QLabel* const resultsDetectedLabel   = new QLabel(faceDetectionPage);
     resultsDetectedLabel->setWordWrap(true);
     resultsDetectedLabel->setText(i18n("After the Face Scan is complete, you should see a new "
-                                       "tag <u>Unknown</u> where the results of the Face Scan "
+                                       "tag <u>Unknown</u> where the results of the face scan "
                                        "will appear. You may now manually identify a few of these "
-                                       "faces and then proceed for Face Recognition."));
+                                       "faces and then proceed for face recognition."));
 
     faceDetectionPageLayout->addWidget(detectFaceOptionLabel,       0, 0, 1, 2);
     faceDetectionPageLayout->addWidget(detectFaceInfoLabel,         0, 2, 1, 2);
@@ -211,23 +211,23 @@ FaceManagementHelpDlg::FaceManagementHelpDlg(QWidget* const parent)
     identifyTextLabel->setWordWrap(true);
     identifyTextLabel->setAlignment(Qt::AlignVCenter | Qt::AlignLeft);
     identifyTextLabel->setText(i18n("To manually identify a face, hover on any Unknown "
-                                    "face and use the Text box to give it a name."
-                                    "This will lead to the creation of a Face Tag "
-                                    "in case a person of that name doesn't exist already."
+                                    "face and use the text box to give it a name. "
+                                    "This will lead to the creation of a face tag "
+                                    "in case a person of that name doesn't exist already. "
                                     "For best results identify 4-5 faces for each "
                                     "person you want the scan to recognize.<br>"
                                     ));
 
     QLabel* const recogLabel      = new QLabel(faceRecogPage);
     recogLabel->setWordWrap(true);
-    recogLabel->setText(i18n("Running Face Recognition is similar to Detection, "
+    recogLabel->setText(i18n("Running face recognition is similar to detection, "
                              "just select <u>Recognize Faces</u> from the "
-                             "Face Scan Panel this time.<br>"
-                             "Face Recognition will work on all Unknown Faces. In case "
+                             "Face Scan panel this time.<br>"
+                             "Face recognition will work on all Unknown faces. In case "
                              "there's a face you don't wish to be recognized, "
                              "you can mark it as ignored.<br>"
-                             "This leads to the creation of a new <u>Ignored</u> Tag, "
-                             "you can later unmark the Face if needed."));
+                             "This leads to the creation of a new <u>Ignored</u> tag, "
+                             "you can later unmark the face if needed."));
 
     QPixmap ignoreImage           = QPixmap(QStandardPaths::locate(QStandardPaths::GenericDataLocation, QLatin1String("digikam/data/ignoreImg.png")));
     ignoreImage                   = ignoreImage.scaled(QSize(185,230));
@@ -237,10 +237,10 @@ FaceManagementHelpDlg::FaceManagementHelpDlg(QWidget* const parent)
 
     QLabel* const faceRecogFooter = new QLabel(faceRecogPage);
     faceRecogFooter->setWordWrap(true);
-    faceRecogFooter->setText(i18n("You may select <u> Work on all processor cores </u>"
+    faceRecogFooter->setText(i18n("You may select <u>Work on all processor cores</u>"
                                   "in order to increase the speed of Face Recognition <br>"
-                                  "The Face Accuracy Slider allows you to control the "
-                                  "accuracy of the Recognition Algorithm. A higher specificity "
+                                  "The Face Accuracy slider allows you to control the "
+                                  "accuracy of the recognition algorithm. A higher specificity "
                                   "implies higher accuracy, however this results in a smaller set "
                                   "of results."));
 
@@ -274,11 +274,11 @@ FaceManagementHelpDlg::FaceManagementHelpDlg(QWidget* const parent)
 
     QLabel* const overlayText     = new QLabel(confirmFacesPage);
     overlayText->setWordWrap(true);
-    overlayText->setText(i18n("The results of Facial Recognition appear in the form "
-                              "of Unconfirmed Results. These results will show up in "
-                              "the Unconfirmed Tag, as well as in the Tag of the person "
+    overlayText->setText(i18n("The results of facial recognition appear in the form "
+                              "of Unconfirmed results. These results will show up in "
+                              "the Unconfirmed tag, as well as in the tag of the person "
                               "suggested for each face. <br>"
-                              "Hovering over Unconfirmed Faces will display a few options: <br> "
+                              "Hovering over Unconfirmed faces will display a few options: <br> "
                               ""));
     overlayText->setAlignment(Qt::AlignTop);
 
@@ -288,7 +288,7 @@ FaceManagementHelpDlg::FaceManagementHelpDlg(QWidget* const parent)
 
     QLabel* const confirmText    = new QLabel(confirmFacesPage);
     confirmText->setWordWrap(true);
-    confirmText->setText(i18n("The Confirm Button allows you to confirm the suggestion. "
+    confirmText->setText(i18n("The Confirm button allows you to confirm the suggestion. "
                               "This would assign the suggested name to the face"));
     confirmText->setAlignment(Qt::AlignTop);
 
@@ -298,8 +298,8 @@ FaceManagementHelpDlg::FaceManagementHelpDlg(QWidget* const parent)
 
     QLabel* const rejectText     = new QLabel(confirmFacesPage);
     rejectText->setWordWrap(true);
-    rejectText->setText(i18n("Use the Reject Button, if the suggestion is incorrect. "
-                             "This would move the Face back to Unknown."));
+    rejectText->setText(i18n("Use the Reject button, if the suggestion is incorrect. "
+                             "This would move the face back to Unknown."));
     rejectText->setAlignment(Qt::AlignTop);
 
 
@@ -309,29 +309,29 @@ FaceManagementHelpDlg::FaceManagementHelpDlg(QWidget* const parent)
 
     QLabel* const deleteText     = new QLabel(confirmFacesPage);
     deleteText->setWordWrap(true);
-    deleteText->setText(i18n("Use the delete Button, if the suggestion is not a face. "
-                             "This will delete the Face Region from the Database."));
+    deleteText->setText(i18n("Use the Delete button, if the suggestion is not a face. "
+                             "This will delete the face region from the database."));
     deleteText->setAlignment(Qt::AlignTop);
 
     QLabel* const sortText       = new QLabel(confirmFacesPage);
     sortText->setWordWrap(true);
     sortText->setText(i18n("<b>Face Categorization and Sorting</b> <br>"
-                           "By default, Faces will appear Categorized based on their "
+                           "By default, faces will appear categorized based on their "
                            "name. You may change this behaviour, by going to "
-                           "<u>View -> Separate Items.</u> <br>"
-                           "Note that using a different Categorization Order will "
-                           "lead to Confirmed and Unconfirmed Faces appearing "
+                           "<u>View -> Separate Items</u>.<br>"
+                           "Note that using a different categorization order will "
+                           "lead to Confirmed and Unconfirmed faces appearing "
                            "mixed with one another. To change this behaviour "
-                           "you may modify the Sorting order within each category "
+                           "you may modify the sorting order within each category "
                            "by going to <u>View -> Sort Items -> By Face Type</u>."));
 
     QLabel* const improveResults = new QLabel(confirmFacesPage);
     improveResults->setWordWrap(true);
-    improveResults->setText(i18n("<br> <b> Improving Results of Face Recognition </b> <br>"
+    improveResults->setText(i18n("<br><b>Improving Results of Face Recognition</b><br>"
                                  "Apart from using the settings mentioned in the last page, "
-                                 "Face Results may also be improved by Rebuilding the Training Data. "
-                                 "This may be done through Tools->Maintanence->Detect and Recognize Faces"
-                                 "->Clear and rebuild all training data."));
+                                 "face results may also be improved by rebuilding the training data. "
+                                 "This may be done through Tools -> Maintenance -> Detect and Recognize Faces "
+                                 "-> Clear and rebuild all training data."));
     improveResults->setAlignment(Qt::AlignTop);
 
     confirmFacesLayout->addWidget(overlayImgLabel, 0, 0, 4, 1);
