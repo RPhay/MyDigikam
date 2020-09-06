@@ -28,6 +28,10 @@
 #include "itemfiltermodel_p.h"
 #include "itemfiltermodelthreads.h"
 
+// KDE includes
+
+#include <klocalizedstring.h>
+
 // Local includes
 
 #include "digikam_debug.h"
@@ -333,6 +337,7 @@ QVariant ItemFilterModel::data(const QModelIndex& index, int role) const
     QVariant extraData = d->imageModel->data(mapToSource(index), ItemModel::ExtraDataRole);
 
     FaceTagsIface face;
+
     if (!extraData.isNull())
     {
         face = FaceTagsIface::fromVariant(extraData);
@@ -350,6 +355,7 @@ QVariant ItemFilterModel::data(const QModelIndex& index, int role) const
 
         case SortOrderRole:
             return d->sorter.sortRole;
+
             //case CategoryCountRole:
             //  return categoryCount(d->imageModel->imageInfoRef(mapToSource(index)));
 
@@ -363,24 +369,27 @@ QVariant ItemFilterModel::data(const QModelIndex& index, int role) const
             return d->imageModel->imageInfoRef(mapToSource(index)).dateTime();
 
         case CategoryFaceRole:
+        {
             if (extraData.isNull())
             {
-                return QStringLiteral("No face");
+                return i18n("No face");
             }
 
             if (face.type() == FaceTagsIface::UnknownName)
             {
-                return QStringLiteral("Unknown");
+                return i18n("Unknown");
             }
 
             if (face.type() == FaceTagsIface::ConfirmedName)
             {
                 QString name = FaceTags::faceNameForTag(face.tagId());
-                name += QStringLiteral(" [Confirmed]");
+                name        += QString::fromUtf8(" [%1]").arg(i18n("Confirmed"));
+
                 return name;
             }
 
             return d->imageModel->imageInfoRef(mapToSource(index)).getSuggestedNames().value(face.region().toXml());
+        }
 
         case GroupIsOpenRole:
             return (d->groupFilter.isAllOpen() ||
@@ -1061,16 +1070,25 @@ QString ItemFilterModel::categoryIdentifier(const ItemInfo& i, const FaceTagsIfa
             return info.dateTime().date().toString(QLatin1String("MMyyyy"));
 
         case ItemSortSettings::CategoryByFaces:
+        {
             /// No face in image.
+
             if (face.isNull())
-                return QStringLiteral("No Face");
+            {
+                return QLatin1String("No Face");
+            }
 
             /// Suggested Name exists for Region.
+
             if (!map.value(face.region().toXml()).isEmpty())
+            {
                 return map.value(face.region().toXml());
+            }
 
             /// Region is Confirmed. Appending TagId, to prevent multiple Confirmed categories.
-            return QStringLiteral("Confirmed(%1)").arg(face.tagId());
+
+            return QString::fromUtf8("Confirmed(%1)").arg(face.tagId());
+        }
 
         default:
             return QString();
