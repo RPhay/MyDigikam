@@ -1050,7 +1050,6 @@ QString ItemFilterModel::categoryIdentifier(const ItemInfo& i, const FaceTagsIfa
 
     qlonglong groupedImageId = i.groupImageId();
     ItemInfo info = groupedImageId == -1 ? i : ItemInfo(groupedImageId);
-    const QMap<QString, QString> map = info.getSuggestedNames();
 
     switch (d->sorter.categorizationMode)
     {
@@ -1075,10 +1074,12 @@ QString ItemFilterModel::categoryIdentifier(const ItemInfo& i, const FaceTagsIfa
 
             if (face.isNull())
             {
-                return QLatin1String("No Face");
+                return i18n("No Face");
             }
 
             /// Suggested Name exists for Region.
+
+            const QMap<QString, QString> map = info.getSuggestedNames();
 
             if (!map.value(face.region().toXml()).isEmpty())
             {
@@ -1087,7 +1088,7 @@ QString ItemFilterModel::categoryIdentifier(const ItemInfo& i, const FaceTagsIfa
 
             /// Region is Confirmed. Appending TagId, to prevent multiple Confirmed categories.
 
-            return QString::fromUtf8("Confirmed(%1)").arg(face.tagId());
+            return i18n("Confirmed(%1)", face.tagId());
         }
 
         default:
