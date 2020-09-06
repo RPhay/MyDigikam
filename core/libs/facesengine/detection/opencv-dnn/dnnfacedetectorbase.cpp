@@ -36,6 +36,7 @@
 namespace Digikam
 {
 // TODO: re-verify these threshold
+
 float DNNFaceDetectorBase::confidenceThreshold  = 0.6F;
 float DNNFaceDetectorBase::nmsThreshold         = 0.4F;
 
@@ -65,6 +66,7 @@ cv::Size DNNFaceDetectorBase::nnInputSizeRequired() const
 }
 
 // TODO: these confidence boxes usually go together --> a structure to encapsulate them ???
+
 void DNNFaceDetectorBase::selectBbox(const cv::Size& paddedSize,
                                      float confidence,
                                      int left,
@@ -95,25 +97,27 @@ void DNNFaceDetectorBase::selectBbox(const cv::Size& paddedSize,
      * Bad bounding boxes are defined as boxes that have at maximum 25% of each dimension
      * out of non-padded zone.
      */
-    if ((left   >= (int)qMin(borderLeft*0.9,                       borderLeft   - 0.1*width))      &&
-        (right  <= (int)qMax(borderRight  + 0.1*paddedSize.width,  borderRight  + 0.1*width))      &&
-        (top    >= (int)qMin(borderTop*0.9,                        borderTop    - 0.1*height))     &&
-        (bottom <= (int)qMax(borderBottom + 0.1*paddedSize.height, borderBottom + 0.1*height)))
+    if ((left   >= (int)cv::min(borderLeft*0.9,                       borderLeft   - 0.1*width))      &&
+        (right  <= (int)cv::max(borderRight  + 0.1*paddedSize.width,  borderRight  + 0.1*width))      &&
+        (top    >= (int)cv::min(borderTop*0.9,                        borderTop    - 0.1*height))     &&
+        (bottom <= (int)cv::max(borderBottom + 0.1*paddedSize.height, borderBottom + 0.1*height)))
     {
         goodBoxes.push_back(bbox);
         goodConfidences.push_back(confidence);
+
         qCDebug(DIGIKAM_FACESENGINE_LOG) << "Good rect = " << QRect(bbox.x, bbox.y, bbox.width, bbox.height)
                                          << ", conf = " << confidence;
     }
-    else if ((right  >  left)                         &&
-             (right  >= borderLeft   + 0.75*width)    &&
-             (left   <= borderRight  - 0.75*width)    &&
-             (bottom >  top)                          &&
-             (bottom >= borderRight  + 0.75*height)   &&
-             (top    <= borderBottom - 0.75*height))
+    else if ((right  >  left)                           &&
+             (right  >= (borderLeft   + 0.75*width))    &&
+             (left   <= (borderRight  - 0.75*width))    &&
+             (bottom >  top)                            &&
+             (bottom >= (borderRight  + 0.75*height))   &&
+             (top    <= (borderBottom - 0.75*height)))
     {
         doubtBoxes.push_back(bbox);
         doubtConfidences.push_back(confidence);
+
         qCDebug(DIGIKAM_FACESENGINE_LOG) << "Doubt rect = " << QRect(bbox.x, bbox.y, bbox.width, bbox.height)
                                          << ", conf = " << confidence;
     }
@@ -123,10 +127,10 @@ void DNNFaceDetectorBase::correctBbox(cv::Rect& bbox, const cv::Size& paddedSize
 {
     // TODO: Should the box be cropped to square or not???
 
-    int left    = qMax(bbox.x - paddedSize.width,  0);
-    int right   = qMin(left   + bbox.width,        inputImageSize.width  - 2*paddedSize.width);
-    int top     = qMax(bbox.y - paddedSize.height, 0);
-    int bottom  = qMin(top    + bbox.height,       inputImageSize.height - 2*paddedSize.height);
+    int left    = cv::max(bbox.x - paddedSize.width,  0);
+    int right   = cv::min(left   + bbox.width,        inputImageSize.width  - 2*paddedSize.width);
+    int top     = cv::max(bbox.y - paddedSize.height, 0);
+    int bottom  = cv::min(top    + bbox.height,       inputImageSize.height - 2*paddedSize.height);
 
     bbox.x      = left;
     bbox.y      = top;
