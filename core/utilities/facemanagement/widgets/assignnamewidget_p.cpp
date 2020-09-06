@@ -210,7 +210,7 @@ void AssignNameWidget::Private::checkWidgets()
         {
             if (!confirmButton)
             {
-                confirmButton = createToolButton(QIcon::fromTheme(QLatin1String("dialog-ok-apply")), i18n("Ok"));
+                confirmButton = createToolButton(QIcon::fromTheme(QLatin1String("dialog-ok-apply")), i18n("OK"));
                 confirmButton->setToolTip(i18nc("@info:tooltip", "Unmark this face as Ignored"));
                 q->connect(confirmButton, SIGNAL(clicked()),
                            q, SLOT(slotReject()));
