@@ -26,10 +26,10 @@ BUGFIXES:
 013 ==> 412022 - Editor not show images.
 014 ==> 412417 - digiKam fails to start - update fails.
 015 ==> 412590 - New files are not showing in album.
-016 ==> 412917 - On macOS Mojave image editor opens withouth toolbars.
+016 ==> 412917 - On macOS Mojave image editor opens without toolbars.
 017 ==> 413242 - Image editor launches only once on Kubuntu 19.10.
 018 ==> 413464 - Crash in Windows 10 when 'browsing' images before initial 'import' complete.
-019 ==> 413508 - digiKam crasched.
+019 ==> 413508 - digiKam crashed.
 020 ==> 414186 - digiKam crashes when loading pictures from pCloudDrive.
 021 ==> 415103 - "Preview on mouse-over" setting is not saved.
 022 ==> 415783 - Rejected face keep coming up as faces when detected faces again.
