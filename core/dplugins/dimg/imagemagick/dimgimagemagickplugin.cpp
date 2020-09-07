@@ -188,6 +188,10 @@ int DImgImageMagickPlugin::canRead(const QFileInfo& fileInfo, bool magic) const
     QString filePath = fileInfo.filePath();
     QString format   = fileInfo.suffix().toUpper();
 
+    // !!! disable for a test ImageMagick !!!
+
+    return 0;
+
     if (!magic)
     {
         QString mimeType(QMimeDatabase().mimeTypeForFile(filePath).name());
