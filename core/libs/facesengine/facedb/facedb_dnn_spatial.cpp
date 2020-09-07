@@ -197,7 +197,7 @@ int FaceDb::findParentTreeDb(const cv::Mat& nodePos, bool& leftChild, int& paren
         {
             if (parent == 1)
             {
-                //qDebug() << "add root";
+                //qCDebug(DIGIKAM_FACEDB_LOG) << "add root";
                 return 0;
             }
 
@@ -206,7 +206,7 @@ int FaceDb::findParentTreeDb(const cv::Mat& nodePos, bool& leftChild, int& paren
         }
 
 /*
-        qDebug() << "split axis" << query.value(0).toInt()
+        qCDebug(DIGIKAM_FACEDB_LOG) << "split axis" << query.value(0).toInt()
                  << "left"       << query.value(4)
                  << "right"      << query.value(5);
 */

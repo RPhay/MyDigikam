@@ -137,8 +137,8 @@ KDNode* KDNode::insert(const cv::Mat& nodePos, const int identity)
                                  d->nbDimension);
     newNode->d->parent = parent;
 /*
-    qDebug() << "parent embedding" << parent->getPosition() << std::endl;
-    qDebug() << "node embedding" << nodePos << std::endl;
+    qCDebug(DIGIKAM_FACESENGINE_LOG) << "parent embedding" << parent->getPosition() << std::endl;
+    qCDebug(DIGIKAM_FACESENGINE_LOG) << "node embedding" << nodePos << std::endl;
 */
     if (nodePos.at<float>(0, parent->d->splitAxis) >= parent->getPosition().at<float>(0, parent->d->splitAxis))
     {

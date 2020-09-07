@@ -83,7 +83,7 @@ void DNNFaceDetectorYOLO::detectFaces(const cv::Mat& inputImage,
         net.setInput(inputBlob);
         timer.start();
         net.forward(outs, getOutputsNames());
-        qDebug() << "forward YOLO detection in" << timer.elapsed() << "ms";
+        qCDebug(DIGIKAM_FACESENGINE_LOG) << "forward YOLO detection in" << timer.elapsed() << "ms";
     }
     mutex.unlock();
 
@@ -91,7 +91,7 @@ void DNNFaceDetectorYOLO::detectFaces(const cv::Mat& inputImage,
 
     postprocess(outs, paddedSize, detectedBboxes);
 
-    qDebug() << "postprocess YOLO detection in" << timer.elapsed() << "ms";
+    qCDebug(DIGIKAM_FACESENGINE_LOG) << "postprocess YOLO detection in" << timer.elapsed() << "ms";
 }
 
 void DNNFaceDetectorYOLO::postprocess(const std::vector<cv::Mat>& outs,
@@ -148,8 +148,8 @@ void DNNFaceDetectorYOLO::postprocess(const std::vector<cv::Mat>& outs,
         }
     }
 
-    qDebug() << "nb of doubtbox = " << doubtBoxes.size();
-    qDebug() << "nb of goodbox = "  << goodBoxes.size();
+    qCDebug(DIGIKAM_FACESENGINE_LOG) << "nb of doubtbox = " << doubtBoxes.size();
+    qCDebug(DIGIKAM_FACESENGINE_LOG) << "nb of goodbox = "  << goodBoxes.size();
 
     if (goodBoxes.empty())
     {

@@ -308,14 +308,14 @@ bool FaceDbSchemaUpdater::updateV3ToV4()
 {
     if (!(d->dbAccess->backend()->execDBAction(d->dbAccess->backend()->getDBAction(QLatin1String("CreateFaceDBFaceMatrices")))))
     {
-        qDebug() << "fail to recreate FaceMatrices table";
+        qCDebug(DIGIKAM_FACEDB_LOG) << "fail to recreate FaceMatrices table";
 
         return false;
     }
 
     if (!(d->dbAccess->backend()->execDBAction(d->dbAccess->backend()->getDBAction(QLatin1String("CreateFaceDBKDTree")))))
     {
-        qDebug() << "fail to create KDTree table";
+        qCDebug(DIGIKAM_FACEDB_LOG) << "fail to create KDTree table";
 
         return false;
     }

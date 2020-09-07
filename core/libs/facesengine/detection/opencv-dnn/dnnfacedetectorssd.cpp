@@ -117,8 +117,8 @@ void DNNFaceDetectorSSD::postprocess(cv::Mat detection,
         }
     }
 
-    //qDebug() << "nb of doubtbox = " << doubtBoxes.size();
-    //qDebug() << "nb of goodbox = " << goodBoxes.size();
+    //qCDebug(DIGIKAM_FACESENGINE_LOG) << "nb of doubtbox = " << doubtBoxes.size();
+    //qCDebug(DIGIKAM_FACESENGINE_LOG) << "nb of goodbox = " << goodBoxes.size();
 
     if (goodBoxes.empty())
     {

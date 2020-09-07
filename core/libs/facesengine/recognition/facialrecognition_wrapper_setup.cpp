@@ -52,7 +52,7 @@ void FacialRecognitionWrapper::Private::applyParameters()
 
     threshold = 1 - threshold;
 
-    qDebug() << "recognition threshold" << threshold;
+    qCDebug(DIGIKAM_FACESENGINE_LOG) << "recognition threshold" << threshold;
 
     recognizer->setNbNeighBors(k);
     recognizer->setThreshold(threshold);
