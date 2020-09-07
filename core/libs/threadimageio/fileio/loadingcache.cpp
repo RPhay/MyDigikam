@@ -44,8 +44,7 @@ class Q_DECL_HIDDEN LoadingCache::Private
 public:
 
     explicit Private(LoadingCache* const q)
-      : mutexDict(QMutex::Recursive),
-        watch(nullptr),
+      : watch(nullptr),
         q(q)
     {
     }
@@ -67,7 +66,6 @@ public:
 
     /// Note: Don't make the mutex recursive, we need to use a wait condition on it
     QMutex                          mutex;
-    QMutex                          mutexDict;
 
     QWaitCondition                  condVar;
     LoadingCacheFileWatch*          watch;
@@ -235,29 +233,21 @@ bool LoadingCache::isCacheable(const DImg& img) const
 
 void LoadingCache::addLoadingProcess(LoadingProcess* const process)
 {
-    QMutexLocker lock(&d->mutexDict);
-
     d->loadingDict[process->cacheKey()] = process;
 }
 
 LoadingProcess* LoadingCache::retrieveLoadingProcess(const QString& cacheKey) const
 {
-    QMutexLocker lock(&d->mutexDict);
-
     return d->loadingDict.value(cacheKey);
 }
 
 void LoadingCache::removeLoadingProcess(LoadingProcess* const process)
 {
-    QMutexLocker lock(&d->mutexDict);
-
     d->loadingDict.remove(process->cacheKey());
 }
 
 void LoadingCache::notifyNewLoadingProcess(LoadingProcess* const process, const LoadingDescription& description)
 {
-    QMutexLocker lock(&d->mutexDict);
-
     for (QMap<QString, LoadingProcess*>::const_iterator it = d->loadingDict.constBegin() ;
          it != d->loadingDict.constEnd() ; ++it)
     {

@@ -138,7 +138,7 @@ void SharedLoadingTask::execute()
         {
             // image is found in image cache, loading is successful
 
-            m_img = DImg(*cachedImg);
+            m_img = *cachedImg;
         }
         else
         {
@@ -208,7 +208,7 @@ void SharedLoadingTask::execute()
                 // Notify other processes that we are now loading this image.
                 // They might be interested - see notifyNewLoadingProcess below
 
-                //cache->notifyNewLoadingProcess(this, m_loadingDescription);
+                cache->notifyNewLoadingProcess(this, m_loadingDescription);
             }
         }
     }
@@ -399,33 +399,30 @@ bool SharedLoadingTask::continueQuery()
 
 void SharedLoadingTask::setStatus(LoadingTaskStatus status)
 {
+    LoadingCache* const cache = LoadingCache::cache();
+    LoadingCache::CacheLock lock(cache);
+
     m_loadingTaskStatus = status;
 
-    if (m_loadingTaskStatus == LoadingTaskStatusStopping)
+    // check for m_usedProcess, to avoid race condition that it has finished before
+
+    if (m_usedProcess && (m_loadingTaskStatus == LoadingTaskStatusStopping))
     {
-        LoadingCache* const cache = LoadingCache::cache();
-        LoadingCache::CacheLock lock(cache);
+        // remove this from the list of loading processes in cache
 
-        // check for m_usedProcess, to avoid race condition that it has finished before
+        cache->removeLoadingProcess(this);
 
-        if (m_usedProcess)
-        {
-            // remove this from the list of loading processes in cache
+        // remove this from list of listeners - check in continueQuery() of active thread
 
-            cache->removeLoadingProcess(this);
+        m_usedProcess->removeListener(this);
 
-            // remove this from list of listeners - check in continueQuery() of active thread
+        // set m_usedProcess to 0, signalling that we have detached already
 
-            m_usedProcess->removeListener(this);
+        m_usedProcess = nullptr;
 
-            // set m_usedProcess to 0, signalling that we have detached already
+        // wake all listeners - particularly this - from waiting on cache condvar
 
-            m_usedProcess = nullptr;
-
-            // wake all listeners - particularly this - from waiting on cache condvar
-
-            lock.wakeAll();
-        }
+        lock.wakeAll();
     }
 }
 

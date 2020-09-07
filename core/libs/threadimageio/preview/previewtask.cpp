@@ -92,7 +92,7 @@ void PreviewLoadingTask::execute()
         {
             // image is found in image cache, loading is successful
 
-            m_img = DImg(*cachedImg);
+            m_img = *cachedImg;
         }
         else
         {
@@ -162,7 +162,7 @@ void PreviewLoadingTask::execute()
                 // Notify other processes that we are now loading this image.
                 // They might be interested - see notifyNewLoadingProcess below
 
-                //cache->notifyNewLoadingProcess(this, m_loadingDescription);
+                cache->notifyNewLoadingProcess(this, m_loadingDescription);
             }
         }
     }
