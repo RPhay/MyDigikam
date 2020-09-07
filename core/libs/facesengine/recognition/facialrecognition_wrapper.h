@@ -196,7 +196,7 @@ public:
 private:
 
     class Private;
-    Private* d;
+    static Private* d;
 
     // Hidden assignment operator.
     FacialRecognitionWrapper& operator=(const FacialRecognitionWrapper&);

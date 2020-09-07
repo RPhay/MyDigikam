@@ -32,15 +32,23 @@
 
 namespace Digikam
 {
+FacialRecognitionWrapper::Private* FacialRecognitionWrapper::d = nullptr;
 
 FacialRecognitionWrapper::FacialRecognitionWrapper()
-    : d(new Private())
 {
+    if (!d)
+    {
+        d = new Private();
+    }
+    else
+    {
+        ++(d->ref);
+    }
 }
 
 FacialRecognitionWrapper::FacialRecognitionWrapper(const FacialRecognitionWrapper& other)
-    : d(other.d)
 {
+    Q_UNUSED(other)
     ++(d->ref);
 }
 

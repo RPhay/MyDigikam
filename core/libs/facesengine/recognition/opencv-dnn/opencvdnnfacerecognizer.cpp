@@ -54,7 +54,7 @@ public:
           threshold(0.4),
           newDataAdded(true)
     {
-        for (int i = 0 ; i < 10 ; ++i)
+        for (int i = 0 ; i < 1 ; ++i)
         {
             extractors << new DNNFaceExtractor;
         }
