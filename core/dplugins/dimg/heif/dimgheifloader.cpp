@@ -71,7 +71,7 @@ bool DImgHEIFLoader::isHeifSuccess(struct heif_error* const error)
         return true;
     }
 
-    qWarning() << "Error while processing HEIF image:" << error->message;
+    qCWarning(DIGIKAM_DIMG_LOG_HEIF) << "Error while processing HEIF image:" << error->message;
     return false;
 }
 

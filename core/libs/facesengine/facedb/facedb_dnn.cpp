@@ -44,10 +44,10 @@ int FaceDb::insertFaceVector(const cv::Mat& faceEmbedding,
 
     if (query.lastInsertId().isNull())
     {
-        qWarning() << "fail to insert face embedding, last query"
-                   << query.lastQuery()
-                   << "bound values" << query.boundValues()
-                   << query.lastError();
+        qCWarning(DIGIKAM_FACEDB_LOG) << "fail to insert face embedding, last query"
+                                      << query.lastQuery()
+                                      << "bound values" << query.boundValues()
+                                      << query.lastError();
     }
     else
     {

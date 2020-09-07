@@ -131,7 +131,7 @@ QMap<QString, QString> DImgImageMagickPlugin::extraAboutData() const
 
     if (!inflst)
     {
-        qWarning() << "ImageMagick coders list is null!";
+        qCWarning(DIGIKAM_DIMG_LOG_MAGICK) << "ImageMagick coders list is null!";
         return QMap<QString, QString>();
     }
 
