@@ -21,4 +21,5 @@ BUGFIXES:
 010 ==> 344800 - SQLITE : when moving an album to another location tags are lost (NFS storage).
 011 ==> 426186 - Lots of error messages from ItemAlbumModel.
 012 ==> 426185 - digiKam starts more slowly than previous version.
-013 ==> 
+013 ==> 390226 - Never import current collection.
+014 ==> 
