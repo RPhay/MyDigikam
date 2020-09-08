@@ -82,6 +82,8 @@ void LoadingTask::setStatus(LoadingTaskStatus status)
 SharedLoadingTask::SharedLoadingTask(LoadSaveThread* const thread, const LoadingDescription& description,
                                      LoadSaveThread::AccessMode mode, LoadingTaskStatus loadingTaskStatus)
     : LoadingTask(thread, description, loadingTaskStatus),
+      LoadingProcess(),
+      LoadingProcessListener(),
       m_completed(false),
       m_accessMode(mode),
       m_usedProcess(nullptr)

@@ -93,6 +93,7 @@ public:
     explicit LoadingTask(LoadSaveThread* const thread, const LoadingDescription& description,
                          LoadingTaskStatus loadingTaskStatus = LoadingTaskStatusLoading)
         : LoadSaveTask(thread),
+          DImgLoaderObserver(),
           m_loadingDescription(description),
           m_loadingTaskStatus(loadingTaskStatus)
     {
@@ -197,6 +198,7 @@ public:
 
     explicit SavingTask(LoadSaveThread* const thread, const DImg& img, const QString& filePath, const QString& format)
         : LoadSaveTask(thread),
+          DImgLoaderObserver(),
           m_filePath(filePath),
           m_format(format),
           m_img(img),
