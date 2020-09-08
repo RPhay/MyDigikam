@@ -35,6 +35,7 @@
 #include "kmemoryinfo.h"
 #include "dmetadata.h"
 #include "thumbnailsize.h"
+#include "loadsavetask.h"
 
 namespace Digikam
 {
@@ -251,7 +252,7 @@ void LoadingCache::notifyNewLoadingProcess(LoadingProcess* const process, const 
     for (QMap<QString, LoadingProcess*>::const_iterator it = d->loadingDict.constBegin() ;
          it != d->loadingDict.constEnd() ; ++it)
     {
-        it.value()->notifyNewLoadingProcess(process, description);
+        static_cast<SharedLoadingTask*>(it.value())->notifyNewLoadingProcess(process, description);
     }
 }
 
