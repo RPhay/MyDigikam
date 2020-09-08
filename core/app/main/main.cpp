@@ -112,6 +112,7 @@ int main(int argc, char* argv[])
 
     // OpenCV crash with face engine with OpenCL support
     // https://bugs.kde.org/show_bug.cgi?id=423632
+    // https://bugs.kde.org/show_bug.cgi?id=426175
 
     // When analyzing with Heaptrack it was found
     // that a big memory leak is created in
@@ -120,7 +121,7 @@ int main(int argc, char* argv[])
     if (system.disableOpenCL)
     {
         qputenv("OPENCV_OPENCL_RUNTIME", "disabled");
-        qputenv("OPENCV_OPENCL_DEVICE",  "null");
+        qputenv("OPENCV_OPENCL_DEVICE",  "disable");
     }
 
 #ifdef HAVE_QWEBENGINE
