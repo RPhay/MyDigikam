@@ -121,7 +121,7 @@ int main(int argc, char* argv[])
     if (system.disableOpenCL)
     {
         qputenv("OPENCV_OPENCL_RUNTIME", "disabled");
-        qputenv("OPENCV_OPENCL_DEVICE",  "disable");
+        qputenv("OPENCV_OPENCL_DEVICE",  "disabled");
     }
 
 #ifdef HAVE_QWEBENGINE
