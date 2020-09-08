@@ -140,9 +140,13 @@ bool DImgImageMagickLoader::load(const QString& filePath, DImgLoaderObserver* co
             imageData()   = (uchar*)pixelBlob->data();
 
 #if MagickLibVersion < 0x700
+
             m_hasAlpha    = image.matte();
+
 #else
+
             m_hasAlpha    = image.alpha();
+
 #endif
 
             m_sixteenBit  = (depth == 16);
@@ -168,9 +172,13 @@ bool DImgImageMagickLoader::load(const QString& filePath, DImgLoaderObserver* co
             imageHeight() = image.rows();
 
 #if MagickLibVersion < 0x700
+
             m_hasAlpha    = image.matte();
+
 #else
+
             m_hasAlpha    = image.alpha();
+
 #endif
 
             m_sixteenBit  = (image.depth() == 16);
@@ -221,9 +229,13 @@ bool DImgImageMagickLoader::save(const QString& filePath, DImgLoaderObserver* co
         image.depth(imageBitsDepth());
 
 #if MagickLibVersion < 0x700
+
         image.matte(imageHasAlpha());
+
 #else
+
         image.alpha(imageHasAlpha());
+
 #endif
 
         image.read(pixelBlob);

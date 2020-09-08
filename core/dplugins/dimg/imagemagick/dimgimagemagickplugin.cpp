@@ -123,39 +123,52 @@ void DImgImageMagickPlugin::setup(QObject* const /*parent*/)
 QMap<QString, QString> DImgImageMagickPlugin::extraAboutData() const
 {
     QString mimes = typeMimes();
-
     QMap<QString, QString> map;
-    ExceptionInfo ex = *AcquireExceptionInfo();
-    size_t n                  = 0;
-    const MagickInfo** inflst = GetMagickInfoList("*", &n, &ex);
 
-    if (!inflst)
+    try
     {
-        qCWarning(DIGIKAM_DIMG_LOG_MAGICK) << "ImageMagick coders list is null!";
-        return QMap<QString, QString>();
-    }
+        ExceptionInfo ex = *AcquireExceptionInfo();
+        size_t n                  = 0;
+        const MagickInfo** inflst = GetMagickInfoList("*", &n, &ex);
 
-    for (uint i = 0 ; i < n ; ++i)
-    {
-        const MagickInfo* inf = inflst[i];
-
-        if (inf)
+        if (!inflst)
         {
-            QString mod =
+            qCWarning(DIGIKAM_DIMG_LOG_MAGICK) << "ImageMagick coders list is null!";
+            return QMap<QString, QString>();
+        }
+
+        for (uint i = 0 ; i < n ; ++i)
+        {
+            const MagickInfo* inf = inflst[i];
+
+            if (inf)
+            {
+                QString mod =
+
 #if (MagickLibVersion >= 0x69A && defined(magick_module))
-                QString::fromLatin1(inf->magick_module).toUpper();
+
+                    QString::fromLatin1(inf->magick_module).toUpper();
+
 #else
-                QString::fromLatin1(inf->module).toUpper();
+
+                    QString::fromLatin1(inf->module).toUpper();
+
 #endif
 
-            if (mimes.contains(mod))
-            {
-                map.insert(mod, QLatin1String(inf->description));
+                if (mimes.contains(mod))
+                {
+                    map.insert(mod, QLatin1String(inf->description));
+                }
             }
         }
-    }
 
-    free(inflst);
+        free(inflst);
+    }
+    catch (Exception& error)
+    {
+        qCWarning(DIGIKAM_DIMG_LOG) << "ImageMagickInfo exception:" << error.what();
+        return QMap<QString, QString>();
+    }
 
     return map;
 }
@@ -187,10 +200,6 @@ int DImgImageMagickPlugin::canRead(const QFileInfo& fileInfo, bool magic) const
 {
     QString filePath = fileInfo.filePath();
     QString format   = fileInfo.suffix().toUpper();
-
-    // !!! disable for a test ImageMagick !!!
-
-    return 0;
 
     if (!magic)
     {
@@ -225,31 +234,46 @@ int DImgImageMagickPlugin::canRead(const QFileInfo& fileInfo, bool magic) const
 int DImgImageMagickPlugin::canWrite(const QString& format) const
 {
     QStringList formats;
-    ExceptionInfo ex = *AcquireExceptionInfo();
-    size_t n                  = 0;
-    const MagickInfo** inflst = GetMagickInfoList("*", &n, &ex);
 
-    if (!inflst)
+    try
     {
-        qWarning() << "ImageMagick coders list is null!";
+        ExceptionInfo ex = *AcquireExceptionInfo();
+        size_t n                  = 0;
+        const MagickInfo** inflst = GetMagickInfoList("*", &n, &ex);
+
+        if (!inflst)
+        {
+            qWarning() << "ImageMagick coders list is null!";
+            return 0;
+        }
+
+        for (uint i = 0 ; i < n ; ++i)
+        {
+            const MagickInfo* inf = inflst[i];
+
+            if (inf && inf->encoder)
+            {
+
+#if (MagickLibVersion >= 0x69A && defined(magick_module))
+
+                formats.append(QString::fromLatin1(inf->magick_module).toUpper());
+
+#else
+
+                formats.append(QString::fromLatin1(inf->module).toUpper());
+
+#endif
+
+            }
+        }
+
+        free(inflst);
+    }
+    catch (Exception& error)
+    {
+        qCWarning(DIGIKAM_DIMG_LOG) << "ImageMagickInfo exception:" << error.what();
         return 0;
     }
-
-    for (uint i = 0 ; i < n ; ++i)
-    {
-        const MagickInfo* inf = inflst[i];
-
-        if (inf && inf->encoder)
-        {
-#if (MagickLibVersion >= 0x69A && defined(magick_module))
-            formats.append(QString::fromLatin1(inf->magick_module).toUpper());
-#else
-            formats.append(QString::fromLatin1(inf->module).toUpper());
-#endif
-        }
-    }
-
-    free(inflst);
 
     if (formats.contains(format.toUpper()))
     {
@@ -274,28 +298,45 @@ DImgLoader* DImgImageMagickPlugin::loader(DImg* const image, const DRawDecoding&
 QStringList DImgImageMagickPlugin::decoderFormats() const
 {
     QStringList formats;
-    ExceptionInfo ex          = *AcquireExceptionInfo();
-    size_t n                  = 0;
-    const MagickInfo** inflst = GetMagickInfoList("*", &n, &ex);
 
-    if (!inflst)
+    try
     {
-        qWarning() << "ImageMagick coders list is null!";
-        return formats;
-    }
+        ExceptionInfo ex          = *AcquireExceptionInfo();
+        size_t n                  = 0;
+        const MagickInfo** inflst = GetMagickInfoList("*", &n, &ex);
 
-    for (uint i = 0 ; i < n ; ++i)
-    {
-        const MagickInfo* inf = inflst[i];
-
-        if (inf && inf->decoder)
+        if (!inflst)
         {
-#if (MagickLibVersion >= 0x69A && defined(magick_module))
-            formats.append(QString::fromLatin1(inf->magick_module).toUpper());
-#else
-            formats.append(QString::fromLatin1(inf->module).toUpper());
-#endif
+            qWarning() << "ImageMagick coders list is null!";
+            return formats;
         }
+
+        for (uint i = 0 ; i < n ; ++i)
+        {
+            const MagickInfo* inf = inflst[i];
+
+            if (inf && inf->decoder)
+            {
+
+#if (MagickLibVersion >= 0x69A && defined(magick_module))
+
+            formats.append(QString::fromLatin1(inf->magick_module).toUpper());
+
+#else
+
+            formats.append(QString::fromLatin1(inf->module).toUpper());
+
+#endif
+
+            }
+        }
+
+        free(inflst);
+    }
+    catch (Exception& error)
+    {
+        qCWarning(DIGIKAM_DIMG_LOG) << "ImageMagickInfo exception:" << error.what();
+        return QStringList();
     }
 
     if (formats.contains(QLatin1String("JPEG")))
@@ -306,8 +347,6 @@ QStringList DImgImageMagickPlugin::decoderFormats() const
 
     // Remove known formats that are not stable.
     formats.removeAll(QLatin1String("XCF"));
-
-    free(inflst);
 
     return formats;
 }
