@@ -107,8 +107,7 @@ void ThumbnailLoadingTask::execute()
         {
             m_qimage = *cachedImage;
         }
-
-        if (m_qimage.isNull())
+        else
         {
             // find possible running loading process
             // do not wait on other loading processes?

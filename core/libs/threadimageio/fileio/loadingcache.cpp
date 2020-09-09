@@ -252,7 +252,7 @@ void LoadingCache::notifyNewLoadingProcess(LoadingProcess* const process, const 
     for (QMap<QString, LoadingProcess*>::const_iterator it = d->loadingDict.constBegin() ;
          it != d->loadingDict.constEnd() ; ++it)
     {
-        static_cast<SharedLoadingTask*>(it.value())->notifyNewLoadingProcess(process, description);
+        it.value()->notifyNewLoadingProcess(process, description);
     }
 }
 

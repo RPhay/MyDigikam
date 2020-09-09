@@ -399,30 +399,37 @@ bool SharedLoadingTask::continueQuery()
 
 void SharedLoadingTask::setStatus(LoadingTaskStatus status)
 {
-    LoadingCache* const cache = LoadingCache::cache();
-    LoadingCache::CacheLock lock(cache);
-
     m_loadingTaskStatus = status;
 
-    // check for m_usedProcess, to avoid race condition that it has finished before
-
-    if (m_usedProcess && (m_loadingTaskStatus == LoadingTaskStatusStopping))
+    if (m_loadingTaskStatus == LoadingTaskStatusStopping)
     {
+        LoadingCache* const cache = LoadingCache::cache();
+        LoadingCache::CacheLock lock(cache);
+
         // remove this from the list of loading processes in cache
 
         cache->removeLoadingProcess(this);
 
-        // remove this from list of listeners - check in continueQuery() of active thread
+        // remove myself from list of listeners
 
-        m_usedProcess->removeListener(this);
+        removeListener(this);
 
-        // set m_usedProcess to 0, signalling that we have detached already
+        // check for m_usedProcess, to avoid race condition that it has finished before
 
-        m_usedProcess = nullptr;
+        if (m_usedProcess)
+        {
+            // remove this from list of listeners - check in continueQuery() of active thread
 
-        // wake all listeners - particularly this - from waiting on cache condvar
+            m_usedProcess->removeListener(this);
 
-        lock.wakeAll();
+            // set m_usedProcess to 0, signalling that we have detached already
+
+            m_usedProcess = nullptr;
+
+            // wake all listeners - particularly this - from waiting on cache condvar
+
+            lock.wakeAll();
+        }
     }
 }
 
