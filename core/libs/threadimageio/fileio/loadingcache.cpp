@@ -35,7 +35,6 @@
 #include "kmemoryinfo.h"
 #include "dmetadata.h"
 #include "thumbnailsize.h"
-#include "loadsavetask.h"
 
 namespace Digikam
 {
