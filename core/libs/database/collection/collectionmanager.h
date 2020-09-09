@@ -88,7 +88,7 @@ private Q_SLOTS:
 
 private:
 
-    CollectionManager();
+    explicit CollectionManager();
     ~CollectionManager();
 
     void clearLocations();

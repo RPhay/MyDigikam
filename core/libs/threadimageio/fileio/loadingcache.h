@@ -112,7 +112,6 @@ public:
 
     static LoadingCache* cache();
     static void cleanUp();
-    virtual ~LoadingCache();
 
     /**
      * NOTE: !! All methods of LoadingCache shall only be called when a CacheLock is held !!
@@ -273,7 +272,8 @@ private Q_SLOTS:
 
 private:
 
-    LoadingCache();
+    explicit LoadingCache();
+    ~LoadingCache();
 
     friend class LoadingCacheFileWatch;
     friend class CacheLock;
