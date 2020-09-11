@@ -1074,7 +1074,7 @@ QString ItemFilterModel::categoryIdentifier(const ItemInfo& i, const FaceTagsIfa
 
             if (face.isNull())
             {
-                return i18n("No Face");
+                return QLatin1String("_NO_FACE_");
             }
 
             // Suggested Name exists for Region.
@@ -1083,12 +1083,12 @@ QString ItemFilterModel::categoryIdentifier(const ItemInfo& i, const FaceTagsIfa
 
             if (!map.value(face.region().toXml()).isEmpty())
             {
-                return map.value(face.region().toXml());
+                return map.value(face.region().toXml()) + fastNumberToString(face.tagId());
             }
 
             // Region is Confirmed. Appending TagId, to prevent multiple Confirmed categories.
 
-            return i18n("Confirmed(%1)", face.tagId());
+            return QLatin1String("_CONFIRMED_") + fastNumberToString(face.tagId());
         }
 
         default:
