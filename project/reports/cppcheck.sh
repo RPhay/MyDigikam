@@ -34,6 +34,13 @@ for DROP_ITEM in $KRAZY_FILTERS ; do
     IGNORE_DIRS+="-i../../$DROP_ITEM/ "
 done
 
+# List sub-dirs with headers to append as cppcheck includes pathes
+HDIRS=$(find ../../core -name '*.h' -printf '%h\n' | sort -u)
+
+for INCLUDE_PATH in $HDIRS ; do
+    INCLUDE_DIRS+="-I $INCLUDE_PATH/ "
+done
+
 cppcheck -j$CPU_CORES \
          -DQ_OS_LINUX \
          --verbose \
@@ -54,6 +61,7 @@ cppcheck -j$CPU_CORES \
          --suppress=ConfigurationNotChecked \
          --suppress=unmatchedSuppression \
          $IGNORE_DIRS \
+         $INCLUDE_DIRS \
          ../../core \
          2> report.cppcheck.xml
 
