@@ -214,7 +214,14 @@ void ItemViewUtilities::createNewAlbumForInfos(const QList<ItemInfo>& infos,
         return;
     }
 
-    DIO::move(infos, (PAlbum*)album);
+    PAlbum* const palbum = dynamic_cast<PAlbum*>(album);
+
+    if (!palbum)
+    {
+        return;
+    }
+
+    DIO::move(infos, palbum);
 }
 
 void ItemViewUtilities::insertToLightTableAuto(const QList<ItemInfo>& all,
