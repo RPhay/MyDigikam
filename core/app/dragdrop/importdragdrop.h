@@ -6,7 +6,7 @@
  * Date        : 2012-09-07
  * Description : Qt Model for ImportUI - drag and drop handling
  *
- * Copyright (C) 2012 by Islam Wazery <wazery at ubuntu dot com>
+ * Copyright (C) 2012      by Islam Wazery <wazery at ubuntu dot com>
  * Copyright (C) 2013-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
