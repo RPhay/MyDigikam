@@ -99,7 +99,11 @@ DigikamItemView::DigikamItemView(QWidget* const parent)
     imageFilterModel()->setCategorizationMode(ItemSortSettings::CategoryByAlbum);
 
     imageAlbumModel()->setThumbnailLoadThread(ThumbnailLoadThread::defaultIconViewThread());
-    setThumbnailSize(ThumbnailSize(settings->getDefaultIconSize()));
+
+    // Virtual method: use Dynamic binding.
+
+    this->setThumbnailSize(ThumbnailSize(settings->getDefaultIconSize()));
+
     imageAlbumModel()->setPreloadThumbnails(true);
 
     imageModel()->setDragDropHandler(new ItemDragDropHandler(imageModel()));
@@ -115,21 +119,25 @@ DigikamItemView::DigikamItemView(QWidget* const parent)
     imageFilterModel()->setCategorizationSortOrder((ItemSortSettings::SortOrder) settings->getImageSeparationSortOrder());
 
     // selection overlay
+
     addSelectionOverlay(d->normalDelegate);
     addSelectionOverlay(d->faceDelegate);
 
     // rotation overlays
+
     d->rotateLeftOverlay  = ItemRotateOverlay::left(this);
     d->rotateRightOverlay = ItemRotateOverlay::right(this);
     d->fullscreenOverlay  = ItemFullScreenOverlay::instance(this);
     d->updateOverlays();
 
     // rating overlay
+
     ItemRatingOverlay* const ratingOverlay = new ItemRatingOverlay(this);
     addOverlay(ratingOverlay);
 
     // face overlays
     // NOTE: order to plug this overlay is important, else rejection cant be suitable (see bug #324759).
+
     addAssignNameOverlay(d->faceDelegate);
     addRejectionOverlay(d->faceDelegate);
 
@@ -162,11 +170,11 @@ DigikamItemView::DigikamItemView(QWidget* const parent)
             this, SLOT(setCurrentUrlWhenAvailable(QUrl)));
 
     // --- NOTE: use dynamic binding as slotSetupChanged() is a virtual method which can be re-implemented in derived classes.
+
     connect(settings, &ApplicationSettings::setupChanged,
             this, &DigikamItemView::slotSetupChanged);
 
     this->slotSetupChanged();
-    // ---
 }
 
 DigikamItemView::~DigikamItemView()
@@ -324,11 +332,16 @@ void DigikamItemView::setFaceMode(bool on)
     if (on)
     {
         // See ItemLister, which creates a search the implements listing tag in the ioslave
+
         imageAlbumModel()->setSpecialTagListing(QLatin1String("faces"));
         setItemDelegate(d->faceDelegate);
+
         // grouping is not very much compatible with faces
+
         imageFilterModel()->setAllGroupsOpen(true);
+
         // by default, Face View is categorized by Faces.
+
         imageFilterModel()->setCategorizationMode(ItemSortSettings::CategoryByFaces);
     }
     else
@@ -462,14 +475,16 @@ void DigikamItemView::rejectFaces(const QList<QModelIndex>& indexes)
 
     for (int i = 0 ; i < infos.size() ; i++)
     {
-        /// Reject face suggestion. Mark as Unknown.
         if (!FaceTags::isTheUnknownPerson(faces[i].tagId()))
         {
+            /// Reject face suggestion. Mark as Unknown.
+
             d->editPipeline.editTag(infos[i], faces[i], FaceTags::unknownPersonTagId());
         }
-        /// Reject signal was sent from an Unknown Face. Mark as Ignored.
         else
         {
+            /// Reject signal was sent from an Unknown Face. Mark as Ignored.
+
             d->editPipeline.editTag(infos[i], faces[i], FaceTags::ignoredPersonTagId());
         }
     }
@@ -638,6 +653,7 @@ void DigikamItemView::slotFullscreen(const QList<QModelIndex>& indexes)
    }
 
    // Just fullscreen the first.
+
    const ItemInfo& info = infos.at(0);
 
    QList<DPluginAction*> actions = DPluginLoader::instance()->
@@ -650,8 +666,8 @@ void DigikamItemView::slotFullscreen(const QList<QModelIndex>& indexes)
    }
 
    //Trigger SlideShow manual
-   actions[0]->setData(info.fileUrl());
 
+   actions[0]->setData(info.fileUrl());
    actions[0]->trigger();
 }
 
