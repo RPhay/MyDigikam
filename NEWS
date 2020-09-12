@@ -23,4 +23,5 @@ BUGFIXES:
 012 ==> 426185 - digiKam starts more slowly than previous version.
 013 ==> 390226 - Never import current collection.
 014 ==> 426373 - Can't get Adjust Date & Time to work.
-015 ==> 
+015 ==> 415867 - Face recognition -> after manual tagging -> no detection.
+016 ==> 
