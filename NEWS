@@ -3,6 +3,7 @@ digiKam 7.2.0-beta1 - Release date: 2020-11-08
 *****************************************************************************************************
 NEW FEATURES:
 
+General       : All bundles updated to last KF5 framework version 5.74.
 FaceManagement: Improve users experience in GUI for face workflow while tagging and manage faces.
 FaceManagement: Add face engine clustering support for detection and recognition processes.
 
@@ -63,4 +64,7 @@ BUGFIXES:
 052 ==> 257677 - Crash when I renane files.
 053 ==> 109517 - Photo Tag's & Comment's are lost when ablum's are rearranged or renamed.
 054 ==> 091161 - Batch processing - rename problems.
-055 ==> 
+055 ==> 374783 - Window location is not restored correctly after restart.
+056 ==> 413884 - digiKam does not remember last window position and size on startup.
+057 ==>
+
