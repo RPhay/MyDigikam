@@ -147,7 +147,7 @@ void DigikamApp::slotImportAddFolders()
         album = albumList.first();
     }
 
-    if (album && album->type() != Album::PHYSICAL)
+    if (album && (album->type() != Album::PHYSICAL))
     {
         album = nullptr;
     }
@@ -155,7 +155,7 @@ void DigikamApp::slotImportAddFolders()
     QString header(i18n("<p>Please select the destination album from the digiKam library to "
                         "import folders into.</p>"));
 
-    album = AlbumSelectDialog::selectAlbum(this, (PAlbum*)album, header);
+    album = AlbumSelectDialog::selectAlbum(this, static_cast<PAlbum*>(album), header);
 
     if (!album)
     {
