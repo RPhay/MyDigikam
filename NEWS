@@ -42,4 +42,24 @@ BUGFIXES:
 031 ==> 261319 - digiKam crash at startup with "signal: Illegal instruction" (SIGILL)
 032 ==> 420257 - Empty secondary window sometimes appear when using digiKam.
 033 ==> 406591 - Error in SDL2.dll.
-034 ==> 
+034 ==> 135374 - Rename image files: add the possibility of "Find and replace".
+035 ==> 336307 - Photos from Samsung S2 disappear after rename.
+036 ==> 244559 - Crash when renaming files in batch process.
+037 ==> 249148 - digiKam crashed when rename files.
+038 ==> 252557 - Batch rename files caused crashed.
+039 ==> 255830 - Crash while renaming files using German Umlauts
+040 ==> 256314 - Crash when renaming jpegs.
+041 ==> 257099 - Crash when leaving Rename dialog if several files selected.
+042 ==> 257788 - Renaming multiple files crashes.
+043 ==> 258045 - digiKam crashes, related with the rename of several photographs.
+044 ==> 264019 - Crash by multi rename.
+045 ==> 267211 - digiKam crashes after batch renaming more than two files.
+046 ==> 211426 - Rename collision dialog notifies that files aren't on local computer.
+047 ==> 237805 - File rename using metadata fails when using file conversion tool in Batch queue manager.
+048 ==> 251768 - digiKam custom file renaming options are ignored when importing from camera.
+049 ==> 318363 - Bad performance of file renames (thumbnail recreation?).
+050 ==> 414081 - Renaming not working as expected in digiKam 6.4.
+051 ==> 420691 - digiKam stopped responding and required new setup.
+052 ==> 257677 - Crash when I renane files.
+053 ==> 
+
