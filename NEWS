@@ -24,4 +24,14 @@ BUGFIXES:
 013 ==> 390226 - Never import current collection.
 014 ==> 426373 - Can't get Adjust Date & Time to work.
 015 ==> 415867 - Face recognition -> after manual tagging -> no detection.
-016 ==> 
+016 ==> 293697 - Crashes on Remove Red Eyes.
+017 ==> 323253 - When face tag scanning, digikam exhausts all memory on computer.
+018 ==> 409146 - Name not applied to RegionInfo when the region was added by iOS.
+019 ==> 268191 - Allow building without FacesEngine.
+020 ==> 392024 - Feature request: group similar faces in "Unknown" faces.
+021 ==> 409788 - Sort-by/group by detected person (in Unconfirmed-View).
+022 ==> 414653 - Ranking option in people recognition.
+023 ==> 415878 - Sort "Unconfirmed" images by face name / or group them.
+024 ==> 417390 - In "unconfirmed" and "unknown" can be grouped by similar faces.
+025 ==> 421985 - Difficult to use face recognition.
+026 ==> 
