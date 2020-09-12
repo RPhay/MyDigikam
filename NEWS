@@ -61,5 +61,6 @@ BUGFIXES:
 050 ==> 414081 - Renaming not working as expected in digiKam 6.4.
 051 ==> 420691 - digiKam stopped responding and required new setup.
 052 ==> 257677 - Crash when I renane files.
-053 ==> 
-
+053 ==> 109517 - Photo Tag's & Comment's are lost when ablum's are rearranged or renamed.
+054 ==> 091161 - Batch processing - rename problems.
+055 ==> 
