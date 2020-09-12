@@ -58,8 +58,8 @@ cppcheck -j$CPU_CORES \
          --suppress=*:*yfauth*.h \
          --suppress=*:*o2*.h \
          --suppress=*:*libjpeg*.h \
-         --suppress=*:*dngsdk*.h \
-         --suppress=*:*xmpsdk*.h \
+         --suppress=*:*dng_sdk*.h \
+         --suppress=*:*xmp_sdk*.h \
          --suppress=variableScope \
          --suppress=purgedConfiguration \
          --suppress=toomanyconfigs \
