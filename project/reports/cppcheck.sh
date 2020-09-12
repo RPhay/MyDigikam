@@ -50,6 +50,16 @@ cppcheck -j$CPU_CORES \
          --enable=all \
          --report-progress \
          --suppress=*:*CImg.h* \
+         --suppress=*:*libpgf*.h \
+         --suppress=*:*libraw*.h \
+         --suppress=*:*libde265*.h \
+         --suppress=*:*libheif*.h \
+         --suppress=*:*upnpsdk*.h \
+         --suppress=*:*yfauth*.h \
+         --suppress=*:*o2*.h \
+         --suppress=*:*libjpeg*.h \
+         --suppress=*:*dngsdk*.h \
+         --suppress=*:*xmpsdk*.h \
          --suppress=variableScope \
          --suppress=purgedConfiguration \
          --suppress=toomanyconfigs \
