@@ -40,5 +40,6 @@ BUGFIXES:
 029 ==> 419047 - Closing Face Tag Delete Dialog Box still ends up deleting face tag.
 030 ==> 423387 - Add Button to instanlty set face tag as Unknown.
 031 ==> 261319 - digiKam crash at startup with "signal: Illegal instruction" (SIGILL)
-032 ==> 
-
+032 ==> 420257 - Empty secondary window sometimes appear when using digiKam.
+033 ==> 406591 - Error in SDL2.dll.
+034 ==> 
