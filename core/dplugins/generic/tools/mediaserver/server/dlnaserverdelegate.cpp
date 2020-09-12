@@ -483,7 +483,7 @@ PLT_MediaObject* DLNAMediaServerDelegate::BuildFromFilePath(const NPT_String&   
 
         if (with_count && NPT_SUCCEEDED(NPT_File::GetSize(filepath, count)))
         {
-            ((PLT_MediaContainer*)object)->m_ChildrenCount = (NPT_Int32)count;
+            (static_cast<PLT_MediaContainer*>(object))->m_ChildrenCount = (NPT_Int32)count;
         }
 
         object->m_ObjectClass.type = "object.container.storageFolder";
