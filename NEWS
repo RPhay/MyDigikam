@@ -34,4 +34,11 @@ BUGFIXES:
 023 ==> 415878 - Sort "Unconfirmed" images by face name / or group them.
 024 ==> 417390 - In "unconfirmed" and "unknown" can be grouped by similar faces.
 025 ==> 421985 - Difficult to use face recognition.
-026 ==> 
+026 ==> 415786 - Option to ignore group of images from face detection.
+027 ==> 415880 - Add a way to easily correct a face name.
+028 ==> 418757 - Ability to Ignore a face region.
+029 ==> 419047 - Closing Face Tag Delete Dialog Box still ends up deleting face tag.
+030 ==> 423387 - Add Button to instanlty set face tag as Unknown.
+031 ==> 261319 - digiKam crash at startup with "signal: Illegal instruction" (SIGILL)
+032 ==> 
+
