@@ -52,6 +52,10 @@ public:
 
 private:
 
+    // Hidden copy constructor and assignment operator.
+    RecognitionPreprocessor(const RecognitionPreprocessor&);
+    RecognitionPreprocessor& operator=(const RecognitionPreprocessor&);
+
     class Private;
     Private* const d;
 };
