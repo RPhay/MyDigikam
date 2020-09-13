@@ -228,11 +228,11 @@ int ItemSortSettings::compareCategories(const ItemInfo& left, const ItemInfo& ri
 
             if      (leftFace.type() == FaceTagsIface::UnknownName)
             {
-                leftValue = QLatin1String("zzzz");
+                leftValue.fill(QChar(0xffe), 1);
             }
             else if (leftFace.type() == FaceTagsIface::IgnoredName)
             {
-                leftValue = QLatin1String("zzzzz");
+                leftValue.fill(QChar(0xfff), 1);
             }
             else if (leftFace.type() == FaceTagsIface::ConfirmedName)
             {
@@ -245,11 +245,11 @@ int ItemSortSettings::compareCategories(const ItemInfo& left, const ItemInfo& ri
 
             if      (rightFace.type() == FaceTagsIface::UnknownName)
             {
-                rightValue = QLatin1String("zzzz");
+                rightValue.fill(QChar(0xffe), 1);
             }
             else if (rightFace.type() == FaceTagsIface::IgnoredName)
             {
-                rightValue = QLatin1String("zzzzz");
+                rightValue.fill(QChar(0xfff), 1);
             }
             else if (rightFace.type() == FaceTagsIface::ConfirmedName)
             {
