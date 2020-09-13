@@ -354,6 +354,18 @@ void ItemInfoCache::slotImageTagChanged(const ImageTagChangeset& changeset)
 {
     if (changeset.propertiesWereChanged())
     {
+        ItemInfoWriteLocker lock;
+
+        foreach (const qlonglong& imageId, changeset.ids())
+        {
+            QHash<qlonglong, ItemInfoData*>::iterator it = m_infoHash.find(imageId);
+
+            if (it != m_infoHash.end())
+            {
+                (*it)->faceSuggestionsCached = false;
+            }
+        }
+
         return;
     }
 
