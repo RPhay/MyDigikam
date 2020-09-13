@@ -375,12 +375,15 @@ QVariant ItemFilterModel::data(const QModelIndex& index, int role) const
                 return i18n("No face");
             }
 
-            if (face.type() == FaceTagsIface::UnknownName)
+            if      (face.type() == FaceTagsIface::UnknownName)
             {
                 return i18n("Unknown");
             }
-
-            if (face.type() == FaceTagsIface::ConfirmedName)
+            else if (face.type() == FaceTagsIface::IgnoredName)
+            {
+                return i18n("Ignored");
+            }
+            else if (face.type() == FaceTagsIface::ConfirmedName)
             {
                 QString name = FaceTags::faceNameForTag(face.tagId());
                 name        += QString::fromUtf8(" [%1]").arg(i18n("Confirmed"));
@@ -929,8 +932,8 @@ int ItemFilterModel::compareCategories(const QModelIndex& left, const QModelInde
     qlonglong leftGroupImageId  = leftInfo.groupImageId();
     qlonglong rightGroupImageId = rightInfo.groupImageId();
 
-    QVariant leftExtraData = left.data(ItemModel::ExtraDataRole);
-    QVariant rightExtraData = right.data(ItemModel::ExtraDataRole);
+    QVariant leftExtraData      = left.data(ItemModel::ExtraDataRole);
+    QVariant rightExtraData     = right.data(ItemModel::ExtraDataRole);
 
     FaceTagsIface leftFace;
     FaceTagsIface rightFace;
@@ -947,8 +950,8 @@ int ItemFilterModel::compareCategories(const QModelIndex& left, const QModelInde
 
     return compareInfosCategories(
                                   (leftGroupImageId  == -1) ? leftInfo  : ItemInfo(leftGroupImageId),
-                                  (rightGroupImageId == -1) ? rightInfo : ItemInfo(rightGroupImageId)
-                                  , leftFace, rightFace
+                                  (rightGroupImageId == -1) ? rightInfo : ItemInfo(rightGroupImageId),
+                                  leftFace, rightFace
                                  );
 }
 
@@ -1014,7 +1017,8 @@ int ItemFilterModel::compareInfosCategories(const ItemInfo& left, const ItemInfo
     return d->sorter.compareCategories(left, right, leftFace, rightFace);
 }
 
-int ItemFilterModel::compareInfosCategories(const ItemInfo& left, const ItemInfo& right, const FaceTagsIface& leftFace, const FaceTagsIface& rightFace) const
+int ItemFilterModel::compareInfosCategories(const ItemInfo& left, const ItemInfo& right,
+                                            const FaceTagsIface& leftFace, const FaceTagsIface& rightFace) const
 {
     // Note: reimplemented in ItemAlbumFilterModel
     Q_D(const ItemFilterModel);
@@ -1074,7 +1078,24 @@ QString ItemFilterModel::categoryIdentifier(const ItemInfo& i, const FaceTagsIfa
 
             if (face.isNull())
             {
-                return QLatin1String("_NO_FACE_");
+                return QLatin1String("NO_FACE");
+            }
+
+            if      (face.type() == FaceTagsIface::UnknownName)
+            {
+                return i18n("UNKNOWN_FACE");
+            }
+            else if (face.type() == FaceTagsIface::IgnoredName)
+            {
+                return i18n("IGNORED_FACE");
+            }
+            else if (face.type() == FaceTagsIface::ConfirmedName)
+            {
+                // Region is Confirmed. Appending TagId,
+                // to prevent multiple Confirmed categories.
+
+                return QLatin1String("CONFIRMED_FACE") +
+                       fastNumberToString(face.tagId());
             }
 
             // Suggested Name exists for Region.
@@ -1083,12 +1104,11 @@ QString ItemFilterModel::categoryIdentifier(const ItemInfo& i, const FaceTagsIfa
 
             if (!map.value(face.region().toXml()).isEmpty())
             {
-                return map.value(face.region().toXml()) + fastNumberToString(face.tagId());
+                return map.value(face.region().toXml()) +
+                       fastNumberToString(face.tagId());
             }
 
-            // Region is Confirmed. Appending TagId, to prevent multiple Confirmed categories.
-
-            return QLatin1String("_CONFIRMED_") + fastNumberToString(face.tagId());
+            return QLatin1String("NO_FACE");
         }
 
         default:

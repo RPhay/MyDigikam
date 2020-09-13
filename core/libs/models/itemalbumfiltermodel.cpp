@@ -189,6 +189,7 @@ int ItemAlbumFilterModel::compareInfosCategories(const ItemInfo& left, const Ite
                                                     d->sorter.categorizationCaseSensitivity,
                                                     d->sorter.strTypeNatural);
         }
+
         default:
         {
             return ItemFilterModel::compareInfosCategories(left, right, leftFace, rightFace);

@@ -155,6 +155,23 @@ Qt::SortOrder ItemSortSettings::defaultSortOrderForSortRole(SortRole role)
     }
 }
 
+// Feel free to optimize. QString::number is 3x slower.
+static inline QString fastNumberToString(int id)
+{
+    const int size = sizeof(int) * 2;
+    int number     = id;
+    char c[size + 1];
+    c[size]        = '\0';
+
+    for (int i = 0 ; i < size ; ++i)
+    {
+        c[i]     = 'a' + (number & 0xF);
+        number >>= 4;
+    }
+
+    return QLatin1String(c);
+}
+
 int ItemSortSettings::compareCategories(const ItemInfo& left, const ItemInfo& right,
                                         const FaceTagsIface& leftFace, const FaceTagsIface& rightFace) const
 {
@@ -201,22 +218,56 @@ int ItemSortSettings::compareCategories(const ItemInfo& left, const ItemInfo& ri
 
         case CategoryByFaces:
         {
-            QMap<QString, QString> leftMap  = left.getSuggestedNames();
-            QMap<QString, QString> rightMap = right.getSuggestedNames();
+            QString leftValue;
+            QString rightValue;
 
-            const QString leftValue  = leftMap.value(leftFace.region().toXml());
-            const QString rightValue = rightMap.value(rightFace.region().toXml());
-
-            if (leftValue.isEmpty()  && !rightValue.isEmpty())
-                return 1;
-
-            if (!leftValue.isEmpty() && rightValue.isEmpty())
-                return -1;
-
-            if (leftValue.isEmpty()  && rightValue.isEmpty())
+            if (leftFace.isNull() && rightFace.isNull())
+            {
                 return 0;
+            }
 
-            // Compare alphabetically based on the Suggested Name
+            if      (leftFace.type() == FaceTagsIface::UnknownName)
+            {
+                leftValue = QLatin1String("zzzz");
+            }
+            else if (leftFace.type() == FaceTagsIface::IgnoredName)
+            {
+                leftValue = QLatin1String("zzzzz");
+            }
+            else if (leftFace.type() == FaceTagsIface::ConfirmedName)
+            {
+                leftValue = FaceTags::faceNameForTag(leftFace.tagId());
+            }
+            else
+            {
+                leftValue = left.getSuggestedNames().value(leftFace.region().toXml());
+            }
+
+            if      (rightFace.type() == FaceTagsIface::UnknownName)
+            {
+                rightValue = QLatin1String("zzzz");
+            }
+            else if (rightFace.type() == FaceTagsIface::IgnoredName)
+            {
+                rightValue = QLatin1String("zzzzz");
+            }
+            else if (rightFace.type() == FaceTagsIface::ConfirmedName)
+            {
+                rightValue = FaceTags::faceNameForTag(rightFace.tagId());
+            }
+            else
+            {
+                 rightValue = right.getSuggestedNames().value(rightFace.region().toXml());
+            }
+
+            leftValue  += fastNumberToString(leftFace.tagId()) +
+                          fastNumberToString(leftFace.type());
+
+            rightValue += fastNumberToString(rightFace.tagId()) +
+                          fastNumberToString(rightFace.type());
+
+            // Compare alphabetically based on the face name
+
             return naturalCompare(leftValue, rightValue,
                                   currentCategorizationSortOrder, categorizationCaseSensitivity,
                                   strTypeNatural);
