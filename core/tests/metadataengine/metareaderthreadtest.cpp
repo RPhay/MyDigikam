@@ -40,7 +40,8 @@
 
 Mytask::Mytask()
     : ActionJob(),
-      direction(MetaReaderThread::READ_INFO_FROM_FILE)
+      direction(MetaReaderThread::READ_INFO_FROM_FILE),
+      settings()
 {
 }
 
