@@ -49,7 +49,7 @@ cppcheck -j$CPU_CORES \
          --platform=unix64 \
          --enable=all \
          --report-progress \
-         --suppress=*:*CImg.h* \
+         --suppress=*:*cimg*.h \
          --suppress=*:*libpgf*.h \
          --suppress=*:*libraw*.h \
          --suppress=*:*libde265*.h \
