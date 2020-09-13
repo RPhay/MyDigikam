@@ -78,7 +78,7 @@ BUGFIXES:
 066 ==> 114189 - Add an option where i can set the "picture create permissions".
 067 ==> 246174 - digiKam dies when "doing file -> new".
 068 ==> 247090 - "New" problem.
-069 ==> 
+069 ==> 377422 - Main window got stuck in Full Screen mode - Cinnamon DE.
 070 ==> 
 071 ==> 
 
