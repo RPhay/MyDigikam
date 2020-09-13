@@ -66,5 +66,21 @@ BUGFIXES:
 054 ==> 091161 - Batch processing - rename problems.
 055 ==> 374783 - Window location is not restored correctly after restart.
 056 ==> 413884 - digiKam does not remember last window position and size on startup.
-057 ==>
+057 ==> 132691 - Pressing the Supr button should display a warning message to prevent to delete photos.
+058 ==> 197449 - digiKam crashes after deleting a bunch of images.
+059 ==> 199096 - Deleting files in a folder being viewed by digiKam seemed to crash it.
+060 ==> 208635 - Next picture after delete.
+061 ==> 246488 - digiKam crashes if i click on a deleted file.
+062 ==> 293692 - digiKam Crash.
+063 ==> 282510 - digiKam crashed when changing selection while images are being deleted.
+064 ==> 286065 - digiKam crash when I delete a photograph.
+065 ==> 104009 - Photo stays in album when moved to another album.
+066 ==> 114189 - Add an option where i can set the "picture create permissions".
+067 ==> 246174 - digiKam dies when "doing file -> new".
+068 ==> 247090 - "New" problem.
+069 ==> 
+070 ==> 
+071 ==> 
+
+
 
