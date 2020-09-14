@@ -230,6 +230,7 @@ echo -e "\n"
 
 port install \
              ld64 +ld64_xcode \
+             subversion \
              cmake \
              libpng \
              jpeg \
