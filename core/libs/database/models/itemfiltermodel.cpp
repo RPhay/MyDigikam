@@ -1083,11 +1083,11 @@ QString ItemFilterModel::categoryIdentifier(const ItemInfo& i, const FaceTagsIfa
 
             if      (face.type() == FaceTagsIface::UnknownName)
             {
-                return i18n("UNKNOWN_FACE");
+                return QLatin1String("UNKNOWN_FACE");
             }
             else if (face.type() == FaceTagsIface::IgnoredName)
             {
-                return i18n("IGNORED_FACE");
+                return QLatin1String("IGNORED_FACE");
             }
             else if (face.type() == FaceTagsIface::ConfirmedName)
             {

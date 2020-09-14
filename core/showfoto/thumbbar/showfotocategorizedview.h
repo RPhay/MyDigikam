@@ -195,6 +195,10 @@ private Q_SLOTS:
 
 private:
 
+    // Hidden copy constructor and assignment operator.
+    ShowfotoCategorizedView(const ShowfotoCategorizedView&);
+    ShowfotoCategorizedView& operator=(const ShowfotoCategorizedView&);
+
     void scrollToStoredItem();
 
 private:

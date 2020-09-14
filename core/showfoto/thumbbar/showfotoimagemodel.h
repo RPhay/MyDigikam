@@ -285,9 +285,14 @@ public:
 
 private:
 
+    // Hidden copy constructor and assignment operator.
+    ShowfotoItemModel(const ShowfotoItemModel&);
+    ShowfotoItemModel& operator=(const ShowfotoItemModel&);
+
     Private* const d;
 };
-}
+
+} // namespace ShowFoto
 
 Q_DECLARE_METATYPE(ShowFoto::ShowfotoItemModel*)
 

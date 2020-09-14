@@ -486,7 +486,7 @@ int FaceTags::ignoredPersonTagId()
                                         i18nc("List of detected faces that need not be recognized", "Ignored"),
                                         personParentTag()));
     TagProperties props(ignoredPersonTagId);
-    props.setProperty(TagPropertyName::person(), QString());
+    props.setProperty(TagPropertyName::person(),        QString());
     props.setProperty(TagPropertyName::ignoredPerson(), QString());
 
     return ignoredPersonTagId;

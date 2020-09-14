@@ -79,7 +79,7 @@ bool DImgRAWLoader::load(const QString& filePath, DImgLoaderObserver* const obse
 
         if (m_decoderSettings.outputColorSpace == DRawDecoderSettings::CUSTOMOUTPUTCS)
         {
-            if (m_decoderSettings.outputProfile == IccProfile::sRGB().filePath())
+            if      (m_decoderSettings.outputProfile == IccProfile::sRGB().filePath())
             {
                 m_decoderSettings.outputColorSpace = DRawDecoderSettings::SRGB;
             }
@@ -99,6 +99,7 @@ bool DImgRAWLoader::load(const QString& filePath, DImgLoaderObserver* const obse
             {
                 // Specifying a custom output is broken somewhere. We use the extremely
                 // wide gamut pro photo profile for 16bit (sRGB for 8bit) and convert afterwards.
+
                 m_filter->setOutputProfile(IccProfile(m_decoderSettings.outputProfile));
 
                 if (m_decoderSettings.sixteenBitsImage)
@@ -304,6 +305,7 @@ bool DImgRAWLoader::loadedFromRawData(const QByteArray& data,
         case DRawDecoderSettings::RAWCOLOR:
         {
             // No icc color-space profile to assign in RAW color mode.
+
             imageSetAttribute(QLatin1String("uncalibratedColor"), true);
             break;
         }
@@ -318,6 +320,7 @@ bool DImgRAWLoader::loadedFromRawData(const QByteArray& data,
     imageHeight()       = height;
     imageSetAttribute(QLatin1String("rawDecodingSettings"),     QVariant::fromValue(m_filter->settings()));
     imageSetAttribute(QLatin1String("rawDecodingFilterAction"), QVariant::fromValue(action));
+
     // other attributes are set above
 
     return true;
@@ -338,9 +341,10 @@ FilterAction DImgRAWLoader::filterAction() const
     return m_filter->filterAction();
 }
 
-bool DImgRAWLoader::save(const QString& /*filePath*/, DImgLoaderObserver* const /*observer=0*/)
+bool DImgRAWLoader::save(const QString&, DImgLoaderObserver* const)
 {
     // NOTE: RAW files are always Read only.
+
     return false;
 }
 
