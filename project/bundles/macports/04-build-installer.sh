@@ -148,7 +148,7 @@ etc/ImageMagick* \
 # Additional Data Directories - to be copied recursively
 OTHER_DATA="\
 share/applications \
-share/OpenCV \
+share/opencv4 \
 share/k* \
 share/lensfun \
 share/mime \
