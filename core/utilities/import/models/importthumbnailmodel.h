@@ -51,7 +51,7 @@ public:
     ~ImportThumbnailModel();
 
     /// Sets the camera thumbs controller which is used to get the thumbnails for item infos.
-    void setCameraThumbsController(CameraThumbsCtrl* const thumbsCtrl) override;
+    void setCameraThumbsController(CameraThumbsCtrl* const thumbsCtrl)                                override;
 
     /// Get the thumbnail size
     ThumbnailSize thumbnailSize() const;
@@ -69,7 +69,7 @@ public:
      *  If it still needs to be loaded, returns a null QVariant and emits
      *  thumbnailAvailable() as soon as it is available.
      */
-    virtual QVariant data(const QModelIndex& index, int role = Qt::DisplayRole) const override;
+    virtual QVariant data(const QModelIndex& index, int role = Qt::DisplayRole) const                 override;
 
     /**
      * You can override the current thumbnail size by giving an integer value for ThumbnailRole.
@@ -88,6 +88,10 @@ private Q_SLOTS:
     void slotThumbInfoReady(const CamItemInfo&);
 
 private:
+
+    // Hidden copy constructor and assignment operator.
+    ImportThumbnailModel(const ImportThumbnailModel&);
+    ImportThumbnailModel& operator=(const ImportThumbnailModel&);
 
     class Private;
     Private* const d;

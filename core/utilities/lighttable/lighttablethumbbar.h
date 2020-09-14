@@ -94,6 +94,10 @@ private Q_SLOTS:
 
 private:
 
+    // Hidden copy constructor and assignment operator.
+    LightTableThumbBar(const LightTableThumbBar&);
+    LightTableThumbBar& operator=(const LightTableThumbBar&);
+
     class Private;
     Private* const d;
 };
