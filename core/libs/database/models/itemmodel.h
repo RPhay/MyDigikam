@@ -389,6 +389,10 @@ public:
 
 private:
 
+    // Hidden copy constructor and assignment operator.
+    ItemModel(const ItemModel&);
+    ItemModel& operator=(const ItemModel&);
+
     Private* const d;
 };
 

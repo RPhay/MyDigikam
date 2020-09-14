@@ -108,6 +108,10 @@ protected:
 
 private:
 
+    // Hidden copy constructor and assignment operator.
+    ItemAlbumModel(const ItemAlbumModel&);
+    ItemAlbumModel& operator=(const ItemAlbumModel&);
+
     class Private;
     Private* const d;
 };

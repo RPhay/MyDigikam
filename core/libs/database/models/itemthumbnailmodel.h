@@ -137,6 +137,10 @@ protected Q_SLOTS:
 
 private:
 
+    // Hidden copy constructor and assignment operator.
+    ItemThumbnailModel(const ItemThumbnailModel&);
+    ItemThumbnailModel& operator=(const ItemThumbnailModel&);
+
     class Private;
     Private* const d;
 };

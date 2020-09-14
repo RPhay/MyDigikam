@@ -125,6 +125,10 @@ public:
 
 private:
 
+    // Hidden copy constructor and assignment operator.
+    ItemHistoryGraphModel(const ItemHistoryGraphModel&);
+    ItemHistoryGraphModel& operator=(const ItemHistoryGraphModel&);
+
     class Private;
     Private* const d;
 };

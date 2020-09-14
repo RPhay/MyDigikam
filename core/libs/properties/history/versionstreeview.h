@@ -40,7 +40,8 @@ namespace Digikam
 class VersionsDelegate;
 class ItemDelegateOverlay;
 
-class VersionsTreeView : public QTreeView, public DragDropViewImplementation
+class VersionsTreeView : public QTreeView,
+                         public DragDropViewImplementation
 {
     Q_OBJECT
 
@@ -77,6 +78,12 @@ protected:
     AbstractItemDragDropHandler* m_dragDropHandler;
     bool                         m_showToolTip;
     ToolTip*                     m_toolTip;
+
+private:
+
+    // Hidden copy constructor and assignment operator.
+    VersionsTreeView(const VersionsTreeView&);
+    VersionsTreeView& operator=(const VersionsTreeView&);
 };
 
 } // namespace Digikam
