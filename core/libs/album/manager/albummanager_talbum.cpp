@@ -725,10 +725,16 @@ QStringList AlbumManager::tagPaths(const QList<int>& tagIDs,
 
 QStringList AlbumManager::tagNames(const QList<int>& tagIDs, bool includeInternal) const
 {
+    const int ignoredTag = FaceTags::ignoredPersonTagId();
     QStringList tagNames;
 
     foreach (int id, tagIDs)
     {
+        if (ignoredTag == id)
+        {
+            continue;
+        }
+
         TAlbum* const album = findTAlbum(id);
 
         if (album)
