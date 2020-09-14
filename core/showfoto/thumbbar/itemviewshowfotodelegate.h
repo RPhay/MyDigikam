@@ -123,6 +123,10 @@ protected:
 
 private:
 
+    // Hidden copy constructor and assignment operator.
+    ItemViewShowfotoDelegate(const ItemViewShowfotoDelegate&);
+    ItemViewShowfotoDelegate& operator=(const ItemViewShowfotoDelegate&);
+
     Q_DECLARE_PRIVATE(ItemViewShowfotoDelegate)
 };
 

@@ -39,7 +39,8 @@ using namespace Digikam;
 namespace DigikamRAWDImgPlugin
 {
 
-class DImgRAWLoader : public DRawDecoder, public DImgLoader
+class DImgRAWLoader : public DRawDecoder,
+                      public DImgLoader
 {
     Q_OBJECT
 
@@ -49,11 +50,11 @@ public:
     ~DImgRAWLoader();
 
     bool load(const QString& filePath, DImgLoaderObserver* const observer = nullptr) override;
-    bool save(const QString& /*filePath*/, DImgLoaderObserver* const /*observer=0*/) override;
+    bool save(const QString&, DImgLoaderObserver* const)                             override;
 
-    bool hasAlpha()   const override;
-    bool isReadOnly() const override;
-    bool sixteenBit() const override;
+    bool hasAlpha()   const                                                          override;
+    bool isReadOnly() const                                                          override;
+    bool sixteenBit() const                                                          override;
 
     void postProcess(DImgLoaderObserver* const observer);
 
@@ -67,10 +68,14 @@ private:
                            int rgbmax,
                            DImgLoaderObserver* const observer);
 
-    bool checkToCancelWaitingData() override;
-    void setWaitingDataProgress(double value) override;
+    bool checkToCancelWaitingData()                                                 override;
+    void setWaitingDataProgress(double value)                                       override;
 
 private:
+
+    // Hidden copy constructor and assignment operator.
+    DImgRAWLoader(const DImgRAWLoader&);
+    DImgRAWLoader& operator=(const DImgRAWLoader&);
 
     DImgLoaderObserver*  m_observer;
     RawProcessingFilter* m_filter;

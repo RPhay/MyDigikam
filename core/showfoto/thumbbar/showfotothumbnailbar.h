@@ -73,6 +73,10 @@ protected:
 
 private:
 
+    // Hidden copy constructor and assignment operator.
+    ShowfotoThumbnailBar(const ShowfotoThumbnailBar&);
+    ShowfotoThumbnailBar& operator=(const ShowfotoThumbnailBar&);
+
     class Private;
     Private* const d;
 };
