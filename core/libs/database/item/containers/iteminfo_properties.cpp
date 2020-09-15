@@ -239,7 +239,8 @@ int ItemInfo::unconfirmedFaceCount() const
 
     ItemInfoWriteLocker lock;
     m_data.data()->unconfirmedFaceCountCached = true;
-    m_data.data()->unconfirmedFaceCount = count;
+    m_data.data()->unconfirmedFaceCount       = count;
+
     return m_data->unconfirmedFaceCount;
 }
 
@@ -257,7 +258,7 @@ QMap<QString, QString> ItemInfo::getSuggestedNames() const
 
     ItemInfoWriteLocker lock;
     m_data.data()->faceSuggestionsCached = true;
-    m_data.data()->faceSuggestions = faceSuggestions;
+    m_data.data()->faceSuggestions       = faceSuggestions;
 
     return m_data->faceSuggestions;
 }
@@ -370,52 +371,6 @@ void ItemInfo::setManualOrder(qlonglong value)
     ItemInfoWriteLocker lock;
     m_data->manualOrder       = value;
     m_data->manualOrderCached = true;
-}
-
-void ItemInfo::incrementUnconfirmedFaceCount(bool increment)
-{
-    if (!m_data)
-    {
-        return;
-    }
-
-    if (increment)
-    {
-        m_data->unconfirmedFaceCount++;
-        m_data->unconfirmedFaceCountCached = true;
-        return;
-    }
-
-    if (m_data->unconfirmedFaceCount > 0)
-    {
-        m_data->unconfirmedFaceCount--;
-        m_data->unconfirmedFaceCountCached = true;
-        return;
-    }
-
-    return ;
-}
-
-void ItemInfo::addSuggestedName(const QString& region, const QString& suggestedName) const
-{
-    if (!m_data || suggestedName == QLatin1String("Unknown"))
-    {
-        return;
-    }
-
-    m_data.data()->faceSuggestionsCached = true;
-    m_data.data()->faceSuggestions.insert(region, suggestedName);
-}
-
-void ItemInfo::removeSuggestedName(const QString& region) const
-{
-    if (!m_data)
-    {
-        return;
-    }
-
-    m_data.data()->faceSuggestions.remove(region);
-    m_data.data()->faceSuggestionsCached = true;
 }
 
 void ItemInfo::setOrientation(int value)

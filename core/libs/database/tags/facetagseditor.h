@@ -131,14 +131,6 @@ public:
                               const TagRegion& confirmedRegion = TagRegion());
 
     /**
-     * Use this function to confirmNames if modification of ItemInfo
-     * associated with the face is also required.
-     */
-    FaceTagsIface confirmName(const FaceTagsIface& face, ItemInfo& info, int tagId = -1,
-                              const TagRegion& confirmedRegion = TagRegion());
-
-
-    /**
      * Returns the entry that would be added if the given face is confirmed.
      */
     static FaceTagsIface confirmedEntry(const FaceTagsIface& face, int tagId = -1, const TagRegion& confirmedRegion = TagRegion());

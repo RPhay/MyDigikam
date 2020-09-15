@@ -318,22 +318,6 @@ FaceTagsIface FaceTagsEditor::confirmName(const FaceTagsIface& face, int tagId,
     return newEntry;
 }
 
-FaceTagsIface FaceTagsEditor::confirmName(const FaceTagsIface& face,  ItemInfo& info, int tagId,
-                                          const TagRegion& confirmedRegion)
-{
-    /**
-     * Update ItemInfo Properties confirming an Unconfirmed Face.
-     * This ensures that sorting/categorization based on Faces is updated.
-     */
-    if (face.type() == FaceTagsIface::UnconfirmedName && !info.isNull())
-    {
-        info.incrementUnconfirmedFaceCount(false);
-        info.removeSuggestedName(face.region().toXml());
-    }
-
-    return confirmName(face, tagId, confirmedRegion);
-}
-
 FaceTagsIface FaceTagsEditor::add(qlonglong imageId, int tagId, const TagRegion& region, bool trainFace)
 {
     qCDebug(DIGIKAM_DATABASE_LOG) << "Adding face with rectangle  " << region.toRect () << " to database";
@@ -494,20 +478,9 @@ FaceTagsIface FaceTagsEditor::changeRegion(const FaceTagsIface& face, const TagR
 
 FaceTagsIface FaceTagsEditor::changeTag(const FaceTagsIface& face, int newTagId, ItemInfo& info)
 {
-    if(face.isNull() || (face.tagId() == newTagId) || !FaceTags::isPerson(newTagId))
+    if (face.isNull() || (face.tagId() == newTagId) || !FaceTags::isPerson(newTagId))
     {
         return face;
-    }
-
-    /**
-     * Update ItemInfo Properties if the old tag
-     * was Unconfirmed. This ensures that sorting/categorization
-     * based on Faces is updated.
-     */
-    if (face.type() == FaceTagsIface::UnconfirmedName && !info.isNull())
-    {
-        info.incrementUnconfirmedFaceCount(false);
-        info.removeSuggestedName(face.region().toXml());
     }
 
     /**

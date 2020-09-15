@@ -362,7 +362,8 @@ void ItemInfoCache::slotImageTagChanged(const ImageTagChangeset& changeset)
 
             if (it != m_infoHash.end())
             {
-                (*it)->faceSuggestionsCached = false;
+                (*it)->faceSuggestionsCached      = false;
+                (*it)->unconfirmedFaceCountCached = false;
             }
         }
 
