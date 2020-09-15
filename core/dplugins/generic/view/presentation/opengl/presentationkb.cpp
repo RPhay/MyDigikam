@@ -266,14 +266,7 @@ PresentationKB::PresentationKB(PresentationContainer* const sharedData)
 
     if (d->forceFrameRate == 0)
     {
-        int rate = 25;
-
-        if (screen)
-        {
-            rate = (int)screen->refreshRate();
-        }
-
-        frameRate = rate * 2;
+        frameRate = qRound(screen->refreshRate() * 2);
     }
     else
     {
