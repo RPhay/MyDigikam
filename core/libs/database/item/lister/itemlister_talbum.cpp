@@ -250,8 +250,8 @@ QString ItemLister::tagSearchXml(int tagId,
         QStringList properties;
         properties << ImageTagPropertyName::autodetectedPerson();
         properties << ImageTagPropertyName::autodetectedFace();
-        properties << ImageTagPropertyName::tagRegion();
         properties << ImageTagPropertyName::ignoredFace();
+        properties << ImageTagPropertyName::tagRegion();
 
         foreach (const QString& property, properties)
         {

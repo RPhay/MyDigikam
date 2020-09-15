@@ -323,17 +323,19 @@ void FaceUtils::addNormalTag(qlonglong imageId, int tagId)
      */
     QTimer::singleShot(200, [=]()
     {
-        if (!FaceTags::isTheIgnoredPerson(tagId)     &&
-            !FaceTags::isTheUnknownPerson(tagId)     &&
+        if (!FaceTags::isTheIgnoredPerson(tagId)  &&
+            !FaceTags::isTheUnknownPerson(tagId)  &&
             !FaceTags::isTheUnconfirmedPerson(tagId)
-            )
+           )
         {
             TAlbum* album = AlbumManager::instance()->findTAlbum(tagId);
 
             // If Icon is NULL, set the newly added Face as the Icon.
+
             if (album && album->iconId() == 0)
             {
                 QString err;
+
                 if (!AlbumManager::instance()->updateTAlbumIcon(album, QString(),
                                                                 imageId, err))
                 {
@@ -348,13 +350,13 @@ void FaceUtils::removeNormalTag(qlonglong imageId, int tagId)
 {
     FileActionMngr::instance()->removeTag(ItemInfo(imageId), tagId);
 
-    if (!FaceTags::isTheIgnoredPerson(tagId)     &&
-        !FaceTags::isTheUnknownPerson(tagId)     &&
+    if (!FaceTags::isTheIgnoredPerson(tagId)  &&
+        !FaceTags::isTheUnknownPerson(tagId)  &&
         !FaceTags::isTheUnconfirmedPerson(tagId)
-        )
+       )
     {
         int count = CoreDbAccess().db()->getNumberOfImagesInTagProperties(tagId,
-                                        ImageTagPropertyName::tagRegion());
+                                         ImageTagPropertyName::tagRegion());
 
         /**
          * If the face just removed was the final face
@@ -367,6 +369,7 @@ void FaceUtils::removeNormalTag(qlonglong imageId, int tagId)
             if (album && album->iconId() != 0)
             {
                 QString err;
+
                 if (!AlbumManager::instance()->updateTAlbumIcon(album, QString(),
                                                                 0, err))
                 {

@@ -78,15 +78,15 @@ void ItemIconView::slotRemoveTag(int tagID)
 {
     FileActionMngr::instance()->removeTags(selectedInfoList(ApplicationSettings::Metadata), QList<int>() << tagID);
 
-
     /**
      * Implementation for Automatic Icon Removal of
      * Confirmed Tags.
      * QTimer to ensure TagRemoval is complete.
      */
-    if (!FaceTags::isTheIgnoredPerson(tagID)     &&
-        !FaceTags::isTheUnknownPerson(tagID)     &&
-        !FaceTags::isTheUnconfirmedPerson(tagID))
+    if (!FaceTags::isTheIgnoredPerson(tagID)  &&
+        !FaceTags::isTheUnknownPerson(tagID)  &&
+        !FaceTags::isTheUnconfirmedPerson(tagID)
+       )
     {
         QTimer::singleShot(200, [=]()
         {
@@ -104,6 +104,7 @@ void ItemIconView::slotRemoveTag(int tagID)
                 if (album && album->iconId() != 0)
                 {
                     QString err;
+
                     if (!AlbumManager::instance()->updateTAlbumIcon(album, QString(),
                                                                     0, err))
                     {

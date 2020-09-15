@@ -213,7 +213,7 @@ void TagsJob::run()
         facesNumberMap.insert(property, counts);
 
         property = ImageTagPropertyName::ignoredFace();
-        counts  = CoreDbAccess().db()->getNumberOfImagesInTagProperties(property);
+        counts   = CoreDbAccess().db()->getNumberOfImagesInTagProperties(property);
 
         facesNumberMap.insert(property, counts);
 
