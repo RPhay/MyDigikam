@@ -53,11 +53,11 @@ typedef QHash<QString, QByteArray> MyHash;
 Q_GLOBAL_STATIC(MyHash, s_propertyMap)
 Q_GLOBAL_STATIC(MyHash, s_changedMap)
 
-class DConfigDlgMngr::Private
+class Q_DECL_HIDDEN DConfigDlgMngr::Private
 {
 public:
 
-    Private(DConfigDlgMngr* const q)
+    explicit Private(DConfigDlgMngr* const q)
         : q(q),
           conf(nullptr),
           dialog(nullptr),
