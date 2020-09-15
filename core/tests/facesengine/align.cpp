@@ -72,7 +72,7 @@ class Q_DECL_HIDDEN OpenCVSideBySideDisplay
 {
 public:
 
-    OpenCVSideBySideDisplay(int rows, int uiSize = 200)
+    explicit OpenCVSideBySideDisplay(int rows, int uiSize = 200)
         : bigImage(cv::Mat::zeros(uiSize*rows, 2*uiSize, CV_8UC3)),
           uiSize(uiSize),
           currentRow(0)

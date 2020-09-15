@@ -63,11 +63,17 @@ QList<cv::Mat> toImages(const QStringList& paths)
     {
         QByteArray s = path.toLocal8Bit();
         images << cv::imread(std::string(s.data()),
+
 #if OPENCV_TEST_VERSION(3,99,0)
+
             CV_LOAD_IMAGE_GRAYSCALE
+
 #else
+
             cv::IMREAD_GRAYSCALE
+
 #endif
+
         );
     }
 
@@ -80,7 +86,7 @@ class Q_DECL_HIDDEN OpenCVSideBySideDisplay
 {
 public:
 
-    OpenCVSideBySideDisplay(int rows, int uiSize = 200)
+    explicit OpenCVSideBySideDisplay(int rows, int uiSize = 200)
         : bigImage(cv::Mat::zeros(uiSize*rows, 2*uiSize, CV_8UC3)),
           uiSize(uiSize),
           currentRow(0)
