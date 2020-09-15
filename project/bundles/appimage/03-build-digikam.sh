@@ -77,6 +77,7 @@ if [ -d "$DK_BUILDTEMP/digikam-$DK_VERSION" ] ; then
     git reset --hard
     git pull
 
+    rm -fr po
     rm -fr build
     mkdir -p build
     cd build
