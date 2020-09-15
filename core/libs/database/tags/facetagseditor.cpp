@@ -503,11 +503,19 @@ FaceTagsIface FaceTagsEditor::changeTag(const FaceTagsIface& face, int newTagId,
      * We store metadata of FaceTags, if it's a confirmed
      * or ignored person.
      */
+/*
     bool isConfirmedOrIgnored = !FaceTags::isTheUnknownPerson(newTagId) &&
                                 !FaceTags::isTheUnconfirmedPerson(newTagId);
+*/
+
+    bool isConfirmed = (
+                        !FaceTags::isTheIgnoredPerson(newTagId)  &&
+                        !FaceTags::isTheUnknownPerson(newTagId)  &&
+                        !FaceTags::isTheUnconfirmedPerson(newTagId)
+                       );
 
     addFaceAndTag(newPair, newFace, FaceTagsIface::attributesForFlags(newFace.type()),
-                  isConfirmedOrIgnored);
+                  isConfirmed);
 
     return newFace;
  }
