@@ -129,7 +129,7 @@ void DImgPreviewItem::setPath(const QString& path, bool rePreview)
 {
     Q_D(DImgPreviewItem);
 
-    if (path == d->path && !rePreview)
+    if ((path == d->path) && !rePreview)
     {
         return;
     }
@@ -263,7 +263,7 @@ void DImgPreviewItem::slotGotImagePreview(const LoadingDescription& description,
 {
     Q_D(DImgPreviewItem);
 
-    if (description.filePath != d->path || description.isThumbnail())
+    if ((description.filePath != d->path) || description.isThumbnail())
     {
         return;
     }
