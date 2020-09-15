@@ -102,7 +102,7 @@ QList<QWidget*> SetupCollectionDelegate::createItemWidgets(const QModelIndex& /*
     // but we have no index here, but need to provide the widgets for each index
 
     QList<QWidget*> list;
-    QPushButton* const pushButton = new QPushButton();
+    QPushButton* const pushButton   = new QPushButton();
     list << pushButton;
 
     connect(pushButton, &QPushButton::clicked,
@@ -353,7 +353,7 @@ void SetupCollectionTreeView::modelLoadedCollections()
     SetupCollectionModel* const collectionModel = static_cast<SetupCollectionModel*>(model());
     QModelIndex categoryIndex = collectionModel->indexForCategory(SetupCollectionModel::CategoryLocal);
     QModelIndex firstChildOfFirstCategory       = collectionModel->index(0, SetupCollectionModel::ColumnStatus, categoryIndex);
-    QSize hint = sizeHintForIndex(firstChildOfFirstCategory);
+    QSize hint                                  = sizeHintForIndex(firstChildOfFirstCategory);
     setColumnWidth(SetupCollectionModel::ColumnStatus, hint.width() + indentation());
 }
 
@@ -1193,7 +1193,7 @@ bool SetupCollectionModel::askForNewCollectionPath(int category, QString* const 
                 {
                     messageFromManager = i18n("You have previously added a collection "
                                               "that contains the path \"%1\".", QDir::toNativeSeparators(path));
-                    result = CollectionManager::LocationNotAllowed;
+                    result             = CollectionManager::LocationNotAllowed;
                     break;
                 }
             }
@@ -1242,7 +1242,7 @@ bool SetupCollectionModel::askForNewCollectionPath(int category, QString* const 
     QLabel* const deviceIconLabel = new QLabel;
     deviceIconLabel->setPixmap(QIcon::fromTheme(deviceIcon).pixmap(64));
 
-    QGroupBox* const infoBox = new QGroupBox;
+    QGroupBox* const infoBox      = new QGroupBox;
 /*
     infoBox->setTitle(i18n("More Information"));
 */
@@ -1322,7 +1322,7 @@ bool SetupCollectionModel::askForNewCollectionCategory(int* const category)
     QLabel* const questionIconLabel = new QLabel;
     questionIconLabel->setPixmap(QIcon::fromTheme(QLatin1String("view-sort")).pixmap(64));
 
-    QGridLayout* const grid1 = new QGridLayout;
+    QGridLayout* const grid1        = new QGridLayout;
     grid1->addWidget(questionIconLabel, 0, 0, 3, 1);
     grid1->addWidget(nameLabel,         0, 1);
     grid1->addWidget(categoryBox,       1, 1);

@@ -53,8 +53,8 @@ class Q_DECL_HIDDEN DWItemDelegateEventListener
 {
 public:
 
-    DWItemDelegateEventListener(DWItemDelegatePoolPrivate* const poolPrivate,
-                                QObject* const parent = nullptr)
+    explicit DWItemDelegateEventListener(DWItemDelegatePoolPrivate* const poolPrivate,
+                                         QObject* const parent = nullptr)
         : QObject(parent),
           poolPrivate(poolPrivate)
     {
