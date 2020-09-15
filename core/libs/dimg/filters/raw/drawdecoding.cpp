@@ -181,7 +181,7 @@ class Q_DECL_HIDDEN DRawDecoderSettingsReader
 {
 public:
 
-    DRawDecoderSettingsReader(const FilterAction& action, const QString& prefix = QString())
+    explicit DRawDecoderSettingsReader(const FilterAction& action, const QString& prefix = QString())
         : action(action),
           prefix(prefix)
     {
