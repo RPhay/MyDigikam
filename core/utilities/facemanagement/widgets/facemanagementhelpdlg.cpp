@@ -62,7 +62,7 @@ FaceManagementHelpDlg::FaceManagementHelpDlg(QWidget* const parent)
 
     QLabel* const logo      = new QLabel(infoPage);
     logo->setAlignment(Qt::AlignHCenter | Qt::AlignVCenter);
-    logo->setPixmap(QIcon::fromTheme(QLatin1String("digikam")).pixmap(QSize(100,100)));
+    logo->setPixmap(QIcon::fromTheme(QLatin1String("digikam")).pixmap(QSize(100, 100)));
 
     QLabel* const header    = new QLabel(infoPage);
     header->setWordWrap(true);
@@ -110,14 +110,14 @@ FaceManagementHelpDlg::FaceManagementHelpDlg(QWidget* const parent)
                              QString::fromLatin1("<a href='%1'>digiKam Online Handbook</a>").arg(documentationLink)));
 
     QGridLayout* const infoPageLayout = new QGridLayout();
-    infoPageLayout->addWidget(logo,                     0, 0, 1, 1);
-    infoPageLayout->addWidget(header,                   0, 1, 1, 1);
-    infoPageLayout->addWidget(introText,                1, 0, 1, 2);
-    infoPageLayout->addWidget(faceDetectionHeader,      2, 0, 1, 1);
-    infoPageLayout->addWidget(faceDetection,            2, 1, 1, 1);
-    infoPageLayout->addWidget(faceRecognitionHeader,    3, 0, 1, 1);
-    infoPageLayout->addWidget(faceRecognition,          3, 1, 1, 1);
-    infoPageLayout->addWidget(footerText,               4, 0, 1, 2);
+    infoPageLayout->addWidget(logo,                  0, 0, 1, 1);
+    infoPageLayout->addWidget(header,                0, 1, 1, 1);
+    infoPageLayout->addWidget(introText,             1, 0, 1, 2);
+    infoPageLayout->addWidget(faceDetectionHeader,   2, 0, 1, 1);
+    infoPageLayout->addWidget(faceDetection,         2, 1, 1, 1);
+    infoPageLayout->addWidget(faceRecognitionHeader, 3, 0, 1, 1);
+    infoPageLayout->addWidget(faceRecognition,       3, 1, 1, 1);
+    infoPageLayout->addWidget(footerText,            4, 0, 1, 2);
     infoPageLayout->setRowStretch(1, 1);
     infoPageLayout->setRowStretch(2, 1);
     infoPageLayout->setRowStretch(3, 1);
@@ -132,7 +132,7 @@ FaceManagementHelpDlg::FaceManagementHelpDlg(QWidget* const parent)
     QGridLayout* const faceDetectionPageLayout = new QGridLayout();
 
     QPixmap detectFaceOptionImage  = QPixmap(QStandardPaths::locate(QStandardPaths::GenericDataLocation, QLatin1String("digikam/data/detectFacesImg.png")));
-    detectFaceOptionImage          = detectFaceOptionImage.scaled(QSize(350,170));
+    detectFaceOptionImage          = detectFaceOptionImage.scaled(QSize(350, 170));
 
     QLabel* const detectFaceOptionLabel = new QLabel(faceDetectionPage);
     detectFaceOptionLabel->setPixmap(detectFaceOptionImage);
@@ -179,14 +179,14 @@ FaceManagementHelpDlg::FaceManagementHelpDlg(QWidget* const parent)
                                        "will appear. You may now manually identify a few of these "
                                        "faces and then proceed for face recognition."));
 
-    faceDetectionPageLayout->addWidget(detectFaceOptionLabel,       0, 0, 1, 2);
-    faceDetectionPageLayout->addWidget(detectFaceInfoLabel,         0, 2, 1, 2);
-    faceDetectionPageLayout->addWidget(detectIntroLabel,            1, 0, 1, 4);
-    faceDetectionPageLayout->addWidget(skipScannedHeaderLabel,      2, 0, 1, 2);
-    faceDetectionPageLayout->addWidget(skipScannedLabel,            2, 2, 1, 2);
-    faceDetectionPageLayout->addWidget(scanAgainHeaderLabel,        3, 0, 1, 2);
-    faceDetectionPageLayout->addWidget(scanAgainLabel,              3, 2, 1, 2);
-    faceDetectionPageLayout->addWidget(resultsDetectedLabel,        4, 0, 1, 4);
+    faceDetectionPageLayout->addWidget(detectFaceOptionLabel,  0, 0, 1, 2);
+    faceDetectionPageLayout->addWidget(detectFaceInfoLabel,    0, 2, 1, 2);
+    faceDetectionPageLayout->addWidget(detectIntroLabel,       1, 0, 1, 4);
+    faceDetectionPageLayout->addWidget(skipScannedHeaderLabel, 2, 0, 1, 2);
+    faceDetectionPageLayout->addWidget(skipScannedLabel,       2, 2, 1, 2);
+    faceDetectionPageLayout->addWidget(scanAgainHeaderLabel,   3, 0, 1, 2);
+    faceDetectionPageLayout->addWidget(scanAgainLabel,         3, 2, 1, 2);
+    faceDetectionPageLayout->addWidget(resultsDetectedLabel,   4, 0, 1, 4);
     faceDetectionPageLayout->setRowStretch(2, 1);
     faceDetectionPageLayout->setRowStretch(3, 1);
 
@@ -202,7 +202,7 @@ FaceManagementHelpDlg::FaceManagementHelpDlg(QWidget* const parent)
 
     QLabel* const identifyLabel        = new QLabel(faceRecogPage);
     QMovie* const identifyImage        = new QMovie(QStandardPaths::locate(QStandardPaths::GenericDataLocation, QLatin1String("digikam/data/tagFacesImg.gif")));
-    identifyImage->setScaledSize(QSize(185,220));
+    identifyImage->setScaledSize(QSize(185, 220));
     identifyLabel->setMovie(identifyImage);
     identifyImage->start();
     identifyLabel->setAlignment(Qt::AlignLeft | Qt::AlignVCenter);
@@ -230,7 +230,7 @@ FaceManagementHelpDlg::FaceManagementHelpDlg(QWidget* const parent)
                              "you can later unmark the face if needed."));
 
     QPixmap ignoreImage           = QPixmap(QStandardPaths::locate(QStandardPaths::GenericDataLocation, QLatin1String("digikam/data/ignoreImg.png")));
-    ignoreImage                   = ignoreImage.scaled(QSize(185,230));
+    ignoreImage                   = ignoreImage.scaled(QSize(185, 230));
 
     QLabel* const ignoreLabel     = new QLabel(faceRecogPage);
     ignoreLabel->setPixmap(ignoreImage);
@@ -245,7 +245,7 @@ FaceManagementHelpDlg::FaceManagementHelpDlg(QWidget* const parent)
                                   "of results."));
 
     QPixmap workOnAllCoresImage  = QPixmap(QStandardPaths::locate(QStandardPaths::GenericDataLocation, QLatin1String("digikam/data/workOnAllCoresImg.png")));
-    workOnAllCoresImage          = workOnAllCoresImage.scaled(QSize(445,170));
+    workOnAllCoresImage          = workOnAllCoresImage.scaled(QSize(445, 170));
 
     QLabel* const workOnAllCoresLabel = new QLabel(faceRecogPage);
     workOnAllCoresLabel->setPixmap(workOnAllCoresImage);
@@ -283,7 +283,7 @@ FaceManagementHelpDlg::FaceManagementHelpDlg(QWidget* const parent)
     overlayText->setAlignment(Qt::AlignTop);
 
     QLabel* const confirmIcon    = new QLabel(confirmFacesPage);
-    confirmIcon->setPixmap(QIcon::fromTheme(QLatin1String("dialog-ok-apply")).pixmap(QSize(20,20)));
+    confirmIcon->setPixmap(QIcon::fromTheme(QLatin1String("dialog-ok-apply")).pixmap(QSize(20, 20)));
     confirmIcon->setAlignment(Qt::AlignTop);
 
     QLabel* const confirmText    = new QLabel(confirmFacesPage);
@@ -293,7 +293,7 @@ FaceManagementHelpDlg::FaceManagementHelpDlg(QWidget* const parent)
     confirmText->setAlignment(Qt::AlignTop);
 
     QLabel* const rejectIcon     = new QLabel(confirmFacesPage);
-    rejectIcon->setPixmap(QIcon::fromTheme(QLatin1String("list-remove")).pixmap(QSize(20,20)));
+    rejectIcon->setPixmap(QIcon::fromTheme(QLatin1String("list-remove")).pixmap(QSize(20, 20)));
     rejectIcon->setAlignment(Qt::AlignTop);
 
     QLabel* const rejectText     = new QLabel(confirmFacesPage);
@@ -304,7 +304,7 @@ FaceManagementHelpDlg::FaceManagementHelpDlg(QWidget* const parent)
 
 
     QLabel* const deleteIcon     = new QLabel(confirmFacesPage);
-    deleteIcon->setPixmap(QIcon::fromTheme(QLatin1String("window-close")).pixmap(QSize(20,20)));
+    deleteIcon->setPixmap(QIcon::fromTheme(QLatin1String("window-close")).pixmap(QSize(20, 20)));
     deleteIcon->setAlignment(Qt::AlignTop);
 
     QLabel* const deleteText     = new QLabel(confirmFacesPage);

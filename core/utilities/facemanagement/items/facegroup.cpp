@@ -143,7 +143,7 @@ void FaceGroup::setVisibleItem(RegionFrameItem* item)
 
 void FaceGroup::setInfo(const ItemInfo& info)
 {
-    if (d->info == info && d->state != NoFaces)
+    if ((d->info == info) && (d->state != NoFaces))
     {
         return;
     }
