@@ -10,8 +10,9 @@ SET(PREFIX_ext_imagemagick "${EXTPREFIX}")
 
 ExternalProject_Add(ext_imagemagick
     DOWNLOAD_DIR ${EXTERNALS_DOWNLOAD_DIR}
-    URL https://github.com/ImageMagick/ImageMagick/archive/7.0.8-64.tar.gz
-    URL_MD5 053dac22b86ef475259b6f8b952997df
+
+    GIT_REPOSITORY https://github.com/ImageMagick/ImageMagick.git
+    GIT_TAG 7.0.10-29
 
     CONFIGURE_COMMAND <SOURCE_DIR>/configure --prefix=${PREFIX_ext_imagemagick}
                                              --without-freetype

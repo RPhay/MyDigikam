@@ -20,8 +20,8 @@
             "sources": [
                 {
                     "type": "archive",
-                    "url": "http://downloads.sourceforge.net/project/boost/boost/1.72.0/boost_1_72_0.tar.bz2",
-                    "md5": "cb40943d2a2cb8ce08d42bc48b0f84f0"
+                    "url": "http://downloads.sourceforge.net/project/boost/boost/1.74.0/boost_1_74_0.tar.bz2",
+                    "md5": "da07ca30dd1c0d1fdedbd487efee01bd"
                 }
             ],
             "build-commands": [
@@ -129,12 +129,12 @@
                 "-DCV_TRACE=OFF",
                 "-DWITH_OPENJPEG=OFF"
             ],
-            "sources": [ { "type": "git", "url": "https://github.com/Itseez/opencv.git", "tag": "3.4.10" } ]
+            "sources": [ { "type": "git", "url": "https://github.com/Itseez/opencv.git", "tag": "4.4.0" } ]
         },
         {
             "name": "sane",
             "buildsystem": "autotools",
-            "sources": [ { "type": "git", "url": "https://gitlab.com/sane-project/backends", "tag": "RELEASE_1_0_27"} ]
+            "sources": [ { "type": "git", "url": "https://gitlab.com/sane-project/backends", "tag": "RELEASE_1_0_29"} ]
         },
         {
             "name": "libksane",
@@ -144,7 +144,7 @@
         {
             "name": "gphoto2",
             "sources": [
-                { "type": "git", "url": "https://github.com/gphoto/libgphoto2.git", "tag": "v2.5.24"},
+                { "type": "git", "url": "https://github.com/gphoto/libgphoto2.git", "tag": "v2.5.25"},
                 {
                     "type": "script",
                     "dest-filename": "autogen.sh",
@@ -171,7 +171,7 @@
                 "-DJAS_ENABLE_PROGRAMS=OFF"
             ],
             "builddir": true,
-            "sources": [ { "type": "git", "url": "https://github.com/mdadams/jasper.git", "tag": "version-2.0.17" } ]
+            "sources": [ { "type": "git", "url": "https://github.com/mdadams/jasper.git", "tag": "version-2.0.20" } ]
         },
         {
             "name": "exiv2",
@@ -215,7 +215,7 @@
                 "-DBUILD_TESTING=OFF"
             ],
             "builddir": true,
-            "sources": [ { "type": "git", "url": "https://invent.kde.org/education/marble.git", "tag": "v20.04.3" } ]
+            "sources": [ { "type": "git", "url": "https://invent.kde.org/education/marble.git", "tag": "v20.08.1" } ]
         },
         {
             "name": "qtav",
@@ -269,7 +269,7 @@
                 "--with-quantum-depth=16"
             ],
             "builddir": true,
-            "sources": [ { "type": "git", "url": "https://github.com/ImageMagick/ImageMagick.git", "tag": "7.0.10-13" } ]
+            "sources": [ { "type": "git", "url": "https://github.com/ImageMagick/ImageMagick.git", "tag": "7.0.10-29" } ]
         },
         {
             "name": "x265",
