@@ -38,7 +38,7 @@ int FaceDb::insertFaceVector(const cv::Mat& faceEmbedding,
     bindingValues << context;
     bindingValues << QByteArray::fromRawData((char*)faceEmbedding.ptr<float>(), (sizeof(float) * 128));
 
-    DbEngineSqlQuery query = d->db->execQuery(QLatin1String("INSERT INTO FaceMatrices (identity, context, embedding) "
+    DbEngineSqlQuery query = d->db->execQuery(QLatin1String("INSERT INTO FaceMatrices (identity, `context`, embedding) "
                                                             "VALUES (?,?,?);"),
                                               bindingValues);
 
@@ -107,7 +107,7 @@ void FaceDb::clearDNNTraining(const QString& context)
     }
     else
     {
-        d->db->execSql(QLatin1String("DELETE FROM FaceMatrices WHERE context=?;"),
+        d->db->execSql(QLatin1String("DELETE FROM FaceMatrices WHERE `context`=?;"),
                        context);
     }
 }
@@ -123,7 +123,7 @@ void FaceDb::clearDNNTraining(const QList<int>& identities, const QString& conte
         }
         else
         {
-            d->db->execSql(QLatin1String("DELETE FROM FaceMatrices WHERE identity=? AND context=?;"),
+            d->db->execSql(QLatin1String("DELETE FROM FaceMatrices WHERE identity=? AND `context`=?;"),
                            id, context);
         }
     }

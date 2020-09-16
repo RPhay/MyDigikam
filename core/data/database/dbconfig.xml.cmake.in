@@ -1768,7 +1768,7 @@
                 <statement mode="plain">CREATE TABLE FaceMatrices
                     (id INTEGER PRIMARY KEY AUTO_INCREMENT,
                     identity INTEGER NOT NULL,
-                    context LONGTEXT CHARACTER SET utf8 COLLATE utf8_general_ci,
+                    `context` LONGTEXT CHARACTER SET utf8 COLLATE utf8_general_ci,
                     embedding BLOB NOT NULL,
                     CONSTRAINT FaceEmbedding_Identities FOREIGN KEY (identity) REFERENCES Identities (id) ON DELETE CASCADE ON UPDATE CASCADE)
                     ENGINE InnoDB;
