@@ -82,4 +82,5 @@ BUGFIXES:
 069 ==> 377422 - Main window got stuck in Full Screen mode - Cinnamon DE.
 070 ==> 426346 - People display is garbled.
 071 ==> 426356 - Poor video performance in Flatpak images.
-072 ==> 
+072 ==> 426332 - Confirmed Face Tags Turned To Unconfirmed.
+073 ==> 

@@ -113,9 +113,10 @@ FaceItem* FaceGroup::Private::addItem(const FaceTagsIface& face)
 {
     FaceItem* const item                 = createItem(face);
 
-    // for identification, use index in our list
+    QList<QVariant> identifier(face.toVariant().toList());
+    identifier << items.size();
 
-    AssignNameWidget* const assignWidget = createAssignNameWidget(face, items.size());
+    AssignNameWidget* const assignWidget = createAssignNameWidget(face, identifier);
     item->setHudWidget(assignWidget);
 /*
     new StyleSheetDebugger(assignWidget);

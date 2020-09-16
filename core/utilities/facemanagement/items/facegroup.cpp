@@ -406,7 +406,14 @@ void FaceGroup::slotAlbumRenamed(Album* album)
 
 void FaceGroup::slotAssigned(const TaggingAction& action, const ItemInfo&, const QVariant& faceIdentifier)
 {
-    FaceItem* const item    = d->items[faceIdentifier.toInt()];
+   QList<QVariant> faceList(faceIdentifier.toList());
+
+    if (faceList.size() != 5)
+    {
+        return;
+    }
+
+    FaceItem* const item    = d->items[faceList[4].toInt()];
     FaceTagsIface face      = item->face();
     TagRegion currentRegion = TagRegion(item->originalRect());
 
@@ -455,17 +462,27 @@ void FaceGroup::slotAssigned(const TaggingAction& action, const ItemInfo&, const
 
 void FaceGroup::slotRejected(const ItemInfo&, const QVariant& faceIdentifier)
 {
-    FaceItem* const item = d->items[faceIdentifier.toInt()];
-    d->editPipeline.remove(d->info, item->face());
+    QList<QVariant> faceList(faceIdentifier.toList());
 
-    item->setFace(FaceTagsIface());
-    d->visibilityController->hideAndRemoveItem(item);
+    if (faceList.size() == 5)
+    {
+        FaceItem* const item = d->items[faceList[4].toInt()];
+        d->editPipeline.remove(d->info, item->face());
+
+        item->setFace(FaceTagsIface());
+        d->visibilityController->hideAndRemoveItem(item);
+    }
 }
 
 void FaceGroup::slotLabelClicked(const ItemInfo&, const QVariant& faceIdentifier)
 {
-    FaceItem* const item = d->items[faceIdentifier.toInt()];
-    item->switchMode(AssignNameWidget::ConfirmedEditMode);
+    QList<QVariant> faceList(faceIdentifier.toList());
+
+    if (faceList.size() == 5)
+    {
+        FaceItem* const item = d->items[faceList[4].toInt()];
+        item->switchMode(AssignNameWidget::ConfirmedEditMode);
+    }
 }
 
 void FaceGroup::startAutoSuggest()

@@ -211,9 +211,9 @@ FaceTagsIface FaceTagsIface::fromVariant(const QVariant& var)
 {
     if (var.type() == QVariant::List)
     {
-        QList<QVariant> list = var.toList();
+        QList<QVariant> list(var.toList());
 
-        if (list.size() == 4)
+        if (list.size() == 4 || list.size() == 5)
         {
             return FaceTagsIface((Type)list.at(0).toInt(),
                                  list.at(1).toLongLong(),

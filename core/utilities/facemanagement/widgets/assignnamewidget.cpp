@@ -194,11 +194,14 @@ void AssignNameWidget::setUserData(const ItemInfo& info, const QVariant& faceIde
      * Ignored faces are drawn over with a different
      * overlay, as Reject button should be disabled.
      */
-    if      (face.type() == FaceTagsIface::IgnoredName)
+    if      (face.type() == FaceTagsIface::ConfirmedName)
+    {
+        setMode(AssignNameWidget::ConfirmedMode);
+    }
+    else if (face.type() == FaceTagsIface::IgnoredName)
     {
         setMode(AssignNameWidget::IgnoredMode);
     }
-
     else
     {
         setMode(AssignNameWidget::UnconfirmedEditMode);
