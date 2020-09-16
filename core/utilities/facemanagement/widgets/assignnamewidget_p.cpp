@@ -212,6 +212,7 @@ void AssignNameWidget::Private::checkWidgets()
             {
                 confirmButton = createToolButton(QIcon::fromTheme(QLatin1String("dialog-ok-apply")), i18n("OK"));
                 confirmButton->setToolTip(i18nc("@info:tooltip", "Unmark this face as Ignored"));
+
                 q->connect(confirmButton, SIGNAL(clicked()),
                            q, SLOT(slotReject()));
             }
@@ -503,10 +504,11 @@ void AssignNameWidget::Private::setAddTagsWidgetContents(T* const widget)
 
 void AssignNameWidget::Private::updateContents()
 {
-    if (!isValid() || mode == AssignNameWidget::IgnoredMode)
+    if (!isValid() || (mode == AssignNameWidget::IgnoredMode))
     {
         return;
     }
+
     if      (comboBox)
     {
         setAddTagsWidgetContents(comboBox);
