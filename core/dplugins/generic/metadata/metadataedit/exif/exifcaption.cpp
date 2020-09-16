@@ -152,7 +152,7 @@ EXIFCaption::EXIFCaption(QWidget* const parent)
                  "<b><a href='https://en.wikipedia.org/wiki/EXIF'>Exif</a></b> "
                  "text tags marked by (*) only support printable "
                  "<b><a href='https://en.wikipedia.org/wiki/Ascii'>ASCII</a></b> "
-                 "characters.</b>"), this);
+                 "characters."), this);
     note->setOpenExternalLinks(true);
     note->setWordWrap(true);
     note->setFrameStyle(QFrame::StyledPanel | QFrame::Raised);
