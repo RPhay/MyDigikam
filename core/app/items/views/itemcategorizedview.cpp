@@ -722,6 +722,7 @@ void ItemCategorizedView::showContextMenuOnInfo(QContextMenuEvent*, const ItemIn
 void ItemCategorizedView::paintEvent(QPaintEvent* e)
 {
     // We want the thumbnails to be loaded in order.
+/*
     ItemThumbnailModel* const thumbModel = imageThumbnailModel();
 
     if (thumbModel)
@@ -729,7 +730,7 @@ void ItemCategorizedView::paintEvent(QPaintEvent* e)
         QModelIndexList indexesToThumbnail = imageFilterModel()->mapListToSource(categorizedIndexesIn(viewport()->rect()));
         d->delegate->prepareThumbnails(thumbModel, indexesToThumbnail);
     }
-
+*/
     ItemViewCategorized::paintEvent(e);
 }
 
