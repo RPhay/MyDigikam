@@ -84,4 +84,5 @@ BUGFIXES:
 071 ==> 426356 - Poor video performance in Flatpak images.
 072 ==> 426332 - Confirmed Face Tags Turned To Unconfirmed.
 073 ==> 132631 - digiKam does not restore main window size.
-074 ==> 
+074 ==> 425238 - Abnormally large icons.
+075 ==> 
