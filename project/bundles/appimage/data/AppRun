@@ -107,10 +107,6 @@ fi
 
 preload_shared_library libudev.so.0
 
-# See bug #417121
-preload_shared_library libnss3.so
-preload_shared_library libnssutil3.so
-
 # See bug #414737
 preload_shared_library libxcb-dri3.so.0
 

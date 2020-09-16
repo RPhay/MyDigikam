@@ -315,6 +315,8 @@ libnss_files.so.2 \
 libnss_hesiod.so.2 \
 libnss_nisplus.so.2 \
 libnss_nis.so.2 \
+libnss3.so \
+libnssutil3.so \
 libp11-kit.so.0 \
 libpangocairo-1.0.so.0 \
 libpthread.so.0 \
