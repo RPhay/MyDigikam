@@ -221,6 +221,7 @@ QVariant AssignNameWidget::faceIdentifier() const
 void AssignNameWidget::setCurrentFace(const FaceTagsIface& face)
 {
     TAlbum* album = nullptr;
+
     if (!face.isNull() && !face.isUnknownName() && !face.isIgnoredName())
     {
         album = AlbumManager::instance()->findTAlbum(face.tagId());
