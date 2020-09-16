@@ -83,4 +83,5 @@ BUGFIXES:
 070 ==> 426346 - People display is garbled.
 071 ==> 426356 - Poor video performance in Flatpak images.
 072 ==> 426332 - Confirmed Face Tags Turned To Unconfirmed.
-073 ==> 
+073 ==> 132631 - digiKam does not restore main window size.
+074 ==> 
