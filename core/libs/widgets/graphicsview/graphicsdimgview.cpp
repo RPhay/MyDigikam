@@ -410,10 +410,10 @@ void GraphicsDImgView::wheelEvent(QWheelEvent* e)
         return;
     }
 
-    else if(
-            ((p == this->verticalScrollBar()->maximum()) && (e->angleDelta().y() < 0)) ||
-            ((p == this->verticalScrollBar()->minimum()) && (e->angleDelta().y() > 0))
-           )
+    else if (
+             ((p == this->verticalScrollBar()->maximum()) && (e->angleDelta().y() < 0)) ||
+             ((p == this->verticalScrollBar()->minimum()) && (e->angleDelta().y() > 0))
+            )
     {
         // I had to add this condition for "ImageBrushGuideWidget" that subclasses ImageRegionWidget, used
         // in the healingclone tool.

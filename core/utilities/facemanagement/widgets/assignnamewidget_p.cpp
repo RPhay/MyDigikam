@@ -216,7 +216,7 @@ void AssignNameWidget::Private::checkWidgets()
                            q, SLOT(slotReject()));
             }
 
-            if(!rejectButton)
+            if (!rejectButton)
             {
                 rejectButton = createToolButton(QIcon::fromTheme(QLatin1String("list-remove")), i18n("Reject"));
                 rejectButton->setEnabled(false);

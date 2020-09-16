@@ -122,7 +122,7 @@ QMap<double, QVector<int> > FaceDb::getClosestNeighborsTreeDb(const cv::Mat& pos
 
     DbEngineSqlQuery query = d->db->execQuery(QLatin1String("SELECT position, max_range, min_range, `left`, `right` "
                                                             "FROM KDTree WHERE id = 1"));
-    if(query.next())
+    if (query.next())
     {
         // encapsulate data node
         root.nodeID     = 1;
@@ -138,7 +138,7 @@ QMap<double, QVector<int> > FaceDb::getClosestNeighborsTreeDb(const cv::Mat& pos
         query = d->db->execQuery(QLatin1String("SELECT identity, embedding FROM FaceMatrices WHERE id = ?"),
                                  bindingValues);
 
-        if(query.next())
+        if (query.next())
         {
             root.label    = query.value(0).toInt();
             root.position = cv::Mat(1, 128, CV_32F, query.value(1).toByteArray().data()).clone();

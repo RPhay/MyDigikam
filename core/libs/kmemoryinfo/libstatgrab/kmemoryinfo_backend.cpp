@@ -250,7 +250,7 @@ int get_mem_stats(Digikam::KMemoryInfo::KMemoryInfoData* const data)
 #ifdef Q_OS_HPUX
     data->platform = QLatin1String("HPUX");
 
-    if((pagesize = sysconf(_SC_PAGESIZE)) == -1)
+    if ((pagesize = sysconf(_SC_PAGESIZE)) == -1)
     {
         //sg_set_error_with_errno(SG_ERROR_SYSCONF, "_SC_PAGESIZE");
         return 0;
@@ -280,13 +280,13 @@ int get_mem_stats(Digikam::KMemoryInfo::KMemoryInfoData* const data)
 #ifdef Q_OS_SOLARIS
     data->platform = QLatin1String("SOLARIS");
 
-    if((pagesize = sysconf(_SC_PAGESIZE)) == -1)
+    if ((pagesize = sysconf(_SC_PAGESIZE)) == -1)
     {
         //sg_set_error_with_errno(SG_ERROR_SYSCONF, "_SC_PAGESIZE");
         return 0;
     }
 
-    if((totalmem = sysconf(_SC_PHYS_PAGES)) == -1)
+    if ((totalmem = sysconf(_SC_PHYS_PAGES)) == -1)
     {
         //sg_set_error_with_errno(SG_ERROR_SYSCONF, "_SC_PHYS_PAGES");
         return 0;
@@ -298,7 +298,7 @@ int get_mem_stats(Digikam::KMemoryInfo::KMemoryInfoData* const data)
         return 0;
     }
 
-    if((ksp = kstat_lookup(kc, "unix", 0, "system_pages")) == NULL)
+    if ((ksp = kstat_lookup(kc, "unix", 0, "system_pages")) == NULL)
     {
         //sg_set_error(SG_ERROR_KSTAT_LOOKUP, "unix,0,system_pages");
         return 0;
@@ -310,7 +310,7 @@ int get_mem_stats(Digikam::KMemoryInfo::KMemoryInfoData* const data)
         return 0;
     }
 
-    if((kn = (kstat_named_t*)kstat_data_lookup(ksp, "freemem")) == NULL)
+    if ((kn = (kstat_named_t*)kstat_data_lookup(ksp, "freemem")) == NULL)
     {
         //sg_set_error(SG_ERROR_KSTAT_DATA_LOOKUP, "freemem");
         return 0;
@@ -505,7 +505,7 @@ int get_mem_stats(Digikam::KMemoryInfo::KMemoryInfoData* const data)
     data->totalRam = memstats.ullTotalPhys;
     data->usedRam  = data->totalRam - data->freeRam;
 
-    //if(read_counter_large(SG_WIN32_MEM_CACHE, &data->cacheRam)) {
+    //if (read_counter_large(SG_WIN32_MEM_CACHE, &data->cacheRam)) {
         data->cacheRam = 0;
     //}
 
@@ -653,7 +653,7 @@ int get_swap_stats(Digikam::KMemoryInfo::KMemoryInfoData* const data)
 #endif // Q_OS_HPUX
 
 #ifdef Q_OS_SOLARIS
-    if((pagesize=sysconf(_SC_PAGESIZE)) == -1)
+    if ((pagesize=sysconf(_SC_PAGESIZE)) == -1)
     {
         //sg_set_error_with_errno(SG_ERROR_SYSCONF, "_SC_PAGESIZE");
         return 0;
@@ -745,7 +745,7 @@ int get_swap_stats(Digikam::KMemoryInfo::KMemoryInfoData* const data)
         return 0;
     }
 #else // Q_OS_FREEBSD5
-    if((kvmd = sg_get_kvm()) == NULL)
+    if ((kvmd = sg_get_kvm()) == NULL)
     {
         return 0;
     }

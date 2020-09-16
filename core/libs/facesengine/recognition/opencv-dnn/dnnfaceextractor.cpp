@@ -183,7 +183,7 @@ DNNFaceExtractor::~DNNFaceExtractor()
 {
     --(d->ref);
 
-    if(d->ref == 0)
+    if (d->ref == 0)
     {
         delete d;
     }
