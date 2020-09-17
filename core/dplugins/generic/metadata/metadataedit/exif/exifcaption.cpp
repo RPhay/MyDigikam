@@ -148,7 +148,7 @@ EXIFCaption::EXIFCaption(QWidget* const parent)
 
     // --------------------------------------------------------
 
-    QLabel* const note = new QLabel(i18n("<b>Note: "
+    QLabel* const note = new QLabel(i18n("<b>Note:</b> "
                  "<b><a href='https://en.wikipedia.org/wiki/EXIF'>Exif</a></b> "
                  "text tags marked by (*) only support printable "
                  "<b><a href='https://en.wikipedia.org/wiki/Ascii'>ASCII</a></b> "
