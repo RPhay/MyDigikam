@@ -85,4 +85,6 @@ BUGFIXES:
 072 ==> 426332 - Confirmed Face Tags Turned To Unconfirmed.
 073 ==> 132631 - digiKam does not restore main window size.
 074 ==> 425238 - Abnormally large icons.
-075 ==> 
+075 ==> 292902 - After choosing a dark theme the album view still with a white background and unreadable yellow or white font.
+076 ==> 229043 - digiKam dark designs are not redable.
+077 ==> 
