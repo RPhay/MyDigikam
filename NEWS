@@ -89,4 +89,13 @@ BUGFIXES:
 076 ==> 229043 - digiKam dark designs are not redable.
 077 ==> 426575 - The album shows the contents of sub folders before the main folders.
 078 ==> 426635 - Healing Clone Tool missing from (Image Editor) Enhance Menu.
-079 ==> 
+079 ==> 087106 - Advancedslideshow : option to pause, go back or forward, and quit/resume.
+080 ==> 095592 - Slideshow fills both screens in dual head setup.
+081 ==> 114510 - In Dates view and Searches view, advancedslideshow does not work when the option "Show all images in current album" is checked.
+082 ==> 116611 - Add xscreensaver-style panning-zooming crossfade effect.
+083 ==> 125693 - User comments should appear in the slideshow.
+084 ==> 129375 - I don't want to use timer functionality for slideshow, change to next picture when key/mouse is pressed.
+085 ==> 
+
+
+
