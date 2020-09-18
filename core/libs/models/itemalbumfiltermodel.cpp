@@ -181,8 +181,10 @@ int ItemAlbumFilterModel::compareInfosCategories(const ItemInfo& left, const Ite
             // Make album paths unique across different collections.
             // The album root path can be empty if the collection is offline.
 
-            QString leftPath  = leftAlbum->albumPath()  + QString::number(leftAlbum->id());
-            QString rightPath = rightAlbum->albumPath() + QString::number(rightAlbum->id());
+            QString leftPath  = leftAlbum->albumPath().isEmpty()  ? QString::number(leftAlbum->id())
+                                                                  : leftAlbum->albumPath();
+            QString rightPath = rightAlbum->albumPath().isEmpty() ? QString::number(rightAlbum->id())
+                                                                  : rightAlbum->albumPath();
 
             return ItemSortSettings::naturalCompare(leftPath, rightPath,
                                                     d->sorter.currentCategorizationSortOrder,
