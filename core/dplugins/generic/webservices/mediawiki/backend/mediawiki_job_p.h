@@ -24,6 +24,9 @@
 #ifndef DIGIKAM_MEDIAWIKI_JOB_P_H
 #define DIGIKAM_MEDIAWIKI_JOB_P_H
 
+// Local includes
+
+#include "mediawiki_job.h"
 #include "mediawiki_iface.h"
 
 namespace MediaWiki

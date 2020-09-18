@@ -50,9 +50,9 @@ class Q_DECL_HIDDEN UploadPrivate : public JobPrivate
 public:
 
     explicit UploadPrivate(Iface& MediaWiki)
-        : JobPrivate(MediaWiki)
+        : JobPrivate(MediaWiki),
+          file(nullptr)
     {
-        file = nullptr;
     }
 
     static int error(const QString& error)

@@ -21,7 +21,6 @@
  *
  * ============================================================ */
 
-#include "mediawiki_iface.h"
 #include "mediawiki_iface_p.h"
 
 // Qt includes

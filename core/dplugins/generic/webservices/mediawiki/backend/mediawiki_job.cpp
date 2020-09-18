@@ -21,7 +21,6 @@
  *
  * ============================================================ */
 
-#include "mediawiki_job.h"
 #include "mediawiki_job_p.h"
 
 // Qt includes

@@ -24,6 +24,8 @@
 #ifndef DIGIKAM_MEDIAWIKI_IFACE_P_H
 #define DIGIKAM_MEDIAWIKI_IFACE_P_H
 
+#include "mediawiki_iface.h"
+
 // Qt includes
 
 #include <QString>
