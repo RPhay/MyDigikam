@@ -42,195 +42,195 @@ namespace Digikam
 
 bool DMetadata::loadUsingRawEngine(const QString& filePath)
 {
-    DRawInfo identify;
+    DRawInfo* const identify = new DRawInfo;
 
-    if (DRawDecoder::rawFileIdentify(identify, filePath))
+    if (DRawDecoder::rawFileIdentify(*identify, filePath))
     {
         long int num = 1;
         long int den = 1;
 
-        if (!identify.model.isNull())
+        if (!identify->model.isNull())
         {
-            setExifTagString("Exif.Image.Model", identify.model);
+            setExifTagString("Exif.Image.Model", identify->model);
         }
 
-        if (!identify.make.isNull())
+        if (!identify->make.isNull())
         {
-            setExifTagString("Exif.Image.Make", identify.make);
+            setExifTagString("Exif.Image.Make", identify->make);
         }
 
-        if (!identify.owner.isNull())
+        if (!identify->owner.isNull())
         {
-            setExifTagString("Exif.Image.Artist", identify.owner);
+            setExifTagString("Exif.Image.Artist", identify->owner);
         }
 
-        if (!identify.software.isNull())
+        if (!identify->software.isNull())
         {
-            setExifTagString("Exif.Image.ProcessingSoftware", identify.software);
+            setExifTagString("Exif.Image.ProcessingSoftware", identify->software);
         }
 
-        if (!identify.firmware.isNull())
+        if (!identify->firmware.isNull())
         {
-            setExifTagString("Exif.Image.Software", identify.firmware);
+            setExifTagString("Exif.Image.Software", identify->firmware);
         }
 
-        if (!identify.DNGVersion.isNull())
+        if (!identify->DNGVersion.isNull())
         {
-            QByteArray ba = identify.DNGVersion.toLatin1();
+            QByteArray ba = identify->DNGVersion.toLatin1();
             ba.truncate(4);
             setExifTagData("Exif.Image.DNGVersion", ba);
         }
 
-        if (!identify.uniqueCameraModel.isNull())
+        if (!identify->uniqueCameraModel.isNull())
         {
-            setExifTagString("Exif.Image.UniqueCameraModel", identify.uniqueCameraModel);
+            setExifTagString("Exif.Image.UniqueCameraModel", identify->uniqueCameraModel);
         }
 
-        if (!identify.localizedCameraModel.isNull())
+        if (!identify->localizedCameraModel.isNull())
         {
-            setExifTagData("Exif.Image.LocalizedCameraModel", identify.localizedCameraModel.toLatin1());
+            setExifTagData("Exif.Image.LocalizedCameraModel", identify->localizedCameraModel.toLatin1());
         }
 
-        if (!identify.imageID.isNull())
+        if (!identify->imageID.isNull())
         {
-            setExifTagString("Exif.Image.ImageID", identify.imageID);
+            setExifTagString("Exif.Image.ImageID", identify->imageID);
         }
 
-        if (!identify.rawDataUniqueID.isNull())
+        if (!identify->rawDataUniqueID.isNull())
         {
-            setExifTagData("Exif.Image.RawDataUniqueID", identify.rawDataUniqueID.toLatin1());
+            setExifTagData("Exif.Image.RawDataUniqueID", identify->rawDataUniqueID.toLatin1());
         }
 
-        if (!identify.originalRawFileName.isNull())
+        if (!identify->originalRawFileName.isNull())
         {
-            setExifTagData("Exif.Image.OriginalRawFileName", identify.originalRawFileName.toLatin1());
+            setExifTagData("Exif.Image.OriginalRawFileName", identify->originalRawFileName.toLatin1());
         }
 
-        if (!identify.lensModel.isNull())
+        if (!identify->lensModel.isNull())
         {
-            setExifTagString("Exif.Photo.LensModel", identify.lensModel);
+            setExifTagString("Exif.Photo.LensModel", identify->lensModel);
         }
 
-        if (!identify.lensMake.isNull())
+        if (!identify->lensMake.isNull())
         {
-            setExifTagString("Exif.Photo.LensMake", identify.lensMake);
+            setExifTagString("Exif.Photo.LensMake", identify->lensMake);
         }
 
-        if (!identify.lensSerial.isNull())
+        if (!identify->lensSerial.isNull())
         {
-            setExifTagString("Exif.Photo.LensSerialNumber", identify.lensSerial);
+            setExifTagString("Exif.Photo.LensSerialNumber", identify->lensSerial);
         }
 
-        if (identify.focalLengthIn35mmFilm != -1)
+        if (identify->focalLengthIn35mmFilm != -1)
         {
-            setExifTagLong("Exif.Photo.FocalLengthIn35mmFilm", identify.focalLengthIn35mmFilm);
+            setExifTagLong("Exif.Photo.FocalLengthIn35mmFilm", identify->focalLengthIn35mmFilm);
         }
 
-        if (identify.maxAperture != -1.0F)
+        if (identify->maxAperture != -1.0F)
         {
-            convertToRational(identify.maxAperture, &num, &den, 8);
+            convertToRational(identify->maxAperture, &num, &den, 8);
             setExifTagRational("Exif.Image.MaxApertureValue", num, den);
         }
 
-        if (identify.serialNumber != 0)
+        if (identify->serialNumber != 0)
         {
-            setExifTagLong("Exif.Image.ImageNumber", identify.serialNumber);
+            setExifTagLong("Exif.Image.ImageNumber", identify->serialNumber);
         }
 
-        if (identify.flashUsed != -1)
+        if (identify->flashUsed != -1)
         {
-            setExifTagLong("Exif.Photo.Flash", identify.flashUsed);
+            setExifTagLong("Exif.Photo.Flash", identify->flashUsed);
         }
 
-        if (identify.meteringMode != -1)
+        if (identify->meteringMode != -1)
         {
-            setExifTagLong("Exif.Image.MeteringMode", identify.meteringMode);
+            setExifTagLong("Exif.Image.MeteringMode", identify->meteringMode);
         }
 
-        if (identify.exposureProgram != -1)
+        if (identify->exposureProgram != -1)
         {
-            setExifTagLong("Exif.Photo.ExposureProgram", identify.exposureProgram);
+            setExifTagLong("Exif.Photo.ExposureProgram", identify->exposureProgram);
         }
 
-        if (identify.sensitivity != -1)
+        if (identify->sensitivity != -1)
         {
-            setExifTagLong("Exif.Photo.ISOSpeedRatings", lroundf(identify.sensitivity));
+            setExifTagLong("Exif.Photo.ISOSpeedRatings", lroundf(identify->sensitivity));
         }
 
-        if (identify.baselineExposure != -999.0F)
+        if (identify->baselineExposure != -999.0F)
         {
-            convertToRational(identify.baselineExposure, &num, &den, 8);
+            convertToRational(identify->baselineExposure, &num, &den, 8);
             setExifTagRational("Exif.Image.BaselineExposure", num, den);
         }
 
-        if (identify.ambientTemperature != -1000.0F)
+        if (identify->ambientTemperature != -1000.0F)
         {
-            convertToRational(identify.ambientTemperature, &num, &den, 8);
+            convertToRational(identify->ambientTemperature, &num, &den, 8);
             setExifTagRational("Exif.Photo.AmbientTemperature", num, den);
         }
 
-        if (identify.ambientHumidity != -1000.0F)
+        if (identify->ambientHumidity != -1000.0F)
         {
-            convertToRational(identify.ambientHumidity, &num, &den, 8);
+            convertToRational(identify->ambientHumidity, &num, &den, 8);
             setExifTagRational("Exif.Photo.0x9401", num, den);
         }
 
-        if (identify.ambientPressure != -1000.0F)
+        if (identify->ambientPressure != -1000.0F)
         {
-            convertToRational(identify.ambientPressure, &num, &den, 8);
+            convertToRational(identify->ambientPressure, &num, &den, 8);
             setExifTagRational("Exif.Photo.0x9402", num, den);
         }
 
-        if (identify.ambientWaterDepth != 1000.0F)
+        if (identify->ambientWaterDepth != 1000.0F)
         {
-            convertToRational(identify.ambientWaterDepth, &num, &den, 8);
+            convertToRational(identify->ambientWaterDepth, &num, &den, 8);
             setExifTagRational("Exif.Photo.0x9403", num, den);
         }
 
-        if (identify.ambientAcceleration != -1000.0F)
+        if (identify->ambientAcceleration != -1000.0F)
         {
-            convertToRational(identify.ambientAcceleration, &num, &den, 8);
+            convertToRational(identify->ambientAcceleration, &num, &den, 8);
             setExifTagRational("Exif.Photo.0x9404", num, den);
         }
 
-        if (identify.ambientElevationAngle != -1000.0F)
+        if (identify->ambientElevationAngle != -1000.0F)
         {
-            convertToRational(identify.ambientElevationAngle, &num, &den, 8);
+            convertToRational(identify->ambientElevationAngle, &num, &den, 8);
             setExifTagRational("Exif.Photo.0x9405", num, den);
         }
 
-        if (identify.exposureIndex != -1.0F)
+        if (identify->exposureIndex != -1.0F)
         {
-            convertToRational(identify.exposureIndex, &num, &den, 8);
+            convertToRational(identify->exposureIndex, &num, &den, 8);
             setExifTagRational("Exif.Photo.ExposureIndex", num, den);
         }
 
-        if (identify.dateTime.isValid())
+        if (identify->dateTime.isValid())
         {
-            setImageDateTime(identify.dateTime, false);
+            setImageDateTime(identify->dateTime, false);
         }
 
-        if (identify.exposureTime != -1.0F)
+        if (identify->exposureTime != -1.0F)
         {
-            convertToRationalSmallDenominator(identify.exposureTime, &num, &den);
+            convertToRationalSmallDenominator(identify->exposureTime, &num, &den);
             setExifTagRational("Exif.Photo.ExposureTime", num, den);
         }
 
-        if (identify.aperture != -1.0F)
+        if (identify->aperture != -1.0F)
         {
-            convertToRational(identify.aperture, &num, &den, 8);
+            convertToRational(identify->aperture, &num, &den, 8);
             setExifTagRational("Exif.Photo.ApertureValue", num, den);
         }
 
-        if (identify.focalLength != -1.0F)
+        if (identify->focalLength != -1.0F)
         {
-            convertToRational(identify.focalLength, &num, &den, 8);
+            convertToRational(identify->focalLength, &num, &den, 8);
             setExifTagRational("Exif.Photo.FocalLength", num, den);
         }
 
-        if (identify.imageSize.isValid())
+        if (identify->imageSize.isValid())
         {
-            setItemDimensions(identify.imageSize);
+            setItemDimensions(identify->imageSize);
         }
 
         // A RAW image is always uncalibrated. */
@@ -239,30 +239,30 @@ bool DMetadata::loadUsingRawEngine(const QString& filePath)
 
         // Handle ICC color profile byte-array
 
-        if (!identify.iccData.isEmpty())
+        if (!identify->iccData.isEmpty())
         {
-            setIccProfile(IccProfile(identify.iccData));
+            setIccProfile(IccProfile(identify->iccData));
         }
 
         // Handle GPS information
 
-        if (identify.hasGpsInfo)
+        if (identify->hasGpsInfo)
         {
-            setGPSInfo(identify.altitude, identify.latitude, identify.longitude);
+            setGPSInfo(identify->altitude, identify->latitude, identify->longitude);
         }
 
         // Handle image description
 
-        if (!identify.description.isEmpty())
+        if (!identify->description.isEmpty())
         {
-            setExifComment(identify.description);
+            setExifComment(identify->description);
         }
 
         // Handle thumbnail image
 
-        if (!identify.thumbnail.isNull())
+        if (!identify->thumbnail.isNull())
         {
-            QImage thumb = QImage::fromData(identify.thumbnail);
+            QImage thumb = QImage::fromData(identify->thumbnail);
 
             if (!thumb.isNull())
             {
@@ -272,9 +272,9 @@ bool DMetadata::loadUsingRawEngine(const QString& filePath)
 
         // Handle XMP metadata byte-array
 
-        if (!identify.xmpData.isEmpty())
+        if (!identify->xmpData.isEmpty())
         {
-            setXmp(identify.xmpData);
+            setXmp(identify->xmpData);
         }
 
         return true;
