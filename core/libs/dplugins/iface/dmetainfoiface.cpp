@@ -30,6 +30,7 @@
 
 #include <QFileInfo>
 #include <QStandardPaths>
+#include <QScopedPointer>
 
 // KDE includes
 
@@ -112,32 +113,32 @@ DMetaInfoIface::DInfoMap DMetaInfoIface::itemInfo(const QUrl& url) const
 
     if (d->urls.contains(url))
     {
-        DMetadata meta(url.toLocalFile());
+        QScopedPointer<DMetadata> meta(new DMetadata(url.toLocalFile()));
         QString   def = QLatin1String("x-default");
         QFileInfo info(url.toLocalFile());
 
         map.insert(QLatin1String("name"),            info.fileName());
-        map.insert(QLatin1String("title"),           meta.getItemTitles()[def].caption);
-        map.insert(QLatin1String("comment"),         meta.getItemComments()[def].caption);
-        map.insert(QLatin1String("orientation"),     (int)meta.getItemOrientation());
-        map.insert(QLatin1String("datetime"),        meta.getItemDateTime());
-        map.insert(QLatin1String("rating"),          meta.getItemRating());
-        map.insert(QLatin1String("colorlabel"),      meta.getItemColorLabel());
-        map.insert(QLatin1String("picklabel"),       meta.getItemPickLabel());
+        map.insert(QLatin1String("title"),           meta->getItemTitles()[def].caption);
+        map.insert(QLatin1String("comment"),         meta->getItemComments()[def].caption);
+        map.insert(QLatin1String("orientation"),     (int)meta->getItemOrientation());
+        map.insert(QLatin1String("datetime"),        meta->getItemDateTime());
+        map.insert(QLatin1String("rating"),          meta->getItemRating());
+        map.insert(QLatin1String("colorlabel"),      meta->getItemColorLabel());
+        map.insert(QLatin1String("picklabel"),       meta->getItemPickLabel());
         map.insert(QLatin1String("filesize"),        (qlonglong)info.size());
-        map.insert(QLatin1String("dimensions"),      meta.getItemDimensions());
+        map.insert(QLatin1String("dimensions"),      meta->getItemDimensions());
 
         // Get digiKam Tags Path list of picture from metadata.
         // Ex.: "City/Paris/Monuments/Notre Dame"
 
         QStringList tagsPath;
-        meta.getItemTagsPath(tagsPath);
+        meta->getItemTagsPath(tagsPath);
         map.insert(QLatin1String("tagspath"),        tagsPath);
 
         // Get digiKam Tags name (keywords) list of picture from metadata.
         // Ex.: "Notre Dame"
 
-        QStringList keywords = meta.getMetadataField(MetadataInfo::Keywords).toStringList();
+        QStringList keywords = meta->getMetadataField(MetadataInfo::Keywords).toStringList();
         map.insert(QLatin1String("keywords"),        keywords);
 
         // Get GPS location of picture from metadata.
@@ -146,7 +147,7 @@ DMetaInfoIface::DInfoMap DMetaInfoIface::itemInfo(const QUrl& url) const
         double lng = 0.0;
         double alt = 0.0;
 
-        if (meta.getGPSInfo(lat, lng, alt))
+        if (meta->getGPSInfo(lat, lng, alt))
         {
             map.insert(QLatin1String("latitude"),    lat);
             map.insert(QLatin1String("longitude"),   lng);
@@ -156,14 +157,14 @@ DMetaInfoIface::DInfoMap DMetaInfoIface::itemInfo(const QUrl& url) const
         // Get Copyright information of picture from metadata.
 
         Template temp;
-        meta.getCopyrightInformation(temp);
+        meta->getCopyrightInformation(temp);
 
         map.insert(QLatin1String("creators"),        temp.authors());
         map.insert(QLatin1String("credit"),          temp.credit());
         map.insert(QLatin1String("rights"),          temp.copyright()[def]);
         map.insert(QLatin1String("source"),          temp.source());
 
-        PhotoInfoContainer photoInfo = meta.getPhotographInformation();
+        PhotoInfoContainer photoInfo = meta->getPhotographInformation();
         map.insert(QLatin1String("make"),            photoInfo.make);
         map.insert(QLatin1String("model"),           photoInfo.model);
         map.insert(QLatin1String("exposuretime"),    photoInfo.exposureTime);
@@ -174,7 +175,7 @@ DMetaInfoIface::DInfoMap DMetaInfoIface::itemInfo(const QUrl& url) const
 
         // Get Video information from metadata
 
-        VideoInfoContainer videoInfo = meta.getVideoInformation();
+        VideoInfoContainer videoInfo = meta->getVideoInformation();
         map.insert(QLatin1String("videocodec"),      videoInfo.videoCodec);
 
         // TODO: add more video metadata as needed
@@ -185,30 +186,30 @@ DMetaInfoIface::DInfoMap DMetaInfoIface::itemInfo(const QUrl& url) const
 
 void DMetaInfoIface::setItemInfo(const QUrl& url, const DInfoMap& map) const
 {
-    DMetadata meta(url.toLocalFile());
+    QScopedPointer<DMetadata> meta(new DMetadata(url.toLocalFile()));
     QStringList keys = map.keys();
 
     if (map.contains(QLatin1String("orientation")))
     {
-        meta.setItemOrientation((DMetadata::ImageOrientation)map[QLatin1String("orientation")].toInt());
+        meta->setItemOrientation((DMetadata::ImageOrientation)map[QLatin1String("orientation")].toInt());
         keys.removeAll(QLatin1String("orientation"));
     }
 
     if (map.contains(QLatin1String("rating")))
     {
-        meta.setItemRating(map[QLatin1String("rating")].toInt());
+        meta->setItemRating(map[QLatin1String("rating")].toInt());
         keys.removeAll(QLatin1String("rating"));
     }
 
     if (map.contains(QLatin1String("colorlabel")))
     {
-        meta.setItemColorLabel(map[QLatin1String("colorlabel")].toInt());
+        meta->setItemColorLabel(map[QLatin1String("colorlabel")].toInt());
         keys.removeAll(QLatin1String("colorlabel"));
     }
 
     if (map.contains(QLatin1String("picklabel")))
     {
-        meta.setItemPickLabel(map[QLatin1String("picklabel")].toInt());
+        meta->setItemPickLabel(map[QLatin1String("picklabel")].toInt());
         keys.removeAll(QLatin1String("picklabel"));
     }
 

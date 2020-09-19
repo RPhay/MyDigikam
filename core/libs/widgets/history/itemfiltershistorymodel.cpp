@@ -29,6 +29,7 @@
 #include <QPixmap>
 #include <QUrl>
 #include <QIcon>
+#include<QScopedPointer>
 
 // Local includes
 
@@ -68,8 +69,8 @@ ItemFiltersHistoryModel::ItemFiltersHistoryModel(QObject* const parent, const QU
         d->rootItem = new ItemFiltersHistoryTreeItem(url.fileName());
         d->lastUrl  = url;
 
-        DMetadata metadata(url.toLocalFile());
-        QString xml     = metadata.getItemHistory();
+        QScopedPointer<DMetadata> metadata(new DMetadata(url.toLocalFile()));
+        QString xml     = metadata->getItemHistory();
         DImageHistory h = DImageHistory::fromXml(xml);
         setupModelData(h.entries(), d->rootItem);
     }
@@ -100,8 +101,8 @@ void ItemFiltersHistoryModel::setUrl(const QUrl& url)
 
         //qCDebug(DIGIKAM_WIDGETS_LOG) << "Updating model data with url" << rootData.first();
 
-        DMetadata metadata(url.toLocalFile());
-        setupModelData(DImageHistory::fromXml(metadata.getItemHistory()).entries(), d->rootItem);
+        QScopedPointer<DMetadata> metadata(new DMetadata(url.toLocalFile()));
+        setupModelData(DImageHistory::fromXml(metadata->getItemHistory()).entries(), d->rootItem);
     }
 /*
     else

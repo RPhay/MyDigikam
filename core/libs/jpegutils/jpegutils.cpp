@@ -77,6 +77,7 @@ extern "C"
 #include <QByteArray>
 #include <QFile>
 #include <QFileInfo>
+#include <QScopedPointer>
 #include <qplatformdefs.h>
 
 // Local includes
@@ -764,7 +765,7 @@ bool jpegConvert(const QString& src, const QString& dest, const QString& documen
 
         // Get image Exif/IPTC data.
 
-        DMetadata meta(image.getMetadata());
+        QScopedPointer<DMetadata> meta(new DMetadata(image.getMetadata()));
 
         // Update IPTC preview.
 
@@ -781,21 +782,21 @@ bool jpegConvert(const QString& src, const QString& dest, const QString& documen
             (format.toUpper() != QLatin1String("JPEG")) &&
             (format.toUpper() != QLatin1String("JPE")))
         {
-            meta.setItemPreview(preview);
+            meta->setItemPreview(preview);
         }
 
         // Update Exif thumbnail.
 
         QImage thumb = preview.scaled(160, 120, Qt::KeepAspectRatio, Qt::SmoothTransformation);
-        meta.setExifThumbnail(thumb);
+        meta->setExifThumbnail(thumb);
 
         // Update Exif Document Name tag (the original file name from camera for example).
 
-        meta.setExifTagString("Exif.Image.DocumentName", documentName);
+        meta->setExifTagString("Exif.Image.DocumentName", documentName);
 
         // Store new Exif/IPTC data into image.
 
-        image.setMetadata(meta.data());
+        image.setMetadata(meta->data());
 
         // And now save the image to a new file format.
 
