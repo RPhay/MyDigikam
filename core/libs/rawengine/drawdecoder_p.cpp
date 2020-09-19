@@ -369,10 +369,14 @@ bool DRawDecoder::Private::loadFromLibraw(const QString& filePath, QByteArray& i
             /*
              * Convert between Temperature and RGB.
              */
-            double RGB[3] = { 0.0 };
-            double xD = 0.0, yD = 0.0, X = 0.0, Y = 0.0, Z = 0.0;
-            double T = m_parent->m_decoderSettings.customWhiteBalance;
-            DRawInfo identify;
+            double RGB[3]            = { 0.0 };
+            double xD                = 0.0;
+            double yD                = 0.0;
+            double X                 = 0.0;
+            double Y                 = 0.0;
+            double Z                 = 0.0;
+            double T                 = m_parent->m_decoderSettings.customWhiteBalance;
+            DRawInfo* const identify = new DRawInfo;
 
             // -----------------------------------------------------------------------
             // Here starts the code picked and adapted from ufraw (0.12.1)
@@ -425,11 +429,11 @@ bool DRawDecoder::Private::loadFromLibraw(const QString& filePath, QByteArray& i
              * DSLR will have a high dominant of color that will lead to
              * a completely wrong WB
              */
-            if (rawFileIdentify(identify, filePath))
+            if (rawFileIdentify(*identify, filePath))
             {
-                RGB[0] = identify.daylightMult[0] / RGB[0];
-                RGB[1] = identify.daylightMult[1] / RGB[1];
-                RGB[2] = identify.daylightMult[2] / RGB[2];
+                RGB[0] = identify->daylightMult[0] / RGB[0];
+                RGB[1] = identify->daylightMult[1] / RGB[1];
+                RGB[2] = identify->daylightMult[2] / RGB[2];
             }
             else
             {
