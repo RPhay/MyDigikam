@@ -97,4 +97,5 @@ BUGFIXES:
 084 ==> 129375 - I don't want to use timer functionality for slideshow, change to next picture when key/mouse is pressed.
 085 ==> 426699 - "Ignored" faces category should not be positioned alphabetically, but on top of the list.
 086 ==> 372380 - Support for MediaWiki tool?
-087 ==> 
+087 ==> 417788 - Can't import a video file in an album.
+088 ==> 
