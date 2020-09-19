@@ -95,7 +95,5 @@ BUGFIXES:
 082 ==> 116611 - Add xscreensaver-style panning-zooming crossfade effect.
 083 ==> 125693 - User comments should appear in the slideshow.
 084 ==> 129375 - I don't want to use timer functionality for slideshow, change to next picture when key/mouse is pressed.
-085 ==> 
-
-
-
+085 ==> 426699 - "Ignored" faces category should not be positioned alphabetically, but on top of the list.
+086 ==> 

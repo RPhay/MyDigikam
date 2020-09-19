@@ -432,10 +432,10 @@ bool AlbumFilterModel::lessThan(const QModelIndex& left, const QModelIndex& righ
         {
             if ((leftAlbum->id() == FaceTags::ignoredPersonTagId()) != (rightAlbum->id() == FaceTags::ignoredPersonTagId()))
             {
-                // ignored tag albums go to the bottom, regardless of sort role
+                // ignored tag albums go to the top, regardless of sort role
 
-                return (sortOrder() == Qt::AscendingOrder) ? (leftAlbum->id() != FaceTags::ignoredPersonTagId())
-                                                           : (leftAlbum->id() == FaceTags::ignoredPersonTagId());
+                return (sortOrder() == Qt::AscendingOrder) ? (leftAlbum->id() == FaceTags::ignoredPersonTagId())
+                                                           : (leftAlbum->id() != FaceTags::ignoredPersonTagId());
             }
         }
 
