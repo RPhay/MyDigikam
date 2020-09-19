@@ -332,7 +332,8 @@ void XMPCredits::setCheckedSyncEXIFArtist(bool c)
 QString XMPCredits::getXMPByLine() const
 {
     QStringList oldv, newv;
-    d->bylineEdit->getValues(oldv, newv);
+    bool b = d->bylineEdit->getValues(oldv, newv);
+    Q_UNUSED(b);
 
     return (newv.join(QLatin1Char(';')));
 }
