@@ -538,8 +538,8 @@ void PreviewLoadingTask::convertQImageToDImg()
     m_img.setAttribute(QLatin1String("detectedFileFormat"), format);
     m_img.setAttribute(QLatin1String("originalFilePath"),   m_loadingDescription.filePath);
 
-    DMetadata metadata(m_loadingDescription.filePath);
-    QSize orgSize = metadata.getPixelSize();
+    QScopedPointer<DMetadata> metadata(new DMetadata(m_loadingDescription.filePath));
+    QSize orgSize = metadata->getPixelSize();
 
     if ((format == DImg::RAW) && LoadSaveThread::infoProvider())
     {
@@ -568,7 +568,7 @@ void PreviewLoadingTask::convertQImageToDImg()
 
     m_img.setAttribute(QLatin1String("originalSize"),   orgSize);
 
-    m_img.setMetadata(metadata.data());
+    m_img.setMetadata(metadata->data());
 
     // mark as embedded preview (for Exif rotation)
 
@@ -579,7 +579,7 @@ void PreviewLoadingTask::convertQImageToDImg()
         // If we loaded the embedded preview, the Exif of the RAW indicates
         // the color space of the preview (see bug 195950 for NEF files)
 
-        m_img.setIccProfile(metadata.getIccProfile());
+        m_img.setIccProfile(metadata->getIccProfile());
     }
 
     // free memory
@@ -589,11 +589,11 @@ void PreviewLoadingTask::convertQImageToDImg()
 
 bool PreviewLoadingTask::loadImagePreview(int sizeLimit)
 {
-    DMetadata metadata(m_loadingDescription.filePath);
+    QScopedPointer<DMetadata> metadata(new DMetadata(m_loadingDescription.filePath));
 
     QImage previewImage;
 
-    if (metadata.getItemPreview(previewImage))
+    if (metadata->getItemPreview(previewImage))
     {
         if ((sizeLimit == -1) || (qMax(previewImage.width(), previewImage.height()) > sizeLimit))
         {

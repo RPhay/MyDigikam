@@ -40,6 +40,7 @@
 #include <QApplication>
 #include <QMimeDatabase>
 #include <QTemporaryFile>
+#include <QScopedPointer>
 
 // KDE includes
 

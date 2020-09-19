@@ -40,7 +40,7 @@ ThumbnailImage ThumbnailCreator::createThumbnail(const ThumbnailInfo& info, cons
     }
 
     QImage qimage;
-    DMetadata metadata(path);
+    QScopedPointer<DMetadata> metadata(new DMetadata(path));
     bool fromEmbeddedPreview = false;
     bool fromDetail          = false;
     bool failedAtDImg        = false;
@@ -58,7 +58,7 @@ ThumbnailImage ThumbnailCreator::createThumbnail(const ThumbnailInfo& info, cons
 
         // when taking a detail, we have to load the image full size
 
-        qimage     = loadImageDetail(info, metadata, detailRect, &profile);
+        qimage     = loadImageDetail(info, *metadata, detailRect, &profile);
         fromDetail = !qimage.isNull();
     }
     else
@@ -69,7 +69,7 @@ ThumbnailImage ThumbnailCreator::createThumbnail(const ThumbnailInfo& info, cons
             {
                 // Try to extract Exif/IPTC preview first.
 
-                qimage = loadImagePreview(metadata);
+                qimage = loadImagePreview(*metadata);
             }
 
             if (d->observer && !d->observer->continueQuery())
@@ -131,7 +131,7 @@ ThumbnailImage ThumbnailCreator::createThumbnail(const ThumbnailInfo& info, cons
                 if (DRawDecoder::loadEmbeddedPreview(qimage, path))
                 {
                     fromEmbeddedPreview = true;
-                    profile             = metadata.getIccProfile();
+                    profile             = metadata->getIccProfile();
                 }
             }
 
@@ -187,6 +187,7 @@ ThumbnailImage ThumbnailCreator::createThumbnail(const ThumbnailInfo& info, cons
             // Try video thumbnail anyway
 
 #ifdef HAVE_MEDIAPLAYER
+
             qCDebug(DIGIKAM_GENERAL_LOG) << "Trying to load video preview with FFmpeg";
 
             VideoThumbnailer thumbnailer;
@@ -195,9 +196,12 @@ ThumbnailImage ThumbnailCreator::createThumbnail(const ThumbnailInfo& info, cons
             thumbnailer.addFilter(&videoStrip);
             thumbnailer.setThumbnailSize(d->storageSize());
             thumbnailer.generateThumbnail(path, qimage);
+
 #else
+
             qDebug(DIGIKAM_GENERAL_LOG) << "Cannot load video preview for" << path;
             qDebug(DIGIKAM_GENERAL_LOG) << "Video support is not available";
+
 #endif
 
         }
@@ -220,7 +224,7 @@ ThumbnailImage ThumbnailCreator::createThumbnail(const ThumbnailInfo& info, cons
 
     ThumbnailImage image;
     image.qimage          = qimage;
-    image.exifOrientation = exifOrientation(info, metadata, fromEmbeddedPreview, fromDetail);
+    image.exifOrientation = exifOrientation(info, *metadata, fromEmbeddedPreview, fromDetail);
 
     return image;
 }
