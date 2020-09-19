@@ -112,6 +112,8 @@ bool DRawDecoder::loadEmbeddedPreview(QByteArray& imgData, const QString& path)
         return false;
     }
 
+    qCDebug(DIGIKAM_RAWENGINE_LOG) << "LibRaw: loadEmbeddedPreview from" << path;
+
     LibRaw* const raw = new LibRaw;
 
 #ifdef Q_OS_WIN
@@ -199,7 +201,7 @@ bool DRawDecoder::loadHalfPreview(QImage& image, const QString& path)
         return false;
     }
 
-    qCDebug(DIGIKAM_RAWENGINE_LOG) << "Using reduced RAW picture extraction";
+    qCDebug(DIGIKAM_RAWENGINE_LOG) << "Using reduced RAW picture extraction for" << path;
 
     return true;
 }
