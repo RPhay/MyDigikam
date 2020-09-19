@@ -519,6 +519,7 @@ bool PreviewLoadingTask::loadHalfSizeRaw()
     }
 
     DRawDecoder::loadHalfPreview(m_qimage, m_loadingDescription.filePath);
+
     return (!m_qimage.isNull());
 }
 

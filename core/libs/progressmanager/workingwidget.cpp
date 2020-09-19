@@ -32,7 +32,7 @@
 #include <QPixmap>
 #include <QIcon>
 
-// LibDRawDecoder includes
+// Local includes
 
 #include "dlayoutbox.h"
 #include "dworkingpixmap.h"

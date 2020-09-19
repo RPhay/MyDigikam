@@ -29,6 +29,7 @@
 #include <QFileInfo>
 #include <QImage>
 #include <QDebug>
+#include <QPointer>
 
 // Local includes
 
@@ -59,9 +60,12 @@ protected:
 
         emit signalProgress(20);
 
-        DRawDecoder rawProcessor;
+        QPointer<DRawDecoder> rawProcessor(new DRawDecoder);
 
-        if (m_cancel) return;
+        if (m_cancel)
+        {
+            return;
+        }
 
         emit signalProgress(30);
 
@@ -69,17 +73,23 @@ protected:
         QString   fullFilePath(input.baseName() + QString::fromLatin1(".full.png"));
         QFileInfo fullOutput(fullFilePath);
 
-        if (m_cancel) return;
+        if (m_cancel)
+        {
+            return;
+        }
 
         emit signalProgress(40);
 
-        if (!rawProcessor.loadFullImage(image, fileUrl.toLocalFile(), settings))
+        if (!rawProcessor->loadFullImage(image, fileUrl.toLocalFile(), settings))
         {
             errString = QString::fromLatin1("raw2png: Loading full RAW image failed. Aborted...");
             return;
         }
 
-        if (m_cancel) return;
+        if (m_cancel)
+        {
+            return;
+        }
 
         emit signalProgress(60);
 
@@ -88,7 +98,10 @@ protected:
                  << image.width() << "x" << image.height()
                  << ")";
 
-        if (m_cancel) return;
+        if (m_cancel)
+        {
+            return;
+        }
 
         emit signalProgress(80);
 

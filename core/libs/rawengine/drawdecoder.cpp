@@ -31,6 +31,7 @@
 #include <QFileInfo>
 #include <QStringList>
 #include <QUrl>
+#include <QPointer>
 
 // LibRaw includes
 
@@ -300,12 +301,12 @@ bool DRawDecoder::loadFullImage(QImage& image,
 
     qCDebug(DIGIKAM_RAWENGINE_LOG) << "Try to load full RAW picture...";
 
-    DRawDecoder decoder;
+    QPointer<DRawDecoder> decoder(new DRawDecoder);
     QByteArray imgData;
     int width, height, rgbmax;
     DRawDecoderSettings prm = settings;
     prm.sixteenBitsImage    = false;
-    bool ret                = decoder.decodeRAWImage(path, prm, imgData, width, height, rgbmax);
+    bool ret                = decoder->decodeRAWImage(path, prm, imgData, width, height, rgbmax);
 
     if (!ret)
     {
