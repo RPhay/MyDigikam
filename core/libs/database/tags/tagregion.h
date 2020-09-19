@@ -104,7 +104,9 @@ public:
     static QRect mapToOriginalSize(const QSize& fullImageSize, const QSize& reducedImageSize, const QRect& reducedSizeDetail);
     static QRect mapFromOriginalSize(const QSize& fullImageSize, const QSize& reducedImageSize, const QRect& fullSizeDetail);
 
-    /// Takes the original and reduced size from the DImg
+    /**
+     * Takes the original and reduced size from the DImg
+     */
     static QRect mapToOriginalSize(const DImg& reducedSizeImage, const QRect& reducedSizeDetail);
     static QRect mapFromOriginalSize(const DImg& reducedSizeImage, const QRect& fullSizeDetail);
 

@@ -115,10 +115,14 @@ public:
 
     bool operator==(const FaceTagsIface& other) const;
 
-    /// Returns a list of all image tag properties for which flags are set
+    /**
+     * Returns a list of all image tag properties for which flags are set
+     */
     static QStringList attributesForFlags(TypeFlags flags);
 
-    /// Return the corresponding image tag property for the given type
+    /**
+     * Return the corresponding image tag property for the given type
+     */
     static QString attributeForType(Type type);
 
     /**

@@ -184,6 +184,7 @@ void TagProperties::setProperty(const QString& key, const QString& value)
     }
 
     // for single entries in db, this can of course be optimized using a single UPDATE WHERE
+
     removeProperties(key);
     d->properties.insert(key, value);
     CoreDbAccess().db()->addTagProperty(d->tagId, key, value);

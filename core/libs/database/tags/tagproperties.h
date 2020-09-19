@@ -69,10 +69,14 @@ public:
      */
     static TagProperties getOrCreate(const QString& tagPath);
 
-    /// Returns true if the property is set
+    /**
+     * Returns true if the property is set.
+     */
     bool hasProperty(const QString& key)                        const;
 
-    /// Returns true if the property is set, with exactly the given value.
+    /**
+     * Returns true if the property is set, with exactly the given value.
+     */
     bool hasProperty(const QString& key, const QString& value)  const;
 
     /**
@@ -106,7 +110,7 @@ public:
 
 public:
 
-    // Declared as public cause it's used by TagPropertiesPrivSharedNull class.
+    /// Declared as public cause it's used by TagPropertiesPrivSharedNull class.
     class TagPropertiesPriv;
 
 private:

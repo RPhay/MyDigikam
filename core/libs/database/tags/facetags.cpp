@@ -39,7 +39,7 @@
 namespace Digikam
 {
 
-// --- FaceIfacePriv ----------------------------------------------------------------------------------------
+// --- FaceIfacePriv ---
 
 class Q_DECL_HIDDEN FaceTagsHelper
 {
@@ -107,10 +107,11 @@ int FaceTagsHelper::tagForName(const QString& name, int tagId, int parentId, con
 
     if (tagId)
     {
-        if (FaceTags::isPerson(tagId))
+        if      (FaceTags::isPerson(tagId))
         {
-            //qCDebug(DIGIKAM_DATABASE_LOG) << "Proposed tag is already a person";
-
+/*
+            qCDebug(DIGIKAM_DATABASE_LOG) << "Proposed tag is already a person";
+*/
             return tagId;
         }
         else if (convert)
@@ -368,6 +369,7 @@ int FaceTags::getOrCreateTagForIdentity(const QMap<QString, QString>& attributes
     }
 
     // identity is in FacesEngine's database, but not in ours, so create.
+
     tagId = FaceTagsHelper::tagForName(name, 0, -1, attributes.value(QLatin1String("fullName")), true, true);
     applyTagIdentityMapping(tagId, attributes);
 

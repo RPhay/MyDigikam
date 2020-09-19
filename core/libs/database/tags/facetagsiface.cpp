@@ -158,10 +158,11 @@ QString FaceTagsIface::attributeForType(Type type)
 
 FaceTagsIface::Type FaceTagsIface::typeForId(int tagId)
 {
-        if      (!FaceTags::isPerson(tagId))
+        if (!FaceTags::isPerson(tagId))
         {
             return InvalidFace;
         }
+
         if      (FaceTags::isTheUnknownPerson(tagId))
         {
             return UnknownName;
@@ -213,7 +214,7 @@ FaceTagsIface FaceTagsIface::fromVariant(const QVariant& var)
     {
         QList<QVariant> list(var.toList());
 
-        if (list.size() == 4 || list.size() == 5)
+        if ((list.size() == 4) || (list.size() == 5))
         {
             return FaceTagsIface((Type)list.at(0).toInt(),
                                  list.at(1).toLongLong(),
@@ -229,6 +230,7 @@ QVariant FaceTagsIface::toVariant() const
 {
     // this is still not perfect, with QList<QVariant> being inefficient
     // we must keep to native types, to make operator== work.
+
     QList<QVariant> list;
     list << (int)m_type;
     list << m_imageId;
@@ -246,12 +248,13 @@ FaceTagsIface FaceTagsIface::fromListing(qlonglong imageId, const QList<QVariant
     }
 
     // See imagelister.cpp: value - property - tagId
+
     int tagId         = extraValues.at(2).toInt();
     QString attribute = extraValues.at(1).toString();
     QString value     = extraValues.at(0).toString();
-
-    //qCDebug(DIGIKAM_DATABASE_LOG) << tagId << attribute << value;
-
+/*
+    qCDebug(DIGIKAM_DATABASE_LOG) << tagId << attribute << value;
+*/
     return FaceTagsIface(attribute,
                         imageId, tagId,
                         TagRegion(value));
@@ -261,7 +264,11 @@ QString FaceTagsIface::getAutodetectedPersonString() const
 {
     if (isUnconfirmedType())
     {
-        return (QString::number(tagId()) + QLatin1Char(',') + ImageTagPropertyName::autodetectedFace() + QLatin1Char(',') + (TagRegion(region().toRect())).toXml());
+        return (QString::number(tagId())                 +
+                QLatin1Char(',')                         +
+                ImageTagPropertyName::autodetectedFace() +
+                QLatin1Char(',')                         +
+                (TagRegion(region().toRect())).toXml());
     }
     else
     {
