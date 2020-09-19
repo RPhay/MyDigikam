@@ -31,6 +31,7 @@
 #include <QItemSelectionModel>
 #include <QAbstractItemModel>
 #include <QPersistentModelIndex>
+#include <QScopedPointer>
 
 // KDE includes
 
@@ -323,9 +324,9 @@ bool MapViewModelHelper::itemCoordinates(const QModelIndex& index, GeoCoordinate
                 return false;
             }
 
-            const DMetadata meta(info.url().toLocalFile());
+            QScopedPointer<DMetadata> meta(new DMetadata(info.url().toLocalFile()));
             double          lat, lng;
-            const bool      haveCoordinates = meta.getGPSLatitudeNumber(&lat) && meta.getGPSLongitudeNumber(&lng);
+            const bool      haveCoordinates = meta->getGPSLatitudeNumber(&lat) && meta->getGPSLongitudeNumber(&lng);
 
             if (!haveCoordinates)
             {
@@ -335,7 +336,7 @@ bool MapViewModelHelper::itemCoordinates(const QModelIndex& index, GeoCoordinate
             GeoCoordinates tmpCoordinates(lat, lng);
 
             double     alt;
-            const bool haveAlt = meta.getGPSAltitude(&alt);
+            const bool haveAlt = meta->getGPSAltitude(&alt);
 
             if (haveAlt)
             {
@@ -472,9 +473,9 @@ QPersistentModelIndex MapViewModelHelper::bestRepresentativeIndexFromList(const 
 
             foreach (const CamItemInfo& imageInfo, imageInfoList)
             {
-                const DMetadata meta(imageInfo.url().toLocalFile());
+                QScopedPointer<DMetadata> meta(new DMetadata(imageInfo.url().toLocalFile()));
                 double          lat, lng;
-                const bool      hasCoordinates = meta.getGPSLatitudeNumber(&lat) && meta.getGPSLongitudeNumber(&lng);
+                const bool      hasCoordinates = meta->getGPSLatitudeNumber(&lat) && meta->getGPSLongitudeNumber(&lng);
 
                 if (!hasCoordinates)
                 {
@@ -484,7 +485,7 @@ QPersistentModelIndex MapViewModelHelper::bestRepresentativeIndexFromList(const 
                 GeoCoordinates coordinates(lat, lng);
 
                 double alt;
-                const bool haveAlt = meta.getGPSAltitude(&alt);
+                const bool haveAlt = meta->getGPSAltitude(&alt);
 
                 if (haveAlt)
                 {
@@ -493,20 +494,20 @@ QPersistentModelIndex MapViewModelHelper::bestRepresentativeIndexFromList(const 
 
                 GPSItemInfo gpsItemInfo;
                 gpsItemInfo.coordinates = coordinates;
-                gpsItemInfo.dateTime    = meta.getItemDateTime();
-                gpsItemInfo.rating      = meta.getItemRating();
+                gpsItemInfo.dateTime    = meta->getItemDateTime();
+                gpsItemInfo.rating      = meta->getItemRating();
                 gpsItemInfo.url         = imageInfo.url();
                 gpsItemInfoList << gpsItemInfo;
             }
 
-            if (gpsItemInfoList.size()!=indexList.size())
+            if (gpsItemInfoList.size() != indexList.size())
             {
                 // this is a problem, and unexpected
                 return indexList.first();
             }
 
             // now determine the best available index
-            bestIndex                     = indexList.first();
+            bestIndex                   = indexList.first();
             GPSItemInfo bestGPSItemInfo = gpsItemInfoList.first();
 
             for (int i = 1 ; i < gpsItemInfoList.count() ; ++i)

@@ -32,6 +32,7 @@
 #include <QEventLoop>
 #include <QMap>
 #include <QPointer>
+#include <QScopedPointer>
 #include <QString>
 #include <QAction>
 #include <QMenu>

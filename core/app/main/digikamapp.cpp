@@ -857,8 +857,8 @@ void DigikamApp::slotResetExifOrientationActions()
 void DigikamApp::slotSetCheckedExifOrientationAction(const ItemInfo& info)
 {
 /*
-    DMetadata meta(info.fileUrl().toLocalFile());
-    int orientation = (meta.isEmpty()) ? 0 : meta.getItemOrientation();
+    QScopedPointer<DMetadata> meta(new DMetadata(info.fileUrl().toLocalFile()));
+    int orientation = (meta->isEmpty()) ? 0 : meta->getItemOrientation();
 */
     int orientation = info.orientation();
 
