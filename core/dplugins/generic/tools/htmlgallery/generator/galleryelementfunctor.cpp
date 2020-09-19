@@ -225,6 +225,7 @@ void GalleryElementFunctor::operator()(GalleryElement& element)
     element.m_valid             = true;
 
     // Read Exif Metadata
+
     QString unavailable(i18n("unavailable"));
     DMetadata meta;
     meta.load(path);
@@ -337,6 +338,7 @@ void GalleryElementFunctor::operator()(GalleryElement& element)
         }
 
         // Get GPS values
+
         double gpsvalue;
 
         if (meta.getGPSAltitude(&gpsvalue))
@@ -358,32 +360,32 @@ void GalleryElementFunctor::operator()(GalleryElement& element)
     {
         // Try to use Raw decoder to identify image.
 
-        DRawInfo     info;
-        DRawDecoder rawdecoder;
-        rawdecoder.rawFileIdentify(info, path);
+        DRawInfo* const info          = new DRawInfo;
+        DRawDecoder* const rawdecoder = new DRawDecoder;
+        rawdecoder->rawFileIdentify(*info, path);
 
-        if (info.isDecodable)
+        if (info->isDecodable)
         {
-            if (!info.make.isEmpty())
-                element.m_exifImageMake = info.make;
+            if (!info->make.isEmpty())
+                element.m_exifImageMake = info->make;
 
-            if (!info.model.isEmpty())
-                element.m_exifItemModel = info.model;
+            if (!info->model.isEmpty())
+                element.m_exifItemModel = info->model;
 
-            if (info.dateTime.isValid())
-                element.m_exifImageDateTime = QLocale().toString(info.dateTime, QLocale::ShortFormat);
+            if (info->dateTime.isValid())
+                element.m_exifImageDateTime = QLocale().toString(info->dateTime, QLocale::ShortFormat);
 
-            if (info.aperture != -1.0)
-                element.m_exifPhotoApertureValue = QString::number(info.aperture);
+            if (info->aperture != -1.0)
+                element.m_exifPhotoApertureValue = QString::number(info->aperture);
 
-            if (info.focalLength != -1.0)
-                element.m_exifPhotoFocalLength = QString::number(info.focalLength);
+            if (info->focalLength != -1.0)
+                element.m_exifPhotoFocalLength = QString::number(info->focalLength);
 
-            if (info.exposureTime != -1.0)
-                element.m_exifPhotoExposureTime = QString::number(info.exposureTime);
+            if (info->exposureTime != -1.0)
+                element.m_exifPhotoExposureTime = QString::number(info->exposureTime);
 
-            if (info.sensitivity != -1)
-                element.m_exifPhotoISOSpeedRatings = QString::number(info.sensitivity);
+            if (info->sensitivity != -1)
+                element.m_exifPhotoISOSpeedRatings = QString::number(info->sensitivity);
         }
     }
 
