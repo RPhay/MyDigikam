@@ -61,9 +61,9 @@ bool DImgRAWLoader::load(const QString& filePath, DImgLoaderObserver* const obse
 
     readMetadata(filePath);
 
-    DRawInfo dcrawIdentify;
+    DRawInfo* const dcrawIdentify = new DRawInfo;
 
-    if (!DRawDecoder::rawFileIdentify(dcrawIdentify, filePath))
+    if (!DRawDecoder::rawFileIdentify(*dcrawIdentify, filePath))
     {
         return false;
     }
@@ -127,14 +127,14 @@ bool DImgRAWLoader::load(const QString& filePath, DImgLoaderObserver* const obse
     }
     else
     {
-        imageWidth()  = dcrawIdentify.imageSize.width();
-        imageHeight() = dcrawIdentify.imageSize.height();
+        imageWidth()  = dcrawIdentify->imageSize.width();
+        imageHeight() = dcrawIdentify->imageSize.height();
     }
 
     imageSetAttribute(QLatin1String("format"),             QLatin1String("RAW"));
     imageSetAttribute(QLatin1String("originalColorModel"), DImg::COLORMODELRAW);
     imageSetAttribute(QLatin1String("originalBitDepth"),   16);
-    imageSetAttribute(QLatin1String("originalSize"),       dcrawIdentify.imageSize);
+    imageSetAttribute(QLatin1String("originalSize"),       dcrawIdentify->imageSize);
 
     return true;
 }
