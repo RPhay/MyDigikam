@@ -49,6 +49,7 @@ using namespace Digikam;
 class MainWindow : public QMainWindow
 {
     Q_OBJECT
+
 public:
 
     explicit MainWindow(const QDir& directory, QWidget* const parent = nullptr);
@@ -56,8 +57,8 @@ public:
 
 private:
 
-    QPixmap showCVMat(const cv::Mat& cvimage);
-    QList<QRectF> detectFaces(const QString& imagePath);
+    QPixmap showCVMat(const cv::Mat& cvimage)           const;
+    QList<QRectF> detectFaces(const QString& imagePath) const;
     void extractFaces(const QImage& img, QImage& imgScaled, const QList<QRectF>& faces);
 
     QWidget* setupFullImageArea();
@@ -129,6 +130,7 @@ void MainWindow::slotDetectFaces(const QListWidgetItem* imageItem)
     QImage imgScaled(img.scaled(416, 416, Qt::KeepAspectRatio));
 
     // clear faces layout
+
     QListWidgetItem* wItem = nullptr;
 
     while ((wItem = m_croppedfaceList->item(0)) != nullptr)
@@ -141,10 +143,11 @@ void MainWindow::slotDetectFaces(const QListWidgetItem* imageItem)
     extractFaces(img, imgScaled, faces);
 
     // Only setPixmap after finishing drawing bboxes around detected faces
+
     m_fullImage->setPixmap(QPixmap::fromImage(imgScaled));
 }
 
-QPixmap MainWindow::showCVMat(const cv::Mat& cvimage)
+QPixmap MainWindow::showCVMat(const cv::Mat& cvimage) const
 {
     if ((cvimage.cols * cvimage.rows) != 0)
     {
@@ -159,7 +162,7 @@ QPixmap MainWindow::showCVMat(const cv::Mat& cvimage)
     return QPixmap();
 }
 
-QList<QRectF> MainWindow::detectFaces(const QString& imagePath)
+QList<QRectF> MainWindow::detectFaces(const QString& imagePath) const
 {
     QImage img(imagePath);
 /*
@@ -189,7 +192,6 @@ QList<QRectF> MainWindow::detectFaces(const QString& imagePath)
                                                               QSize(cvImage.cols - 2*paddedSize.width,
                                                               cvImage.rows - 2*paddedSize.height));
         elapsedDetection      = timer.elapsed();
-
 
         // debug padded image
 
@@ -283,7 +285,7 @@ QWidget* MainWindow::setupCroppedFaceArea()
 
     facesArea->setSizePolicy(spImage);
 
-    m_croppedfaceList = new QListWidget(this);
+    m_croppedfaceList            = new QListWidget(this);
 
     m_croppedfaceList->setViewMode(QListView::IconMode);
     m_croppedfaceList->setIconSize(QSize(200, 150));
@@ -296,6 +298,7 @@ QWidget* MainWindow::setupCroppedFaceArea()
     connect(m_croppedfaceList, &QListWidget::currentItemChanged,
             this,            &MainWindow::slotDetectFaces);
 */
+
     facesArea->setWidget(m_croppedfaceList);
 
     return facesArea;
@@ -314,7 +317,7 @@ QWidget* MainWindow::setupImageList(const QDir& directory)
     QSizePolicy spLow(QSizePolicy::Preferred, QSizePolicy::Fixed);
     itemsArea->setSizePolicy(spLow);
 
-    m_imageListView = new QListWidget(this);
+    m_imageListView              = new QListWidget(this);
     m_imageListView->setViewMode(QListView::IconMode);
     m_imageListView->setIconSize(QSize(200, 150));
     m_imageListView->setResizeMode(QListWidget::Adjust);
@@ -322,7 +325,7 @@ QWidget* MainWindow::setupImageList(const QDir& directory)
     m_imageListView->setWrapping(false);
     m_imageListView->setDragEnabled(false);
 
-    QStringList subjects = directory.entryList(QDir::Files | QDir::NoDotAndDotDot);
+    QStringList subjects         = directory.entryList(QDir::Files | QDir::NoDotAndDotDot);
 
     for (QStringList::const_iterator iter  = subjects.cbegin();
                                      iter != subjects.cend();
@@ -359,22 +362,21 @@ int main(int argc, char* argv[])
 
     // Options for commandline parser
 
-   QCommandLineParser* const parser = parseOptions(app);
+    QCommandLineParser* const parser = parseOptions(app);
 
-   if (! parser->isSet(QLatin1String("dataset")))
-   {
-       qWarning("Data set is not set !!!");
+    if (! parser->isSet(QLatin1String("dataset")))
+    {
+        qWarning("Data set is not set !!!");
 
-       return 1;
-   }
+        return 1;
+    }
 
-   QDir dataset(parser->value(QLatin1String("dataset")));
+    QDir dataset(parser->value(QLatin1String("dataset")));
 
-   MainWindow* const window = new MainWindow(dataset, nullptr);
+    MainWindow* const window = new MainWindow(dataset, nullptr);
+    window->show();
 
-   window->show();
-
-   return app.exec();
+    return app.exec();
 }
 
 #include "benchmark_dnndetection.moc"
