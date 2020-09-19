@@ -586,9 +586,9 @@ bool DImg::reverseExifRotate(const QString& filePath)
 
 int DImg::orientation() const
 {
-    DMetadata meta(getMetadata());
+    QScopedPointer<DMetadata> meta(new DMetadata(getMetadata()));
 
-    return (int)meta.getItemOrientation();
+    return (int)meta->getItemOrientation();
 }
 
 } // namespace Digikam

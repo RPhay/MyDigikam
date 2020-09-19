@@ -30,6 +30,10 @@
 #include <new>
 #include <cstddef>
 
+// Qt includes
+
+#include <QScopedPointer>
+
 // Local includes
 
 #include "digikam_debug.h"
@@ -209,19 +213,19 @@ bool DImgLoader::readMetadata(const QString& filePath)
         return false;
     }
 
-    DMetadata metaDataFromFile;
-
-    if (!metaDataFromFile.load(filePath))
+    QScopedPointer<DMetadata> metaDataFromFile(new DMetadata);
+    
+    if (!metaDataFromFile->load(filePath))
     {
         m_image->setMetadata(MetaEngineData());
         return false;
     }
 
-    m_image->setMetadata(metaDataFromFile.data());
+    m_image->setMetadata(metaDataFromFile->data());
 
     if (m_loadFlags & LoadImageHistory)
     {
-        DImageHistory history = DImageHistory::fromXml(metaDataFromFile.getItemHistory());
+        DImageHistory history = DImageHistory::fromXml(metaDataFromFile->getItemHistory());
         HistoryImageId id     = m_image->createHistoryImageId(filePath, HistoryImageId::Current);
         history << id;
 
@@ -234,15 +238,16 @@ bool DImgLoader::readMetadata(const QString& filePath)
 
 bool DImgLoader::saveMetadata(const QString& filePath)
 {
-    DMetadata metaDataToFile(filePath);
-    metaDataToFile.setData(m_image->getMetadata());
-    return metaDataToFile.applyChanges(true);
+    QScopedPointer<DMetadata> metaDataToFile(new DMetadata(filePath));
+    metaDataToFile->setData(m_image->getMetadata());
+
+    return metaDataToFile->applyChanges(true);
 }
 
 bool DImgLoader::checkExifWorkingColorSpace() const
 {
-    DMetadata metaData(m_image->getMetadata());
-    IccProfile profile = metaData.getIccProfile();
+    QScopedPointer<DMetadata> metaData(new DMetadata(m_image->getMetadata()));
+    IccProfile profile = metaData->getIccProfile();
 
     if (!profile.isNull())
     {
@@ -262,16 +267,16 @@ void DImgLoader::storeColorProfileInMetadata()
         return;
     }
 
-    DMetadata metaData(m_image->getMetadata());
-    metaData.setIccProfile(profile);
-    m_image->setMetadata(metaData.data());
+    QScopedPointer<DMetadata> metaData(new DMetadata(m_image->getMetadata()));
+    metaData->setIccProfile(profile);
+    m_image->setMetadata(metaData->data());
 }
 
 void DImgLoader::purgeExifWorkingColorSpace()
 {
-    DMetadata meta(m_image->getMetadata());
-    meta.removeExifColorSpace();
-    m_image->setMetadata(meta.data());
+    QScopedPointer<DMetadata> meta(new DMetadata(m_image->getMetadata()));
+    meta->removeExifColorSpace();
+    m_image->setMetadata(meta->data());
 }
 
 unsigned char* DImgLoader::new_failureTolerant(size_t unsecureSize)

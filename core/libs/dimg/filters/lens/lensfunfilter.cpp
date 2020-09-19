@@ -26,6 +26,7 @@
 #include <QCheckBox>
 #include <QString>
 #include <QtConcurrent>    // krazy:exclude=includes
+#include <QScopedPointer>
 
 // KDE includes
 
@@ -375,10 +376,10 @@ bool LensFunFilter::registerSettingsToXmp(MetaEngineData& data) const
     str.append(QLatin1Char('\n'));
     str.append(i18n("GEO Correction: %1",   prm.filterGEO && d->iface->supportsGeometry()   ? i18n("enabled") : i18n("disabled")));
 
-    DMetadata meta(data);
-    bool ret = meta.setXmpTagString("Xmp.digiKam.LensCorrectionSettings",
+    QScopedPointer<DMetadata> meta(new DMetadata(data));
+    bool ret = meta->setXmpTagString("Xmp.digiKam.LensCorrectionSettings",
                                     str.replace(QLatin1Char('\n'), QLatin1String(" ; ")));
-    data     = meta.data();
+    data     = meta->data();
 
     return ret;
 }

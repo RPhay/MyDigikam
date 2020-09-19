@@ -50,8 +50,8 @@ QByteArray DImg::getUniqueHash()
 
     FileReadLocker lock(filePath);
 
-    DMetadata meta(getMetadata());
-    QByteArray ba   = meta.getExifEncoded();
+    QScopedPointer<DMetadata> meta(new DMetadata(getMetadata()));
+    QByteArray ba   = meta->getExifEncoded();
     QByteArray hash = createUniqueHash(filePath, ba);
     setAttribute(QLatin1String("uniqueHash"), hash);
 
@@ -60,8 +60,8 @@ QByteArray DImg::getUniqueHash()
 
 QByteArray DImg::getUniqueHash(const QString& filePath)
 {
-    DMetadata meta(filePath);
-    QByteArray ba = meta.getExifEncoded();
+    QScopedPointer<DMetadata> meta(new DMetadata(filePath));
+    QByteArray ba = meta->getExifEncoded();
 
     return DImg().createUniqueHash(filePath, ba);
 }
@@ -132,7 +132,7 @@ void DImg::prepareMetadataToSave(const QString& intendedDestPath, const QString&
 
     // Get image Exif/IPTC data.
 
-    DMetadata meta(getMetadata());
+    QScopedPointer<DMetadata> meta(new DMetadata(getMetadata()));
 
     qCDebug(DIGIKAM_DIMG_LOG) << "Prepare Metadata to save for" << intendedDestPath;
 
@@ -140,26 +140,26 @@ void DImg::prepareMetadataToSave(const QString& intendedDestPath, const QString&
     {
         // Clear IPTC preview
 
-        meta.removeIptcTag("Iptc.Application2.Preview");
-        meta.removeIptcTag("Iptc.Application2.PreviewFormat");
-        meta.removeIptcTag("Iptc.Application2.PreviewVersion");
+        meta->removeIptcTag("Iptc.Application2.Preview");
+        meta->removeIptcTag("Iptc.Application2.PreviewFormat");
+        meta->removeIptcTag("Iptc.Application2.PreviewVersion");
 
         // Clear Exif thumbnail
 
-        meta.removeExifThumbnail();
+        meta->removeExifThumbnail();
 
         // Clear Tiff thumbnail
 
-        MetaEngine::MetaDataMap tiffThumbTags = meta.getExifTagsDataList(QStringList() << QLatin1String("SubImage1"));
+        MetaEngine::MetaDataMap tiffThumbTags = meta->getExifTagsDataList(QStringList() << QLatin1String("SubImage1"));
 
         for (MetaEngine::MetaDataMap::iterator it = tiffThumbTags.begin() ; it != tiffThumbTags.end() ; ++it)
         {
-            meta.removeExifTag(it.key().toLatin1().constData());
+            meta->removeExifTag(it.key().toLatin1().constData());
         }
 
         // Clear Xmp preview from digiKam namespace
 
-        meta.removeXmpTag("Xmp.digiKam.Preview");
+        meta->removeXmpTag("Xmp.digiKam.Preview");
     }
 
     bool createNewPreview    = false;
@@ -236,7 +236,7 @@ void DImg::prepareMetadataToSave(const QString& intendedDestPath, const QString&
         {
             // Non JPEG file, we update IPTC and XMP preview
 
-            meta.setItemPreview(preview);
+            meta->setItemPreview(preview);
         }
 
         if ((destMimeType.toUpper() == QLatin1String("TIFF")) ||
@@ -246,33 +246,33 @@ void DImg::prepareMetadataToSave(const QString& intendedDestPath, const QString&
             // a thumbnail at a special location. See bug #211758
 
             QImage thumb = preview.scaled(160, 120, Qt::KeepAspectRatio, Qt::SmoothTransformation);
-            meta.setTiffThumbnail(thumb);
+            meta->setTiffThumbnail(thumb);
         }
         else
         {
             // Update Exif thumbnail.
 
             QImage thumb = preview.scaled(160, 120, Qt::KeepAspectRatio, Qt::SmoothTransformation);
-            meta.setExifThumbnail(thumb);
+            meta->setExifThumbnail(thumb);
         }
     }
 
     // Update Exif Image dimensions.
 
-    meta.setItemDimensions(size());
+    meta->setItemDimensions(size());
 
     // Update Exif Document Name tag with the original file name.
 
     if (!originalFileName.isEmpty())
     {
-        meta.setExifTagString("Exif.Image.DocumentName", originalFileName);
+        meta->setExifTagString("Exif.Image.DocumentName", originalFileName);
     }
 
     // Update Exif Orientation tag if necessary.
 
     if (flags & ResetExifOrientationTag)
     {
-        meta.setItemOrientation(DMetadata::ORIENTATION_NORMAL);
+        meta->setItemOrientation(DMetadata::ORIENTATION_NORMAL);
     }
 
     if (!m_priv->imageHistory.isEmpty())
@@ -290,17 +290,17 @@ void DImg::prepareMetadataToSave(const QString& intendedDestPath, const QString&
         }
 
         QString imageHistoryXml = forSaving.toXml();
-        meta.setItemHistory(imageHistoryXml);
+        meta->setItemHistory(imageHistoryXml);
     }
 
     if (flags & CreateNewImageHistoryUUID)
     {
-        meta.setItemUniqueId(QString::fromUtf8(createImageUniqueId()));
+        meta->setItemUniqueId(QString::fromUtf8(createImageUniqueId()));
     }
 
     // Store new Exif/IPTC/XMP data into image.
 
-    setMetadata(meta.data());
+    setMetadata(meta->data());
 }
 
 HistoryImageId DImg::createHistoryImageId(const QString& filePath, HistoryImageId::Type type)
@@ -312,10 +312,10 @@ HistoryImageId DImg::createHistoryImageId(const QString& filePath, HistoryImageI
         return HistoryImageId();
     }
 
-    DMetadata metadata(getMetadata());
-    HistoryImageId id(metadata.getItemUniqueId());
+    QScopedPointer<DMetadata> metadata(new DMetadata(getMetadata()));
+    HistoryImageId id(metadata->getItemUniqueId());
 
-    QDateTime dt = metadata.getItemDateTime();
+    QDateTime dt = metadata->getItemDateTime();
 
     if (dt.isNull())
     {

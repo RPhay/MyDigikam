@@ -62,6 +62,7 @@ extern "C"
 #include <QPixmap>
 #include <QSysInfo>
 #include <QUuid>
+#include <QScopedPointer>
 
 // KDE includes
 

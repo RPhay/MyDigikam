@@ -34,6 +34,7 @@
 #include <QRect>
 #include <QSize>
 #include <QLocale>
+#include <QScopedPointer>
 
 // KDE includes
 
@@ -171,8 +172,8 @@ void BlackFrameListViewItem::slotHotPixelsParsed(const QList<HotPixelProps>& hot
     QString value;
     QString header = i18n("Black Frame");
 
-    DMetadata meta(d->blackFrameUrl.toLocalFile());
-    PhotoInfoContainer info = meta.getPhotographInformation();
+    QScopedPointer<DMetadata> meta(new DMetadata(d->blackFrameUrl.toLocalFile()));
+    PhotoInfoContainer info = meta->getPhotographInformation();
 
     d->toolTipStr.clear();
 
@@ -195,7 +196,7 @@ void BlackFrameListViewItem::slotHotPixelsParsed(const QList<HotPixelProps>& hot
     d->toolTipStr += QLocale().toString(info.dateTime, QLocale::ShortFormat) + cnt.cellEnd;
 
     d->toolTipStr += cnt.cellBeg + i18n("Serial Number:") + cnt.cellMid;
-    d->toolTipStr += meta.getCameraSerialNumber() + cnt.cellEnd;
+    d->toolTipStr += meta->getCameraSerialNumber() + cnt.cellEnd;
 
     QString hplist;
 
