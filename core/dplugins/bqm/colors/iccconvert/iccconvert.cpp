@@ -26,6 +26,7 @@
 // Qt includes
 
 #include <QLabel>
+#include <QScopedPointer>
 
 // KDE includes
 
@@ -117,9 +118,9 @@ bool IccConvert::toolOperations()
 
     image().setIccProfile(icc.getTargetImage().getIccProfile());
 
-    DMetadata meta(image().getMetadata());
-    meta.removeExifColorSpace();
-    image().setMetadata(meta.data());
+    QScopedPointer<DMetadata> meta(new DMetadata(image().getMetadata()));
+    meta->removeExifColorSpace();
+    image().setMetadata(meta->data());
 
     return (savefromDImg());
 }

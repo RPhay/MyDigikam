@@ -28,6 +28,7 @@
 #include <QLabel>
 #include <QWidget>
 #include <QFile>
+#include <QScopedPointer>
 
 // KDE includes
 
@@ -107,25 +108,25 @@ void AssignTemplate::slotSettingsChanged()
 
 bool AssignTemplate::toolOperations()
 {
-    DMetadata meta;
+    QScopedPointer<DMetadata> meta(new DMetadata);
 
     if (image().isNull())
     {
-        if (!meta.load(inputUrl().toLocalFile()))
+        if (!meta->load(inputUrl().toLocalFile()))
         {
             return false;
         }
     }
     else
     {
-        meta.setData(image().getMetadata());
+        meta->setData(image().getMetadata());
     }
 
     QString title = settings()[QLatin1String("TemplateTitle")].toString();
 
-    if (title == Template::removeTemplateTitle())
+    if      (title == Template::removeTemplateTitle())
     {
-        meta.removeMetadataTemplate();
+        meta->removeMetadataTemplate();
     }
     else if (title.isEmpty())
     {
@@ -134,8 +135,8 @@ bool AssignTemplate::toolOperations()
     else
     {
         Template t = TemplateManager::defaultManager()->findByTitle(title);
-        meta.removeMetadataTemplate();
-        meta.setMetadataTemplate(t);
+        meta->removeMetadataTemplate();
+        meta->setMetadataTemplate(t);
     }
 
     bool ret = true;
@@ -147,14 +148,14 @@ bool AssignTemplate::toolOperations()
 
         if (ret && !title.isEmpty())
         {
-            ret = meta.save(outputUrl().toLocalFile());
+            ret = meta->save(outputUrl().toLocalFile());
         }
     }
     else
     {
         if (!title.isEmpty())
         {
-            image().setMetadata(meta.data());
+            image().setMetadata(meta->data());
         }
 
         ret = savefromDImg();

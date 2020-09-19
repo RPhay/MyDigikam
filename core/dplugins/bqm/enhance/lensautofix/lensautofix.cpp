@@ -30,6 +30,7 @@
 #include <QWidget>
 #include <QApplication>
 #include <QStyle>
+#include <QScopedPointer>
 
 // KDE includes
 
@@ -209,8 +210,8 @@ bool LensAutoFix::toolOperations()
     if (useMeta)
     {
         LensFunIface iface;
-        DMetadata    meta(image().getMetadata());
-        LensFunIface::MetadataMatch ret = iface.findFromMetadata(meta);
+        QScopedPointer<DMetadata> meta(new DMetadata(image().getMetadata()));
+        LensFunIface::MetadataMatch ret = iface.findFromMetadata(*meta);
         prm                             = iface.settings();
 
         if (ret != LensFunIface::MetadataExactMatch)

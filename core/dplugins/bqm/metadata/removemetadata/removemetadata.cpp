@@ -31,6 +31,7 @@
 #include <QWidget>
 #include <QLabel>
 #include <QFile>
+#include <QScopedPointer>
 
 // KDE includes
 
@@ -219,14 +220,14 @@ bool RemoveMetadata::toolOperations()
     }
 
     bool ret = true;
-    DMetadata meta;
+    QScopedPointer<DMetadata> meta(new DMetadata);
 
     if (image().isNull())
     {
         QFile::remove(outputUrl().toLocalFile());
         ret = QFile::copy(inputUrl().toLocalFile(), outputUrl().toLocalFile());
 
-        if (!ret || !meta.load(outputUrl().toLocalFile()))
+        if (!ret || !meta->load(outputUrl().toLocalFile()))
         {
             return ret;
         }
@@ -234,7 +235,7 @@ bool RemoveMetadata::toolOperations()
     else
     {
         ret = savefromDImg();
-        meta.setData(image().getMetadata());
+        meta->setData(image().getMetadata());
     }
 
     bool removeExif = settings()[QLatin1String("RemoveExif")].toBool();
@@ -249,22 +250,22 @@ bool RemoveMetadata::toolOperations()
     {
         if      (exifData == Private::ALL)
         {
-            meta.clearExif();
+            meta->clearExif();
         }
         else if (exifData == Private::DATE)
         {
-            meta.removeExifTag("Exif.Image.DateTime");
-            meta.removeExifTag("Exif.Image.PreviewDateTime");
-            meta.removeExifTag("Exif.Photo.DateTimeOriginal");
-            meta.removeExifTag("Exif.Photo.DateTimeDigitized");
+            meta->removeExifTag("Exif.Image.DateTime");
+            meta->removeExifTag("Exif.Image.PreviewDateTime");
+            meta->removeExifTag("Exif.Photo.DateTimeOriginal");
+            meta->removeExifTag("Exif.Photo.DateTimeDigitized");
         }
         else if (exifData == Private::GPS)
         {
-            meta.removeExifTags(QStringList() << QLatin1String("GPSInfo"));
+            meta->removeExifTags(QStringList() << QLatin1String("GPSInfo"));
         }
         else if (exifData == Private::XPKEYWORDS)
         {
-            meta.removeExifTag("Exif.Image.XPKeywords");
+            meta->removeExifTag("Exif.Image.XPKeywords");
         }
     }
 
@@ -272,12 +273,12 @@ bool RemoveMetadata::toolOperations()
     {
         if      (iptcData == Private::ALL)
         {
-            meta.clearIptc();
+            meta->clearIptc();
         }
         else if (iptcData == Private::DATE)
         {
-            meta.removeIptcTag("Iptc.Application2.DateCreated");
-            meta.removeIptcTag("Iptc.Application2.TimeCreated");
+            meta->removeIptcTag("Iptc.Application2.DateCreated");
+            meta->removeIptcTag("Iptc.Application2.TimeCreated");
         }
     }
 
@@ -285,46 +286,46 @@ bool RemoveMetadata::toolOperations()
     {
         if      (xmpData == Private::ALL)
         {
-            meta.clearXmp();
+            meta->clearXmp();
         }
         else if (xmpData == Private::DATE)
         {
-            meta.removeXmpTag("Xmp.photoshop.DateCreated");
-            meta.removeXmpTag("Xmp.exif.DateTimeOriginal");
-            meta.removeXmpTag("Xmp.xmp.MetadataDate");
-            meta.removeXmpTag("Xmp.xmp.CreateDate");
-            meta.removeXmpTag("Xmp.xmp.ModifyDate");
-            meta.removeXmpTag("Xmp.tiff.DateTime");
-            meta.removeXmpTag("Xmp.video.DateTimeDigitized");
-            meta.removeXmpTag("Xmp.video.DateTimeOriginal");
-            meta.removeXmpTag("Xmp.video.ModificationDate");
-            meta.removeXmpTag("Xmp.video.DateUTC");
+            meta->removeXmpTag("Xmp.photoshop.DateCreated");
+            meta->removeXmpTag("Xmp.exif.DateTimeOriginal");
+            meta->removeXmpTag("Xmp.xmp.MetadataDate");
+            meta->removeXmpTag("Xmp.xmp.CreateDate");
+            meta->removeXmpTag("Xmp.xmp.ModifyDate");
+            meta->removeXmpTag("Xmp.tiff.DateTime");
+            meta->removeXmpTag("Xmp.video.DateTimeDigitized");
+            meta->removeXmpTag("Xmp.video.DateTimeOriginal");
+            meta->removeXmpTag("Xmp.video.ModificationDate");
+            meta->removeXmpTag("Xmp.video.DateUTC");
         }
         else if (xmpData == Private::HISTORY)
         {
-            meta.removeXmpTag("Xmp.digiKam.ImageHistory");
+            meta->removeXmpTag("Xmp.digiKam.ImageHistory");
         }
         else if (xmpData == Private::DIGIKAM)
         {
-            meta.removeXmpTags(QStringList() << QLatin1String("digiKam"));
+            meta->removeXmpTags(QStringList() << QLatin1String("digiKam"));
         }
         else if (xmpData == Private::DUBLIN)
         {
-            meta.removeXmpTags(QStringList() << QLatin1String("dc"));
+            meta->removeXmpTags(QStringList() << QLatin1String("dc"));
         }
         else if (xmpData == Private::EXIF)
         {
-            meta.removeXmpTags(QStringList() << QLatin1String("exif"));
+            meta->removeXmpTags(QStringList() << QLatin1String("exif"));
         }
         else if (xmpData == Private::VIDEO)
         {
-            meta.removeXmpTags(QStringList() << QLatin1String("video"));
+            meta->removeXmpTags(QStringList() << QLatin1String("video"));
         }
     }
 
     if (ret && (removeExif || removeIptc || removeXmp))
     {
-        ret = meta.save(outputUrl().toLocalFile());
+        ret = meta->save(outputUrl().toLocalFile());
     }
 
     return ret;
