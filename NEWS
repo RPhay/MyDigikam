@@ -98,4 +98,5 @@ BUGFIXES:
 085 ==> 426699 - "Ignored" faces category should not be positioned alphabetically, but on top of the list.
 086 ==> 372380 - Support for MediaWiki tool?
 087 ==> 417788 - Can't import a video file in an album.
-088 ==> 
+088 ==> 426218 - Pictures from old collection still in database after removing it.
+089 ==> 
