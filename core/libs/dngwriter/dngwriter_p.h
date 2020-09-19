@@ -35,6 +35,8 @@
 #include <QIODevice>
 #include <QTemporaryFile>
 #include <QDateTime>
+#include <QPointer>
+#include <QScopedPointer>
 
 // Local includes
 
