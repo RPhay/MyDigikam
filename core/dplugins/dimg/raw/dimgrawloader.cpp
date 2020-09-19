@@ -31,6 +31,7 @@
 // Qt includes
 
 #include <QByteArray>
+#include <QScopedPointer>
 
 // Local includes
 
@@ -61,7 +62,7 @@ bool DImgRAWLoader::load(const QString& filePath, DImgLoaderObserver* const obse
 
     readMetadata(filePath);
 
-    DRawInfo* const dcrawIdentify = new DRawInfo;
+    QScopedPointer<DRawInfo> dcrawIdentify(new DRawInfo);
 
     if (!DRawDecoder::rawFileIdentify(*dcrawIdentify, filePath))
     {

@@ -27,6 +27,7 @@
 
 #include <QString>
 #include <QFile>
+#include <QScopedPointer>
 
 // Local includes
 
@@ -376,7 +377,7 @@ bool DRawDecoder::Private::loadFromLibraw(const QString& filePath, QByteArray& i
             double Y                 = 0.0;
             double Z                 = 0.0;
             double T                 = m_parent->m_decoderSettings.customWhiteBalance;
-            DRawInfo* const identify = new DRawInfo;
+            QScopedPointer<DRawInfo> identify(new DRawInfo);
 
             // -----------------------------------------------------------------------
             // Here starts the code picked and adapted from ufraw (0.12.1)

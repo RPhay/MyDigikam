@@ -28,6 +28,7 @@
 // Qt includes
 
 #include <QString>
+#include <QScopedPointer>
 
 // Local includes
 
@@ -42,7 +43,7 @@ namespace Digikam
 
 bool DMetadata::loadUsingRawEngine(const QString& filePath)
 {
-    DRawInfo* const identify = new DRawInfo;
+    QScopedPointer<DRawInfo> identify(new DRawInfo);
 
     if (DRawDecoder::rawFileIdentify(*identify, filePath))
     {

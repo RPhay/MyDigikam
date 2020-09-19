@@ -31,6 +31,8 @@
 #include <QImage>
 #include <QImageReader>
 #include <QLocale>
+#include <QPointer>
+#include <QScopedPointer>
 
 // KDE includes
 
@@ -360,8 +362,8 @@ void GalleryElementFunctor::operator()(GalleryElement& element)
     {
         // Try to use Raw decoder to identify image.
 
-        DRawInfo* const info          = new DRawInfo;
-        DRawDecoder* const rawdecoder = new DRawDecoder;
+        QScopedPointer<DRawInfo> info(new DRawInfo);
+        QPointer<DRawDecoder> rawdecoder(new DRawDecoder);
         rawdecoder->rawFileIdentify(*info, path);
 
         if (info->isDecodable)

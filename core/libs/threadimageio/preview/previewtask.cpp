@@ -29,6 +29,7 @@
 #include <QImage>
 #include <QVariant>
 #include <QMatrix>
+#include <QScopedPointer>
 
 // Local includes
 
@@ -186,7 +187,7 @@ void PreviewLoadingTask::execute()
 
             if (!originalSize.isValid())
             {
-                DRawInfo* const container = new DRawInfo;
+                QScopedPointer<DRawInfo> container(new DRawInfo);
 
                 if (DRawDecoder::rawFileIdentify(*container, m_loadingDescription.filePath))
                 {
