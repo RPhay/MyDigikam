@@ -47,7 +47,13 @@ public:
 
     Private()
         : preprocessor(nullptr),
-          ref(1)
+          ref(1),
+
+          // As we use OpenFace, we need to set appropriate values for image color space and image size
+
+          imageSize(cv::Size(96, 96)),
+          scaleFactor(1.0F / 255.0F),
+          meanValToSubtract(cv::Scalar(0.0, 0.0, 0.0))
     {
     }
 
@@ -60,15 +66,53 @@ public:
 
     RecognitionPreprocessor* preprocessor;
 
+    int                      ref;
+
     cv::dnn::Net             net;
     QMutex                   mutex;
 
     cv::Size                 imageSize;
     float                    scaleFactor;
     cv::Scalar               meanValToSubtract;
-
-    int                      ref;
 };
+
+DNNFaceExtractor::DNNFaceExtractor()
+    : d(new Private)
+{
+    // Read pretrained neural network for face recognition
+
+/*
+    QString nnproto = QStandardPaths::locate(QStandardPaths::GenericDataLocation,
+                                             QLatin1String("digikam/facesengine/dnnface/deep-residual-networks/ResNet-50-deploy.prototxt"));
+    QString nnmodel = QStandardPaths::locate(QStandardPaths::GenericDataLocation,
+                                             QLatin1String("digikam/facesengine/dnnface/deep-residual-networks/ResNet-50-model.caffemodel"));
+    net = cv::dnn::readNetFromCaffe(nnproto, nnmodel);
+*/
+    d->preprocessor = new RecognitionPreprocessor;
+    d->preprocessor->init(PreprocessorSelection::OPENFACE);
+
+    QString nnmodel = QStandardPaths::locate(QStandardPaths::GenericDataLocation,
+                                             QLatin1String("digikam/facesengine/openface_nn4.small2.v1.t7"));
+    qCDebug(DIGIKAM_FACEDB_LOG) << nnmodel;
+
+    d->net          = cv::dnn::readNetFromTorch(nnmodel.toStdString());
+}
+
+DNNFaceExtractor::DNNFaceExtractor(const DNNFaceExtractor& other)
+    : d(other.d)
+{
+    ++(d->ref);
+}
+
+DNNFaceExtractor::~DNNFaceExtractor()
+{
+    --(d->ref);
+
+    if (d->ref == 0)
+    {
+        delete d;
+    }
+}
 
 double DNNFaceExtractor::cosineDistance(std::vector<float> v1,
                                         std::vector<float> v2)
@@ -87,7 +131,7 @@ double DNNFaceExtractor::L2squareDistance(std::vector<float> v1,
 {
     assert(v1.size() == v2.size());
 
-    double sqrDistance = 0;
+    double sqrDistance = 0.0;
 
     for (size_t i = 0 ; i < v1.size() ; ++i)
     {
@@ -146,48 +190,6 @@ std::vector<float> DNNFaceExtractor::decodeVector(const QJsonArray& json)
     return vector;
 }
 
-DNNFaceExtractor::DNNFaceExtractor()
-    : d(new Private)
-{
-    // Read pretrained neural network for face recognition
-
-/*
-    QString nnproto = QStandardPaths::locate(QStandardPaths::GenericDataLocation,
-                                             QLatin1String("digikam/facesengine/dnnface/deep-residual-networks/ResNet-50-deploy.prototxt"));
-    QString nnmodel = QStandardPaths::locate(QStandardPaths::GenericDataLocation,
-                                             QLatin1String("digikam/facesengine/dnnface/deep-residual-networks/ResNet-50-model.caffemodel"));
-    net = cv::dnn::readNetFromCaffe(nnproto, nnmodel);
-*/
-    d->preprocessor = new RecognitionPreprocessor;
-    d->preprocessor->init(PreprocessorSelection::OPENFACE);
-
-    QString nnmodel = QStandardPaths::locate(QStandardPaths::GenericDataLocation,
-                                             QLatin1String("digikam/facesengine/openface_nn4.small2.v1.t7"));
-    qCDebug(DIGIKAM_FACEDB_LOG) << nnmodel;
-
-    d->net               = cv::dnn::readNetFromTorch(nnmodel.toStdString());
-    // As we use OpenFace, we need to set appropriate values for image color space and image size
-
-    d->imageSize         = cv::Size(96, 96);
-    d->scaleFactor       = 1.0F / 255.0F;
-    d->meanValToSubtract = cv::Scalar(0.0, 0.0, 0.0);
-}
-
-DNNFaceExtractor::DNNFaceExtractor(const DNNFaceExtractor& other)
-    : d(other.d)
-{
-    ++(d->ref);
-}
-
-DNNFaceExtractor::~DNNFaceExtractor()
-{
-    --(d->ref);
-
-    if (d->ref == 0)
-    {
-        delete d;
-    }
-}
 
 cv::Mat DNNFaceExtractor::alignFace(const cv::Mat& inputImage) const
 {
@@ -198,15 +200,16 @@ cv::Mat DNNFaceExtractor::getFaceEmbedding(const cv::Mat& faceImage)
 {
     cv::Mat face_descriptors;
     cv::Mat alignedFace;
-    //qCDebug(DIGIKAM_FACEDB_LOG) << "faceImage channels: " << faceImage.channels();
-    //qCDebug(DIGIKAM_FACEDB_LOG) << "faceImage size: (" << faceImage.rows << ", " << faceImage.cols << ")\n";
-
+/*
+    qCDebug(DIGIKAM_FACEDB_LOG) << "faceImage channels: " << faceImage.channels();
+    qCDebug(DIGIKAM_FACEDB_LOG) << "faceImage size: (" << faceImage.rows << ", " << faceImage.cols << ")\n";
+*/
     QElapsedTimer timer;
 
     timer.start();
-    /*
-        alignedFace = faceImage;
-    */
+/*
+    alignedFace = faceImage;
+*/
     alignedFace = d->preprocessor->preprocess(faceImage);
 
     qCDebug(DIGIKAM_FACEDB_LOG) << "Finish aligning face in " << timer.elapsed() << " ms";
@@ -226,12 +229,12 @@ cv::Mat DNNFaceExtractor::getFaceEmbedding(const cv::Mat& faceImage)
     qCDebug(DIGIKAM_FACEDB_LOG) << "Finish computing face embedding in "
                                 << timer.elapsed() << " ms";
 
-    /*
-        cv::Mat blob = cv::dnn::blobFromImage(faceImage, 1.0 / 255, cv::Size(96, 96), cv::Scalar(0,0,0), false, true, CV_32F); // work for openface.nn4
-        cv::Mat blob = cv::dnn::blobFromImage(faceImage, 1.0 / 255, cv::Size(224,224), cv::Scalar(0,0,0), false, true, CV_32F);
-        net.setInput(blob);
-        cv::Mat face_descriptors = net.forward();
-    */
+/*
+    cv::Mat blob = cv::dnn::blobFromImage(faceImage, 1.0 / 255, cv::Size(96, 96), cv::Scalar(0,0,0), false, true, CV_32F); // work for openface.nn4
+    cv::Mat blob = cv::dnn::blobFromImage(faceImage, 1.0 / 255, cv::Size(224,224), cv::Scalar(0,0,0), false, true, CV_32F);
+    net.setInput(blob);
+    cv::Mat face_descriptors = net.forward();
+*/
 
     return face_descriptors;
 }

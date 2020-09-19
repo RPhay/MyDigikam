@@ -48,9 +48,8 @@ class DIGIKAM_GUI_EXPORT DNNFaceExtractor
 public:
 
     explicit DNNFaceExtractor();
-    ~DNNFaceExtractor();
-
     DNNFaceExtractor(const DNNFaceExtractor&);
+    ~DNNFaceExtractor();
 
     cv::Mat alignFace(const cv::Mat& inputImage) const;
     cv::Mat getFaceEmbedding(const cv::Mat& faceImage);
@@ -71,11 +70,11 @@ public:
 
 private:
 
-    class Private;
-    Private* d;
-
     // Hidden assignment operator.
     DNNFaceExtractor& operator=(const DNNFaceExtractor&);
+
+    class Private;
+    Private* d;
 };
 
 } // namespace Digikam
