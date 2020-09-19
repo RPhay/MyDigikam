@@ -956,6 +956,7 @@ void TagsManager::slotRemoveNotAssignedTags()
             TAlbum* const t = static_cast<TAlbum*>(d->tagMngrView->albumForIndex(current));
 
             if (t && !t->isRoot() && !t->isInternalTag()    &&
+                (t->id() != FaceTags::ignoredPersonTagId()) &&
                 (t->id() != FaceTags::unknownPersonTagId()) &&
                 (t->id() != FaceTags::unconfirmedPersonTagId()))
             {
