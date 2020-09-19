@@ -186,11 +186,11 @@ void PreviewLoadingTask::execute()
 
             if (!originalSize.isValid())
             {
-                DRawInfo container;
+                DRawInfo* const container = new DRawInfo;
 
-                if (DRawDecoder::rawFileIdentify(container, m_loadingDescription.filePath))
+                if (DRawDecoder::rawFileIdentify(*container, m_loadingDescription.filePath))
                 {
-                    originalSize = container.imageSize;
+                    originalSize = container->imageSize;
                 }
             }
 
