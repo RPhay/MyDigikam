@@ -57,11 +57,17 @@ bool DImgHEIFLoader::sixteenBit() const
 
 bool DImgHEIFLoader::isReadOnly() const
 {
+
 #ifdef HAVE_X265
+
     return false;
+
 #else
+
     return true;
+
 #endif
+
 }
 
 bool DImgHEIFLoader::isHeifSuccess(struct heif_error* const error)

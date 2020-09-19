@@ -36,6 +36,7 @@
 #include <QUrl>
 #include <QImage>
 #include <QLocale>
+#include <QScopedPointer>
 
 // Local includes
 
@@ -88,8 +89,8 @@ void CalPainter::cancel()
 void CalPainter::setImage(const QUrl& imagePath)
 {
     d->imagePath   = imagePath;
-    MetaEngine meta(d->imagePath.toLocalFile());
-    d->orientation = (int)meta.getItemOrientation();
+    QScopedPointer<MetaEngine> meta(new MetaEngine(d->imagePath.toLocalFile()));
+    d->orientation = (int)meta->getItemOrientation();
 }
 
 void CalPainter::paint(int month)
@@ -107,6 +108,7 @@ void CalPainter::paint(int month)
     // --------------------------------------------------
 
     // FIXME: magic number 42
+
     int days[42];
     int startDayOffset = QLocale().weekdays().first();
 
@@ -204,7 +206,9 @@ void CalPainter::paint(int month)
         }
 
         default:
+        {
             return;
+        }
     }
 
     int fontPixels = cellSizeX / 3;
@@ -222,7 +226,7 @@ void CalPainter::paint(int month)
     f.setBold(true);
     f.setPixelSize(f.pixelSize() + 5);
     setFont(f);
-    drawText(rCalHeader, Qt::AlignLeft | Qt::AlignVCenter, QString::number(params.year));
+    drawText(rCalHeader, Qt::AlignLeft  | Qt::AlignVCenter, QString::number(params.year));
     drawText(rCalHeader, Qt::AlignRight | Qt::AlignVCenter, QLocale().standaloneMonthName(month));
     restore();
 
@@ -340,8 +344,8 @@ void CalPainter::paint(int month)
     {
         if ( d->orientation != MetaEngine::ORIENTATION_UNSPECIFIED )
         {
-            MetaEngine meta;
-            meta.rotateExifQImage(d->image, (MetaEngine::ImageOrientation)d->orientation);
+            QScopedPointer<MetaEngine> meta(new MetaEngine);
+            meta->rotateExifQImage(d->image, (MetaEngine::ImageOrientation)d->orientation);
         }
 
         emit signalProgress(0);

@@ -32,6 +32,7 @@
 #include <QElapsedTimer>
 #include <QDataStream>
 #include <qplatformdefs.h>
+#include <QScopedPointer>
 
 // Local includes
 
@@ -494,6 +495,7 @@ bool DImgHEIFLoader::save(const QString& filePath, DImgLoaderObserver* const obs
 
 bool DImgHEIFLoader::saveHEICColorProfile(struct heif_image* const image)
 {
+
 #if LIBHEIF_NUMERIC_VERSION >= 0x01040000
 
     QByteArray profile = m_image->getIccProfile().data();
@@ -515,8 +517,11 @@ bool DImgHEIFLoader::saveHEICColorProfile(struct heif_image* const image)
 
         qCDebug(DIGIKAM_DIMG_LOG_HEIF) << "Stored HEIF color profile size:" << profile.size();
     }
+
 #else
+
     Q_UNUSED(image_handle);
+
 #endif
 
     return true;
@@ -525,16 +530,16 @@ bool DImgHEIFLoader::saveHEICColorProfile(struct heif_image* const image)
 bool DImgHEIFLoader::saveHEICMetadata(struct heif_context* const heif_context,
                                       struct heif_image_handle* const image_handle)
 {
-    MetaEngine meta(m_image->getMetadata());
+    QScopedPointer<MetaEngine> meta(new MetaEngine(m_image->getMetadata()));
 
-    if (!meta.hasExif() && !meta.hasIptc() && !meta.hasXmp())
+    if (!meta->hasExif() && !meta->hasIptc() && !meta->hasXmp())
     {
         return false;
     }
 
-    QByteArray exif = meta.getExifEncoded();
-    QByteArray iptc = meta.getIptc();
-    QByteArray xmp  = meta.getXmp();
+    QByteArray exif = meta->getExifEncoded();
+    QByteArray iptc = meta->getIptc();
+    QByteArray xmp  = meta->getXmp();
     struct heif_error error;
 
     if (!exif.isEmpty())
