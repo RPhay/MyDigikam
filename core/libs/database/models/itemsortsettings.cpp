@@ -253,20 +253,20 @@ int ItemSortSettings::compareCategories(const ItemInfo& left, const ItemInfo& ri
             QString leftValue;
             QString rightValue;
 
-            if (leftFace.type() == FaceTagsIface::ConfirmedName)
+            if      (leftFace.type() == FaceTagsIface::ConfirmedName)
             {
                 leftValue = FaceTags::faceNameForTag(leftFace.tagId());
             }
-            else
+            else if (leftFace.type() == FaceTagsIface::UnconfirmedName)
             {
                 leftValue = left.getSuggestedNames().value(leftFace.region().toXml());
             }
 
-            if (rightFace.type() == FaceTagsIface::ConfirmedName)
+            if      (rightFace.type() == FaceTagsIface::ConfirmedName)
             {
                 rightValue = FaceTags::faceNameForTag(rightFace.tagId());
             }
-            else
+            else if (rightFace.type() == FaceTagsIface::UnconfirmedName)
             {
                  rightValue = right.getSuggestedNames().value(rightFace.region().toXml());
             }
