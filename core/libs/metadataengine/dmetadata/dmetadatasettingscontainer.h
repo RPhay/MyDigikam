@@ -4,7 +4,7 @@
  * https://www.digikam.org
  *
  * Date        : 2010-08-20
- * Description : DMetadata Settings Container.
+ * Description : metadata Settings Container.
  *
  * Copyright (C) 2015      by Veaceslav Munteanu <veaceslav dot munteanu90 at gmail dot com>
  * Copyright (C) 2015-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>

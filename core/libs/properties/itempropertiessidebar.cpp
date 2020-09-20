@@ -225,7 +225,7 @@ void ItemPropertiesSideBar::setImagePropertiesInformation(const QUrl& url)
     QString str;
     QString unavailable(i18n("<i>unavailable</i>"));
     QFileInfo fileInfo(url.toLocalFile());
-    DMetadata metaData(url.toLocalFile());
+    QScopedPointer<DMetadata> metaData(new DMetadata(url.toLocalFile()));
 
     // -- File system information -----------------------------------------
 
@@ -250,14 +250,14 @@ void ItemPropertiesSideBar::setImagePropertiesInformation(const QUrl& url)
     {
         m_propertiesTab->setImageMime(i18n("RAW Image"));
         bitDepth    = QLatin1String("48");
-        dims        = metaData.getItemDimensions();
+        dims        = metaData->getItemDimensions();
         colorMode   = i18n("Uncalibrated");
     }
     else
     {
         m_propertiesTab->setImageMime(QMimeDatabase().mimeTypeForFile(fileInfo).comment());
 
-        dims      = metaData.getPixelSize();
+        dims      = metaData->getPixelSize();
 
         DImg img;
         img.loadItemInfo(url.toLocalFile(), false, false, false, false);
@@ -286,7 +286,7 @@ void ItemPropertiesSideBar::setImagePropertiesInformation(const QUrl& url)
 
     // -- Photograph information ------------------------------------------
 
-    PhotoInfoContainer photoInfo = metaData.getPhotographInformation();
+    PhotoInfoContainer photoInfo = metaData->getPhotographInformation();
 
     m_propertiesTab->setPhotoInfoDisable(photoInfo.isEmpty());
     ItemPropertiesTab::shortenedMakeInfo(photoInfo.make);
@@ -343,7 +343,7 @@ void ItemPropertiesSideBar::setImagePropertiesInformation(const QUrl& url)
 
     // -- Audio/Video information ------------------------------------------
 
-    VideoInfoContainer videoInfo = metaData.getVideoInformation();
+    VideoInfoContainer videoInfo = metaData->getVideoInformation();
 
     m_propertiesTab->setVideoInfoDisable(videoInfo.isEmpty());
 
@@ -357,7 +357,7 @@ void ItemPropertiesSideBar::setImagePropertiesInformation(const QUrl& url)
 
     // -- Caption, ratings, tag information ---------------------
 
-    CaptionsMap captions = metaData.getItemComments();
+    CaptionsMap captions = metaData->getItemComments();
     QString caption;
 
     if      (captions.contains(QLatin1String("x-default")))
@@ -371,10 +371,10 @@ void ItemPropertiesSideBar::setImagePropertiesInformation(const QUrl& url)
 
     m_propertiesTab->setCaption(caption);
 
-    m_propertiesTab->setRating(metaData.getItemRating());
+    m_propertiesTab->setRating(metaData->getItemRating());
 
     QStringList tagPaths;
-    metaData.getItemTagsPath(tagPaths);
+    metaData->getItemTagsPath(tagPaths);
     m_propertiesTab->setTags(tagPaths);
     m_propertiesTab->showOrHideCaptionAndTags();
 }

@@ -275,7 +275,7 @@ void ShowFoto::openUrls(const QList<QUrl> &urls)
     }
 
     ShowfotoItemInfo iteminfo;
-    DMetadata meta;
+    QScopedPointer<DMetadata> meta(new DMetadata);
 
     for (QList<QUrl>::const_iterator it = urls.constBegin() ; it != urls.constEnd() ; ++it)
     {
@@ -296,11 +296,11 @@ void ShowFoto::openUrls(const QList<QUrl> &urls)
 
 #endif
 
-        meta.load(fi.filePath());
-        iteminfo.ctime     = meta.getItemDateTime();
-        iteminfo.width     = meta.getItemDimensions().width();
-        iteminfo.height    = meta.getItemDimensions().height();
-        iteminfo.photoInfo = meta.getPhotographInformation();
+        meta->load(fi.filePath());
+        iteminfo.ctime     = meta->getItemDateTime();
+        iteminfo.width     = meta->getItemDimensions().width();
+        iteminfo.height    = meta->getItemDimensions().height();
+        iteminfo.photoInfo = meta->getPhotographInformation();
 
         if (!d->infoList.contains(iteminfo))
         {
@@ -351,7 +351,7 @@ void ShowFoto::openFolder(const QUrl& url)
 
     QFileInfoList::const_iterator fi;
     ShowfotoItemInfo iteminfo;
-    DMetadata meta;
+    QScopedPointer<DMetadata> meta(new DMetadata);
 
     // And open all items in image editor.
 
@@ -373,11 +373,11 @@ void ShowFoto::openFolder(const QUrl& url)
 
 #endif
 
-        meta.load((*fi).filePath());
-        iteminfo.ctime     = meta.getItemDateTime();
-        iteminfo.width     = meta.getItemDimensions().width();
-        iteminfo.height    = meta.getItemDimensions().height();
-        iteminfo.photoInfo = meta.getPhotographInformation();
+        meta->load((*fi).filePath());
+        iteminfo.ctime     = meta->getItemDateTime();
+        iteminfo.width     = meta->getItemDimensions().width();
+        iteminfo.height    = meta->getItemDimensions().height();
+        iteminfo.photoInfo = meta->getPhotographInformation();
 
         if (!d->infoList.contains(iteminfo))
         {

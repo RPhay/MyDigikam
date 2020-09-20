@@ -32,6 +32,7 @@
 #include <QHBoxLayout>
 #include <QVBoxLayout>
 #include <QPushButton>
+#include <QScopedPointer>
 #include <QWindow>
 #include <QLabel>
 #include <QIcon>
@@ -185,11 +186,11 @@ bool ClockPhotoDialog::setImage(const QUrl& imageFile)
 
     // Try to read the datetime data.
 
-    DMetadata meta;
+    QScopedPointer<DMetadata> meta(new DMetadata);
 
-    if (meta.load(imageFile.toLocalFile()))
+    if (meta->load(imageFile.toLocalFile()))
     {
-        d->photoDateTime = meta.getItemDateTime();
+        d->photoDateTime = meta->getItemDateTime();
 
         if (d->photoDateTime.isValid())
         {

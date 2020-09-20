@@ -33,6 +33,7 @@
 #include <QSplitter>
 #include <QFileInfo>
 #include <QLocale>
+#include <QScopedPointer>
 
 // KDE includes
 
@@ -206,7 +207,7 @@ void ItemPropertiesSideBarDB::itemChanged(const ItemInfoList& infos,
         d->desceditTab->setItem();
     }
 
-    slotChangedTab( getActiveTab() );
+    slotChangedTab(getActiveTab());
 }
 
 void ItemPropertiesSideBarDB::slotNoCurrentItem()
@@ -272,8 +273,8 @@ void ItemPropertiesSideBarDB::slotChangedTab(QWidget* tab)
         }
         else if (m_image)
         {
-            DMetadata data(m_image->getMetadata());
-            m_metadataTab->setCurrentData(data, m_currentURL.fileName());
+            QScopedPointer<DMetadata> data(new DMetadata(m_image->getMetadata()));
+            m_metadataTab->setCurrentData(*data, m_currentURL.fileName());
         }
         else
         {

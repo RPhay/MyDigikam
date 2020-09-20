@@ -27,6 +27,7 @@
 
 #include <QApplication>
 #include <QFileInfo>
+#include <QScopedPointer>
 
 // KDE includes
 
@@ -259,8 +260,8 @@ bool ShowfotoThumbnailModel::getThumbnail(const ShowfotoItemInfo& itemInfo, QIma
 
     // Try to get preview from Exif data (good quality). Can work with Raw files
 
-    DMetadata metadata(path);
-    metadata.getItemPreview(thumbnail);
+    QScopedPointer<DMetadata> metadata(new DMetadata(path));
+    metadata->getItemPreview(thumbnail);
 
     if (!thumbnail.isNull())
     {
@@ -284,7 +285,7 @@ bool ShowfotoThumbnailModel::getThumbnail(const ShowfotoItemInfo& itemInfo, QIma
 
     if (!turnHighQualityThumbs)
     {
-        thumbnail = metadata.getExifThumbnail(true);
+        thumbnail = metadata->getExifThumbnail(true);
 
         if (!thumbnail.isNull())
         {

@@ -45,6 +45,7 @@
 #include <QDesktopServices>
 #include <QIcon>
 #include <QLocale>
+#include <QScopedPointer>
 
 // KDE includes
 
@@ -310,11 +311,16 @@ void ItemPropertiesGPSTab::slotGPSDetails()
     qCDebug(DIGIKAM_GENERAL_LOG) << url;
 
 #ifdef HAVE_QWEBENGINE
+
     WebBrowserDlg* const browser = new WebBrowserDlg(QUrl(url), this);
     browser->show();
+
 #else
+
     QDesktopServices::openUrl(QUrl(url));
+
 #endif
+
 }
 
 void ItemPropertiesGPSTab::setCurrentURL(const QUrl& url)
@@ -325,9 +331,9 @@ void ItemPropertiesGPSTab::setCurrentURL(const QUrl& url)
         return;
     }
 
-    const DMetadata meta(url.toLocalFile());
+    QScopedPointer<DMetadata> meta(new DMetadata(url.toLocalFile()));
 
-    setMetadata(meta, url);
+    setMetadata(*meta, url);
 }
 
 void ItemPropertiesGPSTab::setMetadata(const DMetadata& meta, const QUrl& url)

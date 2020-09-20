@@ -55,6 +55,7 @@
 #include <QSplitter>
 #include <QAction>
 #include <QUrl>
+#include <QScopedPointer>
 
 // KDE includes
 

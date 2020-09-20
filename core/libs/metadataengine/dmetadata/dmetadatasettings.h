@@ -4,7 +4,7 @@
  * https://www.digikam.org
  *
  * Date        : 2015-06-22
- * Description : central place for DMetadata settings
+ * Description : central place for metadata settings
  *
  * Copyright (C) 2015      by Veaceslav Munteanu <veaceslav dot munteanu90 at gmail dot com>
  * Copyright (C) 2015-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>

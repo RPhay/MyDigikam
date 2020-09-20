@@ -246,7 +246,7 @@ bool MetadataHub::writeToMetadata(const ItemInfo& info, WriteComponent writeMode
 {
     applyChangeNotifications();
 
-    // if no DMetadata object is needed at all, don't construct one -
+    // if no metadata constainer is needed at all, don't construct one -
     // important optimization if writing to file is turned off in setup!
 
     if (!willWriteMetadata(writeMode, settings))
@@ -376,7 +376,7 @@ bool MetadataHub::write(const QString& filePath, WriteComponent writeMode, bool 
 {
     applyChangeNotifications();
 
-    // if no DMetadata object is needed at all, don't construct one -
+    // if no metadata container is needed at all, don't construct one -
     // important optimization if writing to file is turned off in setup!
 
     if (!willWriteMetadata(writeMode, settings))
@@ -411,7 +411,7 @@ bool MetadataHub::write(DImg& image, WriteComponent writeMode, bool ignoreLazySy
 {
     applyChangeNotifications();
 
-    // if no DMetadata object is needed at all, don't construct one
+    // if no metadata container is needed at all, don't construct one
 
     if (!willWriteMetadata(writeMode, settings))
     {
@@ -451,7 +451,7 @@ bool MetadataHub::writeTags(const QString& filePath, WriteComponent writeMode,
 {
     applyChangeNotifications();
 
-    // if no DMetadata object is needed at all, don't construct one -
+    // if no metadata container is needed at all, don't construct one -
     // important optimization if writing to file is turned off in setup!
 
     if (!willWriteMetadata(writeMode, settings))

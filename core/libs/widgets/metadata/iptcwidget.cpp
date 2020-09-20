@@ -27,6 +27,7 @@
 
 #include <QMap>
 #include <QFile>
+#include <QScopedPointer>
 
 // KDE includes
 
@@ -82,16 +83,16 @@ bool IptcWidget::loadFromURL(const QUrl& url)
     }
     else
     {
-        DMetadata metadata(url.toLocalFile());
+        QScopedPointer<DMetadata> metadata(new DMetadata(url.toLocalFile()));
 
-        if (!metadata.hasIptc())
+        if (!metadata->hasIptc())
         {
             setMetadata();
             return false;
         }
         else
         {
-            setMetadata(metadata);
+            setMetadata(*metadata);
         }
     }
 
@@ -136,8 +137,8 @@ void IptcWidget::buildView()
 
 QString IptcWidget::getTagTitle(const QString& key)
 {
-    DMetadata metadataIface;
-    QString title = metadataIface.getIptcTagTitle(key.toLatin1().constData());
+    QScopedPointer<DMetadata> metadataIface(new DMetadata);
+    QString title = metadataIface->getIptcTagTitle(key.toLatin1().constData());
 
     if (title.isEmpty())
     {
@@ -149,8 +150,8 @@ QString IptcWidget::getTagTitle(const QString& key)
 
 QString IptcWidget::getTagDescription(const QString& key)
 {
-    DMetadata metadataIface;
-    QString desc = metadataIface.getIptcTagDescription(key.toLatin1().constData());
+    QScopedPointer<DMetadata> metadataIface(new DMetadata);
+    QString desc = metadataIface->getIptcTagDescription(key.toLatin1().constData());
 
     if (desc.isEmpty())
     {

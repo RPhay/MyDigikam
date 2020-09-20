@@ -27,6 +27,7 @@
 
 #include <QMap>
 #include <QFile>
+#include <QScopedPointer>
 
 // KDE includes
 
@@ -91,16 +92,16 @@ bool ExifWidget::loadFromURL(const QUrl& url)
     }
     else
     {
-        DMetadata metadata(url.toLocalFile());
+        QScopedPointer<DMetadata> metadata(new DMetadata(url.toLocalFile()));
 
-        if (!metadata.hasExif())
+        if (!metadata->hasExif())
         {
             setMetadata();
             return false;
         }
         else
         {
-            setMetadata(metadata);
+            setMetadata(*metadata);
         }
     }
 
@@ -145,8 +146,8 @@ void ExifWidget::buildView()
 
 QString ExifWidget::getTagTitle(const QString& key)
 {
-    DMetadata metadataIface;
-    QString title = metadataIface.getExifTagTitle(key.toLatin1().constData());
+    QScopedPointer<DMetadata> metadataIface(new DMetadata);
+    QString title = metadataIface->getExifTagTitle(key.toLatin1().constData());
 
     if (title.isEmpty())
     {
@@ -158,8 +159,8 @@ QString ExifWidget::getTagTitle(const QString& key)
 
 QString ExifWidget::getTagDescription(const QString& key)
 {
-    DMetadata metadataIface;
-    QString desc = metadataIface.getExifTagDescription(key.toLatin1().constData());
+    QScopedPointer<DMetadata> metadataIface(new DMetadata);
+    QString desc = metadataIface->getExifTagDescription(key.toLatin1().constData());
 
     if (desc.isEmpty())
     {

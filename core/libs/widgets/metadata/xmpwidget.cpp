@@ -27,6 +27,7 @@
 
 #include <QMap>
 #include <QFile>
+#include <QScopedPointer>
 
 // KDE includes
 
@@ -98,16 +99,16 @@ bool XmpWidget::loadFromURL(const QUrl& url)
     }
     else
     {
-        DMetadata metadata(url.toLocalFile());
+        QScopedPointer<DMetadata> metadata(new DMetadata(url.toLocalFile()));
 
-        if (!metadata.hasXmp())
+        if (!metadata->hasXmp())
         {
             setMetadata();
             return false;
         }
         else
         {
-            setMetadata(metadata);
+            setMetadata(*metadata);
         }
     }
 
@@ -152,8 +153,8 @@ void XmpWidget::buildView()
 
 QString XmpWidget::getTagTitle(const QString& key)
 {
-    DMetadata metadataIface;
-    QString title = metadataIface.getXmpTagTitle(key.toLatin1().constData());
+    QScopedPointer<DMetadata> metadataIface(new DMetadata);
+    QString title = metadataIface->getXmpTagTitle(key.toLatin1().constData());
 
     if (title.isEmpty())
     {
@@ -165,8 +166,8 @@ QString XmpWidget::getTagTitle(const QString& key)
 
 QString XmpWidget::getTagDescription(const QString& key)
 {
-    DMetadata metadataIface;
-    QString desc = metadataIface.getXmpTagDescription(key.toLatin1().constData());
+    QScopedPointer<DMetadata> metadataIface(new DMetadata);
+    QString desc = metadataIface->getXmpTagDescription(key.toLatin1().constData());
 
     if (desc.isEmpty())
     {

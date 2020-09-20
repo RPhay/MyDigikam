@@ -30,8 +30,11 @@ namespace Digikam
 void ItemScanner::fillVideoMetadataContainer(qlonglong imageid, VideoMetadataContainer* const container)
 {
     // read from database
+
     QVariantList fields      = CoreDbAccess().db()->getVideoMetadata(imageid);
+
     // check we have at least one valid field
+
     container->allFieldsNull = !hasValidField(fields);
 
     if (container->allFieldsNull)
@@ -39,9 +42,12 @@ void ItemScanner::fillVideoMetadataContainer(qlonglong imageid, VideoMetadataCon
         return;
     }
 
-    // DMetadata does all translation work
+    // Metadata container does all translation work
+
     QStringList strings = DMetadata::valuesToString(fields, allVideoMetadataFields());
-    // associate with hard-coded variables
+
+    // Associate with hard-coded variables
+
     container->aspectRatio      = strings.at(0);
     container->audioBitRate     = strings.at(1);
     container->audioChannelType = strings.at(2);
@@ -116,6 +122,7 @@ QString ItemScanner::detectAudioFormat() const
 MetadataFields ItemScanner::allVideoMetadataFields()
 {
     // This list must reflect the order required by CoreDB::addVideoMetadata
+
     MetadataFields fields;
     fields << MetadataInfo::AspectRatio
            << MetadataInfo::AudioBitRate
@@ -188,7 +195,9 @@ void ItemScanner::scanVideoMetadata()
     if (hasValidField(metadataInfos))
     {
         d->commit.commitVideoMetadata = true;
+
         // reuse imageMetadataInfos field
+
         d->commit.imageMetadataInfos  = metadataInfos;
     }
 }

@@ -30,6 +30,7 @@
 #include <QPixmap>
 #include <QFileInfo>
 #include <QVBoxLayout>
+#include <QScopedPointer>
 
 // KDE includes
 
@@ -196,12 +197,12 @@ void ItemPropertiesMetadataTab::setCurrentURL(const QUrl& url)
     }
 
     setEnabled(true);
-    DMetadata metadata(url.toLocalFile());
+    QScopedPointer<DMetadata> metadata(new DMetadata(url.toLocalFile()));
 
-    d->exifWidget->loadFromData(url.fileName(), metadata);
-    d->makernoteWidget->loadFromData(url.fileName(), metadata);
-    d->iptcWidget->loadFromData(url.fileName(), metadata);
-    d->xmpWidget->loadFromData(url.fileName(), metadata);
+    d->exifWidget->loadFromData(url.fileName(),      *metadata);
+    d->makernoteWidget->loadFromData(url.fileName(), *metadata);
+    d->iptcWidget->loadFromData(url.fileName(),      *metadata);
+    d->xmpWidget->loadFromData(url.fileName(),       *metadata);
 }
 
 void ItemPropertiesMetadataTab::setCurrentData(const DMetadata& metaData, const QString& filename)

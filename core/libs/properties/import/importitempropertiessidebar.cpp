@@ -76,7 +76,9 @@ public:
     CamItemInfo                itemInfo;
 
 #ifdef HAVE_MARBLE
+
     ItemPropertiesGPSTab*      gpsTab;
+
 #endif // HAVE_MARBLE
 
     ItemPropertiesMetadataTab* metadataTab;
@@ -97,8 +99,10 @@ ImportItemPropertiesSideBarImport::ImportItemPropertiesSideBarImport(QWidget* co
     appendTab(d->metadataTab,   QIcon::fromTheme(QLatin1String("format-text-code")),              i18n("Metadata")); // krazy:exclude=iconnames
 
 #ifdef HAVE_MARBLE
+
     d->gpsTab        = new ItemPropertiesGPSTab(parent);
     appendTab(d->gpsTab,        QIcon::fromTheme(QLatin1String("globe")), i18n("Geolocation"));
+
 #endif // HAVE_MARBLE
 
     // --- NOTE: use dynamic binding as slotChangedTab() is a virtual method which can be re-implemented in derived classes.
@@ -152,8 +156,11 @@ void ImportItemPropertiesSideBarImport::slotNoCurrentItem()
     d->metadataTab->setCurrentURL();
 
 #ifdef HAVE_MARBLE
+
     d->gpsTab->setCurrentURL();
+
 #endif // HAVE_MARBLE
+
 }
 
 void ImportItemPropertiesSideBarImport::slotChangedTab(QWidget* tab)
@@ -176,7 +183,9 @@ void ImportItemPropertiesSideBarImport::slotChangedTab(QWidget* tab)
         d->metadataTab->setCurrentData(d->metaData, d->itemInfo.name);
         d->dirtyMetadataTab = true;
     }
+
 #ifdef HAVE_MARBLE
+
     else if ((tab == d->gpsTab) && !d->dirtyGpsTab)
     {
         d->gpsTab->setMetadata(d->metaData, d->itemInfo.url());
@@ -184,6 +193,7 @@ void ImportItemPropertiesSideBarImport::slotChangedTab(QWidget* tab)
     }
 
     d->gpsTab->setActive(tab == d->gpsTab);
+
 #endif // HAVE_MARBLE
 
     unsetCursor();
@@ -196,14 +206,16 @@ void ImportItemPropertiesSideBarImport::doLoadState()
     ///       ItemPropertiesSideBar
     Sidebar::doLoadState();
 
-    KConfigGroup group = getConfigGroup();
+    KConfigGroup group                  = getConfigGroup();
 
-    KConfigGroup groupCameraItemTab    = KConfigGroup(&group, entryName(QLatin1String("Camera Item Properties Tab")));
+    KConfigGroup groupCameraItemTab     = KConfigGroup(&group, entryName(QLatin1String("Camera Item Properties Tab")));
     d->cameraItemTab->readSettings(groupCameraItemTab);
 
 #ifdef HAVE_MARBLE
+
     KConfigGroup groupGPSTab            = KConfigGroup(&group, entryName(QLatin1String("GPS Properties Tab")));
     d->gpsTab->readSettings(groupGPSTab);
+
 #endif // HAVE_MARBLE
 
     const KConfigGroup groupMetadataTab = KConfigGroup(&group, entryName(QLatin1String("Metadata Properties Tab")));
@@ -218,14 +230,16 @@ void ImportItemPropertiesSideBarImport::doSaveState()
 
     Sidebar::doSaveState();
 
-    KConfigGroup group = getConfigGroup();
+    KConfigGroup group              = getConfigGroup();
 
     KConfigGroup groupCameraItemTab = KConfigGroup(&group, entryName(QLatin1String("Camera Item Properties Tab")));
     d->cameraItemTab->writeSettings(groupCameraItemTab);
 
 #ifdef HAVE_MARBLE
+
     KConfigGroup groupGPSTab        = KConfigGroup(&group, entryName(QLatin1String("GPS Properties Tab")));
     d->gpsTab->writeSettings(groupGPSTab);
+
 #endif // HAVE_MARBLE
 
     KConfigGroup groupMetadataTab   = KConfigGroup(&group, entryName(QLatin1String("Metadata Properties Tab")));

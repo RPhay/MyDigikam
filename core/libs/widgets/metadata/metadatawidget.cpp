@@ -300,7 +300,7 @@ bool MetadataWidget::storeMetadataToFile(const QUrl& url, const QByteArray& meta
         return false;
     }
 
-    QDataStream stream( &file );
+    QDataStream stream(&file);
     stream.writeRawData(metaData.data(), metaData.size());
     file.close();
 

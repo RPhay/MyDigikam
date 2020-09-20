@@ -29,6 +29,7 @@
 #include <QVBoxLayout>
 #include <QList>
 #include <QApplication>
+#include <QScopedPointer>
 
 // KDE includes
 
@@ -295,18 +296,18 @@ void MetadataPanel::applySettings()
 
 void MetadataPanel::slotTabChanged(int)
 {
-    DMetadata meta;
+    QScopedPointer<DMetadata> meta(new DMetadata);
     qApp->setOverrideCursor(Qt::WaitCursor);
     qApp->processEvents();
     KSharedConfig::Ptr config = KSharedConfig::openConfig();
     KConfigGroup group        = config->group("Image Properties SideBar");
     QWidget* const tab        = d->tab->currentWidget();
 
-    if (tab == d->exifViewerConfig)
+    if      (tab == d->exifViewerConfig)
     {
         if (!d->exifViewerConfig->itemsCount())
         {
-            d->exifViewerConfig->setTagsMap(meta.getStdExifTagsList());
+            d->exifViewerConfig->setTagsMap(meta->getStdExifTagsList());
             d->exifViewerConfig->setcheckedTagsList(group.readEntry("EXIF Tags Filter", d->exifViewerConfig->defaultFilter()));
         }
     }
@@ -314,7 +315,7 @@ void MetadataPanel::slotTabChanged(int)
     {
         if (!d->mknoteViewerConfig->itemsCount())
         {
-            d->mknoteViewerConfig->setTagsMap(meta.getMakernoteTagsList());
+            d->mknoteViewerConfig->setTagsMap(meta->getMakernoteTagsList());
             d->mknoteViewerConfig->setcheckedTagsList(group.readEntry("MAKERNOTE Tags Filter", d->mknoteViewerConfig->defaultFilter()));
         }
     }
@@ -322,7 +323,7 @@ void MetadataPanel::slotTabChanged(int)
     {
         if (!d->iptcViewerConfig->itemsCount())
         {
-            d->iptcViewerConfig->setTagsMap(meta.getIptcTagsList());
+            d->iptcViewerConfig->setTagsMap(meta->getIptcTagsList());
             d->iptcViewerConfig->setcheckedTagsList(group.readEntry("IPTC Tags Filter", d->iptcViewerConfig->defaultFilter()));
         }
     }
@@ -330,7 +331,7 @@ void MetadataPanel::slotTabChanged(int)
     {
         if (!d->xmpViewerConfig->itemsCount())
         {
-            d->xmpViewerConfig->setTagsMap(meta.getXmpTagsList());
+            d->xmpViewerConfig->setTagsMap(meta->getXmpTagsList());
             d->xmpViewerConfig->setcheckedTagsList(group.readEntry("XMP Tags Filter", d->xmpViewerConfig->defaultFilter()));
         }
     }
