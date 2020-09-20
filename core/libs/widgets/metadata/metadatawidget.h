@@ -55,7 +55,7 @@ public:
 
 public:
 
-    explicit MetadataWidget(QWidget* const parent, const QString& name=QString());
+    explicit MetadataWidget(QWidget* const parent, const QString& name = QString());
     ~MetadataWidget();
 
     int     getMode()           const;
@@ -73,7 +73,7 @@ public:
     virtual QString getTagDescription(const QString& key);
 
     virtual bool loadFromData(const QString& fileName,
-                              const DMetadata& data=DMetadata());
+                              const DMetadata& data = DMetadata());
 
     virtual bool loadFromURL(const QUrl& url) = 0;
 
@@ -91,10 +91,10 @@ protected:
     void   setFileName(const QString& fileName);
     MetadataListView* view() const;
 
-    bool   setMetadata(const DMetadata& data=DMetadata());
-    const  DMetadata& getMetadata();
+    bool   setMetadata(const DMetadata& data = DMetadata());
+    DMetadata* getMetadata() const;
 
-    void   setMetadataMap(const DMetadata::MetaDataMap& data=DMetadata::MetaDataMap());
+    void   setMetadataMap(const DMetadata::MetaDataMap& data = DMetadata::MetaDataMap());
     const  DMetadata::MetaDataMap& getMetadataMap();
 
     void   setIfdList(const DMetadata::MetaDataMap& ifds, const QStringList& tagsFilter=QStringList());

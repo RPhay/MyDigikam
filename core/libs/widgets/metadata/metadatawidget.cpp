@@ -84,7 +84,8 @@ public:
         copy2ClipBoard(nullptr),
         optionsMenu(nullptr),
         view(nullptr),
-        searchBar(nullptr)
+        searchBar(nullptr),
+        metadata(nullptr)
     {
     }
 
@@ -112,7 +113,7 @@ public:
 
     SearchTextBar*         searchBar;
 
-    DMetadata              metadata;
+    DMetadata*             metadata;
     DMetadata::MetaDataMap metaDataMap;
 };
 
@@ -184,6 +185,7 @@ MetadataWidget::MetadataWidget(QWidget* const parent, const QString& name)
 
 MetadataWidget::~MetadataWidget()
 {
+    delete d->metadata;
     delete d;
 }
 
@@ -245,13 +247,18 @@ void MetadataWidget::enabledToolButtons(bool b)
 
 bool MetadataWidget::setMetadata(const DMetadata& data)
 {
-    d->metadata = DMetadata(data);
+    if (d->metadata)
+    {
+        delete d->metadata;
+    }
+
+    d->metadata = new DMetadata(data.data());
 
     // Cleanup all metadata contents.
 
     setMetadataMap();
 
-    if (d->metadata.isEmpty())
+    if (d->metadata->isEmpty())
     {
         setMetadataEmpty();
         return false;
@@ -281,7 +288,7 @@ void MetadataWidget::setMetadataEmpty()
     enabledToolButtons(false);
 }
 
-const DMetadata& MetadataWidget::getMetadata()
+DMetadata* MetadataWidget::getMetadata() const
 {
     return d->metadata;
 }

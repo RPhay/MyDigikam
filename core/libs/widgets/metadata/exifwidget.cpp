@@ -110,7 +110,7 @@ bool ExifWidget::loadFromURL(const QUrl& url)
 
 bool ExifWidget::decodeMetadata()
 {
-    QScopedPointer<DMetadata> data(new DMetadata(getMetadata().data()));
+    QScopedPointer<DMetadata> data(new DMetadata(getMetadata()->data()));
 
     if (!data->hasExif())
     {
@@ -175,7 +175,7 @@ void ExifWidget::slotSaveMetadataToFile()
     QUrl url = saveMetadataToFile(i18n("EXIF File to Save"),
                                   QString(QLatin1String("*.exif|") + i18n("EXIF binary Files (*.exif)")));
 
-    storeMetadataToFile(url, getMetadata().getExifEncoded());
+    storeMetadataToFile(url, getMetadata()->getExifEncoded());
 }
 
 } // namespace Digikam

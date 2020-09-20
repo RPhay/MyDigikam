@@ -101,7 +101,7 @@ bool IptcWidget::loadFromURL(const QUrl& url)
 
 bool IptcWidget::decodeMetadata()
 {
-    QScopedPointer<DMetadata> data(new DMetadata(getMetadata().data()));
+    QScopedPointer<DMetadata> data(new DMetadata(getMetadata()->data()));
 
     if (!data->hasIptc())
     {
@@ -165,7 +165,7 @@ void IptcWidget::slotSaveMetadataToFile()
 {
     QUrl url = saveMetadataToFile(i18n("IPTC File to Save"),
                                   QString(QLatin1String("*.iptc|") + i18n("IPTC binary Files (*.iptc)")));
-    storeMetadataToFile(url, getMetadata().getIptc());
+    storeMetadataToFile(url, getMetadata()->getIptc());
 }
 
 } // namespace Digikam
