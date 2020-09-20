@@ -34,6 +34,7 @@
 #include <QDirIterator>
 #include <QTextDocument>
 #include <QtGlobal>
+#include <QScopedPointer>
 #include <QCryptographicHash>
 #include <qplatformdefs.h>
 
@@ -229,9 +230,9 @@ void UMSCamera::getItemInfo(const QString& folder, const QString& itemName, CamI
         {
             // Try to use file metadata
 
-            DMetadata meta;
-            getMetadata(folder, itemName, meta);
-            fillItemInfoFromMetadata(info, meta);
+            QScopedPointer<DMetadata> meta(new DMetadata);
+            getMetadata(folder, itemName, *meta);
+            fillItemInfoFromMetadata(info, *meta);
 
             // Fall back to file system info
 
@@ -270,8 +271,8 @@ bool UMSCamera::getThumbnail(const QString& folder, const QString& itemName, QIm
 
     // Try to get preview from Exif data (good quality). Can work with Raw files
 
-    DMetadata metadata(path);
-    metadata.getItemPreview(thumbnail);
+    QScopedPointer<DMetadata> metadata(new DMetadata(path));
+    metadata->getItemPreview(thumbnail);
 
     if (!thumbnail.isNull())
     {
@@ -295,7 +296,7 @@ bool UMSCamera::getThumbnail(const QString& folder, const QString& itemName, QIm
 
     if (!turnHighQualityThumbs)
     {
-        thumbnail = metadata.getExifThumbnail(true);
+        thumbnail = metadata->getExifThumbnail(true);
 
         if (!thumbnail.isNull())
         {
@@ -529,10 +530,10 @@ bool UMSCamera::uploadItem(const QString& folder, const QString& itemName, const
 
     // Get new camera item information.
 
-    PhotoInfoContainer pInfo;
-    DMetadata          meta;
-    QFileInfo          fi(dest);
-    QString            mime = mimeType(fi.suffix().toLower());
+    PhotoInfoContainer        pInfo;
+    QScopedPointer<DMetadata> meta(new DMetadata);
+    QFileInfo                 fi(dest);
+    QString                   mime = mimeType(fi.suffix().toLower());
 
     if (!mime.isEmpty())
     {
@@ -541,10 +542,10 @@ bool UMSCamera::uploadItem(const QString& folder, const QString& itemName, const
 
         // Try to load image metadata.
 
-        meta.load(fi.filePath());
-        dt    = meta.getItemDateTime();
-        dims  = meta.getItemDimensions();
-        pInfo = meta.getPhotographInformation();
+        meta->load(fi.filePath());
+        dt    = meta->getItemDateTime();
+        dims  = meta->getItemDimensions();
+        pInfo = meta->getPhotographInformation();
 
         if (dt.isNull()) // fall back to file system info
         {

@@ -711,24 +711,24 @@ void CollectionScanner::addItem(Digikam::CoreDbAccess& access, int albumID,
     QDateTime   datetime;
     int         rating;
 
-    DMetadata metadata(filePath);
+    QScopedPointer<DMetadata> metadata(new DMetadata(filePath));
 
     // Try to get comments from image :
     // In first, from standard JPEG comments, or
     // In second, from EXIF comments tag, or
     // In third, from IPTC comments tag.
 
-    comment  = metadata.getImageComment();
+    comment  = metadata->getImageComment();
 
     // Try to get date and time from image :
     // In first, from EXIF date & time tags, or
     // In second, from IPTC date & time tags.
 
-    datetime = metadata.getItemDateTime();
+    datetime = metadata->getItemDateTime();
 
     // Try to get image rating from IPTC Urgency tag
     // else use file system time stamp.
-    rating   = metadata.getItemRating();
+    rating   = metadata->getItemRating();
 
     if (!datetime.isValid())
     {
@@ -738,7 +738,7 @@ void CollectionScanner::addItem(Digikam::CoreDbAccess& access, int albumID,
 
     // Try to get image tags from IPTC keywords tags.
 
-    metadata.getItemTagsPath(keywords);
+    metadata->getItemTagsPath(keywords);
 
     access.db()->addItem(albumID, fileName, datetime, comment, rating, keywords);
 }
@@ -758,17 +758,17 @@ void CollectionScanner::updateItemDate(Digikam::CoreDbAccess& access, int albumI
 
     QDateTime datetime;
 
-    DMetadata metadata(filePath);
+    QScopedPointer<DMetadata> metadata(new DMetadata(filePath));
 
     // Trying to get date and time from image :
     // In first, from EXIF date & time tags, or
     // In second, from IPTC date & time tags.
 
-    datetime = metadata.getItemDateTime();
+    datetime = metadata->getItemDateTime();
 
     if (!datetime.isValid())
     {
-        QFileInfo info( filePath );
+        QFileInfo info(filePath);
         datetime = info.lastModified();
     }
 

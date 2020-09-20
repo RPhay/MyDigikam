@@ -40,6 +40,7 @@
 #include <QDir>
 #include <QMessageBox>
 #include <QProcess>
+#include <QScopedPointer>
 
 // KDE includes
 
@@ -576,13 +577,13 @@ void CameraController::executeCommand(CameraCommand* const cmd)
             QString folder = cmd->map[QLatin1String("folder")].toString();
             QString file   = cmd->map[QLatin1String("file")].toString();
 
-            DMetadata meta;
+            QScopedPointer<DMetadata> meta(new DMetadata);
 
-            if (!d->camera->getMetadata(folder, file, meta))
+            if (!d->camera->getMetadata(folder, file, *meta))
                 sendLogMsg(xi18n("Failed to get Metadata for <filename>%1</filename>", file),
                            DHistoryView::ErrorEntry, folder, file);
 
-            emit signalMetadata(folder, file, meta);
+            emit signalMetadata(folder, file, *meta);
 
             break;
         }
@@ -636,18 +637,18 @@ void CameraController::executeCommand(CameraCommand* const cmd)
                 // Possible modification operations. Only apply it to JPEG for the moment.
                 qCDebug(DIGIKAM_IMPORTUI_LOG) << "Set metadata from: " << file << " using " << temp;
 
-                DMetadata metadata(temp);
+                QScopedPointer<DMetadata> metadata(new DMetadata(temp));
                 bool applyChanges = false;
 
                 if (documentName)
                 {
-                    metadata.setExifTagString("Exif.Image.DocumentName", file);
+                    metadata->setExifTagString("Exif.Image.DocumentName", file);
                     applyChanges = true;
                 }
 
                 if (fixDateTime)
                 {
-                    metadata.setImageDateTime(newDateTime, true);
+                    metadata->setImageDateTime(newDateTime, true);
                     applyChanges = true;
                 }
 
@@ -655,19 +656,19 @@ void CameraController::executeCommand(CameraCommand* const cmd)
 
                 if (colorLabel > NoColorLabel)
                 {
-                    metadata.setItemColorLabel(colorLabel);
+                    metadata->setItemColorLabel(colorLabel);
                     applyChanges = true;
                 }
 
                 if (pickLabel > NoPickLabel)
                 {
-                    metadata.setItemPickLabel(pickLabel);
+                    metadata->setItemPickLabel(pickLabel);
                     applyChanges = true;
                 }
 
                 if (rating > RatingMin)
                 {
-                    metadata.setItemRating(rating);
+                    metadata->setItemRating(rating);
                     applyChanges = true;
                 }
 
@@ -678,20 +679,20 @@ void CameraController::executeCommand(CameraCommand* const cmd)
 
                     if (tm && templateTitle == Template::removeTemplateTitle())
                     {
-                        metadata.removeMetadataTemplate();
+                        metadata->removeMetadataTemplate();
                         applyChanges = true;
                     }
                     else if (tm)
                     {
-                        metadata.removeMetadataTemplate();
-                        metadata.setMetadataTemplate(tm->findByTitle(templateTitle));
+                        metadata->removeMetadataTemplate();
+                        metadata->setMetadataTemplate(tm->findByTitle(templateTitle));
                         applyChanges = true;
                     }
                 }
 
                 if (applyChanges)
                 {
-                    metadata.applyChanges();
+                    metadata->applyChanges();
                 }
 
                 // Convert JPEG file to lossless format if wanted,
@@ -724,7 +725,7 @@ void CameraController::executeCommand(CameraCommand* const cmd)
                     }
                 }
             }
-            else if (convertDng && mime == QLatin1String("image/x-raw"))
+            else if (convertDng && (mime == QLatin1String("image/x-raw")))
             {
                 qCDebug(DIGIKAM_IMPORTUI_LOG) << "Convert to DNG: " << file;
 

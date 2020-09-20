@@ -29,6 +29,7 @@
 
 #include <QFileInfo>
 #include <QMutex>
+#include <QScopedPointer>
 #include <QMutexLocker>
 
 // Local includes
@@ -262,11 +263,11 @@ bool MetadataHub::writeToMetadata(const ItemInfo& info, WriteComponent writeMode
 
     writeToBaloo(info.filePath());
 
-    DMetadata metadata(info.filePath());
+    QScopedPointer<DMetadata> metadata(new DMetadata(info.filePath()));
 
-    if (write(metadata, writeMode, settings))
+    if (write(*metadata, writeMode, settings))
     {
-        bool success = metadata.applyChanges();
+        bool success = metadata->applyChanges();
         ItemAttributesWatch::instance()->fileMetadataChanged(QUrl::fromLocalFile(info.filePath()));
         return success;
     }
@@ -393,11 +394,11 @@ bool MetadataHub::write(const QString& filePath, WriteComponent writeMode, bool 
 
     writeToBaloo(filePath);
 
-    DMetadata metadata(filePath);
+    QScopedPointer<DMetadata> metadata(new DMetadata(filePath));
 
-    if (write(metadata, writeMode, settings))
+    if (write(*metadata, writeMode, settings))
     {
-        bool success = metadata.applyChanges();
+        bool success = metadata->applyChanges();
         ItemAttributesWatch::instance()->fileMetadataChanged(QUrl::fromLocalFile(filePath));
 
         return success;
@@ -419,8 +420,8 @@ bool MetadataHub::write(DImg& image, WriteComponent writeMode, bool ignoreLazySy
 
     // See DImgLoader::readMetadata() and saveMetadata()
 
-    DMetadata metadata;
-    metadata.setData(image.getMetadata());
+    QScopedPointer<DMetadata> metadata(new DMetadata);
+    metadata->setData(image.getMetadata());
 
     QString filePath = image.originalFilePath();
 
@@ -442,7 +443,7 @@ bool MetadataHub::write(DImg& image, WriteComponent writeMode, bool ignoreLazySy
         writeToBaloo(filePath);
     }
 
-    return write(metadata, writeMode, settings);
+    return write(*metadata, writeMode, settings);
 }
 
 bool MetadataHub::writeTags(const QString& filePath, WriteComponent writeMode,
@@ -458,25 +459,25 @@ bool MetadataHub::writeTags(const QString& filePath, WriteComponent writeMode,
         return false;
     }
 
-    DMetadata metadata(filePath);
-    metadata.setSettings(settings);
+    QScopedPointer<DMetadata> metadata(new DMetadata(filePath));
+    metadata->setSettings(settings);
     bool saveFaces = settings.saveFaceTags;
     bool saveTags  = settings.saveTags;
 
     if (saveFaces)
     {
-        metadata.setItemFacesMap(d->faceTagsList, true);
+        metadata->setItemFacesMap(d->faceTagsList, true);
     }
     else
     {
-        metadata.setItemFacesMap(d->faceTagsList, false);
+        metadata->setItemFacesMap(d->faceTagsList, false);
     }
 
     writeToBaloo(filePath);
 
-    if (writeTags(metadata, saveTags))
+    if (writeTags(*metadata, saveTags))
     {
-        bool success = metadata.applyChanges();
+        bool success = metadata->applyChanges();
         ItemAttributesWatch::instance()->fileMetadataChanged(QUrl::fromLocalFile(filePath));
 
         return success;
@@ -793,10 +794,10 @@ void Digikam::MetadataHub::setFaceTags(QMultiMap<QString, QVariant> newFaceTags,
 //bool MetadataHub::load(const QString& filePath, const MetaEngineSettingsContainer& settings)
 //{
 
-//    DMetadata metadata;
-//    metadata.setSettings(settings);
-//    bool success = metadata.load(filePath);
-//    load(metadata); // increments count
+//    QScopedPointer<DMetadata> metadata(new DMetadata);
+//    metadata->setSettings(settings);
+//    bool success = metadata->load(filePath);
+//    load(*metadata); // increments count
 //    return success;
 //}
 

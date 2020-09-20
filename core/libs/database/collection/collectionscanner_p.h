@@ -47,6 +47,7 @@
 #include <QStringList>
 #include <QSet>
 #include <QElapsedTimer>
+#include <QScopedPointer>
 
 // Local includes
 

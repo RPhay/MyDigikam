@@ -23,6 +23,10 @@
 
 #include "fileworkeriface.h"
 
+// Qt includes
+
+#include <QScopedPointer>
+
 // KDE includes
 
 #include <klocalizedstring.h>
@@ -57,11 +61,11 @@ void FileActionMngrFileWorker::writeOrientationToFiles(FileActionItemInfoList in
         }
 
         QString path                  = info.filePath();
-        DMetadata metadata(path);
+        QScopedPointer<DMetadata> metadata(new DMetadata(path));
         DMetadata::ImageOrientation o = (DMetadata::ImageOrientation)orientation;
-        metadata.setItemOrientation(o);
+        metadata->setItemOrientation(o);
 
-        if (!metadata.applyChanges())
+        if (!metadata->applyChanges())
         {
             failedItems.append(info.name());
         }
@@ -314,9 +318,9 @@ void FileActionMngrFileWorker::transform(FileActionItemInfoList infos, int actio
 
             if (!isRaw)
             {
-                DMetadata metadata(path);
-                metadata.setItemOrientation(finalOrientation);
-                metadata.applyChanges();
+                QScopedPointer<DMetadata> metadata(new DMetadata(path));
+                metadata->setItemOrientation(finalOrientation);
+                metadata->applyChanges();
             }
         }
 

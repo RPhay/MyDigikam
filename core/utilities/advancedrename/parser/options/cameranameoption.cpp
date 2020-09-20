@@ -23,6 +23,10 @@
 
 #include "cameranameoption.h"
 
+// Qt includes
+
+#include <QScopedPointer>
+
 // KDE includes
 
 #include <klocalizedstring.h>
@@ -65,12 +69,12 @@ QString CameraNameOption::parseOperation(ParseSettings& settings)
         QString make;
         QString model;
 
-        DMetadata meta(settings.fileUrl.toLocalFile());
+        QScopedPointer<DMetadata> meta(new DMetadata(settings.fileUrl.toLocalFile()));
 
-        if (!meta.isEmpty())
+        if (!meta->isEmpty())
         {
             MetaEngine::MetaDataMap dataMap;
-            dataMap = meta.getExifTagsDataList(QStringList(), true);
+            dataMap = meta->getExifTagsDataList(QStringList(), true);
 
             foreach (const QString& key, dataMap.keys())
             {

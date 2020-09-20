@@ -43,6 +43,7 @@
 #include <QVariant>
 #include <QImageReader>
 #include <QPainter>
+#include <QScopedPointer>
 
 namespace Digikam
 {
@@ -523,7 +524,7 @@ void EditorCore::setModified()
 
 void EditorCore::readMetadataFromFile(const QString& file)
 {
-    DMetadata meta(file);
+    QScopedPointer<DMetadata> meta(new DMetadata(file));
 
     // This can overwrite metadata changes introduced by tools.
     // Currently, this is ProfileConversion and lensfun.
@@ -531,13 +532,13 @@ void EditorCore::readMetadataFromFile(const QString& file)
     // Lensfun is not critical.
     // For a clean solution, we'd need to record a sort of metadata changeset in UndoMetadataContainer.
 
-    d->image.setMetadata(meta.data());
+    d->image.setMetadata(meta->data());
 
     // If we are editing, and someone else at the same time, there's nothing we can do.
 
     if (!d->undoMan->hasChanges())
     {
-        d->image.setItemHistory(DImageHistory::fromXml(meta.getItemHistory()));
+        d->image.setItemHistory(DImageHistory::fromXml(meta->getItemHistory()));
     }
 }
 

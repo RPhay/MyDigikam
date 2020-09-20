@@ -32,6 +32,7 @@
 #include <QWidget>
 #include <QLabel>
 #include <QUuid>
+#include <QScopedPointer>
 
 // KDE includes
 
@@ -456,10 +457,10 @@ bool BatchTool::loadToDImg() const
     {
         QImage img;
         bool   ret = DRawDecoder::loadRawPreview(img, inputUrl().toLocalFile());
-        DMetadata meta(inputUrl().toLocalFile());
-        meta.setItemDimensions(QSize(img.width(), img.height()));
+        QScopedPointer<DMetadata> meta(new DMetadata(inputUrl().toLocalFile()));
+        meta->setItemDimensions(QSize(img.width(), img.height()));
         d->image   = DImg(img);
-        d->image.setMetadata(meta.data());
+        d->image.setMetadata(meta->data());
 
         return ret;
     }

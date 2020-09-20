@@ -54,6 +54,7 @@
 #include <QMenuBar>
 #include <QMessageBox>
 #include <QApplication>
+#include <QScopedPointer>
 
 // KDE includes
 

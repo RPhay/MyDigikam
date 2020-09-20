@@ -49,6 +49,7 @@ extern "C"
 #include <QImage>
 #include <QPixmap>
 #include <QFile>
+#include <QScopedPointer>
 #include <QDateTime>
 #include <QTextDocument>
 #include <QCryptographicHash>
@@ -86,6 +87,7 @@ public:
 
     GPStatus()
     {
+
 #ifdef HAVE_GPHOTO2
 
         context = gp_context_new();
@@ -106,12 +108,14 @@ public:
 
     ~GPStatus()
     {
+
 #ifdef HAVE_GPHOTO2
 
         gp_context_unref(context);
         cancel = false;
 
 #endif // HAVE_GPHOTO2
+
     }
 
     static bool cancel;
@@ -211,6 +215,7 @@ GPCamera::GPCamera(const QString& title, const QString& model,
 
 GPCamera::~GPCamera()
 {
+
 #ifdef HAVE_GPHOTO2
 
     if (d->status)
@@ -263,6 +268,7 @@ QByteArray GPCamera::cameraMD5ID()
 
 bool GPCamera::doConnect()
 {
+
 #ifdef HAVE_GPHOTO2
 
     int errorCode;
@@ -392,10 +398,12 @@ bool GPCamera::doConnect()
     return false;
 
 #endif // HAVE_GPHOTO2
+
 }
 
 void GPCamera::cancel()
 {
+
 #ifdef HAVE_GPHOTO2
 
 /*
@@ -410,10 +418,12 @@ void GPCamera::cancel()
     d->status->cancel = true;
 
 #endif // HAVE_GPHOTO2
+
 }
 
 bool GPCamera::getFreeSpace(unsigned long& kBSize, unsigned long& kBAvail)
 {
+
 #ifdef HAVE_GPHOTO2
 
     // NOTE: This method depends of libgphoto2 2.4.0
@@ -539,6 +549,7 @@ bool GPCamera::getFreeSpace(unsigned long& kBSize, unsigned long& kBAvail)
 
 
     return true;
+
 #else
 
     Q_UNUSED(kBSize);
@@ -551,6 +562,7 @@ bool GPCamera::getFreeSpace(unsigned long& kBSize, unsigned long& kBAvail)
 
 bool GPCamera::getPreview(QImage& preview)
 {
+
 #ifdef HAVE_GPHOTO2
 
     int               errorCode;
@@ -585,6 +597,7 @@ bool GPCamera::getPreview(QImage& preview)
 
     gp_file_unref(cfile);
     return true;
+
 #else
 
     Q_UNUSED(preview);
@@ -596,6 +609,7 @@ bool GPCamera::getPreview(QImage& preview)
 
 bool GPCamera::capture(CamItemInfo& itemInfo)
 {
+
 #ifdef HAVE_GPHOTO2
 
     int            errorCode;
@@ -709,6 +723,7 @@ bool GPCamera::capture(CamItemInfo& itemInfo)
 
 bool GPCamera::getFolders(const QString& folder)
 {
+
 #ifdef HAVE_GPHOTO2
 
     int         errorCode;
@@ -755,6 +770,7 @@ bool GPCamera::getFolders(const QString& folder)
     emit signalFolderList(subFolderList);
 
     return true;
+
 #else
 
     Q_UNUSED(folder);
@@ -767,6 +783,7 @@ bool GPCamera::getFolders(const QString& folder)
 // TODO unused, remove?
 bool GPCamera::getItemsList(const QString& folder, QStringList& itemsList)
 {
+
 #ifdef HAVE_GPHOTO2
 
     int         errorCode;
@@ -820,6 +837,7 @@ bool GPCamera::getItemsList(const QString& folder, QStringList& itemsList)
 
 bool GPCamera::getItemsInfoList(const QString& folder, bool useMetadata, CamItemInfoList& items)
 {
+
 #ifdef HAVE_GPHOTO2
 
     int         errorCode;
@@ -872,10 +890,12 @@ bool GPCamera::getItemsInfoList(const QString& folder, bool useMetadata, CamItem
     return false;
 
 #endif // HAVE_GPHOTO2
+
 }
 
 void GPCamera::getItemInfo(const QString& folder, const QString& itemName, CamItemInfo& info, bool useMetadata)
 {
+
 #ifdef HAVE_GPHOTO2
 
     getItemInfoInternal(folder, itemName, info, useMetadata);
@@ -892,6 +912,7 @@ void GPCamera::getItemInfo(const QString& folder, const QString& itemName, CamIt
 
 void GPCamera::getItemInfoInternal(const QString& folder, const QString& itemName, CamItemInfo& info, bool useMetadata)
 {
+
 #ifdef HAVE_GPHOTO2
 
     info.folder          = folder;
@@ -904,6 +925,7 @@ void GPCamera::getItemInfoInternal(const QString& folder, const QString& itemNam
                             QFile::encodeName(info.name).constData(), &cfinfo, d->status->context);
 
     // if preview has size field, it's a valid preview most likely, otherwise we'll skip it later on
+
     if (cfinfo.preview.fields & GP_FILE_INFO_SIZE)
     {
         info.previewPossible = true;
@@ -959,11 +981,12 @@ void GPCamera::getItemInfoInternal(const QString& folder, const QString& itemNam
         if (useMetadata)
         {
             // Try to use file metadata
-            DMetadata meta;
-            getMetadata(folder, itemName, meta);
-            fillItemInfoFromMetadata(info, meta);
+            QScopedPointer<DMetadata> meta(new DMetadata);
+            getMetadata(folder, itemName, *meta);
+            fillItemInfoFromMetadata(info, *meta);
 
             // Fall back to camera file system info
+
             if (info.ctime.isNull())
             {
                 if (cfinfo.file.fields & GP_FILE_INFO_MTIME)
