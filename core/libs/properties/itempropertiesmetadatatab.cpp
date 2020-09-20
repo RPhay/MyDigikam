@@ -207,24 +207,24 @@ void ItemPropertiesMetadataTab::setCurrentURL(const QUrl& url)
 
 void ItemPropertiesMetadataTab::setCurrentData(const DMetadata& metaData, const QString& filename)
 {
-    DMetadata data = metaData;
+    QScopedPointer<DMetadata> data(new DMetadata(metaData.data()));
 
-    if (!data.hasExif() && !data.hasIptc() && !data.hasXmp())
+    if (!data->hasExif() && !data->hasIptc() && !data->hasXmp())
     {
-        d->exifWidget->loadFromData(filename, data);
-        d->makernoteWidget->loadFromData(filename, data);
-        d->iptcWidget->loadFromData(filename, data);
-        d->xmpWidget->loadFromData(filename, data);
+        d->exifWidget->loadFromData(filename,      *data);
+        d->makernoteWidget->loadFromData(filename, *data);
+        d->iptcWidget->loadFromData(filename,      *data);
+        d->xmpWidget->loadFromData(filename,       *data);
         setEnabled(false);
         return;
     }
 
     setEnabled(true);
 
-    d->exifWidget->loadFromData(filename, data);
-    d->makernoteWidget->loadFromData(filename, data);
-    d->iptcWidget->loadFromData(filename, data);
-    d->xmpWidget->loadFromData(filename, data);
+    d->exifWidget->loadFromData(filename,      *data);
+    d->makernoteWidget->loadFromData(filename, *data);
+    d->iptcWidget->loadFromData(filename,      *data);
+    d->xmpWidget->loadFromData(filename,       *data);
 }
 
 } // namespace Digikam

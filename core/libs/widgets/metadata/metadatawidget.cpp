@@ -520,7 +520,7 @@ bool MetadataWidget::loadFromData(const QString& fileName, const DMetadata& data
 {
     setFileName(fileName);
 
-    return(setMetadata(data));
+    return (setMetadata(data));
 }
 
 QString MetadataWidget::getTagTitle(const QString&)
