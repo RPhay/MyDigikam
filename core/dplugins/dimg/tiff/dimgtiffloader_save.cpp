@@ -36,6 +36,7 @@ extern "C"
 
 #include <QFile>
 #include <QByteArray>
+#include <QScopedPointer>
 
 // Local includes
 
@@ -64,9 +65,13 @@ bool DImgTIFFLoader::save(const QString& filePath, DImgLoaderObserver* const obs
     // Open the file
 
 #ifdef Q_OS_WIN
+
     TIFF* const tif = TIFFOpenW((const wchar_t*)filePath.utf16(), "w");
+
 #else
+
     TIFF* const tif = TIFFOpen(filePath.toUtf8().constData(), "w");
+
 #endif
 
     if (!tif)
@@ -125,39 +130,47 @@ bool DImgTIFFLoader::save(const QString& filePath, DImgLoaderObserver* const obs
     // -------------------------------------------------------------------
     // Write meta-data Tags contents.
 
-    DMetadata metaData(m_image->getMetadata());
+    QScopedPointer<DMetadata> metaData(new DMetadata(m_image->getMetadata()));
 
     // Standard IPTC tag (available with libtiff 3.6.1)
 
-    QByteArray ba = metaData.getIptc(true);
+    QByteArray ba = metaData->getIptc(true);
 
     if (!ba.isEmpty())
     {
+
 #if defined(TIFFTAG_PHOTOSHOP)
+
         TIFFSetField(tif, TIFFTAG_PHOTOSHOP, (uint32)ba.size(), (uchar*)ba.data());
+
 #endif
+
     }
 
     // Standard XMP tag (available with libtiff 3.6.1)
 
-    if (metaData.hasXmp())
+    if (metaData->hasXmp())
     {
+
 #if defined(TIFFTAG_XMLPACKET)
-        tiffSetExifDataTag(tif, TIFFTAG_XMLPACKET,            metaData, "Exif.Image.XMLPacket");
+
+        tiffSetExifDataTag(tif, TIFFTAG_XMLPACKET,            *metaData, "Exif.Image.XMLPacket");
+
 #endif
+
     }
 
     // Standard Exif ASCII tags (available with libtiff 3.6.1)
 
-    tiffSetExifAsciiTag(tif, TIFFTAG_DOCUMENTNAME,            metaData, "Exif.Image.DocumentName");
-    tiffSetExifAsciiTag(tif, TIFFTAG_IMAGEDESCRIPTION,        metaData, "Exif.Image.ImageDescription");
-    tiffSetExifAsciiTag(tif, TIFFTAG_MAKE,                    metaData, "Exif.Image.Make");
-    tiffSetExifAsciiTag(tif, TIFFTAG_MODEL,                   metaData, "Exif.Image.Model");
-    tiffSetExifAsciiTag(tif, TIFFTAG_DATETIME,                metaData, "Exif.Image.DateTime");
-    tiffSetExifAsciiTag(tif, TIFFTAG_ARTIST,                  metaData, "Exif.Image.Artist");
-    tiffSetExifAsciiTag(tif, TIFFTAG_COPYRIGHT,               metaData, "Exif.Image.Copyright");
+    tiffSetExifAsciiTag(tif, TIFFTAG_DOCUMENTNAME,            *metaData, "Exif.Image.DocumentName");
+    tiffSetExifAsciiTag(tif, TIFFTAG_IMAGEDESCRIPTION,        *metaData, "Exif.Image.ImageDescription");
+    tiffSetExifAsciiTag(tif, TIFFTAG_MAKE,                    *metaData, "Exif.Image.Make");
+    tiffSetExifAsciiTag(tif, TIFFTAG_MODEL,                   *metaData, "Exif.Image.Model");
+    tiffSetExifAsciiTag(tif, TIFFTAG_DATETIME,                *metaData, "Exif.Image.DateTime");
+    tiffSetExifAsciiTag(tif, TIFFTAG_ARTIST,                  *metaData, "Exif.Image.Artist");
+    tiffSetExifAsciiTag(tif, TIFFTAG_COPYRIGHT,               *metaData, "Exif.Image.Copyright");
 
-    QString soft = metaData.getExifTagString("Exif.Image.Software");
+    QString soft       = metaData->getExifTagString("Exif.Image.Software");
     QString libtiffver = QLatin1String(TIFFLIB_VERSION_STR);
     libtiffver.replace(QLatin1Char('\n'), QLatin1Char(' '));
     soft.append(QString::fromLatin1(" ( %1 )").arg(libtiffver));
@@ -172,10 +185,14 @@ bool DImgTIFFLoader::save(const QString& filePath, DImgLoaderObserver* const obs
 
     if (!profile_rawdata.isEmpty())
     {
+
 #if defined(TIFFTAG_ICCPROFILE)
+
         purgeExifWorkingColorSpace();
         TIFFSetField(tif, TIFFTAG_ICCPROFILE, (uint32)profile_rawdata.size(), (uchar*)profile_rawdata.data());
+
 #endif
+
     }
 
     // -------------------------------------------------------------------
@@ -201,8 +218,8 @@ bool DImgTIFFLoader::save(const QString& filePath, DImgLoaderObserver* const obs
     uint16  a16          = 0;
     int     i            = 0;
 
-    uint8* buf = (uint8*)_TIFFmalloc(TIFFScanlineSize(tif));
-    uint16* buf16;
+    uint8* buf    = (uint8*)_TIFFmalloc(TIFFScanlineSize(tif));
+    uint16* buf16 = nullptr;
 
     if (!buf)
     {
@@ -326,9 +343,9 @@ bool DImgTIFFLoader::save(const QString& filePath, DImgLoaderObserver* const obs
     TIFFSetField(tif, TIFFTAG_BITSPERSAMPLE,   8);
     TIFFSetField(tif, TIFFTAG_ROWSPERSTRIP,    TIFFDefaultStripSize(tif, 0));
 
-    uchar* pixelThumb;
-    uchar* dataThumb = thumb.bits();
-    uint8* bufThumb  = (uint8*) _TIFFmalloc(TIFFScanlineSize(tif));
+    uchar* pixelThumb = nullptr;
+    uchar* dataThumb  = thumb.bits();
+    uint8* bufThumb   = (uint8*) _TIFFmalloc(TIFFScanlineSize(tif));
 
     if (!bufThumb)
     {
@@ -374,12 +391,12 @@ bool DImgTIFFLoader::save(const QString& filePath, DImgLoaderObserver* const obs
 
     // Save metadata
 
-    DMetadata metaDataToFile(filePath);
-    metaDataToFile.setData(m_image->getMetadata());
+    QScopedPointer<DMetadata> metaDataToFile(new DMetadata(filePath));
+    metaDataToFile->setData(m_image->getMetadata());
     // see bug #211758 for these special steps needed when writing a TIFF
-    metaDataToFile.removeExifThumbnail();
-    metaDataToFile.removeExifTag("Exif.Image.ProcessingSoftware");
-    metaDataToFile.applyChanges(true);
+    metaDataToFile->removeExifThumbnail();
+    metaDataToFile->removeExifTag("Exif.Image.ProcessingSoftware");
+    metaDataToFile->applyChanges(true);
 
     return true;
 }

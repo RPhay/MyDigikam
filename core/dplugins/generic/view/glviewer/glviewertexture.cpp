@@ -27,6 +27,7 @@
 
 #include <QUrl>
 #include <QApplication>
+#include <QScopedPointer>
 
 // Local includes
 
@@ -434,8 +435,8 @@ bool GLViewerTexture::setNewSize(QSize size)
  */
 void GLViewerTexture::rotate()
 {
-    DMetadata meta;
-    meta.rotateExifQImage(d->qimage, (DMetadata::ImageOrientation)d->rotate_list[d->rotate_idx % 4]);
+    QScopedPointer<DMetadata> meta(new DMetadata);
+    meta->rotateExifQImage(d->qimage, (DMetadata::ImageOrientation)d->rotate_list[d->rotate_idx % 4]);
 
     loadInternal();
 

@@ -27,6 +27,7 @@
 // Qt includes
 
 #include <QFile>
+#include <QScopedPointer>
 #include <qplatformdefs.h>
 
 // Local includes
@@ -112,54 +113,54 @@ void TimeAdjustTask::run()
     {
         bool ret = true;
 
-        DMetadata meta;
+        QScopedPointer<DMetadata> meta(new DMetadata);
 
-        ret &= meta.load(d->url.toLocalFile());
+        ret &= meta->load(d->url.toLocalFile());
 
         if (ret)
         {
             QString exifDateTimeFormat = QLatin1String("yyyy:MM:dd hh:mm:ss");
             QString xmpDateTimeFormat  = QLatin1String("yyyy-MM-ddThh:mm:ss");
 
-            if (writeToSidecar || meta.canWriteExif(d->url.toLocalFile()))
+            if (writeToSidecar || meta->canWriteExif(d->url.toLocalFile()))
             {
                 if (d->settings.updEXIFModDate)
                 {
                     if (!d->settings.updIfAvailable ||
-                        !meta.getExifTagString("Exif.Image.DateTime").isEmpty())
+                        !meta->getExifTagString("Exif.Image.DateTime").isEmpty())
                     {
-                        ret &= meta.setExifTagString("Exif.Image.DateTime",
-                                                     dt.toString(exifDateTimeFormat));
+                        ret &= meta->setExifTagString("Exif.Image.DateTime",
+                                                      dt.toString(exifDateTimeFormat));
                     }
                 }
 
                 if (d->settings.updEXIFOriDate)
                 {
                     if (!d->settings.updIfAvailable ||
-                        !meta.getExifTagString("Exif.Photo.DateTimeOriginal").isEmpty())
+                        !meta->getExifTagString("Exif.Photo.DateTimeOriginal").isEmpty())
                     {
-                        ret &= meta.setExifTagString("Exif.Photo.DateTimeOriginal",
-                                                     dt.toString(exifDateTimeFormat));
+                        ret &= meta->setExifTagString("Exif.Photo.DateTimeOriginal",
+                                                      dt.toString(exifDateTimeFormat));
                     }
                 }
 
                 if (d->settings.updEXIFDigDate)
                 {
                     if (!d->settings.updIfAvailable ||
-                        !meta.getExifTagString("Exif.Photo.DateTimeDigitized").isEmpty())
+                        !meta->getExifTagString("Exif.Photo.DateTimeDigitized").isEmpty())
                     {
-                        ret &= meta.setExifTagString("Exif.Photo.DateTimeDigitized",
-                                                     dt.toString(exifDateTimeFormat));
+                        ret &= meta->setExifTagString("Exif.Photo.DateTimeDigitized",
+                                                      dt.toString(exifDateTimeFormat));
                     }
                 }
 
                 if (d->settings.updEXIFThmDate)
                 {
                    if (!d->settings.updIfAvailable ||
-                        !meta.getExifTagString("Exif.Image.PreviewDateTime").isEmpty())
+                        !meta->getExifTagString("Exif.Image.PreviewDateTime").isEmpty())
                    {
-                       ret &= meta.setExifTagString("Exif.Image.PreviewDateTime",
-                                                    dt.toString(exifDateTimeFormat));
+                       ret &= meta->setExifTagString("Exif.Image.PreviewDateTime",
+                                                     dt.toString(exifDateTimeFormat));
                    }
                 }
             }
@@ -171,20 +172,20 @@ void TimeAdjustTask::run()
 
             if (d->settings.updIPTCDate)
             {
-                if (writeToSidecar || meta.canWriteIptc(d->url.toLocalFile()))
+                if (writeToSidecar || meta->canWriteIptc(d->url.toLocalFile()))
                 {
                     if (!d->settings.updIfAvailable ||
-                        !meta.getIptcTagString("Iptc.Application2.DateCreated").isEmpty())
+                        !meta->getIptcTagString("Iptc.Application2.DateCreated").isEmpty())
                     {
-                        ret &= meta.setIptcTagString("Iptc.Application2.DateCreated",
-                                                     dt.date().toString(Qt::ISODate));
+                        ret &= meta->setIptcTagString("Iptc.Application2.DateCreated",
+                                                      dt.date().toString(Qt::ISODate));
                     }
 
                     if (!d->settings.updIfAvailable ||
-                        !meta.getIptcTagString("Iptc.Application2.TimeCreated").isEmpty())
+                        !meta->getIptcTagString("Iptc.Application2.TimeCreated").isEmpty())
                     {
-                        ret &= meta.setIptcTagString("Iptc.Application2.TimeCreated",
-                                                     dt.time().toString(Qt::ISODate));
+                        ret &= meta->setIptcTagString("Iptc.Application2.TimeCreated",
+                                                      dt.time().toString(Qt::ISODate));
                     }
                 }
                 else
@@ -195,48 +196,48 @@ void TimeAdjustTask::run()
 
             if (d->settings.updXMPDate)
             {
-                if (writeToSidecar || (meta.supportXmp() && meta.canWriteXmp(d->url.toLocalFile())))
+                if (writeToSidecar || (meta->supportXmp() && meta->canWriteXmp(d->url.toLocalFile())))
                 {
                     if (!d->settings.updIfAvailable ||
-                        !meta.getXmpTagString("Xmp.exif.DateTimeOriginal").isEmpty())
+                        !meta->getXmpTagString("Xmp.exif.DateTimeOriginal").isEmpty())
                     {
-                        ret &= meta.setXmpTagString("Xmp.exif.DateTimeOriginal",
-                                                    dt.toString(xmpDateTimeFormat));
+                        ret &= meta->setXmpTagString("Xmp.exif.DateTimeOriginal",
+                                                     dt.toString(xmpDateTimeFormat));
                     }
 
                     if (!d->settings.updIfAvailable ||
-                        !meta.getXmpTagString("Xmp.photoshop.DateCreated").isEmpty())
+                        !meta->getXmpTagString("Xmp.photoshop.DateCreated").isEmpty())
                     {
-                        ret &= meta.setXmpTagString("Xmp.photoshop.DateCreated",
-                                                    dt.toString(xmpDateTimeFormat));
+                        ret &= meta->setXmpTagString("Xmp.photoshop.DateCreated",
+                                                     dt.toString(xmpDateTimeFormat));
                     }
 
                     if (!d->settings.updIfAvailable ||
-                        !meta.getXmpTagString("Xmp.tiff.DateTime").isEmpty())
+                        !meta->getXmpTagString("Xmp.tiff.DateTime").isEmpty())
                     {
-                        ret &= meta.setXmpTagString("Xmp.tiff.DateTime",
-                                                    dt.toString(xmpDateTimeFormat));
+                        ret &= meta->setXmpTagString("Xmp.tiff.DateTime",
+                                                     dt.toString(xmpDateTimeFormat));
                     }
 
                     if (!d->settings.updIfAvailable ||
-                        !meta.getXmpTagString("Xmp.xmp.CreateDate").isEmpty())
+                        !meta->getXmpTagString("Xmp.xmp.CreateDate").isEmpty())
                     {
-                        ret &= meta.setXmpTagString("Xmp.xmp.CreateDate",
-                                                    dt.toString(xmpDateTimeFormat));
+                        ret &= meta->setXmpTagString("Xmp.xmp.CreateDate",
+                                                     dt.toString(xmpDateTimeFormat));
                     }
 
                     if (!d->settings.updIfAvailable ||
-                        !meta.getXmpTagString("Xmp.xmp.MetadataDate").isEmpty())
+                        !meta->getXmpTagString("Xmp.xmp.MetadataDate").isEmpty())
                     {
-                        ret &= meta.setXmpTagString("Xmp.xmp.MetadataDate",
-                                                    dt.toString(xmpDateTimeFormat));
+                        ret &= meta->setXmpTagString("Xmp.xmp.MetadataDate",
+                                                     dt.toString(xmpDateTimeFormat));
                     }
 
                     if (!d->settings.updIfAvailable ||
-                        !meta.getXmpTagString("Xmp.xmp.ModifyDate").isEmpty())
+                        !meta->getXmpTagString("Xmp.xmp.ModifyDate").isEmpty())
                     {
-                        ret &= meta.setXmpTagString("Xmp.xmp.ModifyDate",
-                                                    dt.toString(xmpDateTimeFormat));
+                        ret &= meta->setXmpTagString("Xmp.xmp.ModifyDate",
+                                                     dt.toString(xmpDateTimeFormat));
                     }
                 }
                 else
@@ -247,34 +248,34 @@ void TimeAdjustTask::run()
 
             if (d->settings.updXMPVideo)
             {
-                if (writeToSidecar || (meta.supportXmp() && meta.canWriteXmp(d->url.toLocalFile())))
+                if (writeToSidecar || (meta->supportXmp() && meta->canWriteXmp(d->url.toLocalFile())))
                 {
                     if (!d->settings.updIfAvailable ||
-                        !meta.getXmpTagString("Xmp.video.DateTimeOriginal").isEmpty())
+                        !meta->getXmpTagString("Xmp.video.DateTimeOriginal").isEmpty())
                     {
-                        ret &= meta.setXmpTagString("Xmp.video.DateTimeOriginal",
-                                                    dt.toString(xmpDateTimeFormat));
+                        ret &= meta->setXmpTagString("Xmp.video.DateTimeOriginal",
+                                                     dt.toString(xmpDateTimeFormat));
                     }
 
                     if (!d->settings.updIfAvailable ||
-                        !meta.getXmpTagString("Xmp.video.DateTimeDigitized").isEmpty())
+                        !meta->getXmpTagString("Xmp.video.DateTimeDigitized").isEmpty())
                     {
-                        ret &= meta.setXmpTagString("Xmp.video.DateTimeDigitized",
-                                                    dt.toString(xmpDateTimeFormat));
+                        ret &= meta->setXmpTagString("Xmp.video.DateTimeDigitized",
+                                                     dt.toString(xmpDateTimeFormat));
                     }
 
                     if (!d->settings.updIfAvailable ||
-                        !meta.getXmpTagString("Xmp.video.ModificationDate").isEmpty())
+                        !meta->getXmpTagString("Xmp.video.ModificationDate").isEmpty())
                     {
-                        ret &= meta.setXmpTagString("Xmp.video.ModificationDate",
-                                                    dt.toString(xmpDateTimeFormat));
+                        ret &= meta->setXmpTagString("Xmp.video.ModificationDate",
+                                                     dt.toString(xmpDateTimeFormat));
                     }
 
                     if (!d->settings.updIfAvailable ||
-                        !meta.getXmpTagString("Xmp.video.DateUTC").isEmpty())
+                        !meta->getXmpTagString("Xmp.video.DateUTC").isEmpty())
                     {
-                        ret &= meta.setXmpTagString("Xmp.video.DateUTC",
-                                                    dt.toUTC().toString(xmpDateTimeFormat));
+                        ret &= meta->setXmpTagString("Xmp.video.DateUTC",
+                                                     dt.toUTC().toString(xmpDateTimeFormat));
                     }
                 }
                 else
@@ -283,7 +284,7 @@ void TimeAdjustTask::run()
                 }
             }
 
-            ret &= meta.save(d->url.toLocalFile());
+            ret &= meta->save(d->url.toLocalFile());
 
             if (!ret)
             {

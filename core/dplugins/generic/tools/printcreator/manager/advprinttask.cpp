@@ -33,6 +33,7 @@
 #include <QSize>
 #include <QPainter>
 #include <QFileInfo>
+#include <QScopedPointer>
 
 // KDE includes
 
@@ -507,7 +508,6 @@ bool AdvPrintTask::paintOnePage(QPainter& p,
             int exifOrientation = DMetadata::ORIENTATION_NORMAL;
             (void)exifOrientation; // prevent cppcheck warning.
 
-
             if (photo->m_iface)
             {
                 DItemInfo info(photo->m_iface->itemInfo(photo->m_url));
@@ -515,8 +515,8 @@ bool AdvPrintTask::paintOnePage(QPainter& p,
             }
             else
             {
-                DMetadata meta(photo->m_url.toLocalFile());
-                exifOrientation = meta.getItemOrientation();
+                QScopedPointer<DMetadata> meta(new DMetadata(photo->m_url.toLocalFile()));
+                exifOrientation = meta->getItemOrientation();
             }
 
             // ROT_90_HFLIP .. ROT_270

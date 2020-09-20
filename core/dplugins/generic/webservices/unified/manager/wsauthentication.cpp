@@ -29,6 +29,7 @@
 #include <QMessageBox>
 #include <QFile>
 #include <QFileInfo>
+#include <QScopedPointer>
 
 // KDE includes
 
@@ -208,8 +209,8 @@ void WSAuthentication::parseTreeFromListAlbums(const QList <WSAlbum>& albumsList
     {
         if (albumTree.contains(album.id))
         {
-            albumTree[album.id].title       = album.title;
-            albumTree[album.id].uploadable  = album.uploadable;
+            albumTree[album.id].title      = album.title;
+            albumTree[album.id].uploadable = album.uploadable;
         }
         else
         {
@@ -242,8 +243,10 @@ QString WSAuthentication::getImageCaption(const QString& fileName)
     DItemInfo info(d->iface->itemInfo(QUrl::fromLocalFile(fileName)));
 
     // If webservice doesn't support image titles, include it in descriptions if needed.
+
     QStringList descriptions = QStringList() << info.title() << info.comment();
     descriptions.removeAll(QLatin1String(""));
+
     return descriptions.join(QLatin1String("\n\n"));
 }
 
@@ -298,15 +301,15 @@ void WSAuthentication::prepareForUpload()
             image.save(d->tmpPath.last(), "JPEG", d->wizard->settings()->imageCompression);
 
             // copy meta data to temporary image and get caption for image
-            DMetadata meta;
+            QScopedPointer<DMetadata> meta(new DMetatdata);
             QString caption = QLatin1String("");
 
-            if (meta.load(imgPath))
+            if (meta->load(imgPath))
             {
-                meta.setItemDimensions(image.size());
-                meta.setItemOrientation(MetaEngine::ORIENTATION_NORMAL);
-                meta.setMetadataWritingMode((int)DMetadata::WRITE_TO_FILE_ONLY);
-                meta.save(d->tmpPath.last(), true);
+                meta->setItemDimensions(image.size());
+                meta->setItemOrientation(MetaEngine::ORIENTATION_NORMAL);
+                meta->setMetadataWritingMode((int)DMetadata::WRITE_TO_FILE_ONLY);
+                meta->save(d->tmpPath.last(), true);
                 caption = getImageCaption(imgPath);
             }
 

@@ -50,7 +50,7 @@
 #include <QApplication>
 #include <QMessageBox>
 #include <QWindow>
-
+#include <QScopedPointer>
 
 // KDE includes
 
@@ -378,9 +378,9 @@ void TimeAdjustDialog::readMetadataTimestamps()
 {
     foreach (const QUrl& url, d->itemsUsedMap.keys())
     {
-        DMetadata meta;
+        QScopedPointer<DMetadata> meta(new DMetadata);
 
-        if (!meta.load(url.toLocalFile()))
+        if (!meta->load(url.toLocalFile()))
         {
             d->itemsUsedMap.insert(url, QDateTime());
             continue;
@@ -394,34 +394,34 @@ void TimeAdjustDialog::readMetadataTimestamps()
         switch (prm.metadataSource)
         {
             case TimeAdjustContainer::EXIFIPTCXMP:
-                curImageDateTime = meta.getItemDateTime();
+                curImageDateTime = meta->getItemDateTime();
                 break;
 
             case TimeAdjustContainer::EXIFCREATED:
-                curImageDateTime = QDateTime::fromString(meta.getExifTagString("Exif.Image.DateTime"),
+                curImageDateTime = QDateTime::fromString(meta->getExifTagString("Exif.Image.DateTime"),
                                                          exifDateTimeFormat);
                 break;
 
             case TimeAdjustContainer::EXIFORIGINAL:
-                curImageDateTime = QDateTime::fromString(meta.getExifTagString("Exif.Photo.DateTimeOriginal"),
+                curImageDateTime = QDateTime::fromString(meta->getExifTagString("Exif.Photo.DateTimeOriginal"),
                                                          exifDateTimeFormat);
                 break;
 
             case TimeAdjustContainer::EXIFDIGITIZED:
-                curImageDateTime = QDateTime::fromString(meta.getExifTagString("Exif.Photo.DateTimeDigitized"),
+                curImageDateTime = QDateTime::fromString(meta->getExifTagString("Exif.Photo.DateTimeDigitized"),
                                                          exifDateTimeFormat);
                 break;
 
             case TimeAdjustContainer::IPTCCREATED:
                 // we have to truncate the timezone from the time, otherwise it cannot be converted to a QTime
-                curImageDateTime = QDateTime(QDate::fromString(meta.getIptcTagString("Iptc.Application2.DateCreated"),
+                curImageDateTime = QDateTime(QDate::fromString(meta->getIptcTagString("Iptc.Application2.DateCreated"),
                                                                Qt::ISODate),
-                                             QTime::fromString(meta.getIptcTagString("Iptc.Application2.TimeCreated").left(8),
+                                             QTime::fromString(meta->getIptcTagString("Iptc.Application2.TimeCreated").left(8),
                                                                Qt::ISODate));
                 break;
 
             case TimeAdjustContainer::XMPCREATED:
-                curImageDateTime = QDateTime::fromString(meta.getXmpTagString("Xmp.xmp.CreateDate"),
+                curImageDateTime = QDateTime::fromString(meta->getXmpTagString("Xmp.xmp.CreateDate"),
                                                          xmpDateTimeFormat);
                 break;
 

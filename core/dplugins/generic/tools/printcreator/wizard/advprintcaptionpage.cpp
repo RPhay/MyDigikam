@@ -31,6 +31,7 @@
 #include <QApplication>
 #include <QStyle>
 #include <QFileInfo>
+#include <QScopedPointer>
 
 // KDE includes
 
@@ -349,16 +350,14 @@ QString AdvPrintCaptionPage::captionFormatter(AdvPrintPhoto* const photo)
     else
     {
         QFileInfo fi(photo->m_url.toLocalFile());
-        DMetadata meta(photo->m_url.toLocalFile());
-        imageSize = meta.getItemDimensions();
+        QScopedPointer<DMetadata> meta(new DMetadata(photo->m_url.toLocalFile()));
+        imageSize                    = meta->getItemDimensions();
 
-        format.replace(QString::fromUtf8("%c"),
-            meta.getItemComments()[QLatin1String("x-default")].caption);
-        format.replace(QString::fromUtf8("%d"),
-            QLocale().toString(meta.getItemDateTime(), QLocale::ShortFormat));
+        format.replace(QString::fromUtf8("%c"), meta->getItemComments()[QLatin1String("x-default")].caption);
+        format.replace(QString::fromUtf8("%d"), QLocale().toString(meta->getItemDateTime(), QLocale::ShortFormat));
         format.replace(QString::fromUtf8("%f"), fi.fileName());
 
-        PhotoInfoContainer photoInfo = meta.getPhotographInformation();
+        PhotoInfoContainer photoInfo = meta->getPhotographInformation();
         format.replace(QString::fromUtf8("%t"), photoInfo.exposureTime);
         format.replace(QString::fromUtf8("%i"), photoInfo.sensitivity);
         format.replace(QString::fromUtf8("%a"), photoInfo.aperture);

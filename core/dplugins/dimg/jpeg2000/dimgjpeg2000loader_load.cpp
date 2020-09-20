@@ -28,6 +28,7 @@
 #include <QFile>
 #include <QByteArray>
 #include <QTextStream>
+#include <QScopedPointer>
 
 // Local includes
 
@@ -120,8 +121,8 @@ bool DImgJPEG2000Loader::load(const QString& filePath, DImgLoaderObserver* const
 
         fclose(file);
 
-        DMetadata metadata(filePath);
-        QSize size = metadata.getItemDimensions();
+        QScopedPointer<DMetadata> metadata(new DMetadata(filePath));
+        QSize size = metadata->getItemDimensions();
 
         if (size.isValid())
         {

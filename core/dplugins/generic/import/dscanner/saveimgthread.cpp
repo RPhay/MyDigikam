@@ -26,6 +26,7 @@
 
 #include <QImage>
 #include <QDateTime>
+#include <QScopedPointer>
 
 // LibKSane includes
 
@@ -48,11 +49,11 @@ class Q_DECL_HIDDEN SaveImgThread::Private
 public:
 
     explicit Private()
+      : width(0),
+        height(0),
+        bytesPerLine(0),
+        frmt(0)
     {
-        width        = 0;
-        height       = 0;
-        bytesPerLine = 0;
-        frmt         = 0;
     }
 
     int        width;
@@ -230,18 +231,18 @@ void SaveImgThread::run()
         return;
     }
 
-    DMetadata meta(d->newUrl.toLocalFile());
-    meta.setExifTagString("Exif.Image.DocumentName", QLatin1String("Scanned Image")); // not i18n
-    meta.setExifTagString("Exif.Image.Make",         d->make);
-    meta.setXmpTagString("Xmp.tiff.Make",            d->make);
-    meta.setExifTagString("Exif.Image.Model",        d->model);
-    meta.setXmpTagString("Xmp.tiff.Model",           d->model);
-    meta.setItemOrientation(DMetadata::ORIENTATION_NORMAL);
-    meta.setItemColorWorkSpace(DMetadata::WORKSPACE_SRGB);
+    QScopedPointer<DMetadata> meta(new DMetadata(d->newUrl.toLocalFile()));
+    meta->setExifTagString("Exif.Image.DocumentName", QLatin1String("Scanned Image")); // not i18n
+    meta->setExifTagString("Exif.Image.Make",         d->make);
+    meta->setXmpTagString("Xmp.tiff.Make",            d->make);
+    meta->setExifTagString("Exif.Image.Model",        d->model);
+    meta->setXmpTagString("Xmp.tiff.Model",           d->model);
+    meta->setItemOrientation(DMetadata::ORIENTATION_NORMAL);
+    meta->setItemColorWorkSpace(DMetadata::WORKSPACE_SRGB);
 
     emit signalProgress(d->newUrl, 90);
 
-    meta.applyChanges(true);
+    meta->applyChanges(true);
 
     emit signalProgress(d->newUrl, 100);
     emit signalComplete(d->newUrl, success);

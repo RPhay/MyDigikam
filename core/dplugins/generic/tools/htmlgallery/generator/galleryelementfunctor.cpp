@@ -229,131 +229,131 @@ void GalleryElementFunctor::operator()(GalleryElement& element)
     // Read Exif Metadata
 
     QString unavailable(i18n("unavailable"));
-    DMetadata meta;
-    meta.load(path);
+    QScopedPointer<DMetadata> meta(new DMetadata);
+    meta->load(path);
 
-    if (meta.hasExif() || meta.hasXmp())
+    if (meta->hasExif() || meta->hasXmp())
     {
         // Try to use image metadata to get image info
 
-        element.m_exifImageMake = meta.getExifTagString("Exif.Image.Make");
+        element.m_exifImageMake = meta->getExifTagString("Exif.Image.Make");
 
         if (element.m_exifImageMake.isEmpty())
         {
-            element.m_exifImageMake = meta.getXmpTagString("Xmp.tiff.Make");
+            element.m_exifImageMake = meta->getXmpTagString("Xmp.tiff.Make");
         }
 
-        element.m_exifItemModel = meta.getExifTagString("Exif.Image.Model");
+        element.m_exifItemModel = meta->getExifTagString("Exif.Image.Model");
 
         if (element.m_exifItemModel.isEmpty())
         {
-            element.m_exifItemModel = meta.getXmpTagString("Xmp.tiff.Model");
+            element.m_exifItemModel = meta->getXmpTagString("Xmp.tiff.Model");
         }
 
-        element.m_exifImageOrientation = meta.getExifTagString("Exif.Image.Orientation");
+        element.m_exifImageOrientation = meta->getExifTagString("Exif.Image.Orientation");
 
         if (element.m_exifImageOrientation.isEmpty())
         {
-            element.m_exifImageOrientation = meta.getXmpTagString("Xmp.tiff.Orientation");
+            element.m_exifImageOrientation = meta->getXmpTagString("Xmp.tiff.Orientation");
         }
 
-        element.m_exifImageXResolution = meta.getExifTagString("Exif.Image.XResolution");
+        element.m_exifImageXResolution = meta->getExifTagString("Exif.Image.XResolution");
 
         if (element.m_exifImageXResolution.isEmpty())
         {
-            element.m_exifImageXResolution = meta.getXmpTagString("Xmp.tiff.XResolution");
+            element.m_exifImageXResolution = meta->getXmpTagString("Xmp.tiff.XResolution");
         }
 
-        element.m_exifImageYResolution = meta.getExifTagString("Exif.Image.YResolution");
+        element.m_exifImageYResolution = meta->getExifTagString("Exif.Image.YResolution");
 
         if (element.m_exifImageYResolution.isEmpty())
         {
-            element.m_exifImageYResolution = meta.getXmpTagString("Xmp.tiff.YResolution");
+            element.m_exifImageYResolution = meta->getXmpTagString("Xmp.tiff.YResolution");
         }
 
-        element.m_exifImageResolutionUnit = meta.getExifTagString("Exif.Image.ResolutionUnit");
+        element.m_exifImageResolutionUnit = meta->getExifTagString("Exif.Image.ResolutionUnit");
 
         if (element.m_exifImageResolutionUnit.isEmpty())
         {
-            element.m_exifImageResolutionUnit = meta.getXmpTagString("Xmp.tiff.ResolutionUnit");
+            element.m_exifImageResolutionUnit = meta->getXmpTagString("Xmp.tiff.ResolutionUnit");
         }
 
-        if (meta.getItemDateTime().isValid())
+        if (meta->getItemDateTime().isValid())
         {
-            element.m_exifImageDateTime = QLocale().toString(meta.getItemDateTime(), QLocale::ShortFormat);
+            element.m_exifImageDateTime = QLocale().toString(meta->getItemDateTime(), QLocale::ShortFormat);
         }
 
-        element.m_exifImageYCbCrPositioning = meta.getExifTagString("Exif.Image.YCbCrPositioning");
+        element.m_exifImageYCbCrPositioning = meta->getExifTagString("Exif.Image.YCbCrPositioning");
 
         if (element.m_exifImageYCbCrPositioning.isEmpty())
         {
-            element.m_exifImageYCbCrPositioning = meta.getXmpTagString("Xmp.tiff.YCbCrPositioning");
+            element.m_exifImageYCbCrPositioning = meta->getXmpTagString("Xmp.tiff.YCbCrPositioning");
         }
 
-        element.m_exifPhotoFNumber = meta.getExifTagString("Exif.Photo.FNumber");
+        element.m_exifPhotoFNumber = meta->getExifTagString("Exif.Photo.FNumber");
 
         if (element.m_exifPhotoFNumber.isEmpty())
         {
-            element.m_exifPhotoFNumber = meta.getXmpTagString("Xmp.exif.FNumber");
+            element.m_exifPhotoFNumber = meta->getXmpTagString("Xmp.exif.FNumber");
         }
 
-        element.m_exifPhotoApertureValue = meta.getExifTagString("Exif.Photo.ApertureValue");
+        element.m_exifPhotoApertureValue = meta->getExifTagString("Exif.Photo.ApertureValue");
 
         if (element.m_exifPhotoApertureValue.isEmpty())
         {
-            element.m_exifPhotoApertureValue = meta.getXmpTagString("Xmp.exif.ApertureValue");
+            element.m_exifPhotoApertureValue = meta->getXmpTagString("Xmp.exif.ApertureValue");
         }
 
-        element.m_exifPhotoFocalLength = meta.getExifTagString("Exif.Photo.FocalLength");
+        element.m_exifPhotoFocalLength = meta->getExifTagString("Exif.Photo.FocalLength");
 
         if (element.m_exifPhotoFocalLength.isEmpty())
         {
-            element.m_exifPhotoFocalLength = meta.getXmpTagString("Xmp.exif.FocalLength");
+            element.m_exifPhotoFocalLength = meta->getXmpTagString("Xmp.exif.FocalLength");
         }
 
-        element.m_exifPhotoExposureTime = meta.getExifTagString("Exif.Photo.ExposureTime");
+        element.m_exifPhotoExposureTime = meta->getExifTagString("Exif.Photo.ExposureTime");
 
         if (element.m_exifPhotoExposureTime.isEmpty())
         {
-            element.m_exifPhotoExposureTime = meta.getXmpTagString("Xmp.exif.ExposureTime");
+            element.m_exifPhotoExposureTime = meta->getXmpTagString("Xmp.exif.ExposureTime");
         }
 
-        element.m_exifPhotoShutterSpeedValue = meta.getExifTagString("Exif.Photo.ShutterSpeedValue");
+        element.m_exifPhotoShutterSpeedValue = meta->getExifTagString("Exif.Photo.ShutterSpeedValue");
 
         if (element.m_exifPhotoShutterSpeedValue.isEmpty())
         {
-            element.m_exifPhotoShutterSpeedValue = meta.getXmpTagString("Xmp.exif.ShutterSpeedValue");
+            element.m_exifPhotoShutterSpeedValue = meta->getXmpTagString("Xmp.exif.ShutterSpeedValue");
         }
 
-        element.m_exifPhotoISOSpeedRatings = meta.getExifTagString("Exif.Photo.ISOSpeedRatings");
+        element.m_exifPhotoISOSpeedRatings = meta->getExifTagString("Exif.Photo.ISOSpeedRatings");
 
         if (element.m_exifPhotoISOSpeedRatings.isEmpty())
         {
-            element.m_exifPhotoISOSpeedRatings = meta.getXmpTagString("Xmp.exif.ISOSpeedRatings");
+            element.m_exifPhotoISOSpeedRatings = meta->getXmpTagString("Xmp.exif.ISOSpeedRatings");
         }
 
-        element.m_exifPhotoExposureProgram = meta.getExifTagString("Exif.Photo.ExposureIndex");
+        element.m_exifPhotoExposureProgram = meta->getExifTagString("Exif.Photo.ExposureIndex");
 
         if (element.m_exifPhotoExposureProgram.isEmpty())
         {
-            element.m_exifPhotoExposureProgram = meta.getXmpTagString("Xmp.exif.ExposureIndex");
+            element.m_exifPhotoExposureProgram = meta->getXmpTagString("Xmp.exif.ExposureIndex");
         }
 
         // Get GPS values
 
         double gpsvalue;
 
-        if (meta.getGPSAltitude(&gpsvalue))
+        if (meta->getGPSAltitude(&gpsvalue))
         {
             element.m_exifGPSAltitude = QString::number(gpsvalue, 'f', 3);
         }
 
-        if (meta.getGPSLatitudeNumber(&gpsvalue))
+        if (meta->getGPSLatitudeNumber(&gpsvalue))
         {
             element.m_exifGPSLatitude = QString::number(gpsvalue, 'f', 6);
         }
 
-        if (meta.getGPSLongitudeNumber(&gpsvalue))
+        if (meta->getGPSLongitudeNumber(&gpsvalue))
         {
             element.m_exifGPSLongitude = QString::number(gpsvalue, 'f', 6);
         }
