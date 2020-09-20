@@ -101,16 +101,16 @@ bool IptcWidget::loadFromURL(const QUrl& url)
 
 bool IptcWidget::decodeMetadata()
 {
-    DMetadata data = getMetadata();
+    QScopedPointer<DMetadata> data(new DMetadata(getMetadata().data()));
 
-    if (!data.hasIptc())
+    if (!data->hasIptc())
     {
         return false;
     }
 
     // Update all metadata contents.
 
-    setMetadataMap(data.getIptcTagsDataList(m_keysFilter));
+    setMetadataMap(data->getIptcTagsDataList(m_keysFilter));
 
     return true;
 }

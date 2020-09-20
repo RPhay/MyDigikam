@@ -117,16 +117,16 @@ bool XmpWidget::loadFromURL(const QUrl& url)
 
 bool XmpWidget::decodeMetadata()
 {
-    DMetadata data = getMetadata();
+    QScopedPointer<DMetadata> data(new DMetadata(getMetadata().data()));
 
-    if (!data.hasXmp())
+    if (!data->hasXmp())
     {
         return false;
     }
 
     // Update all metadata contents.
 
-    setMetadataMap(data.getXmpTagsDataList(QStringList()));
+    setMetadataMap(data->getXmpTagsDataList(QStringList()));
 
     return true;
 }

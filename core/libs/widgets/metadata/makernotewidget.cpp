@@ -107,16 +107,16 @@ bool MakerNoteWidget::loadFromURL(const QUrl& url)
 
 bool MakerNoteWidget::decodeMetadata()
 {
-    DMetadata data = getMetadata();
+    QScopedPointer<DMetadata> data(new DMetadata(getMetadata().data()));
 
-    if (!data.hasExif())
+    if (!data->hasExif())
     {
         return false;
     }
 
     // Update all metadata contents.
 
-    setMetadataMap(data.getExifTagsDataList(m_keysFilter, true));
+    setMetadataMap(data->getExifTagsDataList(m_keysFilter, true));
 
     return true;
 }

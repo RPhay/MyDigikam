@@ -110,16 +110,16 @@ bool ExifWidget::loadFromURL(const QUrl& url)
 
 bool ExifWidget::decodeMetadata()
 {
-    DMetadata data = getMetadata();
+    QScopedPointer<DMetadata> data(new DMetadata(getMetadata().data()));
 
-    if (!data.hasExif())
+    if (!data->hasExif())
     {
         return false;
     }
 
     // Update all metadata contents.
 
-    setMetadataMap(data.getExifTagsDataList(QStringList()));
+    setMetadataMap(data->getExifTagsDataList(QStringList()));
 
     return true;
 }
