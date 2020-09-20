@@ -195,12 +195,12 @@ void EXIFEditWidget::slotItemChanged()
     d->page_light->setHeader(d->dlg->currentItemTitleHeader(i18n("Light Source Information")));
     d->page_adjust->setHeader(d->dlg->currentItemTitleHeader(i18n("Pictures Adjustments")));
 
-    DMetadata meta;
-    meta.load((*d->dlg->currentItem()).toLocalFile());
+    QScopedPointer<DMetadata> meta(new DMetadata);
+    meta->load((*d->dlg->currentItem()).toLocalFile());
 
-    d->exifData = meta.getExifEncoded();
-    d->iptcData = meta.getIptc();
-    d->xmpData  = meta.getXmp();
+    d->exifData = meta->getExifEncoded();
+    d->iptcData = meta->getIptc();
+    d->xmpData  = meta->getXmp();
     d->captionPage->readMetadata(d->exifData);
     d->datetimePage->readMetadata(d->exifData);
     d->lensPage->readMetadata(d->exifData);
@@ -222,12 +222,12 @@ void EXIFEditWidget::apply()
 {
     if (d->modified && !d->isReadOnly)
     {
-        DMetadata meta;
-        meta.load((*d->dlg->currentItem()).toLocalFile());
+        QScopedPointer<DMetadata> meta(new DMetadata);
+        meta->load((*d->dlg->currentItem()).toLocalFile());
 
-        d->exifData = meta.getExifEncoded();
-        d->iptcData = meta.getIptc();
-        d->xmpData  = meta.getXmp();
+        d->exifData = meta->getExifEncoded();
+        d->iptcData = meta->getIptc();
+        d->xmpData  = meta->getXmp();
 
         d->captionPage->applyMetadata(d->exifData, d->iptcData, d->xmpData);
         d->datetimePage->applyMetadata(d->exifData, d->iptcData, d->xmpData);
@@ -237,10 +237,10 @@ void EXIFEditWidget::apply()
         d->lightPage->applyMetadata(d->exifData);
         d->adjustPage->applyMetadata(d->exifData);
 
-        meta.setExif(d->exifData);
-        meta.setIptc(d->iptcData);
-        meta.setXmp(d->xmpData);
-        meta.save((*d->dlg->currentItem()).toLocalFile());
+        meta->setExif(d->exifData);
+        meta->setIptc(d->iptcData);
+        meta->setXmp(d->xmpData);
+        meta->save((*d->dlg->currentItem()).toLocalFile());
 
         d->modified = false;
     }

@@ -93,25 +93,25 @@ XMPSubjects::~XMPSubjects()
 
 void XMPSubjects::readMetadata(QByteArray& xmpData)
 {
-    DMetadata meta;
-    meta.setXmp(xmpData);
-    setSubjectsList(meta.getXmpSubjects());
+    QScopedPointer<DMetadata> meta(new DMetadata);
+    meta->setXmp(xmpData);
+    setSubjectsList(meta->getXmpSubjects());
 }
 
 void XMPSubjects::applyMetadata(QByteArray& xmpData)
 {
-    DMetadata meta;
-    meta.setXmp(xmpData);
+    QScopedPointer<DMetadata> meta(new DMetadata);
+    meta->setXmp(xmpData);
     QStringList newSubjects = subjectsList();
 
     // We remove in first all existing subjects.
-    meta.removeXmpTag("Xmp.iptc.SubjectCode");
+    meta->removeXmpTag("Xmp.iptc.SubjectCode");
 
     // And add new list if necessary.
     if (m_subjectsCheck->isChecked())
-        meta.setXmpSubjects(newSubjects);
+        meta->setXmpSubjects(newSubjects);
 
-    xmpData = meta.getXmp();
+    xmpData = meta->getXmp();
 }
 
 } // namespace DigikamGenericMetadataEditPlugin

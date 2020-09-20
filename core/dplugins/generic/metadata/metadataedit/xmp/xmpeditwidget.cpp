@@ -235,11 +235,11 @@ void XMPEditWidget::slotItemChanged()
     d->page_properties->setHeader(d->dlg->currentItemTitleHeader(i18n("<qt>Status Properties<br/>"
                      "<i>Use this panel to record workflow properties</i></qt>")));
 
-    DMetadata meta;
-    meta.load((*d->dlg->currentItem()).toLocalFile());
+    QScopedPointer<DMetadata> meta(new DMetadata);
+    meta->load((*d->dlg->currentItem()).toLocalFile());
 
-    d->exifData = meta.getExifEncoded();
-    d->xmpData  = meta.getXmp();
+    d->exifData = meta->getExifEncoded();
+    d->xmpData  = meta->getXmp();
 
     d->contentPage->readMetadata(d->xmpData);
     d->originPage->readMetadata(d->xmpData);
@@ -270,11 +270,11 @@ void XMPEditWidget::apply()
 {
     if (d->modified && !d->isReadOnly)
     {
-        DMetadata meta;
-        meta.load((*d->dlg->currentItem()).toLocalFile());
+        QScopedPointer<DMetadata> meta(new DMetadata);
+        meta->load((*d->dlg->currentItem()).toLocalFile());
 
-        d->exifData = meta.getExifEncoded();
-        d->xmpData  = meta.getXmp();
+        d->exifData = meta->getExifEncoded();
+        d->xmpData  = meta->getXmp();
 
         d->contentPage->applyMetadata(d->exifData, d->xmpData);
         d->originPage->applyMetadata(d->exifData, d->xmpData);
@@ -285,9 +285,9 @@ void XMPEditWidget::apply()
         d->statusPage->applyMetadata(d->xmpData);
         d->propertiesPage->applyMetadata(d->xmpData);
 
-        meta.setExif(d->exifData);
-        meta.setXmp(d->xmpData);
-        meta.save((*d->dlg->currentItem()).toLocalFile());
+        meta->setExif(d->exifData);
+        meta->setXmp(d->xmpData);
+        meta->save((*d->dlg->currentItem()).toLocalFile());
 
         d->modified = false;
     }

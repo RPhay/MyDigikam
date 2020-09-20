@@ -238,11 +238,11 @@ void IPTCEditWidget::slotItemChanged()
     d->page_envelope->setHeader(d->dlg->currentItemTitleHeader(i18n("<qt>Envelope Information<br/>"
                       "<i>Use this panel to record editorial details</i></qt>")));
 
-    DMetadata meta;
-    meta.load((*d->dlg->currentItem()).toLocalFile());
+    QScopedPointer<DMetadata> meta(new DMetadata);
+    meta->load((*d->dlg->currentItem()).toLocalFile());
 
-    d->exifData = meta.getExifEncoded();
-    d->iptcData = meta.getIptc();
+    d->exifData = meta->getExifEncoded();
+    d->iptcData = meta->getIptc();
     d->contentPage->readMetadata(d->iptcData);
     d->originPage->readMetadata(d->iptcData);
     d->creditsPage->readMetadata(d->iptcData);
@@ -271,11 +271,11 @@ void IPTCEditWidget::apply()
 {
     if (d->modified && !d->isReadOnly)
     {
-        DMetadata meta;
-        meta.load((*d->dlg->currentItem()).toLocalFile());
+        QScopedPointer<DMetadata> meta(new DMetadata);
+        meta->load((*d->dlg->currentItem()).toLocalFile());
 
-        d->exifData = meta.getExifEncoded();
-        d->iptcData = meta.getIptc();
+        d->exifData = meta->getExifEncoded();
+        d->iptcData = meta->getIptc();
 
         d->contentPage->applyMetadata(d->exifData, d->iptcData);
         d->originPage->applyMetadata(d->exifData, d->iptcData);
@@ -287,9 +287,9 @@ void IPTCEditWidget::apply()
         d->propertiesPage->applyMetadata(d->iptcData);
         d->envelopePage->applyMetadata(d->iptcData);
 
-        meta.setExif(d->exifData);
-        meta.setIptc(d->iptcData);
-        meta.save((*d->dlg->currentItem()).toLocalFile());
+        meta->setExif(d->exifData);
+        meta->setIptc(d->iptcData);
+        meta->save((*d->dlg->currentItem()).toLocalFile());
 
         d->modified = false;
     }

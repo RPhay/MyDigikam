@@ -447,8 +447,8 @@ void IPTCOrigin::slotLineEditModified()
 void IPTCOrigin::readMetadata(QByteArray& iptcData)
 {
     blockSignals(true);
-    DMetadata meta;
-    meta.setIptc(iptcData);
+    QScopedPointer<DMetadata> meta(new DMetadata);
+    meta->setIptc(iptcData);
 
     QString     data;
     QStringList code, list;
@@ -456,8 +456,8 @@ void IPTCOrigin::readMetadata(QByteArray& iptcData)
     QTime       time;
     QString     dateStr, timeStr;
 
-    dateStr = meta.getIptcTagString("Iptc.Application2.DateCreated", false);
-    timeStr = meta.getIptcTagString("Iptc.Application2.TimeCreated", false);
+    dateStr = meta->getIptcTagString("Iptc.Application2.DateCreated", false);
+    timeStr = meta->getIptcTagString("Iptc.Application2.TimeCreated", false);
 
     d->dateCreatedSel->setDate(QDate::currentDate());
     d->dateCreatedCheck->setChecked(false);
@@ -495,8 +495,8 @@ void IPTCOrigin::readMetadata(QByteArray& iptcData)
     d->timeCreatedSel->setEnabled(d->timeCreatedCheck->isChecked());
     d->zoneCreatedSel->setEnabled(d->timeCreatedCheck->isChecked());
 
-    dateStr = meta.getIptcTagString("Iptc.Application2.DigitizationDate", false);
-    timeStr = meta.getIptcTagString("Iptc.Application2.DigitizationTime", false);
+    dateStr = meta->getIptcTagString("Iptc.Application2.DigitizationDate", false);
+    timeStr = meta->getIptcTagString("Iptc.Application2.DigitizationTime", false);
 
     d->dateDigitalizedSel->setDate(QDate::currentDate());
     d->dateDigitalizedCheck->setChecked(false);
@@ -533,7 +533,7 @@ void IPTCOrigin::readMetadata(QByteArray& iptcData)
     d->timeDigitalizedSel->setEnabled(d->timeDigitalizedCheck->isChecked());
     d->zoneDigitalizedSel->setEnabled(d->timeDigitalizedCheck->isChecked());
 
-    code = meta.getIptcTagsStringList("Iptc.Application2.LocationCode", false);
+    code = meta->getIptcTagsStringList("Iptc.Application2.LocationCode", false);
 
     for (QStringList::Iterator it = code.begin(); it != code.end(); ++it)
     {
@@ -559,7 +559,7 @@ void IPTCOrigin::readMetadata(QByteArray& iptcData)
 
     d->cityEdit->clear();
     d->cityCheck->setChecked(false);
-    data = meta.getIptcTagString("Iptc.Application2.City", false);
+    data = meta->getIptcTagString("Iptc.Application2.City", false);
 
     if (!data.isNull())
     {
@@ -571,7 +571,7 @@ void IPTCOrigin::readMetadata(QByteArray& iptcData)
 
     d->sublocationEdit->clear();
     d->sublocationCheck->setChecked(false);
-    data = meta.getIptcTagString("Iptc.Application2.SubLocation", false);
+    data = meta->getIptcTagString("Iptc.Application2.SubLocation", false);
 
     if (!data.isNull())
     {
@@ -583,7 +583,7 @@ void IPTCOrigin::readMetadata(QByteArray& iptcData)
 
     d->provinceEdit->clear();
     d->provinceCheck->setChecked(false);
-    data = meta.getIptcTagString("Iptc.Application2.ProvinceState", false);
+    data = meta->getIptcTagString("Iptc.Application2.ProvinceState", false);
 
     if (!data.isNull())
     {
@@ -595,7 +595,7 @@ void IPTCOrigin::readMetadata(QByteArray& iptcData)
 
     d->countryCB->setCurrentIndex(0);
     d->countryCheck->setChecked(false);
-    data = meta.getIptcTagString("Iptc.Application2.CountryCode", false);
+    data = meta->getIptcTagString("Iptc.Application2.CountryCode", false);
 
     if (!data.isNull())
     {
@@ -627,52 +627,52 @@ void IPTCOrigin::readMetadata(QByteArray& iptcData)
 
 void IPTCOrigin::applyMetadata(QByteArray& exifData, QByteArray& iptcData)
 {
-    DMetadata meta;
-    meta.setExif(exifData);
-    meta.setIptc(iptcData);
+    QScopedPointer<DMetadata> meta(new DMetadata);
+    meta->setExif(exifData);
+    meta->setIptc(iptcData);
 
     if (d->dateCreatedCheck->isChecked())
     {
-        meta.setIptcTagString("Iptc.Application2.DateCreated", getIPTCCreationDate().toString(Qt::ISODate));
+        meta->setIptcTagString("Iptc.Application2.DateCreated", getIPTCCreationDate().toString(Qt::ISODate));
 
         if (syncEXIFDateIsChecked())
         {
-            meta.setExifTagString("Exif.Image.DateTime",
+            meta->setExifTagString("Exif.Image.DateTime",
                                   getIPTCCreationDate().toString(QLatin1String("yyyy:MM:dd hh:mm:ss")));
         }
     }
     else
     {
-        meta.removeIptcTag("Iptc.Application2.DateCreated");
+        meta->removeIptcTag("Iptc.Application2.DateCreated");
     }
 
     if (d->dateDigitalizedCheck->isChecked())
     {
-        meta.setIptcTagString("Iptc.Application2.DigitizationDate", d->dateDigitalizedSel->date().toString(Qt::ISODate));
+        meta->setIptcTagString("Iptc.Application2.DigitizationDate", d->dateDigitalizedSel->date().toString(Qt::ISODate));
     }
     else
     {
-        meta.removeIptcTag("Iptc.Application2.DigitizationDate");
+        meta->removeIptcTag("Iptc.Application2.DigitizationDate");
     }
 
     if (d->timeCreatedCheck->isChecked())
     {
-        meta.setIptcTagString("Iptc.Application2.TimeCreated", d->timeCreatedSel->time().toString(Qt::ISODate) +
+        meta->setIptcTagString("Iptc.Application2.TimeCreated", d->timeCreatedSel->time().toString(Qt::ISODate) +
                                                                d->zoneCreatedSel->getTimeZone());
     }
     else
     {
-        meta.removeIptcTag("Iptc.Application2.TimeCreated");
+        meta->removeIptcTag("Iptc.Application2.TimeCreated");
     }
 
     if (d->timeDigitalizedCheck->isChecked())
     {
-        meta.setIptcTagString("Iptc.Application2.DigitizationTime", d->timeDigitalizedSel->time().toString(Qt::ISODate) +
+        meta->setIptcTagString("Iptc.Application2.DigitizationTime", d->timeDigitalizedSel->time().toString(Qt::ISODate) +
                                                                     d->zoneDigitalizedSel->getTimeZone());
     }
     else
     {
-        meta.removeIptcTag("Iptc.Application2.DigitizationTime");
+        meta->removeIptcTag("Iptc.Application2.DigitizationTime");
     }
 
     QStringList oldList, newList;
@@ -693,57 +693,57 @@ void IPTCOrigin::applyMetadata(QByteArray& exifData, QByteArray& iptcData)
             newName.append((*it2).mid(6));
         }
 
-        meta.setIptcTagsStringList("Iptc.Application2.LocationCode", 3, oldCode, newCode);
-        meta.setIptcTagsStringList("Iptc.Application2.LocationName", 64, oldName, newName);
+        meta->setIptcTagsStringList("Iptc.Application2.LocationCode", 3, oldCode, newCode);
+        meta->setIptcTagsStringList("Iptc.Application2.LocationName", 64, oldName, newName);
     }
     else
     {
-        meta.removeIptcTag("Iptc.Application2.LocationCode");
-        meta.removeIptcTag("Iptc.Application2.LocationName");
+        meta->removeIptcTag("Iptc.Application2.LocationCode");
+        meta->removeIptcTag("Iptc.Application2.LocationName");
     }
 
     if (d->cityCheck->isChecked())
     {
-        meta.setIptcTagString("Iptc.Application2.City", d->cityEdit->text());
+        meta->setIptcTagString("Iptc.Application2.City", d->cityEdit->text());
     }
     else
     {
-        meta.removeIptcTag("Iptc.Application2.City");
+        meta->removeIptcTag("Iptc.Application2.City");
     }
 
     if (d->sublocationCheck->isChecked())
     {
-        meta.setIptcTagString("Iptc.Application2.SubLocation", d->sublocationEdit->text());
+        meta->setIptcTagString("Iptc.Application2.SubLocation", d->sublocationEdit->text());
     }
     else
     {
-        meta.removeIptcTag("Iptc.Application2.SubLocation");
+        meta->removeIptcTag("Iptc.Application2.SubLocation");
     }
 
     if (d->provinceCheck->isChecked())
     {
-        meta.setIptcTagString("Iptc.Application2.ProvinceState", d->provinceEdit->text());
+        meta->setIptcTagString("Iptc.Application2.ProvinceState", d->provinceEdit->text());
     }
     else
     {
-        meta.removeIptcTag("Iptc.Application2.ProvinceState");
+        meta->removeIptcTag("Iptc.Application2.ProvinceState");
     }
 
     if      (d->countryCheck->isChecked())
     {
         QString countryName = d->countryCB->currentText().mid(6);
         QString countryCode = d->countryCB->currentText().left(3);
-        meta.setIptcTagString("Iptc.Application2.CountryCode", countryCode);
-        meta.setIptcTagString("Iptc.Application2.CountryName", countryName);
+        meta->setIptcTagString("Iptc.Application2.CountryCode", countryCode);
+        meta->setIptcTagString("Iptc.Application2.CountryName", countryName);
     }
     else if (d->countryCheck->isValid())
     {
-        meta.removeIptcTag("Iptc.Application2.CountryCode");
-        meta.removeIptcTag("Iptc.Application2.CountryName");
+        meta->removeIptcTag("Iptc.Application2.CountryCode");
+        meta->removeIptcTag("Iptc.Application2.CountryName");
     }
 
-    exifData = meta.getExifEncoded();
-    iptcData = meta.getIptc();
+    exifData = meta->getExifEncoded();
+    iptcData = meta->getIptc();
 }
 
 } // namespace DigikamGenericMetadataEditPlugin

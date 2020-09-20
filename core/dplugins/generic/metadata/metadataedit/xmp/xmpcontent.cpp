@@ -229,15 +229,15 @@ void XMPContent::setCheckedSyncEXIFCopyright(bool c)
 void XMPContent::readMetadata(QByteArray& xmpData)
 {
     blockSignals(true);
-    DMetadata meta;
-    meta.setXmp(xmpData);
+    QScopedPointer<DMetadata> meta(new DMetadata);
+    meta->setXmp(xmpData);
 
     DMetadata::AltLangMap map;
     QString data;
 
     d->headlineEdit->clear();
     d->headlineCheck->setChecked(false);
-    data = meta.getXmpTagString("Xmp.photoshop.Headline", false);
+    data = meta->getXmpTagString("Xmp.photoshop.Headline", false);
 
     if (!data.isNull())
     {
@@ -249,7 +249,7 @@ void XMPContent::readMetadata(QByteArray& xmpData)
 
     d->captionEdit->setValues(map);
     d->captionEdit->setValid(false);
-    map = meta.getXmpTagStringListLangAlt("Xmp.dc.description", false);
+    map = meta->getXmpTagStringListLangAlt("Xmp.dc.description", false);
 
     if (!map.isEmpty())
     {
@@ -259,7 +259,7 @@ void XMPContent::readMetadata(QByteArray& xmpData)
 
     d->writerEdit->clear();
     d->writerCheck->setChecked(false);
-    data = meta.getXmpTagString("Xmp.photoshop.CaptionWriter", false);
+    data = meta->getXmpTagString("Xmp.photoshop.CaptionWriter", false);
 
     if (!data.isNull())
     {
@@ -272,7 +272,7 @@ void XMPContent::readMetadata(QByteArray& xmpData)
     map.clear();
     d->copyrightEdit->setValues(map);
     d->copyrightEdit->setValid(false);
-    map = meta.getXmpTagStringListLangAlt("Xmp.dc.rights", false);
+    map = meta->getXmpTagStringListLangAlt("Xmp.dc.rights", false);
 
     if (!map.isEmpty())
     {
@@ -285,66 +285,66 @@ void XMPContent::readMetadata(QByteArray& xmpData)
 
 void XMPContent::applyMetadata(QByteArray& exifData, QByteArray& xmpData)
 {
-    DMetadata meta;
-    meta.setExif(exifData);
-    meta.setXmp(xmpData);
+    QScopedPointer<DMetadata> meta(new DMetadata);
+    meta->setExif(exifData);
+    meta->setXmp(xmpData);
 
     if (d->headlineCheck->isChecked())
     {
-        meta.setXmpTagString("Xmp.photoshop.Headline", d->headlineEdit->text());
+        meta->setXmpTagString("Xmp.photoshop.Headline", d->headlineEdit->text());
     }
     else
     {
-        meta.removeXmpTag("Xmp.photoshop.Headline");
+        meta->removeXmpTag("Xmp.photoshop.Headline");
     }
 
     DMetadata::AltLangMap oldAltLangMap, newAltLangMap;
 
     if (d->captionEdit->getValues(oldAltLangMap, newAltLangMap))
     {
-        meta.setXmpTagStringListLangAlt("Xmp.dc.description", newAltLangMap);
+        meta->setXmpTagStringListLangAlt("Xmp.dc.description", newAltLangMap);
 
         if (syncEXIFCommentIsChecked())
         {
-            meta.setExifComment(getXMPCaption());
+            meta->setExifComment(getXMPCaption());
         }
 
         if (syncJFIFCommentIsChecked())
         {
-            meta.setComments(getXMPCaption().toUtf8());
+            meta->setComments(getXMPCaption().toUtf8());
         }
     }
     else if (d->captionEdit->isValid())
     {
-        meta.removeXmpTag("Xmp.dc.description");
+        meta->removeXmpTag("Xmp.dc.description");
     }
 
     if (d->writerCheck->isChecked())
     {
-        meta.setXmpTagString("Xmp.photoshop.CaptionWriter", d->writerEdit->text());
+        meta->setXmpTagString("Xmp.photoshop.CaptionWriter", d->writerEdit->text());
     }
     else
     {
-        meta.removeXmpTag("Xmp.photoshop.CaptionWriter");
+        meta->removeXmpTag("Xmp.photoshop.CaptionWriter");
     }
 
     if (d->copyrightEdit->getValues(oldAltLangMap, newAltLangMap))
     {
-        meta.setXmpTagStringListLangAlt("Xmp.dc.rights", newAltLangMap);
+        meta->setXmpTagStringListLangAlt("Xmp.dc.rights", newAltLangMap);
 
         if (syncEXIFCopyrightIsChecked())
         {
-            meta.removeExifTag("Exif.Image.Copyright");
-            meta.setExifTagString("Exif.Image.Copyright", getXMPCopyright());
+            meta->removeExifTag("Exif.Image.Copyright");
+            meta->setExifTagString("Exif.Image.Copyright", getXMPCopyright());
         }
     }
     else if (d->copyrightEdit->isValid())
     {
-        meta.removeXmpTag("Xmp.dc.rights");
+        meta->removeXmpTag("Xmp.dc.rights");
     }
 
-    exifData = meta.getExifEncoded();
-    xmpData  = meta.getXmp();
+    exifData = meta->getExifEncoded();
+    xmpData  = meta->getXmp();
 }
 
 void XMPContent::slotSyncCaptionOptionsEnabled(bool defaultLangAlt)
