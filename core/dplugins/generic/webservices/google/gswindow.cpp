@@ -39,6 +39,7 @@
 #include <QPointer>
 #include <QDesktopServices>
 #include <QUrl>
+#include <QScopedPointer>
 
 // KDE includes
 
@@ -105,7 +106,6 @@ public:
     QList< QPair<QUrl, GSPhoto> > uploadQueue;
 
     DInfoInterface*               iface;
-    DMetadata                     meta;
 };
 
 GSWindow::GSWindow(DInfoInterface* const iface,
@@ -914,21 +914,23 @@ void GSWindow::slotGetPhotoDone(int errCode, const QString& errMsg,
 
         if (errText.isEmpty())
         {
-            if (d->meta.load(tmpUrl.toLocalFile()))
+            QScopedPointer<DMetadata> meta(new DMetadata);
+
+            if (meta->load(tmpUrl.toLocalFile()))
             {
-                if (d->meta.supportXmp() && d->meta.canWriteXmp(tmpUrl.toLocalFile()))
+                if (meta->supportXmp() && meta->canWriteXmp(tmpUrl.toLocalFile()))
                 {
-                    d->meta.setXmpTagString("Xmp.digiKam.picasawebGPhotoId", item.id);
-                    d->meta.setXmpKeywords(item.tags);
+                    meta->setXmpTagString("Xmp.digiKam.picasawebGPhotoId", item.id);
+                    meta->setXmpKeywords(item.tags);
                 }
 
                 if (!item.gpsLat.isEmpty() && !item.gpsLon.isEmpty())
                 {
-                    d->meta.setGPSInfo(0.0, item.gpsLat.toDouble(), item.gpsLon.toDouble());
+                    meta->setGPSInfo(0.0, item.gpsLat.toDouble(), item.gpsLon.toDouble());
                 }
 
-                d->meta.setMetadataWritingMode((int)DMetadata::WRITE_TO_FILE_ONLY);
-                d->meta.save(tmpUrl.toLocalFile());
+                meta->setMetadataWritingMode((int)DMetadata::WRITE_TO_FILE_ONLY);
+                meta->save(tmpUrl.toLocalFile());
             }
 
             d->transferQueue.removeFirst();
@@ -1082,14 +1084,16 @@ void GSWindow::slotUploadPhotoDone(int err, const QString& msg, const QStringLis
 
             qCDebug(DIGIKAM_WEBSERVICES_LOG) << "photoID:" << photoId;
 
+            QScopedPointer<DMetadata> meta(new DMetadata);
+
             if (d->widget->getPhotoIdCheckBox()->isChecked() &&
-                d->meta.supportXmp()                         &&
-                d->meta.canWriteXmp(fileUrl.toLocalFile())   &&
-                d->meta.load(fileUrl.toLocalFile())          &&
+                meta->supportXmp()                         &&
+                meta->canWriteXmp(fileUrl.toLocalFile())   &&
+                meta->load(fileUrl.toLocalFile())          &&
                 !photoId.isEmpty())
             {
-                d->meta.setXmpTagString("Xmp.digiKam.picasawebGPhotoId", photoId);
-                d->meta.save(fileUrl.toLocalFile());
+                meta->setXmpTagString("Xmp.digiKam.picasawebGPhotoId", photoId);
+                meta->save(fileUrl.toLocalFile());
             }
         }
 

@@ -34,6 +34,7 @@
 #include <QLocale>
 #include <QPixmap>
 #include <QImage>
+#include <QScopedPointer>
 
 // KDE includes
 
@@ -69,8 +70,6 @@ public:
     QLabel*              infoLabel;
 
     QUrl                 currentURL;
-
-    DMetadata            metaIface;
 
     ThumbnailLoadThread* thumbLoadThread;
 };
@@ -135,9 +134,10 @@ void ImageDialogPreview::slotShowPreview(const QUrl& url)
         d->currentURL                = url;
         d->thumbLoadThread->find(ThumbnailIdentifier(d->currentURL.toLocalFile()));
 
-        d->metaIface.load(d->currentURL.toLocalFile());
-        PhotoInfoContainer info      = d->metaIface.getPhotographInformation();
-        VideoInfoContainer videoInfo = d->metaIface.getVideoInformation();
+        QScopedPointer<DMetadata> meta(new DMetadata);
+        meta->load(d->currentURL.toLocalFile());
+        PhotoInfoContainer info      = meta->getPhotographInformation();
+        VideoInfoContainer videoInfo = meta->getVideoInformation();
 
         if (!info.isEmpty())
         {

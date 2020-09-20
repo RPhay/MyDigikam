@@ -25,6 +25,7 @@
 // Qt includes
 
 #include <QFileInfo>
+#include <QScopedPointer>
 
 // KDE includes
 
@@ -61,7 +62,6 @@ public:
 
     const QUrl                fileUrl;
     PanoramaPreprocessedUrls& preProcessedUrl;
-    DMetadata                 meta;
     PanoObserver*             observer;
 };
 
@@ -162,13 +162,14 @@ bool PreProcessTask::computePreview(const QUrl& inUrl)
 
         if (saved)
         {
-            d->meta.load(inUrl.toLocalFile());
-            MetaEngine::ImageOrientation orientation = d->meta.getItemOrientation();
+            QScopedPointer<DMetadata> meta(new DMetadata);
+            meta->load(inUrl.toLocalFile());
+            MetaEngine::ImageOrientation orientation = meta->getItemOrientation();
 
-            d->meta.load(outUrl.toLocalFile());
-            d->meta.setItemOrientation(orientation);
-            d->meta.setItemDimensions(QSize(preview.width(), preview.height()));
-            d->meta.applyChanges(true);
+            meta->load(outUrl.toLocalFile());
+            meta->setItemOrientation(orientation);
+            meta->setItemDimensions(QSize(preview.width(), preview.height()));
+            meta->applyChanges(true);
         }
 
         qCDebug(DIGIKAM_DPLUGIN_GENERIC_LOG) << "Preview Image url: " << outUrl << ", saved: " << saved;
@@ -197,23 +198,24 @@ bool PreProcessTask::convertRaw()
 
     if (img.load(inUrl.toLocalFile(), d->observer, settings))
     {
-        d->meta.load(inUrl.toLocalFile());
+        QScopedPointer<DMetadata> meta(new DMetadata);
+        meta->load(inUrl.toLocalFile());
 
-        DMetadata::MetaDataMap m = d->meta.getExifTagsDataList(QStringList() << QLatin1String("Photo"));
+        DMetadata::MetaDataMap m = meta->getExifTagsDataList(QStringList() << QLatin1String("Photo"));
 
         if (!m.isEmpty())
         {
             for (DMetadata::MetaDataMap::iterator it = m.begin() ; it != m.end() ; ++it)
             {
-                d->meta.removeExifTag(it.key().toLatin1().constData());
+                meta->removeExifTag(it.key().toLatin1().constData());
             }
         }
 
-        QByteArray exif = d->meta.getExifEncoded();
-        QByteArray iptc = d->meta.getIptc();
-        QByteArray xmp  = d->meta.getXmp();
-        QString make    = d->meta.getExifTagString("Exif.Image.Make");
-        QString model   = d->meta.getExifTagString("Exif.Image.Model");
+        QByteArray exif = meta->getExifEncoded();
+        QByteArray iptc = meta->getIptc();
+        QByteArray xmp  = meta->getXmp();
+        QString make    = meta->getExifTagString("Exif.Image.Make");
+        QString model   = meta->getExifTagString("Exif.Image.Model");
 
         QFileInfo fi(inUrl.toLocalFile());
         QDir outDir(outUrl.toLocalFile());
@@ -229,16 +231,16 @@ bool PreProcessTask::convertRaw()
             return false;
         }
 
-        d->meta.load(outUrl.toLocalFile());
-        d->meta.setExif(exif);
-        d->meta.setIptc(iptc);
-        d->meta.setXmp(xmp);
-        d->meta.setItemDimensions(QSize(img.width(), img.height()));
-        d->meta.setExifTagString("Exif.Image.DocumentName", inUrl.fileName());
-        d->meta.setXmpTagString("Xmp.tiff.Make",  make);
-        d->meta.setXmpTagString("Xmp.tiff.Model", model);
-        d->meta.setItemOrientation(DMetadata::ORIENTATION_NORMAL);
-        d->meta.applyChanges(true);
+        meta->load(outUrl.toLocalFile());
+        meta->setExif(exif);
+        meta->setIptc(iptc);
+        meta->setXmp(xmp);
+        meta->setItemDimensions(QSize(img.width(), img.height()));
+        meta->setExifTagString("Exif.Image.DocumentName", inUrl.fileName());
+        meta->setXmpTagString("Xmp.tiff.Make",  make);
+        meta->setXmpTagString("Xmp.tiff.Model", model);
+        meta->setItemOrientation(DMetadata::ORIENTATION_NORMAL);
+        meta->applyChanges(true);
     }
     else
     {

@@ -45,6 +45,7 @@
 #include <QMessageBox>
 #include <QStack>
 #include <QPointer>
+#include <QScopedPointer>
 
 // KDE includes
 
@@ -130,8 +131,6 @@ public:
     YFTalker                    talker;
 
     QStack<YFPhoto>             transferQueue;
-
-    DMetadata                   meta;
 
     /// XMP id const for images
     static const char*          XMP_SERVICE_ID;
@@ -489,14 +488,15 @@ void YFWindow::slotListPhotosDoneForUpload(const QList <YFPhoto>& photosList)
     foreach (const QUrl& url, d->imgList->imageUrls(true))
     {
         DItemInfo info(d->iface->itemInfo(url));
-
+        QScopedPointer<DMetadata> meta(new DMetadata);
+    
         // check if photo alredy uploaded
 
         int oldPhotoId = -1;
 
-        if (d->meta.load(url.toLocalFile()))
+        if (meta->load(url.toLocalFile()))
         {
-            QString localId = d->meta.getXmpTagString(d->XMP_SERVICE_ID);
+            QString localId = meta->getXmpTagString(d->XMP_SERVICE_ID);
             oldPhotoId      = dups.value(localId, -1);
         }
 
@@ -511,7 +511,7 @@ void YFWindow::slotListPhotosDoneForUpload(const QList <YFPhoto>& photosList)
         {
             if (policy == YFWidget::UpdatePolicy::POLICY_SKIP)
             {
-                qCDebug(DIGIKAM_WEBSERVICES_LOG) << "SKIP: " << url;
+                qCDebug(DIGIKAM_WEBSERVICES_LOG) << "Skip:" << url;
                 continue;
             }
 
@@ -567,11 +567,11 @@ void YFWindow::slotListPhotosDoneForUpload(const QList <YFPhoto>& photosList)
 
         if (updateFile)
         {
-            qCDebug(DIGIKAM_WEBSERVICES_LOG) << "METADATA + IMAGE: " << url;
+            qCDebug(DIGIKAM_WEBSERVICES_LOG) << "Metadata + Image for:" << url;
         }
         else
         {
-            qCDebug(DIGIKAM_WEBSERVICES_LOG) << "METADATA: " << url;
+            qCDebug(DIGIKAM_WEBSERVICES_LOG) << "Metadata for:" << url;
         }
     }
 
@@ -629,12 +629,14 @@ void YFWindow::updateNextPhoto()
 
                 if (image.save(photo.localUrl(), "JPEG", d->imageQualitySpin->value()))
                 {
-                    if (d->meta.load(photo.originalUrl()))
+                    QScopedPointer<DMetadata> meta(new DMetadata);
+
+                    if (meta->load(photo.originalUrl()))
                     {
-                        d->meta.setItemDimensions(image.size());
-                        d->meta.setItemOrientation(MetaEngine::ORIENTATION_NORMAL);
-                        d->meta.setMetadataWritingMode((int)DMetadata::WRITE_TO_FILE_ONLY);
-                        d->meta.save(photo.localUrl(), true);
+                        meta->setItemDimensions(image.size());
+                        meta->setItemOrientation(MetaEngine::ORIENTATION_NORMAL);
+                        meta->setMetadataWritingMode((int)DMetadata::WRITE_TO_FILE_ONLY);
+                        meta->save(photo.localUrl(), true);
                         prepared = true;
                     }
                 }
@@ -851,14 +853,16 @@ void YFWindow::slotUpdatePhotoDone(YFPhoto& photo)
 {
     qCDebug(DIGIKAM_WEBSERVICES_LOG) << "photoUploaded" << photo;
 
-    if (d->meta.supportXmp()                     &&
-        d->meta.canWriteXmp(photo.originalUrl()) &&
-        d->meta.load(photo.originalUrl()))
+    QScopedPointer<DMetadata> meta(new DMetadata);
+    
+    if (meta->supportXmp()                     &&
+        meta->canWriteXmp(photo.originalUrl()) &&
+        meta->load(photo.originalUrl()))
     {
         // ignore errors here
 
-        if (d->meta.setXmpTagString(d->XMP_SERVICE_ID, photo.urn()) &&
-            d->meta.save(photo.originalUrl()))
+        if (meta->setXmpTagString(d->XMP_SERVICE_ID, photo.urn()) &&
+            meta->save(photo.originalUrl()))
         {
             qCDebug(DIGIKAM_WEBSERVICES_LOG) << "MARK: " << photo.originalUrl();
         }

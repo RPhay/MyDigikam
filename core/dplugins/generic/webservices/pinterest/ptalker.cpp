@@ -40,6 +40,7 @@
 #include <QUrlQuery>
 #include <QHttpMultiPart>
 #include <QNetworkAccessManager>
+#include <QScopedPointer>
 
 // KDE includes
 
@@ -114,8 +115,6 @@ public:
     QSettings*             settings;
 
     State                  state;
-
-    DMetadata              meta;
 
     QMap<QString, QString> urlParametersMap;
 
@@ -363,12 +362,14 @@ bool PTalker::addPin(const QString& imgPath,
 
     image.save(path, "JPEG", imageQuality);
 
-    if (d->meta.load(imgPath))
+    QScopedPointer<DMetadata> meta(new DMetadata);
+
+    if (meta->load(imgPath))
     {
-        d->meta.setItemDimensions(image.size());
-        d->meta.setItemOrientation(DMetadata::ORIENTATION_NORMAL);
-        d->meta.setMetadataWritingMode((int)DMetadata::WRITE_TO_FILE_ONLY);
-        d->meta.save(path, true);
+        meta->setItemDimensions(image.size());
+        meta->setItemOrientation(DMetadata::ORIENTATION_NORMAL);
+        meta->setMetadataWritingMode((int)DMetadata::WRITE_TO_FILE_ONLY);
+        meta->save(path, true);
     }
 
     QString boardParam              = d->userName + QLatin1Char('/') + uploadBoard;
