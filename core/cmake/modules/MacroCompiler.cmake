@@ -102,3 +102,52 @@ macro(DISABLE_CLANG_COMPILER_WARNINGS COMPILER_VERSION NO_COMPILATION_OPTION)
     endif()
 
 endmacro()
+
+# -------------------------------------------------------------------------
+
+# Macro to enable ASAN and UBSAN sanitizers.
+
+macro(ENABLE_SANITIZERS)
+
+    # ASAN is available in gcc from 4.8 and UBSAN from 4.9
+    # ASAN is available in clang from 3.1 and UBSAN from 3.3
+    # UBSAN is not fatal by default, instead it only prints runtime errors to stderr
+    # => make it fatal with -fno-sanitize-recover (gcc) or -fno-sanitize-recover=all (clang)
+    # add -fno-omit-frame-pointer for better stack traces
+
+    if(COMPILER_IS_GCC)
+
+        if(CMAKE_CXX_COMPILER_VERSION VERSION_GREATER 4.9)
+
+            set(SANITIZER_FLAGS "-fno-omit-frame-pointer -fsanitize=address,undefined -fno-sanitize-recover")
+
+        elseif(CMAKE_CXX_COMPILER_VERSION VERSION_GREATER 4.8)
+
+            set(SANITIZER_FLAGS "-fno-omit-frame-pointer -fsanitize=address")
+
+        endif()
+
+    elseif(COMPILER_IS_CLANG )
+
+        if(CMAKE_CXX_COMPILER_VERSION VERSION_GREATER 4.9)
+
+            set(SANITIZER_FLAGS "-fno-omit-frame-pointer -fsanitize=address,undefined -fno-sanitize-recover=all")
+
+        elseif(CMAKE_CXX_COMPILER_VERSION VERSION_GREATER 3.4)
+
+            set(SANITIZER_FLAGS "-fno-omit-frame-pointer -fsanitize=address,undefined")
+
+        elseif(CMAKE_CXX_COMPILER_VERSION VERSION_GREATER 3.1)
+
+            set(SANITIZER_FLAGS "-fno-omit-frame-pointer -fsanitize=address")
+
+        endif()
+
+    endif()
+
+    set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} ${SANITIZER_FLAGS}")
+    set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} ${SANITIZER_FLAGS}")
+    set(CMAKE_EXE_LINKER_FLAGS "${CMAKE_EXE_LINKER_FLAGS} ${SANITIZER_FLAGS}")
+    set(CMAKE_MODULE_LINKER_FLAGS "${CMAKE_MODULE_LINKER_FLAGS} ${SANITIZER_FLAGS}")
+
+endmacro()
