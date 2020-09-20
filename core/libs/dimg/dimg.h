@@ -405,7 +405,7 @@ public:
     /**
      * When saving, several changes to the image metadata are necessary
      * before it can safely be written to the new file.
-     * This method updates the stored DMetadata object in preparation to a subsequent
+     * This method updates the stored meta engine object in preparation to a subsequent
      * call to save() with the same target file.
      * 'intendedDestPath' is the finally intended file name. Do not give the temporary
      *   file name if you are going to save() to a temp file.

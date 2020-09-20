@@ -109,8 +109,7 @@ LensAutoFixTool::LensAutoFixTool(QObject* const parent)
 
     d->cameraSelector      = new LensFunCameraSelector(d->gboxSettings->plainPage());
     DImg* const img        = d->previewWidget->imageIface()->original();
-    QScopedPointer<DMetadata> meta(new DMetadata(img->getMetadata()));
-    d->cameraSelector->setMetadata(*meta);
+    d->cameraSelector->setMetadata(img->getMetadata());
     DLineWidget* const line = new DLineWidget(Qt::Horizontal, d->gboxSettings->plainPage());
 
     // -------------------------------------------------------------

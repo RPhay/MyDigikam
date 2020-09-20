@@ -256,7 +256,7 @@ LensFunIface::LensList LensFunIface::findLenses(const lfCamera* const lfCamera,
     return lensList;
 }
 
-LensFunIface::MetadataMatch LensFunIface::findFromMetadata(const DMetadata& meta)
+LensFunIface::MetadataMatch LensFunIface::findFromMetadata(DMetadata* const meta)
 {
     MetadataMatch ret  = MetadataNoMatch;
     d->settings        = LensFunContainer();
@@ -264,13 +264,13 @@ LensFunIface::MetadataMatch LensFunIface::findFromMetadata(const DMetadata& meta
     d->usedLens        = nullptr;
     d->lensDescription.clear();
 
-    if (meta.isEmpty())
+    if (meta->isEmpty())
     {
         qCDebug(DIGIKAM_DIMG_LOG) << "No metadata available";
         return LensFunIface::MetadataUnavailable;
     }
 
-    PhotoInfoContainer photoInfo = meta.getPhotographInformation();
+    PhotoInfoContainer photoInfo = meta->getPhotographInformation();
     d->makeDescription           = photoInfo.make.trimmed();
     d->modelDescription          = photoInfo.model.trimmed();
     bool exactMatch              = true;
@@ -485,41 +485,41 @@ LensFunIface::MetadataMatch LensFunIface::findFromMetadata(const DMetadata& meta
 
     // From standard Exif.
 
-    temp = meta.getExifTagString("Exif.Photo.SubjectDistance");
+    temp = meta->getExifTagString("Exif.Photo.SubjectDistance");
 
     if (temp.isEmpty())
     {
         // From standard XMP.
 
-        temp = meta.getXmpTagString("Xmp.exif.SubjectDistance");
+        temp = meta->getXmpTagString("Xmp.exif.SubjectDistance");
     }
 
     if (temp.isEmpty())
     {
         // From Canon Makernote.
 
-        temp = meta.getExifTagString("Exif.CanonSi.SubjectDistance");
+        temp = meta->getExifTagString("Exif.CanonSi.SubjectDistance");
     }
 
     if (temp.isEmpty())
     {
         // From Nikon Makernote.
 
-        temp = meta.getExifTagString("Exif.NikonLd2.FocusDistance");
+        temp = meta->getExifTagString("Exif.NikonLd2.FocusDistance");
     }
 
     if (temp.isEmpty())
     {
         // From Nikon Makernote.
 
-        temp = meta.getExifTagString("Exif.NikonLd3.FocusDistance");
+        temp = meta->getExifTagString("Exif.NikonLd3.FocusDistance");
     }
 
     if (temp.isEmpty())
     {
         // From Olympus Makernote.
 
-        temp = meta.getExifTagString("Exif.OlympusFi.FocusDistance");
+        temp = meta->getExifTagString("Exif.OlympusFi.FocusDistance");
     }
 
     // TODO: Add here others Makernotes tags.

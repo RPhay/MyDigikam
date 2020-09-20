@@ -91,6 +91,7 @@ public:
           focal(nullptr),
           aperture(nullptr),
           distance(nullptr),
+          metadata(nullptr),
           iface(nullptr)
     {
     }
@@ -130,7 +131,7 @@ public:
     DDoubleNumInput*    aperture;
     DDoubleNumInput*    distance;
 
-    DMetadata           metadata;
+    DMetadata*          metadata;
 
     LensFunIface*       iface;
 };
@@ -250,6 +251,7 @@ LensFunCameraSelector::LensFunCameraSelector(QWidget* const parent)
 
 LensFunCameraSelector::~LensFunCameraSelector()
 {
+    delete d->metadata;
     delete d->iface;
     delete d;
 }
@@ -337,9 +339,14 @@ void LensFunCameraSelector::writeSettings(KConfigGroup& group)
     group.writeEntry(d->configAperture,        d->iface->settings().aperture);
 }
 
-void LensFunCameraSelector::setMetadata(const DMetadata& meta)
+void LensFunCameraSelector::setMetadata(const MetaEngineData& meta)
 {
-    d->metadata = meta;
+    if (d->metadata)
+    {
+        delete d->metadata;
+    }
+
+    d->metadata = new DMetadata(meta);
 }
 
 void LensFunCameraSelector::setEnabledUseMetadata(bool b)
@@ -786,8 +793,8 @@ void LensFunCameraSelector::slotFocalChanged()
 void LensFunCameraSelector::slotApertureChanged()
 {
     LensFunContainer settings = d->iface->settings();
-    settings.aperture = d->metadataUsage->isChecked() && d->passiveMetadataUsage ? -1.0
-                                                                                 : d->aperture->value();
+    settings.aperture         = d->metadataUsage->isChecked() && d->passiveMetadataUsage ? -1.0
+                                                                                         : d->aperture->value();
     d->iface->setSettings(settings);
     emit signalLensSettingsChanged();
 }
@@ -808,7 +815,7 @@ void LensFunCameraSelector::showEvent(QShowEvent* event)
     populateDeviceCombos();
     populateLensCombo();
 
-    if (d->metadata.isEmpty())
+    if (d->metadata->isEmpty())
     {
         d->metadataUsage->setCheckState(Qt::Unchecked);
         setEnabledUseMetadata(false);

@@ -134,7 +134,7 @@ public:
     void load(const ItemInfo& info);
 
 //    /**
-//     * Add metadata information from the DMetadata object
+//     * Add metadata information from the meta engine object
 //     */
 //    void load(const DMetadata& metadata);
 
@@ -160,7 +160,7 @@ public:
 
 
     /**
-     * Constructs a DMetadata object for given filePath,
+     * Constructs a meta engine object for given filePath,
      * calls the above method, writes the changes out to the file,
      * and notifies the ItemAttributesWatch.
      * WARNING: Do not use this method when multiple image infos are loaded
@@ -172,7 +172,7 @@ public:
                bool ignoreLazySync = false, const MetaEngineSettingsContainer& settings = MetaEngineSettings::instance()->settings());
 
     /**
-     * Constructs a DMetadata object from the metadata stored in the given DImg object,
+     * Constructs a meta engine object from the metadata stored in the given DImg object,
      * calls the above method, and changes the stored metadata in the DImg object.
      * @return Returns if the DImg object has been touched
      */
@@ -190,7 +190,7 @@ public:
     /**
      * @brief writeTags - used to deduplicate code from writeTags and usual write, all write to tags
      *                    operations must be done here
-     * @param metadata  - DMetadata object that apply changes
+     * @param metadata  - meta engine object that apply changes
      * @param saveTags  - save switch
      * @return          - if tags were successfully set
      */
@@ -244,7 +244,7 @@ protected:
 
     /**
      * Applies the set of metadata contained in this MetadataHub
-     * to the given DMetadata object.
+     * to the given meta engine object.
      * The MetaEngineSettingsContainer determine whether data is actually
      * set or not.
      * The following metadata fields may be set (depending on settings):
