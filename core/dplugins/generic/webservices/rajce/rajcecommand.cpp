@@ -95,14 +95,14 @@ PreparedImage s_prepareImageForUpload(const QString& saveDir,
 
     // copy meta data to temporary image
 
-    DMetadata meta;
+    QScopedPointer<DMetadata> meta(new DMetadata);
 
-    if (meta.load(imagePath))
+    if (meta->load(imagePath))
     {
-        meta.setItemDimensions(image.size());
-        meta.setItemOrientation(MetaEngine::ORIENTATION_NORMAL);
-        meta.setMetadataWritingMode((int)DMetadata::WRITE_TO_FILE_ONLY);
-        meta.save(ret.scaledImagePath, true);
+        meta->setItemDimensions(image.size());
+        meta->setItemOrientation(MetaEngine::ORIENTATION_NORMAL);
+        meta->setMetadataWritingMode((int)DMetadata::WRITE_TO_FILE_ONLY);
+        meta->save(ret.scaledImagePath, true);
     }
 
     return ret;

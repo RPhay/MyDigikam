@@ -546,15 +546,15 @@ bool FbWindow::prepareImageForUpload(const QString& imgPath, QString& caption)
 
     // copy meta data to temporary image
 
-    DMetadata meta;
+    QScopedPointer<DMetadata> meta(new DMetadata);
 
-    if (meta.load(imgPath))
+    if (meta->load(imgPath))
     {
         caption = getImageCaption(imgPath);
-        meta.setItemDimensions(image.size());
-        meta.setItemOrientation(MetaEngine::ORIENTATION_NORMAL);
-        meta.setMetadataWritingMode((int)DMetadata::WRITE_TO_FILE_ONLY);
-        meta.save(d->tmpPath, true);
+        meta->setItemDimensions(image.size());
+        meta->setItemOrientation(MetaEngine::ORIENTATION_NORMAL);
+        meta->setMetadataWritingMode((int)DMetadata::WRITE_TO_FILE_ONLY);
+        meta->save(d->tmpPath, true);
     }
     else
     {

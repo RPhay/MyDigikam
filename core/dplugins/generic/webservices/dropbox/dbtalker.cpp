@@ -318,14 +318,14 @@ bool DBTalker::addPhoto(const QString& imgPath, const QString& uploadFolder,
 
         image.save(path, "JPEG", imageQuality);
 
-        DMetadata meta;
+        QScopedPointer<DMetadata> meta(new DMetadata);
 
-        if (meta.load(imgPath))
+        if (meta->load(imgPath))
         {
-            meta.setItemDimensions(image.size());
-            meta.setItemOrientation(DMetadata::ORIENTATION_NORMAL);
-            meta.setMetadataWritingMode((int)DMetadata::WRITE_TO_FILE_ONLY);
-            meta.save(path, true);
+            meta->setItemDimensions(image.size());
+            meta->setItemOrientation(DMetadata::ORIENTATION_NORMAL);
+            meta->setMetadataWritingMode((int)DMetadata::WRITE_TO_FILE_ONLY);
+            meta->save(path, true);
         }
     }
 

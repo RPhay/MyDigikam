@@ -273,14 +273,14 @@ bool PiwigoTalker::addPhoto(int   albumId,
             // Restore all metadata with EXIF
             // in the resized version
 
-            DMetadata meta;
+            QScopedPointer<DMetadata> meta(new DMetadata);
 
-            if (meta.load(mediaPath))
+            if (meta->load(mediaPath))
             {
-                meta.setItemDimensions(image.size());
-                meta.setItemOrientation(MetaEngine::ORIENTATION_NORMAL);
-                meta.setMetadataWritingMode((int)DMetadata::WRITE_TO_FILE_ONLY);
-                meta.save(d->path, true);
+                meta->setItemDimensions(image.size());
+                meta->setItemOrientation(MetaEngine::ORIENTATION_NORMAL);
+                meta->setMetadataWritingMode((int)DMetadata::WRITE_TO_FILE_ONLY);
+                meta->save(d->path, true);
             }
             else
             {

@@ -598,27 +598,27 @@ bool FlickrTalker::addPhoto(const QString& photoPath, const FPhotoInfo& info,
 
             // Restore all metadata.
 
-            DMetadata meta;
+            QScopedPointer<DMetadata> meta(new DMetadata);
 
-            if (meta.load(photoPath))
+            if (meta->load(photoPath))
             {
-                meta.setItemDimensions(image.size());
-                meta.setItemOrientation(MetaEngine::ORIENTATION_NORMAL);
+                meta->setItemDimensions(image.size());
+                meta->setItemOrientation(MetaEngine::ORIENTATION_NORMAL);
 
                 // NOTE: see bug #153207: Flickr use IPTC keywords to create Tags in web interface
                 //       As IPTC do not support UTF-8, we need to remove it.
                 //       This function call remove all Application2 Tags.
 
-                meta.removeIptcTags(QStringList() << QLatin1String("Application2"));
+                meta->removeIptcTags(QStringList() << QLatin1String("Application2"));
 
                 // NOTE: see bug # 384260: Flickr use Xmp.dc.subject to create Tags
                 //       in web interface, we need to remove it.
                 //       This function call remove all Dublin Core Tags.
 
-                meta.removeXmpTags(QStringList() << QLatin1String("dc"));
+                meta->removeXmpTags(QStringList() << QLatin1String("dc"));
 
-                meta.setMetadataWritingMode((int)DMetadata::WRITE_TO_FILE_ONLY);
-                meta.save(path, true);
+                meta->setMetadataWritingMode((int)DMetadata::WRITE_TO_FILE_ONLY);
+                meta->save(path, true);
             }
             else
             {

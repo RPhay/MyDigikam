@@ -88,7 +88,7 @@ void IpfsImagesList::slotAddImages(const QList<QUrl>& list)
      * IpfsImagesListViewItems can be added instead of ImagesListViewItems
      */
 
-    DMetadata meta;
+    QScopedPointer<DMetadata> meta(new DMetadata);
 
     for (QList<QUrl>::ConstIterator it = list.constBegin() ; it != list.constEnd() ; ++it)
     {
@@ -96,10 +96,10 @@ void IpfsImagesList::slotAddImages(const QList<QUrl>& list)
         if (listView()->findItem(*it) == nullptr)
         {
             // Load URLs from meta data, if possible
-            if (meta.load((*it).toLocalFile()))
+            if (meta->load((*it).toLocalFile()))
             {
                 auto* const item = new IpfsImagesListViewItem(listView(), *it);
-                item->setIpfsUrl(meta.getXmpTagString("Xmp.digiKam.IPFSId"));
+                item->setIpfsUrl(meta->getXmpTagString("Xmp.digiKam.IPFSId"));
             }
         }
     }
@@ -114,13 +114,14 @@ void IpfsImagesList::slotSuccess(const IpfsTalkerResult& result)
 
     processed(ipfsl, true);
 
-    DMetadata meta;
+    QScopedPointer<DMetadata> meta(new DMetadata);
 
     // Save URLs to meta data, if possible
-    if (meta.load(ipfsl.toLocalFile()))
+
+    if (meta->load(ipfsl.toLocalFile()))
     {
-        meta.setXmpTagString("Xmp.digiKam.IPFSId", result.image.url);
-        bool saved = meta.applyChanges();
+        meta->setXmpTagString("Xmp.digiKam.IPFSId", result.image.url);
+        bool saved = meta->applyChanges();
         qCDebug(DIGIKAM_WEBSERVICES_LOG) << "Metadata" << (saved ? "Saved" : "Not Saved") << "to" << ipfsl;
     }
 

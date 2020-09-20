@@ -228,27 +228,27 @@ bool FCTask::imageResize(const QString& orgPath, const QString& destPath)
             }
         }
 
-        DMetadata meta;
+        QScopedPointer<DMetadata> meta(new DMetadata);
 
-        if (!meta.load(destFile))
+        if (!meta->load(destFile))
         {
             return false;
         }
 
         if (d->settings.removeMetadata)
         {
-            meta.clearExif();
-            meta.clearIptc();
-            meta.clearXmp();
+            meta->clearExif();
+            meta->clearIptc();
+            meta->clearXmp();
         }
         else
         {
-            meta.setItemOrientation(MetaEngine::ORIENTATION_NORMAL);
+            meta->setItemOrientation(MetaEngine::ORIENTATION_NORMAL);
         }
 
-        meta.setMetadataWritingMode((int)DMetadata::WRITE_TO_FILE_ONLY);
+        meta->setMetadataWritingMode((int)DMetadata::WRITE_TO_FILE_ONLY);
 
-        if (!meta.save(destFile))
+        if (!meta->save(destFile))
         {
             return false;
         }

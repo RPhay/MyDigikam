@@ -234,9 +234,9 @@ void ProfileConversionTool::setFinalImage()
     iface.setOriginal(i18n("Color Profile Conversion"), filter()->filterAction(), imDest);
     iface.setOriginalIccProfile(imDest.getIccProfile());
 
-    DMetadata meta(iface.originalMetadata());
-    meta.removeExifColorSpace();
-    iface.setOriginalMetadata(meta.data());
+    QScopedPointer<DMetadata> meta(new DMetadata(iface.originalMetadata()));
+    meta->removeExifColorSpace();
+    iface.setOriginalMetadata(meta->data());
 }
 
 // Static Methods.
@@ -262,9 +262,9 @@ void ProfileConversionTool::fastConversion(const IccProfile& profile)
     iface.setOriginal(i18n("Color Profile Conversion"), filter.filterAction(), imDest);
     iface.setOriginalIccProfile(imDest.getIccProfile());
 
-    DMetadata meta(iface.originalMetadata());
-    meta.removeExifColorSpace();
-    iface.setOriginalMetadata(meta.data());
+    QScopedPointer<DMetadata> meta(new DMetadata(iface.originalMetadata()));
+    meta->removeExifColorSpace();
+    iface.setOriginalMetadata(meta->data());
 }
 
 } // namespace DigikamEditorProfileConversionToolPlugin

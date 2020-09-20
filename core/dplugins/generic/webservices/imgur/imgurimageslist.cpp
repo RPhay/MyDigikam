@@ -95,7 +95,7 @@ void ImgurImagesList::slotAddImages(const QList<QUrl>& list)
     /* Replaces the DItemsList::slotAddImages method, so that
      * ImgurImageListViewItems can be added instead of ImagesListViewItems */
 
-    DMetadata meta;
+    QScopedPointer<DMetadata> meta(new DMetadata);
 
     for (QList<QUrl>::ConstIterator it = list.constBegin() ; it != list.constEnd() ; ++it)
     {
@@ -103,11 +103,11 @@ void ImgurImagesList::slotAddImages(const QList<QUrl>& list)
         if (listView()->findItem(*it) == nullptr)
         {
             // Load URLs from meta data, if possible
-            if (meta.load((*it).toLocalFile()))
+            if (meta->load((*it).toLocalFile()))
             {
                 auto* const item = new ImgurImageListViewItem(listView(), *it);
-                item->setImgurUrl(meta.getXmpTagString("Xmp.digiKam.ImgurId"));
-                item->setImgurDeleteUrl(meta.getXmpTagString("Xmp.digiKam.ImgurDeleteHash"));
+                item->setImgurUrl(meta->getXmpTagString("Xmp.digiKam.ImgurId"));
+                item->setImgurDeleteUrl(meta->getXmpTagString("Xmp.digiKam.ImgurDeleteHash"));
             }
         }
     }
@@ -122,17 +122,17 @@ void ImgurImagesList::slotSuccess(const ImgurTalkerResult& result)
 
     processed(imgurl, true);
 
-    DMetadata meta;
+    QScopedPointer<DMetadata> meta(new DMetadata);
 
     // Save URLs to meta data, if possible
-    if (meta.load(imgurl.toLocalFile()))
+    if (meta->load(imgurl.toLocalFile()))
     {
-        meta.setXmpTagString("Xmp.digiKam.ImgurId",
+        meta->setXmpTagString("Xmp.digiKam.ImgurId",
                              result.image.url);
-        meta.setXmpTagString("Xmp.digiKam.ImgurDeleteHash",
+        meta->setXmpTagString("Xmp.digiKam.ImgurDeleteHash",
                              ImgurTalker::urlForDeletehash(result.image.deletehash).toString());
-        meta.setMetadataWritingMode((int)DMetadata::WRITE_TO_FILE_ONLY);
-        bool saved = meta.applyChanges();
+        meta->setMetadataWritingMode((int)DMetadata::WRITE_TO_FILE_ONLY);
+        bool saved = meta->applyChanges();
 
         qCDebug(DIGIKAM_WEBSERVICES_LOG) << "Metadata"
                                          << (saved ? "Saved" : "Not Saved")

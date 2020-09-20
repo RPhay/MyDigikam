@@ -245,32 +245,32 @@ bool MediaWikiWindow::prepareImageForUpload(const QString& imgPath)
     // NOTE : In case of metadata are saved to tmp file, we will override metadata processor settings from host
     // to write metadata to image file rather than sidecar file, to be effective with remote web service.
 
-    DMetadata meta;
-    meta.setMetadataWritingMode((int)DMetadata::WRITE_TO_FILE_ONLY);
+    QScopedPointer<DMetadata> meta(new DMetadata);
+    meta->setMetadataWritingMode((int)DMetadata::WRITE_TO_FILE_ONLY);
 
     if (d->widget->removeMeta())
     {
         // save empty metadata to erase them
-        meta.save(d->tmpPath);
+        meta->save(d->tmpPath);
     }
     else
     {
         // copy meta data from initial to temporary image
 
-        if (meta.load(imgPath))
+        if (meta->load(imgPath))
         {
             if (d->widget->resize())
             {
-                meta.setItemDimensions(image.size());
+                meta->setItemDimensions(image.size());
             }
 
             if (d->widget->removeGeo())
             {
-                meta.removeGPSInfo();
+                meta->removeGPSInfo();
             }
 
-            meta.setItemOrientation(MetaEngine::ORIENTATION_NORMAL);
-            meta.save(d->tmpPath, true);
+            meta->setItemOrientation(MetaEngine::ORIENTATION_NORMAL);
+            meta->save(d->tmpPath, true);
         }
     }
 
