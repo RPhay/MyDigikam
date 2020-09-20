@@ -355,7 +355,7 @@ ImportItemPropertiesTab::~ImportItemPropertiesTab()
     delete d;
 }
 
-void ImportItemPropertiesTab::setCurrentItem(const CamItemInfo& itemInfo, const DMetadata& meta)
+void ImportItemPropertiesTab::setCurrentItem(const CamItemInfo& itemInfo, DMetadata* const meta)
 {
     if (itemInfo.isNull())
     {
@@ -475,11 +475,11 @@ void ImportItemPropertiesTab::setCurrentItem(const CamItemInfo& itemInfo, const 
         // delayed loading to list faster from UMSCamera
         if (itemInfo.mime == QLatin1String("image/x-raw"))
         {
-            dims = meta.getItemDimensions();
+            dims = meta->getItemDimensions();
         }
         else
         {
-            dims = meta.getPixelSize();
+            dims = meta->getPixelSize();
         }
     }
     else
@@ -521,7 +521,7 @@ void ImportItemPropertiesTab::setCurrentItem(const CamItemInfo& itemInfo, const 
     // Note: If something is changed here, please updated albumfiletip section too.
 
     QString unavailable(i18n("<i>unavailable</i>"));
-    PhotoInfoContainer photoInfo = meta.getPhotographInformation();
+    PhotoInfoContainer photoInfo = meta->getPhotographInformation();
 
     if (photoInfo.isEmpty())
     {
@@ -586,7 +586,7 @@ void ImportItemPropertiesTab::setCurrentItem(const CamItemInfo& itemInfo, const 
 
     // -- Audio/Video information ------------------------------------------
 
-    VideoInfoContainer videoInfo = meta.getVideoInformation();
+    VideoInfoContainer videoInfo = meta->getVideoInformation();
 
     if (videoInfo.isEmpty())
     {

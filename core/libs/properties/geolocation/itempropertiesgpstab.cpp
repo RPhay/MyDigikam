@@ -333,18 +333,18 @@ void ItemPropertiesGPSTab::setCurrentURL(const QUrl& url)
 
     QScopedPointer<DMetadata> meta(new DMetadata(url.toLocalFile()));
 
-    setMetadata(*meta, url);
+    setMetadata(meta.get(), url);
 }
 
-void ItemPropertiesGPSTab::setMetadata(const DMetadata& meta, const QUrl& url)
+void ItemPropertiesGPSTab::setMetadata(DMetadata* const meta, const QUrl& url)
 {
     double lat, lng;
-    const bool haveCoordinates = meta.getGPSLatitudeNumber(&lat) && meta.getGPSLongitudeNumber(&lng);
+    const bool haveCoordinates = meta->getGPSLatitudeNumber(&lat) && meta->getGPSLongitudeNumber(&lng);
 
     if (haveCoordinates)
     {
         double alt;
-        const bool haveAlt = meta.getGPSAltitude(&alt);
+        const bool haveAlt = meta->getGPSAltitude(&alt);
 
         GeoCoordinates coordinates(lat, lng);
 
@@ -355,8 +355,8 @@ void ItemPropertiesGPSTab::setMetadata(const DMetadata& meta, const QUrl& url)
 
         GPSItemInfo gpsInfo;
         gpsInfo.coordinates = coordinates;
-        gpsInfo.dateTime    = meta.getItemDateTime();
-        gpsInfo.rating      = meta.getItemRating();
+        gpsInfo.dateTime    = meta->getItemDateTime();
+        gpsInfo.rating      = meta->getItemRating();
         gpsInfo.url         = url;
         setGPSInfoList(GPSItemInfo::List() << gpsInfo);
     }

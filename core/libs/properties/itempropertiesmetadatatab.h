@@ -47,9 +47,9 @@ public:
     explicit ItemPropertiesMetadataTab(QWidget* const parent);
     ~ItemPropertiesMetadataTab();
 
-    void setCurrentURL(const QUrl& url=QUrl());
-    void setCurrentData(const DMetadata& metadata=DMetadata(),
-                        const QString& filename=QString());
+    void setCurrentURL(const QUrl& url = QUrl());
+    void setCurrentData(DMetadata* const metadata = nullptr,
+                        const QString& filename = QString());
 
     void loadFilters();
 

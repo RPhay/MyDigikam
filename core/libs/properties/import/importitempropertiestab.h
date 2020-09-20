@@ -49,7 +49,7 @@ public:
     ~ImportItemPropertiesTab();
 
     void setCurrentItem(const CamItemInfo& itemInfo=CamItemInfo(),
-                        const DMetadata& meta=DMetadata());
+                        DMetadata* const meta=nullptr);
 
 private:
 

@@ -57,9 +57,12 @@ public:
       : dirtyMetadataTab(false),
         dirtyCameraItemTab(false),
         dirtyGpsTab(false),
+        metaData(nullptr),
 
 #ifdef HAVE_MARBLE
+
         gpsTab(nullptr),
+
 #endif // HAVE_MARBLE
 
         metadataTab(nullptr),
@@ -71,7 +74,7 @@ public:
     bool                       dirtyCameraItemTab;
     bool                       dirtyGpsTab;
 
-    DMetadata                  metaData;
+    DMetadata*                 metaData;
 
     CamItemInfo                itemInfo;
 
@@ -135,7 +138,12 @@ void ImportItemPropertiesSideBarImport::itemChanged(const CamItemInfo& itemInfo,
         return;
     }
 
-    d->metaData           = meta;
+    if (d->metaData)
+    {
+        delete d->metaData;
+    }
+    
+    d->metaData           = new DMetadata(meta.data());
     d->itemInfo           = itemInfo;
     d->dirtyMetadataTab   = false;
     d->dirtyCameraItemTab = false;
@@ -147,7 +155,13 @@ void ImportItemPropertiesSideBarImport::itemChanged(const CamItemInfo& itemInfo,
 void ImportItemPropertiesSideBarImport::slotNoCurrentItem()
 {
     d->itemInfo           = CamItemInfo();
-    d->metaData           = DMetadata();
+
+    if (d->metaData)
+    {
+        delete d->metaData;
+        d->metaData = nullptr;
+    }
+
     d->dirtyMetadataTab   = false;
     d->dirtyCameraItemTab = false;
     d->dirtyGpsTab        = false;

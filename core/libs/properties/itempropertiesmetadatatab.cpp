@@ -205,9 +205,9 @@ void ItemPropertiesMetadataTab::setCurrentURL(const QUrl& url)
     d->xmpWidget->loadFromData(url.fileName(),       *metadata);
 }
 
-void ItemPropertiesMetadataTab::setCurrentData(const DMetadata& metaData, const QString& filename)
+void ItemPropertiesMetadataTab::setCurrentData(DMetadata* const metaData, const QString& filename)
 {
-    QScopedPointer<DMetadata> data(new DMetadata(metaData.data()));
+    QScopedPointer<DMetadata> data(new DMetadata(metaData->data()));
 
     if (!data->hasExif() && !data->hasIptc() && !data->hasXmp())
     {
