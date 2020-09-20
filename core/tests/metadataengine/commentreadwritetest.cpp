@@ -4,7 +4,7 @@
  * https://www.digikam.org
  *
  * Date        : 2015-08-12
- * Description : DMetadata Settings Tests for getImageComment and setImageComment.
+ * Description : metadata settings tests for getImageComment and setImageComment.
  *
  * Copyright (C) 2015 by Veaceslav Munteanu <veaceslav dot munteanu90 at gmail dot com>
  *
@@ -67,15 +67,15 @@ void CommentReadWriteTest::cleanupTestCase()
 
 void CommentReadWriteTest::testSimpleReadAfterWrite()
 {
-    DMetadata dmeta;
+    QScopedPointer<DMetadata> dmeta(new DMetadata);
     CaptionsMap result;
 
     // Trick dmetadata, so it will think that we have a file path
-    dmeta.setFilePath(QLatin1String("random.org"));
+    dmeta->setFilePath(QLatin1String("random.org"));
 
-    dmeta.setItemComments(commentSet1);
+    dmeta->setItemComments(commentSet1);
 
-    result = dmeta.getItemComments();
+    result = dmeta->getItemComments();
 
     QString rezAuthor  = result.value(QLatin1String("x-default")).author;
     QString rezComment = result.value(QLatin1String("x-default")).caption;
@@ -86,8 +86,8 @@ void CommentReadWriteTest::testSimpleReadAfterWrite()
 
 void CommentReadWriteTest::testWriteToDisabledNamespaces()
 {
-    DMetadata dmeta;
-    dmeta.setFilePath(QLatin1String("random.org"));
+    QScopedPointer<DMetadata> dmeta(new DMetadata);
+    dmeta->setFilePath(QLatin1String("random.org"));
 
     MetaEngine::AltLangMap commentsMap;
     QString commentString;
@@ -116,23 +116,23 @@ void CommentReadWriteTest::testWriteToDisabledNamespaces()
              << commNs1
              << commNs2;
 
-    bool rez = dmeta.setItemComments(commentSet1, dmsettings);
+    bool rez = dmeta->setItemComments(commentSet1, dmsettings);
 
     QVERIFY(rez);
 
-    commentsMap   = dmeta.getXmpTagStringListLangAlt("Xmp.dc.description", false);
+    commentsMap   = dmeta->getXmpTagStringListLangAlt("Xmp.dc.description", false);
 
     QCOMPARE(commentsMap.value(QLatin1String("x-default")), QString());
 
-    commentString = dmeta.getXmpTagStringLangAlt("Xmp.exif.UserComment", QString(), false);
+    commentString = dmeta->getXmpTagStringLangAlt("Xmp.exif.UserComment", QString(), false);
 
     QCOMPARE(commentString, commentSet1.value(QLatin1String("x-default")).caption);
 }
 
 void CommentReadWriteTest::testReadFromDisabledNamespaces()
 {
-    DMetadata dmeta;
-    dmeta.setFilePath(QLatin1String("random.org"));
+    QScopedPointer<DMetadata> dmeta(new DMetadata);
+    dmeta->setFilePath(QLatin1String("random.org"));
 
     CaptionsMap rez;
 
@@ -159,9 +159,9 @@ void CommentReadWriteTest::testReadFromDisabledNamespaces()
              << commNs1
              << commNs2;
 
-    dmeta.setXmpTagStringListLangAlt("Xmp.dc.description", commentSet1.toAltLangMap());
-    dmeta.setXmpTagStringLangAlt("Xmp.exif.UserComment", commentSet2.value(QLatin1String("x-default")).caption, QString());
+    dmeta->setXmpTagStringListLangAlt("Xmp.dc.description", commentSet1.toAltLangMap());
+    dmeta->setXmpTagStringLangAlt("Xmp.exif.UserComment", commentSet2.value(QLatin1String("x-default")).caption, QString());
 
-    rez = dmeta.getItemComments(dmsettings);
+    rez = dmeta->getItemComments(dmsettings);
     QCOMPARE(rez.value(QLatin1String("x-default")).caption, commentSet2.value(QLatin1String("x-default")).caption);
 }

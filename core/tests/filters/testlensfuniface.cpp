@@ -26,6 +26,7 @@
 #include <QString>
 #include <QFile>
 #include <QDebug>
+#include <QScopedPointer>
 
 // Local includes
 
@@ -48,9 +49,9 @@ int main(int argc, char** argv)
     bool valRet = false;
 
     DImg         img(filePath);
-    DMetadata    meta(img.getMetadata());
+    QScopedPointer<DMetadata> meta(new DMetadata(img.getMetadata()));
     LensFunIface iface;
-    LensFunIface::MetadataMatch ret = iface.findFromMetadata(meta);
+    LensFunIface::MetadataMatch ret = iface.findFromMetadata(*meta);
 
     if (ret == LensFunIface::MetadataExactMatch)
     {

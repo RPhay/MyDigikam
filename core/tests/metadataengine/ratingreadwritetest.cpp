@@ -4,7 +4,7 @@
  * https://www.digikam.org
  *
  * Date        : 2015-08-12
- * Description : DMetadata Settings Tests for getImageRating and setImageRating.
+ * Description : metadata settings tests for getImageRating and setImageRating.
  *
  * Copyright (C) 2015 by Veaceslav Munteanu <veaceslav dot munteanu90 at gmail dot com>
  *
@@ -51,26 +51,26 @@ void RatingReadWriteTest::cleanupTestCase()
 
 void RatingReadWriteTest::testSimpleReadAfterWrite()
 {
-    DMetadata dmeta;
+    QScopedPointer<DMetadata> dmeta(new DMetadata);
 
     // Trick dmetadata, so it will think that we have a file path
-    dmeta.setFilePath(QLatin1String("random.org"));
+    dmeta->setFilePath(QLatin1String("random.org"));
     int rez = -1;
 
-    qDebug() << dmeta.supportXmp();
+    qDebug() << dmeta->supportXmp();
 
     for (int i = 0; i < 6; i++)
     {
-        dmeta.setItemRating(i);
-        rez = dmeta.getItemRating();
+        dmeta->setItemRating(i);
+        rez = dmeta->getItemRating();
         QCOMPARE(rez, i);
     }
 }
 
 void RatingReadWriteTest::testWriteToDisabledNamespaces()
 {
-    DMetadata dmeta;
-    dmeta.setFilePath(QLatin1String("random.org"));
+    QScopedPointer<DMetadata> dmeta(new DMetadata);
+    dmeta->setFilePath(QLatin1String("random.org"));
 
     DMetadataSettingsContainer dmsettings;
 
@@ -102,16 +102,16 @@ void RatingReadWriteTest::testWriteToDisabledNamespaces()
 
     for (int i = 0; i < 6; i++)
     {
-        dmeta.setItemRating(i, dmsettings);
+        dmeta->setItemRating(i, dmsettings);
 
         QString data;
         bool ok;
 
-        data    = dmeta.getXmpTagString("Xmp.acdsee.rating", false);
+        data    = dmeta->getXmpTagString("Xmp.acdsee.rating", false);
 
         QVERIFY(data.isEmpty());
 
-        data    = dmeta.getXmpTagString("Xmp.MicrosoftPhoto.Rating", false);
+        data    = dmeta->getXmpTagString("Xmp.MicrosoftPhoto.Rating", false);
         int rez = data.toInt(&ok);
 
         QCOMPARE(ok, true);
@@ -121,8 +121,8 @@ void RatingReadWriteTest::testWriteToDisabledNamespaces()
 
 void RatingReadWriteTest::testReadFromDisabledNamespaces()
 {
-    DMetadata dmeta;
-    dmeta.setFilePath(QLatin1String("random.org"));
+    QScopedPointer<DMetadata> dmeta(new DMetadata);
+    dmeta->setFilePath(QLatin1String("random.org"));
 
     DMetadataSettingsContainer dmsettings;
 
@@ -155,10 +155,10 @@ void RatingReadWriteTest::testReadFromDisabledNamespaces()
     for (int i = 0; i < 6; i++)
     {
 
-        dmeta.setXmpTagString("Xmp.acdsee.rating", QString::number(5-i));
-        dmeta.setXmpTagString("Xmp.MicrosoftPhoto.Rating", QString::number(microsoftMappings.at(i)));
+        dmeta->setXmpTagString("Xmp.acdsee.rating", QString::number(5-i));
+        dmeta->setXmpTagString("Xmp.MicrosoftPhoto.Rating", QString::number(microsoftMappings.at(i)));
 
-        int rez = dmeta.getItemRating(dmsettings);
+        int rez = dmeta->getItemRating(dmsettings);
         QCOMPARE(rez, i);
     }
 }

@@ -68,7 +68,7 @@ void LoadFromBATest::loadFromByteArray(const QString& file)
     baf.close();
     QVERIFY(ret);
 
-    DMetadata meta;
-    ret = meta.loadFromData(data);
+    QScopedPointer<DMetadata> meta(new DMetadata);
+    ret = meta->loadFromData(data);
     QVERIFY(ret);
 }

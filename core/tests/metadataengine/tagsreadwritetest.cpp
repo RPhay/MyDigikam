@@ -4,7 +4,7 @@
  * https://www.digikam.org
  *
  * Date        : 2015-08-12
- * Description : DMetadata Settings Tests for getImageTagPaths and setImageTagPaths.
+ * Description : metadata settings tests for getImageTagPaths and setImageTagPaths.
  *
  * Copyright (C) 2015 by Veaceslav Munteanu <veaceslav dot munteanu90 at gmail dot com>
  *
@@ -62,18 +62,18 @@ void TagsReadWriteTest::cleanupTestCase()
 
 void TagsReadWriteTest::testSimpleReadAfterWrite()
 {
-    DMetadata dmeta;
+    QScopedPointer<DMetadata> dmeta(new DMetadata);
     QStringList tagPaths2;
 
-    dmeta.setItemTagsPath(this->tagSet1);
-    dmeta.getItemTagsPath(tagPaths2);
+    dmeta->setItemTagsPath(this->tagSet1);
+    dmeta->getItemTagsPath(tagPaths2);
 
     QCOMPARE(tagSet1, tagPaths2);
 }
 
 void TagsReadWriteTest::testWriteToDisabledNamespaces()
 {
-    DMetadata dmeta;
+    QScopedPointer<DMetadata> dmeta(new DMetadata);
 
     DMetadataSettingsContainer dmsettings;
     QStringList empty;
@@ -105,13 +105,13 @@ void TagsReadWriteTest::testWriteToDisabledNamespaces()
              << tagNs2
              << tagNs3;
 
-    dmeta.setItemTagsPath(tagSet1, dmsettings);
+    dmeta->setItemTagsPath(tagSet1, dmsettings);
 
-    empty           = dmeta.getXmpTagStringBag("Xmp.MicrosoftPhoto.LastKeywordXMP", false);
+    empty           = dmeta->getXmpTagStringBag("Xmp.MicrosoftPhoto.LastKeywordXMP", false);
 
     QCOMPARE(empty, QStringList());
 
-    secondNamespace = dmeta.getXmpTagStringBag("Xmp.lr.hierarchicalSubject", false);
+    secondNamespace = dmeta->getXmpTagStringBag("Xmp.lr.hierarchicalSubject", false);
 
     secondNamespace = secondNamespace.replaceInStrings(QLatin1String("|"), QLatin1String("/"));
 
@@ -120,7 +120,7 @@ void TagsReadWriteTest::testWriteToDisabledNamespaces()
 
 void TagsReadWriteTest::testReadFromDisabledNamespaces()
 {
-    DMetadata dmeta;
+    QScopedPointer<DMetadata> dmeta(new DMetadata);
 
     DMetadataSettingsContainer dmsettings;
     QStringList actual;
@@ -151,18 +151,18 @@ void TagsReadWriteTest::testReadFromDisabledNamespaces()
              << tagNs2
              << tagNs3;
 
-    dmeta.setXmpTagStringBag("Xmp.MicrosoftPhoto.LastKeywordXMP", tagSet1);
+    dmeta->setXmpTagStringBag("Xmp.MicrosoftPhoto.LastKeywordXMP", tagSet1);
 
-    dmeta.setXmpTagStringBag("Xmp.lr.hierarchicalSubject", tagSet2);
+    dmeta->setXmpTagStringBag("Xmp.lr.hierarchicalSubject", tagSet2);
 
-    dmeta.getItemTagsPath(actual, dmsettings);
+    dmeta->getItemTagsPath(actual, dmsettings);
 
     QCOMPARE(actual, tagSet2);
 }
 
 void TagsReadWriteTest::testTagSeparatorWrite()
 {
-    DMetadata dmeta;
+    QScopedPointer<DMetadata> dmeta(new DMetadata);
 
     DMetadataSettingsContainer dmsettings;
     QStringList readResult;
@@ -183,9 +183,9 @@ void TagsReadWriteTest::testTagSeparatorWrite()
     dmsettings.getWriteMapping(NamespaceEntry::DM_TAG_CONTAINER())
              << tagNs3;
 
-    dmeta.setItemTagsPath(tagSet1, dmsettings);
+    dmeta->setItemTagsPath(tagSet1, dmsettings);
 
-    readResult = dmeta.getXmpTagStringBag("Xmp.lr.hierarchicalSubject", false);
+    readResult = dmeta->getXmpTagStringBag("Xmp.lr.hierarchicalSubject", false);
 
     expected   = tagSet1;
     expected   = expected.replaceInStrings(QLatin1String("/"), QLatin1String("|"));
@@ -195,7 +195,7 @@ void TagsReadWriteTest::testTagSeparatorWrite()
 
 void TagsReadWriteTest::testTagSeparatorRead()
 {
-    DMetadata dmeta;
+    QScopedPointer<DMetadata> dmeta(new DMetadata);
 
     DMetadataSettingsContainer dmsettings;
     QStringList toWrite;
@@ -220,20 +220,20 @@ void TagsReadWriteTest::testTagSeparatorRead()
     toWrite   = tagSet1;
     toWrite   = toWrite.replaceInStrings(QLatin1String("/"), QLatin1String("|"));
 
-    dmeta.setXmpTagStringBag("Xmp.lr.hierarchicalSubject", toWrite);
+    dmeta->setXmpTagStringBag("Xmp.lr.hierarchicalSubject", toWrite);
 
-    reference = dmeta.getXmpTagStringBag("Xmp.lr.hierarchicalSubject", false);
+    reference = dmeta->getXmpTagStringBag("Xmp.lr.hierarchicalSubject", false);
 
     QCOMPARE(reference, toWrite);
 
-    dmeta.getItemTagsPath(actual, dmsettings);
+    dmeta->getItemTagsPath(actual, dmsettings);
 
     QCOMPARE(actual, tagSet1);
 }
 
 void TagsReadWriteTest::testTagReadAlternativeNameSpace()
 {
-    DMetadata dmeta;
+    QScopedPointer<DMetadata> dmeta(new DMetadata);
 
     DMetadataSettingsContainer dmsettings;
     QStringList toWrite;
@@ -258,14 +258,14 @@ void TagsReadWriteTest::testTagReadAlternativeNameSpace()
     toWrite   = tagSet1;
     toWrite   = toWrite.replaceInStrings(QLatin1String("/"), QLatin1String("|"));
 
-    dmeta.setXmpTagStringSeq("Xmp.lr.HierarchicalSubject", toWrite);
+    dmeta->setXmpTagStringSeq("Xmp.lr.HierarchicalSubject", toWrite);
 
     // We write some data to alternative namespace
-    reference = dmeta.getXmpTagStringSeq("Xmp.lr.HierarchicalSubject", false);
+    reference = dmeta->getXmpTagStringSeq("Xmp.lr.HierarchicalSubject", false);
 
     QCOMPARE(reference, toWrite);
 
-    dmeta.getItemTagsPath(actual, dmsettings);
+    dmeta->getItemTagsPath(actual, dmsettings);
 
     QCOMPARE(actual, tagSet1);
 }

@@ -83,14 +83,14 @@ void PrintMetadataTest::testPrintMetadata()
 
 void PrintMetadataTest::printMetadata(const QString& filePath, bool exif, bool iptc, bool xmp, bool expectedRead)
 {
-    DMetadata meta;
+    QScopedPointer<DMetadata> meta(new DMetadata);
 
-    bool ret = meta.load(filePath);
+    bool ret = meta->load(filePath);
     QCOMPARE(ret, expectedRead);
 
-    loadExif(meta, exif);
-    loadIptc(meta, iptc);
-    loadXmp(meta,  xmp);
+    loadExif(*meta, exif);
+    loadIptc(*meta, iptc);
+    loadXmp(*meta,  xmp);
 }
 
 void PrintMetadataTest::loadExif(const DMetadata& meta, bool expected)

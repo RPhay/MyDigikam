@@ -79,24 +79,24 @@ void ApplyTagsTest::applyTags(const QString& file,
     ret = target.copy(path);
     QVERIFY(ret);
 
-    DMetadata meta;
-    meta.setSettings(settings);
-    ret = meta.load(path);
+    QScopedPointer<DMetadata> meta(new DMetadata);
+    meta->setSettings(settings);
+    ret = meta->load(path);
     QCOMPARE(ret, expectedRead);
 
-    meta.setItemTagsPath(tags);
-    ret = meta.applyChanges(true);
+    meta->setItemTagsPath(tags);
+    ret = meta->applyChanges(true);
     QCOMPARE(ret, expectedWrite);
 
     if (expectedWrite)
     {
-        DMetadata meta2;
-        meta2.setSettings(settings);
+        QScopedPointer<DMetadata> meta2(new DMetadata);
+        meta2->setSettings(settings);
         QStringList newTags;
-        ret = meta2.load(path);
+        ret = meta2->load(path);
         QVERIFY(ret);
 
-        ret = meta2.getItemTagsPath(newTags);
+        ret = meta2->getItemTagsPath(newTags);
         QVERIFY(ret);
 
         foreach (const QString& tag, tags)

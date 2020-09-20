@@ -69,12 +69,12 @@ void CreateXmpSidecarTest::createXmpSidecar(const QString& file,
     QFile::remove(pathXmp);
 
     // Export metadata from image to a fresh xmp sidecar.
-    DMetadata meta;
-    meta.setSettings(settings);
-    ret = meta.load(path);
+    QScopedPointer<DMetadata> meta(new DMetadata);
+    meta->setSettings(settings);
+    ret = meta->load(path);
     QVERIFY(ret);
 
-    ret = meta.save(path);
+    ret = meta->save(path);
     QVERIFY(ret);
 
     QFile sidecar(pathXmp);
@@ -84,7 +84,7 @@ void CreateXmpSidecarTest::createXmpSidecar(const QString& file,
     qDebug() << "Sidecar" << pathXmp << "size :" << sidecar.size();
 
     // Check if xmp sidecar are created and can be loaded
-    DMetadata meta2;
-    ret = meta2.load(pathXmp);
+    QScopedPointer<DMetadata> meta2(new DMetadata);
+    ret = meta2->load(pathXmp);
     QVERIFY(ret);
 }

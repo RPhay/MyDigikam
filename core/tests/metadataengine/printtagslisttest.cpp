@@ -62,11 +62,11 @@ void PrintTagsListTest::parseTagsList(const DMetadata::TagsMap& tags)
 
 void PrintTagsListTest::testPrintAllAvailableStdExifTags()
 {
-    DMetadata meta;
+    QScopedPointer<DMetadata> meta(new DMetadata);
 
     qDebug() << "-- Standard Exif Tags -------------------------------------------------------------";
 
-    DMetadata::TagsMap exiftags = meta.getStdExifTagsList();
+    DMetadata::TagsMap exiftags = meta->getStdExifTagsList();
     QVERIFY(!exiftags.isEmpty());
 
     parseTagsList(exiftags);
@@ -74,11 +74,11 @@ void PrintTagsListTest::testPrintAllAvailableStdExifTags()
 
 void PrintTagsListTest::testPrintAllAvailableMakernotesTags()
 {
-    DMetadata meta;
+    QScopedPointer<DMetadata> meta(new DMetadata);
 
     qDebug() << "-- Makernote Tags -----------------------------------------------------------------";
 
-    DMetadata::TagsMap mntags = meta.getMakernoteTagsList();
+    DMetadata::TagsMap mntags = meta->getMakernoteTagsList();
 
     QVERIFY(!mntags.isEmpty());
 
@@ -87,11 +87,11 @@ void PrintTagsListTest::testPrintAllAvailableMakernotesTags()
 
 void PrintTagsListTest::testPrintAllAvailableIptcTags()
 {
-    DMetadata meta;
+    QScopedPointer<DMetadata> meta(new DMetadata);
 
     qDebug() << "-- Standard Iptc Tags -----------------------------------------------------------------";
 
-    DMetadata::TagsMap iptctags = meta.getIptcTagsList();
+    DMetadata::TagsMap iptctags = meta->getIptcTagsList();
 
     QVERIFY(!iptctags.isEmpty());
 
@@ -100,13 +100,13 @@ void PrintTagsListTest::testPrintAllAvailableIptcTags()
 
 void PrintTagsListTest::testPrintAllAvailableXmpTags()
 {
-    DMetadata meta;
+    QScopedPointer<DMetadata> meta(new DMetadata);
 
     qDebug() << "-- Standard Xmp Tags -----------------------------------------------------------------";
 
-    DMetadata::TagsMap xmptags = meta.getXmpTagsList();
+    DMetadata::TagsMap xmptags = meta->getXmpTagsList();
 
-    if (meta.supportXmp())
+    if (meta->supportXmp())
     {
         QVERIFY(!xmptags.isEmpty());
 

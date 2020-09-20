@@ -56,9 +56,9 @@ void EraseMetadataTagTest::eraseMetadataTag(const QString& file,
     ret = target.copy(path);
     QVERIFY(ret);
 
-    DMetadata meta;
-    meta.setSettings(settings);
-    ret = meta.load(path);
+    QScopedPointer<DMetadata> meta(new DMetadata);
+    meta->setSettings(settings);
+    ret = meta->load(path);
     QVERIFY(ret);
 
     // Check if tag contents exits and drop it.
@@ -66,29 +66,29 @@ void EraseMetadataTagTest::eraseMetadataTag(const QString& file,
 
     if (metadataTag.startsWith(QLatin1String("Exif")))
     {
-        ba = meta.getExifTagData(metadataTag.toLatin1().data());
+        ba = meta->getExifTagData(metadataTag.toLatin1().data());
         QVERIFY(!ba.isNull());
         qDebug() << metadataTag << "found (" << ba.size() << "bytes)";
 
-        ret = meta.removeExifTag(metadataTag.toLatin1().data());
+        ret = meta->removeExifTag(metadataTag.toLatin1().data());
         QVERIFY(ret);
     }
     else if (metadataTag.startsWith(QLatin1String("Iptc")))
     {
-        ba = meta.getIptcTagData(metadataTag.toLatin1().data());
+        ba = meta->getIptcTagData(metadataTag.toLatin1().data());
         QVERIFY(!ba.isNull());
         qDebug() << metadataTag << "found (" << ba.size() << "bytes)";
 
-        ret = meta.removeIptcTag(metadataTag.toLatin1().data());
+        ret = meta->removeIptcTag(metadataTag.toLatin1().data());
         QVERIFY(ret);
     }
     else if (metadataTag.startsWith(QLatin1String("Xmp")))
     {
-        ba = meta.getXmpTagString(metadataTag.toLatin1().data()).toLatin1();
+        ba = meta->getXmpTagString(metadataTag.toLatin1().data()).toLatin1();
         QVERIFY(!ba.isNull());
         qDebug() << metadataTag << "found (" << ba.size() << "bytes)";
 
-        ret = meta.removeXmpTag(metadataTag.toLatin1().data());
+        ret = meta->removeXmpTag(metadataTag.toLatin1().data());
         QVERIFY(ret);
     }
     else
@@ -96,29 +96,29 @@ void EraseMetadataTagTest::eraseMetadataTag(const QString& file,
         QFAIL(QString::fromLatin1("Metadata Tag not supported (%1)").arg(metadataTag).toLatin1().data());
     }
 
-    ret = meta.applyChanges();
+    ret = meta->applyChanges();
     QVERIFY(ret);
 
     // Re-read and check if really null
 
-    DMetadata meta2;
-    meta2.setSettings(settings);
-    ret = meta2.load(path);
+    QScopedPointer<DMetadata> meta2(new DMetadata);
+    meta2->setSettings(settings);
+    ret = meta2->load(path);
     QVERIFY(ret);
 
     if (metadataTag.startsWith(QLatin1String("Exif")))
     {
-        ba = meta2.getExifTagData(metadataTag.toLatin1().data());
+        ba = meta2->getExifTagData(metadataTag.toLatin1().data());
         QVERIFY(ba.isNull());
     }
     else if (metadataTag.startsWith(QLatin1String("Iptc")))
     {
-        ba = meta2.getIptcTagData(metadataTag.toLatin1().data());
+        ba = meta2->getIptcTagData(metadataTag.toLatin1().data());
         QVERIFY(ba.isNull());
     }
     else if (metadataTag.startsWith(QLatin1String("Xmp")))
     {
-        ba = meta2.getXmpTagString(metadataTag.toLatin1().data()).toLatin1();
+        ba = meta2->getXmpTagString(metadataTag.toLatin1().data()).toLatin1();
         QVERIFY(ba.isNull());
     }
     else

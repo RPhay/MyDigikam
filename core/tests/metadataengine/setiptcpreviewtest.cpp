@@ -66,20 +66,20 @@ void SetIptcPreviewTest::setIptcPreview(const QString& file)
 
     QVERIFY(!preview.isNull());
 
-    DMetadata meta;
-    ret = meta.load(path);
+    QScopedPointer<DMetadata> meta(new DMetadata);
+    ret = meta->load(path);
     QVERIFY(ret);
 
-    meta.setItemPreview(preview);
-    ret = meta.applyChanges();
+    meta->setItemPreview(preview);
+    ret = meta->applyChanges();
     QVERIFY(ret);
 
     QImage preview2;
-    DMetadata meta2;
-    ret = meta2.load(path);
+    QScopedPointer<DMetadata> meta2(new DMetadata);
+    ret = meta2->load(path);
     QVERIFY(ret);
 
-    ret = meta2.getItemPreview(preview2);
+    ret = meta2->getItemPreview(preview2);
     QVERIFY(ret);
 
     QVERIFY(!preview2.isNull());

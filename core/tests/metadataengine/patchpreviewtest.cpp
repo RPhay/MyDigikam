@@ -76,26 +76,26 @@ void PatchPreviewTest::patchPreview(const QString& file, bool rescale, int maxDi
     QVERIFY(ret);
 
     // Load metadata from original image.
-    DMetadata meta;
-    ret = meta.load(file);
+    QScopedPointer<DMetadata> meta(new DMetadata);
+    ret = meta->load(file);
     QVERIFY(ret);
 
-    QByteArray exif = meta.getExifEncoded();
-    QByteArray iptc = meta.getIptc();
-    QByteArray xmp  = meta.getXmp();
+    QByteArray exif = meta->getExifEncoded();
+    QByteArray iptc = meta->getIptc();
+    QByteArray xmp  = meta->getXmp();
 
     // Backport metadata to preview file.
 
-    meta.load(path);
+    meta->load(path);
     QVERIFY(ret);
 
-    meta.setExif(exif);
-    meta.setIptc(iptc);
-    meta.setXmp(xmp);
-    meta.setItemDimensions(image.size());
-    meta.setItemOrientation(MetaEngine::ORIENTATION_NORMAL);
-    meta.setMetadataWritingMode((int)DMetadata::WRITE_TO_FILE_ONLY);
-    ret = meta.applyChanges(true);
+    meta->setExif(exif);
+    meta->setIptc(iptc);
+    meta->setXmp(xmp);
+    meta->setItemDimensions(image.size());
+    meta->setItemOrientation(MetaEngine::ORIENTATION_NORMAL);
+    meta->setMetadataWritingMode((int)DMetadata::WRITE_TO_FILE_ONLY);
+    ret = meta->applyChanges(true);
     QVERIFY(ret);
 }
 

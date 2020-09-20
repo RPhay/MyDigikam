@@ -44,6 +44,7 @@
 #include <QMenuBar>
 #include <QStatusBar>
 #include <QPointer>
+#include <QScopedPointer>
 #include <QProgressBar>
 #include <QDebug>
 
@@ -387,11 +388,11 @@ MyImageData LoadImageData(const QUrl& urlToLoad)
     imageData.url = urlToLoad;
 
     // TODO: error handling!
-    DMetadata meta;
-    meta.load(urlToLoad.toLocalFile());
+    QScopedPointer<DMetadata> meta(new DMetadata);
+    meta->load(urlToLoad.toLocalFile());
     double lat, lon, alt;
 
-    if (meta.getGPSInfo(alt, lat, lon))
+    if (meta->getGPSInfo(alt, lat, lon))
     {
         imageData.coordinates.setLatLon(lat, lon);
         imageData.coordinates.setAlt(alt);

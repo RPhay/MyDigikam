@@ -82,38 +82,38 @@ void UseXmpSidecarTest::useXmpSidecar(const QString& file,
     ret = xmpTarget.copy(pathXmp);
     QVERIFY(ret);
 
-    DMetadata meta;
-    meta.setSettings(settings);
-    ret = meta.load(path);
+    QScopedPointer<DMetadata> meta(new DMetadata);
+    meta->setSettings(settings);
+    ret = meta->load(path);
     QVERIFY(ret);
 
-    meta.setItemRating(3);
-    meta.setItemPickLabel(2);
-    meta.setItemColorLabel(1);
+    meta->setItemRating(3);
+    meta->setItemPickLabel(2);
+    meta->setItemColorLabel(1);
 
     QStringList tags = QStringList() << QString::fromUtf8("City/Paris/Eiffel Tower")
                                      << QString::fromUtf8("Animals/Dog/Illka")
                                      << QString::fromUtf8("People/Family/Agnès");
-    meta.setItemTagsPath(tags);
-    ret = meta.applyChanges(true);
+    meta->setItemTagsPath(tags);
+    ret = meta->applyChanges(true);
     QVERIFY(ret);
 
-    DMetadata meta2;
-    meta2.setSettings(settings);
-    ret = meta2.load(path);
+    QScopedPointer<DMetadata> meta2(new DMetadata);
+    meta2->setSettings(settings);
+    ret = meta2->load(path);
     QVERIFY(ret);
 
-    int val = meta2.getItemRating();
+    int val = meta2->getItemRating();
     QCOMPARE(val, 3);
 
-    val = meta2.getItemPickLabel();
+    val = meta2->getItemPickLabel();
     QCOMPARE(val, 2);
 
-    val = meta2.getItemColorLabel();
+    val = meta2->getItemColorLabel();
     QCOMPARE(val, 1);
 
     QStringList newTags;
-    ret = meta2.getItemTagsPath(newTags);
+    ret = meta2->getItemTagsPath(newTags);
     QVERIFY(ret);
 
     int count = tags.count();

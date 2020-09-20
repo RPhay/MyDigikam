@@ -72,28 +72,28 @@ void PrintItemInfoTest::printItemInfo(const QString& filePath,
                                       bool expectedRead
                                      )
 {
-    DMetadata meta;
+    QScopedPointer<DMetadata> meta(new DMetadata);
 
-    bool ret = meta.load(filePath);
+    bool ret = meta->load(filePath);
     QCOMPARE(ret, expectedRead);
 
     // Comments and titles
-    printComments(meta,         com);
-    printTitles(meta,           ttl);
+    printComments(*meta,         com);
+    printTitles(*meta,           ttl);
 
     // Iptc
-    printIptcContact(meta,      cnt);
-    printIptcLocation(meta,     loc);
-    printIptcSubjects(meta,     isb),
+    printIptcContact(*meta,      cnt);
+    printIptcLocation(*meta,     loc);
+    printIptcSubjects(*meta,     isb),
 
     // Media
-    printPhotoInfo(meta,        pho);
-    printVideoInfo(meta,        vid);
+    printPhotoInfo(*meta,        pho);
+    printVideoInfo(*meta,        vid);
 
     // Xmp
-    printXmpKeywords(meta,      key);
-    printXmpSubjects(meta,      xsb);
-    printXmpSubCategories(meta, cat);
+    printXmpKeywords(*meta,      key);
+    printXmpSubjects(*meta,      xsb);
+    printXmpSubCategories(*meta, cat);
 }
 
 void PrintItemInfoTest::printComments(const DMetadata& meta, bool expected)
