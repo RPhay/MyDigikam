@@ -40,7 +40,8 @@ option(ENABLE_MYSQLSUPPORT               "Build digiKam with MySQL dabatase supp
 option(ENABLE_INTERNALMYSQL              "Build digiKam with internal MySQL server executable (default=ON)"                   ON)
 
 # Developer options:
-option(ENABLE_DIGIKAM_MODELTEST          "Enable ModelTest on some models for debugging (default=OFF)"                        ON)
+option(ENABLE_DIGIKAM_MODELTEST          "Enable ModelTest on some models for debugging (default=OFF)"                        OFF)
+option(ENABLE_SANITIZERS                 "Enable ASAN and UBSAN sanitizers when available (default=OFF)"                      OFF)
 
 # Packaging options:
 if(MINGW)
@@ -662,6 +663,10 @@ if(DIGIKAM_CAN_BE_COMPILED)
 
     # Remove inconsistent-missing-override Clang warnings which generate a lots of compilation warnings
     DISABLE_CLANG_COMPILER_WARNINGS("7.99.99" "-Wno-inconsistent-missing-override")
+
+    if(ENABLE_SANITIZERS)
+        ENABLE_COMPILER_SANITIZERS()
+    endif()
 
     # translations catalog
     add_definitions(-DTRANSLATION_DOMAIN=\"digikam\")

@@ -107,7 +107,7 @@ endmacro()
 
 # Macro to enable ASAN and UBSAN sanitizers.
 
-macro(ENABLE_SANITIZERS)
+macro(ENABLE_COMPILER_SANITIZERS)
 
     # ASAN is available in gcc from 4.8 and UBSAN from 4.9
     # ASAN is available in clang from 3.1 and UBSAN from 3.3
@@ -144,6 +144,8 @@ macro(ENABLE_SANITIZERS)
         endif()
 
     endif()
+
+    message(STATUS "Enable compiler sanitizer options: ${SANITIZER_FLAGS}")
 
     set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} ${SANITIZER_FLAGS}")
     set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} ${SANITIZER_FLAGS}")

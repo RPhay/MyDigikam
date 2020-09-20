@@ -458,6 +458,7 @@ There are two configuration sections : the top level and the core.
  - Developers only options:
 
   - \b ENABLE_DIGIKAM_MODELTEST              : Enable ModelTest on some models for debugging (default=OFF).
+  - \b ENABLE_SANITIZERS                     : Enable ASAN and UBSAN sanitizers when available (default=OFF).
 
  - Packaging options
 
