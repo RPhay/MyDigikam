@@ -218,23 +218,42 @@ int ItemSortSettings::compareCategories(const ItemInfo& left, const ItemInfo& ri
 
         case CategoryByFaces:
         {
-            QString leftValue;
-            QString rightValue;
-
             if (leftFace.isNull() && rightFace.isNull())
             {
                 return 0;
             }
 
-            if      (leftFace.type() == FaceTagsIface::UnknownName)
+            bool isLeftIgnored = (leftFace.type() == FaceTagsIface::IgnoredName);
+            bool isLeftUnknown = (leftFace.type() == FaceTagsIface::UnknownName);
+
+            if (isLeftIgnored != (rightFace.type() == FaceTagsIface::IgnoredName))
             {
-                leftValue.fill(QChar(0xffe), 1);
+                if (currentCategorizationSortOrder == Qt::AscendingOrder)
+                {
+                    return isLeftIgnored ? 1 : -1;
+                }
+                else
+                {
+                    return isLeftIgnored ? -1 : 1;
+                }
             }
-            else if (leftFace.type() == FaceTagsIface::IgnoredName)
+
+            if (isLeftUnknown != (rightFace.type() == FaceTagsIface::UnknownName))
             {
-                leftValue.fill(QChar(0xfff), 1);
+                if (currentCategorizationSortOrder == Qt::AscendingOrder)
+                {
+                    return isLeftUnknown ? 1 : -1;
+                }
+                else
+                {
+                    return isLeftUnknown ? -1 : 1;
+                }
             }
-            else if (leftFace.type() == FaceTagsIface::ConfirmedName)
+
+            QString leftValue;
+            QString rightValue;
+
+            if (leftFace.type() == FaceTagsIface::ConfirmedName)
             {
                 leftValue = FaceTags::faceNameForTag(leftFace.tagId());
             }
@@ -243,15 +262,7 @@ int ItemSortSettings::compareCategories(const ItemInfo& left, const ItemInfo& ri
                 leftValue = left.getSuggestedNames().value(leftFace.region().toXml());
             }
 
-            if      (rightFace.type() == FaceTagsIface::UnknownName)
-            {
-                rightValue.fill(QChar(0xffe), 1);
-            }
-            else if (rightFace.type() == FaceTagsIface::IgnoredName)
-            {
-                rightValue.fill(QChar(0xfff), 1);
-            }
-            else if (rightFace.type() == FaceTagsIface::ConfirmedName)
+            if (rightFace.type() == FaceTagsIface::ConfirmedName)
             {
                 rightValue = FaceTags::faceNameForTag(rightFace.tagId());
             }
