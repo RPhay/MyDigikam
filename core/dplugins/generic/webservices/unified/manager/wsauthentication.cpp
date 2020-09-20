@@ -301,7 +301,7 @@ void WSAuthentication::prepareForUpload()
             image.save(d->tmpPath.last(), "JPEG", d->wizard->settings()->imageCompression);
 
             // copy meta data to temporary image and get caption for image
-            QScopedPointer<DMetadata> meta(new DMetatdata);
+            QScopedPointer<DMetadata> meta(new DMetadata);
             QString caption = QLatin1String("");
 
             if (meta->load(imgPath))
