@@ -146,7 +146,6 @@ void FacePipeline::plugParallelFaceDetectors()
 void FacePipeline::plugFaceRecognizer()
 {
     d->recognitionWorker = new RecognitionWorker(d);
-    d->createThumbnailLoadThread();
 
     connect(d, SIGNAL(accuracyChanged(double)),
             d->recognitionWorker, SLOT(setThreshold(double)));
@@ -155,19 +154,16 @@ void FacePipeline::plugFaceRecognizer()
 void FacePipeline::plugDatabaseWriter(WriteMode mode)
 {
     d->databaseWriter = new DatabaseWriter(mode, d);
-    d->createThumbnailLoadThread();
 }
 
 void FacePipeline::plugTrainer()
 {
     d->trainerWorker = new TrainerWorker(d);
-    d->createThumbnailLoadThread();
 }
 
 void FacePipeline::plugDetectionBenchmarker()
 {
     d->detectionBenchmarker = new DetectionBenchmarker(d);
-    d->createThumbnailLoadThread();
 }
 
 void FacePipeline::plugRecognitionBenchmarker()
@@ -178,7 +174,6 @@ void FacePipeline::plugRecognitionBenchmarker()
 void FacePipeline::plugDatabaseEditor()
 {
     plugDatabaseWriter(NormalWrite);
-    d->createThumbnailLoadThread();
 }
 
 void FacePipeline::construct()
