@@ -99,4 +99,5 @@ BUGFIXES:
 086 ==> 372380 - Support for MediaWiki tool?
 087 ==> 417788 - Can't import a video file in an album.
 088 ==> 426218 - Pictures from old collection still in database after removing it.
-089 ==> 
+089 ==> 426597 - stack underflow crash in Digikam::DImg::load().
+090 ==> 
