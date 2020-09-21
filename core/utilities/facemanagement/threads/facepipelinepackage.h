@@ -156,7 +156,6 @@ class Q_DECL_HIDDEN FacePipelineExtendedPackage : public FacePipelinePackage,
 public:
 
     QString                                                           filePath;
-    DImg                                                              detectionImage; ///< image scaled to about 0.5 Mpx
     typedef QExplicitlySharedDataPointer<FacePipelineExtendedPackage> Ptr;
 
 public:
