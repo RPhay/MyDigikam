@@ -34,7 +34,7 @@ FacePreviewLoader::FacePreviewLoader(FacePipeline::Private* const d)
     : d(d)
 {
     // upper limit for memory cost
-    maximumSentOutPackages = qMin(QThread::idealThreadCount(), 5);
+    maximumSentOutPackages = qMin(QThread::idealThreadCount(), 4);
 
     // this is crucial! Per default, only the last added image will be loaded
     setLoadingPolicy(PreviewLoadThread::LoadingPolicySimpleAppend);
