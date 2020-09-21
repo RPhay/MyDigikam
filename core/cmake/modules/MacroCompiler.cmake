@@ -115,41 +115,47 @@ macro(ENABLE_COMPILER_SANITIZERS)
     # => make it fatal with -fno-sanitize-recover (gcc) or -fno-sanitize-recover=all (clang)
     # add -fno-omit-frame-pointer for better stack traces
 
-    if(COMPILER_IS_GCC)
+    if    (CMAKE_COMPILER_IS_GNUCXX)
 
-        if(CMAKE_CXX_COMPILER_VERSION VERSION_GREATER 4.9)
+        exec_program(${CMAKE_CXX_COMPILER} ARGS ${CMAKE_CXX_COMPILER_ARG1} -dumpversion OUTPUT_VARIABLE GCC_VERSION)
+
+        if    (${GCC_VERSION} VERSION_GREATER 4.9)
 
             set(SANITIZER_FLAGS "-fno-omit-frame-pointer -fsanitize=address,undefined -fno-sanitize-recover")
 
-        elseif(CMAKE_CXX_COMPILER_VERSION VERSION_GREATER 4.8)
+        elseif(${GCC_VERSION} VERSION_GREATER 4.8)
 
             set(SANITIZER_FLAGS "-fno-omit-frame-pointer -fsanitize=address")
 
         endif()
 
-    elseif(COMPILER_IS_CLANG )
+        message(STATUS "Enable GCC compiler sanitizer options: ${SANITIZER_FLAGS}")
 
-        if(CMAKE_CXX_COMPILER_VERSION VERSION_GREATER 4.9)
+    elseif(CMAKE_CXX_COMPILER_ID MATCHES "Clang")
+
+        exec_program(${CMAKE_CXX_COMPILER} ARGS ${CMAKE_CXX_COMPILER_ARG1} -dumpversion OUTPUT_VARIABLE CLANG_VERSION)
+
+        if    (${CLANG_VERSION} VERSION_GREATER 4.9)
 
             set(SANITIZER_FLAGS "-fno-omit-frame-pointer -fsanitize=address,undefined -fno-sanitize-recover=all")
 
-        elseif(CMAKE_CXX_COMPILER_VERSION VERSION_GREATER 3.4)
+        elseif(${CLANG_VERSION} VERSION_GREATER 3.4)
 
             set(SANITIZER_FLAGS "-fno-omit-frame-pointer -fsanitize=address,undefined")
 
-        elseif(CMAKE_CXX_COMPILER_VERSION VERSION_GREATER 3.1)
+        elseif(${CLANG_VERSION} VERSION_GREATER 3.1)
 
             set(SANITIZER_FLAGS "-fno-omit-frame-pointer -fsanitize=address")
 
         endif()
 
+        message(STATUS "Enable Clang compiler sanitizer options: ${SANITIZER_FLAGS}")
+
     endif()
 
-    message(STATUS "Enable compiler sanitizer options: ${SANITIZER_FLAGS}")
-
-    set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} ${SANITIZER_FLAGS}")
-    set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} ${SANITIZER_FLAGS}")
-    set(CMAKE_EXE_LINKER_FLAGS "${CMAKE_EXE_LINKER_FLAGS} ${SANITIZER_FLAGS}")
+    set(CMAKE_CXX_FLAGS           "${CMAKE_CXX_FLAGS}           ${SANITIZER_FLAGS}")
+    set(CMAKE_C_FLAGS             "${CMAKE_C_FLAGS}             ${SANITIZER_FLAGS}")
+    set(CMAKE_EXE_LINKER_FLAGS    "${CMAKE_EXE_LINKER_FLAGS}    ${SANITIZER_FLAGS}")
     set(CMAKE_MODULE_LINKER_FLAGS "${CMAKE_MODULE_LINKER_FLAGS} ${SANITIZER_FLAGS}")
 
 endmacro()
