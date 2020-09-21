@@ -30,10 +30,7 @@ namespace Digikam
 
 DImg& DImg::operator=(const DImg& image)
 {
-    if (m_priv != image.m_priv)
-    {
-        m_priv = image.m_priv;
-    }
+    m_priv = image.m_priv;
 
     return *this;
 }
