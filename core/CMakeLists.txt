@@ -664,28 +664,8 @@ if(DIGIKAM_CAN_BE_COMPILED)
     # Remove inconsistent-missing-override Clang warnings which generate a lots of compilation warnings
     DISABLE_CLANG_COMPILER_WARNINGS("7.99.99" "-Wno-inconsistent-missing-override")
 
-    if(ENABLE_SANITIZERS)
-
-        set(ECM_ENABLE_SANITIZERS 'address')
-#        set(ECM_ENABLE_SANITIZERS 'address;leak;undefined')
-        include(ECMEnableSanitizers)
-
-        find_library(ASAN_LIBRARIES NAMES asan)
-
-        if (ASAN_LIBRARIES)
-
-            message(STATUS "Found AddressSanitizer libraries: ${ASAN_LIBRARIES}")
-            set(ASAN_FOUND TRUE CACHE INTERNAL "")
-
-        else()
-
-            message(FATAL_ERROR "Could not find AddressSanitizer")
-
-        endif()
-
-        message(STATUS "Building with sanitizer: ${ECM_ENABLE_SANITIZERS}")
-
-    endif()
+    include(MacroSanitizers)
+    ENABLE_COMPILER_SANITIZERS()
 
     # translations catalog
     add_definitions(-DTRANSLATION_DOMAIN=\"digikam\")
