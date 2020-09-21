@@ -665,7 +665,9 @@ if(DIGIKAM_CAN_BE_COMPILED)
     DISABLE_CLANG_COMPILER_WARNINGS("7.99.99" "-Wno-inconsistent-missing-override")
 
     if(ENABLE_SANITIZERS)
-        ENABLE_COMPILER_SANITIZERS()
+#        set(USE_SANITIZER 'Address;Undefined')
+        set(USE_SANITIZER 'Address')
+        include(SanitizerRules)
     endif()
 
     # translations catalog
