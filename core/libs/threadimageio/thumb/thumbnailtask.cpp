@@ -208,6 +208,10 @@ void ThumbnailLoadingTask::execute()
 
             cache->removeLoadingProcess(this);
 
+            // remove myself from list of listeners
+
+            removeListener(this);
+
             // dispatch image to all listeners
 
             for (int i = 0 ; i < m_listeners.count() ; ++i)
@@ -219,10 +223,6 @@ void ThumbnailLoadingTask::execute()
                     task->setThumbResult(m_loadingDescription, m_qimage);
                 }
             }
-
-            // remove myself from list of listeners
-
-            removeListener(this);
 
             // indicate that loading has finished so that listeners can stop waiting
 

@@ -235,7 +235,11 @@ void SharedLoadingTask::execute()
 
             cache->removeLoadingProcess(this);
 
-            // dispatch image to all listeners, including this
+            // remove myself from list of listeners
+
+            removeListener(this);
+
+            // dispatch image to all listeners
 
             for (int i = 0 ; i < m_listeners.count() ; ++i)
             {
@@ -253,10 +257,6 @@ void SharedLoadingTask::execute()
                     l->setResult(m_loadingDescription, m_img);
                 }
             }
-
-            // remove myself from list of listeners
-
-            removeListener(this);
 
             // indicate that loading has finished so that listeners can stop waiting
 
