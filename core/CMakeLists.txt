@@ -665,9 +665,26 @@ if(DIGIKAM_CAN_BE_COMPILED)
     DISABLE_CLANG_COMPILER_WARNINGS("7.99.99" "-Wno-inconsistent-missing-override")
 
     if(ENABLE_SANITIZERS)
-#        set(USE_SANITIZER 'Address;Undefined')
-        set(USE_SANITIZER 'Address')
-        include(SanitizerRules)
+
+        set(ECM_ENABLE_SANITIZERS 'address')
+#        set(ECM_ENABLE_SANITIZERS 'address;leak;undefined')
+        include(ECMEnableSanitizers)
+
+        find_library(ASAN_LIBRARIES NAMES asan)
+
+        if (ASAN_LIBRARIES)
+
+            message(STATUS "Found AddressSanitizer libraries: ${ASAN_LIBRARIES}")
+            set(ASAN_FOUND TRUE CACHE INTERNAL "")
+
+        else()
+
+            message(FATAL_ERROR "Could not find AddressSanitizer")
+
+        endif()
+
+        message(STATUS "Building with sanitizer: ${ECM_ENABLE_SANITIZERS}")
+
     endif()
 
     # translations catalog
