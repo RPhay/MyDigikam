@@ -146,7 +146,7 @@ void ItemScanner::scanVideoInformation()
                << MetadataInfo::CreationDate
                << MetadataInfo::DigitizationDate
                << MetadataInfo::Orientation;
-        QVariantList metadataInfos = d->metadata.getMetadataFields(fields);
+        QVariantList metadataInfos = d->metadata->getMetadataFields(fields);
 
         d->commit.imageInformationFields = DatabaseFields::Rating           |
                                            DatabaseFields::CreationDate     |
@@ -164,8 +164,8 @@ void ItemScanner::scanVideoInformation()
         d->commit.imageInformationInfos = metadataInfos;
     }
 
-    d->commit.imageInformationInfos << d->metadata.getMetadataField(MetadataInfo::VideoWidth)
-                                    << d->metadata.getMetadataField(MetadataInfo::VideoHeight);
+    d->commit.imageInformationInfos << d->metadata->getMetadataField(MetadataInfo::VideoWidth)
+                                    << d->metadata->getMetadataField(MetadataInfo::VideoHeight);
     d->commit.imageInformationFields |= DatabaseFields::Width | DatabaseFields::Height;
 
     // TODO: Please check / improve / rewrite detectVideoFormat().
@@ -179,10 +179,10 @@ void ItemScanner::scanVideoInformation()
 
     d->commit.imageInformationFields |= DatabaseFields::Format;
 
-    d->commit.imageInformationInfos << d->metadata.getMetadataField(MetadataInfo::VideoBitDepth);
+    d->commit.imageInformationInfos << d->metadata->getMetadataField(MetadataInfo::VideoBitDepth);
     d->commit.imageInformationFields |= DatabaseFields::ColorDepth;
 
-    d->commit.imageInformationInfos << d->metadata.getMetadataField(MetadataInfo::VideoColorSpace);
+    d->commit.imageInformationInfos << d->metadata->getMetadataField(MetadataInfo::VideoColorSpace);
     d->commit.imageInformationFields |= DatabaseFields::ColorModel;
 }
 
@@ -190,7 +190,7 @@ void ItemScanner::scanVideoInformation()
 
 void ItemScanner::scanVideoMetadata()
 {
-    QVariantList metadataInfos = d->metadata.getMetadataFields(allVideoMetadataFields());
+    QVariantList metadataInfos = d->metadata->getMetadataFields(allVideoMetadataFields());
 
     if (hasValidField(metadataInfos))
     {

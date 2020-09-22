@@ -120,10 +120,16 @@ ItemScanner::Private::Private()
     : hasImage(false),
       hasMetadata(false),
       loadedFromDisk(false),
+      metadata(new DMetadata),
       scanMode(ModifiedScan),
       hasHistoryToResolve(false)
 {
     timer.start();
+}
+
+ItemScanner::Private::~Private()
+{
+    delete metadata;
 }
 
 } // namespace Digikam

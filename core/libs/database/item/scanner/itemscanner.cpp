@@ -124,8 +124,8 @@ void ItemScanner::loadFromDisk()
     }
 
     d->loadedFromDisk = true;
-    d->metadata.registerMetadataSettings();
-    d->hasMetadata    = d->metadata.load(d->fileInfo.filePath());
+    d->metadata->registerMetadataSettings();
+    d->hasMetadata    = d->metadata->load(d->fileInfo.filePath());
 
     if (d->scanInfo.category == DatabaseItem::Image)
     {
@@ -162,7 +162,7 @@ void ItemScanner::loadFromDisk()
    // faster than loading twice from disk
     if (d->hasMetadata)
     {
-        d->img.setMetadata(d->metadata.data());
+        d->img.setMetadata(d->metadata->data());
     }
 }
 

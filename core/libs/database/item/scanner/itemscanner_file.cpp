@@ -115,7 +115,7 @@ void ItemScanner::scanItemInformation()
                << MetadataInfo::CreationDate
                << MetadataInfo::DigitizationDate
                << MetadataInfo::Orientation;
-        QVariantList metadataInfos = d->metadata.getMetadataFields(fields);
+        QVariantList metadataInfos = d->metadata->getMetadataFields(fields);
 
         checkCreationDateFromMetadata(metadataInfos[1]);
 
@@ -131,7 +131,7 @@ void ItemScanner::scanItemInformation()
     {
         // Does _not_ update rating and orientation (unless dims were exchanged)!
 /*
-        int orientation = d->metadata.getItemOrientation();
+        int orientation = d->metadata->getItemOrientation();
         QVariantList data = CoreDbAccess().db()->getItemInformation(d->scanInfo.id,
                                                                        DatabaseFields::Width |
                                                                        DatabaseFields::Height |

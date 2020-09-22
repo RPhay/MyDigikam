@@ -31,8 +31,8 @@ void ItemScanner::scanImageHistory()
 {
     /** Stage 1 of history scanning */
 
-    d->commit.historyXml = d->metadata.getItemHistory();
-    d->commit.uuid       = d->metadata.getItemUniqueId();
+    d->commit.historyXml = d->metadata->getItemHistory();
+    d->commit.uuid       = d->metadata->getItemUniqueId();
 }
 
 void ItemScanner::commitImageHistory()
@@ -57,7 +57,7 @@ void ItemScanner::scanImageHistoryIfModified()
 {
     // If a file has a modified history, it must have a new UUID
     QString previousUuid = CoreDbAccess().db()->getImageUuid(d->scanInfo.id);
-    QString currentUuid  = d->metadata.getItemUniqueId();
+    QString currentUuid  = d->metadata->getItemUniqueId();
 
     if (!currentUuid.isEmpty() && previousUuid != currentUuid)
     {

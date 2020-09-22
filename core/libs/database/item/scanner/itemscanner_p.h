@@ -136,6 +136,7 @@ class Q_DECL_HIDDEN ItemScanner::Private
 public:
 
     explicit Private();
+    ~Private();
 
 public:
 
@@ -145,7 +146,7 @@ public:
 
     QFileInfo              fileInfo;
 
-    DMetadata              metadata;
+    DMetadata*             metadata;
     DImg                   img;
     ItemScanInfo           scanInfo;
     ItemScanner::ScanMode  scanMode;

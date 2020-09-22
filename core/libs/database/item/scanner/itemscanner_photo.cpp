@@ -132,7 +132,7 @@ QString ItemScanner::detectImageFormat() const
 
 void ItemScanner::scanImageMetadata()
 {
-    QVariantList metadataInfos = d->metadata.getMetadataFields(allImageMetadataFields());
+    QVariantList metadataInfos = d->metadata->getMetadataFields(allImageMetadataFields());
 
     if (hasValidField(metadataInfos))
     {
@@ -161,7 +161,7 @@ void ItemScanner::scanItemPosition()
            << MetadataInfo::PositionAccuracy
            << MetadataInfo::PositionDescription;
 
-    QVariantList metadataInfos = d->metadata.getMetadataFields(fields);
+    QVariantList metadataInfos = d->metadata->getMetadataFields(fields);
 
     if (hasValidField(metadataInfos))
     {
@@ -181,10 +181,10 @@ void ItemScanner::scanItemComments()
     fields << MetadataInfo::Headline
            << MetadataInfo::Title;
 
-    QVariantList metadataInfos = d->metadata.getMetadataFields(fields);
+    QVariantList metadataInfos = d->metadata->getMetadataFields(fields);
 
     // handles all possible fields, multi-language, author, date
-    CaptionsMap captions = d->metadata.getItemComments();
+    CaptionsMap captions = d->metadata->getItemComments();
 
     if (captions.isEmpty() && !hasValidField(metadataInfos))
     {
@@ -235,7 +235,7 @@ void ItemScanner::scanItemCopyright()
 {
     Template t;
 
-    if (!d->metadata.getCopyrightInformation(t))
+    if (!d->metadata->getCopyrightInformation(t))
     {
         return;
     }
@@ -261,7 +261,7 @@ void ItemScanner::scanIPTCCore()
            << MetadataInfo::IptcCoreScene
            << MetadataInfo::IptcCoreSubjectCode;
 
-    QVariantList metadataInfos = d->metadata.getMetadataFields(fields);
+    QVariantList metadataInfos = d->metadata->getMetadataFields(fields);
 
     if (!hasValidField(metadataInfos))
     {
@@ -311,7 +311,7 @@ void ItemScanner::scanTags()
 {
     // Check Keywords tag paths.
 
-    QVariant var         = d->metadata.getMetadataField(MetadataInfo::Keywords);
+    QVariant var         = d->metadata->getMetadataField(MetadataInfo::Keywords);
     QStringList keywords = var.toStringList();
     QStringList filteredKeywords;
 
@@ -344,7 +344,7 @@ void ItemScanner::scanTags()
 
     // Check Pick Label tag.
 
-    int pickId = d->metadata.getItemPickLabel();
+    int pickId = d->metadata->getItemPickLabel();
 
     if (pickId != -1)
     {
@@ -366,7 +366,7 @@ void ItemScanner::scanTags()
 
     // Check Color Label tag.
 
-    int colorId = d->metadata.getItemColorLabel();
+    int colorId = d->metadata->getItemColorLabel();
 
     if (colorId != -1)
     {
@@ -422,7 +422,7 @@ void ItemScanner::scanFaces()
 
     QMultiMap<QString, QVariant> metadataFacesMap;
 
-    if (!d->metadata.getItemFacesMap(metadataFacesMap))
+    if (!d->metadata->getItemFacesMap(metadataFacesMap))
     {
         return;
     }
