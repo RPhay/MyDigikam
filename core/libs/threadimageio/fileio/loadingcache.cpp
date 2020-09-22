@@ -39,6 +39,27 @@
 namespace Digikam
 {
 
+LoadingProcessListener::LoadingProcessListener()
+{
+}
+
+LoadingProcessListener::~LoadingProcessListener()
+{
+}
+
+// -----------------------------------------------------------------------------------
+
+LoadingProcess::LoadingProcess()
+{
+}
+
+LoadingProcess::~LoadingProcess()
+{
+}
+
+
+// -----------------------------------------------------------------------------------
+
 class Q_DECL_HIDDEN LoadingCache::Private
 {
 public:
@@ -86,7 +107,7 @@ LoadingCacheFileWatch* LoadingCache::Private::fileWatch() const
 
 void LoadingCache::Private::mapImageFilePath(const QString& filePath, const QString& cacheKey)
 {
-    if (imageFilePathMap.size() > (5*imageCache.size()))
+    if (imageFilePathMap.size() > (5 * imageCache.size()))
     {
         cleanUpImageFilePathHash();
     }
@@ -96,7 +117,7 @@ void LoadingCache::Private::mapImageFilePath(const QString& filePath, const QStr
 
 void LoadingCache::Private::mapThumbnailFilePath(const QString& filePath, const QString& cacheKey)
 {
-    if (thumbnailFilePathMap.size() > (5*(thumbnailImageCache.size() + thumbnailPixmapCache.size())))
+    if (thumbnailFilePathMap.size() > (5 * (thumbnailImageCache.size() + thumbnailPixmapCache.size())))
     {
         cleanUpThumbnailFilePathHash();
     }
@@ -280,6 +301,7 @@ bool LoadingCache::hasThumbnailPixmap(const QString& cacheKey) const
 
 void LoadingCache::putThumbnail(const QString& cacheKey, const QImage& thumb, const QString& filePath)
 {
+
 #if (QT_VERSION >= QT_VERSION_CHECK(5, 10, 0))
 
     int cost = thumb.sizeInBytes();

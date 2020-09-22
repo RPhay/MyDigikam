@@ -43,7 +43,8 @@ class LoadingProcessListener
 {
 public:
 
-    virtual ~LoadingProcessListener() {};
+    LoadingProcessListener();
+    virtual ~LoadingProcessListener();
     virtual bool querySendNotifyEvent()                                                     const = 0;
     virtual void setResult(const LoadingDescription& loadingDescription, const DImg& img)         = 0;
     virtual LoadSaveNotifier* loadSaveNotifier()                                            const = 0;
@@ -56,7 +57,8 @@ class LoadingProcess
 {
 public:
 
-    virtual ~LoadingProcess() {};
+    LoadingProcess();
+    virtual ~LoadingProcess();
     virtual bool completed()                                                                             const = 0;
     virtual QString filePath()                                                                           const = 0;
     virtual QString cacheKey()                                                                           const = 0;
@@ -89,11 +91,12 @@ protected:
      */
     void notifyFileChanged(const QString& filePath);
 
-    QMap<QString, QPair<qint64, QDateTime> > m_watchMap;
+protected:
 
     friend class LoadingCache;
 
-    class LoadingCache* m_cache;
+    QMap<QString, QPair<qint64, QDateTime> > m_watchMap;
+    class LoadingCache*                      m_cache;
 
 private:
 
