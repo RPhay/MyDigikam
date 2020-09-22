@@ -149,6 +149,8 @@ public:
 
     void setNotificationPolicy(NotificationPolicy notificationPolicy);
 
+public:
+
     static void setInfoProvider(LoadSaveFileInfoProvider* const infoProvider);
     static LoadSaveFileInfoProvider* infoProvider();
 
@@ -206,14 +208,14 @@ Q_SIGNALS:
 
 public:
 
-    virtual void imageStartedLoading(const LoadingDescription& loadingDescription) override;
-    virtual void loadingProgress(const LoadingDescription& loadingDescription, float progress) override;
-    virtual void imageLoaded(const LoadingDescription& loadingDescription, const DImg& img) override;
+    virtual void imageStartedLoading(const LoadingDescription& loadingDescription)                override;
+    virtual void loadingProgress(const LoadingDescription& loadingDescription, float progress)    override;
+    virtual void imageLoaded(const LoadingDescription& loadingDescription, const DImg& img)       override;
     virtual void moreCompleteLoadingAvailable(const LoadingDescription& oldLoadingDescription,
-                                              const LoadingDescription& newLoadingDescription) override;
-    virtual void imageStartedSaving(const QString& filePath) override;
-    virtual void savingProgress(const QString& filePath, float progress) override;
-    virtual void imageSaved(const QString& filePath, bool success) override;
+                                              const LoadingDescription& newLoadingDescription)    override;
+    virtual void imageStartedSaving(const QString& filePath)                                      override;
+    virtual void savingProgress(const QString& filePath, float progress)                          override;
+    virtual void imageSaved(const QString& filePath, bool success)                                override;
     virtual void thumbnailLoaded(const LoadingDescription& loadingDescription, const QImage& img) override;
 
     virtual bool querySendNotifyEvent() const;
@@ -221,7 +223,8 @@ public:
 
 protected:
 
-    virtual void run() override;
+    virtual void run()                                                                            override;
+
     void notificationReceived();
 
 protected:

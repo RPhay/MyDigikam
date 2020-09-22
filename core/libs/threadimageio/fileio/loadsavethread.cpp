@@ -35,11 +35,21 @@
 namespace Digikam
 {
 
-::LoadSaveNotifier::LoadSaveNotifier()
+LoadSaveNotifier::LoadSaveNotifier()
 {
 }
 
 LoadSaveNotifier::~LoadSaveNotifier()
+{
+}
+
+// --------------------------------------------------------------------------------
+
+LoadSaveFileInfoProvider::LoadSaveFileInfoProvider()
+{
+}
+
+LoadSaveFileInfoProvider::~LoadSaveFileInfoProvider()
 {
 }
 
@@ -116,7 +126,7 @@ void LoadSaveThread::run()
             QMutexLocker lock(threadMutex());
 
             delete d->lastTask;
-            d->lastTask = nullptr;
+            d->lastTask   = nullptr;
             delete m_currentTask;
             m_currentTask = nullptr;
 
@@ -218,11 +228,15 @@ void LoadSaveThread::notificationReceived()
     switch (m_notificationPolicy)
     {
         case NotificationPolicyDirect:
+        {
             d->blockNotification = false;
             break;
+        }
 
         case NotificationPolicyTimeLimited:
+        {
             break;
+        }
     }
 }
 
@@ -239,7 +253,7 @@ bool LoadSaveThread::querySendNotifyEvent() const
     switch (m_notificationPolicy)
     {
         case NotificationPolicyDirect:
-
+        {
             // Note that m_blockNotification is not protected by a mutex. However, if there is a
             // race condition, the worst case is that one event is not sent, which is no problem.
 
@@ -250,13 +264,15 @@ bool LoadSaveThread::querySendNotifyEvent() const
             else
             {
                 d->blockNotification = true;
+
                 return true;
             }
 
             break;
+        }
 
         case NotificationPolicyTimeLimited:
-
+        {
             // Current default time value: 100 millisecs.
 
             if (d->blockNotification)
@@ -272,17 +288,21 @@ bool LoadSaveThread::querySendNotifyEvent() const
             {
                 d->notificationTime  = QTime::currentTime();
                 d->blockNotification = true;
+
                 return true;
             }
 
             break;
+        }
     }
 
     return false;
 }
 
-int LoadSaveThread::exifOrientation(const QString& filePath, const DMetadata& metadata,
-                                    bool isRaw, bool fromRawEmbeddedPreview)
+int LoadSaveThread::exifOrientation(const QString& filePath,
+                                    const DMetadata& metadata,
+                                    bool isRaw,
+                                    bool fromRawEmbeddedPreview)
 {
     int dbOrientation = MetaEngine::ORIENTATION_UNSPECIFIED;
 
@@ -314,6 +334,7 @@ int LoadSaveThread::exifOrientation(const QString& filePath, const DMetadata& me
         QMatrix A_inv = A.inverted();
         QMatrix B     = A_inv * C;
         MetaEngineRotation m(B.m11(), B.m12(), B.m21(), B.m22());
+ 
         return m.exifOrientation();
     }
 
