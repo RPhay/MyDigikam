@@ -103,7 +103,7 @@ public:
 
         bool onlyPregenerate() const
         {
-            return flags & OnlyPregenerate;
+            return (flags & OnlyPregenerate);
         }
 
         bool operator==(const PreviewParameters& other) const;
@@ -128,6 +128,8 @@ public:
         {
             colorManagement = NoColorConversion;
         }
+
+    public:
 
         bool needsProcessing()      const;
 
@@ -225,10 +227,7 @@ public:
      * Returns whether the other loading task equals this one
      */
     bool operator==(const LoadingDescription& other) const;
-    bool operator!=(const LoadingDescription& other) const
-    {
-        return !operator==(other);
-    }
+    bool operator!=(const LoadingDescription& other) const;
 
     /**
      * Returns whether the other loading task equals this one

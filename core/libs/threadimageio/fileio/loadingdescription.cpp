@@ -52,12 +52,17 @@ bool LoadingDescription::PreviewParameters::operator==(const PreviewParameters& 
 
 bool LoadingDescription::PostProcessingParameters::operator==(const PostProcessingParameters& other) const
 {
-    return colorManagement == other.colorManagement;
+    return (colorManagement == other.colorManagement);
+}
+
+bool LoadingDescription::PostProcessingParameters::onlyPregenerate() const
+{
+    return (flags & OnlyPregenerate);
 }
 
 bool LoadingDescription::PostProcessingParameters::needsProcessing() const
 {
-    return colorManagement != NoColorConversion;
+    return (colorManagement != NoColorConversion);
 }
 
 void LoadingDescription::PostProcessingParameters::setTransform(const IccTransform& transform)
@@ -67,7 +72,7 @@ void LoadingDescription::PostProcessingParameters::setTransform(const IccTransfo
 
 bool LoadingDescription::PostProcessingParameters::hasTransform() const
 {
-    return !iccData.isNull() && iccData.canConvert<IccTransform>();
+    return (!iccData.isNull() && iccData.canConvert<IccTransform>());
 }
 
 IccTransform LoadingDescription::PostProcessingParameters::transform() const
@@ -82,7 +87,7 @@ void LoadingDescription::PostProcessingParameters::setProfile(const IccProfile& 
 
 bool LoadingDescription::PostProcessingParameters::hasProfile() const
 {
-    return !iccData.isNull() && iccData.canConvert<IccProfile>();
+    return (!iccData.isNull() && iccData.canConvert<IccProfile>());
 }
 
 IccProfile LoadingDescription::PostProcessingParameters::profile() const
@@ -147,15 +152,21 @@ QString LoadingDescription::cacheKey() const
 
     if      (previewParameters.type == PreviewParameters::Thumbnail)
     {
-        QString fileRef = filePath.isEmpty() ? (QLatin1String("id:/") + previewParameters.storageReference.toString()) : filePath;
+        QString fileRef = filePath.isEmpty() ? (QLatin1String("id:/") + previewParameters.storageReference.toString())
+                                             : filePath;
 
         return (fileRef + QLatin1String("-thumbnail-") + QString::number(previewParameters.size));
     }
     else if (previewParameters.type == PreviewParameters::DetailThumbnail)
     {
-        QString fileRef    = filePath.isEmpty() ? (QLatin1String("id:/") + previewParameters.storageReference.toString()) : filePath;
+        QString fileRef    = filePath.isEmpty() ? (QLatin1String("id:/") + previewParameters.storageReference.toString())
+                                                : filePath;
         QRect rect         =  previewParameters.extraParameter.toRect();
-        QString rectString = QString::fromLatin1("%1,%2-%3x%4-").arg(rect.x()).arg(rect.y()).arg(rect.width()).arg(rect.height());
+        QString rectString = QString::fromLatin1("%1,%2-%3x%4-")
+                             .arg(rect.x())
+                             .arg(rect.y())
+                             .arg(rect.width())
+                             .arg(rect.height());
 
         return (fileRef + QLatin1String("-thumbnail-") + rectString + QString::number(previewParameters.size));
     }
@@ -314,6 +325,11 @@ bool LoadingDescription::operator==(const LoadingDescription& other) const
             (rawDecodingSettings      == other.rawDecodingSettings)        &&
             (previewParameters        == other.previewParameters)          &&
             (postProcessingParameters == other.postProcessingParameters));
+}
+
+bool LoadingDescription::operator!=(const LoadingDescription& other) const
+{
+    return (!operator==(other));
 }
 
 bool LoadingDescription::equalsIgnoreReducedVersion(const LoadingDescription& other) const
