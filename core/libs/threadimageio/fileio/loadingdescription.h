@@ -101,10 +101,7 @@ public:
 
         explicit PreviewParameters();
 
-        bool onlyPregenerate() const
-        {
-            return (flags & OnlyPregenerate);
-        }
+        bool onlyPregenerate() const;
 
         bool operator==(const PreviewParameters& other) const;
 

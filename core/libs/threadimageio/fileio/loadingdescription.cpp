@@ -50,14 +50,14 @@ bool LoadingDescription::PreviewParameters::operator==(const PreviewParameters& 
             (storageReference == other.storageReference));
 }
 
+bool LoadingDescription::PreviewParameters::onlyPregenerate() const
+{
+    return (flags & OnlyPregenerate);
+}
+
 bool LoadingDescription::PostProcessingParameters::operator==(const PostProcessingParameters& other) const
 {
     return (colorManagement == other.colorManagement);
-}
-
-bool LoadingDescription::PostProcessingParameters::onlyPregenerate() const
-{
-    return (flags & OnlyPregenerate);
 }
 
 bool LoadingDescription::PostProcessingParameters::needsProcessing() const
