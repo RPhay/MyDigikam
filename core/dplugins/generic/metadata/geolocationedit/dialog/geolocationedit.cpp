@@ -767,6 +767,11 @@ void GeolocationEdit::saveSettings()
     config->sync();
 }
 
+void GeolocationEdit::reject()
+{
+    close();
+}
+
 void GeolocationEdit::closeEvent(QCloseEvent *e)
 {
     if (!e) return;

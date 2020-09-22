@@ -119,7 +119,7 @@ BUGFIXES:
 106 ==> 426862 - Keyboard shortcut "delete" not working.
 107 ==> 426481 - Face recognition feels like a regression from 6.4.
 108 ==> 426479 - Slideshow: Show lens name in properties overlay.
-109 ==> 
+109 ==> 426884 - Geolocation Editor discards changes without warning.
 110 ==> 
 111 ==> 
 112 ==> 

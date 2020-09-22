@@ -76,7 +76,8 @@ Q_SIGNALS:
 
 protected:
 
-    void closeEvent(QCloseEvent* e) override;
+    void reject()                       override;
+    void closeEvent(QCloseEvent* e)     override;
     bool eventFilter(QObject*, QEvent*) override;
 
 private:
