@@ -62,8 +62,6 @@ private:
     const PanoramaItemUrlsMap* const urlList;
     const bool                       savePTO;
     const bool                       addGPlusMetadata;
-
-    DMetadata                        m_meta;
 };
 
 } // namespace DigikamGenericPanoramaPlugin
