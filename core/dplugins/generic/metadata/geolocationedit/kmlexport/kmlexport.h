@@ -174,7 +174,7 @@ private:
 
     QList<QUrl>                 m_urls;
     DInfoInterface*             m_iface;
-    DMetadata                   m_meta;
+    DMetadata*                  m_meta;
 
     /// the root document, used to create all QDomElements
     QDomDocument*               m_kmlDocument;

@@ -61,12 +61,14 @@ KmlExport::KmlExport(DInfoInterface* const iface)
       m_GPXOpacity(64),
       m_GPXAltitudeMode(0),
       m_iface(iface),
+      m_meta(new DMetadata),
       m_kmlDocument(nullptr)
 {
 }
 
 KmlExport::~KmlExport()
 {
+    delete m_meta;
 }
 
 void KmlExport::setUrls(const QList<QUrl>& urls)
@@ -97,7 +99,8 @@ QImage KmlExport::generateSquareThumbnail(const QImage& fullImage, int size) con
     QPixmap croppedPix(size, size);
     QPainter painter(&croppedPix);
 
-    int sx = 0, sy = 0;
+    int sx = 0;
+    int sy = 0;
 
     if (image.width() > size)
     {
@@ -182,7 +185,7 @@ void KmlExport::generateImagesthumb(const QUrl& imageURL, QDomElement& kmlAlbum)
 
     if (info.orientation() != DMetadata::ORIENTATION_UNSPECIFIED)
     {
-         m_meta.rotateExifQImage(image, (MetaEngine::ImageOrientation)info.orientation());
+         m_meta->rotateExifQImage(image, (MetaEngine::ImageOrientation)info.orientation());
     }
 
     image = image.scaled(m_size, m_size, Qt::KeepAspectRatioByExpanding);
@@ -206,9 +209,9 @@ void KmlExport::generateImagesthumb(const QUrl& imageURL, QDomElement& kmlAlbum)
      * which already seems to strip the extension
      */
     QString baseFileName = webifyFileName(info.name());
-
-    //baseFileName         = mUniqueNameHelper.makeNameUnique(baseFileName);
-
+/*
+    baseFileName         = mUniqueNameHelper.makeNameUnique(baseFileName);
+*/
     QString fullFileName;
     fullFileName         = baseFileName + QLatin1Char('.') + imageFormat.toLower();
     QString destPath     = m_imageDir.filePath(fullFileName);
@@ -223,7 +226,9 @@ void KmlExport::generateImagesthumb(const QUrl& imageURL, QDomElement& kmlAlbum)
     {
         logInfo(i18n("Creation of picture '%1'", fullFileName));
 
-        double alt = 0.0, lat = 0.0, lng = 0.0;
+        double alt = 0.0;
+        double lat = 0.0;
+        double lng = 0.0;
 
         if      (info.hasGeolocationInfo())
         {
@@ -231,9 +236,9 @@ void KmlExport::generateImagesthumb(const QUrl& imageURL, QDomElement& kmlAlbum)
             lng = info.longitude();
             alt = info.altitude();
         }
-        else if (m_meta.load(imageURL.toLocalFile()))
+        else if (m_meta->load(imageURL.toLocalFile()))
         {
-            m_meta.getGPSInfo(alt, lat, lng);
+            m_meta->getGPSInfo(alt, lat, lng);
         }
 
         QDomElement kmlPlacemark = addKmlElement(kmlAlbum, QLatin1String("Placemark"));
@@ -294,7 +299,7 @@ void KmlExport::generateImagesthumb(const QUrl& imageURL, QDomElement& kmlAlbum)
          */
         QDateTime datetime;
 
-        m_meta.getItemDateTime();
+        m_meta->getItemDateTime();
 
         if (datetime.isValid())
         {
@@ -458,12 +463,14 @@ void KmlExport::generate()
     for (QList<QUrl>::ConstIterator selIt = images.constBegin() ;
          selIt != imagesEnd ; ++selIt, ++pos)
     {
-        double alt, lat, lng;
+        double alt;
+        double lat;
+        double lng;
         QUrl url        = *selIt;
         DItemInfo info(m_iface->itemInfo(url));
         bool hasGPSInfo = info.hasGeolocationInfo();
 
-        if (hasGPSInfo)
+        if      (hasGPSInfo)
         {
             lat = info.latitude();
             lng = info.longitude();
@@ -472,9 +479,9 @@ void KmlExport::generate()
             (void)lng; // Remove clang warnings.
             (void)alt; // Remove clang warnings.
         }
-        else if (m_meta.load(url.toLocalFile()))
+        else if (m_meta->load(url.toLocalFile()))
         {
-            hasGPSInfo = m_meta.getGPSInfo(alt, lat, lng);
+            hasGPSInfo = m_meta->getGPSInfo(alt, lat, lng);
         }
 
         if (hasGPSInfo)
