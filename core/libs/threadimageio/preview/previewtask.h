@@ -41,11 +41,8 @@ class PreviewLoadingTask : public SharedLoadingTask
 {
 public:
 
-    explicit PreviewLoadingTask(LoadSaveThread* const thread, const LoadingDescription& description)
-        : SharedLoadingTask(thread, description, LoadSaveThread::AccessModeRead, LoadingTaskStatusLoading),
-          m_fromRawEmbeddedPreview(false)
-    {
-    }
+    explicit PreviewLoadingTask(LoadSaveThread* const thread, const LoadingDescription& description);
+    ~PreviewLoadingTask();
 
     void execute() override;
 

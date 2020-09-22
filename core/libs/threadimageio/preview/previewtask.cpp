@@ -44,6 +44,16 @@
 namespace Digikam
 {
 
+PreviewLoadingTask::PreviewLoadingTask(LoadSaveThread* const thread, const LoadingDescription& description)
+    : SharedLoadingTask(thread, description, LoadSaveThread::AccessModeRead, LoadingTaskStatusLoading),
+      m_fromRawEmbeddedPreview(false)
+{
+}
+
+PreviewLoadingTask::~PreviewLoadingTask()
+{
+}
+
 void PreviewLoadingTask::execute()
 {
     if (m_loadingTaskStatus == LoadingTaskStatusStopping)

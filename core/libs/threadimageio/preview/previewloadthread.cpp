@@ -39,6 +39,10 @@ PreviewLoadThread::PreviewLoadThread(QObject* const parent)
     m_loadingPolicy = LoadingPolicyFirstRemovePrevious;
 }
 
+PreviewLoadThread::~PreviewLoadThread()
+{
+}
+
 LoadingDescription PreviewLoadThread::createLoadingDescription(const QString& filePath, const PreviewSettings& settings, int size)
 {
     return createLoadingDescription(filePath, settings, size, IccManager::displayProfile(m_displayingWidget));

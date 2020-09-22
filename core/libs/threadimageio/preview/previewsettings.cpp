@@ -33,6 +33,20 @@ PreviewSettings::PreviewSettings(Quality quality, RawLoading rawLoading)
 {
 }
 
+PreviewSettings::~PreviewSettings()
+{
+}
+
+PreviewSettings PreviewSettings::fastPreview()
+{
+    return PreviewSettings(FastPreview, RawPreviewAutomatic);
+}
+
+PreviewSettings PreviewSettings::highQualityPreview()
+{
+    return PreviewSettings(FastButLargePreview, RawPreviewAutomatic);
+}
+
 bool PreviewSettings::operator==(const PreviewSettings& other) const
 {
     return ((quality           == other.quality)     &&
@@ -41,4 +55,3 @@ bool PreviewSettings::operator==(const PreviewSettings& other) const
 }
 
 } // namespace Digikam
-
