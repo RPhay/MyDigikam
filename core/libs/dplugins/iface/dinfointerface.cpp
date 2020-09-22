@@ -334,6 +334,13 @@ QString DItemInfo::source() const
     return (!val.isNull() ? val.toString() : QString());
 }
 
+QString DItemInfo::lens() const
+{
+    QVariant val = parseInfoMap(QLatin1String("lens"));
+
+    return (!val.isNull() ? val.toString() : QString());
+}
+
 QString DItemInfo::make() const
 {
     QVariant val = parseInfoMap(QLatin1String("make"));

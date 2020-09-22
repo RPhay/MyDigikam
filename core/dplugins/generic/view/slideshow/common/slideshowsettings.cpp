@@ -54,6 +54,7 @@ const QString SlideShowSettings::configSlideShowPrintCapIfNoTitleEntry(QLatin1St
 const QString SlideShowSettings::configSlideShowPrintDateEntry(QLatin1String("SlideShowPrintDate"));
 const QString SlideShowSettings::configSlideShowPrintExpoSensitivityEntry(QLatin1String("SlideShowPrintExpoSensitivity"));
 const QString SlideShowSettings::configSlideShowPrintMakeModelEntry(QLatin1String("SlideShowPrintMakeModel"));
+const QString SlideShowSettings::configSlideShowPrintLensModelEntry(QLatin1String("SlideShowPrintLensModel"));
 const QString SlideShowSettings::configSlideShowPrintNameEntry(QLatin1String("SlideShowPrintName"));
 const QString SlideShowSettings::configSlideShowPrintTagsEntry(QLatin1String("SlideShowPrintTags"));
 const QString SlideShowSettings::configSlideShowPrintLabelsEntry(QLatin1String("SlideShowPrintLabels"));
@@ -69,6 +70,7 @@ SlideShowSettings::SlideShowSettings()
       printDate(false),
       printApertureFocal(false),
       printMakeModel(false),
+      printLensModel(false),
       printExpoSensitivity(false),
       printComment(false),
       printTitle(false),
@@ -106,6 +108,7 @@ void SlideShowSettings::readFromConfig()
     printApertureFocal        = group.readEntry(configSlideShowPrintApertureFocalEntry,   false);
     printExpoSensitivity      = group.readEntry(configSlideShowPrintExpoSensitivityEntry, false);
     printMakeModel            = group.readEntry(configSlideShowPrintMakeModelEntry,       false);
+    printLensModel            = group.readEntry(configSlideShowPrintLensModelEntry,       false);
     printComment              = group.readEntry(configSlideShowPrintCommentEntry,         false);
     printTitle                = group.readEntry(configSlideShowPrintTitleEntry,           false);
     printCapIfNoTitle         = group.readEntry(configSlideShowPrintCapIfNoTitleEntry,    false);
@@ -133,6 +136,7 @@ void SlideShowSettings::writeToConfig()
     group.writeEntry(configSlideShowPrintApertureFocalEntry,   printApertureFocal);
     group.writeEntry(configSlideShowPrintExpoSensitivityEntry, printExpoSensitivity);
     group.writeEntry(configSlideShowPrintMakeModelEntry,       printMakeModel);
+    group.writeEntry(configSlideShowPrintLensModelEntry,       printLensModel);
     group.writeEntry(configSlideShowPrintCommentEntry,         printComment);
     group.writeEntry(configSlideShowPrintTitleEntry,           printTitle);
     group.writeEntry(configSlideShowPrintCapIfNoTitleEntry,    printCapIfNoTitle);

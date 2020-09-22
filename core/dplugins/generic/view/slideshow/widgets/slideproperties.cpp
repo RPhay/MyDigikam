@@ -181,6 +181,22 @@ void SlideProperties::paintEvent(QPaintEvent*)
         printInfoText(p, offset, str);
     }
 
+    // Display Lens model.
+
+    if (d->settings->printLensModel)
+    {
+        str.clear();
+
+        QString lens = item.lens();
+
+        if (!lens.isEmpty())
+        {
+            str = lens;
+        }
+
+        printInfoText(p, offset, str);
+    }
+
     // Display Exposure and Sensitivity.
 
     if (d->settings->printExpoSensitivity)
