@@ -151,6 +151,7 @@ void ThumbnailImageCatcher::Private::reset()
 void ThumbnailImageCatcher::Private::harvest(const LoadingDescription& description, const QImage& image)
 {
     // called under lock
+
     bool finished = true;
 
     for (int i = 0 ; i < tasks.size() ; ++i)

@@ -65,14 +65,14 @@ LoadingDescription ThumbnailLoadThread::Private::createLoadingDescription(const 
                                                                           const QRect& detailRect,
                                                                           bool setLastDescription)
 {
-    size = thumbnailSizeForPixmapSize(size);
+    size                                          = thumbnailSizeForPixmapSize(size);
 
     LoadingDescription description(identifier.filePath, PreviewSettings(), size,
                                    LoadingDescription::NoColorConversion,
                                    LoadingDescription::PreviewParameters::DetailThumbnail);
-    description.previewParameters.storageReference = identifier.id;
 
-    description.previewParameters.extraParameter = detailRect;
+    description.previewParameters.storageReference = identifier.id;
+    description.previewParameters.extraParameter   = detailRect;
 
     if (IccSettings::instance()->useManagedPreviews())
     {
@@ -220,9 +220,9 @@ int ThumbnailLoadThread::thumbnailToPixmapSize(int size) const
 
 int ThumbnailLoadThread::thumbnailToPixmapSize(bool withHighlight, int size)
 {
-    if (withHighlight && size >= 10)
+    if (withHighlight && (size >= 10))
     {
-        return size + 2;
+        return (size + 2);
     }
 
     return size;
@@ -233,7 +233,11 @@ int ThumbnailLoadThread::pixmapToThumbnailSize(int size) const
     return d->thumbnailSizeForPixmapSize(size);
 }
 
-bool ThumbnailLoadThread::find(const ThumbnailIdentifier& identifier, int size, QPixmap* retPixmap, bool emitSignal, const QRect& detailRect)
+bool ThumbnailLoadThread::find(const ThumbnailIdentifier& identifier,
+                               int size,
+                               QPixmap* retPixmap,
+                               bool emitSignal,
+                               const QRect& detailRect)
 {
     const QPixmap* pix = nullptr;
     LoadingDescription description;
@@ -597,7 +601,7 @@ QPixmap ThumbnailLoadThread::surrogatePixmap(const LoadingDescription& descripti
     QSize size(pix.size());
     size.scale(description.previewParameters.size, description.previewParameters.size, Qt::KeepAspectRatio);
 
-    if (!pix.isNull() && size.width() < pix.width() && size.height() < pix.height())
+    if (!pix.isNull() && (size.width() < pix.width()) && (size.height() < pix.height()))
     {
         // only scale down
         // do not scale up, looks bad

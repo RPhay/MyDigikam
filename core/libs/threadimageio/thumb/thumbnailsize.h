@@ -74,7 +74,7 @@ public:
     bool operator==(const ThumbnailSize& thumbsize) const;
     bool operator!=(const ThumbnailSize& thumbsize) const;
 
-    int size() const;
+    int size()                                      const;
 
 public:
 

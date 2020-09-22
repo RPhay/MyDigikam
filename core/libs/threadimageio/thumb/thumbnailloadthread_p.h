@@ -141,9 +141,9 @@ public:
     bool                      checkDescription(const LoadingDescription& description);
     QList<LoadingDescription> makeDescriptions(const QList<ThumbnailIdentifier>& identifiers, int size);
     QList<LoadingDescription> makeDescriptions(const QList<QPair<ThumbnailIdentifier, QRect> >& idsAndRects, int size);
-    bool                      hasHighlightingBorder() const;
+    bool                      hasHighlightingBorder()                       const;
     int                       pixmapSizeForThumbnailSize(int thumbnailSize) const;
-    int                       thumbnailSizeForPixmapSize(int pixmapSize) const;
+    int                       thumbnailSizeForPixmapSize(int pixmapSize)    const;
 };
 
 // --- ThumbnailImageCatcher ---------------------------------------------------------
@@ -191,9 +191,9 @@ public:
 
     explicit Private()
     {
-        state   = Inactive;
-        thread  = nullptr;
-        active  = true;
+        state  = Inactive;
+        thread = nullptr;
+        active = true;
     }
 
     void reset();

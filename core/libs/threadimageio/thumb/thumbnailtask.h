@@ -42,11 +42,13 @@ class ThumbnailLoadingTask : public SharedLoadingTask
 {
 public:
 
-    explicit ThumbnailLoadingTask(LoadSaveThread* const thread, const LoadingDescription& description);
+    explicit ThumbnailLoadingTask(LoadSaveThread* const thread,
+                                  const LoadingDescription& description);
 
     void execute()     override;
     void postProcess() override;
-    void setThumbResult(const LoadingDescription& loadingDescription, const QImage& qimage);
+    void setThumbResult(const LoadingDescription& loadingDescription,
+                        const QImage& qimage);
 
 private:
 
