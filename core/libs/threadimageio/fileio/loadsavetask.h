@@ -54,14 +54,10 @@ public:
 
 public:
 
-    explicit LoadSaveTask(LoadSaveThread* const thread)
-        : m_thread(thread)
-    {
-    }
+    explicit LoadSaveTask(LoadSaveThread* const thread);
+    virtual ~LoadSaveTask();
 
-    virtual ~LoadSaveTask()
-    {
-    }
+public:
 
     virtual void execute()                    = 0;
     virtual TaskType type()                   = 0;
@@ -90,33 +86,20 @@ public:
 
 public:
 
-    explicit LoadingTask(LoadSaveThread* const thread, const LoadingDescription& description,
-                         LoadingTaskStatus loadingTaskStatus = LoadingTaskStatusLoading)
-        : LoadSaveTask(thread),
-          m_loadingDescription(description),
-          m_loadingTaskStatus(loadingTaskStatus)
-    {
-    }
+    explicit LoadingTask(LoadSaveThread* const thread,
+                         const LoadingDescription& description,
+                         LoadingTaskStatus loadingTaskStatus = LoadingTaskStatusLoading);
+    virtual ~LoadingTask();
 
-    LoadingTaskStatus status() const
-    {
-        return m_loadingTaskStatus;
-    }
+    LoadingTaskStatus status()                     const;
+    QString filePath()                             const;
 
-    QString filePath() const
-    {
-        return m_loadingDescription.filePath;
-    }
-
-    const LoadingDescription& loadingDescription() const
-    {
-        return m_loadingDescription;
-    }
+    const LoadingDescription& loadingDescription() const;
 
     // LoadSaveTask
 
-    void execute()  override;
-    TaskType type() override;
+    void execute()                    override;
+    TaskType type()                   override;
 
     // DImgLoaderObserver
 
@@ -127,8 +110,8 @@ public:
 
 protected:
 
-    LoadingDescription          m_loadingDescription;
-    volatile LoadingTaskStatus  m_loadingTaskStatus;
+    LoadingDescription         m_loadingDescription;
+    volatile LoadingTaskStatus m_loadingTaskStatus;
 };
 
 //---------------------------------------------------------------------------------------------------
@@ -139,23 +122,24 @@ class SharedLoadingTask : public LoadingTask,
 {
 public:
 
-    explicit SharedLoadingTask(LoadSaveThread* const thread, const LoadingDescription& description,
+    explicit SharedLoadingTask(LoadSaveThread* const thread,
+                               const LoadingDescription& description,
                                LoadSaveThread::AccessMode mode = LoadSaveThread::AccessModeReadWrite,
                                LoadingTaskStatus loadingTaskStatus = LoadingTaskStatusLoading);
 
-    void execute()                           override;
-    void progressInfo(float progress)        override;
-    bool continueQuery()                     override;
-    void setStatus(LoadingTaskStatus status) override;
+    void execute()                                                      override;
+    void progressInfo(float progress)                                   override;
+    bool continueQuery()                                                override;
+    void setStatus(LoadingTaskStatus status)                            override;
 
-    bool needsPostProcessing() const;
+    bool needsPostProcessing()              const;
     virtual void postProcess();
 
     // LoadingProcess
 
-    bool completed()   const override;
-    QString filePath() const override;
-    QString cacheKey() const override;
+    bool completed()                        const                       override;
+    QString filePath()                      const                       override;
+    QString cacheKey()                      const                       override;
     void addListener(LoadingProcessListener* const listener)            override;
     void removeListener(LoadingProcessListener* const listener)         override;
     void notifyNewLoadingProcess(LoadingProcess* const process,
@@ -163,13 +147,13 @@ public:
 
     // LoadingProcessListener
 
-    bool querySendNotifyEvent()             const override;
+    bool querySendNotifyEvent()             const                       override;
     void setResult(const LoadingDescription& loadingDescription,
-                   const DImg& img)               override;
-    LoadSaveNotifier* loadSaveNotifier()    const override;
-    LoadSaveThread::AccessMode accessMode() const override;
+                   const DImg& img)                                     override;
+    LoadSaveNotifier* loadSaveNotifier()    const                       override;
+    LoadSaveThread::AccessMode accessMode() const                       override;
 
-    DImg img() { return m_img; }
+    DImg img()                              const;
 
 protected:
 
@@ -195,24 +179,13 @@ public:
 
 public:
 
-    explicit SavingTask(LoadSaveThread* const thread, const DImg& img, const QString& filePath, const QString& format)
-        : LoadSaveTask(thread),
-          m_filePath(filePath),
-          m_format(format),
-          m_img(img),
-          m_savingTaskStatus(SavingTaskStatusSaving)
-    {
-    }
+    explicit SavingTask(LoadSaveThread* const thread,
+                        const DImg& img,
+                        const QString& filePath,
+                        const QString& format);
 
-    SavingTaskStatus status() const
-    {
-        return m_savingTaskStatus;
-    }
-
-    QString filePath() const
-    {
-        return m_filePath;
-    }
+    SavingTaskStatus status() const;
+    QString filePath()        const;
 
 public:
 

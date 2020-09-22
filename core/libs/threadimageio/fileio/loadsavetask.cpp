@@ -24,8 +24,6 @@
 
 #include "loadsavetask.h"
 
-// Qt includes
-
 // Local includes
 
 #include "digikam_debug.h"
@@ -38,6 +36,46 @@
 
 namespace Digikam
 {
+
+LoadSaveTask::LoadSaveTask(LoadSaveThread* const thread)
+    : m_thread(thread)
+{
+}
+
+LoadSaveTask::~LoadSaveTask()
+{
+}
+
+// --------------------------------------------------------------------------------------------
+
+LoadingTask::LoadingTask(LoadSaveThread* const thread,
+                         const LoadingDescription& description,
+                         LoadingTaskStatus loadingTaskStatus)
+    : LoadSaveTask(thread),
+      m_loadingDescription(description),
+      m_loadingTaskStatus(loadingTaskStatus)
+{
+}
+
+
+LoadingTask::~LoadingTask()
+{
+}
+
+LoadingTask::LoadingTaskStatus LoadingTask::status() const
+{
+    return m_loadingTaskStatus;
+}
+
+QString LoadingTask::filePath() const
+{
+    return m_loadingDescription.filePath;
+}
+
+const LoadingDescription& LoadingTask::loadingDescription() const
+{
+    return m_loadingDescription;
+}
 
 void LoadingTask::execute()
 {
@@ -458,7 +496,8 @@ void SharedLoadingTask::removeListener(LoadingProcessListener* const listener)
     m_listeners.removeAll(listener);
 }
 
-void SharedLoadingTask::notifyNewLoadingProcess(LoadingProcess* const process, const LoadingDescription& description)
+void SharedLoadingTask::notifyNewLoadingProcess(LoadingProcess* const process,
+                                                const LoadingDescription& description)
 {
     // Ok, we are notified that another task has been started in another thread.
     // We are of course only interested if the task loads the same file,
@@ -498,7 +537,35 @@ LoadSaveThread::AccessMode SharedLoadingTask::accessMode() const
     return m_accessMode;
 }
 
+DImg SharedLoadingTask::img() const
+{
+    return m_img;
+}
+
+
 //---------------------------------------------------------------------------------------------------
+
+SavingTask::SavingTask(LoadSaveThread* const thread,
+                       const DImg& img,
+                       const QString& filePath,
+                       const QString& format)
+    : LoadSaveTask(thread),
+        m_filePath(filePath),
+        m_format(format),
+        m_img(img),
+        m_savingTaskStatus(SavingTaskStatusSaving)
+{
+}
+
+SavingTask::SavingTaskStatus SavingTask::status() const
+{
+    return m_savingTaskStatus;
+}
+
+QString SavingTask::filePath() const
+{
+    return m_filePath;
+}
 
 void SavingTask::execute()
 {
