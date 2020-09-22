@@ -196,14 +196,6 @@ void ThumbnailLoadingTask::execute()
         {
             LoadingCache::CacheLock lock(cache);
 
-            // put valid image into cache of loaded images
-
-            if (!m_qimage.isNull())
-            {
-                cache->putThumbnail(m_loadingDescription.cacheKey(), m_qimage,
-                                    m_loadingDescription.filePath);
-            }
-
             // remove this from the list of loading processes in cache
 
             cache->removeLoadingProcess(this);
@@ -212,15 +204,23 @@ void ThumbnailLoadingTask::execute()
 
             removeListener(this);
 
-            // dispatch image to all listeners
-
-            for (int i = 0 ; i < m_listeners.count() ; ++i)
+            if (!m_qimage.isNull())
             {
-                ThumbnailLoadingTask* const task = dynamic_cast<ThumbnailLoadingTask*>(m_listeners.at(i));
+                // put valid image into cache of loaded images
 
-                if (task)
+                cache->putThumbnail(m_loadingDescription.cacheKey(), m_qimage,
+                                    m_loadingDescription.filePath);
+
+                // dispatch image to all listeners
+
+                for (int i = 0 ; i < m_listeners.count() ; ++i)
                 {
-                    task->setThumbResult(m_loadingDescription, m_qimage);
+                    ThumbnailLoadingTask* const task = dynamic_cast<ThumbnailLoadingTask*>(m_listeners.at(i));
+
+                    if (task)
+                    {
+                        task->setThumbResult(m_loadingDescription, m_qimage);
+                    }
                 }
             }
 

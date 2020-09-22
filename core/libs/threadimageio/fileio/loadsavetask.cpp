@@ -261,14 +261,6 @@ void SharedLoadingTask::execute()
         {
             LoadingCache::CacheLock lock(cache);
 
-            // put valid image into cache of loaded images
-
-            if (!m_img.isNull())
-            {
-                cache->putImage(m_loadingDescription.cacheKey(), m_img,
-                                m_loadingDescription.filePath);
-            }
-
             // remove this from the list of loading processes in cache
 
             cache->removeLoadingProcess(this);
@@ -277,22 +269,30 @@ void SharedLoadingTask::execute()
 
             removeListener(this);
 
-            // dispatch image to all listeners
-
-            for (int i = 0 ; i < m_listeners.count() ; ++i)
+            if (!m_img.isNull())
             {
-                LoadingProcessListener* const l = m_listeners.at(i);
+                // put valid image into cache of loaded images
 
-                if (l->accessMode() == LoadSaveThread::AccessModeReadWrite)
-                {
-                    // If a listener requested ReadWrite access, it gets a deep copy.
-                    // DImg is explicitly shared.
+                cache->putImage(m_loadingDescription.cacheKey(), m_img,
+                                m_loadingDescription.filePath);
 
-                    l->setResult(m_loadingDescription, m_img.copy());
-                }
-                else
+                // dispatch image to all listeners
+
+                for (int i = 0 ; i < m_listeners.count() ; ++i)
                 {
-                    l->setResult(m_loadingDescription, m_img);
+                    LoadingProcessListener* const l = m_listeners.at(i);
+
+                    if (l->accessMode() == LoadSaveThread::AccessModeReadWrite)
+                    {
+                        // If a listener requested ReadWrite access, it gets a deep copy.
+                        // DImg is explicitly shared.
+
+                        l->setResult(m_loadingDescription, m_img.copy());
+                    }
+                    else
+                    {
+                        l->setResult(m_loadingDescription, m_img);
+                    }
                 }
             }
 
@@ -438,37 +438,6 @@ bool SharedLoadingTask::continueQuery()
 void SharedLoadingTask::setStatus(LoadingTaskStatus status)
 {
     m_loadingTaskStatus = status;
-
-    if (m_loadingTaskStatus == LoadingTaskStatusStopping)
-    {
-        LoadingCache* const cache = LoadingCache::cache();
-        LoadingCache::CacheLock lock(cache);
-
-        // remove this from the list of loading processes in cache
-
-        cache->removeLoadingProcess(this);
-
-        // remove myself from list of listeners
-
-        removeListener(this);
-
-        // check for m_usedProcess, to avoid race condition that it has finished before
-
-        if (m_usedProcess)
-        {
-            // remove this from list of listeners - check in continueQuery() of active thread
-
-            m_usedProcess->removeListener(this);
-
-            // set m_usedProcess to 0, signalling that we have detached already
-
-            m_usedProcess = nullptr;
-
-            // wake all listeners - particularly this - from waiting on cache condvar
-
-            lock.wakeAll();
-        }
-    }
 }
 
 bool SharedLoadingTask::completed() const
