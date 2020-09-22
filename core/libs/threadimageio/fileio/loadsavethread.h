@@ -51,17 +51,18 @@ class DIGIKAM_EXPORT LoadSaveNotifier
 {
 public:
 
-    virtual ~LoadSaveNotifier() {};
+    LoadSaveNotifier();
+    virtual ~LoadSaveNotifier();
 
-    virtual void imageStartedLoading(const LoadingDescription& loadingDescription) = 0;
-    virtual void loadingProgress(const LoadingDescription& loadingDescription, float progress) = 0;
-    virtual void imageLoaded(const LoadingDescription& loadingDescription, const DImg& img) = 0;
+    virtual void imageStartedLoading(const LoadingDescription& loadingDescription)                  = 0;
+    virtual void loadingProgress(const LoadingDescription& loadingDescription, float progress)      = 0;
+    virtual void imageLoaded(const LoadingDescription& loadingDescription, const DImg& img)         = 0;
     virtual void moreCompleteLoadingAvailable(const LoadingDescription& oldLoadingDescription,
-                                              const LoadingDescription& newLoadingDescription) = 0;
-    virtual void imageStartedSaving(const QString& filePath) = 0;
-    virtual void savingProgress(const QString& filePath, float progress) = 0;
-    virtual void imageSaved(const QString& filePath, bool success) = 0;
-    virtual void thumbnailLoaded(const LoadingDescription& loadingDescription, const QImage& img) = 0;
+                                              const LoadingDescription& newLoadingDescription)      = 0;
+    virtual void imageStartedSaving(const QString& filePath)                                        = 0;
+    virtual void savingProgress(const QString& filePath, float progress)                            = 0;
+    virtual void imageSaved(const QString& filePath, bool success)                                  = 0;
+    virtual void thumbnailLoaded(const LoadingDescription& loadingDescription, const QImage& img)   = 0;
 };
 
 // -------------------------------------------------------------------------------------------------------
@@ -70,20 +71,21 @@ class DIGIKAM_EXPORT LoadSaveFileInfoProvider
 {
 public:
 
-    virtual ~LoadSaveFileInfoProvider() {}
+    LoadSaveFileInfoProvider();
+    virtual ~LoadSaveFileInfoProvider();
 
     /**
      * Gives a hint at the orientation of the image.
      * This can be used to supersede the Exif information in the file.
      * Will not be used if DMetadata::ORIENTATION_UNSPECIFIED (default value)
      */
-    virtual int   orientationHint(const QString& path) = 0;
+    virtual int   orientationHint(const QString& path)  = 0;
 
     /**
      * Gives a hint at the size of the image.
      * This can be used to supersede the Exif information in the file.
      */
-    virtual QSize dimensionsHint(const QString& path) = 0;
+    virtual QSize dimensionsHint(const QString& path)   = 0;
 };
 
 // -------------------------------------------------------------------------------------------------------
@@ -154,8 +156,10 @@ public:
      * Retrieves the Exif orientation, either from the info provider if available,
      * or from the metadata
      */
-    static int exifOrientation(const QString& filePath, const DMetadata& metadata,
-                               bool isRaw, bool fromRawEmbeddedPreview);
+    static int exifOrientation(const QString& filePath,
+                               const DMetadata& metadata,
+                               bool isRaw,
+                               bool fromRawEmbeddedPreview);
 
 Q_SIGNALS:
 

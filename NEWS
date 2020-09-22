@@ -116,7 +116,7 @@ BUGFIXES:
 103 ==> 300843 - Just a random crash, just browsing photos.
 104 ==> 256898 - digiKam crashed while browsing Photos.
 105 ==> 338164 - Crash when switching from camera preview to folder on system.
-106 ==> 
+106 ==> 426862 - Keyboard shortcut "delete" not working.
 107 ==> 
 108 ==> 
 109 ==> 

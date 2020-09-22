@@ -35,6 +35,16 @@
 namespace Digikam
 {
 
+::LoadSaveNotifier::LoadSaveNotifier()
+{
+}
+
+LoadSaveNotifier::~LoadSaveNotifier()
+{
+}
+
+// --------------------------------------------------------------------------------
+
 class Q_DECL_HIDDEN LoadSaveThread::Private
 {
 public:
