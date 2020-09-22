@@ -355,10 +355,16 @@ JpegRotator::JpegRotator(const QString& file)
     : m_file(file),
       m_destFile(file)
 {
-    m_metadata.load(file);
-    m_orientation  = m_metadata.getItemOrientation();
+    m_metadata     = new DMetadata;
+    m_metadata->load(file);
+    m_orientation  = m_metadata->getItemOrientation();
     QFileInfo info(file);
     m_documentName = info.fileName();
+}
+
+JpegRotator::~JpegRotator()
+{
+    delete m_metadata;
 }
 
 // -----------------------------------------------------------------------------
@@ -543,31 +549,31 @@ void JpegRotator::updateMetadata(const QString& fileName, const MetaEngineRotati
     // has a sense because the Exif dimension information can be missing from original image.
     // Get new dimensions with QImage will always work...
 
-    m_metadata.setItemDimensions(newSize);
+    m_metadata->setItemDimensions(newSize);
 
     // Update the image thumbnail.
 
-    QImage exifThumb = m_metadata.getExifThumbnail(true);
+    QImage exifThumb = m_metadata->getExifThumbnail(true);
 
     if (!exifThumb.isNull())
     {
-        m_metadata.setExifThumbnail(exifThumb.transformed(qmatrix));
+        m_metadata->setExifThumbnail(exifThumb.transformed(qmatrix));
     }
 
     QImage imagePreview;
 
-    if (m_metadata.getItemPreview(imagePreview))
+    if (m_metadata->getItemPreview(imagePreview))
     {
-        m_metadata.setItemPreview(imagePreview.transformed(qmatrix));
+        m_metadata->setItemPreview(imagePreview.transformed(qmatrix));
     }
 
     // Reset the Exif orientation tag of the temp image to normal
 
-    m_metadata.setItemOrientation(DMetadata::ORIENTATION_NORMAL);
+    m_metadata->setItemOrientation(DMetadata::ORIENTATION_NORMAL);
 
     // We update all new metadata now...
 
-    m_metadata.save(fileName, true);
+    m_metadata->save(fileName, true);
 
     // File properties restoration.
 

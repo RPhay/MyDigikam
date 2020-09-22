@@ -58,6 +58,11 @@ public:
     explicit JpegRotator(const QString& file);
 
     /**
+     * Destructor
+     */
+    ~JpegRotator();
+    
+    /**
      * Per default, the orientation is read from the metadata of the file.
      * You can override this value
      */
@@ -101,7 +106,7 @@ protected:
     QString                      m_destFile;
     QString                      m_documentName;
     QSize                        m_originalSize;
-    DMetadata                    m_metadata;
+    DMetadata*                   m_metadata;
     MetaEngine::ImageOrientation m_orientation;
 
 protected:
