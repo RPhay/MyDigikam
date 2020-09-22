@@ -192,9 +192,8 @@ void SlideProperties::paintEvent(QPaintEvent*)
         if (!lens.isEmpty())
         {
             str = lens;
+            printInfoText(p, offset, str);
         }
-
-        printInfoText(p, offset, str);
     }
 
     // Display Exposure and Sensitivity.
