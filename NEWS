@@ -100,4 +100,30 @@ BUGFIXES:
 087 ==> 417788 - Can't import a video file in an album.
 088 ==> 426218 - Pictures from old collection still in database after removing it.
 089 ==> 426597 - stack underflow crash in Digikam::DImg::load().
-090 ==> 
+090 ==> 159788 - Picture zoomed in "full screen modus".
+091 ==> 176699 - picture not shown, digiKam, error displaying pictures, just thumbails.
+092 ==> 193265 - The application suddenly crashes when I try to open a preview of a photo.
+093 ==> 170340 - Embed view does not work; I can not see an image.
+094 ==> 175326 - View photo displays blank image.
+095 ==> 172730 - Preview only, but no photo details shown at all.
+096 ==> 256161 - Another crash while navigating/deleting photos quickly.
+097 ==> 296653 - Selecting a range of photos when in preview mode is buggy.
+098 ==> 231570 - digiKam crashes when opening the full size preview with a very large panorama picture.
+099 ==> 240250 - Crash in previewer.
+100 ==> 320333 - digiKam crashed while changing to the next photo in photo preview view.
+101 ==> 330645 - digiKam crashed whilst advancing from one photo to the next in preview.
+102 ==> 251932 - digiKam crash.
+103 ==> 300843 - Just a random crash, just browsing photos.
+104 ==> 256898 - digiKam crashed while browsing Photos.
+105 ==> 338164 - Crash when switching from camera preview to folder on system.
+106 ==> 
+107 ==> 
+108 ==> 
+109 ==> 
+110 ==> 
+111 ==> 
+112 ==> 
+113 ==> 
+114 ==> 
+115 ==> 
+
