@@ -31,11 +31,6 @@ FaceItemRetriever::FaceItemRetriever(FacePipeline::Private* const d)
 {
 }
 
-ThumbnailImageCatcher* FaceItemRetriever::thumbnailCatcher() const
-{
-    return catcher;
-}
-
 void FaceItemRetriever::cancel()
 {
     catcher->cancel();
@@ -76,7 +71,7 @@ QList<QImage*> FaceItemRetriever::getDetails(const DImg& src, const QList<FaceTa
 QList<QImage*> FaceItemRetriever::getThumbnails(const QString& filePath, const QList<FaceTagsIface>& faces) const
 {
     Q_UNUSED(filePath)
-    thumbnailCatcher()->setActive(true);
+    catcher->setActive(true);
 
     foreach (const FaceTagsIface& face, faces)
     {
@@ -89,7 +84,7 @@ QList<QImage*> FaceItemRetriever::getThumbnails(const QString& filePath, const Q
 
     QList<QImage*> croppedFaces;
 
-    for (int i = 0; i < images.size(); ++i)
+    for (int i = 0 ; i < images.size() ; ++i)
     {
         QImage* croppedFace = new QImage();
         (*croppedFace)      = images[i].copy();
@@ -97,7 +92,7 @@ QList<QImage*> FaceItemRetriever::getThumbnails(const QString& filePath, const Q
         croppedFaces << croppedFace;
     }
 
-    thumbnailCatcher()->setActive(false);
+    catcher->setActive(false);
 
     return croppedFaces;
 }
