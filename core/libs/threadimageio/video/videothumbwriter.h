@@ -60,6 +60,12 @@ public:
     ~VideoThumbWriter();
 
     void writeFrame(VideoFrame& frame, QImage& image);
+
+private:
+
+    // Hidden copy constructor and assignment operator.
+    VideoThumbWriter(const VideoThumbWriter&);
+    VideoThumbWriter& operator=(const VideoThumbWriter&);
 };
 
 } // namespace Digikam

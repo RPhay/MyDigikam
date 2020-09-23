@@ -42,6 +42,13 @@ public:
     ~VideoStripFilter();
 
     void process(VideoFrame& videoFrame);
+
+private:
+
+    // Hidden copy constructor and assignment operator.
+    VideoStripFilter(const VideoStripFilter&);
+    VideoStripFilter& operator=(const VideoStripFilter&);
+
 };
 
 } // namespace Digikam
