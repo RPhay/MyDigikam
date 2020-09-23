@@ -108,6 +108,12 @@ protected:
     QMetaObject*           m_replacementMetaObject;
 
     StaticMetacallFunction m_originalStaticMetacall;
+
+private:
+
+    // Hidden copy constructor and assignment operator.
+    ParallelWorkers(const ParallelWorkers&);
+    ParallelWorkers& operator=(const ParallelWorkers&);
 };
 
 // -------------------------------------------------------------------------------------------------
@@ -196,6 +202,12 @@ public:
     {
         return ParallelWorkers::connect(signal, receiver, method, type);
     }
+
+private:
+
+    // Hidden copy constructor and assignment operator.
+    ParallelAdapter(const ParallelAdapter&);
+    ParallelAdapter& operator=(const ParallelAdapter&);
 };
 
 } // namespace Digikam

@@ -40,7 +40,8 @@ class QMutexLocker;
 namespace Digikam
 {
 
-class DIGIKAM_EXPORT DynamicThread : public QObject, public QRunnable
+class DIGIKAM_EXPORT DynamicThread : public QObject,
+                                     public QRunnable
 {
     Q_OBJECT
 
@@ -146,6 +147,12 @@ protected:
     void start(QMutexLocker& locker);
     void stop(QMutexLocker& locker);
     void wait(QMutexLocker& locker);
+
+private:
+
+    // Hidden copy constructor and assignment operator.
+    DynamicThread(const DynamicThread&);
+    DynamicThread& operator=(const DynamicThread&);
 
 private:
 

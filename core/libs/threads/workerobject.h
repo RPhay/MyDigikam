@@ -185,6 +185,10 @@ private:
     friend class WorkerObjectRunnable;
     friend class ThreadManager;
 
+    // Hidden copy constructor and assignment operator.
+    WorkerObject(const WorkerObject&);
+    WorkerObject& operator=(const WorkerObject&);
+
 private:
 
     class Private;

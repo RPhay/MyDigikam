@@ -66,6 +66,12 @@ protected:
 
 private:
 
+    // Hidden copy constructor and assignment operator.
+    ThreadManager(const ThreadManager&);
+    ThreadManager& operator=(const ThreadManager&);
+
+private:
+
     friend class ThreadManagerCreator;
 
     class Private;
