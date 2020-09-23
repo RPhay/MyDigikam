@@ -81,6 +81,8 @@ private:
     VideoThumbnailer(const VideoThumbnailer&);
     VideoThumbnailer& operator=(const VideoThumbnailer&);
 
+private:
+
     class Private;
     Private* const d;
 };

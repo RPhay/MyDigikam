@@ -66,6 +66,8 @@ private:
     VideoDecoder(const VideoDecoder&);
     VideoDecoder& operator=(const VideoDecoder&);
 
+private:
+
     class Private;
     Private* const d;
 };

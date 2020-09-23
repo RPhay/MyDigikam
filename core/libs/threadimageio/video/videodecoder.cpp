@@ -51,11 +51,15 @@ void VideoDecoder::initialize(const QString& filename)
     d->lastPixfmt = AV_PIX_FMT_NONE;
 
 #if LIBAVFORMAT_VERSION_MAJOR < 58
+
     av_register_all();
+
 #endif
 
 #if LIBAVCODEC_VERSION_MAJOR < 58
+
     avcodec_register_all();
+
 #endif
 
     if (avformat_open_input(&d->pFormatContext,

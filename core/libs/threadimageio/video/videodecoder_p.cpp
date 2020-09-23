@@ -85,6 +85,7 @@ bool VideoDecoder::Private::initializeVideo()
     if (videoStream == -1)
     {
         qDebug(DIGIKAM_GENERAL_LOG) << "Could not find video stream";
+
         return false;
     }
 
@@ -97,6 +98,7 @@ bool VideoDecoder::Private::initializeVideo()
 
         pVideoCodecContext = nullptr;
         qDebug(DIGIKAM_GENERAL_LOG) << "Video Codec not found";
+
         return false;
     }
 
@@ -106,6 +108,7 @@ bool VideoDecoder::Private::initializeVideo()
     if (avcodec_open2(pVideoCodecContext, pVideoCodec, nullptr) < 0)
     {
         qDebug(DIGIKAM_GENERAL_LOG) << "Could not open video codec";
+
         return false;
     }
 
@@ -124,16 +127,19 @@ bool VideoDecoder::Private::decodeVideoPacket() const
     int frameFinished = 0;
 
 #if LIBAVCODEC_VERSION_MAJOR < 53
+
     int bytesDecoded = avcodec_decode_video(pVideoCodecContext,
                                             pFrame,
                                             &frameFinished,
                                             pPacket->data,
                                             pPacket->size);
 #else
+
     int bytesDecoded = decodeVideoNew(pVideoCodecContext,
                                       pFrame,
                                       &frameFinished,
                                       pPacket);
+
 #endif
 
     if (bytesDecoded < 0)
@@ -245,6 +251,7 @@ bool VideoDecoder::Private::initFilterGraph(enum AVPixelFormat pixfmt,
     if (ret < 0)
     {
         qWarning(DIGIKAM_GENERAL_LOG) << "Unable to parse filter graph";
+
         return false;
     }
 
@@ -258,6 +265,7 @@ bool VideoDecoder::Private::initFilterGraph(enum AVPixelFormat pixfmt,
     if (ret < 0)
     {
         qWarning(DIGIKAM_GENERAL_LOG) << "Unable to validate filter graph";
+
         return false;
     }
 
@@ -267,6 +275,7 @@ bool VideoDecoder::Private::initFilterGraph(enum AVPixelFormat pixfmt,
     if (!bufferSourceContext || !bufferSinkContext)
     {
         qWarning(DIGIKAM_GENERAL_LOG) << "Unable to get source or sink";
+
         return false;
     }
 
@@ -331,6 +340,7 @@ void VideoDecoder::Private::convertAndScaleFrame(AVPixelFormat format,
     pVideoCodecContextPixFormat = pVideoCodecContext->pix_fmt;
 
 #if LIBAVUTIL_VERSION_MAJOR > 55
+
     switch (pVideoCodecContextPixFormat)
     {
         case AV_PIX_FMT_YUVJ420P:
@@ -352,6 +362,7 @@ void VideoDecoder::Private::convertAndScaleFrame(AVPixelFormat format,
         default:
             break;
     }
+
 #endif
 
     calculateDimensions(scaledSize, maintainAspectRatio, scaledWidth, scaledHeight);

@@ -639,8 +639,8 @@ VideoStripFilter::~VideoStripFilter()
 
 void VideoStripFilter::process(VideoFrame& videoFrame)
 {
-    quint32 videoStripWidth       = 0;
-    quint32 videoStripHeight      = 0;
+    quint32 videoStripWidth      = 0;
+    quint32 videoStripHeight     = 0;
     const quint8* const filmHole = determineFilmStrip(videoFrame.width, videoStripWidth, videoStripHeight);
 
     if (!filmHole)
@@ -648,9 +648,9 @@ void VideoStripFilter::process(VideoFrame& videoFrame)
         return;
     }
 
-    int frameIndex    = 0;
-    int filmHoleIndex = 0;
-    int offset        = (videoFrame.width * 3) - 3;
+    int frameIndex               = 0;
+    int filmHoleIndex            = 0;
+    int offset                   = (videoFrame.width * 3) - 3;
 
     for (quint32 i = 0 ; i < videoFrame.height ; ++i)
     {

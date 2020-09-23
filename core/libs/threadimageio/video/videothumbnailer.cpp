@@ -272,7 +272,7 @@ void VideoThumbnailer::Private::generateHistogram(const VideoFrame& videoFrame,
 
         for (quint32 j = 0 ; j < videoFrame.width * 3 ; j += 3)
         {
-            ++histogram.r[videoFrame.frameData[pixelIndex + j]];
+            ++histogram.r[videoFrame.frameData[pixelIndex + j    ]];
             ++histogram.g[videoFrame.frameData[pixelIndex + j + 1]];
             ++histogram.b[videoFrame.frameData[pixelIndex + j + 2]];
         }
