@@ -58,6 +58,12 @@ private:
 
     QImage            m_qimage;
     ThumbnailCreator* m_creator;
+
+private:
+
+    // Hidden copy constructor and assignment operator.
+    ThumbnailLoadingTask(const ThumbnailLoadingTask&);
+    ThumbnailLoadingTask& operator=(const ThumbnailLoadingTask&);
 };
 
 } // namespace Digikam

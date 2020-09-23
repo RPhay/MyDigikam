@@ -264,6 +264,12 @@ private Q_SLOTS:
 
 private:
 
+    // Hidden copy constructor and assignment operator.
+    ThumbnailLoadThread(const ThumbnailLoadThread&);
+    ThumbnailLoadThread& operator=(const ThumbnailLoadThread&);
+
+private:
+
     class Private;
     Private* const d;
 };
@@ -324,6 +330,12 @@ public Q_SLOTS:
 protected Q_SLOTS:
 
     void slotThumbnailLoaded(const LoadingDescription&, const QImage&);
+
+private:
+
+    // Hidden copy constructor and assignment operator.
+    ThumbnailImageCatcher(const ThumbnailImageCatcher&);
+    ThumbnailImageCatcher& operator=(const ThumbnailImageCatcher&);
 
 private:
 
