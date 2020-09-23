@@ -68,6 +68,12 @@ public:
 protected:
 
     LoadSaveThread* m_thread;
+
+private:
+
+    // Hidden copy constructor and assignment operator.
+    LoadSaveTask(const LoadSaveTask&);
+    LoadSaveTask& operator=(const LoadSaveTask&);
 };
 
 //---------------------------------------------------------------------------------------------------
@@ -112,6 +118,12 @@ protected:
 
     LoadingDescription         m_loadingDescription;
     volatile LoadingTaskStatus m_loadingTaskStatus;
+
+private:
+
+    // Hidden copy constructor and assignment operator.
+    LoadingTask(const LoadingTask&);
+    LoadingTask& operator=(const LoadingTask&);
 };
 
 //---------------------------------------------------------------------------------------------------
@@ -162,6 +174,12 @@ protected:
     LoadingProcess*                m_usedProcess;
     QList<LoadingProcessListener*> m_listeners;
     DImg                           m_img;
+
+private:
+
+    // Hidden copy constructor and assignment operator.
+    SharedLoadingTask(const SharedLoadingTask&);
+    SharedLoadingTask& operator=(const SharedLoadingTask&);
 };
 
 //---------------------------------------------------------------------------------------------------
@@ -203,6 +221,12 @@ private:
     QString          m_format;
     DImg             m_img;
     SavingTaskStatus m_savingTaskStatus;
+
+private:
+
+    // Hidden copy constructor and assignment operator.
+    SavingTask(const SavingTask&);
+    SavingTask& operator=(const SavingTask&);
 };
 
 } // namespace Digikam
