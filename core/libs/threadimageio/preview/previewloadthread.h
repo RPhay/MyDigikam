@@ -119,6 +119,12 @@ protected:
 protected:
 
     QWidget* m_displayingWidget;
+
+private:
+
+    // Hidden copy constructor and assignment operator.
+    PreviewLoadThread(const PreviewLoadThread&);
+    PreviewLoadThread& operator=(const PreviewLoadThread&);
 };
 
 } // namespace Digikam

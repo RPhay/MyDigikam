@@ -59,6 +59,12 @@ private:
 
     QImage m_qimage;
     bool   m_fromRawEmbeddedPreview;
+
+private:
+
+    // Hidden copy constructor and assignment operator.
+    PreviewLoadingTask(const PreviewLoadingTask&);
+    PreviewLoadingTask& operator=(const PreviewLoadingTask&);
 };
 
 } // namespace Digikam
