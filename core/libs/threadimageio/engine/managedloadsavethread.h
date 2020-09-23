@@ -213,6 +213,10 @@ private:
                                    AccessMode accessMode);
 
     void removeLoadingTasks(const LoadingDescription& description, LoadingTaskFilter filter);
+
+    // Hidden copy constructor and assignment operator.
+    ManagedLoadSaveThread(const ManagedLoadSaveThread&);
+    ManagedLoadSaveThread& operator=(const ManagedLoadSaveThread&);
 };
 
 } // namespace Digikam

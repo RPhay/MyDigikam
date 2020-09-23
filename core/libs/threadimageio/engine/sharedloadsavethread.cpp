@@ -37,6 +37,10 @@ SharedLoadSaveThread::SharedLoadSaveThread(QObject* const parent)
 {
 }
 
+SharedLoadSaveThread::~SharedLoadSaveThread()
+{
+}
+
 void SharedLoadSaveThread::load(const LoadingDescription& description,
                                 AccessMode mode,
                                 LoadingPolicy policy)

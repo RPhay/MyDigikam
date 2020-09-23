@@ -36,10 +36,17 @@ class DIGIKAM_EXPORT SharedLoadSaveThread : public ManagedLoadSaveThread
 public:
 
     explicit SharedLoadSaveThread(QObject* const parent = nullptr);
+    ~SharedLoadSaveThread();
 
     void load(const LoadingDescription& description,
               AccessMode mode,
               LoadingPolicy policy = LoadingPolicyAppend);
+
+private:
+
+    // Hidden copy constructor and assignment operator.
+    SharedLoadSaveThread(const SharedLoadSaveThread&);
+    SharedLoadSaveThread& operator=(const SharedLoadSaveThread&);
 };
 
 } // namespace Digikam
