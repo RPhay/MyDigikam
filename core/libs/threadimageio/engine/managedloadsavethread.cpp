@@ -79,7 +79,9 @@ void ManagedLoadSaveThread::shutDown()
         }
 
         case TerminationPolicyWait:
+        {
             break;
+        }
 
         case TerminationPolicyTerminateAll:
         {
@@ -93,7 +95,7 @@ void ManagedLoadSaveThread::shutDown()
 
 LoadingTask* ManagedLoadSaveThread::checkLoadingTask(LoadSaveTask* const task, LoadingTaskFilter filter) const
 {
-    if (task && task->type() == LoadSaveTask::TaskTypeLoading)
+    if (task && (task->type() == LoadSaveTask::TaskTypeLoading))
     {
         LoadingTask* const loadingTask = static_cast<LoadingTask*>(task);
 
@@ -202,7 +204,7 @@ void ManagedLoadSaveThread::load(const LoadingDescription& description, LoadingM
     switch (policy)
     {
         case LoadingPolicyFirstRemovePrevious:
-
+        {
             // reuse task if it exists
 
             if (existingTask)
@@ -233,7 +235,9 @@ void ManagedLoadSaveThread::load(const LoadingDescription& description, LoadingM
                 {
                     if (task != existingTask)
                     {
-                        //qCDebug(DIGIKAM_GENERAL_LOG) << "Removing task " << task << " from list";
+/*
+                        qCDebug(DIGIKAM_GENERAL_LOG) << "Removing task " << task << " from list";
+*/
                         delete m_todo.takeAt(i--);
                     }
                 }
@@ -248,9 +252,10 @@ void ManagedLoadSaveThread::load(const LoadingDescription& description, LoadingM
 
             m_todo.append(createLoadingTask(description, false, loadingMode, accessMode));
             break;
+        }
 
         case LoadingPolicyPrepend:
-
+        {
             if (existingTask)
             {
                 existingTask->setStatus(LoadingTask::LoadingTaskStatusLoading);
@@ -263,9 +268,9 @@ void ManagedLoadSaveThread::load(const LoadingDescription& description, LoadingM
                 loadingTask->setStatus(LoadingTask::LoadingTaskStatusStopping);
                 load(loadingTask->loadingDescription(), LoadingPolicyPreload);
             }
-
-            //qCDebug(DIGIKAM_GENERAL_LOG) << "LoadingPolicyPrepend, Existing task " << existingTask << ", m_currentTask " << m_currentTask;
-
+/*
+            qCDebug(DIGIKAM_GENERAL_LOG) << "LoadingPolicyPrepend, Existing task " << existingTask << ", m_currentTask " << m_currentTask;
+*/
             // prepend new loading task
 
             if (existingTask)
@@ -275,13 +280,16 @@ void ManagedLoadSaveThread::load(const LoadingDescription& description, LoadingM
 
             m_todo.prepend(createLoadingTask(description, false, loadingMode, accessMode));
             break;
+        }
 
         case LoadingPolicySimplePrepend:
+        {
             m_todo.prepend(createLoadingTask(description, false, loadingMode, accessMode));
             break;
+        }
 
         case LoadingPolicyAppend:
-
+        {
             if (existingTask)
             {
                 existingTask->setStatus(LoadingTask::LoadingTaskStatusLoading);
@@ -299,9 +307,9 @@ void ManagedLoadSaveThread::load(const LoadingDescription& description, LoadingM
             {
                 break;
             }
-
-            //qCDebug(DIGIKAM_GENERAL_LOG) << "LoadingPolicyAppend, Existing task " << existingTask << ", m_currentTask " << m_currentTask;
-
+/*
+            qCDebug(DIGIKAM_GENERAL_LOG) << "LoadingPolicyAppend, Existing task " << existingTask << ", m_currentTask " << m_currentTask;
+*/
             // append new loading task, put it in front of preloading tasks
 
             int i;
@@ -316,17 +324,20 @@ void ManagedLoadSaveThread::load(const LoadingDescription& description, LoadingM
 
             m_todo.insert(i, createLoadingTask(description, false, loadingMode, accessMode));
             break;
+        }
 
         case LoadingPolicySimpleAppend:
+        {
             m_todo.append(createLoadingTask(description, false, loadingMode, accessMode));
             break;
+        }
 
         case LoadingPolicyPreload:
-
+        {
             // append to the very end of the list
-
-            //qCDebug(DIGIKAM_GENERAL_LOG) << "LoadingPolicyPreload, Existing task " << existingTask;
-
+/*
+            qCDebug(DIGIKAM_GENERAL_LOG) << "LoadingPolicyPreload, Existing task " << existingTask;
+*/
             if (existingTask)
             {
                 break;
@@ -334,6 +345,7 @@ void ManagedLoadSaveThread::load(const LoadingDescription& description, LoadingM
 
             m_todo.append(createLoadingTask(description, true, loadingMode, accessMode));
             break;
+        }
     }
 
     start(lock);

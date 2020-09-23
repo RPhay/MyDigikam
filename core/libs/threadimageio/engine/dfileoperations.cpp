@@ -210,7 +210,7 @@ QUrl DFileOperations::getUniqueFileUrl(const QUrl& orgUrl,
 
 QUrl DFileOperations::getUniqueFolderUrl(const QUrl& orgUrl)
 {
-    int counter = 0;
+    int counter              = 0;
     QUrl destUrl(orgUrl);
     QFileInfo fi(destUrl.toLocalFile());
     QRegExp version(QLatin1String("(.+)-(\\d+)"));
@@ -438,6 +438,7 @@ bool DFileOperations::copyFiles(const QStringList& srcPaths,
 bool DFileOperations::renameFile(const QString& srcFile,
                                  const QString& dstFile)
 {
+
 #ifdef Q_OS_WIN64
 
     struct __utimbuf64 ut;
@@ -467,15 +468,15 @@ bool DFileOperations::renameFile(const QString& srcFile,
 
 #ifdef Q_OS_WIN64
 
-        stat = _wutime64((const wchar_t*)dstFile.utf16(), &ut);
+        stat       = _wutime64((const wchar_t*)dstFile.utf16(), &ut);
 
 #elif defined Q_OS_WIN
 
-        stat = _wutime((const wchar_t*)dstFile.utf16(), &ut);
+        stat       = _wutime((const wchar_t*)dstFile.utf16(), &ut);
 
 #else
 
-        stat = ::utime(dstFile.toUtf8().constData(), &ut);
+        stat       = ::utime(dstFile.toUtf8().constData(), &ut);
 
 #endif
 
@@ -521,6 +522,7 @@ bool DFileOperations::copyFile(const QString& srcFile,
 bool DFileOperations::copyModificationTime(const QString& srcFile,
                                            const QString& dstFile)
 {
+
 #ifdef Q_OS_WIN64
 
     struct __utimbuf64 ut;
@@ -548,17 +550,18 @@ bool DFileOperations::copyModificationTime(const QString& srcFile,
 
 #ifdef Q_OS_WIN64
 
-        ret = _wutime64((const wchar_t*)dstFile.utf16(), &ut);
+        ret        = _wutime64((const wchar_t*)dstFile.utf16(), &ut);
 
 #elif defined Q_OS_WIN
 
-        ret = _wutime((const wchar_t*)dstFile.utf16(), &ut);
+        ret        = _wutime((const wchar_t*)dstFile.utf16(), &ut);
 
 #else
 
-        ret = ::utime(dstFile.toUtf8().constData(), &ut);
+        ret        = ::utime(dstFile.toUtf8().constData(), &ut);
 
 #endif
+
     }
 
     if (ret != 0)
@@ -626,6 +629,7 @@ bool DFileOperations::setModificationTime(const QString& srcFile,
         ret        = ::utime(srcFile.toUtf8().constData(), &ut);
 
 #endif
+
     }
 
     if (ret != 0)

@@ -95,10 +95,7 @@ public:
     explicit SafeTemporaryFile(const QString& templ);
     SafeTemporaryFile();
 
-    bool open()
-    {
-        return open(QIODevice::ReadWrite);
-    };
+    bool open();
 
     QString safeFilePath() const;
 

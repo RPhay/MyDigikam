@@ -217,7 +217,7 @@ bool FileReadWriteLockStaticPrivate::lockForRead_locked(Entry* entry, int mode, 
     }
     else
     {
-        while (entry->accessCount < 0 || entry->waitingWriters)
+        while ((entry->accessCount < 0) || entry->waitingWriters)
         {
             if (mode == 2)
             {
@@ -285,14 +285,14 @@ bool FileReadWriteLockStaticPrivate::lockForWrite_locked(Entry* entry, int mode,
     // recursive read lock by this thread?
 
     QHash<Qt::HANDLE, int>::iterator it = entry->readers.find(self);
-    int recursiveReadLockCount = 0;
+    int recursiveReadLockCount          = 0;
 
     if (it != entry->readers.end())
     {
         // We could deadlock, or promote the read locks to write locks
 
         qCWarning(DIGIKAM_GENERAL_LOG) << "Locking for write, recursively locked for read: Promoting existing read locks to write locks! "
-                   << "Avoid this situation.";
+                                       << "Avoid this situation.";
 
         // The lock was locked for read it.value() times by this thread recursively
 
@@ -356,7 +356,7 @@ void FileReadWriteLockStaticPrivate::unlock_locked(Entry* entry)
     {
         // releasing a read lock
 
-        Qt::HANDLE self = QThread::currentThreadId();
+        Qt::HANDLE self                     = QThread::currentThreadId();
         QHash<Qt::HANDLE, int>::iterator it = entry->readers.find(self);
 
         if (it != entry->readers.end())
@@ -367,13 +367,13 @@ void FileReadWriteLockStaticPrivate::unlock_locked(Entry* entry)
             }
         }
 
-        unlocked = --entry->accessCount == 0;
+        unlocked = (--entry->accessCount == 0);
     }
     else if ((entry->accessCount < 0) && (++entry->accessCount == 0))
     {
         // released a write lock
 
-        unlocked = true;
+        unlocked      = true;
         entry->writer = nullptr;
     }
 
@@ -390,7 +390,6 @@ void FileReadWriteLockStaticPrivate::unlock_locked(Entry* entry)
             readerWait.wakeAll();
         }
     }
-
 }
 
 // --- Combination methods ---
@@ -398,7 +397,7 @@ void FileReadWriteLockStaticPrivate::unlock_locked(Entry* entry)
 Entry* FileReadWriteLockStaticPrivate::entryLockedForRead(const QString& filePath)
 {
     QMutexLocker lock(&mutex);
-    Entry* e = entry_locked(filePath);
+    Entry* const e = entry_locked(filePath);
     lockForRead_locked(e, 0, 0);
 
     return e;
@@ -407,7 +406,7 @@ Entry* FileReadWriteLockStaticPrivate::entryLockedForRead(const QString& filePat
 Entry* FileReadWriteLockStaticPrivate::entryLockedForWrite(const QString& filePath)
 {
     QMutexLocker lock(&mutex);
-    Entry* e = entry_locked(filePath);
+    Entry* const e = entry_locked(filePath);
     lockForWrite_locked(e, 0, 0);
 
     return e;
@@ -501,6 +500,11 @@ SafeTemporaryFile::SafeTemporaryFile(const QString& templ)
     : QTemporaryFile(templ),
       m_templ(templ)
 {
+}
+
+bool SafeTemporaryFile::open()
+{
+    return open(QIODevice::ReadWrite);
 }
 
 bool SafeTemporaryFile::open(QIODevice::OpenMode mode)
