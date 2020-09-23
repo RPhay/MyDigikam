@@ -50,7 +50,8 @@ enum GroupAction
     Ungroup
 };
 
-class Q_DECL_HIDDEN PrivateProgressItemCreator : public QObject, public FileActionProgressItemCreator
+class Q_DECL_HIDDEN PrivateProgressItemCreator : public QObject,
+                                                 public FileActionProgressItemCreator
 {
     Q_OBJECT
 
