@@ -62,6 +62,12 @@ protected:
     FaceItemRetriever            imageRetriever;
     FacialRecognitionWrapper     recognizer;
     FacePipeline::Private* const d;
+
+private:
+
+    // Hidden copy constructor and assignment operator.
+    RecognitionWorker(const RecognitionWorker&);
+    RecognitionWorker& operator=(const RecognitionWorker&);
 };
 
 } // namespace Digikam

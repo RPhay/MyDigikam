@@ -57,6 +57,12 @@ protected:
 
     FaceDetector                 detector;
     FacePipeline::Private* const d;
+
+private:
+
+    // Hidden copy constructor and assignment operator.
+    DetectionWorker(const DetectionWorker&);
+    DetectionWorker& operator=(const DetectionWorker&);
 };
 
 } // namespace Digikam

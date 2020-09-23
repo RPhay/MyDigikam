@@ -40,6 +40,7 @@ class Q_DECL_HIDDEN DatabaseWriter : public WorkerObject
 public:
 
     DatabaseWriter(FacePipeline::WriteMode mode, FacePipeline::Private* const d);
+    ~DatabaseWriter();
 
 public Q_SLOTS:
 
@@ -54,6 +55,12 @@ protected:
     FacePipeline::WriteMode      mode;
     ThumbnailLoadThread*         thumbnailLoadThread;
     FacePipeline::Private* const d;
+
+private:
+
+    // Hidden copy constructor and assignment operator.
+    DatabaseWriter(const DatabaseWriter&);
+    DatabaseWriter& operator=(const DatabaseWriter&);
 };
 
 } // namespace Digikam

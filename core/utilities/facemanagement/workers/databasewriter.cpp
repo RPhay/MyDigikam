@@ -43,6 +43,10 @@ DatabaseWriter::DatabaseWriter(FacePipeline::WriteMode mode, FacePipeline::Priva
 {
 }
 
+DatabaseWriter::~DatabaseWriter()
+{
+}
+
 void DatabaseWriter::process(FacePipelineExtendedPackage::Ptr package)
 {
     if (package->databaseFaces.isEmpty())
