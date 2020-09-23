@@ -58,7 +58,6 @@ extern "C"
 
 // Local includes
 
-#include "thumbnailcreator.h"
 #include "thumbnailcreator_p.h"
 
 // Definitions
@@ -96,7 +95,10 @@ QString ThumbnailCreator::thumbnailPathFromUri(const QString& uri, const QString
 {
     QCryptographicHash md5(QCryptographicHash::Md5);
     md5.addData(QFile::encodeName(uri).constData());
-    return (basePath + QString::fromUtf8(QFile::encodeName(QString::fromUtf8(md5.result().toHex()))) + QLatin1String(".png"));
+
+    return (basePath                                                                      +
+            QString::fromUtf8(QFile::encodeName(QString::fromUtf8(md5.result().toHex()))) +
+            QLatin1String(".png"));
 }
 
 // --- non-static methods ---
@@ -165,11 +167,11 @@ QImage ThumbnailCreator::loadPNG(const QString& path) const
 
 #if PNG_LIBPNG_VER >= 10400
 
-    if (itemsRead != PNG_BYTES_TO_CHECK || png_sig_cmp(buf, 0, PNG_BYTES_TO_CHECK))
+    if ((itemsRead != PNG_BYTES_TO_CHECK) || png_sig_cmp(buf, 0, PNG_BYTES_TO_CHECK))
 
 #else
 
-    if (itemsRead != PNG_BYTES_TO_CHECK || !png_check_sig(buf, PNG_BYTES_TO_CHECK))
+    if ((itemsRead != PNG_BYTES_TO_CHECK) || !png_check_sig(buf, PNG_BYTES_TO_CHECK))
 
 #endif
     {
@@ -317,6 +319,7 @@ QImage ThumbnailCreator::loadPNG(const QString& path) const
             png_set_gray_1_2_4_to_8(png_ptr);
 
 #endif
+
     }
 
     int sizeOfUint = sizeof(unsigned int);

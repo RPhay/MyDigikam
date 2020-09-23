@@ -378,7 +378,9 @@ QImage ThumbnailCreator::handleAlphaChannel(const QImage& qimage) const
     switch (qimage.format())
     {
         case QImage::Format_RGB32:
+        {
             break;
+        }
 
         case QImage::Format_ARGB32:
         case QImage::Format_ARGB32_Premultiplied:

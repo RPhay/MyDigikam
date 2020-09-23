@@ -208,12 +208,13 @@ QImage ThumbnailCreator::load(const ThumbnailIdentifier& identifier, const QRect
     ThumbnailInfo info = makeThumbnailInfo(identifier, rect);
 
     // load pregenerated thumbnail
+
     ThumbnailImage image;
 
     switch (d->thumbnailStorage)
     {
         case ThumbnailDatabase:
-
+        {
             if (pregenerate)
             {
                 if (isInDatabase(info))
@@ -229,10 +230,13 @@ QImage ThumbnailCreator::load(const ThumbnailIdentifier& identifier, const QRect
             }
 
             break;
+        }
 
         case FreeDesktopStandard:
+        {
             image = loadFreedesktop(info);
             break;
+        }
     }
 
     // For images in offline collections we can stop here, they are not available on disk
@@ -243,6 +247,7 @@ QImage ThumbnailCreator::load(const ThumbnailIdentifier& identifier, const QRect
     }
 
     // if pregenerated thumbnail is not available, generate
+
     if (image.isNull())
     {
         image = createThumbnail(info, rect);
@@ -252,11 +257,13 @@ QImage ThumbnailCreator::load(const ThumbnailIdentifier& identifier, const QRect
             switch (d->thumbnailStorage)
             {
                 case ThumbnailDatabase:
+                {
                     storeInDatabase(info, image);
                     break;
+                }
 
                 case FreeDesktopStandard:
-
+                {
                     // image is stored rotated
 
                     if (d->exifRotate)
@@ -266,6 +273,7 @@ QImage ThumbnailCreator::load(const ThumbnailIdentifier& identifier, const QRect
 
                     storeFreedesktop(info, image);
                     break;
+                }
             }
         }
     }
@@ -274,6 +282,7 @@ QImage ThumbnailCreator::load(const ThumbnailIdentifier& identifier, const QRect
     {
         d->error = i18n("Thumbnail is null");
         qCWarning(DIGIKAM_GENERAL_LOG) << "Thumbnail is null for " << identifier.filePath;
+
         return image.qimage;
     }
 
@@ -314,7 +323,7 @@ QImage ThumbnailCreator::load(const ThumbnailIdentifier& identifier, const QRect
 
 QImage ThumbnailCreator::scaleForStorage(const QImage& qimage) const
 {
-    if (qimage.width() > d->storageSize() || qimage.height() > d->storageSize())
+    if ((qimage.width() > d->storageSize()) || (qimage.height() > d->storageSize()))
     {
 /*
         Cheat scaling is disabled because of quality problems - see bug #224999
@@ -415,7 +424,7 @@ void ThumbnailCreator::store(const QString& path, const QImage& i, const QRect& 
     switch (d->thumbnailStorage)
     {
         case ThumbnailDatabase:
-
+        {
             // we must call isInDatabase or loadFromDatabase before storeInDatabase for d->dbIdForReplacement!
 
             if (!isInDatabase(info))
@@ -424,10 +433,13 @@ void ThumbnailCreator::store(const QString& path, const QImage& i, const QRect& 
             }
 
             break;
+        }
 
         case FreeDesktopStandard:
+        {
             storeFreedesktop(info, image);
             break;
+        }
     }
 }
 
