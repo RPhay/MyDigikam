@@ -49,6 +49,12 @@ public:
     virtual void setResult(const LoadingDescription& loadingDescription, const DImg& img)         = 0;
     virtual LoadSaveNotifier* loadSaveNotifier()                                            const = 0;
     virtual LoadSaveThread::AccessMode accessMode()                                         const = 0;
+
+private:
+
+    // Hidden copy constructor and assignment operator.
+    LoadingProcessListener(const LoadingProcessListener&);
+    LoadingProcessListener& operator=(const LoadingProcessListener&);
 };
 
 // --------------------------------------------------------------------------------------------------------------
@@ -65,6 +71,12 @@ public:
     virtual void addListener(LoadingProcessListener* const listener)                                           = 0;
     virtual void removeListener(LoadingProcessListener* const listener)                                        = 0;
     virtual void notifyNewLoadingProcess(LoadingProcess* const process, const LoadingDescription& description) = 0;
+
+private:
+
+    // Hidden copy constructor and assignment operator.
+    LoadingProcess(const LoadingProcess&);
+    LoadingProcess& operator=(const LoadingProcess&);
 };
 
 // --------------------------------------------------------------------------------------------------------------
@@ -113,9 +125,6 @@ class DIGIKAM_EXPORT LoadingCache : public QObject
 
 public:
 
-    static LoadingCache* cache();
-    static void cleanUp();
-
     /**
      * NOTE: !! All methods of LoadingCache shall only be called when a CacheLock is held !!
      */
@@ -133,6 +142,11 @@ public:
 
         LoadingCache* m_cache;
     };
+
+public:
+
+    static LoadingCache* cache();
+    static void cleanUp();
 
     /**
      * Retrieves an image for the given string from the cache,
@@ -277,6 +291,10 @@ private:
 
     explicit LoadingCache();
     ~LoadingCache();
+
+    // Hidden copy constructor and assignment operator.
+    LoadingCache(const LoadingCache&);
+    LoadingCache& operator=(const LoadingCache&);
 
     friend class LoadingCacheFileWatch;
     friend class CacheLock;
