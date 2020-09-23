@@ -93,14 +93,19 @@ ActionThreadBase::ActionThreadBase(QObject* const parent)
 ActionThreadBase::~ActionThreadBase()
 {
     // cancel the thread
+
     cancel();
+
     // wait for the thread to finish
+
     wait();
 
-    //wait for the jobs to finish
+    // wait for the jobs to finish
+
     d->pool->waitForDone();
 
     // Cleanup all jobs from memory
+
     foreach (ActionJob* const job, d->todo.keys())
     {
         delete job;

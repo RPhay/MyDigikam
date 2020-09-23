@@ -79,7 +79,6 @@ public:
      * Note that you cannot make this QObject the child of another QObject.
      * Please check if you need to call shutDown from your destructor (see below).
      */
-
     explicit WorkerObject();
     ~WorkerObject();
 

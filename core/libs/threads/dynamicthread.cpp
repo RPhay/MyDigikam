@@ -53,7 +53,6 @@ public:
           previousPriority(QThread::InheritPriority)
     {
         setAutoDelete(false);
-
     };
 
     virtual void run() override;
@@ -246,7 +245,7 @@ QMutex* DynamicThread::threadMutex() const
 
 bool DynamicThread::isFinished() const
 {
-    return d->state == Inactive;
+    return (d->state == Inactive);
 }
 
 void DynamicThread::setEmitSignals(bool emitThem)
@@ -324,6 +323,7 @@ void DynamicThread::start(QMutexLocker& locker)
     if (!d->threadRequested)
     {
         // avoid issuing multiple thread requests after very fast start/stop/start calls
+
         d->threadRequested = true;
 
         locker.unlock();
