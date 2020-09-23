@@ -84,6 +84,15 @@ public:
      * Set to 0 to disable caching.
      */
     static void setCacheOptions(int cacheSize);
+
+private:
+
+    explicit LoadingCacheInterface();
+    ~LoadingCacheInterface();
+
+    // Hidden copy constructor and assignment operator.
+    LoadingCacheInterface(const LoadingCacheInterface&);
+    LoadingCacheInterface& operator=(const LoadingCacheInterface&);
 };
 
 } // namespace Digikam
