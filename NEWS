@@ -120,7 +120,7 @@ BUGFIXES:
 107 ==> 426481 - Face recognition feels like a regression from 6.4.
 108 ==> 426479 - Slideshow: Show lens name in properties overlay.
 109 ==> 426884 - Geolocation Editor discards changes without warning.
-110 ==> 
+110 ==> 426659 - thumbnails for tagged faces not useful.
 111 ==> 
 112 ==> 
 113 ==> 
