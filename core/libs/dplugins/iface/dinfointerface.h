@@ -213,6 +213,7 @@ public:
     QString            credit()               const;
     QString            rights()               const;
     QString            source()               const;
+    QString            lens()                 const;
     QString            make()                 const;
     QString            model()                const;
     QString            exposureTime()         const;

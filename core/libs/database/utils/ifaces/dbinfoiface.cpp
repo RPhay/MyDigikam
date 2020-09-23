@@ -498,6 +498,7 @@ DBInfoIface::DInfoMap DBInfoIface::itemInfo(const QUrl& url) const
         map.insert(QLatin1String("source"),          rights.source());
 
         PhotoInfoContainer photoInfo = info.photoInfoContainer();
+        map.insert(QLatin1String("lens"),            photoInfo.lens);
         map.insert(QLatin1String("make"),            photoInfo.make);
         map.insert(QLatin1String("model"),           photoInfo.model);
         map.insert(QLatin1String("exposuretime"),    photoInfo.exposureTime);

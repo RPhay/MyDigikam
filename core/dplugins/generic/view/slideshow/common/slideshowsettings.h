@@ -99,6 +99,11 @@ public:
     bool                         printMakeModel;
 
     /**
+     * Print camera Lens model while slide
+     */
+    bool                         printLensModel;
+
+    /**
      * Print camera Exposure and Sensitivity while slide
      */
     bool                         printExpoSensitivity;
@@ -212,6 +217,7 @@ private:
     static const QString         configSlideShowPrintDateEntry;
     static const QString         configSlideShowPrintExpoSensitivityEntry;
     static const QString         configSlideShowPrintMakeModelEntry;
+    static const QString         configSlideShowPrintLensModelEntry;
     static const QString         configSlideShowPrintNameEntry;
     static const QString         configSlideShowPrintTagsEntry;
     static const QString         configSlideShowPrintLabelsEntry;

@@ -67,6 +67,7 @@ public:
         showApertureFocal(nullptr),
         showExpoSensitivity(nullptr),
         showMakeModel(nullptr),
+        showLensModel(nullptr),
         showLabels(nullptr),
         showRating(nullptr),
         showComment(nullptr),
@@ -89,6 +90,7 @@ public:
     QCheckBox*         showApertureFocal;
     QCheckBox*         showExpoSensitivity;
     QCheckBox*         showMakeModel;
+    QCheckBox*         showLensModel;
     QCheckBox*         showLabels;
     QCheckBox*         showRating;
     QCheckBox*         showComment;
@@ -157,6 +159,9 @@ SetupSlideShowDialog::SetupSlideShowDialog(SlideShowSettings* const settings, QW
     d->showMakeModel          = new QCheckBox(i18n("Show camera make and model"), panel);
     d->showMakeModel->setWhatsThis(i18n("Show the camera make and model at the bottom of the screen."));
 
+    d->showLensModel          = new QCheckBox(i18n("Show camera lens model"), panel);
+    d->showLensModel->setWhatsThis(i18n("Show the camera lens model at the bottom of the screen."));
+
     d->showComment            = new QCheckBox(i18n("Show image caption"), panel);
     d->showComment->setWhatsThis(i18n("Show the image caption at the bottom of the screen."));
 
@@ -218,20 +223,21 @@ SetupSlideShowDialog::SetupSlideShowDialog(SlideShowSettings* const settings, QW
     QGridLayout* const grid   = new QGridLayout(panel);
     grid->addWidget(hbox1,                   0, 0, 1, 2);
     grid->addWidget(d->startWithCurrent,     1, 0, 1, 1);
-    grid->addWidget(d->loopMode,             1, 1, 1, 1);
+    grid->addWidget(d->showRating,           1, 1, 1, 1);
     grid->addWidget(d->suffleMode,           2, 0, 1, 1);
-    grid->addWidget(d->showProgress,         2, 1, 1, 1);
+    grid->addWidget(d->loopMode,             2, 1, 1, 1);
     grid->addWidget(d->showName,             3, 0, 1, 1);
-    grid->addWidget(d->showDate,             3, 1, 1, 1);
+    grid->addWidget(d->showProgress,         3, 1, 1, 1);
     grid->addWidget(d->showApertureFocal,    4, 0, 1, 1);
-    grid->addWidget(d->showExpoSensitivity,  4, 1, 1, 1);
+    grid->addWidget(d->showDate,             4, 1, 1, 1);
     grid->addWidget(d->showMakeModel,        5, 0, 1, 1);
-    grid->addWidget(d->showComment,          5, 1, 1, 1);
-    grid->addWidget(d->showTitle,            6, 0, 1, 1);
-    grid->addWidget(d->showCapIfNoTitle,     6, 1, 1, 1);
-    grid->addWidget(d->showTags,             7, 0, 1, 1);
-    grid->addWidget(d->showLabels,           7, 1, 1, 1);
-    grid->addWidget(d->showRating,           8, 0, 1, 1);
+    grid->addWidget(d->showExpoSensitivity,  5, 1, 1, 1);
+    grid->addWidget(d->showLensModel,        6, 0, 1, 1);
+    grid->addWidget(d->showComment,          6, 1, 1, 1);
+    grid->addWidget(d->showTitle,            7, 0, 1, 1);
+    grid->addWidget(d->showCapIfNoTitle,     7, 1, 1, 1);
+    grid->addWidget(d->showTags,             8, 0, 1, 1);
+    grid->addWidget(d->showLabels,           8, 1, 1, 1);
     grid->addWidget(d->captionFont,          9, 0, 1, 2);
     grid->addWidget(screenSelectBox,        10, 0, 1, 2);
     grid->setRowStretch(11, 10);
@@ -276,6 +282,7 @@ void SetupSlideShowDialog::slotApplySettings()
     d->settings->printApertureFocal    = d->showApertureFocal->isChecked();
     d->settings->printExpoSensitivity  = d->showExpoSensitivity->isChecked();
     d->settings->printMakeModel        = d->showMakeModel->isChecked();
+    d->settings->printLensModel        = d->showLensModel->isChecked();
     d->settings->printComment          = d->showComment->isChecked();
     d->settings->printTitle            = d->showTitle->isChecked();
     d->settings->printCapIfNoTitle     = d->showCapIfNoTitle->isChecked();
@@ -302,6 +309,7 @@ void SetupSlideShowDialog::readSettings()
     d->showApertureFocal->setChecked(d->settings->printApertureFocal);
     d->showExpoSensitivity->setChecked(d->settings->printExpoSensitivity);
     d->showMakeModel->setChecked(d->settings->printMakeModel);
+    d->showLensModel->setChecked(d->settings->printLensModel);
     d->showComment->setChecked(d->settings->printComment);
     d->showTitle->setChecked(d->settings->printTitle);
     d->showCapIfNoTitle->setChecked(d->settings->printCapIfNoTitle);
