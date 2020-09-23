@@ -243,6 +243,8 @@ private:
     LoadSaveThread(const LoadSaveThread&);
     LoadSaveThread& operator=(const LoadSaveThread&);
 
+private:
+
     class Private;
     Private* const d;
 };

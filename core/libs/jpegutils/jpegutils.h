@@ -61,7 +61,7 @@ public:
      * Destructor
      */
     ~JpegRotator();
-    
+
     /**
      * Per default, the orientation is read from the metadata of the file.
      * You can override this value
@@ -113,6 +113,12 @@ protected:
 
     void updateMetadata(const QString& fileName, const MetaEngineRotation& matrix);
     bool performJpegTransform(TransformAction action, const QString& src, const QString& dest);
+
+private:
+
+    // Hidden copy constructor and assignment operator.
+    JpegRotator(const JpegRotator&);
+    JpegRotator& operator=(const JpegRotator&);
 };
 
 DIGIKAM_EXPORT bool loadJPEGScaled(QImage& image, const QString& path, int maximumSize);
