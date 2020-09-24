@@ -39,6 +39,10 @@ FaceItem::FaceItem(QGraphicsItem* const parent)
 {
 }
 
+FaceItem::~FaceItem()
+{
+}
+
 void FaceItem::setFace(const FaceTagsIface& face)
 {
     m_face = face;

@@ -45,6 +45,7 @@ class Q_DECL_HIDDEN FaceItem : public RegionFrameItem
 public:
 
     explicit FaceItem(QGraphicsItem* const parent = nullptr);
+    ~FaceItem();
 
     void setFace(const FaceTagsIface& face);
     FaceTagsIface face()                                const;
@@ -59,6 +60,12 @@ protected:
     FaceTagsIface       m_face;
     AssignNameWidget*   m_widget;
     HidingStateChanger* m_changer;
+
+private:
+
+    // Hidden copy constructor and assignment operator.
+    FaceItem(const FaceItem&);
+    FaceItem& operator=(const FaceItem&);
 };
 
 } // namespace Digikam

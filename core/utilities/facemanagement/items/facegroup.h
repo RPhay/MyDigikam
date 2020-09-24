@@ -147,6 +147,12 @@ private:
 
     FaceGroup(); // Disable
 
+    // Hidden copy constructor and assignment operator.
+    FaceGroup(const FaceGroup&);
+    FaceGroup& operator=(const FaceGroup&);
+
+private:
+
     class Private;
     Private* const d;
 };
