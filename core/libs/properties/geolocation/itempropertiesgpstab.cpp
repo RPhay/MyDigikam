@@ -333,7 +333,7 @@ void ItemPropertiesGPSTab::setCurrentURL(const QUrl& url)
 
     QScopedPointer<DMetadata> meta(new DMetadata(url.toLocalFile()));
 
-    setMetadata(meta.get(), url);
+    setMetadata(meta.data(), url);
 }
 
 void ItemPropertiesGPSTab::setMetadata(DMetadata* const meta, const QUrl& url)

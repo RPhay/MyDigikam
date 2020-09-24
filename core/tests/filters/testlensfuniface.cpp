@@ -51,7 +51,7 @@ int main(int argc, char** argv)
     DImg         img(filePath);
     QScopedPointer<DMetadata> meta(new DMetadata(img.getMetadata()));
     LensFunIface iface;
-    LensFunIface::MetadataMatch ret = iface.findFromMetadata(meta.get());
+    LensFunIface::MetadataMatch ret = iface.findFromMetadata(meta.data());
 
     if (ret == LensFunIface::MetadataExactMatch)
     {

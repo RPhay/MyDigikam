@@ -211,7 +211,7 @@ bool LensAutoFix::toolOperations()
     {
         LensFunIface iface;
         QScopedPointer<DMetadata> meta(new DMetadata(image().getMetadata()));
-        LensFunIface::MetadataMatch ret = iface.findFromMetadata(meta.get());
+        LensFunIface::MetadataMatch ret = iface.findFromMetadata(meta.data());
         prm                             = iface.settings();
 
         if (ret != LensFunIface::MetadataExactMatch)
