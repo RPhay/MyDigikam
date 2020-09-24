@@ -34,13 +34,19 @@ FacePreviewLoader::FacePreviewLoader(FacePipeline::Private* const d)
     : d(d)
 {
     // upper limit for memory cost
+
     maximumSentOutPackages = qMin(QThread::idealThreadCount(), 4);
 
     // this is crucial! Per default, only the last added image will be loaded
+
     setLoadingPolicy(PreviewLoadThread::LoadingPolicySimpleAppend);
 
     connect(this, SIGNAL(signalImageLoaded(LoadingDescription,DImg)),
             this, SLOT(slotImageLoaded(LoadingDescription,DImg)));
+}
+
+FacePreviewLoader::~FacePreviewLoader()
+{
 }
 
 void FacePreviewLoader::cancel()
@@ -59,9 +65,10 @@ void FacePreviewLoader::process(FacePipelineExtendedPackage::Ptr package)
 
     scheduledPackages << package;
     loadFastButLarge(package->filePath, 1600);
-    //load(package->filePath, 800, MetaEngineSettings::instance()->settings().exifRotate);
-    //loadHighQuality(package->filePath, MetaEngineSettings::instance()->settings().exifRotate);
-
+/*
+    load(package->filePath, 800, MetaEngineSettings::instance()->settings().exifRotate);
+    loadHighQuality(package->filePath, MetaEngineSettings::instance()->settings().exifRotate);
+*/
     checkRestart();
 }
 

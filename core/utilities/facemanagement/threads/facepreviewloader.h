@@ -38,6 +38,7 @@ class Q_DECL_HIDDEN FacePreviewLoader : public PreviewLoadThread
 public:
 
     explicit FacePreviewLoader(FacePipeline::Private* const d);
+    ~FacePreviewLoader();
 
     void cancel();
     bool sentOutLimitReached();
@@ -57,6 +58,12 @@ protected:
     PackageLoadingDescriptionList scheduledPackages;
     int                           maximumSentOutPackages;
     FacePipeline::Private* const  d;
+
+private:
+
+    // Hidden copy constructor and assignment operator.
+    FacePreviewLoader(const FacePreviewLoader&);
+    FacePreviewLoader& operator=(const FacePreviewLoader&);
 };
 
 } // namespace Digikam

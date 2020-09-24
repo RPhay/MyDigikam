@@ -63,6 +63,12 @@ protected:
 
     QList<QMetaMethod> m_methods;
     int                m_currentIndex;
+
+private:
+
+    // Hidden copy constructor and assignment operator.
+    ParallelPipes(const ParallelPipes&);
+    ParallelPipes& operator=(const ParallelPipes&);
 };
 
 } // namespace Digikam

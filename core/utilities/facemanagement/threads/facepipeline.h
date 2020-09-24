@@ -237,6 +237,12 @@ public:
 
 private:
 
+    // Hidden copy constructor and assignment operator.
+    FacePipeline(const FacePipeline&);
+    FacePipeline& operator=(const FacePipeline&);
+
+private:
+
     Private* const d;
     friend class Private;
 };

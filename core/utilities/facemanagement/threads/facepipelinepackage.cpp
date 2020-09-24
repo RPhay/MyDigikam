@@ -54,9 +54,17 @@ FacePipelineFaceTagsIface::FacePipelineFaceTagsIface(const FaceTagsIface& face)
 {
 }
 
+FacePipelineFaceTagsIface::~FacePipelineFaceTagsIface()
+{
+}
+
 // ----------------------------------------------------------------------------------------
 
 FacePipelineFaceTagsIfaceList::FacePipelineFaceTagsIfaceList()
+{
+}
+
+FacePipelineFaceTagsIfaceList::~FacePipelineFaceTagsIfaceList()
 {
 }
 
@@ -144,6 +152,16 @@ FacePipelinePackage::~FacePipelinePackage()
 
 // ----------------------------------------------------------------------------------------
 
+FacePipelineExtendedPackage::FacePipelineExtendedPackage()
+{
+}
+
+FacePipelineExtendedPackage::~FacePipelineExtendedPackage()
+{
+}
+
+// ----------------------------------------------------------------------------------------
+
 FacePipelineExtendedPackage::Ptr PackageLoadingDescriptionList::take(const LoadingDescription& description)
 {
     FacePipelineExtendedPackage::Ptr                  package;
@@ -160,6 +178,21 @@ FacePipelineExtendedPackage::Ptr PackageLoadingDescriptionList::take(const Loadi
     }
 
     return package;
+}
+
+bool FacePipelineExtendedPackage::operator==(const LoadingDescription& description) const
+{
+    return (filePath == description.filePath);
+}
+
+// ----------------------------------------------------------------------------------------
+
+PackageLoadingDescriptionList::PackageLoadingDescriptionList()
+{
+}
+
+PackageLoadingDescriptionList::~PackageLoadingDescriptionList()
+{
 }
 
 } // namespace Digikam

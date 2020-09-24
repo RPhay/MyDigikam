@@ -38,6 +38,7 @@ class Q_DECL_HIDDEN ScanStateFilter : public DynamicThread
 public:
 
     ScanStateFilter(FacePipeline::FilterMode mode, FacePipeline::Private* const d);
+    ~ScanStateFilter();
 
     void process(const QList<ItemInfo>& infos);
     void process(const ItemInfo& info);
@@ -67,6 +68,12 @@ protected:
     QList<ItemInfo>                         toFilter;
     QList<FacePipelineExtendedPackage::Ptr> toSend;
     QList<ItemInfo>                         toBeSkipped;
+
+private:
+
+    // Hidden copy constructor and assignment operator.
+    ScanStateFilter(const ScanStateFilter&);
+    ScanStateFilter& operator=(const ScanStateFilter&);
 };
 
 } // namespace Digikam

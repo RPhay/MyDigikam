@@ -84,6 +84,7 @@ public:
 
     FacePipelineFaceTagsIface();
     explicit FacePipelineFaceTagsIface(const FaceTagsIface& face);
+    ~FacePipelineFaceTagsIface();
 
 public:
 
@@ -100,6 +101,7 @@ public:
 
     FacePipelineFaceTagsIfaceList();
     explicit FacePipelineFaceTagsIfaceList(const QList<FaceTagsIface>& faces);
+    ~FacePipelineFaceTagsIfaceList();
 
     FacePipelineFaceTagsIfaceList& operator=(const QList<FaceTagsIface>& faces);
 
@@ -155,15 +157,15 @@ class Q_DECL_HIDDEN FacePipelineExtendedPackage : public FacePipelinePackage,
 {
 public:
 
-    QString                                                           filePath;
-    typedef QExplicitlySharedDataPointer<FacePipelineExtendedPackage> Ptr;
+    explicit FacePipelineExtendedPackage();
+    ~FacePipelineExtendedPackage();
+
+    bool operator==(const LoadingDescription& description) const;
 
 public:
 
-    bool operator==(const LoadingDescription& description) const
-    {
-        return filePath == description.filePath;
-    }
+    QString                                                           filePath;
+    typedef QExplicitlySharedDataPointer<FacePipelineExtendedPackage> Ptr;
 };
 
 // ----------------------------------------------------------------------------------------
@@ -172,9 +174,8 @@ class Q_DECL_HIDDEN PackageLoadingDescriptionList : public QList<FacePipelineExt
 {
 public:
 
-    explicit PackageLoadingDescriptionList()
-    {
-    }
+    explicit PackageLoadingDescriptionList();
+    ~PackageLoadingDescriptionList();
 
     FacePipelineExtendedPackage::Ptr take(const LoadingDescription& description);
 };
