@@ -142,6 +142,12 @@ protected:
     virtual void addNormalTag(qlonglong imageid, int tagId);
     virtual void removeNormalTag(qlonglong imageid, int tagId);
     virtual void removeNormalTags(qlonglong imageid, QList<int> tagId);
+
+private:
+
+    // Hidden copy constructor and assignment operator.
+    FaceUtils(const FaceUtils&);
+    FaceUtils& operator=(const FaceUtils&);
 };
 
 } // Namespace Digikam

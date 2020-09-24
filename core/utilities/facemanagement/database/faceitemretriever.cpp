@@ -31,6 +31,10 @@ FaceItemRetriever::FaceItemRetriever(FacePipeline::Private* const d)
 {
 }
 
+FaceItemRetriever::~FaceItemRetriever()
+{
+}
+
 void FaceItemRetriever::cancel()
 {
     catcher->cancel();
@@ -42,8 +46,8 @@ QList<QImage*> FaceItemRetriever::getDetails(const DImg& src, const QList<QRectF
 
     foreach (const QRectF& rect, rects)
     {
-        QImage* croppedFace = new QImage();
-        (*croppedFace)      = src.copyQImage(rect);
+        QImage* const croppedFace = new QImage();
+        (*croppedFace)            = src.copyQImage(rect);
 
         images << croppedFace;
     }
@@ -57,10 +61,10 @@ QList<QImage*> FaceItemRetriever::getDetails(const DImg& src, const QList<FaceTa
 
     foreach (const FaceTagsIface& face, faces)
     {
-        QRect rect          = TagRegion::mapFromOriginalSize(src, face.region().toRect());
+        QRect rect                = TagRegion::mapFromOriginalSize(src, face.region().toRect());
 
-        QImage* croppedFace = new QImage();
-        (*croppedFace)      = src.copyQImage(rect);
+        QImage* const croppedFace = new QImage();
+        (*croppedFace)            = src.copyQImage(rect);
 
         images << croppedFace;
     }
@@ -86,8 +90,8 @@ QList<QImage*> FaceItemRetriever::getThumbnails(const QString& filePath, const Q
 
     for (int i = 0 ; i < images.size() ; ++i)
     {
-        QImage* croppedFace = new QImage();
-        (*croppedFace)      = images[i].copy();
+        QImage* const croppedFace = new QImage();
+        (*croppedFace)            = images[i].copy();
 
         croppedFaces << croppedFace;
     }

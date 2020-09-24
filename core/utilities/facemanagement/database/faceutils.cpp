@@ -225,7 +225,7 @@ QList<FaceTagsIface> FaceUtils::writeUnconfirmedResults(qlonglong imageid,
                 {
                     FaceTagsIface& oldFace = overlappingEntries[j];
 
-                    if (oldFace.isUnknownName())
+                    if      (oldFace.isUnknownName())
                     {
                         // remove old face
                     }
@@ -322,28 +322,29 @@ void FaceUtils::addNormalTag(qlonglong imageId, int tagId)
      * is given time to be created, before assigning Icon.
      */
     QTimer::singleShot(200, [=]()
-    {
-        if (!FaceTags::isTheIgnoredPerson(tagId)  &&
-            !FaceTags::isTheUnknownPerson(tagId)  &&
-            !FaceTags::isTheUnconfirmedPerson(tagId)
-           )
         {
-            TAlbum* album = AlbumManager::instance()->findTAlbum(tagId);
-
-            // If Icon is NULL, set the newly added Face as the Icon.
-
-            if (album && album->iconId() == 0)
+            if (!FaceTags::isTheIgnoredPerson(tagId)  &&
+                !FaceTags::isTheUnknownPerson(tagId)  &&
+                !FaceTags::isTheUnconfirmedPerson(tagId)
+               )
             {
-                QString err;
+                TAlbum* const album = AlbumManager::instance()->findTAlbum(tagId);
 
-                if (!AlbumManager::instance()->updateTAlbumIcon(album, QString(),
-                                                                imageId, err))
+                // If Icon is NULL, set the newly added Face as the Icon.
+
+                if (album && (album->iconId() == 0))
                 {
-                    qCDebug(DIGIKAM_GENERAL_LOG) << err ;
+                    QString err;
+
+                    if (!AlbumManager::instance()->updateTAlbumIcon(album, QString(),
+                                                                    imageId, err))
+                    {
+                        qCDebug(DIGIKAM_GENERAL_LOG) << err ;
+                    }
                 }
             }
         }
-    });
+    );
 }
 
 void FaceUtils::removeNormalTag(qlonglong imageId, int tagId)
@@ -364,9 +365,9 @@ void FaceUtils::removeNormalTag(qlonglong imageId, int tagId)
          */
         if (count == 0)
         {
-            TAlbum* album = AlbumManager::instance()->findTAlbum(tagId);
+            TAlbum* const album = AlbumManager::instance()->findTAlbum(tagId);
 
-            if (album && album->iconId() != 0)
+            if (album && (album->iconId() != 0))
             {
                 QString err;
 

@@ -36,6 +36,8 @@ class Q_DECL_HIDDEN FaceItemRetriever
 public:
 
     explicit FaceItemRetriever(FacePipeline::Private* const d);
+    ~FaceItemRetriever();
+
     void cancel();
 
     QList<QImage*> getDetails(const DImg& src, const QList<QRectF>& rects)                   const;
