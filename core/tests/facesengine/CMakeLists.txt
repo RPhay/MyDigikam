@@ -150,7 +150,12 @@ target_link_libraries(align
 
 # -----------------------------------------------------------------------------
 
-set(preprocess_SRCS ${CMAKE_CURRENT_SOURCE_DIR}/preprocess.cpp)
+include_directories(${CMAKE_CURRENT_SOURCE_DIR}/preprocess)
+
+set(preprocess_SRCS ${CMAKE_CURRENT_SOURCE_DIR}/preprocess/preprocess.cpp
+                    ${CMAKE_CURRENT_SOURCE_DIR}/preprocess/tantriggspreprocessor.cpp
+)
+
 add_executable(preprocess ${preprocess_SRCS})
 
 target_link_libraries(preprocess

@@ -40,8 +40,6 @@ include_directories(${CMAKE_CURRENT_SOURCE_DIR}/..
                     ${CMAKE_CURRENT_SOURCE_DIR}/preprocessing
                     ${CMAKE_CURRENT_SOURCE_DIR}/preprocessing/shape-predictor
                     ${CMAKE_CURRENT_SOURCE_DIR}/preprocessing/recognition
-
-                    # ${CMAKE_CURRENT_SOURCE_DIR}/preprocessing/tantriggs
 )
 
 # ---------------------------------------------------------------------------
@@ -60,8 +58,6 @@ set(facesengine_LIB_SRCS ${CMAKE_CURRENT_SOURCE_DIR}/common/identity.cpp
                          ${CMAKE_CURRENT_SOURCE_DIR}/preprocessing/shape-predictor/qdatastreamoverloads.cpp
                          ${CMAKE_CURRENT_SOURCE_DIR}/preprocessing/shape-predictor/fullobjectdetection.cpp
                          ${CMAKE_CURRENT_SOURCE_DIR}/preprocessing/shape-predictor/shapepredictor.cpp
-
-                         # ${CMAKE_CURRENT_SOURCE_DIR}/preprocessing/tantriggs/tantriggspreprocessor.cpp
 )
 
 if(DNN_DETECTION)

@@ -33,11 +33,7 @@
 // Local includes
 
 #include "qtopencv.h"
-
-// Implementation not exported with digiKam core.
-
-#include "../../libs/facesengine/preprocessing/tantriggs/tantriggspreprocessor.h"
-#include "../../libs/facesengine/preprocessing/tantriggs/tantriggspreprocessor.cpp"
+#include "tantriggspreprocessor.h"
 
 using namespace Digikam;
 
@@ -96,6 +92,7 @@ public:
     void add(const cv::Mat& left, const cv::Mat& right)
     {
         // Draw images side-by-side for later display
+
         QSize size(left.cols, left.rows);
         size.scale(uiSize, uiSize, Qt::KeepAspectRatio);
         cv::Size scaleSize(size.width(), size.height());
