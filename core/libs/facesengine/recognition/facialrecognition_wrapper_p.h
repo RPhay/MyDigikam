@@ -41,13 +41,7 @@
 
 #include "digikam_config.h"
 #include "digikam_debug.h"
-
-#ifdef USE_DNN_RECOGNITION_BACKEND
-#   include "opencvdnnfacerecognizer.h"
-#else
-#   include "opencvlbphfacerecognizer.h"
-#endif
-
+#include "opencvdnnfacerecognizer.h"
 #include "recognitiontrainingprovider.h"
 #include "coredbaccess.h"
 #include "dbengineparameters.h"
@@ -100,16 +94,7 @@ public:
     mutable QMutex              mutex;
     QVariantMap                 parameters;
     QHash<int, Identity>        identityCache;
-
-#ifdef USE_DNN_RECOGNITION_BACKEND
-
     OpenCVDNNFaceRecognizer*    recognizer;
-
-#else
-
-    OpenCVLBPHFaceRecognizer*   recognizer;
-
-#endif
 };
 
 } // namespace Digikam

@@ -61,17 +61,8 @@ void FacialRecognitionWrapper::Private::clear(const QList<int>& idsToClear, cons
 
     delete recognizer;
 
-#ifdef USE_DNN_RECOGNITION_BACKEND
-
     recognizer = new OpenCVDNNFaceRecognizer(OpenCVDNNFaceRecognizer::Tree);
-
-#else
-
-    recognizer = new OpenCVLBPHFaceRecognizer();
-
-#endif
 }
-
 
 // -------------------------------------------------------------------------------------
 

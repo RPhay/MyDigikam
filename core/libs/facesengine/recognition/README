@@ -1,4 +1,3 @@
 opencv-dnn                 : face recognition based on OPenCV neural network models.
-opencv-lbph                : legacy OpenCV LBPH face recognition algorithm.
 recognitiondatabase        : faces recognition database wrapper.
 recognitiontraningprovider : faces recognition training helper class.

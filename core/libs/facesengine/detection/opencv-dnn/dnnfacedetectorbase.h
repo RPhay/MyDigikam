@@ -30,6 +30,7 @@
 #include <vector>
 
 // Qt includes
+
 #include <QMutex>
 
 // Local includes

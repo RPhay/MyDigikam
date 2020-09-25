@@ -31,12 +31,7 @@
 // Local includes
 
 #include "digikam_debug.h"
-
-#ifdef USE_DNN_RECOGNITION_BACKEND
-#   include "kd_tree.h"
-#else
-#   include "lbphfacemodel.h"
-#endif
+#include "kd_tree.h"
 
 namespace Digikam
 {

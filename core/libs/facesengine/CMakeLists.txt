@@ -6,14 +6,6 @@
 
 APPLY_COMMON_POLICIES()
 
-# Option to switch between DNN or HAAR face detection.
-# DNN is the default one, Haar is the legacy deprecated method.
-set(DNN_DETECTION TRUE)
-
-# Option to switch between DNN or LBPH face recognition.
-# DNN is the default one, LBPH is the legacy deprecated method.
-set(DNN_RECOGNITION TRUE)
-
 # ---------------------------------------------------------------------------
 
 kde_enable_exceptions()
@@ -60,28 +52,15 @@ set(facesengine_LIB_SRCS ${CMAKE_CURRENT_SOURCE_DIR}/common/identity.cpp
                          ${CMAKE_CURRENT_SOURCE_DIR}/preprocessing/shape-predictor/shapepredictor.cpp
 )
 
-if(DNN_DETECTION)
+add_definitions(-DUSE_DNN_DETECTION_BACKEND)
+include_directories(${CMAKE_CURRENT_SOURCE_DIR}/detection/opencv-dnn)
 
-    add_definitions(-DUSE_DNN_DETECTION_BACKEND)
-    include_directories(${CMAKE_CURRENT_SOURCE_DIR}/detection/opencv-dnn)
-
-    set(facesengine_LIB_SRCS ${facesengine_LIB_SRCS}
-                             ${CMAKE_CURRENT_SOURCE_DIR}/detection/opencv-dnn/opencvdnnfacedetector.cpp
-                             ${CMAKE_CURRENT_SOURCE_DIR}/detection/opencv-dnn/dnnfacedetectorssd.cpp
-                             ${CMAKE_CURRENT_SOURCE_DIR}/detection/opencv-dnn/dnnfacedetectoryolo.cpp
-                             ${CMAKE_CURRENT_SOURCE_DIR}/detection/opencv-dnn/dnnfacedetectorbase.cpp
-    )
-
-else()
-
-    include_directories(${CMAKE_CURRENT_SOURCE_DIR}/detection/opencv-face)
-
-    set(facesengine_LIB_SRCS ${facesengine_LIB_SRCS}
-                             ${CMAKE_CURRENT_SOURCE_DIR}/detection/opencv-face/opencvfacedetector.cpp
-                             ${CMAKE_CURRENT_SOURCE_DIR}/detection/opencv-face/opencvfacedetector_p.cpp
-    )
-
-endif()
+set(facesengine_LIB_SRCS ${facesengine_LIB_SRCS}
+                         ${CMAKE_CURRENT_SOURCE_DIR}/detection/opencv-dnn/opencvdnnfacedetector.cpp
+                         ${CMAKE_CURRENT_SOURCE_DIR}/detection/opencv-dnn/dnnfacedetectorssd.cpp
+                         ${CMAKE_CURRENT_SOURCE_DIR}/detection/opencv-dnn/dnnfacedetectoryolo.cpp
+                         ${CMAKE_CURRENT_SOURCE_DIR}/detection/opencv-dnn/dnnfacedetectorbase.cpp
+)
 
 # Used by digikamcore
 add_library(core_digikamfacesengine_obj
@@ -119,41 +98,20 @@ set(facesengine_database_LIB_SRCS ${CMAKE_CURRENT_SOURCE_DIR}/recognition/recogn
                                   ${CMAKE_CURRENT_SOURCE_DIR}/facedb/facedb_identity.cpp
 )
 
-if(DNN_RECOGNITION)
+add_definitions(-DUSE_DNN_RECOGNITION_BACKEND)
+include_directories(${CMAKE_CURRENT_SOURCE_DIR}/recognition/opencv-dnn)
 
-    add_definitions(-DUSE_DNN_RECOGNITION_BACKEND)
-    include_directories(${CMAKE_CURRENT_SOURCE_DIR}/recognition/opencv-dnn)
+set(facesengine_database_LIB_SRCS ${facesengine_database_LIB_SRCS}
 
-    set(facesengine_database_LIB_SRCS ${facesengine_database_LIB_SRCS}
+                                  # Neural NetWork Faces recognition module based on OpenCV DNN
+                                  ${CMAKE_CURRENT_SOURCE_DIR}/facedb/facedb_dnn.cpp
+                                  ${CMAKE_CURRENT_SOURCE_DIR}/facedb/facedb_dnn_spatial.cpp
 
-                                      # Neural NetWork Faces recognition module based on OpenCV DNN
-                                      ${CMAKE_CURRENT_SOURCE_DIR}/facedb/facedb_dnn.cpp
-                                      ${CMAKE_CURRENT_SOURCE_DIR}/facedb/facedb_dnn_spatial.cpp
-
-                                      ${CMAKE_CURRENT_SOURCE_DIR}/recognition/opencv-dnn/kd_node.cpp
-                                      ${CMAKE_CURRENT_SOURCE_DIR}/recognition/opencv-dnn/kd_tree.cpp
-                                      ${CMAKE_CURRENT_SOURCE_DIR}/recognition/opencv-dnn/opencvdnnfacerecognizer.cpp
-                                      ${CMAKE_CURRENT_SOURCE_DIR}/recognition/opencv-dnn/dnnfaceextractor.cpp
-    )
-
-else()
-
-    include_directories(${CMAKE_CURRENT_SOURCE_DIR}/recognition/opencv-lbph)
-
-    set(facesengine_database_LIB_SRCS ${facesengine_database_LIB_SRCS}
-
-                                      # Lpbh Faces recognition module based on OpenCV
-
-                                      ${CMAKE_CURRENT_SOURCE_DIR}/facedb/facedb_lbph.cpp
-
-                                      ${CMAKE_CURRENT_SOURCE_DIR}/recognition/opencv-lbph/opencv_face.cpp
-                                      ${CMAKE_CURRENT_SOURCE_DIR}/recognition/opencv-lbph/lbphfacemodel.cpp
-                                      ${CMAKE_CURRENT_SOURCE_DIR}/recognition/opencv-lbph/opencvlbphfacerecognizer.cpp
-                                      ${CMAKE_CURRENT_SOURCE_DIR}/recognition/opencv-lbph/facerec_borrowed.cpp
-    )
-
-endif()
-
+                                  ${CMAKE_CURRENT_SOURCE_DIR}/recognition/opencv-dnn/kd_node.cpp
+                                  ${CMAKE_CURRENT_SOURCE_DIR}/recognition/opencv-dnn/kd_tree.cpp
+                                  ${CMAKE_CURRENT_SOURCE_DIR}/recognition/opencv-dnn/opencvdnnfacerecognizer.cpp
+                                  ${CMAKE_CURRENT_SOURCE_DIR}/recognition/opencv-dnn/dnnfaceextractor.cpp
+)
 
 # Used by digikamgui
 add_library(gui_digikamfacesenginedatabase_obj

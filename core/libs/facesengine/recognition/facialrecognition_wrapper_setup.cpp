@@ -31,9 +31,6 @@ namespace Digikam
 
 void FacialRecognitionWrapper::Private::applyParameters()
 {
-
-#ifdef USE_DNN_RECOGNITION_BACKEND
-
     int k           = 5;
     float threshold = 0.6;
 
@@ -56,21 +53,6 @@ void FacialRecognitionWrapper::Private::applyParameters()
 
     recognizer->setNbNeighBors(k);
     recognizer->setThreshold(threshold);
-
-#else
-
-    if (recognizer)
-    {
-        for (QVariantMap::const_iterator it = parameters.constBegin() ; it != parameters.constEnd() ; ++it)
-        {
-            if ((it.key() == QLatin1String("threshold")) || (it.key() == QLatin1String("accuracy")))
-            {
-                recognizer->setThreshold(it.value().toFloat());
-            }
-        }
-    }
-
-#endif
 }
 
 void FacialRecognitionWrapper::setParameter(const QString& parameter, const QVariant& value)

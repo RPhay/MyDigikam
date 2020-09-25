@@ -46,11 +46,7 @@
 namespace Digikam
 {
 
-#ifdef USE_DNN_RECOGNITION_BACKEND
 class KDTree;
-#else
-class LBPHFaceModel;
-#endif
 
 class FaceDb
 {
@@ -86,8 +82,6 @@ public:
 
     QList<Identity> identities()            const;
     QList<int>      identityIds()           const;
-
-#ifdef USE_DNN_RECOGNITION_BACKEND
 
 public:
 
@@ -171,19 +165,6 @@ private:
                                     float sqRange,
                                     float cosThreshold,
                                     int maxNbNeighbors) const;
-
-#else
-
-public:
-
-    // --- OpenCV LBPH
-
-    void updateLBPHFaceModel(LBPHFaceModel& model);
-    LBPHFaceModel lbphFaceModel()           const;
-    void clearLBPHTraining(const QString& context = QString());
-    void clearLBPHTraining(const QList<int>& identities, const QString& context = QString());
-
-#endif
 
 private:
 
