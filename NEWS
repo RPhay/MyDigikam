@@ -120,9 +120,9 @@ BUGFIXES:
 107 ==> 426481 - Face recognition feels like a regression from 6.4.
 108 ==> 426479 - Slideshow: Show lens name in properties overlay.
 109 ==> 426884 - Geolocation Editor discards changes without warning.
-110 ==> 426659 - thumbnails for tagged faces not useful.
-111 ==> 426422 - DigiKam won't work.
-112 ==> 
+110 ==> 426659 - Thumbnails for tagged faces not useful.
+111 ==> 426422 - digiKam won't work.
+112 ==> 426912 - digikam-7.1.0-x86-64.appimage fails to start on CentOS 8.
 113 ==> 
 114 ==> 
 115 ==> 
