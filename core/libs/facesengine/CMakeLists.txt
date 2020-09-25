@@ -41,7 +41,6 @@ include_directories(${CMAKE_CURRENT_SOURCE_DIR}/..
                     ${CMAKE_CURRENT_SOURCE_DIR}/preprocessing/shape-predictor
                     ${CMAKE_CURRENT_SOURCE_DIR}/preprocessing/recognition
 
-                    # ${CMAKE_CURRENT_SOURCE_DIR}/alignment/flandmark
                     # ${CMAKE_CURRENT_SOURCE_DIR}/preprocessing/tantriggs
 )
 
@@ -62,7 +61,6 @@ set(facesengine_LIB_SRCS ${CMAKE_CURRENT_SOURCE_DIR}/common/identity.cpp
                          ${CMAKE_CURRENT_SOURCE_DIR}/preprocessing/shape-predictor/fullobjectdetection.cpp
                          ${CMAKE_CURRENT_SOURCE_DIR}/preprocessing/shape-predictor/shapepredictor.cpp
 
-                         # ${CMAKE_CURRENT_SOURCE_DIR}/alignment/flandmark/flandmarkaligner.cpp
                          # ${CMAKE_CURRENT_SOURCE_DIR}/preprocessing/tantriggs/tantriggspreprocessor.cpp
 )
 
