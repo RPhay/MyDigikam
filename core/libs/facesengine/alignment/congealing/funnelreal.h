@@ -29,14 +29,15 @@
 #ifndef DIGIKAM_FACESENGINE_ALIGNMENT_CONGEALING_FUNNELREAL_H
 #define DIGIKAM_FACESENGINE_ALIGNMENT_CONGEALING_FUNNELREAL_H
 
-// OpenCV includes
+// Local includes
 
 #include "digikam_opencv.h"
+#include "digikam_export.h"
 
 namespace Digikam
 {
 
-class FunnelReal
+class  DIGIKAM_EXPORT FunnelReal
 {
 
 public:

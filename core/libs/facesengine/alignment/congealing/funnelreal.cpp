@@ -197,11 +197,13 @@ cv::Mat FunnelReal::align(const cv::Mat& inputImage)
     cv::Mat scaled, grey, image;
 
     // resize to outer window size
+
     cv::resize(inputImage, scaled, cv::Size(d->outerDimW, d->outerDimH), 0, 0,
                ((d->outerDimW < inputImage.cols) ? cv::INTER_AREA
                                                  : cv::INTER_CUBIC));
 
     // ensure it's grayscale
+
     if (scaled.channels() > 1)
     {
         cvtColor(scaled, grey, CV_RGB2GRAY);
@@ -212,6 +214,7 @@ cv::Mat FunnelReal::align(const cv::Mat& inputImage)
     }
 
     // convert to float
+
     grey.convertTo(image, CV_32F);
 
     const int height     = image.rows - 2*d->windowSize;
@@ -572,6 +575,7 @@ void FunnelReal::Private::getSIFTdescripter(std::vector<float>& descripter,
     float degPerBin  = 360.0f / bucketsDim;
 
     // weight magnitudes by Gaussian with sigma equal to half window
+
     std::vector<float> mtimesGRow(2*windowSize);
     std::vector<std::vector<float> > mtimesG(2*windowSize, mtimesGRow);
 
@@ -587,6 +591,7 @@ void FunnelReal::Private::getSIFTdescripter(std::vector<float>& descripter,
 
     // calculate descripter
     // using trilinear interpolation
+
     int histBin[2], histX[2], histY[2];
     float dX[2], dY[2], dBin[2];
 
@@ -657,7 +662,7 @@ void FunnelReal::Private::getSIFTdescripter(std::vector<float>& descripter,
     // normalize
     // threshold values at .2, renormalize
 
-    float sum = 0;
+    float sum = 0.0f;
 
     for (int i = 0 ; i < (signed)descripter.size() ; ++i)
     {
@@ -687,7 +692,7 @@ void FunnelReal::Private::getSIFTdescripter(std::vector<float>& descripter,
         }
     }
 
-    sum = 0;
+    sum = 0.0f;
 
     for (int i = 0 ; i < (signed)descripter.size() ; ++i)
     {
@@ -754,7 +759,7 @@ float FunnelReal::Private::computeLogLikelihood(const std::vector<std::vector<fl
                                                 const std::vector<std::vector<float> >& fids,
                                                 int numFeatureClusters) const
 {
-    float l = 0;
+    float l = 0.0f;
 
     for (int j = 0 ; j < (signed)fids.size() ; ++j)
     {

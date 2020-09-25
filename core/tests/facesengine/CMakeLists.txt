@@ -13,6 +13,7 @@ add_custom_target(datalink ALL
 
 add_custom_target(scriptlink ALL
                   COMMAND ${CMAKE_COMMAND} -E create_symlink ${CMAKE_CURRENT_SOURCE_DIR}/scripts ${CMAKE_CURRENT_BINARY_DIR}/scripts)
+
 # -----------------------------------------------------------------------------
 
 set(detect_SRCS ${CMAKE_CURRENT_SOURCE_DIR}/detect.cpp)
@@ -133,9 +134,8 @@ target_link_libraries(gui_recognition
 
 # -----------------------------------------------------------------------------
 
-set(align_SRCS ${CMAKE_CURRENT_SOURCE_DIR}/align.cpp
-               ${CMAKE_SOURCE_DIR}/core/libs/facesengine/alignment/congealing/funnelreal.cpp
-)
+set(align_SRCS ${CMAKE_CURRENT_SOURCE_DIR}/align.cpp)
+
 add_executable(align ${align_SRCS})
 
 target_link_libraries(align
