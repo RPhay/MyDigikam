@@ -107,7 +107,7 @@ add_library(digikamfacesengine STATIC $<TARGET_OBJECTS:core_digikamfacesengine_o
 
 set(facesengine_database_LIB_SRCS ${CMAKE_CURRENT_SOURCE_DIR}/recognition/recognitiontrainingprovider.cpp
 
-                                  #Replacement of RecognitionDatabase
+                                  # Replacement of RecognitionDatabase
                                   ${CMAKE_CURRENT_SOURCE_DIR}/recognition/facialrecognition_wrapper.cpp
                                   ${CMAKE_CURRENT_SOURCE_DIR}/recognition/facialrecognition_wrapper_p.cpp
                                   ${CMAKE_CURRENT_SOURCE_DIR}/recognition/facialrecognition_wrapper_setup.cpp
@@ -123,21 +123,6 @@ set(facesengine_database_LIB_SRCS ${CMAKE_CURRENT_SOURCE_DIR}/recognition/recogn
                                   ${CMAKE_CURRENT_SOURCE_DIR}/facedb/facedbschemaupdater.cpp
                                   ${CMAKE_CURRENT_SOURCE_DIR}/facedb/facedb.cpp
                                   ${CMAKE_CURRENT_SOURCE_DIR}/facedb/facedb_identity.cpp
-
-                                  # Eigen Faces recognition module based on OpenCV (experimental and deprecated)
-
-#                                  ${CMAKE_CURRENT_SOURCE_DIR}/recognition/opencv-eigenfaces/eigenfacemodel.cpp
-#                                  ${CMAKE_CURRENT_SOURCE_DIR}/recognition/opencv-eigenfaces/opencveigenfacerecognizer.cpp
-#                                  ${CMAKE_CURRENT_SOURCE_DIR}/recognition/opencv-eigenfaces/facerec_eigenborrowed.cpp
-#                                  ${CMAKE_CURRENT_SOURCE_DIR}/facedb/facedb_eigen.cpp
-
-                                  # Fisher Faces recognition module based on OpenCV (experimental and deprecated)
-
-#                                  ${CMAKE_CURRENT_SOURCE_DIR}/recognition/opencv-fisherfaces/fisherfacemodel.cpp
-#                                  ${CMAKE_CURRENT_SOURCE_DIR}/recognition/opencv-fisherfaces/opencvfisherfacerecognizer.cpp
-#                                  ${CMAKE_CURRENT_SOURCE_DIR}/recognition/opencv-fisherfaces/facerec_fisherborrowed.cpp
-#                                  ${CMAKE_CURRENT_SOURCE_DIR}/facedb/facedb_fisher.cpp
-
 )
 
 if(DNN_RECOGNITION)
@@ -159,17 +144,15 @@ if(DNN_RECOGNITION)
 
 else()
 
-    include_directories(${CMAKE_CURRENT_SOURCE_DIR}/recognition/opencv-face
-                        ${CMAKE_CURRENT_SOURCE_DIR}/recognition/opencv-lbph
-    )
+    include_directories(${CMAKE_CURRENT_SOURCE_DIR}/recognition/opencv-lbph)
 
     set(facesengine_database_LIB_SRCS ${facesengine_database_LIB_SRCS}
 
                                       # Lpbh Faces recognition module based on OpenCV
 
-                                      ${CMAKE_CURRENT_SOURCE_DIR}/recognition/opencv-face/opencv_face.cpp
                                       ${CMAKE_CURRENT_SOURCE_DIR}/facedb/facedb_lbph.cpp
 
+                                      ${CMAKE_CURRENT_SOURCE_DIR}/recognition/opencv-lbph/opencv_face.cpp
                                       ${CMAKE_CURRENT_SOURCE_DIR}/recognition/opencv-lbph/lbphfacemodel.cpp
                                       ${CMAKE_CURRENT_SOURCE_DIR}/recognition/opencv-lbph/opencvlbphfacerecognizer.cpp
                                       ${CMAKE_CURRENT_SOURCE_DIR}/recognition/opencv-lbph/facerec_borrowed.cpp

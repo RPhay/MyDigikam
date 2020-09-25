@@ -42,12 +42,6 @@
 #include "digikam_config.h"
 #include "digikam_debug.h"
 
-/*
-NOTE: experimental and deprecated
-#include "opencvfisherfacerecognizer.h"
-#include "opencveigenfacerecognizer.h"
-*/
-
 #ifdef USE_DNN_RECOGNITION_BACKEND
 #   include "opencvdnnfacerecognizer.h"
 #else
@@ -114,13 +108,6 @@ public:
 #else
 
     OpenCVLBPHFaceRecognizer*   recognizer;
-
-/*
-    NOTE: experimental and deprecated
-
-    OpenCVFISHERFaceRecognizer* recognizer;
-    OpenCVEIGENFaceRecognizer*  recognizer;
-*/
 
 #endif
 };

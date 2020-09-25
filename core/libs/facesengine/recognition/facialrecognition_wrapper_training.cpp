@@ -69,14 +69,6 @@ void FacialRecognitionWrapper::Private::clear(const QList<int>& idsToClear, cons
 
     recognizer = new OpenCVLBPHFaceRecognizer();
 
-/*
-    NOTE: experimental and deprecated
-
-    recognizer = new OpenCVEIGENFaceRecognizer();
-
-    recognizer = new OpenCVFISHERFaceRecognizer();
-*/
-
 #endif
 }
 

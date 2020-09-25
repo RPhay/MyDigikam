@@ -76,12 +76,6 @@ FacialRecognitionWrapper::Private::Private()
 #else
 
     recognizer = new OpenCVLBPHFaceRecognizer();
-/*
-    NOTE: experimental and deprecated
-
-    recognizer = new OpenCVFISHERFaceRecognizer();
-    recognizer = new OpenCVEIGENFaceRecognizer();
-*/
 
 #endif
 }

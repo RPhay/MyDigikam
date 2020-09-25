@@ -38,14 +38,6 @@
 #   include "lbphfacemodel.h"
 #endif
 
-/*
-NOTE: experimental and deprecated
-
-#include "eigenfacemodel.h"
-#include "fisherfacemodel.h"
-
-*/
-
 namespace Digikam
 {
 

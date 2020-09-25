@@ -52,14 +52,6 @@ class KDTree;
 class LBPHFaceModel;
 #endif
 
-/*
-NOTE: experimental and deprecated
-
-class EigenFaceModel;
-class FisherFaceModel;
-
-*/
-
 class FaceDb
 {
 public:
@@ -192,26 +184,6 @@ public:
     void clearLBPHTraining(const QList<int>& identities, const QString& context = QString());
 
 #endif
-
-/*
-NOTE: experimental and deprecated
-
-public:
-
-    // --- OpenCV EIGEN
-
-    void updateEIGENFaceModel(EigenFaceModel& model, const std::vector<cv::Mat>& images_rgb);
-    EigenFaceModel eigenFaceModel()         const;
-    void clearEIGENTraining(const QString& context = QString());
-    void clearEIGENTraining(const QList<int>& identities, const QString& context = QString());
-
-public:
-
-    // --- OpenCV FISHER
-
-    FisherFaceModel fisherFaceModel()       const;
-
-*/
 
 private:
 
