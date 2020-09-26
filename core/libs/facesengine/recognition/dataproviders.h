@@ -42,7 +42,7 @@ namespace Digikam
  * where for each entry a QImage can be provided.
  * Only forward iteration is required.
  */
-class DIGIKAM_EXPORT ImageListProvider
+class DIGIKAM_GUI_EXPORT ImageListProvider
 {
 public:
 
