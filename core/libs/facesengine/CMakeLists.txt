@@ -37,7 +37,6 @@ include_directories($<TARGET_PROPERTY:Qt5::Xml,INTERFACE_INCLUDE_DIRECTORIES>
 # ---------------------------------------------------------------------------
 
 set(facesengine_LIB_SRCS ${CMAKE_CURRENT_SOURCE_DIR}/common/identity.cpp
-                         ${CMAKE_CURRENT_SOURCE_DIR}/common/dataproviders.cpp
 
                          ${CMAKE_CURRENT_SOURCE_DIR}/detection/facedetector.cpp
 
@@ -75,6 +74,7 @@ add_library(digikamfacesengine STATIC $<TARGET_OBJECTS:core_digikamfacesengine_o
 # ---------------------------------------------------------------------------
 
 set(facesengine_database_LIB_SRCS ${CMAKE_CURRENT_SOURCE_DIR}/recognition/recognitiontrainingprovider.cpp
+                                  ${CMAKE_CURRENT_SOURCE_DIR}/recognition/dataproviders.cpp
 
                                   ${CMAKE_CURRENT_SOURCE_DIR}/recognition/facialrecognition_wrapper.cpp
                                   ${CMAKE_CURRENT_SOURCE_DIR}/recognition/facialrecognition_wrapper_p.cpp
