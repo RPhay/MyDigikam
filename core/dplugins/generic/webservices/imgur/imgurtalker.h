@@ -7,7 +7,7 @@
  * Description : Implementation of v3 of the Imgur API
  *
  * Copyright (C) 2016      by Fabian Vogt <fabian at ritter dash vogt dot de>
- * Copyright (C) 2016-2018 by Caulier Gilles <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2016-2020 by Caulier Gilles <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -44,9 +44,9 @@ namespace DigikamGenericImgUrPlugin
 
 enum class ImgurTalkerActionType
 {
-    ACCT_INFO,       // Action: account Result : account
-    IMG_UPLOAD,      // Action: upload Result  : image
-    ANON_IMG_UPLOAD, // Action: upload Result  : image
+    ACCT_INFO,       ///< Action: account Result : account
+    IMG_UPLOAD,      ///< Action: upload Result  : image
+    ANON_IMG_UPLOAD, ///< Action: upload Result  : image
 };
 
 struct ImgurTalkerAction

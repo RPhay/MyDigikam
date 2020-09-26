@@ -7,7 +7,7 @@
  * Description : Implementation of v3 of the Imgur API
  *
  * Copyright (C) 2016      by Fabian Vogt <fabian at ritter dash vogt dot de>
- * Copyright (C) 2016-2018 by Caulier Gilles <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2016-2020 by Caulier Gilles <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -156,11 +156,16 @@ void ImgurTalker::cancelAllWork()
     stopWorkTimer();
 
     if (d->reply)
+    {
         d->reply->abort();
+    }
 
     // Should signalError be emitted for those actions?
+
     while (!d->workQueue.isEmpty())
+    {
         d->workQueue.dequeue();
+    }
 }
 
 QUrl ImgurTalker::urlForDeletehash(const QString& deletehash)
@@ -173,9 +178,13 @@ void ImgurTalker::slotOauthAuthorized()
     bool success = d->auth.linked();
 
     if (success)
+    {
         startWorkTimer();
+    }
     else
+    {
         emit signalBusy(false);
+    }
 
     emit signalAuthorized(success,
                           d->auth.extraTokens()[QLatin1String("account_username")].toString());
@@ -221,10 +230,10 @@ void ImgurTalker::slotReplyFinished()
     }
 
     // NOTE: toInt() returns 0 if conversion fails. That fits nicely already.
-    int code      = reply->attribute(QNetworkRequest::HttpStatusCodeAttribute).toInt();
+    int netcode      = reply->attribute(QNetworkRequest::HttpStatusCodeAttribute).toInt();
     auto response = QJsonDocument::fromJson(reply->readAll());
 
-    if (code == 200 && !response.isEmpty())
+    if ((netcode == 200) && !response.isEmpty())
     {
         // Success!
         ImgurTalkerResult result;
@@ -264,7 +273,7 @@ void ImgurTalker::slotReplyFinished()
     }
     else
     {
-        if (code == 403)
+        if (netcode == 403)
         {
             /* HTTP 403 Forbidden -> Invalid token?
              * That needs to be handled internally, so don't emit signalProgress
@@ -292,7 +301,9 @@ void ImgurTalker::slotReplyFinished()
 void ImgurTalker::timerEvent(QTimerEvent* event)
 {
     if (event->timerId() != d->workTimer)
+    {
         return QObject::timerEvent(event);
+    }
 
     event->accept();
 
@@ -339,12 +350,14 @@ void ImgurTalker::addAnonToken(QNetworkRequest* request)
 
 void ImgurTalker::doWork()
 {
-    if (d->workQueue.isEmpty() || d->reply != nullptr)
+    if (d->workQueue.isEmpty() || (d->reply != nullptr))
+    {
         return;
+    }
 
     auto &work = d->workQueue.first();
 
-    if (work.type != ImgurTalkerActionType::ANON_IMG_UPLOAD && !d->auth.linked())
+    if ((work.type != ImgurTalkerActionType::ANON_IMG_UPLOAD) && !d->auth.linked())
     {
         d->auth.link();
         return; // Wait for the signalAuthorized() signal.
@@ -379,7 +392,7 @@ void ImgurTalker::doWork()
             }
 
             // Set ownership to d->image to delete that as well.
-            auto* multiPart = new QHttpMultiPart(QHttpMultiPart::FormDataType, d->image);
+            auto* const multiPart = new QHttpMultiPart(QHttpMultiPart::FormDataType, d->image);
             QHttpPart title;
             title.setHeader(QNetworkRequest::ContentDispositionHeader,
                             QLatin1String("form-data; name=\"title\""));
@@ -403,9 +416,13 @@ void ImgurTalker::doWork()
             QNetworkRequest request(QUrl(QLatin1String("https://api.imgur.com/3/image")));
 
             if (work.type == ImgurTalkerActionType::IMG_UPLOAD)
+            {
                 addAuthToken(&request);
+            }
             else
+            {
                 addAnonToken(&request);
+            }
 
             d->reply = d->net.post(request, multiPart);
             // delete the multiPart with the reply
