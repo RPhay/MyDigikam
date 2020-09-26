@@ -38,7 +38,6 @@ include_directories($<TARGET_PROPERTY:Qt5::Xml,INTERFACE_INCLUDE_DIRECTORIES>
 
 set(facesengine_LIB_SRCS ${CMAKE_CURRENT_SOURCE_DIR}/common/identity.cpp
                          ${CMAKE_CURRENT_SOURCE_DIR}/common/dataproviders.cpp
-                         ${CMAKE_CURRENT_SOURCE_DIR}/common/opencvmatdata.cpp
 
                          ${CMAKE_CURRENT_SOURCE_DIR}/detection/facedetector.cpp
 

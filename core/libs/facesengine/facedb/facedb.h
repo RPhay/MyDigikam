@@ -39,9 +39,9 @@
 // Local includes
 
 #include "digikam_config.h"
+#include "digikam_opencv.h"
 #include "identity.h"
 #include "facedbbackend.h"
-#include "opencvmatdata.h"
 
 namespace Digikam
 {
