@@ -61,7 +61,7 @@ int  QListImageListProvider::size()  const
 
 bool QListImageListProvider::atEnd() const
 {
-    return it == list.constEnd();
+    return (it == list.constEnd());
 }
 
 void QListImageListProvider::proceed(int steps)

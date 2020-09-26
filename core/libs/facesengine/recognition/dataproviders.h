@@ -60,13 +60,12 @@ public:
 /**
  * A wrapper implementation for ImageListProvider if you have a QList of QImages
  */
-class DIGIKAM_EXPORT QListImageListProvider : public ImageListProvider
+class DIGIKAM_GUI_EXPORT QListImageListProvider : public ImageListProvider
 {
 public:
 
     explicit QListImageListProvider(const QList<QImage*>& lst);
     QListImageListProvider();
-
     ~QListImageListProvider();
 
     void reset();
@@ -87,7 +86,7 @@ public:
 
 // ----------------------------------------------------------------------------------------
 
-class DIGIKAM_EXPORT EmptyImageListProvider : public ImageListProvider
+class DIGIKAM_GUI_EXPORT EmptyImageListProvider : public ImageListProvider
 {
 public:
 
@@ -106,7 +105,7 @@ public:
  * It is not specified, but depends on the backend which of the methods
  * in which order and for which identities will be called.
  */
-class DIGIKAM_EXPORT TrainingDataProvider
+class DIGIKAM_GUI_EXPORT TrainingDataProvider
 {
 public:
 
@@ -123,7 +122,7 @@ public:
      * Provides all images known for the given identity.
      * Ownership of the returned object stays with the TrainingDataProvider.
      */
-    virtual ImageListProvider* images(const Identity& identity) = 0;
+    virtual ImageListProvider* images(const Identity& identity)    = 0;
 };
 
 } // namespace Digikam
