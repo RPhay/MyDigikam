@@ -1,3 +1,0 @@
-face-funnel.data.tgz : compressed face alignment data based on image congealing Funnel model (see funnelreal.cpp)
-
-flandmark_model.dat.tgz : compressed face alignment data based on image Fland Mark model (see flandmarkaligner.cpp)

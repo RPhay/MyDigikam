@@ -34,9 +34,6 @@
 // Local includes
 
 #include "qtopencv.h"
-
-// Local includes
-
 #include "funnelreal.h"
 
 using namespace Digikam;

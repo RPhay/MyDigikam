@@ -19,19 +19,19 @@ include_directories($<TARGET_PROPERTY:Qt5::Xml,INTERFACE_INCLUDE_DIRECTORIES>
 
                     $<TARGET_PROPERTY:KF5::ConfigCore,INTERFACE_INCLUDE_DIRECTORIES>
                     $<TARGET_PROPERTY:KF5::I18n,INTERFACE_INCLUDE_DIRECTORIES>
-)
 
-include_directories(${CMAKE_CURRENT_SOURCE_DIR}/..
                     ${CMAKE_CURRENT_SOURCE_DIR}/common
                     ${CMAKE_CURRENT_SOURCE_DIR}/facedb
 
-                    ${CMAKE_CURRENT_SOURCE_DIR}/alignment/congealing
-
                     ${CMAKE_CURRENT_SOURCE_DIR}/detection
+                    ${CMAKE_CURRENT_SOURCE_DIR}/detection/opencv-dnn
 
                     ${CMAKE_CURRENT_SOURCE_DIR}/preprocessing
                     ${CMAKE_CURRENT_SOURCE_DIR}/preprocessing/shape-predictor
                     ${CMAKE_CURRENT_SOURCE_DIR}/preprocessing/recognition
+
+                    ${CMAKE_CURRENT_SOURCE_DIR}/recognition
+                    ${CMAKE_CURRENT_SOURCE_DIR}/recognition/opencv-dnn
 )
 
 # ---------------------------------------------------------------------------
@@ -51,9 +51,6 @@ set(facesengine_LIB_SRCS ${CMAKE_CURRENT_SOURCE_DIR}/common/identity.cpp
                          ${CMAKE_CURRENT_SOURCE_DIR}/preprocessing/shape-predictor/fullobjectdetection.cpp
                          ${CMAKE_CURRENT_SOURCE_DIR}/preprocessing/shape-predictor/shapepredictor.cpp
 )
-
-add_definitions(-DUSE_DNN_DETECTION_BACKEND)
-include_directories(${CMAKE_CURRENT_SOURCE_DIR}/detection/opencv-dnn)
 
 set(facesengine_LIB_SRCS ${facesengine_LIB_SRCS}
                          ${CMAKE_CURRENT_SOURCE_DIR}/detection/opencv-dnn/opencvdnnfacedetector.cpp
@@ -80,15 +77,12 @@ add_library(digikamfacesengine STATIC $<TARGET_OBJECTS:core_digikamfacesengine_o
 
 set(facesengine_database_LIB_SRCS ${CMAKE_CURRENT_SOURCE_DIR}/recognition/recognitiontrainingprovider.cpp
 
-                                  # Replacement of RecognitionDatabase
                                   ${CMAKE_CURRENT_SOURCE_DIR}/recognition/facialrecognition_wrapper.cpp
                                   ${CMAKE_CURRENT_SOURCE_DIR}/recognition/facialrecognition_wrapper_p.cpp
                                   ${CMAKE_CURRENT_SOURCE_DIR}/recognition/facialrecognition_wrapper_setup.cpp
                                   ${CMAKE_CURRENT_SOURCE_DIR}/recognition/facialrecognition_wrapper_training.cpp
                                   ${CMAKE_CURRENT_SOURCE_DIR}/recognition/facialrecognition_wrapper_recognize.cpp
                                   ${CMAKE_CURRENT_SOURCE_DIR}/recognition/facialrecognition_wrapper_identity.cpp
-
-                                  ${CMAKE_CURRENT_SOURCE_DIR}/alignment/congealing/funnelreal.cpp
 
                                   ${CMAKE_CURRENT_SOURCE_DIR}/facedb/facedbaccess.cpp
                                   ${CMAKE_CURRENT_SOURCE_DIR}/facedb/facedbbackend.cpp
@@ -97,9 +91,6 @@ set(facesengine_database_LIB_SRCS ${CMAKE_CURRENT_SOURCE_DIR}/recognition/recogn
                                   ${CMAKE_CURRENT_SOURCE_DIR}/facedb/facedb.cpp
                                   ${CMAKE_CURRENT_SOURCE_DIR}/facedb/facedb_identity.cpp
 )
-
-add_definitions(-DUSE_DNN_RECOGNITION_BACKEND)
-include_directories(${CMAKE_CURRENT_SOURCE_DIR}/recognition/opencv-dnn)
 
 set(facesengine_database_LIB_SRCS ${facesengine_database_LIB_SRCS}
 

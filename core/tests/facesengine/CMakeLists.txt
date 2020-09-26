@@ -134,42 +134,6 @@ target_link_libraries(gui_recognition
 
 # -----------------------------------------------------------------------------
 
-set(align_SRCS ${CMAKE_CURRENT_SOURCE_DIR}/align.cpp)
-
-add_executable(align ${align_SRCS})
-
-target_link_libraries(align
-
-                      digikamcore
-                      digikamgui
-                      digikamfacesengine
-                      digikamdatabase
-
-                      ${COMMON_TEST_LINK}
-)
-
-# -----------------------------------------------------------------------------
-
-include_directories(${CMAKE_CURRENT_SOURCE_DIR}/preprocess)
-
-set(preprocess_SRCS ${CMAKE_CURRENT_SOURCE_DIR}/preprocess/preprocess.cpp
-                    ${CMAKE_CURRENT_SOURCE_DIR}/preprocess/tantriggspreprocessor.cpp
-)
-
-add_executable(preprocess ${preprocess_SRCS})
-
-target_link_libraries(preprocess
-
-                      digikamcore
-                      digikamgui
-                      digikamfacesengine
-                      digikamdatabase
-
-                      ${COMMON_TEST_LINK}
-)
-
-# -----------------------------------------------------------------------------
-
 set(traindb_SRCS ${CMAKE_CURRENT_SOURCE_DIR}/traindb.cpp)
 add_executable(traindb ${traindb_SRCS})
 
@@ -185,23 +149,6 @@ target_link_libraries(traindb
 
 # -----------------------------------------------------------------------------
 
-set(facesenginedemo_SRCS ${CMAKE_CURRENT_SOURCE_DIR}/demo/demofaceengine.cpp
-                         ${CMAKE_CURRENT_SOURCE_DIR}/demo/demomainwindow.cpp
-                         ${CMAKE_CURRENT_SOURCE_DIR}/demo/demofaceitem.cpp
-                         ${CMAKE_CURRENT_SOURCE_DIR}/demo/demobutton.cpp
-                         ${CMAKE_CURRENT_SOURCE_DIR}/demo/demomarquee.cpp
-                         ${CMAKE_CURRENT_SOURCE_DIR}/demo/demofancyrect.cpp
-)
-
-qt5_wrap_ui(facesenginedemo_SRCS ${CMAKE_CURRENT_SOURCE_DIR}/demo/demomainwindow.ui)
-add_executable(facesenginedemo ${facesenginedemo_SRCS})
-
-target_link_libraries(facesenginedemo
-
-                      digikamcore
-                      digikamgui
-                      digikamfacesengine
-                      digikamdatabase
-
-                      ${COMMON_TEST_LINK}
-)
+add_subdirectory(alignment)
+add_subdirectory(preprocess)
+add_subdirectory(demo)

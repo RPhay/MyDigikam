@@ -38,6 +38,7 @@
 
 // Qt includes
 
+#include <QTest>
 #include <QFileInfo>
 #include <QStandardPaths>
 
@@ -170,9 +171,11 @@ public:
 FunnelReal::FunnelReal()
     : d(new Private)
 {
+    QString trainingFile(QFINDTESTDATA("face-funnel.data")); ///< data model file come with source code.
+/*
     QString trainingFile = QStandardPaths::standardLocations(QStandardPaths::GenericDataLocation).last() + QLatin1Char('/') +
                            QLatin1String("digikam/alignment-congealing/face-funnel.data");
-
+*/
     if (!QFileInfo(trainingFile).exists())
     {
         qCritical(DIGIKAM_FACESENGINE_LOG) << "Training data for Congealing/Funnel not found. Should be at" << trainingFile;
