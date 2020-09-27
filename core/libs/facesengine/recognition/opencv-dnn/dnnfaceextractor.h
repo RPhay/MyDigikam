@@ -58,7 +58,7 @@ public:
     /**
      * Read pretrained neural network for face recognition.
      */
-    bool loadDNNModels() const;
+    bool loadModels() const;
 
 
     cv::Mat alignFace(const cv::Mat& inputImage) const;

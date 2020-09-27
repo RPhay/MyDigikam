@@ -29,6 +29,7 @@
 #include <array>
 
 // Qt includes
+
 #include <QMutex>
 
 // Local includes
@@ -47,7 +48,10 @@ public:
     explicit OpenfacePreprocessor();
     ~OpenfacePreprocessor();
 
-    void init();
+    /**
+     * Load shapepredictor model for face alignment with 68 points of face landmark extraction.
+     */
+    bool loadModels();
 
     cv::Mat process(const cv::Mat& image);
 

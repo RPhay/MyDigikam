@@ -66,12 +66,11 @@ OpenfacePreprocessor::~OpenfacePreprocessor()
 {
 }
 
-void OpenfacePreprocessor::init()
+bool OpenfacePreprocessor::loadModels()
 {
-    // Load shapepredictor model for face alignment with 68 points of face landmark extraction
-
+    QString name   = QLatin1String("shapepredictor.dat");
     QString spdata = QStandardPaths::locate(QStandardPaths::GenericDataLocation,
-                                            QLatin1String("digikam/facesengine/shapepredictor.dat"));
+                                            QString::fromLatin1("digikam/facesengine/%1").arg(name));
     QFile model(spdata);
     RedEye::ShapePredictor* const temp = new RedEye::ShapePredictor();
 
@@ -87,14 +86,19 @@ void OpenfacePreprocessor::init()
     }
     else
     {
-        qCDebug(DIGIKAM_FACEDB_LOG) << "Error open file shapepredictor.dat" << endl;
         delete temp;
-        return;
+
+        qCCritical(DIGIKAM_FACEDB_LOG) << "Cannot found faces engine model" << name;
+        qCCritical(DIGIKAM_FACEDB_LOG) << "Faces recognition feature cannot be used!";
+
+        return false;
     }
 
     delete temp;
 
     qCDebug(DIGIKAM_FACEDB_LOG) << "Finish reading shape predictor file";
+
+    return true;
 }
 
 cv::Mat OpenfacePreprocessor::process(const cv::Mat& image)

@@ -79,10 +79,10 @@ public:
 DNNFaceExtractor::DNNFaceExtractor()
     : d(new Private)
 {
-    loadDNNModels();
+    loadModels();
 }
 
-bool DNNFaceExtractor::loadDNNModels() const
+bool DNNFaceExtractor::loadModels() const
 {
 /*
     QString proto   = QLatin1String("ResNet-50-deploy.prototxt");

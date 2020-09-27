@@ -71,7 +71,7 @@ void RecognitionPreprocessor::Private::init(PreprocessorSelection mode)
         case OPENFACE:
         {
             ofpreprocessor = new OpenfacePreprocessor;
-            ofpreprocessor->init();
+            ofpreprocessor->loadModels();
             break;
         }
 
