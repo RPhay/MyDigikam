@@ -66,6 +66,12 @@ private:
     RedEye::ShapePredictor sp;
 
     QMutex                 mutex;
+
+private:
+
+    // Hidden copy constructor and assignment operator.
+    OpenfacePreprocessor(const OpenfacePreprocessor&);
+    OpenfacePreprocessor& operator=(const OpenfacePreprocessor&);
 };
 
 } // namespace Digikam

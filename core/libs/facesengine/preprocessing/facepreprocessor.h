@@ -42,6 +42,12 @@ public:
     virtual ~FacePreprocessor();
 
     virtual cv::Mat preprocess(const cv::Mat& image) const = 0;
+
+private:
+
+    // Hidden copy constructor and assignment operator.
+    FacePreprocessor(const FacePreprocessor&);
+    FacePreprocessor& operator=(const FacePreprocessor&);
 };
 
 } // namespace Digikam

@@ -74,6 +74,12 @@ private:
 
     explicit FaceDbAccess(bool);
 
+    // Hidden copy constructor and assignment operator.
+    FaceDbAccess(const FaceDbAccess&);
+    FaceDbAccess& operator=(const FaceDbAccess&);
+
+private:
+
     friend class FaceDbAccessUnlock;
     static FaceDbAccessStaticPriv* d;
 };
@@ -99,6 +105,12 @@ public:
 private:
 
     int count;
+
+private:
+
+    // Hidden copy constructor and assignment operator.
+    FaceDbAccessUnlock(const FaceDbAccessUnlock&);
+    FaceDbAccessUnlock& operator=(const FaceDbAccessUnlock&);
 };
 
 } // namespace Digikam
