@@ -17,11 +17,26 @@ macro(ENABLE_COMPILER_SANITIZERS)
             message(STATUS "Found AddressSanitizer library: ${ASAN_LIBRARIES}")
             set(ASAN_FOUND TRUE CACHE INTERNAL "")
             set(ECM_ENABLE_SANITIZERS ${ECM_ENABLE_SANITIZERS} "address")
-            set(ECM_ENABLE_SANITIZERS ${ECM_ENABLE_SANITIZERS} "leak")
 
         else()
 
             message(STATUS "Could not find AddressSanitizer library. Please install libasan...")
+
+        endif()
+
+        ###
+
+        find_library(LSAN_LIBRARIES NAMES lsan)
+
+        if (LSAN_LIBRARIES)
+
+            message(STATUS "Found LeakSanitizer library: ${LSAN_LIBRARIES}")
+            set(LSAN_FOUND TRUE CACHE INTERNAL "")
+            set(ECM_ENABLE_SANITIZERS ${ECM_ENABLE_SANITIZERS} "leak")
+
+        else()
+
+            message(STATUS "Could not find LeakSanitizer library. Please install liblsan...")
 
         endif()
 
