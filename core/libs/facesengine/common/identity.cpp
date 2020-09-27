@@ -54,6 +54,7 @@ Identity::Identity(const Identity& other)
 Identity& Identity::operator=(const Identity& other)
 {
     d = other.d;
+
     return *this;
 }
 

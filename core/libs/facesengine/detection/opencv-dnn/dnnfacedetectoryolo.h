@@ -58,6 +58,12 @@ private:
     void postprocess(const std::vector<cv::Mat>& outs,
                      const cv::Size& paddedSize,
                      std::vector<cv::Rect>& detectedBboxes) const;
+
+private:
+
+    // Hidden copy constructor and assignment operator.
+    DNNFaceDetectorYOLO(const DNNFaceDetectorYOLO&);
+    DNNFaceDetectorYOLO& operator=(const DNNFaceDetectorYOLO&);
 };
 
 } // namespace Digikam

@@ -71,8 +71,8 @@ protected:
 
 public:
 
-    static float confidenceThreshold;    // Threshold for bbox detection. It can be init and changed in the GUI
-    static float nmsThreshold;           // Threshold for nms suppression
+    static float confidenceThreshold;    ///< Threshold for bbox detection. It can be init and changed in the GUI
+    static float nmsThreshold;           ///< Threshold for nms suppression
 
 protected:
 
@@ -83,6 +83,12 @@ protected:
     cv::dnn::Net net;
 
     QMutex       mutex;
+
+private:
+
+    // Hidden copy constructor and assignment operator.
+    DNNFaceDetectorBase(const DNNFaceDetectorBase&);
+    DNNFaceDetectorBase& operator=(const DNNFaceDetectorBase&);
 };
 
 } // namespace Digikam

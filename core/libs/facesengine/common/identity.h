@@ -66,18 +66,21 @@ public:
     bool isNull()                          const;
     bool operator==(const Identity& other) const;
 
-    /** Id value accessor.
+    /**
+     * Id value accessor.
      */
     int  id()                              const;
     void setId(int id);
 
-    /** Attribute value accessor.
+    /**
+     * Attribute value accessor.
      */
     QString attribute(const QString& att)  const;
     void    setAttribute(const QString& att,
                          const QString& val);
 
-    /** Attributes map accessor.
+    /**
+     * Attributes map accessor.
      */
     QMap<QString, QString> attributesMap() const;
     void setAttributesMap(const QMap<QString, QString>& attributes);
