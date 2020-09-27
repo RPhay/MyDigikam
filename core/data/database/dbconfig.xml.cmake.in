@@ -548,12 +548,10 @@
 
             <!--
                 The face database file contains the tables listed below:
-                Identities:           contains a list of identities with type.
-                IdentityAttributes:   contains identity attributes as text name and UUID.
-                OpenCVLBPHRecognizer: this table currently will have only one entry, and was used with LPBH recognition algorithm (deprecated).
-                OpenCVLBPHistograms:  contains face histogram data for each identity for the LBPH recognition algorithm that was used when the training was done (deprecated).
-                FaceMatrices:         contains face matrices data for each identity for the DNN recognition algorithm that was used when the training was done.
-                Settings:             includes database version rules.
+                Identities:         contains a list of identities with type.
+                IdentityAttributes: contains identity attributes as text name and UUID.
+                FaceMatrices:       contains face matrices data for each identity for the DNN recognition algorithm that was used when the training was done.
+                Settings:           includes database version rules.
             -->
 
             <dbaction name="CreateFaceDB" mode="transaction">
@@ -569,27 +567,6 @@
                     (id INTEGER,
                     attribute TEXT,
                     value TEXT);
-                </statement>
-            </dbaction>
-
-            <dbaction name="CreateFaceDBOpenCVLBPH" mode="transaction">
-                <statement mode="plain">CREATE TABLE OpenCVLBPHRecognizer
-                    (id INTEGER PRIMARY KEY,
-                    version INTEGER,
-                    radius INTEGER,
-                    neighbors INTEGER,
-                    grid_x INTEGER,
-                    grid_y INTEGER);
-                </statement>
-                <statement mode="plain">CREATE TABLE OpenCVLBPHistograms
-                    (id INTEGER PRIMARY KEY,
-                    recognizerid INTEGER,
-                    identity INTEGER,
-                    context TEXT,
-                    type INTEGER,
-                    rows INTEGER,
-                    cols INTEGER,
-                    data BLOB);
                 </statement>
             </dbaction>
 
@@ -1709,12 +1686,10 @@
             <!-- Mysql Face Schema Database -->
             <!--
                 The face database file contains the tables listed below:
-                Identities:           contains a list of identities with type.
-                IdentityAttributes:   contains identity attributes as text name and UUID.
-                OpenCVLBPHRecognizer: this table currently will have only one entry, and was used with LPBH recognition algorithm (deprecated).
-                OpenCVLBPHistograms:  contains face histogram data for each identity for the LBPH recognition algorithm that was used when the training was done (deprecated).
-                FaceMatrices:         contains face matrices data for each identity for the DNN recognition algorithm that was used when the training was done.
-                Settings:             includes database version rules.
+                Identities:         contains a list of identities with type.
+                IdentityAttributes: contains identity attributes as text name and UUID.
+                FaceMatrices:       contains face matrices data for each identity for the DNN recognition algorithm that was used when the training was done.
+                Settings:           includes database version rules.
             -->
 
             <dbaction name="CreateFaceDB" mode="transaction">
@@ -1735,29 +1710,6 @@
                     (keyword LONGTEXT CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
                     `value` LONGTEXT CHARACTER SET utf8 COLLATE utf8_general_ci,
                     UNIQUE(keyword(255)))
-                    ENGINE InnoDB;
-                </statement>
-            </dbaction>
-
-            <dbaction name="CreateFaceDBOpenCVLBPH" mode="transaction">
-                <statement mode="plain">CREATE TABLE IF NOT EXISTS OpenCVLBPHRecognizer
-                    (id INTEGER PRIMARY KEY AUTO_INCREMENT,
-                    version INTEGER,
-                    radius INTEGER,
-                    neighbors INTEGER,
-                    grid_x INTEGER,
-                    grid_y INTEGER)
-                    ENGINE InnoDB;
-                </statement>
-                <statement mode="plain">CREATE TABLE IF NOT EXISTS OpenCVLBPHistograms
-                    (id INTEGER PRIMARY KEY AUTO_INCREMENT,
-                    recognizerid INTEGER,
-                    identity INTEGER,
-                    `context` LONGTEXT CHARACTER SET utf8 COLLATE utf8_general_ci,
-                    `type` INTEGER,
-                    `rows` INTEGER,
-                    `cols` INTEGER,
-                    `data` LONGBLOB)
                     ENGINE InnoDB;
                 </statement>
             </dbaction>
