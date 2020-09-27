@@ -4,7 +4,7 @@
  * https://www.digikam.org
  *
  * Date        : 2019-07-09
- * Description : Preprocessor for face recognition
+ * Description : Abstract class for preprocessor of facesengine
  *
  * Copyright (C) 2019      by Thanh Trung Dinh <dinhthanhtrung1996 at gmail dot com>
  * Copyright (C) 2019-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
@@ -22,49 +22,17 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_RECOGNITION_PREPROCESSOR_H
-#define DIGIKAM_RECOGNITION_PREPROCESSOR_H
-
 #include "facepreprocessor.h"
-
-// Local includes
-
-#include "digikam_export.h"
 
 namespace Digikam
 {
 
-enum PreprocessorSelection
+FacePreprocessor::FacePreprocessor()
 {
-    OPENFACE = 0
-};
+}
 
-class DIGIKAM_EXPORT RecognitionPreprocessor: public FacePreprocessor
+FacePreprocessor::~FacePreprocessor()
 {
-
-public:
-
-    explicit RecognitionPreprocessor();
-    virtual ~RecognitionPreprocessor();
-
-public:
-
-    void init(PreprocessorSelection mode);
-
-    virtual cv::Mat preprocess(const cv::Mat& image) const;
-
-private:
-
-    // Hidden copy constructor and assignment operator.
-    RecognitionPreprocessor(const RecognitionPreprocessor&);
-    RecognitionPreprocessor& operator=(const RecognitionPreprocessor&);
-
-private:
-
-    class Private;
-    Private* const d;
-};
+}
 
 } // namespace Digikam
-
-#endif // DIGIKAM_RECOGNITION_PREPROCESSOR_H

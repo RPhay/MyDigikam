@@ -35,9 +35,9 @@
 #include "digikam_export.h"
 
 DIGIKAM_EXPORT QDataStream& operator >> (QDataStream& dataStream,
-                                                  unsigned long& in);
+                                         unsigned long& in);
 
 DIGIKAM_EXPORT QDataStream& operator << (QDataStream& dataStream,
-                                                  const unsigned long& in);
+                                         const unsigned long& in);
 
 #endif // DIGIKAM_QDATASTREAM_OVERLOADS_H

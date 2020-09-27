@@ -115,7 +115,7 @@ void transpose(std::vector<std::vector<float> >& src,
 
 float trace(const std::vector<std::vector<float> >& src)
 {
-    float result = 0.0;
+    float result = 0.0f;
 
     for (unsigned int i = 0 ; i < src.size() ; ++i)
     {
@@ -136,7 +136,7 @@ bool svd3(std::vector<std::vector<float> >& a,
           std::vector<std::vector<float> >& v,
           std::vector<float >& rv1)
 {
-    const float one     = 1.0;
+    const float one     = 1.0f;
     const long max_iter = 300;
 
     // a is a square matrix
@@ -150,25 +150,25 @@ bool svd3(std::vector<std::vector<float> >& a,
     const float eps     = std::numeric_limits<float>::epsilon();
     long nm             = 0;
     long l              = 0;
-    float g             = 0.0;
-    float scale         = 0.0;
-    float anorm         = 0.0;
+    float g             = 0.0f;
+    float scale         = 0.0f;
+    float anorm         = 0.0f;
     bool flag           = false;
-    float c             = 0.0;
-    float f             = 0.0;
-    float h             = 0.0;
-    float s             = 0.0;
-    float x             = 0.0;
-    float y             = 0.0;
-    float z             = 0.0;
+    float c             = 0.0f;
+    float f             = 0.0f;
+    float h             = 0.0f;
+    float s             = 0.0f;
+    float x             = 0.0f;
+    float y             = 0.0f;
+    float z             = 0.0f;
 
     for (long i = 0 ; i < n ; ++i)
     {
         l      = i + 1;
         rv1[i] = scale * g;
-        g      = 0.0;
-        s      = 0.0;
-        scale  = 0.0;
+        g      = 0.0f;
+        s      = 0.0f;
+        scale  = 0.0f;
 
         if (i < m)
         {
@@ -215,9 +215,9 @@ bool svd3(std::vector<std::vector<float> >& a,
         }
 
         w[i]  = scale *g;
-        g     = 0.0;
-        s     = 0.0;
-        scale = 0.0;
+        g     = 0.0f;
+        s     = 0.0f;
+        scale = 0.0f;
 
         if ((i < m) && (i < n-1))
         {
@@ -271,9 +271,9 @@ bool svd3(std::vector<std::vector<float> >& a,
 
     for (long i = n-1 ; i >= 0 ; --i)
     {
-        if (i < n-1)
+        if (i < (n-1))
         {
-            if (g != 0)
+            if (g != 0.0f)
             {
                 for (long j = l ; j < n ; ++j)
                 {
@@ -282,7 +282,7 @@ bool svd3(std::vector<std::vector<float> >& a,
 
                 for (long j = l ; j < n ; ++j)
                 {
-                    s = 0.0;
+                    s = 0.0f;
 
                     for (long k = l ; k < n ; ++k)
                     {
@@ -378,8 +378,8 @@ bool svd3(std::vector<std::vector<float> >& a,
 
             if (flag)
             {
-                c = 0.0;
-                s = 1.0;
+                c = 0.0f;
+                s = 1.0f;
 
                 for (long i = l ; i <= k ; ++i)
                 {
