@@ -49,6 +49,8 @@ public:
     FancyRect(qreal x, qreal y, qreal w, qreal h, QGraphicsItem* const parent = nullptr);
     FancyRect(QGraphicsRectItem* const other, QGraphicsItem* const parent);
 
+public:
+
     void paint(QPainter* painter, const QStyleOptionGraphicsItem* option, QWidget* widget = nullptr);
 };
 

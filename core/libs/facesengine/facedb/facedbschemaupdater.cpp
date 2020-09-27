@@ -281,6 +281,7 @@ bool FaceDbSchemaUpdater::updateV1ToV2()
 
     d->currentVersion         = 2;
     d->currentRequiredVersion = 1;
+
     return true;
 }
 

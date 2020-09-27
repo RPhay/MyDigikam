@@ -3,7 +3,7 @@
  * This file is a part of digiKam
  *
  * Date        : 2020-08-23
- * Description : Convert image format to PNG
+ * Description : Convert images format to PNG
  *
  * Copyright (C) 2020 by Nghia Duong <minhnghiaduong997 at gmail dot com>
  *
@@ -21,6 +21,7 @@
  * ============================================================ */
 
 // Qt includes
+
 #include <QApplication>
 #include <QCommandLineParser>
 #include <QDir>
@@ -30,8 +31,8 @@
 
 QCommandLineParser* parseOptions(const QCoreApplication& app)
 {
-    QCommandLineParser* parser = new QCommandLineParser();
-    parser->addOption(QCommandLineOption(QLatin1String("source"), QLatin1String("source folder"), QLatin1String("path relative to original data folder")));
+    QCommandLineParser* const parser = new QCommandLineParser();
+    parser->addOption(QCommandLineOption(QLatin1String("source"),      QLatin1String("source folder"),        QLatin1String("path relative to original data folder")));
     parser->addOption(QCommandLineOption(QLatin1String("destination"), QLatin1String("destination location"), QLatin1String("path relative to result data folder")));
     parser->addHelpOption();
     parser->process(app);
@@ -42,9 +43,10 @@ QCommandLineParser* parseOptions(const QCoreApplication& app)
 int main(int argc, char** argv)
 {
     QApplication app(argc, argv);
-    QCommandLineParser* parser = parseOptions(app);
+    QCommandLineParser* const parser = parseOptions(app);
 
-    if (! parser->isSet(QLatin1String("source")) &&  !parser->isSet(QLatin1String("destination")))
+    if (!parser->isSet(QLatin1String("source")) &&
+        !parser->isSet(QLatin1String("destination")))
     {
         qWarning("Folders are not set !!!");
 
@@ -64,7 +66,7 @@ int main(int argc, char** argv)
     QElapsedTimer timer;
     timer.start();
 
-    for (int i = 0; i < subDirs.size(); ++i)
+    for (int i = 0 ; i < subDirs.size() ; ++i)
     {
         QDir subDir(subDirs[i].absoluteFilePath());
 
@@ -78,7 +80,13 @@ int main(int argc, char** argv)
         {
             QImage img(filesInfo[j].absoluteFilePath());
 
-            img.save(path + QLatin1String("/") + subDir.dirName() + QLatin1String("_") + QString::number(j) + QLatin1String(".png"), "PNG");
+            img.save(path               + 
+                     QLatin1String("/") + 
+                     subDir.dirName()   + 
+                     QLatin1String("_") + 
+                     QString::number(j) + 
+                     QLatin1String(".png"),
+                     "PNG");
         }
     }
 

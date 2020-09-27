@@ -195,11 +195,13 @@ public:
 
 private:
 
-    class Private;
-    static Private* d;
-
     // Hidden assignment operator.
     FacialRecognitionWrapper& operator=(const FacialRecognitionWrapper&);
+
+private:
+
+    class Private;
+    static Private* d;
 };
 
 } // namespace Digikam

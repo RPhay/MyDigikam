@@ -55,26 +55,26 @@ class Q_DECL_HIDDEN MainWindow::Private
 public:
 
     explicit Private()
+      : ui            (nullptr),
+        myScene       (nullptr),
+        myView        (nullptr),
+        lastPhotoItem (nullptr),
+        detector      (nullptr),
+        scale         (0.0)
     {
-        ui            = nullptr;
-        myScene       = nullptr;
-        myView        = nullptr;
-        lastPhotoItem = nullptr;
-        detector      = nullptr;
-        scale         = 0.0;
     }
 
-    Ui::MainWindow*      ui;
-    QGraphicsScene*      myScene;
-    QGraphicsView*       myView;
-    QGraphicsPixmapItem* lastPhotoItem;
-    QList<FaceItem*>     faceitems;
+    Ui::MainWindow*          ui;
+    QGraphicsScene*          myScene;
+    QGraphicsView*           myView;
+    QGraphicsPixmapItem*     lastPhotoItem;
+    QList<FaceItem*>         faceitems;
 
     FacialRecognitionWrapper database;
-    FaceDetector*        detector;
-    QImage               currentPhoto;
-    double               scale;
-    QString              lastFileOpenPath;
+    FaceDetector*            detector;
+    QImage                   currentPhoto;
+    double                   scale;
+    QString                  lastFileOpenPath;
 };
 
 MainWindow::MainWindow(QWidget* const parent)
@@ -142,10 +142,15 @@ void MainWindow::changeEvent(QEvent* e)
     switch (e->type())
     {
         case QEvent::LanguageChange:
+        {
             d->ui->retranslateUi(this);
             break;
+        }
+
         default:
+        {
             break;
+        }
     }
 }
 
@@ -166,7 +171,9 @@ void MainWindow::slotOpenImage()
                                                 QString::fromLatin1("Image Files (*.png *.jpg *.bmp *.pgm)"));
 
     if (file.isEmpty())
+    {
         return;
+    }
 
     d->lastFileOpenPath = QFileInfo(file).absolutePath();
 
@@ -177,7 +184,7 @@ void MainWindow::slotOpenImage()
     d->currentPhoto.load(file);
     d->lastPhotoItem = new QGraphicsPixmapItem(QPixmap::fromImage(d->currentPhoto));
 
-    if (1.0 * d->ui->widget->width() / d->currentPhoto.width() < 1.0 * d->ui->widget->height() / d->currentPhoto.height())
+    if ((1.0 * d->ui->widget->width() / d->currentPhoto.width()) < (1.0 * d->ui->widget->height() / d->currentPhoto.height()))
     {
         d->scale = 1.0 * d->ui->widget->width() / d->currentPhoto.width();
     }
@@ -249,8 +256,8 @@ void MainWindow::slotRecognise()
         QElapsedTimer timer;
         timer.start();
 
-        QImage* face = new QImage();
-        *face = d->currentPhoto.copy(item->originalRect());
+        QImage* face      = new QImage();
+        *face             = d->currentPhoto.copy(item->originalRect());
 
         Identity identity = d->database.recognizeFace(face);
         int elapsed       = timer.elapsed();
@@ -310,7 +317,7 @@ void MainWindow::slotUpdateDatabase()
 
             d->database.train(identity, face, QString::fromLatin1("test application"));
 
-            int elapsed = timer.elapsed();
+            int elapsed  = timer.elapsed();
 
             qDebug() << "Training took " << elapsed << " for Face #" << i+1;
         }

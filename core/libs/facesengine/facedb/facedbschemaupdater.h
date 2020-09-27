@@ -67,6 +67,8 @@ private:
     FaceDbSchemaUpdater(const FaceDbSchemaUpdater&);
     FaceDbSchemaUpdater& operator=(const FaceDbSchemaUpdater&);
 
+private:
+
     class Private;
     Private* const d;
 };

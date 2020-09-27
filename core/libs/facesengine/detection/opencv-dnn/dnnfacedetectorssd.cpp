@@ -88,6 +88,7 @@ void DNNFaceDetectorSSD::postprocess(cv::Mat detection,
     cv::Mat detectionMat(detection.size[2], detection.size[3], CV_32F, detection.ptr<float>());
 
     // TODO: model problem, confidence of ssd output too low ===> false detection
+
     for (int i = 0 ; i < detectionMat.rows ; ++i)
     {
         float confidence = detectionMat.at<float>(i, 2);
@@ -116,10 +117,10 @@ void DNNFaceDetectorSSD::postprocess(cv::Mat detection,
                        doubtBoxes);
         }
     }
-
-    //qCDebug(DIGIKAM_FACESENGINE_LOG) << "nb of doubtbox = " << doubtBoxes.size();
-    //qCDebug(DIGIKAM_FACESENGINE_LOG) << "nb of goodbox = " << goodBoxes.size();
-
+/*
+    qCDebug(DIGIKAM_FACESENGINE_LOG) << "nb of doubtbox = " << doubtBoxes.size();
+    qCDebug(DIGIKAM_FACESENGINE_LOG) << "nb of goodbox = " << goodBoxes.size();
+*/
     if (goodBoxes.empty())
     {
         boxes       = doubtBoxes;

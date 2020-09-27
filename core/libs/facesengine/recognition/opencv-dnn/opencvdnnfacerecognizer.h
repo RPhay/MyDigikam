@@ -77,8 +77,8 @@ public:
      * Try to recognize the given image.
      * Returns the identity id.
      * If the identity cannot be recognized, returns -1.
+     * TODO: verify workflow to economize this routine
      */
-    // TODO verify workflow to economize this routine
     int recognize(QImage* inputImage);
 
     /**
@@ -118,6 +118,8 @@ private:
     /// Hidden copy constructor and assignment operator.
     OpenCVDNNFaceRecognizer(const OpenCVDNNFaceRecognizer&);
     OpenCVDNNFaceRecognizer& operator=(const OpenCVDNNFaceRecognizer&);
+
+private:
 
     class Private;
     Private* d;

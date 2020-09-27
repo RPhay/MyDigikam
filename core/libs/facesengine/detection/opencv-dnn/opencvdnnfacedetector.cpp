@@ -78,7 +78,7 @@ int OpenCVDNNFaceDetector::recommendedImageSizeForDetection()
     return 800;
 }
 
-// TODO prepareForDetection give different performances
+// TODO; prepareForDetection give different performances
 cv::Mat OpenCVDNNFaceDetector::prepareForDetection(const DImg& inputImage, cv::Size& paddedSize) const
 {
     if (inputImage.isNull() || !inputImage.size().isValid())
@@ -95,15 +95,19 @@ cv::Mat OpenCVDNNFaceDetector::prepareForDetection(const DImg& inputImage, cv::S
     {
         case CV_8UC4:
         case CV_16UC4:
+        {
             cvImageWrapper = cv::Mat(inputImage.height(), inputImage.width(), type, inputImage.bits());
             cvtColor(cvImageWrapper, cvImage, cv::COLOR_RGBA2BGR);
             break;
+        }
 
         case CV_8UC3:
         case CV_16UC3:
+        {
             cvImageWrapper = cv::Mat(inputImage.height(), inputImage.width(), type, inputImage.bits());
             cvtColor(cvImageWrapper, cvImage, cv::COLOR_RGB2BGR);
             break;
+        }
     }
 
     return prepareForDetection(cvImage, paddedSize);
@@ -125,20 +129,23 @@ cv::Mat OpenCVDNNFaceDetector::prepareForDetection(const QImage& inputImage, cv:
         case QImage::Format_RGB32:
         case QImage::Format_ARGB32:
         case QImage::Format_ARGB32_Premultiplied:
-
+        {
             // I think we can ignore premultiplication when converting to grayscale
 
             cvImageWrapper = cv::Mat(qimage.height(), qimage.width(), CV_8UC4,
                                      qimage.scanLine(0), qimage.bytesPerLine());
             cvtColor(cvImageWrapper, cvImage, cv::COLOR_RGBA2BGR);
             break;
+        }
 
         default:
+        {
             qimage         = qimage.convertToFormat(QImage::Format_RGB888);
             cvImageWrapper = cv::Mat(qimage.height(), qimage.width(), CV_8UC3,
                                      qimage.scanLine(0), qimage.bytesPerLine());
             cvtColor(cvImageWrapper, cvImage, cv::COLOR_RGB2BGR);
             break;
+        }
     }
 
     return prepareForDetection(cvImage, paddedSize);

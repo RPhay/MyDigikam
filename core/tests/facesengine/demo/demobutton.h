@@ -48,6 +48,8 @@ public:
     Button(const QPixmap& normal, const QPixmap& pressed, QGraphicsItem* const parent = nullptr);
     ~Button();
 
+public:
+
     QRectF boundingRect() const                                                                      override;
     void paint(QPainter* painter, const QStyleOptionGraphicsItem* option, QWidget* widget = nullptr) override;
     void setPixmap(const QString& normal, const QString& pressed = QString());

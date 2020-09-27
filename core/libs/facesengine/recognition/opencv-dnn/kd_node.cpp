@@ -72,16 +72,16 @@ class Q_DECL_HIDDEN KDNode::Private
 public:
 
     Private(const cv::Mat& nodePos, const int identity, int splitAxis, int dimension)
-        : nodeID(-1),
-          identity(identity),
-          splitAxis(splitAxis),
-          nbDimension(dimension),
-          position(nodePos.clone()),
-          maxRange(nodePos.clone()),
-          minRange(nodePos.clone()),
-          parent(nullptr),
-          left(nullptr),
-          right(nullptr)
+        : nodeID        (-1),
+          identity      (identity),
+          splitAxis     (splitAxis),
+          nbDimension   (dimension),
+          position      (nodePos.clone()),
+          maxRange      (nodePos.clone()),
+          minRange      (nodePos.clone()),
+          parent        (nullptr),
+          left          (nullptr),
+          right         (nullptr)
     {
     }
 

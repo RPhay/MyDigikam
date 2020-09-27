@@ -79,7 +79,7 @@ public:
 
     static bool identityContains(const Identity& identity,
                                  const QString& attribute,
-                                 const QString& value)                     ;
+                                 const QString& value);
 
     Identity findByAttribute(const QString& attribute,
                              const QString& value)                    const;

@@ -77,6 +77,8 @@ private:
     FaceDbOperationGroup(const FaceDbOperationGroup&);
     FaceDbOperationGroup& operator=(const FaceDbOperationGroup&);
 
+private:
+
     class Private;
     Private* const d;
 };

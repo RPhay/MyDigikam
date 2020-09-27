@@ -160,17 +160,19 @@ private:
      * @return
      */
     double getClosestNeighborsTreeDb(const DataNode& subTree,
-                                    QMap<double, QVector<int> >& neighborList,
-                                    const cv::Mat& position,
-                                    float sqRange,
-                                    float cosThreshold,
-                                    int maxNbNeighbors) const;
+                                     QMap<double, QVector<int> >& neighborList,
+                                     const cv::Mat& position,
+                                     float sqRange,
+                                     float cosThreshold,
+                                     int maxNbNeighbors) const;
 
 private:
 
     // Hidden copy constructor and assignment operator.
     FaceDb(const FaceDb&);
     FaceDb& operator=(const FaceDb&);
+
+private:
 
     class Private;
     Private* const d;

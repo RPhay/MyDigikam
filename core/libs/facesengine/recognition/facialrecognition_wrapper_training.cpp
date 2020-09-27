@@ -84,7 +84,7 @@ void FacialRecognitionWrapper::train(const Identity& identityToBeTrained,
                                      TrainingDataProvider* const data,
                                      const QString& trainingContext)
 {
-    train( (QList<Identity>() << identityToBeTrained), data, trainingContext );
+    train((QList<Identity>() << identityToBeTrained), data, trainingContext);
 }
 
 void FacialRecognitionWrapper::train(const Identity& identityToBeTrained,

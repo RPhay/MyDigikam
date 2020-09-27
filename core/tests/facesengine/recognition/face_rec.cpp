@@ -197,12 +197,12 @@ int main(int argc, char* argv[])
     // Options for commandline parser
 
     QCommandLineParser parser;
-    parser.addOption(QCommandLineOption(QLatin1String("db"), QLatin1String("Faces database"), QLatin1String("path to db folder")));
+    parser.addOption(QCommandLineOption(QLatin1String("db"), QLatin1String("Faces database"),                     QLatin1String("path to db folder")));
     parser.addOption(QCommandLineOption(QLatin1String("rs"), QLatin1String("Split ratio (test set / whole set)"), QLatin1String("decimal")));
-    parser.addOption(QCommandLineOption(QLatin1String("ts"), QLatin1String("Test set folder"), QLatin1String("path relative to db folder")));
-    parser.addOption(QCommandLineOption(QLatin1String("ds"), QLatin1String("Training set (dev set) folder"), QLatin1String("path relative to db folder")));
-    parser.addOption(QCommandLineOption(QLatin1String("ni"), QLatin1String("Number of total objects"), QLatin1String("nbIdentities")));
-    parser.addOption(QCommandLineOption(QLatin1String("ns"), QLatin1String("Number of samples per object"), QLatin1String("nbSamples")));
+    parser.addOption(QCommandLineOption(QLatin1String("ts"), QLatin1String("Test set folder"),                    QLatin1String("path relative to db folder")));
+    parser.addOption(QCommandLineOption(QLatin1String("ds"), QLatin1String("Training set (dev set) folder"),      QLatin1String("path relative to db folder")));
+    parser.addOption(QCommandLineOption(QLatin1String("ni"), QLatin1String("Number of total objects"),            QLatin1String("nbIdentities")));
+    parser.addOption(QCommandLineOption(QLatin1String("ns"), QLatin1String("Number of samples per object"),       QLatin1String("nbSamples")));
     parser.addOption(QCommandLineOption(QLatin1String("as"), QLatin1String("Option to run test on the entire set")));
     parser.addHelpOption();
     parser.process(app);
@@ -211,7 +211,7 @@ int main(int argc, char* argv[])
 
     bool optionErrors = false;
 
-    if (parser.optionNames().empty())
+    if      (parser.optionNames().empty())
     {
         qWarning() << "NO options!!!";
         optionErrors = true;
@@ -254,7 +254,7 @@ int main(int argc, char* argv[])
         nbOfIdentities = parser.value(QLatin1String("ni")).toUInt();
     }
 
-    double ratio = 0;
+    double ratio = 0.0;
 
     if (parser.isSet(QLatin1String("rs")))
     {
@@ -271,7 +271,7 @@ int main(int argc, char* argv[])
 
     QMap<unsigned, QStringList> testset, trainingset;
 
-    if (ratio > 0)
+    if (ratio > 0.0)
     {
         prepareForTrain(facedb, testset, trainingset, ratio, nbOfSamples, nbOfIdentities);
     }

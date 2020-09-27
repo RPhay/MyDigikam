@@ -41,7 +41,9 @@
 
 namespace Digikam
 {
-// TODO remove export macro after testing
+
+// TODO: remove export macro after testing
+
 class DIGIKAM_GUI_EXPORT DNNFaceExtractor
 {
 
@@ -50,6 +52,8 @@ public:
     explicit DNNFaceExtractor();
     DNNFaceExtractor(const DNNFaceExtractor&);
     ~DNNFaceExtractor();
+
+public:
 
     cv::Mat alignFace(const cv::Mat& inputImage) const;
     cv::Mat getFaceEmbedding(const cv::Mat& faceImage);
@@ -72,6 +76,8 @@ private:
 
     // Hidden assignment operator.
     DNNFaceExtractor& operator=(const DNNFaceExtractor&);
+
+private:
 
     class Private;
     Private* d;

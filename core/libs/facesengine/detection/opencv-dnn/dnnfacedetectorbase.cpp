@@ -50,9 +50,9 @@ DNNFaceDetectorBase::DNNFaceDetectorBase()
 DNNFaceDetectorBase::DNNFaceDetectorBase(float scale,
                                          const cv::Scalar& val,
                                          const cv::Size& inputImgSize)
-  : scaleFactor(scale),
-    meanValToSubtract(val),
-    inputImageSize(inputImgSize)
+  : scaleFactor         (scale),
+    meanValToSubtract   (val),
+    inputImageSize      (inputImgSize)
 {
 }
 
@@ -84,6 +84,7 @@ void DNNFaceDetectorBase::selectBbox(const cv::Size& paddedSize,
     cv::Rect bbox(left, top, width, height);
 
     // take the net size of image
+
     int borderLeft   = paddedSize.width;
     int borderRight  = inputImageSize.width  - paddedSize.width;
     int borderTop    = paddedSize.height;
@@ -97,6 +98,7 @@ void DNNFaceDetectorBase::selectBbox(const cv::Size& paddedSize,
      * Bad bounding boxes are defined as boxes that have at maximum 25% of each dimension
      * out of non-padded zone.
      */
+
     if ((left   >= (int)cv::min(borderLeft*0.9,                       borderLeft   - 0.1*width))      &&
         (right  <= (int)cv::max(borderRight  + 0.1*paddedSize.width,  borderRight  + 0.1*width))      &&
         (top    >= (int)cv::min(borderTop*0.9,                        borderTop    - 0.1*height))     &&

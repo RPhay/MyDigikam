@@ -68,10 +68,12 @@ public:
 
 private:
 
+    cv::Mat prepareForDetection(cv::Mat& cvImage, cv::Size& paddedSize) const;
+
+private:
+
     OpenCVDNNFaceDetector(const OpenCVDNNFaceDetector&);            // Disable
     OpenCVDNNFaceDetector& operator=(const OpenCVDNNFaceDetector&); // Disable
-
-    cv::Mat prepareForDetection(cv::Mat& cvImage, cv::Size& paddedSize) const;
 
 private:
 

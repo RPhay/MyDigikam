@@ -79,6 +79,7 @@ bool FaceDb::insertToTreeDb(const int nodeID, const cv::Mat& faceEmbedding) cons
     bindingValues << parentID;
 
     // insert node to database
+
     DbEngineSqlQuery query = d->db->execQuery(QLatin1String("INSERT INTO KDTree "
                                                             "(split_axis, position, max_range, min_range, parent, `left`, `right`) "
                                                             "VALUES (?, ?, ?, ?, ?, NULL, NULL)"),
@@ -96,6 +97,7 @@ bool FaceDb::insertToTreeDb(const int nodeID, const cv::Mat& faceEmbedding) cons
         bindingValues.clear();
         bindingValues << newNode;
         bindingValues << parentID;
+
         // not root -> update parent
 
         if (isLeftChild)
@@ -125,6 +127,7 @@ QMap<double, QVector<int> > FaceDb::getClosestNeighborsTreeDb(const cv::Mat& pos
     if (query.next())
     {
         // encapsulate data node
+
         root.nodeID     = 1;
         int embeddingID = query.value(0).toInt();
         root.maxRange   = cv::Mat(1, 128, CV_32F, query.value(1).toByteArray().data()).clone();
@@ -197,7 +200,9 @@ int FaceDb::findParentTreeDb(const cv::Mat& nodePos, bool& leftChild, int& paren
         {
             if (parent == 1)
             {
-                //qCDebug(DIGIKAM_FACEDB_LOG) << "add root";
+/*
+                qCDebug(DIGIKAM_FACEDB_LOG) << "add root";
+*/
                 return 0;
             }
 
@@ -207,8 +212,8 @@ int FaceDb::findParentTreeDb(const cv::Mat& nodePos, bool& leftChild, int& paren
 
 /*
         qCDebug(DIGIKAM_FACEDB_LOG) << "split axis" << query.value(0).toInt()
-                 << "left"       << query.value(4)
-                 << "right"      << query.value(5);
+                                    << "left"       << query.value(4)
+                                    << "right"      << query.value(5);
 */
 
         int split        = query.value(0).toInt();
@@ -306,8 +311,8 @@ double FaceDb::getClosestNeighborsTreeDb(const DataNode& subTree,
 
     // sub-trees Traversal
 
-    double sqrDistanceLeftTree  = 0;
-    double sqrDistanceRightTree = 0;
+    double sqrDistanceLeftTree  = 0.0;
+    double sqrDistanceRightTree = 0.0;
     DataNode leftNode;
     DataNode rightNode;
 

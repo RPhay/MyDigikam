@@ -59,6 +59,7 @@ FacialRecognitionWrapper::Private::Private()
 
         // Load identity cache
         // TODO: load cache dynamically
+
         foreach (const Identity& identity, FaceDbAccess().db()->identities())
         {
             identityCache[identity.id()] = identity;

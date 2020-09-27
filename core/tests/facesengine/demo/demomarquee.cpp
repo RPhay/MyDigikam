@@ -56,38 +56,38 @@ public:
 public:
 
     explicit Private()
-      : handleSize(10)
+      : handleSize  (10),
+        htl         (nullptr),
+        htr         (nullptr),
+        hbr         (nullptr),
+        hbl         (nullptr),
+        rect        (nullptr),
+        label       (nullptr),
+        moving      (false),
+        resizing    (false),
+        resizeType  (0)
     {
-        htl        = nullptr;
-        rect       = nullptr;
-        htr        = nullptr;
-        hbr        = nullptr;
-        hbl        = nullptr;
-        label      = nullptr;
-        moving     = false;
-        resizing   = false;
-        resizeType = 0;
     }
 
 public:
 
     const int                handleSize;
-    QPen                     rectPen;    // The pen used to draw the frames
-    QPen                     outlinePen; // Text outline pen
+    QPen                     rectPen;    ///< The pen used to draw the frames
+    QPen                     outlinePen; ///< Text outline pen
 
-    // Handles
+    /// Handles
     FancyRect*               htl;
     FancyRect*               htr;
     FancyRect*               hbr;
     FancyRect*               hbl;
 
-    FancyRect*               rect;       // Main frame
+    FancyRect*               rect;       ///< Main frame
     QGraphicsSimpleTextItem* label;
 
-    bool                     moving;     // Tells if we are moving the marquee
-    QPointF                  moveOffset; // where the mouse was when the user began to drag the marquee
-    bool                     resizing;   // Tells if we are resizing the marquee
-    int                      resizeType; // See ResizeType values.
+    bool                     moving;     ///< Tells if we are moving the marquee
+    QPointF                  moveOffset; ///< where the mouse was when the user began to drag the marquee
+    bool                     resizing;   ///< Tells if we are resizing the marquee
+    int                      resizeType; ///< See ResizeType values.
 };
 
 Marquee::Marquee(FancyRect* const rect, QGraphicsItem* const parent)
@@ -175,6 +175,7 @@ void Marquee::placeHandles()
 void Marquee::mousePressEvent(QGraphicsSceneMouseEvent* e)
 {
     emit selected(this);
+
     // Check for some resize handles under the mouse
 
     if (d->htl->isUnderMouse())
@@ -206,6 +207,7 @@ void Marquee::mousePressEvent(QGraphicsSceneMouseEvent* e)
     }
 
     // If no handle is under the mouse, then we move the frame
+
     d->resizing   = false;
     d->moving     = true;
     d->moveOffset = e->pos();
@@ -222,23 +224,39 @@ void Marquee::mouseMoveEvent(QGraphicsSceneMouseEvent* e)
         switch (d->resizeType)
         {
             case Private::TopLeft:
+            {
                 r.setTopLeft(e->pos());
                 break;
+            }
+
             case Private::TopRight:
+            {
                 r.setTopRight(e->pos());
                 break;
+            }
+
             case Private::BottomLeft:
+            {
                 r.setBottomLeft(e->pos());
                 break;
+            }
+
             case Private::BottomRight:
+            {
                 r.setBottomRight(e->pos());
                 break;
+            }
+
             default:
+            {
                 break;
+            }
         }
 
-        if (r.width() < 2*d->handleSize || r.height() < 2*d->handleSize)
+        if ((r.width() < 2*d->handleSize) || (r.height() < 2*d->handleSize))
+        {
             return;
+        }
 
         setPos(pos() + r.topLeft());
         r.moveTopLeft(QPointF(0, 0));

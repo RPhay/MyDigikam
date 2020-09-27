@@ -35,8 +35,8 @@ class Q_DECL_HIDDEN KDTree::Private
 public:
 
     Private(int dim)
-        : nbDimension(dim),
-          root(nullptr)
+        : nbDimension   (dim),
+          root          (nullptr)
     {
     }
 

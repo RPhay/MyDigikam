@@ -41,9 +41,9 @@
 #include "dimg.h"
 #include "facescansettings.h"
 #include "facedetector.h"
-#include "recognitiondatabase.h"
 #include "coredbaccess.h"
 #include "dbengineparameters.h"
+#include "facialrecognition_wrapper.h"
 
 using namespace Digikam;
 
@@ -133,8 +133,7 @@ int prepareForTrain(QString datasetPath,
 
     QDir testSet(datasetPath);
     QStringList subjects = testSet.entryList(QDir::Dirs | QDir::NoDotAndDotDot | QDir::NoSymLinks);
-
-    int nbOfClusters = subjects.size();
+    int nbOfClusters     = subjects.size();
 
     qDebug() << "Number of clusters to be defined" << nbOfClusters;
 
@@ -301,7 +300,7 @@ int main(int argc, char* argv[])
 
     bool optionErrors = false;
 
-    if (parser.optionNames().empty())
+    if      (parser.optionNames().empty())
     {
         qWarning() << "No options!!!";
         optionErrors = true;
@@ -318,14 +317,13 @@ int main(int argc, char* argv[])
         return 1;
     }
 
-    QString facedb = parser.value(QLatin1String("db"));
+    QString facedb         = parser.value(QLatin1String("db"));
 
     // Init config for digiKam
 
     DbEngineParameters prm = DbEngineParameters::parametersFromConfig();
     CoreDbAccess::setParameters(prm, CoreDbAccess::MainApplication);
-    RecognitionDatabase db;
-    db.activeFaceRecognizer(RecognitionDatabase::RecognizeAlgorithm::DNN);
+    FacialRecognitionWrapper recognizer;
 
     //db.setRecognizerThreshold(0.91F);       // This is sensitive for the performance of face clustering
 
@@ -349,7 +347,7 @@ int main(int argc, char* argv[])
 
     QList<QImage> detectedFaces;
     QList<QRectF> bboxes;
-    QList<QImage> rawImages = toImages(dataset);
+    QList<QImage> rawImages    = toImages(dataset);
 
     foreach (const QImage& image, rawImages)
     {
@@ -376,7 +374,10 @@ int main(int argc, char* argv[])
     QElapsedTimer timer;
 
     timer.start();
+/*
+    TODO: port to new API
     db.clusterFaces(faces, clusteredIndices, dataset, nbOfClusters);
+*/
     elapsedClustering  += timer.elapsed();
 
     // Verify clustering

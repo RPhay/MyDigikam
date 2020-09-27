@@ -62,25 +62,35 @@ public:
         switch (method)
         {
             case SVM:
+            {
                 svm = cv::ml::SVM::create();
                 svm->setKernel(cv::ml::SVM::LINEAR);
                 break;
+            }
 
             case OpenCV_KNN:
+            {
                 knn = cv::ml::KNearest::create();
                 knn->setAlgorithmType(cv::ml::KNearest::BRUTE_FORCE);
                 knn->setIsClassifier(true);
                 break;
+            }
 
             case Tree:
+            {
                 tree = FaceDbAccess().db()->reconstructTree();
                 break;
+            }
 
             case DB:
+            {
                 break;
+            }
 
             default:
+            {
                 qFatal("Invalid classifier");
+            }
         }
     }
 
@@ -137,9 +147,9 @@ public:
     ParallelRecognizer(OpenCVDNNFaceRecognizer::Private* d,
                        const QList<QImage*>& images,
                        QVector<int>& ids)
-        : images(images),
-          ids(ids),
-          d(d)
+        : images    (images),
+          ids       (ids),
+          d         (d)
     {
         ids.resize(images.size());
     }
@@ -155,23 +165,33 @@ public:
             switch (d->method)
             {
                 case SVM:
+                {
                     id = d->predictSVM(faceEmbedding);
                     break;
+                }
 
                 case OpenCV_KNN:
+                {
                     id = d->predictKNN(faceEmbedding);
                     break;
+                }
 
                 case Tree:
+                {
                     id = d->predictKDTree(faceEmbedding);
                     break;
+                }
 
                 case DB:
+                {
                     id = d->predictDb(faceEmbedding);
                     break;
+                }
 
                 default:
+                {
                     qCWarning(DIGIKAM_FACEDB_LOG) << "Not recognized classifying method";
+                }
             }
 
             ids[i] = id;
@@ -194,10 +214,10 @@ public:
                     const QList<QImage*>& images,
                     const int& id,
                     const QString& context)
-        : images(images),
-          id(id),
-          context(context),
-          d(d)
+        : images    (images),
+          id        (id),
+          context   (context),
+          d         (d)
     {
     }
 
@@ -288,6 +308,7 @@ int OpenCVDNNFaceRecognizer::Private::predictKDTree(const cv::Mat& faceEmbedding
     }
 
     // Look for K-nearest neighbor which have the cosine distance greater greater than the threshold
+
     QMap<double, QVector<int> > closestNeighbors = tree->getClosestNeighbors(faceEmbedding, threshold, 0.8, kNeighbors);
 
     QMap<int, QVector<double> > votingGroups;
@@ -476,23 +497,33 @@ int OpenCVDNNFaceRecognizer::recognize(QImage* inputImage)
     switch (d->method)
     {
         case SVM:
+        {
             id = d->predictSVM(faceEmbedding);
             break;
+        }
 
         case OpenCV_KNN:
+        {
             id = d->predictKNN(faceEmbedding);
             break;
+        }
 
         case Tree:
+        {
             id = d->predictKDTree(faceEmbedding);
             break;
+        }
 
         case DB:
+        {
             id = d->predictDb(faceEmbedding);
             break;
+        }
 
         default:
+        {
             qCWarning(DIGIKAM_FACEDB_LOG) << "Not recognized classifying method";
+        }
     }
 
     return id;
@@ -518,8 +549,9 @@ void OpenCVDNNFaceRecognizer::clearTraining(const QList<int>& idsToClear, const 
     {
         FaceDbAccess().db()->clearDNNTraining(idsToClear, trainingContext);
     }
-
-    //FaceDbAccess().db()->clearTreeDb();
+/*
+    FaceDbAccess().db()->clearTreeDb();
+*/
 }
 
 bool OpenCVDNNFaceRecognizer::registerTrainingData(const cv::Mat& preprocessedImage, int label)
