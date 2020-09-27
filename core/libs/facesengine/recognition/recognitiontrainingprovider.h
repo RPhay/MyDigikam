@@ -58,6 +58,12 @@ public:
     Identity               m_identity;
     QListImageListProvider m_toTrain;
     QListImageListProvider m_empty;
+
+private:
+
+    // Hidden copy constructor and assignment operator.
+    RecognitionTrainingProvider(const RecognitionTrainingProvider&);
+    RecognitionTrainingProvider& operator=(const RecognitionTrainingProvider&);
 };
 
 } // namespace Digikam
