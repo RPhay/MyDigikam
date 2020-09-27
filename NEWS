@@ -125,5 +125,5 @@ BUGFIXES:
 112 ==> 426912 - digikam-7.1.0-x86-64.appimage fails to start on CentOS 8.
 113 ==> 426996 - Write geolocation to EXIF.
 114 ==> 416470 - Suggestion: Make Album TreeView more explorer like.
-115 ==> 
-
+115 ==> 426888 - digiKam crashes shortly after I attempt to start it.
+116 ==> 
