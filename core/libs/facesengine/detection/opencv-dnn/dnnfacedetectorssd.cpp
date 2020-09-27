@@ -41,18 +41,38 @@ namespace Digikam
 DNNFaceDetectorSSD::DNNFaceDetectorSSD()
     : DNNFaceDetectorBase(1.0, cv::Scalar(104.0, 177.0, 123.0), cv::Size(300, 300))
 {
-    QString nnmodel = QStandardPaths::locate(QStandardPaths::GenericDataLocation,
-                                             QLatin1String("digikam/facesengine/deploy.prototxt"));
-    QString nndata  = QStandardPaths::locate(QStandardPaths::GenericDataLocation,
-                                             QLatin1String("digikam/facesengine/res10_300x300_ssd_iter_140000_fp16.caffemodel"));
-
-    qCDebug(DIGIKAM_FACEDB_LOG) << "nnmodel: " << nnmodel << ", nndata " << nndata;
-
-    net = cv::dnn::readNetFromCaffe(nnmodel.toStdString(), nndata.toStdString());
+    loadModels();
 }
 
 DNNFaceDetectorSSD::~DNNFaceDetectorSSD()
 {
+}
+
+bool DNNFaceDetectorSSD::loadModels()
+{
+    QString model   = QLatin1String("deploy.prototxt");
+    QString data    = QLatin1String("res10_300x300_ssd_iter_140000_fp16.caffemodel");
+
+    QString nnmodel = QStandardPaths::locate(QStandardPaths::GenericDataLocation,
+                                             QString::fromLatin1("digikam/facesengine/%1").arg(model));
+    QString nndata  = QStandardPaths::locate(QStandardPaths::GenericDataLocation,
+                                             QString::fromLatin1("digikam/facesengine/%1").arg(data));
+
+    if (!nnmodel.isEmpty() && !nndata.isEmpty())
+    {
+        qCDebug(DIGIKAM_FACEDB_LOG) << "nnmodel: " << nnmodel << ", nndata " << nndata;
+
+        net = cv::dnn::readNetFromCaffe(nnmodel.toStdString(), nndata.toStdString());
+    }
+    else
+    {
+        qCCritical(DIGIKAM_FACEDB_LOG) << "Cannot found faces engine DNN model" << model << "or" << data;
+        qCCritical(DIGIKAM_FACEDB_LOG) << "Faces detection feature cannot be used!";
+
+        return false;
+    }
+
+    return true;
 }
 
 void DNNFaceDetectorSSD::detectFaces(const cv::Mat& inputImage,

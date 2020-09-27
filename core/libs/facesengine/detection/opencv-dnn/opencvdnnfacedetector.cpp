@@ -173,6 +173,7 @@ cv::Mat OpenCVDNNFaceDetector::prepareForDetection(const QString& inputImagePath
 cv::Mat OpenCVDNNFaceDetector::prepareForDetection(cv::Mat& cvImage, cv::Size& paddedSize) const
 {
     // resize image before padding to fit in neural net
+
     cv::Size inputImageSize = m_inferenceEngine->nnInputSizeRequired();
     float k                 = qMin(inputImageSize.width  * 1.0 / cvImage.cols,
                                    inputImageSize.height * 1.0 / cvImage.rows);

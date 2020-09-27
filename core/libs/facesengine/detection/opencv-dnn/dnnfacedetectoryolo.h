@@ -45,6 +45,8 @@ public:
     explicit DNNFaceDetectorYOLO();
     ~DNNFaceDetectorYOLO();
 
+    bool loadModels();
+
     virtual void detectFaces(const cv::Mat& inputImage,
                              const cv::Size& paddedSize,
                              std::vector<cv::Rect>& detectedBboxes) override;

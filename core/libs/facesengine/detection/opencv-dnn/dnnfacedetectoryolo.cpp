@@ -47,20 +47,40 @@ namespace Digikam
 DNNFaceDetectorYOLO::DNNFaceDetectorYOLO()
     : DNNFaceDetectorBase(1.0F / 255.0F, cv::Scalar(0.0, 0.0, 0.0), cv::Size(416, 416))
 {
-    QString nnmodel = QStandardPaths::locate(QStandardPaths::GenericDataLocation,
-                                             QLatin1String("digikam/facesengine/yolov3-face.cfg"));
-    QString nndata  = QStandardPaths::locate(QStandardPaths::GenericDataLocation,
-                                             QLatin1String("digikam/facesengine/yolov3-wider_16000.weights"));
-
-    qCDebug(DIGIKAM_FACEDB_LOG) << "nnmodel: " << nnmodel << ", nndata " << nndata;
-
-    net             = cv::dnn::readNetFromDarknet(nnmodel.toStdString(), nndata.toStdString());
-    net.setPreferableBackend(cv::dnn::DNN_BACKEND_DEFAULT);
-    net.setPreferableTarget(cv::dnn::DNN_TARGET_CPU);
+    loadModels();
 }
 
 DNNFaceDetectorYOLO::~DNNFaceDetectorYOLO()
 {
+}
+
+bool DNNFaceDetectorYOLO::loadModels()
+{
+    QString model   = QLatin1String("yolov3-face.cfg");
+    QString data    = QLatin1String("yolov3-wider_16000.weights");
+
+    QString nnmodel = QStandardPaths::locate(QStandardPaths::GenericDataLocation,
+                                             QString::fromLatin1("digikam/facesengine/%1").arg(model));
+    QString nndata  = QStandardPaths::locate(QStandardPaths::GenericDataLocation,
+                                             QString::fromLatin1("digikam/facesengine/%1").arg(data));
+
+    if (!nnmodel.isEmpty() && !nndata.isEmpty())
+    {
+        qCDebug(DIGIKAM_FACEDB_LOG) << "nnmodel: " << nnmodel << ", nndata " << nndata;
+
+        net = cv::dnn::readNetFromDarknet(nnmodel.toStdString(), nndata.toStdString());
+        net.setPreferableBackend(cv::dnn::DNN_BACKEND_DEFAULT);
+        net.setPreferableTarget(cv::dnn::DNN_TARGET_CPU);
+    }
+    else
+    {
+        qCCritical(DIGIKAM_FACEDB_LOG) << "Cannot found faces engine DNN model" << model << "or" << data;
+        qCCritical(DIGIKAM_FACEDB_LOG) << "Faces detection feature cannot be used!";
+
+        return false;
+    }
+
+    return true;
 }
 
 void DNNFaceDetectorYOLO::detectFaces(const cv::Mat& inputImage,

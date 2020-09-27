@@ -82,7 +82,23 @@ DNNFaceExtractor::DNNFaceExtractor()
     loadModels();
 }
 
-bool DNNFaceExtractor::loadModels() const
+DNNFaceExtractor::DNNFaceExtractor(const DNNFaceExtractor& other)
+    : d(other.d)
+{
+    ++(d->ref);
+}
+
+DNNFaceExtractor::~DNNFaceExtractor()
+{
+    --(d->ref);
+
+    if (d->ref == 0)
+    {
+        delete d;
+    }
+}
+
+bool DNNFaceExtractor::loadModels()
 {
 /*
     QString proto   = QLatin1String("ResNet-50-deploy.prototxt");
@@ -130,22 +146,6 @@ bool DNNFaceExtractor::loadModels() const
     }
 
     return true;
-}
-
-DNNFaceExtractor::DNNFaceExtractor(const DNNFaceExtractor& other)
-    : d(other.d)
-{
-    ++(d->ref);
-}
-
-DNNFaceExtractor::~DNNFaceExtractor()
-{
-    --(d->ref);
-
-    if (d->ref == 0)
-    {
-        delete d;
-    }
 }
 
 double DNNFaceExtractor::cosineDistance(std::vector<float> v1,
