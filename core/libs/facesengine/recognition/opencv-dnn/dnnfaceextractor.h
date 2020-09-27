@@ -55,6 +55,12 @@ public:
 
 public:
 
+    /**
+     * Read pretrained neural network for face recognition.
+     */
+    bool loadDNNModels() const;
+
+
     cv::Mat alignFace(const cv::Mat& inputImage) const;
     cv::Mat getFaceEmbedding(const cv::Mat& faceImage);
 
@@ -74,7 +80,7 @@ public:
 
 private:
 
-    // Hidden assignment operator.
+    /// Hidden assignment operator.
     DNNFaceExtractor& operator=(const DNNFaceExtractor&);
 
 private:

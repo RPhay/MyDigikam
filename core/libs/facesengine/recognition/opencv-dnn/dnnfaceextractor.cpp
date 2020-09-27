@@ -79,23 +79,57 @@ public:
 DNNFaceExtractor::DNNFaceExtractor()
     : d(new Private)
 {
-    // Read pretrained neural network for face recognition
+    loadDNNModels();
+}
 
+bool DNNFaceExtractor::loadDNNModels() const
+{
 /*
+    QString proto   = QLatin1String("ResNet-50-deploy.prototxt");
+    QString model   = QLatin1String("ResNet-50-model.caffemodel");
+
     QString nnproto = QStandardPaths::locate(QStandardPaths::GenericDataLocation,
-                                             QLatin1String("digikam/facesengine/dnnface/deep-residual-networks/ResNet-50-deploy.prototxt"));
+                                             QLatin1String("digikam/facesengine/%1").arg(proto));
     QString nnmodel = QStandardPaths::locate(QStandardPaths::GenericDataLocation,
-                                             QLatin1String("digikam/facesengine/dnnface/deep-residual-networks/ResNet-50-model.caffemodel"));
-    net = cv::dnn::readNetFromCaffe(nnproto, nnmodel);
+                                             QLatin1String("digikam/facesengine/%1").arg(model)));
+
+    if (!nnproto.isEmpty() && !nnmodel.isEmpty())
+    {
+        qCDebug(DIGIKAM_FACEDB_LOG) << nnproto;
+        qCDebug(DIGIKAM_FACEDB_LOG) << nnmodel;
+
+        d->net = cv::dnn::readNetFromCaffe(nnproto.toStdString(), nnmodel.toStdString());
+    }
+    else
+    {
+        qCCritical(DIGIKAM_FACEDB_LOG) << "Cannot found faces engine DNN model" << proto << "or" << model;
+        qCCritical(DIGIKAM_FACEDB_LOG) << "Faces recognition feature cannot be used!";
+
+        return false;
+    }
 */
+
     d->preprocessor = new RecognitionPreprocessor;
     d->preprocessor->init(PreprocessorSelection::OPENFACE);
 
+    QString name    = QLatin1String("openface_nn4.small2.v1.t7");
     QString nnmodel = QStandardPaths::locate(QStandardPaths::GenericDataLocation,
-                                             QLatin1String("digikam/facesengine/openface_nn4.small2.v1.t7"));
-    qCDebug(DIGIKAM_FACEDB_LOG) << nnmodel;
+                                             QString::fromLatin1("digikam/facesengine/%1").arg(name));
+    if (!nnmodel.isEmpty())
+    {
+        qCDebug(DIGIKAM_FACEDB_LOG) << nnmodel;
 
-    d->net          = cv::dnn::readNetFromTorch(nnmodel.toStdString());
+        d->net = cv::dnn::readNetFromTorch(nnmodel.toStdString());
+    }
+    else
+    {
+        qCCritical(DIGIKAM_FACEDB_LOG) << "Cannot found faces engine DNN model" << name;
+        qCCritical(DIGIKAM_FACEDB_LOG) << "Faces recognition feature cannot be used!";
+
+        return false;
+    }
+
+    return true;
 }
 
 DNNFaceExtractor::DNNFaceExtractor(const DNNFaceExtractor& other)
