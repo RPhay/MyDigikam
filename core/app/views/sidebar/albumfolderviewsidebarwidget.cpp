@@ -82,7 +82,6 @@ AlbumFolderViewSideBarWidget::AlbumFolderViewSideBarWidget(QWidget* const parent
     d->albumFolderView         = new AlbumSelectionTreeView(this, model, d->albumModificationHelper);
     d->albumFolderView->setObjectName(QLatin1String("AlbumFolderView"));
     d->albumFolderView->setConfigGroup(getConfigGroup());
-    d->albumFolderView->setExpandNewCurrentItem(true);
     d->albumFolderView->setAlbumManagerCurrentAlbum(true);
     d->searchTextBar           = new SearchTextBarDb(this, QLatin1String("ItemIconViewFolderSearchBar"));
     d->searchTextBar->setHighlightOnResult(true);
@@ -125,6 +124,7 @@ void AlbumFolderViewSideBarWidget::applySettings()
 {
     ApplicationSettings* const settings = ApplicationSettings::instance();
     d->albumFolderView->setEnableToolTips(settings->getShowAlbumToolTips());
+    d->albumFolderView->setExpandNewCurrentItem(settings->getExpandNewCurrentItem());
 }
 
 void AlbumFolderViewSideBarWidget::changeAlbumFromHistory(const QList<Album*>& album)

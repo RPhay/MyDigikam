@@ -423,6 +423,9 @@ public:
     void setDrawFramesToGrouped(bool val);
     bool getDrawFramesToGrouped() const;
 
+    void setExpandNewCurrentItem(bool val);
+    bool getExpandNewCurrentItem() const;
+
     void setScrollItemToCenter(bool val);
     bool getScrollItemToCenter() const;
 

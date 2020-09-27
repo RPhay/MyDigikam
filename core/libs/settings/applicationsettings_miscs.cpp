@@ -121,6 +121,16 @@ bool ApplicationSettings::getDrawFramesToGrouped() const
     return d->drawFramesToGrouped;
 }
 
+void ApplicationSettings::setExpandNewCurrentItem(bool val)
+{
+    d->expandNewCurrentItem = val;
+}
+
+bool ApplicationSettings::getExpandNewCurrentItem() const
+{
+    return d->expandNewCurrentItem;
+}
+
 void ApplicationSettings::setScrollItemToCenter(bool val)
 {
     d->scrollItemToCenter = val;

@@ -236,6 +236,7 @@ void ApplicationSettings::readSettings()
 #endif
 
     d->drawFramesToGrouped               = group.readEntry(d->configDrawFramesToGroupedEntry,                         true);
+    d->expandNewCurrentItem              = group.readEntry(d->configExpandNewCurrentItemEntry,                        true);
     d->scrollItemToCenter                = group.readEntry(d->configScrollItemToCenterEntry,                          false);
     d->showOnlyPersonTagsInPeopleSidebar = group.readEntry(d->configShowOnlyPersonTagsInPeopleSidebarEntry,           true);
     d->stringComparisonType              = (StringComparisonType) group.readEntry(d->configStringComparisonTypeEntry, (int) Natural);
@@ -437,6 +438,7 @@ void ApplicationSettings::saveSettings()
     group.writeEntry(d->configApplySidebarChangesDirectlyEntry,        d->sidebarApplyDirectly);
     group.writeEntry(d->configUseNativeFileDialogEntry,                d->useNativeFileDialog);
     group.writeEntry(d->configDrawFramesToGroupedEntry,                d->drawFramesToGrouped);
+    group.writeEntry(d->configExpandNewCurrentItemEntry,               d->expandNewCurrentItem);
     group.writeEntry(d->configScrollItemToCenterEntry,                 d->scrollItemToCenter);
     group.writeEntry(d->configShowOnlyPersonTagsInPeopleSidebarEntry,  d->showOnlyPersonTagsInPeopleSidebar);
     group.writeEntry(d->configStringComparisonTypeEntry,               (int) d->stringComparisonType);

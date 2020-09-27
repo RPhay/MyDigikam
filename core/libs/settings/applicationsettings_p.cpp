@@ -118,6 +118,7 @@ const QString ApplicationSettings::Private::configShowPermanentDeleteDialogEntry
 const QString ApplicationSettings::Private::configApplySidebarChangesDirectlyEntry(QLatin1String("Apply Sidebar Changes Directly"));
 const QString ApplicationSettings::Private::configUseNativeFileDialogEntry(QLatin1String("Use Native File Dialog"));
 const QString ApplicationSettings::Private::configDrawFramesToGroupedEntry(QLatin1String("Draw Frames To Grouped Items"));
+const QString ApplicationSettings::Private::configExpandNewCurrentItemEntry(QLatin1String("Expand New Current Item On Click"));
 const QString ApplicationSettings::Private::configScrollItemToCenterEntry(QLatin1String("Scroll Current Item To Center"));
 const QString ApplicationSettings::Private::configShowOnlyPersonTagsInPeopleSidebarEntry(QLatin1String("Show Only Face Tags For Assigning Name"));
 const QString ApplicationSettings::Private::configSyncBalootoDigikamEntry(QLatin1String("Sync Baloo to Digikam"));
@@ -159,6 +160,7 @@ ApplicationSettings::Private::Private(ApplicationSettings* const qq)
       sidebarApplyDirectly(false),
       useNativeFileDialog(false),
       drawFramesToGrouped(true),
+      expandNewCurrentItem(false),
       scrollItemToCenter(false),
       showOnlyPersonTagsInPeopleSidebar(false),
       iconShowName(false),
@@ -288,6 +290,7 @@ void ApplicationSettings::Private::init()
     sidebarApplyDirectly                 = false;
     useNativeFileDialog                  = false;
     drawFramesToGrouped                  = true;
+    expandNewCurrentItem                 = true;
     scrollItemToCenter                   = false;
     showOnlyPersonTagsInPeopleSidebar    = false;
 

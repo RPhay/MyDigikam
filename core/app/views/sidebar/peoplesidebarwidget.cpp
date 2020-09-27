@@ -101,7 +101,6 @@ PeopleSideBarWidget::PeopleSideBarWidget(QWidget* const parent,
     QVBoxLayout* const vlay     = new QVBoxLayout;
     d->tagFolderView            = new TagFolderView(this, model);
     d->tagFolderView->setConfigGroup(getConfigGroup());
-    d->tagFolderView->setExpandNewCurrentItem(true);
     d->tagFolderView->setAlbumManagerCurrentAlbum(true);
     d->tagFolderView->setShowDeleteFaceTagsAction(true);
 
@@ -177,6 +176,8 @@ void PeopleSideBarWidget::doSaveState()
 
 void PeopleSideBarWidget::applySettings()
 {
+    ApplicationSettings* const settings = ApplicationSettings::instance();
+    d->tagFolderView->setExpandNewCurrentItem(settings->getExpandNewCurrentItem());
 }
 
 void PeopleSideBarWidget::changeAlbumFromHistory(const QList<Album*>& album)

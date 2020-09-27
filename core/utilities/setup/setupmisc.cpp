@@ -75,6 +75,7 @@ public:
         sidebarApplyDirectlyCheck(nullptr),
         useNativeFileDialogCheck(nullptr),
         drawFramesToGroupedCheck(nullptr),
+        expandNewCurrentItemCheck(nullptr),
         scrollItemToCenterCheck(nullptr),
         showOnlyPersonTagsInPeopleSidebarCheck(nullptr),
         scanAtStart(nullptr),
@@ -104,6 +105,7 @@ public:
     QCheckBox*                sidebarApplyDirectlyCheck;
     QCheckBox*                useNativeFileDialogCheck;
     QCheckBox*                drawFramesToGroupedCheck;
+    QCheckBox*                expandNewCurrentItemCheck;
     QCheckBox*                scrollItemToCenterCheck;
     QCheckBox*                showOnlyPersonTagsInPeopleSidebarCheck;
     QCheckBox*                scanAtStart;
@@ -172,6 +174,7 @@ SetupMisc::SetupMisc(QWidget* const parent)
                                      "This option does not clean up other databases as the thumbnails or recognition db.\n"
                                      "For clean up routines for other databases, please use the maintenance."));
 
+    d->expandNewCurrentItemCheck              = new QCheckBox(i18n("Expand current tree item with a single mouse click"), behaviourPanel);
     d->scrollItemToCenterCheck                = new QCheckBox(i18n("Scroll current item to center of thumbbar"), behaviourPanel);
     d->showOnlyPersonTagsInPeopleSidebarCheck = new QCheckBox(i18n("Show only face tags for assigning names in people sidebar"), behaviourPanel);
 
@@ -201,6 +204,7 @@ SetupMisc::SetupMisc(QWidget* const parent)
     layout->addWidget(d->showTrashDeleteDialogCheck);
     layout->addWidget(d->showPermanentDeleteDialogCheck);
     layout->addWidget(d->sidebarApplyDirectlyCheck);
+    layout->addWidget(d->expandNewCurrentItemCheck);
     layout->addWidget(d->scrollItemToCenterCheck);
     layout->addWidget(d->showOnlyPersonTagsInPeopleSidebarCheck);
     layout->addWidget(minSimilarityBoundHbox);
@@ -403,6 +407,7 @@ void SetupMisc::applySettings()
     settings->setCleanAtStart(d->cleanAtStart->isChecked());
     settings->setUseNativeFileDialog(d->useNativeFileDialogCheck->isChecked());
     settings->setDrawFramesToGrouped(d->drawFramesToGroupedCheck->isChecked());
+    settings->setExpandNewCurrentItem(d->expandNewCurrentItemCheck->isChecked());
     settings->setScrollItemToCenter(d->scrollItemToCenterCheck->isChecked());
     settings->setShowOnlyPersonTagsInPeopleSidebar(d->showOnlyPersonTagsInPeopleSidebarCheck->isChecked());
     settings->setSidebarTitleStyle(d->sidebarType->currentIndex() == 0 ? DMultiTabBar::ActiveIconText : DMultiTabBar::AllIconsText);
@@ -442,6 +447,7 @@ void SetupMisc::readSettings()
     d->cleanAtStart->setChecked(settings->getCleanAtStart());
     d->useNativeFileDialogCheck->setChecked(settings->getUseNativeFileDialog());
     d->drawFramesToGroupedCheck->setChecked(settings->getDrawFramesToGrouped());
+    d->expandNewCurrentItemCheck->setChecked(settings->getExpandNewCurrentItem());
     d->scrollItemToCenterCheck->setChecked(settings->getScrollItemToCenter());
     d->showOnlyPersonTagsInPeopleSidebarCheck->setChecked(settings->showOnlyPersonTagsInPeopleSidebar());
     d->sidebarType->setCurrentIndex(settings->getSidebarTitleStyle() == DMultiTabBar::ActiveIconText ? 0 : 1);

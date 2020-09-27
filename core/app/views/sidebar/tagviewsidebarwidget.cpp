@@ -120,7 +120,6 @@ TagViewSideBarWidget::TagViewSideBarWidget(QWidget* const parent, TagModel* cons
 
     d->tagFolderView = new TagFolderView(this, model);
     d->tagFolderView->setConfigGroup(getConfigGroup());
-    d->tagFolderView->setExpandNewCurrentItem(true);
     d->tagFolderView->setAlbumManagerCurrentAlbum(true);
 
     //d->tagFolderView->filteredModel()->doNotListTagsWithProperty(TagPropertyName::person());
@@ -198,6 +197,8 @@ void TagViewSideBarWidget::doSaveState()
 
 void TagViewSideBarWidget::applySettings()
 {
+    ApplicationSettings* const settings = ApplicationSettings::instance();
+    d->tagFolderView->setExpandNewCurrentItem(settings->getExpandNewCurrentItem());
 }
 
 void TagViewSideBarWidget::changeAlbumFromHistory(const QList<Album*>& album)
