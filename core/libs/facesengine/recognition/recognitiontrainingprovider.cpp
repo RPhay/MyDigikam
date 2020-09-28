@@ -30,7 +30,7 @@ namespace Digikam
 RecognitionTrainingProvider::RecognitionTrainingProvider(const Identity& identity,
                                                          const QList<QImage*>& newImages)
     : m_identity(identity),
-      m_toTrain(newImages)
+      m_toTrain (newImages)
 {
 }
 

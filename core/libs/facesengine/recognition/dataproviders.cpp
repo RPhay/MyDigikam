@@ -34,7 +34,7 @@ ImageListProvider::~ImageListProvider()
 
 QListImageListProvider::QListImageListProvider(const QList<QImage*>& lst)
     : list(lst),
-      it(list.constBegin())
+      it  (list.constBegin())
 {
 }
 

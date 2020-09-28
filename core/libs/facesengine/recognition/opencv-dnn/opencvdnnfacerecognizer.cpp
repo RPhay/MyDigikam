@@ -48,11 +48,11 @@ class Q_DECL_HIDDEN OpenCVDNNFaceRecognizer::Private
 public:
 
     Private(Classifier method)
-        : method(method),
-          tree(nullptr),
-          kNeighbors(5),
-          threshold(0.4),
-          newDataAdded(true)
+        : method        (method),
+          tree          (nullptr),
+          kNeighbors    (5),
+          threshold     (0.4),
+          newDataAdded  (true)
     {
         for (int i = 0 ; i < 1 ; ++i)
         {

@@ -67,6 +67,8 @@ float KDNode::cosDistance(const float* const pos1, const float* const pos2, int 
     return float(scalarProduct / (normV1 * normV2));
 }
 
+// ----------------------------------------------------------------------------------------
+
 class Q_DECL_HIDDEN KDNode::Private
 {
 public:

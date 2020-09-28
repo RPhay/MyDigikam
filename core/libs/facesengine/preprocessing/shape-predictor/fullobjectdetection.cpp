@@ -31,7 +31,7 @@ namespace Digikam
 
 FullObjectDetection::FullObjectDetection(const cv::Rect& rect_,
                                          const std::vector<std::vector<float> >& parts_)
-    : rect(rect_),
+    : rect (rect_),
       parts(parts_)
 {
 }

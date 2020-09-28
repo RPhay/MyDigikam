@@ -51,9 +51,9 @@ class Q_DECL_HIDDEN FaceDbAccessStaticPriv
 public:
 
     explicit FaceDbAccessStaticPriv()
-        : backend(nullptr),
-          db(nullptr),
-          initializing(false)
+        : backend       (nullptr),
+          db            (nullptr),
+          initializing  (false)
     {
     }
 

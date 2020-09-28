@@ -57,9 +57,9 @@ static float FACE_TEMPLATE[3][2] = {
 // ---------------------------------------------------------------------------------------------------
 
 OpenfacePreprocessor::OpenfacePreprocessor()
-    : outImageSize(cv::Size(96, 96)),
-      faceTemplate(cv::Mat(3, 2, CV_32F, &FACE_TEMPLATE)),
-      outerEyesNosePositions({36,45,33})
+    : outImageSize          (cv::Size(96, 96)),
+      faceTemplate          (cv::Mat(3, 2, CV_32F, &FACE_TEMPLATE)),
+      outerEyesNosePositions( {36, 45, 33} )
 {
 }
 

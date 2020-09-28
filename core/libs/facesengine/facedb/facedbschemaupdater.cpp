@@ -51,11 +51,11 @@ class Q_DECL_HIDDEN FaceDbSchemaUpdater::Private
 public:
 
     explicit Private()
-        : setError(false),
-          currentVersion(0),
+        : setError              (false),
+          currentVersion        (0),
           currentRequiredVersion(0),
-          dbAccess(nullptr),
-          observer(nullptr)
+          dbAccess              (nullptr),
+          observer              (nullptr)
     {
     }
 
