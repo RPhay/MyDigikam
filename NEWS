@@ -127,5 +127,5 @@ BUGFIXES:
 114 ==> 416470 - Suggestion: Make Album TreeView more explorer like.
 115 ==> 426888 - digiKam crashes shortly after I attempt to start it.
 116 ==> 427041 - Geolocation information not being saved to the metadata.
-117 ==> 
-
+117 ==> 427056 - Digikam seg faults building thumbnail from gigabyte PNG.
+118 ==> 
