@@ -32,7 +32,6 @@
 
 #include <cstdlib>
 #include <cstdio>
-#include <cassert>
 #include <cmath>
 #include <cfloat>
 #include <iostream>

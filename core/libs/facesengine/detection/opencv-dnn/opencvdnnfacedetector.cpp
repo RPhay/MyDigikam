@@ -25,7 +25,6 @@
 
 // C++ includes
 
-#include <cassert>
 #include <vector>
 
 // Qt includes
@@ -63,7 +62,7 @@ OpenCVDNNFaceDetector::OpenCVDNNFaceDetector(DetectorNNModel model)
 
         default:
         {
-            assert(0 && "UNKNOWN neural network model");
+            qFatal("UNKNOWN neural network model");
         }
     }
 }

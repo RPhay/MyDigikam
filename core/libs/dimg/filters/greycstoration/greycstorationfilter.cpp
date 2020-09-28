@@ -29,10 +29,6 @@
 
 #include "greycstorationfilter.h"
 
-// C++ includes
-
-#include <cassert>
-
 // Qt includes
 
 #include <QMutex>

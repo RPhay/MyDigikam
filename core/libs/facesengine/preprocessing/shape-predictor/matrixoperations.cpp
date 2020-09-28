@@ -26,6 +26,10 @@
 
 #include "matrixoperations.h"
 
+// Qt includes
+
+#include <QtGlobal>
+
 namespace Digikam
 {
 
@@ -34,14 +38,14 @@ namespace MatrixOperations
 
 std::vector<std::vector<float> > inv2(const std::vector<std::vector<float> >& mat)
 {
-    assert((mat.size() == 2) && (mat[0].size() == 2));
+    Q_ASSERT((mat.size() == 2) && (mat[0].size() == 2));
 
     std::vector<std::vector<float> > m(2,std::vector<float>(2, 0));
 
     float det = mat[0][0]*mat[1][1] -
                 mat[0][1]*mat[1][0];
 
-    assert(det != 0);
+    Q_ASSERT(det != 0);
 
     m[0][0] =  mat[1][1] / det;
     m[0][1] = -mat[0][1] / det;

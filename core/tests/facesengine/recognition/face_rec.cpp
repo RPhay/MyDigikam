@@ -25,10 +25,6 @@
  *
  * ============================================================ */
 
-// C++ includes
-
-#include <cassert>
-
 // Qt includes
 
 #include <QApplication>
@@ -159,8 +155,7 @@ QImage retrieveFace(const DImg& image, const QList<QRectF>& rects)
 {
     if (rects.size() > 1)
     {
-        qWarning() << "More than 1 face found in image, strange for our test set!!!";
-        assert(0);
+        qFatal("More than 1 face found in image, strange for our test set!!!");
     }
 
     QRectF rect = rects.first();

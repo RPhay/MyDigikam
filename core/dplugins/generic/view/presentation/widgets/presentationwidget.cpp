@@ -27,7 +27,6 @@
 
 // C++ includes
 
-#include <cassert>
 #include <cmath>
 #include <cstdlib>
 #include <ctime>

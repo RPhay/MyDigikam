@@ -23,7 +23,6 @@
 
 // C++ includes
 
-#include <cassert>
 #include <set>
 
 // Qt includes

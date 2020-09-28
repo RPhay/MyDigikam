@@ -151,7 +151,7 @@ bool DNNFaceExtractor::loadModels()
 double DNNFaceExtractor::cosineDistance(std::vector<float> v1,
                                         std::vector<float> v2)
 {
-    assert(v1.size() == v2.size());
+    Q_ASSERT(v1.size() == v2.size());
 
     double scalarProduct = std::inner_product(v1.begin(), v1.end(), v2.begin(), 0.0);
     double normV1        = sqrt(std::inner_product(v1.begin(), v1.end(), v1.begin(), 0.0));
@@ -163,7 +163,7 @@ double DNNFaceExtractor::cosineDistance(std::vector<float> v1,
 double DNNFaceExtractor::L2squareDistance(std::vector<float> v1,
                                           std::vector<float> v2)
 {
-    assert(v1.size() == v2.size());
+    Q_ASSERT(v1.size() == v2.size());
 
     double sqrDistance = 0.0;
 
@@ -177,7 +177,7 @@ double DNNFaceExtractor::L2squareDistance(std::vector<float> v1,
 
 double DNNFaceExtractor::L2squareNormDistance(std::vector<float> v1, std::vector<float> v2)
 {
-    assert(v1.size() == v2.size());
+    Q_ASSERT(v1.size() == v2.size());
 
     double normV1      = sqrt(std::inner_product(v1.begin(), v1.end(), v1.begin(), 0.0));
     double normV2      = sqrt(std::inner_product(v2.begin(), v2.end(), v2.begin(), 0.0));
