@@ -74,24 +74,24 @@ class Q_DECL_HIDDEN FaceScanWidget::Private
 public:
 
     explicit Private()
-        : workflowWidget(nullptr),
-          detectAndRecognizeButton(nullptr),
-          detectButton(nullptr),
-          alreadyScannedBox(nullptr),
-          reRecognizeButton(nullptr),
-          helpButton(nullptr),
-          tabWidget(nullptr),
-          albumSelectors(nullptr),
-          accuracyInput(nullptr),
-          useFullCpuButton(nullptr),
-          configName(QLatin1String("Face Management Settings")),
-          configMainTask(QLatin1String("Face Scan Main Task")),
-          configValueDetect(QLatin1String("Detect")),
-          configValueDetectAndRecognize(QLatin1String("Detect and Recognize Faces")),
-          configValueRecognizedMarkedFaces(QLatin1String("Recognize Marked Faces")),
-          configAlreadyScannedHandling(QLatin1String("Already Scanned Handling")),
-          configUseFullCpu(QLatin1String("Use Full CPU")),
-          settingsConflicted(false)
+        : workflowWidget                    (nullptr),
+          detectAndRecognizeButton          (nullptr),
+          detectButton                      (nullptr),
+          alreadyScannedBox                 (nullptr),
+          reRecognizeButton                 (nullptr),
+          helpButton                        (nullptr),
+          tabWidget                         (nullptr),
+          albumSelectors                    (nullptr),
+          accuracyInput                     (nullptr),
+          useFullCpuButton                  (nullptr),
+          configName                        (QLatin1String("Face Management Settings")),
+          configMainTask                    (QLatin1String("Face Scan Main Task")),
+          configValueDetect                 (QLatin1String("Detect")),
+          configValueDetectAndRecognize     (QLatin1String("Detect and Recognize Faces")),
+          configValueRecognizedMarkedFaces  (QLatin1String("Recognize Marked Faces")),
+          configAlreadyScannedHandling      (QLatin1String("Already Scanned Handling")),
+          configUseFullCpu                  (QLatin1String("Use Full CPU")),
+          settingsConflicted                (false)
     {
     }
 

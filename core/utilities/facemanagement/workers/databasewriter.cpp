@@ -24,11 +24,6 @@
 
 #include "databasewriter.h"
 
-// KDE includes
-
-#include <ksharedconfig.h>
-#include <kconfiggroup.h>
-
 // Local includes
 
 #include "digikam_debug.h"
@@ -141,10 +136,10 @@ void DatabaseWriter::process(FacePipelineExtendedPackage::Ptr package)
                 {
                     add << FacePipelineFaceTagsIface(utils.changeRegion(*it, it->assignedRegion));
                 }
-
-                // Change Tag operation.
                 else if (FaceTags::isPerson(it->assignedTagId))
                 {
+                    // Change Tag operation.
+
                     add << FacePipelineFaceTagsIface(utils.changeTag(*it, it->assignedTagId, package->info));
                 }
                 else

@@ -42,15 +42,15 @@ namespace Digikam
 {
 
 FacePipelineFaceTagsIface::FacePipelineFaceTagsIface()
-    : roles(NoRole),
-      assignedTagId(0)
+    : roles         (NoRole),
+      assignedTagId (0)
 {
 }
 
 FacePipelineFaceTagsIface::FacePipelineFaceTagsIface(const FaceTagsIface& face)
-    : FaceTagsIface(face),
-      roles(NoRole),
-      assignedTagId(0)
+    : FaceTagsIface (face),
+      roles         (NoRole),
+      assignedTagId (0)
 {
 }
 

@@ -29,18 +29,18 @@ namespace Digikam
 {
 
 FaceGroup::Private::Private(FaceGroup* const q)
-    : view(nullptr),
-      exifRotate(true),
-      autoSuggest(false),
-      showOnHover(false),
-      manuallyAddWrapItem(nullptr),
-      manuallyAddedItem(nullptr),
-      state(NoFaces),
-      visibilityController(nullptr),
-      tagModel(nullptr),
-      filterModel(nullptr),
-      filteredModel(nullptr),
-      q(q)
+    : view                  (nullptr),
+      exifRotate            (true),
+      autoSuggest           (false),
+      showOnHover           (false),
+      manuallyAddWrapItem   (nullptr),
+      manuallyAddedItem     (nullptr),
+      state                 (NoFaces),
+      visibilityController  (nullptr),
+      tagModel              (nullptr),
+      filterModel           (nullptr),
+      filteredModel         (nullptr),
+      q                     (q)
 {
 }
 
@@ -94,7 +94,7 @@ FaceItem* FaceGroup::Private::createItem(const FaceTagsIface& face)
     FaceItem* const item = new FaceItem(view->previewItem());
     item->setFace(face);
 
-    QRect faceRect = face.region().toRect();
+    QRect faceRect       = face.region().toRect();
 
     if (!exifRotate)
     {
@@ -154,16 +154,24 @@ AssignNameWidget::Mode FaceGroup::Private::assignWidgetMode(FaceTagsIface::Type 
     {
         case FaceTagsIface::UnknownName:
         case FaceTagsIface::UnconfirmedName:
+        {
             return AssignNameWidget::UnconfirmedEditMode;
+        }
 
         case FaceTagsIface::Type::IgnoredName:
+        {
             return AssignNameWidget::IgnoredMode;
+        }
 
         case FaceTagsIface::ConfirmedName:
+        {
             return AssignNameWidget::ConfirmedMode;
+        }
 
         default:
+        {
             return AssignNameWidget::InvalidMode;
+        }
     }
 }
 

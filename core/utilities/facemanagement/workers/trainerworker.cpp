@@ -24,11 +24,6 @@
 
 #include "trainerworker.h"
 
-// KDE includes
-
-#include <ksharedconfig.h>
-#include <kconfiggroup.h>
-
 // Local includes
 
 #include "digikam_debug.h"
@@ -76,15 +71,6 @@ TrainerWorker::TrainerWorker(FacePipeline::Private* const d)
     : imageRetriever(d),
       d(d)
 {
-    KSharedConfig::Ptr config                    = KSharedConfig::openConfig();
-    KConfigGroup group                           = config->group(QLatin1String("Face Management Settings"));
-
-/*
-    TODO: remove this entry in config
-
-    (RecognitionDatabase::RecognizeAlgorithm)group.readEntry(QLatin1String("Recognize Algorithm"),
-                                                                     (int)RecognitionDatabase::RecognizeAlgorithm::DNN);
-*/
 }
 
 TrainerWorker::~TrainerWorker()
@@ -92,11 +78,14 @@ TrainerWorker::~TrainerWorker()
     wait();    // protect detector
 }
 
-// TODO: investigate this method
+/**
+ * TODO: investigate this method
+ */
 void TrainerWorker::process(FacePipelineExtendedPackage::Ptr package)
 {
-    //qCDebug(DIGIKAM_GENERAL_LOG) << "TrainerWorker: processing one package";
-
+/*
+    qCDebug(DIGIKAM_GENERAL_LOG) << "TrainerWorker: processing one package";
+*/
     // Get a list of faces with type FaceForTraining (probably type is ConfirmedFace)
 
     QList<FaceTagsIface> toTrain;
@@ -112,7 +101,7 @@ void TrainerWorker::process(FacePipelineExtendedPackage::Ptr package)
             dbFace.setType(FaceTagsIface::FaceForTraining);
             toTrain << dbFace;
 
-            Identity identity = utils.identityForTag(dbFace.tagId(), recognizer);
+            Identity identity    = utils.identityForTag(dbFace.tagId(), recognizer);
 
             identities  << identity.id();
 
@@ -146,6 +135,7 @@ void TrainerWorker::process(FacePipelineExtendedPackage::Ptr package)
         }
 
         // NOTE: cropped faces will be deleted by training provider
+
         recognizer.train(identitySet, &provider, QLatin1String("digikam"));
     }
 

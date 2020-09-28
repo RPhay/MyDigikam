@@ -24,11 +24,6 @@
 
 #include "detectionworker.h"
 
-// KDE includes
-
-#include <ksharedconfig.h>
-#include <kconfiggroup.h>
-
 // Local includes
 
 #include "digikam_debug.h"

@@ -31,8 +31,8 @@ namespace Digikam
 {
 
 ScanStateFilter::ScanStateFilter(FacePipeline::FilterMode mode, FacePipeline::Private* const d)
-    : d(d),
-      mode(mode)
+    : d     (d),
+      mode  (mode)
 {
     connect(this, SIGNAL(infosToDispatch()),
             this, SLOT(dispatch()));

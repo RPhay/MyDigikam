@@ -28,9 +28,9 @@ namespace Digikam
 {
 
 FaceScanSettings::FaceScanSettings()
-    : useFullCpu(false),
-      accuracy(70),
-      task(Detect),
+    : useFullCpu            (false),
+      accuracy              (70),
+      task                  (Detect),
       alreadyScannedHandling(Skip)
 {
 }

@@ -170,17 +170,17 @@ void FaceScanWidget::setupUi()
 {
     // ---- Workflow tab --------
 
-    d->workflowWidget                 = new QWidget(this);
+    d->workflowWidget                   = new QWidget(this);
     d->workflowWidget->setToolTip(i18nc("@tooltip",
                                         "digiKam can search for faces in your photos.\n"
                                         "When you have identified your friends on a number of photos,\n"
                                         "it can also recognize the people shown on your photos."));
 
-    QVBoxLayout* const optionLayout   = new QVBoxLayout;
+    QVBoxLayout* const optionLayout     = new QVBoxLayout;
 
     QHBoxLayout* const scanOptionLayout = new QHBoxLayout;
 
-    d->alreadyScannedBox              = new SqueezedComboBox;
+    d->alreadyScannedBox                = new SqueezedComboBox;
     d->alreadyScannedBox->addSqueezedItem(i18nc("@label:listbox", "Skip images already scanned"),          FaceScanSettings::Skip);
     d->alreadyScannedBox->addSqueezedItem(i18nc("@label:listbox", "Scan again and merge results"),         FaceScanSettings::Merge);
 
@@ -246,7 +246,7 @@ void FaceScanWidget::setupUi()
 
     // ---- Album tab ---------
 
-    d->albumSelectors = new AlbumSelectors(QString(), d->configName, this);
+    d->albumSelectors                 = new AlbumSelectors(QString(), d->configName, this);
     addTab(d->albumSelectors, i18nc("@title:tab", "Search in"));
 
     // ---- Settings tab ------
@@ -276,7 +276,7 @@ void FaceScanWidget::setupUi()
     accuracyGrid->addWidget(specificityLabel, 1, 2, 1, 1);
     accuracyGrid->setColumnStretch(1, 10);
 
-    d->useFullCpuButton = new QCheckBox(settingsTab);
+    d->useFullCpuButton               = new QCheckBox(settingsTab);
     d->useFullCpuButton->setText(i18nc("@option:check", "Work on all processor cores"));
     d->useFullCpuButton->setToolTip(i18nc("@info:tooltip",
                                           "Face detection and recognition are time-consuming tasks.\n"

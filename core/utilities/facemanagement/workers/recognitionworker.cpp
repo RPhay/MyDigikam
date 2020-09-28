@@ -24,11 +24,6 @@
 
 #include "recognitionworker.h"
 
-// KDE includes
-
-#include <ksharedconfig.h>
-#include <kconfiggroup.h>
-
 // Local includes
 
 #include "digikam_debug.h"
@@ -47,7 +42,9 @@ RecognitionWorker::~RecognitionWorker()
     wait();    // protect database
 }
 
-// TODO: investigate this method
+/**
+ *TODO: investigate this method
+ */
 void RecognitionWorker::process(FacePipelineExtendedPackage::Ptr package)
 {
     FaceUtils      utils;
@@ -65,6 +62,7 @@ void RecognitionWorker::process(FacePipelineExtendedPackage::Ptr package)
     }
 
     // NOTE: cropped faces will be deleted by training provider
+
     package->recognitionResults  = recognizer.recognizeFaces(images);
     package->processFlags       |= FacePipelinePackage::ProcessedByRecognizer;
 

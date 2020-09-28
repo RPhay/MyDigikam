@@ -39,23 +39,23 @@ namespace Digikam
 {
 
 FacePipeline::Private::Private(FacePipeline* const q)
-    : databaseFilter(nullptr),
-      previewThread(nullptr),
-      detectionWorker(nullptr),
-      parallelDetectors(nullptr),
-      recognitionWorker(nullptr),
-      databaseWriter(nullptr),
-      trainerWorker(nullptr),
-      detectionBenchmarker(nullptr),
+    : databaseFilter        (nullptr),
+      previewThread         (nullptr),
+      detectionWorker       (nullptr),
+      parallelDetectors     (nullptr),
+      recognitionWorker     (nullptr),
+      databaseWriter        (nullptr),
+      trainerWorker         (nullptr),
+      detectionBenchmarker  (nullptr),
       recognitionBenchmarker(nullptr),
-      priority(QThread::LowPriority),
-      started(false),
-      waiting(false),
-      infosForFiltering(0),
-      packagesOnTheRoad(0),
-      maxPackagesOnTheRoad(50),
-      totalPackagesAdded(0),
-      q(q)
+      priority              (QThread::LowPriority),
+      started               (false),
+      waiting               (false),
+      infosForFiltering     (0),
+      packagesOnTheRoad     (0),
+      maxPackagesOnTheRoad  (50),
+      totalPackagesAdded    (0),
+      q                     (q)
 {
 }
 

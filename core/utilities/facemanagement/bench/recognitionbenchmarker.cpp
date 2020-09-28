@@ -33,7 +33,7 @@ namespace Digikam
 {
 
 RecognitionBenchmarker::Statistics::Statistics()
-    : knownFaces(0),
+    : knownFaces         (0),
       correctlyRecognized(0)
 {
 }
@@ -43,7 +43,9 @@ RecognitionBenchmarker::RecognitionBenchmarker(FacePipeline::Private* const d)
 {
 }
 
-// NOTE: Bench performance code. No need i18n here
+/**
+ * NOTE: Bench performance code. No need i18n here
+ */
 QString RecognitionBenchmarker::result() const
 {
     int totalImages = 0;
