@@ -28,15 +28,15 @@ namespace Digikam
 {
 
 VideoFrame::VideoFrame()
-    : width(0),
-      height(0),
+    : width   (0),
+      height  (0),
       lineSize(0)
 {
 }
 
 VideoFrame::VideoFrame(int width, int height, int lineSize)
-    : width(width),
-      height(height),
+    : width   (width),
+      height  (height),
       lineSize(lineSize)
 {
 }

@@ -34,7 +34,7 @@ namespace Digikam
 
 PreviewLoadThread::PreviewLoadThread(QObject* const parent)
     : ManagedLoadSaveThread(parent),
-      m_displayingWidget(nullptr)
+      m_displayingWidget   (nullptr)
 {
     m_loadingPolicy = LoadingPolicyFirstRemovePrevious;
 }

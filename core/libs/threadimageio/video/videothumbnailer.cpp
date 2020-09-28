@@ -77,12 +77,12 @@ public:
 public:
 
     explicit Private()
-      : thumbnailSize(256),
-        seekPercentage(10),
-        overlayFilmStrip(false),
-        workAroundIssues(false),
-        maintainAspectRatio(true),
-        smartFrameSelection(false),
+      : thumbnailSize       (256),
+        seekPercentage      (10),
+        overlayFilmStrip    (false),
+        workAroundIssues    (false),
+        maintainAspectRatio (true),
+        smartFrameSelection (false),
         SMART_FRAME_ATTEMPTS(25)
     {
     }

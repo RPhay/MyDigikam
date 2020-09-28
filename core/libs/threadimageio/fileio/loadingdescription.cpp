@@ -34,8 +34,8 @@ namespace Digikam
 {
 
 LoadingDescription::PreviewParameters::PreviewParameters()
-    : type(NoPreview),
-      size(0),
+    : type (NoPreview),
+      size (0),
       flags(NoFlags)
 {
 }
@@ -98,20 +98,20 @@ IccProfile LoadingDescription::PostProcessingParameters::profile() const
 // ----------------------------------------------------------------------------
 
 LoadingDescription::LoadingDescription()
-    : filePath(QString()),
-      rawDecodingSettings(DRawDecoding()),
-      rawDecodingHint(RawDecodingDefaultSettings),
-      previewParameters(PreviewParameters()),
-      postProcessingParameters(PostProcessingParameters())
+    : filePath                  (QString()),
+      rawDecodingSettings       (DRawDecoding()),
+      rawDecodingHint           (RawDecodingDefaultSettings),
+      previewParameters         (PreviewParameters()),
+      postProcessingParameters  (PostProcessingParameters())
 {
 }
 
 LoadingDescription::LoadingDescription(const QString& filePath,
                                        ColorManagementSettings cm)
-    : filePath(filePath),
-      rawDecodingSettings(DRawDecoding()),
-      rawDecodingHint(RawDecodingDefaultSettings),
-      previewParameters(PreviewParameters())
+    : filePath              (filePath),
+      rawDecodingSettings   (DRawDecoding()),
+      rawDecodingHint       (RawDecodingDefaultSettings),
+      previewParameters     (PreviewParameters())
 {
       postProcessingParameters.colorManagement = cm;
 }
@@ -120,10 +120,10 @@ LoadingDescription::LoadingDescription(const QString& filePath,
                                        const DRawDecoding& settings,
                                        RawDecodingHint hint,
                                        ColorManagementSettings cm)
-    : filePath(filePath),
-      rawDecodingSettings(settings),
-      rawDecodingHint(hint),
-      previewParameters(PreviewParameters())
+    : filePath              (filePath),
+      rawDecodingSettings   (settings),
+      rawDecodingHint       (hint),
+      previewParameters     (PreviewParameters())
 {
       postProcessingParameters.colorManagement = cm;
 }
@@ -407,7 +407,7 @@ QStringList LoadingDescription::possibleCacheKeys(const QString& filePath)
 
 QStringList LoadingDescription::possibleThumbnailCacheKeys(const QString& filePath)
 {
-    //FIXME: With details, there is an endless number of possible cache keys. Need different approach.
+    // FIXME: With details, there is an endless number of possible cache keys. Need different approach.
 
     QStringList keys;
 

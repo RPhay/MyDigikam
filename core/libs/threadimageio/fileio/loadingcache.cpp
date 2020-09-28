@@ -66,7 +66,7 @@ public:
 
     explicit Private(LoadingCache* const q)
       : watch(nullptr),
-        q(q)
+        q    (q)
     {
     }
 

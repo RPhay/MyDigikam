@@ -51,9 +51,9 @@ LoadSaveTask::~LoadSaveTask()
 LoadingTask::LoadingTask(LoadSaveThread* const thread,
                          const LoadingDescription& description,
                          LoadingTaskStatus loadingTaskStatus)
-    : LoadSaveTask(thread),
+    : LoadSaveTask        (thread),
       m_loadingDescription(description),
-      m_loadingTaskStatus(loadingTaskStatus)
+      m_loadingTaskStatus (loadingTaskStatus)
 {
 }
 
@@ -119,9 +119,9 @@ void LoadingTask::setStatus(LoadingTaskStatus status)
 
 SharedLoadingTask::SharedLoadingTask(LoadSaveThread* const thread, const LoadingDescription& description,
                                      LoadSaveThread::AccessMode mode, LoadingTaskStatus loadingTaskStatus)
-    : LoadingTask(thread, description, loadingTaskStatus),
-      m_completed(false),
-      m_accessMode(mode),
+    : LoadingTask  (thread, description, loadingTaskStatus),
+      m_completed  (false),
+      m_accessMode (mode),
       m_usedProcess(nullptr)
 {
     if (m_accessMode == LoadSaveThread::AccessModeRead && needsPostProcessing())

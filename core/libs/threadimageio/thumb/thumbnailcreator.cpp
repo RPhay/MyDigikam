@@ -35,13 +35,13 @@ ThumbnailIdentifier::ThumbnailIdentifier()
 
 ThumbnailIdentifier::ThumbnailIdentifier(const QString& filePath)
     : filePath(filePath),
-      id(0)
+      id      (0)
 {
 }
 
 ThumbnailInfo::ThumbnailInfo()
-    : fileSize(0),
-      isAccessible(false),
+    : fileSize       (0),
+      isAccessible   (false),
       orientationHint(DMetadata::ORIENTATION_UNSPECIFIED)
 {
 }

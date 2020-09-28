@@ -66,7 +66,7 @@ public:
 
     explicit ThumbnailResult(const LoadingDescription& description, const QImage& image)
         : loadingDescription(description),
-          image(image)
+          image             (image)
     {
     }
 
@@ -81,10 +81,10 @@ class Q_DECL_HIDDEN ThumbnailLoadThreadStaticPriv
 public:
 
     explicit ThumbnailLoadThreadStaticPriv()
-      : firstThreadCreated(false),
-        storageMethod(ThumbnailCreator::FreeDesktopStandard),
-        provider(nullptr),
-        profile(IccProfile::sRGB())
+      : firstThreadCreated  (false),
+        storageMethod       (ThumbnailCreator::FreeDesktopStandard),
+        provider            (nullptr),
+        profile             (IccProfile::sRGB())
     {
     }
 
@@ -110,12 +110,12 @@ class Q_DECL_HIDDEN ThumbnailLoadThread::Private
 public:
 
     explicit Private()
-      : wantPixmap(true),
-        highlight(true),
-        sendSurrogate(true),
-        notifiedForResults(false),
-        size(ThumbnailSize::maxThumbsSize()),
-        creator(nullptr)
+      : wantPixmap          (true),
+        highlight           (true),
+        sendSurrogate       (true),
+        notifiedForResults  (false),
+        size                (ThumbnailSize::maxThumbsSize()),
+        creator             (nullptr)
     {
     }
 

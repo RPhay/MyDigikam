@@ -47,12 +47,12 @@ class Q_DECL_HIDDEN FileReadWriteLockPriv
 public:
 
     explicit FileReadWriteLockPriv(const QString& filePath)
-        : filePath(filePath),
-          ref(0),
-          waitingReaders(0),
-          waitingWriters(0),
-          accessCount(0),
-          writer(nullptr)
+        : filePath          (filePath),
+          ref               (0),
+          waitingReaders    (0),
+          waitingWriters    (0),
+          accessCount       (0),
+          writer            (nullptr)
     {
     }
 
@@ -149,7 +149,7 @@ void FileReadWriteLockStaticPrivate::drop_locked(Entry* entry)
 {
     entry->ref--;
 
-    if (entry->ref == 0 && entry->isFree())
+    if ((entry->ref == 0) && entry->isFree())
     {
         entries.remove(entry->filePath);
         delete entry;

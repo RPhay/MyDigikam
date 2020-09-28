@@ -83,8 +83,8 @@ class ThumbnailImage
 public:
 
     explicit ThumbnailImage()
+      : exifOrientation(DMetadata::ORIENTATION_UNSPECIFIED)
     {
-        exifOrientation = DMetadata::ORIENTATION_UNSPECIFIED;
     }
 
     bool isNull() const
@@ -105,15 +105,15 @@ class Q_DECL_HIDDEN ThumbnailCreator::Private
 public:
 
     explicit Private()
-      : exifRotate(true),
-        removeAlphaChannel(true),
-        onlyLargeThumbnails(false),
-        thumbnailStorage(ThumbnailCreator::FreeDesktopStandard),
-        infoProvider(nullptr),
-        dbIdForReplacement(-1),
-        thumbnailSize(0),
-        digiKamFingerPrint(QLatin1String("Digikam Thumbnail Generator")), // Used internaly as PNG metadata. Do not use i18n.
-        observer(nullptr)
+      : exifRotate          (true),
+        removeAlphaChannel  (true),
+        onlyLargeThumbnails (false),
+        thumbnailStorage    (ThumbnailCreator::FreeDesktopStandard),
+        infoProvider        (nullptr),
+        dbIdForReplacement  (-1),
+        thumbnailSize       (0),
+        digiKamFingerPrint  (QLatin1String("Digikam Thumbnail Generator")), // Used internaly as PNG metadata. Do not use i18n.
+        observer            (nullptr)
     {
         fastRawSettings.optimizeTimeLoading();
         fastRawSettings.rawPrm.halfSizeColorImage = true;

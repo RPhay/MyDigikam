@@ -37,7 +37,7 @@ int ThumbnailLoadThread::Private::pixmapSizeForThumbnailSize(int thumbnailSize) 
 {
     if (hasHighlightingBorder())
     {
-        return thumbnailSize + 2;
+        return (thumbnailSize + 2);
     }
 
     return thumbnailSize;
@@ -49,7 +49,7 @@ int ThumbnailLoadThread::Private::thumbnailSizeForPixmapSize(int pixmapSize) con
 
     if (hasHighlightingBorder())
     {
-        return pixmapSize - 2;
+        return (pixmapSize - 2);
     }
 
     return pixmapSize;

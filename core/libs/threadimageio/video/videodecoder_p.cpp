@@ -32,24 +32,24 @@ namespace Digikam
 {
 
 VideoDecoder::Private::Private()
-    : videoStream(-1),
-      pFormatContext(nullptr),
-      pVideoCodecContext(nullptr),
-      pVideoCodecParameters(nullptr),
-      pVideoCodec(nullptr),
-      pVideoStream(nullptr),
-      pFrame(nullptr),
-      pFrameBuffer(nullptr),
-      pPacket(nullptr),
-      allowSeek(true),
-      initialized(false),
-      bufferSinkContext(nullptr),
-      bufferSourceContext(nullptr),
-      filterGraph(nullptr),
-      filterFrame(nullptr),
-      lastWidth(0),
-      lastHeight(0),
-      lastPixfmt(AV_PIX_FMT_NONE)
+    : videoStream           (-1),
+      pFormatContext        (nullptr),
+      pVideoCodecContext    (nullptr),
+      pVideoCodecParameters (nullptr),
+      pVideoCodec           (nullptr),
+      pVideoStream          (nullptr),
+      pFrame                (nullptr),
+      pFrameBuffer          (nullptr),
+      pPacket               (nullptr),
+      allowSeek             (true),
+      initialized           (false),
+      bufferSinkContext     (nullptr),
+      bufferSourceContext   (nullptr),
+      filterGraph           (nullptr),
+      filterFrame           (nullptr),
+      lastWidth             (0),
+      lastHeight            (0),
+      lastPixfmt            (AV_PIX_FMT_NONE)
 {
 }
 
@@ -257,7 +257,7 @@ bool VideoDecoder::Private::initFilterGraph(enum AVPixelFormat pixfmt,
 
     if (inputs || outputs)
     {
-        return -1;
+        return (-1);
     }
 
     ret = avfilter_graph_config(filterGraph, nullptr);
@@ -344,23 +344,33 @@ void VideoDecoder::Private::convertAndScaleFrame(AVPixelFormat format,
     switch (pVideoCodecContextPixFormat)
     {
         case AV_PIX_FMT_YUVJ420P:
+        {
             pVideoCodecContextPixFormat = AV_PIX_FMT_YUV420P;
             break;
+        }
 
         case AV_PIX_FMT_YUVJ422P:
+        {
             pVideoCodecContextPixFormat = AV_PIX_FMT_YUV422P;
             break;
+        }
 
         case AV_PIX_FMT_YUVJ444P:
+        {
             pVideoCodecContextPixFormat = AV_PIX_FMT_YUV444P;
             break;
+        }
 
         case AV_PIX_FMT_YUVJ440P:
+        {
             pVideoCodecContextPixFormat = AV_PIX_FMT_YUV440P;
             break;
+        }
 
         default:
+        {
             break;
+        }
     }
 
 #endif

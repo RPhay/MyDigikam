@@ -45,7 +45,7 @@ namespace Digikam
 {
 
 PreviewLoadingTask::PreviewLoadingTask(LoadSaveThread* const thread, const LoadingDescription& description)
-    : SharedLoadingTask(thread, description, LoadSaveThread::AccessModeRead, LoadingTaskStatusLoading),
+    : SharedLoadingTask       (thread, description, LoadSaveThread::AccessModeRead, LoadingTaskStatusLoading),
       m_fromRawEmbeddedPreview(false)
 {
 }
@@ -463,17 +463,22 @@ bool PreviewLoadingTask::needToScale()
     switch (m_loadingDescription.previewParameters.previewSettings.quality)
     {
         case PreviewSettings::FastPreview:
+        {
             if (m_loadingDescription.previewParameters.size > 0)
             {
                 int maxSize             = qMax(m_img.width(), m_img.height());
                 int acceptableUpperSize = lround(1.25 * (double)m_loadingDescription.previewParameters.size);
                 return (maxSize >= acceptableUpperSize);
             }
+
             break;
+        }
 
         case PreviewSettings::FastButLargePreview:
         case PreviewSettings::HighQualityPreview:
+        {
             break;
+        }
     }
 
     return false;
