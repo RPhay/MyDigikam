@@ -25,7 +25,7 @@
 // C++ include
 
 #include <cfloat>
-#include <stdio.h>
+#include <cstdio>
 
 // Qt include
 
@@ -115,7 +115,9 @@ KDNode::KDNode(const cv::Mat& nodePos,
     : d(new Private(nodePos, identity, splitAxis, dimension))
 {
     Q_ASSERT(splitAxis < dimension);
-    Q_ASSERT((nodePos.rows == 1) && (nodePos.cols == dimension) && (nodePos.type() == CV_32F));
+    Q_ASSERT((nodePos.rows   == 1)         &&
+             (nodePos.cols   == dimension) &&
+             (nodePos.type() == CV_32F));
 }
 
 KDNode::~KDNode()
