@@ -83,7 +83,7 @@ public:
     QCache<QString, QPixmap>        thumbnailPixmapCache;
     QMultiMap<QString, QString>     imageFilePathMap;
     QMultiMap<QString, QString>     thumbnailFilePathMap;
-    QMap<QString, LoadingProcess*>  loadingDict;
+    QHash<QString, LoadingProcess*> loadingDict;
 
     /// Note: Don't make the mutex recursive, we need to use a wait condition on it
     QMutex                          mutex;
@@ -269,7 +269,7 @@ void LoadingCache::removeLoadingProcess(LoadingProcess* const process)
 
 void LoadingCache::notifyNewLoadingProcess(LoadingProcess* const process, const LoadingDescription& description)
 {
-    for (QMap<QString, LoadingProcess*>::const_iterator it = d->loadingDict.constBegin() ;
+    for (QHash<QString, LoadingProcess*>::const_iterator it = d->loadingDict.constBegin() ;
          it != d->loadingDict.constEnd() ; ++it)
     {
         it.value()->notifyNewLoadingProcess(process, description);
