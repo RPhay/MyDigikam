@@ -65,7 +65,7 @@ public:
 
     explicit Private()
       : running(false),
-        pool(nullptr)
+        pool   (nullptr)
     {
     }
 

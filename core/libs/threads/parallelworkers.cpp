@@ -42,8 +42,8 @@ namespace Digikam
 {
 
 ParallelWorkers::ParallelWorkers()
-    : m_currentIndex(0),
-      m_replacementMetaObject(nullptr),
+    : m_currentIndex          (0),
+      m_replacementMetaObject (nullptr),
       m_originalStaticMetacall(nullptr)
 {
 }
@@ -249,8 +249,8 @@ const QMetaObject* ParallelWorkers::replacementMetaObject() const
 {
     if (!m_replacementMetaObject)
     {
-        QMetaObject* rmo                       = new QMetaObject(*mocMetaObject());
-        ParallelWorkers* nonConstThis          = const_cast<ParallelWorkers*>(this);
+        QMetaObject* const rmo                 = new QMetaObject(*mocMetaObject());
+        ParallelWorkers* const nonConstThis    = const_cast<ParallelWorkers*>(this);
         nonConstThis->m_originalStaticMetacall = rmo->d.static_metacall;
         rmo->d.static_metacall                 = nonConstThis->staticMetacallPointer();
         nonConstThis->m_replacementMetaObject  = rmo;

@@ -164,7 +164,7 @@ protected:
 // --------------------------------------------------------------------------------------------------
 
 WorkerObjectRunnable::WorkerObjectRunnable(WorkerObject* const object, ParkingThread* const parkingThread)
-    : object(object),
+    : object       (object),
       parkingThread(parkingThread)
 {
     setAutoDelete(true);
@@ -228,7 +228,7 @@ public:
 
     Private()
       : parkingThread(nullptr),
-        pool(nullptr)
+        pool         (nullptr)
     {
     }
 

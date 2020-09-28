@@ -42,20 +42,21 @@ class Q_DECL_HIDDEN DynamicThread::Private : public QRunnable
 public:
 
     explicit Private(DynamicThread* const q)
-        : q(q),
-          assignedThread(nullptr),
-          running(true),
-          emitSignals(false),
-          inDestruction(false),
-          threadRequested(false),
-          state(DynamicThread::Inactive),
-          priority(QThread::InheritPriority),
-          previousPriority(QThread::InheritPriority)
+        : q                 (q),
+          assignedThread    (nullptr),
+          running           (true),
+          emitSignals       (false),
+          inDestruction     (false),
+          threadRequested   (false),
+          state             (DynamicThread::Inactive),
+          priority          (QThread::InheritPriority),
+          previousPriority  (QThread::InheritPriority)
     {
         setAutoDelete(false);
     };
 
     virtual void run() override;
+
     void         takingThread();
     bool         transitionToRunning();
     void         transitionToInactive();

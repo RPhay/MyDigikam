@@ -45,11 +45,11 @@ class Q_DECL_HIDDEN WorkerObject::Private
 public:
 
     Private()
-      : state(WorkerObject::Inactive),
-        eventLoop(nullptr),
-        runnable(nullptr),
-        inDestruction(false),
-        priority(QThread::InheritPriority)
+      : state           (WorkerObject::Inactive),
+        eventLoop       (nullptr),
+        runnable        (nullptr),
+        inDestruction   (false),
+        priority        (QThread::InheritPriority)
     {
     }
 
@@ -212,12 +212,16 @@ void WorkerObject::schedule()
         {
             case Inactive:
             case Deactivating:
+            {
                 d->state = Scheduled;
                 break;
+            }
 
             case Scheduled:
             case Running:
+            {
                 return;
+            }
         }
     }
 
@@ -233,12 +237,16 @@ void WorkerObject::deactivate(DeactivatingMode mode)
         {
             case Scheduled:
             case Running:
+            {
                 d->state = Deactivating;
                 break;
+            }
 
             case Inactive:
             case Deactivating:
+            {
                 return;
+            }
         }
     }
 
@@ -275,12 +283,16 @@ bool WorkerObject::transitionToRunning()
     {
         case Running:
         case Scheduled:
+        {
             d->state = Running;
             return true;
+        }
 
         case Deactivating:
         default:
+        {
             return false;
+        }
     }
 }
 
@@ -291,13 +303,17 @@ void WorkerObject::transitionToInactive()
     switch (d->state)
     {
         case Scheduled:
+        {
             break;
+        }
 
         case Deactivating:
         default:
+        {
             d->state = Inactive;
             d->condVar.wakeAll();
             break;
+        }
     }
 }
 
