@@ -95,7 +95,7 @@ public:
     explicit LoadingTask(LoadSaveThread* const thread,
                          const LoadingDescription& description,
                          LoadingTaskStatus loadingTaskStatus = LoadingTaskStatusLoading);
-    virtual ~LoadingTask();
+    ~LoadingTask() override;
 
     LoadingTaskStatus status()                     const;
     QString filePath()                             const;

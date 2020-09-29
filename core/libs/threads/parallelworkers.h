@@ -134,8 +134,8 @@ public:
      * For outbound connections (signals emitted from the WorkerObject),
      * use ParallelAdapter's connect to have a connection from all added WorkerObjects.
      */
-    explicit ParallelAdapter() {}
-    ~ParallelAdapter()         {}
+    explicit ParallelAdapter()  {}
+    ~ParallelAdapter() override {}
 
     void add(A* const worker)
     {
@@ -160,22 +160,22 @@ public:
         static_cast<ParallelAdapter*>(o)->replacementStaticQtMetacall(_c, _id, _a);
     }
 
-    virtual StaticMetacallFunction staticMetacallPointer() override
+    StaticMetacallFunction staticMetacallPointer() override
     {
         return qt_static_metacall;
     }
 
-    virtual const QMetaObject* metaObject() const override
+    const QMetaObject* metaObject() const override
     {
         return ParallelWorkers::replacementMetaObject();
     }
 
-    virtual int qt_metacall(QMetaObject::Call _c, int _id, void** _a) override
+    int qt_metacall(QMetaObject::Call _c, int _id, void** _a) override
     {
         return ParallelWorkers::replacementQtMetacall(_c, _id, _a);
     }
 
-    virtual QObject* asQObject() override
+    QObject* asQObject() override
     {
         return this;
     }

@@ -42,7 +42,7 @@ class PreviewLoadingTask : public SharedLoadingTask
 public:
 
     explicit PreviewLoadingTask(LoadSaveThread* const thread, const LoadingDescription& description);
-    ~PreviewLoadingTask();
+    ~PreviewLoadingTask() override;
 
     void execute() override;
 

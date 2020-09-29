@@ -52,7 +52,7 @@ public:
 
     /** Re-implement destructor in you implementation. Don't forget to cancel job.
      */
-    virtual ~ActionJob();
+    ~ActionJob() override;
 
 Q_SIGNALS:
 
@@ -95,8 +95,8 @@ class DIGIKAM_EXPORT ActionThreadBase : public QThread
 
 public:
 
-    explicit ActionThreadBase(QObject* const parent=nullptr);
-    virtual ~ActionThreadBase();
+    explicit ActionThreadBase(QObject* const parent = nullptr);
+    ~ActionThreadBase() override;
 
     /** Adjust maximum number of threads used to parallelize collection of job processing.
      */

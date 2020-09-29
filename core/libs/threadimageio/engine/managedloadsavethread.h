@@ -132,7 +132,7 @@ public:
      * Default is TerminationPolicyTerminateLoading
      */
     explicit ManagedLoadSaveThread(QObject* const parent = nullptr);
-    ~ManagedLoadSaveThread();
+    ~ManagedLoadSaveThread() override;
 
     /**
      * Append a task to load the given file to the task list.

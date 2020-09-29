@@ -80,7 +80,7 @@ public:
      * Please check if you need to call shutDown from your destructor (see below).
      */
     explicit WorkerObject();
-    ~WorkerObject();
+    ~WorkerObject() override;
 
     State state() const;
 
@@ -178,7 +178,7 @@ protected:
      */
     virtual void aboutToDeactivate();
 
-    virtual bool event(QEvent* e) override;
+    bool event(QEvent* e) override;
 
 private:
 

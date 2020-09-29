@@ -88,7 +88,7 @@ class DIGIKAM_EXPORT LoadingCacheFileWatch : public QObject
 public:
 
     LoadingCacheFileWatch();
-    virtual ~LoadingCacheFileWatch();
+    ~LoadingCacheFileWatch() override;
 
     virtual void addedImage(const QString& filePath);
     virtual void checkFileWatch(const QString& filePath);
@@ -290,7 +290,7 @@ private Q_SLOTS:
 private:
 
     explicit LoadingCache();
-    ~LoadingCache();
+    ~LoadingCache() override;
 
     // Hidden copy constructor and assignment operator.
     LoadingCache(const LoadingCache&);

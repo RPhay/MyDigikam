@@ -101,7 +101,7 @@ public:
 
 protected:
 
-    virtual bool open(QIODevice::OpenMode) override;
+    bool open(QIODevice::OpenMode) override;
 
 private:
 

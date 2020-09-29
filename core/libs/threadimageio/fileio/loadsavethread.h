@@ -135,7 +135,7 @@ public:
      * Destructor:
      * The thread will execute all pending tasks and wait for this upon destruction
      */
-    ~LoadSaveThread();
+    ~LoadSaveThread() override;
 
     /**
      * Append a task to load the given file to the task list
@@ -208,22 +208,22 @@ Q_SIGNALS:
 
 public:
 
-    virtual void imageStartedLoading(const LoadingDescription& loadingDescription)                override;
-    virtual void loadingProgress(const LoadingDescription& loadingDescription, float progress)    override;
-    virtual void imageLoaded(const LoadingDescription& loadingDescription, const DImg& img)       override;
-    virtual void moreCompleteLoadingAvailable(const LoadingDescription& oldLoadingDescription,
+    void imageStartedLoading(const LoadingDescription& loadingDescription)                override;
+    void loadingProgress(const LoadingDescription& loadingDescription, float progress)    override;
+    void imageLoaded(const LoadingDescription& loadingDescription, const DImg& img)       override;
+    void moreCompleteLoadingAvailable(const LoadingDescription& oldLoadingDescription,
                                               const LoadingDescription& newLoadingDescription)    override;
-    virtual void imageStartedSaving(const QString& filePath)                                      override;
-    virtual void savingProgress(const QString& filePath, float progress)                          override;
-    virtual void imageSaved(const QString& filePath, bool success)                                override;
-    virtual void thumbnailLoaded(const LoadingDescription& loadingDescription, const QImage& img) override;
+    void imageStartedSaving(const QString& filePath)                                      override;
+    void savingProgress(const QString& filePath, float progress)                          override;
+    void imageSaved(const QString& filePath, bool success)                                override;
+    void thumbnailLoaded(const LoadingDescription& loadingDescription, const QImage& img) override;
 
     virtual bool querySendNotifyEvent() const;
     virtual void taskHasFinished();
 
 protected:
 
-    virtual void run()                                                                            override;
+    void run()                                                                            override;
 
     void notificationReceived();
 

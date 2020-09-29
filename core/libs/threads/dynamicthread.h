@@ -68,7 +68,7 @@ public:
      *  delete any data that is accessed by your run() method,
      *  you must call stop() and wait() before yourself.
      */
-    virtual ~DynamicThread();
+    ~DynamicThread() override;
 
     State state()               const;
     bool  isRunning()           const;

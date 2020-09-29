@@ -55,7 +55,7 @@ public:
         setAutoDelete(false);
     };
 
-    virtual void run() override;
+    void run() override;
 
     void         takingThread();
     bool         transitionToRunning();

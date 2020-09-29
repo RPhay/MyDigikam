@@ -62,7 +62,7 @@ protected Q_SLOTS:
 protected:
 
     explicit ThreadManager();
-    ~ThreadManager();
+    ~ThreadManager() override;
 
 private:
 

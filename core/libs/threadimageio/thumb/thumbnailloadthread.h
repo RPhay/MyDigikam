@@ -49,7 +49,7 @@ class DIGIKAM_EXPORT ThumbnailLoadThread : public ManagedLoadSaveThread
 public:
 
     explicit ThumbnailLoadThread(QObject* const parent = nullptr);
-    ~ThumbnailLoadThread();
+    ~ThumbnailLoadThread() override;
 
     /**
      * Return application-wide default thumbnail threads.
@@ -242,7 +242,7 @@ public:
 
 protected:
 
-    virtual void thumbnailLoaded(const LoadingDescription& loadingDescription, const QImage& img) override;
+    void thumbnailLoaded(const LoadingDescription& loadingDescription, const QImage& img) override;
 
 private:
 
@@ -294,7 +294,7 @@ public:
 
     explicit ThumbnailImageCatcher(QObject* const parent = nullptr);
     explicit ThumbnailImageCatcher(ThumbnailLoadThread* const thread, QObject* const parent = nullptr);
-    ~ThumbnailImageCatcher();
+    ~ThumbnailImageCatcher() override;
 
     ThumbnailLoadThread* thread() const;
     void setThumbnailLoadThread(ThumbnailLoadThread* const thread);

@@ -53,7 +53,7 @@ public:
         start();
     }
 
-    ~ParkingThread()
+    ~ParkingThread() override
     {
         running = false;
         condVar.wakeAll();
@@ -102,7 +102,7 @@ public:
         }
     }
 
-    virtual void run() override
+    void run() override
     {
         /* The quirk here is that this thread never runs an event loop.
          * That means events queued for parked object are only emitted when
@@ -158,7 +158,7 @@ protected:
 
 protected:
 
-    virtual void run() override;
+    void run() override;
 };
 
 // --------------------------------------------------------------------------------------------------
