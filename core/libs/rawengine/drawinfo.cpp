@@ -79,7 +79,7 @@ DRawInfo::DRawInfo()
         {
             cameraColorMatrix1[x][y] = 0.0F;
             cameraColorMatrix2[x][y] = 0.0F;
-            cameraXYZMatrix[y][x]    = 0.0F;       ///< NOTE: see B.K.O # 253911 : [y][x] not [x][y]
+            cameraXYZMatrix[y][x]    = 0.0F; ///< NOTE: see B.K.O # 253911 : [y][x] not [x][y]
         }
     }
 
@@ -88,8 +88,8 @@ DRawInfo::DRawInfo()
     altitude                = 0.0F;
     hasGpsInfo              = false;
 
-    focalLengthIn35mmFilm   = -1;         ///< Valid value is unsigned.
-    maxAperture             = -1.0F;      ///< Valid value is unsigned.
+    focalLengthIn35mmFilm   = -1;            ///< Valid value is unsigned.
+    maxAperture             = -1.0F;         ///< Valid value is unsigned.
 }
 
 DRawInfo::~DRawInfo()

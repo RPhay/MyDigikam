@@ -48,9 +48,9 @@ namespace Digikam
 {
 
 DRawDecoder::DRawDecoder()
-    : d(new Private(this))
+    : m_cancel(false),
+      d       (new Private(this))
 {
-    m_cancel = false;
 }
 
 DRawDecoder::~DRawDecoder()
