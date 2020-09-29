@@ -216,12 +216,15 @@ DMetadata::MetaDataMap s_extractFFMpegMetadataEntriesFromDictionary(AVDictionary
 
 bool DMetadata::loadUsingFFmpeg(const QString& filePath)
 {
+
 #ifdef HAVE_MEDIAPLAYER
 
     qCDebug(DIGIKAM_METAENGINE_LOG) << "Parse metadada with FFMpeg:" << filePath;
 
 #if LIBAVFORMAT_VERSION_MAJOR < 58
+
     av_register_all();
+
 #endif
 
     AVFormatContext* fmt_ctx = avformat_alloc_context();
@@ -283,7 +286,7 @@ bool DMetadata::loadUsingFFmpeg(const QString& filePath)
 
         if (QLatin1String(cname) == QLatin1String("none"))
         {
-            if (codec->codec_type == AVMEDIA_TYPE_AUDIO)
+            if      (codec->codec_type == AVMEDIA_TYPE_AUDIO)
             {
                 setXmpTagString("Xmp.audio.Codec",
                     QString::fromUtf8(cname));
@@ -301,7 +304,7 @@ bool DMetadata::loadUsingFFmpeg(const QString& filePath)
         // Audio stream parsing
         // -----------------------------------------
 
-        if (!astream && codec->codec_type == AVMEDIA_TYPE_AUDIO)
+        if (!astream && (codec->codec_type == AVMEDIA_TYPE_AUDIO))
         {
             astream = true;
 
@@ -411,7 +414,7 @@ bool DMetadata::loadUsingFFmpeg(const QString& filePath)
         // Video stream parsing
         // -----------------------------------------
 
-        if (!vstream && codec->codec_type == AVMEDIA_TYPE_VIDEO)
+        if (!vstream && (codec->codec_type == AVMEDIA_TYPE_VIDEO))
         {
             vstream = true;
 
@@ -500,7 +503,7 @@ bool DMetadata::loadUsingFFmpeg(const QString& filePath)
             // ----------
 
             QString aspectRatio;
-            int frameRate = -1.0;
+            double frameRate = -1.0;
 
             if      (codec->sample_aspect_ratio.num != 0)    // Check if undefined by ffmpeg
             {
@@ -573,7 +576,7 @@ bool DMetadata::loadUsingFFmpeg(const QString& filePath)
                 {
                     data = QLatin1String("NTSC");
                 }
-                else if (frameRate == 25 || frameRate == 50)
+                else if (frameRate == 25.0 || frameRate == 50.0)
                 {
                     data = QLatin1String("PAL");
                 }
@@ -690,7 +693,7 @@ bool DMetadata::loadUsingFFmpeg(const QString& filePath)
         // Subtitle stream parsing
         // -----------------------------------------
 
-        if (!sstream && codec->codec_type == AVMEDIA_TYPE_SUBTITLE)
+        if (!sstream && (codec->codec_type == AVMEDIA_TYPE_SUBTITLE))
         {
             sstream = true;
 
@@ -1681,10 +1684,13 @@ bool DMetadata::loadUsingFFmpeg(const QString& filePath)
     return true;
 
 #else
+
     Q_UNUSED(filePath);
 
     return false;
+
 #endif
+
 }
 
 QString DMetadata::videoColorModelToString(VIDEOCOLORMODEL videoColorModel)

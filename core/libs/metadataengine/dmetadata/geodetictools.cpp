@@ -36,15 +36,15 @@ namespace Digikam
 using namespace Coordinates;
 
 GeodeticCalculator::GeodeticCalculator(const Ellipsoid& e)
-    : m_ellipsoid(e),
-      m_lat1(0),
-      m_long1(0),
-      m_lat2(0),
-      m_long2(0),
-      m_distance(0),
-      m_azimuth(0),
+    : m_ellipsoid       (e),
+      m_lat1            (0),
+      m_long1           (0),
+      m_lat2            (0),
+      m_long2           (0),
+      m_distance        (0),
+      m_azimuth         (0),
       m_destinationValid(false),
-      m_directionValid(false)
+      m_directionValid  (false)
 {
     m_semiMajorAxis = m_ellipsoid.semiMajorAxis();
     m_semiMinorAxis = m_ellipsoid.semiMinorAxis();
@@ -140,7 +140,7 @@ bool GeodeticCalculator::checkAzimuth(double* azimuth)
 
 bool GeodeticCalculator::checkOrthodromicDistance(const double distance)
 {
-    return (distance >= 0.0) && (distance <= m_maxOrthodromicDistance);
+    return ((distance >= 0.0) && (distance <= m_maxOrthodromicDistance));
 }
 
 Ellipsoid GeodeticCalculator::ellipsoid() const
@@ -580,10 +580,10 @@ bool GeodeticCalculator::computeDirection()
 
         // azimuths from north,longitudes positive east
 
-        az1 = atan2(sina1, sina1/tana1);
+        az1                = atan2(sina1, sina1/tana1);
     }
 
-    m_azimuth = castToAngleRange(az1);
+    m_azimuth        = castToAngleRange(az1);
     m_directionValid = true;
 
     return true;
@@ -685,24 +685,24 @@ Ellipsoid::Ellipsoid(const QString& name,
                      double  semiMinorAxis,
                      double inverseFlattening,
                      bool ivfDefinitive)
-    : name(name),
-      m_semiMajorAxis(semiMajorAxis),
-      m_semiMinorAxis(semiMinorAxis),
+    : name               (name),
+      m_semiMajorAxis    (semiMajorAxis),
+      m_semiMinorAxis    (semiMinorAxis),
       m_inverseFlattening(inverseFlattening),
-      m_ivfDefinitive(ivfDefinitive),
-      m_isSphere(false)
+      m_ivfDefinitive    (ivfDefinitive),
+      m_isSphere         (false)
 {
 }
 
 Ellipsoid::Ellipsoid(const QString& name,
                      double radius,
                      bool ivfDefinitive)
-    : name(name),
-      m_semiMajorAxis(radius),
-      m_semiMinorAxis(radius),
+    : name               (name),
+      m_semiMajorAxis    (radius),
+      m_semiMinorAxis    (radius),
       m_inverseFlattening(DBL_MAX),
-      m_ivfDefinitive(ivfDefinitive),
-      m_isSphere(true)
+      m_ivfDefinitive    (ivfDefinitive),
+      m_isSphere         (true)
 {
 }
 
@@ -754,7 +754,7 @@ double Ellipsoid::eccentricity() const
         return 0.0;
     }
 
-    const double f = 1-m_semiMinorAxis/m_semiMajorAxis;
+    const double f = 1-m_semiMinorAxis / m_semiMajorAxis;
 
     return sqrt(2*f - f*f);
 }

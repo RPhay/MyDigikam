@@ -47,7 +47,7 @@ class Q_DECL_HIDDEN DMetadataSettings::Private
 public:
 
     explicit Private()
-        : mutex(),
+        : mutex      (),
           configGroup(QLatin1String("DMetadata Settings"))
     {
     }

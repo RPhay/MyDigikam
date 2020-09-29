@@ -163,10 +163,10 @@ MetaEngineRotation::MetaEngineRotation(int m11, int m12, int m21, int m22)
 
 void MetaEngineRotation::set(int m11, int m12, int m21, int m22)
 {
-    m[0][0]=m11;
-    m[0][1]=m12;
-    m[1][0]=m21;
-    m[1][1]=m22;
+    m[0][0] = m11;
+    m[0][1] = m12;
+    m[1][0] = m21;
+    m[1][1] = m22;
 }
 
 bool MetaEngineRotation::isNoTransform() const

@@ -112,6 +112,8 @@ public:
     bool                                  unifyReadWrite;
 };
 
+// -------------------------------------------------------------------------------------------------
+
 DMetadataSettingsContainer::DMetadataSettingsContainer()
     : d(new Private)
 {

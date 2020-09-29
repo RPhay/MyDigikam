@@ -70,14 +70,14 @@ namespace Digikam
 QMutex s_metaEngineMutex(QMutex::Recursive);
 
 MetaEngine::Private::Private()
-    : writeRawFiles(false),
-      writeDngFiles(false),
-      updateFileTimeStamp(false),
-      useXMPSidecar4Reading(false),
-      useCompatibleFileName(false),
-      metadataWritingMode(WRITE_TO_FILE_ONLY),
-      loadedFromSidecar(false),
-      data(new MetaEngineData::Private)
+    : writeRawFiles         (false),
+      writeDngFiles         (false),
+      updateFileTimeStamp   (false),
+      useXMPSidecar4Reading (false),
+      useCompatibleFileName (false),
+      metadataWritingMode   (WRITE_TO_FILE_ONLY),
+      loadedFromSidecar     (false),
+      data                  (new MetaEngineData::Private)
 {
     QMutexLocker lock(&s_metaEngineMutex);
     Exiv2::LogMsg::setHandler(MetaEngine::Private::printExiv2MessageHandler);
