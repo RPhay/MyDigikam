@@ -450,7 +450,7 @@ void GPSItemListContextMenu::pasteActionTriggered(bool swap)
         }
     }
 
-    if ((!foundData)&&(mimedata->hasText()))
+    if (!foundData && mimedata->hasText())
     {
         const QString textdata         = mimedata->text();
         bool foundGeoUrl               = false;
@@ -469,15 +469,15 @@ void GPSItemListContextMenu::pasteActionTriggered(bool swap)
 
             if ((parts.size() == 3) || (parts.size() == 2))
             {
-                double ptLatitude  = 0.0;
+                double ptLongitude = 0.0;
                 double ptAltitude  = 0.0;
                 bool haveAltitude  = false;
                 bool okay          = true;
-                double ptLongitude = parts[0].toDouble(&okay);
+                double ptLatitude  = parts[0].toDouble(&okay);
 
                 if (okay)
                 {
-                    ptLatitude = parts[1].toDouble(&okay);
+                    ptLongitude = parts[1].toDouble(&okay);
                 }
 
                 if (okay && (parts.size() == 3))
@@ -492,7 +492,7 @@ void GPSItemListContextMenu::pasteActionTriggered(bool swap)
                 {
                     if (swap)
                     {
-                        std::swap(ptLongitude, ptLatitude);
+                        std::swap(ptLatitude, ptLongitude);
                     }
 
                     GeoCoordinates coordinates(ptLatitude, ptLongitude);

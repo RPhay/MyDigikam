@@ -128,4 +128,5 @@ BUGFIXES:
 115 ==> 426888 - digiKam crashes shortly after I attempt to start it.
 116 ==> 427041 - Geolocation information not being saved to the metadata.
 117 ==> 427056 - Digikam seg faults building thumbnail from gigabyte PNG.
-118 ==> 
+118 ==> 427112 - Modify the geolocation : Legends of the screen menus incorrect.
+119 ==> 
