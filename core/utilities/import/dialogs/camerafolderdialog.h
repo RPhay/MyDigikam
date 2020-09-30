@@ -42,7 +42,7 @@ public:
 
     CameraFolderDialog(QWidget* const parent, const QMap<QString, int>& map,
                        const QString& cameraName, const QString& rootPath);
-    ~CameraFolderDialog();
+    ~CameraFolderDialog() override;
 
     QString selectedFolderPath() const;
 

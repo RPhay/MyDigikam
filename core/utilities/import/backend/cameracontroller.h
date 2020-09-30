@@ -55,7 +55,7 @@ public:
 
     explicit CameraController(QWidget* const parent, const QString& title, const QString& model,
                               const QString& port, const QString& path);
-    ~CameraController();
+    ~CameraController() override;
 
     bool cameraThumbnailSupport() const;
     bool cameraDeleteSupport() const;
@@ -134,7 +134,7 @@ public Q_SLOTS:
 
 protected:
 
-    void run();
+    void run() override;
     void executeCommand(CameraCommand* const cmd);
 
 private Q_SLOTS:

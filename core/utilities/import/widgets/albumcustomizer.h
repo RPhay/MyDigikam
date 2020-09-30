@@ -55,7 +55,7 @@ public:
 public:
 
     explicit AlbumCustomizer(QWidget* const parent = nullptr);
-    ~AlbumCustomizer();
+    ~AlbumCustomizer() override;
 
     void readSettings(KConfigGroup& group);
     void saveSettings(KConfigGroup& group);

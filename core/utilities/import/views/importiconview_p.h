@@ -49,7 +49,7 @@ class Q_DECL_HIDDEN ImportIconView::Private : public QObject
 public:
 
     explicit Private(ImportIconView* const qq);
-    virtual ~Private();
+    ~Private() override;
 
     void updateOverlays();
 

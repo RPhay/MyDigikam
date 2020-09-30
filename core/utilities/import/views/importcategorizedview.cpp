@@ -59,7 +59,7 @@ public:
 
 protected:
 
-    virtual QString tipContents()
+    QString tipContents() override
     {
         CamItemInfo info = ImportItemModel::retrieveCamItemInfo(currentIndex());
 

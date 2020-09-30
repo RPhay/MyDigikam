@@ -46,7 +46,7 @@ class ImportSortFilterModel : public DCategorizedSortFilterProxyModel
 public:
 
     explicit ImportSortFilterModel(QObject* const parent = nullptr);
-    ~ImportSortFilterModel();
+    ~ImportSortFilterModel() override;
 
     void setSourceImportModel(ImportItemModel* const sourceModel);
     ImportItemModel* sourceImportModel() const;
@@ -85,7 +85,7 @@ public:
 
 protected:
 
-    virtual void setSourceModel(QAbstractItemModel* sourceModel);
+    void setSourceModel(QAbstractItemModel* sourceModel) override;
 
     /// Reimplement if needed. Called only when model shall be set as (direct) sourceModel.
     virtual void setDirectSourceImportModel(ImportItemModel* const sourceModel);
@@ -125,7 +125,7 @@ public:
 public:
 
     explicit ImportFilterModel(QObject* const parent = nullptr);
-    ~ImportFilterModel();
+    ~ImportFilterModel() override;
 
     CamItemSortSettings camItemSortSettings() const;
 
@@ -139,8 +139,8 @@ public:
     bool isGroupOpen(qlonglong group) const;
     bool isAllGroupsOpen() const;
 */
-    virtual QVariant data(const QModelIndex& index, int role = Qt::DisplayRole) const override;
-    virtual ImportFilterModel* importFilterModel()                              const override;
+    QVariant data(const QModelIndex& index, int role = Qt::DisplayRole) const override;
+    ImportFilterModel* importFilterModel()                              const override;
 
 public Q_SLOTS:
 
@@ -198,12 +198,12 @@ protected:
 
 protected:
 
-    virtual void setDirectSourceImportModel(ImportItemModel* const sourceModel)            override;
+    void setDirectSourceImportModel(ImportItemModel* const sourceModel)            override;
 
-    virtual bool filterAcceptsRow(int source_row, const QModelIndex& source_parent) const  override;
+    bool filterAcceptsRow(int source_row, const QModelIndex& source_parent) const  override;
 
-    virtual int compareCategories(const QModelIndex& left, const QModelIndex& right) const override;
-    virtual bool subSortLessThan(const QModelIndex& left, const QModelIndex& right) const  override;
+    int compareCategories(const QModelIndex& left, const QModelIndex& right) const override;
+    bool subSortLessThan(const QModelIndex& left, const QModelIndex& right) const  override;
 
     /**
      * Reimplement to customize category sorting,
@@ -239,7 +239,7 @@ public:
 
 protected:
 
-    virtual bool filterAcceptsRow(int source_row, const QModelIndex& source_parent) const;
+    bool filterAcceptsRow(int source_row, const QModelIndex& source_parent) const override;
 };
 
 } // namespace Digikam

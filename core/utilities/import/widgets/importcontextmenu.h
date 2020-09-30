@@ -77,7 +77,7 @@ public:
      * action from DigikamApp is used
      */
     explicit ImportContextMenuHelper(QMenu* const parent, KActionCollection* const actionCollection = nullptr);
-    virtual ~ImportContextMenuHelper();
+    ~ImportContextMenuHelper() override;
 
     /**
      * Add an action from the actionCollection.

@@ -39,7 +39,7 @@ class ImportThumbnailBar : public ImportCategorizedView
 public:
 
     explicit ImportThumbnailBar(QWidget* const parent = nullptr);
-    ~ImportThumbnailBar();
+    ~ImportThumbnailBar() override;
 
     /**
      * This installs a duplicate filter model, if the ImportItemModel may contain duplicates.
@@ -67,8 +67,8 @@ public Q_SLOTS:
 
 protected:
 
-    virtual void slotSetupChanged() override;
-    virtual bool event(QEvent*)     override;
+    void slotSetupChanged() override;
+    bool event(QEvent*)     override;
 
 private:
 

@@ -71,7 +71,7 @@ public:
     }
 */
 
-    void contextMenuEvent(QGraphicsSceneContextMenuEvent* event)
+    void contextMenuEvent(QGraphicsSceneContextMenuEvent* event) override
     {
         m_view->showContextMenu(m_info, event);
     }
@@ -86,7 +86,7 @@ public:
         }
     }
 
-    void hoverEnterEvent(QGraphicsSceneHoverEvent* e)
+    void hoverEnterEvent(QGraphicsSceneHoverEvent* e) override
     {
         Q_UNUSED(e)
 /*
@@ -95,7 +95,7 @@ public:
 */
     }
 
-    void hoverLeaveEvent(QGraphicsSceneHoverEvent* e)
+    void hoverLeaveEvent(QGraphicsSceneHoverEvent* e) override
     {
         Q_UNUSED(e)
 /*
@@ -104,7 +104,7 @@ public:
 */
     }
 
-    void hoverMoveEvent(QGraphicsSceneHoverEvent* e)
+    void hoverMoveEvent(QGraphicsSceneHoverEvent* e) override
     {
         Q_UNUSED(e)
 /*

@@ -69,7 +69,7 @@ public:
                       const QString& port,
                       const QString& path,
                       int startIndex);
-    virtual ~ImportUI();
+    ~ImportUI() override;
 
     static ImportUI* instance();
 

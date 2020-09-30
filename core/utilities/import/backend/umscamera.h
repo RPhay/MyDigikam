@@ -45,7 +45,7 @@ class UMSCamera : public DKCamera
 public:
 
     explicit UMSCamera(const QString& title, const QString& model, const QString& port, const QString& path);
-    ~UMSCamera();
+    ~UMSCamera() override;
 
     QByteArray                 cameraMD5ID() override;
     DKCamera::CameraDriverType cameraDriverType() override;

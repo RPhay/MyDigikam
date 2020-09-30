@@ -48,7 +48,7 @@ public:
 
     CaptureDlg(QWidget* const parent, CameraController* const controller,
                const QString& cameraTitle);
-    ~CaptureDlg();
+    ~CaptureDlg() override;
 
 protected:
 

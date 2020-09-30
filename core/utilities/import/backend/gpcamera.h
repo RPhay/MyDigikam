@@ -48,7 +48,7 @@ public:
 
     explicit GPCamera(const QString& title, const QString& model,
                       const QString& port, const QString& path);
-    ~GPCamera();
+    ~GPCamera() override;
 
     QByteArray                 cameraMD5ID() override;
     DKCamera::CameraDriverType cameraDriverType() override;

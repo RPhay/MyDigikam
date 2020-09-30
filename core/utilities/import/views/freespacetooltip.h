@@ -36,7 +36,7 @@ class FreeSpaceToolTip : public DItemToolTip
 public:
 
     explicit FreeSpaceToolTip(QWidget* const parent);
-    virtual ~FreeSpaceToolTip();
+    ~FreeSpaceToolTip() override;
 
     void setToolTip(const QString& tip);
 
@@ -44,8 +44,8 @@ public:
 
 protected:
 
-    virtual QRect   repositionRect();
-    virtual QString tipContents();
+    QRect   repositionRect() override;
+    QString tipContents() override;
 
 private:
 

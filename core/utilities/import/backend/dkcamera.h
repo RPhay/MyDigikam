@@ -57,7 +57,7 @@ public:
 public:
 
     explicit DKCamera(const QString& title, const QString& model, const QString& port, const QString& path);
-    virtual ~DKCamera();
+    ~DKCamera() override;
 
 public:
 

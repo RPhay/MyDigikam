@@ -58,7 +58,7 @@ public:
 public:
 
     explicit RenameCustomizer(QWidget* const parent, const QString& cameraTitle);
-    ~RenameCustomizer();
+    ~RenameCustomizer() override;
 
     void    setUseDefault(bool val);
     bool    useDefault() const;

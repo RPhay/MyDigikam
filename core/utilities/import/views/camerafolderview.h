@@ -44,7 +44,7 @@ class CameraFolderView : public QTreeWidget
 public:
 
     explicit CameraFolderView(QWidget* const parent);
-    ~CameraFolderView();
+    ~CameraFolderView() override;
 
     void addVirtualFolder(const QString& name, const QIcon &icon = QIcon::fromTheme(QLatin1String("camera-photo")));
     void addRootFolder(const QString& folder, int nbItems = -1, const QIcon& icon = QIcon::fromTheme(QLatin1String("folder")));

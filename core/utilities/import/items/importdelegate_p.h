@@ -93,7 +93,7 @@ public:
 
 public:
 
-    virtual void clearRects();
+    void clearRects() override;
 };
 
 // --- ImportThumbnailDelegate ----------------------------------------------------
@@ -125,7 +125,7 @@ class Q_DECL_HIDDEN ImportNormalDelegatePrivate : public ImportDelegate::ImportD
 public:
 
     explicit ImportNormalDelegatePrivate() {};
-    virtual ~ImportNormalDelegatePrivate();
+    ~ImportNormalDelegatePrivate() override;
 
     void init(ImportNormalDelegate* const q, ImportCategorizedView* const parent);
 };

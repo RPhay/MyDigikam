@@ -170,7 +170,7 @@ public:
 private:
 
     ImportSettings();
-    ~ImportSettings();
+    ~ImportSettings() override;
 
     void init();
 

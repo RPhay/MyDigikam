@@ -45,7 +45,7 @@ class ImportView : public DHBox
 public:
 
     ImportView(Digikam::ImportUI* const ui, QWidget* const parent);
-    ~ImportView();
+    ~ImportView() override;
 
     void applySettings();
     void refreshView();

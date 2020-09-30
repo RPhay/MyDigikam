@@ -79,7 +79,7 @@ public:
 public:
 
     explicit ImportStackedView(QWidget*const parent = nullptr);
-    ~ImportStackedView();
+    ~ImportStackedView() override;
 
     void setDockArea(QMainWindow*);
 

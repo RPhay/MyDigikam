@@ -48,7 +48,7 @@ public:
 public:
 
     explicit FreeSpaceWidget(QWidget* const parent, int width);
-    ~FreeSpaceWidget();
+    ~FreeSpaceWidget() override;
 
     void          setEstimatedDSizeKb(unsigned long dSize);
     unsigned long estimatedDSizeKb() const;

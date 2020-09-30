@@ -43,7 +43,7 @@ public:
                      const QString& summary,
                      const QString& manual,
                      const QString& about);
-    ~CameraInfoDialog();
+    ~CameraInfoDialog() override;
 
 private Q_SLOTS:
 
