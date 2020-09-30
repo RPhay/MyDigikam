@@ -43,9 +43,8 @@ void LoadingCacheInterface::cleanUp()
 void LoadingCacheInterface::fileChanged(const QString& filePath, bool notify)
 {
     LoadingCache* const cache = LoadingCache::cache();
-    LoadingCache::CacheLock lock(cache);
 
-    cache->notifyFileChanged(filePath, notify);
+    cache->notifyFileChangedCacheLock(filePath, notify);
 }
 
 void LoadingCacheInterface::connectToSignalFileChanged(QObject* const object, const char* slot)
@@ -62,7 +61,6 @@ void LoadingCacheInterface::connectToSignalFileChanged(QObject* const object, co
 void LoadingCacheInterface::cleanCache()
 {
     LoadingCache* const cache = LoadingCache::cache();
-    LoadingCache::CacheLock lock(cache);
 
     cache->removeImages();
 }
@@ -70,7 +68,6 @@ void LoadingCacheInterface::cleanCache()
 void LoadingCacheInterface::cleanThumbnailCache()
 {
     LoadingCache* const cache = LoadingCache::cache();
-    LoadingCache::CacheLock lock(cache);
 
     cache->removeThumbnails();
 }
@@ -78,7 +75,6 @@ void LoadingCacheInterface::cleanThumbnailCache()
 void LoadingCacheInterface::putImage(const QString& filePath, const DImg& img)
 {
     LoadingCache* const cache = LoadingCache::cache();
-    LoadingCache::CacheLock lock(cache);
 
     if (cache->isCacheable(img))
     {
@@ -89,7 +85,6 @@ void LoadingCacheInterface::putImage(const QString& filePath, const DImg& img)
 void LoadingCacheInterface::setCacheOptions(int cacheSize)
 {
     LoadingCache* const cache = LoadingCache::cache();
-    LoadingCache::CacheLock lock(cache);
 
     cache->setCacheSize(cacheSize);
 }

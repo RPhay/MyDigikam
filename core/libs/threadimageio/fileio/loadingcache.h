@@ -274,6 +274,8 @@ public:
      */
     void notifyFileChanged(const QString& filePath, bool notify = true);
 
+    void notifyFileChangedCacheLock(const QString& filePath, bool notify = true);
+
 Q_SIGNALS:
 
     /**

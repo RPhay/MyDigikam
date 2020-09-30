@@ -251,13 +251,9 @@ bool ThumbnailLoadThread::find(const ThumbnailIdentifier& identifier,
         description = d->createLoadingDescription(identifier, size, detailRect);
     }
 
-    QString cacheKey = description.cacheKey();
-
-    {
-        LoadingCache* const cache = LoadingCache::cache();
-        LoadingCache::CacheLock lock(cache);
-        pix                       = cache->retrieveThumbnailPixmap(cacheKey);
-    }
+    LoadingCache* const cache = LoadingCache::cache();
+    QString cacheKey          = description.cacheKey();
+    pix                       = cache->retrieveThumbnailPixmap(cacheKey);
 
     if (pix)
     {
@@ -562,7 +558,6 @@ void ThumbnailLoadThread::slotThumbnailLoaded(const LoadingDescription& descript
     if (!pix.isNull())
     {
         LoadingCache* const cache = LoadingCache::cache();
-        LoadingCache::CacheLock lock(cache);
         cache->putThumbnail(description.cacheKey(), pix, description.filePath);
     }
 
@@ -627,15 +622,12 @@ int ThumbnailLoadThread::storedSize() const
 
 void ThumbnailLoadThread::deleteThumbnail(const QString& filePath)
 {
-    {
-        LoadingCache* const cache = LoadingCache::cache();
-        LoadingCache::CacheLock lock(cache);
-        QStringList possibleKeys  = LoadingDescription::possibleThumbnailCacheKeys(filePath);
+    LoadingCache* const cache = LoadingCache::cache();
+    QStringList possibleKeys  = LoadingDescription::possibleThumbnailCacheKeys(filePath);
 
-        foreach (const QString& cacheKey, possibleKeys)
-        {
-            cache->removeThumbnail(cacheKey);
-        }
+    foreach (const QString& cacheKey, possibleKeys)
+    {
+        cache->removeThumbnail(cacheKey);
     }
 
     ThumbnailCreator creator(static_d->storageMethod);

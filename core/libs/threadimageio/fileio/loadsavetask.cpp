@@ -142,112 +142,111 @@ void SharedLoadingTask::execute()
     m_thread->imageStartedLoading(m_loadingDescription);
 
     LoadingCache* const cache = LoadingCache::cache();
+
+    // find possible cached images
+
+    DImg* cachedImg        = nullptr;
+    QStringList lookupKeys = m_loadingDescription.lookupCacheKeys();
+
+    foreach (const QString& key, lookupKeys)
     {
-        LoadingCache::CacheLock lock(cache);
-
-        // find possible cached images
-
-        DImg* cachedImg        = nullptr;
-        QStringList lookupKeys = m_loadingDescription.lookupCacheKeys();
-
-        foreach (const QString& key, lookupKeys)
+        if ((cachedImg = cache->retrieveImage(key)))
         {
-            if ((cachedImg = cache->retrieveImage(key)))
+            if (m_loadingDescription.needCheckRawDecoding())
             {
-                if (m_loadingDescription.needCheckRawDecoding())
+                if (cachedImg->rawDecodingSettings() == m_loadingDescription.rawDecodingSettings)
                 {
-                    if (cachedImg->rawDecodingSettings() == m_loadingDescription.rawDecodingSettings)
-                    {
-                        break;
-                    }
-                    else
-                    {
-                        cachedImg = nullptr;
-                    }
+                    break;
                 }
                 else
                 {
-                    break;
+                    cachedImg = nullptr;
                 }
-            }
-        }
-
-        if (cachedImg)
-        {
-            // image is found in image cache, loading is successful
-
-            m_img = *cachedImg;
-        }
-        else
-        {
-            // find possible running loading process
-
-            m_usedProcess = nullptr;
-
-            for (QStringList::const_iterator it = lookupKeys.constBegin() ; it != lookupKeys.constEnd() ; ++it)
-            {
-                if ((m_usedProcess = cache->retrieveLoadingProcess(*it)))
-                {
-                    break;
-                }
-            }
-
-            if (m_usedProcess)
-            {
-                // Other process is right now loading this image.
-                // Add this task to the list of listeners and
-                // attach this thread to the other thread, wait until loading
-                // has finished.
-
-                m_usedProcess->addListener(this);
-
-                // break loop when either the loading has completed, or this task is being stopped
-
-                // cppcheck-suppress knownConditionTrueFalse
-                while ((m_loadingTaskStatus != LoadingTaskStatusStopping) &&
-                       m_usedProcess                                      &&
-                       !m_usedProcess->completed())
-                {
-                    lock.timedWait();
-                }
-
-                // remove listener from process
-
-                if (m_usedProcess)
-                {
-                    m_usedProcess->removeListener(this);
-                }
-
-                // set to 0, as checked in setStatus
-
-                m_usedProcess = nullptr;
-
-                // wake up the process which is waiting until all listeners have removed themselves
-
-                lock.wakeAll();
-
-                // m_img is now set to the result
             }
             else
             {
-                // Neither in cache, nor currently loading in different thread.
-                // Load it here and now, add this LoadingProcess to cache list.
-
-                cache->addLoadingProcess(this);
-
-                // Add this to the list of listeners
-
-                addListener(this);
-
-                // for use in setStatus
-
-                m_usedProcess = this;
-
-                // Notify other processes that we are now loading this image.
-                // They might be interested - see notifyNewLoadingProcess below
-
-                cache->notifyNewLoadingProcess(this, m_loadingDescription);
+                break;
             }
+        }
+    }
+
+    if (cachedImg)
+    {
+        // image is found in image cache, loading is successful
+
+        m_img = *cachedImg;
+    }
+    else
+    {
+        // find possible running loading process
+
+        m_usedProcess = nullptr;
+
+        for (QStringList::const_iterator it = lookupKeys.constBegin() ; it != lookupKeys.constEnd() ; ++it)
+        {
+            if ((m_usedProcess = cache->retrieveLoadingProcess(*it)))
+            {
+                break;
+            }
+        }
+
+        if (m_usedProcess)
+        {
+            // Other process is right now loading this image.
+            // Add this task to the list of listeners and
+            // attach this thread to the other thread, wait until loading
+            // has finished.
+
+            LoadingCache::CacheLock lock(cache);
+
+            m_usedProcess->addListener(this);
+
+            // break loop when either the loading has completed, or this task is being stopped
+
+            // cppcheck-suppress knownConditionTrueFalse
+            while ((m_loadingTaskStatus != LoadingTaskStatusStopping) &&
+                   m_usedProcess                                      &&
+                   !m_usedProcess->completed())
+            {
+                lock.timedWait();
+            }
+
+            // remove listener from process
+
+            if (m_usedProcess)
+            {
+                m_usedProcess->removeListener(this);
+            }
+
+            // set to 0, as checked in setStatus
+
+            m_usedProcess = nullptr;
+
+            // wake up the process which is waiting until all listeners have removed themselves
+
+            lock.wakeAll();
+
+            // m_img is now set to the result
+        }
+        else
+        {
+            // Neither in cache, nor currently loading in different thread.
+            // Add this to the list of listeners
+
+            addListener(this);
+
+            // for use in setStatus
+
+            m_usedProcess = this;
+
+            // Add this LoadingProcess to cache list.
+
+            cache->addLoadingProcess(this);
+
+            // Notify other processes that we are now loading this image.
+            // They might be interested - see notifyNewLoadingProcess below
+
+            cache->notifyNewLoadingProcess(this, m_loadingDescription);
         }
     }
 
@@ -259,11 +258,11 @@ void SharedLoadingTask::execute()
 
         if (continueQuery())
         {
-            LoadingCache::CacheLock lock(cache);
-
             // remove this from the list of loading processes in cache
 
             cache->removeLoadingProcess(this);
+
+            LoadingCache::CacheLock lock(cache);
 
             // remove myself from list of listeners
 

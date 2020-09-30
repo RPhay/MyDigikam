@@ -62,119 +62,117 @@ void PreviewLoadingTask::execute()
     }
 
     // Check if preview is in cache first.
+    // find possible cached images
+
+    DImg* cachedImg           = nullptr;
+    QStringList lookupKeys    = m_loadingDescription.lookupCacheKeys();
 
     LoadingCache* const cache = LoadingCache::cache();
+
+    // lookupCacheKeys returns "best first". Prepend the cache key to make the list "fastest first":
+    // Scaling a full version takes longer!
+
+    lookupKeys.prepend(m_loadingDescription.cacheKey());
+
+    foreach (const QString& key, lookupKeys)
     {
-        LoadingCache::CacheLock lock(cache);
-
-        // find possible cached images
-
-        DImg* cachedImg        = nullptr;
-        QStringList lookupKeys = m_loadingDescription.lookupCacheKeys();
-
-        // lookupCacheKeys returns "best first". Prepend the cache key to make the list "fastest first":
-        // Scaling a full version takes longer!
-
-        lookupKeys.prepend(m_loadingDescription.cacheKey());
-
-        foreach (const QString& key, lookupKeys)
+        if ((cachedImg = cache->retrieveImage(key)))
         {
-            if ((cachedImg = cache->retrieveImage(key)))
+            if (m_loadingDescription.needCheckRawDecoding())
             {
-                if (m_loadingDescription.needCheckRawDecoding())
+                if (cachedImg->rawDecodingSettings() == m_loadingDescription.rawDecodingSettings)
                 {
-                    if (cachedImg->rawDecodingSettings() == m_loadingDescription.rawDecodingSettings)
-                    {
-                        break;
-                    }
-                    else
-                    {
-                        cachedImg = nullptr;
-                    }
+                    break;
                 }
                 else
                 {
-                    break;
+                    cachedImg = nullptr;
                 }
-            }
-        }
-
-        if (cachedImg)
-        {
-            // image is found in image cache, loading is successful
-
-            m_img = *cachedImg;
-        }
-        else
-        {
-            // find possible running loading process
-
-            m_usedProcess = nullptr;
-
-            for (QStringList::const_iterator it = lookupKeys.constBegin() ; it != lookupKeys.constEnd() ; ++it)
-            {
-                if ((m_usedProcess = cache->retrieveLoadingProcess(*it)))
-                {
-                    break;
-                }
-            }
-
-            if (m_usedProcess)
-            {
-                // Other process is right now loading this image.
-                // Add this task to the list of listeners and
-                // attach this thread to the other thread, wait until loading
-                // has finished.
-
-                m_usedProcess->addListener(this);
-
-                // break loop when either the loading has completed, or this task is being stopped
-
-                // cppcheck-suppress knownConditionTrueFalse
-                while ((m_loadingTaskStatus != LoadingTaskStatusStopping) &&
-                       m_usedProcess                                      &&
-                       !m_usedProcess->completed())
-                {
-                    lock.timedWait();
-                }
-
-                // remove listener from process
-
-                if (m_usedProcess)
-                {
-                    m_usedProcess->removeListener(this);
-                }
-
-                // set to 0, as checked in setStatus
-
-                m_usedProcess = nullptr;
-
-                // wake up the process which is waiting until all listeners have removed themselves
-
-                lock.wakeAll();
-
-                // m_img is now set to the result
             }
             else
             {
-                // Neither in cache, nor currently loading in different thread.
-                // Load it here and now, add this LoadingProcess to cache list.
-
-                cache->addLoadingProcess(this);
-
-                // Add this to the list of listeners
-
-                addListener(this);
-
-                // for use in setStatus
-
-                m_usedProcess = this;
-
-                // Notify other processes that we are now loading this image.
-                // They might be interested - see notifyNewLoadingProcess below
-
-                cache->notifyNewLoadingProcess(this, m_loadingDescription);
+                break;
             }
+        }
+    }
+
+    if (cachedImg)
+    {
+        // image is found in image cache, loading is successful
+
+        m_img = *cachedImg;
+    }
+    else
+    {
+        // find possible running loading process
+
+        m_usedProcess = nullptr;
+
+        for (QStringList::const_iterator it = lookupKeys.constBegin() ; it != lookupKeys.constEnd() ; ++it)
+        {
+            if ((m_usedProcess = cache->retrieveLoadingProcess(*it)))
+            {
+                break;
+            }
+        }
+
+        if (m_usedProcess)
+        {
+            // Other process is right now loading this image.
+            // Add this task to the list of listeners and
+            // attach this thread to the other thread, wait until loading
+            // has finished.
+
+            LoadingCache::CacheLock lock(cache);
+
+            m_usedProcess->addListener(this);
+
+            // break loop when either the loading has completed, or this task is being stopped
+
+            // cppcheck-suppress knownConditionTrueFalse
+            while ((m_loadingTaskStatus != LoadingTaskStatusStopping) &&
+                   m_usedProcess                                      &&
+                   !m_usedProcess->completed())
+            {
+                lock.timedWait();
+            }
+
+            // remove listener from process
+
+            if (m_usedProcess)
+            {
+                m_usedProcess->removeListener(this);
+            }
+
+            // set to 0, as checked in setStatus
+
+            m_usedProcess = nullptr;
+
+            // wake up the process which is waiting until all listeners have removed themselves
+
+            lock.wakeAll();
+
+            // m_img is now set to the result
+        }
+        else
+        {
+            // Neither in cache, nor currently loading in different thread.
+            // Add this to the list of listeners
+
+            addListener(this);
+
+            // for use in setStatus
+
+            m_usedProcess = this;
+
+            // Aadd this LoadingProcess to cache list.
+
+            cache->addLoadingProcess(this);
+
+            // Notify other processes that we are now loading this image.
+            // They might be interested - see notifyNewLoadingProcess below
+
+            cache->notifyNewLoadingProcess(this, m_loadingDescription);
         }
     }
 
@@ -335,63 +333,61 @@ void PreviewLoadingTask::execute()
                 m_img.exifRotate(m_loadingDescription.filePath);
             }
 
+            // remove this from the list of loading processes in cache
+
+            cache->removeLoadingProcess(this);
+
+            LoadingCache::CacheLock lock(cache);
+
+            // remove myself from list of listeners
+
+            removeListener(this);
+
+            if (!m_img.isNull())
             {
-                LoadingCache::CacheLock lock(cache);
+                // put valid image into cache of loaded images
 
-                // remove this from the list of loading processes in cache
+                cache->putImage(m_loadingDescription.cacheKey(), m_img,
+                                m_loadingDescription.filePath);
 
-                cache->removeLoadingProcess(this);
+                // dispatch image to all listeners
 
-                // remove myself from list of listeners
-
-                removeListener(this);
-
-                if (!m_img.isNull())
+                for (int i = 0 ; i < m_listeners.count() ; ++i)
                 {
-                    // put valid image into cache of loaded images
+                    LoadingProcessListener* const l = m_listeners.at(i);
 
-                    cache->putImage(m_loadingDescription.cacheKey(), m_img,
-                                    m_loadingDescription.filePath);
-
-                    // dispatch image to all listeners
-
-                    for (int i = 0 ; i < m_listeners.count() ; ++i)
+                    if (l->accessMode() == LoadSaveThread::AccessModeReadWrite)
                     {
-                        LoadingProcessListener* const l = m_listeners.at(i);
+                        // If a listener requested ReadWrite access, it gets a deep copy.
+                        // DImg is explicitly shared.
 
-                        if (l->accessMode() == LoadSaveThread::AccessModeReadWrite)
-                        {
-                            // If a listener requested ReadWrite access, it gets a deep copy.
-                            // DImg is explicitly shared.
-
-                            l->setResult(m_loadingDescription, m_img.copy());
-                        }
-                        else
-                        {
-                            l->setResult(m_loadingDescription, m_img);
-                        }
+                        l->setResult(m_loadingDescription, m_img.copy());
+                    }
+                    else
+                    {
+                        l->setResult(m_loadingDescription, m_img);
                     }
                 }
-
-                // indicate that loading has finished so that listeners can stop waiting
-
-                m_completed = true;
-
-                // wake all listeners waiting on cache condVar, so that they remove themselves
-
-                lock.wakeAll();
-
-                // wait until all listeners have removed themselves
-
-                while (m_listeners.count() != 0)
-                {
-                    lock.timedWait();
-                }
-
-                // set to 0, as checked in setStatus
-
-                m_usedProcess = nullptr;
             }
+
+            // indicate that loading has finished so that listeners can stop waiting
+
+            m_completed = true;
+
+            // wake all listeners waiting on cache condVar, so that they remove themselves
+
+            lock.wakeAll();
+
+            // wait until all listeners have removed themselves
+
+            while (m_listeners.count() != 0)
+            {
+                lock.timedWait();
+            }
+
+            // set to 0, as checked in setStatus
+
+            m_usedProcess = nullptr;
         }
     }
 
