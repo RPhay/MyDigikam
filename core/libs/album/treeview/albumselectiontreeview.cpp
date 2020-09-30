@@ -72,7 +72,7 @@ public:
 
 protected:
 
-    virtual QString tipContents()
+    QString tipContents() override
     {
         PAlbum* const album = view()->albumForIndex(currentIndex());
         return (ToolTipFiller::albumTipContents(album, view()->albumModel()->albumCount(album)));
@@ -128,7 +128,7 @@ public:
     {
     }
 
-    virtual void addActions(AbstractAlbumTreeView*, ContextMenuHelper& cmh, Album* a)
+    void addActions(AbstractAlbumTreeView*, ContextMenuHelper& cmh, Album* a) override
     {
         if (!a || a->isRoot())
         {

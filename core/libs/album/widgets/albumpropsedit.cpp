@@ -74,7 +74,7 @@ public:
     {
     }
 
-    ~AlbumDatePicker()
+    ~AlbumDatePicker() override
     {
     }
 

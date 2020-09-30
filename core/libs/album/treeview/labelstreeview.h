@@ -55,7 +55,7 @@ public:
 public:
 
     explicit LabelsTreeView(QWidget* const parent = nullptr, bool setCheckable = false);
-    ~LabelsTreeView();
+    ~LabelsTreeView() override;
 
     /**
      * @return true if the tree widget is checkable
@@ -97,8 +97,8 @@ public:
      * @brief Loading and saving state function inherited from
      *        StateSavingObject
      */
-    void doLoadState();
-    void doSaveState();
+    void doLoadState() override;
+    void doSaveState() override;
 
     /**
      * @brief Restores the selection state from the AlbumHistory

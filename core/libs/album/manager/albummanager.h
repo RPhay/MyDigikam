@@ -826,7 +826,7 @@ private:
 
     friend class AlbumManagerCreator;
     AlbumManager();
-    ~AlbumManager();
+    ~AlbumManager() override;
 
     static AlbumManager* internalInstance;
 

@@ -37,7 +37,7 @@ class AlbumLabelsSearchHandler : public QObject
 public:
 
     explicit AlbumLabelsSearchHandler(LabelsTreeView* const treeWidget);
-    ~AlbumLabelsSearchHandler();
+    ~AlbumLabelsSearchHandler() override;
 
     /**
      * @return Album pointer of the currently selected labels

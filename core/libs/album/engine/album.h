@@ -370,7 +370,7 @@ public:
 
     /// Constructor for Trash album
     PAlbum(const QString& parentPath, int albumRoot);
-    ~PAlbum();
+    ~PAlbum() override;
 
     void setCaption(const QString& caption);
     void setCategory(const QString& category);
@@ -423,7 +423,7 @@ class DIGIKAM_GUI_EXPORT TAlbum : public Album
 public:
 
     TAlbum(const QString& title, int id, bool root=false);
-    ~TAlbum();
+    ~TAlbum() override;
 
     /**
      * @return The tag path, e.g. "/People/Friend/John" if leadingSlash is true,
@@ -470,7 +470,7 @@ public:
 public:
 
     explicit DAlbum(const QDate& date, bool root=false, Range range=Month);
-    ~DAlbum();
+    ~DAlbum() override;
 
     QDate     date()        const;
     Range     range()       const;
@@ -495,7 +495,7 @@ class DIGIKAM_GUI_EXPORT SAlbum : public Album
 public:
 
     SAlbum(const QString& title, int id, bool root=false);
-    ~SAlbum();
+    ~SAlbum() override;
 
     CoreDbUrl            databaseUrl()        const override;
     QString              query()              const;

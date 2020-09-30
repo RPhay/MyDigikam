@@ -47,7 +47,7 @@ class AlbumSelectDialog : public QDialog
 public:
 
     explicit AlbumSelectDialog(QWidget* const parent, PAlbum* const albumToSelect, const QString& header=QString());
-    ~AlbumSelectDialog();
+    ~AlbumSelectDialog() override;
 
     static PAlbum* selectAlbum(QWidget* const parent, PAlbum* const albumToSelect, const QString& header=QString());
 

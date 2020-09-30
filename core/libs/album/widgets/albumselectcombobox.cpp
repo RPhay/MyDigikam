@@ -345,7 +345,7 @@ public:
     {
     }
 
-    void addActions(AbstractAlbumTreeView* view, ContextMenuHelper& cmh, Album* album)
+    void addActions(AbstractAlbumTreeView* view, ContextMenuHelper& cmh, Album* album) override
     {
         AbstractCheckableAlbumModel* const checkable = qobject_cast<AbstractCheckableAlbumModel*>(view->albumModel());
 

@@ -40,7 +40,7 @@ class AlbumTreeView : public AbstractCheckableAlbumTreeView
 public:
 
     explicit AlbumTreeView(QWidget* const parent = nullptr, Flags flags = DefaultFlags);
-    virtual ~AlbumTreeView();
+    ~AlbumTreeView() override;
 
     AlbumModel* albumModel()                        const;
     PAlbum* currentAlbum()                          const;

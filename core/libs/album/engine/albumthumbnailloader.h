@@ -190,7 +190,7 @@ protected Q_SLOTS:
 private:
 
     AlbumThumbnailLoader();
-    ~AlbumThumbnailLoader();
+    ~AlbumThumbnailLoader() override;
 
     void    addUrl(Album* const album, qlonglong id);
     QPixmap loadIcon(const QString& name, int size = 0) const;

@@ -40,7 +40,7 @@ class TagTreeView : public AbstractCheckableAlbumTreeView
 public:
 
     explicit TagTreeView(QWidget* const parent = nullptr, Flags flags = DefaultFlags);
-    ~TagTreeView();
+    ~TagTreeView() override;
 
     TagModel* albumModel() const;
 

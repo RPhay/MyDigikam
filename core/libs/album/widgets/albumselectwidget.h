@@ -68,10 +68,10 @@ public:
     /**
      * Destructor.
      */
-    ~AlbumSelectTreeView();
+    ~AlbumSelectTreeView() override;
 
-    virtual void addCustomContextMenuActions(ContextMenuHelper& cmh, Album* album) override;
-    virtual void handleCustomContextMenuAction(QAction* action, AlbumPointer<Album> album) override;
+    void addCustomContextMenuActions(ContextMenuHelper& cmh, Album* album) override;
+    void handleCustomContextMenuAction(QAction* action, AlbumPointer<Album> album) override;
 
 public Q_SLOTS:
 
@@ -98,7 +98,7 @@ public:
     explicit AlbumSelectWidget(QWidget* const parent = nullptr,
                                PAlbum* const albumToSelect = nullptr,
                                bool completerSelect = false);
-    ~AlbumSelectWidget();
+    ~AlbumSelectWidget() override;
 
     void setCurrentAlbumUrl(const QUrl& albumUrl);
     QUrl currentAlbumUrl() const;

@@ -59,7 +59,7 @@ public:
     /**
      * Destructor.
      */
-    virtual ~AlbumModificationHelper();
+    ~AlbumModificationHelper() override;
 
     /**
      * Sets the album that the given action operates on.

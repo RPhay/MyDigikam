@@ -46,7 +46,7 @@ class AlbumWatch : public QObject
 public:
 
     explicit AlbumWatch(AlbumManager* const parent = nullptr);
-    ~AlbumWatch();
+    ~AlbumWatch() override;
 
     void clear();
     void removeWatchedPAlbums(const PAlbum* const album);

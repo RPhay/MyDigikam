@@ -109,7 +109,7 @@ public:
      * If you supply 0 for filterModel, call setAlbumFilterModel afterwards.
      */
     AbstractAlbumTreeView(QWidget* const parent, Flags flags);
-    ~AbstractAlbumTreeView();
+    ~AbstractAlbumTreeView() override;
 
     AbstractSpecificAlbumModel* albumModel() const;
     AlbumFilterModel* albumFilterModel()     const;
@@ -187,8 +187,8 @@ public:
      * the state of new rows based on the remaining entries in
      * d->statesByAlbumId.
      */
-    virtual void doLoadState() override;
-    virtual void doSaveState() override;
+    void doLoadState() override;
+    void doSaveState() override;
     //@}
 
     /**
@@ -231,7 +231,7 @@ public:
     QList<A*> currentAlbums();
 
     // for internal use: public viewportEvent
-    virtual bool viewportEvent(QEvent* event) override;
+    bool viewportEvent(QEvent* event) override;
 
     /**
      * @brief selectedItems() -

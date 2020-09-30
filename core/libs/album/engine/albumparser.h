@@ -50,7 +50,7 @@ public:
      */
     explicit AlbumParser(Album* const album);
 
-    ~AlbumParser();
+    ~AlbumParser() override;
 
     void run();
 

@@ -40,7 +40,7 @@ class SearchTreeView : public AbstractCheckableAlbumTreeView
 public:
 
     explicit SearchTreeView(QWidget* const parent = nullptr, Flags flags = DefaultFlags);
-    ~SearchTreeView();
+    ~SearchTreeView() override;
 
     /// Note: not filtered by search type
     SearchModel* albumModel()          const;

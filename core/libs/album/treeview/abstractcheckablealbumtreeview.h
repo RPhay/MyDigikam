@@ -43,7 +43,7 @@ public:
 
     explicit AbstractCheckableAlbumTreeView(QWidget* const parent, Flags flags);
 
-    virtual ~AbstractCheckableAlbumTreeView();
+    ~AbstractCheckableAlbumTreeView() override;
 
     /// Manage check state through the model directly
     AbstractCheckableAlbumModel* albumModel()     const;
@@ -76,13 +76,13 @@ public:
      */
     void setRestoreCheckState(bool restore);
 
-    virtual void doLoadState() override;
-    virtual void doSaveState() override;
+    void doLoadState() override;
+    void doSaveState() override;
 
 protected:
 
-    virtual void middleButtonPressed(Album* a) override;
-    virtual void rowsInserted(const QModelIndex& parent, int start, int end) override;
+    void middleButtonPressed(Album* a) override;
+    void rowsInserted(const QModelIndex& parent, int start, int end) override;
 
 private:
 
