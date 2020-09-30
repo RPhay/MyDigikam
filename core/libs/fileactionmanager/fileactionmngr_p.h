@@ -81,7 +81,7 @@ class Q_DECL_HIDDEN FileActionMngr::Private : public QObject
 public:
 
     explicit Private(FileActionMngr* const qq);
-    ~Private();
+    ~Private() override;
 
 Q_SIGNALS:
 

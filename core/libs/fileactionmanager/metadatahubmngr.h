@@ -40,7 +40,7 @@ class MetadataHubMngr : public QObject
 public:
 
     static MetadataHubMngr* instance();
-    ~MetadataHubMngr();
+    ~MetadataHubMngr() override;
 
     static QPointer<MetadataHubMngr> internalPtr;
     static bool                      isCreated();

@@ -42,7 +42,7 @@ class FileActionProgress : public ProgressItem
 public:
 
     explicit FileActionProgress(const QString& name);
-    ~FileActionProgress();
+    ~FileActionProgress() override;
 
 Q_SIGNALS:
 

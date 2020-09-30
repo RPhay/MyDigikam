@@ -116,7 +116,7 @@ public:
 private:
 
     FileActionMngr();
-    ~FileActionMngr();
+    ~FileActionMngr() override;
 
     Private* const d;
 
