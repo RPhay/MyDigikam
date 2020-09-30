@@ -52,7 +52,7 @@ class DIGIKAM_EXPORT ItemPropertiesColorsTab : public QTabWidget
 public:
 
     explicit ItemPropertiesColorsTab(QWidget* const parent);
-    ~ItemPropertiesColorsTab();
+    ~ItemPropertiesColorsTab() override;
 
     void setData(const QUrl& url=QUrl(),
                  const QRect& selectionArea = QRect(),

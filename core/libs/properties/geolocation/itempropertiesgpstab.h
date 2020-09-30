@@ -57,7 +57,7 @@ public:
 public:
 
     explicit ItemPropertiesGPSTab(QWidget* const parent);
-    ~ItemPropertiesGPSTab();
+    ~ItemPropertiesGPSTab() override;
 
     void clearGPSInfo();
     void setGPSInfoList(const GPSItemInfo::List& list);

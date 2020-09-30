@@ -72,7 +72,7 @@ public:
 
 protected:
 
-    virtual QString tipContents()
+    QString tipContents() override
     {
         switch (m_mode)
         {

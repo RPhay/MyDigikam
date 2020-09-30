@@ -46,12 +46,12 @@ class Q_DECL_HIDDEN ShowHideVersionsOverlay::Button : public ItemViewHoverButton
 public:
 
     explicit Button(QAbstractItemView* const parentView);
-    virtual QSize sizeHint() const;
+    QSize sizeHint() const override;
 
 protected:
 
-    virtual QIcon icon();
-    virtual void updateToolTip();
+    QIcon icon() override;
+    void updateToolTip() override;
 };
 
 ShowHideVersionsOverlay::Button::Button(QAbstractItemView* const parentView)
@@ -163,12 +163,12 @@ class Q_DECL_HIDDEN ActionVersionsOverlay::Button : public ItemViewHoverButton
 public:
 
     Button(QAbstractItemView* const parentView, const QIcon& icon, const QString& text, const QString& tip);
-    virtual QSize sizeHint() const;
+    QSize sizeHint() const override;
 
 protected:
 
-    virtual QIcon icon();
-    virtual void updateToolTip();
+    QIcon icon() override;
+    void updateToolTip() override;
 
 protected:
 

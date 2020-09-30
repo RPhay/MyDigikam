@@ -61,7 +61,7 @@ public:
                                       SidebarSplitter* const splitter,
                                       Qt::Edge side=Qt::LeftEdge,
                                       bool mimimizedDefault=false);
-    ~ItemPropertiesSideBarDB();
+    ~ItemPropertiesSideBarDB() override;
 
     void populateTags();
     void refreshTagsView();
@@ -70,7 +70,7 @@ public:
     ItemPropertiesVersionsTab* getFiltersHistoryTab() const;
     ItemDescEditTab*           imageDescEditTab()     const;
 
-    virtual void itemChanged(const QUrl& url, const QRect& rect = QRect(), DImg* const img = nullptr) override;
+    void itemChanged(const QUrl& url, const QRect& rect = QRect(), DImg* const img = nullptr) override;
 
     virtual void itemChanged(const ItemInfo& info, const QRect& rect = QRect(),
                              DImg* const img = nullptr, const DImageHistory& history = DImageHistory());
@@ -103,7 +103,7 @@ public Q_SLOTS:
 
     void slotPopupTagsView();
 
-    virtual void slotNoCurrentItem() override;
+    void slotNoCurrentItem() override;
 
 private Q_SLOTS:
 

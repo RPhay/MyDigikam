@@ -54,7 +54,7 @@ class ItemPropertiesVersionsTab : public QTabWidget
 public:
 
     explicit ItemPropertiesVersionsTab(QWidget* const parent);
-    ~ItemPropertiesVersionsTab();
+    ~ItemPropertiesVersionsTab() override;
 
     void readSettings(KConfigGroup& group);
     void writeSettings(KConfigGroup& group);

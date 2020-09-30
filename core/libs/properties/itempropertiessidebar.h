@@ -63,7 +63,7 @@ public:
                                    SidebarSplitter* const splitter,
                                    Qt::Edge side = Qt::LeftEdge,
                                    bool mimimizedDefault = false);
-    ~ItemPropertiesSideBar();
+    ~ItemPropertiesSideBar() override;
 
     virtual void itemChanged(const QUrl& url, const QRect& rect = QRect(), DImg* const img = nullptr);
 

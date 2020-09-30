@@ -86,7 +86,7 @@ public:
 
     explicit DisjointMetadata(QObject* const parent = nullptr);
     DisjointMetadata(const DisjointMetadata& other);
-    ~DisjointMetadata();
+    ~DisjointMetadata() override;
 
     DisjointMetadata& operator=(const DisjointMetadata& other);
 

@@ -56,7 +56,7 @@ class ItemDescEditTab : public DVBox
 public:
 
     explicit ItemDescEditTab(QWidget* const parent);
-    ~ItemDescEditTab();
+    ~ItemDescEditTab() override;
 
     void assignPickLabel(int pickId);
     void assignColorLabel(int colorId);
@@ -87,7 +87,7 @@ Q_SIGNALS:
 
 protected:
 
-    bool eventFilter(QObject* o, QEvent* e);
+    bool eventFilter(QObject* o, QEvent* e) override;
 
 private:
 

@@ -46,7 +46,7 @@ class DIGIKAM_EXPORT DTextLabelName : public DAdjustableLabel
 public:
 
     explicit DTextLabelName(const QString& name, QWidget* const parent=nullptr);
-    ~DTextLabelName();
+    ~DTextLabelName() override;
 };
 
 // -------------------------------------------------------------------
@@ -57,7 +57,7 @@ class DIGIKAM_EXPORT DTextLabelValue : public DAdjustableLabel
 public:
 
     explicit DTextLabelValue(const QString& value, QWidget* const parent=nullptr);
-    ~DTextLabelValue();
+    ~DTextLabelValue() override;
 };
 
 // -------------------------------------------------------------------
@@ -67,7 +67,7 @@ class DIGIKAM_EXPORT DTextBrowser : public QTextBrowser
 public:
 
     explicit DTextBrowser(const QString& text, QWidget* const parent=nullptr);
-    ~DTextBrowser();
+    ~DTextBrowser() override;
 
     void setLinesNumber(int l);
 };
@@ -79,7 +79,7 @@ class DIGIKAM_EXPORT DTextList : public QListWidget
 public:
 
     explicit DTextList(const QStringList& list, QWidget* const parent=nullptr);
-    ~DTextList();
+    ~DTextList() override;
 
     void setLinesNumber(int l);
 };

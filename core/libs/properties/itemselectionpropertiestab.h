@@ -43,7 +43,7 @@ class DIGIKAM_EXPORT ItemSelectionPropertiesTab : public DExpanderBox
 public:
 
     explicit ItemSelectionPropertiesTab(QWidget* const parent);
-    ~ItemSelectionPropertiesTab();
+    ~ItemSelectionPropertiesTab() override;
 
     void setCurrentURL(const QUrl& url = QUrl());
 

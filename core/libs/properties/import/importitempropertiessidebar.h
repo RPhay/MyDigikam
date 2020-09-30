@@ -52,7 +52,7 @@ public:
                                           SidebarSplitter* const splitter,
                                           Qt::Edge side=Qt::LeftEdge,
                                           bool mimimizedDefault=false);
-    ~ImportItemPropertiesSideBarImport();
+    ~ImportItemPropertiesSideBarImport() override;
 
     void applySettings();
 
@@ -76,12 +76,12 @@ protected:
     /**
      * load the last view state from disk - called by StateSavingObject#loadState()
      */
-    void doLoadState();
+    void doLoadState() override;
 
     /**
      * save the view state to disk - called by StateSavingObject#saveState()
      */
-    void doSaveState();
+    void doSaveState() override;
 
 private Q_SLOTS:
 

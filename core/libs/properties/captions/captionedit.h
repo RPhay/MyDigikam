@@ -46,7 +46,7 @@ class CaptionEdit : public DVBox
 public:
 
     explicit CaptionEdit(QWidget* const parent);
-    ~CaptionEdit();
+    ~CaptionEdit() override;
 
     void setValues(const CaptionsMap& values);
     CaptionsMap& values()           const;

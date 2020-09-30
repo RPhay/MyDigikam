@@ -46,7 +46,7 @@ class ImportItemPropertiesTab : public DExpanderBox
 public:
 
     explicit ImportItemPropertiesTab(QWidget* const parent);
-    ~ImportItemPropertiesTab();
+    ~ImportItemPropertiesTab() override;
 
     void setCurrentItem(const CamItemInfo& itemInfo=CamItemInfo(),
                         DMetadata* const meta=nullptr);

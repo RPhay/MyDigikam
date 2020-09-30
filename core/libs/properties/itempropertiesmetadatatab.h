@@ -45,7 +45,7 @@ class DIGIKAM_EXPORT ItemPropertiesMetadataTab : public QTabWidget
 public:
 
     explicit ItemPropertiesMetadataTab(QWidget* const parent);
-    ~ItemPropertiesMetadataTab();
+    ~ItemPropertiesMetadataTab() override;
 
     void setCurrentURL(const QUrl& url = QUrl());
     void setCurrentData(DMetadata* const metadata = nullptr,

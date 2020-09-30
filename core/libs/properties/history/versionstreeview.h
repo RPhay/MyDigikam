@@ -48,7 +48,7 @@ class VersionsTreeView : public QTreeView,
 public:
 
     explicit VersionsTreeView(QWidget* const parent = nullptr);
-    ~VersionsTreeView();
+    ~VersionsTreeView() override;
 
     void setToolTipEnabled(bool on);
 
@@ -59,15 +59,15 @@ public:
 
 protected:
 
-    virtual void paintEvent(QPaintEvent* e) override;
-    virtual void mouseMoveEvent(QMouseEvent* event) override;
-    virtual bool viewportEvent(QEvent* event) override;
-    virtual QModelIndex moveCursor(CursorAction cursorAction, Qt::KeyboardModifiers modifiers) override;
+    void paintEvent(QPaintEvent* e) override;
+    void mouseMoveEvent(QMouseEvent* event) override;
+    bool viewportEvent(QEvent* event) override;
+    QModelIndex moveCursor(CursorAction cursorAction, Qt::KeyboardModifiers modifiers) override;
 
     DECLARE_VIEW_DRAG_DROP_METHODS(QTreeView)
-    virtual QModelIndex mapIndexForDragDrop(const QModelIndex& index)    const override;
-    virtual QPixmap     pixmapForDrag(const QList<QModelIndex>& indexes) const override;
-    virtual AbstractItemDragDropHandler* dragDropHandler()               const override;
+    QModelIndex mapIndexForDragDrop(const QModelIndex& index)    const override;
+    QPixmap     pixmapForDrag(const QList<QModelIndex>& indexes) const override;
+    AbstractItemDragDropHandler* dragDropHandler()               const override;
     virtual void setDragDropHandler(AbstractItemDragDropHandler* handler);
 
 protected:
