@@ -71,7 +71,7 @@ Q_SIGNALS:
 private:
 
     explicit MetaEngineSettings();
-    ~MetaEngineSettings();
+    ~MetaEngineSettings() override;
 
     void readFromConfig();
 

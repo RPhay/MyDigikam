@@ -67,7 +67,7 @@ Q_SIGNALS:
 private:
 
     explicit DMetadataSettings();
-    ~DMetadataSettings();
+    ~DMetadataSettings() override;
 
     void readFromConfig();
 
