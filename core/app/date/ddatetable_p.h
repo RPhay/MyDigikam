@@ -62,7 +62,7 @@ public:
 public:
 
     explicit Private(DDateTable* const qq);
-    ~Private();
+    ~Private() override;
 
 public Q_SLOTS:
 

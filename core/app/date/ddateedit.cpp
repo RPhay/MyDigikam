@@ -62,7 +62,7 @@ public:
     {
     }
 
-    virtual State validate(QString& str, int&) const
+    State validate(QString& str, int&) const override
     {
         int length = str.length();
 

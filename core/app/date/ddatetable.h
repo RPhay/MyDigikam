@@ -65,7 +65,7 @@ public:
 
     explicit DDateTable(QWidget* const parent = nullptr);
     explicit DDateTable(const QDate& dt, QWidget* const parent = nullptr);
-    ~DDateTable();
+    ~DDateTable() override;
 
     /**
      * Returns a recommended size for the widget.

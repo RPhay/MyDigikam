@@ -55,7 +55,7 @@ class DDateEdit : public QComboBox
 public:
 
     explicit DDateEdit(QWidget* const parent=nullptr, const QString& name=QString());
-    virtual ~DDateEdit();
+    ~DDateEdit() override;
 
     /**
      * @return The date entered. This date could be invalid,
@@ -76,7 +76,7 @@ public:
      */
     bool isReadOnly()                                                   const;
 
-    virtual void showPopup()                                                  override;
+    void showPopup()                                                  override;
 
 Q_SIGNALS:
 
@@ -105,8 +105,8 @@ protected Q_SLOTS:
 
 protected:
 
-    virtual bool eventFilter(QObject*, QEvent*)                               override;
-    virtual void mousePressEvent(QMouseEvent*)                                override;
+    bool eventFilter(QObject*, QEvent*)                               override;
+    void mousePressEvent(QMouseEvent*)                                override;
 
     /**
      * Sets the date, without altering the display.

@@ -68,7 +68,7 @@ public:
     /**
      * The destructor.
      */
-    virtual ~DDatePicker();
+    ~DDatePicker() override;
 
     /**
      * The size hint for date pickers. The size hint recommends the

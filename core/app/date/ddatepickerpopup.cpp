@@ -50,14 +50,14 @@ public:
 
 protected:
 
-    QWidget* createWidget(QWidget* const parent)
+    QWidget* createWidget(QWidget* const parent) override
     {
         m_datePicker->setParent(parent);
 
         return m_datePicker;
     }
 
-    void deleteWidget(QWidget* const widget)
+    void deleteWidget(QWidget* const widget) override
     {
         if (widget != m_datePicker)
         {

@@ -58,7 +58,7 @@ public:
     /**
      * destructor
      */
-    ~DDateTimeEdit();
+    ~DDateTimeEdit() override;
 
     /**
      * returns the date and time

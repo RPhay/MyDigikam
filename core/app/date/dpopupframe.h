@@ -48,7 +48,7 @@ public:
     /**
      * The destructor
      */
-    ~DPopupFrame();
+    ~DPopupFrame() override;
 
     /**
      * Set the main widget. You cannot set the main widget from the constructor,

@@ -71,7 +71,7 @@ public:
 public:
 
     explicit TimeLineWidget(QWidget* const parent = nullptr);
-    ~TimeLineWidget();
+    ~TimeLineWidget() override;
 
     void      setTimeUnit(TimeUnit timeUnit);
     TimeUnit  timeUnit()                                                        const;

@@ -72,7 +72,7 @@ public:
     {
     }
 
-    ~OutsideClickCatcher()
+    ~OutsideClickCatcher() override
     {
     }
 

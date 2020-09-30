@@ -48,7 +48,7 @@ class MonthWidget : public QWidget
 public:
 
     explicit MonthWidget(QWidget* const parent);
-    ~MonthWidget();
+    ~MonthWidget() override;
 
     void setItemModel(ItemFilterModel* const model);
 

@@ -78,7 +78,7 @@ public:
     explicit DDatePickerPopup(Items items,
                               const QDate& date = QDate::currentDate(),
                               QWidget* const parent = nullptr);
-    ~DDatePickerPopup();
+    ~DDatePickerPopup() override;
 
     /**
      * @return A pointer to the private variable mDatePicker, an instance of
