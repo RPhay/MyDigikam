@@ -543,25 +543,25 @@ void LoadingCacheFileWatch::notifyFileChanged(const QString& filePath)
 
 //---------------------------------------------------------------------------------------------------
 
-LoadingCache::CacheLock::CacheLock(LoadingCache* const cache)
+LoadingCache::LoadingLock::LoadingLock(LoadingCache* const cache)
     : m_cache(cache)
 {
     m_cache->d->mutex.lock();
 }
 
-LoadingCache::CacheLock::~CacheLock()
+LoadingCache::LoadingLock::~LoadingLock()
 {
     m_cache->d->mutex.unlock();
 }
 
-void LoadingCache::CacheLock::wakeAll()
+void LoadingCache::LoadingLock::wakeAll()
 {
     // obviously the mutex is locked when this function is called
 
     m_cache->d->condVar.wakeAll();
 }
 
-void LoadingCache::CacheLock::timedWait()
+void LoadingCache::LoadingLock::timedWait()
 {
     // same as above, the mutex is certainly locked
 

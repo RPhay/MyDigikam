@@ -125,16 +125,12 @@ class DIGIKAM_EXPORT LoadingCache : public QObject
 
 public:
 
-    /**
-     * NOTE: !! All methods of LoadingCache shall only be called when a CacheLock is held !!
-     */
-
-    class DIGIKAM_EXPORT CacheLock
+    class DIGIKAM_EXPORT LoadingLock
     {
     public:
 
-        explicit CacheLock(LoadingCache* const cache);
-        ~CacheLock();
+        explicit LoadingLock(LoadingCache* const cache);
+        ~LoadingLock();
         void wakeAll();
         void timedWait();
 
@@ -299,7 +295,7 @@ private:
     LoadingCache& operator=(const LoadingCache&);
 
     friend class LoadingCacheFileWatch;
-    friend class CacheLock;
+    friend class LoadingLock;
 
 private:
 
