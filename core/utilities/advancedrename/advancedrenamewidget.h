@@ -67,7 +67,7 @@ public:
 public:
 
     explicit AdvancedRenameWidget(QWidget* const parent = nullptr);
-    ~AdvancedRenameWidget();
+    ~AdvancedRenameWidget() override;
 
     /**
      * returns the current parse string

@@ -36,7 +36,7 @@ class TrimmedModifier : public Modifier
 public:
 
     explicit TrimmedModifier();
-    virtual QString parseOperation(ParseSettings& settings);
+    QString parseOperation(ParseSettings& settings) override;
 
 private:
 

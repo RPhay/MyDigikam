@@ -47,7 +47,7 @@ class MetadataOptionDialog : public RuleDialog
 public:
 
     explicit MetadataOptionDialog(Rule* const parent);
-    ~MetadataOptionDialog();
+    ~MetadataOptionDialog() override;
 
 public:
 
@@ -69,15 +69,15 @@ class MetadataOption : public Option
 public:
 
     explicit MetadataOption();
-    ~MetadataOption() {};
+    ~MetadataOption() override {};
 
 protected:
 
-    virtual QString parseOperation(ParseSettings& settings);
+    QString parseOperation(ParseSettings& settings) override;
 
 private Q_SLOTS:
 
-    void slotTokenTriggered(const QString& token);
+    void slotTokenTriggered(const QString& token) override;
 
 private:
 

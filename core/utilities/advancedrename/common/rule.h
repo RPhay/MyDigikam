@@ -54,7 +54,7 @@ public:
 
     explicit Rule(const QString& name);
     Rule(const QString& name, const QString& icon);
-    virtual ~Rule();
+    ~Rule() override;
 
     /**
      * returns the currently assigned regExp object. Note that it is returned as a const ref, meaning

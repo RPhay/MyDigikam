@@ -38,11 +38,11 @@ class MetadataKeys : public DbKeysCollection
 public:
 
     explicit MetadataKeys();
-    virtual ~MetadataKeys() {};
+    ~MetadataKeys() override {};
 
 protected:
 
-    virtual QString getDbValue(const QString& key, ParseSettings& settings);
+    QString getDbValue(const QString& key, ParseSettings& settings) override;
 
 private:
 

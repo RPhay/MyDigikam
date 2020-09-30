@@ -44,7 +44,7 @@ class SequenceNumberDialog : public RuleDialog
 public:
 
     explicit SequenceNumberDialog(Rule* const parent);
-    ~SequenceNumberDialog();
+    ~SequenceNumberDialog() override;
 
     Ui::SequenceNumberOptionDialogWidget* const ui;
 
@@ -63,15 +63,15 @@ class SequenceNumberOption : public Option
 public:
 
     explicit SequenceNumberOption();
-    ~SequenceNumberOption();
+    ~SequenceNumberOption() override;
 
 protected:
 
-    virtual QString parseOperation(ParseSettings& settings);
+    QString parseOperation(ParseSettings& settings) override;
 
 private Q_SLOTS:
 
-    void slotTokenTriggered(const QString& token);
+    void slotTokenTriggered(const QString& token) override;
 
 private:
 

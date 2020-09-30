@@ -41,7 +41,7 @@ class DbHeaderListItem : public QObject, public QTreeWidgetItem
 public:
 
     explicit DbHeaderListItem(QTreeWidget* parent, const QString& key);
-    ~DbHeaderListItem();
+    ~DbHeaderListItem() override;
 
 private Q_SLOTS:
 

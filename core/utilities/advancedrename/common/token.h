@@ -67,7 +67,7 @@ class Token : public QObject
 public:
 
     explicit Token(const QString& id, const QString& description);
-    ~Token();
+    ~Token() override;
 
     /**
      * @return The ID of the token. This is the actual token string, for example

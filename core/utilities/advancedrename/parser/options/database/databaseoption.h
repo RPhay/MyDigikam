@@ -48,7 +48,7 @@ class DatabaseOptionDialog : public RuleDialog
 public:
 
     explicit DatabaseOptionDialog(Rule* const parent);
-    ~DatabaseOptionDialog();
+    ~DatabaseOptionDialog() override;
 
     DbKeySelectorView* dbkeySelectorView;
     QLineEdit*         separatorLineEdit;
@@ -72,15 +72,15 @@ class DatabaseOption : public Option
 public:
 
     explicit DatabaseOption();
-    ~DatabaseOption();
+    ~DatabaseOption() override;
 
 protected:
 
-    virtual QString parseOperation(ParseSettings& settings);
+    QString parseOperation(ParseSettings& settings) override;
 
 private Q_SLOTS:
 
-    void slotTokenTriggered(const QString& token);
+    void slotTokenTriggered(const QString& token) override;
 
 private:
 

@@ -41,11 +41,11 @@ class Highlighter : public QSyntaxHighlighter
 public:
 
     Highlighter(QTextDocument* const document, Parser* const _parser);
-    virtual ~Highlighter();
+    ~Highlighter() override;
 
 protected:
 
-    virtual void highlightBlock(const QString& text);
+    void highlightBlock(const QString& text) override;
 
 private:
 

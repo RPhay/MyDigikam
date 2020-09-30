@@ -72,7 +72,7 @@ public:
 
     AdvancedRenameManager();
     explicit AdvancedRenameManager(const QList<ParseSettings>& files);
-    virtual ~AdvancedRenameManager();
+    ~AdvancedRenameManager() override;
 
     void addFiles(const QList<ParseSettings>& files);
     void reset();

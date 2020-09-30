@@ -44,8 +44,8 @@ class UniqueModifier : public Modifier
 public:
 
     explicit UniqueModifier();
-    virtual QString parseOperation(ParseSettings& settings);
-    virtual void    reset();
+    QString parseOperation(ParseSettings& settings) override;
+    void    reset() override;
 
 private:
 

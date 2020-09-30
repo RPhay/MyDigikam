@@ -41,7 +41,7 @@ class RuleDialog : public QDialog
 public:
 
     explicit RuleDialog(Rule* const parent);
-    virtual ~RuleDialog();
+    ~RuleDialog() override;
 
     void setSettingsWidget(QWidget* const settingsWidget);
 

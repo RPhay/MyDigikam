@@ -107,7 +107,7 @@ public:
 public:
 
     explicit DateOptionDialog(Rule* parent);
-    ~DateOptionDialog();
+    ~DateOptionDialog() override;
 
     Ui::DateOptionDialogWidget* const ui;
 
@@ -137,11 +137,11 @@ class DateOption : public Option
 public:
 
     explicit DateOption();
-    ~DateOption() {};
+    ~DateOption() override {};
 
 protected:
 
-    virtual QString parseOperation(ParseSettings& settings);
+    QString parseOperation(ParseSettings& settings) override;
 
 private:
 
@@ -150,7 +150,7 @@ private:
 
 private Q_SLOTS:
 
-    void slotTokenTriggered(const QString& token);
+    void slotTokenTriggered(const QString& token) override;
 };
 
 } // namespace Digikam

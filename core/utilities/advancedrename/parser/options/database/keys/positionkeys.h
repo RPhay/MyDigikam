@@ -38,11 +38,11 @@ class PositionKeys : public DbKeysCollection
 public:
 
     explicit PositionKeys();
-    virtual ~PositionKeys() {};
+    ~PositionKeys() override {};
 
 protected:
 
-    virtual QString getDbValue(const QString& key, ParseSettings& settings);
+    QString getDbValue(const QString& key, ParseSettings& settings) override;
 
 private:
 

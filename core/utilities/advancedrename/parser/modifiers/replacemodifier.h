@@ -46,7 +46,7 @@ class ReplaceDialog : public RuleDialog
 public:
 
     explicit ReplaceDialog(Rule* const parent);
-    ~ReplaceDialog();
+    ~ReplaceDialog() override;
 
     Ui::ReplaceModifierDialogWidget* const ui;
 
@@ -65,11 +65,11 @@ class ReplaceModifier : public Modifier
 public:
 
     explicit ReplaceModifier();
-    virtual QString parseOperation(ParseSettings& settings);
+    QString parseOperation(ParseSettings& settings) override;
 
 private Q_SLOTS:
 
-    void slotTokenTriggered(const QString& token);
+    void slotTokenTriggered(const QString& token) override;
 
 private:
 

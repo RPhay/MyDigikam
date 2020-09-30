@@ -43,11 +43,11 @@ class FilePropertiesOption : public Option
 public:
 
     explicit FilePropertiesOption();
-    ~FilePropertiesOption() {};
+    ~FilePropertiesOption() override {};
 
 protected:
 
-    virtual QString parseOperation(ParseSettings& settings);
+    QString parseOperation(ParseSettings& settings) override;
 
 private:
 

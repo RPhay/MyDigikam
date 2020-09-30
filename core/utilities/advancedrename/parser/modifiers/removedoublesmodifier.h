@@ -39,7 +39,7 @@ class RemoveDoublesModifier : public Modifier
 public:
 
     explicit RemoveDoublesModifier();
-    virtual QString parseOperation(ParseSettings& settings);
+    QString parseOperation(ParseSettings& settings) override;
 
 private:
 

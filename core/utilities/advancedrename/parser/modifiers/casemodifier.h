@@ -36,7 +36,7 @@ class CaseModifier : public Modifier
 public:
 
     explicit CaseModifier();
-    virtual QString parseOperation(ParseSettings& settings);
+    QString parseOperation(ParseSettings& settings) override;
 
 private:
 

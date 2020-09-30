@@ -38,7 +38,7 @@ class TooltipDialog : public QDialog
 public:
 
     explicit TooltipDialog(QWidget* const parent);
-    virtual ~TooltipDialog();
+    ~TooltipDialog() override;
 
     void setTooltip(const QString& tooltip);
     void clearTooltip();

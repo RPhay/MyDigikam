@@ -37,11 +37,11 @@ class CommonKeys : public DbKeysCollection
 public:
 
     explicit CommonKeys();
-    virtual ~CommonKeys() {};
+    ~CommonKeys() override {};
 
 protected:
 
-    virtual QString getDbValue(const QString& key, ParseSettings& settings);
+    QString getDbValue(const QString& key, ParseSettings& settings) override;
 
 private:
 

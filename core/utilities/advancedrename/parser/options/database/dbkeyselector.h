@@ -45,7 +45,7 @@ class DbKeySelectorItem : public QTreeWidgetItem
 public:
 
     explicit DbKeySelectorItem(DbHeaderListItem* const parent, const QString& title, const QString& desc);
-    virtual ~DbKeySelectorItem();
+    ~DbKeySelectorItem() override;
 
     QString key()         const;
     QString description() const;
@@ -69,7 +69,7 @@ class DbKeySelector : public QTreeWidget
 public:
 
     explicit DbKeySelector(QWidget* const parent);
-    virtual ~DbKeySelector();
+    ~DbKeySelector() override;
 
     void setKeysMap(const DbOptionKeysMap& map);
     QStringList checkedKeysList();
@@ -89,7 +89,7 @@ class DbKeySelectorView : public QWidget
 public:
 
     explicit DbKeySelectorView(QWidget* const parent);
-    virtual ~DbKeySelectorView();
+    ~DbKeySelectorView() override;
 
     void setKeysMap(const DbOptionKeysMap& map);
     QStringList checkedKeysList() const;
