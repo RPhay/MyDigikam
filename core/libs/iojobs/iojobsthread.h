@@ -44,7 +44,7 @@ class DIGIKAM_GUI_EXPORT IOJobsThread : public ActionThreadBase
 public:
 
     explicit IOJobsThread(QObject* const parent);
-    ~IOJobsThread();
+    ~IOJobsThread() override;
 
     /**
      * @brief Starts a number of jobs to copy or move source files to destination
