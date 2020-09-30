@@ -122,7 +122,7 @@ public:
     {
     }
 
-    ~BatchToolObserver()
+    ~BatchToolObserver() override
     {
     }
 

@@ -53,7 +53,7 @@ class QueuePoolBar : public QTabBar
 public:
 
     explicit QueuePoolBar(QWidget* const parent);
-    ~QueuePoolBar();
+    ~QueuePoolBar() override;
 
 Q_SIGNALS:
 
@@ -74,7 +74,7 @@ class QueuePool : public QTabWidget
 public:
 
     explicit QueuePool(QWidget* const parent);
-    ~QueuePool();
+    ~QueuePool() override;
 
     QueueListView*     currentQueue()                    const;
     QString            currentTitle()                    const;
@@ -119,7 +119,7 @@ public Q_SLOTS:
 
 protected:
 
-    virtual void keyPressEvent(QKeyEvent* event);
+    void keyPressEvent(QKeyEvent* event) override;
 
 private :
 

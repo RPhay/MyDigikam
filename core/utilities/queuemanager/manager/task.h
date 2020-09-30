@@ -46,7 +46,7 @@ class Task : public ActionJob
 public:
 
     explicit Task();
-    ~Task();
+    ~Task() override;
 
     void setSettings(const QueueSettings& settings);
     void setItem(const AssignedBatchTools& tools);
@@ -62,7 +62,7 @@ public Q_SLOTS:
 
 protected:
 
-    void run();
+    void run() override;
 
 private:
 

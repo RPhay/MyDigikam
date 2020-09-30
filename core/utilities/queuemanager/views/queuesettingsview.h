@@ -44,7 +44,7 @@ class QueueSettingsView : public QTabWidget
 public:
 
     explicit QueueSettingsView(QWidget* const parent = nullptr);
-    ~QueueSettingsView();
+    ~QueueSettingsView() override;
 
     void setBusy(bool b);
 

@@ -45,7 +45,7 @@ class WorkflowDlg : public QDialog
 public:
 
     explicit WorkflowDlg(const Workflow& wf, bool create=false);
-    ~WorkflowDlg();
+    ~WorkflowDlg() override;
 
     QString     title()           const;
     QString     description()     const;

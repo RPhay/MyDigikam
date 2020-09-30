@@ -40,14 +40,14 @@ class QueueToolTip : public DItemToolTip
 public:
 
     explicit QueueToolTip(QueueListView* const view);
-    ~QueueToolTip();
+    ~QueueToolTip() override;
 
     void setQueueItem(QueueListViewItem* const item);
 
 private:
 
-    QRect   repositionRect();
-    QString tipContents();
+    QRect   repositionRect() override;
+    QString tipContents() override;
 
 private:
 

@@ -54,7 +54,7 @@ class QueueMgrWindow : public DXmlGuiWindow
 
 public:
 
-    ~QueueMgrWindow();
+    ~QueueMgrWindow() override;
 
     static QueueMgrWindow* queueManagerWindow();
     static bool            queueManagerWindowCreated();

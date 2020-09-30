@@ -101,7 +101,7 @@ private:
 private:
 
     WorkflowManager();
-    ~WorkflowManager();
+    ~WorkflowManager() override;
 
 private:
 

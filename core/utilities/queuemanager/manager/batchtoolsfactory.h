@@ -53,7 +53,7 @@ public:
 private:
 
     BatchToolsFactory();
-    ~BatchToolsFactory();
+    ~BatchToolsFactory() override;
 
 private:
 

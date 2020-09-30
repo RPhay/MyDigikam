@@ -77,7 +77,7 @@ public:
 public:
 
     explicit BatchTool(const QString& name, BatchToolGroup group, QObject* const parent = nullptr);
-    ~BatchTool();
+    ~BatchTool() override;
 
     void setPlugin(DPluginBqm* const plugin);
     DPluginBqm* plugin()                                    const;

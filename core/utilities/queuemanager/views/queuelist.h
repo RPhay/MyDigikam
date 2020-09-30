@@ -51,7 +51,7 @@ class QueueListViewItem : public QTreeWidgetItem
 public:
 
     QueueListViewItem(QueueListView* const view, const ItemInfo& info);
-    ~QueueListViewItem();
+    ~QueueListViewItem() override;
 
     bool hasValidThumbnail() const;
 
@@ -102,7 +102,7 @@ class QueueListView : public QTreeWidget
 public:
 
     explicit QueueListView(QWidget* const parent);
-    ~QueueListView();
+    ~QueueListView() override;
 
     void cancelItems();
     int  itemsCount();

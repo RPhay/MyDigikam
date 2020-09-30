@@ -44,7 +44,7 @@ class ActionThread : public ActionThreadBase
 public:
 
     explicit ActionThread(QObject* const parent);
-    ~ActionThread();
+    ~ActionThread() override;
 
     void setSettings(const QueueSettings& settings);
 

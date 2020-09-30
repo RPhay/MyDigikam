@@ -49,7 +49,7 @@ public:
 public:
 
     explicit ToolsView(QWidget* const parent = nullptr);
-    ~ToolsView();
+    ~ToolsView() override;
 
     void addTool(BatchTool* const tool);
     bool removeTool(BatchTool* const tool);
