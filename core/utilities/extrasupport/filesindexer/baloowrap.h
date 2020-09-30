@@ -70,7 +70,7 @@ class DIGIKAM_EXPORT BalooWrap : public QObject
 public:
 
     explicit BalooWrap();
-    ~BalooWrap();
+    ~BalooWrap() override;
 
     /**
      * @brief internalPtr - singleton implementation
