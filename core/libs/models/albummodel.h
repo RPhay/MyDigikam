@@ -42,15 +42,15 @@ public:
 
     /// Create a model containing all physical albums
     explicit AlbumModel(RootAlbumBehavior rootBehavior = IncludeRootAlbum, QObject* const parent = nullptr);
-    virtual ~AlbumModel();
+    ~AlbumModel() override;
 
     PAlbum* albumForIndex(const QModelIndex& index) const;
 
 protected:
 
-    virtual QVariant albumData(Album* a, int role)  const override;
-    virtual QVariant decorationRoleData(Album* a)   const override;
-    virtual Album*   albumForId(int id)             const override;
+    QVariant albumData(Album* a, int role)  const override;
+    QVariant decorationRoleData(Album* a)   const override;
+    Album*   albumForId(int id)             const override;
 };
 
 // ------------------------------------------------------------------
@@ -81,10 +81,10 @@ public:
 
 protected:
 
-    virtual QVariant     albumData(Album* a, int role)              const override;
-    virtual QVariant     decorationRoleData(Album* a)               const override;
-    virtual Album*       albumForId(int id)                         const override;
-    virtual QVariant     fontRoleData(Album* a)                     const override;
+    QVariant     albumData(Album* a, int role)              const override;
+    QVariant     decorationRoleData(Album* a)               const override;
+    Album*       albumForId(int id)                         const override;
+    QVariant     fontRoleData(Album* a)                     const override;
 
 private:
 
@@ -123,8 +123,8 @@ public:
 
 protected:
 
-    virtual QVariant albumData(Album* a, int role) const override;
-    virtual Album*   albumForId(int id)            const override;
+    QVariant albumData(Album* a, int role) const override;
+    Album*   albumForId(int id)            const override;
 
 private Q_SLOTS:
 
@@ -178,10 +178,10 @@ public Q_SLOTS:
 
 protected:
 
-    virtual QString  albumName(Album* a)             const override;
-    virtual QVariant decorationRoleData(Album* a)    const override;
-    virtual QVariant sortRoleData(Album* a)          const override;
-    virtual Album*   albumForId(int id)              const override;
+    QString  albumName(Album* a)             const override;
+    QVariant decorationRoleData(Album* a)    const override;
+    QVariant sortRoleData(Album* a)          const override;
+    Album*   albumForId(int id)              const override;
 
 protected:
 

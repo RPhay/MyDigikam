@@ -42,7 +42,7 @@ class AlbumModelDragDropHandler : public QObject
 public:
 
     explicit AlbumModelDragDropHandler(AbstractAlbumModel* model);
-    virtual ~AlbumModelDragDropHandler() {}
+    ~AlbumModelDragDropHandler() override {}
 
     AbstractAlbumModel* model() const;
 

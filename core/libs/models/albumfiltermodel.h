@@ -251,10 +251,10 @@ protected:
      * @see setSourceAlbumModel
      * @param model source model
      */
-    virtual void setSourceModel(QAbstractItemModel* const model)                          override;
+    void setSourceModel(QAbstractItemModel* const model)                          override;
 
-    virtual bool filterAcceptsRow(int source_row, const QModelIndex& source_parent) const override;
-    virtual bool lessThan(const QModelIndex& left, const QModelIndex& right)        const override;
+    bool filterAcceptsRow(int source_row, const QModelIndex& source_parent) const override;
+    bool lessThan(const QModelIndex& left, const QModelIndex& right)        const override;
 
 protected Q_SLOTS:
 
@@ -301,11 +301,11 @@ public:
     void setFilterChecked(bool filter);
     void setFilterPartiallyChecked(bool filter);
 
-    virtual bool isFiltering()                                                          const override;
+    bool isFiltering()                                                          const override;
 
 protected:
 
-    virtual bool matches(Album* album)                                                  const override;
+    bool matches(Album* album)                                                  const override;
 
 protected:
 
@@ -345,7 +345,7 @@ public:
      */
     void setListTemporarySearches(bool list);
 
-    virtual bool isFiltering()                                                          const override;
+    bool isFiltering()                                                          const override;
 
 protected:
 
@@ -354,7 +354,7 @@ protected:
 
     void setTypeFilter(int type);
 
-    virtual bool matches(Album* album)                                                  const override;
+    bool matches(Album* album)                                                  const override;
 
 protected:
 
@@ -383,7 +383,7 @@ public:
     void doNotListTagsWithProperty(const QString& property);
     void removeDoNotListProperty(const QString& property);
 
-    virtual bool isFiltering()                                                          const override;
+    bool isFiltering()                                                          const override;
 
 protected Q_SLOTS:
 
@@ -391,7 +391,7 @@ protected Q_SLOTS:
 
 protected:
 
-    virtual bool matches(Album* album)                                                  const override;
+    bool matches(Album* album)                                                  const override;
 
 protected:
 
@@ -413,7 +413,7 @@ public:
 
 protected:
 
-    virtual bool matches(Album* album)                                                  const override;
+    bool matches(Album* album)                                                  const override;
 
 protected:
 

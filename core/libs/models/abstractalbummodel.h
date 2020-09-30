@@ -97,7 +97,7 @@ public:
                                 Album* const rootAlbum,
                                 RootAlbumBehavior rootBehavior = IncludeRootAlbum,
                                 QObject* const parent = nullptr);
-    ~AbstractAlbumModel();
+    ~AbstractAlbumModel() override;
 
     /**
      * Set a drag drop handler
@@ -143,19 +143,19 @@ public:
      */
     Album::Type albumType()                         const;
 
-    virtual QVariant data(const QModelIndex& index, int role = Qt::DisplayRole)                                             const override;
-    virtual QVariant headerData(int section, Qt::Orientation orientation, int role = Qt::DisplayRole)                       const override;
-    virtual int rowCount(const QModelIndex& parent = QModelIndex())                                                         const override;
-    virtual int columnCount(const QModelIndex& parent = QModelIndex())                                                      const override;
-    virtual Qt::ItemFlags flags(const QModelIndex& index)                                                                   const override;
-    virtual bool hasChildren(const QModelIndex& parent = QModelIndex())                                                     const override;
-    virtual QModelIndex index(int row, int column, const QModelIndex& parent = QModelIndex())                               const override;
-    virtual QModelIndex parent(const QModelIndex& index)                                                                    const override;
+    QVariant data(const QModelIndex& index, int role = Qt::DisplayRole)                                             const override;
+    QVariant headerData(int section, Qt::Orientation orientation, int role = Qt::DisplayRole)                       const override;
+    int rowCount(const QModelIndex& parent = QModelIndex())                                                         const override;
+    int columnCount(const QModelIndex& parent = QModelIndex())                                                      const override;
+    Qt::ItemFlags flags(const QModelIndex& index)                                                                   const override;
+    bool hasChildren(const QModelIndex& parent = QModelIndex())                                                     const override;
+    QModelIndex index(int row, int column, const QModelIndex& parent = QModelIndex())                               const override;
+    QModelIndex parent(const QModelIndex& index)                                                                    const override;
 
-    virtual Qt::DropActions supportedDropActions()                                                                          const override;
-    virtual QStringList mimeTypes()                                                                                         const override;
-    virtual bool dropMimeData(const QMimeData* data, Qt::DropAction action, int row, int column, const QModelIndex& parent)       override;
-    virtual QMimeData* mimeData(const QModelIndexList& indexes)                                                             const override;
+    Qt::DropActions supportedDropActions()                                                                          const override;
+    QStringList mimeTypes()                                                                                         const override;
+    bool dropMimeData(const QMimeData* data, Qt::DropAction action, int row, int column, const QModelIndex& parent)       override;
+    QMimeData* mimeData(const QModelIndexList& indexes)                                                             const override;
 
 Q_SIGNALS:
 
@@ -241,7 +241,7 @@ public:
 
 protected:
 
-    virtual QString  columnHeader() const override;
+    QString  columnHeader() const override;
     void setColumnHeader(const QString& header);
 
     /// You need to call this from your constructor if you intend to load the thumbnail facilities of this class
@@ -273,7 +273,7 @@ public:
                                         Album* const rootAlbum,
                                         RootAlbumBehavior rootBehavior = IncludeRootAlbum,
                                         QObject* const parent = nullptr);
-    ~AbstractCountingAlbumModel();
+    ~AbstractCountingAlbumModel() override;
 
 protected:
 
@@ -327,9 +327,9 @@ protected:
     virtual QString albumName(Album* a)  const;
 
     /// Reimplemented from parent classes
-    virtual QVariant albumData(Album* a, int role) const override;
-    virtual void albumCleared(Album* album) override;
-    virtual void allAlbumsCleared() override;
+    QVariant albumData(Album* a, int role) const override;
+    void albumCleared(Album* album) override;
+    void allAlbumsCleared() override;
 
 protected Q_SLOTS:
 
@@ -362,7 +362,7 @@ public:
                                          Album* const rootAlbum,
                                          RootAlbumBehavior rootBehavior = IncludeRootAlbum,
                                          QObject* const parent = nullptr);
-    ~AbstractCheckableAlbumModel();
+    ~AbstractCheckableAlbumModel() override;
 
     /// Triggers if the albums in this model are checkable
     void setCheckable(bool isCheckable);
@@ -455,12 +455,12 @@ protected:
      */
     void prepareAddExcludeDecoration(Album* a, QPixmap& icon)                                      const;
 
-    virtual QVariant albumData(Album* a, int role)                                                 const override;
-    virtual Qt::ItemFlags flags(const QModelIndex& index)                                          const override;
-    virtual bool setData(const QModelIndex& index, const QVariant& value, int role = Qt::EditRole)       override;
+    QVariant albumData(Album* a, int role)                                                 const override;
+    Qt::ItemFlags flags(const QModelIndex& index)                                          const override;
+    bool setData(const QModelIndex& index, const QVariant& value, int role = Qt::EditRole)       override;
 
-    virtual void albumCleared(Album* album)                                                              override;
-    virtual void allAlbumsCleared()                                                                      override;
+    void albumCleared(Album* album)                                                              override;
+    void allAlbumsCleared()                                                                      override;
 
 private:
 
