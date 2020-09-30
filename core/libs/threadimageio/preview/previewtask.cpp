@@ -64,9 +64,7 @@ void PreviewLoadingTask::execute()
     // Check if preview is in cache first.
     // find possible cached images
 
-    DImg* cachedImg           = nullptr;
     QStringList lookupKeys    = m_loadingDescription.lookupCacheKeys();
-
     LoadingCache* const cache = LoadingCache::cache();
 
     // lookupCacheKeys returns "best first". Prepend the cache key to make the list "fastest first":
@@ -76,17 +74,19 @@ void PreviewLoadingTask::execute()
 
     foreach (const QString& key, lookupKeys)
     {
-        if ((cachedImg = cache->retrieveImage(key)))
+        m_img = cache->retrieveImage(key);
+
+        if (!m_img.isNull())
         {
             if (m_loadingDescription.needCheckRawDecoding())
             {
-                if (cachedImg->rawDecodingSettings() == m_loadingDescription.rawDecodingSettings)
+                if (m_img.rawDecodingSettings() == m_loadingDescription.rawDecodingSettings)
                 {
                     break;
                 }
                 else
                 {
-                    cachedImg = nullptr;
+                    m_img.reset();
                 }
             }
             else
@@ -96,13 +96,7 @@ void PreviewLoadingTask::execute()
         }
     }
 
-    if (cachedImg)
-    {
-        // image is found in image cache, loading is successful
-
-        m_img = *cachedImg;
-    }
-    else
+    if (continueQuery() && m_img.isNull())
     {
         // find possible running loading process
 
