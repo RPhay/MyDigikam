@@ -47,7 +47,7 @@ class MaintenanceThread : public ActionThreadBase
 public:
 
     explicit MaintenanceThread(QObject* const parent);
-    ~MaintenanceThread();
+    ~MaintenanceThread() override;
 
     void setUseMultiCore(const bool b);
 

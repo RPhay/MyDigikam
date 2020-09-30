@@ -55,7 +55,7 @@ public:
                        bool cleanSimilarityDb = false,
                        bool shrinkDatabases = false,
                        ProgressItem* const parent = nullptr);
-    virtual ~DbCleaner();
+    ~DbCleaner() override;
 
     void setUseMultiCoreCPU(bool b) override;
 
@@ -97,14 +97,14 @@ class DbShrinkDialog : public QDialog
 public:
 
     explicit DbShrinkDialog(QWidget* const parent);
-    virtual ~DbShrinkDialog();
+    ~DbShrinkDialog() override;
 
     void setActive(const int pos);
     void setIcon(const int pos, const QIcon& icon);
 
 public Q_SLOTS:
 
-    virtual int exec();
+    int exec() override;
 
 private Q_SLOTS:
 

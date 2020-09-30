@@ -45,7 +45,7 @@ class ItemInfoJob : public QObject
 public:
 
     explicit ItemInfoJob();
-    ~ItemInfoJob();
+    ~ItemInfoJob() override;
 
     void allItemsFromAlbum(Album* const album);
     void stop();

@@ -68,7 +68,7 @@ public:
                               int maxSimilarity = 100,
                               int searchResultRestriction = 0,
                               ProgressItem* const parent = nullptr);
-    ~DuplicatesFinder();
+    ~DuplicatesFinder() override;
 
 private Q_SLOTS:
 

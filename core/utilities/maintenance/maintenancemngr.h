@@ -41,7 +41,7 @@ class MaintenanceMngr : public QObject
 public:
 
     explicit MaintenanceMngr(QObject* const parent);
-    ~MaintenanceMngr();
+    ~MaintenanceMngr() override;
 
     void setSettings(const MaintenanceSettings& settings);
 

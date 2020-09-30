@@ -63,7 +63,7 @@ public:
 
     void setTagsOnly(bool value);
 
-    ~MetadataSynchronizer();
+    ~MetadataSynchronizer() override;
 
     void setUseMultiCoreCPU(bool b) override;
 

@@ -47,7 +47,7 @@ class FingerprintsTask : public ActionJob
 public:
 
     explicit FingerprintsTask();
-    ~FingerprintsTask();
+    ~FingerprintsTask() override;
 
     void setMaintenanceData(MaintenanceData* const data = nullptr);
 
@@ -57,7 +57,7 @@ Q_SIGNALS:
 
 protected:
 
-    void run();
+    void run() override;
 
 private:
 

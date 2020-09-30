@@ -45,7 +45,7 @@ class ThumbsTask : public ActionJob
 public:
 
     explicit ThumbsTask();
-    ~ThumbsTask();
+    ~ThumbsTask() override;
 
     void setMaintenanceData(MaintenanceData* const data = nullptr);
 
@@ -55,7 +55,7 @@ Q_SIGNALS:
 
 protected:
 
-    void run();
+    void run() override;
 
 private:
 

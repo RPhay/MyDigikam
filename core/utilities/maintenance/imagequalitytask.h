@@ -45,7 +45,7 @@ class ImageQualityTask : public ActionJob
 public:
 
     explicit ImageQualityTask();
-    ~ImageQualityTask();
+    ~ImageQualityTask() override;
 
     void setQuality(const ImageQualityContainer& quality);
     void setMaintenanceData(MaintenanceData* const data = nullptr);
@@ -60,7 +60,7 @@ public Q_SLOTS:
 
 protected:
 
-    void run();
+    void run() override;
 
 private:
 

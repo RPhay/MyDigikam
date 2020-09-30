@@ -50,7 +50,7 @@ public:
     /** Constructor using AlbumList as argument. If list is empty, whole Albums collection is processed.
      */
     ThumbsGenerator(const bool rebuildAll, const AlbumList& list, ProgressItem* const parent = nullptr);
-    ~ThumbsGenerator();
+    ~ThumbsGenerator() override;
 
     void setUseMultiCoreCPU(bool b) override;
 

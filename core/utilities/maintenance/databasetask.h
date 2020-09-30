@@ -57,7 +57,7 @@ public:
     };
 
     explicit DatabaseTask();
-    virtual ~DatabaseTask();
+    ~DatabaseTask() override;
 
     void setMode(Mode mode);
     void setMaintenanceData(MaintenanceData* const data=nullptr);
@@ -83,7 +83,7 @@ Q_SIGNALS:
 
 protected:
 
-    void run();
+    void run() override;
 
 private:
 

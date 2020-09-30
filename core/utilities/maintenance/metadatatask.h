@@ -46,7 +46,7 @@ class MetadataTask : public ActionJob
 public:
 
     explicit MetadataTask();
-    ~MetadataTask();
+    ~MetadataTask() override;
 
     void setTagsOnly(bool value);
     void setDirection(MetadataSynchronizer::SyncDirection dir);
@@ -58,7 +58,7 @@ Q_SIGNALS:
 
 protected:
 
-    void run();
+    void run() override;
 
 private:
 

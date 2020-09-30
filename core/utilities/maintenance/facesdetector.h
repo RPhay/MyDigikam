@@ -58,7 +58,7 @@ public:
 public:
 
     explicit FacesDetector(const FaceScanSettings& settings, ProgressItem* const parent = nullptr);
-    ~FacesDetector();
+    ~FacesDetector() override;
 
 private Q_SLOTS:
 

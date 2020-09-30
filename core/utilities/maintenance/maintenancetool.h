@@ -44,7 +44,7 @@ class DIGIKAM_GUI_EXPORT MaintenanceTool : public ProgressItem
 public:
 
     explicit MaintenanceTool(const QString& id, ProgressItem* const parent = nullptr);
-    virtual ~MaintenanceTool();
+    ~MaintenanceTool() override;
 
     /**
      * If true, show a notification message on desktop notification manager

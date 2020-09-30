@@ -59,7 +59,7 @@ public:
                                 const AlbumList& list=AlbumList(),
                                 const ImageQualityContainer& quality=ImageQualityContainer(),
                                 ProgressItem* const parent = nullptr);
-    ~ImageQualitySorter();
+    ~ImageQualitySorter() override;
 
     void setUseMultiCoreCPU(bool b) override;
 
