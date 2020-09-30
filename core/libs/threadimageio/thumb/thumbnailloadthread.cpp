@@ -239,7 +239,6 @@ bool ThumbnailLoadThread::find(const ThumbnailIdentifier& identifier,
                                bool emitSignal,
                                const QRect& detailRect)
 {
-    const QPixmap* pix = nullptr;
     LoadingDescription description;
 
     if (detailRect.isNull())
@@ -253,19 +252,19 @@ bool ThumbnailLoadThread::find(const ThumbnailIdentifier& identifier,
 
     LoadingCache* const cache = LoadingCache::cache();
     QString cacheKey          = description.cacheKey();
-    pix                       = cache->retrieveThumbnailPixmap(cacheKey);
+    QPixmap pix               = cache->retrieveThumbnailPixmap(cacheKey);
 
-    if (pix)
+    if (!pix.isNull())
     {
         if (retPixmap)
         {
-            *retPixmap = *pix;
+            *retPixmap = pix;
         }
 
         if (emitSignal)
         {
             load(description);
-            emit signalThumbnailLoaded(description, QPixmap(*pix));
+            emit signalThumbnailLoaded(description, pix);
         }
 
         return true;
