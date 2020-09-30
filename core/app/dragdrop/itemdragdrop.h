@@ -55,15 +55,15 @@ public:
      */
     void setReadOnlyDrop(bool readOnly);
 
-    virtual bool dropEvent(QAbstractItemView* view,
+    bool dropEvent(QAbstractItemView* view,
                            const QDropEvent* e,
                            const QModelIndex& droppedOn)          override;
 
-    virtual Qt::DropAction accepts(const QDropEvent* e,
+    Qt::DropAction accepts(const QDropEvent* e,
                                    const QModelIndex& dropIndex)  override;
 
-    virtual QStringList mimeTypes() const                         override;
-    virtual QMimeData* createMimeData(const QList<QModelIndex>&)  override;
+    QStringList mimeTypes() const                         override;
+    QMimeData* createMimeData(const QList<QModelIndex>&)  override;
 
 Q_SIGNALS:
 

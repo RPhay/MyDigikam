@@ -43,15 +43,15 @@ public:
 
     TagModel* model() const;
 
-    virtual bool dropEvent(QAbstractItemView* view,
+    bool dropEvent(QAbstractItemView* view,
                            const QDropEvent* e,
                            const QModelIndex& droppedOn)         override;
 
-    virtual Qt::DropAction accepts(const QDropEvent* e,
+    Qt::DropAction accepts(const QDropEvent* e,
                                    const QModelIndex& dropIndex) override;
 
-    virtual QStringList mimeTypes() const                        override;
-    virtual QMimeData* createMimeData(const QList<Album*>&)      override;
+    QStringList mimeTypes() const                        override;
+    QMimeData* createMimeData(const QList<Album*>&)      override;
 
 Q_SIGNALS:
 
