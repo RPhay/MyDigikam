@@ -71,7 +71,7 @@ public:
      * @param advSettings the default value is COLORSPACE
      */
     explicit DRawDecoderWidget(QWidget* const parent, int advSettings = COLORSPACE);
-    virtual ~DRawDecoderWidget();
+    ~DRawDecoderWidget() override;
 
     DFileSelector* inputProfileUrlEdit()  const;
     DFileSelector* outputProfileUrlEdit() const;

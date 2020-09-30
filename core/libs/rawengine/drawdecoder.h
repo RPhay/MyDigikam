@@ -58,7 +58,7 @@ public:
     /**
      * Standard destructor.
      */
-    virtual ~DRawDecoder();
+    ~DRawDecoder() override;
 
 public:
 
