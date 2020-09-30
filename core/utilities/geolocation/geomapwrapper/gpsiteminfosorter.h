@@ -60,7 +60,7 @@ public:
 public:
 
     explicit GPSItemInfoSorter(QObject* const parent);
-    ~GPSItemInfoSorter();
+    ~GPSItemInfoSorter() override;
 
     void addToMapWidget(MapWidget* const mapWidget);
 

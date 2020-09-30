@@ -107,7 +107,7 @@ public:
 public:
 
     explicit TrackCorrelator(TrackManager* const trackManager, QObject* const parent = nullptr);
-    virtual ~TrackCorrelator();
+    ~TrackCorrelator() override;
 
     void correlate(const Correlation::List& itemsToCorrelate, const CorrelationOptions& options);
     void cancelCorrelation();

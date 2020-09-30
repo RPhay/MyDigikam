@@ -51,7 +51,7 @@ class DIGIKAM_EXPORT GPSCorrelatorWidget : public QWidget
 public:
 
     explicit GPSCorrelatorWidget(QWidget* const parent, GPSItemModel* const imageModel, TrackManager* const trackManager);
-    virtual ~GPSCorrelatorWidget();
+    ~GPSCorrelatorWidget() override;
 
     void setUIEnabledExternal(const bool state);
     void saveSettingsToGroup(KConfigGroup* const group);

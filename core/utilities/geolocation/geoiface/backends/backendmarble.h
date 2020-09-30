@@ -50,29 +50,29 @@ public:
 
     explicit BackendMarble(const QExplicitlySharedDataPointer<GeoIfaceSharedData>& sharedData,
                            QObject* const parent = nullptr);
-    virtual ~BackendMarble();
+    ~BackendMarble() override;
 
-    virtual QString backendName() const override;
-    virtual QString backendHumanName() const override;
-    virtual QWidget* mapWidget() override;
-    virtual void releaseWidget(GeoIfaceInternalWidgetInfo* const info) override;
-    virtual void mapWidgetDocked(const bool state) override;
+    QString backendName() const override;
+    QString backendHumanName() const override;
+    QWidget* mapWidget() override;
+    void releaseWidget(GeoIfaceInternalWidgetInfo* const info) override;
+    void mapWidgetDocked(const bool state) override;
 
-    virtual GeoCoordinates getCenter() const override;
-    virtual void setCenter(const GeoCoordinates& coordinate) override;
+    GeoCoordinates getCenter() const override;
+    void setCenter(const GeoCoordinates& coordinate) override;
 
-    virtual bool isReady() const override;
+    bool isReady() const override;
 
-    virtual void zoomIn() override;
-    virtual void zoomOut() override;
+    void zoomIn() override;
+    void zoomOut() override;
 
-    virtual void saveSettingsToGroup(KConfigGroup* const group) override;
-    virtual void readSettingsFromGroup(const KConfigGroup* const group) override;
+    void saveSettingsToGroup(KConfigGroup* const group) override;
+    void readSettingsFromGroup(const KConfigGroup* const group) override;
 
-    virtual void addActionsToConfigurationMenu(QMenu* const configurationMenu) override;
+    void addActionsToConfigurationMenu(QMenu* const configurationMenu) override;
 
-    virtual void updateMarkers() override;
-    virtual void updateClusters() override;
+    void updateMarkers() override;
+    void updateClusters() override;
 
     QString getMapTheme() const;
     void setMapTheme(const QString& newMapTheme);
@@ -80,20 +80,20 @@ public:
     QString getProjection() const;
     void setProjection(const QString& newProjection);
 
-    virtual bool screenCoordinates(const GeoCoordinates& coordinates, QPoint* const point) override;
-    virtual bool geoCoordinates(const QPoint& point, GeoCoordinates* const coordinates) const override;
-    virtual QSize mapSize() const override;
+    bool screenCoordinates(const GeoCoordinates& coordinates, QPoint* const point) override;
+    bool geoCoordinates(const QPoint& point, GeoCoordinates* const coordinates) const override;
+    QSize mapSize() const override;
 
-    virtual void setZoom(const QString& newZoom) override;
-    virtual QString getZoom() const override;
+    void setZoom(const QString& newZoom) override;
+    QString getZoom() const override;
 
-    virtual int getMarkerModelLevel() override;
-    virtual GeoCoordinates::PairList getNormalizedBounds() override;
+    int getMarkerModelLevel() override;
+    GeoCoordinates::PairList getNormalizedBounds() override;
 /*
     virtual void updateDragDropMarker(const QPoint& pos, const GeoIfaceDragData* const dragData);
     virtual void updateDragDropMarkerPosition(const QPoint& pos);
 */
-    virtual void updateActionAvailability() override;
+    void updateActionAvailability() override;
 
     void marbleCustomPaint(Marble::GeoPainter* painter);
     void setShowCompass(const bool state);
@@ -101,16 +101,16 @@ public:
     void setShowNavigation(const bool state);
     void setShowOverviewMap(const bool state);
 
-    virtual void regionSelectionChanged() override;
-    virtual void mouseModeChanged() override;
+    void regionSelectionChanged() override;
+    void mouseModeChanged() override;
 
-    virtual void centerOn(const Marble::GeoDataLatLonBox& box, const bool useSaneZoomLevel) override;
-    virtual void setActive(const bool state) override;
+    void centerOn(const Marble::GeoDataLatLonBox& box, const bool useSaneZoomLevel) override;
+    void setActive(const bool state) override;
 
 public Q_SLOTS:
 
-    virtual void slotClustersNeedUpdating() override;
-    virtual void slotThumbnailAvailableForIndex(const QVariant& index, const QPixmap& pixmap) override;
+    void slotClustersNeedUpdating() override;
+    void slotThumbnailAvailableForIndex(const QVariant& index, const QPixmap& pixmap) override;
     void slotUngroupedModelChanged(const int index);
     void slotTrackManagerChanged() override;
 

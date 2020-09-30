@@ -43,7 +43,7 @@ class TrackCorrelatorThread : public QThread
 public:
 
     explicit TrackCorrelatorThread(QObject* const parent = nullptr);
-    virtual ~TrackCorrelatorThread();
+    ~TrackCorrelatorThread() override;
 
 public:
 
@@ -55,7 +55,7 @@ public:
 
 protected:
 
-    virtual void run() override;
+    void run() override;
 
 Q_SIGNALS:
 

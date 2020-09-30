@@ -56,13 +56,13 @@ class DIGIKAM_EXPORT BackendMarbleLayer : public Marble::LayerInterface
 public:
 
     explicit BackendMarbleLayer(BackendMarble* const pMarbleBackend);
-    virtual ~BackendMarbleLayer();
+    ~BackendMarbleLayer() override;
 
-    virtual bool render(Marble::GeoPainter* painter,
+    bool render(Marble::GeoPainter* painter,
                         Marble::ViewportParams* viewport,
                         const QString& renderPos = QLatin1String("NONE"),
                         Marble::GeoSceneLayer* layer = nullptr) override;
-    virtual QStringList renderPosition () const override;
+    QStringList renderPosition () const override;
 
     void setBackend(BackendMarble* const pMarbleBackend);
 

@@ -62,15 +62,15 @@ public:
     };
 
     explicit TrackReader(TrackReadResult* const dataTarget);
-    virtual ~TrackReader();
+    ~TrackReader() override;
 
-    virtual bool characters(const QString& ch)              override;
+    bool characters(const QString& ch)              override;
 
-    virtual bool endElement(const QString& namespaceURI,
+    bool endElement(const QString& namespaceURI,
                             const QString& localName,
                             const QString& qName)           override;
 
-    virtual bool startElement(const QString& namespaceURI,
+    bool startElement(const QString& namespaceURI,
                               const QString& localName,
                               const QString& qName,
                               const QXmlAttributes& atts)   override;

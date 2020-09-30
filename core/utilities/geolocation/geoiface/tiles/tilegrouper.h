@@ -42,7 +42,7 @@ public:
 
     explicit TileGrouper(const QExplicitlySharedDataPointer<GeoIfaceSharedData>& sharedData,
                          QObject* const parent);
-    ~TileGrouper();
+    ~TileGrouper() override;
 
     void setClustersDirty();
     bool getClustersDirty() const;

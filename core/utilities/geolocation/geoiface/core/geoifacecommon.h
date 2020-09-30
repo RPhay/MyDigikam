@@ -128,7 +128,7 @@ public:
 private:
 
     GeoIfaceGlobalObject();
-    ~GeoIfaceGlobalObject();
+    ~GeoIfaceGlobalObject() override;
 
     class Private;
     Private* const d;

@@ -52,23 +52,23 @@ public:
     explicit GPSGeoIfaceModelHelper(GPSItemModel* const model,
                                     QItemSelectionModel* const selectionModel,
                                     QObject* const parent = nullptr);
-    virtual ~GPSGeoIfaceModelHelper();
+    ~GPSGeoIfaceModelHelper() override;
 
-    virtual QAbstractItemModel*  model()                                                                    const override;
-    virtual QItemSelectionModel* selectionModel() const override;
+    QAbstractItemModel*  model()                                                                    const override;
+    QItemSelectionModel* selectionModel() const override;
 
-    virtual bool itemCoordinates(const QModelIndex& index,
+    bool itemCoordinates(const QModelIndex& index,
                                  GeoCoordinates* const coordinates)                                         const override;
 
-    virtual PropertyFlags modelFlags()                                                                      const override;
+    PropertyFlags modelFlags()                                                                      const override;
 
-    virtual QPixmap pixmapFromRepresentativeIndex(const QPersistentModelIndex& index,
+    QPixmap pixmapFromRepresentativeIndex(const QPersistentModelIndex& index,
                                                   const QSize& size)                                              override;
 
-    virtual QPersistentModelIndex bestRepresentativeIndexFromList(const QList<QPersistentModelIndex>& list,
+    QPersistentModelIndex bestRepresentativeIndexFromList(const QList<QPersistentModelIndex>& list,
                                                                   const int sortKey)                              override;
 
-    virtual void onIndicesMoved(const QList<QPersistentModelIndex>& movedMarkers,
+    void onIndicesMoved(const QList<QPersistentModelIndex>& movedMarkers,
                                 const GeoCoordinates& targetCoordinates,
                                 const QPersistentModelIndex& targetSnapIndex)                                     override;
 

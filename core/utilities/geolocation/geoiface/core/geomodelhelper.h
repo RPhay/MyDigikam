@@ -62,7 +62,7 @@ public:
 public:
 
     explicit GeoModelHelper(QObject* const parent = nullptr);
-    virtual ~GeoModelHelper();
+    ~GeoModelHelper() override;
 
     void snapItemsTo(const QModelIndex& targetIndex,
                      const QList<QPersistentModelIndex>& snappedIndices);

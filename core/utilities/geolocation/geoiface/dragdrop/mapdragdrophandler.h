@@ -63,11 +63,11 @@ public:
 
     explicit MapDragDropHandler(QAbstractItemModel* const /*pModel*/,
                                 GPSGeoIfaceModelHelper* const parent);
-    virtual ~MapDragDropHandler();
+    ~MapDragDropHandler() override;
 
-    virtual Qt::DropAction accepts(const QDropEvent* e)                                 override;
-    virtual bool dropEvent(const QDropEvent* e, const GeoCoordinates& dropCoordinates)  override;
-    virtual QMimeData* createMimeData(const QList<QPersistentModelIndex>& modelIndices) override;
+    Qt::DropAction accepts(const QDropEvent* e)                                 override;
+    bool dropEvent(const QDropEvent* e, const GeoCoordinates& dropCoordinates)  override;
+    QMimeData* createMimeData(const QList<QPersistentModelIndex>& modelIndices) override;
 
 private:
 

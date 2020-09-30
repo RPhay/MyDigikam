@@ -61,7 +61,7 @@ class DIGIKAM_EXPORT MapWidget : public QWidget
 public:
 
     explicit MapWidget(QWidget* const parent = nullptr);
-    ~MapWidget();
+    ~MapWidget() override;
 
     void saveSettingsToGroup(KConfigGroup* const group);
     void readSettingsFromGroup(const KConfigGroup* const group);

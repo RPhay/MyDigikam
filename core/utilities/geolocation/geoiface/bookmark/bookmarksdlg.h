@@ -50,7 +50,7 @@ public:
                                const QString& title,
                                QWidget* const parent = nullptr,
                                BookmarksManager* const mngr = nullptr);
-    ~AddBookmarkDialog();
+    ~AddBookmarkDialog() override;
 
 private Q_SLOTS:
 
@@ -71,7 +71,7 @@ class DIGIKAM_EXPORT BookmarksDialog : public QDialog
 public:
 
     explicit BookmarksDialog(QWidget* const parent = nullptr, BookmarksManager* const mngr = nullptr);
-    ~BookmarksDialog();
+    ~BookmarksDialog() override;
 
 private Q_SLOTS:
 

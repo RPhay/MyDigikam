@@ -47,13 +47,13 @@ class GPSItemSortProxyModel : public QSortFilterProxyModel
 public:
 
     explicit GPSItemSortProxyModel(GPSItemModel* const imageModel, QItemSelectionModel* const sourceSelectionModel);
-    ~GPSItemSortProxyModel();
+    ~GPSItemSortProxyModel() override;
 
     QItemSelectionModel* mappedSelectionModel() const;
 
 protected:
 
-    virtual bool lessThan(const QModelIndex& left, const QModelIndex& right) const override;
+    bool lessThan(const QModelIndex& left, const QModelIndex& right) const override;
 
 private:
 
@@ -88,7 +88,7 @@ public:
                               QItemSelectionModel* const linkedItemSelectionModel,
                               QObject* const parent = nullptr);
     explicit GPSLinkItemSelectionModel(QObject* const parent = nullptr);
-    ~GPSLinkItemSelectionModel();
+    ~GPSLinkItemSelectionModel() override;
 
     QItemSelectionModel* linkedItemSelectionModel() const;
     void setLinkedItemSelectionModel(QItemSelectionModel* const selectionModel);
@@ -151,7 +151,7 @@ public:
     explicit GPSModelIndexProxyMapper(const QAbstractItemModel* const leftModel,
                                       const QAbstractItemModel* const rightModel,
                                       QObject* const parent = nullptr);
-    ~GPSModelIndexProxyMapper();
+    ~GPSModelIndexProxyMapper() override;
 
     /**
      * Maps the @p index from the left model to the right model.

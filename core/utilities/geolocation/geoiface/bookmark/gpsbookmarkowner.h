@@ -49,7 +49,7 @@ class DIGIKAM_EXPORT GPSBookmarkOwner : public QObject
 public:
 
     GPSBookmarkOwner(GPSItemModel* const gpsItemModel, QWidget* const parent);
-    virtual ~GPSBookmarkOwner();
+    ~GPSBookmarkOwner() override;
 
     void changeAddBookmark(const bool state);
     void setPositionAndTitle(const GeoCoordinates& coordinates, const QString& title);

@@ -48,7 +48,7 @@ public:
     explicit RemoveBookmarksCommand(BookmarksManager* const mngr,
                                     BookmarkNode* const parent,
                                     int row);
-    ~RemoveBookmarksCommand();
+    ~RemoveBookmarksCommand() override;
 
     void undo() override;
     void redo() override;
@@ -96,7 +96,7 @@ public:
                                    BookmarkNode* const node,
                                    const QString& newValue,
                                    BookmarkData type);
-    ~ChangeBookmarkCommand();
+    ~ChangeBookmarkCommand() override;
 
     void undo() override;
     void redo() override;
@@ -128,7 +128,7 @@ public:
 public:
 
     explicit BookmarksModel(BookmarksManager* const mngr, QObject* const parent = nullptr);
-    ~BookmarksModel();
+    ~BookmarksModel() override;
 
     BookmarksManager* bookmarksManager()                                                      const;
     QVariant headerData(int section, Qt::Orientation orientation, int role = Qt::DisplayRole) const override;
@@ -217,7 +217,7 @@ class BookmarksManager : public QObject
 public:
 
     explicit BookmarksManager(const QString& bookmarksFile, QObject* const parent = nullptr);
-    ~BookmarksManager();
+    ~BookmarksManager() override;
 
     void addBookmark(BookmarkNode* const parent, BookmarkNode* const node, int row = -1);
     void removeBookmark(BookmarkNode* const node);

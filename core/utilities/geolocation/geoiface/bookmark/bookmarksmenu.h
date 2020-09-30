@@ -49,7 +49,7 @@ class ModelMenu : public QMenu
 public:
 
     explicit ModelMenu(QWidget* const parent = nullptr);
-    ~ModelMenu();
+    ~ModelMenu() override;
 
     void setModel(QAbstractItemModel* model);
     QAbstractItemModel* model() const;
@@ -115,7 +115,7 @@ class BookmarksMenu : public ModelMenu
 public:
 
     explicit BookmarksMenu(BookmarksManager* const mngr, QWidget* const parent = nullptr);
-    ~BookmarksMenu();
+    ~BookmarksMenu() override;
 
     void setInitialActions(const QList<QAction*>& actions);
 
