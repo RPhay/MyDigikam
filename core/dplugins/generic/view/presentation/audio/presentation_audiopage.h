@@ -49,7 +49,7 @@ class SoundtrackPreview : public QDialog
 public :
 
     explicit SoundtrackPreview(QWidget* const, const QList<QUrl>&, PresentationContainer* const);
-    ~SoundtrackPreview();
+    ~SoundtrackPreview() override;
 
 private :
 
@@ -66,7 +66,7 @@ class PresentationAudioPage : public QWidget,
 public:
 
     explicit PresentationAudioPage(QWidget* const parent, PresentationContainer* const sharedData);
-    ~PresentationAudioPage();
+    ~PresentationAudioPage() override;
 
     void readSettings();
     void saveSettings();

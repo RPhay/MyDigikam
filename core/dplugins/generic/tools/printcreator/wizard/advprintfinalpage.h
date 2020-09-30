@@ -51,11 +51,11 @@ class AdvPrintFinalPage : public DWizardPage
 public:
 
     explicit AdvPrintFinalPage(QWizard* const dialog, const QString& title);
-    ~AdvPrintFinalPage();
+    ~AdvPrintFinalPage() override;
 
-    void initializePage();
-    bool isComplete() const;
-    void cleanupPage();
+    void initializePage() override;
+    bool isComplete() const override;
+    void cleanupPage() override;
 
     bool checkTempPath(const QString& tempPath) const;
     void removeGimpFiles();

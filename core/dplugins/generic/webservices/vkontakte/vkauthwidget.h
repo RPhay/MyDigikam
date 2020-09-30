@@ -47,7 +47,7 @@ class VKAuthWidget : public QGroupBox
 public:
 
     explicit VKAuthWidget(QWidget* const parent, Vkontakte::VkApi* const vkapi);
-    ~VKAuthWidget();
+    ~VKAuthWidget() override;
 
     QString albumsURL() const;
 

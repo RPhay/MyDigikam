@@ -63,7 +63,7 @@ public:
 public:
 
     explicit SlideShowLoader(SlideShowSettings* const settings);
-    ~SlideShowLoader();
+    ~SlideShowLoader() override;
 
     void setCurrentItem(const QUrl& url);
     QUrl currentItem() const;

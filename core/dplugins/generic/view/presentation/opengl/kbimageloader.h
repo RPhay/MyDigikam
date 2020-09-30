@@ -49,7 +49,7 @@ class KBImageLoader : public QThread
 public:
 
     KBImageLoader(PresentationContainer* const sharedData, int width, int height);
-    ~KBImageLoader();
+    ~KBImageLoader() override;
 
     void  quit();
     void  requestNewImage();
@@ -62,7 +62,7 @@ public:
 
 protected:
 
-    void run();
+    void run() override;
     bool loadImage();
     void invalidateCurrentImageName();
 

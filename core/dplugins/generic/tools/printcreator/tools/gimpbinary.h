@@ -63,7 +63,7 @@ public:
             setup();
         }
 
-    ~GimpBinary()
+    ~GimpBinary() override
     {
     }
 };

@@ -43,7 +43,7 @@ class InsertTextToolPlugin : public DPluginEditor
 public:
 
     explicit InsertTextToolPlugin(QObject* const parent = nullptr);
-    ~InsertTextToolPlugin();
+    ~InsertTextToolPlugin() override;
 
     QString name()                 const override;
     QString iid()                  const override;

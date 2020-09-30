@@ -39,7 +39,7 @@ class IPTCOrigin : public QWidget
 public:
 
     explicit IPTCOrigin(QWidget* const parent);
-    ~IPTCOrigin();
+    ~IPTCOrigin() override;
 
     void applyMetadata(QByteArray& exifData, QByteArray& iptcData);
     void readMetadata(QByteArray& iptcData);

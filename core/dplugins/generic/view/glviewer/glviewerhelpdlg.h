@@ -39,7 +39,7 @@ class GLViewerHelpDlg : public DPluginDialog
 public:
 
     explicit GLViewerHelpDlg(DPlugin* const plugin);
-    ~GLViewerHelpDlg();
+    ~GLViewerHelpDlg() override;
 };
 
 } // namespace DigikamGenericGLViewerPlugin

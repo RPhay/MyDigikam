@@ -57,7 +57,7 @@ public:
     /**
      * Destructor.
      */
-    ~FTExportWidget();
+    ~FTExportWidget() override;
 
     /**
      * Returns a pointer to the imagelist that is displayed.

@@ -40,23 +40,23 @@ class ConvertToPGF : public BatchTool
 public:
 
     explicit ConvertToPGF(QObject* const parent = nullptr);
-    ~ConvertToPGF();
+    ~ConvertToPGF() override;
 
-    QString outputSuffix() const;
-    BatchToolSettings defaultSettings();
+    QString outputSuffix() const override;
+    BatchToolSettings defaultSettings() override;
 
-    BatchTool* clone(QObject* const parent=nullptr) const { return new ConvertToPGF(parent); };
+    BatchTool* clone(QObject* const parent=nullptr) const override { return new ConvertToPGF(parent); };
 
-    void registerSettingsWidget();
+    void registerSettingsWidget() override;
 
 private Q_SLOTS:
 
-    void slotSettingsChanged();
-    void slotAssignSettings2Widget();
+    void slotSettingsChanged() override;
+    void slotAssignSettings2Widget() override;
 
 private:
 
-    bool toolOperations();
+    bool toolOperations() override;
 
 private:
 

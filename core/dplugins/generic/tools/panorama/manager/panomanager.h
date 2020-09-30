@@ -58,7 +58,7 @@ class PanoManager : public QObject
 public:
 
     explicit PanoManager(QObject* const parent = nullptr);
-    ~PanoManager();
+    ~PanoManager() override;
 
 public:
 

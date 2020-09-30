@@ -41,7 +41,7 @@ public:
                    const QString& description = QString(),
                    int privacy = AlbumInfo::PRIVACY_UNKNOWN,
                    int comment_privacy = AlbumInfo::PRIVACY_UNKNOWN);
-    ~CreateAlbumJob();
+    ~CreateAlbumJob() override;
 
     AlbumInfo album() const;
 

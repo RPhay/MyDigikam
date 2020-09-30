@@ -43,10 +43,10 @@ class HTMLFinalPage : public DWizardPage
 public:
 
     explicit HTMLFinalPage(QWizard* const dialog, const QString& title);
-    ~HTMLFinalPage();
+    ~HTMLFinalPage() override;
 
-    void initializePage();
-    bool isComplete() const;
+    void initializePage() override;
+    bool isComplete() const override;
 
 private Q_SLOTS:
 

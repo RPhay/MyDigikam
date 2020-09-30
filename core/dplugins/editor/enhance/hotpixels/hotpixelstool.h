@@ -50,23 +50,23 @@ class HotPixelsTool : public Digikam::EditorToolThreaded
 public:
 
     explicit HotPixelsTool(QObject* const parent);
-    ~HotPixelsTool();
+    ~HotPixelsTool() override;
 
     static void registerFilter();
 
 private Q_SLOTS:
 
     void slotHotPixels(const QPolygon&);
-    void slotResetSettings();
+    void slotResetSettings() override;
 
 private:
 
-    void readSettings();
-    void writeSettings();
-    void preparePreview();
-    void prepareFinal();
-    void setPreviewImage();
-    void setFinalImage();
+    void readSettings() override;
+    void writeSettings() override;
+    void preparePreview() override;
+    void prepareFinal() override;
+    void setPreviewImage() override;
+    void setFinalImage() override;
 
 private:
 

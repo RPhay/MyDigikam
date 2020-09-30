@@ -94,7 +94,7 @@ class EnfuseSettingsWidget : public QWidget
 public:
 
     explicit EnfuseSettingsWidget(QWidget* const parent);
-    ~EnfuseSettingsWidget();
+    ~EnfuseSettingsWidget() override;
 
     void           setSettings(const EnfuseSettings& settings);
     EnfuseSettings settings() const;

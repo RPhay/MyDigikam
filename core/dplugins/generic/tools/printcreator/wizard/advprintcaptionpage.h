@@ -50,14 +50,14 @@ class AdvPrintCaptionPage : public DWizardPage
 public:
 
     explicit AdvPrintCaptionPage(QWizard* const wizard, const QString& title);
-    ~AdvPrintCaptionPage();
+    ~AdvPrintCaptionPage() override;
 
     DItemsList* imagesList() const;
 
     void blockCaptionButtons(bool block=true);
 
-    void initializePage();
-    bool validatePage();
+    void initializePage() override;
+    bool validatePage() override;
 
     static QString captionFormatter(AdvPrintPhoto* const photo);
 

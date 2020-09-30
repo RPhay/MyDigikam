@@ -48,7 +48,7 @@ public:
             setup();
         }
 
-    ~HuginExecutorBinary()
+    ~HuginExecutorBinary() override
     {
     }
 };

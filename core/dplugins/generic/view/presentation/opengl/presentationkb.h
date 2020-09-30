@@ -117,7 +117,7 @@ public:
 
     explicit PresentationKB(PresentationContainer* const sharedData);
 
-    ~PresentationKB();
+    ~PresentationKB() override;
 
     static QStringList            effectNames();
     static QMap<QString, QString> effectNamesI18N();

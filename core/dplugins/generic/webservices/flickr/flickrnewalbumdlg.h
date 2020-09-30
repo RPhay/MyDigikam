@@ -43,7 +43,7 @@ class FlickrNewAlbumDlg : public WSNewAlbumDialog
 public:
 
     explicit FlickrNewAlbumDlg(QWidget* const parent, const QString& toolName);
-    ~FlickrNewAlbumDlg();
+    ~FlickrNewAlbumDlg() override;
 
     void getFolderProperties(FPhotoSet& folder);
 };

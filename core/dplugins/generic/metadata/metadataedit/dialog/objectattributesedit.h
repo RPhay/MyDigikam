@@ -39,7 +39,7 @@ class ObjectAttributesEdit : public QWidget
 public:
 
     explicit ObjectAttributesEdit(QWidget* const parent, int size=-1);
-    ~ObjectAttributesEdit();
+    ~ObjectAttributesEdit() override;
 
     void setValid(bool v);
     bool isValid() const;

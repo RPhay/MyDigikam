@@ -49,7 +49,7 @@ class DImgHEIFLoader : public DImgLoader
 public:
 
     explicit DImgHEIFLoader(DImg* const image);
-    ~DImgHEIFLoader();
+    ~DImgHEIFLoader() override;
 
     bool load(const QString& filePath, DImgLoaderObserver* const observer) override;
     bool save(const QString& filePath, DImgLoaderObserver* const observer) override;

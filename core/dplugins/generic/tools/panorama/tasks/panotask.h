@@ -40,12 +40,12 @@ public:
 
     explicit PanoTask(PanoAction action,
                       const QString& workDirPath);
-    ~PanoTask();
+    ~PanoTask() override;
 
 public:
 
-    bool success() const;
-    void requestAbort();
+    bool success() const override;
+    void requestAbort() override;
 
 public:
 

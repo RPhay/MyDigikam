@@ -45,7 +45,7 @@ class PresentationCtrlWidget : public QWidget,
 public:
 
     explicit PresentationCtrlWidget(QWidget* const parent);
-    ~PresentationCtrlWidget();
+    ~PresentationCtrlWidget() override;
 
     bool canHide()  const;
     bool isPaused() const;

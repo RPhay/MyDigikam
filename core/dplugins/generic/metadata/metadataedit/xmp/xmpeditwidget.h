@@ -42,7 +42,7 @@ class XMPEditWidget : public DConfigDlgWdg
 public:
 
     explicit XMPEditWidget(MetadataEditDialog* const parent);
-    ~XMPEditWidget();
+    ~XMPEditWidget() override;
 
     bool isModified() const;
     void saveSettings();

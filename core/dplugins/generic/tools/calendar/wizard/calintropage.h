@@ -42,7 +42,7 @@ class CalIntroPage : public DWizardPage
 public:
 
     explicit CalIntroPage(QWizard* const dialog, const QString& title);
-    ~CalIntroPage();
+    ~CalIntroPage() override;
 };
 
 } // namespace DigikamGenericCalendarPlugin

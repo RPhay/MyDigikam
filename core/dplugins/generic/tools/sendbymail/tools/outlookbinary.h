@@ -48,7 +48,7 @@ public:
             setup();
         }
 
-    ~OutlookBinary()
+    ~OutlookBinary() override
     {
     }
 };

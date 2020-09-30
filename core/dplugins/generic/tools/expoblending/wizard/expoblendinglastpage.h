@@ -38,7 +38,7 @@ class ExpoBlendingLastPage : public DWizardPage
 public:
 
     explicit ExpoBlendingLastPage(ExpoBlendingManager* const mngr, QWizard* const dlg);
-    ~ExpoBlendingLastPage();
+    ~ExpoBlendingLastPage() override;
 
 private:
 

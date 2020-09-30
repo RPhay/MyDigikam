@@ -49,7 +49,7 @@ public:
             setup();
         }
 
-    ~EvolutionBinary()
+    ~EvolutionBinary() override
     {
     }
 };

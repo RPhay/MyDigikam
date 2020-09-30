@@ -51,7 +51,7 @@ public:
             setup();
         }
 
-    ~NonaBinary()
+    ~NonaBinary() override
     {
     }
 };

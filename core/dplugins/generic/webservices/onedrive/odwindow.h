@@ -49,7 +49,7 @@ class ODWindow : public WSToolDialog
 public:
 
     explicit ODWindow(DInfoInterface* const iface, QWidget* const parent);
-    ~ODWindow();
+    ~ODWindow() override;
 
     void reactivate();
 

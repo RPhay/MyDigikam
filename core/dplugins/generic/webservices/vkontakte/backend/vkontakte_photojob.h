@@ -41,7 +41,7 @@ class PhotoJob : public KJobWithSubjob
 public:
 
     explicit PhotoJob(const QUrl& url);
-    ~PhotoJob();
+    ~PhotoJob() override;
 
     void start() override;
     QImage photo() const;

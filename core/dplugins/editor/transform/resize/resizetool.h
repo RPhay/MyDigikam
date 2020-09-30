@@ -44,17 +44,17 @@ class ResizeTool : public EditorToolThreaded
 public:
 
     explicit ResizeTool(QObject* const parent);
-    ~ResizeTool();
+    ~ResizeTool() override;
 
 private:
 
-    void writeSettings();
-    void readSettings();
-    void preparePreview();
-    void prepareFinal();
-    void setPreviewImage();
-    void setFinalImage();
-    void renderingFinished();
+    void writeSettings() override;
+    void readSettings() override;
+    void preparePreview() override;
+    void prepareFinal() override;
+    void setPreviewImage() override;
+    void setFinalImage() override;
+    void renderingFinished() override;
     void blockWidgetSignals(bool b);
 
     double pixelsToUnits(int pix);
@@ -62,9 +62,9 @@ private:
 
 private Q_SLOTS:
 
-    void slotSaveAsSettings();
-    void slotLoadSettings();
-    void slotResetSettings();
+    void slotSaveAsSettings() override;
+    void slotLoadSettings() override;
+    void slotResetSettings() override;
     void slotValuesChanged();
     void slotUnitsChanged();
     void slotPresetsChanged();

@@ -61,7 +61,7 @@ class MediaWikiWidget : public QWidget
 public:
 
     explicit MediaWikiWidget(DInfoInterface* const iface, QWidget* const parent);
-    ~MediaWikiWidget();
+    ~MediaWikiWidget() override;
 
 public:
 

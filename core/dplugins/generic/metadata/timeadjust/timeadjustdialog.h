@@ -48,7 +48,7 @@ class TimeAdjustDialog : public DPluginDialog
 public:
 
     explicit TimeAdjustDialog(QWidget* const parent, DInfoInterface* const iface);
-    ~TimeAdjustDialog();
+    ~TimeAdjustDialog() override;
 
 private Q_SLOTS:
 

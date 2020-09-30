@@ -66,7 +66,7 @@ public:
     explicit KmlWidget(GeolocationEdit* const dlg,
                        GPSItemModel* const imageModel,
                        DInfoInterface* const iface);
-    ~KmlWidget();
+    ~KmlWidget() override;
 
 public:
 

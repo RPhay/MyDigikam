@@ -52,7 +52,7 @@ class PresentationMngr : public QObject
 public:
 
     explicit PresentationMngr(QObject* const parent, DInfoInterface* const iface);
-    ~PresentationMngr();
+    ~PresentationMngr() override;
 
     void addFiles(const QList<QUrl>& urls);
     void showConfigDialog();

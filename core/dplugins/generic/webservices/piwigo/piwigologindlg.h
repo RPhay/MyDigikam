@@ -46,7 +46,7 @@ public:
     explicit PiwigoLoginDlg(QWidget* const pParent,
                             PiwigoSession* const pPiwigo,
                             const QString& title);
-    ~PiwigoLoginDlg();
+    ~PiwigoLoginDlg() override;
 
 private Q_SLOTS:
 

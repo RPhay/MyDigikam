@@ -41,11 +41,11 @@ class AdvPrintOutputPage : public DWizardPage
 public:
 
     explicit AdvPrintOutputPage(QWizard* const dialog, const QString& title);
-    ~AdvPrintOutputPage();
+    ~AdvPrintOutputPage() override;
 
-    void initializePage();
-    bool validatePage();
-    bool isComplete() const;
+    void initializePage() override;
+    bool validatePage() override;
+    bool isComplete() const override;
 
 private:
 

@@ -54,7 +54,7 @@ public:
 
     explicit KmlExport(DInfoInterface* const iface);
 
-    ~KmlExport();
+    ~KmlExport() override;
 
     void setUrls(const QList<QUrl>& urls);
 

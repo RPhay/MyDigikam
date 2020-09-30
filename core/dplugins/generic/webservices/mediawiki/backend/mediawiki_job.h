@@ -64,7 +64,7 @@ public:
     /**
      * @brief Destructs the Job.
      */
-    virtual ~Job();
+    ~Job() override;
 
     /**
      * @brief Aborts this job quietly.

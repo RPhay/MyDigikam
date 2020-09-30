@@ -43,10 +43,10 @@ class MailAlbumsPage : public DWizardPage
 public:
 
     explicit MailAlbumsPage(QWizard* const dialog, const QString& title);
-    ~MailAlbumsPage();
+    ~MailAlbumsPage() override;
 
-    bool validatePage();
-    bool isComplete() const;
+    bool validatePage() override;
+    bool isComplete() const override;
 
 private:
 

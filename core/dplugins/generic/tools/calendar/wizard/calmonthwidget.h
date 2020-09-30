@@ -55,7 +55,7 @@ class CalMonthWidget : public QPushButton
 public:
 
     explicit CalMonthWidget(QWidget* const parent, int month);
-    ~CalMonthWidget();
+    ~CalMonthWidget() override;
 
     QUrl imagePath() const;
     void setImage(const QUrl& url);

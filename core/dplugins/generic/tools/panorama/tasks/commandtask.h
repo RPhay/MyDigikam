@@ -39,9 +39,9 @@ class CommandTask : public PanoTask
 public:
 
     explicit CommandTask(PanoAction action, const QString& workDirPath, const QString& commandPath);
-    ~CommandTask();
+    ~CommandTask() override;
 
-    void    requestAbort();
+    void    requestAbort() override;
 
 protected:
 

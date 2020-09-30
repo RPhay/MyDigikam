@@ -42,7 +42,7 @@ class EXIFEditWidget : public DConfigDlgWdg
 public:
 
     explicit EXIFEditWidget(MetadataEditDialog* const parent);
-    ~EXIFEditWidget();
+    ~EXIFEditWidget() override;
 
     bool isModified() const;
     void saveSettings();

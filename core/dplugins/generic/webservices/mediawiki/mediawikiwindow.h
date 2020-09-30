@@ -47,7 +47,7 @@ class MediaWikiWindow : public WSToolDialog
 public:
 
     explicit MediaWikiWindow(DInfoInterface* const iface, QWidget* const parent);
-    ~MediaWikiWindow();
+    ~MediaWikiWindow() override;
 
 public:
 

@@ -44,7 +44,7 @@ class AltLangStringsEdit : public QWidget
 public:
 
     explicit AltLangStringsEdit(QWidget* const parent, const QString& title, const QString& desc);
-    ~AltLangStringsEdit();
+    ~AltLangStringsEdit() override;
 
     void setValues(const DMetadata::AltLangMap& values);
     bool getValues(DMetadata::AltLangMap& oldValues, DMetadata::AltLangMap& newValues);

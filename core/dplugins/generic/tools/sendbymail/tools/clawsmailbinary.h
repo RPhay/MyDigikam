@@ -49,7 +49,7 @@ public:
             setup();
         }
 
-    ~ClawsMailBinary()
+    ~ClawsMailBinary() override
     {
     }
 };

@@ -49,7 +49,7 @@ public:
             setup();
         }
 
-    ~NetscapeBinary()
+    ~NetscapeBinary() override
     {
     }
 };

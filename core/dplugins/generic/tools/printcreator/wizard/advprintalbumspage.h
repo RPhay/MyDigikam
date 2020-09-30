@@ -43,10 +43,10 @@ class AdvPrintAlbumsPage : public DWizardPage
 public:
 
     explicit AdvPrintAlbumsPage(QWizard* const dialog, const QString& title);
-    ~AdvPrintAlbumsPage();
+    ~AdvPrintAlbumsPage() override;
 
-    bool validatePage();
-    bool isComplete() const;
+    bool validatePage() override;
+    bool isComplete() const override;
 
 private:
 

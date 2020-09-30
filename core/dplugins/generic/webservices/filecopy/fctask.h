@@ -47,7 +47,7 @@ public:
 
     explicit FCTask(const QUrl& srcUrl,
                     const FCContainer& settings);
-    ~FCTask();
+    ~FCTask() override;
 
 Q_SIGNALS:
 
@@ -55,7 +55,7 @@ Q_SIGNALS:
 
 protected:
 
-    void run();
+    void run() override;
 
 private:
 

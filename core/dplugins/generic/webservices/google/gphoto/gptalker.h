@@ -48,7 +48,7 @@ class GPTalker : public GSTalkerBase
 public:
 
     explicit GPTalker(QWidget* const parent);
-    ~GPTalker();
+    ~GPTalker() override;
 
 public:
 

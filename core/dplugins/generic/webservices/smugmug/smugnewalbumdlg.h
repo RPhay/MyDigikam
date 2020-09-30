@@ -43,7 +43,7 @@ class SmugNewAlbumDlg : public QDialog
 public:
 
     explicit SmugNewAlbumDlg(QWidget* const parent);
-    ~SmugNewAlbumDlg();
+    ~SmugNewAlbumDlg() override;
 
     void getAlbumProperties(SmugAlbum& album);
 

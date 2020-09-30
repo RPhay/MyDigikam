@@ -120,7 +120,7 @@ public:
     /**
      * @brief Destroys the Login job.
      */
-    virtual ~Login();
+    ~Login() override;
 
     /**
      * @brief Starts the job asynchronously.

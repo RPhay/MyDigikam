@@ -40,23 +40,23 @@ class NoiseReductionTool : public EditorToolThreaded
 public:
 
     explicit NoiseReductionTool(QObject* const parent);
-    ~NoiseReductionTool();
+    ~NoiseReductionTool() override;
 
 private:
 
-    void readSettings();
-    void writeSettings();
-    void preparePreview();
-    void prepareFinal();
-    void setPreviewImage();
-    void setFinalImage();
-    void analyserCompleted();
+    void readSettings() override;
+    void writeSettings() override;
+    void preparePreview() override;
+    void prepareFinal() override;
+    void setPreviewImage() override;
+    void setFinalImage() override;
+    void analyserCompleted() override;
 
 private Q_SLOTS:
 
-    void slotResetSettings();
-    void slotLoadSettings();
-    void slotSaveAsSettings();
+    void slotResetSettings() override;
+    void slotLoadSettings() override;
+    void slotSaveAsSettings() override;
     void slotEstimateNoise();
 
 private:

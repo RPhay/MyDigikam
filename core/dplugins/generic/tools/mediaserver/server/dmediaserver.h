@@ -44,7 +44,7 @@ class DMediaServer : public QObject
 public:
 
     explicit DMediaServer(QObject* const parent = nullptr);
-    virtual ~DMediaServer();
+    ~DMediaServer() override;
 
     /**
      * Initialize the internal server instance and return true if all is ready to host contents.

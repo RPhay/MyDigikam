@@ -49,7 +49,7 @@ public:
     explicit PWidget(QWidget* const parent,
                      DInfoInterface* const iface,
                      const QString& toolName);
-    ~PWidget();
+    ~PWidget() override;
 
     void updateLabels(const QString& name = QString(),
                       const QString& url = QString()) override;

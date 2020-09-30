@@ -43,7 +43,7 @@ class ConvertToJpegPlugin : public DPluginBqm
 public:
 
     explicit ConvertToJpegPlugin(QObject* const parent = nullptr);
-    ~ConvertToJpegPlugin();
+    ~ConvertToJpegPlugin() override;
 
     QString name()                 const override;
     QString iid()                  const override;

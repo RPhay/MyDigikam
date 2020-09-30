@@ -83,7 +83,7 @@ public:
 public:
 
     explicit FlickrList(QWidget* const parent = nullptr);
-    ~FlickrList();
+    ~FlickrList() override;
 
     void setPublic(Qt::CheckState);
     void setFamily(Qt::CheckState);
@@ -137,7 +137,7 @@ public:
                                 bool, bool, bool,
                                 FlickrList::SafetyLevel,
                                 FlickrList::ContentType);
-    ~FlickrListViewItem();
+    ~FlickrListViewItem() override;
 
     void setPublic(bool);
     void setFamily(bool);

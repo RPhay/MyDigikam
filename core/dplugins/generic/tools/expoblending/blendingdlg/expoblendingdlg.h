@@ -51,7 +51,7 @@ class ExpoBlendingDlg : public QDialog
 public:
 
     explicit ExpoBlendingDlg(ExpoBlendingManager* const mngr, QWidget* const parent=nullptr);
-    ~ExpoBlendingDlg();
+    ~ExpoBlendingDlg() override;
 
     void loadItems(const QList<QUrl>& urls);
 

@@ -42,24 +42,24 @@ class ConvertToDNG : public BatchTool
 public:
 
     explicit ConvertToDNG(QObject* const parent = nullptr);
-    ~ConvertToDNG();
+    ~ConvertToDNG() override;
 
-    void cancel();
-    QString outputSuffix() const;
-    BatchToolSettings defaultSettings();
+    void cancel() override;
+    QString outputSuffix() const override;
+    BatchToolSettings defaultSettings() override;
 
-    BatchTool* clone(QObject* const parent=nullptr) const { return new ConvertToDNG(parent); };
+    BatchTool* clone(QObject* const parent=nullptr) const override { return new ConvertToDNG(parent); };
 
-    void registerSettingsWidget();
+    void registerSettingsWidget() override;
 
 private Q_SLOTS:
 
-    void slotSettingsChanged();
-    void slotAssignSettings2Widget();
+    void slotSettingsChanged() override;
+    void slotAssignSettings2Widget() override;
 
 private:
 
-    bool toolOperations();
+    bool toolOperations() override;
 
 private:
 

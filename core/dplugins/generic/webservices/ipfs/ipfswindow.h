@@ -48,7 +48,7 @@ class IpfsWindow : public WSToolDialog
 public:
 
     explicit IpfsWindow(DInfoInterface* const iface, QWidget* const parent = nullptr);
-    ~IpfsWindow();
+    ~IpfsWindow() override;
 
     void reactivate();
 

@@ -46,7 +46,7 @@ class EnfuseStackItem : public QTreeWidgetItem
 public:
 
     explicit EnfuseStackItem(QTreeWidget* const parent);
-    ~EnfuseStackItem();
+    ~EnfuseStackItem() override;
 
     /**
      * Return the preview image url assigned to item.
@@ -79,7 +79,7 @@ class EnfuseStackList : public QTreeWidget
 public:
 
     explicit EnfuseStackList(QWidget* const parent);
-    ~EnfuseStackList();
+    ~EnfuseStackList() override;
 
     void setTemplateFileName(DSaveSettingsWidget::OutputFormat, const QString&);
 

@@ -54,7 +54,7 @@ class VKAlbumChooser : public QGroupBox
 public:
 
     explicit VKAlbumChooser(QWidget* const parent, Vkontakte::VkApi* const vkapi);
-    ~VKAlbumChooser();
+    ~VKAlbumChooser() override;
 
 public:
 

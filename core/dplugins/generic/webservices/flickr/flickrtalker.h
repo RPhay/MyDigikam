@@ -73,7 +73,7 @@ public:
 
     explicit FlickrTalker(QWidget* const parent, const QString& serviceName,
                           DInfoInterface* const iface);
-    ~FlickrTalker();
+    ~FlickrTalker() override;
 
     void    link(const QString& userName);
     void    unLink();

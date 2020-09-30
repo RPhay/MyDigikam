@@ -40,23 +40,23 @@ class ConvertToJPEG : public BatchTool
 public:
 
     explicit ConvertToJPEG(QObject* const parent = nullptr);
-    ~ConvertToJPEG();
+    ~ConvertToJPEG() override;
 
-    QString outputSuffix() const;
-    BatchToolSettings defaultSettings();
+    QString outputSuffix() const override;
+    BatchToolSettings defaultSettings() override;
 
-    BatchTool* clone(QObject* const parent=nullptr) const { return new ConvertToJPEG(parent); };
+    BatchTool* clone(QObject* const parent=nullptr) const override { return new ConvertToJPEG(parent); };
 
-    void registerSettingsWidget();
+    void registerSettingsWidget() override;
 
 private Q_SLOTS:
 
-    void slotSettingsChanged();
-    void slotAssignSettings2Widget();
+    void slotSettingsChanged() override;
+    void slotAssignSettings2Widget() override;
 
 private:
 
-    bool toolOperations();
+    bool toolOperations() override;
 
 private:
 

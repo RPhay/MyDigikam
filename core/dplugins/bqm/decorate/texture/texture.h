@@ -41,22 +41,22 @@ class Texture : public BatchTool
 public:
 
     explicit Texture(QObject* const parent = nullptr);
-    ~Texture();
+    ~Texture() override;
 
-    BatchToolSettings defaultSettings();
+    BatchToolSettings defaultSettings() override;
 
-    BatchTool* clone(QObject* const parent=nullptr) const { return new Texture(parent); };
+    BatchTool* clone(QObject* const parent=nullptr) const override { return new Texture(parent); };
 
-    void registerSettingsWidget();
+    void registerSettingsWidget() override;
 
 private Q_SLOTS:
 
-    void slotSettingsChanged();
-    void slotAssignSettings2Widget();
+    void slotSettingsChanged() override;
+    void slotAssignSettings2Widget() override;
 
 private:
 
-    bool toolOperations();
+    bool toolOperations() override;
 
 private:
 

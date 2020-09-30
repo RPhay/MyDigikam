@@ -52,7 +52,7 @@ class GalleryGenerator : public QObject
 public:
 
     explicit GalleryGenerator(GalleryInfo* const);
-    virtual ~GalleryGenerator();
+    ~GalleryGenerator() override;
 
     void setProgressWidgets(DHistoryView* const, DProgressWdg* const);
 

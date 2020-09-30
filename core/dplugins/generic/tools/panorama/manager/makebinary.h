@@ -55,7 +55,7 @@ public:
             setup();
         }
 
-    ~MakeBinary()
+    ~MakeBinary() override
     {
     }
 };

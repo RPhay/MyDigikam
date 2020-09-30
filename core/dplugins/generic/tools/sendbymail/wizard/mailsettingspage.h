@@ -43,10 +43,10 @@ class MailSettingsPage : public DWizardPage
 public:
 
     explicit MailSettingsPage(QWizard* const dialog, const QString& title);
-    ~MailSettingsPage();
+    ~MailSettingsPage() override;
 
-    void initializePage();
-    bool validatePage();
+    void initializePage() override;
+    bool validatePage() override;
 
 private Q_SLOTS:
 

@@ -48,7 +48,7 @@ class TimeAdjustThread : public ActionThreadBase
 public:
 
     explicit TimeAdjustThread(QObject* const parent);
-    ~TimeAdjustThread();
+    ~TimeAdjustThread() override;
 
     void setUpdatedDates(const QMap<QUrl, QDateTime>& itemsMap);
     void setSettings(const TimeAdjustContainer& settings);

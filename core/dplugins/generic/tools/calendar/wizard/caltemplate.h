@@ -46,7 +46,7 @@ class CalTemplate : public QWidget
 public:
 
     explicit CalTemplate(const QList<QUrl>& urlList, QWidget* const parent);
-    ~CalTemplate();
+    ~CalTemplate() override;
 
 private Q_SLOTS:
 

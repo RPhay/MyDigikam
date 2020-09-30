@@ -52,17 +52,17 @@ public:
                                      QItemSelectionModel* const selectionModel,
                                      GPSItemModel* const imageModel,
                                      QObject* const parent = nullptr);
-    ~SearchResultModelHelper();
+    ~SearchResultModelHelper() override;
 
     void setVisibility(const bool state);
 
-    virtual QAbstractItemModel* model() const;
-    virtual QItemSelectionModel* selectionModel() const;
-    virtual bool itemCoordinates(const QModelIndex& index, GeoCoordinates* const coordinates) const;
-    virtual bool itemIcon(const QModelIndex& index, QPoint* const offset, QSize* const size, QPixmap* const pixmap, QUrl* const url) const;
-    virtual PropertyFlags modelFlags() const;
-    virtual PropertyFlags itemFlags(const QModelIndex& index) const;
-    virtual void snapItemsTo(const QModelIndex& targetIndex, const QList<QModelIndex>& snappedIndices);
+    QAbstractItemModel* model() const override;
+    QItemSelectionModel* selectionModel() const override;
+    bool itemCoordinates(const QModelIndex& index, GeoCoordinates* const coordinates) const override;
+    bool itemIcon(const QModelIndex& index, QPoint* const offset, QSize* const size, QPixmap* const pixmap, QUrl* const url) const override;
+    PropertyFlags modelFlags() const override;
+    PropertyFlags itemFlags(const QModelIndex& index) const override;
+    void snapItemsTo(const QModelIndex& targetIndex, const QList<QModelIndex>& snappedIndices) override;
 
 Q_SIGNALS:
 

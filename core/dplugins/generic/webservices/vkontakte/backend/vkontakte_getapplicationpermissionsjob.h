@@ -36,7 +36,7 @@ class GetApplicationPermissionsJob : public VkontakteJob
 public:
 
     explicit GetApplicationPermissionsJob(const QString& accessToken);
-    ~GetApplicationPermissionsJob();
+    ~GetApplicationPermissionsJob() override;
 
     int permissions() const;
 

@@ -46,7 +46,7 @@ class GDTalker : public GSTalkerBase
 public:
 
     explicit GDTalker(QWidget* const parent);
-    ~GDTalker();
+    ~GDTalker() override;
 
 public:
 

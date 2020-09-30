@@ -49,7 +49,7 @@ public:
             setup();
         }
 
-    ~KmailBinary()
+    ~KmailBinary() override
     {
     }
 };

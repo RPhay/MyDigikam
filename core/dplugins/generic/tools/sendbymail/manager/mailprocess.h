@@ -46,7 +46,7 @@ public:
     explicit MailProcess(MailSettings* const settings,
                          DInfoInterface* const iface,
                          QObject* const parent);
-    ~MailProcess();
+    ~MailProcess() override;
 
     void firstStage();
 

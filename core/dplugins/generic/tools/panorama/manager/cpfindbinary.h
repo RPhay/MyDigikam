@@ -52,13 +52,13 @@ public:
             setup();
         }
 
-    ~CPFindBinary()
+    ~CPFindBinary() override
     {
     }
 
 protected:
 
-    virtual bool parseHeader(const QString& output);
+    bool parseHeader(const QString& output) override;
 
 private:
 

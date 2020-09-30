@@ -51,7 +51,7 @@ class PresentationAudioListItem : public QObject, public QListWidgetItem
 public:
 
     explicit PresentationAudioListItem(QListWidget* const parent, const QUrl& url);
-    ~PresentationAudioListItem();
+    ~PresentationAudioListItem() override;
 
     QUrl    url()       const;
     QString artist()    const;

@@ -49,7 +49,7 @@ class CalWizard : public DWizardDlg
 public:
 
     explicit CalWizard(QWidget* const parent, DInfoInterface* const iface = nullptr);
-    ~CalWizard();
+    ~CalWizard() override;
 
     DInfoInterface* iface()    const;
 

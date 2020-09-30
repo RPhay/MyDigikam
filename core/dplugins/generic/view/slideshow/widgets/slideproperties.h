@@ -43,7 +43,7 @@ class SlideProperties : public QWidget
 public:
 
     explicit SlideProperties(SlideShowSettings* const settings, QWidget* const parent);
-    ~SlideProperties();
+    ~SlideProperties() override;
 
     void setCurrentUrl(const QUrl& url);
     void togglePaintEnabled();

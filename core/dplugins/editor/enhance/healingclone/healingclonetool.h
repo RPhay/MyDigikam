@@ -56,11 +56,11 @@ public:
     /**
      * Destructor.
      */
-    ~HealingCloneTool();
+    ~HealingCloneTool() override;
 
 private Q_SLOTS:
 
-    void slotResetSettings();
+    void slotResetSettings() override;
     void slotResized();
 
 public Q_SLOTS:
@@ -84,9 +84,9 @@ public Q_SLOTS:
 
 private:
 
-    void readSettings();
-    void writeSettings();
-    void finalRendering();
+    void readSettings() override;
+    void writeSettings() override;
+    void finalRendering() override;
 
     /**
      * @brief clone the method responsible for the clone/heal of preview image

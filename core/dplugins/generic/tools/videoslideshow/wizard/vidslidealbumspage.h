@@ -43,10 +43,10 @@ class VidSlideAlbumsPage : public DWizardPage
 public:
 
     explicit VidSlideAlbumsPage(QWizard* const dialog, const QString& title);
-    ~VidSlideAlbumsPage();
+    ~VidSlideAlbumsPage() override;
 
-    bool validatePage();
-    bool isComplete() const;
+    bool validatePage() override;
+    bool isComplete() const override;
 
 private:
 

@@ -39,7 +39,7 @@ public:
 
     explicit MultiStringsEdit(QWidget* const parent, const QString& title,
                               const QString& desc, int size=-1);
-    ~MultiStringsEdit();
+    ~MultiStringsEdit() override;
 
     void setValues(const QStringList& values);
     bool getValues(QStringList& oldValues, QStringList& newValues);

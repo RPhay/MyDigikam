@@ -43,7 +43,7 @@ class UserScriptPlugin : public DPluginBqm
 public:
 
     explicit UserScriptPlugin(QObject* const parent = nullptr);
-    ~UserScriptPlugin();
+    ~UserScriptPlugin() override;
 
     QString name()                 const override;
     QString iid()                  const override;

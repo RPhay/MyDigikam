@@ -45,7 +45,7 @@ class RawSettingsBox : public EditorToolSettings
 public:
 
     explicit RawSettingsBox(const QUrl& url, QWidget* const parent);
-    ~RawSettingsBox();
+    ~RawSettingsBox() override;
 
     void setBusy(bool b) override;
 

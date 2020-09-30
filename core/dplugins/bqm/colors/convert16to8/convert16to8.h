@@ -40,23 +40,23 @@ class Convert16to8 : public BatchTool
 public:
 
     explicit Convert16to8(QObject* const parent = nullptr);
-    ~Convert16to8();
+    ~Convert16to8() override;
 
-    BatchToolSettings defaultSettings()
+    BatchToolSettings defaultSettings() override
     {
         return BatchToolSettings();
     };
 
-    BatchTool* clone(QObject* const parent=nullptr) const { return new Convert16to8(parent); };
+    BatchTool* clone(QObject* const parent=nullptr) const override { return new Convert16to8(parent); };
 
 private:
 
-    bool toolOperations();
+    bool toolOperations() override;
 
 private Q_SLOTS:
 
-    void slotAssignSettings2Widget() {};
-    void slotSettingsChanged()       {};
+    void slotAssignSettings2Widget() override {};
+    void slotSettingsChanged() override       {};
 };
 
 } // namespace DigikamBqmConvert16To8Plugin

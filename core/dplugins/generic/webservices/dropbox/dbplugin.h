@@ -45,7 +45,7 @@ class DBPlugin : public DPluginGeneric
 public:
 
     explicit DBPlugin(QObject* const parent = nullptr);
-    ~DBPlugin();
+    ~DBPlugin() override;
 
     QString name()                 const override;
     QString iid()                  const override;

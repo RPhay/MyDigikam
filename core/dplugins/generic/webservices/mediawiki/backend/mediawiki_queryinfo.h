@@ -66,7 +66,7 @@ public:
     /**
      * @brief Destroys the QuerySiteInfoGeneral job.
      */
-    virtual ~QueryInfo();
+    ~QueryInfo() override;
 
     /**
      * @brief Starts the job asynchronously.

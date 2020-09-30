@@ -42,10 +42,10 @@ class VidSlideIntroPage : public DWizardPage
 public:
 
     explicit VidSlideIntroPage(QWizard* const dialog, const QString& title);
-    ~VidSlideIntroPage();
+    ~VidSlideIntroPage() override;
 
-    void initializePage();
-    bool validatePage();
+    void initializePage() override;
+    bool validatePage() override;
 
 private:
 

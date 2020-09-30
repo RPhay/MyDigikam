@@ -61,7 +61,7 @@ public:
     /**
      * Destructor.
      */
-    ~FCExportWindow();
+    ~FCExportWindow() override;
 
     /**
      * Use this method to (re-)activate the dialog after it has been created

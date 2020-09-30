@@ -40,24 +40,24 @@ class ChannelMixerTool : public EditorToolThreaded
 public:
 
     explicit ChannelMixerTool(QObject* const parent);
-    ~ChannelMixerTool();
+    ~ChannelMixerTool() override;
 
 private:
 
-    void readSettings();
-    void writeSettings();
-    void preparePreview();
-    void prepareFinal();
-    void setPreviewImage();
-    void setFinalImage();
+    void readSettings() override;
+    void writeSettings() override;
+    void preparePreview() override;
+    void prepareFinal() override;
+    void setPreviewImage() override;
+    void setFinalImage() override;
 
     void updateSettingsWidgets();
 
 private Q_SLOTS:
 
-    void slotResetSettings();
-    void slotSaveAsSettings();
-    void slotLoadSettings();
+    void slotResetSettings() override;
+    void slotSaveAsSettings() override;
+    void slotLoadSettings() override;
     void slotOutChannelChanged();
 
 private:

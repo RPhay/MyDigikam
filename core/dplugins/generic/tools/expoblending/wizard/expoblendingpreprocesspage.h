@@ -43,7 +43,7 @@ class ExpoBlendingPreProcessPage : public DWizardPage
 public:
 
     explicit ExpoBlendingPreProcessPage(ExpoBlendingManager* const mngr, QWizard* const dlg);
-    ~ExpoBlendingPreProcessPage();
+    ~ExpoBlendingPreProcessPage() override;
 
     void process();
     void cancel();

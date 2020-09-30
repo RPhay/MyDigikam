@@ -45,9 +45,9 @@ class HTMLParametersPage : public DWizardPage
 public:
 
     explicit HTMLParametersPage(QWizard* const dialog, const QString& title);
-    ~HTMLParametersPage();
+    ~HTMLParametersPage() override;
 
-    void initializePage();
+    void initializePage() override;
 
     QWidget* themeParameterWidgetFromName(const QByteArray&) const;
 

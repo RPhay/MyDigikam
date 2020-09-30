@@ -195,7 +195,7 @@ public:
     /**
      * @brief Destroys the Edit job.
      */
-    virtual ~Edit();
+    ~Edit() override;
 
     /**
      * @brief Starts the job asynchronously.

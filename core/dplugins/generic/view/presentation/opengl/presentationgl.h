@@ -54,7 +54,7 @@ class PresentationGL : public QOpenGLWidget
 public:
 
     explicit PresentationGL(PresentationContainer* const sharedData);
-    ~PresentationGL();
+    ~PresentationGL() override;
 
     void registerEffects();
 

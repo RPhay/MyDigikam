@@ -43,7 +43,7 @@ class SharpenToolPlugin : public DPluginEditor
 public:
 
     explicit SharpenToolPlugin(QObject* const parent = nullptr);
-    ~SharpenToolPlugin();
+    ~SharpenToolPlugin() override;
 
     QString name()                 const override;
     QString iid()                  const override;

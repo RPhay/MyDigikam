@@ -49,7 +49,7 @@ class TwWindow : public WSToolDialog
 public:
 
     explicit TwWindow(DInfoInterface* const iface, QWidget* const parent);
-    ~TwWindow();
+    ~TwWindow() override;
 
     void reactivate();
 

@@ -43,7 +43,7 @@ class RainDropToolPlugin : public DPluginEditor
 public:
 
     explicit RainDropToolPlugin(QObject* const parent = nullptr);
-    ~RainDropToolPlugin();
+    ~RainDropToolPlugin() override;
 
     QString name()                 const override;
     QString iid()                  const override;

@@ -49,7 +49,7 @@ class BOXTalker : public QObject
 public:
 
     explicit BOXTalker(QWidget* const parent);
-    ~BOXTalker();
+    ~BOXTalker() override;
 
 public:
 

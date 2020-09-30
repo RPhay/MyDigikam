@@ -50,7 +50,7 @@ class ImgurWindow : public WSToolDialog
 public:
 
     explicit ImgurWindow(DInfoInterface* const iface, QWidget* const parent = nullptr);
-    ~ImgurWindow();
+    ~ImgurWindow() override;
 
 public:
 

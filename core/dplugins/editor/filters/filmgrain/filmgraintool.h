@@ -42,21 +42,21 @@ class FilmGrainTool : public EditorToolThreaded
 public:
 
     explicit FilmGrainTool(QObject* const parent);
-    ~FilmGrainTool();
+    ~FilmGrainTool() override;
 
 private Q_SLOTS:
 
-    void slotResetSettings();
+    void slotResetSettings() override;
 
 private:
 
-    void readSettings();
-    void writeSettings();
-    void preparePreview();
-    void prepareFinal();
-    void setPreviewImage();
-    void setFinalImage();
-    void renderingFinished();
+    void readSettings() override;
+    void writeSettings() override;
+    void preparePreview() override;
+    void prepareFinal() override;
+    void setPreviewImage() override;
+    void setFinalImage() override;
+    void renderingFinished() override;
 
 private:
 

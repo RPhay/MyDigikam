@@ -49,7 +49,7 @@ public:
             setup();
         }
 
-    ~SylpheedBinary()
+    ~SylpheedBinary() override
     {
     }
 };

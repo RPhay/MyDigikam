@@ -43,11 +43,11 @@ class VidSlideFinalPage : public DWizardPage
 public:
 
     explicit VidSlideFinalPage(QWizard* const dialog, const QString& title);
-    ~VidSlideFinalPage();
+    ~VidSlideFinalPage() override;
 
-    void initializePage();
-    bool isComplete() const;
-    void cleanupPage();
+    void initializePage() override;
+    bool isComplete() const override;
+    void cleanupPage() override;
 
 private Q_SLOTS:
 

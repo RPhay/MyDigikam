@@ -54,7 +54,7 @@ public:
                         QWidget* const parent,
                         bool import=false,
                         QString nickName = QString());
-    ~SmugWindow();
+    ~SmugWindow() override;
 
     /**
      * Use this method to (re-)activate the dialog after it has been created

@@ -50,7 +50,7 @@ public:
     explicit VKWindow(DInfoInterface* const iface,
                       QWidget* const parent,
                       bool import = false);
-    ~VKWindow();
+    ~VKWindow() override;
 
     /**
      * Use this method to (re-)activate the dialog after it has been created

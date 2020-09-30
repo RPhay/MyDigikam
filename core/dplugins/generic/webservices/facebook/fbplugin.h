@@ -45,7 +45,7 @@ class FbPlugin : public DPluginGeneric
 public:
 
     explicit FbPlugin(QObject* const parent = nullptr);
-    ~FbPlugin();
+    ~FbPlugin() override;
 
     QString name()                 const override;
     QString iid()                  const override;

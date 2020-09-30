@@ -48,7 +48,7 @@ class PanoIntroPage : public DWizardPage
 public:
 
     explicit PanoIntroPage(PanoManager* const mngr, QWizard* const dlg);
-    ~PanoIntroPage();
+    ~PanoIntroPage() override;
 
     bool binariesFound();
 
@@ -63,7 +63,7 @@ private Q_SLOTS:
 */
 private:
 
-    void initializePage();
+    void initializePage() override;
 
 private:
 

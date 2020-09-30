@@ -56,7 +56,7 @@ public:
     explicit SmugWidget(QWidget* const parent,
                         DInfoInterface* const iface,
                         bool import);
-    ~SmugWidget();
+    ~SmugWidget() override;
 
 public:
 

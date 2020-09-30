@@ -134,7 +134,7 @@ public:
     /**
      * @brief Destroys the Upload job.
      */
-    virtual ~Upload();
+    ~Upload() override;
 
     /**
      * @brief Starts the job asynchronously.

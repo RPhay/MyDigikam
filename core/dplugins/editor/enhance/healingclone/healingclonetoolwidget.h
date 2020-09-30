@@ -59,7 +59,7 @@ public:
      * Standard constructor
      */
     explicit HealingCloneToolWidget(QWidget* const parent = nullptr);
-    ~HealingCloneToolWidget();
+    ~HealingCloneToolWidget() override;
 
     void setBrushValue(int value);
     void setIsLassoPointsVectorEmpty(bool);

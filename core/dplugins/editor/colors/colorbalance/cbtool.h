@@ -42,20 +42,20 @@ class CBTool : public EditorToolThreaded
 public:
 
     explicit CBTool(QObject* const parent);
-    ~CBTool();
+    ~CBTool() override;
 
 private Q_SLOTS:
 
-    void slotResetSettings();
+    void slotResetSettings() override;
 
 private:
 
-    void readSettings();
-    void writeSettings();
-    void preparePreview();
-    void prepareFinal();
-    void setPreviewImage();
-    void setFinalImage();
+    void readSettings() override;
+    void writeSettings() override;
+    void preparePreview() override;
+    void prepareFinal() override;
+    void setPreviewImage() override;
+    void setFinalImage() override;
 
 private:
 

@@ -58,7 +58,7 @@ public:
                       DInfoInterface* const iface,
                       const GoogleService& service,
                       const QString& serviceName);
-    ~GSWidget();
+    ~GSWidget() override;
 
     void updateLabels(const QString& name = QString(),
                       const QString& url = QString()) override;

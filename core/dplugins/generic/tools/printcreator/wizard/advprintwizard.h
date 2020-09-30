@@ -47,7 +47,7 @@ class AdvPrintWizard : public DWizardDlg
 public:
 
     explicit AdvPrintWizard(QWidget* const, DInfoInterface* const iface = nullptr);
-    ~AdvPrintWizard();
+    ~AdvPrintWizard() override;
 
     void setItemsList(const QList<QUrl>& fileList = QList<QUrl>());
     QList<QUrl> itemsList() const;

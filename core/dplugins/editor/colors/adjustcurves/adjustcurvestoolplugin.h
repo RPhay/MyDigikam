@@ -43,7 +43,7 @@ class AdjustCurvesToolPlugin : public DPluginEditor
 public:
 
     explicit AdjustCurvesToolPlugin(QObject* const parent = nullptr);
-    ~AdjustCurvesToolPlugin();
+    ~AdjustCurvesToolPlugin() override;
 
     QString name()                 const override;
     QString iid()                  const override;

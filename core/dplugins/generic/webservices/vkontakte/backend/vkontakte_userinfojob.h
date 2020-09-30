@@ -64,7 +64,7 @@ public:
     UserInfoJob(const QString& accessToken, int uid);
 
     UserInfoJob(const QString& accessToken, const QList<int>& uids);
-    ~UserInfoJob();
+    ~UserInfoJob() override;
 
     /**
      * @return A pointer to a userInfo object about the currently authenticated user.

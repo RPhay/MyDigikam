@@ -52,7 +52,7 @@ class HTMLWizard : public DWizardDlg
 public:
 
     explicit HTMLWizard(QWidget* const parent, DInfoInterface* const iface = nullptr);
-    ~HTMLWizard();
+    ~HTMLWizard() override;
 
     GalleryInfo*      galleryInfo()  const;
     GalleryTheme::Ptr galleryTheme() const;

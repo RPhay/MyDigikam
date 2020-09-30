@@ -39,11 +39,11 @@ class IntThemeParameter : public AbstractThemeParameter
 public:
 
     explicit IntThemeParameter();
-    virtual ~IntThemeParameter();
+    ~IntThemeParameter() override;
 
-    virtual void init(const QByteArray& internalName, const KConfigGroup* configGroup) override;
-    virtual QWidget* createWidget(QWidget* parent, const QString& value) const override;
-    virtual QString valueFromWidget(QWidget*) const override;
+    void init(const QByteArray& internalName, const KConfigGroup* configGroup) override;
+    QWidget* createWidget(QWidget* parent, const QString& value) const override;
+    QString valueFromWidget(QWidget*) const override;
 
 private:
 

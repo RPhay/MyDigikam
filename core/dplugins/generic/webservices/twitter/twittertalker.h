@@ -62,7 +62,7 @@ class TwTalker : public QObject
 public:
 
     explicit TwTalker(QWidget* const parent);
-    ~TwTalker();
+    ~TwTalker() override;
 
 public:
 

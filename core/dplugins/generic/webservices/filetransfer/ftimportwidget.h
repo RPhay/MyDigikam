@@ -59,7 +59,7 @@ public:
     /**
      * Destructor.
      */
-    ~FTImportWidget();
+    ~FTImportWidget() override;
 
     /**
      * Returns the current list of source urls to import contained in the

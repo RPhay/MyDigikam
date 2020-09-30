@@ -65,10 +65,10 @@ class HTMLThemePage : public DWizardPage
 public:
 
     explicit HTMLThemePage(QWizard* const dialog, const QString& title);
-    ~HTMLThemePage();
+    ~HTMLThemePage() override;
 
-    void initializePage();
-    bool validatePage();
+    void initializePage() override;
+    bool validatePage() override;
 
     GalleryTheme::Ptr currentTheme() const;
 

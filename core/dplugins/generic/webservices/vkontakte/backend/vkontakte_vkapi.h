@@ -51,7 +51,7 @@ class VkApi : public QObject
 public:
 
     explicit VkApi(QWidget* const parent);
-    ~VkApi();
+    ~VkApi() override;
 
     /**
      * @brief Initialize app ID.

@@ -51,7 +51,7 @@ public:
             setup();
         }
 
-    ~AutoOptimiserBinary()
+    ~AutoOptimiserBinary() override
     {
     }
 };

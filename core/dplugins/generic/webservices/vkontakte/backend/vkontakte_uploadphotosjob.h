@@ -51,7 +51,7 @@ public:
 
     explicit UploadPhotosJob(const QString& accessToken,
                              const QStringList& files, bool saveBig, int aid, int gid = -1);
-    ~UploadPhotosJob();
+    ~UploadPhotosJob() override;
 
     void start() override;
 

@@ -49,7 +49,7 @@ public:
             setup();
         }
 
-    ~JalbumJava()
+    ~JalbumJava() override
     {
     }
 };

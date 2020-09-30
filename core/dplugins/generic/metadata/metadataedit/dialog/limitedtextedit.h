@@ -39,7 +39,7 @@ class LimitedTextEdit : public QPlainTextEdit
 public:
 
     explicit LimitedTextEdit(QWidget* const parent = nullptr);
-    ~LimitedTextEdit();
+    ~LimitedTextEdit() override;
 
     void setMaxLength(int length);
     int  maxLength()     const;
@@ -48,9 +48,9 @@ public:
 
 protected:
 
-    void insertFromMimeData(const QMimeData* source);
+    void insertFromMimeData(const QMimeData* source) override;
 
-    virtual void keyPressEvent(QKeyEvent* e);
+    void keyPressEvent(QKeyEvent* e) override;
 
 private:
 

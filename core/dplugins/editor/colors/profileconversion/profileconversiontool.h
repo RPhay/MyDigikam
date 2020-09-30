@@ -42,25 +42,25 @@ class ProfileConversionTool : public EditorToolThreaded
 public:
 
     explicit ProfileConversionTool(QObject* const parent);
-    ~ProfileConversionTool();
+    ~ProfileConversionTool() override;
 
     static QStringList favoriteProfiles();
     static void fastConversion(const IccProfile& profile);
 
 private Q_SLOTS:
 
-    void slotResetSettings();
+    void slotResetSettings() override;
     void slotCurrentProfInfo();
     void slotProfileChanged();
 
 private:
 
-    void readSettings();
-    void writeSettings();
-    void preparePreview();
-    void prepareFinal();
-    void setPreviewImage();
-    void setFinalImage();
+    void readSettings() override;
+    void writeSettings() override;
+    void preparePreview() override;
+    void prepareFinal() override;
+    void setPreviewImage() override;
+    void setFinalImage() override;
 
     void updateTransform();
 

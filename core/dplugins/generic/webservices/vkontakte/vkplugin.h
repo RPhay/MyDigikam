@@ -45,7 +45,7 @@ class VKontaktePlugin : public DPluginGeneric
 public:
 
     explicit VKontaktePlugin(QObject* const parent = nullptr);
-    ~VKontaktePlugin();
+    ~VKontaktePlugin() override;
 
     QString name()                 const override;
     QString iid()                  const override;

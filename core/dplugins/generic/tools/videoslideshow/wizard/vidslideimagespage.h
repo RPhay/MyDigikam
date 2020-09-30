@@ -43,11 +43,11 @@ class VidSlideImagesPage : public DWizardPage
 public:
 
     explicit VidSlideImagesPage(QWizard* const dialog, const QString& title);
-    ~VidSlideImagesPage();
+    ~VidSlideImagesPage() override;
 
-    void initializePage();
-    bool validatePage();
-    bool isComplete() const;
+    void initializePage() override;
+    bool validatePage() override;
+    bool isComplete() const override;
 
     void setItemsList(const QList<QUrl>& urls);
 

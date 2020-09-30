@@ -42,7 +42,7 @@ class AdvPrintThread : public ActionThreadBase
 public:
 
     explicit AdvPrintThread(QObject* const parent);
-    ~AdvPrintThread();
+    ~AdvPrintThread() override;
 
     void preparePrint(AdvPrintSettings* const settings, int sizeIndex);
     void print(AdvPrintSettings* const settings);

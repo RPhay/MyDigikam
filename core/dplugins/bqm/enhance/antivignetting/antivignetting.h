@@ -41,22 +41,22 @@ class AntiVignetting : public BatchTool
 public:
 
     explicit AntiVignetting(QObject* const parent = nullptr);
-    ~AntiVignetting();
+    ~AntiVignetting() override;
 
-    BatchToolSettings defaultSettings();
+    BatchToolSettings defaultSettings() override;
 
-    BatchTool* clone(QObject* const parent=nullptr) const { return new AntiVignetting(parent); };
+    BatchTool* clone(QObject* const parent=nullptr) const override { return new AntiVignetting(parent); };
 
-    void registerSettingsWidget();
+    void registerSettingsWidget() override;
 
 private:
 
-    bool toolOperations();
+    bool toolOperations() override;
 
 private Q_SLOTS:
 
-    void slotAssignSettings2Widget();
-    void slotSettingsChanged();
+    void slotAssignSettings2Widget() override;
+    void slotSettingsChanged() override;
 
 private:
 

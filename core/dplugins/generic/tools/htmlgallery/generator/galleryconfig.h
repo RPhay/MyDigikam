@@ -75,7 +75,7 @@ public:
 public:
 
     explicit GalleryConfig();
-    virtual ~GalleryConfig();
+    ~GalleryConfig() override;
 
     void setTheme(const QString&);
     QString theme() const;

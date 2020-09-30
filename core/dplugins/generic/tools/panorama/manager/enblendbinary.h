@@ -51,7 +51,7 @@ public:
             setup();
         }
 
-    ~EnblendBinary()
+    ~EnblendBinary() override
     {
     }
 };

@@ -80,7 +80,7 @@ public:
 
     explicit PiwigoTalker(DInfoInterface* const iface,
                           QWidget* const parent);
-    ~PiwigoTalker();
+    ~PiwigoTalker() override;
 
 public:
 

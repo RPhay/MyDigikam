@@ -43,7 +43,7 @@ class WaterMarkPlugin : public DPluginBqm
 public:
 
     explicit WaterMarkPlugin(QObject* const parent = nullptr);
-    ~WaterMarkPlugin();
+    ~WaterMarkPlugin() override;
 
     QString name()                 const override;
     QString iid()                  const override;

@@ -61,7 +61,7 @@ public:
                   DInfoInterface* const iface,
                   const QUrl& src,
                   const QUrl& dest);
-    ~ReplaceDialog();
+    ~ReplaceDialog() override;
 
     int getResult();
 

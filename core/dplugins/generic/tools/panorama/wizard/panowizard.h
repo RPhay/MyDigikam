@@ -46,7 +46,7 @@ class PanoWizard : public DWizardDlg
 public:
 
     explicit PanoWizard(PanoManager* const mngr, QWidget* const parent=nullptr);
-    ~PanoWizard();
+    ~PanoWizard() override;
 
 private:
 

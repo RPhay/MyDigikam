@@ -51,7 +51,7 @@ public:
             setup();
         }
 
-    ~Pto2MkBinary()
+    ~Pto2MkBinary() override
     {
     }
 };

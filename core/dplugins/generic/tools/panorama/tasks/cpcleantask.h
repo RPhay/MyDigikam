@@ -37,7 +37,7 @@ public:
                          const QUrl& input,
                          QUrl& cpCleanPtoUrl,
                          const QString& cpCleanPath);
-    ~CpCleanTask();
+    ~CpCleanTask() override;
 
 protected:
 

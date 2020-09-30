@@ -43,7 +43,7 @@ class ConvertToTiffPlugin : public DPluginBqm
 public:
 
     explicit ConvertToTiffPlugin(QObject* const parent = nullptr);
-    ~ConvertToTiffPlugin();
+    ~ConvertToTiffPlugin() override;
 
     QString name()                 const override;
     QString iid()                  const override;

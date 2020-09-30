@@ -43,7 +43,7 @@ class RestorationPlugin : public DPluginBqm
 public:
 
     explicit RestorationPlugin(QObject* const parent = nullptr);
-    ~RestorationPlugin();
+    ~RestorationPlugin() override;
 
     QString name()                 const override;
     QString iid()                  const override;

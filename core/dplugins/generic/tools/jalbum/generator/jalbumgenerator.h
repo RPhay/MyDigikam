@@ -51,7 +51,7 @@ class JAlbumGenerator : public QObject
 public:
 
     explicit JAlbumGenerator(JAlbumSettings* const);
-    virtual ~JAlbumGenerator();
+    ~JAlbumGenerator() override;
 
     void setProgressWidgets(DHistoryView* const, DProgressWdg* const);
 

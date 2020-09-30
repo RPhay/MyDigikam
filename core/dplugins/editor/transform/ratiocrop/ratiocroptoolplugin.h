@@ -43,7 +43,7 @@ class RatioCropToolPlugin : public DPluginEditor
 public:
 
     explicit RatioCropToolPlugin(QObject* const parent = nullptr);
-    ~RatioCropToolPlugin();
+    ~RatioCropToolPlugin() override;
 
     QString name()                 const override;
     QString iid()                  const override;

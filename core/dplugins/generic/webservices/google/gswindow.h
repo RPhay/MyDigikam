@@ -61,7 +61,7 @@ public:
     explicit GSWindow(DInfoInterface* const iface,
                       QWidget* const parent,
                       const QString& serviceName);
-    ~GSWindow();
+    ~GSWindow() override;
 
     void reactivate();
 

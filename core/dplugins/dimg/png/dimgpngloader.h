@@ -43,7 +43,7 @@ class DImgPNGLoader : public DImgLoader
 public:
 
     explicit DImgPNGLoader(DImg* const image);
-    ~DImgPNGLoader();
+    ~DImgPNGLoader() override;
 
     bool load(const QString& filePath, DImgLoaderObserver* const observer) override;
     bool save(const QString& filePath, DImgLoaderObserver* const observer) override;

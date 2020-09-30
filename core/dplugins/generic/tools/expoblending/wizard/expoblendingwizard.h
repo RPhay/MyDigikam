@@ -47,13 +47,13 @@ class ExpoBlendingWizard : public DWizardDlg
 public:
 
     explicit ExpoBlendingWizard(ExpoBlendingManager* const mngr, QWidget* const parent = nullptr);
-    ~ExpoBlendingWizard();
+    ~ExpoBlendingWizard() override;
 
     QList<QUrl> itemUrls() const;
 
     ExpoBlendingManager* manager() const;
 
-    virtual bool validateCurrentPage();
+    bool validateCurrentPage() override;
 
 private Q_SLOTS:
 

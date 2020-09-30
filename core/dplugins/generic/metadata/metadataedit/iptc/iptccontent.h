@@ -38,7 +38,7 @@ class IPTCContent : public QWidget
 public:
 
     explicit IPTCContent(QWidget* const parent);
-    ~IPTCContent();
+    ~IPTCContent() override;
 
     void applyMetadata(QByteArray& exifData, QByteArray& iptcData);
     void readMetadata(QByteArray& iptcData);

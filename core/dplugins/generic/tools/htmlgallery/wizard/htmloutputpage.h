@@ -41,11 +41,11 @@ class HTMLOutputPage : public DWizardPage
 public:
 
     explicit HTMLOutputPage(QWizard* const dialog, const QString& title);
-    ~HTMLOutputPage();
+    ~HTMLOutputPage() override;
 
-    void initializePage();
-    bool validatePage();
-    bool isComplete() const;
+    void initializePage() override;
+    bool validatePage() override;
+    bool isComplete() const override;
 
 private:
 

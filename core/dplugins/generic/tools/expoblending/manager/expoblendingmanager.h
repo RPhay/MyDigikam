@@ -51,7 +51,7 @@ class ExpoBlendingManager : public QObject
 public:
 
     explicit ExpoBlendingManager(QObject* const parent = nullptr);
-    ~ExpoBlendingManager();
+    ~ExpoBlendingManager() override;
 
     static QPointer<ExpoBlendingManager> internalPtr;
     static ExpoBlendingManager*          instance();

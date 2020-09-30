@@ -106,7 +106,7 @@ Q_OBJECT
 public:
 
     explicit ImgurTalker(QObject* const parent = nullptr);
-    ~ImgurTalker();
+    ~ImgurTalker() override;
 
 public:
 

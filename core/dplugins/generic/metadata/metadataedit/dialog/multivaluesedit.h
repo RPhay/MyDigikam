@@ -37,7 +37,7 @@ class MultiValuesEdit : public QWidget
 public:
 
     explicit MultiValuesEdit(QWidget* const parent, const QString& title, const QString& desc);
-    ~MultiValuesEdit();
+    ~MultiValuesEdit() override;
 
     void setValid(bool v);
     bool isValid()        const;

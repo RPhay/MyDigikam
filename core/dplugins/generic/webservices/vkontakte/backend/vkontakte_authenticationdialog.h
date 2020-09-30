@@ -43,7 +43,7 @@ class AuthenticationDialog : public QDialog
 public:
 
     explicit AuthenticationDialog(QWidget* const parent);
-    ~AuthenticationDialog();
+    ~AuthenticationDialog() override;
 
     void setAppId(const QString& appId);
     void Q_DECL_DEPRECATED setPermissions(const QStringList& permissions);

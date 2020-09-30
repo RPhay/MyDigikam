@@ -47,7 +47,7 @@ class ImageShackTalker : public QObject
 public:
 
     explicit ImageShackTalker(ImageShackSession* const session);
-    ~ImageShackTalker();
+    ~ImageShackTalker() override;
 
 public:
 

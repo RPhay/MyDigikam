@@ -41,9 +41,9 @@ class HTMLImageSettingsPage : public DWizardPage
 public:
 
     explicit HTMLImageSettingsPage(QWizard* const dialog, const QString& title);
-    ~HTMLImageSettingsPage();
+    ~HTMLImageSettingsPage() override;
 
-    void initializePage();
+    void initializePage() override;
 
 private:
 

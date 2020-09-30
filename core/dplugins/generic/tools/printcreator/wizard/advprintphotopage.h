@@ -53,16 +53,16 @@ class AdvPrintPhotoPage : public DWizardPage
 public:
 
     explicit AdvPrintPhotoPage(QWizard* const wizard, const QString& title);
-    ~AdvPrintPhotoPage();
+    ~AdvPrintPhotoPage() override;
 
     QPrinter*             printer()           const;
     DItemsList*           imagesList()        const;
     Ui_AdvPrintPhotoPage* ui()                const;
-    bool                  isComplete()        const;
+    bool                  isComplete()        const override;
     int                   getPageCount()      const;
 
-    void initializePage();
-    bool validatePage();
+    void initializePage() override;
+    bool validatePage() override;
 
     /**
      * Create a MxN grid of photos, fitting on the page.

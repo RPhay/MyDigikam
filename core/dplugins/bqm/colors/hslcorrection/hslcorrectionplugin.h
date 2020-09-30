@@ -43,7 +43,7 @@ class HSLCorrectionPlugin : public DPluginBqm
 public:
 
     explicit HSLCorrectionPlugin(QObject* const parent = nullptr);
-    ~HSLCorrectionPlugin();
+    ~HSLCorrectionPlugin() override;
 
     QString name()                 const override;
     QString iid()                  const override;

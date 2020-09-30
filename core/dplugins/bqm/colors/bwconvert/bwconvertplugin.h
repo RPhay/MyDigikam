@@ -43,7 +43,7 @@ class BWConvertPlugin : public DPluginBqm
 public:
 
     explicit BWConvertPlugin(QObject* const parent = nullptr);
-    ~BWConvertPlugin();
+    ~BWConvertPlugin() override;
 
     QString name()                 const override;
     QString iid()                  const override;

@@ -45,21 +45,21 @@ class AutoCorrectionTool : public EditorToolThreaded
 public:
 
     explicit AutoCorrectionTool(QObject* const parent);
-    ~AutoCorrectionTool();
+    ~AutoCorrectionTool() override;
 
 private Q_SLOTS:
 
-    void slotInit();
-    void slotResetSettings();
+    void slotInit() override;
+    void slotResetSettings() override;
 
 private:
 
-    void writeSettings();
-    void readSettings();
-    void preparePreview();
-    void prepareFinal();
-    void setPreviewImage();
-    void setFinalImage();
+    void writeSettings() override;
+    void readSettings() override;
+    void preparePreview() override;
+    void prepareFinal() override;
+    void setPreviewImage() override;
+    void setFinalImage() override;
 
     void autoCorrection(DImg* const img, DImg* const ref, int type);
 

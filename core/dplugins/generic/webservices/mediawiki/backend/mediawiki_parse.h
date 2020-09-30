@@ -70,7 +70,7 @@ public:
     };
 
     explicit Parse(Iface& MediaWiki, QObject* const parent = nullptr);
-    virtual ~Parse();
+    ~Parse() override;
 
     void setText(const QString& param);
 

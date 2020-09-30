@@ -81,7 +81,7 @@ Q_OBJECT
 public:
 
     explicit IpfsTalker(QObject* const parent = nullptr);
-    ~IpfsTalker();
+    ~IpfsTalker() override;
 
     unsigned int workQueueLength();
     void queueWork(const IpfsTalkerAction& action);

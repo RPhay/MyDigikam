@@ -49,7 +49,7 @@ class GSTalkerBase : public QObject
 public:
 
     explicit GSTalkerBase(QWidget* const parent, const QStringList& scope, const QString& serviceName);
-    ~GSTalkerBase();
+    ~GSTalkerBase() override;
 
 public:
 

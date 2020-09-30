@@ -140,7 +140,7 @@ public:
     {
     }
 
-    ~RawObserver()
+    ~RawObserver() override
     {
     }
 

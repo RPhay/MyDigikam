@@ -54,7 +54,7 @@ public:
 
     explicit GLViewerWidget(DPlugin* const plugin,
                             DInfoInterface* const iface);
-    ~GLViewerWidget();
+    ~GLViewerWidget() override;
 
     void prevImage();
     void nextImage();

@@ -41,10 +41,10 @@ class AdvPrintIntroPage : public DWizardPage
 public:
 
     explicit AdvPrintIntroPage(QWizard* const dialog, const QString& title);
-    ~AdvPrintIntroPage();
+    ~AdvPrintIntroPage() override;
 
-    bool validatePage();
-    void initializePage();
+    bool validatePage() override;
+    void initializePage() override;
 
 private:
 

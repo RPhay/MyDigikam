@@ -43,11 +43,11 @@ class JAlbumSelectionPage : public DWizardPage
 public:
 
     explicit JAlbumSelectionPage(QWizard* const dialog, const QString& title);
-    ~JAlbumSelectionPage();
+    ~JAlbumSelectionPage() override;
 
-    void initializePage();
-    bool validatePage();
-    bool isComplete() const;
+    void initializePage() override;
+    bool validatePage() override;
+    bool isComplete() const override;
 
     void setItemsList(const QList<QUrl>& urls);
 

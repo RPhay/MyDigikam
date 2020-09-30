@@ -43,7 +43,7 @@ class BlurFXToolPlugin : public DPluginEditor
 public:
 
     explicit BlurFXToolPlugin(QObject* const parent = nullptr);
-    ~BlurFXToolPlugin();
+    ~BlurFXToolPlugin() override;
 
     QString name()                 const override;
     QString iid()                  const override;

@@ -58,7 +58,7 @@ public:
     /**
      * @brief Destroys the UserGroups job.
      */
-    virtual ~QuerySiteinfoUsergroups();
+    ~QuerySiteinfoUsergroups() override;
 
     /**
      * @brief If true number of users of each user group is included

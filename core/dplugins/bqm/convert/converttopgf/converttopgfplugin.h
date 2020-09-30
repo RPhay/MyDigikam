@@ -43,7 +43,7 @@ class ConvertToPgfPlugin : public DPluginBqm
 public:
 
     explicit ConvertToPgfPlugin(QObject* const parent = nullptr);
-    ~ConvertToPgfPlugin();
+    ~ConvertToPgfPlugin() override;
 
     QString name()                 const override;
     QString iid()                  const override;

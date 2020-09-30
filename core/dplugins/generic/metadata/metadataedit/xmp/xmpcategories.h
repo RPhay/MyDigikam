@@ -39,7 +39,7 @@ class XMPCategories : public QWidget
 public:
 
     explicit XMPCategories(QWidget* const parent);
-    ~XMPCategories();
+    ~XMPCategories() override;
 
     void applyMetadata(QByteArray& xmpData);
     void readMetadata(QByteArray& xmpData);

@@ -45,7 +45,7 @@ class RajcePlugin : public DPluginGeneric
 public:
 
     explicit RajcePlugin(QObject* const parent = nullptr);
-    ~RajcePlugin();
+    ~RajcePlugin() override;
 
     QString name()                 const override;
     QString iid()                  const override;

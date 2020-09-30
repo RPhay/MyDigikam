@@ -42,7 +42,7 @@ class IPTCEditWidget : public DConfigDlgWdg
 public:
 
     explicit IPTCEditWidget(MetadataEditDialog* const parent);
-    ~IPTCEditWidget();
+    ~IPTCEditWidget() override;
 
     bool isModified() const;
     void saveSettings();

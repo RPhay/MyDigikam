@@ -75,7 +75,7 @@ public:
     {
     }
 
-    ~PanoObserver()
+    ~PanoObserver() override
     {
     }
 

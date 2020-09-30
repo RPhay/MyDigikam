@@ -46,7 +46,7 @@ class FCThread : public ActionThreadBase
 public:
 
     explicit FCThread(QObject* const parent);
-    ~FCThread();
+    ~FCThread() override;
 
     void createCopyJobs(const QList<QUrl>& itemsList,
                         const FCContainer& settings);

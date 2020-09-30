@@ -56,7 +56,7 @@ public:
     /**
      * @brief Destroys the Logout job.
      */
-    virtual ~Logout();
+    ~Logout() override;
 
     /**
      * @brief Starts the job asynchronously.

@@ -64,7 +64,7 @@ public:
     /**
      * Destructor.
      */
-    ~FTImportWindow();
+    ~FTImportWindow() override;
 
 private Q_SLOTS:
 

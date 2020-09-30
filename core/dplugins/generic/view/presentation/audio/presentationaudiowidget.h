@@ -51,7 +51,7 @@ class PresentationAudioWidget : public QWidget, public Ui::PresentationAudioWidg
 public:
 
     explicit PresentationAudioWidget(QWidget* const, const QList<QUrl>&, PresentationContainer* const);
-    ~PresentationAudioWidget();
+    ~PresentationAudioWidget() override;
 
     void enqueue(const QList<QUrl>&);
     bool canHide() const;

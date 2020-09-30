@@ -46,7 +46,7 @@ class MetadataEditDialog : public DPluginDialog
 public:
 
     explicit MetadataEditDialog(QWidget* const parent, DInfoInterface* const iface);
-    ~MetadataEditDialog();
+    ~MetadataEditDialog() override;
 
     QList<QUrl>::iterator currentItem()                  const;
     QString currentItemTitleHeader(const QString& title) const;

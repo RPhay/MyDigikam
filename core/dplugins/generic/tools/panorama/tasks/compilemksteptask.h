@@ -41,7 +41,7 @@ public:
                                const QString& enblendPath,
                                const QString& makePath,
                                bool preview);
-    ~CompileMKStepTask();
+    ~CompileMKStepTask() override;
 
 public:
 

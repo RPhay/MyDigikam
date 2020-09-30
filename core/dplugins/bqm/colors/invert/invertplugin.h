@@ -43,7 +43,7 @@ class InvertPlugin : public DPluginBqm
 public:
 
     explicit InvertPlugin(QObject* const parent = nullptr);
-    ~InvertPlugin();
+    ~InvertPlugin() override;
 
     QString name()                 const override;
     QString iid()                  const override;

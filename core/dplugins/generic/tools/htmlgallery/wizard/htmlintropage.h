@@ -41,10 +41,10 @@ class HTMLIntroPage : public DWizardPage
 public:
 
     explicit HTMLIntroPage(QWizard* const dialog, const QString& title);
-    ~HTMLIntroPage();
+    ~HTMLIntroPage() override;
 
-    void initializePage();
-    bool validatePage();
+    void initializePage() override;
+    bool validatePage() override;
 
 private:
 

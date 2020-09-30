@@ -43,7 +43,7 @@ class CalPainter : public QObject, public QPainter
 public:
 
     explicit CalPainter(QPaintDevice* const pDevice);
-    virtual ~CalPainter();
+    ~CalPainter() override;
 
     void setImage(const QUrl& imagePath);
     void paint(int month);

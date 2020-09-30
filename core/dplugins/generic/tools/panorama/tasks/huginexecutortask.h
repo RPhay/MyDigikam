@@ -40,7 +40,7 @@ public:
                                PanoramaFileType fileType,
                                const QString& huginExecutorPath,
                                bool preview);
-    ~HuginExecutorTask();
+    ~HuginExecutorTask() override;
 
 protected:
 

@@ -55,7 +55,7 @@ public:
     explicit FlickrWindow(DInfoInterface* const iface,
                           QWidget* const parent,
                           const QString& serviceName = QLatin1String("Flickr"));
-    ~FlickrWindow();
+    ~FlickrWindow() override;
 
     /**
      * Use this method to (re-)activate the dialog after it has been created

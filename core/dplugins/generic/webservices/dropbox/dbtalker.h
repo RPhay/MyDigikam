@@ -40,7 +40,7 @@ class DBTalker : public QObject
 public:
 
     explicit DBTalker(QWidget* const parent);
-    ~DBTalker();
+    ~DBTalker() override;
 
 public:
 

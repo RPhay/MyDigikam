@@ -95,7 +95,7 @@ public:
 public:
 
     explicit YFTalker(QObject* const parent = nullptr);
-    ~YFTalker();
+    ~YFTalker() override;
 
 public:
 

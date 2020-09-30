@@ -45,7 +45,7 @@ public:
                                 QSharedPointer<const PTOType> ptoData,
                                 QUrl& finalPtoUrl,
                                 const QRect& crop);
-    ~CreateFinalPtoTask();
+    ~CreateFinalPtoTask() override;
 
 protected:
 

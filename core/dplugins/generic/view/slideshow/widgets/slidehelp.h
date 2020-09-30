@@ -42,7 +42,7 @@ class SlideHelp : public QDialog
 public:
 
     explicit SlideHelp();
-    ~SlideHelp();
+    ~SlideHelp() override;
 };
 
 } // namespace DigikamGenericSlideShowPlugin

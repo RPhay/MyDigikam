@@ -43,7 +43,7 @@ class AdvPrintCropFrame : public QWidget
 public:
 
     explicit AdvPrintCropFrame(QWidget* const parent);
-    ~AdvPrintCropFrame();
+    ~AdvPrintCropFrame() override;
 
     void   init(AdvPrintPhoto* const photo,
                 int  woutlay,
@@ -58,11 +58,11 @@ public:
 
 protected:
 
-    virtual void paintEvent(QPaintEvent*)        override;
-    virtual void mousePressEvent(QMouseEvent*)   override;
-    virtual void mouseReleaseEvent(QMouseEvent*) override;
-    virtual void mouseMoveEvent(QMouseEvent*)    override;
-    virtual void keyReleaseEvent(QKeyEvent*)     override;
+    void paintEvent(QPaintEvent*)        override;
+    void mousePressEvent(QMouseEvent*)   override;
+    void mouseReleaseEvent(QMouseEvent*) override;
+    void mouseMoveEvent(QMouseEvent*)    override;
+    void keyReleaseEvent(QKeyEvent*)     override;
 
 private:
 

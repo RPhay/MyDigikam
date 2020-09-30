@@ -48,7 +48,7 @@ class PresentationMainPage : public QWidget, Ui::PresentationMainPage
 public:
 
     explicit PresentationMainPage(QWidget* const parent, PresentationContainer* const sharedData);
-    ~PresentationMainPage();
+    ~PresentationMainPage() override;
 
     void readSettings();
     void saveSettings();

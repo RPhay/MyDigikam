@@ -46,7 +46,7 @@ class ImageResizeJob : public ActionJob
 public:
 
     explicit ImageResizeJob(int* count = nullptr);
-    ~ImageResizeJob();
+    ~ImageResizeJob() override;
 
 public:
 
@@ -63,7 +63,7 @@ Q_SIGNALS:
 
 private:
 
-    void run();
+    void run() override;
     bool imageResize(MailSettings* const settings,
                      const QUrl& orgUrl,
                      const QString& destName,

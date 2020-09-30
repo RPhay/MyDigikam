@@ -68,13 +68,13 @@ public:
     {
     }
 
-    ~LoadThread()
+    ~LoadThread() override
     {
     }
 
 protected:
 
-    void run()
+    void run() override
     {
         QImage newImage;
 

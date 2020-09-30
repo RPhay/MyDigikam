@@ -96,7 +96,7 @@ public:
 
     RatioCropWidget(int width, int height, QWidget* const parent = nullptr);
     RatioCropWidget(int width, int height, bool initDrawing, QWidget* const parent = nullptr);
-    ~RatioCropWidget();
+    ~RatioCropWidget() override;
 
     void  setBackgroundColor(const QColor& bg);
     void  setCenterSelection(int centerType=CenterImage);

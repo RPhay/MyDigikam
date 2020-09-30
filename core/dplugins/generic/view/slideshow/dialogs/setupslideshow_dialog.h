@@ -47,7 +47,7 @@ class SetupSlideShowDialog : public DPluginDialog
 public:
 
     explicit SetupSlideShowDialog(SlideShowSettings* const settings, QWidget* const parent = nullptr);
-    ~SetupSlideShowDialog();
+    ~SetupSlideShowDialog() override;
 
 public Q_SLOTS:
 

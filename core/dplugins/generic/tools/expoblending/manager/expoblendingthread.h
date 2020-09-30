@@ -51,7 +51,7 @@ class ExpoBlendingThread : public QThread
 public:
 
     explicit ExpoBlendingThread(QObject* const parent);
-    ~ExpoBlendingThread();
+    ~ExpoBlendingThread() override;
 
     void setEnfuseVersion(const double version);
     void setPreProcessingSettings(bool align);
@@ -78,7 +78,7 @@ Q_SIGNALS:
 
 private:
 
-    void    run();
+    void    run() override;
 
     void    preProcessingMultithreaded(const QUrl& url, volatile bool& error);
     bool    startPreProcessing(const QList<QUrl>& inUrls, bool  align, const QString& alignPath, QString& errors);

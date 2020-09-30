@@ -65,7 +65,7 @@ class SmugTalker : public QObject
 public:
 
     explicit SmugTalker(DInfoInterface* const iface, QWidget* const parent);
-    ~SmugTalker();
+    ~SmugTalker() override;
 
 public:
 

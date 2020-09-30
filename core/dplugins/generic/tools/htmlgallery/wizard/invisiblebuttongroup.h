@@ -41,7 +41,7 @@ class InvisibleButtonGroup : public QWidget
 public:
 
     explicit InvisibleButtonGroup(QWidget* const parent);
-    virtual ~InvisibleButtonGroup();
+    ~InvisibleButtonGroup() override;
 
     int selected() const;
 

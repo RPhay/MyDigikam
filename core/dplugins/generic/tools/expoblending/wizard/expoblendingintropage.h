@@ -40,7 +40,7 @@ class ExpoBlendingIntroPage : public DWizardPage
 public:
 
     explicit ExpoBlendingIntroPage(ExpoBlendingManager* const mngr, QWizard* const dlg);
-    ~ExpoBlendingIntroPage();
+    ~ExpoBlendingIntroPage() override;
 
     bool binariesFound();
 

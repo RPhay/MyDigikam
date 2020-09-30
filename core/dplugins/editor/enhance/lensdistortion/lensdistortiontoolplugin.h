@@ -43,7 +43,7 @@ class LensDistortionToolPlugin : public DPluginEditor
 public:
 
     explicit LensDistortionToolPlugin(QObject* const parent = nullptr);
-    ~LensDistortionToolPlugin();
+    ~LensDistortionToolPlugin() override;
 
     QString name()                 const override;
     QString iid()                  const override;

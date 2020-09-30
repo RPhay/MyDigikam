@@ -46,7 +46,7 @@ class RajceCommand : public QObject
 public:
 
     explicit RajceCommand(const QString& name, RajceCommandType commandType);
-    virtual ~RajceCommand();
+    ~RajceCommand() override;
 
 public:
 
@@ -168,7 +168,7 @@ public:
                              unsigned dimension,
                              int      jpgQuality,
                              const    RajceSession& state);
-    virtual ~AddPhotoCommand();
+    ~AddPhotoCommand() override;
 
 public:
 

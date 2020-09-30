@@ -40,23 +40,23 @@ class Resize : public BatchTool
 public:
 
     explicit Resize(QObject* const parent = nullptr);
-    ~Resize();
+    ~Resize() override;
 
-    BatchToolSettings defaultSettings();
+    BatchToolSettings defaultSettings() override;
 
-    BatchTool* clone(QObject* const parent=nullptr) const { return new Resize(parent); };
+    BatchTool* clone(QObject* const parent=nullptr) const override { return new Resize(parent); };
 
-    void registerSettingsWidget();
+    void registerSettingsWidget() override;
 
 private Q_SLOTS:
 
-    void slotAssignSettings2Widget();
-    void slotSettingsChanged();
+    void slotAssignSettings2Widget() override;
+    void slotSettingsChanged() override;
     void slotPercentChanged();
 
 private:
 
-    bool toolOperations();
+    bool toolOperations() override;
 
 private:
 

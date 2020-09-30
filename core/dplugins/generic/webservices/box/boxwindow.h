@@ -49,7 +49,7 @@ class BOXWindow : public WSToolDialog
 public:
 
     explicit BOXWindow(DInfoInterface* const iface, QWidget* const parent);
-    ~BOXWindow();
+    ~BOXWindow() override;
 
     void reactivate();
 

@@ -64,7 +64,7 @@ public:
 public:
 
     explicit SearchBackend(QObject* const parent);
-    ~SearchBackend();
+    ~SearchBackend() override;
 
     bool search(const QString& backendName, const QString& searchTerm);
     SearchResult::List getResults() const;

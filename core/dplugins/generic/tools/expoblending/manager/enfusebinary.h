@@ -53,7 +53,7 @@ public:
         setup();
     }
 
-    ~EnfuseBinary()
+    ~EnfuseBinary() override
     {
     }
 
@@ -65,7 +65,7 @@ Q_SIGNALS:
 
 protected:
 
-    bool parseHeader(const QString& output);
+    bool parseHeader(const QString& output) override;
 
 private:
 

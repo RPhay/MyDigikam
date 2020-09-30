@@ -43,7 +43,7 @@ class BorderPlugin : public DPluginBqm
 public:
 
     explicit BorderPlugin(QObject* const parent = nullptr);
-    ~BorderPlugin();
+    ~BorderPlugin() override;
 
     QString name()                 const override;
     QString iid()                  const override;

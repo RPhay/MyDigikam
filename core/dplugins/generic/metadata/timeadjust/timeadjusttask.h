@@ -46,7 +46,7 @@ class TimeAdjustTask : public ActionJob
 public:
 
     explicit TimeAdjustTask(const QUrl& url);
-    ~TimeAdjustTask();
+    ~TimeAdjustTask() override;
 
     void setSettings(const TimeAdjustContainer& settings);
     void setItemsMap(const QMap<QUrl, QDateTime>& itemsMap);
@@ -59,7 +59,7 @@ Q_SIGNALS:
 
 protected:
 
-    void run();
+    void run() override;
 
 private:
 

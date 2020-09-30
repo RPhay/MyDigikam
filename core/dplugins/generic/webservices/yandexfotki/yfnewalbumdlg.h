@@ -41,7 +41,7 @@ class YFNewAlbumDlg: public WSNewAlbumDialog
 public:
 
     explicit YFNewAlbumDlg(QWidget* const parent, YandexFotkiAlbum& album);
-    ~YFNewAlbumDlg();
+    ~YFNewAlbumDlg() override;
 
     YandexFotkiAlbum& album() const;
 

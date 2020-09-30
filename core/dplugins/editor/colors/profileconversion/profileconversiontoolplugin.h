@@ -44,7 +44,7 @@ class ProfileConversionToolPlugin : public DPluginEditor
 public:
 
     explicit ProfileConversionToolPlugin(QObject* const parent = nullptr);
-    ~ProfileConversionToolPlugin();
+    ~ProfileConversionToolPlugin() override;
 
     QString name()                 const override;
     QString iid()                  const override;

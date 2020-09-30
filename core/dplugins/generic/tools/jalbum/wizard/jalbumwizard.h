@@ -50,7 +50,7 @@ class JAlbumWizard : public DWizardDlg
 public:
 
     explicit JAlbumWizard(QWidget* const parent, DInfoInterface* const iface = nullptr);
-    ~JAlbumWizard();
+    ~JAlbumWizard() override;
 
     JAlbumSettings* settings() const;
 

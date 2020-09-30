@@ -65,7 +65,7 @@ public:
      */
     VKNewAlbumDlg(QWidget* const parent, const AlbumProperties& album);
 
-    ~VKNewAlbumDlg();
+    ~VKNewAlbumDlg() override;
 
     const AlbumProperties& album() const;
 

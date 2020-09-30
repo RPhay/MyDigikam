@@ -50,7 +50,7 @@ class DBWindow : public WSToolDialog
 public:
 
     explicit DBWindow(DInfoInterface* const iface, QWidget* const parent);
-    ~DBWindow();
+    ~DBWindow() override;
 
     void reactivate();
 

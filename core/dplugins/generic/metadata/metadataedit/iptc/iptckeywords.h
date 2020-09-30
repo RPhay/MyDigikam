@@ -38,7 +38,7 @@ class IPTCKeywords : public QWidget
 public:
 
     explicit IPTCKeywords(QWidget* const parent);
-    ~IPTCKeywords();
+    ~IPTCKeywords() override;
 
     void applyMetadata(QByteArray& iptcData);
     void readMetadata(QByteArray& iptcData);

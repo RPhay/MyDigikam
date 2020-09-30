@@ -46,7 +46,7 @@ class BracketStackItem : public QTreeWidgetItem
 public:
 
     explicit BracketStackItem(QTreeWidget* const parent);
-    ~BracketStackItem();
+    ~BracketStackItem() override;
 
     void setUrl(const QUrl& url);
     const QUrl& url() const;
@@ -59,7 +59,7 @@ public:
 
 private:
 
-    bool operator< (const QTreeWidgetItem& other) const;
+    bool operator< (const QTreeWidgetItem& other) const override;
 
 private:
 
@@ -75,7 +75,7 @@ class BracketStackList : public QTreeWidget
 public:
 
     explicit BracketStackList(QWidget* const parent);
-    virtual ~BracketStackList();
+    ~BracketStackList() override;
 
     void addItems(const QList<QUrl>& list);
 

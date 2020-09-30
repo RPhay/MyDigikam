@@ -47,7 +47,7 @@ class ImageShackWindow : public WSToolDialog
 public:
 
     explicit ImageShackWindow(DInfoInterface* const iface, QWidget* const parent);
-    ~ImageShackWindow();
+    ~ImageShackWindow() override;
 
 public:
 

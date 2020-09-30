@@ -45,7 +45,7 @@ class ImageResizeThread : public ActionThreadBase
 public:
 
     explicit ImageResizeThread(QObject* const parent);
-    ~ImageResizeThread();
+    ~ImageResizeThread() override;
 
     void resize(MailSettings* const settings);
     void cancel();

@@ -41,7 +41,7 @@ class SaveImgThread : public QThread
 public:
 
     explicit SaveImgThread(QObject* const parent);
-    ~SaveImgThread();
+    ~SaveImgThread() override;
 
     void setTargetFile(const QUrl& url, const QString& format);
     void setScannerModel(const QString& make, const QString& model);
@@ -55,7 +55,7 @@ Q_SIGNALS:
 
 private:
 
-    void run();
+    void run() override;
 
 private:
 

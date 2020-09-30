@@ -49,7 +49,7 @@ public:
             setup();
         }
 
-    ~BalsaBinary()
+    ~BalsaBinary() override
     {
     }
 };

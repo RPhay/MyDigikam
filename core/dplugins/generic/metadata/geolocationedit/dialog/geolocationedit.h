@@ -58,7 +58,7 @@ class GeolocationEdit : public DPluginDialog
 public:
 
     explicit GeolocationEdit(QWidget* const parent, DInfoInterface* const iface);
-    ~GeolocationEdit();
+    ~GeolocationEdit() override;
 
     /**
      * Populate items in dialog list based on url. To be used in case of non database as with Showfoto.

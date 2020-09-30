@@ -39,7 +39,7 @@ public:
                         QUrl& cpFindUrl,
                         bool celeste,
                         const QString& cpFindPath);
-    ~CpFindTask();
+    ~CpFindTask() override;
 
 protected:
 

@@ -49,7 +49,7 @@ public:
     explicit BOXWidget(QWidget* const parent,
                        DInfoInterface* const iface,
                        const QString& toolName);
-    ~BOXWidget();
+    ~BOXWidget() override;
 
     void updateLabels(const QString& name = QString(),
                       const QString& url = QString()) override;

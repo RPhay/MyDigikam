@@ -49,7 +49,7 @@ class RajceTalker : public QObject
 public:
 
     explicit RajceTalker(QWidget* const parent);
-    ~RajceTalker();
+    ~RajceTalker() override;
 
 public:
 

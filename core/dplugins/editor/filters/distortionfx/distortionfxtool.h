@@ -44,22 +44,22 @@ class DistortionFXTool : public EditorToolThreaded
 public:
 
     explicit DistortionFXTool(QObject* const parent);
-    ~DistortionFXTool();
+    ~DistortionFXTool() override;
 
 private Q_SLOTS:
 
     void slotEffectTypeChanged(int type);
-    void slotResetSettings();
+    void slotResetSettings() override;
 
 private:
 
-    void readSettings();
-    void writeSettings();
-    void preparePreview();
-    void prepareFinal();
-    void setPreviewImage();
-    void setFinalImage();
-    void renderingFinished();
+    void readSettings() override;
+    void writeSettings() override;
+    void preparePreview() override;
+    void prepareFinal() override;
+    void setPreviewImage() override;
+    void setFinalImage() override;
+    void renderingFinished() override;
     void blockWidgetSignals(bool b);
 
 private:

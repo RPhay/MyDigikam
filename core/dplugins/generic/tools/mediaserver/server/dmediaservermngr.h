@@ -94,7 +94,7 @@ public:
 private:
 
     explicit DMediaServerMngr();
-    ~DMediaServerMngr();
+    ~DMediaServerMngr() override;
 
 private:
 

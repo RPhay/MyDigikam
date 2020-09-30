@@ -44,7 +44,7 @@ class SlideError : public QWidget
 public:
 
     explicit SlideError(QWidget* const parent = nullptr);
-    ~SlideError();
+    ~SlideError() override;
 
     void setCurrentUrl(const QUrl& url);
 

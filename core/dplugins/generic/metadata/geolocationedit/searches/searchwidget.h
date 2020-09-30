@@ -58,7 +58,7 @@ public:
                           GPSItemModel* const gpsItemModel,
                           QItemSelectionModel* const gpsImageSelectionModel,
                           QWidget* const parent);
-    ~SearchWidget();
+    ~SearchWidget() override;
 
     GeoModelHelper* getModelHelper() const;
 
@@ -81,7 +81,7 @@ private Q_SLOTS:
 
 protected:
 
-    virtual bool eventFilter(QObject* watched, QEvent* event);
+    bool eventFilter(QObject* watched, QEvent* event) override;
 
 Q_SIGNALS:
 

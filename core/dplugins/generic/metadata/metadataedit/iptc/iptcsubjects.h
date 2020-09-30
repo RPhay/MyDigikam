@@ -46,7 +46,7 @@ class IPTCSubjects : public SubjectWidget
 public:
 
     explicit IPTCSubjects(QWidget* const parent);
-    ~IPTCSubjects();
+    ~IPTCSubjects() override;
 
     void applyMetadata(QByteArray& iptcData);
     void readMetadata(QByteArray& iptcData);

@@ -52,7 +52,7 @@ public:
 
     explicit GPSItemDetails(QWidget* const parent,
                             GPSItemModel* const imageModel);
-    ~GPSItemDetails();
+    ~GPSItemDetails() override;
 
     void setUIEnabledExternal(const bool state);
     void saveSettingsToGroup(KConfigGroup* const group);

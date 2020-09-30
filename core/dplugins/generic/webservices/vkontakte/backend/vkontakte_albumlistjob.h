@@ -40,7 +40,7 @@ class AlbumListJob : public VkontakteJob
 public:
 
     explicit AlbumListJob(const QString& accessToken, int uid = -1, const QList<int>& aids = QList<int>());
-    ~AlbumListJob();
+    ~AlbumListJob() override;
 
     QList<AlbumInfo> list() const;
 

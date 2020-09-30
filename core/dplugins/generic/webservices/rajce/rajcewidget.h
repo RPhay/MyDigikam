@@ -46,7 +46,7 @@ class RajceWidget : public WSSettingsWidget
 public:
 
     explicit RajceWidget(DInfoInterface* const iface, QWidget* const parent);
-    ~RajceWidget();
+    ~RajceWidget() override;
 
 Q_SIGNALS:
 

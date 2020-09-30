@@ -41,22 +41,22 @@ class NoiseReduction : public BatchTool
 public:
 
     explicit NoiseReduction(QObject* const parent = nullptr);
-    ~NoiseReduction();
+    ~NoiseReduction() override;
 
-    BatchToolSettings defaultSettings();
+    BatchToolSettings defaultSettings() override;
 
-    BatchTool* clone(QObject* const parent=nullptr) const { return new NoiseReduction(parent); };
+    BatchTool* clone(QObject* const parent=nullptr) const override { return new NoiseReduction(parent); };
 
-    void registerSettingsWidget();
+    void registerSettingsWidget() override;
 
 private:
 
-    bool toolOperations();
+    bool toolOperations() override;
 
 private Q_SLOTS:
 
-    void slotAssignSettings2Widget();
-    void slotSettingsChanged();
+    void slotAssignSettings2Widget() override;
+    void slotSettingsChanged() override;
 
 private:
 

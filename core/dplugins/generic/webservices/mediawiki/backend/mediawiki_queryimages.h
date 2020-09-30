@@ -80,7 +80,7 @@ public:
     /**
      * @brief Destroys a query images job.
      */
-    virtual ~QueryImages();
+    ~QueryImages() override;
 
     /**
      * @brief Set the title.

@@ -46,7 +46,7 @@ class PrintConfig : public KConfigSkeleton
 public:
 
     static PrintConfig* self();
-    ~PrintConfig();
+    ~PrintConfig() override;
 
 public:
 

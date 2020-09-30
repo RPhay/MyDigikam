@@ -43,7 +43,7 @@ class IccConvertPlugin : public DPluginBqm
 public:
 
     explicit IccConvertPlugin(QObject* const parent = nullptr);
-    ~IccConvertPlugin();
+    ~IccConvertPlugin() override;
 
     QString name()                 const override;
     QString iid()                  const override;

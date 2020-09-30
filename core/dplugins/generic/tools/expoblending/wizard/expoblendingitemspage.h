@@ -43,7 +43,7 @@ class ItemsPage : public DWizardPage
 public:
 
     explicit ItemsPage(ExpoBlendingManager* const mngr, QWizard* const dlg);
-    ~ItemsPage();
+    ~ItemsPage() override;
 
     QList<QUrl> itemUrls() const;
 

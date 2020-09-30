@@ -46,7 +46,7 @@ class FCPlugin : public DPluginGeneric
 public:
 
     explicit FCPlugin(QObject* const parent = nullptr);
-    ~FCPlugin();
+    ~FCPlugin() override;
 
     QString name()                 const override;
     QString iid()                  const override;

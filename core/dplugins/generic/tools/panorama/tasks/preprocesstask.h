@@ -49,7 +49,7 @@ public:
                             int id,
                             PanoramaPreprocessedUrls& targetUrls,
                             const QUrl& sourceUrl);
-    ~PreProcessTask();
+    ~PreProcessTask() override;
 
     void requestAbort() override;
 

@@ -43,7 +43,7 @@ class PresentationDlg : public DPluginDialog
 public:
 
     explicit PresentationDlg(QWidget* const parent, PresentationContainer* const sharedData);
-    ~PresentationDlg();
+    ~PresentationDlg() override;
 
 Q_SIGNALS:
 

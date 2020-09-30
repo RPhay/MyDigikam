@@ -52,7 +52,7 @@ public:
     explicit FlickrWidget(QWidget* const parent,
                           DInfoInterface* const iface,
                           const QString& serviceName);
-    ~FlickrWidget();
+    ~FlickrWidget() override;
 
     void updateLabels(const QString& name = QString(),
                       const QString& url = QString()) override;

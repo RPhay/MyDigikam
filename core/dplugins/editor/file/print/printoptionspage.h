@@ -64,7 +64,7 @@ public:
 public:
 
     explicit PrintOptionsPage(QWidget* const parent, const QSize& imageSize);
-    ~PrintOptionsPage();
+    ~PrintOptionsPage() override;
 
     void loadConfig();
     void saveConfig();

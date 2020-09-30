@@ -43,7 +43,7 @@ class RajceWindow : public WSToolDialog
 public:
 
     explicit RajceWindow(DInfoInterface* const iface, QWidget* const parent = nullptr);
-    ~RajceWindow();
+    ~RajceWindow() override;
 
     void reactivate();
 

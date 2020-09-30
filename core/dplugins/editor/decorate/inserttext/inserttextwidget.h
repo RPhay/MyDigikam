@@ -84,7 +84,7 @@ public:
 public:
 
     explicit InsertTextWidget(int w, int h, QWidget* const parent=nullptr);
-    ~InsertTextWidget();
+    ~InsertTextWidget() override;
 
     ImageIface* imageIface() const;
     DImg        makeInsertText();

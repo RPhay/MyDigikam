@@ -58,7 +58,7 @@ public:
 public:
 
     explicit PresentationWidget(PresentationContainer* const sharedData);
-    ~PresentationWidget();
+    ~PresentationWidget() override;
 
     void registerEffects();
 

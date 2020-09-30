@@ -51,7 +51,7 @@ class YFWindow : public WSToolDialog
 public:
 
     explicit YFWindow(DInfoInterface* const iface, QWidget* const parent, bool import = false);
-    ~YFWindow();
+    ~YFWindow() override;
 
 public:
 

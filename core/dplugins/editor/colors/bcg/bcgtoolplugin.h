@@ -43,7 +43,7 @@ class BCGToolPlugin : public DPluginEditor
 public:
 
     explicit BCGToolPlugin(QObject* const parent = nullptr);
-    ~BCGToolPlugin();
+    ~BCGToolPlugin() override;
 
     QString name()                 const override;
     QString iid()                  const override;

@@ -51,7 +51,7 @@ public:
 
     explicit PiwigoWindow(DInfoInterface* const iface,
                           QWidget* const parent);
-    ~PiwigoWindow();
+    ~PiwigoWindow() override;
 
 private:
 

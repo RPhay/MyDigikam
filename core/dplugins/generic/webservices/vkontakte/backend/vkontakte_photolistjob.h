@@ -40,7 +40,7 @@ public:
 
     explicit PhotoListJob(const QString& accessToken,
                           int uid, int aid, const QList<int>& pids = QList<int>());
-    ~PhotoListJob();
+    ~PhotoListJob() override;
 
     QList<PhotoInfo> list() const;
 

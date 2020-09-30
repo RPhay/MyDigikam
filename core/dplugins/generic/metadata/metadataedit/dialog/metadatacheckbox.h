@@ -40,7 +40,7 @@ class MetadataCheckBox : public QCheckBox
 public:
 
     explicit MetadataCheckBox(const QString& text, QWidget* const parent);
-    ~MetadataCheckBox();
+    ~MetadataCheckBox() override;
 
     void setValid(bool v);
     bool isValid() const;

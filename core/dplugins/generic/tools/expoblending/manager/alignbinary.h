@@ -51,7 +51,7 @@ public:
             setup();
         }
 
-    ~AlignBinary()
+    ~AlignBinary() override
     {
     }
 };

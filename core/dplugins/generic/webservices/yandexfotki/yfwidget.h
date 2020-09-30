@@ -57,7 +57,7 @@ public:
 public:
 
     explicit YFWidget(QWidget* const parent, DInfoInterface* const iface, const QString& toolName);
-    ~YFWidget();
+    ~YFWidget() override;
 
 public:
 

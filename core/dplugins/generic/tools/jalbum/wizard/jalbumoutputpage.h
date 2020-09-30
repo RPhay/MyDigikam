@@ -41,11 +41,11 @@ class JAlbumOutputPage : public DWizardPage
 public:
 
     explicit JAlbumOutputPage(QWizard* const dialog, const QString& title);
-    ~JAlbumOutputPage();
+    ~JAlbumOutputPage() override;
 
-    void initializePage();
-    bool validatePage();
-    bool isComplete() const;
+    void initializePage() override;
+    bool validatePage() override;
+    bool isComplete() const override;
 
 private:
 

@@ -43,7 +43,7 @@ class Convert16To8Plugin : public DPluginBqm
 public:
 
     explicit Convert16To8Plugin(QObject* const parent = nullptr);
-    ~Convert16To8Plugin();
+    ~Convert16To8Plugin() override;
 
     QString name()                 const override;
     QString iid()                  const override;

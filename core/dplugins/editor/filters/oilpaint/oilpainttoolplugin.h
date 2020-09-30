@@ -43,7 +43,7 @@ class OilPaintToolPlugin : public DPluginEditor
 public:
 
     explicit OilPaintToolPlugin(QObject* const parent = nullptr);
-    ~OilPaintToolPlugin();
+    ~OilPaintToolPlugin() override;
 
     QString name()                 const override;
     QString iid()                  const override;

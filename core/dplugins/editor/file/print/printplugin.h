@@ -43,7 +43,7 @@ class PrintToolPlugin : public DPluginEditor
 public:
 
     explicit PrintToolPlugin(QObject* const parent = nullptr);
-    ~PrintToolPlugin();
+    ~PrintToolPlugin() override;
 
     QString name()                 const override;
     QString iid()                  const override;

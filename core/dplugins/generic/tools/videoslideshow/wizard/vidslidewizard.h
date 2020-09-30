@@ -46,7 +46,7 @@ class VidSlideWizard : public DWizardDlg
 public:
 
     explicit VidSlideWizard(QWidget* const parent, DInfoInterface* const iface = nullptr);
-    ~VidSlideWizard();
+    ~VidSlideWizard() override;
 
     bool validateCurrentPage() override;
     int  nextId() const override;

@@ -47,7 +47,7 @@ class PTalker : public QObject
 public:
 
     explicit PTalker(QWidget* const parent);
-    ~PTalker();
+    ~PTalker() override;
 
 public:
 

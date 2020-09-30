@@ -43,13 +43,13 @@ class CurvesAdjust : public BatchTool
 public:
 
     explicit CurvesAdjust(QObject* const parent = nullptr);
-    ~CurvesAdjust();
+    ~CurvesAdjust() override;
 
-    BatchToolSettings defaultSettings();
+    BatchToolSettings defaultSettings() override;
 
-    BatchTool* clone(QObject* const parent=nullptr) const { return new CurvesAdjust(parent); };
+    BatchTool* clone(QObject* const parent=nullptr) const override { return new CurvesAdjust(parent); };
 
-    void registerSettingsWidget();
+    void registerSettingsWidget() override;
 
 public Q_SLOTS:
 
@@ -57,13 +57,13 @@ public Q_SLOTS:
 
 private:
 
-    bool toolOperations();
+    bool toolOperations() override;
 
 private Q_SLOTS:
 
     void slotChannelChanged();
-    void slotAssignSettings2Widget();
-    void slotSettingsChanged();
+    void slotAssignSettings2Widget() override;
+    void slotSettingsChanged() override;
     void slotSettingsLoad();
 
 private:

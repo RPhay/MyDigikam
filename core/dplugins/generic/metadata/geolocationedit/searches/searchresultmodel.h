@@ -57,7 +57,7 @@ public:
 public:
 
     explicit SearchResultModel(QObject* const parent = nullptr);
-    ~SearchResultModel();
+    ~SearchResultModel() override;
 
     void addResults(const SearchBackend::SearchResult::List& results);
     SearchResultItem resultItem(const QModelIndex& index) const;
@@ -68,15 +68,15 @@ public:
     void removeRowsBySelection(const QItemSelection& selection);
 
     // QAbstractItemModel:
-    virtual int columnCount(const QModelIndex& parent = QModelIndex() ) const;
-    virtual bool setData(const QModelIndex& index, const QVariant& value, int role);
-    virtual QVariant data(const QModelIndex& index, int role = Qt::DisplayRole) const;
-    virtual QModelIndex index(int row, int column, const QModelIndex& parent = QModelIndex() ) const;
-    virtual QModelIndex parent(const QModelIndex& index) const;
-    virtual int rowCount(const QModelIndex& parent = QModelIndex()) const;
-    virtual bool setHeaderData(int section, Qt::Orientation orientation, const QVariant& value, int role);
-    virtual QVariant headerData(int section, Qt::Orientation orientation, int role) const;
-    virtual Qt::ItemFlags flags(const QModelIndex& index) const;
+    int columnCount(const QModelIndex& parent = QModelIndex() ) const override;
+    bool setData(const QModelIndex& index, const QVariant& value, int role) override;
+    QVariant data(const QModelIndex& index, int role = Qt::DisplayRole) const override;
+    QModelIndex index(int row, int column, const QModelIndex& parent = QModelIndex() ) const override;
+    QModelIndex parent(const QModelIndex& index) const override;
+    int rowCount(const QModelIndex& parent = QModelIndex()) const override;
+    bool setHeaderData(int section, Qt::Orientation orientation, const QVariant& value, int role) override;
+    QVariant headerData(int section, Qt::Orientation orientation, int role) const override;
+    Qt::ItemFlags flags(const QModelIndex& index) const override;
 
 private:
 

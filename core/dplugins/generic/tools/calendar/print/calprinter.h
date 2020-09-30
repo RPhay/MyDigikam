@@ -47,11 +47,11 @@ public:
                         QMap<int, QUrl>& months,
                         QObject* const parent);
 
-    virtual ~CalPrinter();
+    ~CalPrinter() override;
 
 protected:
 
-    void run();
+    void run() override;
 
 Q_SIGNALS:
 

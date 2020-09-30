@@ -41,22 +41,22 @@ class LocalContrastTool : public EditorToolThreaded
 public:
 
     explicit LocalContrastTool(QObject* const parent);
-    ~LocalContrastTool();
+    ~LocalContrastTool() override;
 
 private:
 
-    void readSettings();
-    void writeSettings();
-    void preparePreview();
-    void prepareFinal();
-    void setPreviewImage();
-    void setFinalImage();
+    void readSettings() override;
+    void writeSettings() override;
+    void preparePreview() override;
+    void prepareFinal() override;
+    void setPreviewImage() override;
+    void setFinalImage() override;
 
 private Q_SLOTS:
 
-    void slotSaveAsSettings();
-    void slotLoadSettings();
-    void slotResetSettings();
+    void slotSaveAsSettings() override;
+    void slotLoadSettings() override;
+    void slotResetSettings() override;
 
 private:
 

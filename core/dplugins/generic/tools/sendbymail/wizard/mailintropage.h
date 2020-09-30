@@ -43,11 +43,11 @@ class MailIntroPage : public DWizardPage
 public:
 
     explicit MailIntroPage(QWizard* const dialog, const QString& title);
-    ~MailIntroPage();
+    ~MailIntroPage() override;
 
-    void initializePage();
-    bool validatePage();
-    bool isComplete() const;
+    void initializePage() override;
+    bool validatePage() override;
+    bool isComplete() const override;
 
 private Q_SLOTS:
 

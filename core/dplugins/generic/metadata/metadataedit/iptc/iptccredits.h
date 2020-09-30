@@ -38,7 +38,7 @@ class IPTCCredits : public QWidget
 public:
 
     explicit IPTCCredits(QWidget* const parent);
-    ~IPTCCredits();
+    ~IPTCCredits() override;
 
     void applyMetadata(QByteArray& iptcData);
     void readMetadata(QByteArray& iptcData);

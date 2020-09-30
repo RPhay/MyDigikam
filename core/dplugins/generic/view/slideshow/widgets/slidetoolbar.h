@@ -49,7 +49,7 @@ class SlideToolBar : public DHBox
 public:
 
     explicit SlideToolBar(SlideShowSettings* const settings, QWidget* const parent);
-    ~SlideToolBar();
+    ~SlideToolBar() override;
 
     bool isPaused() const;
     void pause(bool val);

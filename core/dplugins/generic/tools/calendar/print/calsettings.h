@@ -101,7 +101,7 @@ public:
 
     static CalSettings* instance(QObject* const parent = nullptr);
 
-    ~CalSettings();
+    ~CalSettings() override;
 
 public:
 

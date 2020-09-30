@@ -68,7 +68,7 @@ public:
     /**
      * Destructor.
      */
-    ~FTExportWindow();
+    ~FTExportWindow() override;
 
     /**
      * Use this method to (re-)activate the dialog after it has been created

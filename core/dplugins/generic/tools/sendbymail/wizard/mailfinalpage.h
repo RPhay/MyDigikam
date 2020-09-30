@@ -43,11 +43,11 @@ class MailFinalPage : public DWizardPage
 public:
 
     explicit MailFinalPage(QWizard* const dialog, const QString& title);
-    ~MailFinalPage();
+    ~MailFinalPage() override;
 
-    void initializePage();
-    bool isComplete() const;
-    void cleanupPage();
+    void initializePage() override;
+    bool isComplete() const override;
+    void cleanupPage() override;
 
 private Q_SLOTS:
 

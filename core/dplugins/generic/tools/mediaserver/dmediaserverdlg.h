@@ -45,7 +45,7 @@ public:
 
     explicit DMediaServerDlg(QObject* const parent,
                              DInfoInterface* const iface=nullptr);
-    ~DMediaServerDlg();
+    ~DMediaServerDlg() override;
 
 private:
 
@@ -57,7 +57,7 @@ private:
 
 private Q_SLOTS:
 
-    void accept();
+    void accept() override;
     void slotToggleMediaServer();
     void slotSelectionChanged();
 

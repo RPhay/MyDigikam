@@ -43,7 +43,7 @@ class CalendarPlugin : public DPluginGeneric
 public:
 
     explicit CalendarPlugin(QObject* const parent = nullptr);
-    ~CalendarPlugin();
+    ~CalendarPlugin() override;
 
     QString name()                 const override;
     QString iid()                  const override;

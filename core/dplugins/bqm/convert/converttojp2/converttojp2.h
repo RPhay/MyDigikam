@@ -40,23 +40,23 @@ class ConvertToJP2 : public BatchTool
 public:
 
     explicit ConvertToJP2(QObject* const parent = nullptr);
-    ~ConvertToJP2();
+    ~ConvertToJP2() override;
 
-    QString outputSuffix() const;
-    BatchToolSettings defaultSettings();
+    QString outputSuffix() const override;
+    BatchToolSettings defaultSettings() override;
 
-    BatchTool* clone(QObject* const parent=nullptr) const { return new ConvertToJP2(parent); };
+    BatchTool* clone(QObject* const parent=nullptr) const override { return new ConvertToJP2(parent); };
 
-    void registerSettingsWidget();
+    void registerSettingsWidget() override;
 
 private Q_SLOTS:
 
-    void slotSettingsChanged();
-    void slotAssignSettings2Widget();
+    void slotSettingsChanged() override;
+    void slotAssignSettings2Widget() override;
 
 private:
 
-    bool toolOperations();
+    bool toolOperations() override;
 
 private:
 

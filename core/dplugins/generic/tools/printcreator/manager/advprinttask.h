@@ -62,7 +62,7 @@ public:
                           PrintMode mode,
                           const QSize& size = QSize(),        ///< For PREVIEW stage.
                           int sizeIndex = 0);                 ///< For PREPAREPRINT stage.
-    ~AdvPrintTask();
+    ~AdvPrintTask() override;
 
 Q_SIGNALS:
 
@@ -72,7 +72,7 @@ Q_SIGNALS:
 
 private:
 
-    void run();
+    void run() override;
 
     void        preparePrint();
     void        printPhotos();

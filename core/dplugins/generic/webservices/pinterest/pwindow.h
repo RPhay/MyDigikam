@@ -49,7 +49,7 @@ class PWindow : public WSToolDialog
 public:
 
     explicit PWindow(DInfoInterface* const iface, QWidget* const parent);
-    ~PWindow();
+    ~PWindow() override;
 
     void reactivate();
 

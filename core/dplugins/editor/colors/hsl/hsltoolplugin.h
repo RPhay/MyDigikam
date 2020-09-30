@@ -43,7 +43,7 @@ class HSLToolPlugin : public DPluginEditor
 public:
 
     explicit HSLToolPlugin(QObject* const parent = nullptr);
-    ~HSLToolPlugin();
+    ~HSLToolPlugin() override;
 
     QString name()                 const override;
     QString iid()                  const override;

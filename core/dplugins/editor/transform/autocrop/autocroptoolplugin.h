@@ -43,7 +43,7 @@ class AutoCropToolPlugin : public DPluginEditor
 public:
 
     explicit AutoCropToolPlugin(QObject* const parent = nullptr);
-    ~AutoCropToolPlugin();
+    ~AutoCropToolPlugin() override;
 
     QString name()                 const override;
     QString iid()                  const override;

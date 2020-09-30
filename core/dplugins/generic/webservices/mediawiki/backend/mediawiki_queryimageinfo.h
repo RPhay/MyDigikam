@@ -85,7 +85,7 @@ public:
     /**
      * @brief Destructs a query image info job.
      */
-    virtual ~QueryImageinfo();
+    ~QueryImageinfo() override;
 
     /**
      * @brief Set the title of the image requested.

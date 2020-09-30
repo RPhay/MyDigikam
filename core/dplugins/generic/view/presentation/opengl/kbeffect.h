@@ -85,15 +85,15 @@ class FadeKBEffect: public KBEffect
 public:
 
     explicit FadeKBEffect(PresentationKB* const parent, bool m_needFadeIn = true);
-    virtual ~FadeKBEffect();
+    ~FadeKBEffect() override;
 
-    virtual Type type()                  override
+    Type type()                  override
     {
         return Fade;
     };
 
-    virtual void advanceTime(float step) override;
-    virtual bool done()                  override;
+    void advanceTime(float step) override;
+    bool done()                  override;
 };
 
 // -------------------------------------------------------------------------
@@ -104,15 +104,15 @@ class BlendKBEffect: public KBEffect
 public:
 
     explicit BlendKBEffect(PresentationKB* const parent, bool m_needFadeIn = true);
-    virtual ~BlendKBEffect();
+    ~BlendKBEffect() override;
 
-    virtual Type type()                  override
+    Type type()                  override
     {
         return Blend;
     };
 
-    virtual void advanceTime(float step) override;
-    virtual bool done()                  override;
+    void advanceTime(float step) override;
+    bool done()                  override;
 };
 
 } // namespace DigikamGenericPresentationPlugin

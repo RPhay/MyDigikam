@@ -53,7 +53,7 @@ class PanoActionThread : public QObject
 public:
 
     explicit PanoActionThread(QObject* const parent);
-    ~PanoActionThread();
+    ~PanoActionThread() override;
 
 public:
 
