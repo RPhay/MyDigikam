@@ -43,13 +43,13 @@ class DNNFaceDetectorYOLO: public DNNFaceDetectorBase
 public:
 
     explicit DNNFaceDetectorYOLO();
-    ~DNNFaceDetectorYOLO();
+    ~DNNFaceDetectorYOLO()                                  override;
 
     bool loadModels();
 
-    virtual void detectFaces(const cv::Mat& inputImage,
-                             const cv::Size& paddedSize,
-                             std::vector<cv::Rect>& detectedBboxes) override;
+    void detectFaces(const cv::Mat& inputImage,
+                     const cv::Size& paddedSize,
+                     std::vector<cv::Rect>& detectedBboxes) override;
 
 private:
 

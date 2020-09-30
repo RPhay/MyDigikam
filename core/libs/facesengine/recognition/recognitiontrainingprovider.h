@@ -46,8 +46,9 @@ class RecognitionTrainingProvider : public TrainingDataProvider
 {
 public:
 
-    explicit RecognitionTrainingProvider(const Identity& identity, const QList<QImage*>& newImages);
-    ~RecognitionTrainingProvider();
+    explicit RecognitionTrainingProvider(const Identity& identity,
+                                         const QList<QImage*>& newImages);
+    ~RecognitionTrainingProvider()                   override;
 
     ImageListProvider* newImages(const Identity& id) override;
 

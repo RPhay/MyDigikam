@@ -66,17 +66,17 @@ public:
 
     explicit QListImageListProvider(const QList<QImage*>& lst);
     QListImageListProvider();
-    ~QListImageListProvider();
+    ~QListImageListProvider()             override;
 
     void reset();
 
 public:
 
-    virtual int            size()  const          override;
-    virtual bool           atEnd() const          override;
-    virtual void           proceed(int steps = 1) override;
-    virtual QImage*        image()                override;
-    virtual QList<QImage*> images()               override;
+    int            size()  const          override;
+    bool           atEnd() const          override;
+    void           proceed(int steps = 1) override;
+    QImage*        image()                override;
+    QList<QImage*> images()               override;
 
 public:
 
@@ -90,11 +90,11 @@ class DIGIKAM_GUI_EXPORT EmptyImageListProvider : public ImageListProvider
 {
 public:
 
-    virtual int     size()  const          override;
-    virtual bool    atEnd() const          override;
-    virtual void    proceed(int steps = 1) override;
-    virtual QImage* image()                override;
-    virtual QList<QImage*> images()        override;
+    int     size()  const                 override;
+    bool    atEnd() const                 override;
+    void    proceed(int steps = 1)        override;
+    QImage* image()                       override;
+    QList<QImage*> images()               override;
 };
 
 // ----------------------------------------------------------------------------------------

@@ -157,7 +157,7 @@ public:
         ids.resize(images.size());
     }
 
-    void operator()(const cv::Range& range) const
+    void operator()(const cv::Range& range) const override
     {
         for(int i = range.start ; i < range.end ; ++i)
         {
@@ -224,7 +224,7 @@ public:
     {
     }
 
-    void operator()(const cv::Range& range) const
+    void operator()(const cv::Range& range) const override
     {
         for(int i = range.start ; i < range.end ; ++i)
         {

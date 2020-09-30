@@ -45,13 +45,13 @@ class DIGIKAM_EXPORT RecognitionPreprocessor: public FacePreprocessor
 public:
 
     explicit RecognitionPreprocessor();
-    virtual ~RecognitionPreprocessor();
+    ~RecognitionPreprocessor()                     override;
 
 public:
 
     void init(PreprocessorSelection mode);
 
-    virtual cv::Mat preprocess(const cv::Mat& image) const;
+    cv::Mat preprocess(const cv::Mat& image) const override;
 
 private:
 

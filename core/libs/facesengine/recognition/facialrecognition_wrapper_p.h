@@ -48,7 +48,6 @@
 #include "facedbaccess.h"
 #include "facedboperationgroup.h"
 #include "facedb.h"
-#include "dataproviders.h"
 #include "identity.h"
 
 namespace Digikam

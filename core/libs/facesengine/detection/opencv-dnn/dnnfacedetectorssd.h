@@ -38,13 +38,13 @@ class DNNFaceDetectorSSD: public DNNFaceDetectorBase
 public:
 
     explicit DNNFaceDetectorSSD();
-    ~DNNFaceDetectorSSD();
+    ~DNNFaceDetectorSSD()                                   override;
 
     bool loadModels();
 
-    virtual void detectFaces(const cv::Mat& inputImage,
-                             const cv::Size& paddedSize,
-                             std::vector<cv::Rect>& detectedBboxes) override;
+    void detectFaces(const cv::Mat& inputImage,
+                     const cv::Size& paddedSize,
+                     std::vector<cv::Rect>& detectedBboxes) override;
 
 private:
 
