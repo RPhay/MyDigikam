@@ -44,7 +44,7 @@ class TagsActionMngr : public QObject
 public:
 
     explicit TagsActionMngr(QWidget* const parent);
-    ~TagsActionMngr();
+    ~TagsActionMngr() override;
 
     /**
      * Register all tag actions to collections managed with keyboard shortcuts.

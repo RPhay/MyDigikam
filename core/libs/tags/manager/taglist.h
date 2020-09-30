@@ -42,7 +42,7 @@ class TagList : public QWidget
 public:
 
     explicit TagList(TagMngrTreeView* const treeView, QWidget* const parent);
-    ~TagList();
+    ~TagList() override;
 
     /**
      * @brief saveSettings   - save settings to digiKam_tagsmanagerrc KConfig

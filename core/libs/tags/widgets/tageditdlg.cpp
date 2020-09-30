@@ -67,7 +67,7 @@ class Q_DECL_HIDDEN TagsListCreationErrorDialog : public QDialog
 public:
 
     TagsListCreationErrorDialog(QWidget* const parent, const QMap<QString, QString>& errMap);
-    ~TagsListCreationErrorDialog() {};
+    ~TagsListCreationErrorDialog() override {};
 };
 
 // ------------------------------------------------------------------------------

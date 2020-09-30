@@ -52,7 +52,7 @@ class AddTagsComboBox : public TagTreeViewSelectComboBox
 public:
 
     explicit AddTagsComboBox(QWidget* const parent = nullptr);
-    ~AddTagsComboBox();
+    ~AddTagsComboBox() override;
 
     /**
      * You must call this after construction.
@@ -107,7 +107,7 @@ protected Q_SLOTS:
 
 protected:
 
-    bool eventFilter(QObject* object, QEvent* event);
+    bool eventFilter(QObject* object, QEvent* event) override;
 
 private:
 

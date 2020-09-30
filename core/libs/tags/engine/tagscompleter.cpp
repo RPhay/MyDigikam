@@ -64,7 +64,7 @@ public:
     {
     }
 
-    ~Private()
+    ~Private() override
     {
     }
 
@@ -80,7 +80,7 @@ public:
         return supportingModel->indexForAlbum(talbum);
     }
 
-    virtual bool matches(int id)
+    bool matches(int id) override
     {
         TAlbum* const talbum = AlbumManager::instance()->findTAlbum(id);
 

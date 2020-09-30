@@ -65,7 +65,7 @@ public:
     /**
      * Destructor.
      */
-    virtual ~TagModificationHelper();
+    ~TagModificationHelper() override;
 
 public Q_SLOTS:
 

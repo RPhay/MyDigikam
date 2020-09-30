@@ -62,11 +62,11 @@ protected Q_SLOTS:
 
 protected:
 
-    virtual QWidget* createWidget()                    override;
-    virtual void setActive(bool)                       override;
-    virtual void visualChange()                        override;
-    virtual void slotEntered(const QModelIndex& index) override;
-    virtual void hide()                                override;
+    QWidget* createWidget()                    override;
+    void setActive(bool)                       override;
+    void visualChange()                        override;
+    void slotEntered(const QModelIndex& index) override;
+    void hide()                                override;
 
     void updatePosition();
     void updateTag();

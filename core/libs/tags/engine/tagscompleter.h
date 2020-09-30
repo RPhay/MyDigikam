@@ -48,7 +48,7 @@ public:
      * A completion object operating on a TagModel
      */
     explicit TagCompleter(QObject* const parent = nullptr);
-    ~TagCompleter();
+    ~TagCompleter() override;
 
     /// Update the completer for the given fragment
     void update(const QString& fragment);

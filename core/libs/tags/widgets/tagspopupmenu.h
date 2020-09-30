@@ -56,7 +56,7 @@ public:
 
     TagsPopupMenu(qlonglong selectedImageId, Mode mode, QWidget* const parent = nullptr);
     TagsPopupMenu(const QList<qlonglong>& selectedImageIDs, Mode mode, QWidget* const parent = nullptr);
-    ~TagsPopupMenu();
+    ~TagsPopupMenu() override;
 
 Q_SIGNALS:
 

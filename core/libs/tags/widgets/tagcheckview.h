@@ -67,10 +67,10 @@ public:
     void setCheckNewTags(bool checkNewTags);
     bool checkNewTags() const;
 
-    virtual ~TagCheckView();
+    ~TagCheckView() override;
 
-    virtual void doLoadState() override;
-    virtual void doSaveState() override;
+    void doLoadState() override;
+    void doSaveState() override;
 
 Q_SIGNALS:
 
@@ -90,7 +90,7 @@ public Q_SLOTS:
 
 protected:
 
-    virtual void addCustomContextMenuActions(ContextMenuHelper& cmh, Album* album) override;
+    void addCustomContextMenuActions(ContextMenuHelper& cmh, Album* album) override;
 
 private Q_SLOTS:
 

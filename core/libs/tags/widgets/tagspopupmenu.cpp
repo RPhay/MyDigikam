@@ -65,7 +65,7 @@ public:
 
     TagToggleAction(const QString& text, QObject* const parent);
     TagToggleAction(const QIcon& icon, const QString& text, QObject* const parent);
-    virtual QWidget* createWidget(QWidget* parent);
+    QWidget* createWidget(QWidget* parent) override;
 
     void setSpecialChecked(bool checked);
     bool isChecked()        const;
@@ -89,8 +89,8 @@ public:
 
 protected:
 
-    virtual QSize sizeHint()                                const;
-    virtual void paintEvent(QPaintEvent*);
+    QSize sizeHint()                                const override;
+    void paintEvent(QPaintEvent*) override;
 
 private:
 

@@ -49,7 +49,7 @@ class AddTagsLineEdit : public QLineEdit
 public:
 
     explicit AddTagsLineEdit(QWidget* const parent = nullptr);
-    ~AddTagsLineEdit();
+    ~AddTagsLineEdit() override;
 
     /**
      * Optional: set a model for additional information, like tag icons
