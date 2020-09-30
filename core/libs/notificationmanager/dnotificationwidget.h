@@ -85,7 +85,7 @@ public:
     /**
      * Destructor.
      */
-    ~DNotificationWidget();
+    ~DNotificationWidget() override;
 
     /**
      * Get the text of this message widget.

@@ -78,7 +78,7 @@ public:
     /**
      * Cleans up.
      */
-    virtual ~DNotificationPopup();
+    ~DNotificationPopup() override;
 
     /**
      * Sets the main view to be the specified widget (which must be a child of the popup).

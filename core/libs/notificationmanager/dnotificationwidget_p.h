@@ -49,7 +49,7 @@ class Q_DECL_HIDDEN DNotificationWidget::Private : public QObject
 public:
 
     explicit Private(DNotificationWidget* const);
-    virtual ~Private();
+    ~Private() override;
 
     void init();
     void createLayout();
