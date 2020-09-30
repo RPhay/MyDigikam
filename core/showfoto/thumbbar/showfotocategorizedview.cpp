@@ -56,7 +56,7 @@ public:
 
 protected:
 
-    virtual QString tipContents()
+    QString tipContents() override
     {
         ShowfotoItemInfo info = ShowfotoItemModel::retrieveShowfotoItemInfo(currentIndex());
 

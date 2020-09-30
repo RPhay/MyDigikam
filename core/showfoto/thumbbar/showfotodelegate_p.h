@@ -89,7 +89,7 @@ public:
 
 public:
 
-    virtual void clearRects();
+    void clearRects() override;
 };
 
 // --- ShowfotoThumbnailDelegate ----------------------------------------------------

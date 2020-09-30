@@ -47,7 +47,7 @@ class ShowfotoSortFilterModel : public DCategorizedSortFilterProxyModel
 public:
 
     explicit ShowfotoSortFilterModel(QObject* const parent = nullptr);
-    ~ShowfotoSortFilterModel();
+    ~ShowfotoSortFilterModel() override;
 
     void setSourceShowfotoModel(ShowfotoItemModel* const sourceModel);
     ShowfotoItemModel* sourceShowfotoModel() const;
@@ -86,7 +86,7 @@ public:
 
 protected:
 
-    virtual void setSourceModel(QAbstractItemModel* sourceModel);
+    void setSourceModel(QAbstractItemModel* sourceModel) override;
 
     /// Reimplement if needed. Called only when model shall be set as (direct) sourceModel.
     virtual void setDirectSourceShowfotoModel(ShowfotoItemModel* const sourceModel);
@@ -125,7 +125,7 @@ public:
 public:
 
     explicit ShowfotoFilterModel(QObject* const parent = nullptr);
-    ~ShowfotoFilterModel();
+    ~ShowfotoFilterModel() override;
 
     ShowfotoItemSortSettings showfotoItemSortSettings() const;
 
@@ -138,8 +138,8 @@ public:
     bool isGroupOpen(qlonglong group) const;
     bool isAllGroupsOpen() const;
 */
-    virtual QVariant data(const QModelIndex& index, int role = Qt::DisplayRole) const override;
-    virtual ShowfotoFilterModel* showfotoFilterModel()                          const override;
+    QVariant data(const QModelIndex& index, int role = Qt::DisplayRole) const override;
+    ShowfotoFilterModel* showfotoFilterModel()                          const override;
 
 public Q_SLOTS:
 
@@ -184,13 +184,13 @@ protected:
 
 protected:
 
-    virtual void setDirectSourceShowfotoModel(ShowfotoItemModel* const sourceModel) override;
+    void setDirectSourceShowfotoModel(ShowfotoItemModel* const sourceModel) override;
 /*
     TODO
     virtual bool filterAcceptsRow(int source_row, const QModelIndex& source_parent) const;
 */
-    virtual int compareCategories(const QModelIndex& left, const QModelIndex& right) const override;
-    virtual bool subSortLessThan(const QModelIndex& left, const QModelIndex& right)  const override;
+    int compareCategories(const QModelIndex& left, const QModelIndex& right) const override;
+    bool subSortLessThan(const QModelIndex& left, const QModelIndex& right)  const override;
 
     /**
      * Reimplement to customize category sorting,
@@ -226,7 +226,7 @@ public:
 
 protected:
 
-    virtual bool filterAcceptsRow(int source_row, const QModelIndex& source_parent) const;
+    bool filterAcceptsRow(int source_row, const QModelIndex& source_parent) const override;
 };
 
 } // namespace ShowFoto

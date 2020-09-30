@@ -49,7 +49,7 @@ class ShowfotoDelegate : public ItemViewShowfotoDelegate
 public:
 
     explicit ShowfotoDelegate(QObject* const parent = nullptr);
-    ~ShowfotoDelegate();
+    ~ShowfotoDelegate() override;
 
     void setView(ShowfotoThumbnailBar* view);
 
@@ -59,18 +59,18 @@ public:
 
     int calculatethumbSizeToFit(int ws);
 
-    virtual void setSpacing(int spacing)                                                                       override;
-    virtual void setDefaultViewOptions(const QStyleOptionViewItem& option)                                     override;
-    virtual bool acceptsToolTip(const QPoint& pos, const QRect& visualRect,
+    void setSpacing(int spacing)                                                                       override;
+    void setDefaultViewOptions(const QStyleOptionViewItem& option)                                     override;
+    bool acceptsToolTip(const QPoint& pos, const QRect& visualRect,
                                 const QModelIndex& index, QRect* tooltipRect = nullptr)                  const override;
-    virtual bool acceptsActivation(const QPoint& pos, const QRect& visualRect,
+    bool acceptsActivation(const QPoint& pos, const QRect& visualRect,
                                    const QModelIndex& index, QRect* activationRect = nullptr)            const override;
 
-    virtual QRect pixmapRect()                                                                           const override;
-    virtual QRect imageInformationRect()                                                                 const override;
+    QRect pixmapRect()                                                                           const override;
+    QRect imageInformationRect()                                                                 const override;
 
-    virtual void paint(QPainter* painter, const QStyleOptionViewItem& option, const QModelIndex& index)  const override;
-    virtual QPixmap pixmapForDrag(const QStyleOptionViewItem& option, const QList<QModelIndex>& indexes) const override;
+    void paint(QPainter* painter, const QStyleOptionViewItem& option, const QModelIndex& index)  const override;
+    QPixmap pixmapForDrag(const QStyleOptionViewItem& option, const QList<QModelIndex>& indexes) const override;
 
     /**
      * Retrieve the thumbnail pixmap in given size for the ShowfotoItemModel::ThumbnailRole for
@@ -110,7 +110,7 @@ protected:
      */
     virtual void updateRects() = 0;
 
-    virtual void clearCaches()               override;
+    void clearCaches()               override;
 
     /**
      * Reimplement to clear caches based on model indexes (hash on row number etc.)
@@ -120,8 +120,8 @@ protected:
 
     virtual QPixmap thumbnailPixmap(const QModelIndex& index) const;
 
-    virtual void invalidatePaintingCache()   override;
-    virtual void updateSizeRectsAndPixmaps() override;
+    void invalidatePaintingCache()   override;
+    void updateSizeRectsAndPixmaps() override;
 
 protected Q_SLOTS:
 
@@ -142,7 +142,7 @@ class ShowfotoThumbnailDelegate : public ShowfotoDelegate
 public:
 
     explicit ShowfotoThumbnailDelegate(ShowfotoThumbnailBar* const parent);
-    ~ShowfotoThumbnailDelegate();
+    ~ShowfotoThumbnailDelegate() override;
 
     void setFlow(QListView::Flow flow);
 
@@ -153,14 +153,14 @@ public:
     int maximumSize() const;
     int minimumSize() const;
 
-    virtual void setDefaultViewOptions(const QStyleOptionViewItem& option) override;
-    virtual bool acceptsActivation(const QPoint& pos, const QRect& visualRect, const QModelIndex& index,
+    void setDefaultViewOptions(const QStyleOptionViewItem& option) override;
+    bool acceptsActivation(const QPoint& pos, const QRect& visualRect, const QModelIndex& index,
                                    QRect* activationRect) const override;
 
 protected:
 
-    virtual void updateContentWidth() override;
-    virtual void updateRects() override;
+    void updateContentWidth() override;
+    void updateRects() override;
     int thumbnailPixmapSize(bool withHighlight, int size);
 
 private:
@@ -177,13 +177,13 @@ class ShowfotoNormalDelegate : public ShowfotoDelegate
 public:
 
     explicit ShowfotoNormalDelegate(ShowfotoThumbnailBar* const parent);
-    ~ShowfotoNormalDelegate();
+    ~ShowfotoNormalDelegate() override;
 
 protected:
 
     ShowfotoNormalDelegate(ShowfotoNormalDelegatePrivate& dd, ShowfotoThumbnailBar* const parent);
 
-    virtual void updateRects() override;
+    void updateRects() override;
 
 private:
 

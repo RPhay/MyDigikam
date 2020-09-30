@@ -46,24 +46,24 @@ class ItemViewShowfotoDelegate : public DItemDelegate, public ItemDelegateOverla
 public:
 
     explicit ItemViewShowfotoDelegate(QObject* const parent = nullptr);
-    ~ItemViewShowfotoDelegate();
+    ~ItemViewShowfotoDelegate() override;
 
     ThumbnailSize thumbnailSize() const;
 
     int           spacing() const;
     QRect         rect() const;
 
-    virtual QSize sizeHint(const QStyleOptionViewItem& option, const QModelIndex& index) const;
-    virtual QSize gridSize() const;
+    QSize sizeHint(const QStyleOptionViewItem& option, const QModelIndex& index) const override;
+    QSize gridSize() const override;
 
     /// reimplemented from DItemDelegate
-    virtual void setThumbnailSize(const ThumbnailSize& thumbSize);
-    virtual void setSpacing(int spacing);
-    virtual void setDefaultViewOptions(const QStyleOptionViewItem& option);
-    virtual bool acceptsToolTip(const QPoint& pos, const QRect& visualRect,
-                                const QModelIndex& index, QRect* tooltipRect = nullptr) const;
-    virtual bool acceptsActivation(const QPoint& pos, const QRect& visualRect,
-                                   const QModelIndex& index, QRect* activationRect = nullptr) const;
+    void setThumbnailSize(const ThumbnailSize& thumbSize) override;
+    void setSpacing(int spacing) override;
+    void setDefaultViewOptions(const QStyleOptionViewItem& option) override;
+    bool acceptsToolTip(const QPoint& pos, const QRect& visualRect,
+                                const QModelIndex& index, QRect* tooltipRect = nullptr) const override;
+    bool acceptsActivation(const QPoint& pos, const QRect& visualRect,
+                                   const QModelIndex& index, QRect* activationRect = nullptr) const override;
 
     /**
      * Returns the area where the pixmap is drawn,
@@ -80,14 +80,14 @@ public:
      */
     virtual QRect imageInformationRect() const;
 
-    virtual void mouseMoved(QMouseEvent* e, const QRect& visualRect, const QModelIndex& index);
+    void mouseMoved(QMouseEvent* e, const QRect& visualRect, const QModelIndex& index) override;
 
 protected Q_SLOTS:
 
     void slotThemeChanged();
     void slotSetupChanged();
 
-    virtual void overlayDestroyed(QObject* o);
+    void overlayDestroyed(QObject* o) override;
 
 Q_SIGNALS:
 
@@ -110,7 +110,7 @@ protected:
     void prepareMetrics(int maxWidth);
     void prepareBackground();
 
-    virtual QAbstractItemDelegate* asDelegate();
+    QAbstractItemDelegate* asDelegate() override;
 
     /// reimplement these in subclasses
     virtual void invalidatePaintingCache();
