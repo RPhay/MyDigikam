@@ -91,7 +91,7 @@ public:
         m_exclusive = exclusive;
     }
 
-    virtual QVariant data(const QModelIndex& index, int role = Qt::DisplayRole) const
+    QVariant data(const QModelIndex& index, int role = Qt::DisplayRole) const override
     {
         if      (role == LTLeftPanelRole)
         {
@@ -105,7 +105,7 @@ public:
         return ItemListModel::data(index, role);
     }
 
-    virtual bool setData(const QModelIndex& index, const QVariant& value, int role = Qt::DisplayRole)
+    bool setData(const QModelIndex& index, const QVariant& value, int role = Qt::DisplayRole) override
     {
         if (!index.isValid())
         {
@@ -138,13 +138,13 @@ public:
         return ItemListModel::setData(index, value, role);
     }
 
-    virtual void imageInfosAboutToBeRemoved(int begin, int end)
+    void imageInfosAboutToBeRemoved(int begin, int end) override
     {
         removeAnyInInterval(m_leftIndexes, begin, end);
         removeAnyInInterval(m_rightIndexes, begin, end);
     }
 
-    virtual void imageInfosCleared()
+    void imageInfosCleared() override
     {
         clearLightTableState();
     }

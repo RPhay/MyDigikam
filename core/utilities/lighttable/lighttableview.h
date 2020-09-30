@@ -46,7 +46,7 @@ class LightTableView : public QFrame
 public:
 
     explicit LightTableView(QWidget* const parent = nullptr);
-    ~LightTableView();
+    ~LightTableView() override;
 
     void   setSyncPreview(bool sync);
     void   setNavigateByPair(bool b);

@@ -44,7 +44,7 @@ class LightTableWindow : public DXmlGuiWindow
 
 public:
 
-    ~LightTableWindow();
+    ~LightTableWindow() override;
 
     static LightTableWindow* lightTableWindow();
     static bool              lightTableWindowCreated();
