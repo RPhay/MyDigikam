@@ -44,7 +44,7 @@ class DIGIKAM_DATABASE_EXPORT ItemGPS : public GPSItemContainer
 public:
 
     explicit ItemGPS(const ItemInfo& info);
-    virtual ~ItemGPS();
+    ~ItemGPS() override;
 
     QString saveChanges() override;
     bool loadImageData()  override;

@@ -95,7 +95,7 @@ public:
 public:
 
     explicit ItemModel(QObject* const parent = nullptr);
-    ~ItemModel();
+    ~ItemModel() override;
 
     /**
      * If a cache is kept, lookup by file path is fast,
@@ -253,11 +253,11 @@ public:
      */
     void setSendRemovalSignals(bool send);
 
-    virtual QVariant      data(const QModelIndex& index, int role = Qt::DisplayRole)                        const override;
-    virtual QVariant      headerData(int section, Qt::Orientation orientation, int role = Qt::DisplayRole)  const override;
-    virtual int           rowCount(const QModelIndex& parent = QModelIndex())                               const override;
-    virtual Qt::ItemFlags flags(const QModelIndex& index)                                                   const override;
-    virtual QModelIndex   index(int row, int column = 0, const QModelIndex& parent = QModelIndex())         const override;
+    QVariant      data(const QModelIndex& index, int role = Qt::DisplayRole)                        const override;
+    QVariant      headerData(int section, Qt::Orientation orientation, int role = Qt::DisplayRole)  const override;
+    int           rowCount(const QModelIndex& parent = QModelIndex())                               const override;
+    Qt::ItemFlags flags(const QModelIndex& index)                                                   const override;
+    QModelIndex   index(int row, int column = 0, const QModelIndex& parent = QModelIndex())         const override;
 
     /**
      * Retrieves the imageInfo object from the data() method of the given index.

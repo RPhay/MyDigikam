@@ -45,7 +45,7 @@ class DIGIKAM_EXPORT DbEngineConnectionChecker : public QThread
 public:
 
     explicit DbEngineConnectionChecker(const DbEngineParameters& parameters);
-    ~DbEngineConnectionChecker();
+    ~DbEngineConnectionChecker() override;
 
     bool checkSuccessful() const;
 
@@ -55,7 +55,7 @@ public Q_SLOTS:
 
 protected:
 
-    virtual void run() override;
+    void run() override;
 
 Q_SIGNALS:
 
@@ -77,14 +77,14 @@ class DIGIKAM_EXPORT DbEngineGuiErrorHandler : public DbEngineErrorHandler
 public:
 
     explicit DbEngineGuiErrorHandler(const DbEngineParameters& parameters);
-    ~DbEngineGuiErrorHandler();
+    ~DbEngineGuiErrorHandler() override;
 
     bool checkDatabaseConnection();
 
 public Q_SLOTS:
 
-    virtual void connectionError(DbEngineErrorAnswer* answer, const QSqlError& error, const QString& query) override;
-    virtual void consultUserForError(DbEngineErrorAnswer* answer, const QSqlError& error, const QString& query) override;
+    void connectionError(DbEngineErrorAnswer* answer, const QSqlError& error, const QString& query) override;
+    void consultUserForError(DbEngineErrorAnswer* answer, const QSqlError& error, const QString& query) override;
 
 private Q_SLOTS:
 

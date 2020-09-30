@@ -57,7 +57,7 @@ class DIGIKAM_EXPORT DbEngineErrorHandler : public QObject
 public:
 
     explicit DbEngineErrorHandler();
-    ~DbEngineErrorHandler();
+    ~DbEngineErrorHandler() override;
 
 public Q_SLOTS:
 

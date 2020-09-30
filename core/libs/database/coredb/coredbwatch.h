@@ -98,7 +98,7 @@ Q_SIGNALS:
 
 protected:
 
-    ~CoreDbWatch();
+    ~CoreDbWatch() override;
 
 #ifdef HAVE_DBUS
 
@@ -178,9 +178,9 @@ class DBusSignalListenerThread : public QThread
 public:
 
     explicit DBusSignalListenerThread(CoreDbWatch* const q, CoreDbWatch::Private* const d);
-    ~DBusSignalListenerThread();
+    ~DBusSignalListenerThread() override;
 
-    virtual void run() override;
+    void run() override;
 
 private:
 

@@ -99,7 +99,7 @@ private Q_SLOTS:
 private:
 
     explicit ItemAttributesWatch();
-    ~ItemAttributesWatch();
+    ~ItemAttributesWatch() override;
 
     static ItemAttributesWatch* m_instance;
 };

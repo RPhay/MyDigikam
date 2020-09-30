@@ -50,7 +50,7 @@ public:
     explicit SearchTextBarDb(QWidget* const parent,
                              const QString& name,
                              const QString& msg=QString());
-    ~SearchTextBarDb();
+    ~SearchTextBarDb() override;
 
     /**
      * If the given model is != null, the model is used to populate the

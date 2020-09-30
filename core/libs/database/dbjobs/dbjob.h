@@ -44,7 +44,7 @@ class DIGIKAM_DATABASE_EXPORT DBJob : public ActionJob
 protected:
 
     explicit DBJob();
-    ~DBJob();
+    ~DBJob() override;
 
 Q_SIGNALS:
 
@@ -61,7 +61,7 @@ class DIGIKAM_DATABASE_EXPORT AlbumsJob : public DBJob
 public:
 
     explicit AlbumsJob(const AlbumsDBJobInfo& jobInfo);
-    ~AlbumsJob();
+    ~AlbumsJob() override;
 
 protected:
 
@@ -85,7 +85,7 @@ class DIGIKAM_DATABASE_EXPORT DatesJob : public DBJob
 public:
 
     explicit DatesJob(const DatesDBJobInfo& jobInfo);
-    ~DatesJob();
+    ~DatesJob() override;
 
 protected:
 
@@ -109,7 +109,7 @@ class DIGIKAM_DATABASE_EXPORT GPSJob : public DBJob
 public:
 
     explicit GPSJob(const GPSDBJobInfo& jobInfo);
-    ~GPSJob();
+    ~GPSJob() override;
 
 protected:
 
@@ -133,7 +133,7 @@ class DIGIKAM_DATABASE_EXPORT TagsJob : public DBJob
 public:
 
     explicit TagsJob(const TagsDBJobInfo& jobInfo);
-    ~TagsJob();
+    ~TagsJob() override;
 
 protected:
 
@@ -158,7 +158,7 @@ class DIGIKAM_DATABASE_EXPORT SearchesJob : public DBJob
 public:
 
     explicit SearchesJob(const SearchesDBJobInfo& jobInfo);
-    ~SearchesJob();
+    ~SearchesJob() override;
 
     bool isCanceled();
 

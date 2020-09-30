@@ -38,7 +38,7 @@ class DIGIKAM_GUI_EXPORT DBStatDlg : public InfoDlg
 public:
 
     explicit DBStatDlg(QWidget* const parent);
-    ~DBStatDlg();
+    ~DBStatDlg() override;
 
 private:
 

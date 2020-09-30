@@ -68,7 +68,7 @@ class DIGIKAM_EXPORT BdEngineBackendPrivate : public DbEngineErrorAnswer
 public:
 
     explicit BdEngineBackendPrivate(BdEngineBackend* const backend);
-    virtual ~BdEngineBackendPrivate();
+    ~BdEngineBackendPrivate() override;
 
     void init(const QString& connectionName, DbEngineLocking* const locking);
 
@@ -102,8 +102,8 @@ public:
     void queryOperationWakeAll(BdEngineBackend::QueryOperationStatus status);
 
     // called by DbEngineErrorHandler, implementing DbEngineErrorAnswer
-    virtual void connectionErrorContinueQueries() override;
-    virtual void connectionErrorAbortQueries() override;
+    void connectionErrorContinueQueries() override;
+    void connectionErrorAbortQueries() override;
     virtual void transactionFinished();
 
 public:

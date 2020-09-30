@@ -102,7 +102,7 @@ protected:
     virtual void setDirectSourceItemModel(ItemModel* const model);
 
     // made protected
-    virtual void setSourceModel(QAbstractItemModel* const model)                                   override;
+    void setSourceModel(QAbstractItemModel* const model)                                   override;
 
 protected:
 
@@ -141,7 +141,7 @@ public:
 public:
 
     explicit ItemFilterModel(QObject* const parent = nullptr);
-    ~ItemFilterModel();
+    ~ItemFilterModel() override;
 
     /**
      * Add a hook to get added images for preparation tasks before they are added in the model
@@ -167,8 +167,8 @@ public:
     /// Enables sending imageInfosAdded and imageInfosAboutToBeRemoved
     void setSendItemInfoSignals(bool sendSignals);
 
-    virtual QVariant data(const QModelIndex& index, int role = Qt::DisplayRole)             const override;
-    virtual ItemFilterModel* imageFilterModel()                                             const override;
+    QVariant data(const QModelIndex& index, int role = Qt::DisplayRole)             const override;
+    ItemFilterModel* imageFilterModel()                                             const override;
 
 public Q_SLOTS:
 
@@ -249,12 +249,12 @@ protected:
 
     ItemFilterModel(ItemFilterModelPrivate& dd, QObject* const parent);
 
-    virtual void setDirectSourceItemModel(ItemModel* const model)                                 override;
+    void setDirectSourceItemModel(ItemModel* const model)                                 override;
 
-    virtual bool filterAcceptsRow(int source_row, const QModelIndex& source_parent)         const override;
+    bool filterAcceptsRow(int source_row, const QModelIndex& source_parent)         const override;
 
-    virtual int  compareCategories(const QModelIndex& left, const QModelIndex& right)       const override;
-    virtual bool subSortLessThan(const QModelIndex& left, const QModelIndex& right)         const override;
+    int  compareCategories(const QModelIndex& left, const QModelIndex& right)       const override;
+    bool subSortLessThan(const QModelIndex& left, const QModelIndex& right)         const override;
 /*
     virtual int  categoryCount(const ItemInfo& info)                                        const;
 */
@@ -310,7 +310,7 @@ public:
 
 protected:
 
-    virtual bool filterAcceptsRow(int source_row, const QModelIndex& source_parent)         const override;
+    bool filterAcceptsRow(int source_row, const QModelIndex& source_parent)         const override;
 };
 
 } // namespace Digikam

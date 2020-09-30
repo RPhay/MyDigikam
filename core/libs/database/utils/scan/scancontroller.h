@@ -108,18 +108,18 @@ public:
 
 protected:
 
-    virtual void run() override;
+    void run() override;
 
 private:
 
     explicit ScanController();
-    ~ScanController();
+    ~ScanController() override;
 
     void setInitializationMessage();
     void createProgressDialog();
 
-    virtual bool continueQuery()                                            override;
-    virtual void connectCollectionScanner(CollectionScanner* const scanner) override;
+    bool continueQuery()                                            override;
+    void connectCollectionScanner(CollectionScanner* const scanner) override;
 
     // -----------------------------------------------------------------------------
 
@@ -285,9 +285,9 @@ private Q_SLOTS:
 
 private:
 
-    virtual void moreSchemaUpdateSteps(int numberOfSteps) override;
-    virtual void schemaUpdateProgress(const QString& message, int numberOfSteps) override;
-    virtual void error(const QString& errorMessage) override;
+    void moreSchemaUpdateSteps(int numberOfSteps) override;
+    void schemaUpdateProgress(const QString& message, int numberOfSteps) override;
+    void error(const QString& errorMessage) override;
 
     AlbumCopyMoveHint hintForAlbum(const PAlbum* const album,
                                    int dstAlbumRootId,
@@ -366,7 +366,7 @@ private Q_SLOTS:
 
 private:
 
-    virtual void finishedSchemaUpdate(UpdateResult result) override;
+    void finishedSchemaUpdate(UpdateResult result) override;
 
     //@}
 

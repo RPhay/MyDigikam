@@ -63,7 +63,7 @@ public:
 
     explicit DatabaseServer(const DbEngineParameters& params,
                             DatabaseServerStarter* const parent = DatabaseServerStarter::instance());
-    virtual ~DatabaseServer();
+    ~DatabaseServer() override;
 
     /**
      * Starts the database management server.

@@ -50,7 +50,7 @@ class ItemInfoCache : public QObject
 public:
 
     explicit ItemInfoCache();
-    ~ItemInfoCache();
+    ~ItemInfoCache() override;
 
     /**
      * Return an ItemInfoData object for the given image id.

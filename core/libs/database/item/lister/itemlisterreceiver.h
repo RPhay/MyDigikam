@@ -62,8 +62,8 @@ public:
 
     explicit ItemListerValueListReceiver();
 
-    virtual void receive(const ItemListerRecord& record) override;
-    virtual void error(const QString& errMsg) override;
+    void receive(const ItemListerRecord& record) override;
+    void error(const QString& errMsg) override;
 
 public:
 
@@ -80,7 +80,7 @@ class DIGIKAM_DATABASE_EXPORT ItemListerJobReceiver
 public:
 
     explicit ItemListerJobReceiver(DBJob* const job);
-    virtual void error(const QString& errMsg) override;
+    void error(const QString& errMsg) override;
     void sendData();
 
 protected:
@@ -97,7 +97,7 @@ class DIGIKAM_DATABASE_EXPORT ItemListerJobPartsSendingReceiver
 public:
 
     explicit ItemListerJobPartsSendingReceiver(DBJob* const job, int limit);
-    virtual void receive(const ItemListerRecord &record) override;
+    void receive(const ItemListerRecord &record) override;
 
 protected:
 
@@ -114,7 +114,7 @@ class DIGIKAM_DATABASE_EXPORT ItemListerJobGrowingPartsSendingReceiver
 public:
 
     explicit ItemListerJobGrowingPartsSendingReceiver(DBJob* const job, int start, int end, int increment);
-    virtual void receive(const ItemListerRecord& record) override;
+    void receive(const ItemListerRecord& record) override;
 
 protected:
 

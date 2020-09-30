@@ -87,7 +87,7 @@ class DIGIKAM_DATABASE_EXPORT ItemFilterModel::ItemFilterModelPrivate : public Q
 public:
 
     explicit ItemFilterModelPrivate();
-    ~ItemFilterModelPrivate();
+    ~ItemFilterModelPrivate() override;
 
     void init(ItemFilterModel* q);
     void setupWorkers();

@@ -312,7 +312,7 @@ private Q_SLOTS:
 private:
 
     explicit TagsCache();
-    ~TagsCache();
+    ~TagsCache() override;
 
     void initialize();
     void invalidate();

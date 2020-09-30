@@ -63,7 +63,7 @@ public:
 
 public:
 
-    virtual ~InitializationObserver()
+    ~InitializationObserver() override
     {
     };
 

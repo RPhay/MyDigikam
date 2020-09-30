@@ -37,7 +37,7 @@ class DIGIKAM_GUI_EXPORT MysqlServBinary : public DBinaryIface
 public:
 
     explicit MysqlServBinary();
-    ~MysqlServBinary();
+    ~MysqlServBinary() override;
 };
 
 } // namespace Digikam

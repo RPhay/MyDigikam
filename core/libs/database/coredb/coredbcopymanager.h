@@ -53,7 +53,7 @@ public:
 public:
 
     explicit CoreDbCopyManager();
-    ~CoreDbCopyManager();
+    ~CoreDbCopyManager() override;
 
     void copyDatabases(const DbEngineParameters& fromDBParameters,
                        const DbEngineParameters& toDBParameters);

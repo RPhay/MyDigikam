@@ -55,7 +55,7 @@ public:
 private:
 
     explicit DatabaseServerStarter();
-    ~DatabaseServerStarter();
+    ~DatabaseServerStarter() override;
 
 private:
 

@@ -58,7 +58,7 @@ public:
 private:
 
     explicit SyncJob();
-    ~SyncJob();
+    ~SyncJob() override;
 
     void enterWaitingLoop() const;
     void quitWaitingLoop()  const;

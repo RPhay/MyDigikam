@@ -130,7 +130,7 @@ public:
      */
     explicit BdEngineBackend(const QString& backendName, DbEngineLocking* const locking);
     BdEngineBackend(const QString& backendName, DbEngineLocking* const locking, BdEngineBackendPrivate& dd);
-    ~BdEngineBackend();
+    ~BdEngineBackend() override;
 
     /**
      * Checks if the parameters can be used for this database backend.

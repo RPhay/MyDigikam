@@ -48,7 +48,7 @@ class DatabaseCopyThread : public QThread
 public:
 
     explicit DatabaseCopyThread(QWidget* const parent);
-    ~DatabaseCopyThread();
+    ~DatabaseCopyThread() override;
 
     void init(const DbEngineParameters& fromDatabaseSettingsWidget,
               const DbEngineParameters& toDatabaseSettingsWidget);
@@ -73,7 +73,7 @@ class DIGIKAM_GUI_EXPORT DatabaseMigrationDialog : public QDialog
 public:
 
     explicit DatabaseMigrationDialog(QWidget* const parent);
-    ~DatabaseMigrationDialog();
+    ~DatabaseMigrationDialog() override;
 
 private Q_SLOTS:
 

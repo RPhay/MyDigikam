@@ -89,7 +89,7 @@ private Q_SLOTS:
 private:
 
     explicit CollectionManager();
-    ~CollectionManager();
+    ~CollectionManager() override;
 
     void clearLocations();
 

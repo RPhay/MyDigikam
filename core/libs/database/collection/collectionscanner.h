@@ -80,7 +80,7 @@ public:
 public:
 
     explicit CollectionScanner();
-    virtual ~CollectionScanner();
+    ~CollectionScanner() override;
 
     //@{
     /**
