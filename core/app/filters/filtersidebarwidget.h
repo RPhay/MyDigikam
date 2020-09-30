@@ -76,11 +76,11 @@ public:
     /**
      * Destructor.
      */
-    virtual ~FilterSideBarWidget();
+    ~FilterSideBarWidget() override;
 
-    virtual void setConfigGroup(const KConfigGroup& group);
-    virtual void doLoadState();
-    virtual void doSaveState();
+    void setConfigGroup(const KConfigGroup& group) override;
+    void doLoadState() override;
+    void doSaveState() override;
 
     void setFocusToTextFilter();
 
