@@ -49,7 +49,7 @@ public:
 public:
 
     explicit SetupMetadata(QWidget* const parent = nullptr);
-    ~SetupMetadata();
+    ~SetupMetadata() override;
 
     void applySettings();
     void setActiveTab(MetadataTab tab);

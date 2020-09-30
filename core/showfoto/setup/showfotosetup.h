@@ -58,7 +58,7 @@ public:
 public:
 
     explicit Setup(QWidget* const parent = nullptr, Page page = LastPageUsed);
-    ~Setup();
+    ~Setup() override;
 
     static bool execMetadataFilters(QWidget* const parent, int tab);
 
