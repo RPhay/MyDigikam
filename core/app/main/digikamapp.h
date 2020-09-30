@@ -59,7 +59,7 @@ class DIGIKAM_GUI_EXPORT DigikamApp : public DXmlGuiWindow
 public:
 
     explicit DigikamApp();
-    ~DigikamApp();
+    ~DigikamApp() override;
 
     virtual void show();
     void restoreSession();
