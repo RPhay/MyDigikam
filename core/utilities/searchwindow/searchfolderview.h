@@ -60,7 +60,7 @@ public:
     /**
      * Destructor.
      */
-    virtual ~NormalSearchTreeView();
+    ~NormalSearchTreeView() override;
 
 Q_SIGNALS:
 
@@ -78,8 +78,8 @@ Q_SIGNALS:
 
 protected:
 
-    virtual void addCustomContextMenuActions(ContextMenuHelper& cmh, Album* album)          override;
-    virtual void handleCustomContextMenuAction(QAction* action, AlbumPointer<Album> album)  override;
+    void addCustomContextMenuActions(ContextMenuHelper& cmh, Album* album)          override;
+    void handleCustomContextMenuAction(QAction* action, AlbumPointer<Album> album)  override;
 
 private:
 

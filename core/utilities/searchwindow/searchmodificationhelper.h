@@ -72,7 +72,7 @@ public:
     /**
      * Destructor.
      */
-    virtual ~SearchModificationHelper();
+    ~SearchModificationHelper() override;
 
     /**
      * @see slotCreateFuzzySearchFromSketch()

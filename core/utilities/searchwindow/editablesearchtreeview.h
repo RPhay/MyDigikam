@@ -60,24 +60,24 @@ public:
     /**
      * Destructor.
      */
-    virtual ~EditableSearchTreeView();
+    ~EditableSearchTreeView() override;
 
 protected:
 
     /**
      * implemented hook methods for context menus.
      */
-    virtual QString contextMenuTitle() const;
+    QString contextMenuTitle() const override;
 
     /**
      * Adds actions to delete or rename existing searches.
      */
-    virtual void addCustomContextMenuActions(ContextMenuHelper& cmh, Album* album);
+    void addCustomContextMenuActions(ContextMenuHelper& cmh, Album* album) override;
 
     /**
      * Handles deletion and renaming actions.
      */
-    virtual void handleCustomContextMenuAction(QAction* action, AlbumPointer<Album> album);
+    void handleCustomContextMenuAction(QAction* action, AlbumPointer<Album> album) override;
 
 private:
 

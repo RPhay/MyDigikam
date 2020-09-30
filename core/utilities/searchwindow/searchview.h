@@ -115,7 +115,7 @@ class SearchView : public AbstractSearchGroupContainer, public SearchViewThemedP
 public:
 
     SearchView();
-    ~SearchView();
+    ~SearchView() override;
 
     void setup();
     void setBottomBar(SearchViewBottomBar* const bar);
@@ -145,11 +145,11 @@ protected:
 
     QPixmap cachedBannerPixmap(int w, int h) const;
 
-    virtual void paintEvent(QPaintEvent* e) override;
-    virtual void showEvent(QShowEvent* event) override;
+    void paintEvent(QPaintEvent* e) override;
+    void showEvent(QShowEvent* event) override;
 
-    virtual SearchGroup* createSearchGroup() override;
-    virtual void addGroupToLayout(SearchGroup* group) override;
+    SearchGroup* createSearchGroup() override;
+    void addGroupToLayout(SearchGroup* group) override;
 
 private:
 
@@ -181,7 +181,7 @@ Q_SIGNALS:
 
 protected:
 
-    virtual void paintEvent(QPaintEvent*) override;
+    void paintEvent(QPaintEvent*) override;
 
 protected:
 

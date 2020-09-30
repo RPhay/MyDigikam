@@ -77,8 +77,8 @@ Q_SIGNALS:
 
 protected:
 
-    virtual SearchGroup* createSearchGroup() override;
-    virtual void addGroupToLayout(SearchGroup* group) override;
+    SearchGroup* createSearchGroup() override;
+    void addGroupToLayout(SearchGroup* group) override;
 
 protected:
 
@@ -103,7 +103,7 @@ class SearchGroupLabel : public QWidget
 public:
 
     SearchGroupLabel(SearchViewThemedPartsCache* const cache, SearchGroup::Type type, QWidget* const parent = nullptr);
-    ~SearchGroupLabel();
+    ~SearchGroupLabel() override;
 
     void setGroupOperator(SearchXml::Operator op);
     void setDefaultFieldOperator(SearchXml::Operator op);
@@ -127,7 +127,7 @@ protected:
     void adjustOperatorOptions();
     void updateGroupLabel();
 
-    virtual void paintEvent(QPaintEvent*) override;
+    void paintEvent(QPaintEvent*) override;
 
 private:
 

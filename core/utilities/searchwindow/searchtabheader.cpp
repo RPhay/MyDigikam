@@ -84,7 +84,7 @@ public:
         adjustStatus(m_hasAdvanced);
     }
 
-    void focusInEvent(QFocusEvent* e)
+    void focusInEvent(QFocusEvent* e) override
     {
         if (m_hasAdvanced)
         {
@@ -94,7 +94,7 @@ public:
         QLineEdit::focusInEvent(e);
     }
 
-    void focusOutEvent(QFocusEvent* e)
+    void focusOutEvent(QFocusEvent* e) override
     {
         QLineEdit::focusOutEvent(e);
 
@@ -104,7 +104,7 @@ public:
         }
     }
 
-    void contextMenuEvent(QContextMenuEvent* e)
+    void contextMenuEvent(QContextMenuEvent* e) override
     {
         QAction* const action = new QAction(i18nc("@action:inmenu",
                                                   "Autostart Search"), this);

@@ -140,7 +140,7 @@ protected Q_SLOTS:
 
 protected:
 
-    virtual void paintEvent(QPaintEvent*) override;
+    void paintEvent(QPaintEvent*) override;
 
 protected:
 
@@ -164,9 +164,9 @@ public:
 
     QModelIndex indexForRatingValue(RatingComboBox::RatingValue value) const;
 
-    virtual int rowCount(const QModelIndex& parent) const override;
-    virtual QVariant data(const QModelIndex& index, int role) const override;
-    virtual QModelIndex index(int row, int column = 0, const QModelIndex& parent = QModelIndex()) const override;
+    int rowCount(const QModelIndex& parent) const override;
+    QVariant data(const QModelIndex& index, int role) const override;
+    QModelIndex index(int row, int column = 0, const QModelIndex& parent = QModelIndex()) const override;
 
 protected:
 
@@ -185,8 +185,8 @@ public:
 
     explicit RatingComboBoxDelegate(QObject* const parent = nullptr);
 
-    virtual QSize sizeHint(const QStyleOptionViewItem& option, const QModelIndex& index) const override;
-    virtual void paint(QPainter* painter, const QStyleOptionViewItem& option, const QModelIndex& index) const override;
+    QSize sizeHint(const QStyleOptionViewItem& option, const QModelIndex& index) const override;
+    void paint(QPainter* painter, const QStyleOptionViewItem& option, const QModelIndex& index) const override;
 
 protected:
 
