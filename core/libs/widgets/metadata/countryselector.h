@@ -43,7 +43,7 @@ class DIGIKAM_EXPORT CountrySelector : public QComboBox
 public:
 
     explicit CountrySelector(QWidget* const parent);
-    ~CountrySelector();
+    ~CountrySelector() override;
 
     void setCountry(const QString& countryCode);
     bool country(QString& countryCode, QString& countryName) const;

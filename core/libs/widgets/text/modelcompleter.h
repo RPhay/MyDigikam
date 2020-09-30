@@ -46,7 +46,7 @@ class DIGIKAM_EXPORT ModelCompleter : public QCompleter
 public:
 
     explicit ModelCompleter(QObject* const parent = nullptr);
-    ~ModelCompleter();
+    ~ModelCompleter() override;
 
     /**
      * If the given model is != null, the model is used to populate the

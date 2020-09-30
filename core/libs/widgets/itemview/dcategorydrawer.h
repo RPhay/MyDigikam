@@ -61,7 +61,7 @@ public:
      * @since 5.0
      */
     explicit DCategoryDrawer(DCategorizedView* const view);
-    virtual ~DCategoryDrawer();
+    ~DCategoryDrawer() override;
 
     /**
      * @return The view this category drawer is associated with.

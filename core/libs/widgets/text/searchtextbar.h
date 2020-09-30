@@ -96,7 +96,7 @@ public:
     explicit SearchTextBar(QWidget* const parent,
                            const QString& name,
                            const QString& msg=QString());
-    ~SearchTextBar();
+    ~SearchTextBar() override;
 
     void setTextQueryCompletion(bool b);
     bool hasTextQueryCompletion()               const;
@@ -153,8 +153,8 @@ private Q_SLOTS:
 
 protected:
 
-    virtual void doLoadState()                  override;
-    virtual void doSaveState()                  override;
+    void doLoadState()                  override;
+    void doSaveState()                  override;
 
 private:
 

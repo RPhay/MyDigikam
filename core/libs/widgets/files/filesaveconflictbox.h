@@ -51,7 +51,7 @@ public:
 public:
 
     explicit FileSaveConflictBox(QWidget* const parent);
-    ~FileSaveConflictBox();
+    ~FileSaveConflictBox() override;
 
     ConflictRule conflictRule() const;
     void setConflictRule(ConflictRule r);

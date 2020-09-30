@@ -45,7 +45,7 @@ class DIGIKAM_EXPORT AltLangStrEdit : public QWidget
 public:
 
     explicit AltLangStrEdit(QWidget* const parent);
-    ~AltLangStrEdit();
+    ~AltLangStrEdit() override;
 
     void setTitle(const QString& title);
     void setPlaceholderText(const QString& msg);
@@ -105,7 +105,7 @@ protected:
 
     void loadLangAltListEntries();
 
-    virtual void changeEvent(QEvent* e) override;
+    void changeEvent(QEvent* e) override;
 
 private:
 

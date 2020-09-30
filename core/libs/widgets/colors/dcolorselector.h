@@ -46,7 +46,7 @@ class DIGIKAM_EXPORT DColorSelector : public QPushButton
 public:
 
     explicit DColorSelector(QWidget* const parent=nullptr);
-    virtual ~DColorSelector();
+    ~DColorSelector() override;
 
     void setColor(const QColor& color);
     QColor color() const;

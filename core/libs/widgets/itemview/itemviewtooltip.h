@@ -41,7 +41,7 @@ class DIGIKAM_EXPORT ItemViewToolTip : public DItemToolTip
 public:
 
     explicit ItemViewToolTip(QAbstractItemView* const view);
-    ~ItemViewToolTip();
+    ~ItemViewToolTip() override;
 
     QAbstractItemView* view()   const;
     QAbstractItemModel* model() const;
@@ -60,11 +60,11 @@ public:
      * Default implementation is based on setTipContents().
      * Reimplement if you dynamically provide the contents.
      */
-    virtual QString tipContents()           override;
+    QString tipContents()           override;
 
 protected:
 
-    virtual QRect repositionRect()          override;
+    QRect repositionRect()          override;
 
     bool eventFilter(QObject* o, QEvent* e) override;
     void hideEvent(QHideEvent*)             override;

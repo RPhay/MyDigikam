@@ -39,7 +39,7 @@ class DIGIKAM_EXPORT XmpWidget : public MetadataWidget
 public:
 
     explicit XmpWidget(QWidget* const parent, const QString& name=QString());
-    ~XmpWidget();
+    ~XmpWidget() override;
 
     bool loadFromURL(const QUrl& url) override;
 
@@ -50,7 +50,7 @@ public:
 
 protected Q_SLOTS:
 
-    virtual void slotSaveMetadataToFile() override;
+    void slotSaveMetadataToFile() override;
 
 private:
 

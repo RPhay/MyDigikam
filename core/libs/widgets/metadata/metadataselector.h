@@ -47,7 +47,7 @@ class DIGIKAM_EXPORT MetadataSelectorItem : public QTreeWidgetItem
 public:
 
     MetadataSelectorItem(MdKeyListViewItem* const parent, const QString& key, const QString& title, const QString& desc);
-    virtual ~MetadataSelectorItem();
+    ~MetadataSelectorItem() override;
 
     QString key() const;
     QString mdKeyTitle() const;
@@ -66,7 +66,7 @@ class DIGIKAM_EXPORT MetadataSelector : public QTreeWidget
 public:
 
     explicit MetadataSelector(QWidget* const parent);
-    virtual ~MetadataSelector();
+    ~MetadataSelector() override;
 
     void setTagsMap(const DMetadata::TagsMap& map);
 
@@ -97,7 +97,7 @@ public:
 public:
 
     explicit MetadataSelectorView(QWidget* const parent);
-    virtual ~MetadataSelectorView();
+    ~MetadataSelectorView() override;
 
     int itemsCount() const;
 

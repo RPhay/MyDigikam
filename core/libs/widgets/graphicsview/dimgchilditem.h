@@ -51,7 +51,7 @@ public:
      */
 
     explicit DImgChildItem(QGraphicsItem* const parent = nullptr);
-    ~DImgChildItem();
+    ~DImgChildItem() override;
 
     /**
      * Sets the position and size of this item, relative to the DImg displayed in the parent item.
@@ -169,7 +169,7 @@ public:
      * Reimplemented. Returns a rectangle starting at (0,0) (pos() in parent coordinates)
      * and has a size determined by the relative size.
      */
-    virtual QRectF boundingRect() const override;
+    QRectF boundingRect() const override;
 
 protected Q_SLOTS:
 
@@ -197,7 +197,7 @@ Q_SIGNALS:
 
 protected:
 
-    virtual QVariant itemChange(GraphicsItemChange change, const QVariant& value) override;
+    QVariant itemChange(GraphicsItemChange change, const QVariant& value) override;
 
 private:
 

@@ -143,7 +143,7 @@ public:
     /**
      * Destructs the font chooser.
      */
-    virtual ~DFontProperties();
+    ~DFontProperties() override;
 
     /**
      * Enables or disable a font column in the chooser.

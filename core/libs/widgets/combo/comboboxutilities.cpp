@@ -347,7 +347,7 @@ public:
     {
     }
 
-    virtual bool viewportEvent(QEvent* event) override
+    bool viewportEvent(QEvent* event) override
     {
         return QTreeView::viewportEvent(event);
     }
@@ -396,7 +396,7 @@ public:
     {
     }
 
-    virtual bool viewportEvent(QEvent* event) override
+    bool viewportEvent(QEvent* event) override
     {
         return QListView::viewportEvent(event);
     }
@@ -449,13 +449,13 @@ public:
         setCursor(Qt::PointingHandCursor);
     }
 
-    virtual void mouseReleaseEvent(QMouseEvent* event) override
+    void mouseReleaseEvent(QMouseEvent* event) override
     {
         QLineEdit::mouseReleaseEvent(event);
         m_box->showPopup();
     }
 
-    virtual void wheelEvent(QWheelEvent* /*event*/) override
+    void wheelEvent(QWheelEvent* /*event*/) override
     {
         m_box->showPopup();
     }

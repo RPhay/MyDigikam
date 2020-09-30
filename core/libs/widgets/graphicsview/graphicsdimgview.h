@@ -47,7 +47,7 @@ class DIGIKAM_EXPORT GraphicsDImgView : public QGraphicsView
 public:
 
     explicit GraphicsDImgView(QWidget* const parent = nullptr);
-    virtual ~GraphicsDImgView();
+    ~GraphicsDImgView() override;
 
     /**
      * Store internal instance of item as GraphicsDImgItem. You can store DImgPreviewItem object also by this method.
@@ -123,7 +123,7 @@ protected:
     void setShowText(bool value);
 
     virtual bool acceptsMouseClick(QMouseEvent* e);
-    virtual void scrollContentsBy(int dx, int dy)               override;
+    void scrollContentsBy(int dx, int dy)               override;
 
 protected Q_SLOTS:
 

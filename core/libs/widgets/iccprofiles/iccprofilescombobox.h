@@ -49,7 +49,7 @@ public:
      */
 
     explicit IccProfilesComboBox(QWidget* const parent = nullptr);
-    ~IccProfilesComboBox();
+    ~IccProfilesComboBox() override;
 
     /**
      * Checks the given profiles for validity, creates a suitable description (ICC profile description, file path),

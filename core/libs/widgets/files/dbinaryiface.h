@@ -65,7 +65,7 @@ public:
                  const QStringList& args = QStringList(),
                  const QString& desc = QString()
                 );
-    ~DBinaryIface();
+    ~DBinaryIface() override;
 
 public:
 

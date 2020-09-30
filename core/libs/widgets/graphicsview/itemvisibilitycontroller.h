@@ -88,7 +88,7 @@ public:
 public:
 
     explicit ItemVisibilityController(QObject* const parent = nullptr);
-    ~ItemVisibilityController();
+    ~ItemVisibilityController() override;
 
     bool  shallBeShown()                                                        const;
     bool  isVisible()                                                           const;

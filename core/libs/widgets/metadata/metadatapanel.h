@@ -47,7 +47,7 @@ class DIGIKAM_EXPORT MetadataPanel : public QObject
 public:
 
     explicit MetadataPanel(QTabWidget* const tab);
-    ~MetadataPanel();
+    ~MetadataPanel() override;
 
     void                         applySettings();
 

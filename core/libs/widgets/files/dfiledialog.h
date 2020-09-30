@@ -49,7 +49,7 @@ public:
                          const QString& caption = QString(),
                          const QString& directory = QString(),
                          const QString& filter = QString());
-    virtual ~DFileDialog();
+    ~DFileDialog() override;
 
     static QString getExistingDirectory(QWidget* const parent = nullptr,
                                         const QString& caption = QString(),

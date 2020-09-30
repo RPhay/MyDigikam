@@ -57,7 +57,7 @@ public:
 public:
 
     explicit SinglePhotoPreviewLayout(QObject* const parent);
-    ~SinglePhotoPreviewLayout();
+    ~SinglePhotoPreviewLayout() override;
 
     /**
      * Set the graphics view, and associated scene, to operate on.

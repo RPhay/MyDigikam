@@ -45,7 +45,7 @@ public:
                          const QString& title, const QString& value);
     MetadataListViewItem(QTreeWidgetItem* const parent, const QString& key,
                          const QString& title);
-    ~MetadataListViewItem();
+    ~MetadataListViewItem() override;
 
     QString getKey();
     QString getTitle();

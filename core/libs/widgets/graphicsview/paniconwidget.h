@@ -60,7 +60,7 @@ class DIGIKAM_EXPORT PanIconFrame : public QFrame
 public:
 
     explicit PanIconFrame(QWidget* const parent=nullptr);
-    ~PanIconFrame();
+    ~PanIconFrame() override;
 
     /**
      * Set the main widget. You cannot set the main widget from the constructor,
@@ -90,7 +90,7 @@ public:
      * The resize event. Simply resizes the main widget to the whole
      * widgets client size.
      */
-    virtual void resizeEvent(QResizeEvent* resize)  override;
+    void resizeEvent(QResizeEvent* resize)  override;
 
 Q_SIGNALS:
 
@@ -101,7 +101,7 @@ protected:
     /**
      * Catch key press events.
      */
-    virtual void keyPressEvent(QKeyEvent* e)        override;
+    void keyPressEvent(QKeyEvent* e)        override;
 
 public Q_SLOTS:
 
@@ -129,7 +129,7 @@ class DIGIKAM_EXPORT PanIconWidget : public QWidget
 public:
 
     explicit PanIconWidget(QWidget* const parent=nullptr);
-    ~PanIconWidget();
+    ~PanIconWidget() override;
 
     static QToolButton* button();
 

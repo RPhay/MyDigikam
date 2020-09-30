@@ -49,7 +49,7 @@ class DIGIKAM_EXPORT ColorLabelWidget : public DVBox
 public:
 
     explicit ColorLabelWidget(QWidget* const parent=nullptr);
-    virtual ~ColorLabelWidget();
+    ~ColorLabelWidget() override;
 
     /**
      * Show or not on the bottom view the description of label with shortcuts.
@@ -104,7 +104,7 @@ class DIGIKAM_EXPORT ColorLabelSelector : public QPushButton
 public:
 
     explicit ColorLabelSelector(QWidget* const parent=nullptr);
-    virtual ~ColorLabelSelector();
+    ~ColorLabelSelector() override;
 
     void setColorLabel(ColorLabel label);
     ColorLabel colorLabel();
@@ -134,7 +134,7 @@ class DIGIKAM_EXPORT ColorLabelMenuAction : public QMenu
 public:
 
     explicit ColorLabelMenuAction(QMenu* const parent=nullptr);
-    virtual ~ColorLabelMenuAction();
+    ~ColorLabelMenuAction() override;
 
 Q_SIGNALS:
 

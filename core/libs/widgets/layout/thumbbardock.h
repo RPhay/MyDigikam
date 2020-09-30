@@ -55,7 +55,7 @@ class DragHandle : public QWidget
 public:
 
     explicit DragHandle(QDockWidget* const);
-    ~DragHandle();
+    ~DragHandle() override;
 
     QSize sizeHint()        const override;
     QSize minimumSizeHint() const override;
@@ -97,7 +97,7 @@ public:
 public:
 
     explicit ThumbBarDock(QWidget* const parent = nullptr, Qt::WindowFlags flags = Qt::WindowFlags());
-    ~ThumbBarDock();
+    ~ThumbBarDock() override;
 
     /**
      * Measure the orientation and size of the widget and adjust the containing

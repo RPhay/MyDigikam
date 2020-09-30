@@ -48,7 +48,7 @@ class DIGIKAM_EXPORT GraphicsDImgItem : public QGraphicsObject
 public:
 
     explicit GraphicsDImgItem(QGraphicsItem* const parent = nullptr);
-    virtual ~GraphicsDImgItem();
+    ~GraphicsDImgItem() override;
 
     /**
      * Sets the DImg to be drawn by this item.
@@ -63,8 +63,8 @@ public:
     void sizeHasChanged();
     void clearCache();
 
-    virtual QRectF boundingRect()                               const override;
-    virtual void paint(QPainter* painter,
+    QRectF boundingRect()                               const override;
+    void paint(QPainter* painter,
                        const QStyleOptionGraphicsItem* option,
                        QWidget* widget = nullptr)                     override;
 

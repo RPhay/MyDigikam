@@ -44,7 +44,7 @@ class DIGIKAM_EXPORT ItemViewDelegate : public DItemDelegate, public ItemDelegat
 public:
 
     explicit ItemViewDelegate(QObject* const parent = nullptr);
-    ~ItemViewDelegate();
+    ~ItemViewDelegate() override;
 
     ThumbnailSize thumbnailSize()                                                             const;
     int spacing()                                                                             const;
@@ -56,16 +56,16 @@ public:
      */
     void setRatingEdited(const QModelIndex& index);
 
-    virtual QSize sizeHint(const QStyleOptionViewItem& option, const QModelIndex& index)      const override;
-    virtual QSize gridSize()                                                                  const override;
+    QSize sizeHint(const QStyleOptionViewItem& option, const QModelIndex& index)      const override;
+    QSize gridSize()                                                                  const override;
 
     // reimplemented from DItemDelegate
-    virtual void setThumbnailSize(const ThumbnailSize& thumbSize)                                   override;
-    virtual void setSpacing(int spacing)                                                            override;
-    virtual void setDefaultViewOptions(const QStyleOptionViewItem& option)                          override;
-    virtual bool acceptsToolTip(const QPoint& pos, const QRect& visualRect,
+    void setThumbnailSize(const ThumbnailSize& thumbSize)                                   override;
+    void setSpacing(int spacing)                                                            override;
+    void setDefaultViewOptions(const QStyleOptionViewItem& option)                          override;
+    bool acceptsToolTip(const QPoint& pos, const QRect& visualRect,
                                 const QModelIndex& index, QRect* tooltipRect = nullptr)       const override;
-    virtual bool acceptsActivation(const QPoint& pos, const QRect& visualRect,
+    bool acceptsActivation(const QPoint& pos, const QRect& visualRect,
                                    const QModelIndex& index, QRect* activationRect = nullptr) const override;
 
     /**
@@ -89,14 +89,14 @@ public:
      */
     virtual QRect ratingRect()                                                                const;
 
-    virtual void mouseMoved(QMouseEvent* e, const QRect& visualRect, const QModelIndex& index)      override;
+    void mouseMoved(QMouseEvent* e, const QRect& visualRect, const QModelIndex& index)      override;
 
 protected Q_SLOTS:
 
     void slotThemeChanged();
     void slotSetupChanged();
 
-    virtual void overlayDestroyed(QObject* o)                                                       override;
+    void overlayDestroyed(QObject* o)                                                       override;
 
 Q_SIGNALS:
 
@@ -138,7 +138,7 @@ protected:
      */
     QPixmap ratingPixmap(int rating, bool selected) const;
 
-    virtual QAbstractItemDelegate* asDelegate() override;
+    QAbstractItemDelegate* asDelegate() override;
 
     // reimplement these in subclasses
     virtual void invalidatePaintingCache();

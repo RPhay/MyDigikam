@@ -101,7 +101,7 @@ class DIGIKAM_EXPORT DXmlGuiWindow : public KXmlGuiWindow
 public:
 
     explicit DXmlGuiWindow(QWidget* const parent = nullptr, Qt::WindowFlags f = Qt::WindowFlags());
-    ~DXmlGuiWindow();
+    ~DXmlGuiWindow() override;
 
     /**
      * Manage config group name used by window instance to get/set settings from config file

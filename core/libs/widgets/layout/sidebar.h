@@ -71,7 +71,7 @@ public:
 public:
 
     explicit DMultiTabBar(Qt::Edge pos, QWidget* const parent=nullptr);
-    virtual ~DMultiTabBar();
+    ~DMultiTabBar() override;
 
     /**
      * append  a new button to the button area. The button can later on be accessed with button(ID)
@@ -170,7 +170,7 @@ class DIGIKAM_EXPORT DMultiTabBarButton: public QPushButton
 public:
 
     int id() const;
-    virtual ~DMultiTabBarButton();
+    ~DMultiTabBarButton() override;
 
 public Q_SLOTS:
 
@@ -192,9 +192,9 @@ protected:
 
     DMultiTabBarButton(const QPixmap& pic, const QString&, int id, QWidget* const parent);
 
-    virtual void hideEvent(QHideEvent*)   override;
-    virtual void showEvent(QShowEvent*)   override;
-    virtual void paintEvent(QPaintEvent*) override;
+    void hideEvent(QHideEvent*)   override;
+    void showEvent(QShowEvent*)   override;
+    void paintEvent(QPaintEvent*) override;
 
 private:
 
@@ -211,10 +211,10 @@ class DIGIKAM_EXPORT DMultiTabBarTab: public DMultiTabBarButton
 
 public:
 
-    virtual ~DMultiTabBarTab();
+    ~DMultiTabBarTab() override;
 
-    virtual QSize sizeHint()        const override;
-    virtual QSize minimumSizeHint() const override;
+    QSize sizeHint()        const override;
+    QSize minimumSizeHint() const override;
 
 public Q_SLOTS:
 
@@ -256,7 +256,7 @@ protected:
     DMultiTabBarTab(const QPixmap& pic, const QString&, int id, QWidget* const parent,
                     Qt::Edge pos, DMultiTabBar::TextStyle style);
 
-    virtual void paintEvent(QPaintEvent*) override;
+    void paintEvent(QPaintEvent*) override;
 
 private:
 
@@ -273,7 +273,7 @@ class DMultiTabBarFrame: public QFrame
 public:
 
     explicit DMultiTabBarFrame(QWidget* const parent, Qt::Edge pos);
-    virtual ~DMultiTabBarFrame();
+    ~DMultiTabBarFrame() override;
 
     int appendTab(const QPixmap&, int = -1, const QString& = QString());
     DMultiTabBarTab* tab(int) const;
@@ -291,7 +291,7 @@ protected:
      * parent can handle them.
      */
     virtual void contentsMousePressEvent(QMouseEvent*);
-    virtual void mousePressEvent(QMouseEvent*) override;
+    void mousePressEvent(QMouseEvent*) override;
 
 private:
 
@@ -335,7 +335,7 @@ public:
     explicit Sidebar(QWidget* const parent, SidebarSplitter* const sp, Qt::Edge side = Qt::LeftEdge,
                      bool minimizedDefault=false);
 
-    virtual ~Sidebar();
+    ~Sidebar() override;
 
     SidebarSplitter* splitter() const;
 
@@ -476,7 +476,7 @@ public:
     explicit SidebarSplitter(QWidget* const parent = nullptr);
     explicit SidebarSplitter(Qt::Orientation orientation, QWidget* const parent = nullptr);
 
-    ~SidebarSplitter();
+    ~SidebarSplitter() override;
 
     /**
      * Saves the splitter state to group, handling minimized sidebars correctly.

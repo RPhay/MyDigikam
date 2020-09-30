@@ -51,7 +51,7 @@ public:
     explicit DActiveLabel(const QUrl& url = QUrl(),
                           const QString& imgPath = QString(),
                           QWidget* const parent = nullptr);
-    ~DActiveLabel();
+    ~DActiveLabel() override;
 
     void updateData(const QUrl& url, const QImage& img);
 };

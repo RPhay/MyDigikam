@@ -55,7 +55,7 @@ public:
 public:
 
     explicit DZoomBar(QWidget* const parent=nullptr);
-    ~DZoomBar();
+    ~DZoomBar() override;
 
     void setBarMode(BarMode mode);
     void setZoom(double zoom, double zmin, double zmax);

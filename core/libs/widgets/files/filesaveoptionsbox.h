@@ -53,7 +53,7 @@ public:
     /**
      * Destructor.
      */
-    ~FileSaveOptionsBox();
+    ~FileSaveOptionsBox() override;
 
     void applySettings();
 

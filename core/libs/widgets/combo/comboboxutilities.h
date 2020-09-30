@@ -77,21 +77,21 @@ protected:
     QSize minimumSizeHint() const                           override;
     QSize sizeHint()        const                           override;
 
-    virtual void mousePressEvent(QMouseEvent* event)        override;
-    virtual void mouseMoveEvent(QMouseEvent* event)         override;
-    virtual void mouseReleaseEvent(QMouseEvent* event)      override;
-    virtual void mouseDoubleClickEvent(QMouseEvent* event)  override;
-    virtual void keyPressEvent(QKeyEvent* event)            override;
-    virtual void focusInEvent(QFocusEvent* event)           override;
-    virtual void focusOutEvent(QFocusEvent* event)          override;
-    virtual void paintEvent(QPaintEvent* event)             override;
-    virtual void dragEnterEvent(QDragEnterEvent* event)     override;
-    virtual void dragMoveEvent(QDragMoveEvent* e)           override;
-    virtual void dragLeaveEvent(QDragLeaveEvent* e)         override;
-    virtual void dropEvent(QDropEvent* event)               override;
-    virtual void changeEvent(QEvent* event)                 override;
-    virtual void contextMenuEvent(QContextMenuEvent* event) override;
-    virtual void inputMethodEvent(QInputMethodEvent* event) override;
+    void mousePressEvent(QMouseEvent* event)        override;
+    void mouseMoveEvent(QMouseEvent* event)         override;
+    void mouseReleaseEvent(QMouseEvent* event)      override;
+    void mouseDoubleClickEvent(QMouseEvent* event)  override;
+    void keyPressEvent(QKeyEvent* event)            override;
+    void focusInEvent(QFocusEvent* event)           override;
+    void focusOutEvent(QFocusEvent* event)          override;
+    void paintEvent(QPaintEvent* event)             override;
+    void dragEnterEvent(QDragEnterEvent* event)     override;
+    void dragMoveEvent(QDragMoveEvent* e)           override;
+    void dragLeaveEvent(QDragLeaveEvent* e)         override;
+    void dropEvent(QDropEvent* event)               override;
+    void changeEvent(QEvent* event)                 override;
+    void contextMenuEvent(QContextMenuEvent* event) override;
+    void inputMethodEvent(QInputMethodEvent* event) override;
 
 protected:
 
@@ -141,8 +141,8 @@ public:
     QModelIndex currentIndex() const;
     void setCurrentIndex(const QModelIndex& index);
 
-    virtual void hidePopup() override;
-    virtual void showPopup() override;
+    void hidePopup() override;
+    void showPopup() override;
 
 protected:
 
@@ -189,7 +189,7 @@ protected:
      */
     virtual void sendViewportEventToView(QEvent* e) = 0;
 
-    virtual bool eventFilter(QObject* watched, QEvent* event) override;
+    bool eventFilter(QObject* watched, QEvent* event) override;
 
 protected:
 
@@ -227,7 +227,7 @@ public:
 
 protected:
 
-    virtual void sendViewportEventToView(QEvent* e) override;
+    void sendViewportEventToView(QEvent* e) override;
 };
 
 // -------------------------------------------------------------------------
@@ -261,7 +261,7 @@ public:
 
 protected:
 
-    virtual void sendViewportEventToView(QEvent* e) override;
+    void sendViewportEventToView(QEvent* e) override;
 };
 
 // -------------------------------------------------------------------------
@@ -295,7 +295,7 @@ public:
      * Replace the standard combo box list view with a QTreeView.
      * Call this after installing an appropriate model.
      */
-    virtual void installView(QAbstractItemView* view = nullptr) override;
+    void installView(QAbstractItemView* view = nullptr) override;
 
 protected:
 

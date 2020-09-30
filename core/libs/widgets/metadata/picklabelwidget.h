@@ -49,7 +49,7 @@ class DIGIKAM_EXPORT PickLabelWidget : public DVBox
 public:
 
     explicit PickLabelWidget(QWidget* const parent=nullptr);
-    virtual ~PickLabelWidget();
+    ~PickLabelWidget() override;
 
     /**
      * Show or not on the bottom view the description of label with shortcuts.
@@ -103,7 +103,7 @@ class DIGIKAM_EXPORT PickLabelSelector : public QPushButton
 public:
 
     explicit PickLabelSelector(QWidget* const parent=nullptr);
-    virtual ~PickLabelSelector();
+    ~PickLabelSelector() override;
 
     void setPickLabel(PickLabel label);
     PickLabel colorLabel();
@@ -133,7 +133,7 @@ class DIGIKAM_EXPORT PickLabelMenuAction : public QMenu
 public:
 
     explicit PickLabelMenuAction(QMenu* const parent=nullptr);
-    virtual ~PickLabelMenuAction();
+    ~PickLabelMenuAction() override;
 
 Q_SIGNALS:
 

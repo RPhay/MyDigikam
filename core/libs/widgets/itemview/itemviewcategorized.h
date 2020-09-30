@@ -47,7 +47,7 @@ class DIGIKAM_EXPORT ItemViewCategorized : public DCategorizedView,
 public:
 
     explicit ItemViewCategorized(QWidget* const parent = nullptr);
-    ~ItemViewCategorized();
+    ~ItemViewCategorized() override;
 
     DItemDelegate* delegate()                const;
     int            numberOfSelectedIndexes() const;
@@ -95,16 +95,16 @@ public:
     void setScrollStepGranularity(int factor);
 
     virtual QSortFilterProxyModel* filterModel() const = 0;
-    virtual void scrollTo(const QModelIndex& index, ScrollHint hint = EnsureVisible) override;
+    void scrollTo(const QModelIndex& index, ScrollHint hint = EnsureVisible) override;
 
 public Q_SLOTS:
 
     void showIndexNotification(const QModelIndex& index, const QString& message);
     void hideIndexNotification();
 
-    virtual void cut()   override { DragDropViewImplementation::cut();   }
-    virtual void copy()  override { DragDropViewImplementation::copy();  }
-    virtual void paste() override { DragDropViewImplementation::paste(); }
+    void cut()   override { DragDropViewImplementation::cut();   }
+    void copy()  override { DragDropViewImplementation::copy();  }
+    void paste() override { DragDropViewImplementation::paste(); }
 
 Q_SIGNALS:
 
@@ -201,8 +201,8 @@ protected:
     /**
      * Note: pure virtual dragDropHandler() still open from DragDropViewImplementation
      */
-    virtual QModelIndex mapIndexForDragDrop(const QModelIndex& index) const override;
-    virtual QPixmap     pixmapForDrag(const QList<QModelIndex>& indexes) const override;
+    QModelIndex mapIndexForDragDrop(const QModelIndex& index) const override;
+    QPixmap     pixmapForDrag(const QList<QModelIndex>& indexes) const override;
 
     /**
      * Assuming the given indexes would be removed (hypothetically!),

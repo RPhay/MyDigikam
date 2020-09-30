@@ -48,7 +48,7 @@ class RemoveFilterAction : public QAction
 public:
 
     explicit RemoveFilterAction(const QString& label, const QModelIndex& index, QObject* const parent = nullptr);
-    ~RemoveFilterAction()
+    ~RemoveFilterAction() override
     {
     }
 
@@ -82,7 +82,7 @@ class FiltersHistoryWidget : public QWidget
 public:
 
     explicit FiltersHistoryWidget(QWidget* const parent);
-    ~FiltersHistoryWidget();
+    ~FiltersHistoryWidget() override;
 
     void setCurrentURL(const QUrl& url = QUrl());
 

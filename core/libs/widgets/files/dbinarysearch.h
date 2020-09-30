@@ -58,7 +58,7 @@ public:
 public:
 
     explicit DBinarySearch(QWidget* const parent);
-    virtual ~DBinarySearch();
+    ~DBinarySearch() override;
 
     void addBinary(DBinaryIface& binary);
     void addDirectory(const QString& dir);

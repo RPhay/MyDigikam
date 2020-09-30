@@ -43,7 +43,7 @@ class DIGIKAM_EXPORT ActionCategorizedView : public DCategorizedView
 public:
 
     explicit ActionCategorizedView(QWidget* const parent=nullptr, bool autoScroll=false);
-    ~ActionCategorizedView();
+    ~ActionCategorizedView() override;
 
     void setupIconMode();
     void adjustGridSize();

@@ -39,7 +39,7 @@ class DIGIKAM_EXPORT IptcWidget : public MetadataWidget
 public:
 
     explicit IptcWidget(QWidget* const parent, const QString& name=QString());
-    ~IptcWidget();
+    ~IptcWidget() override;
 
     bool loadFromURL(const QUrl& url)               override;
 
@@ -50,7 +50,7 @@ public:
 
 protected Q_SLOTS:
 
-    virtual void slotSaveMetadataToFile()           override;
+    void slotSaveMetadataToFile()           override;
 
 private:
 
