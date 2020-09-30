@@ -39,7 +39,7 @@ class SetupDatabase : public QScrollArea
 public:
 
     explicit SetupDatabase(QWidget* const parent = nullptr);
-    virtual ~SetupDatabase();
+    ~SetupDatabase() override;
 
     void applySettings();
 

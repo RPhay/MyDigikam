@@ -44,7 +44,7 @@ class DIGIKAM_EXPORT SetupRaw : public QObject
 public:
 
     explicit SetupRaw(QTabWidget* const tab);
-    ~SetupRaw();
+    ~SetupRaw() override;
 
     void applySettings();
     void readSettings();

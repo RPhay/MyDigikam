@@ -52,7 +52,7 @@ public:
 public:
 
     explicit SetupCamera(QWidget* const parent = nullptr);
-    ~SetupCamera();
+    ~SetupCamera() override;
 
     void applySettings();
     bool checkSettings();
@@ -103,7 +103,7 @@ class CameraAutoDetectThread : public DBusyThread
 public:
 
     explicit CameraAutoDetectThread(QObject* const parent);
-    virtual ~CameraAutoDetectThread();
+    ~CameraAutoDetectThread() override;
 
     int     result() const;
     QString model()  const;
@@ -111,7 +111,7 @@ public:
 
 private:
 
-    void run();
+    void run() override;
 
 private:
 

@@ -43,7 +43,7 @@ class ImportFilterDlg : public QDialog
 public:
 
     explicit ImportFilterDlg(QWidget* const parent = nullptr);
-    ~ImportFilterDlg();
+    ~ImportFilterDlg() override;
 
     void setData(const Filter& filter);
     void getData(Filter* const filter);

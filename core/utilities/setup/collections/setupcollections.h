@@ -50,7 +50,7 @@ public:
 public:
 
     explicit SetupCollections(QWidget* const parent = nullptr);
-    ~SetupCollections();
+    ~SetupCollections() override;
 
     void applySettings();
 

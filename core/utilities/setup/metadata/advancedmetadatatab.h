@@ -45,7 +45,7 @@ class AdvancedMetadataTab : public QWidget
 public:
 
     explicit AdvancedMetadataTab(QWidget* const parent = nullptr);
-    virtual ~AdvancedMetadataTab();
+    ~AdvancedMetadataTab() override;
 
     void applySettings();
 

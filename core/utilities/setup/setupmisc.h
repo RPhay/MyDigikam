@@ -49,7 +49,7 @@ public:
 public:
 
     explicit SetupMisc(QWidget* const parent = nullptr);
-    ~SetupMisc();
+    ~SetupMisc() override;
 
     void applySettings();
 

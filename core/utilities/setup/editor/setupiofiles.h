@@ -42,7 +42,7 @@ class DIGIKAM_EXPORT SetupIOFiles : public QScrollArea
 public:
 
     explicit SetupIOFiles(QWidget* const parent = nullptr);
-    ~SetupIOFiles();
+    ~SetupIOFiles() override;
 
     void applySettings();
 

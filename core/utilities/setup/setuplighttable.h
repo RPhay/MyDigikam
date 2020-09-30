@@ -38,7 +38,7 @@ class SetupLightTable : public QScrollArea
 public:
 
     explicit SetupLightTable(QWidget* const parent = nullptr);
-    ~SetupLightTable();
+    ~SetupLightTable() override;
 
     void applySettings();
 

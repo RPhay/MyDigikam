@@ -38,7 +38,7 @@ class SetupCategory : public QScrollArea
 public:
 
     explicit SetupCategory(QWidget* const parent = nullptr);
-    virtual ~SetupCategory();
+    ~SetupCategory() override;
 
     void applySettings();
     void readSettings();

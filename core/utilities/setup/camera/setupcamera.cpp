@@ -84,7 +84,7 @@ public:
         setCameraType(ctype);
     };
 
-    ~SetupCameraItem()
+    ~SetupCameraItem() override
     {
         delete m_ctype;
     };

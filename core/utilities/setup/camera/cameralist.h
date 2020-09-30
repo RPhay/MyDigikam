@@ -50,7 +50,7 @@ class DIGIKAM_GUI_EXPORT CameraList : public QObject
 public:
 
     CameraList(QObject* const parent, const QString& file);
-    ~CameraList();
+    ~CameraList() override;
 
     bool load();
     bool save();

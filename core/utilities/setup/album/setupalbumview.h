@@ -51,7 +51,7 @@ public:
 public:
 
     explicit SetupAlbumView(QWidget* const parent = nullptr);
-    virtual ~SetupAlbumView();
+    ~SetupAlbumView() override;
 
     void applySettings();
 

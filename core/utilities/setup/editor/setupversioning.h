@@ -39,7 +39,7 @@ class SetupVersioning : public QScrollArea
 public:
 
     explicit SetupVersioning(QWidget* const parent = nullptr);
-    ~SetupVersioning();
+    ~SetupVersioning() override;
 
     void applySettings();
 

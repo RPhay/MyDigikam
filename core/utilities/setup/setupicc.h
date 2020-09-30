@@ -51,7 +51,7 @@ class DIGIKAM_EXPORT SetupICC : public QScrollArea
 public:
 
     explicit SetupICC(QDialogButtonBox* const dlgBtnBox, QWidget* const parent = nullptr);
-    virtual ~SetupICC();
+    ~SetupICC() override;
 
     void applySettings();
 

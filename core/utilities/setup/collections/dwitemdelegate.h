@@ -69,7 +69,7 @@ public:
      * @param parent the parent of this delegate
      */
     explicit DWItemDelegate(QAbstractItemView* const itemView, QObject* const parent = nullptr);
-    virtual ~DWItemDelegate();
+    ~DWItemDelegate() override;
 
     /**
      * Retrieves the item view this delegate is monitoring.

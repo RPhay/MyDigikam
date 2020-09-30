@@ -42,7 +42,7 @@ class DIGIKAM_EXPORT SetupEditorIface : public QScrollArea
 public:
 
     explicit SetupEditorIface(QWidget* const parent = nullptr);
-    virtual ~SetupEditorIface();
+    ~SetupEditorIface() override;
 
     void applySettings();
 
