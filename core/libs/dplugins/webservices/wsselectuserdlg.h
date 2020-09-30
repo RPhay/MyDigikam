@@ -43,7 +43,7 @@ class DIGIKAM_EXPORT WSSelectUserDlg : public QDialog
 public:
 
     explicit WSSelectUserDlg(QWidget* const parent, const QString& serviceName);
-    ~WSSelectUserDlg();
+    ~WSSelectUserDlg() override;
 
     void    reactivate();
     QString getUserName() const;

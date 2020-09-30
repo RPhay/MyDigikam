@@ -49,7 +49,7 @@ public:
      * Default constructor.
      */
     explicit DPluginConfView(QWidget* const parent=nullptr);
-    ~DPluginConfView();
+    ~DPluginConfView() override;
 
     /**
      * Apply all changes about plugins selected to be hosted in host application.

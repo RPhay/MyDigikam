@@ -46,7 +46,7 @@ class DIGIKAM_EXPORT WSToolDialog : public DPluginDialog
 public:
 
     explicit WSToolDialog(QWidget* const parent, const QString& objName);
-    ~WSToolDialog();
+    ~WSToolDialog() override;
 
     void setMainWidget(QWidget* const widget);
 

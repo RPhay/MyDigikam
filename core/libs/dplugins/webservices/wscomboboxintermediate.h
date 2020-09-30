@@ -54,7 +54,7 @@ public:
      * intermediate state.
      */
     explicit WSComboBoxIntermediate(QWidget* const = nullptr, const QString& = QString());
-    ~WSComboBoxIntermediate();
+    ~WSComboBoxIntermediate() override;
 
     /**
      * Set the state of the combobox to intermediate. The intermediate state is

@@ -45,7 +45,7 @@ class DIGIKAM_EXPORT DPluginDialog : public QDialog
 public:
 
     explicit DPluginDialog(QWidget* const parent, const QString& objName);
-    ~DPluginDialog();
+    ~DPluginDialog() override;
 
     void setPlugin(DPlugin* const tool);
 

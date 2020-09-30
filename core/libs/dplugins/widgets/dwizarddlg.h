@@ -43,7 +43,7 @@ class DIGIKAM_EXPORT DWizardDlg : public QWizard
 public:
 
     explicit DWizardDlg(QWidget* const parent, const QString& objName);
-    ~DWizardDlg();
+    ~DWizardDlg() override;
 
     void setPlugin(DPlugin* const tool);
 

@@ -79,7 +79,7 @@ public:
         setText(4, auth.join(QString::fromLatin1(", ")));
     };
 
-    ~DPluginCB()
+    ~DPluginCB() override
     {
     };
 

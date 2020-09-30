@@ -78,7 +78,7 @@ public:
 public:
 
     explicit WSSettings(QObject* const parent=nullptr);
-    ~WSSettings();
+    ~WSSettings() override;
 
     ///@{
     /// Read and write settings in config file between sessions.

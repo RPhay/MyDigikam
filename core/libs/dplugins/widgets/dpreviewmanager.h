@@ -55,7 +55,7 @@ public:
 public:
 
     explicit DPreviewManager(QWidget* const parent);
-    ~DPreviewManager();
+    ~DPreviewManager() override;
 
     bool load(const QUrl& file, bool fit = true);
     void setImage(const QImage& img, bool fit = true);

@@ -66,7 +66,7 @@ public:
 public:
 
     explicit DSelectionItem(const QRectF& rect);
-    ~DSelectionItem();
+    ~DSelectionItem() override;
 
 public:
 
@@ -108,7 +108,7 @@ class DIGIKAM_EXPORT DPreviewImage : public QGraphicsView
 public:
 
     explicit DPreviewImage(QWidget* const parent);
-    ~DPreviewImage();
+    ~DPreviewImage() override;
 
 public:
 

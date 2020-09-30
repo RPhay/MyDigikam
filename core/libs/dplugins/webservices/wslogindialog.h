@@ -45,7 +45,7 @@ public:
                            const QString& prompt,
                            const QString& header=QString(),
                            const QString& passwd=QString());
-    ~WSLoginDialog();
+    ~WSLoginDialog() override;
 
     QString login()    const;
     QString password() const;

@@ -59,7 +59,7 @@ public:
     explicit WSSettingsWidget(QWidget* const parent,
                               DInfoInterface* const iface,
                               const QString& toolName);
-    ~WSSettingsWidget();
+    ~WSSettingsWidget() override;
 
 public:
 

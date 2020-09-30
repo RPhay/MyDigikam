@@ -63,7 +63,7 @@ public:
 public:
 
     explicit DItemsListViewItem(DItemsListView* const view, const QUrl& url);
-    ~DItemsListViewItem();
+    ~DItemsListViewItem() override;
 
     bool hasValidThumbnail() const;
 
@@ -132,7 +132,7 @@ public:
 
     explicit DItemsListView(DItemsList* const parent = nullptr);
     explicit DItemsListView(int iconSize, DItemsList* const parent = nullptr);
-    ~DItemsListView();
+    ~DItemsListView() override;
 
     void setColumnLabel(ColumnType column, const QString& label);
     void setColumnEnabled(ColumnType column, bool enable);
@@ -183,7 +183,7 @@ class DIGIKAM_EXPORT CtrlButton : public QPushButton
 public:
 
     explicit CtrlButton(const QIcon& icon, QWidget* parent = nullptr);
-    ~CtrlButton();
+    ~CtrlButton() override;
 };
 
 // -------------------------------------------------------------------------
@@ -218,7 +218,7 @@ public:
 public:
 
     explicit DItemsList(QWidget* const parent, int iconSize = -1);
-    ~DItemsList();
+    ~DItemsList() override;
 
     void                setAllowRAW(bool allow);
     void                setAllowDuplicate(bool allow);

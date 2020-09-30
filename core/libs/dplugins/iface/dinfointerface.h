@@ -64,7 +64,7 @@ public:
 public:
 
     explicit DInfoInterface(QObject* const parent);
-    ~DInfoInterface();
+    ~DInfoInterface() override;
 
 public:
 

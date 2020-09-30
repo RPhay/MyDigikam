@@ -54,7 +54,7 @@ public:
 public:
 
     explicit DSaveSettingsWidget(QWidget* const parent);
-    ~DSaveSettingsWidget();
+    ~DSaveSettingsWidget() override;
 
 public:
 

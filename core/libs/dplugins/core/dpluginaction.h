@@ -71,7 +71,7 @@ public:
 public:
 
     explicit DPluginAction(QObject* const parent = nullptr);
-    ~DPluginAction();
+    ~DPluginAction() override;
 
     /**
      * Manage the internal action category.
