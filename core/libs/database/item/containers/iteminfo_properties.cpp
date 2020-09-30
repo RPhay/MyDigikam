@@ -235,7 +235,7 @@ int ItemInfo::unconfirmedFaceCount() const
     RETURN_IF_CACHED(unconfirmedFaceCount);
 
     FaceTagsEditor fte;
-    int count= fte.unconfirmedNameFaceTagsIfaces(m_data->id).count();
+    int count = fte.unconfirmedNameFaceTagsIfaces(m_data->id).count();
 
     ItemInfoWriteLocker lock;
     m_data.data()->unconfirmedFaceCountCached = true;
