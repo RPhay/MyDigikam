@@ -51,7 +51,7 @@ class AssignNameOverlay : public PersistentWidgetDelegateOverlay
 public:
 
     explicit AssignNameOverlay(QObject* const parent);
-    ~AssignNameOverlay();
+    ~AssignNameOverlay() override;
 
     AssignNameWidget* assignNameWidget() const;
 
@@ -67,17 +67,17 @@ protected Q_SLOTS:
 
 protected:
 
-    virtual QWidget* createWidget() override;
-    virtual void     setActive(bool) override;
-    virtual void     visualChange() override;
-    virtual void     showOnIndex(const QModelIndex& index) override;
-    virtual void     hide() override;
-    virtual bool     checkIndex(const QModelIndex& index) const override;
-    virtual void     viewportLeaveEvent(QObject* obj, QEvent* event) override;
-    virtual void     widgetEnterEvent() override;
-    virtual void     widgetLeaveEvent() override;
-    virtual void     setFocusOnWidget() override;
-    virtual bool     eventFilter(QObject* o, QEvent* e) override;
+    QWidget* createWidget() override;
+    void     setActive(bool) override;
+    void     visualChange() override;
+    void     showOnIndex(const QModelIndex& index) override;
+    void     hide() override;
+    bool     checkIndex(const QModelIndex& index) const override;
+    void     viewportLeaveEvent(QObject* obj, QEvent* event) override;
+    void     widgetEnterEvent() override;
+    void     widgetLeaveEvent() override;
+    void     setFocusOnWidget() override;
+    bool     eventFilter(QObject* o, QEvent* e) override;
 
     void updatePosition();
     void updateFace();

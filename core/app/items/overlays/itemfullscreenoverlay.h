@@ -43,12 +43,12 @@ class ItemFullScreenOverlayButton : public ItemViewHoverButton
 public:
 
     explicit ItemFullScreenOverlayButton(QAbstractItemView* const parentView);
-    virtual QSize sizeHint() const;
+    QSize sizeHint() const override;
 
 protected:
 
-    virtual QIcon icon();
-    virtual void updateToolTip();
+    QIcon icon() override;
+    void updateToolTip() override;
 };
 
 // --------------------------------------------------------------------
@@ -60,7 +60,7 @@ class ItemFullScreenOverlay : public HoverButtonDelegateOverlay
 public:
 
     explicit ItemFullScreenOverlay(QObject* const parent);
-    virtual void setActive(bool active);
+    void setActive(bool active) override;
 
     static ItemFullScreenOverlay* instance(QObject* const parent);
 
@@ -70,11 +70,11 @@ Q_SIGNALS:
 
 protected:
 
-    virtual ItemViewHoverButton* createButton();
-    virtual void updateButton(const QModelIndex& index);
-    virtual bool checkIndex(const QModelIndex& index) const;
-    virtual void widgetEnterEvent();
-    virtual void widgetLeaveEvent();
+    ItemViewHoverButton* createButton() override;
+    void updateButton(const QModelIndex& index) override;
+    bool checkIndex(const QModelIndex& index) const override;
+    void widgetEnterEvent() override;
+    void widgetLeaveEvent() override;
 
 private Q_SLOTS:
 

@@ -45,10 +45,10 @@ class ItemCategoryDrawer : public DCategoryDrawer
 public:
 
     explicit ItemCategoryDrawer(ItemCategorizedView* const parent);
-    ~ItemCategoryDrawer();
+    ~ItemCategoryDrawer() override;
 
-    virtual int categoryHeight(const QModelIndex& index, const QStyleOption& option)                                 const;
-    virtual void drawCategory(const QModelIndex& index, int sortRole, const QStyleOption& option, QPainter* painter) const;
+    int categoryHeight(const QModelIndex& index, const QStyleOption& option)                                 const override;
+    void drawCategory(const QModelIndex& index, int sortRole, const QStyleOption& option, QPainter* painter) const override;
     virtual int maximumHeight()                                                                                      const;
 
     void setLowerSpacing(int spacing);

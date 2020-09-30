@@ -41,12 +41,12 @@ class ItemSelectionOverlayButton : public ItemViewHoverButton
 public:
 
     explicit ItemSelectionOverlayButton(QAbstractItemView* const parentView);
-    virtual QSize sizeHint() const;
+    QSize sizeHint() const override;
 
 protected:
 
-    virtual QIcon icon();
-    virtual void updateToolTip();
+    QIcon icon() override;
+    void updateToolTip() override;
 };
 
 // --------------------------------------------------------------------
@@ -58,12 +58,12 @@ class ItemSelectionOverlay : public HoverButtonDelegateOverlay
 public:
 
     explicit ItemSelectionOverlay(QObject* const parent);
-    virtual void setActive(bool active);
+    void setActive(bool active) override;
 
 protected:
 
-    virtual ItemViewHoverButton* createButton();
-    virtual void updateButton(const QModelIndex& index);
+    ItemViewHoverButton* createButton() override;
+    void updateButton(const QModelIndex& index) override;
 
 protected Q_SLOTS:
 

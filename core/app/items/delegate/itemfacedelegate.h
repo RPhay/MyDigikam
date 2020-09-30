@@ -42,9 +42,9 @@ class ItemFaceDelegate : public DigikamItemDelegate
 public:
 
     explicit ItemFaceDelegate(ItemCategorizedView* const parent);
-    ~ItemFaceDelegate();
+    ~ItemFaceDelegate() override;
 
-    virtual void prepareThumbnails(ItemThumbnailModel* thumbModel,
+    void prepareThumbnails(ItemThumbnailModel* thumbModel,
                                    const QList<QModelIndex>& indexes) override;
     QRect faceRect(const QModelIndex& index) const;
     QRect largerFaceRect(const QModelIndex& index) const;
@@ -53,9 +53,9 @@ public:
 
 protected:
 
-    virtual QPixmap thumbnailPixmap(const QModelIndex& index) const override;
-    virtual void updateRects() override;
-    virtual void clearModelDataCaches() override;
+    QPixmap thumbnailPixmap(const QModelIndex& index) const override;
+    void updateRects() override;
+    void clearModelDataCaches() override;
 
 private:
 

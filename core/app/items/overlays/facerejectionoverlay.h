@@ -42,12 +42,12 @@ class FaceRejectionOverlayButton : public ItemViewHoverButton
 public:
 
     explicit FaceRejectionOverlayButton(QAbstractItemView* const parentView);
-    virtual QSize sizeHint() const;
+    QSize sizeHint() const override;
 
 protected:
 
-    virtual QIcon icon();
-    virtual void updateToolTip();
+    QIcon icon() override;
+    void updateToolTip() override;
 };
 
 // --------------------------------------------------------------------
@@ -59,7 +59,7 @@ class FaceRejectionOverlay : public HoverButtonDelegateOverlay
 public:
 
     explicit FaceRejectionOverlay(QObject* const parent);
-    virtual void setActive(bool active);
+    void setActive(bool active) override;
 
 Q_SIGNALS:
 
@@ -67,11 +67,11 @@ Q_SIGNALS:
 
 protected:
 
-    virtual ItemViewHoverButton* createButton();
-    virtual void updateButton(const QModelIndex& index);
-    virtual bool checkIndex(const QModelIndex& index) const;
-    virtual void widgetEnterEvent();
-    virtual void widgetLeaveEvent();
+    ItemViewHoverButton* createButton() override;
+    void updateButton(const QModelIndex& index) override;
+    bool checkIndex(const QModelIndex& index) const override;
+    void widgetEnterEvent() override;
+    void widgetLeaveEvent() override;
 
 protected Q_SLOTS:
 

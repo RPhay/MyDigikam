@@ -46,7 +46,7 @@ class ItemThumbnailDelegate : public ItemDelegate
 public:
 
     explicit ItemThumbnailDelegate(ItemCategorizedView* const parent);
-    ~ItemThumbnailDelegate();
+    ~ItemThumbnailDelegate() override;
 
     void setFlow(QListView::Flow flow);
 
@@ -56,16 +56,16 @@ public:
     int maximumSize() const;
     int minimumSize() const;
 
-    virtual void setDefaultViewOptions(const QStyleOptionViewItem& option);
-    virtual bool acceptsActivation(const QPoint& pos,
+    void setDefaultViewOptions(const QStyleOptionViewItem& option) override;
+    bool acceptsActivation(const QPoint& pos,
                                    const QRect& visualRect,
                                    const QModelIndex& index,
-                                   QRect* activationRect) const;
+                                   QRect* activationRect) const override;
 
 protected:
 
-    virtual void updateContentWidth();
-    virtual void updateRects();
+    void updateContentWidth() override;
+    void updateRects() override;
 
 private:
 

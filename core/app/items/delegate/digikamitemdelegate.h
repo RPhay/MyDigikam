@@ -41,11 +41,11 @@ class DigikamItemDelegate : public ItemDelegate
 public:
 
     explicit DigikamItemDelegate(ItemCategorizedView* parent);
-    ~DigikamItemDelegate();
+    ~DigikamItemDelegate() override;
 
 protected:
 
-    virtual void updateRects() override;
+    void updateRects() override;
 
     DigikamItemDelegate(DigikamItemDelegatePrivate& dd, ItemCategorizedView* parent);
 

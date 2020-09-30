@@ -68,7 +68,7 @@ public:
 
 protected:
 
-    virtual QString tipContents()
+    QString tipContents() override
     {
         ItemInfo info = ItemModel::retrieveItemInfo(currentIndex());
         return ToolTipFiller::imageInfoTipContents(info);

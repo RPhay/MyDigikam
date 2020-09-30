@@ -47,12 +47,12 @@ class ItemRotateOverlayButton : public ItemViewHoverButton
 public:
 
     ItemRotateOverlayButton(ItemRotateOverlayDirection dir, QAbstractItemView* const parentView);
-    virtual QSize sizeHint() const;
+    QSize sizeHint() const override;
 
 protected:
 
-    virtual QIcon icon();
-    virtual void updateToolTip();
+    QIcon icon() override;
+    void updateToolTip() override;
 
 protected:
 
@@ -68,7 +68,7 @@ class ItemRotateOverlay : public HoverButtonDelegateOverlay
 public:
 
     ItemRotateOverlay(ItemRotateOverlayDirection dir, QObject* const parent);
-    virtual void setActive(bool active);
+    void setActive(bool active) override;
 
     ItemRotateOverlayDirection direction() const { return m_direction; }
     bool isLeft() const  { return m_direction  == ItemRotateOverlayLeft; }
@@ -83,11 +83,11 @@ Q_SIGNALS:
 
 protected:
 
-    virtual ItemViewHoverButton* createButton();
-    virtual void updateButton(const QModelIndex& index);
-    virtual bool checkIndex(const QModelIndex& index) const;
-    virtual void widgetEnterEvent();
-    virtual void widgetLeaveEvent();
+    ItemViewHoverButton* createButton() override;
+    void updateButton(const QModelIndex& index) override;
+    bool checkIndex(const QModelIndex& index) const override;
+    void widgetEnterEvent() override;
+    void widgetLeaveEvent() override;
 
 private Q_SLOTS:
 

@@ -46,7 +46,7 @@ public:
     {
     }
 
-    virtual ~DigikamItemDelegatePrivate();
+    ~DigikamItemDelegatePrivate() override;
 
     void init(DigikamItemDelegate* const q, ItemCategorizedView* const parent);
 };

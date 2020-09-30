@@ -117,7 +117,7 @@ public:
      * action from DigikamApp is used
      */
     explicit ContextMenuHelper(QMenu* parent, KActionCollection* actionCollection = nullptr);
-    virtual ~ContextMenuHelper();
+    ~ContextMenuHelper() override;
 
     /**
      * Add an action from the actionCollection.

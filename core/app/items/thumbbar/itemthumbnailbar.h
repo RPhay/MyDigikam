@@ -39,7 +39,7 @@ class ItemThumbnailBar : public ItemCategorizedView
 public:
 
     explicit ItemThumbnailBar(QWidget* const parent = nullptr);
-    ~ItemThumbnailBar();
+    ~ItemThumbnailBar() override;
 
     /// Sets the policy always for the one scroll bar which is relevant, depending on orientation
     void setScrollBarPolicy(Qt::ScrollBarPolicy policy);
@@ -65,8 +65,8 @@ public Q_SLOTS:
 
 protected:
 
-    virtual void slotSetupChanged() override;
-    virtual bool event(QEvent*)     override;
+    void slotSetupChanged() override;
+    bool event(QEvent*)     override;
 
 private:
 

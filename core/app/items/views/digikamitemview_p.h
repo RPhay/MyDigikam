@@ -54,7 +54,7 @@ class Q_DECL_HIDDEN DigikamItemView::Private : public QObject
 public:
 
     explicit Private(DigikamItemView* const qq);
-    ~Private();
+    ~Private() override;
 
     void updateOverlays();
     void triggerRotateAction(const char* actionName);

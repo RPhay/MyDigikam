@@ -52,7 +52,7 @@ class ItemCategorizedView : public ItemViewCategorized
 public:
 
     explicit ItemCategorizedView(QWidget* const parent = nullptr);
-    ~ItemCategorizedView();
+    ~ItemCategorizedView() override;
 
     void setModels(ItemModel* model, ImageSortFilterModel* filterModel);
 
@@ -203,7 +203,7 @@ protected:
     /// Reimplement these in a subclass
     virtual void activated(const ItemInfo& info, Qt::KeyboardModifiers modifiers);
     virtual void showContextMenuOnInfo(QContextMenuEvent* event, const ItemInfo& info);
-    virtual void showContextMenuOnIndex(QContextMenuEvent* event, const QModelIndex& index) override;
+    void showContextMenuOnIndex(QContextMenuEvent* event, const QModelIndex& index) override;
 
     ItemInfo     imageInfo(const QModelIndex& index)           const;
     ItemInfoList imageInfos(const QList<QModelIndex>& indexes) const;
