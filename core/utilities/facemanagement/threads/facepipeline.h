@@ -68,7 +68,7 @@ public:
 public:
 
     explicit FacePipeline();
-    ~FacePipeline();
+    ~FacePipeline() override;
 
     /**
      * You can plug these four different steps in the working pipeline.

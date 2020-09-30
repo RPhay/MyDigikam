@@ -45,7 +45,7 @@ class Q_DECL_HIDDEN FaceItem : public RegionFrameItem
 public:
 
     explicit FaceItem(QGraphicsItem* const parent = nullptr);
-    ~FaceItem();
+    ~FaceItem() override;
 
     void setFace(const FaceTagsIface& face);
     FaceTagsIface face()                                const;

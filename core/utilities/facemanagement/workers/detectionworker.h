@@ -40,7 +40,7 @@ class Q_DECL_HIDDEN DetectionWorker : public WorkerObject
 public:
 
     explicit DetectionWorker(FacePipeline::Private* const d);
-    ~DetectionWorker();
+    ~DetectionWorker() override;
 
     QImage scaleForDetection(const DImg& image) const;
 

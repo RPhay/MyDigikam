@@ -40,7 +40,7 @@ class Q_DECL_HIDDEN RecognitionWorker : public WorkerObject
 public:
 
     explicit RecognitionWorker(FacePipeline::Private* const d);
-    ~RecognitionWorker();
+    ~RecognitionWorker() override;
 
 public Q_SLOTS:
 
@@ -51,7 +51,7 @@ public Q_SLOTS:
 
 protected:
 
-    virtual void aboutToDeactivate() override;
+    void aboutToDeactivate() override;
 
 Q_SIGNALS:
 

@@ -40,7 +40,7 @@ class Q_DECL_HIDDEN DatabaseWriter : public WorkerObject
 public:
 
     DatabaseWriter(FacePipeline::WriteMode mode, FacePipeline::Private* const d);
-    ~DatabaseWriter();
+    ~DatabaseWriter() override;
 
 public Q_SLOTS:
 

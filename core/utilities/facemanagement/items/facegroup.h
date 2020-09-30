@@ -53,7 +53,7 @@ public:
      * of a particular image, displayed on a GraphicsDImgView.
      */
     explicit FaceGroup(GraphicsDImgView* const view);
-    ~FaceGroup();
+    ~FaceGroup() override;
 
     bool isVisible()                                                     const;
     ItemInfo info()                                                      const;

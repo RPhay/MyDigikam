@@ -39,7 +39,7 @@ public:
     {
     }
 
-    ImageListProvider* newImages(const Identity& identity)
+    ImageListProvider* newImages(const Identity& identity) override
     {
         if (imagesToTrain.contains(identity.id()))
         {
@@ -52,7 +52,7 @@ public:
         return &empty;
     }
 
-    ImageListProvider* images(const Identity&)
+    ImageListProvider* images(const Identity&) override
     {
         // Not implemented. Would be needed if we use a backend with a "holistic" approach that needs all images to train.
 

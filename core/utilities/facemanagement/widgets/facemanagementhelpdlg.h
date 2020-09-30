@@ -38,7 +38,7 @@ class FaceManagementHelpDlg : public QDialog
 public:
 
     explicit FaceManagementHelpDlg(QWidget* const parent);
-    ~FaceManagementHelpDlg();
+    ~FaceManagementHelpDlg() override;
 };
 
 } //namespace Digikam

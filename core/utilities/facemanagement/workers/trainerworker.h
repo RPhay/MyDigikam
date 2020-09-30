@@ -40,11 +40,11 @@ class Q_DECL_HIDDEN TrainerWorker : public WorkerObject
 public:
 
     explicit TrainerWorker(FacePipeline::Private* const d);
-    ~TrainerWorker();
+    ~TrainerWorker() override;
 
 protected:
 
-    virtual void aboutToDeactivate() override;
+    void aboutToDeactivate() override;
 
 public Q_SLOTS:
 

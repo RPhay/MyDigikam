@@ -38,7 +38,7 @@ class Q_DECL_HIDDEN ParallelPipes : public QObject
 public:
 
     explicit ParallelPipes();
-    ~ParallelPipes();
+    ~ParallelPipes() override;
 
     void schedule();
     void deactivate(WorkerObject::DeactivatingMode mode = WorkerObject::FlushSignals);

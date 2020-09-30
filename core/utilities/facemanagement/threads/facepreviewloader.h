@@ -38,7 +38,7 @@ class Q_DECL_HIDDEN FacePreviewLoader : public PreviewLoadThread
 public:
 
     explicit FacePreviewLoader(FacePipeline::Private* const d);
-    ~FacePreviewLoader();
+    ~FacePreviewLoader() override;
 
     void cancel();
     bool sentOutLimitReached();

@@ -60,7 +60,7 @@ public:
 public:
 
     explicit FaceUtils();
-    virtual ~FaceUtils();
+    ~FaceUtils() override;
 
     // --- Face detection and recognition ---
 
@@ -139,9 +139,9 @@ public:
 protected:
 
     // Reimplemented
-    virtual void addNormalTag(qlonglong imageid, int tagId);
-    virtual void removeNormalTag(qlonglong imageid, int tagId);
-    virtual void removeNormalTags(qlonglong imageid, QList<int> tagId);
+    void addNormalTag(qlonglong imageid, int tagId)            override;
+    void removeNormalTag(qlonglong imageid, int tagId)         override;
+    void removeNormalTags(qlonglong imageid, QList<int> tagId) override;
 
 private:
 

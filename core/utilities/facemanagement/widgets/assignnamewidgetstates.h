@@ -42,7 +42,7 @@ class AssignNameWidgetStates : public HidingStateChanger
 public:
 
     explicit AssignNameWidgetStates(FaceItem* const item);
-    ~AssignNameWidgetStates();
+    ~AssignNameWidgetStates() override;
 
 protected Q_SLOTS:
 
