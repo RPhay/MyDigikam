@@ -139,7 +139,7 @@ public:
 private:
 
     ShowfotoSettings();
-    ~ShowfotoSettings();
+    ~ShowfotoSettings() override;
 
     void init();
 
