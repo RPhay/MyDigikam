@@ -89,7 +89,7 @@ public:
 public:
 
     explicit TableViewModel(TableViewShared* const sharedObject, QObject* const parent = nullptr);
-    virtual ~TableViewModel();
+    ~TableViewModel() override;
 
     void                    addColumnAt(const TableViewColumnDescription& description,
                                         const int targetColumn = -1);
@@ -138,28 +138,28 @@ public:
 
 public:
 
-    virtual QModelIndex index(int row, int column, const QModelIndex& parent = QModelIndex())                   const;
-    virtual QModelIndex parent(const QModelIndex& childIndex)                                                   const;
-    virtual int rowCount(const QModelIndex& parent)                                                             const;
-    virtual int columnCount(const QModelIndex& i)                                                               const;
-    virtual QVariant data(const QModelIndex& i, int role)                                                       const;
-    virtual QVariant headerData(int section, Qt::Orientation orientation, int role)                             const;
-    virtual Qt::ItemFlags flags(const QModelIndex& index)                                                       const;
-    virtual bool hasChildren(const QModelIndex& parent = QModelIndex())                                         const;
+    QModelIndex index(int row, int column, const QModelIndex& parent = QModelIndex())                   const override;
+    QModelIndex parent(const QModelIndex& childIndex)                                                   const override;
+    int rowCount(const QModelIndex& parent)                                                             const override;
+    int columnCount(const QModelIndex& i)                                                               const override;
+    QVariant data(const QModelIndex& i, int role)                                                       const override;
+    QVariant headerData(int section, Qt::Orientation orientation, int role)                             const override;
+    Qt::ItemFlags flags(const QModelIndex& index)                                                       const override;
+    bool hasChildren(const QModelIndex& parent = QModelIndex())                                         const override;
 
     /// drag-and-drop related functions
-    virtual Qt::DropActions supportedDropActions()                                                              const;
-    virtual QStringList mimeTypes()                                                                             const;
-    virtual bool dropMimeData(const QMimeData* data,
+    Qt::DropActions supportedDropActions()                                                              const override;
+    QStringList mimeTypes()                                                                             const override;
+    bool dropMimeData(const QMimeData* data,
                               Qt::DropAction action,
                               int row,
                               int column,
-                              const QModelIndex& parent);
-    virtual QMimeData* mimeData(const QModelIndexList& indexes)                                                 const;
+                              const QModelIndex& parent) override;
+    QMimeData* mimeData(const QModelIndexList& indexes)                                                 const override;
 
 protected:
 
-    virtual void sort(int column, Qt::SortOrder order = Qt::AscendingOrder);
+    void sort(int column, Qt::SortOrder order = Qt::AscendingOrder) override;
 
 private Q_SLOTS:
 

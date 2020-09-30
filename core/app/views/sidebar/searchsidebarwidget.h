@@ -46,7 +46,7 @@ public:
     explicit SearchSideBarWidget(QWidget* const parent,
                                  SearchModel* const searchModel,
                                  SearchModificationHelper* const searchModificationHelper);
-    virtual ~SearchSideBarWidget();
+    ~SearchSideBarWidget() override;
 
     void          setActive(bool active)                             override;
     void          doLoadState()                                      override;

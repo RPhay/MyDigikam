@@ -78,7 +78,7 @@ public:
 public:
 
     explicit StackedView(QWidget* const parent = nullptr);
-    ~StackedView();
+    ~StackedView() override;
 
     /* Attach the thumbnail dock widget to the specified QMainWindow. */
     void setDockArea(QMainWindow*);

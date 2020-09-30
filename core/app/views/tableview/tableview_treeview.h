@@ -60,22 +60,22 @@ class TableViewTreeView : public QTreeView, public DragDropViewImplementation, p
 public:
 
     explicit TableViewTreeView(TableViewShared* const tableViewShared, QWidget* const parent = nullptr);
-    virtual ~TableViewTreeView();
+    ~TableViewTreeView() override;
 
     Album* albumAt(const QPoint& pos) const;
 
 protected:
 
-    virtual bool eventFilter(QObject* watched, QEvent* event)                  override;
+    bool eventFilter(QObject* watched, QEvent* event)                  override;
 
     DECLARE_VIEW_DRAG_DROP_METHODS(QTreeView)
 
-    virtual AbstractItemDragDropHandler* dragDropHandler()               const override;
-    virtual QModelIndex mapIndexForDragDrop(const QModelIndex& index)    const override;
-    virtual QPixmap     pixmapForDrag(const QList<QModelIndex>& indexes) const override;
-    virtual void wheelEvent(QWheelEvent* event)                                override;
+    AbstractItemDragDropHandler* dragDropHandler()               const override;
+    QModelIndex mapIndexForDragDrop(const QModelIndex& index)    const override;
+    QPixmap     pixmapForDrag(const QList<QModelIndex>& indexes) const override;
+    void wheelEvent(QWheelEvent* event)                                override;
 
-    virtual bool hasHiddenGroupedImages(const ItemInfo& info)            const override;
+    bool hasHiddenGroupedImages(const ItemInfo& info)            const override;
 
 private:
 

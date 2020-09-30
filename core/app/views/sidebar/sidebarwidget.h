@@ -58,7 +58,7 @@ public:
     /**
      * Destructor.
      */
-    virtual ~SidebarWidget();
+    ~SidebarWidget() override;
 
     /**
      * This method is called if the visible sidebar widget is changed.

@@ -62,7 +62,7 @@ public:
                        DCategorizedSortFilterProxyModel* const imageFilterModel,
                        QWidget* const parent);
 
-    virtual ~TableView();
+    ~TableView() override;
 
     void setThumbnailSize(const ThumbnailSize& size);
     ThumbnailSize getThumbnailSize()                                                        const;
@@ -85,10 +85,10 @@ public:
 
 protected:
 
-    void doLoadState();
-    void doSaveState();
+    void doLoadState() override;
+    void doSaveState() override;
 
-    virtual bool eventFilter(QObject* watched, QEvent* event);
+    bool eventFilter(QObject* watched, QEvent* event) override;
     QList<QAction*> getExtraGroupingActions();
 
 public Q_SLOTS:

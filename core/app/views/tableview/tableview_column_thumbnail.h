@@ -45,16 +45,16 @@ private:
     explicit ColumnThumbnail(TableViewShared* const tableViewShared,
                              const TableViewColumnConfiguration& pConfiguration,
                              QObject* const parent = nullptr);
-    virtual ~ColumnThumbnail();
+    ~ColumnThumbnail() override;
 
 public:
 
-    virtual ColumnFlags getColumnFlags()                                                                             const;
-    virtual QString getTitle()                                                                                       const;
-    virtual QVariant data(TableViewModel::Item* const item, const int role)                                          const;
-    virtual bool paint(QPainter*const painter, const QStyleOptionViewItem& option, TableViewModel::Item* const item) const;
-    virtual QSize sizeHint(const QStyleOptionViewItem& option, TableViewModel::Item* const item)                     const;
-    virtual void updateThumbnailSize();
+    ColumnFlags getColumnFlags()                                                                             const override;
+    QString getTitle()                                                                                       const override;
+    QVariant data(TableViewModel::Item* const item, const int role)                                          const override;
+    bool paint(QPainter*const painter, const QStyleOptionViewItem& option, TableViewModel::Item* const item) const override;
+    QSize sizeHint(const QStyleOptionViewItem& option, TableViewModel::Item* const item)                     const override;
+    void updateThumbnailSize() override;
 
     static bool CreateFromConfiguration(TableViewShared* const tableViewShared,
                                         const TableViewColumnConfiguration& pConfiguration,

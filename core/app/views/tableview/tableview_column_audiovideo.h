@@ -60,13 +60,13 @@ public:
                                         const TableViewColumnConfiguration& pConfiguration,
                                         const SubColumn pSubColumn,
                                         QObject* const parent = nullptr);
-    virtual ~ColumnAudioVideoProperties();
+    ~ColumnAudioVideoProperties() override;
 
-    virtual QString getTitle()                                                                                const;
-    virtual ColumnFlags getColumnFlags()                                                                      const;
-    virtual QVariant data(TableViewModel::Item* const item, const int role)                                   const;
-    virtual ColumnCompareResult compare(TableViewModel::Item* const itemA, TableViewModel::Item* const itemB) const;
-    virtual void setConfiguration(const TableViewColumnConfiguration& newConfiguration);
+    QString getTitle()                                                                                const override;
+    ColumnFlags getColumnFlags()                                                                      const override;
+    QVariant data(TableViewModel::Item* const item, const int role)                                   const override;
+    ColumnCompareResult compare(TableViewModel::Item* const itemA, TableViewModel::Item* const itemB) const override;
+    void setConfiguration(const TableViewColumnConfiguration& newConfiguration) override;
 
     static TableViewColumnDescription getDescription();
     static QStringList getSubColumns();

@@ -64,7 +64,7 @@ public:
 
     explicit ItemIconView(QWidget* const parent,
                           DModelFactory* const modelCollection);
-    ~ItemIconView();
+    ~ItemIconView() override;
 
     void applySettings();
 

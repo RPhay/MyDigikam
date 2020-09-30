@@ -52,10 +52,10 @@ class TableViewItemDelegate : public QItemDelegate
 public:
 
     explicit TableViewItemDelegate(TableViewShared* const tableViewShared, QObject* const parent = nullptr);
-    virtual ~TableViewItemDelegate();
+    ~TableViewItemDelegate() override;
 
-    virtual void paint(QPainter* painter, const QStyleOptionViewItem& option, const QModelIndex& tableViewModelIndex) const;
-    virtual QSize sizeHint(const QStyleOptionViewItem& option, const QModelIndex& tableViewModelIndex)                const;
+    void paint(QPainter* painter, const QStyleOptionViewItem& option, const QModelIndex& tableViewModelIndex) const override;
+    QSize sizeHint(const QStyleOptionViewItem& option, const QModelIndex& tableViewModelIndex)                const override;
 
 private:
 

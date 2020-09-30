@@ -48,7 +48,7 @@ public:
     explicit TimelineSideBarWidget(QWidget* const parent,
                                    SearchModel* const searchModel,
                                    SearchModificationHelper* const searchModificationHelper);
-    virtual ~TimelineSideBarWidget();
+    ~TimelineSideBarWidget() override;
 
     void          setActive(bool active)                             override;
     void          doLoadState()                                      override;

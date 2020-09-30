@@ -45,7 +45,7 @@ public:
     explicit PeopleSideBarWidget(QWidget* const parent,
                                  TagModel* const tagModel,
                                  SearchModificationHelper* const searchModificationHelper);
-    virtual ~PeopleSideBarWidget();
+    ~PeopleSideBarWidget() override;
 
     void          setActive(bool active)                             override;
     void          doLoadState()                                      override;

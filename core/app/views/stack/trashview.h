@@ -41,7 +41,7 @@ class TrashView : public QWidget
 public:
 
     explicit TrashView(QWidget* const parent = nullptr);
-    ~TrashView();
+    ~TrashView() override;
 
     /**
      * @return model used for the view
@@ -105,7 +105,7 @@ public:
 
     explicit ThumbnailAligningDelegate(QObject* const parent = nullptr);
 
-    void paint(QPainter *painter, const QStyleOptionViewItem &option, const QModelIndex &index) const;
+    void paint(QPainter *painter, const QStyleOptionViewItem &option, const QModelIndex &index) const override;
 };
 
 } // namespace Digikam

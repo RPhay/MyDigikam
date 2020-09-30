@@ -47,7 +47,7 @@ class TagViewSideBarWidget : public SidebarWidget
 public:
 
     explicit TagViewSideBarWidget(QWidget* const parent, TagModel* const model);
-    virtual ~TagViewSideBarWidget();
+    ~TagViewSideBarWidget() override;
 
     void          setActive(bool active)                             override;
     void          doLoadState()                                      override;

@@ -52,7 +52,7 @@ class DModelFactory: public QObject
 public:
 
     DModelFactory();
-    virtual ~DModelFactory();
+    ~DModelFactory() override;
 
     AlbumModel*        getAlbumModel()        const;
     TagModel*          getTagModel()          const;

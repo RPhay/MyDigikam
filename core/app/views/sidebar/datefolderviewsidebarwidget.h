@@ -48,7 +48,7 @@ public:
     explicit DateFolderViewSideBarWidget(QWidget* const parent,
                                          DateAlbumModel* const model,
                                          ItemAlbumFilterModel* const imageFilterModel);
-    virtual ~DateFolderViewSideBarWidget();
+    ~DateFolderViewSideBarWidget() override;
 
     void          setActive(bool active)                             override;
     void          doLoadState()                                      override;

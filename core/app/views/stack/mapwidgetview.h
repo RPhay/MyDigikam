@@ -64,7 +64,7 @@ public:
                            DCategorizedSortFilterProxyModel* const imageFilterModel,
                            QWidget* const parent,
                            const Application application);
-    ~MapWidgetView();
+    ~MapWidgetView() override;
 
     void openAlbum(Album* const album);
     void setActive(const bool state);
@@ -75,8 +75,8 @@ public:
 
 protected:
 
-    void doLoadState();
-    void doSaveState();
+    void doLoadState() override;
+    void doSaveState() override;
 
 private:
 
@@ -96,19 +96,19 @@ public:
                                 DCategorizedSortFilterProxyModel* const filterModel,
                                 QObject* const parent,
                                 const MapWidgetView::Application application);
-    virtual ~MapViewModelHelper();
+    ~MapViewModelHelper() override;
 
-    virtual QAbstractItemModel* model()                             const;
-    virtual QItemSelectionModel* selectionModel()                   const;
-    virtual bool itemCoordinates(const QModelIndex& index,
-                                 GeoCoordinates* const coordinates) const;
+    QAbstractItemModel* model()                             const override;
+    QItemSelectionModel* selectionModel()                   const override;
+    bool itemCoordinates(const QModelIndex& index,
+                                 GeoCoordinates* const coordinates) const override;
 
-    virtual QPixmap pixmapFromRepresentativeIndex(const QPersistentModelIndex& index,
-                                                  const QSize& size);
-    virtual QPersistentModelIndex bestRepresentativeIndexFromList(const QList<QPersistentModelIndex>& list,
-                                                                  const int sortKey);
+    QPixmap pixmapFromRepresentativeIndex(const QPersistentModelIndex& index,
+                                                  const QSize& size) override;
+    QPersistentModelIndex bestRepresentativeIndexFromList(const QList<QPersistentModelIndex>& list,
+                                                                  const int sortKey) override;
 
-    virtual void onIndicesClicked(const QList<QPersistentModelIndex>& clickedIndices);
+    void onIndicesClicked(const QList<QPersistentModelIndex>& clickedIndices) override;
 
 Q_SIGNALS:
 

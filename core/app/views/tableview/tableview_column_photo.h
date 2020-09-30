@@ -70,14 +70,14 @@ public:
                                    const TableViewColumnConfiguration& pConfiguration,
                                    const SubColumn pSubColumn,
                                    QObject* const parent = nullptr);
-    virtual ~ColumnPhotoProperties();
+    ~ColumnPhotoProperties() override;
 
-    virtual QString getTitle()                                                                                const;
-    virtual ColumnFlags getColumnFlags()                                                                      const;
-    virtual QVariant data(TableViewModel::Item* const item, const int role)                                   const;
-    virtual ColumnCompareResult compare(TableViewModel::Item* const itemA, TableViewModel::Item* const itemB) const;
-    virtual TableViewColumnConfigurationWidget* getConfigurationWidget(QWidget* const parentWidget)           const;
-    virtual void setConfiguration(const TableViewColumnConfiguration& newConfiguration);
+    QString getTitle()                                                                                const override;
+    ColumnFlags getColumnFlags()                                                                      const override;
+    QVariant data(TableViewModel::Item* const item, const int role)                                   const override;
+    ColumnCompareResult compare(TableViewModel::Item* const itemA, TableViewModel::Item* const itemB) const override;
+    TableViewColumnConfigurationWidget* getConfigurationWidget(QWidget* const parentWidget)           const override;
+    void setConfiguration(const TableViewColumnConfiguration& newConfiguration) override;
 
     static TableViewColumnDescription getDescription();
     static QStringList getSubColumns();
@@ -94,9 +94,9 @@ public:
     explicit ColumnPhotoConfigurationWidget(TableViewShared* const sharedObject,
                                             const TableViewColumnConfiguration& columnConfiguration,
                                             QWidget* const parentWidget);
-    virtual ~ColumnPhotoConfigurationWidget();
+    ~ColumnPhotoConfigurationWidget() override;
 
-    virtual TableViewColumnConfiguration getNewConfiguration();
+    TableViewColumnConfiguration getNewConfiguration() override;
 
 private Q_SLOTS:
 

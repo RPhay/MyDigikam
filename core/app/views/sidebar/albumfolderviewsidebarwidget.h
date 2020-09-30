@@ -48,7 +48,7 @@ public:
     explicit AlbumFolderViewSideBarWidget(QWidget* const parent,
                                           AlbumModel* const model,
                                           AlbumModificationHelper* const albumModificationHelper);
-    virtual ~AlbumFolderViewSideBarWidget();
+    ~AlbumFolderViewSideBarWidget() override;
 
     void          setActive(bool active)                             override;
     void          doLoadState()                                      override;

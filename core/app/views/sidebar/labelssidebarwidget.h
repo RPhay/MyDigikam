@@ -43,7 +43,7 @@ class LabelsSideBarWidget : public SidebarWidget
 public:
 
     explicit LabelsSideBarWidget(QWidget* const parent);
-    virtual ~LabelsSideBarWidget();
+    ~LabelsSideBarWidget() override;
 
     LabelsTreeView* labelsTree();
 

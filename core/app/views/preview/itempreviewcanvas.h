@@ -45,7 +45,7 @@ class ItemPreviewCanvas : public DImgPreviewItem
 public:
 
     explicit ItemPreviewCanvas();
-    virtual ~ItemPreviewCanvas();
+    ~ItemPreviewCanvas() override;
 
     void setItemInfo(const ItemInfo& info);
     ItemInfo imageInfo() const;

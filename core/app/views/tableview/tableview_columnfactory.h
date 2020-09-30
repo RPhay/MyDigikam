@@ -180,7 +180,7 @@ public:
     explicit TableViewColumnConfigurationWidget(TableViewShared* const sharedObject,
                                                 const TableViewColumnConfiguration& currentConfiguration,
                                                 QWidget* const parent = nullptr);
-    virtual ~TableViewColumnConfigurationWidget();
+    ~TableViewColumnConfigurationWidget() override;
 
     virtual TableViewColumnConfiguration getNewConfiguration() = 0;
 
@@ -224,7 +224,7 @@ public:
     explicit TableViewColumn(TableViewShared* const tableViewShared,
                              const TableViewColumnConfiguration& pConfiguration,
                              QObject* const parent = nullptr);
-    virtual ~TableViewColumn();
+    ~TableViewColumn() override;
 
 public:
 

@@ -48,7 +48,7 @@ public:
     explicit TableViewConfigurationDialog(TableViewShared* const sharedObject,
                                           const int columnIndex,
                                           QWidget* const parentWidget);
-    virtual ~TableViewConfigurationDialog();
+    ~TableViewConfigurationDialog() override;
 
     TableViewColumnConfiguration getNewConfiguration() const;
 
