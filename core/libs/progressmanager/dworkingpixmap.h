@@ -46,7 +46,7 @@ class DIGIKAM_EXPORT DWorkingPixmap : public QObject
 public:
 
     explicit DWorkingPixmap(QObject* const parent = nullptr);
-    ~DWorkingPixmap();
+    ~DWorkingPixmap() override;
 
     bool    isEmpty()          const;
     QSize   frameSize()        const;

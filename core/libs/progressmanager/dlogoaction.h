@@ -42,7 +42,7 @@ class DIGIKAM_EXPORT DLogoAction : public QWidgetAction
 public:
 
     explicit DLogoAction(QObject* const parent, bool alignOnright=true);
-    ~DLogoAction();
+    ~DLogoAction() override;
 
     void start();
     void stop();

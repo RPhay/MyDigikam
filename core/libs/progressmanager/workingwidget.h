@@ -43,7 +43,7 @@ class DIGIKAM_EXPORT WorkingWidget : public QLabel
 public:
 
     explicit WorkingWidget(QWidget* const parent = nullptr);
-    ~WorkingWidget();
+    ~WorkingWidget() override;
 
 Q_SIGNALS:
 

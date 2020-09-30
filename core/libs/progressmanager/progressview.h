@@ -46,7 +46,7 @@ class TransactionItem : public DVBox
 public:
 
     explicit TransactionItem(QWidget* const parent, ProgressItem* const item, bool first);
-    ~TransactionItem();
+    ~TransactionItem() override;
 
     void hideHLine();
 
@@ -87,7 +87,7 @@ class TransactionItemView : public QScrollArea
 public:
 
     explicit TransactionItemView(QWidget* const parent=nullptr, const QString& name=QString());
-    virtual ~TransactionItemView() {}
+    ~TransactionItemView() override {}
 
     TransactionItem* addTransactionItem(ProgressItem* item, bool first);
 
@@ -104,7 +104,7 @@ Q_SIGNALS:
 
 protected:
 
-    virtual void resizeEvent(QResizeEvent* event) override;
+    void resizeEvent(QResizeEvent* event) override;
 
 private:
 
@@ -120,7 +120,7 @@ class DIGIKAM_EXPORT ProgressView : public OverlayWidget
 public:
 
     explicit ProgressView(QWidget* const alignWidget, QWidget* const parent, const QString& name = QString());
-    ~ProgressView();
+    ~ProgressView() override;
 
     void setVisible(bool b) override;
 
@@ -148,7 +148,7 @@ protected Q_SLOTS:
 
 protected:
 
-    virtual void closeEvent(QCloseEvent*) override;
+    void closeEvent(QCloseEvent*) override;
 
 private:
 

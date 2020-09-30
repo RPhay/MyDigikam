@@ -47,7 +47,7 @@ class DIGIKAM_EXPORT StatusbarProgressWidget : public QFrame
 public:
 
     StatusbarProgressWidget(ProgressView* const progressView, QWidget* const parent, bool button = true);
-    ~StatusbarProgressWidget();
+    ~StatusbarProgressWidget() override;
 
 public Q_SLOTS:
 
@@ -70,7 +70,7 @@ protected:
     void connectSingleItem();
     void activateSingleItemMode();
 
-    virtual bool eventFilter(QObject*, QEvent*) override;
+    bool eventFilter(QObject*, QEvent*) override;
 
 private:
 

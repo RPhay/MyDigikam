@@ -49,7 +49,7 @@ public:
 
     ProgressItem(ProgressItem* const parent, const QString& id, const QString& label,
                  const QString& status, bool canBeCanceled, bool hasThumb);
-    virtual ~ProgressItem();
+    ~ProgressItem() override;
 
     /**
      * Set the property to pop-up item when it's added in progress manager.
@@ -454,7 +454,7 @@ private:
     ProgressManager();
      // prevent unsolicited copies
     ProgressManager(const ProgressManager&);
-    ~ProgressManager();
+    ~ProgressManager() override;
 
     void emitShowProgressViewImpl();
 
