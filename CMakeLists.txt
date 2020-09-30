@@ -56,6 +56,9 @@ project(digikam
         VERSION ${DIGIKAM_VERSION_SHORT}
         LANGUAGES CXX C)
 
+set(CMAKE_CXX_STANDARD 11)
+set(CMAKE_CXX_STANDARD_REQUIRED ON)
+
 message(STATUS "----------------------------------------------------------------------------------")
 message(STATUS "Starting CMake configuration for ${PROJECT_NAME}")
 message(STATUS "")

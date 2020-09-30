@@ -39,14 +39,15 @@ class RawPostProcessing : public DImgThreadedFilter
 public:
 
     explicit RawPostProcessing(DImg* const orgImage,
-                               QObject* const parent = 0,
+                               QObject* const parent = nullptr,
                                const DRawDecoding& settings = DRawDecoding());
 
     /**
      * Constructor for slave mode: execute immediately in current thread with specified master filter
      */
     RawPostProcessing(DImgThreadedFilter* const parentFilter,
-                      const DImg& orgImage, const DImg& destImage,
+                      const DImg& orgImage,
+                      const DImg& destImage,
                       int progressBegin = 0,
                       int progressEnd = 100,
                       const DRawDecoding& settings = DRawDecoding());
@@ -57,21 +58,21 @@ private:
 
     void rawPostProcessing();
 
-    virtual void filterImage();
+    virtual void filterImage()                          override;
 
     /**
      * This filter is only for preview calculation.
      */
-    virtual FilterAction filterAction()
+    virtual FilterAction filterAction()                 override
     {
         return FilterAction();
     }
 
-    virtual void readParameters(const FilterAction&)
+    virtual void readParameters(const FilterAction&)    override
     {
     }
 
-    virtual QString filterIdentifier() const
+    virtual QString filterIdentifier() const            override
     {
         return QString();
     }

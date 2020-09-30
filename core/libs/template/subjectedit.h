@@ -41,7 +41,7 @@ public:
 
 private Q_SLOTS:
 
-    void slotRefChanged();
+    void slotRefChanged() override;
 };
 
 } // namespace Digikam

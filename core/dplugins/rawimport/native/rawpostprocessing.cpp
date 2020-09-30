@@ -47,8 +47,11 @@ RawPostProcessing::RawPostProcessing(DImg* const orgImage, QObject* const parent
 }
 
 RawPostProcessing::RawPostProcessing(DImgThreadedFilter* const parentFilter,
-                                     const DImg& orgImage, const DImg& destImage,
-                                     int progressBegin, int progressEnd, const DRawDecoding& settings)
+                                     const DImg& orgImage,
+                                     const DImg& destImage,
+                                     int progressBegin,
+                                     int progressEnd,
+                                     const DRawDecoding& settings)
     : DImgThreadedFilter(parentFilter, orgImage, destImage, progressBegin, progressEnd,
                          parentFilter->filterName() + ": RawPostProcessing"),
       m_customRawSettings(settings)

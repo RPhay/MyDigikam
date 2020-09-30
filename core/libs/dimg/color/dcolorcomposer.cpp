@@ -158,6 +158,7 @@ void DColorComposerPorterDuffNone::compose(DColor& dest, DColor src)
     }
 }
 
+// cppcheck-suppress passedByValue
 void DColorComposerPorterDuffNone::compose(DColor& dest, DColor src, MultiplicationFlags multiplicationFlags)
 {
     // Explicit implementation to please gcc 4.1
@@ -177,6 +178,7 @@ void DColorComposerPorterDuffClear::compose(DColor& dest, DColor src)
     dest.blendAdd(src);
 }
 
+// cppcheck-suppress passedByValue
 void DColorComposerPorterDuffClear::compose(DColor& dest, DColor src, MultiplicationFlags)
 {
     // skip pre- and demultiplication
@@ -197,6 +199,7 @@ void DColorComposerPorterDuffSrc::compose(DColor& dest, DColor src)
     dest.blendAdd(src);
 }
 
+// cppcheck-suppress passedByValue
 void DColorComposerPorterDuffSrc::compose(DColor& dest, DColor src, MultiplicationFlags)
 {
     // skip pre- and demultiplication
@@ -227,6 +230,7 @@ void DColorComposerPorterDuffSrcOver::compose(DColor& dest, DColor src)
     }
 }
 
+// cppcheck-suppress passedByValue
 void DColorComposerPorterDuffSrcOver::compose(DColor& dest, DColor src, MultiplicationFlags multiplicationFlags)
 {
     // Explicit implementation to please gcc 4.1
@@ -257,6 +261,7 @@ void DColorComposerPorterDuffDstOver::compose(DColor& dest, DColor src)
     }
 }
 
+// cppcheck-suppress passedByValue
 void DColorComposerPorterDuffDstOver::compose(DColor& dest, DColor src, MultiplicationFlags multiplicationFlags)
 {
     // Explicit implementation to please gcc 4.1
@@ -287,6 +292,7 @@ void DColorComposerPorterDuffSrcIn::compose(DColor& dest, DColor src)
     }
 }
 
+// cppcheck-suppress passedByValue
 void DColorComposerPorterDuffSrcIn::compose(DColor& dest, DColor src, MultiplicationFlags multiplicationFlags)
 {
     // Explicit implementation to please gcc 4.1
@@ -319,6 +325,7 @@ void DColorComposerPorterDuffDstIn::compose(DColor& dest, DColor src)
     }
 }
 
+// cppcheck-suppress passedByValue
 void DColorComposerPorterDuffDstIn::compose(DColor& dest, DColor src, MultiplicationFlags multiplicationFlags)
 {
     // Explicit implementation to please gcc 4.1
@@ -349,6 +356,7 @@ void DColorComposerPorterDuffSrcOut::compose(DColor& dest, DColor src)
     }
 }
 
+// cppcheck-suppress passedByValue
 void DColorComposerPorterDuffSrcOut::compose(DColor& dest, DColor src, MultiplicationFlags multiplicationFlags)
 {
     // Explicit implementation to please gcc 4.1
@@ -381,6 +389,7 @@ void DColorComposerPorterDuffDstOut::compose(DColor& dest, DColor src)
     }
 }
 
+// cppcheck-suppress passedByValue
 void DColorComposerPorterDuffDstOut::compose(DColor& dest, DColor src, MultiplicationFlags multiplicationFlags)
 {
     // Explicit implementation to please gcc 4.1
@@ -413,6 +422,7 @@ void DColorComposerPorterDuffSrcAtop::compose(DColor& dest, DColor src)
     }
 }
 
+// cppcheck-suppress passedByValue
 void DColorComposerPorterDuffSrcAtop::compose(DColor& dest, DColor src, MultiplicationFlags multiplicationFlags)
 {
     // Explicit implementation to please gcc 4.1
@@ -445,6 +455,7 @@ void DColorComposerPorterDuffDstAtop::compose(DColor& dest, DColor src)
     }
 }
 
+// cppcheck-suppress passedByValue
 void DColorComposerPorterDuffDstAtop::compose(DColor& dest, DColor src, MultiplicationFlags multiplicationFlags)
 {
     // Explicit implementation to please gcc 4.1
@@ -477,6 +488,7 @@ void DColorComposerPorterDuffXor::compose(DColor& dest, DColor src)
     }
 }
 
+// cppcheck-suppress passedByValue
 void DColorComposerPorterDuffXor::compose(DColor& dest, DColor src, MultiplicationFlags multiplicationFlags)
 {
     // Explicit implementation to please gcc 4.1
@@ -485,6 +497,7 @@ void DColorComposerPorterDuffXor::compose(DColor& dest, DColor src, Multiplicati
 
 // ----------------------------------------------------------
 
+// cppcheck-suppress passedByValue
 void DColorComposer::compose(DColor& dest, DColor src, DColorComposer::MultiplicationFlags multiplicationFlags)
 {
     if (multiplicationFlags & PremultiplySrc)
