@@ -79,20 +79,20 @@ public:
 
 public:
 
-    QCache<QString, DImg>           imageCache;
-    QCache<QString, QImage>         thumbnailImageCache;
-    QCache<QString, QPixmap>        thumbnailPixmapCache;
-    QMultiMap<QString, QString>     imageFilePathMap;
-    QMultiMap<QString, QString>     thumbnailFilePathMap;
-    QHash<QString, LoadingProcess*> loadingDict;
+    QCache<QString, DImg>          imageCache;
+    QCache<QString, QImage>        thumbnailImageCache;
+    QCache<QString, QPixmap>       thumbnailPixmapCache;
+    QMultiMap<QString, QString>    imageFilePathMap;
+    QMultiMap<QString, QString>    thumbnailFilePathMap;
+    QMap<QString, LoadingProcess*> loadingDict;
 
     /// Note: Don't make the mutex recursive, we need to use a wait condition on it
-    QMutex                          mutex;
-    QMutex                          mutexCache;
+    QMutex                         mutex;
+    QMutex                         mutexCache;
 
-    QWaitCondition                  condVar;
-    LoadingCacheFileWatch*          watch;
-    LoadingCache*                   q;
+    QWaitCondition                 condVar;
+    LoadingCacheFileWatch*         watch;
+    LoadingCache*                  q;
 };
 
 LoadingCacheFileWatch* LoadingCache::Private::fileWatch() const
@@ -294,7 +294,7 @@ void LoadingCache::notifyNewLoadingProcess(LoadingProcess* const process, const 
 {
     QMutexLocker lock(&d->mutexCache);
 
-    for (QHash<QString, LoadingProcess*>::const_iterator it = d->loadingDict.constBegin() ;
+    for (QMap<QString, LoadingProcess*>::const_iterator it = d->loadingDict.constBegin() ;
          it != d->loadingDict.constEnd() ; ++it)
     {
         it.value()->notifyNewLoadingProcess(process, description);
