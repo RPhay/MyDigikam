@@ -56,7 +56,7 @@ class Benchmark : public QObject
 public:
 
     Benchmark();
-    ~Benchmark();
+    ~Benchmark() override;
 
 public:
 
@@ -111,7 +111,7 @@ public:
         m_rects.resize(images.size());
     }
 
-    void operator()(const cv::Range& range) const
+    void operator()(const cv::Range& range) const override
     {
         for (int i = range.start ; i < range.end ; ++i)
         {

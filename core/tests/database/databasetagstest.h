@@ -45,7 +45,7 @@ class DatabaseTagsTest: public QObject
 public:
 
     DatabaseTagsTest();
-    virtual ~DatabaseTagsTest();
+    ~DatabaseTagsTest() override;
 
 private Q_SLOTS:
 

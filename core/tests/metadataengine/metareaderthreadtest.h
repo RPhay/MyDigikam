@@ -60,7 +60,7 @@ public:
 public:
 
     explicit MetaReaderThread(QObject* const parent);
-    ~MetaReaderThread();
+    ~MetaReaderThread() override;
 
     void readMetadata(const QList<QUrl>& list,
                       Direction direction,
@@ -109,7 +109,7 @@ public:
 
 protected:
 
-    void run();
+    void run() override;
 
 Q_SIGNALS:
 

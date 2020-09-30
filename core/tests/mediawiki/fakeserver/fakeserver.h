@@ -77,7 +77,7 @@ public:
 public:
 
     explicit FakeServer(QObject* const parent = nullptr);
-    ~FakeServer();
+    ~FakeServer() override;
 
     void startAndWait();
     void run() override;

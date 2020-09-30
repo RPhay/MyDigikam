@@ -45,10 +45,10 @@ class MyImageItem : public QTreeWidgetItem
 public:
 
     MyImageItem(const QUrl& url, const GeoCoordinates& itemCoordinates);
-    virtual ~MyImageItem();
+    ~MyImageItem() override;
 
-    virtual QVariant data(int column, int role) const;
-    virtual void setData(int column, int role, const QVariant& value);
+    QVariant data(int column, int role) const override;
+    void setData(int column, int role, const QVariant& value) override;
 
 private:
 

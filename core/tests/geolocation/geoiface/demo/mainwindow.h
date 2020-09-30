@@ -48,16 +48,16 @@ public:
 
     explicit MarkerModelHelper(QAbstractItemModel* const itemModel,
                                QItemSelectionModel* const itemSelectionModel);
-    ~MarkerModelHelper();
+    ~MarkerModelHelper() override;
 
-    virtual QAbstractItemModel*  model()          const;
-    virtual QItemSelectionModel* selectionModel() const;
-    virtual PropertyFlags        modelFlags()     const;
-    virtual bool itemCoordinates(const QModelIndex& index,
-                                 GeoCoordinates* const coordinates) const;
-    virtual void onIndicesMoved(const QList<QPersistentModelIndex>& movedIndices,
+    QAbstractItemModel*  model()          const override;
+    QItemSelectionModel* selectionModel() const override;
+    PropertyFlags        modelFlags()     const override;
+    bool itemCoordinates(const QModelIndex& index,
+                                 GeoCoordinates* const coordinates) const override;
+    void onIndicesMoved(const QList<QPersistentModelIndex>& movedIndices,
                                 const GeoCoordinates& targetCoordinates,
-                                const QPersistentModelIndex& targetSnapIndex);
+                                const QPersistentModelIndex& targetSnapIndex) override;
 
 private:
 
@@ -104,7 +104,7 @@ class MainWindow : public QMainWindow
 public:
 
     explicit MainWindow(QCommandLineParser* const cmdLineArgs, QWidget* const parent = nullptr);
-    ~MainWindow();
+    ~MainWindow() override;
 
 public Q_SLOTS:
 

@@ -46,7 +46,7 @@ public:
     explicit Button(QGraphicsItem* const parent = nullptr);
     explicit Button(const QString& normal, const QString& pressed = QString(), QGraphicsItem* const parent = nullptr);
     Button(const QPixmap& normal, const QPixmap& pressed, QGraphicsItem* const parent = nullptr);
-    ~Button();
+    ~Button() override;
 
 public:
 

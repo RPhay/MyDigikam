@@ -42,7 +42,7 @@ class ActionThread : public ActionThreadBase
 public:
 
     explicit ActionThread(QObject* const parent);
-    ~ActionThread();
+    ~ActionThread() override;
 
     void rotate(const QList<QUrl>& list);
 
@@ -69,7 +69,7 @@ class DItemsListTest : public QDialog
 public:
 
     explicit DItemsListTest(QObject* const parent);
-    ~DItemsListTest();
+    ~DItemsListTest() override;
 
 private Q_SLOTS:
 

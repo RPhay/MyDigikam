@@ -53,7 +53,7 @@ public:
     {
     }
 
-    virtual void run()
+    void run() override
     {
         QImage* image = new QImage(256, 256, QImage::Format_ARGB32);
         image->fill(Qt::red);

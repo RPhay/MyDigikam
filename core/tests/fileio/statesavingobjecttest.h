@@ -59,13 +59,13 @@ class StubStateSaver: public QObject,
 public:
 
     explicit StubStateSaver(QObject* const parent = nullptr);
-    virtual ~StubStateSaver();
+    ~StubStateSaver() override;
 
     KConfigGroup getGroup();
     QString getEntryKey(const QString& base);
 
-    void doLoadState();
-    void doSaveState();
+    void doLoadState() override;
+    void doSaveState() override;
 
     bool loadCalled();
     bool saveCalled();

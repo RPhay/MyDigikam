@@ -53,7 +53,7 @@ class MainWindow : public QMainWindow
 public:
 
     explicit MainWindow(QWidget* const parent = nullptr);
-    ~MainWindow();
+    ~MainWindow() override;
 
 private Q_SLOTS:
 

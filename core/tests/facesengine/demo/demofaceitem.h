@@ -54,10 +54,10 @@ public:
                       double scale = 1,
                       const QString& name = QString(),
                       double originalscale = 1);
-    ~FaceItem();
+    ~FaceItem() override;
 
-    QRectF boundingRect() const;
-    void paint(QPainter* painter, const QStyleOptionGraphicsItem* option, QWidget* widget);
+    QRectF boundingRect() const override;
+    void paint(QPainter* painter, const QStyleOptionGraphicsItem* option, QWidget* widget) override;
 
     void setText(const QString& newName);
     QString text() const;

@@ -53,7 +53,7 @@ class MainWindow : public QMainWindow
 public:
 
     explicit MainWindow(const QDir& directory, QWidget* const parent = nullptr);
-    ~MainWindow();
+    ~MainWindow() override;
 
 private:
 

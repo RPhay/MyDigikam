@@ -44,7 +44,7 @@ class AlbumModelTest: public QObject
 public:
 
     AlbumModelTest();
-    virtual ~AlbumModelTest();
+    ~AlbumModelTest() override;
 
 private Q_SLOTS:
 

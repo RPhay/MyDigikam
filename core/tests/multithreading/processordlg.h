@@ -40,7 +40,7 @@ class ProcessorDlg : public QDialog
 public:
 
     explicit ProcessorDlg(const QList<QUrl>& list);
-    ~ProcessorDlg();
+    ~ProcessorDlg() override;
 
 private :
 

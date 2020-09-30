@@ -43,7 +43,7 @@ class MyActionThread : public ActionThreadBase
 public:
 
     explicit MyActionThread(QObject* const parent);
-    ~MyActionThread();
+    ~MyActionThread() override;
 
     void convertRAWtoPNG(const QList<QUrl>& list, const DRawDecoderSettings& settings, int priority=0);
 

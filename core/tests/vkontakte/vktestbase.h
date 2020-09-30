@@ -45,7 +45,7 @@ class VkTestBase : public QObject
 public:
 
     VkTestBase();
-    virtual ~VkTestBase();
+    ~VkTestBase() override;
 
 protected:
 

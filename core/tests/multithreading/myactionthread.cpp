@@ -50,7 +50,7 @@ public:
 
 protected:
 
-    void run()
+    void run() override
     {
         emit signalStarted();
 
