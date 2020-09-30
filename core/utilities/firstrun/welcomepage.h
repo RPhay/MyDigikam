@@ -36,7 +36,7 @@ class WelcomePage : public DWizardPage
 public:
 
     explicit WelcomePage(QWizard* const dlg);
-    ~WelcomePage();
+    ~WelcomePage() override;
 };
 
 } // namespace Digikam

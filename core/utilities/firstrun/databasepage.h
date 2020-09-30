@@ -44,7 +44,7 @@ class DatabasePage : public DWizardPage
 public:
 
     explicit DatabasePage(QWizard* const dlg);
-    ~DatabasePage();
+    ~DatabasePage() override;
 
     bool checkSettings();
     void saveSettings();

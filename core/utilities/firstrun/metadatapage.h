@@ -38,7 +38,7 @@ class MetadataPage : public DWizardPage
 public:
 
     explicit MetadataPage(QWizard* const dlg);
-    ~MetadataPage();
+    ~MetadataPage() override;
 
     void saveSettings();
 

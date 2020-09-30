@@ -38,7 +38,7 @@ class OpenFilePage : public DWizardPage
 public:
 
     explicit OpenFilePage(QWizard* const dlg);
-    ~OpenFilePage();
+    ~OpenFilePage() override;
 
     void saveSettings();
 

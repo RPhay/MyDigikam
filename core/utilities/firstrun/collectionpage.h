@@ -43,7 +43,7 @@ class CollectionPage : public DWizardPage
 public:
 
     explicit CollectionPage(QWizard* const dlg);
-    ~CollectionPage();
+    ~CollectionPage() override;
 
     bool checkSettings();
     void saveSettings();

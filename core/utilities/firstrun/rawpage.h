@@ -38,7 +38,7 @@ class RawPage : public DWizardPage
 public:
 
     explicit RawPage(QWizard* const dlg);
-    ~RawPage();
+    ~RawPage() override;
 
     void saveSettings();
 

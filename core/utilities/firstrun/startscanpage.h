@@ -36,7 +36,7 @@ class StartScanPage : public DWizardPage
 public:
 
     explicit StartScanPage(QWizard* const dlg);
-    ~StartScanPage();
+    ~StartScanPage() override;
 };
 
 } // namespace Digikam

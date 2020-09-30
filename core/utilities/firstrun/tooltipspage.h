@@ -38,7 +38,7 @@ class TooltipsPage : public DWizardPage
 public:
 
     explicit TooltipsPage(QWizard* const dlg);
-    ~TooltipsPage();
+    ~TooltipsPage() override;
 
     void saveSettings();
 

@@ -45,14 +45,14 @@ class DIGIKAM_GUI_EXPORT FirstRunDlg : public QWizard
 public:
 
     explicit FirstRunDlg(QWidget* const parent = nullptr);
-    ~FirstRunDlg();
+    ~FirstRunDlg() override;
 
     QString firstAlbumPath() const;
     DbEngineParameters getDbEngineParameters() const;
 
 private:
 
-    bool validateCurrentPage();
+    bool validateCurrentPage() override;
 
 private Q_SLOTS:
 

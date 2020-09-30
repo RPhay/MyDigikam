@@ -38,7 +38,7 @@ class PreviewPage : public DWizardPage
 public:
 
     explicit PreviewPage(QWizard* const dlg);
-    ~PreviewPage();
+    ~PreviewPage() override;
 
     void saveSettings();
 
