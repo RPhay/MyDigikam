@@ -44,7 +44,7 @@ public:
                                   double edge=0.0, double rescale=0.0, double brighten=0.0,
                                   int center_x=0, int center_y=0);
 
-    ~LensDistortionFilter();
+    ~LensDistortionFilter() override;
 
     static QString          FilterIdentifier()
     {
@@ -63,12 +63,12 @@ public:
         return 1;
     }
 
-    virtual QString         filterIdentifier()                          const override
+    QString         filterIdentifier()                          const override
     {
         return FilterIdentifier();
     }
 
-    virtual FilterAction    filterAction()                                    override;
+    FilterAction    filterAction()                                    override;
     void                    readParameters(const FilterAction& action)        override;
 
 private:

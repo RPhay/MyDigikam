@@ -46,7 +46,7 @@ class DIGIKAM_EXPORT IccProfilesSettings : public DVBox
 public:
 
     explicit IccProfilesSettings(QWidget* const parent=nullptr);
-    ~IccProfilesSettings();
+    ~IccProfilesSettings() override;
 
     IccProfile defaultProfile() const;
     void resetToDefault();

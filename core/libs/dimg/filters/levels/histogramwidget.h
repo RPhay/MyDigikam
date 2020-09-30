@@ -60,7 +60,7 @@ public:
                     bool showProgress=true,
                     bool statisticsVisible=false);
 
-    ~HistogramWidget();
+    ~HistogramWidget() override;
 
     /**
      * Stop current histogram computations.

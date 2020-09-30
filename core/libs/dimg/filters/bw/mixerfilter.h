@@ -96,7 +96,7 @@ public:
     explicit MixerFilter(DImg* const orgImage,
                          QObject* const parent=nullptr,
                          const MixerContainer& settings=MixerContainer());
-    virtual ~MixerFilter();
+    ~MixerFilter() override;
 
     static QString          FilterIdentifier()
     {
@@ -115,12 +115,12 @@ public:
         return 1;
     }
 
-    virtual QString         filterIdentifier()                          const override
+    QString         filterIdentifier()                          const override
     {
         return FilterIdentifier();
     }
 
-    virtual FilterAction    filterAction()                                    override;
+    FilterAction    filterAction()                                    override;
     void                    readParameters(const FilterAction& action)        override;
 
 private:

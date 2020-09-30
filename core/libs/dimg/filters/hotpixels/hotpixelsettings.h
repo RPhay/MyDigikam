@@ -49,7 +49,7 @@ class DIGIKAM_EXPORT HotPixelSettings : public QWidget
 public:
 
     explicit HotPixelSettings(QWidget* const parent);
-    ~HotPixelSettings();
+    ~HotPixelSettings() override;
 
     HotPixelContainer defaultSettings()  const;
     void resetToDefault();

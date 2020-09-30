@@ -47,7 +47,7 @@ public:
     explicit BCGFilter(DImg* const orgImage, QObject* const parent=nullptr, const BCGContainer& settings=BCGContainer());
     explicit BCGFilter(const BCGContainer& settings, DImgThreadedFilter* const master,
                        const DImg& orgImage, const DImg& destImage, int progressBegin=0, int progressEnd=100);
-    virtual ~BCGFilter();
+    ~BCGFilter() override;
 
     static QString          FilterIdentifier()
     {
@@ -66,12 +66,12 @@ public:
         return 1;
     }
 
-    virtual QString         filterIdentifier()                          const override
+    QString         filterIdentifier()                          const override
     {
         return FilterIdentifier();
     }
 
-    virtual FilterAction    filterAction()                                    override;
+    FilterAction    filterAction()                                    override;
 
     void                    readParameters(const FilterAction& action)        override;
 

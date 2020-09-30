@@ -52,7 +52,7 @@ class DIGIKAM_EXPORT CurvesWidget : public QWidget
 public:
 
     explicit CurvesWidget(int w, int h, QWidget* const parent, bool readOnly=false);
-    ~CurvesWidget();
+    ~CurvesWidget() override;
 
     void setup(int w, int h, bool readOnly);
 

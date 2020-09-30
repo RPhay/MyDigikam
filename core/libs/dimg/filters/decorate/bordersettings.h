@@ -46,7 +46,7 @@ class DIGIKAM_EXPORT BorderSettings : public QWidget
 public:
 
     explicit BorderSettings(QWidget* const parent);
-    ~BorderSettings();
+    ~BorderSettings() override;
 
     BorderContainer defaultSettings() const;
     void resetToDefault();

@@ -177,7 +177,7 @@ public:
                          const QImage& inPaintingMask=QImage(),
                          QObject* const parent=nullptr);
 
-    ~GreycstorationFilter();
+    ~GreycstorationFilter() override;
 
     void setMode(int mode, int newWidth=0, int newHeight=0);
     void setSettings(const GreycstorationContainer& settings);
@@ -185,7 +185,7 @@ public:
 
     void setup();
 
-    virtual void cancelFilter() override;
+    void cancelFilter() override;
 
     static QString cimgVersionString();
 
@@ -206,12 +206,12 @@ public:
         return 1;
     }
 
-    virtual QString         filterIdentifier()                          const override
+    QString         filterIdentifier()                          const override
     {
         return FilterIdentifier();
     }
 
-    virtual FilterAction    filterAction()                                    override;
+    FilterAction    filterAction()                                    override;
     void                    readParameters(const FilterAction& action)        override;
 
 private:
@@ -223,8 +223,8 @@ private:
     void simpleResize();
     void iterationLoop(uint iter);
 
-    virtual void initFilter()                                                 override;
-    virtual void filterImage()                                                override;
+    void initFilter()                                                 override;
+    void filterImage()                                                override;
 
 private:
 

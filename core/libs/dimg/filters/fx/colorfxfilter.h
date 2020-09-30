@@ -88,7 +88,7 @@ public:
     explicit ColorFXFilter(DImg* const orgImage,
                            QObject* const parent,
                            const ColorFXContainer& settings=ColorFXContainer());
-    ~ColorFXFilter();
+    ~ColorFXFilter() override;
 
     static QString          FilterIdentifier()
     {
@@ -107,12 +107,12 @@ public:
         return 1;
     }
 
-    virtual QString         filterIdentifier()                          const override
+    QString         filterIdentifier()                          const override
     {
         return FilterIdentifier();
     }
 
-    virtual FilterAction    filterAction()                                    override;
+    FilterAction    filterAction()                                    override;
 
     void                    readParameters(const FilterAction& action)        override;
 

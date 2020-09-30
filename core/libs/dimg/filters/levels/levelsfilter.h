@@ -84,7 +84,7 @@ public:
                           DImg& destImage,
                           int progressBegin=0,
                           int progressEnd=100);
-    virtual ~LevelsFilter();
+    ~LevelsFilter() override;
 
     static QString          FilterIdentifier()
     {
@@ -103,12 +103,12 @@ public:
         return 1;
     }
 
-    virtual QString         filterIdentifier() const override
+    QString         filterIdentifier() const override
     {
         return FilterIdentifier();
     }
 
-    virtual FilterAction    filterAction() override;
+    FilterAction    filterAction() override;
     void                    readParameters(const FilterAction& action) override;
 
 private:

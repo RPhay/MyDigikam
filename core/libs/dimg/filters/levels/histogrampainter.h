@@ -60,7 +60,7 @@ public:
     /**
      * Destructor.
      */
-    virtual ~HistogramPainter();
+    ~HistogramPainter() override;
 
     /**
      * Set the histogram to paint with the next call to render.

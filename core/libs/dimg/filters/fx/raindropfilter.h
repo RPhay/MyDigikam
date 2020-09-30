@@ -78,7 +78,7 @@ public:
                             int amount=150,
                             int coeff=30,
                             const QRect& selection=QRect(0, 0, 0, 0));
-    ~RainDropFilter();
+    ~RainDropFilter() override;
 
     static QString          FilterIdentifier()
     {
@@ -97,12 +97,12 @@ public:
         return 1;
     }
 
-    virtual QString         filterIdentifier()                          const override
+    QString         filterIdentifier()                          const override
     {
         return FilterIdentifier();
     }
 
-    virtual FilterAction    filterAction()                                    override;
+    FilterAction    filterAction()                                    override;
 
     void                    readParameters(const FilterAction& action)        override;
 

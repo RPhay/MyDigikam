@@ -47,7 +47,7 @@ public:
     explicit BlurFilter(DImgThreadedFilter* const parentFilter, const DImg& orgImage, const DImg& destImage,
                         int progressBegin=0, int progressEnd=100, int radius=3);
 
-    ~BlurFilter();
+    ~BlurFilter() override;
 
     static QString          FilterIdentifier()
     {
@@ -66,12 +66,12 @@ public:
         return 1;
     }
 
-    virtual QString         filterIdentifier()                          const override
+    QString         filterIdentifier()                          const override
     {
         return FilterIdentifier();
     }
 
-    virtual FilterAction    filterAction()                                    override;
+    FilterAction    filterAction()                                    override;
 
     void                    readParameters(const FilterAction& action)        override;
 

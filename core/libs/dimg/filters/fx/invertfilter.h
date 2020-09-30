@@ -45,7 +45,7 @@ public:
     explicit InvertFilter(DImgThreadedFilter* const parentFilter, const DImg& orgImage, DImg& destImage,
                           int progressBegin=0, int progressEnd=100);
 
-    ~InvertFilter();
+    ~InvertFilter() override;
 
 
 
@@ -68,12 +68,12 @@ public:
 
     void                    readParameters(const FilterAction& action)        override;
 
-    virtual QString         filterIdentifier()                          const override
+    QString         filterIdentifier()                          const override
     {
         return FilterIdentifier();
     }
 
-    virtual FilterAction    filterAction()                                    override;
+    FilterAction    filterAction()                                    override;
 
 private:
 

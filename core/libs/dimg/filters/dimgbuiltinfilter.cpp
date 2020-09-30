@@ -488,12 +488,12 @@ public:
     {
     }
 
-    virtual QString filterIdentifier() const override
+    QString filterIdentifier() const override
     {
         return m_filter.filterAction().identifier();
     }
 
-    virtual FilterAction filterAction() override
+    FilterAction filterAction() override
     {
         return m_filter.filterAction();
     }

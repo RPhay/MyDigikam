@@ -47,7 +47,7 @@ class DIGIKAM_EXPORT ImageHistogram : public DynamicThread
 public:
 
     explicit ImageHistogram(const DImg& img, QObject* const parent = nullptr);
-    ~ImageHistogram();
+    ~ImageHistogram() override;
 
     /**
      * Started computation: synchronous or threaded.
@@ -94,7 +94,7 @@ Q_SIGNALS:
 
 protected:
 
-    virtual void run() override;
+    void run() override;
 
 private:
 

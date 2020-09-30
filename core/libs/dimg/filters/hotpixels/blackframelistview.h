@@ -46,7 +46,7 @@ class DIGIKAM_EXPORT BlackFrameListView : public QTreeWidget
 public:
 
     explicit BlackFrameListView(QWidget* const parent = nullptr);
-    ~BlackFrameListView();
+    ~BlackFrameListView() override;
 
     bool contains(const QUrl& url);
     bool isSelected(const QUrl& url);

@@ -129,7 +129,7 @@ public:
     explicit BlurFXFilter(QObject* const parent = nullptr);
     explicit BlurFXFilter(DImg* const orgImage, QObject* const parent=nullptr, int blurFXType=ZoomBlur,
                           int distance=100, int level=45);
-    ~BlurFXFilter();
+    ~BlurFXFilter() override;
 
     static QString          FilterIdentifier()
     {
@@ -148,12 +148,12 @@ public:
         return 1;
     }
 
-    virtual QString         filterIdentifier()                          const override
+    QString         filterIdentifier()                          const override
     {
         return FilterIdentifier();
     }
 
-    virtual FilterAction    filterAction()                                    override;
+    FilterAction    filterAction()                                    override;
 
     void                    readParameters(const FilterAction& action)        override;
 

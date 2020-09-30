@@ -38,96 +38,96 @@ class Q_DECL_HIDDEN DColorComposerPorterDuffNone : public DColorComposer
 {
 public:
 
-    virtual void compose(DColor& dest, DColor src)                                          override;
-    virtual void compose(DColor& dest, DColor src, MultiplicationFlags multiplicationFlags) override;
+    void compose(DColor& dest, DColor src)                                          override;
+    void compose(DColor& dest, DColor src, MultiplicationFlags multiplicationFlags) override;
 };
 
 class Q_DECL_HIDDEN DColorComposerPorterDuffClear : public DColorComposer
 {
 public:
 
-    virtual void compose(DColor& dest, DColor src)                                          override;
-    virtual void compose(DColor& dest, DColor src, MultiplicationFlags multiplicationFlags) override;
+    void compose(DColor& dest, DColor src)                                          override;
+    void compose(DColor& dest, DColor src, MultiplicationFlags multiplicationFlags) override;
 };
 
 class Q_DECL_HIDDEN DColorComposerPorterDuffSrc : public DColorComposer
 {
 public:
 
-    virtual void compose(DColor& dest, DColor src)                                          override;
-    virtual void compose(DColor& dest, DColor src, MultiplicationFlags multiplicationFlags) override;
+    void compose(DColor& dest, DColor src)                                          override;
+    void compose(DColor& dest, DColor src, MultiplicationFlags multiplicationFlags) override;
 };
 
 class Q_DECL_HIDDEN DColorComposerPorterDuffSrcOver : public DColorComposer
 {
 public:
 
-    virtual void compose(DColor& dest, DColor src)                                          override;
-    virtual void compose(DColor& dest, DColor src, MultiplicationFlags multiplicationFlags) override;
+    void compose(DColor& dest, DColor src)                                          override;
+    void compose(DColor& dest, DColor src, MultiplicationFlags multiplicationFlags) override;
 };
 
 class Q_DECL_HIDDEN DColorComposerPorterDuffDstOver : public DColorComposer
 {
 public:
 
-    virtual void compose(DColor& dest, DColor src)                                          override;
-    virtual void compose(DColor& dest, DColor src, MultiplicationFlags multiplicationFlags) override;
+    void compose(DColor& dest, DColor src)                                          override;
+    void compose(DColor& dest, DColor src, MultiplicationFlags multiplicationFlags) override;
 };
 
 class Q_DECL_HIDDEN DColorComposerPorterDuffSrcIn : public DColorComposer
 {
 public:
 
-    virtual void compose(DColor& dest, DColor src)                                          override;
-    virtual void compose(DColor& dest, DColor src, MultiplicationFlags multiplicationFlags) override;
+    void compose(DColor& dest, DColor src)                                          override;
+    void compose(DColor& dest, DColor src, MultiplicationFlags multiplicationFlags) override;
 };
 
 class Q_DECL_HIDDEN DColorComposerPorterDuffDstIn : public DColorComposer
 {
 public:
 
-    virtual void compose(DColor& dest, DColor src)                                          override;
-    virtual void compose(DColor& dest, DColor src, MultiplicationFlags multiplicationFlags) override;
+    void compose(DColor& dest, DColor src)                                          override;
+    void compose(DColor& dest, DColor src, MultiplicationFlags multiplicationFlags) override;
 };
 
 class Q_DECL_HIDDEN DColorComposerPorterDuffSrcOut : public DColorComposer
 {
 public:
 
-    virtual void compose(DColor& dest, DColor src)                                          override;
-    virtual void compose(DColor& dest, DColor src, MultiplicationFlags multiplicationFlags) override;
+    void compose(DColor& dest, DColor src)                                          override;
+    void compose(DColor& dest, DColor src, MultiplicationFlags multiplicationFlags) override;
 };
 
 class Q_DECL_HIDDEN DColorComposerPorterDuffDstOut : public DColorComposer
 {
 public:
 
-    virtual void compose(DColor& dest, DColor src)                                          override;
-    virtual void compose(DColor& dest, DColor src, MultiplicationFlags multiplicationFlags) override;
+    void compose(DColor& dest, DColor src)                                          override;
+    void compose(DColor& dest, DColor src, MultiplicationFlags multiplicationFlags) override;
 };
 
 class Q_DECL_HIDDEN DColorComposerPorterDuffSrcAtop : public DColorComposer
 {
 public:
 
-    virtual void compose(DColor& dest, DColor src)                                          override;
-    virtual void compose(DColor& dest, DColor src, MultiplicationFlags multiplicationFlags) override;
+    void compose(DColor& dest, DColor src)                                          override;
+    void compose(DColor& dest, DColor src, MultiplicationFlags multiplicationFlags) override;
 };
 
 class Q_DECL_HIDDEN DColorComposerPorterDuffDstAtop : public DColorComposer
 {
 public:
 
-    virtual void compose(DColor& dest, DColor src)                                          override;
-    virtual void compose(DColor& dest, DColor src, MultiplicationFlags multiplicationFlags) override;
+    void compose(DColor& dest, DColor src)                                          override;
+    void compose(DColor& dest, DColor src, MultiplicationFlags multiplicationFlags) override;
 };
 
 class Q_DECL_HIDDEN DColorComposerPorterDuffXor : public DColorComposer
 {
 public:
 
-    virtual void compose(DColor& dest, DColor src)                                          override;
-    virtual void compose(DColor& dest, DColor src, MultiplicationFlags multiplicationFlags) override;
+    void compose(DColor& dest, DColor src)                                          override;
+    void compose(DColor& dest, DColor src, MultiplicationFlags multiplicationFlags) override;
 };
 
 /**

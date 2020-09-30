@@ -80,7 +80,7 @@ public:
                       DImg& destImage,
                       int progressBegin=0,
                       int progressEnd=100);
-    virtual ~CBFilter();
+    ~CBFilter() override;
 
     static QString          FilterIdentifier()
     {
@@ -101,12 +101,12 @@ public:
 
     void                    readParameters(const FilterAction& action)        override;
 
-    virtual QString         filterIdentifier()                          const override
+    QString         filterIdentifier()                          const override
     {
         return FilterIdentifier();
     }
 
-    virtual FilterAction    filterAction()                                    override;
+    FilterAction    filterAction()                                    override;
 
 private:
 

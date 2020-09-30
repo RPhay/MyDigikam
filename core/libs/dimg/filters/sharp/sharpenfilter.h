@@ -70,7 +70,7 @@ public:
     SharpenFilter(DImgThreadedFilter* const parentFilter, const DImg& orgImage, const DImg& destImage,
                   int progressBegin=0, int progressEnd=100, double radius=0.0, double sigma=1.0);
 
-    ~SharpenFilter();
+    ~SharpenFilter() override;
 
     static QString          FilterIdentifier()
     {
@@ -89,12 +89,12 @@ public:
         return 1;
     }
 
-    virtual QString         filterIdentifier()                          const override
+    QString         filterIdentifier()                          const override
     {
         return FilterIdentifier();
     }
 
-    virtual FilterAction    filterAction()                                    override;
+    FilterAction    filterAction()                                    override;
     void                    readParameters(const FilterAction& action)        override;
 
 

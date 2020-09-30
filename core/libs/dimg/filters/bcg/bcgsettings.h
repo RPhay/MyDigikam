@@ -45,7 +45,7 @@ class DIGIKAM_EXPORT BCGSettings : public QWidget
 public:
 
     explicit BCGSettings(QWidget* const parent);
-    ~BCGSettings();
+    ~BCGSettings() override;
 
     BCGContainer defaultSettings()  const;
     void resetToDefault();

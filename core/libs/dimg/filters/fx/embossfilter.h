@@ -45,7 +45,7 @@ public:
 
     explicit EmbossFilter(QObject* const parent = nullptr);
     explicit EmbossFilter(DImg* const orgImage, QObject* const parent=nullptr, int depth=30);
-    ~EmbossFilter();
+    ~EmbossFilter() override;
 
     static QString          FilterIdentifier()
     {
@@ -64,12 +64,12 @@ public:
         return 1;
     }
 
-    virtual QString         filterIdentifier()                          const override
+    QString         filterIdentifier()                          const override
     {
         return FilterIdentifier();
     }
 
-    virtual FilterAction    filterAction()                                    override;
+    FilterAction    filterAction()                                    override;
     void                    readParameters(const FilterAction& action)        override;
 
 private:

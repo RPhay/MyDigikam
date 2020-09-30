@@ -68,7 +68,7 @@ public:
     explicit RefocusFilter(DImg* const orgImage, QObject* const parent=nullptr, int matrixSize=5, double radius=0.9,
                            double gauss=0.0, double correlation=0.5, double noise=0.01);
 
-    ~RefocusFilter();
+    ~RefocusFilter() override;
 
     static int maxMatrixSize();
 
@@ -89,12 +89,12 @@ public:
         return 1;
     }
 
-    virtual QString         filterIdentifier()                          const override
+    QString         filterIdentifier()                          const override
     {
         return FilterIdentifier();
     }
 
-    virtual FilterAction    filterAction()                                    override;
+    FilterAction    filterAction()                                    override;
     void                    readParameters(const FilterAction& action)        override;
 
 

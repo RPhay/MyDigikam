@@ -92,7 +92,7 @@ public:
     explicit FreeRotationFilter(DImg* const orgImage, QObject* const parent=nullptr,
                                 const FreeRotationContainer& settings=FreeRotationContainer());
 
-    virtual ~FreeRotationFilter();
+    ~FreeRotationFilter() override;
 
     QSize getNewSize() const;
 
@@ -116,12 +116,12 @@ public:
         return 1;
     }
 
-    virtual QString         filterIdentifier()                          const override
+    QString         filterIdentifier()                          const override
     {
         return FilterIdentifier();
     }
 
-    virtual FilterAction    filterAction()                                    override;
+    FilterAction    filterAction()                                    override;
     void                    readParameters(const FilterAction& action)        override;
 
 private:

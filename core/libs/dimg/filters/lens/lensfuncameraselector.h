@@ -49,7 +49,7 @@ public:
 public:
 
     explicit LensFunCameraSelector(QWidget* const parent=nullptr);
-    ~LensFunCameraSelector();
+    ~LensFunCameraSelector() override;
 
     void setEnabledUseMetadata(bool b);
 

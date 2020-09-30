@@ -154,7 +154,7 @@ public:
     explicit BWSepiaFilter(DImg* orgImage,
                            QObject* const parent=nullptr,
                            const BWSepiaContainer& settings=BWSepiaContainer());
-    virtual ~BWSepiaFilter();
+    ~BWSepiaFilter() override;
 
     static QString          FilterIdentifier()
     {
@@ -173,12 +173,12 @@ public:
         return 2;
     }
 
-    virtual QString         filterIdentifier()                          const override
+    QString         filterIdentifier()                          const override
     {
         return FilterIdentifier();
     }
 
-    virtual FilterAction    filterAction()                                    override;
+    FilterAction    filterAction()                                    override;
     void                    readParameters(const FilterAction& action)        override;
 
 private:

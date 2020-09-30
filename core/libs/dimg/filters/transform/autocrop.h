@@ -49,7 +49,7 @@ public:
      * Standard constructor with image container to parse
      */
     explicit AutoCrop(DImg* const orgImage, QObject* const parent = nullptr);
-    ~AutoCrop();
+    ~AutoCrop() override;
 
     /**
      * Perform auto-crop analyze to find best inner crop. Use autoInnerCrop()

@@ -51,7 +51,7 @@ public:
     explicit WBFilter(DImg* const orgImage, QObject* const parent=nullptr, const WBContainer& settings=WBContainer());
     explicit WBFilter(const WBContainer& settings, DImgThreadedFilter* const master, const DImg& orgImage, const DImg& destImage,
                       int progressBegin = 0, int progressEnd = 100);
-    virtual ~WBFilter();
+    ~WBFilter() override;
 
 
     static void             autoExposureAdjustement(const DImg* const img, double& black, double& expo);
@@ -76,12 +76,12 @@ public:
 
     void                    readParameters(const FilterAction& action)       override;
 
-    virtual QString         filterIdentifier()                         const override
+    QString         filterIdentifier()                         const override
     {
         return FilterIdentifier();
     }
 
-    virtual FilterAction    filterAction()                                    override;
+    FilterAction    filterAction()                                    override;
 
 protected:
 

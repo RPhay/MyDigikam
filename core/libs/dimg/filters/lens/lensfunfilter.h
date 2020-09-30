@@ -83,7 +83,7 @@ public:
     explicit LensFunFilter(DImg* const origImage,
                            QObject* const parent,
                            const LensFunContainer& settings);
-    ~LensFunFilter();
+    ~LensFunFilter() override;
 
     bool registerSettingsToXmp(MetaEngineData& data) const;
     void readParameters(const FilterAction& action)        override;
@@ -105,12 +105,12 @@ public:
         return 2;
     }
 
-    virtual QString         filterIdentifier()       const override
+    QString         filterIdentifier()       const override
     {
         return FilterIdentifier();
     }
 
-    virtual FilterAction    filterAction()                 override;
+    FilterAction    filterAction()                 override;
 
 private:
 

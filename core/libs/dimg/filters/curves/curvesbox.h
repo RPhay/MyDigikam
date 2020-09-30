@@ -75,7 +75,7 @@ public:
               QWidget* const parent=nullptr,           // Parent widget instance.
               bool readOnly=false);                    // If true : widget with full edition mode capabilities.
                                                        // If false : display curve data only without edition.
-    ~CurvesBox();
+    ~CurvesBox() override;
 
     void enablePickers(bool enable);
     void enableHGradient(bool enable);

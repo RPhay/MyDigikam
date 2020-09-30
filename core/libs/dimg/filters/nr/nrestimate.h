@@ -47,7 +47,7 @@ public:
      * Standard constructor with image container to parse
      */
     explicit NREstimate(DImg* const img, QObject* const parent=nullptr);
-    ~NREstimate();
+    ~NREstimate() override;
 
     /**
      * Perform estimate noise.

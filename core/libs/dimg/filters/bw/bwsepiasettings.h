@@ -46,7 +46,7 @@ class DIGIKAM_EXPORT BWSepiaSettings : public QWidget
 public:
 
     explicit BWSepiaSettings(QWidget* const parent, DImg* const img);
-    ~BWSepiaSettings();
+    ~BWSepiaSettings() override;
 
     BWSepiaContainer defaultSettings() const;
     void resetToDefault();

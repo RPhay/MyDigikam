@@ -42,7 +42,7 @@ class DIGIKAM_EXPORT JPEGSettings : public QWidget
 public:
 
     explicit JPEGSettings(QWidget* const parent = nullptr);
-    ~JPEGSettings();
+    ~JPEGSettings() override;
 
     void setCompressionValue(int val);
     int  getCompressionValue() const;

@@ -42,7 +42,7 @@ public:
 
     explicit OilPaintFilter(QObject* const parent = nullptr);
     explicit OilPaintFilter(DImg* const orgImage, QObject* const parent=nullptr, int brushSize=1, int smoothness=30);
-    ~OilPaintFilter();
+    ~OilPaintFilter() override;
 
     static QString          FilterIdentifier()
     {
@@ -61,12 +61,12 @@ public:
         return 1;
     }
 
-    virtual QString         filterIdentifier()                          const override
+    QString         filterIdentifier()                          const override
     {
         return FilterIdentifier();
     }
 
-    virtual FilterAction    filterAction()                                    override;
+    FilterAction    filterAction()                                    override;
     void                    readParameters(const FilterAction& action)        override;
 
 private:

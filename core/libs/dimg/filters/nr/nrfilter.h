@@ -98,12 +98,12 @@ public:
 
     explicit NRFilter(QObject* const parent = nullptr);
     NRFilter(DImg* const orgImage, QObject* const parent, const NRContainer& settings);
-    ~NRFilter();
+    ~NRFilter() override;
 
     void readParameters(const FilterAction& action)       override;
 
-    virtual FilterAction    filterAction()                override;
-    virtual QString         filterIdentifier()      const override;
+    FilterAction    filterAction()                override;
+    QString         filterIdentifier()      const override;
 
     static QString          FilterIdentifier();
     static QString          DisplayableName();

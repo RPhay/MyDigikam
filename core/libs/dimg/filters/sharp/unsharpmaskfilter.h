@@ -44,7 +44,7 @@ public:
     explicit UnsharpMaskFilter(DImg* const orgImage, QObject* const parent=nullptr, double radius=1.0,
                                double amount=1.0, double threshold=0.05, bool luma=false);
 
-    virtual ~UnsharpMaskFilter();
+    ~UnsharpMaskFilter() override;
 
     static QString          FilterIdentifier()
     {
@@ -63,12 +63,12 @@ public:
         return 1;
     }
 
-    virtual QString         filterIdentifier()                          const override
+    QString         filterIdentifier()                          const override
     {
         return FilterIdentifier();
     }
 
-    virtual FilterAction    filterAction()                                    override;
+    FilterAction    filterAction()                                    override;
     void                    readParameters(const FilterAction& action)        override;
 
 private:

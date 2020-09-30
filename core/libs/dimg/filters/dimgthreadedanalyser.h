@@ -57,7 +57,7 @@ public:
     explicit DImgThreadedAnalyser(DImg* const orgImage, QObject* const parent = nullptr,
                                   const QString& name = QString());
 
-    ~DImgThreadedAnalyser();
+    ~DImgThreadedAnalyser() override;
 
 private:
 

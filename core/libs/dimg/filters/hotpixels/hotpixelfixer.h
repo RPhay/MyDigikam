@@ -55,7 +55,7 @@ public:
     explicit HotPixelFixer(DImg* const orgImage,
                            QObject* const parent,
                            const HotPixelContainer& settings);
-    ~HotPixelFixer();
+    ~HotPixelFixer() override;
 
     static QString          FilterIdentifier()
     {
@@ -76,16 +76,16 @@ public:
 
     void readParameters(const FilterAction& action)  override;
 
-    virtual QString         filterIdentifier() const override
+    QString         filterIdentifier() const override
     {
         return FilterIdentifier();
     }
 
-    virtual Digikam::FilterAction filterAction()     override;
+    Digikam::FilterAction filterAction()     override;
 
 private:
 
-    virtual void filterImage()                       override;
+    void filterImage()                       override;
 
     void interpolate(DImg& img,
                      HotPixelProps& hp,

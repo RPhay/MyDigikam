@@ -69,7 +69,7 @@ public:
 
     explicit HSLFilter(QObject* const parent = nullptr);
     explicit HSLFilter(DImg* const orgImage, QObject* const parent=nullptr, const HSLContainer& settings=HSLContainer());
-    virtual ~HSLFilter();
+    ~HSLFilter() override;
 
     static QString          FilterIdentifier()
     {
@@ -88,12 +88,12 @@ public:
         return 1;
     }
 
-    virtual QString         filterIdentifier()                          const override
+    QString         filterIdentifier()                          const override
     {
         return FilterIdentifier();
     }
 
-    virtual FilterAction    filterAction()                                    override;
+    FilterAction    filterAction()                                    override;
 
     void                    readParameters(const FilterAction& action)        override;
 

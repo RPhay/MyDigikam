@@ -127,7 +127,7 @@ public:
     explicit DistortionFXFilter(DImg* const orgImage, QObject* const parent=nullptr, int effectType=0,
                                 int level=0, int iteration=0, bool antialiasing=true);
 
-    ~DistortionFXFilter();
+    ~DistortionFXFilter() override;
 
     static QString          FilterIdentifier()
     {
@@ -146,12 +146,12 @@ public:
         return 1;
     }
 
-    virtual QString         filterIdentifier()                          const override
+    QString         filterIdentifier()                          const override
     {
         return FilterIdentifier();
     }
 
-    virtual FilterAction    filterAction()                                    override;
+    FilterAction    filterAction()                                    override;
 
     void                    readParameters(const FilterAction& action)        override;
 

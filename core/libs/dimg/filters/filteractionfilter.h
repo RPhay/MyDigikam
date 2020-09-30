@@ -42,7 +42,7 @@ public:
      * A meta-filter applying other filter according to a list of FilterActions
      */
     explicit FilterActionFilter(QObject* const parent = nullptr);
-    ~FilterActionFilter();
+    ~FilterActionFilter() override;
 
     /**
      * Per default, the filter will stop when it encounters an unsupported action.
@@ -108,23 +108,23 @@ public:
     /**
      * These methods do not make sense here. Use filterActions.
      */
-    virtual FilterAction filterAction()                override
+    FilterAction filterAction()                override
     {
         return FilterAction();
     }
 
-    virtual void readParameters(const FilterAction&)  override
+    void readParameters(const FilterAction&)  override
     {
     }
 
-    virtual QString filterIdentifier()          const override
+    QString filterIdentifier()          const override
     {
         return QString();
     }
 
 protected:
 
-    virtual void filterImage()                        override;
+    void filterImage()                        override;
 
 private:
 

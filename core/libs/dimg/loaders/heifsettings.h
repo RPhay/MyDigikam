@@ -42,7 +42,7 @@ class DIGIKAM_EXPORT HEIFSettings : public QWidget
 public:
 
     explicit HEIFSettings(QWidget* const parent = nullptr);
-    ~HEIFSettings();
+    ~HEIFSettings() override;
 
     void setCompressionValue(int val);
     int  getCompressionValue()    const;

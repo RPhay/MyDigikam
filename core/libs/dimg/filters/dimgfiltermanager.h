@@ -108,7 +108,7 @@ public:
 private:
 
     DImgFilterManager();                                    ///< Disable
-    ~DImgFilterManager();                                   ///< Disable
+    ~DImgFilterManager() override;                                   ///< Disable
     DImgFilterManager(const DImgFilterManager&);            ///< Disable
     DImgFilterManager& operator=(const DImgFilterManager&); ///< Disable
 

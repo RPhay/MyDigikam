@@ -76,7 +76,7 @@ public:
     explicit AntiVignettingFilter(DImg* const orgImage, QObject* const parent=nullptr,
                                   const AntiVignettingContainer& settings=AntiVignettingContainer());
 
-    ~AntiVignettingFilter();
+    ~AntiVignettingFilter() override;
 
     static QString          FilterIdentifier()
     {
@@ -97,12 +97,12 @@ public:
 
     void                    readParameters(const FilterAction& action)        override;
 
-    virtual QString         filterIdentifier()                          const override
+    QString         filterIdentifier()                          const override
     {
         return FilterIdentifier();
     }
 
-    virtual FilterAction    filterAction()                                    override;
+    FilterAction    filterAction()                                    override;
 
 private:
 

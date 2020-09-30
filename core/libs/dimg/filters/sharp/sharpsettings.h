@@ -100,7 +100,7 @@ class DIGIKAM_EXPORT SharpSettings : public QWidget
 public:
 
     explicit SharpSettings(QWidget* const parent);
-    virtual ~SharpSettings();
+    ~SharpSettings() override;
 
     SharpContainer defaultSettings() const;
     void resetToDefault();

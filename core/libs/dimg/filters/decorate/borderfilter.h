@@ -50,7 +50,7 @@ public:
      */
     explicit BorderFilter(QObject* const parent = nullptr);
     explicit BorderFilter(DImg* orgImage, QObject* const parent=nullptr, const BorderContainer& settings = BorderContainer());
-    virtual ~BorderFilter();
+    ~BorderFilter() override;
 
     static QString          FilterIdentifier()
     {
@@ -69,12 +69,12 @@ public:
         return 1;
     }
 
-    virtual QString         filterIdentifier()                          const override
+    QString         filterIdentifier()                          const override
     {
         return FilterIdentifier();
     }
 
-    virtual FilterAction    filterAction()                                    override;
+    FilterAction    filterAction()                                    override;
     void                    readParameters(const FilterAction& action)        override;
 
 private:

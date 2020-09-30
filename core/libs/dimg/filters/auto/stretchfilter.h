@@ -42,7 +42,7 @@ public:
 
     explicit StretchFilter(QObject* const parent = nullptr);
     StretchFilter(DImg* const orgImage, const DImg* const refImage, QObject* const parent=nullptr);
-    virtual ~StretchFilter();
+    ~StretchFilter() override;
 
     static QString          FilterIdentifier()
     {
@@ -61,12 +61,12 @@ public:
 
     static QString DisplayableName();
 
-    virtual QString         filterIdentifier()                          const override
+    QString         filterIdentifier()                          const override
     {
         return FilterIdentifier();
     }
 
-    virtual FilterAction    filterAction()                                    override;
+    FilterAction    filterAction()                                    override;
 
     void                    readParameters(const FilterAction& action)        override;
 

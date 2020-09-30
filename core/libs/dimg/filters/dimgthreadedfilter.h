@@ -61,7 +61,7 @@ public:
                        QObject* const parent,
                        const QString& name = QString());
 
-    ~DImgThreadedFilter();
+    ~DImgThreadedFilter() override;
 
     /**
      * You need to call this and then start filter of you used
@@ -185,7 +185,7 @@ protected:
     /**
      * List of threaded operations by filter.
      */
-    virtual void run() override;
+    void run() override;
 
     /**
      * Main image filter method. Override in subclass.

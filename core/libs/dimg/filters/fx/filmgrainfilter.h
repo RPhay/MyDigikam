@@ -108,7 +108,7 @@ public:
     explicit FilmGrainFilter(DImgThreadedFilter* const parentFilter, const DImg& orgImage, const DImg& destImage,
                              int progressBegin=0, int progressEnd=100,
                              const FilmGrainContainer& settings=FilmGrainContainer());
-    ~FilmGrainFilter();
+    ~FilmGrainFilter() override;
 
 
     static QString          FilterIdentifier()
@@ -130,12 +130,12 @@ public:
 
     void                    readParameters(const FilterAction& action)        override;
 
-    virtual QString         filterIdentifier()                          const override
+    QString         filterIdentifier()                          const override
     {
         return FilterIdentifier();
     }
 
-    virtual FilterAction    filterAction()                                    override;
+    FilterAction    filterAction()                                    override;
 
 private:
 

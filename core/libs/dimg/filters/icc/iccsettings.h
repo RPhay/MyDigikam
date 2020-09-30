@@ -136,7 +136,7 @@ Q_SIGNALS:
 private:
 
     explicit IccSettings();
-    ~IccSettings();
+    ~IccSettings() override;
 
     void readFromConfig();
 

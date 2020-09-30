@@ -48,7 +48,7 @@ class DIGIKAM_EXPORT CurvesSettings : public QWidget
 public:
 
     explicit CurvesSettings(QWidget* const parent, DImg* const img);
-    ~CurvesSettings();
+    ~CurvesSettings() override;
 
     CurvesContainer defaultSettings() const;
     void resetToDefault();

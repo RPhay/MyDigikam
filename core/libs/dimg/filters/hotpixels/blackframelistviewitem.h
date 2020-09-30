@@ -61,7 +61,7 @@ public:
 public:
 
     explicit BlackFrameListViewItem(QTreeWidget* const parent, const QUrl& url);
-    ~BlackFrameListViewItem();
+    ~BlackFrameListViewItem() override;
 
     QUrl    frameUrl()      const;
     QString toolTipString() const;

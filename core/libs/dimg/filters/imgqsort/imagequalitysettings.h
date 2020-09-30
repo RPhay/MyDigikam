@@ -43,7 +43,7 @@ class DIGIKAM_EXPORT ImageQualitySettings : public QWidget
 public:
 
     explicit ImageQualitySettings(QWidget* const parent = nullptr);
-    ~ImageQualitySettings();
+    ~ImageQualitySettings() override;
 
     void applySettings();
     void readSettings();

@@ -51,7 +51,7 @@ public:
     explicit HistogramBox(QWidget* const parent = nullptr,
                           HistogramBoxType type = Digikam::LRGB,
                           bool selectMode = false);
-    ~HistogramBox();
+    ~HistogramBox() override;
 
     void setHistogramType(HistogramBoxType type);
     void setHistogramMargin(int);

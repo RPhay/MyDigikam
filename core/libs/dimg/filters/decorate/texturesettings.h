@@ -46,7 +46,7 @@ class DIGIKAM_EXPORT TextureSettings : public QWidget
 public:
 
     explicit TextureSettings(QWidget* const parent);
-    ~TextureSettings();
+    ~TextureSettings() override;
 
     TextureContainer defaultSettings() const;
     void resetToDefault();

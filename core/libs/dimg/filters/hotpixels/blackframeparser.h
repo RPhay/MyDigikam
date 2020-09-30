@@ -55,7 +55,7 @@ class DIGIKAM_EXPORT BlackFrameParser: public QObject
 public:
 
     explicit BlackFrameParser(QObject* const parent);
-    ~BlackFrameParser();
+    ~BlackFrameParser() override;
 
     void parseHotPixels(const QString& file);
     void parseBlackFrame(const QUrl& url);

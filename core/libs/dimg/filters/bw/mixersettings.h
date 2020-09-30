@@ -45,7 +45,7 @@ class DIGIKAM_EXPORT MixerSettings : public QWidget
 public:
 
     explicit MixerSettings(QWidget* const parent);
-    ~MixerSettings();
+    ~MixerSettings() override;
 
     MixerContainer defaultSettings() const;
     void resetToDefault();
