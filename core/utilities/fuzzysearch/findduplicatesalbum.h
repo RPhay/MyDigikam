@@ -48,7 +48,7 @@ class FindDuplicatesAlbum : public QTreeWidget
 public:
 
     explicit FindDuplicatesAlbum(QWidget* const parent = nullptr);
-    virtual ~FindDuplicatesAlbum();
+    ~FindDuplicatesAlbum() override;
 
     void updateDuplicatesAlbumItems(const QList<SAlbum*>& sAlbumsToRebuild,
                                     const QList<qlonglong>& deletedImages);
@@ -58,7 +58,7 @@ public:
 
 private :
 
-    void drawRow(QPainter* p, const QStyleOptionViewItem& opt, const QModelIndex& index) const;
+    void drawRow(QPainter* p, const QStyleOptionViewItem& opt, const QModelIndex& index) const override;
 
 private Q_SLOTS:
 

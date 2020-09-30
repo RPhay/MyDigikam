@@ -54,7 +54,7 @@ public:
 public:
 
     explicit FindDuplicatesAlbumItem(QTreeWidget* const parent, SAlbum* const album);
-    virtual ~FindDuplicatesAlbumItem();
+    ~FindDuplicatesAlbumItem() override;
 
     bool hasValidThumbnail()                     const;
 
@@ -73,7 +73,7 @@ public:
 
     void setThumb(const QPixmap& pix, bool hasThumb = true);
 
-    bool operator<(const QTreeWidgetItem& other) const;
+    bool operator<(const QTreeWidgetItem& other) const override;
 
 private:
 

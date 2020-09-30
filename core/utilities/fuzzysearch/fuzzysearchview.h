@@ -64,7 +64,7 @@ public:
     explicit FuzzySearchView(SearchModel* const searchModel,
                              SearchModificationHelper* const searchModificationHelper,
                              QWidget* const parent = nullptr);
-    virtual ~FuzzySearchView();
+    ~FuzzySearchView() override;
 
     SAlbum* currentAlbum() const;
     void setCurrentAlbum(SAlbum* const album);
@@ -76,7 +76,7 @@ public:
     void newDuplicatesSearch(const QList<PAlbum*>& albums);
     void newDuplicatesSearch(const QList<TAlbum*>& albums);
 
-    virtual void setConfigGroup(const KConfigGroup& group) override;
+    void setConfigGroup(const KConfigGroup& group) override;
     void doLoadState()                                     override;
     void doSaveState()                                     override;
 
