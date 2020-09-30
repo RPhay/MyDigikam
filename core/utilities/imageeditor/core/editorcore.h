@@ -66,7 +66,7 @@ public:
 public:
 
     explicit EditorCore();
-    ~EditorCore();
+    ~EditorCore() override;
 
     void    load(const QString& filename, IOFileSettings* const iofileSettings);
     void    applyTransform(const IccTransform& transform);

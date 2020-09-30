@@ -119,7 +119,7 @@ public:
 
     explicit UndoActionIrreversible(EditorCore* const core,
                                     const QString& title = QString());
-    ~UndoActionIrreversible();
+    ~UndoActionIrreversible() override;
 };
 
 } // namespace Digikam

@@ -45,7 +45,7 @@ class DIGIKAM_EXPORT ImageRegionItem : public GraphicsDImgItem
 public:
 
     explicit ImageRegionItem(ImageRegionWidget* const view, bool paintExtras = true);
-    virtual ~ImageRegionItem();
+    ~ImageRegionItem() override;
 
     void setTargetImage(DImg& img);
     void setHighLightPoints(const QPolygon& pointsList);

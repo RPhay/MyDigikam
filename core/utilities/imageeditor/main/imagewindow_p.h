@@ -138,7 +138,7 @@ class Q_DECL_HIDDEN DatabaseVersionManager : public VersionManager
 {
 public:
 
-    virtual QString toplevelDirectory(const QString& path)
+    QString toplevelDirectory(const QString& path) override
     {
         CollectionLocation loc = CollectionManager::instance()->locationForPath(path);
 

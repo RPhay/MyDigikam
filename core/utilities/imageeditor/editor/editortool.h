@@ -53,7 +53,7 @@ class DIGIKAM_EXPORT EditorTool : public QObject
 public:
 
     explicit EditorTool(QObject* const parent);
-    virtual ~EditorTool();
+    ~EditorTool() override;
 
     void setPlugin(DPluginEditor* const plugin);
     DPluginEditor* plugin() const;
@@ -148,7 +148,7 @@ public:
 public:
 
     explicit EditorToolThreaded(QObject* const parent);
-    virtual ~EditorToolThreaded();
+    ~EditorToolThreaded() override;
 
     /**
      * Set the small text to show in editor status progress bar during
@@ -211,10 +211,10 @@ protected Q_SLOTS:
      */
     void slotProgress(int progress);
 
-    virtual void slotInit()    override;
-    virtual void slotOk()      override;
-    virtual void slotCancel()  override;
-    virtual void slotPreview() override;
+    void slotInit()    override;
+    void slotOk()      override;
+    void slotCancel()  override;
+    void slotPreview() override;
 
 private Q_SLOTS:
 

@@ -75,7 +75,7 @@ public:
                               int guideSize = 1,
                               bool blink = false,
                               ImageIface::PreviewType type= ImageIface::FullImage);
-    ~ImageGuideWidget();
+    ~ImageGuideWidget() override;
 
     ImageIface* imageIface()                   const;
     QImage      getMask()                      const;

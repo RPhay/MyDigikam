@@ -74,7 +74,7 @@ public:
 public:
 
     explicit EditorToolSettings(QWidget* const parent);
-    virtual ~EditorToolSettings();
+    ~EditorToolSettings() override;
 
     void setButtons(Buttons buttonMask);
     void setTools(Tools toolMask);
@@ -96,7 +96,7 @@ public:
     QPushButton* button(int buttonCode) const;
     void enableButton(int buttonCode, bool state);
 
-    virtual QSize minimumSizeHint()     const override;
+    QSize minimumSizeHint()     const override;
     virtual void setBusy(bool)   {};
     virtual void writeSettings() {};
     virtual void readSettings()  {};

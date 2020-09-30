@@ -89,7 +89,7 @@ public:
     };
 
     explicit EditorWindow(const QString& name);
-    ~EditorWindow();
+    ~EditorWindow() override;
 
     const static QString CONFIG_GROUP_NAME;
 
@@ -99,7 +99,7 @@ public:
 
 public Q_SLOTS:
 
-    virtual void slotSetup()  override = 0;
+    void slotSetup()  override = 0;
     virtual void slotSetupICC()        = 0;
 
 Q_SIGNALS:
@@ -279,7 +279,7 @@ protected Q_SLOTS:
     virtual void slotLoadingFinished(const QString& filename, bool success);
     virtual void slotSavingStarted(const QString& filename);
     virtual void slotFileOriginChanged(const QString& filePath);
-    virtual void slotComponentsInfo() override;
+    void slotComponentsInfo() override;
     virtual void slotDiscardChanges();
     virtual void slotOpenOriginal();
 

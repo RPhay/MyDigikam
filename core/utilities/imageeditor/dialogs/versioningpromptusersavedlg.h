@@ -41,7 +41,7 @@ class VersioningPromptUserSaveDialog : public QDialog
 public:
 
     explicit VersioningPromptUserSaveDialog(QWidget* const parent);
-    ~VersioningPromptUserSaveDialog();
+    ~VersioningPromptUserSaveDialog() override;
 
     bool shallSave()    const;
     bool newVersion()   const;

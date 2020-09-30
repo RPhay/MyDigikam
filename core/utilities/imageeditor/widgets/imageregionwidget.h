@@ -53,7 +53,7 @@ class DIGIKAM_EXPORT ImageRegionWidget : public GraphicsDImgView
 public:
 
     explicit ImageRegionWidget(QWidget* const parent = nullptr, bool paintExtras = true);
-    ~ImageRegionWidget();
+    ~ImageRegionWidget() override;
 
     /**
      * To get target image region area to render.

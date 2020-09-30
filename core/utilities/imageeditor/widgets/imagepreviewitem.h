@@ -42,7 +42,7 @@ class DIGIKAM_EXPORT ImagePreviewItem : public GraphicsDImgItem
 public:
 
     explicit ImagePreviewItem();
-    virtual ~ImagePreviewItem();
+    ~ImagePreviewItem() override;
 
     void paint(QPainter* painter, const QStyleOptionGraphicsItem* option, QWidget* widget) override;
 };

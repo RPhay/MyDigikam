@@ -50,7 +50,7 @@ public:
     static EditorToolIface* editorToolIface();
 
     explicit EditorToolIface(EditorWindow* const editor);
-    ~EditorToolIface();
+    ~EditorToolIface() override;
 
     EditorTool* currentTool() const;
 

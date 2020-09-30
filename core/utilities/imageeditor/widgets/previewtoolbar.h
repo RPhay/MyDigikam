@@ -69,7 +69,7 @@ public:
 public:
 
     explicit PreviewToolBar(QWidget* const parent = nullptr);
-    ~PreviewToolBar();
+    ~PreviewToolBar() override;
 
     void setPreviewModeMask(int mask);
 

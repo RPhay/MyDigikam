@@ -50,7 +50,7 @@ class ImageWindow : public EditorWindow
 
 public:
 
-    ~ImageWindow();
+    ~ImageWindow() override;
 
     static ImageWindow* imageWindow();
     static bool         imageWindowCreated();
@@ -62,7 +62,7 @@ public:
 
     DInfoInterface* infoIface(DPluginAction* const ac)                  override;
 
-    virtual VersionManager* versionManager() const                      override;
+    VersionManager* versionManager() const                      override;
 
 public Q_SLOTS:
 
