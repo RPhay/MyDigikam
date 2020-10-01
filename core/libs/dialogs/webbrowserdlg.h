@@ -50,7 +50,7 @@ public:
     explicit WebBrowserDlg(const QUrl& url,
                            QWidget* const parent,
                            bool hideDeskBrowser = false);
-    ~WebBrowserDlg();
+    ~WebBrowserDlg() override;
 
 Q_SIGNALS:
 

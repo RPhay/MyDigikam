@@ -72,7 +72,7 @@ class DeleteItem : public QTreeWidgetItem
 public:
 
     explicit DeleteItem(QTreeWidget* const parent, const QUrl& url);
-    virtual ~DeleteItem();
+    ~DeleteItem() override;
 
     bool    hasValidThumbnail() const;
     QUrl    url()               const;
@@ -95,11 +95,11 @@ class DeleteItemList : public QTreeWidget
 public:
 
     explicit DeleteItemList(QWidget* const parent=nullptr);
-    virtual ~DeleteItemList();
+    ~DeleteItemList() override;
 
 private :
 
-    void drawRow(QPainter* p, const QStyleOptionViewItem& opt, const QModelIndex& index) const;
+    void drawRow(QPainter* p, const QStyleOptionViewItem& opt, const QModelIndex& index) const override;
 
 private Q_SLOTS:
 
@@ -120,7 +120,7 @@ class DeleteWidget : public QWidget
 public:
 
     explicit DeleteWidget(QWidget* const parent = nullptr);
-    virtual ~DeleteWidget();
+    ~DeleteWidget() override;
 
     void setUrls(const QList<QUrl>& urls);
     void setListMode(DeleteDialogMode::ListMode mode);
@@ -160,7 +160,7 @@ public:
 public:
 
     explicit DeleteDialog(QWidget* const parent);
-    virtual ~DeleteDialog();
+    ~DeleteDialog() override;
 
     bool confirmDeleteList(const QList<QUrl>& condemnedURLs,
                            DeleteDialogMode::ListMode listMode,

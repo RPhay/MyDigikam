@@ -103,7 +103,7 @@ public:
     /**
      * Destructor.
      */
-    ~DConfigDlgMngr();
+    ~DConfigDlgMngr() override;
 
     /**
      * Add additional widgets to manage

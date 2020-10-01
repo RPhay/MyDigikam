@@ -49,7 +49,7 @@ class DIGIKAM_EXPORT ImageDialogPreview : public QScrollArea
 public:
 
     explicit ImageDialogPreview(QWidget* const parent=nullptr);
-    ~ImageDialogPreview();
+    ~ImageDialogPreview() override;
 
     QSize sizeHint() const override;
 
@@ -81,10 +81,10 @@ class DIGIKAM_EXPORT DFileIconProvider : public QFileIconProvider
 public:
 
     explicit DFileIconProvider();
-    ~DFileIconProvider();
+    ~DFileIconProvider() override;
 
-    virtual QIcon icon(IconType type) const override;
-    virtual QIcon icon(const QFileInfo& info) const override;
+    QIcon icon(IconType type) const override;
+    QIcon icon(const QFileInfo& info) const override;
 /*
 private:
 

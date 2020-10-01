@@ -61,7 +61,7 @@ public:
     /**
      * Destroys the page widget.
      */
-    ~DConfigDlgWdg();
+    ~DConfigDlgWdg() override;
 
     /**
      * Adds a new top level page to the widget.
@@ -222,7 +222,7 @@ public:
      */
     explicit DConfigDlgTitle(QWidget* const parent = nullptr);
 
-    virtual ~DConfigDlgTitle();
+    ~DConfigDlgTitle() override;
 
     /**
      * @param widget Widget displayed on the title widget.

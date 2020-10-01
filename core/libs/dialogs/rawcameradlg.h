@@ -40,7 +40,7 @@ class DIGIKAM_EXPORT RawCameraDlg : public InfoDlg
 public:
 
     explicit RawCameraDlg(QWidget* const parent);
-    ~RawCameraDlg();
+    ~RawCameraDlg() override;
 
 private:
 

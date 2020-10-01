@@ -44,7 +44,7 @@ class DIGIKAM_EXPORT DBusyThread : public QThread
 public:
 
     explicit DBusyThread(QObject* const parent);
-    virtual ~DBusyThread();
+    ~DBusyThread() override;
 
 Q_SIGNALS:
 
@@ -53,7 +53,7 @@ Q_SIGNALS:
 protected:
 
     /// Reimplement this method with your code to run in a separate thread.
-    virtual void run() override {};
+    void run() override {};
 };
 
 // ----------------------------------------------------------------------------------
@@ -65,7 +65,7 @@ class DIGIKAM_EXPORT DBusyDlg : public QProgressDialog
 public:
 
     explicit DBusyDlg(const QString& txt, QWidget* const parent=nullptr);
-    virtual ~DBusyDlg();
+    ~DBusyDlg() override;
 
     void setBusyThread(DBusyThread* const thread);
 

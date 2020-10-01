@@ -84,7 +84,7 @@ public:
     /**
      * Destroys the page model.
      */
-    virtual ~DConfigDlgModel();
+    ~DConfigDlgModel() override;
 
 protected:
 
@@ -136,7 +136,7 @@ public:
     /**
      * Destroys the page widget item.
      */
-    ~DConfigDlgWdgItem();
+    ~DConfigDlgWdgItem() override;
 
     /**
      * Returns the widget of the page widget item.
@@ -261,7 +261,7 @@ public:
     /**
      * Destroys the page widget model.
      */
-    ~DConfigDlgWdgModel();
+    ~DConfigDlgWdgModel() override;
 
     /**
      * Adds a new top level page to the model.

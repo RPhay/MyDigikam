@@ -44,7 +44,7 @@ class DIGIKAM_EXPORT DSplashScreen : public QSplashScreen
 public:
 
     explicit DSplashScreen();
-    ~DSplashScreen();
+    ~DSplashScreen() override;
 
     void setAlignment(int alignment);
     void setColor(const QColor& color);

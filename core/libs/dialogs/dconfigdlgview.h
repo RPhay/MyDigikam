@@ -100,7 +100,7 @@ public:
     /**
      * Destroys the page view.
      */
-    virtual ~DConfigDlgView();
+    ~DConfigDlgView() override;
 
     /**
      * Sets the @p model of the page view.

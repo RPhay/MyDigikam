@@ -154,7 +154,7 @@ class Q_DECL_HIDDEN DConfigDlgListView : public QListView
 public:
 
     explicit DConfigDlgListView(QWidget* const parent = nullptr);
-    virtual ~DConfigDlgListView();
+    ~DConfigDlgListView() override;
 
     void setModel(QAbstractItemModel* model) override;
 
@@ -193,7 +193,7 @@ class Q_DECL_HIDDEN DConfigDlgTabbedView : public QAbstractItemView
 public:
 
     explicit DConfigDlgTabbedView(QWidget* const parent = nullptr);
-    virtual ~DConfigDlgTabbedView();
+    ~DConfigDlgTabbedView() override;
 
     void setModel(QAbstractItemModel* model)                                            override;
     QModelIndex indexAt(const QPoint& point) const                                      override;
@@ -252,7 +252,7 @@ class Q_DECL_HIDDEN DConfigDlgListViewProxy : public QAbstractProxyModel
 public:
 
     explicit DConfigDlgListViewProxy(QObject* const parent = nullptr);
-    virtual ~DConfigDlgListViewProxy();
+    ~DConfigDlgListViewProxy() override;
 
     int rowCount(const QModelIndex& parent = QModelIndex()) const                           override;
     int columnCount(const QModelIndex& parent = QModelIndex()) const                        override;

@@ -96,7 +96,7 @@ public:
     /**
      * Destroys the page dialog.
      */
-    ~DConfigDlg();
+    ~DConfigDlg() override;
 
     /**
      * Sets the face type of the dialog.

@@ -47,7 +47,7 @@ class DIGIKAM_EXPORT ICCProfileInfoDlg : public QDialog
 public:
 
     explicit ICCProfileInfoDlg(QWidget* const parent, const QString& profilePath, const IccProfile& profileData = IccProfile());
-    ~ICCProfileInfoDlg();
+    ~ICCProfileInfoDlg() override;
 
 private Q_SLOTS:
 

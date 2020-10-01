@@ -43,7 +43,7 @@ class DIGIKAM_EXPORT DProgressDlg : public QDialog
 public:
 
     explicit DProgressDlg(QWidget* const parent=nullptr, const QString& caption=QString());
-    ~DProgressDlg();
+    ~DProgressDlg() override;
 
     void setLabel(const QString& text);
     void setTitle(const QString& text);
