@@ -191,7 +191,7 @@ void SharedLoadingTask::execute()
             // attach this thread to the other thread, wait until loading
             // has finished.
 
-            LoadingCache::LoadingLock lock(cache);
+            LoadingCache::CacheLock lock(cache);
 
             m_usedProcess->addListener(this);
 
@@ -256,7 +256,7 @@ void SharedLoadingTask::execute()
 
             cache->removeLoadingProcess(this);
 
-            LoadingCache::LoadingLock lock(cache);
+            LoadingCache::CacheLock lock(cache);
 
             // remove myself from list of listeners
 
@@ -405,7 +405,7 @@ void SharedLoadingTask::progressInfo(float progress)
     if (m_loadingTaskStatus == LoadingTaskStatusLoading)
     {
         LoadingCache* const cache = LoadingCache::cache();
-        LoadingCache::LoadingLock lock(cache);
+        LoadingCache::CacheLock lock(cache);
 
         for (int i = 0 ; i < m_listeners.size() ; ++i)
         {

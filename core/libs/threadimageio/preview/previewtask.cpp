@@ -117,7 +117,7 @@ void PreviewLoadingTask::execute()
             // attach this thread to the other thread, wait until loading
             // has finished.
 
-            LoadingCache::LoadingLock lock(cache);
+            LoadingCache::CacheLock lock(cache);
 
             m_usedProcess->addListener(this);
 
@@ -331,7 +331,7 @@ void PreviewLoadingTask::execute()
 
             cache->removeLoadingProcess(this);
 
-            LoadingCache::LoadingLock lock(cache);
+            LoadingCache::CacheLock lock(cache);
 
             // remove myself from list of listeners
 
