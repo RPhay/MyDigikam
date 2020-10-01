@@ -57,12 +57,16 @@ int ThumbnailLoadThread::Private::thumbnailSizeForPixmapSize(int pixmapSize) con
 
 bool ThumbnailLoadThread::Private::checkDescription(const LoadingDescription& description)
 {
-    QString cacheKey          = description.cacheKey();
-    LoadingCache* const cache = LoadingCache::cache();
+    QString cacheKey = description.cacheKey();
 
-    if (cache->hasThumbnailPixmap(cacheKey))
     {
-        return false;
+        LoadingCache* const cache = LoadingCache::cache();
+        LoadingCache::CacheLock lock(cache);
+
+        if (cache->hasThumbnailPixmap(cacheKey))
+        {
+            return false;
+        }
     }
 
     {

@@ -65,9 +65,8 @@ class Q_DECL_HIDDEN LoadingCache::Private
 public:
 
     explicit Private(LoadingCache* const q)
-      : mutexCache(QMutex::Recursive),
-        watch     (nullptr),
-        q         (q)
+      : watch(nullptr),
+        q    (q)
     {
     }
 
@@ -88,7 +87,6 @@ public:
 
     /// Note: Don't make the mutex recursive, we need to use a wait condition on it
     QMutex                          mutex;
-    QMutex                          mutexCache;
 
     QWaitCondition                  condVar;
     LoadingCacheFileWatch*          watch;
@@ -212,8 +210,6 @@ LoadingCache::~LoadingCache()
 
 DImg* LoadingCache::retrieveImage(const QString& cacheKey) const
 {
-    QMutexLocker lock(&d->mutexCache);
-
     QString filePath(d->imageFilePathMap.key(cacheKey));
     d->fileWatch()->checkFileWatch(filePath);
 
@@ -222,8 +218,6 @@ DImg* LoadingCache::retrieveImage(const QString& cacheKey) const
 
 bool LoadingCache::putImage(const QString& cacheKey, const DImg& img, const QString& filePath) const
 {
-    QMutexLocker lock(&d->mutexCache);
-
     bool isInserted = false;
 
     if (isCacheable(img))
@@ -243,15 +237,11 @@ bool LoadingCache::putImage(const QString& cacheKey, const DImg& img, const QStr
 
 void LoadingCache::removeImage(const QString& cacheKey)
 {
-    QMutexLocker lock(&d->mutexCache);
-
     d->imageCache.remove(cacheKey);
 }
 
 void LoadingCache::removeImages()
 {
-    QMutexLocker lock(&d->mutexCache);
-
     d->imageCache.clear();
 }
 
@@ -264,29 +254,21 @@ bool LoadingCache::isCacheable(const DImg& img) const
 
 void LoadingCache::addLoadingProcess(LoadingProcess* const process)
 {
-    QMutexLocker lock(&d->mutexCache);
-
     d->loadingDict[process->cacheKey()] = process;
 }
 
 LoadingProcess* LoadingCache::retrieveLoadingProcess(const QString& cacheKey) const
 {
-    QMutexLocker lock(&d->mutexCache);
-
     return d->loadingDict.value(cacheKey);
 }
 
 void LoadingCache::removeLoadingProcess(LoadingProcess* const process)
 {
-    QMutexLocker lock(&d->mutexCache);
-
     d->loadingDict.remove(process->cacheKey());
 }
 
 void LoadingCache::notifyNewLoadingProcess(LoadingProcess* const process, const LoadingDescription& description)
 {
-    QMutexLocker lock(&d->mutexCache);
-
     for (QHash<QString, LoadingProcess*>::const_iterator it = d->loadingDict.constBegin() ;
          it != d->loadingDict.constEnd() ; ++it)
     {
@@ -296,8 +278,6 @@ void LoadingCache::notifyNewLoadingProcess(LoadingProcess* const process, const 
 
 void LoadingCache::setCacheSize(int megabytes)
 {
-    QMutexLocker lock(&d->mutexCache);
-
     qCDebug(DIGIKAM_GENERAL_LOG) << "Allowing a cache size of" << megabytes << "MB";
     d->imageCache.setMaxCost(megabytes * 1024);
 }
@@ -306,28 +286,21 @@ void LoadingCache::setCacheSize(int megabytes)
 
 const QImage* LoadingCache::retrieveThumbnail(const QString& cacheKey) const
 {
-    QMutexLocker lock(&d->mutexCache);
-
     return d->thumbnailImageCache[cacheKey];
 }
 
 const QPixmap* LoadingCache::retrieveThumbnailPixmap(const QString& cacheKey) const
 {
-    QMutexLocker lock(&d->mutexCache);
-
     return d->thumbnailPixmapCache[cacheKey];
 }
 
 bool LoadingCache::hasThumbnailPixmap(const QString& cacheKey) const
 {
-    QMutexLocker lock(&d->mutexCache);
-
     return d->thumbnailPixmapCache.contains(cacheKey);
 }
 
 void LoadingCache::putThumbnail(const QString& cacheKey, const QImage& thumb, const QString& filePath)
 {
-    QMutexLocker lock(&d->mutexCache);
 
 #if (QT_VERSION >= QT_VERSION_CHECK(5, 10, 0))
 
@@ -347,8 +320,6 @@ void LoadingCache::putThumbnail(const QString& cacheKey, const QImage& thumb, co
 
 void LoadingCache::putThumbnail(const QString& cacheKey, const QPixmap& thumb, const QString& filePath)
 {
-    QMutexLocker lock(&d->mutexCache);
-
     int cost = thumb.width() * thumb.height() * thumb.depth() / 8;
 
     if (d->thumbnailPixmapCache.insert(cacheKey, new QPixmap(thumb), cost))
@@ -359,24 +330,18 @@ void LoadingCache::putThumbnail(const QString& cacheKey, const QPixmap& thumb, c
 
 void LoadingCache::removeThumbnail(const QString& cacheKey)
 {
-    QMutexLocker lock(&d->mutexCache);
-
     d->thumbnailImageCache.remove(cacheKey);
     d->thumbnailPixmapCache.remove(cacheKey);
 }
 
 void LoadingCache::removeThumbnails()
 {
-    QMutexLocker lock(&d->mutexCache);
-
     d->thumbnailImageCache.clear();
     d->thumbnailPixmapCache.clear();
 }
 
 void LoadingCache::setThumbnailCacheSize(int numberOfQImages, int numberOfQPixmaps)
 {
-    QMutexLocker lock(&d->mutexCache);
-
     d->thumbnailImageCache.setMaxCost(numberOfQImages *
                                       ThumbnailSize::maxThumbsSize() *
                                       ThumbnailSize::maxThumbsSize() * 4);
@@ -388,8 +353,6 @@ void LoadingCache::setThumbnailCacheSize(int numberOfQImages, int numberOfQPixma
 
 void LoadingCache::setFileWatch(LoadingCacheFileWatch* const watch)
 {
-    QMutexLocker lock(&d->mutexCache);
-
     delete d->watch;
     d->watch          = watch;
     d->watch->m_cache = this;
@@ -432,19 +395,13 @@ void LoadingCache::notifyFileChanged(const QString& filePath, bool notify)
     }
 }
 
-void LoadingCache::notifyFileChangedCacheLock(const QString& filePath, bool notify)
-{
-    QMutexLocker lock(&d->mutexCache);
-
-    notifyFileChanged(filePath, notify);
-}
-
 void LoadingCache::iccSettingsChanged(const ICCSettingsContainer& current, const ICCSettingsContainer& previous)
 {
     if ((current.enableCM           != previous.enableCM)           ||
         (current.useManagedPreviews != previous.useManagedPreviews) ||
         (current.monitorProfile     != previous.monitorProfile))
     {
+        LoadingCache::CacheLock lock(this);
         removeImages();
         removeThumbnails();
     }
@@ -461,7 +418,7 @@ LoadingCacheFileWatch::~LoadingCacheFileWatch()
 {
     if (m_cache)
     {
-        QMutexLocker lock(&m_cache->d->mutexCache);
+        LoadingCache::CacheLock lock(m_cache);
 
         if (m_cache->d->watch == this)
         {
@@ -523,7 +480,8 @@ void LoadingCacheFileWatch::notifyFileChanged(const QString& filePath)
 {
     if (m_cache)
     {
-        m_cache->notifyFileChangedCacheLock(filePath);
+        LoadingCache::CacheLock lock(m_cache);
+        m_cache->notifyFileChanged(filePath);
     }
 }
 

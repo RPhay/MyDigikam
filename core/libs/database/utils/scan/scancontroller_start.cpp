@@ -50,6 +50,7 @@ ScanController::Advice ScanController::databaseInitialization()
     {
         d->fileWatchInstalled     = true; // once per application lifetime only
         LoadingCache* const cache = LoadingCache::cache();
+        LoadingCache::CacheLock lock(cache);
         cache->setFileWatch(new ScanControllerLoadingCacheFileWatch);
     }
 
