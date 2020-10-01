@@ -73,7 +73,7 @@ private:
 private:
 
     explicit TemplateManager();
-    ~TemplateManager();
+    ~TemplateManager() override;
 
 private:
 

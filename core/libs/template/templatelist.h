@@ -41,7 +41,7 @@ class TemplateListItem : public QTreeWidgetItem
 public:
 
     explicit TemplateListItem(QTreeWidget* const parent, const Template& t);
-    ~TemplateListItem();
+    ~TemplateListItem() override;
 
     void     setTemplate(const Template& t);
     Template getTemplate() const;
@@ -60,7 +60,7 @@ class TemplateList : public QTreeWidget
 public:
 
     explicit TemplateList(QWidget* const parent=nullptr);
-    ~TemplateList();
+    ~TemplateList() override;
 
     TemplateListItem* find(const QString& title);
 

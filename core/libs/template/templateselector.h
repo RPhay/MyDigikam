@@ -49,7 +49,7 @@ public:
 public:
 
     explicit TemplateSelector(QWidget* const parent=nullptr);
-    virtual ~TemplateSelector();
+    ~TemplateSelector() override;
 
     Template  getTemplate() const;
     void      setTemplate(const Template& t);
