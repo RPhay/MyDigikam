@@ -462,7 +462,7 @@ void SharedLoadingTask::addListener(LoadingProcessListener* const listener)
 
 void SharedLoadingTask::removeListener(LoadingProcessListener* const listener)
 {
-    m_listeners.removeAll(listener);
+    m_listeners.removeOne(listener);
 }
 
 void SharedLoadingTask::notifyNewLoadingProcess(LoadingProcess* const process,
