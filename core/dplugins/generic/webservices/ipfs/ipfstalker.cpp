@@ -6,8 +6,8 @@
  * Date        : 2012-02-12
  * Description : a tool to export images to IPFS web service
  *
- * Copyright (C) 2018 by Amar Lakshya <amar dot lakshya at xaviers dot edu dot in>
- * Copyright (C) 2018 by Caulier Gilles <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2018      by Amar Lakshya <amar dot lakshya at xaviers dot edu dot in>
+ * Copyright (C) 2018-2020 by Caulier Gilles <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -54,10 +54,10 @@ class Q_DECL_HIDDEN IpfsTalker::Private
 public:
 
     explicit Private()
+      : workTimer (0),
+        reply     (nullptr),
+        image     (nullptr)
     {
-        workTimer = 0;
-        reply     = nullptr;
-        image     = nullptr;
     }
 
     // Work queue
@@ -106,17 +106,24 @@ void IpfsTalker::cancelAllWork()
     stopWorkTimer();
 
     if (d->reply)
+    {
         d->reply->abort();
+    }
 
     // Should error be emitted for those actions?
+
     while (!d->workQueue.empty())
+    {
         d->workQueue.dequeue();
+    }
 }
 
 void IpfsTalker::uploadProgress(qint64 sent, qint64 total)
 {
     if (total > 0) // Don't divide by 0
+    {
         emit progress((sent * 100) / total, d->workQueue.first());
+    }
 }
 
 void IpfsTalker::replyFinished()
@@ -138,10 +145,10 @@ void IpfsTalker::replyFinished()
     }
 
     // toInt() returns 0 if conversion fails. That fits nicely already.
-    int code      = reply->attribute(QNetworkRequest::HttpStatusCodeAttribute).toInt();
+    int netCode   = reply->attribute(QNetworkRequest::HttpStatusCodeAttribute).toInt();
     auto response = QJsonDocument::fromJson(reply->readAll());
 
-    if (code == 200 && !response.isEmpty())
+    if ((netCode == 200) && !response.isEmpty())
     {
         /* Success! */
         IpfsTalkerResult result;
@@ -150,21 +157,26 @@ void IpfsTalker::replyFinished()
         switch (result.action->type)
         {
             case IpfsTalkerActionType::IMG_UPLOAD:
+            {
                 result.image.name = response.object()[QLatin1String("Name")].toString();
                 result.image.size = response.object()[QLatin1String("Size")].toInt();
                 result.image.url  = QLatin1String("https://ipfs.io/ipfs/") + response.object()[QLatin1String("Hash")].toString();
                 break;
+            }
+
             default:
+            {
                 qCWarning(DIGIKAM_WEBSERVICES_LOG) << "Unexpected action";
                 qCDebug(DIGIKAM_WEBSERVICES_LOG) << response.toJson();
                 break;
+            }
         }
 
         emit success(result);
     }
     else
     {
-        if (code == 403)
+        if (netCode == 403)
         {
             /* HTTP 403 Forbidden -> Invalid token?
              * That needs to be handled internally, so don't emit progress
@@ -205,7 +217,7 @@ void IpfsTalker::timerEvent(QTimerEvent* event)
 
 void IpfsTalker::startWorkTimer()
 {
-    if (!d->workQueue.empty() && d->workTimer == 0)
+    if (!d->workQueue.empty() && (d->workTimer == 0))
     {
         d->workTimer = QObject::startTimer(0);
         emit busy(true);
@@ -227,8 +239,10 @@ void IpfsTalker::stopWorkTimer()
 
 void IpfsTalker::doWork()
 {
-    if (d->workQueue.empty() || d->reply != nullptr)
+    if (d->workQueue.empty() || (d->reply != nullptr))
+    {
         return;
+    }
 
     auto &work = d->workQueue.first();
 
