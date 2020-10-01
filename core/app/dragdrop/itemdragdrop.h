@@ -7,6 +7,7 @@
  * Description : Qt Model for Items - drag and drop handling
  *
  * Copyright (C) 2009-2011 by Marcel Wiesweg <marcel dot wiesweg at gmx dot de>
+ * Copyright (C) 2002-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -56,11 +57,11 @@ public:
     void setReadOnlyDrop(bool readOnly);
 
     bool dropEvent(QAbstractItemView* view,
-                           const QDropEvent* e,
-                           const QModelIndex& droppedOn)          override;
+                   const QDropEvent* e,
+                   const QModelIndex& droppedOn)          override;
 
     Qt::DropAction accepts(const QDropEvent* e,
-                                   const QModelIndex& dropIndex)  override;
+                           const QModelIndex& dropIndex)  override;
 
     QStringList mimeTypes() const                         override;
     QMimeData* createMimeData(const QList<QModelIndex>&)  override;

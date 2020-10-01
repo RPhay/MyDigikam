@@ -98,7 +98,7 @@ static DropAction copyOrMove(const QDropEvent* const e,
                              bool allowMove = true,
                              bool askForGrouping = false)
 {
-    if (e->keyboardModifiers() & Qt::ControlModifier)
+    if      (e->keyboardModifiers() & Qt::ControlModifier)
     {
         return CopyAction;
     }
@@ -113,8 +113,10 @@ static DropAction copyOrMove(const QDropEvent* const e,
         {
             case Qt::CopyAction:
                 return CopyAction;
+
             case Qt::MoveAction:
                 return MoveAction;
+
             default:
                 return NoAction;
         }
@@ -147,7 +149,7 @@ static DropAction copyOrMove(const QDropEvent* const e,
     popMenu.setMouseTracking(true);
     QAction* const choice = popMenu.exec(QCursor::pos());
 
-    if (moveAction && choice == moveAction)
+    if      (moveAction && (choice == moveAction))
     {
         return MoveAction;
     }
@@ -155,11 +157,11 @@ static DropAction copyOrMove(const QDropEvent* const e,
     {
         return CopyAction;
     }
-    else if (groupAction && choice == groupAction)
+    else if (groupAction && (choice == groupAction))
     {
         return GroupAction;
     }
-    else if (groupAndMoveAction && choice == groupAndMoveAction)
+    else if (groupAndMoveAction && (choice == groupAndMoveAction))
     {
         return GroupAndMoveAction;
     }
@@ -186,11 +188,11 @@ static DropAction tagAction(const QDropEvent* const, QWidget* const view, bool a
     popMenu.setMouseTracking(true);
     QAction* const choice = popMenu.exec(QCursor::pos());
 
-    if (groupAction && choice == groupAction)
+    if      (groupAction && (choice == groupAction))
     {
         return GroupAction;
     }
-    else if (tagAction && choice == tagAction)
+    else if (tagAction && (choice == tagAction))
     {
         return AssignTagAction;
     }
@@ -207,8 +209,8 @@ static DropAction s_groupAction(const QDropEvent* const, QWidget* const view)
     QAction* sortAction                = nullptr;
 
     if (imgView &&
-        (sortOrder == ItemSortSettings::SortByManualOrderAndName ||
-         sortOrder == ItemSortSettings::SortByManualOrderAndDate))
+        ((sortOrder == ItemSortSettings::SortByManualOrderAndName) ||
+         (sortOrder == ItemSortSettings::SortByManualOrderAndDate)))
     {
         sortAction = addSortAction(&popMenu);
         popMenu.addSeparator();
@@ -220,12 +222,12 @@ static DropAction s_groupAction(const QDropEvent* const, QWidget* const view)
 
     QAction* const choice      = popMenu.exec(QCursor::pos());
 
-    if (groupAction && choice == groupAction)
+    if (groupAction && (choice == groupAction))
     {
         return GroupAction;
     }
 
-    if (sortAction && choice == sortAction)
+    if (sortAction && (choice == sortAction))
     {
         return SortAction;
     }
@@ -298,20 +300,20 @@ bool ItemDragDropHandler::dropEvent(QAbstractItemView* abstractview, const QDrop
             currentAlbum = albumModel()->currentAlbums().first();
         }
 
-        if (album->type() == Album::PHYSICAL)
+        if      (album->type() == Album::PHYSICAL)
         {
             palbum = static_cast<PAlbum*>(album);
         }
-        else if (currentAlbum && currentAlbum->type() == Album::PHYSICAL)
+        else if (currentAlbum && (currentAlbum->type() == Album::PHYSICAL))
         {
             palbum = static_cast<PAlbum*>(currentAlbum);
         }
 
-        if (album->type() == Album::TAG)
+        if      (album->type() == Album::TAG)
         {
             talbum = static_cast<TAlbum*>(album);
         }
-        else if (currentAlbum && currentAlbum->type() == Album::TAG)
+        else if (currentAlbum && (currentAlbum->type() == Album::TAG))
         {
             talbum = static_cast<TAlbum*>(currentAlbum);
         }
@@ -353,7 +355,7 @@ bool ItemDragDropHandler::dropEvent(QAbstractItemView* abstractview, const QDrop
             }
         }
 
-        if (m_readOnly)
+        if      (m_readOnly)
         {
             emit itemInfosDropped(ItemInfoList(imageIDs));
             return true;
@@ -398,7 +400,7 @@ bool ItemDragDropHandler::dropEvent(QAbstractItemView* abstractview, const QDrop
 
             if (onlyInternal        &&
                 droppedOn.isValid() &&
-                e->keyboardModifiers() == Qt::NoModifier)
+                (e->keyboardModifiers() == Qt::NoModifier))
             {
                 action = s_groupAction(e, view);
             }
@@ -410,11 +412,11 @@ bool ItemDragDropHandler::dropEvent(QAbstractItemView* abstractview, const QDrop
                 action = copyOrMove(e, view, mixed || onlyExternal, !droppedOnInfo.isNull());
             }
 
-            if (onlyExternal)
+            if      (onlyExternal)
             {
                 // Only external items: copy or move as requested
 
-                if (action == MoveAction)
+                if      (action == MoveAction)
                 {
                     DIO::move(extImages, palbum);
                     return true;
@@ -431,7 +433,7 @@ bool ItemDragDropHandler::dropEvent(QAbstractItemView* abstractview, const QDrop
                 // Move is a no-op. Do not show menu to ask for copy or move.
                 // If the user indicates a copy operation (holding Ctrl), copy.
 
-                if (action == CopyAction)
+                if      (action == CopyAction)
                 {
                     DIO::copy(intImages, palbum);
                     return true;
@@ -447,7 +449,7 @@ bool ItemDragDropHandler::dropEvent(QAbstractItemView* abstractview, const QDrop
                 // For move operations, ignore items from current album.
                 // If user requests copy, copy.
 
-                if (action == MoveAction)
+                if      (action == MoveAction)
                 {
                     DIO::move(extImages, palbum);
                     return true;
@@ -474,6 +476,7 @@ bool ItemDragDropHandler::dropEvent(QAbstractItemView* abstractview, const QDrop
             if (droppedOn.isValid())
             {
                 // Ask if the user wants to group
+
                 action = s_groupAction(e, view);
             }
         }
@@ -533,7 +536,7 @@ bool ItemDragDropHandler::dropEvent(QAbstractItemView* abstractview, const QDrop
 
         DropAction action = copyOrMove(e, view);
 
-        if (action == MoveAction)
+        if      (action == MoveAction)
         {
             DIO::move(srcURLs, palbum);
         }
@@ -565,8 +568,8 @@ bool ItemDragDropHandler::dropEvent(QAbstractItemView* abstractview, const QDrop
 
         if (talbum && talbum->hasProperty(TagPropertyName::person()))
         {
-            if (tagIDs.first() == FaceTags::unconfirmedPersonTagId() ||
-                tagIDs.first() == FaceTags::unknownPersonTagId()     ||
+            if ((tagIDs.first() == FaceTags::unconfirmedPersonTagId()) ||
+                (tagIDs.first() == FaceTags::unknownPersonTagId())     ||
                 !FaceTags::isPerson(tagIDs.first()))
             {
                 return false;
@@ -574,7 +577,7 @@ bool ItemDragDropHandler::dropEvent(QAbstractItemView* abstractview, const QDrop
 
             DigikamItemView* const dview = qobject_cast<DigikamItemView*>(abstractview);
 
-            if (dview == nullptr || !droppedOn.isValid())
+            if ((dview == nullptr) || !droppedOn.isValid())
             {
                 return false;
             }
@@ -601,7 +604,7 @@ bool ItemDragDropHandler::dropEvent(QAbstractItemView* abstractview, const QDrop
 
             if (res)
             {
-                if (res == assignFace)
+                if      (res == assignFace)
                 {
                     dview->confirmFaces({droppedOn}, tagIDs.first());
                 }
@@ -646,7 +649,7 @@ bool ItemDragDropHandler::dropEvent(QAbstractItemView* abstractview, const QDrop
 
         if (choice)
         {
-            if (choice == assignToSelectedAction)    // Selected Items
+            if      (choice == assignToSelectedAction)    // Selected Items
             {
                 emit assignTags(selectedInfos, tagIDs);
             }
@@ -689,7 +692,7 @@ bool ItemDragDropHandler::dropEvent(QAbstractItemView* abstractview, const QDrop
 
         if (choice)
         {
-            if (choice == downAction)
+            if      (choice == downAction)
             {
                 ImportUI::instance()->slotDownload(true, false, palbum);
             }

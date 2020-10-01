@@ -41,14 +41,14 @@ public:
 
     explicit TagDragDropHandler(TagModel* const model);
 
-    TagModel* model() const;
+    TagModel* model()       const;
 
     bool dropEvent(QAbstractItemView* view,
-                           const QDropEvent* e,
-                           const QModelIndex& droppedOn)         override;
+                   const QDropEvent* e,
+                   const QModelIndex& droppedOn)         override;
 
     Qt::DropAction accepts(const QDropEvent* e,
-                                   const QModelIndex& dropIndex) override;
+                           const QModelIndex& dropIndex) override;
 
     QStringList mimeTypes() const                        override;
     QMimeData* createMimeData(const QList<Album*>&)      override;

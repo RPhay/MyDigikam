@@ -69,7 +69,7 @@ ImportDragDropHandler::DropAction ImportDragDropHandler::copyOrMove(const QDropE
                                                                     bool allowMove,
                                                                     bool askForGrouping)
 {
-    if (e->keyboardModifiers() & Qt::ControlModifier)
+    if      (e->keyboardModifiers() & Qt::ControlModifier)
     {
         return CopyAction;
     }
@@ -84,8 +84,10 @@ ImportDragDropHandler::DropAction ImportDragDropHandler::copyOrMove(const QDropE
         {
             case Qt::CopyAction:
                 return CopyAction;
+
             case Qt::MoveAction:
                 return MoveAction;
+
             default:
                 return NoAction;
         }
@@ -116,7 +118,7 @@ ImportDragDropHandler::DropAction ImportDragDropHandler::copyOrMove(const QDropE
     popMenu.setMouseTracking(true);
     QAction* const choice = popMenu.exec(QCursor::pos());
 
-    if (moveAction && choice == moveAction)
+    if      (moveAction && (choice == moveAction))
     {
         return MoveAction;
     }
@@ -124,7 +126,7 @@ ImportDragDropHandler::DropAction ImportDragDropHandler::copyOrMove(const QDropE
     {
         return CopyAction;
     }
-    else if (groupAction && choice == groupAction)
+    else if (groupAction && (choice == groupAction))
     {
         return GroupAction;
     }
@@ -187,7 +189,7 @@ Qt::DropAction ImportDragDropHandler::accepts(const QDropEvent* e, const QModelI
 {
     if (DItemDrag::canDecode(e->mimeData()) || e->mimeData()->hasUrls())
     {
-        if (e->keyboardModifiers() & Qt::ControlModifier)
+        if      (e->keyboardModifiers() & Qt::ControlModifier)
         {
             return Qt::CopyAction;
         }

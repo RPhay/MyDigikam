@@ -36,13 +36,15 @@ DItemDrag::DItemDrag(const QList<QUrl>& urls,
                      const QList<qlonglong>& imageIDs)
     : QMimeData()
 {
-    // Digikam specific mime data
+    // digiKam specific mime data
+
     QByteArray  ba;
     QDataStream ds(&ba, QIODevice::WriteOnly);
     ds << urls;
     setData(QLatin1String("digikam/item-urls"), ba);
 
     // inconsistent numbering is legacy
+
     QByteArray  ba3;
     QDataStream ds3(&ba3, QIODevice::WriteOnly);
     ds3 << albumIDs;
@@ -54,6 +56,7 @@ DItemDrag::DItemDrag(const QList<QUrl>& urls,
     setData(QLatin1String("digikam/item-ids"), ba4);
 
     // commonly accessible mime data, for dragging to outside digikam
+
     setUrls(urls);
 }
 
@@ -61,6 +64,7 @@ QStringList DItemDrag::mimeTypes()
 {
     // we do not want to decode text/uri-list with this object,
     // we only export this data above for dragging to outside digikam.
+
     return QStringList() << QLatin1String("digikam/item-urls")
                          << QLatin1String("digikam/album-ids")
                          << QLatin1String("digikam/item-ids");
@@ -144,6 +148,7 @@ DAlbumDrag::DAlbumDrag(const QUrl& databaseUrl, int albumid, const QUrl& fileUrl
     setData(QLatin1String("digikam/album-ids"), ba2);
 
     // commonly accessible mime data, for dragging to outside digikam
+
     if (!fileUrl.isEmpty())
     {
         setUrls(QList<QUrl>() << fileUrl);

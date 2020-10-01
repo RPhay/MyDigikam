@@ -264,8 +264,8 @@ bool TagDragDropHandler::dropEvent(QAbstractItemView* view,
             popMenu.addAction( QIcon::fromTheme(QLatin1String("dialog-cancel")), i18n("C&ancel") );
 
             popMenu.setMouseTracking(true);
-            QAction* const choice = popMenu.exec(QCursor::pos());
-            assign                = (choice == assignAction);
+            QAction* const choice       = popMenu.exec(QCursor::pos());
+            assign                      = (choice == assignAction);
         }
 
         if (assign)
@@ -285,8 +285,9 @@ Qt::DropAction TagDragDropHandler::accepts(const QDropEvent* e, const QModelInde
 
     if (DTagListDrag::canDecode(e->mimeData()))
     {
-        //int droppedId = 0;
-
+/*
+        int droppedId = 0;
+*/
         QList<int> droppedId;
 
         if (!DTagListDrag::decode(e->mimeData(), droppedId))
