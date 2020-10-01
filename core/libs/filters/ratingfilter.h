@@ -44,7 +44,7 @@ class RatingFilterWidget : public RatingWidget
 public:
 
     explicit RatingFilterWidget(QWidget* const parent);
-    ~RatingFilterWidget();
+    ~RatingFilterWidget() override;
 
     void setRatingFilterCondition(ItemFilterSettings::RatingCondition cond);
     ItemFilterSettings::RatingCondition ratingFilterCondition();
@@ -85,7 +85,7 @@ class RatingFilter : public DHBox
 public:
 
     explicit RatingFilter(QWidget* const parent);
-    ~RatingFilter();
+    ~RatingFilter() override;
 
     void setRating(int val);
     int  rating() const;

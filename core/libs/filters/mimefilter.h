@@ -57,7 +57,7 @@ public:
 public:
 
     explicit MimeFilter(QWidget* const parent);
-    ~MimeFilter();
+    ~MimeFilter() override;
 
     void setMimeFilter(int filter);
     int mimeFilter();

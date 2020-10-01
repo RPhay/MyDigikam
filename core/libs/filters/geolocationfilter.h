@@ -43,7 +43,7 @@ class GeolocationFilter : public QComboBox
 public:
 
     explicit GeolocationFilter(QWidget* const parent);
-    ~GeolocationFilter();
+    ~GeolocationFilter() override;
 
     void setGeolocationFilter(const ItemFilterSettings::GeolocationCondition& condition);
     ItemFilterSettings::GeolocationCondition geolocationFilter() const;

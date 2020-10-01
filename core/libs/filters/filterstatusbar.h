@@ -42,7 +42,7 @@ class FilterStatusBar : public QWidget
 public:
 
     explicit FilterStatusBar(QWidget* const parent);
-    ~FilterStatusBar();
+    ~FilterStatusBar() override;
 
 public Q_SLOTS:
 

@@ -44,7 +44,7 @@ class TextFilter : public DHBox
 public:
 
     explicit TextFilter(QWidget* const parent);
-    ~TextFilter();
+    ~TextFilter() override;
 
     SearchTextBar* searchTextBar() const;
 
