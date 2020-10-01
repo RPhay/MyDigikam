@@ -41,7 +41,7 @@ class ClockPhotoDialog : public QDialog
 public:
 
     explicit ClockPhotoDialog(QWidget* const parent, const QUrl& defaultUrl);
-    ~ClockPhotoDialog();
+    ~ClockPhotoDialog() override;
 
     /**
      * Try to load the photo specified by the QUrl, and set the datetime widget
