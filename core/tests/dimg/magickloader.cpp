@@ -125,7 +125,7 @@ bool loadWithImageMagick(const QString& path, QImage& qimg)
 
 int main(int argc, char** argv)
 {
-    MagickCoreGenesis((char*)NULL, MagickFalse);
+    MagickCoreGenesis((char*)nullptr, MagickFalse);
 
     ExceptionInfo ex = *AcquireExceptionInfo();
     size_t n                  = 0;
