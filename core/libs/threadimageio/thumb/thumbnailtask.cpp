@@ -161,7 +161,7 @@ void ThumbnailLoadingTask::execute()
 
             m_usedProcess = this;
 
-            // Add this LoadingProcess to cache list.
+            // Aadd this LoadingProcess to cache list.
 
             cache->addLoadingProcess(this);
 
