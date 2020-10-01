@@ -547,7 +547,7 @@ private Q_SLOTS:
 private:
 
     explicit ApplicationSettings();
-    ~ApplicationSettings();
+    ~ApplicationSettings() override;
 
     KConfigGroup generalConfigGroup() const;
 
