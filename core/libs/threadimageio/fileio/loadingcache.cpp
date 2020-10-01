@@ -325,18 +325,11 @@ QImage LoadingCache::retrieveThumbnail(const QString& cacheKey) const
     return QImage(*cachedImg);
 }
 
-QPixmap LoadingCache::retrieveThumbnailPixmap(const QString& cacheKey) const
+const QPixmap* LoadingCache::retrieveThumbnailPixmap(const QString& cacheKey) const
 {
     QMutexLocker lock(&d->mutexCache);
 
-    QPixmap* const cachedPix = d->thumbnailPixmapCache[cacheKey];
-
-    if (!cachedPix)
-    {
-        return QPixmap();
-    }
-
-    return QPixmap(*cachedPix);
+    return d->thumbnailPixmapCache[cacheKey];
 }
 
 bool LoadingCache::hasThumbnailPixmap(const QString& cacheKey) const

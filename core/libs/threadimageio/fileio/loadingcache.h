@@ -146,7 +146,7 @@ public:
 
     /**
      * Retrieves an image for the given string from the cache,
-     * or a null image if is not found.
+     * or 0 if no image is found.
      */
     DImg retrieveImage(const QString& cacheKey) const;
 
@@ -213,11 +213,11 @@ public:
 
     /**
      * Retrieves a thumbnail for the given filePath from the thumbnail cache,
-     * or a null thumbnail if is not found.
+     * or a 0 if the thumbnail is not found.
      */
-    QImage  retrieveThumbnail(const QString& cacheKey)       const;
-    QPixmap retrieveThumbnailPixmap(const QString& cacheKey) const;
-    bool    hasThumbnailPixmap(const QString& cacheKey)      const;
+    QImage retrieveThumbnail(const QString& cacheKey) const;
+    const QPixmap* retrieveThumbnailPixmap(const QString& cacheKey) const;
+    bool  hasThumbnailPixmap(const QString& cacheKey) const;
 
     /**
      * Puts a thumbnail into the thumbnail cache.
