@@ -76,7 +76,7 @@ public:
 
 protected:
 
-    bool eventFilter(QObject* obj, QEvent* event)
+    bool eventFilter(QObject* obj, QEvent* event) override
     {
         if ((event->type() == QEvent::MouseButtonRelease) || (event->type() == QEvent::MouseButtonDblClick))
         {
@@ -123,7 +123,7 @@ public:
     int styleHint(QStyle::StyleHint hint,
                   const QStyleOption* option = nullptr,
                   const QWidget* widget = nullptr,
-                  QStyleHintReturn* returnData = nullptr) const
+                  QStyleHintReturn* returnData = nullptr) const override
     {
         if (hint == QStyle::SH_Slider_AbsoluteSetButtons)
         {

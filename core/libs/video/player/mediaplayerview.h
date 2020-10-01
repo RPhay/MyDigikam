@@ -50,7 +50,7 @@ class DIGIKAM_EXPORT MediaPlayerView : public QStackedWidget
 public:
 
     explicit MediaPlayerView(QWidget* const parent);
-    ~MediaPlayerView();
+    ~MediaPlayerView() override;
 
     void setCurrentItem(const QUrl& url   = QUrl(),
                         bool  hasPrevious = false,

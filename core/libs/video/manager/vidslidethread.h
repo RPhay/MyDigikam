@@ -41,7 +41,7 @@ class DIGIKAM_EXPORT VidSlideThread : public ActionThreadBase
 public:
 
     explicit VidSlideThread(QObject* const parent);
-    ~VidSlideThread();
+    ~VidSlideThread() override;
 
     void processStream(VidSlideSettings* const settings);
 

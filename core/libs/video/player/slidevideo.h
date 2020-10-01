@@ -50,7 +50,7 @@ class DIGIKAM_EXPORT SlideVideo : public QWidget
 public:
 
     explicit SlideVideo(QWidget* const parent);
-    ~SlideVideo();
+    ~SlideVideo() override;
 
     void setInfoInterface(DInfoInterface* const iface);
     void setCurrentUrl(const QUrl& url);
