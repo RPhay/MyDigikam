@@ -105,9 +105,13 @@ void ThumbnailLoadingTask::execute()
 
     // find possible cached images
 
-    m_qimage = cache->retrieveThumbnail(m_loadingDescription.cacheKey());
+    const QImage* const cachedImage = cache->retrieveThumbnail(m_loadingDescription.cacheKey());
 
-    if (continueQuery() && m_qimage.isNull())
+    if (cachedImage)
+    {
+        m_qimage = *cachedImage;
+    }
+    else
     {
        // find possible running loading process
        // do not wait on other loading processes?

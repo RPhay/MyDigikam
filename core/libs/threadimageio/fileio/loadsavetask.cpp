@@ -141,26 +141,26 @@ void SharedLoadingTask::execute()
 
     m_thread->imageStartedLoading(m_loadingDescription);
 
+    LoadingCache* const cache = LoadingCache::cache();
+
     // find possible cached images
 
-    QStringList lookupKeys    = m_loadingDescription.lookupCacheKeys();
-    LoadingCache* const cache = LoadingCache::cache();
+    DImg* cachedImg        = nullptr;
+    QStringList lookupKeys = m_loadingDescription.lookupCacheKeys();
 
     foreach (const QString& key, lookupKeys)
     {
-        m_img = cache->retrieveImage(key);
-
-        if (!m_img.isNull())
+        if ((cachedImg = cache->retrieveImage(key)))
         {
             if (m_loadingDescription.needCheckRawDecoding())
             {
-                if (m_img.rawDecodingSettings() == m_loadingDescription.rawDecodingSettings)
+                if (cachedImg->rawDecodingSettings() == m_loadingDescription.rawDecodingSettings)
                 {
                     break;
                 }
                 else
                 {
-                    m_img.reset();
+                    cachedImg = nullptr;
                 }
             }
             else
@@ -170,7 +170,13 @@ void SharedLoadingTask::execute()
         }
     }
 
-    if (continueQuery() && m_img.isNull())
+    if (cachedImg)
+    {
+        // image is found in image cache, loading is successful
+
+        m_img = *cachedImg;
+    }
+    else
     {
         // find possible running loading process
 

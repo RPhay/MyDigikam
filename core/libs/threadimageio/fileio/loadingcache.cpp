@@ -210,21 +210,14 @@ LoadingCache::~LoadingCache()
     m_instance = nullptr;
 }
 
-DImg LoadingCache::retrieveImage(const QString& cacheKey) const
+DImg* LoadingCache::retrieveImage(const QString& cacheKey) const
 {
     QMutexLocker lock(&d->mutexCache);
 
     QString filePath(d->imageFilePathMap.key(cacheKey));
     d->fileWatch()->checkFileWatch(filePath);
 
-    DImg* const cachedImg = d->imageCache[cacheKey];
-
-    if (!cachedImg)
-    {
-        return DImg();
-    }
-
-    return DImg(*cachedImg);
+    return d->imageCache[cacheKey];
 }
 
 bool LoadingCache::putImage(const QString& cacheKey, const DImg& img, const QString& filePath) const
@@ -311,18 +304,11 @@ void LoadingCache::setCacheSize(int megabytes)
 
 // --- Thumbnails ----
 
-QImage LoadingCache::retrieveThumbnail(const QString& cacheKey) const
+const QImage* LoadingCache::retrieveThumbnail(const QString& cacheKey) const
 {
     QMutexLocker lock(&d->mutexCache);
 
-    QImage* const cachedImg = d->thumbnailImageCache[cacheKey];
-
-    if (!cachedImg)
-    {
-        return QImage();
-    }
-
-    return QImage(*cachedImg);
+    return d->thumbnailImageCache[cacheKey];
 }
 
 const QPixmap* LoadingCache::retrieveThumbnailPixmap(const QString& cacheKey) const
