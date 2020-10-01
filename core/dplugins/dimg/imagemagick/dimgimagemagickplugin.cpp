@@ -62,7 +62,7 @@ namespace DigikamImageMagickDImgPlugin
 DImgImageMagickPlugin::DImgImageMagickPlugin(QObject* const parent)
     : DPluginDImg(parent)
 {
-    MagickCoreGenesis((char*)NULL ,MagickFalse);
+    MagickCoreGenesis((char*)nullptr ,MagickFalse);
 }
 
 DImgImageMagickPlugin::~DImgImageMagickPlugin()
