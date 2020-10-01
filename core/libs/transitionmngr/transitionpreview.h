@@ -46,7 +46,7 @@ class DIGIKAM_EXPORT TransitionPreview : public QLabel
 public:
 
     explicit TransitionPreview(QWidget* const parent=nullptr);
-    ~TransitionPreview();
+    ~TransitionPreview() override;
 
     void setImagesList(const QList<QUrl>& images);
 
