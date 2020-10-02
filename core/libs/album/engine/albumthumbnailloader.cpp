@@ -128,11 +128,17 @@ AlbumThumbnailLoader::~AlbumThumbnailLoader()
 
 void AlbumThumbnailLoader::cleanUp()
 {
-    d->iconAlbumThumbThread->stopAllTasks();
-    d->iconTagThumbThread->stopAllTasks();
+    if (d->iconAlbumThumbThread)
+    {
+        d->iconAlbumThumbThread->stopAllTasks();
+        d->iconAlbumThumbThread->wait();
+    }
 
-    d->iconAlbumThumbThread->wait();
-    d->iconTagThumbThread->wait();
+    if (d->iconTagThumbThread)
+    {
+        d->iconTagThumbThread->stopAllTasks();
+        d->iconTagThumbThread->wait();
+    }
 }
 
 QPixmap AlbumThumbnailLoader::getStandardTagIcon(RelativeSize relativeSize)
