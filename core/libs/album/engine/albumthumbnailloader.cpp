@@ -121,18 +121,18 @@ AlbumThumbnailLoader::AlbumThumbnailLoader()
 
 AlbumThumbnailLoader::~AlbumThumbnailLoader()
 {
-    delete d->iconTagThumbThread;
     delete d->iconAlbumThumbThread;
+    delete d->iconTagThumbThread;
     delete d;
 }
 
 void AlbumThumbnailLoader::cleanUp()
 {
-    delete d->iconTagThumbThread;
-    d->iconTagThumbThread   = nullptr;
+    d->iconAlbumThumbThread->stopAllTasks();
+    d->iconTagThumbThread->stopAllTasks();
 
-    delete d->iconAlbumThumbThread;
-    d->iconAlbumThumbThread = nullptr;
+    d->iconAlbumThumbThread->wait();
+    d->iconTagThumbThread->wait();
 }
 
 QPixmap AlbumThumbnailLoader::getStandardTagIcon(RelativeSize relativeSize)

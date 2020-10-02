@@ -135,6 +135,9 @@ void ThumbnailLoadThread::cleanUp()
 
     defaultIconViewThread()->stopAllTasks();
     defaultThread()->stopAllTasks();
+
+    defaultIconViewThread()->wait();
+    defaultThread()->wait();
 }
 
 void ThumbnailLoadThread::initializeThumbnailDatabase(const DbEngineParameters& params, ThumbnailInfoProvider* const provider)
