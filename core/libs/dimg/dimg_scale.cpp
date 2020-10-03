@@ -395,39 +395,35 @@ DImg DImg::smoothScaleSection(int sx, int sy,
 
 uint** DImgScale::dimgCalcYPoints(uint* const src, int sw, int sh, int dh)
 {
-    uint** p = nullptr;
-    (void)p;    // To prevent cppcheck warnings.
-    int i, j = 0;
+    int i;
     ullong val, inc;
 
-    p   = new uint* [dh+1];
-    val = 0;
-    inc = (((ullong)sh) << 16) / dh;
+    uint** p = new uint*[dh + 1];
+    val      = 0;
+    inc      = (((ullong)sh) << 16) / dh;
 
     for (i = 0 ; i < dh ; ++i)
     {
-        p[j++] = src + ((val >> 16) * sw);
-        val   += inc;
+        p[i] = src + ((val >> 16) * sw);
+        val += inc;
     }
 
-    return(p);
+    return p;
 }
 
 ullong** DImgScale::dimgCalcYPoints16(ullong* const src, int sw, int sh, int dh)
 {
-    ullong** p = nullptr;
-    (void)p;    // To prevent cppcheck warnings.
-    int i, j   = 0;
+    int i;
     ullong val, inc;
 
-    p   = new ullong*[(dh+1)];
-    val = 0;
-    inc = (((ullong)sh) << 16) / dh;
+    ullong** p = new ullong*[dh + 1];
+    val        = 0;
+    inc        = (((ullong)sh) << 16) / dh;
 
     for (i = 0 ; i < dh ; ++i)
     {
-        p[j++] = src + ((val >> 16) * sw);
-        val   += inc;
+        p[i] = src + ((val >> 16) * sw);
+        val += inc;
     }
 
     return p;
@@ -435,54 +431,52 @@ ullong** DImgScale::dimgCalcYPoints16(ullong* const src, int sw, int sh, int dh)
 
 int* DImgScale::dimgCalcXPoints(int sw, int dw)
 {
-    int* p = nullptr, i, j = 0;
-    (void)p;    // To prevent cppcheck warnings.
+    int i;
     ullong val, inc;
 
-    p   = new int[dw+1];
-    val = 0;
-    inc = (((ullong)sw) << 16) / dw;
+    int* p = new int[dw + 1];
+    val    = 0;
+    inc    = (((ullong)sw) << 16) / dw;
 
     for (i = 0 ; i < dw ; ++i)
     {
-        p[j++] = (val >> 16);
-        val   += inc;
+        p[i] = (val >> 16);
+        val += inc;
     }
 
-    return(p);
+    return p;
 }
 
 int* DImgScale::dimgCalcApoints(int s, int d, int up)
 {
-    int* p = nullptr, i, j = 0;
-    (void)p;    // To prevent cppcheck warnings.
+    int i;
+    ullong val, inc;
 
-    p = new int[d];
+    int* p = new int[d + 1];
 
     if (up)
     {
         // scaling up
-        ullong val, inc;
 
         val = 0;
         inc = (((ullong)s) << 16) / d;
 
         for (i = 0 ; i < d ; ++i)
         {
-            p[j++] = (val >> 8) - ((val >> 8) & 0xffffff00);
+            p[i] = (val >> 8) - ((val >> 8) & 0xffffff00);
 
             if ((int)(val >> 16) >= (s - 1))
             {
-                p[j - 1] = 0;
+                p[i - 1] = 0;
             }
 
-            val   += inc;
+            val += inc;
         }
     }
     else
     {
         // scaling down
-        ullong val, inc;
+
         int ap, Cp;
         val = 0;
         inc = (((ullong)s) << 16) / d;
@@ -491,13 +485,12 @@ int* DImgScale::dimgCalcApoints(int s, int d, int up)
         for (i = 0 ; i < d ; ++i)
         {
             ap   = ((0x100 - ((val >> 8) & 0xff)) * Cp) >> 8;
-            p[j] = ap | (Cp << 16);
-            ++j;
+            p[i] = ap | (Cp << 16);
             val += inc;
         }
     }
 
-    return(p);
+    return p;
 }
 
 DImgScaleInfo* DImgScale::dimgCalcScaleInfo(const DImg& img,
