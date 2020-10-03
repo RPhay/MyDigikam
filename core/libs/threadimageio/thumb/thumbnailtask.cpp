@@ -133,7 +133,6 @@ void ThumbnailLoadingTask::execute()
 
                 // cppcheck-suppress knownConditionTrueFalse
                 while ((m_loadingTaskStatus != LoadingTaskStatusStopping) &&
-                       m_usedProcess                                      &&
                        !m_usedProcess->completed())
                 {
                     lock.timedWait();
@@ -141,14 +140,7 @@ void ThumbnailLoadingTask::execute()
 
                 // remove listener from process
 
-                if (m_usedProcess)
-                {
-                    m_usedProcess->removeListener(this);
-                }
-
-                // set to 0, as checked in setStatus
-
-                m_usedProcess = nullptr;
+                m_usedProcess->removeListener(this);
 
                 // wake up the process which is waiting until all listeners have removed themselves
 
@@ -156,18 +148,14 @@ void ThumbnailLoadingTask::execute()
             }
             else
             {
-                // Neither in cache, nor currently loading in different thread.
-                // Load it here and now, add this LoadingProcess to cache list.
-
-                cache->addLoadingProcess(this);
-
                 // Add this to the list of listeners
 
                 addListener(this);
 
-                // for use in setStatus
+                // Neither in cache, nor currently loading in different thread.
+                // Load it here and now, add this LoadingProcess to cache list.
 
-                m_usedProcess = this;
+                cache->addLoadingProcess(this);
 
                 // Notify other processes that we are now loading this image.
                 // They might be interested - see notifyNewLoadingProcess below
@@ -250,10 +238,6 @@ void ThumbnailLoadingTask::execute()
             {
                 lock.timedWait();
             }
-
-            // set to 0, as checked in setStatus
-
-            m_usedProcess = nullptr;
         }
     }
 

@@ -182,8 +182,6 @@ void SharedLoadingTask::execute()
         {
             // find possible running loading process
 
-            m_usedProcess = nullptr;
-
             for (QStringList::const_iterator it = lookupKeys.constBegin() ; it != lookupKeys.constEnd() ; ++it)
             {
                 if ((m_usedProcess = cache->retrieveLoadingProcess(*it)))
@@ -205,7 +203,6 @@ void SharedLoadingTask::execute()
 
                 // cppcheck-suppress knownConditionTrueFalse
                 while ((m_loadingTaskStatus != LoadingTaskStatusStopping) &&
-                       m_usedProcess                                      &&
                        !m_usedProcess->completed())
                 {
                     lock.timedWait();
@@ -213,14 +210,7 @@ void SharedLoadingTask::execute()
 
                 // remove listener from process
 
-                if (m_usedProcess)
-                {
-                    m_usedProcess->removeListener(this);
-                }
-
-                // set to 0, as checked in setStatus
-
-                m_usedProcess = nullptr;
+                m_usedProcess->removeListener(this);
 
                 // wake up the process which is waiting until all listeners have removed themselves
 
@@ -230,18 +220,14 @@ void SharedLoadingTask::execute()
             }
             else
             {
-                // Neither in cache, nor currently loading in different thread.
-                // Load it here and now, add this LoadingProcess to cache list.
-
-                cache->addLoadingProcess(this);
-
                 // Add this to the list of listeners
 
                 addListener(this);
 
-                // for use in setStatus
+                // Neither in cache, nor currently loading in different thread.
+                // Load it here and now, add this LoadingProcess to cache list.
 
-                m_usedProcess = this;
+                cache->addLoadingProcess(this);
 
                 // Notify other processes that we are now loading this image.
                 // They might be interested - see notifyNewLoadingProcess below
@@ -310,10 +296,6 @@ void SharedLoadingTask::execute()
             {
                 lock.timedWait();
             }
-
-            // set to 0, as checked in setStatus
-
-            m_usedProcess = nullptr;
         }
     }
 
