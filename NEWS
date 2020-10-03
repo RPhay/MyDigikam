@@ -138,4 +138,7 @@ BUGFIXES:
 125 ==> 425230 - Crash when scanning for faces.
 126 ==> 425698 - digiKam face detection crash under Linux.
 127 ==> 420411 - digiKam Crash on detect faces 7.0.0 beta3 debug build.
-128 ==> 
+128 ==> 425972 - Scan for face: crash under Windows during Album scan with multicore.
+129 ==> 425904 - digiKam crash while scanning faces.
+130 ==> 418939 - Crash in metadata engine when search faces.
+131 ==> 
