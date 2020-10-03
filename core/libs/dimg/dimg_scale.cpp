@@ -499,10 +499,9 @@ DImgScaleInfo* DImgScale::dimgCalcScaleInfo(const DImg& img,
                                             bool aa)
 {
     DImgScaleInfo* const isi = new DImgScaleInfo;
-    int scw, sch;
 
-    scw = dw * img.width()  / sw;
-    sch = dh * img.height() / sh;
+    int scw = (ullong)dw * (ullong)img.width()  / (ullong)sw;
+    int sch = (ullong)dh * (ullong)img.height() / (ullong)sh;
 
     isi->xup_yup = (abs(dw) >= sw) + ((abs(dh) >= sh) << 1);
 
