@@ -109,35 +109,36 @@ void PreviewLoadingTask::execute()
         {
             // find possible running loading process
 
+            LoadingProcess* usedProcess = nullptr;
+
             for (QStringList::const_iterator it = lookupKeys.constBegin() ; it != lookupKeys.constEnd() ; ++it)
             {
-                if ((m_usedProcess = cache->retrieveLoadingProcess(*it)))
+                if ((usedProcess = cache->retrieveLoadingProcess(*it)))
                 {
                     break;
                 }
             }
 
-            if (m_usedProcess)
+            if (usedProcess)
             {
                 // Other process is right now loading this image.
                 // Add this task to the list of listeners and
                 // attach this thread to the other thread, wait until loading
                 // has finished.
 
-                m_usedProcess->addListener(this);
+                usedProcess->addListener(this);
 
                 // break loop when either the loading has completed, or this task is being stopped
 
                 // cppcheck-suppress knownConditionTrueFalse
-                while ((m_loadingTaskStatus != LoadingTaskStatusStopping) &&
-                       !m_usedProcess->completed())
+                while ((m_loadingTaskStatus != LoadingTaskStatusStopping) && !usedProcess->completed())
                 {
                     lock.timedWait();
                 }
 
                 // remove listener from process
 
-                m_usedProcess->removeListener(this);
+                usedProcess->removeListener(this);
 
                 // wake up the process which is waiting until all listeners have removed themselves
 

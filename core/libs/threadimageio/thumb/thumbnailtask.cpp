@@ -118,29 +118,28 @@ void ThumbnailLoadingTask::execute()
             // find possible running loading process
             // do not wait on other loading processes?
 
-            m_usedProcess = cache->retrieveLoadingProcess(m_loadingDescription.cacheKey());
+            LoadingProcess* const usedProcess = cache->retrieveLoadingProcess(m_loadingDescription.cacheKey());
 
-            if (m_usedProcess)
+            if (usedProcess)
             {
                 // Other process is right now loading this image.
                 // Add this task to the list of listeners and
                 // attach this thread to the other thread, wait until loading
                 // has finished.
 
-                m_usedProcess->addListener(this);
+                usedProcess->addListener(this);
 
                 // break loop when either the loading has completed, or this task is being stopped
 
                 // cppcheck-suppress knownConditionTrueFalse
-                while ((m_loadingTaskStatus != LoadingTaskStatusStopping) &&
-                       !m_usedProcess->completed())
+                while ((m_loadingTaskStatus != LoadingTaskStatusStopping) && !usedProcess->completed())
                 {
                     lock.timedWait();
                 }
 
                 // remove listener from process
 
-                m_usedProcess->removeListener(this);
+                usedProcess->removeListener(this);
 
                 // wake up the process which is waiting until all listeners have removed themselves
 
@@ -265,7 +264,7 @@ void ThumbnailLoadingTask::setupCreator()
 
 void ThumbnailLoadingTask::setThumbResult(const LoadingDescription& loadingDescription, const QImage& qimage)
 {
-    // this is called from another process's execute while this task is waiting on m_usedProcess.
+    // this is called from another process's execute while this task is waiting on usedProcess.
     // Note that loadingDescription need not equal m_loadingDescription (may be superior)
 
     LoadingDescription tempDescription       = loadingDescription;

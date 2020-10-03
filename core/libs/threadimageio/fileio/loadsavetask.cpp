@@ -121,8 +121,7 @@ SharedLoadingTask::SharedLoadingTask(LoadSaveThread* const thread, const Loading
                                      LoadSaveThread::AccessMode mode, LoadingTaskStatus loadingTaskStatus)
     : LoadingTask  (thread, description, loadingTaskStatus),
       m_completed  (false),
-      m_accessMode (mode),
-      m_usedProcess(nullptr)
+      m_accessMode (mode)
 {
     if (m_accessMode == LoadSaveThread::AccessModeRead && needsPostProcessing())
     {
@@ -182,35 +181,36 @@ void SharedLoadingTask::execute()
         {
             // find possible running loading process
 
+            LoadingProcess* usedProcess = nullptr;
+
             for (QStringList::const_iterator it = lookupKeys.constBegin() ; it != lookupKeys.constEnd() ; ++it)
             {
-                if ((m_usedProcess = cache->retrieveLoadingProcess(*it)))
+                if ((usedProcess = cache->retrieveLoadingProcess(*it)))
                 {
                     break;
                 }
             }
 
-            if (m_usedProcess)
+            if (usedProcess)
             {
                 // Other process is right now loading this image.
                 // Add this task to the list of listeners and
                 // attach this thread to the other thread, wait until loading
                 // has finished.
 
-                m_usedProcess->addListener(this);
+                usedProcess->addListener(this);
 
                 // break loop when either the loading has completed, or this task is being stopped
 
                 // cppcheck-suppress knownConditionTrueFalse
-                while ((m_loadingTaskStatus != LoadingTaskStatusStopping) &&
-                       !m_usedProcess->completed())
+                while ((m_loadingTaskStatus != LoadingTaskStatusStopping) && !usedProcess->completed())
                 {
                     lock.timedWait();
                 }
 
                 // remove listener from process
 
-                m_usedProcess->removeListener(this);
+                usedProcess->removeListener(this);
 
                 // wake up the process which is waiting until all listeners have removed themselves
 
@@ -325,7 +325,7 @@ void SharedLoadingTask::execute()
 
 void SharedLoadingTask::setResult(const LoadingDescription& loadingDescription, const DImg& img)
 {
-    // this is called from another process's execute while this task is waiting on m_usedProcess.
+    // this is called from another process's execute while this task is waiting on usedProcess.
     // Note that loadingDescription need not equal m_loadingDescription (may be superior)
 
     LoadingDescription tempDescription       = loadingDescription;
