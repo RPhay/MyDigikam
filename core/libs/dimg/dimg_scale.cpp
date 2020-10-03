@@ -465,9 +465,9 @@ int* DImgScale::dimgCalcApoints(int s, int d, int up)
         {
             p[i] = (val >> 8) - ((val >> 8) & 0xffffff00);
 
-            if ((int)(val >> 16) >= (s - 1))
+            if ((val >> 16) >= (ullong)(s - 1))
             {
-                p[i - 1] = 0;
+                p[i] = 0;
             }
 
             val += inc;
