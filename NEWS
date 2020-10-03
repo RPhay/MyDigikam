@@ -133,5 +133,9 @@ BUGFIXES:
 120 ==> 427079 - Error "internal server is not used and is not active".
 121 ==> 426175 - Segmentation fault while Faces detection.
 122 ==> 423632 - Segfault when scanning faces.
-123 ==> 425723 - Digikam crashes after a while when detecting faces using multiple CPU cores.
-124 ==> 
+123 ==> 425723 - digikam crashes after a while when detecting faces using multiple CPU cores.
+124 ==> 425063 - Detect Faces crashes the App.
+125 ==> 425230 - Crash when scanning for faces.
+126 ==> 425698 - digiKam face detection crash under Linux.
+127 ==> 420411 - digiKam Crash on detect faces 7.0.0 beta3 debug build.
+128 ==> 
