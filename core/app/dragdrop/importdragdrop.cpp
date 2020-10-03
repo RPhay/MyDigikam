@@ -83,19 +83,25 @@ ImportDragDropHandler::DropAction ImportDragDropHandler::copyOrMove(const QDropE
         switch (e->proposedAction())
         {
             case Qt::CopyAction:
+            {
                 return CopyAction;
+            }
 
             case Qt::MoveAction:
+            {
                 return MoveAction;
+            }
 
             default:
+            {
                 return NoAction;
+            }
         }
     }
 
     QMenu popMenu(view);
 
-    QAction* moveAction = nullptr;
+    QAction* moveAction       = nullptr;
 
     if (allowMove)
     {
@@ -105,7 +111,7 @@ ImportDragDropHandler::DropAction ImportDragDropHandler::copyOrMove(const QDropE
     QAction* const copyAction = popMenu.addAction(QIcon::fromTheme(QLatin1String("edit-copy")), i18n("&Copy Here"));
     popMenu.addSeparator();
 
-    QAction* groupAction = nullptr;
+    QAction* groupAction      = nullptr;
 
     if (askForGrouping)
     {
@@ -144,7 +150,9 @@ static DropAction groupAction(const QDropEvent*, QWidget* view)
 }
 */
 
-bool ImportDragDropHandler::dropEvent(QAbstractItemView* abstractview, const QDropEvent* e, const QModelIndex& droppedOn)
+bool ImportDragDropHandler::dropEvent(QAbstractItemView* abstractview,
+                                      const QDropEvent* e,
+                                      const QModelIndex& droppedOn)
 {
     ImportCategorizedView* const view = static_cast<ImportCategorizedView*>(abstractview);
 
@@ -155,7 +163,7 @@ bool ImportDragDropHandler::dropEvent(QAbstractItemView* abstractview, const QDr
 
     if (DItemDrag::canDecode(e->mimeData()))
     {
-        QList<QUrl> lst = DigikamApp::instance()->view()->selectedUrls();
+        QList<QUrl> lst         = DigikamApp::instance()->view()->selectedUrls();
 
         QMenu popMenu(view);
         popMenu.addSection(QIcon::fromTheme(QLatin1String("digikam")), i18n("Exporting"));
@@ -164,7 +172,7 @@ bool ImportDragDropHandler::dropEvent(QAbstractItemView* abstractview, const QDr
         popMenu.addSeparator();
         popMenu.addAction(QIcon::fromTheme(QLatin1String("dialog-cancel")), i18n("C&ancel"));
         popMenu.setMouseTracking(true);
-        QAction* const choice = popMenu.exec(view->mapToGlobal(e->pos()));
+        QAction* const choice   = popMenu.exec(view->mapToGlobal(e->pos()));
 
         if (choice)
         {

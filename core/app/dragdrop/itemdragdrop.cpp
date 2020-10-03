@@ -112,13 +112,19 @@ static DropAction copyOrMove(const QDropEvent* const e,
         switch (e->proposedAction())
         {
             case Qt::CopyAction:
+            {
                 return CopyAction;
+            }
 
             case Qt::MoveAction:
+            {
                 return MoveAction;
+            }
 
             default:
+            {
                 return NoAction;
+            }
         }
     }
 

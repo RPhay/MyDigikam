@@ -61,7 +61,9 @@ AlbumModel* AlbumDragDropHandler::model() const
     return static_cast<AlbumModel*>(m_model);
 }
 
-bool AlbumDragDropHandler::dropEvent(QAbstractItemView* view, const QDropEvent* e, const QModelIndex& droppedOn)
+bool AlbumDragDropHandler::dropEvent(QAbstractItemView* view,
+                                     const QDropEvent* e,
+                                     const QModelIndex& droppedOn)
 {
     if (accepts(e, droppedOn) == Qt::IgnoreAction)
     {
@@ -99,7 +101,7 @@ bool AlbumDragDropHandler::dropEvent(QAbstractItemView* view, const QDropEvent* 
         popMenu.addSeparator();
         popMenu.addAction(QIcon::fromTheme(QLatin1String("dialog-cancel")), i18n("C&ancel"));
         popMenu.setMouseTracking(true);
-        QAction* const choice = popMenu.exec(QCursor::pos());
+        QAction* const choice     = popMenu.exec(QCursor::pos());
 
         if (choice == moveAction)
         {
@@ -155,7 +157,7 @@ bool AlbumDragDropHandler::dropEvent(QAbstractItemView* view, const QDropEvent* 
             else
             {
                 QMenu popMenu(view);
-                QAction* setAction = nullptr;
+                QAction* setAction    = nullptr;
 
                 if (imageIDs.count() == 1)
                 {
@@ -177,7 +179,6 @@ bool AlbumDragDropHandler::dropEvent(QAbstractItemView* view, const QDropEvent* 
 
             return true;
         }
-
 
         bool ddMove       = false;
         bool ddCopy       = false;
@@ -212,7 +213,7 @@ bool AlbumDragDropHandler::dropEvent(QAbstractItemView* view, const QDropEvent* 
             popMenu.addSeparator();
             popMenu.addAction(QIcon::fromTheme(QLatin1String("dialog-cancel")), i18n("C&ancel"));
             popMenu.setMouseTracking(true);
-            QAction* const choice = popMenu.exec(QCursor::pos());
+            QAction* const choice     = popMenu.exec(QCursor::pos());
 
             if (choice)
             {
@@ -267,7 +268,7 @@ bool AlbumDragDropHandler::dropEvent(QAbstractItemView* view, const QDropEvent* 
             popMenu.addSeparator();
             popMenu.addAction(QIcon::fromTheme(QLatin1String("dialog-cancel")), i18n("C&ancel"));
             popMenu.setMouseTracking(true);
-            QAction* const choice = popMenu.exec(QCursor::pos());
+            QAction* const choice         = popMenu.exec(QCursor::pos());
 
             if (choice && destAlbum)
             {

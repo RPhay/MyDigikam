@@ -188,7 +188,7 @@ bool TagDragDropHandler::dropEvent(QAbstractItemView* view,
             else
             {
                 QMenu popMenu(view);
-                QAction* setAction = nullptr;
+                QAction* setAction    = nullptr;
 
                 if (imageIDs.count() == 1)
                 {
@@ -304,7 +304,7 @@ Qt::DropAction TagDragDropHandler::accepts(const QDropEvent* e, const QModelInde
         }
 
         // Allow dragging on empty space to move the dragged album under the root albumForIndex
-        // - unless the itemDrag is already at root level
+        // unless the itemDrag is already at root level
 
         if (!destAlbum)
         {
