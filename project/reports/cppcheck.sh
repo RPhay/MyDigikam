@@ -50,7 +50,6 @@ cppcheck -j$CPU_CORES \
          --enable=all \
          --report-progress \
          --suppress=*:*cimg*.h \
-         --suppress=*:*libpgf*.h \
          --suppress=*:*libraw*.h \
          --suppress=*:*libde265*.h \
          --suppress=*:*libheif*.h \
