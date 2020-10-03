@@ -41,9 +41,9 @@ public:
 
     explicit InfraredContainer()
         : sensibility(200),
-          redGain(0.4),
-          greenGain(2.1),
-          blueGain(-0.8)
+          redGain    (0.4),
+          greenGain  (2.1),
+          blueGain   (-0.8)
     {
     };
 
@@ -70,9 +70,9 @@ public:
 
     explicit InfraredFilter(QObject* const parent = nullptr);
     explicit InfraredFilter(DImg* const orgImage,
-                            QObject* const parent=nullptr,
-                            const InfraredContainer& settings=InfraredContainer());
-    ~InfraredFilter() override;
+                            QObject* const parent = nullptr,
+                            const InfraredContainer& settings = InfraredContainer());
+    ~InfraredFilter()                                                         override;
 
     static QString          FilterIdentifier()
     {
@@ -91,12 +91,12 @@ public:
         return 1;
     }
 
-    QString         filterIdentifier()                          const override
+    QString         filterIdentifier()                                  const override
     {
         return FilterIdentifier();
     }
 
-    FilterAction    filterAction()                                    override;
+    FilterAction    filterAction()                                            override;
     void                    readParameters(const FilterAction& action)        override;
 
 private:

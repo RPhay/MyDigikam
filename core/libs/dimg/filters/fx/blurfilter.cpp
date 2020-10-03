@@ -47,7 +47,7 @@ class Q_DECL_HIDDEN BlurFilter::Private
 public:
 
     explicit Private()
-      : radius(3),
+      : radius        (3),
         globalProgress(0)
     {
     }
@@ -74,9 +74,16 @@ BlurFilter::BlurFilter(DImg* const orgImage, QObject* const parent, int radius)
 }
 
 BlurFilter::BlurFilter(DImgThreadedFilter* const parentFilter,
-                       const DImg& orgImage, const DImg& destImage,
-                       int progressBegin, int progressEnd, int radius)
-    : DImgThreadedFilter(parentFilter, orgImage, destImage, progressBegin, progressEnd,
+                       const DImg& orgImage,
+                       const DImg& destImage,
+                       int progressBegin,
+                       int progressEnd,
+                       int radius)
+    : DImgThreadedFilter(parentFilter,
+                         orgImage,
+                         destImage,
+                         progressBegin,
+                         progressEnd,
                          parentFilter->filterName() + QLatin1String(": GaussianBlur")),
       d(new Private)
 {
@@ -267,7 +274,9 @@ void BlurFilter::filterImage()
     }
 
     foreach (QFuture<void> t, tasks)
+    {
         t.waitForFinished();
+    }
 }
 
 FilterAction BlurFilter::filterAction()

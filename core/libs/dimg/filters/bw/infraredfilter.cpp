@@ -54,7 +54,9 @@ InfraredFilter::InfraredFilter(QObject* const parent)
     initFilter();
 }
 
-InfraredFilter::InfraredFilter(DImg* const orgImage, QObject* const parent, const InfraredContainer& settings)
+InfraredFilter::InfraredFilter(DImg* const orgImage,
+                               QObject* const parent,
+                               const InfraredContainer& settings)
     : DImgThreadedFilter(orgImage, parent, QLatin1String("Infrared")),
       m_settings(settings)
 {
@@ -146,9 +148,12 @@ void InfraredFilter::filterImage()
     // This way simulate Infrared film dispersion for the highlights.
 
     DImg BWBlurImage(Width, Height, sixteenBit);
+
+    // cppcheck-suppress unusedScopedObject
     BlurFilter(this, BWImage, BWBlurImage, 10, 20, blurRadius);
 
     // save a memcpy
+
     pOverlayBits = BWBlurImage.bits();
 
     postProgress(40);

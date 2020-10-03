@@ -142,7 +142,7 @@ public:
 
     explicit FilmFilter(QObject* const parent = nullptr);
     explicit FilmFilter(DImg* const orgImage, QObject* const parent = nullptr, const FilmContainer& settings = FilmContainer());
-    ~FilmFilter() override;
+    ~FilmFilter()                                                 override;
 
     static QString FilterIdentifier()
     {
@@ -161,13 +161,13 @@ public:
         return 1;
     }
 
-    QString filterIdentifier()                      const override
+    QString filterIdentifier()                              const override
     {
         return FilterIdentifier();
     }
 
-    FilterAction filterAction()                           override;
-    void readParameters(const FilterAction& action)       override;
+    FilterAction filterAction()                                   override;
+    void readParameters(const FilterAction& action)               override;
 
 private:
 

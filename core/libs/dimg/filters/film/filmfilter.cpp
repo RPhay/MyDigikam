@@ -244,10 +244,17 @@ int FilmContainer::whitePointForChannel(int ch) const
 
     switch (ch)
     {
-        case RedChannel:    return d->whitePoint.red();
-        case GreenChannel:  return d->whitePoint.green();
-        case BlueChannel:   return d->whitePoint.blue();
-        default:            return max;
+        case RedChannel:
+            return d->whitePoint.red();
+
+        case GreenChannel:
+            return d->whitePoint.green();
+
+        case BlueChannel:
+            return d->whitePoint.blue();
+
+        default:
+            return max;
     }
 
     // not reached
@@ -414,6 +421,7 @@ void FilmFilter::filterImage()
     // level the image first, this removes the orange mask and corrects
     // colors according to the density ranges of the film profile
 
+    // cppcheck-suppress unusedScopedObject
     LevelsFilter(l, this, m_orgImage, tmpLevel, 0, 40);
 
     // in case of a linear raw scan, gamma needs to be
@@ -422,10 +430,13 @@ void FilmFilter::filterImage()
     // frequently found in literature
 
     gamma.gamma = d->film.gamma();
+
+    // cppcheck-suppress unusedScopedObject
     CBFilter(gamma, this, tmpLevel, tmpGamma, 40, 80);
 
     // invert the image to have a positive image
 
+    // cppcheck-suppress unusedScopedObject
     InvertFilter(this, tmpGamma, tmpInv, 80, 100);
 
     m_destImage = tmpInv;

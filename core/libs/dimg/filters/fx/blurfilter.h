@@ -41,13 +41,21 @@ class DIGIKAM_EXPORT BlurFilter : public DImgThreadedFilter
 public:
 
     explicit BlurFilter(QObject* const parent = nullptr);
-    explicit BlurFilter(DImg* const orgImage, QObject* const parent=nullptr, int radius=3);
+    explicit BlurFilter(DImg* const orgImage,
+                        QObject* const parent = nullptr,
+                        int radius = 3);
 
-    // Constructor for slave mode: execute immediately in current thread with specified master filter
-    explicit BlurFilter(DImgThreadedFilter* const parentFilter, const DImg& orgImage, const DImg& destImage,
-                        int progressBegin=0, int progressEnd=100, int radius=3);
+    /**
+     * Constructor for slave mode: execute immediately in current thread with specified master filter
+     */
+    explicit BlurFilter(DImgThreadedFilter* const parentFilter,
+                        const DImg& orgImage,
+                        const DImg& destImage,
+                        int progressBegin = 0,
+                        int progressEnd = 100,
+                        int radius = 3);
 
-    ~BlurFilter() override;
+    ~BlurFilter()                                                             override;
 
     static QString          FilterIdentifier()
     {
@@ -66,12 +74,12 @@ public:
         return 1;
     }
 
-    QString         filterIdentifier()                          const override
+    QString         filterIdentifier()                                  const override
     {
         return FilterIdentifier();
     }
 
-    FilterAction    filterAction()                                    override;
+    FilterAction    filterAction()                                            override;
 
     void                    readParameters(const FilterAction& action)        override;
 
