@@ -134,7 +134,7 @@ DImg::DImg(uint width, uint height, bool sixteenBit, bool alpha, uchar* const da
     putImageData(width, height, sixteenBit, alpha, data, copyData);
 }
 
-DImg::DImg(const DImg& image, int w, int h)
+DImg::DImg(const DImg& image, uint w, uint h)
     : m_priv(new Private)
 {
     /**

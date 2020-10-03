@@ -760,7 +760,7 @@ public:
 
 private:
 
-    DImg(const DImg& image, int w, int h);
+    DImg(const DImg& image, uint w, uint h);
 
     void copyMetaData(const QExplicitlySharedDataPointer<Private>& src);
     void copyImageData(const QExplicitlySharedDataPointer<Private>& src);
