@@ -34,7 +34,6 @@
 #include "iccsettings.h"
 #include "kmemoryinfo.h"
 #include "dmetadata.h"
-#include "loadsavetask.h"
 #include "thumbnailsize.h"
 
 namespace Digikam
@@ -273,16 +272,7 @@ void LoadingCache::notifyNewLoadingProcess(LoadingProcess* const process, const 
     for (QMap<QString, LoadingProcess*>::const_iterator it = d->loadingDict.constBegin() ;
          it != d->loadingDict.constEnd() ; ++it)
     {
-        SharedLoadingTask* const task = dynamic_cast<SharedLoadingTask*>(it.value());
-
-        if (task)
-        {
-            task->notifyNewLoadingProcess(process, description);
-        }
-        else
-        {
-            qCWarning(DIGIKAM_GENERAL_LOG) << "SharedLoadingTask not found!!!";
-        }
+        it.value()->notifyNewLoadingProcess(process, description);
     }
 }
 

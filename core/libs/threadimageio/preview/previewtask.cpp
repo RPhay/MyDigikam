@@ -332,6 +332,10 @@ void PreviewLoadingTask::execute()
                 // remove myself from list of listeners
 
                 removeListener(this);
+            }
+
+            {
+                LoadingCache::CacheLock lock(cache);
 
                 if (!m_img.isNull())
                 {

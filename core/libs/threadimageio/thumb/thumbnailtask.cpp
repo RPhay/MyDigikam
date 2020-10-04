@@ -193,49 +193,55 @@ void ThumbnailLoadingTask::execute()
 
         if (continueQuery())
         {
-            LoadingCache::CacheLock lock(cache);
-
-            // remove this from the list of loading processes in cache
-
-            cache->removeLoadingProcess(this);
-
-            // remove myself from list of listeners
-
-            removeListener(this);
-
-            if (!m_qimage.isNull())
             {
-                // put valid image into cache of loaded images
+                LoadingCache::CacheLock lock(cache);
 
-                cache->putThumbnail(m_loadingDescription.cacheKey(), m_qimage,
-                                    m_loadingDescription.filePath);
+                // remove this from the list of loading processes in cache
 
-                // dispatch image to all listeners
+                cache->removeLoadingProcess(this);
 
-                for (int i = 0 ; i < m_listeners.count() ; ++i)
-                {
-                    ThumbnailLoadingTask* const task = dynamic_cast<ThumbnailLoadingTask*>(m_listeners.at(i));
+                // remove myself from list of listeners
 
-                    if (task)
-                    {
-                        task->setThumbResult(m_loadingDescription, m_qimage);
-                    }
-                }
+                removeListener(this);
             }
 
-            // indicate that loading has finished so that listeners can stop waiting
-
-            m_completed = true;
-
-            // wake all listeners waiting on cache condVar, so that they remove themselves
-
-            lock.wakeAll();
-
-            // wait until all listeners have removed themselves
-
-            while (m_listeners.count() != 0)
             {
-                lock.timedWait();
+                LoadingCache::CacheLock lock(cache);
+
+                if (!m_qimage.isNull())
+                {
+                    // put valid image into cache of loaded images
+
+                    cache->putThumbnail(m_loadingDescription.cacheKey(), m_qimage,
+                                        m_loadingDescription.filePath);
+
+                    // dispatch image to all listeners
+
+                    for (int i = 0 ; i < m_listeners.count() ; ++i)
+                    {
+                        ThumbnailLoadingTask* const task = dynamic_cast<ThumbnailLoadingTask*>(m_listeners.at(i));
+
+                        if (task)
+                        {
+                            task->setThumbResult(m_loadingDescription, m_qimage);
+                        }
+                    }
+                }
+
+                // indicate that loading has finished so that listeners can stop waiting
+
+                m_completed = true;
+
+                // wake all listeners waiting on cache condVar, so that they remove themselves
+
+                lock.wakeAll();
+
+                // wait until all listeners have removed themselves
+
+                while (m_listeners.count() != 0)
+                {
+                    lock.timedWait();
+                }
             }
         }
     }
