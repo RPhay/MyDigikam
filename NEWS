@@ -133,7 +133,7 @@ BUGFIXES:
 120 ==> 427079 - Error "internal server is not used and is not active".
 121 ==> 426175 - Segmentation fault while Faces detection.
 122 ==> 423632 - Segfault when scanning faces.
-123 ==> 425723 - digikam crashes after a while when detecting faces using multiple CPU cores.
+123 ==> 425723 - digiKam crashes after a while when detecting faces using multiple CPU cores.
 124 ==> 425063 - Detect Faces crashes the App.
 125 ==> 425230 - Crash when scanning for faces.
 126 ==> 425698 - digiKam face detection crash under Linux.
@@ -144,4 +144,6 @@ BUGFIXES:
 131 ==> 426236 - Crashed when running face detection.
 132 ==> 422735 - Segment fault after first 'scan collection for faces'.
 133 ==> 425096 - Crash Unsupported JPEG process: SOF type 0xc8.
-134 ==> 
+134 ==> 425702 - digiKam crashes under Linux when detecting faces.
+135 ==> 425703 - digiKam crashes (again) under Linux while detecting faces.
+136 ==> 
