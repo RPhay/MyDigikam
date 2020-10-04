@@ -35,6 +35,17 @@ ChecksCPUCores
 RegisterRemoteServers
 
 #################################################################################################
+# Check if IcoTool CLI program is installed
+
+if ! which icotool ; then
+    echo "IcoTool is not installed"
+    echo "See https://www.nongnu.org/icoutils/ for details."
+    exit 1
+else
+    echo "Check IcoTool CLI passed..."
+fi
+
+#################################################################################################
 
 # Pathes rules
 ORIG_PATH="$PATH"

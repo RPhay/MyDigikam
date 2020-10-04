@@ -111,23 +111,6 @@ mv $MXE_INSTALL_PREFIX/libmarble* $MXE_INSTALL_PREFIX/bin
 
 #################################################################################################
 
-export PATH=$ORIG_PATH
-
-# Build PNG2Ico CLI tool used by ECM for host OS.
-
-cd $ORIG_WD/png2ico
-
-rm -f CMakeCache.txt > /dev/null
-
-cmake . \
-      -DCMAKE_BUILD_TYPE=RelWithDebInfo \
-      -DCMAKE_COLOR_MAKEFILE=ON \
-      -Wno-dev
-
-make -j$CPU_CORES
-
-#################################################################################################
-
 cd "$ORIG_WD"
 
 export PATH=$ORIG_PATH
