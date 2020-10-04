@@ -142,5 +142,6 @@ BUGFIXES:
 129 ==> 425904 - digiKam crash while scanning faces.
 130 ==> 418939 - Crash in metadata engine when search faces.
 131 ==> 426236 - Crashed when running face detection.
-132 ==> 
+132 ==> 422735 - Segment fault after first 'scan collection for faces'.
+133 ==> 
 
