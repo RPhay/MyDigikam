@@ -146,4 +146,7 @@ BUGFIXES:
 133 ==> 425096 - Crash Unsupported JPEG process: SOF type 0xc8.
 134 ==> 425702 - digiKam crashes under Linux when detecting faces.
 135 ==> 425703 - digiKam crashes (again) under Linux while detecting faces.
-136 ==> 
+136 ==> 184469 - Red eyes doesn't work here.
+137 ==> 174683 - Crashes when try to correct red eye.
+138 ==> 
+
