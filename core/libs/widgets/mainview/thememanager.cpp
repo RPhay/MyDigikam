@@ -220,7 +220,7 @@ void ThemeManager::populateThemeMenu()
         actionMap.insert(name, ac);
     }
 
-    // sort the list
+    // Sort the list
 
     QStringList actionMapKeys = actionMap.keys();
     actionMapKeys.sort();
@@ -254,6 +254,7 @@ QString ThemeManager::currentDesktopdefaultTheme() const
 {
     KSharedConfigPtr config = KSharedConfig::openConfig(QLatin1String("kdeglobals"));
     KConfigGroup group(config, "General");
+
     return group.readEntry("ColorScheme");
 }
 

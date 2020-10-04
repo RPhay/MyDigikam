@@ -83,23 +83,23 @@ class Q_DECL_HIDDEN DXmlGuiWindow::Private
 public:
 
     explicit Private()
-      : fullScreenHideToolBars(false),
-        fullScreenHideThumbBar(true),
-        fullScreenHideSideBars(false),
-        fullScreenHideStatusBar(false),
-        fsOptions(FS_NONE),
-        fullScreenAction(nullptr),
-        fullScreenBtn(nullptr),
-        dirtyMainToolBar(false),
-        thumbbarVisibility(true),
-        menubarVisibility(true),
-        statusbarVisibility(true),
-        dbStatAction(nullptr),
-        libsInfoAction(nullptr),
-        showMenuBarAction(nullptr),
-        showStatusBarAction(nullptr),
-        about(nullptr),
-        anim(nullptr)
+      : fullScreenHideToolBars  (false),
+        fullScreenHideThumbBar  (true),
+        fullScreenHideSideBars  (false),
+        fullScreenHideStatusBar (false),
+        fsOptions               (FS_NONE),
+        fullScreenAction        (nullptr),
+        fullScreenBtn           (nullptr),
+        dirtyMainToolBar        (false),
+        thumbbarVisibility      (true),
+        menubarVisibility       (true),
+        statusbarVisibility     (true),
+        dbStatAction            (nullptr),
+        libsInfoAction          (nullptr),
+        showMenuBarAction       (nullptr),
+        showStatusBarAction     (nullptr),
+        about                   (nullptr),
+        anim                    (nullptr)
     {
     }
 
@@ -229,7 +229,7 @@ void DXmlGuiWindow::registerPluginsActions()
 {
     guiFactory()->removeClient(this);
 
-    DPluginLoader* const dpl = DPluginLoader::instance();
+    DPluginLoader* const dpl      = DPluginLoader::instance();
     dpl->registerGenericPlugins(this);
 
     QList<DPluginAction*> actions = dpl->pluginsActions(DPluginAction::Generic, this);
@@ -259,11 +259,11 @@ void DXmlGuiWindow::registerPluginsActions()
 
 void DXmlGuiWindow::createHelpActions(bool coreOptions)
 {
-    d->libsInfoAction = new QAction(QIcon::fromTheme(QLatin1String("help-about")), i18n("Components Information"), this);
+    d->libsInfoAction                  = new QAction(QIcon::fromTheme(QLatin1String("help-about")), i18n("Components Information"), this);
     connect(d->libsInfoAction, SIGNAL(triggered()), this, SLOT(slotComponentsInfo()));
     actionCollection()->addAction(QLatin1String("help_librariesinfo"), d->libsInfoAction);
 
-    d->about          = new DAboutData(this);
+    d->about                           = new DAboutData(this);
 
     QAction* const rawCameraListAction = new QAction(QIcon::fromTheme(QLatin1String("image-x-adobe-dng")), i18n("Supported RAW Cameras"), this);
     connect(rawCameraListAction, SIGNAL(triggered()), this, SLOT(slotRawCameraList()));
@@ -285,7 +285,7 @@ void DXmlGuiWindow::createHelpActions(bool coreOptions)
     connect(helpAction, SIGNAL(triggered()), this, SLOT(slotHelpContents()));
     actionCollection()->addAction(QLatin1String("help_handbook"), helpAction);
 
-    m_animLogo = new DLogoAction(this);
+    m_animLogo                         = new DLogoAction(this);
     actionCollection()->addAction(QLatin1String("logo_action"), m_animLogo);
 
     // Add options only for core components (typically all excepted Showfoto)
@@ -354,10 +354,13 @@ void DXmlGuiWindow::createSidebarActions()
 void DXmlGuiWindow::createSettingsActions()
 {
     d->showMenuBarAction   = KStandardAction::showMenubar(this, SLOT(slotShowMenuBar()), actionCollection());
+
 #ifdef Q_OS_MACOS
+
     // Under MacOS the menu bar visibility is managed by desktop.
 
     d->showMenuBarAction->setVisible(false);
+
 #endif
 
     d->showStatusBarAction = actionCollection()->action(QLatin1String("options_show_statusbar"));
@@ -378,8 +381,11 @@ void DXmlGuiWindow::createSettingsActions()
     KStandardAction::configureToolbars(this,      SLOT(slotConfToolbars()),      actionCollection());
 
 #ifdef HAVE_KNOTIFYCONFIG
+
     KStandardAction::configureNotifications(this, SLOT(slotConfNotifications()), actionCollection());
+
 #endif
+
 }
 
 QAction* DXmlGuiWindow::showMenuBarAction() const
@@ -404,9 +410,13 @@ void DXmlGuiWindow::slotShowStatusBar()
 
 void DXmlGuiWindow::slotConfNotifications()
 {
+
 #ifdef HAVE_KNOTIFYCONFIG
+
     KNotifyConfigWidget::configure(this);
+
 #endif
+
 }
 
 void DXmlGuiWindow::editKeyboardShortcuts(KActionCollection* const extraac, const QString& actitle)
@@ -537,18 +547,27 @@ void DXmlGuiWindow::slotToggleFullScreen(bool set)
         // hide menubar
 
 #ifdef Q_OS_WIN
+
         d->menubarVisibility = d->showMenuBarAction->isChecked();
+
 #else
+
         d->menubarVisibility = menuBar()->isVisible();
+
 #endif
+
         menuBar()->setVisible(false);
 
         // hide statusbar
 
 #ifdef Q_OS_WIN
+
         d->statusbarVisibility = d->showStatusBarAction->isChecked();
+
 #else
+
         d->statusbarVisibility = statusBar()->isVisible();
+
 #endif
 
         if ((d->fsOptions & FS_STATUSBAR) && d->fullScreenHideStatusBar)
@@ -812,7 +831,7 @@ void DXmlGuiWindow::saveWindowSize(QWindow* const win, KConfigGroup& group)
 QAction* DXmlGuiWindow::buildStdAction(StdActionType type, const QObject* const recvr,
                                        const char* const slot, QObject* const parent)
 {
-    switch(type)
+    switch (type)
     {
         case StdCopyAction:
             return KStandardAction::copy(recvr, slot, parent);
@@ -870,9 +889,10 @@ QAction* DXmlGuiWindow::buildStdAction(StdActionType type, const QObject* const 
             break;
 
         default:
-            return nullptr;
             break;
     }
+
+    return nullptr;
 }
 
 void DXmlGuiWindow::slotRawCameraList()
@@ -882,25 +902,22 @@ void DXmlGuiWindow::slotRawCameraList()
 
 void DXmlGuiWindow::slotDonateMoney()
 {
-    WebBrowserDlg* const browser
-        = new WebBrowserDlg(QUrl(QLatin1String("https://www.digikam.org/donate/")),
-                            qApp->activeWindow());
+    WebBrowserDlg* const browser = new WebBrowserDlg(QUrl(QLatin1String("https://www.digikam.org/donate/")),
+                                                     qApp->activeWindow());
     browser->show();
 }
 
 void DXmlGuiWindow::slotRecipesBook()
 {
-    WebBrowserDlg* const browser
-        = new WebBrowserDlg(QUrl(QLatin1String("https://www.digikam.org/recipes_book/")),
-                            qApp->activeWindow());
+    WebBrowserDlg* const browser = new WebBrowserDlg(QUrl(QLatin1String("https://www.digikam.org/recipes_book/")),
+                                                     qApp->activeWindow());
     browser->show();
 }
 
 void DXmlGuiWindow::slotContribute()
 {
-    WebBrowserDlg* const browser
-        = new WebBrowserDlg(QUrl(QLatin1String("https://www.digikam.org/contribute/")),
-                            qApp->activeWindow());
+    WebBrowserDlg* const browser = new WebBrowserDlg(QUrl(QLatin1String("https://www.digikam.org/contribute/")),
+                                                     qApp->activeWindow());
     browser->show();
 }
 
@@ -934,6 +951,7 @@ void DXmlGuiWindow::setupIconTheme()
     if (hasBreeze || hasBreezeDark)
     {
         // Tell Qt about the theme
+
         QIcon::setThemeSearchPaths(QStringList() << QLatin1String(":/icons"));
 
         const QStringList iconsDirs = QStandardPaths::locateAll(QStandardPaths::GenericDataLocation,

@@ -47,11 +47,11 @@ class Q_DECL_HIDDEN DCursorTracker::Private
 public:
 
     explicit Private()
-      : alignment(Qt::AlignCenter),
-        enable(true),
-        keepOpen(false),
+      : alignment    (Qt::AlignCenter),
+        enable       (true),
+        keepOpen     (false),
         autoHideTimer(nullptr),
-        parent(nullptr)
+        parent       (nullptr)
     {
     }
 

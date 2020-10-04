@@ -35,7 +35,6 @@
 
 class QAction;
 
-
 namespace Digikam
 {
 
@@ -47,14 +46,14 @@ public:
 
     enum BarMode
     {
-        PreviewZoomCtrl=0,      ///< Preview Zoom controller.
-        ThumbsSizeCtrl,         ///< Thumb Size controller. Preview zoom controller still visible but disabled.
-        NoPreviewZoomCtrl       ///< Thumb Size controller alone. Preview Zoom controller is hidden.
+        PreviewZoomCtrl = 0,      ///< Preview Zoom controller.
+        ThumbsSizeCtrl,           ///< Thumb Size controller. Preview zoom controller still visible but disabled.
+        NoPreviewZoomCtrl         ///< Thumb Size controller alone. Preview Zoom controller is hidden.
     };
 
 public:
 
-    explicit DZoomBar(QWidget* const parent=nullptr);
+    explicit DZoomBar(QWidget* const parent = nullptr);
     ~DZoomBar() override;
 
     void setBarMode(BarMode mode);

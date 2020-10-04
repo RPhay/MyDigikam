@@ -48,10 +48,10 @@ class Q_DECL_HIDDEN FullScreenSettings::Private
 public:
 
     explicit Private()
-      : options(FS_NONE),
-        hideToolBars(nullptr),
-        hideThumbBar(nullptr),
-        hideSideBars(nullptr),
+      : options      (FS_NONE),
+        hideToolBars (nullptr),
+        hideThumbBar (nullptr),
+        hideSideBars (nullptr),
         hideStatusBar(nullptr)
     {
     }

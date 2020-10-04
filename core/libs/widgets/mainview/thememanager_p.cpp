@@ -254,7 +254,7 @@ QColor tint(const QColor& base, const QColor& color, qreal amount = 0.3)
         return base;
     }
 
-    qreal baseLuma = luma(base); //cache value because luma call is expensive
+    qreal baseLuma = luma(base);    // cache value because luma call is expensive
     double ri      = contrastRatioForLuma(baseLuma, luma(color));
     double rg      = 1.0 + ((ri + 1.0) * amount * amount * amount);
     double u       = 1.0, l = 0.0;
@@ -292,6 +292,7 @@ QColor overlayColors(const QColor& base, const QColor& paint,
 {
     // This isn't the fastest way, but should be "fast enough".
     // It's also the only safe way to use QPainter::CompositionMode
+
     QImage img(1, 1, QImage::Format_ARGB32_Premultiplied);
     QPainter p(&img);
     QColor start = base;
@@ -763,7 +764,7 @@ public:
     QBrush background(SchemeManager::BackgroundRole) const;
     QBrush foreground(SchemeManager::ForegroundRole) const;
     QBrush decoration(SchemeManager::DecorationRole) const;
-    qreal  contrast() const;
+    qreal  contrast()                                const;
 
 private:
 
@@ -981,52 +982,64 @@ SchemeManager::SchemeManager(QPalette::ColorGroup state,
     switch (set)
     {
         case Window:
+        {
             d = new SchemeManagerPrivate(config, state, "Colors:Window", defaultWindowColors);
             break;
+        }
 
         case Button:
+        {
             d = new SchemeManagerPrivate(config, state, "Colors:Button", defaultButtonColors);
             break;
+        }
 
         case Selection:
+        {
+            KConfigGroup group(config, "ColorEffects:Inactive");
+
+            // NOTE: keep this in sync with kdebase/workspace/kcontrol/colors/colorscm.cpp
+
+            bool inactiveSelectionEffect = group.readEntry("ChangeSelectionColor", group.readEntry("Enable", true));
+
+            // if enabled, inactiver/disabled uses Window colors instead, ala gtk
+            // ...except tinted with the Selection:NormalBackground color so it looks more like selection
+
+            if      ((state == QPalette::Active) || ((state == QPalette::Inactive) && !inactiveSelectionEffect))
             {
-                KConfigGroup group(config, "ColorEffects:Inactive");
-
-                // NOTE: keep this in sync with kdebase/workspace/kcontrol/colors/colorscm.cpp
-
-                bool inactiveSelectionEffect = group.readEntry("ChangeSelectionColor", group.readEntry("Enable", true));
-
-                // if enabled, inactiver/disabled uses Window colors instead, ala gtk
-                // ...except tinted with the Selection:NormalBackground color so it looks more like selection
-
-                if      ((state == QPalette::Active) || ((state == QPalette::Inactive) && !inactiveSelectionEffect))
-                {
-                    d = new SchemeManagerPrivate(config, state, "Colors:Selection", defaultSelectionColors);
-                }
-                else if (state == QPalette::Inactive)
-                {
-                    d = new SchemeManagerPrivate(config, state, "Colors:Window", defaultWindowColors,
-                                                 SchemeManager(QPalette::Active, Selection, config).background());
-                }
-                else
-                {
-                    // disabled (...and still want this branch when inactive+disabled exists)
-
-                    d = new SchemeManagerPrivate(config, state, "Colors:Window", defaultWindowColors);
-                }
+                d = new SchemeManagerPrivate(config, state, "Colors:Selection", defaultSelectionColors);
             }
+            else if (state == QPalette::Inactive)
+            {
+                d = new SchemeManagerPrivate(config, state, "Colors:Window", defaultWindowColors,
+                                             SchemeManager(QPalette::Active, Selection, config).background());
+            }
+            else
+            {
+                // disabled (...and still want this branch when inactive+disabled exists)
+
+                d = new SchemeManagerPrivate(config, state, "Colors:Window", defaultWindowColors);
+            }
+
             break;
+        }
 
         case Tooltip:
+        {
             d = new SchemeManagerPrivate(config, state, "Colors:Tooltip", defaultTooltipColors);
             break;
+        }
 
         case Complementary:
+        {
             d = new SchemeManagerPrivate(config, state, "Colors:Complementary", defaultComplementaryColors);
             break;
+        }
 
         default:
+        {
             d = new SchemeManagerPrivate(config, state, "Colors:View", defaultViewColors);
+            break;
+        }
     }
 }
 
@@ -1225,9 +1238,9 @@ QPalette SchemeManager::createApplicationPalette(const KSharedConfigPtr& config)
 // ---------------------------------------------------------------
 
 ThemeManager::Private::Private()
-    : defaultThemeName(i18nc("default theme name", "Default")),
+    : defaultThemeName    (i18nc("default theme name", "Default")),
       themeMenuActionGroup(nullptr),
-      themeMenuAction(nullptr)
+      themeMenuAction     (nullptr)
 {
 }
 

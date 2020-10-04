@@ -239,11 +239,15 @@ private Q_SLOTS:
     void slotContribute();
     void slotHelpContents();
 
-    /// Slots for common Help Actions
+    /**
+     * Slots for common Help Actions
+     */
     virtual void slotComponentsInfo()          {};
     virtual void slotDBStat()                  {};
 
-    /// Slots for common Sidebar Actions
+    /**
+     * Slots for common Sidebar Actions
+     */
     virtual void slotToggleLeftSideBar()       {};
     virtual void slotToggleRightSideBar()      {};
     virtual void slotPreviousLeftSideBarTab()  {};
@@ -251,7 +255,9 @@ private Q_SLOTS:
     virtual void slotPreviousRightSideBarTab() {};
     virtual void slotNextRightSideBarTab()     {};
 
-    /// Slots for common Settings actions
+    /**
+     * Slots for common Settings actions
+     */
     virtual void slotEditKeys()                { editKeyboardShortcuts(); };
     virtual void slotSetup() = 0;
 

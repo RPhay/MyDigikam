@@ -59,12 +59,12 @@ public:
     explicit Private()
       : zoomToFitButton(nullptr),
         zoomTo100Button(nullptr),
-        zoomPlusButton(nullptr),
+        zoomPlusButton (nullptr),
         zoomMinusButton(nullptr),
-        zoomTimer(nullptr),
-        zoomSlider(nullptr),
-        zoomCombo(nullptr),
-        zoomTracker(nullptr)
+        zoomTimer      (nullptr),
+        zoomSlider     (nullptr),
+        zoomCombo      (nullptr),
+        zoomTracker    (nullptr)
     {
     }
 
