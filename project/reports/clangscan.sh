@@ -20,7 +20,7 @@ WEBSITE_DIR="${ORIG_WD}/site"
 
 # Get active git branches to create report description string
 TITLE="digiKam-$(parseGitBranch)$(parseGitHash)"
-echo "Clang Static Analyzer task name: $TITLE"
+echo "Clang Scan Static Analyzer task name: $TITLE"
 
 # Clean up and prepare to scan.
 
