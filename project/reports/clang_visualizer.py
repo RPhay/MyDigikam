@@ -1,3 +1,5 @@
+#!/usr/bin/python
+
 # Copyright (c) 2019 by Austin Hale, <ah at unc dot edu>
 # Copyright (c) 2020 by Gilles Caulier, <caulier dot gilles at gmail dot com>
 #
@@ -1086,9 +1088,6 @@ def main():
     args = parse_command_line_options()
     external_link = ''
     external_name = ''
-    if (args.button):
-        external_link = input("What is the full link address?\n")
-        external_name = input("What would you like to name this link?\n")
 
     contents = args.file.readlines()
 
@@ -1156,7 +1155,7 @@ def main():
 
     args.file.close()
     f = open("clang.html", "w")
-    
+
     # Functions for writing to the clang.html file.
     writeHeader(f)
     writeList(f, num_used_checks, names_of_used, args,
@@ -1197,7 +1196,6 @@ def write_checks_file():
 # and returns the given file's contents if read successfully.
 def parse_command_line_options():
     parser = argparse.ArgumentParser()
-    parser.add_argument('-b', '--button', action='store_true')
     parser.add_argument('file', type=argparse.FileType('r'))
 
     try:
@@ -1214,9 +1212,7 @@ def usage():
     print("**--------------------------- Clang Visualizer --------------------------**\n\n \
     Generates an html file as a visual for clang-tidy checks.\n\n \
     Arguments: python clang_visualizer.py [logfile.log]\n\n \
-    Options:\n\t\t'-b', '--button': External link button for the html page.\n \
-    \t\t-Prompts the user for a hyperlink and name.\n \
-    \t\t-ex: python clang_visualizer -b [logfile.log] \
+    \t\t-ex: python clang_visualizer [logfile.log] \
     \n\n**------------------------------------------------------------------------**")
 
 # Header of the clang.html file.
