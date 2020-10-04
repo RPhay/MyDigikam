@@ -118,6 +118,7 @@ void FacialRecognitionWrapper::clearAllTraining(const QString& trainingContext)
 
     QMutexLocker lock(&d->mutex);
 
+    d->identityCache.clear();
     FaceDbAccess().db()->clearIdentities();
 
     d->clear(QList<int>(), trainingContext);
