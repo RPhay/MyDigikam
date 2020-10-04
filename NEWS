@@ -143,5 +143,5 @@ BUGFIXES:
 130 ==> 418939 - Crash in metadata engine when search faces.
 131 ==> 426236 - Crashed when running face detection.
 132 ==> 422735 - Segment fault after first 'scan collection for faces'.
-133 ==> 
-
+133 ==> 425096 - Crash Unsupported JPEG process: SOF type 0xc8.
+134 ==> 
