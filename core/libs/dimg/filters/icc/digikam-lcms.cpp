@@ -44,7 +44,7 @@
 
 #include "digikam_debug.h"
 
-///////////////////////////////////////////////////////////////////////
+//--------------------------------------------------------------------------------
 
 void _l2tol1MAT3(MAT3* const l2, MAT3* const l1)
 {
@@ -87,7 +87,7 @@ void _l2cmsMAT3tol1LPMAT3(cmsMAT3* const l2, LPMAT3 l1)
     l1->Blue.Z  = static_cast<cmsFloat64Number>( l2->v[2].n[2] );
 }
 
-///////////////////////////////////////////////////////////////////////
+//--------------------------------------------------------------------------------
 
 #define MATRIX_DET_TOLERANCE    0.0001
 
@@ -100,9 +100,12 @@ static cmsBool ComputeChromaticAdaptation(cmsMAT3* const Conversion,
                                           const cmsMAT3* const Chad)
 {
     cmsMAT3 Chad_Inv;
-    cmsVEC3 ConeSourceXYZ, ConeSourceRGB;
-    cmsVEC3 ConeDestXYZ, ConeDestRGB;
-    cmsMAT3 Cone, Tmp;
+    cmsVEC3 ConeSourceXYZ;
+    cmsVEC3 ConeSourceRGB;
+    cmsVEC3 ConeDestXYZ;
+    cmsVEC3 ConeDestRGB;
+    cmsMAT3 Cone;
+    cmsMAT3 Tmp;
 
     Tmp = *Chad;
 
@@ -195,21 +198,27 @@ static cmsBool _cmsAdaptMatrixToD50(cmsMAT3* const r, const cmsCIExyY* const Sou
  */
 cmsBool _cmsBuildRGB2XYZtransferMatrix(cmsMAT3* const r, const cmsCIExyY* const WhitePt, const cmsCIExyYTRIPLE* const Primrs)
 {
-    cmsVEC3 WhitePoint, Coef;
-    cmsMAT3 Result, Primaries;
-    cmsFloat64Number xn, yn;
-    cmsFloat64Number xr, yr;
-    cmsFloat64Number xg, yg;
-    cmsFloat64Number xb, yb;
+    cmsVEC3 WhitePoint;
+    cmsVEC3 Coef;
+    cmsMAT3 Result;
+    cmsMAT3 Primaries;
+    cmsFloat64Number xn;
+    cmsFloat64Number yn;
+    cmsFloat64Number xr;
+    cmsFloat64Number yr;
+    cmsFloat64Number xg;
+    cmsFloat64Number yg;
+    cmsFloat64Number xb;
+    cmsFloat64Number yb;
 
     xn = WhitePt -> x;
     yn = WhitePt -> y;
-    xr = Primrs -> Red.x;
-    yr = Primrs -> Red.y;
-    xg = Primrs -> Green.x;
-    yg = Primrs -> Green.y;
-    xb = Primrs -> Blue.x;
-    yb = Primrs -> Blue.y;
+    xr = Primrs  -> Red.x;
+    yr = Primrs  -> Red.y;
+    xg = Primrs  -> Green.x;
+    yg = Primrs  -> Green.y;
+    xb = Primrs  -> Blue.x;
+    yb = Primrs  -> Blue.y;
 
     // Build Primaries matrix
 
@@ -247,8 +256,8 @@ cmsBool _cmsBuildRGB2XYZtransferMatrix(cmsMAT3* const r, const cmsCIExyY* const 
 static cmsBool cmsAdaptMatrixFromD50(cmsMAT3* const r, const cmsCIExyY* const DestWhitePt)
 {
     cmsCIEXYZ Dn;
-    cmsMAT3 Bradford;
-    cmsMAT3 Tmp;
+    cmsMAT3   Bradford;
+    cmsMAT3   Tmp;
 
     cmsxyY2XYZ(&Dn, DestWhitePt);
 
@@ -290,11 +299,13 @@ void dkCmsSetAlarmCodes(int r, int g, int b)
 
 QString dkCmsTakeProductName(cmsHPROFILE hProfile)
 {
-    static char Name[1024*2+4];
-    char Manufacturer[1024], Model[1024];
+    static char Name[1024*2+4] = { 0 };
+    char Manufacturer[1024]    = { 0 };
+    char Model[1024]           = { 0 };
 
     Name[0]         = '\0';
-    Manufacturer[0] = Model[0] = '\0';
+    Manufacturer[0] = '\0';
+    Model[0]        = '\0';
     cmsMLU* mlu     = nullptr;
 
     if (cmsIsTag(hProfile, cmsSigDeviceMfgDescTag))
@@ -316,6 +327,7 @@ QString dkCmsTakeProductName(cmsHPROFILE hProfile)
         {
             mlu = static_cast<cmsMLU*>(cmsReadTag(hProfile, cmsSigProfileDescriptionTag));
             cmsMLUgetASCII(mlu, "en", "US", Name, 1024);
+
             return QLatin1String(Name);
         }
         else
@@ -338,7 +350,7 @@ QString dkCmsTakeProductName(cmsHPROFILE hProfile)
 
 QString dkCmsTakeProductDesc(cmsHPROFILE hProfile)
 {
-    static char Name[2048];
+    static char Name[2048] = { 0 };
 
     if (cmsIsTag(hProfile, cmsSigProfileDescriptionTag))
     {
@@ -360,24 +372,22 @@ QString dkCmsTakeProductDesc(cmsHPROFILE hProfile)
 
 QString dkCmsTakeProductInfo(cmsHPROFILE hProfile)
 {
-    static char Info[4096];
-    cmsMLU*     mlu = nullptr;
-    Info[0]         = '\0';
+    static char Info[4096] = { 0 };
+    cmsMLU*     mlu        = nullptr;
+    Info[0]                = '\0';
 
     if (cmsIsTag(hProfile, cmsSigProfileDescriptionTag))
     {
-        char Desc[1024];
-
-        mlu = static_cast<cmsMLU*>(cmsReadTag(hProfile, cmsSigProfileDescriptionTag));
+        char Desc[1024] = { 0 };
+        mlu             = static_cast<cmsMLU*>(cmsReadTag(hProfile, cmsSigProfileDescriptionTag));
         cmsMLUgetASCII(mlu, "en", "US", Desc, 1024);
         strcat(Info, Desc);
     }
 
     if (cmsIsTag(hProfile, cmsSigCopyrightTag))
     {
-        char Copyright[1024];
-
-        mlu = static_cast<cmsMLU*>(cmsReadTag(hProfile, cmsSigCopyrightTag));
+        char Copyright[1024] = { 0 };
+        mlu                  = static_cast<cmsMLU*>(cmsReadTag(hProfile, cmsSigCopyrightTag));
         cmsMLUgetASCII(mlu, "en", "US", Copyright, 1024);
         strcat(Info, " - ");
         strcat(Info, Copyright);
@@ -387,9 +397,8 @@ QString dkCmsTakeProductInfo(cmsHPROFILE hProfile)
 
     if (cmsIsTag(hProfile, K007))
     {
-        char MonCal[1024];
-
-        mlu = static_cast<cmsMLU*>(cmsReadTag(hProfile, K007));
+        char MonCal[1024] = { 0 };
+        mlu               = static_cast<cmsMLU*>(cmsReadTag(hProfile, K007));
         cmsMLUgetASCII(mlu, "en", "US", MonCal, 1024);
         strcat(Info, " - ");
         strcat(Info, MonCal);
@@ -397,15 +406,15 @@ QString dkCmsTakeProductInfo(cmsHPROFILE hProfile)
     else
     {
 /*
-         // _cmsIdentifyWhitePoint is complex and partly redundant
-         // with cietonguewidget, leave this part off
-         // until the full lcms2 implementation
+        // _cmsIdentifyWhitePoint is complex and partly redundant
+        // with cietonguewidget, leave this part off
+        // until the full lcms2 implementation
 
         cmsCIEXYZ WhitePt;
-        char WhiteStr[1024];
+        char WhiteStr[1024] = { 0 };
 
         dkCmsTakeMediaWhitePoint(&WhitePt, hProfile);
-        _cmsIdentifyWhitePoint(WhiteStr, &WhitePt);
+       _cmsIdentifyWhitePoint(WhiteStr, &WhitePt);
         strcat(Info, " - ");
         strcat(Info, WhiteStr);
 */
@@ -418,8 +427,8 @@ QString dkCmsTakeProductInfo(cmsHPROFILE hProfile)
 
 QString dkCmsTakeManufacturer(cmsHPROFILE hProfile)
 {
-    char buffer[1024];
-    buffer[0] = '\0';
+    char buffer[1024] = { 0 };
+    buffer[0]         = '\0';
     cmsGetProfileInfoASCII(hProfile, cmsInfoManufacturer, "en", "US", buffer, 1024);
 
     return QLatin1String(buffer);
@@ -441,7 +450,7 @@ LCMSBOOL dkCmsTakeMediaWhitePoint(LPcmsCIEXYZ Dest, cmsHPROFILE hProfile)
 
 QString dkCmsTakeModel(cmsHPROFILE hProfile)
 {
-    char buffer[1024];
+    char buffer[1024]       = { 0 };
     const cmsMLU* const mlu = (cmsMLU*)cmsReadTag(hProfile, cmsSigDeviceModelDescTag);
     buffer[0]               = '\0';
 
@@ -457,7 +466,7 @@ QString dkCmsTakeModel(cmsHPROFILE hProfile)
 
 QString dkCmsTakeCopyright(cmsHPROFILE hProfile)
 {
-    char buffer[1024];
+    char buffer[1024]       = { 0 };
     const cmsMLU* const mlu = (cmsMLU*)cmsReadTag(hProfile, cmsSigCopyrightTag);
     buffer[0]               = '\0';
 
@@ -545,8 +554,8 @@ LCMSBOOL dkCmsAdaptMatrixFromD50(LPMAT3 r, LPcmsCIExyY DestWhitePt)
 
 cmsBool GetProfileRGBPrimaries(cmsHPROFILE hProfile, cmsCIEXYZTRIPLE* const result, cmsUInt32Number intent)
 {
-    cmsHPROFILE hXYZ;
-    cmsHTRANSFORM hTransform;
+    cmsHPROFILE      hXYZ;
+    cmsHTRANSFORM    hTransform;
     cmsFloat64Number rgb[3][3] = {
                                   {1., 0., 0.},
                                   {0., 1., 0.},
