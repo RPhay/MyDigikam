@@ -148,5 +148,6 @@ BUGFIXES:
 135 ==> 425703 - digiKam crashes (again) under Linux while detecting faces.
 136 ==> 184469 - Red eyes doesn't work here.
 137 ==> 174683 - Crashes when try to correct red eye.
-138 ==> 
+138 ==> 425439 - App crashes during the maintenance process with face recognition. stacktrace and log included.
+139 ==> 
 
