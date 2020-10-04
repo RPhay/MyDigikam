@@ -252,6 +252,8 @@ bool FaceDbSchemaUpdater::createDatabase()
 
 bool FaceDbSchemaUpdater::createTables()
 {
+    // the creation order is important because of the foreign keys in MYSQL
+
     return (
             d->dbAccess->backend()->execDBAction(d->dbAccess->backend()->getDBAction(QLatin1String("CreateFaceDB")))             &&
             d->dbAccess->backend()->execDBAction(d->dbAccess->backend()->getDBAction(QLatin1String("CreateFaceDBFaceMatrices"))) &&
