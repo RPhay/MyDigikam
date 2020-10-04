@@ -31,10 +31,6 @@
 #include <QNetworkAccessManager>
 #include <QNetworkCookieJar>
 
-// Local includes
-
-
-
 namespace MediaWiki
 {
 
