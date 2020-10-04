@@ -29,7 +29,7 @@ mkdir -p $REPORT_DIR
 
 /usr/share/clang/run-clang-tidy.py -quiet -j$CPU_CORES -p  ../../build/ | tee $REPORT_DIR/clang-tidy.log
 
-./clang-visualizer.py $REPORT_DIR/clang-tidy.log
+./clang_visualizer.py $REPORT_DIR/clang-tidy.log
 
 rm -f $REPORT_DIR/clang-tidy.log
 
