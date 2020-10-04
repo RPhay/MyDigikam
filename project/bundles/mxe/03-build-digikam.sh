@@ -139,7 +139,7 @@ sed -e "s/DENABLE_DRMINGW=OFF/DENABLE_DRMINGW=ON/g"             ./bootstrap.mxe 
 
 chmod +x ./bootstrap.mxe
 
-./bootstrap.mxe $MXE_BUILDROOT RelWithDebInfo -DPng2Ico_EXECUTABLE=${ORIG_WD}/png2ico/png2ico
+./bootstrap.mxe $MXE_BUILDROOT RelWithDebInfo
 
 if [ $? -ne 0 ]; then
     echo "---------- Cannot configure digiKam $DK_VERSION."
