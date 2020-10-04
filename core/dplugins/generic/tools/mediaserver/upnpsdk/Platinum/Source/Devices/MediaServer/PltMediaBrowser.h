@@ -39,6 +39,10 @@
 #ifndef _PLT_MEDIA_BROWSER_H_
 #define _PLT_MEDIA_BROWSER_H_
 
+#ifndef PLT_DEFAULT_FILTER
+#define PLT_DEFAULT_FILTER "dc:date,upnp:genre,res,res@duration,res@size,upnp:albumArtURI,upnp:originalTrackNumber,upnp:album,upnp:artist,upnp:author,searchable,childCount" // explicitely specify res otherwise WMP won't return a URL!
+#endif
+
 /*----------------------------------------------------------------------
 |   includes
 +---------------------------------------------------------------------*/
@@ -86,22 +90,10 @@ public:
         PLT_BrowseInfo*          /*info*/, 
         void*                    /*userdata*/) {}
 
-	virtual void OnSearchResult(
+    virtual void OnSearchResult(
         NPT_Result               /*res*/, 
         PLT_DeviceDataReference& /*device*/, 
         PLT_BrowseInfo*          /*info*/, 
-        void*                    /*userdata*/) {}
-
-	virtual void OnGetSearchCapabilitiesResult(
-        NPT_Result               /*res*/, 
-        PLT_DeviceDataReference& /*device*/, 
-        NPT_String               /*searchCapabilities*/, 
-        void*                    /*userdata*/) {}
-
-	virtual void OnGetSortCapabilitiesResult(
-        NPT_Result               /*res*/,
-        PLT_DeviceDataReference& /*device*/,
-        NPT_String               /*sortCapabilities*/,
         void*                    /*userdata*/) {}
 };
 
@@ -116,7 +108,7 @@ class PLT_MediaBrowser : public PLT_CtrlPointListener
 public:
     PLT_MediaBrowser(PLT_CtrlPointReference&   ctrl_point,
                      PLT_MediaBrowserDelegate* delegate = NULL);
-    ~PLT_MediaBrowser() override;
+    virtual ~PLT_MediaBrowser();
 
     // ContentDirectory service
     virtual NPT_Result Browse(PLT_DeviceDataReference& device, 
@@ -124,23 +116,17 @@ public:
                               NPT_UInt32               start_index,
                               NPT_UInt32               count = 30, // DLNA recommendations
                               bool                     browse_metadata = false,
-                              const char*              filter = "dc:date,upnp:genre,res,res@duration,res@size,upnp:albumArtURI,upnp:originalTrackNumber,upnp:album,upnp:artist,upnp:author", // explicitly specify res otherwise WMP won't return a URL!
-                              const char*              sort_criteria = "",
+                              const char*              filter = PLT_DEFAULT_FILTER,
+                              const char*              sort = "",
                               void*                    userdata = NULL);
 
-	virtual NPT_Result Search(PLT_DeviceDataReference& device, 
-		                      const char*              container_id,
-							  const char*              search_criteria,
-				              NPT_UInt32               start_index,
-					          NPT_UInt32               count = 30, // DLNA recommendations
-                              const char*              filter = "dc:date,upnp:genre,res,res@duration,res@size,upnp:albumArtURI,upnp:originalTrackNumber,upnp:album,upnp:artist,upnp:author", // explicitly specify res otherwise WMP won't return a URL!
-						  	  void*                    userdata = NULL);
-
-    virtual NPT_Result GetSearchCapabilities(PLT_DeviceDataReference& device,
-                                             void*                    userdata = NULL);
-
-    virtual NPT_Result GetSortCapabilities(PLT_DeviceDataReference& device,
-                                           void*                    userdata = NULL);
+    virtual NPT_Result Search(PLT_DeviceDataReference& device,
+                              const char*              container_id,
+                              const char*              search_criteria,
+                              NPT_UInt32               start_index,
+                              NPT_UInt32               count = 30, // DLNA recommendations
+                              const char*              filter = PLT_DEFAULT_FILTER,
+                              void*                    userdata = NULL);
 
     // methods
     virtual const NPT_Lock<PLT_DeviceDataReferenceList>& GetMediaServers() { return m_MediaServers; }
@@ -149,10 +135,10 @@ public:
 
 protected:
     // PLT_CtrlPointListener methods
-    NPT_Result OnDeviceAdded(PLT_DeviceDataReference& device) override;
-    NPT_Result OnDeviceRemoved(PLT_DeviceDataReference& device) override;
-    NPT_Result OnActionResponse(NPT_Result res, PLT_ActionReference& action, void* userdata) override;
-    NPT_Result OnEventNotify(PLT_Service* service, NPT_List<PLT_StateVariable*>* vars) override;
+    virtual NPT_Result OnDeviceAdded(PLT_DeviceDataReference& device);
+    virtual NPT_Result OnDeviceRemoved(PLT_DeviceDataReference& device);
+    virtual NPT_Result OnActionResponse(NPT_Result res, PLT_ActionReference& action, void* userdata);
+    virtual NPT_Result OnEventNotify(PLT_Service* service, NPT_List<PLT_StateVariable*>* vars);
     
     // ContentDirectory service responses
     virtual NPT_Result OnBrowseResponse(NPT_Result               res, 
@@ -160,20 +146,10 @@ protected:
                                         PLT_ActionReference&     action, 
                                         void*                    userdata);
 
-	virtual NPT_Result OnSearchResponse(NPT_Result               res, 
+    virtual NPT_Result OnSearchResponse(NPT_Result               res, 
                                         PLT_DeviceDataReference& device, 
                                         PLT_ActionReference&     action, 
                                         void*                    userdata);
-
-  virtual NPT_Result OnGetSearchCapabilitiesResponse(NPT_Result               res, 
-                                                     PLT_DeviceDataReference& device, 
-                                                     PLT_ActionReference&     action, 
-                                                     void*                    userdata);
-
-  virtual NPT_Result OnGetSortCapabilitiesResponse(NPT_Result               res,
-                                                   PLT_DeviceDataReference& device,
-                                                   PLT_ActionReference&     action,
-                                                   void*                    userdata);
     
 protected:
     PLT_CtrlPointReference                m_CtrlPoint;

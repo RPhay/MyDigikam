@@ -79,7 +79,7 @@ PLT_FileMediaServerDelegate::ProcessFileRequest(NPT_HttpRequest&              re
 {
     NPT_HttpUrlQuery query(request.GetUrl().GetQuery());
     
-    PLT_LOG_HTTP_MESSAGE(NPT_LOG_LEVEL_FINE, "PLT_FileMediaServerDelegate::ProcessFileRequest:", &request);
+    PLT_LOG_HTTP_REQUEST(NPT_LOG_LEVEL_FINE, "PLT_FileMediaServerDelegate::ProcessFileRequest:", &request);
     
     if (request.GetMethod().Compare("GET") && request.GetMethod().Compare("HEAD")) {
         response.SetStatus(500, "Internal Server Error");
@@ -252,7 +252,7 @@ PLT_FileMediaServerDelegate::OnBrowseDirectChildren(PLT_ActionReference&        
     
     didl += didl_footer;
     
-    NPT_LOG_FINE_6("BrowseDirectChildren from %s returning %d-%d/%d objects (%d out of %d requested)",
+    NPT_LOG_FINE_6("BrowseDirectChildren from %s returning %d-%lu/%lu objects (%lu out of %d requested)",
                    (const char*)context.GetLocalAddress().GetIpAddress().ToString(),
                    starting_index, starting_index+num_returned, total_matches, num_returned, requested_count);
     
@@ -344,7 +344,7 @@ PLT_FileMediaServerDelegate::BuildSafeResourceUri(const NPT_HttpUrl& base_uri,
     NPT_String uri_path = uri.GetPath();
     if (!uri_path.EndsWith("/")) uri_path += "/";
 
-	/* some controllers (like WMP) will call us with an already urldecoded version.
+    /* some controllers (like WMP) will call us with an already urldecoded version.
        We're intentionally prepending a known urlencoded string
        to detect it when we receive the request urlencoded or already decoded to avoid double decoding*/
     uri_path += "%/";
@@ -516,13 +516,4 @@ PLT_FileMediaServerDelegate::BuildFromFilePath(const NPT_String&             fil
 failure:
     delete object;
     return NULL;
-}
-
-NPT_Result PLT_FileMediaServerDelegate::OnUpdateObject(PLT_ActionReference&,
-                                                       const char*,
-                                                       NPT_Map<NPT_String,NPT_String>&,
-                                                       NPT_Map<NPT_String,NPT_String>&,
-                                                       const PLT_HttpRequestContext&)
-{
-    return NPT_SUCCESS;
 }

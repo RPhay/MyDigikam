@@ -133,7 +133,7 @@ PLT_UPnP::PLT_UPnP() :
     m_TaskManager(NULL),
     m_Started(false),
     m_SsdpListenTask(NULL),
-	m_IgnoreLocalUUIDs(true)
+    m_IgnoreLocalUUIDs(true)
 {
 }
     
@@ -165,7 +165,7 @@ PLT_UPnP::Start()
     
     /* Create multicast socket and bind on 1900. If other apps didn't
        play nicely by setting the REUSE_ADDR flag, this could fail */
-    NPT_Reference<NPT_UdpMulticastSocket> socket(new NPT_UdpMulticastSocket());
+    NPT_Reference<NPT_UdpMulticastSocket> socket(new NPT_UdpMulticastSocket(NPT_SOCKET_FLAG_CANCELLABLE));
     NPT_CHECK_SEVERE(socket->Bind(NPT_SocketAddress(NPT_IpAddress::Any, 1900), true));
     
     /* Join multicast group for every ip we found */
@@ -221,14 +221,14 @@ PLT_UPnP::AddDevice(PLT_DeviceHostReference& device)
     NPT_AutoLock lock(m_Lock);
 
     // tell all our controllers to ignore this device
-	if (m_IgnoreLocalUUIDs) {
-		for (NPT_List<PLT_CtrlPointReference>::Iterator iter = 
+    if (m_IgnoreLocalUUIDs) {
+        for (NPT_List<PLT_CtrlPointReference>::Iterator iter = 
                  m_CtrlPoints.GetFirstItem(); 
              iter; 
              iter++) {
-		    (*iter)->IgnoreUUID(device->GetUUID());
-		}
-	}
+            (*iter)->IgnoreUUID(device->GetUUID());
+        }
+    }
 
     if (m_Started) {
         NPT_LOG_INFO("Starting Device...");
@@ -263,14 +263,14 @@ PLT_UPnP::AddCtrlPoint(PLT_CtrlPointReference& ctrl_point)
     NPT_AutoLock lock(m_Lock);
 
     // tell the control point to ignore our own running devices
-	if (m_IgnoreLocalUUIDs) {
-		for (NPT_List<PLT_DeviceHostReference>::Iterator iter = 
+    if (m_IgnoreLocalUUIDs) {
+        for (NPT_List<PLT_DeviceHostReference>::Iterator iter = 
                  m_Devices.GetFirstItem(); 
              iter; 
              iter++) {
-			ctrl_point->IgnoreUUID((*iter)->GetUUID());
-		}
-	}
+            ctrl_point->IgnoreUUID((*iter)->GetUUID());
+        }
+    }
 
     if (m_Started) {
         NPT_LOG_INFO("Starting Ctrlpoint...");

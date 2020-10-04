@@ -49,8 +49,7 @@ PLT_StateVariable::PLT_StateVariable(PLT_Service* service) :
     m_Service(service), 
     m_AllowedValueRange(NULL),
     m_IsSendingEvents(false),
-    m_IsSendingEventsIndirectly(true),
-    m_ShouldClearOnSend(false)
+    m_IsSendingEventsIndirectly(true)
 {
 }
 
@@ -82,7 +81,7 @@ PLT_StateVariable::GetSCPDXML(NPT_XmlElementNode* node)
     if (m_AllowedValues.GetItemCount()) {
         NPT_XmlElementNode* allowedValueList = new NPT_XmlElementNode("allowedValueList");
         NPT_CHECK_SEVERE(variable->AddChild(allowedValueList));
-	    for( int l = 0 ; l < (int)m_AllowedValues.GetItemCount(); l++) {
+        for( int l = 0 ; l < (int)m_AllowedValues.GetItemCount(); l++) {
             NPT_CHECK_SEVERE(PLT_XmlHelper::AddChildText(allowedValueList, "allowedValue", (*m_AllowedValues[l])));
         }
     } else if (m_AllowedValueRange) {
@@ -147,7 +146,7 @@ PLT_StateVariable::SetRate(NPT_TimeInterval rate)
 |   PLT_StateVariable::SetValue
 +---------------------------------------------------------------------*/
 NPT_Result
-PLT_StateVariable::SetValue(const char* value, const bool clearonsend /*=false*/)
+PLT_StateVariable::SetValue(const char* value)
 {
     if (value == NULL) {
         return NPT_FAILURE;
@@ -161,7 +160,6 @@ PLT_StateVariable::SetValue(const char* value, const bool clearonsend /*=false*/
         }
 
         m_Value = value;
-        m_ShouldClearOnSend = clearonsend;
         m_Service->AddChanged(this); 
     }
 
@@ -186,16 +184,6 @@ PLT_StateVariable::IsReadyToPublish()
 }
 
 /*----------------------------------------------------------------------
-|   PLT_StateVariable::OnSendCompleted
-+---------------------------------------------------------------------*/
-void
-PLT_StateVariable::OnSendCompleted()
-{
-  if(m_ShouldClearOnSend)
-      m_Value = m_DefaultValue;
-}
-
-/*----------------------------------------------------------------------
 |   PLT_StateVariable::ValidateValue
 +---------------------------------------------------------------------*/
 NPT_Result
@@ -211,15 +199,9 @@ PLT_StateVariable::ValidateValue(const char* value)
             while (val) {
                 val->Trim(" ");
                 if (!m_AllowedValues.Find(NPT_StringFinder(*val))) {
-#if defined(NPT_CONFIG_ENABLE_LOGGING)
-                    NPT_LOG_WARNING_2("Invalid value of %s for state variable %s",
+                    NPT_LOG_WARNING_2("Invalid value of %s for state variable %s", 
                         (const char*)*val,
                         (const char*)m_Name);
-                    for (unsigned long i=0; i < m_AllowedValues.GetItemCount(); i++) {
-                        NPT_String *val2 = *m_AllowedValues.GetItem(i);
-                        NPT_LOG_WARNING_1("Allowed: %s", (const char*)*val2);
-                    }
-#endif
                     return NPT_ERROR_INVALID_PARAMETERS;
                 }
                 ++val;
@@ -248,7 +230,7 @@ PLT_StateVariable::Find(NPT_List<PLT_StateVariable*>& vars, const char* name)
 NPT_Result
 PLT_StateVariable::SetExtraAttribute(const char* name, const char* value)
 {
-	return m_ExtraAttributes.Put(NPT_String(name), NPT_String(value));
+    return m_ExtraAttributes.Put(NPT_String(name), NPT_String(value));
 }
 
 /*----------------------------------------------------------------------
@@ -262,7 +244,7 @@ PLT_StateVariable::Serialize(NPT_XmlElementNode& node)
     while (entry) {
         const NPT_String& key   = (*entry)->GetKey();
         const NPT_String& value = (*entry)->GetValue();
-		node.SetAttribute(key, value);
+        node.SetAttribute(key, value);
         ++entry;
     }
     return node.SetAttribute("val", GetValue());

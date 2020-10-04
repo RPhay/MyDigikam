@@ -82,17 +82,11 @@ public:
     virtual NPT_Result OnSearchContainer(PLT_ActionReference&          /*action*/, 
                                          const char*                   /*container_id*/, 
                                          const char*                   /*search_criteria*/,
- 										 const char*                   /*filter*/,
+                                         const char*                   /*filter*/,
                                          NPT_UInt32                    /*starting_index*/,
                                          NPT_UInt32                    /*requested_count*/,
                                          const char*                   /*sort_criteria*/, 
                                          const PLT_HttpRequestContext& /*context*/) = 0;
-    virtual NPT_Result OnUpdateObject(PLT_ActionReference&             /*action*/,
-                                      const char*                      /*object_id*/,
-                                      NPT_Map<NPT_String,NPT_String>&  /*current_vals*/,
-                                      NPT_Map<NPT_String,NPT_String>&  /*new_vals*/,
-                                      const PLT_HttpRequestContext&    /*context*/) = 0;
-
     virtual NPT_Result ProcessFileRequest(NPT_HttpRequest&              /*request*/,
                                           const NPT_HttpRequestContext& /*context*/,
                                           NPT_HttpResponse&             /*response*/) = 0;
@@ -117,7 +111,6 @@ public:
     // class methods
     static NPT_Result ParseBrowseFlag(const char* str, BrowseFlags& flag);
     static NPT_Result ParseSort(const NPT_String& sort, NPT_List<NPT_String>& list);
-    static NPT_Result ParseTagList(const NPT_String& updates, NPT_Map<NPT_String,NPT_String>& tags);
 
     // constructor
     PLT_MediaServer(const char*  friendly_name,
@@ -133,15 +126,15 @@ public:
     virtual void UpdateContainerUpdateID(const char* id, NPT_UInt32 update);
     
 protected:
-    ~PLT_MediaServer() override;
+    virtual ~PLT_MediaServer();
     
     // PLT_DeviceHost methods
-    NPT_Result SetupServices() override;
-    NPT_Result OnAction(PLT_ActionReference&          action, 
-                                const PLT_HttpRequestContext& context) override;
-    NPT_Result ProcessHttpGetRequest(NPT_HttpRequest&              request, 
+    virtual NPT_Result SetupServices();
+    virtual NPT_Result OnAction(PLT_ActionReference&          action, 
+                                const PLT_HttpRequestContext& context);
+    virtual NPT_Result ProcessHttpGetRequest(NPT_HttpRequest&              request, 
                                              const NPT_HttpRequestContext& context,
-                                             NPT_HttpResponse&             response) override;
+                                             NPT_HttpResponse&             response);
     
     // ConnectionManager
     virtual NPT_Result OnGetCurrentConnectionIDs(PLT_ActionReference&          action, 
@@ -162,8 +155,6 @@ protected:
                                 const PLT_HttpRequestContext& context);
     virtual NPT_Result OnSearch(PLT_ActionReference&          action, 
                                 const PLT_HttpRequestContext& context);
-    virtual NPT_Result OnUpdate(PLT_ActionReference&          action,
-                                const PLT_HttpRequestContext& context);
 
     // overridable methods
     virtual NPT_Result OnBrowseMetadata(PLT_ActionReference&          action, 
@@ -183,7 +174,7 @@ protected:
     virtual NPT_Result OnSearchContainer(PLT_ActionReference&          action, 
                                          const char*                   container_id, 
                                          const char*                   search_criteria,
- 										 const char*                   filter,
+                                         const char*                   filter,
                                          NPT_UInt32                    starting_index,
                                          NPT_UInt32                    requested_count,
                                          const char*                   sort_criteria, 

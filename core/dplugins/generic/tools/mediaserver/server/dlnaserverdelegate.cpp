@@ -85,7 +85,7 @@ NPT_Result DLNAMediaServerDelegate::ProcessFileRequest(NPT_HttpRequest&         
 {
     NPT_HttpUrlQuery query(request.GetUrl().GetQuery());
 
-    PLT_LOG_HTTP_MESSAGE(NPT_LOG_LEVEL_FINE, "DLNAMediaServerDelegate::ProcessFileRequest:", &request);
+    PLT_LOG_HTTP_REQUEST(NPT_LOG_LEVEL_FINE, "DLNAMediaServerDelegate::ProcessFileRequest:", &request);
 
     if (request.GetMethod().Compare("GET") && request.GetMethod().Compare("HEAD"))
     {
@@ -823,15 +823,6 @@ NPT_String DLNAMediaServerDelegate::BuildResourceUri(const NPT_HttpUrl& base_uri
                                                      const char*        file_path)
 {
     return BuildSafeResourceUri(base_uri, host, file_path);
-}
-
-NPT_Result DLNAMediaServerDelegate::OnUpdateObject(PLT_ActionReference&,
-                                                   const char*,
-                                                   NPT_Map<NPT_String,NPT_String>&,
-                                                   NPT_Map<NPT_String,NPT_String>&,
-                                                   const PLT_HttpRequestContext&)
-{
-    return NPT_SUCCESS;
 }
 
 bool DLNAMediaServerDelegate::ProcessFile(const NPT_String&, const char*)

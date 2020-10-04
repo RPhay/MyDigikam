@@ -107,12 +107,6 @@ protected:
                                   const NPT_HttpRequestContext& context,
                                   NPT_HttpResponse&             response)       override;
 
-    NPT_Result OnUpdateObject(PLT_ActionReference&            action,
-                              const char*                     object_id,
-                              NPT_Map<NPT_String,NPT_String>& current_vals,
-                              NPT_Map<NPT_String,NPT_String>& new_vals,
-                              const PLT_HttpRequestContext&   context)          override;
-
     /// Overridable methods
     virtual NPT_Result ExtractResourcePath(const NPT_HttpUrl& url,
                                            NPT_String& file_path);

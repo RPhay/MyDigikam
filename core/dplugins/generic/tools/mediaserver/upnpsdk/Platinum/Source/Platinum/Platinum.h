@@ -39,7 +39,7 @@
  */
 
 /** 
-Platinum UPnP SDK
+@mainpage Platinum UPnP SDK
 
 @section intro Introduction
 

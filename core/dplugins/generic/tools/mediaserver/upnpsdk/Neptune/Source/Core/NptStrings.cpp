@@ -468,7 +468,7 @@ NPT_String::Split(const char* separator) const
     NPT_List<NPT_String> result;
     NPT_Size             separator_length = NPT_StringLength(separator);
     
-    // special case for empty separators
+    // sepcial case for empty separators
     if (separator_length == 0) {
         result.Add(*this);
         return result;
@@ -494,7 +494,7 @@ NPT_String::SplitAny(const char* separator) const
 {
     NPT_Array<NPT_String> result((GetLength()>>1)+1);
     
-    // special case for empty separators
+    // sepcial case for empty separators
     if (NPT_StringLength(separator) == 0) {
         result.Add(*this);
         return result;
@@ -824,7 +824,7 @@ const NPT_String&
 NPT_String::Replace(char a, const char* str) 
 {
     // check args
-    if (m_Chars == NULL || a == '\0' || str == NULL) return *this;
+    if (m_Chars == NULL || a == '\0' || str == NULL || str[0] == '\0') return *this;
 
     // optimization
     if (NPT_StringLength(str) == 1) return Replace(a, str[0]);

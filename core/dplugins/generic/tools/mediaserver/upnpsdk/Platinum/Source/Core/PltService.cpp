@@ -54,7 +54,7 @@ PLT_Service::PLT_Service(PLT_DeviceData* device,
     m_Device(device),
     m_ServiceType(type),
     m_ServiceID(id),
-	m_ServiceName(name),
+    m_ServiceName(name),
     m_EventTask(NULL),
     m_EventingPaused(false),
     m_LastChangeNamespace(last_change_namespace)
@@ -459,14 +459,14 @@ PLT_Service::IsSubscribable()
 |   PLT_Service::SetStateVariable
 +---------------------------------------------------------------------*/
 NPT_Result
-PLT_Service::SetStateVariable(const char* name, const char* value, const bool clearonsend /*=false*/)
+PLT_Service::SetStateVariable(const char* name, const char* value)
 {
     PLT_StateVariable* stateVariable = NULL;
     NPT_ContainerFind(m_StateVars, PLT_StateVariableNameFinder(name), stateVariable);
     if (stateVariable == NULL)
         return NPT_FAILURE;
 
-    return stateVariable->SetValue(value, clearonsend);
+    return stateVariable->SetValue(value);
 }
 
 /*----------------------------------------------------------------------
@@ -488,8 +488,8 @@ PLT_Service::SetStateVariableRate(const char* name, NPT_TimeInterval rate)
 +---------------------------------------------------------------------*/
 NPT_Result
 PLT_Service::SetStateVariableExtraAttribute(const char* name, 
-											const char* key,
-											const char* value)
+                                            const char* key,
+                                            const char* value)
 {
     PLT_StateVariable* stateVariable = NULL;
     NPT_ContainerFind(m_StateVars, PLT_StateVariableNameFinder(name), stateVariable);
@@ -569,8 +569,13 @@ PLT_Service::ProcessNewSubscription(PLT_TaskManagerReference task_manager,
             if (*brackR == '>') {
                 NPT_String strCallbackURL = NPT_String(brackL+1, (NPT_Size)(brackR-brackL-1));
                 NPT_HttpUrl url(strCallbackURL);
+                NPT_IpAddress address;
 
-                if (url.IsValid()) {
+                if (!url.IsValid() ||
+                    NPT_FAILED(address.ResolveName(url.GetHost().GetChars())) ||
+                    !PLT_UPnPMessageHelper::IsLocalNetworkAddress(address)) {
+                    NPT_LOG_SEVERE_1("Invalid callback url %s", strCallbackURL.GetChars());
+                } else {
                     subscriber->AddCallbackURL(strCallbackURL);
                     reachable = true;
                 }
@@ -835,13 +840,6 @@ PLT_Service::NotifyChanged()
         m_Subscribers.Erase(sub_iter++);
     }
 
-    // some state variables must be cleared immediately after sending
-    iter = vars_ready.GetFirstItem();
-    while (iter) {
-      PLT_StateVariable* var = *iter;
-      var->OnSendCompleted();
-      ++iter;
-    }
     return NPT_SUCCESS;
 }
 
@@ -915,6 +913,6 @@ PLT_LastChangeXMLIterator::operator()(PLT_StateVariable* const &var) const
 
     NPT_XmlElementNode* variable = new NPT_XmlElementNode((const char*)var->GetName());
     NPT_CHECK_SEVERE(m_Node->AddChild(variable));
-	NPT_CHECK_SEVERE(var->Serialize(*variable));
+    NPT_CHECK_SEVERE(var->Serialize(*variable));
     return NPT_SUCCESS;
 }

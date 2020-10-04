@@ -216,9 +216,8 @@ public:
      when necessary.
      @param name state variable name
      @param value new State Variable value.
-     @param clearonsend whether the State Variable should clear immediately in ::OnSendingCompleted
      */
-    NPT_Result SetStateVariable(const char* name, const char* value, const bool clearonsend = false);
+    NPT_Result SetStateVariable(const char* name, const char* value);
     
     /**
      Certain state variables notifications must not be sent faster than a certain 
@@ -235,7 +234,7 @@ public:
      @param key the attribute name
      @param value the attribute value
      */
-	NPT_Result SetStateVariableExtraAttribute(const char* name, const char* key, const char* value);
+    NPT_Result SetStateVariableExtraAttribute(const char* name, const char* key, const char* value);
     
     /**
      Helper function to increment a state variable representing a number.
@@ -293,7 +292,7 @@ private:
     public:
         PLT_ServiceEventTask(PLT_Service* service) : m_Service(service) {}
         
-        void DoRun() override { 
+        void DoRun() { 
             while (!IsAborting(100)) m_Service->NotifyChanged();
         }
         
@@ -364,7 +363,7 @@ protected:
     PLT_DeviceData*                         m_Device;
     NPT_String                              m_ServiceType;
     NPT_String                              m_ServiceID;
-	NPT_String                              m_ServiceName;
+    NPT_String                              m_ServiceName;
     NPT_String                              m_SCPDURL;
     NPT_String                              m_ControlURL;
     NPT_String                              m_EventSubURL;

@@ -86,10 +86,12 @@ set(upnpsdk_SRCS ${CMAKE_CURRENT_SOURCE_DIR}/upnpsdk/Platinum/Source/Core/PltAct
                  ${CMAKE_CURRENT_SOURCE_DIR}/upnpsdk/Neptune/Source/Core/NptUtils.cpp
                  ${CMAKE_CURRENT_SOURCE_DIR}/upnpsdk/Neptune/Source/Core/NptXml.cpp
                  ${CMAKE_CURRENT_SOURCE_DIR}/upnpsdk/Neptune/Source/System/Bsd/NptBsdSockets.cpp
+                 ${CMAKE_CURRENT_SOURCE_DIR}/upnpsdk/Neptune/Source/System/Bsd/NptBsdResolver.cpp
                  ${CMAKE_CURRENT_SOURCE_DIR}/upnpsdk/Neptune/Source/System/StdC/NptStdcDebug.cpp
                  ${CMAKE_CURRENT_SOURCE_DIR}/upnpsdk/Neptune/Source/System/StdC/NptStdcEnvironment.cpp
                  ${CMAKE_CURRENT_SOURCE_DIR}/upnpsdk/Neptune/Source/System/StdC/NptStdcFile.cpp
                  ${CMAKE_CURRENT_SOURCE_DIR}/upnpsdk/Neptune/Source/System/Posix/NptPosixEnvironment.cpp
+                 ${CMAKE_CURRENT_SOURCE_DIR}/upnpsdk/Neptune/Source/System/Null/NptNullAutoreleasePool.cpp
 )
 
 if(NOT MSVC)
@@ -156,11 +158,11 @@ foreach(_file ${upnpsdk_headers})
 endforeach()
 
 set(libmediaserver_SRCS
+    ${upnpsdk_SRCS}
     ${CMAKE_CURRENT_SOURCE_DIR}/server/dlnaserver.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/server/dlnaserverdelegate.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/server/dmediaserver.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/server/dmediaservermngr.cpp
-    ${upnpsdk_SRCS}
 )
 
 # For Unit-tests and plugin
