@@ -591,6 +591,7 @@ static int
 socketpair(int, int, int, SOCKET sockets[2]) // we ignore the first two params: we only use this for a strictly limited case
 {
 	int result = 0;
+    socklen_t name_length = 0;
 
 	// initialize with default values
 	sockets[0] = INVALID_SOCKET;
@@ -612,7 +613,7 @@ socketpair(int, int, int, SOCKET sockets[2]) // we ignore the first two params: 
 	listen(listener, 1);
 
 	// read the port that was assigned to the listener socket
-    socklen_t name_length = sizeof(inet_address);
+    name_length = sizeof(inet_address);
     result = getsockname(listener, (struct sockaddr*)&inet_address, &name_length); 
 	if (result != 0) goto fail;
 
