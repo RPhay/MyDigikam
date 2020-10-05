@@ -113,12 +113,18 @@ void ThumbnailLoadingTask::execute()
         {
             m_qimage = *cachedImage;
         }
-        else
-        {
-            // find possible running loading process
-            // do not wait on other loading processes?
+    }
 
-            LoadingProcess* const usedProcess = cache->retrieveLoadingProcess(m_loadingDescription.cacheKey());
+    if (continueQuery() && m_qimage.isNull())
+    {
+        // find possible running loading process
+
+        LoadingProcess* usedProcess = nullptr;
+
+        {
+            LoadingCache::CacheLock lock(cache);
+
+            usedProcess = cache->retrieveLoadingProcess(m_loadingDescription.cacheKey());
 
             if (usedProcess)
             {
@@ -128,39 +134,44 @@ void ThumbnailLoadingTask::execute()
                 // has finished.
 
                 usedProcess->addListener(this);
-
-                // break loop when either the loading has completed, or this task is being stopped
-
-                // cppcheck-suppress knownConditionTrueFalse
-                while ((m_loadingTaskStatus != LoadingTaskStatusStopping) && !usedProcess->completed())
-                {
-                    lock.timedWait();
-                }
-
-                // remove listener from process
-
-                usedProcess->removeListener(this);
-
-                // wake up the process which is waiting until all listeners have removed themselves
-
-                lock.wakeAll();
             }
-            else
+        }
+
+        if (usedProcess)
+        {
+            // break loop when either the loading has completed, or this task is being stopped
+
+            // cppcheck-suppress knownConditionTrueFalse
+            while ((m_loadingTaskStatus != LoadingTaskStatusStopping) && !usedProcess->completed())
             {
-                // Add this to the list of listeners
-
-                addListener(this);
-
-                // Neither in cache, nor currently loading in different thread.
-                // Load it here and now, add this LoadingProcess to cache list.
-
-                cache->addLoadingProcess(this);
-
-                // Notify other processes that we are now loading this image.
-                // They might be interested - see notifyNewLoadingProcess below
-
-                cache->notifyNewLoadingProcess(this, m_loadingDescription);
+                QThread::msleep(500);
             }
+
+            LoadingCache::CacheLock lock(cache);
+
+            // remove listener from process
+
+            usedProcess->removeListener(this);
+
+            // m_qimage is now set to the result
+        }
+        else
+        {
+            LoadingCache::CacheLock lock(cache);
+
+            // Add this to the list of listeners
+
+            addListener(this);
+
+            // Neither in cache, nor currently loading in different thread.
+            // Load it here and now, add this LoadingProcess to cache list.
+
+            cache->addLoadingProcess(this);
+
+            // Notify other processes that we are now loading this image.
+            // They might be interested - see notifyNewLoadingProcess below
+
+            cache->notifyNewLoadingProcess(this, m_loadingDescription);
         }
     }
 
@@ -203,10 +214,6 @@ void ThumbnailLoadingTask::execute()
                 // remove myself from list of listeners
 
                 removeListener(this);
-            }
-
-            {
-                LoadingCache::CacheLock lock(cache);
 
                 if (!m_qimage.isNull())
                 {
@@ -231,17 +238,13 @@ void ThumbnailLoadingTask::execute()
                 // indicate that loading has finished so that listeners can stop waiting
 
                 m_completed = true;
+            }
 
-                // wake all listeners waiting on cache condVar, so that they remove themselves
+            // wait until all listeners have removed themselves
 
-                lock.wakeAll();
-
-                // wait until all listeners have removed themselves
-
-                while (m_listeners.count() != 0)
-                {
-                    lock.timedWait();
-                }
+            while (m_listeners.count() != 0)
+            {
+                QThread::msleep(250);
             }
         }
     }
