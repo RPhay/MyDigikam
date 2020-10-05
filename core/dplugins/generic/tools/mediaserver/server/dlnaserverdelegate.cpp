@@ -47,7 +47,7 @@ public:
 
     explicit Private()
       : filterUnknownOut(false),
-        useCache(false)
+        useCache        (false)
     {
     }
 

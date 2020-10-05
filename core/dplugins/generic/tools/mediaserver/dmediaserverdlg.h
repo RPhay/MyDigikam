@@ -44,8 +44,8 @@ class DMediaServerDlg : public DPluginDialog
 public:
 
     explicit DMediaServerDlg(QObject* const parent,
-                             DInfoInterface* const iface=nullptr);
-    ~DMediaServerDlg() override;
+                             DInfoInterface* const iface = nullptr);
+    ~DMediaServerDlg()              override;
 
 private:
 
@@ -57,7 +57,7 @@ private:
 
 private Q_SLOTS:
 
-    void accept() override;
+    void accept()                   override;
     void slotToggleMediaServer();
     void slotSelectionChanged();
 

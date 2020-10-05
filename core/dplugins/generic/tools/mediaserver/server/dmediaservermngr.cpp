@@ -68,8 +68,8 @@ class Q_DECL_HIDDEN DMediaServerMngr::Private
 public:
 
     explicit Private()
+      : server(nullptr)
     {
-        server = nullptr;
     }
 
     /// Configuration XML file to store albums map to share in case of restoring between sessions.

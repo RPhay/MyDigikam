@@ -74,7 +74,7 @@ public:
 
 protected:
 
-    ~DLNAMediaServer() override;
+    ~DLNAMediaServer()      override;
 
 private:
 

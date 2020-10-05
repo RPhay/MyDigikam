@@ -59,20 +59,20 @@ public:
 
     explicit Private()
       : dirty(false),
-        mngr(DMediaServerMngr::instance()),
-        srvButton(nullptr),
-        srvStatus(nullptr),
-        progress(nullptr),
-        aStats(nullptr),
-        separator(nullptr),
-        iStats(nullptr),
-        startOnStartup(nullptr),
-        albumSupport(false),
-        albumSelector(nullptr),
-        listView(nullptr),
-        iface(nullptr),
-        page(nullptr),
-        buttons(nullptr)
+        mngr            (DMediaServerMngr::instance()),
+        srvButton       (nullptr),
+        srvStatus       (nullptr),
+        progress        (nullptr),
+        aStats          (nullptr),
+        separator       (nullptr),
+        iStats          (nullptr),
+        startOnStartup  (nullptr),
+        albumSupport    (false),
+        albumSelector   (nullptr),
+        listView        (nullptr),
+        iface           (nullptr),
+        page            (nullptr),
+        buttons         (nullptr)
     {
     }
 
@@ -152,18 +152,18 @@ DMediaServerDlg::DMediaServerDlg(QObject* const /*parent*/,
 
     // -------------------
 
-    const int spacing       = QApplication::style()->pixelMetric(QStyle::PM_DefaultLayoutSpacing);
+    const int spacing         = QApplication::style()->pixelMetric(QStyle::PM_DefaultLayoutSpacing);
 
-    d->startOnStartup       = new QCheckBox(i18n("Start Server at Startup"));
+    d->startOnStartup         = new QCheckBox(i18n("Start Server at Startup"));
     d->startOnStartup->setWhatsThis(i18n("Set this option to turn-on the DLNA server at application start-up automatically"));
     d->startOnStartup->setChecked(true);
 
-    d->srvButton            = new QPushButton(this);
-    d->srvStatus            = new QLabel(this);
-    d->progress             = new WorkingWidget(this);
-    d->aStats               = new QLabel(this);
-    d->separator            = new QLabel(QLatin1String(" / "), this);
-    d->iStats               = new QLabel(this);
+    d->srvButton              = new QPushButton(this);
+    d->srvStatus              = new QLabel(this);
+    d->progress               = new WorkingWidget(this);
+    d->aStats                 = new QLabel(this);
+    d->separator              = new QLabel(QLatin1String(" / "), this);
+    d->iStats                 = new QLabel(this);
 
     QLabel* const explanation = new QLabel(this);
     explanation->setOpenExternalLinks(true);

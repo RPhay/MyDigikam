@@ -101,8 +101,8 @@ class Q_DECL_HIDDEN DMediaServer::Private
 public:
 
     explicit Private()
-      : upnp(nullptr),
-        logHandler(nullptr),
+      : upnp        (nullptr),
+        logHandler  (nullptr),
         serverHolder(nullptr)
     {
         NPT_LogManager::GetDefault().Configure("plist:.level=INFO;.handlers=CustomHandler;");
