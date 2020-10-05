@@ -90,6 +90,7 @@ set(upnpsdk_SRCS ${CMAKE_CURRENT_SOURCE_DIR}/upnpsdk/Platinum/Source/Core/PltAct
                  ${CMAKE_CURRENT_SOURCE_DIR}/upnpsdk/Neptune/Source/System/StdC/NptStdcDebug.cpp
                  ${CMAKE_CURRENT_SOURCE_DIR}/upnpsdk/Neptune/Source/System/StdC/NptStdcEnvironment.cpp
                  ${CMAKE_CURRENT_SOURCE_DIR}/upnpsdk/Neptune/Source/System/StdC/NptStdcFile.cpp
+                 ${CMAKE_CURRENT_SOURCE_DIR}/upnpsdk/Neptune/Source/System/Posix/NptPosixFile.cpp
                  ${CMAKE_CURRENT_SOURCE_DIR}/upnpsdk/Neptune/Source/System/Posix/NptPosixEnvironment.cpp
                  ${CMAKE_CURRENT_SOURCE_DIR}/upnpsdk/Neptune/Source/System/Null/NptNullAutoreleasePool.cpp
 )
@@ -102,7 +103,6 @@ if(NOT MSVC)
                              ${CMAKE_CURRENT_SOURCE_DIR}/upnpsdk/Neptune/Source/System/Posix/NptSelectableMessageQueue.cpp
                              ${CMAKE_CURRENT_SOURCE_DIR}/upnpsdk/Neptune/Source/System/Posix/NptPosixQueue.cpp
                              ${CMAKE_CURRENT_SOURCE_DIR}/upnpsdk/Neptune/Source/System/Posix/NptPosixThreads.cpp
-                             ${CMAKE_CURRENT_SOURCE_DIR}/upnpsdk/Neptune/Source/System/Posix/NptPosixFile.cpp
                              ${CMAKE_CURRENT_SOURCE_DIR}/upnpsdk/Neptune/Source/Core/NptDebug.cpp
     )
 
