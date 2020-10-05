@@ -66,6 +66,7 @@ public:
 
     explicit Private(LoadingCache* const q)
       : watch(nullptr),
+        mutex(QMutex::Recursive),
         q    (q)
     {
     }
@@ -88,7 +89,6 @@ public:
     /// Note: Don't make the mutex recursive, we need to use a wait condition on it
     QMutex                         mutex;
 
-    QWaitCondition                 condVar;
     LoadingCacheFileWatch*         watch;
     LoadingCache*                  q;
 };
@@ -496,20 +496,6 @@ LoadingCache::CacheLock::CacheLock(LoadingCache* const cache)
 LoadingCache::CacheLock::~CacheLock()
 {
     m_cache->d->mutex.unlock();
-}
-
-void LoadingCache::CacheLock::wakeAll()
-{
-    // obviously the mutex is locked when this function is called
-
-    m_cache->d->condVar.wakeAll();
-}
-
-void LoadingCache::CacheLock::timedWait()
-{
-    // same as above, the mutex is certainly locked
-
-    m_cache->d->condVar.wait(&m_cache->d->mutex, 1000);
 }
 
 } // namespace Digikam
