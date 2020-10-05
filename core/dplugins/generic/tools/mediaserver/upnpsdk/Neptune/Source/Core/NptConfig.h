@@ -212,6 +212,7 @@
 #undef NPT_CONFIG_HAVE_LOCALTIME_R
 #define NPT_CONFIG_HAVE_FOPEN_S
 #define NPT_CONFIG_HAVE_FSOPEN
+#define NPT_CONFIG_HAVE_GETADDRINFO
 #include <share.h>
 #endif
 
