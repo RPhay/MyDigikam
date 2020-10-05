@@ -131,6 +131,11 @@
 #undef NPT_CONFIG_HAVE_SOCKADDR_SA_LEN
 #endif
 
+/* FreeBSD */
+#if defined(__FreeBSD__)
+#define NPT_CONFIG_HAVE_GETADDRINFO
+#endif
+
 /* linux */
 #if defined(__linux__)
 #define NPT_CONFIG_HAVE_GETADDRINFO
