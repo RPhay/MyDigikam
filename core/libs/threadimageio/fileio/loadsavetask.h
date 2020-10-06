@@ -216,10 +216,10 @@ public:
 
 private:
 
-    QString          m_filePath;
-    QString          m_format;
-    DImg             m_img;
-    SavingTaskStatus m_savingTaskStatus;
+    QString                   m_filePath;
+    QString                   m_format;
+    DImg                      m_img;
+    volatile SavingTaskStatus m_savingTaskStatus;
 
 private:
 
