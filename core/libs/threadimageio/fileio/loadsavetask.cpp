@@ -212,7 +212,7 @@ void SharedLoadingTask::execute()
             // cppcheck-suppress knownConditionTrueFalse
             while ((m_loadingTaskStatus != LoadingTaskStatusStopping) && !usedProcess->completed())
             {
-                QThread::msleep(500);
+                QThread::msleep(50);
             }
 
             LoadingCache::CacheLock lock(cache);
@@ -298,7 +298,7 @@ void SharedLoadingTask::execute()
 
             while (m_listeners.count() != 0)
             {
-                QThread::msleep(250);
+                QThread::msleep(10);
             }
         }
     }
