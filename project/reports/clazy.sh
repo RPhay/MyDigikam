@@ -54,11 +54,12 @@ cmake -G "Unix Makefiles" . \
 
 export CLAZY_IGNORE_DIRS=".*include.*"
 
-make -j$CPU_CORES | tee ${REPORT_DIR}/trace.log
+make -j$CPU_CORES 2> ${REPORT_DIR}/trace.log
 
 cd $ORIG_WD
 
-if []; then
+if [ ]; then
+
 SCANBUILD_DIR=$(find ${REPORT_DIR} -maxdepth 1 -not -empty -not -name `basename ${REPORT_DIR}`)
 echo "Clazy Report $TITLE to publish is located to $SCANBUILD_DIR"
 
