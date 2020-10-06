@@ -441,6 +441,7 @@ int CalSystemPrivate::quarter(int month) const
         case CalSystem::CopticCalendar:
         case CalSystem::EthiopicCalendar:
         case CalSystem::EthiopicAmeteAlemCalendar:
+        {
             if (month == 13)
             {
                 // Consider the short epagomenal month as part of the 4th quarter
@@ -448,10 +449,16 @@ int CalSystemPrivate::quarter(int month) const
             }
 
 #if __GNUC__ >= 7   // krazy:exclude=cpp
+
             [[fallthrough]];
+
 #endif
+        }
+
         default:
+        {
             return (((month - 1) / 3) + 1);
+        }
     }
 }
 
@@ -500,7 +507,9 @@ bool CalSystemPrivate::isLeapYear(int year) const
 
 void CalSystemPrivate::julianDayToDate(qint64 jd, int* year, int* month, int* day) const
 {
-    int yy = 0, mm = 0, dd = 0;
+    int yy = 0;
+    int mm = 0;
+    int dd = 0;
 
     switch (calendarSystem())
     {
@@ -512,6 +521,7 @@ void CalSystemPrivate::julianDayToDate(qint64 jd, int* year, int* month, int* da
         {
             // Formula from The Calendar FAQ by Claus Tondering
             // http://www.tondering.dk/claus/cal/node3.html#SECTION003161000000000000000
+
             qint64 a = jd + 32044;
             qint64 b = ((4 * a) + 3) / 146097;
             qint64 c = a - ((146097 * b) / 4);
@@ -606,10 +616,12 @@ void CalSystemPrivate::julianDayToDate(qint64 jd, int* year, int* month, int* da
     {
         *year = yy;
     }
+
     if (month)
     {
         *month = mm;
     }
+
     if (day)
     {
         *day = dd;
@@ -1479,7 +1491,7 @@ bool CalSystem::dateDifference(const QDate& fromDate, const QDate& toDate,
                     return false;
                 }
 
-                if (d1 == dim1 && d2 == d->daysInMonth(y2, m2))
+                if      (d1 == dim1 && d2 == d->daysInMonth(y2, m2))
                 {
                     dm = (miy0 + m2 - m1) % miy0;
                     dd = 0;

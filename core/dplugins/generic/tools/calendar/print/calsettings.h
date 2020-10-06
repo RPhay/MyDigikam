@@ -83,6 +83,8 @@ class CalSettings : public QObject
 
 public:
 
+    ~CalSettings() override;
+
     void setYear(int year);
     int  year() const;
     void setImage(int month, const QUrl& url);
@@ -96,12 +98,12 @@ public:
     QPrinter::PrinterMode resolution() const;
 
 #ifdef HAVE_KCALENDAR
+
     void loadSpecial(const QUrl& url, const QColor& color);
+
 #endif
 
     static CalSettings* instance(QObject* const parent = nullptr);
-
-    ~CalSettings() override;
 
 public:
 
@@ -126,6 +128,7 @@ protected:
 
 private:
 
+    // Disable
     explicit CalSettings(QObject* const parent);
     CalSettings(CalSettings const&);
     CalSettings& operator=(CalSettings const&);

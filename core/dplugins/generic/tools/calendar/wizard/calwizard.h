@@ -51,7 +51,7 @@ public:
     explicit CalWizard(QWidget* const parent, DInfoInterface* const iface = nullptr);
     ~CalWizard() override;
 
-    DInfoInterface* iface()    const;
+    DInfoInterface* iface() const;
 
 private:
 

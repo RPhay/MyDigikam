@@ -55,7 +55,7 @@ class CalMonthWidget : public QPushButton
 public:
 
     explicit CalMonthWidget(QWidget* const parent, int month);
-    ~CalMonthWidget() override;
+    ~CalMonthWidget()                       override;
 
     QUrl imagePath() const;
     void setImage(const QUrl& url);
@@ -68,9 +68,9 @@ Q_SIGNALS:
 protected:
 
     void dragEnterEvent(QDragEnterEvent* e) override;
-    void dropEvent(QDropEvent* e) override;
-    void paintEvent(QPaintEvent* e) override;
-    void mouseReleaseEvent(QMouseEvent* e) override;
+    void dropEvent(QDropEvent* e)           override;
+    void paintEvent(QPaintEvent* e)         override;
+    void mouseReleaseEvent(QMouseEvent* e)  override;
 
 private Q_SLOTS:
 

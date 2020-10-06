@@ -41,7 +41,7 @@ class CalWidget : public QWidget
 public:
 
     explicit CalWidget(QWidget* const parent);
-    ~CalWidget() override;
+    ~CalWidget()                    override;
 
     void setCurrent(int curr);
     int current() const;

@@ -36,7 +36,8 @@ class QPaintDevice;
 namespace DigikamGenericCalendarPlugin
 {
 
-class CalPainter : public QObject, public QPainter
+class CalPainter : public QObject,
+                   public QPainter
 {
     Q_OBJECT
 

@@ -33,6 +33,7 @@
 
 
 #ifdef HAVE_KCALENDAR
+
     // KCalCore includes
 
 #   include <kcalcore/icalformat.h>
@@ -42,6 +43,7 @@
     // Qt includes
 
 #   include <QTimeZone>
+
 #endif // HAVE_KCALENDAR
 
 namespace DigikamGenericCalendarPlugin
@@ -90,6 +92,7 @@ CalSettings* CalSettings::instance(QObject* const parent)
 void CalSettings::setYear(int year)
 {
     params.year = year;
+
     emit settingsChanged();
 }
 
@@ -105,12 +108,12 @@ void CalSettings::setImage(int month, const QUrl& path)
 
 QUrl CalSettings::image(int month) const
 {
-    return d->monthMap.contains(month) ? d->monthMap[month] : QUrl();
+    return (d->monthMap.contains(month) ? d->monthMap[month] : QUrl());
 }
 
 void CalSettings::setPaperSize(const QString& paperSize)
 {
-    if (paperSize == QLatin1String("A4"))
+    if      (paperSize == QLatin1String("A4"))
     {
         params.paperWidth  = 210;
         params.paperHeight = 297;
@@ -128,7 +131,7 @@ void CalSettings::setPaperSize(const QString& paperSize)
 
 void CalSettings::setResolution(const QString& resolution)
 {
-    if (resolution == QLatin1String("High"))
+    if      (resolution == QLatin1String("High"))
     {
         params.printResolution = QPrinter::HighResolution;
     }
@@ -259,7 +262,8 @@ QColor CalSettings::getDayColor(int month, int day) const
         return d->special[dt].first;
     }
 
-    //default
+    // default
+
     return Qt::black;
 }
 
@@ -295,13 +299,18 @@ void CalSettings::loadSpecial(const QUrl& url, const QColor& color)
         return;
     }
 
-#ifdef HAVE_KCALENDAR_QDATETIME
+#   ifdef HAVE_KCALENDAR_QDATETIME
+
     KCalCore::MemoryCalendar::Ptr memCal(new KCalCore::MemoryCalendar(QTimeZone::utc()));
     using DateTime = QDateTime;
-#else
+
+#   else
+
     KCalCore::MemoryCalendar::Ptr memCal(new KCalCore::MemoryCalendar(QLatin1String("UTC")));
     using DateTime = KDateTime;
-#endif
+
+#   endif
+
     KCalCore::FileStorage::Ptr fileStorage(new KCalCore::FileStorage(memCal, url.toLocalFile(), new KCalCore::ICalFormat));
 
     qCDebug(DIGIKAM_DPLUGIN_GENERIC_LOG) << "Loading calendar from file " << url.toLocalFile();

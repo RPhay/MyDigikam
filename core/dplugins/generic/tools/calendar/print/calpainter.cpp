@@ -57,7 +57,7 @@ class Q_DECL_HIDDEN CalPainter::Private
 public:
 
     explicit Private()
-      : cancelled(false),
+      : cancelled  (false),
         orientation(MetaEngine::ORIENTATION_UNSPECIFIED)
     {
     }

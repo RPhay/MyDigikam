@@ -56,8 +56,8 @@ class Q_DECL_HIDDEN CalMonthWidget::Private
 public:
 
     explicit Private()
-      : thumbSize(QSize(64, 64)),
-        month(0),
+      : thumbSize      (QSize(64, 64)),
+        month          (0),
         thumbLoadThread(ThumbnailLoadThread::defaultThread())
     {
     }
@@ -186,7 +186,7 @@ void CalMonthWidget::mouseReleaseEvent(QMouseEvent* e)
         return;
     }
 
-    if (e->button() == Qt::LeftButton)
+    if      (e->button() == Qt::LeftButton)
     {
         ImageDialog dlg(this,
                         QUrl::fromLocalFile(QStandardPaths::writableLocation(QStandardPaths::PicturesLocation)),

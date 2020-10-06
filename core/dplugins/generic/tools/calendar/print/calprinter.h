@@ -51,7 +51,7 @@ public:
 
 protected:
 
-    void run() override;
+    void run()    override;
 
 Q_SIGNALS:
 
