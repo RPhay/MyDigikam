@@ -52,8 +52,17 @@ cmake -G "Unix Makefiles" . \
       -Wno-dev \
       ..
 
-export CLAZY_IGNORE_DIRS=".*include.*"
-export CLAZY_CHECKS="level1,no-fully-qualified-moc-types"
+# Do not parse unwanted directories accordingly with Krazy configuration.
+krazySkipConfig
+
+IGNORE_DIRS=".*include.*|"
+
+for DROP_ITEM in $KRAZY_FILTERS ; do
+    IGNORE_DIRS+=".*$DROP_ITEM.*|"
+done
+
+export CLAZY_IGNORE_DIRS=$IGNORE_DIRS
+export CLAZY_CHECKS="level1,no-fully-qualified-moc-types,no-overloaded-signal"
 
 make -j$CPU_CORES 2> ${REPORT_DIR}/trace.log
 
