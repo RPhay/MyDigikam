@@ -53,7 +53,7 @@ FacePipeline::Private::Private(FacePipeline* const q)
       waiting               (false),
       infosForFiltering     (0),
       packagesOnTheRoad     (0),
-      maxPackagesOnTheRoad  (50),
+      maxPackagesOnTheRoad  (30),
       totalPackagesAdded    (0),
       q                     (q)
 {
