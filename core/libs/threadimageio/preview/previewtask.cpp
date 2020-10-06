@@ -108,6 +108,8 @@ void PreviewLoadingTask::execute()
         }
     }
 
+    bool loadingImage = false;
+
     if (continueQuery() && m_img.isNull())
     {
         // find possible running loading process
@@ -155,9 +157,7 @@ void PreviewLoadingTask::execute()
         {
             LoadingCache::CacheLock lock(cache);
 
-            // Add this to the list of listeners
-
-            addListener(this);
+            loadingImage = true;
 
             // Neither in cache, nor currently loading in different thread.
             // Load it here and now, add this LoadingProcess to cache list.
@@ -171,7 +171,7 @@ void PreviewLoadingTask::execute()
         }
     }
 
-    if (continueQuery() && m_img.isNull())
+    if (loadingImage || (continueQuery() && m_img.isNull()))
     {
         // Preview is not in cache, we will load image from file.
 
@@ -321,7 +321,7 @@ void PreviewLoadingTask::execute()
             }
         }
 
-        if (continueQuery())
+        if (loadingImage || continueQuery())
         {
             if (!m_img.isNull() && MetaEngineSettings::instance()->settings().exifRotate)
             {
@@ -334,10 +334,6 @@ void PreviewLoadingTask::execute()
                 // remove this from the list of loading processes in cache
 
                 cache->removeLoadingProcess(this);
-
-                // remove myself from list of listeners
-
-                removeListener(this);
 
                 if (!m_img.isNull())
                 {

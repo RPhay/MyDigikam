@@ -115,6 +115,8 @@ void ThumbnailLoadingTask::execute()
         }
     }
 
+    bool loadingImage = false;
+
     if (continueQuery() && m_qimage.isNull())
     {
         // find possible running loading process
@@ -157,9 +159,7 @@ void ThumbnailLoadingTask::execute()
         {
             LoadingCache::CacheLock lock(cache);
 
-            // Add this to the list of listeners
-
-            addListener(this);
+            loadingImage = true;
 
             // Neither in cache, nor currently loading in different thread.
             // Load it here and now, add this LoadingProcess to cache list.
@@ -173,7 +173,7 @@ void ThumbnailLoadingTask::execute()
         }
     }
 
-    if (continueQuery() && m_qimage.isNull())
+    if (loadingImage  || (continueQuery() && m_qimage.isNull()))
     {
         // Load or create thumbnail
 
@@ -200,7 +200,7 @@ void ThumbnailLoadingTask::execute()
             }
         }
 
-        if (continueQuery())
+        if (loadingImage || continueQuery())
         {
             {
                 LoadingCache::CacheLock lock(cache);
@@ -208,10 +208,6 @@ void ThumbnailLoadingTask::execute()
                 // remove this from the list of loading processes in cache
 
                 cache->removeLoadingProcess(this);
-
-                // remove myself from list of listeners
-
-                removeListener(this);
 
                 if (!m_qimage.isNull())
                 {

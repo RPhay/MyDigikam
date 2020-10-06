@@ -141,7 +141,6 @@ public:
 
     void execute()                                                      override;
     void progressInfo(float progress)                                   override;
-    bool continueQuery()                                                override;
     void setStatus(LoadingTaskStatus status)                            override;
 
     bool needsPostProcessing()              const;
