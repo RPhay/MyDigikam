@@ -53,6 +53,7 @@ cmake -G "Unix Makefiles" . \
       ..
 
 export CLAZY_IGNORE_DIRS=".*include.*"
+export CLAZY_CHECKS="level1,no-fully-qualified-moc-types"
 
 make -j$CPU_CORES 2> ${REPORT_DIR}/trace.log
 
