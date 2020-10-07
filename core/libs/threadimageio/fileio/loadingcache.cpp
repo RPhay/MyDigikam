@@ -65,8 +65,8 @@ class Q_DECL_HIDDEN LoadingCache::Private
 public:
 
     explicit Private(LoadingCache* const q)
-      : watch(nullptr),
-        mutex(QMutex::Recursive),
+      : mutex(QMutex::Recursive),
+        watch(nullptr),
         q    (q)
     {
     }
