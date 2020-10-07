@@ -70,16 +70,16 @@ class Q_DECL_HIDDEN GSWindow::Private
 public:
 
     explicit Private()
-      : imagesCount(0),
-        imagesTotal(0),
-        renamingOpt(0),
-        service(GoogleService::GPhotoImport),
-        widget(nullptr),
-        albumDlg(nullptr),
+      : imagesCount   (0),
+        imagesTotal   (0),
+        renamingOpt   (0),
+        service       (GoogleService::GPhotoImport),
+        widget        (nullptr),
+        albumDlg      (nullptr),
         gphotoAlbumDlg(nullptr),
-        talker(nullptr),
-        gphotoTalker(nullptr),
-        iface(nullptr)
+        talker        (nullptr),
+        gphotoTalker  (nullptr),
+        iface         (nullptr)
     {
     }
 
@@ -112,7 +112,7 @@ GSWindow::GSWindow(DInfoInterface* const iface,
                    QWidget* const /*parent*/,
                    const QString& serviceName)
     : WSToolDialog(nullptr, QString::fromLatin1("%1Export Dialog").arg(serviceName)),
-      d(new Private)
+      d           (new Private)
 {
     d->iface       = iface;
     d->serviceName = serviceName;
@@ -144,7 +144,7 @@ GSWindow::GSWindow(DInfoInterface* const iface,
     switch (d->service)
     {
         case GoogleService::GDrive:
-
+        {
             setWindowTitle(i18n("Export to Google Drive"));
 
             startButton()->setText(i18n("Start Upload"));
@@ -185,10 +185,11 @@ GSWindow::GSWindow(DInfoInterface* const iface,
             d->talker->doOAuth();
 
             break;
+        }
 
         case GoogleService::GPhotoImport:
         case GoogleService::GPhotoExport:
-
+        {
             if (d->service == GoogleService::GPhotoExport)
             {
                 setWindowTitle(i18n("Export to Google Photos Service"));
@@ -244,6 +245,7 @@ GSWindow::GSWindow(DInfoInterface* const iface,
             d->gphotoTalker->doOAuth();
 
             break;
+        }
     }
 
     connect(d->widget->imagesList(), SIGNAL(signalImageListChanged()),
@@ -783,7 +785,7 @@ void GSWindow::uploadNextPhoto()
                         info.tags.clear();
                         QSet<QString>::const_iterator itT3;
 
-                        for (itT3 = newTagsSet.begin() ; itT3 != newTagsSet.end() ; ++itT3)
+                        for (itT3 = newTagsSet.constBegin() ; itT3 != newTagsSet.constEnd() ; ++itT3)
                         {
                             info.tags.append(*itT3);
                         }
@@ -793,7 +795,9 @@ void GSWindow::uploadNextPhoto()
 
                     case GPTagCombined:
                     default:
+                    {
                         break;
+                    }
                 }
             }
 
@@ -1087,9 +1091,9 @@ void GSWindow::slotUploadPhotoDone(int err, const QString& msg, const QStringLis
             QScopedPointer<DMetadata> meta(new DMetadata);
 
             if (d->widget->getPhotoIdCheckBox()->isChecked() &&
-                meta->supportXmp()                         &&
-                meta->canWriteXmp(fileUrl.toLocalFile())   &&
-                meta->load(fileUrl.toLocalFile())          &&
+                meta->supportXmp()                           &&
+                meta->canWriteXmp(fileUrl.toLocalFile())     &&
+                meta->load(fileUrl.toLocalFile())            &&
                 !photoId.isEmpty())
             {
                 meta->setXmpTagString("Xmp.digiKam.picasawebGPhotoId", photoId);
@@ -1115,6 +1119,7 @@ void GSWindow::slotNewAlbumRequest()
     switch (d->service)
     {
         case GoogleService::GDrive:
+        {
             if (d->albumDlg->exec() == QDialog::Accepted)
             {
                 GSFolder newFolder;
@@ -1122,9 +1127,12 @@ void GSWindow::slotNewAlbumRequest()
                 d->currentAlbumId = d->widget->getAlbumsCoB()->itemData(d->widget->getAlbumsCoB()->currentIndex()).toString();
                 d->talker->createFolder(newFolder.title, d->currentAlbumId);
             }
+
             break;
+        }
 
         default:
+        {
             if (d->gphotoAlbumDlg->exec() == QDialog::Accepted)
             {
                 GSFolder newFolder;
@@ -1132,7 +1140,9 @@ void GSWindow::slotNewAlbumRequest()
                 d->gphotoTalker->createAlbum(newFolder);
                 d->newFolderTitle = newFolder.title;
             }
+
             break;
+        }
     }
 }
 
@@ -1186,6 +1196,7 @@ void GSWindow::slotCreateFolderDone(int code, const QString& msg, const QString&
     switch (d->service)
     {
         case GoogleService::GDrive:
+        {
             if (code == 0)
             {
                 QMessageBox::critical(this, i18nc("@title:window", "Error"),
@@ -1196,10 +1207,13 @@ void GSWindow::slotCreateFolderDone(int code, const QString& msg, const QString&
                 d->currentAlbumId = albumId;
                 d->talker->listFolders();
             }
+
             break;
+        }
 
         case GoogleService::GPhotoImport:
         case GoogleService::GPhotoExport:
+        {
             if (code == 0)
             {
                 QMessageBox::critical(this, i18nc("@title:window", "Error"),
@@ -1213,7 +1227,9 @@ void GSWindow::slotCreateFolderDone(int code, const QString& msg, const QString&
                 d->widget->getAlbumsCoB()->setCurrentIndex(d->widget->getAlbumsCoB()->
                                                findData(d->currentAlbumId));
             }
+
             break;
+        }
     }
 }
 
