@@ -50,8 +50,8 @@ class Q_DECL_HIDDEN QuerySiteInfoGeneralTest : public QObject
 public:
 
     QuerySiteInfoGeneralTest()
+      : generalCount(0)
     {
-        generalCount = 0;
     }
 
 public Q_SLOTS:
@@ -128,7 +128,7 @@ private Q_SLOTS:
         resultExpected.setLicense(QStringLiteral("Creative Commons Attribution-Share Alike 3.0 Unported"));
         resultExpected.setLanguage(QStringLiteral("en"));
         resultExpected.setFallBack8bitEncoding(QStringLiteral("windows-1252"));
-        resultExpected.setWriteApi(QStringLiteral(""));
+        resultExpected.setWriteApi(QLatin1String());
         resultExpected.setTimeZone(QStringLiteral("UTC"));
         resultExpected.setTimeOffset(QStringLiteral("0"));
         resultExpected.setArticlePath(QStringLiteral("/wiki/$1"));
