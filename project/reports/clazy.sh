@@ -72,17 +72,14 @@ cmake -G "Unix Makefiles" . \
 
 make -j$CPU_CORES 2> ${REPORT_DIR}/trace.log
 
+cd $ORIG_WD
+
 python3 ./clazy_visualizer.py $REPORT_DIR/trace.log
 
 #rm -f $REPORT_DIR/trace.log
 mv clazy.html $REPORT_DIR/index.html
 
-cd $ORIG_WD
-
-CLAZYBUILD_DIR=$(find ${REPORT_DIR} -maxdepth 1 -not -empty -not -name `basename ${REPORT_DIR}`)
-echo "Clazy Report $TITLE to publish is located to $CLAZYBUILD_DIR"
-
 # update www.digikam.org report section.
-updateReportToWebsite "clazy" $CLAZYBUILD_DIR $TITLE $(parseGitBranch)
+updateReportToWebsite "clazy" $REPORT_DIR $TITLE $(parseGitBranch)
 
 cd $ORIG_DIR

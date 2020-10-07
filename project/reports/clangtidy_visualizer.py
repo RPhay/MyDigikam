@@ -1180,7 +1180,7 @@ def parse_command_line_options():
 
 # Prints usage information for the script.
 def usage():
-    print("**--------------------------- Clang Visualizer --------------------------**\n\n \
+    print("**--------------------------- Clang Tidy Visualizer --------------------------**\n\n \
     Generates an html file as a visual for clang-tidy checks.\n\n \
     Arguments: python clangtidy_visualizer.py [logfile.log]\n\n \
     \t\t-ex: python clangtidy_visualizer [logfile.log] \
@@ -1209,9 +1209,6 @@ def writeList(f, num_used_checks, names_of_used, args, external_link, external_n
     f.write("\t\t<h3 style=\"text-align: center; color: #111; font-family: 'Helvetica Neue', sans-serif; font-weight: bold; \
     letter-spacing: 0.5px; line-height: 1;\">Clang-Tidy Checks</h3>\n")
     f.write("\t\t<div class=\"btn-group\" role=\"group\" style=\"position: absolute; right: 0;\">\n")
-#    f.write("\t\t\t<button type=\"button\" class=\"btn btn-warning\" onclick=\"highlightChecks(0)\" style=\"outline: none; color: black\">Warning</button>\n")
-#    f.write("\t\t\t<button type=\"button\" class=\"btn btn-danger\" onclick=\"highlightChecks(1)\" style=\"outline: none; color: black\">Danger</button>\n")
-#    f.write("\t\t\t<button type=\"button\" class=\"btn btn-info\" onclick=\"clearChecks()\" style=\"outline: none; color: black\">Clear All</button>\n")
     f.write("\t\t</div>\n\t</div><br>\n")
     f.write("\t<ul id=\"list\" class=\"list-group\" align=\"left\" style=\"display: block; width: 25%; height: 0; margin-bottom: 0;\">\n")
 
@@ -1232,11 +1229,6 @@ def writeList(f, num_used_checks, names_of_used, args, external_link, external_n
     background-color: lightgray\" title=\"Collapse sidebar\">\n")
     f.write("\t\t\t<span id=\"collapse-img0\" class=\"glyphicon glyphicon-menu-left\"></button></span>\n")
     f.write("\t\t\t<h4 style=\"margin-top: 0; color: #111; position: absolute; left: 50%; transform: translateX(-50%); margin-bottom: 10;\">Original Log</h4>\n")
-    if (args.button):
-        f.write("\t\t\t<button id=\"externalLink\" type=\"button\" class=\"btn\" onclick=\"window.open('%s',               '_blank')\"\n" % external_link)
-        f.write("\t\t\tstyle=\"outline: none; position: absolute; color: #111; right: 0; background-color: rgb(181, 215, 247)\">\n")
-        f.write(
-            "\t\t\t%s <span class=\"glyphicon glyphicon-new-window\"></button></span>\n" % external_name)
 
     f.write("\t\t</div>\n\t\t<pre>\n")
 
@@ -1260,11 +1252,6 @@ def sortLogs(f, contents, num_used_checks, names_of_used, args, external_link, e
         f.write("\t\t\t<span id=\"collapse-img%d\" class=\"glyphicon glyphicon-menu-left\"></button></span>\n" % (collapse_idx))
         f.write("\t\t\t<h4 style=\"margin-top: 0; color: #111; position: absolute; left: 50%; transform: translateX(-50%); margin-bottom: 10\">")
         f.write("%s</h4>\n" % (names_of_used[check_idx].name[1:-1]))
-        if (args.button):
-            f.write("\t\t\t<button id=\"externalLink\" type=\"button\" class=\"btn\" onclick=\"window.open('%s','_blank')\"\n" % external_link)
-            f.write("\t\t\tstyle=\"outline: none; position: absolute; color: #111; right: 0; background-color: rgb(181, 215, 247)\">\n")
-            f.write(
-                "\t\t\t%s <span class=\"glyphicon glyphicon-new-window\"></button></span>\n" % external_name)
         f.write("\t\t</div>\n\t\t<pre>\n")
         names_of_used[check_idx].data = names_of_used[check_idx].data.replace('<', '&lt;')
         names_of_used[check_idx].data = names_of_used[check_idx].data.replace('>', '&gt;')
