@@ -108,8 +108,6 @@ void PreviewLoadingTask::execute()
         }
     }
 
-    bool loadingImage = false;
-
     if (continueQuery() && m_img.isNull())
     {
         // find possible running loading process
@@ -153,11 +151,12 @@ void PreviewLoadingTask::execute()
 
             // m_img is now set to the result
         }
-        else
+    }
+
+    if (continueQuery() && m_img.isNull())
+    {
         {
             LoadingCache::CacheLock lock(cache);
-
-            loadingImage = true;
 
             // Neither in cache, nor currently loading in different thread.
             // Load it here and now, add this LoadingProcess to cache list.
@@ -169,10 +168,7 @@ void PreviewLoadingTask::execute()
 
             cache->notifyNewLoadingProcess(this, m_loadingDescription);
         }
-    }
 
-    if (loadingImage || (continueQuery() && m_img.isNull()))
-    {
         // Preview is not in cache, we will load image from file.
 
         DImg::FORMAT format      = DImg::fileFormat(m_loadingDescription.filePath);
@@ -184,7 +180,7 @@ void PreviewLoadingTask::execute()
 
             // Check original image size using Exiv2.
 
-            QSize originalSize  = previews.originalSize();
+            QSize originalSize = previews.originalSize();
 
             // If not valid, get original size from LibRaw
 
@@ -321,58 +317,55 @@ void PreviewLoadingTask::execute()
             }
         }
 
-        if (loadingImage || continueQuery())
+        if (!m_img.isNull() && MetaEngineSettings::instance()->settings().exifRotate)
         {
-            if (!m_img.isNull() && MetaEngineSettings::instance()->settings().exifRotate)
+            m_img.exifRotate(m_loadingDescription.filePath);
+        }
+
+        {
+            LoadingCache::CacheLock lock(cache);
+
+            // remove this from the list of loading processes in cache
+
+            cache->removeLoadingProcess(this);
+
+            if (!m_img.isNull())
             {
-                m_img.exifRotate(m_loadingDescription.filePath);
-            }
+                // put valid image into cache of loaded images
 
-            {
-                LoadingCache::CacheLock lock(cache);
+                cache->putImage(m_loadingDescription.cacheKey(), m_img,
+                                m_loadingDescription.filePath);
 
-                // remove this from the list of loading processes in cache
+                // dispatch image to all listeners
 
-                cache->removeLoadingProcess(this);
-
-                if (!m_img.isNull())
+                for (int i = 0 ; i < m_listeners.count() ; ++i)
                 {
-                    // put valid image into cache of loaded images
+                    LoadingProcessListener* const l = m_listeners.at(i);
 
-                    cache->putImage(m_loadingDescription.cacheKey(), m_img,
-                                    m_loadingDescription.filePath);
-
-                    // dispatch image to all listeners
-
-                    for (int i = 0 ; i < m_listeners.count() ; ++i)
+                    if (l->accessMode() == LoadSaveThread::AccessModeReadWrite)
                     {
-                        LoadingProcessListener* const l = m_listeners.at(i);
+                        // If a listener requested ReadWrite access, it gets a deep copy.
+                        // DImg is explicitly shared.
 
-                        if (l->accessMode() == LoadSaveThread::AccessModeReadWrite)
-                        {
-                            // If a listener requested ReadWrite access, it gets a deep copy.
-                            // DImg is explicitly shared.
-
-                            l->setResult(m_loadingDescription, m_img.copy());
-                        }
-                        else
-                        {
-                            l->setResult(m_loadingDescription, m_img);
-                        }
+                        l->setResult(m_loadingDescription, m_img.copy());
+                    }
+                    else
+                    {
+                        l->setResult(m_loadingDescription, m_img);
                     }
                 }
-
-                // indicate that loading has finished so that listeners can stop waiting
-
-                m_completed = true;
             }
 
-            // wait until all listeners have removed themselves
+            // indicate that loading has finished so that listeners can stop waiting
 
-            while (m_listeners.count() != 0)
-            {
-                QThread::msleep(10);
-            }
+            m_completed = true;
+        }
+
+        // wait until all listeners have removed themselves
+
+        while (m_listeners.count() != 0)
+        {
+            QThread::msleep(10);
         }
     }
 

@@ -115,8 +115,6 @@ void ThumbnailLoadingTask::execute()
         }
     }
 
-    bool loadingImage = false;
-
     if (continueQuery() && m_qimage.isNull())
     {
         // find possible running loading process
@@ -155,11 +153,12 @@ void ThumbnailLoadingTask::execute()
 
             // m_qimage is now set to the result
         }
-        else
+    }
+
+    if (continueQuery() && m_qimage.isNull())
+    {
         {
             LoadingCache::CacheLock lock(cache);
-
-            loadingImage = true;
 
             // Neither in cache, nor currently loading in different thread.
             // Load it here and now, add this LoadingProcess to cache list.
@@ -171,10 +170,7 @@ void ThumbnailLoadingTask::execute()
 
             cache->notifyNewLoadingProcess(this, m_loadingDescription);
         }
-    }
 
-    if (loadingImage  || (continueQuery() && m_qimage.isNull()))
-    {
         // Load or create thumbnail
 
         setupCreator();
@@ -200,46 +196,43 @@ void ThumbnailLoadingTask::execute()
             }
         }
 
-        if (loadingImage || continueQuery())
         {
+            LoadingCache::CacheLock lock(cache);
+
+            // remove this from the list of loading processes in cache
+
+            cache->removeLoadingProcess(this);
+
+            if (!m_qimage.isNull())
             {
-                LoadingCache::CacheLock lock(cache);
+                // put valid image into cache of loaded images
 
-                // remove this from the list of loading processes in cache
+                cache->putThumbnail(m_loadingDescription.cacheKey(), m_qimage,
+                                    m_loadingDescription.filePath);
 
-                cache->removeLoadingProcess(this);
+                // dispatch image to all listeners
 
-                if (!m_qimage.isNull())
+                for (int i = 0 ; i < m_listeners.count() ; ++i)
                 {
-                    // put valid image into cache of loaded images
+                    ThumbnailLoadingTask* const task = dynamic_cast<ThumbnailLoadingTask*>(m_listeners.at(i));
 
-                    cache->putThumbnail(m_loadingDescription.cacheKey(), m_qimage,
-                                        m_loadingDescription.filePath);
-
-                    // dispatch image to all listeners
-
-                    for (int i = 0 ; i < m_listeners.count() ; ++i)
+                    if (task)
                     {
-                        ThumbnailLoadingTask* const task = dynamic_cast<ThumbnailLoadingTask*>(m_listeners.at(i));
-
-                        if (task)
-                        {
-                            task->setThumbResult(m_loadingDescription, m_qimage);
-                        }
+                        task->setThumbResult(m_loadingDescription, m_qimage);
                     }
                 }
-
-                // indicate that loading has finished so that listeners can stop waiting
-
-                m_completed = true;
             }
 
-            // wait until all listeners have removed themselves
+            // indicate that loading has finished so that listeners can stop waiting
 
-            while (m_listeners.count() != 0)
-            {
-                QThread::msleep(10);
-            }
+            m_completed = true;
+        }
+
+        // wait until all listeners have removed themselves
+
+        while (m_listeners.count() != 0)
+        {
+            QThread::msleep(10);
         }
     }
 
