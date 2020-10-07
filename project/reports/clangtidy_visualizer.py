@@ -1077,12 +1077,7 @@ class checks:
 
 # Begin here.
 def main():
-    find_checks_list()
     checks_list.sort()
-
-    # Uncomment below if you would like to update the newest clang-tidy
-    # checks to your checks.py file.
-    # write_checks_file()
 
     # Process command line arguments.
     args = parse_command_line_options()
@@ -1154,7 +1149,7 @@ def main():
                         details += 1
 
     args.file.close()
-    f = open("clang.html", "w")
+    f = open("tidy.html", "w")
 
     # Functions for writing to the clang.html file.
     writeHeader(f)
@@ -1167,30 +1162,6 @@ def main():
     # Close the file.
     f.close()
     sys.exit()
-
-# Scrape data from clang-tidy's official list of current checks.
-def find_checks_list():
-    global checks_list
-    url = 'http://clang.llvm.org/extra/clang-tidy/checks/list.html'
-    resp = urllib.request.urlopen(url)
-    soup = BeautifulSoup(resp, "lxml")
-
-    for link in soup.find_all('a', href=True):
-        check = re.match("^([a-zA-Z0-9].*).html.*$", link['href'])
-        if check:
-            checks_list.append("[" + check.group(1) + "]")
-
-    checks_list = list(dict.fromkeys(checks_list))
-
-# Optional: Update the checks.py file with the most recent checks.
-def write_checks_file():
-    with open('checks.py', 'w') as f:
-        f.write('checks_list = [')
-        for check, item in enumerate(checks_list):
-            if check == len(checks_list) - 1:
-                f.write("'%s']" % item)
-            else:
-                f.write("'%s'," % item)
 
 # Parses through the given command line options (-b, --button)
 # and returns the given file's contents if read successfully.
@@ -1215,7 +1186,7 @@ def usage():
     \t\t-ex: python clang_visualizer [logfile.log] \
     \n\n**------------------------------------------------------------------------**")
 
-# Header of the clang.html file.
+# Header of the tidy.html file.
 def writeHeader(f):
     f.write("<!DOCTYPE html>\n")
     f.write("<html>\n")

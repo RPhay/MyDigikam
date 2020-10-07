@@ -19,7 +19,7 @@ WEBSITE_DIR="${ORIG_WD}/site"
 # Get active git branches to create report description string
 TITLE="digiKam-$(parseGitBranch)$(parseGitHash)"
 echo "Clang Tidy Static Analyzer task name: $TITLE"
-if [ ] ; then
+
 # Clean up and prepare to scan.
 
 rm -fr $REPORT_DIR
@@ -28,11 +28,11 @@ rm -fr $WEBSITE_DIR
 mkdir -p $REPORT_DIR
 
 /usr/share/clang/run-clang-tidy.py -quiet -j$CPU_CORES -p  ../../build/ | tee $REPORT_DIR/clang-tidy.log
-fi
-python3 ./clang_visualizer.py $REPORT_DIR/clang-tidy.log
+
+python3 ./clangtidy_visualizer.py $REPORT_DIR/clang-tidy.log
 
 #rm -f $REPORT_DIR/clang-tidy.log
-mv clang.html $REPORT_DIR/index.html
+mv tidy.html $REPORT_DIR/index.html
 
 updateReportToWebsite "tidy" $REPORT_DIR $TITLE $(parseGitBranch)
 
