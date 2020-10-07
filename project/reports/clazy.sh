@@ -62,7 +62,7 @@ for DROP_ITEM in $KRAZY_FILTERS ; do
 done
 
 export CLAZY_IGNORE_DIRS=$IGNORE_DIRS
-export CLAZY_CHECKS="level1,no-fully-qualified-moc-types,no-overloaded-signal"
+export CLAZY_CHECKS="level1,no-fully-qualified-moc-types,no-overloaded-signal,no-qproperty-without-notif"
 
 make -j$CPU_CORES 2> ${REPORT_DIR}/trace.log
 
