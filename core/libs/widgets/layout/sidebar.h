@@ -70,7 +70,7 @@ public:
 
 public:
 
-    explicit DMultiTabBar(Qt::Edge pos, QWidget* const parent=nullptr);
+    explicit DMultiTabBar(Qt::Edge pos, QWidget* const parent = nullptr);
     ~DMultiTabBar() override;
 
     /**
@@ -82,7 +82,10 @@ public:
      * @param popup A popup menu which should be displayed if the button is clicked
      * @param not_used_yet will be used for a popup text in the future
      */
-    int appendButton(const QPixmap &pic, int id=-1, QMenu* const popup=nullptr, const QString& not_used_yet=QString());
+    int appendButton(const QPixmap& pic,
+                     int id = -1,
+                     QMenu* const popup = nullptr,
+                     const QString& not_used_yet = QString());
 
     /**
      * remove a button with the given ID
@@ -95,7 +98,9 @@ public:
      * @param id an arbitrary ID which can be used later on to identify the tab
      * @param text if a mode with text is used it will be the tab text, otherwise a mouse over hint
      */
-    int appendTab(const QPixmap& pic,int id=-1,const QString& text=QString());
+    int appendTab(const QPixmap& pic,
+                  int id = -1,
+                  const QString& text = QString());
 
     /**
      * remove a tab with a given ID
@@ -190,7 +195,10 @@ protected Q_SLOTS:
 
 protected:
 
-    DMultiTabBarButton(const QPixmap& pic, const QString&, int id, QWidget* const parent);
+    DMultiTabBarButton(const QPixmap& pic,
+                       const QString&,
+                       int id,
+                       QWidget* const parent);
 
     void hideEvent(QHideEvent*)   override;
     void showEvent(QShowEvent*)   override;
@@ -253,8 +261,12 @@ protected:
     /**
      * This class should never be created except with the appendTab call of DMultiTabBar
      */
-    DMultiTabBarTab(const QPixmap& pic, const QString&, int id, QWidget* const parent,
-                    Qt::Edge pos, DMultiTabBar::TextStyle style);
+    DMultiTabBarTab(const QPixmap& pic,
+                    const QString&,
+                    int id,
+                    QWidget* const parent,
+                    Qt::Edge pos,
+                    DMultiTabBar::TextStyle style);
 
     void paintEvent(QPaintEvent*) override;
 
@@ -332,7 +344,9 @@ public:
      *             Use Qt::LeftEdge or Qt::RightEdge.
      * @param minimizedDefault hide the sidebar when the program is started the first time.
      */
-    explicit Sidebar(QWidget* const parent, SidebarSplitter* const sp, Qt::Edge side = Qt::LeftEdge,
+    explicit Sidebar(QWidget* const parent,
+                     SidebarSplitter* const sp,
+                     Qt::Edge side = Qt::LeftEdge,
                      bool minimizedDefault=false);
 
     ~Sidebar() override;

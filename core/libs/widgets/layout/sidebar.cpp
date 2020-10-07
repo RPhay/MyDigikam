@@ -66,8 +66,8 @@ public:
 
     explicit Private()
       : mainLayout(nullptr),
-        position(Qt::LeftEdge),
-        style(DMultiTabBar::AllIconsText)
+        position  (Qt::LeftEdge),
+        style     (DMultiTabBar::AllIconsText)
     {
     }
 
@@ -79,7 +79,7 @@ public:
 
 DMultiTabBarFrame::DMultiTabBarFrame(QWidget* const parent, Qt::Edge pos)
     : QFrame(parent),
-      d(new Private)
+      d     (new Private)
 {
     d->position = pos;
 
@@ -194,7 +194,7 @@ QList<DMultiTabBarTab*>* DMultiTabBarFrame::tabs()
 DMultiTabBarButton::DMultiTabBarButton(const QPixmap& pic, const QString& text,
                                        int id, QWidget* const parent)
     : QPushButton(QIcon(pic), text, parent),
-      m_id(id)
+      m_id       (id)
 {
     // --- NOTE: use dynamic binding as slotClicked() is a virtual method which can be re-implemented in derived classes.
 
@@ -276,7 +276,7 @@ public:
 
     explicit Private()
       : position(Qt::LeftEdge),
-        style(DMultiTabBar::AllIconsText)
+        style   (DMultiTabBar::AllIconsText)
     {
     }
 
@@ -289,7 +289,7 @@ DMultiTabBarTab::DMultiTabBarTab(const QPixmap& pic, const QString& text,
                                        Qt::Edge pos,
                                        DMultiTabBar::TextStyle style)
     : DMultiTabBarButton(pic, text, id, parent),
-      d(new Private)
+      d                 (new Private)
 {
     d->style    = style;
     d->position = pos;
@@ -503,7 +503,7 @@ void DMultiTabBarTab::paintEvent(QPaintEvent*)
         // See whether anything is left. Qt will return either
         // ... or the ellipsis unicode character, 0x2026
 
-        if ((t == QLatin1String("...")) || (t == QChar(0x2026)))
+        if ((t == QLatin1String("...")) || (t == QString(QChar(0x2026))))
         {
             t.clear();
         }
@@ -612,10 +612,10 @@ class Q_DECL_HIDDEN DMultiTabBar::Private
 public:
 
     explicit Private()
-      : internal(nullptr),
-        layout(nullptr),
+      : internal (nullptr),
+        layout   (nullptr),
         btnTabSep(nullptr),
-        position(Qt::LeftEdge)
+        position (Qt::LeftEdge)
     {
     }
 
@@ -628,7 +628,7 @@ public:
 
 DMultiTabBar::DMultiTabBar(Qt::Edge pos, QWidget* const parent)
     : QWidget(parent),
-      d(new Private)
+      d      (new Private)
 {
     if ((pos == Qt::LeftEdge) || (pos == Qt::RightEdge))
     {
@@ -812,13 +812,13 @@ public:
 
     SidebarState()
       : activeWidget(nullptr),
-        size(0)
+        size        (0)
     {
     }
 
     SidebarState(QWidget* const w, int size)
       : activeWidget(w),
-        size(size)
+        size        (size)
     {
     }
 
@@ -834,19 +834,19 @@ class Q_DECL_HIDDEN Sidebar::Private
 public:
 
     explicit Private()
-      : minimizedDefault(false),
-        minimized(false),
-        isMinimized(false),
-        tabs(0),
-        activeTab(-1),
-        dragSwitchId(-1),
-        restoreSize(0),
-        stack(nullptr),
-        splitter(nullptr),
-        dragSwitchTimer(nullptr),
+      : minimizedDefault      (false),
+        minimized             (false),
+        isMinimized           (false),
+        tabs                  (0),
+        activeTab             (-1),
+        dragSwitchId          (-1),
+        restoreSize           (0),
+        stack                 (nullptr),
+        splitter              (nullptr),
+        dragSwitchTimer       (nullptr),
         appendedTabsStateCache(),
-        optionActiveTabEntry(QLatin1String("ActiveTab")),
-        optionMinimizedEntry(QLatin1String("Minimized")),
+        optionActiveTabEntry  (QLatin1String("ActiveTab")),
+        optionMinimizedEntry  (QLatin1String("Minimized")),
         optionRestoreSizeEntry(QLatin1String("RestoreSize"))
     {
     }
@@ -887,9 +887,9 @@ public:
 // -------------------------------------------------------------------------------------
 
 Sidebar::Sidebar(QWidget* const parent, SidebarSplitter* const sp, Qt::Edge side, bool minimizedDefault)
-    : DMultiTabBar(side, parent),
+    : DMultiTabBar     (side, parent),
       StateSavingObject(this),
-      d(new Private)
+      d                (new Private)
 {
     d->splitter         = sp;
     d->minimizedDefault = minimizedDefault;
@@ -1311,7 +1311,7 @@ const QString SidebarSplitter::DEFAULT_CONFIG_KEY = QLatin1String("SplitterState
 
 SidebarSplitter::SidebarSplitter(QWidget* const parent)
     : QSplitter(parent),
-      d(new Private)
+      d        (new Private)
 {
     connect(this, SIGNAL(splitterMoved(int,int)),
             this, SLOT(slotSplitterMoved(int,int)));
@@ -1319,7 +1319,7 @@ SidebarSplitter::SidebarSplitter(QWidget* const parent)
 
 SidebarSplitter::SidebarSplitter(Qt::Orientation orientation, QWidget* const parent)
     : QSplitter(orientation, parent),
-      d(new Private)
+      d        (new Private)
 {
     connect(this, SIGNAL(splitterMoved(int,int)),
             this, SLOT(slotSplitterMoved(int,int)));
