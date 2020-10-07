@@ -79,12 +79,12 @@ public:
 
 public:
 
-    QCache<QString, DImg>          imageCache;
-    QCache<QString, QImage>        thumbnailImageCache;
-    QCache<QString, QPixmap>       thumbnailPixmapCache;
-    QMultiMap<QString, QString>    imageFilePathMap;
-    QMultiMap<QString, QString>    thumbnailFilePathMap;
-    QMap<QString, LoadingProcess*> loadingDict;
+    QCache<QString, DImg>           imageCache;
+    QCache<QString, QImage>         thumbnailImageCache;
+    QCache<QString, QPixmap>        thumbnailPixmapCache;
+    QMultiMap<QString, QString>     imageFilePathMap;
+    QMultiMap<QString, QString>     thumbnailFilePathMap;
+    QHash<LoadingProcess*, QString> loadingDict;
 
     /// Note: Don't make the mutex recursive, we need to use a wait condition on it
     QMutex                         mutex;
@@ -254,25 +254,25 @@ bool LoadingCache::isCacheable(const DImg& img) const
 
 void LoadingCache::addLoadingProcess(LoadingProcess* const process)
 {
-    d->loadingDict[process->cacheKey()] = process;
+    d->loadingDict.insert(process, process->cacheKey());
 }
 
 LoadingProcess* LoadingCache::retrieveLoadingProcess(const QString& cacheKey) const
 {
-    return d->loadingDict.value(cacheKey);
+    return d->loadingDict.key(cacheKey, nullptr);
 }
 
 void LoadingCache::removeLoadingProcess(LoadingProcess* const process)
 {
-    d->loadingDict.remove(process->cacheKey());
+    d->loadingDict.remove(process);
 }
 
 void LoadingCache::notifyNewLoadingProcess(LoadingProcess* const process, const LoadingDescription& description)
 {
-    for (QMap<QString, LoadingProcess*>::const_iterator it = d->loadingDict.constBegin() ;
+    for (QHash<LoadingProcess*, QString>::const_iterator it = d->loadingDict.constBegin() ;
          it != d->loadingDict.constEnd() ; ++it)
     {
-        it.value()->notifyNewLoadingProcess(process, description);
+        it.key()->notifyNewLoadingProcess(process, description);
     }
 }
 
