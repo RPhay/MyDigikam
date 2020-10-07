@@ -21,6 +21,21 @@ WEBSITE_DIR="${ORIG_WD}/site"
 TITLE="digiKam-$(parseGitBranch)$(parseGitHash)"
 echo "Clazy Scan Static Analyzer task name: $TITLE"
 
+# Do not parse unwanted directories accordingly with Krazy configuration.
+krazySkipConfig
+
+IGNORE_DIRS=".*include.*|"
+
+for DROP_ITEM in $KRAZY_FILTERS ; do
+    IGNORE_DIRS+=".*$DROP_ITEM.*|"
+done
+
+export CLAZY_IGNORE_DIRS=$IGNORE_DIRS
+export CLAZY_CHECKS="level1,no-fully-qualified-moc-types,no-overloaded-signal,no-qproperty-without-notify"
+
+echo "IGNORE DIRECTORIES:     $CLAZY_IGNORE_DIRS"
+echo "CHECKERS CONFIGURATION: $CLAZY_CHECKS"
+
 # Clean up and prepare to scan.
 
 rm -fr $REPORT_DIR
@@ -51,18 +66,6 @@ cmake -G "Unix Makefiles" . \
       -DENABLE_QWEBENGINE=ON \
       -Wno-dev \
       ..
-
-# Do not parse unwanted directories accordingly with Krazy configuration.
-krazySkipConfig
-
-IGNORE_DIRS=".*include.*|"
-
-for DROP_ITEM in $KRAZY_FILTERS ; do
-    IGNORE_DIRS+=".*$DROP_ITEM.*|"
-done
-
-export CLAZY_IGNORE_DIRS=$IGNORE_DIRS
-export CLAZY_CHECKS="level1,no-fully-qualified-moc-types,no-overloaded-signal,no-qproperty-without-notif"
 
 make -j$CPU_CORES 2> ${REPORT_DIR}/trace.log
 
