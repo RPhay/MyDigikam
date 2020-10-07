@@ -86,11 +86,10 @@ public:
     QMultiMap<QString, QString>     thumbnailFilePathMap;
     QHash<LoadingProcess*, QString> loadingDict;
 
-    /// Note: Don't make the mutex recursive, we need to use a wait condition on it
-    QMutex                         mutex;
+    QMutex                          mutex;
 
-    LoadingCacheFileWatch*         watch;
-    LoadingCache*                  q;
+    LoadingCacheFileWatch*          watch;
+    LoadingCache*                   q;
 };
 
 LoadingCacheFileWatch* LoadingCache::Private::fileWatch() const

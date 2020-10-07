@@ -142,7 +142,7 @@ void ThumbnailLoadingTask::execute()
             // cppcheck-suppress knownConditionTrueFalse
             while ((m_loadingTaskStatus != LoadingTaskStatusStopping) && !usedProcess->completed())
             {
-                QThread::msleep(50);
+                QThread::msleep(20);
             }
 
             LoadingCache::CacheLock lock(cache);
