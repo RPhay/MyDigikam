@@ -272,11 +272,11 @@ def writeList(f, num_used_checks, names_of_used, args, external_link, external_n
     background-color: lightgray\" title=\"Collapse sidebar\">\n")
     f.write("\t\t\t<span id=\"collapse-img0\" class=\"glyphicon glyphicon-menu-left\"></button></span>\n")
     f.write("\t\t\t<h4 style=\"margin-top: 0; color: #111; position: absolute; left: 50%; transform: translateX(-50%); margin-bottom: 10;\">Original Log</h4>\n")
-    if (args.button):
-        f.write("\t\t\t<button id=\"externalLink\" type=\"button\" class=\"btn\" onclick=\"window.open('%s',               '_blank')\"\n" % external_link)
-        f.write("\t\t\tstyle=\"outline: none; position: absolute; color: #111; right: 0; background-color: rgb(181, 215, 247)\">\n")
-        f.write(
-            "\t\t\t%s <span class=\"glyphicon glyphicon-new-window\"></button></span>\n" % external_name)
+#    if (args.button):
+#        f.write("\t\t\t<button id=\"externalLink\" type=\"button\" class=\"btn\" onclick=\"window.open('%s',               '_blank')\"\n" % external_link)
+#        f.write("\t\t\tstyle=\"outline: none; position: absolute; color: #111; right: 0; background-color: rgb(181, 215, 247)\">\n")
+#        f.write(
+#            "\t\t\t%s <span class=\"glyphicon glyphicon-new-window\"></button></span>\n" % external_name)
 
     f.write("\t\t</div>\n\t\t<pre>\n")
 
@@ -300,11 +300,11 @@ def sortLogs(f, contents, num_used_checks, names_of_used, args, external_link, e
         f.write("\t\t\t<span id=\"collapse-img%d\" class=\"glyphicon glyphicon-menu-left\"></button></span>\n" % (collapse_idx))
         f.write("\t\t\t<h4 style=\"margin-top: 0; color: #111; position: absolute; left: 50%; transform: translateX(-50%); margin-bottom: 10\">")
         f.write("%s</h4>\n" % (names_of_used[check_idx].name[1:-1]))
-        if (args.button):
-            f.write("\t\t\t<button id=\"externalLink\" type=\"button\" class=\"btn\" onclick=\"window.open('%s','_blank')\"\n" % external_link)
-            f.write("\t\t\tstyle=\"outline: none; position: absolute; color: #111; right: 0; background-color: rgb(181, 215, 247)\">\n")
-            f.write(
-                "\t\t\t%s <span class=\"glyphicon glyphicon-new-window\"></button></span>\n" % external_name)
+#        if (args.button):
+#            f.write("\t\t\t<button id=\"externalLink\" type=\"button\" class=\"btn\" onclick=\"window.open('%s','_blank')\"\n" % external_link)
+#            f.write("\t\t\tstyle=\"outline: none; position: absolute; color: #111; right: 0; background-color: rgb(181, 215, 247)\">\n")
+#            f.write(
+#                "\t\t\t%s <span class=\"glyphicon glyphicon-new-window\"></button></span>\n" % external_name)
         f.write("\t\t</div>\n\t\t<pre>\n")
         names_of_used[check_idx].data = names_of_used[check_idx].data.replace('<', '&lt;')
         names_of_used[check_idx].data = names_of_used[check_idx].data.replace('>', '&gt;')
