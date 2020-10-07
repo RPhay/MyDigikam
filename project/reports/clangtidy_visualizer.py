@@ -1182,8 +1182,8 @@ def parse_command_line_options():
 def usage():
     print("**--------------------------- Clang Visualizer --------------------------**\n\n \
     Generates an html file as a visual for clang-tidy checks.\n\n \
-    Arguments: python clang_visualizer.py [logfile.log]\n\n \
-    \t\t-ex: python clang_visualizer [logfile.log] \
+    Arguments: python clangtidy_visualizer.py [logfile.log]\n\n \
+    \t\t-ex: python clangtidy_visualizer [logfile.log] \
     \n\n**------------------------------------------------------------------------**")
 
 # Header of the tidy.html file.
