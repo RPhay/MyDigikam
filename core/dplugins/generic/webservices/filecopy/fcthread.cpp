@@ -24,10 +24,6 @@
 
 #include "fcthread.h"
 
-// Qt includes
-
-#include <QMap>
-
 // Local includes
 
 #include "fctask.h"

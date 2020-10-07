@@ -28,9 +28,10 @@
 
 // Qt includes
 
+#include <QHash>
+#include <QObject>
 #include <QThread>
 #include <QRunnable>
-#include <QObject>
 
 // Local includes
 
@@ -81,11 +82,11 @@ protected:
     bool m_cancel;
 };
 
-/** Define a map of job/priority to process by ActionThreadBase manager.
+/** Define a QHash of job/priority to process by ActionThreadBase manager.
  *  Priority value can be used to control the run queue's order of execution.
  *  Zero priority want mean to process job with higher priority.
  */
-typedef QMap<ActionJob*, int> ActionJobCollection;
+typedef QHash<ActionJob*, int> ActionJobCollection;
 
 // -------------------------------------------------------------------------------------------------------
 
