@@ -2,7 +2,7 @@
 
 # Copyright (c) 2013-2020 by Gilles Caulier, <caulier dot gilles at gmail dot com>
 #
-# Run Clang Clazy analyzer on whole digiKam source code.
+# Run Clazy analyzer on whole digiKam source code.
 # https://github.com/KDE/clazy
 #
 # Redistribution and use is allowed according to the terms of the BSD license.
@@ -19,7 +19,7 @@ WEBSITE_DIR="${ORIG_WD}/site"
 
 # Get active git branches to create report description string
 TITLE="digiKam-$(parseGitBranch)$(parseGitHash)"
-echo "Clazy Scan Static Analyzer task name: $TITLE"
+echo "Clazy Static Analyzer task name: $TITLE"
 
 # Do not parse unwanted directories accordingly with Krazy configuration.
 krazySkipConfig
@@ -83,6 +83,6 @@ CLAZYBUILD_DIR=$(find ${REPORT_DIR} -maxdepth 1 -not -empty -not -name `basename
 echo "Clazy Report $TITLE to publish is located to $CLAZYBUILD_DIR"
 
 # update www.digikam.org report section.
-updateReportToWebsite "clang" $CLAZYBUILD_DIR $TITLE $(parseGitBranch)
+updateReportToWebsite "clazy" $CLAZYBUILD_DIR $TITLE $(parseGitBranch)
 
 cd $ORIG_DIR
