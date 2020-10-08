@@ -41,7 +41,7 @@ class Highlighter : public QSyntaxHighlighter
 public:
 
     Highlighter(QTextDocument* const document, Parser* const _parser);
-    ~Highlighter() override;
+    ~Highlighter()                           override;
 
 protected:
 

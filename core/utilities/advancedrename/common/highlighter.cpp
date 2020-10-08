@@ -35,7 +35,8 @@ namespace Digikam
 {
 
 Highlighter::Highlighter(QTextDocument* const document, Parser* const _parser)
-    : QSyntaxHighlighter(document), parser(_parser)
+    : QSyntaxHighlighter(document),
+      parser            (_parser)
 
 {
     setupHighlightingGrammar();
@@ -162,7 +163,7 @@ void Highlighter::setupHighlightingGrammar()
 
     // --------------------------------------------------------
 
-    quotationFormat.setForeground(QColor("#5050ff")); // light blue
+    quotationFormat.setForeground(QColor(0x50, 0x50, 0xff)); // light blue
     quotationFormat.setFontItalic(true);
     quotationRule.pattern = QRegExp(QLatin1String("\".*\""));
     quotationRule.pattern.setMinimal(true);
