@@ -234,7 +234,11 @@ int DImgImageMagickPlugin::canRead(const QFileInfo& fileInfo, bool magic) const
 int DImgImageMagickPlugin::canWrite(const QString& format) const
 {
     QStringList formats;
+    formats << QLatin1String("BMP")
+            << QLatin1String("GIF")
+            << QLatin1String("WEBP");
 
+/*
     try
     {
         ExceptionInfo ex = *AcquireExceptionInfo();
@@ -274,7 +278,7 @@ int DImgImageMagickPlugin::canWrite(const QString& format) const
         qCWarning(DIGIKAM_DIMG_LOG) << "ImageMagickInfo exception:" << error.what();
         return 0;
     }
-
+*/
     if (formats.contains(format.toUpper()))
     {
         if (format.toUpper() == QLatin1String("WEBP"))
@@ -298,7 +302,11 @@ DImgLoader* DImgImageMagickPlugin::loader(DImg* const image, const DRawDecoding&
 QStringList DImgImageMagickPlugin::decoderFormats() const
 {
     QStringList formats;
+    formats << QLatin1String("BMP")
+            << QLatin1String("GIF")
+            << QLatin1String("WEBP");
 
+/*
     try
     {
         ExceptionInfo ex          = *AcquireExceptionInfo();
@@ -347,7 +355,7 @@ QStringList DImgImageMagickPlugin::decoderFormats() const
 
     // Remove known formats that are not stable.
     formats.removeAll(QLatin1String("XCF"));
-
+*/
     return formats;
 }
 
