@@ -44,7 +44,7 @@ class PanoItemsPage : public DWizardPage
 public:
 
     explicit PanoItemsPage(PanoManager* const mngr, QWizard* const dlg);
-    ~PanoItemsPage() override;
+    ~PanoItemsPage()    override;
 
     QList<QUrl> itemUrls() const;
 

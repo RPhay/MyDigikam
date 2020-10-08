@@ -58,14 +58,14 @@ class Q_DECL_HIDDEN PanoLastPage::Private
 public:
 
     explicit Private()
-      : copyDone(false),
-        title(nullptr),
-        saveSettingsGroupBox(nullptr),
+      : copyDone             (false),
+        title                (nullptr),
+        saveSettingsGroupBox (nullptr),
         fileTemplateQLineEdit(nullptr),
-        savePtoCheckBox(nullptr),
-        warningLabel(nullptr),
-        errorLabel(nullptr),
-        mngr(nullptr)
+        savePtoCheckBox      (nullptr),
+        warningLabel         (nullptr),
+        errorLabel           (nullptr),
+        mngr                 (nullptr)
     {
     }
 

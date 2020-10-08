@@ -65,17 +65,17 @@ class Q_DECL_HIDDEN PanoPreProcessPage::Private
 public:
 
     explicit Private()
-      : progressCount(0),
-        progressLabel(nullptr),
-        progressTimer(nullptr),
-        preprocessingDone(false),
-        canceled(false),
-        nbFilesProcessed(0),
-        title(nullptr),
-        celesteCheckBox(nullptr),
-        detailsText(nullptr),
-        progressPix(nullptr),
-        mngr(nullptr)
+      : progressCount       (0),
+        progressLabel       (nullptr),
+        progressTimer       (nullptr),
+        preprocessingDone   (false),
+        canceled            (false),
+        nbFilesProcessed    (0),
+        title               (nullptr),
+        celesteCheckBox     (nullptr),
+        detailsText         (nullptr),
+        progressPix         (nullptr),
+        mngr                (nullptr)
     {
     }
 

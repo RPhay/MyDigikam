@@ -44,7 +44,7 @@ class PanoLastPage : public DWizardPage
 public:
 
     explicit PanoLastPage(PanoManager* const mngr, QWizard* const dlg);
-    ~PanoLastPage() override;
+    ~PanoLastPage()       override;
 
 private:
 
@@ -53,7 +53,7 @@ private:
     QString panoFileName(const QString& fileTemplate) const;
 
     void initializePage() override;
-    bool validatePage() override;
+    bool validatePage()   override;
 
 Q_SIGNALS:
 

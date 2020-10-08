@@ -50,8 +50,8 @@ private:
 
     void process();
     void initializePage() override;
-    bool validatePage() override;
-    void cleanupPage() override;
+    bool validatePage()   override;
+    void cleanupPage()    override;
 
 Q_SIGNALS:
 

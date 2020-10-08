@@ -61,20 +61,20 @@ class Q_DECL_HIDDEN PanoIntroPage::Private
 public:
 
     explicit Private(PanoManager* const m)
-        : mngr(m),
+        : mngr                    (m),
 /*
           addGPlusMetadataCheckBox(0),
 */
 /*
           // TODO HDR
-          hdrCheckBox(0),
+          hdrCheckBox             (0),
 */
-          formatGroupBox(nullptr),
-          settingsGroupBox(nullptr),
-          jpegRadioButton(nullptr),
-          tiffRadioButton(nullptr),
-          hdrRadioButton(nullptr),
-          binariesWidget(nullptr)
+          formatGroupBox          (nullptr),
+          settingsGroupBox        (nullptr),
+          jpegRadioButton         (nullptr),
+          tiffRadioButton         (nullptr),
+          hdrRadioButton          (nullptr),
+          binariesWidget          (nullptr)
     {
     }
 

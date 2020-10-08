@@ -62,22 +62,22 @@ class Q_DECL_HIDDEN PanoOptimizePage::Private
 public:
 
     explicit Private()
-      : progressCount(0),
-        progressLabel(nullptr),
-        progressTimer(nullptr),
-        optimisationDone(false),
-        canceled(false),
-        title(nullptr),
+      : progressCount               (0),
+        progressLabel               (nullptr),
+        progressTimer               (nullptr),
+        optimisationDone            (false),
+        canceled                    (false),
+        title                       (nullptr),
 /*
-        preprocessResults(0),
+        preprocessResults           (0),
 */
-        horizonCheckbox(nullptr),
+        horizonCheckbox             (nullptr),
 /*
-        projectionAndSizeCheckbox(0),
+        projectionAndSizeCheckbox   (0),
 */
-        detailsText(nullptr),
-        progressPix(nullptr),
-        mngr(nullptr)
+        detailsText                 (nullptr),
+        progressPix                 (nullptr),
+        mngr                        (nullptr)
     {
     }
 

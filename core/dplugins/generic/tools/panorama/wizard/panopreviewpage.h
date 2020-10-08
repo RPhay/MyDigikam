@@ -52,9 +52,9 @@ private:
     void startStitching();
 
     void preInitializePage();
-    void initializePage() override;
-    bool validatePage() override;
-    void cleanupPage() override;
+    void initializePage()   override;
+    bool validatePage()     override;
+    void cleanupPage()      override;
     void cleanupPage(QMutexLocker& lock);
 
 Q_SIGNALS:
