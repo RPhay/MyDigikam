@@ -196,9 +196,9 @@ public:
     void removeLoadingProcess(LoadingProcess* const process);
 
     /**
-     * Notify all currently registered loading processes
+     * Get all currently registered loading processes
      */
-    void notifyNewLoadingProcess(LoadingProcess* const process, const LoadingDescription& description);
+    QList<LoadingProcess*> getLoadingProcesses() const;
 
     /**
      * Sets the cache size in megabytes.

@@ -168,6 +168,10 @@ public:
 
 protected:
 
+    void sendNotifyNewLoadingProcess();
+
+protected:
+
     volatile bool                  m_completed;
     LoadSaveThread::AccessMode     m_accessMode;
     QList<LoadingProcessListener*> m_listeners;
