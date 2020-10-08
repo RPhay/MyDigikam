@@ -51,9 +51,9 @@ namespace DigikamGenericGeolocationEditPlugin
 KmlWidget::KmlWidget(GeolocationEdit* const dlg,
                      GPSItemModel* const imageModel,
                      DInfoInterface* const iface)
-    : QWidget(dlg),
-      m_model(imageModel),
-      m_dlg(dlg),
+    : QWidget    (dlg),
+      m_model    (imageModel),
+      m_dlg      (dlg),
       m_kmlExport(iface)
 {
     KMLExportConfigLayout = new QGridLayout(this);
@@ -198,13 +198,13 @@ KmlWidget::KmlWidget(GeolocationEdit* const dlg,
                                   "picture shooting, so that the time stamps of the GPS "
                                   "can be converted to match the local time"));
 
-    GPXLineWidthLabel_ = new QLabel(i18n("Track Width:"), GPXTracksGroupBox);
-    GPXLineWidthInput_ = new QSpinBox(GPXTracksGroupBox);
+    GPXLineWidthLabel_     = new QLabel(i18n("Track Width:"), GPXTracksGroupBox);
+    GPXLineWidthInput_     = new QSpinBox(GPXTracksGroupBox);
     GPXLineWidthInput_->setValue(4);
 
-    GPXColorLabel_ = new QLabel(i18n("Track Color:"), GPXTracksGroupBox);
-    GPXTrackColor_ = new DColorSelector(GPXTracksGroupBox);
-    GPXTrackColor_->setColor(QColor("#ffffff"));
+    GPXColorLabel_         = new QLabel(i18n("Track Color:"), GPXTracksGroupBox);
+    GPXTrackColor_         = new DColorSelector(GPXTracksGroupBox);
+    GPXTrackColor_->setColor(QColor(0xff, 0xff, 0xff));
 
     GPXTracksOpacityLabel_ = new QLabel(i18n("Opacity (%):"), GPXTracksGroupBox);
     GPXTracksOpacityInput_ = new QSpinBox(GPXTracksGroupBox);
@@ -212,8 +212,8 @@ KmlWidget::KmlWidget(GeolocationEdit* const dlg,
     GPXTracksOpacityInput_->setSingleStep(1);
     GPXTracksOpacityInput_->setValue(100);
 
-    GPXAltitudeLabel_ = new QLabel(i18n("Track Altitude:"), GPXTracksGroupBox);
-    GPXAltitudeCB_    = new QComboBox(GPXTracksGroupBox);
+    GPXAltitudeLabel_      = new QLabel(i18n("Track Altitude:"), GPXTracksGroupBox);
+    GPXAltitudeCB_         = new QComboBox(GPXTracksGroupBox);
     GPXAltitudeCB_->addItem(i18n("clamp to ground"));
     GPXAltitudeCB_->addItem(i18n("relative to ground"));
     GPXAltitudeCB_->addItem(i18n("absolute"));

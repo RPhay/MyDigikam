@@ -81,15 +81,16 @@ bool GeoDataParser::matchDate(const QDateTime& photoDateTime, int maxGapTime, in
     int nbSecItem = maxGapTime;
     int nbSecs;
 
-    for (GeoDataMap::ConstIterator it = m_GeoDataMap.constBegin(); it != m_GeoDataMap.constEnd(); ++it )
+    for (GeoDataMap::ConstIterator it = m_GeoDataMap.constBegin() ; it != m_GeoDataMap.constEnd() ; ++it )
     {
         // Here we check a possible accuracy in seconds between the
         // Camera GMT time and the GPS device GMT time.
 
         nbSecs = qAbs(cameraGMTDateTime.secsTo( it.key() ));
-//         qCDebug(DIGIKAM_DPLUGIN_GENERIC_LOG) << it.key() << cameraGMTDateTime << nbSecs;
-//         qCDebug(DIGIKAM_DPLUGIN_GENERIC_LOG) << it.key().timeSpec() << cameraGMTDateTime.timeSpec() << nbSecs;
-
+/*
+        qCDebug(DIGIKAM_DPLUGIN_GENERIC_LOG) << it.key() << cameraGMTDateTime << nbSecs;
+        qCDebug(DIGIKAM_DPLUGIN_GENERIC_LOG) << it.key().timeSpec() << cameraGMTDateTime.timeSpec() << nbSecs;
+*/
         // We tring to find the minimal accuracy.
 
         if ((nbSecs < maxGapTime) && (nbSecs < nbSecItem))
@@ -104,7 +105,8 @@ bool GeoDataParser::matchDate(const QDateTime& photoDateTime, int maxGapTime, in
         }
     }
 
-    if (findItem) return true;
+    if (findItem)
+        return true;
 
     // If we can't find it, we will trying to interpolate the GPS point.
 
@@ -140,6 +142,7 @@ bool GeoDataParser::matchDate(const QDateTime& photoDateTime, int maxGapTime, in
                     gpsData->setLongitude(lon1 + (lon2-lon1) * (tCor-t1)/(t2-t1));
                     gpsData->setInterpolated(true);
                 }
+
                 return true;
             }
         }
@@ -233,25 +236,31 @@ bool GeoDataParser::loadGPXFile(const QUrl& url)
     {
         QDomElement trkElem = nTrk.toElement();
 
-        if (trkElem.isNull()) continue;
+        if (trkElem.isNull())
+            continue;
 
-        if (trkElem.tagName() != QLatin1String("trk")) continue;
+        if (trkElem.tagName() != QLatin1String("trk"))
+            continue;
 
         for (QDomNode nTrkseg = trkElem.firstChild() ; !nTrkseg.isNull() ; nTrkseg = nTrkseg.nextSibling())
         {
             QDomElement trksegElem = nTrkseg.toElement();
 
-            if (trksegElem.isNull()) continue;
+            if (trksegElem.isNull())
+                continue;
 
-            if (trksegElem.tagName() != QLatin1String("trkseg")) continue;
+            if (trksegElem.tagName() != QLatin1String("trkseg"))
+                continue;
 
             for (QDomNode nTrkpt = trksegElem.firstChild() ; !nTrkpt.isNull() ; nTrkpt = nTrkpt.nextSibling())
             {
                 QDomElement trkptElem = nTrkpt.toElement();
 
-                if (trkptElem.isNull()) continue;
+                if (trkptElem.isNull())
+                    continue;
 
-                if (trkptElem.tagName() != QLatin1String("trkpt")) continue;
+                if (trkptElem.tagName() != QLatin1String("trkpt"))
+                    continue;
 
                 QDateTime ptDateTime;
                 double    ptAltitude  = 0.0;
@@ -263,7 +272,8 @@ bool GeoDataParser::loadGPXFile(const QUrl& url)
                 QString lat = trkptElem.attribute(QLatin1String("lat"));
                 QString lon = trkptElem.attribute(QLatin1String("lon"));
 
-                if (lat.isEmpty() || lon.isEmpty()) continue;
+                if (lat.isEmpty() || lon.isEmpty())
+                    continue;
 
                 ptLatitude  = lat.toDouble();
                 ptLongitude = lon.toDouble();
@@ -274,7 +284,8 @@ bool GeoDataParser::loadGPXFile(const QUrl& url)
                 {
                     QDomElement trkptMetaElem = nTrkptMeta.toElement();
 
-                    if (trkptMetaElem.isNull()) continue;
+                    if (trkptMetaElem.isNull())
+                        continue;
 
                     if (trkptMetaElem.tagName() == QLatin1String("time"))
                     {
@@ -282,7 +293,8 @@ bool GeoDataParser::loadGPXFile(const QUrl& url)
 
                         const QString time = trkptMetaElem.text();
 
-                        if (time.isEmpty()) continue;
+                        if (time.isEmpty())
+                            continue;
 
                         ptDateTime = GeoDataParserParseTime(time);
                     }
@@ -310,11 +322,11 @@ bool GeoDataParser::loadGPXFile(const QUrl& url)
             }
         }
     }
-
-    //qCDebug(DIGIKAM_DPLUGIN_GENERIC_LOG) << "GPX File " << url.fileName()
-    //                                     << " parsed with " << numPoints()
-    //                                     << " points extracted" ;
-
+/*
+    qCDebug(DIGIKAM_DPLUGIN_GENERIC_LOG) << "GPX File " << url.fileName()
+                                         << " parsed with " << numPoints()
+                                         << " points extracted" ;
+*/
     gpxfile.close();
 
     return true;

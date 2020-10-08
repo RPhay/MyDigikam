@@ -49,20 +49,20 @@ namespace DigikamGenericGeolocationEditPlugin
 {
 
 KmlExport::KmlExport(DInfoInterface* const iface)
-    : m_localTarget(true),
+    : m_localTarget       (true),
       m_optimize_googlemap(false),
-      m_GPXtracks(false),
-      m_iconSize(33),
-      m_googlemapSize(32),
-      m_size(320),
-      m_altitudeMode(0),
-      m_TimeZone(12),
-      m_LineWidth(4),
-      m_GPXOpacity(64),
-      m_GPXAltitudeMode(0),
-      m_iface(iface),
-      m_meta(new DMetadata),
-      m_kmlDocument(nullptr)
+      m_GPXtracks         (false),
+      m_iconSize          (33),
+      m_googlemapSize     (32),
+      m_size              (320),
+      m_altitudeMode      (0),
+      m_TimeZone          (12),
+      m_LineWidth         (4),
+      m_GPXOpacity        (64),
+      m_GPXAltitudeMode   (0),
+      m_iface             (iface),
+      m_meta              (new DMetadata),
+      m_kmlDocument       (nullptr)
 {
 }
 
@@ -605,7 +605,7 @@ void KmlExport::getConfig()
     m_GPXFile                 = group.readEntry(QLatin1String("GPXFile"),            QString());
     m_TimeZone                = group.readEntry(QLatin1String("Time Zone"),          12);
     m_LineWidth               = group.readEntry(QLatin1String("Line Width"),         4);
-    m_GPXColor                = group.readEntry(QLatin1String("Track Color"),        QColor("#17eeee"));
+    m_GPXColor                = group.readEntry(QLatin1String("Track Color"),        QColor(0x17, 0xee, 0xee));
     m_GPXOpacity              = group.readEntry(QLatin1String("Track Opacity"),      64);
     m_GPXAltitudeMode         = group.readEntry(QLatin1String("GPX Altitude Mode"),  0);
 

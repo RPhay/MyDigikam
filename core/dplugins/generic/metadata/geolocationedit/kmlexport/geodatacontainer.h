@@ -37,9 +37,9 @@ public:
 
     GeoDataContainer()
         : m_interpolated(false),
-          m_altitude(0.0),
-          m_latitude(0.0),
-          m_longitude(0.0)
+          m_altitude    (0.0),
+          m_latitude    (0.0),
+          m_longitude   (0.0)
     {
     };
 
@@ -48,9 +48,9 @@ public:
                      double longitude,
                      bool interpolated)
         : m_interpolated(interpolated),
-          m_altitude(altitude),
-          m_latitude(latitude),
-          m_longitude(longitude)
+          m_altitude    (altitude),
+          m_latitude    (latitude),
+          m_longitude   (longitude)
     {
     };
 
