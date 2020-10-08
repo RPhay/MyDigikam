@@ -79,12 +79,12 @@ public:
 
 public:
 
-    QCache<QString, DImg>           imageCache;
-    QCache<QString, QImage>         thumbnailImageCache;
-    QCache<QString, QPixmap>        thumbnailPixmapCache;
-    QMultiMap<QString, QString>     imageFilePathMap;
-    QMultiMap<QString, QString>     thumbnailFilePathMap;
-    QHash<LoadingProcess*, QString> loadingDict;
+    QCache<QString, DImg>          imageCache;
+    QCache<QString, QImage>        thumbnailImageCache;
+    QCache<QString, QPixmap>       thumbnailPixmapCache;
+    QMultiMap<QString, QString>    imageFilePathMap;
+    QMultiMap<QString, QString>    thumbnailFilePathMap;
+    QMap<QString, LoadingProcess*> loadingDict;
 
     QMutex                          mutex;
 
@@ -253,25 +253,25 @@ bool LoadingCache::isCacheable(const DImg& img) const
 
 void LoadingCache::addLoadingProcess(LoadingProcess* const process)
 {
-    d->loadingDict.insert(process, process->cacheKey());
+    d->loadingDict[process->cacheKey()] = process;
 }
 
 LoadingProcess* LoadingCache::retrieveLoadingProcess(const QString& cacheKey) const
 {
-    return d->loadingDict.key(cacheKey, nullptr);
+    return d->loadingDict.value(cacheKey);
 }
 
 void LoadingCache::removeLoadingProcess(LoadingProcess* const process)
 {
-    d->loadingDict.remove(process);
+    d->loadingDict.remove(process->cacheKey());
 }
 
 void LoadingCache::notifyNewLoadingProcess(LoadingProcess* const process, const LoadingDescription& description)
 {
-    for (QHash<LoadingProcess*, QString>::const_iterator it = d->loadingDict.constBegin() ;
+    for (QMap<QString, LoadingProcess*>::const_iterator it = d->loadingDict.constBegin() ;
          it != d->loadingDict.constEnd() ; ++it)
     {
-        it.key()->notifyNewLoadingProcess(process, description);
+        it.value()->notifyNewLoadingProcess(process, description);
     }
 }
 
