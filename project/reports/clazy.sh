@@ -76,7 +76,7 @@ cd $ORIG_WD
 
 python3 ./clazy_visualizer.py $REPORT_DIR/trace.log
 
-#rm -f $REPORT_DIR/trace.log
+rm -f $REPORT_DIR/trace.log
 mv clazy.html $REPORT_DIR/index.html
 
 # update www.digikam.org report section.
