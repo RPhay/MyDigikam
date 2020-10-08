@@ -62,7 +62,10 @@ namespace DigikamImageMagickDImgPlugin
 DImgImageMagickPlugin::DImgImageMagickPlugin(QObject* const parent)
     : DPluginDImg(parent)
 {
-    MagickCoreGenesis((char*)nullptr ,MagickFalse);
+    MagickCoreGenesis((char*)nullptr, MagickFalse);
+
+    m_readFormats  = decoderFormats();
+    m_writeFormats = encoderFormats();
 }
 
 DImgImageMagickPlugin::~DImgImageMagickPlugin()
@@ -180,7 +183,7 @@ QString DImgImageMagickPlugin::loaderName() const
 
 QString DImgImageMagickPlugin::typeMimes() const
 {
-    QStringList formats = decoderFormats();
+    QStringList formats = m_readFormats;
     formats.sort();
 
     QString ret;
@@ -215,7 +218,7 @@ int DImgImageMagickPlugin::canRead(const QFileInfo& fileInfo, bool magic) const
             return 0;
         }
 
-        if (decoderFormats().contains(format))
+        if (m_readFormats.contains(format))
         {
             if (format == QLatin1String("WEBP"))
             {
@@ -233,53 +236,7 @@ int DImgImageMagickPlugin::canRead(const QFileInfo& fileInfo, bool magic) const
 
 int DImgImageMagickPlugin::canWrite(const QString& format) const
 {
-    QStringList formats;
-    formats << QLatin1String("BMP")
-            << QLatin1String("GIF")
-            << QLatin1String("WEBP");
-
-/*
-    try
-    {
-        ExceptionInfo ex = *AcquireExceptionInfo();
-        size_t n                  = 0;
-        const MagickInfo** inflst = GetMagickInfoList("*", &n, &ex);
-
-        if (!inflst)
-        {
-            qWarning() << "ImageMagick coders list is null!";
-            return 0;
-        }
-
-        for (uint i = 0 ; i < n ; ++i)
-        {
-            const MagickInfo* inf = inflst[i];
-
-            if (inf && inf->encoder)
-            {
-
-#if (MagickLibVersion >= 0x69A && defined(magick_module))
-
-                formats.append(QString::fromLatin1(inf->magick_module).toUpper());
-
-#else
-
-                formats.append(QString::fromLatin1(inf->module).toUpper());
-
-#endif
-
-            }
-        }
-
-        free(inflst);
-    }
-    catch (Exception& error)
-    {
-        qCWarning(DIGIKAM_DIMG_LOG) << "ImageMagickInfo exception:" << error.what();
-        return 0;
-    }
-*/
-    if (formats.contains(format.toUpper()))
+    if (m_writeFormats.contains(format.toUpper()))
     {
         if (format.toUpper() == QLatin1String("WEBP"))
         {
@@ -302,11 +259,7 @@ DImgLoader* DImgImageMagickPlugin::loader(DImg* const image, const DRawDecoding&
 QStringList DImgImageMagickPlugin::decoderFormats() const
 {
     QStringList formats;
-    formats << QLatin1String("BMP")
-            << QLatin1String("GIF")
-            << QLatin1String("WEBP");
 
-/*
     try
     {
         ExceptionInfo ex          = *AcquireExceptionInfo();
@@ -316,7 +269,7 @@ QStringList DImgImageMagickPlugin::decoderFormats() const
         if (!inflst)
         {
             qWarning() << "ImageMagick coders list is null!";
-            return formats;
+            return QStringList();
         }
 
         for (uint i = 0 ; i < n ; ++i)
@@ -355,7 +308,54 @@ QStringList DImgImageMagickPlugin::decoderFormats() const
 
     // Remove known formats that are not stable.
     formats.removeAll(QLatin1String("XCF"));
-*/
+
+    return formats;
+}
+
+QStringList DImgImageMagickPlugin::encoderFormats() const
+{
+    QStringList formats;
+
+    try
+    {
+        ExceptionInfo ex = *AcquireExceptionInfo();
+        size_t n                  = 0;
+        const MagickInfo** inflst = GetMagickInfoList("*", &n, &ex);
+
+        if (!inflst)
+        {
+            qWarning() << "ImageMagick coders list is null!";
+            return QStringList();
+        }
+
+        for (uint i = 0 ; i < n ; ++i)
+        {
+            const MagickInfo* inf = inflst[i];
+
+            if (inf && inf->encoder)
+            {
+
+#if (MagickLibVersion >= 0x69A && defined(magick_module))
+
+                formats.append(QString::fromLatin1(inf->magick_module).toUpper());
+
+#else
+
+                formats.append(QString::fromLatin1(inf->module).toUpper());
+
+#endif
+
+            }
+        }
+
+        free(inflst);
+    }
+    catch (Exception& error)
+    {
+        qCWarning(DIGIKAM_DIMG_LOG) << "ImageMagickInfo exception:" << error.what();
+        return QStringList();
+    }
+
     return formats;
 }
 

@@ -71,6 +71,13 @@ public:
 private:
 
     QStringList decoderFormats() const;
+    QStringList encoderFormats() const;
+
+private:
+
+    QStringList m_readFormats;
+    QStringList m_writeFormats;
+
 };
 
 } // namespace DigikamImageMagickDImgPlugin
