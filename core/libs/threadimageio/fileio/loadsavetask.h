@@ -168,7 +168,7 @@ public:
 
 protected:
 
-    void sendNotifyNewLoadingProcess();
+    void sendNotifyNewLoadingProcess(LoadingCache* const cache);
 
 protected:
 

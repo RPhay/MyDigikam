@@ -238,7 +238,7 @@ void SharedLoadingTask::execute()
             // Notify other processes that we are now loading this image.
             // They might be interested - see notifyNewLoadingProcess below
 
-            sendNotifyNewLoadingProcess();
+            sendNotifyNewLoadingProcess(cache);
         }
 
         // load image
@@ -458,10 +458,8 @@ void SharedLoadingTask::notifyNewLoadingProcess(LoadingProcess* const process,
     }
 }
 
-void SharedLoadingTask::sendNotifyNewLoadingProcess()
+void SharedLoadingTask::sendNotifyNewLoadingProcess(LoadingCache* const cache)
 {
-    LoadingCache* const cache = LoadingCache::cache();
-
     foreach (LoadingProcess* const process, cache->getLoadingProcesses())
     {
         process->notifyNewLoadingProcess(this, m_loadingDescription);
