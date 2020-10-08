@@ -130,7 +130,7 @@ QMap<QString, QString> DImgImageMagickPlugin::extraAboutData() const
 
     try
     {
-        ExceptionInfo ex = *AcquireExceptionInfo();
+        ExceptionInfo ex          = *AcquireExceptionInfo();
         size_t n                  = 0;
         const MagickInfo** inflst = GetMagickInfoList("*", &n, &ex);
 
@@ -318,7 +318,7 @@ QStringList DImgImageMagickPlugin::encoderFormats() const
 
     try
     {
-        ExceptionInfo ex = *AcquireExceptionInfo();
+        ExceptionInfo ex          = *AcquireExceptionInfo();
         size_t n                  = 0;
         const MagickInfo** inflst = GetMagickInfoList("*", &n, &ex);
 
