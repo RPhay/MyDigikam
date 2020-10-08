@@ -25,14 +25,16 @@
 #ifndef DIGIKAM_DNOTIFICATION_WRAPPER_H
 #define DIGIKAM_DNOTIFICATION_WRAPPER_H
 
+// Qt includes
+
 #include <QString>
 #include <QPixmap>
-
-class QWidget;
 
 // Local includes
 
 #include "digikam_export.h"
+
+class QWidget;
 
 namespace Digikam
 {

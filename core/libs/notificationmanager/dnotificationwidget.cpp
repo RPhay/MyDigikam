@@ -40,14 +40,14 @@ namespace Digikam
 
 DNotificationWidget::DNotificationWidget(QWidget* const parent)
     : QFrame(parent),
-      d(new Private(this))
+      d     (new Private(this))
 {
     d->init();
 }
 
 DNotificationWidget::DNotificationWidget(const QString& text, QWidget* const parent)
     : QFrame(parent),
-      d(new Private(this))
+      d     (new Private(this))
 {
     d->init();
     d->text = text;
@@ -95,11 +95,13 @@ static QColor darkShade(QColor c)
     if      (c.lightnessF() < 0.006)
     {
         // too dark
+
         darkAmount = 0.02 + 0.40 * contrast;
     }
     else if (c.lightnessF() > 0.93)
     {
         // too bright
+
         darkAmount = -0.06 - 0.60 * contrast;
     }
     else
@@ -161,8 +163,10 @@ void DNotificationWidget::setMessageType(DNotificationWidget::MessageType type)
         .arg(bg1.name())
         .arg(bg2.name())
         .arg(border.name())
+
         // DefaultFrameWidth returns the size of the external margin + border width.
         // We know our border is 1px, so we subtract this from the frame normal QStyle FrameWidth to get our margin.
+
         .arg(style()->pixelMetric(QStyle::PM_DefaultFrameWidth, nullptr, this) - 1)
         .arg(fg.name())
     );

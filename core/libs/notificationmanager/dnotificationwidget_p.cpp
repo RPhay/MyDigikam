@@ -46,16 +46,16 @@ namespace Digikam
 {
 
 DNotificationWidget::Private::Private(DNotificationWidget* const q_ptr)
-    : QObject(q_ptr),
-      q(q_ptr),
-      content(nullptr),
-      iconLabel(nullptr),
-      textLabel(nullptr),
-      closeButton(nullptr),
-      timeLine(nullptr),
-      messageType(DNotificationWidget::Information),
-      wordWrap(false),
-      delay(-1)
+    : QObject       (q_ptr),
+      q             (q_ptr),
+      content       (nullptr),
+      iconLabel     (nullptr),
+      textLabel     (nullptr),
+      closeButton   (nullptr),
+      timeLine      (nullptr),
+      messageType   (DNotificationWidget::Information),
+      wordWrap      (false),
+      delay         (-1)
 {
 }
 
@@ -223,6 +223,7 @@ void DNotificationWidget::Private::slotTimeLineFinished()
     else
     {
         // hide and notify about finished animation
+
         q->hide();
         emit q->hideAnimationFinished();
     }

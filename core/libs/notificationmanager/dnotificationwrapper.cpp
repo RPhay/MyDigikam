@@ -99,7 +99,7 @@ static inline bool detectKDEDesktopIsRunning()
 
     // Classic fallbacks
 
-    if (!qgetenv("KDE_FULL_SESSION").isEmpty())
+    if (!qEnvironmentVariableIsEmpty("KDE_FULL_SESSION"))
     {
         return true;
     }

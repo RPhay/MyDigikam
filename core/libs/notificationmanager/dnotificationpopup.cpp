@@ -59,16 +59,16 @@ class Q_DECL_HIDDEN DNotificationPopup::Private
 public:
 
     explicit Private(DNotificationPopup* const q, WId winId)
-        : q(q),
+        : q         (q),
           popupStyle(DEFAULT_POPUP_TYPE),
-          window(winId),
-          msgView(nullptr),
-          topLayout(nullptr),
-          hideDelay(DEFAULT_POPUP_TIME),
-          hideTimer(new QTimer(q)),
-          ttlIcon(nullptr),
-          ttl(nullptr),
-          msg(nullptr),
+          window    (winId),
+          msgView   (nullptr),
+          topLayout (nullptr),
+          hideDelay (DEFAULT_POPUP_TIME),
+          hideTimer (new QTimer(q)),
+          ttlIcon   (nullptr),
+          ttl       (nullptr),
+          msg       (nullptr),
           autoDelete(false)
     {
         q->setWindowFlags(POPUP_FLAGS);
@@ -299,13 +299,13 @@ public:
 
 DNotificationPopup::DNotificationPopup(QWidget* const parent, Qt::WindowFlags f)
     : QFrame(nullptr, f ? f : POPUP_FLAGS),
-      d(new Private(this, parent ? parent->effectiveWinId() : 0L))
+      d     (new Private(this, parent ? parent->effectiveWinId() : 0L))
 {
 }
 
 DNotificationPopup::DNotificationPopup(WId win)
     : QFrame(nullptr),
-      d(new Private(this, win))
+      d     (new Private(this, win))
 {
 }
 
