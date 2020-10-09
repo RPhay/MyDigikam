@@ -176,7 +176,7 @@ FunnelReal::FunnelReal()
     QString trainingFile = QStandardPaths::standardLocations(QStandardPaths::GenericDataLocation).last() + QLatin1Char('/') +
                            QLatin1String("digikam/alignment-congealing/face-funnel.data");
 */
-    if (!QFileInfo(trainingFile).exists())
+    if (!QFileInfo::exists(trainingFile))
     {
         qCritical(DIGIKAM_FACESENGINE_LOG) << "Training data for Congealing/Funnel not found. Should be at" << trainingFile;
         return;

@@ -235,7 +235,7 @@ void MetaReaderThreadTest::testMetaReaderThread()
     QSettings conf(QLatin1String("MetaReaderThreadTest"));
     qDebug() << "Check custom configuration file" << conf.fileName();
 
-    if (!QFileInfo(conf.fileName()).exists())
+    if (!QFileInfo::exists(conf.fileName()))
     {
         qDebug() << "Configuration file do not exists.";
         qDebug() << "You can customize this unit-test to copy the template file from";

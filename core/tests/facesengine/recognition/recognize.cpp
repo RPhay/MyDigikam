@@ -70,7 +70,7 @@ QList<QImage*> toImages(const QStringList& paths)
 
 int main(int argc, char** argv)
 {
-    if (argc < 2 || (QString::fromLatin1(argv[1]) == QString::fromLatin1("train") && argc < 3))
+    if ((argc < 2) || ((QString::fromLatin1(argv[1]) == QString::fromLatin1("train")) && (argc < 3)))
     {
         qDebug() << "Bad Arguments!!!\nUsage: " << argv[0]
                  << " identify <image1> <image2> ... | train name <image1> <image2> ... "
@@ -84,7 +84,7 @@ int main(int argc, char** argv)
     CoreDbAccess::setParameters(prm, CoreDbAccess::MainApplication);
     FacialRecognitionWrapper recognizer;
 
-    if (QString::fromLatin1(argv[1]) == QString::fromLatin1("identify"))
+    if      (QString::fromLatin1(argv[1]) == QString::fromLatin1("identify"))
     {
         QStringList paths     = toPaths(argv, 2, argc);
         QList<QImage*> images = toImages(paths);
@@ -195,7 +195,7 @@ int main(int argc, char** argv)
             }
         }
 
-        if (!QFileInfo(trainingImages.value(1).first()).exists())
+        if (!QFileInfo::exists(trainingImages.value(1).first()))
         {
             qDebug() << "Could not find files of ORL database";
             return 0;
