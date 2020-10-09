@@ -168,7 +168,7 @@ void ThumbnailLoadingTask::execute()
             // Notify other processes that we are now loading this image.
             // They might be interested - see notifyNewLoadingProcess below
 
-            sendNotifyNewLoadingProcess(cache);
+            sendNotifyNewLoadingProcess();
         }
 
         // Load or create thumbnail
