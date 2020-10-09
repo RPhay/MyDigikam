@@ -14,6 +14,7 @@ import argparse
 import urllib.request
 import re
 from bs4 import BeautifulSoup
+from datetime import datetime
 
 checks_list = ["[-Wclazy-assert-with-side-effects]",
                "[-Wclazy-container-inside-loop]",
@@ -242,12 +243,13 @@ def writeHeader(f):
 
 # List the used checks found in the source code.
 def writeList(f, num_used_checks, names_of_used, args, external_link, external_name, total_num_checks):
+    now = datetime.now()
     f.write(
         "<body style=\"background: rgb(220, 227, 230); width: 100%; height: 100%;\">\n")
     f.write("<div id=\"container\" style=\"margin-left: 2%; margin-right: 2%;\">\n")
     f.write("\t<div id=\"header\" style=\"height: 55px; display: flex; justify-content: left; position: relative;\">\n")
     f.write("\t\t<h3 style=\"text-align: center; color: #111; font-family: 'Helvetica Neue', sans-serif; font-weight: bold; \
-    letter-spacing: 0.5px; line-height: 1;\">Clang-Tidy Checks</h3>\n")
+    letter-spacing: 0.5px; line-height: 1;\">digiKam Clazy Checks - %s</h3>\n" % (now.strftime("%m/%d/%Y %H:%M:%S")))
     f.write("\t\t<div class=\"btn-group\" role=\"group\" style=\"position: absolute; right: 0;\">\n")
     f.write("\t\t</div>\n\t</div><br>\n")
     f.write("\t<ul id=\"list\" class=\"list-group\" align=\"left\" style=\"display: block; width: 25%; height: 0; margin-bottom: 0;\">\n")
