@@ -44,9 +44,9 @@ namespace Digikam
 
 AlbumFilterModel::AlbumFilterModel(QObject* const parent)
     : QSortFilterProxyModel(parent),
-      m_filterBehavior(FullFiltering),
-      m_chainedModel(nullptr),
-      m_parent(parent)
+      m_filterBehavior     (FullFiltering),
+      m_chainedModel       (nullptr),
+      m_parent             (parent)
 {
     setSortRole(AbstractAlbumModel::AlbumSortRole);
     setSortCaseSensitivity(Qt::CaseInsensitive);
@@ -573,7 +573,7 @@ bool CheckableAlbumFilterModel::matches(Album* album) const
         stateAccepted |= state == Qt::Checked;
     }
 
-    return accepted && stateAccepted;
+    return (accepted && stateAccepted);
 }
 
 // -----------------------------------------------------------------------------

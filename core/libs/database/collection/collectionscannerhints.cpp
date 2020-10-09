@@ -33,13 +33,13 @@ namespace Digikam
 
 CollectionScannerHints::Album::Album()
     : albumRootId(0),
-      albumId(0)
+      albumId    (0)
 {
 }
 
 CollectionScannerHints::Album::Album(int albumRootId, int albumId)
     : albumRootId(albumRootId),
-      albumId(albumId)
+      albumId    (albumId)
 {
 }
 
@@ -64,7 +64,7 @@ CollectionScannerHints::DstPath::DstPath()
 }
 
 CollectionScannerHints::DstPath::DstPath(int albumRootId, const QString& relativePath)
-    : albumRootId(albumRootId),
+    : albumRootId (albumRootId),
       relativePath(relativePath)
 {
 }
@@ -159,6 +159,7 @@ uint AlbumCopyMoveHint::qHash() const
 }
 
 #ifdef HAVE_DBUS
+
 AlbumCopyMoveHint& AlbumCopyMoveHint::operator<<(const QDBusArgument& argument)
 {
     argument.beginStructure();
@@ -178,6 +179,7 @@ const AlbumCopyMoveHint& AlbumCopyMoveHint::operator>>(QDBusArgument& argument) 
 
     return *this;
 }
+
 #endif
 
 // -----------------------------------------------------------------------------------------
@@ -187,8 +189,8 @@ ItemCopyMoveHint::ItemCopyMoveHint()
 }
 
 ItemCopyMoveHint::ItemCopyMoveHint(const QList<qlonglong>& srcIds, int dstItemRootId, int dstAlbumId, const QStringList& dstNames)
-    : m_srcIds(srcIds),
-      m_dst(dstItemRootId, dstAlbumId),
+    : m_srcIds  (srcIds),
+      m_dst     (dstItemRootId, dstAlbumId),
       m_dstNames(dstNames)
 {
 }
@@ -236,6 +238,7 @@ QString ItemCopyMoveHint::dstName(qlonglong id) const
 }
 
 #ifdef HAVE_DBUS
+
 ItemCopyMoveHint& ItemCopyMoveHint::operator<<(const QDBusArgument& argument)
 {
     argument.beginStructure();
@@ -257,13 +260,14 @@ const ItemCopyMoveHint& ItemCopyMoveHint::operator>>(QDBusArgument& argument) co
 
     return *this;
 }
+
 #endif
 
 // ---------------------------------------------------------------------------------------
 
 ItemChangeHint::ItemChangeHint()
+    : m_type(ItemModified)
 {
-    m_type = ItemModified;
 }
 
 ItemChangeHint::ItemChangeHint(QList<qlonglong> ids, ChangeType type)
@@ -288,6 +292,7 @@ ItemChangeHint::ChangeType ItemChangeHint::changeType() const
 }
 
 #ifdef HAVE_DBUS
+
 ItemChangeHint& ItemChangeHint::operator<<(const QDBusArgument& argument)
 {
     argument.beginStructure();
@@ -309,23 +314,24 @@ const ItemChangeHint& ItemChangeHint::operator>>(QDBusArgument& argument) const
 
     return *this;
 }
+
 #endif
 
 // ---------------------------------------------------------------------------------------
 
 ItemMetadataAdjustmentHint::ItemMetadataAdjustmentHint()
-    : m_id(0),
-      m_status(AboutToEditMetadata),
+    : m_id      (0),
+      m_status  (AboutToEditMetadata),
       m_fileSize(0)
 {
 }
 
 ItemMetadataAdjustmentHint::ItemMetadataAdjustmentHint(qlonglong id, AdjustmentStatus status,
                                                        const QDateTime& modificationDateOnDisk, qlonglong fileSize)
-    : m_id(id),
-      m_status(status),
+    : m_id              (id),
+      m_status          (status),
       m_modificationDate(modificationDateOnDisk),
-      m_fileSize(fileSize)
+      m_fileSize        (fileSize)
 {
 }
 
@@ -350,6 +356,7 @@ qlonglong ItemMetadataAdjustmentHint::fileSize() const
 }
 
 #ifdef HAVE_DBUS
+
 ItemMetadataAdjustmentHint& ItemMetadataAdjustmentHint::operator<<(const QDBusArgument& argument)
 {
     argument.beginStructure();
@@ -374,6 +381,7 @@ const ItemMetadataAdjustmentHint& ItemMetadataAdjustmentHint::operator>>(QDBusAr
 
     return *this;
 }
+
 #endif
 
 } // namespace Digikam

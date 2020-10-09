@@ -54,7 +54,7 @@ NewlyAppearedFile::NewlyAppearedFile()
 }
 
 NewlyAppearedFile::NewlyAppearedFile(int albumId, const QString& fileName)
-    : albumId(albumId),
+    : albumId (albumId),
       fileName(fileName)
 {
 }

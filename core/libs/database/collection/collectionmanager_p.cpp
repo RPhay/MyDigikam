@@ -27,9 +27,9 @@ namespace Digikam
 {
 
 CollectionManager::Private::Private(CollectionManager* const s)
-    : changingDB(false),
+    : changingDB  (false),
       watchEnabled(false),
-      s(s)
+      s           (s)
 {
     QObject::connect(s, SIGNAL(triggerUpdateVolumesList()),
                      s, SLOT(slotTriggerUpdateVolumesList()),

@@ -170,9 +170,9 @@ class Q_DECL_HIDDEN DItemToolTip::Private
 public:
 
     explicit Private()
-      : tipBorder(5)
+      : tipBorder(5),
+        corner   (0)
     {
-        corner = 0;
     }
 
     const int   tipBorder;
@@ -182,7 +182,7 @@ public:
 
 DItemToolTip::DItemToolTip(QWidget* const parent)
     : QLabel(parent, Qt::ToolTip),
-      d(new Private)
+      d     (new Private)
 {
     hide();
 
@@ -395,7 +395,7 @@ bool DItemToolTip::event(QEvent* e)
             break;
     }
 
-    return QFrame::event(e);
+    return QLabel::event(e);
 }
 
 void DItemToolTip::resizeEvent(QResizeEvent* e)

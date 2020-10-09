@@ -91,7 +91,7 @@ public:
      * the source album model will be made source of the chained filter model.
      */
     void                setSourceAlbumModel(AbstractAlbumModel* const source);
-    AbstractAlbumModel* sourceAlbumModel()                                      const;
+    AbstractAlbumModel* sourceAlbumModel()                                  const;
 
     /**
      * Sets a chained filter model.
@@ -99,23 +99,23 @@ public:
      * sourceAlbumModel of the new source filter model.
      */
     void              setSourceFilterModel(AlbumFilterModel* const source);
-    AlbumFilterModel* sourceFilterModel()                                       const;
+    AlbumFilterModel* sourceFilterModel()                                   const;
 
-    QModelIndex       mapToSourceAlbumModel(const QModelIndex& index)           const;
-    QModelIndex       mapFromSourceAlbumModel(const QModelIndex& index)         const;
+    QModelIndex       mapToSourceAlbumModel(const QModelIndex& index)       const;
+    QModelIndex       mapFromSourceAlbumModel(const QModelIndex& index)     const;
 
     /// Convenience methods
-    Album*      albumForIndex(const QModelIndex& index)                         const;
-    QModelIndex indexForAlbum(Album* album)                                     const;
-    QModelIndex rootAlbumIndex()                                                const;
-    QVariant    dataForCurrentSortRole(Album* album)                            const;
+    Album*      albumForIndex(const QModelIndex& index)                     const;
+    QModelIndex indexForAlbum(Album* album)                                 const;
+    QModelIndex rootAlbumIndex()                                            const;
+    QVariant    dataForCurrentSortRole(Album* album)                        const;
 
     /**
      * Returns the settings currently used for filtering.
      *
      * @return current settings for filtering.
      */
-    SearchTextSettings searchTextSettings()                                     const;
+    SearchTextSettings searchTextSettings()                                 const;
 
     /**
      * Sets the filter behavior. Default is FullFiltering.
@@ -127,7 +127,7 @@ public:
      * Never returns NoMatch for a valid index, because in this case,
      * the index would rather be filtered out.
      */
-    MatchResult matchResult(const QModelIndex& index)                           const;
+    MatchResult matchResult(const QModelIndex& index)                       const;
 
     /**
      * Returns if the currently applied filters will result in any filtering.
@@ -135,7 +135,7 @@ public:
      * @return <code>true</code> if the current selected filter could result in
      *         any filtering without checking if this really happens.
      */
-    virtual bool isFiltering()                                                  const;
+    virtual bool isFiltering()                                              const;
 
     /**
      * Returns the usual compare result of -1, 0, or 1 for lessThan, equals and greaterThan.
@@ -234,7 +234,7 @@ protected:
      * in the album's title or in a child album's title, or if it is a special album (root)
      * that is never filtered out.
      */
-    MatchResult matchResult(Album* album)                                           const;
+    MatchResult matchResult(Album* album)                                   const;
 
     /**
      * This method provides the basic match checking algorithm.
@@ -243,7 +243,7 @@ protected:
      *
      * @param album album to tell if it matches the filter criteria or not.
      */
-    virtual bool matches(Album* album)                                              const;
+    virtual bool matches(Album* album)                                      const;
 
     /**
      * Use setSourceAlbumModel.
@@ -269,7 +269,7 @@ private:
      * @return <code>true</code> if the provided settings result in filtering
      *         the model
      */
-    bool settingsFilter(const SearchTextSettings& settings)                         const;
+    bool settingsFilter(const SearchTextSettings& settings)                     const;
 
 protected:
 
@@ -294,7 +294,7 @@ public:
     explicit CheckableAlbumFilterModel(QObject* const parent = nullptr);
 
     void setSourceAlbumModel(AbstractCheckableAlbumModel* const source);
-    AbstractCheckableAlbumModel* sourceAlbumModel()                                     const;
+    AbstractCheckableAlbumModel* sourceAlbumModel()                             const;
 
     void setSourceFilterModel(CheckableAlbumFilterModel* const source);
 
@@ -327,7 +327,7 @@ public:
     explicit SearchFilterModel(QObject* const parent = nullptr);
 
     void setSourceSearchModel(SearchModel* const source);
-    SearchModel* sourceSearchModel()                                                    const;
+    SearchModel* sourceSearchModel()                                            const;
 
     /**
      * Set the DatabaseSearch::Type.
@@ -376,7 +376,7 @@ public:
     explicit TagPropertiesFilterModel(QObject* const parent = nullptr);
 
     void      setSourceAlbumModel(TagModel* const source);
-    TagModel* sourceTagModel()                                                          const;
+    TagModel* sourceTagModel()                                                  const;
 
     void listOnlyTagsWithProperty(const QString& property);
     void removeListOnlyProperty(const QString& property);

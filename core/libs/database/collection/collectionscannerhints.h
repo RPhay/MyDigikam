@@ -363,8 +363,10 @@ public:
     }
 
 #ifdef HAVE_DBUS
+
     ItemMetadataAdjustmentHint& operator<<(const QDBusArgument& argument);
     const ItemMetadataAdjustmentHint& operator>>(QDBusArgument& argument)   const;
+
 #endif
 
 protected:

@@ -80,7 +80,7 @@ public:
 
     AlbumRootLocation()
       : available(false),
-        hidden(false)
+        hidden   (false)
     {
     }
 
@@ -186,9 +186,9 @@ class Q_DECL_HIDDEN SolidVolumeInfo
 public:
 
     SolidVolumeInfo()
-        : isRemovable(false),
+        : isRemovable  (false),
           isOpticalDisc(false),
-          isMounted(false)
+          isMounted    (false)
     {
     }
 

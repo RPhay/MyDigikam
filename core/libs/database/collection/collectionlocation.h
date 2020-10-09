@@ -152,11 +152,11 @@ protected:
     QString m_label;
 };
 
-} // namespace Digikam
-
-inline uint qHash(const Digikam::CollectionLocation& loc)
+inline uint qHash(const CollectionLocation& loc)
 {
     return loc.hash();
 }
+
+} // namespace Digikam
 
 #endif // DIGIKAM_COLLECTION_LOCATION_H
