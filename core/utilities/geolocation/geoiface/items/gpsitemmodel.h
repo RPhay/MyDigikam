@@ -52,9 +52,9 @@ public:
 
     void addItem(GPSItemContainer* const newItem);
     void setColumnCount(const int nColumns);
-    GPSItemContainer* itemFromIndex(const QModelIndex& index)                                               const;
-    GPSItemContainer* itemFromUrl(const QUrl& url)                                                          const;
-    QModelIndex indexFromUrl(const QUrl& url)                                                               const;
+    GPSItemContainer* itemFromIndex(const QModelIndex& index)                                       const;
+    GPSItemContainer* itemFromUrl(const QUrl& url)                                                  const;
+    QModelIndex indexFromUrl(const QUrl& url)                                                       const;
 
     QPixmap getPixmapForIndex(const QPersistentModelIndex& itemIndex, const int size);
 

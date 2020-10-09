@@ -51,12 +51,12 @@ public:
 public:
 
     GPSDataContainer()
-      : m_hasFlags(HasFlags()),
+      : m_hasFlags   (HasFlags()),
         m_coordinates(),
         m_nSatellites(-1),
-        m_dop(-1),
-        m_fixType(-1),
-        m_speed(0)
+        m_dop        (-1),
+        m_fixType    (-1),
+        m_speed      (0)
     {
     }
 
@@ -158,6 +158,7 @@ public:
         {
             m_hasFlags &= ~HasCoordinates;
         }
+
         if (coordinates.hasAltitude())
         {
             m_hasFlags |= HasAltitude;

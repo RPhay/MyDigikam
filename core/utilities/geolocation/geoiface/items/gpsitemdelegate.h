@@ -46,7 +46,7 @@ public:
     ~GPSItemDelegate() override;
 
     void setThumbnailSize(const int size);
-    int  getThumbnailSize()                                                                                       const;
+    int  getThumbnailSize()                                                                               const;
 
     void paint(QPainter* painter, const QStyleOptionViewItem& option, const QModelIndex& sortMappedindex) const override;
     QSize sizeHint(const QStyleOptionViewItem& option, const QModelIndex& sortMappedindex)                const override;

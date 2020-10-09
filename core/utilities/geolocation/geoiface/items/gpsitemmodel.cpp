@@ -36,8 +36,8 @@ class Q_DECL_HIDDEN GPSItemModel::Private
 public:
 
     explicit Private()
-      : items(),
-        columnCount(0),
+      : items              (),
+        columnCount        (0),
         thumbnailLoadThread(nullptr)
     {
     }
@@ -50,7 +50,7 @@ public:
 
 GPSItemModel::GPSItemModel(QObject* const parent)
     : QAbstractItemModel(parent),
-      d(new Private)
+      d                 (new Private)
 {
     d->thumbnailLoadThread = new ThumbnailLoadThread(this);
 

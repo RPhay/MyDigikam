@@ -41,7 +41,7 @@ bool TrackCorrelationLessThan(const TrackCorrelator::Correlation& a, const Track
 }
 
 TrackCorrelatorThread::TrackCorrelatorThread(QObject* const parent)
-    : QThread(parent),
+    : QThread (parent),
       doCancel(false),
       canceled(false)
 {

@@ -74,29 +74,29 @@ class Q_DECL_HIDDEN GPSCorrelatorWidget::Private
 public:
 
     explicit Private()
-      : gpxLoadFilesButton(nullptr),
-        gpxFileList(nullptr),
-        timeZoneCB(nullptr),
-        offsetSign(nullptr),
-        offsetTime(nullptr),
-        interpolateButton(nullptr),
-        interpolateLimitLabel(nullptr),
-        interpolateLimitInput(nullptr),
-        directMatchButton(nullptr),
-        directMatchLimitLabel(nullptr),
-        directMatchLimitInput(nullptr),
-        showTracksOnMap(nullptr),
-        correlateButton(nullptr),
-        trackManager(nullptr),
-        trackCorrelator(nullptr),
-        trackListModel(nullptr),
-        uiEnabledInternal(true),
-        uiEnabledExternal(true),
-        imageModel(nullptr),
-        correlationTotalCount(0),
-        correlationCorrelatedCount(0),
-        correlationTriedCount(0),
-        correlationUndoCommand(nullptr)
+      : gpxLoadFilesButton          (nullptr),
+        gpxFileList                 (nullptr),
+        timeZoneCB                  (nullptr),
+        offsetSign                  (nullptr),
+        offsetTime                  (nullptr),
+        interpolateButton           (nullptr),
+        interpolateLimitLabel       (nullptr),
+        interpolateLimitInput       (nullptr),
+        directMatchButton           (nullptr),
+        directMatchLimitLabel       (nullptr),
+        directMatchLimitInput       (nullptr),
+        showTracksOnMap             (nullptr),
+        correlateButton             (nullptr),
+        trackManager                (nullptr),
+        trackCorrelator             (nullptr),
+        trackListModel              (nullptr),
+        uiEnabledInternal           (true),
+        uiEnabledExternal           (true),
+        imageModel                  (nullptr),
+        correlationTotalCount       (0),
+        correlationCorrelatedCount  (0),
+        correlationTriedCount       (0),
+        correlationUndoCommand      (nullptr)
     {
     }
 
@@ -365,7 +365,7 @@ void GPSCorrelatorWidget::slotCorrelate()
 {
     // disable the UI of the entire dialog:
 
-    emit signalSetUIEnabled(false, this, QLatin1String(SLOT(slotCancelCorrelation())));
+    emit signalSetUIEnabled(false, this, QString::fromUtf8(SLOT(slotCancelCorrelation())));
 
     // store the options:
 

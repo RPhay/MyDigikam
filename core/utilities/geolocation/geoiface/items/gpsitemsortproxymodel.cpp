@@ -40,8 +40,8 @@ class Q_DECL_HIDDEN GPSItemSortProxyModel::Private
 public:
 
     explicit Private()
-      : imageModel(nullptr),
-        sourceSelectionModel(nullptr),
+      : imageModel            (nullptr),
+        sourceSelectionModel  (nullptr),
         linkItemSelectionModel(nullptr)
     {
     }
@@ -54,7 +54,7 @@ public:
 GPSItemSortProxyModel::GPSItemSortProxyModel(GPSItemModel* const imageModel,
                                              QItemSelectionModel* const sourceSelectionModel)
     : QSortFilterProxyModel(imageModel),
-      d(new Private())
+      d                    (new Private())
 {
     d->imageModel             = imageModel;
     d->sourceSelectionModel   = sourceSelectionModel;

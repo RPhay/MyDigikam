@@ -130,18 +130,18 @@ bool setExifXmpTagDataVariant(DMetadata* const meta, const char* const exifTagNa
 }
 
 GPSItemContainer::GPSItemContainer(const QUrl& url)
-    : m_model(nullptr),
-      m_url(url),
-      m_dateTime(),
-      m_dirty(false),
-      m_gpsData(),
-      m_savedState(),
+    : m_model       (nullptr),
+      m_url         (url),
+      m_dateTime    (),
+      m_dirty       (false),
+      m_gpsData     (),
+      m_savedState  (),
       m_tagListDirty(false),
-      m_tagList(),
+      m_tagList     (),
       m_savedTagList(),
       m_writeXmpTags(true),
-      m_saveTags(true),
-      m_saveGPS(true)
+      m_saveTags    (true),
+      m_saveGPS     (true)
 {
 }
 
@@ -248,7 +248,9 @@ bool GPSItemContainer::loadImageData()
     }
 
     if (!meta)
+    {
         return false;
+    }
 
     // The way we read the coordinates here is problematic
     // if the coordinates were in the file initially, but

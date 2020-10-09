@@ -61,13 +61,13 @@ class SaveProperties
 public:
 
     explicit SaveProperties()
-      : shouldRemoveCoordinates(false),
-        shouldRemoveAltitude(false),
-        shouldWriteCoordinates(false),
-        shouldWriteAltitude(false),
-        altitude(0.0),
-        latitude(0.0),
-        longitude(0.0)
+      : shouldRemoveCoordinates (false),
+        shouldRemoveAltitude    (false),
+        shouldWriteCoordinates  (false),
+        shouldWriteAltitude     (false),
+        altitude                (0.0),
+        latitude                (0.0),
+        longitude               (0.0)
     {
     }
 

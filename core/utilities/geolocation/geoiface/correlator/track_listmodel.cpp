@@ -57,7 +57,7 @@ public:
 
 TrackListModel::TrackListModel(TrackManager* const trackManager, QObject* const parent)
     : QAbstractItemModel(parent),
-      d(new Private())
+      d                 (new Private())
 {
     d->trackManager = trackManager;
 
@@ -106,6 +106,7 @@ QVariant TrackListModel::data(const QModelIndex& index, int role) const
     if (track.id == 0)
     {
         // track not found, invalid id
+
         return QVariant();
     }
 
@@ -146,6 +147,7 @@ QModelIndex TrackListModel::index(int row, int column, const QModelIndex& parent
     if (parent.isValid())
     {
         Q_ASSERT(parent.model() == this);
+
         return QModelIndex();
     }
 

@@ -59,22 +59,22 @@ class Q_DECL_HIDDEN GPSItemListContextMenu::Private
 public:
 
     explicit Private()
-      : enabled(true),
-        actionBookmark(nullptr),
-        bookmarkOwner(nullptr),
-        actionCopy(nullptr),
-        actionPaste(nullptr),
-        actionPasteSwap(nullptr),
-        actionRemoveCoordinates(nullptr),
-        actionRemoveAltitude(nullptr),
-        actionRemoveUncertainty(nullptr),
-        actionRemoveSpeed(nullptr),
+      : enabled                     (true),
+        actionBookmark              (nullptr),
+        bookmarkOwner               (nullptr),
+        actionCopy                  (nullptr),
+        actionPaste                 (nullptr),
+        actionPasteSwap             (nullptr),
+        actionRemoveCoordinates     (nullptr),
+        actionRemoveAltitude        (nullptr),
+        actionRemoveUncertainty     (nullptr),
+        actionRemoveSpeed           (nullptr),
         actionLookupMissingAltitudes(nullptr),
-        imagesList(nullptr),
-        altitudeLookup(),
-        altitudeUndoCommand(nullptr),
-        altitudeRequestedCount(0),
-        altitudeReceivedCount(0)
+        imagesList                  (nullptr),
+        altitudeLookup              (),
+        altitudeUndoCommand         (nullptr),
+        altitudeRequestedCount      (0),
+        altitudeReceivedCount       (0)
     {
     }
 
@@ -734,7 +734,7 @@ void GPSItemListContextMenu::slotLookupMissingAltitudes()
     connect(d->altitudeLookup, SIGNAL(signalDone()),
             this, SLOT(slotAltitudeLookupDone()));
 
-    emit signalSetUIEnabled(false, this, QLatin1String(SLOT(slotAltitudeLookupCancel())));
+    emit signalSetUIEnabled(false, this, QString::fromUtf8(SLOT(slotAltitudeLookupCancel())));
     emit signalProgressSetup(altitudeQueries.count(), i18n("Looking up altitudes"));
 
     d->altitudeUndoCommand    = new GPSUndoCommand();

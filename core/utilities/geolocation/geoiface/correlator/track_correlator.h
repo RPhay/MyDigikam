@@ -53,14 +53,14 @@ public:
     public:
 
         explicit Correlation()
-          : dateTime(),
-            userData(),
+          : dateTime   (),
+            userData   (),
             nSatellites(-1),
-            hDop(-1),
-            pDop(-1),
-            fixType(-1),
-            speed(-1),
-            flags(),
+            hDop       (-1),
+            pDop       (-1),
+            fixType    (-1),
+            speed      (-1),
+            flags      (),
             coordinates()
         {
         }
@@ -87,11 +87,11 @@ public:
     public:
 
         explicit CorrelationOptions()
-          : interpolate(false),
+          : interpolate         (false),
             interpolationDstTime(0),
-            maxGapTime(0),
-            secondsOffset(0),
-            timeZoneOffset(0)
+            maxGapTime          (0),
+            secondsOffset       (0),
+            timeZoneOffset      (0)
         {
         }
 

@@ -50,13 +50,13 @@ class Q_DECL_HIDDEN GPSItemList::Private
 public:
 
     explicit Private()
-      : editEnabled(true),
-        dragEnabled(false),
-        model(nullptr),
-        selectionModel(nullptr),
-        itemDelegate(nullptr),
-        imageSortProxyModel(nullptr),
-        dragDropHandler(nullptr)
+      : editEnabled         (true),
+        dragEnabled         (false),
+        model               (nullptr),
+        selectionModel      (nullptr),
+        itemDelegate        (nullptr),
+        imageSortProxyModel (nullptr),
+        dragDropHandler     (nullptr)
     {
     }
 

@@ -38,7 +38,7 @@ public:
 
     explicit Private()
       : trackManager(nullptr),
-        thread(nullptr)
+        thread      (nullptr)
     {
     }
 
