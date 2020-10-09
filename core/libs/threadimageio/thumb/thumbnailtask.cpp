@@ -160,15 +160,15 @@ void ThumbnailLoadingTask::execute()
         {
             LoadingCache::CacheLock lock(cache);
 
-            // Notify other processes that we are now loading this image.
-            // They might be interested - see notifyNewLoadingProcess below
-
-            cache->notifyNewLoadingProcess(this, m_loadingDescription);
-
             // Neither in cache, nor currently loading in different thread.
             // Load it here and now, add this LoadingProcess to cache list.
 
             cache->addLoadingProcess(this);
+
+            // Notify other processes that we are now loading this image.
+            // They might be interested - see notifyNewLoadingProcess below
+
+            cache->notifyNewLoadingProcess(this, m_loadingDescription);
         }
 
         // Load or create thumbnail
