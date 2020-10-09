@@ -166,7 +166,7 @@ void PreviewLoadingTask::execute()
             // Notify other processes that we are now loading this image.
             // They might be interested - see notifyNewLoadingProcess below
 
-            sendNotifyNewLoadingProcess(cache);
+            cache->notifyNewLoadingProcess(this, m_loadingDescription);
         }
 
         // Preview is not in cache, we will load image from file.
