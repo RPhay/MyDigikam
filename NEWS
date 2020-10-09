@@ -152,6 +152,7 @@ BUGFIXES:
 139 ==> 426331 - The file digikam.exe contains no icons.
 140 ==> 426333 - Icons Not Set for digiKam and Showfoto.
 141 ==> 426717 - digikam.exe & showfoto.exe: no application-specific icons shown on Windows 10 after upgrade to 7.1.0.
-142 ==> 
+142 ==> 427468 - Duplicate subalbums on Windows 10 (format YYYY\MM).
+143 ==> 
 
 
