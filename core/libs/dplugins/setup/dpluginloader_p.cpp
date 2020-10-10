@@ -79,11 +79,17 @@ QFileInfoList DPluginLoader::Private::pluginEntriesList() const
     qCDebug(DIGIKAM_GENERAL_LOG) << "Parsing plugins from" << path;
 
 #ifdef Q_OS_MACOS
+
     QString filter(QLatin1String("*.dylib *.so"));
+
 #elif defined Q_OS_WIN
+
     QString filter(QLatin1String("*.dll"));
+
 #else
+
     QString filter(QLatin1String("*.so"));
+
 #endif
 
     QDir dir(path, filter, QDir::Unsorted,
@@ -151,7 +157,7 @@ void DPluginLoader::Private::loadPlugins()
 
     Q_ASSERT(allPlugins.isEmpty());
 
-    for (const QFileInfo& info : pluginEntriesList())
+    foreach (const QFileInfo& info, pluginEntriesList())
     {
         if (!whitelist.isEmpty() && !whitelist.contains(info.baseName()))
         {
@@ -164,8 +170,9 @@ void DPluginLoader::Private::loadPlugins()
             qCDebug(DIGIKAM_GENERAL_LOG) << "Ignoring blacklisted plugin" << info.filePath();
             continue;
         }
-
-        // qCDebug(DIGIKAM_GENERAL_LOG) << info.baseName() << "-" << info.canonicalPath();
+/*
+        qCDebug(DIGIKAM_GENERAL_LOG) << info.baseName() << "-" << info.canonicalPath();
+*/
         const QString path          = info.canonicalFilePath();
         QPluginLoader* const loader = new QPluginLoader(path, DPluginLoader::instance());
         QObject* const obj          = loader->instance();

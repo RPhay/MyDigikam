@@ -59,6 +59,7 @@ void DPluginConfViewEditor::loadPlugins()
     }
 
     // Sort items by plugin names.
+
     sortItems(0, Qt::AscendingOrder);
 }
 

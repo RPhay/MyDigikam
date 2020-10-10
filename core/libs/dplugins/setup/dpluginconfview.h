@@ -48,8 +48,8 @@ public:
     /**
      * Default constructor.
      */
-    explicit DPluginConfView(QWidget* const parent=nullptr);
-    ~DPluginConfView() override;
+    explicit DPluginConfView(QWidget* const parent = nullptr);
+    ~DPluginConfView()                                 override;
 
     /**
      * Apply all changes about plugins selected to be hosted in host application.
@@ -106,8 +106,9 @@ protected:
 
 Q_SIGNALS:
 
-    /** Signal emitted when filtering is done through slotSetFilter().
-     *  Number of plugins found is sent when item relevant of filtering match the query.
+    /**
+     * Signal emitted when filtering is done through slotSetFilter().
+     * Number of plugins found is sent when item relevant of filtering match the query.
      */
     void signalSearchResult(int);
 

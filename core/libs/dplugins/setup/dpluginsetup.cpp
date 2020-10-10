@@ -51,14 +51,14 @@ class Q_DECL_HIDDEN DPluginSetup::Private
 public:
 
     explicit Private()
-      : pluginsNumber(nullptr),
+      : pluginsNumber         (nullptr),
         pluginsNumberActivated(nullptr),
-        checkAllBtn(nullptr),
-        clearBtn(nullptr),
-        grid(nullptr),
-        hbox(nullptr),
-        pluginFilter(nullptr),
-        pluginsList(nullptr)
+        checkAllBtn           (nullptr),
+        clearBtn              (nullptr),
+        grid                  (nullptr),
+        hbox                  (nullptr),
+        pluginFilter          (nullptr),
+        pluginsList           (nullptr)
     {
     }
 
@@ -164,6 +164,7 @@ void DPluginSetup::updateInfo()
     if (d->pluginFilter->text().isEmpty())
     {
         // List is not filtered
+
         int cnt = d->pluginsList->count();
 
         if (cnt > 0)
@@ -189,6 +190,7 @@ void DPluginSetup::updateInfo()
     else
     {
         // List filtering is active
+
         int cnt = d->pluginsList->itemsVisible();
 
         if (cnt > 0)

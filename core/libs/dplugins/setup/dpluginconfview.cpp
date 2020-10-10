@@ -47,13 +47,14 @@ public:
 
     explicit DPluginCB(DPlugin* const plugin, QTreeWidget* const parent)
         : QTreeWidgetItem(parent),
-          m_plugin(plugin)
+          m_plugin       (plugin)
     {
         setFlags(Qt::ItemIsUserCheckable | Qt::ItemIsEnabled);
         setChildIndicatorPolicy(QTreeWidgetItem::DontShowIndicator);
         setDisabled(false);
 
         // Name + Icon + Selector
+
         setText(0, m_plugin->name());
         setIcon(0, m_plugin->icon());
 
@@ -65,16 +66,20 @@ public:
         setToolTip(0, m_plugin->details());
 
         // Categories
+
         QStringList list = m_plugin->categories();
         setText(1, list.join(QString::fromLatin1(", ")));
 
         // Number of tools
+
         setText(2, QString::number(m_plugin->count()));
 
         // Description
+
         setText(3, m_plugin->description());
 
         // Authors
+
         QStringList auth = m_plugin->pluginAuthors();
         setText(4, auth.join(QString::fromLatin1(", ")));
     };
@@ -113,7 +118,7 @@ public:
 
 DPluginConfView::DPluginConfView(QWidget* const parent)
     : QTreeWidget(parent),
-      d(new Private)
+      d          (new Private)
 {
     setRootIsDecorated(false);
     setSelectionMode(QAbstractItemView::SingleSelection);
@@ -221,7 +226,9 @@ int DPluginConfView::actived() const
     foreach (DPluginCB* const item, d->plugBoxes)
     {
         if (item->checkState(0) == Qt::Checked)
+        {
             ++actived;
+        }
     }
 
     return actived;
@@ -234,7 +241,9 @@ int DPluginConfView::itemsVisible() const
     foreach (DPluginCB* const item, d->plugBoxes)
     {
         if (!item->isHidden())
+        {
             ++visible;
+        }
     }
 
     return visible;
@@ -247,7 +256,9 @@ int DPluginConfView::itemsWithVisiblyProperty() const
     foreach (DPluginCB* const item, d->plugBoxes)
     {
         if (!item->isHidden() && item->m_plugin->hasVisibilityProperty())
+        {
             ++vp;
+        }
     }
 
     return vp;

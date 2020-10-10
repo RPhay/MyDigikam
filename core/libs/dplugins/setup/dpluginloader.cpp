@@ -51,7 +51,7 @@ Q_GLOBAL_STATIC(DPluginLoaderCreator, creator)
 
 DPluginLoader::DPluginLoader()
     : QObject(),
-      d(new Private)
+      d      (new Private)
 {
 }
 
