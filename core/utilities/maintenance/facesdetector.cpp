@@ -34,6 +34,7 @@
 #include <QPushButton>
 #include <QApplication>
 #include <QTextEdit>
+#include <QHash>
 
 // KDE includes
 
@@ -94,7 +95,7 @@ class Q_DECL_HIDDEN FacesDetector::Private
 public:
 
     explicit Private()
-      : source(FacesDetector::Albums),
+      : source   (FacesDetector::Albums),
         benchmark(false)
     {
     }
@@ -117,7 +118,7 @@ FacesDetector::FacesDetector(const FaceScanSettings& settings, ProgressItem* con
     setLabel(i18n("Updating faces database."));
     ProgressManager::addProgressItem(this);
 
-    if (settings.task == FaceScanSettings::RetrainAll)
+    if      (settings.task == FaceScanSettings::RetrainAll)
     {
         // clear all training data in the database
         FacialRecognitionWrapper().clearAllTraining(QLatin1String("digikam"));
@@ -157,7 +158,7 @@ FacesDetector::FacesDetector(const FaceScanSettings& settings, ProgressItem* con
         FacePipeline::FilterMode filterMode;
         FacePipeline::WriteMode  writeMode;
 
-        if (settings.alreadyScannedHandling == FaceScanSettings::Skip)
+        if      (settings.alreadyScannedHandling == FaceScanSettings::Skip)
         {
             filterMode = FacePipeline::SkipAlreadyScanned;
             writeMode  = FacePipeline::NormalWrite;
@@ -265,7 +266,7 @@ void FacesDetector::slotStart()
 
     setThumbnail(QIcon::fromTheme(QLatin1String("edit-image-face-show")).pixmap(22));
 
-    if (d->source == FacesDetector::Infos)
+    if      (d->source == FacesDetector::Infos)
     {
         int total = d->infoTodoList.count();
         qCDebug(DIGIKAM_GENERAL_LOG) << "Total is" << total;
@@ -299,6 +300,7 @@ void FacesDetector::slotStart()
     setUsesBusyIndicator(true);
 
     // get total count, cached by AlbumManager
+
     QMap<int, int> palbumCounts;
     QMap<int, int> talbumCounts;
     bool hasPAlbums = false;
@@ -335,7 +337,7 @@ void FacesDetector::slotStart()
 
     // first, we use the progressValueMap map to store absolute counts
 
-    QMap<Album*, int> progressValueMap;
+    QHash<Album*, int> progressValueMap;
 
     foreach (Album* const album, d->albumTodoList)
     {
@@ -347,6 +349,7 @@ void FacesDetector::slotStart()
         {
             // this is possibly broken of course because we do not know if images have multiple tags,
             // but there's no better solution without expensive operation
+
             progressValueMap[album] = talbumCounts.value(album->id());
         }
     }
@@ -379,12 +382,14 @@ void FacesDetector::slotContinueAlbumListing()
     qCDebug(DIGIKAM_GENERAL_LOG) << d->albumListing.isRunning() << !d->pipeline.hasFinished();
 
     // we get here by the finished signal from both, and want both to have finished to continue
+
     if (d->albumListing.isRunning() || !d->pipeline.hasFinished())
     {
         return;
     }
 
     // list can have null pointer if album was deleted recently
+
     Album* album = nullptr;
 
     do
@@ -414,6 +419,7 @@ void FacesDetector::slotDone()
     }
 
     // Switch on scanned for faces flag on digiKam config file.
+
     KSharedConfig::openConfig()->group("General Settings").writeEntry("Face Scanner First Run", true);
 
     MaintenanceTool::slotDone();
