@@ -65,8 +65,7 @@ class Q_DECL_HIDDEN LoadingCache::Private
 public:
 
     explicit Private(LoadingCache* const q)
-      : mutex(QMutex::Recursive),
-        watch(nullptr),
+      : watch(nullptr),
         q    (q)
     {
     }
@@ -86,7 +85,10 @@ public:
     QMultiMap<QString, QString>    thumbnailFilePathMap;
     QMap<QString, LoadingProcess*> loadingDict;
 
+    /// Note: Don't make the mutex recursive, we need to use a wait condition on it
     QMutex                          mutex;
+
+    QWaitCondition                  condVar;
 
     LoadingCacheFileWatch*          watch;
     LoadingCache*                   q;
@@ -253,12 +255,12 @@ bool LoadingCache::isCacheable(const DImg& img) const
 
 void LoadingCache::addLoadingProcess(LoadingProcess* const process)
 {
-    d->loadingDict[process->cacheKey()] = process;
+    d->loadingDict.insert(process->cacheKey(), process);
 }
 
 LoadingProcess* LoadingCache::retrieveLoadingProcess(const QString& cacheKey) const
 {
-    return d->loadingDict.value(cacheKey);
+    return d->loadingDict.value(cacheKey, nullptr);
 }
 
 void LoadingCache::removeLoadingProcess(LoadingProcess* const process)
@@ -495,6 +497,20 @@ LoadingCache::CacheLock::CacheLock(LoadingCache* const cache)
 LoadingCache::CacheLock::~CacheLock()
 {
     m_cache->d->mutex.unlock();
+}
+
+void LoadingCache::CacheLock::wakeAll()
+{
+    // obviously the mutex is locked when this function is called
+
+    m_cache->d->condVar.wakeAll();
+}
+
+void LoadingCache::CacheLock::timedWait()
+{
+    // same as above, the mutex is certainly locked
+
+    m_cache->d->condVar.wait(&m_cache->d->mutex, 1000);
 }
 
 } // namespace Digikam
