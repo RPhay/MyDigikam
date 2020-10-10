@@ -422,16 +422,16 @@ bool BdEngineBackendPrivate::handleWithErrorHandler(const DbEngineSqlQuery* cons
             called = QMetaObject::invokeMethod(errorHandler, "connectionError",
                                                Qt::AutoConnection,
                                                Q_ARG(DbEngineErrorAnswer*, this),
-                                               Q_ARG(const QSqlError, lastError),
-                                               Q_ARG(const QString, lastQuery));
+                                               Q_ARG(QSqlError, lastError),
+                                               Q_ARG(QString, lastQuery));
         }
         else if (needToConsultUserForError(*query))
         {
             called = QMetaObject::invokeMethod(errorHandler, "consultUserForError",
                                                Qt::AutoConnection,
                                                Q_ARG(DbEngineErrorAnswer*, this),
-                                               Q_ARG(const QSqlError, lastError),
-                                               Q_ARG(const QString, lastQuery));
+                                               Q_ARG(QSqlError, lastError),
+                                               Q_ARG(QString, lastQuery));
         }
         else
         {
