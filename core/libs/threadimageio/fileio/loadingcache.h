@@ -135,6 +135,8 @@ public:
 
         explicit CacheLock(LoadingCache* const cache);
         ~CacheLock();
+        void wakeAll();
+        void timedWait();
 
     private:
 

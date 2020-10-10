@@ -24,10 +24,6 @@
 
 #include "loadingdescription.h"
 
-// Qt includes
-
-#include <QUrl>
-
 // Local includes
 
 #include "icctransform.h"
@@ -154,19 +150,17 @@ QString LoadingDescription::cacheKey() const
 
     // Thumbnail loading. This one is easy.
 
-    QString curlPath = QUrl(filePath).toString(QUrl::FullyEncoded);
-
     if      (previewParameters.type == PreviewParameters::Thumbnail)
     {
-        QString fileRef = curlPath.isEmpty() ? (QLatin1String("id:/") + previewParameters.storageReference.toString())
-                                             : curlPath;
+        QString fileRef = filePath.isEmpty() ? (QLatin1String("id:/") + previewParameters.storageReference.toString())
+                                             : filePath;
 
         return (fileRef + QLatin1String("-thumbnail-") + QString::number(previewParameters.size));
     }
     else if (previewParameters.type == PreviewParameters::DetailThumbnail)
     {
-        QString fileRef    = curlPath.isEmpty() ? (QLatin1String("id:/") + previewParameters.storageReference.toString())
-                                                : curlPath;
+        QString fileRef    = filePath.isEmpty() ? (QLatin1String("id:/") + previewParameters.storageReference.toString())
+                                                : filePath;
         QRect rect         =  previewParameters.extraParameter.toRect();
         QString rectString = QString::fromLatin1("%1,%2-%3x%4-")
                              .arg(rect.x())
@@ -187,11 +181,11 @@ QString LoadingDescription::cacheKey() const
 
         if      (rawDecodingHint == RawDecodingGlobalSettings)
         {
-            return (curlPath + QLatin1String("-globalraw"));
+            return (filePath + QLatin1String("-globalraw"));
         }
         else if (rawDecodingHint == RawDecodingCustomSettings)
         {
-            return (curlPath + QLatin1String("-customraw"));
+            return (filePath + QLatin1String("-customraw"));
         }
     }
     else
@@ -200,11 +194,11 @@ QString LoadingDescription::cacheKey() const
 
         if (previewParameters.size)
         {
-            return (curlPath + QLatin1String("-previewImage-") + QString::number(previewParameters.size));
+            return (filePath + QLatin1String("-previewImage-") + QString::number(previewParameters.size));
         }
         else
         {
-            return (curlPath + QLatin1String("-previewImage"));
+            return (filePath + QLatin1String("-previewImage"));
         }
     }
 
@@ -229,7 +223,7 @@ QString LoadingDescription::cacheKey() const
         }
     }
 
-    return (curlPath + suffix);
+    return (filePath + suffix);
 }
 
 QStringList LoadingDescription::lookupCacheKeys() const
@@ -260,54 +254,52 @@ QStringList LoadingDescription::lookupCacheKeys() const
 
     QStringList cacheKeys;
 
-    QString curlPath = QUrl(filePath).toString(QUrl::FullyEncoded);
-
     if (previewParameters.type != PreviewParameters::NoPreview)
     {
         if (previewParameters.size)
         {
-            cacheKeys << curlPath + QLatin1String("-previewImage-") + QString::number(previewParameters.size);
+            cacheKeys << filePath + QLatin1String("-previewImage-") + QString::number(previewParameters.size);
         }
 
         // full size preview
 
-        cacheKeys << curlPath + QLatin1String("-previewImage");
+        cacheKeys << filePath + QLatin1String("-previewImage");
     }
 
     if (rawDecodingHint == RawDecodingDefaultSettings)
     {
-        cacheKeys << curlPath;
+        cacheKeys << filePath;
     }
 
     if (rawDecodingHint == RawDecodingTimeOptimized)
     {
         if (rawDecodingSettings.rawPrm.sixteenBitsImage)
         {
-            cacheKeys << curlPath + QLatin1String("-timeoptimized");
+            cacheKeys << filePath + QLatin1String("-timeoptimized");
 
             if (rawDecodingSettings.rawPrm.halfSizeColorImage)
             {
-                cacheKeys << curlPath + QLatin1String("-timeoptimized-halfSize");
+                cacheKeys << filePath + QLatin1String("-timeoptimized-halfSize");
             }
         }
         else
         {
-            cacheKeys << curlPath + QLatin1String("-timeoptimized-8");
+            cacheKeys << filePath + QLatin1String("-timeoptimized-8");
 
             if (rawDecodingSettings.rawPrm.halfSizeColorImage)
             {
-                cacheKeys << curlPath + QLatin1String("-timeoptimized-8-halfSize");
+                cacheKeys << filePath + QLatin1String("-timeoptimized-8-halfSize");
             }
         }
     }
 
     if      (rawDecodingHint == RawDecodingGlobalSettings)
     {
-        cacheKeys << curlPath + QLatin1String("-globalraw");
+        cacheKeys << filePath + QLatin1String("-globalraw");
     }
     else if (rawDecodingHint == RawDecodingCustomSettings)
     {
-        cacheKeys << curlPath + QLatin1String("-customraw");
+        cacheKeys << filePath + QLatin1String("-customraw");
     }
 
     return cacheKeys;
@@ -397,19 +389,17 @@ ThumbnailIdentifier LoadingDescription::thumbnailIdentifier() const
 QStringList LoadingDescription::possibleCacheKeys(const QString& filePath)
 {
     QStringList keys;
-    QString curlPath = QUrl(filePath).toString(QUrl::FullyEncoded);
-
-    keys << curlPath ;
-    keys << curlPath + QLatin1String("-timeoptimized-8-halfSize");
-    keys << curlPath + QLatin1String("-timeoptimized-8");
-    keys << curlPath + QLatin1String("-timeoptimized-halfSize");
-    keys << curlPath + QLatin1String("-timeoptimized");
-    keys << curlPath + QLatin1String("-customraw");
-    keys << curlPath + QLatin1String("-globalraw");
+    keys << filePath ;
+    keys << filePath + QLatin1String("-timeoptimized-8-halfSize");
+    keys << filePath + QLatin1String("-timeoptimized-8");
+    keys << filePath + QLatin1String("-timeoptimized-halfSize");
+    keys << filePath + QLatin1String("-timeoptimized");
+    keys << filePath + QLatin1String("-customraw");
+    keys << filePath + QLatin1String("-globalraw");
 
     for (int i = 1 ; i <= ThumbnailSize::HD ; ++i)
     {
-        keys << curlPath + QLatin1String("-previewImage-") + QString::number(i);
+        keys << filePath + QLatin1String("-previewImage-") + QString::number(i);
     }
 
     return keys;
@@ -420,11 +410,10 @@ QStringList LoadingDescription::possibleThumbnailCacheKeys(const QString& filePa
     // FIXME: With details, there is an endless number of possible cache keys. Need different approach.
 
     QStringList keys;
-    QString curlPath = QUrl(filePath).toString(QUrl::FullyEncoded);
 
     // there are (ThumbnailSize::HD) possible keys...
 
-    QString path = curlPath + QLatin1String("-thumbnail-");
+    QString path = filePath + QLatin1String("-thumbnail-");
 
     for (int i = 1 ; i <= ThumbnailSize::HD ; ++i)
     {

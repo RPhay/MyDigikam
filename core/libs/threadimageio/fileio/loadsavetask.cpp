@@ -140,15 +140,14 @@ void SharedLoadingTask::execute()
 
     m_thread->imageStartedLoading(m_loadingDescription);
 
-    QStringList lookupKeys    = m_loadingDescription.lookupCacheKeys();
-
     LoadingCache* const cache = LoadingCache::cache();
     {
         LoadingCache::CacheLock lock(cache);
 
         // find possible cached images
 
-        DImg* cachedImg = nullptr;
+        DImg* cachedImg        = nullptr;
+        QStringList lookupKeys = m_loadingDescription.lookupCacheKeys();
 
         foreach (const QString& key, lookupKeys)
         {
@@ -176,119 +175,144 @@ void SharedLoadingTask::execute()
         {
             // image is found in image cache, loading is successful
 
-            m_img = *cachedImg;
+            m_img = DImg(*cachedImg);
         }
-    }
-
-    if (continueQuery() && m_img.isNull())
-    {
-        // find possible running loading process
-
-        LoadingProcess* usedProcess = nullptr;
-
+        else
         {
-            LoadingCache::CacheLock lock(cache);
+            // find possible running loading process
+
+            m_usedProcess = nullptr;
 
             for (QStringList::const_iterator it = lookupKeys.constBegin() ; it != lookupKeys.constEnd() ; ++it)
             {
-                if ((usedProcess = cache->retrieveLoadingProcess(*it)))
+                if ((m_usedProcess = cache->retrieveLoadingProcess(*it)))
                 {
-                    // Other process is right now loading this image.
-                    // Add this task to the list of listeners and
-                    // attach this thread to the other thread, wait until loading
-                    // has finished.
-
-                    usedProcess->addListener(this);
-
                     break;
                 }
             }
-        }
 
-        if (usedProcess)
-        {
-            // break loop when either the loading has completed, or this task is being stopped
-
-            // cppcheck-suppress knownConditionTrueFalse
-            while ((m_loadingTaskStatus != LoadingTaskStatusStopping) && !usedProcess->completed())
+            if (m_usedProcess)
             {
-                QThread::msleep(20);
+                // Other process is right now loading this image.
+                // Add this task to the list of listeners and
+                // attach this thread to the other thread, wait until loading
+                // has finished.
+
+                m_usedProcess->addListener(this);
+
+                // break loop when either the loading has completed, or this task is being stopped
+
+                // cppcheck-suppress knownConditionTrueFalse
+                while ((m_loadingTaskStatus != LoadingTaskStatusStopping) &&
+                       m_usedProcess                                      &&
+                       !m_usedProcess->completed())
+                {
+                    lock.timedWait();
+                }
+
+                // remove listener from process
+
+                if (m_usedProcess)
+                {
+                    m_usedProcess->removeListener(this);
+                }
+
+                // set to 0, as checked in setStatus
+
+                m_usedProcess = nullptr;
+
+                // wake up the process which is waiting until all listeners have removed themselves
+
+                lock.wakeAll();
+
+                // m_img is now set to the result
             }
+            else
+            {
+                // Neither in cache, nor currently loading in different thread.
+                // Load it here and now, add this LoadingProcess to cache list.
 
-            LoadingCache::CacheLock lock(cache);
+                cache->addLoadingProcess(this);
 
-            // remove listener from process
+                // Add this to the list of listeners
 
-            usedProcess->removeListener(this);
+                addListener(this);
 
-            // m_img is now set to the result
+                // for use in setStatus
+
+                m_usedProcess = this;
+
+                // Notify other processes that we are now loading this image.
+                // They might be interested - see notifyNewLoadingProcess below
+
+                cache->notifyNewLoadingProcess(this, m_loadingDescription);
+            }
         }
     }
 
     if (continueQuery() && m_img.isNull())
     {
-        {
-            LoadingCache::CacheLock lock(cache);
-
-            // Neither in cache, nor currently loading in different thread.
-            // Load it here and now, add this LoadingProcess to cache list.
-
-            cache->addLoadingProcess(this);
-
-            // Notify other processes that we are now loading this image.
-            // They might be interested - see notifyNewLoadingProcess below
-
-            cache->notifyNewLoadingProcess(this, m_loadingDescription);
-        }
-
         // load image
 
         m_img = DImg(m_loadingDescription.filePath, this, m_loadingDescription.rawDecodingSettings);
 
+        if (continueQuery())
         {
             LoadingCache::CacheLock lock(cache);
+
+            // put valid image into cache of loaded images
+
+            if (!m_img.isNull())
+            {
+                cache->putImage(m_loadingDescription.cacheKey(), m_img,
+                                m_loadingDescription.filePath);
+            }
 
             // remove this from the list of loading processes in cache
 
             cache->removeLoadingProcess(this);
 
-            if (!m_img.isNull())
+            // dispatch image to all listeners, including this
+
+            for (int i = 0 ; i < m_listeners.count() ; ++i)
             {
-                // put valid image into cache of loaded images
+                LoadingProcessListener* const l = m_listeners.at(i);
 
-                cache->putImage(m_loadingDescription.cacheKey(), m_img,
-                                m_loadingDescription.filePath);
-
-                // dispatch image to all listeners
-
-                for (int i = 0 ; i < m_listeners.count() ; ++i)
+                if (l->accessMode() == LoadSaveThread::AccessModeReadWrite)
                 {
-                    LoadingProcessListener* const l = m_listeners.at(i);
+                    // If a listener requested ReadWrite access, it gets a deep copy.
+                    // DImg is explicitly shared.
 
-                    if (l->accessMode() == LoadSaveThread::AccessModeReadWrite)
-                    {
-                        // If a listener requested ReadWrite access, it gets a deep copy.
-                        // DImg is explicitly shared.
-
-                        l->setResult(m_loadingDescription, m_img.copy());
-                    }
-                    else
-                    {
-                        l->setResult(m_loadingDescription, m_img);
-                    }
+                    l->setResult(m_loadingDescription, m_img.copy());
+                }
+                else
+                {
+                    l->setResult(m_loadingDescription, m_img);
                 }
             }
+
+            // remove myself from list of listeners
+
+            removeListener(this);
 
             // indicate that loading has finished so that listeners can stop waiting
 
             m_completed = true;
-        }
 
-        // wait until all listeners have removed themselves
+            // wake all listeners waiting on cache condVar, so that they remove themselves
 
-        while (m_listeners.count() != 0)
-        {
-            QThread::msleep(10);
+            lock.wakeAll();
+
+            // wait until all listeners have removed themselves
+
+            while (m_listeners.count() != 0)
+            {
+                lock.timedWait();
+            }
+
+            // set to 0, as checked in setStatus
+
+            m_usedProcess = nullptr;
         }
     }
 
@@ -400,6 +424,14 @@ void SharedLoadingTask::progressInfo(float progress)
             }
         }
     }
+}
+
+bool SharedLoadingTask::continueQuery()
+{
+    // If this is called, the thread is currently loading an image.
+    // In shared loading, we cannot stop until all listeners have been removed as well
+
+    return ((m_loadingTaskStatus != LoadingTaskStatusStopping) || (m_listeners.count() != 0));
 }
 
 void SharedLoadingTask::setStatus(LoadingTaskStatus status)

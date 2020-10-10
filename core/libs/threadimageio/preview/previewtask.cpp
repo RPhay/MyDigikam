@@ -63,15 +63,14 @@ void PreviewLoadingTask::execute()
 
     // Check if preview is in cache first.
 
-    QStringList lookupKeys    = m_loadingDescription.lookupCacheKeys();
-
     LoadingCache* const cache = LoadingCache::cache();
     {
         LoadingCache::CacheLock lock(cache);
 
         // find possible cached images
 
-        DImg* cachedImg = nullptr;
+        DImg* cachedImg        = nullptr;
+        QStringList lookupKeys = m_loadingDescription.lookupCacheKeys();
 
         // lookupCacheKeys returns "best first". Prepend the cache key to make the list "fastest first":
         // Scaling a full version takes longer!
@@ -104,71 +103,70 @@ void PreviewLoadingTask::execute()
         {
             // image is found in image cache, loading is successful
 
-            m_img = *cachedImg;
+            m_img = DImg(*cachedImg);
         }
-    }
-
-    if (continueQuery() && m_img.isNull())
-    {
-        // find possible running loading process
-
-        LoadingProcess* usedProcess = nullptr;
-
+        else
         {
-            LoadingCache::CacheLock lock(cache);
+            // find possible running loading process
+
+            LoadingProcess* usedProcess = nullptr;
 
             for (QStringList::const_iterator it = lookupKeys.constBegin() ; it != lookupKeys.constEnd() ; ++it)
             {
                 if ((usedProcess = cache->retrieveLoadingProcess(*it)))
                 {
-                    // Other process is right now loading this image.
-                    // Add this task to the list of listeners and
-                    // attach this thread to the other thread, wait until loading
-                    // has finished.
-
-                    usedProcess->addListener(this);
-
                     break;
                 }
             }
-        }
 
-        if (usedProcess)
-        {
-            // break loop when either the loading has completed, or this task is being stopped
-
-            // cppcheck-suppress knownConditionTrueFalse
-            while ((m_loadingTaskStatus != LoadingTaskStatusStopping) && !usedProcess->completed())
+            if (usedProcess)
             {
-                QThread::msleep(20);
+                // Other process is right now loading this image.
+                // Add this task to the list of listeners and
+                // attach this thread to the other thread, wait until loading
+                // has finished.
+
+                usedProcess->addListener(this);
+
+                // break loop when either the loading has completed, or this task is being stopped
+
+                // cppcheck-suppress knownConditionTrueFalse
+                while ((m_loadingTaskStatus != LoadingTaskStatusStopping) && usedProcess->completed())
+                {
+                    lock.timedWait();
+                }
+
+                // remove listener from process
+
+                usedProcess->removeListener(this);
+
+                // wake up the process which is waiting until all listeners have removed themselves
+
+                lock.wakeAll();
+
+                // m_img is now set to the result
             }
+            else
+            {
+                // Add this to the list of listeners
 
-            LoadingCache::CacheLock lock(cache);
+                addListener(this);
 
-            // remove listener from process
+                // Neither in cache, nor currently loading in different thread.
+                // Load it here and now, add this LoadingProcess to cache list.
 
-            usedProcess->removeListener(this);
+                cache->addLoadingProcess(this);
 
-            // m_img is now set to the result
+                // Notify other processes that we are now loading this image.
+                // They might be interested - see notifyNewLoadingProcess below
+
+                cache->notifyNewLoadingProcess(this, m_loadingDescription);
+            }
         }
     }
 
     if (continueQuery() && m_img.isNull())
     {
-        {
-            LoadingCache::CacheLock lock(cache);
-
-            // Neither in cache, nor currently loading in different thread.
-            // Load it here and now, add this LoadingProcess to cache list.
-
-            cache->addLoadingProcess(this);
-
-            // Notify other processes that we are now loading this image.
-            // They might be interested - see notifyNewLoadingProcess below
-
-            cache->notifyNewLoadingProcess(this, m_loadingDescription);
-        }
-
         // Preview is not in cache, we will load image from file.
 
         DImg::FORMAT format      = DImg::fileFormat(m_loadingDescription.filePath);
@@ -180,17 +178,17 @@ void PreviewLoadingTask::execute()
 
             // Check original image size using Exiv2.
 
-            QSize originalSize = previews.originalSize();
+            QSize originalSize  = previews.originalSize();
 
             // If not valid, get original size from LibRaw
 
             if (!originalSize.isValid())
             {
-                QScopedPointer<DRawInfo> container(new DRawInfo);
+                DRawInfo container;
 
-                if (DRawDecoder::rawFileIdentify(*container, m_loadingDescription.filePath))
+                if (DRawDecoder::rawFileIdentify(container, m_loadingDescription.filePath))
                 {
-                    originalSize = container->imageSize;
+                    originalSize = container.imageSize;
                 }
             }
 
@@ -317,22 +315,27 @@ void PreviewLoadingTask::execute()
             }
         }
 
-        if (!m_img.isNull() && MetaEngineSettings::instance()->settings().exifRotate)
+        if (continueQuery())
         {
-            m_img.exifRotate(m_loadingDescription.filePath);
-        }
+            if (!m_img.isNull() && MetaEngineSettings::instance()->settings().exifRotate)
+            {
+                m_img.exifRotate(m_loadingDescription.filePath);
+            }
 
-        {
             LoadingCache::CacheLock lock(cache);
+
+            // remove myself from list of listeners
+
+            removeListener(this);
 
             // remove this from the list of loading processes in cache
 
             cache->removeLoadingProcess(this);
 
+            // put valid image into cache of loaded images
+
             if (!m_img.isNull())
             {
-                // put valid image into cache of loaded images
-
                 cache->putImage(m_loadingDescription.cacheKey(), m_img,
                                 m_loadingDescription.filePath);
 
@@ -359,13 +362,17 @@ void PreviewLoadingTask::execute()
             // indicate that loading has finished so that listeners can stop waiting
 
             m_completed = true;
-        }
 
-        // wait until all listeners have removed themselves
+            // wake all listeners waiting on cache condVar, so that they remove themselves
 
-        while (m_listeners.count() != 0)
-        {
-            QThread::msleep(10);
+            lock.wakeAll();
+
+            // wait until all listeners have removed themselves
+
+            while (m_listeners.count() != 0)
+            {
+                lock.timedWait();
+            }
         }
     }
 
