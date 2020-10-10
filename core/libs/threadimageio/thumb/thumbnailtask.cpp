@@ -105,7 +105,7 @@ void ThumbnailLoadingTask::execute()
 
         if (cachedImage)
         {
-            m_qimage = QImage(*cachedImage);
+            m_qimage = *cachedImage;
         }
 
         if (m_qimage.isNull())
@@ -140,28 +140,25 @@ void ThumbnailLoadingTask::execute()
 
                 lock.wakeAll();
             }
-            else
-            {
-                // Add this to the list of listeners
-
-                addListener(this);
-
-                // Neither in cache, nor currently loading in different thread.
-                // Load it here and now, add this LoadingProcess to cache list.
-
-                cache->addLoadingProcess(this);
-
-
-                // Notify other processes that we are now loading this image.
-                // They might be interested - see notifyNewLoadingProcess below
-
-                cache->notifyNewLoadingProcess(this, m_loadingDescription);
-            }
         }
     }
 
     if (continueQuery() && m_qimage.isNull())
     {
+        {
+            LoadingCache::CacheLock lock(cache);
+
+            // Neither in cache, nor currently loading in different thread.
+            // Load it here and now, add this LoadingProcess to cache list.
+
+            cache->addLoadingProcess(this);
+
+            // Notify other processes that we are now loading this image.
+            // They might be interested - see notifyNewLoadingProcess below
+
+            cache->notifyNewLoadingProcess(this, m_loadingDescription);
+        }
+
         // Load or create thumbnail
 
         setupCreator();
@@ -181,13 +178,8 @@ void ThumbnailLoadingTask::execute()
                 break;
         }
 
-        if (continueQuery())
         {
             LoadingCache::CacheLock lock(cache);
-
-            // remove myself from list of listeners
-
-            removeListener(this);
 
             // remove this from the list of loading processes in cache
 

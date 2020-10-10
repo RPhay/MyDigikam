@@ -103,7 +103,7 @@ void PreviewLoadingTask::execute()
         {
             // image is found in image cache, loading is successful
 
-            m_img = DImg(*cachedImg);
+            m_img = *cachedImg;
         }
         else
         {
@@ -146,27 +146,25 @@ void PreviewLoadingTask::execute()
 
                 // m_img is now set to the result
             }
-            else
-            {
-                // Add this to the list of listeners
-
-                addListener(this);
-
-                // Neither in cache, nor currently loading in different thread.
-                // Load it here and now, add this LoadingProcess to cache list.
-
-                cache->addLoadingProcess(this);
-
-                // Notify other processes that we are now loading this image.
-                // They might be interested - see notifyNewLoadingProcess below
-
-                cache->notifyNewLoadingProcess(this, m_loadingDescription);
-            }
         }
     }
 
     if (continueQuery() && m_img.isNull())
     {
+        {
+            LoadingCache::CacheLock lock(cache);
+
+            // Neither in cache, nor currently loading in different thread.
+            // Load it here and now, add this LoadingProcess to cache list.
+
+            cache->addLoadingProcess(this);
+
+            // Notify other processes that we are now loading this image.
+            // They might be interested - see notifyNewLoadingProcess below
+
+            cache->notifyNewLoadingProcess(this, m_loadingDescription);
+        }
+
         // Preview is not in cache, we will load image from file.
 
         DImg::FORMAT format      = DImg::fileFormat(m_loadingDescription.filePath);
@@ -315,18 +313,13 @@ void PreviewLoadingTask::execute()
             }
         }
 
-        if (continueQuery())
+        if (!m_img.isNull() && MetaEngineSettings::instance()->settings().exifRotate)
         {
-            if (!m_img.isNull() && MetaEngineSettings::instance()->settings().exifRotate)
-            {
-                m_img.exifRotate(m_loadingDescription.filePath);
-            }
+            m_img.exifRotate(m_loadingDescription.filePath);
+        }
 
+        {
             LoadingCache::CacheLock lock(cache);
-
-            // remove myself from list of listeners
-
-            removeListener(this);
 
             // remove this from the list of loading processes in cache
 

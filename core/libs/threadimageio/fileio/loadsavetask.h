@@ -112,7 +112,7 @@ public:
     void progressInfo(float progress) override;
     bool continueQuery()              override;
 
-    virtual void setStatus(LoadingTaskStatus status);
+    void setStatus(LoadingTaskStatus status);
 
 protected:
 
@@ -141,8 +141,6 @@ public:
 
     void execute()                                                      override;
     void progressInfo(float progress)                                   override;
-    bool continueQuery()                                                override;
-    void setStatus(LoadingTaskStatus status)                            override;
 
     bool needsPostProcessing()              const;
     virtual void postProcess();
@@ -171,7 +169,6 @@ protected:
 
     volatile bool                  m_completed;
     LoadSaveThread::AccessMode     m_accessMode;
-    LoadingProcess*                m_usedProcess;
     QList<LoadingProcessListener*> m_listeners;
     DImg                           m_img;
 
