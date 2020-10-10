@@ -75,7 +75,7 @@ int DMetadata::getItemColorLabel(const DMetadataSettingsContainer& settings) con
     bool xmpSupported  = hasXmp();
     bool exivSupported = hasExif();
 
-    for (NamespaceEntry entry : settings.getReadMapping(NamespaceEntry::DM_COLORLABEL_CONTAINER()))
+    foreach (const NamespaceEntry& entry, settings.getReadMapping(NamespaceEntry::DM_COLORLABEL_CONTAINER()))
     {
         if (entry.isDisabled)
         {
@@ -89,28 +89,34 @@ int DMetadata::getItemColorLabel(const DMetadataSettingsContainer& settings) con
         switch (entry.subspace)
         {
             case NamespaceEntry::XMP:
-
+            {
                 if (xmpSupported)
                 {
                     value = getXmpTagString(nameSpace, false);
                 }
 
                 break;
+            }
 
             case NamespaceEntry::IPTC:
+            {
                 break;
+            }
 
             case NamespaceEntry::EXIF:
-
+            {
                 if (exivSupported)
                 {
                     value = getExifTagString(nameSpace, false);
                 }
 
                 break;
+            }
 
             default:
+            {
                 break;
+            }
         }
 
         if (value.isEmpty())
@@ -166,7 +172,7 @@ int DMetadata::getItemRating(const DMetadataSettingsContainer& settings) const
     bool iptcSupported = hasIptc();
     bool exivSupported = hasExif();
 
-    for (NamespaceEntry entry : settings.getReadMapping(NamespaceEntry::DM_RATING_CONTAINER()))
+    foreach (const NamespaceEntry& entry, settings.getReadMapping(NamespaceEntry::DM_RATING_CONTAINER()))
     {
         if (entry.isDisabled)
         {
@@ -180,25 +186,27 @@ int DMetadata::getItemRating(const DMetadataSettingsContainer& settings) const
         switch (entry.subspace)
         {
             case NamespaceEntry::XMP:
-
+            {
                 if (xmpSupported)
                 {
                     value = getXmpTagString(nameSpace, false);
                 }
 
                 break;
+            }
 
             case NamespaceEntry::IPTC:
-
+            {
                 if (iptcSupported)
                 {
                     value = QString::fromUtf8(getIptcTagData(nameSpace));
                 }
 
                 break;
+            }
 
             case NamespaceEntry::EXIF:
-
+            {
                 if (exivSupported)
                 {
                     if (!getExifTagLong(nameSpace, rating))
@@ -208,9 +216,12 @@ int DMetadata::getItemRating(const DMetadataSettingsContainer& settings) const
                 }
 
                 break;
+            }
 
             default:
+            {
                 break;
+            }
         }
 
         if (!value.isEmpty())
@@ -258,9 +269,9 @@ bool DMetadata::setItemPickLabel(int pickId) const
         qCDebug(DIGIKAM_METAENGINE_LOG) << "Pick Label value to write is out of range!";
         return false;
     }
-
-    //qCDebug(DIGIKAM_METAENGINE_LOG) << getFilePath() << " ==> Pick Label: " << pickId;
-
+/*
+    qCDebug(DIGIKAM_METAENGINE_LOG) << getFilePath() << " ==> Pick Label: " << pickId;
+*/
     if (supportXmp())
     {
         if (!setXmpTagString("Xmp.digiKam.PickLabel", QString::number(pickId)))
@@ -280,9 +291,9 @@ bool DMetadata::setItemColorLabel(int colorId, const DMetadataSettingsContainer&
 
         return false;
     }
-
-    //qCDebug(DIGIKAM_METAENGINE_LOG) << getFilePath() << " ==> Color Label: " << colorId;
-
+/*
+    qCDebug(DIGIKAM_METAENGINE_LOG) << getFilePath() << " ==> Color Label: " << colorId;
+*/
     QList<NamespaceEntry> toWrite = settings.getReadMapping(NamespaceEntry::DM_COLORLABEL_CONTAINER());
 
     if (!settings.unifyReadWrite())
@@ -290,7 +301,7 @@ bool DMetadata::setItemColorLabel(int colorId, const DMetadataSettingsContainer&
         toWrite = settings.getWriteMapping(NamespaceEntry::DM_COLORLABEL_CONTAINER());
     }
 
-    for (NamespaceEntry entry : toWrite)
+    for (const NamespaceEntry& entry : qAsConst(toWrite))
     {
         if (entry.isDisabled)
         {
@@ -303,7 +314,7 @@ bool DMetadata::setItemColorLabel(int colorId, const DMetadataSettingsContainer&
         switch (entry.subspace)
         {
             case NamespaceEntry::XMP:
-
+            {
                 if (!supportXmp())
                 {
                     continue;
@@ -360,21 +371,27 @@ bool DMetadata::setItemColorLabel(int colorId, const DMetadataSettingsContainer&
                 }
 
                 break;
+            }
 
             case NamespaceEntry::EXIF:
-
+            {
                 if (!setExifTagString(nameSpace, QString::number(colorId)))
                 {
                     return false;
                 }
 
                 break;
+            }
 
             case NamespaceEntry::IPTC:
+            {
                 break;
+            }
 
             default:
+            {
                 break;
+            }
         }
     }
 
@@ -391,9 +408,9 @@ bool DMetadata::setItemRating(int rating, const DMetadataSettingsContainer& sett
         qCDebug(DIGIKAM_METAENGINE_LOG) << "Rating value to write is out of range!";
         return false;
     }
-
-    //qCDebug(DIGIKAM_METAENGINE_LOG) << getFilePath() << " ==> Rating:" << rating;
-
+/*
+    qCDebug(DIGIKAM_METAENGINE_LOG) << getFilePath() << " ==> Rating:" << rating;
+*/
     QList<NamespaceEntry> toWrite = settings.getReadMapping(NamespaceEntry::DM_RATING_CONTAINER());
 
     if (!settings.unifyReadWrite())
@@ -401,7 +418,7 @@ bool DMetadata::setItemRating(int rating, const DMetadataSettingsContainer& sett
         toWrite = settings.getWriteMapping(NamespaceEntry::DM_RATING_CONTAINER());
     }
 
-    for (NamespaceEntry entry : toWrite)
+    for (const NamespaceEntry& entry : qAsConst(toWrite))
     {
         if (entry.isDisabled)
         {
@@ -414,7 +431,7 @@ bool DMetadata::setItemRating(int rating, const DMetadataSettingsContainer& sett
         switch (entry.subspace)
         {
             case NamespaceEntry::XMP:
-
+            {
                 if (!supportXmp())
                 {
                     continue;
@@ -427,9 +444,10 @@ bool DMetadata::setItemRating(int rating, const DMetadataSettingsContainer& sett
                 }
 
                 break;
+            }
 
             case NamespaceEntry::EXIF:
-
+            {
                 if (QLatin1String(nameSpace) == QLatin1String("Exif.Image.RatingPercent"))
                 {
                     // Wrapper around rating percents managed by Windows Vista.
@@ -479,10 +497,13 @@ bool DMetadata::setItemRating(int rating, const DMetadataSettingsContainer& sett
                 }
 
                 break;
+            }
 
             case NamespaceEntry::IPTC: // IPTC rating deprecated
             default:
+            {
                 break;
+            }
         }
     }
 

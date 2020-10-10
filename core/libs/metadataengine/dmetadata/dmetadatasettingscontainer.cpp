@@ -495,7 +495,7 @@ void DMetadataSettingsContainer::readOneGroup(KConfigGroup& group, const QString
 {
     KConfigGroup myItems = group.group(name);
 
-    for (QString element : myItems.groupList())
+    foreach (const QString& element, myItems.groupList())
     {
         KConfigGroup gr      = myItems.group(element);
         NamespaceEntry ns;
@@ -521,7 +521,7 @@ void DMetadataSettingsContainer::readOneGroup(KConfigGroup& group, const QString
         ns.isDisabled        = gr.readEntry(QLatin1String("isDisabled"), QVariant(false)).toBool();
         QString conversion   = gr.readEntry("convertRatio");
 
-        for (QString str : conversion.split(QLatin1String(",")))
+        foreach (const QString& str, conversion.split(QLatin1String(",")))
         {
             ns.convertRatio.append(str.toInt());
         }
@@ -537,7 +537,7 @@ void DMetadataSettingsContainer::writeOneGroup(KConfigGroup& group, const QStrin
     KConfigGroup namespacesGroup = group.group(name);
     int index                    = 0;
 
-    for (NamespaceEntry e : container)
+    foreach (const NamespaceEntry& e, container)
     {
         QString groupNumber = QString::fromLatin1("#%1")
                               .arg(index++, 4, 10, QLatin1Char('0'));

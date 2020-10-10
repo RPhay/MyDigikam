@@ -42,7 +42,7 @@ namespace Digikam
 bool DMetadata::getItemTagsPath(QStringList& tagsPath,
                                  const DMetadataSettingsContainer& settings) const
 {
-    for (NamespaceEntry entry : settings.getReadMapping(NamespaceEntry::DM_TAG_CONTAINER()))
+    foreach (const NamespaceEntry& entry, settings.getReadMapping(NamespaceEntry::DM_TAG_CONTAINER()))
     {
         if (entry.isDisabled)
         {
@@ -58,7 +58,7 @@ bool DMetadata::getItemTagsPath(QStringList& tagsPath,
         switch (entry.subspace)
         {
             case NamespaceEntry::XMP:
-
+            {
                 while (index < 2)
                 {
                     const std::string myStr = currentNamespace.toStdString();
@@ -110,9 +110,10 @@ bool DMetadata::getItemTagsPath(QStringList& tagsPath,
                 }
 
                 break;
+            }
 
             case NamespaceEntry::IPTC:
-
+            {
                 // Try to get Tags Path list from IPTC keywords.
                 // digiKam 0.9.x has used IPTC keywords to store Tags Path list.
                 // This way is obsolete now since digiKam support XMP because IPTC
@@ -138,6 +139,7 @@ bool DMetadata::getItemTagsPath(QStringList& tagsPath,
                 }
 
                 break;
+            }
 
             case NamespaceEntry::EXIF:
             {
@@ -159,7 +161,9 @@ bool DMetadata::getItemTagsPath(QStringList& tagsPath,
             }
 
             default:
+            {
                 break;
+            }
         }
     }
 
@@ -181,7 +185,7 @@ bool DMetadata::setItemTagsPath(const QStringList& tagsPath, const DMetadataSett
         toWrite = settings.getWriteMapping(NamespaceEntry::DM_TAG_CONTAINER());
     }
 
-    for (NamespaceEntry entry : toWrite)
+    for (const NamespaceEntry& entry : qAsConst(toWrite))
     {
         if (entry.isDisabled)
         {
@@ -190,9 +194,9 @@ bool DMetadata::setItemTagsPath(const QStringList& tagsPath, const DMetadataSett
 
         QStringList newList;
 
-        // get keywords from tags path, for type tag
+        // Get keywords from tags path, for type tag
 
-        for (QString tagPath : tagsPath)
+        for (const QString& tagPath : tagsPath)
         {
             newList.append(tagPath.split(QLatin1Char('/')).last());
         }
@@ -222,7 +226,7 @@ bool DMetadata::setItemTagsPath(const QStringList& tagsPath, const DMetadataSett
                 switch (entry.specialOpts)
                 {
                     case NamespaceEntry::TAG_XMPSEQ:
-
+                    {
                         if (!setXmpTagStringSeq(nameSpace, newList))
                         {
                             qCDebug(DIGIKAM_METAENGINE_LOG) << "Setting image paths failed" << nameSpace;
@@ -230,8 +234,10 @@ bool DMetadata::setItemTagsPath(const QStringList& tagsPath, const DMetadataSett
                         }
 
                         break;
+                    }
 
                     case NamespaceEntry::TAG_XMPBAG:
+                    {
 
                         if (!setXmpTagStringBag(nameSpace, newList))
                         {
@@ -240,17 +246,22 @@ bool DMetadata::setItemTagsPath(const QStringList& tagsPath, const DMetadataSett
                         }
 
                         break;
+                    }
 
                     case NamespaceEntry::TAG_ACDSEE:
+                    {
 
                         if (!setACDSeeTagsPath(newList))
                         {
                             qCDebug(DIGIKAM_METAENGINE_LOG) << "Setting image paths failed" << nameSpace;
                             return false;
                         }
+                    }
 
                     default:
+                    {
                         break;
+                    }
                 }
 
                 break;
@@ -268,7 +279,9 @@ bool DMetadata::setItemTagsPath(const QStringList& tagsPath, const DMetadataSett
                 }
 
             default:
+            {
                 break;
+            }
         }
     }
 
@@ -317,7 +330,9 @@ bool DMetadata::getACDSeeTagsPath(QStringList &tagsPath) const
 
         if (!tagsPath.isEmpty())
         {
-            //qCDebug(DIGIKAM_METAENGINE_LOG) << "Tags Path imported from ACDSee: " << tagsPath;
+/*
+            qCDebug(DIGIKAM_METAENGINE_LOG) << "Tags Path imported from ACDSee: " << tagsPath;
+*/
             return true;
         }
     }
@@ -377,9 +392,9 @@ bool DMetadata::setACDSeeTagsPath(const QStringList &tagsPath) const
     }
 
     QString xmlACDSee = QLatin1String("<Categories>") + xmlTags.join(QLatin1String("")) + QLatin1String("</Categories>");
-
-    //qCDebug(DIGIKAM_METAENGINE_LOG) << "xmlACDSee" << xmlACDSee;
-
+/*
+    qCDebug(DIGIKAM_METAENGINE_LOG) << "xmlACDSee" << xmlACDSee;
+*/
     removeXmpTag("Xmp.acdsee.categories");
 
     if (!xmlTags.isEmpty())
