@@ -53,6 +53,7 @@ cppcheck -j$CPU_CORES \
          --suppress=*:*libraw*.h \
          --suppress=*:*libde265*.h \
          --suppress=*:*libheif*.h \
+         --suppress=*:*libpgf*.h \
          --suppress=*:*upnpsdk*.h \
          --suppress=*:*yfauth*.h \
          --suppress=*:*o2*.h \
