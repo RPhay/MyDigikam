@@ -1156,7 +1156,7 @@ void BdEngineBackend::execQuery(DbEngineSqlQuery& query,
 DbEngineSqlQuery BdEngineBackend::execQuery(const QString& sql, const QMap<QString, QVariant>& bindingMap)
 {
     QString preparedString = sql;
-    QList<QVariant> valuesToBind;
+    QVariantList valuesToBind;
 
     if (!bindingMap.isEmpty())
     {
