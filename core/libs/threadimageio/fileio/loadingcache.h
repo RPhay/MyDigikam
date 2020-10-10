@@ -66,7 +66,6 @@ public:
     LoadingProcess();
     virtual ~LoadingProcess();
     virtual bool completed()                                                                             const = 0;
-    virtual QString filePath()                                                                           const = 0;
     virtual QString cacheKey()                                                                           const = 0;
     virtual void addListener(LoadingProcessListener* const listener)                                           = 0;
     virtual void removeListener(LoadingProcessListener* const listener)                                        = 0;

@@ -148,7 +148,6 @@ public:
     // LoadingProcess
 
     bool completed()                        const                       override;
-    QString filePath()                      const                       override;
     QString cacheKey()                      const                       override;
     void addListener(LoadingProcessListener* const listener)            override;
     void removeListener(LoadingProcessListener* const listener)         override;

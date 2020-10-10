@@ -407,11 +407,6 @@ bool SharedLoadingTask::completed() const
     return m_completed;
 }
 
-QString SharedLoadingTask::filePath() const
-{
-    return m_loadingDescription.filePath;
-}
-
 QString SharedLoadingTask::cacheKey() const
 {
     return m_loadingDescription.cacheKey();
