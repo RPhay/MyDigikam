@@ -30,11 +30,11 @@
 #include <QList>
 #include <QMap>
 #include <QString>
-#include <QCollator>
 
 // Local includes
 
 #include "digikam_export.h"
+#include "loadingcache.h"
 
 namespace Digikam
 {
@@ -223,18 +223,14 @@ public:
                                      Qt::CaseSensitivity caseSensitive = Qt::CaseSensitive,
                                      bool natural = true)
     {
-        QCollator collator;
-        collator.setNumericMode(natural);
-        collator.setCaseSensitivity(caseSensitive);
-        collator.setIgnorePunctuation(a.contains(QLatin1String("_v"),
-                                                 Qt::CaseInsensitive));
+        LoadingCache* const cache = LoadingCache::cache();
 
         if (sortOrder == Qt::AscendingOrder)
         {
-            return collator.compare(a, b);
+            return cache->itemFastCacheCompare(a, b, caseSensitive, natural);
         }
 
-        return (- collator.compare(a, b));
+        return (- cache->itemFastCacheCompare(a, b, caseSensitive, natural));
     }
 
 public:

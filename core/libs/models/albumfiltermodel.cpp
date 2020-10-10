@@ -28,7 +28,6 @@
 // Qt includes
 
 #include <QSortFilterProxyModel>
-#include <QCollator>
 #include <QHeaderView>
 
 // Local includes
@@ -37,6 +36,7 @@
 #include "albummanager.h"
 #include "albummodel.h"
 #include "applicationsettings.h"
+#include "loadingcache.h"
 #include "facetags.h"
 
 namespace Digikam
@@ -476,12 +476,9 @@ bool AlbumFilterModel::lessThan(const QModelIndex& left, const QModelIndex& righ
 
     if ((valLeft.type() == QVariant::String) && (valRight.type() == QVariant::String))
     {
-        QCollator collator;
-        collator.setNumericMode(natural);
-        collator.setIgnorePunctuation(false);
-        collator.setCaseSensitivity(sortCaseSensitivity());
+        LoadingCache* const cache = LoadingCache::cache();
 
-        return (collator.compare(valLeft.toString(), valRight.toString()) < 0);
+        return (cache->albumFastCacheCompare(valLeft.toString(), valRight.toString(), sortCaseSensitivity(), natural) < 0);
     }
     else if ((valLeft.type() == QVariant::Date) && (valRight.type() == QVariant::Date))
     {

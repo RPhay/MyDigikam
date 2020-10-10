@@ -25,6 +25,7 @@
 
 // Qt includes
 
+#include <QCollator>
 #include <QCache>
 #include <QMap>
 
@@ -65,8 +66,11 @@ class Q_DECL_HIDDEN LoadingCache::Private
 public:
 
     explicit Private(LoadingCache* const q)
-      : watch(nullptr),
-        q    (q)
+      : albumSensitive(Qt::CaseSensitive),
+        itemSensitive (Qt::CaseSensitive),
+        natural       (true),
+        watch         (nullptr),
+        q             (q)
     {
     }
 
@@ -78,20 +82,29 @@ public:
 
 public:
 
-    QCache<QString, DImg>           imageCache;
-    QCache<QString, QImage>         thumbnailImageCache;
-    QCache<QString, QPixmap>        thumbnailPixmapCache;
-    QMultiMap<QString, QString>     imageFilePathMap;
-    QMultiMap<QString, QString>     thumbnailFilePathMap;
-    QHash<LoadingProcess*, QString> loadingDict;
+    QCache<QString, DImg>                          imageCache;
+    QCache<QString, QImage>                        thumbnailImageCache;
+    QCache<QString, QPixmap>                       thumbnailPixmapCache;
+    QMultiMap<QString, QString>                    imageFilePathMap;
+    QMultiMap<QString, QString>                    thumbnailFilePathMap;
+    QHash<LoadingProcess*, QString>                loadingDict;
+
+    /// QCollator settings
+    QHash<QString, std::vector<QCollatorSortKey> > albumSortKeys;
+    QHash<QString, std::vector<QCollatorSortKey> > itemSortKeys;
+
+    Qt::CaseSensitivity                            albumSensitive;
+    Qt::CaseSensitivity                            itemSensitive;
+
+    bool                                           natural;
 
     /// Note: Don't make the mutex recursive, we need to use a wait condition on it
-    QMutex                           mutex;
+    QMutex                                          mutex;
 
-    QWaitCondition                   condVar;
+    QWaitCondition                                  condVar;
 
-    LoadingCacheFileWatch*           watch;
-    LoadingCache*                    q;
+    LoadingCacheFileWatch*                          watch;
+    LoadingCache*                                   q;
 };
 
 LoadingCacheFileWatch* LoadingCache::Private::fileWatch() const
@@ -406,6 +419,77 @@ void LoadingCache::iccSettingsChanged(const ICCSettingsContainer& current, const
         removeImages();
         removeThumbnails();
     }
+}
+
+//---------------------------------------------------------------------------------------------------
+
+int LoadingCache::albumFastCacheCompare(const QString& a, const QString& b,
+                                        Qt::CaseSensitivity caseSensitive, bool natural) const
+{
+    if ((d->albumSensitive != caseSensitive) || (d->natural != natural))
+    {
+        d->albumSensitive = caseSensitive;
+        d->natural        = natural;
+        d->albumSortKeys.clear();
+    }
+
+    const bool containsA = d->albumSortKeys.contains(a);
+    const bool containsB = d->albumSortKeys.contains(b);
+
+    if (!containsA || !containsB)
+    {
+        QCollator collator;
+        collator.setNumericMode(d->natural);
+        collator.setIgnorePunctuation(false);
+        collator.setCaseSensitivity(d->albumSensitive);
+
+        if (!containsA)
+        {
+            d->albumSortKeys[a].emplace_back(collator.sortKey(a));
+        }
+
+        if (!containsB)
+        {
+            d->albumSortKeys[b].emplace_back(collator.sortKey(b));
+        }
+    }
+
+    return (d->albumSortKeys[a].front().compare(d->albumSortKeys[b].front()));
+}
+
+int LoadingCache::itemFastCacheCompare(const QString& a, const QString& b,
+                                       Qt::CaseSensitivity caseSensitive, bool natural) const
+{
+    if ((d->itemSensitive != caseSensitive) || (d->natural != natural))
+    {
+        d->itemSensitive = caseSensitive;
+        d->natural       = natural;
+        d->itemSortKeys.clear();
+    }
+
+    const bool containsA = d->itemSortKeys.contains(a);
+    const bool containsB = d->itemSortKeys.contains(b);
+
+    if (!containsA || !containsB)
+    {
+        QCollator collator;
+        collator.setNumericMode(d->natural);
+        collator.setCaseSensitivity(d->itemSensitive);
+        collator.setIgnorePunctuation(a.contains(QLatin1String("_v"),
+                                                 Qt::CaseInsensitive));
+
+        if (!containsA)
+        {
+            d->itemSortKeys[a].emplace_back(collator.sortKey(a));
+        }
+
+        if (!containsB)
+        {
+            d->itemSortKeys[b].emplace_back(collator.sortKey(b));
+        }
+    }
+
+    return (d->itemSortKeys[a].front().compare(d->itemSortKeys[b].front()));
 }
 
 //---------------------------------------------------------------------------------------------------

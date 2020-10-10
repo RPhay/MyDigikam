@@ -273,6 +273,14 @@ public:
      */
     void notifyFileChanged(const QString& filePath, bool notify = true);
 
+    // ------- QCollator sort keys management --------------------------
+
+    int albumFastCacheCompare(const QString& a, const QString& b,
+                              Qt::CaseSensitivity caseSensitive, bool natural) const;
+
+    int itemFastCacheCompare(const QString& a, const QString& b,
+                             Qt::CaseSensitivity caseSensitive, bool natural) const;
+
 Q_SIGNALS:
 
     /**
