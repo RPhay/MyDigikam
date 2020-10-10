@@ -75,7 +75,6 @@ class Q_DECL_HIDDEN ScanControllerLoadingCacheFileWatch : public LoadingCacheFil
 {
     Q_OBJECT
 
-
 public:
 
     explicit ScanControllerLoadingCacheFileWatch();

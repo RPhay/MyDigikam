@@ -57,7 +57,6 @@ LoadingTask::LoadingTask(LoadSaveThread* const thread,
 {
 }
 
-
 LoadingTask::~LoadingTask()
 {
 }
@@ -467,7 +466,6 @@ DImg SharedLoadingTask::img() const
 {
     return m_img;
 }
-
 
 //---------------------------------------------------------------------------------------------------
 

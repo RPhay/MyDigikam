@@ -89,8 +89,8 @@ public:
     LoadingCacheFileWatch();
     ~LoadingCacheFileWatch() override;
 
-    virtual void addedImage(const QString& filePath);
-    virtual void checkFileWatch(const QString& filePath);
+    void addedImage(const QString& filePath);
+    void checkFileWatch(const QString& filePath);
 
 protected:
 
