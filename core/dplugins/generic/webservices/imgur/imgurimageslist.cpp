@@ -92,17 +92,21 @@ QList<const ImgurImageListViewItem*> ImgurImagesList::getPendingItems()
 
 void ImgurImagesList::slotAddImages(const QList<QUrl>& list)
 {
-    /* Replaces the DItemsList::slotAddImages method, so that
-     * ImgurImageListViewItems can be added instead of ImagesListViewItems */
+    /**
+     * Replaces the DItemsList::slotAddImages method, so that
+     * ImgurImageListViewItems can be added instead of ImagesListViewItems
+     */
 
     QScopedPointer<DMetadata> meta(new DMetadata);
 
     for (QList<QUrl>::ConstIterator it = list.constBegin() ; it != list.constEnd() ; ++it)
     {
         // Already in the list?
+
         if (listView()->findItem(*it) == nullptr)
         {
             // Load URLs from meta data, if possible
+
             if (meta->load((*it).toLocalFile()))
             {
                 auto* const item = new ImgurImageListViewItem(listView(), *it);
@@ -125,6 +129,7 @@ void ImgurImagesList::slotSuccess(const ImgurTalkerResult& result)
     QScopedPointer<DMetadata> meta(new DMetadata);
 
     // Save URLs to meta data, if possible
+
     if (meta->load(imgurl.toLocalFile()))
     {
         meta->setXmpTagString("Xmp.digiKam.ImgurId",
@@ -142,21 +147,29 @@ void ImgurImagesList::slotSuccess(const ImgurTalkerResult& result)
     ImgurImageListViewItem* const currItem = dynamic_cast<ImgurImageListViewItem*>(listView()->findItem(imgurl));
 
     if (!currItem)
+    {
         return;
+    }
 
     if (!result.image.url.isEmpty())
+    {
         currItem->setImgurUrl(result.image.url);
+    }
 
     if (!result.image.deletehash.isEmpty())
+    {
         currItem->setImgurDeleteUrl(ImgurTalker::urlForDeletehash(result.image.deletehash).toString());
+    }
 }
 
 void ImgurImagesList::slotDoubleClick(QTreeWidgetItem* element, int i)
 {
-    if (i == URL || i == DeleteURL)
+    if ((i == URL) || (i == DeleteURL))
     {
         const QUrl url = QUrl(element->text(i));
+
         // The delete page asks for confirmation, so we don't need to do that here
+
         QDesktopServices::openUrl(url);
     }
 }

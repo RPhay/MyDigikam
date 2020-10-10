@@ -52,15 +52,16 @@ class Q_DECL_HIDDEN IpfsWindow::Private
 public:
 
     explicit Private()
+      : list (nullptr),
+        api  (nullptr)
     {
-        list = nullptr;
-        api  = nullptr;
     }
 
     IpfsImagesList* list;
     IpfsTalker*     api;
 
-    /* Contains the ipfs username if API authorized.
+    /**
+     * Contains the ipfs username if API authorized.
      * If not, username is null.
      */
     QString         username;
@@ -87,6 +88,7 @@ IpfsWindow::IpfsWindow(DInfoInterface* const iface, QWidget* const /*parent*/)
             this, &IpfsWindow::apiBusy);
 
     // | List | Auth |
+
     auto* const mainLayout = new QHBoxLayout;
     auto* const mainWidget = new QWidget(this);
     mainWidget->setLayout(mainLayout);
@@ -96,7 +98,8 @@ IpfsWindow::IpfsWindow(DInfoInterface* const iface, QWidget* const /*parent*/)
     d->list->setIface(iface);
     mainLayout->addWidget(d->list);
 
-    /* |  Logged in as:  |
+    /**
+     * |  Logged in as:  |
      * | <Not logged in> |
      * |     Forget      |
      */
@@ -106,9 +109,11 @@ IpfsWindow::IpfsWindow(DInfoInterface* const iface, QWidget* const /*parent*/)
 
     authLayout->insertStretch(-1, 1);
 
-    /* Add anonymous upload button
+    /**
+     * Add anonymous upload button
      * Connect UI signals
      */
+
     connect(startButton(), &QPushButton::clicked,
             this, &IpfsWindow::slotUpload);
 
@@ -126,7 +131,8 @@ IpfsWindow::IpfsWindow(DInfoInterface* const iface, QWidget* const /*parent*/)
     startButton()->setToolTip(i18n("Start upload to IPFS"));
     startButton()->setEnabled(true);
 
-    /* Only used if not overwritten by readSettings() */
+    // Only used if not overwritten by readSettings()
+
     resize(650, 320);
     readSettings();
 }
@@ -148,9 +154,11 @@ void IpfsWindow::slotUpload()
     QList<const IpfsImagesListViewItem*> pending = d->list->getPendingItems();
 
     if (pending.isEmpty())
+    {
         return;
+    }
 
-    for (auto item : pending)
+    for (auto item : qAsConst(pending))
     {
         IpfsTalkerAction action;
         action.type               = IpfsTalkerActionType::IMG_UPLOAD;
@@ -218,6 +226,7 @@ void IpfsWindow::apiError(const QString& msg, const IpfsTalkerAction& action)
     d->list->processed(QUrl::fromLocalFile(action.upload.imgpath), false);
 
     // 1 here because the current item is still in the queue.
+
     if (d->api->workQueueLength() <= 1)
     {
         QMessageBox::critical(this,
@@ -259,7 +268,9 @@ void IpfsWindow::readSettings()
     KSharedConfigPtr config  = KSharedConfig::openConfig();
     KConfigGroup groupAuth   = config->group("IPFS Auth");
     d->username              = groupAuth.readEntry("UserName", QString());
-    // apiAuthorized(!d->username.isEmpty(), d->username);
+/*
+    apiAuthorized(!d->username.isEmpty(), d->username);
+*/
 }
 
 void IpfsWindow::saveSettings()

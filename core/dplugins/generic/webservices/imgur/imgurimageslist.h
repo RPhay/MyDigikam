@@ -46,7 +46,7 @@ class ImgurImagesList : public DItemsList
 
 public:
 
-    // The different columns in a list.
+    /// The different columns in a list.
     enum FieldType
     {
         Title           = DItemsListView::User1,
@@ -79,13 +79,13 @@ public:
     ~ImgurImageListViewItem() override {}
 
     void setTitle(const QString& str);
-    QString Title() const;
+    QString Title()          const;
 
     void setDescription(const QString& str);
-    QString Description() const;
+    QString Description()    const;
 
     void setImgurUrl(const QString& str);
-    QString ImgurUrl() const;
+    QString ImgurUrl()       const;
 
     void setImgurDeleteUrl(const QString& str);
     QString ImgurDeleteUrl() const;

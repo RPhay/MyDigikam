@@ -96,7 +96,7 @@ struct ImgurTalkerResult
 
 // ----------------------------------------------------------------
 
-/*
+/**
  * Main class, handles the client side of the Imgur API v3.
  */
 class ImgurTalker : public QObject
@@ -110,7 +110,8 @@ public:
 
 public:
 
-    /* Use this method to read/write the access and refresh tokens.
+    /**
+     * Use this method to read/write the access and refresh tokens.
      */
     O2& getAuth();
 
@@ -122,41 +123,49 @@ public:
 
 Q_SIGNALS:
 
-    /* Called if authentication state changes.
+    /**
+     * Called if authentication state changes.
      */
     void signalAuthorized(bool success, const QString& username);
     void signalAuthError(const QString& msg);
 
-    /* Open url in a browser and let the user copy the pin.
+    /**
+     * Open url in a browser and let the user copy the pin.
      * Call setPin(pin) to authorize.
      */
     void signalRequestPin(const QUrl& url);
 
-    /* Emitted on progress changes.
+    /**
+     * Emitted on progress changes.
      */
     void signalProgress(unsigned int percent, const ImgurTalkerAction& action);
     void signalSuccess(const ImgurTalkerResult& result);
     void signalError(const QString& msg, const ImgurTalkerAction& action);
 
-    /* Emitted when the status changes.
+    /**
+     * Emitted when the status changes.
      */
     void signalBusy(bool b);
 
 public Q_SLOTS:
 
-    /* Connected to O2 linkedChanged().
+    /**
+     * Connected to O2 linkedChanged().
      */
     void slotOauthAuthorized();
 
-    /* Connected to O2 openBrowser(QUrl).
+    /**
+     * Connected to O2 openBrowser(QUrl).
      */
     void slotOauthRequestPin(const QUrl& url);
 
-    /* Connected to O2 linkingFailed().
+    /**
+     * Connected to O2 linkingFailed().
      */
     void slotOauthFailed();
 
-    /* Connected to the current QNetworkReply.
+    /**
+     * Connected to the current QNetworkReply.
      */
     void slotUploadProgress(qint64 sent, qint64 total);
     void slotReplyFinished();
@@ -167,23 +176,28 @@ protected:
 
 private:
 
-    /* Starts timer if queue not empty.
+    /**
+     * Starts timer if queue not empty.
      */
     void startWorkTimer();
 
-    /* Stops timer if running.
+    /**
+     * Stops timer if running.
      */
     void stopWorkTimer();
 
-    /* Adds the user authorization info to the request.
+    /**
+     * Adds the user authorization info to the request.
      */
     void addAuthToken(QNetworkRequest* request);
 
-    /* Adds the client authorization info to the request.
+    /**
+     * Adds the client authorization info to the request.
      */
     void addAnonToken(QNetworkRequest* request);
 
-    /* Start working on the first item of m_work_queue
+    /**
+     * Start working on the first item of m_work_queue
      * by sending a request.
      */
     void doWork();

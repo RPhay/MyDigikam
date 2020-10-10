@@ -60,41 +60,34 @@ class Q_DECL_HIDDEN ImgurTalker::Private
 public:
 
     explicit Private()
+      : client_id       (QLatin1String("bd2572bce74b73d")),
+        client_secret   (QLatin1String("300988683e99cb7b203a5889cf71de9ac891c1c1")),
+        workTimer       (0),
+        reply           (nullptr),
+        image           (nullptr)
     {
-        client_id       = QLatin1String("bd2572bce74b73d");
-        client_secret   = QLatin1String("300988683e99cb7b203a5889cf71de9ac891c1c1");
-        workTimer       = 0;
-        reply           = nullptr;
-        image           = nullptr;
     }
 
-    /* API key and secret
-     */
+    /// API key and secret
     QString                   client_id;
     QString                   client_secret;
 
-    /* Handler for OAuth 2 related requests.
-     */
+    /// Handler for OAuth 2 related requests.
     O2                        auth;
 
-    /* Work queue.
-     */
+    /// Work queue.
     QQueue<ImgurTalkerAction> workQueue;
 
-    /* ID of timer triggering on idle (0ms).
-     */
+    /// ID of timer triggering on idle (0ms).
     int                       workTimer;
 
-    /* Current QNetworkReply instance.
-     */
+    /// Current QNetworkReply instance.
     QNetworkReply*            reply;
 
-    /* Current image being uploaded.
-     */
+    /// Current image being uploaded.
     QFile*                    image;
 
-    /* The QNetworkAccessManager instance used for connections.
-     */
+    /// The QNetworkAccessManager instance used for connections.
     QNetworkAccessManager     net;
 };
 
@@ -129,6 +122,7 @@ ImgurTalker::ImgurTalker(QObject* const parent)
 ImgurTalker::~ImgurTalker()
 {
     // Disconnect all signals as cancelAllWork may emit.
+
     disconnect(this, nullptr, nullptr, nullptr);
     cancelAllWork();
 
@@ -205,6 +199,7 @@ void ImgurTalker::slotOauthFailed()
 void ImgurTalker::slotUploadProgress(qint64 sent, qint64 total)
 {
     // Don't divide by 0
+
     if (total > 0)
     {
         emit signalProgress((sent * 100) / total, d->workQueue.first());
@@ -230,12 +225,14 @@ void ImgurTalker::slotReplyFinished()
     }
 
     // NOTE: toInt() returns 0 if conversion fails. That fits nicely already.
-    int netcode      = reply->attribute(QNetworkRequest::HttpStatusCodeAttribute).toInt();
+
+    int netcode   = reply->attribute(QNetworkRequest::HttpStatusCodeAttribute).toInt();
     auto response = QJsonDocument::fromJson(reply->readAll());
 
     if ((netcode == 200) && !response.isEmpty())
     {
         // Success!
+
         ImgurTalkerResult result;
         result.action = &d->workQueue.first();
         auto data     = response.object()[QLatin1String("data")].toObject();
@@ -259,10 +256,12 @@ void ImgurTalker::slotReplyFinished()
                 result.image.views       = data[QLatin1String("views")].toInt();
                 result.image.width       = data[QLatin1String("width")].toInt();
                 break;
+
             case ImgurTalkerActionType::ACCT_INFO:
                 result.account.username = data[QLatin1String("url")].toString();
                 // TODO: Other fields.
                 break;
+
             default:
                 qCWarning(DIGIKAM_WEBSERVICES_LOG) << "Unexpected action";
                 qCDebug(DIGIKAM_WEBSERVICES_LOG) << response.toJson();
@@ -275,7 +274,8 @@ void ImgurTalker::slotReplyFinished()
     {
         if (netcode == 403)
         {
-            /* HTTP 403 Forbidden -> Invalid token?
+            /**
+             * HTTP 403 Forbidden -> Invalid token?
              * That needs to be handled internally, so don't emit signalProgress
              * and keep the action in the queue for later retries.
              */
@@ -285,6 +285,7 @@ void ImgurTalker::slotReplyFinished()
         else
         {
             // Failed.
+
             auto msg = response.object()[QLatin1String("data")]
                        .toObject()[QLatin1String("error")]
                        .toString(QLatin1String("Could not read response."));
@@ -294,6 +295,7 @@ void ImgurTalker::slotReplyFinished()
     }
 
     // Next work item.
+
     d->workQueue.dequeue();
     startWorkTimer();
 }
@@ -308,6 +310,7 @@ void ImgurTalker::timerEvent(QTimerEvent* event)
     event->accept();
 
     // One-shot only.
+
     QObject::killTimer(event->timerId());
     d->workTimer = 0;
 
@@ -392,6 +395,7 @@ void ImgurTalker::doWork()
             }
 
             // Set ownership to d->image to delete that as well.
+
             auto* const multiPart = new QHttpMultiPart(QHttpMultiPart::FormDataType, d->image);
             QHttpPart title;
             title.setHeader(QNetworkRequest::ContentDispositionHeader,
@@ -425,7 +429,9 @@ void ImgurTalker::doWork()
             }
 
             d->reply = d->net.post(request, multiPart);
+
             // delete the multiPart with the reply
+
             multiPart->setParent(d->reply);
 
             break;

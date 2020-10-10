@@ -53,12 +53,12 @@ class Q_DECL_HIDDEN ImgurWindow::Private
 public:
 
     explicit Private()
+      : list             (nullptr),
+        api              (nullptr),
+        forgetButton     (nullptr),
+        uploadAnonButton (nullptr),
+        userLabel        (nullptr)
     {
-        list             = nullptr;
-        api              = nullptr;
-        forgetButton     = nullptr;
-        uploadAnonButton = nullptr;
-        userLabel        = nullptr;
     }
 
     ImgurImagesList* list;
@@ -67,7 +67,7 @@ public:
     QPushButton*     uploadAnonButton;
     QLabel*          userLabel;
 
-    // Contains the imgur username if API authorized, else is null.
+    /// Contains the imgur username if API authorized, else is null.
     QString          username;
 };
 
@@ -78,6 +78,7 @@ ImgurWindow::ImgurWindow(DInfoInterface* const iface, QWidget* const /*parent*/)
     d->api = new ImgurTalker(this);
 
     // Connect API signals
+
     connect(d->api, &ImgurTalker::signalAuthorized,
             this, &ImgurWindow::slotApiAuthorized);
 
@@ -100,6 +101,7 @@ ImgurWindow::ImgurWindow(DInfoInterface* const iface, QWidget* const /*parent*/)
             this, &ImgurWindow::slotApiBusy);
 
     // | List | Auth |
+
     auto* const mainLayout = new QHBoxLayout;
     auto* const mainWidget = new QWidget(this);
     mainWidget->setLayout(mainLayout);
@@ -110,7 +112,8 @@ ImgurWindow::ImgurWindow(DInfoInterface* const iface, QWidget* const /*parent*/)
     d->list->loadImagesFromCurrentSelection();
     mainLayout->addWidget(d->list);
 
-    /* |  Logged in as:  |
+    /*
+     * |  Logged in as:  |
      * | <Not logged in> |
      * |     Forget      |
      */
@@ -119,6 +122,7 @@ ImgurWindow::ImgurWindow(DInfoInterface* const iface, QWidget* const /*parent*/)
     userLabelLabel->setAlignment(Qt::AlignHCenter | Qt::AlignTop);
 
     // Label set in readSettings().
+
     d->userLabel               = new QLabel;
     d->userLabel->setSizePolicy(QSizePolicy::Preferred, QSizePolicy::Fixed);
     d->userLabel->setAlignment(Qt::AlignHCenter | Qt::AlignTop);
@@ -133,10 +137,12 @@ ImgurWindow::ImgurWindow(DInfoInterface* const iface, QWidget* const /*parent*/)
     authLayout->insertStretch(-1, 1);
 
     // Add anonymous upload button
+
     d->uploadAnonButton    = new QPushButton(i18n("Upload Anonymously"));
     addButton(d->uploadAnonButton, QDialogButtonBox::ApplyRole);
 
     // Connect UI signals
+
     connect(d->forgetButton, &QPushButton::clicked,
             this, &ImgurWindow::slotForgetButtonClicked);
 
@@ -160,6 +166,7 @@ ImgurWindow::ImgurWindow(DInfoInterface* const iface, QWidget* const /*parent*/)
     startButton()->setEnabled(true);
 
     // Only used if not overwritten by readSettings()
+
     resize(650, 320);
     readSettings();
 }
@@ -192,7 +199,7 @@ void ImgurWindow::slotUpload()
 {
     QList<const ImgurImageListViewItem*> pending = d->list->getPendingItems();
 
-    for (auto item : pending)
+    for (auto item : qAsConst(pending))
     {
         ImgurTalkerAction action;
         action.type               = ImgurTalkerActionType::IMG_UPLOAD;
@@ -208,7 +215,7 @@ void ImgurWindow::slotAnonUpload()
 {
     QList<const ImgurImageListViewItem*> pending = d->list->getPendingItems();
 
-    for (auto item : pending)
+    for (auto item : qAsConst(pending))
     {
         ImgurTalkerAction action;
         action.type               = ImgurTalkerActionType::ANON_IMG_UPLOAD;
@@ -272,6 +279,7 @@ void ImgurWindow::slotApiError(const QString& msg, const ImgurTalkerAction& acti
     d->list->processed(QUrl::fromLocalFile(action.upload.imgpath), false);
 
     // 1 here because the current item is still in the queue.
+
     if (d->api->workQueueLength() <= 1)
     {
         QMessageBox::critical(this,
@@ -287,7 +295,9 @@ void ImgurWindow::slotApiError(const QString& msg, const ImgurTalkerAction& acti
                                        "Do you want to continue?", msg));
 
     if (cont != QMessageBox::Yes)
+    {
         d->api->cancelAllWork();
+    }
 }
 
 void ImgurWindow::slotApiBusy(bool busy)
@@ -299,7 +309,9 @@ void ImgurWindow::slotApiBusy(bool busy)
 void ImgurWindow::closeEvent(QCloseEvent* e)
 {
     if (!e)
+    {
         return;
+    }
 
     slotFinished();
     e->accept();
