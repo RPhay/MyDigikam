@@ -68,7 +68,8 @@ public:
     explicit Private(LoadingCache* const q)
       : albumSensitive(Qt::CaseSensitive),
         itemSensitive (Qt::CaseSensitive),
-        natural       (true),
+        albumNatural  (true),
+        itemNatural   (true),
         watch         (nullptr),
         q             (q)
     {
@@ -96,7 +97,8 @@ public:
     Qt::CaseSensitivity                            albumSensitive;
     Qt::CaseSensitivity                            itemSensitive;
 
-    bool                                           natural;
+    bool                                           albumNatural;
+    bool                                           itemNatural;
 
     /// Note: Don't make the mutex recursive, we need to use a wait condition on it
     QMutex                                          mutex;
@@ -426,10 +428,10 @@ void LoadingCache::iccSettingsChanged(const ICCSettingsContainer& current, const
 int LoadingCache::albumFastCacheCompare(const QString& a, const QString& b,
                                         Qt::CaseSensitivity caseSensitive, bool natural) const
 {
-    if ((d->albumSensitive != caseSensitive) || (d->natural != natural))
+    if ((d->albumSensitive != caseSensitive) || (d->albumNatural != natural))
     {
         d->albumSensitive = caseSensitive;
-        d->natural        = natural;
+        d->albumNatural   = natural;
         d->albumSortKeys.clear();
     }
 
@@ -439,8 +441,8 @@ int LoadingCache::albumFastCacheCompare(const QString& a, const QString& b,
     if (!containsA || !containsB)
     {
         QCollator collator;
-        collator.setNumericMode(d->natural);
         collator.setIgnorePunctuation(false);
+        collator.setNumericMode(d->albumNatural);
         collator.setCaseSensitivity(d->albumSensitive);
 
         if (!containsA)
@@ -460,10 +462,10 @@ int LoadingCache::albumFastCacheCompare(const QString& a, const QString& b,
 int LoadingCache::itemFastCacheCompare(const QString& a, const QString& b,
                                        Qt::CaseSensitivity caseSensitive, bool natural) const
 {
-    if ((d->itemSensitive != caseSensitive) || (d->natural != natural))
+    if ((d->itemSensitive != caseSensitive) || (d->itemNatural != natural))
     {
         d->itemSensitive = caseSensitive;
-        d->natural       = natural;
+        d->itemNatural   = natural;
         d->itemSortKeys.clear();
     }
 
@@ -473,7 +475,7 @@ int LoadingCache::itemFastCacheCompare(const QString& a, const QString& b,
     if (!containsA || !containsB)
     {
         QCollator collator;
-        collator.setNumericMode(d->natural);
+        collator.setNumericMode(d->itemNatural);
         collator.setCaseSensitivity(d->itemSensitive);
         collator.setIgnorePunctuation(a.contains(QLatin1String("_v"),
                                                  Qt::CaseInsensitive));
