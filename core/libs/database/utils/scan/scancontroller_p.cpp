@@ -42,27 +42,27 @@ bool SimpleCollectionScannerObserver::continueQuery()
 // ------------------------------------------------------------------------------
 
 ScanController::Private::Private()
-    : running(false),
-      needsInitialization(false),
-      needsCompleteScan(false),
-      needsUpdateUniqueHash(false),
-      idle(false),
-      scanSuspended(0),
-      deferFileScanning(false),
-      finishScanAllowed(true),
+    : running               (false),
+      needsInitialization   (false),
+      needsCompleteScan     (false),
+      needsUpdateUniqueHash (false),
+      idle                  (false),
+      scanSuspended         (0),
+      deferFileScanning     (false),
+      finishScanAllowed     (true),
       continueInitialization(false),
-      continueScan(false),
-      continuePartialScan(false),
-      fileWatchInstalled(false),
-      eventLoop(nullptr),
-      showTimer(nullptr),
-      relaxedTimer(nullptr),
-      externalTimer(nullptr),
-      hints(CollectionScanner::createHintContainer()),
-      progressDialog(nullptr),
-      advice(ScanController::Success),
-      needTotalFiles(false),
-      totalFilesToScan(0)
+      continueScan          (false),
+      continuePartialScan   (false),
+      fileWatchInstalled    (false),
+      eventLoop             (nullptr),
+      showTimer             (nullptr),
+      relaxedTimer          (nullptr),
+      externalTimer         (nullptr),
+      hints                 (CollectionScanner::createHintContainer()),
+      progressDialog        (nullptr),
+      advice                (ScanController::Success),
+      needTotalFiles        (false),
+      totalFilesToScan      (0)
 {
 }
 
