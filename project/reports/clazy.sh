@@ -34,7 +34,7 @@ done
 IGNORE_DIRS=${IGNORE_DIRS::-1}
 
 export CLAZY_IGNORE_DIRS=$IGNORE_DIRS
-export CLAZY_CHECKS="level1,no-fully-qualified-moc-types,no-overloaded-signal,no-qproperty-without-notify,no-qstring-arg,no-inefficient-qlist-soft"
+export CLAZY_CHECKS="level1,virtual-call-ctor,no-fully-qualified-moc-types,no-overloaded-signal,no-qproperty-without-notify,no-qstring-arg,no-inefficient-qlist-soft"
 
 echo "IGNORE DIRECTORIES:     $CLAZY_IGNORE_DIRS"
 echo "CHECKERS CONFIGURATION: $CLAZY_CHECKS"
