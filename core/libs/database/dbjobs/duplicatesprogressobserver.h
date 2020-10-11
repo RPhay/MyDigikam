@@ -39,7 +39,7 @@ class DIGIKAM_DATABASE_EXPORT DuplicatesProgressObserver : public HaarProgressOb
 public:
 
     explicit DuplicatesProgressObserver(SearchesJob* const thread);
-    ~DuplicatesProgressObserver() override;
+    ~DuplicatesProgressObserver()      override;
 
     void totalNumberToScan(int number)  override;
     void processedNumber(int number)    override;

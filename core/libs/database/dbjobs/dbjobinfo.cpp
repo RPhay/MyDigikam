@@ -27,9 +27,9 @@ namespace Digikam
 {
 
 DBJobInfo::DBJobInfo()
-    : m_folders(false),
+    : m_folders                (false),
       m_listAvailableImagesOnly(false),
-      m_recursive(false)
+      m_recursive              (false)
 {
 }
 
@@ -66,7 +66,7 @@ bool DBJobInfo::isRecursive() const
 // ---------------------------------------------
 
 AlbumsDBJobInfo::AlbumsDBJobInfo()
-    : DBJobInfo(),
+    : DBJobInfo    (),
       m_albumRootId(-1)
 {
 }
@@ -94,7 +94,7 @@ QString AlbumsDBJobInfo::album()
 // ---------------------------------------------
 
 TagsDBJobInfo::TagsDBJobInfo()
-    : DBJobInfo(),
+    : DBJobInfo    (),
       m_faceFolders(false)
 {
 }
@@ -132,12 +132,12 @@ QList<int> TagsDBJobInfo::tagsIds() const
 // ---------------------------------------------
 
 GPSDBJobInfo::GPSDBJobInfo()
-    : DBJobInfo(),
+    : DBJobInfo    (),
       m_directQuery(false),
-      m_lat1(0),
-      m_lng1(0),
-      m_lat2(0),
-      m_lng2(0)
+      m_lat1       (0),
+      m_lng1       (0),
+      m_lat2       (0),
+      m_lng2       (0)
 {
 }
 
@@ -194,14 +194,14 @@ qreal GPSDBJobInfo::lng2() const
 // ---------------------------------------------
 
 SearchesDBJobInfo::SearchesDBJobInfo()
-    : DBJobInfo(),
-      m_duplicates(false),
-      m_albumUpdate(false),
-      m_albumTagRelation(0),
-      m_searchResultRestriction(0),
-      m_searchIds(QList<int>()),
-      m_minThreshold(0),
-      m_maxThreshold(1)
+    : DBJobInfo                 (),
+      m_duplicates              (false),
+      m_albumUpdate             (false),
+      m_albumTagRelation        (0),
+      m_searchResultRestriction (0),
+      m_searchIds               (QList<int>()),
+      m_minThreshold            (0),
+      m_maxThreshold            (1)
 {
 }
 
