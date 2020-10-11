@@ -42,12 +42,12 @@ DuplicatesProgressObserver::~DuplicatesProgressObserver()
 
 void DuplicatesProgressObserver::totalNumberToScan(int number)
 {
-    m_job->totalSize(number);
+    emit m_job->totalSize(number);
 }
 
 void DuplicatesProgressObserver::processedNumber(int number)
 {
-    m_job->processedSize(number);
+    emit m_job->processedSize(number);
 }
 
 bool DuplicatesProgressObserver::isCanceled()
