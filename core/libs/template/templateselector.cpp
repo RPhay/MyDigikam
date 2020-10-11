@@ -51,8 +51,8 @@ class Q_DECL_HIDDEN TemplateSelector::Private
 public:
 
     explicit Private()
-      : label(nullptr),
-        setupButton(nullptr),
+      : label        (nullptr),
+        setupButton  (nullptr),
         templateCombo(nullptr)
     {
     }
@@ -90,7 +90,7 @@ TemplateSelector::TemplateSelector(QWidget* const parent)
     connect(d->setupButton, SIGNAL(clicked()),
             this, SLOT(slotOpenSetup()));
 
-    TemplateManager* tm = TemplateManager::defaultManager();
+    TemplateManager* const tm = TemplateManager::defaultManager();
 
     if (tm)
     {

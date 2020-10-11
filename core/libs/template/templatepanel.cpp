@@ -53,26 +53,26 @@ class Q_DECL_HIDDEN TemplatePanel::Private
 public:
 
     explicit Private()
-      : authorsEdit(nullptr),
-        authorsPositionEdit(nullptr),
-        creditEdit(nullptr),
-        sourceEdit(nullptr),
-        instructionsEdit(nullptr),
-        copyrightEdit(nullptr),
-        rightUsageEdit(nullptr),
-        locationCountryCodeEdit(nullptr),
-        locationProvinceStateEdit(nullptr),
-        locationCityEdit(nullptr),
-        locationSublocationEdit(nullptr),
-        contactCityEdit(nullptr),
-        contactCountryEdit(nullptr),
-        contactAddressEdit(nullptr),
-        contactPostalCodeEdit(nullptr),
-        contactProvinceStateEdit(nullptr),
-        contactEmailEdit(nullptr),
-        contactPhoneEdit(nullptr),
-        contactWebUrlEdit(nullptr),
-        subjects(nullptr)
+      : authorsEdit                 (nullptr),
+        authorsPositionEdit         (nullptr),
+        creditEdit                  (nullptr),
+        sourceEdit                  (nullptr),
+        instructionsEdit            (nullptr),
+        copyrightEdit               (nullptr),
+        rightUsageEdit              (nullptr),
+        locationCountryCodeEdit     (nullptr),
+        locationProvinceStateEdit   (nullptr),
+        locationCityEdit            (nullptr),
+        locationSublocationEdit     (nullptr),
+        contactCityEdit             (nullptr),
+        contactCountryEdit          (nullptr),
+        contactAddressEdit          (nullptr),
+        contactPostalCodeEdit       (nullptr),
+        contactProvinceStateEdit    (nullptr),
+        contactEmailEdit            (nullptr),
+        contactPhoneEdit            (nullptr),
+        contactWebUrlEdit           (nullptr),
+        subjects                    (nullptr)
     {
     }
 

@@ -47,7 +47,7 @@ public:
 
     explicit Private()
         : modified(false),
-          mutex()
+          mutex   ()
     {
     }
 
@@ -113,7 +113,7 @@ bool TemplateManager::load()
         return false;
     }
 
-    for (QDomNode n = docElem.firstChild(); !n.isNull(); n = n.nextSibling())
+    for (QDomNode n = docElem.firstChild() ; !n.isNull() ; n = n.nextSibling())
     {
         QDomElement e = n.toElement();
 
@@ -270,7 +270,7 @@ bool TemplateManager::load()
             {
                 QStringList list;
 
-                for (QDomNode n3 = e2.firstChild(); !n3.isNull(); n3 = n3.nextSibling())
+                for (QDomNode n3 = e2.firstChild() ; !n3.isNull() ; n3 = n3.nextSibling())
                 {
                     QDomElement e3 = n3.toElement();
                     QString key    = e3.tagName();
@@ -363,7 +363,7 @@ bool TemplateManager::save()
 
             QDomElement rightusageterms = doc.createElement(QLatin1String("rightusageterms"));
             elem.appendChild(rightusageterms);
-            MetaEngine::AltLangMap usages   = t.rightUsageTerms();
+            MetaEngine::AltLangMap usages = t.rightUsageTerms();
             MetaEngine::AltLangMap::const_iterator it2;
 
             for (it2 = usages.constBegin() ; it2 != usages.constEnd() ; ++it2)
