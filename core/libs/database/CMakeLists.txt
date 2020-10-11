@@ -185,6 +185,7 @@ set(libdatabasemodels_SRCS
     ${CMAKE_CURRENT_SOURCE_DIR}/models/itemversionsmodel.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/models/itemthumbnailmodel.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/models/itemsortsettings.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/models/itemsortercache.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/models/itemlistmodel.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/models/itemmodel.cpp
 )

@@ -36,7 +36,7 @@
 #include "albummanager.h"
 #include "albummodel.h"
 #include "applicationsettings.h"
-#include "loadingcache.h"
+#include "itemsortercache.h"
 #include "facetags.h"
 
 namespace Digikam
@@ -476,9 +476,9 @@ bool AlbumFilterModel::lessThan(const QModelIndex& left, const QModelIndex& righ
 
     if ((valLeft.type() == QVariant::String) && (valRight.type() == QVariant::String))
     {
-        LoadingCache* const cache = LoadingCache::cache();
+        ItemSorterCache* const sorter = ItemSorterCache::instance();
 
-        return (cache->albumFastCacheCompare(valLeft.toString(), valRight.toString(), sortCaseSensitivity(), natural) < 0);
+        return (sorter->albumFastCacheCompare(valLeft.toString(), valRight.toString(), sortCaseSensitivity(), natural) < 0);
     }
     else if ((valLeft.type() == QVariant::Date) && (valRight.type() == QVariant::Date))
     {

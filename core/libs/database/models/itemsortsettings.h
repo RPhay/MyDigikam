@@ -34,7 +34,7 @@
 // Local includes
 
 #include "digikam_export.h"
-#include "loadingcache.h"
+#include "itemsortercache.h"
 
 namespace Digikam
 {
@@ -223,14 +223,14 @@ public:
                                      Qt::CaseSensitivity caseSensitive = Qt::CaseSensitive,
                                      bool natural = true)
     {
-        LoadingCache* const cache = LoadingCache::cache();
+        ItemSorterCache* const sorter = ItemSorterCache::instance();
 
         if (sortOrder == Qt::AscendingOrder)
         {
-            return cache->itemFastCacheCompare(a, b, caseSensitive, natural);
+            return sorter->itemFastCacheCompare(a, b, caseSensitive, natural);
         }
 
-        return (- cache->itemFastCacheCompare(a, b, caseSensitive, natural));
+        return (- sorter->itemFastCacheCompare(a, b, caseSensitive, natural));
     }
 
 public:
