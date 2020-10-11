@@ -36,7 +36,7 @@ namespace Digikam
 {
 
 ItemVisibilityControllerPropertyObject::ItemVisibilityControllerPropertyObject(QObject* const parent)
-    : QObject(parent),
+    : QObject  (parent),
       m_opacity(0),
       m_visible(false)
 {
@@ -50,6 +50,7 @@ qreal ItemVisibilityControllerPropertyObject::opacity() const
 void ItemVisibilityControllerPropertyObject::setOpacity(qreal opacity)
 {
     m_opacity = opacity;
+
     emit opacityChanged();
 }
 
@@ -61,7 +62,8 @@ bool ItemVisibilityControllerPropertyObject::isVisible() const
 void ItemVisibilityControllerPropertyObject::setVisible(bool visible)
 {
     m_visible = visible;
-    visibleChanged();
+
+    emit visibleChanged();
 }
 
 // ---------------------------------------------------------------------------------
@@ -81,7 +83,8 @@ ItemVisibilityController* AnimatedVisibility::controller() const
 // ---------------------------------------------------------------------------------
 
 HidingStateChanger::HidingStateChanger(QObject* const parent)
-    : ItemVisibilityController(parent), m_object(nullptr)
+    : ItemVisibilityController(parent),
+      m_object                (nullptr)
 {
     connect(this, SIGNAL(propertiesAssigned(bool)),
             this, SLOT(slotPropertiesAssigned(bool)));
@@ -118,6 +121,7 @@ void HidingStateChanger::changeValue(const QVariant& value)
     if (!hasVisibleItems())
     {
         // shortcut
+
         slotPropertiesAssigned(false);
         slotPropertiesAssigned(true);
     }
@@ -205,20 +209,20 @@ private:
 };
 
 AnimationControl::AnimationControl(ItemVisibilityController* const q)
-    : m_animation(nullptr),
-      m_state(ItemVisibilityController::Hidden),
-      m_situation(MainControl),
+    : m_animation     (nullptr),
+      m_state         (ItemVisibilityController::Hidden),
+      m_situation     (MainControl),
       m_animationGroup(nullptr),
-      m_q(q)
+      m_q             (q)
 {
 }
 
 AnimationControl::AnimationControl(AnimationControl* const other, QObject* const object)
-    : m_animation(nullptr),
-      m_state(other->m_state),
-      m_situation(IndependentControl),
+    : m_animation     (nullptr),
+      m_state         (other->m_state),
+      m_situation     (IndependentControl),
       m_animationGroup(nullptr),
-      m_q(other->m_q)
+      m_q             (other->m_q)
 {
     other->moveTo(this, object);
 }
@@ -509,13 +513,13 @@ class Q_DECL_HIDDEN ItemVisibilityController::Private
 public:
 
     explicit Private(ItemVisibilityController* const qq)
-        : visible(false),
-          shallBeShown(true),
-          itemShallBeShown(nullptr),
+        : visible          (false),
+          shallBeShown     (true),
+          itemShallBeShown (nullptr),
           animationDuration(75),
-          easingCurve(QEasingCurve::InOutQuad),
-          control(nullptr),
-          q(qq)
+          easingCurve      (QEasingCurve::InOutQuad),
+          control          (nullptr),
+          q                (qq)
     {
     }
 
@@ -595,7 +599,7 @@ void ItemVisibilityController::Private::cleanupChildren(QAbstractAnimation* cons
         {
             foreach (QObject* const item, child->m_items)
             {
-                emit (q->hiddenAndRemoved(item));
+                emit q->hiddenAndRemoved(item);
             }
 
             delete child;
@@ -647,7 +651,7 @@ void ItemVisibilityController::Private::setItemVisible(QObject* const item, bool
 
 ItemVisibilityController::ItemVisibilityController(QObject* const parent)
     : QObject(parent),
-      d(new Private(this))
+      d      (new Private(this))
 {
 }
 
