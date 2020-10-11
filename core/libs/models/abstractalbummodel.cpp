@@ -49,14 +49,14 @@ class Q_DECL_HIDDEN AbstractAlbumModel::Private
 public:
 
     explicit Private()
-        : rootAlbum(nullptr),
-          addingAlbum(nullptr),
-          type(Album::PHYSICAL),
-          dragDropHandler(nullptr),
-          rootBehavior(AbstractAlbumModel::IncludeRootAlbum),
-          removingAlbum(0),
-          itemDrag(true),
-          itemDrop(true)
+        : rootAlbum         (nullptr),
+          addingAlbum       (nullptr),
+          type              (Album::PHYSICAL),
+          dragDropHandler   (nullptr),
+          rootBehavior      (AbstractAlbumModel::IncludeRootAlbum),
+          removingAlbum     (0),
+          itemDrag          (true),
+          itemDrop          (true)
     {
     }
 
@@ -990,20 +990,28 @@ void AbstractCheckableAlbumModel::setTristate(bool isTristate)
         d->extraFlags |= 
 
 #if (QT_VERSION >= QT_VERSION_CHECK(5, 12, 0))
+
         Qt::ItemIsAutoTristate;
+
 #else
+
         Qt::ItemIsTristate;
+
 #endif
-        
+
     }
     else
     {
         d->extraFlags &= ~
 
 #if (QT_VERSION >= QT_VERSION_CHECK(5, 12, 0))
+
         Qt::ItemIsAutoTristate;
+
 #else
+
         Qt::ItemIsTristate;
+
 #endif
 
     }
@@ -1014,9 +1022,13 @@ bool AbstractCheckableAlbumModel::isTristate() const
     return d->extraFlags &
 
 #if (QT_VERSION >= QT_VERSION_CHECK(5, 12, 0))
+
         Qt::ItemIsAutoTristate;
+
 #else
+
         Qt::ItemIsTristate;
+
 #endif
 
 }
@@ -1242,9 +1254,9 @@ bool AbstractCheckableAlbumModel::setData(const QModelIndex& index, const QVaria
         {
             return false;
         }
-
-        //qCDebug(DIGIKAM_GENERAL_LOG) << "Updating check state for album" << album->title() << "to" << value;
-
+/*
+        qCDebug(DIGIKAM_GENERAL_LOG) << "Updating check state for album" << album->title() << "to" << value;
+*/
         d->checkedAlbums.insert(album, state);
         emit dataChanged(index, index);
         emit checkStateChanged(album, state);

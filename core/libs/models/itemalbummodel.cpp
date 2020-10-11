@@ -53,13 +53,13 @@ class Q_DECL_HIDDEN ItemAlbumModel::Private
 public:
 
     explicit Private()
-      : jobThread(nullptr),
-        refreshTimer(nullptr),
-        incrementalTimer(nullptr),
-        recurseAlbums(false),
-        recurseTags(false),
-        listOnlyAvailableImages(false),
-        extraValueJob(false)
+      : jobThread               (nullptr),
+        refreshTimer            (nullptr),
+        incrementalTimer        (nullptr),
+        recurseAlbums           (false),
+        recurseTags             (false),
+        listOnlyAvailableImages (false),
+        extraValueJob           (false)
     {
     }
 
@@ -354,7 +354,7 @@ void ItemAlbumModel::startListJob(const QList<Album*>& albums)
         url = albums.first()->databaseUrl();
     }
 
-    if (albums.first()->type() == Album::DATE)
+    if      (albums.first()->type() == Album::DATE)
     {
         d->extraValueJob = false;
 
@@ -504,7 +504,7 @@ void ItemAlbumModel::slotData(const QList<ItemListerRecord>& records)
             {
                 // default handling: just pass extraValue
 
-                if (record.extraValues.isEmpty())
+                if      (record.extraValues.isEmpty())
                 {
                     extraValues  << QVariant();
                 }
@@ -705,11 +705,12 @@ void ItemAlbumModel::slotCollectionImageChange(const CollectionImageChangeset& c
                         break;
 
                     default:
-
+                    {
                         // we cannot easily know if we are affected
 
                         doRefresh = true;
                         break;
+                    }
                 }
 
                 break;
@@ -735,7 +736,9 @@ void ItemAlbumModel::slotCollectionImageChange(const CollectionImageChangeset& c
                 break;
 
             default:
+            {
                 break;
+            }
         }
 
         if (doRefresh)

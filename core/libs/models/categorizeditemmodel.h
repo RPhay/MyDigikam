@@ -77,12 +77,14 @@ public:
     enum MenuCategoryFlag
     {
         /// The toplevel menu's text is used as category
-        ToplevelMenuCategory = 1 << 0,
+        ToplevelMenuCategory           = 1 << 0,
+
         /// If the action is in a submenu, this menu's text is taken as category
-        ParentMenuCategory   = 1 << 1,
+        ParentMenuCategory             = 1 << 1,
 
         /// Sort categories alphabetically by category name
         SortCategoriesAlphabetically   = 1 << 10,
+
         /// Sort categories by the order they are added (found in the scanned menu)
         SortCategoriesByInsertionOrder = 1 << 11
     };
@@ -101,7 +103,7 @@ public:
     QStandardItem* addAction(QAction* action, const QString& category, const QVariant& categorySorting = QVariant());
 
     void             setMode(MenuCategoryMode mode);
-    MenuCategoryMode mode() const;
+    MenuCategoryMode mode()                         const;
 
     void addActions(QWidget* widget);
     void addActions(QWidget* widget, const QList<QAction*>& actionWhiteList);
@@ -112,8 +114,8 @@ public:
      * Returns the action for the given index.
      * Note: these methods perform O(n).
      */
-    QStandardItem* itemForAction(QAction* action) const;
-    QModelIndex    indexForAction(QAction* action) const;
+    QStandardItem* itemForAction(QAction* action)   const;
+    QModelIndex    indexForAction(QAction* action)  const;
 
     /**
      * Returns the action for the given index.

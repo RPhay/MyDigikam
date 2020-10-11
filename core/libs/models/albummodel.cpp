@@ -147,7 +147,7 @@ QVariant TagModel::decorationRoleData(Album* album) const
     QPixmap pix = AlbumThumbnailLoader::instance()->getTagThumbnailDirectly(static_cast<TAlbum*>(album));
     prepareAddExcludeDecoration(album, pix);
 
-    int size = ApplicationSettings::instance()->getTreeViewIconSize();
+    int size    = ApplicationSettings::instance()->getTreeViewIconSize();
 
     /**
      * Icon sizing is controlled by AlbumThumbnailLoader.
@@ -158,7 +158,7 @@ QVariant TagModel::decorationRoleData(Album* album) const
      * in TagModel.
      * Height is kept slightly larger due to personal preference.
      */
-    pix = pix.scaled(QSize(size, size*(1.10)));
+    pix         = pix.scaled(QSize(size, size*(1.10)));
 
     return pix;
 }

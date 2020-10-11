@@ -43,23 +43,25 @@ class ItemAlbumFilterModel : public ItemFilterModel
 public:
 
     explicit ItemAlbumFilterModel(QObject* const parent = nullptr);
-    ~ItemAlbumFilterModel() override;
+    ~ItemAlbumFilterModel()                                           override;
 
     void            setSourceItemModel(ItemAlbumModel* model);
-    ItemAlbumModel* sourceModel() const;
+    ItemAlbumModel* sourceModel()                               const;
 
     /// convenience mappers
     void prepareThumbnails(const QList<QModelIndex>& indexesToPrepare);
 
-    void setItemFilterSettings(const ItemFilterSettings& settings) override;
+    void setItemFilterSettings(const ItemFilterSettings& settings)    override;
 
 protected:
 
-    int compareInfosCategories(const ItemInfo& left, const ItemInfo& right) const override;
+    int compareInfosCategories(const ItemInfo& left,
+                               const ItemInfo& right)           const override;
 
-    int compareInfosCategories(const ItemInfo& left, const ItemInfo& right,
-                                       const FaceTagsIface& leftFace,
-                                       const FaceTagsIface& rightFace)              const override;
+    int compareInfosCategories(const ItemInfo& left,
+                               const ItemInfo& right,
+                               const FaceTagsIface& leftFace,
+                               const FaceTagsIface& rightFace)  const override;
 
 protected Q_SLOTS:
 

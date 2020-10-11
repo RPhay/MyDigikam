@@ -42,9 +42,9 @@ class AlbumModelDragDropHandler : public QObject
 public:
 
     explicit AlbumModelDragDropHandler(AbstractAlbumModel* model);
-    ~AlbumModelDragDropHandler() override {}
+    ~AlbumModelDragDropHandler()          override;
 
-    AbstractAlbumModel* model() const;
+    AbstractAlbumModel* model()     const;
 
     /**
      * Gives the view and the occurring drop event.

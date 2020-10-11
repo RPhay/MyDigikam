@@ -48,7 +48,7 @@ public:
 
     ItemAlbumFilterModelPrivate()
       : delayedAlbumNamesTimer(nullptr),
-        delayedTagNamesTimer(nullptr)
+        delayedTagNamesTimer  (nullptr)
     {
     }
 

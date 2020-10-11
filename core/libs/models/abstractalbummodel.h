@@ -286,7 +286,7 @@ public Q_SLOTS:
 
     /// Call to enable or disable showing the count. Default is false.
     void setShowCount(bool show);
-    bool showCount() const;
+    bool showCount()                        const;
 
     /**
      * Enable displaying the count. Set a map of album id -> count (excluding children).
@@ -313,7 +313,7 @@ public Q_SLOTS:
      *
      * @return positive value or -1 if unknown
      */
-    virtual int albumCount(Album* album) const;
+    virtual int albumCount(Album* album)    const;
 
 protected:
 
@@ -321,13 +321,13 @@ protected:
     void setCount(Album* album, int count);
 
     /// need to implement in subclass
-    virtual Album* albumForId(int id)    const = 0;
+    virtual Album* albumForId(int id)       const = 0;
 
     /// Can reimplement in subclass
-    virtual QString albumName(Album* a)  const;
+    virtual QString albumName(Album* a)     const;
 
     /// Reimplemented from parent classes
-    QVariant albumData(Album* a, int role) const override;
+    QVariant albumData(Album* a, int role)  const override;
     void albumCleared(Album* album) override;
     void allAlbumsCleared() override;
 
@@ -400,10 +400,10 @@ public:
     Qt::CheckState checkState(Album* album) const;
 
     /// Returns a list of album with check state Checked
-    QList<Album*> checkedAlbums() const;
+    QList<Album*> checkedAlbums()           const;
 
     /// Returns a list of album with partially check state Checked
-    QList<Album*> partiallyCheckedAlbums() const;
+    QList<Album*> partiallyCheckedAlbums()  const;
 
 public Q_SLOTS:
 
@@ -453,7 +453,7 @@ protected:
     /**
      * If in AddExcludeTristate mode, changes the icon as to indicate the state.
      */
-    void prepareAddExcludeDecoration(Album* a, QPixmap& icon)                                      const;
+    void prepareAddExcludeDecoration(Album* a, QPixmap& icon)                              const;
 
     QVariant albumData(Album* a, int role)                                                 const override;
     Qt::ItemFlags flags(const QModelIndex& index)                                          const override;

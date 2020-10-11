@@ -269,7 +269,7 @@ private:
      * @return <code>true</code> if the provided settings result in filtering
      *         the model
      */
-    bool settingsFilter(const SearchTextSettings& settings)                     const;
+    bool settingsFilter(const SearchTextSettings& settings)                 const;
 
 protected:
 

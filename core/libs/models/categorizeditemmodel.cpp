@@ -185,8 +185,8 @@ protected:
 
 ActionItemModel::ActionItemModel(QObject* const parent)
     : CategorizedItemModel(parent),
-      m_mode(ToplevelMenuCategory | SortCategoriesAlphabetically),
-      m_filterModel(nullptr)
+      m_mode              (ToplevelMenuCategory | SortCategoriesAlphabetically),
+      m_filterModel       (nullptr)
 {
 }
 
