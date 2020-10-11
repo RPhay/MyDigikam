@@ -113,7 +113,10 @@ class DIGIKAM_DATABASE_EXPORT ItemListerJobGrowingPartsSendingReceiver
 
 public:
 
-    explicit ItemListerJobGrowingPartsSendingReceiver(DBJob* const job, int start, int end, int increment);
+    explicit ItemListerJobGrowingPartsSendingReceiver(DBJob* const job,
+                                                      int start,
+                                                      int end,
+                                                      int increment);
     void receive(const ItemListerRecord& record) override;
 
 protected:

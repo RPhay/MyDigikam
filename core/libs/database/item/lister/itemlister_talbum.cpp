@@ -29,7 +29,6 @@
 namespace Digikam
 {
 
-
 void ItemLister::listTag(ItemListerReceiver* const receiver,
                          const QList<int>& tagIds)
 {
@@ -124,6 +123,7 @@ void ItemLister::listImageTagPropertySearch(ItemListerReceiver* const receiver, 
     // ImageMetadata and ImagePositions are not joined and hooks are ignored.
 
     // query head
+
     sqlQuery = QString::fromUtf8(
                "SELECT DISTINCT Images.id, Images.name, Images.album, "
                "       Albums.albumRoot, "
@@ -139,6 +139,7 @@ void ItemLister::listImageTagPropertySearch(ItemListerReceiver* const receiver, 
                "WHERE Images.status=1 AND ( ");
 
     // query body
+
     ItemQueryBuilder builder;
     ItemQueryPostHooks hooks;
     builder.setImageTagPropertiesJoined(true); // ImageTagProperties added by INNER JOIN
@@ -198,7 +199,9 @@ void ItemLister::listImageTagPropertySearch(ItemListerReceiver* const receiver, 
         ++it;
         height                   = (*it).toInt();
         ++it;
+
         // sync the following order with the places where it's read, e.g., FaceTagsIface
+
         QVariant value           = (*it);
         ++it;
         QVariant property        = (*it);
@@ -207,10 +210,12 @@ void ItemLister::listImageTagPropertySearch(ItemListerReceiver* const receiver, 
         ++it;
 
         // If the property is the autodetected person, get the original image tag properties
+
         if (property.toString().compare(ImageTagPropertyName::autodetectedPerson()) == 0)
         {
             // If we split the value by ',' we must have the segments tagId, property, region
             // Set the values.
+
             QStringList vals = value.toString().split(QLatin1Char(','));
 
             if (vals.size() == 3)

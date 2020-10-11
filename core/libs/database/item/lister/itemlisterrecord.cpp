@@ -28,15 +28,15 @@ namespace Digikam
 {
 
 ItemListerRecord::ItemListerRecord(ItemListerRecord::BinaryFormat format)
-    : albumID(-1),
-      albumRootID(-1),
-      rating(-1),
-      fileSize(-1),
-      imageID(-1),
+    : albumID                         (-1),
+      albumRootID                     (-1),
+      rating                          (-1),
+      fileSize                        (-1),
+      imageID                         (-1),
       currentFuzzySearchReferenceImage(-1),
-      currentSimilarity(0.0),
-      category(DatabaseItem::UndefinedCategory),
-      binaryFormat(format)
+      currentSimilarity               (0.0),
+      category                        (DatabaseItem::UndefinedCategory),
+      binaryFormat                    (format)
 {
 }
 

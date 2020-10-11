@@ -45,6 +45,7 @@ void ItemLister::listSearch(ItemListerReceiver* const receiver,
     QString errMsg;
 
     // query head
+
     sqlQuery = QString::fromUtf8(
                "SELECT DISTINCT Images.id, Images.name, Images.album, "
                "       Albums.albumRoot, "
@@ -62,6 +63,7 @@ void ItemLister::listSearch(ItemListerReceiver* const receiver,
                "WHERE Images.status=1 AND ( ");
 
     // query body
+
     ItemQueryBuilder   builder;
     ItemQueryPostHooks hooks;
 
@@ -166,9 +168,12 @@ void ItemLister::listSearch(ItemListerReceiver* const receiver,
 void ItemLister::listHaarSearch(ItemListerReceiver* const receiver,
                                 const QString& xml)
 {
-    //qCDebug(DIGIKAM_GENERAL_LOG) << "Query: " << xml;
+/*
+    qCDebug(DIGIKAM_GENERAL_LOG) << "Query: " << xml;
+*/
     // ------------------------------------------------
     // read basic info
+
     SearchXmlReader reader(xml);
     reader.readToFirstField();
 
@@ -194,16 +199,20 @@ void ItemLister::listHaarSearch(ItemListerReceiver* const receiver,
 
     // ------------------------------------------------
     // read target albums
+
     SearchXmlReader albumsReader(xml);
     SearchXml::Element element;
 
     while ((element = albumsReader.readNext()) != SearchXml::End)
     {
         // Get the target albums, i.e. the albums in which the similar images must be located.
+
         if ((element == SearchXml::Field) && (albumsReader.fieldName().compare(QLatin1String("noeffect_targetAlbums")) == 0))
         {
             targetAlbums = albumsReader.valueToIntList();
-            //qCDebug(DIGIKAM_GENERAL_LOG) << "Searching in " << targetAlbums.size() << " Albums";
+/*
+            qCDebug(DIGIKAM_GENERAL_LOG) << "Searching in " << targetAlbums.size() << " Albums";
+*/
             break;
         }
     }
@@ -213,19 +222,25 @@ void ItemLister::listHaarSearch(ItemListerReceiver* const receiver,
     if (!numResultsString.isNull())
     {
         numberOfResults = numResultsString.toString().toInt();
-        //qCDebug(DIGIKAM_GENERAL_LOG) << "Returning " << numberOfResults << " results";
+/*
+        qCDebug(DIGIKAM_GENERAL_LOG) << "Returning " << numberOfResults << " results";
+*/
     }
 
     if (!thresholdString.isNull())
     {
         threshold = qMax(thresholdString.toString().toDouble(), 0.1);
-        //qCDebug(DIGIKAM_GENERAL_LOG) << "Minimum threshold: " << threshold;
+/*
+        qCDebug(DIGIKAM_GENERAL_LOG) << "Minimum threshold: " << threshold;
+*/
     }
 
     if (!maxThresholdString.isNull())
     {
         maxThreshold = qMax(maxThresholdString.toString().toDouble(), threshold);
-        //qCDebug(DIGIKAM_GENERAL_LOG) << "Maximum threshold: " << maxThreshold;
+/*
+        qCDebug(DIGIKAM_GENERAL_LOG) << "Maximum threshold: " << maxThreshold;
+*/
     }
 
     if (!sketchTypeString.isNull() && sketchTypeString == QLatin1String("handdrawn"))
@@ -235,7 +250,7 @@ void ItemLister::listHaarSearch(ItemListerReceiver* const receiver,
 
     QMap<qlonglong, double> imageSimilarityMap;
 
-    if (type == QLatin1String("signature"))
+    if      (type == QLatin1String("signature"))
     {
         QString sig = reader.value();
         HaarIface iface;
@@ -263,6 +278,7 @@ void ItemLister::listHaarSearch(ItemListerReceiver* const receiver,
     else if (type == QLatin1String("image"))
     {
         // If the given SAlbum contains a dropped image, get all images which are similar to this one.
+
         QString path = reader.value();
         HaarIface iface;
 
@@ -287,6 +303,7 @@ void ItemLister::listFromHaarSearch(ItemListerReceiver* const receiver,
 
     {
         // Generate the query that returns the similarity as constant for a given image id.
+
         CoreDbAccess access;
         DbEngineSqlQuery query = access.backend()->prepareQuery(QString::fromUtf8(
                              "SELECT DISTINCT Images.id, Images.name, Images.album, "
@@ -304,6 +321,7 @@ void ItemLister::listFromHaarSearch(ItemListerReceiver* const receiver,
         double similarity;
 
         // Iterate over the image similarity map and bind the image id and similarity to the query.
+
         for (QMap<qlonglong, double>::const_iterator it = imageSimilarityMap.constBegin() ;
              it != imageSimilarityMap.constEnd() ; ++it)
         {
@@ -320,10 +338,12 @@ void ItemLister::listFromHaarSearch(ItemListerReceiver* const receiver,
             }
 
             // Add the similarity to the table row.
+
             QList<QVariant> tableRow = access.backend()->readToList(query);
             tableRow.append(similarity);
 
             // append results to list
+
             values << tableRow;
         }
     }

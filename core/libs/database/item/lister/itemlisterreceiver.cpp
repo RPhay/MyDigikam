@@ -63,14 +63,17 @@ void ItemListerJobReceiver::sendData()
 
 void ItemListerJobReceiver::error(const QString& errMsg)
 {
-    m_job->error(errMsg);
+    emit m_job->error(errMsg);
+
     ItemListerValueListReceiver::error(errMsg);
 }
 
 // ----------------------------------------------
 
 ItemListerJobPartsSendingReceiver::ItemListerJobPartsSendingReceiver(DBJob* const job, int limit)
-    : ItemListerJobReceiver(job), m_limit(limit), m_count(0)
+    : ItemListerJobReceiver(job),
+      m_limit              (limit),
+      m_count              (0)
 {
 
 }
@@ -88,10 +91,13 @@ void ItemListerJobPartsSendingReceiver::receive(const ItemListerRecord &record)
 
 // ----------------------------------------------
 
-ItemListerJobGrowingPartsSendingReceiver::
-    ItemListerJobGrowingPartsSendingReceiver(DBJob* const job, int start, int end, int increment)
+ItemListerJobGrowingPartsSendingReceiver::ItemListerJobGrowingPartsSendingReceiver(DBJob* const job,
+                                                                                   int start,
+                                                                                   int end,
+                                                                                   int increment)
     : ItemListerJobPartsSendingReceiver(job, start),
-      m_maxLimit(end), m_increment(increment)
+      m_maxLimit                       (end),
+      m_increment                      (increment)
 {
 }
 

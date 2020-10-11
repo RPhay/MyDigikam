@@ -86,7 +86,7 @@ public:
 
 private:
 
-    // Hidden copy constructor and assignment operator.
+    /// Hidden copy constructor and assignment operator.
     ItemLister(const ItemLister&);
     ItemLister& operator=(const ItemLister&);
 

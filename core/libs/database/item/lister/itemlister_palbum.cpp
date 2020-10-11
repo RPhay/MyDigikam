@@ -83,6 +83,7 @@ void ItemLister::listPAlbum(ItemListerReceiver* const receiver,
     if (d->recursive)
     {
         // SQLite allows no more than 999 parameters
+
         const int maxParams = CoreDbAccess().backend()->maximumBoundValues();
 
         for (int i = 0 ; i < albumIds.size() ; ++i)

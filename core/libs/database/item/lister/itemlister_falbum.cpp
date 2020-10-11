@@ -56,6 +56,7 @@ void ItemLister::listFaces(ItemListerReceiver* const receiver, int personId)
         QList<QString> nameList = pair.values(QLatin1String("face"));
 
         // push the image into the list every time a face with the name is found in the image
+
         int count = nameList.count(cache->tagName(personId));
 
         for (int i = 0 ; i < count ; ++i)
@@ -122,6 +123,7 @@ void ItemLister::listFromIdList(ItemListerReceiver* const receiver,
             }
 
             // append results to list
+
             values << access.backend()->readToList(query);
         }
     }

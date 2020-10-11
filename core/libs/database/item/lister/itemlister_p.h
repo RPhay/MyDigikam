@@ -81,9 +81,9 @@ class Q_DECL_HIDDEN ItemLister::Private
 public:
 
     explicit Private()
-      : recursive(true),
+      : recursive              (true),
         listOnlyAvailableImages(true),
-        allowExtraValues(false)
+        allowExtraValues       (false)
     {
     }
 
