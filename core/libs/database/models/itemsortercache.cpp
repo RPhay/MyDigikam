@@ -138,19 +138,21 @@ int ItemSorterCache::itemFastCacheCompare(const QString& a, const QString& b,
         collator.setNumericMode(d->itemNatural);
         collator.setCaseSensitivity(d->itemSensitive);
 
-        QString as = a;
-        QString bs = b;
-
-        as.replace(QLatin1String("_v"), QLatin1String("vv"), Qt::CaseInsensitive);
-        bs.replace(QLatin1String("_v"), QLatin1String("vv"), Qt::CaseInsensitive);
-
         if (!containsA)
         {
+            QString as = a;
+            as.replace(QLatin1String("_v"),
+                       QLatin1String("vv"), Qt::CaseInsensitive);
+
             d->itemSortKeys[a].emplace_back(collator.sortKey(as));
         }
 
         if (!containsB)
         {
+            QString bs = b;
+            bs.replace(QLatin1String("_v"),
+                       QLatin1String("vv"), Qt::CaseInsensitive);
+
             d->itemSortKeys[b].emplace_back(collator.sortKey(bs));
         }
     }
