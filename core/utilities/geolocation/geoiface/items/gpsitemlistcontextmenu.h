@@ -53,7 +53,7 @@ public:
 
     explicit GPSItemListContextMenu(GPSItemList* const imagesList,
                                     GPSBookmarkOwner* const bookmarkOwner = nullptr);
-    ~GPSItemListContextMenu() override;
+    ~GPSItemListContextMenu()                           override;
 
     void setEnabled(const bool state);
 
@@ -63,7 +63,7 @@ protected:
     bool getCurrentItemPositionAndUrl(GPSDataContainer* const gpsInfo, QUrl* const itemUrl);
     void removeInformationFromSelectedImages(const GPSDataContainer::HasFlags flagsToClear, const QString& undoDescription);
 
-    bool eventFilter(QObject* watched, QEvent* event) override;
+    bool eventFilter(QObject* watched, QEvent* event)   override;
 
     static bool getCurrentPosition(GPSDataContainer* position, void* mydata);
 

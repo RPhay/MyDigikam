@@ -777,7 +777,7 @@ void GPSItemListContextMenu::slotAltitudeLookupReady(const QList<int>& readyRequ
         d->altitudeReceivedCount++;
     }
 
-    signalProgressChanged(d->altitudeReceivedCount);
+    emit signalProgressChanged(d->altitudeReceivedCount);
 }
 
 void GPSItemListContextMenu::slotAltitudeLookupDone()
