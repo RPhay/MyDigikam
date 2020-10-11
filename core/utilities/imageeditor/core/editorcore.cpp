@@ -62,7 +62,7 @@ void EditorCore::setDefaultInstance(EditorCore* const instance)
 
 EditorCore::EditorCore()
     : QObject(),
-      d(new Private)
+      d      (new Private)
 {
     d->undoMan = new UndoManager(this);
     d->thread  = new SharedLoadSaveThread;
@@ -172,8 +172,9 @@ void EditorCore::slotLoadRawFromTool(const LoadingDescription& props, const DImg
 
 void EditorCore::slotLoadRaw(const LoadingDescription& props)
 {
-    //qCDebug(DIGIKAM_GENERAL_LOG) << d->nextRawDescription.rawDecodingSettings;
-
+/*
+    qCDebug(DIGIKAM_GENERAL_LOG) << d->nextRawDescription.rawDecodingSettings;
+*/
     d->load(props);
 }
 
@@ -773,9 +774,9 @@ void EditorCore::putIccProfile(const IccProfile& profile)
         qCWarning(DIGIKAM_GENERAL_LOG) << "d->image is NULL";
         return;
     }
-
-    //qCDebug(DIGIKAM_GENERAL_LOG) << "Embedding profile: " << profile;
-
+/*
+    qCDebug(DIGIKAM_GENERAL_LOG) << "Embedding profile: " << profile;
+*/
     d->image.setIccProfile(profile);
     setModified();
 }

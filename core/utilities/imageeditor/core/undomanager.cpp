@@ -49,9 +49,9 @@ class Q_DECL_HIDDEN UndoManager::Private
 public:
 
     explicit Private()
-      : origin(0),
+      : origin   (0),
         undoCache(nullptr),
-        core(nullptr)
+        core     (nullptr)
     {
     }
 

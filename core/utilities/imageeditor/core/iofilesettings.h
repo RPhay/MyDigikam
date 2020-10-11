@@ -38,18 +38,18 @@ class DIGIKAM_EXPORT IOFileSettings
 public:
 
     IOFileSettings()
-      : JPEGCompression(75),
-        JPEGSubSampling(1),    // Medium sub-sampling
-        PNGCompression(9),
-        TIFFCompression(false),
+      : JPEGCompression    (75),
+        JPEGSubSampling    (1),    // Medium sub-sampling
+        PNGCompression     (9),
+        TIFFCompression    (false),
         JPEG2000Compression(75),
-        JPEG2000LossLess(true),
-        PGFCompression(3),
-        PGFLossLess(true),
-        HEIFCompression(75),
-        HEIFLossLess(true),
-        useRAWImport(true),
-        rawImportToolIid(QLatin1String("org.kde.digikam.plugin.rawimport.Native"))
+        JPEG2000LossLess   (true),
+        PGFCompression     (3),
+        PGFLossLess        (true),
+        HEIFCompression    (75),
+        HEIFLossLess       (true),
+        useRAWImport       (true),
+        rawImportToolIid   (QLatin1String("org.kde.digikam.plugin.rawimport.Native"))
     {
     };
 

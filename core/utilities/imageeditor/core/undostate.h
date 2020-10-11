@@ -32,9 +32,9 @@ class UndoState
 public:
 
     explicit UndoState()
-      : hasUndo(false),
-        hasRedo(false),
-        hasChanges(false),
+      : hasUndo           (false),
+        hasRedo           (false),
+        hasChanges        (false),
         hasUndoableChanges(false)
     {
     }

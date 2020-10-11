@@ -132,7 +132,7 @@ DImageHistory UndoAction::fileOriginResolvedHistory() const
 UndoActionReversible::UndoActionReversible(EditorCore* const core,
                                            const DImgBuiltinFilter& reversibleFilter)
     : UndoAction(core),
-      m_filter(reversibleFilter)
+      m_filter  (reversibleFilter)
 {
     setTitle(m_filter.i18nDisplayableName());
 }
