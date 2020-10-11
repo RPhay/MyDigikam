@@ -47,7 +47,6 @@ class TagPropertiesFilterModel;
 class AssignNameWidget : public QFrame
 {
     Q_OBJECT
-    Q_ENUMS(Mode TagEntryWidgetMode LayoutMode VisualStyle)
     Q_PROPERTY(Mode mode READ mode WRITE setMode)
     Q_PROPERTY(TagEntryWidgetMode tagEntryWidgetMode READ tagEntryWidgetMode WRITE setTagEntryWidgetMode)
     Q_PROPERTY(LayoutMode layoutMode READ layoutMode WRITE setLayoutMode)
@@ -63,6 +62,7 @@ public:
         ConfirmedEditMode,
         IgnoredMode
     };
+    Q_ENUM(Mode)
 
     enum TagEntryWidgetMode
     {
@@ -70,6 +70,7 @@ public:
         AddTagsComboBoxMode,
         AddTagsLineEditMode
     };
+    Q_ENUM(TagEntryWidgetMode)
 
     enum LayoutMode
     {
@@ -78,6 +79,7 @@ public:
         TwoLines,
         Compact
     };
+    Q_ENUM(LayoutMode)
 
     enum VisualStyle
     {
@@ -86,6 +88,7 @@ public:
         TranslucentDarkRound,
         TranslucentThemedFrameless
     };
+    Q_ENUM(VisualStyle)
 
 public:
 

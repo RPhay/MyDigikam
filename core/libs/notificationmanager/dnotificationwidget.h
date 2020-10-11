@@ -47,8 +47,6 @@ namespace Digikam
 class DIGIKAM_EXPORT DNotificationWidget : public QFrame
 {
     Q_OBJECT
-    Q_ENUMS(MessageType)
-
     Q_PROPERTY(QString text READ text WRITE setText)
     Q_PROPERTY(bool wordWrap READ wordWrap WRITE setWordWrap)
     Q_PROPERTY(bool closeButtonVisible READ isCloseButtonVisible WRITE setCloseButtonVisible)
@@ -68,6 +66,7 @@ public:
         Warning,
         Error
     };
+    Q_ENUM(MessageType)
 
 public:
 

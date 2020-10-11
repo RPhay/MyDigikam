@@ -39,7 +39,6 @@ namespace DigikamEditorHealingCloneToolPlugin
 class HealingCloneToolWidget : public ImageRegionWidget
 {
     Q_OBJECT
-    Q_ENUMS(HealingCloneState)
 
 public:
 
@@ -52,6 +51,7 @@ public:
         MOVE_IMAGE,
         DO_NOTHING
     };
+    Q_ENUM(HealingCloneState)
 
 public:
 

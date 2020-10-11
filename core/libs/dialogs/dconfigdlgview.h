@@ -58,7 +58,6 @@ class DConfigDlgModel;
 class DIGIKAM_EXPORT DConfigDlgView : public QWidget
 {
     Q_OBJECT
-    Q_ENUMS(FaceType)
     Q_PROPERTY(FaceType faceType READ faceType WRITE setFaceType)
     Q_DECLARE_PRIVATE(DConfigDlgView)
 
@@ -89,6 +88,7 @@ public:
         Tree,
         Tabbed
     };
+    Q_ENUM(FaceType)
 
 public:
 
