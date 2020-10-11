@@ -55,16 +55,16 @@ class ItemFilterModelTodoPackage
 public:
 
     ItemFilterModelTodoPackage()
-        : version(0),
+        : version   (0),
           isForReAdd(false)
     {
     }
 
     ItemFilterModelTodoPackage(const QVector<ItemInfo>& infos, const QVector<QVariant>& extraValues, int version, bool isForReAdd)
-        : infos(infos),
+        : infos      (infos),
           extraValues(extraValues),
-          version(version),
-          isForReAdd(isForReAdd)
+          version    (version),
+          isForReAdd (isForReAdd)
     {
     }
 

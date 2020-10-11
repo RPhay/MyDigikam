@@ -48,7 +48,7 @@ namespace Digikam
 
 ImageSortFilterModel::ImageSortFilterModel(QObject* const parent)
     : DCategorizedSortFilterProxyModel(parent),
-      m_chainedModel(nullptr)
+      m_chainedModel                  (nullptr)
 {
 }
 
@@ -88,6 +88,7 @@ void ImageSortFilterModel::setDirectSourceItemModel(ItemModel* const model)
 void ImageSortFilterModel::setSourceModel(QAbstractItemModel* const model)
 {
     // made it protected, only setSourceItemModel is public
+
     DCategorizedSortFilterProxyModel::setSourceModel(model);
 }
 
@@ -109,6 +110,7 @@ ImageSortFilterModel* ImageSortFilterModel::sourceFilterModel() const
 ItemFilterModel* ImageSortFilterModel::imageFilterModel() const
 {
     // reimplemented in ItemFilterModel
+
     if (m_chainedModel)
     {
         return m_chainedModel->imageFilterModel();
@@ -258,14 +260,14 @@ QList<ItemInfo> ImageSortFilterModel::imageInfosSorted() const
 
 ItemFilterModel::ItemFilterModel(QObject* const parent)
     : ImageSortFilterModel(parent),
-      d_ptr(new ItemFilterModelPrivate)
+      d_ptr               (new ItemFilterModelPrivate)
 {
     d_ptr->init(this);
 }
 
 ItemFilterModel::ItemFilterModel(ItemFilterModelPrivate& dd, QObject* const parent)
     : ImageSortFilterModel(parent),
-      d_ptr(&dd)
+      d_ptr               (&dd)
 {
     d_ptr->init(this);
 }
@@ -355,10 +357,10 @@ QVariant ItemFilterModel::data(const QModelIndex& index, int role) const
 
         case SortOrderRole:
             return d->sorter.sortRole;
-
-            //case CategoryCountRole:
-            //  return categoryCount(d->imageModel->imageInfoRef(mapToSource(index)));
-
+/*
+        case CategoryCountRole:
+            return categoryCount(d->imageModel->imageInfoRef(mapToSource(index)));
+*/
         case CategoryAlbumIdRole:
             return d->imageModel->imageInfoRef(mapToSource(index)).albumId();
 
@@ -650,11 +652,12 @@ bool ItemFilterModel::filterAcceptsRow(int source_row, const QModelIndex& source
     }
 
     // usually done in thread and cache, unless source model changed
+
     ItemInfo info = d->imageModel->imageInfo(source_row);
     bool match    = d->filter.matches(info);
     match         = match ? d->versionFilter.matches(info) : false;
 
-    return match ? d->groupFilter.matches(info) : false;
+    return (match ? d->groupFilter.matches(info) : false);
 }
 
 void ItemFilterModel::setSendItemInfoSignals(bool sendSignals)
@@ -726,6 +729,7 @@ void ItemFilterModelPreparer::process(ItemFilterModelTodoPackage package)
     }
 
     // get thread-local copy
+
     bool needPrepareTags, needPrepareComments, needPrepareGroups;
     QList<ItemFilterModelPrepareHook*> prepareHooks;
 
@@ -737,7 +741,8 @@ void ItemFilterModelPreparer::process(ItemFilterModelTodoPackage package)
         prepareHooks        = d->prepareHooks;
     }
 
-    //TODO: Make efficient!!
+    // TODO: Make efficient!!
+
     if (needPrepareComments)
     {
         foreach (const ItemInfo& info, package.infos)
@@ -790,6 +795,7 @@ void ItemFilterModelFilterer::process(ItemFilterModelTodoPackage package)
     }
 
     // get thread-local copy
+
     ItemFilterSettings        localFilter;
     VersionItemFilterSettings localVersionFilter;
     GroupItemFilterSettings   localGroupFilter;
@@ -806,7 +812,8 @@ void ItemFilterModelFilterer::process(ItemFilterModelTodoPackage package)
     }
 
     // Actual filtering. The variants to spare checking hasOneMatch over and over again.
-    if (hasOneMatch && hasOneMatchForText)
+
+    if      (hasOneMatch && hasOneMatchForText)
     {
         foreach (const ItemInfo& info, package.infos)
         {
@@ -913,6 +920,7 @@ void ItemFilterModel::setStringTypeNatural(bool natural)
 int ItemFilterModel::compareCategories(const QModelIndex& left, const QModelIndex& right) const
 {
     // source indexes
+
     Q_D(const ItemFilterModel);
 
     if (!d->sorter.isCategorized())
@@ -929,6 +937,7 @@ int ItemFilterModel::compareCategories(const QModelIndex& left, const QModelInde
     const ItemInfo& rightInfo   = d->imageModel->imageInfoRef(right);
 
     // Check grouping
+
     qlonglong leftGroupImageId  = leftInfo.groupImageId();
     qlonglong rightGroupImageId = rightInfo.groupImageId();
 
@@ -958,6 +967,7 @@ int ItemFilterModel::compareCategories(const QModelIndex& left, const QModelInde
 bool ItemFilterModel::subSortLessThan(const QModelIndex& left, const QModelIndex& right) const
 {
     // source indexes
+
     Q_D(const ItemFilterModel);
 
     if (!left.isValid() || !right.isValid())
@@ -979,18 +989,21 @@ bool ItemFilterModel::subSortLessThan(const QModelIndex& left, const QModelIndex
     }
 
     // Check grouping
+
     qlonglong leftGroupImageId  = leftInfo.groupImageId();
     qlonglong rightGroupImageId = rightInfo.groupImageId();
 
     // Either no grouping (-1), or same group image, or same image
+
     if (leftGroupImageId == rightGroupImageId)
     {
         return infosLessThan(leftInfo, rightInfo);
     }
 
-   // We have grouping to handle
+    // We have grouping to handle
 
     // Is one grouped on the other? Sort behind leader.
+
     if (leftGroupImageId == rightInfo.id())
     {
         return false;
@@ -1002,6 +1015,7 @@ bool ItemFilterModel::subSortLessThan(const QModelIndex& left, const QModelIndex
     }
 
     // Use the group leader for sorting
+
     return infosLessThan(
                          (leftGroupImageId  == -1) ? leftInfo  : ItemInfo(leftGroupImageId),
                          (rightGroupImageId == -1) ? rightInfo : ItemInfo(rightGroupImageId)
@@ -1011,9 +1025,11 @@ bool ItemFilterModel::subSortLessThan(const QModelIndex& left, const QModelIndex
 int ItemFilterModel::compareInfosCategories(const ItemInfo& left, const ItemInfo& right) const
 {
     // Note: reimplemented in ItemAlbumFilterModel
+
     Q_D(const ItemFilterModel);
 
     FaceTagsIface leftFace, rightFace;
+
     return d->sorter.compareCategories(left, right, leftFace, rightFace);
 }
 
@@ -1021,12 +1037,14 @@ int ItemFilterModel::compareInfosCategories(const ItemInfo& left, const ItemInfo
                                             const FaceTagsIface& leftFace, const FaceTagsIface& rightFace) const
 {
     // Note: reimplemented in ItemAlbumFilterModel
+
     Q_D(const ItemFilterModel);
 
     return d->sorter.compareCategories(left, right, leftFace, rightFace);
 }
 
 // Feel free to optimize. QString::number is 3x slower.
+
 static inline QString fastNumberToString(int id)
 {
     const int size = sizeof(int) * 2;
@@ -1135,12 +1153,14 @@ void ItemFilterModel::slotImageTagChange(const ImageTagChangeset& changeset)
     }
 
     // already scheduled to re-filter?
+
     if (d->updateFilterTimer->isActive())
     {
         return;
     }
 
     // do we filter at all?
+
     if (!d->versionFilter.isFilteringByTags() &&
         !d->filter.isFilteringByTags()        &&
         !d->filter.isFilteringByText())
@@ -1149,9 +1169,11 @@ void ItemFilterModel::slotImageTagChange(const ImageTagChangeset& changeset)
     }
 
     // is one of our images affected?
+
     foreach (const qlonglong& id, changeset.ids())
     {
         // if one matching image id is found, trigger a refresh
+
         if (d->imageModel->hasImage(id))
         {
             d->updateFilterTimer->start();
@@ -1170,12 +1192,14 @@ void ItemFilterModel::slotImageChange(const ImageChangeset& changeset)
     }
 
     // already scheduled to re-filter?
+
     if (d->updateFilterTimer->isActive())
     {
         return;
     }
 
     // is one of the values affected that we filter or sort by?
+
     DatabaseFields::Set set = changeset.changes();
     bool sortAffected       = (set & d->sorter.watchFlags());
     bool filterAffected     = (set & d->filter.watchFlags()) || (set & d->groupFilter.watchFlags());
@@ -1187,11 +1211,13 @@ void ItemFilterModel::slotImageChange(const ImageChangeset& changeset)
     }
 
     // is one of our images affected?
+
     bool imageAffected = false;
 
     foreach (const qlonglong& id, changeset.ids())
     {
         // if one matching image id is found, trigger a refresh
+
         if (d->imageModel->hasImage(id))
         {
             imageAffected = true;

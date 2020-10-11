@@ -47,13 +47,13 @@ class Q_DECL_HIDDEN ItemModel::Private
 public:
 
     explicit Private()
-      : keepFilePathCache(false),
-        sendRemovalSignals(false),
-        preprocessor(nullptr),
-        refreshing(false),
-        reAdding(false),
+      : keepFilePathCache          (false),
+        sendRemovalSignals         (false),
+        preprocessor               (nullptr),
+        refreshing                 (false),
+        reAdding                   (false),
         incrementalRefreshRequested(false),
-        incrementalUpdater(nullptr)
+        incrementalUpdater         (nullptr)
     {
     }
 
@@ -91,7 +91,7 @@ public:
             return false;
         }
 
-        if (index.row() < 0 || index.row() >= infos.size())
+        if ((index.row() < 0) || (index.row() >= infos.size()))
         {
             qCDebug(DIGIKAM_GENERAL_LOG) << "Invalid index" << index;
             return false;
@@ -784,6 +784,7 @@ void ItemModel::appendInfosChecked(const QList<ItemInfo>& infos, const QList<QVa
 void ItemModel::reAddItemInfos(const QList<ItemInfo>& infos, const QList<QVariant>& extraValues)
 {
     // addItemInfos -> appendInfos -> preprocessor -> reAddItemInfos
+
     publiciseInfos(infos, extraValues);
 }
 
@@ -1049,7 +1050,7 @@ void ItemModel::removeRowPairs(const QList<QPair<int, int> >& toRemove)
 
     int removedRows = 0;
     int offset      = 0;
-    typedef QPair<int, int> IntPair; // to make foreach macro happy
+    typedef QPair<int, int> IntPair;            // to make foreach macro happy
 
     foreach (const IntPair& pair, toRemove)
     {
@@ -1058,6 +1059,7 @@ void ItemModel::removeRowPairs(const QList<QPair<int, int> >& toRemove)
         removedRows     = end - begin + 1;
 
         // when removing from the list, all subsequent indexes are affected
+
         offset += removedRows;
 
         QList<ItemInfo> removedInfos;
@@ -1072,6 +1074,7 @@ void ItemModel::removeRowPairs(const QList<QPair<int, int> >& toRemove)
         beginRemoveRows(QModelIndex(), begin, end);
 
         // update idHash - which points to indexes of d->infos, and these change now!
+
         QMultiHash<qlonglong, int>::iterator it;
 
         for (it = d->idHash.begin() ; it != d->idHash.end() ; )
@@ -1081,11 +1084,13 @@ void ItemModel::removeRowPairs(const QList<QPair<int, int> >& toRemove)
                 if (it.value() > end)
                 {
                     // after the removed interval: adjust index
+
                     it.value() -= removedRows;
                 }
                 else
                 {
                     // in the removed interval
+
                     it = d->idHash.erase(it);
                     continue;
                 }
@@ -1275,7 +1280,7 @@ QList<QPair<int, int> > ItemModelIncrementalUpdater::toContiguousPairs(const QLi
             continue;
         }
 
-        pairs << pair; // insert last pair
+        pairs << pair;          // insert last pair
         pair.first  = index;
         pair.second = index;
     }

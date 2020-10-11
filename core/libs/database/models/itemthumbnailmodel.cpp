@@ -43,12 +43,12 @@ class Q_DECL_HIDDEN ItemThumbnailModel::Private
 public:
 
     explicit Private()
-      : thread(nullptr),
-        preloadThread(nullptr),
-        thumbSize(0),
+      : thread             (nullptr),
+        preloadThread      (nullptr),
+        thumbSize          (0),
         lastGlobalThumbSize(0),
-        preloadThumbSize(0),
-        emitDataChanged(true)
+        preloadThumbSize   (0),
+        emitDataChanged    (true)
     {
         staticListContainingThumbnailRole << ItemModel::ThumbnailRole;
     }
@@ -78,7 +78,7 @@ public:
 
 ItemThumbnailModel::ItemThumbnailModel(QObject* const parent)
     : ItemModel(parent),
-      d(new Private)
+      d        (new Private)
 {
     setKeepsFilePathCache(true);
 }
@@ -307,6 +307,7 @@ void ItemThumbnailModel::slotThumbnailLoaded(const LoadingDescription& loadingDe
     }
 
     // In case of multiple occurrence, we currently do not know which thumbnail is this. Signal change on all.
+
     QModelIndexList indexes;
     ThumbnailIdentifier thumbId = loadingDescription.thumbnailIdentifier();
 

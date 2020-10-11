@@ -39,15 +39,15 @@ namespace Digikam
 {
 
 ItemSortSettings::ItemSortSettings()
-    : categorizationMode(NoCategories),
-      categorizationSortOrder(DefaultOrder),
+    : categorizationMode            (NoCategories),
+      categorizationSortOrder       (DefaultOrder),
       currentCategorizationSortOrder(Qt::AscendingOrder),
-      categorizationCaseSensitivity(Qt::CaseSensitive),
-      sortRole(SortByFileName),
-      sortOrder(DefaultOrder),
-      strTypeNatural(true),
-      currentSortOrder(Qt::AscendingOrder),
-      sortCaseSensitivity(Qt::CaseSensitive)
+      categorizationCaseSensitivity (Qt::CaseSensitive),
+      sortRole                      (SortByFileName),
+      sortOrder                     (DefaultOrder),
+      strTypeNatural                (true),
+      currentSortOrder              (Qt::AscendingOrder),
+      sortCaseSensitivity           (Qt::CaseSensitive)
 {
 }
 
@@ -187,6 +187,7 @@ int ItemSortSettings::compareCategories(const ItemInfo& left, const ItemInfo& ri
             int rightAlbum = right.albumId();
 
             // return comparison result
+
             if      (leftAlbum == rightAlbum)
             {
                 return 0;
@@ -299,12 +300,14 @@ bool ItemSortSettings::lessThan(const ItemInfo& left, const ItemInfo& right) con
     }
 
     // are they identical?
+
     if (left == right)
     {
         return false;
     }
 
     // If left and right equal for first sort order, use a hierarchy of all sort orders
+
     if ((result = compare(left, right, SortByFileName)) != 0)
     {
         return (result < 0);
@@ -377,7 +380,9 @@ int ItemSortSettings::compare(const ItemInfo& left, const ItemInfo& right, SortR
             return compareByOrder(left.modDateTime(), right.modDateTime(), currentSortOrder);
 
         case SortByRating:
+
             // I have the feeling that inverting the sort order for rating is the natural order
+
             return - compareByOrder(left.rating(), right.rating(), currentSortOrder);
 
         case SortByImageSize:
@@ -402,13 +407,16 @@ int ItemSortSettings::compare(const ItemInfo& left, const ItemInfo& right, SortR
         {
             qlonglong leftReferenceImageId  = left.currentReferenceImage();
             qlonglong rightReferenceImageId = right.currentReferenceImage();
+
             // make sure that the original image has always the highest similarity.
+
             double leftSimilarity           = left.id()  == leftReferenceImageId  ? 1.1 : left.currentSimilarity();
             double rightSimilarity          = right.id() == rightReferenceImageId ? 1.1 : right.currentSimilarity();
             return compareByOrder(leftSimilarity, rightSimilarity, currentSortOrder);
         }
 
         // Implementation to make Unconfirmed Faces of a tag appear before Confirmed faces.
+
         case SortByFaces:
         {
             return compareByOrder(right.unconfirmedFaceCount(), left.unconfirmedFaceCount(), currentSortOrder);
@@ -547,12 +555,16 @@ DatabaseFields::Set ItemSortSettings::watchFlags() const
             break;
 
         case SortBySimilarity:
+
             // TODO: Not sure what to do here....
+
             set |= DatabaseFields::Name;
             break;
 
         case SortByFaces:
+
             // Nothing needed for this.
+
             break;
 
         case SortByManualOrderAndName:
@@ -580,7 +592,9 @@ DatabaseFields::Set ItemSortSettings::watchFlags() const
             break;
 
         case CategoryByFaces:
+
             // nothing needed here.
+
             break;
     }
 

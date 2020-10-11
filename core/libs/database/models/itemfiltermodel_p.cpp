@@ -36,22 +36,21 @@ namespace Digikam
 {
 
 ItemFilterModel::ItemFilterModelPrivate::ItemFilterModelPrivate()
-    : imageModel(nullptr),
-      version(0),
-      lastDiscardVersion(0),
-      sentOut(0),
-      sentOutForReAdd(0),
-      updateFilterTimer(nullptr),
-      needPrepare(false),
+    : imageModel         (nullptr),
+      version            (0),
+      lastDiscardVersion (0),
+      sentOut            (0),
+      sentOutForReAdd    (0),
+      updateFilterTimer  (nullptr),
+      needPrepare        (false),
       needPrepareComments(false),
-      needPrepareTags(false),
-      needPrepareGroups(false),
-      preparer(nullptr),
-      filterer(nullptr),
-      hasOneMatch(false),
-      hasOneMatchForText(false)
+      needPrepareTags    (false),
+      needPrepareGroups  (false),
+      preparer           (nullptr),
+      filterer           (nullptr),
+      hasOneMatch        (false),
+      hasOneMatchForText (false)
 {
-
     setupWorkers();
 }
 
@@ -237,8 +236,10 @@ void ItemFilterModel::ItemFilterModelPrivate::packageFinished(const ItemFilterMo
     if ((sentOut == 0) && (sentOutForReAdd == 0) && !imageModel->isRefreshing())
     {
         q->invalidate(); // use invalidate, not invalidateFilter only. Sorting may have changed as well.
-        emit (q->filterMatches(hasOneMatch));
-        emit (q->filterMatchesForText(hasOneMatchForText));
+
+        emit q->filterMatches(hasOneMatch);
+        emit q->filterMatchesForText(hasOneMatchForText);
+
         filterer->deactivate();
         preparer->deactivate();
     }
