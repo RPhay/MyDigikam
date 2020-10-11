@@ -186,7 +186,7 @@ void WorkerObjectRunnable::run()
 
     object->addRunnable(this);
 
-    emit (object->started());
+    emit object->started();
 
     if (object->transitionToRunning())
     {
@@ -209,7 +209,8 @@ void WorkerObjectRunnable::run()
     }
 
     object->transitionToInactive();
-    emit (object->finished());
+
+    emit object->finished();
 
     // if this is rescheduled, it will wait in the other thread at moveToCurrentThread() above until we park
 

@@ -182,7 +182,7 @@ void DynamicThread::Private::run()
 {
     if (emitSignals)
     {
-        emit (q->starting());
+        emit q->starting();
     }
 
     if (transitionToRunning())
@@ -197,7 +197,7 @@ void DynamicThread::Private::run()
 
     if (emitSignals)
     {
-        emit (q->finished());
+        emit q->finished();
     }
 
     transitionToInactive();
@@ -209,7 +209,7 @@ void DynamicThread::Private::run()
 
 DynamicThread::DynamicThread(QObject* const parent)
     : QObject(parent),
-      d(new Private(this))
+      d      (new Private(this))
 {
     setAutoDelete(false);
     ThreadManager::instance()->initialize(this);

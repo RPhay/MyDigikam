@@ -40,9 +40,9 @@ namespace Digikam
 {
 
 ActionJob::ActionJob()
-    : QObject(),
+    : QObject  (),
       QRunnable(),
-      m_cancel(false)
+      m_cancel (false)
 {
     setAutoDelete(false);
 }
@@ -83,7 +83,7 @@ public:
 
 ActionThreadBase::ActionThreadBase(QObject* const parent)
     : QThread(parent),
-      d(new Private)
+      d      (new Private)
 {
     d->pool = new QThreadPool(this);
 
