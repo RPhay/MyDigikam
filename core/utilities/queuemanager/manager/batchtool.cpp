@@ -63,16 +63,16 @@ class Q_DECL_HIDDEN BatchTool::Private
 public:
 
     explicit Private()
-      : exifResetOrientation(false),
+      : exifResetOrientation  (false),
         exifCanEditOrientation(true),
-        saveAsNewVersion(true),
-        branchHistory(true),
-        cancel(false),
-        last(false),
-        observer(nullptr),
-        toolGroup(BaseTool),
-        rawLoadingRule(QueueSettings::DEMOSAICING),
-        plugin(nullptr)
+        saveAsNewVersion      (true),
+        branchHistory         (true),
+        cancel                (false),
+        last                  (false),
+        observer              (nullptr),
+        toolGroup             (BaseTool),
+        rawLoadingRule        (QueueSettings::DEMOSAICING),
+        plugin                (nullptr)
     {
     }
 
@@ -138,7 +138,7 @@ private:
 
 BatchTool::BatchTool(const QString& name, BatchToolGroup group, QObject* const parent)
     : QObject(parent),
-      d(new Private)
+      d      (new Private)
 {
     d->observer      = new BatchToolObserver(d);
     d->toolGroup     = group;

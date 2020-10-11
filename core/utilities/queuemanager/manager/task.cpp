@@ -52,7 +52,7 @@ public:
 
     explicit Private()
       : cancel(false),
-        tool(nullptr)
+        tool  (nullptr)
     {
     }
 
@@ -68,7 +68,7 @@ public:
 
 Task::Task()
     : ActionJob(),
-      d(new Private)
+      d        (new Private)
 {
 }
 

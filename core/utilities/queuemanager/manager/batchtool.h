@@ -247,7 +247,7 @@ public:
     virtual int toolVersion()                               const
     {
         return 1;
-     };
+    };
 
     /**
      * Re-implement this method is you want customize cancellation of tool, for ex. to call

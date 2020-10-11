@@ -48,7 +48,7 @@ public:
 
     void           registerTool(BatchTool* const tool);
     BatchTool*     findTool(const QString& name, BatchTool::BatchToolGroup group) const;
-    BatchToolsList toolsList() const;
+    BatchToolsList toolsList()                                                    const;
 
 private:
 

@@ -48,7 +48,7 @@ public:
 
     explicit Private()
         : modified(false),
-          mutex()
+          mutex   ()
     {
     }
 
