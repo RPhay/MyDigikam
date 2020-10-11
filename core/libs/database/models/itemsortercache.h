@@ -47,11 +47,11 @@ public:
      */
     static ItemSorterCache* instance();
 
-    int albumFastCacheCompare(const QString& a, const QString& b,
-                              Qt::CaseSensitivity caseSensitive, bool natural) const;
+    int albumCompare(const QString& a, const QString& b,
+                     Qt::CaseSensitivity caseSensitive, bool natural) const;
 
-    int itemFastCacheCompare(const QString& a, const QString& b,
-                             Qt::CaseSensitivity caseSensitive, bool natural) const;
+    int itemCompare(const QString& a, const QString& b,
+                    Qt::CaseSensitivity caseSensitive, bool natural) const;
 
 private:
 

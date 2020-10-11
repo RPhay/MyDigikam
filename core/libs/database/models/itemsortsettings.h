@@ -227,10 +227,10 @@ public:
 
         if (sortOrder == Qt::AscendingOrder)
         {
-            return sorter->itemFastCacheCompare(a, b, caseSensitive, natural);
+            return sorter->itemCompare(a, b, caseSensitive, natural);
         }
 
-        return (- sorter->itemFastCacheCompare(a, b, caseSensitive, natural));
+        return (- sorter->itemCompare(a, b, caseSensitive, natural));
     }
 
 public:

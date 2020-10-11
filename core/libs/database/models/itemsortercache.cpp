@@ -84,8 +84,8 @@ ItemSorterCache* ItemSorterCache::instance()
     return &itemSorterCacheCreator->object;
 }
 
-int ItemSorterCache::albumFastCacheCompare(const QString& a, const QString& b,
-                                           Qt::CaseSensitivity caseSensitive, bool natural) const
+int ItemSorterCache::albumCompare(const QString& a, const QString& b,
+                                  Qt::CaseSensitivity caseSensitive, bool natural) const
 {
     if ((d->albumSensitive != caseSensitive) || (d->albumNatural != natural))
     {
@@ -118,8 +118,8 @@ int ItemSorterCache::albumFastCacheCompare(const QString& a, const QString& b,
     return (d->albumSortKeys[a].front().compare(d->albumSortKeys[b].front()));
 }
 
-int ItemSorterCache::itemFastCacheCompare(const QString& a, const QString& b,
-                                          Qt::CaseSensitivity caseSensitive, bool natural) const
+int ItemSorterCache::itemCompare(const QString& a, const QString& b,
+                                 Qt::CaseSensitivity caseSensitive, bool natural) const
 {
     if ((d->itemSensitive != caseSensitive) || (d->itemNatural != natural))
     {

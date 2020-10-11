@@ -478,7 +478,7 @@ bool AlbumFilterModel::lessThan(const QModelIndex& left, const QModelIndex& righ
     {
         ItemSorterCache* const sorter = ItemSorterCache::instance();
 
-        return (sorter->albumFastCacheCompare(valLeft.toString(), valRight.toString(), sortCaseSensitivity(), natural) < 0);
+        return (sorter->albumCompare(valLeft.toString(), valRight.toString(), sortCaseSensitivity(), natural) < 0);
     }
     else if ((valLeft.type() == QVariant::Date) && (valRight.type() == QVariant::Date))
     {
