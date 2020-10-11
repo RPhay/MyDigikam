@@ -60,9 +60,9 @@ public:
     ~DatabaseTask() override;
 
     void setMode(Mode mode);
-    void setMaintenanceData(MaintenanceData* const data=nullptr);
+    void setMaintenanceData(MaintenanceData* const data = nullptr);
 
-    void computeDatabaseJunk(bool thumbsDb=false, bool facesDb=false, bool similarityDb=false);
+    void computeDatabaseJunk(bool thumbsDb = false, bool facesDb = false, bool similarityDb = false);
 
 Q_SIGNALS:
 

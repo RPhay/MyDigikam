@@ -49,11 +49,11 @@ class Q_DECL_HIDDEN DatabaseTask::Private
 public:
 
     explicit Private()
-        : scanThumbsDb(false),
+        : scanThumbsDb     (false),
           scanRecognitionDb(false),
-          scanSimilarityDb(false),
-          mode(Mode::Unknown),
-          data(nullptr)
+          scanSimilarityDb (false),
+          mode             (Mode::Unknown),
+          data             (nullptr)
     {
     }
 
@@ -72,7 +72,7 @@ public:
 
 DatabaseTask::DatabaseTask()
     : ActionJob(),
-      d(new Private)
+      d        (new Private)
 {
 }
 
@@ -434,7 +434,7 @@ void DatabaseTask::run()
 
                 // Signal that this image id was processed.
 
-                signalFinished();
+                emit signalFinished();
             }
 
             // The remaining image ids should be removed from the similarity db.
@@ -443,7 +443,7 @@ void DatabaseTask::run()
 
             // Signal that the database was processed.
 
-            signalFinished();
+            emit signalFinished();
         }
 
         emit signalData(staleImageIds, staleThumbIds, staleIdentities, staleSimilarityImageIds);

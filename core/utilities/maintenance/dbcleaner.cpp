@@ -51,14 +51,14 @@ class Q_DECL_HIDDEN DbCleaner::Private
 public:
 
     explicit Private()
-      : thread(nullptr),
-        cleanThumbsDb(false),
-        cleanFacesDb(false),
-        cleanSimilarityDb(false),
-        shrinkDatabases(false),
+      : thread                 (nullptr),
+        cleanThumbsDb          (false),
+        cleanFacesDb           (false),
+        cleanSimilarityDb      (false),
+        shrinkDatabases        (false),
         databasesToAnalyseCount(1),
-        databasesToShrinkCount(0),
-        shrinkDlg(nullptr)
+        databasesToShrinkCount (0),
+        shrinkDlg              (nullptr)
     {
     }
 
@@ -478,11 +478,11 @@ class Q_DECL_HIDDEN DbShrinkDialog::Private
 public:
 
     explicit Private()
-      : active(-1),
-        progressPix(nullptr),
+      : active       (-1),
+        progressPix  (nullptr),
         progressTimer(nullptr),
         progressIndex(1),
-        statusList(nullptr)
+        statusList   (nullptr)
     {
     }
 
@@ -495,7 +495,7 @@ public:
 
 DbShrinkDialog::DbShrinkDialog(QWidget* const parent)
     : QDialog(parent),
-      d(new Private)
+      d      (new Private)
 {
     d->progressPix                  = new DWorkingPixmap(this);
     d->progressTimer                = new QTimer(parent);

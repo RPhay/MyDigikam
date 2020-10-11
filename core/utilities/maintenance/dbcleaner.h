@@ -55,14 +55,14 @@ public:
                        bool cleanSimilarityDb = false,
                        bool shrinkDatabases = false,
                        ProgressItem* const parent = nullptr);
-    ~DbCleaner() override;
+    ~DbCleaner()                    override;
 
     void setUseMultiCoreCPU(bool b) override;
 
 private Q_SLOTS:
 
-    void slotStart() override;
-    void slotCancel() override;
+    void slotStart()                override;
+    void slotCancel()               override;
     void slotAdvance();
     void slotShrinkNextDBInfo(bool done, bool passed);
 
@@ -80,7 +80,7 @@ private Q_SLOTS:
     void slotCleanedSimilarity();
     void slotShrinkDatabases();
 
-    void slotDone() override;
+    void slotDone()                 override;
 
 private:
 
@@ -104,7 +104,7 @@ public:
 
 public Q_SLOTS:
 
-    int exec() override;
+    int exec()        override;
 
 private Q_SLOTS:
 
