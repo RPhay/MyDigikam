@@ -52,11 +52,11 @@ class Q_DECL_HIDDEN DTrashItemModel::Private
 public:
 
     explicit Private()
-      : thumbSize(ThumbnailSize::Large),
-        sortColumn(2),
-        sortOrder(Qt::DescendingOrder),
+      : thumbSize         (ThumbnailSize::Large),
+        sortColumn        (2),
+        sortOrder         (Qt::DescendingOrder),
         itemsLoadingThread(nullptr),
-        thumbnailThread(nullptr)
+        thumbnailThread   (nullptr)
     {
     }
 
@@ -163,7 +163,9 @@ QVariant DTrashItemModel::data(const QModelIndex& index, int role) const
     switch (index.column())
     {
         case 1:
+        {
             return item.collectionRelativePath;
+        }
 
         case 2:
         {
@@ -179,7 +181,9 @@ QVariant DTrashItemModel::data(const QModelIndex& index, int role) const
         }
 
         default:
+        {
             return QVariant();
+        }
     };
 }
 
@@ -220,7 +224,8 @@ void DTrashItemModel::sort(int column, Qt::SortOrder order)
     const QModelIndex topLeft     = index(0, 0);
     const QModelIndex bottomRight = index(rowCount(QModelIndex())-1,
                                           columnCount(QModelIndex())-1);
-    dataChanged(topLeft, bottomRight);
+
+    emit dataChanged(topLeft, bottomRight);
 }
 
 bool DTrashItemModel::pixmapForItem(const QString& path, QPixmap& pix) const
@@ -286,7 +291,7 @@ void DTrashItemModel::removeItems(const QModelIndexList& indexes)
         persistentIndexes << index;
     }
 
-    layoutAboutToBeChanged();
+    emit layoutAboutToBeChanged();
 
     foreach (const QPersistentModelIndex& index, persistentIndexes)
     {
@@ -306,7 +311,7 @@ void DTrashItemModel::removeItems(const QModelIndexList& indexes)
         endRemoveRows();
     }
 
-    layoutChanged();
+    emit layoutChanged();
     emit dataChange();
 }
 
@@ -314,9 +319,10 @@ void DTrashItemModel::refreshLayout()
 {
     const QModelIndex topLeft     = index(0, 0);
     const QModelIndex bottomRight = index(rowCount(QModelIndex())-1, 0);
-    dataChanged(topLeft, bottomRight);
-    layoutAboutToBeChanged();
-    layoutChanged();
+
+    emit dataChanged(topLeft, bottomRight);
+    emit layoutAboutToBeChanged();
+    emit layoutChanged();
 }
 
 void DTrashItemModel::refreshThumbnails(const LoadingDescription& desc, const QPixmap& pix)
@@ -337,7 +343,8 @@ void DTrashItemModel::refreshThumbnails(const LoadingDescription& desc, const QP
 
     const QModelIndex topLeft     = index(0, 0);
     const QModelIndex bottomRight = index(rowCount(QModelIndex())-1, 0);
-    dataChanged(topLeft, bottomRight);
+
+    emit dataChanged(topLeft, bottomRight);
 }
 
 void DTrashItemModel::clearCurrentData()
@@ -346,6 +353,7 @@ void DTrashItemModel::clearCurrentData()
     beginResetModel();
     d->data.clear();
     endResetModel();
+
     emit dataChange();
 }
 
@@ -353,8 +361,7 @@ void DTrashItemModel::loadItemsForCollection(const QString& colPath)
 {
     clearCurrentData();
 
-    d->itemsLoadingThread =
-            IOJobsManager::instance()->startDTrashItemsListingForCollection(colPath);
+    d->itemsLoadingThread = IOJobsManager::instance()->startDTrashItemsListingForCollection(colPath);
 
     connect(d->itemsLoadingThread, SIGNAL(collectionTrashItemInfo(DTrashItemInfo)),
             this, SLOT(append(DTrashItemInfo)),

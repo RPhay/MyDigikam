@@ -39,7 +39,7 @@ public:
 
     explicit DTrashItemInfo();
 
-    bool isNull() const;
+    bool isNull()                                   const;
     bool operator==(const DTrashItemInfo& itemInfo) const;
 
 public:
