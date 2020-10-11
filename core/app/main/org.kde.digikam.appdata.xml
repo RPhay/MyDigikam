@@ -83,6 +83,7 @@
     <p xml:lang="it">digiKam è un'applicazione avanzata open source per la gestione delle fotografie digitali che funziona in Linux, Windows e MacOS. L'applicazione fornisce un set completo di strumenti per importare, gestire, modificare e condividere le foto e i file RAW. Puoi usare le funzionalità di importazione di digiKam per trasferire in modo semplice fotografie, file RAW e filmati direttamente dalla tua fotocamera e da dispositivi di memorizzazione esterni (schede SD, dischi USB, ecc.). L'applicazione ti permette di configurare le impostazioni di importazione e le regole che elaborano e organizzano al volo gli elementi importati.</p>
     <p xml:lang="nl">digiKam is een geavanceerd opensource digitale toepassing voor fotobeheer die werkt op Linux, Windows en MacOS. De toepassing biedt een uitgebreide set hulpmiddelen voor importeren, beheren, bewerken en delen van foto's en raw-bestanden. U kunt de mogelijkheden voor importen van digiKam gebruiken om foto's, raw-bestanden en video's direct vanaf uw camera en externe opslagapparaten (SD kaarten, USB-sticks, etc.) gemakkelijk te transporteren. De toepassing biedt u importinstellingen en regels te configureren geïmporteerde items bewerken en organiseren on-the-fly.</p>
     <p xml:lang="pt">O digiKam é uma aplicação de gestão de fotografias digitais em código aberto que funciona no Linux, Windows e MacOS. A aplicação oferece um conjunto abrangente de ferramentas para importar, gerir, editar e partilhar fotografias e ficheiros RAW. Poderá usar as capacidades de importação do digiKam para transferir facilmente as fotografias, ficheiros RAW e vídeos directamente da sua maquina fotográfica e dos dispositivos de armazenamento externos (cartões SD, discos USB, etc.). A aplicação permite-lhe configurar as opções de importação e as regras que processam e organizam os itens importados na hora.</p>
+    <p xml:lang="ru">DigiKam — приложение для управления коллекциями цифровых фотографий с открытым исходным кодом, работающее по управлением Linux, Windows и MacOS. Приложение содержит полный набор инструментов для импорта, управления, редактирования и обмена фотографиями и цифровыми негативами (RAW-файлами). DigiKam позволяет переносить фотографии, цифровые негативы и видео с камер и внешних устройств хранения, таких как SD-карты, USB-диски и прочих. Приложение позволяет настраивать параметры и правила, которые обрабатывают и систематизируют объекты непосредственно во время импорта.</p>
     <p xml:lang="sl">digiKam je napredni odprtokodni program za upravljanje digitalnih fotografij, ki deluje v sistemih Linux, Windows in MacOS. Program ponuja celovit nabor orodij za uvoz, upravljanje, urejanje in skupno rabo fotografij in surovih datotek. Za lažji prenos fotografij lahko uporabite funkcije uvoza digiKam, surove datoteke in videoposnetke neposredno iz fotoaparata in zunanjih pomnilniških naprav (SD kartice, USB diski itd.). Program omogoča nastavitev uvoza in pravil, ki sproti obdelujejo in organizirajo uvožene predmete.</p>
     <p xml:lang="sv">Digikam är ett avancerat digitalt fotohanteringsprogram med öppen källkod som kör på Linux, Windows och MacOS. Programmet tillhandahåller en omfattande verktygsuppsättning för att importera, hantera, redigera och dela foton och obehandlade filer. Du kan använda Digikams importmöjligheter för att enkelt överföra foton, obehandlade filer och videor direkt från din kamera eller externa lagringsenheter (SD-kort, USB-minnen, etc.). Programmet låter dig anpassa importinställningar och regler som behandlar och organiserar importerade objekt i farten.</p>
     <p xml:lang="uk">digiKam — програма для керування цифровими фотографіями із відкритим кодом і широкими можливостями. Програмою можна скористатися у Linux, Windows та MacOS. У програмі передбачено повний набір інструментів для імпортування, керування, редагування та оприлюднення фотографій та файлів цифрових негативів. Ви можете скористатися можливостями digiKam з імпортування для спрощення передавання фотографій, файлів цифрових негативів та відео безпосередньо з камери або зовнішніх пристроїв для зберігання даних (карток SD, дисків USB тощо). У програмі передбачено можливість налаштовування параметрів імпортування та правил динамічної обробки та упорядковування імпортованих записів.</p>
@@ -102,6 +103,7 @@
     <p xml:lang="it">digiKam organizza fotografie, file RAW e filmati in album. L'applicazione offre inoltre strumenti avanzati per l'assegnazione di tag, valutazioni ed etichette alle fotografie e i file RAW. Puoi anche utilizzare la funzionalità di filtraggio per trovare rapidamente elementi che corrispondono a specifici criteri di ricerca.</p>
     <p xml:lang="nl">digiKam organiseert foto's, raw-bestanden en video's in albums. Maar de toepassing heeft ook krachtige hulpmiddelen voor tags die het toekennen van tags, waarderings en labels aan foto's en raw-bestanden. U kunt dan functies voor filtering gebruiken om snel items te vinden die overeenkomen met specifieke criteria.</p>
     <p xml:lang="pt">O digiKam organiza as fotos, os ficheiros RAW e os vídeos em álbuns. Contudo, a aplicação também oferece ferramentas poderosas de marcação que lhe permitem atribuir marcas, classificações e legendas às fotografias e ficheiros RAW. Poderá então usar a funcionalidade de filtragem para encontrar rapidamente os itens que correspondam a um dado critério.</p>
+    <p xml:lang="ru">Для упорядоченного хранения фотографий, файлов цифровых негативов и видео в digiKam используются альбомы. Но приложение также содержит инструменты  классификации, позволяющие назначать теги, рейтинги и метки фотографиям и файлам цифровых негативов. Система поиска позволяет быстро отбирать объекты по заданным критериям.</p>
     <p xml:lang="sl">digiKam organizira fotografije, surove datoteke in videoposnetke v albume. Program pa vsebuje tudi močna orodja za označevanje, ki vam omogočajo dodelitev značk, ocene in oznake za fotografije in surove datoteke. Uporabite lahko tudi filtriranje za hitro iskanje elementov, ki ustrezajo določenim kriterijem.</p>
     <p xml:lang="sv">Digikam organiserar foton, obehandlade filer och videor i album. Men programmet erbjuder också kraftfulla verktyg för etikettering som låter dig tilldela etiketter, betyg och beteckningar till foton och obehandlade filer. Du kan sedan använda filtreringsfunktionerna för att snabbt hitta objekt som motsvarar specifika kriterier.</p>
     <p xml:lang="uk">У digiKam фотографії, файли цифрових негативів та відео упорядковуються за альбомами. Але, крім того, у програмі передбачено потужні засоби встановлення міток, за допомогою яких ви можете призначати мітки, оцінки та позначки для фотографій і файлів цифрових негативів. Далі, можна скористатися функціональними можливостями з фільтрування для швидкого пошуку записів, які відповідають певним критеріям.</p>
@@ -524,6 +526,7 @@
       <caption xml:lang="nn">Køhandsamar i digiKam</caption>
       <caption xml:lang="pt">Gestor da Fila de Processamento em Lote do digiKam</caption>
       <caption xml:lang="pt-BR">Gerenciador de fila em lotes do digiKam</caption>
+      <caption xml:lang="ru">Диспетчер очередей пакетной обработки digiKam</caption>
       <caption xml:lang="sl">digiKam upravljalnik čakalnih vrst paketnih obdelav</caption>
       <caption xml:lang="sv">Digikams köhantering för bakgrundsbehandling</caption>
       <caption xml:lang="uk">Керування чергою пакетної обробки digiKam</caption>
@@ -545,6 +548,7 @@
       <caption xml:lang="nn">Biletredigering i digiKam</caption>
       <caption xml:lang="pt">Editor de Imagens do digiKam</caption>
       <caption xml:lang="pt-BR">Editor de imagens do digiKam</caption>
+      <caption xml:lang="ru">Редактор изображений digiKam</caption>
       <caption xml:lang="sl">digiKam urejevalnik slik</caption>
       <caption xml:lang="sv">Digikams  bildeditor</caption>
       <caption xml:lang="uk">Редактор зображень digiKam</caption>
@@ -565,6 +569,7 @@
       <caption xml:lang="nn">Import frå kamera i digiKam</caption>
       <caption xml:lang="pt">Importação de Máquinas Fotográficas do digiKam</caption>
       <caption xml:lang="pt-BR">Importar da câmera do digiKam</caption>
+      <caption xml:lang="ru">Импорт фотографий камеры в digiKam</caption>
       <caption xml:lang="sl">digiKam uvoz iz kamere</caption>
       <caption xml:lang="sv">Digikams import från kamera</caption>
       <caption xml:lang="uk">Імпортування з камери у digiKam</caption>
@@ -586,6 +591,7 @@
       <caption xml:lang="nn">Lysbord i digiKam</caption>
       <caption xml:lang="pt">Mesa de Luz do digiKam</caption>
       <caption xml:lang="pt-BR">Mesa de luz do digiKam</caption>
+      <caption xml:lang="ru">Световой стол digiKam</caption>
       <caption xml:lang="sl">digiKam osvetljevalna miza</caption>
       <caption xml:lang="sv">Digikams ljusbord</caption>
       <caption xml:lang="uk">Стіл із підсвічуванням digiKam</caption>
@@ -607,6 +613,7 @@
       <caption xml:lang="nn">Merkelappvising i digiKam</caption>
       <caption xml:lang="pt">Área de Marcas do digiKam</caption>
       <caption xml:lang="pt-BR">Visualizador de etiquetas do digiKam</caption>
+      <caption xml:lang="ru">Просмотр меток в digiKam</caption>
       <caption xml:lang="sl">Pogled digiKamovih značk</caption>
       <caption xml:lang="sv">Digikams etikettvy</caption>
       <caption xml:lang="uk">Панель перегляду міток digiKam</caption>
@@ -707,6 +714,7 @@
   <developer_name xml:lang="nn">digiKam-laget</developer_name>
   <developer_name xml:lang="pt">Equipa do digiKam</developer_name>
   <developer_name xml:lang="pt-BR">Equipe do digiKam</developer_name>
+  <developer_name xml:lang="ru">Команда разработчиков digiKam</developer_name>
   <developer_name xml:lang="sl">Skupina digiKam</developer_name>
   <developer_name xml:lang="sv">Digikam-gruppen</developer_name>
   <developer_name xml:lang="uk">Команда digiKam</developer_name>
