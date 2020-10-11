@@ -5,6 +5,7 @@ NEW FEATURES:
 
 General       : All bundles updated to last KF5 framework version 5.74.
 General       : All bundles updated to last OpenCV version 4.4.0.
+General       : Add fast string sorter cache based on QCollatorSortKey.
 FaceManagement: Improve users experience in GUI for face workflow while tagging and manage faces.
 FaceManagement: Add face engine clustering support for detection and recognition processes.
 
