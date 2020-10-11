@@ -60,7 +60,7 @@ void MainWindow::init()
     this->ui->comboBox->addItem(QLatin1String("Logos with only simple typefaces, individual words or geometric shapes"),    QLatin1String("{{PD-textlogo}}"));
 }
 
-void MainWindow::on_pushButton_clicked()
+void MainWindow::slot_pushButtslot_clicked()
 {
     this->ui->progressBar->setValue(0);
     Login* const login = new Login(MediaWiki, this->ui->mLoginEdit->text(), this->ui->mMdpEdit->text());
@@ -159,7 +159,7 @@ void MainWindow::TotalUploadSize(KJob* job, qulonglong size)
     this->ui->progressBar->setMaximum(size);
 }
 
-void MainWindow::on_parcourir_clicked()
+void MainWindow::slot_parcourir_clicked()
 {
     QString fileName = QFileDialog::getOpenFileName(this,
                                                     QLatin1String("Open Image"),
@@ -178,7 +178,7 @@ void MainWindow::on_parcourir_clicked()
     }
 }
 
-void MainWindow::on_lineEdit_textChanged(const QString& text)
+void MainWindow::slot_lineEdit_textChanged(const QString& text)
 {
     this->ui->pushButton->setEnabled(!text.isEmpty() && !text.isNull());
 }

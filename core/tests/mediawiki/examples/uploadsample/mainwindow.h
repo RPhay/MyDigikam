@@ -57,9 +57,9 @@ public:
 
 private Q_SLOTS:
 
-    void on_pushButton_clicked();
-    void on_parcourir_clicked();
-    void on_lineEdit_textChanged(const QString&);
+    void slot_pushButtslot_clicked();
+    void slot_parcourir_clicked();
+    void slot_lineEdit_textChanged(const QString&);
     void loginHandle(KJob* login);
     void uploadHandle(KJob* job);
     void processedUploadSize(KJob* job, qulonglong size);

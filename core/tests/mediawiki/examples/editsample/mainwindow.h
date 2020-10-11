@@ -57,11 +57,11 @@ public:
 
 private Q_SLOTS:
 
-    void on_plainTextEdit_textChanged();
-    void on_mPageEdit_textChanged(QString);
-    void on_mWikiEdit_textChanged(QString);
-    void on_pushButton1_clicked();
-    void on_pushButton2_clicked();
+    void slot_plainTextEdit_textChanged();
+    void slot_mPageEdit_textChanged(QString);
+    void slot_mWikiEdit_textChanged(QString);
+    void slot_pushButton1_clicked();
+    void slot_pushButton2_clicked();
     void loginHandle(KJob* login);
     void revisionHandle(const QList<Revision>& revisions);
     void editError(KJob* job);

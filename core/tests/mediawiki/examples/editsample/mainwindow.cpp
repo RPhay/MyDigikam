@@ -40,7 +40,7 @@ MainWindow::~MainWindow()
 }
 
 //Load page
-void MainWindow::on_pushButton2_clicked()
+void MainWindow::slot_pushButton2_clicked()
 {
     MediaWiki = new Iface(QUrl(this->ui->mWikiEdit->text()));
     QueryRevision* const queryrevision(new QueryRevision(*MediaWiki));
@@ -72,7 +72,7 @@ void MainWindow::revisionHandle(const QList<Revision>& revisions)
 }
 
 //Send page
-void MainWindow::on_pushButton1_clicked()
+void MainWindow::slot_pushButton1_clicked()
 {
     Login* const login = new Login(*MediaWiki, this->ui->mLoginEdit->text(), this->ui->mMdpEdit->text());
 
@@ -127,17 +127,17 @@ void MainWindow::revisionError(KJob* job)
     }
 }
 
-void MainWindow::on_mPageEdit_textChanged(QString text)
+void MainWindow::slot_mPageEdit_textChanged(QString text)
 {
     this->ui->pushButton2->setEnabled(!text.isEmpty() && !text.isNull() && !this->ui->mWikiEdit->text().isEmpty());
 }
 
-void MainWindow::on_mWikiEdit_textChanged(QString text)
+void MainWindow::slot_mWikiEdit_textChanged(QString text)
 {
     this->ui->pushButton2->setEnabled(!text.isEmpty() && !text.isNull() && !this->ui->mPageEdit->text().isEmpty());
 }
 
-void MainWindow::on_plainTextEdit_textChanged()
+void MainWindow::slot_plainTextEdit_textChanged()
 {
     QString text = this->ui->plainTextEdit->toPlainText();
     this->ui->pushButton1->setEnabled(!text.isEmpty() && !text.isNull());
