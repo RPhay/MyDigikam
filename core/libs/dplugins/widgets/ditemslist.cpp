@@ -610,9 +610,8 @@ DItemsList::DItemsList(QWidget* const parent, int iconSize)
 
     // --------------------------------------------------------
 
-    emit signalImageListChanged();
+    QTimer::singleShot(1000, this, SIGNAL(signalImageListChanged()));
 }
-
 
 DItemsList::~DItemsList()
 {
