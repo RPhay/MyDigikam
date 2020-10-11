@@ -43,7 +43,8 @@ class DIGIKAM_DATABASE_EXPORT ItemSorterCache : public QObject
 public:
 
     /**
-     * Global instance of internal item sorter cache. All accessor methods are thread-safe.
+     * Global instance of internal item sorter cache.
+     * All accessor methods are thread-safe.
      */
     static ItemSorterCache* instance();
 
