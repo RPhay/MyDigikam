@@ -62,21 +62,31 @@ public:
 
     void addAlbums(const QList<Album*>& albums,
                    QWidget* const widget = nullptr);
+
     void addAlbums(const QList<Album*>& albums,
                    QWidget* const widget,
-                   QHash<LabelsTreeView::Labels, QList<int> > selectedLabels);
+                   QHash<LabelsTreeView::Labels,
+                   QList<int> > selectedLabels);
 
     void deleteAlbum(Album* const album);
     void clearHistory();
-    void back(QList<Album*>& album, QWidget** const widget, unsigned int steps=1);
-    void forward(QList<Album*>& album, QWidget** const widget, unsigned int steps=1);
-    void getCurrentAlbum(Album** const album, QWidget** const widget) const;
 
-    void getBackwardHistory(QStringList& list) const;
-    void getForwardHistory(QStringList& list)  const;
+    void back(QList<Album*>& album,
+              QWidget** const widget,
+              unsigned int steps = 1);
 
-    bool isForwardEmpty()                      const;
-    bool isBackwardEmpty()                     const;
+    void forward(QList<Album*>& album,
+                 QWidget** const widget,
+                 unsigned int steps = 1);
+
+    void getCurrentAlbum(Album** const album,
+                         QWidget** const widget) const;
+
+    void getBackwardHistory(QStringList& list)   const;
+    void getForwardHistory(QStringList& list)    const;
+
+    bool isForwardEmpty()                        const;
+    bool isBackwardEmpty()                       const;
 
     QHash<LabelsTreeView::Labels, QList<int> > neededLabels();
 
