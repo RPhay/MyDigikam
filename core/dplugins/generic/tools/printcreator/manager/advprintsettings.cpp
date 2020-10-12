@@ -39,24 +39,24 @@ namespace DigikamGenericPrintCreatorPlugin
 {
 
 AdvPrintSettings::AdvPrintSettings()
-    : selMode(IMAGES),
-      printerName(outputName(PDF)),
+    : selMode           (IMAGES),
+      printerName       (outputName(PDF)),
 
       /// Select a different page to force a refresh in initPhotoSizes.
-      pageSize(QSizeF(-1, -1)),
+      pageSize          (QSizeF(-1, -1)),
 
-      captionType(NONE),
-      captionColor(QColor(Qt::yellow)),
-      captionFont(QFont(QLatin1String("Sans Serif"))),
-      captionSize(4),
+      captionType       (NONE),
+      captionColor      (QColor(Qt::yellow)),
+      captionFont       (QFont(QLatin1String("Sans Serif"))),
+      captionSize       (4),
       currentPreviewPage(0),
-      currentCropPhoto(0),
-      disableCrop(false),
-      imageFormat(JPEG),
-      conflictRule(FileSaveConflictBox::OVERWRITE),
-      openInFileBrowser(true),
-      outputLayouts(nullptr),
-      outputPrinter(nullptr)
+      currentCropPhoto  (0),
+      disableCrop       (false),
+      imageFormat       (JPEG),
+      conflictRule      (FileSaveConflictBox::OVERWRITE),
+      openInFileBrowser (true),
+      outputLayouts     (nullptr),
+      outputPrinter     (nullptr)
 {
 }
 
@@ -178,7 +178,6 @@ QMap<AdvPrintSettings::CaptionType, QString> AdvPrintSettings::captionTypeNames(
 
     return types;
 }
-
 
 QRect* AdvPrintSettings::getLayout(int photoIndex, int sizeIndex) const
 {

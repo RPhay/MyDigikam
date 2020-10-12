@@ -58,8 +58,8 @@ class Q_DECL_HIDDEN AdvPrintTask::Private
 public:
 
     explicit Private()
-      : settings(nullptr),
-        mode(AdvPrintTask::PRINT),
+      : settings (nullptr),
+        mode     (AdvPrintTask::PRINT),
         sizeIndex(0)
     {
     }
@@ -81,7 +81,7 @@ AdvPrintTask::AdvPrintTask(AdvPrintSettings* const settings,
                            const QSize& size,
                            int sizeIndex)
     : ActionJob(),
-      d(new Private)
+      d        (new Private)
 {
     d->settings  = settings;
     d->mode      = mode;
@@ -185,7 +185,7 @@ void AdvPrintTask::preparePrint()
 
         if (m_cancel)
         {
-            signalMessage(i18n("Printing canceled"), true);
+            emit signalMessage(i18n("Printing canceled"), true);
             return;
         }
     }
@@ -210,7 +210,7 @@ void AdvPrintTask::printPhotos()
 
     while (printing)
     {
-        signalMessage(i18n("Processing page %1", pageCount), false);
+        emit signalMessage(i18n("Processing page %1", pageCount), false);
 
         printing = paintOnePage(p,
                                 photos,
@@ -229,7 +229,7 @@ void AdvPrintTask::printPhotos()
         if (m_cancel)
         {
             printer->abort();
-            signalMessage(i18n("Printing canceled"), true);
+            emit signalMessage(i18n("Printing canceled"), true);
             return;
         }
     }
@@ -287,7 +287,7 @@ QStringList AdvPrintTask::printPhotosToFile()
             filename = DFileOperations::getUniqueFileUrl(QUrl::fromLocalFile(filename)).toLocalFile();
         }
 
-        signalMessage(i18n("Processing page %1", pageCount), false);
+        emit signalMessage(i18n("Processing page %1", pageCount), false);
 
         printing = paintOnePage(painter,
                                 photos,
@@ -299,13 +299,13 @@ QStringList AdvPrintTask::printPhotosToFile()
 
         if (!image.save(filename, nullptr, 100))
         {
-            signalMessage(i18n("Could not save file %1", filename), true);
+            emit signalMessage(i18n("Could not save file %1", filename), true);
             break;
         }
         else
         {
             files.append(filename);
-            signalMessage(i18n("Page %1 saved as %2", pageCount, filename), false);
+            emit signalMessage(i18n("Page %1 saved as %2", pageCount, filename), false);
         }
 
         pageCount++;
@@ -313,7 +313,7 @@ QStringList AdvPrintTask::printPhotosToFile()
 
         if (m_cancel)
         {
-            signalMessage(i18n("Printing canceled"), true);
+            emit signalMessage(i18n("Printing canceled"), true);
             break;
         }
     }
