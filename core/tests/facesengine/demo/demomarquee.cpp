@@ -33,6 +33,7 @@
 #include <QGraphicsSimpleTextItem>
 #include <QGraphicsScene>
 #include <QDebug>
+#include <QTimer>
 
 // Local includes
 
@@ -91,9 +92,9 @@ public:
 };
 
 Marquee::Marquee(FancyRect* const rect, QGraphicsItem* const parent)
-    : QObject(nullptr),
+    : QObject           (nullptr),
       QGraphicsItemGroup(parent),
-      d(new Private)
+      d                 (new Private)
 {
     d->rect    = rect;
     d->rectPen.setColor(Qt::red);
@@ -117,7 +118,7 @@ Marquee::Marquee(FancyRect* const rect, QGraphicsItem* const parent)
     setFlag(QGraphicsItem::ItemIsSelectable);
     setSelected(true);
 
-    emit selected(this);
+    QTimer::singleShot(1000, this, SIGNAL(selected(this)));
 }
 
 Marquee::~Marquee()
