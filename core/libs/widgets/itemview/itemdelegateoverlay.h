@@ -276,6 +276,8 @@ public:
 
     void setActive(bool active)                                         override;
 
+    bool isPersistent() const;
+
 public Q_SLOTS:
 
     /**
@@ -285,7 +287,6 @@ public Q_SLOTS:
     void setPersistent(bool persistent);
     void enterPersistentMode();
     void leavePersistentMode();
-    bool isPersistent() const;
 
     void storeFocus();
 

@@ -67,6 +67,13 @@ public:
      */
     ~TagModificationHelper() override;
 
+    /**
+     * Returns the tag bound with bindTag. The given QObject shall be
+     * a QAction, but for convenience the given object
+     * will be checked with qobject_cast first, so you can pass QObject::sender().
+     */
+    TAlbum* boundTag(QObject* action) const;
+
 public Q_SLOTS:
 
     /**
@@ -187,13 +194,6 @@ public Q_SLOTS:
      * Note: Changes the Action's user data.
      */
     void bindTag(QAction* action, TAlbum* parent) const;
-
-    /**
-     * Returns the tag bound with bindTag. The given QObject shall be
-     * a QAction, but for convenience the given object
-     * will be checked with qobject_cast first, so you can pass QObject::sender().
-     */
-    TAlbum* boundTag(QObject* action) const;
 
     /**
      * Set QVector's pointer into action's data. Make sure that QVector is not

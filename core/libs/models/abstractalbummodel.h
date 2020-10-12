@@ -275,6 +275,15 @@ public:
                                         QObject* const parent = nullptr);
     ~AbstractCountingAlbumModel() override;
 
+    bool showCount()                        const;
+
+    /**
+     * Returns the number of included items for this album.
+     *
+     * @return positive value or -1 if unknown
+     */
+    virtual int albumCount(Album* album)    const;
+
 protected:
 
     /**
@@ -286,7 +295,6 @@ public Q_SLOTS:
 
     /// Call to enable or disable showing the count. Default is false.
     void setShowCount(bool show);
-    bool showCount()                        const;
 
     /**
      * Enable displaying the count. Set a map of album id -> count (excluding children).
@@ -307,13 +315,6 @@ public Q_SLOTS:
      * Can connect to QTreeView's collapsed() signal.
      */
     void includeChildrenCount(const QModelIndex& index);
-
-    /**
-     * Returns the number of included items for this album.
-     *
-     * @return positive value or -1 if unknown
-     */
-    virtual int albumCount(Album* album)    const;
 
 protected:
 

@@ -268,9 +268,9 @@ public:
 
 Q_SIGNALS:
 
-    void categoryButtonPressed(int mappedId) const;
-    void updatePressed(int mappedId)         const;
-    void deletePressed(int mappedId)         const;
+    void categoryButtonPressed(int mappedId) const;     // clazy:exclude=const-signal-or-slot
+    void updatePressed(int mappedId)         const;     // clazy:exclude=const-signal-or-slot
+    void deletePressed(int mappedId)         const;     // clazy:exclude=const-signal-or-slot
 
 protected:
 
