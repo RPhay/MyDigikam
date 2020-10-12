@@ -152,7 +152,12 @@ void Task::run()
 
     foreach (const BatchToolSet& set, d->tools.m_toolsList)
     {
-        d->tool     = BatchToolsFactory::instance()->findTool(set.name, set.group)->clone();
+        BatchTool* const tool = BatchToolsFactory::instance()->findTool(set.name, set.group);
+        d->tool               = tool->clone();
+        d->tool->setToolIcon(tool->toolIcon());
+        d->tool->setToolTitle(tool->toolTitle());
+        d->tool->setToolDescription(tool->toolDescription());
+
         timeAdjust |= (set.name == QLatin1String("TimeAdjust"));
         inUrl       = outUrl;
         index       = set.index + 1;
