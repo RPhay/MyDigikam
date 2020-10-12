@@ -59,15 +59,15 @@ class Q_DECL_HIDDEN ExpoBlendingPreProcessPage::Private
 public:
 
     explicit Private()
+     :  progressPix   (nullptr),
+        progressCount (0),
+        progressTimer (nullptr),
+        progressLabel (nullptr),
+        mngr          (nullptr),
+        title         (nullptr),
+        alignCheckBox (nullptr),
+        detailsText   (nullptr)
     {
-        progressPix   = nullptr;
-        progressCount = 0;
-        progressTimer = nullptr;
-        progressLabel = nullptr,
-        mngr          = nullptr;
-        title         = nullptr;
-        alignCheckBox = nullptr;
-        detailsText   = nullptr;
     }
 
     int                  progressCount;
@@ -87,13 +87,13 @@ public:
 
 ExpoBlendingPreProcessPage::ExpoBlendingPreProcessPage(ExpoBlendingManager* const mngr, QWizard* const dlg)
     : DWizardPage(dlg, i18nc("@title:window", "<b>Pre-Processing Bracketed Images</b>")),
-      d(new Private)
+      d          (new Private)
 {
-    d->mngr           = mngr;
-    d->progressTimer  = new QTimer(this);
-    d->progressPix    = new DWorkingPixmap(this);
-    DVBox* const vbox = new DVBox(this);
-    d->title          = new QLabel(vbox);
+    d->mngr                 = mngr;
+    d->progressTimer        = new QTimer(this);
+    d->progressPix          = new DWorkingPixmap(this);
+    DVBox* const vbox       = new DVBox(this);
+    d->title                = new QLabel(vbox);
     d->title->setWordWrap(true);
     d->title->setOpenExternalLinks(true);
 
@@ -174,7 +174,9 @@ void ExpoBlendingPreProcessPage::process()
     d->mngr->thread()->preProcessFiles(d->mngr->itemsList(), d->mngr->alignBinary().path());
 
     if (!d->mngr->thread()->isRunning())
+    {
         d->mngr->thread()->start();
+    }
 }
 
 void ExpoBlendingPreProcessPage::cancel()
@@ -195,7 +197,9 @@ void ExpoBlendingPreProcessPage::slotProgressTimerDone()
     d->progressCount++;
 
     if (d->progressCount == 8)
+    {
         d->progressCount = 0;
+    }
 
     d->progressTimer->start(300);
 }
@@ -225,6 +229,7 @@ void ExpoBlendingPreProcessPage::slotExpoBlendingAction(const DigikamGenericExpo
                     emit signalPreProcessed(ExpoBlendingItemUrlsMap());
                     break;
                 }
+
                 default:
                 {
                     qCWarning(DIGIKAM_DPLUGIN_GENERIC_LOG) << "Unknown action";
@@ -243,6 +248,7 @@ void ExpoBlendingPreProcessPage::slotExpoBlendingAction(const DigikamGenericExpo
                     emit signalPreProcessed(ad.preProcessedUrlsMap);
                     break;
                 }
+
                 default:
                 {
                     qCWarning(DIGIKAM_DPLUGIN_GENERIC_LOG) << "Unknown action";

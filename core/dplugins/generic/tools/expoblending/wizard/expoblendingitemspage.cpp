@@ -62,7 +62,7 @@ public:
 
 ItemsPage::ItemsPage(ExpoBlendingManager* const mngr, QWizard* const dlg)
     : DWizardPage(dlg, i18nc("@title:window", "<b>Set Bracketed Images</b>")),
-      d(new Private)
+      d          (new Private)
 {
     d->mngr = mngr;
 
@@ -118,7 +118,9 @@ void ItemsPage::slotAddItems(const QList<QUrl>& urls)
         d->mngr->thread()->identifyFiles(urls);
 
         if (!d->mngr->thread()->isRunning())
+        {
             d->mngr->thread()->start();
+        }
     }
 
     slotImageListChanged();
@@ -157,6 +159,7 @@ void ItemsPage::slotExpoBlendingAction(const DigikamGenericExpoBlendingPlugin::E
                 setIdentity(ad.inUrls[0], ad.message);
                 break;
             }
+
             default:
             {
                 qCWarning(DIGIKAM_DPLUGIN_GENERIC_LOG) << "Unknown action";

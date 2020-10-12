@@ -43,12 +43,12 @@ class Q_DECL_HIDDEN ExpoBlendingWizard::Private
 public:
 
     explicit Private()
-      : mngr(nullptr),
-        introPage(nullptr),
-        itemsPage(nullptr),
+      : mngr             (nullptr),
+        introPage        (nullptr),
+        itemsPage        (nullptr),
         preProcessingPage(nullptr),
-        lastPage(nullptr),
-        preProcessed(false)
+        lastPage         (nullptr),
+        preProcessed     (false)
     {
     }
 
@@ -64,7 +64,7 @@ public:
 
 ExpoBlendingWizard::ExpoBlendingWizard(ExpoBlendingManager* const mngr, QWidget* const parent)
     : DWizardDlg(parent, QLatin1String("ExpoBlending Wizard")),
-      d(new Private)
+      d         (new Private)
 {
     setModal(false);
     setWindowTitle(i18nc("@title:window", "Stacked Images Tool"));
@@ -109,17 +109,20 @@ QList<QUrl> ExpoBlendingWizard::itemUrls() const
 
 bool ExpoBlendingWizard::validateCurrentPage()
 {
-    if (currentPage() == d->itemsPage)
+    if      (currentPage() == d->itemsPage)
     {
         d->mngr->setItemsList(d->itemsPage->itemUrls());
     }
     else if (currentPage() == d->preProcessingPage && !d->preProcessed)
     {
         // Do not give access to Next button during alignment process.
+
         d->preProcessingPage->setComplete(false);
         d->preProcessingPage->process();
         d->preProcessed = true;
+
         // Next is handled with signals/slots
+
         return false;
     }
 
@@ -128,7 +131,7 @@ bool ExpoBlendingWizard::validateCurrentPage()
 
 void ExpoBlendingWizard::slotCurrentIdChanged(int id)
 {
-    if (page(id) != d->lastPage && d->preProcessed)
+    if ((page(id) != d->lastPage) && d->preProcessed)
     {
         d->preProcessed = false;
         d->preProcessingPage->cancel();
@@ -146,12 +149,14 @@ void ExpoBlendingWizard::slotPreProcessed(const ExpoBlendingItemUrlsMap& map)
     if (map.isEmpty())
     {
         // pre-processing failed.
+
         d->preProcessingPage->setComplete(false);
         d->preProcessed = false;
     }
     else
     {
         // pre-processing Done.
+
         d->mngr->setPreProcessedMap(map);
         next();
     }

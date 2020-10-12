@@ -25,6 +25,7 @@
 
 // Qt includes
 
+#include <QTimer>
 #include <QLabel>
 #include <QPixmap>
 #include <QGroupBox>
@@ -50,7 +51,7 @@ class Q_DECL_HIDDEN ExpoBlendingIntroPage::Private
 public:
 
     explicit Private(ExpoBlendingManager* const m)
-      : mngr(m),
+      : mngr          (m),
         binariesWidget(nullptr)
     {
     }
@@ -61,7 +62,7 @@ public:
 
 ExpoBlendingIntroPage::ExpoBlendingIntroPage(ExpoBlendingManager* const mngr, QWizard* const dlg)
     : DWizardPage(dlg, i18nc("@title:window", "Welcome to Stacked Images Tool")),
-      d(new Private(mngr))
+      d          (new Private(mngr))
 {
     DVBox* const vbox   = new DVBox(this);
     QLabel* const title = new QLabel(vbox);
@@ -90,34 +91,41 @@ ExpoBlendingIntroPage::ExpoBlendingIntroPage(ExpoBlendingManager* const mngr, QW
     d->binariesWidget->addBinary(d->mngr->enfuseBinary());
 
 #ifdef Q_OS_MACOS
+
     // Hugin bundle PKG install
+
     d->binariesWidget->addDirectory(QLatin1String("/Applications/Hugin/HuginTools"));
     d->binariesWidget->addDirectory(QLatin1String("/Applications/Hugin/Hugin.app/Contents/MacOS"));
     d->binariesWidget->addDirectory(QLatin1String("/Applications/Hugin/tools_mac"));
 
     // Std Macports install
+
     d->binariesWidget->addDirectory(QLatin1String("/opt/local/bin"));
 
     // digiKam Bundle PKG install
+
     d->binariesWidget->addDirectory(QLatin1String("/opt/digikam/bin"));
+
 #endif
 
 #ifdef Q_OS_WIN
+
     d->binariesWidget->addDirectory(QLatin1String("C:/Program Files/Hugin/bin"));
     d->binariesWidget->addDirectory(QLatin1String("C:/Program Files (x86)/Hugin/bin"));
     d->binariesWidget->addDirectory(QLatin1String("C:/Program Files/GnuWin32/bin"));
     d->binariesWidget->addDirectory(QLatin1String("C:/Program Files (x86)/GnuWin32/bin"));
+
 #endif
-
-    connect(d->binariesWidget, SIGNAL(signalBinariesFound(bool)),
-            this, SIGNAL(signalExpoBlendingIntroPageIsValid(bool)));
-
-    emit signalExpoBlendingIntroPageIsValid(d->binariesWidget->allBinariesFound());
 
     setPageWidget(vbox);
 
     QPixmap leftPix(QStandardPaths::locate(QStandardPaths::GenericDataLocation, QLatin1String("digikam/data/assistant-stack.png")));
     setLeftBottomPix(leftPix.scaledToWidth(128, Qt::SmoothTransformation));
+
+    connect(d->binariesWidget, SIGNAL(signalBinariesFound(bool)),
+            this, SIGNAL(signalExpoBlendingIntroPageIsValid(bool)));
+
+    QTimer::singleShot(1000, this, SIGNAL(signalExpoBlendingIntroPageIsValid(d->binariesWidget->allBinariesFound())));
 }
 
 ExpoBlendingIntroPage::~ExpoBlendingIntroPage()
