@@ -51,18 +51,18 @@ public:
     /**
      * Return the preview image url assigned to item.
      */
-    const QUrl& url() const;
+    const QUrl& url()               const;
 
     void setEnfuseSettings(const EnfuseSettings& settings);
     EnfuseSettings enfuseSettings() const;
 
     void setOn(bool b);
-    bool isOn() const;
+    bool isOn()                     const;
 
     void setProgressAnimation(const QPixmap& pix);
     void setThumbnail(const QPixmap& pix);
     void setProcessedIcon(const QIcon& icon);
-    bool asValidThumb() const;
+    bool asValidThumb()             const;
 
 private:
 

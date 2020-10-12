@@ -50,8 +50,8 @@ class ExpoBlendingDlg : public QDialog
 
 public:
 
-    explicit ExpoBlendingDlg(ExpoBlendingManager* const mngr, QWidget* const parent=nullptr);
-    ~ExpoBlendingDlg() override;
+    explicit ExpoBlendingDlg(ExpoBlendingManager* const mngr, QWidget* const parent = nullptr);
+    ~ExpoBlendingDlg()              override;
 
     void loadItems(const QList<QUrl>& urls);
 
@@ -61,7 +61,7 @@ Q_SIGNALS:
 
 private:
 
-    void closeEvent(QCloseEvent*) override;
+    void closeEvent(QCloseEvent*)   override;
 
     void setRejectButtonMode(QDialogButtonBox::StandardButton button);
 

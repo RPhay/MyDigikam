@@ -45,13 +45,13 @@ class EnfuseSettings
 public:
 
     EnfuseSettings()
-        : autoLevels(true),
-          hardMask(false),
-          ciecam02(false),
-          levels(20),
-          exposure(1.0),
-          saturation(0.2),
-          contrast(0.0),
+        : autoLevels  (true),
+          hardMask    (false),
+          ciecam02    (false),
+          levels      (20),
+          exposure    (1.0),
+          saturation  (0.2),
+          contrast    (0.0),
           outputFormat(DSaveSettingsWidget::OUTPUT_PNG)
     {
     }

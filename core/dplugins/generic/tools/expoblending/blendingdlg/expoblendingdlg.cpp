@@ -86,18 +86,18 @@ class Q_DECL_HIDDEN ExpoBlendingDlg::Private
 public:
 
     explicit Private()
-      : templateFileName(nullptr),
-        previewWidget(nullptr),
-        enfuseSettingsBox(nullptr),
-        saveSettingsBox(nullptr),
-        bracketStack(nullptr),
-        enfuseStack(nullptr),
-        mngr(nullptr),
-        firstImageDisplayed(false),
-        buttonBox(nullptr),
-        previewButton(nullptr),
-        startButton(nullptr),
-        propagateReject(true)
+      : templateFileName    (nullptr),
+        previewWidget       (nullptr),
+        enfuseSettingsBox   (nullptr),
+        saveSettingsBox     (nullptr),
+        bracketStack        (nullptr),
+        enfuseStack         (nullptr),
+        mngr                (nullptr),
+        firstImageDisplayed (false),
+        buttonBox           (nullptr),
+        previewButton       (nullptr),
+        startButton         (nullptr),
+        propagateReject     (true)
     {
     }
 
@@ -128,14 +128,14 @@ public:
 
 ExpoBlendingDlg::ExpoBlendingDlg(ExpoBlendingManager* const mngr, QWidget* const parent)
     : QDialog(parent),
-      d(new Private)
+      d      (new Private)
 {
     d->mngr = mngr;
 
     setModal(false);
     setWindowTitle(i18n("Exposure Blending"));
 
-    const int spacing = QApplication::style()->pixelMetric(QStyle::PM_DefaultLayoutSpacing);
+    const int spacing                = QApplication::style()->pixelMetric(QStyle::PM_DefaultLayoutSpacing);
 
     d->buttonBox                     = new QDialogButtonBox(QDialogButtonBox::Close, this);
     d->buttonBox->button(QDialogButtonBox::Close)->setDefault(true);
@@ -215,7 +215,7 @@ ExpoBlendingDlg::ExpoBlendingDlg(ExpoBlendingManager* const mngr, QWidget* const
 
     // ---------------------------------------------------------------
 
-    d->enfuseStack = new EnfuseStackList(rightPanel);
+    d->enfuseStack          = new EnfuseStackList(rightPanel);
     panel->addWidget(d->enfuseStack, 1);
 
     rightPanel->setLayout(panel);
@@ -339,7 +339,9 @@ void ExpoBlendingDlg::slotAddItems(const QList<QUrl>& urls)
         d->mngr->thread()->identifyFiles(urls);
 
         if (!d->mngr->thread()->isRunning())
+        {
             d->mngr->thread()->start();
+        }
     }
 }
 
@@ -348,7 +350,9 @@ void ExpoBlendingDlg::slotItemClicked(const QUrl& url)
     QString fileName = url.fileName();
 
     if (fileName.isEmpty())
+    {
         return;
+    }
 
     int dot  = fileName.lastIndexOf(QLatin1Char('.'));
     fileName = fileName.left(dot);
@@ -362,7 +366,9 @@ void ExpoBlendingDlg::slotLoadProcessed(const QUrl& url)
     d->mngr->thread()->loadProcessed(url);
 
     if (!d->mngr->thread()->isRunning())
+    {
         d->mngr->thread()->start();
+    }
 }
 
 void ExpoBlendingDlg::setIdentity(const QUrl& url, const QString& identity)
@@ -370,7 +376,9 @@ void ExpoBlendingDlg::setIdentity(const QUrl& url, const QString& identity)
     BracketStackItem* const item = d->bracketStack->findItem(url);
 
     if (item)
+    {
         item->setExposure(identity);
+    }
 }
 
 void ExpoBlendingDlg::busy(bool val)
@@ -384,7 +392,9 @@ void ExpoBlendingDlg::busy(bool val)
     setRejectButtonMode(val ? QDialogButtonBox::Cancel : QDialogButtonBox::Close);
 
     if (val)
+    {
         d->previewWidget->setButtonVisible(false);
+    }
 }
 
 void ExpoBlendingDlg::slotDefault()
@@ -430,7 +440,9 @@ void ExpoBlendingDlg::slotPreview()
     QList<QUrl> selectedUrl = d->bracketStack->urls();
 
     if (selectedUrl.isEmpty())
+    {
         return;
+    }
 
     ExpoBlendingItemUrlsMap map = d->mngr->preProcessedMap();
     QList<QUrl> preprocessedList;
@@ -447,7 +459,9 @@ void ExpoBlendingDlg::slotPreview()
     d->mngr->thread()->enfusePreview(preprocessedList, d->mngr->itemsList()[0], settings, d->mngr->enfuseBinary().path());
 
     if (!d->mngr->thread()->isRunning())
+    {
         d->mngr->thread()->start();
+    }
 }
 
 void ExpoBlendingDlg::slotProcess()
@@ -455,7 +469,9 @@ void ExpoBlendingDlg::slotProcess()
     QList<EnfuseSettings> list = d->enfuseStack->settingsList();
 
     if (list.isEmpty())
+    {
         return;
+    }
 
     ExpoBlendingItemUrlsMap map = d->mngr->preProcessedMap();
     QList<QUrl> preprocessedList;
@@ -473,7 +489,9 @@ void ExpoBlendingDlg::slotProcess()
         d->mngr->thread()->enfuseFinal(preprocessedList, d->mngr->itemsList()[0], settings, d->mngr->enfuseBinary().path());
 
         if (!d->mngr->thread()->isRunning())
+        {
             d->mngr->thread()->start();
+        }
     }
 }
 
@@ -491,6 +509,7 @@ void ExpoBlendingDlg::saveItem(const QUrl& temp, const EnfuseSettings& settings)
     if (!newUrl.isEmpty())
     {
         // remove newUrl file if it exist
+
         if (temp.toLocalFile() != newUrl.toLocalFile() && QFile::exists(temp.toLocalFile()) && QFile::exists(newUrl.toLocalFile()))
         {
             QFile::remove(newUrl.toLocalFile());
@@ -527,28 +546,32 @@ void ExpoBlendingDlg::slotExpoBlendingAction(const DigikamGenericExpoBlendingPlu
     {
         switch (ad.action)
         {
-            case(EXPOBLENDING_IDENTIFY):
+            case EXPOBLENDING_IDENTIFY:
             {
                 break;
             }
-            case(EXPOBLENDING_LOAD):
+
+            case EXPOBLENDING_LOAD:
             {
                 busy(true);
                 break;
             }
-            case(EXPOBLENDING_ENFUSEPREVIEW):
+
+            case EXPOBLENDING_ENFUSEPREVIEW:
             {
                 busy(true);
                 d->previewWidget->setBusy(true, i18n("Processing preview of bracketed images..."));
                 break;
             }
-            case(EXPOBLENDING_ENFUSEFINAL):
+
+            case EXPOBLENDING_ENFUSEFINAL:
             {
                 busy(true);
                 d->previewWidget->setBusy(true, i18n("Processing output of bracketed images..."));
                 d->enfuseStack->processingItem(ad.enfuseSettings.previewUrl, true);
                 break;
             }
+
             default:
             {
                 qCWarning(DIGIKAM_DPLUGIN_GENERIC_LOG) << "Unknown action";
@@ -562,19 +585,21 @@ void ExpoBlendingDlg::slotExpoBlendingAction(const DigikamGenericExpoBlendingPlu
         {
             switch (ad.action)
             {
-                case(EXPOBLENDING_IDENTIFY):
+                case EXPOBLENDING_IDENTIFY:
                 {
                     setIdentity(ad.inUrls[0], ad.message);
                     busy(false);
                     break;
                 }
-                case(EXPOBLENDING_LOAD):
+
+                case EXPOBLENDING_LOAD:
                 {
                     d->previewWidget->setText(i18n("Failed to load processed image."), Qt::red);
                     busy(false);
                     break;
                 }
-                case(EXPOBLENDING_ENFUSEPREVIEW):
+
+                case EXPOBLENDING_ENFUSEPREVIEW:
                 {
                     d->output = ad.message;
                     d->previewWidget->setBusy(false);
@@ -583,7 +608,8 @@ void ExpoBlendingDlg::slotExpoBlendingAction(const DigikamGenericExpoBlendingPlu
                     busy(false);
                     break;
                 }
-                case(EXPOBLENDING_ENFUSEFINAL):
+
+                case EXPOBLENDING_ENFUSEFINAL:
                 {
                     slotCancelClicked();
                     d->output = ad.message;
@@ -595,6 +621,7 @@ void ExpoBlendingDlg::slotExpoBlendingAction(const DigikamGenericExpoBlendingPlu
                     busy(false);
                     break;
                 }
+
                 default:
                 {
                     qCWarning(DIGIKAM_DPLUGIN_GENERIC_LOG) << "Unknown action";
@@ -606,13 +633,14 @@ void ExpoBlendingDlg::slotExpoBlendingAction(const DigikamGenericExpoBlendingPlu
         {
             switch (ad.action)
             {
-                case(EXPOBLENDING_IDENTIFY):
+                case EXPOBLENDING_IDENTIFY:
                 {
                     setIdentity(ad.inUrls[0], ad.message);
                     busy(false);
                     break;
                 }
-                case(EXPOBLENDING_LOAD):
+
+                case EXPOBLENDING_LOAD:
                 {
                     d->previewWidget->setImage(ad.image, !d->firstImageDisplayed);
                     d->firstImageDisplayed |= true;
@@ -620,18 +648,21 @@ void ExpoBlendingDlg::slotExpoBlendingAction(const DigikamGenericExpoBlendingPlu
                     busy(false);
                     break;
                 }
-                case(EXPOBLENDING_ENFUSEPREVIEW):
+
+                case EXPOBLENDING_ENFUSEPREVIEW:
                 {
                     d->enfuseStack->addItem(ad.outUrls[0], ad.enfuseSettings);
                     busy(false);
                     break;
                 }
-                case(EXPOBLENDING_ENFUSEFINAL):
+
+                case EXPOBLENDING_ENFUSEFINAL:
                 {
                     d->enfuseStack->processingItem(ad.enfuseSettings.previewUrl, false);
                     saveItem(ad.outUrls[0], ad.enfuseSettings);
                     break;
                 }
+
                 default:
                 {
                     qCWarning(DIGIKAM_DPLUGIN_GENERIC_LOG) << "Unknown action";
@@ -644,7 +675,7 @@ void ExpoBlendingDlg::slotExpoBlendingAction(const DigikamGenericExpoBlendingPlu
 
 void ExpoBlendingDlg::setRejectButtonMode(QDialogButtonBox::StandardButton button)
 {
-    if (button == QDialogButtonBox::Close)
+    if      (button == QDialogButtonBox::Close)
     {
         d->buttonBox->button(QDialogButtonBox::Close)->setText(i18n("Close"));
         d->buttonBox->button(QDialogButtonBox::Close)->setIcon(QIcon::fromTheme(QLatin1String("window-close")));

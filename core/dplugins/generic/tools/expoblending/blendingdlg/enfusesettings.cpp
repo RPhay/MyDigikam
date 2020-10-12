@@ -49,7 +49,7 @@ QString EnfuseSettings::asCommentString() const
     ret.append(QLatin1Char('\n'));
     ret.append(ciecam02 ? i18n("CIECAM02: enabled") : i18n("CIECAM02: disabled"));
     ret.append(QLatin1Char('\n'));
-    ret.append(autoLevels ? i18n("Levels: auto") : i18n("Levels: %1", QString::number(levels)));
+    ret.append(autoLevels ? i18n("Levels: auto")    : i18n("Levels: %1", QString::number(levels)));
     ret.append(QLatin1Char('\n'));
     ret.append(i18n("Exposure: <numid>%1</numid>",   exposure));
     ret.append(QLatin1Char('\n'));
@@ -69,7 +69,8 @@ QString EnfuseSettings::inputImagesList() const
         ret.append(url.fileName() + QLatin1String(" ; "));
     }
 
-    ret.truncate(ret.length()-3);
+    ret.truncate(ret.length() - 3);
+
     return ret;
 }
 
@@ -78,17 +79,17 @@ class Q_DECL_HIDDEN EnfuseSettingsWidget::Private
 public:
 
     explicit Private()
-      : autoLevelsCB(nullptr),
-        hardMaskCB(nullptr),
-        ciecam02CB(nullptr),
-        levelsLabel(nullptr),
-        exposureLabel(nullptr),
-        saturationLabel(nullptr),
-        contrastLabel(nullptr),
-        levelsInput(nullptr),
-        exposureInput(nullptr),
-        saturationInput(nullptr),
-        contrastInput(nullptr)
+      : autoLevelsCB    (nullptr),
+        hardMaskCB      (nullptr),
+        ciecam02CB      (nullptr),
+        levelsLabel     (nullptr),
+        exposureLabel   (nullptr),
+        saturationLabel (nullptr),
+        contrastLabel   (nullptr),
+        levelsInput     (nullptr),
+        exposureInput   (nullptr),
+        saturationInput (nullptr),
+        contrastInput   (nullptr)
     {
     }
 
@@ -112,7 +113,7 @@ public:
 
 EnfuseSettingsWidget::EnfuseSettingsWidget(QWidget* const parent)
     : QWidget(parent),
-      d(new Private)
+      d      (new Private)
 {
     setAttribute(Qt::WA_DeleteOnClose);
 
@@ -256,6 +257,7 @@ EnfuseSettings EnfuseSettingsWidget::settings() const
     settings.saturation = d->saturationInput->value();
     settings.contrast   = d->contrastInput->value();
     settings.ciecam02   = d->ciecam02CB->isChecked();
+
     return settings;
 }
 

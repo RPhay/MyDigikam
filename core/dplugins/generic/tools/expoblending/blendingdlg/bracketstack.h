@@ -46,7 +46,7 @@ class BracketStackItem : public QTreeWidgetItem
 public:
 
     explicit BracketStackItem(QTreeWidget* const parent);
-    ~BracketStackItem() override;
+    ~BracketStackItem()                                 override;
 
     void setUrl(const QUrl& url);
     const QUrl& url() const;

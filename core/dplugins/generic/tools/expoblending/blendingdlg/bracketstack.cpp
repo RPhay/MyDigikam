@@ -82,7 +82,7 @@ void BracketStackItem::setExposure(const QString& exp)
 
 bool BracketStackItem::isOn() const
 {
-    return (checkState(0) == Qt::Checked ? true : false);
+    return ((checkState(0) == Qt::Checked) ? true : false);
 }
 
 void BracketStackItem::setOn(bool b)
@@ -143,7 +143,9 @@ QList<QUrl> BracketStackList::urls()
         BracketStackItem* const item = dynamic_cast<BracketStackItem*>(*it);
 
         if (item && item->isOn())
+        {
             list.append(item->url());
+        }
 
         ++it;
     }
@@ -159,7 +161,7 @@ BracketStackItem* BracketStackList::findItem(const QUrl& url)
     {
         BracketStackItem* const lvItem = dynamic_cast<BracketStackItem*>(*it);
 
-        if (lvItem && lvItem->url() == url)
+        if (lvItem && (lvItem->url() == url))
         {
             return lvItem;
         }
@@ -182,6 +184,7 @@ void BracketStackList::addItems(const QList<QUrl>& list)
     for (const QUrl& imageUrl: list)
     {
         // Check if the new item already exist in the list.
+
         bool found = false;
 
         QTreeWidgetItemIterator iter(this);
@@ -245,9 +248,9 @@ void BracketStackList::slotItemClicked(QTreeWidgetItem* item, int column)
 {
     BracketStackItem* const cItem = dynamic_cast<BracketStackItem*>(item);
 
-    if (cItem && column == 1)
+    if (cItem && (column == 1))
     {
-        signalItemClicked(cItem->url());
+        emit signalItemClicked(cItem->url());
     }
 }
 

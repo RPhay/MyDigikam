@@ -65,7 +65,7 @@ public:
 
 EnfuseStackItem::EnfuseStackItem(QTreeWidget* const parent)
     : QTreeWidgetItem(parent),
-      d(new Private)
+      d              (new Private)
 {
     setFlags(Qt::ItemIsSelectable | Qt::ItemIsEnabled | Qt::ItemIsUserCheckable);
     setCheckState(0, Qt::Unchecked);
@@ -133,7 +133,7 @@ bool EnfuseStackItem::asValidThumb() const
 
 bool EnfuseStackItem::isOn() const
 {
-    return (checkState(0) == Qt::Checked ? true : false);
+    return ((checkState(0) == Qt::Checked) ? true : false);
 }
 
 void EnfuseStackItem::setOn(bool b)
@@ -148,11 +148,11 @@ class Q_DECL_HIDDEN EnfuseStackList::Private
 public:
 
     explicit Private()
-      : outputFormat(DSaveSettingsWidget::OUTPUT_PNG),
+      : outputFormat (DSaveSettingsWidget::OUTPUT_PNG),
         progressCount(0),
         progressTimer(nullptr),
-        progressPix(nullptr),
-        processItem(nullptr)
+        progressPix  (nullptr),
+        processItem  (nullptr)
     {
     }
 
@@ -215,13 +215,16 @@ void EnfuseStackList::slotContextMenu(const QPoint& p)
     if (item)
     {
         QAction* const rmItem = new QAction(QIcon::fromTheme(QLatin1String("window-close")), i18nc("@item:inmenu", "Remove item"), this);
+
         connect(rmItem, SIGNAL(triggered(bool)),
                 this, SLOT(slotRemoveItem()));
+
         popmenu.addAction(rmItem);
         popmenu.addSeparator();
     }
 
     QAction* const rmAll = new QAction(QIcon::fromTheme(QLatin1String("edit-delete")), i18nc("@item:inmenu", "Clear all"), this);
+
     connect(rmAll, SIGNAL(triggered(bool)),
             this, SLOT(clear()));
 
@@ -273,7 +276,9 @@ void EnfuseStackList::clearSelected()
     }
 
     foreach (QTreeWidgetItem* const item, list)
+    {
         delete item;
+    }
 }
 
 void EnfuseStackList::setOnItem(const QUrl& url, bool on)
