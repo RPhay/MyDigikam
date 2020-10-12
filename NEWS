@@ -155,4 +155,5 @@ BUGFIXES:
 141 ==> 426717 - digikam.exe & showfoto.exe: no application-specific icons shown on Windows 10 after upgrade to 7.1.0.
 142 ==> 427468 - Duplicate subalbums on Windows 10 (format YYYY\MM).
 143 ==> 427385 - digiKam git build fail.
-144 ==> 
+144 ==> 427555 - Allow selecting single picture, which fills complete screen which can be panned and zoomed.
+145 ==>
