@@ -153,6 +153,15 @@ void Task::run()
     foreach (const BatchToolSet& set, d->tools.m_toolsList)
     {
         BatchTool* const tool = BatchToolsFactory::instance()->findTool(set.name, set.group);
+
+        if (!tool)
+        {
+            emitActionData(ActionData::BatchFailed, i18n("Failed to find internal tool..."));
+            removeTempFiles(tmp2del);
+            emit signalDone();
+            return;
+        }
+
         d->tool               = tool->clone();
         d->tool->setToolIcon(tool->toolIcon());
         d->tool->setToolTitle(tool->toolTitle());
