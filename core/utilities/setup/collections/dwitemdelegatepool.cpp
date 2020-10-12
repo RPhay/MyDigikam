@@ -55,7 +55,7 @@ public:
 
     explicit DWItemDelegateEventListener(DWItemDelegatePoolPrivate* const poolPrivate,
                                          QObject* const parent = nullptr)
-        : QObject(parent),
+        : QObject    (parent),
           poolPrivate(poolPrivate)
     {
     }
@@ -70,9 +70,9 @@ private:
 // -------------------------------------------------------------------------------------------
 
 DWItemDelegatePoolPrivate::DWItemDelegatePoolPrivate(DWItemDelegate* const d)
-    : delegate(d),
+    : delegate     (d),
       eventListener(new DWItemDelegateEventListener(this)),
-      clearing(false)
+      clearing     (false)
 {
 }
 
@@ -183,7 +183,7 @@ QList<QWidget*> DWItemDelegatePool::invalidIndexesWidgets() const
 void DWItemDelegatePool::fullClear()
 {
     d->clearing = true;
-    qDeleteAll(d->widgetInIndex.keys());
+    qDeleteAll(d->widgetInIndex.keyBegin(), d->widgetInIndex.keyEnd());
     d->clearing = false;
     d->allocatedWidgets.clear();
     d->usedWidgets.clear();
@@ -194,7 +194,7 @@ bool DWItemDelegateEventListener::eventFilter(QObject* watched, QEvent* event)
 {
     QWidget* const widget = static_cast<QWidget*>(watched);
 
-    if (event->type() == QEvent::Destroy && !poolPrivate->clearing)
+    if ((event->type() == QEvent::Destroy) && !poolPrivate->clearing)
     {
         qCWarning(DIGIKAM_GENERAL_LOG) << "User of DWItemDelegate should not delete widgets created by createItemWidgets!";
 
