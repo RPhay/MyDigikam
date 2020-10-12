@@ -148,7 +148,7 @@ void Task::run()
     // ItemInfo must be tread-safe.
 
     ItemInfo source = ItemInfo::fromUrl(d->tools.m_itemUrl);
-    bool timeAdjust  = false;
+    bool timeAdjust = false;
 
     foreach (const BatchToolSet& set, d->tools.m_toolsList)
     {
