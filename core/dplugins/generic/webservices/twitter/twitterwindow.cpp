@@ -57,9 +57,9 @@ public:
     explicit Private()
       : imagesCount(0),
         imagesTotal(0),
-        widget(nullptr),
-        albumDlg(nullptr),
-        talker(nullptr)
+        widget     (nullptr),
+        albumDlg   (nullptr),
+        talker     (nullptr)
     {
     }
 
@@ -78,7 +78,7 @@ public:
 TwWindow::TwWindow(DInfoInterface* const iface,
                    QWidget* const /*parent*/)
     : WSToolDialog(nullptr, QLatin1String("Twitter Export Dialog")),
-      d(new Private)
+      d           (new Private)
 {
     d->widget      = new TwWidget(this, iface, QLatin1String("Twitter"));
 
@@ -409,7 +409,7 @@ void TwWindow::slotSignalLinkingSucceeded()
 /*
     d->talker->listFolders();
 */
-    emit slotBusy(false);
+    slotBusy(false);
 }
 
 void TwWindow::slotListAlbumsFailed(const QString& msg)

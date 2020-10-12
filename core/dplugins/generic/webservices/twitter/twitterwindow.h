@@ -49,7 +49,7 @@ class TwWindow : public WSToolDialog
 public:
 
     explicit TwWindow(DInfoInterface* const iface, QWidget* const parent);
-    ~TwWindow() override;
+    ~TwWindow()                     override;
 
     void reactivate();
 
@@ -63,7 +63,7 @@ private:
     void uploadNextPhoto();
 
     void buttonStateChange(bool state);
-    void closeEvent(QCloseEvent*) override;
+    void closeEvent(QCloseEvent*)   override;
 
 private Q_SLOTS:
 
