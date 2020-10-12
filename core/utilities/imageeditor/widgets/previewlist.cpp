@@ -61,14 +61,13 @@ public:
 
 PreviewThreadWrapper::PreviewThreadWrapper(QObject* const parent)
     : QObject(parent),
-      d(new Private)
+      d      (new Private)
 {
 }
 
 PreviewThreadWrapper::~PreviewThreadWrapper()
 {
-    qDeleteAll(d->map.values());
-    d->map.clear();
+    qDeleteAll(d->map);
 
     delete d;
 }
@@ -130,8 +129,9 @@ void PreviewThreadWrapper::slotFilterProgress(int /*progress*/)
     {
         return;
     }
-
-    //qCDebug(DIGIKAM_GENERAL_LOG) << filter->filterName() << " : " << progress << " %";
+/*
+    qCDebug(DIGIKAM_GENERAL_LOG) << filter->filterName() << " : " << progress << " %";
+*/
 }
 
 void PreviewThreadWrapper::startFilters()
@@ -159,7 +159,7 @@ public:
 
     explicit Private()
       : busy(false),
-        id(0)
+        id  (0)
     {
     }
 
@@ -169,7 +169,7 @@ public:
 
 PreviewListItem::PreviewListItem(QListWidget* const parent)
     : QListWidgetItem(parent),
-      d(new Private)
+      d              (new Private)
 {
 }
 
@@ -223,8 +223,8 @@ public:
     explicit Private()
       : progressCount(0),
         progressTimer(nullptr),
-        progressPix(nullptr),
-        wrapper(nullptr)
+        progressPix  (nullptr),
+        wrapper      (nullptr)
     {
     }
 
@@ -239,7 +239,7 @@ public:
 
 PreviewList::PreviewList(QObject* const /*parent*/)
     : QListWidget(),
-      d(new Private)
+      d          (new Private)
 {
     d->wrapper     = new PreviewThreadWrapper(this);
     d->progressPix = new DWorkingPixmap(this);
@@ -302,7 +302,7 @@ PreviewListItem* PreviewList::addItem(DImgThreadedFilter* const filter, const QS
     PreviewListItem* const item = new PreviewListItem(this);
     item->setText(txt);
 
-    //  in case text is mangled by textelide, it is displayed by hovering.
+    // in case text is mangled by textelide, it is displayed by hovering.
 
     item->setToolTip(txt);
     item->setId(id);
