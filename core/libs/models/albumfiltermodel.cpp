@@ -96,7 +96,7 @@ void AlbumFilterModel::setSearchTextSettings(const SearchTextSettings& settings)
 
     m_settings = settings;
     invalidateFilter();
-    emit filterChanged();
+    emit signalFilterChanged();
 
     emit searchTextSettingsChanged(wasSearching, willSearch);
 
@@ -532,14 +532,14 @@ void CheckableAlbumFilterModel::setFilterChecked(bool filter)
 {
     m_filterChecked = filter;
     invalidateFilter();
-    emit filterChanged();
+    emit signalFilterChanged();
 }
 
 void CheckableAlbumFilterModel::setFilterPartiallyChecked(bool filter)
 {
     m_filterPartiallyChecked = filter;
     invalidateFilter();
-    emit filterChanged();
+    emit signalFilterChanged();
 }
 
 bool CheckableAlbumFilterModel::isFiltering() const
@@ -631,14 +631,14 @@ void SearchFilterModel::setTypeFilter(int type)
 {
     m_searchType = type;
     invalidateFilter();
-    emit filterChanged();
+    emit signalFilterChanged();
 }
 
 void SearchFilterModel::setListTemporarySearches(bool list)
 {
     m_listTemporary = list;
     invalidateFilter();
-    emit filterChanged();
+    emit signalFilterChanged();
 }
 
 bool SearchFilterModel::isFiltering() const
@@ -714,7 +714,7 @@ void TagPropertiesFilterModel::listOnlyTagsWithProperty(const QString& property)
 
     m_propertiesWhiteList << property;
     invalidateFilter();
-    emit filterChanged();
+    emit signalFilterChanged();
 }
 
 void TagPropertiesFilterModel::removeListOnlyProperty(const QString& property)
@@ -726,7 +726,7 @@ void TagPropertiesFilterModel::removeListOnlyProperty(const QString& property)
 
     m_propertiesWhiteList.remove(property);
     invalidateFilter();
-    emit filterChanged();
+    emit signalFilterChanged();
 }
 
 void TagPropertiesFilterModel::doNotListTagsWithProperty(const QString& property)
@@ -738,7 +738,7 @@ void TagPropertiesFilterModel::doNotListTagsWithProperty(const QString& property
 
     m_propertiesBlackList << property;
     invalidateFilter();
-    emit filterChanged();
+    emit signalFilterChanged();
 }
 
 void TagPropertiesFilterModel::removeDoNotListProperty(const QString& property)
@@ -750,7 +750,7 @@ void TagPropertiesFilterModel::removeDoNotListProperty(const QString& property)
 
     m_propertiesBlackList.remove(property);
     invalidateFilter();
-    emit filterChanged();
+    emit signalFilterChanged();
 }
 
 bool TagPropertiesFilterModel::isFiltering() const
@@ -817,7 +817,7 @@ void TagsManagerFilterModel::setQuickListTags(const QList<int>& tags)
     }
 
     invalidateFilter();
-    emit filterChanged();
+    emit signalFilterChanged();
 }
 
 bool TagsManagerFilterModel::matches(Album* album) const

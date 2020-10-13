@@ -215,7 +215,7 @@ Q_SIGNALS:
     /**
      * Indicates that a new filter was applied to the model.
      */
-    void filterChanged();
+    void signalFilterChanged();
 
     /**
      * Indicates whether the newly applied filter results in a search result or
