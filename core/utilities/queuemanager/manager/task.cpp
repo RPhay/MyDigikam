@@ -156,7 +156,7 @@ void Task::run()
 
         if (!tool)
         {
-            emitActionData(ActionData::BatchFailed, i18n("Failed to find internal tool..."));
+            emitActionData(ActionData::BatchFailed, i18n("Failed to find tool..."));
             removeTempFiles(tmp2del);
             emit signalDone();
             return;
