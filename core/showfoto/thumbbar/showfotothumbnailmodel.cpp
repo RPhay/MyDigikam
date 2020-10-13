@@ -53,13 +53,13 @@ class Q_DECL_HIDDEN ShowfotoThumbnailModel::Private
 public:
 
     explicit Private()
-      : thread(nullptr),
-        preloadThread(nullptr),
-        thumbSize(0),
-        lastGlobalThumbSize(0),
-        preloadThumbSize(0),
-        maxThumbSize(ThumbnailSize::Huge),
-        emitDataChanged(true)
+      : thread              (nullptr),
+        preloadThread       (nullptr),
+        thumbSize           (0),
+        lastGlobalThumbSize (0),
+        preloadThumbSize    (0),
+        maxThumbSize        (ThumbnailSize::Huge),
+        emitDataChanged     (true)
     {
     }
 
@@ -87,7 +87,7 @@ public:
 
 ShowfotoThumbnailModel::ShowfotoThumbnailModel(QObject* const parent)
     : ShowfotoItemModel(parent),
-      d(new Private)
+      d                (new Private)
 {
     connect(this, &ShowfotoThumbnailModel::signalThumbInfo,
             this, &ShowfotoThumbnailModel::slotThumbInfoLoaded);
@@ -193,6 +193,7 @@ bool ShowfotoThumbnailModel::setData(const QModelIndex& index, const QVariant& v
             case QVariant::Invalid:
                 d->thumbSize  = d->lastGlobalThumbSize;
                 d->detailRect = QRect();
+
                 break;
 
             case QVariant::Int:
@@ -205,6 +206,7 @@ bool ShowfotoThumbnailModel::setData(const QModelIndex& index, const QVariant& v
                 {
                     d->thumbSize = ThumbnailSize(value.toInt());
                 }
+
                 break;
 
             case QVariant::Rect:
@@ -217,6 +219,7 @@ bool ShowfotoThumbnailModel::setData(const QModelIndex& index, const QVariant& v
                 {
                     d->detailRect = value.toRect();
                 }
+
                 break;
 
             default:
@@ -301,7 +304,7 @@ bool ShowfotoThumbnailModel::getThumbnail(const ShowfotoItemInfo& itemInfo, QIma
 
     QFileInfo fi(path);
 
-    if (thumbnail.load(itemInfo.folder + QLatin1Char('/') + fi.baseName() + QLatin1String(".thm")))        // Lowercase
+    if      (thumbnail.load(itemInfo.folder + QLatin1Char('/') + fi.baseName() + QLatin1String(".thm")))        // Lowercase
     {
         if (!thumbnail.isNull())
         {
