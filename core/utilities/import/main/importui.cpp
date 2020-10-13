@@ -771,11 +771,14 @@ void ImportUI::setupStatusBar()
 
     //------------------------------------------------------------------------------
 
-    //TODO: Replace it with FilterStatusBar after advanced filtering is implemented.
+    // TODO: Replace it with FilterStatusBar after advanced filtering is implemented.
+
     d->filterComboBox = new ImportFilterComboBox(statusBar());
     setFilter(d->filterComboBox->currentFilter());
     statusBar()->addWidget(d->filterComboBox, 1);
-    connect(d->filterComboBox, SIGNAL(filterChanged(Filter*)), this, SLOT(setFilter(Filter*)));
+
+    connect(d->filterComboBox, SIGNAL(signalFilterChanged(Filter*)),
+            this, SLOT(setFilter(Filter*)));
 
     //------------------------------------------------------------------------------
 

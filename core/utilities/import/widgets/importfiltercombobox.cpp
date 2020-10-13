@@ -92,7 +92,7 @@ public:
 
 ImportFilterComboBox::ImportFilterComboBox(QWidget* const parent)
     : QComboBox(parent),
-      d(new Private)
+      d        (new Private)
 {
     fillCombo();
 
@@ -116,7 +116,7 @@ void ImportFilterComboBox::defaultFilters(FilterList* const filters)
 {
     if (filters->count() == 0)
     {
-        Filter*       f = new Filter;
+        Filter* f       = new Filter;
         f->name         = i18nc("@item:inlistbox", "All Files");
         filters->append(f);
 
@@ -163,9 +163,9 @@ void ImportFilterComboBox::indexChanged(int index)
 {
     if (index != d->currentFilter)
     {
-        d->currentFilter = index;
+        d->currentFilter     = index;
         Filter* const filter = d->filters.value(d->currentFilter);
-        emit filterChanged(filter);
+        emit signalFilterChanged(filter);
     }
 }
 
