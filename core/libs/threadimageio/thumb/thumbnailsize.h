@@ -54,7 +54,7 @@ public:
          * overlays show under thumbs (as Pick label and Group indicator)
          * See bugs #321337 and #275381 for details.
          */
-        Small       = 128,
+        Small       = 100,
         Medium      = 142,
         Large       = 160,
         Huge        = 256,
