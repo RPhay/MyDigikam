@@ -64,30 +64,30 @@ class Q_DECL_HIDDEN FilterSideBarWidget::Private
 public:
 
     explicit Private()
-      : space(nullptr),
-        expanderVlay(nullptr),
-        tagFilterView(nullptr),
-        tagFilterSearchBar(nullptr),
-        tagOptionsBtn(nullptr),
-        tagOptionsMenu(nullptr),
-        tagFilterModel(nullptr),
-        tagOrCondAction(nullptr),
-        tagAndCondAction(nullptr),
-        tagMatchCond(ItemFilterSettings::OrCondition),
-        faceFilterView(nullptr),
-        faceFilterSearchBar(nullptr),
-        faceOptionsBtn(nullptr),
-        faceOptionsMenu(nullptr),
-        faceFilterModel(nullptr),
-        colorLabelFilter(nullptr),
-        geolocationFilter(nullptr),
-        pickLabelFilter(nullptr),
-        ratingFilter(nullptr),
-        mimeFilter(nullptr),
-        textFilter(nullptr),
-        withoutTagCheckBox(nullptr),
-        withoutFaceCheckBox(nullptr),
-        expbox(nullptr)
+      : space               (nullptr),
+        expanderVlay        (nullptr),
+        tagFilterView       (nullptr),
+        tagFilterSearchBar  (nullptr),
+        tagOptionsBtn       (nullptr),
+        tagOptionsMenu      (nullptr),
+        tagFilterModel      (nullptr),
+        tagOrCondAction     (nullptr),
+        tagAndCondAction    (nullptr),
+        tagMatchCond        (ItemFilterSettings::OrCondition),
+        faceFilterView      (nullptr),
+        faceFilterSearchBar (nullptr),
+        faceOptionsBtn      (nullptr),
+        faceOptionsMenu     (nullptr),
+        faceFilterModel     (nullptr),
+        colorLabelFilter    (nullptr),
+        geolocationFilter   (nullptr),
+        pickLabelFilter     (nullptr),
+        ratingFilter        (nullptr),
+        mimeFilter          (nullptr),
+        textFilter          (nullptr),
+        withoutTagCheckBox  (nullptr),
+        withoutFaceCheckBox (nullptr),
+        expbox              (nullptr)
     {
     }
 
@@ -135,9 +135,9 @@ const QString FilterSideBarWidget::Private::configMatchingConditionEntry(QLatin1
 // ---------------------------------------------------------------------------------------------------
 
 FilterSideBarWidget::FilterSideBarWidget(QWidget* const parent, TagModel* const tagFilterModel)
-    : DVBox(parent),
+    : DVBox            (parent),
       StateSavingObject(this),
-      d(new Private)
+      d                (new Private)
 {
     setObjectName(QLatin1String("TagFilter Sidebar"));
 
@@ -334,6 +334,7 @@ void FilterSideBarWidget::slotTagOptionsMenu()
         case ItemFilterSettings::OrCondition:
             d->tagOrCondAction->setChecked(true);
             break;
+
         case ItemFilterSettings::AndCondition:
             d->tagAndCondAction->setChecked(true);
             break;
@@ -378,7 +379,7 @@ void FilterSideBarWidget::slotTagOptionsTriggered(QAction* action)
 {
     if (action)
     {
-        if (action == d->tagOrCondAction)
+        if      (action == d->tagOrCondAction)
         {
             d->tagMatchCond = ItemFilterSettings::OrCondition;
         }
@@ -388,7 +389,7 @@ void FilterSideBarWidget::slotTagOptionsTriggered(QAction* action)
         }
     }
 
-    filterChanged();
+    checkFilterChanges();
 }
 
 void FilterSideBarWidget::slotCheckedTagsChanged(const QList<TAlbum*>& includedTags,
@@ -396,28 +397,28 @@ void FilterSideBarWidget::slotCheckedTagsChanged(const QList<TAlbum*>& includedT
 {
     Q_UNUSED(includedTags);
     Q_UNUSED(excludedTags);
-    filterChanged();
+    checkFilterChanges();
 }
 
 void FilterSideBarWidget::slotColorLabelFilterChanged(const QList<ColorLabel>& list)
 {
     Q_UNUSED(list);
-    filterChanged();
+    checkFilterChanges();
 }
 
 void FilterSideBarWidget::slotPickLabelFilterChanged(const QList<PickLabel>& list)
 {
     Q_UNUSED(list);
-    filterChanged();
+    checkFilterChanges();
 }
 
 void FilterSideBarWidget::slotWithoutTagChanged(int newState)
 {
     Q_UNUSED(newState);
-    filterChanged();
+    checkFilterChanges();
 }
 
-void FilterSideBarWidget::filterChanged()
+void FilterSideBarWidget::checkFilterChanges()
 {
     bool showUntagged = d->withoutTagCheckBox->isChecked();
 
@@ -428,7 +429,7 @@ void FilterSideBarWidget::filterChanged()
 
     if (!showUntagged || (d->tagMatchCond == ItemFilterSettings::OrCondition))
     {
-        foreach (TAlbum* tag, d->tagFilterView->getCheckedTags())
+        foreach (TAlbum* const tag, d->tagFilterView->getCheckedTags())
         {
             if (tag)
             {
@@ -436,7 +437,7 @@ void FilterSideBarWidget::filterChanged()
             }
         }
 
-        foreach (TAlbum* tag, d->tagFilterView->getPartiallyCheckedTags())
+        foreach (TAlbum* const tag, d->tagFilterView->getPartiallyCheckedTags())
         {
             if (tag)
             {
@@ -444,7 +445,7 @@ void FilterSideBarWidget::filterChanged()
             }
         }
 
-        foreach (TAlbum* tag, d->colorLabelFilter->getCheckedColorLabelTags())
+        foreach (TAlbum* const tag, d->colorLabelFilter->getCheckedColorLabelTags())
         {
             if (tag)
             {
@@ -452,7 +453,7 @@ void FilterSideBarWidget::filterChanged()
             }
         }
 
-        foreach (TAlbum* tag, d->pickLabelFilter->getCheckedPickLabelTags())
+        foreach (TAlbum* const tag, d->pickLabelFilter->getCheckedPickLabelTags())
         {
             if (tag)
             {
@@ -466,7 +467,12 @@ void FilterSideBarWidget::filterChanged()
         }
     }
 
-    emit signalTagFilterChanged(includedTagIds, excludedTagIds, d->tagMatchCond, showUntagged, clTagIds, plTagIds);
+    emit signalTagFilterChanged(includedTagIds,
+                                excludedTagIds,
+                                d->tagMatchCond,
+                                showUntagged,
+                                clTagIds,
+                                plTagIds);
 }
 
 void FilterSideBarWidget::setConfigGroup(const KConfigGroup& group)
@@ -508,7 +514,7 @@ void FilterSideBarWidget::doLoadState()
         d->withoutFaceCheckBox->setChecked(group.readEntry(entryName(d->configLastShowWithoutFaceEntry), false));
     }
 
-    filterChanged();
+    checkFilterChanges();
 }
 
 void FilterSideBarWidget::doSaveState()

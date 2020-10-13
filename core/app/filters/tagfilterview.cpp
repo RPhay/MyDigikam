@@ -49,14 +49,14 @@ class Q_DECL_HIDDEN TagFilterView::Private
 public:
 
     explicit Private()
-      : onRestoreTagFiltersAction(nullptr),
+      : onRestoreTagFiltersAction (nullptr),
         offRestoreTagFiltersAction(nullptr),
-        ignoreTagAction(nullptr),
-        includeTagAction(nullptr),
-        excludeTagAction(nullptr),
-        restoreTagFiltersAction(nullptr),
-        tagFilterModeAction(nullptr),
-        tagFilterModel(nullptr)
+        ignoreTagAction           (nullptr),
+        includeTagAction          (nullptr),
+        excludeTagAction          (nullptr),
+        restoreTagFiltersAction   (nullptr),
+        tagFilterModeAction       (nullptr),
+        tagFilterModel            (nullptr)
     {
     }
 
@@ -73,7 +73,8 @@ public:
 };
 
 TagFilterView::TagFilterView(QWidget* const parent, TagModel* const tagFilterModel)
-    : TagCheckView(parent, tagFilterModel), d(new Private)
+    : TagCheckView(parent, tagFilterModel),
+      d           (new Private)
 {
     d->tagFilterModel             = tagFilterModel;
 
@@ -101,6 +102,7 @@ void TagFilterView::addCustomContextMenuActions(ContextMenuHelper& cmh, Album* a
     TagCheckView::addCustomContextMenuActions(cmh, album);
 
     // restoring
+
     cmh.addAction(d->restoreTagFiltersAction);
 
     Qt::CheckState state = d->tagFilterModel->checkState(album);
@@ -110,9 +112,11 @@ void TagFilterView::addCustomContextMenuActions(ContextMenuHelper& cmh, Album* a
         case Qt::Unchecked:
             d->tagFilterModeAction->setCurrentAction(d->ignoreTagAction);
             break;
+
         case Qt::PartiallyChecked:
             d->tagFilterModeAction->setCurrentAction(d->excludeTagAction);
             break;
+
         case Qt::Checked:
             d->tagFilterModeAction->setCurrentAction(d->includeTagAction);
             break;
@@ -133,11 +137,11 @@ void TagFilterView::handleCustomContextMenuAction(QAction* action, AlbumPointer<
         return;
     }
 
-    if (action == d->onRestoreTagFiltersAction)        // Restore TagFilters ON.
+    if      (action == d->onRestoreTagFiltersAction)        // Restore TagFilters ON.
     {
         setRestoreCheckState(true);
     }
-    else if (action == d->offRestoreTagFiltersAction)  // Restore TagFilters OFF.
+    else if (action == d->offRestoreTagFiltersAction)       // Restore TagFilters OFF.
     {
         setRestoreCheckState(false);
     }

@@ -59,7 +59,8 @@ class TAlbum;
  *
  * @author jwienke
  */
-class FilterSideBarWidget : public DVBox, public StateSavingObject
+class FilterSideBarWidget : public DVBox,
+                            public StateSavingObject
 {
     Q_OBJECT
 
@@ -76,11 +77,11 @@ public:
     /**
      * Destructor.
      */
-    ~FilterSideBarWidget() override;
+    ~FilterSideBarWidget()                         override;
 
     void setConfigGroup(const KConfigGroup& group) override;
-    void doLoadState() override;
-    void doSaveState() override;
+    void doLoadState()                             override;
+    void doSaveState()                             override;
 
     void setFocusToTextFilter();
 
@@ -96,9 +97,12 @@ Q_SIGNALS:
      * @param clTagIds     a list of color label tag ids
      * @param plTagIds     a list of pick label tag ids
      */
-    void signalTagFilterChanged(const QList<int>& includedTags, const QList<int>& excludedTags,
-                                ItemFilterSettings::MatchingCondition matchingCond, bool showUnTagged,
-                                const QList<int>& clTagIds, const QList<int>& plTagIds);
+    void signalTagFilterChanged(const QList<int>& includedTags,
+                                const QList<int>& excludedTags,
+                                ItemFilterSettings::MatchingCondition matchingCond,
+                                bool showUnTagged,
+                                const QList<int>& clTagIds,
+                                const QList<int>& plTagIds);
 
     void signalRatingFilterChanged(int, ItemFilterSettings::RatingCondition, bool);
     void signalMimeTypeFilterChanged(int);
@@ -116,7 +120,8 @@ public Q_SLOTS:
 
 private Q_SLOTS:
 
-    void slotCheckedTagsChanged(const QList<TAlbum*>& includedTags, const QList<TAlbum*>& excludedTags);
+    void slotCheckedTagsChanged(const QList<TAlbum*>& includedTags,
+                                const QList<TAlbum*>& excludedTags);
     void slotColorLabelFilterChanged(const QList<ColorLabel>&);
     void slotPickLabelFilterChanged(const QList<PickLabel>&);
     void slotWithoutTagChanged(int newState);
@@ -126,7 +131,7 @@ private Q_SLOTS:
 
 private:
 
-    void filterChanged();
+    void checkFilterChanges();
 
 private:
 
