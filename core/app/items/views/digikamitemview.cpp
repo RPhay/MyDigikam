@@ -77,7 +77,7 @@ namespace Digikam
 
 DigikamItemView::DigikamItemView(QWidget* const parent)
     : ItemCategorizedView(parent),
-      d(new Private(this))
+      d                  (new Private(this))
 {
     installDefaultModels();
 
@@ -665,7 +665,7 @@ void DigikamItemView::slotFullscreen(const QList<QModelIndex>& indexes)
        return;
    }
 
-   //Trigger SlideShow manual
+   // Trigger SlideShow manual
 
    actions[0]->setData(info.fileUrl());
    actions[0]->trigger();

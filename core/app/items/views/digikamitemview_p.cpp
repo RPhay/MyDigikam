@@ -33,17 +33,17 @@ namespace Digikam
 {
 
 DigikamItemView::Private::Private(DigikamItemView* const qq)
-    : overlaysActive(false),
-      fullscreenActive(false),
-      q_ptr(qq)
+    : utilities          (nullptr),
+      normalDelegate     (nullptr),
+      faceDelegate       (nullptr),
+      overlaysActive     (false),
+      fullscreenActive   (false),
+      rotateLeftOverlay  (nullptr),
+      rotateRightOverlay (nullptr),
+      fullscreenOverlay  (nullptr),
+      faceMode           (false),
+      q_ptr              (qq)
 {
-    utilities          = nullptr;
-    rotateLeftOverlay  = nullptr;
-    rotateRightOverlay = nullptr;
-    fullscreenOverlay  = nullptr;
-    normalDelegate     = nullptr;
-    faceDelegate       = nullptr;
-    faceMode           = false;
 }
 
 DigikamItemView::Private::~Private()

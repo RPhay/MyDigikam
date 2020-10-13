@@ -188,25 +188,25 @@ protected:
 
     // reimplemented from parent class
 
-    QSortFilterProxyModel*       filterModel()     const                                 override;
-    AbstractItemDragDropHandler* dragDropHandler() const                                 override;
+    QSortFilterProxyModel*       filterModel()                                     const override;
+    AbstractItemDragDropHandler* dragDropHandler()                                 const override;
     QModelIndex                  nextIndexHint(const QModelIndex& indexToAnchor,
                                                const QItemSelectionRange& removed) const override;
 
     void setItemDelegate(ItemDelegate* delegate);
-    void indexActivated(const QModelIndex& index, Qt::KeyboardModifiers modifiers) override;
-    void currentChanged(const QModelIndex& index, const QModelIndex& previous)     override;
-    void paintEvent(QPaintEvent* e)                                                override;
-    void selectionChanged(const QItemSelection&, const QItemSelection&)            override;
-    void updateGeometries()                                                        override;
+    void indexActivated(const QModelIndex& index, Qt::KeyboardModifiers modifiers)        override;
+    void currentChanged(const QModelIndex& index, const QModelIndex& previous)            override;
+    void paintEvent(QPaintEvent* e)                                                       override;
+    void selectionChanged(const QItemSelection&, const QItemSelection&)                   override;
+    void updateGeometries()                                                               override;
 
     /// Reimplement these in a subclass
     virtual void activated(const ItemInfo& info, Qt::KeyboardModifiers modifiers);
     virtual void showContextMenuOnInfo(QContextMenuEvent* event, const ItemInfo& info);
-    void showContextMenuOnIndex(QContextMenuEvent* event, const QModelIndex& index) override;
+    void showContextMenuOnIndex(QContextMenuEvent* event, const QModelIndex& index)       override;
 
-    ItemInfo     imageInfo(const QModelIndex& index)           const;
-    ItemInfoList imageInfos(const QList<QModelIndex>& indexes) const;
+    ItemInfo     imageInfo(const QModelIndex& index)                               const;
+    ItemInfoList imageInfos(const QList<QModelIndex>& indexes)                     const;
 
 private Q_SLOTS:
 

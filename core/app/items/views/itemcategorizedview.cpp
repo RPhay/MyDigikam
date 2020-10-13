@@ -71,6 +71,7 @@ protected:
     QString tipContents() override
     {
         ItemInfo info = ItemModel::retrieveItemInfo(currentIndex());
+
         return ToolTipFiller::imageInfoTipContents(info);
     }
 };
@@ -82,11 +83,11 @@ class Q_DECL_HIDDEN ItemCategorizedView::Private
 public:
 
     explicit Private()
-      : model(nullptr),
-        filterModel(nullptr),
-        delegate(nullptr),
-        showToolTip(false),
-        scrollToItemId(0),
+      : model            (nullptr),
+        filterModel      (nullptr),
+        delegate         (nullptr),
+        showToolTip      (false),
+        scrollToItemId   (0),
         delayedEnterTimer(nullptr),
         currentMouseEvent(nullptr)
     {
@@ -111,7 +112,7 @@ public:
 
 ItemCategorizedView::ItemCategorizedView(QWidget* const parent)
     : ItemViewCategorized(parent),
-      d(new Private)
+      d                  (new Private)
 {
     setToolTip(new ItemCategorizedViewToolTip(this));
 
@@ -374,14 +375,16 @@ QModelIndex ItemCategorizedView::nextIndexHint(const QModelIndex& anchor, const 
 {
     QModelIndex hint = ItemViewCategorized::nextIndexHint(anchor, removed);
     ItemInfo info    = imageInfo(anchor);
-
-    //qCDebug(DIGIKAM_GENERAL_LOG) << "Having initial hint" << hint << "for" << anchor << d->model->numberOfIndexesForItemInfo(info);
-
+/*
+    qCDebug(DIGIKAM_GENERAL_LOG) << "Having initial hint" << hint << "for" << anchor << d->model->numberOfIndexesForItemInfo(info);
+*/
     // Fixes a special case of multiple (face) entries for the same image.
     // If one is removed, any entry of the same image shall be preferred.
+
     if (d->model->numberOfIndexesForItemInfo(info) > 1)
     {
         // The hint is for a different info, but we may have a hint for the same info
+
         if (info != imageInfo(hint))
         {
             int minDiff                           = d->filterModel->rowCount();
@@ -389,7 +392,7 @@ QModelIndex ItemCategorizedView::nextIndexHint(const QModelIndex& anchor, const 
 
             foreach (const QModelIndex& index, indexesForItemInfo)
             {
-                if (index == anchor || !index.isValid() || removed.contains(index))
+                if ((index == anchor) || !index.isValid() || removed.contains(index))
                 {
                     continue;
                 }
@@ -400,8 +403,10 @@ QModelIndex ItemCategorizedView::nextIndexHint(const QModelIndex& anchor, const 
                 {
                     minDiff = distance;
                     hint    = index;
-                    //qCDebug(DIGIKAM_GENERAL_LOG) << "Chose index" << hint << "at distance" << minDiff << "to" << anchor;
-                }
+
+/*                  qCDebug(DIGIKAM_GENERAL_LOG) << "Chose index" << hint << "at distance" << minDiff << "to" << anchor;
+
+*/                }
             }
         }
     }
@@ -445,6 +450,7 @@ void ItemCategorizedView::setThumbnailSize(int size)
 void ItemCategorizedView::setThumbnailSize(const ThumbnailSize& s)
 {
     // we abuse this pair of method calls to restore scroll position
+
     layoutAboutToBeChanged();
     d->delegate->setThumbnailSize(s);
     layoutWasChanged();
@@ -522,6 +528,7 @@ void ItemCategorizedView::setSelectedUrls(const QList<QUrl>& urlList)
         else
         {
             // TODO: is there a better way?
+
             mySelection.select(index, index);
         }
     }
@@ -628,7 +635,7 @@ void ItemCategorizedView::scrollToStoredItem()
 
 void ItemCategorizedView::slotItemInfosAdded()
 {
-    if (d->scrollToItemId)
+    if      (d->scrollToItemId)
     {
         scrollToStoredItem();
     }

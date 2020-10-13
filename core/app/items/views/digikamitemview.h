@@ -38,18 +38,20 @@ namespace Digikam
 class ItemViewUtilities;
 class ItemInfoList;
 
-class DigikamItemView : public ItemCategorizedView, public GroupingViewImplementation
+class DigikamItemView : public ItemCategorizedView,
+                        public GroupingViewImplementation
 {
     Q_OBJECT
 
 public:
 
     explicit DigikamItemView(QWidget* const parent = nullptr);
-    ~DigikamItemView() override;
+    ~DigikamItemView()                                                              override;
 
     ItemViewUtilities* utilities()                                                           const;
 
     int  fitToWidthIcons();
+    bool getFaceMode()                                                                       const;
 
     void setThumbnailSize(const ThumbnailSize& size)                                 override;
 
@@ -70,7 +72,6 @@ public Q_SLOTS:
 
     void assignRating(const QList<QModelIndex>& index, int rating);
 
-    bool getFaceMode() const;
     void setFaceMode(bool on);
     void confirmFaces(const QList<QModelIndex>& indexes, int tagId);
 
@@ -128,7 +129,7 @@ protected:
     bool hasHiddenGroupedImages(const ItemInfo& info)                    const override;
 
     ItemInfoList imageInfos(const QList<QModelIndex>& indexes,
-                            ApplicationSettings::OperationType type)             const;
+                            ApplicationSettings::OperationType type)      const;
 
 private Q_SLOTS:
 
