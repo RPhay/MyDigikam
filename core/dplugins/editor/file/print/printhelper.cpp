@@ -113,7 +113,8 @@ public:
                           const QSize& viewportSize)
     {
         Qt::Alignment alignment = optionsPage->alignment();
-        int posX, posY;
+        int posX;
+        int posY;
 
         if      (alignment & Qt::AlignLeft)
         {

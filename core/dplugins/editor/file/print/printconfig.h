@@ -50,9 +50,9 @@ public:
 
 public:
 
-    static void setPrintPosition( int v )
+    static void setPrintPosition(int v)
     {
-        if (!self()->isImmutable( QLatin1String( "PrintPosition" ) ))
+        if (!self()->isImmutable(QLatin1String("PrintPosition")))
         {
             self()->mPrintPosition = v;
         }
@@ -65,7 +65,7 @@ public:
 
     static void setPrintScaleMode(PrintOptionsPage::ScaleMode v)
     {
-        if (!self()->isImmutable( QLatin1String( "PrintScaleMode" ) ))
+        if (!self()->isImmutable(QLatin1String("PrintScaleMode")))
         {
             self()->mPrintScaleMode = v;
         }
@@ -78,7 +78,7 @@ public:
 
     static void setPrintEnlargeSmallerImages(bool v)
     {
-        if (!self()->isImmutable( QLatin1String( "PrintEnlargeSmallerImages" ) ))
+        if (!self()->isImmutable(QLatin1String("PrintEnlargeSmallerImages")))
         {
             self()->mPrintEnlargeSmallerImages = v;
         }
@@ -91,7 +91,7 @@ public:
 
     static void setPrintWidth(double v)
     {
-        if (!self()->isImmutable( QLatin1String( "PrintWidth" ) ))
+        if (!self()->isImmutable(QLatin1String("PrintWidth")))
         {
             self()->mPrintWidth = v;
         }
@@ -102,9 +102,9 @@ public:
         return self()->mPrintWidth;
     }
 
-    static void setPrintHeight( double v )
+    static void setPrintHeight(double v)
     {
-        if (!self()->isImmutable( QLatin1String( "PrintHeight" ) ))
+        if (!self()->isImmutable(QLatin1String("PrintHeight")))
         {
             self()->mPrintHeight = v;
         }
@@ -115,9 +115,9 @@ public:
         return self()->mPrintHeight;
     }
 
-    static void setPrintUnit( PrintOptionsPage::Unit v )
+    static void setPrintUnit(PrintOptionsPage::Unit v)
     {
-        if (!self()->isImmutable( QLatin1String( "PrintUnit" ) ))
+        if (!self()->isImmutable(QLatin1String("PrintUnit")))
         {
             self()->mPrintUnit = v;
         }
@@ -128,9 +128,9 @@ public:
         return static_cast<PrintOptionsPage::Unit>(self()->mPrintUnit);
     }
 
-    static void setPrintKeepRatio( bool v )
+    static void setPrintKeepRatio(bool v)
     {
-        if (!self()->isImmutable( QLatin1String( "PrintKeepRatio" ) ))
+        if (!self()->isImmutable(QLatin1String("PrintKeepRatio")))
         {
             self()->mPrintKeepRatio = v;
         }
@@ -143,7 +143,7 @@ public:
 
     static void setPrintColorManaged( bool v )
     {
-        if (!self()->isImmutable( QLatin1String( "PrintColorManaged" ) ))
+        if (!self()->isImmutable(QLatin1String("PrintColorManaged")))
         {
             self()->mPrintColorManaged = v;
         }
@@ -154,9 +154,9 @@ public:
         return self()->mPrintColorManaged;
     }
 
-    static void setPrintAutoRotate( bool v )
+    static void setPrintAutoRotate(bool v)
     {
-        if (!self()->isImmutable( QLatin1String( "PrintAutoRotate" ) ))
+        if (!self()->isImmutable(QLatin1String("PrintAutoRotate")))
         {
             self()->mPrintAutoRotate = v;
         }

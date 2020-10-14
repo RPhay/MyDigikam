@@ -73,11 +73,11 @@ class Q_DECL_HIDDEN PrintOptionsPage::Private : public Ui_PrintOptionsPage
 public:
 
     explicit Private()
-      : parent(nullptr),
-        configDialogManager(nullptr),
-        colorManaged(nullptr),
-        cmPreferences(nullptr),
-        cmEnabled(false)
+      : parent              (nullptr),
+        configDialogManager (nullptr),
+        colorManaged        (nullptr),
+        cmPreferences       (nullptr),
+        cmEnabled           (false)
     {
     }
 
@@ -177,7 +177,7 @@ public:
 PrintOptionsPage::PrintOptionsPage(QWidget* const parent,
                                    const QSize& imageSize)
     : QWidget(),
-      d(new Private)
+      d      (new Private)
 {
     d->setupUi(this);
     d->parent              = parent;
@@ -187,6 +187,7 @@ PrintOptionsPage::PrintOptionsPage(QWidget* const parent,
     d->initPositionFrame();
 
     // Color management support
+
     d->initColorManagement();
 
     d->scaleGroup.addButton(d->mNoScale,     NoScale);
@@ -348,7 +349,7 @@ void PrintOptionsPage::slotAlertSettings(bool t)
                                "<p>You can enable it now by clicking "
                                "on the \"Settings\" button.</p>");
         QMessageBox::information(this, qApp->applicationName(), message);
-        d->colorManaged->setChecked(!t);
+        d->colorManaged->setChecked(false);
     }
 }
 
