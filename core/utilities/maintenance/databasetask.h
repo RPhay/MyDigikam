@@ -56,13 +56,17 @@ public:
         ShrinkDatabases
     };
 
+public:
+
     explicit DatabaseTask();
-    ~DatabaseTask() override;
+    ~DatabaseTask()     override;
 
     void setMode(Mode mode);
     void setMaintenanceData(MaintenanceData* const data = nullptr);
 
-    void computeDatabaseJunk(bool thumbsDb = false, bool facesDb = false, bool similarityDb = false);
+    void computeDatabaseJunk(bool thumbsDb = false,
+                             bool facesDb = false,
+                             bool similarityDb = false);
 
 Q_SIGNALS:
 
@@ -74,8 +78,6 @@ Q_SIGNALS:
                     const QList<Identity>& staleIdentities,
                     const QList<qlonglong>& staleSimilarityImageIds);
 
-    void signalStarted();
-
     /**
      * Signal to emit the count of additional items to process.
      */
@@ -83,7 +85,7 @@ Q_SIGNALS:
 
 protected:
 
-    void run() override;
+    void run()          override;
 
 private:
 

@@ -85,7 +85,7 @@ DbCleaner::DbCleaner(bool cleanThumbsDb,
                      bool shrinkDatabases,
                      ProgressItem* const parent)
     : MaintenanceTool(QLatin1String("DbCleaner"), parent),
-      d(new Private)
+      d              (new Private)
 {
     // register the identity list as meta type to be able to use it in signal/slot connection
 
@@ -156,8 +156,7 @@ void DbCleaner::slotStart()
     connect(d->thread,SIGNAL(signalData(QList<qlonglong>,QList<int>,QList<Identity>,QList<qlonglong>)),
             this, SLOT(slotFetchedData(QList<qlonglong>,QList<int>,QList<Identity>,QList<qlonglong>)));
 
-    // Compute the database junk. This will lead to the call of the slot
-    // slotFetchedData.
+    // Compute the database junk. This will lead to the call of the slot slotFetchedData.
 
     d->thread->computeDatabaseJunk(d->cleanThumbsDb, d->cleanFacesDb, d->cleanSimilarityDb);
     d->thread->start();

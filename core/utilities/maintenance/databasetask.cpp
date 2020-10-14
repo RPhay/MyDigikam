@@ -110,7 +110,7 @@ void DatabaseTask::run()
 
     QThread::sleep(1);
 
-    if (d->mode == Mode::ShrinkDatabases)
+    if      (d->mode == Mode::ShrinkDatabases)
     {
         qCDebug(DIGIKAM_GENERAL_LOG) << "Shrinking databases";
 
