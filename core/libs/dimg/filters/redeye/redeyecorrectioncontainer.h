@@ -50,7 +50,9 @@ public:
 
     void writeToFilterAction(FilterAction& action,
                              const QString& prefix = QString()) const;
-    static RedEyeCorrectionContainer fromFilterAction(const FilterAction& action, const QString& prefix = QString());
+
+    static RedEyeCorrectionContainer fromFilterAction(const FilterAction& action,
+                                                      const QString& prefix = QString());
 
 public:
 

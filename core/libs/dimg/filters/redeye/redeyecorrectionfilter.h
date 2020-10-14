@@ -42,17 +42,17 @@ class DIGIKAM_EXPORT RedEyeCorrectionFilter : public DImgThreadedFilter
 public:
 
     explicit RedEyeCorrectionFilter(QObject* const parent=nullptr);
-    explicit RedEyeCorrectionFilter(DImg* const orgImage, QObject* const parent=nullptr,
-                                    const RedEyeCorrectionContainer& settings=RedEyeCorrectionContainer());
+    explicit RedEyeCorrectionFilter(DImg* const orgImage, QObject* const parent = nullptr,
+                                    const RedEyeCorrectionContainer& settings = RedEyeCorrectionContainer());
 
     /**
      * Constructor for slave mode: execute immediately in current thread with specified master filter
      */
     explicit RedEyeCorrectionFilter(const RedEyeCorrectionContainer& settings,
                                     DImgThreadedFilter* const parentFilter, const DImg& orgImage, const DImg& destImage,
-                                    int progressBegin=0, int progressEnd=100);
+                                    int progressBegin = 0, int progressEnd = 100);
 
-    ~RedEyeCorrectionFilter() override;
+    ~RedEyeCorrectionFilter()                     override;
 
     static QString          FilterIdentifier()
     {
@@ -80,8 +80,8 @@ public:
 
 private:
 
-    void filterImage()                                    override;
-    void readParameters(const FilterAction&)              override;
+    void filterImage()                            override;
+    void readParameters(const FilterAction&)      override;
 
     void correctRedEye(uchar* data, int type, cv::Rect eyerect, cv::Rect imgRect);
     void QRectFtocvRect(const QList<QRect>& faces, std::vector<cv::Rect>& result);

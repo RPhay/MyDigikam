@@ -70,7 +70,7 @@ const QString RedEyeCorrectionSettings::Private::configRedToAvgRatioAdjustmentEn
 
 RedEyeCorrectionSettings::RedEyeCorrectionSettings(QWidget* const parent)
     : QWidget(parent),
-      d(new Private)
+      d      (new Private)
 {
     const int spacing       = QApplication::style()->pixelMetric(QStyle::PM_DefaultLayoutSpacing);
 
