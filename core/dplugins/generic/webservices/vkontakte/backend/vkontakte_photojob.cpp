@@ -72,9 +72,13 @@ void PhotoJob::start()
 void PhotoJob::jobFinished(KJob* kjob)
 {
     KIO::StoredTransferJob* const job = dynamic_cast<KIO::StoredTransferJob*>(kjob);
-    Q_ASSERT(job);
 
-    if (job && job->error())
+    if (!job)
+    {
+        return;
+    }
+
+    if (job->error())
     {
         setError(job->error());
         setErrorText(KIO::buildErrorString(error(), job->errorText()));

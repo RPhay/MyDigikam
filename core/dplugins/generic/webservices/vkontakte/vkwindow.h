@@ -50,7 +50,7 @@ public:
     explicit VKWindow(DInfoInterface* const iface,
                       QWidget* const parent,
                       bool import = false);
-    ~VKWindow() override;
+    ~VKWindow()                             override;
 
     /**
      * Use this method to (re-)activate the dialog after it has been created
@@ -89,7 +89,7 @@ private:
 
     void handleVkError(KJob* kjob);
 
-    void closeEvent(QCloseEvent* event) override;
+    void closeEvent(QCloseEvent* event)     override;
 
 private:
 
