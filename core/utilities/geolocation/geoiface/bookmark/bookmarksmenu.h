@@ -90,8 +90,8 @@ protected:
 private Q_SLOTS:
 
     void slotAboutToShow();
-    void triggered(QAction* action);
-    void hovered(QAction* action);
+    void slotTriggered(QAction* action);
+    void slotHovered(QAction* action);
 
 private:
 

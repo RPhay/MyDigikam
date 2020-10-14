@@ -46,7 +46,7 @@ public:
 
     explicit Private()
       : parent(nullptr),
-        type(BookmarkNode::Root)
+        type  (BookmarkNode::Root)
     {
     }
 
@@ -57,7 +57,7 @@ public:
 
 BookmarkNode::BookmarkNode(BookmarkNode::Type type, BookmarkNode* const parent)
     : QObject(nullptr),
-      d(new Private)
+      d      (new Private)
 {
     expanded  = false;
     d->parent = parent;

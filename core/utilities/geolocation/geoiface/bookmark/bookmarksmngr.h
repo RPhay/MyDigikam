@@ -50,8 +50,8 @@ public:
                                     int row);
     ~RemoveBookmarksCommand() override;
 
-    void undo() override;
-    void redo() override;
+    void undo()                override;
+    void redo()                override;
 
 protected:
 
@@ -98,8 +98,8 @@ public:
                                    BookmarkData type);
     ~ChangeBookmarkCommand() override;
 
-    void undo() override;
-    void redo() override;
+    void undo()               override;
+    void redo()               override;
 
 private:
 
@@ -128,7 +128,7 @@ public:
 public:
 
     explicit BookmarksModel(BookmarksManager* const mngr, QObject* const parent = nullptr);
-    ~BookmarksModel() override;
+    ~BookmarksModel()                                                                              override;
 
     BookmarksManager* bookmarksManager()                                                      const;
     QVariant headerData(int section, Qt::Orientation orientation, int role = Qt::DisplayRole) const override;
@@ -146,10 +146,10 @@ public:
     QModelIndex index(BookmarkNode* node)                                                     const;
 
     bool dropMimeData(const QMimeData* data, Qt::DropAction action, int row,
-                      int column, const QModelIndex& parent) override;
+                      int column, const QModelIndex& parent)                                         override;
 
-    bool removeRows(int row, int count, const QModelIndex& parent = QModelIndex()) override;
-    bool setData(const QModelIndex& index, const QVariant& value, int role = Qt::EditRole) override;
+    bool removeRows(int row, int count, const QModelIndex& parent = QModelIndex())                   override;
+    bool setData(const QModelIndex& index, const QVariant& value, int role = Qt::EditRole)           override;
 
 public Q_SLOTS:
 
@@ -192,7 +192,7 @@ public:
 
     explicit TreeProxyModel(QObject* const parent = nullptr);
 
-    int columnCount(const QModelIndex&) const override;
+    int columnCount(const QModelIndex&) const                        override;
 
 Q_SIGNALS:
 

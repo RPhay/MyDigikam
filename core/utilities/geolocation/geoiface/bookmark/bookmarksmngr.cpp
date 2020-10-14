@@ -53,11 +53,11 @@ RemoveBookmarksCommand::RemoveBookmarksCommand(BookmarksManager* const mngr,
                                                BookmarkNode* const parent,
                                                int row)
     : QUndoCommand(i18n("Remove Bookmark")),
-      m_row(row),
+      m_row            (row),
       m_bookmarkManager(mngr),
-      m_node(parent->children().value(row)),
-      m_parent(parent),
-      m_done(false)
+      m_node           (parent->children().value(row)),
+      m_parent         (parent),
+      m_done           (false)
 {
 }
 
@@ -112,9 +112,9 @@ class Q_DECL_HIDDEN ChangeBookmarkCommand::Private
 public:
 
     explicit Private()
-      : manager(nullptr),
-        type(Url),
-        node(nullptr)
+      : manager (nullptr),
+        type    (Url),
+        node    (nullptr)
     {
     }
 
@@ -130,7 +130,7 @@ ChangeBookmarkCommand::ChangeBookmarkCommand(BookmarksManager* const mngr,
                                              const QString& newValue,
                                              BookmarkData type)
     : QUndoCommand(),
-      d(new Private)
+      d           (new Private)
 {
     d->manager  = mngr;
     d->type     = type;
@@ -208,7 +208,7 @@ class Q_DECL_HIDDEN BookmarksModel::Private
 public:
 
     explicit Private()
-      : manager(nullptr),
+      : manager (nullptr),
         endMacro(false)
     {
     }
@@ -219,7 +219,7 @@ public:
 
 BookmarksModel::BookmarksModel(BookmarksManager* const mngr, QObject* const parent)
     : QAbstractItemModel(parent),
-      d(new Private)
+      d                 (new Private)
 {
     d->manager = mngr;
 
@@ -383,6 +383,7 @@ QVariant BookmarksModel::data(const QModelIndex& index, int role) const
             break;
 
         case Qt::DecorationRole:
+        {
             if (index.column() == 0)
             {
                 if (bookmarkNode->type() == BookmarkNode::Bookmark)
@@ -394,6 +395,7 @@ QVariant BookmarksModel::data(const QModelIndex& index, int role) const
                     return QIcon::fromTheme(QLatin1String("folder"));
                 }
             }
+        }
     }
 
     return QVariant();
@@ -608,6 +610,7 @@ bool BookmarksModel::setData(const QModelIndex& index, const QVariant& value, in
     {
         case Qt::EditRole:
         case Qt::DisplayRole:
+        {
             if (index.column() == 0)
             {
                 d->manager->setTitle(item, value.toString());
@@ -621,6 +624,7 @@ bool BookmarksModel::setData(const QModelIndex& index, const QVariant& value, in
             }
 
             return false;
+        }
 
         case BookmarksModel::UrlRole:
             d->manager->setUrl(item, value.toUrl().toString());
@@ -721,9 +725,9 @@ class Q_DECL_HIDDEN BookmarksManager::Private
 public:
 
     explicit Private()
-      : loaded(false),
+      : loaded          (false),
         bookmarkRootNode(nullptr),
-        bookmarkModel(nullptr)
+        bookmarkModel   (nullptr)
     {
     }
 
@@ -736,7 +740,7 @@ public:
 
 BookmarksManager::BookmarksManager(const QString& bookmarksFile, QObject* const parent)
     : QObject(parent),
-      d(new Private)
+      d      (new Private)
 {
     d->bookmarksFile = bookmarksFile;
     load();

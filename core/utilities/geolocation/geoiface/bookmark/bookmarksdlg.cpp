@@ -67,11 +67,11 @@ class Q_DECL_HIDDEN AddBookmarkDialog::Private
 public:
 
     explicit Private()
-      : manager(nullptr),
-        proxyModel(nullptr),
-        location(nullptr),
-        title(nullptr),
-        desc(nullptr)
+      : manager     (nullptr),
+        proxyModel  (nullptr),
+        location    (nullptr),
+        title       (nullptr),
+        desc        (nullptr)
     {
     }
 
@@ -88,7 +88,7 @@ AddBookmarkDialog::AddBookmarkDialog(const QString& url,
                                      QWidget* const parent,
                                      BookmarksManager* const mngr)
     : QDialog(parent),
-      d(new Private)
+      d      (new Private)
 {
     d->url     = url;
     d->manager = mngr;
@@ -188,12 +188,12 @@ class Q_DECL_HIDDEN BookmarksDialog::Private
 public:
 
     explicit Private()
-      : manager(nullptr),
-        bookmarksModel(nullptr),
-        proxyModel(nullptr),
-        search(nullptr),
-        tree(nullptr),
-        mapView(nullptr)
+      : manager         (nullptr),
+        bookmarksModel  (nullptr),
+        proxyModel      (nullptr),
+        search          (nullptr),
+        tree            (nullptr),
+        mapView         (nullptr)
     {
     }
 
@@ -207,7 +207,7 @@ public:
 
 BookmarksDialog::BookmarksDialog(QWidget* const parent, BookmarksManager* const mngr)
     : QDialog(parent),
-      d(new Private)
+      d      (new Private)
 {
     d->manager = mngr;
 
