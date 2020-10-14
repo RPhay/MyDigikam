@@ -62,18 +62,18 @@ class Q_DECL_HIDDEN HealingCloneTool::Private
 public:
 
     explicit Private()
-      : btnSize(QSize(50, 50)),
-        iconSize(QSize(30, 30)),
-        radiusInput(nullptr),
-        blurPercent(nullptr),
-        previewWidget(nullptr),
-        gboxSettings(nullptr),
-        srcButton(nullptr),
-        lassoButton(nullptr),
-        moveButton(nullptr),
-        undoCloneButton(nullptr),
-        redoCloneButton(nullptr),
-        resetLassoPoint(true),
+      : btnSize             (QSize(50, 50)),
+        iconSize            (QSize(30, 30)),
+        radiusInput         (nullptr),
+        blurPercent         (nullptr),
+        previewWidget       (nullptr),
+        gboxSettings        (nullptr),
+        srcButton           (nullptr),
+        lassoButton         (nullptr),
+        moveButton          (nullptr),
+        undoCloneButton     (nullptr),
+        redoCloneButton     (nullptr),
+        resetLassoPoint     (true),
         insideLassoOperation(false)
     {
     }
@@ -122,7 +122,7 @@ const QString HealingCloneTool::Private::configBlurAdjustmentEntry(QLatin1String
 
 HealingCloneTool::HealingCloneTool(QObject* const parent)
     : EditorTool(parent),
-      d(new Private)
+      d         (new Private)
 {
     setObjectName(QLatin1String("healing clone"));
     setToolHelp(QLatin1String("healingclonetool.anchor"));
@@ -625,8 +625,9 @@ void HealingCloneTool::slotUndoClone()
 
 void HealingCloneTool::slotRedoClone()
 {
-//  slotResetLassoPoints();
-
+/*
+    slotResetLassoPoints();
+*/
     if (d->redoStack.empty())
     {
         return;

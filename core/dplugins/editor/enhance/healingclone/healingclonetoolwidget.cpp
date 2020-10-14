@@ -48,19 +48,19 @@ class Q_DECL_HIDDEN HealingCloneToolWidget::Private
 public:
 
     explicit Private()
-      : srcSet(true),
+      : srcSet                  (true),
         isLassoPointsVectorEmpty(true),
-        src(QPoint(0, 0)),
-        amIFocused(false),
-        proceedInMoveEvent(false),
-        cloneVectorChanged(true),
-        brushRadius(1),
-        brushValue(1),
-        currentState(HealingCloneState::SELECT_SOURCE),
-        previousState(HealingCloneState::DO_NOTHING),
-        drawCursor(nullptr),
-        sourceCursor(nullptr),
-        sourceCursorCenter(nullptr)
+        src                     (QPoint(0, 0)),
+        amIFocused              (false),
+        proceedInMoveEvent      (false),
+        cloneVectorChanged      (true),
+        brushRadius             (1),
+        brushValue              (1),
+        currentState            (HealingCloneState::SELECT_SOURCE),
+        previousState           (HealingCloneState::DO_NOTHING),
+        drawCursor              (nullptr),
+        sourceCursor            (nullptr),
+        sourceCursorCenter      (nullptr)
     {
     }
 
@@ -83,7 +83,7 @@ public:
 
 HealingCloneToolWidget::HealingCloneToolWidget(QWidget* const parent)
     : ImageRegionWidget(parent, false),
-      d(new Private)
+      d                (new Private)
 {
     activateState(HealingCloneState::SELECT_SOURCE);
     updateSourceCursor(d->src, 10);

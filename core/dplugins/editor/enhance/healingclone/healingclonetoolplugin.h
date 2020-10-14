@@ -44,7 +44,7 @@ class HealingCloneToolPlugin : public DPluginEditor
 public:
 
     explicit HealingCloneToolPlugin(QObject* const parent = nullptr);
-    ~HealingCloneToolPlugin() override;
+    ~HealingCloneToolPlugin()            override;
 
     QString name()                 const override;
     QString iid()                  const override;
