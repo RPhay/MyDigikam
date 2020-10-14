@@ -218,7 +218,10 @@ void VideoThumbnailer::generateSmartThumbnail(VideoDecoder& movieDecoder,
 
     int bestFrame = d->getBestThumbnailIndex(videoFrames, histograms);
 
-    Q_ASSERT(bestFrame != -1);
+    if (bestFrame == -1)
+    {
+        bestFrame = 0;
+    }
 
     videoFrame = videoFrames[bestFrame];
 }
