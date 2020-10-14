@@ -41,10 +41,10 @@ public:
 
     explicit CharcoalFilter(QObject* const parent = nullptr);
     explicit CharcoalFilter(DImg* const orgImage,
-                            QObject* const parent=nullptr,
-                            double pencil=5.0,
-                            double smooth=10.0);
-    ~CharcoalFilter() override;
+                            QObject* const parent = nullptr,
+                            double pencil = 5.0,
+                            double smooth = 10.0);
+    ~CharcoalFilter()                                                         override;
 
     static QString          FilterIdentifier()
     {
@@ -63,20 +63,23 @@ public:
         return 1;
     }
 
-    QString         filterIdentifier()                          const override
+    QString         filterIdentifier()                                  const override
     {
         return FilterIdentifier();
     }
 
-    FilterAction    filterAction()                                    override;
-    void                    readParameters(const FilterAction& action)        override;
+    FilterAction    filterAction()                                            override;
+    void            readParameters(const FilterAction& action)                override;
 
 private:
 
     void filterImage()                                                        override;
     bool convolveImage(const unsigned int order, const double* kernel);
     int  getOptimalKernelWidth(double radius, double sigma);
-    void convolveImageMultithreaded(uint start, uint stop, double* normal_kernel, double kernelWidth);
+    void convolveImageMultithreaded(uint start,
+                                    uint stop,
+                                    double* normal_kernel,
+                                    double kernelWidth);
 
 private:
 
