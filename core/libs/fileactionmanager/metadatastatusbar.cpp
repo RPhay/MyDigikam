@@ -96,7 +96,8 @@ MetadataStatusBar::MetadataStatusBar(QWidget* const parent)
     vlay->setContentsMargins(QMargins());
     vlay->setStretchFactor(d->info, 10);
 
-    connect(MetaEngineSettings::instance(), SIGNAL(settingsChanged()),
+    connect(MetaEngineSettings::instance(),
+            SIGNAL(signalSettingsChanged(Digikam::MetaEngineSettingsContainer,Digikam::MetaEngineSettingsContainer)),
             this, SLOT(slotSettingsChanged()));
 
     connect(d->applyBtn, SIGNAL(released()),

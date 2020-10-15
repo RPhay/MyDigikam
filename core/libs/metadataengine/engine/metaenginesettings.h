@@ -60,13 +60,12 @@ public:
     /**
      * Shortcut to get exif rotation settings from container.
      */
-    bool exifRotate() const;
+    bool exifRotate()                      const;
 
 Q_SIGNALS:
 
-    void settingsChanged();
-    void settingsChanged(const MetaEngineSettingsContainer& current,
-                         const MetaEngineSettingsContainer& previous);
+    void signalSettingsChanged(const MetaEngineSettingsContainer& current,
+                               const MetaEngineSettingsContainer& previous);
 
 private:
 

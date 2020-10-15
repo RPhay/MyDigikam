@@ -136,8 +136,7 @@ bool MetaEngineSettings::exifRotate() const
 void MetaEngineSettings::setSettings(const MetaEngineSettingsContainer& settings)
 {
     MetaEngineSettingsContainer old = d->setSettings(settings);
-    emit settingsChanged();
-    emit settingsChanged(settings, old);
+    emit signalSettingsChanged(settings, old);
     d->writeToConfig();
 }
 
@@ -145,8 +144,7 @@ void MetaEngineSettings::readFromConfig()
 {
     MetaEngineSettingsContainer s   = d->readFromConfig();
     MetaEngineSettingsContainer old = d->setSettings(s);
-    emit settingsChanged();
-    emit settingsChanged(s, old);
+    emit signalSettingsChanged(s, old);
 }
 
 } // namespace Digikam
