@@ -39,21 +39,14 @@ class Q_DECL_HIDDEN ItemSorterCache::Private
 public:
 
     explicit Private()
-      : albumSensitive(Qt::CaseSensitive),
-        itemSensitive (Qt::CaseSensitive),
-        albumNatural  (true),
-        itemNatural   (true)
     {
     }
 
     QHash<QString, std::vector<QCollatorSortKey> > albumSortKeys;
     QHash<QString, std::vector<QCollatorSortKey> > itemSortKeys;
 
-    Qt::CaseSensitivity                            albumSensitive;
-    Qt::CaseSensitivity                            itemSensitive;
-
-    bool                                           albumNatural;
-    bool                                           itemNatural;
+    QCollator                                      albumCollator;
+    QCollator                                      itemCollator;
 };
 
 // -----------------------------------------------------------------------------------------------
@@ -72,6 +65,13 @@ Q_GLOBAL_STATIC(ItemSorterCacheCreator, itemSorterCacheCreator)
 ItemSorterCache::ItemSorterCache()
     : d(new Private)
 {
+    d->albumCollator.setNumericMode(true);
+    d->albumCollator.setIgnorePunctuation(false);
+    d->albumCollator.setCaseSensitivity(Qt::CaseSensitive);
+
+    d->itemCollator.setNumericMode(true);
+    d->itemCollator.setIgnorePunctuation(false);
+    d->itemCollator.setCaseSensitivity(Qt::CaseSensitive);
 }
 
 ItemSorterCache::~ItemSorterCache()
@@ -87,11 +87,13 @@ ItemSorterCache* ItemSorterCache::instance()
 int ItemSorterCache::albumCompare(const QString& a, const QString& b,
                                   Qt::CaseSensitivity caseSensitive, bool natural) const
 {
-    if ((d->albumSensitive != caseSensitive) || (d->albumNatural != natural))
+    if ((d->albumCollator.numericMode()     != natural)     ||
+        (d->albumCollator.caseSensitivity() != caseSensitive))
     {
-        d->albumSensitive = caseSensitive;
-        d->albumNatural   = natural;
         d->albumSortKeys.clear();
+
+        d->albumCollator.setNumericMode(natural);
+        d->albumCollator.setCaseSensitivity(caseSensitive);
     }
 
     const bool containsA = d->albumSortKeys.contains(a);
@@ -99,19 +101,14 @@ int ItemSorterCache::albumCompare(const QString& a, const QString& b,
 
     if (!containsA || !containsB)
     {
-        QCollator collator;
-        collator.setIgnorePunctuation(false);
-        collator.setNumericMode(d->albumNatural);
-        collator.setCaseSensitivity(d->albumSensitive);
-
         if (!containsA)
         {
-            d->albumSortKeys[a].emplace_back(collator.sortKey(a));
+            d->albumSortKeys[a].emplace_back(d->albumCollator.sortKey(a));
         }
 
         if (!containsB)
         {
-            d->albumSortKeys[b].emplace_back(collator.sortKey(b));
+            d->albumSortKeys[b].emplace_back(d->albumCollator.sortKey(b));
         }
     }
 
@@ -121,11 +118,13 @@ int ItemSorterCache::albumCompare(const QString& a, const QString& b,
 int ItemSorterCache::itemCompare(const QString& a, const QString& b,
                                  Qt::CaseSensitivity caseSensitive, bool natural) const
 {
-    if ((d->itemSensitive != caseSensitive) || (d->itemNatural != natural))
+    if ((d->itemCollator.numericMode()     != natural)     ||
+        (d->itemCollator.caseSensitivity() != caseSensitive))
     {
-        d->itemSensitive = caseSensitive;
-        d->itemNatural   = natural;
         d->itemSortKeys.clear();
+
+        d->itemCollator.setNumericMode(natural);
+        d->itemCollator.setCaseSensitivity(caseSensitive);
     }
 
     const bool containsA = d->itemSortKeys.contains(a);
@@ -133,18 +132,13 @@ int ItemSorterCache::itemCompare(const QString& a, const QString& b,
 
     if (!containsA || !containsB)
     {
-        QCollator collator;
-        collator.setIgnorePunctuation(false);
-        collator.setNumericMode(d->itemNatural);
-        collator.setCaseSensitivity(d->itemSensitive);
-
         if (!containsA)
         {
             QString as = a;
             as.replace(QLatin1String("_v"),
                        QLatin1String("vv"), Qt::CaseInsensitive);
 
-            d->itemSortKeys[a].emplace_back(collator.sortKey(as));
+            d->itemSortKeys[a].emplace_back(d->itemCollator.sortKey(as));
         }
 
         if (!containsB)
@@ -153,7 +147,7 @@ int ItemSorterCache::itemCompare(const QString& a, const QString& b,
             bs.replace(QLatin1String("_v"),
                        QLatin1String("vv"), Qt::CaseInsensitive);
 
-            d->itemSortKeys[b].emplace_back(collator.sortKey(bs));
+            d->itemSortKeys[b].emplace_back(d->itemCollator.sortKey(bs));
         }
     }
 
