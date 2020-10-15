@@ -89,30 +89,30 @@ public:
 public:
 
     explicit NamespaceEntry()
-      : nsType(TAGS),
-        subspace(XMP),
-        isDefault(true),
-        isDisabled(false),
-        index(-1),
-        tagPaths(TAGPATH),
-        specialOpts(NO_OPTS),
-        secondNameOpts(NO_OPTS)
+      : nsType          (TAGS),
+        subspace        (XMP),
+        isDefault       (true),
+        isDisabled      (false),
+        index           (-1),
+        tagPaths        (TAGPATH),
+        specialOpts     (NO_OPTS),
+        secondNameOpts  (NO_OPTS)
     {
     }
 
     NamespaceEntry(const NamespaceEntry& other)
-      : nsType(other.nsType),
-        subspace(other.subspace),
-        isDefault(other.isDefault),
-        isDisabled(other.isDisabled),
-        index(other.index),
-        namespaceName(other.namespaceName),
-        alternativeName(other.alternativeName),
-        tagPaths(other.tagPaths),
-        separator(other.separator),
-        convertRatio(QList<int>(other.convertRatio)),
-        specialOpts(other.specialOpts),
-        secondNameOpts(other.secondNameOpts)
+      : nsType          (other.nsType),
+        subspace        (other.subspace),
+        isDefault       (other.isDefault),
+        isDisabled      (other.isDisabled),
+        index           (other.index),
+        namespaceName   (other.namespaceName),
+        alternativeName (other.alternativeName),
+        tagPaths        (other.tagPaths),
+        separator       (other.separator),
+        convertRatio    (QList<int>(other.convertRatio)),
+        specialOpts     (other.specialOpts),
+        secondNameOpts  (other.secondNameOpts)
     {
     }
 

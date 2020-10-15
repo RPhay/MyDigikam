@@ -9,6 +9,7 @@
  *               GeoTools Project Managment Committee (PMC), http://geotools.org
  *
  * Copyright (C) 2008-2011 by Marcel Wiesweg <marcel dot wiesweg at gmx dot de>
+ * Copyright (C) 2015-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -50,13 +51,15 @@ GeodeticCalculator::GeodeticCalculator(const Ellipsoid& e)
     m_semiMinorAxis = m_ellipsoid.semiMinorAxis();
 
     // constants
+
     TOLERANCE_0     = 5.0e-15,
     TOLERANCE_1     = 5.0e-14,
     TOLERANCE_2     = 5.0e-13,
     TOLERANCE_3     = 7.0e-3;
     TOLERANCE_CHECK = 1E-8;
 
-    /* calculation of GPNHRI parameters */
+    // calculation of GPNHRI parameters
+
     f                     = (m_semiMajorAxis-m_semiMinorAxis) / m_semiMajorAxis;
     fo                    = 1.0 - f;
     f2                    = f*f;
@@ -64,7 +67,8 @@ GeodeticCalculator::GeodeticCalculator(const Ellipsoid& e)
     f4                    = f*f3;
     m_eccentricitySquared = f * (2.0-f);
 
-    /* Calculation of GNPARC parameters */
+    // Calculation of GNPARC parameters
+
     const double E2 = m_eccentricitySquared;
     const double E4 = E2*E2;
     const double E6 = E4*E2;
@@ -397,6 +401,7 @@ bool GeodeticCalculator::computeDirection()
     }
 
     // Protect internal variables from change.
+
     const double long1 = m_long1;
     const double lat1  = m_lat1;
     const double long2 = m_long2;
@@ -427,6 +432,7 @@ bool GeodeticCalculator::computeDirection()
         m_distance       = meridianArcLengthRadians(lat1, lat2);
         m_azimuth        = (lat2>lat1) ? 0.0 : M_PI;
         m_directionValid = true;
+
         return true;
     }
 
@@ -448,6 +454,7 @@ bool GeodeticCalculator::computeDirection()
         (lat2 > -TOLERANCE_3))
     {
         // Computes an approximate AZ
+
         const double CONS = (M_PI-ss)/(M_PI*f);
         double AZ         = asin(CONS);
         int iter          = 0;
@@ -457,7 +464,8 @@ bool GeodeticCalculator::computeDirection()
         {
             if (++iter > 8)
             {
-                //ERROR
+                // ERROR
+
                 return false;
             }
 
@@ -476,9 +484,9 @@ bool GeodeticCalculator::computeDirection()
 
         const double AZ1 = (dlon < 0.0) ? 2.0*M_PI - S : S;
         m_azimuth        = castToAngleRange(AZ1);
-
-        //const double AZ2 = 2.0*M_PI - AZ1;
-
+/*
+        const double AZ2 = 2.0*M_PI - AZ1;
+*/
         S                = cos(AZ1);
 
         // Equatorial - geodesic(S-s) SMS
@@ -515,7 +523,8 @@ bool GeodeticCalculator::computeDirection()
     {
         if (++kcount > 8)
         {
-            //ERROR
+            // ERROR
+
             return false;
         }
 
@@ -682,7 +691,7 @@ Ellipsoid Ellipsoid::SPHERE()
 
 Ellipsoid::Ellipsoid(const QString& name,
                      double semiMajorAxis,
-                     double  semiMinorAxis,
+                     double semiMinorAxis,
                      double inverseFlattening,
                      bool ivfDefinitive)
     : name               (name),
