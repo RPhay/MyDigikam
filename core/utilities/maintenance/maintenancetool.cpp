@@ -64,12 +64,17 @@ MaintenanceTool::MaintenanceTool(const QString& id, ProgressItem* const parent)
     // --- NOTE: use dynamic binding as slotCancel() is a virtual method which can be re-implemented in derived classes.
 
 #ifdef Q_OS_WIN
-    connect(this, SIGNAL(progressItemCanceled(QString)),
+
+    connect(this, SIGNAL(progressItemCanceledById(QString)),
             this, SLOT(slotCancel()));
+
 #else
-    connect(this, static_cast<void (ProgressItem::*)(const QString&)>(&ProgressItem::progressItemCanceled),
+
+    connect(this, static_cast<void (ProgressItem::*)(const QString&)>(&ProgressItem::progressItemCanceledById),
             this, &MaintenanceTool::slotCancel);
+
 #endif
+
 }
 
 MaintenanceTool::~MaintenanceTool()
