@@ -157,4 +157,5 @@ BUGFIXES:
 143 ==> 427385 - digiKam git build fail.
 144 ==> 427555 - Allow selecting single picture, which fills complete screen which can be panned and zoomed.
 145 ==> 427662 - HiDPI Settings Not Working in Digikam 7.1.0.
-146 ==> 
+146 ==> 396086 - Changing elements order takes near 5 minutes in a folder with 50 images.
+147 ==> 
