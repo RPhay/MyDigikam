@@ -60,9 +60,8 @@ public:
 
 Q_SIGNALS:
 
-    void dmetadataSettingsChanged();
-    void dmetadataSettingsChanged(const DMetadataSettingsContainer& current,
-                                  const DMetadataSettingsContainer& previous);
+    void signalDMetadataSettingsChanged(const DMetadataSettingsContainer& current,
+                                        const DMetadataSettingsContainer& previous);
 
 private:
 
