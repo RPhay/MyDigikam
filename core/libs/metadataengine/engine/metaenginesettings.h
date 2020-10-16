@@ -64,8 +64,10 @@ public:
 
 Q_SIGNALS:
 
-    void signalSettingsChanged(const MetaEngineSettingsContainer& current,
-                               const MetaEngineSettingsContainer& previous);
+    void signalSettingsChanged();
+
+    void signalMetaEngineSettingsChanged(const MetaEngineSettingsContainer& current,
+                                         const MetaEngineSettingsContainer& previous);
 
 private:
 
