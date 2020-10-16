@@ -368,8 +368,8 @@ void IccSettings::readFromConfig()
         d->settings = s;
     }
 
-    emit settingsChanged();
-    emit settingsChanged(s, old);
+    emit signalSettingsChanged();
+    emit signalICCSettingsChanged(s, old);
 }
 
 void IccSettings::setSettings(const ICCSettingsContainer& settings)
@@ -389,8 +389,8 @@ void IccSettings::setSettings(const ICCSettingsContainer& settings)
     }
 
     d->writeToConfig();
-    emit settingsChanged();
-    emit settingsChanged(settings, old);
+    emit signalSettingsChanged();
+    emit signalICCSettingsChanged(settings, old);
 }
 
 void IccSettings::setUseManagedView(bool useManagedView)
@@ -406,8 +406,8 @@ void IccSettings::setUseManagedView(bool useManagedView)
 
     d->writeManagedViewToConfig();
 
-    emit settingsChanged();
-    emit settingsChanged(current, old);
+    emit signalSettingsChanged();
+    emit signalICCSettingsChanged(current, old);
 }
 
 void IccSettings::setUseManagedPreviews(bool useManagedPreviews)
@@ -423,8 +423,8 @@ void IccSettings::setUseManagedPreviews(bool useManagedPreviews)
 
     d->writeManagedPreviewsToConfig();
 
-    emit settingsChanged();
-    emit settingsChanged(current, old);
+    emit signalSettingsChanged();
+    emit signalICCSettingsChanged(current, old);
 }
 
 void IccSettings::setIccPath(const QString& path)
@@ -447,8 +447,8 @@ void IccSettings::setIccPath(const QString& path)
 
     d->writeManagedViewToConfig();
 
-    emit settingsChanged();
-    emit settingsChanged(current, old);
+    emit signalSettingsChanged();
+    emit signalICCSettingsChanged(current, old);
 }
 
 QList<IccProfile> IccSettings::Private::scanDirectories(const QStringList& dirs)

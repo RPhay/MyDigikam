@@ -109,7 +109,7 @@ DigikamApp::DigikamApp()
     connect(ApplicationSettings::instance(), SIGNAL(setupChanged()),
             this, SLOT(slotSetupChanged()));
 
-    connect(IccSettings::instance(), SIGNAL(settingsChanged()),
+    connect(IccSettings::instance(), SIGNAL(signalSettingsChanged()),
             this, SLOT(slotColorManagementOptionsChanged()));
 
     d->cameraMenu      = new QMenu(this);

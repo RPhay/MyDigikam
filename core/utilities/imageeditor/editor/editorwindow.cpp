@@ -201,7 +201,7 @@ void EditorWindow::setupStandardConnections()
 
     // -- Icc settings connections --------------------------------------
 
-    connect(IccSettings::instance(), SIGNAL(settingsChanged()),
+    connect(IccSettings::instance(), SIGNAL(signalSettingsChanged()),
             this, SLOT(slotColorManagementOptionsChanged()));
 }
 

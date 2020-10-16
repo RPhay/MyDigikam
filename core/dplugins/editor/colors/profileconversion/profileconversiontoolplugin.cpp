@@ -98,7 +98,7 @@ void ProfileConversionToolPlugin::setup(QObject* const parent)
     connect(m_profileMenuAction, SIGNAL(triggered(IccProfile)),
             this, SLOT(slotConvertToColorSpace(IccProfile)));
 
-    connect(IccSettings::instance(), SIGNAL(settingsChanged()),
+    connect(IccSettings::instance(), SIGNAL(signalSettingsChanged()),
             this, SLOT(slotUpdateColorSpaceMenu()));
 
     ac->setMenu(m_profileMenuAction);

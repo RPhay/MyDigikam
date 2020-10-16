@@ -111,7 +111,7 @@ ImportCategorizedView::ImportCategorizedView(QWidget* const parent)
     connect(d->delayedEnterTimer, SIGNAL(timeout()),
             this, SLOT(slotDelayedEnter()));
 
-    connect(IccSettings::instance(), SIGNAL(settingsChanged(ICCSettingsContainer,ICCSettingsContainer)),
+    connect(IccSettings::instance(), SIGNAL(signalICCSettingsChanged(ICCSettingsContainer,ICCSettingsContainer)),
             this, SLOT(slotIccSettingsChanged(ICCSettingsContainer,ICCSettingsContainer)));
 }
 

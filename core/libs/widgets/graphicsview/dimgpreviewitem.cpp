@@ -88,7 +88,7 @@ void DImgPreviewItem::DImgPreviewItemPrivate::init(DImgPreviewItem* const q)
 
     LoadingCacheInterface::connectToSignalFileChanged(q, SLOT(slotFileChanged(QString)));
 
-    QObject::connect(IccSettings::instance(), SIGNAL(settingsChanged(ICCSettingsContainer,ICCSettingsContainer)),
+    QObject::connect(IccSettings::instance(), SIGNAL(signalICCSettingsChanged(ICCSettingsContainer,ICCSettingsContainer)),
                      q, SLOT(iccSettingsChanged(ICCSettingsContainer,ICCSettingsContainer)));
 }
 

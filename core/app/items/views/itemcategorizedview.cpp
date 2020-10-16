@@ -119,7 +119,7 @@ ItemCategorizedView::ItemCategorizedView(QWidget* const parent)
     LoadingCacheInterface::connectToSignalFileChanged(this,
             SLOT(slotFileChanged(QString)));
 
-    connect(IccSettings::instance(), SIGNAL(settingsChanged(ICCSettingsContainer,ICCSettingsContainer)),
+    connect(IccSettings::instance(), SIGNAL(signalICCSettingsChanged(ICCSettingsContainer,ICCSettingsContainer)),
             this, SLOT(slotIccSettingsChanged(ICCSettingsContainer,ICCSettingsContainer)));
 
     d->delayedEnterTimer = new QTimer(this);
