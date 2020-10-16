@@ -602,25 +602,8 @@ void CoreDB::setTagIcon(int tagID, const QString& iconKDE, qlonglong iconID)
 
 void CoreDB::setTagParentID(int tagID, int newParentTagID)
 {
-    if (d->db->databaseType() == BdEngineBackend::DbType::SQLite)
-    {
-        d->db->execSql(QString::fromUtf8("UPDATE OR REPLACE Tags SET pid=? WHERE id=?;"),
-                       newParentTagID, tagID);
-    }
-    else
-    {
-        d->db->execSql(QString::fromUtf8("UPDATE Tags SET pid=? WHERE id=?;"),
-                       newParentTagID, tagID);
-
-        // NOTE: Update the Mysql TagsTree table which is used only in some search SQL queries (See lft/rgt tag ID properties).
-        // In SQlite, it is nicely maintained by Triggers.
-        // With MySQL, this did not work for some reason, and we patch a tree structure mimics in a different way.
-        QMap<QString, QVariant> bindingMap;
-        bindingMap.insert(QLatin1String(":tagID"),     tagID);
-        bindingMap.insert(QLatin1String(":newTagPID"), newParentTagID);
-
-        d->db->execDBAction(d->db->getDBAction(QLatin1String("MoveTagTree")), bindingMap);
-   }
+    d->db->execSql(QString::fromUtf8("UPDATE Tags SET pid=? WHERE id=?;"),
+                   newParentTagID, tagID);
 
     d->db->recordChangeset(TagChangeset(tagID, TagChangeset::Reparented));
 }
