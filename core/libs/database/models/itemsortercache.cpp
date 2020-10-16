@@ -96,20 +96,14 @@ int ItemSorterCache::albumCompare(const QString& a, const QString& b,
         d->albumCollator.setCaseSensitivity(caseSensitive);
     }
 
-    const bool containsA = d->albumSortKeys.contains(a);
-    const bool containsB = d->albumSortKeys.contains(b);
-
-    if (!containsA || !containsB)
+    if (!d->albumSortKeys.contains(a))
     {
-        if (!containsA)
-        {
-            d->albumSortKeys[a].emplace_back(d->albumCollator.sortKey(a));
-        }
+        d->albumSortKeys[a].emplace_back(d->albumCollator.sortKey(a));
+    }
 
-        if (!containsB)
-        {
-            d->albumSortKeys[b].emplace_back(d->albumCollator.sortKey(b));
-        }
+    if (!d->albumSortKeys.contains(b))
+    {
+        d->albumSortKeys[b].emplace_back(d->albumCollator.sortKey(b));
     }
 
     return (d->albumSortKeys[a].front().compare(d->albumSortKeys[b].front()));
@@ -127,28 +121,22 @@ int ItemSorterCache::itemCompare(const QString& a, const QString& b,
         d->itemCollator.setCaseSensitivity(caseSensitive);
     }
 
-    const bool containsA = d->itemSortKeys.contains(a);
-    const bool containsB = d->itemSortKeys.contains(b);
-
-    if (!containsA || !containsB)
+    if (!d->itemSortKeys.contains(a))
     {
-        if (!containsA)
-        {
-            QString as = a;
-            as.replace(QLatin1String("_v"),
-                       QLatin1String("vv"), Qt::CaseInsensitive);
+        QString as = a;
+        as.replace(QLatin1String("_v"),
+                   QLatin1String("vv"), Qt::CaseInsensitive);
 
-            d->itemSortKeys[a].emplace_back(d->itemCollator.sortKey(as));
-        }
+        d->itemSortKeys[a].emplace_back(d->itemCollator.sortKey(as));
+    }
 
-        if (!containsB)
-        {
-            QString bs = b;
-            bs.replace(QLatin1String("_v"),
-                       QLatin1String("vv"), Qt::CaseInsensitive);
+    if (!d->itemSortKeys.contains(b))
+    {
+        QString bs = b;
+        bs.replace(QLatin1String("_v"),
+                   QLatin1String("vv"), Qt::CaseInsensitive);
 
-            d->itemSortKeys[b].emplace_back(d->itemCollator.sortKey(bs));
-        }
+        d->itemSortKeys[b].emplace_back(d->itemCollator.sortKey(bs));
     }
 
     return (d->itemSortKeys[a].front().compare(d->itemSortKeys[b].front()));
