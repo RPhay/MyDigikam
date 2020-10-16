@@ -1919,9 +1919,13 @@
             <dbaction name="Migrate_Read_Tags"><statement mode="query">
                 SELECT id, pid, name, CASE WHEN icon = 0 THEN NULL ELSE icon END AS icon, iconkde FROM Tags WHERE id != 0;
             </statement></dbaction>
-            <dbaction name="Migrate_Write_Tags" mode="transaction"><statement mode="query">
-                REPLACE INTO Tags (id, pid, name, icon, iconkde) VALUES (:id, :pid, :name, :icon, :iconkde);
-            </statement></dbaction>
+            <dbaction name="Migrate_Write_Tags" mode="transaction">
+                <statement mode="plain">SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO';</statement>
+                <statement mode="query">
+                    REPLACE INTO Tags (id, pid, name, icon, iconkde) VALUES (:id, :pid, :name, :icon, :iconkde);
+                </statement>
+                <statement mode="plain">SET SQL_MODE=@OLD_SQL_MODE;</statement>
+            </dbaction>
 
             <dbaction name="Migrate_Read_TagsTree"></dbaction>
             <dbaction name="Migrate_Write_TagsTree"></dbaction>
@@ -2506,7 +2510,9 @@
                      UNION SELECT NEW.id, pid FROM TagsTree WHERE id=NEW.pid;
                 </statement>
 
+                <statement mode="plain">SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO';</statement>
                 <statement mode="plain">REPLACE INTO temp_Tags SELECT * FROM Tags WHERE id != 0;</statement>
+                <statement mode="plain">SET SQL_MODE=@OLD_SQL_MODE;</statement>
                 <statement mode="plain">DROP TRIGGER IF EXISTS temp_insert_tagstree;</statement>
                 <statement mode="plain">DROP TABLE IF EXISTS temp_Tags;</statement>
 
