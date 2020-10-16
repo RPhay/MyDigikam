@@ -129,7 +129,7 @@ protected:
 
 private Q_SLOTS:
 
-    void activated(const QModelIndex& index);
+    void slotActivated(const QModelIndex& index);
 
 private:
 

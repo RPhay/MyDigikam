@@ -326,7 +326,7 @@ BookmarksMenu::BookmarksMenu(BookmarksManager* const mngr, QWidget* const parent
     d->manager = mngr;
 
     connect(this, SIGNAL(activated(QModelIndex)),
-            this, SLOT(activated(QModelIndex)));
+            this, SLOT(slotActivated(QModelIndex)));
 
     setMaxRows(-1);
     setHoverRole(BookmarksModel::UrlStringRole);
@@ -338,7 +338,7 @@ BookmarksMenu::~BookmarksMenu()
     delete d;
 }
 
-void BookmarksMenu::activated(const QModelIndex& index)
+void BookmarksMenu::slotActivated(const QModelIndex& index)
 {
     emit openUrl(index.data(BookmarksModel::UrlRole).toUrl());
 }
