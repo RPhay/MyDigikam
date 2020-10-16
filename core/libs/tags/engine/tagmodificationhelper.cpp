@@ -61,7 +61,7 @@ class Q_DECL_HIDDEN TagModificationHelper::Private
 public:
 
     explicit Private()
-      : parentTag(nullptr),
+      : parentTag   (nullptr),
         dialogParent(nullptr)
     {
     }
@@ -72,7 +72,7 @@ public:
 
 TagModificationHelper::TagModificationHelper(QObject* const parent, QWidget* const dialogParent)
     : QObject(parent),
-      d(new Private)
+      d      (new Private)
 {
     d->dialogParent = dialogParent;
 }

@@ -56,10 +56,10 @@ class Q_DECL_HIDDEN TagFolderView::Private
 public:
 
     explicit Private()
-      : showFindDuplicateAction(true),
+      : showFindDuplicateAction (true),
         showDeleteFaceTagsAction(false),
-        resetIconAction(nullptr),
-        findDuplAction(nullptr)
+        resetIconAction         (nullptr),
+        findDuplAction          (nullptr)
     {
     }
 
@@ -72,7 +72,7 @@ public:
 
 TagFolderView::TagFolderView(QWidget* const parent, TagModel* const model)
     : TagTreeView(parent),
-      d(new Private)
+      d          (new Private)
 {
     setAlbumModel(model);
 

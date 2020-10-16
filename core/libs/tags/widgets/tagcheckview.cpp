@@ -51,13 +51,13 @@ class Q_DECL_HIDDEN TagCheckView::Private
 public:
 
     explicit Private()
-      : toggleAutoTags(TagCheckView::NoToggleAuto),
-        checkNewTags(false),
-        toggleAutoAction(nullptr),
-        toggleNoneAction(nullptr),
+      : toggleAutoTags      (TagCheckView::NoToggleAuto),
+        checkNewTags        (false),
+        toggleAutoAction    (nullptr),
+        toggleNoneAction    (nullptr),
         toggleChildrenAction(nullptr),
-        toggleParentsAction(nullptr),
-        toggleBothAction(nullptr)
+        toggleParentsAction (nullptr),
+        toggleBothAction    (nullptr)
     {
     }
 
@@ -79,7 +79,7 @@ const QString TagCheckView::Private::configToggleAutoTagsEntry(QLatin1String("To
 
 TagCheckView::TagCheckView(QWidget* const parent, TagModel* const tagModel)
     : TagFolderView(parent, tagModel),
-      d(new Private)
+      d            (new Private)
 {
     setSelectAlbumOnClick(false);
     setExpandOnSingleClick(false);

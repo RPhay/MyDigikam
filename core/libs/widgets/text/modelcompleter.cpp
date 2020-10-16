@@ -43,11 +43,11 @@ class Q_DECL_HIDDEN ModelCompleter::Private
 public:
 
     explicit Private()
-      : displayRole(Qt::DisplayRole),
-        uniqueIdRole(Qt::DisplayRole),
+      : displayRole      (Qt::DisplayRole),
+        uniqueIdRole     (Qt::DisplayRole),
         delayedModelTimer(nullptr),
-        stringModel(nullptr),
-        model(nullptr)
+        stringModel      (nullptr),
+        model            (nullptr)
     {
     }
 
@@ -70,7 +70,7 @@ public:
 
 ModelCompleter::ModelCompleter(QObject* const parent)
     : QCompleter(parent),
-      d(new Private)
+      d         (new Private)
 {
     d->stringModel = new QStringListModel(this);
     setModel(d->stringModel);
@@ -91,7 +91,7 @@ ModelCompleter::ModelCompleter(QObject* const parent)
             this, SLOT(slotDelayedModelTimer()));
 
     connect(this, SIGNAL(activated(QModelIndex)),
-            this, SIGNAL(activated()));
+            this, SIGNAL(signalActivated()));
 
     connect(this, SIGNAL(highlighted(QModelIndex)),
             this, SLOT(slotHighlighted(QModelIndex)));
@@ -296,7 +296,7 @@ void ModelCompleter::slotHighlighted(const QModelIndex& index)
 
         if (d->idToTextHash.values().count(itemName) == 1)
         {
-            emit highlighted(d->idToTextHash.key(itemName));
+            emit signalHighlighted(d->idToTextHash.key(itemName));
         }
     }
 }

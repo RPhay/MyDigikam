@@ -65,8 +65,8 @@ public:
 
 Q_SIGNALS:
 
-    void highlighted(int albumId);
-    void activated();
+    void signalHighlighted(int albumId);
+    void signalActivated();
 
 private Q_SLOTS:
 

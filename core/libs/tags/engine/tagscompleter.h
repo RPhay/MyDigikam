@@ -62,8 +62,8 @@ public:
 
 Q_SIGNALS:
 
-    void activated(const TaggingAction& action);
-    void highlighted(const TaggingAction& action);
+    void signalActivated(const TaggingAction& action);
+    void signalHighlighted(const TaggingAction& action);
 
 private Q_SLOTS:
 

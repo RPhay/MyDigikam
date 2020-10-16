@@ -75,9 +75,9 @@ public:
 
     explicit Private()
         : ratingShortcutPrefix(QLatin1String("rateshortcut")),
-          tagShortcutPrefix(QLatin1String("tagshortcut")),
-          pickShortcutPrefix(QLatin1String("pickshortcut")),
-          colorShortcutPrefix(QLatin1String("colorshortcut"))
+          tagShortcutPrefix   (QLatin1String("tagshortcut")),
+          pickShortcutPrefix  (QLatin1String("pickshortcut")),
+          colorShortcutPrefix (QLatin1String("colorshortcut"))
     {
     }
 
@@ -94,7 +94,7 @@ public:
 
 TagsActionMngr::TagsActionMngr(QWidget* const parent)
     : QObject(parent),
-      d(new Private)
+      d      (new Private)
 {
     if (!m_defaultManager)
     {

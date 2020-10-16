@@ -61,7 +61,7 @@ public:
 
 AddTagsComboBox::AddTagsComboBox(QWidget* const parent)
     : TagTreeViewSelectComboBox(parent),
-      d(new Private)
+      d                        (new Private)
 {
     setInsertPolicy(QComboBox::NoInsert); // do not let Qt interfere when Enter is pressed
     setCloseOnActivate(true);

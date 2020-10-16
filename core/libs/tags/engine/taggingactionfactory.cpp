@@ -43,12 +43,12 @@ class Q_DECL_HIDDEN TaggingActionFactory::Private
 public:
 
     explicit Private()
-        : parentTagId(0),               ///< 0 means toplevel tag
-          nameMatchMode(MatchStartingWithFragment),
+        : parentTagId        (0),               ///< 0 means toplevel tag
+          nameMatchMode      (MatchStartingWithFragment),
           constraintInterface(nullptr),
-          defaultIndex(-1),
-          recentIndex(0),
-          valid(false)
+          defaultIndex       (-1),
+          recentIndex        (0),
+          valid              (false)
     {
     }
 

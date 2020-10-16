@@ -77,14 +77,14 @@ class Q_DECL_HIDDEN TagEditDlg::Private
 public:
 
     explicit Private()
-      : create(false),
-        topLabel(nullptr),
-        iconButton(nullptr),
+      : create         (false),
+        topLabel       (nullptr),
+        iconButton     (nullptr),
         resetIconButton(nullptr),
-        buttons(nullptr),
-        keySeqWidget(nullptr),
-        mainRootAlbum(nullptr),
-        titleEdit(nullptr)
+        buttons        (nullptr),
+        keySeqWidget   (nullptr),
+        mainRootAlbum  (nullptr),
+        titleEdit      (nullptr)
     {
     }
 
@@ -107,7 +107,7 @@ public:
 
 TagEditDlg::TagEditDlg(QWidget* const parent, TAlbum* const album, bool create)
     : QDialog(parent),
-      d(new Private)
+      d      (new Private)
 {
     setModal(true);
 

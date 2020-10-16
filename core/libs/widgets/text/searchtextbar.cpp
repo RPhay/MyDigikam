@@ -57,14 +57,14 @@ public:
 
     explicit Private()
       : optionAutoCompletionModeEntry(QLatin1String("AutoCompletionMode")),
-        optionCaseSensitiveEntry(QLatin1String("CaseSensitive")),
-        textQueryCompletion(false),
-        hasCaseSensitive(true),
-        highlightOnResult(true),
-        hasResultColor(200, 255, 200),
-        hasNoResultColor(255, 200, 200),
-        completer(nullptr),
-        searchTimer(nullptr)
+        optionCaseSensitiveEntry     (QLatin1String("CaseSensitive")),
+        textQueryCompletion          (false),
+        hasCaseSensitive             (true),
+        highlightOnResult            (true),
+        hasResultColor               (200, 255, 200),
+        hasNoResultColor             (255, 200, 200),
+        completer                    (nullptr),
+        searchTimer                  (nullptr)
     {
     }
 
@@ -87,7 +87,7 @@ public:
 SearchTextBar::SearchTextBar(QWidget* const parent, const QString& name, const QString& msg)
     : QLineEdit(parent),
       StateSavingObject(this),
-      d(new Private)
+      d                (new Private)
 {
     setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Minimum);
     setObjectName(name + QLatin1String(" Search Text Tool"));
@@ -107,11 +107,19 @@ SearchTextBar::SearchTextBar(QWidget* const parent, const QString& name, const Q
     connect(this, SIGNAL(textChanged(QString)),
             d->searchTimer, SLOT(start()));
 
-    connect(d->completer, static_cast<void(ModelCompleter::*)(void)>(&ModelCompleter::activated),
-            [this](void){ emit completerActivated(); });
+    connect(d->completer, static_cast<void(ModelCompleter::*)(void)>(&ModelCompleter::signalActivated),
+            [this](void)
+            {
+                emit completerActivated();
+            }
+    );
 
-    connect(d->completer, static_cast<void(ModelCompleter::*)(const int)>(&ModelCompleter::highlighted),
-            [this](const int albumId){ emit completerHighlighted(albumId); });
+    connect(d->completer, static_cast<void(ModelCompleter::*)(const int)>(&ModelCompleter::signalHighlighted),
+            [this](const int albumId)
+            {
+                emit completerHighlighted(albumId);
+            }
+    );
 
     loadState();
 }
