@@ -37,20 +37,20 @@ namespace Digikam
 {
 
 ICCSettingsContainer::ICCSettingsContainer()
-    : enableCM(true),
-      defaultMismatchBehavior(EmbeddedToWorkspace),
-      defaultMissingProfileBehavior(SRGBToWorkspace),
-      defaultUncalibratedBehavior(AutoToWorkspace),
-      lastMismatchBehavior(EmbeddedToWorkspace),
-      lastMissingProfileBehavior(SRGBToWorkspace),
-      lastUncalibratedBehavior(AutoToWorkspace),
-      useManagedView(true),
-      useManagedPreviews(true),
-      useBPC(true),
-      renderingIntent(IccTransform::Perceptual),
-      proofingRenderingIntent(IccTransform::AbsoluteColorimetric),
-      doGamutCheck(false),
-      gamutCheckMaskColor(QColor(126, 255, 255))
+    : enableCM                      (true),
+      defaultMismatchBehavior       (EmbeddedToWorkspace),
+      defaultMissingProfileBehavior (SRGBToWorkspace),
+      defaultUncalibratedBehavior   (AutoToWorkspace),
+      lastMismatchBehavior          (EmbeddedToWorkspace),
+      lastMissingProfileBehavior    (SRGBToWorkspace),
+      lastUncalibratedBehavior      (AutoToWorkspace),
+      useManagedView                (true),
+      useManagedPreviews            (true),
+      useBPC                        (true),
+      renderingIntent               (IccTransform::Perceptual),
+      proofingRenderingIntent       (IccTransform::AbsoluteColorimetric),
+      doGamutCheck                  (false),
+      gamutCheckMaskColor           (QColor(126, 255, 255))
 {
 }
 
@@ -131,6 +131,7 @@ void ICCSettingsContainer::writeManagedViewToConfig(KConfigGroup& group) const
     // Save Color Managed View setting in config file. For performance
     // reason, no need to flush file, it cached in memory and will be flushed
     // to disk at end of session.
+
     group.writeEntry("ManagedView", useManagedView);
 }
 
@@ -139,6 +140,7 @@ void ICCSettingsContainer::writeManagedPreviewsToConfig(KConfigGroup& group) con
     // Save Color Managed Previews setting in config file. For performance
     // reason, no need to flush file, it cached in memory and will be flushed
     // to disk at end of session.
+
     group.writeEntry("ManagedPreviews", useManagedView);
 }
 

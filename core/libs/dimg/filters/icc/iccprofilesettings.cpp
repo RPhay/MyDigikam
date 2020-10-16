@@ -71,7 +71,7 @@ const QString IccProfilesSettings::Private::configRecentlyUsedProfilesEntry(QLat
 
 IccProfilesSettings::IccProfilesSettings(QWidget* const parent)
     : DVBox(parent),
-      d(new Private)
+      d    (new Private)
 {
     QLabel* const newProfileLabel  = new QLabel(i18n("Convert to:"), this);
     d->profilesBox                 = new IccProfilesComboBox(this);
@@ -154,6 +154,7 @@ void IccProfilesSettings::writeSettings(KConfigGroup& group)
 QStringList IccProfilesSettings::favoriteProfiles(KConfigGroup& group)
 {
     Private d;
+
     return group.readPathEntry(d.configRecentlyUsedProfilesEntry, QStringList());
 }
 

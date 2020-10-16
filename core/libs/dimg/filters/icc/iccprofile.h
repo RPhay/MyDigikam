@@ -130,13 +130,13 @@ public:
     /**
      * Returns if the profile is opened.
      */
-    bool isOpen() const;
+    bool isOpen()       const;
 
     /**
      * Returns the filename that this profile was read from.
      * returns a null QString() if this profile was loaded from memory.
      */
-    QString filePath() const;
+    QString filePath()  const;
 
     /**
      * Reads the profile description. Opens the profile if necessary.
@@ -156,10 +156,12 @@ public:
      */
     bool writeToFile(const QString& filePath);
 
-    /// Access to the LCMS cmsHPROFILE handle
-    void* handle() const;
+    /**
+     * Access to the LCMS cmsHPROFILE handle.
+     */
+    void* handle()      const;
 
-    operator void*() const
+    operator void*()    const
     {
         return handle();
     }

@@ -75,7 +75,7 @@ class Q_DECL_HIDDEN IccSettings::Private
 public:
 
     explicit Private()
-        : settings(ICCSettingsContainer()),
+        : settings   (ICCSettingsContainer()),
           configGroup(QLatin1String("Color Management"))
     {
     }
@@ -205,6 +205,7 @@ bool IccSettings::monitorProfileFromSystem() const
 */
 IccProfile IccSettings::Private::profileFromWindowSystem(QWidget* const widget)
 {
+
 #ifdef HAVE_X11
 
     if (!QX11Info::isPlatformX11())
@@ -297,21 +298,27 @@ IccProfile IccSettings::Private::profileFromWindowSystem(QWidget* const widget)
         qCDebug(DIGIKAM_DIMG_LOG) << "No X.org XICC profile installed for screen " << screenNumber;
     }
 
-    // insert to cache even if null
+    // Insert to cache even if null
     {
         QMutexLocker lock(&mutex);
         screenProfiles.insert(screenNumber, profile);
     }
 
 #elif defined Q_OS_WIN
+
     //TODO
     Q_UNUSED(widget);
+
 #elif defined Q_OS_MACOS
+
     //TODO
     Q_UNUSED(widget);
+
 #else
+
     // Unsupported platform
     Q_UNUSED(widget);
+
 #endif
 
     return IccProfile();
@@ -482,9 +489,11 @@ void IccSettings::Private::scanDirectory(const QString& path, const QStringList&
 
     foreach (const QFileInfo& info, infos)
     {
-        if (info.isFile())
+        if      (info.isFile())
         {
-            //qCDebug(DIGIKAM_DIMG_LOG) << info.filePath() << (info.exists() && info.isReadable());
+/*
+            qCDebug(DIGIKAM_DIMG_LOG) << info.filePath() << (info.exists() && info.isReadable());
+*/
             IccProfile profile(info.filePath());
 
             if (profile.open())
@@ -521,18 +530,22 @@ QList<IccProfile> IccSettings::allProfiles()
     QList<IccProfile> profiles;
 
     // get system paths, e.g. /usr/share/color/icc
+
     QStringList paths = IccProfile::defaultSearchPaths();
 
     // add user-specified path
+
     if (!extraPath.isEmpty() && !paths.contains(extraPath))
     {
         paths << extraPath;
     }
 
     // check search directories
+
     profiles << d->scanDirectories(paths);
 
     // load profiles that come with RawEngine
+
     profiles << IccProfile::defaultProfiles();
 
     QMutexLocker lock(&d->mutex);

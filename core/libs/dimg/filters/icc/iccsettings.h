@@ -59,12 +59,12 @@ public:
     /**
      * Returns if color management is enabled.
      */
-    bool isEnabled() const;
+    bool isEnabled()                const;
 
     /**
      * Returns if color management for previews is enabled.
      */
-    bool useManagedPreviews() const;
+    bool useManagedPreviews()       const;
 
     /**
      * Returns the monitor profile (for color managed view).

@@ -126,11 +126,13 @@ static cmsBool ComputeChromaticAdaptation(cmsMAT3* const Conversion,
     _cmsMAT3eval(&ConeDestRGB,   Chad, &ConeDestXYZ);
 
     // Build matrix
+
     _cmsVEC3init(&Cone.v[0], ConeDestRGB.n[0]/ConeSourceRGB.n[0], 0.0,                                   0.0                                );
     _cmsVEC3init(&Cone.v[1], 0.0,                                 ConeDestRGB.n[1]/ConeSourceRGB.n[1],   0.0                                );
     _cmsVEC3init(&Cone.v[2], 0.0,                                 0.0,                                   ConeDestRGB.n[2]/ConeSourceRGB.n[2]);
 
     // Normalize
+
     _cmsMAT3per(&Tmp, &Cone, Chad);
     _cmsMAT3per(Conversion, &Chad_Inv, &Tmp);
 

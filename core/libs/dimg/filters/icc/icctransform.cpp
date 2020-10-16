@@ -50,11 +50,11 @@ class Q_DECL_HIDDEN TransformDescription
 public:
 
     TransformDescription()
-      : inputFormat(0),
-        outputFormat(0),
-        intent(INTENT_PERCEPTUAL),
-        transformFlags(0),
-        proofIntent(INTENT_ABSOLUTE_COLORIMETRIC)
+      : inputFormat     (0),
+        outputFormat    (0),
+        intent          (INTENT_PERCEPTUAL),
+        transformFlags  (0),
+        proofIntent     (INTENT_ABSOLUTE_COLORIMETRIC)
     {
     }
 
@@ -89,19 +89,19 @@ class Q_DECL_HIDDEN IccTransform::Private : public QSharedData
 public:
 
     explicit Private()
-      : intent(IccTransform::Perceptual),
-        proofIntent(IccTransform::AbsoluteColorimetric),
-        useBPC(false),
-        checkGamut(false),
-        doNotEmbed(false),
+      : intent         (IccTransform::Perceptual),
+        proofIntent    (IccTransform::AbsoluteColorimetric),
+        useBPC         (false),
+        checkGamut     (false),
+        doNotEmbed     (false),
         checkGamutColor(QColor(126, 255, 255)),
-        handle(nullptr)
+        handle         (nullptr)
     {
     }
 
     explicit Private(const Private& other)
         : QSharedData(other),
-          handle(nullptr)
+          handle     (nullptr)
     {
         operator=(other);
     }
@@ -159,7 +159,7 @@ public:
 
     IccProfile& effectiveInputProfile()
     {
-        if (!embeddedProfile.isNull())
+        if      (!embeddedProfile.isNull())
         {
             return embeddedProfile;
         }
@@ -175,7 +175,7 @@ public:
 
     IccProfile effectiveInputProfileConst() const
     {
-        if (!embeddedProfile.isNull())
+        if      (!embeddedProfile.isNull())
         {
             return embeddedProfile;
         }
@@ -661,6 +661,7 @@ bool IccTransform::apply(DImg& image, DImgLoaderObserver* const observer)
     }
 
     // if this was a RAW color image, it is no more
+
     image.removeAttribute(QLatin1String("uncalibratedColor"));
 
     return true;
@@ -703,11 +704,14 @@ void IccTransform::transform(DImg& image, const TransformDescription& descriptio
 {
     const int bytesDepth    = image.bytesDepth();
     const int pixels        = image.width() * image.height();
+
     // convert ten scanlines in a batch
+
     const int pixelsPerStep = image.width() * 10;
     uchar* data             = image.bits();
 
     // see dimgloader.cpp, granularity().
+
     int granularity         = 1;
 
     if (observer)
@@ -718,6 +722,7 @@ void IccTransform::transform(DImg& image, const TransformDescription& descriptio
     int checkPoint = pixels;
 
     // it is safe to use the same input and output buffer if the format is the same
+
     if (description.inputFormat == description.outputFormat)
     {
         for (int p = pixels ; p > 0 ; p -= pixelsPerStep)
@@ -761,7 +766,9 @@ void IccTransform::transform(QImage& image, const TransformDescription&)
 {
     const int bytesDepth    = 4;
     const int pixels        = image.width() * image.height();
+
     // convert ten scanlines in a batch
+
     const int pixelsPerStep = image.width() * 10;
     uchar* data             = image.bits();
 

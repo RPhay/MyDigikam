@@ -57,10 +57,10 @@ public:
     ICCSettingsContainer settings() const;
     DImgLoaderObserver* observer()  const;
 
-    bool hasValidWorkspace()   const;
-    bool isUncalibratedColor() const;
-    bool isMissingProfile()    const;
-    bool isProfileMismatch()   const;
+    bool hasValidWorkspace()        const;
+    bool isUncalibratedColor()      const;
+    bool isMissingProfile()         const;
+    bool isProfileMismatch()        const;
 
     /**
      * Transforms the image for full editing, using default settings.

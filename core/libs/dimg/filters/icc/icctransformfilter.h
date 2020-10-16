@@ -40,8 +40,10 @@ class DIGIKAM_EXPORT IccTransformFilter : public DImgThreadedFilter,
 public:
 
     explicit IccTransformFilter(QObject* const parent = nullptr);
-    explicit IccTransformFilter(DImg* const orgImage, QObject* const parent, const IccTransform& transform);
-    ~IccTransformFilter() override;
+    explicit IccTransformFilter(DImg* const orgImage,
+                                QObject* const parent,
+                                const IccTransform& transform);
+    ~IccTransformFilter()                                                                   override;
 
     static QString          FilterIdentifier()
     {
@@ -60,21 +62,21 @@ public:
         return 1;
     }
 
-    QString         filterIdentifier() const                                        override
+    QString         filterIdentifier()                                                const override
     {
         return FilterIdentifier();
     }
 
-    FilterAction    filterAction()                                                  override;
+    FilterAction    filterAction()                                                          override;
 
     void                    readParameters(const FilterAction& action)                      override;
-    bool                    parametersSuccessfullyRead() const                              override;
+    bool                    parametersSuccessfullyRead()                              const override;
     QString                 readParametersError(const FilterAction& actionThatFailed) const override;
 
 protected:
 
-    void progressInfo(float progress)                                               override;
-    void filterImage()                                                              override;
+    void progressInfo(float progress)                                                       override;
+    void filterImage()                                                                      override;
 
 private:
 
