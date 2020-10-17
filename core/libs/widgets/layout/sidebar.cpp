@@ -947,7 +947,7 @@ void Sidebar::doLoadState()
     }
 
     d->activeTab = -1;
-    clicked(tab);
+    slotClicked(tab);
 }
 
 void Sidebar::doSaveState()
@@ -1086,7 +1086,7 @@ void Sidebar::deleteTab(QWidget* const w)
         {
             if (removingActiveTab)
             {
-                clicked(d->tabs - 1);
+                slotClicked(d->tabs - 1);
             }
 
             d->splitter->setSize(this, -1);
@@ -1297,12 +1297,12 @@ bool Sidebar::eventFilter(QObject* obj, QEvent* ev)
 
 void Sidebar::slotDragSwitchTimer()
 {
-    clicked(d->dragSwitchId);
+    slotClicked(d->dragSwitchId);
 }
 
 void Sidebar::slotSplitterBtnClicked()
 {
-    clicked(d->activeTab);
+    slotClicked(d->activeTab);
 }
 
 // -----------------------------------------------------------------------------
