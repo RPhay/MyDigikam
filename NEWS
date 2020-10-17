@@ -1,4 +1,4 @@
-digiKam 7.2.0-beta1 - Release date: 2020-11-08
+digiKam 7.2.0-beta1 - Release date: 2020-10-17
 
 *****************************************************************************************************
 NEW FEATURES:
@@ -129,7 +129,7 @@ BUGFIXES:
 114 ==> 416470 - Suggestion: Make Album TreeView more explorer like.
 115 ==> 426888 - digiKam crashes shortly after I attempt to start it.
 116 ==> 427041 - Geolocation information not being saved to the metadata.
-117 ==> 427056 - Digikam seg faults building thumbnail from gigabyte PNG.
+117 ==> 427056 - digiKam seg faults building thumbnail from gigabyte PNG.
 118 ==> 427112 - Modify the geolocation : Legends of the screen menus incorrect.
 119 ==> 427173 - When clicking on the parent folder that has multiple subfolder with the images, nothing is shown.
 120 ==> 427079 - Error "internal server is not used and is not active".
