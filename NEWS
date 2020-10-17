@@ -160,4 +160,5 @@ BUGFIXES:
 145 ==> 427662 - HiDPI Settings Not Working in Digikam 7.1.0.
 146 ==> 396086 - Changing elements order takes near 5 minutes in a folder with 50 images.
 147 ==> 424691 - Thumbnails not showing for face tags [patch].
-148 ==> 
+148 ==> 427863 - Dragging a folder onto albums tree view sidebar will import with name of parent folder.
+149 ==> 

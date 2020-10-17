@@ -144,7 +144,7 @@ void CopyOrMoveJob::run()
             {
                 QDir srcDir(srcInfo.filePath());
 
-                if (!srcDir.rename(srcDir.path(), destenation))
+                if (!srcDir.rename(srcDir.path(), dstDir.path()))
                 {
                     // If QDir::rename fails, try copy and remove.
 
