@@ -224,7 +224,7 @@ void DMultiTabBarButton::setText(const QString& text)
 void DMultiTabBarButton::slotClicked()
 {
     updateGeometry();
-    emit clicked(m_id);
+    emit signalClicked(m_id);
 }
 
 int DMultiTabBarButton::id() const
