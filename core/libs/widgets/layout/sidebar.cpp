@@ -258,7 +258,7 @@ void DMultiTabBarButton::paintEvent(QPaintEvent*)
 {
     QStyleOptionButton opt;
     opt.initFrom(this);
-    opt.icon = icon();
+    opt.icon     = icon();
     opt.iconSize = iconSize();
 
     // removes the QStyleOptionButton::HasMenu ButtonFeature
@@ -1026,8 +1026,8 @@ void Sidebar::appendTab(QWidget* const w, const QIcon& pic, const QString& title
     tab(d->tabs)->setAcceptDrops(true);
     tab(d->tabs)->installEventFilter(this);
 
-    connect(tab(d->tabs), SIGNAL(clicked(int)),
-            this, SLOT(clicked(int)));
+    connect(tab(d->tabs), SIGNAL(signalClicked(int)),
+            this, SLOT(slotClicked(int)));
 
     d->tabs++;
 }
@@ -1098,7 +1098,7 @@ void Sidebar::deleteTab(QWidget* const w)
     }
 }
 
-void Sidebar::clicked(int tab)
+void Sidebar::slotClicked(int tab)
 {
     if ((tab >= d->tabs) || (tab < 0))
     {

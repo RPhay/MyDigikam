@@ -89,7 +89,9 @@ void DHBox::childEvent(QChildEvent* e)
         }
 
         default:
+        {
             break;
+        }
     }
 
     QFrame::childEvent(e);

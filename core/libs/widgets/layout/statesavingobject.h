@@ -120,7 +120,7 @@ public:
      *
      * @return state saving / restoring depth
      */
-    StateSavingDepth getStateSavingDepth() const;
+    StateSavingDepth getStateSavingDepth()  const;
 
     /**
      * Sets the depth used for state saving or loading.
@@ -181,7 +181,7 @@ protected:
      *
      * @return config group for state saving and loading
      */
-    KConfigGroup getConfigGroup() const;
+    KConfigGroup getConfigGroup()           const;
 
     /**
      * Always use this method to create config group entry names. This allows
@@ -190,7 +190,7 @@ protected:
      * @param base original name planned for the config group entry
      * @return entry name after manipulating it with externally set parameters
      */
-    QString entryName(const QString& base) const;
+    QString entryName(const QString& base)  const;
 
 private:
 

@@ -55,7 +55,7 @@ class DragHandle : public QWidget
 public:
 
     explicit DragHandle(QDockWidget* const);
-    ~DragHandle() override;
+    ~DragHandle()                 override;
 
     QSize sizeHint()        const override;
     QSize minimumSizeHint() const override;
@@ -97,7 +97,7 @@ public:
 public:
 
     explicit ThumbBarDock(QWidget* const parent = nullptr, Qt::WindowFlags flags = Qt::WindowFlags());
-    ~ThumbBarDock() override;
+    ~ThumbBarDock()                                                       override;
 
     /**
      * Measure the orientation and size of the widget and adjust the containing
@@ -110,7 +110,8 @@ public:
     /**
      * Return an Action to show and hide the thumbnail bar.
      */
-    QAction* getToggleAction(QObject* const parent, const QString& caption = QString()) const;
+    QAction* getToggleAction(QObject* const parent,
+                             const QString& caption = QString())    const;
 
     /**
      * The normal show() and hide() functions don't apply that well, because
@@ -122,7 +123,7 @@ public:
      * show the thumbbar according to the user preference. shouldBeVisible()
      * tells whether the thumbbar should be shown according to the user.
      */
-    bool shouldBeVisible() const;
+    bool shouldBeVisible()                                          const;
     void setShouldBeVisible(bool);
     void restoreVisibility();
 

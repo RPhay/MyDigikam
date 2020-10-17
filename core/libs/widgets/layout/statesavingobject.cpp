@@ -40,11 +40,11 @@ class Q_DECL_HIDDEN StateSavingObject::Private
 public:
 
     explicit Private()
-      : host(nullptr),
-        group(),
-        prefix(),
+      : host    (nullptr),
+        group   (),
+        prefix  (),
         groupSet(false),
-        depth(StateSavingObject::INSTANCE)
+        depth   (StateSavingObject::INSTANCE)
     {
     }
 
@@ -173,8 +173,9 @@ void StateSavingObject::setStateSavingDepth(const StateSavingObject::StateSaving
 
 void StateSavingObject::setConfigGroup(const KConfigGroup& group)
 {
-    //qCDebug(DIGIKAM_WIDGETS_LOG) << "received new config group: " << group.name();
-
+/*
+    qCDebug(DIGIKAM_WIDGETS_LOG) << "received new config group: " << group.name();
+*/
     d->group    = group;
     d->groupSet = true;
 }
@@ -186,8 +187,9 @@ void StateSavingObject::setEntryPrefix(const QString& prefix)
 
 void StateSavingObject::loadState()
 {
-    //qCDebug(DIGIKAM_WIDGETS_LOG) << "Loading state";
-
+/*
+    qCDebug(DIGIKAM_WIDGETS_LOG) << "Loading state";
+*/
     doLoadState();
 
     d->recurseOperation(false);
@@ -195,8 +197,9 @@ void StateSavingObject::loadState()
 
 void StateSavingObject::saveState()
 {
-    //qCDebug(DIGIKAM_WIDGETS_LOG) << "Saving state";
-
+/*
+    qCDebug(DIGIKAM_WIDGETS_LOG) << "Saving state";
+*/
     doSaveState();
 
     d->recurseOperation(true);
@@ -206,7 +209,9 @@ KConfigGroup StateSavingObject::getConfigGroup() const
 {
     if (!d->groupSet)
     {
-        //qCDebug(DIGIKAM_WIDGETS_LOG) << "No config group set, returning one based on object name";
+/*
+        qCDebug(DIGIKAM_WIDGETS_LOG) << "No config group set, returning one based on object name";
+*/
         return d->getGroupFromObjectName();
     }
 

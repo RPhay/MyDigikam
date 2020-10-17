@@ -174,8 +174,9 @@ class DIGIKAM_EXPORT DMultiTabBarButton: public QPushButton
 
 public:
 
+    ~DMultiTabBarButton()         override;
+
     int id() const;
-    ~DMultiTabBarButton() override;
 
 public Q_SLOTS:
 
@@ -184,10 +185,10 @@ public Q_SLOTS:
 Q_SIGNALS:
 
     /**
-     * this is emitted if  the button is clicked
+     * this is emitted if the button is clicked
      * @param id the ID identifying the button
      */
-    void clicked(int id);
+    void signalClicked(int id);
 
 protected Q_SLOTS:
 
@@ -219,7 +220,7 @@ class DIGIKAM_EXPORT DMultiTabBarTab: public DMultiTabBarButton
 
 public:
 
-    ~DMultiTabBarTab() override;
+    ~DMultiTabBarTab()            override;
 
     QSize sizeHint()        const override;
     QSize minimumSizeHint() const override;
@@ -285,7 +286,7 @@ class DMultiTabBarFrame: public QFrame
 public:
 
     explicit DMultiTabBarFrame(QWidget* const parent, Qt::Edge pos);
-    ~DMultiTabBarFrame() override;
+    ~DMultiTabBarFrame()                override;
 
     int appendTab(const QPixmap&, int = -1, const QString& = QString());
     DMultiTabBarTab* tab(int) const;
@@ -303,7 +304,7 @@ protected:
      * parent can handle them.
      */
     virtual void contentsMousePressEvent(QMouseEvent*);
-    void mousePressEvent(QMouseEvent*) override;
+    void mousePressEvent(QMouseEvent*)  override;
 
 private:
 
@@ -349,9 +350,9 @@ public:
                      Qt::Edge side = Qt::LeftEdge,
                      bool minimizedDefault=false);
 
-    ~Sidebar() override;
+    ~Sidebar()                              override;
 
-    SidebarSplitter* splitter() const;
+    SidebarSplitter* splitter()       const;
 
     /**
      * Appends a new tab to the sidebar
@@ -384,7 +385,7 @@ public:
     /**
      * Returns the currently activated tab, or 0 if no tab is active
      */
-    QWidget* getActiveTab() const;
+    QWidget* getActiveTab()           const;
 
     /**
      * Hides the sidebar (display only the activation buttons)
@@ -422,7 +423,7 @@ public:
     /**
      * Return the visible status of current sidebar tab.
      */
-    bool isExpanded() const;
+    bool isExpanded()                 const;
 
 protected:
 
@@ -446,7 +447,7 @@ private Q_SLOTS:
     /**
      * Activates a tab
      */
-    void clicked(int tab);
+    void slotClicked(int tab);
 
     void slotExpandTimer();
     void slotDragSwitchTimer();
@@ -490,7 +491,7 @@ public:
     explicit SidebarSplitter(QWidget* const parent = nullptr);
     explicit SidebarSplitter(Qt::Orientation orientation, QWidget* const parent = nullptr);
 
-    ~SidebarSplitter() override;
+    ~SidebarSplitter()                    override;
 
     /**
      * Saves the splitter state to group, handling minimized sidebars correctly.

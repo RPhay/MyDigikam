@@ -47,22 +47,22 @@ class DIGIKAM_EXPORT DHBox : public QFrame
 
 public:
 
-    explicit DHBox(QWidget* const parent=nullptr);
-    ~DHBox() override;
+    explicit DHBox(QWidget* const parent = nullptr);
+    ~DHBox()                          override;
 
     void setSpacing(int space);
     void setContentsMargins(const QMargins& margins);
     void setContentsMargins(int left, int top, int right, int bottom);
     void setStretchFactor(QWidget* const widget, int stretch);
 
-    QSize sizeHint() const override;
-    QSize minimumSizeHint() const override;
+    QSize sizeHint()            const override;
+    QSize minimumSizeHint()     const override;
 
 protected:
 
     DHBox(bool vertical, QWidget* const parent);
 
-    void childEvent(QChildEvent* e) override;
+    void childEvent(QChildEvent* e)   override;
 };
 
 // ------------------------------------------------------------------------------------
@@ -76,8 +76,8 @@ class DIGIKAM_EXPORT DVBox : public DHBox
 
   public:
 
-    explicit DVBox(QWidget* const parent=nullptr);
-    ~DVBox() override;
+    explicit DVBox(QWidget* const parent = nullptr);
+    ~DVBox()                          override;
 };
 
 } // namespace Digikam
