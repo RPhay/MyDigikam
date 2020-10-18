@@ -37,6 +37,10 @@ AbstractItemDragDropHandler::AbstractItemDragDropHandler(QAbstractItemModel* con
 {
 }
 
+AbstractItemDragDropHandler::~AbstractItemDragDropHandler()
+{
+}
+
 QAbstractItemModel* AbstractItemDragDropHandler::model() const
 {
     return m_model;

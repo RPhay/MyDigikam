@@ -42,6 +42,10 @@ DragDropModelImplementation::DragDropModelImplementation()
 {
 }
 
+DragDropModelImplementation::~DragDropModelImplementation()
+{
+}
+
 Qt::ItemFlags DragDropModelImplementation::dragDropFlags(const QModelIndex& index) const
 {
     Q_UNUSED(index);
@@ -128,6 +132,10 @@ AbstractItemDragDropHandler* DragDropModelImplementation::dragDropHandler() cons
 }
 
 // ------------ View sample implementation -------------
+
+DragDropViewImplementation::~DragDropViewImplementation()
+{
+}
 
 void DragDropViewImplementation::cut()
 {

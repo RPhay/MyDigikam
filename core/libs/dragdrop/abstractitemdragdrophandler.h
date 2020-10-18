@@ -40,12 +40,14 @@ namespace Digikam
 
 class DIGIKAM_EXPORT AbstractItemDragDropHandler : public QObject
 {
+    Q_OBJECT
+
 public:
 
     explicit AbstractItemDragDropHandler(QAbstractItemModel* const model);
-    virtual ~AbstractItemDragDropHandler() {}
+    virtual ~AbstractItemDragDropHandler();
 
-    QAbstractItemModel* model() const;
+    QAbstractItemModel* model()     const;
 
     /**
      * Gives the view and the occurring drop event.
