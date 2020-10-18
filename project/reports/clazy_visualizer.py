@@ -168,8 +168,7 @@ def main():
             if content.find(initial_check) != -1:
                 content = content.replace('<', '&lt;')
                 content = content.replace('>', '&gt;')
-                names_of_used[names_of_usedL.index(
-                    initial_check)].data += content
+                names_of_used[names_of_usedL.index(initial_check)].data += content
                 details = line + 1
                 finished = False
                 while not finished:
@@ -185,8 +184,7 @@ def main():
                     # Otherwise, add the data to the specific used check
                     # name for the organization of checks in the HTML file.
                     if not finished:
-                        names_of_used[names_of_usedL.index(
-                            initial_check)].data += contents[details]
+                        names_of_used[names_of_usedL.index(initial_check)].data += contents[details]
                         details += 1
 
     args.file.close()
@@ -234,8 +232,7 @@ def writeHeader(f):
     f.write("<head>\n")
     f.write("\t<title>Clazy Visualizer</title>\n\t<meta charset=\"UTF-8\">\n")
     f.write("\t<meta name=\"description\" content=\"Documentation tool for visualizing Clazy checks.\">\n")
-    f.write(
-        "\t<meta name=\"viewport\" content=\"width=device-width,initial-scale=1\">\n")
+    f.write("\t<meta name=\"viewport\" content=\"width=device-width,initial-scale=1\">\n")
     f.write("\t<link rel=\"stylesheet\" href=\"https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css\">\n")
     f.write("\t<script src=\"https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js\"></script>\n")
     f.write("\t<script src=\"https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js\"></script>\n")
@@ -244,8 +241,7 @@ def writeHeader(f):
 # List the used checks found in the source code.
 def writeList(f, num_used_checks, names_of_used, args, external_link, external_name, total_num_checks):
     now = datetime.now()
-    f.write(
-        "<body style=\"background: rgb(220, 227, 230); width: 100%; height: 100%;\">\n")
+    f.write("<body style=\"background: rgb(220, 227, 230); width: 100%; height: 100%;\">\n")
     f.write("<div id=\"container\" style=\"margin-left: 2%; margin-right: 2%;\">\n")
     f.write("\t<div id=\"header\" style=\"height: 55px; display: flex; justify-content: left; position: relative;\">\n")
     f.write("\t\t<h3 style=\"text-align: center; color: #111; font-family: 'Helvetica Neue', sans-serif; font-weight: bold; \
@@ -263,10 +259,8 @@ def writeList(f, num_used_checks, names_of_used, args, external_link, external_n
         onclick=\"toggleInfo(%d)\">%d %s</a>\n" % (line, line, names_of_used[line].count, names_of_used[line].name))
 
     f.write("\t</ul>\n\n")
-    f.write(
-        "\t<div id=\"showLog\" style=\"display: none; width: 75%; float: right;\">\n")
-    f.write(
-        "\t\t<div style=\"display: flex; justify-content: left; position: relative;\">\n")
+    f.write("\t<div id=\"showLog\" style=\"display: none; width: 75%; float: right;\">\n")
+    f.write("\t\t<div style=\"display: flex; justify-content: left; position: relative;\">\n")
     f.write("\t\t\t<button id=\"collapse-btn0\" type=\"button\" class=\"btn nohover\" onclick=\"collapseSidebar()\" style=\"outline: none; \
     background-color: lightgray\" title=\"Collapse sidebar\">\n")
     f.write("\t\t\t<span id=\"collapse-img0\" class=\"glyphicon glyphicon-menu-left\"></button></span>\n")
@@ -287,8 +281,7 @@ def sortLogs(f, contents, num_used_checks, names_of_used, args, external_link, e
         collapse_idx = check_idx+1
         f.write("\t<div id=\"show%d\"" % (check_idx))
         f.write("style=\"display: none; width: 75%; float: right\">\n")
-        f.write(
-            "\t\t<div style=\"display: flex; justify-content: left; position: relative;\">\n")
+        f.write("\t\t<div style=\"display: flex; justify-content: left; position: relative;\">\n")
         f.write("\t\t\t<button id=\"collapse-btn%d\" type=\"button\" class=\"btn nohover\" onclick=\"collapseSidebar()\" \
         style=\"outline: none; background-color: lightgray\" title=\"Collapse sidebar\">\n" % (collapse_idx))
         f.write("\t\t\t<span id=\"collapse-img%d\" class=\"glyphicon glyphicon-menu-left\"></button></span>\n" % (collapse_idx))
@@ -305,90 +298,61 @@ def sortLogs(f, contents, num_used_checks, names_of_used, args, external_link, e
 def writeScript(f, num_used_checks):
     f.write("<script>\nvar selected_idx;\nvar checks_arr = [];\nvar highlights = 'highlights';\n")
     f.write("// Retrieves local storage data on document load for highlighted checks.\n")
-    f.write(
-        "$(document).ready(function() {\n\tfor (var all_checks=0; all_checks<%d; all_checks++) {\n" % (num_used_checks))
+    f.write("$(document).ready(function() {\n\tfor (var all_checks=0; all_checks<%d; all_checks++) {\n" % (num_used_checks))
     f.write("\t\tvar check_hl = document.getElementById(\"check\"+all_checks);\n")
-    f.write(
-        "\t\tswitch (JSON.parse(localStorage.getItem(highlights))[all_checks]) {\n")
+    f.write("\t\tswitch (JSON.parse(localStorage.getItem(highlights))[all_checks]) {\n")
     f.write("\t\t\tcase \"warning\":\n\t\t\tcheck_hl.classList.add('list-group-item-warning');\n")
-    f.write(
-        "\t\t\tchecks_arr[all_checks] = \"warning\"; break;\n\t\t\tcase \"danger\":\n")
-    f.write(
-        "\t\t\tcheck_hl.classList.add('list-group-item-danger');\n\t\t\tchecks_arr[all_checks] = \"danger\"; break;\n")
-    f.write(
-        "\t\t\tdefault:\n\t\t\tchecks_arr[all_checks] = \"action\";\n\t\t\tif (check_hl !== null) {\n")
+    f.write("\t\t\tchecks_arr[all_checks] = \"warning\"; break;\n\t\t\tcase \"danger\":\n")
+    f.write("\t\t\tcheck_hl.classList.add('list-group-item-danger');\n\t\t\tchecks_arr[all_checks] = \"danger\"; break;\n")
+    f.write("\t\t\tdefault:\n\t\t\tchecks_arr[all_checks] = \"action\";\n\t\t\tif (check_hl !== null) {\n")
     f.write("\t\t\t\tcheck_hl.classList.add('list-group-item-action');\n\t\t\t} break;\n\t\t}\n\t}\n")
     f.write("localStorage.setItem(highlights, JSON.stringify(checks_arr));\n});\n\n")
 
-    f.write(
-        "function toggleLog() {\n\tvar log = document.getElementById(\"showLog\");\n\tclearContent();\n")
-    f.write(
-        "\tif (log.style.display === \"none\") {\n\t\tlog.style.display = \"block\";\n\t} else {\n")
+    f.write("function toggleLog() {\n\tvar log = document.getElementById(\"showLog\");\n\tclearContent();\n")
+    f.write("\tif (log.style.display === \"none\") {\n\t\tlog.style.display = \"block\";\n\t} else {\n")
     f.write("\t\tlog.style.display = \"none\";\n\t}\n}\n\n")
 
-    f.write(
-        "function toggleInfo(check_position) {\n\tselected_idx = check_position;\n\tclearContent();\n")
+    f.write("function toggleInfo(check_position) {\n\tselected_idx = check_position;\n\tclearContent();\n")
     f.write("\t// Displays the chosen clang-tidy category.\n\tvar category = document.getElementById(\"show\"+check_position);\n")
-    f.write(
-        "\tif (category.style.display === \"none\") {\n\t\tcategory.style.display = \"block\";\n\t} else {\n")
+    f.write("\tif (category.style.display === \"none\") {\n\t\tcategory.style.display = \"block\";\n\t} else {\n")
     f.write("\t\tcategory.style.display = \"none\";\n\t}\n}\n\n")
 
-    f.write(
-        "// Clears document when choosing another selection.\nfunction clearContent() {\n")
-    f.write(
-        "\tfor (var all_checks=0; all_checks<%d; all_checks++) {\n\t\tvar clear = document.getElementById(\"show\"+all_checks);\n" % (num_used_checks))
-    f.write(
-        "\t\tif (clear.style.display === \"block\") {\n\t\tclear.style.display = \"none\";\n\t\t}\n\t}\n")
-    f.write(
-        "\tvar clearLog = document.getElementById(\"showLog\");\n\tif (clearLog.style.display === \"block\") {\n")
+    f.write("// Clears document when choosing another selection.\nfunction clearContent() {\n")
+    f.write("\tfor (var all_checks=0; all_checks<%d; all_checks++) {\n\t\tvar clear = document.getElementById(\"show\"+all_checks);\n" % (num_used_checks))
+    f.write("\t\tif (clear.style.display === \"block\") {\n\t\tclear.style.display = \"none\";\n\t\t}\n\t}\n")
+    f.write("\tvar clearLog = document.getElementById(\"showLog\");\n\tif (clearLog.style.display === \"block\") {\n")
     f.write("\t\tclearLog.style.display = \"none\";\n\t}\n}\n\n")
 
-    f.write(
-        "// Type 1 used for highlighting danger checks and 0 for warnings.\nfunction highlightChecks(type) {\n")
-    f.write(
-        "\tvar check_hl = document.getElementById(\"check\"+selected_idx);\n\tif (check_hl !== null) {\n")
-    f.write(
-        "\t\tif (check_hl.classList.contains('list-group-item-action')) {\n\t\t\tcheck_hl.classList.remove('list-group-item-action');\n")
+    f.write("// Type 1 used for highlighting danger checks and 0 for warnings.\nfunction highlightChecks(type) {\n")
+    f.write("\tvar check_hl = document.getElementById(\"check\"+selected_idx);\n\tif (check_hl !== null) {\n")
+    f.write("\t\tif (check_hl.classList.contains('list-group-item-action')) {\n\t\t\tcheck_hl.classList.remove('list-group-item-action');\n")
     f.write("\t\t\ttype == 1 ? check_hl.classList.add('list-group-item-danger') : check_hl.classList.add('list-group-item-warning');\n")
-    f.write(
-        "\t\t\ttype == 1 ? checks_arr[selected_idx] = \"danger\" : checks_arr[selected_idx] = \"warning\";\n")
-    f.write(
-        "\t\t} else if (check_hl.classList.contains('list-group-item-warning')) {\n\t\t\tcheck_hl.classList.remove('list-group-item-warning');\n")
+    f.write("\t\t\ttype == 1 ? checks_arr[selected_idx] = \"danger\" : checks_arr[selected_idx] = \"warning\";\n")
+    f.write("\t\t} else if (check_hl.classList.contains('list-group-item-warning')) {\n\t\t\tcheck_hl.classList.remove('list-group-item-warning');\n")
     f.write("\t\t\ttype == 1 ? check_hl.classList.add('list-group-item-danger') : check_hl.classList.add('list-group-item-action');\n")
-    f.write(
-        "\t\t\ttype == 1 ? checks_arr[selected_idx] = \"danger\" : checks_arr[selected_idx] = \"action\";\n\t\t} else {\n")
+    f.write("\t\t\ttype == 1 ? checks_arr[selected_idx] = \"danger\" : checks_arr[selected_idx] = \"action\";\n\t\t} else {\n")
     f.write("\t\t\tcheck_hl.classList.remove('list-group-item-danger');\n")
     f.write("\t\t\ttype == 1 ? check_hl.classList.add('list-group-item-action') : check_hl.classList.add('list-group-item-warning');\n")
-    f.write(
-        "\t\t\ttype == 1 ? checks_arr[selected_idx] = \"action\" : checks_arr[selected_idx] = \"warning\";\n\t\t}\n\t}\n")
+    f.write("\t\t\ttype == 1 ? checks_arr[selected_idx] = \"action\" : checks_arr[selected_idx] = \"warning\";\n\t\t}\n\t}\n")
     f.write("\t// Sets local storage for each occurrence of a highlighted check.\n\tlocalStorage.setItem(highlights, JSON.stringify(checks_arr));\n}\n\n")
 
-    f.write(
-        "function clearChecks(type) {\n\tfor (var all_checks=0; all_checks<%d; all_checks++) {\n" % (num_used_checks))
-    f.write(
-        "\t\tvar clear = (document.getElementById(\"check\"+all_checks));\n\t\tchecks_arr[all_checks] = \"action\";\n")
+    f.write("function clearChecks(type) {\n\tfor (var all_checks=0; all_checks<%d; all_checks++) {\n" % (num_used_checks))
+    f.write("\t\tvar clear = (document.getElementById(\"check\"+all_checks));\n\t\tchecks_arr[all_checks] = \"action\";\n")
     f.write("\t\tif (clear !== null) {\n")
-    f.write(
-        "\t\t\tif (clear.classList.contains('list-group-item-warning')) {\n\t\t\t\tclear.classList.remove('list-group-item-warning');\n")
-    f.write(
-        "\t\t\t} else if (clear.classList.contains('list-group-item-danger')) {\n\t\t\t\tclear.classList.remove('list-group-item-danger');\n\t\t\t}\n")
+    f.write("\t\t\tif (clear.classList.contains('list-group-item-warning')) {\n\t\t\t\tclear.classList.remove('list-group-item-warning');\n")
+    f.write("\t\t\t} else if (clear.classList.contains('list-group-item-danger')) {\n\t\t\t\tclear.classList.remove('list-group-item-danger');\n\t\t\t}\n")
     f.write("\t\t\tclear.classList.add('list-group-item-action');\n\t\t}\n\t}\n\t// Restores all checks to unhighlighted state on local storage.\n")
     f.write("\tlocalStorage.removeItem(highlights);\n}\n\n")
 
-    f.write(
-        "function collapseSidebar() {\n\tvar list = document.getElementById(\"list\"); var hasExpanded;\n")
+    f.write("function collapseSidebar() {\n\tvar list = document.getElementById(\"list\"); var hasExpanded;\n")
     f.write("\tvar log_details = document.getElementById(\"showLog\");\n\tlist.style.display === \"block\" ? hasSidebar = true : hasSidebar = false;\n")
-    f.write(
-        "\thasSidebar ? list.style.display = \"none\" : list.style.display = \"block\";\n")
-    f.write(
-        "\tfor (var all_checks=0; all_checks<=%d; all_checks++) {\n\t\tvar collapse_img = document.getElementById(\"collapse-img\"+all_checks);\n" % (num_used_checks))
+    f.write("\thasSidebar ? list.style.display = \"none\" : list.style.display = \"block\";\n")
+    f.write("\tfor (var all_checks=0; all_checks<=%d; all_checks++) {\n\t\tvar collapse_img = document.getElementById(\"collapse-img\"+all_checks);\n" % (num_used_checks))
     f.write("\t\tvar collapse_btn = document.getElementById(\"collapse-btn\"+all_checks);\n\t\tvar check_details = document.getElementById(\"show\"+all_checks);\n")
-    f.write(
-        "\t\tif (collapse_img !== null) {\n\t\t\thasSidebar ? collapse_img.classList.remove('glyphicon-menu-left') : collapse_img.classList.remove('glyphicon-menu-right');\n")
+    f.write("\t\tif (collapse_img !== null) {\n\t\t\thasSidebar ? collapse_img.classList.remove('glyphicon-menu-left') : collapse_img.classList.remove('glyphicon-menu-right');\n")
     f.write("\t\t\thasSidebar ? collapse_img.classList.add('glyphicon-menu-right') : collapse_img.classList.add('glyphicon-menu-left');\n")
     f.write("\t\t\thasSidebar ? collapse_btn.title = \"Expand sidebar\" : collapse_btn.title = \"Collapse sidebar\";\n\t\t}\n")
-    f.write(
-        "\t\tif (check_details !== null) {hasSidebar ? check_details.style.width = \"100%\" : check_details.style.width = \"75%\";}\n\t}\n")
+    f.write("\t\tif (check_details !== null) {hasSidebar ? check_details.style.width = \"100%\" : check_details.style.width = \"75%\";}\n\t}\n")
     f.write("\thasSidebar ? log_details.style.width = \"100%\" : log_details.style.width = \"75%\";\n}\n")
 
     # Begins writing style elements.
