@@ -35,11 +35,13 @@ IGNORE_DIRS=${IGNORE_DIRS::-1}
 
 export CLAZY_IGNORE_DIRS=$IGNORE_DIRS
 export CLAZY_CHECKS="\
-level1,\
-virtual-call-ctor,\
+level2,\
 no-fully-qualified-moc-types,\
 no-qproperty-without-notify,\
+no-old-style-connect,\
+no-rule-of-three,\
 no-inefficient-qlist-soft,\
+no-qstring-allocations,\
 no-qstring-arg,\
 no-qstring-insensitive-allocation,\
 no-qstring-ref\
