@@ -390,7 +390,7 @@ void DIO::createJob(IOJobData* const data)
     connect(jobThread, SIGNAL(signalOneProccessed(QUrl)),
             this, SLOT(slotOneProccessed(QUrl)));
 
-    connect(jobThread, SIGNAL(finished()),
+    connect(jobThread, SIGNAL(signalFinished()),
             this, SLOT(slotResult()));
 
     if (operation == IOJobData::Rename)
@@ -398,14 +398,14 @@ void DIO::createJob(IOJobData* const data)
         connect(jobThread, SIGNAL(signalRenameFailed(QUrl)),
                 this, SIGNAL(signalRenameFailed(QUrl)));
 
-        connect(jobThread, SIGNAL(finished()),
+        connect(jobThread, SIGNAL(signalFinished()),
                 this, SIGNAL(signalRenameFinished()));
     }
 
     if ((operation == IOJobData::Empty) ||
         (operation == IOJobData::Restore))
     {
-        connect(jobThread, SIGNAL(finished()),
+        connect(jobThread, SIGNAL(signalFinished()),
                 this, SIGNAL(signalTrashFinished()));
     }
 
