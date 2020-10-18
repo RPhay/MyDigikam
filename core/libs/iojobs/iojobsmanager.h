@@ -43,6 +43,7 @@ class IOJobData;
 
 class DIGIKAM_GUI_EXPORT IOJobsManager : public QObject
 {
+    Q_OBJECT
 
 public:
 

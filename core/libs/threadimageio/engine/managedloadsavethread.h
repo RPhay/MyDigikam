@@ -37,6 +37,7 @@ class LoadSaveTask;
 
 class DIGIKAM_EXPORT ManagedLoadSaveThread : public LoadSaveThread
 {
+    Q_OBJECT
 
 public:
 

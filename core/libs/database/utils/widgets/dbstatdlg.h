@@ -35,6 +35,8 @@ namespace Digikam
 
 class DIGIKAM_GUI_EXPORT DBStatDlg : public InfoDlg
 {
+    Q_OBJECT
+
 public:
 
     explicit DBStatDlg(QWidget* const parent);

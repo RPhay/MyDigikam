@@ -49,6 +49,8 @@ namespace Digikam
  */
 class DIGIKAM_EXPORT DLineWidget : public QFrame
 {
+    Q_OBJECT
+
 public:
 
     explicit DLineWidget(Qt::Orientation orientation, QWidget* const parent = nullptr);

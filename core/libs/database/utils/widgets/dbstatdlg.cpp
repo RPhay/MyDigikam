@@ -151,6 +151,7 @@ int DBStatDlg::generateItemsList(DatabaseItem::Category category, const QString&
     ti->setFont(1, ft);
 
     // Add space.
+
     new QTreeWidgetItem(listView(), QStringList());
 
     return total;

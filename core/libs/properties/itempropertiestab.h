@@ -41,12 +41,14 @@ namespace Digikam
 
 class DIGIKAM_EXPORT ItemPropertiesTab : public DExpanderBox
 {
+    Q_OBJECT
+
 public:
 
     explicit ItemPropertiesTab(QWidget* const parent);
     ~ItemPropertiesTab() override;
 
-    void setCurrentURL(const QUrl& url=QUrl());
+    void setCurrentURL(const QUrl& url = QUrl());
 
     void setPhotoInfoDisable(const bool b);
     void setVideoInfoDisable(const bool b);
@@ -119,11 +121,11 @@ public:
     /**
      * Return human readable string of file size in bytes.
      */
-    static QString humanReadableBytesCount(qint64 bytes, bool si=false);
+    static QString humanReadableBytesCount(qint64 bytes, bool si = false);
 
 private:
 
-    static double doubleToHumanReadableFraction(double val, long* num, long* den, long maxden=2);
+    static double doubleToHumanReadableFraction(double val, long* num, long* den, long maxden = 2);
 
 private:
 

@@ -498,7 +498,7 @@ SafeTemporaryFile::SafeTemporaryFile()
 
 SafeTemporaryFile::SafeTemporaryFile(const QString& templ)
     : QTemporaryFile(templ),
-      m_templ(templ)
+      m_templ       (templ)
 {
 }
 

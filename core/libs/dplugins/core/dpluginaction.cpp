@@ -84,7 +84,10 @@ DPluginAction::ActionCategory DPluginAction::actionCategory() const
     bool b = false;
     int v  = property("DPluginActionCategory").toInt(&b);
 
-    if (b) return (ActionCategory)v;
+    if (b)
+    {
+        return (ActionCategory)v;
+    }
 
     return InvalidCat;
 }

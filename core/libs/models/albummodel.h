@@ -38,6 +38,8 @@ namespace Digikam
 
 class DIGIKAM_GUI_EXPORT AlbumModel : public AbstractCheckableAlbumModel
 {
+    Q_OBJECT
+
 public:
 
     /// Create a model containing all physical albums
@@ -57,6 +59,8 @@ protected:
 
 class DIGIKAM_GUI_EXPORT TagModel : public AbstractCheckableAlbumModel
 {
+    Q_OBJECT
+
 public:
 
     /**

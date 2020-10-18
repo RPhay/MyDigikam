@@ -33,6 +33,7 @@ namespace Digikam
 
 class DIGIKAM_GUI_EXPORT MysqlInitBinary : public DBinaryIface
 {
+    Q_OBJECT
 
 public:
 

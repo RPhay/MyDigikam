@@ -42,6 +42,8 @@ class DXmlGuiWindow;
 
 class DIGIKAM_EXPORT DAboutData : public QObject
 {
+    Q_OBJECT
+
 public:
 
     explicit DAboutData(DXmlGuiWindow* const parent);

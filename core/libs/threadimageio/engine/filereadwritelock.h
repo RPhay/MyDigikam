@@ -90,6 +90,8 @@ private:
 
 class DIGIKAM_EXPORT SafeTemporaryFile : public QTemporaryFile
 {
+    Q_OBJECT
+
 public:
 
     explicit SafeTemporaryFile(const QString& templ);

@@ -73,6 +73,7 @@ public:
 
 class DIGIKAM_EXPORT DItemToolTip : public QLabel
 {
+    Q_OBJECT
 
 public:
 
