@@ -4,6 +4,7 @@
 #
 # Run Clazy analyzer on whole digiKam source code.
 # https://github.com/KDE/clazy
+# Dependencies : Python BeautifulSoup and SoupSieve at run-time.
 #
 # Redistribution and use is allowed according to the terms of the BSD license.
 # For details see the accompanying COPYING-CMAKE-SCRIPTS file.
