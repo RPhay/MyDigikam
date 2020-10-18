@@ -51,7 +51,7 @@ class Q_DECL_HIDDEN CoreDB::Private
 public:
 
     explicit Private()
-      : db(nullptr),
+      : db               (nullptr),
         uniqueHashVersion(-1)
     {
     }
@@ -435,6 +435,7 @@ void CoreDB::setAlbumCaption(int albumID, const QString& caption)
 void CoreDB::setAlbumCategory(int albumID, const QString& category)
 {
     // TODO : change "collection" property in DB ALbum table to "category"
+
     d->db->execSql(QString::fromUtf8("UPDATE Albums SET collection=? WHERE id=?;"),
                    category, albumID);
     d->db->recordChangeset(AlbumChangeset(albumID, AlbumChangeset::PropertiesChanged));
@@ -480,9 +481,11 @@ void CoreDB::makeStaleAlbum(int albumID)
 {
     // We need to work around the table constraint, no we want to delete older stale albums with
     // the same relativePath, and adjust relativePaths depending on albumRoot.
+
     QList<QVariant> values;
 
     // retrieve information
+
     d->db->execSql(QString::fromUtf8("SELECT albumRoot, relativePath FROM Albums WHERE id=?;"),
                    albumID, &values);
 
@@ -492,9 +495,11 @@ void CoreDB::makeStaleAlbum(int albumID)
     }
 
     // prepend albumRootId to relativePath. relativePath is unused and officially undefined after this call.
+
     QString newRelativePath = values.at(0).toString() + QLatin1Char('-') + values.at(1).toString();
 
     // delete older stale albums
+
     QMap<QString, QVariant> parameters;
     parameters.insert(QLatin1String(":albumRoot"), 0);
     parameters.insert(QLatin1String(":relativePath"), newRelativePath);
@@ -506,11 +511,13 @@ void CoreDB::makeStaleAlbum(int albumID)
     }
 
     // now do our update
+
     d->db->setForeignKeyChecks(false);
     d->db->execSql(QString::fromUtf8("UPDATE Albums SET albumRoot=0, relativePath=? WHERE id=?;"),
                    newRelativePath, albumID);
 
     // for now, we make no distinction to deleteAlbums wrt to changeset
+
     d->db->recordChangeset(AlbumChangeset(albumID, AlbumChangeset::Deleted));
     d->db->setForeignKeyChecks(true);
 }
@@ -565,9 +572,9 @@ int CoreDB::addTag(int parentTagID, const QString& name, const QString& iconKDE,
 
 void CoreDB::deleteTag(int tagID)
 {
-    /*
+/*
     QString("DELETE FROM Tags WHERE id=?;"), tagID
-    */
+*/
 
     QMap<QString, QVariant> bindingMap;
     bindingMap.insert(QLatin1String(":tagID"), tagID);
@@ -733,7 +740,7 @@ void CoreDB::addTagProperty(const TagProperty& property)
 
 void CoreDB::removeTagProperties(int tagId, const QString& property, const QString& value)
 {
-    if (property.isNull())
+    if      (property.isNull())
     {
         d->db->execSql(QString::fromUtf8("DELETE FROM TagProperties WHERE tagid=?;"),
                        tagId);
@@ -847,7 +854,7 @@ QString CoreDB::getSetting(const QString& keyword) const
     return values.first().toString();
 }
 
-// helper method
+/// helper method
 static QStringList joinMainAndUserFilterString(const QChar& sep, const QString& filter,
                                                const QString& userFilter)
 {
@@ -1095,10 +1102,12 @@ qlonglong CoreDB::findImageId(int albumID, const QString& name,
     QVariantList boundValues;
 
     // Add the standard bindings
+
     boundValues << name << (int)status << (int)category
                 << fileSize << uniqueHash;
 
     // If the album id is -1, no album is assigned. Get all images with NULL album
+
     if (albumID == -1)
     {
         d->db->execSql(QString::fromUtf8("SELECT id FROM Images "
@@ -1125,6 +1134,7 @@ qlonglong CoreDB::findImageId(int albumID, const QString& name,
 
     // If there are several identical image ids,
     // probably use the last most recent one.
+
     return values.last().toLongLong();
 }
 
@@ -1271,7 +1281,7 @@ void CoreDB::addImageTagProperty(const ImageTagProperty& property)
 
 void CoreDB::removeImageTagProperties(qlonglong imageId, int tagId, const QString& property, const QString& value)
 {
-    if (tagId == -1)
+    if      (tagId == -1)
     {
         d->db->execSql(QString::fromUtf8("DELETE FROM ImageTagProperties "
                                          "WHERE imageid=?;"),
@@ -1401,7 +1411,7 @@ QList<int> CoreDB::getItemCommonTagIDs(const QList<qlonglong>& imageIDList) cons
     QList<qlonglong>::const_iterator it = imageIDList.constBegin();
     ++it;
 
-    for (; it != imageIDList.constEnd() ; ++it)
+    for ( ; it != imageIDList.constEnd() ; ++it)
     {
         sql += QString::fromUtf8(" OR imageid=? ");
         boundValues << (*it);
@@ -1442,6 +1452,7 @@ QVariantList CoreDB::getImagesFields(qlonglong imageID, DatabaseFields::Images f
         }
 
         // Convert date times to QDateTime, they come as QString
+
         if ((fields & DatabaseFields::ModificationDate))
         {
             int index     = fieldNames.indexOf(QLatin1String("modificationDate"));
@@ -1471,6 +1482,7 @@ QVariantList CoreDB::getItemInformation(qlonglong imageID, DatabaseFields::ItemI
         }
 
         // Convert date times to QDateTime, they come as QString
+
         if ((fields & DatabaseFields::CreationDate))
         {
             int index     = fieldNames.indexOf(QLatin1String("creationDate"));
@@ -1520,6 +1532,7 @@ QVariantList CoreDB::getVideoMetadata(qlonglong imageID, DatabaseFields::VideoMe
         d->db->execSql(query, imageID, &values);
 
         // For some reason REAL values may come as QString QVariants. Convert here.
+
         if (values.size() == fieldNames.size()        &&
             ((fields & DatabaseFields::Aperture)      ||
              (fields & DatabaseFields::FocalLength)   ||
@@ -1561,6 +1574,7 @@ QVariantList CoreDB::getItemPosition(qlonglong imageID, DatabaseFields::ItemPosi
         d->db->execSql(query, imageID, &values);
 
         // For some reason REAL values may come as QString QVariants. Convert here.
+
         if (values.size() == fieldNames.size() &&
             ((fields & DatabaseFields::LatitudeNumber)      ||
              (fields & DatabaseFields::LongitudeNumber)     ||
@@ -1614,6 +1628,7 @@ QVariantList CoreDB::getItemPositions(QList<qlonglong> imageIDs, DatabaseFields:
         }
 
         // For some reason REAL values may come as QString QVariants. Convert here.
+
         if (values.size() == fieldNames.size() &&
             (fields & DatabaseFields::LatitudeNumber      ||
              fields & DatabaseFields::LongitudeNumber     ||
@@ -1637,7 +1652,9 @@ QVariantList CoreDB::getItemPositions(QList<qlonglong> imageIDs, DatabaseFields:
                    )
                 {
                     if (!values.at(i).isNull())
+                    {
                         values[i] = values.at(i).toDouble();
+                    }
                 }
             }
         }
@@ -2002,7 +2019,7 @@ void CoreDB::setItemCopyrightProperty(qlonglong imageID, const QString& property
                                       const QString& value, const QString& extraValue,
                                       CopyrightPropertyUnique uniqueness)
 {
-    if (uniqueness == PropertyUnique)
+    if      (uniqueness == PropertyUnique)
     {
         d->db->execSql(QString::fromUtf8("DELETE FROM ImageCopyright "
                                          "WHERE imageid=? AND property=?;"),
@@ -2030,10 +2047,12 @@ void CoreDB::removeItemCopyrightProperties(qlonglong imageID, const QString& pro
     {
         ++removeBy;
     }
+
     if (!extraValue.isNull())
     {
         ++removeBy;
     }
+
     if (!value.isNull())
     {
         ++removeBy;
@@ -2279,6 +2298,7 @@ QVector<QList<qlonglong> > CoreDB::getImagesRelatedFrom(QList<qlonglong> subject
 bool CoreDB::hasImagesRelatedFrom(qlonglong subjectId, DatabaseRelation::Type type) const
 {
     // returns 0 or 1 item in list
+
     return !getRelatedImages(subjectId, true, type, true).isEmpty();
 }
 
@@ -2295,6 +2315,7 @@ QVector<QList<qlonglong> > CoreDB::getImagesRelatingTo(QList<qlonglong> objectId
 bool CoreDB::hasImagesRelatingTo(qlonglong objectId, DatabaseRelation::Type type) const
 {
     // returns 0 or 1 item in list
+
     return !getRelatedImages(objectId, false, type, true).isEmpty();
 }
 
@@ -2414,9 +2435,9 @@ QList<qlonglong> CoreDB::getOneRelatedImageEach(const QList<qlonglong>& ids, Dat
         sql = sql.arg(QString::fromUtf8("AND type=?"));
     }
 
-    DbEngineSqlQuery        query = d->db->prepareQuery(sql);
-    QSet<qlonglong> result;
-    QList<QVariant> values;
+    DbEngineSqlQuery query = d->db->prepareQuery(sql);
+    QSet<qlonglong>  result;
+    QList<QVariant>  values;
 
     foreach (const qlonglong& id, ids)
     {
@@ -2435,6 +2456,7 @@ QList<qlonglong> CoreDB::getOneRelatedImageEach(const QList<qlonglong>& ids, Dat
         }
 
         // one of subject and object is the given id, the other our result
+
         if (values.first() != id)
         {
             result << values.first().toLongLong();
@@ -2586,6 +2608,7 @@ QList<ItemScanInfo> CoreDB::getIdenticalFiles(qlonglong id) const
     QList<QVariant> values;
 
     // retrieve unique hash and file size
+
     d->db->execSql(QString::fromUtf8("SELECT uniqueHash, fileSize FROM Images WHERE id=?;"),
                    id, &values);
 
@@ -2603,7 +2626,8 @@ QList<ItemScanInfo> CoreDB::getIdenticalFiles(qlonglong id) const
 QList<ItemScanInfo> CoreDB::getIdenticalFiles(const QString& uniqueHash, qlonglong fileSize, qlonglong sourceId) const
 {
     // enforce validity
-    if (uniqueHash.isEmpty() || fileSize <= 0)
+
+    if (uniqueHash.isEmpty() || (fileSize <= 0))
     {
         return QList<ItemScanInfo>();
     }
@@ -2611,6 +2635,7 @@ QList<ItemScanInfo> CoreDB::getIdenticalFiles(const QString& uniqueHash, qlonglo
     QList<QVariant> values;
 
     // find items with same fingerprint
+
     d->db->execSql(QString::fromUtf8("SELECT id, album, name, status, category, modificationDate, fileSize "
                                      "FROM Images WHERE fileSize=? AND uniqueHash=? AND album IS NOT NULL;"),
                    fileSize, uniqueHash, &values);
@@ -2637,12 +2662,14 @@ QList<ItemScanInfo> CoreDB::getIdenticalFiles(const QString& uniqueHash, qlonglo
         ++it;
 
         // exclude one source id from list
+
         if (sourceId == info.id)
         {
             continue;
         }
 
         // same for all here, per definition
+
         info.uniqueHash       = uniqueHash;
 
         list << info;
@@ -2654,6 +2681,7 @@ QList<ItemScanInfo> CoreDB::getIdenticalFiles(const QString& uniqueHash, qlonglo
 QStringList CoreDB::imagesFieldList(DatabaseFields::Images fields)
 {
     // adds no spaces at beginning or end
+
     QStringList list;
 
     if (fields & DatabaseFields::Album)
@@ -2702,6 +2730,7 @@ QStringList CoreDB::imagesFieldList(DatabaseFields::Images fields)
 QStringList CoreDB::imageInformationFieldList(DatabaseFields::ItemInformation fields)
 {
     // adds no spaces at beginning or end
+
     QStringList list;
 
     if (fields & DatabaseFields::Rating)
@@ -2755,6 +2784,7 @@ QStringList CoreDB::imageInformationFieldList(DatabaseFields::ItemInformation fi
 QStringList CoreDB::videoMetadataFieldList(DatabaseFields::VideoMetadata fields)
 {
     // adds no spaces at beginning or end
+
     QStringList list;
 
     if (fields & DatabaseFields::AspectRatio)
@@ -2798,6 +2828,7 @@ QStringList CoreDB::videoMetadataFieldList(DatabaseFields::VideoMetadata fields)
 QStringList CoreDB::imageMetadataFieldList(DatabaseFields::ImageMetadata fields)
 {
     // adds no spaces at beginning or end
+
     QStringList list;
 
     if (fields & DatabaseFields::Make)
@@ -2886,6 +2917,7 @@ QStringList CoreDB::imageMetadataFieldList(DatabaseFields::ImageMetadata fields)
 QStringList CoreDB::imagePositionsFieldList(DatabaseFields::ItemPositions fields)
 {
     // adds no spaces at beginning or end
+
     QStringList list;
 
     if (fields & DatabaseFields::Latitude)
@@ -2944,6 +2976,7 @@ QStringList CoreDB::imagePositionsFieldList(DatabaseFields::ItemPositions fields
 QStringList CoreDB::imageCommentsFieldList(DatabaseFields::ItemComments fields)
 {
     // adds no spaces at beginning or end
+
     QStringList list;
 
     if (fields & DatabaseFields::CommentType)
@@ -2977,6 +3010,7 @@ QStringList CoreDB::imageCommentsFieldList(DatabaseFields::ItemComments fields)
 void CoreDB::addBoundValuePlaceholders(QString& query, int count)
 {
     // adds no spaces at beginning or end
+
     QString questionMarks;
     questionMarks.reserve(count * 2);
     QString questionMark(QString::fromUtf8("?,"));
@@ -2987,6 +3021,7 @@ void CoreDB::addBoundValuePlaceholders(QString& query, int count)
     }
 
     // remove last ','
+
     questionMarks.chop(1);
 
     query += questionMarks;
@@ -3031,13 +3066,15 @@ void CoreDB::addItemTag(qlonglong imageID, int tagID, bool newTag)
 
     d->db->recordChangeset(ImageTagChangeset(imageID, tagID, ImageTagChangeset::Added));
 
-    //don't save pick or color tags
+    // don't save pick or color tags
+
     if (!newTag || TagsCache::instance()->isInternalTag(tagID))
     {
         return;
     }
 
-    //move current tag to front
+    // move current tag to front
+
     d->recentlyAssignedTags.removeAll(tagID);
     d->recentlyAssignedTags.prepend(tagID);
 
@@ -3050,6 +3087,7 @@ void CoreDB::addItemTag(qlonglong imageID, int tagID, bool newTag)
 void CoreDB::addItemTag(int albumID, const QString& name, int tagID)
 {
     // easier because of attributes watch
+
     return addItemTag(getImageId(albumID, name), tagID);
 }
 
@@ -3110,9 +3148,9 @@ void CoreDB::removeTagsFromItems(QList<qlonglong> imageIDs, const QList<int>& ta
         return;
     }
 
-    DbEngineSqlQuery     query = d->db->prepareQuery(QString::fromUtf8("DELETE FROM ImageTags WHERE imageID=? AND tagid=?;"));
-    QVariantList images;
-    QVariantList tags;
+    DbEngineSqlQuery query = d->db->prepareQuery(QString::fromUtf8("DELETE FROM ImageTags WHERE imageID=? AND tagid=?;"));
+    QVariantList     images;
+    QVariantList     tags;
 
     foreach (const qlonglong& imageid, imageIDs)
     {
@@ -3256,6 +3294,7 @@ QMap<int, int> CoreDB::getNumberOfImagesInAlbums() const
 
     // initialize allAbumIDs with all existing albums from db to prevent
     // wrong album image counters
+
     d->db->execSql(QString::fromUtf8("SELECT id from Albums;"),
                    &allAbumIDs);
 
@@ -3290,6 +3329,7 @@ QMap<int, int> CoreDB::getNumberOfImagesInTags() const
 
     // initialize allTagIDs with all existing tags from db to prevent
     // wrong tag counters
+
     d->db->execSql(QString::fromUtf8("SELECT id from Tags;"),
                    &allTagIDs);
 
@@ -3513,6 +3553,7 @@ QList<int> CoreDB::getAlbumAndSubalbumsForPath(int albumRootId, const QString& r
         ++it;
 
         // bug #223050: The LIKE operator is case insensitive
+
         if (albumRelativePath.startsWith(relativePath))
         {
             albumIds << id;
@@ -3601,8 +3642,11 @@ void CoreDB::setItemAlbum(qlonglong imageID, qlonglong album)
                    boundValues);
 
     // record that the image was assigned a new album
+
     d->db->recordChangeset(ImageChangeset(imageID, DatabaseFields::Set(DatabaseFields::Album)));
+
     // also record that the collection was changed by adding an image to an album.
+
     d->db->recordChangeset(CollectionImageChangeset(imageID, album, CollectionImageChangeset::Added));
 }
 
@@ -3691,8 +3735,10 @@ QStringList CoreDB::getItemURLsInAlbum(int albumID, ItemSortOrder sortOrder) con
             break;
 
         case ByItemPath:
+
             // Don't collate on the path - this is to maintain the same behavior
             // that happens when sort order is "By Path"
+
             d->db->execDBAction(d->db->getDBAction(QString::fromUtf8("getItemURLsInAlbumByItemPath")),
                                 bindingMap, &values);
             break;
@@ -4168,6 +4214,7 @@ void CoreDB::renameAlbum(int albumID, int newAlbumRoot, const QString& newRelati
     }
 
     // first delete any stale albums left behind at the destination of renaming
+
     QMap<QString, QVariant> parameters;
     parameters.insert(QString::fromUtf8(":albumRoot"),    newAlbumRoot);
     parameters.insert(QString::fromUtf8(":relativePath"), newRelativePath);
@@ -4178,6 +4225,7 @@ void CoreDB::renameAlbum(int albumID, int newAlbumRoot, const QString& newRelati
     }
 
     // now update the album
+
     d->db->execSql(QString::fromUtf8("UPDATE Albums SET albumRoot=?, relativePath=? WHERE id=? AND albumRoot=?;"),
                    newAlbumRoot, newRelativePath, albumID, albumRoot);
     d->db->recordChangeset(AlbumChangeset(albumID, AlbumChangeset::Renamed));
@@ -4194,6 +4242,7 @@ void CoreDB::moveItem(int srcAlbumID, const QString& srcName,
                       int dstAlbumID, const QString& dstName)
 {
     // find id of src image
+
     qlonglong imageId = getImageId(srcAlbumID, srcName);
 
     if (imageId == -1)
@@ -4202,6 +4251,7 @@ void CoreDB::moveItem(int srcAlbumID, const QString& srcName,
     }
 
     // first delete any stale database entries (for destination) if any
+
     deleteItem(dstAlbumID, dstName);
 
     d->db->execSql(QString::fromUtf8("UPDATE Images SET album=?, name=? "
@@ -4217,23 +4267,27 @@ int CoreDB::copyItem(int srcAlbumID, const QString& srcName,
                      int dstAlbumID, const QString& dstName)
 {
     // find id of src image
+
     qlonglong srcId = getImageId(srcAlbumID, srcName);
 
-    if (srcId == -1 || dstAlbumID == -1 || dstName.isEmpty())
+    if ((srcId == -1) || (dstAlbumID == -1) || dstName.isEmpty())
     {
         return -1;
     }
 
     // check for src == dest
-    if (srcAlbumID == dstAlbumID && srcName == dstName)
+
+    if ((srcAlbumID == dstAlbumID) && (srcName == dstName))
     {
         return srcId;
     }
 
     // first delete any stale database entries if any
+
     deleteItem(dstAlbumID, dstName);
 
     // copy entry in Images table
+
     QVariant id;
     d->db->execSql(QString::fromUtf8("INSERT INTO Images "
                                      "( album, name, status, category, modificationDate, fileSize, uniqueHash ) "
@@ -4251,6 +4305,7 @@ int CoreDB::copyItem(int srcAlbumID, const QString& srcName,
     d->db->recordChangeset(CollectionImageChangeset(id.toLongLong(), dstAlbumID, CollectionImageChangeset::Added));
 
     // copy all other tables
+
     copyImageAttributes(srcId, id.toLongLong());
 
     return id.toLongLong();
@@ -4362,6 +4417,7 @@ void CoreDB::copyImageTags(qlonglong srcId, qlonglong dstId)
                    dstId, srcId);
 
     // leave empty tag list for now
+
     d->db->recordChangeset(ImageTagChangeset(dstId, QList<int>(),
                                              ImageTagChangeset::Added));
 
@@ -4479,12 +4535,19 @@ bool CoreDB::integrityCheck() const
     switch (d->db->databaseType())
     {
         case BdEngineBackend::DbType::SQLite:
+        {
             // For SQLite the integrity check returns a single row with one string column "ok" on success and multiple rows on error.
-            return values.size() == 1 && values.first().toString().toLower().compare(QLatin1String("ok")) == 0;
+
+            return ((values.size() == 1) && (values.first().toString().toLower().compare(QLatin1String("ok")) == 0));
+        }
+
         case BdEngineBackend::DbType::MySQL:
+        {
             // For MySQL, for every checked table, the table name, operation (check), message type (status) and the message text (ok on success)
             // are returned. So we check if there are four elements and if yes, whether the fourth element is "ok".
-            //qCDebug(DIGIKAM_DATABASE_LOG) << "MySQL check returned " << values.size() << " rows";
+/*
+            qCDebug(DIGIKAM_DATABASE_LOG) << "MySQL check returned " << values.size() << " rows";
+*/
             if ((values.size() % 4) != 0)
             {
                 return false;
@@ -4508,13 +4571,21 @@ bool CoreDB::integrityCheck() const
                 }
                 else
                 {
-                    //qCDebug(DIGIKAM_DATABASE_LOG) << "Passed integrity check for table " << tableName;
+/*
+                    qCDebug(DIGIKAM_DATABASE_LOG) << "Passed integrity check for table " << tableName;
+*/
                 }
             }
+
             // No error conditions. Db passed the integrity check.
+
             return true;
+        }
+
         default:
+        {
             return false;
+        }
     }
 }
 

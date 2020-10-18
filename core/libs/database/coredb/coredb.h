@@ -228,7 +228,7 @@ public:
      * @param create       If true, an album is newly created if it does not yet exist.
      *                     If false, -1 is returned if no album exists.
      * @return The albumID for that folder,
-               or -1 if it does not exist and create is false.
+     *         or -1 if it does not exist and create is false.
      */
     int  getAlbumForPath(int albumRootId, const QString& relativePath, bool create = true) const;
 
@@ -518,7 +518,7 @@ public:
      * can later be removed by deleteRemovedItems().
      * @param albumID The id of the album
      * @param ids Fully optional: The image ids in the album, if you know them anyway.
-     *  This parameter is only used for distributing the change notification.
+     *            This parameter is only used for distributing the change notification.
      */
     void removeItemsFromAlbum(int albumID, const QList<qlonglong>& ids_forInformation = QList<qlonglong>());
 
@@ -705,7 +705,7 @@ public:
      * Find the album of an item
      * @param imageID The ID of the item
      * @return The ID of the PAlbum of the item, or -1 if not found
-    */
+     */
     int getItemAlbum(qlonglong imageID) const;
 
     /**
@@ -875,7 +875,7 @@ public:
      * Indicate the values that you have passed in the VideoMetadata flag in the third parameters.
      */
     void addVideoMetadata(qlonglong imageID, const QVariantList& infos,
-                             DatabaseFields::VideoMetadata fields = DatabaseFields::VideoMetadataAll);
+                          DatabaseFields::VideoMetadata fields = DatabaseFields::VideoMetadataAll);
 
     /**
      * Change the indicated fields of the video information for the specified item.
@@ -1010,10 +1010,11 @@ public:
                                    const QString& value, const QString& extraValue = QString(),
                                    CopyrightPropertyUnique uniqueness = PropertyUnique);
 
-    /** Removes copyright properties for the given image id. All values after the first null value,
-     *  in order of parameters, are treated as wild cards (you can give value as wildcard; value and
-     *  extraValue; or property, extraValue and value).
-     *  Note that extraValue is ordered before value in this method!
+    /**
+     * Removes copyright properties for the given image id. All values after the first null value,
+     * in order of parameters, are treated as wild cards (you can give value as wildcard; value and
+     * extraValue; or property, extraValue and value).
+     * Note that extraValue is ordered before value in this method!
      */
     void removeItemCopyrightProperties(qlonglong imageID, const QString& property = QString(),
                                         const QString& extraValue = QString(),
@@ -1056,7 +1057,10 @@ public:
      */
     void addImageRelation(qlonglong subjectId, qlonglong objectId, DatabaseRelation::Type type);
     void addImageRelation(const ImageRelation& relation);
-    /// This method requires two lists of same size and will add list1[0]->list2[0],...,list1[n]->list2[n]
+
+    /**
+     * This method requires two lists of same size and will add list1[0]->list2[0],...,list1[n]->list2[n]
+     */
     void addImageRelations(const QList<qlonglong>& subjectIds, const QList<qlonglong>& objectIds, DatabaseRelation::Type type);
 
     /**
@@ -1317,9 +1321,14 @@ public:
      */
     void copyImageAttributes(qlonglong srcId, qlonglong destId);
 
-    // Copies all entries in the ImageProperties table
+    /**
+     * Copies all entries in the ImageProperties table.
+     */
     void copyImageProperties(qlonglong srcId, qlonglong dstId);
-    // Copies all entries in the ImageTags table
+
+    /**
+     * Copies all entries in the ImageTags table.
+     */
     void copyImageTags(qlonglong srcId, qlonglong dstId);
 
     // ------------ Clear all Item Metadata -----------
@@ -1389,7 +1398,7 @@ protected:
 
 private:
 
-    // Hidden copy constructor and assignment operator.
+    /// Hidden copy constructor and assignment operator.
     CoreDB(const CoreDB&);
     CoreDB& operator=(const CoreDB&);
 
