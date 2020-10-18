@@ -115,7 +115,7 @@ public Q_SLOTS:
 
 Q_SIGNALS:
 
-    void finished();
+    void signalFinished();
 
     void signalOneProccessed(const QUrl& url);
     void signalRenameFailed(const QUrl& url);

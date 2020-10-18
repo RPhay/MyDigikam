@@ -41,12 +41,12 @@ class Q_DECL_HIDDEN IOJobData::Private
 public:
 
     explicit Private()
-      : operation(Unknown),
+      : operation   (Unknown),
         fileConflict(Continue),
-        srcAlbum(nullptr),
-        destAlbum(nullptr),
-        jobTime(QDateTime::currentDateTime()),
-        mutex(QMutex::Recursive)
+        srcAlbum    (nullptr),
+        destAlbum   (nullptr),
+        jobTime     (QDateTime::currentDateTime()),
+        mutex       (QMutex::Recursive)
     {
     }
 

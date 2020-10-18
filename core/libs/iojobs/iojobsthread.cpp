@@ -46,9 +46,9 @@ class Q_DECL_HIDDEN IOJobsThread::Private
 public:
 
     explicit Private()
-      : jobsCount(0),
+      : jobsCount (0),
         isCanceled(false),
-        jobData(nullptr)
+        jobData   (nullptr)
     {
     }
 
@@ -75,7 +75,7 @@ IOJobsThread::~IOJobsThread()
 
 void IOJobsThread::copyOrMove(IOJobData* const data)
 {
-    d->jobData = data;
+    d->jobData  = data;
 
     ActionJobCollection collection;
 
@@ -119,7 +119,7 @@ void IOJobsThread::deleteFiles(IOJobData* const data)
 
 void IOJobsThread::renameFile(IOJobData* const data)
 {
-    d->jobData = data;
+    d->jobData             = data;
     ActionJobCollection collection;
 
     RenameFileJob* const j = new RenameFileJob(data);
@@ -145,7 +145,7 @@ void IOJobsThread::listDTrashItems(const QString& collectionPath)
             this, SIGNAL(collectionTrashItemInfo(DTrashItemInfo)));
 
     connect(j, SIGNAL(signalDone()),
-            this, SIGNAL(finished()));
+            this, SIGNAL(signalFinished()));
 
     collection.insert(j, 0);
     d->jobsCount++;
@@ -221,7 +221,7 @@ void IOJobsThread::slotOneJobFinished()
 
     if (d->jobsCount == 0)
     {
-        emit finished();
+        emit signalFinished();
         qCDebug(DIGIKAM_IOJOB_LOG) << "Thread Finished";
     }
 }

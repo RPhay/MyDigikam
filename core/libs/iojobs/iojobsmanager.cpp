@@ -87,7 +87,7 @@ IOJobsThread* IOJobsManager::startIOJobs(IOJobData* const data)
             break;
     }
 
-    connect(thread, SIGNAL(finished()),
+    connect(thread, SIGNAL(signalFinished()),
             thread, SLOT(deleteLater()),
             Qt::QueuedConnection);
 
@@ -101,7 +101,7 @@ IOJobsThread* IOJobsManager::startDTrashItemsListingForCollection(const QString&
     IOJobsThread* const thread = new IOJobsThread(this);
     thread->listDTrashItems(collectionPath);
 
-    connect(thread, SIGNAL(finished()),
+    connect(thread, SIGNAL(signalFinished()),
             thread, SLOT(deleteLater()),
             Qt::QueuedConnection);
 

@@ -101,7 +101,7 @@ public:
     void               setSourceUrls(const QList<QUrl>& urls);
 
     void               setDestUrl(const QUrl& srcUrl,
-                                const QUrl& destUrl);
+                                  const QUrl& destUrl);
 
     void               setProgressId(const QString& id);
 
@@ -129,7 +129,7 @@ public:
 
 private:
 
-    // Hidden copy constructor and assignment operator.
+    /// Hidden copy constructor and assignment operator.
     IOJobData(const IOJobData&);
     IOJobData& operator=(const IOJobData&);
 
