@@ -43,6 +43,7 @@ namespace Digikam
  */
 class DIGIKAM_EXPORT DHBox : public QFrame
 {
+    Q_OBJECT
     Q_DISABLE_COPY(DHBox)
 
 public:
@@ -72,6 +73,7 @@ protected:
  */
 class DIGIKAM_EXPORT DVBox : public DHBox
 {
+    Q_OBJECT
     Q_DISABLE_COPY(DVBox)
 
   public:
