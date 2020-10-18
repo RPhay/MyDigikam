@@ -51,8 +51,8 @@ class Q_DECL_HIDDEN ThumbsDbAccessStaticPriv
 public:
 
     explicit ThumbsDbAccessStaticPriv()
-        : backend(nullptr),
-          db(nullptr),
+        : backend     (nullptr),
+          db          (nullptr),
           initializing(false)
     {
     }
@@ -80,7 +80,7 @@ public:
 
     explicit ThumbsDbAccessMutexLocker(ThumbsDbAccessStaticPriv* const d)
         : QMutexLocker(&d->lock.mutex),
-          d(d)
+          d           (d)
     {
         d->lock.lockCount++;
     }
@@ -100,6 +100,7 @@ public:
 ThumbsDbAccess::ThumbsDbAccess()
 {
     // You will want to call setParameters before constructing ThumbsDbAccess.
+
     Q_ASSERT(d);
 
     d->lock.mutex.lock();
@@ -108,6 +109,7 @@ ThumbsDbAccess::ThumbsDbAccess()
     if (!d->backend->isOpen() && !d->initializing)
     {
         // avoid endless loops
+
         d->initializing = true;
 
         d->backend->open(d->parameters);
@@ -126,6 +128,7 @@ ThumbsDbAccess::ThumbsDbAccess(bool)
 {
     // private constructor, when mutex is locked and
     // backend should not be checked
+
     d->lock.mutex.lock();
     d->lock.lockCount++;
 }
@@ -161,8 +164,9 @@ void ThumbsDbAccess::initDbEngineErrorHandler(DbEngineErrorHandler* const errorh
     {
         d = new ThumbsDbAccessStaticPriv();
     }
-
-    //DbEngineErrorHandler* const errorhandler = new DbEngineGuiErrorHandler(d->parameters);
+/*
+    DbEngineErrorHandler* const errorhandler = new DbEngineGuiErrorHandler(d->parameters);
+*/
     d->backend->setDbEngineErrorHandler(errorhandler);
 }
 
@@ -186,6 +190,7 @@ void ThumbsDbAccess::setParameters(const DbEngineParameters& parameters)
     }
 
     // Kill the old database error handler
+
     if (d->backend)
     {
         d->backend->setDbEngineErrorHandler(nullptr);
@@ -208,6 +213,7 @@ bool ThumbsDbAccess::checkReadyForUse(InitializationObserver* const observer)
         return false;
 
     // create an object with private shortcut constructor
+
     ThumbsDbAccess access(false);
 
     if (!d->backend)
@@ -233,9 +239,11 @@ bool ThumbsDbAccess::checkReadyForUse(InitializationObserver* const observer)
     }
 
     // avoid endless loops (if called methods create new ThumbsDbAccess objects)
+
     d->initializing = true;
 
     // update schema
+
     ThumbsDbSchemaUpdater updater(&access);
     updater.setObserver(observer);
 

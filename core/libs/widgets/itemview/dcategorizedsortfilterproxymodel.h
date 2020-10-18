@@ -51,6 +51,8 @@ namespace Digikam
  */
 class DIGIKAM_EXPORT DCategorizedSortFilterProxyModel : public QSortFilterProxyModel
 {
+    Q_OBJECT
+
 public:
 
     enum AdditionalRoles
@@ -192,6 +194,8 @@ private:
 
 class DIGIKAM_EXPORT ActionSortFilterProxyModel : public DCategorizedSortFilterProxyModel
 {
+    Q_OBJECT
+
 public:
 
     explicit ActionSortFilterProxyModel(QObject* const parent = nullptr);

@@ -43,9 +43,9 @@ class Q_DECL_HIDDEN DCategorizedSortFilterProxyModel::Private
 public:
 
     explicit Private()
-      : sortColumn(0),
-        sortOrder(Qt::AscendingOrder),
-        categorizedModel(false),
+      : sortColumn                       (0),
+        sortOrder                        (Qt::AscendingOrder),
+        categorizedModel                 (false),
         sortCategoriesByNaturalComparison(true)
     {
         collator.setNumericMode(true);
