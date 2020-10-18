@@ -44,6 +44,8 @@ namespace Digikam
 
 class Q_DECL_HIDDEN ParkingThread : public QThread
 {
+    Q_OBJECT
+
 public:
 
     explicit ParkingThread(QObject* const parent = nullptr)
@@ -244,6 +246,8 @@ public:
     }
 };
 
+// -------------------------------------------------------------------------------------------------
+
 class Q_DECL_HIDDEN ThreadManagerCreator
 {
 public:
@@ -252,6 +256,8 @@ public:
 };
 
 Q_GLOBAL_STATIC(ThreadManagerCreator, creator)
+
+// -------------------------------------------------------------------------------------------------
 
 ThreadManager* ThreadManager::instance()
 {
@@ -306,3 +312,5 @@ void ThreadManager::slotDestroyed(QObject*)
 }
 
 } // namespace Digikam
+
+#include "threadmanager.moc"

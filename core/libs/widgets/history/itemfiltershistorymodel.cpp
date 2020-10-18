@@ -46,7 +46,7 @@ class Q_DECL_HIDDEN ItemFiltersHistoryModel::Private
 public:
 
     explicit Private()
-        : rootItem(nullptr),
+        : rootItem       (nullptr),
           disabledEntries(0)
     {
     }
@@ -60,7 +60,7 @@ public:
 
 ItemFiltersHistoryModel::ItemFiltersHistoryModel(QObject* const parent, const QUrl& url)
     : QAbstractItemModel(parent),
-      d(new Private)
+      d                 (new Private)
 {
     if (!url.isEmpty())
     {

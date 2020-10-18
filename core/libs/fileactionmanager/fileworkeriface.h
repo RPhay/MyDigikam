@@ -57,6 +57,7 @@ Q_SIGNALS:
 
 class FileActionMngrFileWorker : public FileWorkerInterface
 {
+    Q_OBJECT
 
 public:
 

@@ -37,6 +37,8 @@ namespace Digikam
 
 class TemplatePanel : public QTabWidget
 {
+    Q_OBJECT
+
 public:
 
     enum TemplateTab

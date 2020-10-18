@@ -65,7 +65,7 @@ static QString profileUserString(const IccProfile& p)
 
     QString description = profile.description();
 
-    if (!description.isEmpty() && !fileName.isEmpty())
+    if      (!description.isEmpty() && !fileName.isEmpty())
     {
         return i18nc("<Profile Description> (<File Name>)", "%1 (%2)", description, fileName);
     }
@@ -186,14 +186,14 @@ void IccProfilesComboBox::setCurrentProfile(const IccProfile& profile)
 // ------------------------------------------------------------------------------------------
 
 IccProfilesMenuAction::IccProfilesMenuAction(const QIcon& icon, const QString& text, QObject* const parent)
-    : QMenu(text),
+    : QMenu   (text),
       m_parent(parent)
 {
     setIcon(icon);
 }
 
 IccProfilesMenuAction::IccProfilesMenuAction(const QString& text, QObject* const parent)
-    : QMenu(text),
+    : QMenu   (text),
       m_parent(parent)
 {
 }

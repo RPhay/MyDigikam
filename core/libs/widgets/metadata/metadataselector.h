@@ -43,7 +43,6 @@ class MdKeyListViewItem;
 
 class DIGIKAM_EXPORT MetadataSelectorItem : public QTreeWidgetItem
 {
-
 public:
 
     MetadataSelectorItem(MdKeyListViewItem* const parent, const QString& key, const QString& title, const QString& desc);
@@ -62,6 +61,7 @@ private:
 
 class DIGIKAM_EXPORT MetadataSelector : public QTreeWidget
 {
+    Q_OBJECT
 
 public:
 

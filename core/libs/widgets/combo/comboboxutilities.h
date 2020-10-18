@@ -74,8 +74,8 @@ private Q_SLOTS:
 
 protected:
 
-    QSize minimumSizeHint() const                           override;
-    QSize sizeHint()        const                           override;
+    QSize minimumSizeHint() const                   override;
+    QSize sizeHint()        const                   override;
 
     void mousePressEvent(QMouseEvent* event)        override;
     void mouseMoveEvent(QMouseEvent* event)         override;
@@ -128,6 +128,8 @@ protected:
 
 class DIGIKAM_EXPORT ModelIndexBasedComboBox : public QComboBox
 {
+    Q_OBJECT
+
 public:
 
     /**
@@ -268,6 +270,8 @@ protected:
 
 class DIGIKAM_EXPORT TreeViewLineEditComboBox : public TreeViewComboBox
 {
+    Q_OBJECT
+
 public:
 
     /**

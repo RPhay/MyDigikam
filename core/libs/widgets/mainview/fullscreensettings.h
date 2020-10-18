@@ -39,6 +39,7 @@ namespace Digikam
 
 class DIGIKAM_EXPORT FullScreenSettings : public QGroupBox
 {
+    Q_OBJECT
 
 public:
 

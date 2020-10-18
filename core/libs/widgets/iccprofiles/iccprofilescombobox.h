@@ -89,6 +89,8 @@ public:
 
 class DIGIKAM_EXPORT IccRenderingIntentComboBox : public QComboBox
 {
+    Q_OBJECT
+
 public:
 
     explicit IccRenderingIntentComboBox(QWidget* const parent = nullptr);

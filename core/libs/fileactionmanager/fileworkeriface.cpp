@@ -227,7 +227,7 @@ void FileActionMngrFileWorker::transform(FileActionItemInfoList infos, int actio
         MetaEngine::ImageOrientation finalOrientation  = matrix.exifOrientation();
         bool rotatedPixels                             = false;
 
-        if (rotateAsJpeg)
+        if      (rotateAsJpeg)
         {
             JPEGUtils::JpegRotator rotator(path);
             rotator.setCurrentOrientation(currentOrientation);

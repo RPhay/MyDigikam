@@ -60,11 +60,13 @@ namespace Digikam
  */
 class Q_DECL_HIDDEN NotificationPassivePopup : public DNotificationPopup
 {
+    Q_OBJECT
+
 public:
 
     explicit NotificationPassivePopup(QWidget* const parent)
         : DNotificationPopup(parent),
-          m_parent(parent)
+          m_parent          (parent)
     {
     }
 
@@ -205,3 +207,5 @@ void DNotificationWrapper(const QString& eventId, const QString& message,
 }
 
 } // namespace Digikam
+
+#include "dnotificationwrapper.moc"

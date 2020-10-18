@@ -129,7 +129,7 @@ class DIGIKAM_EXPORT PanIconWidget : public QWidget
 public:
 
     explicit PanIconWidget(QWidget* const parent=nullptr);
-    ~PanIconWidget() override;
+    ~PanIconWidget()                        override;
 
     static QToolButton* button();
 

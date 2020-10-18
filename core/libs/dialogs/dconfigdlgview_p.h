@@ -47,6 +47,8 @@ namespace Digikam
 
 class Q_DECL_HIDDEN DConfigDlgStackedWidget : public QStackedWidget
 {
+    Q_OBJECT
+
 public:
 
     explicit DConfigDlgStackedWidget(QWidget* const parent = nullptr)
@@ -127,6 +129,8 @@ class DConfigDlgListViewProxy;
 
 class Q_DECL_HIDDEN DConfigDlgPlainView : public QAbstractItemView
 {
+    Q_OBJECT
+
 public:
 
     explicit DConfigDlgPlainView(QWidget* const parent = nullptr);

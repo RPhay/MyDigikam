@@ -55,9 +55,9 @@ public:
 
     explicit Private()
       : labelSelectionCount(nullptr),
-        labelSelectionSize(nullptr),
-        labelTotalCount(nullptr),
-        labelTotalSize(nullptr)
+        labelSelectionSize (nullptr),
+        labelTotalCount    (nullptr),
+        labelTotalSize     (nullptr)
     {
     }
 
@@ -69,7 +69,7 @@ public:
 
 ItemSelectionPropertiesTab::ItemSelectionPropertiesTab(QWidget* const parent)
     : DExpanderBox(parent),
-      d(new Private)
+      d           (new Private)
 {
     setFrameStyle(QFrame::StyledPanel | QFrame::Sunken);
     setLineWidth(style()->pixelMetric(QStyle::PM_DefaultFrameWidth));

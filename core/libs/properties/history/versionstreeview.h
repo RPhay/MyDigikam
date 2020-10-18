@@ -48,21 +48,22 @@ class VersionsTreeView : public QTreeView,
 public:
 
     explicit VersionsTreeView(QWidget* const parent = nullptr);
-    ~VersionsTreeView() override;
+    ~VersionsTreeView()                                                override;
 
     void setToolTipEnabled(bool on);
 
     void addOverlay(ItemDelegateOverlay* overlay);
     void removeOverlay(ItemDelegateOverlay* overlay);
 
-    VersionsDelegate* delegate()                                         const;
+    VersionsDelegate* delegate()                                 const;
 
 protected:
 
-    void paintEvent(QPaintEvent* e) override;
-    void mouseMoveEvent(QMouseEvent* event) override;
-    bool viewportEvent(QEvent* event) override;
-    QModelIndex moveCursor(CursorAction cursorAction, Qt::KeyboardModifiers modifiers) override;
+    void paintEvent(QPaintEvent* e)                                    override;
+    void mouseMoveEvent(QMouseEvent* event)                            override;
+    bool viewportEvent(QEvent* event)                                  override;
+    QModelIndex moveCursor(CursorAction cursorAction,
+                           Qt::KeyboardModifiers modifiers)            override;
 
     DECLARE_VIEW_DRAG_DROP_METHODS(QTreeView)
     QModelIndex mapIndexForDragDrop(const QModelIndex& index)    const override;

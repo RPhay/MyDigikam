@@ -58,10 +58,10 @@ class Q_DECL_HIDDEN FiltersHistoryWidget::Private
 public:
 
     explicit Private()
-      : view(nullptr),
-        model(nullptr),
-        layout(nullptr),
-        delegate(nullptr),
+      : view       (nullptr),
+        model      (nullptr),
+        layout     (nullptr),
+        delegate   (nullptr),
         headerLabel(nullptr)
     {
     }
@@ -75,7 +75,7 @@ public:
 
 FiltersHistoryWidget::FiltersHistoryWidget(QWidget* const parent)
     : QWidget(parent),
-      d(new Private)
+      d      (new Private)
 {
     d->layout      = new QGridLayout(this);
     d->view        = new QTreeView(this);

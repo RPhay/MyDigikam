@@ -316,7 +316,7 @@ public:
 
 CountrySelector::CountrySelector(QWidget* const parent)
     : QComboBox(parent),
-      d(new Private)
+      d        (new Private)
 {
     for (Private::CountryCodeMap::Iterator it = d->countryCodeMap.begin() ;
          it != d->countryCodeMap.end() ; ++it)

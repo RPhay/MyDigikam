@@ -38,6 +38,7 @@ namespace Digikam
 
 class DIGIKAM_EXPORT LibsInfoDlg : public InfoDlg
 {
+    Q_OBJECT
 
 public:
 

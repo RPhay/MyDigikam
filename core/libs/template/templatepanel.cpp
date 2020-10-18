@@ -108,7 +108,7 @@ public:
 
 TemplatePanel::TemplatePanel(QWidget* const parent)
     : QTabWidget(parent),
-      d(new Private)
+      d         (new Private)
 {
     // -- Rights Template information panel -------------------------------------------------------------
 

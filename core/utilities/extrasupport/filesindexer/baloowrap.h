@@ -67,6 +67,8 @@ public:
  */
 class DIGIKAM_EXPORT BalooWrap : public QObject
 {
+    Q_OBJECT
+
 public:
 
     explicit BalooWrap();
@@ -104,11 +106,11 @@ public:
 
     void setSyncToBaloo(bool value);
 
-    bool getSyncToBaloo() const;
+    bool getSyncToBaloo()                      const;
 
     void setSyncToDigikam(bool value);
 
-    bool getSyncToDigikam() const;
+    bool getSyncToDigikam()                    const;
 
 private:
 

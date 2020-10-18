@@ -45,7 +45,7 @@ namespace Digikam
 
 ProxyLineEdit::ProxyLineEdit(QWidget* const parent)
     : QLineEdit(parent),
-      m_widget(nullptr)
+      m_widget (nullptr)
 {
     m_layout = new QVBoxLayout;
     m_layout->setSpacing(0);
@@ -338,6 +338,8 @@ bool StayPoppedUpComboBox::eventFilter(QObject* o, QEvent* e)
 
 class Q_DECL_HIDDEN TreeViewComboBoxTreeView : public QTreeView
 {
+    Q_OBJECT
+
 public:
 
     // Needed to make viewportEvent() public
@@ -387,6 +389,8 @@ QTreeView* TreeViewComboBox::view() const
 
 class Q_DECL_HIDDEN ListViewComboBoxListView : public QListView
 {
+    Q_OBJECT
+
 public:
 
     // Needed to make viewportEvent() public
@@ -436,6 +440,8 @@ QListView* ListViewComboBox::view() const
 
 class Q_DECL_HIDDEN TreeViewComboBoxLineEdit : public QLineEdit
 {
+    Q_OBJECT
+
 public:
 
     // This line edit works like a weblink:
@@ -443,7 +449,7 @@ public:
 
     explicit TreeViewComboBoxLineEdit(QComboBox* const box)
         : QLineEdit(box),
-          m_box(box)
+          m_box    (box)
     {
         setReadOnly(true);
         setCursor(Qt::PointingHandCursor);
@@ -469,7 +475,7 @@ public:
 
 TreeViewLineEditComboBox::TreeViewLineEditComboBox(QWidget* const parent)
     : TreeViewComboBox(parent),
-      m_comboLineEdit(nullptr)
+      m_comboLineEdit (nullptr)
 {
 }
 
@@ -505,3 +511,5 @@ void TreeViewLineEditComboBox::setLineEdit(QLineEdit* edit)
 }
 
 } // namespace Digikam
+
+#include "comboboxutilities.moc"

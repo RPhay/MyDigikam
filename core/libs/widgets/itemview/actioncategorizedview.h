@@ -40,10 +40,12 @@ namespace Digikam
 
 class DIGIKAM_EXPORT ActionCategorizedView : public DCategorizedView
 {
+    Q_OBJECT
+
 public:
 
-    explicit ActionCategorizedView(QWidget* const parent=nullptr, bool autoScroll=false);
-    ~ActionCategorizedView() override;
+    explicit ActionCategorizedView(QWidget* const parent = nullptr, bool autoScroll = false);
+    ~ActionCategorizedView()            override;
 
     void setupIconMode();
     void adjustGridSize();

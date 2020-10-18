@@ -47,8 +47,8 @@ namespace Digikam
 MetadataSelectorItem::MetadataSelectorItem(MdKeyListViewItem* const parent, const QString& key,
                                            const QString& title, const QString& desc)
     : QTreeWidgetItem(parent),
-      m_key(key),
-      m_parent(parent)
+      m_key          (key),
+      m_parent       (parent)
 {
     setFlags(Qt::ItemIsSelectable | Qt::ItemIsEnabled | Qt::ItemIsUserCheckable);
     setCheckState(0, Qt::Unchecked);
@@ -250,11 +250,11 @@ class Q_DECL_HIDDEN MetadataSelectorView::Private
 public:
 
     explicit Private()
-      : selectAllBtn(nullptr),
-        clearSelectionBtn(nullptr),
+      : selectAllBtn       (nullptr),
+        clearSelectionBtn  (nullptr),
         defaultSelectionBtn(nullptr),
-        selector(nullptr),
-        searchBar(nullptr)
+        selector           (nullptr),
+        searchBar          (nullptr)
     {
     }
 
@@ -271,7 +271,7 @@ public:
 
 MetadataSelectorView::MetadataSelectorView(QWidget* const parent)
     : QWidget(parent),
-      d(new Private)
+      d      (new Private)
 {
     const int spacing = QApplication::style()->pixelMetric(QStyle::PM_DefaultLayoutSpacing);
 

@@ -43,6 +43,8 @@ namespace Digikam
  */
 class DIGIKAM_EXPORT DWorkingPixmap : public QObject
 {
+    Q_OBJECT
+
 public:
 
     explicit DWorkingPixmap(QObject* const parent = nullptr);

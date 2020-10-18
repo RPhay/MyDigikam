@@ -40,6 +40,8 @@ class ItemInfoList;
 
 class DIGIKAM_EXPORT ItemSelectionPropertiesTab : public DExpanderBox
 {
+    Q_OBJECT
+
 public:
 
     explicit ItemSelectionPropertiesTab(QWidget* const parent);

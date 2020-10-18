@@ -42,10 +42,11 @@ namespace Digikam
 
 class DIGIKAM_EXPORT DTextLabelName : public DAdjustableLabel
 {
+    Q_OBJECT
 
 public:
 
-    explicit DTextLabelName(const QString& name, QWidget* const parent=nullptr);
+    explicit DTextLabelName(const QString& name, QWidget* const parent = nullptr);
     ~DTextLabelName() override;
 };
 
@@ -53,10 +54,11 @@ public:
 
 class DIGIKAM_EXPORT DTextLabelValue : public DAdjustableLabel
 {
+    Q_OBJECT
 
 public:
 
-    explicit DTextLabelValue(const QString& value, QWidget* const parent=nullptr);
+    explicit DTextLabelValue(const QString& value, QWidget* const parent = nullptr);
     ~DTextLabelValue() override;
 };
 
@@ -64,9 +66,11 @@ public:
 
 class DIGIKAM_EXPORT DTextBrowser : public QTextBrowser
 {
+    Q_OBJECT
+
 public:
 
-    explicit DTextBrowser(const QString& text, QWidget* const parent=nullptr);
+    explicit DTextBrowser(const QString& text, QWidget* const parent = nullptr);
     ~DTextBrowser() override;
 
     void setLinesNumber(int l);
@@ -76,9 +80,11 @@ public:
 
 class DIGIKAM_EXPORT DTextList : public QListWidget
 {
+    Q_OBJECT
+
 public:
 
-    explicit DTextList(const QStringList& list, QWidget* const parent=nullptr);
+    explicit DTextList(const QStringList& list, QWidget* const parent = nullptr);
     ~DTextList() override;
 
     void setLinesNumber(int l);

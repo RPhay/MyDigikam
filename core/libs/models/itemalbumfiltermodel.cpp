@@ -44,6 +44,8 @@ namespace Digikam
 
 class Q_DECL_HIDDEN ItemAlbumFilterModelPrivate : public ItemFilterModel::ItemFilterModelPrivate
 {
+    Q_OBJECT
+
 public:
 
     ItemAlbumFilterModelPrivate()
@@ -258,3 +260,5 @@ void ItemAlbumFilterModel::slotDelayedTagNamesTimer()
 }
 
 } // namespace Digikam
+
+#include "itemalbumfiltermodel.moc"

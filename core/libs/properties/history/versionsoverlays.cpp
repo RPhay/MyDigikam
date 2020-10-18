@@ -43,6 +43,8 @@ namespace Digikam
 
 class Q_DECL_HIDDEN ShowHideVersionsOverlay::Button : public ItemViewHoverButton
 {
+    Q_OBJECT
+
 public:
 
     explicit Button(QAbstractItemView* const parentView);
@@ -160,6 +162,8 @@ bool ShowHideVersionsOverlay::checkIndex(const QModelIndex& index) const
 
 class Q_DECL_HIDDEN ActionVersionsOverlay::Button : public ItemViewHoverButton
 {
+    Q_OBJECT
+
 public:
 
     Button(QAbstractItemView* const parentView, const QIcon& icon, const QString& text, const QString& tip);
@@ -179,9 +183,9 @@ protected:
 
 ActionVersionsOverlay::Button::Button(QAbstractItemView* const parentView, const QIcon& icon, const QString& text, const QString& tip)
     : ItemViewHoverButton(parentView),
-      m_icon(icon),
-      m_text(text),
-      m_tip(tip)
+      m_icon             (icon),
+      m_text             (text),
+      m_tip              (tip)
 {
     setup();
 }
@@ -271,8 +275,10 @@ bool ActionVersionsOverlay::checkIndex(const QModelIndex& index) const
         if (m_referenceModel)
         {
             ItemInfo info = ItemModel::retrieveItemInfo(index);
+
             // show overlay if image is not contained in reference model
-            return !m_referenceModel->hasImage(info);
+
+            return (!m_referenceModel->hasImage(info));
         }
 
         return true;
@@ -282,3 +288,5 @@ bool ActionVersionsOverlay::checkIndex(const QModelIndex& index) const
 }
 
 } // namespace Digikam
+
+#include "versionsoverlays.moc"

@@ -83,9 +83,10 @@ public:
 
 // -------------------------------------------------------------------
 
-class Q_DECL_HIDDEN PanIconFrame::Private::OutsideClickCatcher
-    : public QObject
+class Q_DECL_HIDDEN PanIconFrame::Private::OutsideClickCatcher : public QObject
 {
+    Q_OBJECT
+
 public:
 
     explicit OutsideClickCatcher(QObject* const parent = nullptr)
@@ -130,9 +131,9 @@ public:
 // -------------------------------------------------------------------
 
 PanIconFrame::Private::Private(PanIconFrame* const qq)
-    : q(qq),
-      result(0), // rejected
-      main(nullptr),
+    : q                  (qq),
+      result             (0), // rejected
+      main               (nullptr),
       outsideClickCatcher(new OutsideClickCatcher)
 {
     outsideClickCatcher->setPopupFrame(q);
@@ -147,7 +148,7 @@ PanIconFrame::Private::~Private()
 
 PanIconFrame::PanIconFrame(QWidget* const parent)
     : QFrame(parent, Qt::Popup),
-      d(new Private(this))
+      d     (new Private(this))
 {
     setFrameStyle(QFrame::Box | QFrame::Raised);
     setMidLineWidth(2);
@@ -271,18 +272,18 @@ class Q_DECL_HIDDEN PanIconWidget::Private
 public:
 
     explicit Private()
-      : moveSelection(false),
-        flicker(false),
-        width(0),
-        height(0),
-        zoomedOrgWidth(0),
-        zoomedOrgHeight(0),
-        orgWidth(0),
-        orgHeight(0),
-        xpos(0),
-        ypos(0),
-        zoomFactor(1.0),
-        timer(nullptr)
+      : moveSelection   (false),
+        flicker         (false),
+        width           (0),
+        height          (0),
+        zoomedOrgWidth  (0),
+        zoomedOrgHeight (0),
+        orgWidth        (0),
+        orgHeight       (0),
+        xpos            (0),
+        ypos            (0),
+        zoomFactor      (1.0),
+        timer           (nullptr)
     {
     }
 
@@ -311,7 +312,7 @@ public:
 
 PanIconWidget::PanIconWidget(QWidget* const parent)
     : QWidget(parent),
-      d(new Private)
+      d      (new Private)
 {
     d->timer = new QTimer(this);
     d->timer->setInterval(800);
@@ -620,3 +621,5 @@ void PanIconWidget::slotFlickerTimer()
 }
 
 } // namespace Digikam
+
+#include "paniconwidget.moc"

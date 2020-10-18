@@ -47,11 +47,12 @@ class ItemFiltersHistoryModel : public QAbstractItemModel
 public:
 
     explicit ItemFiltersHistoryModel(QObject* const parent = nullptr, const QUrl& url = QUrl());
-    ~ItemFiltersHistoryModel() override;
+    ~ItemFiltersHistoryModel()                                                                      override;
 
     void setUrl(const QUrl& url);
-    bool removeRows(int row, int count, const QModelIndex& parent) override;
-    void setupModelData(const QList<DImageHistory::Entry>& entries, ItemFiltersHistoryTreeItem* parent = nullptr);
+    bool removeRows(int row, int count, const QModelIndex& parent)                                  override;
+    void setupModelData(const QList<DImageHistory::Entry>& entries,
+                        ItemFiltersHistoryTreeItem* parent = nullptr);
 
     Qt::ItemFlags flags(const QModelIndex& index)                                             const override;
     QVariant headerData(int section, Qt::Orientation orientation, int role = Qt::DisplayRole) const override;

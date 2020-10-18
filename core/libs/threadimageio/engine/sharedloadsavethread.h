@@ -33,6 +33,8 @@ namespace Digikam
 
 class DIGIKAM_EXPORT SharedLoadSaveThread : public ManagedLoadSaveThread
 {
+    Q_OBJECT
+
 public:
 
     explicit SharedLoadSaveThread(QObject* const parent = nullptr);

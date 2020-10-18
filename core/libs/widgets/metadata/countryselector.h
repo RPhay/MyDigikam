@@ -39,6 +39,7 @@ namespace Digikam
 
 class DIGIKAM_EXPORT CountrySelector : public QComboBox
 {
+    Q_OBJECT
 
 public:
 

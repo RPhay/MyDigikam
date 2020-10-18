@@ -40,6 +40,7 @@ namespace Digikam
 
 class DIGIKAM_EXPORT FileSaveOptionsBox : public QStackedWidget
 {
+    Q_OBJECT
 
 public:
 
@@ -48,7 +49,7 @@ public:
      *
      * @param parent parent for Qt's parent child mechanism
      */
-    explicit FileSaveOptionsBox(QWidget* const parent=nullptr);
+    explicit FileSaveOptionsBox(QWidget* const parent = nullptr);
 
     /**
      * Destructor.

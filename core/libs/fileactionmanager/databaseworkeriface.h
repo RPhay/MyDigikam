@@ -67,6 +67,8 @@ Q_SIGNALS:
 
 class FileActionMngrDatabaseWorker : public DatabaseWorkerInterface
 {
+    Q_OBJECT
+
 public:
 
     explicit FileActionMngrDatabaseWorker(FileActionMngr::Private* const d)

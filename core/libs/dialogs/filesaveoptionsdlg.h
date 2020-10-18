@@ -41,6 +41,7 @@ namespace Digikam
 
 class DIGIKAM_EXPORT FileSaveOptionsDlg : public QDialog
 {
+    Q_OBJECT
 
 public:
 
