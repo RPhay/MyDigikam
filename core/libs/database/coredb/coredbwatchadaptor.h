@@ -50,38 +50,37 @@ Q_SIGNALS:
     // These signals are the same as declared in CoreDbWatch, setAutoRelaySignals will
     // automatically connect the CoreDbWatch signals to these, which are then sent over DBus.
 
-    //NOTE:
-    // The full qualification with "Digikam::" for the changeset types in the following
+    // NOTE: the full qualification with "Digikam::" for the changeset types in the following
     // signals and slots are required to make moc pick them up.
     // If moc does not get the namespace in its literal, DBus connections will silently break.
 
-    void imageChange(const QString& databaseIdentifier,
-                     const QString& applicationIdentifier,
-                     const Digikam::ImageChangeset& changeset);
-
-    void imageTagChange(const QString& databaseIdentifier,
-                        const QString& applicationIdentifier,
-                        const Digikam::ImageTagChangeset& changeset);
-
-    void collectionImageChange(const QString& databaseIdentifier,
+    void signalImageChangeDBus(const QString& databaseIdentifier,
                                const QString& applicationIdentifier,
-                               const Digikam::CollectionImageChangeset& changeset);
+                               const Digikam::ImageChangeset& changeset);
 
-    void albumChange(const QString& databaseIdentifier,
-                     const QString& applicationIdentifier,
-                     const Digikam::AlbumChangeset& changeset);
+    void signalImageTagChangeDBus(const QString& databaseIdentifier,
+                                  const QString& applicationIdentifier,
+                                  const Digikam::ImageTagChangeset& changeset);
 
-    void tagChange(const QString& databaseIdentifier,
-                   const QString& applicationIdentifier,
-                   const Digikam::TagChangeset& changeset);
+    void signalCollectionImageChangeDBus(const QString& databaseIdentifier,
+                                         const QString& applicationIdentifier,
+                                         const Digikam::CollectionImageChangeset& changeset);
 
-    void albumRootChange(const QString& databaseIdentifier,
-                         const QString& applicationIdentifier,
-                         const Digikam::AlbumRootChangeset& changeset);
+    void signalAlbumChangeDBus(const QString& databaseIdentifier,
+                               const QString& applicationIdentifier,
+                               const Digikam::AlbumChangeset& changeset);
 
-    void searchChange(const QString& databaseIdentifier,
-                      const QString& applicationIdentifier,
-                      const Digikam::SearchChangeset& changeset);
+    void signalTagChangeDBus(const QString& databaseIdentifier,
+                             const QString& applicationIdentifier,
+                             const Digikam::TagChangeset& changeset);
+
+    void signalAlbumRootChangeDBus(const QString& databaseIdentifier,
+                                   const QString& applicationIdentifier,
+                                   const Digikam::AlbumRootChangeset& changeset);
+
+    void signalSearchChangeDBus(const QString& databaseIdentifier,
+                                const QString& applicationIdentifier,
+                                const Digikam::SearchChangeset& changeset);
 };
 
 #endif // DIGIKAM_CORE_DB_WATCH_ADAPTOR_H

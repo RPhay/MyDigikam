@@ -50,31 +50,39 @@ class Q_DECL_HIDDEN CoreDbWatch::Private
 {
 public:
 
-    explicit Private() :
-        mode(CoreDbWatch::DatabaseSlave)
+    explicit Private()
+      :  mode       (CoreDbWatch::DatabaseSlave)
+
 #ifdef HAVE_DBUS
-        ,adaptor(nullptr)
+
+        ,adaptor    (nullptr)
         ,slaveThread(nullptr)
+
 #endif
+
     {
     }
 
 #ifdef HAVE_DBUS
+
     void connectWithDBus(const char* dbusSignal, QObject* obj, const char* slot,
                          QDBusConnection connection = QDBusConnection::sessionBus())
     {
         // connect to slave signals
+
         connection.connect(QString(), QLatin1String("/ChangesetRelay"),
                            QLatin1String("org.kde.digikam.DatabaseChangesetRelay"),
                            QString::fromUtf8(dbusSignal),
                            obj, slot);
 
         // connect to master signals
+
         connection.connect(QString(), QLatin1String("/ChangesetRelayForPeers"),
                            QLatin1String("org.kde.digikam.DatabaseChangesetRelay"),
                            QString::fromUtf8(dbusSignal),
                            obj, slot);
     }
+
 #endif
 
 public:
@@ -85,9 +93,12 @@ public:
     QString                     applicationId;
 
 #ifdef HAVE_DBUS
+
     CoreDbWatchAdaptor*         adaptor;
     DBusSignalListenerThread*   slaveThread;
+
 #endif
+
 };
 
 // ---------------------------------------------------------------------------------
@@ -110,20 +121,23 @@ DBusSignalListenerThread::~DBusSignalListenerThread()
 void DBusSignalListenerThread::run()
 {
     // We cannot use sessionBus() here but need to connect on our own
+
     QDBusConnection threadConnection = QDBusConnection::connectToBus(QDBusConnection::SessionBus,
                                                                      QString::fromUtf8("DigikamDatabaseSlaveConnection-%1")
                                                                      .arg(qApp->applicationPid()));
 
     // DBus signals are received from within this thread and then sent with queued signals to the main thread
-    d->connectWithDBus("imageTagChange", q,
+
+    d->connectWithDBus("signalImageTagChangeDBus", q,
                         SLOT(slotImageTagChangeDBus(QString,QString,Digikam::ImageTagChangeset)),
                         threadConnection);
 
-    d->connectWithDBus("albumRootChange", q,
+    d->connectWithDBus("signalAlbumRootChangeDBus", q,
                         SLOT(slotAlbumRootChangeDBus(QString,QString,Digikam::AlbumRootChangeset)),
                         threadConnection);
 
     // enter thread event loop
+
     exec();
 }
 
@@ -138,10 +152,14 @@ CoreDbWatch::CoreDbWatch()
 
 CoreDbWatch::~CoreDbWatch()
 {
+
 #ifdef HAVE_DBUS
+
     delete d->adaptor;
     delete d->slaveThread;
+
 #endif
+
     delete d;
 }
 
@@ -158,9 +176,11 @@ void CoreDbWatch::initializeRemote(DatabaseMode mode)
     qRegisterMetaType<SearchChangeset>("SearchChangeset");
 
 #ifdef HAVE_DBUS
+
     // NOTE: The literal for registration with DBus here will include namespace qualifier.
     // Therefore, the header file declaration for DBus signals and slots
     // must contain the full qualifier as well, so that moc picks them up.
+
     qDBusRegisterMetaType<ImageChangeset>();
     qDBusRegisterMetaType<ImageTagChangeset>();
     qDBusRegisterMetaType<CollectionImageChangeset>();
@@ -172,49 +192,59 @@ void CoreDbWatch::initializeRemote(DatabaseMode mode)
     qDBusRegisterMetaType<DatabaseFields::Set>();
     qDBusRegisterMetaType< QList<qlonglong> >();
     qDBusRegisterMetaType< QList<int> >();
+
 #endif
 
     if (d->mode == DatabaseSlave)
     {
+
 #ifdef HAVE_DBUS
+
         d->adaptor = new CoreDbWatchAdaptor(this);
 
         QDBusConnection::sessionBus().registerObject(QLatin1String("/ChangesetRelay"), this);
 
         // Slave do not have an event loop which is needed for receiving DBus signals.
         // See also the event loop in CoreDbAccess::setParameters.
+
         d->slaveThread = new DBusSignalListenerThread(this, d);
+
 #endif
+
     }
     else
     {
+
 #ifdef HAVE_DBUS
+
         d->adaptor = new CoreDbWatchAdaptor(this);
 
         QDBusConnection::sessionBus().registerObject(QLatin1String("/ChangesetRelayForPeers"), this);
 
         // connect DBus signals from slave or peer to our application
-        d->connectWithDBus("imageChange", this,
+
+        d->connectWithDBus("signalImageChangeDBus", this,
                            SLOT(slotImageChangeDBus(QString,QString,Digikam::ImageChangeset)));
 
-        d->connectWithDBus("imageTagChange", this,
+        d->connectWithDBus("signalImageTagChangeDBus", this,
                            SLOT(slotImageTagChangeDBus(QString,QString,Digikam::ImageTagChangeset)));
 
-        d->connectWithDBus("collectionImageChange", this,
+        d->connectWithDBus("signalCollectionImageChangeDBus", this,
                            SLOT(slotCollectionImageChangeDBus(QString,QString,Digikam::CollectionImageChangeset)));
 
-        d->connectWithDBus("albumChange", this,
+        d->connectWithDBus("signalAlbumChangeDBus", this,
                            SLOT(slotAlbumChangeDBus(QString,QString,Digikam::AlbumChangeset)));
 
-        d->connectWithDBus("tagChange", this,
+        d->connectWithDBus("signalTagChangeDBus", this,
                            SLOT(slotTagChangeDBus(QString,QString,Digikam::TagChangeset)));
 
-        d->connectWithDBus("albumRootChange", this,
+        d->connectWithDBus("signalAlbumRootChangeDBus", this,
                            SLOT(slotAlbumRootChangeDBus(QString,QString,Digikam::AlbumRootChangeset)));
 
-        d->connectWithDBus("searchChange", this,
+        d->connectWithDBus("signalSearchChangeDBus", this,
                            SLOT(slotSearchChangeDBus(QString,QString,Digikam::SearchChangeset)));
 #endif
+
     }
 
     // Do this as a favor for CollectionManager, we may not exist at time of its creation
@@ -224,15 +254,20 @@ void CoreDbWatch::initializeRemote(DatabaseMode mode)
 
 void CoreDbWatch::doAnyProcessing()
 {
+
 #ifdef HAVE_DBUS
+
     // In a slave we have no event loop.
     // This method is called when a slave begins a new operation
     // (it calls CoreDbAccess::setParameters then).
     // Allow here queued signals to proceed that may be caused by CoreDbWatch signals
     // that were send from within the DBus listener thread (see above).
+
     QEventLoop loop;
     loop.processEvents();
+
 #endif
+
 }
 
 void CoreDbWatch::setDatabaseIdentifier(const QString& identifier)
@@ -247,8 +282,11 @@ void CoreDbWatch::setApplicationIdentifier(const QString& identifier)
 
 void CoreDbWatch::sendDatabaseChanged()
 {
+
 #ifdef HAVE_DBUS
+
     // Note: This is not dispatched by DBus!
+
 #endif
 
     emit databaseChanged();
@@ -259,59 +297,89 @@ void CoreDbWatch::sendDatabaseChanged()
 void CoreDbWatch::sendImageChange(const ImageChangeset& cset)
 {
     // send local signal
+
     emit imageChange(cset);
+
 #ifdef HAVE_DBUS
+
     // send DBUS signal
-    emit imageChange(d->databaseId, d->applicationId, cset);
+
+    emit signalImageChangeDBus(d->databaseId, d->applicationId, cset);
+
 #endif
+
 }
 
 void CoreDbWatch::sendImageTagChange(const ImageTagChangeset& cset)
 {
     emit imageTagChange(cset);
+
 #ifdef HAVE_DBUS
-    emit imageTagChange(d->databaseId, d->applicationId, cset);
+
+    emit signalImageTagChangeDBus(d->databaseId, d->applicationId, cset);
+
 #endif
+
 }
 
 void CoreDbWatch::sendCollectionImageChange(const CollectionImageChangeset& cset)
 {
     emit collectionImageChange(cset);
+
 #ifdef HAVE_DBUS
-    emit collectionImageChange(d->databaseId, d->applicationId, cset);
+
+    emit signalCollectionImageChangeDBus(d->databaseId, d->applicationId, cset);
+
 #endif
+
 }
 
 void CoreDbWatch::sendAlbumChange(const AlbumChangeset& cset)
 {
     emit albumChange(cset);
+
 #ifdef HAVE_DBUS
-    emit albumChange(d->databaseId, d->applicationId, cset);
+
+    emit signalAlbumChangeDBus(d->databaseId, d->applicationId, cset);
+
 #endif
+
 }
 
 void CoreDbWatch::sendTagChange(const TagChangeset& cset)
 {
     emit tagChange(cset);
+
 #ifdef HAVE_DBUS
-    emit tagChange(d->databaseId, d->applicationId, cset);
+
+    emit signalTagChangeDBus(d->databaseId, d->applicationId, cset);
+
 #endif
+
 }
 
 void CoreDbWatch::sendAlbumRootChange(const AlbumRootChangeset& cset)
 {
     emit albumRootChange(cset);
+
 #ifdef HAVE_DBUS
-    emit albumRootChange(d->databaseId, d->applicationId, cset);
+
+    emit signalAlbumRootChangeDBus(d->databaseId, d->applicationId, cset);
+
 #endif
+
 }
 
 void CoreDbWatch::sendSearchChange(const SearchChangeset& cset)
 {
     emit searchChange(cset);
+
 #ifdef HAVE_DBUS
-    emit searchChange(d->databaseId, d->applicationId, cset);
+
+    emit signalSearchChangeDBus(d->databaseId, d->applicationId, cset);
+
 #endif
+
 }
 
 #ifdef HAVE_DBUS
