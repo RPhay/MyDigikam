@@ -83,8 +83,8 @@ public:
     bool incrementTransactionCount();
     bool decrementTransactionCount();
 
-    bool isInMainThread() const;
-    bool isInUIThread()   const;
+    bool isInMainThread()                                            const;
+    bool isInUIThread()                                              const;
 
     bool reconnectOnError()                                          const;
     bool isSQLiteLockError(const DbEngineSqlQuery& query)            const;
@@ -101,7 +101,7 @@ public:
     void setQueryOperationFlag(BdEngineBackend::QueryOperationStatus status);
     void queryOperationWakeAll(BdEngineBackend::QueryOperationStatus status);
 
-    // called by DbEngineErrorHandler, implementing DbEngineErrorAnswer
+    /// called by DbEngineErrorHandler, implementing DbEngineErrorAnswer
     void connectionErrorContinueQueries() override;
     void connectionErrorAbortQueries() override;
     virtual void transactionFinished();
@@ -110,7 +110,7 @@ public:
 
     QThreadStorage<DbEngineThreadData*>       threadDataStorage;
 
-    // This compares to DbEngineThreadData's valid. If currentValidity is increased and > valid, the db is marked as invalid
+    /// This compares to DbEngineThreadData's valid. If currentValidity is increased and > valid, the db is marked as invalid
     int                                       currentValidity;
 
     bool                                      isInTransaction;
