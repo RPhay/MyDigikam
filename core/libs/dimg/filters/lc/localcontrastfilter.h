@@ -43,6 +43,7 @@ namespace Digikam
 
 class DIGIKAM_EXPORT LocalContrastFilter : public DImgThreadedFilter
 {
+    Q_OBJECT
 
 private:
 

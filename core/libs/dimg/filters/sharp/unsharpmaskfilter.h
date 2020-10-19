@@ -37,6 +37,7 @@ namespace Digikam
 
 class DIGIKAM_EXPORT UnsharpMaskFilter : public DImgThreadedFilter
 {
+    Q_OBJECT
 
 public:
 

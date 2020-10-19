@@ -65,6 +65,7 @@ public:
 
 class DIGIKAM_EXPORT InfraredFilter : public DImgThreadedFilter
 {
+    Q_OBJECT
 
 public:
 

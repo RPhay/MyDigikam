@@ -42,6 +42,7 @@ class RandomNumberGenerator;
 
 class DIGIKAM_EXPORT BlurFXFilter : public DImgThreadedFilter
 {
+    Q_OBJECT
 
 public:
 

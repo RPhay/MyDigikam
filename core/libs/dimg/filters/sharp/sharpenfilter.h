@@ -36,6 +36,7 @@ namespace Digikam
 
 class DIGIKAM_EXPORT SharpenFilter : public DImgThreadedFilter
 {
+    Q_OBJECT
 
 private:
 

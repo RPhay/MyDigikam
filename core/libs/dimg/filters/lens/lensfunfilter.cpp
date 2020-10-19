@@ -57,9 +57,9 @@ class Q_DECL_HIDDEN LensFunFilter::Private
 public:
 
     explicit Private()
-      : iface(nullptr),
+      : iface   (nullptr),
         modifier(nullptr),
-        loop(0)
+        loop    (0)
     {
     }
 
@@ -74,7 +74,7 @@ public:
 
 LensFunFilter::LensFunFilter(QObject* const parent)
     : DImgThreadedFilter(parent),
-      d(new Private)
+      d                 (new Private)
 {
     d->iface = new LensFunIface;
     initFilter();
@@ -84,7 +84,7 @@ LensFunFilter::LensFunFilter(DImg* const orgImage,
                              QObject* const parent,
                              const LensFunContainer& settings)
     : DImgThreadedFilter(orgImage, parent, QLatin1String("LensCorrection")),
-      d(new Private)
+      d                 (new Private)
 {
     d->iface = new LensFunIface;
     d->iface->setSettings(settings);
@@ -137,7 +137,7 @@ void LensFunFilter::filterCCAMultithreaded(uint start, uint stop)
 void LensFunFilter::filterVIGMultithreaded(uint start, uint stop)
 {
     uchar* data = m_destImage.bits();
-    data += m_destImage.width() * m_destImage.bytesDepth() * start;
+    data       += m_destImage.width() * m_destImage.bytesDepth() * start;
 
     for (unsigned int y = start ; runningFlag() && (y < stop) ; ++y)
     {

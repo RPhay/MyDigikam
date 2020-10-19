@@ -40,6 +40,7 @@ namespace Digikam
 
 class DIGIKAM_EXPORT RainDropFilter : public DImgThreadedFilter
 {
+    Q_OBJECT
 
 private:
 

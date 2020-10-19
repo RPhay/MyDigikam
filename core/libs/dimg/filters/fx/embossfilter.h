@@ -40,6 +40,7 @@ namespace Digikam
 
 class DIGIKAM_EXPORT EmbossFilter : public DImgThreadedFilter
 {
+    Q_OBJECT
 
 public:
 

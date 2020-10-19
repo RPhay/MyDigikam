@@ -40,44 +40,45 @@ class DImg;
 
 class DIGIKAM_EXPORT BCGFilter : public DImgThreadedFilter
 {
+    Q_OBJECT
 
 public:
 
-    explicit BCGFilter(QObject* const parent=nullptr);
-    explicit BCGFilter(DImg* const orgImage, QObject* const parent=nullptr, const BCGContainer& settings=BCGContainer());
+    explicit BCGFilter(QObject* const parent = nullptr);
+    explicit BCGFilter(DImg* const orgImage, QObject* const parent = nullptr, const BCGContainer& settings = BCGContainer());
     explicit BCGFilter(const BCGContainer& settings, DImgThreadedFilter* const master,
-                       const DImg& orgImage, const DImg& destImage, int progressBegin=0, int progressEnd=100);
-    ~BCGFilter() override;
+                       const DImg& orgImage, const DImg& destImage, int progressBegin = 0, int progressEnd = 100);
+    ~BCGFilter()                                                  override;
 
-    static QString          FilterIdentifier()
+    static QString FilterIdentifier()
     {
         return QLatin1String("digikam:BCGFilter");
     }
 
     static QString DisplayableName();
 
-    static QList<int>       SupportedVersions()
+    static QList<int> SupportedVersions()
     {
         return QList<int>() << 1;
     }
 
-    static int              CurrentVersion()
+    static int CurrentVersion()
     {
         return 1;
     }
 
-    QString         filterIdentifier()                          const override
+    QString filterIdentifier()                              const override
     {
         return FilterIdentifier();
     }
 
-    FilterAction    filterAction()                                    override;
+    FilterAction filterAction()                                   override;
 
-    void                    readParameters(const FilterAction& action)        override;
+    void readParameters(const FilterAction& action)               override;
 
 private:
 
-    void filterImage()                                                        override;
+    void filterImage()                                            override;
 
     void reset();
     void setGamma(double val);

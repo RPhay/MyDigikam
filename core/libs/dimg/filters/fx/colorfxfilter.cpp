@@ -53,8 +53,8 @@ namespace Digikam
 
 ColorFXFilter::ColorFXFilter(QObject* const parent)
     : DImgThreadedFilter(parent),
-      m_lutTable(nullptr),
-      m_lutTableSize(0)
+      m_lutTable        (nullptr),
+      m_lutTableSize    (0)
 {
     initFilter();
 }
@@ -63,8 +63,8 @@ ColorFXFilter::ColorFXFilter(DImg* const orgImage,
                              QObject* const parent,
                              const ColorFXContainer& settings)
     : DImgThreadedFilter(orgImage, parent, QLatin1String("ColorFX")),
-      m_settings(settings),
-      m_lutTable(nullptr),
+      m_settings    (settings),
+      m_lutTable    (nullptr),
       m_lutTableSize(0)
 {
     loadLut3D(m_settings.path);

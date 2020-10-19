@@ -40,12 +40,12 @@ public:
 
     explicit AntiVignettingContainer()
       : addvignetting(true),
-        density(2.0),
-        power(1.0),
-        innerradius(1.0),
-        outerradius(1.0),
-        xshift(0.0),
-        yshift(0.0)
+        density      (2.0),
+        power        (1.0),
+        innerradius  (1.0),
+        outerradius  (1.0),
+        xshift       (0.0),
+        yshift       (0.0)
     {
     };
 
@@ -69,44 +69,45 @@ public:
 
 class DIGIKAM_EXPORT AntiVignettingFilter : public DImgThreadedFilter
 {
+    Q_OBJECT
 
 public:
 
     explicit AntiVignettingFilter(QObject* const parent = nullptr);
-    explicit AntiVignettingFilter(DImg* const orgImage, QObject* const parent=nullptr,
-                                  const AntiVignettingContainer& settings=AntiVignettingContainer());
+    explicit AntiVignettingFilter(DImg* const orgImage, QObject* const parent = nullptr,
+                                  const AntiVignettingContainer& settings = AntiVignettingContainer());
 
-    ~AntiVignettingFilter() override;
+    ~AntiVignettingFilter()                                override;
 
-    static QString          FilterIdentifier()
+    static QString FilterIdentifier()
     {
         return QLatin1String("digikam:AntiVignettingFilter");
     }
 
-    static QString          DisplayableName();
+    static QString DisplayableName();
 
-    static QList<int>       SupportedVersions()
+    static QList<int> SupportedVersions()
     {
         return QList<int>() << 1;
     }
 
-    static int              CurrentVersion()
+    static int CurrentVersion()
     {
         return 1;
     }
 
-    void                    readParameters(const FilterAction& action)        override;
+    void readParameters(const FilterAction& action)        override;
 
-    QString         filterIdentifier()                          const override
+    QString filterIdentifier()                       const override
     {
         return FilterIdentifier();
     }
 
-    FilterAction    filterAction()                                    override;
+    FilterAction filterAction()                            override;
 
 private:
 
-    void           filterImage()                                              override;
+    void           filterImage()                           override;
 
     double         hypothenuse(double x, double y);
     uchar          clamp8bits(double x);

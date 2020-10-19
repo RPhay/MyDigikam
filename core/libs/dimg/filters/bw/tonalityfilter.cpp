@@ -51,7 +51,7 @@ TonalityFilter::TonalityFilter(DImg* const orgImage,
                                QObject* const parent,
                                const TonalityContainer& settings)
     : DImgThreadedFilter(orgImage, parent, QLatin1String("TonalityFilter")),
-    m_settings(settings)
+      m_settings        (settings)
 {
     initFilter();
 }

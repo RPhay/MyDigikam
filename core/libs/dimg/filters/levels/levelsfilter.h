@@ -71,6 +71,7 @@ public:
 
 class DIGIKAM_EXPORT LevelsFilter : public DImgThreadedFilter
 {
+    Q_OBJECT
 
 public:
 

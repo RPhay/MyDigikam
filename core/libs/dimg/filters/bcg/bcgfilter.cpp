@@ -59,7 +59,7 @@ public:
 
 BCGFilter::BCGFilter(QObject* const parent)
     : DImgThreadedFilter(parent, QLatin1String("BCGFilter")),
-      d(new Private)
+      d                 (new Private)
 {
     reset();
     initFilter();
@@ -67,7 +67,7 @@ BCGFilter::BCGFilter(QObject* const parent)
 
 BCGFilter::BCGFilter(DImg* const orgImage, QObject* const parent, const BCGContainer& settings)
     : DImgThreadedFilter(orgImage, parent, QLatin1String("BCGFilter")),
-      d(new Private)
+      d                 (new Private)
 {
     d->settings = settings;
     reset();
@@ -77,7 +77,7 @@ BCGFilter::BCGFilter(DImg* const orgImage, QObject* const parent, const BCGConta
 BCGFilter::BCGFilter(const BCGContainer& settings, DImgThreadedFilter* const master,
                      const DImg& orgImage, const DImg& destImage, int progressBegin, int progressEnd)
     : DImgThreadedFilter(master, orgImage, destImage, progressBegin, progressEnd, QLatin1String("WBFilter")),
-      d(new Private)
+      d                 (new Private)
 {
     d->settings = settings;
     reset();

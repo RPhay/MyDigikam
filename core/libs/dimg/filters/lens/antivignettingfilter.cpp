@@ -55,7 +55,7 @@ AntiVignettingFilter::AntiVignettingFilter(QObject* const parent)
 AntiVignettingFilter::AntiVignettingFilter(DImg* const orgImage, QObject* const parent,
                                            const AntiVignettingContainer& settings)
     : DImgThreadedFilter(orgImage, parent, QLatin1String("AntiVignettingFilter")),
-      m_settings(settings)
+      m_settings        (settings)
 {
     initFilter();
 }

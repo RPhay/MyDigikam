@@ -138,6 +138,8 @@ private:
 
 class DIGIKAM_EXPORT FilmFilter: public DImgThreadedFilter
 {
+    Q_OBJECT
+
 public:
 
     explicit FilmFilter(QObject* const parent = nullptr);

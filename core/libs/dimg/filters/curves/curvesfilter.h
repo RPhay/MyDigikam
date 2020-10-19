@@ -43,49 +43,50 @@ class DImg;
 
 class DIGIKAM_EXPORT CurvesFilter : public DImgThreadedFilter
 {
+    Q_OBJECT
 
 public:
 
     explicit CurvesFilter(QObject* const parent = nullptr);
     explicit CurvesFilter(DImg* const orgImage,
-                          QObject* const parent=nullptr,
-                          const CurvesContainer& settings=CurvesContainer());
+                          QObject* const parent = nullptr,
+                          const CurvesContainer& settings = CurvesContainer());
     explicit CurvesFilter(const CurvesContainer& settings,
-                           DImgThreadedFilter* const master,
+                          DImgThreadedFilter* const master,
                           const DImg& orgImage,
                           DImg& destImage,
-                          int progressBegin=0,
-                          int progressEnd=100);
-    ~CurvesFilter() override;
+                          int progressBegin = 0,
+                          int progressEnd = 100);
+    ~CurvesFilter()                                                 override;
 
-    static QString          FilterIdentifier()
+    static QString FilterIdentifier()
     {
         return QLatin1String("digikam:CurvesFilter");
     }
 
-    static QString          DisplayableName();
+    static QString DisplayableName();
 
-    static QList<int>       SupportedVersions()
+    static QList<int> SupportedVersions()
     {
         return QList<int>() << 1;
     }
 
-    static int              CurrentVersion()
+    static int CurrentVersion()
     {
         return 1;
     }
 
-    QString         filterIdentifier()                          const override
+    QString filterIdentifier()                               const override
     {
         return FilterIdentifier();
     }
 
-    FilterAction    filterAction()                                    override;
-    void                    readParameters(const FilterAction& action)        override;
+    FilterAction filterAction()                                    override;
+    void readParameters(const FilterAction& action)                override;
 
 private:
 
-    void filterImage()                                                        override;
+    void filterImage()                                             override;
 
 private:
 

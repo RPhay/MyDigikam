@@ -37,6 +37,8 @@ namespace Digikam
 
 class DIGIKAM_EXPORT BlackFrameToolTip : public DItemToolTip
 {
+    Q_OBJECT
+
 public:
 
     explicit BlackFrameToolTip(QTreeWidget* const view);

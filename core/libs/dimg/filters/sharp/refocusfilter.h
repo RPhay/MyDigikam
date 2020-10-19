@@ -37,6 +37,7 @@ namespace Digikam
 
 class DIGIKAM_EXPORT RefocusFilter : public DImgThreadedFilter
 {
+    Q_OBJECT
 
 private:
 

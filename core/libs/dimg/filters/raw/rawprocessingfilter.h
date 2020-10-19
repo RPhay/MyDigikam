@@ -46,6 +46,8 @@ class FilterAction;
  */
 class DIGIKAM_EXPORT RawProcessingFilter : public DImgThreadedFilter
 {
+    Q_OBJECT
+
 public:
 
     /**

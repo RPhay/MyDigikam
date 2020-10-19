@@ -37,6 +37,7 @@ class DImg;
 
 class DIGIKAM_EXPORT StretchFilter : public DImgThreadedFilter
 {
+    Q_OBJECT
 
 public:
 

@@ -147,6 +147,7 @@ public:
 
 class DIGIKAM_EXPORT GreycstorationFilter : public DImgThreadedFilter
 {
+    Q_OBJECT
 
 public:
 
@@ -172,14 +173,14 @@ public:
      */
     GreycstorationFilter(DImg* const orgImage,
                          const GreycstorationContainer& settings,
-                         int mode=Restore,
-                         int newWidth=0, int newHeight=0,
-                         const QImage& inPaintingMask=QImage(),
-                         QObject* const parent=nullptr);
+                         int mode = Restore,
+                         int newWidth = 0, int newHeight = 0,
+                         const QImage& inPaintingMask = QImage(),
+                         QObject* const parent = nullptr);
 
-    ~GreycstorationFilter() override;
+    ~GreycstorationFilter()                                   override;
 
-    void setMode(int mode, int newWidth=0, int newHeight=0);
+    void setMode(int mode, int newWidth = 0, int newHeight = 0);
     void setSettings(const GreycstorationContainer& settings);
     void setInPaintingMask(const QImage& inPaintingMask);
 
@@ -189,30 +190,30 @@ public:
 
     static QString cimgVersionString();
 
-    static QString          FilterIdentifier()
+    static QString FilterIdentifier()
     {
         return QLatin1String("digikam:GreycstorationFilter");
     }
 
-    static QString          DisplayableName();
+    static QString DisplayableName();
 
-    static QList<int>       SupportedVersions()
+    static QList<int> SupportedVersions()
     {
         return QList<int>() << 1;
     }
 
-    static int              CurrentVersion()
+    static int CurrentVersion()
     {
         return 1;
     }
 
-    QString         filterIdentifier()                          const override
+    QString filterIdentifier()                          const override
     {
         return FilterIdentifier();
     }
 
-    FilterAction    filterAction()                                    override;
-    void                    readParameters(const FilterAction& action)        override;
+    FilterAction filterAction()                               override;
+    void readParameters(const FilterAction& action)           override;
 
 private:
 
@@ -223,8 +224,8 @@ private:
     void simpleResize();
     void iterationLoop(uint iter);
 
-    void initFilter()                                                 override;
-    void filterImage()                                                override;
+    void initFilter()                                         override;
+    void filterImage()                                        override;
 
 private:
 

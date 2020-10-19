@@ -55,8 +55,8 @@ public:
 
     explicit Private()
       : borderMainWidth(0),
-        border2ndWidth(0),
-        orgRatio(0.0f)
+        border2ndWidth (0),
+        orgRatio       (0.0f)
     {
     }
 
@@ -108,14 +108,14 @@ void BorderFilter::Private::setup(const DImg& m_orgImage)
 
 BorderFilter::BorderFilter(QObject* const parent)
     : DImgThreadedFilter(parent),
-      d(new Private)
+      d                 (new Private)
 {
     initFilter();
 }
 
 BorderFilter::BorderFilter(DImg* image, QObject* const parent, const BorderContainer& settings)
     : DImgThreadedFilter(image, parent, QLatin1String("Border")),
-      d(new Private)
+      d                 (new Private)
 {
     d->settings = settings;
     initFilter();

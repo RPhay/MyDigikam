@@ -37,6 +37,7 @@ class DImg;
 
 class DIGIKAM_EXPORT AutoLevelsFilter : public DImgThreadedFilter
 {
+    Q_OBJECT
 
 public:
 

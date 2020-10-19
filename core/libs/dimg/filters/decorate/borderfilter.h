@@ -42,6 +42,7 @@ namespace Digikam
 
 class DIGIKAM_EXPORT BorderFilter : public DImgThreadedFilter
 {
+    Q_OBJECT
 
 public:
 
@@ -49,37 +50,37 @@ public:
      * Constructor using settings to preserve aspect ratio of image.
      */
     explicit BorderFilter(QObject* const parent = nullptr);
-    explicit BorderFilter(DImg* orgImage, QObject* const parent=nullptr, const BorderContainer& settings = BorderContainer());
-    ~BorderFilter() override;
+    explicit BorderFilter(DImg* orgImage, QObject* const parent = nullptr, const BorderContainer& settings = BorderContainer());
+    ~BorderFilter()                                           override;
 
-    static QString          FilterIdentifier()
+    static QString FilterIdentifier()
     {
         return QLatin1String("digikam:BorderFilter");
     }
 
-    static QString          DisplayableName();
+    static QString DisplayableName();
 
-    static QList<int>       SupportedVersions()
+    static QList<int> SupportedVersions()
     {
         return QList<int>() << 1;
     }
 
-    static int              CurrentVersion()
+    static int CurrentVersion()
     {
         return 1;
     }
 
-    QString         filterIdentifier()                          const override
+    QString filterIdentifier()                          const override
     {
         return FilterIdentifier();
     }
 
-    FilterAction    filterAction()                                    override;
-    void                    readParameters(const FilterAction& action)        override;
+    FilterAction filterAction()                               override;
+    void readParameters(const FilterAction& action)           override;
 
 private:
 
-    void filterImage()                                                        override;
+    void filterImage()                                        override;
 
     /**
      * Methods to preserve aspect ratio of image.

@@ -47,13 +47,13 @@ class Q_DECL_HIDDEN BWSepiaFilter::Private
 public:
 
     explicit Private()
-      : redAttn(0.0),
+      : redAttn  (0.0),
         greenAttn(0.0),
-        blueAttn(0.0),
-        redMult(0.0),
+        blueAttn (0.0),
+        redMult  (0.0),
         greenMult(0.0),
-        blueMult(0.0),
-        settings(false)
+        blueMult (0.0),
+        settings (false)
     {
     }
 
@@ -72,14 +72,14 @@ public:
 
 BWSepiaFilter::BWSepiaFilter(QObject* const parent)
     : DImgThreadedFilter(parent),
-      d(new Private)
+      d                 (new Private)
 {
     initFilter();
 }
 
 BWSepiaFilter::BWSepiaFilter(DImg* const orgImage, QObject* const parent, const BWSepiaContainer& settings)
     : DImgThreadedFilter(orgImage, parent, QLatin1String("BWSepiaFilter")),
-      d(new Private)
+      d                 (new Private)
 {
     d->settings = settings;
     initFilter();

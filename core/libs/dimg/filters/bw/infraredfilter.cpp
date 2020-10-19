@@ -58,7 +58,7 @@ InfraredFilter::InfraredFilter(DImg* const orgImage,
                                QObject* const parent,
                                const InfraredContainer& settings)
     : DImgThreadedFilter(orgImage, parent, QLatin1String("Infrared")),
-      m_settings(settings)
+      m_settings        (settings)
 {
     initFilter();
 }
@@ -200,6 +200,7 @@ void InfraredFilter::filterImage()
         }
 
         // Update progress bar in dialog.
+
         progress = (int)(50.0 + ((double)x * 50.0) / Width);
 
         if ((progress % 5) == 0)

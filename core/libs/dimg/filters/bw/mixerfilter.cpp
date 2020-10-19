@@ -49,7 +49,7 @@ MixerFilter::MixerFilter(QObject* const parent)
 
 MixerFilter::MixerFilter(DImg* const orgImage, QObject* const parent, const MixerContainer& settings)
     : DImgThreadedFilter(orgImage, parent, QLatin1String("MixerFilter")),
-      m_settings(settings)
+      m_settings        (settings)
 {
     initFilter();
 }

@@ -38,6 +38,7 @@ class DImg;
 
 class DIGIKAM_EXPORT AutoExpoFilter : public WBFilter
 {
+    Q_OBJECT
 
 public:
 

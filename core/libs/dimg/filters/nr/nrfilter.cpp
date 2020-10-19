@@ -101,14 +101,14 @@ public:
 
 NRFilter::NRFilter(QObject* const parent)
     : DImgThreadedFilter(parent),
-      d(new Private)
+      d                 (new Private)
 {
     initFilter();
 }
 
 NRFilter::NRFilter(DImg* const orgImage, QObject* const parent, const NRContainer& settings)
     : DImgThreadedFilter(orgImage, parent, QLatin1String("NRFilter")),
-      d(new Private)
+      d                 (new Private)
 {
     d->settings = settings;
 

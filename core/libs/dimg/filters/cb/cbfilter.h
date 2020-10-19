@@ -42,9 +42,9 @@ class DIGIKAM_EXPORT CBContainer
 public:
 
     explicit CBContainer()
-      : red(1.0),
+      : red  (1.0),
         green(1.0),
-        blue(1.0),
+        blue (1.0),
         alpha(1.0),
         gamma(1.0)
     {
@@ -67,39 +67,40 @@ public:
 
 class DIGIKAM_EXPORT CBFilter : public DImgThreadedFilter
 {
+    Q_OBJECT
 
 public:
 
     explicit CBFilter(QObject* const parent = nullptr);
     explicit CBFilter(DImg* const orgImage,
-                      QObject* const parent=nullptr,
-                      const CBContainer& settings=CBContainer());
+                      QObject* const parent = nullptr,
+                      const CBContainer& settings = CBContainer());
     explicit CBFilter(const CBContainer& settings,
                       DImgThreadedFilter* const master,
                       const DImg& orgImage,
                       DImg& destImage,
-                      int progressBegin=0,
-                      int progressEnd=100);
-    ~CBFilter() override;
+                      int progressBegin = 0,
+                      int progressEnd = 100);
+    ~CBFilter()                                                       override;
 
-    static QString          FilterIdentifier()
+    static QString FilterIdentifier()
     {
         return QLatin1String("digikam:ColorBalanceFilter");
     }
 
     static QString DisplayableName();
 
-    static QList<int>       SupportedVersions()
+    static QList<int> SupportedVersions()
     {
         return QList<int>() << 1;
     }
 
-    static int              CurrentVersion()
+    static int CurrentVersion()
     {
         return 1;
     }
 
-    void                    readParameters(const FilterAction& action)        override;
+    void  readParameters(const FilterAction& action)                  override;
 
     QString         filterIdentifier()                          const override
     {
@@ -110,7 +111,7 @@ public:
 
 private:
 
-    void filterImage()                                                        override;
+    void filterImage()                                                override;
 
     void reset();
     void setGamma(double val);

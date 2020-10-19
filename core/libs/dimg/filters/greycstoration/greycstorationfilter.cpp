@@ -101,10 +101,10 @@ class Q_DECL_HIDDEN GreycstorationFilter::Private
 public:
 
     explicit Private()
-      : gfact(1.0),
+      : gfact             (1.0),
         computationThreads(2),
-        mode(GreycstorationFilter::Restore),
-        threadManager(new CImg<>::GreycstorationThreadManager)
+        mode              (GreycstorationFilter::Restore),
+        threadManager     (new CImg<>::GreycstorationThreadManager)
     {
     }
 
@@ -133,7 +133,7 @@ public:
 
 GreycstorationFilter::GreycstorationFilter(QObject* const parent)
     : DImgThreadedFilter(parent),
-      d(new Private)
+      d                 (new Private)
 {
     setOriginalImage(DImg());
     setSettings(GreycstorationContainer());
@@ -148,7 +148,7 @@ GreycstorationFilter::GreycstorationFilter(DImg* const orgImage,
                                            const QImage& inPaintingMask,
                                            QObject* const parent)
     : DImgThreadedFilter(parent),
-      d(new Private)
+      d                 (new Private)
 {
     setOriginalImage(orgImage->copyImageData());
     setSettings(settings);

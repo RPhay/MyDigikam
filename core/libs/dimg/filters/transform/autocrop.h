@@ -43,6 +43,8 @@ namespace Digikam
 
 class DIGIKAM_EXPORT AutoCrop : public DImgThreadedAnalyser
 {
+    Q_OBJECT
+
 public:
 
     /**

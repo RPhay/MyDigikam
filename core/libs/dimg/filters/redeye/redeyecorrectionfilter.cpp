@@ -66,7 +66,7 @@ RedEye::ShapePredictor* RedEyeCorrectionFilter::Private::sp = nullptr;
 
 RedEyeCorrectionFilter::RedEyeCorrectionFilter(QObject* const parent)
     : DImgThreadedFilter(parent),
-      d(new Private)
+      d                 (new Private)
 {
     initFilter();
 }
@@ -74,9 +74,8 @@ RedEyeCorrectionFilter::RedEyeCorrectionFilter(QObject* const parent)
 RedEyeCorrectionFilter::RedEyeCorrectionFilter(DImg* const orgImage,
                                                QObject* const parent,
                                                const RedEyeCorrectionContainer& settings)
-    : DImgThreadedFilter(orgImage, parent,
-                         QLatin1String("RedEyeCorrection")),
-      d(new Private)
+    : DImgThreadedFilter(orgImage, parent, QLatin1String("RedEyeCorrection")),
+      d                 (new Private)
 {
     d->settings = settings;
     initFilter();
@@ -91,7 +90,7 @@ RedEyeCorrectionFilter::RedEyeCorrectionFilter(const RedEyeCorrectionContainer& 
     : DImgThreadedFilter(parentFilter, orgImage, destImage,
                          progressBegin, progressEnd,
                          parentFilter->filterName() + QLatin1String(": RedEyeCorrection")),
-      d(new Private)
+      d                 (new Private)
 {
     d->settings = settings;
     filterImage();

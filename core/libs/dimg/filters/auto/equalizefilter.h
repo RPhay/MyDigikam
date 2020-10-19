@@ -37,6 +37,7 @@ class DImg;
 
 class DIGIKAM_EXPORT EqualizeFilter : public DImgThreadedFilter
 {
+    Q_OBJECT
 
 public:
 

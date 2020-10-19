@@ -48,12 +48,12 @@ class Q_DECL_HIDDEN WBFilter::Private
 public:
 
     explicit Private()
-      : BP(0),
-        WP(0),
+      : BP    (0),
+        WP    (0),
         rgbMax(0),
-        mr(1.0),
-        mg(1.0),
-        mb(1.0)
+        mr    (1.0),
+        mg    (1.0),
+        mb    (1.0)
     {
 
         for (int i = 0 ; i < 65536 ; ++i)
@@ -75,15 +75,15 @@ public:
 
 WBFilter::WBFilter(QObject* const parent)
     : DImgThreadedFilter(parent),
-      d(new Private)
+      d                 (new Private)
 {
     initFilter();
 }
 
 WBFilter::WBFilter(DImg* const orgImage, QObject* const parent, const WBContainer& settings)
     : DImgThreadedFilter(orgImage, parent, QLatin1String("WBFilter")),
-      m_settings(settings),
-      d(new Private)
+      m_settings        (settings),
+      d                 (new Private)
 {
     initFilter();
 }
@@ -91,8 +91,8 @@ WBFilter::WBFilter(DImg* const orgImage, QObject* const parent, const WBContaine
 WBFilter::WBFilter(const WBContainer& settings, DImgThreadedFilter* const master,
                    const DImg& orgImage, const DImg& destImage, int progressBegin, int progressEnd)
     : DImgThreadedFilter(master, orgImage, destImage, progressBegin, progressEnd, QLatin1String("WBFilter")),
-      m_settings(settings),
-      d(new Private)
+      m_settings        (settings),
+      d                 (new Private)
 {
     filterImage();
 }

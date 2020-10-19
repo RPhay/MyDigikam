@@ -36,6 +36,7 @@ namespace Digikam
 
 class DIGIKAM_EXPORT CharcoalFilter : public DImgThreadedFilter
 {
+    Q_OBJECT
 
 public:
 

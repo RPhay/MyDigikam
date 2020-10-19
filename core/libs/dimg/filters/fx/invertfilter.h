@@ -35,6 +35,7 @@ namespace Digikam
 
 class DIGIKAM_EXPORT InvertFilter : public DImgThreadedFilter
 {
+    Q_OBJECT
 
 public:
 

@@ -41,10 +41,10 @@ class DIGIKAM_EXPORT HSLContainer
 public:
 
     explicit HSLContainer()
-      : hue(0.0),
+      : hue       (0.0),
         saturation(0.0),
-        vibrance(0.0),
-        lightness(0.0)
+        vibrance  (0.0),
+        lightness (0.0)
     {
     };
 
@@ -64,42 +64,43 @@ public:
 
 class DIGIKAM_EXPORT HSLFilter : public DImgThreadedFilter
 {
+    Q_OBJECT
 
 public:
 
     explicit HSLFilter(QObject* const parent = nullptr);
-    explicit HSLFilter(DImg* const orgImage, QObject* const parent=nullptr, const HSLContainer& settings=HSLContainer());
-    ~HSLFilter() override;
+    explicit HSLFilter(DImg* const orgImage, QObject* const parent = nullptr, const HSLContainer& settings = HSLContainer());
+    ~HSLFilter()                                           override;
 
-    static QString          FilterIdentifier()
+    static QString FilterIdentifier()
     {
         return QLatin1String("digikam:HSLFilter");
     }
 
-    static QString          DisplayableName();
+    static QString DisplayableName();
 
-    static QList<int>       SupportedVersions()
+    static QList<int> SupportedVersions()
     {
         return QList<int>() << 1;
     }
 
-    static int              CurrentVersion()
+    static int CurrentVersion()
     {
         return 1;
     }
 
-    QString         filterIdentifier()                          const override
+    QString filterIdentifier()                       const override
     {
         return FilterIdentifier();
     }
 
-    FilterAction    filterAction()                                    override;
+    FilterAction filterAction()                            override;
 
-    void                    readParameters(const FilterAction& action)        override;
+    void readParameters(const FilterAction& action)        override;
 
 private:
 
-    void filterImage()                                                        override;
+    void filterImage()                                     override;
 
     void reset();
     void setHue(double val);

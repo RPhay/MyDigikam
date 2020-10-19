@@ -48,6 +48,7 @@ namespace Digikam
 
 class DIGIKAM_EXPORT HotPixelFixer : public DImgThreadedFilter
 {
+    Q_OBJECT
 
 public:
 

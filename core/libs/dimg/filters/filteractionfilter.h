@@ -36,6 +36,8 @@ namespace Digikam
 
 class DIGIKAM_EXPORT FilterActionFilter : public DImgThreadedFilter
 {
+    Q_OBJECT
+
 public:
 
     /**

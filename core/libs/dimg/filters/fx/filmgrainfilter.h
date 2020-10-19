@@ -99,6 +99,7 @@ public:
 
 class DIGIKAM_EXPORT FilmGrainFilter : public DImgThreadedFilter
 {
+    Q_OBJECT
 
 public:
 

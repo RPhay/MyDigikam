@@ -85,6 +85,7 @@ public:
 
 class DIGIKAM_EXPORT FreeRotationFilter : public DImgThreadedFilter
 {
+    Q_OBJECT
 
 public:
 

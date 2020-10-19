@@ -95,6 +95,7 @@ public:
 
 class DIGIKAM_EXPORT ContentAwareFilter : public DImgThreadedFilter
 {
+    Q_OBJECT
 
 public:
 

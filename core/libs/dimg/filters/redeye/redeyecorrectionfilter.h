@@ -38,10 +38,11 @@ namespace Digikam
 
 class DIGIKAM_EXPORT RedEyeCorrectionFilter : public DImgThreadedFilter
 {
+    Q_OBJECT
 
 public:
 
-    explicit RedEyeCorrectionFilter(QObject* const parent=nullptr);
+    explicit RedEyeCorrectionFilter(QObject* const parent = nullptr);
     explicit RedEyeCorrectionFilter(DImg* const orgImage, QObject* const parent = nullptr,
                                     const RedEyeCorrectionContainer& settings = RedEyeCorrectionContainer());
 
@@ -54,29 +55,29 @@ public:
 
     ~RedEyeCorrectionFilter()                     override;
 
-    static QString          FilterIdentifier()
+    static QString FilterIdentifier()
     {
         return QLatin1String("digikam:RedEyeCorrectionFilter");
     }
 
-    static QString          DisplayableName();
+    static QString DisplayableName();
 
-    static QList<int>       SupportedVersions()
+    static QList<int> SupportedVersions()
     {
         return QList<int>() << 1;
     }
 
-    static int              CurrentVersion()
+    static int CurrentVersion()
     {
         return 1;
     }
 
-    QString         filterIdentifier()      const override
+    QString filterIdentifier()              const override
     {
         return FilterIdentifier();
     }
 
-    FilterAction    filterAction()                override;
+    FilterAction filterAction()                   override;
 
 private:
 

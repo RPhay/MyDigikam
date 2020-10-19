@@ -41,6 +41,7 @@ namespace Digikam
 
 class DIGIKAM_EXPORT ShearFilter : public DImgThreadedFilter
 {
+    Q_OBJECT
 
 public:
 

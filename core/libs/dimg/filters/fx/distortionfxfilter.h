@@ -40,6 +40,7 @@ namespace Digikam
 
 class DIGIKAM_EXPORT DistortionFXFilter : public DImgThreadedFilter
 {
+    Q_OBJECT
 
 public:
 

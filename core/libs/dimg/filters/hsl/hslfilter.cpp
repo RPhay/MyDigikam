@@ -68,7 +68,7 @@ public:
 
 HSLFilter::HSLFilter(QObject* const parent)
     : DImgThreadedFilter(parent),
-      d(new Private)
+      d                 (new Private)
 {
     reset();
     initFilter();
@@ -76,7 +76,7 @@ HSLFilter::HSLFilter(QObject* const parent)
 
 HSLFilter::HSLFilter(DImg* const orgImage, QObject* const parent, const HSLContainer& settings)
     : DImgThreadedFilter(orgImage, parent, QLatin1String("HSLFilter")),
-      d(new Private)
+      d                 (new Private)
 {
     d->settings = settings;
     reset();
