@@ -40,6 +40,8 @@ DK_VERSION=master
 #DK_EPOCH="-01"
 # Epoch with time-stamp for pre-release bundle in ISO format
 DK_EPOCH="-`date "+%Y%m%dT%H%M%S"`"
+# Beta releases don't need extra sub version
+#DK_EPOCH=""
 
 # Installer will include or not digiKam debug symbols
 DK_DEBUG=0
