@@ -63,7 +63,7 @@ DK_BUILDTEMP=~/dktemp
 # digiKam tag version from git. Official tarball do not include extra shared libraries.
 # The list of tags can be listed with this url: https://quickgit.kde.org/?p=digikam.git&a=tags
 # If you want to package current implementation from git, use "master" as tag.
-#DK_VERSION=v7.0.0
+#DK_VERSION=v7.2.0-beta1
 DK_VERSION=master
 #DK_VERSION=development/dplugins
 
@@ -71,6 +71,8 @@ DK_VERSION=master
 #DK_EPOCH="-01"
 # Epoch with time-stamp for pre-release bundle in ISO format
 DK_EPOCH="-`date "+%Y%m%dT%H%M%S"`"
+# Beta releases don't need extra sub version
+#DK_EPOCH=""
 
 # Installer will include or not digiKam debug symbols
 DK_DEBUG=0
@@ -79,9 +81,9 @@ DK_DEBUG=0
 DK_QTWEBENGINE=1
 
 # Sign bundles with GPG. Passphrase must be hosted in ~/.gnupg/dkorg-gpg-pwd.txt
-DK_SIGN=0
+DK_SIGN=1
 
 # Upload automatically bundle to files.kde.org (pre-release only).
-DK_UPLOAD=1
+DK_UPLOAD=0
 DK_UPLOADURL="digikam@milonia.kde.org"
 DK_UPLOADDIR="/srv/archives/files/digikam/"
