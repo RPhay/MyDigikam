@@ -55,7 +55,7 @@ public:
     AlbumSelectionTreeView(QWidget* const parent,
                            AlbumModel* const model,
                            AlbumModificationHelper* const albumModificationHelper);
-    ~AlbumSelectionTreeView() override;
+    ~AlbumSelectionTreeView()         override;
 
     /**
      * Sets whether this widget shall display tool tips or not.

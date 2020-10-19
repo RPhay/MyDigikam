@@ -58,6 +58,8 @@ namespace Digikam
 
 class Q_DECL_HIDDEN AlbumViewToolTip: public ItemViewToolTip
 {
+    Q_OBJECT
+
 public:
 
     explicit AlbumViewToolTip(AlbumSelectionTreeView* const view)
@@ -75,6 +77,7 @@ protected:
     QString tipContents() override
     {
         PAlbum* const album = view()->albumForIndex(currentIndex());
+
         return (ToolTipFiller::albumTipContents(album, view()->albumModel()->albumCount(album)));
     }
 };
@@ -87,16 +90,16 @@ class Q_DECL_HIDDEN AlbumSelectionTreeView::Private
 public:
 
     explicit Private()
-      : enableToolTips(false),
-        albumModificationHelper(nullptr),
-        toolTip(nullptr),
-        renameAction(nullptr),
-        resetIconAction(nullptr),
-        findDuplAction(nullptr),
-        scanFacesAction(nullptr),
-        repairHiddenAction(nullptr),
-        rebuildThumbsAction(nullptr),
-        contextMenuElement(nullptr)
+      : enableToolTips          (false),
+        albumModificationHelper (nullptr),
+        toolTip                 (nullptr),
+        renameAction            (nullptr),
+        resetIconAction         (nullptr),
+        findDuplAction          (nullptr),
+        scanFacesAction         (nullptr),
+        repairHiddenAction      (nullptr),
+        rebuildThumbsAction     (nullptr),
+        contextMenuElement      (nullptr)
     {
     }
 
@@ -121,6 +124,7 @@ public:
 class Q_DECL_HIDDEN AlbumSelectionTreeView::Private::AlbumSelectionTreeViewContextMenuElement
     : public AbstractAlbumTreeView::ContextMenuElement
 {
+
 public:
 
     explicit AlbumSelectionTreeViewContextMenuElement(AlbumSelectionTreeView::Private* const d)
@@ -405,3 +409,5 @@ bool AlbumSelectionTreeView::viewportEvent(QEvent* event)
 }
 
 } // namespace Digikam
+
+#include "albumselectiontreeview.moc"

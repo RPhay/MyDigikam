@@ -82,8 +82,8 @@ static QList<A*> selectedAlbums(QItemSelectionModel* const selModel,
 struct State
 {
     State()
-        : selected(false),
-          expanded(false),
+        : selected    (false),
+          expanded    (false),
           currentIndex(false)
     {
     }
@@ -97,12 +97,14 @@ struct State
 
 class Q_DECL_HIDDEN AlbumTreeViewDelegate : public QStyledItemDelegate
 {
+    Q_OBJECT
+
 public:
 
     explicit AlbumTreeViewDelegate(AbstractAlbumTreeView* const treeView = nullptr)
         : QStyledItemDelegate(treeView),
-          m_treeView(treeView),
-          m_height(0)
+          m_treeView         (treeView),
+          m_height           (0)
     {
         updateHeight();
     }
@@ -112,6 +114,7 @@ public:
     {
         QSize size = QStyledItemDelegate::sizeHint(option, index);
         size.setHeight(qMax(size.height(), m_height));
+
         return size;
     }
 
@@ -153,19 +156,19 @@ class Q_DECL_HIDDEN AbstractAlbumTreeView::Private
 public:
 
     explicit Private()
-      : delegate(nullptr),
-        expandOnSingleClick(false),
-        expandNewCurrent(false),
-        selectAlbumOnClick(false),
-        selectOnContextMenu(true),
-        enableContextMenu(false),
-        setInAlbumManager(false),
-        resizeColumnsTimer(nullptr),
-        configSelectionEntry(QLatin1String("Selection")),
-        configExpansionEntry(QLatin1String("Expansion")),
-        configCurrentIndexEntry(QLatin1String("CurrentIndex")),
-        configSortColumnEntry(QLatin1String("SortColumn")),
-        configSortOrderEntry(QLatin1String("SortOrder"))
+      : delegate                (nullptr),
+        expandOnSingleClick     (false),
+        expandNewCurrent        (false),
+        selectAlbumOnClick      (false),
+        selectOnContextMenu     (true),
+        enableContextMenu       (false),
+        setInAlbumManager       (false),
+        resizeColumnsTimer      (nullptr),
+        configSelectionEntry    (QLatin1String("Selection")),
+        configExpansionEntry    (QLatin1String("Expansion")),
+        configCurrentIndexEntry (QLatin1String("CurrentIndex")),
+        configSortColumnEntry   (QLatin1String("SortColumn")),
+        configSortOrderEntry    (QLatin1String("SortOrder"))
     {
     }
 

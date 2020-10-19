@@ -66,10 +66,12 @@ namespace Digikam
 
 class Q_DECL_HIDDEN MediaPlayerMouseClickFilter : public QObject
 {
+    Q_OBJECT
+
 public:
 
     explicit MediaPlayerMouseClickFilter(QObject* const parent)
-        : QObject(parent),
+        : QObject (parent),
           m_parent(parent)
     {
     }
@@ -114,8 +116,12 @@ private:
     QObject* m_parent;
 };
 
+// --------------------------------------------------------
+
 class Q_DECL_HIDDEN VideoStyle : public QProxyStyle
 {
+    Q_OBJECT
+
 public:
 
     using QProxyStyle::QProxyStyle;
@@ -143,26 +149,26 @@ public:
 
     enum MediaPlayerViewMode
     {
-        ErrorView=0,
+        ErrorView = 0,
         PlayerView
     };
 
 public:
 
     explicit Private()
-      : errorView(nullptr),
-        playerView(nullptr),
-        prevAction(nullptr),
-        nextAction(nullptr),
-        playAction(nullptr),
-        loopPlay(nullptr),
-        toolBar(nullptr),
-        iface(nullptr),
-        videoWidget(nullptr),
-        player(nullptr),
-        slider(nullptr),
-        volume(nullptr),
-        tlabel(nullptr),
+      : errorView       (nullptr),
+        playerView      (nullptr),
+        prevAction      (nullptr),
+        nextAction      (nullptr),
+        playAction      (nullptr),
+        loopPlay        (nullptr),
+        toolBar         (nullptr),
+        iface           (nullptr),
+        videoWidget     (nullptr),
+        player          (nullptr),
+        slider          (nullptr),
+        volume          (nullptr),
+        tlabel          (nullptr),
         videoOrientation(0)
     {
     }
@@ -193,7 +199,7 @@ public:
 
 MediaPlayerView::MediaPlayerView(QWidget* const parent)
     : QStackedWidget(parent),
-      d(new Private)
+      d             (new Private)
 {
     setAttribute(Qt::WA_DeleteOnClose);
     setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Expanding);
@@ -596,3 +602,5 @@ void MediaPlayerView::slotHandlePlayerError(const QtAV::AVError& err)
 }
 
 } // namespace Digikam
+
+#include "mediaplayerview.moc"

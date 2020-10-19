@@ -60,7 +60,8 @@ class AbstractAlbumTreeView;
  * default mode no context menu is shown at all. It must be enabled via a call
  * to setEnableContextMenu.
  */
-class AbstractAlbumTreeView : public QTreeView, public StateSavingObject
+class AbstractAlbumTreeView : public QTreeView,
+                              public StateSavingObject
 {
     Q_OBJECT
 

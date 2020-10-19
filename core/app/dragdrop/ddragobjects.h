@@ -50,6 +50,8 @@ namespace Digikam
  */
 class DItemDrag : public QMimeData
 {
+    Q_OBJECT
+
 public:
 
     DItemDrag(const QList<QUrl>& urls,
@@ -74,6 +76,8 @@ public:
  */
 class DAlbumDrag : public QMimeData
 {
+    Q_OBJECT
+
 public:
 
     DAlbumDrag(const QUrl& databaseUrl, int albumid, const QUrl& fileUrl = QUrl());
@@ -92,6 +96,8 @@ public:
  */
 class DTagListDrag : public QMimeData
 {
+    Q_OBJECT
+
 public:
 
     explicit DTagListDrag(const QList<int>& tagIDs);
@@ -110,6 +116,8 @@ public:
  */
 class DCameraItemListDrag : public QMimeData
 {
+    Q_OBJECT
+
 public:
 
     explicit DCameraItemListDrag(const QStringList& cameraItemPaths);
@@ -128,6 +136,7 @@ public:
  */
 class DCameraDragObject : public QMimeData
 {
+    Q_OBJECT
 
 public:
 
