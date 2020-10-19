@@ -45,7 +45,7 @@ class AlbumSelectComboBox : public TreeViewLineEditComboBox
 public:
 
     explicit AlbumSelectComboBox(QWidget* const parent = nullptr);
-    ~AlbumSelectComboBox() override;
+    ~AlbumSelectComboBox()                              override;
 
     /**
      * Once after creation, call one of these three methods.
@@ -95,7 +95,7 @@ public:
 
 public Q_SLOTS:
 
-    void hidePopup() override;
+    void hidePopup()                                    override;
 
     /**
      * Updates the text describing the selection ("3 Albums selected").
@@ -154,7 +154,7 @@ public:
 protected:
 
     void installView(QAbstractItemView* view = nullptr) override;
-    void sendViewportEventToView(QEvent* e) override;
+    void sendViewportEventToView(QEvent* e)             override;
 
 protected:
 

@@ -476,15 +476,19 @@ bool DImgBuiltinFilter::isSupported(const QString& filterIdentifier, int version
 
 class Q_DECL_HIDDEN DImgBuiltinThreadedFilter : public DImgThreadedFilter
 {
+    Q_OBJECT
+
 public:
 
     explicit DImgBuiltinThreadedFilter(const DImgBuiltinFilter& filter, DImg* const orgImage, QObject* const parent = nullptr)
-        : DImgThreadedFilter(orgImage, parent), m_filter(filter)
+        : DImgThreadedFilter(orgImage, parent),
+          m_filter          (filter)
     {
     }
 
     explicit DImgBuiltinThreadedFilter(const DImgBuiltinFilter& filter, QObject* const parent = nullptr)
-        : DImgThreadedFilter(parent), m_filter(filter)
+        : DImgThreadedFilter(parent),
+          m_filter          (filter)
     {
     }
 
@@ -525,3 +529,5 @@ DImgThreadedFilter* DImgBuiltinFilter::createThreadedFilter(QObject* const paren
 }
 
 } // namespace Digikam
+
+#include "dimgbuiltinfilter.moc"

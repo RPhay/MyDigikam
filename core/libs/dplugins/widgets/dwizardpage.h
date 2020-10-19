@@ -40,6 +40,7 @@ namespace Digikam
 
 class DIGIKAM_EXPORT DWizardPage : public QWizardPage
 {
+    Q_OBJECT
 
 public:
 

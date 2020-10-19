@@ -61,6 +61,8 @@ namespace Digikam
 
 class Q_DECL_HIDDEN TagToggleAction : public QWidgetAction
 {
+    Q_OBJECT
+
 public:
 
     TagToggleAction(const QString& text, QObject* const parent);
@@ -83,13 +85,15 @@ private:
 
 class Q_DECL_HIDDEN TagToggleMenuWidget : public QWidget
 {
+    Q_OBJECT
+
 public:
 
     TagToggleMenuWidget(QMenu* const parent, TagToggleAction* const action);
 
 protected:
 
-    QSize sizeHint()                                const override;
+    QSize sizeHint()                                        const override;
     void paintEvent(QPaintEvent*) override;
 
 private:
@@ -108,10 +112,10 @@ private:
 // ------------------------------------------------------------------------
 
 TagToggleMenuWidget::TagToggleMenuWidget(QMenu* const parent, TagToggleAction* const action)
-    : QWidget(parent)
+    : QWidget (parent),
+      m_menu  (parent),
+      m_action(action)
 {
-    m_menu   = parent;
-    m_action = action;
     setMouseTracking(style()->styleHint(QStyle::SH_Menu_MouseTracking, nullptr, this));
 }
 
@@ -187,8 +191,8 @@ void TagToggleMenuWidget::paintEvent(QPaintEvent*)
 
     // draw a check indicator like the one used in a treeview
 
-    QRect checkRect = checkIndicatorSize(&menuOpt);
-    viewOpt.rect    = checkRect;
+    QRect checkRect       = checkIndicatorSize(&menuOpt);
+    viewOpt.rect          = checkRect;
 
     if (!m_action->isCheckBoxHidden())
     {
@@ -356,8 +360,8 @@ QRect TagToggleMenuWidget::checkIndicatorSize(QStyleOption* option) const
 // ------------------------------------------------------------------------
 
 TagToggleAction::TagToggleAction(const QString& text, QObject* const parent)
-    : QWidgetAction(parent),
-      m_checked(false),
+    : QWidgetAction   (parent),
+      m_checked       (false),
       m_checkBoxHidden(false)
 {
     setText(text);
@@ -365,8 +369,8 @@ TagToggleAction::TagToggleAction(const QString& text, QObject* const parent)
 }
 
 TagToggleAction::TagToggleAction(const QIcon& icon, const QString& text, QObject* const parent)
-    : QWidgetAction(parent),
-      m_checked(false),
+    : QWidgetAction   (parent),
+      m_checked       (false),
       m_checkBoxHidden(false)
 {
     setIcon(icon);
@@ -420,9 +424,9 @@ class Q_DECL_HIDDEN TagsPopupMenu::Private
 public:
 
     explicit Private()
-      : addTagActions(nullptr),
+      : addTagActions   (nullptr),
         toggleTagActions(nullptr),
-        mode(ASSIGN)
+        mode            (ASSIGN)
     {
     }
 
@@ -442,7 +446,7 @@ public:
 
 TagsPopupMenu::TagsPopupMenu(qlonglong selectedImageId, Mode mode, QWidget* const parent)
     : QMenu(parent),
-      d(new Private)
+      d    (new Private)
 {
     d->selectedImageIDs << selectedImageId;
     setup(mode);
@@ -450,7 +454,7 @@ TagsPopupMenu::TagsPopupMenu(qlonglong selectedImageId, Mode mode, QWidget* cons
 
 TagsPopupMenu::TagsPopupMenu(const QList<qlonglong>& selectedImageIds, Mode mode, QWidget* const parent)
     : QMenu(parent),
-      d(new Private)
+      d    (new Private)
 {
     d->selectedImageIDs = selectedImageIds;
     setup(mode);
@@ -579,17 +583,17 @@ void TagsPopupMenu::slotAboutToShow()
 
                     if (parent)
                     {
-                        QString p               = parent->prettyUrl().section(QLatin1Char('/'), 1, -1);
+                        QString p                     = parent->prettyUrl().section(QLatin1Char('/'), 1, -1);
                         p.replace(QLatin1Char('/'), QLatin1String(" / "));
 
                         if (!p.isEmpty())
                         {
-                            p                   = QLatin1String(" (") + p + QLatin1Char(')');
+                            p                         = QLatin1String(" (") + p + QLatin1Char(')');
                         }
 
-                        QString t               = album->title() + p;
+                        QString t                     = album->title() + p;
                         t.replace(QLatin1Char('&'), QLatin1String("&&"));
-                        TagToggleAction* action = new TagToggleAction(t, d->toggleTagActions);
+                        TagToggleAction* const action = new TagToggleAction(t, d->toggleTagActions);
                         action->setData(album->id());
                         action->setCheckBoxHidden(true);
                         setAlbumIcon(action, album);
@@ -899,3 +903,5 @@ void TagsPopupMenu::slotTagThumbnail(Album* album, const QPixmap& pix)
 }
 
 } // namespace Digikam
+
+#include "tagspopupmenu.moc"

@@ -56,6 +56,8 @@ namespace Digikam
 
 class Q_DECL_HIDDEN ModelClearButton : public AnimatedClearButton
 {
+    Q_OBJECT
+
 public:
 
     explicit ModelClearButton(AbstractCheckableAlbumModel* const model)
@@ -76,16 +78,16 @@ class Q_DECL_HIDDEN AlbumSelectors::Private
 public:
 
     explicit Private()
-      : albumSelectCB(nullptr),
-        tagSelectCB(nullptr),
+      : albumSelectCB   (nullptr),
+        tagSelectCB     (nullptr),
         albumClearButton(nullptr),
-        tagClearButton(nullptr),
-        wholeAlbums(nullptr),
-        wholeTags(nullptr),
-        tabWidget(nullptr),
-        albumWidget(nullptr),
-        tagWidget(nullptr),
-        selectionMode(All)
+        tagClearButton  (nullptr),
+        wholeAlbums     (nullptr),
+        wholeTags       (nullptr),
+        tabWidget       (nullptr),
+        albumWidget     (nullptr),
+        tagWidget       (nullptr),
+        selectionMode   (All)
     {
     }
 
@@ -119,7 +121,7 @@ AlbumSelectors::AlbumSelectors(const QString& label,
                                QWidget* const parent,
                                AlbumType albumType)
     : QWidget(parent),
-      d(new Private)
+      d      (new Private)
 {
     d->configName                 = configName;
     setObjectName(d->configName);
@@ -486,3 +488,5 @@ void AlbumSelectors::saveState()
 }
 
 } // namespace Digikam
+
+#include "albumselectors.moc"

@@ -63,6 +63,7 @@ namespace Digikam
 
 class Q_DECL_HIDDEN TagsListCreationErrorDialog : public QDialog
 {
+    Q_OBJECT
 
 public:
 
@@ -574,3 +575,5 @@ TagsListCreationErrorDialog::TagsListCreationErrorDialog(QWidget* const parent, 
 }
 
 } // namespace Digikam
+
+#include "tageditdlg.moc"

@@ -66,6 +66,7 @@ namespace Digikam
 
 class Q_DECL_HIDDEN AlbumDatePicker : public DDatePicker
 {
+    Q_OBJECT
 
 public:
 
@@ -92,13 +93,13 @@ class Q_DECL_HIDDEN AlbumPropsEdit::Private
 public:
 
     explicit Private()
-      : buttons(nullptr),
-        categoryCombo(nullptr),
-        parentCombo(nullptr),
-        titleEdit(nullptr),
-        commentsEdit(nullptr),
-        datePicker(nullptr),
-        album(nullptr)
+      : buttons         (nullptr),
+        categoryCombo   (nullptr),
+        parentCombo     (nullptr),
+        titleEdit       (nullptr),
+        commentsEdit    (nullptr),
+        datePicker      (nullptr),
+        album           (nullptr)
     {
     }
 
@@ -326,6 +327,7 @@ QString AlbumPropsEdit::comments() const
 QDate AlbumPropsEdit::date() const
 {
     // See bug #267944 : update calendar view if user enter a date in text field.
+
     d->datePicker->dateLineEnterPressed();
 
     return d->datePicker->date();
@@ -467,3 +469,5 @@ void AlbumPropsEdit::slotHelp()
 }
 
 } // namespace Digikam
+
+#include "albumpropsedit.moc"

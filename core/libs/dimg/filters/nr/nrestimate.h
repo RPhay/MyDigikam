@@ -41,23 +41,25 @@ namespace Digikam
 
 class DIGIKAM_EXPORT NREstimate : public DImgThreadedAnalyser
 {
+    Q_OBJECT
+
 public:
 
     /**
      * Standard constructor with image container to parse
      */
-    explicit NREstimate(DImg* const img, QObject* const parent=nullptr);
-    ~NREstimate() override;
+    explicit NREstimate(DImg* const img, QObject* const parent = nullptr);
+    ~NREstimate()                 override;
 
     /**
      * Perform estimate noise.
      */
-    void startAnalyse() override;
+    void startAnalyse()           override;
 
     /**
      * Return all Wavelets noise reduction settings computed by image analys.
      */
-    NRContainer settings() const;
+    NRContainer settings()  const;
 
     /**
      * To set image path where log files will be created to host computation algorithm results, for hacking purpose.
@@ -71,7 +73,7 @@ private:
      * Internal method dedicated to convert DImg pixels from integer values to float values.
      * These ones will by used internally by estimateNoise through OpenCV API.
      */
-    void readImage() const;
+    void readImage()        const;
 
 private:
 

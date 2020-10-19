@@ -43,7 +43,7 @@ class AlbumPropsEdit : public QDialog
 
 public:
 
-    explicit AlbumPropsEdit(PAlbum* const album, bool create=false);
+    explicit AlbumPropsEdit(PAlbum* const album, bool create = false);
     ~AlbumPropsEdit() override;
 
     QString     title()           const;

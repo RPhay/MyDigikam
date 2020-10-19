@@ -46,7 +46,7 @@ class TagEditDlg : public QDialog
 
 public:
 
-    explicit TagEditDlg(QWidget* const parent, TAlbum* const album, bool create=false);
+    explicit TagEditDlg(QWidget* const parent, TAlbum* const album, bool create = false);
     ~TagEditDlg() override;
 
     QString      title()    const;

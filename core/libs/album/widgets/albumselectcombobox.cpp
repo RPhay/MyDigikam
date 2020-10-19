@@ -49,13 +49,13 @@ class Q_DECL_HIDDEN AlbumSelectComboBox::Private
 {
 public:
 
-    explicit Private(AlbumSelectComboBox* q)
-      : model(nullptr),
-        filterModel(nullptr),
-        isCheckable(true),
-        closeOnActivate(false),
-        showCheckStateSummary(true),
-        q(q)
+    explicit Private(AlbumSelectComboBox* const q)
+      : model                   (nullptr),
+        filterModel             (nullptr),
+        isCheckable             (true),
+        closeOnActivate         (false),
+        showCheckStateSummary   (true),
+        q                       (q)
     {
     }
 
@@ -76,7 +76,7 @@ public:
 
 AlbumSelectComboBox::AlbumSelectComboBox(QWidget* const parent)
     : TreeViewLineEditComboBox(parent),
-      d(new Private(this))
+      d                       (new Private(this))
 {
     d->noSelectionText = i18n("No Album Selected");
 
@@ -116,7 +116,9 @@ void AlbumSelectComboBox::setModel(AbstractCheckableAlbumModel* model, AlbumFilt
     else
     {
         d->filterModel = new AlbumFilterModel(this);
-        //d->filterModel->setDynamicSortFilter(true);
+/*
+        d->filterModel->setDynamicSortFilter(true);
+*/
         d->filterModel->setSourceAlbumModel(d->model);
     }
 
@@ -234,6 +236,7 @@ QSortFilterProxyModel* AlbumSelectComboBox::filterModel() const
 void AlbumSelectComboBox::hidePopup()
 {
     // just make this a slot
+
     TreeViewLineEditComboBox::hidePopup();
     updateText();
 }
@@ -283,7 +286,7 @@ void AlbumSelectComboBox::updateText()
 
     blockSignals(true);
 
-    if (newIncludeText.isEmpty() && newExcludeText.isEmpty())
+    if      (newIncludeText.isEmpty() && newExcludeText.isEmpty())
     {
         setLineEditText(d->noSelectionText);
     }
@@ -303,7 +306,7 @@ void AlbumSelectComboBox::updateText()
 
 AbstractAlbumTreeViewSelectComboBox::AbstractAlbumTreeViewSelectComboBox(QWidget* const parent)
     : AlbumSelectComboBox(parent),
-      m_treeView(nullptr)
+      m_treeView         (nullptr)
 {
 }
 
@@ -320,6 +323,7 @@ void AbstractAlbumTreeViewSelectComboBox::installView(QAbstractItemView* view)
 void AbstractAlbumTreeViewSelectComboBox::sendViewportEventToView(QEvent* e)
 {
     // needed for StayPoppedUpComboBox
+
     m_treeView->viewportEvent(e);
 }
 
@@ -327,6 +331,7 @@ void AbstractAlbumTreeViewSelectComboBox::setTreeView(AbstractAlbumTreeView* con
 {
     // this is independent from the installView mechanism, just to override
     // the tree view created below without the need to subclass
+
     if (!m_treeView)
     {
         m_treeView = treeView;
@@ -338,6 +343,8 @@ void AbstractAlbumTreeViewSelectComboBox::setTreeView(AbstractAlbumTreeView* con
 class Q_DECL_HIDDEN CheckUncheckContextMenuElement : public QObject,
                                                      public AbstractAlbumTreeView::ContextMenuElement
 {
+    Q_OBJECT
+
 public:
 
     explicit CheckUncheckContextMenuElement(QObject* const parent)
@@ -458,3 +465,5 @@ void TagTreeViewSelectComboBox::setModel(TagModel* model,
 }
 
 } // namespace Digikam
+
+#include "albumselectcombobox.moc"

@@ -103,12 +103,12 @@ public:
     /** Select Physical Album from list. If singleSelection is true, only this one is
      *  selected from tree-view and all others are deselected.
      */
-    void setAlbumSelected(Album* const album, bool singleSelection=true);
+    void setAlbumSelected(Album* const album, bool singleSelection = true);
 
     /** Select Tag Album from list. If singleSelection is true, only this one is
      *  selected from tree-view and all others are deselected.
      */
-    void setTagSelected(Album* const album, bool singleSelection=true);
+    void setTagSelected(Album* const album, bool singleSelection = true);
 
     /**
      * Sets the search type selection with the AlbumType.
@@ -118,17 +118,17 @@ public:
     /**
      * Returns the selected album type.
      */
-    int typeSelection() const;
+    int typeSelection()                 const;
 
     /**
      * Return true if whole Albums collection option is checked.
      */
-    bool wholeAlbumsChecked() const;
+    bool wholeAlbumsChecked()           const;
 
     /**
      * Return true if whole Tags collection option is checked.
      */
-    bool wholeTagsChecked() const;
+    bool wholeTagsChecked()             const;
 
 public Q_SLOTS:
 

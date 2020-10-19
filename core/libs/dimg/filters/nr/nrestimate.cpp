@@ -57,7 +57,7 @@ public:
 
     explicit Private()
       : clusterCount(30),
-        size(512)
+        size        (512)
     {
         for (int c = 0 ; c < 3 ; ++c)
         {
@@ -76,7 +76,7 @@ public:
 
 NREstimate::NREstimate(DImg* const img, QObject* const parent)
     : DImgThreadedAnalyser(parent, QLatin1String("NREstimate")),
-      d(new Private)
+      d                   (new Private)
 {
     // Use the Top/Left corner of 256x256 pixels to analys noise contents from image.
     // This will speed-up computation time with OpenCV

@@ -41,13 +41,13 @@ class Q_DECL_HIDDEN DWizardPage::Private
 public:
 
     explicit Private()
-      : isComplete(true),
-        id(-1),
-        leftView(nullptr),
-        logo(nullptr),
-        leftBottomPix(nullptr),
-        hlay(nullptr),
-        dlg(nullptr)
+      : isComplete      (true),
+        id              (-1),
+        leftView        (nullptr),
+        logo            (nullptr),
+        leftBottomPix   (nullptr),
+        hlay            (nullptr),
+        dlg             (nullptr)
     {
     }
 
@@ -65,7 +65,7 @@ public:
 
 DWizardPage::DWizardPage(QWizard* const dlg, const QString& title)
     : QWizardPage(dlg),
-      d(new Private)
+      d          (new Private)
 {
     setTitle(title);
 
