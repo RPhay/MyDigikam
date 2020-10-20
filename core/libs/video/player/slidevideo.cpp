@@ -56,8 +56,10 @@ using namespace QtAV;
 namespace Digikam
 {
 
-class Q_DECL_HIDDEN VideoStyle : public QProxyStyle
+class Q_DECL_HIDDEN SlideVideoStyle : public QProxyStyle
 {
+    Q_OBJECT
+
 public:
 
     using QProxyStyle::QProxyStyle;
@@ -124,7 +126,7 @@ SlideVideo::SlideVideo(QWidget* const parent)
 
     d->indicator      = new DHBox(this);
     d->slider         = new QSlider(Qt::Horizontal, d->indicator);
-    d->slider->setStyle(new VideoStyle(d->slider->style()));
+    d->slider->setStyle(new SlideVideoStyle(d->slider->style()));
     d->slider->setRange(0, 0);
     d->slider->setAutoFillBackground(true);
     d->tlabel         = new QLabel(d->indicator);
@@ -357,3 +359,5 @@ void SlideVideo::slotHandlePlayerError(const QtAV::AVError& err)
 }
 
 } // namespace Digikam
+
+#include "slidevideo.moc"

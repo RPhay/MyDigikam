@@ -118,7 +118,7 @@ private:
 
 // --------------------------------------------------------
 
-class Q_DECL_HIDDEN VideoStyle : public QProxyStyle
+class Q_DECL_HIDDEN PlayerVideoStyle : public QProxyStyle
 {
     Q_OBJECT
 
@@ -232,7 +232,7 @@ MediaPlayerView::MediaPlayerView(QWidget* const parent)
 
     DHBox* const hbox = new DHBox(this);
     d->slider         = new QSlider(Qt::Horizontal, hbox);
-    d->slider->setStyle(new VideoStyle(d->slider->style()));
+    d->slider->setStyle(new PlayerVideoStyle(d->slider->style()));
     d->slider->setRange(0, 0);
     d->tlabel         = new QLabel(hbox);
     d->tlabel->setText(QLatin1String("00:00:00 / 00:00:00"));
