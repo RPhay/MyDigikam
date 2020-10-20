@@ -212,6 +212,7 @@ bool AddTagsComboBox::eventFilter(QObject* object, QEvent* event)
 
                 if (popup->pos() != newPos)
                 {
+                    popup->setMinimumWidth(parentWidget()->width() + 50);
                     popup->move(newPos);
                 }
             }
