@@ -40,15 +40,17 @@ namespace Digikam
 
 class ItemFullScreenOverlayButton : public ItemViewHoverButton
 {
+    Q_OBJECT
+
 public:
 
     explicit ItemFullScreenOverlayButton(QAbstractItemView* const parentView);
-    QSize sizeHint() const override;
+    QSize sizeHint() const  override;
 
 protected:
 
-    QIcon icon() override;
-    void updateToolTip() override;
+    QIcon icon()            override;
+    void updateToolTip()    override;
 };
 
 // --------------------------------------------------------------------
@@ -60,7 +62,7 @@ class ItemFullScreenOverlay : public HoverButtonDelegateOverlay
 public:
 
     explicit ItemFullScreenOverlay(QObject* const parent);
-    void setActive(bool active) override;
+    void setActive(bool active)                     override;
 
     static ItemFullScreenOverlay* instance(QObject* const parent);
 
@@ -70,11 +72,11 @@ Q_SIGNALS:
 
 protected:
 
-    ItemViewHoverButton* createButton() override;
-    void updateButton(const QModelIndex& index) override;
+    ItemViewHoverButton* createButton()             override;
+    void updateButton(const QModelIndex& index)     override;
     bool checkIndex(const QModelIndex& index) const override;
-    void widgetEnterEvent() override;
-    void widgetLeaveEvent() override;
+    void widgetEnterEvent()                         override;
+    void widgetLeaveEvent()                         override;
 
 private Q_SLOTS:
 

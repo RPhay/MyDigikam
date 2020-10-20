@@ -53,11 +53,13 @@ namespace Digikam
 
 class Q_DECL_HIDDEN DateValidator : public QValidator
 {
+    Q_OBJECT
+
 public:
 
     DateValidator(const QStringList& keywords, const QString& dateFormat, QWidget* const parent)
-        : QValidator(parent),
-          mKeywords(keywords),
+        : QValidator (parent),
+          mKeywords  (keywords),
           mDateFormat(dateFormat)
     {
     }
@@ -103,10 +105,10 @@ class Q_DECL_HIDDEN DDateEdit::Private
 public:
 
     explicit Private()
-      : readOnly(false),
-        textChanged(false),
+      : readOnly             (false),
+        textChanged          (false),
         discardNextMousePress(false),
-        popup(nullptr)
+        popup                (nullptr)
     {
     }
 
@@ -124,7 +126,7 @@ public:
 
 DDateEdit::DDateEdit(QWidget* const parent, const QString& name)
     : QComboBox(parent),
-      d(new Private)
+      d        (new Private)
 {
     setObjectName(name);
 
@@ -544,3 +546,5 @@ void DDateEdit::updateView()
 }
 
 } // namespace Digikam
+
+#include "ddateedit.moc"

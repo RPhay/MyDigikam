@@ -181,15 +181,17 @@ enum ImportRotateOverlayDirection
 
 class ImportRotateOverlayButton : public ItemViewHoverButton
 {
+    Q_OBJECT
+
 public:
 
     explicit ImportRotateOverlayButton(ImportRotateOverlayDirection dir, QAbstractItemView* const parentView);
-    QSize sizeHint() const override;
+    QSize sizeHint() const  override;
 
 protected:
 
-    QIcon icon() override;
-    void updateToolTip() override;
+    QIcon icon()            override;
+    void updateToolTip()    override;
 
 protected:
 

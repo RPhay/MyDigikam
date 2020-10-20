@@ -54,14 +54,14 @@ class DDateEdit : public QComboBox
 
 public:
 
-    explicit DDateEdit(QWidget* const parent=nullptr, const QString& name=QString());
+    explicit DDateEdit(QWidget* const parent = nullptr, const QString& name = QString());
     ~DDateEdit() override;
 
     /**
      * @return The date entered. This date could be invalid,
      *         you have to check validity yourself.
      */
-    QDate date() const;
+    QDate date()                                                const;
 
     /**
      * Sets whether the widget is read-only for the user. If read-only,
@@ -74,7 +74,7 @@ public:
     /**
      * @return True if the widget is read-only, false if read-write.
      */
-    bool isReadOnly()                                                   const;
+    bool isReadOnly()                                           const;
 
     void showPopup()                                                  override;
 
@@ -129,7 +129,7 @@ protected:
 
 private:
 
-    QDate parseDate(bool* = nullptr)                                    const;
+    QDate parseDate(bool* = nullptr)                            const;
     void updateView();
 
 private:

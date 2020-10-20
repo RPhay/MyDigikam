@@ -39,11 +39,13 @@ namespace Digikam
 
 class Q_DECL_HIDDEN DDatePickerAction : public QWidgetAction
 {
+    Q_OBJECT
+
 public:
 
     DDatePickerAction(DDatePicker* const widget, QObject* const parent)
-        : QWidgetAction(parent),
-          m_datePicker(widget),
+        : QWidgetAction   (parent),
+          m_datePicker    (widget),
           m_originalParent(widget->parentWidget())
     {
     }
@@ -90,7 +92,7 @@ public:
 
 DDatePickerPopup::DDatePickerPopup(Items items, const QDate& date, QWidget* const parent)
     : QMenu(parent),
-      d(new Private)
+      d    (new Private)
 {
     d->items      = items;
     d->datePicker = new DDatePicker(this);
@@ -248,3 +250,5 @@ void DDatePickerPopup::slotPrevMonth()
 }
 
 } // namespace Digikam
+
+#include "ddatepickerpopup.moc"

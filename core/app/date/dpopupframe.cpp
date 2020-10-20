@@ -64,6 +64,8 @@ public:
 
 class Q_DECL_HIDDEN DPopupFrame::Private::OutsideClickCatcher : public QObject
 {
+    Q_OBJECT
+
 public:
 
     explicit OutsideClickCatcher(QObject* const parent = nullptr)
@@ -107,9 +109,9 @@ public:
 };
 
 DPopupFrame::Private::Private(DPopupFrame* const qq)
-    : q(qq),
-      result(0),   // rejected
-      main(nullptr),
+    : q                  (qq),
+      result             (0),   // rejected
+      main               (nullptr),
       outsideClickCatcher(new OutsideClickCatcher)
 {
     outsideClickCatcher->setPopupFrame(q);
@@ -150,6 +152,7 @@ void DPopupFrame::hideEvent(QHideEvent *e)
 void DPopupFrame::close(int r)
 {
     d->result = r;
+
     emit leaveModality();
 }
 
@@ -177,6 +180,7 @@ void DPopupFrame::resizeEvent(QResizeEvent* e)
 void DPopupFrame::popup(const QPoint& p)
 {
     // Make sure the whole popup is visible.
+
     QScreen* screen = qApp->primaryScreen();
 
     if (QWidget* const widget = nativeParentWidget())
@@ -244,3 +248,5 @@ int DPopupFrame::exec(int x, int y)
 }
 
 } // namespace Digikam
+
+#include "dpopupframe.moc"

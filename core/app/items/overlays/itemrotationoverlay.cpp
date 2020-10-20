@@ -39,7 +39,7 @@ namespace Digikam
 
 ItemRotateOverlayButton::ItemRotateOverlayButton(ItemRotateOverlayDirection dir, QAbstractItemView* const parentView)
     : ItemViewHoverButton(parentView),
-      m_direction(dir)
+      m_direction        (dir)
 {
     setup();
 }
@@ -77,7 +77,7 @@ void ItemRotateOverlayButton::updateToolTip()
 
 ItemRotateOverlay::ItemRotateOverlay(ItemRotateOverlayDirection dir, QObject* const parent)
     : HoverButtonDelegateOverlay(parent),
-      m_direction(dir)
+      m_direction               (dir)
 {
 }
 
@@ -116,10 +116,12 @@ void ItemRotateOverlay::slotClicked()
 
     if (index.isValid())
     {
-        /*QItemSelectionModel* selModel = m_view->selectionModel();
+/*
+        QItemSelectionModel* selModel = m_view->selectionModel();
         selModel->reset();
         selModel->select(index, QItemSelectionModel::Select);
-        selModel->setCurrentIndex(index, QItemSelectionModel::Current);*/
+        selModel->setCurrentIndex(index, QItemSelectionModel::Current);
+*/
         emit signalRotate(affectedIndexes(index));
     }
 }

@@ -78,7 +78,7 @@ public:
     explicit DDatePickerPopup(Items items,
                               const QDate& date = QDate::currentDate(),
                               QWidget* const parent = nullptr);
-    ~DDatePickerPopup() override;
+    ~DDatePickerPopup()             override;
 
     /**
      * @return A pointer to the private variable mDatePicker, an instance of
@@ -99,7 +99,7 @@ public:
     /**
      * @return Returns the bitwise result of the active items in the popup.
      */
-    int items() const;
+    int items()               const;
 
 Q_SIGNALS:
 

@@ -38,15 +38,17 @@ namespace Digikam
 
 class ItemSelectionOverlayButton : public ItemViewHoverButton
 {
+    Q_OBJECT
+
 public:
 
     explicit ItemSelectionOverlayButton(QAbstractItemView* const parentView);
-    QSize sizeHint() const override;
+    QSize sizeHint() const  override;
 
 protected:
 
     QIcon icon() override;
-    void updateToolTip() override;
+    void updateToolTip()    override;
 };
 
 // --------------------------------------------------------------------
@@ -58,7 +60,7 @@ class ItemSelectionOverlay : public HoverButtonDelegateOverlay
 public:
 
     explicit ItemSelectionOverlay(QObject* const parent);
-    void setActive(bool active) override;
+    void setActive(bool active)                 override;
 
 protected:
 

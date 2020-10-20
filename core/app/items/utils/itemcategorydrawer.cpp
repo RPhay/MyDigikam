@@ -56,7 +56,7 @@ public:
 
     explicit Private()
       : lowerSpacing(0),
-        view(nullptr)
+        view        (nullptr)
     {
     }
 
@@ -69,7 +69,7 @@ public:
 
 ItemCategoryDrawer::ItemCategoryDrawer(ItemCategorizedView* const parent)
     : DCategoryDrawer(nullptr),
-      d(new Private)
+      d              (new Private)
 {
     d->view = parent;
 }
@@ -322,7 +322,7 @@ void ItemCategoryDrawer::textForPAlbum(PAlbum* album, bool recursive, int count,
 }
 
 void ItemCategoryDrawer::textForTAlbum(TAlbum* talbum, bool recursive, int count, QString* header,
-                                        QString* subLine) const
+                                       QString* subLine) const
 {
     *header = talbum->title();
 

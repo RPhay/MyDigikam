@@ -94,7 +94,7 @@ protected:
     /**
      * Catch hide events.
      */
-    void hideEvent(QHideEvent* e) override;
+    void hideEvent(QHideEvent* e)    override;
 
 public Q_SLOTS:
 

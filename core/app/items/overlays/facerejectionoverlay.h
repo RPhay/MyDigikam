@@ -39,15 +39,17 @@ namespace Digikam
 
 class FaceRejectionOverlayButton : public ItemViewHoverButton
 {
+    Q_OBJECT
+
 public:
 
     explicit FaceRejectionOverlayButton(QAbstractItemView* const parentView);
-    QSize sizeHint() const override;
+    QSize sizeHint() const  override;
 
 protected:
 
-    QIcon icon() override;
-    void updateToolTip() override;
+    QIcon icon()            override;
+    void updateToolTip()    override;
 };
 
 // --------------------------------------------------------------------
@@ -59,7 +61,7 @@ class FaceRejectionOverlay : public HoverButtonDelegateOverlay
 public:
 
     explicit FaceRejectionOverlay(QObject* const parent);
-    void setActive(bool active) override;
+    void setActive(bool active)                     override;
 
 Q_SIGNALS:
 
@@ -67,11 +69,11 @@ Q_SIGNALS:
 
 protected:
 
-    ItemViewHoverButton* createButton() override;
-    void updateButton(const QModelIndex& index) override;
+    ItemViewHoverButton* createButton()             override;
+    void updateButton(const QModelIndex& index)     override;
     bool checkIndex(const QModelIndex& index) const override;
-    void widgetEnterEvent() override;
-    void widgetLeaveEvent() override;
+    void widgetEnterEvent()                         override;
+    void widgetLeaveEvent()                         override;
 
 protected Q_SLOTS:
 

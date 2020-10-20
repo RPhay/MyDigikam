@@ -42,13 +42,15 @@ class DAlbum;
 
 class ItemCategoryDrawer : public DCategoryDrawer
 {
+    Q_OBJECT
+
 public:
 
     explicit ItemCategoryDrawer(ItemCategorizedView* const parent);
-    ~ItemCategoryDrawer() override;
+    ~ItemCategoryDrawer()                                                                                                  override;
 
-    int categoryHeight(const QModelIndex& index, const QStyleOption& option)                                 const override;
-    void drawCategory(const QModelIndex& index, int sortRole, const QStyleOption& option, QPainter* painter) const override;
+    int categoryHeight(const QModelIndex& index, const QStyleOption& option)                                         const override;
+    void drawCategory(const QModelIndex& index, int sortRole, const QStyleOption& option, QPainter* painter)         const override;
     virtual int maximumHeight()                                                                                      const;
 
     void setLowerSpacing(int spacing);
