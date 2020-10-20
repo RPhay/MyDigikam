@@ -65,6 +65,7 @@ private:
 
 class DbKeySelector : public QTreeWidget
 {
+    Q_OBJECT
 
 public:
 

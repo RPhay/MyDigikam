@@ -33,10 +33,12 @@ namespace Digikam
 
 class FreeSpaceToolTip : public DItemToolTip
 {
+    Q_OBJECT
+
 public:
 
     explicit FreeSpaceToolTip(QWidget* const parent);
-    ~FreeSpaceToolTip() override;
+    ~FreeSpaceToolTip()         override;
 
     void setToolTip(const QString& tip);
 
@@ -44,8 +46,8 @@ public:
 
 protected:
 
-    QRect   repositionRect() override;
-    QString tipContents() override;
+    QRect   repositionRect()    override;
+    QString tipContents()       override;
 
 private:
 

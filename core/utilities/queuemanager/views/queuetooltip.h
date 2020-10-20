@@ -37,17 +37,19 @@ class QueueListViewItem;
 
 class QueueToolTip : public DItemToolTip
 {
+    Q_OBJECT
+
 public:
 
     explicit QueueToolTip(QueueListView* const view);
-    ~QueueToolTip() override;
+    ~QueueToolTip()          override;
 
     void setQueueItem(QueueListViewItem* const item);
 
 private:
 
     QRect   repositionRect() override;
-    QString tipContents() override;
+    QString tipContents()    override;
 
 private:
 

@@ -36,12 +36,12 @@ class Q_DECL_HIDDEN DynamicLayout::Private
 public:
 
     explicit Private(int hSpacing, int vSpacing)
-      : hSpace(hSpacing),
-        vSpace(vSpacing),
-        spaceX(0),
-        spaceY(0),
+      : hSpace      (hSpacing),
+        vSpace      (vSpacing),
+        spaceX      (0),
+        spaceY      (0),
         minItemWidth(0),
-        minColumns(2)
+        minColumns  (2)
     {
     }
 
@@ -59,7 +59,7 @@ public:
 
 DynamicLayout::DynamicLayout(QWidget* const parent, int margin, int hSpacing, int vSpacing)
     : QLayout(parent),
-      d(new Private(hSpacing, vSpacing))
+      d      (new Private(hSpacing, vSpacing))
 {
     setContentsMargins(margin, margin, margin, margin);
 }
@@ -149,6 +149,7 @@ bool DynamicLayout::hasHeightForWidth() const
 int DynamicLayout::heightForWidth(int width) const
 {
     int height = reLayout(QRect(0, 0, width, 0), true);
+
     return height;
 }
 

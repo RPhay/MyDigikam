@@ -62,10 +62,12 @@ namespace Digikam
 
 class Q_DECL_HIDDEN KeywordLineEdit : public QLineEdit
 {
+    Q_OBJECT
+
 public:
 
     explicit KeywordLineEdit(QWidget* const parent = nullptr)
-        : QLineEdit(parent),
+        : QLineEdit    (parent),
           m_hasAdvanced(false)
     {
         KSharedConfig::Ptr config = KSharedConfig::openConfig();
@@ -170,24 +172,24 @@ class Q_DECL_HIDDEN SearchTabHeader::Private
 {
 public:
 
-    explicit Private() :
-        newSearchWidget(nullptr),
-        saveAsWidget(nullptr),
-        editSimpleWidget(nullptr),
-        editAdvancedWidget(nullptr),
-        lowerArea(nullptr),
-        keywordEdit(nullptr),
-        advancedEditLabel(nullptr),
-        saveNameEdit(nullptr),
-        saveButton(nullptr),
-        storedKeywordEditName(nullptr),
-        storedKeywordEdit(nullptr),
-        storedAdvancedEditName(nullptr),
-        storedAdvancedEditLabel(nullptr),
-        keywordEditTimer(nullptr),
-        storedKeywordEditTimer(nullptr),
-        searchWindow(nullptr),
-        currentAlbum(nullptr)
+    explicit Private()
+      : newSearchWidget         (nullptr),
+        saveAsWidget            (nullptr),
+        editSimpleWidget        (nullptr),
+        editAdvancedWidget      (nullptr),
+        lowerArea               (nullptr),
+        keywordEdit             (nullptr),
+        advancedEditLabel       (nullptr),
+        saveNameEdit            (nullptr),
+        saveButton              (nullptr),
+        storedKeywordEditName   (nullptr),
+        storedKeywordEdit       (nullptr),
+        storedAdvancedEditName  (nullptr),
+        storedAdvancedEditLabel (nullptr),
+        keywordEditTimer        (nullptr),
+        storedKeywordEditTimer  (nullptr),
+        searchWindow            (nullptr),
+        currentAlbum            (nullptr)
     {
     }
 
@@ -222,7 +224,7 @@ public:
 
 SearchTabHeader::SearchTabHeader(QWidget* const parent)
     : QWidget(parent),
-      d(new Private)
+      d      (new Private)
 {
     const int spacing = QApplication::style()->pixelMetric(QStyle::PM_DefaultLayoutSpacing);
 
@@ -670,3 +672,5 @@ QString SearchTabHeader::keywordsFromQuery(const QString& query) const
 }
 
 } // namespace Digikam
+
+#include "searchtabheader.moc"

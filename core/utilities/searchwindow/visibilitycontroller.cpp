@@ -41,12 +41,15 @@ public:
     QWidget*                     containerWidget;
 };
 
-class Q_DECL_HIDDEN VisibilityWidgetWrapper : public QObject, public VisibilityObject
+class Q_DECL_HIDDEN VisibilityWidgetWrapper : public QObject,
+                                              public VisibilityObject
 {
+    Q_OBJECT
+
 public:
 
     VisibilityWidgetWrapper(VisibilityController* const parent, QWidget* const widget)
-        : QObject(parent),
+        : QObject (parent),
           m_widget(widget)
     {
     }
@@ -68,7 +71,7 @@ public:
 
 VisibilityController::VisibilityController(QObject* const parent)
     : QObject(parent),
-      d(new Private)
+      d      (new Private)
 {
 }
 
@@ -245,3 +248,5 @@ void VisibilityController::allSteps()
 }
 
 } // namespace Digikam
+
+#include "visibilitycontroller.moc"

@@ -151,6 +151,8 @@ protected:
 
 class RatingComboBoxModel : public QAbstractListModel
 {
+    Q_OBJECT
+
 public:
 
     enum CustomRoles
@@ -162,15 +164,15 @@ public:
 
     explicit RatingComboBoxModel(QObject* const parent = nullptr);
 
-    QModelIndex indexForRatingValue(RatingComboBox::RatingValue value) const;
+    QModelIndex indexForRatingValue(RatingComboBox::RatingValue value)                    const;
 
-    int rowCount(const QModelIndex& parent) const override;
-    QVariant data(const QModelIndex& index, int role) const override;
+    int rowCount(const QModelIndex& parent)                                               const override;
+    QVariant data(const QModelIndex& index, int role)                                     const override;
     QModelIndex index(int row, int column = 0, const QModelIndex& parent = QModelIndex()) const override;
 
 protected:
 
-    QVariant ratingValueToDisplay(RatingComboBox::RatingValue value) const;
+    QVariant ratingValueToDisplay(RatingComboBox::RatingValue value)                      const;
 
 protected:
 
@@ -179,18 +181,21 @@ protected:
 
 // -------------------------------------------------------------------------
 
-class RatingComboBoxDelegate : public QItemDelegate, public RatingStarDrawer
+class RatingComboBoxDelegate : public QItemDelegate,
+                               public RatingStarDrawer
 {
+    Q_OBJECT
+
 public:
 
     explicit RatingComboBoxDelegate(QObject* const parent = nullptr);
 
-    QSize sizeHint(const QStyleOptionViewItem& option, const QModelIndex& index) const override;
+    QSize sizeHint(const QStyleOptionViewItem& option, const QModelIndex& index)                const override;
     void paint(QPainter* painter, const QStyleOptionViewItem& option, const QModelIndex& index) const override;
 
 protected:
 
-    void drawRating(QPainter* painter, const QRect& rect, int rating, bool selectable) const;
+    void drawRating(QPainter* painter, const QRect& rect, int rating, bool selectable)          const;
 };
 
 } // namespace Digikam

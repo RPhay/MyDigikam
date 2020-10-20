@@ -415,7 +415,7 @@ void ImportRatingOverlay::slotDataChanged(const QModelIndex& topLeft, const QMod
 
 ImportRotateOverlayButton::ImportRotateOverlayButton(ImportRotateOverlayDirection dir, QAbstractItemView* const parentView)
     : ItemViewHoverButton(parentView),
-      m_direction(dir)
+      m_direction        (dir)
 {
     setup();
 }

@@ -72,11 +72,13 @@ void removeAnyInInterval(Container& list, const T& begin, const T& end)
 
 class Q_DECL_HIDDEN LightTableItemListModel : public ItemListModel
 {
+    Q_OBJECT
+
 public:
 
     explicit LightTableItemListModel(QObject* const parent = nullptr)
         : ItemListModel(parent),
-          m_exclusive(false)
+          m_exclusive  (false)
     {
     }
 
@@ -162,10 +164,10 @@ class Q_DECL_HIDDEN LightTableThumbBar::Private
 public:
 
     explicit Private()
-      : navigateByPair(false),
-        imageInfoModel(nullptr),
+      : navigateByPair  (false),
+        imageInfoModel  (nullptr),
         imageFilterModel(nullptr),
-        dragDropHandler(nullptr)
+        dragDropHandler (nullptr)
     {
     }
 
@@ -178,7 +180,7 @@ public:
 
 LightTableThumbBar::LightTableThumbBar(QWidget* const parent)
     : ItemThumbnailBar(parent),
-      d(new Private)
+      d               (new Private)
 {
     d->imageInfoModel   = new LightTableItemListModel(this);
 
@@ -199,7 +201,7 @@ LightTableThumbBar::LightTableThumbBar(QWidget* const parent)
     d->imageFilterModel->setAllGroupsOpen(true); // disable filtering out by group, see bug #308948
     d->imageFilterModel->sort(0);                // an initial sorting is necessary
 
-    d->dragDropHandler  = new ItemDragDropHandler(d->imageInfoModel);
+    d->dragDropHandler = new ItemDragDropHandler(d->imageInfoModel);
     d->dragDropHandler->setReadOnlyDrop(true);
     d->imageInfoModel->setDragDropHandler(d->dragDropHandler);
 
@@ -486,3 +488,5 @@ void LightTableThumbBar::slotSetupChanged()
 }
 
 } // namespace Digikam
+
+#include "lighttablethumbbar.moc"

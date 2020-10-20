@@ -37,6 +37,7 @@ namespace Digikam
 
 class DIGIKAM_EXPORT SystemSettingsWidget : public QWidget
 {
+    Q_OBJECT
 
 public:
 

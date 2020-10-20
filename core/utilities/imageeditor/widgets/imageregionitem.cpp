@@ -53,11 +53,11 @@ class Q_DECL_HIDDEN ImageRegionItem::Private
 public:
 
     explicit Private()
-      : paintExtras(true),
+      : paintExtras              (true),
         onMouseMovePreviewToggled(true),
-        renderingPreviewMode(PreviewToolBar::PreviewBothImagesVertCont),
-        view(nullptr),
-        iface(nullptr)
+        renderingPreviewMode     (PreviewToolBar::PreviewBothImagesVertCont),
+        view                     (nullptr),
+        iface                    (nullptr)
     {
     }
 

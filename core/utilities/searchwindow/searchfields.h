@@ -61,7 +61,8 @@ class RatingComboBox;
 class PickLabelFilter;
 class ColorLabelFilter;
 
-class SearchField : public QObject, public VisibilityObject
+class SearchField : public QObject,
+                    public VisibilityObject
 {
     Q_OBJECT
 
@@ -107,8 +108,8 @@ protected:
     virtual void setupValueWidgets(QGridLayout* layout, int row, int column) = 0;
     virtual void setupLabels(QGridLayout* layout, int line);
 
-    virtual void setValueWidgetsVisible(bool visible) = 0;
-    virtual QList<QRect> valueWidgetRects() const = 0;
+    virtual void setValueWidgetsVisible(bool visible)                        = 0;
+    virtual QList<QRect> valueWidgetRects()                            const = 0;
 
 protected:
 
@@ -159,12 +160,14 @@ protected:
 
 class SearchFieldKeyword : public SearchFieldText
 {
+    Q_OBJECT
+
 public:
 
     explicit SearchFieldKeyword(QObject* const parent);
 
     void read(SearchXmlCachingReader& reader) override;
-    void write(SearchXmlWriter& writer) override;
+    void write(SearchXmlWriter& writer)       override;
 };
 
 //-----------------------------------------------------------------------------

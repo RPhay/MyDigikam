@@ -35,6 +35,7 @@ namespace Digikam
 
 class SetupMisc : public QScrollArea
 {
+    Q_OBJECT
 
 public:
 

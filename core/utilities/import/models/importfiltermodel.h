@@ -46,13 +46,13 @@ class ImportSortFilterModel : public DCategorizedSortFilterProxyModel
 public:
 
     explicit ImportSortFilterModel(QObject* const parent = nullptr);
-    ~ImportSortFilterModel() override;
+    ~ImportSortFilterModel()                                                                      override;
 
     void setSourceImportModel(ImportItemModel* const sourceModel);
-    ImportItemModel* sourceImportModel() const;
+    ImportItemModel* sourceImportModel()                                                    const;
 
     void setSourceFilterModel(ImportSortFilterModel* const sourceModel);
-    ImportSortFilterModel* sourceFilterModel() const;
+    ImportSortFilterModel* sourceFilterModel()                                              const;
 
     /**
      * Convenience methods mapped to ImportItemModel.
@@ -62,30 +62,30 @@ public:
     QModelIndex mapFromSourceImportModel(const QModelIndex& importModelIndex)               const;
     QModelIndex mapFromDirectSourceToSourceImportModel(const QModelIndex& sourceModelIndex) const;
 
-    QList<QModelIndex> mapListToSource(const QList<QModelIndex>& indexes)         const;
-    QList<QModelIndex> mapListFromSource(const QList<QModelIndex>& sourceIndexes) const;
+    QList<QModelIndex> mapListToSource(const QList<QModelIndex>& indexes)                   const;
+    QList<QModelIndex> mapListFromSource(const QList<QModelIndex>& sourceIndexes)           const;
 
-    CamItemInfo        camItemInfo(const QModelIndex& index)           const;
-    qlonglong          camItemId(const QModelIndex& index)             const;
-    QList<CamItemInfo> camItemInfos(const QList<QModelIndex>& indexes) const;
-    QList<qlonglong>   camItemIds(const QList<QModelIndex>& indexes)   const;
+    CamItemInfo        camItemInfo(const QModelIndex& index)                                const;
+    qlonglong          camItemId(const QModelIndex& index)                                  const;
+    QList<CamItemInfo> camItemInfos(const QList<QModelIndex>& indexes)                      const;
+    QList<qlonglong>   camItemIds(const QList<QModelIndex>& indexes)                        const;
 
-    QModelIndex indexForPath(const QString& filePath)        const;
-    QModelIndex indexForCamItemInfo(const CamItemInfo& info) const;
-    QModelIndex indexForCamItemId(qlonglong id)              const;
+    QModelIndex indexForPath(const QString& filePath)                                       const;
+    QModelIndex indexForCamItemInfo(const CamItemInfo& info)                                const;
+    QModelIndex indexForCamItemId(qlonglong id)                                             const;
 
     /**
      * Returns a list of all camera infos, sorted according to this model.
      * If you do not need a sorted list, use ImportItemModel's camItemInfo() method.
      */
-    QList<CamItemInfo> camItemInfosSorted() const;
+    QList<CamItemInfo> camItemInfosSorted()                                                 const;
 
     /// Returns this, any chained ImportFilterModel, or 0.
-    virtual ImportFilterModel* importFilterModel() const;
+    virtual ImportFilterModel* importFilterModel()                                          const;
 
 protected:
 
-    void setSourceModel(QAbstractItemModel* sourceModel) override;
+    void setSourceModel(QAbstractItemModel* sourceModel)                                          override;
 
     /// Reimplement if needed. Called only when model shall be set as (direct) sourceModel.
     virtual void setDirectSourceImportModel(ImportItemModel* const sourceModel);
@@ -125,9 +125,9 @@ public:
 public:
 
     explicit ImportFilterModel(QObject* const parent = nullptr);
-    ~ImportFilterModel() override;
+    ~ImportFilterModel()                                                                          override;
 
-    CamItemSortSettings camItemSortSettings() const;
+    CamItemSortSettings camItemSortSettings()                                               const;
 
     void setCamItemSortSettings(const CamItemSortSettings& sorter);
 
@@ -139,8 +139,8 @@ public:
     bool isGroupOpen(qlonglong group) const;
     bool isAllGroupsOpen() const;
 */
-    QVariant data(const QModelIndex& index, int role = Qt::DisplayRole) const override;
-    ImportFilterModel* importFilterModel()                              const override;
+    QVariant data(const QModelIndex& index, int role = Qt::DisplayRole)                     const override;
+    ImportFilterModel* importFilterModel()                                                  const override;
 
 public Q_SLOTS:
 
@@ -198,29 +198,29 @@ protected:
 
 protected:
 
-    void setDirectSourceImportModel(ImportItemModel* const sourceModel)            override;
+    void setDirectSourceImportModel(ImportItemModel* const sourceModel)                           override;
 
-    bool filterAcceptsRow(int source_row, const QModelIndex& source_parent) const  override;
+    bool filterAcceptsRow(int source_row, const QModelIndex& source_parent)                 const override;
 
-    int compareCategories(const QModelIndex& left, const QModelIndex& right) const override;
-    bool subSortLessThan(const QModelIndex& left, const QModelIndex& right) const  override;
+    int compareCategories(const QModelIndex& left, const QModelIndex& right)                const override;
+    bool subSortLessThan(const QModelIndex& left, const QModelIndex& right)                 const override;
 
     /**
      * Reimplement to customize category sorting,
      * Return negative if category of left < category right,
      * Return 0 if left and right are in the same category, else return positive.
      */
-    virtual int compareInfosCategories(const CamItemInfo& left, const CamItemInfo& right) const;
+    virtual int compareInfosCategories(const CamItemInfo& left, const CamItemInfo& right)   const;
 
     /**
      * Reimplement to customize sorting. Do not take categories into account here.
      */
-    virtual bool infosLessThan(const CamItemInfo& left, const CamItemInfo& right) const;
+    virtual bool infosLessThan(const CamItemInfo& left, const CamItemInfo& right)           const;
 
     /**
      * Returns a unique identifier for the category if info. The string need not be for user display.
      */
-    virtual QString categoryIdentifier(const CamItemInfo& info) const;
+    virtual QString categoryIdentifier(const CamItemInfo& info)                             const;
 
 private:
 
@@ -239,7 +239,7 @@ public:
 
 protected:
 
-    bool filterAcceptsRow(int source_row, const QModelIndex& source_parent) const override;
+    bool filterAcceptsRow(int source_row, const QModelIndex& source_parent)                 const override;
 };
 
 } // namespace Digikam

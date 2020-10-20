@@ -38,13 +38,16 @@ namespace Digikam
 
 class DIGIKAM_EXPORT ImagePreviewItem : public GraphicsDImgItem
 {
+    Q_OBJECT
 
 public:
 
     explicit ImagePreviewItem();
-    ~ImagePreviewItem() override;
+    ~ImagePreviewItem()         override;
 
-    void paint(QPainter* painter, const QStyleOptionGraphicsItem* option, QWidget* widget) override;
+    void paint(QPainter* painter,
+               const QStyleOptionGraphicsItem* option,
+               QWidget* widget) override;
 };
 
 } // namespace Digikam

@@ -55,7 +55,7 @@ public:
 
 QueueToolTip::QueueToolTip(QueueListView* const view)
     : DItemToolTip(),
-      d(new Private)
+      d           (new Private)
 {
     d->view = view;
 }

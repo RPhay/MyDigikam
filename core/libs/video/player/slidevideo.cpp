@@ -82,13 +82,13 @@ class Q_DECL_HIDDEN SlideVideo::Private
 public:
 
     explicit Private()
-      : iface(nullptr),
-        videoWidget(nullptr),
-        player(nullptr),
-        slider(nullptr),
-        volume(nullptr),
-        tlabel(nullptr),
-        indicator(nullptr),
+      : iface           (nullptr),
+        videoWidget     (nullptr),
+        player          (nullptr),
+        slider          (nullptr),
+        volume          (nullptr),
+        tlabel          (nullptr),
+        indicator       (nullptr),
         videoOrientation(0)
     {
     }
@@ -109,7 +109,7 @@ public:
 
 SlideVideo::SlideVideo(QWidget* const parent)
     : QWidget(parent),
-      d(new Private)
+      d      (new Private)
 {
     setAttribute(Qt::WA_DeleteOnClose);
     setMouseTracking(true);

@@ -33,6 +33,8 @@ namespace Digikam
 
 class CaseModifier : public Modifier
 {
+    Q_OBJECT
+
 public:
 
     explicit CaseModifier();

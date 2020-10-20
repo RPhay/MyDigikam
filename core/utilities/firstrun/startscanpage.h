@@ -33,6 +33,8 @@ namespace Digikam
 
 class StartScanPage : public DWizardPage
 {
+    Q_OBJECT
+
 public:
 
     explicit StartScanPage(QWizard* const dlg);

@@ -92,7 +92,9 @@ void Highlighter::highlightBlock(const QString& text)
                 }
 
                 default:
+                {
                     break;
+                }
             }
 
             index = expression.indexIn(text, index + length);

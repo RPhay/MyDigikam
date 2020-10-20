@@ -48,7 +48,7 @@ public:
 
 FreeSpaceToolTip::FreeSpaceToolTip(QWidget* const parent)
     : DItemToolTip(),
-      d(new Private)
+      d           (new Private)
 {
     d->parent = parent;
 }

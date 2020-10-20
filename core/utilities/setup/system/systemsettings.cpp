@@ -38,8 +38,8 @@ namespace Digikam
 SystemSettings::SystemSettings(const QString& name)
     : useHighDpiScaling(false),
       useHighDpiPixmaps(false),
-      disableOpenCL(true),
-      m_appName(name)
+      disableOpenCL    (true),
+      m_appName        (name)
 {
 }
 

@@ -42,6 +42,8 @@ class HidingStateChanger;
 
 class Q_DECL_HIDDEN FaceItem : public RegionFrameItem
 {
+    Q_OBJECT
+
 public:
 
     explicit FaceItem(QGraphicsItem* const parent = nullptr);

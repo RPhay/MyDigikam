@@ -33,6 +33,8 @@ namespace Digikam
 
 class TrimmedModifier : public Modifier
 {
+    Q_OBJECT
+
 public:
 
     explicit TrimmedModifier();

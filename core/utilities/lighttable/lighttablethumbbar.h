@@ -40,7 +40,7 @@ class LightTableThumbBar : public ItemThumbnailBar
 public:
 
     explicit LightTableThumbBar(QWidget* const parent);
-    ~LightTableThumbBar() override;
+    ~LightTableThumbBar()                                                  override;
 
     void clear();
 

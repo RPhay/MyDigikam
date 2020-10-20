@@ -48,9 +48,10 @@
 namespace Digikam
 {
 
-class Q_DECL_HIDDEN DWItemDelegateEventListener
-    : public QObject
+class Q_DECL_HIDDEN DWItemDelegateEventListener : public QObject
 {
+    Q_OBJECT
+
 public:
 
     explicit DWItemDelegateEventListener(DWItemDelegatePoolPrivate* const poolPrivate,
@@ -251,8 +252,10 @@ bool DWItemDelegateEventListener::eventFilter(QObject* watched, QEvent* event)
             }
 
             default:
+            {
                 QApplication::sendEvent(viewport, event);
                 break;
+            }
         }
     }
 
@@ -260,3 +263,5 @@ bool DWItemDelegateEventListener::eventFilter(QObject* watched, QEvent* event)
 }
 
 } // namespace Digikam
+
+#include "dwitemdelegatepool.moc"

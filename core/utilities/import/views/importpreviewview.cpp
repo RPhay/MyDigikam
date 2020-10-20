@@ -51,10 +51,12 @@ namespace Digikam
 
 class Q_DECL_HIDDEN ImportPreviewViewItem : public DImgPreviewItem
 {
+    Q_OBJECT
+
 public:
 
     explicit ImportPreviewViewItem(ImportPreviewView* const view)
-        : m_view(view)
+        : m_view (view)
 /*
         FIXME
         , m_group(0)
@@ -135,17 +137,17 @@ class Q_DECL_HIDDEN ImportPreviewView::Private
 public:
 
     explicit Private()
-      : fullSize(false),
-        scale(1.0),
-        isValid(false),
-        mode(ImportPreviewView::IconViewPreview),
-        item(nullptr),
-        escapePreviewAction(nullptr),
-        prevAction(nullptr),
-        nextAction(nullptr),
-        rotLeftAction(nullptr),
-        rotRightAction(nullptr),
-        toolBar(nullptr)
+      : fullSize            (false),
+        scale               (1.0),
+        isValid             (false),
+        mode                (ImportPreviewView::IconViewPreview),
+        item                (nullptr),
+        escapePreviewAction (nullptr),
+        prevAction          (nullptr),
+        nextAction          (nullptr),
+        rotLeftAction       (nullptr),
+        rotRightAction      (nullptr),
+        toolBar             (nullptr)
     {
 /*
         FIXME
@@ -183,7 +185,7 @@ public:
 
 ImportPreviewView::ImportPreviewView(QWidget* const parent, Mode mode)
     : GraphicsDImgView(parent),
-      d(new Private)
+      d               (new Private)
 {
     d->mode = mode;
     d->item = new ImportPreviewViewItem(this);
@@ -302,7 +304,6 @@ void ImportPreviewView::camItemLoaded()
     emit signalPreviewLoaded(true);
     d->rotLeftAction->setEnabled(true);
     d->rotRightAction->setEnabled(true);
-
 /*
     FIXME
     d->faceGroup->setInfo(d->item->camItemInfo());
@@ -346,7 +347,7 @@ void ImportPreviewView::setCamItemInfo(const CamItemInfo& info, const CamItemInf
     d->item->setPreloadPaths(previewPaths);
 }
 
-QString ImportPreviewView::identifyCategoryforMime(QString mime)
+QString ImportPreviewView::identifyCategoryforMime(const QString& mime)
 {
     return mime.split(QLatin1Char('/')).at(0);
 }
@@ -364,7 +365,6 @@ bool ImportPreviewView::acceptsMouseClick(QMouseEvent* e)
     }
 
     return true;
-
 /*
     FIXME
     return d->faceGroup->acceptsMouseClick(mapToScene(e->pos()));
@@ -561,3 +561,5 @@ void ImportPreviewView::slotDeleteItem()
 }
 
 } // namespace Digikam
+
+#include "importpreviewview.moc"

@@ -52,11 +52,11 @@ namespace Digikam
 
 SearchGroup::SearchGroup(SearchView* const parent)
     : AbstractSearchGroupContainer(parent),
-      m_view(parent),
-      m_layout(nullptr),
-      m_label(nullptr),
-      m_subgroupLayout(nullptr),
-      m_groupType(FirstGroup)
+      m_view                      (parent),
+      m_layout                    (nullptr),
+      m_label                     (nullptr),
+      m_subgroupLayout            (nullptr),
+      m_groupType                 (FirstGroup)
 {
 }
 
@@ -64,11 +64,11 @@ void SearchGroup::setup(Type type)
 {
     m_groupType = type;
 
-    m_layout = new QVBoxLayout;
+    m_layout    = new QVBoxLayout;
     m_layout->setContentsMargins(QMargins());
     m_layout->setSpacing(0);
 
-    m_label  = new SearchGroupLabel(m_view, m_groupType, this);
+    m_label     = new SearchGroupLabel(m_view, m_groupType, this);
     m_layout->addWidget(m_label);
 
     connect(m_label, SIGNAL(removeClicked()),
@@ -399,6 +399,8 @@ QList<QRect> SearchGroup::startupAnimationArea() const
 
 class Q_DECL_HIDDEN RadioButtonHBox : public QHBoxLayout
 {
+    Q_OBJECT
+
 public:
 
     RadioButtonHBox(QWidget* const left, QWidget* const right, Qt::LayoutDirection dir)
@@ -424,19 +426,19 @@ class Q_DECL_HIDDEN SearchGroupLabel::Private
 public:
 
     explicit Private()
-      : extended(false),
-        groupOp(SearchXml::And),
-        fieldOp(SearchXml::And),
-        layout(nullptr),
-        groupOpLabel(nullptr),
-        allBox(nullptr),
-        anyBox(nullptr),
-        noneBox(nullptr),
-        oneNotBox(nullptr),
-        optionsLabel(nullptr),
-        removeLabel(nullptr),
+      : extended     (false),
+        groupOp      (SearchXml::And),
+        fieldOp      (SearchXml::And),
+        layout       (nullptr),
+        groupOpLabel (nullptr),
+        allBox       (nullptr),
+        anyBox       (nullptr),
+        noneBox      (nullptr),
+        oneNotBox    (nullptr),
+        optionsLabel (nullptr),
+        removeLabel  (nullptr),
         stackedLayout(nullptr),
-        themeCache(nullptr)
+        themeCache   (nullptr)
     {
     }
 
@@ -460,7 +462,7 @@ public:
 
 SearchGroupLabel::SearchGroupLabel(SearchViewThemedPartsCache* const cache, SearchGroup::Type type, QWidget* const parent)
     : QWidget(parent),
-      d(new Private)
+      d      (new Private)
 {
     d->themeCache = cache;
     d->layout     = new QGridLayout;
@@ -785,3 +787,5 @@ void SearchGroupLabel::paintEvent(QPaintEvent*)
 }
 
 } // namespace Digikam
+
+#include "searchgroup.moc"

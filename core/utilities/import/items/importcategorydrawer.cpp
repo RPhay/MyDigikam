@@ -48,7 +48,7 @@ public:
 
     explicit Private()
       : lowerSpacing(0),
-        view(nullptr)
+        view        (nullptr)
     {
     }
 
@@ -61,7 +61,7 @@ public:
 
 ImportCategoryDrawer::ImportCategoryDrawer(ImportCategorizedView* const parent)
     : DCategoryDrawer(nullptr),
-      d(new Private)
+      d              (new Private)
 {
     d->view = parent;
 }
@@ -107,7 +107,7 @@ void ImportCategoryDrawer::invalidatePaintingCache()
 }
 
 void ImportCategoryDrawer::drawCategory(const QModelIndex& index, int /*sortRole*/,
-                                       const QStyleOption& option, QPainter* p) const
+                                        const QStyleOption& option, QPainter* p) const
 {
     if (option.rect.width() != d->rect.width())
     {

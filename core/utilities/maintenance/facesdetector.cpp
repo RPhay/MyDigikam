@@ -61,6 +61,8 @@ namespace Digikam
 
 class Q_DECL_HIDDEN BenchmarkMessageDisplay : public QWidget
 {
+    Q_OBJECT
+
 public:
 
     explicit BenchmarkMessageDisplay(const QString& richText)
@@ -442,3 +444,5 @@ void FacesDetector::slotShowOneDetected(const FacePipelinePackage& /*package*/)
 }
 
 } // namespace Digikam
+
+#include "facesdetector.moc"

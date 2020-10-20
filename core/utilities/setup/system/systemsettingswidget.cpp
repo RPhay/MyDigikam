@@ -51,7 +51,7 @@ public:
     explicit Private()
       : useHighDpiScalingCheck(nullptr),
         useHighDpiPixmapsCheck(nullptr),
-        disableOpenCLCheck(nullptr)
+        disableOpenCLCheck    (nullptr)
     {
     }
 
@@ -62,7 +62,7 @@ public:
 
 SystemSettingsWidget::SystemSettingsWidget(QWidget* const parent)
     : QWidget(parent),
-      d(new Private)
+      d      (new Private)
 {
     const int spacing         = QApplication::style()->pixelMetric(QStyle::PM_DefaultLayoutSpacing);
     QVBoxLayout* const layout = new QVBoxLayout(this);

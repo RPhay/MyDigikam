@@ -43,45 +43,46 @@ class DMetadata;
  */
 class GPCamera : public DKCamera
 {
+    Q_OBJECT
 
 public:
 
     explicit GPCamera(const QString& title, const QString& model,
                       const QString& port, const QString& path);
-    ~GPCamera() override;
+    ~GPCamera()                                                                                                         override;
 
-    QByteArray                 cameraMD5ID() override;
-    DKCamera::CameraDriverType cameraDriverType() override;
+    QByteArray                 cameraMD5ID()                                                                            override;
+    DKCamera::CameraDriverType cameraDriverType()                                                                       override;
 
-    bool doConnect() override;
+    bool doConnect()                                                                                                    override;
 
-    void cancel() override;
+    void cancel()                                                                                                       override;
 
-    bool getFolders(const QString& folder) override;
+    bool getFolders(const QString& folder)                                                                              override;
     bool getItemsList(const QString& folder, QStringList& itemsList);
-    bool getItemsInfoList(const QString& folder, bool useMetadata, CamItemInfoList& items) override;
-    void getItemInfo(const QString& folder, const QString& itemName, CamItemInfo& info, bool useMetadata) override;
+    bool getItemsInfoList(const QString& folder, bool useMetadata, CamItemInfoList& items)                              override;
+    void getItemInfo(const QString& folder, const QString& itemName, CamItemInfo& info, bool useMetadata)               override;
 
-    bool getThumbnail(const QString& folder, const QString& itemName, QImage& thumbnail) override;
-    bool getMetadata(const QString& folder, const QString& itemName, DMetadata& meta) override;
+    bool getThumbnail(const QString& folder, const QString& itemName, QImage& thumbnail)                                override;
+    bool getMetadata(const QString& folder, const QString& itemName, DMetadata& meta)                                   override;
 
-    bool setLockItem(const QString& folder, const QString& itemName, bool lock) override;
+    bool setLockItem(const QString& folder, const QString& itemName, bool lock)                                         override;
 
-    bool downloadItem(const QString& folder, const QString& itemName, const QString& saveFile) override;
-    bool deleteItem(const QString& folder, const QString& itemName) override;
+    bool downloadItem(const QString& folder, const QString& itemName, const QString& saveFile)                          override;
+    bool deleteItem(const QString& folder, const QString& itemName)                                                     override;
 
     /// recursively delete all items
     bool deleteAllItems(const QString& folder);
 
-    bool uploadItem(const QString& folder, const QString& itemName, const QString& localFile, CamItemInfo& itemInfo) override;
+    bool uploadItem(const QString& folder, const QString& itemName, const QString& localFile, CamItemInfo& itemInfo)    override;
 
-    bool cameraSummary(QString& summary) override;
-    bool cameraManual(QString& manual) override;
-    bool cameraAbout(QString& about) override;
+    bool cameraSummary(QString& summary)                                                                                override;
+    bool cameraManual(QString& manual)                                                                                  override;
+    bool cameraAbout(QString& about)                                                                                    override;
 
-    bool getFreeSpace(unsigned long& kBSize, unsigned long& kBAvail) override;
-    bool getPreview(QImage& preview) override;
-    bool capture(CamItemInfo& itemInfo) override;
+    bool getFreeSpace(unsigned long& kBSize, unsigned long& kBAvail)                                                    override;
+    bool getPreview(QImage& preview)                                                                                    override;
+    bool capture(CamItemInfo& itemInfo)                                                                                 override;
 
     // Public static methods shared with Setup Camera
 

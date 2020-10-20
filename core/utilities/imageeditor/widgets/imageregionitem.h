@@ -41,11 +41,12 @@ namespace Digikam
 
 class DIGIKAM_EXPORT ImageRegionItem : public GraphicsDImgItem
 {
+    Q_OBJECT
 
 public:
 
     explicit ImageRegionItem(ImageRegionWidget* const view, bool paintExtras = true);
-    ~ImageRegionItem() override;
+    ~ImageRegionItem()                                                                     override;
 
     void setTargetImage(DImg& img);
     void setHighLightPoints(const QPolygon& pointsList);

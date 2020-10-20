@@ -205,7 +205,7 @@ class ImportRotateOverlay : public HoverButtonDelegateOverlay
 public:
 
     explicit ImportRotateOverlay(ImportRotateOverlayDirection dir, QObject* const parent);
-    void setActive(bool active) override;
+    void setActive(bool active)                       override;
 
     ImportRotateOverlayDirection direction()    const { return m_direction;                             }
     bool isLeft()                               const { return m_direction == ImportRotateOverlayLeft;  }
@@ -220,11 +220,11 @@ Q_SIGNALS:
 
 protected:
 
-    ItemViewHoverButton* createButton() override;
-    void updateButton(const QModelIndex& index) override;
-    bool checkIndex(const QModelIndex& index) const override;
-    void widgetEnterEvent() override;
-    void widgetLeaveEvent() override;
+    ItemViewHoverButton* createButton()               override;
+    void updateButton(const QModelIndex& index)       override;
+    bool checkIndex(const QModelIndex& index)   const override;
+    void widgetEnterEvent()                           override;
+    void widgetLeaveEvent()                           override;
 
 private Q_SLOTS:
 

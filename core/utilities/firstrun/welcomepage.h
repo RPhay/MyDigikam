@@ -33,6 +33,8 @@ namespace Digikam
 
 class WelcomePage : public DWizardPage
 {
+    Q_OBJECT
+
 public:
 
     explicit WelcomePage(QWizard* const dlg);

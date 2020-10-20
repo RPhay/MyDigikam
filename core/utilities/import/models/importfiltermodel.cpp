@@ -34,7 +34,7 @@ namespace Digikam
 
 ImportSortFilterModel::ImportSortFilterModel(QObject* const parent)
     : DCategorizedSortFilterProxyModel(parent),
-      m_chainedModel(nullptr)
+      m_chainedModel                  (nullptr)
 {
 }
 
@@ -242,13 +242,14 @@ void ImportSortFilterModel::setDirectSourceImportModel(ImportItemModel* const so
 
 class Q_DECL_HIDDEN ImportFilterModel::ImportFilterModelPrivate : public QObject
 {
+    Q_OBJECT
 
 public:
 
     ImportFilterModelPrivate()
-      : q(nullptr),
+      : q              (nullptr),
         importItemModel(nullptr),
-        filter(nullptr)
+        filter         (nullptr)
     {
     }
 
@@ -594,3 +595,5 @@ bool NoDuplicatesImportFilterModel::filterAcceptsRow(int source_row, const QMode
 }
 
 } // namespace Digikam
+
+#include "importfiltermodel.moc"

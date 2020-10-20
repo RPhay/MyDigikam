@@ -67,7 +67,7 @@ public:
     void write(SearchXmlWriter& writer);
     void reset();
 
-    Type groupType() const;
+    Type groupType()                    const;
 
     QList<QRect> startupAnimationArea() const;
 
@@ -77,7 +77,7 @@ Q_SIGNALS:
 
 protected:
 
-    SearchGroup* createSearchGroup() override;
+    SearchGroup* createSearchGroup()          override;
     void addGroupToLayout(SearchGroup* group) override;
 
 protected:
@@ -108,7 +108,7 @@ public:
     void setGroupOperator(SearchXml::Operator op);
     void setDefaultFieldOperator(SearchXml::Operator op);
 
-    SearchXml::Operator groupOperator() const;
+    SearchXml::Operator groupOperator()        const;
     SearchXml::Operator defaultFieldOperator() const;
 
 Q_SIGNALS:

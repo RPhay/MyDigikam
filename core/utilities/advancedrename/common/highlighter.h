@@ -37,10 +37,12 @@ class Parser;
 
 class Highlighter : public QSyntaxHighlighter
 {
+    Q_OBJECT
 
 public:
 
-    Highlighter(QTextDocument* const document, Parser* const _parser);
+    Highlighter(QTextDocument* const document,
+                Parser* const _parser);
     ~Highlighter()                           override;
 
 protected:

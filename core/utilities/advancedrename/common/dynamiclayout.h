@@ -37,40 +37,43 @@ namespace Digikam
 
 class DynamicLayout : public QLayout
 {
+    Q_OBJECT
+
 public:
 
     explicit DynamicLayout(QWidget* const parent, int margin = -1,
                            int hSpacing = 0, int vSpacing = 0);
     explicit DynamicLayout(int margin = -1, int hSpacing = 0,
                            int vSpacing = 0);
-    ~DynamicLayout() override;
+    ~DynamicLayout()                              override;
 
-    void addItem(QLayoutItem* item) override;
+    void addItem(QLayoutItem* item)               override;
 
-    int  horizontalSpacing() const;
-    int  verticalSpacing() const;
+    int  horizontalSpacing()                const;
+    int  verticalSpacing()                  const;
 
-    Qt::Orientations expandingDirections() const override;
+    Qt::Orientations expandingDirections()  const override;
 
-    bool hasHeightForWidth() const override;
-    int  heightForWidth(int) const override;
+    bool hasHeightForWidth()                const override;
+    int  heightForWidth(int)                const override;
 
-    int count() const override;
+    int count()                             const override;
 
-    QLayoutItem* itemAt(int index) const override;
-    QLayoutItem* takeAt(int index) override;
+    QLayoutItem* itemAt(int index)          const override;
+    QLayoutItem* takeAt(int index)                override;
 
-    QSize minimumSize() const override;
+    QSize minimumSize()                     const override;
 
-    void  setGeometry(const QRect& rect) override;
-    QSize sizeHint() const override;
+    void  setGeometry(const QRect& rect)          override;
+    QSize sizeHint()                        const override;
 
 private:
 
     DynamicLayout(const DynamicLayout&);
     DynamicLayout& operator=(const DynamicLayout&);
 
-    int reLayout(const QRect& rect, bool testOnly) const;
+    int reLayout(const QRect& rect,
+                 bool testOnly)             const;
 
 private:
 

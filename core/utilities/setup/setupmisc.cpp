@@ -63,31 +63,31 @@ class Q_DECL_HIDDEN SetupMisc::Private
 public:
 
     explicit Private()
-      : tab(nullptr),
-        sidebarTypeLabel(nullptr),
-        stringComparisonTypeLabel(nullptr),
-        applicationStyleLabel(nullptr),
-        applicationIconLabel(nullptr),
-        minSimilarityBoundLabel(nullptr),
-        showSplashCheck(nullptr),
-        showTrashDeleteDialogCheck(nullptr),
-        showPermanentDeleteDialogCheck(nullptr),
-        sidebarApplyDirectlyCheck(nullptr),
-        useNativeFileDialogCheck(nullptr),
-        drawFramesToGroupedCheck(nullptr),
-        expandNewCurrentItemCheck(nullptr),
-        scrollItemToCenterCheck(nullptr),
-        showOnlyPersonTagsInPeopleSidebarCheck(nullptr),
-        scanAtStart(nullptr),
-        cleanAtStart(nullptr),
-        sidebarType(nullptr),
-        stringComparisonType(nullptr),
-        applicationStyle(nullptr),
-        applicationIcon(nullptr),
-        applicationFont(nullptr),
-        minimumSimilarityBound(nullptr),
-        systemSettingsWidget(nullptr),
-        groupingButtons(QHash<int, QButtonGroup*>())
+      : tab                                     (nullptr),
+        sidebarTypeLabel                        (nullptr),
+        stringComparisonTypeLabel               (nullptr),
+        applicationStyleLabel                   (nullptr),
+        applicationIconLabel                    (nullptr),
+        minSimilarityBoundLabel                 (nullptr),
+        showSplashCheck                         (nullptr),
+        showTrashDeleteDialogCheck              (nullptr),
+        showPermanentDeleteDialogCheck          (nullptr),
+        sidebarApplyDirectlyCheck               (nullptr),
+        useNativeFileDialogCheck                (nullptr),
+        drawFramesToGroupedCheck                (nullptr),
+        expandNewCurrentItemCheck               (nullptr),
+        scrollItemToCenterCheck                 (nullptr),
+        showOnlyPersonTagsInPeopleSidebarCheck  (nullptr),
+        scanAtStart                             (nullptr),
+        cleanAtStart                            (nullptr),
+        sidebarType                             (nullptr),
+        stringComparisonType                    (nullptr),
+        applicationStyle                        (nullptr),
+        applicationIcon                         (nullptr),
+        applicationFont                         (nullptr),
+        minimumSimilarityBound                  (nullptr),
+        systemSettingsWidget                    (nullptr),
+        groupingButtons                         (QHash<int, QButtonGroup*>())
     {
     }
 
@@ -126,7 +126,7 @@ public:
 
 SetupMisc::SetupMisc(QWidget* const parent)
     : QScrollArea(parent),
-      d(new Private)
+      d          (new Private)
 {
     d->tab            = new QTabWidget(viewport());
     setWidget(d->tab);

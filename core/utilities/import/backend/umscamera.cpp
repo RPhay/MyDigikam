@@ -312,7 +312,7 @@ bool UMSCamera::getThumbnail(const QString& folder, const QString& itemName, QIm
 
     QFileInfo fi(path);
 
-    if      (thumbnail.load(fi.path() + fi.baseName() + QLatin1String(".thm")))        // Lowercase
+    if      (thumbnail.load(fi.path() + fi.baseName() + QLatin1String(".thm")))   // Lowercase
     {
         if (!thumbnail.isNull())
         {
@@ -340,6 +340,7 @@ bool UMSCamera::getThumbnail(const QString& folder, const QString& itemName, QIm
     if (!dimgThumb.isNull())
     {
         thumbnail = dimgThumb.copyQImage();
+
         return true;
     }
 
@@ -350,7 +351,7 @@ bool UMSCamera::getMetadata(const QString& folder, const QString& itemName, DMet
 {
     QString path = !folder.endsWith(QLatin1Char('/')) ? folder + QLatin1Char('/') : folder;
     QFileInfo fi, thmlo, thmup;
-    bool ret = false;
+    bool ret     = false;
 
     fi.setFile(path    + itemName);
     thmlo.setFile(path + fi.baseName() + QLatin1String(".thm"));
@@ -391,6 +392,7 @@ bool UMSCamera::downloadItem(const QString& folder, const QString& itemName, con
     if (!sFile.open(QIODevice::ReadOnly))
     {
         qCWarning(DIGIKAM_IMPORTUI_LOG) << "Failed to open source file for reading: " << src;
+
         return false;
     }
 
@@ -398,6 +400,7 @@ bool UMSCamera::downloadItem(const QString& folder, const QString& itemName, con
     {
         sFile.close();
         qCWarning(DIGIKAM_IMPORTUI_LOG) << "Failed to open destination file for writing: " << dest;
+
         return false;
     }
 
@@ -411,6 +414,7 @@ bool UMSCamera::downloadItem(const QString& folder, const QString& itemName, con
         {
             sFile.close();
             dFile.close();
+
             return false;
         }
     }
@@ -494,6 +498,7 @@ bool UMSCamera::uploadItem(const QString& folder, const QString& itemName, const
     if (!sFile.open(QIODevice::ReadOnly))
     {
         qCWarning(DIGIKAM_IMPORTUI_LOG) << "Failed to open source file for reading: " << src;
+
         return false;
     }
 
@@ -501,6 +506,7 @@ bool UMSCamera::uploadItem(const QString& folder, const QString& itemName, const
     {
         sFile.close();
         qCWarning(DIGIKAM_IMPORTUI_LOG) << "Failed to open destination file for writing: " << dest;
+
         return false;
     }
 
@@ -516,6 +522,7 @@ bool UMSCamera::uploadItem(const QString& folder, const QString& itemName, const
         {
             sFile.close();
             dFile.close();
+
             return false;
         }
     }
