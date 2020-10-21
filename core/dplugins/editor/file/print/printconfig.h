@@ -43,6 +43,8 @@ namespace DigikamEditorPrintToolPlugin
 
 class PrintConfig : public KConfigSkeleton
 {
+    Q_OBJECT
+
 public:
 
     static PrintConfig* self();

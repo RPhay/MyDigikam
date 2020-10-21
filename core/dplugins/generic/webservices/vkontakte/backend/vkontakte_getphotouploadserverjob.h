@@ -37,6 +37,8 @@ namespace Vkontakte
 //    - library's users should use class UploadPhotosJob
 class GetPhotoUploadServerJob : public VkontakteJob
 {
+    Q_OBJECT
+
 public:
 
     GetPhotoUploadServerJob(const QString& accessToken, Vkontakte::UploadPhotosJob::Dest m_dest);

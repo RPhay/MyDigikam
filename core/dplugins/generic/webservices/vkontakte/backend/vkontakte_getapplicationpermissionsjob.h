@@ -33,10 +33,12 @@ namespace Vkontakte
 
 class GetApplicationPermissionsJob : public VkontakteJob
 {
+    Q_OBJECT
+
 public:
 
     explicit GetApplicationPermissionsJob(const QString& accessToken);
-    ~GetApplicationPermissionsJob() override;
+    ~GetApplicationPermissionsJob()         override;
 
     int permissions() const;
 
