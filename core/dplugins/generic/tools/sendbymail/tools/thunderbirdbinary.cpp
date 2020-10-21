@@ -20,28 +20,30 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_THUNDERBIRD_BINARY_H
-#define DIGIKAM_THUNDERBIRD_BINARY_H
+#include "thunderbirdbinary.h"
 
-// Local includes
+// KDE includes
 
-#include "dbinaryiface.h"
-
-using namespace Digikam;
+#include <klocalizedstring.h>
 
 namespace DigikamGenericSendByMailPlugin
 {
 
-class ThunderbirdBinary : public DBinaryIface
+ThunderbirdBinary::ThunderbirdBinary()
+   : DBinaryIface(
+                  QLatin1String("thunderbird"),
+                  QLatin1String("Thunderbird"),
+                  QLatin1String("https://www.mozilla.org/en-US/thunderbird/"),
+                  QLatin1String("SendByMail"),
+                  QStringList(QLatin1String("-v")),
+                  i18n("Mozilla Foundation Mail Client.")
+                 )
 {
-    Q_OBJECT
+    setup();
+}
 
-public:
-
-    explicit ThunderbirdBinary();
-    ~ThunderbirdBinary() override;
-};
+ThunderbirdBinary::~ThunderbirdBinary()
+{
+}
 
 } // namespace DigikamGenericSendByMailPlugin
-
-#endif // DIGIKAM_THUNDERBIRD_BINARY_H
