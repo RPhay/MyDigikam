@@ -21,26 +21,30 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_OUTLOOK_BINARY_H
-#define DIGIKAM_OUTLOOK_BINARY_H
+#include "outlookbinary.h"
 
-// Local includes
+// KDE includes
 
-#include "dbinaryiface.h"
+#include <klocalizedstring.h>
 
 namespace Digikam
 {
 
-class OutlookBinary : public DBinaryIface
+OutlookBinary::OutlookBinary()
+    : DBinaryIface(
+                   QLatin1String("outlook"),
+                   QLatin1String("Outlook"),
+                   QLatin1String("https://www.microsoft.com/"),
+                   QLatin1String("SendByMail"),
+                   QStringList(),
+                   i18n("Outlook Mail Client.")
+                  )
+ {
+     setup();
+ }
+
+OutlookBinary::~OutlookBinary()
 {
-    Q_OBJECT
-
-public:
-
-    OutlookBinary();
-    ~OutlookBinary() override;
-};
+}
 
 } // namespace Digikam
-
-#endif // DIGIKAM_OUTLOOK_BINARY_H

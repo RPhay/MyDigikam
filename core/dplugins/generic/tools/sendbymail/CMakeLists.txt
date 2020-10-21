@@ -29,6 +29,7 @@ set(sendbymailplugin_SRCS
     ${CMAKE_CURRENT_SOURCE_DIR}/wizard/mailimagespage.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/wizard/mailsettingspage.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/wizard/mailfinalpage.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/tools/outlookbinary.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/sendbymailplugin.cpp
 )
 
