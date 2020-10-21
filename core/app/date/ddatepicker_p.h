@@ -47,6 +47,8 @@ namespace Digikam
 
 class Q_DECL_HIDDEN DatePickerValidator : public QValidator
 {
+    Q_OBJECT
+
 public:
 
     explicit DatePickerValidator(DDatePicker* const parent);

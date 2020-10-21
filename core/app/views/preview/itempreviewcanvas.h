@@ -42,6 +42,8 @@ class FaceGroup;
 
 class ItemPreviewCanvas : public DImgPreviewItem
 {
+    Q_OBJECT
+
 public:
 
     explicit ItemPreviewCanvas();

@@ -75,8 +75,8 @@ bool KJobWithSubjobs::doKill()
  */
 VkontakteJob::VkontakteJob(const QString& accessToken, const QString& method, bool httpPost)
     : m_accessToken(accessToken),
-      m_method(method),
-      m_httpPost(httpPost)
+      m_method     (method),
+      m_httpPost   (httpPost)
 {
     setCapabilities(KJob::Killable);
 }
@@ -112,6 +112,7 @@ bool VkontakteJob::handleError(const QJsonValue& data)
         // "Too many requests per second", we will retry after a delay.
         // VK API limit the rate of requests to 3 requests per second,
         // so it should be OK if we wait for 340 ms.
+
         QTimer::singleShot(340, this, SLOT(slotRetry()));
 
         return true;
@@ -146,6 +147,7 @@ KJob* VkontakteJob::createHttpJob()
     url.setPath(QLatin1String("/method/") + m_method);
 
     // Collect query items in "query"
+
     QUrlQuery query;
 
     prepareQueryItems();
@@ -163,8 +165,9 @@ KJob* VkontakteJob::createHttpJob()
     url.setQuery(query);
 
     // TODO: Save QUrl to reuse it if we need to retry the HTTP request
-//     m_url = url;
-
+/*
+    m_url = url;
+*/
     qCDebug(DIGIKAM_WEBSERVICES_LOG) << "Starting request" << url;
 
     if (m_httpPost)
@@ -226,6 +229,7 @@ void VkontakteJob::jobFinished(KJob* kjob)
                      (!object.contains(QLatin1String("response")) && !object.contains(QLatin1String("error"))))
             {
                 // Something went wrong, but there is no valid object "error"
+
                 handleError(QJsonValue::Undefined);
             }
             else if (object.contains(QLatin1String("error")))

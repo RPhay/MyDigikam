@@ -40,7 +40,7 @@ namespace Digikam
 
 DatePickerValidator::DatePickerValidator(DDatePicker* const parent)
     : QValidator(parent),
-      m_picker(parent)
+      m_picker  (parent)
 {
 }
 
@@ -76,15 +76,16 @@ QValidator::State DatePickerValidator::validate(QString& text, int&) const
  */
 DatePickerYearSelector::DatePickerYearSelector(const QDate& currentDate, QWidget* const parent)
     : QLineEdit(parent),
-      val(new QIntValidator(this)),
-      result(0),
-      oldDate(currentDate)
+      val      (new QIntValidator(this)),
+      result   (0),
+      oldDate  (currentDate)
 {
     setFont(QFontDatabase::systemFont(QFontDatabase::GeneralFont));
 
     setFrame(false);
 
-/*  TODO: Find a way to get that from QLocale
+/*
+    TODO: Find a way to get that from QLocale
     val->setRange(calendar->year(calendar->earliestValidDate()),
                   calendar->year(calendar->latestValidDate()));
 */
@@ -135,21 +136,21 @@ void DatePickerYearSelector::setYear(int year)
 // ------------------------------------------------------------------------------
 
 DDatePicker::Private::Private(DDatePicker* const qq)
-    : q(qq),
-      closeButton(nullptr),
-      selectWeek(nullptr),
-      todayButton(nullptr),
-      navigationLayout(nullptr),
-      yearForward(nullptr),
-      yearBackward(nullptr),
-      monthForward(nullptr),
-      monthBackward(nullptr),
-      selectMonth(nullptr),
-      selectYear(nullptr),
-      line(nullptr),
-      val(nullptr),
-      table(nullptr),
-      fontsize(0)
+    : q                 (qq),
+      closeButton       (nullptr),
+      selectWeek        (nullptr),
+      todayButton       (nullptr),
+      navigationLayout  (nullptr),
+      yearForward       (nullptr),
+      yearBackward      (nullptr),
+      monthForward      (nullptr),
+      monthBackward     (nullptr),
+      selectMonth       (nullptr),
+      selectYear        (nullptr),
+      line              (nullptr),
+      val               (nullptr),
+      table             (nullptr),
+      fontsize          (0)
 {
 }
 
@@ -172,7 +173,7 @@ void DDatePicker::Private::fillWeeksCombo()
     // Starting from the first day in the year, loop through the year a week at a time
     // adding an entry to the week combo for each week in the year
 
-    for (; day.isValid() && day <= lastDayOfYear; day = day.addDays(7))
+    for ( ; day.isValid() && (day <= lastDayOfYear) ; (day = day.addDays(7)))
     {
         // Get the ISO week number for the current day and what year that week is in
         // e.g. 1st day of this year may fall in week 53 of previous year

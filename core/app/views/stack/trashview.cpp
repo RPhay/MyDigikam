@@ -57,17 +57,17 @@ class Q_DECL_HIDDEN TrashView::Private
 public:
 
     explicit Private()
-        : model(nullptr),
-          thumbDelegate(nullptr),
-          mainLayout(nullptr),
-          btnsLayout(nullptr),
-          tableView(nullptr),
-          undoButton(nullptr),
-          restoreButton(nullptr),
-          deleteButton(nullptr),
-          deleteAction(nullptr),
-          deleteAllAction(nullptr),
-          thumbSize(ThumbnailSize::Large)
+        : model             (nullptr),
+          thumbDelegate     (nullptr),
+          mainLayout        (nullptr),
+          btnsLayout        (nullptr),
+          tableView         (nullptr),
+          undoButton        (nullptr),
+          restoreButton     (nullptr),
+          deleteButton      (nullptr),
+          deleteAction      (nullptr),
+          deleteAllAction   (nullptr),
+          thumbSize         (ThumbnailSize::Large)
     {
     }
 
@@ -93,18 +93,21 @@ public:
 
 TrashView::TrashView(QWidget* const parent)
     : QWidget(parent),
-      d(new Private)
+      d      (new Private)
 {
     // Layouts
+
     d->mainLayout    = new QVBoxLayout(this);
     d->btnsLayout    = new QHBoxLayout();
 
     // View and tools
+
     d->tableView     = new QTableView(this);
     d->model         = new DTrashItemModel(this);
     d->thumbDelegate = new ThumbnailAligningDelegate(this);
 
     // Table view settings
+
     d->tableView->setModel(d->model);
     d->tableView->setItemDelegateForColumn(0, d->thumbDelegate);
     d->tableView->horizontalHeader()->setSectionResizeMode(QHeaderView::Stretch);
@@ -117,6 +120,7 @@ TrashView::TrashView(QWidget* const parent)
     d->tableView->sortByColumn(2, Qt::DescendingOrder);
 
     // Action Buttons
+
     d->undoButton      = new QPushButton(i18n("Undo"),                   this);
     d->restoreButton   = new QPushButton(i18n("Restore"),                this);
     d->deleteButton    = new QPushButton(i18n("Delete..."),              this);
@@ -141,6 +145,7 @@ TrashView::TrashView(QWidget* const parent)
     d->deleteButton->setEnabled(false);
 
     // Adding widgets to layouts
+
     d->mainLayout->addWidget(d->tableView);
 
     d->btnsLayout->addWidget(d->undoButton);
@@ -151,6 +156,7 @@ TrashView::TrashView(QWidget* const parent)
     d->mainLayout->setContentsMargins(QMargins());
 
     // Signals and Slots connections
+
     connect(d->tableView->selectionModel(), SIGNAL(selectionChanged(QItemSelection,QItemSelection)),
             this, SLOT(slotSelectionChanged()));
 
@@ -456,7 +462,7 @@ void ThumbnailAligningDelegate::paint(QPainter* painter, const QStyleOptionViewI
 
     painter->save();
 
-    if (option.state & QStyle::State_Selected)
+    if      (option.state & QStyle::State_Selected)
     {
         painter->fillRect(option.rect, option.palette.highlight());
     }

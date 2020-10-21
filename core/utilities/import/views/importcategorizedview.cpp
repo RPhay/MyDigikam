@@ -45,6 +45,8 @@ namespace Digikam
 
 class Q_DECL_HIDDEN ImportItemViewToolTip : public ItemViewToolTip
 {
+    Q_OBJECT
+
 public:
 
     explicit ImportItemViewToolTip(ImportCategorizedView* const view)
@@ -72,11 +74,11 @@ class Q_DECL_HIDDEN ImportCategorizedView::Private
 public:
 
     explicit Private()
-      : model(nullptr),
-        filterModel(nullptr),
-        delegate(nullptr),
-        showToolTip(false),
-        scrollToItemId(0),
+      : model            (nullptr),
+        filterModel      (nullptr),
+        delegate         (nullptr),
+        showToolTip      (false),
+        scrollToItemId   (0),
         delayedEnterTimer(nullptr),
         currentMouseEvent(nullptr)
     {
@@ -97,7 +99,7 @@ public:
 
 ImportCategorizedView::ImportCategorizedView(QWidget* const parent)
     : ItemViewCategorized(parent),
-      d(new Private)
+      d                  (new Private)
 {
     setToolTip(new ImportItemViewToolTip(this));
 
@@ -328,9 +330,9 @@ QModelIndex ImportCategorizedView::nextIndexHint(const QModelIndex& anchor, cons
 {
     QModelIndex hint = ItemViewCategorized::nextIndexHint(anchor, removed);
     CamItemInfo info = d->filterModel->camItemInfo(anchor);
-
-    //qCDebug(DIGIKAM_IMPORTUI_LOG) << "Having initial hint" << hint << "for" << anchor << d->model->numberOfIndexesForCamItemInfo(info);
-
+/*
+    qCDebug(DIGIKAM_IMPORTUI_LOG) << "Having initial hint" << hint << "for" << anchor << d->model->numberOfIndexesForCamItemInfo(info);
+*/
     // Fixes a special case of multiple (face) entries for the same image.
     // If one is removed, any entry of the same image shall be preferred.
 
@@ -355,9 +357,10 @@ QModelIndex ImportCategorizedView::nextIndexHint(const QModelIndex& anchor, cons
                 if (distance < minDiff)
                 {
                     minDiff = distance;
-                    hint = index;
-
-                    //qCDebug(DIGIKAM_IMPORTUI_LOG) << "Chose index" << hint << "at distance" << minDiff << "to" << anchor;
+                    hint    = index;
+/*
+                    qCDebug(DIGIKAM_IMPORTUI_LOG) << "Chose index" << hint << "at distance" << minDiff << "to" << anchor;
+*/
                 }
             }
         }
@@ -641,3 +644,5 @@ void ImportCategorizedView::slotIccSettingsChanged(const ICCSettingsContainer&, 
 }
 
 } // namespace Digikam
+
+#include "importcategorizedview.moc"

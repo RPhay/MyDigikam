@@ -39,6 +39,8 @@ typedef QPair<QString, QString> QueryItem;
 
 class KJobWithSubjob : public KJob
 {
+    Q_OBJECT
+
 protected:
 
     /**
@@ -54,6 +56,8 @@ protected:
 
 class KJobWithSubjobs : public KJob
 {
+    Q_OBJECT
+
 protected:
 
     /**

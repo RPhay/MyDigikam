@@ -100,6 +100,7 @@ private:
 
 class ThumbnailAligningDelegate : public QStyledItemDelegate
 {
+    Q_OBJECT
 
 public:
 

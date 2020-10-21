@@ -49,7 +49,8 @@ public:
     explicit ImportCategorizedView(QWidget* const parent = nullptr);
     ~ImportCategorizedView() override;
 
-    void setModels(ImportItemModel* model, ImportSortFilterModel* filterModel);
+    void setModels(ImportItemModel* model,
+                   ImportSortFilterModel* filterModel);
 
     ImportItemModel*       importItemModel()                  const;
     ImportSortFilterModel* importSortFilterModel()            const;
@@ -195,7 +196,7 @@ protected:
     /// Reimplement these in a subclass
     virtual void activated(const CamItemInfo& info, Qt::KeyboardModifiers modifiers);
     virtual void showContextMenuOnInfo(QContextMenuEvent* event, const CamItemInfo& info);
-    void showContextMenuOnIndex(QContextMenuEvent* event, const QModelIndex& index)                                override;
+    void showContextMenuOnIndex(QContextMenuEvent* event, const QModelIndex& index)                                        override;
 
 private Q_SLOTS:
 

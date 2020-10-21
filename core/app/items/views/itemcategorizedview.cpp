@@ -54,6 +54,8 @@ namespace Digikam
 
 class Q_DECL_HIDDEN ItemCategorizedViewToolTip : public ItemViewToolTip
 {
+    Q_OBJECT
+
 public:
 
     explicit ItemCategorizedViewToolTip(ItemCategorizedView* const view)
@@ -757,3 +759,5 @@ void ItemCategorizedView::slotIccSettingsChanged(const ICCSettingsContainer&, co
 }
 
 } // namespace Digikam
+
+#include "itemcategorizedview.moc"
