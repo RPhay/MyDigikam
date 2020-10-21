@@ -40,13 +40,15 @@ namespace DigikamGenericHtmlGalleryPlugin
 
 class HTMLSelectionPage : public DWizardPage
 {
+    Q_OBJECT
+
 public:
 
     explicit HTMLSelectionPage(QWizard* const dialog, const QString& title);
-    ~HTMLSelectionPage() override;
+    ~HTMLSelectionPage()    override;
 
-    void initializePage() override;
-    bool validatePage() override;
+    void initializePage()   override;
+    bool validatePage()     override;
     bool isComplete() const override;
 
     void setItemsList(const QList<QUrl>& urls);

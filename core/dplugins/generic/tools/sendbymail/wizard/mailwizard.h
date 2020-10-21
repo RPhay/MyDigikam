@@ -41,6 +41,8 @@ namespace DigikamGenericSendByMailPlugin
 
 class MailWizard : public DWizardDlg
 {
+    Q_OBJECT
+
 public:
 
     explicit MailWizard(QWidget* const parent, DInfoInterface* const iface = nullptr);

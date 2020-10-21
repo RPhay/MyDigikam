@@ -52,12 +52,12 @@ class HTMLWizard : public DWizardDlg
 public:
 
     explicit HTMLWizard(QWidget* const parent, DInfoInterface* const iface = nullptr);
-    ~HTMLWizard() override;
+    ~HTMLWizard()                          override;
 
     GalleryInfo*      galleryInfo()  const;
     GalleryTheme::Ptr galleryTheme() const;
 
-    bool validateCurrentPage() override;
+    bool validateCurrentPage()             override;
     int  nextId()                    const override;
 
     void setItemsList(const QList<QUrl>& urls);

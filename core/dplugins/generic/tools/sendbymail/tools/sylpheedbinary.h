@@ -34,6 +34,7 @@ namespace DigikamGenericSendByMailPlugin
 
 class SylpheedBinary : public DBinaryIface
 {
+
 public:
 
     explicit SylpheedBinary()

@@ -34,6 +34,7 @@ namespace DigikamGenericPanoramaPlugin
 
 class CPFindBinary : public DBinaryIface
 {
+    Q_OBJECT
 
 public:
 

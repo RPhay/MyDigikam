@@ -34,13 +34,15 @@ namespace Vkontakte
 
 class CreateAlbumJob : public VkontakteJob
 {
+    Q_OBJECT
+
 public:
 
     explicit CreateAlbumJob(const QString& accessToken,
-                   const QString& title,
-                   const QString& description = QString(),
-                   int privacy = AlbumInfo::PRIVACY_UNKNOWN,
-                   int comment_privacy = AlbumInfo::PRIVACY_UNKNOWN);
+                            const QString& title,
+                            const QString& description = QString(),
+                            int privacy = AlbumInfo::PRIVACY_UNKNOWN,
+                            int comment_privacy = AlbumInfo::PRIVACY_UNKNOWN);
     ~CreateAlbumJob() override;
 
     AlbumInfo album() const;

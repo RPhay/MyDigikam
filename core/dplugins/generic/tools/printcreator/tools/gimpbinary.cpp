@@ -4,7 +4,7 @@
  * https://www.digikam.org
  *
  * Date        : 2017-07-04
- * Description : Autodetect balsa binary program
+ * Description : Autodetect gimp binary program
  *
  * Copyright (C) 2017-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
@@ -20,41 +20,44 @@
  *
  * ============================================================ */
 
-#ifndef BALSA_BINARY_H
-#define BALSA_BINARY_H
+#include "gimpbinary.h"
 
-// Local includes
+// KDE includes
 
-#include "dbinaryiface.h"
+#include <klocalizedstring.h>
 
-using namespace Digikam;
-
-namespace DigikamGenericSendByMailPlugin
+namespace DigikamGenericPrintCreatorPlugin
 {
 
-class BalsaBinary : public DBinaryIface
+GimpBinary::GimpBinary()
+    : DBinaryIface(
+
+#ifdef Q_OS_MACOS
+
+                   QLatin1String("GIMP-bin"),
+
+#elif defined Q_OS_WIN
+
+                   QLatin1String("gimp-2.10"),
+
+#else
+
+                   QLatin1String("gimp"),
+
+#endif
+
+                   QLatin1String("The Gimp"),
+                   QLatin1String("https://www.gimp.org/downloads/"),
+                   QLatin1String("PrintCreator"),
+                   QStringList(QLatin1String("-v")),
+                   i18n("The GNU Image Manipulation Program.")
+                  )
 {
+    setup();
+}
 
-public:
+GimpBinary::~GimpBinary()
+{
+}
 
-    explicit BalsaBinary()
-        : DBinaryIface(
-                       QLatin1String("balsa"),
-                       QLatin1String("Balsa"),
-                       QLatin1String("https://pawsa.fedorapeople.org/balsa/"),
-                       QLatin1String("SendByMail"),
-                       QStringList(QLatin1String("-v")),
-                       i18n("Gnome Mail Client.")
-                      )
-        {
-            setup();
-        }
-
-    ~BalsaBinary() override
-    {
-    }
-};
-
-} // namespace DigikamGenericSendByMailPlugin
-
-#endif // BALSA_BINARY_H
+} // namespace DigikamGenericPrintCreatorPlugin

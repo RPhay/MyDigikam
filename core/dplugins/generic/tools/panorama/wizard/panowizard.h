@@ -42,6 +42,7 @@ class PanoManager;
 
 class PanoWizard : public DWizardDlg
 {
+    Q_OBJECT
 
 public:
 

@@ -40,12 +40,14 @@ namespace DigikamGenericVideoSlideShowPlugin
 
 class VidSlideAlbumsPage : public DWizardPage
 {
+    Q_OBJECT
+
 public:
 
     explicit VidSlideAlbumsPage(QWizard* const dialog, const QString& title);
-    ~VidSlideAlbumsPage() override;
+    ~VidSlideAlbumsPage()   override;
 
-    bool validatePage() override;
+    bool validatePage()     override;
     bool isComplete() const override;
 
 private:

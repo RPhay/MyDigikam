@@ -47,10 +47,10 @@ class AdvPrintWizard : public DWizardDlg
 public:
 
     explicit AdvPrintWizard(QWidget* const, DInfoInterface* const iface = nullptr);
-    ~AdvPrintWizard() override;
+    ~AdvPrintWizard()                   override;
 
     void setItemsList(const QList<QUrl>& fileList = QList<QUrl>());
-    QList<QUrl> itemsList() const;
+    QList<QUrl> itemsList()      const;
 
     DInfoInterface*   iface()    const;
     AdvPrintSettings* settings() const;
@@ -62,7 +62,7 @@ public:
 
     void updateCropFrame(AdvPrintPhoto* const, int);
 
-    int  nextId() const                 override;
+    int  nextId()                const override;
 
     static int normalizedInt(double n);
 

@@ -34,6 +34,7 @@ namespace DigikamGenericSendByMailPlugin
 
 class NetscapeBinary : public DBinaryIface
 {
+
 public:
 
     explicit NetscapeBinary()

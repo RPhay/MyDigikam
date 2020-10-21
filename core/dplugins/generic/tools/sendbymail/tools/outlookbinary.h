@@ -33,6 +33,7 @@ namespace Digikam
 
 class OutlookBinary : public DBinaryIface
 {
+
 public:
 
     OutlookBinary()

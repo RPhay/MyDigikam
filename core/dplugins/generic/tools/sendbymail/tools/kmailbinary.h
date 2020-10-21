@@ -34,6 +34,7 @@ namespace DigikamGenericSendByMailPlugin
 
 class KmailBinary : public DBinaryIface
 {
+
 public:
 
     explicit KmailBinary()

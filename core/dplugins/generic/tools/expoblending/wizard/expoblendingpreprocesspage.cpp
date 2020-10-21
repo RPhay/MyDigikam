@@ -59,14 +59,14 @@ class Q_DECL_HIDDEN ExpoBlendingPreProcessPage::Private
 public:
 
     explicit Private()
-     :  progressPix   (nullptr),
-        progressCount (0),
-        progressTimer (nullptr),
+     :  progressCount (0),
         progressLabel (nullptr),
-        mngr          (nullptr),
+        progressTimer (nullptr),
         title         (nullptr),
         alignCheckBox (nullptr),
-        detailsText   (nullptr)
+        detailsText   (nullptr),
+        progressPix   (nullptr),
+        mngr          (nullptr)
     {
     }
 

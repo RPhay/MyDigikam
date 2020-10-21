@@ -35,6 +35,7 @@ namespace DigikamGenericGLViewerPlugin
 
 class GLViewerHelpDlg : public DPluginDialog
 {
+    Q_OBJECT
 
 public:
 

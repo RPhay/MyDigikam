@@ -38,6 +38,7 @@ namespace DigikamGenericSlideShowPlugin
 
 class SlideHelp : public QDialog
 {
+    Q_OBJECT
 
 public:
 

@@ -45,13 +45,14 @@ class PresentationContainer;
 
 class SoundtrackPreview : public QDialog
 {
+    Q_OBJECT
 
-public :
+public:
 
     explicit SoundtrackPreview(QWidget* const, const QList<QUrl>&, PresentationContainer* const);
     ~SoundtrackPreview() override;
 
-private :
+private:
 
     PresentationAudioWidget* m_playbackWidget;
 };

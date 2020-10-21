@@ -38,13 +38,15 @@ namespace DigikamGenericHtmlGalleryPlugin
 
 class HTMLIntroPage : public DWizardPage
 {
+    Q_OBJECT
+
 public:
 
     explicit HTMLIntroPage(QWizard* const dialog, const QString& title);
-    ~HTMLIntroPage() override;
+    ~HTMLIntroPage()      override;
 
     void initializePage() override;
-    bool validatePage() override;
+    bool validatePage()   override;
 
 private:
 

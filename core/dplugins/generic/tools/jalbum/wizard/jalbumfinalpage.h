@@ -43,9 +43,9 @@ class JAlbumFinalPage : public DWizardPage
 public:
 
     explicit JAlbumFinalPage(QWizard* const dialog, const QString& title);
-    ~JAlbumFinalPage() override;
+    ~JAlbumFinalPage()      override;
 
-    void initializePage() override;
+    void initializePage()   override;
     bool isComplete() const override;
 
 private Q_SLOTS:

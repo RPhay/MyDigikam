@@ -34,6 +34,7 @@ namespace DigikamGenericSendByMailPlugin
 
 class ThunderbirdBinary : public DBinaryIface
 {
+
 public:
 
     explicit ThunderbirdBinary()

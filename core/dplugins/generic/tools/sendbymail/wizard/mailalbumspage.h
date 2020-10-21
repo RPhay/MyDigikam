@@ -40,12 +40,14 @@ namespace DigikamGenericSendByMailPlugin
 
 class MailAlbumsPage : public DWizardPage
 {
+    Q_OBJECT
+
 public:
 
     explicit MailAlbumsPage(QWizard* const dialog, const QString& title);
-    ~MailAlbumsPage() override;
+    ~MailAlbumsPage()       override;
 
-    bool validatePage() override;
+    bool validatePage()     override;
     bool isComplete() const override;
 
 private:

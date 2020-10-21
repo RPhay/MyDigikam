@@ -20,6 +20,7 @@ include_directories($<TARGET_PROPERTY:Qt5::Widgets,INTERFACE_INCLUDE_DIRECTORIES
 set(expoblendingplugin_SRCS
     ${CMAKE_CURRENT_SOURCE_DIR}/manager/expoblendingmanager.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/manager/expoblendingthread.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/manager/alignbinary.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/manager/enfusebinary.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/wizard/expoblendingwizard.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/wizard/expoblendingintropage.cpp

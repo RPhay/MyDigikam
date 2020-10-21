@@ -46,6 +46,8 @@ using namespace Digikam;
 
 class Q_DECL_HIDDEN Task : public ActionJob
 {
+    Q_OBJECT
+
 public:
 
     Task()
@@ -302,3 +304,5 @@ int main(int argc, char* argv[])
     app.exec();
     return 0;
 }
+
+#include "ditemslisttest.moc"

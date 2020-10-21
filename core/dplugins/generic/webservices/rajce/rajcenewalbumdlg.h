@@ -37,6 +37,8 @@ namespace DigikamGenericRajcePlugin
 
 class RajceNewAlbumDlg : public WSNewAlbumDialog
 {
+    Q_OBJECT
+
 public:
 
     explicit RajceNewAlbumDlg(QWidget* const parent = nullptr);

@@ -37,6 +37,8 @@ namespace DigikamGenericHtmlGalleryPlugin
 
 class GalleryConfig : public KConfigSkeleton
 {
+    Q_OBJECT
+
 public:
 
     class EnumFullFormat

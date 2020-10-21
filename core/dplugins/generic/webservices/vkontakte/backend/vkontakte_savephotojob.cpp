@@ -47,6 +47,7 @@ SavePhotoJob::SavePhotoJob(const QString& accessToken,
             addQueryItem(QLatin1String("hash"),        photoIdData[QLatin1String("hash")].toString());
 
             // TODO: may be "gid" will also be in "photoIdData", so this argument is unnecessary?
+
             if (gid != -1)
             {
                 addQueryItem(QLatin1String("gid"), QString::number(gid));
@@ -67,6 +68,7 @@ SavePhotoJob::SavePhotoJob(const QString& accessToken,
         {
             // TODO: support optional parameters "uid" and "gid" (for posting to other users' and groups' walls)
             // TODO: for posting onto a wall, we must also call the "wall.post" VK method
+
             addQueryItem(QLatin1String("server"), photoIdData[QLatin1String("server")].toString());
             addQueryItem(QLatin1String("photo"),  photoIdData[QLatin1String("photo")].toString());
             addQueryItem(QLatin1String("hash"),   photoIdData[QLatin1String("hash")].toString());
@@ -76,12 +78,14 @@ SavePhotoJob::SavePhotoJob(const QString& accessToken,
         default:
         {
             // TODO: handle unknown destination error
+
             break;
         }
     }
 }
 
 // static
+
 QString SavePhotoJob::getMethod(Vkontakte::UploadPhotosJob::Dest dest)
 {
     switch (dest)
@@ -113,6 +117,7 @@ void SavePhotoJob::handleItem(const QJsonValue& item)
     if (!item.isObject())
     {
         // TODO: report error!!!
+
         m_list.clear();
         return;
     }
@@ -129,6 +134,7 @@ void SavePhotoJob::handleData(const QJsonValue& data)
             if (!data.isArray())
             {
                 // TODO: report error!!!
+
                 return;
             }
 

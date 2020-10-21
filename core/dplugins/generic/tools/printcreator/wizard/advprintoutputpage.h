@@ -38,13 +38,15 @@ namespace DigikamGenericPrintCreatorPlugin
 
 class AdvPrintOutputPage : public DWizardPage
 {
+    Q_OBJECT
+
 public:
 
     explicit AdvPrintOutputPage(QWizard* const dialog, const QString& title);
-    ~AdvPrintOutputPage() override;
+    ~AdvPrintOutputPage()   override;
 
-    void initializePage() override;
-    bool validatePage() override;
+    void initializePage()   override;
+    bool validatePage()     override;
     bool isComplete() const override;
 
 private:

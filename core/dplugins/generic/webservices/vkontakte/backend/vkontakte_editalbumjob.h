@@ -34,6 +34,8 @@ namespace Vkontakte
 
 class EditAlbumJob : public VkontakteJob
 {
+    Q_OBJECT
+
 public:
 
     EditAlbumJob(const QString& accessToken,

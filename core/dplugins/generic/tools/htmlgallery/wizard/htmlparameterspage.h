@@ -42,6 +42,8 @@ class GalleryInfo;
 
 class HTMLParametersPage : public DWizardPage
 {
+    Q_OBJECT
+
 public:
 
     explicit HTMLParametersPage(QWizard* const dialog, const QString& title);

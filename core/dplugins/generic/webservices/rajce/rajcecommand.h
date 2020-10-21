@@ -88,6 +88,8 @@ private:
 
 class LoginCommand : public RajceCommand
 {
+    Q_OBJECT
+
 public:
 
     explicit LoginCommand(const QString& username, const QString& password);
@@ -102,6 +104,8 @@ protected:
 
 class OpenAlbumCommand : public RajceCommand
 {
+    Q_OBJECT
+
 public:
 
     explicit OpenAlbumCommand(unsigned albumId, const RajceSession& state);
@@ -116,6 +120,8 @@ protected:
 
 class CreateAlbumCommand : public RajceCommand
 {
+    Q_OBJECT
+
 public:
 
     explicit CreateAlbumCommand(const QString& name,
@@ -133,6 +139,8 @@ protected:
 
 class CloseAlbumCommand : public RajceCommand
 {
+    Q_OBJECT
+
 public:
 
     explicit CloseAlbumCommand(const RajceSession& state);
@@ -147,6 +155,8 @@ protected:
 
 class AlbumListCommand : public RajceCommand
 {
+    Q_OBJECT
+
 public:
 
     explicit AlbumListCommand(const RajceSession&);
@@ -161,6 +171,8 @@ protected:
 
 class AddPhotoCommand : public RajceCommand
 {
+    Q_OBJECT
+
 public:
 
     explicit AddPhotoCommand(const    QString& tmpDir,

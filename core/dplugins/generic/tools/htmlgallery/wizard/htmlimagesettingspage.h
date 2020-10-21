@@ -38,12 +38,14 @@ namespace DigikamGenericHtmlGalleryPlugin
 
 class HTMLImageSettingsPage : public DWizardPage
 {
+    Q_OBJECT
+
 public:
 
     explicit HTMLImageSettingsPage(QWizard* const dialog, const QString& title);
     ~HTMLImageSettingsPage() override;
 
-    void initializePage() override;
+    void initializePage()    override;
 
 private:
 

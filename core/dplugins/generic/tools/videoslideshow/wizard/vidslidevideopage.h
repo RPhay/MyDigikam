@@ -43,10 +43,10 @@ class VidSlideVideoPage : public DWizardPage
 public:
 
     explicit VidSlideVideoPage(QWizard* const dialog, const QString& title);
-    ~VidSlideVideoPage() override;
+    ~VidSlideVideoPage()    override;
 
-    void initializePage() override;
-    bool validatePage() override;
+    void initializePage()   override;
+    bool validatePage()     override;
 
 public Q_SLOTS:
 

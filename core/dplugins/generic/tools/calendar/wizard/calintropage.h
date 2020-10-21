@@ -38,6 +38,7 @@ namespace DigikamGenericCalendarPlugin
 
 class CalIntroPage : public DWizardPage
 {
+    Q_OBJECT
 
 public:
 

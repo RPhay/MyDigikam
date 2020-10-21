@@ -40,12 +40,14 @@ namespace DigikamGenericPrintCreatorPlugin
 
 class AdvPrintAlbumsPage : public DWizardPage
 {
+    Q_OBJECT
+
 public:
 
     explicit AdvPrintAlbumsPage(QWizard* const dialog, const QString& title);
-    ~AdvPrintAlbumsPage() override;
+    ~AdvPrintAlbumsPage()   override;
 
-    bool validatePage() override;
+    bool validatePage()     override;
     bool isComplete() const override;
 
 private:

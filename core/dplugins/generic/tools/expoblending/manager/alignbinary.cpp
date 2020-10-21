@@ -3,10 +3,11 @@
  * This file is a part of digiKam project
  * https://www.digikam.org
  *
- * Date        : 2009-11-13
- * Description : a tool to blend bracketed images.
+ * Date        : 2009-12-23
+ * Description : Autodetect align_image_stack binary program and version
  *
  * Copyright (C) 2009-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2012-2015 by Benjamin Girault <benjamin dot girault at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -15,39 +16,32 @@
  *
  * This program is distributed in the hope that it will be useful,
  * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
  * GNU General Public License for more details.
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_EXPO_BLENDING_LAST_PAGE_H
-#define DIGIKAM_EXPO_BLENDING_LAST_PAGE_H
-
-// Local includes
-
-#include "dwizardpage.h"
-
-using namespace Digikam;
+#include "alignbinary.h"
 
 namespace DigikamGenericExpoBlendingPlugin
 {
-class ExpoBlendingManager;
 
-class ExpoBlendingLastPage : public DWizardPage
+AlignBinary::AlignBinary()
+    : DBinaryIface(QLatin1String("align_image_stack"),
+                   QLatin1String("0.8"),
+                   QLatin1String("align_image_stack version "),
+                   1,
+                   QLatin1String("Hugin"),
+                   QLatin1String("http://hugin.sourceforge.net/download/"),
+                   QLatin1String("ExpoBlending"),
+                   QStringList(QLatin1String("-h"))
+                  )
 {
-    Q_OBJECT
+    setup();
+}
 
-public:
-
-    explicit ExpoBlendingLastPage(ExpoBlendingManager* const mngr, QWizard* const dlg);
-    ~ExpoBlendingLastPage() override;
-
-private:
-
-    class Private;
-    Private* const d;
-};
+AlignBinary::~AlignBinary()
+{
+}
 
 } // namespace DigikamGenericExpoBlendingPlugin
-
-#endif // DIGIKAM_EXPO_BLENDING_LAST_PAGE_H

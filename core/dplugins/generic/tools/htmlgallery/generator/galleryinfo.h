@@ -46,6 +46,8 @@ namespace DigikamGenericHtmlGalleryPlugin
  */
 class GalleryInfo : public GalleryConfig
 {
+    Q_OBJECT
+
 public:
 
     enum ImageGetOption
@@ -59,9 +61,9 @@ public:
     explicit GalleryInfo(DInfoInterface* const iface = nullptr);
     ~GalleryInfo() override;
 
-    QString fullFormatString() const;
+    QString fullFormatString()                                  const;
 
-    QString thumbnailFormatString() const;
+    QString thumbnailFormatString()                             const;
 
     QString getThemeParameterValue(const QString& theme, const QString& parameter,
                                    const QString& defaultValue) const;

@@ -33,6 +33,8 @@ namespace Vkontakte
 
 class DeleteAlbumJob : public VkontakteJob
 {
+    Q_OBJECT
+
 public:
 
     explicit DeleteAlbumJob(const QString& accessToken, int aid);

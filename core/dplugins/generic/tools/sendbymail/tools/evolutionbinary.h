@@ -34,6 +34,7 @@ namespace DigikamGenericSendByMailPlugin
 
 class EvolutionBinary : public DBinaryIface
 {
+
 public:
 
     explicit EvolutionBinary()

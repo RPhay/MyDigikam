@@ -52,6 +52,7 @@ typedef QMap<QUrl, QImage> LoadedImages;
 
 class Q_DECL_HIDDEN LoadThread : public QThread
 {
+    Q_OBJECT
 
 public:
 
@@ -352,3 +353,5 @@ void PresentationLoader::checkIsIn(int index) const
 }
 
 } // namespace DigikamGenericPresentationPlugin
+
+#include "presentationloader.moc"

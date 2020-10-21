@@ -221,11 +221,12 @@ void ShowfotoSortFilterModel::setDirectSourceShowfotoModel(ShowfotoItemModel* co
 
 class Q_DECL_HIDDEN ShowfotoFilterModel::ShowfotoFilterModelPrivate : public QObject
 {
+    Q_OBJECT
 
 public:
 
     ShowfotoFilterModelPrivate()
-      : q(nullptr),
+      : q                (nullptr),
         showfotoItemModel(nullptr)
     {
     }
@@ -251,7 +252,7 @@ void ShowfotoFilterModel::ShowfotoFilterModelPrivate::init(ShowfotoFilterModel* 
 
 ShowfotoFilterModel::ShowfotoFilterModel(QObject* const parent)
     : ShowfotoSortFilterModel(parent),
-      d_ptr(new ShowfotoFilterModelPrivate)
+      d_ptr                  (new ShowfotoFilterModelPrivate)
 {
     d_ptr->init(this);
 }
@@ -505,3 +506,5 @@ bool NoDuplicatesShowfotoFilterModel::filterAcceptsRow(int source_row, const QMo
 }
 
 } // namespace ShowFoto
+
+#include "showfotofiltermodel.moc"

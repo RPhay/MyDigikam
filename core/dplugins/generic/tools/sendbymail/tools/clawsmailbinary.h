@@ -34,6 +34,7 @@ namespace DigikamGenericSendByMailPlugin
 
 class ClawsMailBinary : public DBinaryIface
 {
+
 public:
 
     explicit ClawsMailBinary()

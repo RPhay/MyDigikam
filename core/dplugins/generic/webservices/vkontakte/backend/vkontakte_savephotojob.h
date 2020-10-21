@@ -38,12 +38,12 @@
 namespace Vkontakte
 {
 
-// This class is not exported, so:
-//    - we don't care about ABI of this class (not using Pimpl)
-//    - library's users should use class UploadPhotosJob
 class SavePhotoJob : public VkontakteJob
 {
+    Q_OBJECT
+
 public:
+
     SavePhotoJob(const QString& accessToken,
                  UploadPhotosJob::Dest dest,
                  const QVariantMap& photoIdData, int gid = -1);
@@ -51,13 +51,15 @@ public:
     QList<PhotoInfo> list() const;
 
 protected:
+
     QString getMethod(Vkontakte::UploadPhotosJob::Dest dest);
     void handleItem(const QJsonValue& item);
     void handleData(const QJsonValue& data) override;
 
 private:
+
     UploadPhotosJob::Dest m_dest;
-    QList<PhotoInfo> m_list;
+    QList<PhotoInfo>      m_list;
 };
 
 } // namespace Vkontakte

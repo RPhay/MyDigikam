@@ -37,6 +37,8 @@
 
 class Q_DECL_HIDDEN Mytask : public ActionJob
 {
+    Q_OBJECT
+
 public:
 
     Mytask()
@@ -180,3 +182,5 @@ void MyActionThread::slotJobStarted()
 
     emit starting(task->fileUrl);
 }
+
+#include "myactionthread.moc"

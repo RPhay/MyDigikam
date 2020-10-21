@@ -40,20 +40,22 @@ namespace DigikamGenericSlideShowPlugin
 
 class SlideProperties : public QWidget
 {
+    Q_OBJECT
+
 public:
 
     explicit SlideProperties(SlideShowSettings* const settings, QWidget* const parent);
-    ~SlideProperties() override;
+    ~SlideProperties()              override;
 
     void setCurrentUrl(const QUrl& url);
     void togglePaintEnabled();
 
 private:
 
-    void printInfoText(QPainter& p, int& offset, const QString& str, const QColor& pcol=Qt::white);
+    void printInfoText(QPainter& p, int& offset, const QString& str, const QColor& pcol = Qt::white);
     void printComments(QPainter& p, int& offset, const QString& comments);
     void printTags(QPainter& p, int& offset, QStringList& tags);
-    void paintEvent(QPaintEvent*) override;
+    void paintEvent(QPaintEvent*)   override;
 
 private:
 

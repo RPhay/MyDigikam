@@ -42,6 +42,8 @@ namespace ShowFoto
 
 class Q_DECL_HIDDEN ShowfotoItemViewToolTip : public ItemViewToolTip
 {
+    Q_OBJECT
+
 public:
 
     explicit ShowfotoItemViewToolTip(ShowfotoCategorizedView* const view)
@@ -69,11 +71,11 @@ class Q_DECL_HIDDEN ShowfotoCategorizedView::Private
 public:
 
     explicit Private()
-      : model(nullptr),
-        filterModel(nullptr),
-        delegate(nullptr),
-        showToolTip(false),
-        scrollToItemId(0),
+      : model            (nullptr),
+        filterModel      (nullptr),
+        delegate         (nullptr),
+        showToolTip      (false),
+        scrollToItemId   (0),
         delayedEnterTimer(nullptr),
         currentMouseEvent(nullptr)
     {
@@ -94,7 +96,7 @@ public:
 
 ShowfotoCategorizedView::ShowfotoCategorizedView(QWidget* const parent)
     : ItemViewCategorized(parent),
-      d(new Private)
+      d                  (new Private)
 {
     setToolTip(new ShowfotoItemViewToolTip(this));
 
@@ -590,3 +592,5 @@ AbstractItemDragDropHandler* ShowfotoCategorizedView::dragDropHandler() const
 }
 
 } // namespace Showfoto
+
+#include "showfotocategorizedview.moc"

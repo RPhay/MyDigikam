@@ -35,25 +35,12 @@ namespace DigikamGenericExpoBlendingPlugin
 
 class AlignBinary : public DBinaryIface
 {
+    Q_OBJECT
+
 public:
 
-    explicit AlignBinary()
-        : DBinaryIface(QLatin1String("align_image_stack"),
-                       QLatin1String("0.8"),
-                       QLatin1String("align_image_stack version "),
-                       1,
-                       QLatin1String("Hugin"),
-                       QLatin1String("http://hugin.sourceforge.net/download/"),
-                       QLatin1String("ExpoBlending"),
-                       QStringList(QLatin1String("-h"))
-                      )
-        {
-            setup();
-        }
-
-    ~AlignBinary() override
-    {
-    }
+    explicit AlignBinary();
+    ~AlignBinary() override;
 };
 
 } // namespace DigikamGenericExpoBlendingPlugin

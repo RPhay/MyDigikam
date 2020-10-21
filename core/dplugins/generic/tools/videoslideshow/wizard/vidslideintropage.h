@@ -38,14 +38,15 @@ namespace DigikamGenericVideoSlideShowPlugin
 
 class VidSlideIntroPage : public DWizardPage
 {
+    Q_OBJECT
 
 public:
 
     explicit VidSlideIntroPage(QWizard* const dialog, const QString& title);
-    ~VidSlideIntroPage() override;
+    ~VidSlideIntroPage()    override;
 
-    void initializePage() override;
-    bool validatePage() override;
+    void initializePage()   override;
+    bool validatePage()     override;
 
 private:
 

@@ -38,13 +38,15 @@ namespace DigikamGenericHtmlGalleryPlugin
 
 class HTMLOutputPage : public DWizardPage
 {
+    Q_OBJECT
+
 public:
 
     explicit HTMLOutputPage(QWizard* const dialog, const QString& title);
-    ~HTMLOutputPage() override;
+    ~HTMLOutputPage()       override;
 
-    void initializePage() override;
-    bool validatePage() override;
+    void initializePage()   override;
+    bool validatePage()     override;
     bool isComplete() const override;
 
 private:
