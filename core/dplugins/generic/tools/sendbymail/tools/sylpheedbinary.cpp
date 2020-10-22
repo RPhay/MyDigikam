@@ -4,7 +4,7 @@
  * https://www.digikam.org
  *
  * Date        : 2017-07-04
- * Description : Autodetect Netscape Messenger binary program
+ * Description : Autodetect sylpheed binary program
  *
  * Copyright (C) 2017-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
@@ -20,28 +20,30 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_NETSCAPE_BINARY_H
-#define DIGIKAM_NETSCAPE_BINARY_H
+#include "sylpheedbinary.h"
 
-// Local includes
+// KDE includes
 
-#include "dbinaryiface.h"
-
-using namespace Digikam;
+#include <klocalizedstring.h>
 
 namespace DigikamGenericSendByMailPlugin
 {
 
-class NetscapeBinary : public DBinaryIface
+SylpheedBinary::SylpheedBinary()
+    : DBinaryIface(
+                   QLatin1String("sylpheed"),
+                   QLatin1String("Sylpheed"),
+                   QLatin1String("https://sylpheed.sraoss.jp/en/"),
+                   QLatin1String("SendByMail"),
+                   QStringList(QLatin1String("--version")),
+                   i18n("GTK based Mail Client.")
+                  )
 {
-    Q_OBJECT
+    setup();
+}
 
-public:
-
-    explicit NetscapeBinary();
-    ~NetscapeBinary() override;
-};
+SylpheedBinary::~SylpheedBinary()
+{
+}
 
 } // namespace DigikamGenericSendByMailPlugin
-
-#endif // DIGIKAM_NETSCAPE_BINARY_H

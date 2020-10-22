@@ -20,28 +20,30 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_NETSCAPE_BINARY_H
-#define DIGIKAM_NETSCAPE_BINARY_H
+#include "netscapebinary.h"
 
-// Local includes
+// KDE includes
 
-#include "dbinaryiface.h"
-
-using namespace Digikam;
+#include <klocalizedstring.h>
 
 namespace DigikamGenericSendByMailPlugin
 {
 
-class NetscapeBinary : public DBinaryIface
+NetscapeBinary::NetscapeBinary()
+    : DBinaryIface(
+                   QLatin1String("netscape"),
+                   QLatin1String("Netscape Messenger"),
+                   QLatin1String("https://en.wikipedia.org/wiki/Netscape_Mail_%26_Newsgroups"),
+                   QLatin1String("SendByMail"),
+                   QStringList(QLatin1String("-v")),
+                   i18n("Netscape Mail Client.")
+                  )
 {
-    Q_OBJECT
+    setup();
+}
 
-public:
-
-    explicit NetscapeBinary();
-    ~NetscapeBinary() override;
-};
+NetscapeBinary::~NetscapeBinary()
+{
+}
 
 } // namespace DigikamGenericSendByMailPlugin
-
-#endif // DIGIKAM_NETSCAPE_BINARY_H

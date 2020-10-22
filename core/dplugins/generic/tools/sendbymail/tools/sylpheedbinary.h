@@ -20,8 +20,8 @@
  *
  * ============================================================ */
 
-#ifndef SYLPHEED_BINARY_H
-#define SYLPHEED_BINARY_H
+#ifndef DIGIKAM_SYLPHEED_BINARY_H
+#define DIGIKAM_SYLPHEED_BINARY_H
 
 // Local includes
 
@@ -34,27 +34,14 @@ namespace DigikamGenericSendByMailPlugin
 
 class SylpheedBinary : public DBinaryIface
 {
+    Q_OBJECT
 
 public:
 
-    explicit SylpheedBinary()
-        : DBinaryIface(
-                       QLatin1String("sylpheed"),
-                       QLatin1String("Sylpheed"),
-                       QLatin1String("https://sylpheed.sraoss.jp/en/"),
-                       QLatin1String("SendByMail"),
-                       QStringList(QLatin1String("--version")),
-                       i18n("GTK based Mail Client.")
-                      )
-        {
-            setup();
-        }
-
-    ~SylpheedBinary() override
-    {
-    }
+    explicit SylpheedBinary();
+    ~SylpheedBinary() override;
 };
 
 } // namespace DigikamGenericSendByMailPlugin
 
-#endif // SYLPHEED_BINARY_H
+#endif // DIGIKAM_SYLPHEED_BINARY_H
