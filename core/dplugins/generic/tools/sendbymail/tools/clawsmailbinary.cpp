@@ -20,28 +20,30 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_CLAWS_MAIL_BINARY_H
-#define DIGIKAM_CLAWS_MAIL_BINARY_H
+#include "clawsmailbinary.h"
 
-// Local includes
+// KDE includes
 
-#include "dbinaryiface.h"
-
-using namespace Digikam;
+#include <klocalizedstring.h>
 
 namespace DigikamGenericSendByMailPlugin
 {
 
-class ClawsMailBinary : public DBinaryIface
+ClawsMailBinary::ClawsMailBinary()
+    : DBinaryIface(
+                   QLatin1String("claws-mail"),
+                   QLatin1String("Claws Mail"),
+                   QLatin1String("https://www.claws-mail.org/"),
+                   QLatin1String("SendByMail"),
+                   QStringList(QLatin1String("-v")),
+                   i18n("GTK based Mail Client.")
+                  )
 {
-    Q_OBJECT
+    setup();
+}
 
-public:
-
-    explicit ClawsMailBinary();
-    ~ClawsMailBinary() override;
-};
+ClawsMailBinary::~ClawsMailBinary()
+{
+}
 
 } // namespace DigikamGenericSendByMailPlugin
-
-#endif // DIGIKAM_CLAWS_MAIL_BINARY_H

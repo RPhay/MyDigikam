@@ -35,6 +35,8 @@ set(sendbymailplugin_SRCS
     ${CMAKE_CURRENT_SOURCE_DIR}/tools/kmailbinary.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/tools/sylpheedbinary.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/tools/netscapebinary.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/tools/clawsmailbinary.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/tools/balsabinary.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/sendbymailplugin.cpp
 )
 

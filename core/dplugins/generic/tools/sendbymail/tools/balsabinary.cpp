@@ -4,7 +4,7 @@
  * https://www.digikam.org
  *
  * Date        : 2017-07-04
- * Description : Autodetect claws-mail binary program
+ * Description : Autodetect balsa binary program
  *
  * Copyright (C) 2017-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
@@ -20,28 +20,30 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_CLAWS_MAIL_BINARY_H
-#define DIGIKAM_CLAWS_MAIL_BINARY_H
+#include "balsabinary.h"
 
-// Local includes
+// KDE includes
 
-#include "dbinaryiface.h"
-
-using namespace Digikam;
+#include <klocalizedstring.h>
 
 namespace DigikamGenericSendByMailPlugin
 {
 
-class ClawsMailBinary : public DBinaryIface
+BalsaBinary::BalsaBinary()
+    : DBinaryIface(
+                   QLatin1String("balsa"),
+                   QLatin1String("Balsa"),
+                   QLatin1String("https://pawsa.fedorapeople.org/balsa/"),
+                   QLatin1String("SendByMail"),
+                   QStringList(QLatin1String("-v")),
+                   i18n("Gnome Mail Client.")
+                  )
 {
-    Q_OBJECT
+    setup();
+}
 
-public:
-
-    explicit ClawsMailBinary();
-    ~ClawsMailBinary() override;
-};
+BalsaBinary::~BalsaBinary()
+{
+}
 
 } // namespace DigikamGenericSendByMailPlugin
-
-#endif // DIGIKAM_CLAWS_MAIL_BINARY_H

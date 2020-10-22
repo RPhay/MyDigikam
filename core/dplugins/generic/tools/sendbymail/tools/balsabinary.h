@@ -20,8 +20,8 @@
  *
  * ============================================================ */
 
-#ifndef BALSA_BINARY_H
-#define BALSA_BINARY_H
+#ifndef DIGIKAM_BALSA_BINARY_H
+#define DIGIKAM_BALSA_BINARY_H
 
 // Local includes
 
@@ -34,27 +34,14 @@ namespace DigikamGenericSendByMailPlugin
 
 class BalsaBinary : public DBinaryIface
 {
+    Q_OBJECT
 
 public:
 
-    explicit BalsaBinary()
-        : DBinaryIface(
-                       QLatin1String("balsa"),
-                       QLatin1String("Balsa"),
-                       QLatin1String("https://pawsa.fedorapeople.org/balsa/"),
-                       QLatin1String("SendByMail"),
-                       QStringList(QLatin1String("-v")),
-                       i18n("Gnome Mail Client.")
-                      )
-        {
-            setup();
-        }
-
-    ~BalsaBinary() override
-    {
-    }
+    explicit BalsaBinary();
+    ~BalsaBinary() override;
 };
 
 } // namespace DigikamGenericSendByMailPlugin
 
-#endif // BALSA_BINARY_H
+#endif // DIGIKAM_BALSA_BINARY_H
