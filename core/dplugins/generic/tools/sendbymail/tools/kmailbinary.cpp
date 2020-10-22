@@ -4,7 +4,7 @@
  * https://www.digikam.org
  *
  * Date        : 2017-07-04
- * Description : Autodetect evolution binary program
+ * Description : Autodetect kmail binary program
  *
  * Copyright (C) 2017-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
@@ -20,28 +20,32 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_EVOLUTION_BINARY_H
-#define DIGIKAM_EVOLUTION_BINARY_H
+#include "kmailbinary.h"
 
-// Local includes
+// KDE includes
 
-#include "dbinaryiface.h"
+#include <klocalizedstring.h>
 
 using namespace Digikam;
 
 namespace DigikamGenericSendByMailPlugin
 {
 
-class EvolutionBinary : public DBinaryIface
+KmailBinary::KmailBinary()
+    : DBinaryIface(
+                   QLatin1String("kmail"),
+                   QLatin1String("KMail"),
+                   QLatin1String("https://kde.org/applications/office/org.kde.kmail2"),
+                   QLatin1String("SendByMail"),
+                   QStringList(QLatin1String("-v")),
+                   i18n("KDE Mail Client.")
+                  )
 {
-    Q_OBJECT
+    setup();
+}
 
-public:
-
-    explicit EvolutionBinary();
-    ~EvolutionBinary() override;
-};
+KmailBinary::~KmailBinary()
+{
+}
 
 } // namespace DigikamGenericSendByMailPlugin
-
-#endif // DIGIKAM_EVOLUTION_BINARY_H

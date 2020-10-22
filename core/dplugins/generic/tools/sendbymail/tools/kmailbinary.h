@@ -20,8 +20,8 @@
  *
  * ============================================================ */
 
-#ifndef KMAIL_BINARY_H
-#define KMAIL_BINARY_H
+#ifndef DIGIKAM_KMAIL_BINARY_H
+#define DIGIKAM_KMAIL_BINARY_H
 
 // Local includes
 
@@ -34,27 +34,14 @@ namespace DigikamGenericSendByMailPlugin
 
 class KmailBinary : public DBinaryIface
 {
+    Q_OBJECT
 
 public:
 
-    explicit KmailBinary()
-        : DBinaryIface(
-                       QLatin1String("kmail"),
-                       QLatin1String("KMail"),
-                       QLatin1String("https://kde.org/applications/office/org.kde.kmail2"),
-                       QLatin1String("SendByMail"),
-                       QStringList(QLatin1String("-v")),
-                       i18n("KDE Mail Client.")
-                      )
-        {
-            setup();
-        }
-
-    ~KmailBinary() override
-    {
-    }
+    explicit KmailBinary();
+    ~KmailBinary() override;
 };
 
 } // namespace DigikamGenericSendByMailPlugin
 
-#endif // KMAIL_BINARY_H
+#endif // DIGIKAM_KMAIL_BINARY_H

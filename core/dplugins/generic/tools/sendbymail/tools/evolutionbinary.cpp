@@ -20,28 +20,30 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_EVOLUTION_BINARY_H
-#define DIGIKAM_EVOLUTION_BINARY_H
+#include "evolutionbinary.h"
 
-// Local includes
+// KDE includes
 
-#include "dbinaryiface.h"
-
-using namespace Digikam;
+#include <klocalizedstring.h>
 
 namespace DigikamGenericSendByMailPlugin
 {
 
-class EvolutionBinary : public DBinaryIface
+EvolutionBinary::EvolutionBinary()
+    : DBinaryIface(
+                   QLatin1String("evolution"),
+                   QLatin1String("Evolution"),
+                   QLatin1String("https://wiki.gnome.org/Apps/Evolution"),
+                   QLatin1String("SendByMail"),
+                   QStringList(QLatin1String("-v")),
+                   i18n("Gnome Mail Client.")
+                  )
 {
-    Q_OBJECT
+    setup();
+}
 
-public:
-
-    explicit EvolutionBinary();
-    ~EvolutionBinary() override;
-};
+EvolutionBinary::~EvolutionBinary()
+{
+}
 
 } // namespace DigikamGenericSendByMailPlugin
-
-#endif // DIGIKAM_EVOLUTION_BINARY_H
