@@ -20,28 +20,27 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_AUTO_OPTIMISER_BINARY_H
-#define DIGIKAM_AUTO_OPTIMISER_BINARY_H
-
-// Local includes
-
-#include "dbinaryiface.h"
-
-using namespace Digikam;
+#include "autooptimiserbinary.h"
 
 namespace DigikamGenericPanoramaPlugin
 {
 
-class AutoOptimiserBinary : public DBinaryIface
+AutoOptimiserBinary::AutoOptimiserBinary()
+    : DBinaryIface(QLatin1String("autooptimiser"),
+                   QLatin1String("2010.4"),
+                   QLatin1String("autooptimiser version "),
+                   1,
+                   QLatin1String("Hugin"),
+                   QLatin1String("http://hugin.sourceforge.net/download/"),
+                   QLatin1String("Panorama"),
+                   QStringList(QLatin1String("-h"))
+                  )
 {
-    Q_OBJECT
+    setup();
+}
 
-public:
-
-    explicit AutoOptimiserBinary();
-    ~AutoOptimiserBinary() override;
-};
+AutoOptimiserBinary::~AutoOptimiserBinary()
+{
+}
 
 } // namespace DigikamGenericPanoramaPlugin
-
-#endif // DIGIKAM_AUTO_OPTIMISER_BINARY_H
