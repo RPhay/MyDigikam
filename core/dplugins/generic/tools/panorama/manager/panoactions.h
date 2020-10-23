@@ -73,7 +73,7 @@ struct PanoramaPreprocessedUrls
 
     PanoramaPreprocessedUrls(const QUrl& preprocessed, const QUrl& preview)
         : preprocessedUrl(preprocessed),
-          previewUrl(preview)
+          previewUrl     (preview)
     {
     }
 
@@ -93,9 +93,9 @@ struct PanoActionData
 {
     PanoActionData()
         : starting(false),
-          success(false),
-          id(0),
-          action(PANO_NONE)
+          success (false),
+          id      (0),
+          action  (PANO_NONE)
     {
     }
 

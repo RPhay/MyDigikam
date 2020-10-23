@@ -87,9 +87,9 @@ set(panoramaplugin_SRCS
     ${CMAKE_CURRENT_SOURCE_DIR}/tasks/createpreviewtask.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/tasks/createptotask.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/tasks/preprocesstask.cpp
-    ${CMAKE_CURRENT_SOURCE_DIR}/manager/autooptimiserbinary.cpp
-    ${CMAKE_CURRENT_SOURCE_DIR}/manager/cpcleanbinary.cpp
-    ${CMAKE_CURRENT_SOURCE_DIR}/manager/cpfindbinary.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/tools/autooptimiserbinary.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/tools/cpcleanbinary.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/tools/cpfindbinary.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/manager/panoactionthread.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/manager/panomanager.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/wizard/panointropage.cpp

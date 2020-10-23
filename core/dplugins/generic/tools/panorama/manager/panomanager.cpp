@@ -57,19 +57,19 @@ class Q_DECL_HIDDEN PanoManager::Private
 public:
 
     explicit Private()
-      : basePtoData(nullptr),
-        cpFindPtoData(nullptr),
-        cpCleanPtoData(nullptr),
-        autoOptimisePtoData(nullptr),
-        viewAndCropOptimisePtoData(nullptr),
-        previewPtoData(nullptr),
-        panoPtoData(nullptr),
-        hugin2015(false),
-        thread(nullptr),
-        plugin(nullptr),
-        wizard(nullptr),
-        config(KSharedConfig::openConfig()),
-        group(config->group("Panorama Settings"))
+      : basePtoData                 (nullptr),
+        cpFindPtoData               (nullptr),
+        cpCleanPtoData              (nullptr),
+        autoOptimisePtoData         (nullptr),
+        viewAndCropOptimisePtoData  (nullptr),
+        previewPtoData              (nullptr),
+        panoPtoData                 (nullptr),
+        hugin2015                   (false),
+        thread                      (nullptr),
+        plugin                      (nullptr),
+        wizard                      (nullptr),
+        config                      (KSharedConfig::openConfig()),
+        group                       (config->group("Panorama Settings"))
     {
         gPano    = group.readEntry("GPano", false);
 /*
@@ -146,7 +146,7 @@ QPointer<PanoManager> PanoManager::internalPtr = QPointer<PanoManager>();
 
 PanoManager::PanoManager(QObject* const parent)
     : QObject(parent),
-      d(new Private)
+      d      (new Private)
 {
     d->thread = new PanoActionThread(this);
 }

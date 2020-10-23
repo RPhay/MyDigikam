@@ -71,7 +71,7 @@ public:
 
 PanoActionThread::PanoActionThread(QObject* const parent)
     : QObject(parent),
-      d(new Private(this))
+      d      (new Private(this))
 {
     // PanoActionThread init
 
