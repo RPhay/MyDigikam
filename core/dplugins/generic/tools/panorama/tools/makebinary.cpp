@@ -20,28 +20,37 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_MAKE_BINARY_H
-#define DIGIKAM_MAKE_BINARY_H
-
-// Local includes
-
-#include "dbinaryiface.h"
-
-using namespace Digikam;
+#include "makebinary.h"
 
 namespace DigikamGenericPanoramaPlugin
 {
 
-class MakeBinary : public DBinaryIface
+MakeBinary::MakeBinary()
+    : DBinaryIface(QLatin1String("make"),
+                   QLatin1String("3.80"),
+                   QLatin1String("GNU Make "),
+                   0,
+                   QLatin1String("GNU"),
+
+#ifdef Q_OS_WIN
+
+                   QLatin1String("http://gnuwin32.sourceforge.net/packages/make.htm"),
+
+#else
+
+                   QLatin1String("https://www.gnu.org/software/make/"),
+
+#endif
+
+                   QLatin1String("Panorama"),
+                   QStringList(QLatin1String("-v"))
+                  )
 {
-    Q_OBJECT
+    setup();
+}
 
-public:
-
-    explicit MakeBinary();
-    ~MakeBinary() override;
-};
+MakeBinary::~MakeBinary()
+{
+}
 
 } // namespace DigikamGenericPanoramaPlugin
-
-#endif // DIGIKAM_MAKE_BINARY_H
