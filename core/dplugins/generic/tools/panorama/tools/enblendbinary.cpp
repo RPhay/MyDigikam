@@ -20,27 +20,27 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_ENBLEND_BINARY_H
-#define DIGIKAM_ENBLEND_BINARY_H
-
-// Local includes
-
-#include "dbinaryiface.h"
-
-using namespace Digikam;
+#include "enblendbinary.h"
 
 namespace DigikamGenericPanoramaPlugin
 {
 
-class EnblendBinary : public DBinaryIface
+EnblendBinary::EnblendBinary()
+    : DBinaryIface(QLatin1String("enblend"),
+                   QLatin1String("4.0"),
+                   QLatin1String("enblend "),
+                   0,
+                   QLatin1String("Hugin"),
+                   QLatin1String("http://hugin.sourceforge.net/download/"),
+                   QLatin1String("Panorama"),
+                   QStringList(QLatin1String("-V"))
+                  )
 {
+    setup();
+}
 
-public:
-
-    explicit EnblendBinary();
-    ~EnblendBinary() override;
-};
+EnblendBinary::~EnblendBinary()
+{
+}
 
 } // namespace DigikamGenericPanoramaPlugin
-
-#endif // DIGIKAM_ENBLEND_BINARY_H
