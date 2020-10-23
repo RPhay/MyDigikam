@@ -34,6 +34,7 @@ namespace DigikamGenericPanoramaPlugin
 
 class EnblendBinary : public DBinaryIface
 {
+    Q_OBJECT
 
 public:
 

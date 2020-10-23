@@ -20,28 +20,24 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_HUGIN_EXECUTOR_BINARY_H
-#define DIGIKAM_HUGIN_EXECUTOR_BINARY_H
-
-// Local includes
-
-#include "dbinaryiface.h"
-
-using namespace Digikam;
+#include "huginexecutorbinary.h"
 
 namespace DigikamGenericPanoramaPlugin
 {
 
-class HuginExecutorBinary : public DBinaryIface
+HuginExecutorBinary::HuginExecutorBinary()
+    : DBinaryIface(QLatin1String("hugin_executor"),
+                   QLatin1String("Hugin"),
+                   QLatin1String("http://hugin.sourceforge.net/download/"),
+                   QLatin1String("Panorama"),
+                   QStringList(QLatin1String("-h"))
+                  )
 {
-    Q_OBJECT
+    setup();
+}
 
-public:
-
-    explicit HuginExecutorBinary();
-    ~HuginExecutorBinary() override;
-};
+HuginExecutorBinary::~HuginExecutorBinary()
+{
+}
 
 } // namespace DigikamGenericPanoramaPlugin
-
-#endif // DIGIKAM_HUGIN_EXECUTOR_BINARY_H

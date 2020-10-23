@@ -91,6 +91,7 @@ set(panoramaplugin_SRCS
     ${CMAKE_CURRENT_SOURCE_DIR}/tools/cpcleanbinary.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/tools/cpfindbinary.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/tools/enblendbinary.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/tools/huginexecutorbinary.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/manager/panoactionthread.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/manager/panomanager.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/wizard/panointropage.cpp
