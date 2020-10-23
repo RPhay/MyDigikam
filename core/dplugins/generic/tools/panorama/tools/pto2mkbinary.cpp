@@ -20,28 +20,27 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_PTO_2MK_BINARY_H
-#define DIGIKAM_PTO_2MK_BINARY_H
-
-// Local includes
-
-#include "dbinaryiface.h"
-
-using namespace Digikam;
+#include "pto2mkbinary.h"
 
 namespace DigikamGenericPanoramaPlugin
 {
 
-class Pto2MkBinary : public DBinaryIface
+Pto2MkBinary::Pto2MkBinary()
+    : DBinaryIface(QLatin1String("pto2mk"),
+                   QLatin1String("2010.4"),
+                   QLatin1String("pto2mk version "),
+                   2,
+                   QLatin1String("Hugin"),
+                   QLatin1String("http://hugin.sourceforge.net/download/"),
+                   QLatin1String("Panorama"),
+                   QStringList(QLatin1String("-h"))
+                  )
 {
-    Q_OBJECT
+    setup();
+}
 
-public:
-
-    explicit Pto2MkBinary();
-    ~Pto2MkBinary() override;
-};
+Pto2MkBinary::~Pto2MkBinary()
+{
+}
 
 } // namespace DigikamGenericPanoramaPlugin
-
-#endif // DIGIKAM_PTO_2MK_BINARY_H
