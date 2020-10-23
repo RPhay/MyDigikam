@@ -191,7 +191,7 @@ public:
      */
     QList<Identity> recognizeFaces(ImageListProvider* const images);
     QList<Identity> recognizeFaces(const QList<QImage*>& images);
-    Identity        recognizeFace(QImage* image);
+    Identity        recognizeFace(QImage* const image);
 
 private:
 

@@ -70,7 +70,7 @@ QList<Identity> FacialRecognitionWrapper::recognizeFaces(const QList<QImage*>& i
     return recognizeFaces(&provider);
 }
 
-Identity FacialRecognitionWrapper::recognizeFace(QImage* image)
+Identity FacialRecognitionWrapper::recognizeFace(QImage* const image)
 {
     QList<Identity> result = recognizeFaces(QList<QImage*>() << image);
 
