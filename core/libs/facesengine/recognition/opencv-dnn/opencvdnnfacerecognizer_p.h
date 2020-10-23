@@ -228,7 +228,8 @@ public:
     {
         for(int i = range.start ; i < range.end ; ++i)
         {
-            cv::Mat faceEmbedding = d->extractors[i%(d->extractors.size())]->getFaceEmbedding(OpenCVDNNFaceRecognizer::prepareForRecognition(*images[i]));
+            cv::Mat faceEmbedding = d->extractors[i%(d->extractors.size())]->
+                getFaceEmbedding(OpenCVDNNFaceRecognizer::prepareForRecognition(*images[i]));
 
             if (!d->insertData(faceEmbedding, id, context))
             {

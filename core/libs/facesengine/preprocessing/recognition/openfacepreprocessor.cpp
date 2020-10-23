@@ -124,7 +124,7 @@ cv::Mat OpenfacePreprocessor::process(const cv::Mat& image)
     }
 
     cv::Rect new_rect(0, 0, image.cols, image.rows);
-    cv::Mat landmarks(3,2, CV_32F);
+    cv::Mat landmarks(3, 2, CV_32F);
 
     mutex.lock();
     FullObjectDetection object = sp(gray, new_rect);
