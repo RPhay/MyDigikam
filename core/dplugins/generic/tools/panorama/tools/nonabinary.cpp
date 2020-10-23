@@ -20,28 +20,27 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_NONA_BINARY_H
-#define DIGIKAM_NONA_BINARY_H
-
-// Local includes
-
-#include "dbinaryiface.h"
-
-using namespace Digikam;
+#include "nonabinary.h"
 
 namespace DigikamGenericPanoramaPlugin
 {
 
-class NonaBinary : public DBinaryIface
+NonaBinary::NonaBinary()
+    : DBinaryIface(QLatin1String("nona"),
+                   QLatin1String("2010.4"),
+                   QLatin1String("nona version "),
+                   2,
+                   QLatin1String("Hugin"),
+                   QLatin1String("http://hugin.sourceforge.net/download/"),
+                   QLatin1String("Panorama"),
+                   QStringList(QLatin1String("-h"))
+                  )
 {
-    Q_OBJECT
+    setup();
+}
 
-public:
-
-    explicit NonaBinary();
-    ~NonaBinary() override;
-};
+NonaBinary::~NonaBinary()
+{
+}
 
 } // namespace DigikamGenericPanoramaPlugin
-
-#endif // DIGIKAM_NONA_BINARY_H
