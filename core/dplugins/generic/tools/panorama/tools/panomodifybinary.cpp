@@ -20,28 +20,27 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_PANO_MODIFY_BINARY_H
-#define DIGIKAM_PANO_MODIFY_BINARY_H
-
-// Local includes
-
-#include "dbinaryiface.h"
-
-using namespace Digikam;
+#include "panomodifybinary.h"
 
 namespace DigikamGenericPanoramaPlugin
 {
 
-class PanoModifyBinary : public DBinaryIface
+PanoModifyBinary::PanoModifyBinary()
+    : DBinaryIface(QLatin1String("pano_modify"),
+                   QLatin1String("2012.0"),
+                   QLatin1String("pano_modify version "),
+                   1,
+                   QLatin1String("Hugin"),
+                   QLatin1String("http://hugin.sourceforge.net/download/"),
+                   QLatin1String("Panorama"),
+                   QStringList(QLatin1String("-h"))
+                  )
 {
-    Q_OBJECT
+    setup();
+}
 
-public:
-
-    explicit PanoModifyBinary();
-    ~PanoModifyBinary() override;
-};
+PanoModifyBinary::~PanoModifyBinary()
+{
+}
 
 } // namespace DigikamGenericPanoramaPlugin
-
-#endif // DIGIKAM_PANO_MODIFY_BINARY_H
