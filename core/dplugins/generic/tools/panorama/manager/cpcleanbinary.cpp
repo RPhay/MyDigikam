@@ -20,28 +20,27 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_CPCLEAN_BINARY_H
-#define DIGIKAM_CPCLEAN_BINARY_H
-
-// Local includes
-
-#include "dbinaryiface.h"
-
-using namespace Digikam;
+#include "cpcleanbinary.h"
 
 namespace DigikamGenericPanoramaPlugin
 {
 
-class CPCleanBinary : public DBinaryIface
+CPCleanBinary::CPCleanBinary()
+    : DBinaryIface(QLatin1String("cpclean"),
+                   QLatin1String("2010.4"),
+                   QLatin1String("cpclean version "),
+                   1,
+                   QLatin1String("Hugin"),
+                   QLatin1String("http://hugin.sourceforge.net/download/"),
+                   QLatin1String("Panorama"),
+                   QStringList(QLatin1String("-h"))
+                  )
 {
-    Q_OBJECT
+    setup();
+}
 
-public:
-
-    explicit CPCleanBinary();
-    ~CPCleanBinary() override;
-};
+CPCleanBinary::~CPCleanBinary()
+{
+}
 
 } // namespace DigikamGenericPanoramaPlugin
-
-#endif // DIGIKAM_CPCLEAN_BINARY_H
