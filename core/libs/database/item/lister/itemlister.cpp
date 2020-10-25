@@ -50,11 +50,6 @@ void ItemLister::setListOnlyAvailable(bool listOnlyAvailable)
     d->listOnlyAvailableImages = listOnlyAvailable;
 }
 
-void ItemLister::setAllowExtraValues(bool useExtraValue)
-{
-    d->allowExtraValues = useExtraValue;
-}
-
 void ItemLister::list(ItemListerReceiver* const receiver,
                       const CoreDbUrl& url)
 {

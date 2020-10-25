@@ -173,7 +173,7 @@ void ItemLister::listImageTagPropertySearch(ItemListerReceiver* const receiver, 
 
     for (QList<QVariant>::const_iterator it = values.constBegin() ; it != values.constEnd() ; )
     {
-        ItemListerRecord record(d->allowExtraValues ? ItemListerRecord::ExtraValueFormat : ItemListerRecord::TraditionalFormat);
+        ItemListerRecord record;
 
         record.imageID           = (*it).toLongLong();
         ++it;

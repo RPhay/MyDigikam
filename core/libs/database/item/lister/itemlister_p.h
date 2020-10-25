@@ -82,8 +82,7 @@ public:
 
     explicit Private()
       : recursive              (true),
-        listOnlyAvailableImages(true),
-        allowExtraValues       (false)
+        listOnlyAvailableImages(true)
     {
     }
 
@@ -91,7 +90,6 @@ public:
 
     bool recursive;
     bool listOnlyAvailableImages;
-    bool allowExtraValues;
 };
 
 } // namespace Digikam

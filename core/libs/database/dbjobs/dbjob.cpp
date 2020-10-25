@@ -150,7 +150,6 @@ void GPSJob::run()
     else
     {
         ItemLister lister;
-        lister.setAllowExtraValues(true);
         lister.setListOnlyAvailable(m_jobInfo.isListAvailableImagesOnly());
 
         // Send data every 200 images to be more responsive
@@ -248,7 +247,6 @@ void TagsJob::run()
                 lister.tagSearchXml(m_jobInfo.tagsIds().first(),
                                     m_jobInfo.specialTag(),
                                     m_jobInfo.isRecursive());
-            lister.setAllowExtraValues(true); // pass property value as extra value, different binary protocol
             lister.listImageTagPropertySearch(&receiver, searchXml);
         }
         else

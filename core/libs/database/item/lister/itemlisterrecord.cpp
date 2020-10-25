@@ -27,7 +27,7 @@
 namespace Digikam
 {
 
-ItemListerRecord::ItemListerRecord(ItemListerRecord::BinaryFormat format)
+ItemListerRecord::ItemListerRecord()
     : albumID                         (-1),
       albumRootID                     (-1),
       rating                          (-1),
@@ -35,8 +35,7 @@ ItemListerRecord::ItemListerRecord(ItemListerRecord::BinaryFormat format)
       imageID                         (-1),
       currentFuzzySearchReferenceImage(-1),
       currentSimilarity               (0.0),
-      category                        (DatabaseItem::UndefinedCategory),
-      binaryFormat                    (format)
+      category                        (DatabaseItem::UndefinedCategory)
 {
 }
 

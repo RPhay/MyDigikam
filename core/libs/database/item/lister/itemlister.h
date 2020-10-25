@@ -65,12 +65,6 @@ public:
     void setListOnlyAvailable(bool listOnlyAvailable);
 
     /**
-     * Allow the binary protocol of ItemListerRecord using an extra value.
-     * Currently used for AreaRand and TagPropertySearch.
-     */
-    void setAllowExtraValues(bool useExtraValue);
-
-    /**
      * Convenience method for Album, Tag and Date URLs, _not_ for Search URLs.
      */
     void list(ItemListerReceiver* const receiver,

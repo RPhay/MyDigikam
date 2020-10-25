@@ -48,21 +48,7 @@ class DIGIKAM_DATABASE_EXPORT ItemListerRecord
 
 public:
 
-    enum
-    {
-        MagicValue = 0xD315783F
-    };
-
-    enum BinaryFormat
-    {
-        // keep values constant
-        TraditionalFormat = 1,
-        ExtraValueFormat  = 2
-    };
-
-public:
-
-    explicit ItemListerRecord(BinaryFormat format = TraditionalFormat);
+    explicit ItemListerRecord();
 
     bool operator==(const ItemListerRecord& record) const;
 
@@ -89,8 +75,6 @@ public:
     DatabaseItem::Category category;
 
     QList<QVariant>        extraValues;
-
-    BinaryFormat           binaryFormat;
 };
 
 DIGIKAM_DATABASE_EXPORT QDataStream& operator<<(QDataStream& os, const ItemListerRecord& record);
