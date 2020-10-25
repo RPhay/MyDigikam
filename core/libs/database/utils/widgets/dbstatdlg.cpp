@@ -107,6 +107,9 @@ DBStatDlg::DBStatDlg(QWidget* const parent)
         }
     }
 
+    QString dbLocale = CoreDbAccess().db()->getSetting(QLatin1String("Locale"));
+    new QTreeWidgetItem(listView(), QStringList() << i18n("Database locale") << dbLocale);
+
     qApp->restoreOverrideCursor();
 }
 
