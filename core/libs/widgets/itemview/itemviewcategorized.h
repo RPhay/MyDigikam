@@ -49,8 +49,8 @@ public:
     explicit ItemViewCategorized(QWidget* const parent = nullptr);
     ~ItemViewCategorized() override;
 
-    DItemDelegate* delegate()                const;
-    int            numberOfSelectedIndexes() const;
+    DItemDelegate* delegate()                                                       const;
+    int            numberOfSelectedIndexes()                                        const;
 
     /**
      * Selects the index as current and scrolls to it
@@ -76,7 +76,7 @@ public:
     void setSelectedIndexes(const QList<QModelIndex>& indexes);
 
     void setToolTipEnabled(bool enabled);
-    bool isToolTipEnabled() const;
+    bool isToolTipEnabled()                                                         const;
 
     /**
      * Sets the spacing. Does not use setSpacing()/spacing() from QListView
@@ -94,8 +94,8 @@ public:
      */
     void setScrollStepGranularity(int factor);
 
-    virtual QSortFilterProxyModel* filterModel() const = 0;
-    void scrollTo(const QModelIndex& index, ScrollHint hint = EnsureVisible) override;
+    virtual QSortFilterProxyModel* filterModel()                                    const = 0;
+    void scrollTo(const QModelIndex& index, ScrollHint hint = EnsureVisible)              override;
 
 public Q_SLOTS:
 
@@ -167,22 +167,22 @@ protected:
      */
     QModelIndex indexForCategoryAt(const QPoint& pos) const;
 
-    // reimplemented from parent class
-    void contextMenuEvent(QContextMenuEvent* event) override;
-    void keyPressEvent(QKeyEvent* event) override;
-    void leaveEvent(QEvent* event) override;
-    void mouseMoveEvent(QMouseEvent* event) override;
-    void mousePressEvent(QMouseEvent* event) override;
-    void mouseReleaseEvent(QMouseEvent* event) override;
-    void resizeEvent(QResizeEvent* e) override;
-    void reset() override;
-    void rowsAboutToBeRemoved(const QModelIndex& parent, int start, int end) override;
-    void rowsInserted(const QModelIndex& parent, int start, int end) override;
-    void rowsRemoved(const QModelIndex& parent, int start, int end) override;
-    void selectionChanged(const QItemSelection&, const QItemSelection&) override;
-    bool viewportEvent(QEvent* event) override;
-    void wheelEvent(QWheelEvent* event) override;
-    QModelIndex moveCursor(CursorAction cursorAction, Qt::KeyboardModifiers modifiers) override;
+    /// reimplemented from parent class
+    void contextMenuEvent(QContextMenuEvent* event)                                       override;
+    void keyPressEvent(QKeyEvent* event)                                                  override;
+    void leaveEvent(QEvent* event)                                                        override;
+    void mouseMoveEvent(QMouseEvent* event)                                               override;
+    void mousePressEvent(QMouseEvent* event)                                              override;
+    void mouseReleaseEvent(QMouseEvent* event)                                            override;
+    void resizeEvent(QResizeEvent* e)                                                     override;
+    void reset()                                                                          override;
+    void rowsAboutToBeRemoved(const QModelIndex& parent, int start, int end)              override;
+    void rowsInserted(const QModelIndex& parent, int start, int end)                      override;
+    void rowsRemoved(const QModelIndex& parent, int start, int end)                       override;
+    void selectionChanged(const QItemSelection&, const QItemSelection&)                   override;
+    bool viewportEvent(QEvent* event)                                                     override;
+    void wheelEvent(QWheelEvent* event)                                                   override;
+    QModelIndex moveCursor(CursorAction cursorAction, Qt::KeyboardModifiers modifiers)    override;
 
     /// Reimplement these in a subclass
     virtual void showContextMenuOnIndex(QContextMenuEvent* event, const QModelIndex& index);
@@ -194,22 +194,25 @@ protected:
      * Returns true if a tooltip was shown.
      * The help event is optional.
      */
-    virtual bool showToolTip(const QModelIndex& index, QStyleOptionViewItem& option, QHelpEvent* e = nullptr);
+    virtual bool showToolTip(const QModelIndex& index,
+                             QStyleOptionViewItem& option,
+                             QHelpEvent* e = nullptr);
 
     DECLARE_VIEW_DRAG_DROP_METHODS(DCategorizedView)
 
     /**
      * Note: pure virtual dragDropHandler() still open from DragDropViewImplementation
      */
-    QModelIndex mapIndexForDragDrop(const QModelIndex& index) const override;
-    QPixmap     pixmapForDrag(const QList<QModelIndex>& indexes) const override;
+    QModelIndex mapIndexForDragDrop(const QModelIndex& index)                       const override;
+    QPixmap     pixmapForDrag(const QList<QModelIndex>& indexes)                    const override;
 
     /**
      * Assuming the given indexes would be removed (hypothetically!),
      * return the index to be selected instead, starting from anchor.
      * The default implementation returns the next remaining sibling.
      */
-    virtual QModelIndex nextIndexHint(const QModelIndex& indexToAnchor, const QItemSelectionRange& removed) const;
+    virtual QModelIndex nextIndexHint(const QModelIndex& indexToAnchor,
+                                      const QItemSelectionRange& removed)           const;
 
 private Q_SLOTS:
 
