@@ -70,9 +70,9 @@ void CopyOrMoveJob::run()
             break;
         }
 
-        QFileInfo srcInfo(srcUrl.toLocalFile());
+        QFileInfo srcInfo(srcUrl.adjusted(QUrl::StripTrailingSlash).toLocalFile());
         QDir dstDir(m_data->destUrl().toLocalFile());
-        QString srcName = srcInfo.isFile() ? srcInfo.fileName() : srcInfo.dir().dirName();
+        QString srcName = srcInfo.fileName();
 
         if (!srcInfo.exists())
         {
@@ -144,7 +144,7 @@ void CopyOrMoveJob::run()
             {
                 QDir srcDir(srcInfo.filePath());
 
-                if (!srcDir.rename(srcDir.path(), dstDir.path()))
+                if (!srcDir.rename(srcDir.path(), destenation))
                 {
                     // If QDir::rename fails, try copy and remove.
 
