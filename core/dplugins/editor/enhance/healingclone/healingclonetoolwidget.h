@@ -122,6 +122,12 @@ protected:
 
 private:
 
+    // Hidden copy constructor and assignment operator.
+    HealingCloneToolWidget(const HealingCloneToolWidget&);
+    HealingCloneToolWidget& operator=(const HealingCloneToolWidget&);
+
+private:
+
     class Private;
     Private* const d;
 };
