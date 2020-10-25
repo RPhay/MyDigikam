@@ -88,14 +88,14 @@ ThumbnailImage ThumbnailCreator::loadFreedesktop(const ThumbnailInfo& info) cons
         if ((qimage.text(QLatin1String("Thumb::MTime")) == QString::number(info.modificationDate.toSecsSinceEpoch())) &&
             (qimage.text(QLatin1String("Software"))     == d->digiKamFingerPrint))
         {
-            ThumbnailImage info;
-            info.qimage = qimage;
+            ThumbnailImage imgInfo;
+            imgInfo.qimage = qimage;
 
             // is stored rotated. Not needed to rotate.
 
-            info.exifOrientation = DMetadata::ORIENTATION_NORMAL;
+            imgInfo.exifOrientation = DMetadata::ORIENTATION_NORMAL;
 
-            return info;
+            return imgInfo;
         }
     }
 
