@@ -239,14 +239,14 @@ void DImg::bitBlend(DColorComposer* const composer, uchar* const src, uchar* con
 
         for (int i = 0 ; i < w ; ++i, sptr += sdepth, dptr += ddepth)
         {
-            DColor src(sptr, sixteenBit);
-            DColor dst(dptr, sixteenBit);
+            DColor srcp(sptr, sixteenBit);
+            DColor dstp(dptr, sixteenBit);
 
             // blend colors
 
-            composer->compose(dst, src, multiplicationFlags);
+            composer->compose(dstp, srcp, multiplicationFlags);
 
-            dst.setPixel(dptr);
+            dstp.setPixel(dptr);
         }
     }
 }
