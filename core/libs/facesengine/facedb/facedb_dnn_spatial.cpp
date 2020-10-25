@@ -33,11 +33,11 @@ class FaceDb::DataNode
 public:
 
     explicit DataNode()
-        : nodeID(0),
-          label(0),
-          splitAxis(0),
-          left(-1),
-          right(-1)
+        : nodeID    (0),
+          label     (0),
+          splitAxis (0),
+          left      (-1),
+          right     (-1)
     {
     }
 
@@ -353,12 +353,12 @@ double FaceDb::getClosestNeighborsTreeDb(const DataNode& subTree,
 
                 const float* minRange = leftNode.minRange.ptr<float>();
                 const float* maxRange = leftNode.maxRange.ptr<float>();
-                const float* position = leftNode.position.ptr<float>();
+                const float* pos      = leftNode.position.ptr<float>();
 
                 for (int i = 0 ; i < 128 ; ++i)
                 {
-                    sqrDistanceLeftTree += (pow(qMax((minRange[i] - position[i]), 0.0f), 2) +
-                                            pow(qMax((position[i] - maxRange[i]), 0.0f), 2));
+                    sqrDistanceLeftTree += (pow(qMax((minRange[i] - pos[i]),      0.0f), 2) +
+                                            pow(qMax((pos[i]      - maxRange[i]), 0.0f), 2));
                 }
             }
         }
@@ -401,12 +401,12 @@ double FaceDb::getClosestNeighborsTreeDb(const DataNode& subTree,
 
                 const float* const minRange = rightNode.minRange.ptr<float>();
                 const float* const maxRange = rightNode.maxRange.ptr<float>();
-                const float* const position = rightNode.position.ptr<float>();
+                const float* const pos      = rightNode.position.ptr<float>();
 
                 for (int i = 0 ; i < 128 ; ++i)
                 {
-                    sqrDistanceRightTree += (pow(qMax((minRange[i] - position[i]), 0.0f), 2) +
-                                             pow(qMax((position[i] - maxRange[i]), 0.0f), 2));
+                    sqrDistanceRightTree += (pow(qMax((minRange[i] - pos[i]),      0.0f), 2) +
+                                             pow(qMax((pos[i]      - maxRange[i]), 0.0f), 2));
                 }
             }
         }
