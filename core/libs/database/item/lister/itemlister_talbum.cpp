@@ -83,7 +83,7 @@ void ItemLister::listTag(ItemListerReceiver* const receiver,
             ++it2;
             record.modificationDate  = (*it2).toDateTime();
             ++it2;
-            record.fileSize          = d->toInt32BitSafe(it2);
+            record.fileSize          = (*it2).toLongLong();
             ++it2;
             width                    = (*it2).toInt();
             ++it2;
@@ -193,7 +193,7 @@ void ItemLister::listImageTagPropertySearch(ItemListerReceiver* const receiver, 
         ++it;
         record.modificationDate  = (*it).toDateTime();
         ++it;
-        record.fileSize          = d->toInt32BitSafe(it);
+        record.fileSize          = (*it).toLongLong();
         ++it;
         width                    = (*it).toInt();
         ++it;

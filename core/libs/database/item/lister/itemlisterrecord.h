@@ -71,8 +71,8 @@ public:
     int                    albumID;
     int                    albumRootID;
     int                    rating;
-    int                    fileSize;
 
+    qlonglong              fileSize;
     qlonglong              imageID;
     qlonglong              currentFuzzySearchReferenceImage;
 

@@ -158,7 +158,7 @@ void ItemLister::listFromIdList(ItemListerReceiver* const receiver,
         ++it;
         record.modificationDate  = (*it).toDateTime();
         ++it;
-        record.fileSize          = d->toInt32BitSafe(it);
+        record.fileSize          = (*it).toLongLong();
         ++it;
         width                    = (*it).toInt();
         ++it;

@@ -125,7 +125,7 @@ void ItemLister::listSearch(ItemListerReceiver* const receiver,
         ++it;
         record.modificationDate  = (*it).toDateTime();
         ++it;
-        record.fileSize          = d->toInt32BitSafe(it);
+        record.fileSize          = (*it).toLongLong();
         ++it;
         width                    = (*it).toInt();
         ++it;
@@ -378,7 +378,7 @@ void ItemLister::listFromHaarSearch(ItemListerReceiver* const receiver,
         ++it;
         record.modificationDate  = (*it).toDateTime();
         ++it;
-        record.fileSize          = d->toInt32BitSafe(it);
+        record.fileSize          = (*it).toLongLong();
         ++it;
         width                    = (*it).toInt();
         ++it;

@@ -61,10 +61,7 @@ ItemInfo::ItemInfo(const ItemListerRecord& record)
     m_data->formatCached           = true;
     m_data->creationDateCached     = true;
     m_data->modificationDateCached = true;
-
-    // field is only signed 32 bit in the protocol. -1 indicates value is larger, reread
-
-    m_data->fileSizeCached         = (m_data->fileSize != -1);
+    m_data->fileSizeCached         = true;
     m_data->imageSizeCached        = true;
     m_data->videoMetadataCached    = DatabaseFields::VideoMetadataNone;
     m_data->imageMetadataCached    = DatabaseFields::ImageMetadataNone;

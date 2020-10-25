@@ -87,23 +87,6 @@ public:
     {
     }
 
-    /*
-     * The binary field for file size is only 32 bit.
-     * If the value fits, we pass it. If it does not, we pass -1,
-     * and the receiver shall get the full number itself
-     */
-    int toInt32BitSafe(const QList<QVariant>::const_iterator& it)
-    {
-        qlonglong v = (*it).toLongLong();
-
-        if ((v > std::numeric_limits<int>::max()) || (v < 0))
-        {
-            return -1;
-        }
-
-        return (int)v;
-    }
-
 public:
 
     bool recursive;
