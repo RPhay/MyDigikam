@@ -162,4 +162,5 @@ BUGFIXES:
 147 ==> 424691 - Thumbnails not showing for face tags [patch].
 148 ==> 427863 - Dragging a folder onto albums tree view sidebar will import with name of parent folder.
 149 ==> 427899 - Search (and Timeline, and ...) should offer a way to go to the album of the currently selected image.
-150 ==> 
+150 ==> 427907 - Person name appears in tool tip and also search and also people listing but is shown as unknown in the photo.
+151 ==> 
