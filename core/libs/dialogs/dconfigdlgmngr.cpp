@@ -58,11 +58,11 @@ class Q_DECL_HIDDEN DConfigDlgMngr::Private
 public:
 
     explicit Private(DConfigDlgMngr* const q)
-        : q(q),
-          conf(nullptr),
-          dialog(nullptr),
+        : q             (q),
+          conf          (nullptr),
+          dialog        (nullptr),
           insideGroupBox(false),
-          trackChanges(false)
+          trackChanges  (false)
     {
     }
 
@@ -89,7 +89,7 @@ public:
 
 DConfigDlgMngr::DConfigDlgMngr(QWidget* const parent, KConfigSkeleton* const conf)
     : QObject(parent),
-      d(new Private(this))
+      d      (new Private(this))
 {
     d->conf   = conf;
     d->dialog = parent;
@@ -215,9 +215,9 @@ void DConfigDlgMngr::setupWidget(QWidget* widget, KConfigSkeletonItem* item)
 
     if (gb && getCustomProperty(gb).isEmpty())
     {
-        const KConfigSkeletonItem* const item = d->conf->findItem(widget->objectName().mid(5));
+        const KConfigSkeletonItem* const sitem = d->conf->findItem(widget->objectName().mid(5));
 
-        if (item->property().type() == QVariant::Int)
+        if (sitem->property().type() == QVariant::Int)
         {
             QObjectList children                  = gb->children();
             children.removeAll(gb->layout());
