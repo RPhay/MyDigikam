@@ -785,7 +785,7 @@ bool ItemViewCategorized::showToolTip(const QModelIndex& index, QStyleOptionView
         pos = option.rect.center();
     }
 
-    if (d->delegate->acceptsToolTip(he->pos(), option.rect, index, &innerRect))
+    if (d->delegate->acceptsToolTip(pos, option.rect, index, &innerRect))
     {
         if (!innerRect.isNull())
         {
