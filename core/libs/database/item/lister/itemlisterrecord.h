@@ -77,9 +77,6 @@ public:
     QList<QVariant>        extraValues;
 };
 
-DIGIKAM_DATABASE_EXPORT QDataStream& operator<<(QDataStream& os, const ItemListerRecord& record);
-DIGIKAM_DATABASE_EXPORT QDataStream& operator>>(QDataStream& ds, ItemListerRecord& record);
-
 } // namespace Digikam
 
 #endif // DIGIKAM_ITEM_LISTER_RECORD_H
