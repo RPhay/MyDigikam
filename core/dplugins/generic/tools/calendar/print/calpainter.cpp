@@ -72,7 +72,7 @@ public:
 
 CalPainter::CalPainter(QPaintDevice* const pDevice)
     : QPainter(pDevice),
-      d(new Private)
+      d       (new Private)
 {
 }
 

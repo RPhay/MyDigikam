@@ -44,7 +44,7 @@ class CalPrinter : public QThread
 public:
 
     explicit CalPrinter(QPrinter* const printer,
-                        QMap<int, QUrl>& months,
+                        const QMap<int, QUrl>& months,
                         QObject* const parent);
 
     ~CalPrinter() override;

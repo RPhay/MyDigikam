@@ -65,7 +65,7 @@ QPointer<CalSettings> CalSettings::s_instance;
 
 CalSettings::CalSettings(QObject* const parent)
     : QObject(parent),
-      d(new Private)
+      d      (new Private)
 {
     params.drawLines = false;
     params.year      = CalSystem().earliestValidDate().year() + 1;

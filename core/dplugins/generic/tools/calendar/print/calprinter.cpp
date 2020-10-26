@@ -54,10 +54,10 @@ public:
 };
 
 CalPrinter::CalPrinter(QPrinter* const printer,
-                       QMap<int, QUrl>& months,
+                       const QMap<int, QUrl>& months,
                        QObject* const parent)
     : QThread(parent),
-      d(new Private)
+      d      (new Private)
 {
     d->printer   = printer;
     d->painter   = new CalPainter(d->printer);

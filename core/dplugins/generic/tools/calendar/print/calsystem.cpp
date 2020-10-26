@@ -85,7 +85,7 @@ static const char julianMonths[] =
 };
 
 CalSystemPrivate::CalSystemPrivate(CalSystem::CalendarSystem calendar)
-    : QSharedData(),
+    : QSharedData     (),
       m_calendarSystem(calendar)
 {
 }
