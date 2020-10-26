@@ -49,10 +49,10 @@ class Q_DECL_HIDDEN SaveImgThread::Private
 public:
 
     explicit Private()
-      : width(0),
-        height(0),
+      : width       (0),
+        height      (0),
         bytesPerLine(0),
-        frmt(0)
+        frmt        (0)
     {
     }
 
@@ -72,13 +72,14 @@ public:
 
 SaveImgThread::SaveImgThread(QObject* const parent)
     : QThread(parent),
-      d(new Private)
+      d      (new Private)
 {
 }
 
 SaveImgThread::~SaveImgThread()
 {
     // wait for the thread to finish
+
     wait();
 
     delete d;

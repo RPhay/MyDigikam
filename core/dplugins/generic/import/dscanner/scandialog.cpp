@@ -59,9 +59,9 @@ class Q_DECL_HIDDEN ScanDialog::Private
 public:
 
     explicit Private()
+      : progress  (nullptr),
+        saneWidget(nullptr)
     {
-        progress   = nullptr;
-        saneWidget = nullptr;
     }
 
     QString            targetDir;
@@ -71,13 +71,13 @@ public:
 
 ScanDialog::ScanDialog(KSaneWidget* const saneWdg, QWidget* const parent)
     : DPluginDialog(parent, QLatin1String("Scan Tool Dialog")),
-      d(new Private)
+      d            (new Private)
 {
     setWindowTitle(i18n("Scan Image"));
     setModal(false);
 
-    d->saneWidget = saneWdg;
-    d->progress   = new StatusProgressBar(this);
+    d->saneWidget          = saneWdg;
+    d->progress            = new StatusProgressBar(this);
     d->progress->setProgressBarMode(StatusProgressBar::ProgressBarMode);
     d->progress->setProgressTotalSteps(100);
     d->progress->setNotify(true);
@@ -123,6 +123,7 @@ void ScanDialog::slotDialogFinished()
     d->saneWidget->closeDevice();
 }
 
+// cppcheck-suppress constParameter
 void ScanDialog::slotSaveImage(QByteArray& ksane_data, int width, int height, int bytes_per_line, int ksaneformat)
 {
     QStringList writableMimetypes;
@@ -134,6 +135,7 @@ void ScanDialog::slotSaveImage(QByteArray& ksane_data, int width, int height, in
     }
 
     // Put first class citizens at first place
+
     writableMimetypes.removeAll(QLatin1String("image/jpeg"));
     writableMimetypes.removeAll(QLatin1String("image/tiff"));
     writableMimetypes.removeAll(QLatin1String("image/png"));
@@ -153,19 +155,21 @@ void ScanDialog::slotSaveImage(QByteArray& ksane_data, int width, int height, in
     imageFileSaveDialog->selectFile(defaultFileName);
 
     // Start dialog and check if canceled.
+
     if (imageFileSaveDialog->exec() != QDialog::Accepted)
     {
         delete imageFileSaveDialog;
         return;
     }
 
-    QUrl newURL = imageFileSaveDialog->selectedUrls().at(0);
+    QUrl newURL                  = imageFileSaveDialog->selectedUrls().at(0);
     QFileInfo fi(newURL.toLocalFile());
 
     // Parse name filter and extract file extension
+
     QString selectedFilterString = imageFileSaveDialog->selectedNameFilter();
     QLatin1String triggerString("*.");
-    int triggerPos = selectedFilterString.lastIndexOf(triggerString);
+    int triggerPos               = selectedFilterString.lastIndexOf(triggerString);
     QString format;
 
     if (triggerPos != -1)
@@ -176,6 +180,7 @@ void ScanDialog::slotSaveImage(QByteArray& ksane_data, int width, int height, in
     }
 
     // If name filter was selected, we guess image type using file extension.
+
     if (format.isEmpty())
     {
         format = fi.suffix().toUpper();

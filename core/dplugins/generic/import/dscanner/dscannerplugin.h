@@ -48,7 +48,7 @@ class DigitalScannerPlugin : public DPluginGeneric
 public:
 
     explicit DigitalScannerPlugin(QObject* const parent = nullptr);
-    ~DigitalScannerPlugin() override;
+    ~DigitalScannerPlugin()              override;
 
     QString name()                 const override;
     QString iid()                  const override;
@@ -57,8 +57,8 @@ public:
     QString description()          const override;
     QList<DPluginAuthor> authors() const override;
 
-    void setup(QObject* const) override;
-    void cleanUp()             override;
+    void setup(QObject* const)           override;
+    void cleanUp()                       override;
 
 private Q_SLOTS:
 

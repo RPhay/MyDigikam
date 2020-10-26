@@ -137,6 +137,7 @@ void DigitalScannerPlugin::slotDigitalScanner()
         if (!m_saneWidget->openDevice(dev))
         {
             // could not open a scanner
+
             QMessageBox::warning(nullptr, qApp->applicationName(), i18n("Cannot open scanner device."));
             return;
         }

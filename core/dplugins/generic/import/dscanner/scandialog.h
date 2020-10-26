@@ -51,13 +51,13 @@ class ScanDialog : public DPluginDialog
 public:
 
     explicit ScanDialog(KSaneWidget* const saneWdg, QWidget* const parent=nullptr);
-    ~ScanDialog() override;
+    ~ScanDialog()                   override;
 
     void setTargetDir(const QString& targetDir);
 
 protected:
 
-    void closeEvent(QCloseEvent*) override;
+    void closeEvent(QCloseEvent*)   override;
 
 Q_SIGNALS:
 
