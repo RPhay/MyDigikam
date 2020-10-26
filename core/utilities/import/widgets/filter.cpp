@@ -94,9 +94,9 @@ bool Filter::match(const QStringList& wildcards, const QString& name)
     foreach (const QString& wildcard, wildcards)
     {
         match = regexp(wildcard).exactMatch(name);
-
-        //qCDebug(DIGIKAM_IMPORTUI_LOG) << "**" << wildcard << name << match;
-
+/*
+        qCDebug(DIGIKAM_IMPORTUI_LOG) << "**" << wildcard << name << match;
+*/
         if (match)
         {
             break;
@@ -115,14 +115,14 @@ const QStringList& Filter::mimeWildcards(const QString& mime)
 
         foreach (const QString& m, list)
         {
-            QMimeType mime = QMimeDatabase().mimeTypeForName(m);
+            QMimeType mimet = QMimeDatabase().mimeTypeForName(m);
 
-            if (!mime.isValid())
+            if (!mimet.isValid())
             {
                 continue;
             }
 
-            foreach (const QString& pattern, mime.globPatterns())
+            foreach (const QString& pattern, mimet.globPatterns())
             {
                 wc.append(pattern);
             }
