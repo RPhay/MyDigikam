@@ -40,8 +40,7 @@ macro(METADATAENGINE_TESTS_BUILD)
                   ${COMMON_TEST_LINK}
     )
 
-
-ENDMACRO()
+endmacro()
 
 METADATAENGINE_TESTS_BUILD(tagsreadwritetest.cpp)
 METADATAENGINE_TESTS_BUILD(ratingreadwritetest.cpp)

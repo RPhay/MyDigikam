@@ -53,6 +53,7 @@ public:
 protected Q_SLOTS:
 
     /// Re-implemented from QTest framework
+
     virtual void initTestCase()
     {
         MetaEngine::initializeExiv2();
@@ -62,18 +63,21 @@ protected Q_SLOTS:
     }
 
     /// Re-implemented from QTest framework
+
     virtual void init()
     {
         m_tempDir = WSToolUtils::makeTemporaryDir(m_tempPath.toLatin1().data());
     }
 
     /// Re-implemented from QTest framework
+
     virtual void cleanup()
     {
         WSToolUtils::removeTemporaryDir(m_tempPath.toLatin1().data());
     }
 
     /// Re-implemented from QTest framework
+
     virtual void cleanupTestCase()
     {
         MetaEngine::cleanupExiv2();

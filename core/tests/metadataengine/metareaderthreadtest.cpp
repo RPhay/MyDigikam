@@ -41,7 +41,7 @@
 Mytask::Mytask()
     : ActionJob(),
       direction(MetaReaderThread::READ_INFO_FROM_FILE),
-      settings()
+      settings ()
 {
 }
 
@@ -66,6 +66,7 @@ void Mytask::run()
                 {
 
                     // Get most important info used to populate the core-database
+
                     meta->getItemDimensions();
                     meta->getItemComments();
                     meta->getItemTitles();
@@ -81,9 +82,11 @@ void Mytask::run()
                     processed = true;
                     break;
                 }
+
                 default: // WRITE_INFO_TO_SIDECAR
                 {
                     // Just create sidecar files with these info which will touch Exif, Iptc, and Xmp metadata
+
                     meta->setItemDimensions(QSize(256, 256));
                     meta->setImageDateTime(QDateTime::currentDateTime());
                     meta->setComments(QString::fromLatin1("MetaReaderThread").toLatin1());
@@ -93,6 +96,7 @@ void Mytask::run()
                     meta->setItemTagsPath(QStringList() << QLatin1String("digiKam/Unit Tests/Metadata Engine/MetaReaderThread"));
 
                     // This stage will write a sidecar in temporary directory without to touch original file.
+
                     meta->save(tempDir + QString::fromUtf8("/%1").arg(url.path().remove(QLatin1Char('/'))));
                     processed = true;
                     break;
@@ -134,9 +138,11 @@ QString MetaReaderThread::directionToString(Direction direction)
         case (MetaReaderThread::READ_INFO_FROM_FILE):
              ret = QLatin1String("Read info from file");
              break;
+
         case (MetaReaderThread::READ_PREVIEW_FROM_FILE):
              ret = QLatin1String("Read preview from file");
              break;
+
         default: // WRITE_INFO_TO_SIDECAR
              ret = QLatin1String("Write info to side-car");
              break;
@@ -182,7 +188,9 @@ void MetaReaderThread::slotJobFinished()
     qDebug() << "Elaspsed time in seconds:" << m_timer.elapsed() / 1000.0;
 
     if (isEmpty())
+    {
         emit done();
+    }
 }
 
 QString MetaReaderThread::stats(const QStringList& mimeTypes)
@@ -304,8 +312,8 @@ void MetaReaderThreadTest::runMetaReader(const QString& path,
 
     while (it.hasNext())
     {
-        QString path = it.next();
-        list.append(QUrl::fromLocalFile(path));
+        QString path2 = it.next();
+        list.append(QUrl::fromLocalFile(path2));
     }
 
     if (list.isEmpty())
@@ -317,7 +325,9 @@ void MetaReaderThreadTest::runMetaReader(const QString& path,
     MetaReaderThread* const thread = new MetaReaderThread(this);
 
     if (threadsToUse > 0)
+    {
         thread->setMaximumNumberOfThreads(threadsToUse);
+    }
 
     thread->readMetadata(list, direction, settings, m_tempDir.absolutePath());
 
