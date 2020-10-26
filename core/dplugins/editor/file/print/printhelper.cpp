@@ -146,7 +146,7 @@ public:
     }
 
     void adjustImage(PrintOptionsPage* const optionsPage,
-                     DImg& img)
+                     const DImg& img)
     {
         if (optionsPage->colorManaged())
         {

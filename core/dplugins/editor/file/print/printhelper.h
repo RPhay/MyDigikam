@@ -52,6 +52,8 @@ private:
     PrintHelper(const PrintHelper&);
     PrintHelper& operator=(const PrintHelper&);
 
+private:
+
     class Private;
     Private* const d;
 };
