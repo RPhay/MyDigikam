@@ -52,6 +52,7 @@ PreviewLoadingTask::PreviewLoadingTask(LoadSaveThread* const thread, const Loadi
 
 PreviewLoadingTask::~PreviewLoadingTask()
 {
+    qCDebug(DIGIKAM_GENERAL_LOG) << "The PreviewLoadingTask destructor was called..." << this;
 }
 
 void PreviewLoadingTask::execute()

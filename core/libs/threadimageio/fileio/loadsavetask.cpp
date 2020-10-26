@@ -111,6 +111,8 @@ bool LoadingTask::continueQuery()
 
 void LoadingTask::setStatus(LoadingTaskStatus status)
 {
+    qCDebug(DIGIKAM_GENERAL_LOG) << "The LoadingTask::setStatus() was called........" << this;
+
     m_loadingTaskStatus = status;
 }
 
