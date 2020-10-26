@@ -37,13 +37,11 @@ extern "C"
 
 #include <QFile>
 #include <QByteArray>
-#include <QMutexLocker>
 
 // Local includes
 
 #include "digikam_debug.h"
 #include "digikam_config.h"
-#include "dimgjpegplugin.h"
 #include "dimgloaderobserver.h"
 
 #ifdef Q_OS_WIN
@@ -55,8 +53,6 @@ namespace DigikamJPEGDImgPlugin
 
 bool DImgJPEGLoader::load(const QString& filePath, DImgLoaderObserver* const observer)
 {
-    QMutexLocker lock(&s_jpegLoaderMutex);
-
     readMetadata(filePath);
 
 #ifdef Q_OS_WIN

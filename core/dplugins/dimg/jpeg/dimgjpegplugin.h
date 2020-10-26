@@ -27,7 +27,6 @@
 
 #include <QByteArray>
 #include <QWidget>
-#include <QMutex>
 
 // Local includes
 
@@ -41,8 +40,6 @@ using namespace Digikam;
 
 namespace DigikamJPEGDImgPlugin
 {
-
-extern QMutex s_jpegLoaderMutex;
 
 class DImgJPEGPlugin : public DPluginDImg
 {

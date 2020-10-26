@@ -44,8 +44,6 @@
 namespace DigikamJPEGDImgPlugin
 {
 
-QMutex s_jpegLoaderMutex(QMutex::Recursive);
-
 DImgJPEGPlugin::DImgJPEGPlugin(QObject* const parent)
     : DPluginDImg(parent)
 {
