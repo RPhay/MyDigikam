@@ -59,7 +59,7 @@ QString NamespaceEntry::DM_COLORLABEL_CONTAINER()
 
 // ------------------------------------------------------------
 
-bool dmcompare(NamespaceEntry& e1, NamespaceEntry e2)
+bool s_dmcompare(const NamespaceEntry& e1, const NamespaceEntry& e2)
 {
     return (e1.index < e2.index);
 }
@@ -529,7 +529,7 @@ void DMetadataSettingsContainer::readOneGroup(KConfigGroup& group, const QString
         container.append(ns);
     }
 
-    std::sort(container.begin(), container.end(), Digikam::dmcompare);
+    std::sort(container.begin(), container.end(), Digikam::s_dmcompare);
 }
 
 void DMetadataSettingsContainer::writeOneGroup(KConfigGroup& group, const QString& name, QList<NamespaceEntry>& container) const
