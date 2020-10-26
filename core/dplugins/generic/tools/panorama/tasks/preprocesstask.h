@@ -49,13 +49,14 @@ public:
                             int id,
                             PanoramaPreprocessedUrls& targetUrls,
                             const QUrl& sourceUrl);
-    ~PreProcessTask() override;
+    ~PreProcessTask()                       override;
 
-    void requestAbort() override;
+    void requestAbort()                     override;
 
 protected:
 
-    void run(ThreadWeaver::JobPointer self, ThreadWeaver::Thread* thread) override;
+    void run(ThreadWeaver::JobPointer self,
+             ThreadWeaver::Thread* thread)  override;
 
 private:
 
