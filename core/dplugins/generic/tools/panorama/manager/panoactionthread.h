@@ -133,7 +133,7 @@ private Q_SLOTS:
 
 private:
 
-    void appendStitchingJobs(QSharedPointer<ThreadWeaver::Sequence>& js,
+    void appendStitchingJobs(const QSharedPointer<ThreadWeaver::Sequence>& js,
                              const QUrl& ptoUrl,
                              QUrl& mkUrl,
                              QUrl& outputUrl,

@@ -476,7 +476,7 @@ void PanoActionThread::slotDone(JobPointer j)
     emit jobCollectionFinished(ad);
 }
 
-void PanoActionThread::appendStitchingJobs(QSharedPointer<Sequence>& js,
+void PanoActionThread::appendStitchingJobs(const QSharedPointer<Sequence>& js,
                                            const QUrl& ptoUrl,
                                            QUrl& mkUrl,
                                            QUrl& outputUrl,
