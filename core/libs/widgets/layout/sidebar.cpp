@@ -538,10 +538,7 @@ void DMultiTabBarTab::paintEvent(QPaintEvent*)
         {
            bottomIcon = true;
         }
-    }
 
-    if (isVertical())
-    {
         if (bottomIcon)
         {
             labelArea = QRect(0, vMargin, width(), textRoom);

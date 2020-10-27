@@ -42,8 +42,10 @@ class DIGIKAM_EXPORT AutoLevelsFilter : public DImgThreadedFilter
 public:
 
     explicit AutoLevelsFilter(QObject* const parent = nullptr);
-    AutoLevelsFilter(DImg* const orgImage, const DImg* const refImage, QObject* const parent=nullptr);
-    ~AutoLevelsFilter() override;
+    AutoLevelsFilter(DImg* const orgImage,
+                     const DImg* const refImage,
+                     QObject* const parent = nullptr);
+    ~AutoLevelsFilter()                                                       override;
 
     static QString          FilterIdentifier()
     {
@@ -62,12 +64,12 @@ public:
 
     static QString DisplayableName();
 
-    QString         filterIdentifier()                          const override
+    QString         filterIdentifier()                                  const override
     {
         return FilterIdentifier();
     }
 
-    FilterAction    filterAction()                                    override;
+    FilterAction    filterAction()                                            override;
 
     void                    readParameters(const FilterAction& action)        override;
 

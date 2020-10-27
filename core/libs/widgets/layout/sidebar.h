@@ -348,7 +348,7 @@ public:
     explicit Sidebar(QWidget* const parent,
                      SidebarSplitter* const sp,
                      Qt::Edge side = Qt::LeftEdge,
-                     bool minimizedDefault=false);
+                     bool minimizedDefault = false);
 
     ~Sidebar()                              override;
 

@@ -58,10 +58,10 @@ class Q_DECL_HIDDEN BlurFXFilter::Private
 public:
 
     explicit Private()
-      : blurFXType(ZoomBlur),
-        distance(100),
-        level(45),
-        randomSeed(RandomNumberGenerator::timeSeed())
+      : blurFXType  (ZoomBlur),
+        distance    (100),
+        level       (45),
+        randomSeed  (RandomNumberGenerator::timeSeed())
     {
     }
 
@@ -73,14 +73,14 @@ public:
 
 BlurFXFilter::BlurFXFilter(QObject* const parent)
     : DImgThreadedFilter(parent),
-      d(new Private)
+      d                 (new Private)
 {
     initFilter();
 }
 
 BlurFXFilter::BlurFXFilter(DImg* const orgImage, QObject* const parent, int blurFXType, int distance, int level)
     : DImgThreadedFilter(orgImage, parent, QLatin1String("BlurFX")),
-      d(new Private)
+      d                 (new Private)
 {
     d->blurFXType = blurFXType;
     d->distance   = distance;
@@ -1045,26 +1045,24 @@ void BlurFXFilter::focusBlur(DImg* const orgImage, DImg* const destImage,
     int progress;
 
     // We working on full image.
+
     int xMin = 0;
     int xMax = orgImage->width();
     int yMin = 0;
     int yMax = orgImage->height();
 
     // If we working in preview mode, else we using the preview area.
+
     if (pArea.isValid())
     {
         xMin = pArea.x();
         xMax = pArea.x() + pArea.width();
         yMin = pArea.y();
         yMax = pArea.y() + pArea.height();
-    }
-
-    if (pArea.isValid())
-    {
-        //UNTESTED (unused)
 
         // We do not have access to the loop of the Gaussian blur,
         // so we have to cut the image that we run the effect on.
+
         int xMinBlur = xMin - BlurRadius;
         int xMaxBlur = xMax + BlurRadius;
         int yMinBlur = yMin - BlurRadius;
@@ -1075,6 +1073,7 @@ void BlurFXFilter::focusBlur(DImg* const orgImage, DImg* const destImage,
         BlurFilter(this, *orgImage, *destImage, 10, 75, BlurRadius);
 
         // I am unsure about differences of 1 pixel
+
         destImage->bitBltImage(&areaImage, xMinBlur, yMinBlur);
         destImage->bitBltImage(orgImage, 0, 0, orgImage->width(), yMinBlur, 0, 0);
         destImage->bitBltImage(orgImage, 0, yMinBlur, xMinBlur, yMaxBlur - yMinBlur, 0, yMinBlur);
@@ -1086,9 +1085,11 @@ void BlurFXFilter::focusBlur(DImg* const orgImage, DImg* const destImage,
     else
     {
         // copy bits for blurring
+
         memcpy(destImage->bits(), orgImage->bits(), orgImage->numBytes());
 
         // Gaussian blur using the BlurRadius parameter.
+
         BlurFilter(this, *orgImage, *destImage, 10, 80, BlurRadius);
     }
 
@@ -1121,9 +1122,12 @@ void BlurFXFilter::focusBlur(DImg* const orgImage, DImg* const destImage,
         }
 
         foreach (QFuture<void> t, tasks)
+        {
             t.waitForFinished();
+        }
 
         // Update the progress bar in dialog.
+
         progress = (int)(80.0 + ((double)(h - yMin) * 20.0) / (yMax - yMin));
 
         if (progress % 5 == 0)

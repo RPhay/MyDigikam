@@ -65,31 +65,31 @@ private:
     struct Q_DECL_HIDDEN Args
     {
         explicit Args()
-          : start(0),
-            stop(0),
-            h(0),
-            w(0),
-            orgImage(nullptr),
-            destImage(nullptr),
-            X(0),
-            Y(0),
-            Distance(0),
-            nCount(0),
-            lpXArray(nullptr),
-            lpYArray(nullptr),
-            BlendRadius(0),
-            bInversed(0),
-            layer1(nullptr),
-            layer2(nullptr),
-            layer3(nullptr),
-            layer4(nullptr),
-            SizeW(0),
-            SizeH(0),
+          : start        (0),
+            stop         (0),
+            h            (0),
+            w            (0),
+            orgImage     (nullptr),
+            destImage    (nullptr),
+            X            (0),
+            Y            (0),
+            Distance     (0),
+            nCount       (0),
+            lpXArray     (nullptr),
+            lpYArray     (nullptr),
+            BlendRadius  (0),
+            bInversed    (0),
+            layer1       (nullptr),
+            layer2       (nullptr),
+            layer3       (nullptr),
+            layer4       (nullptr),
+            SizeW        (0),
+            SizeH        (0),
             StrengthRange(0),
-            Radius(0),
-            Kernel(nullptr),
-            arrMult(nullptr),
-            pBlur(nullptr)
+            Radius       (0),
+            Kernel       (nullptr),
+            arrMult      (nullptr),
+            pBlur        (nullptr)
         {
         }
 
@@ -128,8 +128,11 @@ private:
 public:
 
     explicit BlurFXFilter(QObject* const parent = nullptr);
-    explicit BlurFXFilter(DImg* const orgImage, QObject* const parent=nullptr, int blurFXType=ZoomBlur,
-                          int distance=100, int level=45);
+    explicit BlurFXFilter(DImg* const orgImage,
+                          QObject* const parent = nullptr,
+                          int blurFXType = ZoomBlur,
+                          int distance = 100,
+                          int level = 45);
     ~BlurFXFilter() override;
 
     static QString          FilterIdentifier()
