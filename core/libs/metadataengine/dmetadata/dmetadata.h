@@ -101,7 +101,7 @@ public: // File I/O helpers
 public: // History helpers
 
     QString getItemHistory()                                                                                            const;
-    bool    setItemHistory(QString& imageHistoryXml)                                                                    const;
+    bool    setItemHistory(const QString& imageHistoryXml)                                                              const;
     bool    hasItemHistoryTag()                                                                                         const;
 
     QString getItemUniqueId()                                                                                           const;

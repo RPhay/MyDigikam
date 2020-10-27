@@ -35,7 +35,7 @@
 namespace Digikam
 {
 
-bool DMetadata::setItemHistory(QString& imageHistoryXml) const
+bool DMetadata::setItemHistory(const QString& imageHistoryXml) const
 {
     if (supportXmp())
     {
@@ -57,8 +57,9 @@ QString DMetadata::getItemHistory() const
     if (hasXmp())
     {
         QString value = getXmpTagString("Xmp.digiKam.ImageHistory", false);
-        //qCDebug(DIGIKAM_METAENGINE_LOG) << "Loading image history " << value;
-
+/*
+        qCDebug(DIGIKAM_METAENGINE_LOG) << "Loading image history " << value;
+*/
         return value;
     }
 
