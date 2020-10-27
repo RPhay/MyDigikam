@@ -47,22 +47,14 @@ public:
 
     explicit RemoveFilterAction(const QString& label,
                                 const QModelIndex& index,
-                                QObject* const parent = 0);
+                                QObject* const parent = nullptr);
     ~RemoveFilterAction()
-    {
-    }
 
-    void setIndex(QModelIndex& index)
-    {
-        m_index = index;
-    }
+    void setIndex(const QModelIndex& index)
 
 public Q_SLOTS:
 
     void triggerSlot()
-    {
-        emit actionTriggered(m_index);
-    }
 
 Q_SIGNALS:
 

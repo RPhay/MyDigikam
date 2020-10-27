@@ -44,10 +44,26 @@
 namespace Digikam
 {
 
-RemoveFilterAction::RemoveFilterAction(const QString& label, const QModelIndex& index, QObject* const parent)
+RemoveFilterAction::RemoveFilterAction(const QString& label,
+                                       const QModelIndex& index,
+                                       QObject* const parent)
     : QAction(label, parent),
       m_index(index)
 {
+}
+
+RemoveFilterAction::~RemoveFilterAction()
+{
+}
+
+void RemoveFilterAction::::setIndex(const QModelIndex& index)
+{
+    m_index = index;
+}
+
+void RemoveFilterAction::::triggerSlot()
+{
+    emit actionTriggered(m_index);
 }
 
 // -------------------------------------------------------------------------------------------------------
@@ -57,10 +73,10 @@ class Q_DECL_HIDDEN ItemPropertiesHistoryTab::Private
 public:
 
     explicit Private()
-      : view(nullptr),
-        model(nullptr),
-        layout(nullptr),
-        delegate(nullptr),
+      : view       (nullptr),
+        model      (nullptr),
+        layout     (nullptr),
+        delegate   (nullptr),
         headerLabel(nullptr)
     {
     }
@@ -74,7 +90,7 @@ public:
 
 ItemPropertiesHistoryTab::ItemPropertiesHistoryTab(QWidget* const parent)
     : QWidget(parent),
-      d(new Private)
+      d      (new Private)
 {
     d->layout      = new QGridLayout(this);
     d->view        = new QTreeView(this);
@@ -147,7 +163,7 @@ void ItemPropertiesHistoryTab::setModelData(const QList<DImageHistory::Entry>& e
 
 void ItemPropertiesHistoryTab::disableEntry(bool disable)
 {
-    d->model->disableEntry(d->model->index(d->model->rowCount(),0), disable);
+    d->model->disableEntry(d->model->index(d->model->rowCount(), 0), disable);
 }
 
 } // namespace Digikam
