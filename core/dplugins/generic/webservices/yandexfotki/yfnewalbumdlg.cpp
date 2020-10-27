@@ -63,9 +63,10 @@ public:
     YandexFotkiAlbum album;
 };
 
+// cppcheck-suppress constParameter
 YFNewAlbumDlg::YFNewAlbumDlg(QWidget* const parent, YandexFotkiAlbum& album)
     : WSNewAlbumDialog(parent, QLatin1String("Yandex.Fotki")),
-      d(new Private)
+      d               (new Private)
 {
     d->album                          = album;
 

@@ -46,17 +46,17 @@ public:
 
 public:
 
-    const QString& urn() const
+    const QString& urn()                const
     {
         return m_urn;
     }
 
-    const QString& author() const
+    const QString& author()             const
     {
         return m_author;
     }
 
-    const QString& title() const
+    const QString& title()              const
     {
         return m_title;
     }
@@ -66,7 +66,7 @@ public:
         m_title = title;
     }
 
-    const QString& summary() const
+    const QString& summary()            const
     {
         return m_summary;
     }
@@ -76,22 +76,22 @@ public:
         m_summary = summary;
     }
 
-    const QDateTime& publishedDate() const
+    const QDateTime& publishedDate()    const
     {
         return m_publishedDate;
     }
 
-    const QDateTime& editedDate() const
+    const QDateTime& editedDate()       const
     {
         return m_editedDate;
     }
 
-    const QDateTime& updatedDate() const
+    const QDateTime& updatedDate()      const
     {
         return m_updatedDate;
     }
 
-    bool isProtected() const
+    bool isProtected()                  const
     {
         return !m_password.isNull();
     }
@@ -101,7 +101,7 @@ public:
         m_password = password;
     }
 
-    virtual QString toString() const
+    virtual QString toString()          const
     {
         return m_title;
     }
@@ -136,6 +136,8 @@ private:
     QDateTime m_updatedDate;
 
     QString   m_password;
+
+private:
 
     friend class YFTalker;
 
