@@ -51,7 +51,7 @@ class YFWindow : public WSToolDialog
 public:
 
     explicit YFWindow(DInfoInterface* const iface, QWidget* const parent, bool import = false);
-    ~YFWindow() override;
+    ~YFWindow()                         override;
 
 public:
 
@@ -77,7 +77,7 @@ private Q_SLOTS:
     void slotListPhotosDone(const QList <YFPhoto>& photosList);
     void slotListPhotosDoneForUpload(const QList <YFPhoto>& photosList);
     void slotListPhotosDoneForDownload(const QList <YFPhoto>& photosList);
-    void slotUpdatePhotoDone(YFPhoto& );
+    void slotUpdatePhotoDone(const YFPhoto&);
     void slotUpdateAlbumDone();
 
     void slotNewAlbumRequest();

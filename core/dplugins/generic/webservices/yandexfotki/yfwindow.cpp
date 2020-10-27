@@ -75,26 +75,26 @@ class Q_DECL_HIDDEN YFWindow::Private
 public:
 
     explicit Private()
-      : import(false),
-        widget(nullptr),
-        loginLabel(nullptr),
-        headerLabel(nullptr),
-        changeUserButton(nullptr),
-        albumsBox(nullptr),
-        newAlbumButton(nullptr),
-        reloadAlbumsButton(nullptr),
-        albumsCombo(nullptr),
-        accessCombo(nullptr),
-        hideOriginalCheck(nullptr),
+      : import              (false),
+        widget              (nullptr),
+        loginLabel          (nullptr),
+        headerLabel         (nullptr),
+        changeUserButton    (nullptr),
+        albumsBox           (nullptr),
+        newAlbumButton      (nullptr),
+        reloadAlbumsButton  (nullptr),
+        albumsCombo         (nullptr),
+        accessCombo         (nullptr),
+        hideOriginalCheck   (nullptr),
         disableCommentsCheck(nullptr),
-        adultCheck(nullptr),
-        resizeCheck(nullptr),
-        dimensionSpin(nullptr),
-        imageQualitySpin(nullptr),
-        policyGroup(nullptr),
-        imgList(nullptr),
-        progressBar(nullptr),
-        iface(nullptr)
+        adultCheck          (nullptr),
+        resizeCheck         (nullptr),
+        dimensionSpin       (nullptr),
+        imageQualitySpin    (nullptr),
+        policyGroup         (nullptr),
+        imgList             (nullptr),
+        progressBar         (nullptr),
+        iface               (nullptr)
     {
     }
 
@@ -143,7 +143,7 @@ const char* YFWindow::Private::XMP_SERVICE_ID = "Xmp.digiKam.yandexGPhotoId";
 
 YFWindow::YFWindow(DInfoInterface* const iface, QWidget* const /*parent*/, bool import)
     : WSToolDialog(nullptr, QLatin1String("YandexFotki Dialog")),
-      d(new Private)
+      d           (new Private)
 {
     d->iface                = iface;
     d->import               = import;
@@ -218,6 +218,7 @@ YFWindow::YFWindow(DInfoInterface* const iface, QWidget* const /*parent*/, bool 
             this, SLOT(slotUpdateAlbumDone()));
 
     // read settings from file
+
     readSettings();
 }
 
@@ -315,8 +316,9 @@ void YFWindow::readSettings()
     d->talker.setLogin(grp.readEntry("login", ""));
 
     // don't store tokens in plaintext
-    //d->talker.setToken(grp.readEntry("token", ""));
-
+/*
+    d->talker.setToken(grp.readEntry("token", ""));
+*/
     if (grp.readEntry("Resize", false))
     {
         d->resizeCheck->setChecked(true);
@@ -343,8 +345,9 @@ void YFWindow::writeSettings()
     grp.writeEntry("token", d->talker.token());
 
     // don't store tokens in plaintext
-    //grp.writeEntry("login", d->talker.login());
-
+/*
+    grp.writeEntry("login", d->talker.login());
+*/
     grp.writeEntry("Resize",        d->resizeCheck->isChecked());
     grp.writeEntry("Maximum Width", d->dimensionSpin->value());
     grp.writeEntry("Image Quality", d->imageQualitySpin->value());
@@ -354,6 +357,7 @@ void YFWindow::writeSettings()
 void YFWindow::slotChangeUserClicked()
 {
     // force authenticate window
+
     authenticate(true);
 }
 
@@ -406,6 +410,7 @@ void YFWindow::authenticate(bool forceAuthWindow)
         else
         {
             // don't change anything
+
             return;
         }
 
@@ -489,7 +494,7 @@ void YFWindow::slotListPhotosDoneForUpload(const QList <YFPhoto>& photosList)
     {
         DItemInfo info(d->iface->itemInfo(url));
         QScopedPointer<DMetadata> meta(new DMetadata);
-    
+
         // check if photo alredy uploaded
 
         int oldPhotoId = -1;
@@ -795,10 +800,13 @@ void YFWindow::slotError()
                 updateNextPhoto();
                 return;
             }
+
             break;
+
         default:
             qCDebug(DIGIKAM_WEBSERVICES_LOG) << "Unhandled error" << d->talker.state();
             QMessageBox::critical(this, QString(), i18n("Unknown error"));
+            break;
     }
 
     // cancel current operation
@@ -849,12 +857,12 @@ void YFWindow::slotListAlbumsDone(const QList<YandexFotkiAlbum>& albumsList)
     updateControls(true);
 }
 
-void YFWindow::slotUpdatePhotoDone(YFPhoto& photo)
+void YFWindow::slotUpdatePhotoDone(const YFPhoto& photo)
 {
     qCDebug(DIGIKAM_WEBSERVICES_LOG) << "photoUploaded" << photo;
 
     QScopedPointer<DMetadata> meta(new DMetadata);
-    
+
     if (meta->supportXmp()                     &&
         meta->canWriteXmp(photo.originalUrl()) &&
         meta->load(photo.originalUrl()))
