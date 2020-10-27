@@ -48,13 +48,13 @@ public:
     explicit RemoveFilterAction(const QString& label,
                                 const QModelIndex& index,
                                 QObject* const parent = nullptr);
-    ~RemoveFilterAction()
+    ~RemoveFilterAction();
 
-    void setIndex(const QModelIndex& index)
+    void setIndex(const QModelIndex& index);
 
 public Q_SLOTS:
 
-    void triggerSlot()
+    void triggerSlot();
 
 Q_SIGNALS:
 

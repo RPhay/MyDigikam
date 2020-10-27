@@ -51,6 +51,20 @@ RemoveFilterAction::RemoveFilterAction(const QString& label, const QModelIndex& 
 {
 }
 
+RemoveFilterAction::~RemoveFilterAction()
+{
+}
+
+void RemoveFilterAction::setIndex(const QModelIndex& index)
+{
+    m_index = index;
+}
+
+void RemoveFilterAction::triggerSlot()
+{
+    emit actionTriggered(m_index);
+}
+
 // -------------------------------------------------------------------------------------------------------
 
 class Q_DECL_HIDDEN FiltersHistoryWidget::Private

@@ -48,21 +48,13 @@ class RemoveFilterAction : public QAction
 public:
 
     explicit RemoveFilterAction(const QString& label, const QModelIndex& index, QObject* const parent = nullptr);
-    ~RemoveFilterAction() override
-    {
-    }
+    ~RemoveFilterAction() override;
 
-    void setIndex(QModelIndex& index)
-    {
-        m_index = index;
-    }
+    void setIndex(const QModelIndex& index);
 
 public Q_SLOTS:
 
-    void triggerSlot()
-    {
-        emit actionTriggered(m_index);
-    }
+    void triggerSlot();
 
 Q_SIGNALS:
 
