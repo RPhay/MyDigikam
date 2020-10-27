@@ -40,11 +40,11 @@ class Q_DECL_HIDDEN ShowfotoItemModel::Private
 public:
 
     explicit Private()
-      : keepFileUrlCache(false),
-        refreshing(false),
-        reAdding(false),
+      : keepFileUrlCache           (false),
+        refreshing                 (false),
+        reAdding                   (false),
         incrementalRefreshRequested(false),
-        sendRemovalSignals(false)
+        sendRemovalSignals         (false)
     {
     }
 
@@ -76,7 +76,7 @@ public:
 
 ShowfotoItemModel::ShowfotoItemModel(QObject* const parent)
     : QAbstractListModel(parent),
-      d(new Private)
+      d                 (new Private)
 {
 }
 
@@ -328,7 +328,7 @@ void ShowfotoItemModel::appendInfos(const QList<ShowfotoItemInfo>& infos)
     publiciseInfos(infos);
 }
 
-void ShowfotoItemModel::reAddShowfotoItemInfos(ShowfotoItemInfoList& infos)
+void ShowfotoItemModel::reAddShowfotoItemInfos(const ShowfotoItemInfoList& infos)
 {
     publiciseInfos(infos);
 }

@@ -234,7 +234,7 @@ Q_SIGNALS:
 
 public Q_SLOTS:
 
-    void reAddShowfotoItemInfos(ShowfotoItemInfoList& infos);
+    void reAddShowfotoItemInfos(const ShowfotoItemInfoList& infos);
     void reAddingFinished();
     void slotFileDeleted(const QString& folder, const QString& file, bool status);
     void slotFileUploaded(const ShowfotoItemInfo& info);

@@ -47,86 +47,88 @@ class ShowFoto : public Digikam::EditorWindow
 public:
 
     explicit ShowFoto(const QList<QUrl>& urlList);
-    ~ShowFoto() override;
+    ~ShowFoto()                                             override;
 
 public:
 
-    DInfoInterface* infoIface(DPluginAction* const ac) override;
+    DInfoInterface* infoIface(DPluginAction* const ac)      override;
 
     virtual void show();
 
 private:
 
-    bool queryClose() override;
+    bool queryClose()                                       override;
 
-    bool save() override;
-    bool saveAs() override;
-    void moveFile() override;
-    void finishSaving(bool success) override;
-    QUrl saveDestinationUrl() override;
-    bool saveNewVersion() override;
-    bool saveCurrentVersion() override;
-    bool saveNewVersionAs() override;
-    bool saveNewVersionInFormat(const QString&) override;
+    bool save()                                             override;
+    bool saveAs()                                           override;
+    void moveFile()                                         override;
+    void finishSaving(bool success)                         override;
+    QUrl saveDestinationUrl()                               override;
+    bool saveNewVersion()                                   override;
+    bool saveCurrentVersion()                               override;
+    bool saveNewVersionAs()                                 override;
+    bool saveNewVersionInFormat(const QString&)             override;
 
-    void saveIsComplete() override;
-    void saveAsIsComplete() override;
-    void saveVersionIsComplete() override;
+    void saveIsComplete()                                   override;
+    void saveAsIsComplete()                                 override;
+    void saveVersionIsComplete()                            override;
 
     void openFolder(const QUrl& url);
     void openUrls(const QList<QUrl>& urls);
 
-    Digikam::ThumbBarDock* thumbBar()     const override;
-    Digikam::Sidebar*      rightSideBar() const override;
+    Digikam::ThumbBarDock* thumbBar()                 const override;
+    Digikam::Sidebar*      rightSideBar()             const override;
 
 private Q_SLOTS:
 
-    void slotForward() override;
-    void slotBackward() override;
-    void slotLast() override;
-    void slotFirst() override;
-    void slotFileWithDefaultApplication() override;
-    void slotOpenWith(QAction* action=nullptr) override;
+    void slotForward()                                      override;
+    void slotBackward()                                     override;
+    void slotLast()                                         override;
+    void slotFirst()                                        override;
+    void slotFileWithDefaultApplication()                   override;
+    void slotOpenWith(QAction* action = nullptr)            override;
     void slotShowfotoItemInfoActivated(const ShowfotoItemInfo& info);
 
     void slotOpenFile();
     void slotOpenFolder();
     void slotOpenUrl(const ShowfotoItemInfo& info);
-    void slotDroppedUrls(const QList<QUrl>& droppedUrls, bool dropped);
-    void slotDeleteCurrentItem() override;
+    void slotDroppedUrls(const QList<QUrl>& droppedUrls,
+                         bool dropped);
+    void slotDeleteCurrentItem()                            override;
 
-    void slotChanged() override;
-    void slotUpdateItemInfo() override;
+    void slotChanged()                                      override;
+    void slotUpdateItemInfo()                               override;
 
-    void slotPrepareToLoad() override;
-    void slotLoadingStarted(const QString& filename) override;
-    void slotLoadingFinished(const QString& filename, bool success) override;
-    void slotSavingStarted(const QString& filename) override;
+    void slotPrepareToLoad()                                override;
+    void slotLoadingStarted(const QString& filename)        override;
+    void slotLoadingFinished(const QString& filename,
+                             bool success)                  override;
+    void slotSavingStarted(const QString& filename)         override;
 
-    void slotRevert() override;
+    void slotRevert()                                       override;
 
-    void slotAddedDropedItems(QDropEvent*) override;
+    void slotAddedDropedItems(QDropEvent*)                  override;
 
 Q_SIGNALS:
 
     void signalLoadCurrentItem(const QList<QUrl>& urlList);
     void signalOpenFolder(const QUrl&);
     void signalOpenFile(const QList<QUrl>& urls);
-    void signalInfoList(ShowfotoItemInfoList&);
+    void signalInfoList(const ShowfotoItemInfoList&);
 
 // -- Internal setup methods implemented in showfoto_config.cpp ----------------------------------------
 
 public Q_SLOTS:
 
-    void slotSetup() override;
-    void slotSetupICC() override;
+    void slotSetup()                                        override;
+    void slotSetupICC()                                     override;
 
 private:
 
-    bool setup(bool iccSetupPage=false);
+    bool setup(bool iccSetupPage = false);
     void applySettings();
-    void readSettings() override;
-    void saveSettings() override;
+    void readSettings()                                     override;
+    void saveSettings()                                     override;
 
 private Q_SLOTS:
 
@@ -136,17 +138,17 @@ private Q_SLOTS:
 
 private:
 
-    void setupActions() override;
-    void setupConnections() override;
-    void setupUserArea() override;
+    void setupActions()                                     override;
+    void setupConnections()                                 override;
+    void setupUserArea()                                    override;
 
-    void toggleActions(bool val) override;
+    void toggleActions(bool val)                            override;
     void toggleNavigation(int index);
-    void addServicesMenu() override;
+    void addServicesMenu()                                  override;
 
 private Q_SLOTS:
 
-    void slotContextMenu() override;
+    void slotContextMenu()                                  override;
 
 // -- Import tools methods implemented in showfoto_import.cpp -------------------------------------
 

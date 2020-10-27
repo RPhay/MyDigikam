@@ -75,11 +75,11 @@ void ShowFoto::setupConnections()
     connect(this, &ShowFoto::signalOpenFile,
             this, &ShowFoto::slotOpenFile);
 
-    connect(this,SIGNAL(signalInfoList(ShowfotoItemInfoList&)),
-            d->model,SLOT(reAddShowfotoItemInfos(ShowfotoItemInfoList&)));
+    connect(this, SIGNAL(signalInfoList(ShowfotoItemInfoList)),
+            d->model, SLOT(reAddShowfotoItemInfos(ShowfotoItemInfoList)));
 
-    connect(d->thumbLoadThread,SIGNAL(signalThumbnailLoaded(LoadingDescription,QPixmap)),
-            d->model,SLOT(slotThumbnailLoaded(LoadingDescription,QPixmap)));
+    connect(d->thumbLoadThread, SIGNAL(signalThumbnailLoaded(LoadingDescription,QPixmap)),
+            d->model, SLOT(slotThumbnailLoaded(LoadingDescription,QPixmap)));
 
     connect(this, SIGNAL(signalNoCurrentItem()),
             d->rightSideBar, SLOT(slotNoCurrentItem()));
