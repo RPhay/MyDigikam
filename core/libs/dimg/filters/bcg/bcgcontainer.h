@@ -46,11 +46,13 @@ public:
 
     explicit BCGContainer();
 
-    bool isDefault() const;
+    bool isDefault()                                                                  const;
     bool operator==(const BCGContainer& other)                                        const;
 
     void writeToFilterAction(FilterAction& action, const QString& prefix = QString()) const;
-    static BCGContainer fromFilterAction(const FilterAction& action, const QString& prefix = QString());
+
+    static BCGContainer fromFilterAction(const FilterAction& action,
+                                         const QString& prefix = QString());
 
 public:
 

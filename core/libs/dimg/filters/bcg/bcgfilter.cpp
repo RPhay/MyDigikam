@@ -65,7 +65,9 @@ BCGFilter::BCGFilter(QObject* const parent)
     initFilter();
 }
 
-BCGFilter::BCGFilter(DImg* const orgImage, QObject* const parent, const BCGContainer& settings)
+BCGFilter::BCGFilter(DImg* const orgImage,
+                     QObject* const parent,
+                     const BCGContainer& settings)
     : DImgThreadedFilter(orgImage, parent, QLatin1String("BCGFilter")),
       d                 (new Private)
 {
@@ -74,8 +76,12 @@ BCGFilter::BCGFilter(DImg* const orgImage, QObject* const parent, const BCGConta
     initFilter();
 }
 
-BCGFilter::BCGFilter(const BCGContainer& settings, DImgThreadedFilter* const master,
-                     const DImg& orgImage, const DImg& destImage, int progressBegin, int progressEnd)
+BCGFilter::BCGFilter(const BCGContainer& settings,
+                     DImgThreadedFilter* const master,
+                     const DImg& orgImage,
+                     const DImg& destImage,
+                     int progressBegin,
+                     int progressEnd)
     : DImgThreadedFilter(master, orgImage, destImage, progressBegin, progressEnd, QLatin1String("WBFilter")),
       d                 (new Private)
 {
@@ -177,7 +183,7 @@ void BCGFilter::reset()
     }
 }
 
-void BCGFilter::applyBCG(DImg& image)
+void BCGFilter::applyBCG(const DImg& image)
 {
     if (image.isNull())
     {

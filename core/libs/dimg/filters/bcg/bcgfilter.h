@@ -45,9 +45,15 @@ class DIGIKAM_EXPORT BCGFilter : public DImgThreadedFilter
 public:
 
     explicit BCGFilter(QObject* const parent = nullptr);
-    explicit BCGFilter(DImg* const orgImage, QObject* const parent = nullptr, const BCGContainer& settings = BCGContainer());
-    explicit BCGFilter(const BCGContainer& settings, DImgThreadedFilter* const master,
-                       const DImg& orgImage, const DImg& destImage, int progressBegin = 0, int progressEnd = 100);
+    explicit BCGFilter(DImg* const orgImage,
+                       QObject* const parent = nullptr,
+                       const BCGContainer& settings = BCGContainer());
+    explicit BCGFilter(const BCGContainer& settings,
+                       DImgThreadedFilter* const master,
+                       const DImg& orgImage,
+                       const DImg& destImage,
+                       int progressBegin = 0,
+                       int progressEnd = 100);
     ~BCGFilter()                                                  override;
 
     static QString FilterIdentifier()
@@ -84,7 +90,7 @@ private:
     void setGamma(double val);
     void setBrightness(double val);
     void setContrast(double val);
-    void applyBCG(DImg& image);
+    void applyBCG(const DImg& image);
     void applyBCG(uchar* const bits, uint width, uint height, bool sixteenBits);
 
 private:
