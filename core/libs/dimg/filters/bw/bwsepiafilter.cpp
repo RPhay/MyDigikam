@@ -57,7 +57,7 @@ public:
     {
     }
 
-    // Color filter attenuation in percents.
+    /// Color filter attenuation in percents.
     double           redAttn;
     double           greenAttn;
     double           blueAttn;
@@ -142,7 +142,7 @@ void BWSepiaFilter::filterImage()
     }
 }
 
-DImg BWSepiaFilter::getThumbnailForEffect(DImg& img)
+DImg BWSepiaFilter::getThumbnailForEffect(const DImg& img)
 {
     postProgress(10);
     DImg thumb = img.copy();

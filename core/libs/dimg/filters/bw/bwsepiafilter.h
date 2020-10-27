@@ -186,7 +186,7 @@ private:
 
     void filterImage()                                      override;
 
-    DImg getThumbnailForEffect(DImg& img);
+    DImg getThumbnailForEffect(const DImg& img);
 
     void blackAndWhiteConversion(DImg& img, int type);
     void applyChannelMixer(DImg& img);
