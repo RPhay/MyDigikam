@@ -80,7 +80,9 @@ WBFilter::WBFilter(QObject* const parent)
     initFilter();
 }
 
-WBFilter::WBFilter(DImg* const orgImage, QObject* const parent, const WBContainer& settings)
+WBFilter::WBFilter(DImg* const orgImage,
+                   QObject* const parent,
+                   const WBContainer& settings)
     : DImgThreadedFilter(orgImage, parent, QLatin1String("WBFilter")),
       m_settings        (settings),
       d                 (new Private)
@@ -88,8 +90,12 @@ WBFilter::WBFilter(DImg* const orgImage, QObject* const parent, const WBContaine
     initFilter();
 }
 
-WBFilter::WBFilter(const WBContainer& settings, DImgThreadedFilter* const master,
-                   const DImg& orgImage, const DImg& destImage, int progressBegin, int progressEnd)
+WBFilter::WBFilter(const WBContainer& settings,
+                   DImgThreadedFilter* const master,
+                   const DImg& orgImage,
+                   const DImg& destImage,
+                   int progressBegin,
+                   int progressEnd)
     : DImgThreadedFilter(master, orgImage, destImage, progressBegin, progressEnd, QLatin1String("WBFilter")),
       m_settings        (settings),
       d                 (new Private)
@@ -212,7 +218,7 @@ void WBFilter::autoExposureAdjustement(const DImg* const img, double& black, dou
     delete histogram;
 }
 
-void WBFilter::setRGBmult(double& temperature, double& green, double& mr, double& mg, double& mb)
+void WBFilter::setRGBmult(const double& temperature, const double& green, double& mr, double& mg, double& mb)
 {
     // Original implementation by Tanner Helland
     // http://www.tannerhelland.com/4435/convert-temperature-rgb-algorithm-code/

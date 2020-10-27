@@ -35,14 +35,14 @@ namespace Digikam
  * Neutral color temperature settings.
  */
 WBContainer::WBContainer()
-    : black(0.0),
+    : black         (0.0),
       expositionMain(0.0),
       expositionFine(0.0),
-      temperature(6500.0),
-      green(1.0),
-      dark(0.5),
-      gamma(1.0),
-      saturation(1.0)
+      temperature   (6500.0),
+      green         (1.0),
+      dark          (0.5),
+      gamma         (1.0),
+      saturation    (1.0)
 {
 }
 
@@ -88,6 +88,7 @@ WBContainer WBContainer::fromFilterAction(const FilterAction& action, const QStr
     settings.dark           = action.parameter(prefix + QLatin1String("dark"),           settings.dark);
     settings.gamma          = action.parameter(prefix + QLatin1String("gamma"),          settings.gamma);
     settings.saturation     = action.parameter(prefix + QLatin1String("saturation"),     settings.saturation);
+
     return settings;
 }
 

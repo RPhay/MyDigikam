@@ -49,9 +49,15 @@ class DIGIKAM_EXPORT WBFilter : public DImgThreadedFilter
 public:
 
     explicit WBFilter(QObject* const parent = nullptr);
-    explicit WBFilter(DImg* const orgImage, QObject* const parent = nullptr, const WBContainer& settings = WBContainer());
-    explicit WBFilter(const WBContainer& settings, DImgThreadedFilter* const master, const DImg& orgImage, const DImg& destImage,
-                      int progressBegin = 0, int progressEnd = 100);
+    explicit WBFilter(DImg* const orgImage,
+                      QObject* const parent = nullptr,
+                      const WBContainer& settings = WBContainer());
+    explicit WBFilter(const WBContainer& settings,
+                      DImgThreadedFilter* const master,
+                      const DImg& orgImage,
+                      const DImg& destImage,
+                      int progressBegin = 0,
+                      int progressEnd = 100);
     ~WBFilter()                                             override;
 
 
@@ -98,7 +104,7 @@ private:
     void adjustWhiteBalance(uchar* const data, int width, int height, bool sixteenBit);
     inline unsigned short pixelColor(int colorMult, int index);
 
-    static void setRGBmult(double& temperature, double& green, double& mr, double& mg, double& mb);
+    static void setRGBmult(const double& temperature, const double& green, double& mr, double& mg, double& mb);
 
 private:
 

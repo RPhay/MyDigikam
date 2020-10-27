@@ -86,29 +86,29 @@ public:
 public:
 
     explicit Private()
-      : DefaultTemperature(DaylightD65),
-        pickTemperature(nullptr),
-        autoAdjustExposure(nullptr),
-        adjTemperatureLabel(nullptr),
-        temperaturePresetLabel(nullptr),
-        darkLabel(nullptr),
-        blackLabel(nullptr),
-        mainExposureLabel(nullptr),
-        fineExposureLabel(nullptr),
-        gammaLabel(nullptr),
-        saturationLabel(nullptr),
-        greenLabel(nullptr),
-        exposureLabel(nullptr),
-        temperatureLabel(nullptr),
-        temperaturePresetCB(nullptr),
-        temperatureInput(nullptr),
-        darkInput(nullptr),
-        blackInput(nullptr),
-        mainExposureInput(nullptr),
-        fineExposureInput(nullptr),
-        gammaInput(nullptr),
-        saturationInput(nullptr),
-        greenInput(nullptr)
+      : DefaultTemperature      (DaylightD65),
+        pickTemperature         (nullptr),
+        autoAdjustExposure      (nullptr),
+        adjTemperatureLabel     (nullptr),
+        temperaturePresetLabel  (nullptr),
+        darkLabel               (nullptr),
+        blackLabel              (nullptr),
+        mainExposureLabel       (nullptr),
+        fineExposureLabel       (nullptr),
+        gammaLabel              (nullptr),
+        saturationLabel         (nullptr),
+        greenLabel              (nullptr),
+        exposureLabel           (nullptr),
+        temperatureLabel        (nullptr),
+        temperaturePresetCB     (nullptr),
+        temperatureInput        (nullptr),
+        darkInput               (nullptr),
+        blackInput              (nullptr),
+        mainExposureInput       (nullptr),
+        fineExposureInput       (nullptr),
+        gammaInput              (nullptr),
+        saturationInput         (nullptr),
+        greenInput              (nullptr)
     {
     }
 
@@ -182,7 +182,7 @@ const QString WBSettings::Private::configTemperatureInputEntry(QLatin1String("Te
 
 WBSettings::WBSettings(QWidget* const parent)
     : QWidget(parent),
-      d(new Private)
+      d      (new Private)
 {
     const int spacing       = QApplication::style()->pixelMetric(QStyle::PM_DefaultLayoutSpacing);
 
@@ -467,6 +467,7 @@ void WBSettings::resetToDefault()
     blockSignals(true);
 
     // Neutral color temperature settings is D65.
+
     d->blackInput->slotReset();
     d->darkInput->slotReset();
     d->gammaInput->slotReset();
