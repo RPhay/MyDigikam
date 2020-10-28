@@ -113,7 +113,7 @@ void LoadingTask::setStatus(LoadingTaskStatus status)
 {
     if (status == LoadingTaskStatusStopping)
     {
-        qCDebug(DIGIKAM_GENERAL_LOG) << "The LoadingTask status is set to stopping now..." << this;
+        qCDebug(DIGIKAM_GENERAL_LOG) << "LoadingTask status is set to stopping now..." << this;
     }
 
     m_loadingTaskStatus = status;
