@@ -44,10 +44,7 @@ int s_progressCallbackForLibRaw(void* context, enum LibRaw_progress p, int itera
     {
         DRawDecoder::Private* const d = static_cast<DRawDecoder::Private*>(context);
 
-        if (d)
-        {
-            return d->progressCallback(p, iteration, expected);
-        }
+        return d->progressCallback(p, iteration, expected);
     }
 
     return 0;
@@ -58,11 +55,7 @@ void s_exifParserCallbackForLibRaw(void* context, int tag, int type, int len, un
     if (context)
     {
         DRawDecoder::Private* const d = static_cast<DRawDecoder::Private*>(context);
-
-        if (d)
-        {
-            d->exifParserCallback(tag, type, len, ord, ifp, base);
-        }
+        d->exifParserCallback(tag, type, len, ord, ifp, base);
     }
 }
 
