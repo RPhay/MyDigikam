@@ -441,6 +441,7 @@ bool MetaEngine::Private::saveOperations(const QFileInfo& finfo, Exiv2::Image::A
 
         qCDebug(DIGIKAM_METAENGINE_LOG) << "wroteXMP: " << wroteXMP;
 
+        // cppcheck-suppress knownConditionTrueFalse
         if      (!wroteComment && !wroteEXIF && !wroteIPTC && !wroteXMP)
         {
             qCDebug(DIGIKAM_METAENGINE_LOG) << "Writing metadata is not supported for file" << finfo.fileName();

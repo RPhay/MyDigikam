@@ -139,6 +139,7 @@ void ColorFXFilter::solarize(DImg* const orgImage, DImg* const destImage, int fa
             r = ptr[2];
             a = ptr[3];
 
+            // cppcheck-suppress knownConditionTrueFalse
             if (stretch)
             {
                 r = (r > threshold) ? (255 - r) * 255 / (255 - threshold) : r * 255 / threshold;
@@ -187,6 +188,7 @@ void ColorFXFilter::solarize(DImg* const orgImage, DImg* const destImage, int fa
             r = ptr[2];
             a = ptr[3];
 
+            // cppcheck-suppress knownConditionTrueFalse
             if (stretch)
             {
                 r = (r > threshold) ? (65535 - r) * 65535 / (65535 - threshold) : r * 65535 / threshold;

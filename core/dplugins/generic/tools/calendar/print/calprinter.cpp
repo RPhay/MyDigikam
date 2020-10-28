@@ -85,6 +85,7 @@ void CalPrinter::run()
     {
         emit pageChanged(currPage);
 
+        // cppcheck-suppress knownConditionTrueFalse
         if (currPage)
         {
             d->printer->newPage();

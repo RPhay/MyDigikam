@@ -310,6 +310,7 @@ bool DMetadata::getACDSeeTagsPath(QStringList &tagsPath) const
                 int count  = tags.count(QLatin1String("<\\Category>"));
                 int length = tags.length() - (11 * count) - 5;
 
+                // cppcheck-suppress knownConditionTrueFalse
                 if (category == 0)
                 {
                     tagsPath << tags.mid(5, length);

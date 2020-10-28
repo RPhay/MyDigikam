@@ -179,7 +179,7 @@ void NREstimate::startAnalyse()
 
     for (uint i = 0 ; runningFlag() && (i < d->clusterCount) ; ++i)
     {
-        //initializing the cluster count array
+        // initializing the cluster count array
 
         rowPosition[i] = 0;
     }
@@ -248,11 +248,11 @@ void NREstimate::startAnalyse()
         columnIndex = clusters->data.i[i];
         rowIndex    = rPosition[columnIndex];
 
-        //moving to the right row
+        // moving to the right row
 
         ptr         = reinterpret_cast<float*>(sd->data.ptr + rowIndex*(sd->step));
 
-        //moving to the right column
+        // moving to the right column
 
         for (int j = 0 ; runningFlag() && (j < columnIndex) ; ++j)
         {
@@ -330,7 +330,7 @@ void NREstimate::startAnalyse()
                 oms << *meanStorePtr++;
                 oms << "\t";
 
-                if ((i+1)%3 == 0)
+                if (((i + 1) % 3) == 0)
                 {
                     oms << "\n";
                 }
@@ -343,7 +343,7 @@ void NREstimate::startAnalyse()
                 oms << *stdStorePtr++;
                 oms << "\t";
 
-                if ((i+1)%3 == 0)
+                if (((i + 1) % 3) == 0)
                 {
                     oms << "\n";
                 }
@@ -457,14 +457,18 @@ void NREstimate::startAnalyse()
         {
             L = datasd[0] - 0.98;
         }
-        else if (datasd[0] >= 7 && datasd[0] < 8)
+
+        // cppcheck-suppress knownConditionTrueFalse
+        else if ((datasd[0] >= 7) && (datasd[0] < 8))
         {
             L = datasd[0] - 1.2;
         }
-        else if (datasd[0] >= 8 && datasd[0] < 9)
+
+        else if ((datasd[0] >= 8) && (datasd[0] < 9))
         {
             L = datasd[0] - 1.5;
         }
+
         else
         {
             L = datasd[0] - 1.7;
@@ -497,11 +501,11 @@ void NREstimate::startAnalyse()
         Cb = floorf(Cb * 100) / 100;
         Cr = floorf(Cr * 100) / 100;
 
-        if      ( L > 9 )
+        if      (L > 9)
         {
             LSoft = CrSoft = CbSoft = 0.8;
         }
-        else if ( L > 3)
+        else if (L > 3)
         {
             LSoft = CrSoft = CbSoft = 0.7;
         }

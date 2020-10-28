@@ -219,6 +219,7 @@ int DynamicLayout::reLayout(const QRect& rect, bool testOnly) const
     {
         int nextX = x + currentBtnWidth + d->spaceX;
 
+        // cppcheck-suppress knownConditionTrueFalse
         if (((nextX - d->spaceX) > effectiveRect.right()) && (lineHeight > 0))
         {
             x          = effectiveRect.x();

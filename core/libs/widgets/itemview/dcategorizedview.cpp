@@ -912,6 +912,8 @@ void DCategorizedView::paintEvent(QPaintEvent* event)
 
             d->drawNewCategory(indexToDraw, d->proxyModel->sortRole(), otherOption, &painter);
         }
+
+        // cppcheck-suppress knownConditionTrueFalse
         else if (intersectedInThePast)
         {
             // the visible area has been finished, we don't need to keep asking, the rest won't intersect
@@ -1595,6 +1597,7 @@ QModelIndex DCategorizedView::moveCursor(CursorAction cursorAction,
 
     foreach (const QString& category, d->categories)
     {
+        // cppcheck-suppress knownConditionTrueFalse
         if (hasToBreak)
         {
             afterCategory = category;
