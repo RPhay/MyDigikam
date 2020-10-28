@@ -23,6 +23,10 @@
 
 #include "dfileselector.h"
 
+// Qt includes
+
+#include <QPointer>
+
 // KDE includes
 
 #include <klocalizedstring.h>
@@ -117,7 +121,7 @@ void DFileSelector::slotBtnClicked()
 
     // Never pass a parent to File Dialog, else dupplicate dialogs will be shown
 
-    DFileDialog* const fileDlg = new DFileDialog;
+    QPointer<DFileDialog> fileDlg = new DFileDialog;
 
     fileDlg->setDirectory(QFileInfo(fileDlgPath()).filePath());
 
