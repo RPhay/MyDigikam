@@ -89,6 +89,7 @@ JAlbumOutputPage::JAlbumOutputPage(QWizard* const dialog, const QString& title)
     d->destUrl = new DFileSelector(main);
     d->destUrl->setFileDlgTitle(i18n("Projects Folder"));
     d->destUrl->setFileDlgMode(QFileDialog::Directory);
+    d->destUrl->setFileDlgOptions(QFileDialog::ShowDirsOnly);
     textLabel1->setBuddy(d->destUrl);
 
     // --------------------

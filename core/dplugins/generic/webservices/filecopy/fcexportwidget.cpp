@@ -106,6 +106,7 @@ FCExportWidget::FCExportWidget(DInfoInterface* const iface, QWidget* const paren
     locationLabel->setText(i18n("Target location: "));
     d->selector                 = new DFileSelector(hbox);
     d->selector->setFileDlgMode(QFileDialog::Directory);
+    d->selector->setFileDlgOptions(QFileDialog::ShowDirsOnly);
     d->selector->setFileDlgTitle(i18n("Target Folder"));
     d->selector->setWhatsThis(i18n("Sets the target address to copy the items to."));
 

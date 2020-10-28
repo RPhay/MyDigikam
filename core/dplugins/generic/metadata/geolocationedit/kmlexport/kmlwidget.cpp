@@ -105,6 +105,7 @@ KmlWidget::KmlWidget(GeolocationEdit* const dlg,
 
     DestinationDirectory_      = new DFileSelector(TargetPreferenceGroupBox);
     DestinationDirectory_->setFileDlgMode(QFileDialog::Directory);
+    DestinationDirectory_->setFileDlgOptions(QFileDialog::ShowDirsOnly);
     DestinationDirectory_->setFileDlgTitle(i18n("Select a directory in which to save the kml file and pictures"));
 
     DestinationUrlLabel_       = new QLabel(i18n("Destination Path:"), TargetPreferenceGroupBox);
