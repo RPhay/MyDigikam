@@ -52,7 +52,7 @@ PreviewLoadingTask::PreviewLoadingTask(LoadSaveThread* const thread, const Loadi
 
 PreviewLoadingTask::~PreviewLoadingTask()
 {
-    qCDebug(DIGIKAM_GENERAL_LOG) << "The PreviewLoadingTask destructor was called..." << this;
+    qCDebug(DIGIKAM_GENERAL_LOG) << "The PreviewLoadingTask destructor was called...." << this;
 }
 
 void PreviewLoadingTask::execute()
@@ -431,6 +431,8 @@ void PreviewLoadingTask::execute()
         m_thread->taskHasFinished();
         m_thread->imageLoaded(m_loadingDescription, m_img);
     }
+
+    qCDebug(DIGIKAM_GENERAL_LOG) << "The PreviewLoadingTask is at the end............" << this;
 }
 
 bool PreviewLoadingTask::needToScale()
