@@ -150,7 +150,7 @@ public:
     void setAlbumUpdate();
     bool isAlbumUpdate()            const;
 
-    void setSearchIds(QList<int> ids);
+    void setSearchIds(const QList<int>& ids);
     void setSearchId(int id);
     QList<int> searchIds()          const;
 

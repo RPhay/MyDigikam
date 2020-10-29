@@ -250,7 +250,7 @@ void SearchesDBJobInfo::setSearchId(int id)
     m_searchIds = QList<int>() << id;
 }
 
-void SearchesDBJobInfo::setSearchIds(QList<int> ids)
+void SearchesDBJobInfo::setSearchIds(const QList<int>& ids)
 {
     m_searchIds = ids;
 }

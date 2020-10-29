@@ -44,10 +44,13 @@ public:
 
     explicit ItemCopyrightCache(ItemCopyright* const obj)
         : object(obj),
+
           // read all properties
-          infos(CoreDbAccess().db()->getItemCopyright(obj->m_id, QString()))
+
+          infos (CoreDbAccess().db()->getItemCopyright(obj->m_id, QString()))
     {
           // set this as cache
+
           object->m_cache = this;
     }
 
@@ -68,19 +71,19 @@ public:
 // -------------------------------------------------------------------------------------------
 
 ItemCopyright::ItemCopyright(qlonglong imageid)
-    : m_id(imageid),
+    : m_id   (imageid),
       m_cache(nullptr)
 {
 }
 
 ItemCopyright::ItemCopyright()
-    : m_id(0),
+    : m_id   (0),
       m_cache(nullptr)
 {
 }
 
 ItemCopyright::ItemCopyright(const ItemCopyright& other)
-    : m_id(other.m_id),
+    : m_id   (other.m_id),
       m_cache(nullptr)
 {
     // the cache is only short-lived, to keep complexity low
@@ -496,7 +499,7 @@ void ItemCopyright::removeLanguageProperty(const QString& property, const QStrin
     CoreDbAccess().db()->removeItemCopyrightProperties(m_id, property, languageCode);
 }
 
-int ItemCopyright::languageMatch(const QList<CopyrightInfo> infos, const QString& languageCode) const
+int ItemCopyright::languageMatch(const QList<CopyrightInfo>& infos, const QString& languageCode) const
 {
     QString langCode;
     QString fullCode = languageCode;

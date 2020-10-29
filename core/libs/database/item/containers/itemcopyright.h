@@ -301,10 +301,10 @@ public:
 
 protected:
 
-    CopyrightInfo copyrightInfo(const QString& property)                                 const;
-    QList<CopyrightInfo> copyrightInfos(const QString& property)                         const;
-    QString readSimpleProperty(const QString& property)                                  const;
-    int     languageMatch(const QList<CopyrightInfo> infos, const QString& languageCode) const;
+    CopyrightInfo copyrightInfo(const QString& property)                                  const;
+    QList<CopyrightInfo> copyrightInfos(const QString& property)                          const;
+    QString readSimpleProperty(const QString& property)                                   const;
+    int     languageMatch(const QList<CopyrightInfo>& infos, const QString& languageCode) const;
 
     void    setSimpleProperty(const QString& property, const QString& value);
     QString readLanguageProperty(const QString& property, const QString& languageCode);

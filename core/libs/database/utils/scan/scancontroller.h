@@ -251,7 +251,7 @@ public:
      * and give the names at destination in itemNames (Unless for rename, names wont usually change.
      * Give them nevertheless.)
      */
-    void hintAtMoveOrCopyOfItems(const QList<qlonglong> ids,
+    void hintAtMoveOrCopyOfItems(const QList<qlonglong>& ids,
                                  const PAlbum* const dstAlbum,
                                  const QStringList& itemNames);
     void hintAtMoveOrCopyOfItem(qlonglong id,
@@ -262,7 +262,7 @@ public:
      * Hint at the fact that an item may have changed, although its modification date may not have changed.
      * Note that a scan of the containing directory will need to be triggered nonetheless for the hints to take effect.
      */
-    void hintAtModificationOfItems(const QList<qlonglong> ids);
+    void hintAtModificationOfItems(const QList<qlonglong>& ids);
     void hintAtModificationOfItem(qlonglong id);
 
 Q_SIGNALS:
@@ -285,7 +285,7 @@ private Q_SLOTS:
 
 private:
 
-    void moreSchemaUpdateSteps(int numberOfSteps) override;
+    void moreSchemaUpdateSteps(int numberOfSteps)                        override;
     void schemaUpdateProgress(const QString& message, int numberOfSteps) override;
     void error(const QString& errorMessage) override;
 
@@ -296,7 +296,7 @@ private:
 
     QList<AlbumCopyMoveHint> hintsForAlbum(const PAlbum* const album,
                                            int dstAlbumRootId,
-                                           QString relativeDstPath,
+                                           const QString& relativeDstPath,
                                            const QString& albumName);
     //@}
 
