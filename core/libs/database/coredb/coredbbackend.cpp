@@ -73,7 +73,9 @@ bool CoreDbBackend::initSchema(CoreDbSchemaUpdater* updater)
 void CoreDbBackend::recordChangeset(const ImageChangeset& changeset)
 {
     Q_D(CoreDbBackend);
+
     // if we want to do compression of changesets, think about doing this here
+
     d->imageChangesetContainer.recordChangeset(changeset);
 }
 

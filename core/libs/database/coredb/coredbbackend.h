@@ -44,7 +44,8 @@ class DIGIKAM_DATABASE_EXPORT CoreDbBackend : public BdEngineBackend
 
 public:
 
-    explicit CoreDbBackend(DbEngineLocking* const locking, const QString& backendName = QLatin1String("digikamDatabase-"));
+    explicit CoreDbBackend(DbEngineLocking* const locking,
+                           const QString& backendName = QLatin1String("digikamDatabase-"));
     ~CoreDbBackend() override;
 
     /** Sets the global database watch

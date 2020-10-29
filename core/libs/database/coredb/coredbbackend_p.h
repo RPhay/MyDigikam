@@ -40,16 +40,16 @@ class Q_DECL_HIDDEN CoreDbBackendPrivate : public BdEngineBackendPrivate
 public:
 
     explicit CoreDbBackendPrivate(CoreDbBackend* const backend)
-        : BdEngineBackendPrivate(backend),
-          imageChangesetContainer(this),
-          imageTagChangesetContainer(this),
-          collectionImageChangesetContainer(this),
-          albumChangesetContainer(this),
-          tagChangesetContainer(this),
-          albumRootChangesetContainer(this),
-          searchChangesetContainer(this)
+        : BdEngineBackendPrivate            (backend),
+          watch                             (nullptr),
+          imageChangesetContainer           (this),
+          imageTagChangesetContainer        (this),
+          collectionImageChangesetContainer (this),
+          albumChangesetContainer           (this),
+          tagChangesetContainer             (this),
+          albumRootChangesetContainer       (this),
+          searchChangesetContainer          (this)
     {
-        watch = nullptr;
     }
 
 public:
@@ -58,31 +58,37 @@ public:
 
 public:
 
-    void sendToWatch(const ImageChangeset changeset)
+    void sendToWatch(const ImageChangeset& changeset)
     {
         watch->sendImageChange(changeset);
     }
-    void sendToWatch(const ImageTagChangeset changeset)
+
+    void sendToWatch(const ImageTagChangeset& changeset)
     {
         watch->sendImageTagChange(changeset);
     }
-    void sendToWatch(const CollectionImageChangeset changeset)
+
+    void sendToWatch(const CollectionImageChangeset& changeset)
     {
         watch->sendCollectionImageChange(changeset);
     }
-    void sendToWatch(const AlbumChangeset changeset)
+
+    void sendToWatch(const AlbumChangeset& changeset)
     {
         watch->sendAlbumChange(changeset);
     }
-    void sendToWatch(const TagChangeset changeset)
+
+    void sendToWatch(const TagChangeset& changeset)
     {
         watch->sendTagChange(changeset);
     }
-    void sendToWatch(const AlbumRootChangeset changeset)
+
+    void sendToWatch(const AlbumRootChangeset& changeset)
     {
         watch->sendAlbumRootChange(changeset);
     }
-    void sendToWatch(const SearchChangeset changeset)
+
+    void sendToWatch(const SearchChangeset& changeset)
     {
         watch->sendSearchChange(changeset);
     }
