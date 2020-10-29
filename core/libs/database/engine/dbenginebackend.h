@@ -252,9 +252,9 @@ public:
      * containing the values as QVariants ready for binding.
      */
     QueryState execUpsertDBAction(const DbEngineAction& action, const QVariant& id,
-                                  const QStringList fieldNames, const QList<QVariant>& values);
+                                  const QStringList& fieldNames, const QList<QVariant>& values);
     QueryState execUpsertDBAction(const QString& action, const QVariant& id,
-                                  const QStringList fieldNames, const QList<QVariant>& values);
+                                  const QStringList& fieldNames, const QList<QVariant>& values);
 
     /**
      * Performs the database action on the current database.

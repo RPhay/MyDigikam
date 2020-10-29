@@ -1356,7 +1356,7 @@ DbEngineSqlQuery BdEngineBackend::execQuery(const QString& sql, const QMap<QStri
 
 BdEngineBackend::QueryState BdEngineBackend::execUpsertDBAction(const DbEngineAction& action,
                                                                 const QVariant& id,
-                                                                const QStringList fieldNames,
+                                                                const QStringList& fieldNames,
                                                                 const QList<QVariant>& values)
 {
     QMap<QString, QVariant> parameters;
@@ -1381,7 +1381,7 @@ BdEngineBackend::QueryState BdEngineBackend::execUpsertDBAction(const DbEngineAc
 
 BdEngineBackend::QueryState BdEngineBackend::execUpsertDBAction(const QString& action,
                                                                 const QVariant& id,
-                                                                const QStringList fieldNames,
+                                                                const QStringList& fieldNames,
                                                                 const QList<QVariant>& values)
 {
     return execUpsertDBAction(getDBAction(action), id, fieldNames, values);

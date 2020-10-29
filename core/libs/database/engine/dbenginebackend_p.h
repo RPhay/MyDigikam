@@ -68,7 +68,7 @@ class DIGIKAM_EXPORT BdEngineBackendPrivate : public DbEngineErrorAnswer
 public:
 
     explicit BdEngineBackendPrivate(BdEngineBackend* const backend);
-    ~BdEngineBackendPrivate() override;
+    ~BdEngineBackendPrivate()                                              override;
 
     void init(const QString& connectionName, DbEngineLocking* const locking);
 
@@ -102,15 +102,19 @@ public:
     void queryOperationWakeAll(BdEngineBackend::QueryOperationStatus status);
 
     /// called by DbEngineErrorHandler, implementing DbEngineErrorAnswer
-    void connectionErrorContinueQueries() override;
-    void connectionErrorAbortQueries() override;
+    void connectionErrorContinueQueries()                                  override;
+    void connectionErrorAbortQueries()                                     override;
+
     virtual void transactionFinished();
 
 public:
 
     QThreadStorage<DbEngineThreadData*>       threadDataStorage;
 
-    /// This compares to DbEngineThreadData's valid. If currentValidity is increased and > valid, the db is marked as invalid
+    /**
+     * This compares to DbEngineThreadData's valid.
+     * If currentValidity is increased and > valid, the db is marked as invalid
+     */
     int                                       currentValidity;
 
     bool                                      isInTransaction;

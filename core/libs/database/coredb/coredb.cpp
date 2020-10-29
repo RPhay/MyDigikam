@@ -1180,7 +1180,7 @@ QList<int> CoreDB::getItemTagIDs(qlonglong imageID) const
     return ids;
 }
 
-QVector<QList<int> > CoreDB::getItemsTagIDs(const QList<qlonglong> imageIds) const
+QVector<QList<int> > CoreDB::getItemsTagIDs(const QList<qlonglong>& imageIds) const
 {
     if (imageIds.isEmpty())
     {
@@ -2290,7 +2290,7 @@ QList<qlonglong> CoreDB::getImagesRelatedFrom(qlonglong subjectId, DatabaseRelat
     return getRelatedImages(subjectId, true, type, false);
 }
 
-QVector<QList<qlonglong> > CoreDB::getImagesRelatedFrom(QList<qlonglong> subjectIds, DatabaseRelation::Type type) const
+QVector<QList<qlonglong> > CoreDB::getImagesRelatedFrom(const QList<qlonglong>& subjectIds, DatabaseRelation::Type type) const
 {
     return getRelatedImages(subjectIds, true, type, false);
 }
@@ -2307,7 +2307,7 @@ QList<qlonglong> CoreDB::getImagesRelatingTo(qlonglong objectId, DatabaseRelatio
     return getRelatedImages(objectId, false, type, false);
 }
 
-QVector<QList<qlonglong> > CoreDB::getImagesRelatingTo(QList<qlonglong> objectIds, DatabaseRelation::Type type) const
+QVector<QList<qlonglong> > CoreDB::getImagesRelatingTo(const QList<qlonglong>& objectIds, DatabaseRelation::Type type) const
 {
     return getRelatedImages(objectIds, false, type, false);
 }
