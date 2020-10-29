@@ -84,8 +84,8 @@ public:
 
     explicit Private()
       : setError(false),
-        backend(nullptr),
-        albumDB(nullptr),
+        backend (nullptr),
+        albumDB (nullptr),
         dbAccess(nullptr),
         observer(nullptr)
     {
@@ -109,7 +109,7 @@ public:
 
 CoreDbSchemaUpdater::CoreDbSchemaUpdater(CoreDB* const albumDB,
                                          CoreDbBackend* const backend,
-                                         DbEngineParameters parameters)
+                                         const DbEngineParameters& parameters)
     : d(new Private)
 {
     d->backend    = backend;

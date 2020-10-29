@@ -30,13 +30,13 @@ ImageChangeset::ImageChangeset()
 {
 }
 
-ImageChangeset::ImageChangeset(QList<qlonglong> ids, DatabaseFields::Set changes)
-    : m_ids(ids),
+ImageChangeset::ImageChangeset(const QList<qlonglong>& ids, const DatabaseFields::Set& changes)
+    : m_ids    (ids),
       m_changes(changes)
 {
 }
 
-ImageChangeset::ImageChangeset(qlonglong id, DatabaseFields::Set changes)
+ImageChangeset::ImageChangeset(qlonglong id, const DatabaseFields::Set& changes)
     : m_changes(changes)
 {
     m_ids << id;
@@ -58,6 +58,7 @@ DatabaseFields::Set ImageChangeset::changes() const
 }
 
 #ifdef HAVE_DBUS
+
 ImageChangeset& ImageChangeset::operator<<(const QDBusArgument& argument)
 {
     argument.beginStructure();
@@ -73,7 +74,8 @@ const ImageChangeset& ImageChangeset::operator>>(QDBusArgument& argument) const
     argument.endStructure();
     return *this;
 }
-#endif
+
+#endif // HAVE_DBUS
 
 // ---------------------------------------------------------------------------------
 
@@ -82,15 +84,15 @@ ImageTagChangeset::ImageTagChangeset()
 {
 }
 
-ImageTagChangeset::ImageTagChangeset(QList<qlonglong> ids, QList<int> tags, Operation op)
-    : m_ids(ids),
-      m_tags(tags),
+ImageTagChangeset::ImageTagChangeset(const QList<qlonglong>& ids, const QList<int>& tags, Operation op)
+    : m_ids      (ids),
+      m_tags     (tags),
       m_operation(op)
 {
 }
 
-ImageTagChangeset::ImageTagChangeset(qlonglong id, QList<int> tags, Operation op)
-    : m_tags(tags),
+ImageTagChangeset::ImageTagChangeset(qlonglong id, const QList<int>& tags, Operation op)
+    : m_tags     (tags),
       m_operation(op)
 {
     m_ids << id;
@@ -170,15 +172,15 @@ CollectionImageChangeset::CollectionImageChangeset()
 {
 }
 
-CollectionImageChangeset::CollectionImageChangeset(QList<qlonglong> ids, QList<int> albums, Operation op)
-    : m_ids(ids),
-      m_albums(albums),
+CollectionImageChangeset::CollectionImageChangeset(const QList<qlonglong>& ids, const QList<int>& albums, Operation op)
+    : m_ids      (ids),
+      m_albums   (albums),
       m_operation(op)
 {
 }
 
-CollectionImageChangeset::CollectionImageChangeset(QList<qlonglong> ids, int album, Operation op)
-    : m_ids(ids),
+CollectionImageChangeset::CollectionImageChangeset(const QList<qlonglong>& ids, int album, Operation op)
+    : m_ids      (ids),
       m_operation(op)
 {
     m_albums << album;

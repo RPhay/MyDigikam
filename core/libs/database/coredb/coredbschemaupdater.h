@@ -56,7 +56,7 @@ public:
 
     explicit CoreDbSchemaUpdater(CoreDB* const albumDB,
                                  CoreDbBackend* const backend,
-                                 DbEngineParameters parameters);
+                                 const DbEngineParameters& parameters);
     virtual ~CoreDbSchemaUpdater();
 
     bool  update();
