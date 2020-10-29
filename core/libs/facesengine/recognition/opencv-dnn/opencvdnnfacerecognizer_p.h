@@ -115,8 +115,8 @@ public:
     bool trainSVM();
     bool trainKNN();
 
-    int predictSVM(cv::Mat faceEmbedding);
-    int predictKNN(cv::Mat faceEmbedding);
+    int predictSVM(const cv::Mat& faceEmbedding);
+    int predictKNN(const cv::Mat& faceEmbedding);
 
     int predictKDTree(const cv::Mat& faceEmbedding) const;
     int predictDb(const cv::Mat& faceEmbedding) const;
@@ -271,7 +271,7 @@ bool OpenCVDNNFaceRecognizer::Private::trainKNN()
     return (knn->isTrained());
 }
 
-int OpenCVDNNFaceRecognizer::Private::predictSVM(cv::Mat faceEmbedding)
+int OpenCVDNNFaceRecognizer::Private::predictSVM(const cv::Mat& faceEmbedding)
 {
     if (newDataAdded)
     {
@@ -286,7 +286,7 @@ int OpenCVDNNFaceRecognizer::Private::predictSVM(cv::Mat faceEmbedding)
     return (int(svm->predict(faceEmbedding)));
 }
 
-int OpenCVDNNFaceRecognizer::Private::predictKNN(cv::Mat faceEmbedding)
+int OpenCVDNNFaceRecognizer::Private::predictKNN(const cv::Mat& faceEmbedding)
 {
     if (newDataAdded)
     {

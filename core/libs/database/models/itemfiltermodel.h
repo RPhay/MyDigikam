@@ -199,7 +199,7 @@ public Q_SLOTS:
     void setSortRole(ItemSortSettings::SortRole role);
     void setSortOrder(ItemSortSettings::SortOrder order);
     void setStringTypeNatural(bool natural);
-    void setUrlWhitelist(const QList<QUrl> urlList, const QString& id);
+    void setUrlWhitelist(const QList<QUrl>& urlList, const QString& id);
     void setIdWhitelist(const QList<qlonglong>& idList, const QString& id);
 
     void setVersionManagerSettings(const VersionManagerSettings& settings);

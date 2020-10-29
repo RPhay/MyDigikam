@@ -438,7 +438,7 @@ public:
                                  BackgroundRole newRole = NormalBackground,
                                  QPalette::ColorRole color = QPalette::Base,
                                  ColorSet set = View,
-                                 KSharedConfigPtr config = KSharedConfigPtr());
+                                 const KSharedConfigPtr& config = KSharedConfigPtr());
 
     /**
      * Adjust a QPalette by replacing the specified QPalette::ColorRole with
@@ -453,7 +453,7 @@ public:
                                  ForegroundRole newRole = NormalText,
                                  QPalette::ColorRole color = QPalette::Text,
                                  ColorSet set = View,
-                                 KSharedConfigPtr config = KSharedConfigPtr());
+                                 const KSharedConfigPtr& config = KSharedConfigPtr());
 
     /**
      * Used to obtain the QPalette that will be used to set the application

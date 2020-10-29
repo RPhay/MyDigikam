@@ -755,8 +755,15 @@ class Q_DECL_HIDDEN SchemeManagerPrivate : public QSharedData
 {
 public:
 
-    explicit SchemeManagerPrivate(const KSharedConfigPtr&, QPalette::ColorGroup, const char*, SetDefaultColors);
-    explicit SchemeManagerPrivate(const KSharedConfigPtr&, QPalette::ColorGroup, const char*, SetDefaultColors, const QBrush&);
+    explicit SchemeManagerPrivate(const KSharedConfigPtr&,
+                                  QPalette::ColorGroup,
+                                  const char*,
+                                  const SetDefaultColors&);
+    explicit SchemeManagerPrivate(const KSharedConfigPtr&,
+                                  QPalette::ColorGroup,
+                                  const char*,
+                                  const SetDefaultColors&,
+                                  const QBrush&);
     ~SchemeManagerPrivate()
     {
     }
@@ -768,7 +775,10 @@ public:
 
 private:
 
-    void init(const KSharedConfigPtr&, QPalette::ColorGroup, const char*, SetDefaultColors);
+    void init(const KSharedConfigPtr&,
+              QPalette::ColorGroup,
+              const char*,
+              const SetDefaultColors&);
 
 private:
 
@@ -789,7 +799,7 @@ private:
 SchemeManagerPrivate::SchemeManagerPrivate(const KSharedConfigPtr& config,
                                            QPalette::ColorGroup state,
                                            const char* group,
-                                           SetDefaultColors defaults)
+                                           const SetDefaultColors& defaults)
 {
     KConfigGroup cfg(config, group);
     _contrast      = SchemeManager::contrastF(config);
@@ -807,7 +817,7 @@ SchemeManagerPrivate::SchemeManagerPrivate(const KSharedConfigPtr& config,
 SchemeManagerPrivate::SchemeManagerPrivate(const KSharedConfigPtr& config,
                                            QPalette::ColorGroup state,
                                            const char* group,
-                                           SetDefaultColors defaults,
+                                           const SetDefaultColors& defaults,
                                            const QBrush& tint)
 {
     KConfigGroup cfg(config, group);
@@ -831,7 +841,7 @@ SchemeManagerPrivate::SchemeManagerPrivate(const KSharedConfigPtr& config,
 void SchemeManagerPrivate::init(const KSharedConfigPtr& config,
                                 QPalette::ColorGroup state,
                                 const char* group,
-                                SetDefaultColors defaults)
+                                const SetDefaultColors& defaults)
 {
     KConfigGroup cfg(config, group);
 
@@ -1169,7 +1179,7 @@ void SchemeManager::adjustBackground(QPalette& palette,
                                      BackgroundRole newRole,
                                      QPalette::ColorRole color,
                                      ColorSet set,
-                                     KSharedConfigPtr config)
+                                     const KSharedConfigPtr& config)
 {
     palette.setBrush(QPalette::Active,   color, SchemeManager(QPalette::Active,   set, config).background(newRole));
     palette.setBrush(QPalette::Inactive, color, SchemeManager(QPalette::Inactive, set, config).background(newRole));
@@ -1180,7 +1190,7 @@ void SchemeManager::adjustForeground(QPalette& palette,
                                      ForegroundRole newRole,
                                      QPalette::ColorRole color,
                                      ColorSet set,
-                                     KSharedConfigPtr config)
+                                     const KSharedConfigPtr& config)
 {
     palette.setBrush(QPalette::Active,   color, SchemeManager(QPalette::Active,   set, config).foreground(newRole));
     palette.setBrush(QPalette::Inactive, color, SchemeManager(QPalette::Inactive, set, config).foreground(newRole));

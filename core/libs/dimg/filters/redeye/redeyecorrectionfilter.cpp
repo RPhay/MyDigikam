@@ -192,7 +192,7 @@ void RedEyeCorrectionFilter::filterImage()
 }
 
 void RedEyeCorrectionFilter::correctRedEye(uchar* data, int type,
-                                           cv::Rect eyerect, cv::Rect imgRect)
+                                           const cv::Rect& eyerect, const cv::Rect& imgRect)
 {
     uchar*  onebytedata = data;
     ushort* twobytedata = reinterpret_cast<ushort*>(data);

@@ -450,7 +450,7 @@ void ItemFilterModel::setRatingFilter(int rating, ItemFilterSettings::RatingCond
     setItemFilterSettings(d->filter);
 }
 
-void ItemFilterModel::setUrlWhitelist(const QList<QUrl> urlList, const QString& id)
+void ItemFilterModel::setUrlWhitelist(const QList<QUrl>& urlList, const QString& id)
 {
     Q_D(ItemFilterModel);
     d->filter.setUrlWhitelist(urlList, id);
