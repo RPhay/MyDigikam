@@ -182,20 +182,29 @@ QVariant ColumnAudioVideoProperties::data(TableViewModel::Item* const item, cons
 
         case SubColumnDuration:
         {
-            bool ok;
-
             // duration is in milliseconds
 
-            const double duration = s->tableViewModel->itemDatabaseFieldRaw(item,
-                                    DatabaseFields::Set(DatabaseFields::Duration)).toDouble(&ok);
+            const QString duration = s->tableViewModel->itemDatabaseFieldRaw(item,
+                                     DatabaseFields::Set(DatabaseFields::Duration)).toString();
+            QString durationString = duration;
+            bool ok                = false;
+            const int durationVal  = duration.toInt(&ok);
 
-            if (!ok)
+            if (ok)
             {
-                return QString();
-            }
+                unsigned int r, d, h, m, s, f;
+                r = qAbs(durationVal);
+                d = r / 86400000;
+                r = r % 86400000;
+                h = r / 3600000;
+                r = r % 3600000;
+                m = r / 60000;
+                r = r % 60000;
+                s = r / 1000;
+                f = r % 1000;
 
-            const QTime durationTime     = QTime().addMSecs(duration);
-            const QString durationString = QLocale().toString(durationTime);
+                durationString = QString().asprintf("%d.%02d:%02d:%02d.%03d", d, h, m, s, f);
+            }
 
             return durationString;
         }
