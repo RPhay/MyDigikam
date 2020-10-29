@@ -106,7 +106,7 @@ QList<SolidVolumeInfo> CollectionManager::Private::actuallyListVolumes()
 
         Solid::Device driveDevice;
 
-        for (Solid::Device currentDevice = accessDevice;
+        for (Solid::Device currentDevice = accessDevice ;
              currentDevice.isValid() ; currentDevice = currentDevice.parent())
         {
             if (currentDevice.is<Solid::StorageDrive>())
@@ -306,7 +306,7 @@ QString CollectionManager::Private::directoryHash(const QString& path)
 }
 
 SolidVolumeInfo CollectionManager::Private::findVolumeForLocation(const AlbumRootLocation* location,
-                                                                  const QList<SolidVolumeInfo> volumes)
+                                                                  const QList<SolidVolumeInfo>& volumes)
 {
     QUrl url(location->identifier);
     QString queryItem;
@@ -316,7 +316,7 @@ SolidVolumeInfo CollectionManager::Private::findVolumeForLocation(const AlbumRoo
         return SolidVolumeInfo();
     }
 
-    if (!(queryItem = QUrlQuery(url).queryItemValue(QLatin1String("uuid"))).isNull())
+    if      (!(queryItem = QUrlQuery(url).queryItemValue(QLatin1String("uuid"))).isNull())
     {
         foreach (const SolidVolumeInfo& volume, volumes)
         {
@@ -362,8 +362,8 @@ SolidVolumeInfo CollectionManager::Private::findVolumeForLocation(const AlbumRoo
 
             QUrl otherUrl(otherLocation->identifier);
 
-            if (otherUrl.scheme() == QLatin1String("volumeid") &&
-                QUrlQuery(otherUrl).queryItemValue(QLatin1String("label")) == queryItem)
+            if ((otherUrl.scheme() == QLatin1String("volumeid")) &&
+                (QUrlQuery(otherUrl).queryItemValue(QLatin1String("label")) == queryItem))
             {
                 hasOtherLocation = true;
                 break;
@@ -387,7 +387,7 @@ SolidVolumeInfo CollectionManager::Private::findVolumeForLocation(const AlbumRoo
             if (dirHash.isNull())
             {
                 qCDebug(DIGIKAM_DATABASE_LOG) << "No directory hash specified for the non-unique Label"
-                                             << queryItem << "Resorting to returning the first match.";
+                                              << queryItem << "Resorting to returning the first match.";
                 return candidateVolumes.first();
             }
 
@@ -410,7 +410,7 @@ SolidVolumeInfo CollectionManager::Private::findVolumeForLocation(const AlbumRoo
     {
         foreach (const SolidVolumeInfo& volume, volumes)
         {
-            if (volume.isMounted && volume.path == queryItem)
+            if (volume.isMounted && (volume.path == queryItem))
             {
                 return volume;
             }
@@ -458,7 +458,7 @@ QString CollectionManager::Private::technicalDescription(const AlbumRootLocation
 }
 
 SolidVolumeInfo CollectionManager::Private::findVolumeForUrl(const QUrl& fileUrl,
-                                                             const QList<SolidVolumeInfo> volumes)
+                                                             const QList<SolidVolumeInfo>& volumes)
 {
     SolidVolumeInfo volume;
 
@@ -501,8 +501,9 @@ bool CollectionManager::Private::checkIfExists(const QString& filePath, QList<Co
     foreach (AlbumRootLocation* const location, locations)
     {
         const QUrl locationPathUrl = QUrl::fromLocalFile(location->albumRootPath());
-
-        //qCDebug(DIGIKAM_DATABASE_LOG) << filePathUrl << locationPathUrl;
+/*
+        qCDebug(DIGIKAM_DATABASE_LOG) << filePathUrl << locationPathUrl;
+*/
         // make sure filePathUrl is neither a child nor a parent
         // of an existing collection
 

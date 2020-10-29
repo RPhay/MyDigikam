@@ -215,7 +215,7 @@ CollectionLocation CollectionManager::refreshLocation(const CollectionLocation& 
 }
 
 CollectionManager::LocationCheckResult CollectionManager::checkLocation(const QUrl& fileUrl,
-                                                                        QList<CollectionLocation> assumeDeleted,
+                                                                        QList<CollectionLocation>& assumeDeleted,
                                                                         QString* message,
                                                                         QString* iconName)
 {
@@ -407,7 +407,7 @@ CollectionManager::LocationCheckResult CollectionManager::checkLocation(const QU
 }
 
 CollectionManager::LocationCheckResult CollectionManager::checkNetworkLocation(const QUrl& fileUrl,
-                                                                               QList<CollectionLocation> assumeDeleted,
+                                                                               QList<CollectionLocation>& assumeDeleted,
                                                                                QString* message,
                                                                                QString* iconName)
 {
