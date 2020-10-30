@@ -128,7 +128,7 @@
         {
             "name": "sane",
             "buildsystem": "autotools",
-            "sources": [ { "type": "git", "url": "https://gitlab.com/sane-project/backends", "tag": "RELEASE_1_0_29"} ]
+            "sources": [ { "type": "git", "url": "https://gitlab.com/sane-project/backends", "tag": "1.0.31"} ]
         },
         {
             "name": "libksane",
