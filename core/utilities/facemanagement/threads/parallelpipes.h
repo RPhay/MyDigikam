@@ -53,7 +53,7 @@ public:
 
 public Q_SLOTS:
 
-    void process(FacePipelineExtendedPackage::Ptr package);
+    void process(const FacePipelineExtendedPackage::Ptr& package);
 
 Q_SIGNALS:
 

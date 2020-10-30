@@ -45,7 +45,7 @@ public:
     {
     public:
 
-        explicit UndoInfo(QPersistentModelIndex pModelIndex)
+        explicit UndoInfo(const QPersistentModelIndex& pModelIndex)
             : modelIndex(pModelIndex)
         {
         }

@@ -96,7 +96,7 @@ void ParallelPipes::add(WorkerObject* const worker)
             this, SIGNAL(processed(FacePipelineExtendedPackage::Ptr)));
 }
 
-void ParallelPipes::process(FacePipelineExtendedPackage::Ptr package)
+void ParallelPipes::process(const FacePipelineExtendedPackage::Ptr& package)
 {
     // Here, we send the package to one of the workers, in turn
 
