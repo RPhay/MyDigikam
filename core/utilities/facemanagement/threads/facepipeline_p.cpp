@@ -140,7 +140,7 @@ FacePipelineExtendedPackage::Ptr FacePipeline::Private::buildPackage(const ItemI
     return package;
 }
 
-void FacePipeline::Private::send(FacePipelineExtendedPackage::Ptr package)
+void FacePipeline::Private::send(const FacePipelineExtendedPackage::Ptr& package)
 {
     start();
     ++totalPackagesAdded;
@@ -172,7 +172,7 @@ void FacePipeline::Private::finishProcess(FacePipelineExtendedPackage::Ptr packa
     checkFinished();
 }
 
-bool FacePipeline::Private::senderFlowControl(FacePipelineExtendedPackage::Ptr package)
+bool FacePipeline::Private::senderFlowControl(const FacePipelineExtendedPackage::Ptr& package)
 {
     if (packagesOnTheRoad > maxPackagesOnTheRoad)
     {

@@ -60,7 +60,7 @@ public:
 public:
 
     explicit FaceUtils();
-    ~FaceUtils() override;
+    ~FaceUtils()                                               override;
 
     // --- Face detection and recognition ---
 
@@ -72,7 +72,7 @@ public:
      */
     QList<FaceTagsIface> writeUnconfirmedResults(qlonglong imageid,
                                                  const QList<QRectF>& detectedFaces,
-                                                 const QList<Identity> recognitionResults,
+                                                 const QList<Identity>& recognitionResults,
                                                  const QSize& fullSize);
 
     // --- Status flags ---
@@ -116,7 +116,7 @@ public:
      */
     QList<FaceTagsIface> toFaceTagsIfaces(qlonglong imageid,
                                          const QList<QRectF>& detectedFaces,
-                                         const QList<Identity> recognitionResults,
+                                         const QList<Identity>& recognitionResults,
                                          const QSize& fullSize)                         const;
 
     /**
@@ -134,14 +134,14 @@ public:
 
     // TODO: investigate this method
     Identity identityForTag(int tagId, FacialRecognitionWrapper& recognizer)            const;
-    int                  tagForIdentity(const Identity& identity)                       const;
+    int      tagForIdentity(const Identity& identity)                                   const;
 
 protected:
 
     // Reimplemented
-    void addNormalTag(qlonglong imageid, int tagId)            override;
-    void removeNormalTag(qlonglong imageid, int tagId)         override;
-    void removeNormalTags(qlonglong imageid, QList<int> tagId) override;
+    void addNormalTag(qlonglong imageid, int tagId)                   override;
+    void removeNormalTag(qlonglong imageid, int tagId)                override;
+    void removeNormalTags(qlonglong imageid, const QList<int>& tagId) override;
 
 private:
 

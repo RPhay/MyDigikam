@@ -94,7 +94,7 @@ void FaceUtils::markAsScanned(const ItemInfo& info, bool hasBeenScanned) const
 
 QList<FaceTagsIface> FaceUtils::toFaceTagsIfaces(qlonglong imageid,
                                                  const QList<QRectF>& detectedFaces,
-                                                 const QList<Identity> recognitionResults,
+                                                 const QList<Identity>& recognitionResults,
                                                  const QSize& fullSize) const
 {
     QList<FaceTagsIface> faces;
@@ -155,7 +155,7 @@ void FaceUtils::storeThumbnails(ThumbnailLoadThread* const thread,
 
 QList<FaceTagsIface> FaceUtils::writeUnconfirmedResults(qlonglong imageid,
                                                         const QList<QRectF>& detectedFaces,
-                                                        const QList<Identity> recognitionResults,
+                                                        const QList<Identity>& recognitionResults,
                                                         const QSize& fullSize)
 {
     // Build list of new entries
@@ -381,15 +381,16 @@ void FaceUtils::removeNormalTag(qlonglong imageId, int tagId)
     }
 }
 
-void FaceUtils::removeNormalTags(qlonglong imageId, QList<int> tagIds)
+void FaceUtils::removeNormalTags(qlonglong imageId, const QList<int>& tagIds)
 {
     FileActionMngr::instance()->removeTags(ItemInfo(imageId), tagIds);
 }
 
 // --- Utilities ---
 
-QSize FaceUtils::rotateFaces(const ItemInfo& info, int newOrientation,
-                                                   int oldOrientation)
+QSize FaceUtils::rotateFaces(const ItemInfo& info,
+                             int newOrientation,
+                             int oldOrientation)
 {
     /**
      *  Get all faces from database and rotate them

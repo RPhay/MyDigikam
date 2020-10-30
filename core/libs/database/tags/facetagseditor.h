@@ -185,7 +185,7 @@ protected:
 
     virtual void addNormalTag(qlonglong imageid, int tagId);
     virtual void removeNormalTag(qlonglong imageid, int tagId);
-    virtual void removeNormalTags(qlonglong imageid, QList<int> tagId);
+    virtual void removeNormalTags(qlonglong imageid, const QList<int>& tagId);
 };
 
 }  // Namespace Digikam

@@ -546,7 +546,7 @@ void FaceTagsEditor::removeNormalTag(qlonglong imageId, int tagId)
     ItemInfo(imageId).removeTag(tagId);
 }
 
-void FaceTagsEditor::removeNormalTags(qlonglong imageId, QList<int> tagIds)
+void FaceTagsEditor::removeNormalTags(qlonglong imageId, const QList<int>& tagIds)
 {
     CoreDbOperationGroup group;
     group.setMaximumTime(200);

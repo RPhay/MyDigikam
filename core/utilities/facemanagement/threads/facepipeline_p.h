@@ -57,14 +57,16 @@ public:
     void processBatch(const QList<ItemInfo>& infos);
     void sendFromFilter(const QList<FacePipelineExtendedPackage::Ptr>& packages);
     void skipFromFilter(const QList<ItemInfo>& infosForSkipping);
-    void send(FacePipelineExtendedPackage::Ptr package);
-    bool senderFlowControl(FacePipelineExtendedPackage::Ptr package);
+    void send(const FacePipelineExtendedPackage::Ptr& package);
+    bool senderFlowControl(const FacePipelineExtendedPackage::Ptr& package);
     void receiverFlowControl();
     FacePipelineExtendedPackage::Ptr buildPackage(const ItemInfo& info);
     FacePipelineExtendedPackage::Ptr buildPackage(const ItemInfo& info,
-                                                  const FacePipelineFaceTagsIface&, const DImg& image);
+                                                  const FacePipelineFaceTagsIface&,
+                                                  const DImg& image);
     FacePipelineExtendedPackage::Ptr buildPackage(const ItemInfo& info,
-                                                  const FacePipelineFaceTagsIfaceList& faces, const DImg& image);
+                                                  const FacePipelineFaceTagsIfaceList& faces,
+                                                  const DImg& image);
     FacePipelineExtendedPackage::Ptr filterOrBuildPackage(const ItemInfo& info);
 
     bool hasFinished();
