@@ -122,7 +122,7 @@
                 "-DCV_TRACE=OFF",
                 "-DWITH_OPENJPEG=OFF"
             ],
-            "sources": [ { "type": "git", "url": "https://github.com/Itseez/opencv.git", "tag": "4.4.0" } ]
+            "sources": [ { "type": "git", "url": "https://github.com/Itseez/opencv.git", "tag": "4.5.0" } ]
         },
         {
             "name": "sane",
@@ -164,7 +164,7 @@
                 "-DJAS_ENABLE_PROGRAMS=OFF"
             ],
             "builddir": true,
-            "sources": [ { "type": "git", "url": "https://github.com/mdadams/jasper.git", "tag": "version-2.0.20" } ]
+            "sources": [ { "type": "git", "url": "https://github.com/mdadams/jasper.git", "tag": "version-2.0.22" } ]
         },
         {
             "name": "exiv2",
@@ -208,7 +208,7 @@
                 "-DBUILD_TESTING=OFF"
             ],
             "builddir": true,
-            "sources": [ { "type": "git", "url": "https://invent.kde.org/education/marble.git", "tag": "v20.08.1" } ]
+            "sources": [ { "type": "git", "url": "https://invent.kde.org/education/marble.git", "tag": "v20.08.2" } ]
         },
         {
             "name": "qtav",
@@ -244,7 +244,6 @@
             "config-opts": [
                 "--without-freetype",
                 "--without-fontconfig",
-                "--without-raw",
                 "--without-lqr",
                 "--without-openjp2",
                 "--without-threads",
@@ -262,14 +261,14 @@
                 "--with-quantum-depth=16"
             ],
             "builddir": true,
-            "sources": [ { "type": "git", "url": "https://github.com/ImageMagick/ImageMagick.git", "tag": "7.0.10-29" } ]
+            "sources": [ { "type": "git", "url": "https://github.com/ImageMagick/ImageMagick.git", "tag": "7.0.10-34" } ]
         },
         {
             "name": "x265",
             "buildsystem": "cmake-ninja",
             "builddir": true,
             "subdir" : "source",
-            "sources": [ { "type": "git", "url": "https://github.com/videolan/x265.git", "tag": "3.3" } ]
+            "sources": [ { "type": "git", "url": "https://github.com/videolan/x265.git", "tag": "3.4" } ]
         },
         {
             "name": "digikam",
