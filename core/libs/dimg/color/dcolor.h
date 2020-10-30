@@ -47,10 +47,10 @@ public:
      * Initialize with default value, fully transparent eight bit black
      */
     DColor()
-        : m_red(0),
-          m_green(0),
-          m_blue(0),
-          m_alpha(0),
+        : m_red       (0),
+          m_green     (0),
+          m_blue      (0),
+          m_alpha     (0),
           m_sixteenBit(false)
     {
     };

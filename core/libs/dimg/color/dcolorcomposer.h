@@ -124,7 +124,7 @@ public:
      * - PremultiplyDst    if dst is not premultiplied (read from a DImg)
      * - DemultiplyDst     if dst will be written to non-premultiplied data (a DImg)
      */
-    virtual void compose(DColor& dest, DColor src, MultiplicationFlags multiplicationFlags);
+    virtual void compose(DColor& dest, const DColor& src, MultiplicationFlags multiplicationFlags);
 
     virtual ~DColorComposer()
     {

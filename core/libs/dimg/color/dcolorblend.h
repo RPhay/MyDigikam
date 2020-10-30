@@ -201,10 +201,10 @@ inline void DColor::blendClamp8()
 
 inline void DColor::multiply(float factor)
 {
-    setRed(lround( red()     * factor ));
-    setGreen(lround( green() * factor ));
-    setBlue(lround( blue()   * factor ));
-    setAlpha(lround( alpha() * factor ));
+    setRed  (lround(red()   * factor));
+    setGreen(lround(green() * factor));
+    setBlue (lround(blue()  * factor));
+    setAlpha(lround(alpha() * factor));
 }
 
 } // namespace Digikam

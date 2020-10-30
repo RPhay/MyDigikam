@@ -36,10 +36,11 @@ namespace Digikam
 {
 
 DColor::DColor(const QColor& color, bool sixteenBit)
-    : m_alpha(255),
+    : m_alpha     (255),
       m_sixteenBit(false)
 {
     // initialize as eight bit
+
     if (color.isValid())
     {
         m_red   = color.red();
@@ -54,8 +55,8 @@ DColor::DColor(const QColor& color, bool sixteenBit)
         m_blue  = 0;
     }
 
-
     // convert to sixteen bit if requested
+
     if (sixteenBit)
     {
         convertToSixteenBit();
@@ -177,7 +178,7 @@ void DColor::getHSL(int* const h, int* const s, int* const l) const
             sat = delta / (2 - sum);
         }
 
-        if (red == max)
+        if      (red == max)
         {
             hue = (green - blue) / delta;
         }
@@ -253,7 +254,7 @@ void DColor::setHSL(int h, int s, int l, bool sixteenBit)
             mh += 360;
         }
 
-        if (mh < 60)
+        if      (mh < 60)
         {
             r = m1 + (m2 - m1) * mh / 60;
         }
@@ -282,7 +283,7 @@ void DColor::setHSL(int h, int s, int l, bool sixteenBit)
             mh += 360;
         }
 
-        if (mh < 60)
+        if      (mh < 60)
         {
             g = m1 + (m2 - m1) * mh / 60;
         }
@@ -311,7 +312,7 @@ void DColor::setHSL(int h, int s, int l, bool sixteenBit)
             mh += 360;
         }
 
-        if (mh < 60)
+        if      (mh < 60)
         {
             b = m1 + (m2 - m1) * mh / 60;
         }
@@ -352,6 +353,7 @@ void DColor::getYCbCr(double* const y, double* const cb, double* const cr) const
     double r = m_red   / (m_sixteenBit ? 65535.0 : 255.0);
     double g = m_green / (m_sixteenBit ? 65535.0 : 255.0);
     double b = m_blue  / (m_sixteenBit ? 65535.0 : 255.0);
+
     *y       =  0.2990 * r + 0.5870 * g + 0.1140 * b;
     *cb      = -0.1687 * r - 0.3313 * g + 0.5000 * b + 0.5;
     *cr      =  0.5000 * r - 0.4187 * g - 0.0813 * b + 0.5;
