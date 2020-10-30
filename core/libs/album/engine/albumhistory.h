@@ -65,8 +65,7 @@ public:
 
     void addAlbums(const QList<Album*>& albums,
                    QWidget* const widget,
-                   QHash<LabelsTreeView::Labels,
-                   QList<int> > selectedLabels);
+                   const QHash<LabelsTreeView::Labels, QList<int> >& selectedLabels);
 
     void deleteAlbum(Album* const album);
     void clearHistory();

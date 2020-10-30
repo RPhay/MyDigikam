@@ -229,8 +229,7 @@ void AlbumHistory::addAlbums(const QList<Album*>& albums, QWidget* const widget)
  */
 void AlbumHistory::addAlbums(const QList<Album*>& albums,
                              QWidget* const widget,
-                             QHash<LabelsTreeView::Labels,
-                             QList<int> > selectedLabels)
+                             const QHash<LabelsTreeView::Labels, QList<int> >& selectedLabels)
 {
 
     if (albums.isEmpty() || !widget || d->moving)

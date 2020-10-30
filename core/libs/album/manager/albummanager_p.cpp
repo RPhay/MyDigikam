@@ -35,7 +35,7 @@ PAlbumPath::PAlbumPath()
 
 PAlbumPath::PAlbumPath(int albumRootId, const QString& albumPath)
     : albumRootId(albumRootId),
-      albumPath(albumPath)
+      albumPath  (albumPath)
 {
 }
 
@@ -54,36 +54,36 @@ PAlbumPath::PAlbumPath(PAlbum* const album)
 
 bool PAlbumPath::operator==(const PAlbumPath& other) const
 {
-    return (other.albumRootId == albumRootId &&
-            other.albumPath   == albumPath);
+    return ((other.albumRootId == albumRootId) &&
+            (other.albumPath   == albumPath));
 }
 
 // -----------------------------------------------------------------------------------
 
 AlbumManager::Private::Private()
-    : changed(false),
-      hasPriorizedDbPath(false),
-      dbFakeConnection(false),
-      showOnlyAvailableAlbums(false),
+    : changed                 (false),
+      hasPriorizedDbPath      (false),
+      dbFakeConnection        (false),
+      showOnlyAvailableAlbums (false),
       longTimeMessageBoxResult(-1),
-      albumListJob(nullptr),
-      dateListJob(nullptr),
-      tagListJob(nullptr),
-      personListJob(nullptr),
-      albumWatch(nullptr),
-      rootPAlbum(nullptr),
-      rootTAlbum(nullptr),
-      rootDAlbum(nullptr),
-      rootSAlbum(nullptr),
-      currentlyMovingAlbum(nullptr),
-      changingDB(false),
-      scanPAlbumsTimer(nullptr),
-      scanTAlbumsTimer(nullptr),
-      scanSAlbumsTimer(nullptr),
-      scanDAlbumsTimer(nullptr),
-      updatePAlbumsTimer(nullptr),
-      albumItemCountTimer(nullptr),
-      tagItemCountTimer(nullptr)
+      albumListJob            (nullptr),
+      dateListJob             (nullptr),
+      tagListJob              (nullptr),
+      personListJob           (nullptr),
+      albumWatch              (nullptr),
+      rootPAlbum              (nullptr),
+      rootTAlbum              (nullptr),
+      rootDAlbum              (nullptr),
+      rootSAlbum              (nullptr),
+      currentlyMovingAlbum    (nullptr),
+      changingDB              (false),
+      scanPAlbumsTimer        (nullptr),
+      scanTAlbumsTimer        (nullptr),
+      scanSAlbumsTimer        (nullptr),
+      scanDAlbumsTimer        (nullptr),
+      updatePAlbumsTimer      (nullptr),
+      albumItemCountTimer     (nullptr),
+      tagItemCountTimer       (nullptr)
 {
 }
 

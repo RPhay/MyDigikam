@@ -37,6 +37,7 @@ bool AlbumManager::setDatabase(const DbEngineParameters& params, bool priority, 
 {
     // This is to ensure that the setup does not overrule the command line.
     // TODO: there is a bug that setup is showing something different here.
+
     if (priority)
     {
         d->hasPriorizedDbPath = true;
@@ -44,10 +45,12 @@ bool AlbumManager::setDatabase(const DbEngineParameters& params, bool priority, 
     else if (d->hasPriorizedDbPath)
     {
         // ignore change without priority
+
         return true;
     }
 
     // shutdown possibly running collection scans. Must call resumeCollectionScan further down.
+
     ScanController::instance()->cancelAllAndSuspendCollectionScan();
     QApplication::setOverrideCursor(Qt::WaitCursor);
 
@@ -76,6 +79,7 @@ bool AlbumManager::setDatabase(const DbEngineParameters& params, bool priority, 
     d->albumRootAlbumHash.clear();
 
     // deletes all child albums as well
+
     delete d->rootPAlbum;
     delete d->rootTAlbum;
     delete d->rootDAlbum;
@@ -89,9 +93,11 @@ bool AlbumManager::setDatabase(const DbEngineParameters& params, bool priority, 
     // -- Database initialization -------------------------------------------------
 
     // ensure, embedded database is loaded
+
     qCDebug(DIGIKAM_GENERAL_LOG) << params;
 
     // workaround for the problem mariaDB >= 10.2 and QTBUG-63108
+
     if (params.isMySQL())
     {
         addFakeConnection();
@@ -134,6 +140,7 @@ bool AlbumManager::setDatabase(const DbEngineParameters& params, bool priority, 
     d->albumWatch->setDbEngineParameters(params);
 
     // still suspended from above
+
     ScanController::instance()->resumeCollectionScan();
 
     ScanController::Advice advice = ScanController::instance()->databaseInitialization();
@@ -182,6 +189,7 @@ bool AlbumManager::setDatabase(const DbEngineParameters& params, bool priority, 
     QString dbLocale   = CoreDbAccess().db()->getSetting(QLatin1String("Locale"));
 
     // guilty until proven innocent
+
     bool localeChanged = true;
 
     if (dbLocale.isNull())
@@ -190,8 +198,9 @@ bool AlbumManager::setDatabase(const DbEngineParameters& params, bool priority, 
 
         // Copy an existing locale from the settings file (used < 0.8)
         // to the database.
+
         KSharedConfig::Ptr config = KSharedConfig::openConfig();
-        KConfigGroup group = config->group(QLatin1String("General Settings"));
+        KConfigGroup group        = config->group(QLatin1String("General Settings"));
 
         if (group.hasKey(QLatin1String("Locale")))
         {
@@ -206,7 +215,7 @@ bool AlbumManager::setDatabase(const DbEngineParameters& params, bool priority, 
 
             if (oldConfigLocale == dbLocale)
             {
-                dbLocale = currLocale;
+                dbLocale      = currLocale;
                 localeChanged = false;
                 CoreDbAccess().db()->setSetting(QLatin1String("Locale"), dbLocale);
             }
@@ -214,7 +223,7 @@ bool AlbumManager::setDatabase(const DbEngineParameters& params, bool priority, 
         else
         {
             qCDebug(DIGIKAM_GENERAL_LOG) << "No locale found in config file";
-            dbLocale = currLocale;
+            dbLocale      = currLocale;
 
             localeChanged = false;
             CoreDbAccess().db()->setSetting(QLatin1String("Locale"), dbLocale);
@@ -276,21 +285,21 @@ bool AlbumManager::setDatabase(const DbEngineParameters& params, bool priority, 
         deviceIconLabel->setPixmap(QIcon::fromTheme(QLatin1String("drive-harddisk")).pixmap(64));
         mainLayout->addWidget(deviceIconLabel, 0, 0);
 
-        QLabel* const mainLabel = new QLabel(i18n("<p>The collection </p><p><b>%1</b><br/>(%2)</p><p> is currently "
-                                                  "not found on your system.<br/> Please choose the most "
-                                                  "appropriate  option to handle this situation:</p>",
-                                             loc.label(), QDir::toNativeSeparators(locDescription)));
+        QLabel* const mainLabel       = new QLabel(i18n("<p>The collection </p><p><b>%1</b><br/>(%2)</p><p> is currently "
+                                                        "not found on your system.<br/> Please choose the most "
+                                                        "appropriate  option to handle this situation:</p>",
+                                                   loc.label(), QDir::toNativeSeparators(locDescription)));
         mainLabel->setWordWrap(true);
         mainLayout->addWidget(mainLabel, 0, 1);
 
-        QGroupBox* const groupBox = new QGroupBox;
+        QGroupBox* const groupBox     = new QGroupBox;
         mainLayout->addWidget(groupBox, 1, 0, 1, 2);
 
-        QGridLayout* const layout = new QGridLayout;
+        QGridLayout* const layout     = new QGridLayout;
         layout->setColumnStretch(1, 1);
 
-        QRadioButton* migrateButton = nullptr;
-        QComboBox* migrateChoices   = nullptr;
+        QRadioButton* migrateButton   = nullptr;
+        QComboBox* migrateChoices     = nullptr;
 
         if (!candidateIds.isEmpty())
         {
@@ -301,7 +310,7 @@ bool AlbumManager::setDatabase(const DbEngineParameters& params, bool priority, 
                                                          "The collection is now located at this place:</p>"));
             migrateLabel->setWordWrap(true);
 
-            migrateChoices = new QComboBox;
+            migrateChoices             = new QComboBox;
 
             for (int i = 0 ; i < candidateIds.size() ; ++i)
             {
@@ -330,8 +339,8 @@ bool AlbumManager::setDatabase(const DbEngineParameters& params, bool priority, 
         groupBox->setLayout(layout);
         widget->setLayout(mainLayout);
 
-        QVBoxLayout* const vbx          = new QVBoxLayout(dialog);
-        QDialogButtonBox* const buttons = new QDialogButtonBox(QDialogButtonBox::Ok, dialog);
+        QVBoxLayout* const vbx                  = new QVBoxLayout(dialog);
+        QDialogButtonBox* const buttons         = new QDialogButtonBox(QDialogButtonBox::Ok, dialog);
         vbx->addWidget(widget);
         vbx->addWidget(buttons);
         dialog->setLayout(vbx);
@@ -342,7 +351,8 @@ bool AlbumManager::setDatabase(const DbEngineParameters& params, bool priority, 
 
         // Default option: If there is only one candidate, default to migration.
         // Otherwise default to do nothing now.
-        if (migrateButton && candidateIds.size() == 1)
+
+        if (migrateButton && (candidateIds.size() == 1))
         {
             migrateButton->setChecked(true);
         }
@@ -369,6 +379,7 @@ bool AlbumManager::setDatabase(const DbEngineParameters& params, bool priority, 
     // -- ---------------------------------------------------------
 
     // check that we have one album root
+
     if (CollectionManager::instance()->allLocations().isEmpty())
     {
         if (suggestedAlbumRoot.isEmpty())
@@ -379,8 +390,11 @@ bool AlbumManager::setDatabase(const DbEngineParameters& params, bool priority, 
         {
             QUrl albumRoot(QUrl::fromLocalFile(suggestedAlbumRoot));
             CollectionManager::instance()->addLocation(albumRoot, albumRoot.fileName());
+
             // Not needed? See bug #188959
-            //ScanController::instance()->completeCollectionScan();
+/*
+            ScanController::instance()->completeCollectionScan();
+*/
         }
     }
 
@@ -398,7 +412,7 @@ bool AlbumManager::setDatabase(const DbEngineParameters& params, bool priority, 
 
     SimilarityDbAccess::setParameters(params.similarityParameters());
 
-    DbEngineGuiErrorHandler* const similarityHandler = new DbEngineGuiErrorHandler(SimilarityDbAccess::parameters());
+    DbEngineGuiErrorHandler* const similarityHandler   = new DbEngineGuiErrorHandler(SimilarityDbAccess::parameters());
     SimilarityDbAccess::initDbEngineErrorHandler(similarityHandler);
 
     if (SimilarityDbAccess::checkReadyForUse(nullptr))
@@ -418,6 +432,7 @@ bool AlbumManager::setDatabase(const DbEngineParameters& params, bool priority, 
 void AlbumManager::checkDatabaseDirsAfterFirstRun(const QString& dbPath, const QString& albumPath)
 {
     // for bug #193522
+
     QDir               newDir(dbPath);
     QDir               albumDir(albumPath);
     DbEngineParameters newParams = DbEngineParameters::parametersForSQLiteDefaultFile(newDir.path());
@@ -454,6 +469,7 @@ void AlbumManager::checkDatabaseDirsAfterFirstRun(const QString& dbPath, const Q
             {
                 // CoreDbSchemaUpdater expects Album Path to point to the album root of the 0.9 db file.
                 // Restore this situation.
+
                 KSharedConfigPtr config = KSharedConfig::openConfig();
                 KConfigGroup group      = config->group("Album Settings");
                 group.writeEntry("Album Path", albumDir.path());
@@ -473,9 +489,11 @@ void AlbumManager::checkDatabaseDirsAfterFirstRun(const QString& dbPath, const Q
 void AlbumManager::changeDatabase(const DbEngineParameters& newParams)
 {
     // if there is no file at the new place, copy old one
+
     DbEngineParameters params = CoreDbAccess::parameters();
 
     // New database type SQLITE
+
     if (newParams.isSQLite())
     {
         DatabaseServerStarter::instance()->stopServerManagerProcess();
@@ -536,10 +554,11 @@ void AlbumManager::changeDatabase(const DbEngineParameters& newParams)
                     delete msgBox;
                 }
 
-                if (result == QMessageBox::Yes)
+                if      (result == QMessageBox::Yes)
                 {
                     // CoreDbSchemaUpdater expects Album Path to point to the album root of the 0.9 db file.
                     // Restore this situation.
+
                     KSharedConfigPtr config = KSharedConfig::openConfig();
                     KConfigGroup group      = config->group(QLatin1String("Album Settings"));
                     group.writeEntry(QLatin1String("Album Path"), newDir.path());
@@ -621,11 +640,13 @@ void AlbumManager::changeDatabase(const DbEngineParameters& newParams)
             if (result == QMessageBox::Yes)
             {
                 // first backup
+
                 if (moveToBackup(newFile))
                 {
                     QFileInfo oldFile(params.SQLiteDatabaseFile());
 
                     // then copy
+
                     copyToNewLocation(oldFile, newFile);
                 }
             }
@@ -654,6 +675,7 @@ void AlbumManager::addFakeConnection()
     {
         // workaround for the problem mariaDB >= 10.2 and QTBUG-63108
         // from a Qt minimum version of >= 5.9.2 we can remove this workaround
+
         QSqlDatabase::addDatabase(QLatin1String("QMYSQL"), QLatin1String("FakeConnection"));
         d->dbFakeConnection = true;
     }
@@ -692,7 +714,7 @@ bool AlbumManager::moveToBackup(const QFileInfo& info)
 
 bool AlbumManager::copyToNewLocation(const QFileInfo& oldFile,
                                      const QFileInfo& newFile,
-                                     const QString otherMessage)
+                                     const QString& otherMessage)
 {
     QString message = otherMessage;
 

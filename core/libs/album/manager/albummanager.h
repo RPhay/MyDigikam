@@ -157,7 +157,7 @@ private:
     static bool moveToBackup(const QFileInfo& info);
     static bool copyToNewLocation(const QFileInfo& oldFile,
                                   const QFileInfo& newFile,
-                                  const QString otherMessage = QString());
+                                  const QString& otherMessage = QString());
 
     //@}
 
@@ -203,7 +203,7 @@ public:
     /**
      * @returns current albums, previously set up by setCurrentAlbums
      */
-    AlbumList currentAlbums() const;
+    AlbumList currentAlbums()                       const;
 
     /**
      * clear current albums.
@@ -214,18 +214,18 @@ public:
      * @return a Album with the given globalID
      * @param gid the global id for the album
      */
-    Album*    findAlbum(int gid) const;
+    Album*    findAlbum(int gid)                    const;
 
     /**
      * @return a Album with the given type and id
      * @param id the id for the album (not the global id)
      */
-    Album*    findAlbum(Album::Type type, int id) const;
+    Album*    findAlbum(Album::Type type, int id)   const;
 
     /**
      * @return A hash with the titles for all album IDs.
      */
-    QHash<int, QString> albumTitles() const;
+    QHash<int, QString> albumTitles()               const;
 
     /**
      * Returns if the given album is currently being moved, that is,
@@ -324,13 +324,13 @@ public:
     /**
      * @return a list of all DAlbums
      */
-    AlbumList allDAlbums() const;
+    AlbumList allDAlbums()                  const;
 
     /**
      * @return a DAlbum with given ID
      * @param id the id for the DAlbum
      */
-    DAlbum*   findDAlbum(int id) const;
+    DAlbum*   findDAlbum(int id)            const;
 
     /**
      * Returns the latest count for DAlbums as also emitted via
@@ -338,7 +338,7 @@ public:
      *
      * @return count map for DAlbums
      */
-    QMap<YearMonth, int> getDAlbumsCount() const;
+    QMap<YearMonth, int> getDAlbumsCount()  const;
 
 private Q_SLOTS:
 
@@ -371,12 +371,12 @@ public:
     /**
      * @return a list of all PAlbums
      */
-    AlbumList allPAlbums() const;
+    AlbumList allPAlbums()                  const;
 
     /**
      * @returns the current PAlbum or null if no one is selected
      */
-    PAlbum* currentPAlbum() const;
+    PAlbum* currentPAlbum()                 const;
 
     /**
      * Given a complete file url (kde url with file protocol), it will try to find
@@ -385,13 +385,13 @@ public:
      * @return PAlbum corresponding to supplied @p url
      * @param url the url we need to check
      */
-    PAlbum*   findPAlbum(const QUrl& url) const;
+    PAlbum*   findPAlbum(const QUrl& url)   const;
 
     /**
      * @return a PAlbum with given ID
      * @param id the id for the PAlbum
      */
-    PAlbum*   findPAlbum(int id) const;
+    PAlbum*   findPAlbum(int id)            const;
 
     /**
      * Returns the latest count for PAlbums as also emitted via
@@ -399,7 +399,7 @@ public:
      *
      * @return count map for PAlbums
      */
-    QMap<int, int> getPAlbumsCount() const;
+    QMap<int, int> getPAlbumsCount()        const;
 
     void removeWatchedPAlbums(const PAlbum* const album);
 
@@ -501,18 +501,18 @@ public:
     /**
      * @return a list of all TAlbums
      */
-    AlbumList allTAlbums() const;
+    AlbumList allTAlbums()                       const;
 
     /**
      * @returns the current TAlbum or null if no one is selected
      */
-    QList<TAlbum*> currentTAlbums() const;
+    QList<TAlbum*> currentTAlbums()              const;
 
     /**
      * @return a TAlbum with given ID
      * @param id the id for the TAlbum
      */
-    TAlbum*   findTAlbum(int id) const;
+    TAlbum*   findTAlbum(int id)                 const;
 
     /**
      * @return a TAlbum with given tag path, or 0 if not found
@@ -526,7 +526,7 @@ public:
      *
      * @return count map for TAlbums
      */
-    QMap<int, int> getTAlbumsCount() const;
+    QMap<int, int> getTAlbumsCount()             const;
 
     /**
      * Create a new TAlbum with supplied properties as a child of the parent
@@ -620,7 +620,7 @@ public:
      * @return the list of recently assigned TAlbums
      * @param includeInternal include internal tags in the returned list, or skip them
      */
-    AlbumList getRecentlyAssignedTags(bool includeInternal = false) const;
+    AlbumList getRecentlyAssignedTags(bool includeInternal = false)                                      const;
 
     /**
      * @return A list with the tag paths for a list of tag IDs.
@@ -634,17 +634,17 @@ public:
      * @return A list with the tag names for a list of tag IDs.
      * @param tagIDs list of tag album IDs
      */
-    QStringList tagNames(const QList<int>& tagIDs, bool includeInternal = false) const;
+    QStringList tagNames(const QList<int>& tagIDs, bool includeInternal = false)                         const;
 
     /**
      * @return A hash with the tag paths for all tag IDs.
      */
-    QHash<int, QString> tagPaths(bool leadingSlash=true, bool includeInternal = false) const;
+    QHash<int, QString> tagPaths(bool leadingSlash=true, bool includeInternal = false)                   const;
 
     /**
      * @return A hash with the tag names for all tag IDs.
      */
-    QHash<int, QString> tagNames(bool includeInternal = false) const;
+    QHash<int, QString> tagNames(bool includeInternal = false)                                           const;
 
     /**
      * Returns a list of TAlbums which have the given property,
@@ -710,25 +710,25 @@ public:
     /**
      * @return a list of all SAlbums
      */
-    AlbumList allSAlbums() const;
+    AlbumList allSAlbums()                                  const;
 
     /**
      * @return a SAlbum with given ID
      * @param id the id for the SAlbum
      */
-    SAlbum*   findSAlbum(int id) const;
+    SAlbum*   findSAlbum(int id)                            const;
 
     /**
      * @return a SAlbum with given name, or 0 if not found
      * @param name the name of the search
      */
-    SAlbum*   findSAlbum(const QString& name) const;
+    SAlbum*   findSAlbum(const QString& name)               const;
 
     /**
      * @return SAlbums with given type, empty list if not found
      * @param searchType the type of the search
      */
-    QList<SAlbum*> findSAlbumsBySearchType(int searchType) const;
+    QList<SAlbum*> findSAlbumsBySearchType(int searchType)  const;
 
     /**
      * Create a new SAlbum with supplied url. If an existing SAlbum with same name
@@ -742,7 +742,9 @@ public:
      * @param type  the type of the search
      * @param query search query to use
      */
-    SAlbum* createSAlbum(const QString& name, DatabaseSearch::Type type, const QString& query);
+    SAlbum* createSAlbum(const QString& name,
+                         DatabaseSearch::Type type,
+                         const QString& query);
 
     /**
      * Update the url for a SAlbum
@@ -752,8 +754,10 @@ public:
      * @param changedName a new name, or null to keep the current name
      * @param type a new type, or UndefinedType to keep the current type
      */
-    bool updateSAlbum(SAlbum* album, const QString& changedQuery,
-                      const QString& changedName = QString(), DatabaseSearch::Type type = DatabaseSearch::UndefinedType);
+    bool updateSAlbum(SAlbum* album,
+                      const QString& changedQuery,
+                      const QString& changedName = QString(),
+                      DatabaseSearch::Type type = DatabaseSearch::UndefinedType);
 
     /**
      * Delete a SAlbum from the database
@@ -798,7 +802,7 @@ public:
      *
      * @return count map for faces (confirmed and unconfirmed combined)
      */
-    QMap<int, int> getFaceCount() const;
+    QMap<int, int> getFaceCount()            const;
 
     /**
      * Returns the latest count for unconfirmed faces only
@@ -811,7 +815,8 @@ public:
 private Q_SLOTS:
 
     void slotPeopleJobResult();
-    void slotPeopleJobData(const QMap<QString, QMap<int, int> >& facesStatMap);
+    void slotPeopleJobData(const QMap<QString,
+                           QMap<int, int> >& facesStatMap);
     void personItemsCount();
 
 Q_SIGNALS:
