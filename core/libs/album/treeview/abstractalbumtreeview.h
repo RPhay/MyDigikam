@@ -110,7 +110,7 @@ public:
      * If you supply 0 for filterModel, call setAlbumFilterModel afterwards.
      */
     AbstractAlbumTreeView(QWidget* const parent, Flags flags);
-    ~AbstractAlbumTreeView() override;
+    ~AbstractAlbumTreeView()                                                    override;
 
     AbstractSpecificAlbumModel* albumModel() const;
     AlbumFilterModel* albumFilterModel()     const;
@@ -188,8 +188,8 @@ public:
      * the state of new rows based on the remaining entries in
      * d->statesByAlbumId.
      */
-    void doLoadState() override;
-    void doSaveState() override;
+    void doLoadState()                                                          override;
+    void doSaveState()                                                          override;
     //@}
 
     /**
@@ -232,7 +232,7 @@ public:
     QList<A*> currentAlbums();
 
     // for internal use: public viewportEvent
-    bool viewportEvent(QEvent* event) override;
+    bool viewportEvent(QEvent* event)                                           override;
 
     /**
      * @brief selectedItems() -
@@ -311,7 +311,7 @@ protected:
      *
      * @return the icon for the context menu
      */
-    virtual QPixmap contextMenuIcon() const;
+    virtual QPixmap contextMenuIcon()  const;
 
     /**
      * Hook method to implement that returns the title for the context menu.
@@ -338,19 +338,20 @@ protected:
      * @param album the tag on which the context menu was requested. May be null
      *              if there was no
      */
-    virtual void handleCustomContextMenuAction(QAction* action, AlbumPointer<Album> album);
+    virtual void handleCustomContextMenuAction(QAction* action,
+                                               const AlbumPointer<Album>& album);
 
     // other stuff
 
-    void mousePressEvent(QMouseEvent* e) override;
+    void mousePressEvent(QMouseEvent* e)                                        override;
 
-    void rowsInserted(const QModelIndex& index, int start, int end) override;
-    void rowsAboutToBeRemoved(const QModelIndex& parent, int start, int end) override;
-    void startDrag(Qt::DropActions supportedActions) override;
-    void dragEnterEvent(QDragEnterEvent* e) override;
-    void dragMoveEvent(QDragMoveEvent* e) override;
-    void dragLeaveEvent(QDragLeaveEvent* e) override;
-    void dropEvent(QDropEvent* e) override;
+    void rowsInserted(const QModelIndex& index, int start, int end)             override;
+    void rowsAboutToBeRemoved(const QModelIndex& parent, int start, int end)    override;
+    void startDrag(Qt::DropActions supportedActions)                            override;
+    void dragEnterEvent(QDragEnterEvent* e)                                     override;
+    void dragMoveEvent(QDragMoveEvent* e)                                       override;
+    void dragLeaveEvent(QDragLeaveEvent* e)                                     override;
+    void dropEvent(QDropEvent* e)                                               override;
 
     virtual void middleButtonPressed(Album* a);
     virtual QPixmap pixmapForDrag(const QStyleOptionViewItem& option, QList<QModelIndex> indexes);
@@ -371,7 +372,8 @@ protected:
 
 private:
 
-    void saveStateRecursive(const QModelIndex& index, QList<int>& selection, QList<int>& expansion);
+    void saveStateRecursive(const QModelIndex& index,
+                            QList<int>& selection, QList<int>& expansion);
 
     /**
      * Restores the state of the index and all sub-indexes if there is an entry
@@ -381,19 +383,21 @@ private:
      * @param index index to start restoring
      * @param stateStore states indexed by album id
      */
-    void restoreStateForHierarchy(const QModelIndex& index, const QMap<int, Digikam::State>& stateStore);
+    void restoreStateForHierarchy(const QModelIndex& index,
+                                  const QMap<int, Digikam::State>& stateStore);
 
     /**
      * Restore the state for this index.
      */
-    void restoreState(const QModelIndex& index, const QMap<int, Digikam::State>& stateStore);
+    void restoreState(const QModelIndex& index,
+                      const QMap<int, Digikam::State>& stateStore);
 
     /**
      * Creates the context menu.
      *
      * @param event event that requested the menu
      */
-    void contextMenuEvent(QContextMenuEvent* event) override;
+    void contextMenuEvent(QContextMenuEvent* event)                             override;
 
 private Q_SLOTS:
 

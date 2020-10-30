@@ -59,7 +59,7 @@ public:
 
     explicit Private()
       : albumModificationHelper(nullptr),
-        newAlbumAction(nullptr)
+        newAlbumAction         (nullptr)
     {
     }
 
@@ -71,7 +71,7 @@ AlbumSelectTreeView::AlbumSelectTreeView(AlbumModel* const model,
                                          AlbumModificationHelper* const albumModificationHelper,
                                          QWidget* const parent)
     : AlbumTreeView(parent),
-      d(new Private)
+      d            (new Private)
 {
     setAlbumModel(model);
     d->albumModificationHelper = albumModificationHelper;
@@ -90,12 +90,12 @@ void AlbumSelectTreeView::addCustomContextMenuActions(ContextMenuHelper& cmh, Al
     d->newAlbumAction->setEnabled(album);
 }
 
-void AlbumSelectTreeView::handleCustomContextMenuAction(QAction* action, AlbumPointer<Album> album)
+void AlbumSelectTreeView::handleCustomContextMenuAction(QAction* action, const AlbumPointer<Album>& album)
 {
     Album* const a       = album;
     PAlbum* const palbum = dynamic_cast<PAlbum*>(a);
 
-    if (palbum && action == d->newAlbumAction)
+    if (palbum && (action == d->newAlbumAction))
     {
         d->albumModificationHelper->slotAlbumNew(palbum);
     }
@@ -123,12 +123,12 @@ class Q_DECL_HIDDEN AlbumSelectWidget::Private
 public:
 
     explicit Private()
-      : complAlbum(nullptr),
-        albumModel(nullptr),
-        albumTreeView(nullptr),
+      : complAlbum             (nullptr),
+        albumModel             (nullptr),
+        albumTreeView          (nullptr),
         albumModificationHelper(nullptr),
-        searchBar(nullptr),
-        newAlbumBtn(nullptr)
+        searchBar              (nullptr),
+        newAlbumBtn            (nullptr)
     {
     }
 
@@ -146,7 +146,7 @@ public:
 AlbumSelectWidget::AlbumSelectWidget(QWidget* const parent,
                                      PAlbum* const albumToSelect, bool completerSelect)
     : QWidget(parent),
-      d(new Private)
+      d      (new Private)
 {
     setObjectName(QLatin1String("AlbumSelectWidget"));
 

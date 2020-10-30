@@ -1065,7 +1065,7 @@ void AbstractAlbumTreeView::addCustomContextMenuActions(ContextMenuHelper& cmh, 
     Q_UNUSED(album);
 }
 
-void AbstractAlbumTreeView::handleCustomContextMenuAction(QAction* action, AlbumPointer<Album> album)
+void AbstractAlbumTreeView::handleCustomContextMenuAction(QAction* action, const AlbumPointer<Album>& album)
 {
     Q_UNUSED(action);
     Q_UNUSED(album);

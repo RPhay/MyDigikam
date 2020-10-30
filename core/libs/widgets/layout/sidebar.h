@@ -407,7 +407,7 @@ public:
      * If there are other widgets in this splitter, stores
      * their sizes in the provided list.
      */
-    void backup(const QList<QWidget*> thirdWidgetsToBackup, QList<int>* const sizes);
+    void backup(const QList<QWidget*>& thirdWidgetsToBackup, QList<int>* const sizes);
 
     /**
      * Show sidebar and restore minimized state.
@@ -418,7 +418,7 @@ public:
      * Show sidebar and restore minimized state.
      * Restores other widgets' sizes in splitter.
      */
-    void restore(const QList<QWidget*> thirdWidgetsToRestore, const QList<int>& sizes);
+    void restore(const QList<QWidget*>& thirdWidgetsToRestore, const QList<int>& sizes);
 
     /**
      * Return the visible status of current sidebar tab.

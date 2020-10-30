@@ -128,7 +128,7 @@ void TagFilterView::addCustomContextMenuActions(ContextMenuHelper& cmh, Album* a
     d->offRestoreTagFiltersAction->setChecked(!isRestoreCheckState());
 }
 
-void TagFilterView::handleCustomContextMenuAction(QAction* action, AlbumPointer<Album> album)
+void TagFilterView::handleCustomContextMenuAction(QAction* action, const AlbumPointer<Album>& album)
 {
     TagCheckView::handleCustomContextMenuAction(action, album);
 

@@ -61,7 +61,7 @@ public:
     /**
      * Destructor.
      */
-    ~TagFilterView() override;
+    ~TagFilterView()                                                                      override;
 
 private Q_SLOTS:
 
@@ -69,8 +69,8 @@ private Q_SLOTS:
 
 protected:
 
-    void addCustomContextMenuActions(ContextMenuHelper& cmh, Album* album)         override;
-    void handleCustomContextMenuAction(QAction* action, AlbumPointer<Album> album) override;
+    void addCustomContextMenuActions(ContextMenuHelper& cmh, Album* album)                override;
+    void handleCustomContextMenuAction(QAction* action, const AlbumPointer<Album>& album) override;
 
 private:
 

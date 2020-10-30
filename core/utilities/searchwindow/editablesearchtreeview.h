@@ -77,7 +77,7 @@ protected:
     /**
      * Handles deletion and renaming actions.
      */
-    void handleCustomContextMenuAction(QAction* action, AlbumPointer<Album> album) override;
+    void handleCustomContextMenuAction(QAction* action, const AlbumPointer<Album>& album) override;
 
 private:
 

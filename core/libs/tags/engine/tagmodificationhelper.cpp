@@ -99,7 +99,7 @@ TAlbum* TagModificationHelper::boundTag(QObject* sender) const
     return nullptr;
 }
 
-void TagModificationHelper::bindMultipleTags(QAction* action, QList<TAlbum*> tags)
+void TagModificationHelper::bindMultipleTags(QAction* action, const QList<TAlbum*>& tags)
 {
     action->setData(QVariant::fromValue(tags));
 }

@@ -78,13 +78,13 @@ public:
     {
     };
 
-    HistoryItem(QList<Album*> const a, QWidget* const w)
+    HistoryItem(const QList<Album*>& a, QWidget* const w)
         : widget(w)
     {
         albums.append(a);
     };
 
-    HistoryItem(QList<Album*> const a, QWidget* const w, QHash<LabelsTreeView::Labels, QList<int> > selectedLabels)
+    HistoryItem(const QList<Album*>& a, QWidget* const w, const QHash<LabelsTreeView::Labels, QList<int> >& selectedLabels)
         : widget(w),
           labels(selectedLabels)
     {

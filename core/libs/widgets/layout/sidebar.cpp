@@ -968,7 +968,7 @@ void Sidebar::backup()
     DMultiTabBar::hide();
 }
 
-void Sidebar::backup(const QList<QWidget*> thirdWidgetsToBackup, QList<int>* const sizes)
+void Sidebar::backup(const QList<QWidget*>& thirdWidgetsToBackup, QList<int>* const sizes)
 {
     sizes->clear();
 
@@ -992,7 +992,7 @@ void Sidebar::restore()
     }
 }
 
-void Sidebar::restore(const QList<QWidget*> thirdWidgetsToRestore, const QList<int>& sizes)
+void Sidebar::restore(const QList<QWidget*>& thirdWidgetsToRestore, const QList<int>& sizes)
 {
     restore();
 

@@ -187,6 +187,8 @@ public Q_SLOTS:
      */
     void slotMultipleTagsToFaceTags();
 
+public:
+
     /**
      * Sets the tag that the given action operates on.
      * You must call bindTag and then connect the action's triggered
@@ -202,7 +204,7 @@ public Q_SLOTS:
      * @param action    - action to store pointer
      * @param tags      - QVector pointer to be stored
      */
-    void bindMultipleTags(QAction* action, QList<TAlbum*> tags);
+    void bindMultipleTags(QAction* action, const QList<TAlbum*>& tags);
 
     /**
      * Return QVector pointer bound with bindMultipleTags. Use when context menu

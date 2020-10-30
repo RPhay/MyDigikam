@@ -48,8 +48,8 @@ public:
 
     explicit Private()
       : searchModificationHelper(nullptr),
-        renameSearchAction(nullptr),
-        deleteSearchAction(nullptr)
+        renameSearchAction      (nullptr),
+        deleteSearchAction      (nullptr)
     {
     }
 
@@ -63,7 +63,7 @@ EditableSearchTreeView::EditableSearchTreeView(QWidget* const parent,
                                                SearchModel* const searchModel,
                                                SearchModificationHelper* const searchModificationHelper)
     : SearchTreeView(parent),
-      d(new Private)
+      d             (new Private)
 {
     setAlbumModel(searchModel);
     d->searchModificationHelper = searchModificationHelper;
@@ -106,7 +106,7 @@ void EditableSearchTreeView::addCustomContextMenuActions(ContextMenuHelper& cmh,
     cmh.addAction(d->deleteSearchAction);
 }
 
-void EditableSearchTreeView::handleCustomContextMenuAction(QAction* action, AlbumPointer<Album> album)
+void EditableSearchTreeView::handleCustomContextMenuAction(QAction* action, const AlbumPointer<Album>& album)
 {
     Album* const a            = album;
     SAlbum* const searchAlbum = dynamic_cast<SAlbum*>(a);

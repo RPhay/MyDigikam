@@ -86,9 +86,10 @@ TagFolderView::TagFolderView(QWidget* const parent, TagModel* const model)
     /// This ensures that the View appears sorted
     connect(AlbumManager::instance(), &AlbumManager::signalFaceCountsDirty,
             [=]()
-            {
-                filteredModel()->sort(0, filteredModel()->sortOrder());
-            });
+        {
+            filteredModel()->sort(0, filteredModel()->sortOrder());
+        }
+    );
 }
 
 TagFolderView::~TagFolderView()
@@ -269,7 +270,7 @@ void TagFolderView::slotCollapseNode()
     }
 }
 
-void TagFolderView::handleCustomContextMenuAction(QAction* action, AlbumPointer<Album> album)
+void TagFolderView::handleCustomContextMenuAction(QAction* action, const AlbumPointer<Album>& album)
 {
     Album* const a    = album;
     TAlbum* const tag = dynamic_cast<TAlbum*>(a);
@@ -408,7 +409,7 @@ void TagFolderView::contextMenuEvent(QContextMenuEvent* event)
 
 void TagFolderView::keyPressEvent(QKeyEvent* event)
 {
-    if ((event->key() == Qt::Key_Return) &&
+    if ((event->key()       == Qt::Key_Return) &&
         (event->modifiers() == Qt::AltModifier))
     {
         QList<TAlbum*> selected = selectedTagAlbums();
