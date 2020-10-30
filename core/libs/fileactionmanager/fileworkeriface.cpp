@@ -49,7 +49,7 @@
 namespace Digikam
 {
 
-void FileActionMngrFileWorker::writeOrientationToFiles(FileActionItemInfoList infos, int orientation)
+void FileActionMngrFileWorker::writeOrientationToFiles(const FileActionItemInfoList& infos, int orientation)
 {
     QStringList failedItems;
 
@@ -87,7 +87,7 @@ void FileActionMngrFileWorker::writeOrientationToFiles(FileActionItemInfoList in
     infos.finishedWriting();
 }
 
-void FileActionMngrFileWorker::writeMetadataToFiles(FileActionItemInfoList infos)
+void FileActionMngrFileWorker::writeMetadataToFiles(const FileActionItemInfoList& infos)
 {
     d->startingToWrite(infos);
 
@@ -125,7 +125,7 @@ void FileActionMngrFileWorker::writeMetadataToFiles(FileActionItemInfoList infos
     infos.finishedWriting();
 }
 
-void FileActionMngrFileWorker::writeMetadata(FileActionItemInfoList infos, int flags)
+void FileActionMngrFileWorker::writeMetadata(const FileActionItemInfoList& infos, int flags)
 {
     d->startingToWrite(infos);
 
@@ -164,7 +164,7 @@ void FileActionMngrFileWorker::writeMetadata(FileActionItemInfoList infos, int f
     infos.finishedWriting();
 }
 
-void FileActionMngrFileWorker::transform(FileActionItemInfoList infos, int action)
+void FileActionMngrFileWorker::transform(const FileActionItemInfoList& infos, int action)
 {
     d->startingToWrite(infos);
 

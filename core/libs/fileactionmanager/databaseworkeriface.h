@@ -46,15 +46,15 @@ class DatabaseWorkerInterface : public WorkerObject
 
 public Q_SLOTS:
 
-    virtual void assignTags(FileActionItemInfoList, const QList<int>&)      {};
-    virtual void removeTags(FileActionItemInfoList, const QList<int>&)      {};
-    virtual void assignPickLabel(FileActionItemInfoList, int)               {};
-    virtual void assignColorLabel(FileActionItemInfoList, int)              {};
-    virtual void assignRating(FileActionItemInfoList, int)                  {};
-    virtual void editGroup(int, const ItemInfo&, FileActionItemInfoList)    {};
-    virtual void setExifOrientation(FileActionItemInfoList, int)            {};
-    virtual void applyMetadata(FileActionItemInfoList, DisjointMetadata*)   {};
-    virtual void copyAttributes(FileActionItemInfoList, const QStringList&) {};
+    virtual void assignTags(const FileActionItemInfoList&, const QList<int>&)      {};
+    virtual void removeTags(const FileActionItemInfoList&, const QList<int>&)      {};
+    virtual void assignPickLabel(const FileActionItemInfoList&, int)               {};
+    virtual void assignColorLabel(const FileActionItemInfoList&, int)              {};
+    virtual void assignRating(const FileActionItemInfoList&, int)                  {};
+    virtual void editGroup(int, const ItemInfo&, const FileActionItemInfoList&)    {};
+    virtual void setExifOrientation(const FileActionItemInfoList&, int)            {};
+    virtual void applyMetadata(const FileActionItemInfoList&, DisjointMetadata*)   {};
+    virtual void copyAttributes(const FileActionItemInfoList&, const QStringList&) {};
 
 Q_SIGNALS:
 
@@ -78,19 +78,19 @@ public:
 
 public:
 
-    void assignTags(FileActionItemInfoList infos, const QList<int>& tagIDs)             override;
-    void removeTags(FileActionItemInfoList infos, const QList<int>& tagIDs)             override;
-    void assignPickLabel(FileActionItemInfoList infos, int pickId)                      override;
-    void assignColorLabel(FileActionItemInfoList infos, int colorId)                    override;
-    void assignRating(FileActionItemInfoList infos, int rating)                         override;
-    void editGroup(int groupAction, const ItemInfo& pick, FileActionItemInfoList infos) override;
-    void setExifOrientation(FileActionItemInfoList infos, int orientation)              override;
-    void applyMetadata(FileActionItemInfoList infos, DisjointMetadata* hub)             override;
-    void copyAttributes(FileActionItemInfoList infos, const QStringList& derivedPaths)  override;
+    void assignTags(const FileActionItemInfoList& infos, const QList<int>& tagIDs)             override;
+    void removeTags(const FileActionItemInfoList& infos, const QList<int>& tagIDs)             override;
+    void assignPickLabel(const FileActionItemInfoList& infos, int pickId)                      override;
+    void assignColorLabel(const FileActionItemInfoList& infos, int colorId)                    override;
+    void assignRating(const FileActionItemInfoList& infos, int rating)                         override;
+    void editGroup(int groupAction, const ItemInfo& pick, const FileActionItemInfoList& infos) override;
+    void setExifOrientation(const FileActionItemInfoList& infos, int orientation)              override;
+    void applyMetadata(const FileActionItemInfoList& infos, DisjointMetadata* hub)             override;
+    void copyAttributes(const FileActionItemInfoList& infos, const QStringList& derivedPaths)  override;
 
 private:
 
-    void changeTags(FileActionItemInfoList infos, const QList<int>& tagIDs, bool addOrRemove);
+    void changeTags(const FileActionItemInfoList& infos, const QList<int>& tagIDs, bool addOrRemove);
 
 private:
 

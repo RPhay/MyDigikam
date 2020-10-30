@@ -42,10 +42,10 @@ class FileWorkerInterface : public WorkerObject
 
 public Q_SLOTS:
 
-    virtual void writeOrientationToFiles(FileActionItemInfoList, int) {};
-    virtual void writeMetadataToFiles(FileActionItemInfoList)         {};
-    virtual void writeMetadata(FileActionItemInfoList, int)           {};
-    virtual void transform(FileActionItemInfoList, int)               {};
+    virtual void writeOrientationToFiles(const FileActionItemInfoList&, int) {};
+    virtual void writeMetadataToFiles(const FileActionItemInfoList&)         {};
+    virtual void writeMetadata(const FileActionItemInfoList&, int)           {};
+    virtual void transform(const FileActionItemInfoList&, int)               {};
 
 Q_SIGNALS:
 
@@ -68,10 +68,10 @@ public:
 
 public:
 
-    void writeOrientationToFiles(FileActionItemInfoList infos, int orientation) override;
-    void writeMetadataToFiles(FileActionItemInfoList infos)                     override;
-    void writeMetadata(FileActionItemInfoList infos, int flags)                 override;
-    void transform(FileActionItemInfoList infos, int orientation)               override;
+    void writeOrientationToFiles(const FileActionItemInfoList& infos, int orientation) override;
+    void writeMetadataToFiles(const FileActionItemInfoList& infos)                     override;
+    void writeMetadata(const FileActionItemInfoList& infos, int flags)                 override;
+    void transform(const FileActionItemInfoList& infos, int orientation)               override;
 
 private:
 
