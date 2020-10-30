@@ -288,6 +288,7 @@
                 "-DENABLE_MEDIAPLAYER=ON",
                 "-DENABLE_DBUS=ON",
                 "-DENABLE_APPSTYLES=ON",
+                "-DDIGIKAMSC_CHECKOUT_PO=OFF",
                 "-DENABLE_QWEBENGINE=ON"
             ],
             "builddir": true,
