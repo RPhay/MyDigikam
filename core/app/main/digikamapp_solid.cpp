@@ -630,7 +630,7 @@ void DigikamApp::openSolidUsmDevice(const QString& udi, const QString& givenLabe
             // NOTE: Lambda function to not expose whole digiKam to Solid API.
 
             connect(access, &Solid::StorageAccess::setupDone,
-                    [=](Solid::ErrorType errorType, QVariant errorData, const QString& /*udi*/)
+                    [=](Solid::ErrorType errorType, QVariant errorData, const QString& /*udi*/)  // clazy:exclude=function-args-by-ref
                 {
                     if (!d->eventLoop)
                     {

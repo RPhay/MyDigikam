@@ -59,7 +59,7 @@ class DIGIKAM_GUI_EXPORT DigikamApp : public DXmlGuiWindow
 public:
 
     explicit DigikamApp();
-    ~DigikamApp() override;
+    ~DigikamApp()                                                       override;
 
     virtual void show();
     void restoreSession();
@@ -75,7 +75,7 @@ public:
 
 public:
 
-    DInfoInterface* infoIface(DPluginAction* const ac) override;
+    DInfoInterface* infoIface(DPluginAction* const ac)                  override;
 
 Q_SIGNALS:
 

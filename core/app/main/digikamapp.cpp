@@ -35,7 +35,7 @@ DigikamApp* DigikamApp::m_instance = nullptr;
 
 DigikamApp::DigikamApp()
     : DXmlGuiWindow(nullptr),
-      d(new Private)
+      d            (new Private)
 {
     setObjectName(QLatin1String("Digikam"));
     setConfigGroupName(ApplicationSettings::instance()->generalConfigGroupName());
@@ -493,8 +493,12 @@ void DigikamApp::slotAlbumSelected(Album* album)
 
             // Special case if Tag album.
 
-            bool enabled = (album->type() == Album::TAG) && !album->isRoot() &&
-                    album->id() != FaceTags::unconfirmedPersonTagId() && album->id() != FaceTags::unknownPersonTagId();
+            bool enabled = (
+                            (album->type() == Album::TAG)                       &&
+                            !album->isRoot()                                    &&
+                            (album->id() != FaceTags::unconfirmedPersonTagId()) &&
+                            (album->id() != FaceTags::unknownPersonTagId())
+                           );
 
             d->newTagAction->setEnabled(enabled);
             d->deleteTagAction->setEnabled(enabled);
@@ -1000,6 +1004,7 @@ void DigikamApp::customizedFullScreenMode(bool set)
     toolBarMenuAction()->setEnabled(!set);
     showMenuBarAction()->setEnabled(!set);
     showStatusBarAction()->setEnabled(!set);
+
     set ? d->showBarAction->setEnabled(false)
         : toggleShowBar();
 
