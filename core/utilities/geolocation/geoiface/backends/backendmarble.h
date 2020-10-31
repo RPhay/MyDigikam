@@ -131,7 +131,7 @@ protected Q_SLOTS:
     void slotProjectionActionTriggered(QAction* action);
     void slotFloatSettingsTriggered(QAction* action);
     void slotMarbleZoomChanged();
-    void slotTracksChanged(const QList<TrackManager::TrackChanges> trackChanges);
+    void slotTracksChanged(const QList<TrackManager::TrackChanges>& trackChanges);
     void slotScheduleUpdate();
 
 private:

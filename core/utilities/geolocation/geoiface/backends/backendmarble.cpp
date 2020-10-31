@@ -1979,7 +1979,7 @@ void BackendMarble::applyCacheToWidget()
     setShowOverviewMap(d->cacheShowOverviewMap);
 }
 
-void BackendMarble::slotTracksChanged(const QList<TrackManager::TrackChanges> trackChanges)
+void BackendMarble::slotTracksChanged(const QList<TrackManager::TrackChanges>& trackChanges)
 {
     // invalidate the cache for all changed tracks
 

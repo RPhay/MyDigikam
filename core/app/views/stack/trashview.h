@@ -57,7 +57,7 @@ public:
      * @brief set thumbnail size to give to model
      * @param thumbSize: size to set
      */
-    void setThumbnailSize(ThumbnailSize thumbSize);
+    void setThumbnailSize(const ThumbnailSize& thumbSize);
 
     /**
      * @return QUrl to the last selected item in view
@@ -106,7 +106,7 @@ public:
 
     explicit ThumbnailAligningDelegate(QObject* const parent = nullptr);
 
-    void paint(QPainter *painter, const QStyleOptionViewItem &option, const QModelIndex &index) const override;
+    void paint(QPainter* painter, const QStyleOptionViewItem& option, const QModelIndex& index) const override;
 };
 
 } // namespace Digikam

@@ -118,7 +118,7 @@ private Q_SLOTS:
     void slotFloatSettingsTriggered(QAction* action);
     void slotSelectionHasBeenMade(const Digikam::GeoCoordinates::Pair& searchCoordinates);
     void slotTrackManagerChanged() override;
-    void slotTracksChanged(const QList<TrackManager::TrackChanges> trackChanges);
+    void slotTracksChanged(const QList<TrackManager::TrackChanges>& trackChanges);
     void slotTrackVisibilityChanged(const bool newState);
 
 private:

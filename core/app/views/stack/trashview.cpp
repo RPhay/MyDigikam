@@ -389,7 +389,7 @@ void TrashView::slotChangeLastSelectedItem(const QModelIndex& curr, const QModel
     emit selectionChanged();
 }
 
-void TrashView::setThumbnailSize(ThumbnailSize thumbSize)
+void TrashView::setThumbnailSize(const ThumbnailSize& thumbSize)
 {
     d->model->changeThumbSize(thumbSize.size());
     d->tableView->verticalHeader()->setDefaultSectionSize(thumbSize.size());

@@ -57,8 +57,8 @@ namespace Digikam
 {
 
 TableViewModel::Item::Item()
-  : imageId(0),
-    parent(nullptr),
+  : imageId (0),
+    parent  (nullptr),
     children()
 {
 }
@@ -114,15 +114,15 @@ class Q_DECL_HIDDEN TableViewModel::Private
 public:
 
     explicit Private()
-      : columnObjects(),
-        rootItem(nullptr),
+      : columnObjects      (),
+        rootItem           (nullptr),
         imageFilterSettings(),
-        sortColumn(0),
-        sortOrder(Qt::AscendingOrder),
-        sortRequired(false),
-        groupingMode(GroupingShowSubItems),
-        cachedItemInfos(),
-        outdated(true)
+        sortColumn         (0),
+        sortOrder          (Qt::AscendingOrder),
+        sortRequired       (false),
+        groupingMode       (GroupingShowSubItems),
+        cachedItemInfos    (),
+        outdated           (true)
     {
     }
 
@@ -139,8 +139,8 @@ public:
 
 TableViewModel::TableViewModel(TableViewShared* const sharedObject, QObject* const parent)
     : QAbstractItemModel(parent),
-      s(sharedObject),
-      d(new Private())
+      s                 (sharedObject),
+      d                 (new Private())
 {
     d->rootItem            = new Item();
     d->imageFilterSettings = s->imageFilterModel->imageFilterSettings();
@@ -184,7 +184,9 @@ TableViewModel::TableViewModel(TableViewShared* const sharedObject, QObject* con
             this, SLOT(slotDatabaseImageChanged(ImageChangeset)), Qt::QueuedConnection);
 
 #ifdef DIGIKAM_ENABLE_MODELTEST
+
     new ModelTest(this, this);
+
 #endif // DIGIKAM_ENABLE_MODELTEST
 
     // We only have to trigger population of the model if data is in the source model,
@@ -1030,7 +1032,7 @@ ItemInfo TableViewModel::infoFromItem(TableViewModel::Item* const item) const
     return info;
 }
 
-ItemInfoList TableViewModel::infosFromItems(QList<TableViewModel::Item*> const items) const
+ItemInfoList TableViewModel::infosFromItems(const QList<TableViewModel::Item*>& items) const
 {
     ItemInfoList infos;
 
@@ -1042,14 +1044,16 @@ ItemInfoList TableViewModel::infosFromItems(QList<TableViewModel::Item*> const i
     return infos;
 }
 
-TableViewModel::DatabaseFieldsHashRaw TableViewModel::itemDatabaseFieldsRaw(TableViewModel::Item* const item, const DatabaseFields::Set requestedSet)
+TableViewModel::DatabaseFieldsHashRaw TableViewModel::itemDatabaseFieldsRaw(TableViewModel::Item* const item,
+                                                                            const DatabaseFields::Set& requestedSet)
 {
     const ItemInfo itemItemInfo = infoFromItem(item);
 
     return itemItemInfo.getDatabaseFieldsRaw(requestedSet);
 }
 
-QVariant TableViewModel::itemDatabaseFieldRaw(TableViewModel::Item* const item, const DatabaseFields::Set requestedField)
+QVariant TableViewModel::itemDatabaseFieldRaw(TableViewModel::Item* const item,
+                                              const DatabaseFields::Set& requestedField)
 {
     const TableViewModel::DatabaseFieldsHashRaw rawHash = itemDatabaseFieldsRaw(item, requestedField);
 
@@ -1190,7 +1194,7 @@ public:
     TableViewModel* m;
 };
 
-QList<TableViewModel::Item*> TableViewModel::sortItems(const QList<TableViewModel::Item*> itemList)
+QList<TableViewModel::Item*> TableViewModel::sortItems(const QList<TableViewModel::Item*>& itemList)
 {
     QList<Item*> sortedList = itemList;
 

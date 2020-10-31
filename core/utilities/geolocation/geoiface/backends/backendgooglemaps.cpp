@@ -1460,7 +1460,7 @@ void BackendGoogleMaps::slotTrackManagerChanged()
     }
 }
 
-void BackendGoogleMaps::slotTracksChanged(const QList<TrackManager::TrackChanges> trackChanges)
+void BackendGoogleMaps::slotTracksChanged(const QList<TrackManager::TrackChanges>& trackChanges)
 {
     bool needToTrackChanges = !d->activeState;
 

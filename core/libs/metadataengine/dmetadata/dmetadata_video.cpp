@@ -86,7 +86,7 @@ namespace Digikam
 QString s_setXmpTagStringFromEntry(DMetadata* const meta,
                                    const QStringList& lst,
                                    const DMetadata::MetaDataMap& map,
-                                   const QStringList& xmpTags=QStringList())
+                                   const QStringList& xmpTags = QStringList())
 {
     foreach (const QString& tag, lst)
     {
@@ -132,7 +132,7 @@ QStringList s_keywordsSeparation(const QString& data)
     return keywords;
 }
 
-qint64 s_secondsSinceJanuary1904(const QDateTime dt)
+qint64 s_secondsSinceJanuary1904(const QDateTime& dt)
 {
     QDateTime dt1904(QDate(1904, 1, 1), QTime(0, 0, 0));
 
