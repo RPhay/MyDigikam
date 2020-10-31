@@ -136,7 +136,7 @@ void FindDuplicatesAlbumItem::calculateInfos(const QList<qlonglong>& deletedImag
 
     const QList<qlonglong>& list = reader.valueToLongLongList();
 
-    // only images that are not removed/obsolete should be shown.
+    // Only images that are not removed/obsolete should be shown.
 
     QList<qlonglong> filteredList;
     double avgSim = 0.0;
@@ -218,28 +218,23 @@ QUrl FindDuplicatesAlbumItem::refUrl() const
 
 bool FindDuplicatesAlbumItem::operator<(const QTreeWidgetItem& other) const
 {
-    int column = treeWidget()->sortColumn();
     int result = 0;
+    int column = treeWidget()->sortColumn();
 
     if      (column == Column::AVG_SIMILARITY)
     {
-        result = ( text(column).toDouble() < other.text(column).toDouble() ) ? -1 : 0;
+        result = (text(column).toDouble() < other.text(column).toDouble()) ? -1 : 0;
     }
     else if (column == Column::RESULT_COUNT)
     {
-        result = ( text(column).toInt() < other.text(column).toInt() ) ? -1 : 0;
+        result = (text(column).toInt() < other.text(column).toInt()) ? -1 : 0;
     }
     else
     {
         result = QCollator().compare(text(column), other.text(column));
     }
 
-    if (result < 0)
-    {
-        return true;
-    }
-
-    return false;
+    return (result < 0);
 }
 
 } // namespace Digikam
