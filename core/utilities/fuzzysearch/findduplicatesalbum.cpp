@@ -49,7 +49,7 @@ class Q_DECL_HIDDEN FindDuplicatesAlbum::Private
 public:
 
     explicit Private()
-        : iconSize(64),
+        : iconSize       (64),
           thumbLoadThread(nullptr)
     {
     }
@@ -185,10 +185,17 @@ void FindDuplicatesAlbum::removeDuplicates()
     QTreeWidgetItemIterator it(this);
 
     QList<ItemInfo> duplicatedItems;
+
     while (*it)
     {
         FindDuplicatesAlbumItem* const item = dynamic_cast<FindDuplicatesAlbumItem*>(*it);
-        duplicatedItems += item->duplicatedItems();
+
+        if (!item)
+        {
+            continue;
+        }
+
+        duplicatedItems                    += item->duplicatedItems();
         ++it;
     }
 
@@ -198,6 +205,7 @@ void FindDuplicatesAlbum::removeDuplicates()
     DeleteDialogMode::DeleteMode deleteDialogMode = DeleteDialogMode::NoChoiceTrash;
 
     QList<QUrl> urlList;
+
     // Buffer the urls for deletion and imageids for notification of the AlbumManager
 
     foreach (const ItemInfo& info, duplicatedItems)
@@ -210,7 +218,6 @@ void FindDuplicatesAlbum::removeDuplicates()
         return;
     }
 
-    // This should run in a different thread =/
     DIO::del(duplicatedItems, false);
 }
 

@@ -92,7 +92,8 @@ bool FindDuplicatesAlbumItem::hasValidThumbnail() const
 
 QList<ItemInfo> FindDuplicatesAlbumItem::duplicatedItems()
 {
-    if (itemCount() <= 1) {
+    if (itemCount() <= 1)
+    {
         return {};
     }
 
@@ -102,7 +103,7 @@ QList<ItemInfo> FindDuplicatesAlbumItem::duplicatedItems()
     QList<ItemInfo> toRemove;
 
     const QList<qlonglong>& list = reader.valueToLongLongList();
-    const qlonglong refImage = d->album->title().toLongLong();
+    const qlonglong refImage     = d->album->title().toLongLong();
 
     foreach (const qlonglong& imageId, list)
     {
@@ -113,6 +114,7 @@ QList<ItemInfo> FindDuplicatesAlbumItem::duplicatedItems()
 
         toRemove.append(ItemInfo(imageId));
     }
+
     return toRemove;
 }
 
@@ -142,6 +144,7 @@ void FindDuplicatesAlbumItem::calculateInfos(const QList<qlonglong>& deletedImag
     foreach (const qlonglong& imageId, list)
     {
         ItemInfo info(imageId);
+
         // If image is not deleted in this moment and was also not
         // removed before.
 

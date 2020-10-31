@@ -205,8 +205,8 @@ FindDuplicatesView::FindDuplicatesView(QWidget* const parent)
 
     d->albumTagRelation->setCurrentIndex(d->albumTagRelation->findData(relation));
 
-    d->removeDuplicates = new QPushButton(i18nc("@label:listbox", "Remove Duplicates"));
-    auto *removeDuplicatesLayout = new QHBoxLayout();
+    d->removeDuplicates                       = new QPushButton(i18nc("@label:listbox", "Remove Duplicates"));
+    QHBoxLayout* const removeDuplicatesLayout = new QHBoxLayout();
     removeDuplicatesLayout->addWidget(d->removeDuplicates);
 
     // ---------------------------------------------------------------
@@ -492,11 +492,17 @@ void FindDuplicatesView::slotFindDuplicates()
     connect(finder, SIGNAL(signalComplete()),
             this, SLOT(slotComplete()));
 
-    connect(finder, &DuplicatesFinder::signalComplete, this, [this]{
-        d->removeDuplicates->setEnabled(true); });
+    connect(finder, &DuplicatesFinder::signalComplete,
+            this, [this]
+            {
+                d->removeDuplicates->setEnabled(true);
+            });
 
-    connect(finder, &DuplicatesFinder::signalCanceled, this, [this]{
-        d->removeDuplicates->setEnabled(false); });
+    connect(finder, &DuplicatesFinder::signalCanceled,
+            this, [this]
+            {
+                d->removeDuplicates->setEnabled(false);
+            });
 
     finder->start();
 }
@@ -629,23 +635,23 @@ void FindDuplicatesView::resetAlbumsAndTags()
     slotCheckForValidSettings();
 }
 
-void FindDuplicatesView::slotRemoveDuplicates() {
-    int result = QMessageBox::warning(
-        this,
-        i18nc("@title:popup", "Remove Duplicates"),
-        i18nc("@text:message", "Are you sure that you want to delete all of the supposed duplicated items found?\n"
-                               "You cannot recover from this, and it's possible that the similarity threshould found"
-                               "similar, but not equal, images. Continue at your own risk."),
-        QMessageBox::StandardButton::Ok | QMessageBox::StandardButton::Cancel,
-        QMessageBox::StandardButton::Cancel); // Default to Cancel so nobody deletes things by mistake.
+void FindDuplicatesView::slotRemoveDuplicates()
+{
+    int result = QMessageBox::warning(this,
+                    i18nc("@title:popup", "Remove Duplicates"),
+                    i18nc("@text:message", "Are you sure that you want to delete all of the "
+                                           "supposed duplicated items found?\n"
+                                           "You cannot recover from this, and it's possible "
+                                           "that the similarity threshould found similar, "
+                                           "but not equal, images. Continue at your own risk."),
+                    QMessageBox::StandardButton::Ok | QMessageBox::StandardButton::Cancel,
+                    QMessageBox::StandardButton::Cancel); // Default to Cancel so nobody deletes things by mistake.
 
     if (result != QMessageBox::StandardButton::Ok)
     {
-        qDebug() << "Cancelling duplicate removal";
         return;
     }
 
-    qDebug() << "Removing All Duplicates!";
     d->listView->removeDuplicates();
 }
 
