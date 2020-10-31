@@ -45,7 +45,8 @@ no-inefficient-qlist-soft,\
 no-qstring-allocations,\
 no-qstring-arg,\
 no-qstring-insensitive-allocation,\
-no-qstring-ref\
+no-qstring-ref,\
+no-function-args-by-value\
 "
 
 echo "IGNORE DIRECTORIES:     $CLAZY_IGNORE_DIRS"
