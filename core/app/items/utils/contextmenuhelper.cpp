@@ -92,14 +92,14 @@ class Q_DECL_HIDDEN ContextMenuHelper::Private
 public:
 
     explicit Private(ContextMenuHelper* const q)
-      : gotoAlbumAction(nullptr),
-        gotoDateAction(nullptr),
-        setThumbnailAction(nullptr),
-        imageFilterModel(nullptr),
-        albumModel(nullptr),
-        parent(nullptr),
-        stdActionCollection(nullptr),
-        q(q)
+      : gotoAlbumAction     (nullptr),
+        gotoDateAction      (nullptr),
+        setThumbnailAction  (nullptr),
+        imageFilterModel    (nullptr),
+        albumModel          (nullptr),
+        parent              (nullptr),
+        stdActionCollection (nullptr),
+        q                   (q)
     {
     }
 
@@ -463,7 +463,7 @@ bool ContextMenuHelper::imageIdsHaveSameCategory(const imageIds& ids, DatabaseIt
         varList = CoreDbAccess().db()->getImagesFields(id, DatabaseFields::Category);
 
         if (varList.isEmpty() ||
-            (DatabaseItem::Category)varList.first().toInt() != category)
+            ((DatabaseItem::Category)varList.first().toInt() != category))
         {
             sameCategory = false;
             break;
@@ -495,7 +495,7 @@ void ContextMenuHelper::addActionDeleteTag(TagModificationHelper* helper, TAlbum
             helper, SLOT(slotTagDelete()));
 }
 
-void ContextMenuHelper::addActionDeleteTags(Digikam::TagModificationHelper* helper, QList< TAlbum* > tags)
+void ContextMenuHelper::addActionDeleteTags(TagModificationHelper* helper, const QList<TAlbum*>& tags)
 {
     QAction* const deleteTagsAction = new QAction(QIcon::fromTheme(QLatin1String("edit-delete")),
                                                   i18n("Delete Tags"), this);
@@ -517,7 +517,7 @@ void ContextMenuHelper::addActionTagToFaceTag(TagModificationHelper* helper, TAl
             helper, SLOT(slotTagToFaceTag()));
 }
 
-void ContextMenuHelper::addActionTagsToFaceTags(TagModificationHelper* helper, QList< TAlbum* > tags)
+void ContextMenuHelper::addActionTagsToFaceTags(TagModificationHelper* helper, const QList<TAlbum*>& tags)
 {
     QAction* const tagToFaceTagsAction = new QAction(QIcon::fromTheme(QLatin1String("tag-properties")),
                                                      i18n("Mark As Face Tags"), this);
@@ -557,7 +557,7 @@ void ContextMenuHelper::addActionDeleteFaceTag(TagModificationHelper* helper, TA
             helper, SLOT(slotFaceTagDelete()));
 }
 
-void ContextMenuHelper::addActionDeleteFaceTags(TagModificationHelper* helper, QList< TAlbum* > tags)
+void ContextMenuHelper::addActionDeleteFaceTags(TagModificationHelper* helper, const QList<TAlbum*>& tags)
 {
     QAction* const deleteFaceTagsAction = new QAction(QIcon::fromTheme(QLatin1String("user-trash")),
                                                       i18n("Remove Face Tags"), this);
@@ -751,8 +751,8 @@ void ContextMenuHelper::addExportMenu()
 
 #if 0
 
-    QAction* selectAllAction = 0;
-    selectAllAction = d->stdActionCollection->action("selectAll");
+    QAction* selectAllAction      = nullptr;
+    selectAllAction               = d->stdActionCollection->action("selectAll");
 
 #endif
 
@@ -903,9 +903,10 @@ void ContextMenuHelper::addQueueManagerMenu()
 
         QMap<int, QString> qmwMap = qmw->queuesMap();
 
-        for (QMap<int, QString>::const_iterator it = qmwMap.constBegin() ; it != qmwMap.constEnd() ; ++it)
+        for (QMap<int, QString>::const_iterator it = qmwMap.constBegin() ;
+             it != qmwMap.constEnd() ; ++it)
         {
-            QAction* const action = new QAction(it.value(), this);
+            QAction* const action     = new QAction(it.value(), this);
             queueList << action;
             d->queueActions[it.key()] = action;
         }
@@ -1024,7 +1025,7 @@ void ContextMenuHelper::addGroupMenu(const imageIds& ids, const QList<QAction*>&
     {
         if (!actions.isEmpty())
         {
-            QAction* separator = new QAction(this);
+            QAction* const separator = new QAction(this);
             separator->setSeparator(true);
             actions << separator;
         }
@@ -1068,13 +1069,15 @@ QList<QAction*> ContextMenuHelper::groupMenuActions(const imageIds& ids)
             if (!d->imageFilterModel->isAllGroupsOpen())
             {
                 QAction* const openAction = new QAction(i18nc("@action:inmenu", "Open All Groups"), this);
-                connect(openAction, SIGNAL(triggered()), this, SLOT(slotOpenGroups()));
+                connect(openAction, SIGNAL(triggered()),
+                        this, SLOT(slotOpenGroups()));
                 actions << openAction;
             }
             else
             {
                 QAction* const closeAction = new QAction(i18nc("@action:inmenu", "Close All Groups"), this);
-                connect(closeAction, SIGNAL(triggered()), this, SLOT(slotCloseGroups()));
+                connect(closeAction, SIGNAL(triggered()),
+                        this, SLOT(slotCloseGroups()));
                 actions << closeAction;
             }
         }
@@ -1093,13 +1096,15 @@ QList<QAction*> ContextMenuHelper::groupMenuActions(const imageIds& ids)
                 if (!d->imageFilterModel->isGroupOpen(info.id()))
                 {
                     QAction* const action = new QAction(i18nc("@action:inmenu", "Show Grouped Images"), this);
-                    connect(action, SIGNAL(triggered()), this, SLOT(slotOpenGroups()));
+                    connect(action, SIGNAL(triggered()),
+                            this, SLOT(slotOpenGroups()));
                     actions << action;
                 }
                 else
                 {
                     QAction* const action = new QAction(i18nc("@action:inmenu", "Hide Grouped Images"), this);
-                    connect(action, SIGNAL(triggered()), this, SLOT(slotCloseGroups()));
+                    connect(action, SIGNAL(triggered()),
+                            this, SLOT(slotCloseGroups()));
                     actions << action;
                 }
             }
@@ -1109,13 +1114,15 @@ QList<QAction*> ContextMenuHelper::groupMenuActions(const imageIds& ids)
             actions << separator;
 
             QAction* const clearAction = new QAction(i18nc("@action:inmenu", "Ungroup"), this);
-            connect(clearAction, SIGNAL(triggered()), this, SIGNAL(signalUngroup()));
+            connect(clearAction, SIGNAL(triggered()),
+                    this, SIGNAL(signalUngroup()));
             actions << clearAction;
         }
         else if (info.isGrouped())
         {
             QAction* const action = new QAction(i18nc("@action:inmenu", "Remove From Group"), this);
-            connect(action, SIGNAL(triggered()), this, SIGNAL(signalRemoveFromGroup()));
+            connect(action, SIGNAL(triggered()),
+                    this, SIGNAL(signalRemoveFromGroup()));
             actions << action;
 
             // TODO: set as group leader / pick image
@@ -1124,19 +1131,23 @@ QList<QAction*> ContextMenuHelper::groupMenuActions(const imageIds& ids)
     else
     {
         QAction* const closeAction = new QAction(i18nc("@action:inmenu", "Group Selected Here"), this);
-        connect(closeAction, SIGNAL(triggered()), this, SIGNAL(signalCreateGroup()));
+        connect(closeAction, SIGNAL(triggered()), 
+                this, SIGNAL(signalCreateGroup()));
         actions << closeAction;
 
         QAction* const closeActionDate = new QAction(i18nc("@action:inmenu", "Group Selected By Time"), this);
-        connect(closeActionDate, SIGNAL(triggered()), this, SIGNAL(signalCreateGroupByTime()));
+        connect(closeActionDate, SIGNAL(triggered()),
+                this, SIGNAL(signalCreateGroupByTime()));
         actions << closeActionDate;
 
         QAction* const closeActionType = new QAction(i18nc("@action:inmenu", "Group Selected By Filename"), this);
-        connect(closeActionType, SIGNAL(triggered()), this, SIGNAL(signalCreateGroupByFilename()));
+        connect(closeActionType, SIGNAL(triggered()),
+                this, SIGNAL(signalCreateGroupByFilename()));
         actions << closeActionType;
 
         QAction* const closeActionTimelapse = new QAction(i18nc("@action:inmenu", "Group Selected By Timelapse / Burst"), this);
-        connect(closeActionTimelapse, SIGNAL(triggered()), this, SIGNAL(signalCreateGroupByTimelapse()));
+        connect(closeActionTimelapse, SIGNAL(triggered()),
+                this, SIGNAL(signalCreateGroupByTimelapse()));
         actions << closeActionTimelapse;
 
         QAction* const separator = new QAction(this);
@@ -1146,11 +1157,13 @@ QList<QAction*> ContextMenuHelper::groupMenuActions(const imageIds& ids)
         if (d->imageFilterModel)
         {
             QAction* const openAction   = new QAction(i18nc("@action:inmenu", "Show Grouped Images"), this);
-            connect(openAction, SIGNAL(triggered()), this, SLOT(slotOpenGroups()));
+            connect(openAction, SIGNAL(triggered()),
+                    this, SLOT(slotOpenGroups()));
             actions << openAction;
 
             QAction* const hideAction = new QAction(i18nc("@action:inmenu", "Hide Grouped Images"), this);
-            connect(hideAction, SIGNAL(triggered()), this, SLOT(slotCloseGroups()));
+            connect(hideAction, SIGNAL(triggered()),
+                    this, SLOT(slotCloseGroups()));
             actions << hideAction;
 
             QAction* const separator2   = new QAction(this);
@@ -1159,11 +1172,13 @@ QList<QAction*> ContextMenuHelper::groupMenuActions(const imageIds& ids)
         }
 
         QAction* const removeAction = new QAction(i18nc("@action:inmenu", "Remove Selected From Groups"), this);
-        connect(removeAction, SIGNAL(triggered()), this, SIGNAL(signalRemoveFromGroup()));
+        connect(removeAction, SIGNAL(triggered()),
+                this, SIGNAL(signalRemoveFromGroup()));
         actions << removeAction;
 
         QAction* const clearAction = new QAction(i18nc("@action:inmenu", "Ungroup Selected"), this);
-        connect(clearAction, SIGNAL(triggered()), this, SIGNAL(signalUngroup()));
+        connect(clearAction, SIGNAL(triggered()),
+                this, SIGNAL(signalUngroup()));
         actions << clearAction;
     }
 
