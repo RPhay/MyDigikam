@@ -144,7 +144,9 @@ void ItemIconView::slotDispatchImageSelected()
     if (d->needDispatchSelection)
     {
         // the list of ItemInfos of currently selected items, currentItem first
-        const ItemInfoList list      = selectedInfoList(true, false);
+        ApplicationSettings::ApplyToEntireGroup applyAll =
+            ApplicationSettings::instance()->getGroupingOperateOnAll(ApplicationSettings::Metadata);
+        const ItemInfoList list      = selectedInfoList(true, (applyAll == ApplicationSettings::Yes));
         const ItemInfoList allImages = allInfo(true);
 
         if (list.isEmpty())
