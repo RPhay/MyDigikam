@@ -49,7 +49,7 @@ namespace Digikam
 
 DWItemDelegate::DWItemDelegate(QAbstractItemView* const itemView, QObject* const parent)
     : QAbstractItemDelegate(parent),
-      d(new DWItemDelegatePrivate(this))
+      d                    (new DWItemDelegatePrivate(this))
 {
     Q_ASSERT(itemView);
 
@@ -97,7 +97,7 @@ QPersistentModelIndex DWItemDelegate::focusedIndex() const
     return d->itemView->indexAt(pos);
 }
 
-void DWItemDelegate::setBlockedEventTypes(QWidget* const widget, QList<QEvent::Type> types) const
+void DWItemDelegate::setBlockedEventTypes(QWidget* const widget, const QList<QEvent::Type>& types) const
 {
     widget->setProperty("DigiKam:blockedEventTypes", QVariant::fromValue(types));
 }

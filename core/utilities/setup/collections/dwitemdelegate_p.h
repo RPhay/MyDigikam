@@ -46,7 +46,7 @@ class Q_DECL_HIDDEN DWItemDelegatePrivate : public QObject
 public:
 
     explicit DWItemDelegatePrivate(DWItemDelegate* const q, QObject* const parent = nullptr);
-    ~DWItemDelegatePrivate() override;
+    ~DWItemDelegatePrivate()                            override;
 
     void updateRowRange(const QModelIndex& parent, int start, int end, bool isRemoving);
     QStyleOptionViewItem optionView(const QModelIndex& index);
@@ -65,7 +65,7 @@ public Q_SLOTS:
 
 protected:
 
-    bool eventFilter(QObject* watched, QEvent* event) override;
+    bool eventFilter(QObject* watched, QEvent* event)   override;
 
 public:
 

@@ -113,8 +113,8 @@ public:
     /// Apply the changed settings to CollectionManager
     void apply();
 
-    QModelIndex indexForCategory(Category category) const;
-    QList<QModelIndex> categoryIndexes()            const;
+    QModelIndex indexForCategory(Category category)                                           const;
+    QList<QModelIndex> categoryIndexes()                                                      const;
 
     /// QAbstractItemModel implementation
     QVariant data(const QModelIndex& index, int role = Qt::DisplayRole)                       const override;
@@ -122,7 +122,7 @@ public:
     int rowCount(const QModelIndex& parent = QModelIndex())                                   const override;
     int columnCount(const QModelIndex& parent = QModelIndex())                                const override;
     Qt::ItemFlags flags(const QModelIndex& index)                                             const override;
-    bool setData(const QModelIndex& index, const QVariant& value, int role = Qt::EditRole) override;
+    bool setData(const QModelIndex& index, const QVariant& value, int role = Qt::EditRole)          override;
     QModelIndex index(int row, int column, const QModelIndex& parent = QModelIndex())         const override;
     QModelIndex parent(const QModelIndex& index)                                              const override;
 
@@ -163,13 +163,13 @@ protected Q_SLOTS:
 
 protected:
 
-    QModelIndex indexForId(int id, int column) const;
+    QModelIndex indexForId(int id, int column)          const;
 
     bool askForNewCollectionPath(int category, QString* const newPath, QString* const newLabel);
     bool askForNewCollectionCategory(int* const category);
 
-    int categoryButtonMapId(const QModelIndex& index) const;
-    int buttonMapId(const QModelIndex& index) const;
+    int categoryButtonMapId(const QModelIndex& index)   const;
+    int buttonMapId(const QModelIndex& index)           const;
 
     static Category typeToCategory(CollectionLocation::Type type);
 
@@ -231,46 +231,47 @@ class SetupCollectionDelegate : public DWItemDelegate
 
 public:
 
-    explicit SetupCollectionDelegate(QAbstractItemView* const view, QObject* const parent = nullptr);
-    ~SetupCollectionDelegate() override;
+    explicit SetupCollectionDelegate(QAbstractItemView* const view,
+                                     QObject* const parent = nullptr);
+    ~SetupCollectionDelegate()                                                    override;
 
     QWidget* createEditor(QWidget* parent,
-                                  const QStyleOptionViewItem& option,
-                                  const QModelIndex& index) const                       override;
+                          const QStyleOptionViewItem& option,
+                          const QModelIndex& index)                         const override;
 
     bool     editorEvent(QEvent* event,
-                                 QAbstractItemModel* model,
-                                 const QStyleOptionViewItem& option,
-                                 const QModelIndex& index)                              override;
+                         QAbstractItemModel* model,
+                         const QStyleOptionViewItem& option,
+                         const QModelIndex& index)                                override;
 
     void     paint(QPainter* painter,
-                           const QStyleOptionViewItem& option,
-                           const QModelIndex& index) const                              override;
+                   const QStyleOptionViewItem& option,
+                   const QModelIndex& index)                                const override;
 
     void     setEditorData(QWidget* editor,
-                                   const QModelIndex& index) const                      override;
+                           const QModelIndex& index)                        const override;
 
     void     setModelData(QWidget* editor,
-                                  QAbstractItemModel* model,
-                                  const QModelIndex& index) const                       override;
+                          QAbstractItemModel* model,
+                          const QModelIndex& index)                         const override;
 
     QSize    sizeHint(const QStyleOptionViewItem& option,
-                              const QModelIndex& index) const                           override;
+                      const QModelIndex& index)                             const override;
 
     void     updateEditorGeometry(QWidget* editor,
-                                          const QStyleOptionViewItem& option,
-                                          const QModelIndex& index) const               override;
+                                  const QStyleOptionViewItem& option,
+                                  const QModelIndex& index)                 const override;
 
-    QList<QWidget*> createItemWidgets(const QModelIndex& index) const           override;
-    void            updateItemWidgets(const QList<QWidget*> widgets,
-                                              const QStyleOptionViewItem& option,
-                                              const QPersistentModelIndex& index) const override;
+    QList<QWidget*> createItemWidgets(const QModelIndex& index)             const override;
+    void            updateItemWidgets(const QList<QWidget*>& widgets,
+                                      const QStyleOptionViewItem& option,
+                                      const QPersistentModelIndex& index)   const override;
 
 Q_SIGNALS:
 
-    void categoryButtonPressed(int mappedId) const;     // clazy:exclude=const-signal-or-slot
-    void updatePressed(int mappedId)         const;     // clazy:exclude=const-signal-or-slot
-    void deletePressed(int mappedId)         const;     // clazy:exclude=const-signal-or-slot
+    void categoryButtonPressed(int mappedId)                                const;     // clazy:exclude=const-signal-or-slot
+    void updatePressed(int mappedId)                                        const;     // clazy:exclude=const-signal-or-slot
+    void deletePressed(int mappedId)                                        const;     // clazy:exclude=const-signal-or-slot
 
 protected:
 

@@ -56,11 +56,11 @@ public:
 
     explicit Private()
       : rootsPathChanged(false),
-        collectionView(nullptr),
-        collectionModel(nullptr),
-        monitoringBox(nullptr),
-        ignoreEdit(nullptr),
-        ignoreLabel(nullptr)
+        collectionView  (nullptr),
+        collectionModel (nullptr),
+        monitoringBox   (nullptr),
+        ignoreEdit      (nullptr),
+        ignoreLabel     (nullptr)
     {
     }
 
@@ -76,7 +76,7 @@ public:
 
 SetupCollections::SetupCollections(QWidget* const parent)
     : QScrollArea(parent),
-      d(new Private)
+      d          (new Private)
 {
     const int spacing     = QApplication::style()->pixelMetric(QStyle::PM_DefaultLayoutSpacing);
 

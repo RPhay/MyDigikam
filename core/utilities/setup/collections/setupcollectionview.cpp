@@ -186,7 +186,7 @@ QSize SetupCollectionDelegate::sizeHint(const QStyleOptionViewItem& option, cons
     return hint;
 }
 
-void SetupCollectionDelegate::updateItemWidgets(const QList<QWidget*> widgets,
+void SetupCollectionDelegate::updateItemWidgets(const QList<QWidget*>& widgets,
                                                 const QStyleOptionViewItem& option,
                                                 const QPersistentModelIndex& index) const
 {
@@ -361,25 +361,25 @@ void SetupCollectionTreeView::modelLoadedCollections()
 
 SetupCollectionModel::Item::Item()
     : parentId(INTERNALID),
-      updated(false),
-      deleted(false)
+      updated (false),
+      deleted (false)
 {
 }
 
 SetupCollectionModel::Item::Item(const CollectionLocation& location)
     : location(location),
-      updated(false),
-      deleted(false)
+      updated (false),
+      deleted (false)
 {
     parentId = SetupCollectionModel::typeToCategory(location.type());
 }
 
 SetupCollectionModel::Item::Item(const QString& path, const QString& label, SetupCollectionModel::Category category)
-    : label(label),
-      path(path),
+    : label   (label),
+      path    (path),
       parentId(category),
-      updated(false),
-      deleted(false)
+      updated (false),
+      deleted (false)
 {
 }
 

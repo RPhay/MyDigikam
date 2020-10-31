@@ -56,13 +56,13 @@ namespace Digikam
 {
 
 DWItemDelegatePrivate::DWItemDelegatePrivate(DWItemDelegate* const q, QObject* const parent)
-    : QObject(parent),
-      itemView(nullptr),
-      widgetPool(new DWItemDelegatePool(q)),
-      model(nullptr),
+    : QObject       (parent),
+      itemView      (nullptr),
+      widgetPool    (new DWItemDelegatePool(q)),
+      model         (nullptr),
       selectionModel(nullptr),
-      viewDestroyed(false),
-      q(q)
+      viewDestroyed (false),
+      q             (q)
 {
 }
 
@@ -297,17 +297,18 @@ bool DWItemDelegatePrivate::eventFilter(QObject* watched, QEvent* event)
     {
         case QEvent::Polish:
         case QEvent::Resize:
-
+        {
             if (!qobject_cast<QAbstractItemView*>(watched))
             {
                 QTimer::singleShot(0, this, SLOT(initializeModel()));
             }
 
             break;
+        }
 
         case QEvent::FocusIn:
         case QEvent::FocusOut:
-
+        {
             if (qobject_cast<QAbstractItemView*>(watched))
             {
                 foreach (const QModelIndex& index, selectionModel->selectedIndexes())
@@ -319,8 +320,13 @@ bool DWItemDelegatePrivate::eventFilter(QObject* watched, QEvent* event)
                 }
             }
 
-        default:
             break;
+        }
+
+        default:
+        {
+            break;
+        }
     }
 
     return QObject::eventFilter(watched, event);
