@@ -70,20 +70,21 @@ class Q_DECL_HIDDEN FindDuplicatesView::Private
 public:
 
     explicit Private()
-      : includeAlbumsLabel(nullptr),
-        similarityLabel(nullptr),
-        restrictResultsLabel(nullptr),
-        albumTagRelationLabel(nullptr),
-        similarityRange(nullptr),
+      : includeAlbumsLabel     (nullptr),
+        similarityLabel        (nullptr),
+        restrictResultsLabel   (nullptr),
+        albumTagRelationLabel  (nullptr),
+        similarityRange        (nullptr),
         searchResultRestriction(nullptr),
-        albumTagRelation(nullptr),
-        scanDuplicatesBtn(nullptr),
-        updateFingerPrtBtn(nullptr),
-        listView(nullptr),
-        progressItem(nullptr),
-        albumSelectors(nullptr),
-        settings(nullptr),
-        active(false)
+        albumTagRelation       (nullptr),
+        scanDuplicatesBtn      (nullptr),
+        updateFingerPrtBtn     (nullptr),
+        removeDuplicatesBtn    (nullptr),
+        listView               (nullptr),
+        progressItem           (nullptr),
+        albumSelectors         (nullptr),
+        settings               (nullptr),
+        active                 (false)
     {
     }
 
@@ -98,7 +99,7 @@ public:
 
     QPushButton*         scanDuplicatesBtn;
     QPushButton*         updateFingerPrtBtn;
-    QPushButton*         removeDuplicates;
+    QPushButton*         removeDuplicatesBtn;
 
     FindDuplicatesAlbum* listView;
 
@@ -205,13 +206,13 @@ FindDuplicatesView::FindDuplicatesView(QWidget* const parent)
 
     d->albumTagRelation->setCurrentIndex(d->albumTagRelation->findData(relation));
 
-    d->removeDuplicates                       = new QPushButton(i18nc("@label:listbox", "Remove Duplicates"));
+    d->removeDuplicatesBtn                    = new QPushButton(i18nc("@label:listbox", "Remove Duplicates"));
     QHBoxLayout* const removeDuplicatesLayout = new QHBoxLayout();
-    removeDuplicatesLayout->addWidget(d->removeDuplicates);
+    removeDuplicatesLayout->addWidget(d->removeDuplicatesBtn);
 
     // ---------------------------------------------------------------
 
-    d->removeDuplicates->setEnabled(false);
+    d->removeDuplicatesBtn->setEnabled(false);
 
     QGridLayout* const mainLayout = new QGridLayout();
     mainLayout->addWidget(d->listView,                0, 0, 1, -1);
@@ -252,7 +253,7 @@ FindDuplicatesView::FindDuplicatesView(QWidget* const parent)
     connect(d->settings, SIGNAL(setupChanged()),
             this, SLOT(slotApplicationSettingsChanged()));
 
-    connect(d->removeDuplicates, &QPushButton::clicked,
+    connect(d->removeDuplicatesBtn, &QPushButton::clicked,
             this, &FindDuplicatesView::slotRemoveDuplicates);
 }
 
@@ -444,6 +445,7 @@ void FindDuplicatesView::slotClear()
 void FindDuplicatesView::enableControlWidgets(bool val)
 {
     d->searchResultRestriction->setEnabled(val);
+    d->removeDuplicatesBtn->setEnabled(val);
     d->updateFingerPrtBtn->setEnabled(val);
     d->scanDuplicatesBtn->setEnabled(val);
     d->albumTagRelation->setEnabled(val);
@@ -453,7 +455,6 @@ void FindDuplicatesView::enableControlWidgets(bool val)
     d->albumTagRelationLabel->setEnabled(val);
     d->restrictResultsLabel->setEnabled(val);
     d->similarityLabel->setEnabled(val);
-    d->removeDuplicates->setEnabled(val);
 }
 
 void FindDuplicatesView::slotFindDuplicates()
@@ -495,13 +496,13 @@ void FindDuplicatesView::slotFindDuplicates()
     connect(finder, &DuplicatesFinder::signalComplete,
             this, [this]
             {
-                d->removeDuplicates->setEnabled(true);
+                d->removeDuplicatesBtn->setEnabled(true);
             });
 
     connect(finder, &DuplicatesFinder::signalCanceled,
             this, [this]
             {
-                d->removeDuplicates->setEnabled(false);
+                d->removeDuplicatesBtn->setEnabled(false);
             });
 
     finder->start();
