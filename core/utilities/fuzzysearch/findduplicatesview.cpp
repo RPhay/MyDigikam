@@ -37,7 +37,6 @@
 #include <QStyle>
 #include <QTimer>
 #include <QElapsedTimer>
-#include <QMessageBox>
 
 // KDE includes
 
@@ -241,6 +240,9 @@ FindDuplicatesView::FindDuplicatesView(QWidget* const parent)
     connect(d->scanDuplicatesBtn, SIGNAL(clicked()),
             this, SLOT(slotFindDuplicates()));
 
+    connect(d->removeDuplicatesBtn, SIGNAL(clicked()),
+            this, SLOT(slotRemoveDuplicates()));
+
     connect(d->listView, SIGNAL(itemSelectionChanged()),
             this, SLOT(slotDuplicatesAlbumActived()));
 
@@ -252,9 +254,6 @@ FindDuplicatesView::FindDuplicatesView(QWidget* const parent)
 
     connect(d->settings, SIGNAL(setupChanged()),
             this, SLOT(slotApplicationSettingsChanged()));
-
-    connect(d->removeDuplicatesBtn, &QPushButton::clicked,
-            this, &FindDuplicatesView::slotRemoveDuplicates);
 }
 
 FindDuplicatesView::~FindDuplicatesView()
@@ -638,21 +637,6 @@ void FindDuplicatesView::resetAlbumsAndTags()
 
 void FindDuplicatesView::slotRemoveDuplicates()
 {
-    int result = QMessageBox::warning(this,
-                    i18nc("@title:popup", "Remove Duplicates"),
-                    i18nc("@text:message", "Are you sure that you want to delete all of the "
-                                           "supposed duplicated items found?\n"
-                                           "You cannot recover from this, and it's possible "
-                                           "that the similarity threshould found similar, "
-                                           "but not equal, images. Continue at your own risk."),
-                    QMessageBox::StandardButton::Ok | QMessageBox::StandardButton::Cancel,
-                    QMessageBox::StandardButton::Cancel); // Default to Cancel so nobody deletes things by mistake.
-
-    if (result != QMessageBox::StandardButton::Ok)
-    {
-        return;
-    }
-
     d->listView->removeDuplicates();
 }
 
