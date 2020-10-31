@@ -34,10 +34,7 @@ namespace Vkontakte
 
 QDateTime unixTimeToQDateTime(const QString& unixTime)
 {
-    QDateTime res;
-    res.setSecsSinceEpoch(unixTime.toLongLong());
-
-    return res;
+    return QDateTime::fromSecsSinceEpoch(unixTime.toLongLong());
 }
 
 static QMap<Vkontakte::AppPermissions::Value, const char*> initAppPermissionStrings()
@@ -45,6 +42,7 @@ static QMap<Vkontakte::AppPermissions::Value, const char*> initAppPermissionStri
     QMap<Vkontakte::AppPermissions::Value, const char*> map;
 
     // http://vk.com/dev/permissions
+
     map.insert(Vkontakte::AppPermissions::Notify,        "notify");
     map.insert(Vkontakte::AppPermissions::Friends,       "friends");
     map.insert(Vkontakte::AppPermissions::Photos,        "photos");
@@ -53,8 +51,10 @@ static QMap<Vkontakte::AppPermissions::Value, const char*> initAppPermissionStri
     map.insert(Vkontakte::AppPermissions::Offers,        "offers");
     map.insert(Vkontakte::AppPermissions::Questions,     "questions");
     map.insert(Vkontakte::AppPermissions::Pages,         "pages");
+
     // "applink" permission cannot be requested, I invented
     // the name "applink" myself to somehow identify this permission flag only.
+
     map.insert(Vkontakte::AppPermissions::AppLink,       "applink");
     map.insert(Vkontakte::AppPermissions::Status,        "status");
     map.insert(Vkontakte::AppPermissions::Notes,         "notes");
@@ -71,7 +71,7 @@ static QMap<Vkontakte::AppPermissions::Value, const char*> initAppPermissionStri
     return map;
 }
 
-// This could be a QList<QPair<A, B> >, but with QMap we can write this shorter
+// NOTE: This could be a QList<QPair<A, B> >, but with QMap we can write this shorter
 static QMap<Vkontakte::AppPermissions::Value, const char*> appPermissionToString = initAppPermissionStrings();
 
 QStringList appPermissionsToStringList(Vkontakte::AppPermissions::Value permissions)
