@@ -283,6 +283,7 @@ void FindDuplicatesView::initAlbumUpdateConnections()
 void FindDuplicatesView::setActive(bool val)
 {
     d->active = val;
+    d->removeDuplicatesBtn->setEnabled(false);
     QTimer::singleShot(250, this, SLOT(slotSelectFirstItem()));
 }
 
