@@ -48,8 +48,8 @@ public:
 
         explicit Item()
           : dataColumns(),
-            parent(nullptr),
-            children()
+            parent     (nullptr),
+            children   ()
         {
         }
 
@@ -70,7 +70,7 @@ public:
     };
 
     explicit SimpleTreeModel(const int columnCount, QObject* const parent = nullptr);
-    ~SimpleTreeModel() override;
+    ~SimpleTreeModel()                                                                                    override;
 
     /// QAbstractItemModel:
     int columnCount(const QModelIndex& parent = QModelIndex())                                      const override;
@@ -84,9 +84,9 @@ public:
     Qt::ItemFlags flags(const QModelIndex& index)                                                   const override;
 
     Item* addItem(Item* const parentItem = nullptr, const int rowNumber = -1);
-    Item* indexToItem(const QModelIndex& itemIndex)                                                         const;
-    Item* rootItem()                                                                                        const;
-    QModelIndex itemToIndex(const Item* const item)                                                         const;
+    Item* indexToItem(const QModelIndex& itemIndex)                                                 const;
+    Item* rootItem()                                                                                const;
+    QModelIndex itemToIndex(const Item* const item)                                                 const;
 
 private:
 

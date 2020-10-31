@@ -50,10 +50,10 @@ class Q_DECL_HIDDEN RGTagModel::Private
 public:
 
     explicit Private()
-      : tagModel(nullptr),
-        rootTag(nullptr),
-        startInsert(-1),
-        endInsert(-1)
+      : tagModel    (nullptr),
+        rootTag     (nullptr),
+        startInsert (-1),
+        endInsert   (-1)
     {
     }
 
@@ -82,7 +82,7 @@ public:
  */
 RGTagModel::RGTagModel(QAbstractItemModel* const externalTagModel, QObject* const parent)
     : QAbstractItemModel(parent),
-      d(new Private)
+      d                 (new Private)
 {
     d->tagModel      = externalTagModel;
     d->rootTag       = new TreeBranch();
@@ -999,7 +999,10 @@ void RGTagModel::deleteAllSpacersOrNewTags(const QModelIndex& currentIndex, Type
  * @param tagAddressElements A list containing address elements. Example: {Country}, {City}...
  * @param elementsData A list containing the name of each address element found in elements. Example: France, Paris...
  */
-void RGTagModel::readdTag(TreeBranch*& currentBranch, int currentRow, const QList<TagData> tagAddressElements, int currentAddressElementIndex)
+void RGTagModel::readdTag(TreeBranch*& currentBranch,
+                          int currentRow,
+                          const QList<TagData>& tagAddressElements,
+                          int currentAddressElementIndex)
 {
     bool found1 = false;
     int  foundIndex;
@@ -1248,13 +1251,13 @@ void RGTagModel::addExternalTags(TreeBranch* parentBranch, int currentRow)
  */
 void RGTagModel::addAllExternalTagsToTreeView()
 {
-    addExternalTags(d->rootTag,0);
+    addExternalTags(d->rootTag, 0);
 }
 
 /**
  * Adds all spacers found in spacerList to the tag tree.
  */
-void RGTagModel::addAllSpacersToTag(const QModelIndex currentIndex, const QStringList spacerList, int spacerListIndex)
+void RGTagModel::addAllSpacersToTag(const QModelIndex& currentIndex, const QStringList& spacerList, int spacerListIndex)
 {
     if (spacerListIndex >= spacerList.count())
     {

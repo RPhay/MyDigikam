@@ -47,7 +47,7 @@ public:
 
     explicit RGTagModel(QAbstractItemModel* const externalTagModel,
                         QObject* const parent = nullptr);
-    ~RGTagModel() override;
+    ~RGTagModel()                                                                                         override;
 
     /// QAbstractItemModel:
     int columnCount(const QModelIndex& parent = QModelIndex())                                      const override;
@@ -61,8 +61,8 @@ public:
     Qt::ItemFlags flags(const QModelIndex& index)                                                   const override;
 
     /// Local functions:
-    QModelIndex fromSourceIndex(const QModelIndex& externalTagModelIndex)                                   const;
-    QModelIndex toSourceIndex(const QModelIndex& tagModelIndex)                                             const;
+    QModelIndex fromSourceIndex(const QModelIndex& externalTagModelIndex)                           const;
+    QModelIndex toSourceIndex(const QModelIndex& tagModelIndex)                                     const;
     void addSpacerTag(const QModelIndex& parent, const QString& spacerName);
     QPersistentModelIndex addNewTag(const QModelIndex& parent,
                                     const QString& newTagName,
@@ -77,8 +77,10 @@ public:
                                        int currentRow,
                                        Type whatShouldRemove);
     void deleteAllSpacersOrNewTags(const QModelIndex& currentIndex, Type whatShouldRemove);
-    void readdTag(TreeBranch*& currentBranch, int currentRow,
-                  const QList<TagData> tagAddressElements, int currentAddressElementIndex);
+    void readdTag(TreeBranch*& currentBranch,
+                  int currentRow,
+                  const QList<TagData>& tagAddressElements,
+                  int currentAddressElementIndex);
     void readdNewTags(const QList<QList<TagData> >& tagAddressList);
     void deleteTag(const QModelIndex& currentIndex);
     QList<QList<TagData> > getSpacers();
@@ -86,10 +88,11 @@ public:
     QList<TagData> getSpacerAddress(TreeBranch* currentBranch);
     void addExternalTags(TreeBranch* parentBranch, int currentRow);
     void addAllExternalTagsToTreeView();
-    void addAllSpacersToTag(const QModelIndex currentIndex,
-                            const QStringList spacerList, int spacerListIndex);
-    Type getTagType(const QModelIndex& index)                                                               const;
-    TreeBranch* branchFromIndex(const QModelIndex& index)                                                   const;
+    void addAllSpacersToTag(const QModelIndex& currentIndex,
+                            const QStringList& spacerList,
+                            int spacerListIndex);
+    Type getTagType(const QModelIndex& index)                                                       const;
+    TreeBranch* branchFromIndex(const QModelIndex& index)                                           const;
 
 public Q_SLOTS:
 

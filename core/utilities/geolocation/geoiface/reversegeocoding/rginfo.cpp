@@ -28,9 +28,9 @@ namespace Digikam
 {
 
 RGInfo::RGInfo()
-    : id(),
+    : id         (),
       coordinates(),
-      rgData()
+      rgData     ()
 {
 }
 

@@ -43,7 +43,7 @@ public:
 
     explicit TreeBranch()
       : parent(nullptr),
-        type(TypeChild)
+        type  (TypeChild)
     {
     }
 
