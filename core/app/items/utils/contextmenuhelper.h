@@ -260,20 +260,20 @@ public:
      */
     void addActionNewTag(TagModificationHelper* helper, TAlbum* parentTag = nullptr);
     void addActionDeleteTag(TagModificationHelper* helper, TAlbum* tag);
-    void addActionDeleteTags(TagModificationHelper* helper, QList< TAlbum* > tags);
+    void addActionDeleteTags(TagModificationHelper* helper, const QList<TAlbum*>& tags);
     void addActionEditTag(TagModificationHelper* helper, TAlbum* tag);
 
     /**
      * Add action to delete tags from people sidebar.
      */
     void addActionDeleteFaceTag(TagModificationHelper* helper, TAlbum* tag);
-    void addActionDeleteFaceTags(TagModificationHelper* helper, QList< TAlbum* > tags);
+    void addActionDeleteFaceTags(TagModificationHelper* helper, const QList<TAlbum*>& tags);
 
     /**
      * Add action to set tags as face tags.
      */
     void addActionTagToFaceTag(TagModificationHelper* helper, TAlbum* tag);
-    void addActionTagsToFaceTags(TagModificationHelper* helper, QList< TAlbum* > tags);
+    void addActionTagsToFaceTags(TagModificationHelper* helper, const QList<TAlbum*>& tags);
 
     /**
      * Add actions to add, remove or edit a tag.

@@ -52,7 +52,7 @@ public:
         delete manager;
     }
 
-    void load(Exiv2::Image::AutoPtr image_)
+    void load(Exiv2::Image::AutoPtr image_)     // clazy:exclude=function-args-by-ref
     {
         QMutexLocker lock(&s_metaEngineMutex);
 
@@ -106,6 +106,7 @@ MetaEnginePreviews::MetaEnginePreviews(const QString& filePath)
 
     try
     {
+
 #if defined Q_OS_WIN && defined EXV_UNICODE_PATH
 
         Exiv2::Image::AutoPtr image = Exiv2::ImageFactory::open((const wchar_t*)filePath.utf16());
@@ -201,9 +202,14 @@ QString MetaEnginePreviews::originalMimeType() const
     return QString();
 }
 
-int MetaEnginePreviews::count()
+int MetaEnginePreviews::count() const
 {
     return d->properties.size();
+}
+
+int MetaEnginePreviews::size() const
+{
+    return count();
 }
 
 int MetaEnginePreviews::dataSize(int index)

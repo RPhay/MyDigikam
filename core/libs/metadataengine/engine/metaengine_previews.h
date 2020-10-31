@@ -56,17 +56,17 @@ public:
     ~MetaEnginePreviews();
 
     /// Returns the pixel size of the original image, as read from the file (not the metadata).
-    QSize originalSize() const;
+    QSize originalSize()        const;
 
     /// Returns the mimeType of the original image, detected from the file's content.
-    QString originalMimeType() const;
+    QString originalMimeType()  const;
 
     /// Returns if there are any preview images available
     bool       isEmpty();
 
     /// Returns how many embedded previews are available
-    int        count();
-    int        size() { return count(); }
+    int        count()          const;
+    int        size()           const;
 
     /**
      * For each contained preview image, return the size
