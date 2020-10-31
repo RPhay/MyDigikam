@@ -190,14 +190,13 @@ void FindDuplicatesAlbum::removeDuplicates()
     while (*it)
     {
         FindDuplicatesAlbumItem* const item = dynamic_cast<FindDuplicatesAlbumItem*>(*it);
-        ++it;
 
-        if (!item)
+        if (item)
         {
-            continue;
+            duplicatedItems += item->duplicatedItems();
         }
 
-        duplicatedItems                    += item->duplicatedItems();
+        ++it;
     }
 
     QList<QUrl> urlList;
