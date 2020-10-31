@@ -164,4 +164,6 @@ BUGFIXES:
 149 ==> 427899 - Search (and Timeline, and ...) should offer a way to go to the album of the currently selected image.
 150 ==> 427907 - Person name appears in tool tip and also search and also people listing but is shown as unknown in the photo.
 151 ==> 428435 - Duration Column not showing any value.
-152 ==> 
+152 ==> 388899 - Assigning color labels from right side menu is different than over context menu.
+153 ==> 428427 - Some metadata (tags, captions) not applying to grouped images.
+154 ==> 
