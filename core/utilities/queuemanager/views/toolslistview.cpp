@@ -346,7 +346,7 @@ void ToolsListView::slotAssignTools()
     emit signalAssignTools(map);
 }
 
-QMimeData* ToolsListView::mimeData(const QList<QTreeWidgetItem*> items) const
+QMimeData* ToolsListView::mimeData(const QList<QTreeWidgetItem*> items) const       // clazy:exclude=function-args-by-ref
 {
     QMimeData* const mimeData   = new QMimeData();
     QByteArray encodedData;
@@ -360,7 +360,7 @@ QMimeData* ToolsListView::mimeData(const QList<QTreeWidgetItem*> items) const
     return mimeData;
 }
 
-QMultiMap<int, QString> ToolsListView::itemsToMap(const QList<QTreeWidgetItem*> items) const
+QMultiMap<int, QString> ToolsListView::itemsToMap(const QList<QTreeWidgetItem*>& items) const
 {
     QMultiMap<int, QString> map;
 

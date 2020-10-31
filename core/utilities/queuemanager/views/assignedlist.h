@@ -68,7 +68,7 @@ class AssignedListView : public QTreeWidget
 public:
 
     explicit AssignedListView(QWidget* const parent);
-    ~AssignedListView() override;
+    ~AssignedListView()                                                 override;
 
     int                assignedCount();
     AssignedBatchTools assignedList();
@@ -98,7 +98,7 @@ public Q_SLOTS:
 
 protected:
 
-    void keyPressEvent(QKeyEvent*) override;
+    void keyPressEvent(QKeyEvent*)                                      override;
 
 private Q_SLOTS:
 

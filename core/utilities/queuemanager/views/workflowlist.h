@@ -49,10 +49,10 @@ class WorkflowItem : public QTreeWidgetItem
 public:
 
     WorkflowItem(WorkflowList* const parent, const QString& name);
-    ~WorkflowItem() override;
+    ~WorkflowItem()                                                 override;
 
-    QString title() const;
-    int     count() const;
+    QString title()                                           const;
+    int     count()                                           const;
 };
 
 // -------------------------------------------------------------------------
@@ -64,7 +64,7 @@ class WorkflowList : public QTreeWidget
 public:
 
     explicit WorkflowList(QWidget* const parent);
-    ~WorkflowList() override;
+    ~WorkflowList()                                                 override;
 
 Q_SIGNALS:
 

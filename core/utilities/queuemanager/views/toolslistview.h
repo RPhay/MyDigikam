@@ -47,13 +47,13 @@ class ToolListViewGroup : public QTreeWidgetItem
 public:
 
     ToolListViewGroup(QTreeWidget* const parent, BatchTool::BatchToolGroup group);
-    ~ToolListViewGroup() override;
+    ~ToolListViewGroup()                        override;
 
     BatchTool::BatchToolGroup toolGroup() const;
 
 private:
 
-    BatchTool::BatchToolGroup  m_group;
+    BatchTool::BatchToolGroup m_group;
 };
 
 // -------------------------------------------------------------------------
@@ -64,9 +64,9 @@ class ToolListViewItem : public QTreeWidgetItem
 public:
 
     ToolListViewItem(ToolListViewGroup* const parent, BatchTool* const tool);
-    ~ToolListViewItem() override;
+    ~ToolListViewItem()                         override;
 
-    BatchTool* tool() const;
+    BatchTool* tool()                     const;
 
 private:
 
@@ -82,7 +82,7 @@ class ToolsListView : public QTreeWidget
 public:
 
     explicit ToolsListView(QWidget* const parent);
-    ~ToolsListView() override;
+    ~ToolsListView()                                                               override;
 
     BatchToolsList toolsList();
 
@@ -105,12 +105,12 @@ private:
     ToolListViewItem* findTool(BatchTool* const tool);
     ToolListViewGroup* findToolGroup(BatchTool::BatchToolGroup group);
 
-    void        startDrag(Qt::DropActions supportedActions)                       override;
-    QStringList mimeTypes()                                                 const override;
-    QMimeData*  mimeData(const QList<QTreeWidgetItem*> items)               const override;
+    void        startDrag(Qt::DropActions supportedActions)                        override;
+    QStringList mimeTypes()                                                  const override;
+    QMimeData*  mimeData(const QList<QTreeWidgetItem*> items)                const override;
 
-    void mouseDoubleClickEvent(QMouseEvent*)                                      override;
-    QMultiMap<int, QString> itemsToMap(const QList<QTreeWidgetItem*> items) const;
+    void mouseDoubleClickEvent(QMouseEvent*)                                       override;
+    QMultiMap<int, QString> itemsToMap(const QList<QTreeWidgetItem*>& items) const;
 };
 
 } // namespace Digikam

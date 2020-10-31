@@ -68,11 +68,11 @@ class Q_DECL_HIDDEN QueueListViewItem::Private
 public:
 
     explicit Private()
-      : isBusy(false),
-        done(false),
-        hasThumb(false),
+      : isBusy       (false),
+        done         (false),
+        hasThumb     (false),
         progressIndex(0),
-        view(nullptr)
+        view         (nullptr)
     {
     }
 
@@ -93,7 +93,7 @@ public:
 
 QueueListViewItem::QueueListViewItem(QueueListView* const view, const ItemInfo& info)
     : QTreeWidgetItem(view),
-      d(new Private)
+      d              (new Private)
 {
     d->view = view;
     setThumb(QIcon::fromTheme(QLatin1String("view-preview")).pixmap(48, QIcon::Disabled), false);
@@ -260,14 +260,14 @@ public:
 public:
 
     explicit Private()
-      : showTips(false),
-        iconSize(64),
-        toolTipTimer(nullptr),
-        progressTimer(nullptr),
-        thumbLoadThread(ThumbnailLoadThread::defaultThread()),
-        toolTip(nullptr),
-        toolTipItem(nullptr),
-        progressPix(nullptr)
+      : showTips        (false),
+        iconSize        (64),
+        toolTipTimer    (nullptr),
+        progressTimer   (nullptr),
+        thumbLoadThread (ThumbnailLoadThread::defaultThread()),
+        toolTip         (nullptr),
+        toolTipItem     (nullptr),
+        progressPix     (nullptr)
     {
     }
 
@@ -293,7 +293,7 @@ public:
 
 QueueListView::QueueListView(QWidget* const parent)
     : QTreeWidget(parent),
-      d(new Private)
+      d          (new Private)
 {
     setIconSize(QSize(d->iconSize, d->iconSize));
     setSelectionMode(QAbstractItemView::ExtendedSelection);
@@ -367,7 +367,7 @@ Qt::DropActions QueueListView::supportedDropActions() const
     return (Qt::CopyAction | Qt::MoveAction);
 }
 
-QMimeData* QueueListView::mimeData(const QList<QTreeWidgetItem*> items) const
+QMimeData* QueueListView::mimeData(const QList<QTreeWidgetItem*> items) const       // clazy:exclude=function-args-by-ref
 {
     QList<QUrl> urls;
     QList<int> albumIDs;
@@ -441,9 +441,9 @@ void QueueListView::dragMoveEvent(QDragMoveEvent* e)
     QList<qlonglong> imageIDs;
     QList<QUrl>      urls;
 
-    if (DItemDrag::decode(e->mimeData(), urls, albumIDs, imageIDs) ||
-        DAlbumDrag::decode(e->mimeData(), urls, albumID)           ||
-        DTagListDrag::canDecode(e->mimeData()))
+    if      (DItemDrag::decode(e->mimeData(), urls, albumIDs, imageIDs) ||
+             DAlbumDrag::decode(e->mimeData(), urls, albumID)           ||
+             DTagListDrag::canDecode(e->mimeData()))
     {
         if (DItemDrag::decode(e->mimeData(), urls, albumIDs, imageIDs))
         {
@@ -485,7 +485,7 @@ void QueueListView::dropEvent(QDropEvent* e)
     QList<qlonglong> imageIDs;
     QList<QUrl>      urls;
 
-    if (DItemDrag::decode(e->mimeData(), urls, albumIDs, imageIDs))
+    if      (DItemDrag::decode(e->mimeData(), urls, albumIDs, imageIDs))
     {
         ItemInfoList imageInfoList;
 
@@ -625,7 +625,7 @@ void QueueListView::mouseMoveEvent(QMouseEvent* e)
 {
     if (e->buttons() == Qt::NoButton)
     {
-        QueueListViewItem* item = dynamic_cast<QueueListViewItem*>(itemAt(e->pos()));
+        QueueListViewItem* const item = dynamic_cast<QueueListViewItem*>(itemAt(e->pos()));
 
         if (d->showTips)
         {
@@ -647,7 +647,7 @@ void QueueListView::mouseMoveEvent(QMouseEvent* e)
                 }
             }
 
-            if (item == d->toolTipItem && !acceptToolTip(e->pos()))
+            if ((item == d->toolTipItem) && !acceptToolTip(e->pos()))
             {
                 hideToolTip();
             }

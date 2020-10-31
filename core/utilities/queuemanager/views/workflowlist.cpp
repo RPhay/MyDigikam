@@ -226,7 +226,7 @@ void WorkflowList::mouseDoubleClickEvent(QMouseEvent*)
     }
 }
 
-QMimeData* WorkflowList::mimeData(const QList<QTreeWidgetItem*> items) const
+QMimeData* WorkflowList::mimeData(const QList<QTreeWidgetItem*> items) const        // clazy:exclude=function-args-by-ref
 {
     QMimeData* const mimeData = new QMimeData();
     QByteArray encodedData;

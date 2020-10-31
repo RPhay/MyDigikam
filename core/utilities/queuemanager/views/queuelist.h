@@ -51,12 +51,12 @@ class QueueListViewItem : public QTreeWidgetItem
 public:
 
     QueueListViewItem(QueueListView* const view, const ItemInfo& info);
-    ~QueueListViewItem() override;
+    ~QueueListViewItem()              override;
 
-    bool hasValidThumbnail() const;
+    bool hasValidThumbnail()    const;
 
     void setInfo(const ItemInfo& info);
-    ItemInfo info() const;
+    ItemInfo info()             const;
 
     void assignTool(int index, const BatchToolSet& set);
     void unassignTool(int index);
@@ -69,17 +69,17 @@ public:
     void setFailed();
 
     void setDone();
-    bool isDone() const;
+    bool isDone()               const;
 
     void setBusy();
-    bool isBusy() const;
+    bool isBusy()               const;
 
     void reset();
 
     void    setDestFileName(const QString& str);
-    QString destFileName() const;
-    QString destBaseName() const;
-    QString destSuffix()   const;
+    QString destFileName()      const;
+    QString destBaseName()      const;
+    QString destSuffix()        const;
 
 private:
 
@@ -102,7 +102,7 @@ class QueueListView : public QTreeWidget
 public:
 
     explicit QueueListView(QWidget* const parent);
-    ~QueueListView() override;
+    ~QueueListView()                                                    override;
 
     void cancelItems();
     int  itemsCount();
@@ -110,24 +110,24 @@ public:
     void removeItemById(qlonglong id);
 
     ItemInfoList pendingItemsList();
-    int           pendingItemsCount();
-    int           pendingTasksCount();
+    int          pendingItemsCount();
+    int          pendingTasksCount();
 
     QueueListViewItem* findItemByUrl(const QUrl& url);
     QueueListViewItem* findItemById(qlonglong id);
 
     void setSettings(const QueueSettings& settings);
-    QueueSettings settings()                    const;
+    QueueSettings settings()                                      const;
 
     void setAssignedTools(const AssignedBatchTools& tools);
-    AssignedBatchTools assignedTools()          const;
+    AssignedBatchTools assignedTools()                            const;
 
     void setEnableToolTips(bool val);
 
     void reloadThumbs(const QUrl& url);
 
     void setItemBusy(qlonglong id);
-    QPixmap progressPixmapForIndex(int index)   const;
+    QPixmap progressPixmapForIndex(int index)                     const;
 
 Q_SIGNALS:
 

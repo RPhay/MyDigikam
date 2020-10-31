@@ -70,7 +70,7 @@ AssignedListViewItem::~AssignedListViewItem()
 
 void AssignedListViewItem::setToolSet(const BatchToolSet& set)
 {
-    m_set = set;
+    m_set                 = set;
     setIndex(m_set.index);
 
     BatchTool* const tool = BatchToolsFactory::instance()->findTool(m_set.name, m_set.group);
@@ -289,7 +289,7 @@ bool AssignedListView::removeTool(const BatchToolSet& set)
     {
         AssignedListViewItem* const item = dynamic_cast<AssignedListViewItem*>(*it);
 
-        if (item && item->toolSet() == set)
+        if (item && (item->toolSet() == set))
         {
             delete item;
             refreshIndex();
@@ -310,7 +310,7 @@ AssignedListViewItem* AssignedListView::findTool(const BatchToolSet& set)
     {
         AssignedListViewItem* const item = dynamic_cast<AssignedListViewItem*>(*it);
 
-        if (item && item->toolSet() == set)
+        if (item && (item->toolSet() == set))
         {
             return item;
         }
@@ -334,7 +334,7 @@ QStringList AssignedListView::mimeTypes() const
     return types;
 }
 
-QMimeData* AssignedListView::mimeData(const QList<QTreeWidgetItem*> items) const
+QMimeData* AssignedListView::mimeData(const QList<QTreeWidgetItem*> items) const    // clazy:exclude=function-args-by-ref
 {
     QMimeData* const mimeData = new QMimeData();
     QByteArray encodedData;
@@ -383,7 +383,7 @@ void AssignedListView::dragMoveEvent(QDragMoveEvent* e)
 
 void AssignedListView::dropEvent(QDropEvent* e)
 {
-    if (e->mimeData()->formats().contains(QLatin1String("digikam/batchtoolslist")))
+    if      (e->mimeData()->formats().contains(QLatin1String("digikam/batchtoolslist")))
     {
         QByteArray ba = e->mimeData()->data(QLatin1String("digikam/batchtoolslist"));
 
@@ -424,12 +424,12 @@ void AssignedListView::dropEvent(QDropEvent* e)
                 AssignedListViewItem* const preceding = dynamic_cast<AssignedListViewItem*>(itemAt(e->pos()));
 
                 BatchToolSet set;
-                set.name                         = name;
-                set.group                        = (BatchTool::BatchToolGroup)group;
-                set.index                        = index;
-                set.version                      = version;
-                set.settings                     = settings;
-                AssignedListViewItem* const item = moveTool(preceding, set);
+                set.name                              = name;
+                set.group                             = (BatchTool::BatchToolGroup)group;
+                set.index                             = index;
+                set.version                           = version;
+                set.settings                          = settings;
+                AssignedListViewItem* const item      = moveTool(preceding, set);
                 setCurrentItem(item);
             }
         }
