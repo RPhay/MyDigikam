@@ -27,6 +27,7 @@
 
 // Qt includes
 
+#include <QApplication>
 #include <QHeaderView>
 #include <QPainter>
 
@@ -189,6 +190,7 @@ void FindDuplicatesAlbum::removeDuplicates()
     while (*it)
     {
         FindDuplicatesAlbumItem* const item = dynamic_cast<FindDuplicatesAlbumItem*>(*it);
+        ++it;
 
         if (!item)
         {
@@ -196,29 +198,28 @@ void FindDuplicatesAlbum::removeDuplicates()
         }
 
         duplicatedItems                    += item->duplicatedItems();
-        ++it;
     }
-
-
-    DeleteDialog dialog(nullptr);
-
-    DeleteDialogMode::DeleteMode deleteDialogMode = DeleteDialogMode::NoChoiceTrash;
 
     QList<QUrl> urlList;
 
-    // Buffer the urls for deletion and imageids for notification of the AlbumManager
+    DeleteDialog dialog(qApp->activeWindow());
+
+    // Buffer the urls for deletion and imageids
+    // for notification of the AlbumManager
 
     foreach (const ItemInfo& info, duplicatedItems)
     {
         urlList  << info.fileUrl();
     }
 
-    if (!dialog.confirmDeleteList(urlList, DeleteDialogMode::Files, deleteDialogMode))
+    if (!dialog.confirmDeleteList(urlList,
+                                  DeleteDialogMode::Files,
+                                  DeleteDialogMode::NoChoiceTrash))
     {
         return;
     }
 
-    DIO::del(duplicatedItems, false);
+    DIO::del(duplicatedItems, true);
 }
 
 } // namespace Digikam
