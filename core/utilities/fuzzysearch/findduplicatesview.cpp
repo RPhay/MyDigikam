@@ -205,13 +205,11 @@ FindDuplicatesView::FindDuplicatesView(QWidget* const parent)
 
     d->albumTagRelation->setCurrentIndex(d->albumTagRelation->findData(relation));
 
-    d->removeDuplicatesBtn                    = new QPushButton(i18nc("@label:listbox", "Remove Duplicates"));
-    QHBoxLayout* const removeDuplicatesLayout = new QHBoxLayout();
-    removeDuplicatesLayout->addWidget(d->removeDuplicatesBtn);
+    d->removeDuplicatesBtn   = new QPushButton(i18nc("@label:listbox", "Remove Duplicates"));
+    d->removeDuplicatesBtn->setIcon(QIcon::fromTheme(QLatin1String("user-trash")));
+    d->removeDuplicatesBtn->setEnabled(false);
 
     // ---------------------------------------------------------------
-
-    d->removeDuplicatesBtn->setEnabled(false);
 
     QGridLayout* const mainLayout = new QGridLayout();
     mainLayout->addWidget(d->listView,                0, 0, 1, -1);
@@ -224,7 +222,7 @@ FindDuplicatesView::FindDuplicatesView(QWidget* const parent)
     mainLayout->addWidget(d->searchResultRestriction, 4, 2, 1, -1);
     mainLayout->addWidget(d->updateFingerPrtBtn,      5, 0, 1, -1);
     mainLayout->addWidget(d->scanDuplicatesBtn,       6, 0, 1, -1);
-    mainLayout->addLayout(removeDuplicatesLayout,     7, 0, 1, -1);
+    mainLayout->addWidget(d->removeDuplicatesBtn,     7, 0, 1, -1);
 
     mainLayout->setRowStretch(0, 10);
     mainLayout->setColumnStretch(2, 10);
