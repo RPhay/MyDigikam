@@ -31,7 +31,7 @@ FlickrWidget::FlickrWidget(QWidget* const parent,
                            DInfoInterface* const iface,
                            const QString& serviceName)
     : WSSettingsWidget(parent, iface, serviceName),
-      d(new Private)
+      d               (new Private)
 {
     d->serviceName         = serviceName;
 

@@ -36,49 +36,16 @@
 namespace DigikamGenericFlickrPlugin
 {
 
-class GPhoto
-{
-
-public:
-
-    GPhoto()
-      : is_public(false),
-        is_private(false),
-        is_family(false),
-        ref_num(-1)
-    {
-    }
-
-    bool        is_public;
-    bool        is_private;
-    bool        is_family;
-
-    int         ref_num;
-
-    QStringList tags;
-    QString     title;
-    QString     description;
-
-/*
-    int         album_num;
-    QString     caption;
-    QString     thumbName;
-    QString     albumURL;
-*/
-};
-
-// -------------------------------------------------------------
-
 class FPhotoInfo
 {
 
 public:
 
     FPhotoInfo()
-      : is_public(false),
-        is_friend(false),
-        is_family(false),
-        size(0),
+      : is_public   (false),
+        is_friend   (false),
+        is_family   (false),
+        size        (0),
         safety_level(FlickrList::SAFE),
         content_type(FlickrList::PHOTO)
     {
@@ -95,40 +62,6 @@ public:
 
     FlickrList::SafetyLevel safety_level;
     FlickrList::ContentType content_type;
-};
-
-// -------------------------------------------------------------
-
-class GAlbum
-{
-
-public:
-
-    GAlbum()
-      : add(false),
-        write(false),
-        del_item(false),
-        del_alb(false),
-        create_sub(false),
-        ref_num(-1),
-        parent_ref_num(-1)
-    {
-    }
-
-    bool    add;
-    bool    write;
-    bool    del_item;
-    bool    del_alb;
-    bool    create_sub;
-
-    int     ref_num;
-    int     parent_ref_num;
-
-    QString name;
-    QString parentName;
-    QString title;
-    QString summary;
-    QString baseurl;
 };
 
 // -------------------------------------------------------------

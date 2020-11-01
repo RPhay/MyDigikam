@@ -46,12 +46,12 @@ class Q_DECL_HIDDEN FlickrList::Private
 public:
 
     explicit Private()
-      : isPublic(Qt::Unchecked),
-        isFamily(Qt::Unchecked),
-        isFriends(Qt::Unchecked),
-        safetyLevel(FlickrList::SAFE),
-        contentType(FlickrList::PHOTO),
-        userIsEditing(false)
+      : isPublic        (Qt::Unchecked),
+        isFamily        (Qt::Unchecked),
+        isFriends       (Qt::Unchecked),
+        safetyLevel     (FlickrList::SAFE),
+        contentType     (FlickrList::PHOTO),
+        userIsEditing   (false)
     {
     }
 
@@ -70,7 +70,7 @@ public:
 
 FlickrList::FlickrList(QWidget* const parent)
     : DItemsList(parent),
-      d(new Private)
+      d         (new Private)
 {
     // Catch a click on the items.
 

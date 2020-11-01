@@ -55,7 +55,7 @@ public:
     explicit FlickrWindow(DInfoInterface* const iface,
                           QWidget* const parent,
                           const QString& serviceName = QLatin1String("Flickr"));
-    ~FlickrWindow() override;
+    ~FlickrWindow()                                                   override;
 
     /**
      * Use this method to (re-)activate the dialog after it has been created
@@ -90,10 +90,10 @@ private Q_SLOTS:
 
 private:
 
-    QString guessSensibleSetName(const QList<QUrl>& urlList) const;
+    QString guessSensibleSetName(const QList<QUrl>& urlList)    const;
 
-    void closeEvent(QCloseEvent*) override;
-    void readSettings(QString uname);
+    void closeEvent(QCloseEvent*)                                     override;
+    void readSettings(const QString& uname);
     void writeSettings();
 
     void setUiInProgressState(bool inProgress);

@@ -52,10 +52,10 @@ public:
     explicit FlickrWidget(QWidget* const parent,
                           DInfoInterface* const iface,
                           const QString& serviceName);
-    ~FlickrWidget() override;
+    ~FlickrWidget()                                     override;
 
     void updateLabels(const QString& name = QString(),
-                      const QString& url = QString()) override;
+                      const QString& url = QString())   override;
 
 private Q_SLOTS:
 

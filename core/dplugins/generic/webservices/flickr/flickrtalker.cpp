@@ -80,16 +80,16 @@ class Q_DECL_HIDDEN FlickrTalker::Private
 public:
 
     explicit Private()
-      : parent(nullptr),
-        netMngr(nullptr),
-        reply(nullptr),
-        settings(nullptr),
-        state(FE_LOGOUT),
-        iface(nullptr),
-        o1(nullptr),
-        store(nullptr),
-        requestor(nullptr),
-        browser(nullptr)
+      : parent      (nullptr),
+        netMngr     (nullptr),
+        reply       (nullptr),
+        settings    (nullptr),
+        state       (FE_LOGOUT),
+        iface       (nullptr),
+        o1          (nullptr),
+        store       (nullptr),
+        requestor   (nullptr),
+        browser     (nullptr)
     {
         apiUrl      = QLatin1String("https://www.flickr.com/services/rest/");
         authUrl     = QLatin1String("https://www.flickr.com/services/oauth/authorize?perms=write");
@@ -150,11 +150,11 @@ FlickrTalker::FlickrTalker(QWidget* const parent,
     connect(d->netMngr, SIGNAL(finished(QNetworkReply*)),
             this, SLOT(slotFinished(QNetworkReply*)));
 
-    /* Initialize selected photo set as empty. */
+    // Initialize selected photo set as empty.
 
     m_selectedPhotoSet = FPhotoSet();
 
-    /* Initialize photo sets list. */
+    // Initialize photo sets list.
 
     m_photoSetsList    = new QList<FPhotoSet>();
 

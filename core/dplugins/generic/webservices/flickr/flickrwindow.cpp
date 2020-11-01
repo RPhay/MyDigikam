@@ -64,35 +64,35 @@ class Q_DECL_HIDDEN FlickrWindow::Private
 public:
 
     explicit Private()
-      : uploadCount(0),
-        uploadTotal(0),
-        newAlbumBtn(nullptr),
-        changeUserButton(nullptr),
-        removeAccount(nullptr),
-        albumsListComboBox(nullptr),
-        publicCheckBox(nullptr),
-        familyCheckBox(nullptr),
-        friendsCheckBox(nullptr),
-        exportHostTagsCheckBox(nullptr),
-        stripSpaceTagsCheckBox(nullptr),
-        addExtraTagsCheckBox(nullptr),
-        originalCheckBox(nullptr),
-        resizeCheckBox(nullptr),
-        dimensionSpinBox(nullptr),
-        imageQualitySpinBox(nullptr),
-        extendedPublicationButton(nullptr),
-        extendedTagsButton(nullptr),
-        contentTypeComboBox(nullptr),
-        safetyLevelComboBox(nullptr),
-        userNameDisplayLabel(nullptr),
-        authProgressDlg(nullptr),
-        tagsLineEdit(nullptr),
-        widget(nullptr),
-        talker(nullptr),
-        imglst(nullptr),
-        select(nullptr),
-        albumDlg(nullptr),
-        iface(nullptr)
+      : uploadCount                 (0),
+        uploadTotal                 (0),
+        newAlbumBtn                 (nullptr),
+        changeUserButton            (nullptr),
+        removeAccount               (nullptr),
+        albumsListComboBox          (nullptr),
+        publicCheckBox              (nullptr),
+        familyCheckBox              (nullptr),
+        friendsCheckBox             (nullptr),
+        exportHostTagsCheckBox      (nullptr),
+        stripSpaceTagsCheckBox      (nullptr),
+        addExtraTagsCheckBox        (nullptr),
+        originalCheckBox            (nullptr),
+        resizeCheckBox              (nullptr),
+        dimensionSpinBox            (nullptr),
+        imageQualitySpinBox         (nullptr),
+        extendedPublicationButton   (nullptr),
+        extendedTagsButton          (nullptr),
+        contentTypeComboBox         (nullptr),
+        safetyLevelComboBox         (nullptr),
+        userNameDisplayLabel        (nullptr),
+        authProgressDlg             (nullptr),
+        tagsLineEdit                (nullptr),
+        widget                      (nullptr),
+        talker                      (nullptr),
+        imglst                      (nullptr),
+        select                      (nullptr),
+        albumDlg                    (nullptr),
+        iface                       (nullptr)
     {
     }
 
@@ -149,10 +149,10 @@ FlickrWindow::FlickrWindow(DInfoInterface* const iface,
                            QWidget* const /*parent*/,
                            const QString& serviceName)
     : WSToolDialog(nullptr, QString::fromLatin1("%1Export Dialog").arg(serviceName)),
-      d(new Private)
+      d           (new Private)
 {
-    d->iface       = iface;
-    d->serviceName = serviceName;
+    d->iface                = iface;
+    d->serviceName          = serviceName;
     setWindowTitle(i18n("Export to %1 Web Service", d->serviceName));
     setModal(false);
 
@@ -350,7 +350,7 @@ void FlickrWindow::reactivate()
     show();
 }
 
-void FlickrWindow::readSettings(QString uname)
+void FlickrWindow::readSettings(const QString& uname)
 {
     KSharedConfigPtr config = KSharedConfig::openConfig();
     QString groupName       = QString::fromLatin1("%1%2Export Settings").arg(d->serviceName, uname);
