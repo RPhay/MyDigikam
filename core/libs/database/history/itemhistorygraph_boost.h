@@ -128,7 +128,7 @@ enum MeaningOfDirection
  * The graph base class template
  */
 template <class VertexProperties, class EdgeProperties>
-class DIGIKAM_DATABASE_EXPORT Graph
+class DIGIKAM_DATABASE_EXPORT Graph                                     // clazy:exclude=missing-typeinfo
 {
 public:
 
@@ -144,38 +144,40 @@ public:
     /**
      * a bunch of graph-specific typedefs that make the long boost types manageable
      */
-    typedef typename boost::graph_traits<GraphContainer> graph_traits;
+    typedef typename boost::graph_traits<GraphContainer>                                    graph_traits;
 
-    typedef typename graph_traits::vertex_descriptor vertex_t;
-    typedef typename graph_traits::edge_descriptor edge_t;
+    typedef typename graph_traits::vertex_descriptor                                        vertex_t;
+    typedef typename graph_traits::edge_descriptor                                          edge_t;
 
-    typedef typename graph_traits::vertex_iterator vertex_iter;
-    typedef typename graph_traits::edge_iterator edge_iter;
-    typedef typename graph_traits::adjacency_iterator adjacency_iter;
-    typedef typename graph_traits::out_edge_iterator out_edge_iter;
-    typedef typename graph_traits::in_edge_iterator in_edge_iter;
-    typedef typename boost::inv_adjacency_iterator_generator<GraphContainer, vertex_t, in_edge_iter>::type inv_adjacency_iter;
+    typedef typename graph_traits::vertex_iterator                                          vertex_iter;
+    typedef typename graph_traits::edge_iterator                                            edge_iter;
+    typedef typename graph_traits::adjacency_iterator                                       adjacency_iter;
+    typedef typename graph_traits::out_edge_iterator                                        out_edge_iter;
+    typedef typename graph_traits::in_edge_iterator                                         in_edge_iter;
+    typedef typename boost::inv_adjacency_iterator_generator<GraphContainer,
+                                                             vertex_t,
+                                                             in_edge_iter>::type            inv_adjacency_iter;
 
     typedef typename graph_traits::degree_size_type degree_t;
 
-    typedef std::pair<adjacency_iter, adjacency_iter> adjacency_vertex_range_t;
-    typedef std::pair<inv_adjacency_iter, inv_adjacency_iter> inv_adjacency_vertex_range_t;
-    typedef std::pair<out_edge_iter, out_edge_iter> out_edge_range_t;
-    typedef std::pair<vertex_iter, vertex_iter> vertex_range_t;
-    typedef std::pair<edge_iter, edge_iter> edge_range_t;
+    typedef std::pair<adjacency_iter, adjacency_iter>                                       adjacency_vertex_range_t;
+    typedef std::pair<inv_adjacency_iter, inv_adjacency_iter>                               inv_adjacency_vertex_range_t;
+    typedef std::pair<out_edge_iter, out_edge_iter>                                         out_edge_range_t;
+    typedef std::pair<vertex_iter, vertex_iter>                                             vertex_range_t;
+    typedef std::pair<edge_iter, edge_iter>                                                 edge_range_t;
 
-    typedef typename boost::property_map<GraphContainer, boost::vertex_index_t>::type vertex_index_map_t;
+    typedef typename boost::property_map<GraphContainer, boost::vertex_index_t>::type       vertex_index_map_t;
     typedef typename boost::property_map<GraphContainer, boost::vertex_index_t>::const_type const_vertex_index_map_t;
-    typedef typename boost::property_map<GraphContainer, vertex_properties_t>::type vertex_property_map_t;
-    typedef typename boost::property_map<GraphContainer, vertex_properties_t>::const_type const_vertex_property_map_t;
-    typedef typename boost::property_map<GraphContainer, edge_properties_t>::type edge_property_map_t;
-    typedef typename boost::property_map<GraphContainer, edge_properties_t>::const_type const_edge_property_map_t;
+    typedef typename boost::property_map<GraphContainer, vertex_properties_t>::type         vertex_property_map_t;
+    typedef typename boost::property_map<GraphContainer, vertex_properties_t>::const_type   const_vertex_property_map_t;
+    typedef typename boost::property_map<GraphContainer, edge_properties_t>::type           edge_property_map_t;
+    typedef typename boost::property_map<GraphContainer, edge_properties_t>::const_type     const_edge_property_map_t;
 
     /**
      * These two classes provide source-compatible wrappers for the vertex and edge descriptors,
      * providing default construction to null and the isNull() method.
      */
-    class DIGIKAM_DATABASE_EXPORT Vertex
+    class DIGIKAM_DATABASE_EXPORT Vertex                                // clazy:exclude=missing-typeinfo
     {
     public:
 
@@ -222,7 +224,7 @@ public:
         vertex_t v;
     };
 
-    class DIGIKAM_DATABASE_EXPORT Edge
+    class DIGIKAM_DATABASE_EXPORT Edge                                  // clazy:exclude=missing-typeinfo
     {
     public:
 
@@ -1206,10 +1208,10 @@ protected:
 
             for (edge_iter it = range.first ; it != range.second ; ++it)
             {
-                Vertex s       = boost::source(*it, graph);
-                Vertex t       = boost::target(*it, graph);
-                Vertex copiedS = copiedVertices[boost::get(indexMap, s)];
-                Vertex copiedT = copiedVertices[boost::get(indexMap, t)];
+                Vertex s        = boost::source(*it, graph);
+                Vertex t        = boost::target(*it, graph);
+                Vertex copiedS  = copiedVertices[boost::get(indexMap, s)];
+                Vertex copiedT  = copiedVertices[boost::get(indexMap, t)];
 
                 if (copiedS.isNull() || copiedT.isNull())
                 {
@@ -1238,10 +1240,10 @@ protected:
 
         for (edge_iter it = range.first ; it != range.second ; ++it)
         {
-            Vertex s       = boost::source(*it, graph);
-            Vertex t       = boost::target(*it, graph);
-            Vertex copiedS = copiedVertices[boost::get(indexMap, s)];
-            Vertex copiedT = copiedVertices[boost::get(indexMap, t)];
+            Vertex s        = boost::source(*it, graph);
+            Vertex t        = boost::target(*it, graph);
+            Vertex copiedS  = copiedVertices[boost::get(indexMap, s)];
+            Vertex copiedT  = copiedVertices[boost::get(indexMap, t)];
 
             if (copiedS.isNull() || copiedT.isNull())
             {
