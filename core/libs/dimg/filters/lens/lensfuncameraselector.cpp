@@ -815,7 +815,7 @@ void LensFunCameraSelector::showEvent(QShowEvent* event)
     populateDeviceCombos();
     populateLensCombo();
 
-    if (d->metadata->isEmpty())
+    if (!d->metadata || d->metadata->isEmpty())
     {
         d->metadataUsage->setCheckState(Qt::Unchecked);
         setEnabledUseMetadata(false);
