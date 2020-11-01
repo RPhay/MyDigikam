@@ -1265,7 +1265,7 @@ void ContextMenuHelper::addStandardActionPaste(QObject* recv, const char* slot)
 
 void ContextMenuHelper::addStandardActionItemDelete(QObject* recv, const char* slot, int quantity)
 {
-    QAction* const trashAction = new QAction(QIcon::fromTheme(QLatin1String("user-trash-full")),
+    QAction* const trashAction = new QAction(QIcon::fromTheme(QLatin1String("user-trash")),
                                              i18ncp("@action:inmenu Pluralized",
                                                     "Move to Trash", "Move %1 Files to Trash",
                                                     quantity), d->parent);

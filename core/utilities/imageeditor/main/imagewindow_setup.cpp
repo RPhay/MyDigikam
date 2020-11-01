@@ -58,7 +58,7 @@ void ImageWindow::setupActions()
     ac->addAction(QLatin1String("image_delete_permanently_directly"),
                                   d->fileDeletePermanentlyDirectlyAction);
 
-    d->fileTrashDirectlyAction = new QAction(QIcon::fromTheme(QLatin1String("user-trash-full")),
+    d->fileTrashDirectlyAction = new QAction(QIcon::fromTheme(QLatin1String("user-trash")),
                                              i18n("Move to Trash without Confirmation"), this);
     connect(d->fileTrashDirectlyAction, SIGNAL(triggered()),
             this, SLOT(slotTrashCurrentItemDirectly()));

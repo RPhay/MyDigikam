@@ -408,7 +408,7 @@ void DeleteWidget::updateText()
             else
             {
                 d->deleteText->setText(i18n("These items will be moved to Trash."));
-                d->warningIcon->setPixmap(QIcon::fromTheme(QLatin1String("user-trash-full")).pixmap(48));
+                d->warningIcon->setPixmap(QIcon::fromTheme(QLatin1String("user-trash")).pixmap(48));
                 d->numFiles->setText(i18np("<b>1</b> item selected.", "<b>%1</b> items selected.",
                                            d->fileList->topLevelItemCount()));
             }
@@ -429,7 +429,7 @@ void DeleteWidget::updateText()
             else
             {
                 d->deleteText->setText(i18n("These albums will be moved to Trash."));
-                d->warningIcon->setPixmap(QIcon::fromTheme(QLatin1String("user-trash-full")).pixmap(48));
+                d->warningIcon->setPixmap(QIcon::fromTheme(QLatin1String("user-trash")).pixmap(48));
             }
 
             d->numFiles->setText(i18np("<b>1</b> album selected.", "<b>%1</b> albums selected.",
@@ -456,7 +456,7 @@ void DeleteWidget::updateText()
                                             "<p>Note that <b>all subalbums</b> "
                                             "are included in this list and will "
                                             "be moved to Trash as well.</p>"));
-                d->warningIcon->setPixmap(QIcon::fromTheme(QLatin1String("user-trash-full")).pixmap(48));
+                d->warningIcon->setPixmap(QIcon::fromTheme(QLatin1String("user-trash")).pixmap(48));
             }
 
             d->numFiles->setText(i18np("<b>1</b> album selected.", "<b>%1</b> albums selected.",
@@ -601,7 +601,7 @@ void DeleteDialog::slotShouldDelete(bool shouldDelete)
     d->buttons->button(QDialogButtonBox::Apply)->setText(shouldDelete ? i18n("&Delete")
                                                                       : i18n("&Move to Trash"));
     d->buttons->button(QDialogButtonBox::Apply)->setIcon(shouldDelete ? QIcon::fromTheme(QLatin1String("edit-delete"))
-                                                                      : QIcon::fromTheme(QLatin1String("user-trash-full")));
+                                                                      : QIcon::fromTheme(QLatin1String("user-trash")));
 }
 
 void DeleteDialog::presetDeleteMode(DeleteDialogMode::DeleteMode mode)

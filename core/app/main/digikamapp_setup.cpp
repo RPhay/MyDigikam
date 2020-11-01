@@ -432,7 +432,7 @@ void DigikamApp::setupActions()
 
     // Pop up dialog to ask user whether to move to trash
 
-    d->imageDeleteAction = new QAction(QIcon::fromTheme(QLatin1String("user-trash-full")), i18nc("Non-pluralized", "Move to Trash"), this);
+    d->imageDeleteAction = new QAction(QIcon::fromTheme(QLatin1String("user-trash")), i18nc("Non-pluralized", "Move to Trash"), this);
     connect(d->imageDeleteAction, SIGNAL(triggered()), d->view, SLOT(slotImageDelete()));
     ac->addAction(QLatin1String("image_delete"), d->imageDeleteAction);
     ac->setDefaultShortcut(d->imageDeleteAction, Qt::Key_Delete);
@@ -463,7 +463,7 @@ void DigikamApp::setupActions()
 
     // -----------------------------------------------------------
 
-    d->imageTrashDirectlyAction = new QAction(QIcon::fromTheme(QLatin1String("user-trash-full")),
+    d->imageTrashDirectlyAction = new QAction(QIcon::fromTheme(QLatin1String("user-trash")),
                                               i18n("Move to trash without confirmation"), this);
     connect(d->imageTrashDirectlyAction, SIGNAL(triggered()),
             d->view, SLOT(slotImageTrashDirectly()));
