@@ -264,7 +264,7 @@ LensFunIface::MetadataMatch LensFunIface::findFromMetadata(DMetadata* const meta
     d->usedLens        = nullptr;
     d->lensDescription.clear();
 
-    if (meta->isEmpty())
+    if (!meta || meta->isEmpty())
     {
         qCDebug(DIGIKAM_DIMG_LOG) << "No metadata available";
         return LensFunIface::MetadataUnavailable;
