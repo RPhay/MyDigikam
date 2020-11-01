@@ -122,49 +122,49 @@ class Q_DECL_HIDDEN ItemIconView::Private
 public:
 
     explicit Private()
-      : needDispatchSelection(false),
-        useAlbumHistory(false),
-        initialAlbumID(0),
-        thumbSize(ThumbnailSize::Medium),
-        dockArea(nullptr),
-        splitter(nullptr),
-        selectionTimer(nullptr),
-        thumbSizeTimer(nullptr),
-        albumFolderSideBar(nullptr),
-        tagViewSideBar(nullptr),
-        labelsSideBar(nullptr),
-        dateViewSideBar(nullptr),
-        timelineSideBar(nullptr),
-        searchSideBar(nullptr),
-        fuzzySearchSideBar(nullptr),
+      : needDispatchSelection   (false),
+        useAlbumHistory         (false),
+        initialAlbumID          (0),
+        thumbSize               (ThumbnailSize::Medium),
+        dockArea                (nullptr),
+        splitter                (nullptr),
+        selectionTimer          (nullptr),
+        thumbSizeTimer          (nullptr),
+        albumFolderSideBar      (nullptr),
+        tagViewSideBar          (nullptr),
+        labelsSideBar           (nullptr),
+        dateViewSideBar         (nullptr),
+        timelineSideBar         (nullptr),
+        searchSideBar           (nullptr),
+        fuzzySearchSideBar      (nullptr),
 
 #ifdef HAVE_MARBLE
 
-        gpsSearchSideBar(nullptr),
-        mapView(nullptr),
+        gpsSearchSideBar        (nullptr),
+        mapView                 (nullptr),
 
 #endif // HAVE_MARBLE
 
-        peopleSideBar(nullptr),
-        parent(nullptr),
-        iconView(nullptr),
-        tableView(nullptr),
-        trashView(nullptr),
-        utilities(nullptr),
-        albumManager(nullptr),
-        albumHistory(nullptr),
-        stackedview(nullptr),
-        lastViewMode(StackedView::IconViewMode),
-        albumModificationHelper(nullptr),
-        tagModificationHelper(nullptr),
+        peopleSideBar           (nullptr),
+        parent                  (nullptr),
+        iconView                (nullptr),
+        tableView               (nullptr),
+        trashView               (nullptr),
+        utilities               (nullptr),
+        albumManager            (nullptr),
+        albumHistory            (nullptr),
+        stackedview             (nullptr),
+        lastViewMode            (StackedView::IconViewMode),
+        albumModificationHelper (nullptr),
+        tagModificationHelper   (nullptr),
         searchModificationHelper(nullptr),
-        leftSideBar(nullptr),
-        rightSideBar(nullptr),
-        filterWidget(nullptr),
-        optionAlbumViewPrefix(QLatin1String("AlbumView")),
-        modelCollection(nullptr),
-        labelsSearchHandler(nullptr),
-        errorWidget(nullptr)
+        leftSideBar             (nullptr),
+        rightSideBar            (nullptr),
+        filterWidget            (nullptr),
+        optionAlbumViewPrefix   (QLatin1String("AlbumView")),
+        modelCollection         (nullptr),
+        labelsSearchHandler     (nullptr),
+        errorWidget             (nullptr)
     {
     }
 
@@ -184,8 +184,8 @@ public:
         {
             return i18n("Map Search");
         }
-        else if (title == SAlbum::getTemporaryTitle(DatabaseSearch::AdvancedSearch) ||
-                 title == SAlbum::getTemporaryTitle(DatabaseSearch::KeywordSearch))
+        else if ((title == SAlbum::getTemporaryTitle(DatabaseSearch::AdvancedSearch)) ||
+                 (title == SAlbum::getTemporaryTitle(DatabaseSearch::KeywordSearch)))
         {
             return i18n("Last Search");
         }
@@ -267,7 +267,6 @@ public:
     AlbumLabelsSearchHandler*     labelsSearchHandler;
     DNotificationWidget*          errorWidget;
 };
-
 
 } // namespace Digikam
 

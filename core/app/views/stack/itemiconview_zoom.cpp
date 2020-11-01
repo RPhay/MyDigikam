@@ -50,12 +50,13 @@ void ItemIconView::setZoomFactor(double zoom)
 void ItemIconView::slotZoomFactorChanged(double zoom)
 {
     toggleZoomActions();
+
     emit signalZoomChanged(zoom);
 }
 
 void ItemIconView::toggleZoomActions()
 {
-    if (viewMode() == StackedView::PreviewImageMode)
+    if      (viewMode() == StackedView::PreviewImageMode)
     {
         d->parent->enableZoomMinusAction(true);
         d->parent->enableZoomPlusAction(true);
@@ -70,8 +71,8 @@ void ItemIconView::toggleZoomActions()
             d->parent->enableZoomMinusAction(false);
         }
     }
-    else if (viewMode() == StackedView::IconViewMode ||
-             viewMode() == StackedView::TableViewMode)
+    else if ((viewMode() == StackedView::IconViewMode) ||
+             (viewMode() == StackedView::TableViewMode))
     {
         d->parent->enableZoomMinusAction(true);
         d->parent->enableZoomPlusAction(true);
@@ -95,8 +96,8 @@ void ItemIconView::toggleZoomActions()
 
 void ItemIconView::slotZoomIn()
 {
-    if (viewMode() == StackedView::IconViewMode ||
-        viewMode() == StackedView::TableViewMode)
+    if      ((viewMode() == StackedView::IconViewMode) ||
+             (viewMode() == StackedView::TableViewMode))
     {
         setThumbSize(d->thumbSize + ThumbnailSize::Step);
         toggleZoomActions();
@@ -110,8 +111,8 @@ void ItemIconView::slotZoomIn()
 
 void ItemIconView::slotZoomOut()
 {
-    if (viewMode() == StackedView::IconViewMode ||
-        viewMode() == StackedView::TableViewMode)
+    if      ((viewMode() == StackedView::IconViewMode) ||
+             (viewMode() == StackedView::TableViewMode))
     {
         setThumbSize(d->thumbSize - ThumbnailSize::Step);
         toggleZoomActions();
@@ -133,7 +134,7 @@ void ItemIconView::slotZoomTo100Percents()
 
 void ItemIconView::slotFitToWindow()
 {
-    if (viewMode() == StackedView::TableViewMode)
+    if      (viewMode() == StackedView::TableViewMode)
     {
         /// @todo We should choose an appropriate thumbnail size here
     }
@@ -153,16 +154,16 @@ void ItemIconView::slotFitToWindow()
 
 void ItemIconView::setThumbSize(int size)
 {
-    if (viewMode() == StackedView::PreviewImageMode)
+    if      (viewMode() == StackedView::PreviewImageMode)
     {
         double z = DZoomBar::zoomFromSize(size, zoomMin(), zoomMax());
         setZoomFactor(z);
     }
-    else if (viewMode() == StackedView::IconViewMode  ||
-             viewMode() == StackedView::TableViewMode ||
-             viewMode() == StackedView::TrashViewMode)
+    else if ((viewMode() == StackedView::IconViewMode)  ||
+             (viewMode() == StackedView::TableViewMode) ||
+             (viewMode() == StackedView::TrashViewMode))
     {
-        if (size > ThumbnailSize::maxThumbsSize())
+        if      (size > ThumbnailSize::maxThumbsSize())
         {
             d->thumbSize = ThumbnailSize::maxThumbsSize();
         }

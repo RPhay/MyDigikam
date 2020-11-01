@@ -77,7 +77,9 @@ void ItemIconView::slotImageFindSimilar()
 void ItemIconView::slotImageScanForFaces()
 {
     FaceScanSettings settings;
+
     // TODO Faces engine : set K-nearest config
+
     settings.accuracy               = ApplicationSettings::instance()->getFaceDetectionAccuracy();
     settings.task                   = FaceScanSettings::DetectAndRecognize;
     settings.alreadyScannedHandling = FaceScanSettings::Rescan;

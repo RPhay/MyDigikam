@@ -34,7 +34,7 @@ namespace Digikam
 
 ItemIconView::ItemIconView(QWidget* const parent, DModelFactory* const modelCollection)
     : DHBox(parent),
-      d(new Private)
+      d    (new Private)
 {
     d->parent                   = static_cast<DigikamApp*>(parent);
     d->modelCollection          = modelCollection;
@@ -57,6 +57,7 @@ ItemIconView::ItemIconView(QWidget* const parent, DModelFactory* const modelColl
     d->splitter->setParent(this);
 
     // The dock area where the thumbnail bar is allowed to go.
+
     d->dockArea    = new QMainWindow(this, Qt::Widget);
     d->dockArea->setContentsMargins(QMargins());
     d->splitter->addWidget(d->dockArea);
@@ -78,7 +79,9 @@ ItemIconView::ItemIconView(QWidget* const parent, DModelFactory* const modelColl
     d->iconView  = d->stackedview->imageIconView();
 
 #ifdef HAVE_MARBLE
+
     d->mapView   = d->stackedview->mapWidgetView();
+
 #endif // HAVE_MARBLE
 
     d->tableView = d->stackedview->tableView();
@@ -90,13 +93,16 @@ ItemIconView::ItemIconView(QWidget* const parent, DModelFactory* const modelColl
     d->addPageUpDownActions(this, d->stackedview->thumbBar());
 
 #ifdef HAVE_MEDIAPLAYER
+
     d->addPageUpDownActions(this, d->stackedview->mediaPlayerView());
-#endif //HAVE_MEDIAPLAYER
+
+#endif // HAVE_MEDIAPLAYER
 
     d->rightSideBar        = new ItemPropertiesSideBarDB(this, d->splitter, Qt::RightEdge, true);
     d->rightSideBar->setObjectName(QLatin1String("Digikam Right Sidebar"));
 
     // album folder view
+
     d->albumFolderSideBar  = new AlbumFolderViewSideBarWidget(d->leftSideBar,
                                                               d->modelCollection->getAlbumModel(),
                                                               d->albumModificationHelper);
@@ -106,6 +112,7 @@ ItemIconView::ItemIconView(QWidget* const parent, DModelFactory* const modelColl
             this, SLOT(slotNewDuplicatesSearch(PAlbum*)));
 
     // Tags sidebar tab contents.
+
     d->tagViewSideBar      = new TagViewSideBarWidget(d->leftSideBar, d->modelCollection->getTagModel());
     d->leftSideBarWidgets << d->tagViewSideBar;
 
@@ -113,29 +120,34 @@ ItemIconView::ItemIconView(QWidget* const parent, DModelFactory* const modelColl
             this, SLOT(slotNewDuplicatesSearch(QList<TAlbum*>)));
 
     // Labels sidebar
+
     d->labelsSideBar       = new LabelsSideBarWidget(d->leftSideBar);
     d->leftSideBarWidgets << d->labelsSideBar;
     d->labelsSearchHandler = new AlbumLabelsSearchHandler(d->labelsSideBar->labelsTree());
 
     // date view
+
     d->dateViewSideBar     = new DateFolderViewSideBarWidget(d->leftSideBar,
                                                              d->modelCollection->getDateAlbumModel(),
                                                              d->iconView->imageAlbumFilterModel());
     d->leftSideBarWidgets << d->dateViewSideBar;
 
     // timeline side bar
+
     d->timelineSideBar     = new TimelineSideBarWidget(d->leftSideBar,
                                                        d->modelCollection->getSearchModel(),
                                                        d->searchModificationHelper);
     d->leftSideBarWidgets << d->timelineSideBar;
 
     // Search sidebar tab contents.
+
     d->searchSideBar       = new SearchSideBarWidget(d->leftSideBar,
                                                      d->modelCollection->getSearchModel(),
                                                      d->searchModificationHelper);
     d->leftSideBarWidgets << d->searchSideBar;
 
     // Fuzzy search
+
     d->fuzzySearchSideBar  = new FuzzySearchSideBarWidget(d->leftSideBar,
                                                           d->modelCollection->getSearchModel(),
                                                           d->searchModificationHelper);
@@ -148,6 +160,7 @@ ItemIconView::ItemIconView(QWidget* const parent, DModelFactory* const modelColl
             this, SLOT(slotNotificationError(QString,int)));
 
 #ifdef HAVE_MARBLE
+
     d->gpsSearchSideBar    = new GPSSearchSideBarWidget(d->leftSideBar,
                                                         d->modelCollection->getSearchModel(),
                                                         d->searchModificationHelper,
@@ -155,9 +168,11 @@ ItemIconView::ItemIconView(QWidget* const parent, DModelFactory* const modelColl
                                                         d->iconView->getSelectionModel());
 
     d->leftSideBarWidgets << d->gpsSearchSideBar;
+
 #endif // HAVE_MARBLE
 
     // People Sidebar
+
     d->peopleSideBar       = new PeopleSideBarWidget(d->leftSideBar,
                                                      d->modelCollection->getTagFacesModel(),
                                                      d->searchModificationHelper);
@@ -182,10 +197,12 @@ ItemIconView::ItemIconView(QWidget* const parent, DModelFactory* const modelColl
     }
 
     // add only page up and down to work correctly with QCompleter
+
     defineShortcut(d->rightSideBar->imageDescEditTab(), Qt::Key_PageDown, this, SLOT(slotNextItem()));
     defineShortcut(d->rightSideBar->imageDescEditTab(), Qt::Key_PageUp,   this, SLOT(slotPrevItem()));
 
     // Tags Filter sidebar tab contents.
+
     d->filterWidget   = new FilterSideBarWidget(d->rightSideBar, d->modelCollection->getTagFilterModel());
     d->rightSideBar->appendTab(d->filterWidget, QIcon::fromTheme(QLatin1String("view-filter")), i18n("Filters"));
 
@@ -326,6 +343,7 @@ void ItemIconView::setupConnections()
 
     // TableView::signalItemsChanged is emitted when something changes in the model that
     // ItemIconView should care about, not only the selection.
+
     connect(d->tableView, SIGNAL(signalItemsChanged()),
             this, SLOT(slotImageSelected()));
 
@@ -483,9 +501,11 @@ void ItemIconView::loadViewState()
     KConfigGroup group        = config->group(QLatin1String("MainWindow"));
 
     // Restore the splitter
+
     d->splitter->restoreState(group);
 
     // Restore the thumbnail bar dock.
+
     QByteArray thumbbarState;
     thumbbarState     = group.readEntry(QLatin1String("ThumbbarState"), thumbbarState);
     d->dockArea->restoreState(QByteArray::fromBase64(thumbbarState));
@@ -493,7 +513,9 @@ void ItemIconView::loadViewState()
     d->initialAlbumID = group.readEntry(QLatin1String("InitialAlbumID"), 0);
 
 #ifdef HAVE_MARBLE
+
     d->mapView->loadState();
+
 #endif // HAVE_MARBLE
 
     d->tableView->loadState();
@@ -513,12 +535,14 @@ void ItemIconView::saveViewState()
     d->filterWidget->saveState();
 
     // Save the splitter states.
+
     d->splitter->saveState(group);
 
     // Save the position and size of the thumbnail bar. The thumbnail bar dock
     // needs to be closed explicitly, because when it is floating and visible
     // (when the user is in image preview mode) when the layout is saved, it
     // also reappears when restoring the view, while it should always be hidden.
+
     d->stackedview->thumbBarDock()->close();
     group.writeEntry(QLatin1String("ThumbbarState"), d->dockArea->saveState().toBase64());
 
@@ -540,7 +564,9 @@ void ItemIconView::saveViewState()
     }
 
 #ifdef HAVE_MARBLE
+
     d->mapView->saveState();
+
 #endif // HAVE_MARBLE
 
     d->tableView->saveState();

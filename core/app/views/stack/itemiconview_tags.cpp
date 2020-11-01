@@ -45,9 +45,13 @@ void ItemIconView::toggleTag(int tagID)
     foreach (const ItemInfo& info, selectedList)
     {
         if (info.tagIds().contains(tagID))
+        {
             tagToRemove.append(info);
+        }
         else
+        {
             tagToAssign.append(info);
+        }
     }
 
     FileActionMngr::instance()->assignTag(tagToAssign, tagID);
@@ -88,31 +92,32 @@ void ItemIconView::slotRemoveTag(int tagID)
         !FaceTags::isTheUnconfirmedPerson(tagID)
        )
     {
-        QTimer::singleShot(200, [=]()
-        {
-            int count = CoreDbAccess().db()->getNumberOfImagesInTagProperties(tagID,
-                                            ImageTagPropertyName::tagRegion());
-
-            /**
-             * If the face just removed was the final face
-             * associated with that Tag, reset Tag Icon.
-             */
-            if (count == 0)
+        QTimer::singleShot(200, this, [=]()
             {
-                TAlbum* album = AlbumManager::instance()->findTAlbum(tagID);
+                int count = CoreDbAccess().db()->getNumberOfImagesInTagProperties(tagID,
+                                                                                  ImageTagPropertyName::tagRegion());
 
-                if (album && album->iconId() != 0)
+                /**
+                 * If the face just removed was the final face
+                 * associated with that Tag, reset Tag Icon.
+                 */
+                if (count == 0)
                 {
-                    QString err;
+                    TAlbum* const album = AlbumManager::instance()->findTAlbum(tagID);
 
-                    if (!AlbumManager::instance()->updateTAlbumIcon(album, QString(),
-                                                                    0, err))
+                    if (album && (album->iconId() != 0))
                     {
-                        qCDebug(DIGIKAM_GENERAL_LOG) << err ;
+                        QString err;
+
+                        if (!AlbumManager::instance()->updateTAlbumIcon(album, QString(),
+                                                                        0, err))
+                        {
+                            qCDebug(DIGIKAM_GENERAL_LOG) << err ;
+                        }
                     }
                 }
             }
-        });
+        );
     }
 }
 
@@ -122,7 +127,9 @@ void ItemIconView::slotNewTag()
     QList<TAlbum*> talbums = AlbumManager::instance()->currentTAlbums();
 
     if (!talbums.isEmpty())
+    {
         d->tagModificationHelper->slotTagNew(talbums.first());
+    }
 }
 
 void ItemIconView::slotDeleteTag()
@@ -130,7 +137,9 @@ void ItemIconView::slotDeleteTag()
     QList<TAlbum*> talbums = AlbumManager::instance()->currentTAlbums();
 
     if (!talbums.isEmpty())
+    {
         d->tagModificationHelper->slotTagDelete(talbums.first());
+    }
 }
 
 void ItemIconView::slotEditTag()
@@ -138,7 +147,9 @@ void ItemIconView::slotEditTag()
     QList<TAlbum*> talbums = AlbumManager::instance()->currentTAlbums();
 
     if (!talbums.isEmpty())
+    {
         d->tagModificationHelper->slotTagEdit(talbums.first());
+    }
 }
 
 void ItemIconView::slotOpenTagsManager()
@@ -158,7 +169,7 @@ void ItemIconView::slotAssignTag()
 /*
 void ItemIconView::slotRatingChanged(const QUrl& url, int rating)
 {
-    rating = qMin(RatingMax, qMax(RatingMin, rating));
+    rating        = qMin(RatingMax, qMax(RatingMin, rating));
     ItemInfo info = ItemInfo::fromUrl(url);
 
     if (!info.isNull())
@@ -194,9 +205,13 @@ void ItemIconView::slotToggleTag(const QUrl& url, int tagID)
     if (!info.isNull())
     {
         if (info.tagIds().contains(tagID))
+        {
             FileActionMngr::instance()->removeTag(info, tagID);
+        }
         else
+        {
             FileActionMngr::instance()->assignTag(info, tagID);
+        }
     }
 }
 */

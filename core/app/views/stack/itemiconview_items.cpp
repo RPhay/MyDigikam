@@ -59,7 +59,9 @@ void ItemIconView::slotFirstItem()
 
         default:
             // all other views are tied to IconView's selection model
+
             d->iconView->toFirstIndex();
+            break;
     }
 }
 
@@ -73,7 +75,9 @@ void ItemIconView::slotPrevItem()
 
         default:
             // all other views are tied to IconView's selection model
+
             d->iconView->toPreviousIndex();
+            break;
     }
 }
 
@@ -87,7 +91,9 @@ void ItemIconView::slotNextItem()
 
         default:
             // all other views are tied to IconView's selection model
+
             d->iconView->toNextIndex();
+            break;
     }
 }
 
@@ -101,7 +107,9 @@ void ItemIconView::slotLastItem()
 
         default:
             // all other views are tied to IconView's selection model
+
             d->iconView->toLastIndex();
+            break;
     }
 }
 
@@ -109,12 +117,14 @@ void ItemIconView::slotSelectItemByUrl(const QUrl& url)
 {
     /// @todo This functions seems not to be used anywhere right now
     /// @todo Adapt to TableView
+
     d->iconView->toIndex(url);
 }
 
 void ItemIconView::slotImageSelected()
 {
     // delay to slotDispatchImageSelected
+
     d->needDispatchSelection = true;
     d->selectionTimer->start();
 
@@ -130,6 +140,7 @@ void ItemIconView::slotImageSelected()
 
         default:
             emit signalSelectionChanged(d->iconView->numberOfSelectedIndexes());
+            break;
     }
 }
 
@@ -173,9 +184,11 @@ void ItemIconView::slotDispatchImageSelected()
                 nextInfo     = d->iconView->nextInfo(list.first());
             }
 
-            if (viewMode() != StackedView::IconViewMode  &&
-                viewMode() != StackedView::MapWidgetMode &&
-                viewMode() != StackedView::TableViewMode)
+            if (
+                (viewMode() != StackedView::IconViewMode)  &&
+                (viewMode() != StackedView::MapWidgetMode) &&
+                (viewMode() != StackedView::TableViewMode)
+               )
             {
                 d->stackedview->setPreviewItem(list.first(), previousInfo, nextInfo);
             }
@@ -220,6 +233,7 @@ void ItemIconView::slotImageRename()
 
         default:
             d->iconView->rename();
+            break;
     }
 }
 
@@ -233,6 +247,7 @@ void ItemIconView::slotImageDelete()
 
         default:
             d->iconView->deleteSelected(ItemViewUtilities::DeleteUseTrash);
+            break;
     }
 }
 
@@ -246,6 +261,7 @@ void ItemIconView::slotImageDeletePermanently()
 
         default:
             d->iconView->deleteSelected(ItemViewUtilities::DeletePermanently);
+            break;
     }
 }
 
@@ -259,6 +275,7 @@ void ItemIconView::slotImageDeletePermanentlyDirectly()
 
         default:
             d->iconView->deleteSelectedDirectly(ItemViewUtilities::DeletePermanently);
+            break;
     }
 }
 
@@ -272,6 +289,7 @@ void ItemIconView::slotImageTrashDirectly()
 
         default:
             d->iconView->deleteSelectedDirectly(ItemViewUtilities::DeleteUseTrash);
+            break;
     }
 }
 
@@ -285,6 +303,7 @@ void ItemIconView::slotSelectAll()
 
         default:
             d->iconView->selectAll();
+            break;
     }
 }
 
@@ -298,6 +317,7 @@ void ItemIconView::slotSelectNone()
 
         default:
             d->iconView->clearSelection();
+            break;
     }
 }
 
@@ -311,6 +331,7 @@ void ItemIconView::slotSelectInvert()
 
         default:
             d->iconView->invertSelection();
+            break;
     }
 }
 
@@ -378,6 +399,7 @@ void ItemIconView::slotImagePaste()
 
         default:
             d->iconView->paste();
+            break;
     }
 }
 
@@ -402,10 +424,12 @@ bool ItemIconView::hasCurrentItem() const
 
 void ItemIconView::slotFocusAndNextImage()
 {
-    //slot is called on pressing "return" a second time after assigning a tag
+    // slot is called on pressing "return" a second time after assigning a tag
+
     d->stackedview->currentWidget()->setFocus();
 
-    //select next image, since the user is probably done tagging the current image
+    // select next image, since the user is probably done tagging the current image
+
     slotNextItem();
 }
 
@@ -429,14 +453,17 @@ ItemInfo ItemIconView::currentInfo() const
             return d->tableView->currentInfo();
 
 #ifdef HAVE_MARBLE
+
         case StackedView::MapWidgetMode:
             return d->mapView->currentItemInfo();
+
 #endif // HAVE_MARBLE
 
         case StackedView::MediaPlayerMode:
         case StackedView::PreviewImageMode:
         case StackedView::IconViewMode:
             // all of these modes use the same selection model and data as the IconViewMode
+
             return d->iconView->currentInfo();
 
         default:
@@ -464,6 +491,7 @@ ItemInfoList ItemIconView::selectedInfoList(const bool currentFirst,
         case StackedView::IconViewMode:
 
             // all of these modes use the same selection model and data as the IconViewMode
+
             if (currentFirst)
             {
                 return d->iconView->selectedItemInfosCurrentFirst(grouping);
@@ -495,6 +523,7 @@ ItemInfoList ItemIconView::allInfo(const bool grouping) const
         case StackedView::MediaPlayerMode:
         case StackedView::IconViewMode:
             // all of these modes use the same selection model and data as the IconViewMode
+
             return d->iconView->allItemInfos(grouping);
 
         default:
@@ -524,6 +553,7 @@ void ItemIconView::slotSetCurrentUrlWhenAvailable(const QUrl& url)
 
         default:
             d->iconView->setCurrentUrlWhenAvailable(url);
+            break;
     }
 }
 
@@ -537,6 +567,7 @@ void ItemIconView::slotSetCurrentWhenAvailable(const qlonglong id)
 
         default:
             d->iconView->setCurrentWhenAvailable(id);
+            break;
     }
 }
 
@@ -550,6 +581,7 @@ void ItemIconView::slotAwayFromSelection()
 
         default:
             d->iconView->awayFromSelection();
+            break;
     }
 }
 

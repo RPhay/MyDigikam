@@ -43,6 +43,7 @@ void ItemIconView::slotAllAlbumsLoaded()
     d->rightSideBar->populateTags();
 
     // now that all albums have been loaded, activate the albumHistory
+
     d->useAlbumHistory = true;
     Album* const album = d->albumManager->findAlbum(d->initialAlbumID);
     d->albumManager->setCurrentAlbums(QList<Album*>() << album);
@@ -59,7 +60,8 @@ void ItemIconView::slotSortAlbums(int role)
 
     settings->setAlbumSortRole((ApplicationSettings::AlbumSortRole) role);
     settings->saveSettings();
-    //A dummy way to force the tree view to resort if the album sort role changed
+
+    // A dummy way to force the tree view to resort if the album sort role changed
 
     PAlbum* const albumBeforeSorting = d->albumFolderSideBar->currentAlbum();
     settings->setAlbumSortChanged(true);
@@ -78,6 +80,7 @@ void ItemIconView::slotSortAlbums(int role)
 void ItemIconView::slotNewAlbum()
 {
     // TODO use the selection model of the view instead
+
     d->albumModificationHelper->slotAlbumNew(d->albumFolderSideBar->currentAlbum());
 }
 
@@ -117,11 +120,13 @@ void ItemIconView::slotAlbumHistoryForward(int steps)
 }
 
 // TODO update, use SideBarWidget instead of QWidget
+
 void ItemIconView::changeAlbumFromHistory(const QList<Album*>& album, QWidget* const widget)
 {
     if (!(album.isEmpty()) && widget)
     {
         // TODO update, temporary casting until signature is changed
+
         SidebarWidget* const sideBarWidget = dynamic_cast<SidebarWidget*>(widget);
 
         if (sideBarWidget)
@@ -165,7 +170,9 @@ void ItemIconView::slotAlbumSelected(const QList<Album*>& albums)
         d->iconView->openAlbum(QList<Album*>());
 
 #ifdef HAVE_MARBLE
+
         d->mapView->openAlbum(nullptr);
+
 #endif // HAVE_MARBLE
 
         slotTogglePreviewMode(ItemInfo());
@@ -222,6 +229,7 @@ void ItemIconView::slotAlbumSelected(const QList<Album*>& albums)
             case StackedView::TrashViewMode:
                 slotTogglePreviewMode(ItemInfo());
                 break;
+
             default:
                 break;
         }
@@ -243,10 +251,12 @@ void ItemIconView::slotGotoAlbumAndItem(const ItemInfo& imageInfo)
 
     // Set the activate item url to find in the Album View after
     // all items have be reloaded.
+
     slotSetCurrentWhenAvailable(imageInfo.id());
 
     // And finally toggle album manager to handle album history and
     // reload all items.
+
     d->albumManager->setCurrentAlbums(QList<Album*>() << album);
 }
 
@@ -259,13 +269,16 @@ void ItemIconView::slotGotoDateAndItem(const ItemInfo& imageInfo)
     // Change to Date Album view.
     // Note, that this also opens the side bar if it is closed; this is
     // considered as a feature, because it highlights that the view was changed.
+
     slotLeftSideBarActivate(d->dateViewSideBar);
 
     // Set the activate item url to find in the Album View after
     // all items have be reloaded.
+
     slotSetCurrentWhenAvailable(imageInfo.id());
 
     // Change the year and month of the iconItem (day is unused).
+
     d->dateViewSideBar->gotoDate(date);
 }
 
@@ -281,10 +294,12 @@ void ItemIconView::slotGotoTagAndItem(int tagID)
     // Change to Tag Folder view.
     // Note, that this also opens the side bar if it is closed; this is
     // considered as a feature, because it highlights that the view was changed.
+
     slotLeftSideBarActivate(d->tagViewSideBar);
 
     // Set the current tag in the tag folder view.
     // TODO this slot should use a TAlbum pointer directly
+
     TAlbum* const tag = AlbumManager::instance()->findTAlbum(tagID);
 
     if (tag)
@@ -306,7 +321,7 @@ void ItemIconView::slotAlbumOpenInFileManager()
 {
     Album* const album = d->albumManager->currentAlbums().first();
 
-    if (!album || album->type() != Album::PHYSICAL)
+    if (!album || (album->type() != Album::PHYSICAL))
     {
         return;
     }
@@ -339,6 +354,7 @@ void ItemIconView::slotAlbumOpenInFileManager()
 void ItemIconView::slotAlbumRefreshComplete()
 {
     // force reload. Should normally not be necessary, but we may have bugs
+
     qlonglong currentId = currentInfo().id();
     d->iconView->imageAlbumModel()->refresh();
 
@@ -397,7 +413,9 @@ Album* ItemIconView::currentAlbum() const
         case StackedView::MapWidgetMode:
         case StackedView::IconViewMode:
             // all of these modes use the same selection model and data as the IconViewMode
+
             return d->iconView->currentAlbum();
+
         default:
             return nullptr;
     }
@@ -421,11 +439,15 @@ void ItemIconView::slotRefresh()
         case StackedView::PreviewImageMode:
             d->stackedview->imagePreviewView()->reload();
             break;
+
 #ifdef HAVE_MEDIAPLAYER
+
         case StackedView::MediaPlayerMode:
             d->stackedview->mediaPlayerView()->reload();
             break;
+
 #endif //HAVE_MEDIAPLAYER
+
         default:
             Album* const album = currentAlbum();
 

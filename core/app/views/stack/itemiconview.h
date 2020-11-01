@@ -220,8 +220,8 @@ public Q_SLOTS:
     void slotRenameAlbum();
     void slotAlbumPropsEdit();
     void slotAlbumOpenInFileManager();
-    void slotAlbumHistoryBack(int steps=1);
-    void slotAlbumHistoryForward(int steps=1);
+    void slotAlbumHistoryBack(int steps = 1);
+    void slotAlbumHistoryForward(int steps = 1);
     void slotAlbumWriteMetadata();
     void slotAlbumReadMetadata();
     void slotAlbumSelected(const QList<Album*>& albums);

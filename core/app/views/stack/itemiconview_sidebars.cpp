@@ -129,6 +129,7 @@ void ItemIconView::slotRightSideBarActivateAssignedTags()
 void ItemIconView::slotLeftSidebarChangedTab(QWidget* w)
 {
     // TODO update, temporary cast
+
     SidebarWidget* const widget = dynamic_cast<SidebarWidget*>(w);
 
     foreach (SidebarWidget* const sideBarWidget, d->leftSideBarWidgets)
@@ -144,7 +145,7 @@ void ItemIconView::slotSidebarTabTitleStyleChanged()
     d->rightSideBar->setStyle(ApplicationSettings::instance()->getSidebarTitleStyle());
 
     /// @todo Which settings actually have to be reloaded?
-    //     d->rightSideBar->applySettings();
+    //d->rightSideBar->applySettings();
 }
 
 void ItemIconView::slotPopupFiltersView()

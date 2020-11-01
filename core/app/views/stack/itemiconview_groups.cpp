@@ -38,12 +38,15 @@ bool ItemIconView::allNeedGroupResolving(const ApplicationSettings::OperationTyp
     {
         case StackedView::TableViewMode:
             return d->tableView->allNeedGroupResolving(type);
+
         case StackedView::MapWidgetMode:
         case StackedView::PreviewImageMode:
         case StackedView::MediaPlayerMode:
         case StackedView::IconViewMode:
             // all of these modes use the same selection model and data as the IconViewMode
+
             return d->iconView->allNeedGroupResolving(type);
+
         default:
             return false;
     }
@@ -55,12 +58,15 @@ bool ItemIconView::selectedNeedGroupResolving(const ApplicationSettings::Operati
     {
         case StackedView::TableViewMode:
             return d->tableView->selectedNeedGroupResolving(type);
+
         case StackedView::MapWidgetMode:
         case StackedView::PreviewImageMode:
         case StackedView::MediaPlayerMode:
         case StackedView::IconViewMode:
             // all of these modes use the same selection model and data as the IconViewMode
+
             return d->iconView->selectedNeedGroupResolving(type);
+
         default:
             return false;
     }

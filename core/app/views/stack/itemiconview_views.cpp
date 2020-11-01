@@ -51,16 +51,18 @@ void ItemIconView::connectIconViewFilter(FilterStatusBar* const filterbar)
 
 void ItemIconView::slotEscapePreview()
 {
-    if (viewMode() == StackedView::IconViewMode  ||
-        viewMode() == StackedView::MapWidgetMode ||
-        viewMode() == StackedView::TableViewMode ||
-        viewMode() == StackedView::WelcomePageMode)
+    if (
+        (viewMode() == StackedView::IconViewMode)  ||
+        (viewMode() == StackedView::MapWidgetMode) ||
+        (viewMode() == StackedView::TableViewMode) ||
+        (viewMode() == StackedView::WelcomePageMode)
+       )
     {
         return;
     }
 
-    // pass a null image info, because we want to fall back to the old
-    // view mode
+    // pass a null image info, because we want to fall back to the old view mode
+
     slotTogglePreviewMode(ItemInfo());
 }
 
@@ -82,9 +84,11 @@ void ItemIconView::slotIconView()
     }
 
     // and switch to icon view
+
     d->stackedview->setViewMode(StackedView::IconViewMode);
 
     // make sure the next/previous buttons are updated
+
     slotImageSelected();
 }
 
@@ -98,9 +102,9 @@ void ItemIconView::slotImagePreview()
  */
 void ItemIconView::slotTogglePreviewMode(const ItemInfo& info)
 {
-    if ((viewMode() == StackedView::IconViewMode   ||
-         viewMode() == StackedView::TableViewMode  ||
-         viewMode() == StackedView::MapWidgetMode) && !info.isNull())
+    if (((viewMode() == StackedView::IconViewMode)   ||
+         (viewMode() == StackedView::TableViewMode)  ||
+         (viewMode() == StackedView::MapWidgetMode)) && !info.isNull())
     {
         if (info.isLocationAvailable())
         {
@@ -125,10 +129,12 @@ void ItemIconView::slotTogglePreviewMode(const ItemInfo& info)
     else
     {
         // go back to either AlbumViewMode or MapWidgetMode
+
         d->stackedview->setViewMode(d->lastViewMode);
     }
 
     // make sure the next/previous buttons are updated
+
     slotImageSelected();
 }
 
@@ -142,24 +148,30 @@ void ItemIconView::slotViewModeChanged()
             emit signalSwitchedToIconView();
             emit signalThumbSizeChanged(d->thumbSize);
             break;
+
         case StackedView::PreviewImageMode:
             emit signalSwitchedToPreview();
             slotZoomFactorChanged(d->stackedview->zoomFactor());
             break;
+
         case StackedView::WelcomePageMode:
             emit signalSwitchedToIconView();
             break;
+
         case StackedView::MediaPlayerMode:
             emit signalSwitchedToPreview();
             break;
+
         case StackedView::MapWidgetMode:
             emit signalSwitchedToMapView();
-            //TODO: connect map view's zoom buttons to main status bar zoom buttons
+            // TODO: connect map view's zoom buttons to main status bar zoom buttons
             break;
+
         case StackedView::TableViewMode:
             emit signalSwitchedToTableView();
             emit signalThumbSizeChanged(d->thumbSize);
             break;
+
         case StackedView::TrashViewMode:
             emit signalSwitchedToTrashView();
             break;
@@ -171,6 +183,7 @@ void ItemIconView::toggleShowBar(bool b)
     d->stackedview->thumbBarDock()->showThumbBar(b);
 
     // See bug #319876 : force to reload current view mode to set thumbbar visibility properly.
+
     d->stackedview->setViewMode(viewMode());
 }
 
@@ -208,7 +221,7 @@ void ItemIconView::slotShowContextMenu(QContextMenuEvent* event,
 
     if (!album          ||
         album->isRoot() ||
-        (album->type() != Album::PHYSICAL && album->type() != Album::TAG))
+        ((album->type() != Album::PHYSICAL) && (album->type() != Album::TAG)))
     {
         return;
     }
@@ -219,9 +232,8 @@ void ItemIconView::slotShowContextMenu(QContextMenuEvent* event,
     cmHelper.addAction(QLatin1String("full_screen"));
     cmHelper.addAction(QLatin1String("options_show_menubar"));
     cmHelper.addSeparator();
-    // --------------------------------------------------------
     cmHelper.addStandardActionPaste(this, SLOT(slotImagePaste()));
-    // --------------------------------------------------------
+
     if (!extraGroupingActions.isEmpty())
     {
         cmHelper.addSeparator();
@@ -238,6 +250,7 @@ void ItemIconView::slotShowContextMenuOnInfo(QContextMenuEvent* event, const Ite
     QList<qlonglong> selectedImageIds = selectedInfoList(true, true).toImageIdList();
 
     // --------------------------------------------------------
+
     QMenu menu(this);
     ContextMenuHelper cmHelper(&menu);
     cmHelper.setItemFilterModel(imageFilterModel);
