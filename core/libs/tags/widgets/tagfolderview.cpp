@@ -84,8 +84,9 @@ TagFolderView::TagFolderView(QWidget* const parent, TagModel* const model)
     setEnableContextMenu(true);
 
     /// This ensures that the View appears sorted
+
     connect(AlbumManager::instance(), &AlbumManager::signalFaceCountsDirty,
-            [=]()
+            this, [=]()
         {
             filteredModel()->sort(0, filteredModel()->sortOrder());
         }

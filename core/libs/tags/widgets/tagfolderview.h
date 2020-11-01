@@ -81,7 +81,7 @@ Q_SIGNALS:
 
 protected:
 
-    QString contextMenuTitle() const                                                        override;
+    QString contextMenuTitle()                                                        const override;
 
     /**
      * Hook method to add custom actions to the generated context menu.

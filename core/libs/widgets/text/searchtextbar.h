@@ -59,8 +59,6 @@ bool DIGIKAM_EXPORT operator==(const SearchTextSettings& a, const SearchTextSett
 /**
  * A text input for searching entries with visual feedback.
  * Can be used on QAbstractItemModels.
- *
- * @author Gilles Caulier
  */
 class DIGIKAM_EXPORT SearchTextBar : public QLineEdit, public StateSavingObject
 {
@@ -95,8 +93,8 @@ public:
 
     explicit SearchTextBar(QWidget* const parent,
                            const QString& name,
-                           const QString& msg=QString());
-    ~SearchTextBar() override;
+                           const QString& msg = QString());
+    ~SearchTextBar()                                  override;
 
     void setTextQueryCompletion(bool b);
     bool hasTextQueryCompletion()               const;
@@ -153,12 +151,12 @@ private Q_SLOTS:
 
 protected:
 
-    void doLoadState()                  override;
-    void doSaveState()                  override;
+    void doLoadState()                                override;
+    void doSaveState()                                override;
 
 private:
 
-    void contextMenuEvent(QContextMenuEvent* e) override;
+    void contextMenuEvent(QContextMenuEvent* e)       override;
 
     /**
      * If hasCaseSensitive returns <code>true</code> this tells the search

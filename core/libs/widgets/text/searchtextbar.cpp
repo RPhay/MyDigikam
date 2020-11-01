@@ -108,14 +108,14 @@ SearchTextBar::SearchTextBar(QWidget* const parent, const QString& name, const Q
             d->searchTimer, SLOT(start()));
 
     connect(d->completer, static_cast<void(ModelCompleter::*)(void)>(&ModelCompleter::signalActivated),
-            [this](void)
+            this, [this](void)
             {
                 emit completerActivated();
             }
     );
 
     connect(d->completer, static_cast<void(ModelCompleter::*)(const int)>(&ModelCompleter::signalHighlighted),
-            [this](const int albumId)
+            this, [this](const int albumId)
             {
                 emit completerHighlighted(albumId);
             }
@@ -208,7 +208,7 @@ void SearchTextBar::setCaseSensitive(bool b)
         d->settings.caseSensitive = Qt::CaseInsensitive;
     }
 
-    // Ee-emit signal with changed settings
+    // Re-emit signal with changed settings
 
     if (!text().isEmpty())
     {

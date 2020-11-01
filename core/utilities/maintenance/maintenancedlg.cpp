@@ -81,32 +81,32 @@ public:
 public:
 
     explicit Private()
-      : buttons(nullptr),
-        logo(nullptr),
-        title(nullptr),
-        scanThumbs(nullptr),
-        scanFingerPrints(nullptr),
-        useMutiCoreCPU(nullptr),
-        cleanThumbsDb(nullptr),
-        cleanFacesDb(nullptr),
-        retrainAllFaces(nullptr),
-        shrinkDatabases(nullptr),
-        qualityScanMode(nullptr),
-        metadataSetup(nullptr),
-        qualitySetup(nullptr),
-        syncDirection(nullptr),
-        similarityRangeBox(nullptr),
-        dupeRestrictionBox(nullptr),
-        vbox(nullptr),
-        vbox2(nullptr),
-        vbox3(nullptr),
-        vbox4(nullptr),
-        duplicatesBox(nullptr),
-        similarityRange(nullptr),
-        faceScannedHandling(nullptr),
-        searchResultRestriction(nullptr),
-        expanderBox(nullptr),
-        albumSelectors(nullptr)
+      : buttons                 (nullptr),
+        logo                    (nullptr),
+        title                   (nullptr),
+        scanThumbs              (nullptr),
+        scanFingerPrints        (nullptr),
+        useMutiCoreCPU          (nullptr),
+        cleanThumbsDb           (nullptr),
+        cleanFacesDb            (nullptr),
+        retrainAllFaces         (nullptr),
+        shrinkDatabases         (nullptr),
+        qualityScanMode         (nullptr),
+        metadataSetup           (nullptr),
+        qualitySetup            (nullptr),
+        syncDirection           (nullptr),
+        similarityRangeBox      (nullptr),
+        dupeRestrictionBox      (nullptr),
+        vbox                    (nullptr),
+        vbox2                   (nullptr),
+        vbox3                   (nullptr),
+        vbox4                   (nullptr),
+        duplicatesBox           (nullptr),
+        similarityRange         (nullptr),
+        faceScannedHandling     (nullptr),
+        searchResultRestriction (nullptr),
+        expanderBox             (nullptr),
+        albumSelectors          (nullptr)
     {
     }
 
@@ -184,7 +184,7 @@ const QString MaintenanceDlg::Private::configShrinkDatabases(QLatin1String("Shri
 
 MaintenanceDlg::MaintenanceDlg(QWidget* const parent)
     : QDialog(parent),
-      d(new Private)
+      d      (new Private)
 {
     setWindowFlags((windowFlags() & ~Qt::Dialog) |
                    Qt::Window                    |
@@ -255,15 +255,15 @@ MaintenanceDlg::MaintenanceDlg(QWidget* const parent)
 
     // --------------------------------------------------------------------------------------
 
-    const ApplicationSettings * settings = ApplicationSettings::instance();
+    const ApplicationSettings* const settings = ApplicationSettings::instance();
 
-    d->duplicatesBox           = new DVBox;
-    d->similarityRangeBox      = new DHBox(d->duplicatesBox);
+    d->duplicatesBox                          = new DVBox;
+    d->similarityRangeBox                     = new DHBox(d->duplicatesBox);
     new QLabel(i18n("Similarity range (in percents): "), d->similarityRangeBox);
-    QWidget* const space       = new QWidget(d->similarityRangeBox);
+    QWidget* const space                      = new QWidget(d->similarityRangeBox);
     d->similarityRangeBox->setStretchFactor(space, 10);
 
-    d->similarityRange = new DIntRangeBox(d->similarityRangeBox);
+    d->similarityRange                        = new DIntRangeBox(d->similarityRangeBox);
     d->similarityRange->setSuffix(QLatin1String("%"));
 
     if (settings)
@@ -288,6 +288,7 @@ MaintenanceDlg::MaintenanceDlg(QWidget* const parent)
     d->searchResultRestriction->addItem(i18n("Exclude album of reference image"),     HaarIface::DuplicatesSearchRestrictions::DifferentAlbum);
 
     // Load the last choice from application settings.
+
     HaarIface::DuplicatesSearchRestrictions restrictions = HaarIface::DuplicatesSearchRestrictions::None;
 
     if (settings)
@@ -401,10 +402,11 @@ MaintenanceDlg::MaintenanceDlg(QWidget* const parent)
             this, SLOT(slotQualitySetup()));
 
     connect(d->retrainAllFaces, &QCheckBox::toggled,
-            [hbox3](bool on)
+            this, [hbox3](bool on)
             {
                 hbox3->setEnabled(!on);
-            });
+            }
+    );
 
     // --------------------------------------------------------------------------------------
 
