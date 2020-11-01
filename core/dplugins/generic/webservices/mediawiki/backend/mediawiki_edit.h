@@ -308,7 +308,7 @@ Q_SIGNALS:
 
 private Q_SLOTS:
 
-    void doWorkSendRequest(Page page);
+    void doWorkSendRequest(const Page& page);
     void finishedEdit();
 
 public Q_SLOTS:

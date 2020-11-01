@@ -55,7 +55,7 @@ Protection::Protection(const Protection& other)
 {
 }
 
-Protection& Protection::operator=(Protection other)
+Protection& Protection::operator=(const Protection& other)
 {
     *d = *other.d;
     return *this;
@@ -63,10 +63,12 @@ Protection& Protection::operator=(Protection other)
 
 bool Protection::operator==(const Protection& other) const
 {
-    return type()   == other.type()   &&
-           level()  == other.level()  &&
-           expiry() == other.expiry() &&
-           source() == other.source();
+    return (
+            (type()   == other.type())   &&
+            (level()  == other.level())  &&
+            (expiry() == other.expiry()) &&
+            (source() == other.source())
+           );
 }
 
 void Protection::setType(const QString& type)

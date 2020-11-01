@@ -28,10 +28,6 @@
 
 #include <QDateTime>
 
-// Local includes
-
-
-
 namespace MediaWiki
 {
 
@@ -63,14 +59,14 @@ public:
      * @brief Assigning a revision from an other revision.
      * @param other an other revision
      */
-    Revision& operator=(Revision other);
+    Revision& operator=(const Revision& other);
 
     /**
      * @brief Returns true if this instance and other are equal, else false.
      * @param other instance to compare
      * @return true if there are equal, else false
      */
-    bool operator==(const Revision& other) const;
+    bool operator==(const Revision& other)  const;
 
     /**
     * @brief Set the revision ID.
@@ -82,7 +78,7 @@ public:
      * @brief Get the revision ID.
      * @return the revision ID
      */
-    int revisionId() const;
+    int revisionId()                        const;
 
     /**
      * @brief Set the parent ID.
@@ -94,7 +90,7 @@ public:
      * @brief Get the parent ID.
      * @return the parent ID
      */
-    int parentId() const;
+    int parentId()                          const;
 
     /**
      * @brief Set the size of the revision text in bytes.
@@ -106,7 +102,7 @@ public:
      * @brief Get the size of the revision text in bytes.
      * @return the size of the revision text in bytes
      */
-    int size() const;
+    int size()                              const;
 
     /**
      * @brief Set true if the revision is minor.
@@ -118,13 +114,13 @@ public:
      * @brief Get true if the revision is minor.
      * @return true if the revision is minor
      */
-    bool minorRevision() const;
+    bool minorRevision()                    const;
 
     /**
      * @brief Get the date and time of the revision.
      * @return the date and time of the revision
      */
-    QDateTime timestamp() const;
+    QDateTime timestamp()                   const;
 
     /**
      * @brief Set the date and time of the revision
@@ -136,7 +132,7 @@ public:
      * @brief Get the user who made the revision.
      * @return the user who made the revision
      */
-    QString user() const;
+    QString user()                          const;
 
     /**
      * @brief Set the user who made the revision.
@@ -147,7 +143,7 @@ public:
     /**
      * @brief The revision content.
      */
-    QString content() const;
+    QString content()                       const;
 
     /**
      * @brief Set the revision content.
@@ -159,7 +155,7 @@ public:
      * @brief Get the edit comment.
      * @return the edit comment
      */
-    QString comment() const;
+    QString comment()                       const;
 
     /**
      * @brief Set the edit comment.
@@ -177,7 +173,7 @@ public:
      * @brief Get the parse tree of the revision content.
      * @return the parse tree of the revision content
      */
-    QString parseTree() const;
+    QString parseTree()                     const;
 
     /**
      * @brief Set the rollback token.
@@ -189,7 +185,7 @@ public:
      * @brief Get the rollback token.
      * @return the rollback token
      */
-    QString rollback() const;
+    QString rollback()                      const;
 
 private:
 

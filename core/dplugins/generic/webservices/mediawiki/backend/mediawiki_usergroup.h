@@ -29,10 +29,6 @@
 #include <QString>
 #include <QList>
 
-// Local includes
-
-
-
 namespace MediaWiki
 {
 
@@ -64,7 +60,7 @@ public:
      * @brief Assigning a user group from an other user group.
      * @param other an other user group
      */
-    UserGroup& operator=(UserGroup other);
+    UserGroup& operator=(const UserGroup& other);
 
     /**
      * @brief Returns true if this instance and other are equal, else false.
@@ -77,7 +73,7 @@ public:
      * @brief Returns the name of the user group.
      * @return the name of the user group
      */
-    QString name() const;
+    QString name()                          const;
 
     /**
      * @brief Set the name of the user group.
@@ -89,7 +85,7 @@ public:
      * @brief Returns rights of the user group.
      * @return rights of the user group
      */
-    const QList<QString>& rights() const;
+    const QList<QString>& rights()          const;
 
     /**
      * @brief Returns rights of the user group.
@@ -107,13 +103,13 @@ public:
      * @brief Returns the numbers of users in the user group.
      * @return the numbers of users in the user group
      */
-    qint64 number() const;
+    qint64 number()                         const;
 
     /**
      * @brief Set the number of users in the user group.
      * @param number the number of users in the user group
      */
-    void setNumber(qint64 number) ;
+    void setNumber(qint64 number);
 
 private:
 

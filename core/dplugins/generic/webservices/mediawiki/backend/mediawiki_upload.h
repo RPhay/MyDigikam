@@ -167,7 +167,7 @@ public:
 
 private Q_SLOTS:
 
-    void doWorkSendRequest(Page page);
+    void doWorkSendRequest(const Page& page);
     void doWorkProcessReply();
 };
 

@@ -273,7 +273,7 @@ void Edit::start()
     info->start();
 }
 
-void Edit::doWorkSendRequest(Page page)
+void Edit::doWorkSendRequest(const Page& page)
 {
     Q_D(Edit);
     d->requestParameter[QStringLiteral("token")] = page.pageEditToken();

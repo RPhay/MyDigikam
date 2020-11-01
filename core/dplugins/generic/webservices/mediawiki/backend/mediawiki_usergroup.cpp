@@ -57,17 +57,19 @@ UserGroup::~UserGroup()
     delete d;
 }
 
-UserGroup& UserGroup::operator=(UserGroup other)
+UserGroup& UserGroup::operator=(const UserGroup& other)
 {
     *d = *other.d;
     return *this;
 }
 
-bool UserGroup::operator==(const MediaWiki::UserGroup& other) const
+bool UserGroup::operator==(const UserGroup& other) const
 {
-    return number() == other.number() &&
-           rights() == other.rights() &&
-           name()   == other.name() ;
+    return (
+            (number() == other.number()) &&
+            (rights() == other.rights()) &&
+            (name()   == other.name())
+           );
 }
 
 QString UserGroup::name() const
