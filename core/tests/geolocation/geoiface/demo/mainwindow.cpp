@@ -316,7 +316,7 @@ MainWindow::MainWindow(QCommandLineParser* const cmdLineArgs, QWidget* const par
     if (cmdLineArgs->isSet(QLatin1String("demopoints_single")) ||
         cmdLineArgs->isSet(QLatin1String("demopoints_group")))
     {
-        for (int i = 0; i < markerList.count(); ++i)
+        for (int i = 0 ; i < markerList.count() ; ++i)
         {
             QTreeWidgetItem* const treeItem = new QTreeWidgetItem();
             treeItem->setText(0, QString::fromLatin1("item %1").arg(i));
@@ -465,7 +465,7 @@ void MainWindow::slotFutureResultsReadyAt(int startIndex, int endIndex)
     }
 }
 
-void MainWindow::slotScheduleImagesForLoading(const QList<QUrl> imagesToSchedule)
+void MainWindow::slotScheduleImagesForLoading(const QList<QUrl>& imagesToSchedule)
 {
     if (imagesToSchedule.isEmpty())
         return;

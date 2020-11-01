@@ -58,8 +58,8 @@ public:
 private Q_SLOTS:
 
     void slot_plainTextEdit_textChanged();
-    void slot_mPageEdit_textChanged(QString);
-    void slot_mWikiEdit_textChanged(QString);
+    void slot_mPageEdit_textChanged(const QString&);
+    void slot_mWikiEdit_textChanged(const QString&);
     void slot_pushButton1_clicked();
     void slot_pushButton2_clicked();
     void loginHandle(KJob* login);
@@ -70,7 +70,7 @@ private Q_SLOTS:
 private:
 
     Ui::MainWindow* ui;
-    Iface*      MediaWiki;
+    Iface*          MediaWiki;
 };
 
 #endif // MAINWINDOW_H

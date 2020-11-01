@@ -28,8 +28,8 @@
 
 MainWindow::MainWindow(QWidget* const parent)
     : QMainWindow(parent),
-      ui(new Ui::MainWindow),
-      MediaWiki(nullptr)
+      ui         (new Ui::MainWindow),
+      MediaWiki  (nullptr)
 {
     ui->setupUi(this);
 }
@@ -71,7 +71,8 @@ void MainWindow::revisionHandle(const QList<Revision>& revisions)
     this->ui->plainTextEdit->setPlainText(revisions[0].content());
 }
 
-//Send page
+// Send page
+
 void MainWindow::slot_pushButton1_clicked()
 {
     Login* const login = new Login(*MediaWiki, this->ui->mLoginEdit->text(), this->ui->mMdpEdit->text());
@@ -108,9 +109,13 @@ void MainWindow::editError(KJob* job)
     QString errorMessage;
 
     if (job->error() == 0)
+    {
         errorMessage = QLatin1String("The Wiki page modified successfully.");
+    }
     else
+    {
         errorMessage = QLatin1String("The Wiki page can't be modified.");
+    }
 
     QMessageBox popup;
     popup.setText(errorMessage);
@@ -127,12 +132,12 @@ void MainWindow::revisionError(KJob* job)
     }
 }
 
-void MainWindow::slot_mPageEdit_textChanged(QString text)
+void MainWindow::slot_mPageEdit_textChanged(const QString& text)
 {
     this->ui->pushButton2->setEnabled(!text.isEmpty() && !text.isNull() && !this->ui->mWikiEdit->text().isEmpty());
 }
 
-void MainWindow::slot_mWikiEdit_textChanged(QString text)
+void MainWindow::slot_mWikiEdit_textChanged(const QString& text)
 {
     this->ui->pushButton2->setEnabled(!text.isEmpty() && !text.isNull() && !this->ui->mPageEdit->text().isEmpty());
 }

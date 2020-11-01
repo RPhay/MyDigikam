@@ -47,24 +47,24 @@ class Q_DECL_HIDDEN Runnable : public QRunnable
 {
 public:
 
-    Runnable(int number, FacialRecognitionWrapper db)
+    Runnable(int number, const FacialRecognitionWrapper& db)
         : number(number),
-          db(db)
+          db    (db)
     {
     }
 
     void run() override
     {
-        QImage* image = new QImage(256, 256, QImage::Format_ARGB32);
+        QImage* const image = new QImage(256, 256, QImage::Format_ARGB32);
         image->fill(Qt::red);
 
         Identity identity;
 
         // Populate database.
 
-        for (int i = number * secondMultiplier ; i < number * secondMultiplier + secondMultiplier ; ++i)
+        for (int i = number * secondMultiplier ; i < (number * secondMultiplier + secondMultiplier) ; ++i)
         {
-            QString name      = QString::fromLatin1("face%1").arg(i);
+            QString name                            = QString::fromLatin1("face%1").arg(i);
             qDebug() << "Record Identity " << name << " to DB";
             QMap<QString, QString> attributes;
             attributes[QString::fromLatin1("name")] = name;
@@ -76,7 +76,7 @@ public:
 
         // Check records in database.
 
-        for (int i = number * secondMultiplier ; i < number*secondMultiplier+secondMultiplier ; ++i)
+        for (int i = (number * secondMultiplier) ; i < (number * secondMultiplier + secondMultiplier) ; ++i)
         {
             QString name = QString::fromLatin1("face%1").arg(i);
             identity     = db.findIdentity(QString::fromLatin1("name"), name);
@@ -112,7 +112,7 @@ int main(int argc, char** argv)
 
     for (int i = 0 ; i < firstMultiplier ; ++i)
     {
-        Runnable* r= new Runnable(i, db);
+        Runnable* const r = new Runnable(i, db);
         pool.start(r);
     }
 
@@ -120,7 +120,7 @@ int main(int argc, char** argv)
 
     // Process recognition in database.
 
-    QImage* image = new QImage(256, 256, QImage::Format_ARGB32);
+    QImage* const  image = new QImage(256, 256, QImage::Format_ARGB32);
     QList<Identity> list = db.recognizeFaces(QList<QImage*>() << image);
 
     if (!list.isEmpty())
