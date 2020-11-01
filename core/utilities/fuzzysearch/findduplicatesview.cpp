@@ -205,8 +205,10 @@ FindDuplicatesView::FindDuplicatesView(QWidget* const parent)
 
     d->albumTagRelation->setCurrentIndex(d->albumTagRelation->findData(relation));
 
-    d->removeDuplicatesBtn   = new QPushButton(i18nc("@label:listbox", "Remove Duplicates"));
+    d->removeDuplicatesBtn   = new QPushButton(i18n("Remove Duplicates"));
     d->removeDuplicatesBtn->setIcon(QIcon::fromTheme(QLatin1String("user-trash")));
+    d->removeDuplicatesBtn->setWhatsThis(i18n("Use this button to delete all duplicate images."));
+
     d->removeDuplicatesBtn->setEnabled(false);
 
     // ---------------------------------------------------------------
