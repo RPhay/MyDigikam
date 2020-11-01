@@ -42,7 +42,9 @@ class DIGIKAM_GUI_EXPORT AlbumModel : public AbstractCheckableAlbumModel
 
 public:
 
-    /// Create a model containing all physical albums
+    /**
+     * Create a model containing all physical albums
+     */
     explicit AlbumModel(RootAlbumBehavior rootBehavior = IncludeRootAlbum, QObject* const parent = nullptr);
     ~AlbumModel() override;
 
@@ -50,9 +52,9 @@ public:
 
 protected:
 
-    QVariant albumData(Album* a, int role)  const override;
-    QVariant decorationRoleData(Album* a)   const override;
-    Album*   albumForId(int id)             const override;
+    QVariant albumData(Album* a, int role)          const override;
+    QVariant decorationRoleData(Album* a)           const override;
+    Album*   albumForId(int id)                     const override;
 };
 
 // ------------------------------------------------------------------
@@ -76,12 +78,14 @@ public:
 
 public:
 
-    /// Create a model containing all tags
+    /**
+     * Create a model containing all tags
+     */
     explicit TagModel(RootAlbumBehavior rootBehavior = IncludeRootAlbum, QObject* const parent = nullptr);
 
-    TAlbum*              albumForIndex(const QModelIndex& index)    const;
-    void                 setColumnHeader(const QString& header);
-    void                 setTagCount(TagCountMode mode);
+    TAlbum*      albumForIndex(const QModelIndex& index)    const;
+    void         setColumnHeader(const QString& header);
+    void         setTagCount(TagCountMode mode);
 
 protected:
 
@@ -103,7 +107,9 @@ class DIGIKAM_GUI_EXPORT SearchModel : public AbstractCheckableAlbumModel
 
 public:
 
-    /// Create a model containing searches
+    /**
+     * Create a model containing searches
+     */
     explicit SearchModel(QObject* const parent = nullptr);
 
     SAlbum* albumForIndex(const QModelIndex& index) const;
@@ -127,8 +133,8 @@ public:
 
 protected:
 
-    QVariant albumData(Album* a, int role) const override;
-    Album*   albumForId(int id)            const override;
+    QVariant albumData(Album* a, int role)          const override;
+    Album*   albumForId(int id)                     const override;
 
 private Q_SLOTS:
 
@@ -158,7 +164,7 @@ public:
      */
     explicit DateAlbumModel(QObject* const parent = nullptr);
 
-    DAlbum* albumForIndex(const QModelIndex& index)  const;
+    DAlbum* albumForIndex(const QModelIndex& index)     const;
 
     /**
      * Finds an album index based on a date. The given date is therefore
@@ -169,12 +175,13 @@ public:
      * @return model index corresponding to the album with the given date or an
      *         empty index if not found
      */
-    QModelIndex monthIndexForDate(const QDate& date) const;
+    QModelIndex monthIndexForDate(const QDate& date)    const;
 
     /**
      * Set pixmaps for the DecorationRole
      */
-    void setPixmaps(const QPixmap& forYearAlbums, const QPixmap& forMonthAlbums);
+    void setPixmaps(const QPixmap& forYearAlbums,
+                    const QPixmap& forMonthAlbums);
 
 public Q_SLOTS:
 
@@ -182,10 +189,10 @@ public Q_SLOTS:
 
 protected:
 
-    QString  albumName(Album* a)             const override;
-    QVariant decorationRoleData(Album* a)    const override;
-    QVariant sortRoleData(Album* a)          const override;
-    Album*   albumForId(int id)              const override;
+    QString  albumName(Album* a)                        const override;
+    QVariant decorationRoleData(Album* a)               const override;
+    QVariant sortRoleData(Album* a)                     const override;
+    Album*   albumForId(int id)                         const override;
 
 protected:
 

@@ -166,12 +166,13 @@ QVariant TagModel::decorationRoleData(Album* album) const
 QVariant TagModel::fontRoleData(Album* a) const
 {
     if (m_unconfirmedFaceCount.contains(a->id())  &&
-        a->id() != FaceTags::unknownPersonTagId())
+        (a->id() != FaceTags::unknownPersonTagId()))
     {
         QFont font;
         font.setBold(true);
         return font;
     }
+
     return QVariant();
 }
 
@@ -195,32 +196,33 @@ void TagModel::setTagCount(TagCountMode mode)
     else
     {
         connect(AlbumManager::instance(), &AlbumManager::signalFaceCountsDirty,
-                [=](const QMap<int, int>& faceCount,
-                    const QMap<int, int>& uFaceCount,
-                    const QList<int>& toUpdatedFaces)
-        {
-            setCountMap(faceCount);
-            m_unconfirmedFaceCount = uFaceCount;
-
-            foreach (int id, toUpdatedFaces)
+                this, [=](const QMap<int, int>& faceCount,
+                          const QMap<int, int>& uFaceCount,
+                          const QList<int>& toUpdatedFaces)
             {
-                Album* const album = albumForId(id);
+                setCountMap(faceCount);
+                m_unconfirmedFaceCount = uFaceCount;
 
-                if (!album)
+                foreach (int id, toUpdatedFaces)
                 {
-                    continue;
+                    Album* const album = albumForId(id);
+
+                    if (!album)
+                    {
+                        continue;
+                    }
+
+                    QModelIndex index = indexForAlbum(album);
+
+                    if (!index.isValid())
+                    {
+                        continue;
+                    }
+
+                    emit dataChanged(index, index);
                 }
-
-                QModelIndex index = indexForAlbum(album);
-
-                if (!index.isValid())
-                {
-                    continue;
-                }
-
-                emit dataChanged(index, index);
             }
-        });
+        );
 
         setCountMap(AlbumManager::instance()->getFaceCount());
     }
@@ -475,16 +477,19 @@ void DateAlbumModel::setYearMonthMap(const QMap<YearMonth, int>& yearMonthMap)
             }
 
             case DAlbum::Year:
-
+            {
                 // a year itself cannot contain images and therefore always has count 0
 
                 albumToCountMap.insert((*it)->id(), 0);
                 break;
+            }
 
             default:
+            {
                 qCDebug(DIGIKAM_GENERAL_LOG) << "Untreated DAlbum range " << dalbum->range();
                 albumToCountMap.insert((*it)->id(), 0);
                 break;
+            }
         }
 
         ++it;
