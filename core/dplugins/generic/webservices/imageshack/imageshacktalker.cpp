@@ -75,7 +75,6 @@ public:
 
     explicit Private()
     {
-        //userAgent   = QLatin1String("KIPI-Plugin-ImageShack/%1").arg(kipipluginsVersion());
         userAgent       = QString::fromLatin1("digiKam-ImageShack/%1").arg(digiKamVersion());
         photoApiUrl     = QUrl(QLatin1String("https://api.imageshack.com/v2/images"));
         videoApiUrl     = QUrl(QLatin1String("http://render.imageshack.us/upload_api.php"));
@@ -122,7 +121,9 @@ ImageShackTalker::ImageShackTalker(ImageShackSession* const session)
 ImageShackTalker::~ImageShackTalker()
 {
     if (d->reply)
+    {
         d->reply->abort();
+    }
 
     delete d;
 }
@@ -138,7 +139,7 @@ void ImageShackTalker::cancel()
     emit signalBusy(false);
 }
 
-QString ImageShackTalker::getCallString(QMap< QString, QString >& args) const
+QString ImageShackTalker::getCallString(QMap<QString, QString>& args) const
 {
     QString result;
 
@@ -147,7 +148,9 @@ QString ImageShackTalker::getCallString(QMap< QString, QString >& args) const
          ++it)
     {
         if (!result.isEmpty())
+        {
             result.append(QLatin1String("&"));
+        }
 
         result.append(it.key());
         result.append(QLatin1String("="));
@@ -168,7 +171,7 @@ void ImageShackTalker::slotFinished(QNetworkReply* reply)
 
     if (reply->error() != QNetworkReply::NoError)
     {
-        if (d->state == Private::IMGHCK_AUTHENTICATING)
+        if      (d->state == Private::IMGHCK_AUTHENTICATING)
         {
             checkRegistrationCodeDone(reply->error(), reply->errorString());
             emit signalBusy(false);
@@ -196,16 +199,20 @@ void ImageShackTalker::slotFinished(QNetworkReply* reply)
         case Private::IMGHCK_AUTHENTICATING:
             parseAccessToken(buffer);
             break;
+
         case Private::IMGHCK_ADDPHOTOGALLERY:
             parseAddPhotoToGalleryDone(buffer);
             break;
+
         case Private::IMGHCK_ADDVIDEO:
         case Private::IMGHCK_ADDPHOTO:
             parseUploadPhotoDone(buffer);
             break;
+
         case Private::IMGHCK_GETGALLERIES:
             parseGetGalleries(buffer);
             break;
+
         default:
             break;
     }
@@ -305,7 +312,9 @@ void ImageShackTalker::parseGetGalleries(const QByteArray &data)
     QDomDocument document;
 
     if (!document.setContent(data))
+    {
         return;
+    }
 
     QDomElement rootElem  = document.documentElement();
     QDomNodeList children = rootElem.childNodes();
@@ -313,7 +322,7 @@ void ImageShackTalker::parseGetGalleries(const QByteArray &data)
     QStringList gTexts;
     QStringList gNames;
 
-    for (int i = 0; i < children.size(); ++i)
+    for (int i = 0 ; i < children.size() ; ++i)
     {
         QDomElement e = children.at(i).toElement();
 
@@ -420,7 +429,9 @@ void ImageShackTalker::uploadItem(const QString& path, const QMap<QString, QStri
     //uploadItemToGallery(path, QLatin1String(""), opts);
 }
 
-void ImageShackTalker::uploadItemToGallery(const QString& path, const QString& /*gallery*/, const QMap<QString, QString>& opts)
+void ImageShackTalker::uploadItemToGallery(const QString& path,
+                                           const QString& /*gallery*/,
+                                           const QMap<QString, QString>& opts)
 {
     if (d->reply)
     {
@@ -458,6 +469,7 @@ void ImageShackTalker::uploadItemToGallery(const QString& path, const QString& /
     form.finish();
 
     // Check where to upload
+
     QString mime        = mimeType(path);
 
     QUrl uploadUrl;
@@ -472,7 +484,7 @@ void ImageShackTalker::uploadItemToGallery(const QString& path, const QString& /
     d->reply = d->netMngr->post(netRequest, form.formData());
 }
 
-int ImageShackTalker::parseErrorResponse(QDomElement elem, QString& errMsg) const
+int ImageShackTalker::parseErrorResponse(const QDomElement& elem, QString& errMsg) const
 {
     int errCode = -1;
     QString err_code;
@@ -482,7 +494,9 @@ int ImageShackTalker::parseErrorResponse(QDomElement elem, QString& errMsg) cons
          node = node.nextSibling())
     {
         if (!node.isElement())
+        {
             continue;
+        }
 
         QDomElement e = node.toElement();
 
@@ -505,7 +519,7 @@ int ImageShackTalker::parseErrorResponse(QDomElement elem, QString& errMsg) cons
     return errCode;
 }
 
-void ImageShackTalker::parseUploadPhotoDone(QByteArray data)
+void ImageShackTalker::parseUploadPhotoDone(const QByteArray& data)
 {
     qCDebug(DIGIKAM_WEBSERVICES_LOG) << "ParseUploadPhotoDone data is "<<data;
 
@@ -520,7 +534,9 @@ void ImageShackTalker::parseUploadPhotoDone(QByteArray data)
 
     QJsonObject jsonObject = doc.object();
 
-    if (d->state == Private::IMGHCK_ADDPHOTO || d->state == Private::IMGHCK_ADDVIDEO || (d->state == Private::IMGHCK_ADDPHOTOGALLERY))
+    if ((d->state == Private::IMGHCK_ADDPHOTO) ||
+        (d->state == Private::IMGHCK_ADDVIDEO) ||
+        (d->state == Private::IMGHCK_ADDPHOTOGALLERY))
     {
         if (jsonObject[QLatin1String("success")].toBool())
         {
@@ -536,7 +552,7 @@ void ImageShackTalker::parseUploadPhotoDone(QByteArray data)
     }
 }
 
-void ImageShackTalker::parseAddPhotoToGalleryDone(QByteArray data)
+void ImageShackTalker::parseAddPhotoToGalleryDone(const QByteArray& data)
 {
     //int errCode = -1;
     QString errMsg = QLatin1String("");
@@ -545,11 +561,13 @@ void ImageShackTalker::parseAddPhotoToGalleryDone(QByteArray data)
     qCDebug(DIGIKAM_WEBSERVICES_LOG) << data;
 
     if (!domDoc.setContent(data))
+    {
         return;
+    }
 
     QDomElement rootElem = domDoc.documentElement();
 
-    if (rootElem.isNull() || rootElem.tagName() != QLatin1String("gallery"))
+    if (rootElem.isNull() || (rootElem.tagName() != QLatin1String("gallery")))
     {
         // TODO error cheking
     }

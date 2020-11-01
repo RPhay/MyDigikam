@@ -47,7 +47,7 @@ class ImageShackTalker : public QObject
 public:
 
     explicit ImageShackTalker(ImageShackSession* const session);
-    ~ImageShackTalker() override;
+    ~ImageShackTalker()                                                           override;
 
 public:
 
@@ -64,12 +64,15 @@ public:
 Q_SIGNALS:
 
     void signalBusy(bool busy);
-    void signalJobInProgress(int step, int maxStep = 0, const QString& label = QString());
+    void signalJobInProgress(int step,
+                             int maxStep = 0,
+                             const QString& label = QString());
     void signalLoginDone(int errCode,  const QString &errMsg);
     void signalGetGalleriesDone(int errCode, const QString &errMsg);
 
     void signalAddPhotoDone(int errCode, const QString& errMsg);
-    void signalUpdateGalleries(const QStringList& gTexts, const QStringList& gNames);
+    void signalUpdateGalleries(const QStringList& gTexts,
+                               const QStringList& gNames);
 
 private Q_SLOTS:
 
@@ -77,7 +80,7 @@ private Q_SLOTS:
 
 private:
 
-    QString getCallString(QMap<QString, QString>& args) const;
+    QString getCallString(QMap<QString, QString>& args)                     const;
     void    checkRegistrationCodeDone(int errCode, const QString& errMsg);
     void    parseAccessToken(const QByteArray& data);
     void    parseGetGalleries(const QByteArray& data);
@@ -85,12 +88,12 @@ private:
 
     void    logOut();
 
-    int     parseErrorResponse(QDomElement elem, QString& errMsg) const;
+    int     parseErrorResponse(const QDomElement& elem, QString& errMsg)    const;
 
-    void    parseUploadPhotoDone(QByteArray data);
-    void    parseAddPhotoToGalleryDone(QByteArray data);
+    void    parseUploadPhotoDone(const QByteArray& data);
+    void    parseAddPhotoToGalleryDone(const QByteArray& data);
 
-    QString mimeType(const QString& path) const;
+    QString mimeType(const QString& path)                                   const;
 
 private:
 

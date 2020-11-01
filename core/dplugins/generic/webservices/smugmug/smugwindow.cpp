@@ -66,18 +66,18 @@ class Q_DECL_HIDDEN SmugWindow::Private
 public:
 
     explicit Private()
-      : import(false),
-        imagesCount(0),
-        imagesTotal(0),
-        anonymousImport(false),
-        currentAlbumID(0),
-        currentTmplID(0),
+      : import           (false),
+        imagesCount      (0),
+        imagesTotal      (0),
+        anonymousImport  (false),
+        currentAlbumID   (0),
+        currentTmplID    (0),
         currentCategoryID(0),
-        loginDlg(nullptr),
-        talker(nullptr),
-        widget(nullptr),
-        albumDlg(nullptr),
-        iface(nullptr)
+        loginDlg         (nullptr),
+        talker           (nullptr),
+        widget           (nullptr),
+        albumDlg         (nullptr),
+        iface            (nullptr)
     {
     }
 
@@ -110,9 +110,10 @@ public:
 SmugWindow::SmugWindow(DInfoInterface* const iface,
                        QWidget* const /*parent*/,
                        bool import,
-                       QString /*nickName*/)
-    : WSToolDialog(nullptr, QString::fromLatin1("Smug %1 Dialog").arg(import ? QLatin1String("Import") : QLatin1String("Export"))),
-      d(new Private)
+                       const QString& /*nickName*/)
+    : WSToolDialog(nullptr, QString::fromLatin1("Smug %1 Dialog").arg(import ? QLatin1String("Import")
+                                                                             : QLatin1String("Export"))),
+      d           (new Private)
 {
     d->tmpPath.clear();
     d->tmpDir        = WSToolUtils::makeTemporaryDir("smug").absolutePath() + QLatin1Char('/');;
@@ -310,7 +311,8 @@ void SmugWindow::slotDialogFinished()
 
 void SmugWindow::setUiInProgressState(bool inProgress)
 {
-    setRejectButtonMode(inProgress ? QDialogButtonBox::Cancel : QDialogButtonBox::Close);
+    setRejectButtonMode(inProgress ? QDialogButtonBox::Cancel
+                                   : QDialogButtonBox::Close);
 
     if (inProgress)
     {
@@ -504,7 +506,9 @@ void SmugWindow::slotListPhotosDone(int errCode, const QString &errMsg,
     }
 
     if (d->transferQueue.isEmpty())
+    {
         return;
+    }
 
     d->imagesTotal = d->transferQueue.count();
     d->imagesCount = 0;
@@ -619,7 +623,9 @@ void SmugWindow::slotListSubCategoriesDone(int errCode,
 void SmugWindow::slotTemplateSelectionChanged(int index)
 {
     if (index < 0)
+    {
         return;
+    }
 
     d->currentTmplID = d->albumDlg->templateCombo()->itemData(index).toLongLong();
 
@@ -769,9 +775,9 @@ void SmugWindow::slotStartTransfer()
 
         // list photos of the album, then start download
 
-        QString dataStr = d->widget->m_albumsCoB->itemData(d->widget->m_albumsCoB->currentIndex()).toString();
-        int colonIdx = dataStr.indexOf(QLatin1Char(':'));
-        qint64 albumID = dataStr.left(colonIdx).toLongLong();
+        QString dataStr  = d->widget->m_albumsCoB->itemData(d->widget->m_albumsCoB->currentIndex()).toString();
+        int colonIdx     = dataStr.indexOf(QLatin1Char(':'));
+        qint64 albumID   = dataStr.left(colonIdx).toLongLong();
         QString albumKey = dataStr.right(dataStr.length() - colonIdx - 1);
         d->talker->listPhotos(albumID, albumKey,
                              d->widget->getAlbumPassword(),
@@ -787,13 +793,13 @@ void SmugWindow::slotStartTransfer()
             return;
         }
 
-        QString data = d->widget->m_albumsCoB->itemData(d->widget->m_albumsCoB->currentIndex()).toString();
-        int colonIdx = data.indexOf(QLatin1Char(':'));
-        d->currentAlbumID = data.left(colonIdx).toLongLong();
+        QString data       = d->widget->m_albumsCoB->itemData(d->widget->m_albumsCoB->currentIndex()).toString();
+        int colonIdx       = data.indexOf(QLatin1Char(':'));
+        d->currentAlbumID  = data.left(colonIdx).toLongLong();
         d->currentAlbumKey = data.right(data.length() - colonIdx - 1);
 
-        d->imagesTotal = d->transferQueue.count();
-        d->imagesCount = 0;
+        d->imagesTotal     = d->transferQueue.count();
+        d->imagesCount     = 0;
 
         d->widget->progressBar()->setFormat(i18n("%v / %m"));
         d->widget->progressBar()->setMaximum(d->imagesTotal);

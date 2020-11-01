@@ -334,7 +334,7 @@ bool ShowfotoThumbnailModel::getThumbnail(const ShowfotoItemInfo& itemInfo, QIma
     return false;
 }
 
-bool ShowfotoThumbnailModel::pixmapForItem(QString url, QPixmap& pix) const
+bool ShowfotoThumbnailModel::pixmapForItem(const QString& url, QPixmap& pix) const
 {
     double ratio  = qApp->devicePixelRatio();
     int thumbSize = qRound((double)d->thumbSize.size() * ratio);

@@ -134,7 +134,7 @@ public:
     void setShowPhotoMode(bool show);
 
     QFont getToolTipFont() const;
-    void setToolTipFont(QFont font);
+    void setToolTipFont(const QFont& font);
 
 private:
 

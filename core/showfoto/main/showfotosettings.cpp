@@ -51,29 +51,29 @@ class Q_DECL_HIDDEN ShowfotoSettings::Private
 public:
 
     explicit Private()
-      : deleteItem2Trash(true),
-        showFormatOverThumbnail(false),
-        showCoordinates(false),
-        showSplash(true),
-        nativeFileDialog(false),
-        itemCenter(false),
-        reverseSort(false),
-        showToolTip(true),
-        showFileName(true),
-        showFileDate(false),
-        showFileSize(false),
-        showFileType(false),
-        showFileDim(true),
-        showPhotoMake(true),
-        showPhotoLens(true),
-        showPhotoFocal(true),
-        showPhotoExpo(true),
-        showPhotoFlash(false),
-        showPhotoWB(false),
-        showPhotoDate(true),
-        showPhotoMode(false),
-        rightSideBarStyle(0),
-        sortOrder(0)
+      : deleteItem2Trash        (true),
+        showFormatOverThumbnail (false),
+        showCoordinates         (false),
+        showSplash              (true),
+        nativeFileDialog        (false),
+        itemCenter              (false),
+        reverseSort             (false),
+        showToolTip             (true),
+        showFileName            (true),
+        showFileDate            (false),
+        showFileSize            (false),
+        showFileType            (false),
+        showFileDim             (true),
+        showPhotoMake           (true),
+        showPhotoLens           (true),
+        showPhotoFocal          (true),
+        showPhotoExpo           (true),
+        showPhotoFlash          (false),
+        showPhotoWB             (false),
+        showPhotoDate           (true),
+        showPhotoMode           (false),
+        rightSideBarStyle       (0),
+        sortOrder               (0)
     {
     }
 
@@ -215,7 +215,7 @@ ShowfotoSettings* ShowfotoSettings::instance()
 
 ShowfotoSettings::ShowfotoSettings()
     : QObject(),
-      d(new Private)
+      d      (new Private)
 {
     d->config = KSharedConfig::openConfig();
     d->group  = d->config->group(d->configGroupDefault);
@@ -534,7 +534,7 @@ void ShowfotoSettings::setShowPhotoMode(bool show)
     d->group.writeEntry(d->configShowPhotoMode, show);
 }
 
-void ShowfotoSettings::setToolTipFont(QFont font)
+void ShowfotoSettings::setToolTipFont(const QFont& font)
 {
     d->group.writeEntry(d->configToolTipsFont, font);
 }
