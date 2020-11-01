@@ -32,9 +32,9 @@ namespace Digikam
 {
 
 FaceScanWidget::FaceScanWidget(QWidget* const parent)
-    : QTabWidget(parent),
+    : QTabWidget       (parent),
       StateSavingObject(this),
-      d(new Private)
+      d                (new Private)
 {
     setObjectName(d->configName);
     setupUi();
@@ -188,7 +188,8 @@ void FaceScanWidget::setupUi()
     d->helpButton = new QPushButton(QIcon::fromTheme(QLatin1String("help-browser")), buttonText);
     d->helpButton->setToolTip(i18nc("@info","Help"));
 
-    connect(d->helpButton, &QPushButton::clicked, []()
+    connect(d->helpButton, &QPushButton::clicked,
+            this, []()
         {
             FaceManagementHelpDlg* const helpBox = new FaceManagementHelpDlg(qApp->activeWindow());
             helpBox->show();

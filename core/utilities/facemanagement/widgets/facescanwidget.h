@@ -45,15 +45,15 @@ class FaceScanWidget : public QTabWidget,
 public:
 
     explicit FaceScanWidget(QWidget* const parent = nullptr);
-    ~FaceScanWidget() override;
+    ~FaceScanWidget()                 override;
 
     bool settingsConflicted()   const;
     FaceScanSettings settings() const;
 
 protected:
 
-    void doLoadState() override;
-    void doSaveState() override;
+    void doLoadState()                override;
+    void doSaveState()                override;
 
 private:
 
