@@ -175,7 +175,7 @@ int ParallelWorkers::replacementStaticQtMetacall(QMetaObject::Call _c, int _id, 
         // Copy the argument data - _a is going to be deleted in our current thread
 
         QList<QByteArray> types       = method.parameterTypes();
-        QVector<QGenericArgument> args(10);
+        QVector<QGenericArgument> args(10);                         // clazy:exclude=missing-typeinfo
 
         for (int i = 0 ; i < types.size() ; ++i)
         {
