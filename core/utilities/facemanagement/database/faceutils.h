@@ -47,8 +47,11 @@ class DImg;
 class ThumbnailLoadThread;
 class ThumbnailImageCatcher;
 
-class FaceUtils : public FaceTagsEditor
+class FaceUtils : public QObject,
+                  public FaceTagsEditor
 {
+    Q_OBJECT
+
 public:
 
     enum FaceRecognitionSteps
@@ -60,7 +63,7 @@ public:
 public:
 
     explicit FaceUtils();
-    ~FaceUtils()                                               override;
+    ~FaceUtils()                                                                              override;
 
     // --- Face detection and recognition ---
 
@@ -139,9 +142,9 @@ public:
 protected:
 
     // Reimplemented
-    void addNormalTag(qlonglong imageid, int tagId)                   override;
-    void removeNormalTag(qlonglong imageid, int tagId)                override;
-    void removeNormalTags(qlonglong imageid, const QList<int>& tagId) override;
+    void addNormalTag(qlonglong imageid, int tagId)                                           override;
+    void removeNormalTag(qlonglong imageid, int tagId)                                        override;
+    void removeNormalTags(qlonglong imageid, const QList<int>& tagId)                         override;
 
 private:
 

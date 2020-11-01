@@ -54,6 +54,7 @@ namespace Digikam
 // --- Constructor / Destructor -------------------------------------------------------------------------------------
 
 FaceUtils::FaceUtils()
+    : QObject()
 {
 }
 
@@ -321,9 +322,10 @@ void FaceUtils::addNormalTag(qlonglong imageId, int tagId)
      * Utilising a QTimer to ensure that a new TAlbum
      * is given time to be created, before assigning Icon.
      */
-    QTimer::singleShot(200, [=]()
+    QTimer::singleShot(200, this, [=]()
         {
-            if (!FaceTags::isTheIgnoredPerson(tagId)  &&
+            if (
+                !FaceTags::isTheIgnoredPerson(tagId)  &&
                 !FaceTags::isTheUnknownPerson(tagId)  &&
                 !FaceTags::isTheUnconfirmedPerson(tagId)
                )
@@ -351,7 +353,8 @@ void FaceUtils::removeNormalTag(qlonglong imageId, int tagId)
 {
     FileActionMngr::instance()->removeTag(ItemInfo(imageId), tagId);
 
-    if (!FaceTags::isTheIgnoredPerson(tagId)  &&
+    if (
+        !FaceTags::isTheIgnoredPerson(tagId)  &&
         !FaceTags::isTheUnknownPerson(tagId)  &&
         !FaceTags::isTheUnconfirmedPerson(tagId)
        )
