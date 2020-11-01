@@ -167,4 +167,5 @@ BUGFIXES:
 152 ==> 388899 - Assigning color labels from right side menu is different than over context menu.
 153 ==> 428427 - Some metadata (tags, captions) not applying to grouped images.
 154 ==> 424437 - Batch deleting duplicates.
-155 ==> 
+155 ==> 428558 - With batch workflow lens correction doesn't use metadata.
+156 ==> 
