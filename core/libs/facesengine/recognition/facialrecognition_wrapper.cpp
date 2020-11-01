@@ -83,7 +83,7 @@ void FacialRecognitionWrapper::vacuum()
 
     QMutexLocker lock(&d->mutex);
 
-    return FaceDbAccess().db()->vacuum();
+    FaceDbAccess().db()->vacuum();
 }
 
 } // namespace Digikam

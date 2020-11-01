@@ -77,7 +77,7 @@ public:
      */
     void        setParameter(const QString& parameter, const QVariant& value);
     void        setParameters(const QVariantMap& parameters);
-    QVariantMap parameters() const;
+    QVariantMap parameters()                                                const;
 
     // --- Identity management (facesengine_interface_identity.cpp) -----------------------------------------
 
@@ -86,14 +86,14 @@ public:
     /**
      * Returns all identities known to the database
      */
-    QList<Identity> allIdentities()  const;
-    Identity        identity(int id) const;
+    QList<Identity> allIdentities()                                         const;
+    Identity        identity(int id)                                        const;
 
     /**
      * Finds the first identity with matching attribute - value.
      * Returns a null identity if no match is found or attribute is empty.
      */
-    Identity findIdentity(const QString& attribute, const QString& value) const;
+    Identity findIdentity(const QString& attribute, const QString& value)   const;
 
     /**
      * Finds the identity matching the given attributes.
@@ -101,7 +101,7 @@ public:
      * Secondly, all unknown attributes are used.
      * Returns a null Identity if no match is possible or the map is empty.
      */
-    Identity findIdentity(const QMap<QString, QString>& attributes) const;
+    Identity findIdentity(const QMap<QString, QString>& attributes)         const;
 
     /**
      * Adds a new identity with the specified attributes.
@@ -145,9 +145,11 @@ public:
      * (It is assumed that training from different contexts is based on
      * non-overlapping collections of images. Keep it always constant for your app.)
      */
-    void train(const QList<Identity>& identitiesToBeTrained, TrainingDataProvider* const data,
+    void train(const QList<Identity>& identitiesToBeTrained,
+               TrainingDataProvider* const data,
                const QString& trainingContext);
-    void train(const Identity& identityToBeTrained, TrainingDataProvider* const data,
+    void train(const Identity& identityToBeTrained,
+               TrainingDataProvider* const data,
                const QString& trainingContext);
 
     /**
@@ -157,9 +159,11 @@ public:
      * If you want good performance and/or a more versatile implementation, be sure to
      * implement your own TrainingDataProvider and use one of the above functions.
      */
-    void train(const Identity& identityToBeTrained, QImage* image,
+    void train(const Identity& identityToBeTrained,
+               QImage* image,
                const QString& trainingContext);
-    void train(const Identity& identityToBeTrained, const QList<QImage*>& images,
+    void train(const Identity& identityToBeTrained,
+               const QList<QImage*>& images,
                const QString& trainingContext);
 
     /**
@@ -172,7 +176,8 @@ public:
      * Deletes the training data for the given identity,
      * leaving the identity as such in the database.
      */
-    void clearTraining(const QList<Identity>& identitiesToClean, const QString& trainingContext = QString());
+    void clearTraining(const QList<Identity>& identitiesToClean,
+                       const QString& trainingContext = QString());
 
     // --- Recognition management (facesengine_interface_recognize.cpp) -------------------
 

@@ -173,9 +173,11 @@ Identity FacialRecognitionWrapper::findIdentity(const QMap<QString, QString>& at
 
     for (it = attributes.begin() ; it != attributes.end() ; ++it)
     {
-        if ((it.key() == QLatin1String("uuid"))     ||
+        if (
+            (it.key() == QLatin1String("uuid"))     ||
             (it.key() == QLatin1String("fullName")) ||
-            (it.key() == QLatin1String("name")))
+            (it.key() == QLatin1String("name"))
+           )
         {
             continue;
         }
