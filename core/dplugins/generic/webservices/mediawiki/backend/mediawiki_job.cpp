@@ -35,7 +35,7 @@ namespace MediaWiki
 {
 
 Job::Job(JobPrivate& dd, QObject* const parent)
-    : KJob(parent),
+    : KJob (parent),
       d_ptr(&dd)
 {
     setCapabilities(Job::Killable);

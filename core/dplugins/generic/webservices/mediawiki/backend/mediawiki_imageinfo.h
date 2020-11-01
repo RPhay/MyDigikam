@@ -32,10 +32,6 @@
 #include <QUrl>
 #include <QVariant>
 
-// Local includes
-
-
-
 namespace MediaWiki
 {
 
@@ -66,20 +62,20 @@ public:
      * @brief Assigning an image info from an other image info.
      * @param other an other image info
      */
-    Imageinfo& operator=(Imageinfo other);
+    Imageinfo& operator=(const Imageinfo& other);
 
     /**
      * @brief Returns true if this instance and other are equal, else false.
      * @param other instance to compare
      * @return true if there are equal, else false
      */
-    bool operator==(const Imageinfo& other) const;
+    bool operator==(const Imageinfo& other)     const;
 
     /**
      * @brief Get the time and date of the revision.
      * @return the time and date of the revision
      */
-    QDateTime timestamp() const;
+    QDateTime timestamp()                       const;
 
     /**
      * @brief Set the time and date of the revision.
@@ -91,7 +87,7 @@ public:
      * @brief Get the user who made the revision.
      * @return the user who made the revision
      */
-    QString user() const;
+    QString user()                              const;
 
     /**
      * @brief Set the user who made the revision.
@@ -103,7 +99,7 @@ public:
      * @brief Get the edit comment.
      * @return the edit comment
      */
-    QString comment() const;
+    QString comment()                           const;
 
     /**
      * @brief Set the edit comment.
@@ -115,7 +111,7 @@ public:
      * @brief Get the URL of the image.
      * @return the URL of the image
      */
-    QUrl url() const;
+    QUrl url()                                  const;
 
     /**
      * @brief Set the URL of the image.
@@ -127,7 +123,7 @@ public:
      * @brief Get the description URL of the image.
      * @return the description URL of the image
      */
-    QUrl descriptionUrl() const;
+    QUrl descriptionUrl()                       const;
 
     /**
      * @brief Set the description URL of the image.
@@ -139,7 +135,7 @@ public:
      * @brief Get the thumb URL of the image.
      * @return the thumb URL of the image
      */
-    QUrl thumbUrl() const;
+    QUrl thumbUrl()                             const;
 
     /**
      * @brief Get the thumb URL of the image.
@@ -151,7 +147,7 @@ public:
      * @brief Get the thumb width of the image.
      * @return the thumb width of the image
      */
-    qint64 thumbWidth() const;
+    qint64 thumbWidth()                         const;
 
     /**
      * @brief Set the thumb width of the image.
@@ -163,7 +159,7 @@ public:
      * @brief Get the thumb height of the image.
      * @return the thumb height of the image
      */
-    qint64 thumbHeight() const;
+    qint64 thumbHeight()                        const;
 
     /**
      * @brief Set the thumb height of the image.
@@ -175,7 +171,7 @@ public:
      * @brief Get the image's size in bytes.
      * @return the image's size in bytes
      */
-    qint64 size() const;
+    qint64 size()                               const;
 
     /**
      * @brief Set the image's size in bytes.
@@ -187,7 +183,7 @@ public:
      * @brief Get the image's width.
      * @return the image's width
      */
-    qint64 width() const;
+    qint64 width()                              const;
 
     /**
      * @brief Set the image's width.
@@ -199,7 +195,7 @@ public:
      * @brief Get the image's height.
      * @return the image's height
      */
-    qint64 height() const;
+    qint64 height()                             const;
 
     /**
      * @brief Set the image's height.
@@ -211,7 +207,7 @@ public:
      * @brief Get the image's SHA-1 hash.
      * @return the image's SHA-1 hash
      */
-    QString sha1() const;
+    QString sha1()                              const;
 
     /**
      * @brief Set the image's SHA-1 hash.
@@ -223,7 +219,7 @@ public:
      * @brief Get the image's MIME type.
      * @return the image's MIME type
      */
-    QString mime() const;
+    QString mime()                              const;
 
     /**
      * @brief Set the image's MIME type.
@@ -235,7 +231,7 @@ public:
      * @brief Get image metadata.
      * @return image metadata
      */
-    const QHash<QString, QVariant>& metadata() const;
+    const QHash<QString, QVariant>& metadata()  const;
 
     /**
      * @brief Get image metadata.

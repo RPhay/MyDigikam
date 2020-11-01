@@ -35,6 +35,10 @@ class Q_DECL_HIDDEN Image::Private
 {
 public:
 
+    Private()
+    {
+    }
+
     qint64  namespaceId;
     QString title;
 };
@@ -55,16 +59,19 @@ Image::~Image()
     delete d;
 }
 
-Image& Image::operator=(Image other)
+Image& Image::operator=(const Image& other)
 {
     *d = *other.d;
+
     return *this;
 }
 
 bool Image::operator==(const Image& other) const
 {
-    return namespaceId() == other.namespaceId() &&
-           title()       == other.title();
+    return (
+            (namespaceId() == other.namespaceId()) &&
+            (title()       == other.title())
+           );
 }
 
 qint64 Image::namespaceId() const
