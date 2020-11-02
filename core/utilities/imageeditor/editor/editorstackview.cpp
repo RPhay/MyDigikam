@@ -41,7 +41,7 @@ public:
 
     explicit Private()
       : toolView(nullptr),
-        canvas(nullptr)
+        canvas  (nullptr)
     {
     }
 
@@ -51,7 +51,7 @@ public:
 
 EditorStackView::EditorStackView(QWidget* const parent)
     : QStackedWidget(parent),
-      d(new Private)
+      d             (new Private)
 {
 }
 
@@ -281,7 +281,7 @@ void EditorStackView::slotZoomSliderChanged(int size)
 
         if (preview)
         {
-            return preview->layout()->setZoomFactorSnapped(z);
+            preview->layout()->setZoomFactorSnapped(z);
         }
     }
 }

@@ -47,7 +47,7 @@ class VersionsDelegate : public QStyledItemDelegate,
 public:
 
     explicit VersionsDelegate(QObject* const parent);
-    ~VersionsDelegate() override;
+    ~VersionsDelegate()                                                                               override;
 
     QSize sizeHint(const QStyleOptionViewItem& option, const QModelIndex& index)                const override;
     void paint(QPainter* painter, const QStyleOptionViewItem& option, const QModelIndex& index) const override;
@@ -66,13 +66,13 @@ Q_SIGNALS:
     void animationStateChanged();
     void visualChange(); // for ItemDelegateOverlayContainer
 
-    // for ItemDelegateOverlayContainer, unimplemented:
+    /// NOTE: for ItemDelegateOverlayContainer, unimplemented:
     void requestNotification(const QModelIndex& index, const QString& message);
     void hideNotification();
 
 protected Q_SLOTS:
 
-    void overlayDestroyed(QObject* o) override
+    void overlayDestroyed(QObject* o)                                                                 override
     {
         ItemDelegateOverlayContainer::overlayDestroyed(o);
     }
@@ -90,6 +90,8 @@ protected:
 private:
 
     VersionsDelegate(); // Disable default constructor.
+
+private:
 
     class Private;
     Private* const d;

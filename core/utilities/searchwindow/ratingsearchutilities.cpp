@@ -52,7 +52,7 @@ namespace Digikam
 {
 
 RatingStarDrawer::RatingStarDrawer()
-    : m_starPolygon(RatingWidget::starPolygon()),
+    : m_starPolygon    (RatingWidget::starPolygon()),
       m_starPolygonSize(QSize(15, 15))
 {
 }
@@ -119,7 +119,7 @@ void RatingComboBoxDelegate::paint(QPainter* painter, const QStyleOptionViewItem
     }
     else
     {
-        return QItemDelegate::paint(painter, option, index);
+        QItemDelegate::paint(painter, option, index);
     }
 }
 
@@ -306,8 +306,9 @@ void RatingComboBoxWidget::paintEvent(QPaintEvent* e)
 {
     if      (m_value >= RatingComboBox::Rating0)
     {
-        //qCDebug(DIGIKAM_GENERAL_LOG) << "m_value" << m_value << "defaulting paint to parent" << this;
-
+/*
+        qCDebug(DIGIKAM_GENERAL_LOG) << "m_value" << m_value << "defaulting paint to parent" << this;
+*/
         RatingWidget::paintEvent(e);
     }
     else if (m_value == RatingComboBox::NoRating)
@@ -343,7 +344,7 @@ void RatingComboBoxWidget::paintEvent(QPaintEvent* e)
         {
             p.setRenderHint(QPainter::Antialiasing, true);
 /*
-            //pen.setJoinStyle(Qt::MiterJoin);
+            pen.setJoinStyle(Qt::MiterJoin);
 */
             QColor foreground = palette().color(QPalette::Active, QPalette::WindowText);
             QColor background = palette().color(QPalette::Active, QPalette::Window);
