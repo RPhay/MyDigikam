@@ -3,6 +3,7 @@ digiKam 7.2.0-beta1 - Release date: 2020-10-18
 *****************************************************************************************************
 NEW FEATURES:
 
+Genral        : Check and fix source codes with Clazy static analyzer.
 General       : All bundles updated to last KF5 framework version 5.74.
 General       : All bundles updated to last OpenCV version 4.4.0.
 General       : Add fast string sorter cache based on QCollatorSortKey.
@@ -168,4 +169,4 @@ BUGFIXES:
 153 ==> 428427 - Some metadata (tags, captions) not applying to grouped images.
 154 ==> 424437 - Batch deleting duplicates.
 155 ==> 428558 - With batch workflow lens correction doesn't use metadata.
-156 ==> 
+156 ==> 428472 - digiKam doesn't come up as it can't update db schema from 9 to 10.
