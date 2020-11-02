@@ -93,7 +93,7 @@ public:
 
 ImgurTalker::ImgurTalker(QObject* const parent)
     : QObject(parent),
-      d(new Private)
+      d      (new Private)
 {
     d->auth.setClientId(d->client_id);
     d->auth.setClientSecret(d->client_secret);
@@ -304,7 +304,8 @@ void ImgurTalker::timerEvent(QTimerEvent* event)
 {
     if (event->timerId() != d->workTimer)
     {
-        return QObject::timerEvent(event);
+        QObject::timerEvent(event);
+        return;
     }
 
     event->accept();
@@ -377,6 +378,7 @@ void ImgurTalker::doWork()
             d->reply = d->net.get(request);
             break;
         }
+
         case ImgurTalkerActionType::ANON_IMG_UPLOAD:
         case ImgurTalkerActionType::IMG_UPLOAD:
         {
@@ -391,7 +393,8 @@ void ImgurTalker::doWork()
                 emit signalError(i18n("Could not open file"), d->workQueue.first());
 
                 d->workQueue.dequeue();
-                return doWork();
+                doWork();
+                return;
             }
 
             // Set ownership to d->image to delete that as well.

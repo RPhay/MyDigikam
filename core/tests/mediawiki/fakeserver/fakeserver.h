@@ -52,7 +52,7 @@ public:
         }
 
         Request(const QString& t, const QString& a, const QString& v)
-            : type(t),
+            : type (t),
               agent(a),
               value(v)
         {

@@ -34,8 +34,8 @@
 #include <QFile>
 
 FakeServer::FakeServer(QObject* const parent)
-    :  QThread(parent),
-       m_tcpServer(nullptr),
+    :  QThread       (parent),
+       m_tcpServer   (nullptr),
        m_clientSocket(nullptr)
 {
     moveToThread(this);
@@ -126,7 +126,7 @@ void FakeServer::run()
 
 void FakeServer::started()
 {
-  // do nothing: this is a dummy slot used by startAndWait()
+    // do nothing: this is a dummy slot used by startAndWait()
 }
 
 void FakeServer::setScenario(const QString& scenario, const QString& cookie)
@@ -219,5 +219,5 @@ FakeServer::Request FakeServer::takeFirstRequest()
 
 void FakeServer::clearRequest()
 {
-    return m_request.clear();
+    m_request.clear();
 }

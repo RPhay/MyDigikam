@@ -115,7 +115,8 @@ protected:
 
 // -------------------------------------------------------------------------
 
-class RatingComboBoxWidget : public RatingWidget, public RatingStarDrawer
+class RatingComboBoxWidget : public RatingWidget,
+                             public RatingStarDrawer
 {
     Q_OBJECT
 

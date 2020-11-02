@@ -31,7 +31,7 @@ class Q_DECL_HIDDEN VisibilityController::Private
 public:
 
     explicit Private()
-      : status(VisibilityController::Unknown),
+      : status         (VisibilityController::Unknown),
         containerWidget(nullptr)
     {
     }
@@ -56,7 +56,7 @@ public:
 
     void setVisible(bool visible) override
     {
-        return m_widget->setVisible(visible);
+        m_widget->setVisible(visible);
     }
 
     bool isVisible() override

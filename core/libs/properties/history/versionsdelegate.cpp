@@ -54,15 +54,15 @@ class Q_DECL_HIDDEN VersionsDelegate::Private
 public:
 
     explicit Private()
-        : categoryExtraSpacing(6),
+        : categoryExtraSpacing  (6),
           filterItemExtraSpacing(4),
-          animationState(0),
-          animation(nullptr),
-          workingPixmap(nullptr),
-          categoryDrawer(nullptr),
-          thumbnailSize(64),
-          thumbsWaitingFor(0),
-          inSizeHint(false)
+          animationState        (0),
+          animation             (nullptr),
+          workingPixmap         (nullptr),
+          categoryDrawer        (nullptr),
+          thumbnailSize         (64),
+          thumbsWaitingFor      (0),
+          inSizeHint            (false)
     {
     }
 
@@ -100,7 +100,7 @@ public:
 
 VersionsDelegate::VersionsDelegate(QObject* const parent)
     : QStyledItemDelegate(parent),
-      d(new Private)
+      d                  (new Private)
 {
     d->workingPixmap  = new DWorkingPixmap(this);
     d->categoryDrawer = new DCategoryDrawer(nullptr);
@@ -150,8 +150,9 @@ void VersionsDelegate::beginPainting()
 
 void VersionsDelegate::finishPainting()
 {
-    //qCDebug(DIGIKAM_GENERAL_LOG) << "painting finished" << d->thumbsWaitingFor;
-
+/*
+    qCDebug(DIGIKAM_GENERAL_LOG) << "painting finished" << d->thumbsWaitingFor;
+*/
     if (d->thumbsWaitingFor)
     {
         d->animation->start();
@@ -206,7 +207,9 @@ void VersionsDelegate::paint(QPainter* painter, const QStyleOptionViewItem& opti
     {
         QStyleOption opt = option;
         opt.rect.adjust(d->categoryExtraSpacing / 2, d->categoryExtraSpacing / 2, - d->categoryExtraSpacing / 2, 0);
+
         // purpose of sortRole is unclear, give Qt::DisplayRole
+
         d->categoryDrawer->drawCategory(index, Qt::DisplayRole, opt, painter);
     }
     else if (index.data(ItemHistoryGraphModel::IsSeparatorItemRole).toBool())
@@ -215,8 +218,8 @@ void VersionsDelegate::paint(QPainter* painter, const QStyleOptionViewItem& opti
     }
     else
     {
-        return QStyledItemDelegate::paint(painter, option, index);
-
+        QStyledItemDelegate::paint(painter, option, index);
+        return;
 /*
         if (index.data(ItemHistoryGraphModel::IsSubjectImageRole).toBool())
         {
@@ -236,6 +239,7 @@ void VersionsDelegate::initStyleOption(QStyleOptionViewItem* option, const QMode
     QStyledItemDelegate::initStyleOption(option, index);
 
     // Don't show the separator-like focus indicator
+
     option->state &= ~QStyle::State_HasFocus;
 
     if (!index.data(ItemHistoryGraphModel::IsImageItemRole).toBool())

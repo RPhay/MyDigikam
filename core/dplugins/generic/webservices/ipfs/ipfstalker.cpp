@@ -61,32 +61,39 @@ public:
     }
 
     // Work queue
+
     QQueue<IpfsTalkerAction>     workQueue;
 
     // ID of timer triggering on idle (0ms).
+
     int                          workTimer;
 
     // Current QNetworkReply
+
     QNetworkReply*               reply;
 
     // Current image being uploaded
+
     QFile*                       image;
 
     // The QNetworkAccessManager used for connections
+
     QNetworkAccessManager        netMngr;
 };
 
 IpfsTalker::IpfsTalker(QObject* const parent)
     : QObject(parent),
-      d(new Private)
+      d      (new Private)
 {
 }
 
 IpfsTalker::~IpfsTalker()
 {
     // Disconnect all signals as cancelAllWork may emit
+
     disconnect(this, nullptr, nullptr, nullptr);
     cancelAllWork();
+
     delete d;
 }
 
@@ -145,12 +152,14 @@ void IpfsTalker::replyFinished()
     }
 
     // toInt() returns 0 if conversion fails. That fits nicely already.
+
     int netCode   = reply->attribute(QNetworkRequest::HttpStatusCodeAttribute).toInt();
     auto response = QJsonDocument::fromJson(reply->readAll());
 
     if ((netCode == 200) && !response.isEmpty())
     {
         /* Success! */
+
         IpfsTalkerResult result;
         result.action = &d->workQueue.first();
 
@@ -186,7 +195,8 @@ void IpfsTalker::replyFinished()
         }
         else
         {
-            /* Failed.
+            /*
+             * Failed.
              */
             auto msg = response.object()[QLatin1String("data")]
                        .toObject()[QLatin1String("error")]
@@ -197,6 +207,7 @@ void IpfsTalker::replyFinished()
     }
 
     // Next work item.
+
     d->workQueue.dequeue();
     startWorkTimer();
 }
@@ -204,11 +215,15 @@ void IpfsTalker::replyFinished()
 void IpfsTalker::timerEvent(QTimerEvent* event)
 {
     if (event->timerId() != d->workTimer)
-        return QObject::timerEvent(event);
+    {
+        QObject::timerEvent(event);
+        return;
+    }
 
     event->accept();
 
     // One-shot only.
+
     QObject::killTimer(event->timerId());
     d->workTimer = 0;
 

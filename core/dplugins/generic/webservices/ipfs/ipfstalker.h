@@ -81,7 +81,7 @@ Q_OBJECT
 public:
 
     explicit IpfsTalker(QObject* const parent = nullptr);
-    ~IpfsTalker() override;
+    ~IpfsTalker()                           override;
 
     unsigned int workQueueLength();
     void queueWork(const IpfsTalkerAction& action);
@@ -108,7 +108,7 @@ public Q_SLOTS:
 
 protected:
 
-    void timerEvent(QTimerEvent* event) override;
+    void timerEvent(QTimerEvent* event)     override;
 
 private:
 

@@ -58,7 +58,7 @@ public:
 public:
 
     explicit RegionFrameItem(QGraphicsItem* const parent);
-    ~RegionFrameItem() override;
+    ~RegionFrameItem()                                              override;
 
     void  setFlags(Flags flags);
     void  changeFlags(Flags flags, bool addOrRemove);
@@ -72,7 +72,7 @@ public:
      */
     void             setHudWidget(QGraphicsWidget* const hudWidget);
     void             setHudWidget(QWidget* const widget, Qt::WindowFlags wFlags = Qt::WindowFlags());
-    QGraphicsWidget* hudWidget() const;
+    QGraphicsWidget* hudWidget()                      const;
     void             setHudWidgetVisible(bool visible);
 
     void setFixedRatio(double ratio);
@@ -99,8 +99,8 @@ Q_SIGNALS:
 protected:
 
     void paint(QPainter* painter,
-                       const QStyleOptionGraphicsItem* option,
-                       QWidget* widget = nullptr)                   override;
+               const QStyleOptionGraphicsItem* option,
+               QWidget* widget = nullptr)                   override;
     void mousePressEvent(QGraphicsSceneMouseEvent*)         override;
     void mouseMoveEvent(QGraphicsSceneMouseEvent*)          override;
     void mouseReleaseEvent(QGraphicsSceneMouseEvent*)       override;

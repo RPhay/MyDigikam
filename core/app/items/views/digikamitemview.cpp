@@ -400,7 +400,8 @@ void DigikamItemView::confirmFaces(const QList<QModelIndex>& indexes, int tagId)
      */
     if (FaceTags::isTheIgnoredPerson(tagId))
     {
-        return rejectFaces(indexes);
+        rejectFaces(indexes);
+        return;
     }
 
     QList<ItemInfo>      infos;
