@@ -124,7 +124,8 @@ void FacePipeline::plugParallelFaceDetectors()
 {
     if (QThread::idealThreadCount() <= 1)
     {
-        return plugFaceDetector();
+        plugFaceDetector();
+        return;
     }
 
     // limit number of parallel detectors to 3, because of memory cost (cascades)
@@ -184,7 +185,7 @@ void FacePipeline::construct()
         qCDebug(DIGIKAM_GENERAL_LOG) << "Face PipeLine: add preview thread";
     }
 
-    if (d->parallelDetectors)
+    if      (d->parallelDetectors)
     {
         d->pipeline << d->parallelDetectors;
         qCDebug(DIGIKAM_GENERAL_LOG) << "Face PipeLine: add parallel thread detectors";
@@ -364,7 +365,7 @@ FaceTagsIface FacePipeline::addManually(const ItemInfo& info,
                                         const DImg& image,
                                         const TagRegion& assignedRegion)
 {
-    FacePipelineFaceTagsIface face; // giving a null face => no existing face yet, add it
+    FacePipelineFaceTagsIface face;     // giving a null face => no existing face yet, add it
     face.assignedTagId                        = -1;
     face.assignedRegion                       = assignedRegion;
     face.roles                               |= FacePipelineFaceTagsIface::ForEditing;

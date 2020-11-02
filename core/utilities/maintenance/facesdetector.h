@@ -57,18 +57,19 @@ public:
 
 public:
 
-    explicit FacesDetector(const FaceScanSettings& settings, ProgressItem* const parent = nullptr);
-    ~FacesDetector()                                        override;
+    explicit FacesDetector(const FaceScanSettings& settings,
+                           ProgressItem* const parent = nullptr);
+    ~FacesDetector()                                                override;
 
 private Q_SLOTS:
 
-    void slotStart()                                        override;
+    void slotStart()                                                override;
     void slotContinueAlbumListing();
     void slotItemsInfo(const ItemInfoList&);
     void slotImagesSkipped(const QList<ItemInfo>&);
     void slotShowOneDetected(const FacePipelinePackage&);
-    void slotDone()                                         override;
-    void slotCancel()                                       override;
+    void slotDone()                                                 override;
+    void slotCancel()                                               override;
 
 private:
 

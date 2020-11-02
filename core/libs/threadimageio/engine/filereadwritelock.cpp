@@ -465,7 +465,7 @@ bool FileReadWriteLockKey::tryLockForWrite(int timeout)
 
 void FileReadWriteLockKey::unlock()
 {
-    return static_d->unlock(d);
+    static_d->unlock(d);
 }
 
 // -------------------------------------------------------------------------

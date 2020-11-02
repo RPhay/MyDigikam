@@ -101,6 +101,7 @@ void FacePreviewLoader::slotImageLoaded(const LoadingDescription& loadingDescrip
 
     package->image         = img;
     package->processFlags |= FacePipelinePackage::PreviewImageLoaded;
+
     emit processed(package);
 }
 

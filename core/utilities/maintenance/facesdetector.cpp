@@ -115,7 +115,7 @@ public:
 
 FacesDetector::FacesDetector(const FaceScanSettings& settings, ProgressItem* const parent)
     : MaintenanceTool(QLatin1String("FacesDetector"), parent),
-      d(new Private)
+      d              (new Private)
 {
     setLabel(i18n("Updating faces database."));
     ProgressManager::addProgressItem(this);
@@ -277,10 +277,12 @@ void FacesDetector::slotStart()
 
         if (d->infoTodoList.isEmpty())
         {
-            return slotDone();
+            slotDone();
+            return;
         }
 
-        return slotItemsInfo(d->infoTodoList);
+        slotItemsInfo(d->infoTodoList);
+        return;
     }
     else if (d->source == FacesDetector::Ids)
     {
@@ -293,10 +295,12 @@ void FacesDetector::slotStart()
 
         if (itemInfos.isEmpty())
         {
-            return slotDone();
+            slotDone();
+            return;
         }
 
-        return slotItemsInfo(itemInfos);
+        slotItemsInfo(itemInfos);
+        return;
     }
 
     setUsesBusyIndicator(true);
@@ -378,7 +382,8 @@ void FacesDetector::slotContinueAlbumListing()
 {
     if (d->source != FacesDetector::Albums)
     {
-        return slotDone();
+        slotDone();
+        return;
     }
 
     qCDebug(DIGIKAM_GENERAL_LOG) << d->albumListing.isRunning() << !d->pipeline.hasFinished();
@@ -398,7 +403,8 @@ void FacesDetector::slotContinueAlbumListing()
     {
         if (d->albumTodoList.isEmpty())
         {
-            return slotDone();
+            slotDone();
+            return;
         }
 
         album = d->albumTodoList.takeFirst();

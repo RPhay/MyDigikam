@@ -76,7 +76,7 @@ bool FaceUtils::hasBeenScanned(const ItemInfo& info) const
 
 void FaceUtils::markAsScanned(qlonglong imageid, bool hasBeenScanned) const
 {
-    return markAsScanned(ItemInfo(imageid), hasBeenScanned);
+    markAsScanned(ItemInfo(imageid), hasBeenScanned);
 }
 
 void FaceUtils::markAsScanned(const ItemInfo& info, bool hasBeenScanned) const
