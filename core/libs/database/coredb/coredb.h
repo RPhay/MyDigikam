@@ -73,7 +73,7 @@ public:
      * @return The values which belongs to the keyword, or a null string if
      *         no value is set.
      */
-    QString getSetting(const QString& keyword) const;
+    QString getSetting(const QString& keyword)                                                                      const;
 
     /**
      * Get the settings for the file name filters of this database.
@@ -119,11 +119,11 @@ public:
      * Returns the version used for the unique hash in this database.
      * The value is cached.
      */
-    int getUniqueHashVersion() const;
+    int getUniqueHashVersion()                                                                                      const;
 
     void setUniqueHashVersion(int version);
 
-    bool isUniqueHashV2() const;
+    bool isUniqueHashV2()                                                                                           const;
 
     // ----------- AlbumRoot operations -----------
 
@@ -131,7 +131,7 @@ public:
      * Returns all albums and their attributes in the database
      * @return a list of albums and their attributes
      */
-    QList<AlbumRootInfo> getAlbumRoots() const;
+    QList<AlbumRootInfo> getAlbumRoots()                                                                            const;
 
     /**
      * Add a new album to the database with the given attributes
@@ -140,7 +140,8 @@ public:
      * @param label        An (optional) user-visible label
      * @returns the album root id of the newly created root
      */
-    int addAlbumRoot(AlbumRoot::Type type, const QString& identifier, const QString& specificPath, const QString& label) const;
+    int addAlbumRoot(AlbumRoot::Type type, const QString& identifier,
+                     const QString& specificPath, const QString& label)                                             const;
 
     /**
      * Deletes an album  root from the database.
@@ -179,32 +180,32 @@ public:
      * Returns all albums and their attributes in the database
      * @return a list of albums and their attributes
      */
-    AlbumInfo::List scanAlbums() const;
+    AlbumInfo::List scanAlbums()                                                                                    const;
 
     /**
      * Returns all tags and their attributes in the database
      * @return a list of tags and their attributes
      */
-    TagInfo::List scanTags() const;
-    TagInfo getTagInfo(int tagId) const;
+    TagInfo::List scanTags()                                                                                        const;
+    TagInfo getTagInfo(int tagId)                                                                                   const;
 
     /**
      * Returns all searches from the database
      * @return a list of searches from the database
      */
-    SearchInfo::List scanSearches() const;
+    SearchInfo::List scanSearches()                                                                                 const;
 
     /**
      * Returns all albums in the database with their albumRoot and ID,
      * ordered by id.
      */
-    QList<AlbumShortInfo> getAlbumShortInfos() const;
+    QList<AlbumShortInfo> getAlbumShortInfos()                                                                      const;
 
     /**
      * Returns all tags in the database with their parent id and name,
      * ordered by id.
      */
-    QList<TagShortInfo> getTagShortInfos() const;
+    QList<TagShortInfo> getTagShortInfos()                                                                          const;
 
     // ----------- Operations on PAlbums -----------
 
@@ -219,7 +220,7 @@ public:
      */
     int addAlbum(int albumRootId, const QString& relativePath,
                  const QString& caption,
-                 const QDate& date, const QString& collection) const;
+                 const QDate& date, const QString& collection)                                                      const;
 
     /**
      * Find out the album for a given folder.
@@ -230,7 +231,7 @@ public:
      * @return The albumID for that folder,
      *         or -1 if it does not exist and create is false.
      */
-    int  getAlbumForPath(int albumRootId, const QString& relativePath, bool create = true) const;
+    int  getAlbumForPath(int albumRootId, const QString& relativePath, bool create = true)                          const;
 
     /**
      * Find out the album ids for a given relative path, including the subalbums.
@@ -238,13 +239,13 @@ public:
      * @param relativePath The path for which you want the albumIDs relative to the album root
      * @return a list of album ids. The list is empty if no albums are found.
      */
-    QList<int> getAlbumAndSubalbumsForPath(int albumRootId, const QString& relativePath) const;
+    QList<int> getAlbumAndSubalbumsForPath(int albumRootId, const QString& relativePath)                            const;
 
     /**
      * Find out all album ids of a given album root
      * @return a list of album ids.
      */
-    QList<int> getAlbumsOnAlbumRoot(int albumRootId) const;
+    QList<int> getAlbumsOnAlbumRoot(int albumRootId)                                                                const;
 
     /**
      * Deletes an album from the database. This will not delete the
@@ -269,7 +270,7 @@ public:
      * Both albums must exist.
      * @return true if the operations succeeds
      */
-    bool copyAlbumProperties(int srcAlbumID, int dstAlbumID) const;
+    bool copyAlbumProperties(int srcAlbumID, int dstAlbumID)                                                        const;
 
     /**
      * Give an existing album a new relativePath and a newAlbumRootId
@@ -309,7 +310,7 @@ public:
      * @param albumID the id of the albumdb
      * @return the id of the album root of this album
      */
-    int getAlbumRootId(int albumID) const;
+    int getAlbumRootId(int albumID)                                                                                 const;
 
     /**
      * Given an albumid, this returns the relative path for that album
@@ -317,40 +318,40 @@ public:
      * @param albumID the id of the album
      * @return the url of the album
      */
-    QString getAlbumRelativePath(int albumID) const;
+    QString getAlbumRelativePath(int albumID)                                                                       const;
 
     /**
      * Returns the lowest/oldest date of all images for that album.
      * @param albumID the id of the album to calculate
      * @return the date.
      */
-    QDate getAlbumLowestDate(int albumID) const;
+    QDate getAlbumLowestDate(int albumID)                                                                           const;
 
     /**
      * Returns the highest/newest date of all images for that album.
      * @param albumID the id of the album to calculate
      * @return the date.
      */
-    QDate getAlbumHighestDate(int albumID) const;
+    QDate getAlbumHighestDate(int albumID)                                                                          const;
 
     /**
      * Returns the average date of all images for that album.
      * @param albumID the id of the album to calculate
      * @return the date.
      */
-    QDate getAlbumAverageDate(int albumID) const;
+    QDate getAlbumAverageDate(int albumID)                                                                          const;
 
     /**
      * Returns the number of items in the album.
      * @param albumID the id of the album to calculate
      */
-    int getNumberOfItemsInAlbum(int albumID) const;
+    int getNumberOfItemsInAlbum(int albumID)                                                                        const;
 
     /**
      * Returns a QMap<int,int> of album id -> count of items
      * in the album
      */
-    QMap<int, int> getNumberOfImagesInAlbums() const;
+    QMap<int, int> getNumberOfImagesInAlbums()                                                                      const;
 
     // ----------- Operations on TAlbums -----------
 
@@ -365,14 +366,14 @@ public:
      * @return the id of the tag added or -1 if it failed
      */
     int addTag(int parentTagID, const QString& name,
-               const QString& iconKDE, qlonglong iconID) const;
+               const QString& iconKDE, qlonglong iconID)                                                            const;
 
     /**
      * Get a list of recently assigned tags (only last 6 tags are listed)
      * @return the list of recently assigned tags
      */
-    //TODO move to other place (AlbumManager)
-    QList<int> getRecentlyAssignedTags() const;
+    // TODO move to other place (AlbumManager)
+    QList<int> getRecentlyAssignedTags()                                                                            const;
 
     /**
      * Deletes a tag from the database. This will not delete the
@@ -409,17 +410,17 @@ public:
     /**
      * Returns the list of all tag properties (ordered by tag id, then property).
      */
-    QList<TagProperty> getTagProperties() const;
+    QList<TagProperty> getTagProperties()                                                                           const;
 
     /**
      * Returns the list of tag properties of the given tag.
      */
-    QList<TagProperty> getTagProperties(int tagID) const;
+    QList<TagProperty> getTagProperties(int tagID)                                                                  const;
 
     /**
      * Returns the list of tag properties with the given attribute.
      */
-    QList<TagProperty> getTagProperties(const QString& property) const;
+    QList<TagProperty> getTagProperties(const QString& property)                                                    const;
 
     /**
      * Adds a tag property. Note that this never replaces existing entries.
@@ -441,7 +442,7 @@ public:
      * Returns a list of tag ids with the specified property.
      * FIXME: Not tested, might not work at all.
      */
-    QList<int> getTagsWithProperty(const QString& property) const;
+    QList<int> getTagsWithProperty(const QString& property)                                                         const;
 
     // ----------- Operations on SAlbums -----------
 
@@ -452,7 +453,7 @@ public:
      * @param query      search query to use
      * @return the id of the album added or -1 if it failed
      */
-    int addSearch(DatabaseSearch::Type type, const QString& name, const QString& query) const;
+    int addSearch(DatabaseSearch::Type type, const QString& name, const QString& query)                             const;
 
     /**
      * Updates Search with new attributes
@@ -477,12 +478,12 @@ public:
     /**
      * Get information about the specified search
      */
-    SearchInfo getSearchInfo(int searchId) const;
+    SearchInfo getSearchInfo(int searchId)                                                                          const;
 
     /**
      * Get the query for the search specified by its id
      */
-    QString getSearchQuery(int searchId) const;
+    QString getSearchQuery(int searchId)                                                                            const;
 
     // ----------- Adding and deleting Items -----------
     /**
@@ -494,7 +495,7 @@ public:
                       DatabaseItem::Category category,
                       const QDateTime& modificationDate,
                       qlonglong fileSize,
-                      const QString& uniqueHash) const;
+                      const QString& uniqueHash)                                                                    const;
 
     /**
      * Deletes an item from the database.
@@ -556,7 +557,7 @@ public:
      * @param name the name of the item
      * @return the ImageId for the item, or -1 if it does not exist
      */
-    qlonglong getImageId(int albumID, const QString& name) const;
+    qlonglong getImageId(int albumID, const QString& name)                                                          const;
 
     /**
      * Get the imageId fitting to the information given for the item
@@ -565,14 +566,15 @@ public:
      * @param status the status of the item
      * @return the ImageIds for the item, or an empty list if there are no matching entries.
      */
-    QList<qlonglong> getImageIds(int albumID, const QString& name, DatabaseItem::Status status) const;
+    QList<qlonglong> getImageIds(int albumID, const QString& name,
+                                 DatabaseItem::Status status)                                                       const;
 
     /**
      * Returns all image ids with the given status.
      * @param status The status.
      * @return The ids of the images that have the given status.
      */
-    QList<qlonglong> getImageIds(DatabaseItem::Status status) const;
+    QList<qlonglong> getImageIds(DatabaseItem::Status status)                                                       const;
 
     /**
      * Returns all image ids with the given status and category.
@@ -580,7 +582,8 @@ public:
      * @param category The category.
      * @return The ids of the images that have the given status.
      */
-    QList<qlonglong> getImageIds(DatabaseItem::Status status, DatabaseItem::Category category) const;
+    QList<qlonglong> getImageIds(DatabaseItem::Status status,
+                                 DatabaseItem::Category category)                                                   const;
 
     /**
      * Find the imageId fitting to the information given for the item
@@ -596,7 +599,7 @@ public:
                           DatabaseItem::Status status,
                           DatabaseItem::Category category,
                           qlonglong fileSize,
-                          const QString& uniqueHash) const;
+                          const QString& uniqueHash)                                                                const;
 
     enum ItemSortOrder
     {
@@ -615,19 +618,19 @@ public:
      * @param recursive perform a recursive folder hierarchy parsing
      * @return It returns a QStringList with the filenames.
      */
-    QStringList getItemNamesInAlbum(int albumID, bool recursive = false) const;
+    QStringList getItemNamesInAlbum(int albumID, bool recursive = false)                                            const;
 
     /**
      * Returns all ids of items in images table.
      */
-    QList<qlonglong> getAllItems() const;
+    QList<qlonglong> getAllItems()                                                                                  const;
 
     /**
      * Returns all ids of items with album ids in images table.
      * QPair.first  == albumRootID
      * QPair.second == albumID
      */
-    QHash<qlonglong, QPair<int, int> > getAllItemsWithAlbum() const;
+    QHash<qlonglong, QPair<int, int> > getAllItemsWithAlbum()                                                       const;
 
     /**
      * Returns the id of the item with the given filename in
@@ -636,13 +639,13 @@ public:
      * @param fileName The name of the item file.
      * @return The item id or -1 if not existent.
      */
-    qlonglong getItemFromAlbum(int albumID, const QString& fileName) const;
+    qlonglong getItemFromAlbum(int albumID, const QString& fileName)                                                const;
 
     /**
      * Returns an ItemScanInfo object for each item in the album
      * with the specified album id.
      */
-    QList<ItemScanInfo> getItemScanInfos(int albumID) const;
+    QList<ItemScanInfo> getItemScanInfos(int albumID)                                                               const;
 
     /**
      * Given a albumID, get a list of the url of all items in the album
@@ -652,14 +655,14 @@ public:
      * @return a list of urls for the items in the album. The urls are the
      * absolute path of the items
      */
-    QStringList getItemURLsInAlbum(int albumID, ItemSortOrder order = NoItemSorting) const;
+    QStringList getItemURLsInAlbum(int albumID, ItemSortOrder order = NoItemSorting)                                const;
 
     /**
      * Given a albumID, get a list of Ids of all items in the album
      * @param  albumID the id of the album
      * @return a list of Ids for the items in the album.
      */
-    QList<qlonglong> getItemIDsInAlbum(int albumID) const;
+    QList<qlonglong> getItemIDsInAlbum(int albumID)                                                                 const;
 
     /**
      * Given a albumID, get a map of Ids and urls of all items in the album
@@ -668,7 +671,7 @@ public:
      * @return a map of Ids and urls for the items in the album. The urls are the
      * absolute path of the items
      */
-    QMap<qlonglong, QString> getItemIDsAndURLsInAlbum(int albumID) const;
+    QMap<qlonglong, QString> getItemIDsAndURLsInAlbum(int albumID)                                                  const;
 
     /**
      * Given a tagid, get a list of the url of all items in the tag
@@ -678,7 +681,7 @@ public:
      * @return a list of urls for the items in the tag. The urls are the
      * absolute path of the items
      */
-    QStringList getItemURLsInTag(int tagID, bool recursive = false) const;
+    QStringList getItemURLsInTag(int tagID, bool recursive = false)                                                 const;
 
     /**
      * Given a tagID, get a list of Ids of all items in the tag
@@ -686,18 +689,18 @@ public:
      * @param  recursive perform a recursive folder hierarchy parsing
      * @return a list of Ids for the items in the tag.
      */
-    QList<qlonglong> getItemIDsInTag(int tagID, bool recursive = false) const;
+    QList<qlonglong> getItemIDsInTag(int tagID, bool recursive = false)                                             const;
 
     /**
      * Returns all creation dates found in the image metadata table
      */
-    QList<QDateTime> getAllCreationDates() const;
+    QList<QDateTime> getAllCreationDates()                                                                          const;
 
     /**
      * Returns a QMap<QDateTime,int> of creationDate -> count of items
      * with the tag
      */
-    QMap<QDateTime, int> getAllCreationDatesAndNumberOfImages() const;
+    QMap<QDateTime, int> getAllCreationDatesAndNumberOfImages()                                                     const;
 
     // ----------- Item properties -----------
 
@@ -706,29 +709,30 @@ public:
      * @param imageID The ID of the item
      * @return The ID of the PAlbum of the item, or -1 if not found
      */
-    int getItemAlbum(qlonglong imageID) const;
+    int getItemAlbum(qlonglong imageID)                                                                             const;
 
     /**
      * Retrieve the name of the item
      * @param imageID The ID of the item
      * @return The name of the item, or a null string if not found
      */
-    QString getItemName(qlonglong imageID) const;
+    QString getItemName(qlonglong imageID)                                                                          const;
 
     /**
      * Get item and album info from the image ID
      */
-    ItemShortInfo getItemShortInfo(qlonglong imageID) const;
+    ItemShortInfo getItemShortInfo(qlonglong imageID)                                                               const;
 
     /**
      * Get item and album if from albumRootId, album path and file name.
      */
-    ItemShortInfo getItemShortInfo(int albumRootId, const QString& relativePath, const QString& name) const;
+    ItemShortInfo getItemShortInfo(int albumRootId, const QString& relativePath,
+                                   const QString& name)                                                             const;
 
     /**
      * Get scan info from the image ID
      */
-    ItemScanInfo getItemScanInfo(qlonglong imageID) const;
+    ItemScanInfo getItemScanInfo(qlonglong imageID)                                                                 const;
 
     /**
      * Update the fields of the Images table that have changed when
@@ -782,7 +786,8 @@ public:
      * 5) int       FileSize
      * 6) String    uniqueHash
      */
-    QVariantList getImagesFields(qlonglong imageID, DatabaseFields::Images imagesFields) const;
+    QVariantList getImagesFields(qlonglong imageID,
+                                 DatabaseFields::Images imagesFields)                                               const;
 
     /**
      * Add (or replace) the ItemInformation of the specified item.
@@ -817,7 +822,8 @@ public:
      * Read image information. Parameters as above.
      */
     QVariantList getItemInformation(qlonglong imageID,
-                                    DatabaseFields::ItemInformation infoFields = DatabaseFields::ItemInformationAll) const;
+                                    DatabaseFields::ItemInformation infoFields
+                                        = DatabaseFields::ItemInformationAll)                                       const;
 
     /**
      * Add (or replace) the ImageMetadata of the specified item.
@@ -889,7 +895,7 @@ public:
      * Read video metadata. Parameters as above.
      */
     QVariantList getVideoMetadata(qlonglong imageID,
-                                  DatabaseFields::VideoMetadata metadataFields = DatabaseFields::VideoMetadataAll) const;
+                                  DatabaseFields::VideoMetadata metadataFields = DatabaseFields::VideoMetadataAll)  const;
 
     /**
      * Add (or replace) the ItemPosition of the specified item.
@@ -923,9 +929,9 @@ public:
      * Read image metadata. Parameters as above.
      */
     QVariantList getItemPosition(qlonglong imageID,
-                                 DatabaseFields::ItemPositions positionFields = DatabaseFields::ItemPositionsAll) const;
+                                 DatabaseFields::ItemPositions positionFields = DatabaseFields::ItemPositionsAll)   const;
 
-    QVariantList getItemPositions(QList<qlonglong> imageIDs, DatabaseFields::ItemPositions fields) const;
+    QVariantList getItemPositions(QList<qlonglong> imageIDs, DatabaseFields::ItemPositions fields)                  const;
 
     /**
      * Remove the entry in ItemPositions for the given image
@@ -940,7 +946,7 @@ public:
     /**
      * Retrieves all available comments for the specified item.
      */
-    QList<CommentInfo> getItemComments(qlonglong imageID) const;
+    QList<CommentInfo> getItemComments(qlonglong imageID)                                                           const;
 
     /**
      * Sets the comments for the image. A comment for the image with the same
@@ -959,7 +965,7 @@ public:
      */
     int setImageComment(qlonglong imageID, const QString& comment, DatabaseComment::Type type,
                         const QString& language = QString(), const QString& author = QString(),
-                        const QDateTime& date = QDateTime()) const;
+                        const QDateTime& date = QDateTime())                                                        const;
 
     /**
      * Changes the properties of a comment.
@@ -981,7 +987,7 @@ public:
     /**
      * Returns the property with the specified name for the specified image
      */
-    QString getImageProperty(qlonglong imageID, const QString& property) const;
+    QString getImageProperty(qlonglong imageID, const QString& property)                                            const;
 
     /**
      * Sets the property with the given name for the given image to the specified value
@@ -994,7 +1000,7 @@ public:
      * Returns the copyright properties of the specified image.
      * If property is not null, only the given property is returned.
      */
-    QList<CopyrightInfo> getItemCopyright(qlonglong imageID, const QString& property = QString()) const;
+    QList<CopyrightInfo> getItemCopyright(qlonglong imageID, const QString& property = QString())                   const;
 
     enum CopyrightPropertyUnique
     {
@@ -1023,22 +1029,22 @@ public:
     /**
      * Returns all items with the given file name and creation date.
      */
-    QList<qlonglong> findByNameAndCreationDate(const QString& fileName, const QDateTime& creationDate) const;
+    QList<qlonglong> findByNameAndCreationDate(const QString& fileName, const QDateTime& creationDate)              const;
 
     /**
      * Retrieves the history entry for the given image.
      */
-    ImageHistoryEntry getItemHistory(qlonglong imageId) const;
+    ImageHistoryEntry getItemHistory(qlonglong imageId)                                                             const;
 
     /**
      * Retrieves the image UUID
      */
-    QString getImageUuid(qlonglong imageId) const;
+    QString getImageUuid(qlonglong imageId)                                                                         const;
 
     /**
      * Retrieves the images with the given UUID
      */
-    QList<qlonglong> getItemsForUuid(const QString& uuid) const;
+    QList<qlonglong> getItemsForUuid(const QString& uuid)                                                           const;
 
     /**
      * Changes (adds or updates) the image history
@@ -1050,7 +1056,7 @@ public:
      * Returns true if the image has a history stored in DB
      * If not, it returns false
      */
-    bool hasImageHistory(qlonglong imageId) const;
+    bool hasImageHistory(qlonglong imageId)                                                                         const;
 
     /**
      * Adds an image relation entry.
@@ -1061,7 +1067,8 @@ public:
     /**
      * This method requires two lists of same size and will add list1[0]->list2[0],...,list1[n]->list2[n]
      */
-    void addImageRelations(const QList<qlonglong>& subjectIds, const QList<qlonglong>& objectIds, DatabaseRelation::Type type);
+    void addImageRelations(const QList<qlonglong>& subjectIds, const QList<qlonglong>& objectIds,
+                           DatabaseRelation::Type type);
 
     /**
      * Removes image relations.
@@ -1070,8 +1077,8 @@ public:
     void removeImageRelation(qlonglong subjectId, qlonglong objectId, DatabaseRelation::Type type);
     void removeImageRelation(const ImageRelation& relation);
 
-    QList<qlonglong> removeAllImageRelationsTo(qlonglong objectId, DatabaseRelation::Type type) const;
-    QList<qlonglong> removeAllImageRelationsFrom(qlonglong subjectId, DatabaseRelation::Type type) const;
+    QList<qlonglong> removeAllImageRelationsTo(qlonglong objectId, DatabaseRelation::Type type)                     const;
+    QList<qlonglong> removeAllImageRelationsFrom(qlonglong subjectId, DatabaseRelation::Type type)                  const;
 
     /**
      * Retrieves all images that the given image is related to (retrieves objects, given image is subject)
@@ -1079,22 +1086,22 @@ public:
      * "Get images related to from this"
      */
     QList<qlonglong> getImagesRelatedFrom(qlonglong subjectId,
-                                          DatabaseRelation::Type type = DatabaseRelation::UndefinedType) const;
+                                          DatabaseRelation::Type type = DatabaseRelation::UndefinedType)            const;
     bool hasImagesRelatedFrom(qlonglong subjectId,
-                              DatabaseRelation::Type type = DatabaseRelation::UndefinedType) const;
+                              DatabaseRelation::Type type = DatabaseRelation::UndefinedType)                        const;
     QVector<QList<qlonglong> > getImagesRelatedFrom(const QList<qlonglong>& subjectIds,
-                                                    DatabaseRelation::Type type = DatabaseRelation::UndefinedType) const;
+                                                    DatabaseRelation::Type type = DatabaseRelation::UndefinedType)  const;
     /**
      * Retrieves all images that relate to the given image (retrieves subject, given image is object)
      * If type is given, filters by type, otherwise returns all types.
      * "Get images this image is relating to"
      */
     QList<qlonglong> getImagesRelatingTo(qlonglong objectId,
-                                         DatabaseRelation::Type type = DatabaseRelation::UndefinedType) const;
+                                         DatabaseRelation::Type type = DatabaseRelation::UndefinedType)             const;
     bool hasImagesRelatingTo(qlonglong objectId,
-                             DatabaseRelation::Type type = DatabaseRelation::UndefinedType) const;
+                             DatabaseRelation::Type type = DatabaseRelation::UndefinedType)                         const;
     QVector<QList<qlonglong> > getImagesRelatingTo(const QList<qlonglong>& objectIds,
-                                                   DatabaseRelation::Type type = DatabaseRelation::UndefinedType) const;
+                                                   DatabaseRelation::Type type = DatabaseRelation::UndefinedType)   const;
 
     /**
      * For the given image id, retrieves all relations of all related images:
@@ -1103,19 +1110,20 @@ public:
      * If type is given, filters by type, otherwise returns all types.
      */
     QList<QPair<qlonglong, qlonglong> > getRelationCloud(qlonglong imageId,
-                                                         DatabaseRelation::Type type = DatabaseRelation::UndefinedType) const;
+                                                         DatabaseRelation::Type type
+                                                             = DatabaseRelation::UndefinedType)                     const;
 
     /**
      * For each of the given ids, find one single related image (direction does not matter).
      * Ids are unique in the returned list, and do not correspond by index to the given list.
      */
     QList<qlonglong> getOneRelatedImageEach(const QList<qlonglong>& ids,
-                                            DatabaseRelation::Type type = DatabaseRelation::UndefinedType) const;
+                                            DatabaseRelation::Type type = DatabaseRelation::UndefinedType)          const;
 
     /**
      * Retrieves all images that related to (retrieves objects) by given type.
      */
-    QList<qlonglong> getRelatedImagesToByType(DatabaseRelation::Type type) const;
+    QList<qlonglong> getRelatedImagesToByType(DatabaseRelation::Type type)                                          const;
 
     /**
      * Returns a list of all images where the Faces have either not been detected
@@ -1123,7 +1131,7 @@ public:
      * the generation of the fingerprint.
      * Return image ids or item URLs.
      */
-    QStringList getDirtyOrMissingFaceImageUrls() const;
+    QStringList getDirtyOrMissingFaceImageUrls()                                                                    const;
 
     /**
      * Find items that are, with reasonable certainty, identical
@@ -1133,14 +1141,14 @@ public:
      * The second allows to pass one id as source id for exclusion from the list.
      * If this is -1, no id is excluded.
      */
-    QList<ItemScanInfo> getIdenticalFiles(qlonglong id) const;
-    QList<ItemScanInfo> getIdenticalFiles(const QString& uniqueHash, qlonglong fileSize, qlonglong sourceId = -1) const;
+    QList<ItemScanInfo> getIdenticalFiles(qlonglong id)                                                             const;
+    QList<ItemScanInfo> getIdenticalFiles(const QString& uniqueHash, qlonglong fileSize, qlonglong sourceId = -1)   const;
 
     /**
      * Returns a list of all images where tagId is assigned
      * Return item URLs.
      */
-    QStringList getItemsURLsWithTag(int tagId) const;
+    QStringList getItemsURLsWithTag(int tagId)                                                                      const;
 
     // ----------- Items and their tags -----------
 
@@ -1191,31 +1199,31 @@ public:
      * @param imageID the ID of the item
      * @return the list of names of all tags for the item
      */
-    QStringList getItemTagNames(qlonglong imageID) const;
+    QStringList getItemTagNames(qlonglong imageID)                                                                  const;
 
     /**
      * Get a list of IDs of all the tags for the item
      * @param imageID the ID of the item
      * @return the list of IDs of all tags for the item
      */
-    QList<int> getItemTagIDs(qlonglong imageID) const;
+    QList<int> getItemTagIDs(qlonglong imageID)                                                                     const;
 
     /**
      * For a list of items, return the tag ids associated with the item.
      * Amounts to calling getItemTagIDs for each id in imageIds, but is optimized.
      */
-    QVector<QList<int> > getItemsTagIDs(const QList<qlonglong>& imageIds) const;
+    QVector<QList<int> > getItemsTagIDs(const QList<qlonglong>& imageIds)                                           const;
 
     /**
      * Get the properties for the given image/tag pair.
      * If the tagID is -1, returns the ImageTagProperties for all tagIds of the given image.
      */
-    QList<ImageTagProperty> getImageTagProperties(qlonglong imageId, int tagId = -1) const;
+    QList<ImageTagProperty> getImageTagProperties(qlonglong imageId, int tagId = -1)                                const;
 
     /**
      * Get all tagIds for which ImageTagProperties exist for the given image.
      */
-    QList<int> getTagIdsWithProperties(qlonglong imageId) const;
+    QList<int> getTagIdsWithProperties(qlonglong imageId)                                                           const;
 
     /**
      * Adds a tag property. Note that this never replaces existing entries.
@@ -1233,7 +1241,8 @@ public:
      * If tagId is -1, removes all image tag properties for the given image.
      * Note: After the first parameter you give as a wildcard, the following will be ignored and taken as wildcard as well.
      */
-    void removeImageTagProperties(qlonglong imageId, int tagId = -1, const QString& property = QString(), const QString& value = QString());
+    void removeImageTagProperties(qlonglong imageId, int tagId = -1, const QString& property = QString(),
+                                  const QString& value = QString());
 
     /**
      * Given a set of items (identified by their IDs),
@@ -1241,7 +1250,7 @@ public:
      * @param imageIDList a list of IDs of the items
      * @return true if at least one of the items has a tag
      */
-    bool hasTags(const QList<qlonglong>& imageIDList) const;
+    bool hasTags(const QList<qlonglong>& imageIDList)                                                               const;
 
     /**
      * Given a set of items (identified by their IDs),
@@ -1249,46 +1258,46 @@ public:
      * @param imageIDList a list of IDs of the items
      * @return the list of common IDs of the given items
      */
-    QList<int> getItemCommonTagIDs(const QList<qlonglong>& imageIDList) const;
+    QList<int> getItemCommonTagIDs(const QList<qlonglong>& imageIDList)                                             const;
 
     /**
      * Returns a QMap<int,int> of tag id -> count of items
      * with the tag
      */
-    QMap<int, int> getNumberOfImagesInTags() const;
+    QMap<int, int> getNumberOfImagesInTags()                                                                        const;
 
     /**
      * Returns a QMap<int,int> of tag id -> count of items
      * with the given tag property
      */
-    QMap<int, int> getNumberOfImagesInTagProperties(const QString& property) const;
+    QMap<int, int> getNumberOfImagesInTagProperties(const QString& property)                                        const;
 
     /**
      * Returns the count of images that have a tag property for the given tag.
      */
-    int getNumberOfImagesInTagProperties(int tagId, const QString& property) const;
+    int getNumberOfImagesInTagProperties(int tagId, const QString& property)                                        const;
 
     /**
      * Returns all image ids that are associated to the tag with the given property.
      */
-    QList<qlonglong> getImagesWithImageTagProperty(int tagId, const QString& property) const;
+    QList<qlonglong> getImagesWithImageTagProperty(int tagId, const QString& property)                              const;
 
     /**
      * Returns all image ids that are associated to the given property.
      */
-    QList<qlonglong> getImagesWithProperty(const QString& property) const;
+    QList<qlonglong> getImagesWithProperty(const QString& property)                                                 const;
 
     /**
      * Returns a QMap<QString,int> of ItemInformation.format
      * -> count of items with that format.
      */
-    QMap<QString, int> getFormatStatistics() const;
-    QMap<QString, int> getFormatStatistics(DatabaseItem::Category category) const;
+    QMap<QString, int> getFormatStatistics()                                                                        const;
+    QMap<QString, int> getFormatStatistics(DatabaseItem::Category category)                                         const;
 
     /**
      * Return a list from a field from imageMetadata
      */
-    QStringList getListFromImageMetadata(DatabaseFields::ImageMetadata field) const;
+    QStringList getListFromImageMetadata(DatabaseFields::ImageMetadata field)                                       const;
 
     // ----------- Moving and Copying Items -----------
 
@@ -1345,22 +1354,25 @@ public:
      * Search for the specified fingerprint in the download history table.
      * Returns the id of the entry, or -1 if not found.
      */
-    int findInDownloadHistory(const QString& identifier, const QString& name, qlonglong fileSize, const QDateTime& date) const;
+    int findInDownloadHistory(const QString& identifier, const QString& name,
+                              qlonglong fileSize, const QDateTime& date)                                            const;
 
     /**
      * Add the specified fingerprint to the download history table.
      * Returns the id of the entry.
      */
-    int addToDownloadHistory(const QString& identifier, const QString& name, qlonglong fileSize, const QDateTime& date) const;
+    int addToDownloadHistory(const QString& identifier, const QString& name,
+                             qlonglong fileSize, const QDateTime& date)                                             const;
 
-    QList<QVariant> getImageIdsFromArea(qreal lat1, qreal lat2, qreal lng1, qreal lng2, int sortMode, const QString& sortBy) const;
+    QList<QVariant> getImageIdsFromArea(qreal lat1, qreal lat2, qreal lng1, qreal lng2,
+                                        int sortMode, const QString& sortBy)                                        const;
 
     // ----------- Database shrinking methods ----------
 
     /**
      * Returns true if the integrity of the database is preserved.
      */
-    bool integrityCheck() const;
+    bool integrityCheck()                                                                                           const;
 
     /**
      * Shrinks the database.
@@ -1393,8 +1405,10 @@ public:
 
 protected:
 
-    QList<qlonglong> getRelatedImages(qlonglong id, bool fromOrTo, DatabaseRelation::Type type, bool boolean) const;
-    QVector<QList<qlonglong> > getRelatedImages(QList<qlonglong> ids, bool fromOrTo, DatabaseRelation::Type type, bool boolean) const;
+    QList<qlonglong> getRelatedImages(qlonglong id, bool fromOrTo,
+                                      DatabaseRelation::Type type, bool boolean)                                    const;
+    QVector<QList<qlonglong> > getRelatedImages(QList<qlonglong> ids, bool fromOrTo,
+                                                DatabaseRelation::Type type, bool boolean)                          const;
 
 private:
 

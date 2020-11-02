@@ -191,6 +191,7 @@ int CoreDB::addAlbumRoot(AlbumRoot::Type type, const QString& identifier, const 
                    (int)type, label, identifier, specificPath, nullptr, &id);
 
     d->db->recordChangeset(AlbumRootChangeset(id.toInt(), AlbumRootChangeset::Added));
+
     return id.toInt();
 }
 
@@ -422,6 +423,7 @@ int CoreDB::addAlbum(int albumRootId, const QString& relativePath,
                    boundValues, nullptr, &id);
 
     d->db->recordChangeset(AlbumChangeset(id.toInt(), AlbumChangeset::Added));
+
     return id.toInt();
 }
 
@@ -460,6 +462,7 @@ void CoreDB::setAlbumIcon(int albumID, qlonglong iconID)
         d->db->execSql(QString::fromUtf8("UPDATE Albums SET icon=? WHERE id=?;"),
                        iconID, albumID);
     }
+
     d->db->recordChangeset(AlbumChangeset(albumID, AlbumChangeset::PropertiesChanged));
 }
 
@@ -550,7 +553,7 @@ int CoreDB::addTag(int parentTagID, const QString& name, const QString& iconKDE,
         return -1;
     }
 
-    if (!iconKDE.isEmpty())
+    if      (!iconKDE.isEmpty())
     {
         d->db->execSql(QString::fromUtf8("UPDATE Tags SET iconkde=? WHERE id=?;"),
                        iconKDE, id.toInt());
@@ -567,6 +570,7 @@ int CoreDB::addTag(int parentTagID, const QString& name, const QString& iconKDE,
     }
 
     d->db->recordChangeset(TagChangeset(id.toInt(), TagChangeset::Added));
+
     return id.toInt();
 }
 
@@ -770,6 +774,7 @@ int CoreDB::addSearch(DatabaseSearch::Type type, const QString& name, const QStr
     }
 
     d->db->recordChangeset(SearchChangeset(id.toInt(), SearchChangeset::Added));
+
     return id.toInt();
 }
 
@@ -1375,7 +1380,7 @@ bool CoreDB::hasTags(const QList<qlonglong>& imageIDList) const
     QList<qlonglong>::const_iterator it = imageIDList.constBegin();
     ++it;
 
-    for (; it != imageIDList.constEnd() ; ++it)
+    for ( ; it != imageIDList.constEnd() ; ++it)
     {
         sql += QString::fromUtf8(" OR imageid=? ");
         boundValues << (*it);
@@ -1384,7 +1389,7 @@ bool CoreDB::hasTags(const QList<qlonglong>& imageIDList) const
     sql += QString::fromUtf8(";");
     d->db->execSql(sql, boundValues, &values);
 
-    if (values.isEmpty() || values.first().toInt() == 0)
+    if (values.isEmpty() || (values.first().toInt() == 0))
     {
         return false;
     }
@@ -1615,8 +1620,8 @@ QVariantList CoreDB::getItemPositions(QList<qlonglong> imageIDs, DatabaseFields:
     {
         QString sql(QString::fromUtf8("SELECT "));
         QStringList fieldNames =  imagePositionsFieldList(fields);
-        sql                    += fieldNames.join(QString::fromUtf8(", "));
-        sql                    += QString::fromUtf8(" FROM ImagePositions WHERE imageid=?;");
+        sql                   += fieldNames.join(QString::fromUtf8(", "));
+        sql                   += QString::fromUtf8(" FROM ImagePositions WHERE imageid=?;");
 
         DbEngineSqlQuery query = d->db->prepareQuery(sql);
 
@@ -1910,6 +1915,7 @@ int CoreDB::setImageComment(qlonglong imageID, const QString& comment, DatabaseC
                    boundValues, nullptr, &id);
 
     d->db->recordChangeset(ImageChangeset(imageID, DatabaseFields::Set(DatabaseFields::ItemCommentsAll)));
+
     return id.toInt();
 }
 
@@ -2321,8 +2327,9 @@ bool CoreDB::hasImagesRelatingTo(qlonglong objectId, DatabaseRelation::Type type
 
 QList<qlonglong> CoreDB::getRelatedImages(qlonglong id, bool fromOrTo, DatabaseRelation::Type type, bool boolean) const
 {
-    QString sql = d->constructRelatedImagesSQL(fromOrTo, type, boolean);
+    QString sql            = d->constructRelatedImagesSQL(fromOrTo, type, boolean);
     DbEngineSqlQuery query = d->db->prepareQuery(sql);
+
     return d->execRelatedImagesQuery(query, id, type);
 }
 
@@ -2336,7 +2343,7 @@ QVector<QList<qlonglong> > CoreDB::getRelatedImages(QList<qlonglong> ids,
 
     QVector<QList<qlonglong> > result(ids.size());
 
-    QString sql = d->constructRelatedImagesSQL(fromOrTo, type, boolean);
+    QString sql            = d->constructRelatedImagesSQL(fromOrTo, type, boolean);
     DbEngineSqlQuery query = d->db->prepareQuery(sql);
 
     for (int i = 0 ; i < ids.size() ; ++i)
@@ -2509,8 +2516,8 @@ QStringList CoreDB::getItemsURLsWithTag(int tagId) const
                                     "INNER JOIN Albums ON Albums.id=Images.album "
                                     " WHERE Images.status=1 AND Images.category=1 AND "));
 
-    if (tagId == TagsCache::instance()->tagForPickLabel(NoPickLabel) ||
-        tagId == TagsCache::instance()->tagForColorLabel(NoColorLabel))
+    if ((tagId == TagsCache::instance()->tagForPickLabel(NoPickLabel)) ||
+        (tagId == TagsCache::instance()->tagForColorLabel(NoColorLabel)))
     {
         query += QString::fromUtf8("( ImageTags.tagid=? OR ImageTags.tagid "
                                    "NOT BETWEEN ? AND ? OR ImageTags.tagid IS NULL );");
@@ -3088,7 +3095,7 @@ void CoreDB::addItemTag(int albumID, const QString& name, int tagID)
 {
     // easier because of attributes watch
 
-    return addItemTag(getImageId(albumID, name), tagID);
+    addItemTag(getImageId(albumID, name), tagID);
 }
 
 void CoreDB::addTagsToItems(QList<qlonglong> imageIDs, QList<int> tagIDs)
@@ -3108,7 +3115,7 @@ void CoreDB::addTagsToItems(QList<qlonglong> imageIDs, QList<int> tagIDs)
         foreach (int tagid, tagIDs)
         {
             images << imageid;
-            tags << tagid;
+            tags   << tagid;
         }
     }
 
@@ -3157,7 +3164,7 @@ void CoreDB::removeTagsFromItems(QList<qlonglong> imageIDs, const QList<int>& ta
         foreach (int tagid, tagIDs)
         {
             images << imageid;
-            tags << tagid;
+            tags   << tagid;
         }
     }
 
@@ -4440,6 +4447,7 @@ bool CoreDB::copyAlbumProperties(int srcAlbumID, int dstAlbumID) const
     if (values.isEmpty())
     {
         qCWarning(DIGIKAM_DATABASE_LOG) << " src album ID " << srcAlbumID << " does not exist";
+
         return false;
     }
 
@@ -4454,7 +4462,7 @@ bool CoreDB::copyAlbumProperties(int srcAlbumID, int dstAlbumID) const
 }
 
 QList<QVariant> CoreDB::getImageIdsFromArea(qreal lat1, qreal lat2, qreal lng1, qreal lng2, int /*sortMode*/,
-                                             const QString& /*sortBy*/) const
+                                            const QString& /*sortBy*/) const
 {
     QList<QVariant> values;
     QList<QVariant> boundValues;
