@@ -170,3 +170,5 @@ BUGFIXES:
 154 ==> 424437 - Batch deleting duplicates.
 155 ==> 428558 - With batch workflow lens correction doesn't use metadata.
 156 ==> 428472 - digiKam doesn't come up as it can't update db schema from 9 to 10.
+157 ==> 428578 - The filename extension is used for sorting the filename.
+158 ==> 
