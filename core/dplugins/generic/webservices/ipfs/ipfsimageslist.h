@@ -58,7 +58,9 @@ public:
 public:
 
     explicit IpfsImagesList(QWidget* const parent = nullptr);
-    ~IpfsImagesList() override {}
+    ~IpfsImagesList()                                            override
+    {
+    }
 
     QList<const IpfsImagesListViewItem*> getPendingItems() const;
 
@@ -76,16 +78,18 @@ class IpfsImagesListViewItem : public DItemsListViewItem
 public:
 
     explicit IpfsImagesListViewItem(DItemsListView* const view, const QUrl& url);
-    ~IpfsImagesListViewItem() override {}
+    ~IpfsImagesListViewItem()         override
+    {
+    }
 
     void setTitle(const QString& str);
-    QString Title() const;
+    QString Title()             const;
 
     void setDescription(const QString& str);
-    QString Description() const;
+    QString Description()       const;
 
     void setIpfsUrl(const QString& str);
-    QString IpfsUrl() const;
+    QString IpfsUrl()           const;
 };
 
 } // namespace DigikamGenericIpfsPlugin

@@ -273,13 +273,16 @@ void IpfsTalker::doWork()
                 d->image = nullptr;
 
                 /* Failed. */
+
                 emit error(i18n("Could not open file"), d->workQueue.first());
 
                 d->workQueue.dequeue();
-                return doWork();
+                doWork();
+                return;
             }
 
             /* Set ownership to d->image to delete that as well. */
+
             auto* multipart = new QHttpMultiPart(QHttpMultiPart::FormDataType, d->image);
             QHttpPart title;
             title.setHeader(QNetworkRequest::ContentDispositionHeader,

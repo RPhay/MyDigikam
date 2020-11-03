@@ -84,7 +84,8 @@ QList<const IpfsImagesListViewItem*> IpfsImagesList::getPendingItems() const
 
 void IpfsImagesList::slotAddImages(const QList<QUrl>& list)
 {
-    /* NOTE: Replaces the DItemsList::slotAddImages method, so that
+    /**
+     * NOTE: Replaces the DItemsList::slotAddImages method, so that
      * IpfsImagesListViewItems can be added instead of ImagesListViewItems
      */
 
@@ -93,9 +94,11 @@ void IpfsImagesList::slotAddImages(const QList<QUrl>& list)
     for (QList<QUrl>::ConstIterator it = list.constBegin() ; it != list.constEnd() ; ++it)
     {
         // Already in the list?
+
         if (listView()->findItem(*it) == nullptr)
         {
             // Load URLs from meta data, if possible
+
             if (meta->load((*it).toLocalFile()))
             {
                 auto* const item = new IpfsImagesListViewItem(listView(), *it);
@@ -139,7 +142,9 @@ void IpfsImagesList::slotDoubleClick(QTreeWidgetItem* element, int i)
     if (i == Url)
     {
         const QUrl url = QUrl(element->text(i));
+
         // The delete page asks for confirmation, so we don't need to do that here
+
         QDesktopServices::openUrl(url);
     }
 }

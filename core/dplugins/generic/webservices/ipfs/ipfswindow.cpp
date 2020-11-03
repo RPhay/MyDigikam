@@ -69,7 +69,7 @@ public:
 
 IpfsWindow::IpfsWindow(DInfoInterface* const iface, QWidget* const /*parent*/)
     : WSToolDialog(nullptr, QLatin1String("IPFS Dialog")),
-      d(new Private)
+      d           (new Private)
 {
     d->api = new IpfsTalker(this);
 

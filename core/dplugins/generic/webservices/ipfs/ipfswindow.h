@@ -48,7 +48,7 @@ class IpfsWindow : public WSToolDialog
 public:
 
     explicit IpfsWindow(DInfoInterface* const iface, QWidget* const parent = nullptr);
-    ~IpfsWindow() override;
+    ~IpfsWindow()                       override;
 
     void reactivate();
 
@@ -74,7 +74,7 @@ public Q_SLOTS:
 
 private:
 
-    void closeEvent(QCloseEvent* e) override;
+    void closeEvent(QCloseEvent* e)     override;
     void setContinueUpload(bool state);
     void readSettings();
     void saveSettings();
