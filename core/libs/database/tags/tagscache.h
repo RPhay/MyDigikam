@@ -311,7 +311,8 @@ private Q_SLOTS:
 
 private:
 
-    explicit TagsCache();
+    TagsCache();
+    explicit TagsCache(QObject*);
     ~TagsCache() override;
 
     void initialize();

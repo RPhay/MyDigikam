@@ -145,6 +145,7 @@ private:
 
     // Disable constructor and destructor
     DPluginLoader();
+    explicit DPluginLoader(QObject*);
     ~DPluginLoader() override;
 
     Q_DISABLE_COPY(DPluginLoader)

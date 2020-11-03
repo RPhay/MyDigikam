@@ -107,6 +107,9 @@ protected:
 
 private:
 
+    // Disabled
+    SafeTemporaryFile(QObject*);
+
     QString m_templ;
 };
 

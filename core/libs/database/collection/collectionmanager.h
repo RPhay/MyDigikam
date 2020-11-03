@@ -88,7 +88,9 @@ private Q_SLOTS:
 
 private:
 
-    explicit CollectionManager();
+    // Disabled
+    CollectionManager();
+    explicit CollectionManager(QObject*);
     ~CollectionManager() override;
 
     void clearLocations();

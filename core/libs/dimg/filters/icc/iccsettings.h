@@ -135,7 +135,8 @@ Q_SIGNALS:
 
 private:
 
-    explicit IccSettings();
+    IccSettings();
+    explicit IccSettings(QObject*);
     ~IccSettings() override;
 
     void readFromConfig();

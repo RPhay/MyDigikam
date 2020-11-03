@@ -55,7 +55,7 @@ public:
     /**
      * Standard constructor.
      */
-    explicit DRawDecoder();
+    DRawDecoder();
 
     /**
      * Standard destructor.
@@ -273,6 +273,9 @@ public:
     class Private;
 
 private:
+
+    // Disabled
+    explicit DRawDecoder(QObject*);
 
     Private* const d;
 
