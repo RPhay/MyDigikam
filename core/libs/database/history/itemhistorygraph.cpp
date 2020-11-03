@@ -190,13 +190,13 @@ QDebug operator<<(QDebug dbg, const HistoryImageId& id)
 {
     dbg.nospace() << " { ";
     dbg.nospace() << id.m_uuid;
-    dbg.space() << id.m_type;
-    dbg.space() << id.m_fileName;
-    dbg.space() << id.m_filePath;
-    dbg.space() << id.m_creationDate;
-    dbg.space() << id.m_uniqueHash;
-    dbg.space() << id.m_fileSize;
-    dbg.space() << id.m_originalUUID;
+    dbg.space()   << id.m_type;
+    dbg.space()   << id.m_fileName;
+    dbg.space()   << id.m_filePath;
+    dbg.space()   << id.m_creationDate;
+    dbg.space()   << id.m_uniqueHash;
+    dbg.space()   << id.m_fileSize;
+    dbg.space()   << id.m_originalUUID;
     dbg.nospace() << " } ";
 
     return dbg;
@@ -363,6 +363,7 @@ void ItemHistoryGraphData::applyProperties(Vertex& v,
 
 int ItemHistoryGraphData::removeNextUnresolvedVertex(int index)
 {
+    // clazy:exclude=missing-typeinfo
     QList<Vertex> vs = vertices();
 
     for ( ; index < vs.size() ; ++index)
@@ -723,6 +724,7 @@ void ItemHistoryGraph::sortForInfo(const ItemInfo& subject)
 {
     // Remove nodes which could not be resolved into image infos
 
+    // clazy:exclude=missing-typeinfo
     QList<HistoryGraph::Vertex> toRemove;
 
     foreach (const HistoryGraph::Vertex& v, d->vertices())
@@ -879,6 +881,7 @@ QDebug operator<<(QDebug dbg, const ItemHistoryGraph& g)
         return dbg;
     }
 
+    // clazy:exclude=missing-typeinfo
     QList<HistoryGraph::Vertex> vertices = g.data().topologicalSort();
 
     if (vertices.isEmpty())

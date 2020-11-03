@@ -101,7 +101,7 @@ public:
     }
 
     explicit VertexItem(const HistoryGraph::Vertex& v)
-        : vertex(v),
+        : vertex  (v),
           category(HistoryImageId::InvalidType)
     {
     }
@@ -268,7 +268,7 @@ class Q_DECL_HIDDEN ItemHistoryGraphModel::Private
 public:
 
     explicit Private()
-        : mode(ItemHistoryGraphModel::CombinedTreeMode),
+        : mode    (ItemHistoryGraphModel::CombinedTreeMode),
           rootItem(nullptr)
     {
     }
@@ -379,7 +379,7 @@ void ItemHistoryGraphModel::Private::build()
 
 void ItemHistoryGraphModel::Private::buildImagesList()
 {
-
+    // clazy:exclude=missing-typeinfo
     QList<HistoryGraph::Vertex> verticesOrdered = graph().verticesDepthFirstSorted(path.first(),
                                                                                    sortBy(oldestInfoFirst));
     foreach (const HistoryGraph::Vertex& v, verticesOrdered)
@@ -390,10 +390,13 @@ void ItemHistoryGraphModel::Private::buildImagesList()
 
 void ItemHistoryGraphModel::Private::buildImagesTree()
 {
+    // clazy:exclude=missing-typeinfo
     QList<HistoryGraph::Vertex> verticesOrdered = graph().verticesDepthFirstSorted(path.first(),
                                                                                    sortBy(oldestInfoFirst));
+    // clazy:exclude=missing-typeinfo
     QMap<HistoryGraph::Vertex, int> distances   = graph().shortestDistancesFrom(path.first());
 
+    // clazy:exclude=missing-typeinfo
     QList<HistoryGraph::Vertex> sources;
     int previousLevel                           = 0;
     HistoryTreeItem* parent                     = rootItem;
@@ -460,8 +463,11 @@ void ItemHistoryGraphModel::Private::buildCombinedTree(const HistoryGraph::Verte
     CategoryItem *categoryItem                  = new CategoryItem(i18nc("@title", "Image History"));
     rootItem->addItem(categoryItem);
 
+    // clazy:exclude=missing-typeinfo
     QList<HistoryGraph::Vertex> added;
+    // clazy:exclude=missing-typeinfo
     QList<HistoryGraph::Vertex> currentVersions = categories.keys(HistoryImageId::Current);
+    // clazy:exclude=missing-typeinfo
     QList<HistoryGraph::Vertex> leavesFromRef   = graph().leavesFrom(ref);
 
     bool onePath = (leavesFromRef.size() <= 1);
@@ -478,10 +484,12 @@ void ItemHistoryGraphModel::Private::buildCombinedTree(const HistoryGraph::Verte
         // create new item
         item                                = createVertexItem(v);
 
+        // clazy:exclude=missing-typeinfo
         QList<HistoryGraph::Vertex> vertices;
 
         // any extra sources?
 
+        // clazy:exclude=missing-typeinfo
         QList<HistoryGraph::Vertex> sources = graph().adjacentVertices(item->vertex, HistoryGraph::EdgesToRoot);
 
         foreach (const HistoryGraph::Vertex& source, sources)
@@ -582,6 +590,8 @@ void ItemHistoryGraphModel::Private::addCombinedItemCategory(HistoryTreeItem* pa
         }
 
         item                                     = createVertexItem(v);
+
+        // clazy:exclude=missing-typeinfo
         QList<HistoryGraph::Vertex> shortestPath = graph().shortestPath(showActionsFrom, v);
 
         // add all filter actions showActionsFrom -> v above item
