@@ -548,6 +548,9 @@ protected:
 private:
 
     Q_DECLARE_PRIVATE(BdEngineBackend)
+
+    // Disable
+    BdEngineBackend(QObject*);
 };
 
 } // namespace Digikam

@@ -50,6 +50,11 @@ Q_SIGNALS:
 
     void data(const QList<ItemListerRecord>& records);
     void error(const QString& err);
+
+private:
+
+    // Disable
+    explicit DBJob(QObject*);
 };
 
 // ----------------------------------------------
@@ -74,6 +79,11 @@ Q_SIGNALS:
 private:
 
     AlbumsDBJobInfo m_jobInfo;
+
+private:
+
+    // Disable
+    AlbumsJob(QObject*);
 };
 
 // ----------------------------------------------
@@ -98,6 +108,11 @@ Q_SIGNALS:
 private:
 
     DatesDBJobInfo m_jobInfo;
+
+private:
+
+    // Disable
+    DatesJob(QObject*);
 };
 
 // ----------------------------------------------
@@ -122,6 +137,11 @@ Q_SIGNALS:
 private:
 
     GPSDBJobInfo m_jobInfo;
+
+private:
+
+    // Disable
+    GPSJob(QObject*);
 };
 
 // ----------------------------------------------
@@ -147,6 +167,11 @@ Q_SIGNALS:
 private:
 
     TagsDBJobInfo m_jobInfo;
+
+private:
+
+    // Disable
+    TagsJob(QObject*);
 };
 
 // ----------------------------------------------
@@ -174,6 +199,11 @@ protected:
 private:
 
     SearchesDBJobInfo m_jobInfo;
+
+private:
+
+    // Disable
+    SearchesJob(QObject*);
 };
 
 } // namespace Digikam

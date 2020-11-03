@@ -80,6 +80,11 @@ protected:
     /** You can use this boolean in your implementation to know if job must be canceled.
      */
     bool m_cancel;
+
+private:
+
+    // Disable
+    explicit ActionJob(QObject*);
 };
 
 /** Define a QHash of job/priority to process by ActionThreadBase manager.

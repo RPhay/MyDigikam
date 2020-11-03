@@ -85,6 +85,11 @@ public Q_SLOTS:
      *  The method is guaranteed to be invoked in the UI thread.
      */
     virtual void consultUserForError(DbEngineErrorAnswer* answer, const QSqlError& error, const QString& query) = 0;
+
+private:
+
+    // Disable
+    DbEngineErrorHandler(QObject*);
 };
 
 } // namespace Digikam

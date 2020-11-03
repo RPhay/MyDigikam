@@ -188,6 +188,7 @@ private:
     // Hidden copy constructor and assignment operator.
     WorkerObject(const WorkerObject&);
     WorkerObject& operator=(const WorkerObject&);
+    WorkerObject(QObject*);
 
 private:
 

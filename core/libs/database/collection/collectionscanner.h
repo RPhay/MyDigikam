@@ -291,6 +291,9 @@ private:
 
     class Private;
     Private* const d;
+
+    // Disable
+    CollectionScanner(QObject*);
 };
 
 } // namespace Digikam
