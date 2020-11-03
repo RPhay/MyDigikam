@@ -42,33 +42,33 @@ YandexFotkiAlbum::YandexFotkiAlbum(const QString&   urn,
                                    const QDateTime& editedDate,
                                    const QDateTime& updatedDate,
                                    const QString&   password)
-    : m_urn(urn),
-      m_author(author),
-      m_title(title),
-      m_summary(summary),
-      m_apiEditUrl(apiEditUrl),
-      m_apiSelfUrl(apiSelfUrl),
-      m_apiPhotosUrl(apiPhotosUrl),
-      m_publishedDate(publishedDate),
-      m_editedDate(editedDate),
-      m_updatedDate(updatedDate),
-      m_password(password)
+    : m_urn             (urn),
+      m_author          (author),
+      m_title           (title),
+      m_summary         (summary),
+      m_apiEditUrl      (apiEditUrl),
+      m_apiSelfUrl      (apiSelfUrl),
+      m_apiPhotosUrl    (apiPhotosUrl),
+      m_publishedDate   (publishedDate),
+      m_editedDate      (editedDate),
+      m_updatedDate     (updatedDate),
+      m_password        (password)
 {
     // nothing to do
 }
 
 YandexFotkiAlbum::YandexFotkiAlbum(const YandexFotkiAlbum& other)
-    : m_urn(other.urn()),
-      m_author(other.author()),
-      m_title(other.title()),
-      m_summary(other.summary()),
-      m_apiEditUrl(other.m_apiEditUrl),
-      m_apiSelfUrl(other.m_apiSelfUrl),
-      m_apiPhotosUrl(other.m_apiPhotosUrl),
-      m_publishedDate(other.publishedDate()),
-      m_editedDate(other.editedDate()),
-      m_updatedDate(other.updatedDate()),
-      m_password(other.m_password)
+    : m_urn             (other.urn()),
+      m_author          (other.author()),
+      m_title           (other.title()),
+      m_summary         (other.summary()),
+      m_apiEditUrl      (other.m_apiEditUrl),
+      m_apiSelfUrl      (other.m_apiSelfUrl),
+      m_apiPhotosUrl    (other.m_apiPhotosUrl),
+      m_publishedDate   (other.publishedDate()),
+      m_editedDate      (other.editedDate()),
+      m_updatedDate     (other.updatedDate()),
+      m_password        (other.m_password)
 {
     // nothing to do
 }

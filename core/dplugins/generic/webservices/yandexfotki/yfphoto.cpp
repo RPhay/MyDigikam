@@ -27,10 +27,10 @@ namespace DigikamGenericYFPlugin
 {
 
 YFPhoto::YFPhoto()
-  : m_access(ACCESS_PUBLIC),
-    m_hideOriginal(false),
-    m_disableComments(false),
-    m_adult(false)
+    : m_access          (ACCESS_PUBLIC),
+      m_hideOriginal    (false),
+      m_disableComments (false),
+      m_adult           (false)
 {
 }
 
@@ -55,47 +55,47 @@ YFPhoto::YFPhoto(const QString& urn,
                  bool disableComments,
                  bool adult,
                  const QString& remoteUrl)
-    : m_urn(urn),
-      m_author(author),
-      m_title(title),
-      m_summary(summary),
-      m_apiEditUrl(apiEditUrl),
-      m_apiSelfUrl(apiSelfUrl),
-      m_apiMediaUrl(apiMediaUrl),
-      m_apiAlbumUrl(apiAlbumUrl),
-      m_publishedDate(publishedDate),
-      m_editedDate(editedDate),
-      m_updatedDate(updatedDate),
-      m_createdDate(createdDate),
-      m_access(access),
-      m_hideOriginal(hideOriginal),
-      m_disableComments(disableComments),
-      m_adult(adult),
-      m_remoteUrl(remoteUrl)
+    : m_urn             (urn),
+      m_author          (author),
+      m_title           (title),
+      m_summary         (summary),
+      m_apiEditUrl      (apiEditUrl),
+      m_apiSelfUrl      (apiSelfUrl),
+      m_apiMediaUrl     (apiMediaUrl),
+      m_apiAlbumUrl     (apiAlbumUrl),
+      m_publishedDate   (publishedDate),
+      m_editedDate      (editedDate),
+      m_updatedDate     (updatedDate),
+      m_createdDate     (createdDate),
+      m_access          (access),
+      m_hideOriginal    (hideOriginal),
+      m_disableComments (disableComments),
+      m_adult           (adult),
+      m_remoteUrl       (remoteUrl)
 {
     // nothing to do
 }
 
 YFPhoto::YFPhoto(const YFPhoto& other)
-    : m_urn(other.urn()),
-      m_author(other.author()),
-      m_title(other.title()),
-      m_summary(other.summary()),
-      m_apiEditUrl(other.m_apiEditUrl),
-      m_apiSelfUrl(other.m_apiSelfUrl),
-      m_apiMediaUrl(other.m_apiMediaUrl),
-      m_apiAlbumUrl(other.m_apiAlbumUrl),
-      m_publishedDate(other.publishedDate()),
-      m_editedDate(other.editedDate()),
-      m_updatedDate(other.updatedDate()),
-      m_createdDate(other.createdDate()),
-      m_access(other.access()),
-      m_hideOriginal(other.isHideOriginal()),
-      m_disableComments(other.isDisableComments()),
-      m_adult(other.isAdult()),
-      m_remoteUrl(other.remoteUrl()),
-      m_localUrl(other.localUrl()),
-      m_originalUrl(other.originalUrl())
+    : m_urn             (other.urn()),
+      m_author          (other.author()),
+      m_title           (other.title()),
+      m_summary         (other.summary()),
+      m_apiEditUrl      (other.m_apiEditUrl),
+      m_apiSelfUrl      (other.m_apiSelfUrl),
+      m_apiMediaUrl     (other.m_apiMediaUrl),
+      m_apiAlbumUrl     (other.m_apiAlbumUrl),
+      m_publishedDate   (other.publishedDate()),
+      m_editedDate      (other.editedDate()),
+      m_updatedDate     (other.updatedDate()),
+      m_createdDate     (other.createdDate()),
+      m_access          (other.access()),
+      m_hideOriginal    (other.isHideOriginal()),
+      m_disableComments (other.isDisableComments()),
+      m_adult           (other.isAdult()),
+      m_remoteUrl       (other.remoteUrl()),
+      m_localUrl        (other.localUrl()),
+      m_originalUrl     (other.originalUrl())
 {
     // nothing to do
 }

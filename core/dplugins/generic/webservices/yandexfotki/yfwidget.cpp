@@ -53,15 +53,16 @@ class Q_DECL_HIDDEN YFWidget::Private
 public:
 
     explicit Private()
-      : accessCombo(nullptr),
-        hideOriginalCheck(nullptr),
+      : accessCombo         (nullptr),
+        hideOriginalCheck   (nullptr),
         disableCommentsCheck(nullptr),
-        adultCheck(nullptr),
-        policyGroup(nullptr)
+        adultCheck          (nullptr),
+        policyGroup         (nullptr)
     {
     }
 
     /// upload settings
+
     QComboBox*    accessCombo;
     QCheckBox*    hideOriginalCheck;
     QCheckBox*    disableCommentsCheck;
@@ -71,7 +72,7 @@ public:
 
 YFWidget::YFWidget(QWidget* const parent, DInfoInterface* const iface, const QString& toolName)
     : WSSettingsWidget(parent, iface, toolName),
-      d(new Private)
+      d               (new Private)
 {
     QGroupBox* const optionsBox         = getOptionsBox();
     QGridLayout* const optionsBoxLayout = getOptionsBoxLayout();

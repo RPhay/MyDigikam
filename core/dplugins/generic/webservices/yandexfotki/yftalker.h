@@ -71,7 +71,7 @@ public:
         STATE_GETTOKEN               = STATE_UNAUTHENTICATED | 0xa,
         STATE_INVALID_CREDENTIALS    = STATE_UNAUTHENTICATED | STATE_ERROR | 0xb,
         STATE_GETTOKEN_ERROR         = STATE_UNAUTHENTICATED | STATE_ERROR | 0xc,
-        STATE_GETTOKEN_DONE          = STATE_AUTHENTICATED, // simple alias
+        STATE_GETTOKEN_DONE          = STATE_AUTHENTICATED,                         ///< simple alias
 
         STATE_LISTALBUMS             = STATE_AUTHENTICATED   | 0x1,
         STATE_LISTALBUMS_ERROR       = STATE_AUTHENTICATED   | STATE_ERROR | 0x2,
@@ -121,7 +121,9 @@ public:
 
     // Actions
     void getService();
-    //void checkToken();
+/*
+    void checkToken();
+*/
     void getSession();
     void getToken();
 
@@ -184,10 +186,10 @@ private:
     /// return result from any place
     void setErrorState(State state);
 
-    void listAlbumsNext(); // see listPhotos();
+    void listAlbumsNext();                  ///< see listPhotos();
 
     /// for photos pagination in listPhotos()
-    void listPhotosNext(); // see listPhotos();
+    void listPhotosNext();                  ///< see listPhotos();
 
 private:
 
