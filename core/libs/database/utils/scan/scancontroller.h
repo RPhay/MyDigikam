@@ -373,6 +373,7 @@ private:
 private:
 
     // Hidden copy constructor and assignment operator.
+    ScanController(QObject*);
     ScanController(const ScanController&);
     ScanController& operator=(const ScanController&);
 

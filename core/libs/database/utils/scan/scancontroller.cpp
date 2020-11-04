@@ -29,7 +29,7 @@ namespace Digikam
 {
 
 ScanController::FileMetadataWrite::FileMetadataWrite(const ItemInfo& info)
-    : m_info(info),
+    : m_info   (info),
       m_changed(false)
 {
     ScanController::instance()->beginFileMetadataWrite(info);
@@ -60,6 +60,7 @@ ScanController::ScanController()
     : d(new Private)
 {
     // create event loop
+
     d->eventLoop = new QEventLoop(this);
 
     connect(this, SIGNAL(databaseInitialized(bool)),
@@ -137,6 +138,7 @@ void ScanController::setInitializationMessage()
 bool ScanController::continueQuery()
 {
     // not from main thread
+
     return d->continueInitialization;
 }
 
@@ -262,7 +264,9 @@ void ScanController::run()
             connectCollectionScanner(&scanner);
 
             emit collectionScanStarted(i18nc("@info:status", "Scanning collection"));
+
             //TODO: reconsider performance
+
             scanner.setNeedFileCount(true);//d->needTotalFiles);
 
             scanner.setHintContainer(d->hints);
@@ -280,9 +284,9 @@ void ScanController::run()
         {
             CollectionScanner scanner;
             scanner.setHintContainer(d->hints);
-
-            //connectCollectionScanner(&scanner);
-
+/*
+            connectCollectionScanner(&scanner);
+*/
             SimpleCollectionScannerObserver observer(&d->continuePartialScan);
             scanner.setObserver(&observer);
             scanner.partialScan(task);
@@ -339,7 +343,7 @@ void ScanController::updateUniqueHash()
     createProgressDialog();
 
     // we only need to count the files in advance
-    //if we show a progress percentage in progress dialog
+    // if we show a progress percentage in progress dialog
 
     d->needTotalFiles = true;
 
@@ -368,11 +372,13 @@ ItemInfo ScanController::scannedInfo(const QString& filePath)
     if (info.isNull())
     {
         qlonglong id = scanner.scanFile(filePath, CollectionScanner::NormalScan);
+
         return ItemInfo(id);
     }
     else
     {
         scanner.scanFile(info, CollectionScanner::NormalScan);
+
         return info;
     }
 }

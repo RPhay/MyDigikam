@@ -52,7 +52,7 @@ public:
 
 public:
 
-    explicit CoreDbCopyManager();
+    CoreDbCopyManager();
     ~CoreDbCopyManager() override;
 
     void copyDatabases(const DbEngineParameters& fromDBParameters,
@@ -69,6 +69,9 @@ public Q_SLOTS:
     void stopProcessing();
 
 private:
+
+    // Disabled
+    explicit CoreDbCopyManager(QObject*);
 
     bool copyTable(CoreDbBackend& fromDBbackend,
                    const QString& fromActionName,

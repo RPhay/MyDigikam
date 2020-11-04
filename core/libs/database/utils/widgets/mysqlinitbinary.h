@@ -37,8 +37,13 @@ class DIGIKAM_GUI_EXPORT MysqlInitBinary : public DBinaryIface
 
 public:
 
-    explicit MysqlInitBinary();
+    MysqlInitBinary();
     ~MysqlInitBinary() override;
+
+private:
+
+    // Disable
+    explicit MysqlInitBinary(QObject*);
 };
 
 } // namespace Digikam

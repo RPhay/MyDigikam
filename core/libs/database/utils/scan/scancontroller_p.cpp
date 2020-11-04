@@ -155,9 +155,9 @@ void ScanControllerLoadingCacheFileWatch::slotImageChanged(const ImageChangeset&
         if ((changes & DatabaseFields::ModificationDate) || (changes & DatabaseFields::Orientation))
         {
             ItemInfo info(imageId);
-
-            //qCDebug(DIGIKAM_DATABASE_LOG) << imageId << info.filePath();
-
+/*
+            qCDebug(DIGIKAM_DATABASE_LOG) << imageId << info.filePath();
+*/
             notifyFileChanged(info.filePath());
         }
     }

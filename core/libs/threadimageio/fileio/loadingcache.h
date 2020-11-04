@@ -114,6 +114,7 @@ private:
     // Hidden copy constructor and assignment operator.
     LoadingCacheFileWatch(const LoadingCacheFileWatch&);
     LoadingCacheFileWatch& operator=(const LoadingCacheFileWatch&);
+    LoadingCacheFileWatch(QObject*);
 };
 
 // --------------------------------------------------------------------------------------------------------------
@@ -288,7 +289,9 @@ private Q_SLOTS:
 
 private:
 
-    explicit LoadingCache();
+    // Disabled
+    LoadingCache();
+    explicit LoadingCache(QObject*);
     ~LoadingCache() override;
 
     // Hidden copy constructor and assignment operator.

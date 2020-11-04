@@ -50,27 +50,27 @@ DBinaryIface::DBinaryIface(const QString& binaryName,
                            const QString& toolName,
                            const QStringList& args,
                            const QString& desc)
-    : m_checkVersion(false),
-      m_headerStarts(QLatin1String("")),
-      m_headerLine(0),
-      m_minimalVersion(QLatin1String("")),
-      m_configGroup(!toolName.isEmpty() ? QString::fromLatin1("%1 Settings").arg(toolName) : QLatin1String("")),
-      m_binaryBaseName(goodBaseName(binaryName)),
-      m_binaryArguments(args),
-      m_projectName(projectName),
-      m_url(QUrl(url)),
-      m_isFound(false),
-      m_developmentVersion(false),
-      m_version(QLatin1String("")),
-      m_pathDir(QLatin1String("")),
-      m_description(desc),
-      m_pathWidget(nullptr),
-      m_binaryLabel(nullptr),
-      m_versionLabel(nullptr),
-      m_pathButton(nullptr),
-      m_downloadButton(nullptr),
-      m_lineEdit(nullptr),
-      m_statusIcon(nullptr)
+    : m_checkVersion        (false),
+      m_headerStarts        (QLatin1String("")),
+      m_headerLine          (0),
+      m_minimalVersion      (QLatin1String("")),
+      m_configGroup         (!toolName.isEmpty() ? QString::fromLatin1("%1 Settings").arg(toolName) : QLatin1String("")),
+      m_binaryBaseName      (goodBaseName(binaryName)),
+      m_binaryArguments     (args),
+      m_projectName         (projectName),
+      m_url                 (QUrl(url)),
+      m_isFound             (false),
+      m_developmentVersion  (false),
+      m_version             (QLatin1String("")),
+      m_pathDir             (QLatin1String("")),
+      m_description         (desc),
+      m_pathWidget          (nullptr),
+      m_binaryLabel         (nullptr),
+      m_versionLabel        (nullptr),
+      m_pathButton          (nullptr),
+      m_downloadButton      (nullptr),
+      m_lineEdit            (nullptr),
+      m_statusIcon          (nullptr)
 {
 }
 
@@ -83,27 +83,27 @@ DBinaryIface::DBinaryIface(const QString& binaryName,
                            const QString& toolName,
                            const QStringList& args,
                            const QString& desc)
-    : m_checkVersion(true),
-      m_headerStarts(header),
-      m_headerLine(headerLine),
-      m_minimalVersion(minimalVersion),
-      m_configGroup(!toolName.isEmpty() ? QString::fromLatin1("%1 Settings").arg(toolName) : QLatin1String("")),
-      m_binaryBaseName(goodBaseName(binaryName)),
-      m_binaryArguments(args),
-      m_projectName(projectName),
-      m_url(QUrl(url)),
-      m_isFound(false),
-      m_developmentVersion(false),
-      m_version(QLatin1String("")),
-      m_pathDir(QLatin1String("")),
-      m_description(desc),
-      m_pathWidget(nullptr),
-      m_binaryLabel(nullptr),
-      m_versionLabel(nullptr),
-      m_pathButton(nullptr),
-      m_downloadButton(nullptr),
-      m_lineEdit(nullptr),
-      m_statusIcon(nullptr)
+    : m_checkVersion        (true),
+      m_headerStarts        (header),
+      m_headerLine          (headerLine),
+      m_minimalVersion      (minimalVersion),
+      m_configGroup         (!toolName.isEmpty() ? QString::fromLatin1("%1 Settings").arg(toolName) : QLatin1String("")),
+      m_binaryBaseName      (goodBaseName(binaryName)),
+      m_binaryArguments     (args),
+      m_projectName         (projectName),
+      m_url                 (QUrl(url)),
+      m_isFound             (false),
+      m_developmentVersion  (false),
+      m_version             (QLatin1String("")),
+      m_pathDir             (QLatin1String("")),
+      m_description         (desc),
+      m_pathWidget          (nullptr),
+      m_binaryLabel         (nullptr),
+      m_versionLabel        (nullptr),
+      m_pathButton          (nullptr),
+      m_downloadButton      (nullptr),
+      m_lineEdit            (nullptr),
+      m_statusIcon          (nullptr)
 {
 }
 
@@ -129,7 +129,7 @@ bool DBinaryIface::versionIsRight() const
 
     return (!version().isNull() &&
             isFound()           &&
-            floatVersion >= minimalVersion().toFloat());
+            (floatVersion >= minimalVersion().toFloat()));
 }
 
 bool DBinaryIface::versionIsRight(const float customVersion) const
@@ -149,7 +149,7 @@ bool DBinaryIface::versionIsRight(const float customVersion) const
 
     return (!version().isNull() &&
             isFound()           &&
-            floatVersion >= customVersion);
+            (floatVersion >= customVersion));
 }
 
 QString DBinaryIface::findHeader(const QStringList& output, const QString& header) const
@@ -157,7 +157,9 @@ QString DBinaryIface::findHeader(const QStringList& output, const QString& heade
     foreach (const QString& s, output)
     {
         if (s.startsWith(header))
+        {
             return s;
+        }
     }
 
     return QString();
@@ -202,13 +204,21 @@ void DBinaryIface::slotNavigateAndCheck()
     }
     else
     {
+
 #if defined Q_OS_MACOS
+
         start = QUrl::fromLocalFile(QLatin1String("/Applications/"));
+
 #elif defined Q_OS_WIN
+
         start = QUrl::fromLocalFile(QLatin1String("C:/Program Files/"));
+
 #else
+
         start = QUrl::fromLocalFile(QLatin1String("/usr/bin/"));
+
 #endif
+
     }
 
     QString f   = DFileDialog::getOpenFileName(nullptr, i18n("Navigate to %1", m_binaryBaseName),
@@ -252,6 +262,7 @@ QString DBinaryIface::readConfig()
 
     KSharedConfigPtr config = KSharedConfig::openConfig();
     KConfigGroup group      = config->group(m_configGroup);
+
     return group.readPathEntry(QString::fromUtf8("%1Binary").arg(m_binaryBaseName), QLatin1String(""));
 }
 
@@ -290,6 +301,7 @@ void DBinaryIface::setup(const QString& prev)
     {
         m_searchPaths << previousDir;
         checkDirForPath(previousDir);
+
         return;
     }
 
@@ -374,6 +386,7 @@ bool DBinaryIface::recheckDirectories()
     if (isValid())
     {
         // No need for recheck if it is already valid...
+
         return true;
     }
 
@@ -392,15 +405,26 @@ bool DBinaryIface::recheckDirectories()
 
 QString DBinaryIface::goodBaseName(const QString& b)
 {
+
 #ifdef Q_OS_WIN
+
     if (b.endsWith(QLatin1String(".jar")))
+    {
         // Special case if we check a java archive.
+
         return b;
+    }
     else
+    {
         return b + QLatin1String(".exe");
+    }
+
 #else
+
     return b;
+
 #endif // Q_OS_WIN
+
 }
 
 } // namespace Digikam

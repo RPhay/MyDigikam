@@ -55,6 +55,11 @@ public:
     static const QString copyright();
     static const QUrl    webProjectUrl();
     static void          authorsRegistration(KAboutData& aboutData);
+
+private:
+
+    // Disable
+    DAboutData(QObject*);
 };
 
 } // namespace Digikam

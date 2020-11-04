@@ -46,8 +46,8 @@ namespace Digikam
 {
 
 CoreDbCopyManager::CoreDbCopyManager()
+    : m_isStopProcessing(false)
 {
-    m_isStopProcessing = false;
 }
 
 CoreDbCopyManager::~CoreDbCopyManager()
@@ -69,6 +69,7 @@ void CoreDbCopyManager::copyDatabases(const DbEngineParameters& fromDBParameters
     if (!fromDBbackend.open(fromDBParameters))
     {
         emit finished(CoreDbCopyManager::failed, i18n("Error while opening the source database."));
+
         return;
     }
 
@@ -78,7 +79,9 @@ void CoreDbCopyManager::copyDatabases(const DbEngineParameters& fromDBParameters
     if (!toDBbackend.open(toDBParameters))
     {
         emit finished(CoreDbCopyManager::failed, i18n("Error while opening the target database."));
+
         fromDBbackend.close();
+
         return;
     }
 
@@ -108,6 +111,7 @@ void CoreDbCopyManager::copyDatabases(const DbEngineParameters& fromDBParameters
         << QLatin1String("VideoMetadata")
         << QLatin1String("Settings")
     ;
+
     const int tablesSize = tables.size();
 
     QMap<QString, QVariant> bindingMap;
@@ -149,8 +153,10 @@ void CoreDbCopyManager::copyDatabases(const DbEngineParameters& fromDBParameters
     if (m_isStopProcessing || !updater.update())
     {
         emit finished(CoreDbCopyManager::failed, i18n("Error while creating the database schema."));
+
         fromDBbackend.close();
         toDBbackend.close();
+
         return;
     }
 
@@ -235,7 +241,9 @@ bool CoreDbCopyManager::copyTable(CoreDbBackend& fromDBbackend,
 
     for (int i = 0 ; i < columnCount ; ++i)
     {
-        //qCDebug(DIGIKAM_COREDB_LOG) << "Column: ["<< result.record().fieldName(i) << "]";
+/*
+        qCDebug(DIGIKAM_COREDB_LOG) << "Column: ["<< result.record().fieldName(i) << "]";
+*/
         columnNames.append(result.record().fieldName(i));
     }
 
@@ -285,7 +293,9 @@ bool CoreDbCopyManager::copyTable(CoreDbBackend& fromDBbackend,
                                         << toDBbackend.lastSQLError();
             QString errorMsg = i18n("Error while converting the database.\n Details: %1",
                                     toDBbackend.lastSQLError().databaseText());
+
             emit finished(CoreDbCopyManager::failed, errorMsg);
+
             return false;
         }
     }

@@ -54,7 +54,7 @@ public:
 
 public:
 
-    explicit CoreDbWatch();
+    CoreDbWatch();
 
     void initializeRemote(DatabaseMode mode);
     void doAnyProcessing();
@@ -164,6 +164,9 @@ public:
     class Private;
 
 private:
+
+    // Disabled
+    explicit CoreDbWatch(QObject*);
 
     Private* const d;
 };

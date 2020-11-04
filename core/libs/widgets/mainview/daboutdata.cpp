@@ -59,7 +59,7 @@ const QString DAboutData::digiKamSloganFormated()
                  "<i>%1</i>"
                  "</font></qt>",
                  digiKamFamily()
-                 );
+                );
 }
 
 const QString DAboutData::digiKamSlogan()

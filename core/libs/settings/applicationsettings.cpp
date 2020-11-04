@@ -49,7 +49,7 @@ ApplicationSettings* ApplicationSettings::instance()
 
 ApplicationSettings::ApplicationSettings()
     : QObject(),
-      d(new Private(this))
+      d      (new Private(this))
 {
     d->config = KSharedConfig::openConfig();
     d->init();
@@ -191,7 +191,8 @@ void ApplicationSettings::readSettings()
     if (group.readEntry(d->configPreviewLoadFullItemSizeEntry, true))
     {
         d->previewSettings.quality = PreviewSettings::HighQualityPreview;
-        if (group.readEntry(d->configPreviewRawUseEmbeddedPreview, false))
+
+        if      (group.readEntry(d->configPreviewRawUseEmbeddedPreview, false))
         {
             d->previewSettings.rawLoading = PreviewSettings::RawPreviewFromEmbeddedPreview;
         }
@@ -304,8 +305,8 @@ void ApplicationSettings::readSettings()
 
     group = config->group(d->configGroupGrouping);
 
-    for (ApplicationSettings::OperationModes::key_iterator it = d->groupingOperateOnAll.keyBegin();
-         it != d->groupingOperateOnAll.keyEnd(); ++it)
+    for (ApplicationSettings::OperationModes::key_iterator it = d->groupingOperateOnAll.keyBegin() ;
+         it != d->groupingOperateOnAll.keyEnd() ; ++it)
     {
         d->groupingOperateOnAll.insert(*it, (ApplicationSettings::ApplyToEntireGroup)group.readEntry(
                                              d->configGroupingOperateOnAll.value(*it), (int)ApplicationSettings::Ask));
@@ -407,10 +408,12 @@ void ApplicationSettings::saveSettings()
                 group.writeEntry(d->configPreviewRawUseEmbeddedPreview, false);
                 group.writeEntry(d->configPreviewRawUseHalfSizeData,    false);
                 break;
+
             case PreviewSettings::RawPreviewFromEmbeddedPreview:
                 group.writeEntry(d->configPreviewRawUseEmbeddedPreview, true);
                 group.writeEntry(d->configPreviewRawUseHalfSizeData,    false);
                 break;
+
             case PreviewSettings::RawPreviewFromRawHalfSize:
                 group.writeEntry(d->configPreviewRawUseEmbeddedPreview, false);
                 group.writeEntry(d->configPreviewRawUseHalfSizeData,    true);

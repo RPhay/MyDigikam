@@ -155,6 +155,7 @@ void AlbumManager::startScan()
     d->changed = false;
 
     // create root albums
+
     d->rootPAlbum = new PAlbum(i18n("Albums"));
     insertPAlbum(d->rootPAlbum, nullptr);
 
@@ -172,12 +173,14 @@ void AlbumManager::startScan()
     emit signalAlbumAdded(d->rootDAlbum);
 
     // Create albums for album roots. Reuse logic implemented in the method
+
     foreach (const CollectionLocation& location, CollectionManager::instance()->allLocations())
     {
         handleCollectionStatusChange(location, CollectionLocation::LocationNull);
     }
 
     // listen to location status changes
+
     connect(CollectionManager::instance(), SIGNAL(locationStatusChanged(CollectionLocation,int)),
             this, SLOT(slotCollectionLocationStatusChanged(CollectionLocation,int)));
 
@@ -185,9 +188,11 @@ void AlbumManager::startScan()
             this, SLOT(slotCollectionLocationPropertiesChanged(CollectionLocation)));
 
     // reload albums
+
     refresh();
 
     // listen to album database changes
+
     connect(CoreDbAccess::databaseWatch(), SIGNAL(albumChange(AlbumChangeset)),
             this, SLOT(slotAlbumChange(AlbumChangeset)));
 
@@ -198,6 +203,7 @@ void AlbumManager::startScan()
             this, SLOT(slotSearchChange(SearchChangeset)));
 
     // listen to collection image changes
+
     connect(CoreDbAccess::databaseWatch(), SIGNAL(collectionImageChange(CollectionImageChangeset)),
             this, SLOT(slotCollectionImageChange(CollectionImageChangeset)));
 
@@ -205,6 +211,7 @@ void AlbumManager::startScan()
             this, SLOT(slotImageTagChange(ImageTagChangeset)));
 
     // listen to image attribute changes
+
     connect(ItemAttributesWatch::instance(), SIGNAL(signalImageDateChanged(qlonglong)),
             d->scanDAlbumsTimer, SLOT(start()));
 
@@ -224,10 +231,12 @@ void AlbumManager::setShowOnlyAvailableAlbums(bool onlyAvailable)
     }
 
     d->showOnlyAvailableAlbums = onlyAvailable;
+
     emit signalShowOnlyAvailableAlbumsChanged(d->showOnlyAvailableAlbums);
 
     // We need to update the unavailable locations.
     // We assume the handleCollectionStatusChange does the right thing (even though old status == current status)
+
     foreach (const CollectionLocation& location, CollectionManager::instance()->allLocations())
     {
         if (location.status() == CollectionLocation::LocationUnavailable)
@@ -249,6 +258,7 @@ void AlbumManager::prepareItemCounts()
 {
     // There is no way to find out if any data we had collected
     // previously is still valid - recompute
+
     scanDAlbums();
     getAlbumItemsCount();
     getTagItemsCount();
@@ -266,6 +276,7 @@ void AlbumManager::slotImagesDeleted(const QList<qlonglong>& imageIds)
     foreach (SAlbum* const sAlbum, sAlbums)
     {
         // Read the search query XML and save the image ids
+
         SearchXmlReader reader(sAlbum->query());
         SearchXml::Element element;
         QSet<qlonglong> images;

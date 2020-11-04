@@ -829,9 +829,12 @@ Q_SIGNALS:
 
 private:
 
-    friend class AlbumManagerCreator;
+    // Disable
     AlbumManager();
+    explicit AlbumManager(QObject*);
     ~AlbumManager() override;
+
+    friend class AlbumManagerCreator;
 
     static AlbumManager* internalInstance;
 

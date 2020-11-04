@@ -64,6 +64,9 @@ Q_SIGNALS:
 
 private:
 
+    // Disable
+    DbEngineConnectionChecker(QObject*);
+
     class Private;
     Private* const d;
 };
@@ -91,6 +94,9 @@ private Q_SLOTS:
     void showProgressDialog();
 
 private:
+
+    // Disabled
+    DbEngineGuiErrorHandler(QObject*);
 
     class Private;
     Private* const d;

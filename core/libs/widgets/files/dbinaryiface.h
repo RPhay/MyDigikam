@@ -141,6 +141,11 @@ protected:
     QLabel*             m_statusIcon;
 
     QSet<QString>       m_searchPaths;
+
+private:
+
+    // Disabled
+    explicit DBinaryIface(QObject*);
 };
 
 } // namespace Digikam
