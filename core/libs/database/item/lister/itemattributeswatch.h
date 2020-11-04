@@ -98,7 +98,9 @@ private Q_SLOTS:
 
 private:
 
-    explicit ItemAttributesWatch();
+    // Disable
+    ItemAttributesWatch();
+    explicit ItemAttributesWatch(QObject*);
     ~ItemAttributesWatch() override;
 
     static ItemAttributesWatch* m_instance;

@@ -68,6 +68,9 @@ private Q_SLOTS:
 
 private:
 
+    // Disable
+    explicit DModelFactory(QObject*);
+
     class Private;
     Private* const d;
 };

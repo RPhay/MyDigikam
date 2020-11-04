@@ -115,7 +115,9 @@ public:
 
 private:
 
+    // Disable
     FileActionMngr();
+    explicit FileActionMngr(QObject*);
     ~FileActionMngr() override;
 
     Private* const d;

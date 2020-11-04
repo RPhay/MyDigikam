@@ -66,6 +66,9 @@ private Q_SLOTS:
 
 private:
 
+    // Disable
+    AlbumParser(QObject*);
+
     class Private;
     Private* const d;
 };

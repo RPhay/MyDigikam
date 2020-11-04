@@ -57,7 +57,9 @@ public:
 
 private:
 
-    explicit SyncJob();
+    // Disable
+    SyncJob();
+    explicit SyncJob(QObject*);
     ~SyncJob() override;
 
     void enterWaitingLoop() const;

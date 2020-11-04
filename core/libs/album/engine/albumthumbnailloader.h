@@ -189,7 +189,9 @@ protected Q_SLOTS:
 
 private:
 
+    // Disable
     AlbumThumbnailLoader();
+    explicit AlbumThumbnailLoader(QObject*);
     ~AlbumThumbnailLoader() override;
 
     void    addUrl(Album* const album, qlonglong id);

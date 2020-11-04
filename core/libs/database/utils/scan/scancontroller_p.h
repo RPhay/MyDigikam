@@ -77,11 +77,16 @@ class Q_DECL_HIDDEN ScanControllerLoadingCacheFileWatch : public LoadingCacheFil
 
 public:
 
-    explicit ScanControllerLoadingCacheFileWatch();
+    ScanControllerLoadingCacheFileWatch();
 
 private Q_SLOTS:
 
     void slotImageChanged(const ImageChangeset& changeset);
+
+private:
+
+    // Disable
+    explicit ScanControllerLoadingCacheFileWatch(QObject*);
 };
 
 // ------------------------------------------------------------------------------

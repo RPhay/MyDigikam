@@ -69,8 +69,11 @@ public:
 
 private:
 
-    friend class IOJobsManagerCreator;
+    // Disable
     IOJobsManager();
+    explicit IOJobsManager(QObject*);
+
+    friend class IOJobsManagerCreator;
 };
 
 } // namespace Digikam

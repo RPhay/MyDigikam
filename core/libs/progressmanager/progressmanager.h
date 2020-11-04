@@ -457,6 +457,7 @@ private:
 
     // Disable
     ProgressManager();
+    ProgressManager(QObject*);
     ProgressManager(const ProgressManager&);
     ~ProgressManager() override;
 

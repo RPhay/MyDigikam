@@ -56,7 +56,9 @@ public:
 
 private:
 
-    explicit ItemSorterCache();
+    // Disable
+    ItemSorterCache();
+    explicit ItemSorterCache(QObject*);
     ~ItemSorterCache() override;
 
 private:

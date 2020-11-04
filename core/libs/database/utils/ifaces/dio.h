@@ -105,7 +105,9 @@ Q_SIGNALS:
 
 private:
 
-    explicit DIO();
+    // Disable
+    DIO();
+    explicit DIO(QObject*);
     ~DIO() override;
 
     void processJob(IOJobData* const data);
