@@ -94,13 +94,13 @@ class Q_DECL_HIDDEN CameraController::Private
 public:
 
     explicit Private()
-      : close(false),
-        canceled(false),
-        running(false),
+      : close       (false),
+        canceled    (false),
+        running     (false),
         conflictRule(SetupCamera::DIFFNAME),
-        parent(nullptr),
-        timer(nullptr),
-        camera(nullptr)
+        parent      (nullptr),
+        timer       (nullptr),
+        camera      (nullptr)
     {
     }
 
@@ -363,7 +363,11 @@ void CameraController::slotCancel()
 {
     d->canceled = true;
     d->camera->cancel();
+
     QMutexLocker lock(&d->mutex);
+
+    qDeleteAll(d->cmdThumbs);
+    qDeleteAll(d->commands);
     d->cmdThumbs.clear();
     d->commands.clear();
 }
@@ -1091,7 +1095,7 @@ void CameraController::addCommand(CameraCommand* const cmd)
 
     if (cmd->action == CameraCommand::cam_thumbsinfo)
     {
-        d->cmdThumbs << cmd;
+        d->cmdThumbs.prepend(cmd);
     }
     else
     {
@@ -1104,6 +1108,7 @@ void CameraController::addCommand(CameraCommand* const cmd)
 bool CameraController::queueIsEmpty() const
 {
     QMutexLocker lock(&d->mutex);
+
     return (d->commands.isEmpty() && d->cmdThumbs.isEmpty());
 }
 
