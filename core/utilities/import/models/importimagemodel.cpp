@@ -371,9 +371,9 @@ CamItemInfo ImportItemModel::camItemInfo(const QUrl& fileUrl) const
 {
     if (d->keepFileUrlCache)
     {
-        qlonglong id = d->fileUrlHash.value(fileUrl.toLocalFile());
+        qlonglong id = d->fileUrlHash.value(fileUrl.toLocalFile(), -1);
 
-        if (id)
+        if (id != -1)
         {
             int index = d->idHash.value(id, -1);
 
@@ -403,9 +403,9 @@ QList<CamItemInfo> ImportItemModel::camItemInfos(const QUrl& fileUrl) const
 
     if (d->keepFileUrlCache)
     {
-        qlonglong id = d->fileUrlHash.value(fileUrl.toLocalFile());
+        qlonglong id = d->fileUrlHash.value(fileUrl.toLocalFile(), -1);
 
-        if (id)
+        if (id != -1)
         {
             foreach (int index, d->idHash.values(id))
             {
@@ -710,7 +710,7 @@ void ImportItemModel::finishIncrementalRefresh()
     delete d->incrementalUpdater;
     d->incrementalUpdater = nullptr;
 }
-
+/*
 template <class List, typename T>
 static bool pairsContain(const List& list, T value)
 {
@@ -741,7 +741,7 @@ static bool pairsContain(const List& list, T value)
 
     return false;
 }
-
+*/
 void ImportItemModel::removeIndex(const QModelIndex& index)
 {
     removeIndexs(QList<QModelIndex>() << index);
@@ -815,8 +815,9 @@ void ImportItemModel::removeRowPairs(const QList<QPair<int, int> >& toRemove)
     // Keep in mind that when calling beginRemoveRows all structures announced to be removed
     // must still be valid, and this includes our hashes as well, which limits what we can optimize
 
-    int                     removedRows = 0;
-    int                     offset      = 0;
+    int              removedRows = 0;
+    int              offset      = 0;
+    QList<qlonglong> removeFileUrls;
 
     foreach (const IntPair& pair, toRemove)
     {
@@ -857,6 +858,7 @@ void ImportItemModel::removeRowPairs(const QList<QPair<int, int> >& toRemove)
                 {
                     // in the removed interval
 
+                    removeFileUrls << it.key();
                     it = d->idHash.erase(it);
                     continue;
                 }
@@ -883,9 +885,9 @@ void ImportItemModel::removeRowPairs(const QList<QPair<int, int> >& toRemove)
     {
         QHash<QString, qlonglong>::iterator it;
 
-        for (it = d->fileUrlHash.begin() ; it!= d->fileUrlHash.end() ; )
+        for (it = d->fileUrlHash.begin() ; it != d->fileUrlHash.end() ; )
         {
-            if (pairsContain(toRemove, it.value()))
+            if (removeFileUrls.contains(it.value()))
             {
                 it = d->fileUrlHash.erase(it);
             }

@@ -441,9 +441,9 @@ ItemInfo ItemModel::imageInfo(const QString& filePath) const
 {
     if (d->keepFilePathCache)
     {
-        qlonglong id = d->filePathHash.value(filePath);
+        qlonglong id = d->filePathHash.value(filePath, -1);
 
-        if (id)
+        if (id != -1)
         {
             int index = d->idHash.value(id, -1);
 
@@ -473,9 +473,9 @@ QList<ItemInfo> ItemModel::imageInfos(const QString& filePath) const
 
     if (d->keepFilePathCache)
     {
-        qlonglong id = d->filePathHash.value(filePath);
+        qlonglong id = d->filePathHash.value(filePath, -1);
 
-        if (id)
+        if (id != -1)
         {
             foreach (int index, d->idHash.values(id))
             {
@@ -994,7 +994,7 @@ void ItemModel::setSendRemovalSignals(bool send)
 {
     d->sendRemovalSignals = send;
 }
-
+/*
 template <class List, typename T>
 static bool pairsContain(const List& list, T value)
 {
@@ -1026,7 +1026,7 @@ static bool pairsContain(const List& list, T value)
 
     return false;
 }
-
+*/
 void ItemModel::removeRowPairsWithCheck(const QList<QPair<int, int> >& toRemove)
 {
     if (d->incrementalUpdater)
@@ -1048,9 +1048,11 @@ void ItemModel::removeRowPairs(const QList<QPair<int, int> >& toRemove)
     // Keep in mind that when calling beginRemoveRows all structures announced to be removed
     // must still be valid, and this includes our hashes as well, which limits what we can optimize
 
-    int removedRows = 0;
-    int offset      = 0;
+    int                     removedRows = 0;
+    int                     offset      = 0;
+    QList<qlonglong>        removeFilePaths;
     typedef QPair<int, int> IntPair;            // to make foreach macro happy
+
 
     foreach (const IntPair& pair, toRemove)
     {
@@ -1091,6 +1093,7 @@ void ItemModel::removeRowPairs(const QList<QPair<int, int> >& toRemove)
                 {
                     // in the removed interval
 
+                    removeFilePaths << it.key();
                     it = d->idHash.erase(it);
                     continue;
                 }
@@ -1124,7 +1127,7 @@ void ItemModel::removeRowPairs(const QList<QPair<int, int> >& toRemove)
 
         for (it = d->filePathHash.begin() ; it != d->filePathHash.end() ; )
         {
-            if (pairsContain(toRemove, it.value()))
+            if (removeFilePaths.contains(it.value()))
             {
                 it = d->filePathHash.erase(it);
             }

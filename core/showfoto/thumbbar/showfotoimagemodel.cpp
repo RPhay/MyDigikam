@@ -385,7 +385,7 @@ void ShowfotoItemModel::publiciseInfos(const QList<ShowfotoItemInfo>& infos)
     endInsertRows();
     emit itemInfosAdded(infos);
 }
-
+/*
 template <class List, typename T>
 static bool pairsContain(const List& list, T value)
 {
@@ -417,7 +417,7 @@ static bool pairsContain(const List& list, T value)
 
     return false;
 }
-
+*/
 void ShowfotoItemModel::removeIndex(const QModelIndex& index)
 {
     removeIndexs(QList<QModelIndex>() << index);
@@ -461,6 +461,7 @@ void ShowfotoItemModel::removeRowPairs(const QList<QPair<int, int> >& toRemove)
 
     int                     removedRows = 0;
     int                     offset      = 0;
+    QList<qlonglong>        removeFilePaths;
     typedef QPair<int, int> IntPair;
 
     foreach (const IntPair& pair, toRemove)
@@ -502,6 +503,7 @@ void ShowfotoItemModel::removeRowPairs(const QList<QPair<int, int> >& toRemove)
                 {
                     // in the removed interval
 
+                    removeFilePaths << it.key();
                     it = d->idHash.erase(it);
                     continue;
                 }
@@ -528,9 +530,9 @@ void ShowfotoItemModel::removeRowPairs(const QList<QPair<int, int> >& toRemove)
     {
         QHash<QString, qlonglong>::iterator it;
 
-        for (it = d->fileUrlHash.begin() ; it!= d->fileUrlHash.end() ;)
+        for (it = d->fileUrlHash.begin() ; it != d->fileUrlHash.end() ; )
         {
-            if (pairsContain(toRemove, it.value()))
+            if (removeFilePaths.contains(it.value()))
             {
                 it = d->fileUrlHash.erase(it);
             }
