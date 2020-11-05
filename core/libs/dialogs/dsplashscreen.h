@@ -43,7 +43,7 @@ class DIGIKAM_EXPORT DSplashScreen : public QSplashScreen
 
 public:
 
-    explicit DSplashScreen();
+    DSplashScreen();
     ~DSplashScreen() override;
 
     void setAlignment(int alignment);
@@ -59,6 +59,9 @@ private Q_SLOTS:
     void slotAnimate();
 
 private:
+
+    // Disable
+    explicit DSplashScreen(QObject*);
 
     class Private;
     Private* const d;

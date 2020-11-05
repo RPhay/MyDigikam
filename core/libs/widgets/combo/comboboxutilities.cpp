@@ -404,6 +404,11 @@ public:
     {
         return QListView::viewportEvent(event);
     }
+
+private:
+
+    // Disable
+    explicit ListViewComboBoxListView(QObject*);
 };
 
 ListViewComboBox::ListViewComboBox(QWidget* const parent)

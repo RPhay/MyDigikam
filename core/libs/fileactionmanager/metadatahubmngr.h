@@ -58,7 +58,9 @@ public Q_SLOTS:
 
 private:
 
+    // Disable
     MetadataHubMngr();
+    explicit MetadataHubMngr(QObject*);
 
     class Private;
     Private* const d;

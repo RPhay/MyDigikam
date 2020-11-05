@@ -61,8 +61,8 @@ class FileActionMngrFileWorker : public FileWorkerInterface
 
 public:
 
-    explicit FileActionMngrFileWorker(FileActionMngr::Private* const d)
-        : d(d)
+    explicit FileActionMngrFileWorker(FileActionMngr::Private* const dd)
+        : d(dd)
     {
     }
 

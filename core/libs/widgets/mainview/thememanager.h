@@ -70,7 +70,9 @@ private Q_SLOTS:
 
 private:
 
+    // Disable
     ThemeManager();
+    explicit ThemeManager(QObject*);
 
     void    populateThemeMenu();
     QString currentDesktopdefaultTheme() const;

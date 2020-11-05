@@ -54,6 +54,11 @@ private Q_SLOTS:
     void slotProgressStatus(const QString&);
     void slotCompleted();
     void slotCancel();
+
+private:
+
+    // Disable
+    FileActionProgress(QObject*);
 };
 
 } // namespace Digikam

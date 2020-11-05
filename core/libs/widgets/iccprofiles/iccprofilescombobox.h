@@ -148,6 +148,11 @@ protected Q_SLOTS:
 protected:
 
     QObject*       m_parent;
+
+private:
+
+    // Disable
+    IccProfilesMenuAction(QObject*);
 };
 
 } // namespace Digikam

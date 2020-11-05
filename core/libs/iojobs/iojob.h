@@ -52,6 +52,11 @@ Q_SIGNALS:
 
     void signalError(const QString& errMsg);
     void signalOneProccessed(const QUrl& url);
+
+private:
+
+    // Disable
+    explicit IOJob(QObject*);
 };
 
 // ---------------------------------------
@@ -67,6 +72,11 @@ public:
 protected:
 
     void run() override;
+
+private:
+
+    // Disable
+    CopyOrMoveJob(QObject*);
 
 private:
 
@@ -86,6 +96,11 @@ public:
 protected:
 
     void run() override;
+
+private:
+
+    // Disable
+    DeleteJob(QObject*);
 
 private:
 
@@ -112,6 +127,11 @@ protected:
 
 private:
 
+    // Disable
+    RenameFileJob(QObject*);
+
+private:
+
     IOJobData* m_data;
 };
 
@@ -135,6 +155,11 @@ protected:
 
 private:
 
+    // Disable
+    DTrashItemsListingJob(QObject*);
+
+private:
+
     QString m_collectionPath;
 };
 
@@ -154,6 +179,11 @@ protected:
 
 private:
 
+    // Disable
+    RestoreDTrashItemsJob(QObject*);
+
+private:
+
     IOJobData* m_data;
 };
 
@@ -170,6 +200,11 @@ public:
 protected:
 
     void run() override;
+
+private:
+
+    // Disable
+    EmptyDTrashItemsJob(QObject*);
 
 private:
 

@@ -71,8 +71,8 @@ class FileActionMngrDatabaseWorker : public DatabaseWorkerInterface
 
 public:
 
-    explicit FileActionMngrDatabaseWorker(FileActionMngr::Private* const d)
-        : d(d)
+    explicit FileActionMngrDatabaseWorker(FileActionMngr::Private* const dd)
+        : d(dd)
     {
     }
 

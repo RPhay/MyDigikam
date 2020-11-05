@@ -86,6 +86,11 @@ public:
 Q_SIGNALS:
 
     void signalWrittingDone();
+
+private:
+
+    // Disable
+    explicit FileActionProgressItemContainer(QObject*);
 };
 
 // -------------------------------------------------------------------------------------------------------------------

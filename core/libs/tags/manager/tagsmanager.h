@@ -45,7 +45,7 @@ class TagsManager : public QMainWindow, public StateSavingObject
 
 public:
 
-    explicit TagsManager();
+    TagsManager();
     ~TagsManager() override;
 
     /**
@@ -150,6 +150,9 @@ protected:
     void doSaveState() override;
 
 private:
+
+    // Disable
+    explicit TagsManager(QObject*);
 
     void setupActions();
 

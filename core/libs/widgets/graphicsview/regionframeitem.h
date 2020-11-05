@@ -58,11 +58,11 @@ public:
 public:
 
     explicit RegionFrameItem(QGraphicsItem* const parent);
-    ~RegionFrameItem()                                              override;
+    ~RegionFrameItem()                                      override;
 
     void  setFlags(Flags flags);
     void  changeFlags(Flags flags, bool addOrRemove);
-    Flags flags()                                             const;
+    Flags flags()                                     const;
 
     /**
      * Sets a widget item as HUD item. A HUD item will be positioned relative to this item,

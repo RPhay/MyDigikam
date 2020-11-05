@@ -86,7 +86,7 @@ class DIGIKAM_DATABASE_EXPORT ItemFilterModel::ItemFilterModelPrivate : public Q
 
 public:
 
-    explicit ItemFilterModelPrivate();
+    ItemFilterModelPrivate();
     ~ItemFilterModelPrivate() override;
 
     void init(ItemFilterModel* q);
@@ -161,6 +161,11 @@ Q_SIGNALS:
     void packageToFilter(const ItemFilterModelTodoPackage& package);
     void reAddItemInfos(const QList<ItemInfo>& infos, const QList<QVariant>& extraValues);
     void reAddingFinished();
+
+private:
+
+    // Disable
+    explicit ItemFilterModelPrivate(QObject*);
 };
 
 } // namespace Digikam

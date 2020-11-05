@@ -72,7 +72,9 @@ private:
 
 private:
 
-    explicit TemplateManager();
+    // Disable
+    TemplateManager();
+    explicit TemplateManager(QObject*);
     ~TemplateManager() override;
 
 private:

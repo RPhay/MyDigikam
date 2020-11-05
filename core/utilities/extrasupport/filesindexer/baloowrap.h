@@ -71,7 +71,7 @@ class DIGIKAM_EXPORT BalooWrap : public QObject
 
 public:
 
-    explicit BalooWrap();
+    BalooWrap();
     ~BalooWrap() override;
 
     /**
@@ -113,6 +113,9 @@ public:
     bool getSyncToDigikam()                    const;
 
 private:
+
+    // Disable
+    explicit BalooWrap(QObject*);
 
     class Private;
     Private* const d;

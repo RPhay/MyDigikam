@@ -66,7 +66,8 @@ protected:
 
 private:
 
-    // Hidden copy constructor and assignment operator.
+    // Disable
+    explicit ThreadManager(QObject*);
     ThreadManager(const ThreadManager&);
     ThreadManager& operator=(const ThreadManager&);
 

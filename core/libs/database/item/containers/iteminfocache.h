@@ -42,14 +42,14 @@ namespace Digikam
 class AlbumShortInfo;
 class ItemInfoData;
 
-// No EXPORT class
+// NOTE: No need to EXPORT this class
 class ItemInfoCache : public QObject
 {
     Q_OBJECT
 
 public:
 
-    explicit ItemInfoCache();
+    ItemInfoCache();
     ~ItemInfoCache() override;
 
     /**
@@ -103,6 +103,9 @@ private Q_SLOTS:
     void slotAlbumChange(const AlbumChangeset&);
 
 private:
+
+    // Disable
+    explicit ItemInfoCache(QObject*);
 
     QList<AlbumShortInfo>::const_iterator findAlbum(int id);
     void                                  checkAlbums();

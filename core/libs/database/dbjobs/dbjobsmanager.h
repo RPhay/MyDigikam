@@ -86,8 +86,11 @@ public:
 
 private:
 
-    friend class DBJobsManagerCreator;
+    // Disable
     DBJobsManager();
+    explicit DBJobsManager(QObject*);
+
+    friend class DBJobsManagerCreator;
 };
 
 } // namespace Digikam

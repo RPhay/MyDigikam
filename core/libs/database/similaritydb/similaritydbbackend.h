@@ -54,6 +54,9 @@ public:
 
 private:
 
+    // Disable
+    SimilarityDbBackend(QObject*);
+
     Q_DECLARE_PRIVATE(BdEngineBackend)
 };
 
