@@ -69,11 +69,11 @@ public:
     {
     }
 
-    QCache<QUrl, CachedItem> cache;  // Camera info/thumb cache based on item url keys.
+    QCache<QUrl, CachedItem>   cache;  // Camera info/thumb cache based on item url keys.
 
-    QList<QUrl>              pendingItems;
+    QMap<QUrl, CameraCommand*> pendingItems;
 
-    CameraController*        controller;
+    CameraController*          controller;
 };
 
 // --------------------------------------------------------
@@ -106,7 +106,7 @@ CameraController* CameraThumbsCtrl::cameraController() const
 
 bool CameraThumbsCtrl::getThumbInfo(const CamItemInfo& info, CachedItem& item) const
 {
-    if (hasItemFromCache(info.url()))
+    if      (hasItemFromCache(info.url()))
     {
         // We look if items are not in cache.
 
@@ -114,12 +114,17 @@ bool CameraThumbsCtrl::getThumbInfo(const CamItemInfo& info, CachedItem& item) c
 
         return true;
     }
-    else if (!d->pendingItems.contains(info.url()))
+    else if (d->pendingItems.contains(info.url()))
+    {
+        d->controller->moveThumbsInfo(d->pendingItems.value(info.url()));
+    }
+    else
     {
         // We look if items are not in pending list.
 
-        d->pendingItems << info.url();
-        d->controller->getThumbsInfo(CamItemInfoList() << info, ThumbnailSize::maxThumbsSize());
+        CameraCommand* const cmd = d->controller->getThumbsInfo(CamItemInfoList() << info,
+                                                                ThumbnailSize::maxThumbsSize());
+        d->pendingItems.insert(info.url(), cmd);
     }
 
     item = CachedItem(info, d->controller->mimeTypeThumbnail(info.name).pixmap(ThumbnailSize::maxThumbsSize()));
@@ -151,7 +156,7 @@ void CameraThumbsCtrl::slotThumbInfo(const QString&, const QString& file, const 
     }
 
     putItemToCache(info.url(), info, QPixmap::fromImage(thumbnail));
-    d->pendingItems.removeAll(info.url());
+    d->pendingItems.remove(info.url());
     emit signalThumbInfoReady(info);
 }
 
@@ -159,7 +164,7 @@ void CameraThumbsCtrl::slotThumbInfoFailed(const QString& /*folder*/, const QStr
 {
     QPixmap pix = d->controller->mimeTypeThumbnail(file).pixmap(ThumbnailSize::maxThumbsSize());
     putItemToCache(info.url(), info, pix);
-    d->pendingItems.removeAll(info.url());
+    d->pendingItems.remove(info.url());
     emit signalThumbInfoReady(info);
 }
 

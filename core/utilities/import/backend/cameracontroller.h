@@ -84,7 +84,8 @@ public:
     /**
      * Get thumbnails for a list of camera items plus advanced information from metadata.
      */
-    void getThumbsInfo(const CamItemInfoList& infoList, int thumbSize);
+    CameraCommand* getThumbsInfo(const CamItemInfoList& infoList, int thumbSize);
+    void moveThumbsInfo(CameraCommand* const cmd);
 
     void downloadPrep(const SetupCamera::ConflictRule& rule);
     void download(const DownloadSettings& downloadSettings);

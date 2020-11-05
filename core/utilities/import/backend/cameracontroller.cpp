@@ -388,7 +388,7 @@ void CameraController::run()
             }
             else if (!d->cmdThumbs.isEmpty())
             {
-                command = d->cmdThumbs.takeLast();
+                command = d->cmdThumbs.takeFirst();
                 emit signalBusy(false);
             }
             else
@@ -1095,7 +1095,7 @@ void CameraController::addCommand(CameraCommand* const cmd)
 
     if (cmd->action == CameraCommand::cam_thumbsinfo)
     {
-        d->cmdThumbs.prepend(cmd);
+        d->cmdThumbs << cmd;
     }
     else
     {
@@ -1103,6 +1103,18 @@ void CameraController::addCommand(CameraCommand* const cmd)
     }
 
     d->condVar.wakeAll();
+}
+
+void CameraController::moveThumbsInfo(CameraCommand* const cmd)
+{
+    QMutexLocker lock(&d->mutex);
+
+    int index = d->cmdThumbs.indexOf(cmd);
+
+    if (index > 0)
+    {
+        d->cmdThumbs.move(index, 0);
+    }
 }
 
 bool CameraController::queueIsEmpty() const
@@ -1146,7 +1158,7 @@ void CameraController::listFiles(const QString& folder, bool useMetadata)
     addCommand(cmd);
 }
 
-void CameraController::getThumbsInfo(const CamItemInfoList& list, int thumbSize)
+CameraCommand* CameraController::getThumbsInfo(const CamItemInfoList& list, int thumbSize)
 {
     d->canceled              = false;
     CameraCommand* const cmd = new CameraCommand;
@@ -1162,6 +1174,8 @@ void CameraController::getThumbsInfo(const CamItemInfoList& list, int thumbSize)
     cmd->map.insert(QLatin1String("list"),      QVariant(itemsList));
     cmd->map.insert(QLatin1String("thumbSize"), QVariant(thumbSize));
     addCommand(cmd);
+
+    return cmd;
 }
 
 void CameraController::getMetadata(const QString& folder, const QString& file)
