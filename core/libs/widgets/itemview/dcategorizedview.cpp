@@ -137,7 +137,7 @@ const QModelIndexList& DCategorizedView::Private::intersectionSet(const QRect& r
 
 QRect DCategorizedView::Private::visualRectInViewport(const QModelIndex& index) const
 {
-    if (!index.isValid())
+    if (!index.isValid() || (index.row() >= elementsInfo.size()))
     {
         return QRect();
     }
