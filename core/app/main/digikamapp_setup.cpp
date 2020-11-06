@@ -209,7 +209,7 @@ void DigikamApp::setupActions()
     // -----------------------------------------------------------------
 
     d->copySelectionToAction = new QAction(QIcon::fromTheme(QLatin1String("edit-copy")), i18n("&Copy to..."), this);
-    d->copySelectionToAction->setWhatsThis(i18n("Copy selected images to a destination folder."));
+    d->copySelectionToAction->setWhatsThis(i18n("Copy selected images to a target folder."));
     connect(d->copySelectionToAction, SIGNAL(triggered()), d->view, SLOT(slotCopySelectionTo()));
     ac->addAction(QLatin1String("copy_selection_to"), d->copySelectionToAction);
 
