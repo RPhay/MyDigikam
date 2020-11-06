@@ -60,6 +60,7 @@ IOJobsThread* IOJobsManager::startIOJobs(IOJobData* const data)
         case IOJobData::CopyAlbum:
         case IOJobData::CopyImage:
         case IOJobData::CopyFiles:
+        case IOJobData::CopyToExt:
         case IOJobData::MoveAlbum:
         case IOJobData::MoveImage:
         case IOJobData::MoveFiles:

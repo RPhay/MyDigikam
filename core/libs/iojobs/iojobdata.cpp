@@ -86,6 +86,17 @@ IOJobData::IOJobData(int operation,
 }
 
 IOJobData::IOJobData(int operation,
+                     const QList<ItemInfo>& infos,
+                     const QUrl& dest)
+    : d(new Private)
+{
+    d->operation = operation;
+    d->destUrl   = dest;
+
+    setItemInfos(infos);
+}
+
+IOJobData::IOJobData(int operation,
                      const QList<QUrl>& urls,
                      PAlbum* const dest)
     : d(new Private)

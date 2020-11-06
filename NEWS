@@ -172,4 +172,5 @@ BUGFIXES:
 156 ==> 428472 - digiKam doesn't come up as it can't update db schema from 9 to 10.
 157 ==> 428578 - The filename extension is used for sorting the filename.
 158 ==> 428733 - Import window always keeps last image.
-159 ==> 
+159 ==> 428723 - Wish - 'copy to' function with right click on thumbnail.
+160 ==> 

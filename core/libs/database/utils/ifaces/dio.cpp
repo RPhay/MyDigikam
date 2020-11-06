@@ -118,7 +118,9 @@ void DIO::move(PAlbum* const src, PAlbum* const dest)
     }
 
 #ifdef Q_OS_WIN
+
     AlbumManager::instance()->removeWatchedPAlbums(src);
+
 #endif
 
     instance()->processJob(new IOJobData(IOJobData::MoveAlbum, src, dest));
@@ -178,7 +180,14 @@ void DIO::move(const QList<QUrl>& srcList, PAlbum* const dest)
     instance()->processJob(new IOJobData(IOJobData::MoveFiles, srcList, dest));
 }
 
-// Rename --------------------------------------------------------------
+// Images -> External -------------------------------------------------
+
+void DIO::copy(const QList<ItemInfo>& infos, const QUrl& dest)
+{
+    instance()->processJob(new IOJobData(IOJobData::CopyToExt, infos, dest));
+}
+
+// Rename -------------------------------------------------------------
 
 void DIO::rename(const QUrl& src, const QString& newName, bool overwrite)
 {
@@ -192,7 +201,7 @@ void DIO::rename(const QUrl& src, const QString& newName, bool overwrite)
     instance()->processJob(new IOJobData(IOJobData::Rename, info, newName, overwrite));
 }
 
-// Delete --------------------------------------------------------------
+// Delete -------------------------------------------------------------
 
 void DIO::del(const QList<ItemInfo>& infos, bool useTrash)
 {
@@ -213,21 +222,23 @@ void DIO::del(PAlbum* const album, bool useTrash)
     }
 
 #ifdef Q_OS_WIN
+
     AlbumManager::instance()->removeWatchedPAlbums(album);
+
 #endif
 
     instance()->createJob(new IOJobData(useTrash ? IOJobData::Trash
                                                  : IOJobData::Delete, album));
 }
 
-// Restore Trash -------------------------------------------------------
+// Restore Trash ------------------------------------------------------
 
 void DIO::restoreTrash(const DTrashItemInfoList& infos)
 {
     instance()->createJob(new IOJobData(IOJobData::Restore, infos));
 }
 
-// Empty Trash ---------------------------------------------------------
+// Empty Trash --------------------------------------------------------
 
 void DIO::emptyTrash(const DTrashItemInfoList& infos)
 {
@@ -261,6 +272,7 @@ void DIO::processJob(IOJobData* const data)
     {
         ScanController::instance()->hintAtMoveOrCopyOfAlbum(data->srcAlbum(), data->destAlbum());
         createJob(data);
+
         return;
     }
     else if (operation == IOJobData::Delete || operation == IOJobData::Trash)
@@ -275,7 +287,7 @@ void DIO::processJob(IOJobData* const data)
     {
         if (!data->itemInfos().isEmpty())
         {
-            ItemInfo info      = data->itemInfos().first();
+            ItemInfo info       = data->itemInfos().first();
             PAlbum* const album = AlbumManager::instance()->findPAlbum(info.albumId());
 
             if (album)
@@ -314,14 +326,16 @@ void DIO::createJob(IOJobData* const data)
     if (data->sourceUrls().isEmpty())
     {
         delete data;
+
         return;
     }
 
     const int operation = data->operation();
 
     if ((operation == IOJobData::CopyImage) || (operation == IOJobData::CopyAlbum) ||
-        (operation == IOJobData::CopyFiles) || (operation == IOJobData::MoveImage) ||
-        (operation == IOJobData::MoveAlbum) || (operation == IOJobData::MoveFiles))
+        (operation == IOJobData::CopyFiles) || (operation == IOJobData::CopyToExt) ||
+        (operation == IOJobData::MoveImage) || (operation == IOJobData::MoveAlbum) ||
+        (operation == IOJobData::MoveFiles))
     {
         QDir dir(data->destUrl().toLocalFile());
         const QStringList& dirList = dir.entryList(QDir::Dirs    |
@@ -358,6 +372,7 @@ void DIO::createJob(IOJobData* const data)
                 if      (result == QMessageBox::Cancel)
                 {
                     delete data;
+
                     return;
                 }
                 else if (result == QMessageBox::Yes)
@@ -634,6 +649,7 @@ QString DIO::getItemString(IOJobData* const data) const
             return i18n("Copy Images");
 
         case IOJobData::CopyFiles:
+        case IOJobData::CopyToExt:
             return i18n("Copy Files");
 
         case IOJobData::MoveAlbum:

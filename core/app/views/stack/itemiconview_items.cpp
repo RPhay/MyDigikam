@@ -585,4 +585,9 @@ void ItemIconView::slotAwayFromSelection()
     }
 }
 
+void ItemIconView::slotCopySelectionTo()
+{
+    d->utilities->copyItemsToExternalFolder(selectedInfoList(false, true));
+}
+
 } // namespace Digikam

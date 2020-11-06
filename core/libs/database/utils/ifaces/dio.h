@@ -74,6 +74,9 @@ public:
     /// Copy external files to another album
     static void copy(const QList<QUrl>& srcList, PAlbum* const dest);
 
+    /// Copy items to external folder
+    static void copy(const QList<ItemInfo>& infos, const QUrl& dest);
+
     /// Move an album into another album
     static void move(PAlbum* const src, PAlbum* const dest);
 

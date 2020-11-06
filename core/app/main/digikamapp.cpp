@@ -737,6 +737,7 @@ void DigikamApp::slotSelectionChanged(int selectionCount)
     d->imageFlipActionMenu->setEnabled(selectionCount > 0);
     d->imageExifOrientationActionMenu->setEnabled(selectionCount > 0);
     d->moveSelectionToAlbumAction->setEnabled(selectionCount > 0);
+    d->copySelectionToAction->setEnabled(selectionCount > 0);
     d->cutItemsAction->setEnabled(selectionCount > 0);
     d->copyItemsAction->setEnabled(selectionCount > 0);
     d->openWithAction->setEnabled(selectionCount > 0);

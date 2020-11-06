@@ -236,6 +236,7 @@ public Q_SLOTS:
 
     void slotSetAsAlbumThumbnail(const ItemInfo& info);
     void slotMoveSelectionToAlbum();
+    void slotCopySelectionTo();
 
 Q_SIGNALS:
 

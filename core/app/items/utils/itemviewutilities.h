@@ -58,6 +58,7 @@ public:
 
 public Q_SLOTS:
 
+    void copyItemsToExternalFolder(const QList<ItemInfo>& infos);
     void createNewAlbumForInfos(const QList<ItemInfo>& infos, Album* currentAlbum);
     bool deleteImages(const QList<ItemInfo>& infos, const DeleteMode deleteMode);
     void deleteImagesDirectly(const QList<ItemInfo>& infos, const DeleteMode deleteMode);

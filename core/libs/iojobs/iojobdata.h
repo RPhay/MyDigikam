@@ -52,6 +52,7 @@ public:
         CopyAlbum,
         CopyImage,
         CopyFiles,
+        CopyToExt,
         MoveAlbum,
         MoveImage,
         MoveFiles,
@@ -74,6 +75,10 @@ public:
     explicit IOJobData(int operation,
                        const QList<ItemInfo>& infos,
                        PAlbum* const dest = nullptr);
+
+    explicit IOJobData(int operation,
+                       const QList<ItemInfo>& infos,
+                       const QUrl& dest);
 
     explicit IOJobData(int operation,
                        const QList<QUrl>& urls,

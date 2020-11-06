@@ -28,14 +28,17 @@
 
 // Qt includes
 
-#include <QFileInfo>
+#include <QStandardPaths>
 #include <QStringRef>
+#include <QFileInfo>
 #include <QUrl>
 
 // KDE includes
 
 #include <klocalizedstring.h>
 #include <kwindowsystem.h>
+#include <ksharedconfig.h>
+#include <kconfiggroup.h>
 
 // Local includes
 
@@ -45,6 +48,7 @@
 #include "albumselectdialog.h"
 #include "applicationsettings.h"
 #include "deletedialog.h"
+#include "dfiledialog.h"
 #include "dio.h"
 #include "iteminfo.h"
 #include "imagewindow.h"
@@ -61,10 +65,9 @@ namespace Digikam
 {
 
 ItemViewUtilities::ItemViewUtilities(QWidget* const parentWidget)
-    : QObject(parentWidget)
+    : QObject (parentWidget),
+      m_widget(parentWidget)
 {
-    m_widget = parentWidget;
-
     connect(this, SIGNAL(signalImagesDeleted(QList<qlonglong>)),
             AlbumManager::instance(), SLOT(slotImagesDeleted(QList<qlonglong>)));
 }
@@ -189,6 +192,35 @@ void ItemViewUtilities::notifyFileContentChanged(const QList<QUrl>& urls)
 
         LoadingCacheInterface::fileChanged(path);
     }
+}
+
+void ItemViewUtilities::copyItemsToExternalFolder(const QList<ItemInfo>& infos)
+{
+    if (infos.isEmpty())
+    {
+        return;
+    }
+
+    KSharedConfig::Ptr config = KSharedConfig::openConfig();
+    KConfigGroup group        = config->group(QLatin1String("Copy To Folder Settings"));
+    QString startingPath      = group.readEntry(QLatin1String("Last Copy To Folder Path"), QString());
+
+    if (startingPath.isEmpty())
+    {
+        startingPath = QStandardPaths::writableLocation(QStandardPaths::PicturesLocation);
+    }
+
+    QUrl url = DFileDialog::getExistingDirectoryUrl(m_widget, i18n("Select destination folder"),
+                                                    QUrl::fromLocalFile(startingPath));
+
+    if (url.isEmpty() || !url.isLocalFile())
+    {
+        return;
+    }
+
+    group.writeEntry(QLatin1String("Last Copy To Folder Path"), url.toLocalFile());
+
+    DIO::copy(infos, url);
 }
 
 void ItemViewUtilities::createNewAlbumForInfos(const QList<ItemInfo>& infos,

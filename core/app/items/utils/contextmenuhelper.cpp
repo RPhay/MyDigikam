@@ -277,6 +277,7 @@ void ContextMenuHelper::addOpenAndNavigateActions(const imageIds& ids, bool ligh
     {
         addAction(QLatin1String("image_edit"));
         addAction(QLatin1String("move_selection_to_album"));
+        addAction(QLatin1String("copy_selection_to"));
     }
 
     addServicesMenu(ItemInfoList(ids).toImageUrlList());

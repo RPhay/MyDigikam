@@ -105,7 +105,17 @@ void CopyOrMoveJob::run()
                         continue;
                     }
 
-                    if (!DTrash::deleteImage(destenation, m_data->jobTime()))
+                    if      (m_data->operation() == IOJobData::CopyToExt)
+                    {
+                        if (!QFile::remove(destenation))
+                        {
+                            emit signalError(i18n("Could not overwrite image %1",
+                                             srcName));
+
+                            continue;
+                        }
+                    }
+                    else if (!DTrash::deleteImage(destenation, m_data->jobTime()))
                     {
                         emit signalError(i18n("Could not move image %1 to collection trash",
                                               srcName));

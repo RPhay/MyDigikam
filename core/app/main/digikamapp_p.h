@@ -182,6 +182,7 @@ public:
         config                              (nullptr),
         newAction                           (nullptr),
         moveSelectionToAlbumAction          (nullptr),
+        copySelectionToAction               (nullptr),
         deleteAction                        (nullptr),
         renameAction                        (nullptr),
         imageDeletePermanentlyAction        (nullptr),
@@ -298,6 +299,7 @@ public:
     /// Album Actions
     QAction*                            newAction;
     QAction*                            moveSelectionToAlbumAction;
+    QAction*                            copySelectionToAction;
     QAction*                            deleteAction;
     QAction*                            renameAction;
     QAction*                            imageDeletePermanentlyAction;
