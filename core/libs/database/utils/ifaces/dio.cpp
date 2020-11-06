@@ -55,6 +55,7 @@
 #include "thumbsdbaccess.h"
 #include "iojobsmanager.h"
 #include "collectionmanager.h"
+#include "collectionlocation.h"
 #include "dnotificationwrapper.h"
 #include "loadingcacheinterface.h"
 #include "progressmanager.h"
@@ -591,12 +592,13 @@ void DIO::slotOneProccessed(const QUrl& url)
 
     // Scan folders for changes
 
+    QString scanPath;
+
     if ((operation == IOJobData::Trash)   ||
         (operation == IOJobData::Delete)  ||
         (operation == IOJobData::MoveAlbum))
     {
         PAlbum* const album = data->srcAlbum();
-        QString scanPath;
 
         if (album)
         {
@@ -612,21 +614,32 @@ void DIO::slotOneProccessed(const QUrl& url)
         {
             scanPath = url.adjusted(QUrl::RemoveFilename).toLocalFile();
         }
-
-        ScanController::instance()->scheduleCollectionScanRelaxed(scanPath);
     }
 
     if ((operation == IOJobData::CopyImage) || (operation == IOJobData::CopyAlbum) ||
         (operation == IOJobData::CopyFiles) || (operation == IOJobData::MoveImage) ||
         (operation == IOJobData::MoveAlbum) || (operation == IOJobData::MoveFiles))
     {
-        QString scanPath = data->destUrl().toLocalFile();
-        ScanController::instance()->scheduleCollectionScanRelaxed(scanPath);
+        scanPath = data->destUrl().toLocalFile();
+    }
+
+    if (operation == IOJobData::CopyToExt)
+    {
+        CollectionLocation location = CollectionManager::instance()->locationForUrl(data->destUrl());
+
+        if (!location.isNull())
+        {
+            scanPath = data->destUrl().toLocalFile();
+        }
     }
 
     if (operation == IOJobData::Restore)
     {
-        QString scanPath = url.adjusted(QUrl::RemoveFilename).toLocalFile();
+        scanPath = url.adjusted(QUrl::RemoveFilename).toLocalFile();
+    }
+
+    if (!scanPath.isEmpty())
+    {
         ScanController::instance()->scheduleCollectionScanRelaxed(scanPath);
     }
 
