@@ -218,8 +218,16 @@ void CopyOrMoveJob::run()
             {
                 if (!DFileOperations::copyFile(srcInfo.filePath(), destenation))
                 {
-                    emit signalError(i18n("Could not copy file %1 to album %2",
-                                          srcName, QDir::toNativeSeparators(dstDir.path())));
+                    if (m_data->operation() == IOJobData::CopyToExt)
+                    {
+                        emit signalError(i18n("Could not copy file %1 to folder %2",
+                                         srcName, QDir::toNativeSeparators(dstDir.path())));
+                    }
+                    else
+                    {
+                        emit signalError(i18n("Could not copy file %1 to album %2",
+                                         srcName, QDir::toNativeSeparators(dstDir.path())));
+                    }
 
                     continue;
                 }
