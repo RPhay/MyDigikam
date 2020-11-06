@@ -592,7 +592,7 @@ void DIO::slotOneProccessed(const QUrl& url)
 
     // Scan folders for changes
 
-    QString scanPath;
+    QStringList scanPaths;
 
     if ((operation == IOJobData::Trash)   ||
         (operation == IOJobData::Delete)  ||
@@ -606,13 +606,13 @@ void DIO::slotOneProccessed(const QUrl& url)
 
             if (parent)
             {
-                scanPath = parent->fileUrl().toLocalFile();
+                scanPaths << parent->fileUrl().toLocalFile();
             }
         }
 
-        if (scanPath.isEmpty())
+        if (scanPaths.isEmpty())
         {
-            scanPath = url.adjusted(QUrl::RemoveFilename).toLocalFile();
+            scanPaths << url.adjusted(QUrl::RemoveFilename).toLocalFile();
         }
     }
 
@@ -620,7 +620,7 @@ void DIO::slotOneProccessed(const QUrl& url)
         (operation == IOJobData::CopyFiles) || (operation == IOJobData::MoveImage) ||
         (operation == IOJobData::MoveAlbum) || (operation == IOJobData::MoveFiles))
     {
-        scanPath = data->destUrl().toLocalFile();
+        scanPaths << data->destUrl().toLocalFile();
     }
 
     if (operation == IOJobData::CopyToExt)
@@ -629,16 +629,16 @@ void DIO::slotOneProccessed(const QUrl& url)
 
         if (!location.isNull())
         {
-            scanPath = data->destUrl().toLocalFile();
+            scanPaths << data->destUrl().toLocalFile();
         }
     }
 
     if (operation == IOJobData::Restore)
     {
-        scanPath = url.adjusted(QUrl::RemoveFilename).toLocalFile();
+        scanPaths << url.adjusted(QUrl::RemoveFilename).toLocalFile();
     }
 
-    if (!scanPath.isEmpty())
+    foreach (const QString& scanPath, scanPaths)
     {
         ScanController::instance()->scheduleCollectionScanRelaxed(scanPath);
     }
