@@ -1557,16 +1557,18 @@ void ImportUI::slotDownloaded(const QString& folder, const QString& file, int st
         if (d->deleteAfter)
         {
             // No need passive pop-up here, because we will ask to confirm items deletion with dialog.
-            deleteItems(true, true);
+            QTimer::singleShot(0, this, SLOT(slotDeleteAfterDownload()));
         }
         else
         {
-            // Pop-up a notification to inform user when all is done, and inform if auto-rotation will take place.
+            // Pop-up a notification to inform user when all is done,
+            // and inform if auto-rotation will take place.
             if (autoRotate)
             {
                 DNotificationWrapper(QLatin1String("cameradownloaded"),
                                      i18nc("@info Popup notification",
-                                           "Images download finished, you can now detach your camera while the images will be auto-rotated"),
+                                           "Images download finished, you can now detach "
+                                           "your camera while the images will be auto-rotated"),
                                      this, windowTitle());
             }
             else
@@ -2263,15 +2265,20 @@ bool ImportUI::createExtBasedSubAlbum(QUrl& downloadUrl, const CamItemInfo& info
     return createSubAlbum(downloadUrl, subAlbum, info.ctime.date());
 }
 
-void ImportUI::slotDeleteNew()
+void ImportUI::slotDeleteAfterDownload()
 {
-    slotSelectNew();
-    QTimer::singleShot(0, this, SLOT(slotDeleteSelected()));
+    deleteItems(true, true);
 }
 
 void ImportUI::slotDeleteSelected()
 {
     deleteItems(true, false);
+}
+
+void ImportUI::slotDeleteNew()
+{
+    slotSelectNew();
+    QTimer::singleShot(0, this, SLOT(slotDeleteSelected()));
 }
 
 void ImportUI::slotDeleteAll()
@@ -2288,7 +2295,7 @@ void ImportUI::slotDeleted(const QString& folder, const QString& file, bool stat
     }
 
     int curr = d->statusProgressBar->progressValue();
-    d->statusProgressBar->setProgressTotalSteps(curr + 1);
+    d->statusProgressBar->setProgressValue(curr + 1);
     refreshFreeSpace();
 }
 

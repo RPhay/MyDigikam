@@ -194,8 +194,9 @@ private Q_SLOTS:
     void slotDownloadAndDeleteSelected();
     void slotDownloadAndDeleteAll();
 
-    void slotDeleteNew();
+    void slotDeleteAfterDownload();
     void slotDeleteSelected();
+    void slotDeleteNew();
     void slotDeleteAll();
 
     void slotToggleLock();
