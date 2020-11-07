@@ -174,4 +174,5 @@ BUGFIXES:
 158 ==> 428733 - Import window always keeps last image.
 159 ==> 428723 - Wish - 'copy to' function with right click on thumbnail.
 160 ==> 427067 - Albums doesn't show thumbnails; timeline only shows 1 folder.
-161 ==> 
+161 ==> 427031 - Reverse image search.
+162 ==> 
