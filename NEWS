@@ -173,4 +173,5 @@ BUGFIXES:
 157 ==> 428578 - The filename extension is used for sorting the filename.
 158 ==> 428733 - Import window always keeps last image.
 159 ==> 428723 - Wish - 'copy to' function with right click on thumbnail.
-160 ==> 
+160 ==> 427067 - Albums doesn't show thumbnails; timeline only shows 1 folder.
+161 ==> 
