@@ -29,21 +29,21 @@ namespace Digikam
 {
 
 AssignNameWidget::Private::Private(AssignNameWidget* const q)
-    : mode              (InvalidMode),
-      layoutMode        (InvalidLayout),
-      visualStyle       (InvalidVisualStyle),
-      widgetMode        (InvalidTagEntryWidgetMode),
-      comboBox          (nullptr),
-      lineEdit          (nullptr),
-      confirmButton     (nullptr),
-      rejectButton      (nullptr),
-      clickLabel        (nullptr),
-      modelsGiven       (0),
-      tagModel          (nullptr),
-      tagFilterModel    (nullptr),
-      tagFilteredModel  (nullptr),
-      layout            (nullptr),
-      q                 (q)
+    : mode            (InvalidMode),
+      layoutMode      (InvalidLayout),
+      visualStyle     (InvalidVisualStyle),
+      widgetMode      (InvalidTagEntryWidgetMode),
+      comboBox        (nullptr),
+      lineEdit        (nullptr),
+      confirmButton   (nullptr),
+      rejectButton    (nullptr),
+      clickLabel      (nullptr),
+      modelsGiven     (false),
+      tagModel        (nullptr),
+      tagFilterModel  (nullptr),
+      tagFilteredModel(nullptr),
+      layout          (nullptr),
+      q               (q)
 {
 }
 
