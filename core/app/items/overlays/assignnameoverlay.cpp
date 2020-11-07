@@ -58,7 +58,7 @@ class Q_DECL_HIDDEN AssignNameOverlay::Private
 public:
 
     explicit Private()
-        : tagModel(AbstractAlbumModel::IgnoreRootAlbum),
+        : tagModel        (AbstractAlbumModel::IgnoreRootAlbum),
           assignNameWidget(nullptr)
     {
     }
@@ -272,8 +272,8 @@ bool AssignNameOverlay::checkIndex(const QModelIndex& index) const
         return false;
     }
 
-    return FaceTagsIface::fromVariant(extraData).isUnconfirmedType() ||
-           FaceTagsIface::fromVariant(extraData).isIgnoredName() ;
+    return (FaceTagsIface::fromVariant(extraData).isIgnoredName() ||
+            FaceTagsIface::fromVariant(extraData).isUnconfirmedType());
 }
 
 void AssignNameOverlay::showOnIndex(const QModelIndex& index)
@@ -346,6 +346,7 @@ void AssignNameOverlay::slotRejected(const ItemInfo& info, const QVariant& faceI
 {
     Q_UNUSED(info);
     Q_UNUSED(faceIdentifier);
+
     emit removeFaces(affectedIndexes(index()));
     hide();
 }
