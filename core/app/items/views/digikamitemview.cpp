@@ -466,27 +466,26 @@ void DigikamItemView::rejectFaces(const QList<QModelIndex>& indexes)
 
     foreach (const QModelIndex& index, indexes)
     {
-        FaceTagsIface face = d->faceDelegate->face(index);
         infos << ItemModel::retrieveItemInfo(index);
-        faces << face;
+        faces << d->faceDelegate->face(index);
         sourceIndexes << imageSortFilterModel()->mapToSourceItemModel(index);
     }
 
     imageAlbumModel()->removeIndexes(sourceIndexes);
 
-    for (int i = 0 ; i < infos.size() ; i++)
+    for (int i = 0 ; i < infos.size() ; ++i)
     {
-        if (!FaceTags::isTheUnknownPerson(faces[i].tagId()))
+        if (FaceTags::isTheUnknownPerson(faces[i].tagId()))
         {
-            /// Reject face suggestion. Mark as Unknown.
+            // Reject signal was sent from an Unknown Face. Mark as Ignored.
 
-            d->editPipeline.editTag(infos[i], faces[i], FaceTags::unknownPersonTagId());
+            d->editPipeline.editTag(infos[i], faces[i], FaceTags::ignoredPersonTagId());
         }
         else
         {
-            /// Reject signal was sent from an Unknown Face. Mark as Ignored.
+            // Reject face suggestion. Mark as Unknown.
 
-            d->editPipeline.editTag(infos[i], faces[i], FaceTags::ignoredPersonTagId());
+            d->editPipeline.editTag(infos[i], faces[i], FaceTags::unknownPersonTagId());
         }
     }
 }
