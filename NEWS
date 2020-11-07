@@ -175,4 +175,5 @@ BUGFIXES:
 159 ==> 428723 - Wish - 'copy to' function with right click on thumbnail.
 160 ==> 427067 - Albums doesn't show thumbnails; timeline only shows 1 folder.
 161 ==> 427031 - Reverse image search.
-162 ==> 
+162 ==> 426480 - Remove unused lenses from database.
+163 ==> 
