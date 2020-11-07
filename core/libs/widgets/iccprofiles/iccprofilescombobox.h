@@ -152,7 +152,7 @@ protected:
 private:
 
     // Disable
-    IccProfilesMenuAction(QObject*);
+    IccProfilesMenuAction(QWidget*);
 };
 
 } // namespace Digikam

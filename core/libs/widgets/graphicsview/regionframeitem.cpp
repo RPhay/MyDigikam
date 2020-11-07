@@ -101,7 +101,7 @@ public:
     QRectF handleRect(CropHandle handle) const;
     CropHandle handleAt(const QPointF& pos) const;
     void updateCursor(CropHandle handle, bool buttonDown);
-    QRectF keepRectInsideImage(const QRectF& rect, bool moving=true) const;
+    QRectF keepRectInsideImage(const QRectF& rect, bool moving = true) const;
     OptimalPosition computeOptimalHudWidgetPosition() const;
     void updateHudWidgetPosition();
 

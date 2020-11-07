@@ -344,8 +344,8 @@ public:
 
     // Needed to make viewportEvent() public
 
-    TreeViewComboBoxTreeView()
-        : QTreeView()
+    TreeViewComboBoxTreeView(QWidget* const parent = nullptr)
+        : QTreeView(parent)
     {
     }
 

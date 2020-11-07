@@ -46,7 +46,7 @@ class TagsManager : public QMainWindow, public StateSavingObject
 public:
 
     TagsManager();
-    ~TagsManager() override;
+    ~TagsManager()                      override;
 
     /**
      * @brief setupUi   setup all gui elements for Tag Manager
@@ -146,13 +146,13 @@ protected:
 
     void closeEvent(QCloseEvent* event) override;
 
-    void doLoadState() override;
-    void doSaveState() override;
+    void doLoadState()                  override;
+    void doSaveState()                  override;
 
 private:
 
     // Disable
-    explicit TagsManager(QObject*);
+    explicit TagsManager(QWidget*);
 
     void setupActions();
 

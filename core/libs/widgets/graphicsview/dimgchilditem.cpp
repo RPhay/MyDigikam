@@ -94,6 +94,8 @@ void DImgChildItem::Private::connectParent(bool active)
     }
 }
 
+// ------------------------------------------------------------------------
+
 DImgChildItem::DImgChildItem(QGraphicsItem* const parent)
     : QGraphicsObject(parent),
       d(new Private(this))

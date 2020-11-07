@@ -96,6 +96,11 @@ protected:
 protected:
 
     Q_DECLARE_PRIVATE(GraphicsDImgItem)
+
+private:
+
+    // Disable
+    GraphicsDImgItem(QObject*);
 };
 
 } // namespace Digikam

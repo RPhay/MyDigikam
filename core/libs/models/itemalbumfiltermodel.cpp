@@ -58,6 +58,11 @@ public:
     QHash<int, QString> albumNamesHash;
     QTimer*             delayedAlbumNamesTimer;
     QTimer*             delayedTagNamesTimer;
+
+private:
+
+    // Disable
+    ItemAlbumFilterModelPrivate(QObject*);
 };
 
 ItemAlbumFilterModel::ItemAlbumFilterModel(QObject* const parent)
@@ -136,6 +141,7 @@ void ItemAlbumFilterModel::setItemFilterSettings(const ItemFilterSettings& s)
 int ItemAlbumFilterModel::compareInfosCategories(const ItemInfo& left, const ItemInfo& right) const
 {
     FaceTagsIface leftFace, rightFace;
+
     return compareInfosCategories(left, right, leftFace, rightFace);
 }
 
@@ -233,6 +239,7 @@ void ItemAlbumFilterModel::slotAlbumAboutToBeDeleted(Album* album)
 void ItemAlbumFilterModel::slotAlbumsCleared()
 {
     Q_D(ItemAlbumFilterModel);
+
     d->albumNamesHash.clear();
     d->tagNamesHash.clear();
 }

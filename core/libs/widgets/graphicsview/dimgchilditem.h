@@ -201,6 +201,9 @@ protected:
 
 private:
 
+    // Disable
+    DImgChildItem(QWidget*);
+
     void updatePos();
     void updateSize();
 

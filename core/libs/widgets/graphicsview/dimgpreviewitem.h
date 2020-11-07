@@ -90,6 +90,9 @@ private Q_SLOTS:
 
 private:
 
+    // Disable
+    DImgPreviewItem(QObject*);
+
     class DImgPreviewItemPrivate;
     Q_DECLARE_PRIVATE(DImgPreviewItem)
 

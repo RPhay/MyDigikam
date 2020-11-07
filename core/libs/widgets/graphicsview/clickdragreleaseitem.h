@@ -42,7 +42,7 @@ class DIGIKAM_EXPORT ClickDragReleaseItem : public QGraphicsObject
 public:
 
     explicit ClickDragReleaseItem(QGraphicsItem* const parent);
-    ~ClickDragReleaseItem() override;
+    ~ClickDragReleaseItem()                                          override;
 
     QRectF boundingRect() const                                      override;
     void paint(QPainter*, const QStyleOptionGraphicsItem*, QWidget*) override;

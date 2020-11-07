@@ -85,22 +85,22 @@ class Q_DECL_HIDDEN TagsManager::Private
 public:
 
     explicit Private()
-      : tagMngrView(nullptr),
-        tagPixmap(nullptr),
-        searchBar(nullptr),
-        splitter(nullptr),
-        treeWindow(nullptr),
-        mainToolbar(nullptr),
-        organizeAction(nullptr),
+      : tagMngrView     (nullptr),
+        tagPixmap       (nullptr),
+        searchBar       (nullptr),
+        splitter        (nullptr),
+        treeWindow      (nullptr),
+        mainToolbar     (nullptr),
+        organizeAction  (nullptr),
         syncexportAction(nullptr),
-        tagProperties(nullptr),
-        addAction(nullptr),
-        delAction(nullptr),
-        titleEdit(nullptr),
-        listView(nullptr),
-        tagPropWidget(nullptr),
-        tagModel(nullptr),
-        tagPropVisible(false)
+        tagProperties   (nullptr),
+        addAction       (nullptr),
+        delAction       (nullptr),
+        titleEdit       (nullptr),
+        listView        (nullptr),
+        tagPropWidget   (nullptr),
+        tagModel        (nullptr),
+        tagPropVisible  (false)
     {
     }
 
@@ -132,9 +132,9 @@ public:
 };
 
 TagsManager::TagsManager()
-    : QMainWindow(nullptr),
+    : QMainWindow      (nullptr),
       StateSavingObject(this),
-      d(new Private())
+      d                (new Private())
 {
     setObjectName(QLatin1String("Tags Manager"));
     d->tagModel = new TagModel(AbstractAlbumModel::IncludeRootAlbum, this);

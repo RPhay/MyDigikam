@@ -57,7 +57,7 @@ public:
 
 DCategoryDrawer::DCategoryDrawer(DCategorizedView *view)
      : QObject(view),
-       d(new Private(view))
+       d      (new Private(view))
 {
 }
 

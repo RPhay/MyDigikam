@@ -120,7 +120,10 @@ private Q_SLOTS:
 
 private:
 
-    RegionFrameItem(); // Disable default constructor.
+    // Disable
+    RegionFrameItem();
+
+private:
 
     class Private;
     Private* const d;

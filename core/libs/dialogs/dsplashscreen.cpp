@@ -51,13 +51,13 @@ class Q_DECL_HIDDEN DSplashScreen::Private
 public:
 
     explicit Private()
-      : state(0),
-        progressBarSize(3),
-        messageAlign(Qt::AlignLeft),
-        version(QLatin1String(digikam_version_short)),
-        messageColor(Qt::white),
-        versionColor(Qt::white),
-        lastStateUpdateTime(QTime::currentTime())
+      : state               (0),
+        progressBarSize     (3),
+        messageAlign        (Qt::AlignLeft),
+        version             (QLatin1String(digikam_version_short)),
+        messageColor        (Qt::white),
+        versionColor        (Qt::white),
+        lastStateUpdateTime (QTime::currentTime())
     {
     }
 
@@ -76,7 +76,7 @@ public:
 
 DSplashScreen::DSplashScreen()
     : QSplashScreen(QPixmap()),
-      d(new Private)
+      d            (new Private)
 {
     QPixmap splash;
 
