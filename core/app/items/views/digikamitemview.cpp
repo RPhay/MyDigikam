@@ -32,9 +32,9 @@
 
 #include <QApplication>
 #include <QPointer>
+#include <QAction>
 #include <QMenu>
 #include <QIcon>
-#include <QAction>
 #include <QUrl>
 
 // Local includes
@@ -230,11 +230,11 @@ void DigikamItemView::dragDropSort(const ItemInfo& pick, const QList<ItemInfo>& 
         return;
     }
 
-    ItemInfoList infoList  = allItemInfos(false);
-    qlonglong counter      = pick.manualOrder();
-    bool order             = (ApplicationSettings::instance()->
-                                getImageSorting() == Qt::AscendingOrder);
-    bool found             = false;
+    ItemInfoList infoList = allItemInfos(false);
+    qlonglong counter     = pick.manualOrder();
+    bool order            = (ApplicationSettings::instance()->
+                               getImageSorting() == Qt::AscendingOrder);
+    bool found            = false;
 
     QApplication::setOverrideCursor(Qt::WaitCursor);
 
@@ -420,8 +420,8 @@ void DigikamItemView::confirmFaces(const QList<QModelIndex>& indexes, int tagId)
 
     foreach (const QModelIndex& index, indexes)
     {
-        infos << ItemModel::retrieveItemInfo(index);
         faces << d->faceDelegate->face(index);
+        infos << ItemModel::retrieveItemInfo(index);
 
         if (needFastRemove)
         {
@@ -445,8 +445,8 @@ void DigikamItemView::removeFaces(const QList<QModelIndex>& indexes)
 
     foreach (const QModelIndex& index, indexes)
     {
-        infos << ItemModel::retrieveItemInfo(index);
-        faces << d->faceDelegate->face(index);
+        faces         << d->faceDelegate->face(index);
+        infos         << ItemModel::retrieveItemInfo(index);
         sourceIndexes << imageSortFilterModel()->mapToSourceItemModel(index);
     }
 
@@ -466,8 +466,8 @@ void DigikamItemView::rejectFaces(const QList<QModelIndex>& indexes)
 
     foreach (const QModelIndex& index, indexes)
     {
-        infos << ItemModel::retrieveItemInfo(index);
-        faces << d->faceDelegate->face(index);
+        faces         << d->faceDelegate->face(index);
+        infos         << ItemModel::retrieveItemInfo(index);
         sourceIndexes << imageSortFilterModel()->mapToSourceItemModel(index);
     }
 
