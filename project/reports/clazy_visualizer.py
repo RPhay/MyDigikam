@@ -286,7 +286,7 @@ def sortLogs(f, contents, num_used_checks, names_of_used, args, external_link, e
         style=\"outline: none; background-color: lightgray\" title=\"Collapse sidebar\">\n" % (collapse_idx))
         f.write("\t\t\t<span id=\"collapse-img%d\" class=\"glyphicon glyphicon-menu-left\"></button></span>\n" % (collapse_idx))
         f.write("\t\t\t<h4 style=\"margin-top: 0; color: #111; position: absolute; left: 50%; transform: translateX(-50%); margin-bottom: 10\">")
-        f.write("%s</h4>\n" % (names_of_used[check_idx].name[1:-1]))
+        f.write("<a href=\"https://github.com/KDE/clazy/blob/master/docs/checks/README-%s.md\">%s</a></h4>\n" % (names_of_used[check_idx].name[9:-1], names_of_used[check_idx].name[9:-1]))
         f.write("\t\t</div>\n\t\t<pre>\n")
         names_of_used[check_idx].data = names_of_used[check_idx].data.replace('<', '&lt;')
         names_of_used[check_idx].data = names_of_used[check_idx].data.replace('>', '&gt;')
