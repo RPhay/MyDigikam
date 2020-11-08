@@ -40,7 +40,7 @@ namespace Digikam
 
 class MetadataHub;
 
-class DatabaseWorkerInterface : public WorkerObject
+class DatabaseWorkerInterface : public WorkerObject      // clazy:exclude=ctor-missing-parent-argument
 {
     Q_OBJECT
 

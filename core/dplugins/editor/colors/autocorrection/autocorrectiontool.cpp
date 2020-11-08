@@ -68,8 +68,8 @@ public:
 
     explicit Private()
       : correctionTools(nullptr),
-        previewWidget(nullptr),
-        gboxSettings(nullptr)
+        previewWidget  (nullptr),
+        gboxSettings   (nullptr)
     {
     }
 
@@ -93,7 +93,7 @@ const QString AutoCorrectionTool::Private::configAutoCorrectionFilterEntry(QLati
 
 AutoCorrectionTool::AutoCorrectionTool(QObject* const parent)
     : EditorToolThreaded(parent),
-      d(new Private)
+      d                 (new Private)
 {
     setObjectName(QLatin1String("autocorrection"));
     setToolVersion(1);
@@ -122,7 +122,7 @@ AutoCorrectionTool::AutoCorrectionTool(QObject* const parent)
 
     // -------------------------------------------------------------
 
-    d->correctionTools = new PreviewList(this);
+    d->correctionTools = new PreviewList;
 
     item = d->correctionTools->addItem(new AutoLevelsFilter(&thumbImage, iface.original()),
                                        i18n("Auto Levels"), Private::AutoLevelsCorrection);
@@ -174,7 +174,7 @@ AutoCorrectionTool::AutoCorrectionTool(QObject* const parent)
 
     // -------------------------------------------------------------
 
-    QGridLayout* mainLayout = new QGridLayout();
+    QGridLayout* const mainLayout = new QGridLayout();
     mainLayout->addWidget(d->correctionTools, 0, 0, 1, 1);
     mainLayout->setRowStretch(0, 10);
     mainLayout->setContentsMargins(QMargins());
@@ -301,21 +301,25 @@ void AutoCorrectionTool::autoCorrection(DImg* const img, DImg* const ref, int ty
             setFilter(new AutoLevelsFilter(img, ref, this));
             break;
         }
+
         case Private::NormalizeCorrection:
         {
             setFilter(new NormalizeFilter(img, ref, this));
             break;
         }
+
         case Private::EqualizeCorrection:
         {
             setFilter(new EqualizeFilter(img, ref, this));
             break;
         }
+
         case Private::StretchContrastCorrection:
         {
             setFilter(new StretchFilter(img, ref, this));
             break;
         }
+
         case Private::AutoExposureCorrection:
         {
             setFilter(new AutoExpoFilter(img, ref, this));

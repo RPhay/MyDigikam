@@ -50,7 +50,7 @@ enum GroupAction
     Ungroup
 };
 
-class Q_DECL_HIDDEN PrivateProgressItemCreator : public QObject,
+class Q_DECL_HIDDEN PrivateProgressItemCreator : public QObject,                            // clazy:exclude=ctor-missing-parent-argument
                                                  public FileActionProgressItemCreator
 {
     Q_OBJECT

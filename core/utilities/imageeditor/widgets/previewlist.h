@@ -104,7 +104,7 @@ class DIGIKAM_EXPORT PreviewList : public QListWidget
 
 public:
 
-    explicit PreviewList(QObject* const parent = nullptr);
+    explicit PreviewList(QWidget* const parent = nullptr);
     ~PreviewList() override;
 
     PreviewListItem* addItem(DImgThreadedFilter* const filter, const QString& txt, int id);

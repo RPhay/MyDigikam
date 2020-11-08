@@ -87,7 +87,9 @@ void AutoCorrectionToolPlugin::setup(QObject* const parent)
     ac->setIcon(icon());
     ac->setText(i18nc("@action", "Auto-Correction..."));
     ac->setObjectName(QLatin1String("editorwindow_color_autocorrection"));
+
     // NOTE: Photoshop 7 use CTRL+SHIFT+B
+
     ac->setShortcut(Qt::CTRL + Qt::SHIFT + Qt::Key_B);
     ac->setActionCategory(DPluginAction::EditorColors);
 

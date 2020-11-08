@@ -36,7 +36,7 @@ namespace Digikam
 
 class MetadataHub;
 
-class FileWorkerInterface : public WorkerObject
+class FileWorkerInterface : public WorkerObject         // clazy:exclude=ctor-missing-parent-argument
 {
     Q_OBJECT
 

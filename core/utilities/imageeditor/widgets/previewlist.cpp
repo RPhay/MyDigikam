@@ -237,8 +237,8 @@ public:
     PreviewThreadWrapper* wrapper;
 };
 
-PreviewList::PreviewList(QObject* const /*parent*/)
-    : QListWidget(),
+PreviewList::PreviewList(QWidget* const parent)
+    : QListWidget(parent),
       d          (new Private)
 {
     d->wrapper     = new PreviewThreadWrapper(this);

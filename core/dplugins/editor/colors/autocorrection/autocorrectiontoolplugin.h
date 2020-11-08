@@ -43,7 +43,7 @@ class AutoCorrectionToolPlugin : public DPluginEditor
 public:
 
     explicit AutoCorrectionToolPlugin(QObject* const parent = nullptr);
-    ~AutoCorrectionToolPlugin() override;
+    ~AutoCorrectionToolPlugin()          override;
 
     QString name()                 const override;
     QString iid()                  const override;
@@ -52,7 +52,7 @@ public:
     QString description()          const override;
     QList<DPluginAuthor> authors() const override;
 
-    void setup(QObject* const) override;
+    void setup(QObject* const)           override;
 
 private Q_SLOTS:
 
