@@ -78,11 +78,6 @@ public:
      */
     static QPixmap retrieveThumbnailPixmap(const QModelIndex& index, int thumbnailSize);
 
-    /** Call this from a paint event, with all indexes expected to be painted immediately,
-     *  so that thumbnails become available in order.
-     */
-    void prepareThumbnails(ShowfotoThumbnailModel* thumbModel, const QList<QModelIndex>& indexes);
-
 public:
 
     /// Declared as public because of use in ShowfotoNormalDelegate class.

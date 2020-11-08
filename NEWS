@@ -102,9 +102,9 @@ BUGFIXES:
 086 ==> 372380 - Support for MediaWiki tool?
 087 ==> 417788 - Can't import a video file in an album.
 088 ==> 426218 - Pictures from old collection still in database after removing it.
-089 ==> 426597 - stack underflow crash in Digikam::DImg::load().
+089 ==> 426597 - Stack underflow crash in Digikam::DImg::load().
 090 ==> 159788 - Picture zoomed in "full screen modus".
-091 ==> 176699 - picture not shown, digiKam, error displaying pictures, just thumbails.
+091 ==> 176699 - Picture not shown, digiKam, error displaying pictures, just thumbails.
 092 ==> 193265 - The application suddenly crashes when I try to open a preview of a photo.
 093 ==> 170340 - Embed view does not work; I can not see an image.
 094 ==> 175326 - View photo displays blank image.
@@ -176,4 +176,6 @@ BUGFIXES:
 160 ==> 427067 - Albums doesn't show thumbnails; timeline only shows 1 folder.
 161 ==> 427031 - Reverse image search.
 162 ==> 426480 - Remove unused lenses from database.
-163 ==> 
+163 ==> 373839 - Continuously face thumbnails flicker/update.
+164 ==> 426208 - Thumbnails constantly refreshing on Mac version.
+165 ==> 

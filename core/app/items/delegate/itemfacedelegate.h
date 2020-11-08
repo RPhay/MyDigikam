@@ -44,8 +44,6 @@ public:
     explicit ItemFaceDelegate(ItemCategorizedView* const parent);
     ~ItemFaceDelegate() override;
 
-    void prepareThumbnails(ItemThumbnailModel* thumbModel,
-                                   const QList<QModelIndex>& indexes) override;
     QRect faceRect(const QModelIndex& index) const;
     QRect largerFaceRect(const QModelIndex& index) const;
 

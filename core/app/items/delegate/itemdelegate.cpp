@@ -209,11 +209,6 @@ QRect ItemDelegate::coordinatesIndicatorRect() const
     return d->coordinatesRect;
 }
 
-void ItemDelegate::prepareThumbnails(ItemThumbnailModel* thumbModel, const QList<QModelIndex>& indexes)
-{
-    thumbModel->prepareThumbnails(indexes, thumbnailSize());
-}
-
 QPixmap ItemDelegate::retrieveThumbnailPixmap(const QModelIndex& index, int thumbnailSize)
 {
     // work around constness

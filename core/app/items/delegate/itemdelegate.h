@@ -74,11 +74,6 @@ public:
     void paint(QPainter* painter, const QStyleOptionViewItem& option, const QModelIndex& index)  const override;
     QPixmap pixmapForDrag(const QStyleOptionViewItem& option, const QList<QModelIndex>& indexes) const override;
 
-    /** Call this from a paint event, with all indexes expected to be painted immediately,
-     *  so that thumbnails become available in order.
-     */
-    virtual void prepareThumbnails(ItemThumbnailModel* thumbModel, const QList<QModelIndex>& indexes);
-
     /**
      * Retrieve the thumbnail pixmap in given size for the ItemModel::ThumbnailRole for
      * the given index from the given index, which must adhere to ItemThumbnailModel semantics.

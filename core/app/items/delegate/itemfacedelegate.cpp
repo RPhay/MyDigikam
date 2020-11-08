@@ -49,12 +49,6 @@ ItemFaceDelegate::~ItemFaceDelegate()
 {
 }
 
-void ItemFaceDelegate::prepareThumbnails(ItemThumbnailModel* thumbModel, const QList<QModelIndex>& indexes)
-{
-    //TODO
-    DigikamItemDelegate::prepareThumbnails(thumbModel, indexes);
-}
-
 QPixmap ItemFaceDelegate::thumbnailPixmap(const QModelIndex& index) const
 {
     QRect rect = largerFaceRect(index);
@@ -65,6 +59,7 @@ QPixmap ItemFaceDelegate::thumbnailPixmap(const QModelIndex& index) const
     }
 
     // set requested thumbnail detail
+
     if (rect.isValid())
     {
         const_cast<QAbstractItemModel*>(index.model())->setData(index, rect, ItemModel::ThumbnailRole);

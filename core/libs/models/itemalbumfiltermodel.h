@@ -48,9 +48,6 @@ public:
     void            setSourceItemModel(ItemAlbumModel* model);
     ItemAlbumModel* sourceModel()                               const;
 
-    /// convenience mappers
-    void prepareThumbnails(const QList<QModelIndex>& indexesToPrepare);
-
     void setItemFilterSettings(const ItemFilterSettings& settings)    override;
 
 protected:

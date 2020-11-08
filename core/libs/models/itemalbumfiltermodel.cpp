@@ -123,11 +123,6 @@ ItemAlbumModel* ItemAlbumFilterModel::sourceModel() const
     return static_cast<ItemAlbumModel*>(d->imageModel);
 }
 
-void ItemAlbumFilterModel::prepareThumbnails(const QList<QModelIndex>& indexesToPrepare)
-{
-    sourceModel()->prepareThumbnails(mapListToSource(indexesToPrepare));
-}
-
 void ItemAlbumFilterModel::setItemFilterSettings(const ItemFilterSettings& s)
 {
     Q_D(ItemAlbumFilterModel);
