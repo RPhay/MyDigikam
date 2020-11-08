@@ -395,8 +395,8 @@ public:
 
     // Needed to make viewportEvent() public
 
-    ListViewComboBoxListView()
-        : QListView()
+    ListViewComboBoxListView(QWidget* const parent = nullptr)
+        : QListView(parent)
     {
     }
 

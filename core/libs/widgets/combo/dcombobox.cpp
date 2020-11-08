@@ -46,8 +46,8 @@ public:
 
     explicit Private()
       : defaultIndex(0),
-        resetButton(nullptr),
-        combo(nullptr)
+        resetButton (nullptr),
+        combo       (nullptr)
     {
     }
 
@@ -59,7 +59,7 @@ public:
 
 DComboBox::DComboBox(QWidget* const parent)
     : QWidget(parent),
-      d(new Private)
+      d      (new Private)
 {
     QHBoxLayout* const hlay = new QHBoxLayout(this);
     d->combo                = new QComboBox(this);

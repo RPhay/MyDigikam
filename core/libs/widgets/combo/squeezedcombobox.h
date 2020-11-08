@@ -63,7 +63,7 @@ public:
     /**
      * destructor
      */
-    ~SqueezedComboBox() override;
+    ~SqueezedComboBox()                                   override;
 
     /**
      *
@@ -71,7 +71,7 @@ public:
      * version of text.
      * @param text the original (not-squeezed) text to check for
      */
-    bool contains(const QString& text) const;
+    bool contains(const QString& text)              const;
 
     /**
      * This inserts a item to the list. See QComboBox::insertItem()
@@ -83,7 +83,7 @@ public:
      * @param userData custom meta-data assigned to new item.
      */
     void insertSqueezedItem(const QString& newItem, int index,
-                            const QVariant& userData=QVariant());
+                            const QVariant& userData = QVariant());
 
     /**
      * This inserts items to the list. See QComboBox::insertItems()
@@ -102,7 +102,7 @@ public:
      * @param userData custom meta-data assigned to new item.
      */
     void addSqueezedItem(const QString& newItem,
-                         const QVariant& userData=QVariant());
+                         const QVariant& userData = QVariant());
 
     /**
      * Set the current item to the one matching the given text.
@@ -116,19 +116,19 @@ public:
      * highlighted item.
      * @return full text of the highlighted item
      */
-    QString itemHighlighted() const;
+    QString itemHighlighted()                       const;
 
     /**
      * This method returns the full text (not squeezed) for the index.
      * @param index the position in the widget.
      * @return full text of the item
      */
-    QString item(int index) const;
+    QString item(int index)                         const;
 
     /**
      * Sets the sizeHint() of this widget.
      */
-    QSize sizeHint() const override;
+    QSize sizeHint()                                const override;
 
 private Q_SLOTS:
 
@@ -137,20 +137,25 @@ private Q_SLOTS:
 
 private:
 
-    void    resizeEvent(QResizeEvent*) override;
-    QString squeezeText(const QString& original) const;
+    void    resizeEvent(QResizeEvent*)                    override;
+    QString squeezeText(const QString& original)    const;
 
-    // Prevent these from being used.
-    QString currentText() const;
+    /// Prevent these from being used.
+    QString currentText()                           const;
     void    setCurrentText(const QString& itemText);
     void    insertItem(const QString& text);
     void    insertItem(qint32 index, const QString& text);
-    void    insertItem(int index, const QIcon& icon, const QString& text, const QVariant& userData=QVariant());
+    void    insertItem(int index,
+                       const QIcon& icon,
+                       const QString& text,
+                       const QVariant& userData = QVariant());
     void    insertItems(int index, const QStringList& list);
     void    addItem(const QString& text);
-    void    addItem(const QIcon& icon, const QString& text, const QVariant& userData=QVariant());
+    void    addItem(const QIcon& icon,
+                    const QString& text,
+                    const QVariant& userData = QVariant());
     void    addItems(const QStringList& texts);
-    QString itemText(int index) const;
+    QString itemText(int index)                     const;
 
 private:
 

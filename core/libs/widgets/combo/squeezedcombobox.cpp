@@ -53,7 +53,7 @@ public:
 
 SqueezedComboBox::SqueezedComboBox(QWidget* const parent, const char* name)
     : QComboBox(parent),
-      d(new Private)
+      d        (new Private)
 {
     setObjectName(QString::fromUtf8(name));
     setMinimumWidth(100);
@@ -100,9 +100,13 @@ QSize SqueezedComboBox::sizeHint() const
     QFontMetrics fm = fontMetrics();
 
 #if (QT_VERSION >= QT_VERSION_CHECK(5, 11, 0))
+
     int maxW        = count() ? 18 : 7 * fm.horizontalAdvance(QLatin1Char('x')) + 18;
+
 #else
+
     int maxW        = count() ? 18 : 7 * fm.width(QLatin1Char('x')) + 18;
+
 #endif
 
     int maxH        = qMax(fm.lineSpacing(), 14) + 2;
@@ -172,35 +176,53 @@ void SqueezedComboBox::slotTimeOut()
 QString SqueezedComboBox::squeezeText(const QString& original) const
 {
     // not the complete widgetSize is usable. Need to compensate for that.
+
     int widgetSize = width() - 30;
     QFontMetrics fm(fontMetrics());
 
     // If we can fit the full text, return that.
+
 #if (QT_VERSION >= QT_VERSION_CHECK(5, 11, 0))
+
     if (fm.horizontalAdvance(original) < widgetSize)
+
 #else
+
     if (fm.width(original) < widgetSize)
+
 #endif
+
     {
         return(original);
     }
 
     // We need to squeeze.
+
     QString sqItem = original; // prevent empty return value;
 
 #if (QT_VERSION >= QT_VERSION_CHECK(5, 11, 0))
+
     widgetSize     = widgetSize-fm.horizontalAdvance(QLatin1String("..."));
+
 #else
+
     widgetSize     = widgetSize-fm.width(QLatin1String("..."));
+
 #endif
 
     for (int i = 0 ; i != original.length() ; ++i)
     {
+
 #if (QT_VERSION >= QT_VERSION_CHECK(5, 11, 0))
+
         if ((int)fm.horizontalAdvance(original.right(i)) > widgetSize)
+
 #else
+
         if ((int)fm.width(original.right(i)) > widgetSize)
+
 #endif
+
         {
             sqItem = QString(original.left(i) + QLatin1String("..."));
             break;
