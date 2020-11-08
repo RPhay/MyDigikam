@@ -62,8 +62,8 @@ private:
     explicit SyncJob(QObject*);
     ~SyncJob() override;
 
-    void enterWaitingLoop() const;
-    void quitWaitingLoop()  const;
+    void enterWaitingLoop()                          const;
+    void quitWaitingLoop()                           const;
 
     QPixmap getTagThumbnailPriv(TAlbum* const album) const;
 

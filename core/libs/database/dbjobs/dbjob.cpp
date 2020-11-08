@@ -243,10 +243,9 @@ void TagsJob::run()
 
         if (!m_jobInfo.specialTag().isNull())
         {
-            QString searchXml =
-                lister.tagSearchXml(m_jobInfo.tagsIds().first(),
-                                    m_jobInfo.specialTag(),
-                                    m_jobInfo.isRecursive());
+            QString searchXml = lister.tagSearchXml(m_jobInfo.tagsIds().constFirst(),
+                                                    m_jobInfo.specialTag(),
+                                                    m_jobInfo.isRecursive());
             lister.listImageTagPropertySearch(&receiver, searchXml);
         }
         else

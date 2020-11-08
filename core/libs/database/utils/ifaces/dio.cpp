@@ -252,9 +252,10 @@ void DIO::processJob(IOJobData* const data)
 {
     const int operation = data->operation();
 
-    if (operation == IOJobData::CopyImage || operation == IOJobData::MoveImage)
+    if ((operation == IOJobData::CopyImage) || (operation == IOJobData::MoveImage))
     {
         // this is a fast db operation, do here
+
         GroupedImagesFinder finder(data->itemInfos());
         data->setItemInfos(finder.infos);
 
@@ -269,14 +270,14 @@ void DIO::processJob(IOJobData* const data)
 
         ScanController::instance()->hintAtMoveOrCopyOfItems(ids, data->destAlbum(), filenames);
     }
-    else if (operation == IOJobData::CopyAlbum || operation == IOJobData::MoveAlbum)
+    else if ((operation == IOJobData::CopyAlbum) || (operation == IOJobData::MoveAlbum))
     {
         ScanController::instance()->hintAtMoveOrCopyOfAlbum(data->srcAlbum(), data->destAlbum());
         createJob(data);
 
         return;
     }
-    else if (operation == IOJobData::Delete || operation == IOJobData::Trash)
+    else if ((operation == IOJobData::Delete) || (operation == IOJobData::Trash))
     {
         qCDebug(DIGIKAM_DATABASE_LOG) << "Number of files to be deleted:" << data->sourceUrls().count();
     }
@@ -288,7 +289,7 @@ void DIO::processJob(IOJobData* const data)
     {
         if (!data->itemInfos().isEmpty())
         {
-            ItemInfo info       = data->itemInfos().first();
+            ItemInfo info       = data->itemInfos().constFirst();
             PAlbum* const album = AlbumManager::instance()->findPAlbum(info.albumId());
 
             if (album)
@@ -451,6 +452,7 @@ void DIO::slotResult()
     if (jobThread->hasErrors() && data->operation() != IOJobData::Rename)
     {
         // Pop-up a message about the error.
+
         QString errors = jobThread->errorsList().join(QLatin1Char('\n'));
         DNotificationWrapper(QString(), errors, DigikamApp::instance(),
                              DigikamApp::instance()->windowTitle());
@@ -490,11 +492,13 @@ void DIO::slotOneProccessed(const QUrl& url)
     {
         // Mark the images as obsolete and remove them
         // from their album and from the grouped
+
         PAlbum* const album = data->srcAlbum();
 
-        if (album && album->fileUrl() == url)
+        if (album && (album->fileUrl() == url))
         {
             // get all deleted albums
+
             CoreDbAccess access;
             QList<int> albumsToDelete;
             QList<qlonglong> imagesToRemove;
@@ -583,9 +587,13 @@ void DIO::slotOneProccessed(const QUrl& url)
             }
 
             ThumbsDbAccess().db()->renameByFilePath(oldPath, newPath);
+
             // Remove old thumbnails and images from the cache
+
             LoadingCacheInterface::fileChanged(oldPath, false);
+
             // Rename in ItemInfo and database
+
             info.setName(newName);
         }
     }
@@ -716,6 +724,7 @@ void DIO::slotCancel(ProgressItem* item)
 void DIO::addAlbumChildrenToList(QList<int>& list, Album* const album)
 {
     // simple recursive helper function
+
     if (album)
     {
         if (!list.contains(album->id()))

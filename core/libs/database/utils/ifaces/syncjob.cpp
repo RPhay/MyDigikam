@@ -42,10 +42,10 @@ class Q_DECL_HIDDEN SyncJob::Private
 {
 public:
 
-    explicit Private() :
-        waitingLoop(nullptr),
-        thumbnail(nullptr),
-        album(nullptr)
+    explicit Private()
+      : waitingLoop(nullptr),
+        thumbnail  (nullptr),
+        album      (nullptr)
     {
     }
 
@@ -84,6 +84,7 @@ void SyncJob::quitWaitingLoop() const
 QPixmap SyncJob::getTagThumbnail(TAlbum* const album)
 {
     SyncJob sj;
+
     return sj.getTagThumbnailPriv(album);
 }
 

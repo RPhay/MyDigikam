@@ -46,7 +46,7 @@ public:
     explicit DBInfoIface(QObject* const parent,
                          const QList<QUrl>& lst = QList<QUrl>(),
                          const ApplicationSettings::OperationType type = ApplicationSettings::Unspecified);
-    ~DBInfoIface() override;
+    ~DBInfoIface()                                                                        override;
 
 public:
 

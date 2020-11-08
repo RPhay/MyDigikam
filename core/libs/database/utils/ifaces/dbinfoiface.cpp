@@ -73,12 +73,12 @@ class Q_DECL_HIDDEN DBInfoIface::Private
 public:
 
     explicit Private()
-      : albumManager(AlbumManager::instance()),
-        albumsChooser(nullptr),
-        albumSelector(nullptr),
-        operationType(ApplicationSettings::Unspecified),
+      : albumManager    (AlbumManager::instance()),
+        albumsChooser   (nullptr),
+        albumSelector   (nullptr),
+        operationType   (ApplicationSettings::Unspecified),
         withGroupedIsSet(false),
-        withGrouped(false)
+        withGrouped     (false)
     {
     }
 
@@ -303,7 +303,7 @@ public:
 DBInfoIface::DBInfoIface(QObject* const parent, const QList<QUrl>& lst,
                          const ApplicationSettings::OperationType type)
     : DInfoInterface(parent),
-      d(new Private)
+      d             (new Private)
 {
     setObjectName(QLatin1String("DBInfoIface"));
     d->itemUrls      = lst;
@@ -349,7 +349,7 @@ void DBInfoIface::slotMetadataChangedForUrl(const QUrl& url)
 
 void DBInfoIface::parseAlbumItemsRecursive()
 {
-    Album* const currAlbum = d->albumManager->currentAlbums().first();
+    Album* const currAlbum = d->albumManager->currentAlbums().constFirst();
 
     if (currAlbum)
     {
@@ -378,7 +378,7 @@ QList<QUrl> DBInfoIface::currentAlbumItems() const
 
     if (imageList.isEmpty())
     {
-        Album* const currAlbum = d->albumManager->currentAlbums().first();
+        Album* const currAlbum = d->albumManager->currentAlbums().constFirst();
         imageList              = d->resolveGroupsFromAlbums(albumItems(currAlbum));
     }
 
