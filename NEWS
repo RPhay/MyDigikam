@@ -178,4 +178,5 @@ BUGFIXES:
 162 ==> 426480 - Remove unused lenses from database.
 163 ==> 373839 - Continuously face thumbnails flicker/update.
 164 ==> 426208 - Thumbnails constantly refreshing on Mac version.
-165 ==> 
+165 ==> 422138 - Select other Languages is out.
+166 ==> 
