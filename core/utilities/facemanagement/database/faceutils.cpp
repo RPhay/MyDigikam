@@ -53,8 +53,8 @@ namespace Digikam
 
 // --- Constructor / Destructor -------------------------------------------------------------------------------------
 
-FaceUtils::FaceUtils()
-    : QObject()
+FaceUtils::FaceUtils(QObject* const parent)
+    : QObject(parent)
 {
 }
 

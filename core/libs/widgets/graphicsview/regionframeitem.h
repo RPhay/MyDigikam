@@ -39,7 +39,7 @@ class QWidget;
 namespace Digikam
 {
 
-class DIGIKAM_EXPORT RegionFrameItem : public DImgChildItem
+class DIGIKAM_EXPORT RegionFrameItem : public DImgChildItem         // clazy:exclude=ctor-missing-parent-argument
 {
     Q_OBJECT
 

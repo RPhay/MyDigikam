@@ -62,7 +62,7 @@ public:
 
 public:
 
-    explicit FaceUtils();
+    explicit FaceUtils(QObject* const parent = nullptr);
     ~FaceUtils()                                                                              override;
 
     // --- Face detection and recognition ---
@@ -148,7 +148,7 @@ protected:
 
 private:
 
-    // Hidden copy constructor and assignment operator.
+    // Disable
     FaceUtils(const FaceUtils&);
     FaceUtils& operator=(const FaceUtils&);
 };

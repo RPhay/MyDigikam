@@ -35,7 +35,7 @@
 namespace Digikam
 {
 
-class DIGIKAM_EXPORT ClickDragReleaseItem : public QGraphicsObject
+class DIGIKAM_EXPORT ClickDragReleaseItem : public QGraphicsObject      // clazy:exclude=ctor-missing-parent-argument
 {
     Q_OBJECT
 

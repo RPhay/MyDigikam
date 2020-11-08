@@ -98,7 +98,7 @@ void DImgChildItem::Private::connectParent(bool active)
 
 DImgChildItem::DImgChildItem(QGraphicsItem* const parent)
     : QGraphicsObject(parent),
-      d(new Private(this))
+      d              (new Private(this))
 {
     d->connectParent();
 }
@@ -117,6 +117,7 @@ void DImgChildItem::setRelativePos(const QPointF& relativePos)
 
     d->relativePos = relativePos;
     updatePos();
+
     emit positionOnImageChanged();
     emit geometryOnImageChanged();
 }
@@ -130,6 +131,7 @@ void DImgChildItem::setRelativeSize(const QSizeF& relativeSize)
 
     d->relativeSize = relativeSize;
     updateSize();
+
     emit sizeOnImageChanged();
     emit geometryOnImageChanged();
 }
@@ -163,8 +165,8 @@ void DImgChildItem::setOriginalPos(const QPointF& posInOriginal)
     }
 
     QSizeF originalSize = parentDImgItem()->zoomSettings()->originalImageSize();
-    setRelativePos( QPointF(posInOriginal.x() / originalSize.width(),
-                            posInOriginal.y() / originalSize.height()) );
+    setRelativePos(QPointF(posInOriginal.x() / originalSize.width(),
+                           posInOriginal.y() / originalSize.height()));
 }
 
 void DImgChildItem::setOriginalSize(const QSizeF& sizeInOriginal)
@@ -175,8 +177,8 @@ void DImgChildItem::setOriginalSize(const QSizeF& sizeInOriginal)
     }
 
     QSizeF originalSize = parentDImgItem()->zoomSettings()->originalImageSize();
-    setRelativeSize( QSizeF(sizeInOriginal.width()  / originalSize.width(),
-                            sizeInOriginal.height() / originalSize.height()) );
+    setRelativeSize(QSizeF(sizeInOriginal.width()  / originalSize.width(),
+                           sizeInOriginal.height() / originalSize.height()));
 }
 
 void DImgChildItem::setOriginalRect(const QRectF& rect)
@@ -282,6 +284,7 @@ void DImgChildItem::updatePos()
 
     QSizeF imageSize = parentItem()->boundingRect().size();
     QGraphicsObject::setPos(imageSize.width() * d->relativePos.x(), imageSize.height() * d->relativePos.y());
+
     emit positionChanged();
     emit geometryChanged();
 }
@@ -289,6 +292,7 @@ void DImgChildItem::updatePos()
 void DImgChildItem::updateSize()
 {
     prepareGeometryChange();
+
     emit sizeChanged();
     emit geometryChanged();
 }
