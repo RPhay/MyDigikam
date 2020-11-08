@@ -44,7 +44,7 @@ class AlbumPropsEdit : public QDialog
 public:
 
     explicit AlbumPropsEdit(PAlbum* const album, bool create = false);
-    ~AlbumPropsEdit() override;
+    ~AlbumPropsEdit()                   override;
 
     QString     title()           const;
     QString     comments()        const;
@@ -75,6 +75,11 @@ private Q_SLOTS:
     void slotDateAverageButtonClicked();
     void slotDateHighButtonClicked();
     void slotHelp();
+
+private:
+
+    // Disable
+    AlbumPropsEdit(QWidget*);
 
 private:
 

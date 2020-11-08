@@ -157,7 +157,7 @@ public:
 
 ContextMenuHelper::ContextMenuHelper(QMenu* const parent, KActionCollection* const actionCollection)
     : QObject(parent),
-      d(new Private(this))
+      d      (new Private(this))
 {
     d->parent = parent;
 

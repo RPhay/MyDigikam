@@ -51,8 +51,9 @@ public:
     ItemInfoJob         imageInfoJob;
 };
 
-ItemInfoAlbumsJob::ItemInfoAlbumsJob()
-    : d(new Private)
+ItemInfoAlbumsJob::ItemInfoAlbumsJob(QObject* const parent)
+    : QObject(parent),
+      d      (new Private)
 {
     connect(&d->imageInfoJob, SIGNAL(signalItemsInfo(ItemInfoList)),
             this, SLOT(slotItemsInfo(ItemInfoList)));

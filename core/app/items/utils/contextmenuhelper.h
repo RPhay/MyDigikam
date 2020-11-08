@@ -86,27 +86,6 @@ public:
 
     typedef const QList<qlonglong> imageIds;
 
-Q_SIGNALS:
-
-    void signalSetThumbnail(const ItemInfo&);
-    void signalGotoAlbum(const ItemInfo&);
-    void signalGotoDate(const ItemInfo&);
-    void signalGotoTag(int);
-    void signalAssignTag(int);
-    void signalRemoveTag(int);
-    void signalAssignPickLabel(int);
-    void signalAssignColorLabel(int);
-    void signalAssignRating(int);
-    void signalAddToExistingQueue(int);
-    void signalAddNewTagFromABCMenu(const QString&);
-    void signalPopupTagsView();
-    void signalCreateGroup();
-    void signalCreateGroupByTime();
-    void signalCreateGroupByFilename();
-    void signalCreateGroupByTimelapse();
-    void signalUngroup();
-    void signalRemoveFromGroup();
-
 public:
 
     /**
@@ -116,7 +95,7 @@ public:
      * @param actionCollection the actionCollection that should be used. If not set, the standard
      * action from DigikamApp is used
      */
-    explicit ContextMenuHelper(QMenu* parent, KActionCollection* actionCollection = nullptr);
+    explicit ContextMenuHelper(QMenu* const parent, KActionCollection* const actionCollection = nullptr);   // clazy:exclude=ctor-missing-parent-argument
     ~ContextMenuHelper() override;
 
     /**
@@ -402,6 +381,27 @@ public:
      * @return the triggered action
      */
     QAction* exec(const QPoint& pos, QAction* at = nullptr);
+
+Q_SIGNALS:
+
+    void signalSetThumbnail(const ItemInfo&);
+    void signalGotoAlbum(const ItemInfo&);
+    void signalGotoDate(const ItemInfo&);
+    void signalGotoTag(int);
+    void signalAssignTag(int);
+    void signalRemoveTag(int);
+    void signalAssignPickLabel(int);
+    void signalAssignColorLabel(int);
+    void signalAssignRating(int);
+    void signalAddToExistingQueue(int);
+    void signalAddNewTagFromABCMenu(const QString&);
+    void signalPopupTagsView();
+    void signalCreateGroup();
+    void signalCreateGroupByTime();
+    void signalCreateGroupByFilename();
+    void signalCreateGroupByTimelapse();
+    void signalUngroup();
+    void signalRemoveFromGroup();
 
 private Q_SLOTS:
 

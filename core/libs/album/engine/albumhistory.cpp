@@ -174,8 +174,9 @@ void AlbumHistory::Private::forward(unsigned int steps)
     moving = true;
 }
 
-AlbumHistory::AlbumHistory()
-    : d(new Private)
+AlbumHistory::AlbumHistory(QObject* const parent)
+    : QObject(parent),
+      d      (new Private)
 {
 }
 

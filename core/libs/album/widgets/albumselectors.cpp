@@ -54,7 +54,7 @@
 namespace Digikam
 {
 
-class Q_DECL_HIDDEN ModelClearButton : public AnimatedClearButton
+class Q_DECL_HIDDEN ModelClearButton : public AnimatedClearButton       // clazy:exclude=ctor-missing-parent-argument
 {
     Q_OBJECT
 
@@ -290,7 +290,7 @@ AlbumList AlbumSelectors::selectedAlbums() const
 {
     AlbumList albums;
 
-    if (wholeAlbumsChecked())
+    if      (wholeAlbumsChecked())
     {
         albums << AlbumManager::instance()->allPAlbums();
     }
@@ -324,7 +324,7 @@ AlbumList AlbumSelectors::selectedTags() const
 {
     AlbumList albums;
 
-    if (wholeTagsChecked())
+    if      (wholeTagsChecked())
     {
         albums << AlbumManager::instance()->allTAlbums();
     }

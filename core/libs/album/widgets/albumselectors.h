@@ -58,7 +58,7 @@ public:
                             const QString& configName,
                             QWidget* const parent = nullptr,
                             AlbumType albumType = All);
-    ~AlbumSelectors() override;
+    ~AlbumSelectors()                         override;
 
     /**
      * Return list of selected physical albums

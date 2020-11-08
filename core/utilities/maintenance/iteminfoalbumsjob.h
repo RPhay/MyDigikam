@@ -42,7 +42,7 @@ class ItemInfoAlbumsJob : public QObject
 
 public:
 
-    explicit ItemInfoAlbumsJob();
+    explicit ItemInfoAlbumsJob(QObject* const parent = nullptr);
     ~ItemInfoAlbumsJob() override;
 
     void allItemsFromAlbums(const AlbumList& albumsList);
