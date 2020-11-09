@@ -299,11 +299,11 @@ if [[ $DK_UPLOAD = 1 ]] ; then
     echo -e "---------- Cleanup older Windows bundle files from files.kde.org repository \n"
 
     if [ $MXE_BUILD_TARGETS == "i686-w64-mingw32.shared" ]; then
-        rsync --delete -e ssh $DK_UPLOADURL:$DK_UPLOADDIR*-Win32$DEBUG_SUF.exe*
-        rsync --delete -e ssh $DK_UPLOADURL:$DK_UPLOADDIR*-Win32$DEBUG_SUF.tar.xz*
+        sftp -q $DK_UPLOADURL:$DK_UPLOADDIR <<< "rm *-Win32$DEBUG_SUF.exe*"
+        sftp -q $DK_UPLOADURL:$DK_UPLOADDIR <<< "rm *-Win32$DEBUG_SUF.tar.xz*"
     else
-        rsync --delete -e ssh $DK_UPLOADURL:$DK_UPLOADDIR*-Win64$DEBUG_SUF.exe*
-        rsync --delete -e ssh $DK_UPLOADURL:$DK_UPLOADDIR*-Win64$DEBUG_SUF.tar.xz*
+        sftp -q $DK_UPLOADURL:$DK_UPLOADDIR <<< "rm *-Win64$DEBUG_SUF.exe*"
+        sftp -q $DK_UPLOADURL:$DK_UPLOADDIR <<< "rm *-Win64$DEBUG_SUF.tar.xz*"
     fi
 
     echo -e "---------- Upload new Windows bundle files to files.kde.org repository \n"
