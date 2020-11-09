@@ -53,10 +53,10 @@ class DIGIKAM_EXPORT EditorTool : public QObject
 public:
 
     explicit EditorTool(QObject* const parent);
-    ~EditorTool() override;
+    ~EditorTool()                               override;
 
     void setPlugin(DPluginEditor* const plugin);
-    DPluginEditor* plugin() const;
+    DPluginEditor* plugin()               const;
 
     /**
      * Called by editor tool interface to initialized tool when all is ready, through slotInit().
@@ -148,7 +148,7 @@ public:
 public:
 
     explicit EditorToolThreaded(QObject* const parent);
-    ~EditorToolThreaded() override;
+    ~EditorToolThreaded()                                     override;
 
     /**
      * Set the small text to show in editor status progress bar during
@@ -159,7 +159,7 @@ public:
     /**
      * return the current tool rendering mode.
      */
-    RenderingMode renderingMode() const;
+    RenderingMode renderingMode()                       const;
 
 public Q_SLOTS:
 
@@ -170,13 +170,13 @@ protected:
     /**
      * Manage filter instance plugged in tool interface
      */
-    DImgThreadedFilter* filter() const;
+    DImgThreadedFilter* filter()                        const;
     void setFilter(DImgThreadedFilter* const filter);
 
     /**
      * Manage analyser instance plugged in tool interface
      */
-    DImgThreadedAnalyser* analyser() const;
+    DImgThreadedAnalyser* analyser()                    const;
     void setAnalyser(DImgThreadedAnalyser* const analyser);
 
     /**
@@ -211,10 +211,10 @@ protected Q_SLOTS:
      */
     void slotProgress(int progress);
 
-    void slotInit()    override;
-    void slotOk()      override;
-    void slotCancel()  override;
-    void slotPreview() override;
+    void slotInit()                                           override;
+    void slotOk()                                             override;
+    void slotCancel()                                         override;
+    void slotPreview()                                        override;
 
 private Q_SLOTS:
 

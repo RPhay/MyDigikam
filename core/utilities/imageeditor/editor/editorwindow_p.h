@@ -143,37 +143,37 @@ class Q_DECL_HIDDEN EditorWindow::Private
 public:
 
     Private()
-      : cmViewIndicator(nullptr),
-        underExposureIndicator(nullptr),
-        overExposureIndicator(nullptr),
-        infoLabel(nullptr),
-        copyAction(nullptr),
-        cropAction(nullptr),
-        flipHorizAction(nullptr),
-        flipVertAction(nullptr),
-        rotateLeftAction(nullptr),
-        rotateRightAction(nullptr),
-        selectAllAction(nullptr),
-        selectNoneAction(nullptr),
-        softProofOptionsAction(nullptr),
-        zoomFitToSelectAction(nullptr),
-        zoomMinusAction(nullptr),
-        zoomPlusAction(nullptr),
-        zoomTo100percents(nullptr),
-        openWithAction(nullptr),
-        waitingLoop(nullptr),
-        currentWindowModalDialog(nullptr),
-        zoomFitToWindowAction(nullptr),
-        viewCMViewAction(nullptr),
-        viewSoftProofAction(nullptr),
-        viewUnderExpoAction(nullptr),
-        viewOverExpoAction(nullptr),
-        selectToolsActionView(nullptr),
-        ICCSettings(nullptr),
-        zoomBar(nullptr),
-        previewToolBar(nullptr),
-        exposureSettings(nullptr),
-        toolIface(nullptr)
+      : cmViewIndicator             (nullptr),
+        underExposureIndicator      (nullptr),
+        overExposureIndicator       (nullptr),
+        infoLabel                   (nullptr),
+        copyAction                  (nullptr),
+        cropAction                  (nullptr),
+        flipHorizAction             (nullptr),
+        flipVertAction              (nullptr),
+        rotateLeftAction            (nullptr),
+        rotateRightAction           (nullptr),
+        selectAllAction             (nullptr),
+        selectNoneAction            (nullptr),
+        softProofOptionsAction      (nullptr),
+        zoomFitToSelectAction       (nullptr),
+        zoomMinusAction             (nullptr),
+        zoomPlusAction              (nullptr),
+        zoomTo100percents           (nullptr),
+        openWithAction              (nullptr),
+        waitingLoop                 (nullptr),
+        currentWindowModalDialog    (nullptr),
+        zoomFitToWindowAction       (nullptr),
+        viewCMViewAction            (nullptr),
+        viewSoftProofAction         (nullptr),
+        viewUnderExpoAction         (nullptr),
+        viewOverExpoAction          (nullptr),
+        selectToolsActionView       (nullptr),
+        ICCSettings                 (nullptr),
+        zoomBar                     (nullptr),
+        previewToolBar              (nullptr),
+        exposureSettings            (nullptr),
+        toolIface                   (nullptr)
     {
     }
 
@@ -355,7 +355,11 @@ void EditorWindow::Private::plugNewVersionInFormatAction(EditorWindow* const q,
     QAction* const action = new QAction(text, q);
 
     connect(action, &QAction::triggered,
-            q, [q, format]() { q->saveNewVersionInFormat(format); });
+            q, [q, format]()
+            {
+                 q->saveNewVersionInFormat(format);
+            }
+    );
 
     menuAction->addAction(action);
 }

@@ -67,26 +67,26 @@ class Q_DECL_HIDDEN EditorToolSettings::Private
 public:
 
     explicit Private()
-      : scaleBG(nullptr),
-        linHistoButton(nullptr),
-        logHistoButton(nullptr),
-        settingsArea(nullptr),
-        plainPage(nullptr),
-        toolName(nullptr),
-        toolIcon(nullptr),
-        toolAbout(nullptr),
-        guideBox(nullptr),
-        okBtn(nullptr),
-        cancelBtn(nullptr),
-        tryBtn(nullptr),
-        defaultBtn(nullptr),
-        saveAsBtn(nullptr),
-        loadBtn(nullptr),
-        guideColorBt(nullptr),
-        hGradient(nullptr),
-        histogramBox(nullptr),
-        guideSize(nullptr),
-        tool(nullptr)
+      : scaleBG         (nullptr),
+        linHistoButton  (nullptr),
+        logHistoButton  (nullptr),
+        settingsArea    (nullptr),
+        plainPage       (nullptr),
+        toolName        (nullptr),
+        toolIcon        (nullptr),
+        toolAbout       (nullptr),
+        guideBox        (nullptr),
+        okBtn           (nullptr),
+        cancelBtn       (nullptr),
+        tryBtn          (nullptr),
+        defaultBtn      (nullptr),
+        saveAsBtn       (nullptr),
+        loadBtn         (nullptr),
+        guideColorBt    (nullptr),
+        hGradient       (nullptr),
+        histogramBox    (nullptr),
+        guideSize       (nullptr),
+        tool            (nullptr)
     {
     }
 
@@ -124,12 +124,12 @@ public:
 
 EditorToolSettings::EditorToolSettings(QWidget* const parent)
     : QScrollArea(parent),
-      d(new Private)
+      d          (new Private)
 {
     setFrameStyle(QFrame::NoFrame);
     setWidgetResizable(true);
 
-    d->settingsArea = new QWidget;
+    d->settingsArea                 = new QWidget;
 
     // ---------------------------------------------------------------
 
@@ -140,14 +140,14 @@ EditorToolSettings::EditorToolSettings(QWidget* const parent)
 
     // ---------------------------------------------------------------
 
-    QFrame* const toolDescriptor = new QFrame;
-    d->toolName                  = new QLabel();
-    d->toolIcon                  = new QLabel();
-    QFont font                   = d->toolName->font();
+    QFrame* const toolDescriptor    = new QFrame;
+    d->toolName                     = new QLabel();
+    d->toolIcon                     = new QLabel();
+    QFont font                      = d->toolName->font();
     font.setBold(true);
     d->toolName->setFont(font);
 
-    d->toolAbout                 = new QPushButton();
+    d->toolAbout                    = new QPushButton();
     d->toolAbout->setIcon(QIcon::fromTheme(QLatin1String("help-about")));
     d->toolAbout->setToolTip(i18n("About this tool..."));
 

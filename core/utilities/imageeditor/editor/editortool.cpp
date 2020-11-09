@@ -57,13 +57,13 @@ class Q_DECL_HIDDEN EditorTool::Private
 public:
 
     explicit Private()
-      : initPreview(false),
-        version(0),
-        view(nullptr),
-        timer(nullptr),
-        settings(nullptr),
-        category(FilterAction::ReproducibleFilter),
-        plugin(nullptr)
+      : initPreview (false),
+        version     (0),
+        view        (nullptr),
+        timer       (nullptr),
+        settings    (nullptr),
+        category    (FilterAction::ReproducibleFilter),
+        plugin      (nullptr)
     {
     }
 
@@ -93,7 +93,7 @@ const QString EditorTool::Private::configRestoreSettingsEntry(QLatin1String("Res
 
 EditorTool::EditorTool(QObject* const parent)
     : QObject(parent),
-      d(new Private)
+      d      (new Private)
 {
     d->timer = new QTimer(this);
 
@@ -421,10 +421,10 @@ class Q_DECL_HIDDEN EditorToolThreaded::Private
 public:
 
     explicit Private()
-      : delFilter(true),
+      : delFilter           (true),
         currentRenderingMode(EditorToolThreaded::NoneRendering),
-        threadedFilter(nullptr),
-        threadedAnalyser(nullptr)
+        threadedFilter      (nullptr),
+        threadedAnalyser    (nullptr)
     {
     }
 
@@ -440,7 +440,7 @@ public:
 
 EditorToolThreaded::EditorToolThreaded(QObject* const parent)
     : EditorTool(parent),
-      d(new Private)
+      d         (new Private)
 {
 }
 
@@ -610,7 +610,9 @@ void EditorToolThreaded::slotFilterFinished(bool success)
             }
 
             default:
+            {
                 break;
+            }
         }
     }
     else                   // Computation Failed !
@@ -626,7 +628,9 @@ void EditorToolThreaded::slotFilterFinished(bool success)
 
             case EditorToolThreaded::FinalRendering:
             default:
+            {
                 break;
+            }
         }
     }
 }

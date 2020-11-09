@@ -88,19 +88,21 @@ public:
         FlipVertical
     };
 
-    explicit EditorWindow(const QString& name);
-    ~EditorWindow() override;
-
     const static QString CONFIG_GROUP_NAME;
 
-    void registerExtraPluginsActions(QString& dom) override;
+public:
+
+    explicit EditorWindow(const QString& name, QWidget* const parent = nullptr);
+    ~EditorWindow()                                       override;
+
+    void registerExtraPluginsActions(QString& dom)        override;
     void loadTool(EditorTool* const tool);
-    bool actionEnabledState() const;
+    bool actionEnabledState()                       const;
 
 public Q_SLOTS:
 
-    void slotSetup()  override = 0;
-    virtual void slotSetupICC()        = 0;
+    void slotSetup()                                      override = 0;
+    virtual void slotSetupICC()                                    = 0;
 
 Q_SIGNALS:
 
@@ -219,9 +221,9 @@ protected:
     void addServicesMenuForUrl(const QUrl& url);
     void openWith(const QUrl& url, QAction* action);
 
-    SidebarSplitter*           sidebarSplitter()  const;
-    EditorStackView*           editorStackView()  const;
-    ExposureSettingsContainer* exposureSettings() const;
+    SidebarSplitter*           sidebarSplitter()    const;
+    EditorStackView*           editorStackView()    const;
+    ExposureSettingsContainer* exposureSettings()   const;
 
     VersionFileOperation saveVersionFileOperation(const QUrl& url, bool fork);
     VersionFileOperation saveAsVersionFileOperation(const QUrl& url, const QUrl& saveLocation, const QString& format);
@@ -237,16 +239,16 @@ protected:
     virtual void saveSettings();
     virtual void toggleActions(bool val);
 
-    virtual ThumbBarDock* thumbBar() const = 0;
-    virtual Sidebar* rightSideBar() const = 0;
+    virtual ThumbBarDock* thumbBar()                const = 0;
+    virtual Sidebar* rightSideBar()                 const = 0;
 
-    virtual void setupConnections() = 0;
-    virtual void setupActions() = 0;
-    virtual void setupUserArea() = 0;
+    virtual void setupConnections()                       = 0;
+    virtual void setupActions()                           = 0;
+    virtual void setupUserArea()                          = 0;
 
-    virtual void addServicesMenu() = 0;
+    virtual void addServicesMenu()                        = 0;
 
-    virtual VersionManager* versionManager() const;
+    virtual VersionManager* versionManager()        const;
 
     /**
      * Hook method that subclasses must implement to return the destination url
@@ -256,11 +258,11 @@ protected:
      *
      * @return destination for the file that is currently being saved.
      */
-    virtual QUrl saveDestinationUrl() = 0;
+    virtual QUrl saveDestinationUrl()                     = 0;
 
-    virtual void saveIsComplete() = 0;
-    virtual void saveAsIsComplete() = 0;
-    virtual void saveVersionIsComplete() = 0;
+    virtual void saveIsComplete()                         = 0;
+    virtual void saveAsIsComplete()                       = 0;
+    virtual void saveVersionIsComplete()                  = 0;
 
 protected Q_SLOTS:
 
@@ -274,35 +276,36 @@ protected Q_SLOTS:
 
     void slotNameLabelCancelButtonPressed();
 
+    void slotComponentsInfo()                             override;
+
     virtual void slotPrepareToLoad();
     virtual void slotLoadingStarted(const QString& filename);
     virtual void slotLoadingFinished(const QString& filename, bool success);
     virtual void slotSavingStarted(const QString& filename);
     virtual void slotFileOriginChanged(const QString& filePath);
-    void slotComponentsInfo() override;
     virtual void slotDiscardChanges();
     virtual void slotOpenOriginal();
 
     virtual bool saveOrSaveAs();
 
-    virtual bool saveAs() = 0;
-    virtual bool save() = 0;
-    virtual bool saveNewVersion() = 0;
-    virtual bool saveCurrentVersion() = 0;
-    virtual bool saveNewVersionAs() = 0;
-    virtual bool saveNewVersionInFormat(const QString&) = 0;
-    virtual void slotFileWithDefaultApplication() = 0;
-    virtual void slotDeleteCurrentItem() = 0;
-    virtual void slotBackward() = 0;
-    virtual void slotForward() = 0;
-    virtual void slotFirst() = 0;
-    virtual void slotLast() = 0;
-    virtual void slotUpdateItemInfo() = 0;
-    virtual void slotChanged() = 0;
-    virtual void slotContextMenu() = 0;
-    virtual void slotRevert() = 0;
-    virtual void slotAddedDropedItems(QDropEvent* e) = 0;
-    virtual void slotOpenWith(QAction* action = nullptr) = 0;
+    virtual bool saveAs()                                 = 0;
+    virtual bool save()                                   = 0;
+    virtual bool saveNewVersion()                         = 0;
+    virtual bool saveCurrentVersion()                     = 0;
+    virtual bool saveNewVersionAs()                       = 0;
+    virtual bool saveNewVersionInFormat(const QString&)   = 0;
+    virtual void slotFileWithDefaultApplication()         = 0;
+    virtual void slotDeleteCurrentItem()                  = 0;
+    virtual void slotBackward()                           = 0;
+    virtual void slotForward()                            = 0;
+    virtual void slotFirst()                              = 0;
+    virtual void slotLast()                               = 0;
+    virtual void slotUpdateItemInfo()                     = 0;
+    virtual void slotChanged()                            = 0;
+    virtual void slotContextMenu()                        = 0;
+    virtual void slotRevert()                             = 0;
+    virtual void slotAddedDropedItems(QDropEvent* e)      = 0;
+    virtual void slotOpenWith(QAction* action = nullptr)  = 0;
 
 private Q_SLOTS:
 
@@ -326,9 +329,9 @@ private Q_SLOTS:
     void slotApplyTool();
     void slotUndoStateChanged();
     void slotThemeChanged();
-    void slotToggleRightSideBar() override;
-    void slotPreviousRightSideBarTab() override;
-    void slotNextRightSideBarTab() override;
+    void slotToggleRightSideBar()                         override;
+    void slotPreviousRightSideBarTab()                    override;
+    void slotNextRightSideBarTab()                        override;
     void slotToolDone();
 
     void slotRotateLeftIntoQue();
@@ -340,10 +343,10 @@ private:
 
     void enterWaitingLoop();
     void quitWaitingLoop();
-    void showSideBars(bool visible) override;
-    void showThumbBar(bool visible) override;
-    void customizedFullScreenMode(bool set) override;
-    bool thumbbarVisibility() const override;
+    void showSideBars(bool visible)                       override;
+    void showThumbBar(bool visible)                       override;
+    void customizedFullScreenMode(bool set)               override;
+    bool thumbbarVisibility() const                       override;
     void setColorManagedViewIndicatorToolTip(bool available, bool cmv);
     void setUnderExposureToolTip(bool uei);
     void setOverExposureToolTip(bool oei);
@@ -357,7 +360,7 @@ private:
     bool startingSaveVersion(const QUrl& url, bool subversion, bool saveAs, const QString& format);
 
     void setPreviewModeMask(int mask);
-    PreviewToolBar::PreviewMode previewMode() const;
+    PreviewToolBar::PreviewMode previewMode()       const;
 
     bool showFileSaveDialog(const QUrl& initialUrl, QUrl& newURL);
 

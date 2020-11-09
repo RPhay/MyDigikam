@@ -28,9 +28,9 @@
 namespace Digikam
 {
 
-EditorWindow::EditorWindow(const QString& name)
-    : DXmlGuiWindow(nullptr),
-      d(new Private)
+EditorWindow::EditorWindow(const QString& name, QWidget* const parent)
+    : DXmlGuiWindow(parent),
+      d            (new Private)
 {
     setConfigGroupName(QLatin1String("ImageViewer Settings"));
     setObjectName(name);

@@ -56,9 +56,9 @@ public:
     explicit Private()
       : toolsIconView(nullptr),
         lastActiveTab(nullptr),
-        tool(nullptr),
-        editor(nullptr),
-        splitterSize(0)
+        tool         (nullptr),
+        editor       (nullptr),
+        splitterSize (0)
     {
     }
 
@@ -79,7 +79,7 @@ EditorToolIface* EditorToolIface::editorToolIface()
 
 EditorToolIface::EditorToolIface(EditorWindow* const editor)
     : QObject(),
-      d(new Private)
+      d      (new Private)
 {
     d->editor = editor;
     m_iface   = this;

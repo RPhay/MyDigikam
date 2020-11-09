@@ -78,7 +78,7 @@ class TAlbum;
  * instead the one from the parent menu. This way signals from
  * special menus can be emitted and connected to the appropriate slots.
  */
-class DIGIKAM_GUI_EXPORT ContextMenuHelper : public QObject
+class DIGIKAM_GUI_EXPORT ContextMenuHelper : public QObject      // clazy:exclude=ctor-missing-parent-argument
 {
     Q_OBJECT
 
