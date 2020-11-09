@@ -64,6 +64,11 @@ public:
                        QList<QUrl>& urls,
                        QList<int>& albumIDs,
                        QList<qlonglong>& imageIDs);
+
+private:
+
+    // Disable
+    DItemDrag(QObject*);
 };
 
 // ------------------------------------------------------------------------
@@ -84,6 +89,11 @@ public:
     static QStringList mimeTypes();
     static bool canDecode(const QMimeData* e);
     static bool decode(const QMimeData* e, QList<QUrl>& urls, int& albumID);
+
+private:
+
+    // Disable
+    DAlbumDrag(QObject*);
 };
 
 // ------------------------------------------------------------------------
@@ -104,6 +114,11 @@ public:
     static QStringList mimeTypes();
     static bool canDecode(const QMimeData* e);
     static bool decode(const QMimeData* e, QList<int>& tagIDs);
+
+private:
+
+    // Disable
+    DTagListDrag(QObject*);
 };
 
 // ------------------------------------------------------------------------
@@ -124,6 +139,11 @@ public:
     static QStringList mimeTypes();
     static bool canDecode(const QMimeData* e);
     static bool decode(const QMimeData* e, QStringList& cameraItemPaths);
+
+private:
+
+    // Disable
+    DCameraItemListDrag(QObject*);
 };
 
 // ------------------------------------------------------------------------
@@ -144,6 +164,11 @@ public:
     static QStringList mimeTypes();
     static bool canDecode(const QMimeData* e);
     static bool decode(const QMimeData* e, CameraType& ctype);
+
+private:
+
+    // Disable
+    DCameraDragObject(QObject*);
 };
 
 } // namespace Digikam

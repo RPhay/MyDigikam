@@ -46,7 +46,7 @@ class LightTablePreview : public ItemPreviewView
 public:
 
     explicit LightTablePreview(QWidget* const parent = nullptr);
-    ~LightTablePreview() override;
+    ~LightTablePreview()                              override;
 
     void setDragAndDropEnabled(bool b);
     void showDragAndDropMessage();
@@ -57,10 +57,10 @@ Q_SIGNALS:
 
 private:
 
-    void dragMoveEvent(QDragMoveEvent*)   override;
-    void dragEnterEvent(QDragEnterEvent*) override;
-    void dropEvent(QDropEvent*)           override;
-    bool dragEventWrapper(const QMimeData*) const;
+    void dragMoveEvent(QDragMoveEvent*)               override;
+    void dragEnterEvent(QDragEnterEvent*)             override;
+    void dropEvent(QDropEvent*)                       override;
+    bool dragEventWrapper(const QMimeData*)     const;
 };
 
 } // namespace Digikam

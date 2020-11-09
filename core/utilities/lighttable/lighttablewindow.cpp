@@ -45,7 +45,7 @@ bool LightTableWindow::lightTableWindowCreated()
 
 LightTableWindow::LightTableWindow()
     : DXmlGuiWindow(nullptr),
-      d(new Private)
+      d            (new Private)
 {
     setObjectName(QLatin1String("Light Table"));
     setConfigGroupName(QLatin1String("LightTable Settings"));

@@ -85,7 +85,9 @@ private:
     void deleteItem(bool permanently);
     void deleteItem(const ItemInfo& info, bool permanently);
 
+    // Disable
     LightTableWindow();
+    explicit LightTableWindow(QObject*);
 
 private Q_SLOTS:
 

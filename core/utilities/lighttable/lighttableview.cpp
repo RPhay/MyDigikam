@@ -48,11 +48,11 @@ class Q_DECL_HIDDEN LightTableView::Private
 public:
 
     explicit Private()
-      : syncPreview(false),
-        grid(nullptr),
-        leftFrame(nullptr),
-        rightFrame(nullptr),
-        leftPreview(nullptr),
+      : syncPreview (false),
+        grid        (nullptr),
+        leftFrame   (nullptr),
+        rightFrame  (nullptr),
+        leftPreview (nullptr),
         rightPreview(nullptr)
     {
     }
@@ -71,7 +71,7 @@ public:
 
 LightTableView::LightTableView(QWidget* const parent)
     : QFrame(parent),
-      d(new Private)
+      d     (new Private)
 {
     setAttribute(Qt::WA_DeleteOnClose);
     setFrameStyle(QFrame::NoFrame);
