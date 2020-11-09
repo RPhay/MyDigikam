@@ -61,36 +61,36 @@ class Q_DECL_HIDDEN TimeAdjustSettings::Private
 public:
 
     explicit Private()
-      : useSettingsBox(nullptr),
-        adjustSettingsBox(nullptr),
-        updateSettingsBox(nullptr),
-        useButtonGroup(nullptr),
-        useApplDateBtn(nullptr),
-        useFileDateBtn(nullptr),
-        useFileNameBtn(nullptr),
-        useMetaDateBtn(nullptr),
-        useCustomDateBtn(nullptr),
-        updIfAvailableCheck(nullptr),
-        updFileModDateCheck(nullptr),
-        updEXIFModDateCheck(nullptr),
-        updEXIFOriDateCheck(nullptr),
-        updEXIFDigDateCheck(nullptr),
-        updEXIFThmDateCheck(nullptr),
-        updIPTCDateCheck(nullptr),
-        updXMPVideoCheck(nullptr),
-        updXMPDateCheck(nullptr),
-        useFileDateTypeChooser(nullptr),
-        useMetaDateTypeChooser(nullptr),
-        adjTypeChooser(nullptr),
-        useApplDateLbl(nullptr),
-        adjDaysLabel(nullptr),
-        adjDaysInput(nullptr),
-        adjDetByClockPhotoBtn(nullptr),
-        useCustDateInput(nullptr),
-        useCustTimeInput(nullptr),
-        adjTimeInput(nullptr),
-        useCustomDateTodayBtn(nullptr),
-        settingsExpander(nullptr)
+      : useSettingsBox          (nullptr),
+        adjustSettingsBox       (nullptr),
+        updateSettingsBox       (nullptr),
+        useButtonGroup          (nullptr),
+        useApplDateBtn          (nullptr),
+        useFileDateBtn          (nullptr),
+        useFileNameBtn          (nullptr),
+        useMetaDateBtn          (nullptr),
+        useCustomDateBtn        (nullptr),
+        updIfAvailableCheck     (nullptr),
+        updFileModDateCheck     (nullptr),
+        updEXIFModDateCheck     (nullptr),
+        updEXIFOriDateCheck     (nullptr),
+        updEXIFDigDateCheck     (nullptr),
+        updEXIFThmDateCheck     (nullptr),
+        updIPTCDateCheck        (nullptr),
+        updXMPVideoCheck        (nullptr),
+        updXMPDateCheck         (nullptr),
+        useFileDateTypeChooser  (nullptr),
+        useMetaDateTypeChooser  (nullptr),
+        adjTypeChooser          (nullptr),
+        useApplDateLbl          (nullptr),
+        adjDaysLabel            (nullptr),
+        adjDaysInput            (nullptr),
+        adjDetByClockPhotoBtn   (nullptr),
+        useCustDateInput        (nullptr),
+        useCustTimeInput        (nullptr),
+        adjTimeInput            (nullptr),
+        useCustomDateTodayBtn   (nullptr),
+        settingsExpander        (nullptr)
     {
     }
 
@@ -139,7 +139,7 @@ public:
 
 TimeAdjustSettings::TimeAdjustSettings(QWidget* const parent)
     : QScrollArea(parent),
-      d(new Private)
+      d          (new Private)
 {
     QWidget* const panel    = new QWidget(viewport());
     setWidget(panel);
@@ -161,7 +161,7 @@ TimeAdjustSettings::TimeAdjustSettings(QWidget* const parent)
 
     QString appName = QApplication::applicationName();
 
-    if (appName == QLatin1String("digikam"))
+    if      (appName == QLatin1String("digikam"))
     {
         appName = i18n("DigiKam");
     }

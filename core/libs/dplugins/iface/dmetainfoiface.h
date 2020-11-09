@@ -42,7 +42,7 @@ class DIGIKAM_EXPORT DMetaInfoIface : public DInfoInterface
 public:
 
     explicit DMetaInfoIface(QObject* const, const QList<QUrl>&);
-    ~DMetaInfoIface() override;
+    ~DMetaInfoIface()                                             override;
 
     Q_SLOT void slotDateTimeForUrl(const QUrl& url,
                                    const QDateTime& dt,

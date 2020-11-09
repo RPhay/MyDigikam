@@ -258,8 +258,8 @@ void TemplateViewer::setTemplate(const Template& t)
     d->namesList->addItems(t.authors());
     d->labelPosition->setText(t.authorsPosition());
     d->labelCredit->setText(t.credit());
-    d->labelCopyright->setText(t.copyright()[QLatin1String("x-default")]);
-    d->labelUsages->setText(t.rightUsageTerms()[QLatin1String("x-default")]);
+    d->labelCopyright->setText(t.copyright().value(QLatin1String("x-default")));
+    d->labelUsages->setText(t.rightUsageTerms().value(QLatin1String("x-default")));
     d->labelSource->setText(t.source());
     d->labelInstructions->setText(t.instructions());
 

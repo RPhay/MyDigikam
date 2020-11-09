@@ -26,19 +26,19 @@ namespace Digikam
 {
 
 TimeAdjustContainer::TimeAdjustContainer()
-    : customDate(QDateTime::currentDateTime()),
-      customTime(QDateTime::currentDateTime()),
+    : customDate    (QDateTime::currentDateTime()),
+      customTime    (QDateTime::currentDateTime()),
       adjustmentTime(QDateTime()),
       updIfAvailable(true),
       updEXIFModDate(false),
       updEXIFOriDate(false),
       updEXIFDigDate(false),
       updEXIFThmDate(false),
-      updIPTCDate(false),
-      updXMPVideo(false),
-      updXMPDate(false),
+      updIPTCDate   (false),
+      updXMPVideo   (false),
+      updXMPDate    (false),
       updFileModDate(false),
-      dateSource(APPDATE),
+      dateSource    (APPDATE),
       metadataSource(EXIFIPTCXMP),
       fileDateSource(FILELASTMOD),
       adjustmentType(COPYVALUE),
@@ -175,10 +175,10 @@ QDateTime TimeAdjustContainer::getDateTimeFromUrl(const QUrl& url) const
 
 DeltaTime::DeltaTime()
     : deltaNegative(false),
-      deltaDays(0),
-      deltaHours(0),
-      deltaMinutes(0),
-      deltaSeconds(0)
+      deltaDays    (0),
+      deltaHours   (0),
+      deltaMinutes (0),
+      deltaSeconds (0)
 {
 }
 

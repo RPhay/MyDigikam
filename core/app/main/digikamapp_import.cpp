@@ -74,7 +74,7 @@ void DigikamApp::updateQuickImportAction()
 
         if (!primaryAction)
         {
-            primaryAction = d->quickImportMenu->actions().first();
+            primaryAction = d->quickImportMenu->actions().constFirst();
         }
 
         connect(d->quickImportMenu->menuAction(), SIGNAL(triggered()),

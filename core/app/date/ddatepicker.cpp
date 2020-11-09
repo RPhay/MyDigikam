@@ -24,7 +24,6 @@
  *
  * ============================================================ */
 
-#include "ddatepicker.h"
 #include "ddatepicker_p.h"
 
 // Qt includes
@@ -52,14 +51,14 @@ namespace Digikam
 
 DDatePicker::DDatePicker(QWidget* const parent)
     : QFrame(parent),
-      d(new Private(this))
+      d     (new Private(this))
 {
     initWidget(QDate::currentDate());
 }
 
 DDatePicker::DDatePicker(const QDate& dt, QWidget* const parent)
     : QFrame(parent),
-      d(new Private(this))
+      d     (new Private(this))
 {
     initWidget(dt);
 }
@@ -84,29 +83,29 @@ void DDatePicker::initWidget(const QDate& dt)
     d->navigationLayout->addWidget(d->monthBackward);
     d->navigationLayout->addSpacing(spacingHint);
 
-    d->selectMonth = new QToolButton(this);
+    d->selectMonth      = new QToolButton(this);
     d->selectMonth ->setAutoRaise(true);
     d->navigationLayout->addWidget(d->selectMonth);
-    d->selectYear  = new QToolButton(this);
+    d->selectYear       = new QToolButton(this);
     d->selectYear->setCheckable(true);
     d->selectYear->setAutoRaise(true);
     d->navigationLayout->addWidget(d->selectYear);
     d->navigationLayout->addSpacing(spacingHint);
 
-    d->monthForward = new QToolButton(this);
+    d->monthForward     = new QToolButton(this);
     d->monthForward ->setAutoRaise(true);
     d->navigationLayout->addWidget(d->monthForward);
-    d->yearForward  = new QToolButton(this);
+    d->yearForward      = new QToolButton(this);
     d->yearForward ->setAutoRaise(true);
     d->navigationLayout->addWidget(d->yearForward);
     d->navigationLayout->addStretch();
 
-    d->line  = new QLineEdit(this);
-    d->val   = new DatePickerValidator(this);
-    d->table = new DDateTable(this);
+    d->line             = new QLineEdit(this);
+    d->val              = new DatePickerValidator(this);
+    d->table            = new DDateTable(this);
     setFocusProxy(d->table);
 
-    d->fontsize = QFontDatabase::systemFont(QFontDatabase::GeneralFont).pointSize();
+    d->fontsize         = QFontDatabase::systemFont(QFontDatabase::GeneralFont).pointSize();
 
     if (d->fontsize == -1)
     {
@@ -207,7 +206,7 @@ bool DDatePicker::eventFilter(QObject* o, QEvent* e)
 {
     if (e->type() == QEvent::KeyPress)
     {
-        QKeyEvent* const k = (QKeyEvent *)e;
+        QKeyEvent* const k = (QKeyEvent*)e;
 
         if (
             (k->key() == Qt::Key_PageUp)   ||
@@ -348,7 +347,7 @@ void DDatePicker::selectMonthClicked()
         popup.addAction(locale().standaloneMonthName(m))->setData(m);
     }
 
-    QAction* item = popup.actions()[ thisDate.month() - 1 ];
+    QAction* item = popup.actions().value(thisDate.month() - 1);
 
     // if this happens the above should already given an assertion
 
@@ -490,7 +489,7 @@ void DDatePicker::setFontSize(int s)
     QWidget* const buttons[] =
     {
         d->selectMonth,
-        d->selectYear,
+        d->selectYear
     };
 
     const int NoOfButtons = sizeof(buttons) / sizeof(buttons[0]);
@@ -502,7 +501,7 @@ void DDatePicker::setFontSize(int s)
 
     d->fontsize = s;
 
-    for (count = 0; count < NoOfButtons; ++count)
+    for (count = 0 ; count < NoOfButtons ; ++count)
     {
         font = buttons[count]->font();
         font.setPointSize(s);

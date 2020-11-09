@@ -63,9 +63,9 @@ class Q_DECL_HIDDEN ClockPhotoDialog::Private
 public:
 
     explicit Private()
-      : buttons(nullptr),
-        calendar(nullptr),
-        dtLabel(nullptr),
+      : buttons       (nullptr),
+        calendar      (nullptr),
+        dtLabel       (nullptr),
         previewManager(nullptr)
     {
     }
@@ -82,7 +82,7 @@ public:
 
 ClockPhotoDialog::ClockPhotoDialog(QWidget* const parent, const QUrl& defaultUrl)
     : QDialog(parent),
-      d(new Private)
+      d      (new Private)
 {
     // This dialog should be modal with three buttons: Ok, Cancel, and load
     // photo. For this third button, the User1 button from KDialog is used.
@@ -178,9 +178,9 @@ DeltaTime ClockPhotoDialog::deltaValues() const
 bool ClockPhotoDialog::setImage(const QUrl& imageFile)
 {
     bool success = false;
-    QString msg = i18n("<font color=\"red\"><b>Could not load<br/>"
-                       "image %1.</b></font>",
-                       imageFile.fileName());
+    QString msg  = i18n("<font color=\"red\"><b>Could not load<br/>"
+                        "image %1.</b></font>",
+                        imageFile.fileName());
 
     d->previewManager->previewItem()->setPath(imageFile.toLocalFile(), true);
 

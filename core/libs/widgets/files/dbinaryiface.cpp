@@ -125,7 +125,7 @@ bool DBinaryIface::versionIsRight() const
 
     QRegExp reg(QLatin1String("^(\\d*[.]\\d*)"));
     version().indexOf(reg);
-    float floatVersion = reg.capturedTexts()[0].toFloat();
+    float floatVersion = reg.capturedTexts().constFirst().toFloat();
 
     return (!version().isNull() &&
             isFound()           &&
@@ -141,7 +141,7 @@ bool DBinaryIface::versionIsRight(const float customVersion) const
 
     QRegExp reg(QLatin1String("^(\\d*[.]\\d*)"));
     version().indexOf(reg);
-    float floatVersion = reg.capturedTexts()[0].toFloat();
+    float floatVersion = reg.capturedTexts().constFirst().toFloat();
     qCDebug(DIGIKAM_GENERAL_LOG) << "Found (" << isFound()
                                  << ") :: Version : " << version()
                                  << "(" << floatVersion
@@ -191,7 +191,7 @@ void DBinaryIface::setVersion(QString& version)
 {
     QRegExp versionRegExp(QLatin1String("\\d*(\\.\\d+)*"));
     version.indexOf(versionRegExp);
-    m_version = versionRegExp.capturedTexts()[0];
+    m_version = versionRegExp.capturedTexts().constFirst();
 }
 
 void DBinaryIface::slotNavigateAndCheck()

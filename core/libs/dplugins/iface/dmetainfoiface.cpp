@@ -63,7 +63,7 @@ public:
 
 DMetaInfoIface::DMetaInfoIface(QObject* const parent, const QList<QUrl>& lst)
     : DInfoInterface(parent),
-      d(new Private)
+      d             (new Private)
 {
     d->urls = lst;
 }
@@ -161,7 +161,7 @@ DMetaInfoIface::DInfoMap DMetaInfoIface::itemInfo(const QUrl& url) const
 
         map.insert(QLatin1String("creators"),        temp.authors());
         map.insert(QLatin1String("credit"),          temp.credit());
-        map.insert(QLatin1String("rights"),          temp.copyright()[def]);
+        map.insert(QLatin1String("rights"),          temp.copyright().value(def));
         map.insert(QLatin1String("source"),          temp.source());
 
         PhotoInfoContainer photoInfo = meta->getPhotographInformation();

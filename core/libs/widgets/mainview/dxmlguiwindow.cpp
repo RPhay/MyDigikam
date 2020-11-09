@@ -613,7 +613,7 @@ void DXmlGuiWindow::slotToggleFullScreen(bool set)
                 }
                 else
                 {
-                    mainbar->insertAction(mainbar->actions().first(), d->fullScreenAction);
+                    mainbar->insertAction(mainbar->actions().constFirst(), d->fullScreenAction);
                 }
 
                 d->dirtyMainToolBar = true;
