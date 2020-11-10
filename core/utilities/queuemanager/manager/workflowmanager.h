@@ -100,8 +100,10 @@ private:
 
 private:
 
+    // Disable
     WorkflowManager();
-    ~WorkflowManager() override;
+    WorkflowManager(QObject*);
+    ~WorkflowManager()                                override;
 
 private:
 

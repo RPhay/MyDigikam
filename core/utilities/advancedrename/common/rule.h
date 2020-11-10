@@ -169,6 +169,8 @@ protected Q_SLOTS:
 
 private:
 
+    // Disable
+    Rule(QObject*);
     Rule(const Rule&);
     Rule& operator=(const Rule&);
 

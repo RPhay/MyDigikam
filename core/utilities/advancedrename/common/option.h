@@ -39,7 +39,7 @@ public:
 
     Option(const QString& name, const QString& description);
     Option(const QString& name, const QString& description, const QString& icon);
-    ~Option() override;
+    ~Option()                                       override;
 
 protected:
 
@@ -47,6 +47,8 @@ protected:
 
 private:
 
+    // Disable
+    Option(QObject*);
     Option(const Option&);
     Option& operator=(const Option&);
 

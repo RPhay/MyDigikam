@@ -50,19 +50,19 @@ class ImageWindow : public EditorWindow
 
 public:
 
-    ~ImageWindow() override;
+    ~ImageWindow()                                                      override;
 
     static ImageWindow* imageWindow();
     static bool         imageWindowCreated();
 
-    bool queryClose() override;
+    bool queryClose()                                                   override;
     void toggleTag(int tagID);
 
 public:
 
     DInfoInterface* infoIface(DPluginAction* const ac)                  override;
 
-    VersionManager* versionManager() const                      override;
+    VersionManager* versionManager()                              const override;
 
 public Q_SLOTS:
 
@@ -82,7 +82,9 @@ Q_SIGNALS:
 
 private:
 
+    // Disable
     ImageWindow();
+    ImageWindow(QWidget*);
 
     void loadIndex(const QModelIndex& index);
 
@@ -167,11 +169,11 @@ private Q_SLOTS:
 */
     void slotDroppedOnThumbbar(const QList<ItemInfo>& infos);
 
-    void slotComponentsInfo() override;
-    void slotDBStat()         override;
+    void slotComponentsInfo()                                           override;
+    void slotDBStat()                                                   override;
 
     void slotAddedDropedItems(QDropEvent*)                              override;
-    void slotOpenWith(QAction* action=nullptr)                          override;
+    void slotOpenWith(QAction* action = nullptr)                        override;
 
     void slotRightSideBarActivateTitles();
     void slotRightSideBarActivateComments();

@@ -45,7 +45,7 @@ class Task : public ActionJob
 
 public:
 
-    explicit Task();
+    Task();
     ~Task()     override;
 
     void setSettings(const QueueSettings& settings);
@@ -65,6 +65,9 @@ protected:
     void run()  override;
 
 private:
+
+    // Disable
+    explicit Task(QObject*);
 
     void removeTempFiles(const QList<QUrl>& tmpList);
     void emitActionData(ActionData::ActionStatus st,

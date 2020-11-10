@@ -114,6 +114,8 @@ private Q_SLOTS:
 
 private:
 
+    // Disable
+    Token(QObject*);
     Token(const Token&);
     Token& operator=(const Token&);
 

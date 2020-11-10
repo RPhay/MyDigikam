@@ -55,6 +55,8 @@ public:
 
 private:
 
+    // Disable
+    DatabaseOptionDialog(QObject*);
     DatabaseOptionDialog(const DatabaseOptionDialog&);
     DatabaseOptionDialog& operator=(const DatabaseOptionDialog&);
 };
@@ -72,7 +74,7 @@ class DatabaseOption : public Option
 public:
 
     explicit DatabaseOption();
-    ~DatabaseOption() override;
+    ~DatabaseOption()                               override;
 
 protected:
 
@@ -80,10 +82,12 @@ protected:
 
 private Q_SLOTS:
 
-    void slotTokenTriggered(const QString& token) override;
+    void slotTokenTriggered(const QString& token)   override;
 
 private:
 
+    // Disable
+    DatabaseOption(QObject*);
     DatabaseOption(const DatabaseOption&);
     DatabaseOption& operator=(const DatabaseOption&);
 

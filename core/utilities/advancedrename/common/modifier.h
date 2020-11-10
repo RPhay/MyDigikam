@@ -39,7 +39,7 @@ public:
 
     Modifier(const QString& name, const QString& description);
     Modifier(const QString& name, const QString& description, const QString& icon);
-    ~Modifier() override;
+    ~Modifier()                                     override;
 
 protected:
 
@@ -47,6 +47,8 @@ protected:
 
 private:
 
+    // Disable
+    Modifier(QObject*);
     Modifier(const Modifier&);
     Modifier& operator=(const Modifier&);
 

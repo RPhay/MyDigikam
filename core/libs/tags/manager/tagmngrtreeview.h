@@ -96,6 +96,11 @@ protected:
 
 private:
 
+    // Disable
+    TagMngrTreeView(QWidget*);
+
+private:
+
     class Private;
     Private* const d;
 };

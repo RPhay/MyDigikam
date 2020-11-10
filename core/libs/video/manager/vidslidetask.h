@@ -57,6 +57,11 @@ protected:
 
 private:
 
+    // Disable
+    VidSlideTask(QObject*);
+
+private:
+
     class Private;
     Private* const d;
 };
