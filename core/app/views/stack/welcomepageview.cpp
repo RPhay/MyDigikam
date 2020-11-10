@@ -259,11 +259,11 @@ void WelcomePageView::slotThemeChanged()
     content                  = content.arg(appTitle)
                                       .arg(slogan)
                                       .arg(i18n("Welcome to digiKam %1", QLatin1String(digikam_version)))
-                                      .arg(featuresTabContent()[0])
-                                      .arg(aboutTabContent()[0])
+                                      .arg(featuresTabContent().value(0))
+                                      .arg(aboutTabContent().value(0))
                                       .arg(i18n("Background Image Credits"))
-                                      .arg(featuresTabContent()[1])
-                                      .arg(aboutTabContent()[1]);
+                                      .arg(featuresTabContent().value(1))
+                                      .arg(aboutTabContent().value(1));
 
     //qCDebug(DIGIKAM_GENERAL_LOG) << content;
 

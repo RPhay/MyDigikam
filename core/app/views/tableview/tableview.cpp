@@ -68,8 +68,8 @@ class Q_DECL_HIDDEN TableView::Private
 public:
 
     explicit Private()
-      : columnProfiles(),
-        thumbnailSize(),
+      : columnProfiles    (),
+        thumbnailSize     (),
         imageViewUtilities(nullptr)
     {
     }
@@ -84,8 +84,8 @@ TableView::TableView(QItemSelectionModel* const selectionModel,
                      QWidget* const parent)
     : QWidget(parent),
       StateSavingObject(this),
-      d(new Private()),
-      s(new TableViewShared())
+      d                (new Private()),
+      s                (new TableViewShared())
 {
     s->isActive                      = false;
     s->tableView                     = this;
@@ -266,7 +266,7 @@ Album* TableView::currentAlbum() const
         return nullptr;
     }
 
-    return albumModel->currentAlbums().first();
+    return albumModel->currentAlbums().constFirst();
 }
 
 void TableView::slotPaste()
@@ -495,7 +495,7 @@ void TableView::slotAwayFromSelection()
     const QModelIndex firstIndex = s->tableViewModel->deepRowIndex(0);
     const QModelIndex lastIndex  = s->tableViewModel->deepRowIndex(-1);
 
-    if (selection.contains(firstIndex) && selection.contains(lastIndex))
+    if      (selection.contains(firstIndex) && selection.contains(lastIndex))
     {
         // both the first and the last index are selected, we have to
         // select an index inbetween

@@ -56,10 +56,10 @@ class Q_DECL_HIDDEN TableViewTreeView::Private
 public:
 
     explicit Private()
-      : headerContextMenuActiveColumn(-1),
-        actionHeaderContextMenuRemoveColumn(nullptr),
+      : headerContextMenuActiveColumn         (-1),
+        actionHeaderContextMenuRemoveColumn   (nullptr),
         actionHeaderContextMenuConfigureColumn(nullptr),
-        dragDropThumbnailSize()
+        dragDropThumbnailSize                 ()
     {
     }
 
@@ -73,8 +73,8 @@ public:
 
 TableViewTreeView::TableViewTreeView(TableViewShared* const tableViewShared, QWidget* const parent)
     : QTreeView(parent),
-      d(new Private()),
-      s(tableViewShared)
+      d        (new Private()),
+      s        (tableViewShared)
 {
     setModel(s->tableViewModel);
     setSelectionModel(s->tableViewSelectionModel);
@@ -322,7 +322,7 @@ Album* TableViewTreeView::albumAt(const QPoint& pos) const
     {
         if (!(albumModel->currentAlbums().isEmpty()))
         {
-            return albumModel->currentAlbums().first();
+            return albumModel->currentAlbums().constFirst();
         }
     }
 
@@ -360,9 +360,9 @@ bool TableViewTreeView::hasHiddenGroupedImages(const ItemInfo& info) const
                  (s->tableViewModel->groupingMode() == s->tableViewModel->GroupingMode::GroupingHideGrouped)    ||
                   ((s->tableViewModel->groupingMode() == s->tableViewModel->GroupingMode::GroupingShowSubItems) &&
                    (!s->treeView->isExpanded(s->tableViewModel->indexFromImageId(info.id(), 0)))
-                  )
                  )
-                );
+                )
+               );
 }
 
 void TableViewTreeView::slotModelGroupingModeChanged()

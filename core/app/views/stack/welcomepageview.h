@@ -59,7 +59,7 @@ class WelcomePageViewPage : public QWebEnginePage
 public:
 
     explicit WelcomePageViewPage(QObject* const parent = nullptr);
-    ~WelcomePageViewPage() override;
+    ~WelcomePageViewPage()                                                          override;
 
     bool acceptNavigationRequest(const QUrl&, QWebEnginePage::NavigationType, bool) override;
 
@@ -85,7 +85,7 @@ class WelcomePageView : public QWebView
 public:
 
     explicit WelcomePageView(QWidget* const parent);
-    ~WelcomePageView() override;
+    ~WelcomePageView()                                       override;
 
 private:
 

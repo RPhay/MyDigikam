@@ -291,7 +291,7 @@ Album* ItemCategorizedView::currentAlbum() const
 
     if (albumModel && !(albumModel->currentAlbums().isEmpty()))
     {
-        return albumModel->currentAlbums().first();
+        return albumModel->currentAlbums().constFirst();
     }
 
     return nullptr;

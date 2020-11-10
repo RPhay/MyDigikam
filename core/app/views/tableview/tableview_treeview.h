@@ -53,14 +53,16 @@ namespace Digikam
  *        in the sort model. Subclassing DragDropModelImplementation would not
  *        work there, because we want to re-use ItemDragDropHandler.
  */
-class TableViewTreeView : public QTreeView, public DragDropViewImplementation, public GroupingViewImplementation
+class TableViewTreeView : public QTreeView, 
+                          public DragDropViewImplementation,
+                          public GroupingViewImplementation
 {
     Q_OBJECT
 
 public:
 
     explicit TableViewTreeView(TableViewShared* const tableViewShared, QWidget* const parent = nullptr);
-    ~TableViewTreeView() override;
+    ~TableViewTreeView()                                               override;
 
     Album* albumAt(const QPoint& pos) const;
 

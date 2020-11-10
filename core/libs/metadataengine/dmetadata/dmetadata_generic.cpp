@@ -102,7 +102,7 @@ QVariant DMetadata::getMetadataField(MetadataInfo::Field field) const
     {
         case MetadataInfo::Comment:
         {
-            return getItemComments()[QLatin1String("x-default")].caption;
+            return getItemComments().value(QLatin1String("x-default")).caption;
         }
 
         case MetadataInfo::CommentJfif:
@@ -860,6 +860,7 @@ QString DMetadata::valueToString(const QVariant& value, MetadataInfo::Field fiel
                        .arg(minutes).arg(QChar(0x2032))
                        .arg(seconds, 'f').arg(QChar(0x2033)).arg(direction);
         }
+
         case MetadataInfo::Altitude:
         {
             QString meters = QString::fromLatin1("%L1").arg(value.toDouble(), 0, 'f', 2);

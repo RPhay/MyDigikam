@@ -45,7 +45,7 @@ class DIGIKAM_EXPORT ItemMarkerTiler : public AbstractMarkerTiler
 public:
 
     explicit ItemMarkerTiler(GeoModelHelper* const modelHelper, QObject* const parent = nullptr);
-    ~ItemMarkerTiler() override;
+    ~ItemMarkerTiler()                                                                                    override;
 
     TilerFlags tilerFlags()                                                                         const override;
     Tile* tileNew()                                                                                       override;

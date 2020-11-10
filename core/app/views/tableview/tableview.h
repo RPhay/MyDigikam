@@ -62,7 +62,7 @@ public:
                        DCategorizedSortFilterProxyModel* const imageFilterModel,
                        QWidget* const parent);
 
-    ~TableView() override;
+    ~TableView()                                                                                  override;
 
     void setThumbnailSize(const ThumbnailSize& size);
     ThumbnailSize getThumbnailSize()                                                        const;

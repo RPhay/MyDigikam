@@ -352,7 +352,7 @@ bool XbelWriter::write(QIODevice* const device, const BookmarkNode* const root)
 
     if (root->type() == BookmarkNode::Root)
     {
-        BookmarkNode* const rootFolder = root->children().first();
+        BookmarkNode* const rootFolder = root->children().constFirst();
 
         for (int i = 0  ; i < rootFolder->children().count() ; ++i)
         {

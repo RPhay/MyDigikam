@@ -319,7 +319,7 @@ void ItemIconView::slotGotoTagAndItem(int tagID)
 
 void ItemIconView::slotAlbumOpenInFileManager()
 {
-    Album* const album = d->albumManager->currentAlbums().first();
+    Album* const album = d->albumManager->currentAlbums().constFirst();
 
     if (!album || (album->type() != Album::PHYSICAL))
     {
@@ -371,7 +371,7 @@ void ItemIconView::slotAlbumPropsEdit()
 
 void ItemIconView::slotAlbumWriteMetadata()
 {
-    Album* const album = d->albumManager->currentAlbums().first();
+    Album* const album = d->albumManager->currentAlbums().constFirst();
 
     if (!album)
     {
@@ -384,7 +384,7 @@ void ItemIconView::slotAlbumWriteMetadata()
 
 void ItemIconView::slotAlbumReadMetadata()
 {
-    Album* const album = d->albumManager->currentAlbums().first();
+    Album* const album = d->albumManager->currentAlbums().constFirst();
 
     if (!album)
     {

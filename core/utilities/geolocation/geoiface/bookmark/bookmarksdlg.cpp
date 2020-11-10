@@ -341,7 +341,7 @@ void BookmarksDialog::expandNodes(BookmarkNode* const node)
 {
     for (int i = 0 ; i < node->children().count() ; ++i)
     {
-        BookmarkNode* const childNode = node->children()[i];
+        BookmarkNode* const childNode = node->children().value(i);
 
         if (childNode->expanded)
         {

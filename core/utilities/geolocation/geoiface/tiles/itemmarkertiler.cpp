@@ -38,7 +38,7 @@ class Q_DECL_HIDDEN ItemMarkerTiler::MyTile : public Tile
 public:
 
     MyTile()
-        : Tile(),
+        : Tile         (),
           markerIndices(),
           selectedCount(0)
     {
@@ -101,10 +101,10 @@ class Q_DECL_HIDDEN ItemMarkerTiler::Private
 public:
 
     explicit Private()
-      : modelHelper(nullptr),
+      : modelHelper   (nullptr),
         selectionModel(nullptr),
-        markerModel(nullptr),
-        activeState(false)
+        markerModel   (nullptr),
+        activeState   (false)
     {
     }
 
@@ -116,7 +116,7 @@ public:
 
 ItemMarkerTiler::ItemMarkerTiler(GeoModelHelper* const modelHelper, QObject* const parent)
     : AbstractMarkerTiler(parent),
-      d(new Private())
+      d                  (new Private())
 {
     resetRootTile();
     setMarkerGeoModelHelper(modelHelper);
@@ -245,9 +245,9 @@ void ItemMarkerTiler::slotSelectionChanged(const QItemSelection& selected, const
                 }
 
                 myTile->selectedCount++;
-
-//              qCDebug(DIGIKAM_GEOIFACE_LOG) << l << tileIndex << myTile->selectedCount;
-
+/*
+                qCDebug(DIGIKAM_GEOIFACE_LOG) << l << tileIndex << myTile->selectedCount;
+*/
                 GEOIFACE_ASSERT(myTile->selectedCount <= myTile->markerIndices.count());
 
                 if (myTile->childrenEmpty())
@@ -494,7 +494,7 @@ GeoGroupState ItemMarkerTiler::getTileGroupState(const TileIndex& tileIndex)
 
     const int selectedCount = myTile->selectedCount;
 
-    if (selectedCount == 0)
+    if      (selectedCount == 0)
     {
         return SelectedNone;
     }
@@ -544,7 +544,7 @@ AbstractMarkerTiler::Tile* ItemMarkerTiler::getTile(const TileIndex& tileIndex, 
                     }
 
                     const TileIndex markerTileIndex = TileIndex::fromCoordinates(currentMarkerCoordinates, level);
-                    const int newTileIndex          = markerTileIndex.toIntList().last();
+                    const int newTileIndex          = markerTileIndex.toIntList().constLast();
 
                     MyTile* newTile = static_cast<MyTile*>(tile->getChild(newTileIndex));
 
