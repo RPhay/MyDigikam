@@ -121,6 +121,10 @@ public:
     };
 
     virtual ThumbnailInfo thumbnailInfo(const ThumbnailIdentifier&)=0;
+
+private:
+
+    Q_DISABLE_COPY(ThumbnailInfoProvider)
 };
 
 } // namespace Digikam

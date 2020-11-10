@@ -63,6 +63,10 @@ public:
     virtual void savingProgress(const QString& filePath, float progress)                            = 0;
     virtual void imageSaved(const QString& filePath, bool success)                                  = 0;
     virtual void thumbnailLoaded(const LoadingDescription& loadingDescription, const QImage& img)   = 0;
+
+private:
+
+    Q_DISABLE_COPY(LoadSaveNotifier)
 };
 
 // -------------------------------------------------------------------------------------------------------
@@ -86,6 +90,10 @@ public:
      * This can be used to supersede the Exif information in the file.
      */
     virtual QSize dimensionsHint(const QString& path)   = 0;
+
+private:
+
+    Q_DISABLE_COPY(LoadSaveFileInfoProvider)
 };
 
 // -------------------------------------------------------------------------------------------------------
