@@ -29,8 +29,6 @@ if (MINGW)
 
         DOWNLOAD_DIR ${EXTERNALS_DOWNLOAD_DIR}
         GIT_REPOSITORY https://github.com/cgilles/gmic-qt.git
-        GIT_SUBMODULES gmic
-        GIT_SUBMODULES CImg
 
         SOURCE_DIR gmic-qt
 
@@ -52,8 +50,6 @@ else() # MacOS and Linux
 
         DOWNLOAD_DIR ${EXTERNALS_DOWNLOAD_DIR}
         GIT_REPOSITORY https://github.com/cgilles/gmic-qt.git
-        GIT_SUBMODULES gmic
-        GIT_SUBMODULES CImg
 
         SOURCE_DIR gmic-qt
         INSTALL_DIR ${PREFIX_ext_gmicqt}

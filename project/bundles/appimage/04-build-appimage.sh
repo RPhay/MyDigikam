@@ -533,9 +533,9 @@ if [[ $DK_UPLOAD = 1 ]] ; then
     echo -e "---------- Cleanup older bundle AppImage files from files.kde.org repository \n"
 
     if [[ "$ARCH" = "x86_64" ]] ; then
-        ssh $DK_UPLOADURL rm -f $DK_UPLOADDIR*-x86-64$DEBUG_SUF.appimage*
+        sftp -q $DK_UPLOADURL:$DK_UPLOADDIR <<< "rm *-x86-64$DEBUG_SUF.appimage*"
     elif [[ "$ARCH" = "i686" ]] ; then
-        ssh $DK_UPLOADURL rm -f $DK_UPLOADDIR*-i386$DEBUG_SUF.appimage*
+        sftp -q $DK_UPLOADURL:$DK_UPLOADDIR <<< "rm *-i386$DEBUG_SUF.appimage*"
     fi
 
     echo -e "---------- Upload new bundle AppImage files to files.kde.org repository \n"
