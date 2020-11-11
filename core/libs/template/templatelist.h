@@ -41,7 +41,7 @@ class TemplateListItem : public QTreeWidgetItem
 public:
 
     explicit TemplateListItem(QTreeWidget* const parent, const Template& t);
-    ~TemplateListItem() override;
+    ~TemplateListItem()          override;
 
     void     setTemplate(const Template& t);
     Template getTemplate() const;
@@ -49,6 +49,10 @@ public:
 private:
 
     Template m_template;
+
+private:
+
+    Q_DISABLE_COPY(TemplateListItem)
 };
 
 // -------------------------------------------------------------------
