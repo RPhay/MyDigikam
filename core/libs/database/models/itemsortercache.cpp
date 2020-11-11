@@ -42,11 +42,8 @@ public:
     {
     }
 
-    QHash<QString, std::vector<QCollatorSortKey> > itemSortKeys;
-    QHash<QString, std::vector<QCollatorSortKey> > albumSortKeys;
-
-    QCollator                                      itemCollator;
-    QCollator                                      albumCollator;
+    QCollator itemCollator;
+    QCollator albumCollator;
 };
 
 // -----------------------------------------------------------------------------------------------
@@ -65,13 +62,6 @@ Q_GLOBAL_STATIC(ItemSorterCacheCreator, itemSorterCacheCreator)
 ItemSorterCache::ItemSorterCache()
     : d(new Private)
 {
-    d->itemCollator.setNumericMode(true);
-    d->itemCollator.setIgnorePunctuation(false);
-    d->itemCollator.setCaseSensitivity(Qt::CaseSensitive);
-
-    d->albumCollator.setNumericMode(true);
-    d->albumCollator.setIgnorePunctuation(false);
-    d->albumCollator.setCaseSensitivity(Qt::CaseSensitive);
 }
 
 ItemSorterCache::~ItemSorterCache()
@@ -87,59 +77,22 @@ ItemSorterCache* ItemSorterCache::instance()
 int ItemSorterCache::itemCompare(const QString& a, const QString& b,
                                  Qt::CaseSensitivity caseSensitive, bool natural) const
 {
-    if ((d->itemCollator.numericMode()     != natural)     ||
-        (d->itemCollator.caseSensitivity() != caseSensitive))
-    {
-        d->itemSortKeys.clear();
+    d->itemCollator.setNumericMode(natural);
+    d->itemCollator.setCaseSensitivity(caseSensitive);
+    d->itemCollator.setIgnorePunctuation(a.contains(QLatin1String("_v"),
+                                                    Qt::CaseInsensitive));
 
-        d->itemCollator.setNumericMode(natural);
-        d->itemCollator.setCaseSensitivity(caseSensitive);
-    }
-
-    if (!d->itemSortKeys.contains(a))
-    {
-        QString as = a;
-        as.replace(QLatin1String("_v"),
-                   QLatin1String("vv"), Qt::CaseInsensitive);
-
-        d->itemSortKeys[a].emplace_back(d->itemCollator.sortKey(as));
-    }
-
-    if (!d->itemSortKeys.contains(b))
-    {
-        QString bs = b;
-        bs.replace(QLatin1String("_v"),
-                   QLatin1String("vv"), Qt::CaseInsensitive);
-
-        d->itemSortKeys[b].emplace_back(d->itemCollator.sortKey(bs));
-    }
-
-    return (d->itemSortKeys[a].front().compare(d->itemSortKeys[b].front()));
+    return d->itemCollator.compare(a, b);
 }
 
 int ItemSorterCache::albumCompare(const QString& a, const QString& b,
                                   Qt::CaseSensitivity caseSensitive, bool natural) const
 {
-    if ((d->albumCollator.numericMode()     != natural)     ||
-        (d->albumCollator.caseSensitivity() != caseSensitive))
-    {
-        d->albumSortKeys.clear();
+    d->albumCollator.setNumericMode(natural);
+    d->albumCollator.setIgnorePunctuation(true);
+    d->albumCollator.setCaseSensitivity(caseSensitive);
 
-        d->albumCollator.setNumericMode(natural);
-        d->albumCollator.setCaseSensitivity(caseSensitive);
-    }
-
-    if (!d->albumSortKeys.contains(a))
-    {
-        d->albumSortKeys[a].emplace_back(d->albumCollator.sortKey(a));
-    }
-
-    if (!d->albumSortKeys.contains(b))
-    {
-        d->albumSortKeys[b].emplace_back(d->albumCollator.sortKey(b));
-    }
-
-    return (d->albumSortKeys[a].front().compare(d->albumSortKeys[b].front()));
+    return d->albumCollator.compare(a, b);
 }
 
 } // namespace Digikam
