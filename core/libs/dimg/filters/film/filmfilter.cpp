@@ -383,7 +383,7 @@ const QMap<int, QString> FilmContainer::profileMap = FilmContainer::profileMapIn
 
 FilmFilter::FilmFilter(QObject* const parent)
     : DImgThreadedFilter(parent, QLatin1String("FilmFilter")),
-      d(new Private())
+      d                 (new Private())
 {
     d->film = FilmContainer();
     initFilter();
@@ -391,7 +391,7 @@ FilmFilter::FilmFilter(QObject* const parent)
 
 FilmFilter::FilmFilter(DImg* const orgImage, QObject* const parent, const FilmContainer& settings)
     : DImgThreadedFilter(orgImage, parent, QLatin1String("FilmFilter")),
-      d(new Private())
+      d                 (new Private())
 {
     d->film = settings;
     initFilter();

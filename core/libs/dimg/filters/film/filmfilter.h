@@ -89,6 +89,10 @@ public:
             : QListWidgetItem(text, parent, type + QListWidgetItem::UserType)
         {
         }
+
+    private:
+
+        Q_DISABLE_COPY(ListItem)
     };
 
 public:
@@ -143,7 +147,8 @@ class DIGIKAM_EXPORT FilmFilter: public DImgThreadedFilter
 public:
 
     explicit FilmFilter(QObject* const parent = nullptr);
-    explicit FilmFilter(DImg* const orgImage, QObject* const parent = nullptr, const FilmContainer& settings = FilmContainer());
+    explicit FilmFilter(DImg* const orgImage, QObject* const parent = nullptr,
+                        const FilmContainer& settings = FilmContainer());
     ~FilmFilter()                                                 override;
 
     static QString FilterIdentifier()
