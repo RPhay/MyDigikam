@@ -73,6 +73,10 @@ public:
 
     QColor underExposureColor;
     QColor overExposureColor;
+
+private:
+
+    Q_DISABLE_COPY(ExposureSettingsContainer)
 };
 
 } // namespace Digikam
