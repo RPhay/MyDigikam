@@ -26,10 +26,8 @@
 
 // Qt includes
 
-#include <QHash>
-#include <QList>
-#include <QMap>
 #include <QString>
+#include <QVariant>
 
 // Local includes
 
@@ -99,7 +97,8 @@ public:
      * Face passed in to allow Categorization by Faces. Pass in an empty
      * Face if not needed.
      */
-    int compareCategories(const ItemInfo& left, const ItemInfo& right, const FaceTagsIface& leftFace, const FaceTagsIface& rightFace) const;
+    int compareCategories(const ItemInfo& left, const ItemInfo& right,
+                          const FaceTagsIface& leftFace, const FaceTagsIface& rightFace) const;
 
     /**
      * Returns true if left is less than right.

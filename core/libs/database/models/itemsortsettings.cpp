@@ -26,13 +26,13 @@
 
 // Qt includes
 
-#include <QDateTime>
 #include <QRectF>
+#include <QDateTime>
 
 // Local includes
 
-#include "coredbfields.h"
 #include "iteminfo.h"
+#include "coredbfields.h"
 #include "facetagseditor.h"
 
 namespace Digikam
@@ -281,8 +281,8 @@ int ItemSortSettings::compareCategories(const ItemInfo& left, const ItemInfo& ri
             // Compare alphabetically based on the face name
 
             return naturalCompare(leftValue, rightValue,
-                                  currentCategorizationSortOrder, categorizationCaseSensitivity,
-                                  strTypeNatural);
+                                  currentCategorizationSortOrder,
+                                  categorizationCaseSensitivity, strTypeNatural);
         }
 
         default:
@@ -511,7 +511,8 @@ bool ItemSortSettings::lessThan(const QVariant& left, const QVariant& right) con
 
         default:
         {
-            return naturalCompare(left.toString(), right.toString(), currentSortOrder, sortCaseSensitivity, strTypeNatural);
+            return naturalCompare(left.toString(), right.toString(),
+                                  currentSortOrder, sortCaseSensitivity, strTypeNatural);
         }
     }
 }

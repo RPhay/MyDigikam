@@ -24,13 +24,19 @@
 #ifndef DIGIKAM_CAMITEM_SORT_SETTINGS_H
 #define DIGIKAM_CAMITEM_SORT_SETTINGS_H
 
+// Qt includes
+
+#include <QString>
+#include <QVariant>
+
 // Local includes
 
-#include "camiteminfo.h"
 #include "itemsortcollator.h"
 
 namespace Digikam
 {
+
+class CamItemInfo;
 
 class CamItemSortSettings
 {
