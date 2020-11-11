@@ -193,6 +193,10 @@ protected:
     bool                   m_saveGPS;
 
     friend class GPSItemModel;
+
+private:
+
+    Q_DISABLE_COPY(GPSItemContainer)
 };
 
 } // namespace Digikam
