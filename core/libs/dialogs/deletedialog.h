@@ -72,13 +72,17 @@ class DeleteItem : public QTreeWidgetItem
 public:
 
     explicit DeleteItem(QTreeWidget* const parent, const QUrl& url);
-    ~DeleteItem() override;
+    ~DeleteItem()                     override;
 
     bool    hasValidThumbnail() const;
     QUrl    url()               const;
     QString fileUrl()           const;
 
-    void setThumb(const QPixmap& pix, bool hasThumb=true);
+    void setThumb(const QPixmap& pix, bool hasThumb = true);
+
+private:
+
+    Q_DISABLE_COPY(DeleteItem)
 
 private:
 
@@ -94,12 +98,14 @@ class DeleteItemList : public QTreeWidget
 
 public:
 
-    explicit DeleteItemList(QWidget* const parent=nullptr);
-    ~DeleteItemList() override;
+    explicit DeleteItemList(QWidget* const parent = nullptr);
+    ~DeleteItemList()                            override;
 
 private :
 
-    void drawRow(QPainter* p, const QStyleOptionViewItem& opt, const QModelIndex& index) const override;
+    void drawRow(QPainter* p,
+                 const QStyleOptionViewItem& opt,
+                 const QModelIndex& index) const override;
 
 private Q_SLOTS:
 
@@ -160,12 +166,12 @@ public:
 public:
 
     explicit DeleteDialog(QWidget* const parent);
-    ~DeleteDialog() override;
+    ~DeleteDialog()                 override;
 
     bool confirmDeleteList(const QList<QUrl>& condemnedURLs,
                            DeleteDialogMode::ListMode listMode,
                            DeleteDialogMode::DeleteMode deleteMode);
-    bool shouldDelete() const;
+    bool shouldDelete()        const;
 
     void setUrls(const QList<QUrl>& urls);
     void presetDeleteMode(DeleteDialogMode::DeleteMode mode);
@@ -178,7 +184,7 @@ protected Q_SLOTS:
 
 private:
 
-    void keyPressEvent(QKeyEvent*) override;
+    void keyPressEvent(QKeyEvent*)  override;
 
 private:
 

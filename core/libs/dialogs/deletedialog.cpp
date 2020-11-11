@@ -75,7 +75,7 @@ public:
 
 DeleteItem::DeleteItem(QTreeWidget* const parent, const QUrl& url)
     : QTreeWidgetItem(parent),
-      d(new Private)
+      d              (new Private)
 {
     d->url = url;
 
@@ -159,7 +159,7 @@ class Q_DECL_HIDDEN DeleteItemList::Private
 public:
 
     explicit Private()
-        : iconSize(64),
+        : iconSize       (64),
           thumbLoadThread(nullptr)
     {
     }
@@ -171,7 +171,7 @@ public:
 
 DeleteItemList::DeleteItemList(QWidget* const parent)
     : QTreeWidget(parent),
-      d(new Private)
+      d          (new Private)
 {
     d->thumbLoadThread = ThumbnailLoadThread::defaultThread();
 
@@ -237,15 +237,15 @@ class Q_DECL_HIDDEN DeleteWidget::Private
 public:
 
     explicit Private()
-      : checkBoxStack(nullptr),
-        warningIcon(nullptr),
-        deleteText(nullptr),
-        numFiles(nullptr),
-        shouldDelete(nullptr),
+      : checkBoxStack (nullptr),
+        warningIcon   (nullptr),
+        deleteText    (nullptr),
+        numFiles      (nullptr),
+        shouldDelete  (nullptr),
         doNotShowAgain(nullptr),
-        fileList(nullptr),
-        listMode(DeleteDialogMode::Files),
-        deleteMode(DeleteDialogMode::UseTrash)
+        fileList      (nullptr),
+        listMode      (DeleteDialogMode::Files),
+        deleteMode    (DeleteDialogMode::UseTrash)
     {
     }
 
@@ -266,7 +266,7 @@ public:
 
 DeleteWidget::DeleteWidget(QWidget* const parent)
     : QWidget(parent),
-      d(new Private)
+      d      (new Private)
 {
     setObjectName(QLatin1String("DeleteDialogBase"));
 
@@ -474,10 +474,10 @@ public:
 
     explicit Private()
       : saveShouldDeleteUserPreference(true),
-        saveDoNotShowAgainTrash(false),
-        saveDoNotShowAgainPermanent(false),
-        page(nullptr),
-        buttons(nullptr)
+        saveDoNotShowAgainTrash       (false),
+        saveDoNotShowAgainPermanent   (false),
+        page                          (nullptr),
+        buttons                       (nullptr)
     {
     }
 
@@ -492,7 +492,7 @@ public:
 
 DeleteDialog::DeleteDialog(QWidget* const parent)
     : QDialog(parent),
-      d(new Private)
+      d      (new Private)
 {
     setModal(true);
 
