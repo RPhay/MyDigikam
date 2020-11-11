@@ -180,4 +180,5 @@ BUGFIXES:
 164 ==> 426208 - Thumbnails constantly refreshing on Mac version.
 165 ==> 422138 - Select other Languages is out.
 166 ==> 428924 - Group of *.MP4 files that have disappeared from digiKam. Database problem?
-167 ==> 
+167 ==> 428638 - 7.2.0 beta1: sorting of images in thumbnail view - german environment and UI.
+168 ==> 
