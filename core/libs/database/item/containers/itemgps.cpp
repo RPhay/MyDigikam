@@ -35,7 +35,7 @@ namespace Digikam
 
 ItemGPS::ItemGPS(const ItemInfo& info)
     : GPSItemContainer(info.fileUrl()),
-      m_info(info)
+      m_info          (info)
 {
 }
 
@@ -46,6 +46,7 @@ ItemGPS::~ItemGPS()
 bool ItemGPS::loadImageData()
 {
     // In first, we try to get GPS info from database.
+
     ItemPosition pos = m_info.imagePosition();
     m_dateTime       = m_info.dateTime();
 
@@ -59,6 +60,7 @@ bool ItemGPS::loadImageData()
         }
 
         // mark us as not-dirty, because the data was just loaded:
+
         m_dirty      = false;
         m_savedState = m_gpsData;
 
