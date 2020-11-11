@@ -62,6 +62,9 @@ public:
     /// Create the filter for the given combination of identifier and version
     virtual DImgThreadedFilter* createFilter(const QString& filterIdentifier,
                                              int version)                   = 0;
+private:
+
+    Q_DISABLE_COPY(DImgFilterGenerator)
 };
 
 // -----------------------------------------------------------------------------------
