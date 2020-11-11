@@ -46,15 +46,19 @@ class DIGIKAM_EXPORT MetadataSelectorItem : public QTreeWidgetItem
 public:
 
     MetadataSelectorItem(MdKeyListViewItem* const parent, const QString& key, const QString& title, const QString& desc);
-    ~MetadataSelectorItem() override;
+    ~MetadataSelectorItem()    override;
 
-    QString key() const;
+    QString key()        const;
     QString mdKeyTitle() const;
 
 private:
 
     QString            m_key;
     MdKeyListViewItem* m_parent;
+
+private:
+
+    Q_DISABLE_COPY(MetadataSelectorItem)
 };
 
 // ------------------------------------------------------------------------------------
@@ -74,7 +78,7 @@ public:
     QStringList checkedTagsList();
 
     void clearSelection();
-    void selectAll() override;
+    void selectAll()    override;
 };
 
 // ------------------------------------------------------------------------------------
@@ -97,18 +101,18 @@ public:
 public:
 
     explicit MetadataSelectorView(QWidget* const parent);
-    ~MetadataSelectorView() override;
+    ~MetadataSelectorView()               override;
 
-    int itemsCount() const;
+    int itemsCount()                const;
 
     void setTagsMap(const DMetadata::TagsMap& map);
 
     void setcheckedTagsList(const QStringList& list);
 
     void setDefaultFilter(const QStringList& list);
-    QStringList defaultFilter() const;
+    QStringList defaultFilter()     const;
 
-    QStringList checkedTagsList() const;
+    QStringList checkedTagsList()   const;
 
     void setControlElements(ControlElements controllerMask);
 

@@ -44,7 +44,7 @@ namespace Digikam
 MetadataListViewItem::MetadataListViewItem(QTreeWidgetItem* const parent, const QString& key,
                                            const QString& title, const QString& value)
     : QTreeWidgetItem(parent),
-      m_key(key)
+      m_key          (key)
 {
     setChildIndicatorPolicy(QTreeWidgetItem::DontShowIndicator);
     setText(0, title);
@@ -67,7 +67,7 @@ MetadataListViewItem::MetadataListViewItem(QTreeWidgetItem* const parent, const 
 MetadataListViewItem::MetadataListViewItem(QTreeWidgetItem* const parent, const QString& key,
                                            const QString& title)
     : QTreeWidgetItem(parent),
-      m_key(key)
+      m_key          (key)
 {
     setChildIndicatorPolicy(QTreeWidgetItem::DontShowIndicator);
     setText(0, title);
