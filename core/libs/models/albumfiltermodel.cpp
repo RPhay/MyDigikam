@@ -36,7 +36,7 @@
 #include "albummanager.h"
 #include "albummodel.h"
 #include "applicationsettings.h"
-#include "itemsortercache.h"
+#include "itemsortcollator.h"
 #include "facetags.h"
 
 namespace Digikam
@@ -472,11 +472,10 @@ bool AlbumFilterModel::lessThan(const QModelIndex& left, const QModelIndex& righ
         return QSortFilterProxyModel::lessThan(left, right);
     }
 
-    bool natural = ApplicationSettings::instance()->isStringTypeNatural();
-
     if ((valLeft.type() == QVariant::String) && (valRight.type() == QVariant::String))
     {
-        ItemSorterCache* const sorter = ItemSorterCache::instance();
+        ItemSortCollator* const sorter = ItemSortCollator::instance();
+        bool natural                   = ApplicationSettings::instance()->isStringTypeNatural();
 
         return (sorter->albumCompare(valLeft.toString(), valRight.toString(), sortCaseSensitivity(), natural) < 0);
     }

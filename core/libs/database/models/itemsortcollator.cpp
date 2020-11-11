@@ -4,7 +4,7 @@
  * https://www.digikam.org
  *
  * Date        : 2020-10-11
- * Description : fast item sorter cache based on QCollatorSortKey
+ * Description : item sort based on QCollator
  *
  * Copyright (C) 2020 by Maik Qualmann <metzpinguin at gmail dot com>
  *
@@ -21,7 +21,7 @@
  *
  * ============================================================ */
 
-#include "itemsortercache.h"
+#include "itemsortcollator.h"
 
 // Qt includes
 
@@ -34,7 +34,7 @@
 namespace Digikam
 {
 
-class Q_DECL_HIDDEN ItemSorterCache::Private
+class Q_DECL_HIDDEN ItemSortCollator::Private
 {
 public:
 
@@ -48,34 +48,34 @@ public:
 
 // -----------------------------------------------------------------------------------------------
 
-class Q_DECL_HIDDEN ItemSorterCacheCreator
+class Q_DECL_HIDDEN ItemSortCollatorCreator
 {
 public:
 
-    ItemSorterCache object;
+    ItemSortCollator object;
 };
 
-Q_GLOBAL_STATIC(ItemSorterCacheCreator, itemSorterCacheCreator)
+Q_GLOBAL_STATIC(ItemSortCollatorCreator, itemSortCollatorCreator)
 
 // -----------------------------------------------------------------------------------------------
 
-ItemSorterCache::ItemSorterCache()
+ItemSortCollator::ItemSortCollator()
     : d(new Private)
 {
 }
 
-ItemSorterCache::~ItemSorterCache()
+ItemSortCollator::~ItemSortCollator()
 {
     delete d;
 }
 
-ItemSorterCache* ItemSorterCache::instance()
+ItemSortCollator* ItemSortCollator::instance()
 {
-    return &itemSorterCacheCreator->object;
+    return &itemSortCollatorCreator->object;
 }
 
-int ItemSorterCache::itemCompare(const QString& a, const QString& b,
-                                 Qt::CaseSensitivity caseSensitive, bool natural) const
+int ItemSortCollator::itemCompare(const QString& a, const QString& b,
+                                  Qt::CaseSensitivity caseSensitive, bool natural) const
 {
     d->itemCollator.setNumericMode(natural);
     d->itemCollator.setCaseSensitivity(caseSensitive);
@@ -85,11 +85,11 @@ int ItemSorterCache::itemCompare(const QString& a, const QString& b,
     return d->itemCollator.compare(a, b);
 }
 
-int ItemSorterCache::albumCompare(const QString& a, const QString& b,
-                                  Qt::CaseSensitivity caseSensitive, bool natural) const
+int ItemSortCollator::albumCompare(const QString& a, const QString& b,
+                                   Qt::CaseSensitivity caseSensitive, bool natural) const
 {
     d->albumCollator.setNumericMode(natural);
-    d->albumCollator.setIgnorePunctuation(true);
+    d->albumCollator.setIgnorePunctuation(false);
     d->albumCollator.setCaseSensitivity(caseSensitive);
 
     return d->albumCollator.compare(a, b);
