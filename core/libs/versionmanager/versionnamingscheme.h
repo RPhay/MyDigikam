@@ -103,6 +103,8 @@ public:
     virtual QVariant incrementedCounter(const QVariant& counter) = 0;
 };
 
+// -----------------------------------------------------------------------------------------------------
+
 class Q_DECL_HIDDEN DefaultVersionNamingScheme : public VersionNamingScheme
 {
 public:
