@@ -183,6 +183,7 @@ void ItemThumbnailModel::preloadThumbnails(const QList<ItemInfo>& infos)
         ids << info.thumbnailIdentifier();
     }
 
+    d->preloadThread->stopAllTasks();
     d->preloadThread->pregenerateGroup(ids, d->preloadThumbnailSize());
 }
 
