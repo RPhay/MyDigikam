@@ -4,7 +4,7 @@
  * https://www.digikam.org
  *
  * Date        : 2020-10-11
- * Description : fast item sorter cache based on QCollatorSortKey
+ * Description : item sort based on QCollator
  *
  * Copyright (C) 2020 by Maik Qualmann <metzpinguin at gmail dot com>
  *
@@ -21,8 +21,8 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_ITEM_SORTER_CACHE_H
-#define DIGIKAM_ITEM_SORTER_CACHE_H
+#ifndef DIGIKAM_ITEM_SORT_COLLATOR_H
+#define DIGIKAM_ITEM_SORT_COLLATOR_H
 
 // Qt includes
 
@@ -36,17 +36,17 @@
 namespace Digikam
 {
 
-class DIGIKAM_DATABASE_EXPORT ItemSorterCache : public QObject
+class DIGIKAM_DATABASE_EXPORT ItemSortCollator : public QObject
 {
     Q_OBJECT
 
 public:
 
     /**
-     * Global instance of internal item sorter cache.
+     * Global instance of internal item sort collator.
      * All accessor methods are thread-safe.
      */
-    static ItemSorterCache* instance();
+    static ItemSortCollator* instance();
 
     int itemCompare(const QString& a, const QString& b,
                     Qt::CaseSensitivity caseSensitive, bool natural)  const;
@@ -57,18 +57,18 @@ public:
 private:
 
     // Disable
-    ItemSorterCache();
-    explicit ItemSorterCache(QObject*);
-    ~ItemSorterCache() override;
+    ItemSortCollator();
+    explicit ItemSortCollator(QObject*);
+    ~ItemSortCollator() override;
 
 private:
 
     class Private;
     Private* const d;
 
-    friend class ItemSorterCacheCreator;
+    friend class ItemSortCollatorCreator;
 };
 
 } // namespace Digikam
 
-#endif // DIGIKAM_ITEM_SORTER_CACHE_H
+#endif // DIGIKAM_ITEM_SORT_COLLATOR_H

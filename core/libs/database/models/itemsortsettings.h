@@ -26,15 +26,13 @@
 
 // Qt includes
 
-#include <QHash>
-#include <QList>
-#include <QMap>
 #include <QString>
+#include <QVariant>
 
 // Local includes
 
 #include "digikam_export.h"
-#include "itemsortercache.h"
+#include "itemsortcollator.h"
 
 namespace Digikam
 {
@@ -99,7 +97,8 @@ public:
      * Face passed in to allow Categorization by Faces. Pass in an empty
      * Face if not needed.
      */
-    int compareCategories(const ItemInfo& left, const ItemInfo& right, const FaceTagsIface& leftFace, const FaceTagsIface& rightFace) const;
+    int compareCategories(const ItemInfo& left, const ItemInfo& right,
+                          const FaceTagsIface& leftFace, const FaceTagsIface& rightFace) const;
 
     /**
      * Returns true if left is less than right.
@@ -223,14 +222,9 @@ public:
                                      Qt::CaseSensitivity caseSensitive = Qt::CaseSensitive,
                                      bool natural = true)
     {
-        ItemSorterCache* const sorter = ItemSorterCache::instance();
+        ItemSortCollator* const sorter = ItemSortCollator::instance();
 
-        if (sortOrder == Qt::AscendingOrder)
-        {
-            return sorter->itemCompare(a, b, caseSensitive, natural);
-        }
-
-        return (- sorter->itemCompare(a, b, caseSensitive, natural));
+        return compareByOrder(sorter->itemCompare(a, b, caseSensitive, natural), sortOrder);
     }
 
 public:
