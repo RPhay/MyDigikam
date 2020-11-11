@@ -51,6 +51,10 @@ public:
 
     virtual ~ItemFilterModelPrepareHook() {};
     virtual void prepare(const QVector<ItemInfo>& infos) = 0;
+
+private:
+
+    Q_DISABLE_COPY(ItemFilterModelPrepareHook)
 };
 
 // -----------------------------------------------------------------------------------------------
