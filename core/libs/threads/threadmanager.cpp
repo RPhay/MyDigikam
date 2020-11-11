@@ -89,7 +89,7 @@ public:
             condVar.wait(&mutex);
         }
 
-        QThread* targetThread = QThread::currentThread();
+        QThread* const targetThread = QThread::currentThread();
 
         // then, now that it's parked in ParkingThread, make ParkingThread move it to the current thread.
 
@@ -161,6 +161,10 @@ protected:
 protected:
 
     void run() override;
+
+private:
+
+    Q_DISABLE_COPY(WorkerObjectRunnable)
 };
 
 // --------------------------------------------------------------------------------------------------
