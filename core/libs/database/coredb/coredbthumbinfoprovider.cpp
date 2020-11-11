@@ -43,6 +43,7 @@ namespace Digikam
 ThumbnailInfo ThumbsDbInfoProvider::thumbnailInfo(const ThumbnailIdentifier& identifier)
 {
     // If code here proves to be a bottleneck we can add custom queries to albumdb to retrieve info all-in-one
+
     ItemInfo imageinfo;
 
     if (identifier.id)
@@ -62,15 +63,19 @@ ThumbnailInfo ThumbsDbInfoProvider::thumbnailInfo(const ThumbnailIdentifier& ide
     return imageinfo.thumbnailInfo();
 }
 
+// ---------------------------------------------------------------------------------
+
 int DatabaseLoadSaveFileInfoProvider::orientationHint(const QString& path)
 {
     ItemInfo info = ItemInfo::fromLocalFile(path);
+
     return info.orientation();
 }
 
 QSize DatabaseLoadSaveFileInfoProvider::dimensionsHint(const QString& path)
 {
     ItemInfo info = ItemInfo::fromLocalFile(path);
+
     return info.dimensions();
 }
 

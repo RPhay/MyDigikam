@@ -41,12 +41,14 @@ public:
     ThumbnailInfo thumbnailInfo(const ThumbnailIdentifier& identifier) override;
 };
 
+// ----------------------------------------------------------------------------------------------
+
 class DIGIKAM_DATABASE_EXPORT DatabaseLoadSaveFileInfoProvider : public LoadSaveFileInfoProvider
 {
 public:
 
     int   orientationHint(const QString& path) override;
-    QSize dimensionsHint(const QString& path) override;
+    QSize dimensionsHint(const QString& path)  override;
 };
 
 } // namespace Digikam
