@@ -50,7 +50,7 @@ public:
 
     DHistoryViewItem(QTreeWidget* const parent, const QString& msg, DHistoryView::EntryType type, const QVariant& metadata)
         : QTreeWidgetItem(parent, QStringList()),
-          m_metadata(metadata)
+          m_metadata     (metadata)
     {
         switch (type)
         {
@@ -98,6 +98,10 @@ public:
 private:
 
     QVariant m_metadata;
+
+private:
+
+    Q_DISABLE_COPY(DHistoryViewItem)
 };
 
 // ---------------------------------------------------------------------------
@@ -168,7 +172,9 @@ void DHistoryView::slotCopy2ClipBoard()
 void DHistoryView::addEntry(const QString& msg, EntryType type, const QVariant& metadata)
 {
     DHistoryViewItem* const item = new DHistoryViewItem(this, msg, type, metadata);
+
     // Dispatch events to Qt loop in case of bombarding of messages. See bug #338629
+
     qApp->processEvents();
     setCurrentItem(item);
 }

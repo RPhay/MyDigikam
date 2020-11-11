@@ -57,9 +57,11 @@ public:
 public:
 
     explicit DHistoryView(QWidget* const parent);
-    ~DHistoryView() override;
+    ~DHistoryView()                     override;
 
-    void addEntry(const QString& msg, EntryType type, const QVariant& metadata = QVariant());
+    void addEntry(const QString& msg,
+                  EntryType type,
+                  const QVariant& metadata = QVariant());
 
 Q_SIGNALS:
 
@@ -73,7 +75,7 @@ private Q_SLOTS:
 
 private:
 
-    void mouseMoveEvent(QMouseEvent*) override;
+    void mouseMoveEvent(QMouseEvent*)   override;
 };
 
 } // namespace Digikam
