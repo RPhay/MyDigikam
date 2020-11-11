@@ -101,6 +101,10 @@ public:
 protected:
 
     AbstractItemDragDropHandler* m_dragDropHandler;
+
+private:
+
+    Q_DISABLE_COPY(DragDropModelImplementation)
 };
 
 // --------------------------------------------------------------------------------------------
