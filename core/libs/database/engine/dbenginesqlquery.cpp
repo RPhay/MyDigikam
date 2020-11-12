@@ -36,14 +36,11 @@ DbEngineSqlQuery::DbEngineSqlQuery(const QSqlDatabase& db)
 {
 }
 
-DbEngineSqlQuery::~DbEngineSqlQuery()
-{
-}
-
 DbEngineSqlQuery& DbEngineSqlQuery::operator=(const DbEngineSqlQuery& other)
 {
     QSqlQuery::operator=(other);
     m_query = other.m_query;
+
     return *this;
 }
 
@@ -51,6 +48,7 @@ bool DbEngineSqlQuery::prepare(const QString& query)
 {
     bool result = QSqlQuery::prepare(query);
     m_query     = query;
+
     return result;
 }
 
