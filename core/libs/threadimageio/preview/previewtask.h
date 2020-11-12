@@ -59,7 +59,7 @@ private:
 
     QImage m_qimage;
     bool   m_fromRawEmbeddedPreview;
-    bool   m_LoadingEnd;
+    bool   m_LoadingImage;
 
 private:
 

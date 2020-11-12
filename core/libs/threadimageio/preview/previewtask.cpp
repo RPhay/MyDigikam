@@ -47,19 +47,20 @@ namespace Digikam
 PreviewLoadingTask::PreviewLoadingTask(LoadSaveThread* const thread, const LoadingDescription& description)
     : SharedLoadingTask       (thread, description, LoadSaveThread::AccessModeRead, LoadingTaskStatusLoading),
       m_fromRawEmbeddedPreview(false),
-      m_LoadingEnd(false)
+      m_LoadingImage          (false)
 {
 }
 
 PreviewLoadingTask::~PreviewLoadingTask()
 {
-    qCDebug(DIGIKAM_GENERAL_LOG) << "PreviewLoadingTask destructor was called...." << this << m_thread << m_LoadingEnd ;
+    qCDebug(DIGIKAM_GENERAL_LOG) << "PreviewLoadingTask destructor was called...." << this << m_thread << m_LoadingImage;
 
-    Q_ASSERT(m_LoadingEnd);
+    Q_ASSERT(!m_LoadingImage);
 }
 
 void PreviewLoadingTask::execute()
 {
+    m_LoadingImage = true;
     qCDebug(DIGIKAM_GENERAL_LOG) << "PreviewLoadingTask was started.............." << this << m_thread;
 
     if (m_loadingTaskStatus == LoadingTaskStatusStopping)
@@ -438,7 +439,7 @@ void PreviewLoadingTask::execute()
     }
 
     qCDebug(DIGIKAM_GENERAL_LOG) << "PreviewLoadingTask is at the end............" << this << m_thread;
-    m_LoadingEnd = true;
+    m_LoadingImage = false;
 }
 
 bool PreviewLoadingTask::needToScale()
