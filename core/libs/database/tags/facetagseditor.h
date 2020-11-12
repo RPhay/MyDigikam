@@ -116,7 +116,7 @@ public:
      * called repeatedly. A cached version is provided in ItemInfo, and should be preferred
      * for intensive operations such as sorting, categorizing etc.
      */
-    QMap<QString, QString> getSuggestedNames(qlonglong id) const;
+    QMap<QString, QString> getSuggestedNames(qlonglong id)                                      const;
 
     /**
      * Assign the name tag for given face entry.
@@ -133,7 +133,8 @@ public:
     /**
      * Returns the entry that would be added if the given face is confirmed.
      */
-    static FaceTagsIface confirmedEntry(const FaceTagsIface& face, int tagId = -1, const TagRegion& confirmedRegion = TagRegion());
+    static FaceTagsIface confirmedEntry(const FaceTagsIface& face, int tagId = -1,
+                                        const TagRegion& confirmedRegion = TagRegion());
 
     /**
      * Returns the entry that would be added if the given face is autodetected.
@@ -175,8 +176,8 @@ public:
 
     // --- Utilities ---
 
-    QList<FaceTagsIface> databaseFaces(qlonglong imageId, FaceTagsIface::TypeFlags flags)   const;
-    QList<ItemTagPair>  faceItemTagPairs(qlonglong imageid, FaceTagsIface::TypeFlags flags) const;
+    QList<FaceTagsIface> databaseFaces(qlonglong imageId, FaceTagsIface::TypeFlags flags)       const;
+    QList<ItemTagPair>  faceItemTagPairs(qlonglong imageid, FaceTagsIface::TypeFlags flags)     const;
 
 protected:
 
@@ -186,6 +187,10 @@ protected:
     virtual void addNormalTag(qlonglong imageid, int tagId);
     virtual void removeNormalTag(qlonglong imageid, int tagId);
     virtual void removeNormalTags(qlonglong imageid, const QList<int>& tagId);
+
+private:
+
+    Q_DISABLE_COPY(FaceTagsEditor)
 };
 
 }  // Namespace Digikam
