@@ -337,7 +337,8 @@ public:
      * Does not inherit QObject, the delegate already does.
      */
 
-    virtual ~ItemDelegateOverlayContainer();
+    ItemDelegateOverlayContainer()          = default;
+    virtual ~ItemDelegateOverlayContainer() = default;
 
     QList<ItemDelegateOverlay*> overlays() const;
 
@@ -368,6 +369,10 @@ protected:
 protected:
 
     QList<ItemDelegateOverlay*> m_overlays;
+
+private:
+
+    Q_DISABLE_COPY(ItemDelegateOverlayContainer)
 };
 
 } // namespace Digikam

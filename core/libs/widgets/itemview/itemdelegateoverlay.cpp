@@ -684,10 +684,6 @@ void PersistentWidgetDelegateOverlay::setFocusOnWidget()
 
 // -----------------------------------------------------------------------------------
 
-ItemDelegateOverlayContainer::~ItemDelegateOverlayContainer()
-{
-}
-
 void ItemDelegateOverlayContainer::installOverlay(ItemDelegateOverlay* overlay)
 {
     if (!overlay->acceptsDelegate(asDelegate()))
