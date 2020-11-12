@@ -74,9 +74,9 @@ public:
 
     explicit Private()
       : hasThumb(false),
-        rating(-1),
-        view(nullptr),
-        state(Waiting)
+        rating  (-1),
+        view    (nullptr),
+        state   (Waiting)
     {
     }
 
@@ -93,7 +93,7 @@ public:
 
 DItemsListViewItem::DItemsListViewItem(DItemsListView* const view, const QUrl& url)
     : QTreeWidgetItem(view),
-      d(new Private)
+      d              (new Private)
 {
     setUrl(url);
     setRating(-1);
@@ -474,22 +474,22 @@ class Q_DECL_HIDDEN DItemsList::Private
 public:
 
     explicit Private()
-      : allowRAW(true),
-        allowDuplicate(false),
+      : allowRAW             (true),
+        allowDuplicate       (false),
         controlButtonsEnabled(true),
-        iconSize(DEFAULTSIZE),
-        addButton(nullptr),
-        removeButton(nullptr),
-        moveUpButton(nullptr),
-        moveDownButton(nullptr),
-        clearButton(nullptr),
-        loadButton(nullptr),
-        saveButton(nullptr),
-        progressPix(nullptr),
-        progressCount(0),
-        progressTimer(nullptr),
-        listView(nullptr),
-        iface(nullptr)
+        iconSize             (DEFAULTSIZE),
+        addButton            (nullptr),
+        removeButton         (nullptr),
+        moveUpButton         (nullptr),
+        moveDownButton       (nullptr),
+        clearButton          (nullptr),
+        loadButton           (nullptr),
+        saveButton           (nullptr),
+        progressPix          (nullptr),
+        progressCount        (0),
+        progressTimer        (nullptr),
+        listView             (nullptr),
+        iface                (nullptr)
     {
         thumbLoadThread = ThumbnailLoadThread::defaultThread();
     }
@@ -520,7 +520,7 @@ public:
 
 DItemsList::DItemsList(QWidget* const parent, int iconSize)
     : QWidget(parent),
-      d(new Private)
+      d      (new Private)
 {
     if (iconSize != -1)  // default = ICONSIZE
     {
@@ -576,6 +576,7 @@ DItemsList::DItemsList(QWidget* const parent, int iconSize)
     // queue this connection because itemSelectionChanged is emitted
     // while items are deleted, and accessing selectedItems at that
     // time causes a crash ...
+
     connect(d->listView, &DItemsListView::itemSelectionChanged,
             this, &DItemsList::slotImageListChanged, Qt::QueuedConnection);
 
@@ -697,7 +698,9 @@ void DItemsList::setControlButtonsPlacement(ControlButtonPlacement placement)
         {
             delete vBtnLayout;
             delete hBtnLayout;
+
             // set all buttons invisible
+
             setControlButtons(ControlButtons());
             break;
         }
@@ -824,6 +827,7 @@ void DItemsList::slotAddImages(const QList<QUrl>& list)
         QUrl imageUrl = *it;
 
         // Check if the new item already exist in the list.
+
         bool found = false;
 
         QTreeWidgetItemIterator iter(d->listView);
@@ -843,6 +847,7 @@ void DItemsList::slotAddImages(const QList<QUrl>& list)
         if (d->allowDuplicate || !found)
         {
             // if RAW files are not allowed, skip the image
+
             if (!d->allowRAW && DRawDecoder::isRawFile(imageUrl))
             {
                 raw = true;
@@ -908,6 +913,7 @@ void DItemsList::slotRemoveItems()
 void DItemsList::slotMoveUpItems()
 {
     // move above item down, then we don't have to fix the focus
+
     QModelIndex curIndex = listView()->currentIndex();
 
     if (!curIndex.isValid())
@@ -924,11 +930,15 @@ void DItemsList::slotMoveUpItems()
 
     QTreeWidgetItem* const temp = listView()->takeTopLevelItem(aboveIndex.row());
     listView()->insertTopLevelItem(curIndex.row(), temp);
+
     // this is a quick fix. We loose the extra tags in flickr upload, but at list we don't get a crash
+
     DItemsListViewItem* const uw = dynamic_cast<DItemsListViewItem*>(temp);
 
     if (uw)
+    {
         uw->updateItemWidgets();
+    }
 
     emit signalImageListChanged();
     emit signalMoveUpItem();
@@ -937,6 +947,7 @@ void DItemsList::slotMoveUpItems()
 void DItemsList::slotMoveDownItems()
 {
     // move below item up, then we don't have to fix the focus
+
     QModelIndex curIndex = listView()->currentIndex();
 
     if (!curIndex.isValid())
@@ -955,10 +966,13 @@ void DItemsList::slotMoveDownItems()
     listView()->insertTopLevelItem(curIndex.row(), temp);
 
     // This is a quick fix. We can loose extra tags in uploader, but at least we don't get a crash
+
     DItemsListViewItem* const uw = dynamic_cast<DItemsListViewItem*>(temp);
 
     if (uw)
+    {
         uw->updateItemWidgets();
+    }
 
     emit signalImageListChanged();
     emit signalMoveDownItem();
@@ -1005,8 +1019,11 @@ void DItemsList::slotLoadItems()
         if (xmlReader.isStartElement() && xmlReader.name() == QLatin1String("Image"))
         {
             // get all attributes and its value of a tag in attrs variable.
+
             QXmlStreamAttributes attrs = xmlReader.attributes();
+
             // get value of each attribute from QXmlStreamAttributes
+
             QStringRef url = attrs.value(QLatin1String("url"));
 
             if (url.isEmpty())
@@ -1021,19 +1038,24 @@ void DItemsList::slotLoadItems()
             if (!urls.isEmpty())
             {
                 //allow tools to append a new file
+
                 slotAddImages(urls);
+
                 // read tool Image custom attributes and children element
+
                 emit signalXMLLoadImageElement(xmlReader);
             }
         }
         else if (xmlReader.isStartElement() && xmlReader.name() != QLatin1String("Images"))
         {
             // unmanaged start element (it should be tools one)
+
             emit signalXMLCustomElements(xmlReader);
         }
         else if (xmlReader.isEndElement() && xmlReader.name() == QLatin1String("Images"))
         {
             // if EndElement is Images return
+
             grp.writeEntry("Last Images List Path", loadLevelsFile.adjusted(QUrl::RemoveFilename).toLocalFile());
             config->sync();
             file.close();
@@ -1270,9 +1292,11 @@ void DItemsList::slotImageListChanged()
 
     // All buttons are enabled / disabled now, but the "Add" button should always be
     // enabled, if the buttons are not explicitly disabled with enableControlButtons()
+
     d->addButton->setEnabled(d->controlButtonsEnabled);
 
     // TODO: should they be enabled by default now?
+
     d->loadButton->setEnabled(d->controlButtonsEnabled);
     d->saveButton->setEnabled(d->controlButtonsEnabled);
 }

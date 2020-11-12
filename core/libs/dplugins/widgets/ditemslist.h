@@ -63,28 +63,28 @@ public:
 public:
 
     explicit DItemsListViewItem(DItemsListView* const view, const QUrl& url);
-    ~DItemsListViewItem() override;
+    ~DItemsListViewItem()             override;
 
-    bool hasValidThumbnail() const;
+    bool hasValidThumbnail()    const;
 
     void setUrl(const QUrl& url);
-    QUrl url() const;
+    QUrl url()                  const;
 
     void setComments(const QString& comments);
-    QString comments() const;
+    QString comments()          const;
 
     void setTags(const QStringList& tags);
-    QStringList tags() const;
+    QStringList tags()          const;
 
     void setRating(int rating);
-    int rating() const;
+    int rating()                const;
 
     void setThumb(const QPixmap& pix, bool hasThumb=true);
     void setProgressAnimation(const QPixmap& pix);
 
     void setProcessedIcon(const QIcon& icon);
     void setState(State state);
-    State state() const;
+    State state()               const;
 
     void updateInformation();
 
@@ -96,7 +96,7 @@ public:
 
 protected:
 
-    DItemsListView* view() const;
+    DItemsListView* view()      const;
 
 private:
 
@@ -106,6 +106,10 @@ private:
 
     class Private;
     Private* const d;
+
+private:
+
+    Q_DISABLE_COPY(DItemsListViewItem)
 };
 
 // -------------------------------------------------------------------------
@@ -132,7 +136,7 @@ public:
 
     explicit DItemsListView(DItemsList* const parent = nullptr);
     explicit DItemsListView(int iconSize, DItemsList* const parent = nullptr);
-    ~DItemsListView() override;
+    ~DItemsListView()                                 override;
 
     void setColumnLabel(ColumnType column, const QString& label);
     void setColumnEnabled(ColumnType column, bool enable);
@@ -140,9 +144,9 @@ public:
 
     DItemsListViewItem* findItem(const QUrl& url);
     QModelIndex indexFromItem(DItemsListViewItem* item, int column = 0) const;
-    DItemsListViewItem* getCurrentItem() const;
+    DItemsListViewItem* getCurrentItem()        const;
 
-    DInfoInterface* iface() const;
+    DInfoInterface* iface()                     const;
 
 Q_SIGNALS:
 
@@ -160,14 +164,16 @@ public:
 
 private:
 
-    void dragEnterEvent(QDragEnterEvent* e) override;
-    void dragMoveEvent(QDragMoveEvent* e) override;
-    void dropEvent(QDropEvent* e) override;
-    void contextMenuEvent(QContextMenuEvent * e) override;
+    void dragEnterEvent(QDragEnterEvent* e)           override;
+    void dragMoveEvent(QDragMoveEvent* e)             override;
+    void dropEvent(QDropEvent* e)                     override;
+    void contextMenuEvent(QContextMenuEvent* e)       override;
 
     void setup(int iconSize);
 
-    void drawRow(QPainter* p, const QStyleOptionViewItem& opt, const QModelIndex& index) const override;
+    void drawRow(QPainter* p,
+                 const QStyleOptionViewItem& opt,
+                 const QModelIndex& index)      const override;
 
 private:
 
@@ -218,7 +224,7 @@ public:
 public:
 
     explicit DItemsList(QWidget* const parent, int iconSize = -1);
-    ~DItemsList() override;
+    ~DItemsList()                                                     override;
 
     void                setAllowRAW(bool allow);
     void                setAllowDuplicate(bool allow);
@@ -235,9 +241,9 @@ public:
      */
     bool                checkSelection();
 
-    int                 iconSize()  const;
+    int                 iconSize()                              const;
 
-    DItemsListView*     listView()  const;
+    DItemsListView*     listView()                              const;
 
     void                processing(const QUrl& url);
     void                processed(const QUrl& url, bool success);
@@ -251,12 +257,12 @@ public:
 
     void                updateThumbnail(const QUrl& url);
 
-    virtual QList<QUrl> imageUrls(bool onlyUnprocessed = false) const;
+    virtual QList<QUrl> imageUrls(bool onlyUnprocessed = false)     const;
     virtual void        removeItemByUrl(const QUrl& url);
-    QUrl                getCurrentUrl() const;
+    QUrl                getCurrentUrl()                             const;
 
     void setIface(DInfoInterface* const iface);
-    DInfoInterface* iface() const;
+    DInfoInterface* iface()                                         const;
 
 Q_SIGNALS:
 
