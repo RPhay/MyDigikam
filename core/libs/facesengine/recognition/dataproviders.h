@@ -46,7 +46,8 @@ class DIGIKAM_GUI_EXPORT ImageListProvider
 {
 public:
 
-    virtual ~ImageListProvider();
+    ImageListProvider()                           = default;
+    virtual ~ImageListProvider()                  = default;
 
     virtual int            size() const           = 0;
     virtual bool           atEnd() const          = 0;
@@ -90,6 +91,9 @@ class DIGIKAM_GUI_EXPORT EmptyImageListProvider : public ImageListProvider
 {
 public:
 
+    EmptyImageListProvider()              = default;
+    ~EmptyImageListProvider()             = default;
+
     int     size()  const                 override;
     bool    atEnd() const                 override;
     void    proceed(int steps = 1)        override;
@@ -109,7 +113,8 @@ class DIGIKAM_GUI_EXPORT TrainingDataProvider
 {
 public:
 
-    virtual ~TrainingDataProvider();
+    TrainingDataProvider()                                         = default;
+    virtual ~TrainingDataProvider()                                = default;
 
     /**
      * Provides those images for the given identity that have not yet been
@@ -123,6 +128,10 @@ public:
      * Ownership of the returned object stays with the TrainingDataProvider.
      */
     virtual ImageListProvider* images(const Identity& identity)    = 0;
+
+private:
+
+    Q_DISABLE_COPY(TrainingDataProvider)
 };
 
 } // namespace Digikam

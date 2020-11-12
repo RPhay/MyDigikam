@@ -26,12 +26,6 @@
 namespace Digikam
 {
 
-ImageListProvider::~ImageListProvider()
-{
-}
-
-// ----------------------------------------------------------------------------------------
-
 QListImageListProvider::QListImageListProvider(const QList<QImage*>& lst)
     : list(lst),
       it  (list.constBegin())
@@ -109,12 +103,6 @@ QImage* EmptyImageListProvider::image()
 QList<QImage*> EmptyImageListProvider::images()
 {
     return QList<QImage*>();
-}
-
-// ----------------------------------------------------------------------------------------
-
-TrainingDataProvider::~TrainingDataProvider()
-{
 }
 
 } // namespace Digikam
