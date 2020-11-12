@@ -148,7 +148,7 @@ bool DPluginAction::pluginActionLessThan(DPluginAction* const a, DPluginAction* 
 {
     QCollator collator;
     collator.setNumericMode(true);
-    collator.setIgnorePunctuation(true);
+    collator.setIgnorePunctuation(false);
     collator.setCaseSensitivity(Qt::CaseSensitive);
 
     return (collator.compare(a->text(), b->text()) < 0);
