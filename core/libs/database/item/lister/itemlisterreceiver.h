@@ -41,15 +41,19 @@
 namespace Digikam
 {
 
-//TODO: Docs
 class DIGIKAM_DATABASE_EXPORT ItemListerReceiver
 {
-
 public:
 
-    virtual ~ItemListerReceiver()                 {};
+    ItemListerReceiver()                                 = default;
+    virtual ~ItemListerReceiver()                        = default;
+
     virtual void receive(const ItemListerRecord& record) = 0;
     virtual void error(const QString& /*errMsg*/) {};
+
+private:
+
+    Q_DISABLE_COPY(ItemListerReceiver)
 };
 
 // ------------------------------------------------------------------------------------------------
@@ -57,7 +61,6 @@ public:
 class DIGIKAM_DATABASE_EXPORT ItemListerValueListReceiver
     : public ItemListerReceiver
 {
-
 public:
 
     explicit ItemListerValueListReceiver();
@@ -69,6 +72,10 @@ public:
 
     QList<ItemListerRecord> records;
     bool                    hasError;
+
+private:
+
+    Q_DISABLE_COPY(ItemListerValueListReceiver)
 };
 
 // ------------------------------------------------------------------------------------------------
@@ -76,16 +83,20 @@ public:
 class DIGIKAM_DATABASE_EXPORT ItemListerJobReceiver
     : public ItemListerValueListReceiver
 {
-
 public:
 
     explicit ItemListerJobReceiver(DBJob* const job);
+
     void error(const QString& errMsg) override;
     void sendData();
 
 protected:
 
     DBJob* const m_job;
+
+private:
+
+    Q_DISABLE_COPY(ItemListerJobReceiver)
 };
 
 // ------------------------------------------------------------------------------------------------
@@ -93,16 +104,20 @@ protected:
 class DIGIKAM_DATABASE_EXPORT ItemListerJobPartsSendingReceiver
     : public ItemListerJobReceiver
 {
-
 public:
 
     explicit ItemListerJobPartsSendingReceiver(DBJob* const job, int limit);
+
     void receive(const ItemListerRecord &record) override;
 
 protected:
 
     int m_limit;
     int m_count;
+
+private:
+
+    Q_DISABLE_COPY(ItemListerJobPartsSendingReceiver)
 };
 
 // ------------------------------------------------------------------------------------------------
@@ -110,19 +125,23 @@ protected:
 class DIGIKAM_DATABASE_EXPORT ItemListerJobGrowingPartsSendingReceiver
     : public ItemListerJobPartsSendingReceiver
 {
-
 public:
 
     explicit ItemListerJobGrowingPartsSendingReceiver(DBJob* const job,
                                                       int start,
                                                       int end,
                                                       int increment);
+
     void receive(const ItemListerRecord& record) override;
 
 protected:
 
     int m_maxLimit;
     int m_increment;
+
+private:
+
+    Q_DISABLE_COPY(ItemListerJobGrowingPartsSendingReceiver)
 };
 
 } // namespace Digikam
