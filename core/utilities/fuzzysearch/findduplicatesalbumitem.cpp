@@ -25,8 +25,8 @@
 
 // Qt includes
 
-#include <QPainter>
 #include <QCollator>
+#include <QPainter>
 #include <QIcon>
 
 // Local includes
@@ -47,16 +47,21 @@ class Q_DECL_HIDDEN FindDuplicatesAlbumItem::Private
 public:
 
     explicit Private()
-      : hasThumb(false),
-        album(nullptr),
-        itemCount(0)
+      : hasThumb  (false),
+        album     (nullptr),
+        itemCount (0)
     {
+        collator.setNumericMode(true);
+        collator.setIgnorePunctuation(false);
+        collator.setCaseSensitivity(Qt::CaseSensitive);
     }
 
     bool      hasThumb;
 
     SAlbum*   album;
     int       itemCount;
+
+    QCollator collator;
 
     ItemInfo  refImgInfo;
 };
@@ -231,7 +236,7 @@ bool FindDuplicatesAlbumItem::operator<(const QTreeWidgetItem& other) const
     }
     else
     {
-        result = QCollator().compare(text(column), other.text(column));
+        result = d->collator.compare(text(column), other.text(column));
     }
 
     return (result < 0);
