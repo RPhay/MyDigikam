@@ -209,9 +209,8 @@ public:
     {
     public:
 
-        virtual ~ContextMenuElement()
-        {
-        }
+        ContextMenuElement()                    = default;
+        virtual ~ContextMenuElement()           = default;
 
         /**
          * Add actions to the context menu being generated
@@ -221,7 +220,13 @@ public:
          * @param album album on which the context menu will be created. May be null if
          *              it is requested on no tag entry
          */
-        virtual void addActions(AbstractAlbumTreeView* view, ContextMenuHelper& cmh, Album* album) = 0;
+        virtual void addActions(AbstractAlbumTreeView* view,
+                                ContextMenuHelper& cmh,
+                                Album* album)   = 0;
+
+    private:
+
+        Q_DISABLE_COPY(ContextMenuElement)
     };
 
     void addContextMenuElement(ContextMenuElement* const element);
