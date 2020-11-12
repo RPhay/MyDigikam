@@ -99,13 +99,13 @@ QByteArray DatabaseBlob::write(Haar::SignatureData* const data)
 // -----------------------------------------------------------------------------------------------------
 
 HaarIface::Private::Private()
+    : data              (nullptr),
+      bin               (nullptr),
+      signatureCache    (nullptr),
+      albumCache        (nullptr),
+      useSignatureCache (false),
+      signatureQuery    (QString::fromUtf8("SELECT imageid, matrix FROM ImageHaarMatrix;"))
 {
-    data              = nullptr;
-    bin               = nullptr;
-    signatureCache    = nullptr;
-    albumCache        = nullptr;
-    useSignatureCache = false;
-    signatureQuery    = QString::fromUtf8("SELECT imageid, matrix FROM ImageHaarMatrix;");
 }
 
 HaarIface::Private::~Private()

@@ -51,6 +51,7 @@ class HaarProgressObserver
 {
 public:
 
+    HaarProgressObserver()                                       = default;
     virtual ~HaarProgressObserver()                              = default;
 
     virtual void totalNumberToScan(int number)                   = 0;
@@ -59,6 +60,10 @@ public:
     {
         return false;
     };
+
+private:
+
+    Q_DISABLE_COPY(HaarProgressObserver)
 };
 
 // --------------------------------------------------------------------------
@@ -316,8 +321,9 @@ private:
 
 private:
 
-    HaarIface(const HaarIface&);            // Disable
-    HaarIface& operator=(const HaarIface&); // Disable
+    // Disable
+    HaarIface(const HaarIface&);
+    HaarIface& operator=(const HaarIface&);
 
 private:
 

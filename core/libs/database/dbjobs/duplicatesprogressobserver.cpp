@@ -31,7 +31,8 @@ namespace Digikam
 {
 
 DuplicatesProgressObserver::DuplicatesProgressObserver(SearchesJob* const thread)
-    : m_job(thread)
+    : HaarProgressObserver(),
+      m_job(thread)
 {
 }
 
