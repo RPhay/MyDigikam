@@ -65,6 +65,7 @@ void PreviewLoadingTask::execute()
 
     if (m_loadingTaskStatus == LoadingTaskStatusStopping)
     {
+        m_LoadingImage = false;
         return;
     }
 
