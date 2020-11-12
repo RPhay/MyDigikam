@@ -96,7 +96,7 @@ public:
     /**
      * Destroys the page dialog.
      */
-    ~DConfigDlg() override;
+    ~DConfigDlg()                                                     override;
 
     /**
      * Sets the face type of the dialog.
@@ -177,7 +177,7 @@ public:
      * Returns the @see DConfigDlgWdgItem for the current page or 0 if there is no
      * current page.
      */
-    DConfigDlgWdgItem* currentPage() const;
+    DConfigDlgWdgItem* currentPage()                            const;
 
     /**
      * Sets the collection of standard buttons displayed by this dialog.
@@ -230,7 +230,7 @@ protected:
     /**
      * Returns the page widget of the dialog or 0 if no page widget is set.
      */
-    const DConfigDlgWdg* pageWidget() const;
+    const DConfigDlgWdg* pageWidget()                           const;
 
     /**
      * Set the page widget of the dialog.
@@ -250,7 +250,7 @@ protected:
     /**
      * Returns the button box of the dialog or 0 if no button box is set.
      */
-    const QDialogButtonBox* buttonBox() const;
+    const QDialogButtonBox* buttonBox()                         const;
 
     /**
      * Set the button box of the dialog
