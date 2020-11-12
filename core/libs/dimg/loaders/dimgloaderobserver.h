@@ -42,9 +42,8 @@ class DIGIKAM_EXPORT DImgLoaderObserver
 
 public:
 
-    virtual ~DImgLoaderObserver()
-    {
-    };
+    DImgLoaderObserver()          = default;
+    virtual ~DImgLoaderObserver() = default;
 
     /**
      * Posts progress information about image IO
@@ -72,6 +71,10 @@ public:
     {
         return 1.0F;
     };
+
+private:
+
+    Q_DISABLE_COPY(DImgLoaderObserver)
 };
 
 } // namespace Digikam
