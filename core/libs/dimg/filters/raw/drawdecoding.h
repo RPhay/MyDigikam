@@ -62,7 +62,7 @@ public:
     /**
      * Standard destructor
      */
-    virtual ~DRawDecoding();
+    ~DRawDecoding();
 
     /**
      * Method to use a settings to optimize time loading, for example to compute image histogram

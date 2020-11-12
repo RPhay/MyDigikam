@@ -160,7 +160,7 @@ public:
     /**
      * Standard destructor
      */
-    virtual ~DRawDecoderSettings();
+    ~DRawDecoderSettings();
 
     /**
      * Method to use a settings to optimize time loading, for example to compute image histogram
