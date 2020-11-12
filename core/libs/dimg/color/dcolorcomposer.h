@@ -35,6 +35,7 @@ namespace Digikam
 class DIGIKAM_EXPORT DColorComposer
 {
 public:
+
     /**
      * The available rules to combine src and destination color.
      *
@@ -66,7 +67,6 @@ public:
      *     The documentation of java.awt.AlphaComposite (Java 1.5)
      *     provides a good introduction and documentation on Porter Duff.
      */
-
     enum CompositingOperation
     {
         PorterDuffNone,
@@ -126,9 +126,12 @@ public:
      */
     virtual void compose(DColor& dest, DColor& src, MultiplicationFlags multiplicationFlags);
 
-    virtual ~DColorComposer()
-    {
-    };
+    DColorComposer()          = default;
+    virtual ~DColorComposer() = default;
+
+private:
+
+    Q_DISABLE_COPY(DColorComposer)
 };
 
 } // namespace Digikam
