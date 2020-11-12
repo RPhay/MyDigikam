@@ -133,10 +133,6 @@ AbstractItemDragDropHandler* DragDropModelImplementation::dragDropHandler() cons
 
 // ------------ View sample implementation -------------
 
-DragDropViewImplementation::~DragDropViewImplementation()
-{
-}
-
 void DragDropViewImplementation::cut()
 {
     QMimeData* const data = asView()->model()->mimeData(asView()->selectionModel()->selectedIndexes());

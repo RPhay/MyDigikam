@@ -113,7 +113,8 @@ class DIGIKAM_EXPORT DragDropViewImplementation
 {
 public:
 
-    virtual ~DragDropViewImplementation();
+    DragDropViewImplementation()          = default;
+    virtual ~DragDropViewImplementation() = default;
 
     virtual void cut();
     virtual void copy();
@@ -167,6 +168,10 @@ protected:
 
     void encodeIsCutSelection(QMimeData* mime, bool isCutSelection);
     bool decodeIsCutSelection(const QMimeData* mimeData);
+
+private:
+
+    Q_DISABLE_COPY(DragDropViewImplementation)
 };
 
 } // namespace Digikam
