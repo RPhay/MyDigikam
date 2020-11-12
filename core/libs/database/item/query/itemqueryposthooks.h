@@ -41,14 +41,17 @@ class Q_DECL_HIDDEN ItemQueryPostHook
 public:
 
     /// This is the single hook, ItemQueryPostHookS is the container
-    virtual ~ItemQueryPostHook()
-    {
-    };
+    ItemQueryPostHook()          = default;
+    virtual ~ItemQueryPostHook() = default;
 
     virtual bool checkPosition(double /*latitudeNumber*/, double /*longitudeNumber*/)
     {
         return true;
     };
+
+private:
+
+    Q_DISABLE_COPY(ItemQueryPostHook)
 };
 
 // --------------------------------------------------------------------
