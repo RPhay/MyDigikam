@@ -120,7 +120,7 @@ void ThemeManager::slotChangePalette()
 
     QString theme(currentThemeName());
 
-    if (theme == defaultThemeName() || theme.isEmpty())
+    if ((theme == defaultThemeName()) || theme.isEmpty())
     {
         theme = currentDesktopdefaultTheme();
     }

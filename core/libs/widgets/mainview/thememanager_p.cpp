@@ -42,8 +42,9 @@
 namespace Digikam
 {
 
-// HCY color space management
-
+/**
+ * HCY color space management
+ */
 class Q_DECL_HIDDEN HCYColorSpace
 {
 public:
@@ -257,7 +258,8 @@ QColor tint(const QColor& base, const QColor& color, qreal amount = 0.3)
     qreal baseLuma = luma(base);    // cache value because luma call is expensive
     double ri      = contrastRatioForLuma(baseLuma, luma(color));
     double rg      = 1.0 + ((ri + 1.0) * amount * amount * amount);
-    double u       = 1.0, l = 0.0;
+    double u       = 1.0;
+    double l       = 0.0;
     QColor result;
 
     for (int i = 12 ; i ; --i)
@@ -496,11 +498,9 @@ class Q_DECL_HIDDEN StateEffects
 public:
 
     explicit StateEffects(QPalette::ColorGroup state, const KSharedConfigPtr&);
-    ~StateEffects()
-    {
-    }
+    ~StateEffects() = default;
 
-    QBrush brush(const QBrush& background) const;
+    QBrush brush(const QBrush& background)                           const;
     QBrush brush(const QBrush& foreground, const QBrush& background) const;
 
 private:
@@ -511,16 +511,19 @@ private:
         Intensity         = 0,
         Color             = 1,
         Contrast          = 2,
+
         /// Intensity
         IntensityNoEffect = 0,
         IntensityShade    = 1,
         IntensityDarken   = 2,
         IntensityLighten  = 3,
+
         /// Color
         ColorNoEffect     = 0,
         ColorDesaturate   = 1,
         ColorFade         = 2,
         ColorTint         = 3,
+
         /// Contrast
         ContrastNoEffect  = 0,
         ContrastFade      = 1,
@@ -764,9 +767,7 @@ public:
                                   const char*,
                                   const SetDefaultColors&,
                                   const QBrush&);
-    ~SchemeManagerPrivate()
-    {
-    }
+    ~SchemeManagerPrivate() = default;
 
     QBrush background(SchemeManager::BackgroundRole) const;
     QBrush foreground(SchemeManager::ForegroundRole) const;
@@ -974,10 +975,6 @@ SchemeManager& SchemeManager::operator=(const SchemeManager& other)
     d = other.d;
 
     return *this;
-}
-
-SchemeManager::~SchemeManager()
-{
 }
 
 SchemeManager::SchemeManager(QPalette::ColorGroup state,

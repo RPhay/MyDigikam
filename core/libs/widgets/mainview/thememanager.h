@@ -48,7 +48,7 @@ class DIGIKAM_EXPORT ThemeManager : public QObject
 
 public:
 
-    ~ThemeManager() override;
+    ~ThemeManager()                   override;
     static ThemeManager* instance();
 
     QString currentThemeName() const;

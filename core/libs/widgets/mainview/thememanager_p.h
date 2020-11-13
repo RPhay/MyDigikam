@@ -330,7 +330,7 @@ public:
     /**
      * Destructor
      */
-    virtual ~SchemeManager();
+    ~SchemeManager() = default;
 
     /**
      * Standard assignment operator
@@ -348,17 +348,17 @@ public:
     /**
      * Retrieve the requested background brush.
      */
-    QBrush background(BackgroundRole = NormalBackground) const;
+    QBrush background(BackgroundRole = NormalBackground)    const;
 
     /**
      * Retrieve the requested foreground brush.
      */
-    QBrush foreground(ForegroundRole = NormalText) const;
+    QBrush foreground(ForegroundRole = NormalText)          const;
 
     /**
      * Retrieve the requested decoration brush.
      */
-    QBrush decoration(DecorationRole) const;
+    QBrush decoration(DecorationRole)                       const;
 
     /**
      * Retrieve the requested shade color, using
@@ -373,7 +373,7 @@ public:
      * Conversely, if the base color is very light, the 'light' shades will be
      * darker than the base color, with light() == mid().
      */
-    QColor shade(ShadeRole) const;
+    QColor shade(ShadeRole)                                 const;
 
     /**
      * Returns the contrast for borders.
@@ -483,7 +483,7 @@ public:
 public:
 
     const QString          defaultThemeName;
-    QMap<QString, QString> themeMap;            // map<theme name, theme config path>
+    QMap<QString, QString> themeMap;            ///< map<theme name, theme config path>
 
     QActionGroup*          themeMenuActionGroup;
     QMenu*                 themeMenuAction;
