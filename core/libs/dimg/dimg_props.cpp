@@ -169,29 +169,21 @@ DRawDecoding DImg::rawDecodingSettings() const
 
 IccProfile DImg::getIccProfile() const
 {
-    QMutexLocker lock(&m_priv->mutex);
-
     return m_priv->iccProfile;
 }
 
 void DImg::setIccProfile(const IccProfile& profile)
 {
-    QMutexLocker lock(&m_priv->mutex);
-
     m_priv->iccProfile = profile;
 }
 
 MetaEngineData DImg::getMetadata() const
 {
-    QMutexLocker lock(&m_priv->mutex);
-
     return m_priv->metaData;
 }
 
 void DImg::setMetadata(const MetaEngineData& data)
 {
-    QMutexLocker lock(&m_priv->mutex);
-
     m_priv->metaData = data;
 }
 
@@ -230,15 +222,11 @@ int DImg::bitsDepth() const
 
 void DImg::setAttribute(const QString& key, const QVariant& value)
 {
-    QMutexLocker lock(&m_priv->mutex);
-
     m_priv->attributes.insert(key, value);
 }
 
 QVariant DImg::attribute(const QString& key) const
 {
-    QMutexLocker lock(&m_priv->mutex);
-
     if (m_priv->attributes.contains(key))
     {
         return m_priv->attributes[key];
@@ -249,29 +237,21 @@ QVariant DImg::attribute(const QString& key) const
 
 bool DImg::hasAttribute(const QString& key) const
 {
-    QMutexLocker lock(&m_priv->mutex);
-
     return m_priv->attributes.contains(key);
 }
 
 void DImg::removeAttribute(const QString& key)
 {
-    QMutexLocker lock(&m_priv->mutex);
-
     m_priv->attributes.remove(key);
 }
 
 void DImg::setEmbeddedText(const QString& key, const QString& text)
 {
-    QMutexLocker lock(&m_priv->mutex);
-
     m_priv->embeddedText.insert(key, text);
 }
 
 QString DImg::embeddedText(const QString& key) const
 {
-    QMutexLocker lock(&m_priv->mutex);
-
     if (m_priv->embeddedText.contains(key))
     {
         return m_priv->embeddedText[key];

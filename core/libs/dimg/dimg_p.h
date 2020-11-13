@@ -154,8 +154,6 @@ public:
     unsigned char*          data;
     LANCZOS_DATA_TYPE*      lanczos_func;
 
-    QMutex                  mutex;
-
     MetaEngineData          metaData;
     QMap<QString, QVariant> attributes;
     QMap<QString, QString>  embeddedText;

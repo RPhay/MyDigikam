@@ -270,8 +270,6 @@ void DImg::rotate(ANGLE angle)
 
     if (switchDims)
     {
-        QMutexLocker lock(&m_priv->mutex);
-
         setImageDimension(height(), width());
         QMap<QString, QVariant>::iterator it = m_priv->attributes.find(QLatin1String("originalSize"));
 
