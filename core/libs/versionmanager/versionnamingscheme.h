@@ -44,9 +44,8 @@ public:
     /**
      * Creates and analyzes file names of versioned files.
      */
-    virtual ~VersionNamingScheme()
-    {
-    }
+    VersionNamingScheme()                                               = default;
+    virtual ~VersionNamingScheme()                                      = default;
 
     /**
      * Analyzes the given file name.
@@ -58,8 +57,10 @@ public:
      * write it to counter. If not available, do not touch the given counters.
      * See initialCounter() for the valid counter formats.
      */
-    virtual QString baseName(const QString& path, const QString& filename,
-                             QVariant* counter = nullptr, QVariant* intermediateCounter = nullptr) = 0;
+    virtual QString baseName(const QString& path,
+                             const QString& filename,
+                             QVariant* counter = nullptr,
+                             QVariant* intermediateCounter = nullptr)   = 0;
 
     /**
      * Creates a version file name for a file in given directory, as previously returned by directory(),
@@ -67,8 +68,9 @@ public:
      * Do not append a file suffix.
      * You do not need to check if the file exists.
      */
-    virtual QString versionFileName(const QString& path, const QString& baseName,
-                                    const QVariant& counter) = 0;
+    virtual QString versionFileName(const QString& path,
+                                    const QString& baseName,
+                                    const QVariant& counter)            = 0;
 
     /**
      * Creates a version file name for an intermediate file in given directory,
@@ -77,15 +79,19 @@ public:
      * Do not append a file suffix.
      * You do not need to check if the file exists.
      */
-    virtual QString intermediateFileName(const QString& path, const QString& filename,
-                                         const QVariant& version, const QVariant& counter) = 0;
+    virtual QString intermediateFileName(const QString& path,
+                                         const QString& filename,
+                                         const QVariant& version,
+                                         const QVariant& counter)       = 0;
 
     /**
      * For a loaded file in directory path and with file name filename,
      * returns the directory in which a new version (a new intermediate version, resp.) shall be stored.
      */
-    virtual QString directory(const QString& path, const QString& filename) = 0;
-    virtual QString intermediateDirectory(const QString& currentPath, const QString& fileName) = 0;
+    virtual QString directory(const QString& path,
+                              const QString& filename)                  = 0;
+    virtual QString intermediateDirectory(const QString& currentPath,
+                                          const QString& fileName)      = 0;
 
     /**
      * Returns an initial counter value for version and intermediate number counters.
@@ -94,13 +100,17 @@ public:
      * versionFileName() and baseName(), and you shall read a counter value from a
      * generated file name in baseName().
      */
-    virtual QVariant initialCounter() = 0;
+    virtual QVariant initialCounter()                                   = 0;
 
     /**
      * Returns the given counter "incremented", that is, changed in a steady, repeatable fashion.
      * You shall never return the given counter.
      */
-    virtual QVariant incrementedCounter(const QVariant& counter) = 0;
+    virtual QVariant incrementedCounter(const QVariant& counter)        = 0;
+
+private:
+
+    Q_DISABLE_COPY(VersionNamingScheme)
 };
 
 // -----------------------------------------------------------------------------------------------------
@@ -108,6 +118,9 @@ public:
 class Q_DECL_HIDDEN DefaultVersionNamingScheme : public VersionNamingScheme
 {
 public:
+
+    DefaultVersionNamingScheme()                                                                = default;
+    virtual ~DefaultVersionNamingScheme()                                                       = default;
 
     virtual QString baseName(const QString& currentPath, const QString& filename,
                              QVariant* counter, QVariant* intermediateCounter)                  override;
@@ -119,6 +132,10 @@ public:
     virtual QString intermediateDirectory(const QString& currentPath, const QString& fileName)  override;
     virtual QVariant initialCounter()                                                           override;
     virtual QVariant incrementedCounter(const QVariant& counter)                                override;
+
+private:
+
+    Q_DISABLE_COPY(DefaultVersionNamingScheme)
 };
 
 } // namespace Digikam
