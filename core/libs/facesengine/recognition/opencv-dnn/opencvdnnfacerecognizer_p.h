@@ -207,6 +207,10 @@ private:
     QVector<int>&                           ids;
 
     OpenCVDNNFaceRecognizer::Private* const d;
+
+private:
+
+    Q_DISABLE_COPY(ParallelRecognizer)
 };
 
 class OpenCVDNNFaceRecognizer::Private::ParallelTrainer: public cv::ParallelLoopBody
@@ -245,6 +249,10 @@ private:
     const QString&                          context;
 
     OpenCVDNNFaceRecognizer::Private* const d;
+
+private:
+
+    Q_DISABLE_COPY(ParallelTrainer)
 };
 
 bool OpenCVDNNFaceRecognizer::Private::trainSVM()
