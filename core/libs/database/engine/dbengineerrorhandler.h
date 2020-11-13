@@ -43,9 +43,15 @@ class DIGIKAM_EXPORT DbEngineErrorAnswer
 
 public:
 
-    virtual ~DbEngineErrorAnswer();
+    DbEngineErrorAnswer()                         = default;
+    virtual ~DbEngineErrorAnswer()                = default;
+
     virtual void connectionErrorContinueQueries() = 0;
     virtual void connectionErrorAbortQueries()    = 0;
+
+private:
+
+    Q_DISABLE_COPY(DbEngineErrorAnswer)
 };
 
 // -----------------------------------------------------------------
@@ -57,7 +63,7 @@ class DIGIKAM_EXPORT DbEngineErrorHandler : public QObject
 public:
 
     explicit DbEngineErrorHandler();
-    ~DbEngineErrorHandler() override;
+    ~DbEngineErrorHandler()                                     override;
 
 public Q_SLOTS:
 
@@ -73,7 +79,9 @@ public Q_SLOTS:
      *  or connectionErrorAbortQueries().
      *  The method is guaranteed to be invoked in the UI thread.
      */
-    virtual void connectionError(DbEngineErrorAnswer* answer, const QSqlError& error, const QString& query) = 0;
+    virtual void connectionError(DbEngineErrorAnswer* answer,
+                                 const QSqlError& error,
+                                 const QString& query)          = 0;
 
     /**
      *  In the situation of an error requiring user intervention or information,
@@ -84,7 +92,9 @@ public Q_SLOTS:
      *  or connectionErrorAbortQueries().
      *  The method is guaranteed to be invoked in the UI thread.
      */
-    virtual void consultUserForError(DbEngineErrorAnswer* answer, const QSqlError& error, const QString& query) = 0;
+    virtual void consultUserForError(DbEngineErrorAnswer* answer,
+                                     const QSqlError& error,
+                                     const QString& query)      = 0;
 
 private:
 

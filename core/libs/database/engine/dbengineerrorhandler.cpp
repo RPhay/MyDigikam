@@ -27,12 +27,6 @@
 namespace Digikam
 {
 
-DbEngineErrorAnswer::~DbEngineErrorAnswer()
-{
-}
-
-// ------------------------------------------------------------------------------------
-
 DbEngineErrorHandler::DbEngineErrorHandler()
 {
 }
