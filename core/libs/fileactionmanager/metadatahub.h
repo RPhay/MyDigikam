@@ -46,7 +46,7 @@ class ApplicationSettings;
 class ItemInfo;
 class Template;
 
-class MetadataHub
+class MetadataHub            // clazy:exclude=copyable-polymorphic
 {
 public:
 
@@ -111,7 +111,9 @@ public:
     MetadataHub();
     virtual ~MetadataHub();
 
-    /// Copies by value - no sharing involved.
+    /**
+     * Copies by value - no sharing involved.
+     */
     MetadataHub& operator=(const MetadataHub&);
     MetadataHub(const MetadataHub&);
 
@@ -155,8 +157,10 @@ public:
      * @param settings
      * @return true           - if everything is successful
      */
-    bool writeToMetadata(const ItemInfo& info, WriteComponent writeMode = WRITE_ALL,
-               bool ignoreLazySync = false, const MetaEngineSettingsContainer& settings = MetaEngineSettings::instance()->settings());
+    bool writeToMetadata(const ItemInfo& info,
+                         WriteComponent writeMode = WRITE_ALL,
+                         bool ignoreLazySync = false,
+                         const MetaEngineSettingsContainer& settings = MetaEngineSettings::instance()->settings());
 
 
     /**
@@ -168,23 +172,28 @@ public:
      *          Use writeToMetadata(Image info ...) instead
      * @return Returns if the file has been touched
      */
-    bool write(const QString& filePath, WriteComponent writeMode = WRITE_ALL,
-               bool ignoreLazySync = false, const MetaEngineSettingsContainer& settings = MetaEngineSettings::instance()->settings());
+    bool write(const QString& filePath,
+               WriteComponent writeMode = WRITE_ALL,
+               bool ignoreLazySync = false,
+               const MetaEngineSettingsContainer& settings = MetaEngineSettings::instance()->settings());
 
     /**
      * Constructs a meta engine object from the metadata stored in the given DImg object,
      * calls the above method, and changes the stored metadata in the DImg object.
      * @return Returns if the DImg object has been touched
      */
-    bool write(DImg& image, WriteComponent writeMode = WRITE_ALL,
-               bool ignoreLazySync = false, const MetaEngineSettingsContainer& settings = MetaEngineSettings::instance()->settings());
+    bool write(DImg& image,
+               WriteComponent writeMode = WRITE_ALL,
+               bool ignoreLazySync = false,
+               const MetaEngineSettingsContainer& settings = MetaEngineSettings::instance()->settings());
 
     /**
      * Will write only Tags to image. Used by TagsManager to write tags to image
      * Other metadata are not updated.
      * @return if tags were successfully written.
      */
-    bool writeTags(const QString& filePath, WriteComponent writeMode = WRITE_ALL,
+    bool writeTags(const QString& filePath,
+                   WriteComponent writeMode = WRITE_ALL,
                    const MetaEngineSettingsContainer& settings = MetaEngineSettings::instance()->settings());
 
     /**
@@ -216,7 +225,8 @@ public:
      * @param filePath     - path to file to add comments, tags and rating
      * @param settings     - metadata settings to be set
      */
-    void writeToBaloo(const QString& filePath, const MetaEngineSettingsContainer& settings = MetaEngineSettings::instance()->settings());
+    void writeToBaloo(const QString& filePath,
+                      const MetaEngineSettingsContainer& settings = MetaEngineSettings::instance()->settings());
 
 
     // --------------------------------------------------
@@ -261,13 +271,16 @@ protected:
      * metadata field is not touched.
      * @return Returns true if the metadata object has been touched
      */
-    bool write(DMetadata& metadata, WriteComponent writeMode = WRITE_ALL,
+    bool write(DMetadata& metadata,
+               WriteComponent writeMode = WRITE_ALL,
                const MetaEngineSettingsContainer& settings = MetaEngineSettings::instance()->settings());
 
     void load(const QDateTime& dateTime,
-              const CaptionsMap& titles, const CaptionsMap& comment,
+              const CaptionsMap& titles,
+              const CaptionsMap& comment,
               int colorLabel, int pickLabel,
               int rating, const Template& t);
+
     void loadTags(const QList<int>& loadedTagIds);
     void loadTags(const QStringList& loadedTagPaths);
     void notifyTagDeleted(int id);

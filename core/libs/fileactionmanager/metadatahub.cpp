@@ -60,17 +60,17 @@ class Q_DECL_HIDDEN MetadataHub::Private
 public:
 
     explicit Private()
-      : pickLabel(-1),
-        colorLabel(-1),
-        rating(-1),
-        count(0),
-        dateTimeStatus(MetadataHub::MetadataInvalid),
-        titlesStatus(MetadataHub::MetadataInvalid),
-        commentsStatus(MetadataHub::MetadataInvalid),
-        pickLabelStatus(MetadataHub::MetadataInvalid),
+      : pickLabel       (-1),
+        colorLabel      (-1),
+        rating          (-1),
+        count           (0),
+        dateTimeStatus  (MetadataHub::MetadataInvalid),
+        titlesStatus    (MetadataHub::MetadataInvalid),
+        commentsStatus  (MetadataHub::MetadataInvalid),
+        pickLabelStatus (MetadataHub::MetadataInvalid),
         colorLabelStatus(MetadataHub::MetadataInvalid),
-        ratingStatus(MetadataHub::MetadataInvalid),
-        templateStatus(MetadataHub::MetadataInvalid)
+        ratingStatus    (MetadataHub::MetadataInvalid),
+        templateStatus  (MetadataHub::MetadataInvalid)
     {
     }
 
@@ -163,9 +163,9 @@ void MetadataHub::load(const ItemInfo& info)
 
     Template tref = info.metadataTemplate();
     Template t    = TemplateManager::defaultManager()->findByContents(tref);
-
-    //qCDebug(DIGIKAM_GENERAL_LOG) << "Found Metadata Template: " << t.templateTitle();
-
+/*
+    qCDebug(DIGIKAM_GENERAL_LOG) << "Found Metadata Template: " << t.templateTitle();
+*/
     load(info.dateTime(),
          titleMap,
          commentMap,
@@ -182,7 +182,9 @@ void MetadataHub::load(const ItemInfo& info)
     d->itemPosition = info.imagePosition();
 }
 
-// private common code to merge tags
+/**
+ * private common code to merge tags
+ */
 void MetadataHub::loadTags(const QList<int>& loadedTags)
 {
     d->tags.clear();
@@ -198,7 +200,9 @@ void MetadataHub::loadTags(const QList<int>& loadedTags)
     }
 }
 
-// private common code to load dateTime, comment, color label, pick label, rating
+/**
+ * private common code to load dateTime, comment, color label, pick label, rating
+ */
 void MetadataHub::load(const QDateTime& dateTime,
                        const CaptionsMap& titles, const CaptionsMap& comments,
                        int colorLabel, int pickLabel,
@@ -222,7 +226,9 @@ void MetadataHub::load(const QDateTime& dateTime,
     d->loadSingleValue<Template>(t, d->metadataTemplate, d->templateStatus);
 }
 
-// template method used by comment and template
+/**
+ * template method used by comment and template
+ */
 template <class T> void MetadataHub::Private::loadSingleValue(const T& data, T& storage,
                                                               MetadataHub::Status& status)
 {
@@ -241,7 +247,9 @@ template <class T> void MetadataHub::Private::loadSingleValue(const T& data, T& 
 
 // ------------------------------------------------------------------------------------------------------------
 
-/** safe **/
+/**
+ * safe method
+ **/
 bool MetadataHub::writeToMetadata(const ItemInfo& info, WriteComponent writeMode, bool ignoreLazySync, const MetaEngineSettingsContainer &settings)
 {
     applyChangeNotifications();
@@ -284,6 +292,7 @@ bool MetadataHub::write(DMetadata& metadata, WriteComponent writeMode, const Met
     metadata.setSettings(settings);
 
     // find out in advance if we have something to write - needed for FullWriteIfChanged mode
+
     bool saveTitle      = (settings.saveComments   && (d->titlesStatus     == MetadataAvailable) && writeMode.testFlag(WRITE_TITLE));
     bool saveComment    = (settings.saveComments   && (d->commentsStatus   == MetadataAvailable) && writeMode.testFlag(WRITE_COMMENTS));
     bool saveDateTime   = (settings.saveDateTime   && (d->dateTimeStatus   == MetadataAvailable) && writeMode.testFlag(WRITE_DATETIME));
@@ -298,36 +307,42 @@ bool MetadataHub::write(DMetadata& metadata, WriteComponent writeMode, const Met
     if (saveTitle)
     {
         // Store titles in image as Iptc Object name and Xmp.
+
         dirty |= metadata.setItemTitles(d->titles);
     }
 
     if (saveComment)
     {
         // Store comments in image as JFIF comments, Exif comments, Iptc Caption, and Xmp.
+
         dirty |= metadata.setItemComments(d->comments);
     }
 
     if (saveDateTime)
     {
         // Store Image Date & Time as Exif and Iptc tags.
+
         dirty |= metadata.setImageDateTime(d->dateTime, false);
     }
 
     if (savePickLabel)
     {
         // Store Image Pick Label as XMP tag.
+
         dirty |= metadata.setItemPickLabel(d->pickLabel);
     }
 
     if (saveColorLabel)
     {
         // Store Image Color Label as XMP tag.
+
         dirty |= metadata.setItemColorLabel(d->colorLabel);
     }
 
     if (saveRating)
     {
         // Store Image rating as Iptc tag.
+
         dirty |= metadata.setItemRating(d->rating);
     }
 
@@ -571,7 +586,7 @@ QStringList MetadataHub::cleanupTags(const QStringList& toClean)
 
         if (!keyword.isEmpty())
         {
-            // _Digikam_root_tag_ is present in some photos tagged with older
+            // digiKam_root_tag is present in some photos tagged with older
             // version of digiKam, must be removed
 
             if (keyword.contains(QRegExp(QLatin1String("(_Digikam_root_tag_/|/_Digikam_root_tag_|_Digikam_root_tag_)"))))
@@ -619,6 +634,7 @@ bool MetadataHub::willWriteMetadata(WriteComponent writeMode, const MetaEngineSe
 
 void MetadataHub::writeToBaloo(const QString& filePath, const MetaEngineSettingsContainer& settings)
 {
+
 #ifdef HAVE_KFILEMETADATA
 
     BalooWrap* const baloo = BalooWrap::instance();
@@ -669,10 +685,14 @@ void MetadataHub::writeToBaloo(const QString& filePath, const MetaEngineSettings
     newKeywords = cleanupTags(newKeywords);
     QUrl url    = QUrl::fromLocalFile(filePath);
     baloo->setAllData(url, &newKeywords, comment, rating);
+
 #else
+
     Q_UNUSED(filePath);
     Q_UNUSED(settings);
+
 #endif
+
 }
 
 void MetadataHub::applyChangeNotifications()
@@ -682,12 +702,13 @@ void MetadataHub::applyChangeNotifications()
 void Digikam::MetadataHub::loadFaceTags(const ItemInfo& info, const QSize& size)
 {
     FaceTagsEditor editor;
-
-    //qCDebug(DIGIKAM_GENERAL_LOG) << "Image Dimensions ----------------" << info.dimensions();
-
+/*
+    qCDebug(DIGIKAM_GENERAL_LOG) << "Image Dimensions ----------------" << info.dimensions();
+*/
     QList<FaceTagsIface> facesList = editor.confirmedFaceTagsIfaces(info.id());
 
-    /// ignored faces metadata needs to be written to Images.
+    // ignored faces metadata needs to be written to Images.
+
     facesList.append(editor.ignoredFaceTagsIfaces(info.id()));
 
     d->faceTagsList.clear();
