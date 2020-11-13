@@ -47,37 +47,39 @@
 namespace Digikam
 {
 
-// This class was split from Private to be able to use the automatic C++ copy constructor
-// (Private contains a QMutex and is thus non-copyable)
+/**
+ * This class was split from Private to be able to use the automatic C++ copy constructor
+ * (Private contains a QMutex and is thus non-copyable)
+ */
 class Q_DECL_HIDDEN DisjointMetadataDataFields
 {
 public:
 
     DisjointMetadataDataFields()
-        : dateTimeChanged(false),
-          titlesChanged(false),
-          commentsChanged(false),
-          pickLabelChanged(false),
-          colorLabelChanged(false),
-          ratingChanged(false),
-          templateChanged(false),
-          tagsChanged(false),
-          withoutTags(false),
-          pickLabel(-1),
-          highestPickLabel(-1),
-          colorLabel(-1),
-          highestColorLabel(-1),
-          rating(-1),
-          highestRating(-1),
-          count(0),
-          dateTimeStatus(DisjointMetadata::MetadataInvalid),
-          titlesStatus(DisjointMetadata::MetadataInvalid),
-          commentsStatus(DisjointMetadata::MetadataInvalid),
-          pickLabelStatus(DisjointMetadata::MetadataInvalid),
-          colorLabelStatus(DisjointMetadata::MetadataInvalid),
-          ratingStatus(DisjointMetadata::MetadataInvalid),
-          templateStatus(DisjointMetadata::MetadataInvalid),
-          invalid(false)
+        : dateTimeChanged   (false),
+          titlesChanged     (false),
+          commentsChanged   (false),
+          pickLabelChanged  (false),
+          colorLabelChanged (false),
+          ratingChanged     (false),
+          templateChanged   (false),
+          tagsChanged       (false),
+          withoutTags       (false),
+          pickLabel         (-1),
+          highestPickLabel  (-1),
+          colorLabel        (-1),
+          highestColorLabel (-1),
+          rating            (-1),
+          highestRating     (-1),
+          count             (0),
+          dateTimeStatus    (DisjointMetadata::MetadataInvalid),
+          titlesStatus      (DisjointMetadata::MetadataInvalid),
+          commentsStatus    (DisjointMetadata::MetadataInvalid),
+          pickLabelStatus   (DisjointMetadata::MetadataInvalid),
+          colorLabelStatus  (DisjointMetadata::MetadataInvalid),
+          ratingStatus      (DisjointMetadata::MetadataInvalid),
+          templateStatus    (DisjointMetadata::MetadataInvalid),
+          invalid           (false)
     {
     }
 
@@ -263,7 +265,9 @@ void DisjointMetadata::load(const ItemInfo& info)
     {
         Template tref    = info.metadataTemplate();
         Template t       = TemplateManager::defaultManager()->findByContents(tref);
-        //qCDebug(DIGIKAM_GENERAL_LOG) << "Found Metadata Template: " << t.templateTitle();
+/*
+        qCDebug(DIGIKAM_GENERAL_LOG) << "Found Metadata Template: " << t.templateTitle();
+*/
         metadataTemplate = t.isNull() ? tref : t;
     }
 
@@ -419,7 +423,7 @@ void DisjointMetadata::setMetadataTemplate(const Template& t, DisjointMetadata::
 void DisjointMetadata::setTag(int albumID, DisjointMetadata::Status status)
 {
     d->tags[albumID] = status;
-    d->tagsChanged = true;
+    d->tagsChanged   = true;
 }
 
 void DisjointMetadata::resetChanged()
@@ -562,6 +566,7 @@ bool DisjointMetadata::willWriteMetadata(DisjointMetadata::WriteMode writeMode, 
 {
     // This is the same logic as in write(DMetadata) but without actually writing.
     // Adapt if the method above changes
+
     bool saveTitle      = (settings.saveComments   && d->titlesStatus     == MetadataAvailable);
     bool saveComment    = (settings.saveComments   && d->commentsStatus   == MetadataAvailable);
     bool saveDateTime   = (settings.saveDateTime   && d->dateTimeStatus   == MetadataAvailable);
@@ -926,6 +931,7 @@ QStringList DisjointMetadata::keywords() const
 QMap<int, DisjointMetadata::Status> DisjointMetadata::tags() const
 {
     // DatabaseMode == ManagedTags is assumed
+
     return d->tags;
 }
 
@@ -942,12 +948,14 @@ template <class T> void DisjointMetadata::Private::loadSingleValue(const T& data
         case DisjointMetadata::MetadataAvailable:
 
             // we have two values. If they are equal, status is unchanged
+
             if (data == storage)
             {
                 break;
             }
 
             // they are not equal. We need to enter the disjoint state.
+
             status = DisjointMetadata::MetadataDisjoint;
             break;
 
