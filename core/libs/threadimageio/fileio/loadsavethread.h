@@ -220,7 +220,7 @@ public:
     void loadingProgress(const LoadingDescription& loadingDescription, float progress)    override;
     void imageLoaded(const LoadingDescription& loadingDescription, const DImg& img)       override;
     void moreCompleteLoadingAvailable(const LoadingDescription& oldLoadingDescription,
-                                              const LoadingDescription& newLoadingDescription)    override;
+                                      const LoadingDescription& newLoadingDescription)    override;
     void imageStartedSaving(const QString& filePath)                                      override;
     void savingProgress(const QString& filePath, float progress)                          override;
     void imageSaved(const QString& filePath, bool success)                                override;
