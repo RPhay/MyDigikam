@@ -49,7 +49,9 @@ namespace Digikam
 class Template;
 class IccProfile;
 
-class DIGIKAM_EXPORT DMetadata : public MetaEngine
+// TODO: merge with MetaEngine class and fix copyable polymorphic Clazy repoort.
+
+class DIGIKAM_EXPORT DMetadata : public MetaEngine      // clazy:exclude=copyable-polymorphic
 {
 
 public:

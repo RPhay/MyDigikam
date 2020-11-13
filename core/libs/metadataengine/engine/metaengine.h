@@ -52,7 +52,9 @@
 namespace Digikam
 {
 
-class DIGIKAM_EXPORT MetaEngine
+// TODO: merge with DMetadata class and fix copyable polymorphic Clazy repoort.
+
+class DIGIKAM_EXPORT MetaEngine      // clazy:exclude=copyable-polymorphic
 {
 
 public:
