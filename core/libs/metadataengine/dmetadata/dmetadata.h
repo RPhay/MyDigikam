@@ -49,9 +49,9 @@ namespace Digikam
 class Template;
 class IccProfile;
 
-// TODO: merge with MetaEngine class and fix copyable polymorphic Clazy repoort.
+// TODO: merge with MetaEngine class.
 
-class DIGIKAM_EXPORT DMetadata : public MetaEngine      // clazy:exclude=copyable-polymorphic
+class DIGIKAM_EXPORT DMetadata : public MetaEngine
 {
 
 public:
@@ -88,10 +88,10 @@ public: // Settings helpers
 public: // File I/O helpers
 
     /**
-     * Re-implemented from libMetaEngine to use libraw identify, libheif, and
+     * Re-implemented from MetaEngine to use libraw identify, libheif, and
      * ffmpeg probe methods if Exiv2 failed.
      */
-    bool load(const QString& filePath)                                                                                        override;
+    bool load(const QString& filePath);
     bool save(const QString& filePath, bool setVersion = false)                                                         const;
     bool applyChanges(bool setVersion = false)                                                                          const;
 

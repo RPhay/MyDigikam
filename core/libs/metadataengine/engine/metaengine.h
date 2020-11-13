@@ -52,9 +52,9 @@
 namespace Digikam
 {
 
-// TODO: merge with DMetadata class and fix copyable polymorphic Clazy repoort.
+// TODO: merge with DMetadata class.
 
-class DIGIKAM_EXPORT MetaEngine      // clazy:exclude=copyable-polymorphic
+class DIGIKAM_EXPORT MetaEngine
 {
 
 public:
@@ -357,7 +357,7 @@ public:
      * Load all metadata (Exif, Iptc, Xmp, and JFIF Comments) from a picture (JPEG, RAW, TIFF, PNG,
      * DNG, etc...). Return true if metadata have been loaded successfully from file.
      */
-    virtual bool load(const QString& filePath);
+    bool load(const QString& filePath);
 
     /**
      * Load metadata from a sidecar file and merge.
