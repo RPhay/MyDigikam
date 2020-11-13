@@ -62,12 +62,12 @@ public:
     explicit HistoryTreeItem();
     virtual ~HistoryTreeItem();
 
-    virtual HistoryTreeItemType type() const
+    virtual HistoryTreeItemType type()  const
     {
         return UnspecifiedType;
     }
 
-    bool isType(HistoryTreeItemType t) const
+    bool isType(HistoryTreeItemType t)  const
     {
         return (type() == t);
     }
@@ -79,7 +79,7 @@ public:
         return children.size();
     }
 
-    HistoryTreeItem* child(int index) const
+    HistoryTreeItem* child(int index)   const
     {
         return children.at(index);
     }
@@ -88,6 +88,10 @@ public:
 
     HistoryTreeItem*        parent;
     QList<HistoryTreeItem*> children;
+
+private:
+
+    Q_DISABLE_COPY(HistoryTreeItem)
 };
 
 // ------------------------------------------------------------------------
@@ -116,6 +120,10 @@ public:
     HistoryGraph::Vertex  vertex;
     QModelIndex           index;
     HistoryImageId::Types category;
+
+private:
+
+    Q_DISABLE_COPY(VertexItem)
 };
 
 // ------------------------------------------------------------------------
@@ -141,6 +149,10 @@ public:
 public:
 
     FilterAction action;
+
+private:
+
+    Q_DISABLE_COPY(FilterActionItem)
 };
 
 // ------------------------------------------------------------------------
@@ -162,6 +174,10 @@ public:
 public:
 
     QString title;
+
+private:
+
+    Q_DISABLE_COPY(HeaderItem)
 };
 
 // ------------------------------------------------------------------------
@@ -183,6 +199,10 @@ public:
 public:
 
     QString title;
+
+private:
+
+    Q_DISABLE_COPY(CategoryItem)
 };
 
 // ------------------------------------------------------------------------
@@ -191,10 +211,16 @@ class Q_DECL_HIDDEN SeparatorItem : public HistoryTreeItem
 {
 public:
 
+    SeparatorItem() = default;
+
     HistoryTreeItemType type() const override
     {
         return SeparatorItemType;
     }
+
+private:
+
+    Q_DISABLE_COPY(SeparatorItem)
 };
 
 // ------------------------------------------------------------------------
@@ -223,8 +249,15 @@ void HistoryTreeItem::addItem(HistoryTreeItem* child)
 
 // ------------------------------------------------------------------------
 
-static bool oldestInfoFirst(const ItemInfo&a, const ItemInfo& b) { return (a.modDateTime() < b.modDateTime()); }
-static bool newestInfoFirst(const ItemInfo&a, const ItemInfo& b) { return (a.modDateTime() > b.modDateTime()); }
+static bool oldestInfoFirst(const ItemInfo&a, const ItemInfo& b)
+{
+    return (a.modDateTime() < b.modDateTime());
+}
+
+static bool newestInfoFirst(const ItemInfo&a, const ItemInfo& b)
+{
+    return (a.modDateTime() > b.modDateTime());
+}
 
 template <typename ItemInfoLessThan>
 
@@ -233,7 +266,7 @@ class Q_DECL_HIDDEN LessThanOnVertexItemInfo
 public:
 
     LessThanOnVertexItemInfo(const HistoryGraph& graph, ItemInfoLessThan imageInfoLessThan)
-        : graph(graph),
+        : graph            (graph),
           imageInfoLessThan(imageInfoLessThan)
     {
     }
@@ -243,7 +276,7 @@ public:
         const HistoryVertexProperties& propsA = graph.properties(a);
         const HistoryVertexProperties& propsB = graph.properties(b);
 
-        if (propsA.infos.isEmpty())
+        if      (propsA.infos.isEmpty())
         {
             return false;
         }
@@ -293,7 +326,8 @@ public:
 
     inline HistoryTreeItem* historyItem(const QModelIndex& index) const
     {
-        return (index.isValid() ? static_cast<HistoryTreeItem*>(index.internalPointer()) : rootItem);
+        return (index.isValid() ? static_cast<HistoryTreeItem*>(index.internalPointer())
+                                : rootItem);
     }
 
     void build();
@@ -326,23 +360,24 @@ VertexItem* ItemHistoryGraphModel::Private::createVertexItem(const HistoryGraph:
     const HistoryVertexProperties& props = graph().properties(v);
     ItemInfo info                        = givenInfo.isNull() ? props.firstItemInfo() : givenInfo;
     QModelIndex index                    = imageModel.indexForItemInfo(info);
-
-    //qCDebug(DIGIKAM_DATABASE_LOG) << "Added" << info.id() << index;
-
+/*
+    qCDebug(DIGIKAM_DATABASE_LOG) << "Added" << info.id() << index;
+*/
     VertexItem* item                     = new VertexItem(v);
     item->index                          = index;
     item->category                       = categories.value(v);
     vertexItems << item;
-
-    //qCDebug(DIGIKAM_DATABASE_LOG) << "Adding vertex item" << graph().properties(v).firstItemInfo().id() << index;
-
+/*
+    qCDebug(DIGIKAM_DATABASE_LOG) << "Adding vertex item" << graph().properties(v).firstItemInfo().id() << index;
+*/
     return item;
 }
 
 FilterActionItem* ItemHistoryGraphModel::Private::createFilterActionItem(const FilterAction& action)
 {
-    //qCDebug(DIGIKAM_DATABASE_LOG) << "Adding vertex item for" << action.displayableName();
-
+/*
+    qCDebug(DIGIKAM_DATABASE_LOG) << "Adding vertex item for" << action.displayableName();
+*/
     return new FilterActionItem(action);
 }
 
@@ -351,9 +386,9 @@ void ItemHistoryGraphModel::Private::build()
     delete rootItem;
     vertexItems.clear();
     rootItem = new HistoryTreeItem;
-
-    //qCDebug(DIGIKAM_DATABASE_LOG) << historyGraph;
-
+/*
+    qCDebug(DIGIKAM_DATABASE_LOG) << historyGraph;
+*/
     HistoryGraph::Vertex ref = graph().findVertexByProperties(info);
     path                     = graph().longestPathTouching(ref, sortBy(newestInfoFirst));
     categories               = graph().categorize();
@@ -379,9 +414,8 @@ void ItemHistoryGraphModel::Private::build()
 
 void ItemHistoryGraphModel::Private::buildImagesList()
 {
-    // clazy:exclude=missing-typeinfo
-    QList<HistoryGraph::Vertex> verticesOrdered = graph().verticesDepthFirstSorted(path.first(),
-                                                                                   sortBy(oldestInfoFirst));
+    QList<HistoryGraph::Vertex> verticesOrdered = graph().verticesDepthFirstSorted(path.first(), sortBy(oldestInfoFirst));  // clazy:exclude=missing-typeinfo
+
     foreach (const HistoryGraph::Vertex& v, verticesOrdered)
     {
         rootItem->addItem(createVertexItem(v));
@@ -390,14 +424,12 @@ void ItemHistoryGraphModel::Private::buildImagesList()
 
 void ItemHistoryGraphModel::Private::buildImagesTree()
 {
-    // clazy:exclude=missing-typeinfo
-    QList<HistoryGraph::Vertex> verticesOrdered = graph().verticesDepthFirstSorted(path.first(),
-                                                                                   sortBy(oldestInfoFirst));
-    // clazy:exclude=missing-typeinfo
-    QMap<HistoryGraph::Vertex, int> distances   = graph().shortestDistancesFrom(path.first());
+    QList<HistoryGraph::Vertex> verticesOrdered = graph().verticesDepthFirstSorted(path.first(), sortBy(oldestInfoFirst));  // clazy:exclude=missing-typeinfo
 
-    // clazy:exclude=missing-typeinfo
-    QList<HistoryGraph::Vertex> sources;
+    QMap<HistoryGraph::Vertex, int> distances   = graph().shortestDistancesFrom(path.first());                              // clazy:exclude=missing-typeinfo
+
+    
+    QList<HistoryGraph::Vertex> sources;                            // clazy:exclude=missing-typeinfo
     int previousLevel                           = 0;
     HistoryTreeItem* parent                     = rootItem;
     VertexItem* item                            = nullptr;
@@ -463,12 +495,9 @@ void ItemHistoryGraphModel::Private::buildCombinedTree(const HistoryGraph::Verte
     CategoryItem *categoryItem                  = new CategoryItem(i18nc("@title", "Image History"));
     rootItem->addItem(categoryItem);
 
-    // clazy:exclude=missing-typeinfo
-    QList<HistoryGraph::Vertex> added;
-    // clazy:exclude=missing-typeinfo
-    QList<HistoryGraph::Vertex> currentVersions = categories.keys(HistoryImageId::Current);
-    // clazy:exclude=missing-typeinfo
-    QList<HistoryGraph::Vertex> leavesFromRef   = graph().leavesFrom(ref);
+    QList<HistoryGraph::Vertex> added;                                                          // clazy:exclude=missing-typeinfo
+    QList<HistoryGraph::Vertex> currentVersions = categories.keys(HistoryImageId::Current);     // clazy:exclude=missing-typeinfo
+    QList<HistoryGraph::Vertex> leavesFromRef   = graph().leavesFrom(ref);                      // clazy:exclude=missing-typeinfo
 
     bool onePath = (leavesFromRef.size() <= 1);
 
@@ -479,18 +508,18 @@ void ItemHistoryGraphModel::Private::buildCombinedTree(const HistoryGraph::Verte
 /*
         HistoryGraph::Vertex next           = i < path.size() - 1 ? path[i+1] : HistoryGraph::Vertex();
 */
-//        qCDebug(DIGIKAM_DATABASE_LOG) << "Vertex on path" << path[i];
-
+/*
+        qCDebug(DIGIKAM_DATABASE_LOG) << "Vertex on path" << path[i];
+*/
         // create new item
+
         item                                = createVertexItem(v);
 
-        // clazy:exclude=missing-typeinfo
-        QList<HistoryGraph::Vertex> vertices;
+        QList<HistoryGraph::Vertex> vertices;       // clazy:exclude=missing-typeinfo
 
         // any extra sources?
 
-        // clazy:exclude=missing-typeinfo
-        QList<HistoryGraph::Vertex> sources = graph().adjacentVertices(item->vertex, HistoryGraph::EdgesToRoot);
+        QList<HistoryGraph::Vertex> sources = graph().adjacentVertices(item->vertex, HistoryGraph::EdgesToRoot);    // clazy:exclude=missing-typeinfo
 
         foreach (const HistoryGraph::Vertex& source, sources)
         {
@@ -502,6 +531,7 @@ void ItemHistoryGraphModel::Private::buildCombinedTree(const HistoryGraph::Verte
 
 /*
         // Any other egdes off the main path?
+
         QList<HistoryGraph::Vertex> branches = graph().adjacentVertices(v, HistoryGraph::EdgesToLeaf);
         QList<HistoryGraph::Vertex> subgraph;
 
@@ -591,8 +621,7 @@ void ItemHistoryGraphModel::Private::addCombinedItemCategory(HistoryTreeItem* pa
 
         item                                     = createVertexItem(v);
 
-        // clazy:exclude=missing-typeinfo
-        QList<HistoryGraph::Vertex> shortestPath = graph().shortestPath(showActionsFrom, v);
+        QList<HistoryGraph::Vertex> shortestPath = graph().shortestPath(showActionsFrom, v);     // clazy:exclude=missing-typeinfo
 
         // add all filter actions showActionsFrom -> v above item
 
@@ -675,7 +704,7 @@ void ItemHistoryGraphModel::Private::addIdenticalItems(HistoryTreeItem* parentIt
 
 ItemHistoryGraphModel::ItemHistoryGraphModel(QObject* const parent)
     : QAbstractItemModel(parent),
-      d(new Private)
+      d                 (new Private)
 {
     d->rootItem = new HistoryTreeItem;
 }
