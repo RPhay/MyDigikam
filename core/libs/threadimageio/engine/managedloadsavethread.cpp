@@ -97,7 +97,7 @@ LoadingTask* ManagedLoadSaveThread::checkLoadingTask(LoadSaveTask* const task, L
 {
     if (task && (task->type() == LoadSaveTask::TaskTypeLoading))
     {
-        LoadingTask* const loadingTask = static_cast<LoadingTask*>(task);
+        LoadingTask* const loadingTask = dynamic_cast<LoadingTask*>(task);
 
         if      (filter == LoadingTaskFilterAll)
         {
@@ -105,7 +105,7 @@ LoadingTask* ManagedLoadSaveThread::checkLoadingTask(LoadSaveTask* const task, L
         }
         else if (filter == LoadingTaskFilterPreloading)
         {
-            if (loadingTask->status() == LoadingTask::LoadingTaskStatusPreloading)
+            if (loadingTask && (loadingTask->status() == LoadingTask::LoadingTaskStatusPreloading))
             {
                 return loadingTask;
             }
@@ -123,12 +123,16 @@ LoadingTask* ManagedLoadSaveThread::findExistingTask(const LoadingDescription& l
     {
         if (m_currentTask->type() == LoadSaveTask::TaskTypeLoading)
         {
-            loadingTask                               = static_cast<LoadingTask*>(m_currentTask);
-            const LoadingDescription& taskDescription = loadingTask->loadingDescription();
+            loadingTask = dynamic_cast<LoadingTask*>(m_currentTask);
 
-            if (taskDescription == loadingDescription)
+            if (loadingTask)
             {
-                return loadingTask;
+                const LoadingDescription& taskDescription = loadingTask->loadingDescription();
+
+                if (taskDescription == loadingDescription)
+                {
+                    return loadingTask;
+                }
             }
         }
     }
@@ -139,9 +143,9 @@ LoadingTask* ManagedLoadSaveThread::findExistingTask(const LoadingDescription& l
 
         if (task->type() == LoadSaveTask::TaskTypeLoading)
         {
-            loadingTask = static_cast<LoadingTask*>(task);
+            loadingTask = dynamic_cast<LoadingTask*>(task);
 
-            if (loadingTask->loadingDescription() == loadingDescription)
+            if (loadingTask && (loadingTask->loadingDescription() == loadingDescription))
             {
                 return loadingTask;
             }
@@ -471,7 +475,7 @@ void ManagedLoadSaveThread::prependThumbnailGroup(const QList<LoadingDescription
 
         if (existingTask)
         {
-            if (existingTask == static_cast<LoadingTask*>(m_currentTask))
+            if (existingTask == dynamic_cast<LoadingTask*>(m_currentTask))
             {
                 continue;
             }
@@ -547,11 +551,21 @@ void ManagedLoadSaveThread::stopAllTasks()
     {
         if      (m_currentTask->type() == LoadSaveTask::TaskTypeSaving)
         {
-            static_cast<SavingTask*>(m_currentTask)->setStatus(SavingTask::SavingTaskStatusStopping);
+            SavingTask* const savingTask = dynamic_cast<SavingTask*>(m_currentTask);
+
+            if (savingTask)
+            {
+                savingTask->setStatus(SavingTask::SavingTaskStatusStopping);
+            }
         }
         else if (m_currentTask->type() == LoadSaveTask::TaskTypeLoading)
         {
-            static_cast<LoadingTask*>(m_currentTask)->setStatus(LoadingTask::LoadingTaskStatusStopping);
+            LoadingTask* const loadingTask = dynamic_cast<LoadingTask*>(m_currentTask);
+
+            if (loadingTask)
+            {
+                loadingTask->setStatus(LoadingTask::LoadingTaskStatusStopping);
+            }
         }
     }
 
@@ -571,9 +585,9 @@ void ManagedLoadSaveThread::stopSaving(const QString& filePath)
 
     if (m_currentTask && (m_currentTask->type() == LoadSaveTask::TaskTypeSaving))
     {
-        SavingTask* const savingTask = static_cast<SavingTask*>(m_currentTask);
+        SavingTask* const savingTask = dynamic_cast<SavingTask*>(m_currentTask);
 
-        if (filePath.isNull() || (savingTask->filePath() == filePath))
+        if (savingTask && (filePath.isNull() || (savingTask->filePath() == filePath)))
         {
             savingTask->setStatus(SavingTask::SavingTaskStatusStopping);
         }
@@ -585,11 +599,11 @@ void ManagedLoadSaveThread::stopSaving(const QString& filePath)
     {
         LoadSaveTask* const task = m_todo.at(i);
 
-        if (task->type() ==  LoadSaveTask::TaskTypeSaving)
+        if (task->type() == LoadSaveTask::TaskTypeSaving)
         {
-            SavingTask* const savingTask = static_cast<SavingTask*>(task);
+            SavingTask* const savingTask = dynamic_cast<SavingTask*>(task);
 
-            if (filePath.isNull() || (savingTask->filePath() == filePath))
+            if (savingTask && (filePath.isNull() || (savingTask->filePath() == filePath)))
             {
                 delete m_todo.takeAt(i--);
             }
