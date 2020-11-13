@@ -66,7 +66,7 @@ public:
     {
     };
 
-    virtual ~SharpContainer()
+    ~SharpContainer()
     {
     };
 
