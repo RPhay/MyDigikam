@@ -457,7 +457,7 @@ public:
      * Re-implement this method if you want to use another item file format than JPEG to
      * save preview.
      */
-    virtual bool setItemPreview(const QImage& preview) const;
+    bool setItemPreview(const QImage& preview) const;
 
     //@}
 
