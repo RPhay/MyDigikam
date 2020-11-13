@@ -46,7 +46,7 @@ class ApplicationSettings;
 class ItemInfo;
 class Template;
 
-class MetadataHub            // clazy:exclude=copyable-polymorphic
+class MetadataHub
 {
 public:
 
@@ -106,22 +106,9 @@ public:
 
     /**
      * Constructs a MetadataHub.
-     * @param dbmode Determines if the database may be accessed or not. See the enum description above.
      */
     MetadataHub();
-    virtual ~MetadataHub();
-
-    /**
-     * Copies by value - no sharing involved.
-     */
-    MetadataHub& operator=(const MetadataHub&);
-    MetadataHub(const MetadataHub&);
-
-    /**
-     * Creates a copy (as always, by value) of this hub.
-     * Shall be reimplemented by subclasses to return an object of the correct type.
-     */
-    virtual MetadataHub* clone() const;
+    ~MetadataHub();
 
     void reset();
 
@@ -285,12 +272,16 @@ protected:
     void loadTags(const QStringList& loadedTagPaths);
     void notifyTagDeleted(int id);
 
-    virtual void applyChangeNotifications();
+    void applyChangeNotifications();
 
 private:
 
     class Private;
     Private* const d;
+
+private:
+
+    Q_DISABLE_COPY(MetadataHub)
 };
 
 } // namespace Digikam

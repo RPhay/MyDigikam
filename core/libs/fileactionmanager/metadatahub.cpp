@@ -116,26 +116,9 @@ MetadataHub::MetadataHub()
 {
 }
 
-MetadataHub::MetadataHub(const MetadataHub& other)
-    : d(new Private(*other.d))
-{
-}
-
 MetadataHub::~MetadataHub()
 {
     delete d;
-}
-
-MetadataHub& MetadataHub::operator=(const MetadataHub& other)
-{
-    (*d) = (*other.d);
-
-    return *this;
-}
-
-MetadataHub* MetadataHub::clone() const
-{
-    return (new MetadataHub(*this));
 }
 
 void MetadataHub::reset()
@@ -204,7 +187,8 @@ void MetadataHub::loadTags(const QList<int>& loadedTags)
  * private common code to load dateTime, comment, color label, pick label, rating
  */
 void MetadataHub::load(const QDateTime& dateTime,
-                       const CaptionsMap& titles, const CaptionsMap& comments,
+                       const CaptionsMap& titles,
+                       const CaptionsMap& comments,
                        int colorLabel, int pickLabel,
                        int rating, const Template& t)
 {
@@ -361,6 +345,7 @@ bool MetadataHub::write(DMetadata& metadata, WriteComponent writeMode, const Met
         else
         {
             // Store metadata template as XMP tag.
+
             dirty |= metadata.removeMetadataTemplate();
             dirty |= metadata.setMetadataTemplate(d->metadataTemplate);
         }
