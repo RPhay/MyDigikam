@@ -78,7 +78,7 @@ public:
     DMetadata();
     explicit DMetadata(const QString& filePath);
     explicit DMetadata(const MetaEngineData& data);
-    ~DMetadata() override;
+    ~DMetadata();
 
 public: // Settings helpers
 

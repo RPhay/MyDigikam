@@ -277,7 +277,7 @@ private:
 private:
 
     class Private;
-    Private *d;
+    Private* d;
 };
 
 } // namespace Digikam

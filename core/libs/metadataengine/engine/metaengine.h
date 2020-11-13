@@ -162,7 +162,7 @@ public:
     /**
      * Standard destructor
      */
-    virtual ~MetaEngine();
+    ~MetaEngine();
 
     /**
      * Create a copy of container

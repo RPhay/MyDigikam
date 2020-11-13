@@ -54,7 +54,7 @@ class BatchToolSet
 public:
 
     explicit BatchToolSet();
-    virtual ~BatchToolSet();
+    ~BatchToolSet()                          = default;;
 
     /**
      * Equality operator which check index, version, name, and group data. Settings member is ignored.
@@ -91,8 +91,8 @@ class AssignedBatchTools
 {
 public:
 
-    explicit AssignedBatchTools();
-    ~AssignedBatchTools();
+    explicit AssignedBatchTools()                      = default;
+    ~AssignedBatchTools()                              = default;
 
     QString targetSuffix(bool* const extSet = nullptr) const;
 

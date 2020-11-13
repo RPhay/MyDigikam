@@ -42,10 +42,6 @@ BatchToolSet::BatchToolSet()
 {
 }
 
-BatchToolSet::~BatchToolSet()
-{
-}
-
 bool BatchToolSet::operator==(const BatchToolSet& set) const
 {
     return (
@@ -69,14 +65,6 @@ QDebug operator<<(QDebug dbg, const BatchToolSet& s)
 }
 
 // ---------------------------------------------------------------------------------------------
-
-AssignedBatchTools::AssignedBatchTools()
-{
-}
-
-AssignedBatchTools::~AssignedBatchTools()
-{
-}
 
 QString AssignedBatchTools::targetSuffix(bool* const extSet) const
 {

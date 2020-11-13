@@ -46,7 +46,8 @@ class ToolListViewGroup : public QTreeWidgetItem
 
 public:
 
-    ToolListViewGroup(QTreeWidget* const parent, BatchTool::BatchToolGroup group);
+    ToolListViewGroup(QTreeWidget* const parent,
+                      BatchTool::BatchToolGroup group);
     ~ToolListViewGroup()                        override;
 
     BatchTool::BatchToolGroup toolGroup() const;
@@ -54,6 +55,10 @@ public:
 private:
 
     BatchTool::BatchToolGroup m_group;
+
+ private:
+
+    Q_DISABLE_COPY(ToolListViewGroup)
 };
 
 // -------------------------------------------------------------------------
@@ -63,7 +68,8 @@ class ToolListViewItem : public QTreeWidgetItem
 
 public:
 
-    ToolListViewItem(ToolListViewGroup* const parent, BatchTool* const tool);
+    ToolListViewItem(ToolListViewGroup* const parent,
+                     BatchTool* const tool);
     ~ToolListViewItem()                         override;
 
     BatchTool* tool()                     const;
@@ -71,6 +77,10 @@ public:
 private:
 
     BatchTool* m_tool;
+
+private:
+
+    Q_DISABLE_COPY(ToolListViewItem)
 };
 
 // -------------------------------------------------------------------------
