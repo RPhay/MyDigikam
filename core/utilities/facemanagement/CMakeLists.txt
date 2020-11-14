@@ -11,6 +11,7 @@ set(libfacemanagement_SRCS
     ${CMAKE_CURRENT_SOURCE_DIR}/database/faceutils.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/database/faceitemretriever.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/database/facescansettings.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/downloader/facemodeldownloader.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/items/faceitem.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/items/facegroup.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/items/facegroup_p.cpp
@@ -37,6 +38,7 @@ include_directories($<TARGET_PROPERTY:Qt5::Sql,INTERFACE_INCLUDE_DIRECTORIES>
                     $<TARGET_PROPERTY:Qt5::Gui,INTERFACE_INCLUDE_DIRECTORIES>
                     $<TARGET_PROPERTY:Qt5::Widgets,INTERFACE_INCLUDE_DIRECTORIES>
                     $<TARGET_PROPERTY:Qt5::Core,INTERFACE_INCLUDE_DIRECTORIES>
+                    $<TARGET_PROPERTY:Qt5::Network,INTERFACE_INCLUDE_DIRECTORIES>
 
                     $<TARGET_PROPERTY:KF5::I18n,INTERFACE_INCLUDE_DIRECTORIES>
                     $<TARGET_PROPERTY:KF5::ConfigCore,INTERFACE_INCLUDE_DIRECTORIES>
