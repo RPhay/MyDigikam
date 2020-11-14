@@ -99,6 +99,10 @@ public:
     void    proceed(int steps = 1)        override;
     QImage* image()                       override;
     QList<QImage*> images()               override;
+
+private:
+
+    Q_DISABLE_COPY(EmptyImageListProvider)
 };
 
 // ----------------------------------------------------------------------------------------

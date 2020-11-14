@@ -43,7 +43,7 @@ public:
     {
         if (imagesToTrain.contains(identity.id()))
         {
-            QListImageListProvider& provider = imagesToTrain[identity.id()];
+            QListImageListProvider& provider(imagesToTrain[identity.id()]);
             provider.reset();
 
             return &provider;
