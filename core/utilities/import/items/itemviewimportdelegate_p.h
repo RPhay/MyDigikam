@@ -50,9 +50,7 @@ class Q_DECL_HIDDEN ItemViewImportDelegatePrivate
 public:
 
     explicit ItemViewImportDelegatePrivate();
-    virtual ~ItemViewImportDelegatePrivate()
-    {
-    }
+    virtual ~ItemViewImportDelegatePrivate() = default;
 
     void init(ItemViewImportDelegate* const _q);
 
@@ -94,6 +92,10 @@ public:
     /// constant values for drawing
     int                       radius;
     int                       margin;
+
+private:
+
+    Q_DISABLE_COPY(ItemViewImportDelegatePrivate)
 };
 
 } // namespace Digikam
