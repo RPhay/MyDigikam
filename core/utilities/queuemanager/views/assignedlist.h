@@ -47,7 +47,7 @@ public:
 
     explicit AssignedListViewItem(QTreeWidget* const parent);
     AssignedListViewItem(QTreeWidget* const parent, QTreeWidgetItem* const preceding);
-    ~AssignedListViewItem() override;
+    ~AssignedListViewItem()                                             override;
 
     void setIndex(int index);
 
@@ -57,6 +57,10 @@ public:
 private:
 
     BatchToolSet m_set;
+
+private:
+
+    Q_DISABLE_COPY(AssignedListViewItem)
 };
 
 // -------------------------------------------------------------------------
