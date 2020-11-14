@@ -33,7 +33,7 @@ public:
 
     explicit Private()
       : virtualFolder(true),
-        count(0)
+        count        (0)
     {
     }
 
@@ -47,7 +47,7 @@ public:
 
 CameraFolderItem::CameraFolderItem(QTreeWidget* const parent, const QString& name, const QIcon& icon)
     : QTreeWidgetItem(parent),
-      d(new Private)
+      d              (new Private)
 {
     d->name = name;
     setIcon(0, icon);
@@ -57,7 +57,7 @@ CameraFolderItem::CameraFolderItem(QTreeWidget* const parent, const QString& nam
 CameraFolderItem::CameraFolderItem(QTreeWidgetItem* const parent, const QString& folderName,
                                    const QString& folderPath, const QIcon &icon)
     : QTreeWidgetItem(parent),
-      d(new Private)
+      d              (new Private)
 {
     d->folderName    = folderName;
     d->folderPath    = folderPath;

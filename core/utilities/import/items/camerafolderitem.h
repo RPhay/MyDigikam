@@ -37,7 +37,6 @@ namespace Digikam
 
 class CameraFolderItem : public QTreeWidgetItem
 {
-
 public:
 
     CameraFolderItem(QTreeWidget* const parent,
@@ -49,7 +48,7 @@ public:
                      const QString& folderPath,
                      const QIcon& icon = QIcon::fromTheme(QLatin1String("folder")));
 
-    ~CameraFolderItem() override;
+    ~CameraFolderItem()               override;
 
     QString folderName()        const;
     QString folderPath()        const;
@@ -63,6 +62,10 @@ private:
 
     class Private;
     Private* const d;
+
+private:
+
+    Q_DISABLE_COPY(CameraFolderItem)
 };
 
 } // namespace Digikam
