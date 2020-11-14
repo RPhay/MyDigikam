@@ -54,6 +54,10 @@ public:
 private:
 
     QString m_key;
+
+private:
+
+    Q_DISABLE_COPY(MetadataListViewItem)
 };
 
 } // namespace Digikam
