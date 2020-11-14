@@ -105,13 +105,13 @@ public:
     explicit CameraAutoDetectThread(QObject* const parent);
     ~CameraAutoDetectThread() override;
 
-    int     result() const;
-    QString model()  const;
-    QString port()   const;
+    int     result()    const;
+    QString model()     const;
+    QString port()      const;
 
 private:
 
-    void run() override;
+    void run()                override;
 
 private:
 

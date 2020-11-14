@@ -79,7 +79,7 @@ public:
 
     explicit SetupCameraItem(QTreeWidget* const parent, CameraType* const ctype)
         : QTreeWidgetItem(parent),
-          m_ctype(nullptr)
+          m_ctype        (nullptr)
     {
         setCameraType(ctype);
     };
@@ -112,6 +112,10 @@ public:
 private:
 
     CameraType* m_ctype;
+
+private:
+
+    Q_DISABLE_COPY(SetupCameraItem)
 };
 
 // -------------------------------------------------------------------
@@ -133,7 +137,7 @@ public:
 
 CameraAutoDetectThread::CameraAutoDetectThread(QObject* const parent)
     : DBusyThread(parent),
-      d(new Private)
+      d          (new Private)
 {
     d->result = -1;
 }
@@ -172,41 +176,41 @@ class Q_DECL_HIDDEN SetupCamera::Private
 public:
 
     explicit Private()
-      : addButton(nullptr),
-        removeButton(nullptr),
-        editButton(nullptr),
-        autoDetectButton(nullptr),
-        importAddButton(nullptr),
-        importRemoveButton(nullptr),
-        importEditButton(nullptr),
-        storeDiffButton(nullptr),
-        overwriteButton(nullptr),
-        skipFileButton(nullptr),
-        conflictButtonGroup(nullptr),
-        useFileMetadata(nullptr),
-        turnHighQualityThumbs(nullptr),
-        useDefaultTargetAlbum(nullptr),
-        iconShowNameBox(nullptr),
-        iconShowSizeBox(nullptr),
-        iconShowDateBox(nullptr),
-        iconShowResolutionBox(nullptr),
-        iconShowTagsBox(nullptr),
-        iconShowOverlaysBox(nullptr),
-        iconShowRatingBox(nullptr),
-        iconShowFormatBox(nullptr),
-        iconShowCoordinatesBox(nullptr),
-        previewLoadFullImageSize(nullptr),
-        previewItemsWhileDownload(nullptr),
-        previewShowIcons(nullptr),
-        leftClickActionComboBox(nullptr),
-        iconViewFontSelect(nullptr),
-        target1AlbumSelector(nullptr),
-        listView(nullptr),
-        importListView(nullptr),
-        tab(nullptr),
-        ignoreNamesEdit(nullptr),
-        ignoreExtensionsEdit(nullptr),
-        fullScreenSettings(nullptr)
+      : addButton                   (nullptr),
+        removeButton                (nullptr),
+        editButton                  (nullptr),
+        autoDetectButton            (nullptr),
+        importAddButton             (nullptr),
+        importRemoveButton          (nullptr),
+        importEditButton            (nullptr),
+        storeDiffButton             (nullptr),
+        overwriteButton             (nullptr),
+        skipFileButton              (nullptr),
+        conflictButtonGroup         (nullptr),
+        useFileMetadata             (nullptr),
+        turnHighQualityThumbs       (nullptr),
+        useDefaultTargetAlbum       (nullptr),
+        iconShowNameBox             (nullptr),
+        iconShowSizeBox             (nullptr),
+        iconShowDateBox             (nullptr),
+        iconShowResolutionBox       (nullptr),
+        iconShowTagsBox             (nullptr),
+        iconShowOverlaysBox         (nullptr),
+        iconShowRatingBox           (nullptr),
+        iconShowFormatBox           (nullptr),
+        iconShowCoordinatesBox      (nullptr),
+        previewLoadFullImageSize    (nullptr),
+        previewItemsWhileDownload   (nullptr),
+        previewShowIcons            (nullptr),
+        leftClickActionComboBox     (nullptr),
+        iconViewFontSelect          (nullptr),
+        target1AlbumSelector        (nullptr),
+        listView                    (nullptr),
+        importListView              (nullptr),
+        tab                         (nullptr),
+        ignoreNamesEdit             (nullptr),
+        ignoreExtensionsEdit        (nullptr),
+        fullScreenSettings          (nullptr)
     {
     }
 
@@ -279,7 +283,7 @@ const QString SetupCamera::Private::importFiltersConfigGroupName(QLatin1String("
 
 SetupCamera::SetupCamera(QWidget* const parent)
     : QScrollArea(parent),
-      d(new Private)
+      d          (new Private)
 {
     d->tab               = new QTabWidget(viewport());
     setWidget(d->tab);

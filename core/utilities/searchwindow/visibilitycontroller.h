@@ -40,12 +40,14 @@ class DIGIKAM_GUI_EXPORT VisibilityObject
 {
 public:
 
-    virtual ~VisibilityObject()
-    {
-    }
-
+    VisibilityObject()                    = default;
+    virtual ~VisibilityObject()           = default;
     virtual void setVisible(bool visible) = 0;
     virtual bool isVisible()              = 0;
+
+private:
+
+    Q_DISABLE_COPY(VisibilityObject)
 };
 
 // -----------------------------------------------------------------------------------
