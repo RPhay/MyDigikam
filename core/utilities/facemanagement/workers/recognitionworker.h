@@ -39,7 +39,7 @@ class Q_DECL_HIDDEN RecognitionWorker : public WorkerObject
 
 public:
 
-    explicit RecognitionWorker(FacePipeline::Private* const d);
+    explicit RecognitionWorker(FacePipeline::Private* const dd);
     ~RecognitionWorker() override;
 
 public Q_SLOTS:
@@ -65,7 +65,7 @@ protected:
 
 private:
 
-    // Hidden copy constructor and assignment operator.
+    // Disable
     RecognitionWorker(const RecognitionWorker&);
     RecognitionWorker& operator=(const RecognitionWorker&);
 };

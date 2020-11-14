@@ -43,10 +43,11 @@ public:
     {
         if (imagesToTrain.contains(identity.id()))
         {
-            QListImageListProvider& provider(imagesToTrain[identity.id()]);
-            provider.reset();
+            QListImageListProvider* const provider = new QListImageListProvider;
+            provider->setImages(imagesToTrain.value(identity.id())->images());
+            provider->reset();
 
-            return &provider;
+            return provider;
         }
 
         return &empty;
@@ -61,15 +62,15 @@ public:
 
 public:
 
-    EmptyImageListProvider            empty;
-    QMap<int, QListImageListProvider> imagesToTrain;
+    EmptyImageListProvider             empty;
+    QMap<int, QListImageListProvider*> imagesToTrain;
 };
 
 // ----------------------------------------------------------------------------------------
 
-TrainerWorker::TrainerWorker(FacePipeline::Private* const d)
-    : imageRetriever(d),
-      d(d)
+TrainerWorker::TrainerWorker(FacePipeline::Private* const dd)
+    : imageRetriever(dd),
+      d             (dd)
 {
 }
 
@@ -103,7 +104,7 @@ void TrainerWorker::process(FacePipelineExtendedPackage::Ptr package)
 
             Identity identity    = utils.identityForTag(dbFace.tagId(), recognizer);
 
-            identities  << identity.id();
+            identities << identity.id();
 
             if (!identitySet.contains(identity))
             {
@@ -131,7 +132,7 @@ void TrainerWorker::process(FacePipelineExtendedPackage::Ptr package)
 
         for (int i = 0 ; i < toTrain.size() ; ++i)
         {
-            provider.imagesToTrain[identities[i]].list << images[i];
+            provider.imagesToTrain.value(identities[i])->list << images[i];
         }
 
         // NOTE: cropped faces will be deleted by training provider

@@ -31,10 +31,10 @@
 namespace Digikam
 {
 
-DatabaseWriter::DatabaseWriter(FacePipeline::WriteMode mode, FacePipeline::Private* const d)
-    : mode(mode),
+DatabaseWriter::DatabaseWriter(FacePipeline::WriteMode mode, FacePipeline::Private* const dd)
+    : mode               (mode),
       thumbnailLoadThread(d->createThumbnailLoadThread()),
-      d(d)
+      d                  (dd)
 {
 }
 
@@ -44,7 +44,7 @@ DatabaseWriter::~DatabaseWriter()
 
 void DatabaseWriter::process(FacePipelineExtendedPackage::Ptr package)
 {
-    if (package->databaseFaces.isEmpty())
+    if      (package->databaseFaces.isEmpty())
     {
         // Detection / Recognition
 
@@ -116,7 +116,7 @@ void DatabaseWriter::process(FacePipelineExtendedPackage::Ptr package)
 
         for (it = package->databaseFaces.begin() ; it != package->databaseFaces.end() ; ++it)
         {
-            if (it->roles & FacePipelineFaceTagsIface::ForConfirmation)
+            if      (it->roles & FacePipelineFaceTagsIface::ForConfirmation)
             {
                 FacePipelineFaceTagsIface confirmed = FacePipelineFaceTagsIface(utils.confirmName(*it, it->assignedTagId, it->assignedRegion));
                 confirmed.roles                    |= FacePipelineFaceTagsIface::Confirmed | FacePipelineFaceTagsIface::ForTraining;

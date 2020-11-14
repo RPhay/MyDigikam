@@ -65,7 +65,8 @@ QList<Identity> FacialRecognitionWrapper::recognizeFaces(ImageListProvider* cons
 
 QList<Identity> FacialRecognitionWrapper::recognizeFaces(const QList<QImage*>& images)
 {
-    QListImageListProvider provider(images);
+    QListImageListProvider provider;
+    provider.setImages(images);
 
     return recognizeFaces(&provider);
 }

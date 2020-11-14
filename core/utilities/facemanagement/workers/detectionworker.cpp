@@ -31,8 +31,8 @@
 namespace Digikam
 {
 
-DetectionWorker::DetectionWorker(FacePipeline::Private* const d)
-    : d(d)
+DetectionWorker::DetectionWorker(FacePipeline::Private* const dd)
+    : d(dd)
 {
 }
 

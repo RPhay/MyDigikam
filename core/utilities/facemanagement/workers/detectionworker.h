@@ -39,7 +39,7 @@ class Q_DECL_HIDDEN DetectionWorker : public WorkerObject
 
 public:
 
-    explicit DetectionWorker(FacePipeline::Private* const d);
+    explicit DetectionWorker(FacePipeline::Private* const dd);
     ~DetectionWorker() override;
 
     QImage scaleForDetection(const DImg& image) const;
@@ -60,7 +60,7 @@ protected:
 
 private:
 
-    // Hidden copy constructor and assignment operator.
+    // Disable
     DetectionWorker(const DetectionWorker&);
     DetectionWorker& operator=(const DetectionWorker&);
 };

@@ -31,9 +31,9 @@
 namespace Digikam
 {
 
-RecognitionWorker::RecognitionWorker(FacePipeline::Private* const d)
-    : imageRetriever(d),
-      d(d)
+RecognitionWorker::RecognitionWorker(FacePipeline::Private* const dd)
+    : imageRetriever(dd),
+      d             (dd)
 {
 }
 
@@ -50,7 +50,7 @@ void RecognitionWorker::process(FacePipelineExtendedPackage::Ptr package)
     FaceUtils      utils;
     QList<QImage*> images;
 
-    if (package->processFlags & FacePipelinePackage::ProcessedByDetector)
+    if      (package->processFlags & FacePipelinePackage::ProcessedByDetector)
     {
         // assume we have an image
 

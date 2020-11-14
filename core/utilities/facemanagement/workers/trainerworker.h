@@ -39,7 +39,7 @@ class Q_DECL_HIDDEN TrainerWorker : public WorkerObject
 
 public:
 
-    explicit TrainerWorker(FacePipeline::Private* const d);
+    explicit TrainerWorker(FacePipeline::Private* const dd);
     ~TrainerWorker() override;
 
 protected:

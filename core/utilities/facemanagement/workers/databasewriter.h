@@ -39,7 +39,7 @@ class Q_DECL_HIDDEN DatabaseWriter : public WorkerObject
 
 public:
 
-    DatabaseWriter(FacePipeline::WriteMode mode, FacePipeline::Private* const d);
+    DatabaseWriter(FacePipeline::WriteMode mode, FacePipeline::Private* const dd);
     ~DatabaseWriter() override;
 
 public Q_SLOTS:
@@ -58,7 +58,7 @@ protected:
 
 private:
 
-    // Hidden copy constructor and assignment operator.
+    // Disable
     DatabaseWriter(const DatabaseWriter&);
     DatabaseWriter& operator=(const DatabaseWriter&);
 };

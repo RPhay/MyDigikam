@@ -26,9 +26,8 @@
 namespace Digikam
 {
 
-QListImageListProvider::QListImageListProvider(const QList<QImage*>& lst)
-    : list(lst),
-      it  (list.constBegin())
+QListImageListProvider::QListImageListProvider()
+    : it(list.constBegin())
 {
 }
 
@@ -41,11 +40,6 @@ QListImageListProvider::~QListImageListProvider()
         delete *img;
         img = list.erase(img);
     }
-}
-
-QListImageListProvider::QListImageListProvider()
-    : it(list.constBegin())
-{
 }
 
 int  QListImageListProvider::size()  const
@@ -78,6 +72,12 @@ QList<QImage*> QListImageListProvider::images()
     return list;
 }
 
+void QListImageListProvider::setImages(const QList<QImage*>& lst)
+{
+    list = lst;
+    it   = list.constBegin();
+}
+
 // ----------------------------------------------------------------------------------------
 
 int  EmptyImageListProvider::size()  const
@@ -103,6 +103,10 @@ QImage* EmptyImageListProvider::image()
 QList<QImage*> EmptyImageListProvider::images()
 {
     return QList<QImage*>();
+}
+
+void EmptyImageListProvider::setImages(const QList<QImage*>&)
+{
 }
 
 } // namespace Digikam

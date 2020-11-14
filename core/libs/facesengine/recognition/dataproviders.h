@@ -54,6 +54,11 @@ public:
     virtual void           proceed(int steps = 1) = 0;
     virtual QImage*        image()                = 0;
     virtual QList<QImage*> images()               = 0;
+    virtual void setImages(const QList<QImage*>&) = 0;
+
+private:
+
+    Q_DISABLE_COPY(ImageListProvider)
 };
 
 // ----------------------------------------------------------------------------------------
@@ -65,7 +70,6 @@ class DIGIKAM_GUI_EXPORT QListImageListProvider : public ImageListProvider
 {
 public:
 
-    explicit QListImageListProvider(const QList<QImage*>& lst);
     QListImageListProvider();
     ~QListImageListProvider()             override;
 
@@ -78,11 +82,16 @@ public:
     void           proceed(int steps = 1) override;
     QImage*        image()                override;
     QList<QImage*> images()               override;
+    void setImages(const QList<QImage*>&) override;
 
 public:
 
     QList<QImage*>                 list;
     QList<QImage*>::const_iterator it;
+
+private:
+
+    Q_DISABLE_COPY(QListImageListProvider)
 };
 
 // ----------------------------------------------------------------------------------------
@@ -99,6 +108,7 @@ public:
     void    proceed(int steps = 1)        override;
     QImage* image()                       override;
     QList<QImage*> images()               override;
+    void setImages(const QList<QImage*>&) override;
 
 private:
 
