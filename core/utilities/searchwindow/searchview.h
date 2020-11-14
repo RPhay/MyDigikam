@@ -47,12 +47,15 @@ class SearchViewThemedPartsCache
 {
 public:
 
-    virtual ~SearchViewThemedPartsCache()
-    {
-    }
+    SearchViewThemedPartsCache()                   = default;
+    virtual ~SearchViewThemedPartsCache()          = default;
 
     virtual QPixmap groupLabelPixmap(int w, int h) = 0;
     virtual QPixmap bottomBarPixmap(int w, int h)  = 0;
+
+private:
+
+    Q_DISABLE_COPY(SearchViewThemedPartsCache)
 };
 
 class AbstractSearchGroupContainer : public QWidget
@@ -108,23 +111,24 @@ protected:
 
 // -------------------------------------------------------------------------
 
-class SearchView : public AbstractSearchGroupContainer, public SearchViewThemedPartsCache
+class SearchView : public AbstractSearchGroupContainer,
+                   public SearchViewThemedPartsCache
 {
     Q_OBJECT
 
 public:
 
     SearchView();
-    ~SearchView() override;
+    ~SearchView()                                  override;
 
     void setup();
     void setBottomBar(SearchViewBottomBar* const bar);
 
     void read(const QString& search);
-    QString write() const;
+    QString write()                          const;
 
-    QPixmap groupLabelPixmap(int w, int h) override;
-    QPixmap bottomBarPixmap(int w, int h) override;
+    QPixmap groupLabelPixmap(int w, int h)         override;
+    QPixmap bottomBarPixmap(int w, int h)          override;
 
 Q_SIGNALS:
 
@@ -145,11 +149,11 @@ protected:
 
     QPixmap cachedBannerPixmap(int w, int h) const;
 
-    void paintEvent(QPaintEvent* e) override;
-    void showEvent(QShowEvent* event) override;
+    void paintEvent(QPaintEvent* e)                 override;
+    void showEvent(QShowEvent* event)               override;
 
-    SearchGroup* createSearchGroup() override;
-    void addGroupToLayout(SearchGroup* group) override;
+    SearchGroup* createSearchGroup()                override;
+    void addGroupToLayout(SearchGroup* group)       override;
 
 private:
 
@@ -169,7 +173,8 @@ class SearchViewBottomBar : public QWidget
 
 public:
 
-    explicit SearchViewBottomBar(SearchViewThemedPartsCache* const cache, QWidget* const parent = nullptr);
+    explicit SearchViewBottomBar(SearchViewThemedPartsCache* const cache,
+                                 QWidget* const parent = nullptr);
 
 Q_SIGNALS:
 
