@@ -44,11 +44,12 @@ public:
 
     explicit DbEngineSqlQuery(const QSqlQuery& other);
     explicit DbEngineSqlQuery(const QSqlDatabase& db);
-    virtual ~DbEngineSqlQuery()                         = default;
+    ~DbEngineSqlQuery()                                 = default;
 
-    virtual DbEngineSqlQuery& operator=(const DbEngineSqlQuery& other);
-    virtual bool prepare(const QString& query);
-    virtual QString lastQuery()                         const;
+    DbEngineSqlQuery& operator=(const DbEngineSqlQuery& other);
+
+    bool prepare(const QString& query);
+    QString lastQuery()                                 const;
 
 private:
 
