@@ -100,6 +100,10 @@ public:
 public:
 
     DPlugin* m_plugin;
+
+private:
+
+    Q_DISABLE_COPY(DPluginCB)
 };
 
 // ---------------------------------------------------------------------
