@@ -41,7 +41,7 @@
 namespace Digikam
 {
 
-class DIGIKAM_EXPORT  TileIndex
+class DIGIKAM_EXPORT TileIndex
 {
 public:
 
@@ -64,7 +64,7 @@ public:
 public:
 
     explicit TileIndex();
-    virtual ~TileIndex();
+    ~TileIndex();
 
     int indexCount()                                                                const;
     int level()                                                                     const;

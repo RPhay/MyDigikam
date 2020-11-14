@@ -293,7 +293,6 @@ GeoCoordinates TileIndex::toCoordinates() const
     return GeoCoordinates(tileLatBL, tileLonBL);
 }
 
-
 GeoCoordinates TileIndex::toCoordinates(const CornerPosition ofCorner) const
 {
     // TODO: safeguards against rounding errors!

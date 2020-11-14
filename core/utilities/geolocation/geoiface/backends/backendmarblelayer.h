@@ -56,7 +56,7 @@ class DIGIKAM_EXPORT BackendMarbleLayer : public Marble::LayerInterface
 public:
 
     explicit BackendMarbleLayer(BackendMarble* const pMarbleBackend);
-    ~BackendMarbleLayer() override;
+    ~BackendMarbleLayer()               override;
 
     bool render(Marble::GeoPainter* painter,
                         Marble::ViewportParams* viewport,
@@ -69,6 +69,10 @@ public:
 private:
 
     QPointer<BackendMarble> marbleBackend;
+
+private:
+
+    Q_DISABLE_COPY(BackendMarbleLayer)
 };
 
 } // namespace Digikam

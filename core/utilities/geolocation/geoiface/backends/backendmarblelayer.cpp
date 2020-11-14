@@ -52,6 +52,7 @@ bool BackendMarbleLayer::render(Marble::GeoPainter* painter,
     if (marbleBackend && (renderPos == QLatin1String("HOVERS_ABOVE_SURFACE")))
     {
         marbleBackend->marbleCustomPaint(painter);
+
         return true;
     }
 
