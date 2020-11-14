@@ -40,9 +40,8 @@ class DIGIKAM_GUI_EXPORT GroupingViewImplementation
 
 public:
 
-    virtual ~GroupingViewImplementation()
-    {
-    }
+    GroupingViewImplementation()                                                = default;
+    virtual ~GroupingViewImplementation()                                       = default;
 
     /// must be implemented by parent view
 
@@ -56,6 +55,10 @@ public:
 
     ItemInfoList resolveGrouping(const ItemInfoList& infos)                     const;
     ItemInfoList getHiddenGroupedInfos(const ItemInfoList& infos)               const;
+
+private:
+
+    Q_DISABLE_COPY(GroupingViewImplementation)
 };
 
 } // namespace Digikam

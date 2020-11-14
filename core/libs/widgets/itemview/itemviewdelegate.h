@@ -37,7 +37,8 @@ namespace Digikam
 
 class ItemViewDelegatePrivate;
 
-class DIGIKAM_EXPORT ItemViewDelegate : public DItemDelegate, public ItemDelegateOverlayContainer
+class DIGIKAM_EXPORT ItemViewDelegate : public DItemDelegate,
+                                        public ItemDelegateOverlayContainer
 {
     Q_OBJECT
 
@@ -151,7 +152,7 @@ protected:
 
 private:
 
-    // Hidden copy constructor and assignment operator.
+    // Disable
     ItemViewDelegate(const ItemViewDelegate&);
     ItemViewDelegate& operator=(const ItemViewDelegate&);
 

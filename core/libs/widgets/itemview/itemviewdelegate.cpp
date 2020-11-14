@@ -55,12 +55,12 @@ namespace Digikam
 {
 
 ItemViewDelegatePrivate::ItemViewDelegatePrivate()
-    : spacing(0),
+    : spacing      (0),
       ratingPixmaps(QVector<QPixmap>(10)),
-      thumbSize(ThumbnailSize(0)),
-      q(nullptr),
-      radius(3), // painting constants
-      margin(5)
+      thumbSize    (ThumbnailSize(0)),
+      q            (nullptr),
+      radius       (3), // painting constants
+      margin       (5)
 {
     makeStarPolygon();
 }
@@ -90,14 +90,14 @@ void ItemViewDelegatePrivate::makeStarPolygon()
 
 ItemViewDelegate::ItemViewDelegate(QObject* const parent)
     : DItemDelegate(parent),
-      d_ptr(new ItemViewDelegatePrivate)
+      d_ptr        (new ItemViewDelegatePrivate)
 {
     d_ptr->init(this);
 }
 
 ItemViewDelegate::ItemViewDelegate(ItemViewDelegatePrivate& dd, QObject* const parent)
     : DItemDelegate(parent),
-      d_ptr(&dd)
+      d_ptr        (&dd)
 {
     d_ptr->init(this);
 }

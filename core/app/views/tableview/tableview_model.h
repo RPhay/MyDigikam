@@ -72,7 +72,7 @@ public:
     public:
 
         explicit Item();
-        virtual ~Item();
+        ~Item();
 
         void  addChild(Item* const newChild);
         void  insertChild(const int pos, Item* const newChild);
@@ -89,7 +89,7 @@ public:
 public:
 
     explicit TableViewModel(TableViewShared* const sharedObject, QObject* const parent = nullptr);
-    ~TableViewModel() override;
+    ~TableViewModel()                                                                                                 override;
 
     void                    addColumnAt(const TableViewColumnDescription& description,
                                         const int targetColumn = -1);
@@ -159,7 +159,7 @@ public:
 
 protected:
 
-    void sort(int column, Qt::SortOrder order = Qt::AscendingOrder) override;
+    void sort(int column, Qt::SortOrder order = Qt::AscendingOrder)                                           override;
 
 private Q_SLOTS:
 
