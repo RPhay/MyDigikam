@@ -80,20 +80,24 @@ class DIGIKAM_EXPORT PreviewListItem : public QListWidgetItem
 public:
 
     explicit PreviewListItem(QListWidget* const parent = nullptr);
-    ~PreviewListItem() override;
+    ~PreviewListItem()    override;
 
     void setPixmap(const QPixmap& pix);
 
     void setId(int id);
-    int  id() const;
+    int  id()       const;
 
     void setBusy(bool b);
-    bool isBusy() const;
+    bool isBusy()   const;
 
 private:
 
     class Private;
     Private* const d;
+
+private:
+
+    Q_DISABLE_COPY(PreviewListItem)
 };
 
 // -------------------------------------------------------------------
@@ -105,12 +109,12 @@ class DIGIKAM_EXPORT PreviewList : public QListWidget
 public:
 
     explicit PreviewList(QWidget* const parent = nullptr);
-    ~PreviewList() override;
+    ~PreviewList()                            override;
 
     PreviewListItem* addItem(DImgThreadedFilter* const filter, const QString& txt, int id);
 
     void setCurrentId(int id);
-    int  currentId() const;
+    int  currentId()                    const;
 
     void startFilters();
     void stopFilters();
@@ -123,7 +127,7 @@ private Q_SLOTS:
 
 private:
 
-    PreviewListItem* findItem(int id) const;
+    PreviewListItem* findItem(int id)   const;
 
 private:
 
