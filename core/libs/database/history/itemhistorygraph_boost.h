@@ -128,7 +128,7 @@ enum MeaningOfDirection
  * The graph base class template
  */
 template <class VertexProperties, class EdgeProperties>
-class DIGIKAM_DATABASE_EXPORT Graph                                     // clazy:exclude=missing-typeinfo
+class DIGIKAM_DATABASE_EXPORT Graph                                     // clazy:exclude=missing-typeinfo,copyable-polymorphic
 {
 public:
 

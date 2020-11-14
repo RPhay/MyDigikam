@@ -101,7 +101,7 @@ typedef Graph<HistoryVertexProperties, HistoryEdgeProperties> HistoryGraph;
 
 // ------------------------------------------------------------------------------
 
-class DIGIKAM_DATABASE_EXPORT ItemHistoryGraphData : public HistoryGraph,
+class DIGIKAM_DATABASE_EXPORT ItemHistoryGraphData : public HistoryGraph,       // clazy:exclude=copyable-polymorphic
                                                      public QSharedData
 {
 public:

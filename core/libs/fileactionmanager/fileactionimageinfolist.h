@@ -43,9 +43,14 @@ class FileActionProgressItemCreator
 {
 public:
 
-    virtual ~FileActionProgressItemCreator() {}
+    FileActionProgressItemCreator()                                       = default;
+    virtual ~FileActionProgressItemCreator()                              = default;
     virtual ProgressItem* createProgressItem(const QString& action) const = 0;
     virtual void addProgressItem(ProgressItem* const item)                = 0;
+
+private:
+
+    Q_DISABLE_COPY(FileActionProgressItemCreator)
 };
 
 // -------------------------------------------------------------------------------------------------------------------
