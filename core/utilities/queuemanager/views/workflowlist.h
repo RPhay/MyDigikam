@@ -53,6 +53,10 @@ public:
 
     QString title()                                           const;
     int     count()                                           const;
+
+private:
+
+    Q_DISABLE_COPY(WorkflowItem)
 };
 
 // -------------------------------------------------------------------------
