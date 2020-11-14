@@ -36,11 +36,16 @@ class Q_DECL_HIDDEN DConfigDlgModelPrivate
 
 public:
 
-    virtual ~DConfigDlgModelPrivate();
+    DConfigDlgModelPrivate()          = default;
+    virtual ~DConfigDlgModelPrivate() = default;
 
 protected:
 
     DConfigDlgModel* q_ptr;
+
+private:
+
+    Q_DISABLE_COPY(DConfigDlgModelPrivate)
 };
 
 // ----------------------------------------------------------------------------

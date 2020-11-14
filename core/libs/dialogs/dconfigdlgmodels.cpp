@@ -37,10 +37,6 @@
 namespace Digikam
 {
 
-DConfigDlgModelPrivate::~DConfigDlgModelPrivate()
-{
-}
-
 DConfigDlgModel::DConfigDlgModel(QObject* const parent)
     : QAbstractItemModel(parent),
       d_ptr(nullptr)
