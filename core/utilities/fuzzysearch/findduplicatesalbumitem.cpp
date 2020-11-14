@@ -68,7 +68,7 @@ public:
 
 FindDuplicatesAlbumItem::FindDuplicatesAlbumItem(QTreeWidget* const parent, SAlbum* const album)
     : QTreeWidgetItem(parent),
-      d(new Private)
+      d              (new Private)
 {
     d->album = album;
 
@@ -99,7 +99,7 @@ QList<ItemInfo> FindDuplicatesAlbumItem::duplicatedItems()
 {
     if (itemCount() <= 1)
     {
-        return {};
+        return QList<ItemInfo>();
     }
 
     SearchXmlReader reader(d->album->query());
@@ -131,9 +131,9 @@ void FindDuplicatesAlbumItem::calculateInfos(const QList<qlonglong>& deletedImag
     }
 
     qlonglong refImage = d->album->title().toLongLong();
-
-    //qCDebug(DIGIKAM_GENERAL_LOG) << "Calculating info for album" << refImage;
-
+/*
+    qCDebug(DIGIKAM_GENERAL_LOG) << "Calculating info for album" << refImage;
+*/
     SearchXmlReader reader(d->album->query());
     reader.readToFirstField();
 
@@ -165,9 +165,9 @@ void FindDuplicatesAlbumItem::calculateInfos(const QList<qlonglong>& deletedImag
     }
 
     d->itemCount = filteredList.count();
-
-    //qCDebug(DIGIKAM_GENERAL_LOG) << "New Item count:" << d->itemCount;
-
+/*
+    qCDebug(DIGIKAM_GENERAL_LOG) << "New Item count:" << d->itemCount;
+*/
     if (d->itemCount > 1)
     {
         avgSim /= d->itemCount - (filteredList.contains(refImage) ? 1 : 0);

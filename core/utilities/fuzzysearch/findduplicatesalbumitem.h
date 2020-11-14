@@ -55,7 +55,7 @@ public:
 public:
 
     explicit FindDuplicatesAlbumItem(QTreeWidget* const parent, SAlbum* const album);
-    ~FindDuplicatesAlbumItem() override;
+    ~FindDuplicatesAlbumItem()                        override;
 
     bool hasValidThumbnail()                     const;
 
@@ -72,7 +72,8 @@ public:
     SAlbum* album()                              const;
     QUrl    refUrl()                             const;
 
-    void setThumb(const QPixmap& pix, bool hasThumb = true);
+    void setThumb(const QPixmap& pix,
+                  bool hasThumb = true);
 
     bool operator<(const QTreeWidgetItem& other) const override;
     QList<ItemInfo> duplicatedItems();
@@ -81,6 +82,10 @@ private:
 
     class Private;
     Private* const d;
+
+private:
+
+    Q_DISABLE_COPY(FindDuplicatesAlbumItem)
 };
 
 } // namespace Digikam

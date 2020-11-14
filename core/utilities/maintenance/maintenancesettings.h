@@ -46,7 +46,7 @@ class MaintenanceSettings
 public:
 
     explicit MaintenanceSettings();
-    virtual ~MaintenanceSettings();
+    ~MaintenanceSettings();
 
 public:
 
