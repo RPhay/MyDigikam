@@ -46,7 +46,7 @@ class DIGIKAM_GUI_EXPORT CameraItem : public QTreeWidgetItem
 public:
 
     CameraItem(QTreeWidget* const parent, const CamItemInfo& info);
-    ~CameraItem() override;
+    ~CameraItem()                  override;
 
     bool hasValidThumbnail() const;
     CamItemInfo info()       const;
@@ -57,6 +57,10 @@ private:
 
     class Private;
     Private* const d;
+
+private:
+
+    Q_DISABLE_COPY(CameraItem)
 };
 
 // -----------------------------------------------------------
@@ -68,14 +72,16 @@ class DIGIKAM_GUI_EXPORT CameraItemList : public QTreeWidget
 public:
 
     explicit CameraItemList(QWidget* const parent = nullptr);
-    ~CameraItemList() override;
+    ~CameraItemList()                             override;
 
     void setThumbCtrl(CameraThumbsCtrl* const ctrl);
     void setItems(const CamItemInfoList& items);
 
-private :
+private:
 
-    void drawRow(QPainter* p, const QStyleOptionViewItem& opt, const QModelIndex& index) const override;
+    void drawRow(QPainter* p,
+                 const QStyleOptionViewItem& opt,
+                 const QModelIndex& index)  const override;
 
 private Q_SLOTS:
 
