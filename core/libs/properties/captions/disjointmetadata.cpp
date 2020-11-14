@@ -7,7 +7,6 @@
  * Description : Helper class for Image Description Editor Tab
  *
  * Copyright (C) 2015 by Veaceslav Munteanu <veaceslav dot munteanu90 at gmail dot com>
-
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -136,6 +135,7 @@ public:
     }
 
     // use the automatic copy constructor
+
     explicit Private(const Private& other)
         : DisjointMetadataDataFields(other)
     {
@@ -160,6 +160,8 @@ void DisjointMetadata::Private::makeConnections(DisjointMetadata* q)
     QObject::connect(CoreDbAccess::databaseWatch(), SIGNAL(databaseChanged()),
                      q, SLOT(slotInvalidate()));
 }
+
+// --------------------------------------------------------------------------------
 
 DisjointMetadata::DisjointMetadata(QObject* const parent)
     : QObject(parent),
@@ -445,6 +447,7 @@ bool DisjointMetadata::write(ItemInfo info, WriteMode writeMode)
     bool changed = false;
 
     // find out in advance if we have something to write - needed for FullWriteIfChanged mode
+
     bool saveTitle      = (d->titlesStatus     == MetadataAvailable);
     bool saveComment    = (d->commentsStatus   == MetadataAvailable);
     bool saveDateTime   = (d->dateTimeStatus   == MetadataAvailable);
@@ -838,11 +841,11 @@ void DisjointMetadata::dateTimeInterval(QDateTime& lowest, QDateTime& highest) c
     switch (d->dateTimeStatus)
     {
         case MetadataInvalid:
-            lowest = highest = QDateTime();
+            lowest  = highest = QDateTime();
             break;
 
         case MetadataAvailable:
-            lowest = highest = d->dateTime;
+            lowest  = highest = d->dateTime;
             break;
 
         case MetadataDisjoint:
@@ -857,11 +860,11 @@ void DisjointMetadata::pickLabelInterval(int& lowest, int& highest) const
     switch (d->pickLabelStatus)
     {
         case MetadataInvalid:
-            lowest = highest = -1;
+            lowest  = highest = -1;
             break;
 
         case MetadataAvailable:
-            lowest = highest = d->pickLabel;
+            lowest  = highest = d->pickLabel;
             break;
 
         case MetadataDisjoint:
@@ -876,11 +879,11 @@ void DisjointMetadata::colorLabelInterval(int& lowest, int& highest) const
     switch (d->colorLabelStatus)
     {
         case MetadataInvalid:
-            lowest = highest = -1;
+            lowest  = highest = -1;
             break;
 
         case MetadataAvailable:
-            lowest = highest = d->colorLabel;
+            lowest  = highest = d->colorLabel;
             break;
 
         case MetadataDisjoint:

@@ -84,6 +84,8 @@ public:
         PartialWrite
     };
 
+public:
+
     explicit DisjointMetadata(QObject* const parent = nullptr);
     DisjointMetadata(const DisjointMetadata& other);
     ~DisjointMetadata()                                                                                                       override;
@@ -97,29 +99,29 @@ public:
     /**
      * Status
      */
-    Status dateTimeStatus()                                                                                             const;
-    Status titlesStatus()                                                                                               const;
-    Status commentsStatus()                                                                                             const;
-    Status pickLabelStatus()                                                                                            const;
-    Status colorLabelStatus()                                                                                           const;
-    Status ratingStatus()                                                                                               const;
-    Status templateStatus()                                                                                             const;
+    Status dateTimeStatus()                                                 const;
+    Status titlesStatus()                                                   const;
+    Status commentsStatus()                                                 const;
+    Status pickLabelStatus()                                                const;
+    Status colorLabelStatus()                                               const;
+    Status ratingStatus()                                                   const;
+    Status templateStatus()                                                 const;
 
-    Status tagStatus(int albumId)                                                                                       const;
-    Status tagStatus(const QString& tagPath)                                                                            const;
+    Status tagStatus(int albumId)                                           const;
+    Status tagStatus(const QString& tagPath)                                const;
 
     /**
      * Returns if the metadata field has been changed
      * with the corresponding set... method
      */
-    bool dateTimeChanged()                                                                                              const;
-    bool titlesChanged()                                                                                                const;
-    bool commentsChanged()                                                                                              const;
-    bool pickLabelChanged()                                                                                             const;
-    bool colorLabelChanged()                                                                                            const;
-    bool ratingChanged()                                                                                                const;
-    bool templateChanged()                                                                                              const;
-    bool tagsChanged()                                                                                                  const;
+    bool dateTimeChanged()                                                  const;
+    bool titlesChanged()                                                    const;
+    bool commentsChanged()                                                  const;
+    bool pickLabelChanged()                                                 const;
+    bool colorLabelChanged()                                                const;
+    bool ratingChanged()                                                    const;
+    bool templateChanged()                                                  const;
+    bool tagsChanged()                                                      const;
 
     /**
      * Set dateTime to the given value, and the dateTime status to MetadataAvailable
@@ -139,21 +141,21 @@ public:
      *                                (see dateTimeInterval())
      * If status is MetadataInvalid, an invalid date is returned.
      */
-    QDateTime   dateTime()                                                                                              const;
+    QDateTime   dateTime()                                                  const;
 
     /**
      * Returns a map all alternate language titles.
      * If status is MetadataDisjoint, the first loaded map is returned.
      * If status is MetadataInvalid, CaptionMap() is returned.
      */
-    CaptionsMap titles()                                                                                                const;
+    CaptionsMap titles()                                                    const;
 
     /**
      * Returns a map all alternate language omments .
      * If status is MetadataDisjoint, the first loaded map is returned.
      * If status is MetadataInvalid, CaptionMap() is returned.
      */
-    CaptionsMap comments()                                                                                              const;
+    CaptionsMap comments()                                                  const;
 
     /**
      * Returns the Pick Label id (see PickLabel values in globals.h).
@@ -161,7 +163,7 @@ public:
      *                                (see pickLabelInterval())
      * If status is MetadataInvalid, -1 is returned.
      */
-    int         pickLabel()                                                                                             const;
+    int         pickLabel()                                                 const;
 
     /**
      * Returns the Color Label id (see ColorLabel values in globals.h).
@@ -169,7 +171,7 @@ public:
      *                                (see colorLabelInterval())
      * If status is MetadataInvalid, -1 is returned.
      */
-    int         colorLabel()                                                                                            const;
+    int         colorLabel()                                                const;
 
     /**
      * Returns the rating.
@@ -177,48 +179,52 @@ public:
      *                                (see ratingInterval())
      * If status is MetadataInvalid, -1 is returned.
      */
-    int         rating()                                                                                                const;
+    int         rating()                                                    const;
 
     /**
      * Returns the metadata template.
      * If status is MetadataDisjoint, the first loaded template is returned.
      * If status is MetadataInvalid, 0 is returned.
      */
-    Template    metadataTemplate()                                                                                      const;
+    Template    metadataTemplate()                                          const;
 
     /**
      * Returns the earliest and latest date.
      * If status is MetadataAvailable, the values are the same.
      * If status is MetadataInvalid, invalid dates are returned.
      */
-    void        dateTimeInterval(QDateTime& lowest, QDateTime& highest)                                                 const;
+    void        dateTimeInterval(QDateTime& lowest,
+                                 QDateTime& highest)                        const;
 
     /**
      * Returns the lowest and highest Pick Label id (see PickLabel values from globals.h).
      * If status is MetadataAvailable, the values are the same.
      * If status is MetadataInvalid, -1 is returned.
      */
-    void        pickLabelInterval(int& lowest, int& highest)                                                            const;
+    void        pickLabelInterval(int& lowest,
+                                  int& highest)                             const;
 
     /**
      * Returns the lowest and highest Color Label id (see ColorLabel values from globals.h).
      * If status is MetadataAvailable, the values are the same.
      * If status is MetadataInvalid, -1 is returned.
      */
-    void        colorLabelInterval(int& lowest, int& highest)                                                           const;
+    void        colorLabelInterval(int& lowest,
+                                   int& highest)                            const;
 
     /**
      * Returns the lowest and highest rating.
      * If status is MetadataAvailable, the values are the same.
      * If status is MetadataInvalid, -1 is returned.
      */
-    void        ratingInterval(int& lowest, int& highest)                                                               const;
+    void        ratingInterval(int& lowest,
+                               int& highest)                                const;
 
     /**
      * Returns a QStringList with all tags with status MetadataAvailable.
      * (i.e., the intersection of tags from all loaded metadata sets)
      */
-    QStringList keywords()                                                                                              const;
+    QStringList keywords()                                                  const;
 
     /**
      * Returns a map with the status for each tag.
@@ -227,7 +233,7 @@ public:
      * If the tag was set on all loaded images, the status is MetadataAvailable.
      * If the tag was set on at least one, but not all of the loaded images, the status is MetadataDisjoint.
      */
-    QMap<int, Status> tags()                                                                                            const;
+    QMap<int, Status> tags()                                                const;
 
     void resetChanged();
 
@@ -243,7 +249,8 @@ public:
      * apply any changes.
      */
     bool willWriteMetadata(WriteMode writeMode,
-                           const MetaEngineSettingsContainer& settings = MetaEngineSettings::instance()->settings())    const;
+                           const MetaEngineSettingsContainer& settings = 
+                                MetaEngineSettings::instance()->settings()) const;
 
     /**
      * @brief changedFlags - used for selective metadata write. The result will be passed to metadatahub and it will
