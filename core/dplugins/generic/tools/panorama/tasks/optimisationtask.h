@@ -52,6 +52,10 @@ private:
     const QUrl& ptoUrl;
     const bool  levelHorizon;
     const bool  buildGPano;
+
+private:
+
+    Q_DISABLE_COPY(OptimisationTask)
 };
 
 } // namespace DigikamGenericPanoramaPlugin
