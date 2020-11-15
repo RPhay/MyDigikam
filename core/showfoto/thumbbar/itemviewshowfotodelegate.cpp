@@ -27,11 +27,11 @@ namespace ShowFoto
 {
 
 ItemViewShowfotoDelegatePrivate::ItemViewShowfotoDelegatePrivate()
-    : spacing(0),
-      thumbSize(ThumbnailSize(0)),
-      q(nullptr),
-      radius(3),                // painting constants
-      margin(5)
+    : spacing   (0),
+      thumbSize (ThumbnailSize(0)),
+      q         (nullptr),
+      radius    (3),                ///< painting constants
+      margin    (5)
 {
 }
 
@@ -53,13 +53,14 @@ void ItemViewShowfotoDelegatePrivate::clearRects()
 
 ItemViewShowfotoDelegate::ItemViewShowfotoDelegate(QObject* const parent)
     : DItemDelegate(parent),
-      d_ptr(new ItemViewShowfotoDelegatePrivate)
+      d_ptr        (new ItemViewShowfotoDelegatePrivate)
 {
     d_ptr->init(this);
 }
 
 ItemViewShowfotoDelegate::ItemViewShowfotoDelegate(ItemViewShowfotoDelegatePrivate& dd, QObject* const parent)
-    : DItemDelegate(parent), d_ptr(&dd)
+    : DItemDelegate(parent),
+      d_ptr        (&dd)
 {
     d_ptr->init(this);
 }

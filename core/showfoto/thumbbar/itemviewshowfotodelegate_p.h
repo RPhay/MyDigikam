@@ -59,9 +59,7 @@ class Q_DECL_HIDDEN ItemViewShowfotoDelegatePrivate
 public:
 
     ItemViewShowfotoDelegatePrivate();
-    virtual ~ItemViewShowfotoDelegatePrivate()
-    {
-    }
+    virtual ~ItemViewShowfotoDelegatePrivate() = default;
 
     void init(ItemViewShowfotoDelegate* const _q);
 
@@ -95,6 +93,10 @@ public:
     /// constant values for drawing
     int                       radius;
     int                       margin;
+
+private:
+
+    Q_DISABLE_COPY(ItemViewShowfotoDelegatePrivate)
 };
 
 } // namespace ShowFoto

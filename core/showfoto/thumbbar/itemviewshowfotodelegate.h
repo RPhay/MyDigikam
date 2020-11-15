@@ -39,37 +39,39 @@ class ShowfotoFilterModel;
 class ShowfotoItemModel;
 class ItemViewShowfotoDelegatePrivate;
 
-class ItemViewShowfotoDelegate : public DItemDelegate, public ItemDelegateOverlayContainer
+class ItemViewShowfotoDelegate : public DItemDelegate,
+                                 public ItemDelegateOverlayContainer
 {
     Q_OBJECT
 
 public:
 
     explicit ItemViewShowfotoDelegate(QObject* const parent = nullptr);
-    ~ItemViewShowfotoDelegate() override;
+    ~ItemViewShowfotoDelegate()                                                               override;
 
-    ThumbnailSize thumbnailSize() const;
+    ThumbnailSize thumbnailSize()                                                       const;
 
-    int           spacing() const;
-    QRect         rect() const;
+    int           spacing()                                                             const;
+    QRect         rect()                                                                const;
 
-    QSize sizeHint(const QStyleOptionViewItem& option, const QModelIndex& index) const override;
-    QSize gridSize() const override;
+    QSize sizeHint(const QStyleOptionViewItem& option,
+                   const QModelIndex& index)                                            const override;
+    QSize gridSize()                                                                    const override;
 
     /// reimplemented from DItemDelegate
-    void setThumbnailSize(const ThumbnailSize& thumbSize) override;
-    void setSpacing(int spacing) override;
-    void setDefaultViewOptions(const QStyleOptionViewItem& option) override;
+    void setThumbnailSize(const ThumbnailSize& thumbSize)                                     override;
+    void setSpacing(int spacing)                                                              override;
+    void setDefaultViewOptions(const QStyleOptionViewItem& option)                            override;
     bool acceptsToolTip(const QPoint& pos, const QRect& visualRect,
-                                const QModelIndex& index, QRect* tooltipRect = nullptr) const override;
+                        const QModelIndex& index, QRect* tooltipRect = nullptr)         const override;
     bool acceptsActivation(const QPoint& pos, const QRect& visualRect,
-                                   const QModelIndex& index, QRect* activationRect = nullptr) const override;
+                           const QModelIndex& index, QRect* activationRect = nullptr)   const override;
 
     /**
      * Returns the area where the pixmap is drawn,
      * or null if not supported
      */
-    virtual QRect pixmapRect() const;
+    virtual QRect pixmapRect()                                                          const;
 
     /**
      * Returns the area where the image information is drawn,
@@ -78,16 +80,16 @@ public:
      * but not the pixmap. The ratingRect() will e.g. typically
      * be contained in this area.
      */
-    virtual QRect imageInformationRect() const;
+    virtual QRect imageInformationRect()                                                const;
 
-    void mouseMoved(QMouseEvent* e, const QRect& visualRect, const QModelIndex& index) override;
+    void mouseMoved(QMouseEvent* e, const QRect& visualRect, const QModelIndex& index)        override;
 
 protected Q_SLOTS:
 
     void slotThemeChanged();
     void slotSetupChanged();
 
-    void overlayDestroyed(QObject* o) override;
+    void overlayDestroyed(QObject* o)                                                         override;
 
 Q_SIGNALS:
 
@@ -97,24 +99,26 @@ Q_SIGNALS:
 protected:
 
     /// Use the tool methods for painting in subclasses
-    QRect drawThumbnail(QPainter* p, const QRect& thumbRect, const QPixmap& background, const QPixmap& thumbnail) const;
-    void drawName(QPainter* p,const QRect& nameRect, const QString& name) const;
-    void drawCreationDate(QPainter* p, const QRect& dateRect, const QDateTime& date) const;
-    void drawImageSize(QPainter* p, const QRect& dimsRect, const QSize& dims) const;
-    void drawImageFormat(QPainter* p, const QRect& dimsRect, const QString& mime) const;
-    void drawFileSize(QPainter* p, const QRect& r, qlonglong bytes) const;
-    void drawGeolocationIndicator(QPainter* p, const QRect& r) const;
-    void drawFocusRect(QPainter* p, const QStyleOptionViewItem& option, bool isSelected) const;
-    void drawMouseOverRect(QPainter* p, const QStyleOptionViewItem& option) const;
+    QRect drawThumbnail(QPainter* p, const QRect& thumbRect,
+                        const QPixmap& background, const QPixmap& thumbnail)            const;
+    void drawName(QPainter* p,const QRect& nameRect, const QString& name)               const;
+    void drawCreationDate(QPainter* p, const QRect& dateRect, const QDateTime& date)    const;
+    void drawImageSize(QPainter* p, const QRect& dimsRect, const QSize& dims)           const;
+    void drawImageFormat(QPainter* p, const QRect& dimsRect, const QString& mime)       const;
+    void drawFileSize(QPainter* p, const QRect& r, qlonglong bytes)                     const;
+    void drawGeolocationIndicator(QPainter* p, const QRect& r)                          const;
+    void drawFocusRect(QPainter* p, const QStyleOptionViewItem& option,
+                       bool isSelected)                                                 const;
+    void drawMouseOverRect(QPainter* p, const QStyleOptionViewItem& option)             const;
     void prepareFonts();
     void prepareMetrics(int maxWidth);
     void prepareBackground();
 
-    QAbstractItemDelegate* asDelegate() override;
+    QAbstractItemDelegate* asDelegate()                                                       override;
 
     /// reimplement these in subclasses
     virtual void invalidatePaintingCache();
-    virtual void updateSizeRectsAndPixmaps() = 0;
+    virtual void updateSizeRectsAndPixmaps()                                            = 0;
 
 protected:
 
@@ -123,7 +127,7 @@ protected:
 
 private:
 
-    // Hidden copy constructor and assignment operator.
+    // Disable.
     ItemViewShowfotoDelegate(const ItemViewShowfotoDelegate&);
     ItemViewShowfotoDelegate& operator=(const ItemViewShowfotoDelegate&);
 
