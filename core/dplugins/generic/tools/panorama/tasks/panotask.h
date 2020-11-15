@@ -38,14 +38,13 @@ class PanoTask : public ThreadWeaver::Job
 {
 public:
 
-    explicit PanoTask(PanoAction action,
-                      const QString& workDirPath);
-    ~PanoTask() override;
+    explicit PanoTask(PanoAction action, const QString& workDirPath);
+    ~PanoTask()             override = default;
 
 public:
 
-    bool success() const override;
-    void requestAbort() override;
+    bool success() const    override;
+    void requestAbort()     override;
 
 public:
 
@@ -57,6 +56,10 @@ protected:
 
     bool             successFlag;
     const QUrl       tmpDir;
+
+private:
+
+    Q_DISABLE_COPY(PanoTask)
 };
 
 } // namespace DigikamGenericPanoramaPlugin

@@ -34,14 +34,10 @@ CpFindTask::CpFindTask(const QString& workDirPath,
                        QUrl& cpFindUrl,
                        bool celeste,
                        const QString& cpFindPath)
-    : CommandTask(PANO_CPFIND, workDirPath, cpFindPath),
-      cpFindPtoUrl(cpFindUrl),
-      celeste(celeste),
-      ptoUrl(input)
-{
-}
-
-CpFindTask::~CpFindTask()
+    : CommandTask   (PANO_CPFIND, workDirPath, cpFindPath),
+      cpFindPtoUrl  (cpFindUrl),
+      celeste       (celeste),
+      ptoUrl        (input)
 {
 }
 
