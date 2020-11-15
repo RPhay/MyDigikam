@@ -26,11 +26,6 @@
 namespace DigikamGenericYFPlugin
 {
 
-YandexFotkiAlbum::YandexFotkiAlbum()
-{
-    // nothing to do
-}
-
 YandexFotkiAlbum::YandexFotkiAlbum(const QString&   urn,
                                    const QString&   author,
                                    const QString&   title,
@@ -71,10 +66,6 @@ YandexFotkiAlbum::YandexFotkiAlbum(const YandexFotkiAlbum& other)
       m_password        (other.m_password)
 {
     // nothing to do
-}
-
-YandexFotkiAlbum::~YandexFotkiAlbum()
-{
 }
 
 YandexFotkiAlbum& YandexFotkiAlbum::operator=(const YandexFotkiAlbum& other)

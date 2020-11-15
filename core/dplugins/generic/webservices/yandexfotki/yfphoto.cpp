@@ -34,10 +34,6 @@ YFPhoto::YFPhoto()
 {
 }
 
-YFPhoto::~YFPhoto()
-{
-}
-
 YFPhoto::YFPhoto(const QString& urn,
                  const QString& author,
                  const QString& title,

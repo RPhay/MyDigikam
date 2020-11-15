@@ -38,9 +38,9 @@ class YandexFotkiAlbum
 {
 public:
 
-    YandexFotkiAlbum();
+    YandexFotkiAlbum()  = default;
     YandexFotkiAlbum(const YandexFotkiAlbum& other);
-    virtual ~YandexFotkiAlbum();
+    ~YandexFotkiAlbum() = default;
 
     YandexFotkiAlbum& operator=(const YandexFotkiAlbum& other);
 
@@ -101,7 +101,7 @@ public:
         m_password = password;
     }
 
-    virtual QString toString()          const
+    QString toString()                  const
     {
         return m_title;
     }

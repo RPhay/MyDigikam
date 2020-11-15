@@ -48,7 +48,7 @@ public:
 public:
 
     explicit YFPhoto();
-    virtual ~YFPhoto();
+    ~YFPhoto()  = default;
 
     YFPhoto(const YFPhoto& other);
 
@@ -169,7 +169,7 @@ public:
         return m_remoteUrl;
     }
 
-    virtual QString toString() const
+    QString toString() const
     {
         return m_title;
     }
