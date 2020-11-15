@@ -46,10 +46,6 @@ CompileMKTask::CompileMKTask(const QString& workDirPath,
 {
 }
 
-CompileMKTask::~CompileMKTask()
-{
-}
-
 void CompileMKTask::run(ThreadWeaver::JobPointer, ThreadWeaver::Thread*)
 {
     QStringList args;

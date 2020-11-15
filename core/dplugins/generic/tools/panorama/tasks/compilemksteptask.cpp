@@ -44,10 +44,6 @@ CompileMKStepTask::CompileMKStepTask(const QString& workDirPath, int id, const Q
 {
 }
 
-CompileMKStepTask::~CompileMKStepTask()
-{
-}
-
 void CompileMKStepTask::run(ThreadWeaver::JobPointer, ThreadWeaver::Thread*)
 {
     QFileInfo fi(mkUrl.toLocalFile());

@@ -42,10 +42,6 @@ AutoCropTask::AutoCropTask(const QString& workDirPath,
 {
 }
 
-AutoCropTask::~AutoCropTask()
-{
-}
-
 void AutoCropTask::run(ThreadWeaver::JobPointer, ThreadWeaver::Thread*)
 {
     viewCropPtoUrl = tmpDir;

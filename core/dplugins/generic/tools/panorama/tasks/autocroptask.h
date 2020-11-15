@@ -40,7 +40,7 @@ public:
                           QUrl& viewCropPtoUrl,
                           bool  buildGPano,
                           const QString& panoModifyPath);
-    ~AutoCropTask() override;
+    ~AutoCropTask() = default;
 
 protected:
 
@@ -53,6 +53,10 @@ private:
 /*
     const bool  buildGPano;
 */
+
+private:
+
+    Q_DISABLE_COPY(AutoCropTask)
 };
 
 } // namespace DigikamGenericPanoramaPlugin

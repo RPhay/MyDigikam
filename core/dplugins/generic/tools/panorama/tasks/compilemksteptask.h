@@ -41,7 +41,7 @@ public:
                                const QString& enblendPath,
                                const QString& makePath,
                                bool preview);
-    ~CompileMKStepTask() override;
+    ~CompileMKStepTask() = default;
 
 public:
 
@@ -56,6 +56,10 @@ private:
     const QUrl&   mkUrl;
     const QString nonaPath;
     const QString enblendPath;
+
+private:
+
+    Q_DISABLE_COPY(CompileMKStepTask)
 };
 
 } // namespace DigikamGenericPanoramaPlugin

@@ -37,10 +37,6 @@ CpCleanTask::CpCleanTask(const QString& workDirPath, const QUrl& input,
 {
 }
 
-CpCleanTask::~CpCleanTask()
-{
-}
-
 void CpCleanTask::run(ThreadWeaver::JobPointer, ThreadWeaver::Thread*)
 {
     cpCleanPtoUrl = tmpDir;
