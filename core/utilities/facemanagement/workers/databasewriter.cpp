@@ -33,7 +33,7 @@ namespace Digikam
 
 DatabaseWriter::DatabaseWriter(FacePipeline::WriteMode mode, FacePipeline::Private* const dd)
     : mode               (mode),
-      thumbnailLoadThread(d->createThumbnailLoadThread()),
+      thumbnailLoadThread(dd->createThumbnailLoadThread()),
       d                  (dd)
 {
 }
