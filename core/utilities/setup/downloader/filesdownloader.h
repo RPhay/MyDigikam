@@ -50,9 +50,8 @@ public:
 
 private:
 
-    QMap<QString, QList<QVariant> > getAllFilesMap() const;
-    bool exists(const QString& file, int size) const;
     void download();
+    bool exists(int index) const;
 
 private Q_SLOTS:
 

@@ -56,7 +56,7 @@ public:
 
     explicit Private()
       : downloadUrl (QLatin1String("https://files.kde.org/digikam/")),
-        size        (0),
+        index       (0),
         success     (true),
         buttons     (nullptr),
         progress    (nullptr),
@@ -68,11 +68,9 @@ public:
 
     const QString          downloadUrl;
 
-    QString                url;
-    QString                name;
-    QString                hash;
+    QList<QVariant>        files;
 
-    int                    size;
+    int                    index;
     bool                   success;
 
     QDialogButtonBox*      buttons;
@@ -87,6 +85,38 @@ FilesDownloader::FilesDownloader(QWidget* const parent)
     : QDialog (parent),
       d       (new Private)
 {
+    d->files << QLatin1String("facesengine/shape-predictor/");
+    d->files << QLatin1String("shapepredictor.dat");
+    d->files << QLatin1String("6f3d2a59dc30c7c9166983224dcf5732b25de734fff1e36ff1f3047ef90ed82b");
+    d->files << 67740572;
+
+    if (qApp->applicationName() == QLatin1String("digikam"))
+    {
+        d->files << QLatin1String("facesengine/dnnface/");
+        d->files << QLatin1String("openface_nn4.small2.v1.t7");
+        d->files << QLatin1String("9b72d54aeb24a64a8135dca8e792f7cc675c99a884a6940350a6cedcf7b7ba08");
+        d->files << 31510785;
+
+        d->files << QLatin1String("facesengine/dnnface/");
+        d->files << QLatin1String("deploy.prototxt");
+        d->files << QLatin1String("f62621cac923d6f37bd669298c428bb7ee72233b5f8c3389bb893e35ebbcf795");
+        d->files << 28092;
+
+        d->files << QLatin1String("facesengine/dnnface/");
+        d->files << QLatin1String("res10_300x300_ssd_iter_140000_fp16.caffemodel");
+        d->files << QLatin1String("510ffd2471bd81e3fcc88a5beb4eae4fb445ccf8333ebc54e7302b83f4158a76");
+        d->files << 5351047;
+
+        d->files << QLatin1String("facesengine/dnnface/");
+        d->files << QLatin1String("yolov3-face.cfg");
+        d->files << QLatin1String("f6563bd6923fd6500d2c2d6025f32ebdba916a85e5c9798351d916909f62aaf5");
+        d->files << 8334;
+
+        d->files << QLatin1String("facesengine/dnnface/");
+        d->files << QLatin1String("yolov3-wider_16000.weights");
+        d->files << QLatin1String("a88f3b3882e3cce1e553a81d42beef6202cb9afc3db88e7944f9ffbcc369e7df");
+        d->files << 246305388;
+    }
 }
 
 FilesDownloader::~FilesDownloader()
@@ -101,20 +131,14 @@ FilesDownloader::~FilesDownloader()
 
 bool FilesDownloader::checkDownloadFiles() const
 {
-    const QMap<QString, QList<QVariant> >& allFilesMap = getAllFilesMap();
-    QMap<QString, QList<QVariant> >::const_iterator it;
-
-    for (it = allFilesMap.constBegin() ; it != allFilesMap.constEnd() ; ++ it)
+    for (int i = 0 ; i < d->files.size() ; i += 4)
     {
-        if (it.value().size() == 3)
+        if (exists(i))
         {
-            if (exists(it.key(), it.value().at(2).toInt()))
-            {
-                continue;
-            }
-
-            return false;
+            continue;
         }
+
+        return false;
     }
 
     return true;
@@ -144,7 +168,7 @@ void FilesDownloader::startDownload()
                                                 "needs some large binary files. Some of these files were "
                                                 "not found and are now being downloaded. You can cancel this "
                                                 "process, the next time digiKam is started this dialog will "
-                                                "appear again. Face recognition will not work without these "
+                                                "appear again. Face detection will not work without these "
                                                 "files.</p>"
                                                 "<p>The files will be downloaded to %1. Make sure there are "
                                                 "around 300 MiB available. After the successful download "
@@ -181,27 +205,16 @@ void FilesDownloader::slotDownload()
 
     if (d->success)
     {
-        const QMap<QString, QList<QVariant> >& allFilesMap = getAllFilesMap();
-        QMap<QString, QList<QVariant> >::const_iterator it;
-
-        for (it = allFilesMap.constBegin() ; it != allFilesMap.constEnd() ; ++ it)
+        for ( ; d->index < d->files.size() ; d->index += 4)
         {
-            if (it.value().size() == 3)
+            if (exists(d->index))
             {
-                if (exists(it.key(), it.value().at(2).toInt()))
-                {
-                    continue;
-                }
-
-                d->url  = it.value().at(0).toString();
-                d->hash = it.value().at(1).toString();
-                d->size = it.value().at(2).toInt();
-                d->name = it.key();
-
-                download();
-
-                return;
+                continue;
             }
+
+            download();
+
+            return;
         }
 
         QMessageBox::information(this, qApp->applicationName(),
@@ -230,16 +243,28 @@ void FilesDownloader::download()
                 this, SLOT(slotDownloaded(QNetworkReply*)));
     }
 
-    d->progress->setMaximum(d->size);
-    d->nameLabel->setText(d->name);
+    d->nameLabel->setText(d->files.at(d->index + 1).toString());
+    d->progress->setMaximum(d->files.at(d->index + 3).toInt());
     d->progress->reset();
 
-    QNetworkRequest request(QUrl(d->downloadUrl + d->url + d->name));
+    QNetworkRequest request(QUrl(d->downloadUrl                   +
+                                 d->files.at(d->index).toString() +
+                                 d->files.at(d->index + 1).toString()));
+
     request.setMaximumRedirectsAllowed(10);
     d->reply = d->netMngr->get(request);
 
     connect(d->reply, SIGNAL(downloadProgress(qint64,qint64)),
             this, SLOT(slotDownloadProgress(qint64,qint64)));
+}
+
+bool FilesDownloader::exists(int index) const
+{
+    QString name = d->files.at(index + 1).toString();
+    QString path = QStandardPaths::locate(QStandardPaths::GenericDataLocation,
+                                          QString::fromLatin1("digikam/facesengine/%1").arg(name));
+
+    return (!path.isEmpty() && (QFileInfo(path).size() == d->files.at(index + 3).toInt()));
 }
 
 void FilesDownloader::slotDownloaded(QNetworkReply* reply)
@@ -260,6 +285,8 @@ void FilesDownloader::slotDownloaded(QNetworkReply* reply)
 
         d->success = false;
 
+        slotDownload();
+
         return;
     }
 
@@ -269,7 +296,7 @@ void FilesDownloader::slotDownloaded(QNetworkReply* reply)
 
     sha256.addData(data);
 
-    if (d->hash != QString::fromLatin1(sha256.result().toHex()))
+    if (d->files.at(d->index + 2).toString() != QString::fromLatin1(sha256.result().toHex()))
     {
         reply->deleteLater();
 
@@ -288,13 +315,13 @@ void FilesDownloader::slotDownloaded(QNetworkReply* reply)
         QDir().mkpath(path);
     }
 
-    QFile file(path + QLatin1Char('/') + d->name);
+    QFile file(path + QLatin1Char('/') + d->files.at(d->index + 1).toString());
 
     if (file.open(QIODevice::WriteOnly))
     {
         qint64 written = file.write(data);
 
-        if (written != d->size)
+        if (written != d->files.at(d->index + 3).toInt())
         {
             d->success = false;
         }
@@ -311,67 +338,6 @@ void FilesDownloader::slotDownloadProgress(qint64 bytesReceived, qint64 bytesTot
 {
     d->progress->setMaximum(bytesTotal);
     d->progress->setValue(bytesReceived);
-}
-
-QMap<QString, QList<QVariant> > FilesDownloader::getAllFilesMap() const
-{
-    QMap<QString, QList<QVariant> > allFilesMap;
-    QList<QVariant> fileList;
-
-    fileList << QLatin1String("facesengine/shape-predictor/");
-    fileList << QLatin1String("6f3d2a59dc30c7c9166983224dcf5732b25de734fff1e36ff1f3047ef90ed82b");
-    fileList << 67740572;
-
-    allFilesMap.insert(QLatin1String("shapepredictor.dat"), fileList);
-    fileList.clear();
-
-    if (qApp->applicationName() == QLatin1String("digikam"))
-    {
-        fileList << QLatin1String("facesengine/dnnface/");
-        fileList << QLatin1String("9b72d54aeb24a64a8135dca8e792f7cc675c99a884a6940350a6cedcf7b7ba08");
-        fileList << 31510785;
-
-        allFilesMap.insert(QLatin1String("openface_nn4.small2.v1.t7"), fileList);
-        fileList.clear();
-
-        fileList << QLatin1String("facesengine/dnnface/");
-        fileList << QLatin1String("f62621cac923d6f37bd669298c428bb7ee72233b5f8c3389bb893e35ebbcf795");
-        fileList << 28092;
-
-        allFilesMap.insert(QLatin1String("deploy.prototxt"), fileList);
-        fileList.clear();
-
-        fileList << QLatin1String("facesengine/dnnface/");
-        fileList << QLatin1String("510ffd2471bd81e3fcc88a5beb4eae4fb445ccf8333ebc54e7302b83f4158a76");
-        fileList << 5351047;
-
-        allFilesMap.insert(QLatin1String("res10_300x300_ssd_iter_140000_fp16.caffemodel"), fileList);
-        fileList.clear();
-
-        fileList << QLatin1String("facesengine/dnnface/");
-        fileList << QLatin1String("f6563bd6923fd6500d2c2d6025f32ebdba916a85e5c9798351d916909f62aaf5");
-        fileList << 8334;
-
-        allFilesMap.insert(QLatin1String("yolov3-face.cfg"), fileList);
-        fileList.clear();
-
-        fileList << QLatin1String("facesengine/dnnface/");
-        fileList << QLatin1String("a88f3b3882e3cce1e553a81d42beef6202cb9afc3db88e7944f9ffbcc369e7df");
-        fileList << 246305388;
-
-        allFilesMap.insert(QLatin1String("yolov3-wider_16000.weights"), fileList);
-        fileList.clear();
-    }
-
-    return allFilesMap;
-}
-
-bool FilesDownloader::exists(const QString& file, int size) const
-{
-    QString path = QStandardPaths::locate(QStandardPaths::GenericDataLocation,
-                                          QString::fromLatin1("digikam/facesengine/%1").arg(file));
-
-    return (!path.isEmpty() && (QFileInfo(path).size() == size));
 }
 
 } // namespace Digikam
