@@ -52,10 +52,10 @@ class Q_DECL_HIDDEN HTMLOutputPage::Private
 public:
 
     explicit Private()
-      : destUrl(nullptr),
-        openInBrowser(nullptr),
-        titleLabel(nullptr),
-        imageSelectionTitle(nullptr)
+      : destUrl             (nullptr),
+        openInBrowser       (nullptr),
+        titleLabel          (nullptr),
+        imageSelectionTitle (nullptr)
     {
     }
 
@@ -67,7 +67,7 @@ public:
 
 HTMLOutputPage::HTMLOutputPage(QWizard* const dialog, const QString& title)
     : DWizardPage(dialog, title),
-      d(new Private)
+      d          (new Private)
 {
     setObjectName(QLatin1String("OutputPage"));
 
@@ -143,7 +143,9 @@ void HTMLOutputPage::initializePage()
     HTMLWizard* const wizard = dynamic_cast<HTMLWizard*>(assistant());
 
     if (!wizard)
+    {
         return;
+    }
 
     GalleryInfo* const info  = wizard->galleryInfo();
 
@@ -158,17 +160,23 @@ void HTMLOutputPage::initializePage()
 bool HTMLOutputPage::validatePage()
 {
     if (d->destUrl->fileDlgPath().isEmpty())
+    {
         return false;
+    }
 
     HTMLWizard* const wizard = dynamic_cast<HTMLWizard*>(assistant());
 
     if (!wizard)
+    {
         return false;
+    }
 
     GalleryInfo* const info  = wizard->galleryInfo();
 
     if (info->m_getOption == GalleryInfo::IMAGES && d->imageSelectionTitle->text().isEmpty())
+    {
         return false;
+    }
 
     info->setDestUrl(QUrl::fromLocalFile(d->destUrl->fileDlgPath()));
     info->setOpenInBrowser(d->openInBrowser->currentIndex());

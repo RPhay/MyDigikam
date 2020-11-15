@@ -58,7 +58,7 @@ public:
 
 HTMLThemePage::HTMLThemePage(QWizard* const dialog, const QString& title)
     : DWizardPage(dialog, title),
-      d(new Private)
+      d          (new Private)
 {
     setObjectName(QLatin1String("ThemePage"));
 
@@ -90,7 +90,9 @@ void HTMLThemePage::initializePage()
     HTMLWizard* const wizard              = dynamic_cast<HTMLWizard*>(assistant());
 
     if (!wizard)
+    {
         return;
+    }
 
     GalleryInfo* const info               = wizard->galleryInfo();
     GalleryTheme::List list               = GalleryTheme::getList();
@@ -112,6 +114,7 @@ void HTMLThemePage::initializePage()
     }
 
     // Set page states, whoch can only be disabled after they have *all* been added.
+
     slotThemeSelectionChanged();
 }
 

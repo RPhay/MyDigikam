@@ -51,7 +51,7 @@ public:
 
 InvisibleButtonGroup::InvisibleButtonGroup(QWidget* const parent)
     : QWidget(parent),
-      d(new Private)
+      d      (new Private)
 {
     hide();
 

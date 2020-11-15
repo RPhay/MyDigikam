@@ -57,7 +57,8 @@ Q_SIGNALS:
 
 private:
 
-    InvisibleButtonGroup(); // Disable
+    // Disable
+    InvisibleButtonGroup();
 
     class Private;
     Private* const d;

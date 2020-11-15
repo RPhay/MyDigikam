@@ -59,8 +59,8 @@ public:
 
     explicit Private()
       : progressView(nullptr),
-        progressBar(nullptr),
-        complete(false)
+        progressBar (nullptr),
+        complete    (false)
     {
     }
 
@@ -71,7 +71,7 @@ public:
 
 HTMLFinalPage::HTMLFinalPage(QWizard* const dialog, const QString& title)
     : DWizardPage(dialog, title),
-      d(new Private)
+      d          (new Private)
 {
     setObjectName(QLatin1String("FinalPage"));
 
@@ -125,7 +125,9 @@ void HTMLFinalPage::slotProcess()
     if (info->m_getOption == GalleryInfo::ALBUMS)
     {
         if (!info->m_iface)
+        {
             return;
+        }
 
         d->progressView->addEntry(i18n("%1 albums to process:", info->m_albumList.count()),
                                   DHistoryView::ProgressEntry);
@@ -188,7 +190,9 @@ void HTMLFinalPage::slotProcess()
         }
 
         default:
+        {
             break;
+        }
     }
 
     d->complete = true;

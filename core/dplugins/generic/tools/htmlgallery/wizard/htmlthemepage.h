@@ -47,9 +47,11 @@ public:
 
     explicit ThemeListBoxItem(GalleryTheme::Ptr theme)
         : QListWidgetItem(theme->name()),
-          m_theme(theme)
+          m_theme        (theme)
     {
     }
+
+    ~ThemeListBoxItem() = default;
 
 public:
 
@@ -65,12 +67,12 @@ class HTMLThemePage : public DWizardPage
 public:
 
     explicit HTMLThemePage(QWizard* const dialog, const QString& title);
-    ~HTMLThemePage() override;
+    ~HTMLThemePage()                        override;
 
-    void initializePage() override;
-    bool validatePage() override;
+    void initializePage()                   override;
+    bool validatePage()                     override;
 
-    GalleryTheme::Ptr currentTheme() const;
+    GalleryTheme::Ptr currentTheme()  const;
 
 private Q_SLOTS:
 

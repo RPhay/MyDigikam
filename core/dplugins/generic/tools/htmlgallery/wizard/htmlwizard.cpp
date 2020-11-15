@@ -61,15 +61,15 @@ class Q_DECL_HIDDEN HTMLWizard::Private
 public:
 
     explicit Private()
-      : info(nullptr),
-        configManager(nullptr),
-        introPage(nullptr),
-        selectionPage(nullptr),
-        themePage(nullptr),
-        parametersPage(nullptr),
-        imageSettingsPage(nullptr),
-        outputPage(nullptr),
-        finalPage(nullptr)
+      : info                (nullptr),
+        configManager       (nullptr),
+        introPage           (nullptr),
+        selectionPage       (nullptr),
+        themePage           (nullptr),
+        parametersPage      (nullptr),
+        imageSettingsPage   (nullptr),
+        outputPage          (nullptr),
+        finalPage           (nullptr)
     {
     }
 
@@ -87,7 +87,7 @@ public:
 
 HTMLWizard::HTMLWizard(QWidget* const parent, DInfoInterface* const iface)
     : DWizardDlg(parent, QLatin1String("HTML Gallery Dialog")),
-      d(new Private)
+      d         (new Private)
 {
     setOption(QWizard::NoCancelButtonOnLastPage);
     setWindowTitle(i18n("Create HTML Gallery"));
@@ -161,6 +161,7 @@ int HTMLWizard::nextId() const
         if (theme && theme->parameterList().size() > 0)
         {
             // Enable theme parameters page as next page if there is any parameter.
+
             return d->parametersPage->id();
         }
 

@@ -64,7 +64,7 @@ public:
 
 HTMLImageSettingsPage::HTMLImageSettingsPage(QWizard* const dialog, const QString& title)
     : DWizardPage(dialog, title),
-      d(new Private)
+      d          (new Private)
 {
     setObjectName(QLatin1String("ImageSettingsPage"));
 

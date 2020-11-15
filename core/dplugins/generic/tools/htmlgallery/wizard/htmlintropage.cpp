@@ -48,11 +48,11 @@ class Q_DECL_HIDDEN HTMLIntroPage::Private
 public:
 
     explicit Private(QWizard* const dialog)
-      : imageGetOption(nullptr),
-        hbox(nullptr),
-        wizard(nullptr),
-        info(nullptr),
-        iface(nullptr)
+      : imageGetOption  (nullptr),
+        hbox            (nullptr),
+        wizard          (nullptr),
+        info            (nullptr),
+        iface           (nullptr)
     {
         wizard = dynamic_cast<HTMLWizard*>(dialog);
 
@@ -72,7 +72,7 @@ public:
 
 HTMLIntroPage::HTMLIntroPage(QWizard* const dialog, const QString& title)
     : DWizardPage(dialog, title),
-      d(new Private(dialog))
+      d          (new Private(dialog))
 {
     DVBox* const vbox  = new DVBox(this);
     QLabel* const desc = new QLabel(vbox);
