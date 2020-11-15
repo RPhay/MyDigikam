@@ -54,6 +54,10 @@ private:
 
     GeoCoordinates coordinates;
     QUrl           imageUrl;
+
+private:
+
+    Q_DISABLE_COPY(MyImageItem)
 };
 
 #endif // DIGIKAM_GEO_MY_IMAGE_ITEM_H
