@@ -138,6 +138,10 @@ protected:
 
     class Private;
     Private* const d;
+
+private:
+
+    Q_DISABLE_COPY(DLNAMediaServerDelegate)
 };
 
 } // namespace Digikam
