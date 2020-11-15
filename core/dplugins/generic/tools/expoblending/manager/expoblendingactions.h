@@ -7,7 +7,7 @@
  * Description : a tool to blend bracketed images.
  *
  * Copyright (C) 2009-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
- * Copyright (C) 2015      by Benjamin Girault, <benjamin dot girault at gmail dot com>
+ * Copyright (C) 2015      by Benjamin Girault <benjamin dot girault at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -52,53 +52,48 @@ class ExpoBlendingItemPreprocessedUrls
 {
 public:
 
-    ExpoBlendingItemPreprocessedUrls()
-    {
-    };
+    ExpoBlendingItemPreprocessedUrls()          = default;
 
     ExpoBlendingItemPreprocessedUrls(const QUrl& preprocessed, const QUrl& preview)
         : preprocessedUrl(preprocessed),
-          previewUrl(preview)
+          previewUrl     (preview)
     {
     };
 
-    virtual ~ExpoBlendingItemPreprocessedUrls()
-    {
-    };
+    ~ExpoBlendingItemPreprocessedUrls()         = default;
 
-    QUrl preprocessedUrl;              // Can be original file or aligned version, depending of user choice.
-    QUrl previewUrl;                   // The JPEG preview version, accordingly of preprocessedUrl constant.
+    QUrl preprocessedUrl;              ///< Can be original file or aligned version, depending of user choice.
+    QUrl previewUrl;                   ///< The JPEG preview version, accordingly of preprocessedUrl constant.
 };
 
-typedef QMap<QUrl, ExpoBlendingItemPreprocessedUrls> ExpoBlendingItemUrlsMap;   // Map between original Url and processed temp Urls.
+typedef QMap<QUrl, ExpoBlendingItemPreprocessedUrls> ExpoBlendingItemUrlsMap;   ///< Map between original Url and processed temp Urls.
 
 class ExpoBlendingActionData
 {
-
 public:
 
     explicit ExpoBlendingActionData()
         : starting(false),
-          success(false),
-          action(EXPOBLENDING_NONE)
+          success (false),
+          action  (EXPOBLENDING_NONE)
     {
     }
 
-    bool               starting;
-    bool               success;
+    bool                    starting;
+    bool                    success;
 
-    QString            message;
+    QString                 message;
 
-    QImage             image;
+    QImage                  image;
 
-    QList<QUrl>        inUrls;
-    QList<QUrl>        outUrls;
+    QList<QUrl>             inUrls;
+    QList<QUrl>             outUrls;
 
-    EnfuseSettings     enfuseSettings;
+    EnfuseSettings          enfuseSettings;
 
-    ExpoBlendingItemUrlsMap        preProcessedUrlsMap;
+    ExpoBlendingItemUrlsMap preProcessedUrlsMap;
 
-    ExpoBlendingAction action;
+    ExpoBlendingAction      action;
 };
 
 } // namespace DigikamGenericExpoBlendingPlugin

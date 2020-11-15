@@ -82,10 +82,10 @@ class Q_DECL_HIDDEN ExpoBlendingThread::Private
 public:
 
     explicit Private()
-      : cancel(false),
-        align(false),
-        enfuseVersion4x(true),
-        rawObserver(nullptr)
+      : cancel          (false),
+        align           (false),
+        enfuseVersion4x (true),
+        rawObserver     (nullptr)
     {
     }
 
@@ -123,8 +123,8 @@ public:
     QList<QUrl>                     enfuseTmpUrls;
     QMutex                          enfuseTmpUrlsMutex;
 
-    // Preprocessing
-    QList<QUrl>                     mixedUrls;     // Original non-RAW + Raw converted urls to align.
+    /// Preprocessing
+    QList<QUrl>                     mixedUrls;     ///< Original non-RAW + Raw converted urls to align.
     ExpoBlendingItemUrlsMap         preProcessedUrlsMap;
 
     MetaEngine                      meta;
@@ -136,7 +136,7 @@ public:
 
     explicit RawObserver(ExpoBlendingThread::Private* const priv)
         : DImgLoaderObserver(),
-          d(priv)
+          d                 (priv)
     {
     }
 
@@ -156,7 +156,7 @@ private:
 
 ExpoBlendingThread::ExpoBlendingThread(QObject* const parent)
     : QThread(parent),
-      d(new Private)
+      d      (new Private)
 {
     d->rawObserver = new RawObserver(d);
     qRegisterMetaType<ExpoBlendingActionData>("ExpoBlendingActionData");
@@ -168,8 +168,11 @@ ExpoBlendingThread::~ExpoBlendingThread()
                                          << "Canceling all actions and waiting for them";
 
     // cancel the thread
+
     cancel();
+
     // wait for the thread to finish
+
     wait();
 
     qCDebug(DIGIKAM_DPLUGIN_GENERIC_LOG) << "Thread finished";
@@ -187,6 +190,7 @@ void ExpoBlendingThread::setEnfuseVersion(const double version)
 void ExpoBlendingThread::cleanUpResultFiles()
 {
     // Cleanup all tmp files created by Enfuse process.
+
     QMutexLocker(&d->enfuseTmpUrlsMutex);
 
     foreach (const QUrl& url, d->enfuseTmpUrls)
@@ -278,10 +282,14 @@ void ExpoBlendingThread::cancel()
     d->cancel = true;
 
     if (d->enfuseProcess)
+    {
         d->enfuseProcess->kill();
+    }
 
     if (d->alignProcess)
+    {
         d->alignProcess->kill();
+    }
 
     d->condVar.wakeAll();
 }
@@ -317,7 +325,9 @@ void ExpoBlendingThread::run()
                         float val = getAverageSceneLuminance(t->urls[0]);
 
                         if (val != -1)
+                        {
                             avLum.setNum(log2f(val), 'g', 2);
+                        }
                     }
 
                     ExpoBlendingActionData ad;
@@ -413,6 +423,7 @@ void ExpoBlendingThread::run()
                     }
 
                     // To be cleaned in destructor.
+
                     QMutexLocker(&d->enfuseTmpUrlsMutex);
                     d->enfuseTmpUrls << destUrl;
 
@@ -459,13 +470,16 @@ void ExpoBlendingThread::run()
                             QImage img;
 
                             if (img.load(destUrl.toLocalFile()))
+                            {
                                 d->meta.setItemPreview(img.scaled(1280, 1024, Qt::KeepAspectRatio));
+                            }
                         }
 
                         d->meta.save(destUrl.toLocalFile(), true);
                     }
 
                     // To be cleaned in destructor.
+
                     QMutexLocker(&d->enfuseTmpUrlsMutex);
                     d->enfuseTmpUrls << destUrl;
 
@@ -519,13 +533,16 @@ void ExpoBlendingThread::preProcessingMultithreaded(const QUrl& url, volatile bo
 
         d->lock.lock();
         d->mixedUrls.append(preprocessedUrl);
+
         // In case of alignment is not performed.
+
         d->preProcessedUrlsMap.insert(url, ExpoBlendingItemPreprocessedUrls(preprocessedUrl, previewUrl));
         d->lock.unlock();
     }
     else
     {
         // NOTE: in this case, preprocessed Url is original file Url.
+
         QUrl previewUrl;
 
         if (!computePreview(url, previewUrl))
@@ -536,7 +553,9 @@ void ExpoBlendingThread::preProcessingMultithreaded(const QUrl& url, volatile bo
 
         d->lock.lock();
         d->mixedUrls.append(url);
+
         // In case of alignment is not performed.
+
         d->preProcessedUrlsMap.insert(url, ExpoBlendingItemPreprocessedUrls(url, previewUrl));
         d->lock.unlock();
     }
@@ -555,6 +574,7 @@ bool ExpoBlendingThread::startPreProcessing(const QList<QUrl>& inUrls,
                                          << d->preprocessingTmpDir->path();
 
     // Parallelized pre-process RAW files if necessary.
+
     d->mixedUrls.clear();
     d->preProcessedUrlsMap.clear();
 
@@ -813,9 +833,13 @@ bool ExpoBlendingThread::startEnfuse(const QList<QUrl>& inUrls, QUrl& outUrl,
     if (settings.hardMask)
     {
         if (d->enfuseVersion4x)
+        {
             args << QLatin1String("--hard-mask");
+        }
         else
+        {
             args << QLatin1String("--HardMask");
+        }
     }
 
     if (d->enfuseVersion4x)
@@ -865,16 +889,19 @@ bool ExpoBlendingThread::startEnfuse(const QList<QUrl>& inUrls, QUrl& outUrl,
     if (d->enfuseProcess->exitCode() == 0)
     {
         // Process finished successfully !
+
         return true;
     }
 
     errors = getProcessError(*(d->enfuseProcess));
+
     return false;
 }
 
 QString ExpoBlendingThread::getProcessError(QProcess& proc) const
 {
     QString std = QString::fromLocal8Bit(proc.readAll());
+
     return (i18n("Cannot run %1:\n\n %2", proc.program(), std));
 }
 
@@ -903,10 +930,14 @@ QString ExpoBlendingThread::getProcessError(QProcess& proc) const
 float ExpoBlendingThread::getAverageSceneLuminance(const QUrl& url)
 {
     if (!d->meta.load(url.toLocalFile()))
+    {
         return -1;
+    }
 
     if (!d->meta.hasExif())
+    {
         return -1;
+    }
 
     long num = 1, den = 1;
 
@@ -920,12 +951,16 @@ float ExpoBlendingThread::getAverageSceneLuminance(const QUrl& url)
     if (d->meta.getExifTagRational("Exif.Photo.ExposureTime", num, den))
     {
         if (den)
+        {
             expo = (float)(num) / (float)(den);
+        }
     }
     else if (getXmpRational("Xmp.exif.ExposureTime", num, den, &d->meta))
     {
         if (den)
+        {
             expo = (float)(num) / (float)(den);
+        }
     }
     else if (d->meta.getExifTagRational("Exif.Photo.ShutterSpeedValue", num, den))
     {
@@ -933,7 +968,9 @@ float ExpoBlendingThread::getAverageSceneLuminance(const QUrl& url)
         double tmp = 0.0;
 
         if (den)
+        {
             tmp = exp(log(2.0) * (float)(num) / (float)(den));
+        }
 
         if (tmp > 1.0)
         {
@@ -945,7 +982,9 @@ float ExpoBlendingThread::getAverageSceneLuminance(const QUrl& url)
         }
 
         if (div)
+        {
             expo = (float)(nmr) / (float)(div);
+        }
     }
     else if (getXmpRational("Xmp.exif.ShutterSpeedValue", num, den, &d->meta))
     {
@@ -953,7 +992,9 @@ float ExpoBlendingThread::getAverageSceneLuminance(const QUrl& url)
         double tmp = 0.0;
 
         if (den)
+        {
             tmp = exp(log(2.0) * (float)(num) / (float)(den));
+        }
 
         if (tmp > 1.0)
         {
@@ -965,7 +1006,9 @@ float ExpoBlendingThread::getAverageSceneLuminance(const QUrl& url)
         }
 
         if (div)
+        {
             expo = (float)(nmr) / (float)(div);
+        }
     }
 
     qCDebug(DIGIKAM_DPLUGIN_GENERIC_LOG) << url.fileName() << ": expo =" << expo;
@@ -973,22 +1016,31 @@ float ExpoBlendingThread::getAverageSceneLuminance(const QUrl& url)
     if (d->meta.getExifTagRational("Exif.Photo.FNumber", num, den))
     {
         if (den)
+        {
             fnum = (float)(num) / (float)(den);
+        }
+
     }
     else if (getXmpRational("Xmp.exif.FNumber", num, den, &d->meta))
     {
         if (den)
+        {
             fnum = (float)(num) / (float)(den);
+        }
     }
     else if (d->meta.getExifTagRational("Exif.Photo.ApertureValue", num, den))
     {
         if (den)
+        {
             fnum = (float)(exp(log(2.0) * (float)(num) / (float)(den) / 2.0));
+        }
     }
     else if (getXmpRational("Xmp.exif.ApertureValue", num, den, &d->meta))
     {
         if (den)
+        {
             fnum = (float)(exp(log(2.0) * (float)(num) / (float)(den) / 2.0));
+        }
     }
 
     qCDebug(DIGIKAM_DPLUGIN_GENERIC_LOG) << url.fileName() << ": fnum =" << fnum;
@@ -996,19 +1048,25 @@ float ExpoBlendingThread::getAverageSceneLuminance(const QUrl& url)
     // Some cameras/lens DO print the fnum but with value 0, and this is not allowed for ev computation purposes.
 
     if (fnum == 0.0)
+    {
         return -1.0;
+    }
 
     // If iso is found use that value, otherwise assume a value of iso=100. (again, some cameras do not print iso in exif).
 
     if (d->meta.getExifTagRational("Exif.Photo.ISOSpeedRatings", num, den))
     {
         if (den)
+        {
             iso = (float)(num) / (float)(den);
+        }
     }
     else if (getXmpRational("Xmp.exif.ISOSpeedRatings", num, den, &d->meta))
     {
         if (den)
+        {
             iso = (float)(num) / (float)(den);
+        }
     }
     else
     {

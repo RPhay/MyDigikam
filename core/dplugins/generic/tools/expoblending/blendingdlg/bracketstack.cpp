@@ -7,7 +7,7 @@
  * Description : a tool to blend bracketed images.
  *
  * Copyright (C) 2009-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
- * Copyright (C) 2015      by Benjamin Girault, <benjamin dot girault at gmail dot com>
+ * Copyright (C) 2015      by Benjamin Girault <benjamin dot girault at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -48,10 +48,6 @@ BracketStackItem::BracketStackItem(QTreeWidget* const parent)
     setFlags(Qt::ItemIsSelectable | Qt::ItemIsEnabled | Qt::ItemIsUserCheckable);
     setCheckState(0, Qt::Unchecked);
     setThumbnail(QIcon::fromTheme(QLatin1String("view-preview")).pixmap(treeWidget()->iconSize().width(), QIcon::Disabled));
-}
-
-BracketStackItem::~BracketStackItem()
-{
 }
 
 void BracketStackItem::setUrl(const QUrl& url)
@@ -127,10 +123,6 @@ BracketStackList::BracketStackList(QWidget* const parent)
             this, SLOT(slotItemClicked(QTreeWidgetItem*,int)));
 
     sortItems(2, Qt::DescendingOrder);
-}
-
-BracketStackList::~BracketStackList()
-{
 }
 
 QList<QUrl> BracketStackList::urls()
