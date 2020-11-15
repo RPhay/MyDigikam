@@ -65,11 +65,11 @@ typedef enum
 }
 PanoramaFileType;
 
-struct PanoramaPreprocessedUrls
+class PanoramaPreprocessedUrls
 {
-    PanoramaPreprocessedUrls()
-    {
-    }
+public:
+
+    PanoramaPreprocessedUrls()          = default;
 
     PanoramaPreprocessedUrls(const QUrl& preprocessed, const QUrl& preview)
         : preprocessedUrl(preprocessed),
@@ -77,15 +77,13 @@ struct PanoramaPreprocessedUrls
     {
     }
 
-    virtual ~PanoramaPreprocessedUrls()
-    {
-    }
+    ~PanoramaPreprocessedUrls()         = default;
 
-    QUrl preprocessedUrl;              // Can be an original file or a converted version, depending on the original file type
-    QUrl previewUrl;                   // The JPEG preview version, accordingly of preprocessedUrl constant.
+    QUrl preprocessedUrl;              ///< Can be an original file or a converted version, depending on the original file type
+    QUrl previewUrl;                   ///< The JPEG preview version, accordingly of preprocessedUrl constant.
 };
 
-typedef QMap<QUrl, PanoramaPreprocessedUrls> PanoramaItemUrlsMap;   // Map between original Url and processed temp Urls.
+typedef QMap<QUrl, PanoramaPreprocessedUrls> PanoramaItemUrlsMap;   ///< Map between original Url and processed temp Urls.
 
 // ----------------------------------------------------------------------------------------------------------
 
@@ -102,7 +100,7 @@ struct PanoActionData
     bool                starting;
     bool                success;
 
-    QString             message;        // Usually, an error message
+    QString             message;        ///< Usually, an error message
 
     int                 id;
 

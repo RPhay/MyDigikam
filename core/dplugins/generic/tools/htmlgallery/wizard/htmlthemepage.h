@@ -56,6 +56,10 @@ public:
 public:
 
     GalleryTheme::Ptr m_theme;
+
+private:
+
+    Q_DISABLE_COPY(ThemeListBoxItem)
 };
 
 // ------------------------------------------------------------------------

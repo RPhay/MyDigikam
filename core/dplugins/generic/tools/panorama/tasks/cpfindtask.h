@@ -39,7 +39,7 @@ public:
                         QUrl& cpFindUrl,
                         bool celeste,
                         const QString& cpFindPath);
-    ~CpFindTask() override;
+    ~CpFindTask() override = default;
 
 protected:
 
@@ -50,6 +50,10 @@ private:
     QUrl&       cpFindPtoUrl;
     const bool  celeste;
     const QUrl& ptoUrl;
+
+private:
+
+    Q_DISABLE_COPY(CpFindTask)
 };
 
 } // namespace DigikamGenericPanoramaPlugin

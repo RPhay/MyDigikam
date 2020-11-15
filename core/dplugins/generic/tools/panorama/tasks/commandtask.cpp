@@ -39,13 +39,9 @@ namespace DigikamGenericPanoramaPlugin
 {
 
 CommandTask::CommandTask(PanoAction action, const QString& workDirPath, const QString& commandPath)
-    : PanoTask(action, workDirPath),
-      process(nullptr),
-      commandPath(commandPath)
-{
-}
-
-CommandTask::~CommandTask()
+    : PanoTask      (action, workDirPath),
+      process       (nullptr),
+      commandPath   (commandPath)
 {
 }
 
