@@ -84,6 +84,7 @@ using namespace Magick;
 #include "applicationsettings.h"
 #include "similaritydbaccess.h"
 #include "databaseserverstarter.h"
+#include "filesdownloader.h"
 
 #ifdef Q_OS_WIN
 #   include <windows.h>
@@ -363,7 +364,16 @@ int main(int argc, char* argv[])
 
     digikam->restoreSession();
     digikam->show();
+/*
+    QPointer<FilesDownloader> floader = new FilesDownloader(digikam);
 
+    if (!floader->checkDownloadFiles())
+    {
+        floader->startDownload();
+    }
+
+    delete floader;
+*/
     if      (parser.isSet(QLatin1String("download-from")))
     {
         digikam->downloadFrom(parser.value(QLatin1String("download-from")));

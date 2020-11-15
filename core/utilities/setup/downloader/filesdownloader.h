@@ -26,7 +26,7 @@
 
 // Qt includes
 
-#include <QObject>
+#include <QDialog>
 #include <QNetworkReply>
 
 // Local includes
@@ -36,30 +36,29 @@
 namespace Digikam
 {
 
-class DIGIKAM_EXPORT FilesDownloader : public QObject
+class DIGIKAM_EXPORT FilesDownloader : public QDialog
 {
     Q_OBJECT
 
 public:
 
-    explicit FilesDownloader(QObject* const parent);
+    explicit FilesDownloader(QWidget* const parent = nullptr);
     ~FilesDownloader() override;
 
-    bool exists() const;
-    void download(int model);
-
-Q_SIGNALS:
-
-    void downloadFinished(bool success, int model);
+    bool checkDownloadFiles() const;
+    void startDownload();
 
 private:
 
-    void nextDownload();
-    bool saveArray(const QByteArray& array, const QString& name);
+    QMap<QString, QList<QVariant> > getAllFilesMap() const;
+    bool exists(const QString& file, int size) const;
+    void download();
 
 private Q_SLOTS:
 
-    void downloaded(QNetworkReply* reply);
+    void slotDownload();
+    void slotDownloaded(QNetworkReply* reply);
+    void slotDownloadProgress(qint64 bytesReceived, qint64 bytesTotal);
 
 private:
 
