@@ -26,11 +26,16 @@
 // Qt includes
 
 #include <QDir>
+#include <QLabel>
 #include <QByteArray>
 #include <QMessageBox>
+#include <QPushButton>
+#include <QVBoxLayout>
+#include <QProgressBar>
 #include <QApplication>
 #include <QStandardPaths>
 #include <QNetworkRequest>
+#include <QDialogButtonBox>
 #include <QCryptographicHash>
 #include <QNetworkAccessManager>
 
@@ -50,45 +55,68 @@ class Q_DECL_HIDDEN FilesDownloader::Private
 public:
 
     explicit Private()
-      : model       (0),
-        downloadUrl (QLatin1String("http://")),
-        caffeModel  (QLatin1String("deploy.prototxt")),
-        caffeData   (QLatin1String("res10_300x300_ssd_iter_140000_fp16.caffemodel")),
-        caffeHash   (QLatin1String("a8e705245deb6f21a70f8690d44616d654ae300796a5532180a65dfede473232")),
-        yoloModel   (QLatin1String("yolov3-face.cfg")),
-        yoloData    (QLatin1String("yolov3-wider_16000.weights")),
-        yoloHash    (QLatin1String("b60b588311ec780fb73dd3b41c6fa2617e18830dded1cc568e3020513888af73")),
+      : downloadUrl (QLatin1String("https://files.kde.org/digikam/")),
+        index       (0),
+        success     (true),
+        buttons     (nullptr),
+        progress    (nullptr),
+        nameLabel   (nullptr),
         reply       (nullptr),
         netMngr     (nullptr)
     {
     }
 
-    int                    model;
-
     const QString          downloadUrl;
-    const QString          caffeModel;
-    const QString          caffeData;
-    const QString          caffeHash;
 
-    const QString          yoloModel;
-    const QString          yoloData;
-    const QString          yoloHash;
+    QList<QVariant>        files;
 
-    QByteArray             modelArray;
-    QByteArray             dataArray;
+    int                    index;
+    bool                   success;
+
+    QDialogButtonBox*      buttons;
+    QProgressBar*          progress;
+    QLabel*                nameLabel;
 
     QNetworkReply*         reply;
     QNetworkAccessManager* netMngr;
 };
 
-FilesDownloader::FilesDownloader(QObject* const parent)
-    : QObject (parent),
+FilesDownloader::FilesDownloader(QWidget* const parent)
+    : QDialog (parent),
       d       (new Private)
 {
-    d->netMngr = new QNetworkAccessManager(this);
+    d->files << QLatin1String("facesengine/shape-predictor/");
+    d->files << QLatin1String("shapepredictor.dat");
+    d->files << QLatin1String("6f3d2a59dc30c7c9166983224dcf5732b25de734fff1e36ff1f3047ef90ed82b");
+    d->files << 67740572;
 
-    connect(d->netMngr, SIGNAL(finished(QNetworkReply*)),
-            this, SLOT(downloaded(QNetworkReply*)));
+    if (qApp->applicationName() == QLatin1String("digikam"))
+    {
+        d->files << QLatin1String("facesengine/dnnface/");
+        d->files << QLatin1String("openface_nn4.small2.v1.t7");
+        d->files << QLatin1String("9b72d54aeb24a64a8135dca8e792f7cc675c99a884a6940350a6cedcf7b7ba08");
+        d->files << 31510785;
+
+        d->files << QLatin1String("facesengine/dnnface/");
+        d->files << QLatin1String("deploy.prototxt");
+        d->files << QLatin1String("f62621cac923d6f37bd669298c428bb7ee72233b5f8c3389bb893e35ebbcf795");
+        d->files << 28092;
+
+        d->files << QLatin1String("facesengine/dnnface/");
+        d->files << QLatin1String("res10_300x300_ssd_iter_140000_fp16.caffemodel");
+        d->files << QLatin1String("510ffd2471bd81e3fcc88a5beb4eae4fb445ccf8333ebc54e7302b83f4158a76");
+        d->files << 5351047;
+
+        d->files << QLatin1String("facesengine/dnnface/");
+        d->files << QLatin1String("yolov3-face.cfg");
+        d->files << QLatin1String("f6563bd6923fd6500d2c2d6025f32ebdba916a85e5c9798351d916909f62aaf5");
+        d->files << 8334;
+
+        d->files << QLatin1String("facesengine/dnnface/");
+        d->files << QLatin1String("yolov3-wider_16000.weights");
+        d->files << QLatin1String("a88f3b3882e3cce1e553a81d42beef6202cb9afc3db88e7944f9ffbcc369e7df");
+        d->files << 246305388;
+    }
 }
 
 FilesDownloader::~FilesDownloader()
@@ -101,135 +129,145 @@ FilesDownloader::~FilesDownloader()
     delete d;
 }
 
-bool FilesDownloader::exists() const
+bool FilesDownloader::checkDownloadFiles() const
 {
-    QString model;
-    QString data;
-
-    if (d->model == 0)
+    for (int i = 0 ; i < d->files.size() ; i += 4)
     {
-        model = d->caffeModel;
-        data  = d->caffeData;
-    }
-    else
-    {
-        model = d->yoloModel;
-        data  = d->yoloData;
-    }
-
-    QString nnmodel = QStandardPaths::locate(QStandardPaths::GenericDataLocation,
-                                             QString::fromLatin1("digikam/facesengine/%1").arg(model));
-    QString nndata  = QStandardPaths::locate(QStandardPaths::GenericDataLocation,
-                                             QString::fromLatin1("digikam/facesengine/%1").arg(data));
-
-    return (!nnmodel.isEmpty() && !nndata.isEmpty());
-}
-
-void FilesDownloader::download(int model)
-{
-    d->modelArray.clear();
-    d->dataArray.clear();
-
-    d->model = model;
-/*
-    if (exists())
-    {
-        emit downloadFinished(true, d->model);
-
-        return;
-    }
-*/
-    nextDownload();
-}
-
-void FilesDownloader::nextDownload()
-{
-    QString model;
-    QString data;
-    QString hash;
-
-    if (d->model == 0)
-    {
-        model = d->caffeModel;
-        data  = d->caffeData;
-        hash  = d->caffeHash;
-    }
-    else
-    {
-        model = d->yoloModel;
-        data  = d->yoloData;
-        hash  = d->yoloHash;
-    }
-
-    if      (d->modelArray.isEmpty())
-    {
-        QNetworkRequest request(QUrl(d->downloadUrl + model));
-        d->reply = d->netMngr->get(request);
-    }
-    else if (d->dataArray.isEmpty())
-    {
-        QNetworkRequest request(QUrl(d->downloadUrl + data));
-        d->reply = d->netMngr->get(request);
-    }
-    else
-    {
-        QCryptographicHash sha256(QCryptographicHash::Sha256);
-
-        sha256.addData(d->modelArray);
-        sha256.addData(d->dataArray);
-
-        if (hash == QString::fromLatin1(sha256.result().toHex()))
+        if (exists(i))
         {
-            bool ret = true;
-
-            ret &= saveArray(d->modelArray, model);
-            ret &= saveArray(d->dataArray, data);
-
-            if (!ret)
-            {
-                QMessageBox::critical(qApp->activeWindow(), qApp->applicationName(),
-                                      i18n("Save Error"));
-            }
-
-            emit downloadFinished(ret, d->model);
-        }
-        else
-        {
-            QMessageBox::critical(qApp->activeWindow(), qApp->applicationName(),
-                                  i18n("Hash Error"));
-
-            emit downloadFinished(false, d->model);
+            continue;
         }
 
-        qDebug() << d->modelArray.size() << d->dataArray.size() << QString::fromLatin1(sha256.result().toHex());
-    }
-}
-
-bool FilesDownloader::saveArray(const QByteArray& array, const QString& name)
-{
-    QString path = QStandardPaths::writableLocation(QStandardPaths::DataLocation);
-    path        += QLatin1String("/facesenigne");
-
-    if (!QFileInfo::exists(path))
-    {
-        QDir().mkpath(path);
-    }
-
-    QFile file(path + QLatin1Char('/') + name);
-
-    if (!file.open(QIODevice::WriteOnly))
-    {
         return false;
     }
 
-    qint64 written = file.write(array);
-
-    file.close();
-
-    return (written == array.size());
+    return true;
 }
 
-void FilesDownloader::downloaded(QNetworkReply* reply)
+void FilesDownloader::startDownload()
+{
+    setWindowTitle(i18n("Download required files"));
+
+    d->buttons = new QDialogButtonBox(QDialogButtonBox::Ok | QDialogButtonBox::Cancel, this);
+    d->buttons->button(QDialogButtonBox::Cancel)->setDefault(true);
+    setMinimumWidth(600);
+    setMinimumHeight(300);
+    d->buttons->button(QDialogButtonBox::Ok)->setText(i18n("Download"));
+    d->buttons->button(QDialogButtonBox::Ok)->setIcon(QIcon::fromTheme(QLatin1String("edit-download")));
+
+    QWidget* const mainWidget = new QWidget(this);
+    QVBoxLayout* const vBox   = new QVBoxLayout(mainWidget);
+
+    // Some explanation.
+
+    QString path              = QStandardPaths::locate(QStandardPaths::GenericDataLocation,
+                                                       QString::fromLatin1("digikam"),
+                                                       QStandardPaths::LocateDirectory);
+
+    QLabel* const infoLabel   = new QLabel(i18n("<p>For the face engine and red eye removal tool, digiKam "
+                                                "needs some large binary files. Some of these files were "
+                                                "not found and are now being downloaded. You can cancel this "
+                                                "process, the next time digiKam is started this dialog will "
+                                                "appear again. Face detection will not work without these "
+                                                "files.</p>"
+                                                "<p>The files will be downloaded to %1. Make sure there are "
+                                                "around 300 MiB available. After the successful download "
+                                                "you have to restart digiKam.</p>", path));
+    infoLabel->setWordWrap(true);
+
+    d->progress               = new QProgressBar();
+    d->progress->setMinimum(0);
+
+    d->nameLabel              = new QLabel();
+
+    vBox->addWidget(infoLabel);
+    vBox->addStretch(10);
+    vBox->addWidget(d->nameLabel);
+    vBox->addWidget(d->progress);
+    vBox->addWidget(d->buttons);
+
+    setLayout(vBox);
+
+    // Setup the signals and slots.
+
+    connect(d->buttons->button(QDialogButtonBox::Ok), SIGNAL(clicked()),
+            this, SLOT(slotDownload()));
+
+    connect(d->buttons->button(QDialogButtonBox::Cancel), SIGNAL(clicked()),
+            this, SLOT(reject()));
+
+    exec();
+}
+
+void FilesDownloader::slotDownload()
+{
+    d->buttons->button(QDialogButtonBox::Ok)->setEnabled(false);
+
+    if (d->success)
+    {
+        for ( ; d->index < d->files.size() ; d->index += 4)
+        {
+            if (exists(d->index))
+            {
+                continue;
+            }
+
+            download();
+
+            return;
+        }
+
+        QMessageBox::information(this, qApp->applicationName(),
+                                 i18n("All files were downloaded successfully."));
+
+        close();
+    }
+    else
+    {
+        QMessageBox::critical(this, qApp->applicationName(),
+                              i18n("An error occurred during the download.\n"
+                                   "The download will continue at the next start."));
+
+        close();
+    }
+}
+
+void FilesDownloader::download()
+{
+    if (!d->netMngr)
+    {
+        d->netMngr = new QNetworkAccessManager(this);
+        d->netMngr->setRedirectPolicy(QNetworkRequest::NoLessSafeRedirectPolicy);
+
+        connect(d->netMngr, SIGNAL(finished(QNetworkReply*)),
+                this, SLOT(slotDownloaded(QNetworkReply*)));
+    }
+
+    d->nameLabel->setText(d->files.at(d->index + 1).toString());
+    d->progress->setMaximum(d->files.at(d->index + 3).toInt());
+    d->progress->reset();
+
+    QNetworkRequest request(QUrl(d->downloadUrl                   +
+                                 d->files.at(d->index).toString() +
+                                 d->files.at(d->index + 1).toString()));
+
+    request.setMaximumRedirectsAllowed(10);
+    d->reply = d->netMngr->get(request);
+
+    connect(d->reply, SIGNAL(downloadProgress(qint64,qint64)),
+            this, SLOT(slotDownloadProgress(qint64,qint64)));
+}
+
+bool FilesDownloader::exists(int index) const
+{
+    QString name = d->files.at(index + 1).toString();
+    QString path = QStandardPaths::locate(QStandardPaths::GenericDataLocation,
+                                          QString::fromLatin1("digikam/facesengine/%1").arg(name));
+
+    return (!path.isEmpty() && (QFileInfo(path).size() == d->files.at(index + 3).toInt()));
+}
+
+void FilesDownloader::slotDownloaded(QNetworkReply* reply)
 {
     if (reply != d->reply)
     {
@@ -240,28 +278,66 @@ void FilesDownloader::downloaded(QNetworkReply* reply)
 
     if (reply->error() != QNetworkReply::NoError)
     {
-        QMessageBox::critical(qApp->activeWindow(), qApp->applicationName(),
+        QMessageBox::critical(this, qApp->applicationName(),
                               i18n("Network Error:\n\n%1", reply->errorString()));
 
-        emit downloadFinished(false, d->model);
-
         reply->deleteLater();
+
+        d->success = false;
+
+        slotDownload();
 
         return;
     }
 
-    if      (d->modelArray.isEmpty())
+    QByteArray data = reply->readAll();
+
+    QCryptographicHash sha256(QCryptographicHash::Sha256);
+
+    sha256.addData(data);
+
+    if (d->files.at(d->index + 2).toString() != QString::fromLatin1(sha256.result().toHex()))
     {
-        d->modelArray = reply->readAll();
+        reply->deleteLater();
+
+        d->success = false;
+
+        slotDownload();
+
+        return;
     }
-    else if (d->dataArray.isEmpty())
+
+    QString path = QStandardPaths::writableLocation(QStandardPaths::DataLocation);
+    path        += QLatin1String("/facesengine");
+
+    if (!QFileInfo::exists(path))
     {
-        d->dataArray = reply->readAll();
+        QDir().mkpath(path);
+    }
+
+    QFile file(path + QLatin1Char('/') + d->files.at(d->index + 1).toString());
+
+    if (file.open(QIODevice::WriteOnly))
+    {
+        qint64 written = file.write(data);
+
+        if (written != d->files.at(d->index + 3).toInt())
+        {
+            d->success = false;
+        }
+
+        file.close();
     }
 
     reply->deleteLater();
 
-    nextDownload();
+    slotDownload();
+}
+
+void FilesDownloader::slotDownloadProgress(qint64 bytesReceived, qint64 bytesTotal)
+{
+    d->progress->setMaximum(bytesTotal);
+    d->progress->setValue(bytesReceived);
 }
 
 } // namespace Digikam
