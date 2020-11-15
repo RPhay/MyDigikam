@@ -52,15 +52,15 @@ class Q_DECL_HIDDEN KBImageLoader::Private
 public:
 
     explicit Private()
-      : sharedData(nullptr),
-        fileIndex(0),
-        width(0),
-        height(0),
-        initialized(false),
-        needImage(true),
-        haveImages(false),
-        quitRequested(false),
-        textureAspect(0.0)
+      : sharedData      (nullptr),
+        fileIndex       (0),
+        width           (0),
+        height          (0),
+        initialized     (false),
+        needImage       (true),
+        haveImages      (false),
+        quitRequested   (false),
+        textureAspect   (0.0)
     {
     }
 
@@ -87,7 +87,7 @@ public:
 
 KBImageLoader::KBImageLoader(PresentationContainer* const sharedData, int width, int height)
     : QThread(),
-      d(new Private)
+      d      (new Private)
 {
     d->sharedData = sharedData;
     d->width      = width;
@@ -164,7 +164,9 @@ void KBImageLoader::run()
                 ok = loadImage();
 
                 if (!ok)
+                {
                     invalidateCurrentImageName();
+                }
             }
             while (!ok && d->fileIndex < (int)d->sharedData->urlList.count());
 

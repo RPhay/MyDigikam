@@ -41,15 +41,11 @@ int KBEffect::m_numKBEffectRepeated = 0;
 // -------------------------------------------------------------------------
 
 KBEffect::KBEffect(PresentationKB* const parent, bool needFadeIn)
-    : m_needFadeIn(needFadeIn),
+    : m_needFadeIn (needFadeIn),
       m_slideWidget(parent)
 {
     m_img[0] = nullptr;
     m_img[1] = nullptr;
-}
-
-KBEffect::~KBEffect()
-{
 }
 
 void KBEffect::setupNewImage(int img)

@@ -56,14 +56,14 @@ namespace DigikamGenericPresentationPlugin
 {
 
 KBViewTrans::KBViewTrans(bool zoomIn, float relAspect)
-    : m_deltaX(0.0),
-      m_deltaY(0.0),
-      m_deltaScale(0.0),
-      m_baseScale(0.0),
-      m_baseX(0.0),
-      m_baseY(0.0),
-      m_xScale(0.0),
-      m_yScale(0.0)
+    : m_deltaX      (0.0),
+      m_deltaY      (0.0),
+      m_deltaScale  (0.0),
+      m_baseScale   (0.0),
+      m_baseX       (0.0),
+      m_baseY       (0.0),
+      m_xScale      (0.0),
+      m_yScale      (0.0)
 {
     int i        = 0;
 
@@ -144,14 +144,14 @@ KBViewTrans::KBViewTrans(bool zoomIn, float relAspect)
 }
 
 KBViewTrans::KBViewTrans()
-    : m_deltaX(0.0),
-      m_deltaY(0.0),
-      m_deltaScale(0.0),
-      m_baseScale(0.0),
-      m_baseX(0.0),
-      m_baseY(0.0),
-      m_xScale(0.0),
-      m_yScale(0.0)
+    : m_deltaX      (0.0),
+      m_deltaY      (0.0),
+      m_deltaScale  (0.0),
+      m_baseScale   (0.0),
+      m_baseX       (0.0),
+      m_baseY       (0.0),
+      m_xScale      (0.0),
+      m_yScale      (0.0)
 {
 }
 
@@ -221,7 +221,7 @@ KBImage::~KBImage()
 
 PresentationKB::PresentationKB(PresentationContainer* const sharedData)
     : QOpenGLWidget(),
-      d(new Private)
+      d            (new Private)
 {
     setAttribute(Qt::WA_DeleteOnClose);
     setContextMenuPolicy(Qt::PreventContextMenu);
@@ -318,12 +318,16 @@ PresentationKB::PresentationKB(PresentationContainer* const sharedData)
     }
 
 #endif
+
 }
 
 PresentationKB::~PresentationKB()
 {
+
 #ifdef HAVE_MEDIAPLAYER
+
     d->playbackWidget->slotStop();
+
 #endif
 
     d->timer->stop();
@@ -431,6 +435,7 @@ bool PresentationKB::setupNewImage(int idx)
         delete d->image[idx];
 
         // we have the image lock and there is an image
+
         float imageAspect            = d->imageLoadThread->imageAspect();
         KBViewTrans* const viewTrans = new KBViewTrans(d->zoomIn, aspect() / imageAspect);
         d->image[idx]                = new KBImage(viewTrans, imageAspect);
@@ -586,7 +591,6 @@ void PresentationKB::paintTexture(KBImage* const img)
         glTexCoord2f(0, 1);
         glVertex3f(-sx, sy, 0);
     }
-
     glEnd();
 }
 
@@ -655,7 +659,6 @@ void PresentationKB::endOfShow()
         glTexCoord2f(0, 1);
         glVertex3f(-1.0, 1.0, 0);
     }
-
     glEnd();
 
     d->showingEnd = true;
@@ -740,6 +743,7 @@ void PresentationKB::mouseMoveEvent(QMouseEvent* e)
     }
 
     d->playbackWidget->show();
+
 #else
 
     Q_UNUSED(e);

@@ -85,36 +85,36 @@ class Q_DECL_HIDDEN PresentationGL::Private
 public:
 
     explicit Private()
-      : timer(nullptr),
-        fileIndex(0),
-        imageLoader(nullptr),
-        tex1First(true),
-        curr(0),
-        width(0),
-        height(0),
-        xMargin(0),
-        yMargin(0),
-        effect(nullptr),
-        effectRunning(false),
-        timeout(0),
-        random(false),
-        endOfShow(false),
-        i(0),
-        dir(0),
-        slideCtrlWidget(nullptr),
+      : timer           (nullptr),
+        fileIndex       (0),
+        imageLoader     (nullptr),
+        tex1First       (true),
+        curr            (0),
+        width           (0),
+        height          (0),
+        xMargin         (0),
+        yMargin         (0),
+        effect          (nullptr),
+        effectRunning   (false),
+        timeout         (0),
+        random          (false),
+        endOfShow       (false),
+        i               (0),
+        dir             (0),
+        slideCtrlWidget (nullptr),
 
 #ifdef HAVE_MEDIAPLAYER
 
-        playbackWidget(nullptr),
+        playbackWidget  (nullptr),
 
 #endif
 
-        mouseMoveTimer(nullptr),
-        deskX(0),
-        deskY(0),
-        deskWidth(0),
-        deskHeight(0),
-        sharedData(nullptr)
+        mouseMoveTimer  (nullptr),
+        deskX           (0),
+        deskY           (0),
+        deskWidth       (0),
+        deskHeight      (0),
+        sharedData      (nullptr)
     {
         texture[0] = nullptr;
         texture[1] = nullptr;
@@ -145,12 +145,14 @@ public:
 
     int                               i;
     int                               dir;
-    float                             points[40][40][3] = {{{0.0}}};
+    float                             points[40][40][3] = { { { 0.0 } } };
 
     PresentationCtrlWidget*           slideCtrlWidget;
 
 #ifdef HAVE_MEDIAPLAYER
+
     PresentationAudioWidget*          playbackWidget;
+
 #endif
 
     QTimer*                           mouseMoveTimer;
@@ -165,7 +167,7 @@ public:
 
 PresentationGL::PresentationGL(PresentationContainer* const sharedData)
     : QOpenGLWidget(),
-      d(new Private)
+      d            (new Private)
 {
     setAttribute(Qt::WA_DeleteOnClose);
     setContextMenuPolicy(Qt::PreventContextMenu);
@@ -303,6 +305,7 @@ PresentationGL::PresentationGL(PresentationContainer* const sharedData)
     }
 
 #endif
+
 }
 
 PresentationGL::~PresentationGL()
@@ -433,6 +436,7 @@ void PresentationGL::keyPressEvent(QKeyEvent* event)
     d->playbackWidget->keyPressEvent(event);
 
 #endif
+
 }
 
 void PresentationGL::mousePressEvent(QMouseEvent* e)
@@ -1553,6 +1557,7 @@ void PresentationGL::effectCube()
     }
 
     // Enable perspective vision
+
     glEnable(GL_DEPTH_TEST);
     glDepthFunc(GL_LEQUAL);
     glHint(GL_PERSPECTIVE_CORRECTION_HINT, GL_NICEST);
@@ -1800,6 +1805,7 @@ QPixmap PresentationGL::generateOutlinedTextPixmap(const QString& text, QFont& f
 {
     QColor fgColor(Qt::white);
     QColor bgColor(Qt::black);
+
     return generateCustomOutlinedTextPixmap(text, fn, fgColor, bgColor, 0, true);
 }
 

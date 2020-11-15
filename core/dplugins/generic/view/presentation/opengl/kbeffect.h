@@ -27,6 +27,10 @@
 #ifndef DIGIKAM_KB_EFFECT_H
 #define DIGIKAM_KB_EFFECT_H
 
+// Qt includes
+
+#include <QObject>
+
 namespace DigikamGenericPresentationPlugin
 {
 
@@ -47,9 +51,9 @@ public:
 public:
 
     explicit KBEffect(PresentationKB* const parent, bool m_needFadeIn = true);
-    virtual ~KBEffect();
+    virtual ~KBEffect()                  = default;
 
-    virtual bool fadeIn() const
+    virtual bool fadeIn()       const
     {
         return m_needFadeIn;
     };
@@ -64,7 +68,7 @@ protected:
 
     void     setupNewImage(int img);
     void     swapImages();
-    KBImage* image(int img) const;
+    KBImage* image(int img)     const;
 
 protected:
 
@@ -75,6 +79,10 @@ protected:
 private:
 
     PresentationKB* m_slideWidget;
+
+private:
+
+    Q_DISABLE_COPY(KBEffect)
 };
 
 // -------------------------------------------------------------------------
@@ -85,7 +93,7 @@ class FadeKBEffect: public KBEffect
 public:
 
     explicit FadeKBEffect(PresentationKB* const parent, bool m_needFadeIn = true);
-    ~FadeKBEffect() override;
+    ~FadeKBEffect()              override;
 
     Type type()                  override
     {
@@ -94,6 +102,10 @@ public:
 
     void advanceTime(float step) override;
     bool done()                  override;
+
+private:
+
+    Q_DISABLE_COPY(FadeKBEffect)
 };
 
 // -------------------------------------------------------------------------
@@ -104,7 +116,7 @@ class BlendKBEffect: public KBEffect
 public:
 
     explicit BlendKBEffect(PresentationKB* const parent, bool m_needFadeIn = true);
-    ~BlendKBEffect() override;
+    ~BlendKBEffect()             override;
 
     Type type()                  override
     {
@@ -113,6 +125,10 @@ public:
 
     void advanceTime(float step) override;
     bool done()                  override;
+
+private:
+
+    Q_DISABLE_COPY(BlendKBEffect)
 };
 
 } // namespace DigikamGenericPresentationPlugin
