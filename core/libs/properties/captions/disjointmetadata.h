@@ -86,9 +86,9 @@ public:
 
 public:
 
-    explicit DisjointMetadata(QObject* const parent = nullptr);
+    DisjointMetadata();
     DisjointMetadata(const DisjointMetadata& other);
-    ~DisjointMetadata()                                                                                                       override;
+    ~DisjointMetadata()                                                           override;
 
     DisjointMetadata& operator=(const DisjointMetadata& other);
 
@@ -282,6 +282,9 @@ private:
     void applyChangeNotifications();
 
 private:
+
+    // Disable
+    DisjointMetadata(QObject*);
 
     class Private;
     Private* d;

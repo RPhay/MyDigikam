@@ -163,8 +163,8 @@ void DisjointMetadata::Private::makeConnections(DisjointMetadata* q)
 
 // --------------------------------------------------------------------------------
 
-DisjointMetadata::DisjointMetadata(QObject* const parent)
-    : QObject(parent),
+DisjointMetadata::DisjointMetadata()
+    : QObject(),
       d      (new Private())
 {
     d->makeConnections(this);
