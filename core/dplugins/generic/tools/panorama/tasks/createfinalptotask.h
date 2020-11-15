@@ -56,6 +56,10 @@ private:
     PTOType     ptoData;
     QUrl&       finalPtoUrl;
     const QRect crop;
+
+private:
+
+    Q_DISABLE_COPY(CreateFinalPtoTask)
 };
 
 } // namespace DigikamGenericPanoramaPlugin
