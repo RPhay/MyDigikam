@@ -4,7 +4,7 @@
  * https://www.digikam.org
  *
  * Date        : 2020-11-14
- * Description : Face model downloader
+ * Description : Files downloader
  *
  * Copyright (C) 2020 by Maik Qualmann <metzpinguin at gmail dot com>
  *
@@ -21,7 +21,7 @@
  *
  * ============================================================ */
 
-#include "facemodeldownloader.h"
+#include "filesdownloader.h"
 
 // Qt includes
 
@@ -41,17 +41,16 @@
 // Local includes
 
 #include "digikam_debug.h"
-#include "opencvdnnfacedetector.h"
 
 namespace Digikam
 {
 
-class Q_DECL_HIDDEN FaceModelDownloader::Private
+class Q_DECL_HIDDEN FilesDownloader::Private
 {
 public:
 
     explicit Private()
-      : model       (DetectorNNModel::SSDMOBILENET),
+      : model       (0),
         downloadUrl (QLatin1String("http://")),
         caffeModel  (QLatin1String("deploy.prototxt")),
         caffeData   (QLatin1String("res10_300x300_ssd_iter_140000_fp16.caffemodel")),
@@ -82,7 +81,7 @@ public:
     QNetworkAccessManager* netMngr;
 };
 
-FaceModelDownloader::FaceModelDownloader(QObject* const parent)
+FilesDownloader::FilesDownloader(QObject* const parent)
     : QObject (parent),
       d       (new Private)
 {
@@ -92,7 +91,7 @@ FaceModelDownloader::FaceModelDownloader(QObject* const parent)
             this, SLOT(downloaded(QNetworkReply*)));
 }
 
-FaceModelDownloader::~FaceModelDownloader()
+FilesDownloader::~FilesDownloader()
 {
     if (d->reply)
     {
@@ -102,12 +101,12 @@ FaceModelDownloader::~FaceModelDownloader()
     delete d;
 }
 
-bool FaceModelDownloader::exists() const
+bool FilesDownloader::exists() const
 {
     QString model;
     QString data;
 
-    if (d->model == DetectorNNModel::SSDMOBILENET)
+    if (d->model == 0)
     {
         model = d->caffeModel;
         data  = d->caffeData;
@@ -126,7 +125,7 @@ bool FaceModelDownloader::exists() const
     return (!nnmodel.isEmpty() && !nndata.isEmpty());
 }
 
-void FaceModelDownloader::download(int model)
+void FilesDownloader::download(int model)
 {
     d->modelArray.clear();
     d->dataArray.clear();
@@ -143,13 +142,13 @@ void FaceModelDownloader::download(int model)
     nextDownload();
 }
 
-void FaceModelDownloader::nextDownload()
+void FilesDownloader::nextDownload()
 {
     QString model;
     QString data;
     QString hash;
 
-    if (d->model == DetectorNNModel::SSDMOBILENET)
+    if (d->model == 0)
     {
         model = d->caffeModel;
         data  = d->caffeData;
@@ -206,7 +205,7 @@ void FaceModelDownloader::nextDownload()
     }
 }
 
-bool FaceModelDownloader::saveArray(const QByteArray& array, const QString& name)
+bool FilesDownloader::saveArray(const QByteArray& array, const QString& name)
 {
     QString path = QStandardPaths::writableLocation(QStandardPaths::DataLocation);
     path        += QLatin1String("/facesenigne");
@@ -230,7 +229,7 @@ bool FaceModelDownloader::saveArray(const QByteArray& array, const QString& name
     return (written == array.size());
 }
 
-void FaceModelDownloader::downloaded(QNetworkReply* reply)
+void FilesDownloader::downloaded(QNetworkReply* reply)
 {
     if (reply != d->reply)
     {

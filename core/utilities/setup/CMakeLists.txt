@@ -10,6 +10,7 @@ APPLY_COMMON_POLICIES()
 include_directories($<TARGET_PROPERTY:Qt5::Sql,INTERFACE_INCLUDE_DIRECTORIES>
                     $<TARGET_PROPERTY:Qt5::Widgets,INTERFACE_INCLUDE_DIRECTORIES>
                     $<TARGET_PROPERTY:Qt5::Core,INTERFACE_INCLUDE_DIRECTORIES>
+                    $<TARGET_PROPERTY:Qt5::Network,INTERFACE_INCLUDE_DIRECTORIES>
 
                     $<TARGET_PROPERTY:KF5::I18n,INTERFACE_INCLUDE_DIRECTORIES>
                     $<TARGET_PROPERTY:KF5::WidgetsAddons,INTERFACE_INCLUDE_DIRECTORIES>
@@ -22,6 +23,8 @@ set(libsetupshowfoto_SRCS
     ${CMAKE_CURRENT_SOURCE_DIR}/editor/setupiofiles.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/editor/setupraw.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/setupicc.cpp
+
+    ${CMAKE_CURRENT_SOURCE_DIR}/downloader/filesdownloader.cpp
 
     ${CMAKE_CURRENT_SOURCE_DIR}/system/systemsettingswidget.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/system/systemsettings.cpp

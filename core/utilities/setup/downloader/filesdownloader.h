@@ -4,7 +4,7 @@
  * https://www.digikam.org
  *
  * Date        : 2020-11-14
- * Description : Face model downloader
+ * Description : Files downloader
  *
  * Copyright (C) 2020 by Maik Qualmann <metzpinguin at gmail dot com>
  *
@@ -21,8 +21,8 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_FACE_MODEL_DOWNLOADER_H
-#define DIGIKAM_FACE_MODEL_DOWNLOADER_H
+#ifndef DIGIKAM_FILES_DOWNLOADER_H
+#define DIGIKAM_FILES_DOWNLOADER_H
 
 // Qt includes
 
@@ -31,17 +31,19 @@
 
 // Local includes
 
+#include "digikam_export.h"
+
 namespace Digikam
 {
 
-class Q_DECL_HIDDEN FaceModelDownloader : public QObject
+class DIGIKAM_EXPORT FilesDownloader : public QObject
 {
     Q_OBJECT
 
 public:
 
-    explicit FaceModelDownloader(QObject* const parent);
-    ~FaceModelDownloader() override;
+    explicit FilesDownloader(QObject* const parent);
+    ~FilesDownloader() override;
 
     bool exists() const;
     void download(int model);
@@ -62,8 +64,8 @@ private Q_SLOTS:
 private:
 
     // Hidden copy constructor and assignment operator.
-    FaceModelDownloader(const FaceModelDownloader&);
-    FaceModelDownloader& operator=(const FaceModelDownloader&);
+    FilesDownloader(const FilesDownloader&);
+    FilesDownloader& operator=(const FilesDownloader&);
 
 private:
 
@@ -73,4 +75,4 @@ private:
 
 } // namespace Digikam
 
-#endif // DIGIKAM_FACE_MODEL_DOWNLOADER_H
+#endif // DIGIKAM_FILES_DOWNLOADER_H
