@@ -309,7 +309,7 @@ void DynamicThread::start(QMutexLocker& locker)
         case Inactive:
         case Deactivating:
         {
-            d->running = true;
+            //d->running = true;
             d->state   = Scheduled;
             break;
         }
@@ -350,7 +350,7 @@ void DynamicThread::stop(QMutexLocker& locker)
         case Inactive:
         case Deactivating:
         {
-            d->running = false;
+            //d->running = false;
             break;
         }
     }
