@@ -96,6 +96,11 @@ public:
 
     const int                number;
     FacialRecognitionWrapper db;
+
+private:
+
+    Q_DISABLE_COPY(Runnable)
+
 };
 
 int main(int argc, char** argv)

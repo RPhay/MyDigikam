@@ -95,6 +95,8 @@ private:
     FacialRecognitionWrapper*       m_recognizer;
 };
 
+// --------------------------------------------------------
+
 // NOTE: dnn face detector can be parallelized but it takes longer than a single thread
 
 class ParallelDetector: public cv::ParallelLoopBody
@@ -131,7 +133,13 @@ private:
     FaceDetector*            m_detector;
     const QList<QImage*>&    m_images;
     QVector<QList<QRectF> >& m_rects;
+
+private:
+
+    Q_DISABLE_COPY(ParallelDetector)
 };
+
+// --------------------------------------------------------
 
 Benchmark::Benchmark()
     : QObject(),
@@ -353,7 +361,6 @@ bool Benchmark::preprocess(QImage* faceImg, cv::Mat& face) const
 
     return true;
 }
-
 
 void Benchmark::splitData(const QDir& dataDir, float splitRatio)
 {
@@ -664,6 +671,8 @@ void Benchmark::verifyKNearestDb()
                  << "ms/faceEmbedding";
     }
 }
+
+// --------------------------------------------------------
 
 QCommandLineParser* parseOptions(const QCoreApplication& app)
 {
