@@ -83,6 +83,7 @@ public:
           tabWidget                         (nullptr),
           albumSelectors                    (nullptr),
           accuracyInput                     (nullptr),
+          useYoloV3Button                   (nullptr),
           useFullCpuButton                  (nullptr),
           configName                        (QLatin1String("Face Management Settings")),
           configMainTask                    (QLatin1String("Face Scan Main Task")),
@@ -108,6 +109,7 @@ public:
 
     DIntNumInput*     accuracyInput;
 
+    QCheckBox*        useYoloV3Button;
     QCheckBox*        useFullCpuButton;
 
     const QString     configName;

@@ -183,6 +183,7 @@ public:
     static const QString configSyncDigikamtoBalooEntry;
     static const QString configStringComparisonTypeEntry;
     static const QString configFaceDetectionAccuracyEntry;
+    static const QString configFaceDetectionYoloV3Entry;
     static const QString configApplicationStyleEntry;
     static const QString configIconThemeEntry;
     static const QString configApplicationFontEntry;
@@ -326,6 +327,7 @@ public:
 
     /// face detection settings
     double                                       faceDetectionAccuracy;
+    bool                                         faceDetectionYoloV3;
 
     /// misc
     ApplicationSettings::StringComparisonType    stringComparisonType;

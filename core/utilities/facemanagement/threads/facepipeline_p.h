@@ -112,7 +112,7 @@ Q_SIGNALS:
     friend class FacePipeline;
     void startProcess(FacePipelineExtendedPackage::Ptr package);
 
-    void accuracyChanged(double accuracy);
+    void accuracyAndModel(double accuracy, bool yolo);
     void thresholdChanged(double threshold);
 
 private:

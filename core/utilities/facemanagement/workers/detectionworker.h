@@ -47,7 +47,7 @@ public:
 public Q_SLOTS:
 
     void process(FacePipelineExtendedPackage::Ptr package);
-    void setAccuracy(double value);
+    void setAccuracyAndModel(double value, bool yolo);
 
 Q_SIGNALS:
 

@@ -125,6 +125,7 @@ const QString ApplicationSettings::Private::configSyncBalootoDigikamEntry(QLatin
 const QString ApplicationSettings::Private::configSyncDigikamtoBalooEntry(QLatin1String("Sync Digikam to Baloo"));
 const QString ApplicationSettings::Private::configStringComparisonTypeEntry(QLatin1String("String Comparison Type"));
 const QString ApplicationSettings::Private::configFaceDetectionAccuracyEntry(QLatin1String("Detection Accuracy"));
+const QString ApplicationSettings::Private::configFaceDetectionYoloV3Entry(QLatin1String("Use Yolo V3"));
 const QString ApplicationSettings::Private::configApplicationStyleEntry(QLatin1String("Application Style"));
 const QString ApplicationSettings::Private::configIconThemeEntry(QLatin1String("Icon Theme"));
 const QString ApplicationSettings::Private::configApplicationFontEntry(QLatin1String("Application Font"));
@@ -235,6 +236,7 @@ ApplicationSettings::Private::Private(ApplicationSettings* const qq)
       syncToDigikam                         (false),
       syncToBaloo                           (false),
       faceDetectionAccuracy                 (0.7),
+      faceDetectionYoloV3                   (false),
       stringComparisonType                  (ApplicationSettings::Natural),
       minimumSimilarityBound                (40),
       duplicatesSearchLastMinSimilarity     (90),
@@ -361,6 +363,7 @@ void ApplicationSettings::Private::init()
     albumSortChanged                     = false;
 
     faceDetectionAccuracy                = 0.7;
+    faceDetectionYoloV3                  = false;
 
     minimumSimilarityBound               = 40;
     duplicatesSearchLastMinSimilarity    = 90;

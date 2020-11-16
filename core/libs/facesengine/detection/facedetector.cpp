@@ -55,7 +55,15 @@ public:
     {
         if (!m_dnnDetectorBackend)
         {
-            m_dnnDetectorBackend = new OpenCVDNNFaceDetector(DetectorNNModel::SSDMOBILENET);
+            if (m_parameters.contains(QLatin1String("useyolov3")) &&
+                m_parameters.value(QLatin1String("useyolov3")).toBool())
+            {
+                m_dnnDetectorBackend = new OpenCVDNNFaceDetector(DetectorNNModel::YOLO);
+            }
+            else
+            {
+                m_dnnDetectorBackend = new OpenCVDNNFaceDetector(DetectorNNModel::SSDMOBILENET);
+            }
         }
 
         return m_dnnDetectorBackend;

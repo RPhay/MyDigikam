@@ -106,7 +106,7 @@ FilesDownloader::FilesDownloader(QWidget* const parent)
         d->files << QLatin1String("res10_300x300_ssd_iter_140000_fp16.caffemodel");
         d->files << QLatin1String("510ffd2471bd81e3fcc88a5beb4eae4fb445ccf8333ebc54e7302b83f4158a76");
         d->files << 5351047;
-/*
+
         d->files << QLatin1String("facesengine/dnnface/");
         d->files << QLatin1String("yolov3-face.cfg");
         d->files << QLatin1String("f6563bd6923fd6500d2c2d6025f32ebdba916a85e5c9798351d916909f62aaf5");
@@ -116,7 +116,6 @@ FilesDownloader::FilesDownloader(QWidget* const parent)
         d->files << QLatin1String("yolov3-wider_16000.weights");
         d->files << QLatin1String("a88f3b3882e3cce1e553a81d42beef6202cb9afc3db88e7944f9ffbcc369e7df");
         d->files << 246305388;
-*/
     }
 }
 

@@ -69,7 +69,7 @@ void RecognitionWorker::process(FacePipelineExtendedPackage::Ptr package)
     emit processed(package);
 }
 
-void RecognitionWorker::setThreshold(double threshold)
+void RecognitionWorker::setThreshold(double threshold, bool)
 {
     recognizer.setParameter(QLatin1String("threshold"), threshold);
 }

@@ -472,6 +472,9 @@ public:
     double getFaceDetectionAccuracy() const;
     void setFaceDetectionAccuracy(double value);
 
+    bool getFaceDetectionYoloV3() const;
+    void setFaceDetectionYoloV3(bool yolo);
+
     void setShowThumbbar(bool val);
     bool getShowThumbbar() const;
 

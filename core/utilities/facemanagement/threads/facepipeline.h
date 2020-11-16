@@ -208,7 +208,7 @@ public Q_SLOTS:
      */
     void process(const QList<ItemInfo>& infos);
 
-    void setDetectionAccuracy(double accuracy);
+    void setAccuracyAndModel(double accuracy, bool yolo);
 
 Q_SIGNALS:
 

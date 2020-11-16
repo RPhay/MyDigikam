@@ -81,6 +81,7 @@ void ItemIconView::slotImageScanForFaces()
     // TODO Faces engine : set K-nearest config
 
     settings.accuracy               = ApplicationSettings::instance()->getFaceDetectionAccuracy();
+    settings.useYoloV3              = ApplicationSettings::instance()->getFaceDetectionYoloV3();
     settings.task                   = FaceScanSettings::DetectAndRecognize;
     settings.alreadyScannedHandling = FaceScanSettings::Rescan;
     settings.infos                  = selectedInfoList(ApplicationSettings::Tools);

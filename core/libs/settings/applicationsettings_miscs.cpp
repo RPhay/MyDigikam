@@ -186,6 +186,16 @@ void ApplicationSettings::setFaceDetectionAccuracy(double value)
     d->faceDetectionAccuracy = value;
 }
 
+bool ApplicationSettings::getFaceDetectionYoloV3() const
+{
+    return d->faceDetectionYoloV3;
+}
+
+void ApplicationSettings::setFaceDetectionYoloV3(bool yolo)
+{
+    d->faceDetectionYoloV3 = yolo;
+}
+
 void ApplicationSettings::setApplicationStyle(const QString& style)
 {
     if (d->applicationStyle.compare(style, Qt::CaseInsensitive) != 0)

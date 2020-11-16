@@ -45,7 +45,7 @@ public:
 public Q_SLOTS:
 
     void process(FacePipelineExtendedPackage::Ptr package);
-    void setThreshold(double threshold);
+    void setThreshold(double threshold, bool);
 
     // TODO: add set K-Nearest method
 

@@ -70,10 +70,11 @@ QImage DetectionWorker::scaleForDetection(const DImg& image) const
     return image.copyQImage();
 }
 
-void DetectionWorker::setAccuracy(double accuracy)
+void DetectionWorker::setAccuracyAndModel(double accuracy, bool yolo)
 {
     QVariantMap params;
     params[QLatin1String("accuracy")]    = accuracy;
+    params[QLatin1String("useyolov3")]   = yolo;
     params[QLatin1String("specificity")] = 0.8;     // TODO: add UI for sensitivity - specificity
     detector.setParameters(params);
 }

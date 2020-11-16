@@ -290,6 +290,7 @@ void ApplicationSettings::readSettings()
 
     group                    = config->group(d->configGroupFaceDetection);
     d->faceDetectionAccuracy = group.readEntry(d->configFaceDetectionAccuracyEntry, double(0.7));
+    d->faceDetectionYoloV3   = group.readEntry(d->configFaceDetectionYoloV3Entry,   false);
 
     // ---------------------------------------------------------------------
 
@@ -481,6 +482,7 @@ void ApplicationSettings::saveSettings()
     group = config->group(d->configGroupFaceDetection);
 
     group.writeEntry(d->configFaceDetectionAccuracyEntry,              d->faceDetectionAccuracy);
+    group.writeEntry(d->configFaceDetectionYoloV3Entry,                d->faceDetectionYoloV3);
 
     group = config->group(d->configGroupDuplicatesSearch);
 

@@ -65,6 +65,9 @@ public:
     /// Processing power
     bool                                    useFullCpu;
 
+    /// Use Yolo V3 model
+    bool                                    useYoloV3;
+
     /// Detection accuracy
     double                                  accuracy;
 

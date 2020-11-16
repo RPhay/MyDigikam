@@ -109,6 +109,8 @@ void FaceScanWidget::doLoadState()
 
     d->albumSelectors->loadState();
 
+    d->useYoloV3Button->setChecked(ApplicationSettings::instance()->getFaceDetectionYoloV3());
+
     d->useFullCpuButton->setChecked(group.readEntry(entryName(d->configUseFullCpu), false));
 }
 
@@ -162,6 +164,8 @@ void FaceScanWidget::doSaveState()
 
     ApplicationSettings::instance()->setFaceDetectionAccuracy(double(d->accuracyInput->value()) / 100);
     d->albumSelectors->saveState();
+
+    ApplicationSettings::instance()->setFaceDetectionYoloV3(d->useYoloV3Button->isChecked());
 
     group.writeEntry(entryName(d->configUseFullCpu), d->useFullCpuButton->isChecked());
 }
@@ -277,6 +281,11 @@ void FaceScanWidget::setupUi()
     accuracyGrid->addWidget(specificityLabel, 1, 2, 1, 1);
     accuracyGrid->setColumnStretch(1, 10);
 
+    d->useYoloV3Button                = new QCheckBox(settingsTab);
+    d->useYoloV3Button->setText(i18nc("@option:check", "Use YOLO v3 detection model"));
+    d->useYoloV3Button->setToolTip(i18nc("@info:tooltip",
+                                         "Face detection with YOLO v3 data model. Better results but slower."));
+
     d->useFullCpuButton               = new QCheckBox(settingsTab);
     d->useFullCpuButton->setText(i18nc("@option:check", "Work on all processor cores"));
     d->useFullCpuButton->setToolTip(i18nc("@info:tooltip",
@@ -285,7 +294,9 @@ void FaceScanWidget::setupUi()
                                           "on your system, or work in the background only on one core."));
 
     settingsLayout->addWidget(accuracyBox);
+    settingsLayout->addWidget(d->useYoloV3Button);
     settingsLayout->addWidget(d->useFullCpuButton);
+
     settingsLayout->addStretch(10);
 
     addTab(settingsTab, i18nc("@title:tab", "Settings"));
@@ -310,6 +321,20 @@ void FaceScanWidget::setupConnections()
 
     connect(d->reRecognizeButton, SIGNAL(toggled(bool)),
             this, SLOT(slotPrepareForRecognize(bool)));
+
+    connect(d->accuracyInput, &DIntNumInput::valueChanged,
+            this, [this](int value)
+        {
+            ApplicationSettings::instance()->setFaceDetectionAccuracy(double(value) / 100);
+        }
+    );
+
+    connect(d->useYoloV3Button, &QCheckBox::toggled,
+            this, [this](bool yolo)
+        {
+            ApplicationSettings::instance()->setFaceDetectionYoloV3(yolo);
+        }
+    );
 }
 
 void FaceScanWidget::slotPrepareForDetect(bool status)
@@ -373,6 +398,7 @@ FaceScanSettings FaceScanWidget::settings() const
         d->settingsConflicted       = (numberOfIdentities == 0);
     }
 
+    settings.useYoloV3              = d->useYoloV3Button->isChecked();
     settings.useFullCpu             = d->useFullCpuButton->isChecked();
 
     return settings;
