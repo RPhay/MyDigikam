@@ -57,7 +57,6 @@ public:
     explicit Private()
       : downloadUrl (QLatin1String("https://files.kde.org/digikam/")),
         index       (0),
-        success     (true),
         buttons     (nullptr),
         progress    (nullptr),
         nameLabel   (nullptr),
@@ -68,10 +67,11 @@ public:
 
     const QString          downloadUrl;
 
+    QString                error;
+
     QList<QVariant>        files;
 
     int                    index;
-    bool                   success;
 
     QDialogButtonBox*      buttons;
     QProgressBar*          progress;
@@ -106,7 +106,7 @@ FilesDownloader::FilesDownloader(QWidget* const parent)
         d->files << QLatin1String("res10_300x300_ssd_iter_140000_fp16.caffemodel");
         d->files << QLatin1String("510ffd2471bd81e3fcc88a5beb4eae4fb445ccf8333ebc54e7302b83f4158a76");
         d->files << 5351047;
-
+/*
         d->files << QLatin1String("facesengine/dnnface/");
         d->files << QLatin1String("yolov3-face.cfg");
         d->files << QLatin1String("f6563bd6923fd6500d2c2d6025f32ebdba916a85e5c9798351d916909f62aaf5");
@@ -116,6 +116,7 @@ FilesDownloader::FilesDownloader(QWidget* const parent)
         d->files << QLatin1String("yolov3-wider_16000.weights");
         d->files << QLatin1String("a88f3b3882e3cce1e553a81d42beef6202cb9afc3db88e7944f9ffbcc369e7df");
         d->files << 246305388;
+*/
     }
 }
 
@@ -133,12 +134,10 @@ bool FilesDownloader::checkDownloadFiles() const
 {
     for (int i = 0 ; i < d->files.size() ; i += 4)
     {
-        if (exists(i))
+        if (!exists(i))
         {
-            continue;
+            return false;
         }
-
-        return false;
     }
 
     return true;
@@ -147,18 +146,17 @@ bool FilesDownloader::checkDownloadFiles() const
 void FilesDownloader::startDownload()
 {
     setWindowTitle(i18n("Download required files"));
-
-    d->buttons = new QDialogButtonBox(QDialogButtonBox::Ok | QDialogButtonBox::Cancel, this);
-    d->buttons->button(QDialogButtonBox::Cancel)->setDefault(true);
-    setMinimumWidth(600);
     setMinimumHeight(300);
-    d->buttons->button(QDialogButtonBox::Ok)->setText(i18n("Download"));
-    d->buttons->button(QDialogButtonBox::Ok)->setIcon(QIcon::fromTheme(QLatin1String("edit-download")));
+    setMinimumWidth(600);
 
     QWidget* const mainWidget = new QWidget(this);
     QVBoxLayout* const vBox   = new QVBoxLayout(mainWidget);
 
-    // Some explanation.
+    d->buttons                = new QDialogButtonBox(QDialogButtonBox::Ok |
+                                                     QDialogButtonBox::Cancel, mainWidget);
+    d->buttons->button(QDialogButtonBox::Ok)->setDefault(true);
+    d->buttons->button(QDialogButtonBox::Ok)->setText(i18n("Download"));
+    d->buttons->button(QDialogButtonBox::Ok)->setIcon(QIcon::fromTheme(QLatin1String("edit-download")));
 
     QString path              = QStandardPaths::locate(QStandardPaths::GenericDataLocation,
                                                        QString::fromLatin1("digikam"),
@@ -172,13 +170,13 @@ void FilesDownloader::startDownload()
                                                 "files.</p>"
                                                 "<p>The files will be downloaded to %1. Make sure there are "
                                                 "around 300 MiB available. After the successful download "
-                                                "you have to restart digiKam.</p>", path));
+                                                "you have to restart digiKam.</p>", path), mainWidget);
     infoLabel->setWordWrap(true);
 
-    d->progress               = new QProgressBar();
+    d->progress               = new QProgressBar(mainWidget);
     d->progress->setMinimum(0);
 
-    d->nameLabel              = new QLabel();
+    d->nameLabel              = new QLabel(mainWidget);
 
     vBox->addWidget(infoLabel);
     vBox->addStretch(10);
@@ -187,8 +185,6 @@ void FilesDownloader::startDownload()
     vBox->addWidget(d->buttons);
 
     setLayout(vBox);
-
-    // Setup the signals and slots.
 
     connect(d->buttons->button(QDialogButtonBox::Ok), SIGNAL(clicked()),
             this, SLOT(slotDownload()));
@@ -203,18 +199,16 @@ void FilesDownloader::slotDownload()
 {
     d->buttons->button(QDialogButtonBox::Ok)->setEnabled(false);
 
-    if (d->success)
+    if (d->error.isEmpty())
     {
         for ( ; d->index < d->files.size() ; d->index += 4)
         {
-            if (exists(d->index))
+            if (!exists(d->index))
             {
-                continue;
+                download();
+
+                return;
             }
-
-            download();
-
-            return;
         }
 
         QMessageBox::information(this, qApp->applicationName(),
@@ -225,8 +219,10 @@ void FilesDownloader::slotDownload()
     else
     {
         QMessageBox::critical(this, qApp->applicationName(),
-                              i18n("An error occurred during the download.\n"
-                                   "The download will continue at the next start."));
+                              i18n("An error occurred during the download.\n\n"
+                                   "File: %1\n\n%2\n\n"
+                                   "The download will continue at the next start.",
+                                   d->files.at(d->index + 1).toString(), d->error));
 
         close();
     }
@@ -278,12 +274,9 @@ void FilesDownloader::slotDownloaded(QNetworkReply* reply)
 
     if (reply->error() != QNetworkReply::NoError)
     {
-        QMessageBox::critical(this, qApp->applicationName(),
-                              i18n("Network Error:\n\n%1", reply->errorString()));
+        d->error = reply->errorString();
 
         reply->deleteLater();
-
-        d->success = false;
 
         slotDownload();
 
@@ -298,9 +291,9 @@ void FilesDownloader::slotDownloaded(QNetworkReply* reply)
 
     if (d->files.at(d->index + 2).toString() != QString::fromLatin1(sha256.result().toHex()))
     {
-        reply->deleteLater();
+        d->error = i18n("Checksum is incorrect.");
 
-        d->success = false;
+        reply->deleteLater();
 
         slotDownload();
 
@@ -323,7 +316,7 @@ void FilesDownloader::slotDownloaded(QNetworkReply* reply)
 
         if (written != d->files.at(d->index + 3).toInt())
         {
-            d->success = false;
+            d->error = i18n("File write error.");
         }
 
         file.close();

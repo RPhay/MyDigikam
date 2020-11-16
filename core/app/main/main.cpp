@@ -364,7 +364,7 @@ int main(int argc, char* argv[])
 
     digikam->restoreSession();
     digikam->show();
-/*
+
     QPointer<FilesDownloader> floader = new FilesDownloader(digikam);
 
     if (!floader->checkDownloadFiles())
@@ -373,7 +373,7 @@ int main(int argc, char* argv[])
     }
 
     delete floader;
-*/
+
     if      (parser.isSet(QLatin1String("download-from")))
     {
         digikam->downloadFrom(parser.value(QLatin1String("download-from")));
