@@ -53,6 +53,13 @@ private:
     QUrl&                  mkUrl;
     QUrl&                  panoUrl;
     const PanoramaFileType fileType;
+
+private:
+
+    // Disable
+    CreateMKTask();
+
+    Q_DISABLE_COPY(CreateMKTask)
 };
 
 } // namespace DigikamGenericPanoramaPlugin

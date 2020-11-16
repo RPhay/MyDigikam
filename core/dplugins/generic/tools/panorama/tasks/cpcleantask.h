@@ -50,6 +50,9 @@ private:
 
 private:
 
+    // Disable
+    CpCleanTask();
+
     Q_DISABLE_COPY(CpCleanTask)
 };
 

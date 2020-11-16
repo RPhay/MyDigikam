@@ -53,6 +53,9 @@ private:
 
 private:
 
+    // Disable
+    CpFindTask();
+
     Q_DISABLE_COPY(CpFindTask)
 };
 

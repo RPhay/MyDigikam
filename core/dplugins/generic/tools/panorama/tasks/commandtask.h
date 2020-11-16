@@ -62,6 +62,9 @@ private:
 
 private:
 
+    // Disable
+    CommandTask();
+
     Q_DISABLE_COPY(CommandTask)
 };
 

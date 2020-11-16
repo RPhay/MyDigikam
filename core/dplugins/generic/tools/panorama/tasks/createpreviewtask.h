@@ -58,6 +58,13 @@ private:
     QSharedPointer<const PTOType> ptoData;
     const PanoramaItemUrlsMap     preProcessedUrlsMap;
     MetaEngine                    m_meta;
+
+private:
+
+    // Disable
+    CreatePreviewTask();
+
+    Q_DISABLE_COPY(CreatePreviewTask)
 };
 
 } // namespace DigikamGenericPanoramaPlugin

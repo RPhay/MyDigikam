@@ -62,6 +62,13 @@ private:
     const PanoramaItemUrlsMap* const urlList;
     const bool                       savePTO;
     const bool                       addGPlusMetadata;
+
+private:
+
+    // Disable
+    CopyFilesTask();
+
+    Q_DISABLE_COPY(CopyFilesTask)
 };
 
 } // namespace DigikamGenericPanoramaPlugin

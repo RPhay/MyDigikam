@@ -67,6 +67,13 @@ private:
 
     class Private;
     Private* const d;
+
+private:
+
+    // Disable
+    PreProcessTask();
+
+    Q_DISABLE_COPY(PreProcessTask)
 };
 
 } // namespace DigikamGenericPanoramaPlugin

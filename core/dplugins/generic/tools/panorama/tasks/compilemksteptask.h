@@ -59,6 +59,9 @@ private:
 
 private:
 
+    // Disable
+    CompileMKStepTask();
+
     Q_DISABLE_COPY(CompileMKStepTask)
 };
 

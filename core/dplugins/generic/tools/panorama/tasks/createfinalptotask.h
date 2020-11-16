@@ -59,6 +59,9 @@ private:
 
 private:
 
+    // Disable
+    CreateFinalPtoTask();
+
     Q_DISABLE_COPY(CreateFinalPtoTask)
 };
 

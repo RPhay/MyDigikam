@@ -63,6 +63,13 @@ private:
     const bool                       addGPlusMetadata;
     const QString&                   huginVersion;
     MetaEngine                       m_meta;
+
+private:
+
+    // Disable
+    CreatePtoTask();
+
+    Q_DISABLE_COPY(CreatePtoTask)
 };
 
 } // namespace DigikamGenericPanoramaPlugin

@@ -51,6 +51,13 @@ private:
     const QUrl&            ptoUrl;
     QUrl&                  panoUrl;
     const PanoramaFileType fileType;
+
+private:
+
+    // Disable
+    HuginExecutorTask();
+
+    Q_DISABLE_COPY(HuginExecutorTask)
 };
 
 } // namespace DigikamGenericPanoramaPlugin
