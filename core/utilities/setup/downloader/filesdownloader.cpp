@@ -161,6 +161,7 @@ void FilesDownloader::startDownload()
     QString path              = QStandardPaths::locate(QStandardPaths::GenericDataLocation,
                                                        QString::fromLatin1("digikam"),
                                                        QStandardPaths::LocateDirectory);
+    path                      = QDir::toNativeSeparators(path);
 
     QLabel* const infoLabel   = new QLabel(i18n("<p>For the face engine and red eye removal tool, digiKam "
                                                 "needs some large binary files. Some of these files were "
@@ -175,6 +176,8 @@ void FilesDownloader::startDownload()
 
     d->progress               = new QProgressBar(mainWidget);
     d->progress->setMinimum(0);
+    d->progress->setMaximum(1);
+    d->progress->setValue(0);
 
     d->nameLabel              = new QLabel(mainWidget);
 
@@ -241,7 +244,7 @@ void FilesDownloader::download()
 
     d->nameLabel->setText(d->files.at(d->index + 1).toString());
     d->progress->setMaximum(d->files.at(d->index + 3).toInt());
-    d->progress->reset();
+    d->progress->setValue(0);
 
     QNetworkRequest request(QUrl(d->downloadUrl                   +
                                  d->files.at(d->index).toString() +
