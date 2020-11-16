@@ -70,14 +70,15 @@ class PanoramaPreprocessedUrls
 public:
 
     PanoramaPreprocessedUrls()          = default;
-
-    PanoramaPreprocessedUrls(const QUrl& preprocessed, const QUrl& preview)
+    explicit PanoramaPreprocessedUrls(const QUrl& preprocessed, const QUrl& preview)
         : preprocessedUrl(preprocessed),
           previewUrl     (preview)
     {
     }
 
     ~PanoramaPreprocessedUrls()         = default;
+
+public:
 
     QUrl preprocessedUrl;              ///< Can be an original file or a converted version, depending on the original file type
     QUrl previewUrl;                   ///< The JPEG preview version, accordingly of preprocessedUrl constant.
