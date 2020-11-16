@@ -182,4 +182,7 @@ BUGFIXES:
 166 ==> 428924 - Group of *.MP4 files that have disappeared from digiKam. Database problem?
 167 ==> 428638 - 7.2.0 beta1: sorting of images in thumbnail view - german environment and UI.
 168 ==> 429021 - Wrong image rotation when extracting face thumbs.
-169 ==> 
+169 ==> 426309 - Support face detection back ends that require larger data sets.
+170 ==> 420128 - Poor result of face detection (7.0.0. beta2).
+171 ==> 415559 - Standard Face Detection does not work on LowRes pictures.
+172 ==> 
