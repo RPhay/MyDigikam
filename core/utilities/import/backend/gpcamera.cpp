@@ -182,8 +182,8 @@ public:
 #ifdef HAVE_GPHOTO2
 
         : cameraInitialized(false),
-          camera(nullptr),
-          status(nullptr)
+          camera           (nullptr),
+          status           (nullptr)
 
 #endif // HAVE_GPHOTO2
 
@@ -209,7 +209,7 @@ public:
 GPCamera::GPCamera(const QString& title, const QString& model,
                    const QString& port, const QString& path)
     : DKCamera(title, model, port, path),
-      d(new Private)
+      d       (new Private)
 {
 }
 

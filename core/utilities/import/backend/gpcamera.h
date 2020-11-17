@@ -103,6 +103,9 @@ private:
 
 private:
 
+    // Disable
+    GPCamera(QObject*);
+
     class Private;
     Private* const d;
 };

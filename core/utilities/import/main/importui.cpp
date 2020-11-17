@@ -124,7 +124,7 @@ ImportUI* ImportUI::m_instance = nullptr;
 ImportUI::ImportUI(const QString& cameraTitle, const QString& model,
                    const QString& port, const QString& path, int startIndex)
     : DXmlGuiWindow(nullptr),
-      d(new Private)
+      d            (new Private)
 {
     setConfigGroupName(QLatin1String("Camera Settings"));
 

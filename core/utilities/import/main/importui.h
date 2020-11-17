@@ -224,7 +224,7 @@ private Q_SLOTS:
 
     void slotMetadata(const QString& folder, const QString& file, const DMetadata& meta);
 
-    void setFilter(Filter *);
+    void setFilter(Filter*);
 
     void slotToggleShowBar();
     void slotColorManagementOptionsChanged();
@@ -239,6 +239,9 @@ private Q_SLOTS:
     void slotSetupChanged();
 
 private:
+
+    // Disable
+    ImportUI(QWidget*);
 
     class Private;
     Private* const d;
