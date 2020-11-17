@@ -186,4 +186,5 @@ BUGFIXES:
 170 ==> 420128 - Poor result of face detection (7.0.0. beta2).
 171 ==> 415559 - Standard Face Detection does not work on LowRes pictures.
 172 ==> 429221 - Digikam Editor White Balance Effect Shadows Slider Not Working.
-173 ==> 
+173 ==> 429118 - Changing the keywords of DNG files do not really change the file - the changes are not saved in the DNG.
+174 ==> 
