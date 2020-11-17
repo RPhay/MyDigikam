@@ -40,7 +40,7 @@ WBContainer::WBContainer()
       expositionFine(0.0),
       temperature   (6500.0),
       green         (1.0),
-      dark          (0.5),
+      dark          (0.0),
       gamma         (1.0),
       saturation    (1.0)
 {

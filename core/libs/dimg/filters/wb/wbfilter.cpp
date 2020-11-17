@@ -311,7 +311,7 @@ void WBFilter::setLUTv()
     {
         double x     = (double)(i - d->BP) / (d->WP - d->BP);
         d->curve[i]  = (i < d->BP) ? 0 : (d->rgbMax - 1) * pow((double)x, gamma);
-        d->curve[i] *= (1 - m_settings.dark * exp(-x * x / 0.002));
+        d->curve[i] *= (1 - m_settings.dark * exp(-x * x / 0.15));
         d->curve[i] /= (double)i;
     }
 }

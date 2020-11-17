@@ -257,7 +257,7 @@ WBSettings::WBSettings(QWidget* const parent)
     d->darkInput = new DDoubleNumInput;
     d->darkInput->setDecimals(2);
     d->darkInput->setRange(0.0, 1.0, 0.01);
-    d->darkInput->setDefaultValue(0.5);
+    d->darkInput->setDefaultValue(0.0);
     d->darkInput->setWhatsThis(i18n("Set here the shadow noise suppression level."));
 
     d->saturationLabel = new QLabel(i18n("Saturation:"));
