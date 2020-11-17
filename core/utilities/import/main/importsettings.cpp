@@ -46,41 +46,43 @@ class Q_DECL_HIDDEN ImportSettings::Private
 public:
 
     explicit Private()
-      : iconShowName(true),
-        iconShowSize(false),
-        iconShowDate(true),
-        iconShowTitle(false),
-        iconShowResolution(false),
-        iconShowTags(false),
-        iconShowOverlays(false),
-        iconShowRating(false),
-        iconShowImageFormat(false),
-        iconShowCoordinates(false),
-        thumbnailSize(0),
-        imageSortOrder(0),
-        imageSortBy(0),
-        imageSeparationMode(0),
-        itemLeftClickAction(ImportSettings::ShowPreview),
-        showToolTips(false),
-        tooltipShowFileName(false),
-        tooltipShowFileDate(false),
-        tooltipShowFileSize(false),
-        tooltipShowImageType(false),
-        tooltipShowImageDim(true),
-        tooltipShowPhotoMake(false),
-        tooltipShowPhotoLens(false),
-        tooltipShowPhotoFocal(false),
-        tooltipShowPhotoExpo(false),
-        tooltipShowPhotoFlash(false),
-        tooltipShowPhotoWb(false),
-        tooltipShowFolderName(false),
-        tooltipShowTags(false),
-        tooltipShowLabelRating(false),
-        previewLoadFullImageSize(false),
-        previewItemsWhileDownload(false),
-        previewShowIcons(true),
-//      ratingFilterCond(0),
-        showThumbbar(false)
+      : iconShowName                (true),
+        iconShowSize                (false),
+        iconShowDate                (true),
+        iconShowTitle               (false),
+        iconShowResolution          (false),
+        iconShowTags                (false),
+        iconShowOverlays            (false),
+        iconShowRating              (false),
+        iconShowImageFormat         (false),
+        iconShowCoordinates         (false),
+        thumbnailSize               (0),
+        imageSortOrder              (0),
+        imageSortBy                 (0),
+        imageSeparationMode         (0),
+        itemLeftClickAction         (ImportSettings::ShowPreview),
+        showToolTips                (false),
+        tooltipShowFileName         (false),
+        tooltipShowFileDate         (false),
+        tooltipShowFileSize         (false),
+        tooltipShowImageType        (false),
+        tooltipShowImageDim         (true),
+        tooltipShowPhotoMake        (false),
+        tooltipShowPhotoLens        (false),
+        tooltipShowPhotoFocal       (false),
+        tooltipShowPhotoExpo        (false),
+        tooltipShowPhotoFlash       (false),
+        tooltipShowPhotoWb          (false),
+        tooltipShowFolderName       (false),
+        tooltipShowTags             (false),
+        tooltipShowLabelRating      (false),
+        previewLoadFullImageSize    (false),
+        previewItemsWhileDownload   (false),
+        previewShowIcons            (true),
+/*
+        ratingFilterCond            (0),
+*/
+        showThumbbar                (false)
     {
     }
 
@@ -231,7 +233,7 @@ ImportSettings* ImportSettings::instance()
 
 ImportSettings::ImportSettings()
     : QObject(),
-      d(new Private)
+      d      (new Private)
 {
     d->config = KSharedConfig::openConfig();
     init();

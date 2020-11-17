@@ -63,114 +63,117 @@ public:
 
     void emitSetupChanged();
 
-    bool showToolTipsIsValid() const;
+    bool showToolTipsIsValid()              const;
 
     void setShowThumbbar(bool val);
-    bool getShowThumbbar() const;
+    bool getShowThumbbar()                  const;
 
     void setPreviewLoadFullImageSize(bool val);
-    bool getPreviewLoadFullImageSize() const;
+    bool getPreviewLoadFullImageSize()      const;
 
     void setPreviewItemsWhileDownload(bool val);
-    bool getPreviewItemsWhileDownload() const;
+    bool getPreviewItemsWhileDownload()     const;
 
     void setPreviewShowIcons(bool val);
-    bool getPreviewShowIcons() const;
+    bool getPreviewShowIcons()              const;
 
     void setImageSortOrder(int order);
-    int  getImageSortOrder() const;
+    int  getImageSortOrder()                const;
 
     void setImageSortBy(int sortBy);
-    int  getImageSortBy() const;
+    int  getImageSortBy()                   const;
 
     void setImageSeparationMode(int mode);
-    int  getImageSeparationMode() const;
+    int  getImageSeparationMode()           const;
 
     void setItemLeftClickAction(int action);
-    int  getItemLeftClickAction() const;
+    int  getItemLeftClickAction()           const;
 
     void setDefaultIconSize(int val);
-    int  getDefaultIconSize() const;
+    int  getDefaultIconSize()               const;
 
     void  setIconViewFont(const QFont& font);
-    QFont getIconViewFont() const;
+    QFont getIconViewFont()                 const;
 
     void setIconShowName(bool val);
-    bool getIconShowName() const;
+    bool getIconShowName()                  const;
 
     void setIconShowSize(bool val);
-    bool getIconShowSize() const;
+    bool getIconShowSize()                  const;
 
     void setIconShowTitle(bool val);
-    bool getIconShowTitle() const;
+    bool getIconShowTitle()                 const;
 
     void setIconShowTags(bool val);
-    bool getIconShowTags() const;
+    bool getIconShowTags()                  const;
 
     void setIconShowDate(bool val);
-    bool getIconShowDate() const;
+    bool getIconShowDate()                  const;
 
     void setIconShowRating(bool val);
-    bool getIconShowRating() const;
+    bool getIconShowRating()                const;
 
     void setIconShowImageFormat(bool val);
-    bool getIconShowImageFormat() const;
+    bool getIconShowImageFormat()           const;
 
     void setIconShowCoordinates(bool val);
-    bool getIconShowCoordinates() const;
+    bool getIconShowCoordinates()           const;
 
     void setIconShowOverlays(bool val);
-    bool getIconShowOverlays() const;
+    bool getIconShowOverlays()              const;
 
     void  setToolTipsFont(const QFont& font);
-    QFont getToolTipsFont() const;
+    QFont getToolTipsFont()                 const;
 
     void setShowToolTips(bool val);
-    bool getShowToolTips() const;
+    bool getShowToolTips()                  const;
 
     void setToolTipsShowFileName(bool val);
-    bool getToolTipsShowFileName() const;
+    bool getToolTipsShowFileName()          const;
 
     void setToolTipsShowFileDate(bool val);
-    bool getToolTipsShowFileDate() const;
+    bool getToolTipsShowFileDate()          const;
 
     void setToolTipsShowFileSize(bool val);
-    bool getToolTipsShowFileSize() const;
+    bool getToolTipsShowFileSize()          const;
 
     void setToolTipsShowImageType(bool val);
-    bool getToolTipsShowImageType() const;
+    bool getToolTipsShowImageType()         const;
 
     void setToolTipsShowImageDim(bool val);
-    bool getToolTipsShowImageDim() const;
+    bool getToolTipsShowImageDim()          const;
 
     void setToolTipsShowPhotoMake(bool val);
-    bool getToolTipsShowPhotoMake() const;
+    bool getToolTipsShowPhotoMake()         const;
 
     void setToolTipsShowPhotoLens(bool val);
-    bool getToolTipsShowPhotoLens() const;
+    bool getToolTipsShowPhotoLens()         const;
 
     void setToolTipsShowPhotoFocal(bool val);
-    bool getToolTipsShowPhotoFocal() const;
+    bool getToolTipsShowPhotoFocal()        const;
 
     void setToolTipsShowPhotoExpo(bool val);
-    bool getToolTipsShowPhotoExpo() const;
+    bool getToolTipsShowPhotoExpo()         const;
 
     void setToolTipsShowPhotoFlash(bool val);
-    bool getToolTipsShowPhotoFlash() const;
+    bool getToolTipsShowPhotoFlash()        const;
 
     void setToolTipsShowPhotoWB(bool val);
-    bool getToolTipsShowPhotoWB() const;
+    bool getToolTipsShowPhotoWB()           const;
 
     void setToolTipsShowTags(bool val);
-    bool getToolTipsShowTags() const;
+    bool getToolTipsShowTags()              const;
 
     void setToolTipsShowLabelRating(bool val);
-    bool getToolTipsShowLabelRating() const;
+    bool getToolTipsShowLabelRating()       const;
 
 private:
 
+    // Disable;
+    ImportSettings(QObject*);
+
     ImportSettings();
-    ~ImportSettings() override;
+    ~ImportSettings()                             override;
 
     void init();
 
