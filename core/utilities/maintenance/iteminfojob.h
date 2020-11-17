@@ -63,6 +63,9 @@ private Q_SLOTS:
 
 private:
 
+    // Disabme
+    ItemInfoJob(QObject*);
+
     class Private;
     Private* const d;
 };

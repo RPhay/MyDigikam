@@ -46,11 +46,11 @@ class MetadataTask : public ActionJob
 public:
 
     explicit MetadataTask();
-    ~MetadataTask() override;
+    ~MetadataTask()         override;
 
     void setTagsOnly(bool value);
     void setDirection(MetadataSynchronizer::SyncDirection dir);
-    void setMaintenanceData(MaintenanceData* const data=nullptr);
+    void setMaintenanceData(MaintenanceData* const data = nullptr);
 
 Q_SIGNALS:
 
@@ -58,9 +58,12 @@ Q_SIGNALS:
 
 protected:
 
-    void run() override;
+    void run()              override;
 
 private:
+
+    // Disable
+    MetadataTask(QObject*);
 
     class Private;
     Private* const d;

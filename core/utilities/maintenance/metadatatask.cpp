@@ -38,9 +38,9 @@ class Q_DECL_HIDDEN MetadataTask::Private
 public:
 
     explicit Private()
-        : tagsOnly(false),
-          direction(MetadataSynchronizer::WriteFromDatabaseToFile),
-          data(nullptr)
+        : tagsOnly  (false),
+          direction (MetadataSynchronizer::WriteFromDatabaseToFile),
+          data      (nullptr)
     {
     }
 
@@ -55,7 +55,7 @@ public:
 
 MetadataTask::MetadataTask()
     : ActionJob(),
-      d(new Private)
+      d        (new Private)
 {
 }
 

@@ -89,6 +89,9 @@ protected:
 
 private:
 
+    // Disable
+    DatabaseTask(QObject*);
+
     class Private;
     Private* const d;
 };
