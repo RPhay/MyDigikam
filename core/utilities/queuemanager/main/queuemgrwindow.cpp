@@ -96,7 +96,7 @@ bool QueueMgrWindow::queueManagerWindowCreated()
 
 QueueMgrWindow::QueueMgrWindow()
     : DXmlGuiWindow(nullptr),
-      d(new Private)
+      d            (new Private)
 {
     setConfigGroupName(QLatin1String("Batch Queue Manager Settings"));
     setXMLFile(QLatin1String("queuemgrwindowui5.rc"));
