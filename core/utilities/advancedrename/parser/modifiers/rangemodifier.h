@@ -54,6 +54,8 @@ private Q_SLOTS:
 
 private:
 
+    // Disable
+    RangeDialog(QWidget*);
     RangeDialog(const RangeDialog&);
     RangeDialog& operator=(const RangeDialog&);
 };

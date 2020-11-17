@@ -176,23 +176,23 @@ public:
 
 protected Q_SLOTS:
 
-    void   slotImageLoaded(const LoadingDescription& loadingDescription, const DImg& img);
-    void   slotImageSaved(const QString& filePath, bool success);
-    void   slotLoadingProgress(const LoadingDescription& loadingDescription, float progress);
-    void   slotSavingProgress(const QString& filePath, float progress);
+    void slotImageLoaded(const LoadingDescription& loadingDescription, const DImg& img);
+    void slotImageSaved(const QString& filePath, bool success);
+    void slotLoadingProgress(const LoadingDescription& loadingDescription, float progress);
+    void slotSavingProgress(const QString& filePath, float progress);
 
 Q_SIGNALS:
 
-    void   signalModified();
-    void   signalUndoStateChanged();
-    void   signalFileOriginChanged(const QString& filePath);
+    void signalModified();
+    void signalUndoStateChanged();
+    void signalFileOriginChanged(const QString& filePath);
 
-    void   signalLoadingStarted(const QString& filename);
-    void   signalLoadingProgress(const QString& filePath, float progress);
-    void   signalImageLoaded(const QString& filePath, bool success);
-    void   signalSavingStarted(const QString& filename);
-    void   signalSavingProgress(const QString& filePath, float progress);
-    void   signalImageSaved(const QString& filePath, bool success);
+    void signalLoadingStarted(const QString& filename);
+    void signalLoadingProgress(const QString& filePath, float progress);
+    void signalImageLoaded(const QString& filePath, bool success);
+    void signalSavingStarted(const QString& filename);
+    void signalSavingProgress(const QString& filePath, float progress);
+    void signalImageSaved(const QString& filePath, bool success);
 
 private Q_SLOTS:
 
@@ -200,6 +200,9 @@ private Q_SLOTS:
     void slotLoadRaw(const Digikam::LoadingDescription&);
 
 private:
+
+    // Disable
+    EditorCore(QObject*);
 
     static EditorCore* m_defaultInstance;
 

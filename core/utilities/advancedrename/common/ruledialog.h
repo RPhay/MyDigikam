@@ -56,6 +56,9 @@ private:
 
 private:
 
+    // Disable
+    RuleDialog(QWidget*);
+
     class Private;
     Private* const d;
 };

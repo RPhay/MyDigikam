@@ -85,6 +85,9 @@ public Q_SLOTS:
 
 private:
 
+    // Disable
+    EditorToolIface(QObject*);
+
     static EditorToolIface* m_iface;
 
     class Private;

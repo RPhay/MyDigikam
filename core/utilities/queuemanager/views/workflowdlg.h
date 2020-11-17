@@ -44,7 +44,7 @@ class WorkflowDlg : public QDialog
 
 public:
 
-    explicit WorkflowDlg(const Workflow& wf, bool create=false);
+    explicit WorkflowDlg(const Workflow& wf, bool create = false);
     ~WorkflowDlg() override;
 
     QString     title()           const;
@@ -61,6 +61,9 @@ private Q_SLOTS:
     void slotHelp();
 
 private:
+
+    // Disable
+    WorkflowDlg(QWidget*);
 
     class Private;
     Private* const d;
