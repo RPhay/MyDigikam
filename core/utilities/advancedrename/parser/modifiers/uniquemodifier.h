@@ -49,6 +49,8 @@ public:
 
 private:
 
+    // Disable
+    UniqueModifier(QObject*);
     UniqueModifier(const UniqueModifier&);
     UniqueModifier& operator=(const UniqueModifier&);
 

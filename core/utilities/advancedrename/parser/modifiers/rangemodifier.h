@@ -77,6 +77,8 @@ private Q_SLOTS:
 
 private:
 
+    // Disable
+    RangeModifier(QObject*);
     RangeModifier(const RangeModifier&);
     RangeModifier& operator=(const RangeModifier&);
 };

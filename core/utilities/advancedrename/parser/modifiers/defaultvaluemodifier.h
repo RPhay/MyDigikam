@@ -47,6 +47,8 @@ public:
 
 private:
 
+    // Disable
+    DefaultValueDialog(QWidget*);
     DefaultValueDialog(const DefaultValueDialog&);
     DefaultValueDialog& operator=(const DefaultValueDialog&);
 };
@@ -68,6 +70,8 @@ private Q_SLOTS:
 
 private:
 
+    // Disable
+    DefaultValueModifier(QObject*);
     DefaultValueModifier(const DefaultValueModifier&);
     DefaultValueModifier& operator=(const DefaultValueModifier&);
 };

@@ -42,6 +42,8 @@ public:
 
 private:
 
+    // Disable
+    CaseModifier(QObject*);
     CaseModifier(const CaseModifier&);
     CaseModifier& operator=(const CaseModifier&);
 

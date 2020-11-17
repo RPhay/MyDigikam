@@ -42,6 +42,8 @@ public:
 
 private:
 
+    // Disable
+    TrimmedModifier(QObject*);
     TrimmedModifier(const TrimmedModifier&);
     TrimmedModifier& operator=(const TrimmedModifier&);
 };
