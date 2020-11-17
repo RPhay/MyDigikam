@@ -259,7 +259,12 @@ public:
      */
     int changedFlags();
 
-protected:
+private Q_SLOTS:
+
+    void slotTagDeleted(int tagId);
+    void slotInvalidate();
+
+private:
 
     void load(const QDateTime& dateTime,
               const CaptionsMap& titles,
@@ -269,16 +274,6 @@ protected:
 
     void loadTags(const QList<int>& tagIds);
     void notifyTagDeleted(int id);
-
-/// Former MetadataHubOnTheRoad implementation
-
-protected Q_SLOTS:
-
-    void slotTagDeleted(int tagId);
-    void slotInvalidate();
-
-private:
-
     void applyChangeNotifications();
 
 private:
