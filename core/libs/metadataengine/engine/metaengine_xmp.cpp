@@ -377,7 +377,7 @@ QString MetaEngine::getXmpTagDescription(const char* xmpTagName)
         std::string xmpkey(xmpTagName);
         Exiv2::XmpKey xk(xmpkey);
 
-        return QString::fromLocal8Bit( Exiv2::XmpProperties::propertyDesc(xk) );
+        return QString::fromLocal8Bit(Exiv2::XmpProperties::propertyDesc(xk));
     }
     catch(Exiv2::AnyError& e)
     {
@@ -1067,7 +1067,7 @@ QVariant MetaEngine::getXmpTagVariant(const char* xmpTagName, bool rationalAsLis
                 {
                     std::ostringstream os;
                     os << *it;
-                    QString tagValue = QString::fromLocal8Bit(os.str().c_str());
+                    QString tagValue = QString::fromStdString(os.str());
 
                     if (stringEscapeCR)
                     {

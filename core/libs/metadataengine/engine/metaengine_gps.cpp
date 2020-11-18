@@ -575,7 +575,7 @@ bool MetaEngine::removeGPSInfo()
         for (Exiv2::ExifData::const_iterator it = d->exifMetadata().begin() ;
              it != d->exifMetadata().end() ; ++it)
         {
-            QString key = QString::fromLocal8Bit(it->key().c_str());
+            QString key = QString::fromStdString(it->key());
 
             if (key.section(QLatin1Char('.'), 1, 1) == QLatin1String("GPSInfo"))
             {

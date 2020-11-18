@@ -633,7 +633,7 @@ QString MetaEngine::Private::detectEncodingAndDecode(const std::string& value) c
 
     if (isUtf8(value.c_str()))
     {
-        return QString::fromUtf8(value.c_str());
+        return QString::fromStdString(value);
     }
 
     // Utf8 has a pretty unique byte pattern.
