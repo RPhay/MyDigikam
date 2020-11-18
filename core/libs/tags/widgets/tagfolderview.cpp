@@ -122,9 +122,12 @@ void TagFolderView::addCustomContextMenuActions(ContextMenuHelper& cmh, Album* a
         return;
     }
 
-    if ((tag->id() != FaceTags::unconfirmedPersonTagId()) &&
+    if (
+        (tag->id() != FaceTags::unconfirmedPersonTagId()) &&
         (tag->id() != FaceTags::unknownPersonTagId())     &&
-        (FaceTags::existsIgnoredPerson() && tag->id() != FaceTags::ignoredPersonTagId()))
+        (tag->id() != FaceTags::existsIgnoredPerson())    &&
+        (tag->id() != FaceTags::ignoredPersonTagId())
+       )
     {
         cmh.addActionNewTag(tagModificationHelper(), tag);
 
