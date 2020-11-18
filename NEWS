@@ -187,4 +187,5 @@ BUGFIXES:
 171 ==> 415559 - Standard Face Detection does not work on LowRes pictures.
 172 ==> 429221 - Digikam Editor White Balance Effect Shadows Slider Not Working.
 173 ==> 429118 - Changing the keywords of DNG files do not really change the file - the changes are not saved in the DNG.
-174 ==> 
+174 ==> 429055 - Storing tags to files does not work.
+175 ==> 
