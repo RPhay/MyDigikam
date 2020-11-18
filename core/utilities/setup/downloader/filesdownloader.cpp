@@ -145,7 +145,7 @@ bool FilesDownloader::checkDownloadFiles() const
 void FilesDownloader::startDownload()
 {
     setWindowTitle(i18n("Download required files"));
-    setMinimumHeight(300);
+    setMinimumHeight(250);
     setMinimumWidth(600);
 
     QWidget* const mainWidget = new QWidget(this);
@@ -258,9 +258,10 @@ void FilesDownloader::download()
 
 bool FilesDownloader::exists(int index) const
 {
-    QString name = d->files.at(index + 1).toString();
+    QString app  = qApp->applicationName();
+    QString file = d->files.at(index + 1).toString();
     QString path = QStandardPaths::locate(QStandardPaths::GenericDataLocation,
-                                          QString::fromLatin1("digikam/facesengine/%1").arg(name));
+                                          QString::fromLatin1("%1/facesengine/%2").arg(app).arg(file));
 
     return (!path.isEmpty() && (QFileInfo(path).size() == d->files.at(index + 3).toInt()));
 }

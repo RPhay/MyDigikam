@@ -62,6 +62,7 @@ using namespace Magick;
 #include "digikam_debug.h"
 #include "digikam_globals.h"
 #include "digikam_version.h"
+#include "filesdownloader.h"
 #include "systemsettings.h"
 #include "metaengine.h"
 #include "daboutdata.h"
@@ -186,6 +187,13 @@ int main(int argc, char* argv[])
     }
 
     w->show();
+
+    QPointer<FilesDownloader> floader = new FilesDownloader(w);
+
+    if (!floader->checkDownloadFiles())
+    {
+        floader->startDownload();
+    }
 
     int ret = app.exec();
 

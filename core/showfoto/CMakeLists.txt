@@ -10,6 +10,8 @@ APPLY_COMMON_POLICIES()
 # We need to include the setup dir for showfoto BEFORE the other include dirs,
 # otherwise the one from the "utilities" dir will be used
 include_directories(BEFORE
+                    $<TARGET_PROPERTY:Qt5::Network,INTERFACE_INCLUDE_DIRECTORIES>
+
                     ${CMAKE_CURRENT_SOURCE_DIR}/thumbbar
                     ${CMAKE_CURRENT_SOURCE_DIR}/setup
                     ${CMAKE_CURRENT_SOURCE_DIR}/main
