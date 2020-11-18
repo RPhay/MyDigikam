@@ -124,6 +124,7 @@ FilesDownloader::~FilesDownloader()
     if (d->reply)
     {
         d->reply->abort();
+        d->reply = nullptr;
     }
 
     delete d;
@@ -264,6 +265,17 @@ bool FilesDownloader::exists(int index) const
                                           QString::fromLatin1("%1/facesengine/%2").arg(app).arg(file));
 
     return (!path.isEmpty() && (QFileInfo(path).size() == d->files.at(index + 3).toInt()));
+}
+
+void FilesDownloader::reject()
+{
+    if (d->reply)
+    {
+        d->reply->abort();
+        d->reply = nullptr;
+    }
+
+    QDialog::reject();
 }
 
 void FilesDownloader::slotDownloaded(QNetworkReply* reply)
