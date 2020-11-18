@@ -88,6 +88,11 @@ public:
         show();
         raise();
     }
+
+private:
+
+    // Disable
+    BenchmarkMessageDisplay(QWidget*);
 };
 
 // --------------------------------------------------------------------------

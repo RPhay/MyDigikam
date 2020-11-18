@@ -64,6 +64,9 @@ protected:
 
 private:
 
+    // Disable
+    ImageQualityTask(QObject*);
+
     class Private;
     Private* const d;
 };

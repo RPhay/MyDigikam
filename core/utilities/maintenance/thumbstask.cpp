@@ -42,7 +42,7 @@ public:
 
     explicit Private()
         : catcher(nullptr),
-          data(nullptr)
+          data   (nullptr)
     {
     }
 
@@ -55,7 +55,7 @@ public:
 
 ThumbsTask::ThumbsTask()
     : ActionJob(),
-      d(new Private)
+      d        (new Private)
 {
     ThumbnailLoadThread* const thread = new ThumbnailLoadThread;
     thread->setPixmapRequested(false);

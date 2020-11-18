@@ -66,7 +66,7 @@ public:
 
     void markField(SearchField* const field);
     void clearMarkedFields();
-    QList<QRect> areaOfMarkedFields() const;
+    QList<QRect> areaOfMarkedFields()                   const;
 
 public Q_SLOTS:
 
@@ -83,6 +83,11 @@ protected:
     SearchFieldGroupLabel* m_label;
     VisibilityController*  m_controller;
     QSet<SearchField*>     m_markedFields;
+
+private:
+
+    // Disable
+    SearchFieldGroup(QWidget*);
 };
 
 // -----------------------------------------------------------------------

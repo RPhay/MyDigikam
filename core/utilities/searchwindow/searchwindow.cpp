@@ -52,10 +52,10 @@ class Q_DECL_HIDDEN SearchWindow::Private
 public:
 
     explicit Private()
-      : scrollArea(nullptr),
-        searchView(nullptr),
-        bottomBar(nullptr),
-        currentId(-1),
+      : scrollArea   (nullptr),
+        searchView   (nullptr),
+        bottomBar    (nullptr),
+        currentId    (-1),
         hasTouchedXml(false)
     {
     }
@@ -70,7 +70,7 @@ public:
 
 SearchWindow::SearchWindow()
     : QWidget(nullptr),
-      d(new Private)
+      d      (new Private)
 {
     QVBoxLayout* const layout = new QVBoxLayout;
 

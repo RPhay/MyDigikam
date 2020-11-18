@@ -237,7 +237,8 @@ public:
 
 private:
 
-    // Hidden copy constructor and assignment operator.
+    // Disable
+    FacePipeline(QObject*);
     FacePipeline(const FacePipeline&);
     FacePipeline& operator=(const FacePipeline&);
 

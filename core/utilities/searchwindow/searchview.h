@@ -157,7 +157,8 @@ protected:
 
 private:
 
-    // Hidden copy constructor and assignment operator.
+    // Disable.
+    SearchView(QWidget*);
     SearchView(const SearchView&);
     SearchView& operator=(const SearchView&);
 

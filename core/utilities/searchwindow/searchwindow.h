@@ -81,6 +81,9 @@ protected:
 
 private:
 
+    // Disable
+    SearchWindow(QWidget*);
+
     class Private;
     Private* const d;
 };

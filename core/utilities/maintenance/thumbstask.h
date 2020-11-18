@@ -59,6 +59,9 @@ protected:
 
 private:
 
+    // Disable
+    ThumbsTask(QObject*);
+
     class Private;
     Private* const d;
 };
