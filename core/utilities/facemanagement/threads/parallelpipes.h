@@ -66,7 +66,8 @@ protected:
 
 private:
 
-    // Hidden copy constructor and assignment operator.
+    // Disable
+    ParallelPipes(QObject*);
     ParallelPipes(const ParallelPipes&);
     ParallelPipes& operator=(const ParallelPipes&);
 };

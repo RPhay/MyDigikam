@@ -127,6 +127,8 @@ public:
 
 private:
 
+    // Disable
+    GeoIfaceGlobalObject(QObject*);
     GeoIfaceGlobalObject();
     ~GeoIfaceGlobalObject() override;
 

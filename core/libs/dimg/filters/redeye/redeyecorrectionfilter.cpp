@@ -116,7 +116,7 @@ void RedEyeCorrectionFilter::filterImage()
 
         QString app  = qApp->applicationName();
         QString path = QStandardPaths::locate(QStandardPaths::GenericDataLocation,
-                                              QLatin1String("%1/facesengine/shapepredictor.dat").arg(app));
+                                              QString::fromLatin1("%1/facesengine/shapepredictor.dat").arg(app));
 
         QFile model(path);
 

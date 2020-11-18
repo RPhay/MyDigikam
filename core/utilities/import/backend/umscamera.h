@@ -90,6 +90,11 @@ private:
 private:
 
     bool m_cancel;
+
+private:
+
+    // Disable
+    UMSCamera(QObject*);
 };
 
 } // namespace Digikam
