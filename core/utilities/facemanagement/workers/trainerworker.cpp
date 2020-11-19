@@ -136,9 +136,9 @@ void TrainerWorker::process(FacePipelineExtendedPackage::Ptr package)
 
         for (int i = 0 ; i < toTrain.size() ; ++i)
         {
-            QListImageListProvider* const imgListProvider = new QListImageListProvider;
-            imgListProvider->setImages(QList<QImage*>() << images[i]);
-            provider.imagesToTrain[identities[i]] = imgListProvider;
+            QListImageListProvider* const imageList = new QListImageListProvider;
+            imageList->setImages(QList<QImage*>() << images[i]);
+            provider.imagesToTrain[identities[i]] = imageList;
         }
 
         // NOTE: cropped faces will be deleted by training provider
