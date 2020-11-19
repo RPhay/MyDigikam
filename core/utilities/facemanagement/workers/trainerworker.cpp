@@ -39,6 +39,11 @@ public:
     {
     }
 
+    ~MapListTrainingDataProvider() override
+    {
+        qDeleteAll(imagesToTrain.values());
+    }
+
     ImageListProvider* newImages(const Identity& identity) override
     {
         if (imagesToTrain.contains(identity.id()))
