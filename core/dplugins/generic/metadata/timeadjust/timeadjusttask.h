@@ -63,6 +63,9 @@ protected:
 
 private:
 
+    // Disable
+    TimeAdjustTask(QObject*);
+
     class Private;
     Private* const d;
 };

@@ -51,6 +51,9 @@ protected:
 
 private:
 
+    // Disable
+    DigikamItemDelegate(QObject*);
+
     Q_DECLARE_PRIVATE(DigikamItemDelegate)
 };
 

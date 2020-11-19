@@ -47,20 +47,23 @@ class ItemPreviewCanvas : public DImgPreviewItem
 public:
 
     explicit ItemPreviewCanvas();
-    ~ItemPreviewCanvas() override;
+    ~ItemPreviewCanvas()                                      override;
 
     void setItemInfo(const ItemInfo& info);
-    ItemInfo imageInfo() const;
+    ItemInfo imageInfo()                            const;
 
     void setFaceGroup(FaceGroup* const group);
 
 protected:
 
-    void hoverEnterEvent(QGraphicsSceneHoverEvent* e) override;
-    void hoverLeaveEvent(QGraphicsSceneHoverEvent* e) override;
-    void hoverMoveEvent(QGraphicsSceneHoverEvent* e)  override;
+    void hoverEnterEvent(QGraphicsSceneHoverEvent* e)         override;
+    void hoverLeaveEvent(QGraphicsSceneHoverEvent* e)         override;
+    void hoverMoveEvent(QGraphicsSceneHoverEvent* e)          override;
 
 private:
+
+    // Disable
+    ItemPreviewCanvas(QObject*);
 
     class Private;
     Private* const d;

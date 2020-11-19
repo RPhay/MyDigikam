@@ -53,7 +53,14 @@ public:
     }
 
     QList<QPersistentModelIndex> draggedIndices;
+
+private:
+
+    // Disable
+    MapDragData(QObject*);
 };
+
+//  -----------------------------------------------------------------------------------
 
 class DIGIKAM_EXPORT MapDragDropHandler : public GeoDragDropHandler
 {

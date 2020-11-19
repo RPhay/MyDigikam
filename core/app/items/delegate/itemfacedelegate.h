@@ -42,20 +42,23 @@ class ItemFaceDelegate : public DigikamItemDelegate
 public:
 
     explicit ItemFaceDelegate(ItemCategorizedView* const parent);
-    ~ItemFaceDelegate() override;
+    ~ItemFaceDelegate()                                       override;
 
-    QRect faceRect(const QModelIndex& index) const;
-    QRect largerFaceRect(const QModelIndex& index) const;
+    QRect faceRect(const QModelIndex& index)            const;
+    QRect largerFaceRect(const QModelIndex& index)      const;
 
     static FaceTagsIface face(const QModelIndex& index);
 
 protected:
 
-    QPixmap thumbnailPixmap(const QModelIndex& index) const override;
-    void updateRects() override;
-    void clearModelDataCaches() override;
+    QPixmap thumbnailPixmap(const QModelIndex& index)   const override;
+    void updateRects()                                        override;
+    void clearModelDataCaches()                               override;
 
 private:
+
+    // Disable
+    ItemFaceDelegate(QObject*);
 
     Q_DECLARE_PRIVATE(ItemFaceDelegate)
 };
