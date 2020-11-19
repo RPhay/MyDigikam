@@ -56,6 +56,8 @@ public:
 
 private:
 
+    // Disable
+    MetadataOptionDialog(QWidget*);
     MetadataOptionDialog(const MetadataOptionDialog&);
     MetadataOptionDialog& operator=(const MetadataOptionDialog&);
 };
@@ -69,7 +71,7 @@ class MetadataOption : public Option
 public:
 
     explicit MetadataOption();
-    ~MetadataOption() override {};
+    ~MetadataOption()                               override = default;
 
 protected:
 
@@ -77,10 +79,12 @@ protected:
 
 private Q_SLOTS:
 
-    void slotTokenTriggered(const QString& token) override;
+    void slotTokenTriggered(const QString& token)   override;
 
 private:
 
+    // Disable
+    MetadataOption(QObject*);
     MetadataOption(const MetadataOption&);
     MetadataOption& operator=(const MetadataOption&);
 

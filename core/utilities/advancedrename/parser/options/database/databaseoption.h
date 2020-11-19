@@ -56,7 +56,7 @@ public:
 private:
 
     // Disable
-    DatabaseOptionDialog(QObject*);
+    DatabaseOptionDialog(QWidget*);
     DatabaseOptionDialog(const DatabaseOptionDialog&);
     DatabaseOptionDialog& operator=(const DatabaseOptionDialog&);
 };

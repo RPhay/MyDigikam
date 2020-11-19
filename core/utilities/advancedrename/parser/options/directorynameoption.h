@@ -44,7 +44,7 @@ class DirectoryNameOption : public Option
 public:
 
     explicit DirectoryNameOption();
-    ~DirectoryNameOption() override {};
+    ~DirectoryNameOption()                          override = default;
 
 protected:
 
@@ -52,6 +52,8 @@ protected:
 
 private:
 
+    // Disable
+    DirectoryNameOption(QObject*);
     DirectoryNameOption(const DirectoryNameOption&);
     DirectoryNameOption& operator=(const DirectoryNameOption&);
 };

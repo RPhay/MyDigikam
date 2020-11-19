@@ -50,6 +50,8 @@ public:
 
 private:
 
+    // Disable
+    SequenceNumberDialog(QWidget*);
     SequenceNumberDialog(const SequenceNumberDialog&);
     SequenceNumberDialog& operator=(const SequenceNumberDialog&);
 };
@@ -63,18 +65,20 @@ class SequenceNumberOption : public Option
 public:
 
     explicit SequenceNumberOption();
-    ~SequenceNumberOption() override;
+    ~SequenceNumberOption()                             override;
 
 protected:
 
-    QString parseOperation(ParseSettings& settings) override;
+    QString parseOperation(ParseSettings& settings)     override;
 
 private Q_SLOTS:
 
-    void slotTokenTriggered(const QString& token) override;
+    void slotTokenTriggered(const QString& token)       override;
 
 private:
 
+    // Disable
+    SequenceNumberOption(QObject*);
     SequenceNumberOption(const SequenceNumberOption&);
     SequenceNumberOption& operator=(const SequenceNumberOption&);
 };

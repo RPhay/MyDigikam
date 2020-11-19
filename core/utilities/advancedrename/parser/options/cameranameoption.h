@@ -43,7 +43,7 @@ class CameraNameOption : public Option
 public:
 
     explicit CameraNameOption();
-    ~CameraNameOption() override {};
+    ~CameraNameOption()                             override = default;
 
 protected:
 
@@ -51,6 +51,8 @@ protected:
 
 private:
 
+    // Disable
+    CameraNameOption(QObject*);
     CameraNameOption(const CameraNameOption&);
     CameraNameOption& operator=(const CameraNameOption&);
 };

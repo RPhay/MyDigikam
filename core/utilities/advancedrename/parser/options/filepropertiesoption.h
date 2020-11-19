@@ -43,7 +43,7 @@ class FilePropertiesOption : public Option
 public:
 
     explicit FilePropertiesOption();
-    ~FilePropertiesOption() override {};
+    ~FilePropertiesOption()                         override = default;
 
 protected:
 
@@ -51,6 +51,8 @@ protected:
 
 private:
 
+    // Disable
+    FilePropertiesOption(QObject*);
     FilePropertiesOption(const FilePropertiesOption&);
     FilePropertiesOption& operator=(const FilePropertiesOption&);
 };

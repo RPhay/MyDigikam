@@ -121,6 +121,8 @@ private Q_SLOTS:
 
 private:
 
+    // Disable
+    DateOptionDialog(QWidget*);
     DateOptionDialog(const DateOptionDialog&);
     DateOptionDialog& operator=(const DateOptionDialog&);
 
@@ -137,7 +139,7 @@ class DateOption : public Option
 public:
 
     explicit DateOption();
-    ~DateOption() override {};
+    ~DateOption()                                   override = default;
 
 protected:
 
@@ -145,12 +147,14 @@ protected:
 
 private:
 
+    // Disable
+    DateOption(QObject*);
     DateOption(const DateOption&);
     DateOption& operator=(const DateOption&);
 
 private Q_SLOTS:
 
-    void slotTokenTriggered(const QString& token) override;
+    void slotTokenTriggered(const QString& token)   override;
 };
 
 } // namespace Digikam
