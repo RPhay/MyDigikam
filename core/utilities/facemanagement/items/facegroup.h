@@ -145,9 +145,8 @@ protected Q_SLOTS:
 
 private:
 
-    FaceGroup(); // Disable
-
-    // Hidden copy constructor and assignment operator.
+    // Disable
+    FaceGroup();
     FaceGroup(const FaceGroup&);
     FaceGroup& operator=(const FaceGroup&);
 

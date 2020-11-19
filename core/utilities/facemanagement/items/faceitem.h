@@ -46,7 +46,7 @@ class Q_DECL_HIDDEN FaceItem : public RegionFrameItem
 
 public:
 
-    explicit FaceItem(QGraphicsItem* const parent = nullptr);
+    explicit FaceItem(QGraphicsItem* const parent);
     ~FaceItem() override;
 
     void setFace(const FaceTagsIface& face);
@@ -65,7 +65,8 @@ protected:
 
 private:
 
-    // Hidden copy constructor and assignment operator.
+    // Disable
+    FaceItem();
     FaceItem(const FaceItem&);
     FaceItem& operator=(const FaceItem&);
 };
