@@ -43,8 +43,7 @@ public:
     {
         if (imagesToTrain.contains(identity.id()))
         {
-            QListImageListProvider* const provider = new QListImageListProvider;
-            provider->setImages(imagesToTrain.value(identity.id())->images());
+            QListImageListProvider* const provider = imagesToTrain.value(identity.id());
             provider->reset();
 
             return provider;
@@ -132,7 +131,9 @@ void TrainerWorker::process(FacePipelineExtendedPackage::Ptr package)
 
         for (int i = 0 ; i < toTrain.size() ; ++i)
         {
-            provider.imagesToTrain.value(identities[i])->list << images[i];
+            QListImageListProvider* const imgListProvider = new QListImageListProvider;
+            imgListProvider->setImages(QList<QImage*>() << images[i]);
+            provider.imagesToTrain[identities[i]] = imgListProvider;
         }
 
         // NOTE: cropped faces will be deleted by training provider
