@@ -193,4 +193,5 @@ BUGFIXES:
 177 ==> 429335 - digikam 7.2.0-beta2 (18.11.2020) crashes after assigning name to unknown face.
 178 ==> 429362 - Please make qtwebengine dependency optional.
 179 ==> 429232 - digiKam Does not open - Happens also on a fresh Manjaro Linux install with BTRFS as file system.
-180 ==> 
+180 ==> 429261 - Malformed characters in EXIF Artist field.
+181 ==> 
