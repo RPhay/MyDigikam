@@ -195,4 +195,5 @@ BUGFIXES:
 179 ==> 429232 - digiKam Does not open - Happens also on a fresh Manjaro Linux install with BTRFS as file system.
 180 ==> 429261 - Malformed characters in EXIF Artist field.
 181 ==> 429346 - Rotating and cropping: Concentration of the cropping frame on the real image area.
-182 ==> 
+182 ==> 406723 - Tags are not synced.
+183 ==> 
