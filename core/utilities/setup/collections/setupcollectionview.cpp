@@ -1179,7 +1179,7 @@ bool SetupCollectionModel::askForNewCollectionPath(int category, QString* const 
                                                               &messageFromManager, &deviceIcon);
     }
 
-    QString path = QDir::fromNativeSeparators(curl.toDisplayString(QUrl::PreferLocalFile ));
+    QString path = curl.toLocalFile();
 
     // If there are other added collections then CollectionManager does not know about them. Check here.
 
