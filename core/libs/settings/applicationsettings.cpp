@@ -134,14 +134,14 @@ void ApplicationSettings::readSettings()
     d->recursiveTags                     = group.readEntry(d->configRecursiveTagsEntry,                true);
     d->allGroupsOpen                     = group.readEntry(d->configAllGroupsOpenEntry,                false);
 
-    d->iconShowName                      = group.readEntry(d->configIconShowNameEntry,                 false);
-    d->iconShowResolution                = group.readEntry(d->configIconShowResolutionEntry,           false);
-    d->iconShowAspectRatio               = group.readEntry(d->configIconShowAspectRatioEntry,          false);
+    d->iconShowName                      = group.readEntry(d->configIconShowNameEntry,                 true);
     d->iconShowSize                      = group.readEntry(d->configIconShowSizeEntry,                 false);
-    d->iconShowDate                      = group.readEntry(d->configIconShowDateEntry,                 false);
+    d->iconShowDate                      = group.readEntry(d->configIconShowDateEntry,                 true);
     d->iconShowModDate                   = group.readEntry(d->configIconShowModificationDateEntry,     false);
     d->iconShowTitle                     = group.readEntry(d->configIconShowTitleEntry,                true);
     d->iconShowComments                  = group.readEntry(d->configIconShowCommentsEntry,             true);
+    d->iconShowResolution                = group.readEntry(d->configIconShowResolutionEntry,           false);
+    d->iconShowAspectRatio               = group.readEntry(d->configIconShowAspectRatioEntry,          false);
     d->iconShowTags                      = group.readEntry(d->configIconShowTagsEntry,                 true);
     d->iconShowOverlays                  = group.readEntry(d->configIconShowOverlaysEntry,             true);
     d->iconShowFullscreen                = group.readEntry(d->configIconShowFullscreenEntry,           true);
@@ -346,13 +346,13 @@ void ApplicationSettings::saveSettings()
     group.writeEntry(d->configSidebarTitleStyleEntry,                  (int)d->sidebarTitleStyle);
 
     group.writeEntry(d->configIconShowNameEntry,                       d->iconShowName);
-    group.writeEntry(d->configIconShowResolutionEntry,                 d->iconShowResolution);
-    group.writeEntry(d->configIconShowAspectRatioEntry,                d->iconShowAspectRatio);
     group.writeEntry(d->configIconShowSizeEntry,                       d->iconShowSize);
     group.writeEntry(d->configIconShowDateEntry,                       d->iconShowDate);
     group.writeEntry(d->configIconShowModificationDateEntry,           d->iconShowModDate);
     group.writeEntry(d->configIconShowTitleEntry,                      d->iconShowTitle);
     group.writeEntry(d->configIconShowCommentsEntry,                   d->iconShowComments);
+    group.writeEntry(d->configIconShowResolutionEntry,                 d->iconShowResolution);
+    group.writeEntry(d->configIconShowAspectRatioEntry,                d->iconShowAspectRatio);
     group.writeEntry(d->configIconShowTagsEntry,                       d->iconShowTags);
     group.writeEntry(d->configIconShowOverlaysEntry,                   d->iconShowOverlays);
     group.writeEntry(d->configIconShowFullscreenEntry,                 d->iconShowFullscreen);

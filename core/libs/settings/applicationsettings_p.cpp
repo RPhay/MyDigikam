@@ -296,12 +296,12 @@ void ApplicationSettings::Private::init()
     scrollItemToCenter                   = false;
     showOnlyPersonTagsInPeopleSidebar    = false;
 
-    iconShowName                         = false;
+    iconShowName                         = true;
     iconShowSize                         = false;
-    iconShowDate                         = false;
+    iconShowDate                         = true;
     iconShowModDate                      = false;
-    iconShowTitle                        = false;
-    iconShowComments                     = false;
+    iconShowTitle                        = true;
+    iconShowComments                     = true;
     iconShowResolution                   = false;
     iconShowAspectRatio                  = false;
     iconShowTags                         = true;
