@@ -70,6 +70,11 @@ protected:
 private:
 
     double versionDouble;
+
+private:
+
+    // Disable
+    EnfuseBinary(QObject*);
 };
 
 } // namespace DigikamGenericExpoBlendingPlugin

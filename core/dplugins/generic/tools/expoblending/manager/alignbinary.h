@@ -41,6 +41,11 @@ public:
 
     explicit AlignBinary();
     ~AlignBinary() override;
+
+private:
+
+    // Disable
+    AlignBinary(QObject*);
 };
 
 } // namespace DigikamGenericExpoBlendingPlugin

@@ -44,7 +44,7 @@ namespace Vkontakte
  * This is a handy interface on top of Vkontakte::AuthenticationDialog
  * to request authentication on demand and store the API token for later use.
  */
-class VkApi : public QObject
+class VkApi : public QObject        // clazy:exclude=ctor-missing-parent-argument
 {
     Q_OBJECT
 

@@ -36,7 +36,7 @@ class QPaintDevice;
 namespace DigikamGenericCalendarPlugin
 {
 
-class CalPainter : public QObject,
+class CalPainter : public QObject,      // clazy:exclude=ctor-missing-parent-argument
                    public QPainter
 {
     Q_OBJECT
