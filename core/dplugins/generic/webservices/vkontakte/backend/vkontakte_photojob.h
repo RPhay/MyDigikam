@@ -41,9 +41,9 @@ class PhotoJob : public KJobWithSubjob
 public:
 
     explicit PhotoJob(const QUrl& url);
-    ~PhotoJob() override;
+    ~PhotoJob()           override;
 
-    void start() override;
+    void start()          override;
     QImage photo() const;
 
 private Q_SLOTS:
@@ -51,6 +51,9 @@ private Q_SLOTS:
     void jobFinished(KJob* kjob);
 
 private:
+
+    // Disable
+    PhotoJob(QObject*);
 
     class Private;
     Private* const d;

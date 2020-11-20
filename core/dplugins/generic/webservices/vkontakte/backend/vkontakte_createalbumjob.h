@@ -53,6 +53,9 @@ protected:
 
 private:
 
+    // Disable
+    CreateAlbumJob(QObject*);
+
     class Private;
     Private* const d;
 };

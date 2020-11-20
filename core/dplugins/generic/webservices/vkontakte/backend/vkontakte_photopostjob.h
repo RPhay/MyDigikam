@@ -77,6 +77,11 @@ private:
     QStringList           m_files;
     bool                  m_ok;
     QVariantMap           m_response;
+
+private:
+
+    // Disable
+    PhotoPostJob(QObject*);
 };
 
 } // namespace Vkontakte

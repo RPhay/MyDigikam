@@ -40,7 +40,7 @@ namespace Digikam
 
 class HidingStateChanger;
 
-class Q_DECL_HIDDEN FaceItem : public RegionFrameItem
+class Q_DECL_HIDDEN FaceItem : public RegionFrameItem       // clazy:exclude=ctor-missing-parent-argument
 {
     Q_OBJECT
 

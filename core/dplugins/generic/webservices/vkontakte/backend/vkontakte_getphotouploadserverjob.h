@@ -60,6 +60,11 @@ private:
     int                   m_aid;
     int                   m_gid;
     int                   m_uid;
+
+private:
+
+    // Disable
+    GetPhotoUploadServerJob(QObject*);
 };
 
 } // namespace Vkontakte

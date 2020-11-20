@@ -42,6 +42,11 @@ public:
 protected:
 
     void handleData(const QJsonValue& data) override;
+
+private:
+
+    // Disable
+    DeleteAlbumJob(QObject*);
 };
 
 } // namespace Vkontakte

@@ -60,6 +60,11 @@ private:
 
     UploadPhotosJob::Dest m_dest;
     QList<PhotoInfo>      m_list;
+
+private:
+
+    // Disable
+    SavePhotoJob(QObject*);
 };
 
 } // namespace Vkontakte

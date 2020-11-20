@@ -41,6 +41,10 @@ class KJobWithSubjob : public KJob
 {
     Q_OBJECT
 
+public:
+
+     KJobWithSubjob(QObject* const parent = nullptr);
+
 protected:
 
     /**
@@ -54,9 +58,15 @@ protected:
     QPointer<KJob> m_job;
 };
 
+// ------------------------------------------------------------
+
 class KJobWithSubjobs : public KJob
 {
     Q_OBJECT
+
+public:
+
+     KJobWithSubjobs(QObject* const parent = nullptr);
 
 protected:
 
@@ -70,6 +80,8 @@ protected:
      */
     QList<KJob*> m_jobs;
 };
+
+// ------------------------------------------------------------
 
 /**
  * VkontakteJob base class
@@ -137,6 +149,11 @@ private:
     QString          m_method;
     bool             m_httpPost;
     QList<QueryItem> m_queryItems;          ///< The query items
+
+private:
+
+    // Disable
+    VkontakteJob(QObject*);
 };
 
 } // namespace Vkontakte

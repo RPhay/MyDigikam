@@ -54,6 +54,9 @@ protected:
 
 private:
 
+    // Disable
+    PhotoListJob(QObject*);
+
     class Private;
     Private* const d;
 };

@@ -36,7 +36,7 @@
 
 #define VK_APP_ID "2446321"
 
-VkTestBase::VkTestBase()
+VkTestBase::VkTestBase(QObject* const /*parent*/)
     : m_vkapi(new Vkontakte::VkApi(nullptr))
 {
 }

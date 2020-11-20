@@ -48,6 +48,9 @@ protected:
 
 private:
 
+    // Disable
+    GetApplicationPermissionsJob(QObject*);
+
     class Private;
     Private* const d;
 };

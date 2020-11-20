@@ -44,6 +44,11 @@
 namespace Vkontakte
 {
 
+ KJobWithSubjob::KJobWithSubjob(QObject* const parent)
+    : KJob(parent)
+{
+}
+
 bool KJobWithSubjob::doKill()
 {
     if (m_job)
@@ -55,6 +60,11 @@ bool KJobWithSubjob::doKill()
 }
 
 //---------------------------------------------------------------
+
+ KJobWithSubjobs::KJobWithSubjobs(QObject* const parent)
+    : KJob(parent)
+{
+}
 
 bool KJobWithSubjobs::doKill()
 {

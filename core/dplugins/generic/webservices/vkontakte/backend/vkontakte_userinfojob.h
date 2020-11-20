@@ -88,6 +88,9 @@ protected:
 
 private:
 
+    // Disable
+    UserInfoJob(QObject*);
+
     class Private;
     Private* const d;
 };

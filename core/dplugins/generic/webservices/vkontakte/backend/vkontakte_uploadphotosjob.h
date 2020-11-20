@@ -83,6 +83,9 @@ private Q_SLOTS:
 
 private:
 
+    // Disable
+    UploadPhotosJob(QObject*);
+
     class Private;
     Private* const d;
 };

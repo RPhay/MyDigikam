@@ -51,6 +51,9 @@ protected:
 
 private:
 
+    // Disable
+    AlbumListJob(QObject*);
+
     class Private;
     Private* const d;
 };
