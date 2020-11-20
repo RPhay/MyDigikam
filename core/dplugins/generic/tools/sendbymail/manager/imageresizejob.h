@@ -72,6 +72,11 @@ private:
 private:
 
     QMutex m_mutex;
+
+private:
+
+    // Disable
+    explicit ImageResizeJob(QObject*);
 };
 
 } // namespace DigikamGenericSendByMailPlugin
