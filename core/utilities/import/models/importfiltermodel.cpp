@@ -266,6 +266,11 @@ public:
     ImportItemModel*    importItemModel;
     CamItemSortSettings sorter;
     Filter*             filter;
+
+private:
+
+    // Disable
+    ImportFilterModelPrivate(QObject*);
 };
 
 void ImportFilterModel::ImportFilterModelPrivate::init(ImportFilterModel* const _q)
