@@ -547,7 +547,7 @@ void ContextMenuHelper::addActionEditTag(TagModificationHelper* helper, TAlbum* 
 void ContextMenuHelper::addActionDeleteFaceTag(TagModificationHelper* helper, TAlbum* tag)
 {
     QAction* const deleteFaceTagAction = new QAction(QIcon::fromTheme(QLatin1String("user-trash")),
-                                                     i18n("Remove Face Tag"), this);
+                                                     i18n("Unmark Tag As Face"), this);
     deleteFaceTagAction->setWhatsThis(i18n("Removes the face property from the selected tag "
                                            "and the face region from the contained images. "
                                            "Can also untag the images if wished."));
@@ -561,7 +561,7 @@ void ContextMenuHelper::addActionDeleteFaceTag(TagModificationHelper* helper, TA
 void ContextMenuHelper::addActionDeleteFaceTags(TagModificationHelper* helper, const QList<TAlbum*>& tags)
 {
     QAction* const deleteFaceTagsAction = new QAction(QIcon::fromTheme(QLatin1String("user-trash")),
-                                                      i18n("Remove Face Tags"), this);
+                                                      i18n("Unmark Tags As Face"), this);
     deleteFaceTagsAction->setWhatsThis(i18n("Removes the face property from the selected tags "
                                             "and the face region from the contained images. "
                                             "Can also untag the images if wished."));
