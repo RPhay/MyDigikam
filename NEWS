@@ -196,4 +196,5 @@ BUGFIXES:
 180 ==> 429261 - Malformed characters in EXIF Artist field.
 181 ==> 429346 - Rotating and cropping: Concentration of the cropping frame on the real image area.
 182 ==> 406723 - Tags are not synced.
-183 ==> 
+183 ==> 429471 - User is prompted to remove face tags from images when image count is zero 0.
+184 ==> 
