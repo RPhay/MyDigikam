@@ -29,7 +29,7 @@
 namespace DigikamGenericSendByMailPlugin
 {
 
-NetscapeBinary::NetscapeBinary()
+NetscapeBinary::NetscapeBinary(QObject* const)
     : DBinaryIface(
                    QLatin1String("netscape"),
                    QLatin1String("Netscape Messenger"),

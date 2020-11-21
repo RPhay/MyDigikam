@@ -30,7 +30,7 @@
 namespace Digikam
 {
 
-OutlookBinary::OutlookBinary()
+OutlookBinary::OutlookBinary(QObject* const)
     : DBinaryIface(
                    QLatin1String("outlook"),
                    QLatin1String("Outlook"),

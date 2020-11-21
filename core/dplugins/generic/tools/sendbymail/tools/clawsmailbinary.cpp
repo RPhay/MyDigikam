@@ -29,7 +29,7 @@
 namespace DigikamGenericSendByMailPlugin
 {
 
-ClawsMailBinary::ClawsMailBinary()
+ClawsMailBinary::ClawsMailBinary(QObject* const)
     : DBinaryIface(
                    QLatin1String("claws-mail"),
                    QLatin1String("Claws Mail"),

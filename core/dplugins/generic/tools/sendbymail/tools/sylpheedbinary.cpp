@@ -29,7 +29,7 @@
 namespace DigikamGenericSendByMailPlugin
 {
 
-SylpheedBinary::SylpheedBinary()
+SylpheedBinary::SylpheedBinary(QObject* const)
     : DBinaryIface(
                    QLatin1String("sylpheed"),
                    QLatin1String("Sylpheed"),

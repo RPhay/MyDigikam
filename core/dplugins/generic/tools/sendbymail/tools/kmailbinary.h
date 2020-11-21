@@ -38,7 +38,7 @@ class KmailBinary : public DBinaryIface
 
 public:
 
-    explicit KmailBinary();
+    explicit KmailBinary(QObject* const parent = nullptr);
     ~KmailBinary() override;
 };
 

@@ -38,7 +38,7 @@ class BalsaBinary : public DBinaryIface
 
 public:
 
-    explicit BalsaBinary();
+    explicit BalsaBinary(QObject* const parent = nullptr);
     ~BalsaBinary() override;
 };
 

@@ -29,7 +29,7 @@
 namespace DigikamGenericSendByMailPlugin
 {
 
-BalsaBinary::BalsaBinary()
+BalsaBinary::BalsaBinary(QObject* const)
     : DBinaryIface(
                    QLatin1String("balsa"),
                    QLatin1String("Balsa"),

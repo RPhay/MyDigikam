@@ -29,7 +29,7 @@
 namespace DigikamGenericSendByMailPlugin
 {
 
-EvolutionBinary::EvolutionBinary()
+EvolutionBinary::EvolutionBinary(QObject* const)
     : DBinaryIface(
                    QLatin1String("evolution"),
                    QLatin1String("Evolution"),

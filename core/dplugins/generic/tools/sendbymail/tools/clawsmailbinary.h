@@ -38,7 +38,7 @@ class ClawsMailBinary : public DBinaryIface
 
 public:
 
-    explicit ClawsMailBinary();
+    explicit ClawsMailBinary(QObject* const parent = nullptr);
     ~ClawsMailBinary() override;
 };
 

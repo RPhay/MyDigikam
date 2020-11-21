@@ -38,7 +38,7 @@ class ThunderbirdBinary : public DBinaryIface
 
 public:
 
-    explicit ThunderbirdBinary();
+    explicit ThunderbirdBinary(QObject* const parent = nullptr);
     ~ThunderbirdBinary() override;
 };
 

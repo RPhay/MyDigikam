@@ -29,7 +29,7 @@
 namespace DigikamGenericSendByMailPlugin
 {
 
-ThunderbirdBinary::ThunderbirdBinary()
+ThunderbirdBinary::ThunderbirdBinary(QObject* const)
    : DBinaryIface(
                   QLatin1String("thunderbird"),
                   QLatin1String("Thunderbird"),

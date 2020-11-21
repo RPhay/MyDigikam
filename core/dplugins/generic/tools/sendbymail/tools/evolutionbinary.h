@@ -38,7 +38,7 @@ class EvolutionBinary : public DBinaryIface
 
 public:
 
-    explicit EvolutionBinary();
+    explicit EvolutionBinary(QObject* const parent = nullptr);
     ~EvolutionBinary() override;
 };
 

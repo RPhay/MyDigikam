@@ -37,7 +37,7 @@ class OutlookBinary : public DBinaryIface
 
 public:
 
-    OutlookBinary();
+    explicit OutlookBinary(QObject* const parent = nullptr);
     ~OutlookBinary() override;
 };
 

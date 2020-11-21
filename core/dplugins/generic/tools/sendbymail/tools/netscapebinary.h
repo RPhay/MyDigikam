@@ -38,7 +38,7 @@ class NetscapeBinary : public DBinaryIface
 
 public:
 
-    explicit NetscapeBinary();
+    explicit NetscapeBinary(QObject* const parent = nullptr);
     ~NetscapeBinary() override;
 };
 

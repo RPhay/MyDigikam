@@ -31,7 +31,7 @@ using namespace Digikam;
 namespace DigikamGenericSendByMailPlugin
 {
 
-KmailBinary::KmailBinary()
+KmailBinary::KmailBinary(QObject* const)
     : DBinaryIface(
                    QLatin1String("kmail"),
                    QLatin1String("KMail"),

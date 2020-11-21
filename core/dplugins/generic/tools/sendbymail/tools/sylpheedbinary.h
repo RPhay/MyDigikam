@@ -38,7 +38,7 @@ class SylpheedBinary : public DBinaryIface
 
 public:
 
-    explicit SylpheedBinary();
+    explicit SylpheedBinary(QObject* const parent = nullptr);
     ~SylpheedBinary() override;
 };
 
