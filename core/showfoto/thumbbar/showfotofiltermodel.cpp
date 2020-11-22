@@ -243,6 +243,11 @@ public:
     ShowfotoFilterModel*     q;
     ShowfotoItemModel*       showfotoItemModel;
     ShowfotoItemSortSettings sorter;
+
+private:
+
+    // Disable
+    explicit ShowfotoFilterModelPrivate(QObject*);
 };
 
 void ShowfotoFilterModel::ShowfotoFilterModelPrivate::init(ShowfotoFilterModel* const _q)

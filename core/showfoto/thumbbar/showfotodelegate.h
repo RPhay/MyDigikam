@@ -160,7 +160,7 @@ protected:
 
 private:
 
-    // Diasble
+    // Disable
     explicit ShowfotoThumbnailDelegate(QObject*);
 
     Q_DECLARE_PRIVATE(ShowfotoThumbnailDelegate)
