@@ -113,6 +113,11 @@ protected:
 
 private:
 
+    // Disable
+    explicit LoadThread(QObject*);
+
+private:
+
     QMutex*       m_imageLock;
     LoadedImages* m_loadedImages;
     QUrl          m_path;
