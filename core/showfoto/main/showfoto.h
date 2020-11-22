@@ -160,6 +160,9 @@ private Q_SLOTS:
 
 private:
 
+    // Disable
+    explicit ShowFoto(QObject*);
+
     class Private;
     Private* const d;
 };
