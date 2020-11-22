@@ -224,6 +224,7 @@ DynamicThread::~DynamicThread()
 void DynamicThread::shutDown()
 {
     QMutexLocker locker(&d->mutex);
+    d->running       = false;
     d->inDestruction = true;
     stop(locker);
     wait(locker);
@@ -309,7 +310,6 @@ void DynamicThread::start(QMutexLocker& locker)
         case Inactive:
         case Deactivating:
         {
-            //d->running = true;
             d->state   = Scheduled;
             break;
         }
@@ -350,7 +350,6 @@ void DynamicThread::stop(QMutexLocker& locker)
         case Inactive:
         case Deactivating:
         {
-            //d->running = false;
             break;
         }
     }
