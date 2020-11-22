@@ -73,9 +73,12 @@ private:
 
 private:
 
-    // Hidden copy constructor and assignment operator.
+    // Disable
+    explicit DImgRAWLoader(QObject*);
     DImgRAWLoader(const DImgRAWLoader&);
     DImgRAWLoader& operator=(const DImgRAWLoader&);
+
+private:
 
     DImgLoaderObserver*  m_observer;
     RawProcessingFilter* m_filter;
