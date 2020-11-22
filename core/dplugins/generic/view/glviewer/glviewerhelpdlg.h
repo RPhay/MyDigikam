@@ -39,7 +39,7 @@ class GLViewerHelpDlg : public DPluginDialog
 
 public:
 
-    explicit GLViewerHelpDlg(DPlugin* const plugin);
+    explicit GLViewerHelpDlg(DPlugin* const plugin, QWidget* const parent = nullptr);
     ~GLViewerHelpDlg() override;
 };
 

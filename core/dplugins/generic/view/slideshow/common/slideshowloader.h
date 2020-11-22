@@ -117,6 +117,9 @@ private:
 
 private:
 
+    // Disable
+    explicit SlideShowLoader(QWidget*);
+
     class Private;
     Private* const d;
 };

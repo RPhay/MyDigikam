@@ -42,7 +42,7 @@ class SlideHelp : public QDialog
 
 public:
 
-    explicit SlideHelp();
+    explicit SlideHelp(QWidget* const parent = nullptr);
     ~SlideHelp() override;
 };
 

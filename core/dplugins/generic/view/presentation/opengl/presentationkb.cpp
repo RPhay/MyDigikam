@@ -197,11 +197,11 @@ double KBViewTrans::rndSign() const
 // -------------------------------------------------------------------------
 
 KBImage::KBImage(KBViewTrans* const viewTrans, float aspect)
-    : m_viewTrans(viewTrans),
-      m_aspect(aspect),
-      m_pos(0.0),
-      m_opacity(0.0),
-      m_texture(nullptr)
+    : m_viewTrans   (viewTrans),
+      m_aspect      (aspect),
+      m_pos         (0.0),
+      m_opacity     (0.0),
+      m_texture     (nullptr)
 {
     m_paint = (m_viewTrans) ? true : false;
 }

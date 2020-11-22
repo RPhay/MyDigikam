@@ -38,7 +38,7 @@ class JalbumJar : public DBinaryIface
 
 public:
 
-    explicit JalbumJar();
+    explicit JalbumJar(QObject* const parent = nullptr);
     ~JalbumJar() override;
 
     bool checkDirForPath(const QString& possibleDir) override;

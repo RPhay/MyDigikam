@@ -38,8 +38,8 @@
 namespace DigikamGenericSlideShowPlugin
 {
 
-SlideHelp::SlideHelp()
-    : QDialog(nullptr)
+SlideHelp::SlideHelp(QWidget* const parent)
+    : QDialog(parent)
 {
     setWindowTitle(i18n("Slideshow Usage"));
 

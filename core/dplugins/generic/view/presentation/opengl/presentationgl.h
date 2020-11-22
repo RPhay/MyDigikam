@@ -118,6 +118,9 @@ private Q_SLOTS:
 
 private:
 
+    // Disable
+    explicit PresentationGL(QWidget*);
+
     class Private;
     Private* const d;
 };

@@ -29,7 +29,7 @@
 namespace DigikamGenericHtmlGalleryPlugin
 {
 
-GalleryConfig::GalleryConfig()
+GalleryConfig::GalleryConfig(QObject* const)
     : KConfigSkeleton(QLatin1String("digikamrc"))
 {
     setCurrentGroup(QLatin1String("general"));

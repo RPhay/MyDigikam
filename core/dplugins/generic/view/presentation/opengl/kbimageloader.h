@@ -68,6 +68,9 @@ protected:
 
 private:
 
+    // Disable
+    explicit KBImageLoader(QObject*);
+
     class Private;
     Private* const d;
 };

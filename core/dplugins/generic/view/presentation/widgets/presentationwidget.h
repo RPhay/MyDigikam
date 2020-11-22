@@ -129,6 +129,9 @@ private:
 
 private:
 
+    // Disable
+    explicit PresentationWidget(QWidget*);
+
     class Private;
     Private* const d;
 };

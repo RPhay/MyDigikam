@@ -76,7 +76,7 @@ public:
 
 public:
 
-    explicit GalleryConfig();
+    explicit GalleryConfig(QObject* const parent = nullptr);
     ~GalleryConfig() override;
 
     void setTheme(const QString&);

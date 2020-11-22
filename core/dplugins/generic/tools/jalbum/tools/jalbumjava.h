@@ -38,7 +38,7 @@ class JalbumJava : public DBinaryIface
 
 public:
 
-    explicit JalbumJava();
+    explicit JalbumJava(QObject* const parent = nullptr);
     ~JalbumJava() override;
 };
 

@@ -79,6 +79,9 @@ private Q_SLOTS:
 
 private:
 
+    // Disable
+    explicit JAlbumGenerator(QObject*);
+
     class Private;
     Private* const d;
 

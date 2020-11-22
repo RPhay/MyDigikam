@@ -29,7 +29,7 @@
 namespace DigikamGenericJAlbumPlugin
 {
 
-JalbumJava::JalbumJava()
+JalbumJava::JalbumJava(QObject* const)
     : DBinaryIface(
                    QLatin1String("java"),
                    QLatin1String("Java"),

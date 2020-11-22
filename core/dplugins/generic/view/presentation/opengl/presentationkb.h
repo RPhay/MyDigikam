@@ -157,6 +157,9 @@ private Q_SLOTS:
 
 private:
 
+    // Disable
+    explicit PresentationKB(QWidget*);
+
     class Private;
     Private* const d;
 

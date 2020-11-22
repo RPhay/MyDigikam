@@ -59,6 +59,9 @@ protected:
 
 private:
 
+    // Disable
+    explicit FCTask(QObject*);
+
     bool imageResize(const QString& orgPath, const QString& destPath);
     void deleteTargetFile(const QString& filePath);
 

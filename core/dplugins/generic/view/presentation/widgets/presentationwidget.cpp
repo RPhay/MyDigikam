@@ -74,49 +74,49 @@ class Q_DECL_HIDDEN PresentationWidget::Private
 public:
 
     explicit Private()
-      : sharedData(nullptr),
-        imageLoader(nullptr),
+      : sharedData      (nullptr),
+        imageLoader     (nullptr),
 
 #ifdef HAVE_MEDIAPLAYER
 
-        playbackWidget(nullptr),
-        videoView(nullptr),
+        playbackWidget  (nullptr),
+        videoView       (nullptr),
 
 #endif
 
-        timer(nullptr),
-        fileIndex(0),
-        effect(nullptr),
-        effectRunning(false),
-        x(0),
-        y(0),
-        w(0),
-        h(0),
-        dx(0),
-        dy(0),
-        ix(0),
-        iy(0),
-        i(0),
-        j(0),
-        subType(0),
-        x0(0),
-        y0(0),
-        x1(0),
-        y1(0),
-        wait(0),
-        fx(0),
-        fy(0),
-        alpha(0),
-        fd(0),
-        intArray(nullptr),
-        pdone(0),
-        pixelMatrix(nullptr),
-        slideCtrlWidget(nullptr),
-        mouseMoveTimer(nullptr),
-        deskX(0),
-        deskY(0),
-        deskWidth(0),
-        deskHeight(0)
+        timer           (nullptr),
+        fileIndex       (0),
+        effect          (nullptr),
+        effectRunning   (false),
+        x               (0),
+        y               (0),
+        w               (0),
+        h               (0),
+        dx              (0),
+        dy              (0),
+        ix              (0),
+        iy              (0),
+        i               (0),
+        j               (0),
+        subType         (0),
+        x0              (0),
+        y0              (0),
+        x1              (0),
+        y1              (0),
+        wait            (0),
+        fx              (0),
+        fy              (0),
+        alpha           (0),
+        fd              (0),
+        intArray        (nullptr),
+        pdone           (0),
+        pixelMatrix     (nullptr),
+        slideCtrlWidget (nullptr),
+        mouseMoveTimer  (nullptr),
+        deskX           (0),
+        deskY           (0),
+        deskWidth       (0),
+        deskHeight      (0)
     {
     }
 
@@ -182,7 +182,7 @@ public:
 
 PresentationWidget::PresentationWidget(PresentationContainer* const sharedData)
     : QWidget(),
-      d(new Private)
+      d      (new Private)
 {
     setAttribute(Qt::WA_DeleteOnClose);
     setContextMenuPolicy(Qt::PreventContextMenu);

@@ -53,12 +53,12 @@ class Q_DECL_HIDDEN JAlbumGenerator::Private
 public:
 
     explicit Private()
-      : that(nullptr),
+      : that    (nullptr),
         settings(nullptr),
         warnings(false),
-        cancel(false),
-        pview(nullptr),
-        pbar(nullptr)
+        cancel  (false),
+        pview   (nullptr),
+        pbar    (nullptr)
     {
     }
 
@@ -222,7 +222,7 @@ public:
 
 JAlbumGenerator::JAlbumGenerator(JAlbumSettings* const settings)
     : QObject(),
-      d(new Private)
+      d      (new Private)
 {
     d->that     = this;
     d->settings = settings;

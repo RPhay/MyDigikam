@@ -38,7 +38,7 @@ class GimpBinary : public DBinaryIface
 
 public:
 
-    GimpBinary();
+    explicit GimpBinary(QObject* const parent = nullptr);
     ~GimpBinary() override;
 };
 

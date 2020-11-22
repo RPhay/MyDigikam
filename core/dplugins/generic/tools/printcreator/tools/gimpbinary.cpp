@@ -29,7 +29,7 @@
 namespace DigikamGenericPrintCreatorPlugin
 {
 
-GimpBinary::GimpBinary()
+GimpBinary::GimpBinary(QObject* const)
     : DBinaryIface(
 
 #ifdef Q_OS_MACOS
