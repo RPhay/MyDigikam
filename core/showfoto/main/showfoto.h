@@ -161,7 +161,7 @@ private Q_SLOTS:
 private:
 
     // Disable
-    explicit ShowFoto(QObject*);
+    explicit ShowFoto(QWidget*);
 
     class Private;
     Private* const d;

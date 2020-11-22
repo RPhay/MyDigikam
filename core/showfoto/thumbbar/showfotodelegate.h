@@ -185,6 +185,9 @@ protected:
 
 private:
 
+    // Disable
+    explicit ShowfotoNormalDelegate(QObject*);
+
     Q_DECLARE_PRIVATE(ShowfotoNormalDelegate)
 };
 
