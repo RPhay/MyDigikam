@@ -97,6 +97,9 @@ private:
 
 private:
 
+    // Disable
+    explicit ImageShackTalker(QObject*);
+
     class Private;
     Private* const d;
 };
