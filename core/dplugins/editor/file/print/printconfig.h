@@ -169,12 +169,15 @@ public:
         return self()->mPrintAutoRotate;
     }
 
-protected:
+private:
 
+    // Disable
     PrintConfig();
+    explicit PrintConfig(QObject*);
+
     friend class PrintConfigHelper;
 
-protected:
+private:
 
     int    mPrintPosition;
     int    mPrintScaleMode;
