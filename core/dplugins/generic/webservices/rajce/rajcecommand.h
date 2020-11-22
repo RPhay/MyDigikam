@@ -74,7 +74,8 @@ private:
 
 private:
 
-    // Hidden copy constructor and assignment operator.
+    // Disable
+    explicit RajceCommand(QObject*);
     RajceCommand(const RajceCommand&);
     RajceCommand& operator=(const RajceCommand&);
 
@@ -98,6 +99,11 @@ protected:
 
     void parseResponse(QXmlQuery& response, RajceSession& state) override;
     void cleanUpOnError(RajceSession& state)                     override;
+
+private:
+
+    // Disable
+    explicit LoginCommand(QObject*);
 };
 
 // -----------------------------------------------------------------------
@@ -114,6 +120,11 @@ protected:
 
     void parseResponse(QXmlQuery& response, RajceSession& state) override;
     void cleanUpOnError(RajceSession& state)                     override;
+
+private:
+
+    // Disable
+    explicit OpenAlbumCommand(QObject*);
 };
 
 // -----------------------------------------------------------------------
@@ -133,6 +144,11 @@ protected:
 
     void parseResponse(QXmlQuery& response, RajceSession& state) override;
     void cleanUpOnError(RajceSession& state)                     override;
+
+private:
+
+    // Disable
+    explicit CreateAlbumCommand(QObject*);
 };
 
 // -----------------------------------------------------------------------
@@ -149,6 +165,11 @@ protected:
 
     void parseResponse(QXmlQuery& response, RajceSession& state) override;
     void cleanUpOnError(RajceSession& state)                     override;
+
+private:
+
+    // Disable
+    explicit CloseAlbumCommand(QObject*);
 };
 
 // -----------------------------------------------------------------------
@@ -165,6 +186,11 @@ protected:
 
     void parseResponse(QXmlQuery& response, RajceSession& state) override;
     void cleanUpOnError(RajceSession& state)                     override;
+
+private:
+
+    // Disable
+    explicit AlbumListCommand(QObject*);
 };
 
 // -----------------------------------------------------------------------
@@ -192,6 +218,11 @@ protected:
     void    cleanUpOnError(RajceSession& state)                        override;
     void    parseResponse(QXmlQuery& query, RajceSession& state)       override;
     QString additionalXml()                                      const override;
+
+private:
+
+    // Disable
+    explicit AddPhotoCommand(QObject*);
 
 private:
 
