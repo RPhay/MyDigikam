@@ -39,7 +39,8 @@ namespace FaceEngineDemo
 
 class FancyRect;
 
-class Marquee : public QObject, public QGraphicsItemGroup
+class Marquee : public QObject,
+                public QGraphicsItemGroup
 {
     Q_OBJECT
 
@@ -71,6 +72,9 @@ private:
     void placeLabel();
 
 private:
+
+    // Disable
+    explicit Marquee(QObject*);
 
     class Private;
     Private* const d;

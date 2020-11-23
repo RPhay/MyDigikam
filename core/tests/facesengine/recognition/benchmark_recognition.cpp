@@ -55,7 +55,7 @@ class Benchmark : public QObject
 
 public:
 
-    Benchmark();
+    Benchmark(QObject* const parent = nullptr);
     ~Benchmark() override;
 
 public:
@@ -107,8 +107,8 @@ public:
                      const QList<QImage*>& images,
                      QVector<QList<QRectF> >& rects)
         : m_detector(detector),
-          m_images(images),
-          m_rects(rects)
+          m_images  (images),
+          m_rects   (rects)
     {
         m_rects.resize(images.size());
     }
@@ -141,12 +141,12 @@ private:
 
 // --------------------------------------------------------
 
-Benchmark::Benchmark()
-    : QObject(),
-      m_parser(nullptr),
-      m_error(-1),
+Benchmark::Benchmark(QObject* const parent)
+    : QObject    (parent),
+      m_parser   (nullptr),
+      m_error    (-1),
       m_trainSize(0),
-      m_testSize(0)
+      m_testSize (0)
 {
     DbEngineParameters prm = DbEngineParameters::parametersFromConfig();
     CoreDbAccess::setParameters(prm, CoreDbAccess::MainApplication);

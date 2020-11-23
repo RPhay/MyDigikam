@@ -67,6 +67,9 @@ protected:
 
 private:
 
+    // Disable
+    explicit Button(QObject*);
+
     class Private;
     Private* const d;
 };
