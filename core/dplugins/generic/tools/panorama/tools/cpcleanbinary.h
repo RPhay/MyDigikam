@@ -38,7 +38,7 @@ class CPCleanBinary : public DBinaryIface
 
 public:
 
-    explicit CPCleanBinary();
+    explicit CPCleanBinary(QObject* const parent = nullptr);
     ~CPCleanBinary() override;
 };
 

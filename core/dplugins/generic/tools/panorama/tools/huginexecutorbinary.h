@@ -38,7 +38,7 @@ class HuginExecutorBinary : public DBinaryIface
 
 public:
 
-    explicit HuginExecutorBinary();
+    explicit HuginExecutorBinary(QObject* const parent = nullptr);
     ~HuginExecutorBinary() override;
 };
 

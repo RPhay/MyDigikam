@@ -25,7 +25,7 @@
 namespace DigikamGenericPanoramaPlugin
 {
 
-EnblendBinary::EnblendBinary()
+EnblendBinary::EnblendBinary(QObject* const)
     : DBinaryIface(QLatin1String("enblend"),
                    QLatin1String("4.0"),
                    QLatin1String("enblend "),

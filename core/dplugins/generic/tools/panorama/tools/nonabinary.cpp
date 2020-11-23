@@ -25,7 +25,7 @@
 namespace DigikamGenericPanoramaPlugin
 {
 
-NonaBinary::NonaBinary()
+NonaBinary::NonaBinary(QObject* const)
     : DBinaryIface(QLatin1String("nona"),
                    QLatin1String("2010.4"),
                    QLatin1String("nona version "),

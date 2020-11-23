@@ -38,7 +38,7 @@ class MakeBinary : public DBinaryIface
 
 public:
 
-    explicit MakeBinary();
+    explicit MakeBinary(QObject* const parent = nullptr);
     ~MakeBinary() override;
 };
 

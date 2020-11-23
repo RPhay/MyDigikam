@@ -25,7 +25,7 @@
 namespace DigikamGenericPanoramaPlugin
 {
 
-CPCleanBinary::CPCleanBinary()
+CPCleanBinary::CPCleanBinary(QObject* const)
     : DBinaryIface(QLatin1String("cpclean"),
                    QLatin1String("2010.4"),
                    QLatin1String("cpclean version "),

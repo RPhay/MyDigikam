@@ -38,7 +38,7 @@ class PanoModifyBinary : public DBinaryIface
 
 public:
 
-    explicit PanoModifyBinary();
+    explicit PanoModifyBinary(QObject* const parent = nullptr);
     ~PanoModifyBinary() override;
 };
 

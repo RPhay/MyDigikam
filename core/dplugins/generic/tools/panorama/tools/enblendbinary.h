@@ -38,7 +38,7 @@ class EnblendBinary : public DBinaryIface
 
 public:
 
-    explicit EnblendBinary();
+    explicit EnblendBinary(QObject* const parent = nullptr);
     ~EnblendBinary() override;
 };
 

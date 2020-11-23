@@ -25,7 +25,7 @@
 namespace DigikamGenericPanoramaPlugin
 {
 
-Pto2MkBinary::Pto2MkBinary()
+Pto2MkBinary::Pto2MkBinary(QObject* const)
     : DBinaryIface(QLatin1String("pto2mk"),
                    QLatin1String("2010.4"),
                    QLatin1String("pto2mk version "),

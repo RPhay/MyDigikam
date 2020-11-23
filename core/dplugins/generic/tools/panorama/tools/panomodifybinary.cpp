@@ -25,7 +25,7 @@
 namespace DigikamGenericPanoramaPlugin
 {
 
-PanoModifyBinary::PanoModifyBinary()
+PanoModifyBinary::PanoModifyBinary(QObject* const)
     : DBinaryIface(QLatin1String("pano_modify"),
                    QLatin1String("2012.0"),
                    QLatin1String("pano_modify version "),

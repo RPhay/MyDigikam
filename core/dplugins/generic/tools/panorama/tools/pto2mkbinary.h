@@ -38,7 +38,7 @@ class Pto2MkBinary : public DBinaryIface
 
 public:
 
-    explicit Pto2MkBinary();
+    explicit Pto2MkBinary(QObject* const parent = nullptr);
     ~Pto2MkBinary() override;
 };
 

@@ -38,7 +38,7 @@ class AutoOptimiserBinary : public DBinaryIface
 
 public:
 
-    explicit AutoOptimiserBinary();
+    explicit AutoOptimiserBinary(QObject* const parent = nullptr);
     ~AutoOptimiserBinary() override;
 };
 

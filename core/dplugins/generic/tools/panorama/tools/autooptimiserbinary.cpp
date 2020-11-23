@@ -25,7 +25,7 @@
 namespace DigikamGenericPanoramaPlugin
 {
 
-AutoOptimiserBinary::AutoOptimiserBinary()
+AutoOptimiserBinary::AutoOptimiserBinary(QObject* const)
     : DBinaryIface(QLatin1String("autooptimiser"),
                    QLatin1String("2010.4"),
                    QLatin1String("autooptimiser version "),

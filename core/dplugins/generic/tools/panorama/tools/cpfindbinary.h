@@ -38,7 +38,7 @@ class CPFindBinary : public DBinaryIface
 
 public:
 
-    explicit CPFindBinary()
+    explicit CPFindBinary(QObject* const parent = nullptr)
         : DBinaryIface(QLatin1String("cpfind"),
                        QLatin1String("2010.4"),
                        QString(),
@@ -50,6 +50,7 @@ public:
                       ),
           headerRegExp(QLatin1String("^Hugin'?s cpfind( Pre-Release)? (\\d+\\.\\d+(\\.\\d+)?)(\\D.*)?$"))
         {
+            Q_UNUSED(parent);
             setup();
         }
 

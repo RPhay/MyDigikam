@@ -38,7 +38,7 @@ class NonaBinary : public DBinaryIface
 
 public:
 
-    explicit NonaBinary();
+    explicit NonaBinary(QObject* const parent = nullptr);
     ~NonaBinary() override;
 };
 

@@ -25,7 +25,7 @@
 namespace DigikamGenericPanoramaPlugin
 {
 
-MakeBinary::MakeBinary()
+MakeBinary::MakeBinary(QObject* const)
     : DBinaryIface(QLatin1String("make"),
                    QLatin1String("3.80"),
                    QLatin1String("GNU Make "),
