@@ -57,12 +57,12 @@ class Q_DECL_HIDDEN ShowfotoDelegate::ShowfotoDelegatePrivate : public ItemViewS
 public:
 
     ShowfotoDelegatePrivate()
-      : contentWidth        (0),
-        drawImageFormat     (true),
-        drawFocusFrame      (true),
-        drawMouseOverFrame  (true),
-        currentView         (nullptr),
-        currentModel        (nullptr)
+      : contentWidth       (0),
+        drawImageFormat    (true),
+        drawFocusFrame     (true),
+        drawMouseOverFrame (true),
+        currentView        (nullptr),
+        currentModel       (nullptr)
     {
         actualPixmapRectCache.setMaxCost(250);
     }

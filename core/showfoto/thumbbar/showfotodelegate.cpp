@@ -577,19 +577,22 @@ void ShowfotoNormalDelegatePrivate::init(ShowfotoNormalDelegate* const q, Showfo
 
 // ------------------------------------------------------------------------------------------------
 
-ShowfotoNormalDelegate::ShowfotoNormalDelegate(ShowfotoThumbnailBar* const parent)
-    : ShowfotoDelegate(*new ShowfotoNormalDelegatePrivate, parent)
+ShowfotoNormalDelegate::ShowfotoNormalDelegate(ShowfotoThumbnailBar* const bar,
+                                               QObject* const)
+    : ShowfotoDelegate(*new ShowfotoNormalDelegatePrivate, bar)
 {
     Q_D(ShowfotoNormalDelegate);
-    d->init(this, parent);
+    d->init(this, bar);
 }
 
-ShowfotoNormalDelegate::ShowfotoNormalDelegate(ShowfotoNormalDelegatePrivate& dd, ShowfotoThumbnailBar* const parent)
-    : ShowfotoDelegate(dd, parent)
+ShowfotoNormalDelegate::ShowfotoNormalDelegate(ShowfotoNormalDelegatePrivate& dd,
+                                               ShowfotoThumbnailBar* const bar,
+                                               QObject* const)
+    : ShowfotoDelegate(dd, bar)
 {
 
     Q_D(ShowfotoNormalDelegate);
-    d->init(this, parent);
+    d->init(this, bar);
 }
 
 ShowfotoNormalDelegate::~ShowfotoNormalDelegate()

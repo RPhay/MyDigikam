@@ -174,19 +174,19 @@ class ShowfotoNormalDelegate : public ShowfotoDelegate
 
 public:
 
-    explicit ShowfotoNormalDelegate(ShowfotoThumbnailBar* const parent);
+    explicit ShowfotoNormalDelegate(ShowfotoThumbnailBar* const bar,
+                                    QObject* const parent = nullptr);
     ~ShowfotoNormalDelegate() override;
 
 protected:
 
-    ShowfotoNormalDelegate(ShowfotoNormalDelegatePrivate& dd, ShowfotoThumbnailBar* const parent);
+    ShowfotoNormalDelegate(ShowfotoNormalDelegatePrivate& dd,
+                           ShowfotoThumbnailBar* const bar,
+                           QObject* const parent = nullptr);
 
     void updateRects() override;
 
 private:
-
-    // Disable
-    explicit ShowfotoNormalDelegate(QObject*);
 
     Q_DECLARE_PRIVATE(ShowfotoNormalDelegate)
 };

@@ -111,23 +111,23 @@ class Q_DECL_HIDDEN ShowFoto::Private
 public:
 
     explicit Private()
-      : validIccPath(true),
-        itemsNb(0),
-        vSplitter(nullptr),
-        fileOpenAction(nullptr),
-        openFilesInFolderAction(nullptr),
-        mediaServerAction(nullptr),
-        first(nullptr),
-        model(nullptr),
-        dDHandler(nullptr),
-        filterModel(nullptr),
-        thumbLoadThread(nullptr),
-        thumbBar(nullptr),
-        thumbBarDock(nullptr),
-        normalDelegate(nullptr),
-        rightSideBar(nullptr),
-        splash(nullptr),
-        settings(nullptr)
+      : validIccPath            (true),
+        itemsNb                 (0),
+        vSplitter               (nullptr),
+        fileOpenAction          (nullptr),
+        openFilesInFolderAction (nullptr),
+        mediaServerAction       (nullptr),
+        first                   (nullptr),
+        model                   (nullptr),
+        dDHandler               (nullptr),
+        filterModel             (nullptr),
+        thumbLoadThread         (nullptr),
+        thumbBar                (nullptr),
+        thumbBarDock            (nullptr),
+        normalDelegate          (nullptr),
+        rightSideBar            (nullptr),
+        splash                  (nullptr),
+        settings                (nullptr)
     {
     }
 

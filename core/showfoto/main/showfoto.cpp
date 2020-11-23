@@ -32,9 +32,9 @@
 namespace ShowFoto
 {
 
-ShowFoto::ShowFoto(const QList<QUrl>& urlList)
+ShowFoto::ShowFoto(const QList<QUrl>& urlList, QWidget* const)
     : Digikam::EditorWindow(QLatin1String("Showfoto")),
-      d(new Private)
+      d                    (new Private)
 {
     setXMLFile(QLatin1String("showfotoui5.rc"));
 

@@ -46,7 +46,7 @@ class ShowFoto : public Digikam::EditorWindow
 
 public:
 
-    explicit ShowFoto(const QList<QUrl>& urlList);
+    explicit ShowFoto(const QList<QUrl>& urlList, QWidget* const parent = nullptr);
     ~ShowFoto()                                             override;
 
 public:
@@ -159,9 +159,6 @@ private Q_SLOTS:
 // -- Internal private container --------------------------------------------------------------------
 
 private:
-
-    // Disable
-    explicit ShowFoto(QWidget*);
 
     class Private;
     Private* const d;
