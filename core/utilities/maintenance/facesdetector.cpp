@@ -218,12 +218,10 @@ FacesDetector::FacesDetector(const FaceScanSettings& settings, ProgressItem* con
             this, SLOT(slotItemsInfo(ItemInfoList)));
 
     connect(&d->albumListing, SIGNAL(signalCompleted()),
-            this, SLOT(slotContinueAlbumListing()),
-            Qt::QueuedConnection);
+            this, SLOT(slotContinueAlbumListing()));
 
     connect(&d->pipeline, SIGNAL(finished()),
-            this, SLOT(slotContinueAlbumListing()),
-            Qt::QueuedConnection);
+            this, SLOT(slotContinueAlbumListing()));
 
     connect(&d->pipeline, SIGNAL(processed(FacePipelinePackage)),
             this, SLOT(slotShowOneDetected(FacePipelinePackage)));

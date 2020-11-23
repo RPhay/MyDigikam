@@ -233,16 +233,19 @@ void FacePipeline::construct()
     }
 
     connect(d, SIGNAL(startProcess(FacePipelineExtendedPackage::Ptr)),
-            d->pipeline.first(), SLOT(process(FacePipelineExtendedPackage::Ptr)));
+            d->pipeline.first(), SLOT(process(FacePipelineExtendedPackage::Ptr)),
+            Qt::QueuedConnection);
 
     for (int i = 0 ; i < (d->pipeline.size() - 1) ; ++i)
     {
         connect(d->pipeline.at(i), SIGNAL(processed(FacePipelineExtendedPackage::Ptr)),
-                d->pipeline.at(i + 1), SLOT(process(FacePipelineExtendedPackage::Ptr)));
+                d->pipeline.at(i + 1), SLOT(process(FacePipelineExtendedPackage::Ptr)),
+                Qt::QueuedConnection);
     }
 
     connect(d->pipeline.last(), SIGNAL(processed(FacePipelineExtendedPackage::Ptr)),
-            d, SLOT(finishProcess(FacePipelineExtendedPackage::Ptr)));
+            d, SLOT(finishProcess(FacePipelineExtendedPackage::Ptr)),
+            Qt::QueuedConnection);
 
     d->applyPriority();
 }
