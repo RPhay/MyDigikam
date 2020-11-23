@@ -30,8 +30,8 @@
 namespace Digikam
 {
 
-FacePreviewLoader::FacePreviewLoader(FacePipeline::Private* const d)
-    : d(d)
+FacePreviewLoader::FacePreviewLoader(FacePipeline::Private* const dd)
+    : d(dd)
 {
     // upper limit for memory cost
 
@@ -91,12 +91,6 @@ void FacePreviewLoader::slotImageLoaded(const LoadingDescription& loadingDescrip
     if (sentOutLimitReached() && !scheduledPackages.isEmpty())
     {
         stop();
-    }
-
-    if (img.isNull())
-    {
-        d->finishProcess(package);
-        return;
     }
 
     package->image         = img;

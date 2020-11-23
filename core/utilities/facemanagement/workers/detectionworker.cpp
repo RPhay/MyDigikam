@@ -43,15 +43,18 @@ DetectionWorker::~DetectionWorker()
 
 void DetectionWorker::process(FacePipelineExtendedPackage::Ptr package)
 {
+    if (!package->image.isNull())
+    {
 /*
-    QImage detectionImage  = scaleForDetection(package->image);
-    package->detectedFaces = detector.detectFaces(detectionImage, package->image.originalSize());
+        QImage detectionImage  = scaleForDetection(package->image);
+        package->detectedFaces = detector.detectFaces(detectionImage, package->image.originalSize());
 */
-    package->detectedFaces = detector.detectFaces(package->image);
+        package->detectedFaces = detector.detectFaces(package->image);
 
-    qCDebug(DIGIKAM_GENERAL_LOG) << "Found" << package->detectedFaces.size() << "faces in"
-                                 << package->info.name() << package->image.size()
-                                 << package->image.originalSize();
+        qCDebug(DIGIKAM_GENERAL_LOG) << "Found" << package->detectedFaces.size() << "faces in"
+                                     << package->info.name() << package->image.size()
+                                     << package->image.originalSize();
+    }
 
     package->processFlags |= FacePipelinePackage::ProcessedByDetector;
 
