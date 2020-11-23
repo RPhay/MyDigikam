@@ -103,8 +103,7 @@ public:
 
     explicit Private()
       : source   (FacesDetector::Albums),
-        benchmark(false),
-        pipeline ()
+        benchmark(false)
     {
     }
 
