@@ -38,6 +38,10 @@ class StateSavingObjectTest: public QObject
 {
     Q_OBJECT
 
+public:
+
+    explicit StateSavingObjectTest(QObject* const parent = nullptr);
+
 private Q_SLOTS:
 
     void testGroupName();

@@ -31,13 +31,16 @@ class FileSaveOptionsBoxTest : public QObject
 {
     Q_OBJECT
 
+public:
+
+    explicit FileSaveOptionsBoxTest(QObject* const parent = nullptr);
+
 private Q_SLOTS:
 
     void testDiscoverFormat_data();
     void testDiscoverFormat();
 
     void testDiscoverFormatDefault();
-
 };
 
 #endif // DIGIKAM_FILE_SAVE_OPTIONS_BOX_TEST_H

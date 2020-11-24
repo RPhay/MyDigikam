@@ -35,6 +35,10 @@ using namespace Digikam;
 
 QTEST_MAIN(FileSaveOptionsBoxTest)
 
+FileSaveOptionsBoxTest::FileSaveOptionsBoxTest(QObject* const)
+{
+}
+
 void FileSaveOptionsBoxTest::testDiscoverFormat_data()
 {
     QTest::addColumn<QString>("filename");
