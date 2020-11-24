@@ -37,6 +37,10 @@ class CommentReadWriteTest : public QObject
 {
     Q_OBJECT
 
+public:
+
+    explicit CommentReadWriteTest(QObject* const parent = nullptr);
+
 private Q_SLOTS:
 
     void initTestCase();

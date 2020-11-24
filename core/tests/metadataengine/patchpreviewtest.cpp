@@ -36,6 +36,11 @@
 
 QTEST_MAIN(PatchPreviewTest)
 
+PatchPreviewTest::PatchPreviewTest(QObject* const parent)
+    : AbstractUnitTest(parent)
+{
+}
+
 void PatchPreviewTest::testExtractPreviewAndFixMetadata()
 {
     patchPreview(m_originalImageFolder + QLatin1String("IMG_2520.CR2"), true, 1024, 100); // See bug #400140

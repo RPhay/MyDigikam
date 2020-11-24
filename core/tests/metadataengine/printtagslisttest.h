@@ -36,6 +36,10 @@ class PrintTagsListTest : public AbstractUnitTest
 {
     Q_OBJECT
 
+public:
+
+    explicit PrintTagsListTest(QObject* const parent = nullptr);
+
 private:
 
     void parseTagsList(const DMetadata::TagsMap& tags);

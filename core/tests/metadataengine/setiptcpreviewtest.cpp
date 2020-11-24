@@ -30,6 +30,11 @@
 
 QTEST_MAIN(SetIptcPreviewTest)
 
+SetIptcPreviewTest::SetIptcPreviewTest(QObject* const parent)
+    : AbstractUnitTest(parent)
+{
+}
+
 void SetIptcPreviewTest::testSetIptcPreview()
 {
     setIptcPreview(m_originalImageFolder + QLatin1String("Luftbild_H6_7.tif"));

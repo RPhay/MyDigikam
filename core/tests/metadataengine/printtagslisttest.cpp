@@ -29,6 +29,11 @@
 
 QTEST_MAIN(PrintTagsListTest)
 
+PrintTagsListTest::PrintTagsListTest(QObject* const parent)
+    : AbstractUnitTest(parent)
+{
+}
+
 void PrintTagsListTest::parseTagsList(const DMetadata::TagsMap& tags)
 {
     QString output;

@@ -37,6 +37,10 @@ class SetXmpFaceTest : public AbstractUnitTest
 {
     Q_OBJECT
 
+public:
+
+    explicit SetXmpFaceTest(QObject* const parent = nullptr);
+
 private:
 
     void setXmpFace(const QString& file);

@@ -49,6 +49,11 @@
 #include "imageiface.h"
 #include "iofilesettings.h"
 
+DImgAbstractHistoryTest::DImgAbstractHistoryTest(QObject* const parent)
+    : QObject(parent)
+{
+}
+
 QString DImgAbstractHistoryTest::imagePath()
 {
     // NOTE: We will use same data dir than album model tests.
@@ -68,10 +73,6 @@ QDebug operator<<(QDebug dbg, const HistoryImageId& id)
     dbg.space() << id.m_originalUUID;
     dbg.nospace() << " } ";
     return dbg;
-}
-
-DImgAbstractHistoryTest::DImgAbstractHistoryTest(QObject* const)
-{
 }
 
 HistoryImageId DImgAbstractHistoryTest::id1() const

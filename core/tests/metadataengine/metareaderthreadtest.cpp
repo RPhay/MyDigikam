@@ -226,6 +226,11 @@ QString MetaReaderThread::stats(const QStringList& mimeTypes)
 
 QTEST_MAIN(MetaReaderThreadTest)
 
+MetaReaderThreadTest::MetaReaderThreadTest(QObject* const parent)
+    : AbstractUnitTest(parent)
+{
+}
+
 void MetaReaderThreadTest::testMetaReaderThread()
 {
     MetaEngineSettingsContainer settings;

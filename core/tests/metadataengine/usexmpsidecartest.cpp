@@ -29,6 +29,11 @@
 
 QTEST_MAIN(UseXmpSidecarTest)
 
+UseXmpSidecarTest::UseXmpSidecarTest(QObject* const parent)
+    : AbstractUnitTest(parent)
+{
+}
+
 void UseXmpSidecarTest::testUseXmpSidecar()
 {
     MetaEngineSettingsContainer settings;

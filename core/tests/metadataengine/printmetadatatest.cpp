@@ -29,6 +29,11 @@
 
 QTEST_MAIN(PrintMetadataTest)
 
+PrintMetadataTest::PrintMetadataTest(QObject* const parent)
+    : AbstractUnitTest(parent)
+{
+}
+
 void PrintMetadataTest::printMetadataMap(const DMetadata::MetaDataMap& map)
 {
     QString output;

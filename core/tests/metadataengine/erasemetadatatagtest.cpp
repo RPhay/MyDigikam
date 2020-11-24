@@ -29,6 +29,11 @@
 
 QTEST_MAIN(EraseMetadataTagTest)
 
+EraseMetadataTagTest::EraseMetadataTagTest(QObject* const parent)
+    : AbstractUnitTest(parent)
+{
+}
+
 void EraseMetadataTagTest::testEraseMetadataTag()
 {
     MetaEngineSettingsContainer settings;

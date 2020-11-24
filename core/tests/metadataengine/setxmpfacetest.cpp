@@ -32,6 +32,11 @@
 
 QTEST_MAIN(SetXmpFaceTest)
 
+SetXmpFaceTest::SetXmpFaceTest(QObject* const parent)
+    : AbstractUnitTest(parent)
+{
+}
+
 void SetXmpFaceTest::testSetXmpFace()
 {
     setXmpFace(m_originalImageFolder + QLatin1String("nikon-e2100.jpg"));

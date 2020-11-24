@@ -123,6 +123,10 @@ class MetaReaderThreadTest : public AbstractUnitTest
 {
     Q_OBJECT
 
+public:
+
+    explicit MetaReaderThreadTest(QObject* const parent = nullptr);
+
 private:
 
     void runMetaReader(const QString& path,

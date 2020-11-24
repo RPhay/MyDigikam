@@ -33,6 +33,10 @@ class PatchPreviewTest : public AbstractUnitTest
 {
     Q_OBJECT
 
+public:
+
+    explicit PatchPreviewTest(QObject* const parent = nullptr);
+
 private:
 
     void patchPreview(const QString& file, bool rescale, int maxDim, int imageQuality);

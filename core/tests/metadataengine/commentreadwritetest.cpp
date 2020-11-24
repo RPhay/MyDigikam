@@ -37,6 +37,11 @@ QTEST_GUILESS_MAIN(CommentReadWriteTest)
 
 using namespace Digikam;
 
+CommentReadWriteTest::CommentReadWriteTest(QObject* const parent)
+    : QObject(parent)
+{
+}
+
 void CommentReadWriteTest::initTestCase()
 {
     MetaEngine::initializeExiv2();

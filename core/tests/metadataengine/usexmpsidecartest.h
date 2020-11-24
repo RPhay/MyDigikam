@@ -34,6 +34,10 @@ class UseXmpSidecarTest : public AbstractUnitTest
 {
     Q_OBJECT
 
+public:
+
+    explicit UseXmpSidecarTest(QObject* const parent = nullptr);
+
 private:
 
     void useXmpSidecar(const QString& file,

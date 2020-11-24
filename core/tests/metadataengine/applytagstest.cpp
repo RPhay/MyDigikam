@@ -29,6 +29,11 @@
 
 QTEST_MAIN(ApplyTagsTest)
 
+ApplyTagsTest::ApplyTagsTest(QObject* const parent)
+    : AbstractUnitTest(parent)
+{
+}
+
 void ApplyTagsTest::testApplyTagsToMetadata()
 {
     MetaEngineSettingsContainer settings;

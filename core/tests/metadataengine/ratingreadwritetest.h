@@ -33,6 +33,10 @@ class RatingReadWriteTest : public QObject
 {
     Q_OBJECT
 
+public:
+
+    explicit RatingReadWriteTest(QObject* const parent = nullptr);
+
 private Q_SLOTS:
 
     void initTestCase();

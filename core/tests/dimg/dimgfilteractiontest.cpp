@@ -42,7 +42,8 @@
 
 QTEST_MAIN(DImgFilterActionTest)
 
-DImgFilterActionTest::DImgFilterActionTest(QObject* const)
+DImgFilterActionTest::DImgFilterActionTest(QObject* const parent)
+    : QObject(parent)
 {
 }
 

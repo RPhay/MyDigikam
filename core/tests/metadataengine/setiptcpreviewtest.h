@@ -32,6 +32,10 @@ class SetIptcPreviewTest : public AbstractUnitTest
 {
     Q_OBJECT
 
+public:
+
+    explicit SetIptcPreviewTest(QObject* const parent = nullptr);
+
 private:
 
     void setIptcPreview(const QString& file);

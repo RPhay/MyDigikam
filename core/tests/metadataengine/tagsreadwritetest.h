@@ -33,6 +33,10 @@ class TagsReadWriteTest : public QObject
 {
     Q_OBJECT
 
+public:
+
+    explicit TagsReadWriteTest(QObject* const parent = nullptr);
+
 private Q_SLOTS:
 
     void initTestCase();

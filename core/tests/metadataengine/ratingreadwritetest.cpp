@@ -38,6 +38,11 @@ using namespace Digikam;
 
 QTEST_GUILESS_MAIN(RatingReadWriteTest)
 
+RatingReadWriteTest::RatingReadWriteTest(QObject* const parent)
+    : QObject(parent)
+{
+}
+
 void RatingReadWriteTest::initTestCase()
 {
     MetaEngine::initializeExiv2();

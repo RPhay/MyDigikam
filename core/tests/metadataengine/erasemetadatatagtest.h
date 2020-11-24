@@ -36,6 +36,10 @@ class EraseMetadataTagTest : public AbstractUnitTest
 {
     Q_OBJECT
 
+public:
+
+    explicit EraseMetadataTagTest(QObject* const parent = nullptr);
+
 private:
 
     void eraseMetadataTag(const QString& file,

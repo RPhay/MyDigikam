@@ -46,9 +46,9 @@ class AbstractUnitTest : public QObject
 public:
 
     AbstractUnitTest(QObject* const parent = nullptr)
-        : m_originalImageFolder(QFINDTESTDATA("data/")) ///< Original files come with source code.
+        : QObject(parent),
+          m_originalImageFolder(QFINDTESTDATA("data/")) ///< Original files come with source code.
     {
-        Q_UNUSED(parent);
     }
 
 protected Q_SLOTS:

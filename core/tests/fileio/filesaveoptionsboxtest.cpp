@@ -35,7 +35,8 @@ using namespace Digikam;
 
 QTEST_MAIN(FileSaveOptionsBoxTest)
 
-FileSaveOptionsBoxTest::FileSaveOptionsBoxTest(QObject* const)
+FileSaveOptionsBoxTest::FileSaveOptionsBoxTest(QObject* const parent)
+    : QObject(parent)
 {
 }
 

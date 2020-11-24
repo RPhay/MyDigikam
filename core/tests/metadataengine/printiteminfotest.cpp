@@ -30,6 +30,11 @@
 
 QTEST_MAIN(PrintItemInfoTest)
 
+PrintItemInfoTest::PrintItemInfoTest(QObject* const parent)
+    : AbstractUnitTest(parent)
+{
+}
+
 void PrintItemInfoTest::testPrintItemInfo()
 {
     //                                                   Expected tags to found in Comments,    Titles,

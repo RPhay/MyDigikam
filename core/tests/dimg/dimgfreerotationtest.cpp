@@ -39,7 +39,8 @@ using namespace Digikam;
 
 QTEST_GUILESS_MAIN(DImgFreeRotationTest)
 
-DImgFreeRotationTest::DImgFreeRotationTest(QObject* const)
+DImgFreeRotationTest::DImgFreeRotationTest(QObject* const parent)
+    : QObject(parent)
 {
 }
 

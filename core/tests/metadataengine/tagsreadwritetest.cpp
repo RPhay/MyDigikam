@@ -37,6 +37,11 @@ using namespace Digikam;
 
 QTEST_GUILESS_MAIN(TagsReadWriteTest)
 
+TagsReadWriteTest::TagsReadWriteTest(QObject* const parent)
+    : QObject(parent)
+{
+}
+
 void TagsReadWriteTest::initTestCase()
 {
     MetaEngine::initializeExiv2();

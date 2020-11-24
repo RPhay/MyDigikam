@@ -36,6 +36,10 @@ class ApplyTagsTest : public AbstractUnitTest
 {
     Q_OBJECT
 
+public:
+
+    explicit ApplyTagsTest(QObject* const parent = nullptr);
+
 private:
 
     void applyTags(const QString& file,

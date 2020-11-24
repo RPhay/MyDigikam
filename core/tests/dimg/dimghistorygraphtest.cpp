@@ -54,7 +54,8 @@ using namespace Digikam;
 
 QTEST_MAIN(DImgHistoryGraphTest)
 
-DImgHistoryGraphTest::DImgHistoryGraphTest(QObject* const)
+DImgHistoryGraphTest::DImgHistoryGraphTest(QObject* const parent)
+    : DImgAbstractHistoryTest(parent)
 {
 }
 

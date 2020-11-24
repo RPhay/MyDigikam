@@ -35,6 +35,10 @@ class PrintMetadataTest : public AbstractUnitTest
 {
     Q_OBJECT
 
+public:
+
+    explicit PrintMetadataTest(QObject* const parent = nullptr);
+
 private:
 
     void printMetadataMap(const DMetadata::MetaDataMap& map);

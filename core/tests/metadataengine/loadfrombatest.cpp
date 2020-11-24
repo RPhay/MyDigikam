@@ -32,6 +32,11 @@
 
 QTEST_MAIN(LoadFromBATest)
 
+LoadFromBATest::LoadFromBATest(QObject* const parent)
+    : AbstractUnitTest(parent)
+{
+}
+
 void LoadFromBATest::testLoadFromByteArray()
 {
     loadFromByteArray(m_originalImageFolder + QLatin1String("nikon-e2100.jpg"));

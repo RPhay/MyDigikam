@@ -36,6 +36,10 @@ class LoadFromBATest : public AbstractUnitTest
 {
     Q_OBJECT
 
+public:
+
+    explicit LoadFromBATest(QObject* const parent = nullptr);
+
 private:
 
     void loadFromByteArray(const QString& file);
