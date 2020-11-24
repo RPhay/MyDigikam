@@ -42,6 +42,10 @@ class DImgFilterActionTest : public QObject
 
 public:
 
+    explicit DImgFilterActionTest(QObject* const parent = nullptr);
+
+public:
+
     QDir    imageDir();
     QString originalImage();
 

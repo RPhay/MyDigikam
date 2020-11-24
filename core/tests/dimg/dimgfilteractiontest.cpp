@@ -42,6 +42,10 @@
 
 QTEST_MAIN(DImgFilterActionTest)
 
+DImgFilterActionTest::DImgFilterActionTest(QObject* const)
+{
+}
+
 void DImgFilterActionTest::testDRawDecoding()
 {
     DRawDecoding params;

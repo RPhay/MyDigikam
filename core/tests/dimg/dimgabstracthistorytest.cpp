@@ -70,6 +70,10 @@ QDebug operator<<(QDebug dbg, const HistoryImageId& id)
     return dbg;
 }
 
+DImgAbstractHistoryTest::DImgAbstractHistoryTest(QObject* const)
+{
+}
+
 HistoryImageId DImgAbstractHistoryTest::id1() const
 {
     HistoryImageId id(QLatin1String("abc123"));

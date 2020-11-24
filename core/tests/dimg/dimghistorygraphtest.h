@@ -38,6 +38,10 @@ class DImgHistoryGraphTest : public DImgAbstractHistoryTest
 {
     Q_OBJECT
 
+public:
+
+    explicit DImgHistoryGraphTest(QObject* const parent = nullptr);
+
 public Q_SLOTS:
 
     void slotImageLoaded(const QString&, bool) override;

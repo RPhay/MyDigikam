@@ -39,6 +39,10 @@ using namespace Digikam;
 
 QTEST_GUILESS_MAIN(DImgFreeRotationTest)
 
+DImgFreeRotationTest::DImgFreeRotationTest(QObject* const)
+{
+}
+
 void DImgFreeRotationTest::testCalculateAngle_data()
 {
     QTest::addColumn<QPoint>("p1");

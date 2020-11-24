@@ -32,6 +32,10 @@ class DImgFreeRotationTest : public QObject
 {
     Q_OBJECT
 
+public:
+
+    explicit DImgFreeRotationTest(QObject* const parent = nullptr);
+
 private Q_SLOTS:
 
     void testCalculateAngle();
