@@ -42,6 +42,11 @@ using namespace Digikam;
 
 QTEST_MAIN(ImgQSortTest)
 
+
+ImgQSortTest::ImgQSortTest(QObject* const)
+{
+}
+
 void ImgQSortTest::initTestCase()
 {
     QDir dir(QFINDTESTDATA("../../dplugins/dimg"));

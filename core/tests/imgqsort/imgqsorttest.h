@@ -35,6 +35,10 @@ class ImgQSortTest : public QObject
 {
     Q_OBJECT
 
+public:
+
+    explicit ImgQSortTest(QObject* const parent = nullptr);
+
 private:
 
     QDir imageDir() const;
