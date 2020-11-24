@@ -197,4 +197,5 @@ BUGFIXES:
 181 ==> 429346 - Rotating and cropping: Concentration of the cropping frame on the real image area.
 182 ==> 406723 - Tags are not synced.
 183 ==> 429471 - User is prompted to remove face tags from images when image count is zero 0.
-184 ==> 
+184 ==> 429551 - Many Tags Stored in Photos are not Inserted into digiKam's tag list When Photos are Read.
+185 ==> 
