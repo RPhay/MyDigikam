@@ -50,14 +50,14 @@ class Q_DECL_HIDDEN ProcessorDlg::Private
 public:
 
     explicit Private()
+      : count        (0),
+        page         (nullptr),
+        items        (nullptr),
+        buttons      (nullptr),
+        progressView (nullptr),
+        usedCore     (nullptr),
+        thread       (nullptr)
     {
-        count        = 0;
-        page         = nullptr;
-        items        = nullptr;
-        buttons      = nullptr;
-        progressView = nullptr;
-        usedCore     = nullptr;
-        thread       = nullptr;
     }
 
     int                  count;
@@ -73,8 +73,8 @@ public:
     MyActionThread*      thread;
 };
 
-ProcessorDlg::ProcessorDlg(const QList<QUrl>& list)
-    : QDialog(nullptr),
+ProcessorDlg::ProcessorDlg(const QList<QUrl>& list, QWidget* const parent)
+    : QDialog(parent),
       d(new Private)
 {
     setModal(false);
