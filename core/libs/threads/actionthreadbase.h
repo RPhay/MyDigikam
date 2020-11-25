@@ -49,7 +49,7 @@ public:
 
     /** Constructor which delegate deletion of QRunnable instance to ActionThreadBase, not QThreadPool.
      */
-    ActionJob();
+    explicit ActionJob(QObject* const parent = nullptr);
 
     /** Re-implement destructor in you implementation. Don't forget to cancel job.
      */
@@ -80,11 +80,6 @@ protected:
     /** You can use this boolean in your implementation to know if job must be canceled.
      */
     bool m_cancel;
-
-private:
-
-    // Disable
-    explicit ActionJob(QObject*);
 };
 
 /** Define a QHash of job/priority to process by ActionThreadBase manager.

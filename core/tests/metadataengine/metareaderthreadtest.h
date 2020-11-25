@@ -98,7 +98,7 @@ class Mytask : public ActionJob
 
 public:
 
-    Mytask();
+    explicit Mytask(QObject* const parent = nullptr);
 
 public:
 

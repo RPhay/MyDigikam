@@ -39,8 +39,8 @@
 namespace Digikam
 {
 
-ActionJob::ActionJob()
-    : QObject  (),
+ActionJob::ActionJob(QObject* const parent)
+    : QObject  (parent),
       QRunnable(),
       m_cancel (false)
 {

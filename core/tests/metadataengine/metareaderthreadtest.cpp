@@ -38,8 +38,8 @@
 #include "metaengine_previews.h"
 #include "digikam_globals.h"
 
-Mytask::Mytask()
-    : ActionJob(),
+Mytask::Mytask(QObject* const parent)
+    : ActionJob(parent),
       direction(MetaReaderThread::READ_INFO_FROM_FILE),
       settings ()
 {
