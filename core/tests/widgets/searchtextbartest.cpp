@@ -38,7 +38,8 @@ using namespace QTest;
 
 QTEST_MAIN(SearchTextBarTest)
 
-SearchTextBarTest::SearchTextBarTest()
+SearchTextBarTest::SearchTextBarTest(QObject* const parent)
+    : QObject(parent)
 {
     callCount = 0;
 }

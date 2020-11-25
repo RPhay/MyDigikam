@@ -68,7 +68,7 @@ class DItemsListTest : public QDialog
 
 public:
 
-    explicit DItemsListTest(QObject* const parent);
+    explicit DItemsListTest(QWidget* const parent = nullptr);
     ~DItemsListTest() override;
 
 private Q_SLOTS:

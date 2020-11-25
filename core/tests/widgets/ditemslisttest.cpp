@@ -50,8 +50,8 @@ class Q_DECL_HIDDEN Task : public ActionJob
 
 public:
 
-    Task()
-        : ActionJob()
+    Task(QObject* const parent = nullptr)
+        : ActionJob(parent)
     {
     }
 
@@ -204,9 +204,9 @@ public:
     ActionThread*     thread;
 };
 
-DItemsListTest::DItemsListTest(QObject* const /*parent*/)
-    : QDialog(),
-      d(new Private)
+DItemsListTest::DItemsListTest(QWidget* const parent)
+    : QDialog(parent),
+      d      (new Private)
 {
     setWindowTitle(QString::fromUtf8("Rotate Images to 180 Degrees"));
 
@@ -299,9 +299,10 @@ void DItemsListTest::slotFailed(const QUrl& url, const QString&)
 int main(int argc, char* argv[])
 {
     QApplication app(argc, argv);
-    DItemsListTest* const view = new DItemsListTest(&app);
+    DItemsListTest* const view = new DItemsListTest;
     view->show();
     app.exec();
+    delete view;
     return 0;
 }
 
