@@ -47,8 +47,9 @@ class Q_DECL_HIDDEN LogoutTest : public QObject
 
 public:
 
-    LogoutTest()
+    explicit LogoutTest(QObject* const parent = nullptr)
     {
+        Q_UNUSED(parent);
         logoutCount = 0;
         m_mediaWiki = nullptr;
         m_server    = nullptr;

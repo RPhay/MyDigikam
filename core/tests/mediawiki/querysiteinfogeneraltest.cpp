@@ -49,9 +49,10 @@ class Q_DECL_HIDDEN QuerySiteInfoGeneralTest : public QObject
 
 public:
 
-    QuerySiteInfoGeneralTest()
+    explicit QuerySiteInfoGeneralTest(QObject* const parent = nullptr)
       : generalCount(0)
     {
+        Q_UNUSED(parent);
     }
 
 public Q_SLOTS:

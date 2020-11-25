@@ -53,8 +53,9 @@ class Q_DECL_HIDDEN UploadTest : public QObject
 
 public:
 
-    UploadTest()
+    explicit UploadTest(QObject* const parent = nullptr)
     {
+        Q_UNUSED(parent);
         uploadCount = 0;
         m_file      = nullptr;
         m_mediaWiki = nullptr;

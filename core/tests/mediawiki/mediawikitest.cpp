@@ -40,6 +40,13 @@ class Q_DECL_HIDDEN IfaceTest : public QObject
 {
     Q_OBJECT
 
+public:
+
+    explicit IfaceTest(QObject* const parent = nullptr)
+    {
+        Q_UNUSED(parent);
+    }
+
 private Q_SLOTS:
 
     void testConstructor()

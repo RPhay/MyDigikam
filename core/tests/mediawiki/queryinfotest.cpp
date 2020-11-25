@@ -56,8 +56,9 @@ class Q_DECL_HIDDEN QueryInfoTest : public QObject
 
 public:
 
-    QueryInfoTest()
+    explicit QueryInfoTest(QObject* const parent = nullptr)
     {
+        Q_UNUSED(parent);
         queryInfoCount = 0;
         m_mediaWiki    = nullptr;
     }

@@ -43,8 +43,9 @@ class Q_DECL_HIDDEN QueryImageinfoTest : public QObject
 
 public:
 
-    QueryImageinfoTest()
+    explicit QueryImageInfoTest(QObject* const parent = nullptr)
     {
+        Q_UNUSED(parent);
         requestWithMissingTitleHasBeenSent = false;
     }
 

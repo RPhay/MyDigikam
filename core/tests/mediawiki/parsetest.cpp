@@ -72,8 +72,9 @@ class Q_DECL_HIDDEN ParseTest : public QObject
 
 public:
 
-    ParseTest()
+    explicit ParseTest(QObject* const parent = nullptr)
     {
+        Q_UNUSED(parent);
         parseCount  = 0;
         m_mediaWiki = nullptr;
     }

@@ -47,6 +47,13 @@ class Q_DECL_HIDDEN QueryImagesTest : public QObject
 {
     Q_OBJECT
 
+public:
+
+    explicit QueryImagesTest(QObject* const parent = nullptr)
+    {
+        Q_UNUSED(parent);
+    }
+
 public Q_SLOTS:
 
     void imagesHandle(const QList<Image>& images)

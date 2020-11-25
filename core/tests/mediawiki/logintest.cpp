@@ -47,10 +47,11 @@ class Q_DECL_HIDDEN LoginTest : public QObject
 
 public:
 
-    LoginTest()
+    explicit LoginTest(QObject* const parent = nullptr)
     {
+        Q_UNUSED(parent);
         loginCount = 0;
-        m_server  = 0;
+        m_server   = 0;
     }
 
 public Q_SLOTS:

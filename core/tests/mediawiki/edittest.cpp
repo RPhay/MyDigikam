@@ -51,8 +51,9 @@ class Q_DECL_HIDDEN EditTest : public QObject
 
 public:
 
-    EditTest()
+    explicit EditTest(QObject* const parent = nullptr)
     {
+        Q_UNUSED(parent);
         editCount   = 0;
         m_mediaWiki = nullptr;
     }

@@ -54,8 +54,9 @@ class Q_DECL_HIDDEN QuerySiteinfoUsergroupsTest : public QObject
 
 public:
 
-    QuerySiteinfoUsergroupsTest()
+    explicit QuerySiteinfoUsergroupsTest(QObject* const parent = nullptr)
     {
+        Q_UNUSED(parent);
         usergroupsCount = 0;
     }
 
