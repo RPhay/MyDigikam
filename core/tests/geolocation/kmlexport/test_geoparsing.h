@@ -32,6 +32,13 @@ class TestGPXParsing : public QObject
 {
     Q_OBJECT
 
+public:
+
+    explicit TestGPXParsing(QObject* const parent = nullptr)
+        : QObject(parent)
+    {
+    }
+
 private Q_SLOTS:
 
     void testQDateTimeParsing();

@@ -39,12 +39,11 @@ class AlbumModel;
 
 class DatabaseTagsTest: public QObject
 {
-
     Q_OBJECT
 
 public:
 
-    DatabaseTagsTest();
+    DatabaseTagsTest(QObject* const parent = nullptr);
     ~DatabaseTagsTest() override;
 
 private Q_SLOTS:

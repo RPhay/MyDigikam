@@ -32,6 +32,13 @@ class RenameCustomizerTest : public QObject
 {
     Q_OBJECT
 
+public:
+
+    explicit RenameCustomizerTest(QObject* const parent = nullptr)
+        : QObject(parent)
+    {
+    }
+
 private Q_SLOTS:
 
     void newName_should_return_empty_string_with_empty_filename_data();

@@ -32,6 +32,13 @@ class TimeStampUpdateTest : public QObject
 {
     Q_OBJECT
 
+public:
+
+    explicit TimeStampUpdateTest(QObject* const parent = nullptr)
+        : QObject(parent)
+    {
+    }
+
 private Q_SLOTS:
 
     void initTestCase();
@@ -44,6 +51,8 @@ private:
 
     QString tempFileName(const QString& purpose) const;
     QString tempFilePath(const QString& purpose) const;
+
+private:
 
     QString          dbFile;
     QList<qlonglong> ids;

@@ -48,21 +48,22 @@ const QString IMAGE_PATH(QFINDTESTDATA("data/"));
 
 QTEST_MAIN(DatabaseTagsTest)
 
-DatabaseTagsTest::DatabaseTagsTest()
-    : palbumRoot0(nullptr),
-      palbumRoot1(nullptr),
-      palbumRoot2(nullptr),
-      palbumChild0Root0(nullptr),
-      palbumChild1Root0(nullptr),
-      palbumChild2Root0(nullptr),
-      palbumChild0Root1(nullptr),
-      rootTag(nullptr),
-      talbumRoot0(nullptr),
-      talbumRoot1(nullptr),
-      talbumChild0Root0(nullptr),
-      talbumChild1Root0(nullptr),
+DatabaseTagsTest::DatabaseTagsTest(QObject* const parent)
+    : QObject                (parent),
+      palbumRoot0            (nullptr),
+      palbumRoot1            (nullptr),
+      palbumRoot2            (nullptr),
+      palbumChild0Root0      (nullptr),
+      palbumChild1Root0      (nullptr),
+      palbumChild2Root0      (nullptr),
+      palbumChild0Root1      (nullptr),
+      rootTag                (nullptr),
+      talbumRoot0            (nullptr),
+      talbumRoot1            (nullptr),
+      talbumChild0Root0      (nullptr),
+      talbumChild1Root0      (nullptr),
       talbumChild0Child1Root0(nullptr),
-      talbumChild0Root1(nullptr)
+      talbumChild0Root1      (nullptr)
 {
 }
 

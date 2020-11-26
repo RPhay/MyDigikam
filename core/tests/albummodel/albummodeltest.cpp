@@ -50,8 +50,9 @@ const QString IMAGE_PATH(QFINDTESTDATA("data/"));
 
 QTEST_MAIN(AlbumModelTest)
 
-AlbumModelTest::AlbumModelTest()
-    : albumCategory(QLatin1String("DummyCategory")),
+AlbumModelTest::AlbumModelTest(QObject* const parent)
+    : QObject(parent),
+      albumCategory(QLatin1String("DummyCategory")),
       palbumRoot0(nullptr),
       palbumRoot1(nullptr),
       palbumRoot2(nullptr),

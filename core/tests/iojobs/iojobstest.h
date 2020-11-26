@@ -32,6 +32,13 @@ class IOJobsTest : public QObject
 {
     Q_OBJECT
 
+public:
+
+    explicit IOJobsTest(QObject* const parent = nullptr)
+        : QObject(parent)
+    {
+    }
+
 private Q_SLOTS:
 
     void init();
