@@ -55,13 +55,13 @@ class Q_DECL_HIDDEN FilesDownloader::Private
 public:
 
     explicit Private()
-      : downloadUrl (QLatin1String("https://files.kde.org/digikam/")),
-        index       (0),
-        buttons     (nullptr),
-        progress    (nullptr),
-        nameLabel   (nullptr),
-        reply       (nullptr),
-        netMngr     (nullptr)
+      : downloadUrl(QLatin1String("https://files.kde.org/digikam/")),
+        index      (0),
+        buttons    (nullptr),
+        progress   (nullptr),
+        nameLabel  (nullptr),
+        reply      (nullptr),
+        netMngr    (nullptr)
     {
     }
 
@@ -82,8 +82,8 @@ public:
 };
 
 FilesDownloader::FilesDownloader(QWidget* const parent)
-    : QDialog (parent),
-      d       (new Private)
+    : QDialog(parent),
+      d      (new Private)
 {
     d->files << QLatin1String("facesengine/shape-predictor/");
     d->files << QLatin1String("shapepredictor.dat");
@@ -335,6 +335,10 @@ void FilesDownloader::slotDownloaded(QNetworkReply* reply)
         }
 
         file.close();
+    }
+    else
+    {
+        d->error = i18n("File open error.");
     }
 
     reply->deleteLater();
