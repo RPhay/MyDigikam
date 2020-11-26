@@ -10,6 +10,7 @@ General       : Add fast string sorter cache based on QCollatorSortKey.
 Database      : Change database scheme under MySQL from TagsTree VIEW to TABLE with triggers.
 FaceManagement: Improve users experience in GUI for face workflow while tagging and manage faces.
 FaceManagement: Add face engine clustering support for detection and recognition processes.
+FaceManagement: Remove face engine data files from sources and bundles and add a file downloader.
 
 *****************************************************************************************************
 BUGFIXES:
