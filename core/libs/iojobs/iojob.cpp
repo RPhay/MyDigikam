@@ -349,8 +349,14 @@ void RenameFileJob::run()
         }
 
         QUrl destUrl = m_data->destUrl(renameUrl);
+        QFileInfo fileInfo(destUrl.toLocalFile());
 
-        if (QFileInfo::exists(destUrl.toLocalFile()))
+        QDir dir(fileInfo.dir());
+        const QStringList& dirList = dir.entryList(QDir::Dirs    |
+                                                   QDir::Files   |
+                                                   QDir::NoDotAndDotDot);
+
+        if (dirList.contains(fileInfo.fileName()))
         {
             if (m_data->fileConflict() == IOJobData::Overwrite)
             {
