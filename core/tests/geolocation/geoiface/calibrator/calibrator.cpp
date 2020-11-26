@@ -73,7 +73,7 @@ public:
 CalibratorModelHelper::CalibratorModelHelper(QStandardItemModel* const model,
                                              QObject* const parent)
     : GeoModelHelper(parent),
-      d(new Private())
+      d             (new Private())
 {
     d->model = model;
 }
@@ -129,14 +129,14 @@ class Q_DECL_HIDDEN Calibrator::Private
 public:
 
     explicit Private()
-     : hBoxLayout(nullptr),
-       model(nullptr),
-       modelHelper(nullptr),
-       markerTiler(nullptr),
-       groupingMode(nullptr),
-       sbLevel(nullptr),
-       zoomDisplay(nullptr),
-       zoomDisplayTimer(nullptr)
+     : hBoxLayout       (nullptr),
+       model            (nullptr),
+       modelHelper      (nullptr),
+       markerTiler      (nullptr),
+       groupingMode     (nullptr),
+       sbLevel          (nullptr),
+       zoomDisplay      (nullptr),
+       zoomDisplayTimer (nullptr)
     {
     }
 
@@ -152,9 +152,9 @@ public:
     QTimer*                                          zoomDisplayTimer;
 };
 
-Calibrator::Calibrator()
-    : QMainWindow(),
-      d(new Private())
+Calibrator::Calibrator(QWidget* const parent)
+    : QMainWindow(parent),
+      d          (new Private())
 {
     d->model       = new QStandardItemModel(this);
     d->modelHelper = new CalibratorModelHelper(d->model, this);

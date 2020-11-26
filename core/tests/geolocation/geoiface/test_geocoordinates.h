@@ -32,6 +32,13 @@ class TestGeoCoordinates : public QObject
 {
     Q_OBJECT
 
+public:
+
+    explicit TestGeoCoordinates(QObject* const parent = nullptr)
+        : QObject(parent)
+    {
+    }
+
 private Q_SLOTS:
 
     void testNoOp();

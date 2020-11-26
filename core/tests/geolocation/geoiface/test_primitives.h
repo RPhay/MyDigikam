@@ -32,6 +32,13 @@ class TestPrimitives : public QObject
 {
     Q_OBJECT
 
+public:
+
+    explicit TestPrimitives(QObject* const parent = nullptr)
+        : QObject(parent)
+    {
+    }
+
 private Q_SLOTS:
 
     void testNoOp();

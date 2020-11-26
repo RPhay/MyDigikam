@@ -70,7 +70,7 @@ class Calibrator : public QMainWindow
 
 public:
 
-    explicit Calibrator();
+    explicit Calibrator(QWidget* const parent = nullptr);
     ~Calibrator() override;
 
 private:

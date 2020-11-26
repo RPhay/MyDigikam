@@ -32,6 +32,13 @@ class TestLookupAltitudeGeonames : public QObject
 {
     Q_OBJECT
 
+public:
+
+    explicit TestLookupAltitudeGeonames(QObject* const parent = nullptr)
+        : QObject(parent)
+    {
+    }
+
 private Q_SLOTS:
 
     void testNoOp();

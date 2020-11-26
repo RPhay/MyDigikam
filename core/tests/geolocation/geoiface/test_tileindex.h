@@ -32,6 +32,13 @@ class TestTileIndex : public QObject
 {
     Q_OBJECT
 
+public:
+
+    explicit TestTileIndex(QObject* const parent = nullptr)
+        : QObject(parent)
+    {
+    }
+
 private Q_SLOTS:
 
     void testNoOp();
