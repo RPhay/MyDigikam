@@ -41,7 +41,7 @@ public:
 
     ~MapListTrainingDataProvider() override
     {
-        qDeleteAll(imagesToTrain.values());
+        qDeleteAll(imagesToTrain);
     }
 
     ImageListProvider* newImages(const Identity& identity) override
