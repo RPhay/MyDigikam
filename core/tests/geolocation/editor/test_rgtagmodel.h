@@ -33,6 +33,13 @@ class TestRGTagModel : public QObject
 {
     Q_OBJECT
 
+public:
+
+    explicit TestRGTagModel(QObject* const parent = nullptr)
+        : QObject(parent)
+    {
+    }
+
 private Q_SLOTS:
 
     void testNoOp();

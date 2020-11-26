@@ -33,6 +33,13 @@ class TestRGParsing : public QObject
 {
     Q_OBJECT
 
+public:
+
+    explicit TestRGParsing(QObject* const parent = nullptr)
+        : QObject(parent)
+    {
+    }
+
 private Q_SLOTS:
 
     void testNoOp();

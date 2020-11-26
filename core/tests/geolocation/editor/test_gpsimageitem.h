@@ -34,6 +34,13 @@ class TestGPSItemContainer : public QObject
 {
     Q_OBJECT
 
+public:
+
+    explicit TestGPSItemContainer(QObject* const parent = nullptr)
+        : QObject(parent)
+    {
+    }
+
 private Q_SLOTS:
 
     void initTestCase();

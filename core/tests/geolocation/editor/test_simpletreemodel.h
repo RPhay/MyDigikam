@@ -33,6 +33,13 @@ class TestSimpleTreeModel : public QObject
 {
     Q_OBJECT
 
+public:
+
+    explicit TestSimpleTreeModel(QObject* const parent = nullptr)
+        : QObject(parent)
+    {
+    }
+
 private Q_SLOTS:
 
     void testNoOp();
