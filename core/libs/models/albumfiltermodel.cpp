@@ -576,8 +576,8 @@ bool CheckableAlbumFilterModel::matches(Album* album) const
 
 SearchFilterModel::SearchFilterModel(QObject* const parent)
     : CheckableAlbumFilterModel(parent),
-      m_searchType(-1),
-      m_listTemporary(false)
+      m_searchType             (-1),
+      m_listTemporary          (false)
 {
 }
 
@@ -647,7 +647,7 @@ bool SearchFilterModel::isFiltering() const
 
 bool SearchFilterModel::matches(Album* album) const
 {
-    if (!AlbumFilterModel::matches(album))
+    if (!CheckableAlbumFilterModel::matches(album))
     {
         return false;
     }
@@ -773,7 +773,7 @@ void TagPropertiesFilterModel::tagPropertiesChanged(TAlbum*)
 
 bool TagPropertiesFilterModel::matches(Album* album) const
 {
-    if (!AlbumFilterModel::matches(album))
+    if (!CheckableAlbumFilterModel::matches(album))
     {
         return false;
     }
