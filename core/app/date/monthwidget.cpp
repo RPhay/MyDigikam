@@ -56,9 +56,9 @@ public:
     public:
 
         Month()
-          : active(false),
-            selected(false),
-            day(0),
+          : active   (false),
+            selected (false),
+            day      (0),
             numImages(0)
         {
         }
@@ -74,14 +74,14 @@ public:
 
     explicit Private()
       : active(true),
-        model(nullptr),
-        timer(nullptr),
-        year(0),
-        month(0),
-        width(0),
+        model (nullptr),
+        timer (nullptr),
+        year  (0),
+        month (0),
+        width (0),
         height(0),
-        currw(0),
-        currh(0)
+        currw (0),
+        currh (0)
     {
     }
 
@@ -102,7 +102,7 @@ public:
 
 MonthWidget::MonthWidget(QWidget* const parent)
     : QWidget(parent),
-      d(new Private)
+      d      (new Private)
 {
     init();
 
@@ -303,7 +303,7 @@ void MonthWidget::mousePressEvent(QMouseEvent* e)
         {
             if (d->days[i].selected)
             {
-                if (firstSelected==0)
+                if (firstSelected == 0)
                 {
                     firstSelected = i;
                 }
@@ -357,14 +357,14 @@ void MonthWidget::mousePressEvent(QMouseEvent* e)
 
             if (endSelection > firstSelected)
             {
-                for (int i2=firstSelected ; i2 <= endSelection ; ++i2)
+                for (int i2 = firstSelected ; i2 <= endSelection ; ++i2)
                 {
                     d->days[i2].selected = true;
                 }
             }
             else if (endSelection < firstSelected)
             {
-                for (int i2=lastSelected ; i2 >= endSelection ; --i2)
+                for (int i2 = lastSelected ; i2 >= endSelection ; --i2)
                 {
                     d->days[i2].selected = true;
                 }

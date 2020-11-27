@@ -47,25 +47,22 @@ class Q_DECL_HIDDEN DateFolderView::Private
 public:
 
     explicit Private()
-      : active(false),
-        selected(),
+      : active      (false),
         dateTreeView(nullptr),
-        monthview(nullptr)
+        monthview   (nullptr)
     {
     }
 
     bool          active;
-
-    QString       selected;
 
     DateTreeView* dateTreeView;
     MonthWidget*  monthview;
 };
 
 DateFolderView::DateFolderView(QWidget* const parent, DateAlbumModel* const dateAlbumModel)
-    : DVBox(parent),
+    : DVBox            (parent),
       StateSavingObject(this),
-      d(new Private)
+      d                (new Private)
 {
     setObjectName(QLatin1String("DateFolderView"));
 
@@ -109,7 +106,7 @@ void DateFolderView::setActive(const bool val)
     if (d->active)
     {
         AlbumManager::instance()->setCurrentAlbums(QList<Album*>()
-                                                    << d->dateTreeView->currentAlbum());
+                                                   << d->dateTreeView->currentAlbum());
         slotSelectionChanged(d->dateTreeView->currentAlbum());
     }
     else
@@ -137,7 +134,6 @@ void DateFolderView::slotSelectionChanged(Album* selectedAlbum)
 
     if (dalbum->range() == DAlbum::Month)
     {
-
         QDate date = dalbum->date();
         d->monthview->setActive(true);
         d->monthview->setYearMonth(date.year(), date.month());
