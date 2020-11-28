@@ -137,6 +137,13 @@ public:
     void removeAction(QAction* action);
 
     /**
+     * clear all actions from the message widget.
+     *
+     * @see DNotificationWidget::MessageType, addAction(), setMessageType()
+     */
+    void clearAllActions();
+
+    /**
      * Returns the preferred size of the message widget.
      */
     QSize sizeHint() const override;

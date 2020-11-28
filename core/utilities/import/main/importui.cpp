@@ -1157,9 +1157,7 @@ void ImportUI::slotConnected(bool val)
                                                "Please make sure it is connected "
                                                "properly and turned on."));
 
-        QList<QAction*> lst = d->errorWidget->actions();
-        lst.clear();
-
+        d->errorWidget->clearAllActions();
         d->errorWidget->addAction(d->connectAction);
         d->errorWidget->addAction(d->showPreferencesAction);
         d->errorWidget->animatedShow();

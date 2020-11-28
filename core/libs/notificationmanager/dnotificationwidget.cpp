@@ -272,6 +272,14 @@ void DNotificationWidget::removeAction(QAction* action)
     d->updateLayout();
 }
 
+void DNotificationWidget::clearAllActions()
+{
+    foreach (QAction* const action, actions())
+    {
+        QFrame::removeAction(action);
+    }
+}
+
 void DNotificationWidget::animatedShow()
 {
     if (!style()->styleHint(QStyle::SH_Widget_Animate, nullptr, this))
