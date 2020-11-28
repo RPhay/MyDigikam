@@ -237,12 +237,12 @@ void RawImport::slotOk()
         d->settingsBox->curvesWidget()->updateData(DImg(0, 0, d->settingsBox->settings().rawPrm.sixteenBitsImage));
     }
 
-    EditorTool::slotOk();
+    EditorTool::slotOk();       // clazy:exclude=skipped-base-method
 }
 
 void RawImport::slotCancel()
 {
-    EditorTool::slotCancel();
+    EditorTool::slotCancel();   // clazy:exclude=skipped-base-method
 }
 
 void RawImport::setBackgroundColor(const QColor& bg)
