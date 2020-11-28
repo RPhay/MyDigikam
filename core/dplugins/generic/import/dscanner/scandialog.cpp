@@ -86,6 +86,7 @@ ScanDialog::ScanDialog(KSaneWidget* const saneWdg, QWidget* const parent)
     QVBoxLayout* const vbx = new QVBoxLayout(this);
     vbx->addWidget(d->saneWidget, 10);
     vbx->addWidget(d->progress);
+    vbx->addWidget(m_buttons);
     setLayout(vbx);
 
     // ------------------------------------------------------------------------
