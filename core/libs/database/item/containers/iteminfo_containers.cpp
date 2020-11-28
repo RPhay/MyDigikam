@@ -260,7 +260,9 @@ Template ItemInfo::metadataTemplate() const
     }
 
     Template t;
-    imageCopyright().fillTemplate(t);
+
+    ItemCopyright ic          = imageCopyright();
+    ic.fillTemplate(t);
 
     ItemExtendedProperties ep = imageExtendedProperties();
     t.setLocationInfo(ep.location());
@@ -277,7 +279,9 @@ void ItemInfo::setMetadataTemplate(const Template& t)
     }
 
     removeMetadataTemplate();
-    imageCopyright().setFromTemplate(t);
+
+    ItemCopyright ic          = imageCopyright();
+    ic.setFromTemplate(t);
 
     ItemExtendedProperties ep = imageExtendedProperties();
     ep.setLocation(t.locationInfo());
@@ -291,7 +295,8 @@ void ItemInfo::removeMetadataTemplate()
         return;
     }
 
-    imageCopyright().removeAll();
+    ItemCopyright ic          = imageCopyright();
+    ic.removeAll();
 
     ItemExtendedProperties ep = imageExtendedProperties();
     ep.removeLocation();
