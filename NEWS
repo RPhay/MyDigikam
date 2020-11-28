@@ -201,4 +201,5 @@ BUGFIXES:
 184 ==> 429551 - Many Tags Stored in Photos are not Inserted into digiKam's tag list When Photos are Read.
 185 ==> 429664 - Windows file rename change case only fails badly.
 186 ==> 429625 - Under Import, Add images and Add Folders options are not available.
-187 ==> 
+187 ==> 429715 - When importing with the rename function, 'import selected' does not import files.
+188 ==> 
