@@ -652,7 +652,7 @@ bool ImportThumbnailDelegate::acceptsActivation(const QPoint& pos, const QRect& 
 {
     // reuse implementation from grand-parent
 
-    return ItemViewImportDelegate::acceptsActivation(pos, visualRect, index, activationRect);
+    return ItemViewImportDelegate::acceptsActivation(pos, visualRect, index, activationRect); // clazy:exclude=skipped-base-method
 }
 
 void ImportThumbnailDelegate::updateContentWidth()
