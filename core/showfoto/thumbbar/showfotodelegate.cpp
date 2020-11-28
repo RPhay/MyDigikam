@@ -514,7 +514,7 @@ bool ShowfotoThumbnailDelegate::acceptsActivation(const QPoint& pos, const QRect
 {
     // reuse implementation from grandparent
 
-    return ItemViewShowfotoDelegate::acceptsActivation(pos, visualRect, index, activationRect);
+    return ItemViewShowfotoDelegate::acceptsActivation(pos, visualRect, index, activationRect); // clazy:exclude=skipped-base-method
 }
 
 void ShowfotoThumbnailDelegate::updateContentWidth()
