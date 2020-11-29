@@ -206,4 +206,5 @@ BUGFIXES:
 189 ==> 429783 - Geolocation information lost on export and no EXIF tags generated in .JPG.
 190 ==> 429787 - Delete Unassigned Tags: show list of the unassigned tags before deleting them,
 191 ==> 429820 - Radio buttons vs. checkboxes for Tags Matching Condition "OR/AND" chooser.
-192 ==> 
+192 ==> 429820 - Checkboxes should be radio buttons in Tags Matching Condition "OR/AND" chooser.
+193 ==> 

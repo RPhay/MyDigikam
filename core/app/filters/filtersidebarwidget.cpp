@@ -189,10 +189,14 @@ FilterSideBarWidget::FilterSideBarWidget(QWidget* const parent, TagModel* const 
                                         "to filter the images. This also includes the '%1' check box.",
                                         notTaggedTitle));
 
-    d->tagOptionsMenu   = new QMenu(d->tagOptionsBtn);
+    d->tagOptionsMenu                  = new QMenu(d->tagOptionsBtn);
+    QActionGroup* const tagOrCondGroup = new QActionGroup(d->tagOptionsMenu);
+    tagOrCondGroup->setExclusive(true);
     d->tagOrCondAction  = d->tagOptionsMenu->addAction(i18n("OR"));
+    d->tagOrCondAction->setActionGroup(tagOrCondGroup);
     d->tagOrCondAction->setCheckable(true);
     d->tagAndCondAction = d->tagOptionsMenu->addAction(i18n("AND"));
+    d->tagAndCondAction->setActionGroup(tagOrCondGroup);
     d->tagAndCondAction->setCheckable(true);
     d->tagOptionsBtn->setMenu(d->tagOptionsMenu);
 
