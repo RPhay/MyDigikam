@@ -202,4 +202,6 @@ BUGFIXES:
 185 ==> 429664 - Windows file rename change case only fails badly.
 186 ==> 429625 - Under Import, Add images and Add Folders options are not available.
 187 ==> 429715 - When importing with the rename function, 'import selected' does not import files.
-188 ==> 
+188 ==> 427107 - Geolocation data not written in jpeg files in v7.1.0.
+189 ==> 429783 - Geolocation information lost on export and no EXIF tags generated in .JPG.
+190 ==> 
