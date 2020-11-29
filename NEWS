@@ -204,4 +204,5 @@ BUGFIXES:
 187 ==> 429715 - When importing with the rename function, 'import selected' does not import files.
 188 ==> 427107 - Geolocation data not written in jpeg files in v7.1.0.
 189 ==> 429783 - Geolocation information lost on export and no EXIF tags generated in .JPG.
-190 ==> 
+190 ==> 429787 - Delete Unassigned Tags: show list of the unassigned tags before deleting them,
+191 ==> 

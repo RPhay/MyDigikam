@@ -707,6 +707,9 @@ void TagsManager::setupActions()
     QAction* const createTagAddr = new QAction(QIcon::fromTheme(QLatin1String("tag-addressbook")),
                                                i18n("Create Tag from Address Book"), this);
 
+    QAction* const markUnused    = new QAction(QIcon::fromTheme(QLatin1String("edit-select")),
+                                               i18n("Mark Unassigned Tags"), this);
+
     QAction* const invSel        = new QAction(QIcon::fromTheme(QLatin1String("tag-reset")),
                                                i18n("Invert Selection"), this);
 
@@ -717,9 +720,6 @@ void TagsManager::setupActions()
                                                i18n("Expand Selected Nodes"), this);
     QAction* const delTagFromImg = new QAction(QIcon::fromTheme(QLatin1String("tag-delete")),
                                                i18n("Remove Tag from Images"), this);
-
-    QAction* const deleteUnused  = new QAction(QIcon::fromTheme(QLatin1String("draw-eraser")),
-                                               i18n("Delete Unassigned Tags"), this);
 
     /**
      * Tool tips
@@ -736,6 +736,8 @@ void TagsManager::setupActions()
     setHelpText(resetIcon, i18n("Reset icon to selected tags. "
                                 "Works with multiple selection."));
 
+    setHelpText(markUnused, i18n("Mark all tags that are not assigned to images."));
+
     setHelpText(invSel, i18n("Invert selection. "
                              "Only visible items will be selected"));
 
@@ -745,9 +747,6 @@ void TagsManager::setupActions()
 
     setHelpText(delTagFromImg, i18n("Delete selected tag(s) from images. "
                                     "Works with multiple selection."));
-
-    setHelpText(deleteUnused, i18n("Delete all tags that are not assigned to images. "
-                                   "Use with caution."));
 
     connect(d->titleEdit, SIGNAL(triggered()),
             this, SLOT(slotEditTagTitle()));
@@ -770,17 +769,17 @@ void TagsManager::setupActions()
     connect(delTagFromImg, SIGNAL(triggered()),
             this, SLOT(slotRemoveTagsFromImgs()));
 
-    connect(deleteUnused, SIGNAL(triggered()),
-            this, SLOT(slotRemoveNotAssignedTags()));
+    connect(markUnused, SIGNAL(triggered()),
+            this, SLOT(slotMarkNotAssignedTags()));
 
     d->organizeAction->addAction(d->titleEdit);
     d->organizeAction->addAction(resetIcon);
     d->organizeAction->addAction(createTagAddr);
+    d->organizeAction->addAction(markUnused);
     d->organizeAction->addAction(invSel);
     d->organizeAction->addAction(expandTree);
     d->organizeAction->addAction(expandSel);
     d->organizeAction->addAction(delTagFromImg);
-    d->organizeAction->addAction(deleteUnused);
 
     /**
      * Sync & Export Group
@@ -872,20 +871,8 @@ void TagsManager::doSaveState()
     group.sync();
 }
 
-void TagsManager::slotRemoveNotAssignedTags()
+void TagsManager::slotMarkNotAssignedTags()
 {
-    const int result = DMessageBox::showContinueCancel(QMessageBox::Warning,
-                                                       this,
-                                                       i18n("Warning"),
-                                                       i18n("This option will remove all tags which\n"
-                                                            "are not assigned to any image.\n "
-                                                            "Do you want to continue?"));
-
-    if (result != QMessageBox::Yes)
-    {
-        return;
-    }
-
     QModelIndex root = d->tagMngrView->model()->index(0, 0);
 
     QQueue<QModelIndex> greyNodes;
@@ -945,11 +932,13 @@ void TagsManager::slotRemoveNotAssignedTags()
         }
     }
 
-    QList<int> toRemove;
+    QItemSelectionModel* const model = d->tagMngrView->selectionModel();
+    model->clearSelection();
+    QList<int> toMark;
 
-    foreach (const QModelIndex& toDelete, redNodes)
+    foreach (const QModelIndex& index, redNodes)
     {
-        QModelIndex current = toDelete;
+        QModelIndex current = index;
 
         while (current.isValid() && !greenNodes.contains(current))
         {
@@ -962,9 +951,10 @@ void TagsManager::slotRemoveNotAssignedTags()
             {
                 QList<qlonglong> assignedItems = CoreDbAccess().db()->getItemIDsInTag(t->id());
 
-                if (assignedItems.isEmpty() && !toRemove.contains(t->id()))
+                if (assignedItems.isEmpty() && !toMark.contains(t->id()))
                 {
-                    toRemove.append(t->id());
+                    model->select(current, model->Select);
+                    toMark.append(t->id());
                 }
                 else
                 {
@@ -975,29 +965,6 @@ void TagsManager::slotRemoveNotAssignedTags()
             current = current.parent();
         }
     }
-
-    foreach (int id, toRemove)
-    {
-        TAlbum* const talbum = AlbumManager::instance()->findTAlbum(id);
-
-        if (!talbum)
-        {
-            continue;
-        }
-
-        qCDebug(DIGIKAM_GENERAL_LOG) << talbum->title();
-        QString errMsg;
-
-        if (!AlbumManager::instance()->deleteTAlbum(talbum, errMsg))
-        {
-            QMessageBox::critical(this, qApp->applicationName(), errMsg);
-            return;
-        }
-    }
-
-    QMessageBox::information(this, qApp->applicationName(),
-                             i18np("%1 unused tag were removed.",
-                                   "%1 unused tags were removed.", toRemove.count()));
 }
 
 } // namespace Digikam

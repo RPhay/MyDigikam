@@ -138,9 +138,9 @@ private Q_SLOTS:
     void slotRemoveTagsFromImgs();
 
     /**
-     * @brief slotRemoveNotAssignedTags - remove all tags that are not assigned to images
+     * @brief slotMarkNotAssignedTags - mark all tags that are not assigned to images
      */
-    void slotRemoveNotAssignedTags();
+    void slotMarkNotAssignedTags();
 
 protected:
 
