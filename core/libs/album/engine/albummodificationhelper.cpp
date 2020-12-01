@@ -134,7 +134,7 @@ PAlbum* AlbumModificationHelper::slotAlbumNew(PAlbum* parent)
 
     QString albumRootPath;
 
-    albumRootPath = CollectionManager::instance()->oneAlbumRootPath();
+    albumRootPath = CollectionManager::instance()->albumRootPath(parent->albumRootId());
 
     QString     title;
     QString     comments;

@@ -56,6 +56,7 @@
 #include "album.h"
 #include "albummanager.h"
 #include "applicationsettings.h"
+#include "collectionmanager.h"
 #include "coredbaccess.h"
 #include "dxmlguiwindow.h"
 #include "dexpanderbox.h"
@@ -94,6 +95,7 @@ public:
 
     explicit Private()
       : buttons         (nullptr),
+        topLabel        (nullptr),
         categoryCombo   (nullptr),
         parentCombo     (nullptr),
         titleEdit       (nullptr),
@@ -105,6 +107,7 @@ public:
 
     QDialogButtonBox* buttons;
 
+    QLabel*           topLabel;
     QComboBox*        categoryCombo;
     QComboBox*        parentCombo;
     QLineEdit*        titleEdit;
@@ -131,19 +134,18 @@ AlbumPropsEdit::AlbumPropsEdit(PAlbum* const album, bool create)
 
     logo->setPixmap(QIcon::fromTheme(QLatin1String("digikam")).pixmap(QSize(48,48)));
 
-    QLabel* const topLabel = new QLabel(page);
+    d->topLabel         = new QLabel(page);
+    d->topLabel->setAlignment(Qt::AlignLeft | Qt::AlignVCenter);
+    d->topLabel->setWordWrap(false);
 
     if (create)
     {
-        topLabel->setText(i18n("<qt><b>Create new Album in<br/>\"%1\"</b></qt>", album->title()));
+        slotNewAlbumTextChanged(0);
     }
     else
     {
-        topLabel->setText(i18n("<qt><b>\"%1\"<br/>Album Properties</b></qt>", album->title()));
+        d->topLabel->setText(i18n("<qt><b>\"%1\"<br/>Album Properties</b></qt>", album->title()));
     }
-
-    topLabel->setAlignment(Qt::AlignLeft | Qt::AlignVCenter);
-    topLabel->setWordWrap(false);
 
     DLineWidget* const topLine = new DLineWidget(Qt::Horizontal);
 
@@ -215,7 +217,7 @@ AlbumPropsEdit::AlbumPropsEdit(PAlbum* const album, bool create)
 
     QGridLayout* const grid = new QGridLayout();
     grid->addWidget(logo,             0, 0, 1, 1);
-    grid->addWidget(topLabel,         0, 1, 1, 1);
+    grid->addWidget(d->topLabel,      0, 1, 1, 1);
     grid->addWidget(topLine,          1, 0, 1, 2);
     grid->addWidget(titleLabel,       2, 0, 1, 1);
     grid->addWidget(d->titleEdit,     2, 1, 1, 1);
@@ -298,6 +300,9 @@ AlbumPropsEdit::AlbumPropsEdit(PAlbum* const album, bool create)
 
     connect(dateHighButton, SIGNAL(clicked()),
             this, SLOT(slotDateHighButtonClicked()));
+
+    connect(d->parentCombo, SIGNAL(activated(int)),
+            this, SLOT(slotNewAlbumTextChanged(int)));
 
     connect(d->buttons->button(QDialogButtonBox::Ok), SIGNAL(clicked()),
             this, SLOT(accept()));
@@ -414,6 +419,22 @@ void AlbumPropsEdit::slotTitleChanged(const QString& newtitle)
     QRegExp emptyTitle = QRegExp(QLatin1String("^\\s*$"));
     bool enable        = (!emptyTitle.exactMatch(newtitle) && !newtitle.isEmpty());
     d->buttons->button(QDialogButtonBox::Ok)->setEnabled(enable);
+}
+
+void AlbumPropsEdit::slotNewAlbumTextChanged(int index)
+{
+    QString title;
+
+    if (index == 0)
+    {
+        title = d->album->title();
+    }
+    else
+    {
+        title = CollectionManager::instance()->albumRootLabel(d->album->albumRootId());
+    }
+
+    d->topLabel->setText(i18n("<qt><b>Create new Album in<br/>\"%1\"</b></qt>", title));
 }
 
 void AlbumPropsEdit::slotDateLowButtonClicked()
