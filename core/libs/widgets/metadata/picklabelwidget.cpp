@@ -56,14 +56,14 @@ class Q_DECL_HIDDEN PickLabelWidget::Private
 public:
 
     explicit Private()
-      : pickBtns(nullptr),
-        desc(nullptr),
-        btnNone(nullptr),
-        btnRej(nullptr),
-        btnPndg(nullptr),
-        btnAccpt(nullptr),
-        descBox(nullptr),
-        shortcut(nullptr)
+      : pickBtns    (nullptr),
+        desc        (nullptr),
+        btnNone     (nullptr),
+        btnRej      (nullptr),
+        btnPndg     (nullptr),
+        btnAccpt    (nullptr),
+        descBox     (nullptr),
+        shortcut    (nullptr)
     {
     }
 
@@ -83,7 +83,7 @@ public:
 
 PickLabelWidget::PickLabelWidget(QWidget* const parent)
     : DVBox(parent),
-      d(new Private)
+      d    (new Private)
 {
     setAttribute(Qt::WA_DeleteOnClose);
     setFocusPolicy(Qt::NoFocus);
@@ -226,7 +226,7 @@ bool PickLabelWidget::eventFilter(QObject* obj, QEvent* ev)
 
     // pass the event on to the parent class
 
-    return QWidget::eventFilter(obj, ev);
+    return DVBox::eventFilter(obj, ev);
 }
 
 void PickLabelWidget::setPickLabels(const QList<PickLabel>& list)
@@ -254,7 +254,7 @@ QList<PickLabel> PickLabelWidget::colorLabels() const
 
 QIcon PickLabelWidget::buildIcon(PickLabel label)
 {
-    switch(label)
+    switch (label)
     {
         case RejectedLabel:
             return QIcon::fromTheme(QLatin1String("flag-red"));
@@ -281,7 +281,7 @@ QString PickLabelWidget::labelPickName(PickLabel label)
 {
     QString name;
 
-    switch(label)
+    switch (label)
     {
         case RejectedLabel:
             name = i18n("Rejected");
@@ -320,7 +320,7 @@ public:
 
 PickLabelSelector::PickLabelSelector(QWidget* const parent)
     : QPushButton(parent),
-      d(new Private)
+      d          (new Private)
 {
     QMenu* const popup          = new QMenu(this);
     setMenu(popup);

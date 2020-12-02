@@ -57,20 +57,20 @@ class Q_DECL_HIDDEN ColorLabelWidget::Private
 public:
 
     explicit Private()
-      : colorBtns(nullptr),
-        desc(nullptr),
-        btnNone(nullptr),
-        btnRed(nullptr),
-        btnOrange(nullptr),
-        btnYellow(nullptr),
-        btnGreen(nullptr),
-        btnBlue(nullptr),
-        btnMagenta(nullptr),
-        btnGray(nullptr),
-        btnBlack(nullptr),
-        btnWhite(nullptr),
-        descBox(nullptr),
-        shortcut(nullptr)
+      : colorBtns   (nullptr),
+        desc        (nullptr),
+        btnNone     (nullptr),
+        btnRed      (nullptr),
+        btnOrange   (nullptr),
+        btnYellow   (nullptr),
+        btnGreen    (nullptr),
+        btnBlue     (nullptr),
+        btnMagenta  (nullptr),
+        btnGray     (nullptr),
+        btnBlack    (nullptr),
+        btnWhite    (nullptr),
+        descBox     (nullptr),
+        shortcut    (nullptr)
     {
     }
 
@@ -96,7 +96,7 @@ public:
 
 ColorLabelWidget::ColorLabelWidget(QWidget* const parent)
     : DVBox(parent),
-      d(new Private)
+      d    (new Private)
 {
     setAttribute(Qt::WA_DeleteOnClose);
     setFocusPolicy(Qt::NoFocus);
@@ -335,7 +335,7 @@ bool ColorLabelWidget::eventFilter(QObject* obj, QEvent* ev)
 
     // pass the event on to the parent class
 
-    return QWidget::eventFilter(obj, ev);
+    return DVBox::eventFilter(obj, ev);
 }
 
 void ColorLabelWidget::setColorLabels(const QList<ColorLabel>& list)
@@ -495,7 +495,7 @@ public:
 
 ColorLabelSelector::ColorLabelSelector(QWidget* parent)
     : QPushButton(parent),
-      d(new Private)
+      d          (new Private)
 {
     QMenu* const popup          = new QMenu(this);
     setMenu(popup);

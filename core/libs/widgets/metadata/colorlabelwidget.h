@@ -48,7 +48,7 @@ class DIGIKAM_EXPORT ColorLabelWidget : public DVBox
 
 public:
 
-    explicit ColorLabelWidget(QWidget* const parent=nullptr);
+    explicit ColorLabelWidget(QWidget* const parent = nullptr);
     ~ColorLabelWidget() override;
 
     /**
@@ -75,7 +75,7 @@ public:
     static QColor  labelColor(ColorLabel label);
     static QString labelColorName(ColorLabel label);
 
-    static QIcon buildIcon(ColorLabel label, int size=12);
+    static QIcon buildIcon(ColorLabel label, int size = 12);
 
 Q_SIGNALS:
 
@@ -103,7 +103,7 @@ class DIGIKAM_EXPORT ColorLabelSelector : public QPushButton
 
 public:
 
-    explicit ColorLabelSelector(QWidget* const parent=nullptr);
+    explicit ColorLabelSelector(QWidget* const parent = nullptr);
     ~ColorLabelSelector() override;
 
     void setColorLabel(ColorLabel label);
@@ -133,7 +133,7 @@ class DIGIKAM_EXPORT ColorLabelMenuAction : public QMenu
 
 public:
 
-    explicit ColorLabelMenuAction(QMenu* const parent=nullptr);
+    explicit ColorLabelMenuAction(QMenu* const parent = nullptr);
     ~ColorLabelMenuAction() override;
 
 Q_SIGNALS:

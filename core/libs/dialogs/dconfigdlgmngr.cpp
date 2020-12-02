@@ -331,7 +331,7 @@ bool DConfigDlgMngr::parseChildren(const QWidget* widget, bool trackChanges)
 
                                 if (notifySignal.isValid())
                                 {
-                                    connect(childWidget, notifySignal,
+                                    connect(childWidget, notifySignal,          // clazy:exclude=connect-non-signal
                                             this, widgetModifiedSignal);
 
                                     changeSignalFound = true;
