@@ -208,4 +208,5 @@ BUGFIXES:
 191 ==> 429820 - Radio buttons vs. checkboxes for Tags Matching Condition "OR/AND" chooser.
 192 ==> 429820 - Checkboxes should be radio buttons in Tags Matching Condition "OR/AND" chooser.
 193 ==> 429827 - Clarify parent when creating new album (UI shows a mismatch).
-194 ==> 
+194 ==> 429931 - Small Typo on web page.
+195 ==> 
