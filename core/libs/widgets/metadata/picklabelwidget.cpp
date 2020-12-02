@@ -226,7 +226,7 @@ bool PickLabelWidget::eventFilter(QObject* obj, QEvent* ev)
 
     // pass the event on to the parent class
 
-    return QWidget::eventFilter(obj, ev);
+    return DVBox::eventFilter(obj, ev);
 }
 
 void PickLabelWidget::setPickLabels(const QList<PickLabel>& list)
