@@ -209,4 +209,6 @@ BUGFIXES:
 192 ==> 429820 - Checkboxes should be radio buttons in Tags Matching Condition "OR/AND" chooser.
 193 ==> 429827 - Clarify parent when creating new album (UI shows a mismatch).
 194 ==> 429931 - Small Typo on web page.
-195 ==> 
+195 ==> 429995 - Unexpected Media Server listening on *:8200 - Should have been informed / given the option during 1st run setup.
+196 ==> 
+
