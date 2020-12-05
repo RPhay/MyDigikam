@@ -26,6 +26,7 @@ BUILDING_DIR="`pwd`/temp.build"
 # sudo /usr/libexec/PlistBuddy -c "Set MinimumSDKVersion 10.13" /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Info.plist
 #
 # Possible values:
+# 11.0  : BigSur       :          : Qt                                      5.12, 5.13, 5.14, 5.15
 # 10.15 : Catalina     :          : Qt                                5.11, 5.12, 5.13, 5.14
 # 10.14 : Mojave       : tested   : Qt                     5.9, 5.10, 5.11, 5.12, 5.13, 5.14
 # 10.13 : High Sierra  : tested   : Qt                     5.9, 5.10, 5.11, 5.12, 5.13, 5.14
