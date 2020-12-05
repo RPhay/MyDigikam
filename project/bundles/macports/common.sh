@@ -36,9 +36,10 @@ fi
 
 export MACOSX_DEPLOYMENT_TARGET=$OSX_MIN_TARGET
 
-OSX_MAJOR=`echo $MACOSX_DEPLOYMENT_TARGET | awk -F '.' '{print $1 "." $2}'| cut -d . -f 2`
+MACOS_MAJOR=`echo $MACOSX_DEPLOYMENT_TARGET | awk -F '.' '{print $1 "." $2}'| cut -d . -f 1`
+MACOS_MINOR=`echo $MACOSX_DEPLOYMENT_TARGET | awk -F '.' '{print $1 "." $2}'| cut -d . -f 2`
 
-if [[ $OSX_MAJOR -lt 9 ]]; then
+if [[ $MACOS_MAJOR -lt 11 && $MACOS_MINOR -lt 9 ]]; then
     export CXXFLAGS=-stdlib=libc++
 fi
 
