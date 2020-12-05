@@ -42,6 +42,7 @@ public:
     ~MapListTrainingDataProvider() override
     {
         qDeleteAll(imagesToTrain);
+        imagesToTrain.clear();
     }
 
     ImageListProvider* newImages(const Identity& identity) override
@@ -49,7 +50,11 @@ public:
         if (imagesToTrain.contains(identity.id()))
         {
             QListImageListProvider* const provider = imagesToTrain.value(identity.id());
-            provider->reset();
+
+            if (provider)
+            {
+                provider->reset();
+            }
 
             return provider;
         }
