@@ -50,7 +50,8 @@
 #include "iofilesettings.h"
 
 DImgAbstractHistoryTest::DImgAbstractHistoryTest(QObject* const parent)
-    : QObject(parent)
+    : QObject(parent),
+      m_im   (nullptr)
 {
 }
 
