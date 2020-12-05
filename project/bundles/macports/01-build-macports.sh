@@ -218,7 +218,7 @@ echo "---------- Building digiKam dependencies with Macports"
 
 # With OSX less than El Capitan, we need a more recent Clang compiler than one provided by XCode.
 
-if [[ $MAJOR_OSX_VERSION -lt 10 ]]; then
+if [[ $MAJOR_OSX_VERSION -lt 11 && $MINOR_OSX_VERSION -lt 10 ]]; then
 
     echo "---------- Install more recent Clang compiler from Macports for specific ports"
     port install clang_select

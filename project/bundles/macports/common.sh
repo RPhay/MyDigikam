@@ -110,44 +110,60 @@ echo "Elaspsed time for script execution : $(($difftimelps / 3600 )) hours $((($
 
 ########################################################################
 # Set strings with detected MacOS info :
-#    $MAJOR_OSX_VERSION : detected MacOS major ID (as 7 for 10.7 or 10 for 10.10)
+#    $MAJOR_OSX_VERSION : detected MacOS major ID (as 10 or 11)
+#    $MINOR_OSX_VERSION : detected MacOS minor ID (as 7 for 10.7 or 10 for 10.10)
 #    $OSX_CODE_NAME     : detected MacOS code name
 OsxCodeName()
 {
 
-MAJOR_OSX_VERSION=$(sw_vers -productVersion | awk -F '.' '{print $1 "." $2}'| cut -d . -f 2)
+MAJOR_OSX_VERSION=$(sw_vers -productVersion | awk -F '.' '{print $1 "." $2}'| cut -d . -f 1)
+MINOR_OSX_VERSION=$(sw_vers -productVersion | awk -F '.' '{print $1 "." $2}'| cut -d . -f 2)
 
-if   [[ $MAJOR_OSX_VERSION == "13" ]]
-    then OSX_CODE_NAME="HighSierra"
-elif [[ $MAJOR_OSX_VERSION == "12" ]]
-    then OSX_CODE_NAME="Sierra"
-elif [[ $MAJOR_OSX_VERSION == "11" ]]
-    then OSX_CODE_NAME="ElCapitan"
-elif [[ $MAJOR_OSX_VERSION == "10" ]]
-    then OSX_CODE_NAME="Yosemite"
-elif [[ $MAJOR_OSX_VERSION == "9" ]]
-    then OSX_CODE_NAME="Mavericks"
-elif [[ $MAJOR_OSX_VERSION == "8" ]]
-    then OSX_CODE_NAME="MountainLion"
-elif [[ $MAJOR_OSX_VERSION == "7" ]]
-    then OSX_CODE_NAME="Lion"
-elif [[ $MAJOR_OSX_VERSION == "6" ]]
-    then OSX_CODE_NAME="SnowLeopard"
-elif [[ $MAJOR_OSX_VERSION == "5" ]]
-    then OSX_CODE_NAME="Leopard"
-elif [[ $MAJOR_OSX_VERSION == "4" ]]
-    then OSX_CODE_NAME="Tiger"
-elif [[ $MAJOR_OSX_VERSION == "3" ]]
-    then OSX_CODE_NAME="Panther"
-elif [[ $MAJOR_OSX_VERSION == "2" ]]
-    then OSX_CODE_NAME="Jaguar"
-elif [[ $MAJOR_OSX_VERSION == "1" ]]
-    then OSX_CODE_NAME="Puma"
-elif [[ $MAJOR_OSX_VERSION == "0" ]]
-    then OSX_CODE_NAME="Cheetah"
+if   [[ $MAJOR_OSX_VERSION == "10" ]] ; then
+
+    if   [[ $MAJOR_OSX_VERSION == "16" ]]
+        then OSX_CODE_NAME="Catalina"
+    elif [[ $MAJOR_OSX_VERSION == "14" ]]
+        then OSX_CODE_NAME="Mojave"
+    elif [[ $MAJOR_OSX_VERSION == "13" ]]
+        then OSX_CODE_NAME="HighSierra"
+    elif [[ $MAJOR_OSX_VERSION == "12" ]]
+        then OSX_CODE_NAME="Sierra"
+    elif [[ $MAJOR_OSX_VERSION == "11" ]]
+        then OSX_CODE_NAME="ElCapitan"
+    elif [[ $MAJOR_OSX_VERSION == "10" ]]
+        then OSX_CODE_NAME="Yosemite"
+    elif [[ $MAJOR_OSX_VERSION == "9" ]]
+        then OSX_CODE_NAME="Mavericks"
+    elif [[ $MAJOR_OSX_VERSION == "8" ]]
+        then OSX_CODE_NAME="MountainLion"
+    elif [[ $MAJOR_OSX_VERSION == "7" ]]
+        then OSX_CODE_NAME="Lion"
+    elif [[ $MAJOR_OSX_VERSION == "6" ]]
+        then OSX_CODE_NAME="SnowLeopard"
+    elif [[ $MAJOR_OSX_VERSION == "5" ]]
+        then OSX_CODE_NAME="Leopard"
+    elif [[ $MAJOR_OSX_VERSION == "4" ]]
+        then OSX_CODE_NAME="Tiger"
+    elif [[ $MAJOR_OSX_VERSION == "3" ]]
+        then OSX_CODE_NAME="Panther"
+    elif [[ $MAJOR_OSX_VERSION == "2" ]]
+        then OSX_CODE_NAME="Jaguar"
+    elif [[ $MAJOR_OSX_VERSION == "1" ]]
+        then OSX_CODE_NAME="Puma"
+    elif [[ $MAJOR_OSX_VERSION == "0" ]]
+        then OSX_CODE_NAME="Cheetah"
+    fi
+
+elif [[ $MAJOR_OSX_VERSION == "11" ]] ; then
+
+    if   [[ $MAJOR_OSX_VERSION == "0" ]]
+        then OSX_CODE_NAME="BigSur"
+    fi
+
 fi
 
-echo -e "---------- Detected OSX version 10.$MAJOR_OSX_VERSION and code name $OSX_CODE_NAME"
+echo -e "---------- Detected OSX version $MAJOR_OSX_VERSION.$MINOR_OSX_VERSION and code name $OSX_CODE_NAME"
 
 }
 
