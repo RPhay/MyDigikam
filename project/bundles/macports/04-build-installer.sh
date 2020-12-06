@@ -341,6 +341,8 @@ echo "---------- Copying Qt Web Backend files..."
 
 # QWebEngine bin data files.
 
+mkdir -p $TEMPROOT/libexec/qt5/libexec/
+
 if [[ $DK_QTWEBENGINE = 1 ]] ; then
 
     # QtWebEngine runtime process
