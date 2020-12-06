@@ -211,4 +211,5 @@ BUGFIXES:
 194 ==> 429931 - Small Typo on web page.
 195 ==> 429995 - Unexpected Media Server listening on *:8200 - Should have been informed / given the option during 1st run setup.
 196 ==> 430056 - Rotating a photo confirms its unconfirmed face tags.
-197 ==> 
+197 ==> 430094 - Crash when opening configure dialog.
+198 ==> 

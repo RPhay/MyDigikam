@@ -191,6 +191,7 @@ Setup::Setup(QWidget* const parent, Setup::Page page)
         showPage((Page)group.readEntry(QLatin1String("Setup Page"), (int)EditorPage));
     }
 
+    winId();
     Digikam::DXmlGuiWindow::restoreWindowSize(windowHandle(), group);
     resize(windowHandle()->size());
 }
