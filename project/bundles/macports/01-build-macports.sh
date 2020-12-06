@@ -265,6 +265,7 @@ port install \
              ImageMagick
 
 if [[ $DK_QTWEBENGINE = 1 ]] ; then
+    export SYSTEM_VERSION_COMPAT=1
     port install qt5-qtwebengine
 fi
 
