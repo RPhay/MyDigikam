@@ -499,6 +499,7 @@ void WaterMark::slotAssignSettings2Widget()
     d->useTextRadioButton->setChecked(!settings()[QLatin1String("Use image")].toBool());
     d->imageFileUrlRequester->setFileDlgPath(settings()[QLatin1String("Watermark image")].toString());
     d->textEdit->setText(settings()[QLatin1String("Text")].toString());
+    d->extendedFontChooserWidget->setFont(qvariant_cast<QFont>(settings()[QLatin1String("Font")]));
     d->fontColorButton->setColor(settings()[QLatin1String("Color")].toString());
     d->textOpacity->setValue(settings()[QLatin1String("Text opacity")].toInt());
     d->useBackgroundCheckBox->setChecked(settings()[QLatin1String("Use background")].toBool());
@@ -582,7 +583,7 @@ bool WaterMark::toolOperations()
     int yMargin                                  = settings()[QLatin1String("Y margin")].toInt();
     bool useImage                                = settings()[QLatin1String("Use image")].toBool();
     QString text                                 = settings()[QLatin1String("Text")].toString();
-    QFont font                                   = qvariant_cast<QFont>(settings()[QLatin1String("Font")]);;
+    QFont font                                   = qvariant_cast<QFont>(settings()[QLatin1String("Font")]);
 
     QColor fontColor                             = settings()[QLatin1String("Color")].toString();
     int textOpacity                              = settings()[QLatin1String("Text opacity")].toInt();
