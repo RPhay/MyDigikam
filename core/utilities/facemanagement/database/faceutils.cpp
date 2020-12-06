@@ -406,12 +406,10 @@ QSize FaceUtils::rotateFaces(const ItemInfo& info,
     }
 
     QSize newSize = info.dimensions();
-    QMultiMap<QString, QRect> adjustedFaces;
 
     foreach (const FaceTagsIface& dface, facesList)
     {
         QRect faceRect = dface.region().toRect();
-        QString name   = FaceTags::faceNameForTag(dface.tagId());
 
         TagRegion::reverseToOrientation(faceRect,
                                         oldOrientation,
@@ -421,43 +419,7 @@ QSize FaceUtils::rotateFaces(const ItemInfo& info,
                                                  newOrientation,
                                                  info.dimensions());
 
-        if (dface.tagId() == FaceTags::unknownPersonTagId())
-        {
-            name.clear();
-        }
-
-        adjustedFaces.insert(name, faceRect);
-    }
-
-    /**
-     *  Delete all old faces and add rotated ones
-     */
-    FaceTagsEditor().removeAllFaces(info.id());
-
-    QMultiMap<QString, QRect>::ConstIterator it = adjustedFaces.constBegin();
-
-    for ( ; it != adjustedFaces.constEnd() ; ++it)
-    {
-        TagRegion region(it.value());
-
-        if (it.key().isEmpty())
-        {
-            int tagId = FaceTags::unknownPersonTagId();
-            FaceTagsIface face(FaceTagsIface::UnknownName, info.id(), tagId, region);
-
-            addManually(face);
-        }
-        else
-        {
-            int tagId = FaceTags::getOrCreateTagForPerson(it.key());
-
-            if (!tagId)
-            {
-                qCDebug(DIGIKAM_GENERAL_LOG) << "Failed to create a person tag for name" << it.key();
-            }
-
-            add(info.id(), tagId, region, false);
-        }
+        changeRegion(dface, TagRegion(faceRect));
     }
 
     return newSize;

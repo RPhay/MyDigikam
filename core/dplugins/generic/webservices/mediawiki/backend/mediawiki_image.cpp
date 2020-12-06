@@ -36,6 +36,7 @@ class Q_DECL_HIDDEN Image::Private
 public:
 
     Private()
+      : namespaceId(-1)
     {
     }
 
@@ -46,7 +47,6 @@ public:
 Image::Image()
     : d(new Private())
 {
-    d->namespaceId = -1;
 }
 
 Image::Image(const Image& other)

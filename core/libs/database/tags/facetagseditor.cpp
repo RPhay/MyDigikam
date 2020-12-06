@@ -251,8 +251,10 @@ FaceTagsIface FaceTagsEditor::changeSuggestedName(const FaceTagsIface& previousE
     if (!FaceTags::isTheUnknownPerson(unconfirmedNameTagId) &&
         !FaceTags::isTheUnconfirmedPerson(unconfirmedNameTagId))
     {
-        ItemTagPair unconfirmedAssociation(newEntry.imageId(),FaceTags::unconfirmedPersonTagId());
-        unconfirmedAssociation.addProperty(ImageTagPropertyName::autodetectedPerson(), newEntry.getAutodetectedPersonString());
+        ItemTagPair unconfirmedAssociation(newEntry.imageId(),
+                                           FaceTags::unconfirmedPersonTagId());
+        unconfirmedAssociation.addProperty(ImageTagPropertyName::autodetectedPerson(),
+                                           newEntry.getAutodetectedPersonString());
     }
 
     return newEntry;
@@ -453,10 +455,13 @@ void FaceTagsEditor::removeFaceAndTag(ItemTagPair& pair, const FaceTagsIface& fa
         pair.removeProperty(FaceTagsIface::attributeForType(FaceTagsIface::FaceForTraining), regionString);
     }
 
-    // Remove the unconfirmed property for the image id and the unconfirmed tag with the original tag id and the confirmed region
+    // Remove the unconfirmed property for the image id and the unconfirmed tag
+    // with the original tag id and the confirmed region
 
-    ItemTagPair unconfirmedAssociation(face.imageId(),FaceTags::unconfirmedPersonTagId());
-    unconfirmedAssociation.removeProperty(ImageTagPropertyName::autodetectedPerson(),face.getAutodetectedPersonString());
+    ItemTagPair unconfirmedAssociation(face.imageId(),
+                                       FaceTags::unconfirmedPersonTagId());
+    unconfirmedAssociation.removeProperty(ImageTagPropertyName::autodetectedPerson(),
+                                          face.getAutodetectedPersonString());
 
     // Tag assigned and no other entry left?
 
@@ -481,6 +486,14 @@ FaceTagsIface FaceTagsEditor::changeRegion(const FaceTagsIface& face, const TagR
     FaceTagsIface newFace = face;
     newFace.setRegion(newRegion);
     addFaceAndTag(pair, newFace, FaceTagsIface::attributesForFlags(face.type()), false);
+
+    if (face.type() == FaceTagsIface::UnconfirmedName)
+    {
+        ItemTagPair unconfirmedAssociation(newFace.imageId(),
+                                           FaceTags::unconfirmedPersonTagId());
+        unconfirmedAssociation.addProperty(ImageTagPropertyName::autodetectedPerson(),
+                                           newFace.getAutodetectedPersonString());
+    }
 
     return newFace;
 
