@@ -267,7 +267,10 @@ port install \
 if [[ $DK_QTWEBENGINE = 1 ]] ; then
     export SYSTEM_VERSION_COMPAT=1
     port install qt5-qtwebengine
+else
+    port install qt5-qtwebkit
 fi
+
 
 #             sane-backends
 
@@ -300,9 +303,9 @@ cmake $ORIG_WD/../3rdparty \
        -DENABLE_QTWEBENGINE=$DK_QTWEBENGINE \
        -Wno-dev
 
-if [[ $DK_QTWEBENGINE = 0 ]] ; then
-    cmake --build . --config RelWithDebInfo --target ext_qtwebkit    -- -j$CPU_CORES
-fi
+#if [[ $DK_QTWEBENGINE = 0 ]] ; then
+#    cmake --build . --config RelWithDebInfo --target ext_qtwebkit    -- -j$CPU_CORES
+#fi
 
 cmake --build . --config RelWithDebInfo --target ext_opencv      -- -j$CPU_CORES
 
