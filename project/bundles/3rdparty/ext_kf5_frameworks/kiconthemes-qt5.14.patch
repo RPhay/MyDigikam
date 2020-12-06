@@ -1,0 +1,14 @@
+diff --git a/src/tools/ksvg2icns/ksvg2icns.cpp b/src/tools/ksvg2icns/ksvg2icns.cpp
+index 08a7805..b217f84 100644
+--- a/src/tools/ksvg2icns/ksvg2icns.cpp
++++ b/src/tools/ksvg2icns/ksvg2icns.cpp
+@@ -35,7 +35,9 @@ static bool writeImage(QSvgRenderer &svg, int size, const QString &outFile1, con
+     out.fill(Qt::transparent);
+ 
+     QPainter painter(&out);
++#if (QT_VERSION >= QT_VERSION_CHECK(5, 15, 0))
+     svg.setAspectRatioMode(Qt::KeepAspectRatio);
++#endif
+     svg.render(&painter);
+     painter.end();
+ 

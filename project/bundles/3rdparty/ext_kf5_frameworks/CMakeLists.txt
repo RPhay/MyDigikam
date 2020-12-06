@@ -228,7 +228,7 @@ InstallKF5Component(kwidgetsaddons      ${KF5_VERSION} ""                       
 InstallKF5Component(kitemviews          ${KF5_VERSION} ""                                                                   "")
 InstallKF5Component(kcompletion         ${KF5_VERSION} ""                                                                   "")
 InstallKF5Component(kconfigwidgets      ${KF5_VERSION} ""                                                                   "")
-InstallKF5Component(kiconthemes         ${KF5_VERSION} ""                                                                   "")
+InstallKF5Component(kiconthemes         ${KF5_VERSION} ""                                                                   "kiconthemes-qt5.14.patch")
 InstallKF5Component(kservice            ${KF5_VERSION} ""                                                                   "")
 InstallKF5Component(kglobalaccel        ${KF5_VERSION} ""                                                                   "")
 InstallKF5Component(kcalendarcore       ${KF5_VERSION} ""                                                                   "")
