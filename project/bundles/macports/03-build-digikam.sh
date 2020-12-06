@@ -119,9 +119,9 @@ sed -e "s/DIGIKAMSC_COMPILE_PO=OFF/DIGIKAMSC_COMPILE_PO=ON/g"   ./bootstrap.macp
 sed -e "s/DBUILD_TESTING=ON/DBUILD_TESTING=OFF/g"               ./bootstrap.macports > ./tmp.macports ; mv -f ./tmp.macports ./bootstrap.macports
 sed -e "s/DENABLE_DBUS=ON/DENABLE_DBUS=OFF/g"                   ./bootstrap.macports > ./tmp.macports ; mv -f ./tmp.macports ./bootstrap.macports
 
-if [[ $DK_QTWEBENGINE = 1 ]] ; then
+if [[ $DK_QTWEBENGINE = 0 ]] ; then
 
-    sed -e "s/DENABLE_QWEBENGINE=OFF/DENABLE_QWEBENGINE=ON/g"   ./bootstrap.macports > ./tmp.macports ; mv -f ./tmp.macports ./bootstrap.macports
+    sed -e "s/DENABLE_QWEBENGINE=ON/DENABLE_QWEBENGINE=OFF/g"   ./bootstrap.macports > ./tmp.macports ; mv -f ./tmp.macports ./bootstrap.macports
 
 fi
 
@@ -176,7 +176,6 @@ cmake $ORIG_WD/../3rdparty \
        -DCMAKE_INSTALL_PREFIX:PATH=$INSTALL_PREFIX \
        -DINSTALL_ROOT=$INSTALL_PREFIX \
        -DEXTERNALS_DOWNLOAD_DIR=$DOWNLOAD_DIR \
-       -DENABLE_QTWEBENGINE=$DK_QTWEBENGINE \
        -Wno-dev
 
 cmake --build . --config RelWithDebInfo --target ext_gmic_qt    -- -j$CPU_CORES
