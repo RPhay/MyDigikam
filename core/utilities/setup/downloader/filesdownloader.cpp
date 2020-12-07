@@ -27,6 +27,7 @@
 
 #include <QDir>
 #include <QLabel>
+#include <QTimer>
 #include <QByteArray>
 #include <QMessageBox>
 #include <QPushButton>
@@ -260,6 +261,11 @@ void FilesDownloader::download()
             d->reply, SLOT(ignoreSslErrors()));
 }
 
+void FilesDownloader::nextDownload()
+{
+    QTimer::singleShot(100, this, SLOT(slotDownload()));
+}
+
 bool FilesDownloader::exists(int index) const
 {
     QString app  = qApp->applicationName();
@@ -296,7 +302,7 @@ void FilesDownloader::slotDownloaded(QNetworkReply* reply)
 
         reply->deleteLater();
 
-        slotDownload();
+        nextDownload();
 
         return;
     }
@@ -313,7 +319,7 @@ void FilesDownloader::slotDownloaded(QNetworkReply* reply)
 
         reply->deleteLater();
 
-        slotDownload();
+        nextDownload();
 
         return;
     }
@@ -346,11 +352,25 @@ void FilesDownloader::slotDownloaded(QNetworkReply* reply)
 
     reply->deleteLater();
 
-    slotDownload();
+    nextDownload();
 }
 
 void FilesDownloader::slotDownloadProgress(qint64 bytesReceived, qint64 bytesTotal)
 {
+    if (d->reply)
+    {
+        if (bytesReceived > d->files.at(d->index + 3).toInt())
+        {
+            d->reply->abort();
+            d->reply = nullptr;
+            d->error = i18n("File on the server is too large.");
+
+            nextDownload();
+
+            return;
+        }
+    }
+
     d->progress->setMaximum(bytesTotal);
     d->progress->setValue(bytesReceived);
 }

@@ -51,6 +51,7 @@ public:
 private:
 
     void download();
+    void nextDownload();
     bool exists(int index) const;
 
 private Q_SLOTS:
