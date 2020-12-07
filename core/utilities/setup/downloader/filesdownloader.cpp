@@ -255,6 +255,9 @@ void FilesDownloader::download()
 
     connect(d->reply, SIGNAL(downloadProgress(qint64,qint64)),
             this, SLOT(slotDownloadProgress(qint64,qint64)));
+
+    connect(d->reply, SIGNAL(sslErrors(QList<QSslError>)),
+            d->reply, SLOT(ignoreSslErrors()));
 }
 
 bool FilesDownloader::exists(int index) const
