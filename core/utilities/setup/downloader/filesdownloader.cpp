@@ -357,18 +357,16 @@ void FilesDownloader::slotDownloaded(QNetworkReply* reply)
 
 void FilesDownloader::slotDownloadProgress(qint64 bytesReceived, qint64 bytesTotal)
 {
-    if (d->reply)
+    if (d->reply && (bytesReceived > d->files.at(d->index + 3).toInt()))
     {
-        if (bytesReceived > d->files.at(d->index + 3).toInt())
-        {
-            d->reply->abort();
-            d->reply = nullptr;
-            d->error = i18n("File on the server is too large.");
+        d->reply->abort();
+        d->reply = nullptr;
 
-            nextDownload();
+        d->error = i18n("File on the server is too large.");
 
-            return;
-        }
+        nextDownload();
+
+        return;
     }
 
     d->progress->setMaximum(bytesTotal);
