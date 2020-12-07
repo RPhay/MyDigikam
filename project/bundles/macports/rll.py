@@ -150,8 +150,8 @@ def embed_dependencies(binary,
             else:
                 p = e # fallthrough to the exception below #XXX icky bad logic, there must be a way to avoid saying exists() twice
 
-        if not os.path.exists(p):
-            raise Exception("Dependent library '%s' not found. Make sure it is installed." % e)
+#        if not os.path.exists(p):
+#            raise Exception("Dependent library '%s' not found. Make sure it is installed." % e)
 
         if not any(p.startswith(P) for P in SYSTEM):
 
