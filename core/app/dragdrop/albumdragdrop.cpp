@@ -432,9 +432,9 @@ QMimeData* AlbumDragDropHandler::createMimeData(const QList<Album*>& albums)
 
     PAlbum* const palbum = dynamic_cast<PAlbum*>(albums.first());
 
-    // Root and Trash Albums are not dragable
+    // Root or album root and Trash Albums are not dragable
 
-    if (!palbum || palbum->isRoot() || palbum->isTrashAlbum())
+    if (!palbum || palbum->isRoot() || palbum->isAlbumRoot() || palbum->isTrashAlbum())
     {
         return nullptr;
     }
