@@ -484,8 +484,15 @@ void DIO::slotOneProccessed(const QUrl& url)
 
         if (!info.isNull() && data->destAlbum())
         {
+            QString destName = info.name();
+
+            if (!data->destUrl(url).fileName().isEmpty())
+            {
+                destName = data->destUrl(url).fileName();
+            }
+
             CoreDbAccess().db()->moveItem(info.albumId(), info.name(),
-                                          data->destAlbum()->id(), info.name());
+                                          data->destAlbum()->id(), destName);
         }
     }
     else if (operation == IOJobData::Delete)

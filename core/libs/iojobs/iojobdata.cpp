@@ -26,6 +26,7 @@
 // Qt includes
 
 #include <QMutex>
+#include <QMutexLocker>
 
 // Local includes
 
@@ -200,6 +201,8 @@ void IOJobData::setSourceUrls(const QList<QUrl>& urls)
 void IOJobData::setDestUrl(const QUrl& srcUrl,
                            const QUrl& destUrl)
 {
+    QMutexLocker lock(&d->mutex);
+
     d->changeDestMap.insert(srcUrl, destUrl);
 }
 
@@ -245,15 +248,14 @@ QUrl IOJobData::destUrl(const QUrl& srcUrl) const
 
 QUrl IOJobData::getNextUrl() const
 {
-    d->mutex.lock();
+    QMutexLocker lock(&d->mutex);
+
     QUrl url;
 
     if (!d->sourceUrlList.isEmpty())
     {
         url = d->sourceUrlList.takeFirst();
     }
-
-    d->mutex.unlock();
 
     return url;
 }

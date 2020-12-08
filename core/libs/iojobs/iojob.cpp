@@ -134,7 +134,9 @@ void CopyOrMoveJob::run()
                 }
                 else
                 {
-                    destenation = DFileOperations::getUniqueFileUrl(destUrl).toLocalFile();
+                    QUrl renamed = DFileOperations::getUniqueFileUrl(destUrl);
+                    destenation  = renamed.toLocalFile();
+                    m_data->setDestUrl(srcUrl, renamed);
                 }
             }
             else

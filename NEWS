@@ -215,4 +215,5 @@ BUGFIXES:
 198 ==> 430103 - Move gallery trash.
 199 ==> 430132 - Some vertical videos are rotated sideways in preview player.
 200 ==> 430147 - Search and escaping of database wildcard characters in filenames.
-201 ==> 
+201 ==> 430134 - Face tags lost and captions mis-transferred after digiKam automatically renames a conflicting filename.
+202 ==> 
