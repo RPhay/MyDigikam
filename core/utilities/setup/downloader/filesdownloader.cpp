@@ -159,10 +159,8 @@ void FilesDownloader::startDownload()
     d->buttons->button(QDialogButtonBox::Ok)->setText(i18n("Download"));
     d->buttons->button(QDialogButtonBox::Ok)->setIcon(QIcon::fromTheme(QLatin1String("edit-download")));
 
-    QString path              = QStandardPaths::locate(QStandardPaths::GenericDataLocation,
-                                                       QString::fromLatin1("digikam"),
-                                                       QStandardPaths::LocateDirectory);
-    path                      = QDir::toNativeSeparators(path);
+    QString path              = QStandardPaths::writableLocation(QStandardPaths::DataLocation);
+    path                      = QDir::toNativeSeparators(path + QLatin1String("/facesengine"));
 
     QLabel* const infoLabel   = new QLabel(i18n("<p>For the face engine and red eye removal tool, digiKam "
                                                 "needs some large binary files. Some of these files were "
