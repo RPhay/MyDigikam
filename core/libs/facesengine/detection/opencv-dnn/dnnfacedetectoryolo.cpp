@@ -59,10 +59,10 @@ bool DNNFaceDetectorYOLO::loadModels()
     QString model   = QLatin1String("yolov3-face.cfg");
     QString data    = QLatin1String("yolov3-wider_16000.weights");
 
-    QString nnmodel = QStandardPaths::locate(QStandardPaths::GenericDataLocation,
-                                             QString::fromLatin1("digikam/facesengine/%1").arg(model));
-    QString nndata  = QStandardPaths::locate(QStandardPaths::GenericDataLocation,
-                                             QString::fromLatin1("digikam/facesengine/%1").arg(data));
+    QString nnmodel = QStandardPaths::locate(QStandardPaths::AppDataLocation,
+                                             QString::fromLatin1("facesengine/%1").arg(model));
+    QString nndata  = QStandardPaths::locate(QStandardPaths::AppDataLocation,
+                                             QString::fromLatin1("facesengine/%1").arg(data));
 
     if (!nnmodel.isEmpty() && !nndata.isEmpty())
     {

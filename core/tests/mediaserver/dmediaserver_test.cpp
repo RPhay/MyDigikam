@@ -46,7 +46,7 @@ int main(int argc, char* argv[])
     QList<QUrl>    list;
     MediaServerMap map;
 
-    QDir().mkpath(QStandardPaths::writableLocation(QStandardPaths::DataLocation));
+    QDir().mkpath(QStandardPaths::writableLocation(QStandardPaths::AppDataLocation));
 
     if (argc <= 1)
     {

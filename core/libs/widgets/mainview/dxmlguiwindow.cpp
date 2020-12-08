@@ -927,7 +927,7 @@ void DXmlGuiWindow::setupIconTheme()
     // this means e.g. for mac: "<APPDIR>/../Resources" and for win: "<APPDIR>/data".
 
     bool hasBreeze                = false;
-    const QString breezeIcons     = QStandardPaths::locate(QStandardPaths::DataLocation,
+    const QString breezeIcons     = QStandardPaths::locate(QStandardPaths::AppDataLocation,
                                                            QLatin1String("breeze.rcc"));
 
     if (!breezeIcons.isEmpty() && QFile::exists(breezeIcons))
@@ -938,7 +938,7 @@ void DXmlGuiWindow::setupIconTheme()
     }
 
     bool hasBreezeDark            = false;
-    const QString breezeDarkIcons = QStandardPaths::locate(QStandardPaths::DataLocation,
+    const QString breezeDarkIcons = QStandardPaths::locate(QStandardPaths::AppDataLocation,
                                                            QLatin1String("breeze-dark.rcc"));
 
     if (!breezeDarkIcons.isEmpty() && QFile::exists(breezeDarkIcons))

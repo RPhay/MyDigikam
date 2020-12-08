@@ -70,8 +70,8 @@ OpenfacePreprocessor::~OpenfacePreprocessor()
 bool OpenfacePreprocessor::loadModels()
 {
     QString name   = QLatin1String("shapepredictor.dat");
-    QString spdata = QStandardPaths::locate(QStandardPaths::GenericDataLocation,
-                                            QString::fromLatin1("digikam/facesengine/%1").arg(name));
+    QString spdata = QStandardPaths::locate(QStandardPaths::AppDataLocation,
+                                            QString::fromLatin1("facesengine/%1").arg(name));
     QFile model(spdata);
     RedEye::ShapePredictor* const temp = new RedEye::ShapePredictor();
 

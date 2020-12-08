@@ -174,9 +174,9 @@ int main(int argc, char* argv[])
     // If application storage place in home directory to save customized XML settings files do not exist, create it,
     // else QFile will not able to create new files as well.
 
-    if (!QFile::exists(QStandardPaths::writableLocation(QStandardPaths::DataLocation)))
+    if (!QFile::exists(QStandardPaths::writableLocation(QStandardPaths::AppDataLocation)))
     {
-        QDir().mkpath(QStandardPaths::writableLocation(QStandardPaths::DataLocation));
+        QDir().mkpath(QStandardPaths::writableLocation(QStandardPaths::AppDataLocation));
     }
 
     // If application cache place in home directory to save cached files do not exist, create it.

@@ -104,10 +104,10 @@ bool DNNFaceExtractor::loadModels()
     QString proto   = QLatin1String("ResNet-50-deploy.prototxt");
     QString model   = QLatin1String("ResNet-50-model.caffemodel");
 
-    QString nnproto = QStandardPaths::locate(QStandardPaths::GenericDataLocation,
-                                             QLatin1String("digikam/facesengine/%1").arg(proto));
-    QString nnmodel = QStandardPaths::locate(QStandardPaths::GenericDataLocation,
-                                             QLatin1String("digikam/facesengine/%1").arg(model)));
+    QString nnproto = QStandardPaths::locate(QStandardPaths::AppDataLocation,
+                                             QLatin1String("facesengine/%1").arg(proto));
+    QString nnmodel = QStandardPaths::locate(QStandardPaths::AppDataLocation,
+                                             QLatin1String("facesengine/%1").arg(model)));
 
     if (!nnproto.isEmpty() && !nnmodel.isEmpty())
     {
@@ -129,8 +129,8 @@ bool DNNFaceExtractor::loadModels()
     d->preprocessor->init(PreprocessorSelection::OPENFACE);
 
     QString name    = QLatin1String("openface_nn4.small2.v1.t7");
-    QString nnmodel = QStandardPaths::locate(QStandardPaths::GenericDataLocation,
-                                             QString::fromLatin1("digikam/facesengine/%1").arg(name));
+    QString nnmodel = QStandardPaths::locate(QStandardPaths::AppDataLocation,
+                                             QString::fromLatin1("facesengine/%1").arg(name));
     if (!nnmodel.isEmpty())
     {
         qCDebug(DIGIKAM_FACEDB_LOG) << nnmodel;

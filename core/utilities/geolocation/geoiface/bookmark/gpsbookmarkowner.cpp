@@ -73,7 +73,7 @@ GPSBookmarkOwner::GPSBookmarkOwner(GPSItemModel* const gpsItemModel, QWidget* co
 {
     d->parent = parent;
 
-    const QString bookmarksFileName = QStandardPaths::writableLocation(QStandardPaths::DataLocation) +
+    const QString bookmarksFileName = QStandardPaths::writableLocation(QStandardPaths::AppDataLocation) +
                                                                        QLatin1String("/geobookmarks.xml");
     d->bookmarkManager              = new BookmarksManager(bookmarksFileName, this);
     d->bookmarkManager->load();
