@@ -56,7 +56,7 @@ class Q_DECL_HIDDEN FilesDownloader::Private
 public:
 
     explicit Private()
-      : downloadUrl(QLatin1String("https://files.kde.org/digikam/")),
+      : downloadUrl(QLatin1String("http://files.kde.org/digikam/")),
         index      (0),
         buttons    (nullptr),
         progress   (nullptr),
