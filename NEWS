@@ -214,4 +214,5 @@ BUGFIXES:
 197 ==> 430094 - Crash when opening configure dialog.
 198 ==> 430103 - Move gallery trash.
 199 ==> 430132 - Some vertical videos are rotated sideways in preview player.
-200 ==> 
+200 ==> 430147 - Search and escaping of database wildcard characters in filenames.
+201 ==> 
