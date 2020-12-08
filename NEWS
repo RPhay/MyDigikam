@@ -213,4 +213,5 @@ BUGFIXES:
 196 ==> 430056 - Rotating a photo confirms its unconfirmed face tags.
 197 ==> 430094 - Crash when opening configure dialog.
 198 ==> 430103 - Move gallery trash.
-199 ==> 
+199 ==> 430132 - Some vertical videos are rotated sideways in preview player.
+200 ==> 
