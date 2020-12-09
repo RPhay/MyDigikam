@@ -158,7 +158,7 @@ if   [[ $MAJOR_OSX_VERSION == "10" ]] ; then
 
 elif [[ $MAJOR_OSX_VERSION == "11" ]] ; then
 
-    if   [[ $MAJOR_OSX_VERSION == "0" ]]
+    if   [[ $MINOR_OSX_VERSION == "0" ]]
         then OSX_CODE_NAME="BigSur"
     fi
 
