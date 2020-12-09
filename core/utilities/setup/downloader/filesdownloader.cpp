@@ -56,7 +56,7 @@ class Q_DECL_HIDDEN FilesDownloader::Private
 public:
 
     explicit Private()
-      : downloadUrl(QLatin1String("https://files.kde.org/digikam/")),
+      : downloadUrl(QLatin1String("http://files.kde.org/digikam/")),
         index      (0),
         buttons    (nullptr),
         progress   (nullptr),
@@ -159,10 +159,8 @@ void FilesDownloader::startDownload()
     d->buttons->button(QDialogButtonBox::Ok)->setText(i18n("Download"));
     d->buttons->button(QDialogButtonBox::Ok)->setIcon(QIcon::fromTheme(QLatin1String("edit-download")));
 
-    QString path              = QStandardPaths::locate(QStandardPaths::GenericDataLocation,
-                                                       QString::fromLatin1("digikam"),
-                                                       QStandardPaths::LocateDirectory);
-    path                      = QDir::toNativeSeparators(path);
+    QString path              = QStandardPaths::writableLocation(QStandardPaths::AppDataLocation);
+    path                      = QDir::toNativeSeparators(path + QLatin1String("/facesengine"));
 
     QLabel* const infoLabel   = new QLabel(i18n("<p>For the face engine and red eye removal tool, digiKam "
                                                 "needs some large binary files. Some of these files were "
@@ -268,10 +266,9 @@ void FilesDownloader::nextDownload()
 
 bool FilesDownloader::exists(int index) const
 {
-    QString app  = qApp->applicationName();
     QString file = d->files.at(index + 1).toString();
-    QString path = QStandardPaths::locate(QStandardPaths::GenericDataLocation,
-                                          QString::fromLatin1("%1/facesengine/%2").arg(app).arg(file));
+    QString path = QStandardPaths::locate(QStandardPaths::AppDataLocation,
+                                          QString::fromLatin1("facesengine/%1").arg(file));
 
     return (!path.isEmpty() && (QFileInfo(path).size() == d->files.at(index + 3).toInt()));
 }
@@ -324,7 +321,7 @@ void FilesDownloader::slotDownloaded(QNetworkReply* reply)
         return;
     }
 
-    QString path = QStandardPaths::writableLocation(QStandardPaths::DataLocation);
+    QString path = QStandardPaths::writableLocation(QStandardPaths::AppDataLocation);
     path        += QLatin1String("/facesengine");
 
     if (!QFileInfo::exists(path))

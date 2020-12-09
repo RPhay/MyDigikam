@@ -81,7 +81,7 @@ WorkflowManager* WorkflowManager::instance()
 WorkflowManager::WorkflowManager()
     : d(new Private)
 {
-    d->file = QStandardPaths::writableLocation(QStandardPaths::DataLocation) + QLatin1String("/queue.xml");
+    d->file = QStandardPaths::writableLocation(QStandardPaths::AppDataLocation) + QLatin1String("/queue.xml");
 }
 
 WorkflowManager::~WorkflowManager()

@@ -32,7 +32,6 @@
 
 #include <QFile>
 #include <QDataStream>
-#include <QApplication>
 #include <QListIterator>
 #include <QStandardPaths>
 
@@ -114,9 +113,8 @@ void RedEyeCorrectionFilter::filterImage()
     {
         // Loading the shape predictor model
 
-        QString app  = qApp->applicationName();
-        QString path = QStandardPaths::locate(QStandardPaths::GenericDataLocation,
-                                              QString::fromLatin1("%1/facesengine/shapepredictor.dat").arg(app));
+        QString path = QStandardPaths::locate(QStandardPaths::AppDataLocation,
+                                              QString::fromLatin1("facesengine/shapepredictor.dat"));
 
         QFile model(path);
 

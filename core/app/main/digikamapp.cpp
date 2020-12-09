@@ -117,7 +117,8 @@ DigikamApp::DigikamApp()
     d->cardReaderMenu  = new QMenu(this);
     d->quickImportMenu = new QMenu(this);
 
-    d->cameraList = new CameraList(this, QStandardPaths::writableLocation(QStandardPaths::DataLocation) + QLatin1String("/cameras.xml"));
+    d->cameraList = new CameraList(this, QStandardPaths::writableLocation(QStandardPaths::AppDataLocation) +
+                                         QLatin1String("/cameras.xml"));
 
     connect(d->cameraList, SIGNAL(signalCameraAdded(CameraType*)),
             this, SLOT(slotCameraAdded(CameraType*)));

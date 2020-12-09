@@ -53,10 +53,10 @@ bool DNNFaceDetectorSSD::loadModels()
     QString model   = QLatin1String("deploy.prototxt");
     QString data    = QLatin1String("res10_300x300_ssd_iter_140000_fp16.caffemodel");
 
-    QString nnmodel = QStandardPaths::locate(QStandardPaths::GenericDataLocation,
-                                             QString::fromLatin1("digikam/facesengine/%1").arg(model));
-    QString nndata  = QStandardPaths::locate(QStandardPaths::GenericDataLocation,
-                                             QString::fromLatin1("digikam/facesengine/%1").arg(data));
+    QString nnmodel = QStandardPaths::locate(QStandardPaths::AppDataLocation,
+                                             QString::fromLatin1("facesengine/%1").arg(model));
+    QString nndata  = QStandardPaths::locate(QStandardPaths::AppDataLocation,
+                                             QString::fromLatin1("facesengine/%1").arg(data));
 
     if (!nnmodel.isEmpty() && !nndata.isEmpty())
     {
