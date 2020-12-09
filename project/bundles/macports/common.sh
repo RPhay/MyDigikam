@@ -24,6 +24,9 @@ fi
 ChecksXCodeCLI()
 {
 
+# See https://bugreports.qt.io/browse/QTBUG-85546
+export SYSTEM_VERSION_COMPAT=1
+
 xcode-select --print-path
 
 if [[ $? -ne 0 ]]; then
@@ -35,7 +38,6 @@ else
 fi
 
 export MACOSX_DEPLOYMENT_TARGET=$OSX_MIN_TARGET
-export SYSTEM_VERSION_COMPAT=1
 
 MACOS_MAJOR=`echo $MACOSX_DEPLOYMENT_TARGET | awk -F '.' '{print $1 "." $2}'| cut -d . -f 1`
 MACOS_MINOR=`echo $MACOSX_DEPLOYMENT_TARGET | awk -F '.' '{print $1 "." $2}'| cut -d . -f 2`
@@ -124,6 +126,8 @@ MINOR_OSX_VERSION=$(sw_vers -productVersion | awk -F '.' '{print $1 "." $2}'| cu
 if   [[ $MAJOR_OSX_VERSION == "10" ]] ; then
 
     if   [[ $MINOR_OSX_VERSION == "16" ]]
+        then OSX_CODE_NAME="BigSur"
+    elif   [[ $MINOR_OSX_VERSION == "15" ]]
         then OSX_CODE_NAME="Catalina"
     elif [[ $MINOR_OSX_VERSION == "14" ]]
         then OSX_CODE_NAME="Mojave"
@@ -210,7 +214,7 @@ RegisterRemoteServers()
 
 SERVER_LIST="\
 invent.kde.org \
-milonia.kde.org \
+deino.kde.org \
 "
 
 if [[ ! -f ~/.ssh/known_hosts ]] ; then
