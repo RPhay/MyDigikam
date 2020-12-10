@@ -558,7 +558,7 @@ void PresentationKB::applyTexture(KBImage* const img, const QImage &texture)
 
     img->m_texture = new QOpenGLTexture(QOpenGLTexture::Target2D);
     img->m_texture->setData(texture.mirrored());
-    img->m_texture->setMinificationFilter(QOpenGLTexture::Linear);
+    img->m_texture->setMinificationFilter(QOpenGLTexture::LinearMipMapLinear);
     img->m_texture->setMagnificationFilter(QOpenGLTexture::Linear);
     img->m_texture->bind();
 }
@@ -635,7 +635,7 @@ void PresentationKB::endOfShow()
 
     d->endTexture = new QOpenGLTexture(QOpenGLTexture::Target2D);
     d->endTexture->setData(pix.toImage().mirrored());
-    d->endTexture->setMinificationFilter(QOpenGLTexture::Linear);
+    d->endTexture->setMinificationFilter(QOpenGLTexture::LinearMipMapLinear);
     d->endTexture->setMagnificationFilter(QOpenGLTexture::Linear);
     d->endTexture->bind();
 
