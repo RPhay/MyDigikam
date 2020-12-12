@@ -75,9 +75,8 @@ bool MetaEngine::canWriteExif(const QString& filePath)
     }
     catch(Exiv2::AnyError& e)
     {
-        std::string s(e.what());
         qCCritical(DIGIKAM_METAENGINE_LOG) << "Cannot check Exif access mode using Exiv2 (Error #"
-                                           << e.code() << ": " << s.c_str() << ")";
+                                           << e.code() << ": " << QString::fromStdString(e.what()) << ")";
     }
     catch(...)
     {
@@ -842,7 +841,7 @@ QVariant MetaEngine::getExifTagVariant(const char* exifTagName, bool rationalAsL
                 case Exiv2::date:
                 case Exiv2::time:
                 {
-                    QDateTime dateTime = QDateTime::fromString(QLatin1String(it->toString().c_str()), Qt::ISODate);
+                    QDateTime dateTime = QDateTime::fromString(QString::fromStdString(it->toString()), Qt::ISODate);
                     return QVariant(dateTime);
                 }
 

@@ -124,7 +124,7 @@ bool MetaEngine::load(const QString& filePath)
         // Size and mimetype ---------------------------------
 
         d->pixelSize = QSize(image->pixelWidth(), image->pixelHeight());
-        d->mimeType  = QLatin1String(image->mimeType().c_str());
+        d->mimeType  = QString::fromStdString(image->mimeType());
 
         // Image comments ---------------------------------
 

@@ -66,9 +66,8 @@ bool MetaEngine::canWriteXmp(const QString& filePath)
     }
     catch(Exiv2::AnyError& e)
     {
-        std::string s(e.what());
         qCCritical(DIGIKAM_METAENGINE_LOG) << "Cannot check Xmp access mode using Exiv2 (Error #"
-                                           << e.code() << ": " << s.c_str() << ")";
+                                           << e.code() << ": " << QString::fromStdString(e.what()) << ")";
     }
     catch(...)
     {
@@ -237,7 +236,7 @@ MetaEngine::MetaDataMap MetaEngine::getXmpTagsDataList(const QStringList& xmpKey
 
             std::ostringstream os;
             os << *md;
-            QString value = QString::fromUtf8(os.str().c_str());
+            QString value = QString::fromStdString(os.str());
 
             // If the tag is a language alternative type, parse content to detect language.
 
@@ -248,7 +247,7 @@ MetaEngine::MetaDataMap MetaEngine::getXmpTagsDataList(const QStringList& xmpKey
             }
             else
             {
-                value = QString::fromUtf8(os.str().c_str());
+                value = QString::fromStdString(os.str());
             }
 
             // To make a string just on one line.
@@ -412,7 +411,7 @@ QString MetaEngine::getXmpTagString(const char* xmpTagName, bool escapeCR) const
         {
             std::ostringstream os;
             os << *it;
-            QString tagValue = QString::fromUtf8(os.str().c_str());
+            QString tagValue = QString::fromStdString(os.str());
 
             if (escapeCR)
             {
@@ -652,7 +651,7 @@ QString MetaEngine::getXmpTagStringLangAlt(const char* xmpTagName, const QString
                     std::ostringstream os;
                     os << it->toString(i);
                     QString lang;
-                    QString tagValue = QString::fromUtf8(os.str().c_str());
+                    QString tagValue = QString::fromStdString(os.str());
                     tagValue         = detectLanguageAlt(tagValue, lang);
 
                     if (langAlt == lang)
@@ -774,7 +773,7 @@ QStringList MetaEngine::getXmpTagStringSeq(const char* xmpTagName, bool escapeCR
                 {
                     std::ostringstream os;
                     os << it->toString(i);
-                    QString seqValue = QString::fromUtf8(os.str().c_str());
+                    QString seqValue = QString::fromStdString(os.str());
 
                     if (escapeCR)
                     {
@@ -876,7 +875,7 @@ QStringList MetaEngine::getXmpTagStringBag(const char* xmpTagName, bool escapeCR
                 {
                     std::ostringstream os;
                     os << it->toString(i);
-                    QString bagValue = QString::fromUtf8(os.str().c_str());
+                    QString bagValue = QString::fromStdString(os.str());
 
                     if (escapeCR)
                     {
@@ -1056,7 +1055,7 @@ QVariant MetaEngine::getXmpTagVariant(const char* xmpTagName, bool rationalAsLis
                 case Exiv2::date:
                 case Exiv2::time:
                 {
-                    QDateTime dateTime = QDateTime::fromString(QLatin1String(it->toString().c_str()), Qt::ISODate);
+                    QDateTime dateTime = QDateTime::fromString(QString::fromStdString(it->toString()), Qt::ISODate);
 
                     return QVariant(dateTime);
                 }
@@ -1081,7 +1080,7 @@ QVariant MetaEngine::getXmpTagVariant(const char* xmpTagName, bool rationalAsLis
                 {
                     std::ostringstream os;
                     os << *it;
-                    QString tagValue = QString::fromUtf8(os.str().c_str());
+                    QString tagValue = QString::fromStdString(os.str());
 
                     if (stringEscapeCR)
                     {
@@ -1099,7 +1098,7 @@ QVariant MetaEngine::getXmpTagVariant(const char* xmpTagName, bool rationalAsLis
 
                     for (int i = 0 ; i < (int)it->count() ; ++i)
                     {
-                        list << QString::fromUtf8(it->toString(i).c_str());
+                        list << QString::fromStdString(it->toString(i));
                     }
 
                     return list;

@@ -87,7 +87,9 @@ bool MetaEngine::initializeExiv2()
 #ifdef _XMP_SUPPORT_
 
     if (!Exiv2::XmpParser::initialize())
+    {
         return false;
+    }
 
 #endif // _XMP_SUPPORT_
 
@@ -109,9 +111,13 @@ bool MetaEngine::cleanupExiv2()
 bool MetaEngine::supportXmp()
 {
 #ifdef _XMP_SUPPORT_
+
     return true;
+
 #else
+
     return false;
+
 #endif // _XMP_SUPPORT_
 }
 
@@ -149,9 +155,13 @@ bool MetaEngine::supportMetadataWriting(const QString& /*typeMime*/)
 QString MetaEngine::Exiv2Version()
 {
 #if EXIV2_TEST_VERSION(0,27,0)
-    return QLatin1String(Exiv2::versionString().c_str());
+
+    return QString::fromStdString(Exiv2::versionString());
+
 #else
+
     return QLatin1String(Exiv2::version());
+
 #endif
 }
 
@@ -196,7 +206,7 @@ bool MetaEngine::loadFromData(const QByteArray& imgData)
         // Size and mimetype ---------------------------------
 
         d->pixelSize = QSize(image->pixelWidth(), image->pixelHeight());
-        d->mimeType  = QLatin1String(image->mimeType().c_str());
+        d->mimeType  = QString::fromStdString(image->mimeType());
 
         // Image comments ---------------------------------
 

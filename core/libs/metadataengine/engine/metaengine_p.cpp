@@ -535,9 +535,8 @@ bool MetaEngine::Private::saveOperations(const QFileInfo& finfo, Exiv2::Image::A
 
 void MetaEngine::Private::printExiv2ExceptionError(const QString& msg, Exiv2::AnyError& e)
 {
-    std::string s(e.what());
     qCCritical(DIGIKAM_METAENGINE_LOG) << msg.toLatin1().constData()
-                                       << " (Error #" << e.code() << ": " << s.c_str();
+                                       << " (Error #" << e.code() << ": " << QString::fromStdString(e.what());
 }
 
 void MetaEngine::Private::printExiv2MessageHandler(int lvl, const char* msg)
@@ -966,7 +965,7 @@ QString MetaEngine::Private::extractIptcTagString(const Exiv2::IptcData& iptcDat
 
             std::ostringstream os;
             os << iptcTag;
-            value = QLatin1String(os.str().c_str());
+            value = QString::fromStdString(os.str());
         }
     }
     catch(Exiv2::AnyError& e)

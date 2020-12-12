@@ -196,7 +196,7 @@ QString MetaEnginePreviews::originalMimeType() const
 {
     if (d->image.get())
     {
-       return QLatin1String(d->image->mimeType().c_str());
+       return QString::fromStdString(d->image->mimeType());
     }
 
     return QString();

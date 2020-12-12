@@ -617,7 +617,7 @@ QDateTime MetaEngine::getItemDateTime() const
 
                 if (it != exifData.end())
                 {
-                    QDateTime dateTime = QDateTime::fromString(QLatin1String(it->toString().c_str()), Qt::ISODate);
+                    QDateTime dateTime = QDateTime::fromString(QString::fromStdString(it->toString()), Qt::ISODate);
                     dateMap.insert(dateTime, dateMap.value(dateTime, 0) + 2);
 
                     if (dateTime.isValid())
@@ -632,7 +632,7 @@ QDateTime MetaEngine::getItemDateTime() const
 
                 if (it != exifData.end())
                 {
-                    QDateTime dateTime = QDateTime::fromString(QLatin1String(it->toString().c_str()), Qt::ISODate);
+                    QDateTime dateTime = QDateTime::fromString(QString::fromStdString(it->toString()), Qt::ISODate);
                     dateMap.insert(dateTime, dateMap.value(dateTime, 0) + 1);
 
                     if (dateTime.isValid() && dateMap.value(dateTime) > 2)
@@ -649,7 +649,7 @@ QDateTime MetaEngine::getItemDateTime() const
 
                 if (it != exifData.end())
                 {
-                    QDateTime dateTime = QDateTime::fromString(QLatin1String(it->toString().c_str()), Qt::ISODate);
+                    QDateTime dateTime = QDateTime::fromString(QString::fromStdString(it->toString()), Qt::ISODate);
                     dateMap.insert(dateTime, dateMap.value(dateTime, 0) + 1);
 
                     if (dateTime.isValid() && dateMap.value(dateTime) > 2)
@@ -675,7 +675,7 @@ QDateTime MetaEngine::getItemDateTime() const
 
                 if (it != xmpData.end())
                 {
-                    QDateTime dateTime = QDateTime::fromString(QLatin1String(it->toString().c_str()), Qt::ISODate);
+                    QDateTime dateTime = QDateTime::fromString(QString::fromStdString(it->toString()), Qt::ISODate);
                     dateMap.insert(dateTime, dateMap.value(dateTime, 0) + 2);
 
                     if (dateTime.isValid() && (dateMap.value(dateTime) > 2))
@@ -692,7 +692,7 @@ QDateTime MetaEngine::getItemDateTime() const
 
                 if (it != xmpData.end())
                 {
-                    QDateTime dateTime = QDateTime::fromString(QLatin1String(it->toString().c_str()), Qt::ISODate);
+                    QDateTime dateTime = QDateTime::fromString(QString::fromStdString(it->toString()), Qt::ISODate);
                     dateMap.insert(dateTime, dateMap.value(dateTime, 0) + 1);
 
                     if (dateTime.isValid() && (dateMap.value(dateTime) > 2))
@@ -709,7 +709,7 @@ QDateTime MetaEngine::getItemDateTime() const
 
                 if (it != xmpData.end())
                 {
-                    QDateTime dateTime = QDateTime::fromString(QLatin1String(it->toString().c_str()), Qt::ISODate);
+                    QDateTime dateTime = QDateTime::fromString(QString::fromStdString(it->toString()), Qt::ISODate);
                     dateMap.insert(dateTime, dateMap.value(dateTime, 0) + 1);
 
                     if (dateTime.isValid() && (dateMap.value(dateTime) > 2))
@@ -726,7 +726,7 @@ QDateTime MetaEngine::getItemDateTime() const
 
                 if (it != xmpData.end())
                 {
-                    QDateTime dateTime = QDateTime::fromString(QLatin1String(it->toString().c_str()), Qt::ISODate);
+                    QDateTime dateTime = QDateTime::fromString(QString::fromStdString(it->toString()), Qt::ISODate);
                     dateMap.insert(dateTime, dateMap.value(dateTime, 0) + 1);
 
                     if (dateTime.isValid() && (dateMap.value(dateTime) > 2))
@@ -743,7 +743,7 @@ QDateTime MetaEngine::getItemDateTime() const
 
                 if (it != xmpData.end())
                 {
-                    QDateTime dateTime = QDateTime::fromString(QLatin1String(it->toString().c_str()), Qt::ISODate);
+                    QDateTime dateTime = QDateTime::fromString(QString::fromStdString(it->toString()), Qt::ISODate);
                     dateMap.insert(dateTime, dateMap.value(dateTime, 0) + 1);
 
                     if (dateTime.isValid() && (dateMap.value(dateTime) > 2))
@@ -760,7 +760,7 @@ QDateTime MetaEngine::getItemDateTime() const
 
                 if (it != xmpData.end())
                 {
-                    QDateTime dateTime = QDateTime::fromString(QLatin1String(it->toString().c_str()), Qt::ISODate);
+                    QDateTime dateTime = QDateTime::fromString(QString::fromStdString(it->toString()), Qt::ISODate);
                     dateMap.insert(dateTime, dateMap.value(dateTime, 0) + 1);
 
                     if (dateTime.isValid() && (dateMap.value(dateTime) > 2))
@@ -777,7 +777,7 @@ QDateTime MetaEngine::getItemDateTime() const
 
                 if (it != xmpData.end())
                 {
-                    QDateTime dateTime = QDateTime::fromString(QLatin1String(it->toString().c_str()), Qt::ISODate);
+                    QDateTime dateTime = QDateTime::fromString(QString::fromStdString(it->toString()), Qt::ISODate);
                     dateMap.insert(dateTime, dateMap.value(dateTime, 0) + 1);
 
                     if (dateTime.isValid() && (dateMap.value(dateTime) > 2))
@@ -797,7 +797,7 @@ QDateTime MetaEngine::getItemDateTime() const
 
                 if (it != xmpData.end())
                 {
-                    QDateTime dateTime = QDateTime::fromString(QLatin1String(it->toString().c_str()), Qt::ISODate);
+                    QDateTime dateTime = QDateTime::fromString(QString::fromStdString(it->toString()), Qt::ISODate);
                     dateMap.insert(dateTime, dateMap.value(dateTime, 0) + 2);
 
                     if (dateTime.isValid() && (dateMap.value(dateTime) > 2))
@@ -814,7 +814,7 @@ QDateTime MetaEngine::getItemDateTime() const
 
                 if (it != xmpData.end())
                 {
-                    QDateTime dateTime = QDateTime::fromString(QLatin1String(it->toString().c_str()), Qt::ISODate);
+                    QDateTime dateTime = QDateTime::fromString(QString::fromStdString(it->toString()), Qt::ISODate);
                     dateMap.insert(dateTime, dateMap.value(dateTime, 0) + 1);
 
                     if (dateTime.isValid() && (dateMap.value(dateTime) > 2))
@@ -831,7 +831,7 @@ QDateTime MetaEngine::getItemDateTime() const
 
                 if (it != xmpData.end())
                 {
-                    QDateTime dateTime = QDateTime::fromString(QLatin1String(it->toString().c_str()), Qt::ISODate);
+                    QDateTime dateTime = QDateTime::fromString(QString::fromStdString(it->toString()), Qt::ISODate);
                     dateMap.insert(dateTime, dateMap.value(dateTime, 0) + 1);
 
                     if (dateTime.isValid() && (dateMap.value(dateTime) > 2))
@@ -848,7 +848,7 @@ QDateTime MetaEngine::getItemDateTime() const
 
                 if (it != xmpData.end())
                 {
-                    QDateTime dateTime = QDateTime::fromString(QLatin1String(it->toString().c_str()), Qt::ISODate);
+                    QDateTime dateTime = QDateTime::fromString(QString::fromStdString(it->toString()), Qt::ISODate);
                     dateMap.insert(dateTime, dateMap.value(dateTime, 0) + 1);
 
                     if (dateTime.isValid() && (dateMap.value(dateTime) > 2))
@@ -876,13 +876,13 @@ QDateTime MetaEngine::getItemDateTime() const
 
             if (it != iptcData.end())
             {
-                QString IptcDateCreated(QLatin1String(it->toString().c_str()));
+                QString IptcDateCreated(QString::fromStdString(it->toString()));
                 Exiv2::IptcKey keyTimeCreated("Iptc.Application2.TimeCreated");
                 Exiv2::IptcData::const_iterator it2 = iptcData.findKey(keyTimeCreated);
 
                 if (it2 != iptcData.end())
                 {
-                    QString IptcTimeCreated(QLatin1String(it2->toString().c_str()));
+                    QString IptcTimeCreated(QString::fromStdString(it2->toString()));
                     QDate date         = QDate::fromString(IptcDateCreated, Qt::ISODate);
                     QTime time         = QTime::fromString(IptcTimeCreated, Qt::ISODate);
                     QDateTime dateTime = QDateTime(date, time);
@@ -904,13 +904,13 @@ QDateTime MetaEngine::getItemDateTime() const
 
             if (it3 != iptcData.end())
             {
-                QString IptcDateDigitization(QLatin1String(it3->toString().c_str()));
+                QString IptcDateDigitization(QString::fromStdString(it3->toString()));
                 Exiv2::IptcKey keyDigitizationTime("Iptc.Application2.DigitizationTime");
                 Exiv2::IptcData::const_iterator it4 = iptcData.findKey(keyDigitizationTime);
 
                 if (it4 != iptcData.end())
                 {
-                    QString IptcTimeDigitization(QLatin1String(it4->toString().c_str()));
+                    QString IptcTimeDigitization(QString::fromStdString(it4->toString()));
                     QDate date         = QDate::fromString(IptcDateDigitization, Qt::ISODate);
                     QTime time         = QTime::fromString(IptcTimeDigitization, Qt::ISODate);
                     QDateTime dateTime = QDateTime(date, time);
@@ -1065,7 +1065,7 @@ QDateTime MetaEngine::getDigitizationDateTime(bool fallbackToCreationTime) const
 
             if (it != exifData.end())
             {
-                QDateTime dateTime = QDateTime::fromString(QLatin1String(it->toString().c_str()), Qt::ISODate);
+                QDateTime dateTime = QDateTime::fromString(QString::fromStdString(it->toString()), Qt::ISODate);
                 dateMap.insert(dateTime, dateMap.value(dateTime, 0) + 1);
 
                 if (dateTime.isValid())
@@ -1088,7 +1088,7 @@ QDateTime MetaEngine::getDigitizationDateTime(bool fallbackToCreationTime) const
 
                 if (it != xmpData.end())
                 {
-                    QDateTime dateTime = QDateTime::fromString(QLatin1String(it->toString().c_str()), Qt::ISODate);
+                    QDateTime dateTime = QDateTime::fromString(QString::fromStdString(it->toString()), Qt::ISODate);
                     dateMap.insert(dateTime, dateMap.value(dateTime, 0) + 1);
 
                     if (dateTime.isValid() && (dateMap.value(dateTime) > 1))
@@ -1105,7 +1105,7 @@ QDateTime MetaEngine::getDigitizationDateTime(bool fallbackToCreationTime) const
 
                 if (it != xmpData.end())
                 {
-                    QDateTime dateTime = QDateTime::fromString(QLatin1String(it->toString().c_str()), Qt::ISODate);
+                    QDateTime dateTime = QDateTime::fromString(QString::fromStdString(it->toString()), Qt::ISODate);
                     dateMap.insert(dateTime, dateMap.value(dateTime, 0) + 1);
 
                     if (dateTime.isValid() && (dateMap.value(dateTime) > 1))
@@ -1132,14 +1132,14 @@ QDateTime MetaEngine::getDigitizationDateTime(bool fallbackToCreationTime) const
 
             if (it != iptcData.end())
             {
-                QString IptcDateDigitization(QLatin1String(it->toString().c_str()));
+                QString IptcDateDigitization(QString::fromStdString(it->toString()));
 
                 Exiv2::IptcKey keyDigitizationTime("Iptc.Application2.DigitizationTime");
                 Exiv2::IptcData::const_iterator it2 = iptcData.findKey(keyDigitizationTime);
 
                 if (it2 != iptcData.end())
                 {
-                    QString IptcTimeDigitization(QLatin1String(it2->toString().c_str()));
+                    QString IptcTimeDigitization(QString::fromStdString(it2->toString()));
 
                     QDate date         = QDate::fromString(IptcDateDigitization, Qt::ISODate);
                     QTime time         = QTime::fromString(IptcTimeDigitization, Qt::ISODate);

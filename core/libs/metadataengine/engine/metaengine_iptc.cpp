@@ -64,9 +64,8 @@ bool MetaEngine::canWriteIptc(const QString& filePath)
     }
     catch(Exiv2::AnyError& e)
     {
-        std::string s(e.what());
         qCCritical(DIGIKAM_METAENGINE_LOG) << "Cannot check Iptc access mode using Exiv2 (Error #"
-                                           << e.code() << ": " << s.c_str() << ")";
+                                           << e.code() << ": " << QString::fromStdString(e.what()) << ")";
     }
     catch(...)
     {
