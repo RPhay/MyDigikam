@@ -218,4 +218,5 @@ BUGFIXES:
 201 ==> 430134 - Face tags lost and captions mis-transferred after digiKam automatically renames a conflicting filename.
 202 ==> 430189 - Can't login because I have no rights to access the Database.
 203 ==> 430179 - Thumbnails sort order.
-204 ==> 
+204 ==> 425746 - No thumbnails when importing photos from camera.
+205 ==> 

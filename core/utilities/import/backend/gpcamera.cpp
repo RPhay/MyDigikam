@@ -918,7 +918,7 @@ void GPCamera::getItemInfoInternal(const QString& folder, const QString& itemNam
     info.folder          = folder;
     info.name            = itemName;
     d->status->cancel    = false;
-    info.previewPossible = m_captureImagePreviewSupport;
+    info.previewPossible = false;
 
     CameraFileInfo cfinfo;
     gp_camera_file_get_info(d->camera, QFile::encodeName(info.folder).constData(),
