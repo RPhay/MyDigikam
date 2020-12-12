@@ -89,12 +89,6 @@ bool MetaEngine::initializeExiv2()
     if (!Exiv2::XmpParser::initialize())
         return false;
 
-    registerXmpNameSpace(QLatin1String("http://ns.adobe.com/lightroom/1.0/"),  QLatin1String("lr"));
-    registerXmpNameSpace(QLatin1String("https://www.digikam.org/ns/kipi/1.0/"), QLatin1String("kipi"));
-    registerXmpNameSpace(QLatin1String("http://ns.microsoft.com/photo/1.2/"),  QLatin1String("MP"));
-    registerXmpNameSpace(QLatin1String("http://ns.acdsee.com/iptc/1.0/"),      QLatin1String("acdsee"));
-    registerXmpNameSpace(QLatin1String("http://www.video"),                    QLatin1String("video"));
-
 #endif // _XMP_SUPPORT_
 
     return true;
@@ -104,12 +98,6 @@ bool MetaEngine::cleanupExiv2()
 {
     // Fix memory leak if Exiv2 support XMP.
 #ifdef _XMP_SUPPORT_
-
-    unregisterXmpNameSpace(QLatin1String("http://ns.adobe.com/lightroom/1.0/"));
-    unregisterXmpNameSpace(QLatin1String("https://www.digikam.org/ns/kipi/1.0/"));
-    unregisterXmpNameSpace(QLatin1String("http://ns.microsoft.com/photo/1.2/"));
-    unregisterXmpNameSpace(QLatin1String("http://ns.acdsee.com/iptc/1.0/"));
-    unregisterXmpNameSpace(QLatin1String("http://www.video"));
 
     Exiv2::XmpParser::terminate();
 

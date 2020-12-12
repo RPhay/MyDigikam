@@ -168,6 +168,26 @@ MdKeyListViewItem::MdKeyListViewItem(QTreeWidget* const parent, const QString& k
     {
         m_decryptedKey = i18n("Darwin Core");
     }
+    else if (key == QLatin1String("lr"))
+    {
+        m_decryptedKey = i18n("Adobe Lightroom Schema");
+    }
+    else if (key == QLatin1String("acdsee"))
+    {
+        m_decryptedKey = i18n("ACDSee XMP Schema");
+    }
+    else if (key == QLatin1String("MP"))
+    {
+        m_decryptedKey = i18n("Microsoft Photo 1.2 Schema");
+    }
+    else if (key == QLatin1String("kipi"))
+    {
+        m_decryptedKey = i18n("KDE Image Program Interface schema");
+    }
+    else if (key == QLatin1String("video"))
+    {
+        m_decryptedKey = i18n("XMP Extended Video schema");
+    }
 
     // Reset all item flags: item is not selectable.
 

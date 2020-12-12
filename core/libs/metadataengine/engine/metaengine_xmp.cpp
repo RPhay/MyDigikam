@@ -1326,6 +1326,11 @@ MetaEngine::TagsMap MetaEngine::getXmpTagsList() const
     d->getXMPTagsListFromPrefix(QLatin1String("plus"),           tagsMap);
     d->getXMPTagsListFromPrefix(QLatin1String("mwg-rs"),         tagsMap);
     d->getXMPTagsListFromPrefix(QLatin1String("dwc"),            tagsMap);
+    d->getXMPTagsListFromPrefix(QLatin1String("lr"),             tagsMap);
+    d->getXMPTagsListFromPrefix(QLatin1String("acdsee"),         tagsMap);
+    d->getXMPTagsListFromPrefix(QLatin1String("MP"),             tagsMap);
+    d->getXMPTagsListFromPrefix(QLatin1String("kipi"),           tagsMap);
+    d->getXMPTagsListFromPrefix(QLatin1String("video"),          tagsMap);
 
     return tagsMap;
 }
