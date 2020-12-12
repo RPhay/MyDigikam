@@ -249,7 +249,7 @@ QString MetaEnginePreviews::mimeType(int index)
         return QString();
     }
 
-    return QLatin1String(d->properties[index].mimeType_.c_str());
+    return QString::fromStdString(d->properties[index].mimeType_);
 }
 
 QString MetaEnginePreviews::fileExtension(int index)
@@ -259,7 +259,7 @@ QString MetaEnginePreviews::fileExtension(int index)
         return QString();
     }
 
-    return QLatin1String(d->properties[index].extension_.c_str());
+    return QString::fromStdString(d->properties[index].extension_);
 }
 
 QByteArray MetaEnginePreviews::data(int index)

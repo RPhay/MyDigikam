@@ -933,7 +933,7 @@ MetaEngine::TagsMap MetaEngine::getIptcTagsList() const
         {
             do
             {
-                QString key = QLatin1String(Exiv2::IptcKey( (*it)->number_, (*it)->recordId_ ).key().c_str());
+                QString key = QLatin1String(Exiv2::IptcKey( (*it)->number_, (*it)->recordId_).key().c_str());
                 QStringList values;
                 values << QLatin1String((*it)->name_) << QLatin1String((*it)->title_) << QLatin1String((*it)->desc_);
                 tagsMap.insert(key, values);

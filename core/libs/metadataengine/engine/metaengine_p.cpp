@@ -598,7 +598,7 @@ QString MetaEngine::Private::convertCommentValue(const Exiv2::Exifdatum& exifDat
         }
         else if (charset == "\"Ascii\"")
         {
-            return QLatin1String(comment.c_str());
+            return QString::fromStdString(comment);
         }
         else
         {
@@ -813,9 +813,9 @@ int MetaEngine::Private::getXMPTagsListFromPrefix(const QString& pf, MetaEngine:
 
         for (QList<const Exiv2::XmpPropertyInfo*>::iterator it = tags.begin() ; it != tags.end() ; ++it)
         {
-            while ( (*it) && !QString::fromLatin1((*it)->name_).isNull() )
+            while ((*it) && !QString::fromLatin1((*it)->name_).isNull())
             {
-                QString     key = QLatin1String( Exiv2::XmpKey( pf.toLatin1().data(), (*it)->name_ ).key().c_str() );
+                QString     key = QLatin1String(Exiv2::XmpKey(pf.toLatin1().data(), (*it)->name_).key().c_str());
                 QStringList values;
                 values << QLatin1String((*it)->name_)
                        << QLatin1String((*it)->title_)
