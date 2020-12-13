@@ -71,6 +71,8 @@ cmake -DCMAKE_INSTALL_PREFIX="$INSTALL_PREFIX" \
 
 make -j$CPU_CORES
 
+export PATH=$ORIG_PATH
+
 cd $ORIG_WD
 
 #################################################################################################
@@ -575,7 +577,5 @@ else
 fi
 
 #################################################################################################
-
-export PATH=$ORIG_PATH
 
 TerminateScript
