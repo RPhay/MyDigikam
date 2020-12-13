@@ -101,7 +101,7 @@ else() # Linux
     ExternalProject_Add(ext_exiv2
         DOWNLOAD_DIR ${EXTERNALS_DOWNLOAD_DIR}
 
-'        GIT_REPOSITORY https://github.com/Exiv2/exiv2.git
+        GIT_REPOSITORY https://github.com/Exiv2/exiv2.git
 
         # To use official release tag
         GIT_TAG v0.27.3
