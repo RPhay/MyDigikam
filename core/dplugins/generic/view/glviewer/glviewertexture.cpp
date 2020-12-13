@@ -171,7 +171,8 @@ bool GLViewerTexture::loadFullSize()
 
     loadInternal();
     reset();
-    d->rotate_idx = 0;
+
+    d->rotate_idx   = 0;
 
     return true;
 }
@@ -393,6 +394,11 @@ void GLViewerTexture::reset()
  */
 bool GLViewerTexture::setNewSize(QSize size)
 {
+    if (d->qimage.isNull())
+    {
+        return false;
+    }
+
     // don't allow larger textures than the original image. the image will be upsampled by
     // OpenGL if necessary and not by QImage::scale
     size = size.boundedTo(d->qimage.size());
