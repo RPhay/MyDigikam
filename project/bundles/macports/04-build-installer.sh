@@ -455,8 +455,7 @@ if [[ $DK_DEBUG = 1 ]] ; then
     find $TEMPROOT -name "*.so"    | grep -Ev '(digikam|showfoto|exiv2)' | xargs strip -SXx
     find $TEMPROOT -name "*.dylib" | grep -Ev '(digikam|showfoto|exiv2)' | xargs strip -SXx
 else
-    find $TEMPROOT -name "*.so"    | xargs strip -SXx
-    find $TEMPROOT -name "*.dylib" | xargs strip -SXx
+    find $TEMPROOT -perm +111 -type f | xargs strip -SXx 2>/dev/null
 fi
 
 if [[ $DK_DEBUG = 1 ]] ; then
