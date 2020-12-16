@@ -53,6 +53,7 @@ public:
 private:
 
     bool m_hasAlpha;
+    bool m_sixteenBit;
 };
 
 } // namespace DigikamQImageDImgPlugin

@@ -39,9 +39,10 @@ namespace DigikamQImageDImgPlugin
 {
 
 DImgQImageLoader::DImgQImageLoader(DImg* const image)
-    : DImgLoader(image)
+    : DImgLoader  (image),
+      m_hasAlpha  (false),
+      m_sixteenBit(false)
 {
-    m_hasAlpha = false;
 }
 
 DImgQImageLoader::~DImgQImageLoader()
@@ -108,6 +109,7 @@ bool DImgQImageLoader::load(const QString& filePath, DImgLoaderObserver* const o
 
 #if (QT_VERSION >= QT_VERSION_CHECK(5, 12, 0))
 
+        case QImage::Format_RGBX64:
         case QImage::Format_RGBA64:
         case QImage::Format_RGBA64_Premultiplied:
             colorModel    = DImg::RGB;
@@ -126,13 +128,13 @@ bool DImgQImageLoader::load(const QString& filePath, DImgLoaderObserver* const o
     {
         qCDebug(DIGIKAM_DIMG_LOG_QIMAGE) << filePath << "is a 8 bits per color per pixels QImage";
 
-        m_hasAlpha         = image.hasAlphaChannel();
-        QImage target      = image.convertToFormat(QImage::Format_ARGB32);
-        w                  = target.width();
-        h                  = target.height();
-        uchar* const data8 = new_failureTolerant(w, h, 4);
+        m_hasAlpha    = image.hasAlphaChannel();
+        QImage target = image.convertToFormat(QImage::Format_ARGB32);
+        w             = target.width();
+        h             = target.height();
+        data          = new_failureTolerant(w, h, 4);
 
-        if (!data8)
+        if (!data)
         {
             qCWarning(DIGIKAM_DIMG_LOG_QIMAGE) << "Failed to allocate memory for loading" << filePath;
             loadingFailed();
@@ -140,7 +142,7 @@ bool DImgQImageLoader::load(const QString& filePath, DImgLoaderObserver* const o
         }
 
         uint*  sptr = reinterpret_cast<uint*>(target.bits());
-        uchar* dptr = data8;
+        uchar* dptr = data;
 
         for (uint i = 0 ; i < w * h ; ++i)
         {
@@ -149,11 +151,9 @@ bool DImgQImageLoader::load(const QString& filePath, DImgLoaderObserver* const o
             dptr[2] = qRed(*sptr);
             dptr[3] = qAlpha(*sptr);
 
-            dptr += 4;
+            dptr   += 4;
             sptr++;
         }
-
-        data = data8;
     }
     else
     {
@@ -162,34 +162,35 @@ bool DImgQImageLoader::load(const QString& filePath, DImgLoaderObserver* const o
 
         qCDebug(DIGIKAM_DIMG_LOG_QIMAGE) << filePath << "is a 16 bits per color per pixels QImage";
 
-        m_hasAlpha           = image.hasAlphaChannel();
-        QImage target        = image.convertToFormat(QImage::Format_RGBA64);
-        w                    = target.width();
-        h                    = target.height();
-        ushort* const data16 = reinterpret_cast<ushort*>(new_failureTolerant(w, h, 8));
+        m_hasAlpha    = image.hasAlphaChannel();
+        m_sixteenBit  = true;
+        QImage target = image.convertToFormat(QImage::Format_RGBA64);
+        w             = target.width();
+        h             = target.height();
+        data          = new_failureTolerant(w, h, 8);
 
-        if (!data16)
+        if (!data)
         {
             qCWarning(DIGIKAM_DIMG_LOG_QIMAGE) << "Failed to allocate memory for loading" << filePath;
             loadingFailed();
             return false;
         }
 
-        uint*   sptr = reinterpret_cast<uint*>(target.bits());
-        ushort* dptr = data16;
+        quint64* sptr = reinterpret_cast<quint64*>(target.bits());
+        ushort*  dptr = reinterpret_cast<ushort*>(data);
 
         for (uint i = 0 ; i < w * h ; ++i)
         {
-            dptr[0] = qAlpha(*sptr);
-            dptr[2] = qBlue(*sptr);
-            dptr[4] = qGreen(*sptr);
-            dptr[6] = qRed(*sptr);
+            QRgba64 rgba = QRgba64::fromRgba64(*sptr);
 
-            dptr += 8;
+            dptr[0]      = rgba.blue();
+            dptr[1]      = rgba.green();
+            dptr[2]      = rgba.red();
+            dptr[3]      = rgba.alpha();
+
+            dptr        += 4;
             sptr++;
         }
-
-        data = reinterpret_cast<uchar*>(data16);
 
 #endif
 
@@ -260,7 +261,7 @@ bool DImgQImageLoader::hasAlpha() const
 
 bool DImgQImageLoader::sixteenBit() const
 {
-    return false;
+    return m_sixteenBit;
 }
 
 bool DImgQImageLoader::isReadOnly() const
