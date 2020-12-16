@@ -38,6 +38,7 @@ else
 fi
 
 export MACOSX_DEPLOYMENT_TARGET=$OSX_MIN_TARGET
+echo "Target OSX minimal version: $MACOSX_DEPLOYMENT_TARGET"
 
 MACOS_MAJOR=`echo $MACOSX_DEPLOYMENT_TARGET | awk -F '.' '{print $1 "." $2}'| cut -d . -f 1`
 MACOS_MINOR=`echo $MACOSX_DEPLOYMENT_TARGET | awk -F '.' '{print $1 "." $2}'| cut -d . -f 2`
@@ -46,7 +47,17 @@ if [[ $MACOS_MAJOR -lt 11 && $MACOS_MINOR -lt 9 ]]; then
     export CXXFLAGS=-stdlib=libc++
 fi
 
-echo "Target OSX minimal version: $MACOSX_DEPLOYMENT_TARGET"
+if [[ ! -f /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX$MACOS_MAJOR.$MACOS_MINOR.sdk ]] ; then
+    echo "XCode Target SDK minimal version is not installled in /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs"
+    echo "you can donwload an archive of SDK from https://github.com/phracker/MacOSX-SDKs/releases"
+    exit 1
+else
+    echo "Check XCode Target SDK minimal version passed..."
+fi
+
+# Adjust the property "MinimumSDKVersion" from /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Info.plist
+/usr/libexec/PlistBuddy -c "Set MinimumSDKVersion $MACOS_MAJOR.$MACOS_MINOR" /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Info.plist
+
 }
 
 ########################################################################
