@@ -30,7 +30,7 @@ DK_GITURL="git@invent.kde.org:graphics/digikam.git"
 DK_BUILDTEMP=$BUILDING_DIR/dktemp
 
 # digiKam tag version from git. Official tarball do not include extra shared libraries.
-# The list of tags can be listed with this url: https://quickgit.kde.org/?p=digikam.git&a=tags
+# The list of tags can be listed with this url: https://invent.kde.org/graphics/digikam/-/tags
 # If you want to package current implemntation from git, use "master" as tag.
 #DK_VERSION=v7.0.0
 DK_VERSION=master
