@@ -101,6 +101,9 @@ MetadataSelector::MetadataSelector(QWidget* const parent)
     setHeaderLabels(labels);
     header()->setSectionResizeMode(0, QHeaderView::ResizeToContents);
     header()->setSectionResizeMode(1, QHeaderView::Stretch);
+
+    setSortingEnabled(true);
+    sortByColumn(0, Qt::AscendingOrder);
 }
 
 MetadataSelector::~MetadataSelector()
