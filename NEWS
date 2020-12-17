@@ -221,3 +221,5 @@ BUGFIXES:
 203 ==> 430179 - Thumbnails sort order.
 204 ==> 425746 - No thumbnails when importing photos from camera.
 205 ==> 429116 - System crash under macOS 11 install. Does not load.
+206 ==> 430451 - Building Fingerprint abruptly stops.
+207 ==> 
