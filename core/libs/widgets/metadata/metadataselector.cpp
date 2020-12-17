@@ -89,7 +89,6 @@ QString MetadataSelectorItem::mdKeyTitle() const
 MetadataSelector::MetadataSelector(QWidget* const parent)
     : QTreeWidget(parent)
 {
-    setRootIsDecorated(false);
     setSelectionMode(QAbstractItemView::SingleSelection);
     setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Expanding);
     setAllColumnsShowFocus(true);
