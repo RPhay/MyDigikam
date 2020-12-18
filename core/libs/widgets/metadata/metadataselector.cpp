@@ -55,6 +55,7 @@ MetadataSelectorItem::MetadataSelectorItem(MdKeyListViewItem* const parent, cons
     setChildIndicatorPolicy(QTreeWidgetItem::DontShowIndicator);
 
     setText(0, title);
+    setToolTip(0, key);
 
     QString descVal = desc.simplified();
 
