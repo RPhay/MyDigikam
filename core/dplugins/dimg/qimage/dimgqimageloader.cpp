@@ -142,7 +142,7 @@ bool DImgQImageLoader::load(const QString& filePath, DImgLoaderObserver* const o
             return false;
         }
 
-        const uint* sptr = reinterpret_cast<const uint*>(target.constBits());
+        const QRgb* sptr = reinterpret_cast<const QRgb*>(target.constBits());
         uchar*      dptr = data;
 
         for (uint i = 0 ; i < w * h ; ++i)
@@ -176,19 +176,18 @@ bool DImgQImageLoader::load(const QString& filePath, DImgLoaderObserver* const o
             return false;
         }
 
-        const quint64* sptr = reinterpret_cast<const quint64*>(target.constBits());
-        ushort* dptr        = reinterpret_cast<ushort*>(data);
+        const QRgba64* sptr = reinterpret_cast<const QRgba64*>(target.constBits());
+        ushort*        dptr = reinterpret_cast<ushort*>(data);
 
         for (uint i = 0 ; i < w * h ; ++i)
         {
-            QRgba64 rgba = QRgba64::fromRgba64(*sptr++);
+            dptr[0] = (*sptr).blue();
+            dptr[1] = (*sptr).green();
+            dptr[2] = (*sptr).red();
+            dptr[3] = (*sptr).alpha();
 
-            dptr[0]      = rgba.blue();
-            dptr[1]      = rgba.green();
-            dptr[2]      = rgba.red();
-            dptr[3]      = rgba.alpha();
-
-            dptr        += 4;
+            dptr   += 4;
+            sptr++;
         }
 
 #endif
