@@ -113,6 +113,7 @@ bool DImgQImageLoader::load(const QString& filePath, DImgLoaderObserver* const o
         case QImage::Format_RGBA64:
         case QImage::Format_RGBA64_Premultiplied:
             colorModel    = DImg::RGB;
+            m_sixteenBit  = true;
             originalDepth = 16;
             break;
 
@@ -124,7 +125,7 @@ bool DImgQImageLoader::load(const QString& filePath, DImgLoaderObserver* const o
     uint h      = 0;
     uchar* data = nullptr;
 
-    if (originalDepth != 16)
+    if (!m_sixteenBit)
     {
         qCDebug(DIGIKAM_DIMG_LOG_QIMAGE) << filePath << "is a 8 bits per color per pixels QImage";
 
@@ -141,8 +142,8 @@ bool DImgQImageLoader::load(const QString& filePath, DImgLoaderObserver* const o
             return false;
         }
 
-        const uint*  sptr = reinterpret_cast<const uint*>(target.constBits());
-        uchar*       dptr = data;
+        const uint* sptr = reinterpret_cast<const uint*>(target.constBits());
+        uchar*      dptr = data;
 
         for (uint i = 0 ; i < w * h ; ++i)
         {
@@ -163,7 +164,6 @@ bool DImgQImageLoader::load(const QString& filePath, DImgLoaderObserver* const o
         qCDebug(DIGIKAM_DIMG_LOG_QIMAGE) << filePath << "is a 16 bits per color per pixels QImage";
 
         m_hasAlpha    = image.hasAlphaChannel();
-        m_sixteenBit  = true;
         QImage target = image.convertToFormat(QImage::Format_RGBA64);
         w             = target.width();
         h             = target.height();
@@ -181,7 +181,7 @@ bool DImgQImageLoader::load(const QString& filePath, DImgLoaderObserver* const o
 
         for (uint i = 0 ; i < w * h ; ++i)
         {
-            QRgba64 rgba = QRgba64::fromRgba64(*sptr);
+            QRgba64 rgba = QRgba64::fromRgba64(*sptr++);
 
             dptr[0]      = rgba.blue();
             dptr[1]      = rgba.green();
@@ -189,7 +189,6 @@ bool DImgQImageLoader::load(const QString& filePath, DImgLoaderObserver* const o
             dptr[3]      = rgba.alpha();
 
             dptr        += 4;
-            sptr++;
         }
 
 #endif
