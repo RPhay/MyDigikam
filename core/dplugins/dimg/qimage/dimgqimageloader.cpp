@@ -59,7 +59,8 @@ bool DImgQImageLoader::load(const QString& filePath, DImgLoaderObserver* const o
     QImageReader reader(filePath);
     reader.setDecideFormatFromContent(true);
 
-    QImage image = reader.read();
+    QByteArray readFormat = reader.format();
+    QImage image          = reader.read();
 
     if (observer)
     {
@@ -129,7 +130,7 @@ bool DImgQImageLoader::load(const QString& filePath, DImgLoaderObserver* const o
     {
         qCDebug(DIGIKAM_DIMG_LOG_QIMAGE) << filePath << "is a 8 bits per color per pixels QImage";
 
-        m_hasAlpha    = image.hasAlphaChannel();
+        m_hasAlpha    = (image.hasAlphaChannel() && (readFormat != "psd"));
         QImage target = image.convertToFormat(QImage::Format_ARGB32);
         w             = target.width();
         h             = target.height();
@@ -163,7 +164,7 @@ bool DImgQImageLoader::load(const QString& filePath, DImgLoaderObserver* const o
 
         qCDebug(DIGIKAM_DIMG_LOG_QIMAGE) << filePath << "is a 16 bits per color per pixels QImage";
 
-        m_hasAlpha    = image.hasAlphaChannel();
+        m_hasAlpha    = (image.hasAlphaChannel() && (readFormat != "psd"));
         QImage target = image.convertToFormat(QImage::Format_RGBA64);
         w             = target.width();
         h             = target.height();
