@@ -1660,6 +1660,7 @@ bool EditorWindow::showFileSaveDialog(const QUrl& initialUrl, QUrl& newURL)
     QPointer<DFileDialog> imageFileSaveDialog = new DFileDialog(this);
     imageFileSaveDialog->setWindowTitle(i18n("New Image File Name"));
     imageFileSaveDialog->setDirectoryUrl(initialUrl.adjusted(QUrl::RemoveFilename | QUrl::StripTrailingSlash));
+    imageFileSaveDialog->setOption(QFileDialog::DontConfirmOverwrite);
     imageFileSaveDialog->setAcceptMode(QFileDialog::AcceptSave);
     imageFileSaveDialog->setFileMode(QFileDialog::AnyFile);
     imageFileSaveDialog->setNameFilters(list);
