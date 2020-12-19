@@ -1656,8 +1656,8 @@ void EditorWindow::startingSave(const QUrl& url)
 bool EditorWindow::showFileSaveDialog(const QUrl& initialUrl, QUrl& newURL)
 {
     QString all;
-    QStringList list                       = supportedImageMimeTypes(QIODevice::WriteOnly, all);
-    DFileDialog* const imageFileSaveDialog = new DFileDialog(this);
+    QStringList list                          = supportedImageMimeTypes(QIODevice::WriteOnly, all);
+    QPointer<DFileDialog> imageFileSaveDialog = new DFileDialog(this);
     imageFileSaveDialog->setWindowTitle(i18n("New Image File Name"));
     imageFileSaveDialog->setDirectoryUrl(initialUrl.adjusted(QUrl::RemoveFilename | QUrl::StripTrailingSlash));
     imageFileSaveDialog->setAcceptMode(QFileDialog::AcceptSave);
@@ -1714,6 +1714,8 @@ bool EditorWindow::showFileSaveDialog(const QUrl& initialUrl, QUrl& newURL)
     if (result != QDialog::Accepted || !imageFileSaveDialog)
     {
         qCDebug(DIGIKAM_GENERAL_LOG) << "File Save Dialog rejected";
+        delete imageFileSaveDialog;
+
         return false;
     }
 
@@ -1722,6 +1724,8 @@ bool EditorWindow::showFileSaveDialog(const QUrl& initialUrl, QUrl& newURL)
     if (urls.isEmpty())
     {
         qCDebug(DIGIKAM_GENERAL_LOG) << "no target url";
+        delete imageFileSaveDialog;
+
         return false;
     }
 
@@ -1743,17 +1747,19 @@ bool EditorWindow::showFileSaveDialog(const QUrl& initialUrl, QUrl& newURL)
         newURL.setPath(newURL.path() + QLatin1Char('.') + ext);
     }
 
+    delete imageFileSaveDialog;
+
     qCDebug(DIGIKAM_GENERAL_LOG) << "Writing file to " << newURL;
 
     //-- Show Settings Dialog ----------------------------------------------
 
     const QString configShowImageSettingsDialog = QLatin1String("ShowImageSettingsDialog");
     bool showDialog                             = group.readEntry(configShowImageSettingsDialog, true);
-    FileSaveOptionsBox* const options           = new FileSaveOptionsBox();
+    QPointer<FileSaveOptionsBox> options        = new FileSaveOptionsBox();
 
     if (showDialog && options->discoverFormat(newURL.fileName(), DImg::NONE) != DImg::NONE)
     {
-        FileSaveOptionsDlg* const fileSaveOptionsDialog = new FileSaveOptionsDlg(this, options);
+        QPointer<FileSaveOptionsDlg> fileSaveOptionsDialog = new FileSaveOptionsDlg(this, options);
         options->setImageFileFormat(newURL.fileName());
 
         if (d->currentWindowModalDialog)
@@ -1772,12 +1778,23 @@ bool EditorWindow::showFileSaveDialog(const QUrl& initialUrl, QUrl& newURL)
 
         if (result != QDialog::Accepted || !fileSaveOptionsDialog)
         {
+            delete fileSaveOptionsDialog;
+
             return false;
         }
+
+        // write settings to config
+        options->applySettings();
+
+        delete fileSaveOptionsDialog;
+
+        // options is now also deleted
+    }
+    else
+    {
+        delete options;
     }
 
-    // write settings to config
-    options->applySettings();
     // read settings from config to local container
     applyIOSettings();
 
