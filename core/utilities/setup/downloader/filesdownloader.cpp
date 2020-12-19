@@ -56,7 +56,7 @@ class Q_DECL_HIDDEN FilesDownloader::Private
 public:
 
     explicit Private()
-      : downloadUrl(QLatin1String("http://files.kde.org/digikam/")),
+      : downloadUrl(QLatin1String("https://files.kde.org/digikam/")),
         index      (0),
         buttons    (nullptr),
         progress   (nullptr),
@@ -250,6 +250,8 @@ void FilesDownloader::download()
                                  d->files.at(d->index + 1).toString()));
 
     request.setMaximumRedirectsAllowed(10);
+    request.setAttribute(QNetworkRequest::FollowRedirectsAttribute, true);
+
     d->reply = d->netMngr->get(request);
 
     connect(d->reply, SIGNAL(downloadProgress(qint64,qint64)),
