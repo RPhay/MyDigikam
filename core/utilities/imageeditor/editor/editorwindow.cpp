@@ -1757,7 +1757,7 @@ bool EditorWindow::showFileSaveDialog(const QUrl& initialUrl, QUrl& newURL)
     bool showDialog                             = group.readEntry(configShowImageSettingsDialog, true);
     QPointer<FileSaveOptionsBox> options        = new FileSaveOptionsBox();
 
-    if (showDialog && options->discoverFormat(newURL.fileName(), DImg::NONE) != DImg::NONE)
+    if (showDialog && (options->discoverFormat(newURL.fileName(), DImg::NONE) != DImg::NONE))
     {
         QPointer<FileSaveOptionsDlg> fileSaveOptionsDialog = new FileSaveOptionsDlg(this, options);
         options->setImageFileFormat(newURL.fileName());
