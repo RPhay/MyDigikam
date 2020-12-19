@@ -58,25 +58,24 @@ DPluginLoader::Private::~Private()
 
 QFileInfoList DPluginLoader::Private::pluginEntriesList() const
 {
-    QString     path;
+    QStringList pathList;
 
     // First we try to load in first the local plugin if DK_PLUG_PATH variable is declared.
     // Else, we will load plusing from the system using the standard Qt plugin path.
 
-    QByteArray dkenv = qgetenv("DK_PLUGIN_PATH");
+    QByteArray  dkenv = qgetenv("DK_PLUGIN_PATH");
 
     if (!dkenv.isEmpty())
     {
         qCWarning(DIGIKAM_GENERAL_LOG) << "DK_PLUGIN_PATH env.variable detected. We will use it to load plugin...";
-        path = QString::fromUtf8(dkenv);
+        pathList << QString::fromUtf8(dkenv).split(QLatin1Char(':'), QString::SkipEmptyParts);
     }
     else
     {
-        path = QLibraryInfo::location(QLibraryInfo::PluginsPath);
-        path.append(QLatin1String("/digikam/"));
+        pathList << QLibraryInfo::location(QLibraryInfo::PluginsPath) + QLatin1String("/digikam/");
     }
 
-    qCDebug(DIGIKAM_GENERAL_LOG) << "Parsing plugins from" << path;
+    qCDebug(DIGIKAM_GENERAL_LOG) << "Parsing plugins from" << pathList;
 
 #ifdef Q_OS_MACOS
 
@@ -92,21 +91,25 @@ QFileInfoList DPluginLoader::Private::pluginEntriesList() const
 
 #endif
 
-    QDir dir(path, filter, QDir::Unsorted,
-             QDir::Files | QDir::NoDotAndDotDot);
-
-    QDirIterator  it(dir, QDirIterator::Subdirectories);
     QFileInfoList allFiles;
     QStringList   dupFiles;
 
-    while (it.hasNext())
+    foreach (const QString& path, pathList)
     {
-        it.next();
+        QDir dir(path, filter, QDir::Unsorted,
+                 QDir::Files | QDir::NoDotAndDotDot);
 
-        if (!dupFiles.contains(it.fileInfo().baseName()))
+        QDirIterator it(dir, QDirIterator::Subdirectories);
+
+        while (it.hasNext())
         {
-            dupFiles << it.fileInfo().baseName();
-            allFiles << it.fileInfo();
+            it.next();
+
+            if (!dupFiles.contains(it.fileInfo().baseName()))
+            {
+                dupFiles << it.fileInfo().baseName();
+                allFiles << it.fileInfo();
+            }
         }
     }
 

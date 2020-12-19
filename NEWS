@@ -223,4 +223,5 @@ BUGFIXES:
 205 ==> 429116 - System crash under macOS 11 install. Does not load.
 206 ==> 430451 - Building Fingerprint abruptly stops.
 207 ==> 430427 - PSD files cannot be viewed. Thumbnails are OK.
-208 ==> 
+208 ==> 430566 - Make DK_PLUGIN_PATH allow multiple paths.
+209 ==> 
