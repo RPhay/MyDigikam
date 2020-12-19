@@ -489,19 +489,23 @@ configure_file(${CMAKE_CURRENT_SOURCE_DIR}/libs/rawengine/libraw/libraw_config.h
 
 # See details from the CMake report: https://gitlab.kitware.com/cmake/cmake/-/issues/20256
 
-find_program(DSYMUTIL_PROGRAM dsymutil)
+if (APPLE)
 
-if (DSYMUTIL_PROGRAM)
+    find_program(DSYMUTIL_PROGRAM dsymutil)
 
-  foreach(lang C CXX)
+    if (DSYMUTIL_PROGRAM)
 
-    foreach(var LINK_EXECUTABLE CREATE_SHARED_LIBRARY)
+        foreach(lang C CXX)
 
-      set(CMAKE_${lang}_${var} "${CMAKE_${lang}_${var}}" "${DSYMUTIL_PROGRAM} <TARGET>")
+            foreach(var LINK_EXECUTABLE CREATE_SHARED_LIBRARY)
 
-    endforeach()
+                set(CMAKE_${lang}_${var} "${CMAKE_${lang}_${var}}" "${DSYMUTIL_PROGRAM} <TARGET>")
 
-  endforeach()
+            endforeach()
+
+        endforeach()
+
+    endif()
 
 endif()
 
