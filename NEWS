@@ -224,4 +224,5 @@ BUGFIXES:
 206 ==> 430451 - Building Fingerprint abruptly stops.
 207 ==> 430427 - PSD files cannot be viewed. Thumbnails are OK.
 208 ==> 430566 - Make DK_PLUGIN_PATH allow multiple paths.
-209 ==> 
+209 ==> 429103 - digiKam 7.1.0 does not start up, when using macos big sur.
+210 ==> 
