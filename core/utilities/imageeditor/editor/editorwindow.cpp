@@ -1711,7 +1711,7 @@ bool EditorWindow::showFileSaveDialog(const QUrl& initialUrl, QUrl& newURL)
         d->currentWindowModalDialog = nullptr;
     }
 
-    if (result != QDialog::Accepted || !imageFileSaveDialog)
+    if ((result != QDialog::Accepted) || !imageFileSaveDialog)
     {
         qCDebug(DIGIKAM_GENERAL_LOG) << "File Save Dialog rejected";
         delete imageFileSaveDialog;
@@ -1776,7 +1776,7 @@ bool EditorWindow::showFileSaveDialog(const QUrl& initialUrl, QUrl& newURL)
             d->currentWindowModalDialog = nullptr;
         }
 
-        if (result != QDialog::Accepted || !fileSaveOptionsDialog)
+        if ((result != QDialog::Accepted) || !fileSaveOptionsDialog)
         {
             delete fileSaveOptionsDialog;
 
@@ -2701,9 +2701,9 @@ void EditorWindow::registerExtraPluginsActions(QString& dom)
         actionCollection()->setDefaultShortcuts(ac, ac->shortcuts());
     }
 
-    dom.replace(QLatin1String("<!-- _DPLUGINS_EDITOR_FILES_ACTIONS_ -->"),     dpl->pluginXmlSections(DPluginAction::EditorFile,      this));
-    dom.replace(QLatin1String("<!-- _DPLUGINS_EDITOR_COLORS_ACTIONS_ -->"),    dpl->pluginXmlSections(DPluginAction::EditorColors,    this));
-    dom.replace(QLatin1String("<!-- _DPLUGINS_EDITOR_ENHANCE_ACTIONS_ -->"),   dpl->pluginXmlSections(DPluginAction::EditorEnhance,   this));
+    dom.replace(QLatin1String("<!-- _DPLUGINS_EDITOR_FILES_ACTIONS_ -->"),     dpl->pluginXmlSections(DPluginAction::EditorFile,     this));
+    dom.replace(QLatin1String("<!-- _DPLUGINS_EDITOR_COLORS_ACTIONS_ -->"),    dpl->pluginXmlSections(DPluginAction::EditorColors,   this));
+    dom.replace(QLatin1String("<!-- _DPLUGINS_EDITOR_ENHANCE_ACTIONS_ -->"),   dpl->pluginXmlSections(DPluginAction::EditorEnhance,  this));
 
     QString transformActions;
     transformActions.append(QLatin1String("<Action name=\"editorwindow_transform_rotateleft\" />\n"));
@@ -2715,8 +2715,8 @@ void EditorWindow::registerExtraPluginsActions(QString& dom)
     transformActions.append(dpl->pluginXmlSections(DPluginAction::EditorTransform, this));
 
     dom.replace(QLatin1String("<!-- _DPLUGINS_EDITOR_TRANSFORM_ACTIONS_ -->"), transformActions);
-    dom.replace(QLatin1String("<!-- _DPLUGINS_EDITOR_DECORATE_ACTIONS_ -->"),  dpl->pluginXmlSections(DPluginAction::EditorDecorate,  this));
-    dom.replace(QLatin1String("<!-- _DPLUGINS_EDITOR_FILTERS_ACTIONS_ -->"),   dpl->pluginXmlSections(DPluginAction::EditorFilters,   this));
+    dom.replace(QLatin1String("<!-- _DPLUGINS_EDITOR_DECORATE_ACTIONS_ -->"),  dpl->pluginXmlSections(DPluginAction::EditorDecorate, this));
+    dom.replace(QLatin1String("<!-- _DPLUGINS_EDITOR_FILTERS_ACTIONS_ -->"),   dpl->pluginXmlSections(DPluginAction::EditorFilters,  this));
 }
 
 } // namespace Digikam
