@@ -65,14 +65,17 @@ QFileInfoList DPluginLoader::Private::pluginEntriesList() const
 
     QByteArray  dkenv = qgetenv("DK_PLUGIN_PATH");
 
-    if (!dkenv.isEmpty())
+    if (dkenv.isEmpty())
     {
-        qCWarning(DIGIKAM_GENERAL_LOG) << "DK_PLUGIN_PATH env.variable detected. We will use it to load plugin...";
-        pathList << QString::fromUtf8(dkenv).split(QLatin1Char(';'), QString::SkipEmptyParts);
+        pathList << QLibraryInfo::location(QLibraryInfo::PluginsPath) +
+                    QLatin1String("/digikam/");
     }
     else
     {
-        pathList << QLibraryInfo::location(QLibraryInfo::PluginsPath) + QLatin1String("/digikam/");
+        qCWarning(DIGIKAM_GENERAL_LOG) << "DK_PLUGIN_PATH env.variable detected. "
+                                          "We will use it to load plugin...";
+        pathList << QString::fromUtf8(dkenv).split(QLatin1Char(';'),
+                                                   QString::SkipEmptyParts);
     }
 
     qCDebug(DIGIKAM_GENERAL_LOG) << "Parsing plugins from" << pathList;
