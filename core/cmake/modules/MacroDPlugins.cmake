@@ -90,6 +90,13 @@ macro(DIGIKAM_ADD_GENERIC_PLUGIN)
             DESTINATION ${PLUGIN_INSTALL_DIR}/digikam/generic
     )
 
+    if(APPLE)
+        install(FILES "$<TARGET_FILE:Generic_${_parse_results_NAME}_Plugin>.dSYM"
+                DESTINATION "${CMAKE_INSTALL_LIBDIR}"
+                CONFIGURATIONS Debug RelWithDebInfo
+        )
+    endif()
+
 endmacro()
 
 # -------------------------------------------------------------------------
@@ -169,6 +176,13 @@ macro(DIGIKAM_ADD_EDITOR_PLUGIN)
     install(TARGETS Editor_${_parse_results_NAME}_Plugin
             DESTINATION ${PLUGIN_INSTALL_DIR}/digikam/editor
     )
+
+    if(APPLE)
+        install(FILES "$<TARGET_FILE:Editor_${_parse_results_NAME}_Plugin>.dSYM"
+                DESTINATION "${CMAKE_INSTALL_LIBDIR}"
+                CONFIGURATIONS Debug RelWithDebInfo
+        )
+    endif()
 
 endmacro()
 
@@ -253,6 +267,13 @@ macro(DIGIKAM_ADD_BQM_PLUGIN)
             DESTINATION ${PLUGIN_INSTALL_DIR}/digikam/bqm
     )
 
+    if(APPLE)
+        install(FILES "$<TARGET_FILE:Bqm_${_parse_results_NAME}_Plugin>.dSYM"
+                DESTINATION "${CMAKE_INSTALL_LIBDIR}"
+                CONFIGURATIONS Debug RelWithDebInfo
+        )
+    endif()
+
 endmacro()
 
 # -------------------------------------------------------------------------
@@ -333,6 +354,13 @@ macro(DIGIKAM_ADD_RAWIMPORT_PLUGIN)
             DESTINATION ${PLUGIN_INSTALL_DIR}/digikam/rawimport
     )
 
+    if(APPLE)
+        install(FILES "$<TARGET_FILE:RawImport_${_parse_results_NAME}_Plugin>.dSYM"
+                DESTINATION "${CMAKE_INSTALL_LIBDIR}"
+                CONFIGURATIONS Debug RelWithDebInfo
+        )
+    endif()
+
 endmacro()
 
 # -------------------------------------------------------------------------
@@ -410,5 +438,12 @@ macro(DIGIKAM_ADD_DIMG_PLUGIN)
     install(TARGETS DImg_${_parse_results_NAME}_Plugin
             DESTINATION ${PLUGIN_INSTALL_DIR}/digikam/dimg
     )
+
+    if(APPLE)
+        install(FILES "$<TARGET_FILE:DImg_${_parse_results_NAME}_Plugin>.dSYM"
+                DESTINATION "${CMAKE_INSTALL_LIBDIR}"
+                CONFIGURATIONS Debug RelWithDebInfo
+        )
+    endif()
 
 endmacro()
