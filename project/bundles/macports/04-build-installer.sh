@@ -462,12 +462,15 @@ else
 
     find $TEMPROOT -perm +111 -type f | xargs strip -SXx 2>/dev/null
 
-    # Under MacOS, all debug symbols are stored to separated dSYM sub directored near binary files.
+    # Under MacOS, all debug symbols are stored to separated dSYM sub directories near binary files.
 
-    DSYMDIRS=(`find $TEMPROOT/lib -name "*.dSYM"`)
+    DSYMDIRS=`find $TEMPROOT -type d -name "*.dSYM"`
 
-    for dsym in $DYSDIRS ; do
+    for dsym in $DSYMDIRS ; do
+
         rm -fr $dsym
+        echo "Remove debug symbols from $dsym"
+
     done
 
 fi
