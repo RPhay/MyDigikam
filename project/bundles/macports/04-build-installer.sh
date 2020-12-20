@@ -452,14 +452,30 @@ cp $ORIG_WD/icon-rcc/breeze-dark.rcc $TEMPROOT/Applications/KF5/digikam.app/Cont
 echo -e "\n---------- Strip symbols in binary files\n"
 
 if [[ $DK_DEBUG = 1 ]] ; then
+
     find $TEMPROOT -name "*.so"    | grep -Ev '(digikam|showfoto|exiv2)' | xargs strip -SXx
     find $TEMPROOT -name "*.dylib" | grep -Ev '(digikam|showfoto|exiv2)' | xargs strip -SXx
+
 else
+
+    # no debug symbols at all.
+
     find $TEMPROOT -perm +111 -type f | xargs strip -SXx 2>/dev/null
+
+    # Under MacOS, all debug symbols are stored to separated dSYM sub directored near binary files.
+
+    DSYMDIRS=(`find $TEMPROOT/lib -name "*.dSYM"`)
+
+    for dsym in $DYSDIRS ; do
+        rm -fr $dsym
+    done
+
 fi
 
 if [[ $DK_DEBUG = 1 ]] ; then
+
     DEBUG_SUF="-debug"
+
 fi
 
 #################################################################################################
