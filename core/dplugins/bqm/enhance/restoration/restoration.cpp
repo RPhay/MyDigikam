@@ -59,7 +59,7 @@ void Restoration::registerSettingsWidget()
     DVBox* const vbox = new DVBox;
 
     DActiveLabel* const cimgLogoLabel = new DActiveLabel(QUrl(QLatin1String("http://cimg.sourceforge.net")),
-                                                         QStandardPaths::locate(QStandardPaths::GenericDataLocation, QLatin1String("digikam/data/logo-cimg.png")),
+                                                         QStandardPaths::locate(QStandardPaths::AppDataLocation, QLatin1String("digikam/data/logo-cimg.png")),
                                                          vbox);
     cimgLogoLabel->setToolTip(i18n("Visit CImg library website"));
 

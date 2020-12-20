@@ -130,7 +130,7 @@ QPixmap GeoIfaceGlobalObject::getStandardMarkerPixmap()
 
 QUrl GeoIfaceGlobalObject::locateDataFile(const QString& filename)
 {
-    const QUrl dataFile = QUrl::fromLocalFile(QStandardPaths::locate(QStandardPaths::GenericDataLocation,
+    const QUrl dataFile = QUrl::fromLocalFile(QStandardPaths::locate(QStandardPaths::AppDataLocation,
                                                                      QLatin1String("digikam/geoiface/") + filename));
     qCDebug(DIGIKAM_GEOIFACE_LOG) << "located data:" << dataFile;
     return dataFile;

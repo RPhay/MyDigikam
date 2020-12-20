@@ -187,7 +187,7 @@ const GalleryTheme::List& GalleryTheme::getList()
         QStringList list;
         QStringList internalNameList;
         const QStringList filter     = QStringList() << QLatin1String("*.desktop");
-        const QStringList themesDirs = QStandardPaths::locateAll(QStandardPaths::GenericDataLocation,
+        const QStringList themesDirs = QStandardPaths::locateAll(QStandardPaths::AppDataLocation,
                                                                  QLatin1String("digikam/themes"),
                                                                  QStandardPaths::LocateDirectory);
 

@@ -132,7 +132,7 @@ QString BorderContainer::getBorderPath(int border)
             break;
     }
 
-    return (QStandardPaths::locate(QStandardPaths::GenericDataLocation, QLatin1String("digikam/data/") + pattern + QLatin1String(".png")));
+    return (QStandardPaths::locate(QStandardPaths::AppDataLocation, QLatin1String("digikam/data/") + pattern + QLatin1String(".png")));
 }
 
 } // namespace Digikam

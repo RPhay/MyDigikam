@@ -130,7 +130,7 @@ PiwigoWindow::Private::Private(PiwigoWindow* const parent,
     logo->setSizePolicy(QSizePolicy(QSizePolicy::Minimum, QSizePolicy::Minimum));
     logo->setToolTip(i18n("Visit Piwigo website"));
     logo->setAlignment(Qt::AlignLeft);
-    QImage img = QImage(QStandardPaths::locate(QStandardPaths::GenericDataLocation,
+    QImage img = QImage(QStandardPaths::locate(QStandardPaths::AppDataLocation,
                                                QLatin1String("digikam/pics/logo-piwigo.png")));
 
     QByteArray byteArray;

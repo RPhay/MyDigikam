@@ -954,7 +954,7 @@ void DXmlGuiWindow::setupIconTheme()
 
         QIcon::setThemeSearchPaths(QStringList() << QLatin1String(":/icons"));
 
-        const QStringList iconsDirs = QStandardPaths::locateAll(QStandardPaths::GenericDataLocation,
+        const QStringList iconsDirs = QStandardPaths::locateAll(QStandardPaths::AppDataLocation,
                                                                 QLatin1String("icons"),
                                                                 QStandardPaths::LocateDirectory);
 

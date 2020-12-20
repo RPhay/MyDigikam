@@ -80,7 +80,7 @@ namespace Digikam
 
 QString DbEngineParameters::internalServerPrivatePath()
 {
-    return QStandardPaths::writableLocation(QStandardPaths::GenericDataLocation) +
+    return QStandardPaths::writableLocation(QStandardPaths::AppDataLocation) +
                                             QLatin1String("/digikam/");
 }
 

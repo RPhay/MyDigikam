@@ -131,7 +131,7 @@ FaceManagementHelpDlg::FaceManagementHelpDlg(QWidget* const parent)
     QWidget* const     faceDetectionPage       = new QWidget();
     QGridLayout* const faceDetectionPageLayout = new QGridLayout();
 
-    QPixmap detectFaceOptionImage  = QPixmap(QStandardPaths::locate(QStandardPaths::GenericDataLocation,
+    QPixmap detectFaceOptionImage  = QPixmap(QStandardPaths::locate(QStandardPaths::AppDataLocation,
                                              QLatin1String("digikam/data/detectFacesImg.png")));
     detectFaceOptionImage          = detectFaceOptionImage.scaled(QSize(350, 170));
 
@@ -202,7 +202,7 @@ FaceManagementHelpDlg::FaceManagementHelpDlg(QWidget* const parent)
 
 
     QLabel* const identifyLabel        = new QLabel(faceRecogPage);
-    QMovie* const identifyImage        = new QMovie(QStandardPaths::locate(QStandardPaths::GenericDataLocation,
+    QMovie* const identifyImage        = new QMovie(QStandardPaths::locate(QStandardPaths::AppDataLocation,
                                                     QLatin1String("digikam/data/tagFacesImg.gif")));
     identifyImage->setScaledSize(QSize(185, 220));
     identifyLabel->setMovie(identifyImage);
@@ -230,7 +230,7 @@ FaceManagementHelpDlg::FaceManagementHelpDlg(QWidget* const parent)
                              "This leads to the creation of a new <u>Ignored</u> tag, "
                              "you can later unmark the face if needed."));
 
-    QPixmap ignoreImage           = QPixmap(QStandardPaths::locate(QStandardPaths::GenericDataLocation,
+    QPixmap ignoreImage           = QPixmap(QStandardPaths::locate(QStandardPaths::AppDataLocation,
                                             QLatin1String("digikam/data/ignoreImg.png")));
     ignoreImage                   = ignoreImage.scaled(QSize(185, 230));
 
@@ -246,7 +246,7 @@ FaceManagementHelpDlg::FaceManagementHelpDlg(QWidget* const parent)
                                   "implies higher accuracy, however this results in a smaller set "
                                   "of results."));
 
-    QPixmap workOnAllCoresImage  = QPixmap(QStandardPaths::locate(QStandardPaths::GenericDataLocation,
+    QPixmap workOnAllCoresImage  = QPixmap(QStandardPaths::locate(QStandardPaths::AppDataLocation,
                                            QLatin1String("digikam/data/workOnAllCoresImg.png")));
     workOnAllCoresImage          = workOnAllCoresImage.scaled(QSize(445, 170));
 
@@ -270,7 +270,7 @@ FaceManagementHelpDlg::FaceManagementHelpDlg(QWidget* const parent)
     QGridLayout* const confirmFacesLayout = new QGridLayout();
 
     QLabel* const overlayImgLabel = new QLabel(confirmFacesPage);
-    QPixmap overlayImg(QStandardPaths::locate(QStandardPaths::GenericDataLocation,
+    QPixmap overlayImg(QStandardPaths::locate(QStandardPaths::AppDataLocation,
                                               QLatin1String("digikam/data/overlayImg.png")));
     overlayImg                    = overlayImg.scaled(QSize(210, 285));
     overlayImgLabel->setAlignment(Qt::AlignVCenter);

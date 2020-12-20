@@ -38,7 +38,7 @@ namespace Digikam
 DWorkingPixmap::DWorkingPixmap(QObject* const parent)
     : QObject(parent)
 {
-    QPixmap pix(QStandardPaths::locate(QStandardPaths::GenericDataLocation,
+    QPixmap pix(QStandardPaths::locate(QStandardPaths::AppDataLocation,
                                        QLatin1String("digikam/data/process-working.png")));
     if (pix.isNull())
     {
