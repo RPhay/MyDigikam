@@ -225,4 +225,5 @@ BUGFIXES:
 207 ==> 430427 - PSD files cannot be viewed. Thumbnails are OK.
 208 ==> 430566 - Make DK_PLUGIN_PATH allow multiple paths.
 209 ==> 429103 - digiKam 7.1.0 does not start up, when using macos big sur.
-210 ==> 
+210 ==> 372487 - BQM says there are unprocessed items even though it completed successfully and all images were processed.
+211 ==> 

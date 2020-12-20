@@ -67,6 +67,9 @@ public:
 
     bool    allowDirectoryCreation;
     int     verticalSliderPosition;
+
+    QString lastPlainText;
+
     QTimer* parseTimer;
     Parser* parser;
 };
@@ -203,7 +206,14 @@ void AdvancedRenameLineEdit::slotTextChanged()
 
 void AdvancedRenameLineEdit::slotParseTimer()
 {
-    emit signalTextChanged(toPlainText());
+    if (d->lastPlainText == toPlainText())
+    {
+        return;
+    }
+
+    d->lastPlainText = toPlainText();
+
+    emit signalTextChanged(d->lastPlainText);
 }
 
 void AdvancedRenameLineEdit::scrollContentsBy(int dx, int dy)
