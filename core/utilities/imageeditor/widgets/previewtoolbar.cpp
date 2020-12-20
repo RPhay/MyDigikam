@@ -92,7 +92,7 @@ PreviewToolBar::PreviewToolBar(QWidget* const parent)
     d->previewOriginalButton = new QToolButton(this);
     d->previewButtons->addButton(d->previewOriginalButton, PreviewOriginalImage);
     hlay->addWidget(d->previewOriginalButton);
-    d->previewOriginalButton->setIcon(QPixmap(QStandardPaths::locate(QStandardPaths::AppDataLocation, QLatin1String("digikam/data/original.png"))));
+    d->previewOriginalButton->setIcon(QPixmap(QStandardPaths::locate(QStandardPaths::GenericDataLocation, QLatin1String("digikam/data/original.png"))));
     d->previewOriginalButton->setCheckable(true);
     d->previewOriginalButton->setWhatsThis(i18n("If this option is enabled, the original image will be shown."));
     d->previewOriginalButton->setToolTip(i18n("Preview original image"));
@@ -101,7 +101,7 @@ PreviewToolBar::PreviewToolBar(QWidget* const parent)
     d->previewBothButtonVert = new QToolButton(this);
     d->previewButtons->addButton(d->previewBothButtonVert, PreviewBothImagesVertCont);
     hlay->addWidget(d->previewBothButtonVert);
-    d->previewBothButtonVert->setIcon(QPixmap(QStandardPaths::locate(QStandardPaths::AppDataLocation, QLatin1String("digikam/data/bothvert.png"))));
+    d->previewBothButtonVert->setIcon(QPixmap(QStandardPaths::locate(QStandardPaths::GenericDataLocation, QLatin1String("digikam/data/bothvert.png"))));
     d->previewBothButtonVert->setCheckable(true);
     d->previewBothButtonVert->setWhatsThis(i18n("If this option is enabled, the preview area will "
                                                 "split vertically. "
@@ -114,7 +114,7 @@ PreviewToolBar::PreviewToolBar(QWidget* const parent)
     d->previewBothButtonHorz = new QToolButton(this);
     d->previewButtons->addButton(d->previewBothButtonHorz, PreviewBothImagesHorzCont);
     hlay->addWidget(d->previewBothButtonHorz);
-    d->previewBothButtonHorz->setIcon(QPixmap(QStandardPaths::locate(QStandardPaths::AppDataLocation, QLatin1String("digikam/data/bothhorz.png"))));
+    d->previewBothButtonHorz->setIcon(QPixmap(QStandardPaths::locate(QStandardPaths::GenericDataLocation, QLatin1String("digikam/data/bothhorz.png"))));
     d->previewBothButtonHorz->setCheckable(true);
     d->previewBothButtonHorz->setWhatsThis(i18n("If this option is enabled, the preview area will "
                                                 "split horizontally. "
@@ -127,7 +127,7 @@ PreviewToolBar::PreviewToolBar(QWidget* const parent)
     d->previewDuplicateBothButtonVert = new QToolButton(this);
     d->previewButtons->addButton(d->previewDuplicateBothButtonVert, PreviewBothImagesVert);
     hlay->addWidget(d->previewDuplicateBothButtonVert);
-    d->previewDuplicateBothButtonVert->setIcon(QPixmap(QStandardPaths::locate(QStandardPaths::AppDataLocation, QLatin1String("digikam/data/duplicatebothvert.png"))));
+    d->previewDuplicateBothButtonVert->setIcon(QPixmap(QStandardPaths::locate(QStandardPaths::GenericDataLocation, QLatin1String("digikam/data/duplicatebothvert.png"))));
     d->previewDuplicateBothButtonVert->setCheckable(true);
     d->previewDuplicateBothButtonVert->setWhatsThis(i18n("If this option is enabled, the preview area will "
                                                          "split vertically. "
@@ -139,7 +139,7 @@ PreviewToolBar::PreviewToolBar(QWidget* const parent)
     d->previewDupplicateBothButtonHorz = new QToolButton(this);
     d->previewButtons->addButton(d->previewDupplicateBothButtonHorz, PreviewBothImagesHorz);
     hlay->addWidget(d->previewDupplicateBothButtonHorz);
-    d->previewDupplicateBothButtonHorz->setIcon(QPixmap(QStandardPaths::locate(QStandardPaths::AppDataLocation, QLatin1String("digikam/data/duplicatebothhorz.png"))));
+    d->previewDupplicateBothButtonHorz->setIcon(QPixmap(QStandardPaths::locate(QStandardPaths::GenericDataLocation, QLatin1String("digikam/data/duplicatebothhorz.png"))));
     d->previewDupplicateBothButtonHorz->setCheckable(true);
     d->previewDupplicateBothButtonHorz->setWhatsThis(i18n("If this option is enabled, the preview area will "
                                                           "split horizontally. "
@@ -151,7 +151,7 @@ PreviewToolBar::PreviewToolBar(QWidget* const parent)
     d->previewtargetButton = new QToolButton(this);
     d->previewButtons->addButton(d->previewtargetButton, PreviewTargetImage);
     hlay->addWidget(d->previewtargetButton);
-    d->previewtargetButton->setIcon(QPixmap(QStandardPaths::locate(QStandardPaths::AppDataLocation, QLatin1String("digikam/data/target.png"))));
+    d->previewtargetButton->setIcon(QPixmap(QStandardPaths::locate(QStandardPaths::GenericDataLocation, QLatin1String("digikam/data/target.png"))));
     d->previewtargetButton->setCheckable(true);
     d->previewtargetButton->setWhatsThis(i18n("If this option is enabled, the target image will be shown."));
     d->previewtargetButton->setToolTip(i18n("Preview target image"));
@@ -160,7 +160,7 @@ PreviewToolBar::PreviewToolBar(QWidget* const parent)
     d->previewToggleMouseOverButton = new QToolButton(this);
     d->previewButtons->addButton(d->previewToggleMouseOverButton, PreviewToggleOnMouseOver);
     hlay->addWidget(d->previewToggleMouseOverButton);
-    d->previewToggleMouseOverButton->setIcon(QPixmap(QStandardPaths::locate(QStandardPaths::AppDataLocation, QLatin1String("digikam/data/togglemouseover.png"))));
+    d->previewToggleMouseOverButton->setIcon(QPixmap(QStandardPaths::locate(QStandardPaths::GenericDataLocation, QLatin1String("digikam/data/togglemouseover.png"))));
     d->previewToggleMouseOverButton->setCheckable(true);
     d->previewToggleMouseOverButton->setWhatsThis(i18n("If this option is enabled, the original image will "
                                                        "be shown when the mouse is over image area; otherwise, "

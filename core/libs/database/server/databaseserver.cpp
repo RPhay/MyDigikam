@@ -104,7 +104,7 @@ DatabaseServer::DatabaseServer(const DbEngineParameters& params, DatabaseServerS
     d->miscDir              = QDir(defaultAkDir).absoluteFilePath(QLatin1String("db_misc"));
     d->fileDataDir          = QDir(defaultAkDir).absoluteFilePath(QLatin1String("file_db_data"));
     d->actualConfig         = QDir(defaultAkDir).absoluteFilePath(QLatin1String("mysql.conf"));
-    d->globalConfig         = QStandardPaths::locate(QStandardPaths::AppDataLocation,
+    d->globalConfig         = QStandardPaths::locate(QStandardPaths::GenericDataLocation,
                                                      QLatin1String("digikam/database/mysql-global.conf"));
     databaseServerStateEnum = started;
 }
@@ -309,7 +309,7 @@ DatabaseServerError DatabaseServer::initMysqlConfig() const
 {
     DatabaseServerError result;
 
-    QString localConfig = QStandardPaths::locate(QStandardPaths::AppDataLocation,
+    QString localConfig = QStandardPaths::locate(QStandardPaths::GenericDataLocation,
                                                  QLatin1String("digikam/database/mysql-local.conf"));
 
     if (!d->globalConfig.isEmpty())

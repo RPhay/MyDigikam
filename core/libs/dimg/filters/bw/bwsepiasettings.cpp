@@ -140,7 +140,7 @@ BWSepiaSettings::BWSepiaSettings(QWidget* const parent, DImg* const img)
     }
     else
     {
-        QString backGround = QStandardPaths::locate(QStandardPaths::AppDataLocation,
+        QString backGround = QStandardPaths::locate(QStandardPaths::GenericDataLocation,
                                                     QLatin1String("digikam/about/images/body-background.jpg"));
 
         d->thumbImage      = DImg(backGround).smoothScale(128, 128, Qt::KeepAspectRatio);

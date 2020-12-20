@@ -157,7 +157,7 @@ IccProfile::IccProfile(const char* const location, const QString& relativePath)
 /*
          qCDebug(DIGIKAM_DIMG_LOG) << "Searching ICC profile from data directory with relative path:" << relativePath;
 */
-         filePath = QStandardPaths::locate(QStandardPaths::AppDataLocation, relativePath);
+         filePath = QStandardPaths::locate(QStandardPaths::GenericDataLocation, relativePath);
     }
     else
     {
@@ -187,7 +187,7 @@ IccProfile IccProfile::adobeRGB()
 
     if (path.isEmpty())
     {
-        path = QStandardPaths::locate(QStandardPaths::AppDataLocation, QLatin1String("digikam/profiles/compatibleWithAdobeRGB1998.icc"));
+        path = QStandardPaths::locate(QStandardPaths::GenericDataLocation, QLatin1String("digikam/profiles/compatibleWithAdobeRGB1998.icc"));
     }
 
     return IccProfile(path);
@@ -499,7 +499,7 @@ QStringList IccProfile::defaultSearchPaths()
     QStringList paths;
     QStringList candidates;
 
-    paths << QStandardPaths::locateAll(QStandardPaths::AppDataLocation, QLatin1String("color/icc"), QStandardPaths::LocateDirectory);
+    paths << QStandardPaths::locateAll(QStandardPaths::GenericDataLocation, QLatin1String("color/icc"), QStandardPaths::LocateDirectory);
 
 #ifdef Q_OS_WIN
 

@@ -335,13 +335,13 @@ FilmGrainSettings::FilmGrainSettings(QWidget* const parent)
     d->expanderBox->addItem(commonPage, QIcon::fromTheme(QLatin1String("system-run")),
                             i18n("Common Settings"),
                             QLatin1String("CommonSettingsContainer"), true);
-    d->expanderBox->addItem(firstPage, QIcon(QStandardPaths::locate(QStandardPaths::AppDataLocation, QLatin1String("digikam/data/colors-luma.png"))),
+    d->expanderBox->addItem(firstPage, QIcon(QStandardPaths::locate(QStandardPaths::GenericDataLocation, QLatin1String("digikam/data/colors-luma.png"))),
                             i18n("Luminance Noise"),
                             QLatin1String("LuminanceSettingsContainer"), true);
-    d->expanderBox->addItem(secondPage, QIcon(QStandardPaths::locate(QStandardPaths::AppDataLocation, QLatin1String("digikam/data/colors-chromablue.png"))),
+    d->expanderBox->addItem(secondPage, QIcon(QStandardPaths::locate(QStandardPaths::GenericDataLocation, QLatin1String("digikam/data/colors-chromablue.png"))),
                             i18n("Chrominance Blue Noise"),
                             QLatin1String("ChrominanceBlueSettingsContainer"), true);
-    d->expanderBox->addItem(thirdPage, QIcon(QStandardPaths::locate(QStandardPaths::AppDataLocation, QLatin1String("digikam/data/colors-chromared.png"))),
+    d->expanderBox->addItem(thirdPage, QIcon(QStandardPaths::locate(QStandardPaths::GenericDataLocation, QLatin1String("digikam/data/colors-chromared.png"))),
                             i18n("Chrominance Red Noise"),
                             QLatin1String("ChrominanceRedSettingsContainer"), true);
 

@@ -254,7 +254,7 @@ void WelcomePageView::slotThemeChanged()
 {
     QString appTitle         = i18n("digiKam");
     QString slogan           = DAboutData::digiKamSlogan();
-    QString locationHtml     = QStandardPaths::locate(QStandardPaths::AppDataLocation, QLatin1String("digikam/about/main.html"));
+    QString locationHtml     = QStandardPaths::locate(QStandardPaths::GenericDataLocation, QLatin1String("digikam/about/main.html"));
     QString content          = QString::fromUtf8(fileToString(locationHtml));
     content                  = content.arg(appTitle)
                                       .arg(slogan)

@@ -321,7 +321,7 @@ SetupMetadata::SetupMetadata(QWidget* const parent)
     infoBox->setFrameStyle(QFrame::StyledPanel | QFrame::Raised);
 
     DActiveLabel* const exiv2LogoLabel = new DActiveLabel(QUrl(QLatin1String("https://www.exiv2.org")),
-                                                          QStandardPaths::locate(QStandardPaths::AppDataLocation, QLatin1String("digikam/data/logo-exiv2.png")),
+                                                          QStandardPaths::locate(QStandardPaths::GenericDataLocation, QLatin1String("digikam/data/logo-exiv2.png")),
                                                           infoBox);
     exiv2LogoLabel->setWhatsThis(i18n("Visit Exiv2 project website"));
 

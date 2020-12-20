@@ -52,10 +52,10 @@ public:
 
     explicit Private()
     {
-        markerNormalUrl   = QUrl::fromLocalFile(QStandardPaths::locate(QStandardPaths::AppDataLocation,
+        markerNormalUrl   = QUrl::fromLocalFile(QStandardPaths::locate(QStandardPaths::GenericDataLocation,
                                                 QLatin1String("digikam/geolocationedit/searchmarker-normal.png")));
         markerNormal      = QPixmap(markerNormalUrl.toLocalFile());
-        markerSelectedUrl = QUrl::fromLocalFile(QStandardPaths::locate(QStandardPaths::AppDataLocation,
+        markerSelectedUrl = QUrl::fromLocalFile(QStandardPaths::locate(QStandardPaths::GenericDataLocation,
                                                 QLatin1String("digikam/geolocationedit/searchmarker-selected.png")));
         markerSelected    = QPixmap(markerSelectedUrl.toLocalFile());
         selectionModel    = nullptr;

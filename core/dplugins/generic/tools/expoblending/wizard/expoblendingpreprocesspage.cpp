@@ -118,7 +118,7 @@ ExpoBlendingPreProcessPage::ExpoBlendingPreProcessPage(ExpoBlendingManager* cons
 
     resetTitle();
 
-    QPixmap leftPix(QStandardPaths::locate(QStandardPaths::AppDataLocation, QLatin1String("digikam/data/assistant-preprocessing.png")));
+    QPixmap leftPix(QStandardPaths::locate(QStandardPaths::GenericDataLocation, QLatin1String("digikam/data/assistant-preprocessing.png")));
     setLeftBottomPix(leftPix.scaledToWidth(128, Qt::SmoothTransformation));
 
     connect(d->mngr->thread(), SIGNAL(starting(DigikamGenericExpoBlendingPlugin::ExpoBlendingActionData)),

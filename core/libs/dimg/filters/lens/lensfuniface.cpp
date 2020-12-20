@@ -78,7 +78,7 @@ LensFunIface::LensFunIface()
 
     // Lensfun host XML files in a dedicated sub-directory.
 
-    QString lensPath = QStandardPaths::locate(QStandardPaths::AppDataLocation,
+    QString lensPath = QStandardPaths::locate(QStandardPaths::GenericDataLocation,
                                               QLatin1String("lensfun"),
                                               QStandardPaths::LocateDirectory);
 

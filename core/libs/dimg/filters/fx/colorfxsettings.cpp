@@ -105,7 +105,7 @@ ColorFXSettings::ColorFXSettings(QWidget* const parent, bool useGenericImg)
 
     if (useGenericImg)
     {
-        QString backGround = QStandardPaths::locate(QStandardPaths::AppDataLocation,
+        QString backGround = QStandardPaths::locate(QStandardPaths::GenericDataLocation,
                                                     QLatin1String("digikam/about/images/body-background.jpg"));
 
         thumbImage         = DImg(backGround).smoothScale(128, 128, Qt::KeepAspectRatio);
@@ -354,7 +354,7 @@ void ColorFXSettings::writeSettings(KConfigGroup& group)
 void ColorFXSettings::findLuts()
 {
     QStringList dirpaths;
-    dirpaths << QStandardPaths::locateAll(QStandardPaths::AppDataLocation,
+    dirpaths << QStandardPaths::locateAll(QStandardPaths::GenericDataLocation,
                                           QLatin1String("digikam/data/lut3d"),
                                           QStandardPaths::LocateDirectory);
 

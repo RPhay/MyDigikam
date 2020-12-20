@@ -360,7 +360,3 @@ write_basic_package_version_file(${CMAKE_CURRENT_BINARY_DIR}/DigikamCoreConfigVe
 
 install(FILES ${CMAKE_CURRENT_BINARY_DIR}/DigikamCoreConfigVersion.cmake
         DESTINATION "${CMAKE_INSTALL_LIBDIR}/cmake/DigikamCore")
-
-if(APPLE)
-    install(FILES "$<TARGET_FILE:digikamcore>.dSYM" DESTINATION "${CMAKE_INSTALL_LIBDIR}" CONFIGURATIONS Debug RelWithDebInfo)
-endif()

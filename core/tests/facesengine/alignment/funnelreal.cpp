@@ -173,7 +173,7 @@ FunnelReal::FunnelReal()
 {
     QString trainingFile(QFINDTESTDATA("face-funnel.data")); ///< data model file come with source code.
 /*
-    QString trainingFile = QStandardPaths::standardLocations(QStandardPaths::AppDataLocation).last() + QLatin1Char('/') +
+    QString trainingFile = QStandardPaths::standardLocations(QStandardPaths::GenericDataLocation).last() + QLatin1Char('/') +
                            QLatin1String("digikam/alignment-congealing/face-funnel.data");
 */
     if (!QFileInfo::exists(trainingFile))

@@ -137,7 +137,7 @@ PanoPreProcessPage::PanoPreProcessPage(PanoManager* const mngr, QWizard* const d
 
     setPageWidget(vbox);
 
-    QPixmap leftPix(QStandardPaths::locate(QStandardPaths::AppDataLocation, QLatin1String("digikam/data/assistant-preprocessing.png")));
+    QPixmap leftPix(QStandardPaths::locate(QStandardPaths::GenericDataLocation, QLatin1String("digikam/data/assistant-preprocessing.png")));
     setLeftBottomPix(leftPix.scaledToWidth(128, Qt::SmoothTransformation));
 
     connect(d->progressTimer, SIGNAL(timeout()),

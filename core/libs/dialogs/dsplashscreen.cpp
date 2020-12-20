@@ -82,17 +82,17 @@ DSplashScreen::DSplashScreen()
 
     if (QApplication::applicationName() == QLatin1String("digikam"))
     {
-        splash = QStandardPaths::locate(QStandardPaths::AppDataLocation, QLatin1String("digikam/data/splash-digikam.png"));
+        splash = QStandardPaths::locate(QStandardPaths::GenericDataLocation, QLatin1String("digikam/data/splash-digikam.png"));
     }
     else
     {
-        splash = QStandardPaths::locate(QStandardPaths::AppDataLocation, QLatin1String("showfoto/data/splash-showfoto.png"));
+        splash = QStandardPaths::locate(QStandardPaths::GenericDataLocation, QLatin1String("showfoto/data/splash-showfoto.png"));
     }
 
     if (!QString::fromUtf8(digikam_version_suffix).isEmpty())
     {
         QPainter p(&splash);
-        p.drawPixmap(380, 27, QStandardPaths::locate(QStandardPaths::AppDataLocation, QLatin1String("digikam/data/logo-beta.png")));
+        p.drawPixmap(380, 27, QStandardPaths::locate(QStandardPaths::GenericDataLocation, QLatin1String("digikam/data/logo-beta.png")));
         p.end();
     }
 

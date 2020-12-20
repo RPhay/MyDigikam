@@ -1246,7 +1246,7 @@ void AdvPrintPhotoPage::initPhotoSizes(const QSizeF& pageSize)
 
     // get template-files and parse them
 
-    QDir dir(QStandardPaths::locate(QStandardPaths::AppDataLocation,
+    QDir dir(QStandardPaths::locate(QStandardPaths::GenericDataLocation,
                                     QLatin1String("digikam/templates"),
                                     QStandardPaths::LocateDirectory));
     const QStringList list = dir.entryList(QStringList() << QLatin1String("*.xml"));
@@ -1491,7 +1491,7 @@ void AdvPrintPhotoPage::parseTemplateFile(const QString& fn, const QSizeF& pageS
                                                                    QLatin1String("XXX")) +
                                                                    QLatin1String(".desktop");
 
-                            QDir dir(QStandardPaths::locate(QStandardPaths::AppDataLocation,
+                            QDir dir(QStandardPaths::locate(QStandardPaths::GenericDataLocation,
                                                             QLatin1String("digikam/templates"),
                                                             QStandardPaths::LocateDirectory));
                             const QStringList list  = dir.entryList(QStringList()

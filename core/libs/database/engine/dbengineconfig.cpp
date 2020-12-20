@@ -39,7 +39,7 @@ namespace Digikam
 
 Q_GLOBAL_STATIC_WITH_ARGS(DbEngineConfigSettingsLoader,
                           dbcoreloader,
-                          (QStandardPaths::locate(QStandardPaths::AppDataLocation, QLatin1String("digikam/database/dbconfig.xml")),
+                          (QStandardPaths::locate(QStandardPaths::GenericDataLocation, QLatin1String("digikam/database/dbconfig.xml")),
                            dbcoreconfig_xml_version)
                          )
 

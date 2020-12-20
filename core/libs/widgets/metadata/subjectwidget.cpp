@@ -119,7 +119,7 @@ SubjectWidget::SubjectWidget(QWidget* const parent, bool sizeLimited)
     // Load subject codes provided by IPTC/NAA as xml file.
     // See http://iptc.cms.apa.at/std/topicset/topicset.iptc-subjectcode.xml for details.
 
-    QString path = QStandardPaths::locate(QStandardPaths::AppDataLocation,
+    QString path = QStandardPaths::locate(QStandardPaths::GenericDataLocation,
                                           QLatin1String("digikam/metadata/topicset.iptc-subjectcode.xml"));
 
     // NOTE: use dynamic binding as this virtual method can be re-implemented in derived classes.
