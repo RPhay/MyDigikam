@@ -206,14 +206,12 @@ void AdvancedRenameLineEdit::slotTextChanged()
 
 void AdvancedRenameLineEdit::slotParseTimer()
 {
-    if (d->lastPlainText == toPlainText())
+    if (d->lastPlainText != toPlainText())
     {
-        return;
+        d->lastPlainText = toPlainText();
+
+        emit signalTextChanged(d->lastPlainText);
     }
-
-    d->lastPlainText = toPlainText();
-
-    emit signalTextChanged(d->lastPlainText);
 }
 
 void AdvancedRenameLineEdit::scrollContentsBy(int dx, int dy)
