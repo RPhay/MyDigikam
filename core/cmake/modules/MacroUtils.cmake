@@ -257,6 +257,10 @@ macro(MACOS_DEBUG_POLICIES)
                     "${CMAKE_CXX_CREATE_SHARED_LIBRARY}"
                     "${DSYMUTIL_PROGRAM} <TARGET>")
 
+                set(CMAKE_CXX_CREATE_SHARED_MODULE
+                    "${CMAKE_CXX_CREATE_SHARED_MODULE}"
+                    "${DSYMUTIL_PROGRAM} <TARGET>")
+
             endif()
 
         endif()
