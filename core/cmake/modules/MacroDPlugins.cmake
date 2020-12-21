@@ -40,21 +40,12 @@ macro(DIGIKAM_ADD_GENERIC_PLUGIN)
     )
 
     # Mandatory
-    if(_parse_results_NAME)
-#        message(STATUS "Generic plugin name=${_parse_results_NAME}")
-    else()
+    if(NOT _parse_results_NAME)
         message(FATAL_ERROR "Generic plugin name is required.")
     endif()
 
-    if(_parse_results_SOURCES )
-#        message(STATUS "Generic plugin sources=${_parse_results_SOURCES}")
-    else()
+    if(NOT _parse_results_SOURCES)
         message(FATAL_ERROR "Generic plugin sources is required.")
-    endif()
-
-    # Optional
-    if(_parse_results_DEPENDS)
-#        message(STATUS "Generic plugin dependencies=${_parse_results_DEPENDS}")
     endif()
 
     if(APPLE)
@@ -63,7 +54,6 @@ macro(DIGIKAM_ADD_GENERIC_PLUGIN)
 
     add_library(Generic_${_parse_results_NAME}_Plugin
                 MODULE ${_parse_results_SOURCES})
-
 
     target_link_libraries(Generic_${_parse_results_NAME}_Plugin
 
@@ -92,7 +82,7 @@ macro(DIGIKAM_ADD_GENERIC_PLUGIN)
 
     if(APPLE)
         install(FILES "$<TARGET_FILE:Generic_${_parse_results_NAME}_Plugin>.dSYM"
-                DESTINATION "${CMAKE_INSTALL_LIBDIR}"
+                DESTINATION ${PLUGIN_INSTALL_DIR}/digikam/generic
                 CONFIGURATIONS Debug RelWithDebInfo
         )
     endif()
@@ -129,21 +119,12 @@ macro(DIGIKAM_ADD_EDITOR_PLUGIN)
     )
 
     # Mandatory
-    if(_parse_results_NAME)
-#        message(STATUS "Editor plugin name=${_parse_results_NAME}")
-    else()
+    if(NOT _parse_results_NAME)
         message(FATAL_ERROR "Editor plugin name is required.")
     endif()
 
-    if(_parse_results_SOURCES )
-#        message(STATUS "Editor plugin sources=${_parse_results_SOURCES}")
-    else()
+    if(NOT _parse_results_SOURCES)
         message(FATAL_ERROR "Editor plugin sources is required.")
-    endif()
-
-    # Optional
-    if(_parse_results_DEPENDS)
-#        message(STATUS "Editor plugin dependencies=${_parse_results_DEPENDS}")
     endif()
 
     if(APPLE)
@@ -179,7 +160,7 @@ macro(DIGIKAM_ADD_EDITOR_PLUGIN)
 
     if(APPLE)
         install(FILES "$<TARGET_FILE:Editor_${_parse_results_NAME}_Plugin>.dSYM"
-                DESTINATION "${CMAKE_INSTALL_LIBDIR}"
+                DESTINATION ${PLUGIN_INSTALL_DIR}/digikam/editor
                 CONFIGURATIONS Debug RelWithDebInfo
         )
     endif()
@@ -216,21 +197,12 @@ macro(DIGIKAM_ADD_BQM_PLUGIN)
     )
 
     # Mandatory
-    if(_parse_results_NAME)
-#        message(STATUS "Bqm plugin name=${_parse_results_NAME}")
-    else()
+    if(NOT _parse_results_NAME)
         message(FATAL_ERROR "Bqm plugin name is required.")
     endif()
 
-    if(_parse_results_SOURCES )
-#        message(STATUS "Bqm plugin sources=${_parse_results_SOURCES}")
-    else()
+    if(NOT _parse_results_SOURCES)
         message(FATAL_ERROR "Bqm plugin sources is required.")
-    endif()
-
-    # Optional
-    if(_parse_results_DEPENDS)
-#        message(STATUS "Bqm plugin dependencies=${_parse_results_DEPENDS}")
     endif()
 
     if(APPLE)
@@ -269,7 +241,7 @@ macro(DIGIKAM_ADD_BQM_PLUGIN)
 
     if(APPLE)
         install(FILES "$<TARGET_FILE:Bqm_${_parse_results_NAME}_Plugin>.dSYM"
-                DESTINATION "${CMAKE_INSTALL_LIBDIR}"
+                DESTINATION ${PLUGIN_INSTALL_DIR}/digikam/bqm
                 CONFIGURATIONS Debug RelWithDebInfo
         )
     endif()
@@ -306,21 +278,12 @@ macro(DIGIKAM_ADD_RAWIMPORT_PLUGIN)
     )
 
     # Mandatory
-    if(_parse_results_NAME)
-#        message(STATUS "RawImport plugin name=${_parse_results_NAME}")
-    else()
+    if(NOT _parse_results_NAME)
         message(FATAL_ERROR "RawImport plugin name is required.")
     endif()
 
-    if(_parse_results_SOURCES )
-#        message(STATUS "RawImport plugin sources=${_parse_results_SOURCES}")
-    else()
+    if(NOT _parse_results_SOURCES)
         message(FATAL_ERROR "RawImport plugin sources is required.")
-    endif()
-
-    # Optional
-    if(_parse_results_DEPENDS)
-#        message(STATUS "RawImport plugin dependencies=${_parse_results_DEPENDS}")
     endif()
 
     if(APPLE)
@@ -356,7 +319,7 @@ macro(DIGIKAM_ADD_RAWIMPORT_PLUGIN)
 
     if(APPLE)
         install(FILES "$<TARGET_FILE:RawImport_${_parse_results_NAME}_Plugin>.dSYM"
-                DESTINATION "${CMAKE_INSTALL_LIBDIR}"
+                DESTINATION ${PLUGIN_INSTALL_DIR}/digikam/rawimport
                 CONFIGURATIONS Debug RelWithDebInfo
         )
     endif()
@@ -393,21 +356,12 @@ macro(DIGIKAM_ADD_DIMG_PLUGIN)
     )
 
     # Mandatory
-    if(_parse_results_NAME)
-#        message(STATUS "DImg plugin name=${_parse_results_NAME}")
-    else()
+    if(NOT _parse_results_NAME)
         message(FATAL_ERROR "DImg plugin name is required.")
     endif()
 
-    if(_parse_results_SOURCES )
-#        message(STATUS "DImg plugin sources=${_parse_results_SOURCES}")
-    else()
+    if(NOT _parse_results_SOURCES)
         message(FATAL_ERROR "DImg plugin sources is required.")
-    endif()
-
-    # Optional
-    if(_parse_results_DEPENDS)
-#        message(STATUS "DImg plugin dependencies=${_parse_results_DEPENDS}")
     endif()
 
     if(APPLE)
@@ -441,7 +395,7 @@ macro(DIGIKAM_ADD_DIMG_PLUGIN)
 
     if(APPLE)
         install(FILES "$<TARGET_FILE:DImg_${_parse_results_NAME}_Plugin>.dSYM"
-                DESTINATION "${CMAKE_INSTALL_LIBDIR}"
+                DESTINATION ${PLUGIN_INSTALL_DIR}/digikam/dimg
                 CONFIGURATIONS Debug RelWithDebInfo
         )
     endif()
