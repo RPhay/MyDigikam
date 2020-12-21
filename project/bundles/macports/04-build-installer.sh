@@ -134,8 +134,9 @@ libexec/qt5/plugins/bearer/*.dylib \
 binaries="$OTHER_APPS"
 
 # Additional Files/Directories - to be copied recursively but not checked for dependencies
-# Note: dSYM directories aee copied as well and cleaned laster if debug symbols must be removed in final bundle.
+# Note: dSYM directories aee copied as well and cleaned later if debug symbols must be removed in final bundle.
 OTHER_DIRS="\
+lib/libdigikam*.dSYM \
 lib/plugins \
 lib/libgphoto2 \
 lib/libgphoto2_port \
