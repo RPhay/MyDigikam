@@ -344,16 +344,16 @@ done
 
 echo "---------- Copying Qt Web Backend files..."
 
-# QWebEngine bin data files.
+# Qt Web framework bin data files.
+# NOTE: Since Qt 5.15.0, QtWebEngine runtime process is now located in 
+#       libexec/qt5/lib/QtWebEngineCore.framework/Versions/5/Helpers/QtWebEngineProcess.app/Contents/MacOS
+#       instead of libexec/qt5/libexec/. No needs to make extra rules for this runtime process.
 
-mkdir -p $TEMPROOT/libexec/qt5/libexec/
+if [[ $DK_QTWEBENGINE = 0 ]] ; then
 
-if [[ $DK_QTWEBENGINE = 1 ]] ; then
+    # Rules for QtWebKit runtime process
 
-    # QtWebEngine runtime process
-    [[ -e $INSTALL_PREFIX/libexec/qt5/libexec/QtWebEngineProcess  ]] && cp -a "$INSTALL_PREFIX/libexec/qt5/libexec/QtWebEngineProcess"  "$TEMPROOT/libexec/qt5/libexec/"
-
-else
+    mkdir -p $TEMPROOT/libexec/qt5/libexec/
 
     # QtWebKit runtime process
     [[ -e $INSTALL_PREFIX/libexec/qt5/libexec/QtWebNetworkProcess ]] && cp -a "$INSTALL_PREFIX/libexec/qt5/libexec/QtWebNetworkProcess" "$TEMPROOT/libexec/qt5/libexec/"
@@ -496,42 +496,45 @@ if [ ]; then
 
 echo -e "\n---------- Relocate binary files"
 
-# relocate dynamic libraries with rpath
+# Relocate dynamic libraries with rpath
 
-DYLIBFILES=(`find $TEMPROOT/lib -name "*.dylib"`)
+echo -e "\n--- Relocate dynamic library files"
+
+DYLIBFILES=(`find $TEMPROOT -name "*.dylib"`)
 
 RelocateBinaries DYLIBFILES[@]
 
-# relocate system objects with rpath
+# Relocate system objects with rpath
 
-SOFILES=(`find $TEMPROOT/lib -name "*.so"`)
+echo -e "\n--- Relocate system object files"
+
+SOFILES=(`find $TEMPROOT -name "*.so"`)
 
 RelocateBinaries SOFILES[@]
 
-# relocate library executables with rpath.
-# This include all binary files with extension as all Qt libraries.
+# Relocate executables with rpath and patch relative search path.
 
-LIBEXECFILES=(`find $TEMPROOT/libexec -type f -perm +ugo+x`)
+echo -e "\n--- Relocate executable files"
 
-RelocateBinaries LIBEXECFILES[@]
+EXECFILES=(`find $TEMPROOT -type f -perm +ugo+x ! -name "*.dylib" ! -name "*.so"`)
 
-# relocate main executable with rpath.
+RelocateBinaries EXECFILES[@]
 
-MAINFILES="\
-$TEMPROOT/Applications/KF5/digikam.app/Contents/MacOS/digikam \
-$TEMPROOT/Applications/KF5/showfoto.app/Contents/MacOS/showfoto \
-$TEMPROOT/bin/kbuildsycoca5 \
-"
+for APP in $EXECFILES ; do
 
-RelocateBinaries MAINFILES[@]
+    if [ -x "$APP" && `file "$APP" | grep -q "Mach-O"` ] ; then
 
-for APP in $MAINFILES ; do
-    install_name_tool -add_rpath @executable_path/.. $APP
-    install_name_tool -add_rpath @executable_path/../.. $APP
-    install_name_tool -add_rpath @executable_path/../../.. $APP
-    install_name_tool -add_rpath @executable_path/../../../.. $APP
-    install_name_tool -add_rpath @executable_path/../../../../.. $APP
-    install_name_tool -add_rpath @executable_path/../../../../../.. $APP
+        echo -e "\n--- Patch RPATH in $APP"
+
+        install_name_tool -add_rpath @executable_path/.. $APP
+        install_name_tool -add_rpath @executable_path/../.. $APP
+        install_name_tool -add_rpath @executable_path/../../.. $APP
+        install_name_tool -add_rpath @executable_path/../../../.. $APP
+        install_name_tool -add_rpath @executable_path/../../../../.. $APP
+        install_name_tool -add_rpath @executable_path/../../../../../.. $APP
+
+    fi
+
 done
 
 fi
