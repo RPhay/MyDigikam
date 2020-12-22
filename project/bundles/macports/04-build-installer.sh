@@ -485,10 +485,11 @@ if [[ $DK_DEBUG = 1 ]] ; then
 fi
 
 #################################################################################################
-# Relocate binary files
-# For details, see these urls:
+# Relocate binary files. For details, see these urls:
+#
 # https://stackoverflow.com/questions/9263256/can-you-please-help-me-understand-how-mach-o-libraries-work-in-mac-os-x
 # https://matthew-brett.github.io/docosx/mac_runtime_link.html
+# http://thecourtsofchaos.com/2013/09/16/how-to-copy-and-relink-binaries-on-osx/
 
 # Not yet finalized !
 if [ ]; then
