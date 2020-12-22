@@ -229,4 +229,5 @@ BUGFIXES:
 211 ==> 430664 - How to access a database and files from another computer in LAN.
 212 ==> 430684 - Renaming mp4 files - metadata fields have no values.
 213 ==> 430589 - Want to disable face detection extra download on Mac version.
-214 ==> 
+214 ==> 383096 - digiKam crash, maintenance related?
+215 ==> 
