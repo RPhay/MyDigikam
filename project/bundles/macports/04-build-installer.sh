@@ -501,7 +501,13 @@ DYLIBFILES=(`find $TEMPROOT/lib -name "*.dylib"`)
 
 RelocateBinaries DYLIBFILES[@]
 
-# relocate library executables and system objects files with rpath.
+# relocate system objects with rpath
+
+SOFILES=(`find $TEMPROOT/lib -name "*.so"`)
+
+RelocateBinaries SOFILES[@]
+
+# relocate library executables with rpath.
 # This include all binary files with extension as all Qt libraries.
 
 LIBEXECFILES=(`find $TEMPROOT/libexec -type f -perm +ugo+x`)
