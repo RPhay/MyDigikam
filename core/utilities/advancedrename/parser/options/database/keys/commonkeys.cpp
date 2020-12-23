@@ -73,7 +73,7 @@ CommonKeys::CommonKeys()
     addId(KEY_COLORMODEL,     i18n("Color model of the image"));
     addId(KEY_AUTHORS,        i18n("A comma separated list of all authors"));
     addId(KEY_TITLE,          i18n("Title of the image"));
-    addId(KEY_TAGSLIST,       i18n("Tags of the image as list with comma as separator"));
+    addId(KEY_TAGSLIST,       i18n("A comma separated list of all tags"));
 }
 
 QString CommonKeys::getDbValue(const QString& key, ParseSettings& settings)
