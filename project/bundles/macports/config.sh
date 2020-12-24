@@ -40,7 +40,7 @@ BUILDING_DIR="`pwd`/temp.build"
 # Older values cannot be set as it do not support x86_64.
 OSX_MIN_TARGET="10.13"
 
-# Directory where not relocable bundle will be built, and where it will be installed by packaging script
+# Directory to build relocable bundle.
 INSTALL_PREFIX="/opt/digikam"
 
 # Macports configuration

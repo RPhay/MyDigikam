@@ -491,9 +491,6 @@ fi
 # https://matthew-brett.github.io/docosx/mac_runtime_link.html
 # http://thecourtsofchaos.com/2013/09/16/how-to-copy-and-relink-binaries-on-osx/
 
-# Not yet finalized !
-if [ ]; then
-
 echo -e "\n---------- Relocate binary files"
 
 # Relocate dynamic libraries with rpath
@@ -520,11 +517,13 @@ EXECFILES=(`find $TEMPROOT -type f -perm +ugo+x ! -name "*.dylib" ! -name "*.so"
 
 RelocateBinaries EXECFILES[@]
 
-for APP in $EXECFILES ; do
+echo -e "\n--- Patch RPATH in executable files"
 
-    if [ -x "$APP" && `file "$APP" | grep -q "Mach-O"` ] ; then
+for APP in ${EXECFILES[@]} ; do
 
-        echo -e "\n--- Patch RPATH in $APP"
+    ISBINARY=`file "$APP" | grep "Mach-O" || true`
+
+    if [[ $ISBINARY ]] ; then
 
         install_name_tool -add_rpath @executable_path/.. $APP
         install_name_tool -add_rpath @executable_path/../.. $APP
@@ -532,12 +531,15 @@ for APP in $EXECFILES ; do
         install_name_tool -add_rpath @executable_path/../../../.. $APP
         install_name_tool -add_rpath @executable_path/../../../../.. $APP
         install_name_tool -add_rpath @executable_path/../../../../../.. $APP
+        install_name_tool -add_rpath @executable_path/../../../../../../.. $APP
+        install_name_tool -add_rpath @executable_path/../../../../../../../../.. $APP
+        install_name_tool -add_rpath @executable_path/../../../../../../../../../.. $APP
+
+        echo "Patch $APP"
 
     fi
 
 done
-
-fi
 
 #################################################################################################
 # Build PKG file

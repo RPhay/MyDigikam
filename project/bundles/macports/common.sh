@@ -199,34 +199,26 @@ FILESLIST=("${!1}")
 
 for FILE in ${FILESLIST[@]} ; do
 
+    ISMACHO=`file "$FILE" | grep "Mach-O" || true`
 
-    # List all external dependencies starting with INSTALL_PREFIX
+    if [[ $ISMACHO ]] ; then
 
-    DEPS=$(otool -L $FILE | grep $INSTALL_PREFIX | awk -F ' \\\(' '{print $1}')
+        # For each file from bin list, we replace the absolute path to external dependency with a relative path
+        # NOTE: relative path must be resolved in main executable later.
 
-    # For each file from bin list, we replace the absolute path to external dependency with a relative path
-    # NOTE: relative path must be resolved in main executable later.
+        echo "Relocate $FILE"
 
-    for EXTLIB in $DEPS ; do
+        # List all external dependencies starting with INSTALL_PREFIX
 
-        if [ -x "$FILE" && `file "$FILE" | grep -q "Mach-O"` ] ; then
+        DEPS=$(otool -L $FILE | grep $INSTALL_PREFIX | awk -F ' \\\(' '{print $1}')
+
+        for EXTLIB in $DEPS ; do
 
             RPATHLIB=${EXTLIB/$INSTALL_PREFIX/$RPATHSTR}
-#           echo "   $EXTLIB ==> $RPATHLIB"
+ #           echo "   $EXTLIB ==> $RPATHLIB"
             install_name_tool -change $EXTLIB $RPATHLIB $FILE
-            PROCESSED=1
 
-        fi
-
-    done
-
-    if [[ $PROCESSED = 1 ]] ; then
-
-        echo "Relocate binary $FILE: done"
-
-    else
-
-        echo "Relocate binary $FILE: none"
+        done
 
     fi
 

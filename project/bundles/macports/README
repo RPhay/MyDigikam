@@ -27,19 +27,19 @@ how they work.
 BUNDLE CONTENTS
 ---------------
 
-Note : the bundle is not relocatable.
+Note: the bundle is not relocatable.
 
    |-- Applications
-   |   |-- KF5                                Binary applications directories (digiKam and Showfoto)
+   |   |-- KF5                                      Binary applications directories (digiKam and Showfoto)
    |       |-- digikam.app
    |       |   |-- Contents
    |       |       |-- MacOS
-   |       |       |-- Resources              Shared data files (marble, i18n, etc...)
+   |       |       |-- Resources                    Shared data files (marble, i18n, etc...)
    |       |-- showfoto.app
    |           |-- Contents
    |               |-- MacOS
-   |               |-- Resources              ==> symbolic link to Applications/KF5/digikam.app/Contents/Resources
-   |-- digiKam                                Link to MacOS desktop with scripts.
+   |               |-- Resources                    Symbolic link to Applications/KF5/digikam.app/Contents/Resources
+   |-- digiKam                                      Link to MacOS desktop with scripts.
    |   |-- digikam.app
    |       |-- Contents
    |          |-- MacOS
@@ -50,14 +50,14 @@ Note : the bundle is not relocatable.
    |         |-- MacOS
    |         |-- Resources
    |             |-- Scripts
-   |-- bin                                    Extra binaries
-   |-- etc                                    Really need ?
+   |-- bin                                          Extra binaries
+   |-- etc                                          Really need ?
    |   |-- xdg
    |       |-- ui
-   |-- lib                                    Shared libraries
+   |-- lib                                          Shared libraries
    |   |-- mysql56
    |       |-- mysql
-   |-- libexec                                Run-times libraries and plugins
+   |-- libexec                                      Run-times libraries and plugins
    |   |-- qt5
    |       |-- lib
    |       |   |-- QtConcurrent.framework
