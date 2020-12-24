@@ -399,7 +399,7 @@
 											<key>GID</key>
 											<integer>0</integer>
 											<key>PATH</key>
-											<string>../opt/digikam/Applications</string>
+											<string>../Applications/digiKam/Applications</string>
 											<key>PATH_TYPE</key>
 											<integer>1</integer>
 											<key>PERMISSIONS</key>
@@ -415,7 +415,7 @@
 											<key>GID</key>
 											<integer>0</integer>
 											<key>PATH</key>
-											<string>../opt/digikam/bin</string>
+											<string>../Applications/digiKam/bin</string>
 											<key>PATH_TYPE</key>
 											<integer>1</integer>
 											<key>PERMISSIONS</key>
@@ -431,7 +431,7 @@
 											<key>GID</key>
 											<integer>0</integer>
 											<key>PATH</key>
-											<string>../opt/digikam/etc</string>
+											<string>../Applications/digiKam/etc</string>
 											<key>PATH_TYPE</key>
 											<integer>1</integer>
 											<key>PERMISSIONS</key>
@@ -447,7 +447,7 @@
 											<key>GID</key>
 											<integer>0</integer>
 											<key>PATH</key>
-											<string>../opt/digikam/lib</string>
+											<string>../Applications/digiKam/lib</string>
 											<key>PATH_TYPE</key>
 											<integer>1</integer>
 											<key>PERMISSIONS</key>
@@ -463,7 +463,7 @@
 											<key>GID</key>
 											<integer>0</integer>
 											<key>PATH</key>
-											<string>../opt/digikam/libexec</string>
+											<string>../Applications/digiKam/libexec</string>
 											<key>PATH_TYPE</key>
 											<integer>1</integer>
 											<key>PERMISSIONS</key>
@@ -479,7 +479,7 @@
 											<key>GID</key>
 											<integer>0</integer>
 											<key>PATH</key>
-											<string>../opt/digikam/share</string>
+											<string>../Applications/digiKam/share</string>
 											<key>PATH_TYPE</key>
 											<integer>1</integer>
 											<key>PERMISSIONS</key>
@@ -495,7 +495,7 @@
 									<key>GID</key>
 									<integer>0</integer>
 									<key>PATH</key>
-									<string>../opt/digikam</string>
+									<string>../Applications/digiKam</string>
 									<key>PATH_TYPE</key>
 									<integer>1</integer>
 									<key>PERMISSIONS</key>
@@ -511,7 +511,7 @@
 							<key>GID</key>
 							<integer>0</integer>
 							<key>PATH</key>
-							<string>../opt</string>
+							<string>../Applications</string>
 							<key>PATH_TYPE</key>
 							<integer>1</integer>
 							<key>PERMISSIONS</key>

@@ -43,6 +43,9 @@ OSX_MIN_TARGET="10.13"
 # Directory to build relocable bundle.
 INSTALL_PREFIX="/opt/digikam"
 
+# Directory where bundle contents will be installed.
+RELOCATE_PREFIX="/Applications/digiKam"
+
 # Macports configuration
 MP_URL="https://distfiles.macports.org/MacPorts/"
 MP_BUILDTEMP=~/mptemp

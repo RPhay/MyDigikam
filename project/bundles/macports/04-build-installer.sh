@@ -85,7 +85,7 @@ BUILDDIR="$PWD"
 PROJECTDIR="$BUILDDIR/installer"
 
 # Staging area where files to be packaged will be copied
-TEMPROOT="$BUILDDIR/$INSTALL_PREFIX"
+TEMPROOT="$BUILDDIR/$RELOCATE_PREFIX"
 
 # Applications to be launched directly by user (create launch scripts)
 KDE_MENU_APPS="\
@@ -208,7 +208,7 @@ for app in $KDE_MENU_APPS ; do
         # Copy the application if it is found (create directory if necessary)
 
         if [ -d "$INSTALL_PREFIX/$searchpath/$app.app" ] ; then
-            echo "    Found $app in $INSTALL_PATH/$searchpath"
+            echo "    Found $app in $INSTALL_PREFIX/$searchpath"
 
         # Create destination directory if necessary and copy app
 
@@ -243,21 +243,21 @@ for app in $KDE_MENU_APPS ; do
             # http://stackoverflow.com/questions/16064957/how-to-check-in-applescript-if-an-app-is-running-without-launching-it-via-osa
             # and https://discussions.apple.com/thread/4059113
 
-            cat << EOF | osacompile -o "$TEMPROOT/Applications/digiKam/$app.app"
+            cat << EOF | osacompile -o "$TEMPROOT/$app.app"
 #!/usr/bin/osascript
 
-log "Running $DYLD_ENV_CMD $INSTALL_PREFIX/bin/kbuildsycoca5"
-do shell script "$DYLD_ENV_CMD $INSTALL_PREFIX/bin/kbuildsycoca5"
+log "Running $DYLD_ENV_CMD $RELOCATE_PREFIX/bin/kbuildsycoca5"
+do shell script "$DYLD_ENV_CMD $RELOCATE_PREFIX/bin/kbuildsycoca5"
 
-do shell script "$DYLD_ENV_CMD open $INSTALL_PREFIX/$searchpath/$app.app"
+do shell script "$DYLD_ENV_CMD open $RELOCATE_PREFIX/$searchpath/$app.app"
 EOF
                 # ------ End application launcher script
 
                 # Get application icon for launcher. If no icon file matches pattern app_SRCS.icns, grab the first icon
 
                 if [ -f "$INSTALL_PREFIX/$searchpath/$app.app/Contents/Resources/${app}_SRCS.icns" ] ; then
-                    echo "    Found icon for $app launcher"
-                    cp -p "$INSTALL_PREFIX/$searchpath/$app.app/Contents/Resources/${app}_SRCS.icns" "$TEMPROOT/Applications/digiKam/$app.app/Contents/Resources/applet.icns"
+                    echo "    Found icon for $app launcher in $INSTALL_PREFIX/$searchpath/$app.app/Contents/Resources/${app}_SRCS.icns"
+                    cp -p "$INSTALL_PREFIX/$searchpath/$app.app/Contents/Resources/${app}_SRCS.icns" "$TEMPROOT/$app.app/Contents/Resources/applet.icns"
                 else
                     for icon in "$INSTALL_PREFIX/$searchpath/$app.app/"Contents/Resources/*.icns ; do
                         echo "    Using icon for $app launcher: $icon"
@@ -266,7 +266,7 @@ EOF
                     done
                 fi
 
-                chmod 755 "$TEMPROOT/Applications/digiKam/$app.app"
+                chmod 755 "$TEMPROOT/$app.app"
             fi
 
             # Don't keep looking through search paths once we've found the app
