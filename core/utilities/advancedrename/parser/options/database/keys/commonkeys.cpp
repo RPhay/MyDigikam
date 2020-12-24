@@ -29,6 +29,7 @@
 
 // Local includes
 
+#include "albummanager.h"
 #include "coredbinfocontainers.h"
 #include "iteminfo.h"
 #include "itemcopyright.h"
@@ -48,6 +49,8 @@ static const QString KEY_COLORDEPTH(QLatin1String("ColorDepth"));
 static const QString KEY_COLORMODEL(QLatin1String("ColorModel"));
 static const QString KEY_DEFAULTAUTHOR(QLatin1String("DefaultAuthor"));
 static const QString KEY_AUTHORS(QLatin1String("Authors"));
+static const QString KEY_TITLE(QLatin1String("Title"));
+static const QString KEY_TAGSLIST(QLatin1String("TagsList"));
 }
 
 namespace Digikam
@@ -69,6 +72,8 @@ CommonKeys::CommonKeys()
     addId(KEY_COLORDEPTH,     i18n("Color depth (bits per channel)"));
     addId(KEY_COLORMODEL,     i18n("Color model of the image"));
     addId(KEY_AUTHORS,        i18n("A comma separated list of all authors"));
+    addId(KEY_TITLE,          i18n("Title of the image"));
+    addId(KEY_TAGSLIST,       i18n("A comma separated list of all tags"));
 }
 
 QString CommonKeys::getDbValue(const QString& key, ParseSettings& settings)
@@ -107,6 +112,16 @@ QString CommonKeys::getDbValue(const QString& key, ParseSettings& settings)
         {
             result.chop(1);
         }
+    }
+    else if (key == KEY_TITLE)
+    {
+        result = info.title().simplified();
+    }
+    else if (key == KEY_TAGSLIST)
+    {
+        QList<int> tagIds = info.tagIds();
+        QStringList tags  = AlbumManager::instance()->tagNames(tagIds);
+        result            = tags.join(QLatin1String(", "));
     }
     else if (key == KEY_DIMENSION)
     {

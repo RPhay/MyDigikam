@@ -227,4 +227,7 @@ BUGFIXES:
 209 ==> 429103 - digiKam 7.1.0 does not start up, when using macos big sur.
 210 ==> 372487 - BQM says there are unprocessed items even though it completed successfully and all images were processed.
 211 ==> 430664 - How to access a database and files from another computer in LAN.
-212 ==> 
+212 ==> 430684 - Renaming mp4 files - metadata fields have no values.
+213 ==> 430589 - Want to disable face detection extra download on Mac version.
+214 ==> 383096 - digiKam crash, maintenance related?
+215 ==> 

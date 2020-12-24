@@ -53,6 +53,7 @@ private:
     void download();
     void nextDownload();
     bool exists(int index) const;
+    void createRequest(const QUrl& url);
 
 private Q_SLOTS:
 

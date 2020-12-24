@@ -58,6 +58,7 @@ public:
     explicit Private()
       : downloadUrl(QLatin1String("https://files.kde.org/digikam/")),
         index      (0),
+        redirects  (0),
         buttons    (nullptr),
         progress   (nullptr),
         nameLabel  (nullptr),
@@ -73,6 +74,7 @@ public:
     QList<QVariant>        files;
 
     int                    index;
+    int                    redirects;
 
     QDialogButtonBox*      buttons;
     QProgressBar*          progress;
@@ -235,30 +237,18 @@ void FilesDownloader::download()
     if (!d->netMngr)
     {
         d->netMngr = new QNetworkAccessManager(this);
-        d->netMngr->setRedirectPolicy(QNetworkRequest::NoLessSafeRedirectPolicy);
+        d->netMngr->setRedirectPolicy(QNetworkRequest::ManualRedirectPolicy);
 
         connect(d->netMngr, SIGNAL(finished(QNetworkReply*)),
                 this, SLOT(slotDownloaded(QNetworkReply*)));
     }
 
-    d->nameLabel->setText(d->files.at(d->index + 1).toString());
-    d->progress->setMaximum(d->files.at(d->index + 3).toInt());
-    d->progress->setValue(0);
+    QUrl request(d->downloadUrl                   +
+                 d->files.at(d->index).toString() +
+                 d->files.at(d->index + 1).toString());
 
-    QNetworkRequest request(QUrl(d->downloadUrl                   +
-                                 d->files.at(d->index).toString() +
-                                 d->files.at(d->index + 1).toString()));
-
-    request.setMaximumRedirectsAllowed(10);
-    request.setAttribute(QNetworkRequest::FollowRedirectsAttribute, true);
-
-    d->reply = d->netMngr->get(request);
-
-    connect(d->reply, SIGNAL(downloadProgress(qint64,qint64)),
-            this, SLOT(slotDownloadProgress(qint64,qint64)));
-
-    connect(d->reply, SIGNAL(sslErrors(QList<QSslError>)),
-            d->reply, SLOT(ignoreSslErrors()));
+    d->redirects = 0;
+    createRequest(request);
 }
 
 void FilesDownloader::nextDownload()
@@ -273,6 +263,22 @@ bool FilesDownloader::exists(int index) const
                                           QString::fromLatin1("facesengine/%1").arg(file));
 
     return (!path.isEmpty() && (QFileInfo(path).size() == d->files.at(index + 3).toInt()));
+}
+
+void FilesDownloader::createRequest(const QUrl& url)
+{
+    d->nameLabel->setText(d->files.at(d->index + 1).toString());
+    d->progress->setMaximum(d->files.at(d->index + 3).toInt());
+    d->progress->setValue(0);
+
+    d->redirects++;
+    d->reply = d->netMngr->get(QNetworkRequest(url));
+
+    connect(d->reply, SIGNAL(downloadProgress(qint64,qint64)),
+            this, SLOT(slotDownloadProgress(qint64,qint64)));
+
+    connect(d->reply, SIGNAL(sslErrors(QList<QSslError>)),
+            d->reply, SLOT(ignoreSslErrors()));
 }
 
 void FilesDownloader::reject()
@@ -302,6 +308,17 @@ void FilesDownloader::slotDownloaded(QNetworkReply* reply)
         reply->deleteLater();
 
         nextDownload();
+
+        return;
+    }
+
+    QUrl redirectUrl = reply->attribute(QNetworkRequest::RedirectionTargetAttribute).toUrl();
+
+    if (redirectUrl.isValid() && (reply->url() != redirectUrl) && (d->redirects < 10))
+    {
+        createRequest(redirectUrl);
+
+        reply->deleteLater();
 
         return;
     }
