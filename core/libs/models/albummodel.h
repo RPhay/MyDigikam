@@ -83,16 +83,16 @@ public:
      */
     explicit TagModel(RootAlbumBehavior rootBehavior = IncludeRootAlbum, QObject* const parent = nullptr);
 
-    TAlbum*      albumForIndex(const QModelIndex& index)    const;
+    TAlbum*      albumForIndex(const QModelIndex& index) const;
     void         setColumnHeader(const QString& header);
     void         setTagCount(TagCountMode mode);
 
 protected:
 
-    QVariant     albumData(Album* a, int role)              const override;
-    QVariant     decorationRoleData(Album* a)               const override;
-    Album*       albumForId(int id)                         const override;
-    QVariant     fontRoleData(Album* a)                     const override;
+    QVariant     albumData(Album* a, int role)           const override;
+    QVariant     decorationRoleData(Album* a)            const override;
+    Album*       albumForId(int id)                      const override;
+    QVariant     fontRoleData(Album* a)                  const override;
 
 private:
 
