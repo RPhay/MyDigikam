@@ -237,4 +237,5 @@ BUGFIXES:
 219 ==> 397229 - Facetags are not well displayed in the facetag list for one person.
 220 ==> 430810 - Cannot found Slideshow settings dialog page.
 221 ==> 376891 - Digikam becomes unusable with many Metatags.
-222 ==> 
+222 ==> 417399 - Wishlist: button to hide confirmed faces for a person.
+223 ==> 
