@@ -96,7 +96,8 @@ protected:
 
 private:
 
-    QMap<int, int>       m_unconfirmedFaceCount;
+    bool           m_faceTagModel;
+    QMap<int, int> m_unconfirmedFaceCount;
 };
 
 // ------------------------------------------------------------------

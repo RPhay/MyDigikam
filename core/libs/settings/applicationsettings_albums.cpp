@@ -41,6 +41,17 @@ int ApplicationSettings::getTreeViewIconSize() const
             (d->treeThumbnailSize > 64)) ? 32 : d->treeThumbnailSize;
 }
 
+void ApplicationSettings::setTreeViewFaceSize(int val)
+{
+    d->treeThumbFaceSize = val;
+}
+
+int ApplicationSettings::getTreeViewFaceSize() const
+{
+    return ((d->treeThumbFaceSize < 8) ||
+            (d->treeThumbFaceSize > 128)) ? 48 : d->treeThumbFaceSize;
+}
+
 void ApplicationSettings::setTreeViewFont(const QFont& font)
 {
     d->treeviewFont = font;

@@ -120,6 +120,7 @@ void ApplicationSettings::readSettings()
 
     d->thumbnailSize                     = group.readEntry(d->configDefaultIconSizeEntry,              (int)ThumbnailSize::Medium);
     d->treeThumbnailSize                 = group.readEntry(d->configDefaultTreeIconSizeEntry,          22);
+    d->treeThumbFaceSize                 = group.readEntry(d->configDefaultTreeFaceSizeEntry,          48);
     d->treeviewFont                      = group.readEntry(d->configTreeViewFontEntry,                 QFontDatabase::systemFont(QFontDatabase::GeneralFont));
     d->currentTheme                      = group.readEntry(d->configThemeEntry,                        ThemeManager::instance()->defaultThemeName());
 
@@ -336,6 +337,7 @@ void ApplicationSettings::saveSettings()
     group.writeEntry(d->configItemLeftClickActionEntry,                (int)d->itemLeftClickAction);
     group.writeEntry(d->configDefaultIconSizeEntry,                    (int)d->thumbnailSize);
     group.writeEntry(d->configDefaultTreeIconSizeEntry,                (int)d->treeThumbnailSize);
+    group.writeEntry(d->configDefaultTreeFaceSizeEntry,                (int)d->treeThumbFaceSize);
     group.writeEntry(d->configTreeViewFontEntry,                       d->treeviewFont);
     group.writeEntry(d->configRatingFilterConditionEntry,              d->ratingFilterCond);
     group.writeEntry(d->configAlbumMonitoringEntry,                    d->albumMonitoring);
