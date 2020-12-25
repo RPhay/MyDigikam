@@ -313,15 +313,7 @@ QKeySequence TagEditDlg::shortcut() const
 
 void TagEditDlg::slotIconResetClicked()
 {
-    if (d->mainRootAlbum->hasProperty(TagPropertyName::person()))
-    {
-        d->icon = QLatin1String("smiley");
-    }
-    else
-    {
-        d->icon = QLatin1String("tag");
-    }
-
+    d->icon = d->mainRootAlbum->standardIconName();
     d->iconButton->setIcon(QIcon::fromTheme(d->icon));
 }
 

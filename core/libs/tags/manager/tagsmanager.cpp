@@ -448,10 +448,7 @@ void TagsManager::slotResetTagIcon()
 
         if (tag)
         {
-            QString icon = tag->hasProperty(TagPropertyName::person()) ? QLatin1String("smiley")
-                                                                       : QLatin1String("tag");
-
-            if (!AlbumManager::instance()->updateTAlbumIcon(tag, icon, 0, errMsg))
+            if (!AlbumManager::instance()->updateTAlbumIcon(tag, tag->standardIconName(), 0, errMsg))
             {
                 QMessageBox::critical(qApp->activeWindow(), qApp->applicationName(), errMsg);
             }

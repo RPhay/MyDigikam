@@ -287,10 +287,7 @@ void TagFolderView::handleCustomContextMenuAction(QAction* action, const AlbumPo
     if      (action == d->resetIconAction)
     {
         QString errMsg;
-        QString icon = tag->hasProperty(TagPropertyName::person()) ? QLatin1String("smiley")
-                                                                   : QLatin1String("tag");
-
-        AlbumManager::instance()->updateTAlbumIcon(tag, icon, 0, errMsg);
+        AlbumManager::instance()->updateTAlbumIcon(tag, tag->standardIconName(), 0, errMsg);
     }
     else if (action == d->findDuplAction)
     {

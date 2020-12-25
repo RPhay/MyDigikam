@@ -322,16 +322,13 @@ void TagPropWidget::slotIconResetClicked()
 
         if (tag)
         {
-            QString icon = tag->hasProperty(TagPropertyName::person()) ? QLatin1String("smiley")
-                                                                       : QLatin1String("tag");
-
-            if (d->icon == icon)
+            if (d->icon == tag->standardIconName())
             {
                 return;
             }
 
             d->changed = true;
-            d->icon    = icon;
+            d->icon    = tag->standardIconName();
             d->iconButton->setIcon(QIcon::fromTheme(d->icon));
         }
     }
