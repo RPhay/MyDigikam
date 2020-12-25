@@ -98,6 +98,8 @@ PeopleSideBarWidget::PeopleSideBarWidget(QWidget* const parent,
     scrollArea->setWidget(mainView);
     scrollArea->setWidgetResizable(true);
 
+    model->setColumnHeader(getCaption());
+
     QVBoxLayout* const vlay     = new QVBoxLayout;
     d->tagFolderView            = new TagFolderView(this, model);
     d->tagFolderView->setConfigGroup(getConfigGroup());

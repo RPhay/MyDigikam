@@ -519,6 +519,12 @@ QString TAlbum::tagPath(bool leadingSlash) const
     return u;
 }
 
+QString TAlbum::standardIconName() const
+{
+    return (hasProperty(TagPropertyName::person()) ? QLatin1String("smiley")
+                                                   : QLatin1String("tag"));
+}
+
 QString TAlbum::prettyUrl() const
 {
     return (i18n("Tags") + tagPath(true));

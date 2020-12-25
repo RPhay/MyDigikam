@@ -316,14 +316,22 @@ void TagPropWidget::slotFocusTitleEdit()
 
 void TagPropWidget::slotIconResetClicked()
 {
-    if (d->icon == QLatin1String("tag"))
+    if (d->selectedAlbums.size() == 1)
     {
-        return;
-    }
+        TAlbum* const tag = d->selectedAlbums.first();
 
-    d->changed = true;
-    d->icon    = QLatin1String("tag");
-    d->iconButton->setIcon(QIcon::fromTheme(d->icon));
+        if (tag)
+        {
+            if (d->icon == tag->standardIconName())
+            {
+                return;
+            }
+
+            d->changed = true;
+            d->icon    = tag->standardIconName();
+            d->iconButton->setIcon(QIcon::fromTheme(d->icon));
+        }
+    }
 }
 
 void TagPropWidget::slotIconChanged()

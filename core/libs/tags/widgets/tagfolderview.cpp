@@ -287,7 +287,7 @@ void TagFolderView::handleCustomContextMenuAction(QAction* action, const AlbumPo
     if      (action == d->resetIconAction)
     {
         QString errMsg;
-        AlbumManager::instance()->updateTAlbumIcon(tag, QLatin1String("tag"), 0, errMsg);
+        AlbumManager::instance()->updateTAlbumIcon(tag, tag->standardIconName(), 0, errMsg);
     }
     else if (action == d->findDuplAction)
     {

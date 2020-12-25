@@ -431,6 +431,7 @@ public:
      *         The root TAlbum returns "/" resp. "".
      */
     QString                tagPath(bool leadingSlash = true) const;
+    QString                standardIconName()                const;
     CoreDbUrl              databaseUrl()                     const override;
     QString                prettyUrl()                       const;
     QString                icon()                            const;

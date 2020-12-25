@@ -107,7 +107,14 @@ QPixmap SyncJob::getTagThumbnailPriv(TAlbum* const album) const
     {
         if (d->thumbnail->isNull())
         {
-            return loader->getStandardTagIcon(album);
+            if (album->hasProperty(TagPropertyName::person()))
+            {
+                return loader->getStandardFaceIcon(album);
+            }
+            else
+            {
+                return loader->getStandardTagIcon(album);
+            }
         }
     }
     else
