@@ -399,22 +399,6 @@
 											<key>GID</key>
 											<integer>0</integer>
 											<key>PATH</key>
-											<string>../Applications/digiKam/Applications</string>
-											<key>PATH_TYPE</key>
-											<integer>1</integer>
-											<key>PERMISSIONS</key>
-											<integer>493</integer>
-											<key>TYPE</key>
-											<integer>3</integer>
-											<key>UID</key>
-											<integer>0</integer>
-										</dict>
-										<dict>
-											<key>CHILDREN</key>
-											<array/>
-											<key>GID</key>
-											<integer>0</integer>
-											<key>PATH</key>
 											<string>../Applications/digiKam/digikam.app</string>
 											<key>PATH_TYPE</key>
 											<integer>1</integer>
@@ -432,86 +416,6 @@
 											<integer>0</integer>
 											<key>PATH</key>
 											<string>../Applications/digiKam/showfoto.app</string>
-											<key>PATH_TYPE</key>
-											<integer>1</integer>
-											<key>PERMISSIONS</key>
-											<integer>493</integer>
-											<key>TYPE</key>
-											<integer>3</integer>
-											<key>UID</key>
-											<integer>0</integer>
-										</dict>
-										<dict>
-											<key>CHILDREN</key>
-											<array/>
-											<key>GID</key>
-											<integer>0</integer>
-											<key>PATH</key>
-											<string>../Applications/digiKam/bin</string>
-											<key>PATH_TYPE</key>
-											<integer>1</integer>
-											<key>PERMISSIONS</key>
-											<integer>493</integer>
-											<key>TYPE</key>
-											<integer>3</integer>
-											<key>UID</key>
-											<integer>0</integer>
-										</dict>
-										<dict>
-											<key>CHILDREN</key>
-											<array/>
-											<key>GID</key>
-											<integer>0</integer>
-											<key>PATH</key>
-											<string>../Applications/digiKam/etc</string>
-											<key>PATH_TYPE</key>
-											<integer>1</integer>
-											<key>PERMISSIONS</key>
-											<integer>493</integer>
-											<key>TYPE</key>
-											<integer>3</integer>
-											<key>UID</key>
-											<integer>0</integer>
-										</dict>
-										<dict>
-											<key>CHILDREN</key>
-											<array/>
-											<key>GID</key>
-											<integer>0</integer>
-											<key>PATH</key>
-											<string>../Applications/digiKam/lib</string>
-											<key>PATH_TYPE</key>
-											<integer>1</integer>
-											<key>PERMISSIONS</key>
-											<integer>493</integer>
-											<key>TYPE</key>
-											<integer>3</integer>
-											<key>UID</key>
-											<integer>0</integer>
-										</dict>
-										<dict>
-											<key>CHILDREN</key>
-											<array/>
-											<key>GID</key>
-											<integer>0</integer>
-											<key>PATH</key>
-											<string>../Applications/digiKam/libexec</string>
-											<key>PATH_TYPE</key>
-											<integer>1</integer>
-											<key>PERMISSIONS</key>
-											<integer>493</integer>
-											<key>TYPE</key>
-											<integer>3</integer>
-											<key>UID</key>
-											<integer>0</integer>
-										</dict>
-										<dict>
-											<key>CHILDREN</key>
-											<array/>
-											<key>GID</key>
-											<integer>0</integer>
-											<key>PATH</key>
-											<string>../Applications/digiKam/share</string>
 											<key>PATH_TYPE</key>
 											<integer>1</integer>
 											<key>PERMISSIONS</key>

@@ -249,7 +249,7 @@ for app in $KDE_MENU_APPS ; do
 log "Running $DYLD_ENV_CMD $RELOCATE_PREFIX/digikam.app/Contents/MacOS/kbuildsycoca5"
 do shell script "$DYLD_ENV_CMD $RELOCATE_PREFIX/digikam.app/Contents/MacOS/kbuildsycoca5"
 
-do shell script "$DYLD_ENV_CMD open $RELOCATE_PREFIX/digikam.app/Contents/MacOS/$app.app"
+do shell script "$DYLD_ENV_CMD open $RELOCATE_PREFIX/digikam.app/Contents/MacOS/$app"
 EOF
                 # ------ End application launcher script
 
@@ -430,7 +430,7 @@ cat << EOF > "$PROJECTDIR/postinstall"
 # NOTE: Disabled with relocate bundle
 #for app in $INSTALL_PREFIX/Applications/digiKam/*.app ; do
 #    ln -s "\$app" /Applications/\${app##*/}
-done
+#done
 EOF
 
 # Post-install script need to be executable
@@ -479,37 +479,37 @@ if [[ $DK_DEBUG = 1 ]] ; then
 fi
 
 #################################################################################################
-# Relocate binary files. For details, see these urls:
+# Relocatable binary files. For details, see these urls:
 #
 # https://stackoverflow.com/questions/9263256/can-you-please-help-me-understand-how-mach-o-libraries-work-in-mac-os-x
 # https://matthew-brett.github.io/docosx/mac_runtime_link.html
 # http://thecourtsofchaos.com/2013/09/16/how-to-copy-and-relink-binaries-on-osx/
 
-echo -e "\n---------- Relocate binary files"
+echo -e "\n---------- Relocatable binary files"
 
-# Relocate dynamic libraries with rpath
+# Relocatable dynamic libraries with rpath
 
-echo -e "\n--- Relocate dynamic library files"
+echo -e "\n--- Relocatable dynamic library files"
 
 DYLIBFILES=(`find $TEMPROOT -name "*.dylib"`)
 
-RelocateBinaries DYLIBFILES[@]
+RelocatableBinaries DYLIBFILES[@]
 
-# Relocate system objects with rpath
+# Relocatable system objects with rpath
 
-echo -e "\n--- Relocate system object files"
+echo -e "\n--- Relocatablee system object files"
 
 SOFILES=(`find $TEMPROOT -name "*.so"`)
 
-RelocateBinaries SOFILES[@]
+RelocatableBinaries SOFILES[@]
 
-# Relocate executables with rpath and patch relative search path.
+# Relocatable executables with rpath and patch relative search path.
 
-echo -e "\n--- Relocate executable files"
+echo -e "\n--- Relocatable executable files"
 
 EXECFILES=(`find $TEMPROOT -type f -perm +ugo+x ! -name "*.dylib" ! -name "*.so"`)
 
-RelocateBinaries EXECFILES[@]
+RelocatableBinaries EXECFILES[@]
 
 echo -e "\n--- Patch RPATH in executable files"
 
@@ -555,16 +555,16 @@ mv -v $TEMPROOT/etc     $TEMPROOT/digikam.app/Contents
 mv -v $TEMPROOT/lib     $TEMPROOT/digikam.app/Contents
 mv -v $TEMPROOT/libexec $TEMPROOT/digikam.app/Contents
 
-ln -sv "$TEMPROOT/digikam.app/Contents/etc"         "$TEMPROOT/showfoto.app/Contents/etc"
-ln -sv "$TEMPROOT/digikam.app/Contents/lib"         "$TEMPROOT/showfoto.app/Contents/lib"
-ln -sv "$TEMPROOT/digikam.app/Contents/libexec"     "$TEMPROOT/showfoto.app/Contents/libexec"
-ln -sv "$TEMPROOT/digikam.app/Contents/share"       "$TEMPROOT/showfoto.app/Contents/share"
+ln -sv "../../digikam.app/Contents/etc"         "$TEMPROOT/showfoto.app/Contents/etc"
+ln -sv "../../digikam.app/Contents/lib"         "$TEMPROOT/showfoto.app/Contents/lib"
+ln -sv "../../digikam.app/Contents/libexec"     "$TEMPROOT/showfoto.app/Contents/libexec"
+ln -sv "../../digikam.app/Contents/share"       "$TEMPROOT/showfoto.app/Contents/share"
 
 RESOURCEFILES=(`ls $TEMPROOT/digikam.app/Contents/Resources`)
 
 for RES in ${RESOURCEFILES[@]} ; do
 
-    ln -sv "$TEMPROOT/digikam.app/Contents/Resources/$RES" "$TEMPROOT/showfoto.app/Contents/Resources/" || true
+    ln -sv "../../../digikam.app/Contents/Resources/$RES" "$TEMPROOT/showfoto.app/Contents/Resources/" || true
 
 done
 

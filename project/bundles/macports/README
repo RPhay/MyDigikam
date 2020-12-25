@@ -27,7 +27,7 @@ how they work.
 BUNDLE CONTENTS
 ---------------
 
-Note: the bundle is not relocatable.
+Note: the bundle is relocatable.
 
    |-- Applications
    |   |-- KF5                                      Binary applications directories (digiKam and Showfoto)
