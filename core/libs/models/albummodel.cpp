@@ -155,15 +155,18 @@ QVariant TagModel::decorationRoleData(Album* album) const
         int size     = m_faceTagModel ? ApplicationSettings::instance()->getTreeViewFaceSize()
                                       : ApplicationSettings::instance()->getTreeViewIconSize();
 
-        qreal ratio  = face.devicePixelRatio();
-        face         = face.scaled(size, size, Qt::KeepAspectRatio,
-                                               Qt::SmoothTransformation);
+        double ratio = face.devicePixelRatio();
+        int rsize    = qRound((double)size * ratio);
+        face         = face.scaled(rsize, rsize, Qt::KeepAspectRatio,
+                                                 Qt::SmoothTransformation);
 
-        QPixmap pix(size, size);
+        QPixmap pix(rsize, rsize);
         pix.fill(Qt::transparent);
+        pix.setDevicePixelRatio(ratio);
+
         QPainter p(&pix);
-        p.drawPixmap((size * ratio - face.width())  / 2,
-                     (size * ratio - face.height()) / 2, face);
+        p.drawPixmap((rsize - face.width())  / 2,
+                     (rsize - face.height()) / 2, face);
         p.end();
 
         prepareAddExcludeDecoration(album, pix);
