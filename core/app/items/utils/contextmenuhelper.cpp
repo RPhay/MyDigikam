@@ -509,7 +509,7 @@ void ContextMenuHelper::addActionDeleteTags(TagModificationHelper* helper, const
 
 void ContextMenuHelper::addActionTagToFaceTag(TagModificationHelper* helper, TAlbum* tag)
 {
-    QAction* const tagToFaceTagAction = new QAction(QIcon::fromTheme(QLatin1String("tag-properties")),
+    QAction* const tagToFaceTagAction = new QAction(QIcon::fromTheme(QLatin1String("smiley")),
                                                     i18n("Mark As Face Tag"), this);
     addAction(tagToFaceTagAction);
     helper->bindTag(tagToFaceTagAction, tag);
@@ -520,7 +520,7 @@ void ContextMenuHelper::addActionTagToFaceTag(TagModificationHelper* helper, TAl
 
 void ContextMenuHelper::addActionTagsToFaceTags(TagModificationHelper* helper, const QList<TAlbum*>& tags)
 {
-    QAction* const tagToFaceTagsAction = new QAction(QIcon::fromTheme(QLatin1String("tag-properties")),
+    QAction* const tagToFaceTagsAction = new QAction(QIcon::fromTheme(QLatin1String("smiley")),
                                                      i18n("Mark As Face Tags"), this);
     addAction(tagToFaceTagsAction);
     helper->bindMultipleTags(tagToFaceTagsAction, tags);
@@ -546,7 +546,7 @@ void ContextMenuHelper::addActionEditTag(TagModificationHelper* helper, TAlbum* 
 
 void ContextMenuHelper::addActionDeleteFaceTag(TagModificationHelper* helper, TAlbum* tag)
 {
-    QAction* const deleteFaceTagAction = new QAction(QIcon::fromTheme(QLatin1String("user-trash")),
+    QAction* const deleteFaceTagAction = new QAction(QIcon::fromTheme(QLatin1String("tag")),
                                                      i18n("Unmark Tag As Face"), this);
     deleteFaceTagAction->setWhatsThis(i18n("Removes the face property from the selected tag "
                                            "and the face region from the contained images. "
@@ -560,7 +560,7 @@ void ContextMenuHelper::addActionDeleteFaceTag(TagModificationHelper* helper, TA
 
 void ContextMenuHelper::addActionDeleteFaceTags(TagModificationHelper* helper, const QList<TAlbum*>& tags)
 {
-    QAction* const deleteFaceTagsAction = new QAction(QIcon::fromTheme(QLatin1String("user-trash")),
+    QAction* const deleteFaceTagsAction = new QAction(QIcon::fromTheme(QLatin1String("tag")),
                                                       i18n("Unmark Tags As Face"), this);
     deleteFaceTagsAction->setWhatsThis(i18n("Removes the face property from the selected tags "
                                             "and the face region from the contained images. "
