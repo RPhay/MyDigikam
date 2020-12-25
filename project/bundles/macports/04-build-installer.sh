@@ -328,6 +328,7 @@ echo "---------- Copying data files..."
 
 # Special case with data dirs. QStandardPaths::GenericDataLocation was patched everywhere
 # in source code by QStandardPaths::AppDataLocation
+
 for path in $OTHER_DATA ; do
     echo "   Copying $path"
     cp -a "$INSTALL_PREFIX/$path" "$TEMPROOT/Applications/KF5/digikam.app/Contents/Resources/"
@@ -336,7 +337,7 @@ done
 echo "---------- Copying Qt Web Backend files..."
 
 # Qt Web framework bin data files.
-# NOTE: Since Qt 5.15.0, QtWebEngine runtime process is now located in 
+# NOTE: Since Qt 5.15.0, QtWebEngine runtime process is now located in
 #       libexec/qt5/lib/QtWebEngineCore.framework/Versions/5/Helpers/QtWebEngineProcess.app/Contents/MacOS
 #       instead of libexec/qt5/libexec/. No needs to make extra rules for this runtime process.
 
@@ -347,6 +348,7 @@ if [[ $DK_QTWEBENGINE = 0 ]] ; then
     mkdir -p $TEMPROOT/libexec/qt5/libexec/
 
     # QtWebKit runtime process
+
     [[ -e $INSTALL_PREFIX/libexec/qt5/libexec/QtWebNetworkProcess ]] && cp -a "$INSTALL_PREFIX/libexec/qt5/libexec/QtWebNetworkProcess" "$TEMPROOT/libexec/qt5/libexec/"
     [[ -e $INSTALL_PREFIX/libexec/qt5/libexec/QtWebProcess ]]        && cp -a "$INSTALL_PREFIX/libexec/qt5/libexec/QtWebProcess"        "$TEMPROOT/libexec/qt5/libexec/"
     [[ -e $INSTALL_PREFIX/libexec/qt5/libexec/QtWebStorageProcess ]] && cp -a "$INSTALL_PREFIX/libexec/qt5/libexec/QtWebStorageProcess" "$TEMPROOT/libexec/qt5/libexec/"
@@ -497,7 +499,7 @@ RelocatableBinaries DYLIBFILES[@]
 
 # Relocatable system objects with rpath
 
-echo -e "\n--- Relocatablee system object files"
+echo -e "\n--- Relocatable system object files"
 
 SOFILES=(`find $TEMPROOT -name "*.so"`)
 
