@@ -66,7 +66,6 @@ public:
     explicit Private()
       : useLargeThumbsOriginal(false),
         useLargeThumbsShowedInfo(false),
-        iconTreeThumbLabel(nullptr),
         iconShowNameBox(nullptr),
         iconShowSizeBox(nullptr),
         iconShowDateBox(nullptr),
@@ -89,6 +88,7 @@ public:
         showFolderTreeViewItemsCount(nullptr),
         largeThumbsBox(nullptr),
         iconTreeThumbSize(nullptr),
+        iconTreeFaceSize(nullptr),
         leftClickActionComboBox(nullptr),
         tab(nullptr),
         iconViewFontSelect(nullptr),
@@ -101,8 +101,6 @@ public:
 
     bool                useLargeThumbsOriginal;
     bool                useLargeThumbsShowedInfo;
-
-    QLabel*             iconTreeThumbLabel;
 
     QCheckBox*          iconShowNameBox;
     QCheckBox*          iconShowSizeBox;
@@ -127,6 +125,7 @@ public:
     QCheckBox*          largeThumbsBox;
 
     QComboBox*          iconTreeThumbSize;
+    QComboBox*          iconTreeFaceSize;
     QComboBox*          leftClickActionComboBox;
 
     QTabWidget*         tab;
@@ -254,32 +253,45 @@ SetupAlbumView::SetupAlbumView(QWidget* const parent)
 
     // --------------------------------------------------------
 
-    QWidget* const fwpanel   = new QWidget(d->tab);
-    QGridLayout* const grid2 = new QGridLayout(fwpanel);
+    QWidget* const fwpanel           = new QWidget(d->tab);
+    QGridLayout* const grid2         = new QGridLayout(fwpanel);
 
-    d->iconTreeThumbLabel = new QLabel(i18n("Tree View icon size:"), fwpanel);
-    d->iconTreeThumbSize  = new QComboBox(fwpanel);
-    d->iconTreeThumbSize->addItem(QLatin1String("16"));
-    d->iconTreeThumbSize->addItem(QLatin1String("22"));
-    d->iconTreeThumbSize->addItem(QLatin1String("32"));
-    d->iconTreeThumbSize->addItem(QLatin1String("48"));
-    d->iconTreeThumbSize->addItem(QLatin1String("64"));
+    QLabel* const iconTreeThumbLabel = new QLabel(i18n("Tree View icon size:"), fwpanel);
+    d->iconTreeThumbSize             = new QComboBox(fwpanel);
+    d->iconTreeThumbSize->addItem(QLatin1String("16"), 16);
+    d->iconTreeThumbSize->addItem(QLatin1String("22"), 22);
+    d->iconTreeThumbSize->addItem(QLatin1String("32"), 32);
+    d->iconTreeThumbSize->addItem(QLatin1String("48"), 48);
+    d->iconTreeThumbSize->addItem(QLatin1String("64"), 64);
     d->iconTreeThumbSize->setToolTip(i18n("Set this option to configure the size in pixels of "
                                           "the Tree View icons in digiKam's sidebars."));
 
-    d->treeViewFontSelect = new DFontSelect(i18n("Tree View font:"), fwpanel);
+    QLabel* const iconTreeFaceLabel  = new QLabel(i18n("People Tree View icon size:"), fwpanel);
+    d->iconTreeFaceSize              = new QComboBox(fwpanel);
+    d->iconTreeFaceSize->addItem(QLatin1String("16"),   16);
+    d->iconTreeFaceSize->addItem(QLatin1String("22"),   22);
+    d->iconTreeFaceSize->addItem(QLatin1String("32"),   32);
+    d->iconTreeFaceSize->addItem(QLatin1String("48"),   48);
+    d->iconTreeFaceSize->addItem(QLatin1String("64"),   64);
+    d->iconTreeFaceSize->addItem(QLatin1String("128"), 128);
+    d->iconTreeFaceSize->setToolTip(i18n("Set this option to configure the size in pixels of "
+                                         "the Tree View icons in digiKam's people sidebar."));
+
+    d->treeViewFontSelect            = new DFontSelect(i18n("Tree View font:"), fwpanel);
     d->treeViewFontSelect->setToolTip(i18n("Select here the font used to display text in Tree Views."));
 
-    d->showFolderTreeViewItemsCount = new QCheckBox(i18n("Show a count of items in Tree Views"), fwpanel);
+    d->showFolderTreeViewItemsCount  = new QCheckBox(i18n("Show a count of items in Tree Views"), fwpanel);
     d->showFolderTreeViewItemsCount->setToolTip(i18n("Set this option to display along the album name the number of icon-view items inside."));
 
-    grid2->addWidget(d->iconTreeThumbLabel,           0, 0, 1, 1);
+    grid2->addWidget(iconTreeThumbLabel,              0, 0, 1, 1);
     grid2->addWidget(d->iconTreeThumbSize,            0, 1, 1, 1);
-    grid2->addWidget(d->treeViewFontSelect,           1, 0, 1, 2);
-    grid2->addWidget(d->showFolderTreeViewItemsCount, 2, 0, 1, 2);
+    grid2->addWidget(iconTreeFaceLabel,               1, 0, 1, 1);
+    grid2->addWidget(d->iconTreeFaceSize,             1, 1, 1, 1);
+    grid2->addWidget(d->treeViewFontSelect,           2, 0, 1, 2);
+    grid2->addWidget(d->showFolderTreeViewItemsCount, 3, 0, 1, 2);
     grid2->setContentsMargins(spacing, spacing, spacing, spacing);
     grid2->setSpacing(spacing);
-    grid2->setRowStretch(3, 10);
+    grid2->setRowStretch(4, 10);
 
     d->tab->insertTab(FolderView, fwpanel, i18nc("@title:tab", "Tree-Views"));
 
@@ -377,7 +389,8 @@ void SetupAlbumView::applySettings()
         return;
     }
 
-    settings->setTreeViewIconSize(d->iconTreeThumbSize->currentText().toInt());
+    settings->setTreeViewIconSize(d->iconTreeThumbSize->currentData().toInt());
+    settings->setTreeViewFaceSize(d->iconTreeFaceSize->currentData().toInt());
     settings->setTreeViewFont(d->treeViewFontSelect->font());
     settings->setIconShowName(d->iconShowNameBox->isChecked());
     settings->setIconShowTags(d->iconShowTagsBox->isChecked());
@@ -430,26 +443,8 @@ void SetupAlbumView::readSettings()
         return;
     }
 
-    if      (settings->getTreeViewIconSize() == 16)
-    {
-        d->iconTreeThumbSize->setCurrentIndex(0);
-    }
-    else if (settings->getTreeViewIconSize() == 22)
-    {
-        d->iconTreeThumbSize->setCurrentIndex(1);
-    }
-    else if (settings->getTreeViewIconSize() == 32)
-    {
-        d->iconTreeThumbSize->setCurrentIndex(2);
-    }
-    else if (settings->getTreeViewIconSize() == 48)
-    {
-        d->iconTreeThumbSize->setCurrentIndex(3);
-    }
-    else
-    {
-        d->iconTreeThumbSize->setCurrentIndex(4);
-    }
+    d->iconTreeThumbSize->setCurrentIndex(d->iconTreeThumbSize->findData(settings->getTreeViewIconSize()));
+    d->iconTreeFaceSize->setCurrentIndex(d->iconTreeFaceSize->findData(settings->getTreeViewFaceSize()));
 
     d->treeViewFontSelect->setFont(settings->getTreeViewFont());
     d->iconShowNameBox->setChecked(settings->getIconShowName());

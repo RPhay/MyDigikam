@@ -103,6 +103,7 @@ public:
     static const QString configItemLeftClickActionEntry;
     static const QString configDefaultIconSizeEntry;
     static const QString configDefaultTreeIconSizeEntry;
+    static const QString configDefaultTreeFaceSizeEntry;
     static const QString configTreeViewFontEntry;
     static const QString configThemeEntry;
     static const QString configSidebarTitleStyleEntry;
@@ -279,6 +280,7 @@ public:
 
     /// tree-view settings
     int                                          treeThumbnailSize;
+    int                                          treeThumbFaceSize;
     QFont                                        treeviewFont;
 
     /// icon view settings

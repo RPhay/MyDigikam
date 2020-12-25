@@ -28,6 +28,8 @@
 #include <QDir>
 #include <QIcon>
 #include <QLocale>
+#include <QPainter>
+#include <QApplication>
 
 // KDE includes
 
@@ -111,6 +113,7 @@ TagModel::TagModel(RootAlbumBehavior rootBehavior, QObject* const parent)
                                   rootBehavior, parent)
 {
     m_columnHeader = i18n("Tags");
+    m_faceTagModel = false;
     setupThumbnailLoading();
 
     setTagCount(NormalTagCount);
@@ -144,23 +147,49 @@ QVariant TagModel::albumData(Album* a, int role) const
 
 QVariant TagModel::decorationRoleData(Album* album) const
 {
-    QPixmap pix = AlbumThumbnailLoader::instance()->getTagThumbnailDirectly(static_cast<TAlbum*>(album));
-    prepareAddExcludeDecoration(album, pix);
+    TAlbum* const tagAlbum = static_cast<TAlbum*>(album);
 
-    int size    = ApplicationSettings::instance()->getTreeViewIconSize();
+    if (m_faceTagModel || tagAlbum->hasProperty(TagPropertyName::person()))
+    {
+        QPixmap face;
+        int size;
 
-    /**
-     * Icon sizing is controlled by AlbumThumbnailLoader.
-     * However for TagModel, since Tag Icons are automatically set
-     * to Faces, it occasionally leads to uneven widths as the size of
-     * the faces may differ.
-     * This is a work-around to ensure consistent width for all Icons
-     * in TagModel.
-     * Height is kept slightly larger due to personal preference.
-     */
-    pix         = pix.scaled(QSize(size, size*(1.10)));
+        if (m_faceTagModel)
+        {
+            face = AlbumThumbnailLoader::instance()->getFaceThumbnailDirectly(tagAlbum);
+            size = ApplicationSettings::instance()->getTreeViewFaceSize();
+        }
+        else
+        {
+            face = AlbumThumbnailLoader::instance()->getTagThumbnailDirectly(tagAlbum);
+            size = ApplicationSettings::instance()->getTreeViewIconSize();
+        }
 
-    return pix;
+        qreal ratio = face.devicePixelRatio();
+        face        = face.scaled(size, size, Qt::KeepAspectRatio,
+                                              Qt::SmoothTransformation);
+
+        QPixmap pix(size, size);
+        pix.fill(Qt::transparent);
+        QPainter p(&pix);
+        p.drawPixmap((size * ratio - face.width())  / 2,
+                     (size * ratio - face.height()) / 2, face);
+        p.end();
+
+        prepareAddExcludeDecoration(album, pix);
+
+        return pix;
+    }
+    else
+    {
+        QPixmap pix = AlbumThumbnailLoader::instance()->getTagThumbnailDirectly(tagAlbum);
+        int size    = ApplicationSettings::instance()->getTreeViewIconSize();
+        pix         = pix.scaled(QSize(size, size));
+
+        prepareAddExcludeDecoration(album, pix);
+
+        return pix;
+    }
 }
 
 QVariant TagModel::fontRoleData(Album* a) const
@@ -223,6 +252,8 @@ void TagModel::setTagCount(TagCountMode mode)
                 }
             }
         );
+
+        m_faceTagModel = true;
 
         setCountMap(AlbumManager::instance()->getFaceCount());
     }

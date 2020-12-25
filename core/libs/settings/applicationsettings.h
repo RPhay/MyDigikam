@@ -163,6 +163,9 @@ public:
     void setTreeViewIconSize(int val);
     int  getTreeViewIconSize() const;
 
+    void setTreeViewFaceSize(int val);
+    int  getTreeViewFaceSize() const;
+
     void setTreeViewFont(const QFont& font);
     QFont getTreeViewFont() const;
 

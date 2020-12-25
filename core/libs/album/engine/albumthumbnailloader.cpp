@@ -70,16 +70,20 @@ public:
 
     explicit Private()
       : iconSize(ApplicationSettings::instance()->getTreeViewIconSize()),
+        faceSize(ApplicationSettings::instance()->getTreeViewFaceSize()),
         minBlendSize(20),
         iconTagThumbThread(nullptr),
+        iconFaceThumbThread(nullptr),
         iconAlbumThumbThread(nullptr)
     {
     }
 
     int                                  iconSize;
+    int                                  faceSize;
     int                                  minBlendSize;
 
     ThumbnailLoadThread*                 iconTagThumbThread;
+    ThumbnailLoadThread*                 iconFaceThumbThread;
     ThumbnailLoadThread*                 iconAlbumThumbThread;
 
     IdAlbumMap                           idAlbumMap;
@@ -122,6 +126,7 @@ AlbumThumbnailLoader::AlbumThumbnailLoader()
 AlbumThumbnailLoader::~AlbumThumbnailLoader()
 {
     delete d->iconAlbumThumbThread;
+    delete d->iconFaceThumbThread;
     delete d->iconTagThumbThread;
     delete d;
 }
@@ -132,6 +137,12 @@ void AlbumThumbnailLoader::cleanUp()
     {
         d->iconAlbumThumbThread->stopAllTasks();
         d->iconAlbumThumbThread->wait();
+    }
+
+    if (d->iconFaceThumbThread)
+    {
+        d->iconFaceThumbThread->stopAllTasks();
+        d->iconFaceThumbThread->wait();
     }
 
     if (d->iconTagThumbThread)
@@ -161,6 +172,11 @@ QPixmap AlbumThumbnailLoader::getStandardTagIcon(TAlbum* const album, RelativeSi
     {
         return getStandardTagIcon(relativeSize);
     }
+}
+
+QPixmap AlbumThumbnailLoader::getStandardFaceIcon(TAlbum* const album, RelativeSize relativeSize)
+{
+    return loadIcon(QLatin1String("tag"), computeFaceSize(relativeSize));
 }
 
 QPixmap AlbumThumbnailLoader::getNewTagIcon(RelativeSize relativeSize)
@@ -209,6 +225,18 @@ int AlbumThumbnailLoader::computeIconSize(RelativeSize relativeSize) const
     }
 
     return d->iconSize;
+}
+
+int AlbumThumbnailLoader::computeFaceSize(RelativeSize relativeSize) const
+{
+    if (relativeSize == SmallerSize)
+    {
+        // when size was 32 smaller was 20. Scale.
+
+        return lround(20.0 / 32.0 * (double)d->faceSize);
+    }
+
+    return d->faceSize;
 }
 
 QPixmap AlbumThumbnailLoader::loadIcon(const QString& name, int size) const
@@ -262,10 +290,35 @@ QPixmap AlbumThumbnailLoader::getTagThumbnailDirectly(TAlbum* const album)
     else if (!album->icon().isEmpty())
     {
         QPixmap pixmap = loadIcon(album->icon(), d->iconSize);
+
         return pixmap;
     }
 
     return getStandardTagIcon(album);
+}
+
+QPixmap AlbumThumbnailLoader::getFaceThumbnailDirectly(TAlbum* const album)
+{
+    if      (album->iconId() && (d->faceSize > d->minBlendSize))
+    {
+        // icon cached?
+        AlbumThumbnailMap::const_iterator it = d->thumbnailMap.constFind(album->globalID());
+
+        if (it != d->thumbnailMap.constEnd())
+        {
+            return *it;
+        }
+
+        addUrl(album, album->iconId());
+    }
+    else if (!album->icon().isEmpty())
+    {
+        QPixmap pixmap = loadIcon(album->icon(), d->faceSize);
+
+        return pixmap;
+    }
+
+    return getStandardFaceIcon(album);
 }
 
 bool AlbumThumbnailLoader::getAlbumThumbnail(PAlbum* const album)
@@ -368,9 +421,21 @@ void AlbumThumbnailLoader::addUrl(Album* const album, qlonglong id)
                         Qt::QueuedConnection);
             }
 
+            if (!d->iconFaceThumbThread)
+            {
+                d->iconFaceThumbThread = new ThumbnailLoadThread();
+                d->iconFaceThumbThread->setThumbnailSize(d->faceSize);
+                d->iconFaceThumbThread->setSendSurrogatePixmap(false);
+
+                connect(d->iconFaceThumbThread,
+                        SIGNAL(signalThumbnailLoaded(LoadingDescription,QPixmap)),
+                        SLOT(slotGotThumbnailFromIcon(LoadingDescription,QPixmap)),
+                        Qt::QueuedConnection);
+            }
+
             if (static_cast<TAlbum*>(album)->hasProperty(TagPropertyName::person()))
             {
-                d->iconTagThumbThread->find(ItemInfo::thumbnailIdentifier(id), faceRect);
+                d->iconFaceThumbThread->find(ItemInfo::thumbnailIdentifier(id), faceRect);
             }
             else
             {
@@ -409,14 +474,15 @@ void AlbumThumbnailLoader::addUrl(Album* const album, qlonglong id)
     }
 }
 
-void AlbumThumbnailLoader::setThumbnailSize(int size)
+void AlbumThumbnailLoader::setThumbnailSize(int size, int face)
 {
-    if (d->iconSize == size)
+    if ((d->iconSize == size) && (d->faceSize == face))
     {
         return;
     }
 
     d->iconSize = size;
+    d->faceSize = face;
 
     // clear task list
 
@@ -430,6 +496,12 @@ void AlbumThumbnailLoader::setThumbnailSize(int size)
     {
         d->iconAlbumThumbThread->stopLoading();
         d->iconAlbumThumbThread->setThumbnailSize(size);
+    }
+
+    if (d->iconFaceThumbThread)
+    {
+        d->iconFaceThumbThread->stopLoading();
+        d->iconFaceThumbThread->setThumbnailSize(face);
     }
 
     if (d->iconTagThumbThread)

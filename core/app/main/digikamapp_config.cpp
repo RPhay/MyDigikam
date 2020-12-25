@@ -72,7 +72,8 @@ void DigikamApp::slotSetupChanged()
 
     d->view->applySettings();
 
-    AlbumThumbnailLoader::instance()->setThumbnailSize(ApplicationSettings::instance()->getTreeViewIconSize());
+    AlbumThumbnailLoader::instance()->setThumbnailSize(ApplicationSettings::instance()->getTreeViewIconSize(),
+                                                       ApplicationSettings::instance()->getTreeViewFaceSize());
 
     if (LightTableWindow::lightTableWindowCreated())
     {

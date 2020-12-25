@@ -47,6 +47,7 @@ const QString ApplicationSettings::Private::configImageSeparationSortOrderEntry(
 const QString ApplicationSettings::Private::configItemLeftClickActionEntry(QLatin1String("Item Left Click Action"));
 const QString ApplicationSettings::Private::configDefaultIconSizeEntry(QLatin1String("Default Icon Size"));
 const QString ApplicationSettings::Private::configDefaultTreeIconSizeEntry(QLatin1String("Default Tree Icon Size"));
+const QString ApplicationSettings::Private::configDefaultTreeFaceSizeEntry(QLatin1String("Default Tree Face Size"));
 const QString ApplicationSettings::Private::configTreeViewFontEntry(QLatin1String("TreeView Font"));
 const QString ApplicationSettings::Private::configThemeEntry(QLatin1String("Theme"));
 const QString ApplicationSettings::Private::configSidebarTitleStyleEntry(QLatin1String("Sidebar Title Style"));
@@ -216,6 +217,7 @@ ApplicationSettings::Private::Private(ApplicationSettings* const qq)
       showThumbbar                          (false),
       showFolderTreeViewItemsCount          (false),
       treeThumbnailSize                     (0),
+      treeThumbFaceSize                     (0),
       thumbnailSize                         (0),
       ratingFilterCond                      (0),
       recursiveAlbums                       (false),
@@ -280,6 +282,7 @@ void ApplicationSettings::Private::init()
 
     thumbnailSize                        = ThumbnailSize::Medium;
     treeThumbnailSize                    = 22;
+    treeThumbFaceSize                    = 48;
     treeviewFont                         = QFontDatabase::systemFont(QFontDatabase::GeneralFont);
     sidebarTitleStyle                    = DMultiTabBar::AllIconsText;
 
