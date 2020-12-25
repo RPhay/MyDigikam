@@ -441,7 +441,6 @@ void TagsManager::slotResetTagIcon()
     QString errMsg;
 
     const QList<TAlbum*> selected = d->tagMngrView->selectedTagAlbums();
-    const QString icon = QLatin1String("tag");
 
     for (QList<TAlbum*>::const_iterator it = selected.constBegin() ; it != selected.constEnd() ; ++it)
     {
@@ -449,6 +448,9 @@ void TagsManager::slotResetTagIcon()
 
         if (tag)
         {
+            QString icon = tag->hasProperty(TagPropertyName::person()) ? QLatin1String("smiley")
+                                                                       : QLatin1String("tag");
+
             if (!AlbumManager::instance()->updateTAlbumIcon(tag, icon, 0, errMsg))
             {
                 QMessageBox::critical(qApp->activeWindow(), qApp->applicationName(), errMsg);

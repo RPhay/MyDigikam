@@ -592,7 +592,9 @@ void CoreDB::setTagIcon(int tagID, const QString& iconKDE, qlonglong iconID)
     int     dbIconID  = iconKDE.isEmpty() ? iconID : 0;
     QString dbIconKDE = iconKDE;
 
-    if (iconKDE.isEmpty() || iconKDE.toLower() == QLatin1String("tag"))
+    if (iconKDE.isEmpty()                            ||
+        (iconKDE.toLower() == QLatin1String("tag"))  ||
+        (iconKDE.toLower() == QLatin1String("smiley")))
     {
         dbIconKDE.clear();
     }
