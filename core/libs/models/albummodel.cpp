@@ -241,6 +241,7 @@ void TagModel::setTagCount(TagCountMode mode)
         );
 
         m_faceTagModel = true;
+        m_columnHeader = i18n("People");
 
         setCountMap(AlbumManager::instance()->getFaceCount());
     }
