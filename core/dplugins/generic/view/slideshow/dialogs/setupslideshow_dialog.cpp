@@ -201,6 +201,11 @@ SetupSlideShowDialog::SetupSlideShowDialog(SlideShowSettings* const settings, QW
 
     d->screenPlacement->addItems(choices);
 
+    QLabel* const keyNote        = new QLabel(i18n("<b>Note: This dialog for the Slideshow Settings "
+                                                   "can be activated at any time with the F2 key.</b>"), panel);
+    keyNote->setWordWrap(true);
+    keyNote->setFrameStyle(QFrame::StyledPanel | QFrame::Raised);
+
     // Disable and uncheck the "Show captions if no title" checkbox if the "Show comment" checkbox enabled
 
     connect(d->showComment, SIGNAL(stateChanged(int)),
@@ -240,7 +245,8 @@ SetupSlideShowDialog::SetupSlideShowDialog(SlideShowSettings* const settings, QW
     grid->addWidget(d->showLabels,           8, 1, 1, 1);
     grid->addWidget(d->captionFont,          9, 0, 1, 2);
     grid->addWidget(screenSelectBox,        10, 0, 1, 2);
-    grid->setRowStretch(11, 10);
+    grid->addWidget(keyNote,                11, 0, 1, 2);
+    grid->setRowStretch(12, 10);
     grid->setContentsMargins(spacing, spacing, spacing, spacing);
     grid->setSpacing(spacing);
 
