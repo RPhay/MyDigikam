@@ -235,4 +235,5 @@ BUGFIXES:
 217 ==> 430250 - Provide filetype-based filter for running face detection.
 218 ==> 423386 - Unconfirmed face detections treated as confirmed.
 219 ==> 397229 - Facetags are not well displayed in the facetag list for one person.
-220 ==> 
+220 ==> 430810 - Cannot found Slideshow settings dialog page.
+221 ==> 
