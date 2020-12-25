@@ -191,7 +191,7 @@ if [ -d "$TEMPROOT" ] ; then
 fi
 
 echo "Creating $TEMPROOT"
-mkdir -p "$TEMPROOT/Applications/digiKam"
+mkdir -p "$TEMPROOT"
 
 #################################################################################################
 # Prepare applications for MacOS
@@ -253,19 +253,10 @@ do shell script "$DYLD_ENV_CMD open $RELOCATE_PREFIX/$searchpath/$app.app"
 EOF
                 # ------ End application launcher script
 
-                # Get application icon for launcher. If no icon file matches pattern app_SRCS.icns, grab the first icon
+                # Get application icon for launcher.
 
-                if [ -f "$INSTALL_PREFIX/$searchpath/$app.app/Contents/Resources/${app}_SRCS.icns" ] ; then
-                    echo "    Found icon for $app launcher in $INSTALL_PREFIX/$searchpath/$app.app/Contents/Resources/${app}_SRCS.icns"
-                    cp -p "$INSTALL_PREFIX/$searchpath/$app.app/Contents/Resources/${app}_SRCS.icns" "$TEMPROOT/$app.app/Contents/Resources/applet.icns"
-                else
-                    for icon in "$INSTALL_PREFIX/$searchpath/$app.app/"Contents/Resources/*.icns ; do
-                        echo "    Using icon for $app launcher: $icon"
-                        cp -p "$icon" "$TEMPROOT/Applications/digiKam/$app.app/Contents/Resources/applet.icns"
-                        break
-                    done
-                fi
-
+                echo "    Found icon for $app launcher in $INSTALL_PREFIX/$searchpath/$app.app/Contents/Resources/${app}_SRCS.icns"
+                cp -p "$INSTALL_PREFIX/$searchpath/$app.app/Contents/Resources/${app}_SRCS.icns" "$TEMPROOT/$app.app/Contents/Resources/applet.icns"
                 chmod 755 "$TEMPROOT/$app.app"
             fi
 
@@ -384,7 +375,7 @@ cp -a "$TEMPROOT/Applications/KF5/showfoto.app/Contents/Resources/" "$TEMPROOT/A
 rm -rf "$TEMPROOT/Applications/KF5/showfoto.app/Contents/Resources"
 
 # A symbolic link to install path where is installed digiKam resources will be used for Showfoto.
-ln -s "$INSTALL_PREFIX/Applications/KF5/digikam.app/Contents/Resources" "$TEMPROOT/Applications/KF5/showfoto.app/Contents/Resources"
+ln -s "$TEMPROOT/Applications/KF5/digikam.app/Contents/Resources" "$TEMPROOT/Applications/KF5/showfoto.app/Contents/Resources"
 
 cd "$ORIG_WD"
 
@@ -405,18 +396,23 @@ cat << EOF > "$PROJECTDIR/preinstall"
 #!/bin/bash
 
 if [ -d /Applications/digiKam ] ; then
-    echo "Removing legacy digikam from Applications folder"
+    echo "Removing digiKam directory from Applications folder"
     rm -r /Applications/digiKam
 fi
 
 if [ -d /Applications/digikam.app ] ; then
-    echo "Removing official digikam from Applications folder"
+    echo "Removing legacy digikam.app from Applications folder"
     rm -r /Applications/digikam.app
 fi
 
-if [ -d "$INSTALL_PREFIX" ] ; then
-    echo "Removing $INSTALL_PREFIX"
-    rm -rf "$INSTALL_PREFIX"
+if [ -d /Applications/showfoto.app ] ; then
+    echo "Removing legacy showfoto.app from Applications folder"
+    rm -r /Applications/showfoto.app
+fi
+
+if [ -d "/opt/digikam" ] ; then
+    echo "Removing legacy /opt/digikam"
+    rm -rf "/opt/digikam"
 fi
 EOF
 
@@ -434,8 +430,9 @@ echo "---------- Create package post-install script"
 cat << EOF > "$PROJECTDIR/postinstall"
 #!/bin/bash
 
-for app in $INSTALL_PREFIX/Applications/digiKam/*.app ; do
-    ln -s "\$app" /Applications/\${app##*/}
+# NOTE: Disabled with relocate bundle
+#for app in $INSTALL_PREFIX/Applications/digiKam/*.app ; do
+#    ln -s "\$app" /Applications/\${app##*/}
 done
 EOF
 
@@ -523,7 +520,10 @@ for APP in ${EXECFILES[@]} ; do
 
     ISBINARY=`file "$APP" | grep "Mach-O" || true`
 
-    if [[ $ISBINARY ]] ; then
+    # Do not patch applet files which are pure Apple API binaries
+    BASENAME=`basename "$APP"`
+
+    if [[ $ISBINARY ]] && [[ $BASENAME != "applet" ]] ; then
 
         install_name_tool -add_rpath @executable_path/.. $APP
         install_name_tool -add_rpath @executable_path/../.. $APP
@@ -540,6 +540,8 @@ for APP in ${EXECFILES[@]} ; do
     fi
 
 done
+
+exit
 
 #################################################################################################
 # Build PKG file
