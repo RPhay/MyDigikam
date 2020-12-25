@@ -151,23 +151,13 @@ QVariant TagModel::decorationRoleData(Album* album) const
 
     if (m_faceTagModel || tagAlbum->hasProperty(TagPropertyName::person()))
     {
-        QPixmap face;
-        int size;
+        QPixmap face = AlbumThumbnailLoader::instance()->getFaceThumbnailDirectly(tagAlbum);
+        int size     = m_faceTagModel ? ApplicationSettings::instance()->getTreeViewFaceSize()
+                                      : ApplicationSettings::instance()->getTreeViewIconSize();
 
-        if (m_faceTagModel)
-        {
-            face = AlbumThumbnailLoader::instance()->getFaceThumbnailDirectly(tagAlbum);
-            size = ApplicationSettings::instance()->getTreeViewFaceSize();
-        }
-        else
-        {
-            face = AlbumThumbnailLoader::instance()->getTagThumbnailDirectly(tagAlbum);
-            size = ApplicationSettings::instance()->getTreeViewIconSize();
-        }
-
-        qreal ratio = face.devicePixelRatio();
-        face        = face.scaled(size, size, Qt::KeepAspectRatio,
-                                              Qt::SmoothTransformation);
+        qreal ratio  = face.devicePixelRatio();
+        face         = face.scaled(size, size, Qt::KeepAspectRatio,
+                                               Qt::SmoothTransformation);
 
         QPixmap pix(size, size);
         pix.fill(Qt::transparent);

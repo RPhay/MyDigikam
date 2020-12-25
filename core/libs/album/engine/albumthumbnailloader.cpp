@@ -176,7 +176,7 @@ QPixmap AlbumThumbnailLoader::getStandardTagIcon(TAlbum* const album, RelativeSi
 
 QPixmap AlbumThumbnailLoader::getStandardFaceIcon(TAlbum* const album, RelativeSize relativeSize)
 {
-    return loadIcon(QLatin1String("tag"), computeFaceSize(relativeSize));
+    return loadIcon(QLatin1String("smiley"), computeFaceSize(relativeSize));
 }
 
 QPixmap AlbumThumbnailLoader::getNewTagIcon(RelativeSize relativeSize)

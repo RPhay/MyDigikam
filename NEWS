@@ -231,4 +231,5 @@ BUGFIXES:
 213 ==> 430589 - Want to disable face detection extra download on Mac version.
 214 ==> 383096 - digiKam crash, maintenance related?
 215 ==> 430762 - Change icon size for people keywords.
-216 ==> 
+216 ==> 430337 - Failed to create a new people tag.
+217 ==> 
