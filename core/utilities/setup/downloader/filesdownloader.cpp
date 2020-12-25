@@ -301,7 +301,8 @@ void FilesDownloader::slotDownloaded(QNetworkReply* reply)
 
     d->reply = nullptr;
 
-    if (reply->error() != QNetworkReply::NoError)
+    if ((reply->error() != QNetworkReply::NoError)             &&
+        (reply->error() != QNetworkReply::InsecureRedirectError))
     {
         d->error = reply->errorString();
 
