@@ -232,4 +232,5 @@ BUGFIXES:
 214 ==> 383096 - digiKam crash, maintenance related?
 215 ==> 430762 - Change icon size for people keywords.
 216 ==> 430337 - Failed to create a new people tag.
-217 ==> 
+217 ==> 430250 - Provide filetype-based filter for running face detection.
+218 ==> 
