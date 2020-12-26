@@ -239,4 +239,5 @@ BUGFIXES:
 221 ==> 376891 - Digikam becomes unusable with many Metatags.
 222 ==> 417399 - Wishlist: button to hide confirmed faces for a person.
 223 ==> 279667 - Face thumbnails from people tags does not support drag and drop.
-224 ==> 
+224 ==> 430818 - In Batch Queue Manager, the "Run" command, execute always the first queue.
+225 ==> 

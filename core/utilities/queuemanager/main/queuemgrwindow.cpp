@@ -666,8 +666,7 @@ void QueueMgrWindow::populateToolsList()
 
 void QueueMgrWindow::slotRun()
 {
-    d->currentQueueToProcess   = 0;
-
+    d->currentQueueToProcess   = d->queuePool->currentIndex();
     QueueListView* const queue = d->queuePool->currentQueue();
     QString msg;
 
