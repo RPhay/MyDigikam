@@ -151,7 +151,7 @@ bool DImgQImageLoader::load(const QString& filePath, DImgLoaderObserver* const o
             dptr[0] = qBlue(*sptr);
             dptr[1] = qGreen(*sptr);
             dptr[2] = qRed(*sptr);
-            dptr[3] = qAlpha(*sptr);
+            dptr[3] = m_hasAlpha ? qAlpha(*sptr) : 255;
 
             dptr   += 4;
             sptr++;
@@ -185,7 +185,7 @@ bool DImgQImageLoader::load(const QString& filePath, DImgLoaderObserver* const o
             dptr[0] = (*sptr).blue();
             dptr[1] = (*sptr).green();
             dptr[2] = (*sptr).red();
-            dptr[3] = (*sptr).alpha();
+            dptr[3] = m_hasAlpha ? (*sptr).alpha() : 65535;
 
             dptr   += 4;
             sptr++;
