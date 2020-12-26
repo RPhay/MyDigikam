@@ -140,6 +140,7 @@ void Task::run()
     QUrl        outUrl  = d->tools.m_itemUrl;
     QUrl        workUrl = !d->settings.useOrgAlbum ? d->settings.workingUrl
                                                    : d->tools.m_itemUrl.adjusted(QUrl::RemoveFilename);
+    workUrl             = workUrl.adjusted(QUrl::StripTrailingSlash);
     QUrl        inUrl;
     QList<QUrl> tmp2del;
     DImg        tmpImage;
