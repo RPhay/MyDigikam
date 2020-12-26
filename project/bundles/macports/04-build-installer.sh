@@ -246,10 +246,11 @@ for app in $KDE_MENU_APPS ; do
             cat << EOF | osacompile -o "$TEMPROOT/$app.app"
 #!/usr/bin/osascript
 
-log "Running $DYLD_ENV_CMD $RELOCATE_PREFIX/digikam.app/Contents/MacOS/kbuildsycoca5"
-do shell script "$DYLD_ENV_CMD $RELOCATE_PREFIX/digikam.app/Contents/MacOS/kbuildsycoca5"
+set current_path to POSIX path of ((path to me as text) & "::")
 
-do shell script "$DYLD_ENV_CMD open $RELOCATE_PREFIX/digikam.app/Contents/MacOS/$app"
+do shell script "$DYLD_ENV_CMD " & quoted form of (POSIX path of current_path) & "digikam.app/Contents/opt/digikam.app/Contents/bin/kbuildsycoca5"
+
+do shell script "open $DYLD_ENV_CMD " & quoted form of (POSIX path of current_path) & "digikam.app/Contents/opt/$app.app"
 EOF
                 # ------ End application launcher script
 
@@ -545,30 +546,23 @@ done
 
 echo -e "\n---------- Finalize files in bundle"
 
-mv -v $TEMPROOT/bin/*   $TEMPROOT/digikam.app/Contents/MacOS
-rm -rfv $TEMPROOT/bin
+mkdir -p $TEMPROOT/digikam.app/Contents/opt
 
-mv -v $TEMPROOT/Applications/KF5/digikam.app/Contents/MacOS/digikam   $TEMPROOT/digikam.app/Contents/MacOS
-mv -v $TEMPROOT/Applications/KF5/showfoto.app/Contents/MacOS/showfoto $TEMPROOT/digikam.app/Contents/MacOS
-mv -v $TEMPROOT/Applications/KF5/digikam.app/Contents/Resources/*     $TEMPROOT/digikam.app/Contents/Resources
+mv -v $TEMPROOT/Applications/KF5/digikam.app  $TEMPROOT/digikam.app/Contents/opt
+mv -v $TEMPROOT/Applications/KF5/showfoto.app $TEMPROOT/digikam.app/Contents/opt
 
-mv -v $TEMPROOT/share   $TEMPROOT/digikam.app/Contents
-mv -v $TEMPROOT/etc     $TEMPROOT/digikam.app/Contents
-mv -v $TEMPROOT/lib     $TEMPROOT/digikam.app/Contents
-mv -v $TEMPROOT/libexec $TEMPROOT/digikam.app/Contents
+mv -v $TEMPROOT/bin                           $TEMPROOT/digikam.app/Contents/opt/digikam.app/Contents/
+mv -v $TEMPROOT/share                         $TEMPROOT/digikam.app/Contents/opt/digikam.app/Contents/
+mv -v $TEMPROOT/etc                           $TEMPROOT/digikam.app/Contents/opt/digikam.app/Contents/
+mv -v $TEMPROOT/lib                           $TEMPROOT/digikam.app/Contents/opt/digikam.app/Contents/
+mv -v $TEMPROOT/libexec                       $TEMPROOT/digikam.app/Contents/opt/digikam.app/Contents/
 
-ln -sv "../../digikam.app/Contents/etc"         "$TEMPROOT/showfoto.app/Contents/etc"
-ln -sv "../../digikam.app/Contents/lib"         "$TEMPROOT/showfoto.app/Contents/lib"
-ln -sv "../../digikam.app/Contents/libexec"     "$TEMPROOT/showfoto.app/Contents/libexec"
-ln -sv "../../digikam.app/Contents/share"       "$TEMPROOT/showfoto.app/Contents/share"
-
-RESOURCEFILES=(`ls $TEMPROOT/digikam.app/Contents/Resources`)
-
-for RES in ${RESOURCEFILES[@]} ; do
-
-    ln -sv "../../../digikam.app/Contents/Resources/$RES" "$TEMPROOT/showfoto.app/Contents/Resources/" || true
-
-done
+ln -sv "../../digikam.app/Contents/bin"       "$TEMPROOT/digikam.app/Contents/opt/showfoto.app/Contents/bin"
+ln -sv "../../digikam.app/Contents/etc"       "$TEMPROOT/digikam.app/Contents/opt/showfoto.app/Contents/etc"
+ln -sv "../../digikam.app/Contents/lib"       "$TEMPROOT/digikam.app/Contents/opt/showfoto.app/Contents/lib"
+ln -sv "../../digikam.app/Contents/libexec"   "$TEMPROOT/digikam.app/Contents/opt/showfoto.app/Contents/libexec"
+ln -sv "../../digikam.app/Contents/share"     "$TEMPROOT/digikam.app/Contents/opt/showfoto.app/Contents/share"
+ln -sv "../../digikam.app/Contents/Resources" "$TEMPROOT/digikam.app/Contents/opt/showfoto.app/Contents/Resources"
 
 rm -rfv $TEMPROOT/Applications
 
