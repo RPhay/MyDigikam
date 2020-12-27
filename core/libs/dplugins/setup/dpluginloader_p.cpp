@@ -109,7 +109,8 @@ QFileInfoList DPluginLoader::Private::pluginEntriesList() const
         {
             it.next();
 
-            if (!dupFiles.contains(it.fileInfo().baseName()))
+            if (!it.filePath().contains(QLatin1String("dSYM")) &&  // Ignore debug binary extensions under MacOS
+                !dupFiles.contains(it.fileInfo().baseName()))
             {
                 dupFiles << it.fileInfo().baseName();
                 allFiles << it.fileInfo();
