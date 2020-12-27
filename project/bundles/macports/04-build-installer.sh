@@ -559,7 +559,17 @@ ln -sv "../../digikam.app/Contents/libexec"   "$TEMPROOT/digikam.app/Contents/op
 ln -sv "../../digikam.app/Contents/share"     "$TEMPROOT/digikam.app/Contents/opt/showfoto.app/Contents/share"
 ln -sv "../../digikam.app/Contents/Resources" "$TEMPROOT/digikam.app/Contents/opt/showfoto.app/Contents/Resources"
 
+# Last cleanup
+
 rm -rfv $TEMPROOT/Applications
+
+HEADERFILES=(`find $TEMPROOT -name "*.h" -o -name "*.hpp"`)
+
+for HPP in ${HEADERFILES[@]} ; do
+
+    rm -fv $HPP
+
+done
 
 #################################################################################################
 # Build PKG file

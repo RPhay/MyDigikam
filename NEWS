@@ -1,9 +1,10 @@
-digiKam 7.2.0-beta1 - Release date: 2020-10-18
+digiKam 7.2.0-beta2 - Release date: 2020-12-27
 
 *****************************************************************************************************
 NEW FEATURES:
 
 General       : MacOS PKG installer is now compatible with Apple BigSur.
+General       : MacOS bundle is now fully relocatable.
 General       : Check and fix source codes with Clazy static analyzer.
 General       : All bundles updated to last KF5 framework version 5.74.
 General       : All bundles updated to last OpenCV version 4.4.0.
@@ -240,4 +241,5 @@ BUGFIXES:
 222 ==> 417399 - Wishlist: button to hide confirmed faces for a person.
 223 ==> 279667 - Face thumbnails from people tags does not support drag and drop.
 224 ==> 430818 - In Batch Queue Manager, the "Run" command, execute always the first queue.
-225 ==> 
+225 ==> 426860] digikam not entirely behaving as app on MacOS.
+226 ==> 

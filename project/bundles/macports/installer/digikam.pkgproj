@@ -399,7 +399,7 @@
 											<key>GID</key>
 											<integer>0</integer>
 											<key>PATH</key>
-											<string>../Applications/digiKam/digikam.app</string>
+											<string>../Applications/digiKam.org/digikam.app</string>
 											<key>PATH_TYPE</key>
 											<integer>1</integer>
 											<key>PERMISSIONS</key>
@@ -415,7 +415,7 @@
 											<key>GID</key>
 											<integer>0</integer>
 											<key>PATH</key>
-											<string>../Applications/digiKam/showfoto.app</string>
+											<string>../Applications/digiKam.org/showfoto.app</string>
 											<key>PATH_TYPE</key>
 											<integer>1</integer>
 											<key>PERMISSIONS</key>
@@ -431,7 +431,7 @@
 									<key>GID</key>
 									<integer>0</integer>
 									<key>PATH</key>
-									<string>../Applications/digiKam</string>
+									<string>../Applications/digiKam.org</string>
 									<key>PATH_TYPE</key>
 									<integer>1</integer>
 									<key>PERMISSIONS</key>

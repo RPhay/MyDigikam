@@ -29,7 +29,7 @@ BUNDLE CONTENTS
 
 Note: the bundle is relocatable.
 
-digiKam
+digiKam.org
 ├── digikam.app                                         Main digiKam application container
 │   └── Contents
 │       ├── MacOS                                       Applet to start digiKam in sub container
