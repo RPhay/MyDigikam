@@ -44,7 +44,7 @@ OSX_MIN_TARGET="10.13"
 INSTALL_PREFIX="/opt/digikam"
 
 # Directory where bundle contents will be installed.
-RELOCATE_PREFIX="/Applications/digiKam"
+RELOCATE_PREFIX="/Applications/digiKam.org"
 
 # Macports configuration
 MP_URL="https://distfiles.macports.org/MacPorts/"
