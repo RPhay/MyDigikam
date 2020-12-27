@@ -230,14 +230,6 @@ for app in $KDE_MENU_APPS ; do
         if [[ $KDE_MENU_APPS == *"$app"* ]] ; then
             echo "    Creating launcher script for $app"
 
-            # Debug variant needs DYLD_IMAGE_SUFFIX="_debug set at runtime
-
-            if [[ $DK_DEBUG = 1 ]] ; then
-                DYLD_ENV_CMD="DYLD_IMAGE_SUFFIX=_debug "
-            else
-                DYLD_ENV_CMD=""
-            fi
-
             # ------ Create application launcher script
             # Partially derived from https://discussions.apple.com/thread/3934912 and
             # http://stackoverflow.com/questions/16064957/how-to-check-in-applescript-if-an-app-is-running-without-launching-it-via-osa
@@ -248,9 +240,9 @@ for app in $KDE_MENU_APPS ; do
 
 set current_path to POSIX path of ((path to me as text) & "::")
 
-do shell script "$DYLD_ENV_CMD " & quoted form of (POSIX path of current_path) & "digikam.app/Contents/opt/digikam.app/Contents/bin/kbuildsycoca5"
+do shell script quoted form of (POSIX path of current_path) & "digikam.app/Contents/opt/digikam.app/Contents/bin/kbuildsycoca5"
 
-do shell script "open $DYLD_ENV_CMD " & quoted form of (POSIX path of current_path) & "digikam.app/Contents/opt/$app.app"
+do shell script "open " & quoted form of (POSIX path of current_path) & "digikam.app/Contents/opt/$app.app"
 EOF
                 # ------ End application launcher script
 
@@ -520,10 +512,13 @@ for APP in ${EXECFILES[@]} ; do
 
     ISBINARY=`file "$APP" | grep "Mach-O" || true`
 
+    # Do not touch debug extension
+    ISDSYM=`file "$APP" | grep "dSYM" || true`
+
     # Do not patch applet files which are pure Apple API binaries
     BASENAME=`basename "$APP"`
 
-    if [[ $ISBINARY ]] && [[ $BASENAME != "applet" ]] ; then
+    if [[ $ISBINARY ]] && [[ ! $ISDSYM ]] && [[ $BASENAME != "applet" ]] ; then
 
         install_name_tool -add_rpath @executable_path/.. $APP
         install_name_tool -add_rpath @executable_path/../.. $APP

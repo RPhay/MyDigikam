@@ -201,7 +201,10 @@ for FILE in ${FILESLIST[@]} ; do
 
     ISMACHO=`file "$FILE" | grep "Mach-O" || true`
 
-    if [[ $ISMACHO ]] ; then
+    # Do not touch debug extension
+    ISDSYM=`file "$FILE" | grep "dSYM" || true`
+
+    if [[ $ISMACHO ]] && [[ ! $ISDSYM ]] ; then
 
         # For each file from bin list, we replace the absolute path to external dependency with a relative path
         # NOTE: relative path must be resolved in main executable later.
