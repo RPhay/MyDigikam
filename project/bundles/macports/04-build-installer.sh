@@ -118,6 +118,7 @@ lib/mariadb/plugin/*.so \
 lib/ImageMagick*/modules-Q16/coders/*.so \
 lib/ImageMagick*/modules-Q16/filters/*.so \
 bin/kbuildsycoca5 \
+bin/solid-hardware5 \
 libexec/qt5/plugins/imageformats/*.dylib \
 libexec/qt5/plugins/sqldrivers/*.dylib \
 libexec/qt5/plugins/printsupport/*.dylib \
@@ -435,7 +436,7 @@ chmod 755 "$PROJECTDIR/postinstall"
 #################################################################################################
 # Copy icons-set resource files.
 
-cp $ORIG_WD/icon-rcc/breeze.rcc $TEMPROOT/Applications/KF5/digikam.app/Contents/Resources/
+cp $ORIG_WD/icon-rcc/breeze.rcc      $TEMPROOT/Applications/KF5/digikam.app/Contents/Resources/
 cp $ORIG_WD/icon-rcc/breeze-dark.rcc $TEMPROOT/Applications/KF5/digikam.app/Contents/Resources/
 
 #################################################################################################
@@ -527,6 +528,7 @@ for APP in ${EXECFILES[@]} ; do
         install_name_tool -add_rpath @executable_path/../../../../.. $APP
         install_name_tool -add_rpath @executable_path/../../../../../.. $APP
         install_name_tool -add_rpath @executable_path/../../../../../../.. $APP
+        install_name_tool -add_rpath @executable_path/../../../../../../../.. $APP
         install_name_tool -add_rpath @executable_path/../../../../../../../../.. $APP
         install_name_tool -add_rpath @executable_path/../../../../../../../../../.. $APP
 
