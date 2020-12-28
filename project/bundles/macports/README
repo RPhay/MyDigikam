@@ -29,6 +29,12 @@ BUNDLE CONTENTS
 
 Note: the bundle is relocatable.
 
+Bundle is composed of two main application containers (digikam and showfoto), to start applet from the MacOS lauchpad.
+The digikam main application container include private two sub-containers to start real MacOS applications (digikam and showfoto).
+The showfoto sub-container directories are linked to the digikam sub-container to reduce used-space.
+The host directory is called "digiKam.org" and not "digiKam" to allow Showfoto applet icon to be show on MacOS lauchpad,
+else only digiKam is visible.
+
 digiKam.org
 ├── digikam.app                                         Main digiKam application container
 │   └── Contents
