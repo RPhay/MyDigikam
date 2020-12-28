@@ -64,6 +64,7 @@ public:
     explicit Private()
       : labelPreset(nullptr),
         useCustom(nullptr),
+        scaleDown(nullptr),
         usePercent(nullptr),
         customLength(nullptr),
         presetCBox(nullptr),
@@ -78,6 +79,7 @@ public:
     QLabel*       labelPreset;
 
     QCheckBox*    useCustom;
+    QCheckBox*    scaleDown;
     QCheckBox*    usePercent;
 
     DIntNumInput* customLength;
@@ -146,8 +148,9 @@ void Resize::registerSettingsWidget()
     d->presetCBox->insertItem(Private::Large,  i18np("Large (1 pixel)",  "Large (%1 pixels)",  d->presetLengthValue(Private::Large)));
     d->presetCBox->insertItem(Private::Huge,   i18np("Huge (1 pixel)",   "Huge (%1 pixels)",   d->presetLengthValue(Private::Huge)));
 
-    d->useCustom        = new QCheckBox(i18n("Use Custom Length"), vbox);
-    d->usePercent       = new QCheckBox(i18n("Use Percentage"), vbox);
+    d->scaleDown        = new QCheckBox(i18n("Not enlarge small images"), vbox);
+    d->useCustom        = new QCheckBox(i18n("Use Custom Length"),        vbox);
+    d->usePercent       = new QCheckBox(i18n("Use Percentage"),           vbox);
     d->customLength     = new DIntNumInput(vbox);
     d->customLength->setSuffix(i18n(" Pixels"));
     d->customLength->setRange(10, 10000, 1);
@@ -167,6 +170,9 @@ void Resize::registerSettingsWidget()
     connect(d->useCustom, SIGNAL(toggled(bool)),
             this, SLOT(slotSettingsChanged()));
 
+    connect(d->scaleDown, SIGNAL(toggled(bool)),
+            this, SLOT(slotSettingsChanged()));
+
     connect(d->usePercent, SIGNAL(toggled(bool)),
             this, SLOT(slotPercentChanged()));
 
@@ -176,6 +182,7 @@ void Resize::registerSettingsWidget()
 BatchToolSettings Resize::defaultSettings()
 {
     BatchToolSettings settings;
+    settings.insert(QLatin1String("ScaleDown"),    false);
     settings.insert(QLatin1String("UseCustom"),    false);
     settings.insert(QLatin1String("UsePercent"),   false);
     settings.insert(QLatin1String("LengthCustom"), 1024);
@@ -186,6 +193,7 @@ BatchToolSettings Resize::defaultSettings()
 void Resize::slotAssignSettings2Widget()
 {
     d->changeSettings = false;
+    d->scaleDown->setChecked(settings()[QLatin1String("ScaleDown")].toBool());
     d->useCustom->setChecked(settings()[QLatin1String("UseCustom")].toBool());
     d->usePercent->setChecked(settings()[QLatin1String("UsePercent")].toBool());
     d->customLength->setValue(settings()[QLatin1String("LengthCustom")].toInt());
@@ -203,6 +211,7 @@ void Resize::slotSettingsChanged()
     if (d->changeSettings)
     {
         BatchToolSettings settings;
+        settings.insert(QLatin1String("ScaleDown"),    d->scaleDown->isChecked());
         settings.insert(QLatin1String("UseCustom"),    d->useCustom->isChecked());
         settings.insert(QLatin1String("UsePercent"),   d->usePercent->isChecked());
         settings.insert(QLatin1String("LengthCustom"), d->customLength->value());
@@ -233,6 +242,7 @@ void Resize::slotPercentChanged()
 
 bool Resize::toolOperations()
 {
+    bool scaleDown              = settings()[QLatin1String("ScaleDown")].toBool();
     bool useCustom              = settings()[QLatin1String("UseCustom")].toBool();
     bool usePercent             = settings()[QLatin1String("UsePercent")].toBool();
     int length                  = settings()[QLatin1String("LengthCustom")].toInt();
@@ -243,28 +253,32 @@ bool Resize::toolOperations()
         return false;
     }
 
+    int longest = qMax(image().width(), image().height());
+
     if (!useCustom)
     {
         length = d->presetLengthValue(preset);
     }
     else if (usePercent)
     {
-        int longest = qMax(image().width(), image().height());
-        length      = (int)(longest * (double)length / 100.0);
+        length = (int)(longest * (double)length / 100.0);
     }
 
-    QSize newSize(image().size());
-    newSize.scale(QSize(length, length), Qt::KeepAspectRatio);
-
-    if (!newSize.isValid())
+    if (!scaleDown || (longest > length))
     {
-        return false;
+        QSize newSize(image().size());
+        newSize.scale(QSize(length, length), Qt::KeepAspectRatio);
+
+        if (!newSize.isValid())
+        {
+            return false;
+        }
+
+        DImgBuiltinFilter filter(DImgBuiltinFilter::Resize, newSize);
+        applyFilter(&filter);
     }
 
-    DImgBuiltinFilter filter(DImgBuiltinFilter::Resize, newSize);
-    applyFilter(&filter);
-
-    return (savefromDImg());
+    return savefromDImg();
 }
 
 } // namespace DigikamBqmResizePlugin
