@@ -238,8 +238,8 @@ void Task::run()
 
     // Move processed temp file to target
 
-    QUrl dest = workUrl.adjusted(QUrl::RemoveFilename);
-    dest.setPath(dest.path() + d->tools.m_destFileName);
+    QUrl dest = workUrl;
+    dest.setPath(dest.path() + QLatin1Char('/') + d->tools.m_destFileName);
     QString renameMess;
 
     if (QFileInfo::exists(dest.toLocalFile()))
