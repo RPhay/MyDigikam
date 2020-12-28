@@ -48,6 +48,8 @@ Notice to make release tarballs from GIT
 
     cat ~/.gnupg/dkorg-gpg-pwd.txt | gpg --batch --yes --passphrase-fd 0 -stabv "tarball_file_to_sign" && mv "tarball_file_to_sign.asc" "tarball_file_to_sign.sig"
 
+    NOTE: project/scripts/signbundles.sh can batch sign all files in current directory.
+
 8/  Optional: upload tarball and signature to the "pre-release files repository".
 
     URL: ssh://digikam@milonia.kde.org/srv/archives/files/digikam/
