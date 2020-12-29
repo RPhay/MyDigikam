@@ -74,7 +74,7 @@ const QString DAboutData::digiKamFamily()
 
 const QString DAboutData::copyright()
 {
-    return i18n("(c) 2002-2020, digiKam developers team");
+    return i18n("(c) 2001-2021, digiKam developers team");
 }
 
 const QUrl DAboutData::webProjectUrl()
@@ -414,7 +414,7 @@ void DAboutData::authorsRegistration(KAboutData& aboutData)
     // -- Former Members ---------------------------------------------------------
 
     aboutData.addAuthor ( ki18n("Renchi Raju").toString(),
-                          ki18n("Developer (2002-2005)").toString(),
+                          ki18n("Developer (2001-2005)").toString(),
                           QLatin1String("renchi dot raju at gmail dot com"),
                           QLatin1String("https://www.facebook.com/renchi.raju")
                         );
