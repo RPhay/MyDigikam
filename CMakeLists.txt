@@ -74,6 +74,12 @@ include(GenerateExportHeader)
 include(CheckFunctionExists)
 include(FeatureSummary)
 
+# KF5 Framework macros
+include(KDEInstallDirs)
+include(KDECMakeSettings)
+include(KDEFrameworkCompilerSettings)
+include(KDECompilerSettings)
+
 # ECM macros
 include(ECMOptionalAddSubdirectory)
 include(ECMAddTests)
@@ -86,12 +92,6 @@ include(ECMAddAppIcon)
 include(ECMPoQmTools)
 include(ECMMarkAsTest)
 include(ECMAddTests)
-
-# KDE macros
-include(KDEInstallDirs)
-include(KDECMakeSettings)
-include(KDEFrameworkCompilerSettings)
-include(KDECompilerSettings)
 
 # Local macros
 include(MacroUtils)
