@@ -436,10 +436,16 @@ if [[ $DK_DEBUG = 1 ]] ; then
     DEBUG_SUF="-debug"
 fi
 
+if [[ $DK_VERSION = "master" ]] ; then
+
+    # with master branch, use epoch time-stamp as sub-version string.
+    DK_SUBVER="-`date "+%Y%m%dT%H%M%S"`"
+fi
+
 if [[ "$ARCH" = "x86_64" ]] ; then
-    APPIMAGE=$APP"-"$DK_RELEASEID$DK_EPOCH"-x86-64$DEBUG_SUF.appimage"
+    APPIMAGE=$APP"-"$DK_RELEASEID$DK_SUBVER"-x86-64$DEBUG_SUF.appimage"
 elif [[ "$ARCH" = "i686" ]] ; then
-    APPIMAGE=$APP"-"$DK_RELEASEID$DK_EPOCH"-i386$DEBUG_SUF.appimage"
+    APPIMAGE=$APP"-"$DK_RELEASEID$DK_SUBVER"-i386$DEBUG_SUF.appimage"
 fi
 
 echo -e "---------- Create Bundle with AppImage SDK stage1\n"

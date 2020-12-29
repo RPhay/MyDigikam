@@ -202,6 +202,12 @@ if [[ $DK_DEBUG = 1 ]] ; then
     DEBUG_SUF="-debug"
 fi
 
+if [[ $DK_VERSION = "master" ]] ; then
+
+    # with master branch, use epoch time-stamp as sub-version string.
+    DK_SUBVER="-`date "+%Y%m%dT%H%M%S"`"
+fi
+
 #################################################################################################
 # Build NSIS installer and Portable archive.
 
@@ -210,14 +216,14 @@ echo -e "\n---------- Build NSIS installer and Portable archive\n"
 mkdir -p $ORIG_WD/bundle
 
 if [ $MXE_BUILD_TARGETS == "i686-w64-mingw32.shared" ]; then
-    TARGET_INSTALLER=digiKam-$DK_RELEASEID$DK_EPOCH-Win32$DEBUG_SUF.exe
-    PORTABLE_FILE=digiKam-$DK_RELEASEID$DK_EPOCH-Win32$DEBUG_SUF.tar.xz
-    CHECKSUM_FILE=digiKam-$DK_RELEASEID$DK_EPOCH-Win32$DEBUG_SUF.sum
+    TARGET_INSTALLER=digiKam-$DK_RELEASEID$DK_SUBVER-Win32$DEBUG_SUF.exe
+    PORTABLE_FILE=digiKam-$DK_RELEASEID$DK_SUBVER-Win32$DEBUG_SUF.tar.xz
+    CHECKSUM_FILE=digiKam-$DK_RELEASEID$DK_SUBVER-Win32$DEBUG_SUF.sum
     rm -f $ORIG_WD/bundle/*Win32$DEBUG_SUF* || true
 else
-    TARGET_INSTALLER=digiKam-$DK_RELEASEID$DK_EPOCH-Win64$DEBUG_SUF.exe
-    PORTABLE_FILE=digiKam-$DK_RELEASEID$DK_EPOCH-Win64$DEBUG_SUF.tar.xz
-    CHECKSUM_FILE=digiKam-$DK_RELEASEID$DK_EPOCH-Win64$DEBUG_SUF.sum
+    TARGET_INSTALLER=digiKam-$DK_RELEASEID$DK_SUBVER-Win64$DEBUG_SUF.exe
+    PORTABLE_FILE=digiKam-$DK_RELEASEID$DK_SUBVER-Win64$DEBUG_SUF.tar.xz
+    CHECKSUM_FILE=digiKam-$DK_RELEASEID$DK_SUBVER-Win64$DEBUG_SUF.sum
     rm -f $ORIG_WD/bundle/*Win64$DEBUG_SUF* || true
 fi
 
