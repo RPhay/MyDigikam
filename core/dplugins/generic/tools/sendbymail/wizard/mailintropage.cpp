@@ -139,7 +139,7 @@ MailIntroPage::MailIntroPage(QWizard* const dialog, const QString& title)
 
     // digiKam Bundle PKG install
 
-    d->binSearch->addDirectory(QLatin1String("/opt/digikam/bin"));
+    d->binSearch->addDirectory(QLatin1String("/Applications/digiKam.org/digikam.app/Contents/opt/digikam.app/Contents/bin"));
 
 #endif
 

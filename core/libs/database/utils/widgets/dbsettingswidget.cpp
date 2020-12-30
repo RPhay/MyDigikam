@@ -144,9 +144,7 @@ void DatabaseSettingsWidget::setupMainArea()
     d->dbBinariesWidget->addDirectory(QLatin1String("/opt/local/lib/mariadb/bin"));
 
     // digiKam Bundle PKG install
-    d->dbBinariesWidget->addDirectory(QLatin1String("/opt/digikam/bin"));
-    d->dbBinariesWidget->addDirectory(QLatin1String("/opt/digikam/sbin"));
-    d->dbBinariesWidget->addDirectory(QLatin1String("/opt/digikam/lib/mariadb/bin"));
+    d->dbBinariesWidget->addDirectory(QLatin1String("/Applications/digiKam.org/digikam.app/Contents/opt/digikam.app/Contents/lib/mariadb/bin"));
 #endif
 
 #ifdef Q_OS_WIN

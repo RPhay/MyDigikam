@@ -523,9 +523,9 @@ QStringList IccProfile::defaultSearchPaths()
         dataDirs << QLatin1String("/opt/local/share");
     }
 
-    if (!dataDirs.contains(QLatin1String("/opt/digikam/share")))
+    if (!dataDirs.contains(QLatin1String("/Applications/digiKam.org/digikam.app/Contents/opt/digikam.app/Contents/share")))
     {
-        dataDirs << QLatin1String("/opt/digikam/share");
+        dataDirs << QLatin1String("/Applications/digiKam.org/digikam.app/Contents/opt/digikam.app/Contents/share");
     }
 
     foreach (const QString& dataDir, dataDirs)

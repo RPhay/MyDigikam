@@ -919,7 +919,7 @@ void SetupICC::slotShowDefaultSearchPaths()
                         "<li>/Library/ColorSync/Profiles</li>"
                         "<li>~/Library/ColorSync/Profiles</li>"
                         "<li>/opt/local/share/color/icc</li>"
-                        "<li>/opt/digikam/share/color/icc</li>"
+                        "<li>/Applications/digiKam.org/digikam.app/Contents/opt/digikam.app/Contents/share/color/icc</li>"
                         "<li>~/.local/share/color/icc/</li>"
                         "<li>~/.local/share/icc/</li>"
                         "<li>~/.color/icc/</li>"
