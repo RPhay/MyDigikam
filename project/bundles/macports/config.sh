@@ -41,7 +41,7 @@ BUILDING_DIR="`pwd`/temp.build"
 OSX_MIN_TARGET="10.13"
 
 # Directory to build relocable bundle.
-INSTALL_PREFIX="/opt/digikam"
+INSTALL_PREFIX="/opt/digikam.org"
 
 # Directory where bundle contents will be installed.
 RELOCATE_PREFIX="/Applications/digiKam.org"
