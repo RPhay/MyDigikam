@@ -29,7 +29,7 @@ namespace Digikam
 
 DatabaseSettingsWidget::DatabaseSettingsWidget(QWidget* const parent)
     : QWidget(parent),
-      d(new Private)
+      d      (new Private)
 {
     setupMainArea();
 }
@@ -41,7 +41,7 @@ DatabaseSettingsWidget::~DatabaseSettingsWidget()
 
 void DatabaseSettingsWidget::setupMainArea()
 {
-    QVBoxLayout* const layout = new QVBoxLayout();
+    QVBoxLayout* const layout       = new QVBoxLayout();
     setLayout(layout);
 
     // --------------------------------------------------------
@@ -65,12 +65,15 @@ void DatabaseSettingsWidget::setupMainArea()
 #ifdef HAVE_MYSQLSUPPORT
 
 #   ifdef HAVE_INTERNALMYSQL
-    d->dbType->addItem(i18n("Mysql Internal (experimental)"), MysqlInternal);
+
+    d->dbType->addItem(i18n("Mysql Internal"), MysqlInternal);
     d->dbTypeMap[MysqlInternal] = dbTypeIdx++;
+
 #   endif
 
-    d->dbType->addItem(i18n("MySQL Server (experimental)"),   MysqlServer);
+    d->dbType->addItem(i18n("MySQL Server"),   MysqlServer);
     d->dbTypeMap[MysqlServer]   = dbTypeIdx++;
+
 #endif
 
     QString tip = i18n("<p>Select here the type of database backend.</p>"
@@ -81,14 +84,15 @@ void DatabaseSettingsWidget::setupMainArea()
 #ifdef HAVE_MYSQLSUPPORT
 
 #   ifdef HAVE_INTERNALMYSQL
+
     tip.append(i18n("<p><b>MySQL Internal</b> backend is for local database storage with huge collection sizes. "
-                    "This backend is recommend for local collections with more than 100K items.</p>"
-                    "<p><i>Be careful: this one still in experimental stage.</i></p>"));
+                    "This backend is recommend for local collections with more than 100K items.</p>"));
+
 #   endif
 
     tip.append(i18n("<p><b>MySQL Server</b> backend is a more robust solution especially for remote and shared database storage. "
-                    "It is also more efficient to manage huge collection sizes with more than 100K items.</p>"
-                    "<p><i>Be careful: this one still in experimental stage.</i></p>"));
+                    "It is also more efficient to manage huge collection sizes with more than 100K items.</p>"));
+
 #endif
 
     d->dbType->setToolTip(tip);
@@ -126,18 +130,21 @@ void DatabaseSettingsWidget::setupMainArea()
     QGridLayout* const binaryLayout   = new QGridLayout;
     binaryBox->setLayout(binaryLayout);
     binaryBox->setTitle(i18nc("@title:group", "MySQL Binaries"));
-    d->dbBinariesWidget = new DBinarySearch(binaryBox);
+    d->dbBinariesWidget               = new DBinarySearch(binaryBox);
     d->dbBinariesWidget->header()->setSectionHidden(2, true);
 
     d->dbBinariesWidget->addBinary(d->mysqlInitBin);
     d->dbBinariesWidget->addBinary(d->mysqlServBin);
 
 #ifdef Q_OS_LINUX
+
     d->dbBinariesWidget->addDirectory(QLatin1String("/usr/bin"));
     d->dbBinariesWidget->addDirectory(QLatin1String("/usr/sbin"));
+
 #endif
 
 #ifdef Q_OS_MACOS
+
     // Std Macports install
     d->dbBinariesWidget->addDirectory(QLatin1String("/opt/local/bin"));
     d->dbBinariesWidget->addDirectory(QLatin1String("/opt/local/sbin"));
@@ -145,18 +152,21 @@ void DatabaseSettingsWidget::setupMainArea()
 
     // digiKam Bundle PKG install
     d->dbBinariesWidget->addDirectory(QLatin1String("/Applications/digiKam.org/digikam.app/Contents/opt/digikam.app/Contents/lib/mariadb/bin"));
+
 #endif
 
 #ifdef Q_OS_WIN
+
     d->dbBinariesWidget->addDirectory(QLatin1String("C:/Program Files/MariaDB 10.3/bin"));
     d->dbBinariesWidget->addDirectory(QLatin1String("C:/Program Files (x86/MariaDB 10.3/bin"));
+
 #endif
 
     d->dbBinariesWidget->allBinariesFound();
 
     // --------------------------------------------------------
 
-    d->tab = new QTabWidget(this);
+    d->tab                                           = new QTabWidget(this);
 
     QLabel* const hostNameLabel                      = new QLabel(i18n("Host Name:"));
     d->hostName                                      = new QLineEdit();
@@ -195,6 +205,7 @@ void DatabaseSettingsWidget::setupMainArea()
     checkDBConnectBtn->setToolTip(i18n("Run a basic database connection to see if current MySQL server settings is suitable."));
 
     // Only accept printable Ascii char for database names.
+
     QRegExp asciiRx(QLatin1String("[\x20-\x7F]+$"));
     QValidator* const asciiValidator = new QRegExpValidator(asciiRx, this);
 
@@ -657,10 +668,12 @@ void DatabaseSettingsWidget::setParametersFromSettings(const ApplicationSettings
                                          "option (--database-directory)."));
         }
     }
+
 #ifdef HAVE_MYSQLSUPPORT
 
 #   ifdef HAVE_INTERNALMYSQL
-    else if (d->orgPrms.databaseType == DbEngineParameters::MySQLDatabaseType() && d->orgPrms.internalServer)
+
+    else if ((d->orgPrms.databaseType == DbEngineParameters::MySQLDatabaseType()) && d->orgPrms.internalServer)
     {
         d->dbPathEdit->setFileDlgPath(d->orgPrms.internalServerPath());
         d->dbType->setCurrentIndex(d->dbTypeMap[MysqlInternal]);
@@ -669,7 +682,9 @@ void DatabaseSettingsWidget::setParametersFromSettings(const ApplicationSettings
         d->dbBinariesWidget->allBinariesFound();
         slotResetMysqlServerDBNames();
     }
+
 #   endif
+
     else
     {
         d->dbType->setCurrentIndex(d->dbTypeMap[MysqlServer]);
@@ -683,6 +698,7 @@ void DatabaseSettingsWidget::setParametersFromSettings(const ApplicationSettings
         d->userName->setText(d->orgPrms.userName);
         d->password->setText(d->orgPrms.password);
     }
+
 #endif
 
     slotHandleDBTypeIndexChanged(d->dbType->currentIndex());
@@ -692,20 +708,25 @@ DbEngineParameters DatabaseSettingsWidget::getDbEngineParameters() const
 {
     DbEngineParameters prm;
 
-    switch(databaseType())
+    switch (databaseType())
     {
         case SQlite:
+        {
             prm = DbEngineParameters::parametersForSQLiteDefaultFile(databasePath());
             break;
+        }
 
         case MysqlInternal:
+        {
             prm = DbEngineParameters::defaultParameters(databaseBackend());
             prm.setInternalServerPath(databasePath());
             prm.internalServerMysqlInitCmd = d->mysqlInitBin.path();
             prm.internalServerMysqlServCmd = d->mysqlServBin.path();
             break;
+        }
 
         default: // MysqlServer
+        {
             prm.internalServer         = false;
             prm.databaseType           = databaseBackend();
             prm.databaseNameCore       = d->dbNameCore->text();
@@ -718,6 +739,7 @@ DbEngineParameters DatabaseSettingsWidget::getDbEngineParameters() const
             prm.userName               = d->userName->text();
             prm.password               = d->password->text();
             break;
+        }
     }
 
     return prm;
@@ -756,10 +778,14 @@ bool DatabaseSettingsWidget::checkDatabaseSettings()
         case MysqlInternal:
         {
             if (!checkDatabasePath())
+            {
                 return false;
+            }
 
             if (!d->dbBinariesWidget->allBinariesFound())
+            {
                 return false;
+            }
 
             return true;
         }
@@ -844,6 +870,7 @@ bool DatabaseSettingsWidget::checkDatabasePath()
     if (!path.isWritable())
 
 #endif
+
     {
         QMessageBox::information(qApp->activeWindow(), i18n("No Database Write Access"),
                                  i18n("<p>You do not seem to have write access "
