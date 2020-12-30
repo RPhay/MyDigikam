@@ -105,6 +105,54 @@ bool AlbumManager::setDatabase(const DbEngineParameters& params, bool priority, 
 
     if (params.internalServer)
     {
+        if (!QFileInfo::exists(params.internalServerMysqlServCmd))
+        {
+            QApplication::restoreOverrideCursor();
+
+            QMessageBox::critical(qApp->activeWindow(), qApp->applicationName(),
+                                  i18n("<p>The MySQL binary tools are not found, please "
+                                       "set the correct location in the next dialog.</p>"
+                                      ));
+
+            // We cannot use Setup::execSinglePage() as this already requires a core database.
+
+            QPointer<QDialog> setup                  = new QDialog(qApp->activeWindow());
+            QVBoxLayout* const layout                = new QVBoxLayout(setup);
+            DatabaseSettingsWidget* const dbsettings = new DatabaseSettingsWidget(setup);
+            QDialogButtonBox* const buttons          = new QDialogButtonBox(QDialogButtonBox::Ok |
+                                                                            QDialogButtonBox::Cancel, setup);
+            buttons->button(QDialogButtonBox::Ok)->setDefault(true);
+
+            layout->addWidget(dbsettings);
+            layout->addStretch(10);
+            layout->addWidget(buttons);
+
+            connect(buttons->button(QDialogButtonBox::Ok), SIGNAL(clicked()),
+                    setup, SLOT(accept()));
+
+            connect(buttons->button(QDialogButtonBox::Cancel), SIGNAL(clicked()),
+                    setup, SLOT(reject()));
+
+            ApplicationSettings* const settings = ApplicationSettings::instance();
+            dbsettings->setParametersFromSettings(settings);
+
+            if ((setup->exec() != QDialog::Accepted) || !setup)
+            {
+                delete setup;
+
+                return false;
+            }
+
+            DbEngineParameters dbParams = dbsettings->getDbEngineParameters();
+            settings->setDbEngineParameters(dbParams);
+            settings->saveSettings();
+            changeDatabase(dbParams);
+
+            delete setup;
+
+            return true;
+        }
+
         DatabaseServerError result = DatabaseServerStarter::instance()->startServerManagerProcess(params);
 
         if (result.getErrorType() != DatabaseServerError::NoErrors)
