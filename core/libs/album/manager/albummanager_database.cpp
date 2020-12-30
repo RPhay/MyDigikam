@@ -105,7 +105,8 @@ bool AlbumManager::setDatabase(const DbEngineParameters& params, bool priority, 
 
     if (params.internalServer)
     {
-        if (!QFileInfo::exists(params.internalServerMysqlServCmd))
+        if (!QFileInfo::exists(params.internalServerMysqlServCmd) &&
+            QStandardPaths::findExecutable(params.internalServerMysqlServCmd).isEmpty())
         {
             QApplication::restoreOverrideCursor();
 
