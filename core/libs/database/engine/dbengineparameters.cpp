@@ -141,6 +141,7 @@ DbEngineParameters::DbEngineParameters(const QUrl& url)
     }
 
 #if defined(HAVE_MYSQLSUPPORT) && defined(HAVE_INTERNALMYSQL)
+
     QString queryServer = QUrlQuery(url).queryItemValue(QLatin1String("internalServer"));
 
     if (!queryServer.isNull())
@@ -161,8 +162,11 @@ DbEngineParameters::DbEngineParameters(const QUrl& url)
 
     internalServerMysqlServCmd = QUrlQuery(url).queryItemValue(QLatin1String("internalServerMysqlServCmd"));
     internalServerMysqlInitCmd = QUrlQuery(url).queryItemValue(QLatin1String("internalServerMysqlInitCmd"));
+
 #else
+
     internalServer = false;
+
 #endif
 
     userName       = QUrlQuery(url).queryItemValue(QLatin1String("userName"));
