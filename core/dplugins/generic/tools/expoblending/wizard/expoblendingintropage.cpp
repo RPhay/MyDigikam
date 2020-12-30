@@ -106,6 +106,10 @@ ExpoBlendingIntroPage::ExpoBlendingIntroPage(ExpoBlendingManager* const mngr, QW
 
     d->binariesWidget->addDirectory(QLatin1String("/Applications/digiKam.org/digikam.app/Contents/opt/digikam.app/Contents/bin"));
 
+    // Hugin bundle install
+
+    d->binariesWidget->addDirectory(QLatin1String("/Applications/Hugin/tools_mac"));
+
 #endif
 
 #ifdef Q_OS_WIN
