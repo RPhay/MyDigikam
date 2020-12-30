@@ -49,7 +49,7 @@ fi
 
 if [[ ! -d /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX$MACOS_MAJOR.$MACOS_MINOR.sdk ]] ; then
     echo "XCode Target SDK minimal version is not installled in /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs"
-    echo "you can donwload an archive of SDK from https://github.com/phracker/MacOSX-SDKs/releases"
+    echo "you can donwload an archive of SDK from https://github.com/alexey-lysiuk/macos-sdk"
     exit 1
 else
     echo "Check XCode Target SDK minimal version passed..."
