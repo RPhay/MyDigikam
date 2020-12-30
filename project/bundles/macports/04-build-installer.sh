@@ -581,7 +581,14 @@ echo "---------- Create MacOS package for digiKam $DKRELEASEID"
 mkdir -p $ORIG_WD/bundle
 rm -f $ORIG_WD/bundle/*x86-64$DEBUG_SUF* || true
 
-TARGET_INSTALLER=digiKam-$DKRELEASEID$DK_EPOCH-MacOS-x86-64$DEBUG_SUF.pkg
+if   [[ $DK_VERSION = "master" ]] ; then
+
+    # with master branch, use epoch time-stamp as sub-version string.
+    DK_SUBVER="-`date "+%Y%m%dT%H%M%S"`"
+
+fi
+
+TARGET_INSTALLER=digiKam-$DKRELEASEID$DK_SUBVER-MacOS-x86-64$DEBUG_SUF.pkg
 TARGET_PKG_FILE=$BUILDDIR/bundle/$TARGET_INSTALLER
 echo -e "Target PKG file : $TARGET_PKG_FILE"
 

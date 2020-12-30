@@ -244,4 +244,10 @@ BUGFIXES:
 224 ==> 430818 - In Batch Queue Manager, the "Run" command, execute always the first queue.
 225 ==> 426860 - digiKam not entirely behaving as app on MacOS.
 226 ==> 430903 - Do not enlarge smaller photos.
-227 ==> 
+227 ==> 417088 - AppImage with QWebEngine does not start.
+228 ==> 427533 - Appimage fails to launch.
+229 ==> 424664 - digiKam 7.0 crash when opening geolocation tool.
+230 ==> 424617 - The digiKam appimage crashes on starting.
+231 ==> 430923 - EXIF viewer settings not updating EXIF Metadata view.
+232 ==> 430876 - Rename images without changing any properties.
+233 ==> 

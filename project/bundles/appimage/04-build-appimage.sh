@@ -341,8 +341,10 @@ for FILE in $EXCLUDE_FILES ; do
 done
 
 # This list is taken from older AppImage build script from krita
-# NOTE: libopenal => see bug 390162.
-#       libdbus-1 => see Krita rules.
+# NOTE: libopenal   => see bug 390162.
+#       libdbus-1   => see Krita rules.
+#       libxcb-dri3 => see bug 417088.
+
 EXTRA_EXCLUDE_FILES="\
 libgssapi_krb5.so.2 \
 libgssapi.so.3 \
@@ -361,6 +363,7 @@ libsasl2.so.2 \
 libwind.so.0 \
 libopenal.so.1 \
 libdbus-1.so.3 \
+libxcb-dri3.so.0 \
 "
 
 #liblber-2.4.so.2       # needed for Debian Wheezy
@@ -436,10 +439,16 @@ if [[ $DK_DEBUG = 1 ]] ; then
     DEBUG_SUF="-debug"
 fi
 
+if [[ $DK_VERSION = "master" ]] ; then
+
+    # with master branch, use epoch time-stamp as sub-version string.
+    DK_SUBVER="-`date "+%Y%m%dT%H%M%S"`"
+fi
+
 if [[ "$ARCH" = "x86_64" ]] ; then
-    APPIMAGE=$APP"-"$DK_RELEASEID$DK_EPOCH"-x86-64$DEBUG_SUF.appimage"
+    APPIMAGE=$APP"-"$DK_RELEASEID$DK_SUBVER"-x86-64$DEBUG_SUF.appimage"
 elif [[ "$ARCH" = "i686" ]] ; then
-    APPIMAGE=$APP"-"$DK_RELEASEID$DK_EPOCH"-i386$DEBUG_SUF.appimage"
+    APPIMAGE=$APP"-"$DK_RELEASEID$DK_SUBVER"-i386$DEBUG_SUF.appimage"
 fi
 
 echo -e "---------- Create Bundle with AppImage SDK stage1\n"

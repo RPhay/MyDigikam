@@ -61,11 +61,7 @@ DK_VERSION=master
 #DK_VERSION=development/dplugins
 
 # Installer sub version to differentiates newer updates of the installer itself, even if the underlying application hasn’t changed.
-#DK_EPOCH="-01"
-# Epoch with time-stamp for pre-release bundle in ISO format
-DK_EPOCH="-`date "+%Y%m%dT%H%M%S"`"
-# Beta releases don't need extra sub version
-#DK_EPOCH=""
+#DK_SUBVER="-01"
 
 # Installer will include or not digiKam debug symbols
 DK_DEBUG=0

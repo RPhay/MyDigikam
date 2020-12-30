@@ -480,7 +480,8 @@ SetupMetadata::SetupMetadata(QWidget* const parent)
     QWidget* const displayPanel      = new QWidget;
     QGridLayout* const displayLayout = new QGridLayout;
 
-    QLabel* const displayLabel       = new QLabel(i18nc("@info:label", "Select Metadata Fields to Be Displayed"));
+    QLabel* const displayLabel       = new QLabel(i18nc("@info:label", "Select Metadata Fields to be Displayed "
+                                                                       "when using Custom Filters"));
 
     QLabel* const displayIcon        = new QLabel;
     displayIcon->setPixmap(QIcon::fromTheme(QLatin1String("view-list-tree")).pixmap(32));

@@ -62,11 +62,11 @@ class Q_DECL_HIDDEN PeopleSideBarWidget::Private
 public:
 
     explicit Private()
-      : rescanButton(nullptr),
+      : rescanButton            (nullptr),
         searchModificationHelper(nullptr),
-        settingsWdg(nullptr),
-        tagFolderView(nullptr),
-        tagSearchBar(nullptr)
+        settingsWdg             (nullptr),
+        tagFolderView           (nullptr),
+        tagSearchBar            (nullptr)
     {
     }
 
@@ -81,7 +81,7 @@ PeopleSideBarWidget::PeopleSideBarWidget(QWidget* const parent,
                                          TagModel* const model,
                                          SearchModificationHelper* const searchModificationHelper)
     : SidebarWidget(parent),
-      d(new Private)
+      d            (new Private)
 {
     setObjectName(QLatin1String("People Sidebar"));
     setProperty("Shortcut", Qt::CTRL + Qt::SHIFT + Qt::Key_F9);
@@ -155,7 +155,7 @@ void PeopleSideBarWidget::setActive(bool active)
 
         if (!ApplicationSettings::instance()->getHelpBoxNotificationSeen())
         {
-            QString msg = i18n("Welcome to Face Management in DigiKam. "
+            QString msg = i18n("Welcome to Face Management in digiKam. "
                                "If this is your first time using this feature, please consider "
                                "using the Help Box in the Bottom Left Side Panel.");
             emit signalNotificationError(msg, DNotificationWidget::Information);
