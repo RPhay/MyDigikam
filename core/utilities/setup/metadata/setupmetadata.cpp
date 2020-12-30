@@ -272,10 +272,10 @@ SetupMetadata::SetupMetadata(QWidget* const parent)
     d->writeDngFilesBox->setEnabled(MetaEngine::supportMetadataWriting(QLatin1String("image/x-raw")));
 
     d->writeRawFilesBox   = new QCheckBox;
-    d->writeRawFilesBox->setText(i18nc("@option:check", "If possible write metadata to RAW files (experimental)"));
+    d->writeRawFilesBox->setText(i18nc("@option:check", "If possible write metadata to RAW files (Dangerous)"));
     d->writeRawFilesBox->setWhatsThis(i18nc("@info:whatsthis", "Turn on this option to write metadata into RAW TIFF/EP files. "
                                             "This feature requires the Exiv2 shared library, version >= 0.18.0. It is still "
-                                            "experimental, and is disabled by default."));
+                                            "experimental, and is disabled by default. Activate this option only if you know what you are doing."));
     d->writeRawFilesBox->setEnabled(MetaEngine::supportMetadataWriting(QLatin1String("image/x-raw")));
 
     d->updateFileTimeStampBox = new QCheckBox;
