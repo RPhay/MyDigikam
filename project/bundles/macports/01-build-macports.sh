@@ -189,6 +189,7 @@ if [[ $CONTINUE_INSTALL == 0 ]]; then
 startupitem_type none
 startupitem_install no
 macosx_deployment_target $OSX_MIN_TARGET
+build_arch $ARCH_TARGET
 EOF
 
 fi

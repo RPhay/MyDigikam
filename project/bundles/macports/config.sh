@@ -15,35 +15,52 @@ BUILDING_DIR="`pwd`/temp.build"
 
 ########################################################################
 
-# Minimum MacOS target for backward binary compatibility
-# This require to install older MacOS SDKs with Xcode.
-# See this url to download a older SDK archive :
-#
-# https://github.com/phracker/MacOSX-SDKs/releases
-#
-# Uncompress the archive to /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/
-# and adjust the property "MinimumSDKVersion" from /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Info.plist
-# sudo /usr/libexec/PlistBuddy -c "Set MinimumSDKVersion 10.13" /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Info.plist
-#
-# Possible values:
-# 11.0  : BigSur       :          : Qt                                      5.12, 5.13, 5.14, 5.15
-# 10.15 : Catalina     :          : Qt                                5.11, 5.12, 5.13, 5.14
-# 10.14 : Mojave       : tested   : Qt                     5.9, 5.10, 5.11, 5.12, 5.13, 5.14
-# 10.13 : High Sierra  : tested   : Qt                     5.9, 5.10, 5.11, 5.12, 5.13, 5.14
-# 10.12 : Sierra       : tested   : Qt                5.8, 5.9, 5.10, 5.11, 5.12, 5.13
-# 10.11 : El Capitan   : tested   : Qt 5.5, 5.6, 5.7, 5.8, 5.9, 5.10, 5.11
-# 10.10 : Yosemite     : tested   : Qt 5.5, 5.6, 5.7, 5.8, 5.9
-# 10.9  : Mavericks    : tested   : Qt 5.5, 5.6, 5.7, 5.8
-# 10.8  : MountainLion : tested   : Qt 5.5, 5.6, 5.7
-# 10.7  : Lion         : untested : Qt 5.5, 5.6
-# 10.6  : SnowLeopard  : untested : ???
-# Older values cannot be set as it do not support x86_64.
-OSX_MIN_TARGET="10.13"
+# Target macOS achitecture: "x86_64" for Intel 64 bits, or "arm64" for Apple Silicon 64 bits.
+ARCH_TARGET="x86_64"
 
-# Directory to build relocable bundle.
-INSTALL_PREFIX="/opt/digikam.org"
+if [[ $ARCH_TARGET = "x86_64" ]] ; then
 
-# Directory where bundle contents will be installed.
+    # Minimum MacOS target for backward binary compatibility with Intel CPU
+    # This require to install older MacOS SDKs with Xcode.
+    # See this url to download a older SDK archive :
+    #
+    # https://github.com/phracker/MacOSX-SDKs/releases
+    #
+    # Uncompress the archive to /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/
+    # and adjust the property "MinimumSDKVersion" from /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Info.plist
+    # sudo /usr/libexec/PlistBuddy -c "Set MinimumSDKVersion 10.13" /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Info.plist
+    #
+    # Possible values:
+    # 11.0  : BigSur       :          : Qt                                      5.12, 5.13, 5.14, 5.15
+    # 10.15 : Catalina     :          : Qt                                5.11, 5.12, 5.13, 5.14
+    # 10.14 : Mojave       : tested   : Qt                     5.9, 5.10, 5.11, 5.12, 5.13, 5.14
+    # 10.13 : High Sierra  : tested   : Qt                     5.9, 5.10, 5.11, 5.12, 5.13, 5.14
+    # 10.12 : Sierra       : tested   : Qt                5.8, 5.9, 5.10, 5.11, 5.12, 5.13
+    # 10.11 : El Capitan   : tested   : Qt 5.5, 5.6, 5.7, 5.8, 5.9, 5.10, 5.11
+    # 10.10 : Yosemite     : tested   : Qt 5.5, 5.6, 5.7, 5.8, 5.9
+    # 10.9  : Mavericks    : tested   : Qt 5.5, 5.6, 5.7, 5.8
+    # 10.8  : MountainLion : tested   : Qt 5.5, 5.6, 5.7
+    # 10.7  : Lion         : untested : Qt 5.5, 5.6
+    # 10.6  : SnowLeopard  : untested : ???
+    # Older values cannot be set as it do not support x86_64.
+    OSX_MIN_TARGET="10.13"
+
+elif [[ $ARCH_TARGET = "arm64" ]] ; then
+
+    # Apple Silicon is supported since macOS BigSur
+    OSX_MIN_TARGET="11.0"
+
+else
+
+    echo "Unsported or invalid target architecture..."
+    exit -1
+
+fi
+
+# Directory to build and install Macports packages.
+INSTALL_PREFIX="/opt/digikam.org.$ARCH_TARGET"
+
+# Directory where target bundle contents will be installed.
 RELOCATE_PREFIX="/Applications/digiKam.org"
 
 # Macports configuration
