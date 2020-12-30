@@ -102,6 +102,12 @@ digiKam.org
 
 REQUIREMENTS
 ------------
+
+To build bundle you need a macOS install in a real computer (best) or in a VM.
+This Github project have been tested to install automatically BigSur in VirtualBox and work as expected:
+
+https://github.com/myspaghetti/macos-virtualbox
+
 The scripts build digiKam with MacPorts, so you will need Xcode and the other
 prerequisites for Macports.
 
