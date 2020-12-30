@@ -24,7 +24,7 @@ if [[ $ARCH_TARGET = "x86_64" ]] ; then
     # This require to install older MacOS SDKs with Xcode.
     # See this url to download a older SDK archive :
     #
-    # https://github.com/phracker/MacOSX-SDKs/releases
+    # https://github.com/alexey-lysiuk/macos-sdk
     #
     # Uncompress the archive to /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/
     # and adjust the property "MinimumSDKVersion" from /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Info.plist
