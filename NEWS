@@ -250,4 +250,5 @@ BUGFIXES:
 230 ==> 424617 - The digiKam appimage crashes on starting.
 231 ==> 430923 - EXIF viewer settings not updating EXIF Metadata view.
 232 ==> 430876 - Rename images without changing any properties.
-233 ==> 
+233 ==> 430995 - No video preview or thumbnails for any video content.
+234 ==> 
