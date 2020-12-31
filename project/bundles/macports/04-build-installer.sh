@@ -147,6 +147,7 @@ share/mariadb \
 share/ImageMagick* \
 etc/xdg \
 etc/ImageMagick* \
+etc/mariadb \
 "
 
 #etc/sane.d \
@@ -561,6 +562,8 @@ ln -sv "../../digikam.app/Contents/libexec"   "$TEMPROOT/digikam.app/Contents/op
 ln -sv "../../digikam.app/Contents/share"     "$TEMPROOT/digikam.app/Contents/opt/showfoto.app/Contents/share"
 ln -sv "../../digikam.app/Contents/Resources" "$TEMPROOT/digikam.app/Contents/opt/showfoto.app/Contents/Resources"
 
+echo -e "\n---------- Cleanup files in bundle"
+
 # Last cleanup
 
 rm -rfv $TEMPROOT/Applications
@@ -575,6 +578,40 @@ done
 
 rm -rfv $TEMPROOT/digikam.app/Contents/opt/digikam.app/Contents/share/mariadb/mysql-test
 rm -rfv $TEMPROOT/digikam.app/Contents/opt/digikam.app/Contents/share/mariadb/sql-bench
+
+echo -e "\n---------- Patch config and script files in bundle"
+
+MARIADBDIRS=(`find $TEMPROOT -type d -name "mariadb"`)
+
+for DIR in ${MARIADBDIRS[@]} ; do
+
+    MARIADBFILES=(`find $DIR -type f ! -name "*.dylib" ! -name "*.so"`)
+
+    for FILE in ${MARIADBFILES[@]} ; do
+
+        # to handle only text files
+        ISTEXT=`file "$FILE" | grep "ASCII text" || true`
+
+        if [[ $ISTEXT ]] ; then
+
+            NEEDPATCH=`grep "$INSTALL_PREFIX" "$FILE" || true`
+
+            if [[ $NEEDPATCH ]] ; then
+
+                echo -e "--- Patching $FILE..."
+                sed -i '' "s|$INSTALL_PREFIX/var|$RELOCATE_PREFIX/digikam.app/Contents/opt/digikam.app/Contents/var|g" $FILE
+                sed -i '' "s|$INSTALL_PREFIX/lib|$RELOCATE_PREFIX/digikam.app/Contents/opt/digikam.app/Contents/lib|g" $FILE
+                sed -i '' "s|$INSTALL_PREFIX/share|$RELOCATE_PREFIX/digikam.app/Contents/opt/digikam.app/Contents/share|g" $FILE
+                sed -i '' "s|$INSTALL_PREFIX/etc|$RELOCATE_PREFIX/digikam.app/Contents/opt/digikam.app/Contents/etc|g" $FILE
+                sed -i '' "s|$INSTALL_PREFIX|$RELOCATE_PREFIX/digikam.app/Contents/opt/digikam.app/Contents|g" $FILE
+
+            fi
+
+        fi
+
+    done
+
+done
 
 #################################################################################################
 # Build PKG file
