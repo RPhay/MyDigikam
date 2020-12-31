@@ -573,6 +573,9 @@ for HPP in ${HEADERFILES[@]} ; do
 
 done
 
+rm -rfv $TEMPROOT/digikam.app/Contents/opt/digikam.app/Contents/share/mariadb/mysql-test
+rm -rfv $TEMPROOT/digikam.app/Contents/opt/digikam.app/Contents/share/mariadb/sql-bench
+
 #################################################################################################
 # Build PKG file
 
