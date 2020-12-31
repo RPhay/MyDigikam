@@ -226,7 +226,7 @@ for app in $KDE_MENU_APPS ; do
         binaries="$binaries $searchpath/$app.app/Contents/MacOS/$app"
 
         # If application is to be run by user, create Applescript launcher to
-        # load kbuildsycoca5. Set DYLD_IMAGE_SUFFIX if built with debug variant
+        # load kbuildsycoca5.
 
         if [[ $KDE_MENU_APPS == *"$app"* ]] ; then
             echo "    Creating launcher script for $app"
@@ -581,7 +581,7 @@ echo "---------- Create MacOS package for digiKam $DKRELEASEID"
 mkdir -p $ORIG_WD/bundle
 rm -f $ORIG_WD/bundle/*x86-64$DEBUG_SUF* || true
 
-if   [[ $DK_VERSION = "master" ]] ; then
+if [[ $DK_VERSION = "master" ]] ; then
 
     # with master branch, use epoch time-stamp as sub-version string.
     DK_SUBVER="-`date "+%Y%m%dT%H%M%S"`"

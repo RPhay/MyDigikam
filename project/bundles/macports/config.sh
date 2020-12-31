@@ -59,6 +59,7 @@ fi
 
 # Directory to build and install Macports packages.
 INSTALL_PREFIX="/opt/digikam.org.$ARCH_TARGET"
+#INSTALL_PREFIX="/opt/digikam.org"
 
 # Directory where target bundle contents will be installed.
 RELOCATE_PREFIX="/Applications/digiKam.org"
