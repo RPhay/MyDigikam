@@ -192,7 +192,7 @@ QString MetadataKeys::getDbValue(const QString& key, ParseSettings& settings)
         result = videoContainer.videoCodec;
     }
 
-    result.replace(QLatin1Char('/'), QLatin1Char('|'));
+    result.replace(QLatin1Char('/'), QLatin1Char('_'));
 
     return result;
 }

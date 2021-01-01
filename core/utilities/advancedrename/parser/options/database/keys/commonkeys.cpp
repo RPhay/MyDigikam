@@ -51,6 +51,7 @@ static const QString KEY_DEFAULTAUTHOR(QLatin1String("DefaultAuthor"));
 static const QString KEY_AUTHORS(QLatin1String("Authors"));
 static const QString KEY_TITLE(QLatin1String("Title"));
 static const QString KEY_TAGSLIST(QLatin1String("TagsList"));
+static const QString KEY_TAGSPATHLIST(QLatin1String("TagsPathList"));
 }
 
 namespace Digikam
@@ -74,6 +75,7 @@ CommonKeys::CommonKeys()
     addId(KEY_AUTHORS,        i18n("A comma separated list of all authors"));
     addId(KEY_TITLE,          i18n("Title of the image"));
     addId(KEY_TAGSLIST,       i18n("A comma separated list of all tags"));
+    addId(KEY_TAGSPATHLIST,   i18n("A comma separated list of all tags with path"));
 }
 
 QString CommonKeys::getDbValue(const QString& key, ParseSettings& settings)
@@ -121,6 +123,12 @@ QString CommonKeys::getDbValue(const QString& key, ParseSettings& settings)
     {
         QList<int> tagIds = info.tagIds();
         QStringList tags  = AlbumManager::instance()->tagNames(tagIds);
+        result            = tags.join(QLatin1String(", "));
+    }
+    else if (key == KEY_TAGSPATHLIST)
+    {
+        QList<int> tagIds = info.tagIds();
+        QStringList tags  = AlbumManager::instance()->tagPaths(tagIds, false);
         result            = tags.join(QLatin1String(", "));
     }
     else if (key == KEY_DIMENSION)
@@ -207,6 +215,8 @@ QString CommonKeys::getDbValue(const QString& key, ParseSettings& settings)
     {
         result = container.colorModel;
     }
+
+    result.replace(QLatin1Char('/'), QLatin1Char('_'));
 
     return result;
 }

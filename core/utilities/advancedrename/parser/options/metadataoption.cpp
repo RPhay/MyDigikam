@@ -198,7 +198,7 @@ QString MetadataOption::parseMetadata(const QString& token, ParseSettings& setti
         }
     }
 
-    result.replace(QLatin1Char('/'), QLatin1Char('|'));
+    result.replace(QLatin1Char('/'), QLatin1Char('_'));
 
     return result;
 }
