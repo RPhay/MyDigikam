@@ -65,35 +65,8 @@ void ICCSettingsContainer::readFromConfig(KConfigGroup& group)
     //if (!group.hasKey("OnProfileMismatch") && group.hasKey("BehaviourICC")) // legacy
     //  behavior = group.readEntry("BehaviourICC", false) ? "convert" : "ask";
 
-    QString sRGB         = IccProfile::sRGB().filePath();
-    QString profilesPath = QStandardPaths::locate(QStandardPaths::GenericDataLocation,
-                                                  QLatin1String("digikam/profiles/"),
-                                                  QStandardPaths::LocateDirectory);
-
-    workspaceProfile              = group.readPathEntry("WorkProfileFile", sRGB);
-
-    if (!QFileInfo::exists(workspaceProfile))
-    {
-        workspaceProfile = profilesPath + QFileInfo(workspaceProfile).fileName();
-
-        if (!QFileInfo::exists(workspaceProfile))
-        {
-            workspaceProfile = sRGB;
-        }
-    }
-
-    monitorProfile                = group.readPathEntry("MonitorProfileFile", sRGB);
-
-    if (!QFileInfo::exists(monitorProfile))
-    {
-        monitorProfile = profilesPath + QFileInfo(monitorProfile).fileName();
-
-        if (!QFileInfo::exists(monitorProfile))
-        {
-            monitorProfile = sRGB;
-        }
-    }
-
+    workspaceProfile              = getProfilePath(group, "WorkProfileFile");
+    monitorProfile                = getProfilePath(group, "MonitorProfileFile");
     defaultInputProfile           = group.readPathEntry("InProfileFile", QString());
     defaultProofProfile           = group.readPathEntry("ProofProfileFile", QString());
 
@@ -104,18 +77,7 @@ void ICCSettingsContainer::readFromConfig(KConfigGroup& group)
     lastMismatchBehavior          = (Behavior)group.readEntry("LastMismatchBehavior", (int)EmbeddedToWorkspace);
     lastMissingProfileBehavior    = (Behavior)group.readEntry("LastMissingProfileBehavior", (int)SRGBToWorkspace);
     lastUncalibratedBehavior      = (Behavior)group.readEntry("LastUncalibratedBehavior", (int)AutoToWorkspace);
-    lastSpecifiedAssignProfile    = group.readEntry("LastSpecifiedAssignProfile", sRGB);
-
-    if (!QFileInfo::exists(lastSpecifiedAssignProfile))
-    {
-        lastSpecifiedAssignProfile = profilesPath + QFileInfo(lastSpecifiedAssignProfile).fileName();
-
-        if (!QFileInfo::exists(lastSpecifiedAssignProfile))
-        {
-            lastSpecifiedAssignProfile = sRGB;
-        }
-    }
-
+    lastSpecifiedAssignProfile    = getProfilePath(group, "LastSpecifiedAssignProfile");
     lastSpecifiedInputProfile     = group.readEntry("LastSpecifiedInputProfile", defaultInputProfile);
 
     useBPC                        = group.readEntry("BPCAlgorithm", true);
@@ -182,6 +144,30 @@ void ICCSettingsContainer::writeManagedPreviewsToConfig(KConfigGroup& group) con
     // to disk at end of session.
 
     group.writeEntry("ManagedPreviews", useManagedView);
+}
+
+QString ICCSettingsContainer::getProfilePath(KConfigGroup& group, const char* key) const
+{
+    QString sRGB         = IccProfile::sRGB().filePath();
+    QString profilesPath = QStandardPaths::locate(QStandardPaths::GenericDataLocation,
+                                                  QLatin1String("digikam/profiles/"),
+                                                  QStandardPaths::LocateDirectory);
+
+    QString configPath   = group.readPathEntry(key, sRGB);
+
+    if (!QFileInfo::exists(configPath))
+    {
+        configPath = profilesPath + QFileInfo(configPath).fileName();
+
+        if (!QFileInfo::exists(configPath))
+        {
+            configPath = sRGB;
+        }
+
+        group.writePathEntry(key, configPath);
+    }
+
+    return configPath;
 }
 
 } // namespace Digikam

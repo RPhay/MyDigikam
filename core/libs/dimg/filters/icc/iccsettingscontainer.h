@@ -127,6 +127,10 @@ public:
     int      proofingRenderingIntent;
     int      doGamutCheck;
     QColor   gamutCheckMaskColor;
+
+private:
+
+    QString getProfilePath(KConfigGroup& group, const char* key) const;
 };
 
 } // namespace Digikam
