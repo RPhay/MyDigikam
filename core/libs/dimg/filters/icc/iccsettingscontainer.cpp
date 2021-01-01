@@ -24,6 +24,10 @@
 
 #include "iccsettingscontainer.h"
 
+// Qt includes
+
+#include <QStandardPaths>
+
 // KDE includes
 
 #include <kconfiggroup.h>
@@ -61,10 +65,35 @@ void ICCSettingsContainer::readFromConfig(KConfigGroup& group)
     //if (!group.hasKey("OnProfileMismatch") && group.hasKey("BehaviourICC")) // legacy
     //  behavior = group.readEntry("BehaviourICC", false) ? "convert" : "ask";
 
-    QString sRGB = IccProfile::sRGB().filePath();
+    QString sRGB         = IccProfile::sRGB().filePath();
+    QString profilesPath = QStandardPaths::locate(QStandardPaths::GenericDataLocation,
+                                                  QLatin1String("digikam/profiles/"),
+                                                  QStandardPaths::LocateDirectory);
 
     workspaceProfile              = group.readPathEntry("WorkProfileFile", sRGB);
+
+    if (!QFileInfo::exists(workspaceProfile))
+    {
+        workspaceProfile = profilesPath + QFileInfo(workspaceProfile).fileName();
+
+        if (!QFileInfo::exists(workspaceProfile))
+        {
+            workspaceProfile = sRGB;
+        }
+    }
+
     monitorProfile                = group.readPathEntry("MonitorProfileFile", sRGB);
+
+    if (!QFileInfo::exists(monitorProfile))
+    {
+        monitorProfile = profilesPath + QFileInfo(monitorProfile).fileName();
+
+        if (!QFileInfo::exists(monitorProfile))
+        {
+            monitorProfile = sRGB;
+        }
+    }
+
     defaultInputProfile           = group.readPathEntry("InProfileFile", QString());
     defaultProofProfile           = group.readPathEntry("ProofProfileFile", QString());
 
@@ -76,6 +105,17 @@ void ICCSettingsContainer::readFromConfig(KConfigGroup& group)
     lastMissingProfileBehavior    = (Behavior)group.readEntry("LastMissingProfileBehavior", (int)SRGBToWorkspace);
     lastUncalibratedBehavior      = (Behavior)group.readEntry("LastUncalibratedBehavior", (int)AutoToWorkspace);
     lastSpecifiedAssignProfile    = group.readEntry("LastSpecifiedAssignProfile", sRGB);
+
+    if (!QFileInfo::exists(lastSpecifiedAssignProfile))
+    {
+        lastSpecifiedAssignProfile = profilesPath + QFileInfo(lastSpecifiedAssignProfile).fileName();
+
+        if (!QFileInfo::exists(lastSpecifiedAssignProfile))
+        {
+            lastSpecifiedAssignProfile = sRGB;
+        }
+    }
+
     lastSpecifiedInputProfile     = group.readEntry("LastSpecifiedInputProfile", defaultInputProfile);
 
     useBPC                        = group.readEntry("BPCAlgorithm", true);

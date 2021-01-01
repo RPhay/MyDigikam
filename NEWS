@@ -251,4 +251,6 @@ BUGFIXES:
 231 ==> 430923 - EXIF viewer settings not updating EXIF Metadata view.
 232 ==> 430876 - Rename images without changing any properties.
 233 ==> 430995 - No video preview or thumbnails for any video content.
-234 ==> 
+234 ==> 431013 - Not all databases will be saved when using the --database-directory option.
+235 ==> 415617 - Color management profile path uses previous appimage mount point.
+236 ==> 
