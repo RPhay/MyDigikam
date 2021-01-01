@@ -7,7 +7,7 @@
  * Description : Mysql internal database server
  *
  * Copyright (C) 2009-2011 by Holger Foerster <Hamsi2k at freenet dot de>
- * Copyright (C) 2010-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2010-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  * Copyright (C) 2016      by Swati Lodha <swatilodha27 at gmail dot com>
  *
  * This program is free software; you can redistribute it
@@ -76,7 +76,7 @@ public:
 
 DatabaseServer::DatabaseServer(const DbEngineParameters& params, DatabaseServerStarter* const parent)
     : QThread(parent),
-      d(new Private)
+      d      (new Private)
 {
     d->params = params;
 
@@ -450,7 +450,16 @@ DatabaseServerError DatabaseServer::createMysqlFiles() const
         QStringList mysqlInitCmdArgs;
 
 #ifndef Q_OS_WIN
+
         mysqlInitCmdArgs << QDir::toNativeSeparators(QString::fromLatin1("--defaults-file=%1").arg(d->globalConfig));
+
+#endif
+
+#ifdef Q_OS_MACOS
+
+        mysqlInitCmdArgs << QDir::toNativeSeparators(QString::fromLatin1("--basedir=%1")
+            .arg(QString::fromUtf8("/Applications/digiKam.org/digikam.app/Contents/opt/digikam.app/Contents")));
+
 #endif
 
         mysqlInitCmdArgs << QDir::toNativeSeparators(QString::fromLatin1("--datadir=%1").arg(d->dataDir));
@@ -484,11 +493,22 @@ DatabaseServerError DatabaseServer::startMysqlServer()
     mysqldCmdArgs << QDir::toNativeSeparators(QString::fromLatin1("--defaults-file=%1").arg(d->actualConfig))
                   << QDir::toNativeSeparators(QString::fromLatin1("--datadir=%1").arg(d->dataDir));
 
+#ifdef Q_OS_MACOS
+
+    mysqldCmdArgs << QDir::toNativeSeparators(QString::fromLatin1("--basedir=%1")
+        .arg(QString::fromUtf8("/Applications/digiKam.org/digikam.app/Contents/opt/digikam.app/Contents")));
+
+#endif
+
 #ifdef Q_OS_WIN
+
     mysqldCmdArgs << QLatin1String("--skip-networking=0")
                   << QLatin1String("--port=3307");
+
 #else
+
     mysqldCmdArgs << QString::fromLatin1("--socket=%1/mysql.socket").arg(d->miscDir);
+
 #endif
 
     // Start the database server
@@ -525,15 +545,20 @@ DatabaseServerError DatabaseServer::initMysqlDatabase() const
         QSqlDatabase db = QSqlDatabase::addDatabase(DbEngineParameters::MySQLDatabaseType(), initCon);
 
 #ifdef Q_OS_WIN
+
         db.setHostName(QLatin1String("localhost"));
         db.setPort(3307);
+
 #else
+
         db.setConnectOptions(QString::fromLatin1("UNIX_SOCKET=%1/mysql.socket").arg(d->miscDir));
+
 #endif
 
         db.setUserName(QLatin1String("root"));
 
         // might not exist yet, then connecting to the actual db will fail
+
         db.setDatabaseName(QString());
 
         if (!db.isValid())
