@@ -153,7 +153,8 @@ int main(int argc, char* argv[])
                          i18n("digiKam"),          // display name
                          digiKamVersion());
 
-    aboutData.setShortDescription(QString::fromUtf8("%1 - %2").arg(DAboutData::digiKamSlogan()).arg(DAboutData::digiKamFamily()));
+    aboutData.setShortDescription(QString::fromUtf8("%1 - %2").arg(DAboutData::digiKamSlogan())
+                                                              .arg(DAboutData::digiKamFamily()));
     aboutData.setLicense(KAboutLicense::GPL);
     aboutData.setCopyrightStatement(DAboutData::copyright());
     aboutData.setOtherText(additionalInformation());
@@ -227,7 +228,8 @@ int main(int argc, char* argv[])
 
         if (!commandLineDBDir.exists())
         {
-            qCDebug(DIGIKAM_GENERAL_LOG) << "The given database-directory does not exist or is not readable. Ignoring." << commandLineDBDir.path();
+            qCDebug(DIGIKAM_GENERAL_LOG) << "The given database-directory does not exist or is not readable. Ignoring."
+                                         << commandLineDBDir.absolutePath();
         }
         else
         {
