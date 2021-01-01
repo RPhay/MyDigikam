@@ -231,7 +231,7 @@ int main(int argc, char* argv[])
         }
         else
         {
-            commandLineDBPath = commandLineDBDir.path();
+            commandLineDBPath = commandLineDBDir.absolutePath();
         }
     }
 
