@@ -30,6 +30,7 @@
 #include <QMouseEvent>
 #include <QProxyStyle>
 #include <QPushButton>
+#include <QFileInfo>
 #include <QToolBar>
 #include <QAction>
 #include <QSlider>
@@ -43,6 +44,7 @@
 #include <QtAVWidgets/WidgetRenderer.h>   // krazy:exclude=includes
 #include <QtAV/AudioDecoder.h>            // krazy:exclude=includes
 #include <QtAV/VideoDecoder.h>            // krazy:exclude=includes
+#include <QtAV/VideoCapture.h>            // krazy:exclude=includes
 #include <QtAV/version.h>                 // krazy:exclude=includes
 
 // KDE includes
@@ -161,6 +163,7 @@ public:
         prevAction      (nullptr),
         nextAction      (nullptr),
         playAction      (nullptr),
+        grabAction      (nullptr),
         loopPlay        (nullptr),
         toolBar         (nullptr),
         iface           (nullptr),
@@ -169,7 +172,8 @@ public:
         slider          (nullptr),
         volume          (nullptr),
         tlabel          (nullptr),
-        videoOrientation(0)
+        videoOrientation(0),
+        capturePosition(0)
     {
     }
 
@@ -179,6 +183,7 @@ public:
     QAction*             prevAction;
     QAction*             nextAction;
     QAction*             playAction;
+    QAction*             grabAction;
 
     QPushButton*         loopPlay;
 
@@ -195,6 +200,7 @@ public:
     QUrl                 currentItem;
 
     int                  videoOrientation;
+    int                  capturePosition;
 };
 
 MediaPlayerView::MediaPlayerView(QWidget* const parent)
@@ -206,9 +212,14 @@ MediaPlayerView::MediaPlayerView(QWidget* const parent)
 
     const int spacing      = QApplication::style()->pixelMetric(QStyle::PM_DefaultLayoutSpacing);
 
-    d->prevAction          = new QAction(QIcon::fromTheme(QLatin1String("go-previous")),          i18nc("go to previous image", "Back"),   this);
-    d->nextAction          = new QAction(QIcon::fromTheme(QLatin1String("go-next")),              i18nc("go to next image", "Forward"),    this);
-    d->playAction          = new QAction(QIcon::fromTheme(QLatin1String("media-playback-start")), i18nc("pause/play video", "Pause/Play"), this);
+    d->prevAction          = new QAction(QIcon::fromTheme(QLatin1String("go-previous")),
+                                         i18nc("go to previous image", "Back"),   this);
+    d->nextAction          = new QAction(QIcon::fromTheme(QLatin1String("go-next")),
+                                         i18nc("go to next image", "Forward"),    this);
+    d->playAction          = new QAction(QIcon::fromTheme(QLatin1String("media-playback-start")),
+                                         i18nc("pause/play video", "Pause/Play"), this);
+    d->grabAction          = new QAction(QIcon::fromTheme(QLatin1String("view-preview")),
+                                         i18nc("capture video frame", "Capture"), this);
 
     d->errorView           = new QFrame(this);
     QLabel* const errorMsg = new QLabel(i18n("An error has occurred with the media player..."), this);
@@ -271,6 +282,7 @@ MediaPlayerView::MediaPlayerView(QWidget* const parent)
     d->toolBar->addAction(d->prevAction);
     d->toolBar->addAction(d->nextAction);
     d->toolBar->addAction(d->playAction);
+    d->toolBar->addAction(d->grabAction);
     d->toolBar->setStyleSheet(toolButtonStyleSheet());
 
     setPreviewMode(Private::PlayerView);
@@ -299,6 +311,9 @@ MediaPlayerView::MediaPlayerView(QWidget* const parent)
     connect(d->playAction, SIGNAL(triggered()),
             this, SLOT(slotPausePlay()));
 
+    connect(d->grabAction, SIGNAL(triggered()),
+            this, SLOT(slotCapture()));
+
     connect(d->slider, SIGNAL(sliderMoved(int)),
             this, SLOT(slotPosition(int)));
 
@@ -325,6 +340,10 @@ MediaPlayerView::MediaPlayerView(QWidget* const parent)
 
     connect(d->player, SIGNAL(error(QtAV::AVError)),
             this, SLOT(slotHandlePlayerError(QtAV::AVError)));
+
+    connect(d->player->videoCapture(), SIGNAL(imageCaptured(QImage)),
+            this, SLOT(slotImageCaptured(QImage)));
+
 
     qCDebug(DIGIKAM_GENERAL_LOG) << "Audio output backends:"
                                  << d->player->audio()->backendsAvailable();
@@ -367,6 +386,7 @@ void MediaPlayerView::slotPlayerStateChanged(QtAV::AVPlayer::State state)
         rotate     = d->player->statistics().video_only.rotate;
 
 #endif
+
         d->videoWidget->setOrientation((-rotate) + d->videoOrientation);
         qCDebug(DIGIKAM_GENERAL_LOG) << "Found video orientation:"
                                      << d->videoOrientation;
@@ -448,6 +468,31 @@ void MediaPlayerView::slotPausePlay()
     }
 
     d->player->pause(!d->player->isPaused());
+}
+
+void MediaPlayerView::slotCapture()
+{
+    if (d->player->isPlaying())
+    {
+        d->player->videoCapture()->setAutoSave(false);
+        d->capturePosition = d->player->position();
+        d->player->videoCapture()->capture();
+    }
+}
+
+void MediaPlayerView::slotImageCaptured(const QImage& image)
+{
+    if (!image.isNull() && d->currentItem.isValid())
+    {
+        QFileInfo info(d->currentItem.toLocalFile());
+        QString path = QString::fromUtf8("%1/%2-%3.jpg")
+                       .arg(info.path())
+                       .arg(info.baseName())
+                       .arg(d->capturePosition);
+
+        image.save(path, "JPG", 100);
+        d->iface->slotMetadataChangedForUrl(QUrl::fromLocalFile(path));
+    }
 }
 
 int MediaPlayerView::previewMode()
