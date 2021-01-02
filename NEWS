@@ -253,4 +253,5 @@ BUGFIXES:
 233 ==> 430995 - No video preview or thumbnails for any video content.
 234 ==> 431013 - Not all databases will be saved when using the --database-directory option.
 235 ==> 415617 - Color management profile path uses previous appimage mount point.
-236 ==> 
+236 ==> 430986 - Setting up Eudora email app.
+237 ==> 
