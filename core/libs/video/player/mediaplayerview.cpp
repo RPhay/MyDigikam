@@ -60,6 +60,7 @@
 #include "thememanager.h"
 #include "dlayoutbox.h"
 #include "metaengine.h"
+#include "dmetadata.h"
 
 using namespace QtAV;
 
@@ -200,7 +201,7 @@ public:
     QUrl                 currentItem;
 
     int                  videoOrientation;
-    int                  capturePosition;
+    qint64               capturePosition;
 };
 
 MediaPlayerView::MediaPlayerView(QWidget* const parent)
@@ -491,6 +492,31 @@ void MediaPlayerView::slotImageCaptured(const QImage& image)
                        .arg(d->capturePosition);
 
         image.save(path, "JPG", 100);
+
+        QScopedPointer<DMetadata> meta(new DMetadata);
+
+        if (meta->load(path))
+        {
+            DItemInfo dinfo(d->iface->itemInfo(d->currentItem));
+
+            QDateTime dateTime = dinfo.dateTime();
+
+            if (dateTime.isValid())
+            {
+                dateTime = dateTime.addMSecs(d->capturePosition);
+            }
+            else
+            {
+                dateTime = QDateTime::currentDateTime();
+            }
+
+            meta->setItemDimensions(image.size());
+            meta->setImageDateTime(dateTime, true);
+            meta->setItemOrientation(MetaEngine::ORIENTATION_NORMAL);
+
+            meta->save(path, true);
+        }
+
         d->iface->slotMetadataChangedForUrl(QUrl::fromLocalFile(path));
     }
 }
