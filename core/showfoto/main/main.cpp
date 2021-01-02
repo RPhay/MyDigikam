@@ -29,6 +29,7 @@
 
 #include <QDir>
 #include <QFile>
+#include <QMessageBox>
 #include <QApplication>
 #include <QStandardPaths>
 #include <QCommandLineParser>
@@ -148,6 +149,20 @@ int main(int argc, char* argv[])
     // Force to use application icon for non plasma desktop as Unity for ex.
 
     QApplication::setWindowIcon(QIcon::fromTheme(QLatin1String("showfoto"), app.windowIcon()));
+
+#ifdef Q_OS_WIN
+
+    if (QSysInfo::currentCpuArchitecture().contains(QLatin1String("64")) &&
+        !QSysInfo::buildCpuArchitecture().contains(QLatin1String("64")))
+    {
+        QMessageBox::critical(qApp->activeWindow(),
+                              qApp->applicationName(),
+                              i18n("<p>You are running Showfoto as a 32-bit version on a 64-bit Windows.</p>"
+                                   "<p>Please install the 64-bit version of Showfoto to get "
+                                   "a better experience with Showfoto.</p>"));
+    }
+
+#endif
 
     QList<QUrl> urlList;
     QStringList urls = parser.positionalArguments();

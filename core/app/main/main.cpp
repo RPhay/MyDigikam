@@ -191,6 +191,20 @@ int main(int argc, char* argv[])
 
     QApplication::setWindowIcon(QIcon::fromTheme(QLatin1String("digikam"), app.windowIcon()));
 
+#ifdef Q_OS_WIN
+
+    if (QSysInfo::currentCpuArchitecture().contains(QLatin1String("64")) &&
+        !QSysInfo::buildCpuArchitecture().contains(QLatin1String("64")))
+    {
+        QMessageBox::critical(qApp->activeWindow(),
+                              qApp->applicationName(),
+                              i18n("<p>You are running digiKam as a 32-bit version on a 64-bit Windows.</p>"
+                                   "<p>Please install the 64-bit version of digiKam to get "
+                                   "a better experience with digiKam.</p>"));
+    }
+
+#endif
+
     // Check if Qt database plugins are available.
 
     if (!QSqlDatabase::isDriverAvailable(DbEngineParameters::SQLiteDatabaseType()) &&
