@@ -6,7 +6,7 @@
  * Date        : 2017-06-27
  * Description : a tool to export items by email.
  *
- * Copyright (C) 2017-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2017-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -37,8 +37,9 @@
 
 // Local includes
 
-#include "digikam_debug.h"
 #include "digikam_config.h"
+#include "digikam_debug.h"
+#include "digikam_globals.h"
 #include "dlayoutbox.h"
 #include "mailwizard.h"
 #include "mailsettings.h"
@@ -139,7 +140,7 @@ MailIntroPage::MailIntroPage(QWizard* const dialog, const QString& title)
 
     // digiKam Bundle PKG install
 
-    d->binSearch->addDirectory(QLatin1String("/Applications/digiKam.org/digikam.app/Contents/opt/digikam.app/Contents/bin"));
+    d->binSearch->addDirectory(macOSBundlePrefix() + QLatin1String("bin"));
 
 #endif
 

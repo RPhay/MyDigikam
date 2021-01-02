@@ -458,7 +458,7 @@ DatabaseServerError DatabaseServer::createMysqlFiles() const
 #ifdef Q_OS_MACOS
 
         mysqlInitCmdArgs << QDir::toNativeSeparators(QString::fromLatin1("--basedir=%1")
-            .arg(QString::fromUtf8("/Applications/digiKam.org/digikam.app/Contents/opt/digikam.app/Contents")));
+            .arg(macOSBundlePrefix()));
 
 #endif
 
@@ -496,7 +496,7 @@ DatabaseServerError DatabaseServer::startMysqlServer()
 #ifdef Q_OS_MACOS
 
     mysqldCmdArgs << QDir::toNativeSeparators(QString::fromLatin1("--basedir=%1")
-        .arg(QString::fromUtf8("/Applications/digiKam.org/digikam.app/Contents/opt/digikam.app/Contents")));
+        .arg(macOSBundlePrefix()));
 
 #endif
 

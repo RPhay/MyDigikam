@@ -7,7 +7,7 @@
  * Description : a wrapper class for an ICC color profile
  *
  * Copyright (C) 2005-2006 by F.J. Cruz <fj dot cruz at supercable dot es>
- * Copyright (C) 2005-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2005-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  * Copyright (C) 2009-2011 by Marcel Wiesweg <marcel dot wiesweg at gmx dot de>
  *
  * This program is free software; you can redistribute it
@@ -37,6 +37,7 @@
 // Local includes
 
 #include "digikam_debug.h"
+#include "digikam_globals.h"
 #include "dimg.h"
 
 namespace Digikam
@@ -523,9 +524,9 @@ QStringList IccProfile::defaultSearchPaths()
         dataDirs << QLatin1String("/opt/local/share");
     }
 
-    if (!dataDirs.contains(QLatin1String("/Applications/digiKam.org/digikam.app/Contents/opt/digikam.app/Contents/share")))
+    if (!dataDirs.contains(macOSBundlePrefix() + QLatin1String("share")))
     {
-        dataDirs << QLatin1String("/Applications/digiKam.org/digikam.app/Contents/opt/digikam.app/Contents/share");
+        dataDirs << macOSBundlePrefix() + QLatin1String("share");
     }
 
     foreach (const QString& dataDir, dataDirs)

@@ -7,7 +7,7 @@
  * Description : Color management setup tab.
  *
  * Copyright (C) 2005-2007 by F.J. Cruz <fj dot cruz at supercable dot es>
- * Copyright (C) 2005-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2005-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  * Copyright (C) 2009-2012 by Marcel Wiesweg <marcel dot wiesweg at gmx dot de>
  *
  * This program is free software; you can redistribute it
@@ -59,6 +59,7 @@
 #include "dlayoutbox.h"
 #include "squeezedcombobox.h"
 #include "digikam_debug.h"
+#include "digikam_globals.h"
 #include "applicationsettings.h"
 #include "iccprofileinfodlg.h"
 #include "iccprofilescombobox.h"
@@ -75,45 +76,45 @@ class Q_DECL_HIDDEN SetupICC::Private
 public:
 
     explicit Private()
-      : iccFolderLabel(nullptr),
-        enableColorManagement(nullptr),
-        defaultSRGBConvert(nullptr),
-        bpcAlgorithm(nullptr),
-        managedView(nullptr),
-        managedPreviews(nullptr),
-        defaultAskMismatch(nullptr),
-        defaultConvertMismatch(nullptr),
-        defaultAskMissing(nullptr),
-        defaultSRGBMissing(nullptr),
-        defaultWSMissing(nullptr),
-        defaultInputMissing(nullptr),
-        defaultAskRaw(nullptr),
-        defaultInputRaw(nullptr),
-        defaultGuessRaw(nullptr),
-        infoWorkProfiles(nullptr),
-        infoMonitorProfiles(nullptr),
-        infoInProfiles(nullptr),
-        infoProofProfiles(nullptr),
-        workspaceGB(nullptr),
-        mismatchGB(nullptr),
-        missingGB(nullptr),
-        rawGB(nullptr),
-        inputGB(nullptr),
-        viewGB(nullptr),
-        proofGB(nullptr),
-        iccFolderGB(nullptr),
-        advancedSettingsGB(nullptr),
-        defaultPathKU(nullptr),
-        renderingIntentKC(nullptr),
-        behaviorPanel(nullptr),
-        profilesPanel(nullptr),
-        advancedPanel(nullptr),
-        tab(nullptr),
-        dlgBtnBox(nullptr),
-        inProfilesKC(nullptr),
-        workProfilesKC(nullptr),
-        proofProfilesKC(nullptr),
-        monitorProfilesKC(nullptr)
+      : iccFolderLabel          (nullptr),
+        enableColorManagement   (nullptr),
+        defaultSRGBConvert      (nullptr),
+        bpcAlgorithm            (nullptr),
+        managedView             (nullptr),
+        managedPreviews         (nullptr),
+        defaultAskMismatch      (nullptr),
+        defaultConvertMismatch  (nullptr),
+        defaultAskMissing       (nullptr),
+        defaultSRGBMissing      (nullptr),
+        defaultWSMissing        (nullptr),
+        defaultInputMissing     (nullptr),
+        defaultAskRaw           (nullptr),
+        defaultInputRaw         (nullptr),
+        defaultGuessRaw         (nullptr),
+        infoWorkProfiles        (nullptr),
+        infoMonitorProfiles     (nullptr),
+        infoInProfiles          (nullptr),
+        infoProofProfiles       (nullptr),
+        workspaceGB             (nullptr),
+        mismatchGB              (nullptr),
+        missingGB               (nullptr),
+        rawGB                   (nullptr),
+        inputGB                 (nullptr),
+        viewGB                  (nullptr),
+        proofGB                 (nullptr),
+        iccFolderGB             (nullptr),
+        advancedSettingsGB      (nullptr),
+        defaultPathKU           (nullptr),
+        renderingIntentKC       (nullptr),
+        behaviorPanel           (nullptr),
+        profilesPanel           (nullptr),
+        advancedPanel           (nullptr),
+        tab                     (nullptr),
+        dlgBtnBox               (nullptr),
+        inProfilesKC            (nullptr),
+        workProfilesKC          (nullptr),
+        proofProfilesKC         (nullptr),
+        monitorProfilesKC       (nullptr)
     {
     }
 
@@ -168,7 +169,7 @@ public:
 
 SetupICC::SetupICC(QDialogButtonBox* const dlgBtnBox, QWidget* const parent)
     : QScrollArea(parent),
-      d(new Private)
+      d          (new Private)
 {
     const int spacing              = QApplication::style()->pixelMetric(QStyle::PM_DefaultLayoutSpacing);
     d->dlgBtnBox                   = dlgBtnBox;
@@ -227,23 +228,23 @@ SetupICC::SetupICC(QDialogButtonBox* const dlgBtnBox, QWidget* const parent)
     d->mismatchGB                   = new QGroupBox;  // NOTE: Behavior on Profile Mismatch
     QVBoxLayout* const vlayMismatch = new QVBoxLayout(d->mismatchGB);
 
-    QLabel* const behaviorIcon  = new QLabel;
+    QLabel* const behaviorIcon      = new QLabel;
     behaviorIcon->setPixmap(QIcon::fromTheme(QLatin1String("view-preview")).pixmap(32));
-    QLabel* const behaviorLabel = new QLabel(i18n("When the profile of an image does not match the working color space"));
+    QLabel* const behaviorLabel     = new QLabel(i18n("When the profile of an image does not match the working color space"));
     behaviorLabel->setWordWrap(true);
 
-    QHBoxLayout* const hboxBL   = new QHBoxLayout;
+    QHBoxLayout* const hboxBL       = new QHBoxLayout;
     hboxBL->addWidget(behaviorIcon);
     hboxBL->addWidget(behaviorLabel, 10);
 
-    d->defaultAskMismatch = new QRadioButton(d->mismatchGB);
+    d->defaultAskMismatch           = new QRadioButton(d->mismatchGB);
     d->defaultAskMismatch->setText(i18n("Ask when opening the image"));
     d->defaultAskMismatch->setWhatsThis(i18n("<p>If an image has an embedded color profile not matching the working "
                                              "space profile, digiKam will ask if you want to convert to the working space, "
                                              "keep the embedded profile or discard the embedded profile and assign "
                                              "a different one.</p>"));
 
-    d->defaultConvertMismatch = new QRadioButton(d->mismatchGB);
+    d->defaultConvertMismatch       = new QRadioButton(d->mismatchGB);
     d->defaultConvertMismatch->setText(i18n("Convert the image to the working color space"));
     d->defaultConvertMismatch->setWhatsThis(i18n("<p>If an image has an embedded color profile not matching the working "
                                                  "space profile, digiKam will convert the image's color information to "
@@ -256,19 +257,19 @@ SetupICC::SetupICC(QDialogButtonBox* const dlgBtnBox, QWidget* const parent)
 
     // --------------------------------------------------------
 
-    d->missingGB                   = new QGroupBox;//(i18n("Missing Profile Behavior"));
-    QVBoxLayout* const vlayMissing = new QVBoxLayout(d->missingGB);
+    d->missingGB                    = new QGroupBox;//(i18n("Missing Profile Behavior"));
+    QVBoxLayout* const vlayMissing  = new QVBoxLayout(d->missingGB);
 
-    QLabel* const  missingIcon  = new QLabel;
+    QLabel* const  missingIcon      = new QLabel;
     missingIcon->setPixmap(QIcon::fromTheme(QLatin1String("paint-unknown")).pixmap(32));
-    QLabel* const missingLabel  = new QLabel(i18n("When an image has no color profile information"));
+    QLabel* const missingLabel      = new QLabel(i18n("When an image has no color profile information"));
     missingLabel->setWordWrap(true);
 
-    QHBoxLayout* const hboxMP   = new QHBoxLayout;
+    QHBoxLayout* const hboxMP       = new QHBoxLayout;
     hboxMP->addWidget(missingIcon);
     hboxMP->addWidget(missingLabel, 10);
 
-    d->defaultAskMissing  = new QRadioButton(i18n("Ask when opening the image"));
+    d->defaultAskMissing            = new QRadioButton(i18n("Ask when opening the image"));
     d->defaultAskMissing->setWhatsThis(i18n("<p>If an image has no embedded color profile, "
                                             "digiKam will ask which color space shall be used to interpret the image "
                                             "and to which color space it shall be transformed for editing.</p>"));
@@ -287,18 +288,18 @@ SetupICC::SetupICC(QDialogButtonBox* const dlgBtnBox, QWidget* const parent)
 
     d->defaultSRGBConvert->setChecked(true);
 
-    QGridLayout* const gridRgb = new QGridLayout;
+    QGridLayout* const gridRgb  = new QGridLayout;
     gridRgb->addWidget(d->defaultSRGBMissing, 0, 0, 1, 2);
     gridRgb->addWidget(d->defaultSRGBConvert, 1, 1);
     gridRgb->setColumnMinimumWidth(0, 10);
 
-    d->defaultWSMissing  = new QRadioButton(i18n("Assume it is using the working color space"));
+    d->defaultWSMissing         = new QRadioButton(i18n("Assume it is using the working color space"));
 
     /**
      * @todo d->defaultWSMissing->setWhatsThis( i18n("<p></p>"));
      */
 
-    d->defaultInputMissing = new QRadioButton(i18n("Convert it from default input color space to working space"));
+    d->defaultInputMissing      = new QRadioButton(i18n("Convert it from default input color space to working space"));
 
     /**
      * @todo d->defaultWSMissing->setWhatsThis( i18n("<p></p>"));
@@ -919,15 +920,16 @@ void SetupICC::slotShowDefaultSearchPaths()
                         "<li>/Library/ColorSync/Profiles</li>"
                         "<li>~/Library/ColorSync/Profiles</li>"
                         "<li>/opt/local/share/color/icc</li>"
-                        "<li>/Applications/digiKam.org/digikam.app/Contents/opt/digikam.app/Contents/share/color/icc</li>"
+                        "<li>%1/share/color/icc</li>"
                         "<li>~/.local/share/color/icc/</li>"
                         "<li>~/.local/share/icc/</li>"
                         "<li>~/.color/icc/</li>"
                         "</ul>"
                         "On your system, currently these paths exist and are scanned:"
                         "<ul>"
-                        "<li>%1</li>"
+                        "<li>%2</li>"
                         "</ul>",
+                        macOSBundlePrefix(),
                         existingPaths);
 #else // Linux
 

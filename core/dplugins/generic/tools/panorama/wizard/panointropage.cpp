@@ -8,7 +8,7 @@
  * Acknowledge : based on the expoblending tool
  *
  * Copyright (C) 2011-2016 by Benjamin Girault <benjamin dot girault at gmail dot com>
- * Copyright (C) 2009-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2009-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -41,6 +41,7 @@
 
 // Local includes
 
+#include "digikam_globals.h"
 #include "dbinarysearch.h"
 #include "autooptimiserbinary.h"
 #include "cpcleanbinary.h"
@@ -154,11 +155,7 @@ PanoIntroPage::PanoIntroPage(PanoManager* const mngr, QWizard* const dlg)
 
     // digiKam Bundle PKG install
 
-    d->binariesWidget->addDirectory(QLatin1String("/Applications/digiKam.org/digikam.app/Contents/opt/digikam.app/Contents/bin"));
-
-    // Hugin bundle install
-
-    d->binariesWidget->addDirectory(QLatin1String("/Applications/Hugin/tools_mac"));
+    d->binariesWidget->addDirectory(macOSBundlePrefix() + QLatin1String("bin"));
 
 #endif
 

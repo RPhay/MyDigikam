@@ -6,7 +6,7 @@
  * Date        : 2009-11-13
  * Description : a tool to blend bracketed images.
  *
- * Copyright (C) 2009-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2009-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  * Copyright (C) 2012-2015 by Benjamin Girault <benjamin dot girault at gmail dot com>
  *
  * This program is free software; you can redistribute it
@@ -38,6 +38,7 @@
 
 // local includes
 
+#include "digikam_globals.h"
 #include "dbinarysearch.h"
 #include "alignbinary.h"
 #include "enfusebinary.h"
@@ -104,11 +105,7 @@ ExpoBlendingIntroPage::ExpoBlendingIntroPage(ExpoBlendingManager* const mngr, QW
 
     // digiKam Bundle PKG install
 
-    d->binariesWidget->addDirectory(QLatin1String("/Applications/digiKam.org/digikam.app/Contents/opt/digikam.app/Contents/bin"));
-
-    // Hugin bundle install
-
-    d->binariesWidget->addDirectory(QLatin1String("/Applications/Hugin/tools_mac"));
+    d->binariesWidget->addDirectory(macOSBundlePrefix() + QLatin1String("bin"));
 
 #endif
 

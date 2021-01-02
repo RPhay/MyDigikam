@@ -7,7 +7,7 @@
  * Description : database settings widget
  *
  * Copyright (C) 2009-2010 by Holger Foerster <Hamsi2k at freenet dot de>
- * Copyright (C) 2010-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2010-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -151,7 +151,7 @@ void DatabaseSettingsWidget::setupMainArea()
     d->dbBinariesWidget->addDirectory(QLatin1String("/opt/local/lib/mariadb/bin"));
 
     // digiKam Bundle PKG install
-    d->dbBinariesWidget->addDirectory(QLatin1String("/Applications/digiKam.org/digikam.app/Contents/opt/digikam.app/Contents/lib/mariadb/bin"));
+    d->dbBinariesWidget->addDirectory(macOSBundlePrefix() + QLatin1String("lib/mariadb/bin"));
 
 #endif
 

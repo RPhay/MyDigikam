@@ -6,7 +6,7 @@
  * Date        : 2009-09-08
  * Description : global macros, variables and flags
  *
- * Copyright (C) 2009-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2009-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -70,17 +70,20 @@ QStringList supportedImageMimeTypes(QIODevice::OpenModeFlag mode, QString& allTy
     QStringList       formats;
     QList<QByteArray> supported;
 
-    switch(mode)
+    switch (mode)
     {
         case QIODevice::ReadOnly:
             supported = QImageReader::supportedImageFormats();
             break;
+
         case QIODevice::WriteOnly:
             supported = QImageWriter::supportedImageFormats();
             break;
+
         case QIODevice::ReadWrite:
             supported = QImageWriter::supportedImageFormats() + QImageReader::supportedImageFormats();
             break;
+
         default:
             qCDebug(DIGIKAM_GENERAL_LOG) << "Unsupported mode!";
             break;
@@ -101,6 +104,7 @@ QStringList supportedImageMimeTypes(QIODevice::OpenModeFlag mode, QString& allTy
         }
 
 #ifdef HAVE_JASPER
+
         if (QString::fromLatin1(frm).contains(QLatin1String("jp2"),  Qt::CaseInsensitive) ||
             QString::fromLatin1(frm).contains(QLatin1String("j2k"),  Qt::CaseInsensitive) ||
             QString::fromLatin1(frm).contains(QLatin1String("jpx"),  Qt::CaseInsensitive) ||
@@ -109,14 +113,17 @@ QStringList supportedImageMimeTypes(QIODevice::OpenModeFlag mode, QString& allTy
         {
             continue;
         }
+
 #endif // HAVE_JASPER
 
 #ifdef HAVE_X265
+
         if (QString::fromLatin1(frm).contains(QLatin1String("heic"), Qt::CaseInsensitive) ||
             QString::fromLatin1(frm).contains(QLatin1String("heif"), Qt::CaseInsensitive))
         {
             continue;
         }
+
 #endif // HAVE_X265
 
         formats.append(i18n("%1 Image (%2)", QString::fromLatin1(frm).toUpper(), QLatin1String("*.") + QLatin1String(frm)));
@@ -129,16 +136,20 @@ QStringList supportedImageMimeTypes(QIODevice::OpenModeFlag mode, QString& allTy
     allTypes.append(QLatin1String("*.jpg *.jpeg *.jpe "));
 
 #ifdef HAVE_JASPER
+    
     formats.append(i18n("JPEG2000 Image (*.jp2 *.j2k *.jpx *.pgx)"));
     allTypes.append(QLatin1String("*.jp2 *.j2k *.jpx *.pgx "));
+
 #endif // HAVE_JASPER
 
     formats << i18n("Progressive Graphics file (*.pgf)");
     allTypes.append(QLatin1String("*.pgf "));
 
 #ifdef HAVE_X265
+
     formats << i18n("High Efficiency Image Coding (*.heic *.heif)");
     allTypes.append(QLatin1String("*.heic *.heif"));
+
 #endif // HAVE_X265
 
     if (mode != QIODevice::WriteOnly)
@@ -213,9 +224,9 @@ QProcessEnvironment adjustedEnvironmentForAppImage()
     return env;
 }
 
-
 void tryInitDrMingw()
 {
+
 #ifdef HAVE_DRMINGW
 
     qCDebug(DIGIKAM_GENERAL_LOG) << "Loading DrMinGw run-time...";
@@ -256,6 +267,7 @@ void tryInitDrMingw()
     qCDebug(DIGIKAM_GENERAL_LOG) << "DrMinGw crash-file will be located at: " << logFile;
 
 #endif // HAVE_DRMINGW
+
 }
 
 QString toolButtonStyleSheet()
@@ -283,6 +295,11 @@ QString toolButtonStyleSheet()
                          "  qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1, "
                          "  stop: 0 rgba(40, 40, 40, 50%), "
                          "  stop: 1 rgba(50, 50, 50, 50%)); }");
+}
+
+QString macOSBundlePrefix()
+{
+    return QString::fromUtf8("/Applications/digiKam.org/digikam.app/Contents/opt/digikam.app/Contents/");
 }
 
 } // namespace Digikam
