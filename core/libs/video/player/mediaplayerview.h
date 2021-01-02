@@ -27,8 +27,8 @@
 // Qt includes
 
 #include <QStackedWidget>
-#include <QUrl>
 #include <QEvent>
+#include <QUrl>
 
 // QtAV includes
 
@@ -77,6 +77,7 @@ private Q_SLOTS:
     void slotPlayerStateChanged(QtAV::AVPlayer::State state);
     void slotMediaStatusChanged(QtAV::MediaStatus status);
     void slotHandlePlayerError(const QtAV::AVError& err);
+    void slotImageCaptured(const QImage& image);
 
     /// Slidebar slots
     void slotPositionChanged(qint64 position);
@@ -85,6 +86,7 @@ private Q_SLOTS:
     void slotLoopToggled(bool loop);
     void slotPosition(int position);
     void slotPausePlay();
+    void slotCapture();
 
 private:
 
