@@ -88,6 +88,7 @@
     <p xml:lang="sv">Digikam är ett avancerat digitalt fotohanteringsprogram med öppen källkod som kör på Linux, Windows och MacOS. Programmet tillhandahåller en omfattande verktygsuppsättning för att importera, hantera, redigera och dela foton och obehandlade filer. Du kan använda Digikams importmöjligheter för att enkelt överföra foton, obehandlade filer och videor direkt från din kamera eller externa lagringsenheter (SD-kort, USB-minnen, etc.). Programmet låter dig anpassa importinställningar och regler som behandlar och organiserar importerade objekt i farten.</p>
     <p xml:lang="uk">digiKam — програма для керування цифровими фотографіями із відкритим кодом і широкими можливостями. Програмою можна скористатися у Linux, Windows та MacOS. У програмі передбачено повний набір інструментів для імпортування, керування, редагування та оприлюднення фотографій та файлів цифрових негативів. Ви можете скористатися можливостями digiKam з імпортування для спрощення передавання фотографій, файлів цифрових негативів та відео безпосередньо з камери або зовнішніх пристроїв для зберігання даних (карток SD, дисків USB тощо). У програмі передбачено можливість налаштовування параметрів імпортування та правил динамічної обробки та упорядковування імпортованих записів.</p>
     <p xml:lang="x-test">xxdigiKam is an advanced open-source digital photo management application that runs on Linux, Windows, and MacOS. The application provides a comprehensive set of tools for importing, managing, editing, and sharing photos and raw files. You can use digiKam’s import capabilities to easily transfer photos, raw files, and videos directly from your camera and external storage devices (SD cards, USB disks, etc.). The application allows you to configure import settings and rules that process and organize imported items on-the-fly.xx</p>
+    <p xml:lang="zh-CN">digiKam 是一套功能先进的自由开源数字照片管理程序，支持 Linux、Windows 和 macOS。它提供了一整套工具，可以对照片和 RAW 图像文件进行导入、管理、编辑和分享。你可以使用 digiKam 的导入功能从数码相机或者外部存储设备 (SD 卡、U 盘等) 向本机传输照片、RAW 图像文件和视频，操作简单轻松。你还可以随时配置导入设置，为已导入的照片更改处理和整理规则。</p>
     <p>
         digiKam organizes photos, raw files, and videos into albums. But the application also features powerful tagging tools
         that allow you to assign tags, ratings, and labels to photos and raw files. You can then use filtering functionality to quickly
@@ -108,6 +109,7 @@
     <p xml:lang="sv">Digikam organiserar foton, obehandlade filer och videor i album. Men programmet erbjuder också kraftfulla verktyg för etikettering som låter dig tilldela etiketter, betyg och beteckningar till foton och obehandlade filer. Du kan sedan använda filtreringsfunktionerna för att snabbt hitta objekt som motsvarar specifika kriterier.</p>
     <p xml:lang="uk">У digiKam фотографії, файли цифрових негативів та відео упорядковуються за альбомами. Але, крім того, у програмі передбачено потужні засоби встановлення міток, за допомогою яких ви можете призначати мітки, оцінки та позначки для фотографій і файлів цифрових негативів. Далі, можна скористатися функціональними можливостями з фільтрування для швидкого пошуку записів, які відповідають певним критеріям.</p>
     <p xml:lang="x-test">xxdigiKam organizes photos, raw files, and videos into albums. But the application also features powerful tagging tools that allow you to assign tags, ratings, and labels to photos and raw files. You can then use filtering functionality to quickly find items that match specific criteria.xx</p>
+    <p xml:lang="zh-CN">digiKam 可以将照片、RAW 图像文件和视频整理成专辑。它还带有功能强大的标签工具，让你可以对照片和 RAW 图像文件指定标签、进行评分和附加标记，然后按照这些条件进行筛选，以便快速找到符合条件的项目。</p>
     <p>
         In addition to filtering functionality, digiKam features powerful searching capabilities that let you search the photo library
         by a wide range of criteria. You can search photos by tags, labels, rating, data, location, and even specific EXIF, IPTC, or XMP metadata.
@@ -129,6 +131,7 @@
     <p xml:lang="sv">Förutom filtreringsfunktionaliteten, tillhandahåller Digikam kraftfulla sökmöjligheter som låter dig söka i fotobiblioteket med ett stort antal olika kriterier. Du kan söka efter foton enligt etiketter, beteckningar, data, plats och till och med specifika EXIF-, IPTC- eller XMP-metadata. Du kan också kombinera olika kriterier för mer avancerade sökningar. Digikam förlitar sig på biblioteket Exiv2 för att hantera innehållet i metadatataggar från filer för att fylla i fotobiblioteket.</p>
     <p xml:lang="uk">Окрім функціональних можливостей із фільтрування, у digiKam передбачено потужні можливості з пошуку, за допомогою яких ви можете виконувати пошук у фотобібліотеці за широким діапазоном критеріїв. Ви можете шукати фотографії за мітками, позначками, оцінками, даними, місцем зйомки і навіть певними метаданими EXIF, IPTC або XMP. Ви також можете поєднувати декілька критеріїв, створюючи складні пошуки. Для обробки вмісту міток метаданих з файлів і заповнення даних фотобібліотеки у digiKam використано бібліотеку Exiv2.</p>
     <p xml:lang="x-test">xxIn addition to filtering functionality, digiKam features powerful searching capabilities that let you search the photo library by a wide range of criteria. You can search photos by tags, labels, rating, data, location, and even specific EXIF, IPTC, or XMP metadata. You can also combine several criteria for more advanced searches. digiKam rely on Exiv2 library to handle metadata tag contents from files to populate the photo library.xx</p>
+    <p xml:lang="zh-CN">除了筛选功能外，digiKam 还内建了强大的搜索功能，你可以使用各种条件来对照片库中的内容进行搜索，如标签、标记、评价、数据、地理位置，甚至特定的 EXIF、IPTC 或者 XMP 元数据。你可以合并使用多个条件来进行更深入的搜索。digiKam 通过 Exiv2 程序库来处理来自文件元数据的标签内容，并将它们整合到照片库中。</p>
     <p>
         digiKam can handle raw files, and the application uses the excellent LibRaw library for decoding raw files. The library is actively
         maintained and regularly updated to include support for the latest camera models.
@@ -150,6 +153,7 @@
     <p xml:lang="sv">Digikam kan hantera obehandlade filer, och programmet använder det utmärkta biblioteket LibRaw för att avkoda obehandlade filer. Biblioteket underhålls aktivt och uppdateras regelbundet för att  inkludera stöd för de senaste kameramodellerna. Digikam kan också hantera videofiler i katalogiseringssyfte, och programmet använder de två biblioteken FFmpeg och QtAv för att extrahera metadata och spela upp media.</p>
     <p xml:lang="uk">digiKam може працювати із файлами цифрових негативів. Програма використовує чудову бібліотеку LibRaw для декодування файлів цифрових негативів. Ця бібліотека активно розвивається і регулярно оновлюється з метою включення підтримки найсвіжіших моделей цифрових фотоапаратів. Крім того, digiKam може керувати відеофайлами з метою їхньої каталогізації. Програма використовує поєднання бібліотек FFmpeg та QtAv для видобування метаданих та відтворення відео.</p>
     <p xml:lang="x-test">xxdigiKam can handle raw files, and the application uses the excellent LibRaw library for decoding raw files. The library is actively maintained and regularly updated to include support for the latest camera models. digiKam can also manage video files for cataloging purpose, and the application uses the couple FFmpeg and QtAv libraries to extract metadata and play media.xx</p>
+    <p xml:lang="zh-CN">digiKam 可以处理 RAW 图像文件，它通过功能出色的 LibRaw 程序库来对 RAW 图像文件进行解码。该程序库的开发工作相当活跃，会定期更新以支持最新型号的数码相机。digiKam 可以对视频文件进行编目管理，它配合使用 FFmpeg 和 QtAv 两个程序库来提取媒体的元数据并播放它们。</p>
     <p>
         The application provides a comprehensive set of editing tools. This includes basic tools for adjusting colors, cropping, and sharpening
         as well as advanced tools for, curves adjustment, panorama stitching, and much more. A special tool based on Lensfun library permit
@@ -170,6 +174,7 @@
     <p xml:lang="sv">Programmet tillhandahåller en omfattande uppsättning redigeringsverktyg. Det inkluderar grundverktyg för att justera färger, beskära och förbättra skärpa samt avancerade verktyg för kurvjustering, panoramasammanställning, med mera. Ett specialverktyg baserat på biblioteket Lensfun tillåter att linskorrektion automatiskt utförs för bilder.</p>
     <p xml:lang="uk">Програма постачається із повним набором засобів для редагування. До цього набору включено інструменти для коригування кольорів, обрізання та збільшення різкості зображення, а також профільні інструменти для коригування кривих, створення панорам тощо. За допомогою спеціального інструмента, заснованого на бібліотеці Lensfun, можна автоматично застосовувати виправлення викривлень, які спричинено оптичними недоліками об'єктива.</p>
     <p xml:lang="x-test">xxThe application provides a comprehensive set of editing tools. This includes basic tools for adjusting colors, cropping, and sharpening as well as advanced tools for, curves adjustment, panorama stitching, and much more. A special tool based on Lensfun library permit to apply lens corrections automatically on images.xx</p>
+    <p xml:lang="zh-CN">digiKam 提供了一整套图像编辑工具，不但包括了基本的颜色调整、裁剪、锐化工具，还包括了颜色曲线调整、全景图拼接等高级工具。它还有一个基于 Lensfun 程序库的自动镜头畸变修正工具。</p>
     <p>
         Extended functionality in digiKam is implemented via a set of tools based of plugins mechanism (named DPlugins for digiKam Plugins).
         Plugins can be written to import and export contents to remote web-services, add new features to edit image, and batch process photo.
@@ -189,6 +194,7 @@
     <p xml:lang="sv">Utökad funktionalitet i Digikam implementeras via en uppsättning verktyg baserat på insticksmekanismen (benämnda DPlugins). Insticksprogram kan skrivas för att importera och exportera innehåll till webbtjänster på nätet, lägga till nya funktioner för att redigera bilder och för att behandla foton i bakgrunden.</p>
     <p xml:lang="uk">Додаткові функціональні можливості digiKam реалізовано у форматі набору засобів на основі механізмів додатків (які називаються DPlugin, тобто додатки (Plugin) digiKam). Ви самі можете створювати додатки для імпортування та експортування даних на віддалені вебслужби, додавати нові можливості для редагування зображень та пакетної обробки фотографій.</p>
     <p xml:lang="x-test">xxExtended functionality in digiKam is implemented via a set of tools based of plugins mechanism (named DPlugins for digiKam Plugins). Plugins can be written to import and export contents to remote web-services, add new features to edit image, and batch process photo.xx</p>
+    <p xml:lang="zh-CN">digiKam 通过基于插件机制的一系列工具来扩展其功能 (digiKam 插件简称 DPlugins)。插件可以导入/导出内容到在线服务，编辑图像，或者对照片进行批处理。</p>
     <p>Features:</p>
     <p xml:lang="ar">الميزات:</p>
     <p xml:lang="bs">Svojstva:</p>
@@ -281,7 +287,7 @@
       <li xml:lang="tr">Exif, Iptc, Xmp, Makernotes desteği</li>
       <li xml:lang="uk">підтримка Exif, Iptc, Xmp, Makernotes;</li>
       <li xml:lang="x-test">xxSupport for Exif, Iptc, Xmp, Makernotesxx</li>
-      <li xml:lang="zh-CN">支持 Exif、Iptc、Xmp、Makernotes</li>
+      <li xml:lang="zh-CN">支持 EXIF、IPTC、XMP、Makernotes</li>
       <li xml:lang="zh-TW">支援 EXIF、IPTC、XMP 和 Makernotes</li>
       <li>SQLite or Mysql powered storage for the album contents and its metadata with advanced search tools</li>
       <li xml:lang="ca">Emmagatzematge basat en SQLite o Mysql per als continguts dels àlbums i les seves metadades amb eines de cerca avançades</li>
@@ -308,7 +314,7 @@
       <li xml:lang="tr">Albüm içeriği ve meta verileri için gelişmiş arama araçlarıyla, SQLite veya Mysql destekli depolama</li>
       <li xml:lang="uk">сховище даних на основі SQLite або MySQL для вмісту альбомів та метаданих із розширеними можливостями пошуку;</li>
       <li xml:lang="x-test">xxSQLite or Mysql powered storage for the album contents and its metadata with advanced search toolsxx</li>
-      <li xml:lang="zh-CN">SQLite 或 Mysql 为相册内容及其元数据提供高级搜索工具的存储</li>
+      <li xml:lang="zh-CN">通过 SQLite 或者 MySQL 为保存的相册内容及其元数据提供高级搜索工具</li>
       <li>Support for filtering and sorting albums</li>
       <li xml:lang="ar">دعم ترشيح الألبومات وفرزها</li>
       <li xml:lang="bs">Podrška za filtriranje i sortiranje albuma</li>
@@ -338,7 +344,7 @@
       <li xml:lang="tr">Albümleri filtreleme ve sıralama desteği</li>
       <li xml:lang="uk">підтримка фільтрування та упорядковування альбомів;</li>
       <li xml:lang="x-test">xxSupport for filtering and sorting albumsxx</li>
-      <li xml:lang="zh-CN">支持筛选和排序相册</li>
+      <li xml:lang="zh-CN">支持对相册进行筛选和排序</li>
       <li xml:lang="zh-TW">支援篩選和排序相簿</li>
       <li>Import from more than 1100 digital camera devices</li>
       <li xml:lang="ar">الاستيراد من أكثر من 1100 كمرة رقميّة</li>
@@ -369,7 +375,7 @@
       <li xml:lang="tr">1100den fazla kamera cihazından içe aktarma</li>
       <li xml:lang="uk">можливість імпортування даних з понад 1100 цифрових фотоапаратів;</li>
       <li xml:lang="x-test">xxImport from more than 1100 digital camera devicesxx</li>
-      <li xml:lang="zh-CN">从1100多种数码相机设备中导入</li>
+      <li xml:lang="zh-CN">支持从 1100 多种数码相机设备导入照片</li>
       <li xml:lang="zh-TW">能從超過 1100 個數位相機裝置匯入</li>
       <li>Support for more than 900 RAW format pictures</li>
       <li xml:lang="ca">Admet més de 900 formats d'imatge RAW</li>
@@ -397,7 +403,7 @@
       <li xml:lang="tr">900'den fazla RAW biçimli resim desteği</li>
       <li xml:lang="uk">підтримка понад 900 форматів цифрових негативів (RAW);</li>
       <li xml:lang="x-test">xxSupport for more than 900 RAW format picturesxx</li>
-      <li xml:lang="zh-CN">支持超过900种 RAW 格式的图片</li>
+      <li xml:lang="zh-CN">支持超过 900 种 RAW 图像格式</li>
       <li xml:lang="zh-TW">支援超過 900 個 RAW 格式圖片</li>
       <li>Light Table to compare photo side by side</li>
       <li xml:lang="ca">Taula de llum per a comparar les fotografies costat a costat</li>
@@ -425,7 +431,7 @@
       <li xml:lang="tr">Fotoğrafı yan yana karşılaştırmak için Tabloyu Işıklandır</li>
       <li xml:lang="uk">стіл із підсвічуванням для порівняння фотографій;</li>
       <li xml:lang="x-test">xxLight Table to compare photo side by sidexx</li>
-      <li xml:lang="zh-CN">用于并排比较照片的灯桌</li>
+      <li xml:lang="zh-CN">提供了用于并排比较照片的看片台工具</li>
       <li>Extended features using extra tools</li>
       <li xml:lang="ca">Característiques ampliades usant eines addicionals</li>
       <li xml:lang="ca-valencia">Característiques ampliades usant eines addicionals</li>
@@ -451,7 +457,7 @@
       <li xml:lang="tr">Ekstra araçlar kullanan genişletilmiş özellikler</li>
       <li xml:lang="uk">розширення можливостей за допомогою додаткових інструментів;</li>
       <li xml:lang="x-test">xxExtended features using extra toolsxx</li>
-      <li xml:lang="zh-CN">使用额外工具的扩展功能</li>
+      <li xml:lang="zh-CN">通过插件扩展额外功能</li>
       <li xml:lang="zh-TW">使用延伸工具得到延伸功能</li>
       <li>Share your photos using HTML or publishing them to remote web services</li>
       <li xml:lang="ca">Compartiu les vostres fotografies usant HTML o publicant-les a serveis web remots</li>
@@ -479,7 +485,7 @@
       <li xml:lang="tr">Resimlerinizi HTML kullanarak paylaşın veya onları uzak web servislerinde yayımlayın</li>
       <li xml:lang="uk">можливість оприлюднення фотографій на віддалених службах у інтернеті;</li>
       <li xml:lang="x-test">xxShare your photos using HTML or publishing them to remote web servicesxx</li>
-      <li xml:lang="zh-CN">使用 HTML 共享您的照片或将其发布到远程 WEB 服务</li>
+      <li xml:lang="zh-CN">使用 HTML 共享照片，或者将其发布到远程 WEB 服务</li>
       <li xml:lang="zh-TW">使用 HTML 分享圖片或將圖片發布到遠端網路服務</li>
       <li>Image editor included with advanced tools to fix photo quickly</li>
       <li xml:lang="ca">Inclou un editor d'imatges amb eines avançades per a esmenar ràpidament les fotografies</li>
@@ -506,7 +512,7 @@
       <li xml:lang="tr">Fotoğrafı hızla düzeltmek için gelişmiş araçlar içeren resim editörü</li>
       <li xml:lang="uk">редактор зображень із додатковими можливостями для швидкого виправлення фотографій;</li>
       <li xml:lang="x-test">xxImage editor included with advanced tools to fix photo quicklyxx</li>
-      <li xml:lang="zh-CN">图像编辑器包含高级工具以快速修复照片</li>
+      <li xml:lang="zh-CN">图像编辑器提供了用于快速修复照片的各种高级工具</li>
       <li xml:lang="zh-TW">包含進階工具的圖片編輯器以快速修復圖片</li>
     </ul>
   </description>
@@ -535,6 +541,7 @@
       <caption xml:lang="sv">Digikams köhantering för bakgrundsbehandling</caption>
       <caption xml:lang="uk">Керування чергою пакетної обробки digiKam</caption>
       <caption xml:lang="x-test">xxdigiKam Batch Queue Managerxx</caption>
+      <caption xml:lang="zh-CN">digiKam 批处理队列管理器</caption>
       <image>https://www.digikam.org/img/content/about/overview_bqm.png</image>
     </screenshot>
     <screenshot type="default">
@@ -557,6 +564,7 @@
       <caption xml:lang="sv">Digikams  bildeditor</caption>
       <caption xml:lang="uk">Редактор зображень digiKam</caption>
       <caption xml:lang="x-test">xxdigiKam Image Editorxx</caption>
+      <caption xml:lang="zh-CN">digiKam 图像编辑器</caption>
       <image>https://www.digikam.org/img/content/about/overview_imageeditor.png</image>
     </screenshot>
     <screenshot type="default">
@@ -578,6 +586,7 @@
       <caption xml:lang="sv">Digikams import från kamera</caption>
       <caption xml:lang="uk">Імпортування з камери у digiKam</caption>
       <caption xml:lang="x-test">xxdigiKam Import From Cameraxx</caption>
+      <caption xml:lang="zh-CN">digiKam 从相机导入</caption>
       <image>https://www.digikam.org/img/content/about/overview_import.png</image>
     </screenshot>
     <screenshot type="default">
@@ -600,6 +609,7 @@
       <caption xml:lang="sv">Digikams ljusbord</caption>
       <caption xml:lang="uk">Стіл із підсвічуванням digiKam</caption>
       <caption xml:lang="x-test">xxdigiKam Light Tablexx</caption>
+      <caption xml:lang="zh-CN">digiKam 看片台</caption>
       <image>https://www.digikam.org/img/content/about/overview_lighttable.png</image>
     </screenshot>
     <screenshot type="default">
@@ -622,6 +632,7 @@
       <caption xml:lang="sv">Digikams etikettvy</caption>
       <caption xml:lang="uk">Панель перегляду міток digiKam</caption>
       <caption xml:lang="x-test">xxdigiKam Tags Viewxx</caption>
+      <caption xml:lang="zh-CN">digiKam 标签视图</caption>
       <image>https://www.digikam.org/img/content/about/overview_tagsview.png</image>
     </screenshot>
   </screenshots>
@@ -724,6 +735,7 @@
   <developer_name xml:lang="sv">Digikam-gruppen</developer_name>
   <developer_name xml:lang="uk">Команда digiKam</developer_name>
   <developer_name xml:lang="x-test">xxdigiKam Teamxx</developer_name>
+  <developer_name xml:lang="zh-CN">digiKam 开发团队</developer_name>
   <project_group>KDE</project_group>
   <provides>
     <binary>digikam</binary>
