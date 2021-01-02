@@ -57,7 +57,7 @@ Comment[sv]=En konvertering av det gamla HTML-exportinsticksprogrammets tema
 Comment[tr]=Eski HTML Dışa Aktarma eklenti temasının bir portu
 Comment[uk]=Портування старої теми додатка експорту HTML
 Comment[x-test]=xxA port of the old HTML Export plugin themexx
-Comment[zh_CN]=旧版 HTML 导出插件主题的移植
+Comment[zh_CN]=移植自旧版 HTML 导出插件主题
 
 [X-HTMLGallery Preview]
 Name=Classic
@@ -222,7 +222,7 @@ Name[sv]=Förgrundsfärg
 Name[tr]=Önplan Rengi
 Name[uk]=Колір тексту
 Name[x-test]=xxForeground Colorxx
-Name[zh_CN]=前景颜色
+Name[zh_CN]=前景色
 Type=color
 Default=#d0ffd0
 

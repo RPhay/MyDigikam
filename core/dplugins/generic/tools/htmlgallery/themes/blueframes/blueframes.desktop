@@ -25,7 +25,7 @@ Name[sl]=Modri okvirji
 Name[sv]=Blåa ramar
 Name[uk]=Сині рамки
 Name[x-test]=xxBlue Framesxx
-Name[zh_CN]=蓝色框架
+Name[zh_CN]=蓝色型 Frames
 Comment=A theme variation based Frames theme
 Comment[ca]=Una variació del tema basat en el tema Marcs
 Comment[ca@valencia]=Una variació del tema basat en el tema Marcs
@@ -49,7 +49,7 @@ Comment[sl]=Variacija teme na osnovi okvirjev
 Comment[sv]=En temavariant baserad på temat Ramar
 Comment[uk]=Варіант теми на основі теми «Рамки»
 Comment[x-test]=xxA theme variation based Frames themexx
-Comment[zh_CN]=基于主题变体的框架主题
+Comment[zh_CN]=基于 Frames 主题的换色主题
 
 [X-HTMLGallery Author]
 Name=Elizabeth Marmorstein
@@ -109,5 +109,5 @@ Name[sl]=Modri okvirji
 Name[sv]=Blåa ramar
 Name[uk]=Сині рамки
 Name[x-test]=xxBlue Framesxx
-Name[zh_CN]=蓝色框架
+Name[zh_CN]=蓝色型 Frames
 Url=preview.png

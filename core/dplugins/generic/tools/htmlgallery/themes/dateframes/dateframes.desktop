@@ -27,7 +27,7 @@ Name[sv]=Datumramar
 Name[tr]=Veri Çerçeveleri
 Name[uk]=Рамки дат
 Name[x-test]=xxDate Framesxx
-Name[zh_CN]=日期框
+Name[zh_CN]=日期型 Frames
 Comment=A frame theme based on Ruediger Bente's frame theme
 Comment[ca]=Un tema de marcs basat en el tema de marcs del Ruediger Bente
 Comment[ca@valencia]=Un tema de marcs basat en el tema de marcs del Ruediger Bente
@@ -56,7 +56,7 @@ Comment[sv]=Ett ramtema baserat på Ruediger Bentes ramtema.
 Comment[tr]=Ruediger Bente'nin çerçeve teması tabanlı bir çerçeve temeası
 Comment[uk]=Тема рамок на основі теми Ruediger Bente
 Comment[x-test]=xxA frame theme based on Ruediger Bente's frame themexx
-Comment[zh_CN]=基于 Ruediger Bente 边框主题的边框主题
+Comment[zh_CN]=基于 Ruediger Bente 的 Frames 主题的相框主题
 
 [X-HTMLGallery Author]
 Name=Elizabeth Marmorstein
@@ -118,7 +118,7 @@ Name[sv]=Datumramar
 Name[tr]=Veri Çerçeveleri
 Name[uk]=Рамки дат
 Name[x-test]=xxDate Framesxx
-Name[zh_CN]=日期框
+Name[zh_CN]=日期型 Frames
 Url=preview.png
 
 [X-HTMLGallery Parameter color1]
@@ -312,7 +312,7 @@ Comment[sv]=Sträng med XSL-datumformat: Använd syntaxen som anges i http://xsl
 Comment[tr]=XSL Tarih Biçimi Dizgisi: http://xsltsl.sourceforge.net/date-time.html adresinde verilen yazım şeklini kullanın
 Comment[uk]=Рядок форматування дати XSL: використовуйте синтаксис, описаний на http://xsltsl.sourceforge.net/date-time.html
 Comment[x-test]=xxXSL Date Format String: Use the syntax given at http://xsltsl.sourceforge.net/date-time.htmlxx
-Comment[zh_CN]=XSL 日期格式字符串：使用 http://xsltsl.sourceforge.net/date-time.html 给出的语法
+Comment[zh_CN]=XSL 日期格式字符串：请使用 http://xsltsl.sourceforge.net/date-time.html 页面介绍的语法
 
 [X-HTMLGallery Parameter shortformat]
 Name=Image List Date Format
@@ -374,4 +374,4 @@ Comment[sv]=Sträng med XSL-datumformat: Använd syntaxen som anges i http://xsl
 Comment[tr]=XSL Tarih Biçimi Dizgisi: http://xsltsl.sourceforge.net/date-time.html adresinde verilen yazım şeklini kullanın
 Comment[uk]=Рядок форматування дати XSL: використовуйте синтаксис, описаний на http://xsltsl.sourceforge.net/date-time.html
 Comment[x-test]=xxXSL Date Format String: Use the syntax given at http://xsltsl.sourceforge.net/date-time.htmlxx
-Comment[zh_CN]=XSL 日期格式字符串：使用 http://xsltsl.sourceforge.net/date-time.html 给出的语法
+Comment[zh_CN]=XSL 日期格式字符串：请使用 http://xsltsl.sourceforge.net/date-time.html 页面介绍的语法

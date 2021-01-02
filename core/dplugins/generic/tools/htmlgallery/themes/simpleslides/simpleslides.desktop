@@ -47,7 +47,7 @@ Comment[sl]=Predstavitev za prikaz v načinu kioska. Izdelano iz preprostega pre
 Comment[sv]=Ett bildspel konstruerat för en kioskskärm. Skapad från en enkel mall med Javascript och CSS inbäddade i en enda index.html-fil.
 Comment[uk]=Показ слайдів, який створено для перегляду у режимі кіоску. Засновано на простому шаблоні із javascript та css, які вбудовано до єдиного файла index.html.
 Comment[x-test]=xxA slideshow designed for a kiosk-mode display. Generated from a simple template with javascript and css embedded into a single index.html file.xx
-Comment[zh_CN]=为展台模式显示设计的幻灯片。由一个简单的模板生成，其中包含嵌入到单个 index.html 文件中的 Javascript 和 css 。
+Comment[zh_CN]=为展示用途而设计的幻灯片。用一个简洁的模板生成相册，使用的 Javascript 和 CSS 均嵌入在单个 index.html 文件中。
 
 [X-HTMLGallery Author]
 Name=Simon Kuss
@@ -101,7 +101,7 @@ Name[sl]=Čas med slikami (sekunde
 Name[sv]=Tid mellan bilder (sekunder)
 Name[uk]=Інтервал між слайдами (у секундах)
 Name[x-test]=xxTime between slides (seconds)xx
-Name[zh_CN]=幻灯片之间时间(秒)
+Name[zh_CN]=幻灯片间隔时间 (秒)
 Type=int
 Default=5
 Min=1

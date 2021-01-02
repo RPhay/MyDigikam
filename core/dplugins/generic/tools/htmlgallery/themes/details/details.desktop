@@ -28,7 +28,7 @@ Comment[sv]=Ytterligare ett enkelt tema. Rent utseende med fler bilddetaljer.
 Comment[tr]=Bir diğer basit tema. Daha fazla resim detayıyla temiz görünüm.
 Comment[uk]=Ще одна проста тема. Строгий вигляд з додатковими параметрами зображень.
 Comment[x-test]=xxYet another simple theme. Clean look with more image details.xx
-Comment[zh_CN]=另一款简洁的主题。干净且富含更多图像细节。
+Comment[zh_CN]=另一款简洁的主题。设计干净且包含更多图像细节。
 Icon=
 Name=Details
 Name[ca]=Detalls
@@ -59,7 +59,7 @@ Name[sv]=Detaljer
 Name[tr]=Ayrıntılar
 Name[uk]=Подробиці
 Name[x-test]=xxDetailsxx
-Name[zh_CN]=详细信息
+Name[zh_CN]=细节
 
 [X-HTMLGallery Author]
 Name=Gianluca Urgese
@@ -121,7 +121,7 @@ Name[sv]=Skärmbild av Detaljer
 Name[tr]=Ekran görüntüsü ayrıntıları
 Name[uk]=Знімок вікна подробиць
 Name[x-test]=xxDetails screenshotxx
-Name[zh_CN]=详细屏幕截图
+Name[zh_CN]=细节主题的截图
 Url=preview.png
 
 [X-HTMLGallery Parameter footer]

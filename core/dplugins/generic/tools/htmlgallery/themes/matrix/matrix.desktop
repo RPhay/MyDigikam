@@ -28,7 +28,7 @@ Name[sv]=Matrix
 Name[tr]=Matris
 Name[uk]=Матриця
 Name[x-test]=xxMatrixxx
-Name[zh_CN]=矩阵
+Name[zh_CN]=黑客帝国
 Comment=Show your photos with Matrix style
 Comment[ca]=Visualitza les fotografies a l'estil de Matrix
 Comment[ca@valencia]=Visualitza les fotografies a l'estil de Matrix
@@ -57,7 +57,7 @@ Comment[sv]=Visa foton med Matrix-stil
 Comment[tr]=Fotoğraflarınızı Matris stilinde göster
 Comment[uk]=Показує фотографії в стилі Матриці
 Comment[x-test]=xxShow your photos with Matrix stylexx
-Comment[zh_CN]=以“矩阵”样式展示您的照片
+Comment[zh_CN]=用黑客帝国的风格展示照片
 
 [X-HTMLGallery Author]
 Name=Aurélien Gâteau
@@ -120,5 +120,5 @@ Name[sv]=Matrix
 Name[tr]=Matris
 Name[uk]=Матриця
 Name[x-test]=xxMatrixxx
-Name[zh_CN]=矩阵
+Name[zh_CN]=黑客帝国
 Url=preview.png
