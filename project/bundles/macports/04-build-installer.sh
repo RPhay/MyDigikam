@@ -5,7 +5,7 @@
 # This script must be run as sudo
 #
 # Copyright (c) 2015      by Shanti, <listaccount at revenant dot org>
-# Copyright (c) 2015-2020 by Gilles Caulier  <caulier dot gilles at gmail dot com>
+# Copyright (c) 2015-2021 by Gilles Caulier  <caulier dot gilles at gmail dot com>
 #
 # Redistribution and use is allowed according to the terms of the BSD license.
 # For details see the accompanying COPYING-CMAKE-SCRIPTS file.
@@ -100,8 +100,6 @@ Applications/KF5 \
 
 # Other apps - non-MacOS binaries & libraries to be included with required dylibs
 OTHER_APPS="\
-Applications/KF5/digikam.app/Contents/MacOS/digikam \
-Applications/KF5/showfoto.app/Contents/MacOS/showfoto \
 lib/plugins/imageformats/*.so \
 lib/plugins/digikam/bqm/*.so \
 lib/plugins/digikam/generic/*.so \
@@ -210,53 +208,20 @@ for app in $KDE_MENU_APPS ; do
         # Copy the application if it is found (create directory if necessary)
 
         if [ -d "$INSTALL_PREFIX/$searchpath/$app.app" ] ; then
+
             echo "    Found $app in $INSTALL_PREFIX/$searchpath"
 
-        # Create destination directory if necessary and copy app
+            # Copy application directory
 
-        if [ ! -d "$TEMPROOT/$searchpath" ] ; then
-            echo "    Creating $TEMPROOT/$searchpath"
-            mkdir -p "$TEMPROOT/$searchpath"
-        fi
+            echo "    Copying $app"
+            cp -pr "$INSTALL_PREFIX/$searchpath/$app.app" "$TEMPROOT"
 
-        echo "    Copying $app"
-        cp -pr "$INSTALL_PREFIX/$searchpath/$app.app" "$TEMPROOT/$searchpath/"
+            # Add executable to list of binaries for which we need to collect dependencies for
 
-        # Add executable to list of binaries for which we need to collect dependencies for
+            binaries="$binaries $searchpath/$app.app/Contents/MacOS/$app"
 
-        binaries="$binaries $searchpath/$app.app/Contents/MacOS/$app"
+            chmod 755 "$TEMPROOT/$app.app"
 
-        # If application is to be run by user, create Applescript launcher to
-        # load kbuildsycoca5.
-
-        if [[ $KDE_MENU_APPS == *"$app"* ]] ; then
-            echo "    Creating launcher script for $app"
-
-            # ------ Create application launcher script
-            # Partially derived from https://discussions.apple.com/thread/3934912 and
-            # http://stackoverflow.com/questions/16064957/how-to-check-in-applescript-if-an-app-is-running-without-launching-it-via-osa
-            # and https://discussions.apple.com/thread/4059113
-
-            cat << EOF | osacompile -o "$TEMPROOT/$app.app"
-#!/usr/bin/osascript
-
-set current_path to POSIX path of ((path to me as text) & "::")
-
-do shell script quoted form of (POSIX path of current_path) & "digikam.app/Contents/opt/digikam.app/Contents/bin/kbuildsycoca5"
-
-do shell script "open " & quoted form of (POSIX path of current_path) & "digikam.app/Contents/opt/$app.app"
-EOF
-                # ------ End application launcher script
-
-                # Get application icon for launcher.
-
-                echo "    Found icon for $app launcher in $INSTALL_PREFIX/$searchpath/$app.app/Contents/Resources/${app}_SRCS.icns"
-                cp -p "$INSTALL_PREFIX/$searchpath/$app.app/Contents/Resources/${app}_SRCS.icns" "$TEMPROOT/$app.app/Contents/Resources/applet.icns"
-                chmod 755 "$TEMPROOT/$app.app"
-            fi
-
-            # Don't keep looking through search paths once we've found the app
-            break
         fi
 
     done
@@ -267,7 +232,7 @@ done
 # Collect dylib dependencies for all binaries,
 # then copy them to the staging area (creating directories as required)
 
-echo "---------- Collecting dependencies for applications, binaries, and libraries:"
+echo "---------- Collecting dependencies for applications, binaries, and libraries..."
 
 cd "$INSTALL_PREFIX"
 
@@ -326,7 +291,7 @@ echo "---------- Copying data files..."
 
 for path in $OTHER_DATA ; do
     echo "   Copying $path"
-    cp -a "$INSTALL_PREFIX/$path" "$TEMPROOT/Applications/KF5/digikam.app/Contents/Resources/"
+    cp -a "$INSTALL_PREFIX/$path" "$TEMPROOT/digikam.app/Contents/Resources/"
 done
 
 echo "---------- Copying Qt Web Backend files..."
@@ -358,18 +323,18 @@ cd $i18nprefix
 FILES=$(cat $ORIG_WD/logs/build-extralibs.full.log | grep "$INSTALL_PREFIX/share/locale/" | cut -d' ' -f3  | awk '{sub("'"$i18nprefix"'","")}1')
 
 for FILE in $FILES ; do
-    rsync -R "./$FILE" "$TEMPROOT/Applications/KF5/digikam.app/Contents/Resources/"
+    rsync -R "./$FILE" "$TEMPROOT/digikam.app/Contents/Resources/"
 done
 
 FILES=$(cat $ORIG_WD/logs/build-digikam.full.log | grep "$INSTALL_PREFIX/share/locale/" | cut -d' ' -f3  | awk '{sub("'"$i18nprefix"'","")}1')
 
 for FILE in $FILES ; do
-    rsync -R "./$FILE" "$TEMPROOT/Applications/KF5/digikam.app/Contents/Resources/"
+    rsync -R "./$FILE" "$TEMPROOT/digikam.app/Contents/Resources/"
 done
 
 # Showfoto resources dir must be merged with digiKam.
-cp -a "$TEMPROOT/Applications/KF5/showfoto.app/Contents/Resources/" "$TEMPROOT/Applications/KF5/digikam.app/Contents/Resources/"
-rm -rf "$TEMPROOT/Applications/KF5/showfoto.app/Contents/Resources"
+cp -a "$TEMPROOT/showfoto.app/Contents/Resources/" "$TEMPROOT/digikam.app/Contents/Resources/"
+rm -rf "$TEMPROOT/showfoto.app/Contents/Resources"
 
 cd "$ORIG_WD"
 
@@ -437,8 +402,8 @@ chmod 755 "$PROJECTDIR/postinstall"
 #################################################################################################
 # Copy icons-set resource files.
 
-cp $ORIG_WD/icon-rcc/breeze.rcc      $TEMPROOT/Applications/KF5/digikam.app/Contents/Resources/
-cp $ORIG_WD/icon-rcc/breeze-dark.rcc $TEMPROOT/Applications/KF5/digikam.app/Contents/Resources/
+cp $ORIG_WD/icon-rcc/breeze.rcc      $TEMPROOT/digikam.app/Contents/Resources/
+cp $ORIG_WD/icon-rcc/breeze-dark.rcc $TEMPROOT/digikam.app/Contents/Resources/
 
 #################################################################################################
 # Cleanup symbols in binary files to free space.
@@ -544,29 +509,22 @@ done
 
 echo -e "\n---------- Finalize files in bundle"
 
-mkdir -p $TEMPROOT/digikam.app/Contents/opt
+mv -v $TEMPROOT/bin                           $TEMPROOT/digikam.app/Contents/
+mv -v $TEMPROOT/share                         $TEMPROOT/digikam.app/Contents/
+mv -v $TEMPROOT/etc                           $TEMPROOT/digikam.app/Contents/
+mv -v $TEMPROOT/lib                           $TEMPROOT/digikam.app/Contents/
+mv -v $TEMPROOT/libexec                       $TEMPROOT/digikam.app/Contents/
 
-mv -v $TEMPROOT/Applications/KF5/digikam.app  $TEMPROOT/digikam.app/Contents/opt
-mv -v $TEMPROOT/Applications/KF5/showfoto.app $TEMPROOT/digikam.app/Contents/opt
-
-mv -v $TEMPROOT/bin                           $TEMPROOT/digikam.app/Contents/opt/digikam.app/Contents/
-mv -v $TEMPROOT/share                         $TEMPROOT/digikam.app/Contents/opt/digikam.app/Contents/
-mv -v $TEMPROOT/etc                           $TEMPROOT/digikam.app/Contents/opt/digikam.app/Contents/
-mv -v $TEMPROOT/lib                           $TEMPROOT/digikam.app/Contents/opt/digikam.app/Contents/
-mv -v $TEMPROOT/libexec                       $TEMPROOT/digikam.app/Contents/opt/digikam.app/Contents/
-
-ln -sv "../../digikam.app/Contents/bin"       "$TEMPROOT/digikam.app/Contents/opt/showfoto.app/Contents/bin"
-ln -sv "../../digikam.app/Contents/etc"       "$TEMPROOT/digikam.app/Contents/opt/showfoto.app/Contents/etc"
-ln -sv "../../digikam.app/Contents/lib"       "$TEMPROOT/digikam.app/Contents/opt/showfoto.app/Contents/lib"
-ln -sv "../../digikam.app/Contents/libexec"   "$TEMPROOT/digikam.app/Contents/opt/showfoto.app/Contents/libexec"
-ln -sv "../../digikam.app/Contents/share"     "$TEMPROOT/digikam.app/Contents/opt/showfoto.app/Contents/share"
-ln -sv "../../digikam.app/Contents/Resources" "$TEMPROOT/digikam.app/Contents/opt/showfoto.app/Contents/Resources"
+ln -sv "../../digikam.app/Contents/bin"       "$TEMPROOT/showfoto.app/Contents/bin"
+ln -sv "../../digikam.app/Contents/etc"       "$TEMPROOT/showfoto.app/Contents/etc"
+ln -sv "../../digikam.app/Contents/lib"       "$TEMPROOT/showfoto.app/Contents/lib"
+ln -sv "../../digikam.app/Contents/libexec"   "$TEMPROOT/showfoto.app/Contents/libexec"
+ln -sv "../../digikam.app/Contents/share"     "$TEMPROOT/showfoto.app/Contents/share"
+ln -sv "../../digikam.app/Contents/Resources" "$TEMPROOT/showfoto.app/Contents/Resources"
 
 echo -e "\n---------- Cleanup files in bundle"
 
 # Last cleanup
-
-rm -rfv $TEMPROOT/Applications
 
 HEADERFILES=(`find $TEMPROOT -name "*.h" -o -name "*.hpp"`)
 
@@ -576,8 +534,8 @@ for HPP in ${HEADERFILES[@]} ; do
 
 done
 
-rm -rfv $TEMPROOT/digikam.app/Contents/opt/digikam.app/Contents/share/mariadb/mysql-test
-rm -rfv $TEMPROOT/digikam.app/Contents/opt/digikam.app/Contents/share/mariadb/sql-bench
+rm -rfv $TEMPROOT/digikam.app/Contents/share/mariadb/mysql-test
+rm -rfv $TEMPROOT/digikam.app/Contents/share/mariadb/sql-bench
 
 echo -e "\n---------- Patch config and script files in bundle"
 
@@ -599,11 +557,11 @@ for DIR in ${MARIADBDIRS[@]} ; do
             if [[ $NEEDPATCH ]] ; then
 
                 echo -e "--- Patching $FILE..."
-                sed -i '' "s|$INSTALL_PREFIX/var|$RELOCATE_PREFIX/digikam.app/Contents/opt/digikam.app/Contents/var|g" $FILE
-                sed -i '' "s|$INSTALL_PREFIX/lib|$RELOCATE_PREFIX/digikam.app/Contents/opt/digikam.app/Contents/lib|g" $FILE
-                sed -i '' "s|$INSTALL_PREFIX/share|$RELOCATE_PREFIX/digikam.app/Contents/opt/digikam.app/Contents/share|g" $FILE
-                sed -i '' "s|$INSTALL_PREFIX/etc|$RELOCATE_PREFIX/digikam.app/Contents/opt/digikam.app/Contents/etc|g" $FILE
-                sed -i '' "s|$INSTALL_PREFIX|$RELOCATE_PREFIX/digikam.app/Contents/opt/digikam.app/Contents|g" $FILE
+                sed -i '' "s|$INSTALL_PREFIX/var|$RELOCATE_PREFIX/digikam.app/Contents/var|g" $FILE
+                sed -i '' "s|$INSTALL_PREFIX/lib|$RELOCATE_PREFIX/digikam.app/Contents/lib|g" $FILE
+                sed -i '' "s|$INSTALL_PREFIX/share|$RELOCATE_PREFIX/digikam.app/Contents/share|g" $FILE
+                sed -i '' "s|$INSTALL_PREFIX/etc|$RELOCATE_PREFIX/digikam.app/Contents/etc|g" $FILE
+                sed -i '' "s|$INSTALL_PREFIX|$RELOCATE_PREFIX/digikam.app/Contents/|g" $FILE
 
             fi
 

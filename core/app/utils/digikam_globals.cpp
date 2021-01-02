@@ -299,7 +299,7 @@ QString toolButtonStyleSheet()
 
 QString macOSBundlePrefix()
 {
-    return QString::fromUtf8("/Applications/digiKam.org/digikam.app/Contents/opt/digikam.app/Contents/");
+    return QString::fromUtf8("/Applications/digiKam.org/digikam.app/Contents/");
 }
 
 } // namespace Digikam
