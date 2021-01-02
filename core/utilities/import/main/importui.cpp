@@ -1568,7 +1568,7 @@ void ImportUI::slotDownloaded(const QString& folder, const QString& file, int st
                 DNotificationWrapper(QLatin1String("cameradownloaded"),
                                      i18nc("@info Popup notification",
                                            "Images download finished, you can now detach "
-                                           "your camera while the images will be auto-rotated"),
+                                           "your camera while the images are auto-rotated"),
                                      this, windowTitle());
             }
             else
