@@ -258,4 +258,5 @@ BUGFIXES:
 238 ==> 430985 - New beta release doesn´t start.
 239 ==> 430996 - Yolo v3 causes application to crash with 32 bits version.
 240 ==> 431108 - Online Handbook... Launches Irrelevant Documentation.
-241 ==> 
+241 ==> 431095 - Make "scan for new items" collection sensitive.
+242 ==> 
