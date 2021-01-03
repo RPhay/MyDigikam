@@ -260,4 +260,5 @@ BUGFIXES:
 240 ==> 431108 - Online Handbook... Launches Irrelevant Documentation.
 241 ==> 431095 - Make "scan for new items" collection sensitive.
 242 ==> 431117 - Selected GPX File Colour Is Grayed Out When Selected.
-243 ==> 
+243 ==> 431081 - Exif data is completely lost for some pictures after detect faces / recognize faces.
+244 ==> 
