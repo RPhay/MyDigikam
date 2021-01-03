@@ -60,6 +60,7 @@ echo -e "\n---------- Build icons-set ressource\n"
 cd $ORIG_WD/icon-rcc
 
 rm -f CMakeCache.txt > /dev/null
+rm -f *.rcc > /dev/null
 
 cp -f $ORIG_WD/../../../bootstrap.macports .
 
