@@ -210,12 +210,7 @@ DigikamApp::~DigikamApp()
 
     if (ImageWindow::imageWindowCreated())
     {
-        // Delete after close
-
         ImageWindow::imageWindow()->setAttribute(Qt::WA_DeleteOnClose, true);
-
-        // close the window
-
         ImageWindow::imageWindow()->close();
         qApp->processEvents();
     }
@@ -238,8 +233,11 @@ DigikamApp::~DigikamApp()
         qApp->processEvents();
     }
 
+    // Close and delete Tags Manager instance.
+
     if (TagsManager::isCreated())
     {
+        TagsManager::instance()->setAttribute(Qt::WA_DeleteOnClose, true);
         TagsManager::instance()->close();
     }
 
@@ -258,6 +256,7 @@ DigikamApp::~DigikamApp()
 #endif
 
     delete d->view;
+    d->view = nullptr;
 
     DPluginLoader::instance()->cleanUp();
 
