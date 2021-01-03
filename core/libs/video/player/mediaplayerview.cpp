@@ -510,9 +510,16 @@ void MediaPlayerView::slotImageCaptured(const QImage& image)
                     dateTime = QDateTime::currentDateTime();
                 }
 
-                meta->setItemDimensions(image.size());
+                MetaEngine::ImageOrientation orientation = MetaEngine::ORIENTATION_NORMAL;
+
+                if ((MetaEngine::ImageOrientation)dinfo.orientation() != MetaEngine::ORIENTATION_UNSPECIFIED)
+                {
+                    orientation = (MetaEngine::ImageOrientation)dinfo.orientation();
+                }
+
                 meta->setImageDateTime(dateTime, true);
-                meta->setItemOrientation((MetaEngine::ImageOrientation)dinfo.orientation());
+                meta->setItemDimensions(image.size());
+                meta->setItemOrientation(orientation);
                 meta->save(tempPath, true);
             }
 
