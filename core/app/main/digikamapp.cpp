@@ -352,7 +352,7 @@ void DigikamApp::show()
 
     if (ApplicationSettings::instance()->getCleanAtStart())
     {
-        DbCleaner* const tool = new DbCleaner(false,false);
+        DbCleaner* const tool = new DbCleaner(false, false);
         QTimer::singleShot(1000, tool, SLOT(start()));
     }
 }
