@@ -95,14 +95,14 @@ DModelFactory::~DModelFactory()
     delete d;
 }
 
-AlbumModel* DModelFactory::getAlbumModel() const
-{
-    return d->albumModel;
-}
-
 TagModel* DModelFactory::getTagModel() const
 {
     return d->tagModel;
+}
+
+TagModel* DModelFactory::getTagFacesModel() const
+{
+    return d->tagFacesModel;
 }
 
 TagModel* DModelFactory::getTagFilterModel() const
@@ -110,9 +110,9 @@ TagModel* DModelFactory::getTagFilterModel() const
     return d->tagFilterModel;
 }
 
-TagModel* DModelFactory::getTagFacesModel() const
+AlbumModel* DModelFactory::getAlbumModel() const
 {
-    return d->tagFacesModel;
+    return d->albumModel;
 }
 
 SearchModel* DModelFactory::getSearchModel() const
