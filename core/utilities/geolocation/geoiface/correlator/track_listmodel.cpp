@@ -129,6 +129,7 @@ QVariant TrackListModel::data(const QModelIndex& index, int role) const
             break;
 
         case Qt::BackgroundRole:
+        case Qt::DecorationRole:
 
             switch (columnNumber)
             {
