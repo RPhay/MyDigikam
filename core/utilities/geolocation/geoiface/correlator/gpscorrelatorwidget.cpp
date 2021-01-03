@@ -614,7 +614,7 @@ void GPSCorrelatorWidget::slotCurrentChanged(const QModelIndex& current, const Q
     {
         const TrackManager::Track& track = d->trackListModel->getTrackForIndex(current);
 
-        if (track.points.size() > 0)
+        if ((track.id != 0) && (track.points.size() > 0))
         {
             const GeoCoordinates& coordinates = track.points.at(0).coordinates;
             emit signalTrackListChanged(coordinates);
