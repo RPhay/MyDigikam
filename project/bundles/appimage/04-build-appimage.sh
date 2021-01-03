@@ -61,6 +61,7 @@ echo -e "---------- Build icons-set ressource\n"
 cd $ORIG_WD/icon-rcc
 
 rm -f CMakeCache.txt > /dev/null
+rm -f *.rcc > /dev/null
 
 cmake -DCMAKE_INSTALL_PREFIX="/usr" \
       -DCMAKE_BUILD_TYPE=debug \
