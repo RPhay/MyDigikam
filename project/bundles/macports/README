@@ -13,7 +13,7 @@ AUTHORS
 -------
 
 (c)      2015 by Shanti <listaccount at revenant dot org>
-(c) 2015-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+(c) 2015-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
 
 
 DESCRIPTION
@@ -29,76 +29,67 @@ BUNDLE CONTENTS
 
 Note: the bundle is relocatable.
 
-Bundle is composed of two main application containers (digikam and showfoto), to start applet from the MacOS lauchpad.
-The digikam main application container include private two sub-containers to start real MacOS applications (digikam and showfoto).
+Bundle is composed of two main application containers (digikam and showfoto), to start from the macOS lauchpad.
+The digikam sub-container include all resources shared with showfoto.
 The showfoto sub-container directories are linked to the digikam sub-container to reduce used-space.
-The host directory is called "digiKam.org" and not "digiKam" to allow Showfoto applet icon to be show on MacOS lauchpad,
+The host directory is called "digiKam.org" and not "digiKam" to allow Showfoto icon to be show on macOS lauchpad,
 else only digiKam is visible.
 
 digiKam.org
-├── digikam.app                                         Main digiKam application container
+├── digikam.app                             digiKam sub-container
 │   └── Contents
-│       ├── MacOS                                       Applet to start digiKam in sub container
-│       ├── opt                                         Real bainries and resources are located here
-│       │   ├── digikam.app                             digiKam sub-container
-│       │   │   └── Contents
-│       │   │       ├── bin                             Extra binaries
-│       │   │       ├── etc                             Extra configuration
-│       │   │       ├── lib                             Libraries and extra dependencies
-│       │   │       ├── libexec                         Run time dependencies
-│       │   │       │   └── qt5
-│       │   │       │       ├── lib
-│       │   │       │       └── plugins                 Plugins
-│       │   │       │           ├── bearer
-│       │   │       │           ├── designer
-│       │   │       │           ├── digikam             digiKam and Showfoto DPlugins
-│       │   │       │           │   ├── bqm
-│       │   │       │           │   ├── dimg
-│       │   │       │           │   ├── editor
-│       │   │       │           │   ├── generic
-│       │   │       │           │   └── rawimport
-│       │   │       │           ├── generic
-│       │   │       │           ├── iconengines
-│       │   │       │           ├── imageformats
-│       │   │       │           ├── kauth
-│       │   │       │           ├── kf5
-│       │   │       │           ├── platforms
-│       │   │       │           ├── platformthemes
-│       │   │       │           ├── printsupport
-│       │   │       │           ├── sqldrivers
-│       │   │       │           └── styles
-│       │   │       ├── MacOS                           digiKam real binary
-│       │   │       ├── Resources                       Data and resource files
-│       │   │       │   ├── applications
-│       │   │       │   ├── data
-│       │   │       │   ├── digikam
-│       │   │       │   ├── kf5
-│       │   │       │   ├── knotifications5
-│       │   │       │   ├── kservices5
-│       │   │       │   ├── kservicetypes5
-│       │   │       │   ├── kxmlgui5
-│       │   │       │   ├── lensfun                     Lens auto correction profiles
-│       │   │       │   ├── locale
-│       │   │       │   ├── mime
-│       │   │       │   ├── opencv4
-│       │   │       │   ├── plugins
-│       │   │       │   ├── showfoto
-│       │   │       │   └── solid
-│       │   │       └── share                           Shared files
-│       │   └── showfoto.app                            Showfoto sub-container
-│       │       └── Contents
-│       │           ├── bin                             -> ../../digikam.app/Contents/bin
-│       │           ├── etc                             -> ../../digikam.app/Contents/etc
-│       │           ├── lib                             -> ../../digikam.app/Contents/lib
-│       │           ├── libexec                         -> ../../digikam.app/Contents/libexec
-│       │           ├── MacOS                           Showfoto real binary
-│       │           ├── Resources                       -> ../../digikam.app/Contents/Resources
-│       │           └── share                           -> ../../digikam.app/Contents/share
-│       └── Resources
-└── showfoto.app                                        Main Showfoto application container
+│       ├── bin                             Extra binaries
+│       ├── etc                             Extra configuration
+│       ├── lib                             Libraries and extra dependencies
+│       ├── libexec                         Run time dependencies
+│       │   └── qt5
+│       │       ├── lib
+│       │       └── plugins                 Plugins
+│       │           ├── bearer
+│       │           ├── designer
+│       │           ├── digikam             digiKam and Showfoto DPlugins
+│       │           │   ├── bqm
+│       │           │   ├── dimg
+│       │           │   ├── editor
+│       │           │   ├── generic
+│       │           │   └── rawimport
+│       │           ├── generic
+│       │           ├── iconengines
+│       │           ├── imageformats
+│       │           ├── kauth
+│       │           ├── kf5
+│       │           ├── platforms
+│       │           ├── platformthemes
+│       │           ├── printsupport
+│       │           ├── sqldrivers
+│       │           └── styles
+│       ├── MacOS                           digiKam binary
+│       ├── Resources                       Data and resource files
+│       │   ├── applications
+│       │   ├── data
+│       │   ├── digikam
+│       │   ├── kf5
+│       │   ├── knotifications5
+│       │   ├── kservices5
+│       │   ├── kservicetypes5
+│       │   ├── kxmlgui5
+│       │   ├── lensfun                     Lens auto correction profiles
+│       │   ├── locale
+│       │   ├── mime
+│       │   ├── opencv4
+│       │   ├── plugins
+│       │   ├── showfoto
+│       │   └── solid
+│       └── share                           Shared files
+└── showfoto.app                            Showfoto sub-container
     └── Contents
-        ├── MacOS                                       Applet to start Showfoto
-        └── Resources
+        ├── bin                             -> ../../digikam.app/Contents/bin
+        ├── etc                             -> ../../digikam.app/Contents/etc
+        ├── lib                             -> ../../digikam.app/Contents/lib
+        ├── libexec                         -> ../../digikam.app/Contents/libexec
+        ├── MacOS                           Showfoto binary
+        ├── Resources                       -> ../../digikam.app/Contents/Resources
+        └── share                           -> ../../digikam.app/Contents/share
 
 REQUIREMENTS
 ------------
