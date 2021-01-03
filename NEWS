@@ -257,4 +257,5 @@ BUGFIXES:
 237 ==> 430949 - digiKam-7.2.0-beta2 (macOS (DMG)) breaks existing local MySQL/MariaDB instances on upgrade.
 238 ==> 430985 - New beta release doesn´t start.
 239 ==> 430996 - Yolo v3 causes application to crash with 32 bits version.
-240 ==> 
+240 ==> 431108 - Online Handbook... Launches Irrelevant Documentation.
+241 ==> 
