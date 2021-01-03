@@ -477,11 +477,9 @@ void DigikamApp::slotAlbumSelected(Album* album)
 
             d->deleteAction->setEnabled(false);
             d->renameAction->setEnabled(false);
-            d->addImagesAction->setEnabled(false);
             d->propsEditAction->setEnabled(false);
             d->openInFileManagerAction->setEnabled(false);
             d->newAction->setEnabled(false);
-            d->addFoldersAction->setEnabled(false);
             d->writeAlbumMetadataAction->setEnabled(true);
             d->readAlbumMetadataAction->setEnabled(true);
 
@@ -517,11 +515,9 @@ void DigikamApp::slotAlbumSelected(Album* album)
 
             d->deleteAction->setEnabled(isNormalAlbum);
             d->renameAction->setEnabled(isNormalAlbum);
-            d->addImagesAction->setEnabled(isNormalAlbum || isAlbumRoot);
             d->propsEditAction->setEnabled(isNormalAlbum);
             d->openInFileManagerAction->setEnabled(isNormalAlbum || isAlbumRoot);
             d->newAction->setEnabled(isNormalAlbum || isAlbumRoot);
-            d->addFoldersAction->setEnabled(isNormalAlbum || isAlbumRoot);
             d->writeAlbumMetadataAction->setEnabled(isNormalAlbum || isAlbumRoot);
             d->readAlbumMetadataAction->setEnabled(isNormalAlbum || isAlbumRoot);
 
@@ -538,11 +534,9 @@ void DigikamApp::slotAlbumSelected(Album* album)
 
         d->deleteAction->setEnabled(false);
         d->renameAction->setEnabled(false);
-        d->addImagesAction->setEnabled(false);
         d->propsEditAction->setEnabled(false);
         d->openInFileManagerAction->setEnabled(false);
         d->newAction->setEnabled(false);
-        d->addFoldersAction->setEnabled(false);
         d->writeAlbumMetadataAction->setEnabled(false);
         d->readAlbumMetadataAction->setEnabled(false);
 

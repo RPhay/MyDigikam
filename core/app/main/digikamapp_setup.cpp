@@ -1049,7 +1049,6 @@ void DigikamApp::initGui()
 
     d->deleteAction->setEnabled(false);
     d->renameAction->setEnabled(false);
-    d->addImagesAction->setEnabled(false);
     d->propsEditAction->setEnabled(false);
     d->openInFileManagerAction->setEnabled(false);
 
