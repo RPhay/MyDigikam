@@ -260,6 +260,9 @@ GPSCorrelatorWidget::GPSCorrelatorWidget(QWidget* const parent,
     settingsLayout->addWidget(d->correlateButton,    9, 0, 1, 1);
     settingsLayout->setRowStretch(9, 100);
 
+    connect(d->gpxFileList->selectionModel(), SIGNAL(currentChanged(QModelIndex,QModelIndex)),
+            this, SLOT(slotCurrentChanged(QModelIndex,QModelIndex)));
+
     connect(d->gpxLoadFilesButton, SIGNAL(clicked()),
             this, SLOT(slotLoadTrackFiles()));
 
@@ -603,6 +606,20 @@ void GPSCorrelatorWidget::slotShowTracksStateChanged(int state)
 bool GPSCorrelatorWidget::getShowTracksOnMap() const
 {
     return d->showTracksOnMap->isChecked();
+}
+
+void GPSCorrelatorWidget::slotCurrentChanged(const QModelIndex& current, const QModelIndex& /*previous*/)
+{
+    if (current.isValid())
+    {
+        const TrackManager::Track& track = d->trackListModel->getTrackForIndex(current);
+
+        if (track.points.size() > 0)
+        {
+            const GeoCoordinates& coordinates = track.points.at(0).coordinates;
+            emit signalTrackListChanged(coordinates);
+        }
+    }
 }
 
 } // namespace Digikam

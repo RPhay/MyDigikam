@@ -105,6 +105,7 @@ private Q_SLOTS:
     void slotCurrentTabChanged(int);
     void slotBookmarkVisibilityToggled();
     void slotLayoutChanged(int);
+    void slotTrackListChanged(const Digikam::GeoCoordinates& coordinate);
 
 private:
 

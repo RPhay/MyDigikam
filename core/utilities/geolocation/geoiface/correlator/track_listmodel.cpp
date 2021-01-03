@@ -252,4 +252,14 @@ void Digikam::TrackListModel::slotTrackManagerUpdated()
     endResetModel();
 }
 
+TrackManager::Track TrackListModel::getTrackForIndex(const QModelIndex& index) const
+{
+    if (index.isValid())
+    {
+        return d->trackManager->getTrackById(index.internalId());
+    }
+
+    return TrackManager::Track();
+}
+
 } // namespace Digikam

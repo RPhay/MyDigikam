@@ -455,6 +455,9 @@ GeolocationEdit::GeolocationEdit(QWidget* const parent, DInfoInterface* const if
     connect(d->correlatorWidget, SIGNAL(signalUndoCommand(GPSUndoCommand*)),
             this, SLOT(slotGPSUndoCommand(GPSUndoCommand*)));
 
+    connect(d->correlatorWidget, SIGNAL(signalTrackListChanged(Digikam::GeoCoordinates)),
+            this, SLOT(slotTrackListChanged(Digikam::GeoCoordinates)));
+
     connect(d->mapModelHelper, SIGNAL(signalUndoCommand(GPSUndoCommand*)),
             this, SLOT(slotGPSUndoCommand(GPSUndoCommand*)));
 
@@ -1059,6 +1062,11 @@ void GeolocationEdit::slotLayoutChanged(int lay)
 {
     d->mapLayout = (MapLayout)lay;
     adjustMapLayout(true);
+}
+
+void GeolocationEdit::slotTrackListChanged(const GeoCoordinates& coordinate)
+{
+    d->mapWidget->setCenter(coordinate);
 }
 
 MapWidget* GeolocationEdit::makeMapWidget(QWidget** const pvbox)

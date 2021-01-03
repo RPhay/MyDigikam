@@ -71,6 +71,7 @@ Q_SIGNALS:
     void signalProgressChanged(const int currentProgress);
     void signalUndoCommand(GPSUndoCommand* undoCommand);
     void signalAllTrackFilesReady();
+    void signalTrackListChanged(const Digikam::GeoCoordinates& coordinate);
 
 public Q_SLOTS:
 
@@ -86,6 +87,7 @@ private Q_SLOTS:
     void slotAllItemsCorrelated();
     void slotCorrelationCanceled();
     void slotShowTracksStateChanged(int state);
+    void slotCurrentChanged(const QModelIndex& current, const QModelIndex& previous);
 
 private:
 
