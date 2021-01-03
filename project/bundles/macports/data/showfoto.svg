@@ -1,6 +1,4 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<!-- Created with Inkscape (http://www.inkscape.org/) -->
-
 <svg
    xmlns:dc="http://purl.org/dc/elements/1.1/"
    xmlns:cc="http://creativecommons.org/ns#"
@@ -8,10 +6,34 @@
    xmlns:svg="http://www.w3.org/2000/svg"
    xmlns="http://www.w3.org/2000/svg"
    xmlns:xlink="http://www.w3.org/1999/xlink"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    version="1.0"
    width="32"
    height="32"
-   id="svg2">
+   id="svg2"
+   sodipodi:docname="showfoto.svg"
+   inkscape:version="1.0.1 (c497b03c, 2020-09-10)">
+  <sodipodi:namedview
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1"
+     objecttolerance="10"
+     gridtolerance="10"
+     guidetolerance="10"
+     inkscape:pageopacity="0"
+     inkscape:pageshadow="2"
+     inkscape:window-width="728"
+     inkscape:window-height="480"
+     id="namedview1671"
+     showgrid="false"
+     inkscape:zoom="18.65625"
+     inkscape:cx="16"
+     inkscape:cy="16"
+     inkscape:window-x="0"
+     inkscape:window-y="25"
+     inkscape:window-maximized="0"
+     inkscape:current-layer="svg2" />
   <defs
      id="defs4">
     <linearGradient
@@ -425,7 +447,7 @@
      id="g4127"
      style="display:none">
     <image
-       xlink:href="/media/250gb/valokuvat/Syksy 02-09-05 Kuusamo, inkavaaralla luonnonpuistossa suomen komeimman kosken kuvaamista/img_5766_4.jpg"
+       xlink:href="file:///media/250gb/valokuvat/Syksy%2002-09-05%20Kuusamo,%20inkavaaralla%20luonnonpuistossa%20suomen%20komeimman%20kosken%20kuvaamista/img_5766_4.jpg"
        x="-211.14287"
        y="-208"
        width="1677.7142"
@@ -488,7 +510,7 @@
      id="g3101"
      style="display:none">
     <image
-       xlink:href="/media/250gb/valokuvat/Syksy 02-09-05 Kuusamo, inkavaaralla luonnonpuistossa suomen komeimman kosken kuvaamista/img_5766_4.jpg"
+       xlink:href="file:///media/250gb/valokuvat/Syksy%2002-09-05%20Kuusamo,%20inkavaaralla%20luonnonpuistossa%20suomen%20komeimman%20kosken%20kuvaamista/img_5766_4.jpg"
        x="-211.14287"
        y="-208"
        width="1677.7142"
