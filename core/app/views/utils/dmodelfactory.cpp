@@ -63,13 +63,13 @@ public:
 DModelFactory::DModelFactory() :
     d(new Private)
 {
-    d->albumModel        = new AlbumModel(AlbumModel::IncludeRootAlbum);
     d->tagModel          = new TagModel(AbstractAlbumModel::IncludeRootAlbum);
-    d->tagFilterModel    = new TagModel(AbstractAlbumModel::IgnoreRootAlbum);
-    d->tagFilterModel->setAddExcludeTristate(true);
     d->tagFacesModel     = new TagModel(AbstractAlbumModel::IgnoreRootAlbum);
     d->tagFacesModel->setTagCount(TagModel::FaceTagCount);
+    d->tagFilterModel    = new TagModel(AbstractAlbumModel::IgnoreRootAlbum);
+    d->tagFilterModel->setAddExcludeTristate(true);
 
+    d->albumModel        = new AlbumModel(AlbumModel::IncludeRootAlbum);
     d->searchModel       = new SearchModel();
     d->dateAlbumModel    = new DateAlbumModel();
     d->imageVersionModel = new ItemVersionsModel();
@@ -84,17 +84,15 @@ DModelFactory::DModelFactory() :
 DModelFactory::~DModelFactory()
 {
     delete d->tagModel;
+    delete d->tagFacesModel;
     delete d->tagFilterModel;
+
     delete d->albumModel;
     delete d->searchModel;
     delete d->dateAlbumModel;
     delete d->imageVersionModel;
-    delete d;
-}
 
-AlbumModel* DModelFactory::getAlbumModel() const
-{
-    return d->albumModel;
+    delete d;
 }
 
 TagModel* DModelFactory::getTagModel() const
@@ -102,14 +100,19 @@ TagModel* DModelFactory::getTagModel() const
     return d->tagModel;
 }
 
+TagModel* DModelFactory::getTagFacesModel() const
+{
+    return d->tagFacesModel;
+}
+
 TagModel* DModelFactory::getTagFilterModel() const
 {
     return d->tagFilterModel;
 }
 
-TagModel* DModelFactory::getTagFacesModel() const
+AlbumModel* DModelFactory::getAlbumModel() const
 {
-    return d->tagFacesModel;
+    return d->albumModel;
 }
 
 SearchModel* DModelFactory::getSearchModel() const

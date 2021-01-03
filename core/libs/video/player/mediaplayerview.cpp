@@ -486,38 +486,57 @@ void MediaPlayerView::slotImageCaptured(const QImage& image)
     if (!image.isNull() && d->currentItem.isValid())
     {
         QFileInfo info(d->currentItem.toLocalFile());
-        QString path = QString::fromUtf8("%1/%2-%3.jpg")
-                       .arg(info.path())
-                       .arg(info.baseName())
-                       .arg(d->capturePosition);
+        QString tempPath = QString::fromUtf8("%1/%2-%3.digikamtempfile.jpg")
+                          .arg(info.path())
+                          .arg(info.baseName())
+                          .arg(d->capturePosition);
 
-        image.save(path, "JPG", 100);
-
-        QScopedPointer<DMetadata> meta(new DMetadata);
-
-        if (meta->load(path))
+        if (image.save(tempPath, "JPG", 100))
         {
-            DItemInfo dinfo(d->iface->itemInfo(d->currentItem));
+            QScopedPointer<DMetadata> meta(new DMetadata);
 
-            QDateTime dateTime = dinfo.dateTime();
-
-            if (dateTime.isValid())
+            if (meta->load(tempPath))
             {
-                dateTime = dateTime.addMSecs(d->capturePosition);
+                DItemInfo dinfo(d->iface->itemInfo(d->currentItem));
+
+                QDateTime dateTime = dinfo.dateTime();
+
+                if (dateTime.isValid())
+                {
+                    dateTime = dateTime.addMSecs(d->capturePosition);
+                }
+                else
+                {
+                    dateTime = QDateTime::currentDateTime();
+                }
+
+                MetaEngine::ImageOrientation orientation = MetaEngine::ORIENTATION_NORMAL;
+
+                if ((MetaEngine::ImageOrientation)dinfo.orientation() != MetaEngine::ORIENTATION_UNSPECIFIED)
+                {
+                    orientation = (MetaEngine::ImageOrientation)dinfo.orientation();
+                }
+
+                meta->setImageDateTime(dateTime, true);
+                meta->setItemDimensions(image.size());
+                meta->setItemOrientation(orientation);
+                meta->save(tempPath, true);
+            }
+
+            QString finalPath = QString::fromUtf8("%1/%2-%3.jpg")
+                               .arg(info.path())
+                               .arg(info.baseName())
+                               .arg(d->capturePosition);
+
+            if (QFile::rename(tempPath, finalPath))
+            {
+                d->iface->slotMetadataChangedForUrl(QUrl::fromLocalFile(finalPath));
             }
             else
             {
-                dateTime = QDateTime::currentDateTime();
+                QFile::remove(tempPath);
             }
-
-            meta->setItemDimensions(image.size());
-            meta->setImageDateTime(dateTime, true);
-            meta->setItemOrientation(MetaEngine::ORIENTATION_NORMAL);
-
-            meta->save(path, true);
         }
-
-        d->iface->slotMetadataChangedForUrl(QUrl::fromLocalFile(path));
     }
 }
 

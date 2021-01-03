@@ -54,10 +54,11 @@ public:
     DModelFactory();
     ~DModelFactory() override;
 
-    AlbumModel*        getAlbumModel()        const;
     TagModel*          getTagModel()          const;
-    TagModel*          getTagFilterModel()    const;
     TagModel*          getTagFacesModel()     const;
+    TagModel*          getTagFilterModel()    const;
+
+    AlbumModel*        getAlbumModel()        const;
     SearchModel*       getSearchModel()       const;
     DateAlbumModel*    getDateAlbumModel()    const;
     ItemVersionsModel* getItemVersionsModel() const;

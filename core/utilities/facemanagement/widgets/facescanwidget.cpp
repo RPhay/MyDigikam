@@ -48,7 +48,6 @@ FaceScanWidget::~FaceScanWidget()
 
 void FaceScanWidget::doLoadState()
 {
-    qCDebug(DIGIKAM_GENERAL_LOG) << getConfigGroup().name();
     KConfigGroup group = getConfigGroup();
     QString mainTask   = group.readEntry(entryName(d->configMainTask),
                                          d->configValueDetect);
@@ -116,8 +115,6 @@ void FaceScanWidget::doLoadState()
 
 void FaceScanWidget::doSaveState()
 {
-    qCDebug(DIGIKAM_GENERAL_LOG) << getConfigGroup().name();
-
     KConfigGroup group = getConfigGroup();
 
     QString mainTask;
