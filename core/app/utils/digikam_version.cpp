@@ -45,7 +45,7 @@
 namespace Digikam
 {
 
-const int digiKamMakeIntergerVersion(int major, int minor, int patch)
+int digiKamMakeIntegerVersion(int major, int minor, int patch)
 {
     return (((major) << 16) | ((minor) << 8) | (patch));
 }

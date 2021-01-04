@@ -85,25 +85,35 @@ void OnlineVersionChecker::downloadFinished(QNetworkReply* reply)
 
     QString data = QString::fromUtf8(reply->readAll());
 
-    if (data.isEmpty())
+
+    qDebug() << data;
+
+    QString tag       = QLatin1String("version: ");
+    int start         = data.indexOf(tag) + tag.size();
+    QString rightVer  = data.mid(start);
+    int end           = rightVer.indexOf(QLatin1Char('\n'));
+    QString onlineVer = rightVer.mid(0, end);
+
+    QStringList onlineVals = onlineVer.split(QLatin1Char('.'));
+
+    if (onlineVals.size() != 3)
     {
         emit signalNewVersionCheckError(QNetworkReply::ProtocolFailure);
         return;
     }
 
-    qDebug() << data;
+    QStringList currentVals = QString::fromLatin1(digikam_version_short).split(QLatin1Char('.'));
 
-    QString tag         = QLatin1String("version: ");
-    int start           = data.indexOf(tag) + tag.size();
-    QString rightVer    = data.mid(start);
-    int end             = rightVer.indexOf(QLatin1Char('\n'));
-    QString readVersion = rightVer.mid(0, end);
+    qDebug() << "Online Version:" << onlineVer;
 
-    qDebug() << "Online Version:" << readVersion;
-
-    if (readVersion > QLatin1String(digikam_version_short))
+    if (digiKamMakeIntegerVersion(onlineVals[0].toInt(),
+                                  onlineVals[1].toInt(),
+                                  onlineVals[2].toInt()) >
+        digiKamMakeIntegerVersion(currentVals[0].toInt(),
+                                  currentVals[1].toInt(),
+                                  currentVals[2].toInt()))
     {
-        emit signalNewVersionAvailable(readVersion);
+        emit signalNewVersionAvailable(onlineVer);
     }
     else
     {
