@@ -35,10 +35,10 @@ using namespace Digikam;
 
 int main(int argc, char* argv[])
 {
-    QApplication a(argc, argv);
+    QApplication app(argc, argv);
 
     OnlineVersionChecker check(&app);
-    check.checkforNewVersion();
+    check.checkForNewVersion();
 
     QTest::qWait(3000);
 
