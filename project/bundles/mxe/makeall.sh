@@ -3,7 +3,7 @@
 # Script to run all MXE based sub-scripts to build Windows installer.
 # Possible option : "-f" to force operations without to ask confirmation to user.
 #
-# Copyright (c) 2013-2020 by Gilles Caulier  <caulier dot gilles at gmail dot com>
+# Copyright (c) 2013-2021 by Gilles Caulier  <caulier dot gilles at gmail dot com>
 #
 # Redistribution and use is allowed according to the terms of the BSD license.
 # For details see the accompanying COPYING-CMAKE-SCRIPTS file.
@@ -21,7 +21,7 @@ StartScript
 echo "This script will build from scratch the digiKam installer for Windows using MXE."
 echo "++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++"
 
-if [[ -d "`pwd`/build.win32" ]] || [[ -d "`pwd`/build.win64" ]] ; then
+if [[ -d "`pwd`/build.win64" ]] ; then
 
     if [ "$1" != "-f" ] ; then
 
@@ -37,33 +37,13 @@ if [[ -d "`pwd`/build.win32" ]] || [[ -d "`pwd`/build.win64" ]] ; then
     fi
 
     echo "---------- Removing existing MXE build"
-    rm -fr `pwd`/build.win32
     rm -fr `pwd`/build.win64
 
 fi
 
-echo "++++++++++++++++   Build 32 bits Installer   ++++++++++++++++++++++++++++++++++"
-echo "+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++"
-
-sed -e "s/MXE_ARCHBITS=64/MXE_ARCHBITS=32/g" ./config.sh > ./tmp.sh ; mv -f ./tmp.sh ./config.sh
-
-./01-build-mxe.sh
-./02-build-extralibs.sh
-./03-build-digikam.sh
-
-sed -e "s/DK_DEBUG=1/DK_DEBUG=0/g"           ./config.sh > ./tmp.sh ; mv -f ./tmp.sh ./config.sh
-
-./04-build-installer.sh
-
-sed -e "s/DK_DEBUG=0/DK_DEBUG=1/g"           ./config.sh > ./tmp.sh ; mv -f ./tmp.sh ./config.sh
-
-./04-build-installer.sh
-
 echo "++++++++++++++++   Build 64 bits Installer   ++++++++++++++++++++++++++++++++++"
 echo "+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++"
 
-sed -e "s/MXE_ARCHBITS=32/MXE_ARCHBITS=64/g" ./config.sh > ./tmp.sh ; mv -f ./tmp.sh ./config.sh
-
 ./01-build-mxe.sh
 ./02-build-extralibs.sh
 ./03-build-digikam.sh
@@ -76,7 +56,6 @@ sed -e "s/DK_DEBUG=0/DK_DEBUG=1/g"           ./config.sh > ./tmp.sh ; mv -f ./tm
 
 ./04-build-installer.sh
 
-sed -e "s/MXE_ARCHBITS=64/MXE_ARCHBITS=32/g" ./config.sh > ./tmp.sh ; mv -f ./tmp.sh ./config.sh
 sed -e "s/DK_DEBUG=1/DK_DEBUG=0/g"           ./config.sh > ./tmp.sh ; mv -f ./tmp.sh ./config.sh
 
 echo "+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++"
