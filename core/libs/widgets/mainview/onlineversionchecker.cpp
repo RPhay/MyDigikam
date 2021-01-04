@@ -97,9 +97,9 @@ void OnlineVersionChecker::downloadFinished(QNetworkReply* reply)
     int start           = data.indexOf(tag) + tag.size();
     QString rightVer    = data.mid(start);
     int end             = rightVer.indexOf(QLatin1Char('\n'));
-    QString readVersion = data.mid(0, end);
+    QString readVersion = rightVer.mid(0, end);
 
-    qDebug() << readVersion;
+    qDebug() << "Online Version:" << readVersion;
 
     if (readVersion > QLatin1String(digikam_version_short))
     {
