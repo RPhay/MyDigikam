@@ -48,7 +48,7 @@ DIGIKAM_EXPORT const QString additionalInformation();
  * Make an integer version number for comparison from a major, minor and
  * a patch version number.
  */
-DIGIKAM_EXPORT const int digiKamMakeIntergerVersion(int major, int minor, int patch)
+DIGIKAM_EXPORT const int digiKamMakeIntergerVersion(int major, int minor, int patch);
 
 }  // namespace Digikam
 
