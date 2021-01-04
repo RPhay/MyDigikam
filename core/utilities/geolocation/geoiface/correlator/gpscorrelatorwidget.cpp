@@ -610,7 +610,7 @@ bool GPSCorrelatorWidget::getShowTracksOnMap() const
 
 void GPSCorrelatorWidget::slotCurrentChanged(const QModelIndex& current, const QModelIndex& /*previous*/)
 {
-    if (current.isValid())
+    if (d->showTracksOnMap->isChecked() && current.isValid())
     {
         const TrackManager::Track& track = d->trackListModel->getTrackForIndex(current);
 
