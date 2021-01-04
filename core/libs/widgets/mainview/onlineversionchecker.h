@@ -32,10 +32,14 @@
 #include <QNetworkReply>
 #include <QDateTime>
 
+// Local includes
+
+#include "digikam_export.h"
+
 namespace Digikam
 {
 
-class OnlineVersionChecker : public QObject
+class DIGIKAM_EXPORT OnlineVersionChecker : public QObject
 {
     Q_OBJECT
 
