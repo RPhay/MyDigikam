@@ -49,8 +49,6 @@ public:
 
 private:
 
-    static const QUrl       versionCheckUrl;
-
     QNetworkAccessManager   manager;
     QNetworkReply*          curRequest;
 

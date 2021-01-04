@@ -37,8 +37,6 @@
 namespace Digikam
 {
 
-const QUrl OnlineVersionChecker::versionCheckUrl("https://invent.kde.org/websites/digikam-org/-/raw/master/data/release.yml");
-
 OnlineVersionChecker::OnlineVersionChecker(QObject* const parent)
     : QObject   (parent),
       curRequest(nullptr)
@@ -53,7 +51,7 @@ OnlineVersionChecker::~OnlineVersionChecker()
 
 void OnlineVersionChecker::checkForNewVersion()
 {
-    QNetworkRequest request(versionCheckUrl);
+    QNetworkRequest request(QUrl(QLatin1String("https://invent.kde.org/websites/digikam-org/-/raw/master/data/release.yml")));
     curRequest = manager.get(request);
 
     if (curRequest->error())
@@ -85,9 +83,9 @@ void OnlineVersionChecker::downloadFinished(QNetworkReply* reply)
         return;
     }
 
-    QString data = reply->readAll();
+    QString data = QString::fromUtf8(reply->readAll());
 
-    if (data.isEmpty()))
+    if (data.isEmpty())
     {
         emit signalNewVersionCheckError(QNetworkReply::ProtocolFailure);
         return;
@@ -103,19 +101,19 @@ void OnlineVersionChecker::downloadFinished(QNetworkReply* reply)
 
     qDebug() << readVersion;
 
-    if (readVersion > QLatin1String(digikam_version_short);)
+    if (readVersion > QLatin1String(digikam_version_short))
     {
-        emit newVersionAvailable(readVersion);
+        emit signalNewVersionAvailable(readVersion);
     }
     else
     {
-        emit newVersionCheckError(QNetworkReply::NoError);
+        emit signalNewVersionCheckError(QNetworkReply::NoError);
     }
 }
 
 void OnlineVersionChecker::error(QNetworkReply::NetworkError code)
 {
-    emit newVersionCheckError(code);
+    emit signalNewVersionCheckError(code);
 }
 
 } // namespace Digikam
