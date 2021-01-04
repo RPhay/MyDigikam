@@ -4,9 +4,9 @@
  * https://www.digikam.org
  *
  * Date        : 2017-05-25
- * Description : a stand alone tool to browse a web page.
+ * Description : a stand alone tool to check version online.
  *
- * Copyright (C) 2017-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2017-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -24,12 +24,12 @@
 // Qt includes
 
 #include <QApplication>
-#include <QUrl>
+#include <QTest>
 #include <QDebug>
 
 // Local includes
 
-#include "webbrowserdlg.h"
+#include "onlineversionchecker.h"
 
 using namespace Digikam;
 
@@ -37,15 +37,10 @@ int main(int argc, char* argv[])
 {
     QApplication a(argc, argv);
 
-    if (argc == 1)
-    {
-        qDebug() << "browser - web page url to show";
-        qDebug() << "Usage: url top open";
-        return -1;
-    }
+    OnlineVersionChecker check(&app);
+    check.checkforNewVersion();
 
-    WebBrowserDlg browser(QUrl(QString::fromUtf8(argv[1])), nullptr);
-    browser.show();
+    QTest::qWait(3000);
 
-    return a.exec();
+    return 0;
 }

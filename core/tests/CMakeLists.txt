@@ -1,5 +1,5 @@
 #
-# Copyright (c) 2010-2020 by Gilles Caulier, <caulier dot gilles at gmail dot com>
+# Copyright (c) 2010-2021 by Gilles Caulier, <caulier dot gilles at gmail dot com>
 #
 # Redistribution and use is allowed according to the terms of the BSD license.
 # For details see the accompanying COPYING-CMAKE-SCRIPTS file.
@@ -140,7 +140,6 @@ target_link_libraries(libmodeltest
 add_subdirectory(advancedrename)
 add_subdirectory(albummodel)                    # Unit-test based on ModelTest
 add_subdirectory(database)                      # Some unit-tests based on ModelTest
-add_subdirectory(dialogs)
 add_subdirectory(dimg)
 add_subdirectory(dngwriter)
 add_subdirectory(dplugins)
@@ -152,6 +151,7 @@ add_subdirectory(iojobs)
 add_subdirectory(mediaserver)
 add_subdirectory(mediawiki)
 add_subdirectory(metadataengine)
+add_subdirectory(miscs)
 add_subdirectory(multithreading)
 add_subdirectory(rawengine)
 add_subdirectory(timestampupdate)
