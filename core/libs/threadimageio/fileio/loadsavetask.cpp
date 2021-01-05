@@ -80,6 +80,8 @@ void LoadingTask::execute()
 {
     if (m_loadingTaskStatus == LoadingTaskStatusStopping)
     {
+        m_thread->taskHasFinished();
+
         return;
     }
 
@@ -132,6 +134,8 @@ void SharedLoadingTask::execute()
 {
     if (m_loadingTaskStatus == LoadingTaskStatusStopping)
     {
+        m_thread->taskHasFinished();
+
         return;
     }
 
