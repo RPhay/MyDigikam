@@ -66,6 +66,8 @@ void ThumbnailLoadingTask::execute()
 {
     if (m_loadingTaskStatus == LoadingTaskStatusStopping)
     {
+        m_thread->taskHasFinished();
+
         return;
     }
 

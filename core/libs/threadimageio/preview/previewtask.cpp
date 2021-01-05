@@ -65,6 +65,11 @@ void PreviewLoadingTask::execute()
 {
     if (m_loadingTaskStatus == LoadingTaskStatusStopping)
     {
+        if (m_thread)
+        {
+            m_thread->taskHasFinished();
+        }
+
         return;
     }
 
