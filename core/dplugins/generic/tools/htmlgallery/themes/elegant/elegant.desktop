@@ -57,6 +57,7 @@ Comment[zh_CN]=基于“简洁”主题设计。使用 Markus F. Hay 编写的 L
 
 [X-HTMLGallery Author]
 Name=Wojciech Jarosz
+Name[bg]=Wojciech Jarosz
 Name[ca]=Wojciech Jarosz
 Name[ca@valencia]=Wojciech Jarosz
 Name[cs]=Wojciech Jarosz
@@ -119,6 +120,7 @@ Url=preview.png
 
 [X-HTMLGallery Parameter author]
 Name=Author
+Name[bg]=Автор
 Name[ca]=Autor
 Name[ca@valencia]=Autor
 Name[cs]=Autor
@@ -294,6 +296,7 @@ Caption-4=10 seconds
 
 [X-HTMLGallery Parameter style]
 Name=Style
+Name[bg]=Стил
 Name[ca]=Estil
 Name[ca@valencia]=Estil
 Name[cs]=Styl

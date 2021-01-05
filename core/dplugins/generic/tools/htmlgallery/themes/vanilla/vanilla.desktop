@@ -50,6 +50,7 @@ Comment[zh_CN]=此主题基于 Adobe Lightroom 的 HTML 导出外观设计。它
 
 [X-HTMLGallery Author]
 Name=Wojciech Jarosz
+Name[bg]=Wojciech Jarosz
 Name[ca]=Wojciech Jarosz
 Name[ca@valencia]=Wojciech Jarosz
 Name[cs]=Wojciech Jarosz
@@ -81,6 +82,7 @@ Url=mailto:wjarosz@ucsd.edu
 
 [X-HTMLGallery Parameter author]
 Name=Author
+Name[bg]=Автор
 Name[ca]=Autor
 Name[ca@valencia]=Autor
 Name[cs]=Autor
@@ -200,6 +202,7 @@ Default=3
 
 [X-HTMLGallery Parameter style]
 Name=Style
+Name[bg]=Стил
 Name[ca]=Estil
 Name[ca@valencia]=Estil
 Name[cs]=Styl

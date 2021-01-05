@@ -60,6 +60,7 @@ Comment[zh_CN]=简洁明快的主题
 
 [X-HTMLGallery Author]
 Name=Aurélien Gâteau
+Name[bg]=Aurélien Gâteau
 Name[ca]=Aurélien Gâteau
 Name[ca@valencia]=Aurélien Gâteau
 Name[cs]=Aurélien Gâteau
@@ -92,6 +93,7 @@ Url=mailto:aurelien.gateau@free.fr
 
 [X-HTMLGallery Parameter style]
 Name=Style
+Name[bg]=Стил
 Name[ca]=Estil
 Name[ca@valencia]=Estil
 Name[cs]=Styl

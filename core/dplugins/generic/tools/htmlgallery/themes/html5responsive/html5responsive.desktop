@@ -87,6 +87,7 @@ Allow-non-square-thumbnails=true
 
 [X-HTMLGallery Parameter author]
 Name=Author
+Name[bg]=Автор
 Name[ca]=Autor
 Name[ca@valencia]=Autor
 Name[cs]=Autor
@@ -119,6 +120,7 @@ Default=
 
 [X-HTMLGallery Parameter style]
 Name=Style
+Name[bg]=Стил
 Name[ca]=Estil
 Name[ca@valencia]=Estil
 Name[cs]=Styl
