@@ -6,6 +6,7 @@
  * Date        : 2021-01-05
  * Description : Online version downloader.
  *
+ * Copyright (C) 2020 by Maik Qualmann <metzpinguin at gmail dot com>
  * Copyright (C) 2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
@@ -50,12 +51,15 @@ public:
 
     explicit Private()
       : downloadUrl(QLatin1String("https://download.kde.org/stable/digikam/")),
+        redirects  (0),
         reply      (nullptr),
         netMngr    (nullptr)
     {
     }
 
     const QString          downloadUrl;
+
+    int                    redirects;
 
     QString                error;
     QString                file;
@@ -86,10 +90,83 @@ OnlineVersionDwnl::~OnlineVersionDwnl()
     delete d;
 }
 
-void OnlineVersionDwnl::startDownload(const QString& file)
+void OnlineVersionDwnl::startDownload(const QString& version)
 {
-    d->file  = file;
-    QUrl url = QUrl(d->downloadUrl + d->file);
+    QString arch;
+    QString bundle;
+
+#ifdef Q_OS_MACOS
+
+    bundle = QLatin1String("pkg");
+
+#   ifdef Q_PROCESSOR_X86_64
+
+    arch   = QLatin1String("x86-64");
+
+#   else
+
+    arch   = QLatin1String("arm-64");
+
+#   endif
+
+#endif
+
+#ifdef Q_OS_WINDOWS
+
+    bundle = QLatin1String("exe");
+
+#   ifdef Q_PROCESSOR_X86_64
+
+    arch   = QLatin1String("x86-64");
+
+#   elif defined Q_PROCESSOR_X86_32
+
+    arch   = QLatin1String("i386");
+
+#   endif
+
+#endif
+
+#ifdef Q_OS_LINUX
+
+    bundle = QLatin1String("appimage");
+
+#   ifdef Q_PROCESSOR_X86_64
+
+    arch   = QLatin1String("x86-64");
+
+#   elif defined Q_PROCESSOR_X86_32
+
+    arch   = QLatin1String("i386");
+
+#   endif
+
+#endif
+
+    if (arch.isEmpty() || bundle.isEmpty())
+    {
+        emit signalDownloadError(i18n("Unsupported Architecture."));
+
+        qCDebug(DIGIKAM_GENERAL_LOG) << "Unsupported architecture";
+
+        return;
+    }
+
+    d->file      = QString::fromLatin1("digikam-%1-%2.%3")
+                      .arg(version)
+                      .arg(arch)
+                      .arg(bundle);
+
+    d->redirects = 0;
+    QUrl url     = QUrl(d->downloadUrl + QString::fromLatin1("%1/").arg(version) + d->file);
+    download(url);
+}
+
+void OnlineVersionDwnl::download(const QUrl& url)
+{
+    qCDebug(DIGIKAM_GENERAL_LOG) << "Downloading: " << url;
+
+    d->redirects++;
     d->reply = d->netMngr->get(QNetworkRequest(url));
 
     connect(d->reply, SIGNAL(downloadProgress(qint64,qint64)),
@@ -111,7 +188,18 @@ void OnlineVersionDwnl::slotDownloaded(QNetworkReply* reply)
     if ((reply->error() != QNetworkReply::NoError)             &&
         (reply->error() != QNetworkReply::InsecureRedirectError))
     {
+        qCDebug(DIGIKAM_GENERAL_LOG) << "Error: " << reply->errorString();
         emit signalDownloadError(reply->errorString());
+        reply->deleteLater();
+
+        return;
+    }
+
+    QUrl redirectUrl = reply->attribute(QNetworkRequest::RedirectionTargetAttribute).toUrl();
+
+    if (redirectUrl.isValid() && (reply->url() != redirectUrl) && (d->redirects < 10))
+    {
+        download(redirectUrl);
 
         reply->deleteLater();
 
@@ -119,6 +207,15 @@ void OnlineVersionDwnl::slotDownloaded(QNetworkReply* reply)
     }
 
     QByteArray data = reply->readAll();
+
+    if (data.isEmpty())
+    {
+        qCDebug(DIGIKAM_GENERAL_LOG) << "Downloaded data is empty";
+        emit signalDownloadError(i18n("Downloaded data is empty."));
+
+        return;
+    }
+
     QString path    = QStandardPaths::writableLocation(QStandardPaths::TempLocation);
     path            = QDir::toNativeSeparators(path + QLatin1String("/") + d->file);
 
@@ -129,10 +226,13 @@ void OnlineVersionDwnl::slotDownloaded(QNetworkReply* reply)
         file.write(data);
         file.close();
 
+        qCDebug(DIGIKAM_GENERAL_LOG) << "Download is complete: " << path;
+
         emit signalDownloadError(QString());  // No error: download is complete.
     }
     else
     {
+        qCDebug(DIGIKAM_GENERAL_LOG) << "Cannot open " << path;
         emit signalDownloadError(i18n("Cannot open target file."));
     }
 }

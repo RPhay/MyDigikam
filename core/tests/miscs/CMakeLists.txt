@@ -27,10 +27,22 @@ target_link_libraries(browser
 
 # -----------------------------------------------------------------
 
-set(onlineversion_SRCS ${CMAKE_CURRENT_SOURCE_DIR}/onlineversion.cpp)
-add_executable(onlineversion ${onlineversion_SRCS})
+set(onlinecheck_SRCS ${CMAKE_CURRENT_SOURCE_DIR}/onlinecheck.cpp)
+add_executable(onlinecheck ${onlinecheck_SRCS})
 
-target_link_libraries(onlineversion
+target_link_libraries(onlinecheck
+
+                      digikamcore
+
+                      ${COMMON_TEST_LINK}
+)
+
+# -----------------------------------------------------------------
+
+set(onlinedownload_SRCS ${CMAKE_CURRENT_SOURCE_DIR}/onlinedownload.cpp)
+add_executable(onlinedownload ${onlinedownload_SRCS})
+
+target_link_libraries(onlinedownload
 
                       digikamcore
 

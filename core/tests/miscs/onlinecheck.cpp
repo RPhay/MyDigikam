@@ -4,7 +4,7 @@
  * https://www.digikam.org
  *
  * Date        : 2021-01-05
- * Description : Online version downloader.
+ * Description : an unit test to check version online.
  *
  * Copyright (C) 2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
@@ -21,51 +21,23 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_ONLINE_VERSION_DWNL_H
-#define DIGIKAM_ONLINE_VERSION_DWNL_H
-
 // Qt includes
 
-#include <QNetworkReply>
-#include <QUrl>
+#include <QApplication>
+#include <QTest>
+#include <QDebug>
 
 // Local includes
 
-#include "digikam_export.h"
+#include "onlineversiondlg.h"
 
-namespace Digikam
+using namespace Digikam;
+
+int main(int argc, char* argv[])
 {
+    QApplication app(argc, argv);
 
-class DIGIKAM_EXPORT OnlineVersionDwnl : public QObject
-{
-    Q_OBJECT
+    OnlineVersionDlg* const dlg = new OnlineVersionDlg;
 
-public:
-
-    explicit OnlineVersionDwnl(QObject* const parent = nullptr);
-    ~OnlineVersionDwnl() override;
-
-    void startDownload(const QString& version);
-
-Q_SIGNALS:
-
-    void signalDownloadError(const QString& error);
-    void signalDownloadProgress(qint64 bytesReceived, qint64 bytesTotal);
-
-private Q_SLOTS:
-
-    void slotDownloaded(QNetworkReply* reply);
-
-private:
-
-    void download(const QUrl& url);
-
-private:
-
-    class Private;
-    Private* const d;
-};
-
-} // namespace Digikam
-
-#endif // DIGIKAM_ONLINE_VERSION_DWNL_H
+    return dlg->exec();
+}

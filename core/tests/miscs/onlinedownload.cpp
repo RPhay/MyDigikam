@@ -3,10 +3,10 @@
  * This file is a part of digiKam project
  * https://www.digikam.org
  *
- * Date        : 2017-05-25
- * Description : a stand alone tool to check version online.
+ * Date        : 2021-01-05
+ * Description : an unit test to download version online.
  *
- * Copyright (C) 2017-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -26,10 +26,11 @@
 #include <QApplication>
 #include <QTest>
 #include <QDebug>
+#include <QObject>
 
 // Local includes
 
-#include "onlineversiondlg.h"
+#include "onlineversiondwnl.h"
 
 using namespace Digikam;
 
@@ -37,7 +38,20 @@ int main(int argc, char* argv[])
 {
     QApplication app(argc, argv);
 
-    OnlineVersionDlg* const dlg = new OnlineVersionDlg;
+    OnlineVersionDwnl* const dwnl = new OnlineVersionDwnl;
+    dwnl->startDownload(QLatin1String("7.1.0"));
 
-    return dlg->exec();
+    QObject::connect(dwnl, &Digikam::OnlineVersionDwnl::signalDownloadProgress,
+                     [=](qint64 brecv, qint64 btotal)
+        {
+            if (btotal)
+            {
+                qDebug() << "Downloaded" << brecv << "/" << btotal << "bytes" << "(" << brecv*100/btotal << "% )";
+            }
+        }
+    );
+
+    app.exec();
+
+    return 0;
 }
