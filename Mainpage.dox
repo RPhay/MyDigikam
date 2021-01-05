@@ -351,7 +351,7 @@ The digikam handbook source code is hosted in a separate GitLab repository:
 
 https://invent.kde.org/documentation/digikam-doc
 
-\section develenv Development Envirronnement
+\section develenv Development Environment
 
 If you are a developer with push access to the git repositories, it is strongly recommended
 to use the "kde:" prefix and let git use the read-only mirrors for pulling.
@@ -519,7 +519,7 @@ http://technet.microsoft.com/en-us/sysinternals/bb896647.aspx
 
 You can set the environment variable \b QT_LOGGING_RULES. Rules are divided by semicolons.
 
-E.g. you can start digiKam like this on the commandline with thumbnails and core database messages disabled:
+E.g. you can start digiKam like this on the command line with thumbnails and core database messages disabled:
 
 \code
     export QT_LOGGING_RULES='digikam.thumbsdb=false:digikam.coredb=false'
@@ -532,7 +532,7 @@ All loggin categories are listed in \ref digikam_debug.cpp source code.
 
 \subsection moreaboutloggincat Further Reading
 
- For more details see the Qt framework documentation about loggin categories available at this url:
+ For more details see the Qt framework documentation about logging categories available at this url:
  https://doc.qt.io/qt-5/qloggingcategory.html#details
 
 \section cmakecompilrules Cmake compilation rules
@@ -548,7 +548,7 @@ Independent Cmake configuration is presents in following folders:
  - core
  - doc
 
-The Cmake rules will build the folowwing targets:
+The Cmake rules will build the following targets:
 
  - digikamcore shared lib
  - digikamdatabase shared lib
@@ -576,7 +576,7 @@ Local include directories are all managed by this snippet of code:
 The libjpeg- folders are all included, so we need to delete them all and include the correct one only:
 
 \code
-    # This macro will set all paths which do not containt libjpeg-
+    # This macro will set all paths which do not contain libjpeg-
     # We will add later the directory we need
 
     FOREACH(var ${DK_LOCAL_INCLUDES_RAW})
@@ -693,7 +693,7 @@ working on existing code.
 
 Indent with 4 spaces exactly.
 
-for eg:
+For example:
 
 \code
 void function()
@@ -711,7 +711,7 @@ vim users add this to you .vimrc
 \subsubsection tabsspaces Tabs vs Spaces
 
 Absolutely no tabs. Use a sensible editor which will convert tabs to spaces.
-This will reduce unnecessary changes in your cvs commits.
+This will reduce unnecessary changes in your git commits.
 
 Emacs by default will convert tab to spaces.
 For vim users, add this to your .vimrc
@@ -725,7 +725,7 @@ cases are rare). Having long lines greatly reduces readability of code
 \subsubsection bracketing Bracketing
 
 In all cases, {} brackets should start on a newline and should be
-aligned with previous line (follow the indentation spaces). for eg.
+aligned with previous line (follow the indentation spaces). For example.
 
 \code
 class A
@@ -777,7 +777,7 @@ signals, public slots, protected slots, private slots, private (variables)
   the first letter after _ (Use m_varName not m_VarName)
 - variable names should be indicative of their functionality and also of
   the type they belong too if they are instances of qt widgets.
-  for eg, QCheckBox* m_autoRotateCheckBox;
+  For example, QCheckBox* m_autoRotateCheckBox;
 
 \subsubsection nomembvars Non-Member variables
 
@@ -813,7 +813,7 @@ a = (b == foobar) ? 1 : -1; // you are asking for trouble by putting comments he
 - Add copyright to top of every file. Use the same header than others digiKam
   source code.
 - Double inclusion protection defines are all upper case letters and are
-  composed of the classname and a H suffix separated by underscore
+  composed of the class name and a H suffix separated by underscore
 
 \code
 #ifndef DIGIKAM_ANOTHER_NICE_CLASS_H
@@ -933,7 +933,7 @@ $ gdb digikam
 > quit
 \endcode
 
-Post this backtrace at the right place (Bugzilla or developement mailing list) for investigations by developers.
+Post this backtrace at the right place (Bugzilla or development mailing list) for investigation by developers.
 
 For Windows users, take a look on this tutorial :
 
@@ -1032,7 +1032,7 @@ www.englishbreakfastnetwork.org/krazy/
 
 It can be very useful, in particular before major releases.
 Don't trust it blindly! Sometimes they propose too advanced modifications that
-are no compatible with the prevailant include files.
+are no compatible with the prevailing include files.
 
 \subsection appusability Usability Issues
 
@@ -1103,7 +1103,7 @@ git push origin :development/dplugins
 
 \subsection syncgitbranches Sync a Branch With Master From Git Repository
 
-It typical to use a dedicated developement branch in Git to keep the
+It typical to use a dedicated development branch in Git to keep the
 master code stable for production. To synchronize branches with master, use these commands in your
 local branch checkout:
 
