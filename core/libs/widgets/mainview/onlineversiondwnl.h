@@ -4,7 +4,7 @@
  * https://www.digikam.org
  *
  * Date        : 2021-01-05
- * Description : Online version dialog.
+ * Description : Online version downloader.
  *
  * Copyright (C) 2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
@@ -21,12 +21,12 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_ONLINE_VERSION_DLG_H
-#define DIGIKAM_ONLINE_VERSION_DLG_H
+#ifndef DIGIKAM_ONLINE_VERSION_DWNL_H
+#define DIGIKAM_ONLINE_VERSION_DWNL_H
 
 // Qt includes
 
-#include <QProgressDialog>
+#include <QNetworkReply>
 
 // Local includes
 
@@ -35,20 +35,25 @@
 namespace Digikam
 {
 
-class DIGIKAM_EXPORT OnlineVersionDlg : public QProgressDialog
+class DIGIKAM_EXPORT OnlineVersionDwnl : public QObject
 {
     Q_OBJECT
 
 public:
 
-    explicit OnlineVersionDlg(QWidget* const parent = nullptr);
-    ~OnlineVersionDlg() override;
+    explicit OnlineVersionDwnl(QObject* const parent = nullptr);
+    ~OnlineVersionDwnl() override;
+
+    void startDownload(const QString& file);
+
+Q_SIGNALS:
+
+    void signalDownloadError(const QString&);
+    void signalDownloadProgress(qint64 bytesReceived, qint64 bytesTotal);
 
 private Q_SLOTS:
 
-    void slotNewVersionAvailable(const QString& version);
-    void slotNewVersionCheckError(const QString& error);
-    void slotOpenInBrowser();
+    void slotDownloaded(QNetworkReply* reply);
 
 private:
 
@@ -58,4 +63,4 @@ private:
 
 } // namespace Digikam
 
-#endif // DIGIKAM_ONLINE_VERSION_DLG_H
+#endif // DIGIKAM_ONLINE_VERSION_DWNL_H
