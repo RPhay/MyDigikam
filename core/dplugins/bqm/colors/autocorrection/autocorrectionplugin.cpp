@@ -51,7 +51,7 @@ AutoCorrectionPlugin::~AutoCorrectionPlugin()
 
 QString AutoCorrectionPlugin::name() const
 {
-    return i18n("Color Auto-correction");
+    return i18n("Color Auto-Correction");
 }
 
 QString AutoCorrectionPlugin::iid() const
