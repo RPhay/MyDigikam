@@ -74,6 +74,7 @@
 #include "daboutdata.h"
 #include "dpluginloader.h"
 #include "webbrowserdlg.h"
+#include "onlineversiondlg.h"
 
 namespace Digikam
 {
@@ -180,7 +181,7 @@ public:
 
 DXmlGuiWindow::DXmlGuiWindow(QWidget* const parent, Qt::WindowFlags f)
     : KXmlGuiWindow(parent, f),
-      d(new Private)
+      d            (new Private)
 {
     m_animLogo = nullptr;
 
@@ -259,33 +260,37 @@ void DXmlGuiWindow::registerPluginsActions()
 
 void DXmlGuiWindow::createHelpActions(bool coreOptions)
 {
-    d->libsInfoAction                  = new QAction(QIcon::fromTheme(QLatin1String("help-about")), i18n("Components Information"), this);
+    d->libsInfoAction                   = new QAction(QIcon::fromTheme(QLatin1String("help-about")), i18n("Components Information"), this);
     connect(d->libsInfoAction, SIGNAL(triggered()), this, SLOT(slotComponentsInfo()));
     actionCollection()->addAction(QLatin1String("help_librariesinfo"), d->libsInfoAction);
 
-    d->about                           = new DAboutData(this);
+    d->about                            = new DAboutData(this);
 
-    QAction* const rawCameraListAction = new QAction(QIcon::fromTheme(QLatin1String("image-x-adobe-dng")), i18n("Supported RAW Cameras"), this);
+    QAction* const rawCameraListAction  = new QAction(QIcon::fromTheme(QLatin1String("image-x-adobe-dng")), i18n("Supported RAW Cameras"), this);
     connect(rawCameraListAction, SIGNAL(triggered()), this, SLOT(slotRawCameraList()));
     actionCollection()->addAction(QLatin1String("help_rawcameralist"), rawCameraListAction);
 
-    QAction* const donateMoneyAction   = new QAction(QIcon::fromTheme(QLatin1String("globe")), i18n("Donate..."), this);
+    QAction* const donateMoneyAction    = new QAction(QIcon::fromTheme(QLatin1String("globe")), i18n("Donate..."), this);
     connect(donateMoneyAction, SIGNAL(triggered()), this, SLOT(slotDonateMoney()));
     actionCollection()->addAction(QLatin1String("help_donatemoney"), donateMoneyAction);
 
-    QAction* const recipesBookAction   = new QAction(QIcon::fromTheme(QLatin1String("globe")), i18n("Recipes Book..."), this);
+    QAction* const recipesBookAction    = new QAction(QIcon::fromTheme(QLatin1String("globe")), i18n("Recipes Book..."), this);
     connect(recipesBookAction, SIGNAL(triggered()), this, SLOT(slotRecipesBook()));
     actionCollection()->addAction(QLatin1String("help_recipesbook"), recipesBookAction);
 
-    QAction* const contributeAction    = new QAction(QIcon::fromTheme(QLatin1String("globe")), i18n("Contribute..."), this);
+    QAction* const contributeAction     = new QAction(QIcon::fromTheme(QLatin1String("globe")), i18n("Contribute..."), this);
     connect(contributeAction, SIGNAL(triggered()), this, SLOT(slotContribute()));
     actionCollection()->addAction(QLatin1String("help_contribute"), contributeAction);
 
-    QAction* const helpAction          = new QAction(QIcon::fromTheme(QLatin1String("help-contents")), i18n("Online Handbook..."), this);
+    QAction* const onlineVerCheckAction = new QAction(QIcon::fromTheme(QLatin1String("globe")), i18n("Check for New Version..."), this);
+    connect(onlineVerCheckAction, SIGNAL(triggered()), this, SLOT(slotOnlineVersionCheck()));
+    actionCollection()->addAction(QLatin1String("help_onlineversioncheck"), onlineVerCheckAction);
+
+    QAction* const helpAction           = new QAction(QIcon::fromTheme(QLatin1String("help-contents")), i18n("Online Handbook..."), this);
     connect(helpAction, SIGNAL(triggered()), this, SLOT(slotHelpContents()));
     actionCollection()->addAction(QLatin1String("help_handbook"), helpAction);
 
-    m_animLogo                         = new DLogoAction(this);
+    m_animLogo                          = new DLogoAction(this);
     actionCollection()->addAction(QLatin1String("logo_action"), m_animLogo);
 
     // Add options only for core components (typically all excepted Showfoto)
@@ -898,6 +903,12 @@ QAction* DXmlGuiWindow::buildStdAction(StdActionType type, const QObject* const 
 void DXmlGuiWindow::slotRawCameraList()
 {
     showRawCameraList();
+}
+
+void DXmlGuiWindow::slotOnlineVersionCheck()
+{
+    OnlineVersionDlg* const dlg = new OnlineVersionDlg(qApp->activeWindow());
+    dlg->exec();
 }
 
 void DXmlGuiWindow::slotDonateMoney()

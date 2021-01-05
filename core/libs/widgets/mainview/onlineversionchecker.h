@@ -30,14 +30,10 @@
 #include <QUrl>
 #include <QNetworkAccessManager>
 
-// Local includes
-
-#include "digikam_export.h"
-
 namespace Digikam
 {
 
-class DIGIKAM_EXPORT OnlineVersionChecker : public QObject
+class OnlineVersionChecker : public QObject
 {
     Q_OBJECT
 

@@ -1,5 +1,5 @@
 <!DOCTYPE kpartgui SYSTEM "kpartgui.dtd">
-<gui version="616" name="lighttablewindow" translationDomain="digikam" >
+<gui version="700" name="lighttablewindow" translationDomain="digikam" >
 
 <MenuBar>
 
@@ -90,6 +90,8 @@
         <Action name="help_dbstat" />
         <Separator/>
         <Action name="help_donatemoney" />
+        <Action name="help_onlineversioncheck" />
+        <Action name="help_recipesbook" />
         <Action name="help_contribute" />
         <Action name="help_handbook" />
     </Menu>

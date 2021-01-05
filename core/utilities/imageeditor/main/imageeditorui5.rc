@@ -1,5 +1,5 @@
 <!DOCTYPE kpartgui SYSTEM "kpartgui.dtd">
-<gui version="615" name="imageeditor" translationDomain="digikam" >
+<gui version="700" name="imageeditor" translationDomain="digikam" >
 
 <MenuBar>
 
@@ -132,6 +132,8 @@
         <Action name="help_dbstat" />
         <Separator/>
         <Action name="help_donatemoney" />
+        <Action name="help_onlineversioncheck" />
+        <Action name="help_recipesbook" />
         <Action name="help_contribute" />
         <Action name="help_handbook" />
     </Menu>

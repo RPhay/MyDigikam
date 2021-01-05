@@ -235,6 +235,7 @@ private Q_SLOTS:
 
     void slotRawCameraList();
     void slotDonateMoney();
+    void slotOnlineVersionCheck();
     void slotRecipesBook();
     void slotContribute();
     void slotHelpContents();
