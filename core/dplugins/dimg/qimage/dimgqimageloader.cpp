@@ -237,8 +237,7 @@ bool DImgQImageLoader::load(const QString& filePath, DImgLoaderObserver* const o
     imageHeight() = h;
     imageData()   = data;
 
-    // We considering that PNG is the most representative format of an image loaded by Qt
-    imageSetAttribute(QLatin1String("format"),             QLatin1String("PNG"));
+    imageSetAttribute(QLatin1String("format"),             QString::fromLatin1(readFormat).toUpper());
     imageSetAttribute(QLatin1String("originalColorModel"), colorModel);
     imageSetAttribute(QLatin1String("originalBitDepth"),   originalDepth);
     imageSetAttribute(QLatin1String("originalSize"),       QSize(w, h));
