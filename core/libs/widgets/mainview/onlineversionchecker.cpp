@@ -25,9 +25,12 @@
 
 // Qt includes
 
-#include <QFile>
-#include <QTextStream>
 #include <QDesktopServices>
+#include <QNetworkReply>
+
+// KDE includes
+
+#include <klocalizedstring.h>
 
 // Local includes
 
@@ -38,10 +41,13 @@ namespace Digikam
 {
 
 OnlineVersionChecker::OnlineVersionChecker(QObject* const parent)
-    : QObject   (parent),
-      curRequest(nullptr)
+    : QObject     (parent),
+      m_manager   (nullptr),
+      m_curRequest(nullptr)
 {
-    connect(&manager, SIGNAL(finished(QNetworkReply*)),
+    m_manager = new QNetworkAccessManager(this);
+
+    connect(m_manager, SIGNAL(finished(QNetworkReply*)),
             this, SLOT(slotDownloadFinished(QNetworkReply*)));
 }
 
@@ -49,22 +55,27 @@ OnlineVersionChecker::~OnlineVersionChecker()
 {
 }
 
+QNetworkAccessManager* OnlineVersionChecker::manager() const
+{
+    return m_manager;
+}
+
 void OnlineVersionChecker::checkForNewVersion()
 {
     QNetworkRequest request(QUrl(QLatin1String("https://invent.kde.org/websites/digikam-org/-/raw/master/data/release.yml")));
-    curRequest = manager.get(request);
+    m_curRequest = m_manager->get(request);
 
-    if (curRequest->error())
+    if (m_curRequest->error())
     {
-        emit signalNewVersionCheckError(curRequest->error());
+        emit signalNewVersionCheckError(m_curRequest->errorString());
     }
 }
 
 void OnlineVersionChecker::cancelCheck()
 {
-    if (curRequest)
+    if (m_curRequest)
     {
-        curRequest->abort();
+        m_curRequest->abort();
     }
 }
 
@@ -73,13 +84,13 @@ void OnlineVersionChecker::slotDownloadFinished(QNetworkReply* reply)
     // mark for deletion
 
     reply->deleteLater();
-    curRequest = nullptr;
+    m_curRequest = nullptr;
 
     QNetworkReply::NetworkError error = reply->error();
 
-    if (error)
+    if (error != QNetworkReply::NoError)
     {
-        emit signalNewVersionCheckError(error);
+        emit signalNewVersionCheckError(reply->errorString());
         return;
     }
 
@@ -87,9 +98,11 @@ void OnlineVersionChecker::slotDownloadFinished(QNetworkReply* reply)
 
     if (data.isEmpty())
     {
-        emit signalNewVersionCheckError(QNetworkReply::ProtocolFailure);
+        emit signalNewVersionCheckError(i18n("No data returned from the remote connexion."));
         return;
     }
+
+    // NOTE: File from digikam.org is a Yaml config file where we will extract version string.
 
     QString tag            = QLatin1String("version: ");
     int start              = data.indexOf(tag) + tag.size();
@@ -100,7 +113,7 @@ void OnlineVersionChecker::slotDownloadFinished(QNetworkReply* reply)
 
     if (onlineVals.size() != 3)
     {
-        emit signalNewVersionCheckError(QNetworkReply::ProtocolFailure);
+        emit signalNewVersionCheckError(i18n("Invalid format returned from the remote connexion."));
         return;
     }
 
@@ -119,7 +132,7 @@ void OnlineVersionChecker::slotDownloadFinished(QNetworkReply* reply)
     }
     else
     {
-        emit signalNewVersionCheckError(QNetworkReply::NoError);
+        emit signalNewVersionCheckError(QString());
     }
 }
 

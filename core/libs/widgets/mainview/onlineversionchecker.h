@@ -29,7 +29,6 @@
 #include <QObject>
 #include <QUrl>
 #include <QNetworkAccessManager>
-#include <QNetworkReply>
 
 // Local includes
 
@@ -50,10 +49,12 @@ public:
     void checkForNewVersion();
     void cancelCheck();
 
+    QNetworkAccessManager* manager() const;
+
 Q_SIGNALS:
 
-    void signalNewVersionAvailable(const QString& newTag);
-    void signalNewVersionCheckError(QNetworkReply::NetworkError error);
+    void signalNewVersionAvailable(const QString& version);
+    void signalNewVersionCheckError(const QString& error);
 
 private Q_SLOTS:
 
@@ -61,8 +62,8 @@ private Q_SLOTS:
 
 private:
 
-    QNetworkAccessManager manager;
-    QNetworkReply*        curRequest;
+    QNetworkAccessManager* m_manager;
+    QNetworkReply*         m_curRequest;
 };
 
 } // namespace Digikam
