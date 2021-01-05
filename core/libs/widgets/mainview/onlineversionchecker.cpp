@@ -42,7 +42,7 @@ OnlineVersionChecker::OnlineVersionChecker(QObject* const parent)
       curRequest(nullptr)
 {
     connect(&manager, SIGNAL(finished(QNetworkReply*)),
-            this, SLOT(downloadFinished(QNetworkReply*)));
+            this, SLOT(slotDownloadFinished(QNetworkReply*)));
 }
 
 OnlineVersionChecker::~OnlineVersionChecker()
@@ -68,7 +68,7 @@ void OnlineVersionChecker::cancelCheck()
     }
 }
 
-void OnlineVersionChecker::downloadFinished(QNetworkReply* reply)
+void OnlineVersionChecker::slotDownloadFinished(QNetworkReply* reply)
 {
     // mark for deletion
 
@@ -83,17 +83,19 @@ void OnlineVersionChecker::downloadFinished(QNetworkReply* reply)
         return;
     }
 
-    QString data = QString::fromUtf8(reply->readAll());
+    QString data           = QString::fromUtf8(reply->readAll());
 
+    if (data.isEmpty())
+    {
+        emit signalNewVersionCheckError(QNetworkReply::ProtocolFailure);
+        return;
+    }
 
-    qDebug() << data;
-
-    QString tag       = QLatin1String("version: ");
-    int start         = data.indexOf(tag) + tag.size();
-    QString rightVer  = data.mid(start);
-    int end           = rightVer.indexOf(QLatin1Char('\n'));
-    QString onlineVer = rightVer.mid(0, end);
-
+    QString tag            = QLatin1String("version: ");
+    int start              = data.indexOf(tag) + tag.size();
+    QString rightVer       = data.mid(start);
+    int end                = rightVer.indexOf(QLatin1Char('\n'));
+    QString onlineVer      = rightVer.mid(0, end);
     QStringList onlineVals = onlineVer.split(QLatin1Char('.'));
 
     if (onlineVals.size() != 3)
@@ -102,16 +104,16 @@ void OnlineVersionChecker::downloadFinished(QNetworkReply* reply)
         return;
     }
 
-    QStringList currentVals = QString::fromLatin1(digikam_version_short).split(QLatin1Char('.'));
+    QStringList currVals   = QString::fromLatin1(digikam_version_short).split(QLatin1Char('.'));
 
-    qDebug() << "Online Version:" << onlineVer;
+    qCDebug(DIGIKAM_GENERAL_LOG) << "Online Version:" << onlineVer;
 
     if (digiKamMakeIntegerVersion(onlineVals[0].toInt(),
                                   onlineVals[1].toInt(),
                                   onlineVals[2].toInt()) >
-        digiKamMakeIntegerVersion(currentVals[0].toInt(),
-                                  currentVals[1].toInt(),
-                                  currentVals[2].toInt()))
+        digiKamMakeIntegerVersion(currVals[0].toInt(),
+                                  currVals[1].toInt(),
+                                  currVals[2].toInt()))
     {
         emit signalNewVersionAvailable(onlineVer);
     }
@@ -119,11 +121,6 @@ void OnlineVersionChecker::downloadFinished(QNetworkReply* reply)
     {
         emit signalNewVersionCheckError(QNetworkReply::NoError);
     }
-}
-
-void OnlineVersionChecker::error(QNetworkReply::NetworkError code)
-{
-    emit signalNewVersionCheckError(code);
 }
 
 } // namespace Digikam

@@ -30,7 +30,6 @@
 #include <QUrl>
 #include <QNetworkAccessManager>
 #include <QNetworkReply>
-#include <QDateTime>
 
 // Local includes
 
@@ -51,20 +50,19 @@ public:
     void checkForNewVersion();
     void cancelCheck();
 
-private:
-
-    QNetworkAccessManager   manager;
-    QNetworkReply*          curRequest;
-
-private Q_SLOTS:
-
-    void downloadFinished(QNetworkReply* reply);
-    void error(QNetworkReply::NetworkError code);
-
 Q_SIGNALS:
 
     void signalNewVersionAvailable(const QString& newTag);
     void signalNewVersionCheckError(QNetworkReply::NetworkError error);
+
+private Q_SLOTS:
+
+    void slotDownloadFinished(QNetworkReply* reply);
+
+private:
+
+    QNetworkAccessManager manager;
+    QNetworkReply*        curRequest;
 };
 
 } // namespace Digikam
