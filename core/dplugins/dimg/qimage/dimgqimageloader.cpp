@@ -126,6 +126,7 @@ bool DImgQImageLoader::load(const QString& filePath, DImgLoaderObserver* const o
 
     }
 
+    QImage target;
     uint w      = 0;
     uint h      = 0;
     uchar* data = nullptr;
@@ -135,7 +136,7 @@ bool DImgQImageLoader::load(const QString& filePath, DImgLoaderObserver* const o
         qCDebug(DIGIKAM_DIMG_LOG_QIMAGE) << filePath << "is a 8 bits per color per pixels QImage";
 
         m_hasAlpha    = (image.hasAlphaChannel() && (readFormat != "psd"));
-        QImage target = image.convertToFormat(QImage::Format_ARGB32);
+        target        = image.convertToFormat(QImage::Format_ARGB32);
         w             = target.width();
         h             = target.height();
         data          = new_failureTolerant(w, h, 4);
@@ -160,21 +161,6 @@ bool DImgQImageLoader::load(const QString& filePath, DImgLoaderObserver* const o
             dptr   += 4;
             sptr++;
         }
-
-#if (QT_VERSION >= QT_VERSION_CHECK(5, 14, 0))
-
-        if ((m_loadFlags & LoadICCData) && target.colorSpace().isValid())
-        {
-            QByteArray iccRawProfile(target.colorSpace().iccProfile());
-
-            if (!iccRawProfile.isEmpty())
-            {
-                imageSetIccProfile(IccProfile(iccRawProfile));
-            }
-        }
-
-#endif
-
     }
     else
     {
@@ -184,7 +170,7 @@ bool DImgQImageLoader::load(const QString& filePath, DImgLoaderObserver* const o
         qCDebug(DIGIKAM_DIMG_LOG_QIMAGE) << filePath << "is a 16 bits per color per pixels QImage";
 
         m_hasAlpha    = (image.hasAlphaChannel() && (readFormat != "psd"));
-        QImage target = image.convertToFormat(QImage::Format_RGBA64);
+        target        = image.convertToFormat(QImage::Format_RGBA64);
         w             = target.width();
         h             = target.height();
         data          = new_failureTolerant(w, h, 8);
@@ -212,21 +198,21 @@ bool DImgQImageLoader::load(const QString& filePath, DImgLoaderObserver* const o
 
 #endif
 
+    }
+
 #if (QT_VERSION >= QT_VERSION_CHECK(5, 14, 0))
 
-        if ((m_loadFlags & LoadICCData) && target.colorSpace().isValid())
-        {
-            QByteArray iccRawProfile(target.colorSpace().iccProfile());
+    if ((m_loadFlags & LoadICCData) && target.colorSpace().isValid())
+    {
+        QByteArray iccRawProfile(target.colorSpace().iccProfile());
 
-            if (!iccRawProfile.isEmpty())
-            {
-                imageSetIccProfile(IccProfile(iccRawProfile));
-            }
+        if (!iccRawProfile.isEmpty())
+        {
+            imageSetIccProfile(IccProfile(iccRawProfile));
         }
+    }
 
 #endif
-
-    }
 
     if (observer)
     {
