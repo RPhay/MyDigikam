@@ -30,6 +30,10 @@
 #include <QByteArray>
 #include <QImageReader>
 
+#if (QT_VERSION >= QT_VERSION_CHECK(5, 14, 0))
+#   include <QColorSpace>
+#endif
+
 // Local includes
 
 #include "digikam_debug.h"
@@ -156,6 +160,21 @@ bool DImgQImageLoader::load(const QString& filePath, DImgLoaderObserver* const o
             dptr   += 4;
             sptr++;
         }
+
+#if (QT_VERSION >= QT_VERSION_CHECK(5, 14, 0))
+
+        if ((m_loadFlags & LoadICCData) && target.colorSpace().isValid())
+        {
+            QByteArray iccRawProfile(target.colorSpace().iccProfile());
+
+            if (!iccRawProfile.isEmpty())
+            {
+                imageSetIccProfile(IccProfile(iccRawProfile));
+            }
+        }
+
+#endif
+
     }
     else
     {
@@ -193,6 +212,20 @@ bool DImgQImageLoader::load(const QString& filePath, DImgLoaderObserver* const o
 
 #endif
 
+#if (QT_VERSION >= QT_VERSION_CHECK(5, 14, 0))
+
+        if ((m_loadFlags & LoadICCData) && target.colorSpace().isValid())
+        {
+            QByteArray iccRawProfile(target.colorSpace().iccProfile());
+
+            if (!iccRawProfile.isEmpty())
+            {
+                imageSetIccProfile(IccProfile(iccRawProfile));
+            }
+        }
+
+#endif
+
     }
 
     if (observer)
@@ -204,8 +237,7 @@ bool DImgQImageLoader::load(const QString& filePath, DImgLoaderObserver* const o
     imageHeight() = h;
     imageData()   = data;
 
-    // We considering that PNG is the most representative format of an image loaded by Qt
-    imageSetAttribute(QLatin1String("format"),             QLatin1String("PNG"));
+    imageSetAttribute(QLatin1String("format"),             QString::fromLatin1(readFormat).toUpper());
     imageSetAttribute(QLatin1String("originalColorModel"), colorModel);
     imageSetAttribute(QLatin1String("originalBitDepth"),   originalDepth);
     imageSetAttribute(QLatin1String("originalSize"),       QSize(w, h));
@@ -231,6 +263,17 @@ bool DImgQImageLoader::save(const QString& filePath, DImgLoaderObserver* const o
     QVariant formatAttr = imageGetAttribute(QLatin1String("format"));
     QByteArray format   = formatAttr.toByteArray();
     QImage image        = m_image->copyQImage();
+
+#if (QT_VERSION >= QT_VERSION_CHECK(5, 14, 0))
+
+    QByteArray iccRawProfile = m_image->getIccProfile().data();
+
+    if (!iccRawProfile.isEmpty())
+    {
+        image.setColorSpace(QColorSpace::fromIccProfile(iccRawProfile));
+    }
+
+#endif
 
     if (observer)
     {
