@@ -185,9 +185,11 @@ mv -f $INSTALL_PREFIX/libexec/qt5/plugins/digikam/editor/*.so $INSTALL_PREFIX/li
 # Install GmicQt plugin debug symbols.
 cp -pr $BUILDING_DIR/ext_gmicqt/ext_gmic_qt-prefix/src/ext_gmic_qt-build/Editor_GmicQt_Plugin.so.dSYM $INSTALL_PREFIX/lib/plugins/digikam/editor/ || true
 
-# Overwrite breeze and breeze-dark digikam and showfoto
+# Overwrite breeze and breeze-dark digikam and showfoto with high resolution icons for lauchpad
 cp -f $ORIG_WD/data/digikam.svg  $INSTALL_PREFIX/share/icons/breeze/apps/48
 cp -f $ORIG_WD/data/showfoto.svg $INSTALL_PREFIX/share/icons/breeze/apps/48
+cp -f $ORIG_WD/data/digikam.svg  $INSTALL_PREFIX/share/icons/breeze-dark/apps/48
+cp -f $ORIG_WD/data/showfoto.svg $INSTALL_PREFIX/share/icons/breeze-dark/apps/48
 
 #################################################################################################
 
