@@ -264,4 +264,5 @@ BUGFIXES:
 244 ==> 431081 - Exif data is completely lost for some pictures after detect faces / recognize faces.
 245 ==> 431119 - Move Map To First Point In Selected GPX Track.
 246 ==> 431047 - Missing icons in the map view.
-247 ==> 
+247 ==> 431162 - Change Name of Auto Correction to "Lens Auto-Correction".
+248 ==> 

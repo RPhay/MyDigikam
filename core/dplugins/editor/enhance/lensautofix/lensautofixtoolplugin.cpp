@@ -88,7 +88,7 @@ void LensAutoFixToolPlugin::setup(QObject* const parent)
 {
     DPluginAction* const ac = new DPluginAction(parent);
     ac->setIcon(icon());
-    ac->setText(i18nc("@action", "Auto-Correction..."));
+    ac->setText(i18nc("@action", "Lens Auto-Correction..."));
     ac->setObjectName(QLatin1String("editorwindow_enhance_lensautofix"));
     ac->setActionCategory(DPluginAction::EditorEnhance);
 

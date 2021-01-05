@@ -49,7 +49,7 @@ AutoCorrectionToolPlugin::~AutoCorrectionToolPlugin()
 
 QString AutoCorrectionToolPlugin::name() const
 {
-    return i18n("Auto Correction");
+    return i18n("Color Auto-correction");
 }
 
 QString AutoCorrectionToolPlugin::iid() const
@@ -85,7 +85,7 @@ void AutoCorrectionToolPlugin::setup(QObject* const parent)
 {
     DPluginAction* const ac = new DPluginAction(parent);
     ac->setIcon(icon());
-    ac->setText(i18nc("@action", "Auto-Correction..."));
+    ac->setText(i18nc("@action", "Color Auto-correction..."));
     ac->setObjectName(QLatin1String("editorwindow_color_autocorrection"));
 
     // NOTE: Photoshop 7 use CTRL+SHIFT+B
