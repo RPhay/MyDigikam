@@ -297,8 +297,8 @@ done
 
 # Copy digiKam hi-colors PNG icons-set to the bundle
 
-mkdir -p "$TEMPROOT/digikam.app/Contents/Resources/share/icons/"
-cp -a "$INSTALL_PREFIX/share/icons/hicolor" "$TEMPROOT/digikam.app/Contents/Resources/share/icons/"
+mkdir -p "$TEMPROOT/digikam.app/Contents/Resources/icons/"
+cp -a "$INSTALL_PREFIX/share/icons/hicolor" "$TEMPROOT/digikam.app/Contents/Resources/icons/"
 
 echo "---------- Copying Qt Web Backend files..."
 
