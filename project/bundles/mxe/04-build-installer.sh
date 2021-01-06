@@ -110,6 +110,12 @@ cp -r $MXE_INSTALL_PREFIX/bin/data/showfoto                             $BUNDLED
 cp -r $MXE_INSTALL_PREFIX/bin/data/solid                                $BUNDLEDIR/data         2>/dev/null
 cp -r $MXE_INSTALL_PREFIX/bin/data/k*                                   $BUNDLEDIR/data         2>/dev/null
 
+# Copy digiKam hi-colors PNG icons-set to the bundle
+
+cp -r $MXE_INSTALL_PREFIX/bin/data/icons                                $BUNDLEDIR/data         2>/dev/null
+rm -fr $BUNDLEDIR/data/icons/breeze*                                                            2>/dev/null
+rm -fr $BUNDLEDIR/data/icons/*.qrc                                                              2>/dev/null
+
 echo -e "\n---------- Qt config"
 cp    $BUILDDIR/data/qt.conf                                            $BUNDLEDIR/             2>/dev/null
 
