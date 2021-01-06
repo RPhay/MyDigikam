@@ -98,7 +98,7 @@ void OnlineVersionChecker::slotDownloadFinished(QNetworkReply* reply)
 
     if (data.isEmpty())
     {
-        emit signalNewVersionCheckError(i18n("No data returned from the remote connexion."));
+        emit signalNewVersionCheckError(i18n("No data returned from the remote connection."));
         return;
     }
 
@@ -113,7 +113,7 @@ void OnlineVersionChecker::slotDownloadFinished(QNetworkReply* reply)
 
     if (onlineVals.size() != 3)
     {
-        emit signalNewVersionCheckError(i18n("Invalid format returned from the remote connexion."));
+        emit signalNewVersionCheckError(i18n("Invalid format returned from the remote connection."));
         return;
     }
 
