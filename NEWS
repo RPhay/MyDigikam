@@ -265,4 +265,5 @@ BUGFIXES:
 245 ==> 431119 - Move Map To First Point In Selected GPX Track.
 246 ==> 431047 - Missing icons in the map view.
 247 ==> 431162 - Change Name of Auto Correction to "Lens Auto-Correction".
-248 ==> 
+248 ==> 431003 - Running status of digikam not reflected in MacOS task bar.
+249 ==> 
