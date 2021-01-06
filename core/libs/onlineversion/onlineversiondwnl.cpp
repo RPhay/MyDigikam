@@ -216,7 +216,7 @@ void OnlineVersionDwnl::slotDownloaded(QNetworkReply* reply)
         return;
     }
 
-    QString path    = QStandardPaths::writableLocation(QStandardPaths::TempLocation);
+    QString path    = QStandardPaths::writableLocation(QStandardPaths::DownloadLocation);
     path            = QDir::toNativeSeparators(path + QLatin1String("/") + d->file);
 
     QFile file(path);
