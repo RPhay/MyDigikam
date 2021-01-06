@@ -266,4 +266,5 @@ BUGFIXES:
 246 ==> 431047 - Missing icons in the map view.
 247 ==> 431162 - Change Name of Auto Correction to "Lens Auto-Correction".
 248 ==> 431003 - Running status of digikam not reflected in MacOS task bar.
-249 ==> 
+249 ==> 431102 - Windows install does not have an icon for digiKam.
+250 ==> 
