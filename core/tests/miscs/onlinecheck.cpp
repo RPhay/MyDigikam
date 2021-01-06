@@ -25,10 +25,17 @@
 
 #include <QApplication>
 #include <QTest>
+#include <QCommandLineParser>
 #include <QDebug>
+
+// KDE includes
+
+#include <kaboutdata.h>
 
 // Local includes
 
+#include "daboutdata.h"
+#include "digikam_version.h"
 #include "onlineversiondlg.h"
 
 using namespace Digikam;
@@ -36,6 +43,18 @@ using namespace Digikam;
 int main(int argc, char* argv[])
 {
     QApplication app(argc, argv);
+
+    KAboutData aboutData(QLatin1String("digikam"),
+                         QLatin1String("digiKam"), // No need i18n here.
+                         digiKamVersion());
+
+    QCommandLineParser parser;
+    KAboutData::setApplicationData(aboutData);
+    parser.addVersionOption();
+    parser.addHelpOption();
+    aboutData.setupCommandLine(&parser);
+    parser.process(app);
+    aboutData.processCommandLine(&parser);
 
     OnlineVersionDlg* const dlg = new OnlineVersionDlg;
 

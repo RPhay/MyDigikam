@@ -26,6 +26,7 @@
 // Qt includes
 
 #include <QUrl>
+#include <QApplication>
 #include <QPushButton>
 #include <QProgressBar>
 #include <QDesktopServices>
@@ -37,6 +38,7 @@
 // Local includes
 
 #include "onlineversionchecker.h"
+#include "digikam_version.h"
 
 namespace Digikam
 {
@@ -110,11 +112,12 @@ void OnlineVersionDlg::slotNewVersionCheckError(const QString& error)
 
     if (error.isEmpty())
     {
-        setLabelText(i18n("No new version is available."));
+        setLabelText(i18n("Your Software is up-to-date.\n%1 %2 is the most recent version available.",
+                     qApp->applicationName(), QString::fromLatin1(digikam_version_short)));
     }
     else
     {
-        setLabelText(i18n("Error while trying to check new version:\n\"%1\"", error));
+        setLabelText(i18n("Error while trying to check for new version:\n\"%1\"", error));
     }
 }
 
