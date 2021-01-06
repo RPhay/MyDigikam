@@ -65,9 +65,6 @@ set(libmainview_SRCS
     ${CMAKE_CURRENT_SOURCE_DIR}/mainview/thememanager.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/mainview/thememanager_p.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/mainview/fullscreensettings.cpp
-    ${CMAKE_CURRENT_SOURCE_DIR}/mainview/onlineversionchecker.cpp
-    ${CMAKE_CURRENT_SOURCE_DIR}/mainview/onlineversiondlg.cpp
-    ${CMAKE_CURRENT_SOURCE_DIR}/mainview/onlineversiondwnl.cpp
     ${CMAKE_SOURCE_DIR}/core/app/utils/digikam_globals.cpp
 )
 
@@ -131,7 +128,6 @@ include_directories(
     $<TARGET_PROPERTY:Qt5::Core,INTERFACE_INCLUDE_DIRECTORIES>
     $<TARGET_PROPERTY:Qt5::Gui,INTERFACE_INCLUDE_DIRECTORIES>
     $<TARGET_PROPERTY:Qt5::Sql,INTERFACE_INCLUDE_DIRECTORIES>
-    $<TARGET_PROPERTY:Qt5::Network,INTERFACE_INCLUDE_DIRECTORIES>
 
     $<TARGET_PROPERTY:KF5::I18n,INTERFACE_INCLUDE_DIRECTORIES>
     $<TARGET_PROPERTY:KF5::XmlGui,INTERFACE_INCLUDE_DIRECTORIES>

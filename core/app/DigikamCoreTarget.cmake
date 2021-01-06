@@ -15,6 +15,7 @@ set(DIGIKAMCORE_OBJECTS
             $<TARGET_OBJECTS:core_dimg_obj>
             $<TARGET_OBJECTS:core_dragdrop_obj>
             $<TARGET_OBJECTS:core_dmetadata_obj>
+            $<TARGET_OBJECTS:core_onlineversion_obj>
             $<TARGET_OBJECTS:core_jpegutils_obj>
             $<TARGET_OBJECTS:core_progressmanager_obj>
             $<TARGET_OBJECTS:core_threadimageio_obj>
