@@ -295,6 +295,11 @@ for path in $OTHER_DATA ; do
     cp -a "$INSTALL_PREFIX/$path" "$TEMPROOT/digikam.app/Contents/Resources/"
 done
 
+# Copy digiKam hi-colors PNG icons-set to the bundle
+
+mkdir -p "$TEMPROOT/digikam.app/Contents/Resources/share/icons/"
+cp -a "$INSTALL_PREFIX/share/icons/hicolor" "$TEMPROOT/digikam.app/Contents/Resources/share/icons/"
+
 echo "---------- Copying Qt Web Backend files..."
 
 # Qt Web framework bin data files.
