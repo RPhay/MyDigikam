@@ -267,4 +267,5 @@ BUGFIXES:
 247 ==> 431162 - Change Name of Auto Correction to "Lens Auto-Correction".
 248 ==> 431003 - Running status of digikam not reflected in MacOS task bar.
 249 ==> 431102 - Windows install does not have an icon for digiKam.
-250 ==> 
+250 ==> 424727 - "Failed to connect to camera" error with iPhone 6s.
+251 ==> 
