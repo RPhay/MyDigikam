@@ -268,4 +268,6 @@ BUGFIXES:
 248 ==> 431003 - Running status of digikam not reflected in MacOS task bar.
 249 ==> 431102 - Windows install does not have an icon for digiKam.
 250 ==> 424727 - "Failed to connect to camera" error with iPhone 6s.
-251 ==> 
+251 ==> 380323 - Apply ratings with keyboard shortcuts.
+252 ==> 
+
