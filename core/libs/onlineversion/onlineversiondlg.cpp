@@ -50,6 +50,7 @@
 #include "onlineversionchecker.h"
 #include "onlineversiondwnl.h"
 #include "dfileoperations.h"
+#include "dxmlguiwindow.h"
 
 namespace Digikam
 {
@@ -125,7 +126,7 @@ OnlineVersionDlg::OnlineVersionDlg(QWidget* const parent, const QString& version
     d->bar->setMinimum(0);
     d->bar->setValue(0);
 
-    d->buttons = new QDialogButtonBox(QDialogButtonBox::Apply | QDialogButtonBox::Cancel, page);
+    d->buttons = new QDialogButtonBox(QDialogButtonBox::Help |QDialogButtonBox::Apply | QDialogButtonBox::Cancel, page);
     d->buttons->button(QDialogButtonBox::Cancel)->setDefault(true);
     d->buttons->button(QDialogButtonBox::Apply)->setVisible(false);
 
@@ -143,6 +144,9 @@ OnlineVersionDlg::OnlineVersionDlg(QWidget* const parent, const QString& version
 
     connect(d->buttons->button(QDialogButtonBox::Cancel), SIGNAL(clicked()),
             this, SLOT(close()));
+
+    connect(d->buttons->button(QDialogButtonBox::Help), SIGNAL(clicked()),
+            this, SLOT(slotHelp()));
 
     adjustSize();
 
@@ -300,6 +304,11 @@ void OnlineVersionDlg::slotOpenInFileManager()
     QList<QUrl> lst = QList<QUrl>() << QUrl::fromLocalFile(d->dwnloader->downloadedPath());
     DFileOperations::openInFileManager(lst);
     close();
+}
+
+void OnlineVersionDlg::slotHelp()
+{
+    DXmlGuiWindow::openHandbook();
 }
 
 } // namespace Digikam

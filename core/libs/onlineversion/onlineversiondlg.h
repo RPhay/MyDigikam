@@ -58,6 +58,8 @@ private Q_SLOTS:
     void slotRunInstaller();
     void slotOpenInFileManager();
 
+    void slotHelp();
+
 private:
 
     class Private;
