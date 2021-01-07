@@ -190,6 +190,8 @@ void OnlineVersionDlg::slotNewVersionCheckError(const QString& error)
 {
     d->bar->hide();
     d->buttons->button(QDialogButtonBox::Apply)->setVisible(false);
+    d->buttons->button(QDialogButtonBox::Cancel)->setText(i18n("Close"));
+    d->buttons->button(QDialogButtonBox::Cancel)->setIcon(QIcon::fromTheme(QLatin1String("close")));
 
     if (error.isEmpty())
     {
@@ -247,9 +249,9 @@ void OnlineVersionDlg::slotDownloadError(const QString& error)
 
 #else // Windows and macOS
 
+        d->buttons->button(QDialogButtonBox::Apply)->setEnabled(true);
         d->buttons->button(QDialogButtonBox::Apply)->setText(i18n("Install..."));
         d->buttons->button(QDialogButtonBox::Apply)->setIcon(QIcon::fromTheme(QLatin1String("run-install")));
-        d->buttons->button(QDialogButtonBox::Apply)->setEnabled(true);
 
         d->label->setText(i18n("The new %1 version %2 have been downloaded at:\n"
                                "%3\n"
