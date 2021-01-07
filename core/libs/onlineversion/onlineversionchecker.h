@@ -28,7 +28,7 @@
 
 #include <QObject>
 #include <QUrl>
-#include <QNetworkAccessManager>
+#include <QNetworkReply>
 
 namespace Digikam
 {
@@ -42,10 +42,10 @@ public:
     explicit OnlineVersionChecker(QObject* const parent);
     ~OnlineVersionChecker();
 
+    void setCurrentVersion(const QString& version);
+
     void checkForNewVersion();
     void cancelCheck();
-
-    QNetworkAccessManager* manager() const;
 
 Q_SIGNALS:
 
@@ -58,8 +58,8 @@ private Q_SLOTS:
 
 private:
 
-    QNetworkAccessManager* m_manager;
-    QNetworkReply*         m_curRequest;
+    class Private;
+    Private* const d;
 };
 
 } // namespace Digikam

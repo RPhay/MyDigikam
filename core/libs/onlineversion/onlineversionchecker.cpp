@@ -26,7 +26,7 @@
 // Qt includes
 
 #include <QDesktopServices>
-#include <QNetworkReply>
+#include <QNetworkAccessManager>
 
 // KDE includes
 
@@ -40,42 +40,59 @@
 namespace Digikam
 {
 
-OnlineVersionChecker::OnlineVersionChecker(QObject* const parent)
-    : QObject     (parent),
-      m_manager   (nullptr),
-      m_curRequest(nullptr)
+class Q_DECL_HIDDEN OnlineVersionChecker::Private
 {
-    m_manager = new QNetworkAccessManager(this);
+public:
 
-    connect(m_manager, SIGNAL(finished(QNetworkReply*)),
+    explicit Private()
+      : manager   (nullptr),
+        curRequest(nullptr),
+        curVersion(QLatin1String(digikam_version_short))
+    {
+    }
+
+    QNetworkAccessManager* manager;
+    QNetworkReply*         curRequest;
+    QString                curVersion;
+};
+
+OnlineVersionChecker::OnlineVersionChecker(QObject* const parent)
+    : QObject(parent),
+      d      (new Private)
+{
+    d->manager = new QNetworkAccessManager(this);
+
+    connect(d->manager, SIGNAL(finished(QNetworkReply*)),
             this, SLOT(slotDownloadFinished(QNetworkReply*)));
 }
 
 OnlineVersionChecker::~OnlineVersionChecker()
 {
+    cancelCheck();
+    delete d;
 }
 
-QNetworkAccessManager* OnlineVersionChecker::manager() const
+void OnlineVersionChecker::cancelCheck()
 {
-    return m_manager;
+    if (d->curRequest)
+    {
+        d->curRequest->abort();
+    }
+}
+
+void OnlineVersionChecker::setCurrentVersion(const QString& version)
+{
+    d->curVersion = version;
 }
 
 void OnlineVersionChecker::checkForNewVersion()
 {
     QNetworkRequest request(QUrl(QLatin1String("https://invent.kde.org/websites/digikam-org/-/raw/master/data/release.yml")));
-    m_curRequest = m_manager->get(request);
+    d->curRequest = d->manager->get(request);
 
-    if (m_curRequest->error())
+    if (d->curRequest->error())
     {
-        emit signalNewVersionCheckError(m_curRequest->errorString());
-    }
-}
-
-void OnlineVersionChecker::cancelCheck()
-{
-    if (m_curRequest)
-    {
-        m_curRequest->abort();
+        emit signalNewVersionCheckError(d->curRequest->errorString());
     }
 }
 
@@ -84,7 +101,7 @@ void OnlineVersionChecker::slotDownloadFinished(QNetworkReply* reply)
     // mark for deletion
 
     reply->deleteLater();
-    m_curRequest = nullptr;
+    d->curRequest = nullptr;
 
     QNetworkReply::NetworkError error = reply->error();
 
@@ -117,7 +134,7 @@ void OnlineVersionChecker::slotDownloadFinished(QNetworkReply* reply)
         return;
     }
 
-    QStringList currVals   = QString::fromLatin1(digikam_version_short).split(QLatin1Char('.'));
+    QStringList currVals   = d->curVersion.split(QLatin1Char('.'));
 
     qCDebug(DIGIKAM_GENERAL_LOG) << "Online Version:" << onlineVer;
 

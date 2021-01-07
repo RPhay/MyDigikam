@@ -63,6 +63,7 @@ public:
 
     QString                error;
     QString                file;
+    QString                downloaded;
 
     QNetworkReply*         reply;
     QNetworkAccessManager* netMngr;
@@ -81,13 +82,17 @@ OnlineVersionDwnl::OnlineVersionDwnl(QObject* const parent)
 
 OnlineVersionDwnl::~OnlineVersionDwnl()
 {
+    cancelDownload();
+    delete d;
+}
+
+void OnlineVersionDwnl::cancelDownload()
+{
     if (d->reply)
     {
         d->reply->abort();
         d->reply = nullptr;
     }
-
-    delete d;
 }
 
 void OnlineVersionDwnl::startDownload(const QString& version)
@@ -226,6 +231,9 @@ void OnlineVersionDwnl::slotDownloaded(QNetworkReply* reply)
         file.write(data);
         file.close();
 
+        QFile::setPermissions(path, QFile::permissions(path) | QFileDevice::ExeUser);
+        d->downloaded = path;
+
         qCDebug(DIGIKAM_GENERAL_LOG) << "Download is complete: " << path;
 
         emit signalDownloadError(QString());  // No error: download is complete.
@@ -235,6 +243,11 @@ void OnlineVersionDwnl::slotDownloaded(QNetworkReply* reply)
         qCDebug(DIGIKAM_GENERAL_LOG) << "Cannot open " << path;
         emit signalDownloadError(i18n("Cannot open target file."));
     }
+}
+
+QString OnlineVersionDwnl::downloadedPath() const
+{
+    return d->downloaded;
 }
 
 } // namespace Digikam

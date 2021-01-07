@@ -56,7 +56,7 @@ int main(int argc, char* argv[])
     parser.process(app);
     aboutData.processCommandLine(&parser);
 
-    OnlineVersionDlg* const dlg = new OnlineVersionDlg;
+    OnlineVersionDlg* const dlg = new OnlineVersionDlg(nullptr, QLatin1String("7.0.0"));
 
-    return dlg->exec();
+    return (dlg->exec());
 }

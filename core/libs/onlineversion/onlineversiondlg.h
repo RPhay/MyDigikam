@@ -26,29 +26,37 @@
 
 // Qt includes
 
-#include <QProgressDialog>
+#include <QDialog>
 
 // Local includes
 
 #include "digikam_export.h"
+#include "digikam_version.h"
 
 namespace Digikam
 {
 
-class DIGIKAM_EXPORT OnlineVersionDlg : public QProgressDialog
+class DIGIKAM_EXPORT OnlineVersionDlg : public QDialog
 {
     Q_OBJECT
 
 public:
 
-    explicit OnlineVersionDlg(QWidget* const parent = nullptr);
+    explicit OnlineVersionDlg(QWidget* const parent = nullptr,
+                              const QString& version = QLatin1String(digikam_version_short));
     ~OnlineVersionDlg() override;
 
 private Q_SLOTS:
 
     void slotNewVersionAvailable(const QString& version);
     void slotNewVersionCheckError(const QString& error);
-    void slotOpenInBrowser();
+
+    void slotDownloadInstaller();
+    void slotDownloadError(const QString& error);
+    void slotDownloadProgress(qint64, qint64);
+
+    void slotRunInstaller();
+    void slotOpenInFileManager();
 
 private:
 

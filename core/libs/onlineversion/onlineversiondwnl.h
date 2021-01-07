@@ -46,6 +46,9 @@ public:
     ~OnlineVersionDwnl() override;
 
     void startDownload(const QString& version);
+    void cancelDownload();
+
+    QString downloadedPath() const;
 
 Q_SIGNALS:
 
