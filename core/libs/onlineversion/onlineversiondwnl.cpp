@@ -215,8 +215,8 @@ void OnlineVersionDwnl::slotDownloaded(QNetworkReply* reply)
 
     if (data.isEmpty())
     {
-        qCDebug(DIGIKAM_GENERAL_LOG) << "Downloaded data is empty";
-        emit signalDownloadError(i18n("Downloaded data is empty."));
+        qCDebug(DIGIKAM_GENERAL_LOG) << "Downloaded file is empty";
+        emit signalDownloadError(i18n("Downloaded file is empty."));
 
         return;
     }
