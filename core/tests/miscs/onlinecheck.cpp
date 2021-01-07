@@ -34,14 +34,22 @@
 
 // Local includes
 
-#include "daboutdata.h"
+#include "digikam_config.h"
 #include "digikam_version.h"
 #include "onlineversiondlg.h"
+#include "daboutdata.h"
 
 using namespace Digikam;
 
 int main(int argc, char* argv[])
 {
+
+#ifdef HAVE_QWEBENGINE
+
+    QCoreApplication::setAttribute(Qt::AA_ShareOpenGLContexts);
+
+#endif
+
     QApplication app(argc, argv);
 
     KAboutData aboutData(QLatin1String("digikam"),
