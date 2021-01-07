@@ -4,6 +4,7 @@ digiKam 7.2.0 - Release date: 2021-01-31
 NEW FEATURES:
 
 General       : Update internal Libraw to last 0.20.2.
+General       : New Online version checker/downloader, with option to install automatically new version under macOS and Windows.
 General       : MacOS PKG installer is now compatible with Apple BigSur.
 General       : MacOS bundle is now fully relocatable.
 General       : Check and fix source codes with Clazy static analyzer.
@@ -269,5 +270,5 @@ BUGFIXES:
 249 ==> 431102 - Windows install does not have an icon for digiKam.
 250 ==> 424727 - "Failed to connect to camera" error with iPhone 6s.
 251 ==> 380323 - Apply ratings with keyboard shortcuts.
-252 ==> 
-
+252 ==> 426997 - Automatic upgrading.
+253 ==> 
