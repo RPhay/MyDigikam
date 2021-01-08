@@ -234,6 +234,7 @@ private Q_SLOTS:
     void slotNewToolbarConfig();
 
     void slotRawCameraList();
+    void slotSolidHardwareList();
     void slotDonateMoney();
     void slotOnlineVersionCheck();
     void slotRecipesBook();

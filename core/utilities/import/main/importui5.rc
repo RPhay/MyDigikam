@@ -1,5 +1,5 @@
 <!DOCTYPE kpartgui SYSTEM "kpartgui.dtd">
-<gui version="601" name="importui" translationDomain="digikam" >
+<gui version="701" name="importui" translationDomain="digikam" >
 
 <MenuBar>
 
@@ -77,10 +77,12 @@
 
     <Menu name="help" ><text>&amp;Help</text>
         <Action name="help_rawcameralist"/>
+        <Action name="help_solidhardwarelist" />
         <Action name="help_librariesinfo"/>
         <Action name="help_dbstat"/>
         <Separator/>
         <Action name="help_donatemoney"/>
+        <Action name="help_onlineversioncheck" />
         <Action name="help_contribute"/>
         <Action name="help_handbook"/>
     </Menu>

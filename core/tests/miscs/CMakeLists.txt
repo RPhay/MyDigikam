@@ -48,3 +48,15 @@ target_link_libraries(onlinedownload
 
                       ${COMMON_TEST_LINK}
 )
+
+# -----------------------------------------------------------------
+
+set(solidhardware_SRCS ${CMAKE_CURRENT_SOURCE_DIR}/solidhardware.cpp)
+add_executable(solidhardware ${solidhardware_SRCS})
+
+target_link_libraries(solidhardware
+
+                      digikamcore
+
+                      ${COMMON_TEST_LINK}
+)

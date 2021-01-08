@@ -75,6 +75,7 @@
 #include "dpluginloader.h"
 #include "webbrowserdlg.h"
 #include "onlineversiondlg.h"
+#include "solidhardwaredlg.h"
 
 namespace Digikam
 {
@@ -269,6 +270,10 @@ void DXmlGuiWindow::createHelpActions(bool coreOptions)
     QAction* const rawCameraListAction  = new QAction(QIcon::fromTheme(QLatin1String("image-x-adobe-dng")), i18n("Supported RAW Cameras"), this);
     connect(rawCameraListAction, SIGNAL(triggered()), this, SLOT(slotRawCameraList()));
     actionCollection()->addAction(QLatin1String("help_rawcameralist"), rawCameraListAction);
+
+    QAction* const solidHardwareAction  = new QAction(QIcon::fromTheme(QLatin1String("preferences-devices-tree")), i18n("List of Detected Hardware"), this);
+    connect(solidHardwareAction, SIGNAL(triggered()), this, SLOT(slotSolidHardwareList()));
+    actionCollection()->addAction(QLatin1String("help_solidhardwarelist"), solidHardwareAction);
 
     QAction* const donateMoneyAction    = new QAction(QIcon::fromTheme(QLatin1String("globe")), i18n("Donate..."), this);
     connect(donateMoneyAction, SIGNAL(triggered()), this, SLOT(slotDonateMoney()));
@@ -903,6 +908,12 @@ QAction* DXmlGuiWindow::buildStdAction(StdActionType type, const QObject* const 
 void DXmlGuiWindow::slotRawCameraList()
 {
     showRawCameraList();
+}
+
+void DXmlGuiWindow::slotSolidHardwareList()
+{
+    SolidHardwareDlg* const dlg = new SolidHardwareDlg(qApp->activeWindow());
+    dlg->exec();
 }
 
 void DXmlGuiWindow::slotOnlineVersionCheck()
