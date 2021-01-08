@@ -7,7 +7,7 @@
  *
  * Copyright (C)      2010 by Marcel Wiesweg <marcel dot wiesweg at gmx dot de>
  * Copyright (C)      2010 by Aditya Bhatt <adityabhatt1991 at gmail dot com>
- * Copyright (C) 2010-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2010-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  * Copyright (C)      2019 by Thanh Trung Dinh <dinhthanhtrung1996 at gmail dot com>
  * Copyright (C)      2020 by Nghia Duong <minhnghiaduong997 at gmail dot com>
  *
