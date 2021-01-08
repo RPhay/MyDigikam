@@ -286,7 +286,7 @@ void DXmlGuiWindow::createHelpActions(bool coreOptions)
     connect(onlineVerCheckAction, SIGNAL(triggered()), this, SLOT(slotOnlineVersionCheck()));
     actionCollection()->addAction(QLatin1String("help_onlineversioncheck"), onlineVerCheckAction);
 
-    QAction* const helpAction           = new QAction(QIcon::fromTheme(QLatin1String("help-contents")), i18n("Online Handbook..."), this);
+    QAction* const helpAction           = new QAction(QIcon::fromTheme(QLatin1String("globe")), i18n("Online Handbook..."), this);
     connect(helpAction, SIGNAL(triggered()), this, SLOT(slotHelpContents()));
     actionCollection()->addAction(QLatin1String("help_handbook"), helpAction);
 
