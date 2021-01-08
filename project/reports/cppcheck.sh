@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# Copyright (c) 2013-2020 by Gilles Caulier, <caulier dot gilles at gmail dot com>
+# Copyright (c) 2013-2021 by Gilles Caulier, <caulier dot gilles at gmail dot com>
 #
 # Run CppCheck static analyzer on whole digiKam source code.
 # http://cppcheck.sourceforge.net/
