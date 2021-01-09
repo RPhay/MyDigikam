@@ -82,6 +82,13 @@ AddTagsComboBox::AddTagsComboBox(QWidget* const parent)
     connect(d->lineEdit, SIGNAL(taggingActionSelected(TaggingAction)),
             this, SLOT(slotLineEditActionSelected(TaggingAction)));
 
+    connect(d->lineEdit->completer(), QOverload<const QString&>::of(&QCompleter::highlighted),
+            [=](const QString& text)
+            {
+                d->lineEdit->setText(text);
+            }
+    );
+
     TagTreeView::Flags flags;
     m_treeView = new TagTreeView(this, flags);
 
