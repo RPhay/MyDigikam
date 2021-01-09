@@ -202,19 +202,20 @@ void SolidHardwareDlg::slotPopulateDevices()
             }
 
             QTreeWidgetItem* vitem       = nullptr;
-            QTreeWidgetItem* const titem = new QTreeWidgetItem(hitem, QStringList() << 
+            QString title;
 
 #if (SOLID_VERSION >= QT_VERSION_CHECK(5, 71, 0))
 
-                device.displayName()
-
-#else
-
-                device.udi().section(QLatin1Char('/'), -1)
+            title                        = device.displayName();
 
 #endif
 
-            );
+            if (title.isEmpty())
+            {
+                title = device.udi().section(QLatin1Char('/'), -1);
+            }
+
+            QTreeWidgetItem* const titem = new QTreeWidgetItem(hitem, QStringList() << title);
             titem->setData(0, Qt::UserRole, 1);
 
             vitem = new QTreeWidgetItem(titem, QStringList() << i18n("Udi")         << (device.udi().isEmpty()         ? i18n("empty") : device.udi()));
