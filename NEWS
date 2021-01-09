@@ -271,4 +271,9 @@ BUGFIXES:
 250 ==> 424727 - "Failed to connect to camera" error with iPhone 6s.
 251 ==> 380323 - Apply ratings with keyboard shortcuts.
 252 ==> 426997 - Automatic upgrading.
-253 ==> 
+253 ==> 429792 - Face tag name completion with arrow keys fails.
+254 ==> 430671 - Add a Face Tag: default action for Enter key should be the highlighted tag.
+255 ==> 431188 - Add a Face Tag: Keyboard navigation to select from autocomplete dropdown doesn't work.
+256 ==> 431357 - Face attribution doesn't get the name selected in the contextual menu.
+257 ==> 431355 - There is no button to add Tag to picture.
+258 ==> 
