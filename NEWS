@@ -276,4 +276,5 @@ BUGFIXES:
 255 ==> 431188 - Add a Face Tag: Keyboard navigation to select from autocomplete dropdown doesn't work.
 256 ==> 431357 - Face attribution doesn't get the name selected in the contextual menu.
 257 ==> 431355 - There is no button to add Tag to picture.
-258 ==> 
+258 ==> 297291 - Allow to quick edit metadata using keyboard shortcuts.
+259 ==> 
