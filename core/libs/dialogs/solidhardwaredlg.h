@@ -45,6 +45,8 @@ public:
 private Q_SLOTS:
 
     void slotSearchTextChanged(const SearchTextSettings&);
+    void slotCopy2ClipBoard();
+    void slotPopulateDevices();
 
 private:
 
