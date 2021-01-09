@@ -57,26 +57,30 @@ class Q_DECL_HIDDEN InfoDlg::Private
 {
 public:
 
-    explicit Private() :
-        listView(nullptr),
-        page(nullptr)
+    explicit Private()
+      : listView(nullptr),
+        page    (nullptr),
+        buttons (nullptr)
     {
     }
 
-    QTreeWidget* listView;
-    QWidget*     page;
+    QTreeWidget*      listView;
+    QWidget*          page;
+    QDialogButtonBox* buttons;
 };
 
 InfoDlg::InfoDlg(QWidget* const parent)
     : QDialog(parent),
-      d(new Private)
+      d      (new Private)
 {
     setModal(false);
     setWindowTitle(i18n("Shared Libraries and Components Information"));
 
-    QDialogButtonBox* const buttons = new QDialogButtonBox(QDialogButtonBox::Help | QDialogButtonBox::Apply | QDialogButtonBox::Ok, this);
-    buttons->button(QDialogButtonBox::Ok)->setDefault(true);
-    buttons->button(QDialogButtonBox::Apply)->setText(i18n("Copy to Clipboard"));
+    d->buttons = new QDialogButtonBox(QDialogButtonBox::Help  |
+                                      QDialogButtonBox::Apply |
+                                      QDialogButtonBox::Ok, this);
+    d->buttons->button(QDialogButtonBox::Ok)->setDefault(true);
+    d->buttons->button(QDialogButtonBox::Apply)->setText(i18n("Copy to Clipboard"));
 
     d->page                 = new QWidget(this);
     QGridLayout* const grid = new QGridLayout(d->page);
@@ -132,20 +136,20 @@ InfoDlg::InfoDlg(QWidget* const parent)
 
     QVBoxLayout* const vbx = new QVBoxLayout(this);
     vbx->addWidget(d->page);
-    vbx->addWidget(buttons);
+    vbx->addWidget(d->buttons);
     setLayout(vbx);
 
     // --------------------------------------------------------
 
-    connect(buttons->button(QDialogButtonBox::Ok), SIGNAL(clicked()),
+    connect(d->buttons->button(QDialogButtonBox::Ok), SIGNAL(clicked()),
             this, SLOT(accept()));
 
-    connect(buttons->button(QDialogButtonBox::Help), SIGNAL(clicked()),
+    connect(d->buttons->button(QDialogButtonBox::Help), SIGNAL(clicked()),
             this, SLOT(slotHelp()));
 
     // --- NOTE: use dynamic binding as slotCopy2ClipBoard() is a virtual slot which can be re-implemented in derived classes.
 
-    connect(buttons->button(QDialogButtonBox::Apply), &QPushButton::clicked,
+    connect(d->buttons->button(QDialogButtonBox::Apply), &QPushButton::clicked,
             this, &InfoDlg::slotCopy2ClipBoard);
 
     resize(400, 500);
@@ -159,6 +163,11 @@ InfoDlg::~InfoDlg()
 QTreeWidget* InfoDlg::listView() const
 {
     return d->listView;
+}
+
+QDialogButtonBox* InfoDlg::buttonBox() const
+{
+    return d->buttons;
 }
 
 QWidget* InfoDlg::mainWidget() const

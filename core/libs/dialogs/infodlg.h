@@ -35,6 +35,7 @@
 #include "digikam_export.h"
 
 class QTreeWidget;
+class QDialogButtonBox;
 
 namespace Digikam
 {
@@ -50,8 +51,9 @@ public:
 
     virtual void setInfoMap(const QMap<QString, QString>& list);
 
-    QTreeWidget* listView()   const;
-    QWidget*     mainWidget() const;
+    QTreeWidget*      listView()   const;
+    QWidget*          mainWidget() const;
+    QDialogButtonBox* buttonBox()  const;
 
 private Q_SLOTS:
 

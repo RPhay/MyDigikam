@@ -25,17 +25,38 @@
 
 #include <QApplication>
 #include <QDebug>
+#include <QCommandLineParser>
+
+// KDE includes
+
+#include <kaboutdata.h>
 
 // Local includes
 
+#include "digikam_config.h"
+#include "digikam_version.h"
+#include "daboutdata.h"
 #include "solidhardwaredlg.h"
 
 using namespace Digikam;
 
 int main(int argc, char* argv[])
 {
-    QApplication a(argc, argv);
+    QApplication app(argc, argv);
+
+    KAboutData aboutData(QLatin1String("digikam"),
+                         QLatin1String("digiKam"), // No need i18n here.
+                         digiKamVersion());
+
+    QCommandLineParser parser;
+    KAboutData::setApplicationData(aboutData);
+    parser.addVersionOption();
+    parser.addHelpOption();
+    aboutData.setupCommandLine(&parser);
+    parser.process(app);
+    aboutData.processCommandLine(&parser);
 
     SolidHardwareDlg dlg(nullptr);
+
     return (dlg.exec());
 }

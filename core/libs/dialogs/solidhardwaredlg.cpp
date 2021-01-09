@@ -36,6 +36,7 @@
 #include <QClipboard>
 #include <QApplication>
 #include <QPushButton>
+#include <QDialogButtonBox>
 
 // KDE includes
 
@@ -68,14 +69,12 @@ public:
 
     explicit Private()
       : header    (nullptr),
-        searchBar (nullptr),
-        refreshBtn(nullptr)
+        searchBar (nullptr)
     {
     }
 
     QLabel*        header;
     SearchTextBar* searchBar;
-    QPushButton*   refreshBtn;
 };
 
 SolidHardwareDlg::SolidHardwareDlg(QWidget* const parent)
@@ -90,10 +89,9 @@ SolidHardwareDlg::SolidHardwareDlg(QWidget* const parent)
                             "Press \"Refresh\" to update list if you plug a removable device.",
                        QApplication::applicationName(),
                        QLatin1String(SOLID_VERSION_STRING)));
-    d->refreshBtn = new QPushButton(i18n("Refresh"), this);
     d->searchBar  = new SearchTextBar(this, QLatin1String("SolidHardwareDlgSearchBar"));
 
-    listView()->setHeaderLabels(QStringList() << i18n("Properties") << i18n("Value"));
+    listView()->setHeaderLabels(QStringList() << QLatin1String("Properties") << QLatin1String("Value")); // Hidden header -> no i18n
     listView()->header()->show();
     listView()->setSortingEnabled(true);
     listView()->setRootIsDecorated(true);
@@ -104,19 +102,22 @@ SolidHardwareDlg::SolidHardwareDlg(QWidget* const parent)
     listView()->header()->setSectionResizeMode(QHeaderView::Stretch);
     listView()->header()->hide();
 
+    buttonBox()->addButton(QDialogButtonBox::Reset);
+    buttonBox()->button(QDialogButtonBox::Reset)->setText(i18n("Refresh"));
+
+
     // --------------------------------------------------------
 
     QGridLayout* const  grid = dynamic_cast<QGridLayout*>(mainWidget()->layout());
     grid->addWidget(d->header,     1, 0, 1, -1);
     grid->addWidget(d->searchBar,  3, 0, 1, -1);
-    grid->addWidget(d->refreshBtn, 4, 0, 1, -1);
 
     // --------------------------------------------------------
 
     connect(d->searchBar, SIGNAL(signalSearchTextSettings(SearchTextSettings)),
             this, SLOT(slotSearchTextChanged(SearchTextSettings)));
 
-    connect(d->refreshBtn, SIGNAL(clicked()),
+    connect(buttonBox()->button(QDialogButtonBox::Reset), SIGNAL(clicked()),
             this, SLOT(slotPopulateDevices()));
 
     // --------------------------------------------------------

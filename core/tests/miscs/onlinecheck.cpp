@@ -36,8 +36,8 @@
 
 #include "digikam_config.h"
 #include "digikam_version.h"
-#include "onlineversiondlg.h"
 #include "daboutdata.h"
+#include "onlineversiondlg.h"
 
 using namespace Digikam;
 
