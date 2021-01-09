@@ -107,15 +107,15 @@ SearchTextBar::SearchTextBar(QWidget* const parent, const QString& name, const Q
     connect(this, SIGNAL(textChanged(QString)),
             d->searchTimer, SLOT(start()));
 
-    connect(d->completer, static_cast<void(ModelCompleter::*)(void)>(&ModelCompleter::signalActivated),
-            this, [this](void)
+    connect(d->completer, QOverload<>::of(&ModelCompleter::signalActivated),
+            [=]()
             {
                 emit completerActivated();
             }
     );
 
-    connect(d->completer, static_cast<void(ModelCompleter::*)(const int)>(&ModelCompleter::signalHighlighted),
-            this, [this](const int albumId)
+    connect(d->completer, QOverload<const int>::of(&ModelCompleter::signalHighlighted),
+            [=](const int albumId)
             {
                 emit completerHighlighted(albumId);
             }
