@@ -139,54 +139,69 @@ void SolidHardwareDlg::slotPopulateDevices()
     for (const Solid::Device& device : all)
     {
         QString typeStr;
+        QString typeDesc;
 
         if      (device.isDeviceInterface(Solid::DeviceInterface::StorageDrive))
         {
-            typeStr = Solid::DeviceInterface::typeToString(Solid::DeviceInterface::StorageDrive);
+            typeStr  = Solid::DeviceInterface::typeToString(Solid::DeviceInterface::StorageDrive);
+            typeDesc = Solid::DeviceInterface::typeDescription(Solid::DeviceInterface::StorageDrive);
         }
         else if (device.isDeviceInterface(Solid::DeviceInterface::StorageAccess))
         {
-            typeStr = Solid::DeviceInterface::typeToString(Solid::DeviceInterface::StorageAccess);
+            typeStr  = Solid::DeviceInterface::typeToString(Solid::DeviceInterface::StorageAccess);
+            typeDesc = Solid::DeviceInterface::typeDescription(Solid::DeviceInterface::StorageAccess);
         }
         else if (device.isDeviceInterface(Solid::DeviceInterface::StorageVolume))
         {
-            typeStr = Solid::DeviceInterface::typeToString(Solid::DeviceInterface::StorageVolume);
+            typeStr  = Solid::DeviceInterface::typeToString(Solid::DeviceInterface::StorageVolume);
+            typeDesc = Solid::DeviceInterface::typeDescription(Solid::DeviceInterface::StorageVolume);
         }
         else if (device.isDeviceInterface(Solid::DeviceInterface::OpticalDrive))
         {
-            typeStr = Solid::DeviceInterface::typeToString(Solid::DeviceInterface::OpticalDrive);
+            typeStr  = Solid::DeviceInterface::typeToString(Solid::DeviceInterface::OpticalDrive);
+            typeDesc = Solid::DeviceInterface::typeDescription(Solid::DeviceInterface::OpticalDrive);
         }
         else if (device.isDeviceInterface(Solid::DeviceInterface::OpticalDisc))
         {
-            typeStr = Solid::DeviceInterface::typeToString(Solid::DeviceInterface::OpticalDisc);
+            typeStr  = Solid::DeviceInterface::typeToString(Solid::DeviceInterface::OpticalDisc);
+            typeDesc = Solid::DeviceInterface::typeDescription(Solid::DeviceInterface::OpticalDisc);
         }
         else if (device.isDeviceInterface(Solid::DeviceInterface::Camera))
         {
-            typeStr = Solid::DeviceInterface::typeToString(Solid::DeviceInterface::Camera);
+            typeStr  = Solid::DeviceInterface::typeToString(Solid::DeviceInterface::Camera);
+            typeDesc = Solid::DeviceInterface::typeDescription(Solid::DeviceInterface::Camera);
         }
         else if (device.isDeviceInterface(Solid::DeviceInterface::Processor))
         {
-            typeStr = Solid::DeviceInterface::typeToString(Solid::DeviceInterface::Processor);
+            typeStr  = Solid::DeviceInterface::typeToString(Solid::DeviceInterface::Processor);
+            typeDesc = Solid::DeviceInterface::typeDescription(Solid::DeviceInterface::Processor);
         }
         else if (device.isDeviceInterface(Solid::DeviceInterface::Block))
         {
-            typeStr = Solid::DeviceInterface::typeToString(Solid::DeviceInterface::Block);
+            typeStr  = Solid::DeviceInterface::typeToString(Solid::DeviceInterface::Block);
+            typeDesc = Solid::DeviceInterface::typeDescription(Solid::DeviceInterface::Block);
         }
         else if (device.isDeviceInterface(Solid::DeviceInterface::PortableMediaPlayer))
         {
-            typeStr = Solid::DeviceInterface::typeToString(Solid::DeviceInterface::PortableMediaPlayer);
+            typeStr  = Solid::DeviceInterface::typeToString(Solid::DeviceInterface::PortableMediaPlayer);
+            typeDesc = Solid::DeviceInterface::typeDescription(Solid::DeviceInterface::PortableMediaPlayer);
         }
         else if (device.isDeviceInterface(Solid::DeviceInterface::NetworkShare))
         {
-            typeStr = Solid::DeviceInterface::typeToString(Solid::DeviceInterface::NetworkShare);
+            typeStr  = Solid::DeviceInterface::typeToString(Solid::DeviceInterface::NetworkShare);
+            typeDesc = Solid::DeviceInterface::typeDescription(Solid::DeviceInterface::NetworkShare);
         }
         else if (device.isDeviceInterface(Solid::DeviceInterface::Unknown))
         {
-            typeStr = Solid::DeviceInterface::typeToString(Solid::DeviceInterface::Unknown);
+            typeStr  = Solid::DeviceInterface::typeToString(Solid::DeviceInterface::Unknown);
+            typeDesc = Solid::DeviceInterface::typeDescription(Solid::DeviceInterface::Unknown);
         }
 
         if (!typeStr.isEmpty())
         {
+            // NOTE: Data UserRole in column 0 is used to store index level of tree widget item.
+            //       This value is used later in copy to clipboard to render hierarchy as text.
+
             QList<QTreeWidgetItem*> lst = listView()->findItems(typeStr, Qt::MatchExactly);
             QTreeWidgetItem* hitem      = nullptr;
 
@@ -196,7 +211,7 @@ void SolidHardwareDlg::slotPopulateDevices()
             }
             else
             {
-                hitem = new QTreeWidgetItem(listView(), QStringList() << typeStr);
+                hitem = new QTreeWidgetItem(listView(), QStringList() << typeStr << typeDesc);
                 hitem->setData(0, Qt::UserRole, 0);
                 listView()->addTopLevelItem(hitem);
             }
@@ -238,7 +253,7 @@ void SolidHardwareDlg::slotPopulateDevices()
 
             if (device.is<Solid::GenericInterface>())
             {
-                QTreeWidgetItem* const vitem = new QTreeWidgetItem(titem, QStringList() << i18n("Properties"));
+                QTreeWidgetItem* const vitem = new QTreeWidgetItem(titem, QStringList() << i18n("Properties") << i18n("Non-portable info"));
                 vitem->setData(0, Qt::UserRole, 2);
 
                 QMap<QString, QVariant> properties = device.as<Solid::GenericInterface>()->allProperties();
