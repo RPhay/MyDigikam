@@ -18,7 +18,7 @@ trap 'echo "FAILED COMMAND: $PREVIOUS_COMMAND"' ERR
 INSTALL_PREFIX=$1
 
 if [ "$INSTALL_PREFIX" = "" ]; then
-    INSTALL_PREFIX="/opt/digikam"
+    INSTALL_PREFIX="/opt/digikam.org"
     BUNDLE_INSTALL_DIR="/Applications/KF5"
     BUNDLE_DATA_INSTALL_DIR="/Library/Application Support"
 else
