@@ -32,7 +32,6 @@
 
 #include <QKeyEvent>
 #include <QApplication>
-#include <QGraphicsProxyWidget>
 
 // Local includes
 
@@ -67,14 +66,14 @@ AddTagsComboBox::AddTagsComboBox(QWidget* const parent)
     setCloseOnActivate(true);
     setMaxVisibleItems(10);
     setCheckable(false);
-    setParent(nullptr);
 
     d->lineEdit = new AddTagsLineEdit(this);
     setLineEdit(d->lineEdit);
 
     // See QTBUG-20531
 
-    d->lineEdit->completer()->popup()->setParent(d->lineEdit, Qt::Popup);
+    Qt::WindowFlags wflags = d->lineEdit->completer()->popup()->windowFlags();
+    d->lineEdit->completer()->popup()->setParent(d->lineEdit, wflags);
 
     connect(d->lineEdit, SIGNAL(taggingActionActivated(TaggingAction)),
             this, SLOT(slotLineEditActionActivated(TaggingAction)));
@@ -196,13 +195,6 @@ bool AddTagsComboBox::eventFilter(QObject* object, QEvent* event)
     {
         if      (event->type() == QEvent::Show)
         {
-            QGraphicsProxyWidget* const proxyWidget = popup->graphicsProxyWidget();
-
-            if (proxyWidget)
-            {
-                proxyWidget->setMinimumHeight(0);
-            }
-
             setFocus();
         }
         else if (event->type() == QEvent::Hide)
