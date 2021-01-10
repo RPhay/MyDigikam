@@ -27,6 +27,7 @@
 // Qt includes.
 
 #include <QString>
+#include <QDateTime>
 
 // Local includes.
 
@@ -40,9 +41,20 @@ static const char digikam_version[]        = "@DIGIKAM_VERSION_STRING@";
 static const char digikam_version_suffix[] = "@DIGIKAM_SUFFIX_VERSION@";
 static const char digikam_build_type[]     = "@CMAKE_BUILD_TYPE@";
 
+/**
+ * Return the current digiKam version as string.
+ */
 DIGIKAM_EXPORT const QString digiKamVersion();
 
+/**
+ * Return al list of additional information about the current application build.
+ */
 DIGIKAM_EXPORT const QString additionalInformation();
+
+/**
+ * Return the time-stamp of the current build.
+ */
+DIGIKAM_EXPORT const QDateTime digiKamBuildDate();
 
 /**
  * Make an integer version number for comparison from a major, minor and

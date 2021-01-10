@@ -23,6 +23,12 @@
 
 #include "digikam_version.h"
 
+// Qt includes
+
+#include <QLocale>
+#include <QDate>
+#include <QTime>
+
 // KDE includes.
 
 #include <klocalizedstring.h>
@@ -55,13 +61,21 @@ const QString digiKamVersion()
     return QLatin1String(digikam_version);
 }
 
+const QDateTime digiKamBuildDate()
+{
+    QDate date = QLocale(QLatin1String("en_US")).toDate(QString::fromLatin1(__DATE__).simplified(), QLatin1String("MMM dd yyyy"));
+    QTime time = QTime::fromString(QLatin1String(__TIME__));
+
+    return QDateTime(date, time);
+}
+
 const QString additionalInformation()
 {
     QString gitVer       = QLatin1String(GITVERSION);
     QString ret          = i18n("IRC: irc.freenode.net - #digikam\n"
                                 "Feedback: digikam-user@kde.org\n\n"
                                 "Build date: %1 (target: %2)",
-                                QLatin1String(__DATE__),
+                                digiKamBuildDate().toString(Qt::ISODate),
                                 QLatin1String(digikam_build_type));
 
     if (!gitVer.isEmpty() && !gitVer.startsWith(QLatin1String("unknow")) && !gitVer.startsWith(QLatin1String("export")))
@@ -70,7 +84,7 @@ const QString additionalInformation()
                    "Feedback: digikam-user@kde.org\n\n"
                    "Build date: %1 (target: %2)\n"
                    "Rev.: %3",
-                   QLatin1String(__DATE__),
+                   digiKamBuildDate().toString(Qt::ISODate),
                    QLatin1String(digikam_build_type),
                    QString::fromLatin1("<a href='http://commits.kde.org/digikam/%1'>%2</a>").arg(gitVer).arg(gitVer));
     }
