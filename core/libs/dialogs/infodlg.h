@@ -27,15 +27,15 @@
 
 // Qt includes
 
-#include <QMap>
+#include <QWidget>
+#include <QTreeWidget>
+#include <QDialogButtonBox>
+#include <QTabWidget>
 #include <QDialog>
 
 // Local includes
 
 #include "digikam_export.h"
-
-class QTreeWidget;
-class QDialogButtonBox;
 
 namespace Digikam
 {
@@ -51,6 +51,7 @@ public:
 
     virtual void setInfoMap(const QMap<QString, QString>& list);
 
+    QTabWidget*       tabView()    const;
     QTreeWidget*      listView()   const;
     QWidget*          mainWidget() const;
     QDialogButtonBox* buttonBox()  const;

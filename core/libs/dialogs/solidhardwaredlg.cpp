@@ -26,6 +26,7 @@
 // Qt includes
 
 #include <QStringList>
+#include <QDateTime>
 #include <QString>
 #include <QLabel>
 #include <QLayout>
@@ -52,6 +53,7 @@
 #include <solid/camera.h>
 #include <solid/device.h>
 #include <solid/deviceinterface.h>
+#include <solid/devicenotifier.h>
 #include <solid/genericinterface.h>
 
 #if defined(Q_CC_CLANG)
@@ -69,12 +71,14 @@ public:
 
     explicit Private()
       : header    (nullptr),
-        searchBar (nullptr)
+        searchBar (nullptr),
+        eventsList(nullptr)
     {
     }
 
     QLabel*        header;
     SearchTextBar* searchBar;
+    QTreeWidget*   eventsList;
 };
 
 SolidHardwareDlg::SolidHardwareDlg(QWidget* const parent)
@@ -92,7 +96,6 @@ SolidHardwareDlg::SolidHardwareDlg(QWidget* const parent)
     d->searchBar  = new SearchTextBar(this, QLatin1String("SolidHardwareDlgSearchBar"));
 
     listView()->setHeaderLabels(QStringList() << QLatin1String("Properties") << QLatin1String("Value")); // Hidden header -> no i18n
-    listView()->header()->show();
     listView()->setSortingEnabled(true);
     listView()->setRootIsDecorated(true);
     listView()->setSelectionMode(QAbstractItemView::SingleSelection);
@@ -101,6 +104,32 @@ SolidHardwareDlg::SolidHardwareDlg(QWidget* const parent)
     listView()->setColumnCount(2);
     listView()->header()->setSectionResizeMode(QHeaderView::Stretch);
     listView()->header()->hide();
+
+    // --------------------------------------------------------
+
+    d->eventsList = new QTreeWidget(this);
+    d->eventsList->setSortingEnabled(true);
+    d->eventsList->setRootIsDecorated(true);
+    d->eventsList->setSelectionMode(QAbstractItemView::SingleSelection);
+    d->eventsList->setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Expanding);
+    d->eventsList->setAllColumnsShowFocus(true);
+    d->eventsList->setColumnCount(2);
+    d->eventsList->sortItems(0, Qt::AscendingOrder);
+    d->eventsList->header()->setSectionResizeMode(QHeaderView::Stretch);
+    d->eventsList->header()->hide();
+
+    tabView()->addTab(d->eventsList, i18n("Hotplug Device Events"));
+    tabView()->setTabText(0, i18n("Devices List"));
+
+    Solid::DeviceNotifier* const notifier = Solid::DeviceNotifier::instance();
+
+    connect(notifier, SIGNAL(deviceAdded(QString)),
+            this, SLOT(slotDeviceAdded(QString)));
+
+    connect(notifier, SIGNAL(deviceRemoved(QString)),
+            this, SLOT(slotDeviceRemoved(QString)));
+
+    // --------------------------------------------------------
 
     buttonBox()->addButton(QDialogButtonBox::Reset);
     buttonBox()->button(QDialogButtonBox::Reset)->setText(i18n("Refresh"));
@@ -309,7 +338,18 @@ void SolidHardwareDlg::slotCopy2ClipBoard()
     textInfo.append(QLatin1String(SOLID_VERSION_STRING));
     textInfo.append(QLatin1Char('\n'));
 
-    QTreeWidgetItemIterator it(listView());
+    QTreeWidget* ctree = nullptr;
+
+    if (tabView()->currentIndex() == 0)
+    {
+        ctree = listView();
+    }
+    else
+    {
+        ctree = d->eventsList;
+    }
+
+    QTreeWidgetItemIterator it(ctree);
 
     while (*it)
     {
@@ -325,6 +365,59 @@ void SolidHardwareDlg::slotCopy2ClipBoard()
     QMimeData* const mimeData = new QMimeData();
     mimeData->setText(textInfo);
     QApplication::clipboard()->setMimeData(mimeData, QClipboard::Clipboard);
+}
+
+void SolidHardwareDlg::slotDeviceAdded(const QString& udi)
+{
+    QTreeWidgetItem* const titem = new QTreeWidgetItem(d->eventsList, QStringList()
+                                           << QDateTime::currentDateTime().toString(Qt::ISODate)
+                                           << i18n("New Device Added"));
+    titem->setData(0, Qt::UserRole, 0);
+
+    const QList<Solid::Device> all = Solid::Device::allDevices();
+
+    for (const Solid::Device& device : all)
+    {
+        if (device.udi() == udi)
+        {
+            QTreeWidgetItem* vitem = nullptr;
+
+            vitem = new QTreeWidgetItem(titem, QStringList() << i18n("Udi")         << udi);
+            vitem->setData(0, Qt::UserRole, 1);
+
+            vitem = new QTreeWidgetItem(titem, QStringList() << i18n("Parent Udi")  << (device.parentUdi().isEmpty()   ? i18n("none")  : device.parentUdi()));
+            vitem->setData(0, Qt::UserRole, 1);
+
+            vitem = new QTreeWidgetItem(titem, QStringList() << i18n("Vendor")      << (device.vendor().isEmpty()      ? i18n("empty") : device.vendor()));
+            vitem->setData(0, Qt::UserRole, 1);
+
+            vitem = new QTreeWidgetItem(titem, QStringList() << i18n("Product")     << (device.product().isEmpty()     ? i18n("empty") : device.product()));
+            vitem->setData(0, Qt::UserRole, 1);
+
+            vitem = new QTreeWidgetItem(titem, QStringList() << i18n("Description") << (device.description().isEmpty() ? i18n("empty") : device.description()));
+            vitem->setData(0, Qt::UserRole, 1);
+
+            vitem = new QTreeWidgetItem(titem, QStringList() << i18n("States")      << (device.emblems().isEmpty()     ? i18n("none")  : device.emblems().join(QLatin1String(", "))));
+            vitem->setData(0, Qt::UserRole, 1);
+
+            break;
+        }
+    }
+
+    titem->setExpanded(true);
+}
+
+void SolidHardwareDlg::slotDeviceRemoved(const QString& udi)
+{
+    QTreeWidgetItem* const titem = new QTreeWidgetItem(d->eventsList, QStringList()
+                                           << QDateTime::currentDateTime().toString(Qt::ISODate)
+                                           << i18n("Device Removed"));
+    titem->setData(0, Qt::UserRole, 0);
+
+    QTreeWidgetItem* const vitem = new QTreeWidgetItem(titem, QStringList() << i18n("Udi") << udi);
+    vitem->setData(0, Qt::UserRole, 1);
+
+    titem->setExpanded(true);
 }
 
 } // namespace Digikam
