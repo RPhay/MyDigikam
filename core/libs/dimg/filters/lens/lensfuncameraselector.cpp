@@ -462,16 +462,16 @@ void LensFunCameraSelector::refreshSettingsView()
 
     if (d->iface->usedCamera())
     {
-        makerIdx = d->make->findText(d->iface->settings().cameraMake);
+        makerIdx = d->make->findOriginalText(d->iface->settings().cameraMake);
         qCDebug(DIGIKAM_DIMG_LOG) << "makerIdx: " << makerIdx << " (" << d->iface->settings().cameraMake << ")";
     }
     else
     {
-        int i = d->make->findText(d->iface->makeDescription());
+        int i = d->make->findOriginalText(d->iface->makeDescription());
 
         if (i == -1)
         {
-            i = d->make->findText(QLatin1String("Generic"));
+            i = d->make->findOriginalText(QLatin1String("Generic"));
         }
 
         if (i >= 0)
@@ -510,7 +510,7 @@ void LensFunCameraSelector::refreshSettingsView()
 
     if (d->iface->usedCamera())
     {
-        modelIdx = d->model->findText(d->iface->settings().cameraModel);
+        modelIdx = d->model->findOriginalText(d->iface->settings().cameraModel);
         qCDebug(DIGIKAM_DIMG_LOG) << "modelIdx: " << modelIdx << " (" << d->iface->settings().cameraModel << ")";
     }
 
@@ -545,7 +545,7 @@ void LensFunCameraSelector::refreshSettingsView()
 
     if (d->iface->usedLens())
     {
-        lensIdx = d->lens->findText(d->iface->settings().lensModel);
+        lensIdx = d->lens->findOriginalText(d->iface->settings().lensModel);
         qCDebug(DIGIKAM_DIMG_LOG) << "lensIdx: " << lensIdx << " (" << d->iface->settings().lensModel << ")";
     }
 
@@ -657,7 +657,7 @@ void LensFunCameraSelector::populateDeviceCombos()
             {
                 QString t = QLatin1String((*it)->Maker);
 
-                if (d->make->findText(t, Qt::MatchExactly) < 0)
+                if (d->make->findOriginalText(t) < 0)
                 {
                     d->make->addSqueezedItem(t);
                 }
