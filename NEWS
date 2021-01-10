@@ -279,4 +279,5 @@ BUGFIXES:
 258 ==> 297291 - Allow to quick edit metadata using keyboard shortcuts.
 259 ==> 431369 - Lens search uses only exact match (as I see).
 260 ==> 431400 - "Find duplicates" Without Selecting An Album Locks Up Duplicates Feature.
-261 ==> 
+261 ==> 431403 - Cannot Drag and Drop When Using Similarity.
+262 ==> 
