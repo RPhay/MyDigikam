@@ -94,6 +94,26 @@ bool SqueezedComboBox::contains(const QString& text) const
     return false;
 }
 
+int SqueezedComboBox::findOriginalText(const QString& text,
+                                       Qt::CaseSensitivity cs) const
+{
+    if (text.isEmpty())
+    {
+        return -1;
+    }
+
+    for (QMap<int, QString>::const_iterator it = d->originalItems.constBegin() ;
+         it != d->originalItems.constEnd() ; ++it)
+    {
+        if (it.value().compare(text, cs) == 0)
+        {
+            return it.key();
+        }
+    }
+
+    return -1;
+}
+
 QSize SqueezedComboBox::sizeHint() const
 {
     ensurePolished();
