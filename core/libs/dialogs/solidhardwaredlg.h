@@ -53,6 +53,10 @@ private Q_SLOTS:
 
 private:
 
+    QTreeWidget* currentTreeView() const;
+
+private:
+
     class Private;
     Private* const d;
 };

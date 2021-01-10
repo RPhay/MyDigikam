@@ -296,13 +296,23 @@ void SolidHardwareDlg::slotPopulateDevices()
     }
 }
 
+QTreeWidget* SolidHardwareDlg::currentTreeView() const
+{
+    if (tabView()->currentIndex() == 0)
+    {
+        return (listView());
+    }
+
+    return (d->eventsList);
+}
+
 void SolidHardwareDlg::slotSearchTextChanged(const SearchTextSettings& settings)
 {
     bool query     = false;
     int  results   = 0;
     QString search = settings.text.toLower();
 
-    QTreeWidgetItemIterator it(listView());
+    QTreeWidgetItemIterator it(currentTreeView());
 
     while (*it)
     {
@@ -338,18 +348,7 @@ void SolidHardwareDlg::slotCopy2ClipBoard()
     textInfo.append(QLatin1String(SOLID_VERSION_STRING));
     textInfo.append(QLatin1Char('\n'));
 
-    QTreeWidget* ctree = nullptr;
-
-    if (tabView()->currentIndex() == 0)
-    {
-        ctree = listView();
-    }
-    else
-    {
-        ctree = d->eventsList;
-    }
-
-    QTreeWidgetItemIterator it(ctree);
+    QTreeWidgetItemIterator it(currentTreeView());
 
     while (*it)
     {
