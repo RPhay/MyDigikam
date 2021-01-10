@@ -255,6 +255,19 @@ void SolidHardwareDlg::slotPopulateDevices()
 
             if (title.isEmpty())
             {
+                if (!device.vendor().isEmpty())
+                {
+                    title = device.vendor();
+                }
+
+                if (!device.product().isEmpty())
+                {
+                    title += QLatin1String(" - ") + device.product();
+                }
+            }
+
+            if (title.isEmpty())
+            {
                 title = device.udi().section(QLatin1Char('/'), -1);
             }
 
