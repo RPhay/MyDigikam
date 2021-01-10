@@ -105,7 +105,6 @@ SolidHardwareDlg::SolidHardwareDlg(QWidget* const parent)
     buttonBox()->addButton(QDialogButtonBox::Reset);
     buttonBox()->button(QDialogButtonBox::Reset)->setText(i18n("Refresh"));
 
-
     // --------------------------------------------------------
 
     QGridLayout* const  grid = dynamic_cast<QGridLayout*>(mainWidget()->layout());
@@ -327,6 +326,5 @@ void SolidHardwareDlg::slotCopy2ClipBoard()
     mimeData->setText(textInfo);
     QApplication::clipboard()->setMimeData(mimeData, QClipboard::Clipboard);
 }
-
 
 } // namespace Digikam
