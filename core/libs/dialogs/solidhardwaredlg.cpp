@@ -84,7 +84,7 @@ SolidHardwareDlg::SolidHardwareDlg(QWidget* const parent)
     setWindowTitle(i18n("List of detected hardware"));
 
     d->header     = new QLabel(this);
-    d->header->setText(i18n("%1 use Solid framework version %2\n"
+    d->header->setText(i18n("%1 uses Solid framework version %2\n"
                             "to detect and manage devices from your computer.\n"
                             "Press \"Refresh\" to update list if you plug a removable device.",
                        QApplication::applicationName(),
