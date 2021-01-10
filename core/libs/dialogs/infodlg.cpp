@@ -30,14 +30,12 @@
 #include <QString>
 #include <QLabel>
 #include <QGridLayout>
-#include <QTreeWidget>
 #include <QHeaderView>
 #include <QMimeData>
 #include <QClipboard>
 #include <QApplication>
 #include <QStyle>
 #include <QStandardPaths>
-#include <QDialogButtonBox>
 #include <QVBoxLayout>
 #include <QPushButton>
 
@@ -60,13 +58,15 @@ public:
     explicit Private()
       : listView(nullptr),
         page    (nullptr),
-        buttons (nullptr)
+        buttons (nullptr),
+        tabView (nullptr)
     {
     }
 
     QTreeWidget*      listView;
     QWidget*          page;
     QDialogButtonBox* buttons;
+    QTabWidget*       tabView;
 };
 
 InfoDlg::InfoDlg(QWidget* const parent)
@@ -111,6 +111,8 @@ InfoDlg::InfoDlg(QWidget* const parent)
 
     // --------------------------------------------------------
 
+    d->tabView              = new QTabWidget(d->page);
+
     d->listView             = new QTreeWidget(d->page);
     d->listView->setSortingEnabled(false);
     d->listView->setRootIsDecorated(false);
@@ -121,6 +123,9 @@ InfoDlg::InfoDlg(QWidget* const parent)
     d->listView->header()->setSectionResizeMode(QHeaderView::Stretch);
     d->listView->header()->setVisible(false);
 
+    d->tabView->addTab(d->listView, i18n("Items List"));
+    d->tabView->setTabBarAutoHide(true);
+
     // --------------------------------------------------------
 
     grid->addWidget(logo,        0, 0, 1, 1);
@@ -128,7 +133,7 @@ InfoDlg::InfoDlg(QWidget* const parent)
 
     // row 1 can be expanded by custom widgets in the subclassed dialog
 
-    grid->addWidget(d->listView, 2, 0, 1, -1);
+    grid->addWidget(d->tabView,  2, 0, 1, -1);
     grid->setColumnStretch(1, 10);
     grid->setRowStretch(2, 10);
     grid->setContentsMargins(QMargins());
@@ -158,6 +163,11 @@ InfoDlg::InfoDlg(QWidget* const parent)
 InfoDlg::~InfoDlg()
 {
     delete d;
+}
+
+QTabWidget* InfoDlg::tabView() const
+{
+    return d->tabView;
 }
 
 QTreeWidget* InfoDlg::listView() const

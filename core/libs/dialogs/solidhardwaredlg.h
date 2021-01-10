@@ -48,6 +48,9 @@ private Q_SLOTS:
     void slotCopy2ClipBoard();
     void slotPopulateDevices();
 
+    void slotDeviceAdded(const QString&);
+    void slotDeviceRemoved(const QString&);
+
 private:
 
     class Private;
