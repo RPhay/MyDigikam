@@ -247,6 +247,9 @@ LensFunCameraSelector::LensFunCameraSelector(QWidget* const parent)
 
     connect(d->distance, SIGNAL(valueChanged(double)),
             this, SLOT(slotDistanceChanged()));
+
+    populateDeviceCombos();
+    populateLensCombo();
 }
 
 LensFunCameraSelector::~LensFunCameraSelector()
@@ -347,6 +350,17 @@ void LensFunCameraSelector::setMetadata(const MetaEngineData& meta)
     }
 
     d->metadata = new DMetadata(meta);
+
+    if (d->metadata->isEmpty())
+    {
+        d->metadataUsage->setCheckState(Qt::Unchecked);
+        setEnabledUseMetadata(false);
+    }
+    else
+    {
+        setEnabledUseMetadata(true);
+        findFromMetadata();
+    }
 }
 
 void LensFunCameraSelector::setEnabledUseMetadata(bool b)
@@ -806,25 +820,6 @@ void LensFunCameraSelector::slotDistanceChanged()
                                                                                          : d->distance->value();
     d->iface->setSettings(settings);
     emit signalLensSettingsChanged();
-}
-
-void LensFunCameraSelector::showEvent(QShowEvent* event)
-{
-    QWidget::showEvent(event);
-
-    populateDeviceCombos();
-    populateLensCombo();
-
-    if      (!d->passiveMetadataUsage && (!d->metadata || d->metadata->isEmpty()))
-    {
-        d->metadataUsage->setCheckState(Qt::Unchecked);
-        setEnabledUseMetadata(false);
-    }
-    else if (!d->passiveMetadataUsage)
-    {
-        setEnabledUseMetadata(true);
-        findFromMetadata();
-    }
 }
 
 } // namespace Digikam
