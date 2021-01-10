@@ -373,35 +373,27 @@ void SolidHardwareDlg::slotDeviceAdded(const QString& udi)
                                            << i18n("New Device Added"));
     titem->setData(0, Qt::UserRole, 0);
 
-    const QList<Solid::Device> all = Solid::Device::allDevices();
+    const Solid::Device device(udi);
 
-    for (const Solid::Device& device : all)
-    {
-        if (device.udi() == udi)
-        {
-            QTreeWidgetItem* vitem = nullptr;
+    QTreeWidgetItem* vitem = nullptr;
 
-            vitem = new QTreeWidgetItem(titem, QStringList() << i18n("Udi")         << udi);
-            vitem->setData(0, Qt::UserRole, 1);
+    vitem = new QTreeWidgetItem(titem, QStringList() << i18n("Udi")         << udi);
+    vitem->setData(0, Qt::UserRole, 1);
 
-            vitem = new QTreeWidgetItem(titem, QStringList() << i18n("Parent Udi")  << (device.parentUdi().isEmpty()   ? i18n("none")  : device.parentUdi()));
-            vitem->setData(0, Qt::UserRole, 1);
+    vitem = new QTreeWidgetItem(titem, QStringList() << i18n("Parent Udi")  << (device.parentUdi().isEmpty()   ? i18n("none")  : device.parentUdi()));
+    vitem->setData(0, Qt::UserRole, 1);
 
-            vitem = new QTreeWidgetItem(titem, QStringList() << i18n("Vendor")      << (device.vendor().isEmpty()      ? i18n("empty") : device.vendor()));
-            vitem->setData(0, Qt::UserRole, 1);
+    vitem = new QTreeWidgetItem(titem, QStringList() << i18n("Vendor")      << (device.vendor().isEmpty()      ? i18n("empty") : device.vendor()));
+    vitem->setData(0, Qt::UserRole, 1);
 
-            vitem = new QTreeWidgetItem(titem, QStringList() << i18n("Product")     << (device.product().isEmpty()     ? i18n("empty") : device.product()));
-            vitem->setData(0, Qt::UserRole, 1);
+    vitem = new QTreeWidgetItem(titem, QStringList() << i18n("Product")     << (device.product().isEmpty()     ? i18n("empty") : device.product()));
+    vitem->setData(0, Qt::UserRole, 1);
 
-            vitem = new QTreeWidgetItem(titem, QStringList() << i18n("Description") << (device.description().isEmpty() ? i18n("empty") : device.description()));
-            vitem->setData(0, Qt::UserRole, 1);
+    vitem = new QTreeWidgetItem(titem, QStringList() << i18n("Description") << (device.description().isEmpty() ? i18n("empty") : device.description()));
+    vitem->setData(0, Qt::UserRole, 1);
 
-            vitem = new QTreeWidgetItem(titem, QStringList() << i18n("States")      << (device.emblems().isEmpty()     ? i18n("none")  : device.emblems().join(QLatin1String(", "))));
-            vitem->setData(0, Qt::UserRole, 1);
-
-            break;
-        }
-    }
+    vitem = new QTreeWidgetItem(titem, QStringList() << i18n("States")      << (device.emblems().isEmpty()     ? i18n("none")  : device.emblems().join(QLatin1String(", "))));
+    vitem->setData(0, Qt::UserRole, 1);
 
     titem->setExpanded(true);
 }
