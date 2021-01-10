@@ -689,9 +689,6 @@ void LensFunCameraSelector::populateDeviceCombos()
         ++it;
     }
 
-    //d->make->model()->sort(0,  Qt::AscendingOrder);
-    //d->model->model()->sort(0, Qt::AscendingOrder);
-
     d->make->blockSignals(false);
     d->model->blockSignals(false);
 }
@@ -744,9 +741,7 @@ void LensFunCameraSelector::populateLensCombo()
     {
         d->lens->addSqueezedItem(it.key(), it.value());
     }
-/*
-    d->lens->model()->sort(0, Qt::AscendingOrder);
-*/
+
     d->lens->blockSignals(false);
 }
 
