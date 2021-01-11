@@ -557,6 +557,12 @@ if [[ $DK_UPLOAD = 1 ]] ; then
         scp $ORIG_WD/bundle/$APPIMAGE.sig $DK_UPLOADURL:$DK_UPLOADDIR
     fi
 
+    # update remote files list
+
+    sftp -q $DK_UPLOADURL:$DK_UPLOADDIR <<< "ls digiKam*" > $ORIG_WD/bundle/ls.txt
+    tail -n +2 $ORIG_WD/bundle/ls.txt > $ORIG_WD/bundle/ls.tmp && mv $ORIG_WD/bundle/ls.tmp $ORIG_WD/bundle/ls.txt
+    scp $ORIG_WD/bundle/ls.txt $DK_UPLOADURL:$DK_UPLOADDIR
+
 else
     echo -e "\n------------------------------------------------------------------"
     curl https://download.kde.org/README_UPLOAD
