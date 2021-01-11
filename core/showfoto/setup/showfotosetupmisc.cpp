@@ -176,7 +176,7 @@ SetupMisc::SetupMisc(QWidget* const parent)
     d->updateType->addItem(i18n("Only For Stable Releases"), 0);
     d->updateType->addItem(i18n("Weekly Pre-Releases"),      1);
     d->updateType->setToolTip(i18n("Set this option to configure which kind of new versions must be check for updates.\n"
-                                   "\"Stable\" releases are official version safe to use in production.\n"
+                                   "\"Stable\" releases are official versions safe to use in production.\n"
                                    "\"Pre-releases\" are proposed weekly to tests quickly new features\n"
                                    "and are not recommended to use in production as bugs can remain."));
 
