@@ -561,7 +561,7 @@ if [[ $DK_UPLOAD = 1 ]] ; then
 
     sftp -q $DK_UPLOADURL:$DK_UPLOADDIR <<< "ls digi*" > $ORIG_WD/bundle/ls.txt
     tail -n +2 $ORIG_WD/bundle/ls.txt > $ORIG_WD/bundle/ls.tmp
-    cat ls.tmp | grep -E '(.pkg |.appimage |.exe )' | grep -Ev '(debug)' > $ORIG_WD/bundle/FILES
+    cat $ORIG_WD/bundle/ls.tmp | grep -E '(.pkg |.appimage |.exe )' | grep -Ev '(debug)' > $ORIG_WD/bundle/FILES
     rm $ORIG_WD/bundle/ls.tmp
     scp $ORIG_WD/bundle/FILES $DK_UPLOADURL:$DK_UPLOADDIR
 
