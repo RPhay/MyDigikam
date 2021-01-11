@@ -236,7 +236,6 @@ private Q_SLOTS:
     void slotRawCameraList();
     void slotSolidHardwareList();
     void slotDonateMoney();
-    void slotOnlineVersionCheck();
     void slotRecipesBook();
     void slotContribute();
     void slotHelpContents();
@@ -244,6 +243,7 @@ private Q_SLOTS:
     /**
      * Slots for common Help Actions
      */
+    virtual void slotOnlineVersionCheck()      {};
     virtual void slotComponentsInfo()          {};
     virtual void slotDBStat()                  {};
 

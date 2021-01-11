@@ -1287,6 +1287,14 @@ void ImageWindow::slotDBStat()
     showDigikamDatabaseStat();
 }
 
+void ImageWindow::slotOnlineVersionCheck()
+{
+    OnlineVersionDlg* const dlg = new OnlineVersionDlg(qApp->activeWindow(),
+                                                       QLatin1String(digikam_version_short),
+                                                       ApplicationSettings::instance()->getUpdateType());
+    dlg->exec();
+}
+
 void ImageWindow::slotAddedDropedItems(QDropEvent* e)
 {
     int              albumID;

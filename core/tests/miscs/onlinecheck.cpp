@@ -43,14 +43,18 @@ using namespace Digikam;
 
 int main(int argc, char* argv[])
 {
-
-#ifdef HAVE_QWEBENGINE
-
-    QCoreApplication::setAttribute(Qt::AA_ShareOpenGLContexts);
-
-#endif
-
     QApplication app(argc, argv);
+
+    if (argc == 1)
+    {
+        qDebug() << "onlinecheck <bool> - Check if new version is online";
+        qDebug() << "Usage: <bool> 0 for stable release only, 1 for pre-release.";
+        return -1;
+    }
+
+    bool preRelease = QString::fromLatin1(argv[1]).toInt();
+
+    qDebug() << "Check for pre-release:" << preRelease;
 
     KAboutData aboutData(QLatin1String("digikam"),
                          QLatin1String("digiKam"), // No need i18n here.
@@ -64,7 +68,7 @@ int main(int argc, char* argv[])
     parser.process(app);
     aboutData.processCommandLine(&parser);
 
-    OnlineVersionDlg* const dlg = new OnlineVersionDlg(nullptr, QLatin1String("7.0.0"));
+    OnlineVersionDlg* const dlg = new OnlineVersionDlg(nullptr, QLatin1String("7.0.0"), preRelease);
 
     return (dlg->exec());
 }

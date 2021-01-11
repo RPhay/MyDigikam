@@ -42,7 +42,7 @@ class DIGIKAM_EXPORT OnlineVersionDwnl : public QObject
 
 public:
 
-    explicit OnlineVersionDwnl(QObject* const parent = nullptr);
+    explicit OnlineVersionDwnl(QObject* const parent = nullptr, bool checkPreRelease = false);
     ~OnlineVersionDwnl() override;
 
     void startDownload(const QString& version);

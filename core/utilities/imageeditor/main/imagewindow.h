@@ -171,6 +171,7 @@ private Q_SLOTS:
 
     void slotComponentsInfo()                                           override;
     void slotDBStat()                                                   override;
+    void slotOnlineVersionCheck()                                       override;
 
     void slotAddedDropedItems(QDropEvent*)                              override;
     void slotOpenWith(QAction* action = nullptr)                        override;

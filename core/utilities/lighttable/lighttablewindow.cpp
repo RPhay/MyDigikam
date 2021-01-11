@@ -950,6 +950,14 @@ void LightTableWindow::slotDBStat()
     showDigikamDatabaseStat();
 }
 
+void LightTableWindow::slotOnlineVersionCheck()
+{
+    OnlineVersionDlg* const dlg = new OnlineVersionDlg(qApp->activeWindow(),
+                                                       QLatin1String(digikam_version_short),
+                                                       ApplicationSettings::instance()->getUpdateType());
+    dlg->exec();
+}
+
 void LightTableWindow::moveEvent(QMoveEvent* e)
 {
     Q_UNUSED(e)

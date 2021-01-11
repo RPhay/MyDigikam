@@ -74,7 +74,6 @@
 #include "daboutdata.h"
 #include "dpluginloader.h"
 #include "webbrowserdlg.h"
-#include "onlineversiondlg.h"
 #include "solidhardwaredlg.h"
 
 namespace Digikam
@@ -913,12 +912,6 @@ void DXmlGuiWindow::slotRawCameraList()
 void DXmlGuiWindow::slotSolidHardwareList()
 {
     SolidHardwareDlg* const dlg = new SolidHardwareDlg(qApp->activeWindow());
-    dlg->exec();
-}
-
-void DXmlGuiWindow::slotOnlineVersionCheck()
-{
-    OnlineVersionDlg* const dlg = new OnlineVersionDlg(qApp->activeWindow());
     dlg->exec();
 }
 

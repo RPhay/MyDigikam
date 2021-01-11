@@ -31,9 +31,54 @@
 #include <QLabel>
 #include <QString>
 #include <QAction>
+#include <QDir>
+#include <QFile>
+#include <QFileInfo>
+#include <QGridLayout>
+#include <QGroupBox>
+#include <QVBoxLayout>
+#include <QLabel>
+#include <QKeySequence>
+#include <QAction>
+#include <QMenuBar>
+#include <QStatusBar>
+#include <QMenu>
+#include <QMessageBox>
+#include <QApplication>
+
+// KDE includes
+
+#include <klocalizedstring.h>
+#include <kactioncollection.h>
+#include <kconfiggroup.h>
+#include <ksharedconfig.h>
 
 // Local includes
 
+#include "drawdecoder.h"
+#include "digikam_debug.h"
+#include "actions.h"
+#include "album.h"
+#include "batchtoolsfactory.h"
+#include "actionthread.h"
+#include "queuepool.h"
+#include "workflowmanager.h"
+#include "queuelist.h"
+#include "queuesettings.h"
+#include "queuesettingsview.h"
+#include "assignedlist.h"
+#include "toolsettingsview.h"
+#include "toolsview.h"
+#include "componentsinfodlg.h"
+#include "digikamapp.h"
+#include "thememanager.h"
+#include "dimg.h"
+#include "dlogoaction.h"
+#include "albummanager.h"
+#include "imagewindow.h"
+#include "thumbnailsize.h"
+#include "sidebar.h"
+#include "dnotificationwrapper.h"
 #include "actionthread.h"
 #include "assignedlist.h"
 #include "queuelist.h"
@@ -43,6 +88,8 @@
 #include "sidebar.h"
 #include "toolsettingsview.h"
 #include "toolsview.h"
+#include "onlineversiondlg.h"
+#include "applicationsettings.h"
 
 namespace Digikam
 {

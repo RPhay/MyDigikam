@@ -41,6 +41,7 @@
 // Local includes
 
 #include "digikam_debug.h"
+#include "onlineversionchecker.h"
 
 namespace Digikam
 {
@@ -50,16 +51,17 @@ class Q_DECL_HIDDEN OnlineVersionDwnl::Private
 public:
 
     explicit Private()
-      : downloadUrl(QLatin1String("https://download.kde.org/stable/digikam/")),
-        redirects  (0),
+      : redirects  (0),
+        preRelease (false),
         reply      (nullptr),
         netMngr    (nullptr)
     {
     }
 
-    const QString          downloadUrl;
+    QString                downloadUrl;
 
     int                    redirects;
+    bool                   preRelease;
 
     QString                error;
     QString                file;
@@ -69,11 +71,22 @@ public:
     QNetworkAccessManager* netMngr;
 };
 
-OnlineVersionDwnl::OnlineVersionDwnl(QObject* const parent)
+OnlineVersionDwnl::OnlineVersionDwnl(QObject* const parent, bool checkPreRelease)
     : QObject(parent),
       d      (new Private)
 {
-    d->netMngr = new QNetworkAccessManager(this);
+    d->preRelease = checkPreRelease;
+
+    if (d->preRelease)
+    {
+        d->downloadUrl = QLatin1String("https://files.kde.org/digikam/");
+    }
+    else
+    {
+        d->downloadUrl = QLatin1String("https://download.kde.org/stable/digikam/");
+    }
+
+    d->netMngr    = new QNetworkAccessManager(this);
     d->netMngr->setRedirectPolicy(QNetworkRequest::ManualRedirectPolicy);
 
     connect(d->netMngr, SIGNAL(finished(QNetworkReply*)),
@@ -97,73 +110,36 @@ void OnlineVersionDwnl::cancelDownload()
 
 void OnlineVersionDwnl::startDownload(const QString& version)
 {
-    QString arch;
-    QString bundle;
+    QUrl url;
 
-#ifdef Q_OS_MACOS
-
-    bundle = QLatin1String("pkg");
-
-#   ifdef Q_PROCESSOR_X86_64
-
-    arch   = QLatin1String("x86-64");
-
-#   else
-
-    arch   = QLatin1String("arm-64");
-
-#   endif
-
-#endif
-
-#ifdef Q_OS_WINDOWS
-
-    bundle = QLatin1String("exe");
-
-#   ifdef Q_PROCESSOR_X86_64
-
-    arch   = QLatin1String("x86-64");
-
-#   elif defined Q_PROCESSOR_X86_32
-
-    arch   = QLatin1String("i386");
-
-#   endif
-
-#endif
-
-#ifdef Q_OS_LINUX
-
-    bundle = QLatin1String("appimage");
-
-#   ifdef Q_PROCESSOR_X86_64
-
-    arch   = QLatin1String("x86-64");
-
-#   elif defined Q_PROCESSOR_X86_32
-
-    arch   = QLatin1String("i386");
-
-#   endif
-
-#endif
-
-    if (arch.isEmpty() || bundle.isEmpty())
+    if (d->preRelease)
     {
-        emit signalDownloadError(i18n("Unsupported Architecture."));
-
-        qCDebug(DIGIKAM_GENERAL_LOG) << "Unsupported architecture";
-
-        return;
+        d->file = version;
+        url     = QUrl(d->downloadUrl + d->file);
     }
+    else
+    {
+        QString arch;
+        QString bundle;
 
-    d->file      = QString::fromLatin1("digikam-%1-%2.%3")
+        if (!OnlineVersionChecker::bundleProperties(arch, bundle))
+        {
+            emit signalDownloadError(i18n("Unsupported Architecture."));
+
+            qCDebug(DIGIKAM_GENERAL_LOG) << "Unsupported architecture";
+
+            return;
+        }
+
+        d->file = QString::fromLatin1("digikam-%1-%2.%3")
                       .arg(version)
                       .arg(arch)
                       .arg(bundle);
 
+        url     = QUrl(d->downloadUrl + QString::fromLatin1("%1/").arg(version) + d->file);
+    }
+
     d->redirects = 0;
-    QUrl url     = QUrl(d->downloadUrl + QString::fromLatin1("%1/").arg(version) + d->file);
     download(url);
 }
 
@@ -188,6 +164,9 @@ void OnlineVersionDwnl::slotDownloaded(QNetworkReply* reply)
         return;
     }
 
+    // mark for deletion
+
+    reply->deleteLater();
     d->reply = nullptr;
 
     if ((reply->error() != QNetworkReply::NoError)             &&
@@ -195,7 +174,6 @@ void OnlineVersionDwnl::slotDownloaded(QNetworkReply* reply)
     {
         qCDebug(DIGIKAM_GENERAL_LOG) << "Error: " << reply->errorString();
         emit signalDownloadError(reply->errorString());
-        reply->deleteLater();
 
         return;
     }
@@ -205,8 +183,6 @@ void OnlineVersionDwnl::slotDownloaded(QNetworkReply* reply)
     if (redirectUrl.isValid() && (reply->url() != redirectUrl) && (d->redirects < 10))
     {
         download(redirectUrl);
-
-        reply->deleteLater();
 
         return;
     }

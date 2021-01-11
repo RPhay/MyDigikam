@@ -84,6 +84,7 @@
 #include "thumbnailloadthread.h"
 #include "dexpanderbox.h"
 #include "dbinfoiface.h"
+#include "onlineversiondlg.h"
 
 namespace Digikam
 {

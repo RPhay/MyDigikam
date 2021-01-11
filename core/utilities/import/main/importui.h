@@ -232,6 +232,7 @@ private Q_SLOTS:
     void slotSetup()                   override;
     void slotComponentsInfo()          override;
     void slotDBStat()                  override;
+    void slotOnlineVersionCheck()      override;
     void slotToggleRightSideBar()      override;
     void slotPreviousRightSideBarTab() override;
     void slotNextRightSideBarTab()     override;

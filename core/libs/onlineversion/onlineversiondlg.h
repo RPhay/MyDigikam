@@ -43,7 +43,8 @@ class DIGIKAM_EXPORT OnlineVersionDlg : public QDialog
 public:
 
     explicit OnlineVersionDlg(QWidget* const parent = nullptr,
-                              const QString& version = QLatin1String(digikam_version_short));
+                              const QString& version = QLatin1String(digikam_version_short),
+                              bool checkPreRelease = false);
     ~OnlineVersionDlg() override;
 
 private Q_SLOTS:

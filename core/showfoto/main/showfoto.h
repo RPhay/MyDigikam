@@ -109,6 +109,8 @@ private Q_SLOTS:
 
     void slotAddedDropedItems(QDropEvent*)                  override;
 
+    void slotOnlineVersionCheck()                           override;
+
 Q_SIGNALS:
 
     void signalLoadCurrentItem(const QList<QUrl>& urlList);

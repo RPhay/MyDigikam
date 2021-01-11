@@ -133,6 +133,7 @@ private Q_SLOTS:
     void slotToggleColorManagedView();
     void slotComponentsInfo()                           override;
     void slotDBStat()                                   override;
+    void slotOnlineVersionCheck()                       override;
 
     void slotFileWithDefaultApplication();
 

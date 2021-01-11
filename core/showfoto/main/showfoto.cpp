@@ -930,6 +930,14 @@ DInfoInterface* ShowFoto::infoIface(DPluginAction* const)
     return iface;
 }
 
+void ShowFoto::slotOnlineVersionCheck()
+{
+    Digikam::OnlineVersionDlg* const dlg = new Digikam::OnlineVersionDlg(qApp->activeWindow(),
+                                                                         QLatin1String(digikam_version_short),
+                                                                         ShowfotoSettings::instance()->getUpdateType());
+    dlg->exec();
+}
+
 } // namespace ShowFoto
 
 #include "moc_showfoto.cpp"

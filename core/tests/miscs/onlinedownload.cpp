@@ -31,6 +31,7 @@
 // Local includes
 
 #include "onlineversiondwnl.h"
+#include "onlineversionchecker.h"
 
 using namespace Digikam;
 
@@ -38,8 +39,40 @@ int main(int argc, char* argv[])
 {
     QApplication app(argc, argv);
 
-    OnlineVersionDwnl* const dwnl = new OnlineVersionDwnl;
-    dwnl->startDownload(QLatin1String("7.1.0"));
+    if (argc == 1)
+    {
+        qDebug() << "onlinecheck <bool> - Check if new version is online";
+        qDebug() << "Usage: <bool> 0 for stable release only, 1 for pre-release.";
+        return -1;
+    }
+
+    bool preRelease = QString::fromLatin1(argv[1]).toInt();
+    QString version;
+
+    qDebug() << "Check for pre-release:" << preRelease;
+
+    if (preRelease)
+    {
+        OnlineVersionChecker* const check = new OnlineVersionChecker(nullptr, preRelease);
+        check->checkForNewVersion();
+
+        QTest::qWait(3000);
+
+        version = check->preReleaseFileName();
+
+        if (version.isEmpty())
+        {
+            qWarning() << "Cannot get pre-release version!";
+            return (-1);
+        }
+    }
+    else
+    {
+        version = QLatin1String("7.1.0");
+    }
+
+    OnlineVersionDwnl* const dwnl = new OnlineVersionDwnl(nullptr, preRelease);
+    dwnl->startDownload(version);
 
     QObject::connect(dwnl, &Digikam::OnlineVersionDwnl::signalDownloadProgress,
                      [=](qint64 brecv, qint64 btotal)

@@ -60,14 +60,17 @@ class Q_DECL_HIDDEN OnlineVersionDlg::Private
 public:
 
     explicit Private()
-      : bar      (nullptr),
-        label    (nullptr),
-        logo     (nullptr),
-        buttons  (nullptr),
-        checker  (nullptr),
-        dwnloader(nullptr)
+      : preRelease(false),
+        bar       (nullptr),
+        label     (nullptr),
+        logo      (nullptr),
+        buttons   (nullptr),
+        checker   (nullptr),
+        dwnloader (nullptr)
     {
     }
+
+    bool                  preRelease;
 
     QString               curVersion;
     QString               newVersion;
@@ -80,7 +83,9 @@ public:
     OnlineVersionDwnl*    dwnloader;
 };
 
-OnlineVersionDlg::OnlineVersionDlg(QWidget* const parent, const QString& version)
+OnlineVersionDlg::OnlineVersionDlg(QWidget* const parent,
+                                   const QString& version,
+                                   bool checkPreRelease)
     : QDialog(parent),
       d      (new Private)
 {
@@ -88,7 +93,8 @@ OnlineVersionDlg::OnlineVersionDlg(QWidget* const parent, const QString& version
     setWindowTitle(i18n("Online Version Checker"));
 
     d->curVersion = version;
-    d->checker    = new OnlineVersionChecker(this);
+    d->preRelease = checkPreRelease;
+    d->checker    = new OnlineVersionChecker(this, d->preRelease);
     d->checker->setCurrentVersion(d->curVersion);
     d->dwnloader  = new OnlineVersionDwnl(this);
 
@@ -178,12 +184,24 @@ void OnlineVersionDlg::slotNewVersionAvailable(const QString& version)
     connect(d->buttons->button(QDialogButtonBox::Apply), SIGNAL(clicked()),
             this, SLOT(slotDownloadInstaller()));
 
-    d->label->setText(i18n("Current %1 version is %2\n"
-                           "New version %3 is available.\n"
-                           "Press \"Download\" to get the file...",
-                           qApp->applicationName(),
-                           d->curVersion,
-                           version));
+    if (d->preRelease)
+    {
+        d->label->setText(i18n("Current %1 pre-release date is %2\n"
+                               "New pre-release built %3 is available.\n"
+                               "Press \"Download\" to get the file...",
+                               qApp->applicationName(),
+                               digiKamBuildDate().toString(Qt::ISODate),
+                               version));
+    }
+    else
+    {
+        d->label->setText(i18n("Current %1 version is %2\n"
+                               "New version %3 is available.\n"
+                               "Press \"Download\" to get the file...",
+                               qApp->applicationName(),
+                               d->curVersion,
+                               version));
+    }
 }
 
 void OnlineVersionDlg::slotNewVersionCheckError(const QString& error)
@@ -195,10 +213,20 @@ void OnlineVersionDlg::slotNewVersionCheckError(const QString& error)
 
     if (error.isEmpty())
     {
-        d->label->setText(i18n("Your software is up-to-date.\n"
-                               "%1 %2 is the most recent version available.",
-                               qApp->applicationName(),
-                               QString::fromLatin1(digikam_version_short)));
+        if (d->preRelease)
+        {
+            d->label->setText(i18n("Your software is up-to-date.\n"
+                                   "%1 built %2 is the most recent version available.",
+                                   qApp->applicationName(),
+                                   digiKamBuildDate().toString(Qt::ISODate)));
+        }
+        else
+        {
+            d->label->setText(i18n("Your software is up-to-date.\n"
+                                   "%1 %2 is the most recent version available.",
+                                   qApp->applicationName(),
+                                   QString::fromLatin1(digikam_version_short)));
+        }
     }
     else
     {
@@ -214,19 +242,37 @@ void OnlineVersionDlg::slotDownloadInstaller()
     d->bar->setMinimum(0);
     d->bar->setValue(0);
 
-    d->label->setText(i18n("Downloading new %1 version %2 in progress, please wait...",
-                           qApp->applicationName(),
-                           d->newVersion));
+    if (d->preRelease)
+    {
+        d->label->setText(i18n("Downloading new %1 built %2 in progress, please wait...",
+                               qApp->applicationName(),
+                               d->newVersion));
+    }
+    else
+    {
+        d->label->setText(i18n("Downloading new %1 version %2 in progress, please wait...",
+                               qApp->applicationName(),
+                               d->newVersion));
+    }
+
     d->buttons->button(QDialogButtonBox::Apply)->setEnabled(false);
     d->bar->show();
-    d->dwnloader->startDownload(d->newVersion);
+
+    if (d->preRelease)
+    {
+        d->dwnloader->startDownload(d->checker->preReleaseFileName());
+    }
+    else
+    {
+        d->dwnloader->startDownload(d->newVersion);
+    }
 }
 
 void OnlineVersionDlg::slotDownloadError(const QString& error)
 {
     d->bar->hide();
 
-    if (error.isEmpty())
+    if (error.isEmpty())        // empty error want mean a complete download.
     {
 
 #ifdef Q_OS_LINUX
@@ -240,12 +286,24 @@ void OnlineVersionDlg::slotDownloadError(const QString& error)
         connect(d->buttons->button(QDialogButtonBox::Apply), SIGNAL(clicked()),
                 this, SLOT(slotOpenInFileManager()));
 
-        d->label->setText(i18n("The new %1 version %2 have been downloaded at:\n"
-                               "%3\n"
-                               "Press \"Open\" to show the bundle in file-manager...",
-                               qApp->applicationName(),
-                               d->newVersion,
-                               d->dwnloader->downloadedPath()));
+        if (d->preRelease)
+        {
+            d->label->setText(i18n("The new %1 built %2 have been downloaded at:\n"
+                                   "%3\n"
+                                   "Press \"Open\" to show the bundle in file-manager...",
+                                   qApp->applicationName(),
+                                   d->newVersion,
+                                   d->dwnloader->downloadedPath()));
+        }
+        else
+        {
+            d->label->setText(i18n("The new %1 version %2 have been downloaded at:\n"
+                                   "%3\n"
+                                   "Press \"Open\" to show the bundle in file-manager...",
+                                   qApp->applicationName(),
+                                   d->newVersion,
+                                   d->dwnloader->downloadedPath()));
+        }
 
 #else // Windows and macOS
 
@@ -253,12 +311,24 @@ void OnlineVersionDlg::slotDownloadError(const QString& error)
         d->buttons->button(QDialogButtonBox::Apply)->setText(i18n("Install..."));
         d->buttons->button(QDialogButtonBox::Apply)->setIcon(QIcon::fromTheme(QLatin1String("run-install")));
 
-        d->label->setText(i18n("The new %1 version %2 have been downloaded at:\n"
-                               "%3\n"
-                               "Press \"Install\" to close current session and upgrade...",
-                               qApp->applicationName(),
-                               d->newVersion,
-                               d->dwnloader->downloadedPath()));
+        if (d->preRelease)
+        {
+            d->label->setText(i18n("The new %1 from %2 have been downloaded at:\n"
+                                   "%3\n"
+                                   "Press \"Install\" to close current session and upgrade...",
+                                   qApp->applicationName(),
+                                   d->newVersion,
+                                   d->dwnloader->downloadedPath()));
+        }
+        else
+        {
+            d->label->setText(i18n("The new %1 version %2 have been downloaded at:\n"
+                                   "%3\n"
+                                   "Press \"Install\" to close current session and upgrade...",
+                                   qApp->applicationName(),
+                                   d->newVersion,
+                                   d->dwnloader->downloadedPath()));
+        }
 
         disconnect(d->buttons->button(QDialogButtonBox::Apply), SIGNAL(clicked()), 0, 0);
 
@@ -274,10 +344,20 @@ void OnlineVersionDlg::slotDownloadError(const QString& error)
         d->buttons->button(QDialogButtonBox::Cancel)->setText(i18n("Close"));
         d->buttons->button(QDialogButtonBox::Cancel)->setIcon(QIcon::fromTheme(QLatin1String("close")));
 
-        d->label->setText(i18n("Error while trying to download %1 version %2:\n\"%3\"",
-                               qApp->applicationName(),
-                               d->newVersion,
-                               error));
+        if (d->preRelease)
+        {
+            d->label->setText(i18n("Error while trying to download %1 built %2:\n\"%3\"",
+                                   qApp->applicationName(),
+                                   d->newVersion,
+                                   error));
+        }
+        else
+        {
+            d->label->setText(i18n("Error while trying to download %1 version %2:\n\"%3\"",
+                                   qApp->applicationName(),
+                                   d->newVersion,
+                                   error));
+        }
     }
 }
 

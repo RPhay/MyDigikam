@@ -114,6 +114,7 @@ private Q_SLOTS:
     void slotExit();
     void slotDBStat()                                                   override;
     void slotComponentsInfo()                                           override;
+    void slotOnlineVersionCheck()                                       override;
 
     void slotRecurseAlbums(bool);
     void slotRecurseTags(bool);

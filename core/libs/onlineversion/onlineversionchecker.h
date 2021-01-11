@@ -30,22 +30,30 @@
 #include <QUrl>
 #include <QNetworkReply>
 
+// Local includes
+
+#include "digikam_export.h"
+
 namespace Digikam
 {
 
-class OnlineVersionChecker : public QObject
+class DIGIKAM_EXPORT OnlineVersionChecker : public QObject
 {
     Q_OBJECT
 
 public:
 
-    explicit OnlineVersionChecker(QObject* const parent);
+    explicit OnlineVersionChecker(QObject* const parent, bool checkPreRelease = false);
     ~OnlineVersionChecker();
 
     void setCurrentVersion(const QString& version);
 
     void checkForNewVersion();
     void cancelCheck();
+
+    QString preReleaseFileName() const;
+
+    static bool bundleProperties(QString& arch, QString& ext);
 
 Q_SIGNALS:
 
@@ -55,6 +63,10 @@ Q_SIGNALS:
 private Q_SLOTS:
 
     void slotDownloadFinished(QNetworkReply* reply);
+
+private:
+
+    void download(const QUrl& url);
 
 private:
 

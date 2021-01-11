@@ -128,6 +128,7 @@ private Q_SLOTS:
     void slotSetup()                                    override;
     void slotComponentsInfo()                           override;
     void slotDBStat()                                   override;
+    void slotOnlineVersionCheck()                       override;
     void slotAction(const Digikam::ActionData&);
     void slotHistoryEntryClicked(int, qlonglong);
     void slotAssignedToolsChanged(const AssignedBatchTools&);

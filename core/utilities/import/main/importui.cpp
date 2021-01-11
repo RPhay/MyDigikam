@@ -2549,6 +2549,15 @@ void ImportUI::slotDBStat()
     showDigikamDatabaseStat();
 }
 
+void ImportUI::slotOnlineVersionCheck()
+{
+    OnlineVersionDlg* const dlg = new OnlineVersionDlg(qApp->activeWindow(),
+                                                       QLatin1String(digikam_version_short),
+                                                       ApplicationSettings::instance()->getUpdateType());
+    dlg->exec();
+}
+
+
 void ImportUI::refreshCollectionFreeSpace()
 {
     d->albumLibraryFreeSpace->setPaths(CollectionManager::instance()->allAvailableAlbumRootPaths());

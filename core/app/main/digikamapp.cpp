@@ -1059,6 +1059,14 @@ void DigikamApp::slotComponentsInfo()
     showDigikamComponentsInfo();
 }
 
+void DigikamApp::slotOnlineVersionCheck()
+{
+    OnlineVersionDlg* const dlg = new OnlineVersionDlg(qApp->activeWindow(),
+                                                       QLatin1String(digikam_version_short),
+                                                       ApplicationSettings::instance()->getUpdateType());
+    dlg->exec();
+}
+
 void DigikamApp::slotToggleColorManagedView()
 {
     if (!IccSettings::instance()->isEnabled())
