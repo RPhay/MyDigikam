@@ -434,7 +434,7 @@ sed -i -e 's|././/share/X11/|/usr/share/X11/|g' ./usr/lib/libQt5XcbQpa.so.5
 
 cd /
 
-APP=digikam
+APP=digiKam
 
 if [[ $DK_DEBUG = 1 ]] ; then
     DEBUG_SUF="-debug"
