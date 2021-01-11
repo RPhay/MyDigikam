@@ -469,6 +469,9 @@ public:
     void setSidebarTitleStyle(DMultiTabBar::TextStyle style);
     DMultiTabBar::TextStyle getSidebarTitleStyle() const;
 
+    int getUpdateType() const;
+    void setUpdateType(int type);
+
     void setVersionManagerSettings(const VersionManagerSettings& settings);
     VersionManagerSettings getVersionManagerSettings() const;
 

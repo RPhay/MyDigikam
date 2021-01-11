@@ -50,6 +50,7 @@ const QString ApplicationSettings::Private::configDefaultTreeIconSizeEntry(QLati
 const QString ApplicationSettings::Private::configDefaultTreeFaceSizeEntry(QLatin1String("Default Tree Face Size"));
 const QString ApplicationSettings::Private::configTreeViewFontEntry(QLatin1String("TreeView Font"));
 const QString ApplicationSettings::Private::configThemeEntry(QLatin1String("Theme"));
+const QString ApplicationSettings::Private::configUpdateType(QLatin1String("Update Type"));
 const QString ApplicationSettings::Private::configSidebarTitleStyleEntry(QLatin1String("Sidebar Title Style"));
 const QString ApplicationSettings::Private::configRatingFilterConditionEntry(QLatin1String("Rating Filter Condition"));
 const QString ApplicationSettings::Private::configRecursiveAlbumsEntry(QLatin1String("Recursive Albums"));
@@ -227,6 +228,7 @@ ApplicationSettings::Private::Private(ApplicationSettings* const qq)
       cleanAtStart                          (true),
       databaseDirSetAtCmd                   (false),
       albumMonitoring                       (false),
+      updateType                            (0),
       sidebarTitleStyle                     (DMultiTabBar::AllIconsText),
       albumSortRole                         (ApplicationSettings::ByFolder),
       albumSortChanged                      (false),
@@ -284,6 +286,8 @@ void ApplicationSettings::Private::init()
     treeThumbnailSize                    = 22;
     treeThumbFaceSize                    = 48;
     treeviewFont                         = QFontDatabase::systemFont(QFontDatabase::GeneralFont);
+
+    updateType                           = 0;
     sidebarTitleStyle                    = DMultiTabBar::AllIconsText;
 
     ratingFilterCond                     = ItemFilterSettings::GreaterEqualCondition;

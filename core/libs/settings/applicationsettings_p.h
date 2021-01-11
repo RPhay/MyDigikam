@@ -106,6 +106,7 @@ public:
     static const QString configDefaultTreeFaceSizeEntry;
     static const QString configTreeViewFontEntry;
     static const QString configThemeEntry;
+    static const QString configUpdateType;
     static const QString configSidebarTitleStyleEntry;
     static const QString configUseNativeFileDialogEntry;
     static const QString configDrawFramesToGroupedEntry;
@@ -306,6 +307,7 @@ public:
 
     KSharedConfigPtr                             config;
 
+    int                                          updateType;
     DMultiTabBar::TextStyle                      sidebarTitleStyle;
 
     /// album view settings

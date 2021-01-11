@@ -31,6 +31,16 @@
 namespace Digikam
 {
 
+int ApplicationSettings::getUpdateType() const
+{
+    return d->updateType;
+}
+
+void ApplicationSettings::setUpdateType(int type)
+{
+    d->updateType = type;
+}
+
 void ApplicationSettings::setCurrentTheme(const QString& theme)
 {
     d->currentTheme = theme;

@@ -64,6 +64,7 @@ public:
 
     explicit Private()
       : tab                                     (nullptr),
+        updateTypeLabel                         (nullptr),
         sidebarTypeLabel                        (nullptr),
         stringComparisonTypeLabel               (nullptr),
         applicationStyleLabel                   (nullptr),
@@ -80,6 +81,7 @@ public:
         showOnlyPersonTagsInPeopleSidebarCheck  (nullptr),
         scanAtStart                             (nullptr),
         cleanAtStart                            (nullptr),
+        updateType                              (nullptr),
         sidebarType                             (nullptr),
         stringComparisonType                    (nullptr),
         applicationStyle                        (nullptr),
@@ -93,6 +95,7 @@ public:
 
     QTabWidget*               tab;
 
+    QLabel*                   updateTypeLabel;
     QLabel*                   sidebarTypeLabel;
     QLabel*                   stringComparisonTypeLabel;
     QLabel*                   applicationStyleLabel;
@@ -111,6 +114,7 @@ public:
     QCheckBox*                scanAtStart;
     QCheckBox*                cleanAtStart;
 
+    QComboBox*                updateType;
     QComboBox*                sidebarType;
     QComboBox*                stringComparisonType;
     QComboBox*                applicationStyle;
@@ -196,6 +200,15 @@ SetupMisc::SetupMisc(QWidget* const parent)
 
     // ---------------------------------------------------------
 
+    DHBox* const updateHbox = new DHBox(behaviourPanel);
+    d->updateTypeLabel      = new QLabel(i18n("Check for new version:"), updateHbox);
+    d->updateType           = new QComboBox(updateHbox);
+    d->updateType->addItem(i18n("Only For Stable Releases"), 0);
+    d->updateType->addItem(i18n("Stable and Pre-Releases"),  1);
+    d->updateType->setToolTip(i18n("Set this option to configure which kind of new versions must be check for updates."));
+
+    // ---------------------------------------------------------
+
     layout->setContentsMargins(spacing, spacing, spacing, spacing);
     layout->setSpacing(spacing);
     layout->addWidget(stringComparisonHbox);
@@ -208,6 +221,7 @@ SetupMisc::SetupMisc(QWidget* const parent)
     layout->addWidget(d->scrollItemToCenterCheck);
     layout->addWidget(d->showOnlyPersonTagsInPeopleSidebarCheck);
     layout->addWidget(minSimilarityBoundHbox);
+    layout->addWidget(updateHbox);
     layout->addStretch();
 
     d->tab->insertTab(Behaviour, behaviourPanel, i18nc("@title:tab", "Behaviour"));
@@ -217,9 +231,9 @@ SetupMisc::SetupMisc(QWidget* const parent)
     QWidget* const appearancePanel = new QWidget(d->tab);
     QVBoxLayout* const layout2     = new QVBoxLayout(appearancePanel);
 
-    d->showSplashCheck                        = new QCheckBox(i18n("&Show splash screen at startup"), appearancePanel);
-    d->useNativeFileDialogCheck               = new QCheckBox(i18n("Use native file dialogs from system"), appearancePanel);
-    d->drawFramesToGroupedCheck               = new QCheckBox(i18n("Draw frames around grouped items"), appearancePanel);
+    d->showSplashCheck             = new QCheckBox(i18n("&Show splash screen at startup"), appearancePanel);
+    d->useNativeFileDialogCheck    = new QCheckBox(i18n("Use native file dialogs from system"), appearancePanel);
+    d->drawFramesToGroupedCheck    = new QCheckBox(i18n("Draw frames around grouped items"), appearancePanel);
 
     DHBox* const tabStyleHbox = new DHBox(appearancePanel);
     d->sidebarTypeLabel       = new QLabel(i18n("Sidebar tab title:"), tabStyleHbox);
@@ -411,6 +425,7 @@ void SetupMisc::applySettings()
     settings->setScrollItemToCenter(d->scrollItemToCenterCheck->isChecked());
     settings->setShowOnlyPersonTagsInPeopleSidebar(d->showOnlyPersonTagsInPeopleSidebarCheck->isChecked());
     settings->setSidebarTitleStyle(d->sidebarType->currentIndex() == 0 ? DMultiTabBar::ActiveIconText : DMultiTabBar::AllIconsText);
+    settings->setUpdateType(d->updateType->currentIndex());
     settings->setStringComparisonType((ApplicationSettings::StringComparisonType)
                                       d->stringComparisonType->itemData(d->stringComparisonType->currentIndex()).toInt());
 
@@ -451,6 +466,7 @@ void SetupMisc::readSettings()
     d->scrollItemToCenterCheck->setChecked(settings->getScrollItemToCenter());
     d->showOnlyPersonTagsInPeopleSidebarCheck->setChecked(settings->showOnlyPersonTagsInPeopleSidebar());
     d->sidebarType->setCurrentIndex(settings->getSidebarTitleStyle() == DMultiTabBar::ActiveIconText ? 0 : 1);
+    d->updateType->setCurrentIndex(settings->getUpdateType());
     d->stringComparisonType->setCurrentIndex(settings->getStringComparisonType());
 
     for (int i = 0 ; i != ApplicationSettings::Unspecified ; ++i)

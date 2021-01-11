@@ -124,6 +124,7 @@ void ApplicationSettings::readSettings()
     d->treeviewFont                      = group.readEntry(d->configTreeViewFontEntry,                 QFontDatabase::systemFont(QFontDatabase::GeneralFont));
     d->currentTheme                      = group.readEntry(d->configThemeEntry,                        ThemeManager::instance()->defaultThemeName());
 
+    d->updateType                        = group.readEntry(d->configUpdateType,                        0);
     d->sidebarTitleStyle                 = (DMultiTabBar::TextStyle)group.readEntry(d->configSidebarTitleStyleEntry,
                                                                                                        (int)DMultiTabBar::AllIconsText);
 
@@ -345,6 +346,7 @@ void ApplicationSettings::saveSettings()
     group.writeEntry(d->configRecursiveTagsEntry,                      d->recursiveTags);
     group.writeEntry(d->configAllGroupsOpenEntry,                      d->allGroupsOpen);
     group.writeEntry(d->configThemeEntry,                              d->currentTheme);
+    group.writeEntry(d->configUpdateType,                              d->updateType);
     group.writeEntry(d->configSidebarTitleStyleEntry,                  (int)d->sidebarTitleStyle);
 
     group.writeEntry(d->configIconShowNameEntry,                       d->iconShowName);
