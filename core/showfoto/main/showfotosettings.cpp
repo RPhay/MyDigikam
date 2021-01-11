@@ -72,6 +72,7 @@ public:
         showPhotoWB             (false),
         showPhotoDate           (true),
         showPhotoMode           (false),
+        updateType              (0),
         rightSideBarStyle       (0),
         sortOrder               (0)
     {
@@ -83,6 +84,7 @@ public:
     static const QString configDeleteItem2Trash;
     static const QString configCurrentTheme;
     static const QString configRightSideBarStyle;
+    static const QString configUpdateType;
     static const QString configApplicationStyle;
     static const QString configIconTheme;
     static const QString configApplicationFont;
@@ -138,6 +140,7 @@ public:
     bool                 showPhotoDate;
     bool                 showPhotoMode;
 
+    int                  updateType;
     int                  rightSideBarStyle;
     int                  sortOrder;
 
@@ -160,6 +163,7 @@ const QString ShowfotoSettings::Private::configGroupDefault(QLatin1String("Image
 const QString ShowfotoSettings::Private::configLastOpenedDir(QLatin1String("Last Opened Directory"));
 const QString ShowfotoSettings::Private::configDeleteItem2Trash(QLatin1String("DeleteItem2Trash"));
 const QString ShowfotoSettings::Private::configCurrentTheme(QLatin1String("Theme"));
+const QString ShowfotoSettings::Private::configUpdateType(QLatin1String("Update Type"));
 const QString ShowfotoSettings::Private::configRightSideBarStyle(QLatin1String("Sidebar Title Style"));
 const QString ShowfotoSettings::Private::configApplicationStyle(QLatin1String("Application Style"));
 const QString ShowfotoSettings::Private::configIconTheme(QLatin1String("Icon Theme"));
@@ -230,6 +234,7 @@ ShowfotoSettings::~ShowfotoSettings()
 
 void ShowfotoSettings::init()
 {
+    d->updateType              = 0;
     d->rightSideBarStyle       = 0;
     d->sortOrder               = 0;
     d->deleteItem2Trash        = true;
@@ -257,11 +262,17 @@ void ShowfotoSettings::init()
     d->showPhotoWB             = false;
     d->showPhotoDate           = true;
     d->showPhotoMode           = true;
+
 #ifdef HAVE_APPSTYLE_SUPPORT
+
     d->applicationStyle        = qApp->style()->objectName();
+
 #else
+
     d->applicationStyle        = QLatin1String("Fusion");
+
 #endif
+
     d->applicationIcon         = QString();
     d->applicationFont         = QFontDatabase::systemFont(QFontDatabase::GeneralFont);
 }
@@ -273,12 +284,17 @@ void ShowfotoSettings::readSettings()
     d->lastOpenedDir           = group.readEntry(d->configLastOpenedDir,           QString());
     d->deleteItem2Trash        = group.readEntry(d->configDeleteItem2Trash,        true);
     d->theme                   = group.readEntry(d->configCurrentTheme,            Digikam::ThemeManager::instance()->defaultThemeName());
+    d->updateType              = group.readEntry(d->configUpdateType,              0);
     d->rightSideBarStyle       = group.readEntry(d->configRightSideBarStyle,       0);
 
 #ifdef HAVE_APPSTYLE_SUPPORT
+
     setApplicationStyle(group.readEntry(d->configApplicationStyle, qApp->style()->objectName()));
+
 #else
+
     setApplicationStyle(QLatin1String("Fusion"));
+
 #endif
 
     d->applicationIcon         = group.readEntry(d->configIconTheme,               QString());
@@ -288,9 +304,13 @@ void ShowfotoSettings::readSettings()
     d->showSplash              = group.readEntry(d->configShowSplash,              true);
 
 #ifdef Q_OS_MACOS
+
     d->nativeFileDialog        = group.readEntry(d->configNativeFileDialog,        true);
+
 #else
+
     d->nativeFileDialog        = group.readEntry(d->configNativeFileDialog,        false);
+
 #endif
 
     d->itemCenter              = group.readEntry(d->configItemCenter,              false);
@@ -332,6 +352,11 @@ bool ShowfotoSettings::getDeleteItem2Trash() const
 QString ShowfotoSettings::getCurrentTheme() const
 {
     return d->theme;
+}
+
+int ShowfotoSettings::getUpdateType() const
+{
+    return d->updateType;
 }
 
 int ShowfotoSettings::getRightSideBarStyle() const
@@ -552,6 +577,11 @@ void ShowfotoSettings::setDeleteItem2Trash(bool D2t)
 void ShowfotoSettings::setCurrentTheme(const QString& theme)
 {
     d->group.writeEntry(d->configCurrentTheme, theme);
+}
+
+void ShowfotoSettings::setUpdateType(int type)
+{
+    d->group.writeEntry(d->configUpdateType, type);
 }
 
 void ShowfotoSettings::setRightSideBarStyle(int style)

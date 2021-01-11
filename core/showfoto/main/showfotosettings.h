@@ -59,6 +59,9 @@ public:
     int getRightSideBarStyle() const;
     void setRightSideBarStyle(int style);
 
+    int getUpdateType() const;
+    void setUpdateType(int type);
+
     QString getApplicationStyle() const;
     void setApplicationStyle(const QString& style);
 

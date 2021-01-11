@@ -62,28 +62,31 @@ class Q_DECL_HIDDEN SetupMisc::Private
 public:
 
     explicit Private()
-      : tab(nullptr),
-        sidebarTypeLabel(nullptr),
-        applicationStyleLabel(nullptr),
-        applicationIconLabel(nullptr),
-        showSplash(nullptr),
-        nativeFileDialog(nullptr),
-        itemCenter(nullptr),
-        showMimeOverImage(nullptr),
-        showCoordinates(nullptr),
-        sortReverse(nullptr),
-        sidebarType(nullptr),
-        sortOrderComboBox(nullptr),
-        applicationStyle(nullptr),
-        applicationIcon(nullptr),
-        applicationFont(nullptr),
-        systemSettingsWidget(nullptr),
-        settings(ShowfotoSettings::instance())
+      : tab                     (nullptr),
+        updateTypeLabel         (nullptr),
+        sidebarTypeLabel        (nullptr),
+        applicationStyleLabel   (nullptr),
+        applicationIconLabel    (nullptr),
+        showSplash              (nullptr),
+        nativeFileDialog        (nullptr),
+        itemCenter              (nullptr),
+        showMimeOverImage       (nullptr),
+        showCoordinates         (nullptr),
+        sortReverse             (nullptr),
+        updateType              (nullptr),
+        sidebarType             (nullptr),
+        sortOrderComboBox       (nullptr),
+        applicationStyle        (nullptr),
+        applicationIcon         (nullptr),
+        applicationFont         (nullptr),
+        systemSettingsWidget    (nullptr),
+        settings                (ShowfotoSettings::instance())
     {
     }
 
     QTabWidget*           tab;
 
+    QLabel*               updateTypeLabel;
     QLabel*               sidebarTypeLabel;
     QLabel*               applicationStyleLabel;
     QLabel*               applicationIconLabel;
@@ -95,6 +98,7 @@ public:
     QCheckBox*            showCoordinates;
     QCheckBox*            sortReverse;
 
+    QComboBox*            updateType;
     QComboBox*            sidebarType;
     QComboBox*            sortOrderComboBox;
     QComboBox*            applicationStyle;
@@ -123,7 +127,7 @@ SetupMisc::SetupMisc(QWidget* const parent)
     QWidget* const behaviourPanel = new QWidget(d->tab);
     QVBoxLayout* const layout     = new QVBoxLayout(behaviourPanel);
 
-    // -- Sort Order Options --------------------------------------------------------
+    // -- Sort Order Options ----------------------------------
 
     QGroupBox* const sortOptionsGroup = new QGroupBox(i18n("Images Sort Order"), behaviourPanel);
     QVBoxLayout* const gLayout4       = new QVBoxLayout();
@@ -145,7 +149,7 @@ SetupMisc::SetupMisc(QWidget* const parent)
     gLayout4->addWidget(d->sortReverse);
     sortOptionsGroup->setLayout(gLayout4);
 
-    // Thumbnails Options ----------------------------------------------------------------------
+    // Thumbnails Options -------------------------------------
 
     QGroupBox* const thOptionsGroup = new QGroupBox(i18n("Thumbnails"), behaviourPanel);
     QVBoxLayout* const gLayout3     = new QVBoxLayout();
@@ -161,12 +165,28 @@ SetupMisc::SetupMisc(QWidget* const parent)
     gLayout3->addWidget(d->itemCenter);
     thOptionsGroup->setLayout(gLayout3);
 
+    // Update Options ----------------------------------------
+
+    QGroupBox* const upOptionsGroup = new QGroupBox(i18n("Updates"), behaviourPanel);
+    QVBoxLayout* const gLayout5     = new QVBoxLayout();
+
+    DHBox* const updateHbox = new DHBox(upOptionsGroup);
+    d->updateTypeLabel      = new QLabel(i18n("Check for new version:"), updateHbox);
+    d->updateType           = new QComboBox(updateHbox);
+    d->updateType->addItem(i18n("Only For Stable Releases"), 0);
+    d->updateType->addItem(i18n("Stable and Pre-Releases"),  1);
+    d->updateType->setToolTip(i18n("Set this option to configure which kind of new versions must be check for updates."));
+
+    gLayout5->addWidget(updateHbox);
+    upOptionsGroup->setLayout(gLayout5);
+
     // ---------------------------------------------------------
 
     layout->setContentsMargins(spacing, spacing, spacing, spacing);
     layout->setSpacing(spacing);
     layout->addWidget(sortOptionsGroup);
     layout->addWidget(thOptionsGroup);
+    layout->addWidget(upOptionsGroup);
     layout->addStretch();
 
     d->tab->insertTab(Behaviour, behaviourPanel, i18nc("@title:tab", "Behaviour"));
@@ -294,6 +314,7 @@ void SetupMisc::readSettings()
     d->showMimeOverImage->setChecked(d->settings->getShowFormatOverThumbnail());
     d->showCoordinates->setChecked(d->settings->getShowCoordinates());
     d->sidebarType->setCurrentIndex(d->settings->getRightSideBarStyle());
+    d->updateType->setCurrentIndex(d->settings->getUpdateType());
     d->sortOrderComboBox->setCurrentIndex(d->settings->getSortRole());
     d->sortReverse->setChecked(d->settings->getReverseSort());
 
@@ -317,6 +338,7 @@ void SetupMisc::applySettings()
     d->settings->setShowFormatOverThumbnail(d->showMimeOverImage->isChecked());
     d->settings->setShowCoordinates(d->showCoordinates->isChecked());
     d->settings->setRightSideBarStyle(d->sidebarType->currentIndex());
+    d->settings->setUpdateType(d->updateType->currentIndex());
     d->settings->setSortRole(d->sortOrderComboBox->currentIndex());
     d->settings->setReverseSort(d->sortReverse->isChecked());
 
