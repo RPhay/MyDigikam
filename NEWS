@@ -280,4 +280,5 @@ BUGFIXES:
 259 ==> 431369 - Lens search uses only exact match (as I see).
 260 ==> 431400 - "Find duplicates" Without Selecting An Album Locks Up Duplicates Feature.
 261 ==> 431403 - Cannot Drag and Drop When Using Similarity.
-262 ==> 
+262 ==> 431470 - Wrong keystroke behavior while editing face tag.
+263 ==> 

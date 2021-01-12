@@ -66,6 +66,7 @@ AddTagsComboBox::AddTagsComboBox(QWidget* const parent)
     setCloseOnActivate(true);
     setMaxVisibleItems(10);
     setCheckable(false);
+    setParent(nullptr);
 
     d->lineEdit = new AddTagsLineEdit(this);
     setLineEdit(d->lineEdit);
