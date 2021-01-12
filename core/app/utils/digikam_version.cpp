@@ -28,6 +28,7 @@
 #include <QLocale>
 #include <QDate>
 #include <QTime>
+#include <QLocale>
 
 // KDE includes.
 
@@ -75,7 +76,7 @@ const QString additionalInformation()
     QString ret          = i18n("IRC: irc.freenode.net - #digikam\n"
                                 "Feedback: digikam-user@kde.org\n\n"
                                 "Build date: %1 (target: %2)",
-                                digiKamBuildDate().toString(Qt::ISODate),
+                                QLocale().toString(digiKamBuildDate(), QLocale::ShortFormat),
                                 QLatin1String(digikam_build_type));
 
     if (!gitVer.isEmpty() && !gitVer.startsWith(QLatin1String("unknow")) && !gitVer.startsWith(QLatin1String("export")))
@@ -84,7 +85,7 @@ const QString additionalInformation()
                    "Feedback: digikam-user@kde.org\n\n"
                    "Build date: %1 (target: %2)\n"
                    "Rev.: %3",
-                   digiKamBuildDate().toString(Qt::ISODate),
+                   QLocale().toString(digiKamBuildDate(), QLocale::ShortFormat),
                    QLatin1String(digikam_build_type),
                    QString::fromLatin1("<a href='http://commits.kde.org/digikam/%1'>%2</a>").arg(gitVer).arg(gitVer));
     }
