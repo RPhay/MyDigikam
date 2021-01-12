@@ -52,11 +52,6 @@ DIGIKAM_EXPORT const QString digiKamVersion();
 DIGIKAM_EXPORT const QString additionalInformation();
 
 /**
- * Return the time-stamp of the current build.
- */
-DIGIKAM_EXPORT const QDateTime digiKamBuildDate();
-
-/**
  * Make an integer version number for comparison from a major, minor and
  * a patch version number.
  */

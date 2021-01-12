@@ -52,6 +52,7 @@
 #include "onlineversiondwnl.h"
 #include "dfileoperations.h"
 #include "dxmlguiwindow.h"
+#include "dbuilddate.h"
 
 namespace Digikam
 {

@@ -281,4 +281,5 @@ BUGFIXES:
 260 ==> 431400 - "Find duplicates" Without Selecting An Album Locks Up Duplicates Feature.
 261 ==> 431403 - Cannot Drag and Drop When Using Similarity.
 262 ==> 431470 - Wrong keystroke behavior while editing face tag.
-263 ==> 
+263 ==> 237010 - Remove __DATE__ and __TIME__ from code.
+264 ==> 

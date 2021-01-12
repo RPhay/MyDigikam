@@ -37,6 +37,7 @@
 
 #include "digikam_version.h"
 #include "digikam_debug.h"
+#include "dbuilddate.h"
 
 namespace Digikam
 {

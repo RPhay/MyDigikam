@@ -38,16 +38,7 @@
 
 #include "gitversion.h"
 #include "daboutdata.h"
-
-#if defined(Q_CC_GNU)
-#   pragma GCC diagnostic push
-#   pragma GCC diagnostic ignored "-Wdate-time"
-#endif
-
-#if defined(Q_CC_CLANG)
-#   pragma clang diagnostic push
-#   pragma clang diagnostic ignored "-Wdate-time"
-#endif
+#include "dbuilddate.h"
 
 namespace Digikam
 {
@@ -60,14 +51,6 @@ int digiKamMakeIntegerVersion(int major, int minor, int patch)
 const QString digiKamVersion()
 {
     return QLatin1String(digikam_version);
-}
-
-const QDateTime digiKamBuildDate()
-{
-    QDate date = QLocale(QLatin1String("en_US")).toDate(QString::fromLatin1(__DATE__).simplified(), QLatin1String("MMM dd yyyy"));
-    QTime time = QTime::fromString(QLatin1String(__TIME__));
-
-    return QDateTime(date, time);
 }
 
 const QString additionalInformation()
@@ -94,13 +77,3 @@ const QString additionalInformation()
 }
 
 }  // namespace Digikam
-
-// Restore warnings
-
-#if defined(Q_CC_GNU)
-#   pragma GCC diagnostic pop
-#endif
-
-#if defined(Q_CC_CLANG)
-#   pragma clang diagnostic pop
-#endif
