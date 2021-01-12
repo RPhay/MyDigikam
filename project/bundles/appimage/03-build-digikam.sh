@@ -167,6 +167,8 @@ if [ $? -ne 0 ]; then
     exit;
 fi
 
+cp -f $DK_BUILDTEMP/digikam-$DK_VERSION/build/BUILD_DATE $ORIG_WD/data/
+
 #################################################################################################
 # Install Extra Plugins
 
