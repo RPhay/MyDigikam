@@ -38,6 +38,7 @@
 #include <QApplication>
 #include <QPushButton>
 #include <QProgressBar>
+#include <QLocale>
 #include <QProcess>
 #include <QDialogButtonBox>
 
@@ -73,7 +74,7 @@ public:
     bool                  preRelease;
 
     QString               curVersion;
-    QString               newVersion;
+    QString               newVersion;       ///< For stable => version IDs ; for pre-release => build ISO date.
     QProgressBar*         bar;
     QLabel*               label;
     QLabel*               logo;
@@ -186,12 +187,12 @@ void OnlineVersionDlg::slotNewVersionAvailable(const QString& version)
 
     if (d->preRelease)
     {
-        d->label->setText(i18n("Current %1 pre-release date is %2\n"
-                               "New pre-release built %3 is available.\n"
+        d->label->setText(i18n("Current %1 pre-release date is %2.\n"
+                               "New pre-release built on %3 is available.\n"
                                "Press \"Download\" to get the file...",
                                qApp->applicationName(),
-                               digiKamBuildDate().toString(Qt::ISODate),
-                               version));
+                               QLocale().toString(digiKamBuildDate(), QLocale::ShortFormat),
+                               QLocale().toString(QDateTime::fromString(version, Qt::ISODate), QLocale::ShortFormat)));
     }
     else
     {
@@ -216,9 +217,9 @@ void OnlineVersionDlg::slotNewVersionCheckError(const QString& error)
         if (d->preRelease)
         {
             d->label->setText(i18n("Your software is up-to-date.\n"
-                                   "%1 built %2 is the most recent version available.",
+                                   "%1 built on %2 is the most recent version available.",
                                    qApp->applicationName(),
-                                   digiKamBuildDate().toString(Qt::ISODate)));
+                                   QLocale().toString(digiKamBuildDate(), QLocale::ShortFormat)));
         }
         else
         {
@@ -244,9 +245,9 @@ void OnlineVersionDlg::slotDownloadInstaller()
 
     if (d->preRelease)
     {
-        d->label->setText(i18n("Downloading new %1 built %2 in progress, please wait...",
+        d->label->setText(i18n("Downloading new %1 built on %2 in progress, please wait...",
                                qApp->applicationName(),
-                               d->newVersion));
+                               QLocale().toString(QDateTime::fromString(d->newVersion, Qt::ISODate), QLocale::ShortFormat)));
     }
     else
     {
@@ -288,11 +289,11 @@ void OnlineVersionDlg::slotDownloadError(const QString& error)
 
         if (d->preRelease)
         {
-            d->label->setText(i18n("The new %1 built %2 have been downloaded at:\n"
+            d->label->setText(i18n("The new %1 built on %2 have been downloaded at:\n"
                                    "%3\n"
                                    "Press \"Open\" to show the bundle in file-manager...",
                                    qApp->applicationName(),
-                                   d->newVersion,
+                                   QLocale().toString(QDateTime::fromString(d->newVersion, Qt::ISODate), QLocale::ShortFormat),
                                    d->dwnloader->downloadedPath()));
         }
         else
@@ -313,11 +314,11 @@ void OnlineVersionDlg::slotDownloadError(const QString& error)
 
         if (d->preRelease)
         {
-            d->label->setText(i18n("The new %1 from %2 have been downloaded at:\n"
+            d->label->setText(i18n("The new %1 built on %2 have been downloaded at:\n"
                                    "%3\n"
                                    "Press \"Install\" to close current session and upgrade...",
                                    qApp->applicationName(),
-                                   d->newVersion,
+                                   QLocale().toString(QDateTime::fromString(d->newVersion, Qt::ISODate), QLocale::ShortFormat),
                                    d->dwnloader->downloadedPath()));
         }
         else
@@ -346,9 +347,9 @@ void OnlineVersionDlg::slotDownloadError(const QString& error)
 
         if (d->preRelease)
         {
-            d->label->setText(i18n("Error while trying to download %1 built %2:\n\"%3\"",
+            d->label->setText(i18n("Error while trying to download %1 built on %2:\n\"%3\"",
                                    qApp->applicationName(),
-                                   d->newVersion,
+                                   QLocale().toString(QDateTime::fromString(d->newVersion, Qt::ISODate), QLocale::ShortFormat),
                                    error));
         }
         else
