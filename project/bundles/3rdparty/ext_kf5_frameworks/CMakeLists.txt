@@ -232,7 +232,7 @@ InstallKF5Component(kconfigwidgets      ${KF5_VERSION} ""                       
 InstallKF5Component(kiconthemes         ${KF5_VERSION} ""                                                                   "")
 InstallKF5Component(kservice            ${KF5_VERSION} ""                                                                   "")
 InstallKF5Component(kglobalaccel        ${KF5_VERSION} ""                                                                   "")
-InstallKF5Component(kcalendarcore       ${KF5_VERSION} ""                                                                   "")
+InstallKF5Component(kcalendarcore       ${KF5_VERSION} ""                                                                   "kcalendarcore-libical.patch")
 InstallKF5Component(kxmlgui             ${KF5_VERSION} ""                                                                   "")
 InstallKF5Component(kbookmarks          ${KF5_VERSION} ""                                                                   "")
 InstallKF5Component(kimageformats       ${KF5_VERSION} ""                                                                   "")
