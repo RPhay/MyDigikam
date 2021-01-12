@@ -25,7 +25,6 @@
 
 // Qt includes
 
-#include <QLocale>
 #include <QString>
 
 namespace Digikam
@@ -33,8 +32,7 @@ namespace Digikam
 
 const QDateTime digiKamBuildDate()
 {
-    return (QLocale(QLatin1String("en_US")).toDateTime(QString::fromLatin1(BUILD_DATE).simplified(),
-                                                       Qt::ISODate));
+    return (QDateTime::fromString(QLatin1String(BUILD_DATE), Qt::ISODate));
 }
 
 } // namespace Digikam
