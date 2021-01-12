@@ -9,7 +9,12 @@ APPLY_COMMON_POLICIES()
 # Set CMake variable BUILD_TIME to 'now'. This 'now' is the time
 # when CMake is run, not when the target builder (e.g. make) is run.
 
-string(TIMESTAMP BUILD_TIME "%Y-%m-%d %H:%M:%S" UTC)
+string(TIMESTAMP BUILD_DATE "%Y-%m-%dT%H:%M:%S" UTC)
+
+# Generate text file with build time stamp for bundles workflow.
+
+configure_file(${CMAKE_CURRENT_SOURCE_DIR}/BUILD_DATE.cmake.in
+               ${CMAKE_BINARY_DIR}/BUILD_DATE)
 
 include_directories($<TARGET_PROPERTY:Qt5::Core,INTERFACE_INCLUDE_DIRECTORIES>)
 
@@ -22,13 +27,13 @@ target_compile_definitions(core_dbuilddate_obj
 
 target_compile_definitions(core_dbuilddate_obj
                            PRIVATE
-                           -DBUILD_TIME="${BUILD_TIME}")
+                           -DBUILD_DATE="${BUILD_DATE}")
 
 # Add a dummy target that removes the CMake variable BUILD_TIME from CMake's cache.
 # this forces CMake to be-rerun when we hit this target.
 
 add_custom_target(clear_cache
-                  COMMAND ${CMAKE_COMMAND} -U BUILD_TIME ${CMAKE_BINARY_DIR})
+                  COMMAND ${CMAKE_COMMAND} -U BUILD_DATE ${CMAKE_BINARY_DIR})
 
 # Have the cache clearing be run before trying to build the dbuilddate object.
 # This is the same as a PRE_BUILD custom_command. But PRE_BUILD is

@@ -33,8 +33,8 @@ namespace Digikam
 
 const QDateTime digiKamBuildDate()
 {
-    return (QLocale(QLatin1String("en_US")).toDateTime(QString::fromLatin1(BUILD_TIME).simplified(),
-                                                       QLatin1String("MMM dd yyyy")));
+    return (QLocale(QLatin1String("en_US")).toDateTime(QString::fromLatin1(BUILD_DATE).simplified(),
+                                                       Qt::ISODate));
 }
 
 } // namespace Digikam

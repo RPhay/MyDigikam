@@ -587,8 +587,8 @@ rm -f $ORIG_WD/bundle/*x86-64$DEBUG_SUF* || true
 
 if [[ $DK_VERSION = "master" ]] ; then
 
-    # with master branch, use epoch time-stamp as sub-version string.
-    DK_SUBVER="-`date "+%Y%m%dT%H%M%S"`"
+    # with master branch, use build time-stamp as sub-version string.
+    DK_SUBVER="`cat $ORIG_WD/bundle/BUILD_DATE`"
 
 fi
 
