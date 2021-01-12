@@ -205,13 +205,23 @@ void OnlineVersionChecker::slotDownloadFinished(QNetworkReply* reply)
             return;
         }
 
-        QDateTime onlineDt   = QDateTime::fromString(sections[4], Qt::ISODate);
+        QDateTime onlineDt   = QDateTime::fromString(sections[3], QLatin1String("yyyyMMddTHHmmss"));
+        qCDebug(DIGIKAM_GENERAL_LOG) << "Pre-release build date:" << onlineDt << "(" << sections[3] << ")";
 
-        qCDebug(DIGIKAM_GENERAL_LOG) << "Pre-release file Name:" << preReleaseFileName();
+        if (!onlineDt.isValid())
+        {
+            qCWarning(DIGIKAM_GENERAL_LOG) << "Invalid pre-release date.";
+            emit signalNewVersionCheckError(i18n("Invalid pre-release date."));
+
+            return;
+        }
+
+        qCDebug(DIGIKAM_GENERAL_LOG) << "Pre-release file Name :" << preReleaseFileName();
+        qCDebug(DIGIKAM_GENERAL_LOG) << "Pre-release build date:" << onlineDt;
 
         if (onlineDt > digiKamBuildDate())
         {
-            emit signalNewVersionAvailable(sections[4]);
+            emit signalNewVersionAvailable(sections[3]);
         }
         else
         {
