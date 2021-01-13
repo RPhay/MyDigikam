@@ -19,7 +19,7 @@ if(GITEXEC)
 
     execute_process(COMMAND ${GITEXEC} "--git-dir=@CMAKE_CURRENT_SOURCE_DIR@/../.git" rev-parse HEAD OUTPUT_VARIABLE MYGITVERSION)
 
-    if(MYVERSION)
+    if(MYGITVERSION)
 
         # Remove the newline that git returns
 

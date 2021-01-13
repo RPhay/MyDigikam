@@ -13,7 +13,9 @@ macro(GIT_HEADER)
     find_file(GIT_MARKER entries PATHS ${CMAKE_SOURCE_DIR}/.git)
 
     if(NOT GIT_MARKER)
+
         set(GIT_MARKER ${CMAKE_SOURCE_DIR}/CMakeLists.txt)  # Dummy file
+
     endif()
 
     # Add a custom command to drive the git script whenever the git entries
