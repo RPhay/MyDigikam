@@ -53,6 +53,7 @@ ecm_add_app_icon(showfoto_SRCS ICONS ${ICONS_SRCS})
 add_executable(showfoto ${showfoto_SRCS})
 
 add_dependencies(showfoto digikam-gitversion)
+add_dependencies(showfoto digikam-builddate)
 
 # To fill plist XML file for OSX #####################################################
 

@@ -1,0 +1,61 @@
+#
+# Script to get system date at compilation time.
+#
+# Copyright (c) 2010-2021 by Gilles Caulier, <caulier dot gilles at gmail dot com>
+#
+# Redistribution and use is allowed according to the terms of the BSD license.
+# For details see the accompanying COPYING-CMAKE-SCRIPTS file.
+#
+
+set(CMAKE_BACKWARDS_COMPATIBILITY "2.4")
+
+if(NOT MSVC)  # Linux and macOS
+
+    # See if we have date tool installed
+
+    find_program(DATEEXEC date)
+
+    # Get the date, else set to "unknown"
+
+    if(DATEEXEC)
+
+        execute_process(COMMAND ${DATEEXEC} -u +%Y%m%dT%H%M%S OUTPUT_VARIABLE MYBUILDDATE)
+
+        if(MYBUILDDATE)
+
+            # Remove the newline that date tool returns
+            string(STRIP ${MYBUILDDATE} MYBUILDDATE)
+
+        endif()
+
+    else()
+
+        set(MYBUILDDATE unknown)
+
+    endif()
+
+else()
+
+    # Get the date, else set to "unknown"
+
+    # See: https://stackoverflow.com/questions/203090/how-do-i-get-current-date-time-on-the-windows-command-line-in-a-suitable-format
+
+    execute_process(COMMAND for /f "tokens=1,2,3,4,5,6 usebackq delims=:/ " %a in ('%date% %time%') do echo %c%b%aT%d%e%f OUTPUT_VARIABLE MYBUILDDATE)
+
+    if(MYBUILDDATE)
+
+        # Remove the newline that tools returns
+        string(STRIP ${MYBUILDDATE} MYBUILDDATE)
+
+    else()
+
+        set(MYBUILDDATE unknown)
+
+    endif()
+
+endif()
+
+# Configure the revision header
+
+configure_file("@CMAKE_CURRENT_SOURCE_DIR@/cmake/templates/builddate.h.cmake.in"
+               "@CMAKE_CURRENT_BINARY_DIR@/app/utils/builddate.h")

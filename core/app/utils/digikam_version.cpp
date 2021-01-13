@@ -37,8 +37,8 @@
 // Local includes.
 
 #include "gitversion.h"
+#include "builddate.h"
 #include "daboutdata.h"
-#include "dbuilddate.h"
 
 namespace Digikam
 {
@@ -51,6 +51,11 @@ int digiKamMakeIntegerVersion(int major, int minor, int patch)
 const QString digiKamVersion()
 {
     return QLatin1String(digikam_version);
+}
+
+const QDateTime digiKamBuildDate()
+{
+    return (QDateTime::fromString(QLatin1String(BUILD_DATE), QLatin1String("yyyyMMddTHHmmss"));
 }
 
 const QString additionalInformation()

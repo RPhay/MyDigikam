@@ -18,6 +18,7 @@ ecm_add_app_icon(digikam_SRCS ICONS ${ICONS_SRCS})
 add_executable(digikam ${digikam_SRCS})
 
 add_dependencies(digikam digikam-gitversion)
+add_dependencies(digikam digikam-builddate)
 
 # To fill plist XML file for OSX ############
 

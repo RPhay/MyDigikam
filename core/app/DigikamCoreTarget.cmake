@@ -12,7 +12,6 @@ set(DIGIKAMCORE_OBJECTS
             ${CMAKE_CURRENT_SOURCE_DIR}/utils/digikam_debug.cpp
             ${CMAKE_CURRENT_SOURCE_DIR}/utils/digikam_version.cpp
 
-            $<TARGET_OBJECTS:core_dbuilddate_obj>
             $<TARGET_OBJECTS:core_dimg_obj>
             $<TARGET_OBJECTS:core_dragdrop_obj>
             $<TARGET_OBJECTS:core_dmetadata_obj>
@@ -106,6 +105,7 @@ target_compile_definitions(digikamcore
 )
 
 add_dependencies(digikamcore digikam-gitversion)
+add_dependencies(digikamcore digikam-builddate)
 
 # All codes from this target are exported with digikam_core_export.h header and DIGIKAM_EXPORT macro.
 generate_export_header(digikamcore

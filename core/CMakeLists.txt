@@ -612,6 +612,9 @@ if(DIGIKAM_CAN_BE_COMPILED)
     include(MacroGitHeader)
     GIT_HEADER()
 
+    include(MacroBuildDateHeader)
+    BUILD_DATE_HEADER()
+
     # ==========================================================================
     # To prevent warnings from M$ compiler
 

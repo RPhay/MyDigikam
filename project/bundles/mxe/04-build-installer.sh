@@ -208,7 +208,7 @@ fi
 if [[ $DK_VERSION = "master" ]] ; then
 
     # with master branch, use build time-stamp as sub-version string.
-    DK_SUBVER="-`cat $ORIG_WD/data/BUILD_DATE`"
+    DK_SUBVER="-`cat $ORIG_WD/data/BUILD_DATE.txt`"
 
 fi
 
