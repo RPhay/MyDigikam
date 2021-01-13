@@ -552,7 +552,6 @@ if [[ $DK_UPLOAD = 1 ]] ; then
     echo -e "---------- Upload new bundle AppImage files to files.kde.org repository \n"
 
     rsync -r -v --progress -e ssh $ORIG_WD/bundle/$APPIMAGE $DK_UPLOADURL:$DK_UPLOADDIR
-    scp $ORIG_WD/bundle/$APPIMAGE.sum $DK_UPLOADURL:$DK_UPLOADDIR
 
     if [[ $DK_SIGN = 1 ]] ; then
         scp $ORIG_WD/bundle/$APPIMAGE.sig $DK_UPLOADURL:$DK_UPLOADDIR
