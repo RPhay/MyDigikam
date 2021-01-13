@@ -26,4 +26,4 @@
 
 #define BUILD_DATE "@MYBUILDDATE@"
 
-#endif // DIGIKAM_BUILD_DATE_H 
+#endif // DIGIKAM_BUILD_DATE_H

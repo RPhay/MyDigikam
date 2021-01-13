@@ -17,19 +17,19 @@ find_program(GITEXEC git)
 
 if(GITEXEC)
 
-    execute_process(COMMAND ${GITEXEC} "--git-dir=@CMAKE_CURRENT_SOURCE_DIR@/../.git" rev-parse HEAD OUTPUT_VARIABLE MYVERSION)
+    execute_process(COMMAND ${GITEXEC} "--git-dir=@CMAKE_CURRENT_SOURCE_DIR@/../.git" rev-parse HEAD OUTPUT_VARIABLE MYGITVERSION)
 
     if(MYVERSION)
 
         # Remove the newline that git returns
 
-        string(STRIP ${MYVERSION} MYVERSION)
+        string(STRIP ${MYGITVERSION} MYGITVERSION)
 
     endif()
 
 else()
 
-    set(MYVERSION unknown)
+    set(MYGITVERSION unknown)
 
 endif()
 
