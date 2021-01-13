@@ -29,7 +29,7 @@ target_compile_definitions(core_dbuilddate_obj
                            PRIVATE
                            -DBUILD_DATE="${BUILD_DATE}")
 
-# Add a dummy target that removes the CMake variable BUILD_TIME from CMake's cache.
+# Add a dummy target that removes the CMake variable BUILD_DATE from CMake's cache.
 # this forces CMake to be-rerun when we hit this target.
 
 add_custom_target(clear_cache
