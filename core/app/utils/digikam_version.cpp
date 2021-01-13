@@ -55,7 +55,10 @@ const QString digiKamVersion()
 
 const QDateTime digiKamBuildDate()
 {
-    return (QDateTime::fromString(QLatin1String(BUILD_DATE), QLatin1String("yyyyMMddTHHmmss")));
+    QDateTime dt = QDateTime::fromString(QLatin1String(BUILD_DATE), QLatin1String("yyyyMMddTHHmmss"));
+    dt.setTimeSpec(Qt::UTC);
+
+    return dt;
 }
 
 const QString additionalInformation()
