@@ -609,25 +609,8 @@ message(STATUS "")
 
 if(DIGIKAM_CAN_BE_COMPILED)
 
-    # ==========================================================================
-    # Create git version header
-
-    # We only do this IF we are in a .git dir
-    find_file(GIT_MARKER entries PATHS ${CMAKE_SOURCE_DIR}/.git)
-
-    if(NOT GIT_MARKER)
-        set(GIT_MARKER ${CMAKE_SOURCE_DIR}/CMakeLists.txt)  # Dummy file
-    endif()
-
-    # Add a custom command to drive the git script whenever the git entries
-    # file changes.
-    configure_file("${CMAKE_CURRENT_SOURCE_DIR}/cmake/templates/gitscript.cmake.in"
-                   "${CMAKE_CURRENT_BINARY_DIR}/gitscript.cmake"
-                   @ONLY)
-
-    # Add a custom target to drive the custom command.
-    add_custom_target(digikam-gitversion ALL COMMAND ${CMAKE_COMMAND} -P
-                      "${CMAKE_CURRENT_BINARY_DIR}/gitscript.cmake")
+    include(MacroGitHeader)
+    GIT_HEADER()
 
     # ==========================================================================
     # To prevent warnings from M$ compiler
