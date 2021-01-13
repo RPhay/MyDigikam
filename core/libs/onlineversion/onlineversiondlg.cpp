@@ -94,16 +94,6 @@ OnlineVersionDlg::OnlineVersionDlg(QWidget* const parent,
 
     d->curVersion = version;
     d->preRelease = checkPreRelease;
-
-    if (d->preRelease)
-    {
-        setWindowTitle(i18n("Online Version Checker - Pre-Release"));
-    }
-    else
-    {
-        setWindowTitle(i18n("Online Version Checker - Stable Version"));
-    }
-
     d->checker    = new OnlineVersionChecker(this, d->preRelease);
     d->checker->setCurrentVersion(d->curVersion);
     d->dwnloader  = new OnlineVersionDwnl(this);
@@ -122,27 +112,41 @@ OnlineVersionDlg::OnlineVersionDlg(QWidget* const parent,
 
     QWidget* const page     = new QWidget(this);
     QGridLayout* const grid = new QGridLayout(page);
+    d->label                = new QLabel(page);
 
-    d->label   = new QLabel(page);
-    d->label->setText(i18n("Check for new version available, please wait..."));
-
-    d->logo    = new QLabel(page);
-
-    if (QApplication::applicationName() == QLatin1String("digikam"))
+    if (d->preRelease)
     {
-        d->logo->setPixmap(QIcon::fromTheme(QLatin1String("digikam")).pixmap(QSize(48,48)));
+        setWindowTitle(i18n("Online Version Checker - Pre-Release"));
+        d->label->setText(i18n("Check for new pre-release version available, please wait...\n\n"
+                               "Note: from Setup/Misc panel, you can switch to check for stable release only.\n"
+                               "These versions are safe to use in production."));
     }
     else
     {
-        d->logo->setPixmap(QIcon::fromTheme(QLatin1String("showfoto")).pixmap(QSize(48,48)));
+        setWindowTitle(i18n("Online Version Checker - Stable Version"));
+        d->label->setText(i18n("Check for new stable version available, please wait...\n\n"
+                               "Note: from Setup/Misc panel, you can switch to check for weekly pre-release.\n"
+                               "These versions are dedicated to test quickly new features but can includes bugs.\n"
+                               "It's not recommended to use pre-release in production, unless you know what you are doing."));
     }
 
-    d->bar     = new QProgressBar(page);
+    d->logo                = new QLabel(page);
+
+    if (QApplication::applicationName() == QLatin1String("digikam"))
+    {
+        d->logo->setPixmap(QIcon::fromTheme(QLatin1String("digikam")).pixmap(QSize(48, 48)));
+    }
+    else
+    {
+        d->logo->setPixmap(QIcon::fromTheme(QLatin1String("showfoto")).pixmap(QSize(48, 48)));
+    }
+
+    d->bar                 = new QProgressBar(page);
     d->bar->setMaximum(0);
     d->bar->setMinimum(0);
     d->bar->setValue(0);
 
-    d->buttons = new QDialogButtonBox(QDialogButtonBox::Help |QDialogButtonBox::Apply | QDialogButtonBox::Cancel, page);
+    d->buttons             = new QDialogButtonBox(QDialogButtonBox::Help | QDialogButtonBox::Apply | QDialogButtonBox::Cancel, page);
     d->buttons->button(QDialogButtonBox::Cancel)->setDefault(true);
     d->buttons->button(QDialogButtonBox::Apply)->setVisible(false);
 
