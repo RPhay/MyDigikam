@@ -9,8 +9,8 @@ ORIG_WD="`pwd`"
 API_DIR="${ORIG_WD}/../../html"
 WEBSITE_DIR="${ORIG_WD}/site"
 
-rm -fr $API_DIR
-rm -fr $WEBSITE_DIR
+rm -fr $API_DIR || true
+rm -fr $WEBSITE_DIR || true
 
 cd ${ORIG_WD}/../../ && doxygen
 cd ${ORIG_WD}
@@ -21,7 +21,7 @@ cd $WEBSITE_DIR
 
 git checkout -b dev remotes/origin/dev
 
-rm -r $WEBSITE_DIR/static/api/*
+rm -r $WEBSITE_DIR/static/api/* || true
 cp -r $API_DIR/* $WEBSITE_DIR/static/api/
 
 # Add new report contents in dev branch
