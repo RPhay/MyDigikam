@@ -182,6 +182,14 @@ FindDuplicatesView::FindDuplicatesView(QWidget* const parent)
     d->albumTagRelationLabel = new QLabel(i18n("Restrict to:"));
     d->albumTagRelationLabel->setBuddy(d->albumTagRelation);
 
+    /*
+     * only selected tab   => search duplicates in albums or tags, use the viewed tab and ignore the other tab.
+     * one of              => search duplicates being in the selected albums or having the selected tags, use checkbox selection.
+     * both                => search duplicates that are both in one of the selected albums and have at least one of the selected tags.
+     * albums but not tags => search only duplicates in the selected albums that do not have the selected tags.
+     * tags but not albums => vice versa.
+     */
+
     d->albumTagRelation      = new SqueezedComboBox();
     d->albumTagRelation->addSqueezedItem(i18nc("@label:listbox", "Only selected tab") ,  HaarIface::AlbumTagRelation::NoMix);
     d->albumTagRelation->addSqueezedItem(i18nc("@label:listbox", "One of"),              HaarIface::AlbumTagRelation::Union);
