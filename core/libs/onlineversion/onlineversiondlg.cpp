@@ -96,7 +96,7 @@ OnlineVersionDlg::OnlineVersionDlg(QWidget* const parent,
     d->preRelease = checkPreRelease;
     d->checker    = new OnlineVersionChecker(this, d->preRelease);
     d->checker->setCurrentVersion(d->curVersion);
-    d->dwnloader  = new OnlineVersionDwnl(this);
+    d->dwnloader  = new OnlineVersionDwnl(this, d->preRelease);
 
     connect(d->checker, SIGNAL(signalNewVersionAvailable(QString)),
             this, SLOT(slotNewVersionAvailable(QString)));
