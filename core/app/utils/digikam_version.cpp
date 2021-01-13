@@ -36,8 +36,8 @@
 
 // Local includes.
 
-#include "gitversion.h"
-#include "builddate.h"
+#include "digikam_gitversion.h"
+#include "digikam_builddate.h"
 #include "daboutdata.h"
 
 namespace Digikam

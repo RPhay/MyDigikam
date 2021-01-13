@@ -58,4 +58,4 @@ endif()
 # Configure the revision header
 
 configure_file("@CMAKE_CURRENT_SOURCE_DIR@/cmake/templates/builddate.h.cmake.in"
-               "@CMAKE_CURRENT_BINARY_DIR@/app/utils/builddate.h")
+               "@CMAKE_CURRENT_BINARY_DIR@/app/utils/digikam_builddate.h")

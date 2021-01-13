@@ -706,7 +706,7 @@ if(DIGIKAM_CAN_BE_COMPILED)
 
     include_directories(${DK_LOCAL_INCLUDES})
 
-    # for config headers digikam_version.h gitversion.h digikam_config.h
+    # for config headers digikam_version.h digikam_gitversion.h digikam_config.h
     # digikam_dbconfig.h digikam_opencv.h
     include_directories(${CMAKE_CURRENT_BINARY_DIR}/app/utils)
 
