@@ -91,10 +91,19 @@ OnlineVersionDlg::OnlineVersionDlg(QWidget* const parent,
       d      (new Private)
 {
     setModal(true);
-    setWindowTitle(i18n("Online Version Checker"));
 
     d->curVersion = version;
     d->preRelease = checkPreRelease;
+
+    if (d->preRelease)
+    {
+        setWindowTitle(i18n("Online Version Checker - Pre-Release"));
+    }
+    else
+    {
+        setWindowTitle(i18n("Online Version Checker - Stable Version"));
+    }
+
     d->checker    = new OnlineVersionChecker(this, d->preRelease);
     d->checker->setCurrentVersion(d->curVersion);
     d->dwnloader  = new OnlineVersionDwnl(this);
