@@ -588,7 +588,7 @@ rm -f $ORIG_WD/bundle/*x86-64$DEBUG_SUF* || true
 if [[ $DK_VERSION = "master" ]] ; then
 
     # with master branch, use build time-stamp as sub-version string.
-    DK_SUBVER="`cat $ORIG_WD/data/BUILD_DATE`"
+    DK_SUBVER="-`cat $ORIG_WD/data/BUILD_DATE`"
 
 fi
 

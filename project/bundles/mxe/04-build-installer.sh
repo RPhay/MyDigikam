@@ -162,10 +162,6 @@ $MXE_INSTALL_PREFIX/qt5/bin/QtWebNetworkProcess.exe \
 $MXE_INSTALL_PREFIX/qt5/bin/QtWebProcess.exe \
 $MXE_INSTALL_PREFIX/qt5/bin/QtWebStorageProcess.exe \
 "
-#if [[ $DK_DEBUG = 1 ]] ; then
-#    EXE_FILES="$EXE_FILES $MXE_INSTALL_PREFIX/bin/gdb.exe"
-#fi
-
 for app in $EXE_FILES ; do
 
     cp $app $BUNDLEDIR/
@@ -212,7 +208,7 @@ fi
 if [[ $DK_VERSION = "master" ]] ; then
 
     # with master branch, use build time-stamp as sub-version string.
-    DK_SUBVER="`cat $ORIG_WD/data/BUILD_DATE`"
+    DK_SUBVER="-`cat $ORIG_WD/data/BUILD_DATE`"
 
 fi
 

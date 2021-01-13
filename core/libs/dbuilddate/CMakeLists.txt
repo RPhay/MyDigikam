@@ -9,7 +9,7 @@ APPLY_COMMON_POLICIES()
 # Set CMake variable BUILD_TIME to 'now'. This 'now' is the time
 # when CMake is run, not when the target builder (e.g. make) is run.
 
-string(TIMESTAMP BUILD_DATE "%Y-%m-%dT%H:%M:%S" UTC)
+string(TIMESTAMP BUILD_DATE "%Y%m%dT%H%M%S" UTC)
 
 # Generate text file with build time stamp for bundles workflow.
 
