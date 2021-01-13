@@ -214,7 +214,7 @@ void OnlineVersionChecker::slotDownloadFinished(QNetworkReply* reply)
         }
 
         QDateTime onlineDt   = QDateTime::fromString(sections[3], QLatin1String("yyyyMMddTHHmmss"));
-        qCDebug(DIGIKAM_GENERAL_LOG) << "Pre-release build date:" << onlineDt << "(" << sections[3] << ")";
+        onlineDt.setTimeSpec(Qt::UTC);
 
         if (!onlineDt.isValid())
         {
@@ -226,6 +226,7 @@ void OnlineVersionChecker::slotDownloadFinished(QNetworkReply* reply)
 
         qCDebug(DIGIKAM_GENERAL_LOG) << "Pre-release file Name :" << preReleaseFileName();
         qCDebug(DIGIKAM_GENERAL_LOG) << "Pre-release build date:" << onlineDt;
+        qCDebug(DIGIKAM_GENERAL_LOG) << "Current build date:"     << digiKamBuildDate();
 
         if (onlineDt > digiKamBuildDate())
         {
