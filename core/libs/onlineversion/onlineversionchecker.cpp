@@ -175,11 +175,18 @@ void OnlineVersionChecker::slotDownloadFinished(QNetworkReply* reply)
 
     if (d->preRelease)
     {
-        // NOTE: pre-release files from files.kde.org is a simple list of remote directory contents where we will extract build date string.
+        // NOTE: pre-release files list from files.kde.org is a simple text file of remote directory contents where we will extract build date string.
 
         QString arch;
         QString ext;
-        bundleProperties(arch, ext);
+
+        if (!OnlineVersionChecker::bundleProperties(arch, ext))
+        {
+            qCDebug(DIGIKAM_GENERAL_LOG) << "Unsupported architecture";
+            emit signalNewVersionCheckError(i18n("Unsupported Architecture."));
+
+            return;
+        }
 
         QTextStream in(&data);
         QString line;
@@ -231,7 +238,7 @@ void OnlineVersionChecker::slotDownloadFinished(QNetworkReply* reply)
     }
     else
     {
-        // NOTE: stable files from digikam.org is a Yaml config file where we will extract version string.
+        // NOTE: stable files list from digikam.org is a Yaml config file where we will extract version string.
 
         QString tag            = QLatin1String("version: ");
         int start              = data.indexOf(tag) + tag.size();
