@@ -70,6 +70,7 @@ bool WelcomePageViewPage::acceptNavigationRequest(const QUrl& url, QWebEnginePag
     if (type == QWebEnginePage::NavigationTypeLinkClicked)
     {
         emit linkClicked(url);
+
         return false;
     }
 
@@ -148,7 +149,7 @@ void WelcomePageView::slotUrlOpen(const QUrl& url)
 QStringList WelcomePageView::featuresTabContent() const
 {
     QStringList newFeatures;
-    newFeatures << i18n("More than 900 files closed on bugzilla.");
+    newFeatures << i18n("More than 1300 user-reports closed on bugzilla.");
     newFeatures << i18n("New Neural Network engine based on OpenCV Deep Learning module to detect and recognize faces.");
     newFeatures << i18n("Update Slideshow to plugin with new shuffle mode.");
     newFeatures << i18n("Add new theme Html5Responsive for HtmlGallery plugin.");
@@ -164,7 +165,9 @@ QStringList WelcomePageView::featuresTabContent() const
     newFeatures << i18n("Add Exif, Iptc, and Xmp read support for HEIF images.");
     newFeatures << i18n("Improved support for UNC network paths under Windows.");
     newFeatures << i18n("Improved support for Unicode paths under Windows.");
-    newFeatures << i18n("Update internal RAW engine to last Libraw 0.20.0 release including Canon CR3 and Sony A7R4 support.");
+    newFeatures << i18n("Apple bundle is now relocatable and compatible with macOS BigSur.");
+    newFeatures << i18n("New online version checker and downloader to automatize upgrade under Windows and macOS.");
+    newFeatures << i18n("Update internal RAW engine to last Libraw 0.20.2 release including Canon CR3 and Sony A7R4 support.");
     newFeatures << i18n("New camera supported: "
                         "Canon CR3, PowerShot G5 X Mark II, G7 X Mark III, SX70 HS, EOS R, EOS RP, EOS 90D, EOS 250D, EOS M6 Mark II, EOS M50, EOS M200, EOS 1DX Mark III (lossless files only) "
                         "DJI Mavic Air, Air2, Osmo Action, "
@@ -183,6 +186,7 @@ QStringList WelcomePageView::featuresTabContent() const
                         "also multiple modern smartphones.");
 
     // Add new features here...
+
     newFeatures << i18n("...and much more.");
 
     QString featureItems;
