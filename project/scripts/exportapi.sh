@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# Copyright (c) 2013-2020, Gilles Caulier, <caulier dot gilles at gmail dot com>
+# Copyright (c) 2013-2021, Gilles Caulier, <caulier dot gilles at gmail dot com>
 #
 # Redistribution and use is allowed according to the terms of the BSD license.
 # For details see the accompanying COPYING-CMAKE-SCRIPTS file.
@@ -21,12 +21,16 @@ cd $WEBSITE_DIR
 
 git checkout -b dev remotes/origin/dev
 
-rm -r $WEBSITE_DIR/static/api/* || true
-cp -r $API_DIR/* $WEBSITE_DIR/static/api/
+cd $WEBSITE_DIR
+rm -r $WEBSITE_DIR/static/api || true
+mkdir -p $WEBSITE_DIR/static/api
+cd $API_DIR
+cp -r ./ $WEBSITE_DIR/static/api/
+cd $WEBSITE_DIR
 
 # Add new report contents in dev branch
 
-git add $WEBSITE_DIR/static/api/*
+git add $WEBSITE_DIR/static/api
 git commit . -m"update API documentation"
 git push
 
