@@ -142,9 +142,6 @@ if [ $? -ne 0 ]; then
     exit;
 fi
 
-cat ../build/core/app/utils/digikam_version.h   | grep "digikam_version\[\]" | awk '{print $6}' | tr -d '";'  > $ORIG_WD/data/RELEASEID.txt
-cat ../build/core/app/utils/digikam_builddate.h | grep "define BUILD_DATE"   | awk '{print $3}' | tr -d '"\n' > $ORIG_WD/data/BUILDDATE.txt
-
 echo -e "\n\n"
 echo "---------- Building digiKam $DK_VERSION"
 
@@ -155,6 +152,9 @@ if [ $? -ne 0 ]; then
     echo "---------- Aborting..."
     exit;
 fi
+
+cat $DK_BUILDTEMP/digikam-$DK_VERSION/build/core/app/utils/digikam_version.h   | grep "digikam_version\[\]" | awk '{print $6}' | tr -d '";'  > $ORIG_WD/data/RELEASEID.txt
+cat $DK_BUILDTEMP/digikam-$DK_VERSION/build/core/app/utils/digikam_builddate.h | grep "define BUILD_DATE"   | awk '{print $3}' | tr -d '"\n' > $ORIG_WD/data/BUILDDATE.txt
 
 echo -e "\n\n"
 echo "---------- Installing digiKam $DK_VERSION"
