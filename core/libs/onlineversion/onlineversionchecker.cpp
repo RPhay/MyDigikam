@@ -48,19 +48,20 @@ public:
     explicit Private()
       : preRelease(false),
         redirects (0),
-        manager   (nullptr),
-        curRequest(nullptr),
-        curVersion(QLatin1String(digikam_version_short))
+        curVersion(QLatin1String(digikam_version_short)),
+        reply     (nullptr),
+        manager   (nullptr)
     {
     }
 
-    bool                   preRelease;
-    int                    redirects;
+    bool                   preRelease;          ///< Flag to check pre-releases
+    int                    redirects;           ///< Count of redirected url
 
-    QNetworkAccessManager* manager;
-    QNetworkReply*         curRequest;
-    QString                curVersion;
-    QString                preReleaseFileName;
+    QString                curVersion;          ///< Current application version string
+    QString                preReleaseFileName;  ///< Pre-release file name get from remote server.
+
+    QNetworkReply*         reply;               ///< Current network request reply
+    QNetworkAccessManager* manager;             ///< Network manager instance
 };
 
 OnlineVersionChecker::OnlineVersionChecker(QObject* const parent, bool checkPreRelease)
@@ -83,9 +84,9 @@ OnlineVersionChecker::~OnlineVersionChecker()
 
 void OnlineVersionChecker::cancelCheck()
 {
-    if (d->curRequest)
+    if (d->reply)
     {
-        d->curRequest->abort();
+        d->reply->abort();
     }
 }
 
@@ -121,20 +122,20 @@ void OnlineVersionChecker::download(const QUrl& url)
     qCDebug(DIGIKAM_GENERAL_LOG) << "Downloading: " << url;
 
     d->redirects++;
-    d->curRequest = d->manager->get(QNetworkRequest(url));
+    d->reply = d->manager->get(QNetworkRequest(url));
 
-    connect(d->curRequest, SIGNAL(sslErrors(QList<QSslError>)),
-            d->curRequest, SLOT(ignoreSslErrors()));
+    connect(d->reply, SIGNAL(sslErrors(QList<QSslError>)),
+            d->reply, SLOT(ignoreSslErrors()));
 
-    if (d->curRequest->error())
+    if (d->reply->error())
     {
-        emit signalNewVersionCheckError(d->curRequest->errorString());
+        emit signalNewVersionCheckError(d->reply->errorString());
     }
 }
 
 void OnlineVersionChecker::slotDownloadFinished(QNetworkReply* reply)
 {
-    if (reply != d->curRequest)
+    if (reply != d->reply)
     {
         return;
     }
@@ -142,7 +143,7 @@ void OnlineVersionChecker::slotDownloadFinished(QNetworkReply* reply)
     // mark for deletion
 
     reply->deleteLater();
-    d->curRequest = nullptr;
+    d->reply = nullptr;
 
     if ((reply->error() != QNetworkReply::NoError)             &&
         (reply->error() != QNetworkReply::InsecureRedirectError))

@@ -51,24 +51,23 @@ class Q_DECL_HIDDEN OnlineVersionDwnl::Private
 public:
 
     explicit Private()
-      : redirects  (0),
-        preRelease (false),
+      : preRelease (false),
+        redirects  (0),
         reply      (nullptr),
-        netMngr    (nullptr)
+        manager    (nullptr)
     {
     }
 
-    QString                downloadUrl;
+    bool                   preRelease;      ///< Flag to check pre-releases
+    int                    redirects;       ///< Count of redirected url
 
-    int                    redirects;
-    bool                   preRelease;
+    QString                downloadUrl;     ///< Url for current download
+    QString                error;           ///< Error string about current download
+    QString                file;            ///< Info about file to download (version string, or filename)
+    QString                downloaded;      ///< Local file path to downloaded data
 
-    QString                error;
-    QString                file;
-    QString                downloaded;
-
-    QNetworkReply*         reply;
-    QNetworkAccessManager* netMngr;
+    QNetworkReply*         reply;           ///< Current network request reply
+    QNetworkAccessManager* manager;         ///< Network manager instance
 };
 
 OnlineVersionDwnl::OnlineVersionDwnl(QObject* const parent, bool checkPreRelease)
@@ -86,10 +85,10 @@ OnlineVersionDwnl::OnlineVersionDwnl(QObject* const parent, bool checkPreRelease
         d->downloadUrl = QLatin1String("https://download.kde.org/stable/digikam/");
     }
 
-    d->netMngr    = new QNetworkAccessManager(this);
-    d->netMngr->setRedirectPolicy(QNetworkRequest::ManualRedirectPolicy);
+    d->manager    = new QNetworkAccessManager(this);
+    d->manager->setRedirectPolicy(QNetworkRequest::ManualRedirectPolicy);
 
-    connect(d->netMngr, SIGNAL(finished(QNetworkReply*)),
+    connect(d->manager, SIGNAL(finished(QNetworkReply*)),
             this, SLOT(slotDownloaded(QNetworkReply*)));
 }
 
@@ -148,7 +147,7 @@ void OnlineVersionDwnl::download(const QUrl& url)
     qCDebug(DIGIKAM_GENERAL_LOG) << "Downloading: " << url;
 
     d->redirects++;
-    d->reply = d->netMngr->get(QNetworkRequest(url));
+    d->reply = d->manager->get(QNetworkRequest(url));
 
     connect(d->reply, SIGNAL(downloadProgress(qint64,qint64)),
             this, SIGNAL(signalDownloadProgress(qint64,qint64)));
