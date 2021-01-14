@@ -60,6 +60,10 @@
 #   pragma clang diagnostic pop
 #endif
 
+// Local includes
+
+#include "digikam_config.h"
+
 using namespace std;
 
 namespace Digikam
@@ -292,6 +296,8 @@ void SolidHardwareDlg::slotPopulateDevices()
             vitem = new QTreeWidgetItem(titem, QStringList() << i18n("States")      << (device.emblems().isEmpty()     ? i18n("none")  : device.emblems().join(QLatin1String(", "))));
             vitem->setData(0, Qt::UserRole, 2);
 
+#ifndef Q_OS_WIN
+
             if (device.is<Solid::GenericInterface>())
             {
                 QTreeWidgetItem* const vitem = new QTreeWidgetItem(titem, QStringList() << i18n("Properties") << i18n("Non-portable info"));
@@ -304,7 +310,11 @@ void SolidHardwareDlg::slotPopulateDevices()
                     QTreeWidgetItem* const pitem = new QTreeWidgetItem(vitem, QStringList() << it.key() << it.value().toString());
                     pitem->setData(0, Qt::UserRole, 3);
                 }
+
             }
+
+#endif
+
         }
     }
 }
