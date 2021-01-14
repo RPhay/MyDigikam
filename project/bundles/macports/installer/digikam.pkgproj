@@ -595,7 +595,7 @@
 				<key>FOLLOW_SYMBOLIC_LINKS</key>
 				<false/>
 				<key>IDENTIFIER</key>
-				<string>org.freedesktop.digikam</string>
+				<string>org.kde.digikam.desktop</string>
 				<key>LOCATION</key>
 				<integer>0</integer>
 				<key>NAME</key>
@@ -611,7 +611,7 @@
 				<key>USE_HFS+_COMPRESSION</key>
 				<true/>
 				<key>VERSION</key>
-				<string>7.0.0</string>
+				<string>7.2.0</string>
 			</dict>
 			<key>TYPE</key>
 			<integer>0</integer>
