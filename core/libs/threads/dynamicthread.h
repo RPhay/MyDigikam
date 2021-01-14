@@ -27,8 +27,8 @@
 // Qt includes
 
 #include <QObject>
-#include <QRunnable>
 #include <QThread>
+#include <QRunnable>
 
 // Local includes
 
@@ -40,8 +40,7 @@ class QMutexLocker;
 namespace Digikam
 {
 
-class DIGIKAM_EXPORT DynamicThread : public QObject,
-                                     public QRunnable
+class DIGIKAM_EXPORT DynamicThread : public QObject
 {
     Q_OBJECT
 
@@ -69,6 +68,11 @@ public:
      *  you must call stop() and wait() before yourself.
      */
     ~DynamicThread() override;
+
+    /**
+     * Implement this pure virtual function in your subclass.
+     */
+    virtual void run() = 0;
 
     State state()               const;
     bool  isRunning()           const;

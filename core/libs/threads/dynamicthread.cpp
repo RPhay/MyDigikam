@@ -68,8 +68,8 @@ public:
 
     volatile bool                 running;
     volatile bool                 emitSignals;
-    bool                          inDestruction;
-    bool                          threadRequested;
+    volatile bool                 inDestruction;
+    volatile bool                 threadRequested;
 
     volatile DynamicThread::State state;
 
@@ -211,7 +211,6 @@ DynamicThread::DynamicThread(QObject* const parent)
     : QObject(parent),
       d      (new Private(this))
 {
-    setAutoDelete(false);
     ThreadManager::instance()->initialize(this);
 }
 
