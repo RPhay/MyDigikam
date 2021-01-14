@@ -91,6 +91,7 @@ void FacePreviewLoader::slotImageLoaded(const LoadingDescription& loadingDescrip
     if (sentOutLimitReached() && !scheduledPackages.isEmpty())
     {
         stop();
+        wait();
     }
 
     package->image         = img;
