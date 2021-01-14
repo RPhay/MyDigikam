@@ -127,7 +127,8 @@ OnlineVersionDlg::OnlineVersionDlg(QWidget* const parent,
         d->label->setText(i18n("Check for new stable version available, please wait...\n\n"
                                "Note: from Setup/Misc panel, you can switch to check for weekly pre-release.\n"
                                "These versions are dedicated to test quickly new features but can includes bugs.\n"
-                               "It's not recommended to use pre-release in production, unless you know what you are doing."));
+                               "It's not recommended to use pre-release in production as bugs can remain,\n"
+                               "unless you know what you are doing."));
     }
 
     d->logo                = new QLabel(page);

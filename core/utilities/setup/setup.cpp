@@ -64,32 +64,32 @@ class Q_DECL_HIDDEN Setup::Private
 public:
 
     explicit Private()
-      : page_database(nullptr),
-        page_collections(nullptr),
-        page_albumView(nullptr),
-        page_tooltip(nullptr),
-        page_metadata(nullptr),
-        page_template(nullptr),
-        page_lighttable(nullptr),
-        page_editor(nullptr),
-        page_imagequalitysorter(nullptr),
-        page_icc(nullptr),
-        page_camera(nullptr),
-        page_plugins(nullptr),
-        page_misc(nullptr),
-        databasePage(nullptr),
-        collectionsPage(nullptr),
-        albumViewPage(nullptr),
-        tooltipPage(nullptr),
-        metadataPage(nullptr),
-        templatePage(nullptr),
-        lighttablePage(nullptr),
-        editorPage(nullptr),
-        imageQualitySorterPage(nullptr),
-        iccPage(nullptr),
-        cameraPage(nullptr),
-        pluginsPage(nullptr),
-        miscPage(nullptr)
+      : page_database           (nullptr),
+        page_collections        (nullptr),
+        page_albumView          (nullptr),
+        page_tooltip            (nullptr),
+        page_metadata           (nullptr),
+        page_template           (nullptr),
+        page_lighttable         (nullptr),
+        page_editor             (nullptr),
+        page_imagequalitysorter (nullptr),
+        page_icc                (nullptr),
+        page_camera             (nullptr),
+        page_plugins            (nullptr),
+        page_misc               (nullptr),
+        databasePage            (nullptr),
+        collectionsPage         (nullptr),
+        albumViewPage           (nullptr),
+        tooltipPage             (nullptr),
+        metadataPage            (nullptr),
+        templatePage            (nullptr),
+        lighttablePage          (nullptr),
+        editorPage              (nullptr),
+        imageQualitySorterPage  (nullptr),
+        iccPage                 (nullptr),
+        cameraPage              (nullptr),
+        pluginsPage             (nullptr),
+        miscPage                (nullptr)
     {
     }
 
@@ -128,7 +128,7 @@ public:
 
 Setup::Setup(QWidget* const parent)
     : DConfigDlg(parent),
-      d(new Private)
+      d         (new Private)
 {
     setWindowFlags((windowFlags() & ~Qt::Dialog) |
                    Qt::Window                    |
@@ -408,6 +408,12 @@ void Setup::slotOkClicked()
     if (!d->cameraPage->checkSettings())
     {
         showPage(CameraPage);
+        return;
+    }
+
+    if (!d->miscPage->checkSettings())
+    {
+        showPage(MiscellaneousPage);
         return;
     }
 

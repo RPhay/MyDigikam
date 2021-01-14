@@ -83,7 +83,7 @@ public:
 
     static bool execMetadataFilters(QWidget* const parent, int tab);
 
-    QSize sizeHint() const override;
+    QSize sizeHint() const  override;
 
 private Q_SLOTS:
 
@@ -93,7 +93,7 @@ private Q_SLOTS:
 private:
 
     explicit Setup(QWidget* const parent = nullptr);
-    ~Setup() override;
+    ~Setup()                override;
 
     Setup::Page activePageIndex() const;
     void        showPage(Setup::Page page);
