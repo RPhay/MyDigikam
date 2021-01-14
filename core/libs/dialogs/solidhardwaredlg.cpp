@@ -310,7 +310,6 @@ void SolidHardwareDlg::slotPopulateDevices()
                     QTreeWidgetItem* const pitem = new QTreeWidgetItem(vitem, QStringList() << it.key() << it.value().toString());
                     pitem->setData(0, Qt::UserRole, 3);
                 }
-
             }
 
 #endif
