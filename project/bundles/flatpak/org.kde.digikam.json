@@ -137,7 +137,7 @@
         {
             "name": "gphoto2",
             "sources": [
-                { "type": "git", "url": "https://github.com/gphoto/libgphoto2.git", "tag": "v2.5.25"},
+                { "type": "git", "url": "https://github.com/gphoto/libgphoto2.git", "tag": "v2.5.26"},
                 {
                     "type": "script",
                     "dest-filename": "autogen.sh",
