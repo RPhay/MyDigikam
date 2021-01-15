@@ -122,7 +122,7 @@
                 "-DCV_TRACE=OFF",
                 "-DWITH_OPENJPEG=OFF"
             ],
-            "sources": [ { "type": "git", "url": "https://github.com/Itseez/opencv.git", "tag": "4.5.0" } ]
+            "sources": [ { "type": "git", "url": "https://github.com/Itseez/opencv.git", "tag": "4.5.1" } ]
         },
         {
             "name": "sane",
