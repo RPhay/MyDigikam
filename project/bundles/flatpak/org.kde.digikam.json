@@ -164,7 +164,7 @@
                 "-DJAS_ENABLE_PROGRAMS=OFF"
             ],
             "builddir": true,
-            "sources": [ { "type": "git", "url": "https://github.com/mdadams/jasper.git", "tag": "version-2.0.22" } ]
+            "sources": [ { "type": "git", "url": "https://github.com/mdadams/jasper.git", "tag": "version-2.0.24" } ]
         },
         {
             "name": "exiv2",

@@ -12,7 +12,7 @@ ExternalProject_Add(ext_jasper
     DOWNLOAD_DIR ${EXTERNALS_DOWNLOAD_DIR}
 
     GIT_REPOSITORY https://github.com/jasper-software/jasper.git
-    GIT_TAG version-2.0.20
+    GIT_TAG version-2.0.24
 
     INSTALL_DIR ${PREFIX_ext_jasper}
 
