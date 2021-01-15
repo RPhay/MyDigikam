@@ -117,18 +117,12 @@ OnlineVersionDlg::OnlineVersionDlg(QWidget* const parent,
     if (d->preRelease)
     {
         setWindowTitle(i18n("Online Version Checker - Pre-Release"));
-        d->label->setText(i18n("Check for new pre-release version available, please wait...\n\n"
-                               "Note: from Setup/Misc panel, you can switch to check for stable release only.\n"
-                               "These versions are safe to use in production."));
+        d->label->setText(i18n("Check for new pre-release version available, please wait..."));
     }
     else
     {
         setWindowTitle(i18n("Online Version Checker - Stable Version"));
-        d->label->setText(i18n("Check for new stable version available, please wait...\n\n"
-                               "Note: from Setup/Misc panel, you can switch to check for weekly pre-release.\n"
-                               "These versions are dedicated to test quickly new features but can includes bugs.\n"
-                               "It's not recommended to use pre-release in production as bugs can remain,\n"
-                               "unless you know what you are doing."));
+        d->label->setText(i18n("Check for new stable version available, please wait..."));
     }
 
     d->logo                = new QLabel(page);
@@ -203,16 +197,22 @@ void OnlineVersionDlg::slotNewVersionAvailable(const QString& version)
     {
         d->label->setText(i18n("Current %1 pre-release date is %2.\n"
                                "New pre-release built on %3 is available.\n"
-                               "Press \"Download\" to get the file...",
+                               "Press \"Download\" to get the file...\n\n"
+                               "Note: from Setup/Misc panel, you can switch to check for stable release only.\n"
+                               "Stable versions are safe to use in production.",
                                qApp->applicationName(),
                                QLocale().toString(digiKamBuildDate(), QLocale::ShortFormat),
                                QLocale().toString(QDateTime::fromString(version, Qt::ISODate), QLocale::ShortFormat)));
     }
     else
     {
-        d->label->setText(i18n("Current %1 version is %2\n"
-                               "New version %3 is available.\n"
-                               "Press \"Download\" to get the file...",
+        d->label->setText(i18n("Current %1 stable version is %2\n"
+                               "New stable version %3 is available.\n"
+                               "Press \"Download\" to get the file...\n\n"
+                               "Note: from Setup/Misc panel, you can switch to check for weekly pre-release.\n"
+                               "Pre-release versions are dedicated to test quickly new features.\n"
+                               "It's not recommended to use pre-releases in production as bugs can remain,\n"
+                               "unless you know what you are doing.",
                                qApp->applicationName(),
                                d->curVersion,
                                version));
@@ -231,14 +231,14 @@ void OnlineVersionDlg::slotNewVersionCheckError(const QString& error)
         if (d->preRelease)
         {
             d->label->setText(i18n("Your software is up-to-date.\n"
-                                   "%1 built on %2 is the most recent version available.",
+                                   "%1 pre-release built on %2 is the most recent version available.",
                                    qApp->applicationName(),
                                    QLocale().toString(digiKamBuildDate(), QLocale::ShortFormat)));
         }
         else
         {
             d->label->setText(i18n("Your software is up-to-date.\n"
-                                   "%1 %2 is the most recent version available.",
+                                   "%1 stable version %2 is the most recent version available.",
                                    qApp->applicationName(),
                                    QString::fromLatin1(digikam_version_short)));
         }
@@ -303,7 +303,7 @@ void OnlineVersionDlg::slotDownloadError(const QString& error)
 
         if (d->preRelease)
         {
-            d->label->setText(i18n("The new %1 built on %2 have been downloaded at:\n"
+            d->label->setText(i18n("The new %1 pre-release built on %2 have been downloaded at:\n"
                                    "%3\n"
                                    "Press \"Open\" to show the bundle in file-manager...",
                                    qApp->applicationName(),
@@ -312,7 +312,7 @@ void OnlineVersionDlg::slotDownloadError(const QString& error)
         }
         else
         {
-            d->label->setText(i18n("The new %1 version %2 have been downloaded at:\n"
+            d->label->setText(i18n("The new %1 stable version %2 have been downloaded at:\n"
                                    "%3\n"
                                    "Press \"Open\" to show the bundle in file-manager...",
                                    qApp->applicationName(),
@@ -328,7 +328,7 @@ void OnlineVersionDlg::slotDownloadError(const QString& error)
 
         if (d->preRelease)
         {
-            d->label->setText(i18n("The new %1 built on %2 have been downloaded at:\n"
+            d->label->setText(i18n("The new pre-release %1 built on %2 have been downloaded at:\n"
                                    "%3\n"
                                    "Press \"Install\" to close current session and upgrade...",
                                    qApp->applicationName(),
@@ -337,7 +337,7 @@ void OnlineVersionDlg::slotDownloadError(const QString& error)
         }
         else
         {
-            d->label->setText(i18n("The new %1 version %2 have been downloaded at:\n"
+            d->label->setText(i18n("The new %1 stable version %2 have been downloaded at:\n"
                                    "%3\n"
                                    "Press \"Install\" to close current session and upgrade...",
                                    qApp->applicationName(),
@@ -361,14 +361,14 @@ void OnlineVersionDlg::slotDownloadError(const QString& error)
 
         if (d->preRelease)
         {
-            d->label->setText(i18n("Error while trying to download %1 built on %2:\n\"%3\"",
+            d->label->setText(i18n("Error while trying to download %1 pre-release built on %2:\n\"%3\"",
                                    qApp->applicationName(),
                                    QLocale().toString(QDateTime::fromString(d->newVersion, Qt::ISODate), QLocale::ShortFormat),
                                    error));
         }
         else
         {
-            d->label->setText(i18n("Error while trying to download %1 version %2:\n\"%3\"",
+            d->label->setText(i18n("Error while trying to download %1 stable version %2:\n\"%3\"",
                                    qApp->applicationName(),
                                    d->newVersion,
                                    error));
