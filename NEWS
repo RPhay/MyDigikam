@@ -283,4 +283,5 @@ BUGFIXES:
 262 ==> 431470 - Wrong keystroke behavior while editing face tag.
 263 ==> 237010 - Remove __DATE__ and __TIME__ from code.
 264 ==> 431614 - Tags are not written to secondary pictures if grouped by name.
-265 ==> 
+265 ==> 431598 - digiKam-7.2.0-rc (14.01.2021) crashes while getting "Help > List of Detected Hardware".
+266 ==> 
