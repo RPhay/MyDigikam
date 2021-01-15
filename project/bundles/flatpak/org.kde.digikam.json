@@ -208,7 +208,7 @@
                 "-DBUILD_TESTING=OFF"
             ],
             "builddir": true,
-            "sources": [ { "type": "git", "url": "https://invent.kde.org/education/marble.git", "tag": "v20.08.2" } ]
+            "sources": [ { "type": "git", "url": "https://invent.kde.org/education/marble.git", "tag": "v20.12.1" } ]
         },
         {
             "name": "qtav",
