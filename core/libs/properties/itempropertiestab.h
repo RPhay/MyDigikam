@@ -119,7 +119,8 @@ public:
     static QString permissionsString(const QFileInfo& fi);
 
     /**
-     * Return human readable string of file size in bytes.
+     * Return an human readable string of file size in 'bytes'.
+     * If 'si' is true, a decade of bytes is interpreted on base of 1000 byte, else 1024.
      */
     static QString humanReadableBytesCount(qint64 bytes, bool si = false);
 
