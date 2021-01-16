@@ -41,6 +41,7 @@
 #include <QLocale>
 #include <QProcess>
 #include <QDialogButtonBox>
+#include <QMessageBox>
 
 // KDE includes
 
@@ -48,6 +49,7 @@
 
 // Local includes
 
+#include "digikam_debug.h"
 #include "onlineversionchecker.h"
 #include "onlineversiondwnl.h"
 #include "dfileoperations.h"
@@ -311,8 +313,8 @@ void OnlineVersionDlg::slotDownloadError(const QString& error)
 
         if (d->preRelease)
         {
-            d->label->setText(i18n("The new %1 pre-release built on %2 have been downloaded at:\n"
-                                   "%3\n"
+            d->label->setText(i18n("The new %1 pre-release built on %2 have been downloaded at:\n\n"
+                                   "%3\n\n"
                                    "Press \"Open\" to show the bundle in file-manager...",
                                    qApp->applicationName(),
                                    QLocale().toString(d->onlineDt, QLocale::ShortFormat),
@@ -320,8 +322,8 @@ void OnlineVersionDlg::slotDownloadError(const QString& error)
         }
         else
         {
-            d->label->setText(i18n("The new %1 stable version %2 have been downloaded at:\n"
-                                   "%3\n"
+            d->label->setText(i18n("The new %1 stable version %2 have been downloaded at:\n\n"
+                                   "%3\n\n"
                                    "Press \"Open\" to show the bundle in file-manager...",
                                    qApp->applicationName(),
                                    d->newVersion,
@@ -336,8 +338,8 @@ void OnlineVersionDlg::slotDownloadError(const QString& error)
 
         if (d->preRelease)
         {
-            d->label->setText(i18n("The new pre-release %1 built on %2 have been downloaded at:\n"
-                                   "%3\n"
+            d->label->setText(i18n("The new pre-release %1 built on %2 have been downloaded at:\n\n"
+                                   "%3\n\n"
                                    "Press \"Install\" to close current session and upgrade...",
                                    qApp->applicationName(),
                                    QLocale().toString(d->onlineDt, QLocale::ShortFormat),
@@ -345,8 +347,8 @@ void OnlineVersionDlg::slotDownloadError(const QString& error)
         }
         else
         {
-            d->label->setText(i18n("The new %1 stable version %2 have been downloaded at:\n"
-                                   "%3\n"
+            d->label->setText(i18n("The new %1 stable version %2 have been downloaded at:\n\n"
+                                   "%3\n\n"
                                    "Press \"Install\" to close current session and upgrade...",
                                    qApp->applicationName(),
                                    d->newVersion,
@@ -369,14 +371,14 @@ void OnlineVersionDlg::slotDownloadError(const QString& error)
 
         if (d->preRelease)
         {
-            d->label->setText(i18n("Error while trying to download %1 pre-release built on %2:\n\"%3\"",
+            d->label->setText(i18n("Error while trying to download %1 pre-release built on %2:\n\n\"%3\"",
                                    qApp->applicationName(),
                                    QLocale().toString(d->onlineDt, QLocale::ShortFormat),
                                    error));
         }
         else
         {
-            d->label->setText(i18n("Error while trying to download %1 stable version %2:\n\"%3\"",
+            d->label->setText(i18n("Error while trying to download %1 stable version %2:\n\n\"%3\"",
                                    qApp->applicationName(),
                                    d->newVersion,
                                    error));
@@ -399,7 +401,16 @@ void OnlineVersionDlg::slotDownloadProgress(qint64 recv, qint64 total)
 void OnlineVersionDlg::slotRunInstaller()
 {
     QString path = d->dwnloader->downloadedPath();
-    QProcess::startDetached(path, QStringList());
+    qCDebug(DIGIKAM_GENERAL_LOG) << "Run installer:" << path;
+    bool started = QProcess::startDetached(path, QStringList());
+
+    if (!started)
+    {
+        QMessageBox::critical(this, qApp->applicationName(),
+                              i18n("Cannot start installer:\n%1", path));
+        return;
+    }
+
     close();
     qApp->quit();
 }
