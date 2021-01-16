@@ -1063,6 +1063,7 @@ void DigikamApp::slotOnlineVersionCheck()
 {
     OnlineVersionDlg* const dlg = new OnlineVersionDlg(qApp->activeWindow(),
                                                        QLatin1String(digikam_version_short),
+                                                       digiKamBuildDate(),
                                                        ApplicationSettings::instance()->getUpdateType());
     dlg->exec();
 }

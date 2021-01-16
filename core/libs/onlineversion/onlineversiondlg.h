@@ -44,6 +44,7 @@ public:
 
     explicit OnlineVersionDlg(QWidget* const parent = nullptr,
                               const QString& version = QLatin1String(digikam_version_short),
+                              const QDateTime& buildDt = digiKamBuildDate(),
                               bool checkPreRelease = false);
     ~OnlineVersionDlg() override;
 

@@ -74,6 +74,7 @@ public:
     bool                  preRelease;
 
     QString               curVersion;
+    QDateTime             curBuildDt;
     QString               newVersion;       ///< For stable => version IDs ; for pre-release => build ISO date.
     QProgressBar*         bar;
     QLabel*               label;
@@ -86,6 +87,7 @@ public:
 
 OnlineVersionDlg::OnlineVersionDlg(QWidget* const parent,
                                    const QString& version,
+                                   const QDateTime& buildDt,
                                    bool checkPreRelease)
     : QDialog(parent),
       d      (new Private)
@@ -93,9 +95,11 @@ OnlineVersionDlg::OnlineVersionDlg(QWidget* const parent,
     setModal(true);
 
     d->curVersion = version;
+    d->curBuildDt = buildDt;
     d->preRelease = checkPreRelease;
     d->checker    = new OnlineVersionChecker(this, d->preRelease);
     d->checker->setCurrentVersion(d->curVersion);
+    d->checker->setCurrentBuildDate(d->curBuildDt);
     d->dwnloader  = new OnlineVersionDwnl(this, d->preRelease);
 
     connect(d->checker, SIGNAL(signalNewVersionAvailable(QString)),

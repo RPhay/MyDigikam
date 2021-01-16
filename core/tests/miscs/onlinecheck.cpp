@@ -25,6 +25,7 @@
 
 #include <QApplication>
 #include <QTest>
+#include <QDateTime>
 #include <QCommandLineParser>
 #include <QDebug>
 
@@ -68,7 +69,10 @@ int main(int argc, char* argv[])
     parser.process(app);
     aboutData.processCommandLine(&parser);
 
-    OnlineVersionDlg* const dlg = new OnlineVersionDlg(nullptr, QLatin1String("7.0.0"), preRelease);
+    OnlineVersionDlg* const dlg = new OnlineVersionDlg(nullptr,
+                                                       QLatin1String("7.0.0"),
+                                                       QDateTime::fromString(QLatin1String("2021-01-01T00:00:00"), Qt::ISODate),
+                                                       preRelease);
 
     return (dlg->exec());
 }

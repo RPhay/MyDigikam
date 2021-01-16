@@ -26,7 +26,6 @@
 // Qt includes
 
 #include <QTextStream>
-#include <QDateTime>
 #include <QNetworkAccessManager>
 
 // KDE includes
@@ -49,6 +48,7 @@ public:
       : preRelease(false),
         redirects (0),
         curVersion(QLatin1String(digikam_version_short)),
+        curBuildDt(digiKamBuildDate()),
         reply     (nullptr),
         manager   (nullptr)
     {
@@ -59,6 +59,8 @@ public:
 
     QString                curVersion;          ///< Current application version string
     QString                preReleaseFileName;  ///< Pre-release file name get from remote server.
+
+    QDateTime              curBuildDt;          ///< Current application build date.
 
     QNetworkReply*         reply;               ///< Current network request reply
     QNetworkAccessManager* manager;             ///< Network manager instance
@@ -93,6 +95,11 @@ void OnlineVersionChecker::cancelCheck()
 void OnlineVersionChecker::setCurrentVersion(const QString& version)
 {
     d->curVersion = version;
+}
+
+void OnlineVersionChecker::setCurrentBuildDate(const QDateTime& dt)
+{
+    d->curBuildDt = dt;
 }
 
 QString OnlineVersionChecker::preReleaseFileName() const
@@ -228,7 +235,7 @@ void OnlineVersionChecker::slotDownloadFinished(QNetworkReply* reply)
         qCDebug(DIGIKAM_GENERAL_LOG) << "Pre-release build date:" << onlineDt;
         qCDebug(DIGIKAM_GENERAL_LOG) << "Current build date:"     << digiKamBuildDate();
 
-        if (onlineDt > digiKamBuildDate())
+        if (onlineDt > d->curBuildDt)
         {
             emit signalNewVersionAvailable(sections[3]);
         }
