@@ -62,6 +62,12 @@ public:
 
     static bool execMetadataFilters(QWidget* const parent, int tab);
 
+    /**
+     * Show a setup dialog. Only the specified page will be available.
+     */
+    static bool execSinglePage(Page page);
+    static bool execSinglePage(QWidget* const parent, Page page);
+
 private Q_SLOTS:
 
     void slotOkClicked();

@@ -55,21 +55,21 @@ public:
 
     explicit Private()
       : page_editorIface(nullptr),
-        page_metadata(nullptr),
-        page_tooltip(nullptr),
-        page_raw(nullptr),
-        page_iofiles(nullptr),
-        page_icc(nullptr),
-        page_plugins(nullptr),
-        page_misc(nullptr),
-        metadataPage(nullptr),
-        toolTipPage(nullptr),
-        miscPage(nullptr),
-        rawPage(nullptr),
-        pluginsPage(nullptr),
-        editorIfacePage(nullptr),
-        iofilesPage(nullptr),
-        iccPage(nullptr)
+        page_metadata   (nullptr),
+        page_tooltip    (nullptr),
+        page_raw        (nullptr),
+        page_iofiles    (nullptr),
+        page_icc        (nullptr),
+        page_plugins    (nullptr),
+        page_misc       (nullptr),
+        metadataPage    (nullptr),
+        toolTipPage     (nullptr),
+        miscPage        (nullptr),
+        rawPage         (nullptr),
+        pluginsPage     (nullptr),
+        editorIfacePage (nullptr),
+        iofilesPage     (nullptr),
+        iccPage         (nullptr)
     {
     }
 
@@ -99,7 +99,7 @@ public:
 
 Setup::Setup(QWidget* const parent, Setup::Page page)
     : DConfigDlg(parent),
-      d(new Private)
+      d         (new Private)
 {
     setWindowTitle(i18n("Configure"));
     setStandardButtons(QDialogButtonBox::Help | QDialogButtonBox::Ok | QDialogButtonBox::Cancel);
@@ -337,6 +337,23 @@ DConfigDlgWdgItem* Setup::Private::pageItem(Setup::Page page) const
     }
 }
 
+bool Setup::execSinglePage(Page page)
+{
+    return (execSinglePage(nullptr, page));
+}
+
+bool Setup::execSinglePage(QWidget* const parent, Page page)
+{
+    QPointer<Setup> setup = new Setup(parent);
+    setup->showPage(page);
+    setup->setFaceType(Plain);
+
+    bool success          = (setup->DConfigDlg::exec() == QDialog::Accepted);
+    delete setup;
+
+    return success;
+}
+
 bool Setup::execMetadataFilters(QWidget* const parent, int tab)
 {
     QPointer<Setup> setup = new Setup(parent);
@@ -361,6 +378,7 @@ bool Setup::execMetadataFilters(QWidget* const parent, int tab)
 
     bool success                = setup->DConfigDlg::exec() == QDialog::Accepted;
     delete setup;
+
     return success;
 }
 

@@ -48,6 +48,10 @@ public:
                               bool checkPreRelease = false);
     ~OnlineVersionDlg() override;
 
+Q_SIGNALS:
+
+    void signalSetupUpdate();
+
 private Q_SLOTS:
 
     void slotNewVersionAvailable(const QString& version);
@@ -61,6 +65,7 @@ private Q_SLOTS:
     void slotOpenInFileManager();
 
     void slotHelp();
+    void slotSetupUpdate();
 
 private:
 

@@ -148,9 +148,13 @@ OnlineVersionDlg::OnlineVersionDlg(QWidget* const parent,
     d->bar->setMinimum(0);
     d->bar->setValue(0);
 
-    d->buttons             = new QDialogButtonBox(QDialogButtonBox::Help | QDialogButtonBox::Apply | QDialogButtonBox::Cancel, page);
+    d->buttons             = new QDialogButtonBox(QDialogButtonBox::Help  |
+                                                  QDialogButtonBox::Apply |         // Download button
+                                                  QDialogButtonBox::Reset |         // Configure button
+                                                  QDialogButtonBox::Cancel,
+                                                  page);
     d->buttons->button(QDialogButtonBox::Cancel)->setDefault(true);
-    d->buttons->button(QDialogButtonBox::Apply)->setVisible(false);
+    d->buttons->button(QDialogButtonBox::Reset)->setVisible(false);
 
     grid->addWidget(d->logo,  0, 0, 3, 1);
     grid->addWidget(d->label, 0, 1, 1, 2);
@@ -174,6 +178,15 @@ OnlineVersionDlg::OnlineVersionDlg(QWidget* const parent,
 
     d->buttons->button(QDialogButtonBox::Apply)->setVisible(false);
     d->buttons->button(QDialogButtonBox::Apply)->setEnabled(false);
+    d->buttons->button(QDialogButtonBox::Reset)->setVisible(false);
+    d->buttons->button(QDialogButtonBox::Reset)->setEnabled(true);
+    d->buttons->button(QDialogButtonBox::Reset)->setText(i18n("Configure..."));
+    d->buttons->button(QDialogButtonBox::Reset)->setIcon(QIcon::fromTheme(QLatin1String("configure")));
+
+    disconnect(d->buttons->button(QDialogButtonBox::Reset), SIGNAL(clicked()), 0, 0);
+
+    connect(d->buttons->button(QDialogButtonBox::Reset), SIGNAL(clicked()),
+            this, SLOT(slotSetupUpdate()));
 
     d->checker->checkForNewVersion();
 }
@@ -189,11 +202,12 @@ void OnlineVersionDlg::slotNewVersionAvailable(const QString& version)
 {
     d->newVersion = version;
     d->bar->hide();
+
     d->buttons->button(QDialogButtonBox::Apply)->setVisible(true);
     d->buttons->button(QDialogButtonBox::Apply)->setEnabled(true);
-
     d->buttons->button(QDialogButtonBox::Apply)->setText(i18n("Download"));
     d->buttons->button(QDialogButtonBox::Apply)->setIcon(QIcon::fromTheme(QLatin1String("download")));
+    d->buttons->button(QDialogButtonBox::Reset)->setVisible(true);
 
     disconnect(d->buttons->button(QDialogButtonBox::Apply), SIGNAL(clicked()), 0, 0);
 
@@ -209,7 +223,8 @@ void OnlineVersionDlg::slotNewVersionAvailable(const QString& version)
                                "New pre-release built on %3 is available.\n"
                                "Press \"Download\" to get the file...\n\n"
                                "Note: from Setup/Misc panel, you can switch to check for stable release only.\n"
-                               "Stable versions are safe to use in production.",
+                               "Stable versions are safe to use in production.\n\n"
+                               "Press \"Configure\" if you want to show update options from setup dialog.",
                                qApp->applicationName(),
                                QLocale().toString(d->curBuildDt, QLocale::ShortFormat),
                                QLocale().toString(d->onlineDt, QLocale::ShortFormat)));
@@ -222,7 +237,8 @@ void OnlineVersionDlg::slotNewVersionAvailable(const QString& version)
                                "Note: from Setup/Misc panel, you can switch to check for weekly pre-release.\n"
                                "Pre-release versions are dedicated to test quickly new features.\n"
                                "It's not recommended to use pre-releases in production as bugs can remain,\n"
-                               "unless you know what you are doing.",
+                               "unless you know what you are doing.\n\n"
+                               "Press \"Configure\" if you want to show update options from setup dialog.",
                                qApp->applicationName(),
                                d->curVersion,
                                version));
@@ -281,6 +297,7 @@ void OnlineVersionDlg::slotDownloadInstaller()
     }
 
     d->buttons->button(QDialogButtonBox::Apply)->setEnabled(false);
+    d->buttons->button(QDialogButtonBox::Reset)->setVisible(false);
     d->bar->show();
 
     if (d->preRelease)
@@ -425,6 +442,12 @@ void OnlineVersionDlg::slotOpenInFileManager()
 void OnlineVersionDlg::slotHelp()
 {
     DXmlGuiWindow::openHandbook();
+}
+
+void OnlineVersionDlg::slotSetupUpdate()
+{
+    emit signalSetupUpdate();
+    close();
 }
 
 } // namespace Digikam

@@ -523,6 +523,14 @@ void QueueMgrWindow::slotOnlineVersionCheck()
                                                        QLatin1String(digikam_version_short),
                                                        digiKamBuildDate(),
                                                        ApplicationSettings::instance()->getUpdateType());
+
+    connect(dlg, &OnlineVersionDlg::signalSetupUpdate,
+            this, [=]()
+        {
+            Setup::execSinglePage(this, Setup::MiscellaneousPage);
+        }
+    );
+
     dlg->exec();
 }
 
