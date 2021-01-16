@@ -233,15 +233,15 @@ void OnlineVersionChecker::slotDownloadFinished(QNetworkReply* reply)
 
         qCDebug(DIGIKAM_GENERAL_LOG) << "Pre-release file Name :" << preReleaseFileName();
         qCDebug(DIGIKAM_GENERAL_LOG) << "Pre-release build date:" << onlineDt;
-        qCDebug(DIGIKAM_GENERAL_LOG) << "Current build date:"     << digiKamBuildDate();
+        qCDebug(DIGIKAM_GENERAL_LOG) << "Current build date:"     << d->curBuildDt;
 
         if (onlineDt > d->curBuildDt)
         {
-            emit signalNewVersionAvailable(sections[3]);
+            emit signalNewVersionAvailable(sections[3]);            // Forward pre-release build date from remote file.
         }
         else
         {
-            emit signalNewVersionCheckError(QString());
+            emit signalNewVersionCheckError(QString());             // Report error to GUI
         }
     }
     else

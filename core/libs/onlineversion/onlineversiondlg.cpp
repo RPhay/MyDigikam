@@ -75,6 +75,7 @@ public:
 
     QString               curVersion;
     QDateTime             curBuildDt;
+    QDateTime             onlineDt;         ///< Build date for pre-release only.
     QString               newVersion;       ///< For stable => version IDs ; for pre-release => build ISO date.
     QProgressBar*         bar;
     QLabel*               label;
@@ -199,14 +200,17 @@ void OnlineVersionDlg::slotNewVersionAvailable(const QString& version)
 
     if (d->preRelease)
     {
+        d->onlineDt = QDateTime::fromString(d->newVersion, QLatin1String("yyyyMMddTHHmmss"));
+        d->onlineDt.setTimeSpec(Qt::UTC);
+
         d->label->setText(i18n("Current %1 pre-release date is %2.\n"
                                "New pre-release built on %3 is available.\n"
                                "Press \"Download\" to get the file...\n\n"
                                "Note: from Setup/Misc panel, you can switch to check for stable release only.\n"
                                "Stable versions are safe to use in production.",
                                qApp->applicationName(),
-                               QLocale().toString(digiKamBuildDate(), QLocale::ShortFormat),
-                               QLocale().toString(QDateTime::fromString(version, Qt::ISODate), QLocale::ShortFormat)));
+                               QLocale().toString(d->curBuildDt, QLocale::ShortFormat),
+                               QLocale().toString(d->onlineDt, QLocale::ShortFormat)));
     }
     else
     {
@@ -237,7 +241,7 @@ void OnlineVersionDlg::slotNewVersionCheckError(const QString& error)
             d->label->setText(i18n("Your software is up-to-date.\n"
                                    "%1 pre-release built on %2 is the most recent version available.",
                                    qApp->applicationName(),
-                                   QLocale().toString(digiKamBuildDate(), QLocale::ShortFormat)));
+                                   QLocale().toString(d->curBuildDt, QLocale::ShortFormat)));
         }
         else
         {
@@ -265,7 +269,7 @@ void OnlineVersionDlg::slotDownloadInstaller()
     {
         d->label->setText(i18n("Downloading new %1 built on %2 in progress, please wait...",
                                qApp->applicationName(),
-                               QLocale().toString(QDateTime::fromString(d->newVersion, Qt::ISODate), QLocale::ShortFormat)));
+                               QLocale().toString(d->onlineDt, QLocale::ShortFormat)));
     }
     else
     {
@@ -311,7 +315,7 @@ void OnlineVersionDlg::slotDownloadError(const QString& error)
                                    "%3\n"
                                    "Press \"Open\" to show the bundle in file-manager...",
                                    qApp->applicationName(),
-                                   QLocale().toString(QDateTime::fromString(d->newVersion, Qt::ISODate), QLocale::ShortFormat),
+                                   QLocale().toString(d->onlineDt, QLocale::ShortFormat),
                                    d->dwnloader->downloadedPath()));
         }
         else
@@ -336,7 +340,7 @@ void OnlineVersionDlg::slotDownloadError(const QString& error)
                                    "%3\n"
                                    "Press \"Install\" to close current session and upgrade...",
                                    qApp->applicationName(),
-                                   QLocale().toString(QDateTime::fromString(d->newVersion, Qt::ISODate), QLocale::ShortFormat),
+                                   QLocale().toString(d->onlineDt, QLocale::ShortFormat),
                                    d->dwnloader->downloadedPath()));
         }
         else
@@ -367,7 +371,7 @@ void OnlineVersionDlg::slotDownloadError(const QString& error)
         {
             d->label->setText(i18n("Error while trying to download %1 pre-release built on %2:\n\"%3\"",
                                    qApp->applicationName(),
-                                   QLocale().toString(QDateTime::fromString(d->newVersion, Qt::ISODate), QLocale::ShortFormat),
+                                   QLocale().toString(d->onlineDt, QLocale::ShortFormat),
                                    error));
         }
         else
