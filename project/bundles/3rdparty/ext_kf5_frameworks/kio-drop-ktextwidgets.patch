@@ -1,5 +1,5 @@
 diff --git a/autotests/jobtest.h b/autotests/jobtest.h
-index f2f06a4f..4f13cfbd 100644
+index 5e947b3f..8e5498b7 100644
 --- a/autotests/jobtest.h
 +++ b/autotests/jobtest.h
 @@ -12,6 +12,8 @@
@@ -47,7 +47,7 @@ index 104fdaf7..c8005c3a 100644
      KF5::I18n)
  
 diff --git a/src/kcms/kio/netpref.cpp b/src/kcms/kio/netpref.cpp
-index a874077c..63ee4525 100644
+index 960925cd..d50216f8 100644
 --- a/src/kcms/kio/netpref.cpp
 +++ b/src/kcms/kio/netpref.cpp
 @@ -6,11 +6,11 @@
@@ -101,8 +101,19 @@ index a874077c..63ee4525 100644
      connect(sb_serverResponse, QOverload<int>::of(&QSpinBox::valueChanged),
              this, &KIOPreferences::configChanged);
      timeoutLayout->addRow(i18n("&Server response:"), sb_serverResponse);
+@@ -88,8 +88,8 @@ KIOPreferences::KIOPreferences(QWidget *parent, const QVariantList &)
+     auto partialLayout = new QFormLayout(partialWidget);
+     partialLayout->setContentsMargins(20, 0, 0, 0); // indent below mark partial
+ 
+-    sb_globalMinimumKeepSize = new KPluralHandlingSpinBox( this );
+-    sb_globalMinimumKeepSize->setSuffix( ki18np( " byte", " bytes" ) );
++    sb_globalMinimumKeepSize = new QSpinBox( this );
++    sb_globalMinimumKeepSize->setSuffix( ki18np( " byte", " bytes" ).toString() );
+     connect(sb_globalMinimumKeepSize, QOverload<int>::of(&QSpinBox::valueChanged),
+             this, &KIOPreferences::configChanged);
+     partialLayout->addRow(i18nc( "@label:spinbox", "If cancelled, automatically delete partially uploaded files smaller than:" ),
 diff --git a/src/kcms/kio/netpref.h b/src/kcms/kio/netpref.h
-index 5265a07b..80ab0d4b 100644
+index 8a41b5cf..74c5738e 100644
 --- a/src/kcms/kio/netpref.h
 +++ b/src/kcms/kio/netpref.h
 @@ -6,7 +6,7 @@
@@ -114,7 +125,12 @@ index 5265a07b..80ab0d4b 100644
  
  class KIOPreferences : public KCModule
  {
-@@ -32,10 +32,10 @@ private:
+@@ -29,14 +29,14 @@ private:
+     QGroupBox* gb_Ftp;
+     QGroupBox* gb_Timeout;
+     QCheckBox* cb_globalMarkPartial;
+-    KPluralHandlingSpinBox* sb_globalMinimumKeepSize;
++    QSpinBox* sb_globalMinimumKeepSize;
      QCheckBox* cb_ftpEnablePasv;
      QCheckBox* cb_ftpMarkPartial;
  
@@ -130,12 +146,12 @@ index 5265a07b..80ab0d4b 100644
  
  #endif // NETPREF_H
 diff --git a/src/widgets/renamedialog.cpp b/src/widgets/renamedialog.cpp
-index 6b474567..499c017f 100644
+index ac2feef9..c5d2c542 100644
 --- a/src/widgets/renamedialog.cpp
 +++ b/src/widgets/renamedialog.cpp
-@@ -401,16 +401,16 @@ RenameDialog::RenameDialog(QWidget *parent, const QString &_caption,
-         // check files contents for local files
-         if (d->dest.isLocalFile() && d->src.isLocalFile()) {
+@@ -412,16 +412,16 @@ RenameDialog::RenameDialog(QWidget *parent, const QString &_caption,
+         if ((d->dest.isLocalFile() && !(_options & RenameDialog_DestIsDirectory))
+             && (d->src.isLocalFile() && !(_options & RenameDialog_SourceIsDirectory))) {
  
 -            const CompareFilesResult CompareFilesResult = compareFiles(d->src.toLocalFile(), d->dest.toLocalFile());
 +            const CompareFilesResult res = compareFiles(d->src.toLocalFile(), d->dest.toLocalFile());
