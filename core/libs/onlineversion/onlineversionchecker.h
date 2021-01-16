@@ -29,6 +29,7 @@
 #include <QObject>
 #include <QUrl>
 #include <QNetworkReply>
+#include <QDateTime>
 
 // Local includes
 
@@ -47,6 +48,7 @@ public:
     ~OnlineVersionChecker();
 
     void setCurrentVersion(const QString& version);
+    void setCurrentBuildDate(const QDateTime& dt);
 
     void checkForNewVersion();
     void cancelCheck();

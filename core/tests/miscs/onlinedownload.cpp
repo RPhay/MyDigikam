@@ -54,6 +54,7 @@ int main(int argc, char* argv[])
     if (preRelease)
     {
         OnlineVersionChecker* const check = new OnlineVersionChecker(nullptr, preRelease);
+        check->setCurrentBuildDate(QDateTime::fromString(QLatin1String("2021-01-01T00:00:00"), Qt::ISODate));
         check->checkForNewVersion();
 
         QTest::qWait(3000);

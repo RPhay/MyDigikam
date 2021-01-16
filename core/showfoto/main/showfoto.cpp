@@ -934,6 +934,7 @@ void ShowFoto::slotOnlineVersionCheck()
 {
     Digikam::OnlineVersionDlg* const dlg = new Digikam::OnlineVersionDlg(qApp->activeWindow(),
                                                                          QLatin1String(digikam_version_short),
+                                                                         Digikam::digiKamBuildDate(),
                                                                          ShowfotoSettings::instance()->getUpdateType());
     dlg->exec();
 }
