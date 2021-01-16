@@ -1,5 +1,5 @@
 diff --git a/autotests/jobtest.h b/autotests/jobtest.h
-index 5e947b3f..8e5498b7 100644
+index ceb4e279..0c2169b7 100644
 --- a/autotests/jobtest.h
 +++ b/autotests/jobtest.h
 @@ -12,6 +12,8 @@
@@ -24,6 +24,22 @@ index 4b743d4b..32cbb944 100644
  namespace KIO
  {
  
+diff --git a/src/filewidgets/kfilewidget.cpp b/src/filewidgets/kfilewidget.cpp
+index 1ae071ac..dd6bcd87 100644
+--- a/src/filewidgets/kfilewidget.cpp
++++ b/src/filewidgets/kfilewidget.cpp
+@@ -285,9 +285,9 @@ public:
+     bool confirmOverwrite : 1;
+     bool differentHierarchyLevelItemsEntered;
+ 
+-    const std::array<KIconLoader::StdSizes, 6> stdIconSizes =
++    const std::array<KIconLoader::StdSizes, 6> stdIconSizes {
+             {KIconLoader::SizeSmall, KIconLoader::SizeSmallMedium, KIconLoader::SizeMedium,
+-             KIconLoader::SizeLarge, KIconLoader::SizeHuge, KIconLoader::SizeEnormous};
++             KIconLoader::SizeLarge, KIconLoader::SizeHuge, KIconLoader::SizeEnormous}};
+ 
+     QSlider *iconSizeSlider;
+     QAction *zoomOutAction;
 diff --git a/src/kcms/kio/CMakeLists.txt b/src/kcms/kio/CMakeLists.txt
 index 104fdaf7..c8005c3a 100644
 --- a/src/kcms/kio/CMakeLists.txt
