@@ -63,17 +63,19 @@ class Q_DECL_HIDDEN OnlineVersionDlg::Private
 public:
 
     explicit Private()
-      : preRelease(false),
-        bar       (nullptr),
-        label     (nullptr),
-        logo      (nullptr),
-        buttons   (nullptr),
-        checker   (nullptr),
-        dwnloader (nullptr)
+      : preRelease     (false),
+        updateWithDebug(false),
+        bar            (nullptr),
+        label          (nullptr),
+        logo           (nullptr),
+        buttons        (nullptr),
+        checker        (nullptr),
+        dwnloader      (nullptr)
     {
     }
 
     bool                  preRelease;
+    bool                  updateWithDebug;
 
     QString               curVersion;
     QDateTime             curBuildDt;
@@ -91,19 +93,21 @@ public:
 OnlineVersionDlg::OnlineVersionDlg(QWidget* const parent,
                                    const QString& version,
                                    const QDateTime& buildDt,
-                                   bool checkPreRelease)
+                                   bool checkPreRelease,
+                                   bool updateWithDebug)
     : QDialog(parent),
       d      (new Private)
 {
     setModal(true);
 
-    d->curVersion = version;
-    d->curBuildDt = buildDt;
-    d->preRelease = checkPreRelease;
-    d->checker    = new OnlineVersionChecker(this, d->preRelease);
+    d->curVersion      = version;
+    d->curBuildDt      = buildDt;
+    d->preRelease      = checkPreRelease;
+    d->updateWithDebug = updateWithDebug;
+    d->checker         = new OnlineVersionChecker(this, d->preRelease);
     d->checker->setCurrentVersion(d->curVersion);
     d->checker->setCurrentBuildDate(d->curBuildDt);
-    d->dwnloader  = new OnlineVersionDwnl(this, d->preRelease);
+    d->dwnloader       = new OnlineVersionDwnl(this, d->preRelease, d->updateWithDebug);
 
     connect(d->checker, SIGNAL(signalNewVersionAvailable(QString)),
             this, SLOT(slotNewVersionAvailable(QString)));

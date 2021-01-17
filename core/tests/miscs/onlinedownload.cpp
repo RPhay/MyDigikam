@@ -39,17 +39,20 @@ int main(int argc, char* argv[])
 {
     QApplication app(argc, argv);
 
-    if (argc == 1)
+    if (argc < 3)
     {
-        qDebug() << "onlinecheck <bool> - Check if new version is online";
+        qDebug() << "onlinecheck <bool> <bool> - Check if new version is online";
         qDebug() << "Usage: <bool> 0 for stable release only, 1 for pre-release.";
+        qDebug() << "       <bool> 0 without debug symbols, 1 with debug symbols.";
         return -1;
     }
 
     bool preRelease = QString::fromLatin1(argv[1]).toInt();
+    bool withDebug  = QString::fromLatin1(argv[2]).toInt();
     QString version;
 
-    qDebug() << "Check for pre-release:" << preRelease;
+    qDebug() << "Check for pre-release     :" << preRelease;
+    qDebug() << "Version with debug symbols:" << withDebug;
 
     if (preRelease)
     {
@@ -72,7 +75,7 @@ int main(int argc, char* argv[])
         version = QLatin1String("7.1.0");
     }
 
-    OnlineVersionDwnl* const dwnl = new OnlineVersionDwnl(nullptr, preRelease);
+    OnlineVersionDwnl* const dwnl = new OnlineVersionDwnl(nullptr, preRelease, withDebug);
     dwnl->startDownload(version);
 
     QObject::connect(dwnl, &Digikam::OnlineVersionDwnl::signalDownloadProgress,

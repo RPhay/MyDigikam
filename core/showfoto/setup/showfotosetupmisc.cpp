@@ -74,6 +74,7 @@ public:
         showCoordinates         (nullptr),
         sortReverse             (nullptr),
         updateType              (nullptr),
+        updateWithDebug         (nullptr),
         sidebarType             (nullptr),
         sortOrderComboBox       (nullptr),
         applicationStyle        (nullptr),
@@ -99,6 +100,7 @@ public:
     QCheckBox*            sortReverse;
 
     QComboBox*            updateType;
+    QCheckBox*            updateWithDebug;
     QComboBox*            sidebarType;
     QComboBox*            sortOrderComboBox;
     QComboBox*            applicationStyle;
@@ -114,7 +116,7 @@ public:
 
 SetupMisc::SetupMisc(QWidget* const parent)
     : QScrollArea(parent),
-      d(new Private)
+      d          (new Private)
 {
     d->tab = new QTabWidget(viewport());
     setWidget(d->tab);
@@ -180,7 +182,12 @@ SetupMisc::SetupMisc(QWidget* const parent)
                                    "\"Pre-releases\" are proposed weekly to tests quickly new features\n"
                                    "and are not recommended to use in production as bugs can remain."));
 
+    d->updateWithDebug = new QCheckBox(i18n("Use Version With Debug Symbols"), upOptionsGroup);
+    d->updateWithDebug->setWhatsThis(i18n("If this option is enabled, a version with debug symbols will used for updates.\n"
+                                          "This version is more heavy but can help developpers to trace dysfunctions in debugger."));
+
     gLayout5->addWidget(updateHbox);
+    gLayout5->addWidget(d->updateWithDebug);
     upOptionsGroup->setLayout(gLayout5);
 
     // ---------------------------------------------------------
@@ -318,6 +325,7 @@ void SetupMisc::readSettings()
     d->showCoordinates->setChecked(d->settings->getShowCoordinates());
     d->sidebarType->setCurrentIndex(d->settings->getRightSideBarStyle());
     d->updateType->setCurrentIndex(d->settings->getUpdateType());
+    d->updateWithDebug->setChecked(d->settings->getUpdateWithDebug());
     d->sortOrderComboBox->setCurrentIndex(d->settings->getSortRole());
     d->sortReverse->setChecked(d->settings->getReverseSort());
 
@@ -342,6 +350,7 @@ void SetupMisc::applySettings()
     d->settings->setShowCoordinates(d->showCoordinates->isChecked());
     d->settings->setRightSideBarStyle(d->sidebarType->currentIndex());
     d->settings->setUpdateType(d->updateType->currentIndex());
+    d->settings->setUpdateWithDebug(d->updateWithDebug->isChecked());
     d->settings->setSortRole(d->sortOrderComboBox->currentIndex());
     d->settings->setReverseSort(d->sortReverse->isChecked());
 

@@ -73,6 +73,7 @@ public:
         showPhotoDate           (true),
         showPhotoMode           (false),
         updateType              (0),
+        updateWithDebug         (false),
         rightSideBarStyle       (0),
         sortOrder               (0)
     {
@@ -85,6 +86,7 @@ public:
     static const QString configCurrentTheme;
     static const QString configRightSideBarStyle;
     static const QString configUpdateType;
+    static const QString configUpdateWithDebug;
     static const QString configApplicationStyle;
     static const QString configIconTheme;
     static const QString configApplicationFont;
@@ -141,6 +143,7 @@ public:
     bool                 showPhotoMode;
 
     int                  updateType;
+    bool                 updateWithDebug;
     int                  rightSideBarStyle;
     int                  sortOrder;
 
@@ -164,6 +167,7 @@ const QString ShowfotoSettings::Private::configLastOpenedDir(QLatin1String("Last
 const QString ShowfotoSettings::Private::configDeleteItem2Trash(QLatin1String("DeleteItem2Trash"));
 const QString ShowfotoSettings::Private::configCurrentTheme(QLatin1String("Theme"));
 const QString ShowfotoSettings::Private::configUpdateType(QLatin1String("Update Type"));
+const QString ShowfotoSettings::Private::configUpdateWithDebug(QLatin1String("Update With Debug"));
 const QString ShowfotoSettings::Private::configRightSideBarStyle(QLatin1String("Sidebar Title Style"));
 const QString ShowfotoSettings::Private::configApplicationStyle(QLatin1String("Application Style"));
 const QString ShowfotoSettings::Private::configIconTheme(QLatin1String("Icon Theme"));
@@ -235,6 +239,7 @@ ShowfotoSettings::~ShowfotoSettings()
 void ShowfotoSettings::init()
 {
     d->updateType              = 0;
+    d->updateWithDebug         = false;
     d->rightSideBarStyle       = 0;
     d->sortOrder               = 0;
     d->deleteItem2Trash        = true;
@@ -285,6 +290,7 @@ void ShowfotoSettings::readSettings()
     d->deleteItem2Trash        = group.readEntry(d->configDeleteItem2Trash,        true);
     d->theme                   = group.readEntry(d->configCurrentTheme,            Digikam::ThemeManager::instance()->defaultThemeName());
     d->updateType              = group.readEntry(d->configUpdateType,              0);
+    d->updateWithDebug         = group.readEntry(d->configUpdateWithDebug,         false);
     d->rightSideBarStyle       = group.readEntry(d->configRightSideBarStyle,       0);
 
 #ifdef HAVE_APPSTYLE_SUPPORT
@@ -358,6 +364,12 @@ int ShowfotoSettings::getUpdateType() const
 {
     return d->updateType;
 }
+
+bool ShowfotoSettings::getUpdateWithDebug() const
+{
+    return d->updateWithDebug;
+}
+
 
 int ShowfotoSettings::getRightSideBarStyle() const
 {
@@ -566,7 +578,7 @@ void ShowfotoSettings::setToolTipFont(const QFont& font)
 
 void ShowfotoSettings::setLastOpenedDir(const QString& dir)
 {
-    d->group.writeEntry(d->configLastOpenedDir,dir);
+    d->group.writeEntry(d->configLastOpenedDir, dir);
 }
 
 void ShowfotoSettings::setDeleteItem2Trash(bool D2t)
@@ -582,6 +594,11 @@ void ShowfotoSettings::setCurrentTheme(const QString& theme)
 void ShowfotoSettings::setUpdateType(int type)
 {
     d->group.writeEntry(d->configUpdateType, type);
+}
+
+void ShowfotoSettings::setUpdateWithDebug(bool dbg)
+{
+    d->group.writeEntry(d->configUpdateWithDebug, dbg);
 }
 
 void ShowfotoSettings::setRightSideBarStyle(int style)

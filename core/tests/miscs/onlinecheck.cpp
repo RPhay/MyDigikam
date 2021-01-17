@@ -46,16 +46,19 @@ int main(int argc, char* argv[])
 {
     QApplication app(argc, argv);
 
-    if (argc == 1)
+    if (argc < 3)
     {
-        qDebug() << "onlinecheck <bool> - Check if new version is online";
+        qDebug() << "onlinecheck <bool> <bool> - Check if new version is online";
         qDebug() << "Usage: <bool> 0 for stable release only, 1 for pre-release.";
+        qDebug() << "       <bool> 0 without debug symbols, 1 with debug symbols.";
         return -1;
     }
 
     bool preRelease = QString::fromLatin1(argv[1]).toInt();
+    bool withDebug  = QString::fromLatin1(argv[2]).toInt();
 
-    qDebug() << "Check for pre-release:" << preRelease;
+    qDebug() << "Check for pre-release     :" << preRelease;
+    qDebug() << "Version with debug symbols:" << withDebug;
 
     KAboutData aboutData(QLatin1String("digikam"),
                          QLatin1String("digiKam"), // No need i18n here.
@@ -72,7 +75,8 @@ int main(int argc, char* argv[])
     OnlineVersionDlg* const dlg = new OnlineVersionDlg(nullptr,
                                                        QLatin1String("7.0.0"),
                                                        QDateTime::fromString(QLatin1String("2021-01-01T00:00:00"), Qt::ISODate),
-                                                       preRelease);
+                                                       preRelease,
+                                                       withDebug);
 
     return (dlg->exec());
 }

@@ -62,6 +62,9 @@ public:
     int getUpdateType() const;
     void setUpdateType(int type);
 
+    bool getUpdateWithDebug() const;
+    void setUpdateWithDebug(bool dbg);
+
     QString getApplicationStyle() const;
     void setApplicationStyle(const QString& style);
 

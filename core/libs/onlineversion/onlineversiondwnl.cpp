@@ -51,14 +51,16 @@ class Q_DECL_HIDDEN OnlineVersionDwnl::Private
 public:
 
     explicit Private()
-      : preRelease (false),
-        redirects  (0),
-        reply      (nullptr),
-        manager    (nullptr)
+      : preRelease      (false),
+        updateWithDebug (false),
+        redirects       (0),
+        reply           (nullptr),
+        manager         (nullptr)
     {
     }
 
     bool                   preRelease;      ///< Flag to check pre-releases
+    bool                   updateWithDebug; ///< Flag to use version with debug symbols
     int                    redirects;       ///< Count of redirected url
 
     QString                downloadUrl;     ///< Url for current download
@@ -70,11 +72,14 @@ public:
     QNetworkAccessManager* manager;         ///< Network manager instance
 };
 
-OnlineVersionDwnl::OnlineVersionDwnl(QObject* const parent, bool checkPreRelease)
+OnlineVersionDwnl::OnlineVersionDwnl(QObject* const parent,
+                                     bool checkPreRelease,
+                                     bool updateWithDebug)
     : QObject(parent),
       d      (new Private)
 {
-    d->preRelease = checkPreRelease;
+    d->preRelease      = checkPreRelease;
+    d->updateWithDebug = updateWithDebug;
 
     if (d->preRelease)
     {
@@ -113,13 +118,23 @@ void OnlineVersionDwnl::startDownload(const QString& version)
 
     if (d->preRelease)
     {
-        d->file = version;
-        url     = QUrl(d->downloadUrl + d->file);
+        if (d->updateWithDebug)
+        {
+            QFileInfo fi(version);
+            d->file = fi.baseName() + QLatin1String("-debug.") + fi.completeSuffix();
+        }
+        else
+        {
+            d->file = version;
+        }
+
+        url = QUrl(d->downloadUrl + d->file);
     }
     else
     {
         QString arch;
         QString bundle;
+        QString debug = d->updateWithDebug ? QLatin1String("-debug") : QString();
 
         if (!OnlineVersionChecker::bundleProperties(arch, bundle))
         {
@@ -130,9 +145,10 @@ void OnlineVersionDwnl::startDownload(const QString& version)
             return;
         }
 
-        d->file = QString::fromLatin1("digikam-%1-%2.%3")
+        d->file = QString::fromLatin1("digikam-%1-%2%3.%4")
                       .arg(version)
                       .arg(arch)
+                      .arg(debug)
                       .arg(bundle);
 
         url     = QUrl(d->downloadUrl + QString::fromLatin1("%1/").arg(version) + d->file);
