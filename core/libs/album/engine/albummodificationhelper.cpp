@@ -27,15 +27,15 @@
 // Qt includes
 
 #include <QApplication>
-#include <QAction>
+#include <QDirIterator>
 #include <QInputDialog>
-#include <QUrl>
 #include <QMessageBox>
+#include <QAction>
+#include <QUrl>
 
 // KDE includes
 
 #include <klocalizedstring.h>
-#include <QDirIterator>
 
 // Local includes
 
@@ -217,16 +217,21 @@ void AlbumModificationHelper::slotAlbumDelete(PAlbum* album)
     QFileInfo fileInfo(album->fileUrl().toLocalFile());
 
     // If the trash is used no check is necessary, as the trash lists all files
-    // and only perform this check if the album is a directory0
-    if (!useTrash && fileInfo.isDir()) {
+    // and only perform this check if the album is a directory
+
+    if (!useTrash && fileInfo.isDir())
+    {
         QDirIterator it(fileInfo.absoluteDir(), QDirIterator::Subdirectories);
 
         // Build a set of file extensions present in this album
+
         QSet<QString> extSet;
+
         while (it.hasNext())
         {
             QString currentFile = it.next();
             QFileInfo currentFileInfo(currentFile);
+
             if (currentFileInfo.isFile())
             {
                 extSet.insert(currentFileInfo.suffix());
@@ -234,10 +239,13 @@ void AlbumModificationHelper::slotAlbumDelete(PAlbum* album)
         }
 
         // Check if each extension is a supported mimetype
+
         bool found = false;
+
         for (auto & ext: extSet)
         {
             found = false;
+
             for (auto & mimeType : mimeTypes)
             {
                 if (mimeType.contains(QString::fromLatin1("*.%1").arg(ext)))
@@ -246,9 +254,10 @@ void AlbumModificationHelper::slotAlbumDelete(PAlbum* album)
                     break;
                 }
             }
+
             if (!found)
             {
-                qDebug() << "Found file with file type which is not supported during album deletion: " << ext;
+                qCDebug(DIGIKAM_GENERAL_LOG) << "Found file with file type which is not supported during album deletion:" << ext;
                 break;
             }
         }
@@ -256,8 +265,11 @@ void AlbumModificationHelper::slotAlbumDelete(PAlbum* album)
         if (!found)
         {
             auto selectionResult = QMessageBox::warning(qApp->activeWindow(), qApp->applicationName(),
-                                  i18n("The folder you want to delete contains files which are not displayed in Digikam\n"
-                                       "Do you want to continue?"), QMessageBox::Yes | QMessageBox::No);
+                                                        i18n("The folder you want to delete contains files "
+                                                             "which are not displayed in digiKam\n"
+                                                             "Do you want to continue?"),
+                                                        QMessageBox::Yes | QMessageBox::No);
+
             if (selectionResult != QMessageBox::Yes)
             {
                 return;
