@@ -211,25 +211,25 @@ void AlbumModificationHelper::slotAlbumDelete(PAlbum* album)
     }
 
     bool useTrash = !dialog.shouldDelete();
-    QFileInfo fileInfo(album->fileUrl().toLocalFile());
+    QFileInfo fileInfo(album->folderPath());
 
     // If the trash is used no check is necessary, as the trash lists all files
     // and only perform this check if the album is a directory
 
     if (!useTrash && fileInfo.isDir())
     {
-        QStringList imageTypes, audioTypes, videoTypes, mimeTypes, foundTypes;
+        QStringList imageTypes, audioTypes, videoTypes, allTypes, foundTypes;
         QDirIterator it(fileInfo.path(), QDir::Files, QDirIterator::Subdirectories);
 
         CoreDbAccess().db()->getFilterSettings(&imageTypes, &videoTypes, &audioTypes);
-        mimeTypes = imageTypes + audioTypes + videoTypes;
+        allTypes << imageTypes << audioTypes << videoTypes;
 
         while (it.hasNext())
         {
             it.next();
             QString ext = it.fileInfo().suffix().toLower();
 
-            if (!mimeTypes.contains(ext) && !foundTypes.contains(ext))
+            if (!allTypes.contains(ext) && !foundTypes.contains(ext))
             {
                 foundTypes << ext;
             }
@@ -239,13 +239,13 @@ void AlbumModificationHelper::slotAlbumDelete(PAlbum* album)
         {
             foundTypes.sort();
 
-            QString display = foundTypes.join(QLatin1String(", "));
+            QString found = foundTypes.join(QLatin1String(", "));
 
-            int result      = QMessageBox::warning(qApp->activeWindow(), qApp->applicationName(),
-                                                   i18n("<p>The folder you want to delete contains files "
-                                                        "(%1) which are not displayed in digiKam</p>"
-                                                        "<p>Do you want to continue?</p>", display),
-                                                   QMessageBox::Yes | QMessageBox::No);
+            int result    = QMessageBox::warning(qApp->activeWindow(), qApp->applicationName(),
+                                                 i18n("<p>The folder you want to delete contains files "
+                                                      "(%1) which are not displayed in digiKam</p>"
+                                                      "<p>Do you want to continue?</p>", found),
+                                                 QMessageBox::Yes | QMessageBox::No);
 
             if (result != QMessageBox::Yes)
             {
