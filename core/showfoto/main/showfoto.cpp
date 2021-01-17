@@ -932,20 +932,7 @@ DInfoInterface* ShowFoto::infoIface(DPluginAction* const)
 
 void ShowFoto::slotOnlineVersionCheck()
 {
-    Digikam::OnlineVersionDlg* const dlg = new Digikam::OnlineVersionDlg(qApp->activeWindow(),
-                                                                         QLatin1String(digikam_version_short),
-                                                                         Digikam::digiKamBuildDate(),
-                                                                         ShowfotoSettings::instance()->getUpdateType(),
-                                                                         ShowfotoSettings::instance()->getUpdateWithDebug());
-
-    connect(dlg, &OnlineVersionDlg::signalSetupUpdate,
-            this, [=]()
-        {
-            Setup::execSinglePage(this, Setup::MiscellaneousPage);
-        }
-    );
-
-    dlg->exec();
+    Setup::onlineVersionCheck();
 }
 
 } // namespace ShowFoto

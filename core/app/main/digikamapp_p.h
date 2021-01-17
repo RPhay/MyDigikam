@@ -128,7 +128,6 @@
 #include "metadataedit.h"
 #include "dfiledialog.h"
 #include "dpluginloader.h"
-#include "onlineversiondlg.h"
 
 #ifdef HAVE_MARBLE
 #   include "geolocationedit.h"

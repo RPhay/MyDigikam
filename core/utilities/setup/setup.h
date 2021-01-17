@@ -78,6 +78,8 @@ public:
     static bool execSinglePage(Page page);
     static bool execSinglePage(QWidget* const parent, Page page);
 
+    static void onlineVersionCheck();
+
     static bool execTemplateEditor(QWidget* const parent, const Template& t);
     void setTemplate(const Template& t);
 

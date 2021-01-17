@@ -130,7 +130,6 @@
 #include "dexpanderbox.h"
 #include "dbinfoiface.h"
 #include "facetagseditor.h"
-#include "onlineversiondlg.h"
 
 namespace Digikam
 {

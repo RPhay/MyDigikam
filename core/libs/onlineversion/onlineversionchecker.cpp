@@ -25,12 +25,15 @@
 
 // Qt includes
 
+#include <QLocale>
 #include <QTextStream>
 #include <QNetworkAccessManager>
 
 // KDE includes
 
 #include <klocalizedstring.h>
+#include <kconfiggroup.h>
+#include <ksharedconfig.h>
 
 // Local includes
 
@@ -107,8 +110,23 @@ QString OnlineVersionChecker::preReleaseFileName() const
     return d->preReleaseFileName;
 }
 
+QString OnlineVersionChecker::lastCheckDate()
+{
+    KSharedConfig::Ptr config = KSharedConfig::openConfig();
+    KConfigGroup group        = config->group(QLatin1String("Updates"));
+    QDateTime dt              = group.readEntry(QLatin1String("Last Check For New Version"), QDateTime());
+    QString dts               = QLocale().toString(dt, QLocale::ShortFormat);
+
+    return (!dts.isEmpty() ? dts : i18n("never"));
+}
+
 void OnlineVersionChecker::checkForNewVersion()
 {
+    KSharedConfig::Ptr config = KSharedConfig::openConfig();
+    KConfigGroup group        = config->group(QLatin1String("Updates"));
+    group.writeEntry(QLatin1String("Last Check For New Version"), QDateTime::currentDateTime());
+    config->sync();
+
     QUrl rUrl;
 
     if (d->preRelease)

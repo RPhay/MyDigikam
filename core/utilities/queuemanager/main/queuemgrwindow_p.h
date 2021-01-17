@@ -88,8 +88,6 @@
 #include "sidebar.h"
 #include "toolsettingsview.h"
 #include "toolsview.h"
-#include "onlineversiondlg.h"
-#include "applicationsettings.h"
 
 namespace Digikam
 {

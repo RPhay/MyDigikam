@@ -102,7 +102,6 @@
 #include "dexpanderbox.h"
 #include "dfiledialog.h"
 #include "dpluginloader.h"
-#include "onlineversiondlg.h"
 
 namespace ShowFoto
 {

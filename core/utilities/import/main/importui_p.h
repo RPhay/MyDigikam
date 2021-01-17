@@ -57,7 +57,6 @@
 #include "statusprogressbar.h"
 #include "importview.h"
 #include "dnotificationwidget.h"
-#include "onlineversiondlg.h"
 
 namespace Digikam
 {

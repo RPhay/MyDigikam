@@ -55,6 +55,7 @@
 #include "setupplugins.h"
 #include "importsettings.h"
 #include "dxmlguiwindow.h"
+#include "onlineversiondlg.h"
 
 namespace Digikam
 {
@@ -215,7 +216,7 @@ Setup::Setup(QWidget* const parent)
                                     "<i>Set which plugins will be accessible from application</i></qt>"));
     d->page_plugins->setIcon(QIcon::fromTheme(QLatin1String("preferences-plugin")));
 
-    d->miscPage  = new SetupMisc();
+    d->miscPage  = new SetupMisc(this);
     d->page_misc = addPage(d->miscPage, i18n("Miscellaneous"));
     d->page_misc->setHeader(i18n("<qt>Miscellaneous Settings<br/>"
                                  "<i>Customize behavior of the other parts of digiKam</i></qt>"));
@@ -583,6 +584,24 @@ DConfigDlgWdgItem* Setup::Private::pageItem(Setup::Page page) const
         default:
             return nullptr;
     }
+}
+
+void Setup::onlineVersionCheck()
+{
+    OnlineVersionDlg* const dlg = new OnlineVersionDlg(qApp->activeWindow(),
+                                                       QLatin1String(digikam_version_short),
+                                                       digiKamBuildDate(),
+                                                       ApplicationSettings::instance()->getUpdateType(),
+                                                       ApplicationSettings::instance()->getUpdateWithDebug());
+
+    connect(dlg, &OnlineVersionDlg::signalSetupUpdate,
+            [=]()
+        {
+            Setup::execSinglePage(nullptr, Setup::MiscellaneousPage);
+        }
+    );
+
+    dlg->exec();
 }
 
 } // namespace Digikam

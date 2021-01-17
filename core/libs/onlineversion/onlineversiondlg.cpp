@@ -26,6 +26,7 @@
 // Qt includes
 
 #include <QUrl>
+#include <QTimer>
 #include <QList>
 #include <QFile>
 #include <QFileDevice>
@@ -199,6 +200,7 @@ OnlineVersionDlg::~OnlineVersionDlg()
 {
     d->checker->cancelCheck();
     d->dwnloader->cancelDownload();
+
     delete d;
 }
 
@@ -439,7 +441,7 @@ void OnlineVersionDlg::slotRunInstaller()
     }
 
     close();
-    qApp->quit();
+    QTimer::singleShot(3000, qApp, SLOT(quit()));
 }
 
 void OnlineVersionDlg::slotOpenInFileManager()

@@ -40,12 +40,14 @@
 #include "setupeditoriface.h"
 #include "setupicc.h"
 #include "setupiofiles.h"
+#include "showfotosettings.h"
 #include "showfotosetupraw.h"
 #include "showfotosetupmisc.h"
 #include "showfotosetupmetadata.h"
 #include "showfotosetuptooltip.h"
 #include "showfotosetupplugins.h"
 #include "dxmlguiwindow.h"
+#include "onlineversiondlg.h"
 
 namespace ShowFoto
 {
@@ -150,7 +152,7 @@ Setup::Setup(QWidget* const parent, Setup::Page page)
                                     "<i>Set which plugins will be accessible from application</i></qt>"));
     d->page_plugins->setIcon(QIcon::fromTheme(QLatin1String("preferences-plugin")));
 
-    d->miscPage       = new SetupMisc();
+    d->miscPage       = new SetupMisc(this);
     d->page_misc      = addPage(d->miscPage, i18n("Miscellaneous"));
     d->page_misc->setHeader(i18n("<qt>Miscellaneous Settings<br/>"
                                  "<i>Customize behavior of the other parts of Showfoto</i></qt>"));
@@ -388,10 +390,28 @@ bool Setup::execMetadataFilters(QWidget* const parent, int tab)
 
     widget->setActiveTab((SetupMetadata::MetadataTab)tab);
 
-    bool success                = setup->DConfigDlg::exec() == QDialog::Accepted;
+    bool success                = (setup->DConfigDlg::exec() == QDialog::Accepted);
     delete setup;
 
     return success;
+}
+
+void Setup::onlineVersionCheck()
+{
+    Digikam::OnlineVersionDlg* const dlg = new Digikam::OnlineVersionDlg(qApp->activeWindow(),
+                                                                         QLatin1String(digikam_version_short),
+                                                                         Digikam::digiKamBuildDate(),
+                                                                         ShowfotoSettings::instance()->getUpdateType(),
+                                                                         ShowfotoSettings::instance()->getUpdateWithDebug());
+
+    connect(dlg, &OnlineVersionDlg::signalSetupUpdate,
+            [=]()
+        {
+            Setup::execSinglePage(nullptr, Setup::MiscellaneousPage);
+        }
+    );
+
+    dlg->exec();
 }
 
 } // namespace ShowFoto

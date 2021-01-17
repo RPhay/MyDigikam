@@ -40,6 +40,7 @@
 #include <QFile>
 #include <QTabWidget>
 #include <QMessageBox>
+#include <QPushButton>
 
 // KDE includes
 
@@ -52,6 +53,8 @@
 #include "dfontselect.h"
 #include "showfotosettings.h"
 #include "systemsettingswidget.h"
+#include "onlineversionchecker.h"
+#include "showfotosetup.h"
 
 using namespace Digikam;
 
@@ -188,8 +191,26 @@ SetupMisc::SetupMisc(QWidget* const parent)
     d->updateWithDebug->setWhatsThis(i18n("If this option is enabled, a version including debug symbols will be used for updates.\n"
                                           "This version is more heavy but can help developpers to trace dysfunctions in debugger."));
 
+    DHBox* const updateHbox2     = new DHBox(upOptionsGroup);
+    QLabel* const lastCheckLabel = new QLabel(updateHbox2);
+    lastCheckLabel->setText(i18n("Last check: %1", OnlineVersionChecker::lastCheckDate()));
+    QPushButton* const updateNow = new QPushButton(i18n("Check now..."), updateHbox2);
+
+    connect(updateNow, &QPushButton::pressed,
+            this, [=]()
+        {
+            if (parent)
+            {
+                parent->close();
+            }
+
+            Setup::onlineVersionCheck();
+        }
+    );
+
     gLayout5->addWidget(updateHbox);
     gLayout5->addWidget(d->updateWithDebug);
+    gLayout5->addWidget(updateHbox2);
     upOptionsGroup->setLayout(gLayout5);
 
     // ---------------------------------------------------------

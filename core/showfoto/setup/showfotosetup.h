@@ -68,6 +68,8 @@ public:
     static bool execSinglePage(Page page);
     static bool execSinglePage(QWidget* const parent, Page page);
 
+    static void onlineVersionCheck();
+
 private Q_SLOTS:
 
     void slotOkClicked();

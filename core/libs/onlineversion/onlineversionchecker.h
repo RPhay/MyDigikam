@@ -57,6 +57,11 @@ public:
 
     static bool bundleProperties(QString& arch, QString& ext);
 
+    /**
+     * Return the last date as string when have been performed a check for new version.
+     */
+    static QString lastCheckDate();
+
 Q_SIGNALS:
 
     void signalNewVersionAvailable(const QString& version);

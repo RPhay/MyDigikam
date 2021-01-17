@@ -1289,20 +1289,7 @@ void ImageWindow::slotDBStat()
 
 void ImageWindow::slotOnlineVersionCheck()
 {
-    OnlineVersionDlg* const dlg = new OnlineVersionDlg(qApp->activeWindow(),
-                                                       QLatin1String(digikam_version_short),
-                                                       digiKamBuildDate(),
-                                                       ApplicationSettings::instance()->getUpdateType(),
-                                                       ApplicationSettings::instance()->getUpdateWithDebug());
-
-    connect(dlg, &OnlineVersionDlg::signalSetupUpdate,
-            this, [=]()
-        {
-            Setup::execSinglePage(this, Setup::MiscellaneousPage);
-        }
-    );
-
-    dlg->exec();
+    Setup::onlineVersionCheck();
 }
 
 void ImageWindow::slotAddedDropedItems(QDropEvent* e)
