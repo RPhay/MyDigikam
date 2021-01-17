@@ -120,8 +120,9 @@ void OnlineVersionDwnl::startDownload(const QString& version)
     {
         if (d->updateWithDebug)
         {
-            QFileInfo fi(version);
-            d->file = fi.baseName() + QLatin1String("-debug.") + fi.completeSuffix();
+            QString base = version.section(QLatin1Char('.'), 0, -2);
+            QString suf  = version.section(QLatin1Char('.'), -1);
+            d->file      = base + QLatin1String("-debug.") + suf;
         }
         else
         {

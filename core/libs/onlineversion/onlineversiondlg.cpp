@@ -224,7 +224,7 @@ void OnlineVersionDlg::slotNewVersionAvailable(const QString& version)
         d->onlineDt.setTimeSpec(Qt::UTC);
 
         d->label->setText(i18n("Current %1 pre-release date is %2.\n"
-                               "New pre-release built on %3 is available.\n"
+                               "New pre-release built on %3 is available.\n\n"
                                "Press \"Download\" to get the file...\n\n"
                                "Note: from Setup/Misc panel, you can switch to check for stable release only.\n"
                                "Stable versions are safe to use in production.\n\n"
@@ -236,7 +236,7 @@ void OnlineVersionDlg::slotNewVersionAvailable(const QString& version)
     else
     {
         d->label->setText(i18n("Current %1 stable version is %2\n"
-                               "New stable version %3 is available.\n"
+                               "New stable version %3 is available.\n\n"
                                "Press \"Download\" to get the file...\n\n"
                                "Note: from Setup/Misc panel, you can switch to check for weekly pre-release.\n"
                                "Pre-release versions are dedicated to test quickly new features.\n"
@@ -286,7 +286,6 @@ void OnlineVersionDlg::slotDownloadInstaller()
     d->bar->setMaximum(1);
     d->bar->setMinimum(0);
     d->bar->setValue(0);
-
 
     if (d->preRelease)
     {
