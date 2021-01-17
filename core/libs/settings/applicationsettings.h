@@ -472,6 +472,9 @@ public:
     int getUpdateType() const;
     void setUpdateType(int type);
 
+    bool getUpdateWithDebug() const;
+    void setUpdateWithDebug(bool dbg);
+
     void setVersionManagerSettings(const VersionManagerSettings& settings);
     VersionManagerSettings getVersionManagerSettings() const;
 

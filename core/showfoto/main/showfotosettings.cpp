@@ -370,7 +370,6 @@ bool ShowfotoSettings::getUpdateWithDebug() const
     return d->updateWithDebug;
 }
 
-
 int ShowfotoSettings::getRightSideBarStyle() const
 {
     return d->rightSideBarStyle;

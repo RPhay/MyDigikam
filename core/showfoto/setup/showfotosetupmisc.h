@@ -56,6 +56,7 @@ public:
     explicit SetupMisc(QWidget* const parent = nullptr);
     ~SetupMisc() override;
 
+    bool checkSettings();
     void applySettings();
 
 private:

@@ -31,6 +31,7 @@
 #include <QDirIterator>
 #include <QButtonGroup>
 #include <QCheckBox>
+#include <QGroupBox>
 #include <QComboBox>
 #include <QFile>
 #include <QGroupBox>
@@ -66,6 +67,7 @@ public:
     explicit Private()
       : tab                                     (nullptr),
         updateTypeLabel                         (nullptr),
+        updateWithDebug                         (nullptr),
         sidebarTypeLabel                        (nullptr),
         stringComparisonTypeLabel               (nullptr),
         applicationStyleLabel                   (nullptr),
@@ -97,6 +99,8 @@ public:
     QTabWidget*               tab;
 
     QLabel*                   updateTypeLabel;
+    QCheckBox*                updateWithDebug;
+
     QLabel*                   sidebarTypeLabel;
     QLabel*                   stringComparisonTypeLabel;
     QLabel*                   applicationStyleLabel;
@@ -201,7 +205,10 @@ SetupMisc::SetupMisc(QWidget* const parent)
 
     // ---------------------------------------------------------
 
-    DHBox* const updateHbox = new DHBox(behaviourPanel);
+    QGroupBox* const upOptionsGroup = new QGroupBox(i18n("Updates"), behaviourPanel);
+    QVBoxLayout* const gLayout5     = new QVBoxLayout();
+
+    DHBox* const updateHbox = new DHBox(upOptionsGroup);
     d->updateTypeLabel      = new QLabel(i18n("Check for new version:"), updateHbox);
     d->updateType           = new QComboBox(updateHbox);
     d->updateType->addItem(i18n("Only For Stable Releases"), 0);
@@ -210,6 +217,14 @@ SetupMisc::SetupMisc(QWidget* const parent)
                                    "\"Stable\" releases are official versions safe to use in production.\n"
                                    "\"Pre-releases\" are proposed weekly to tests quickly new features\n"
                                    "and are not recommended to use in production as bugs can remain."));
+
+    d->updateWithDebug = new QCheckBox(i18n("Use Version With Debug Symbols"), upOptionsGroup);
+    d->updateWithDebug->setWhatsThis(i18n("If this option is enabled, a version including debug symbols will be used for updates.\n"
+                                          "This version is more heavy but can help developpers to trace dysfunctions in debugger."));
+
+    gLayout5->addWidget(updateHbox);
+    gLayout5->addWidget(d->updateWithDebug);
+    upOptionsGroup->setLayout(gLayout5);
 
     // ---------------------------------------------------------
 
@@ -225,7 +240,7 @@ SetupMisc::SetupMisc(QWidget* const parent)
     layout->addWidget(d->scrollItemToCenterCheck);
     layout->addWidget(d->showOnlyPersonTagsInPeopleSidebarCheck);
     layout->addWidget(minSimilarityBoundHbox);
-    layout->addWidget(updateHbox);
+    layout->addWidget(upOptionsGroup);
     layout->addStretch();
 
     d->tab->insertTab(Behaviour, behaviourPanel, i18nc("@title:tab", "Behaviour"));
@@ -457,6 +472,7 @@ void SetupMisc::applySettings()
     settings->setShowOnlyPersonTagsInPeopleSidebar(d->showOnlyPersonTagsInPeopleSidebarCheck->isChecked());
     settings->setSidebarTitleStyle(d->sidebarType->currentIndex() == 0 ? DMultiTabBar::ActiveIconText : DMultiTabBar::AllIconsText);
     settings->setUpdateType(d->updateType->currentIndex());
+    settings->setUpdateWithDebug(d->updateWithDebug->isChecked());
     settings->setStringComparisonType((ApplicationSettings::StringComparisonType)
                                       d->stringComparisonType->itemData(d->stringComparisonType->currentIndex()).toInt());
 
@@ -498,6 +514,7 @@ void SetupMisc::readSettings()
     d->showOnlyPersonTagsInPeopleSidebarCheck->setChecked(settings->showOnlyPersonTagsInPeopleSidebar());
     d->sidebarType->setCurrentIndex(settings->getSidebarTitleStyle() == DMultiTabBar::ActiveIconText ? 0 : 1);
     d->updateType->setCurrentIndex(settings->getUpdateType());
+    d->updateWithDebug->setChecked(settings->getUpdateWithDebug());
     d->stringComparisonType->setCurrentIndex(settings->getStringComparisonType());
 
     for (int i = 0 ; i != ApplicationSettings::Unspecified ; ++i)

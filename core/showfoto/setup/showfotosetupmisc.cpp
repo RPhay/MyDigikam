@@ -39,6 +39,7 @@
 #include <QComboBox>
 #include <QFile>
 #include <QTabWidget>
+#include <QMessageBox>
 
 // KDE includes
 
@@ -101,6 +102,7 @@ public:
 
     QComboBox*            updateType;
     QCheckBox*            updateWithDebug;
+
     QComboBox*            sidebarType;
     QComboBox*            sortOrderComboBox;
     QComboBox*            applicationStyle;
@@ -183,7 +185,7 @@ SetupMisc::SetupMisc(QWidget* const parent)
                                    "and are not recommended to use in production as bugs can remain."));
 
     d->updateWithDebug = new QCheckBox(i18n("Use Version With Debug Symbols"), upOptionsGroup);
-    d->updateWithDebug->setWhatsThis(i18n("If this option is enabled, a version with debug symbols will used for updates.\n"
+    d->updateWithDebug->setWhatsThis(i18n("If this option is enabled, a version including debug symbols will be used for updates.\n"
                                           "This version is more heavy but can help developpers to trace dysfunctions in debugger."));
 
     gLayout5->addWidget(updateHbox);
@@ -312,6 +314,33 @@ SetupMisc::SetupMisc(QWidget* const parent)
 SetupMisc::~SetupMisc()
 {
     delete d;
+}
+
+bool SetupMisc::checkSettings()
+{
+    // If check for new version use weekly pre-releases, warn end-user.
+
+    if ((d->updateType->currentIndex()                    == 1) &&
+        (ShowfotoSettings::instance()->getUpdateType() == 0))
+    {
+        d->tab->setCurrentIndex(0);
+
+        int result = QMessageBox::warning(this, qApp->applicationName(),
+                                          i18n("Check for new version option will verify the pre-releases.\n"
+                                               "\"Pre-releases\" are proposed weekly to tests quickly new features.\n"
+                                               "It's not recommended to use pre-release in production as bugs can remain,\n"
+                                               "unless you know what you are doing.\n"
+                                               "Do you want to continue?"),
+                                                QMessageBox::Yes | QMessageBox::No);
+        if (result == QMessageBox::Yes)
+        {
+            return true;
+        }
+
+        return false;
+    }
+
+    return true;
 }
 
 void SetupMisc::readSettings()

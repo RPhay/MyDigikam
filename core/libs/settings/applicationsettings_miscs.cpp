@@ -41,6 +41,16 @@ void ApplicationSettings::setUpdateType(int type)
     d->updateType = type;
 }
 
+bool ApplicationSettings::getUpdateWithDebug() const
+{
+    return d->updateWithDebug;
+}
+
+void ApplicationSettings::setUpdateWithDebug(bool dbg)
+{
+    d->updateWithDebug = dbg;
+}
+
 void ApplicationSettings::setCurrentTheme(const QString& theme)
 {
     d->currentTheme = theme;

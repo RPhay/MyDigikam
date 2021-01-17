@@ -2554,7 +2554,8 @@ void ImportUI::slotOnlineVersionCheck()
     OnlineVersionDlg* const dlg = new OnlineVersionDlg(qApp->activeWindow(),
                                                        QLatin1String(digikam_version_short),
                                                        digiKamBuildDate(),
-                                                       ApplicationSettings::instance()->getUpdateType());
+                                                       ApplicationSettings::instance()->getUpdateType(),
+                                                       ApplicationSettings::instance()->getUpdateWithDebug());
 
     connect(dlg, &OnlineVersionDlg::signalSetupUpdate,
             this, [=]()

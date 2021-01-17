@@ -27,6 +27,7 @@
 
 #include <QPointer>
 #include <QPushButton>
+#include <QApplication>
 
 // KDE includes
 
@@ -213,6 +214,14 @@ void Setup::slotHelp()
 
 void Setup::slotOkClicked()
 {
+    if (!d->miscPage->checkSettings())
+    {
+        showPage(MiscellaneousPage);
+        return;
+    }
+
+    qApp->setOverrideCursor(Qt::WaitCursor);
+
     d->editorIfacePage->applySettings();
     d->metadataPage->applySettings();
     d->toolTipPage->applySettings();
@@ -221,7 +230,10 @@ void Setup::slotOkClicked()
     d->iccPage->applySettings();
     d->pluginsPage->applySettings();
     d->miscPage->applySettings();
-    close();
+
+    qApp->restoreOverrideCursor();
+
+    accept();
 }
 
 void Setup::showPage(Setup::Page page)
