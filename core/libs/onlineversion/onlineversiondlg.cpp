@@ -182,7 +182,7 @@ OnlineVersionDlg::OnlineVersionDlg(QWidget* const parent,
 
     d->buttons->button(QDialogButtonBox::Apply)->setVisible(false);
     d->buttons->button(QDialogButtonBox::Apply)->setEnabled(false);
-    d->buttons->button(QDialogButtonBox::Reset)->setVisible(false);
+    d->buttons->button(QDialogButtonBox::Reset)->setVisible(true);
     d->buttons->button(QDialogButtonBox::Reset)->setEnabled(true);
     d->buttons->button(QDialogButtonBox::Reset)->setText(i18n("Configure..."));
     d->buttons->button(QDialogButtonBox::Reset)->setIcon(QIcon::fromTheme(QLatin1String("configure")));
@@ -308,7 +308,7 @@ void OnlineVersionDlg::slotDownloadInstaller()
     }
 
     d->buttons->button(QDialogButtonBox::Apply)->setEnabled(false);
-    d->buttons->button(QDialogButtonBox::Reset)->setVisible(false);
+    d->buttons->button(QDialogButtonBox::Reset)->setEnabled(false);
     d->bar->show();
 
     if (d->preRelease)
