@@ -1154,9 +1154,9 @@ int DNGWriter::convert()
             AutoPtr<dng_jpeg_preview> jpeg_preview;
             jpeg_preview.Reset(new dng_jpeg_preview);
             jpeg_preview->fPhotometricInterpretation = piYCbCr;
-            jpeg_preview->fPreviewSize.v             = pre_image.height();
-            jpeg_preview->fPreviewSize.h             = pre_image.width();
             jpeg_preview->fYCbCrSubSampling          = dng_point(2, 2);
+            jpeg_preview->fPreviewSize.h             = pre_image.width();
+            jpeg_preview->fPreviewSize.v             = pre_image.height();
             jpeg_preview->fCompressedData.Reset(host.Allocate(previewArray.size()));
 
             QDataStream previewStream(previewArray);
