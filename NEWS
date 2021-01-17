@@ -285,4 +285,5 @@ BUGFIXES:
 264 ==> 431614 - Tags are not written to secondary pictures if grouped by name.
 265 ==> 431598 - digiKam-7.2.0-rc (14.01.2021) crashes while getting "Help > List of Detected Hardware".
 266 ==> 431660 - BQM stores output files one directory level above actual target.
-267 ==> 
+267 ==> 216412 - Show warning message before album deletion when directories containing files which are not shown by digiKam.
+268 ==> 
