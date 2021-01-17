@@ -287,17 +287,24 @@ void OnlineVersionDlg::slotDownloadInstaller()
     d->bar->setMinimum(0);
     d->bar->setValue(0);
 
+
     if (d->preRelease)
     {
-        d->label->setText(i18n("Downloading new %1 built on %2 in progress, please wait...",
+        QString version = d->updateWithDebug ? i18n("built on %1 with debug symbols", QLocale().toString(d->onlineDt, QLocale::ShortFormat))
+                                             : i18n("built on %1", QLocale().toString(d->onlineDt, QLocale::ShortFormat));
+
+        d->label->setText(i18n("Downloading new %1\n%2\nin progress, please wait...",
                                qApp->applicationName(),
-                               QLocale().toString(d->onlineDt, QLocale::ShortFormat)));
+                               version));
     }
     else
     {
-        d->label->setText(i18n("Downloading new %1 version %2 in progress, please wait...",
+        QString version = d->updateWithDebug ? i18n("version %1 with debug symbols", d->newVersion)
+                                             : i18n("version %1", d->newVersion);
+
+        d->label->setText(i18n("Downloading new %1\nversion %2\nin progress, please wait...",
                                qApp->applicationName(),
-                               d->newVersion));
+                               version));
     }
 
     d->buttons->button(QDialogButtonBox::Apply)->setEnabled(false);
@@ -334,7 +341,7 @@ void OnlineVersionDlg::slotDownloadError(const QString& error)
 
         if (d->preRelease)
         {
-            d->label->setText(i18n("The new %1 pre-release built on %2 have been downloaded at:\n\n"
+            d->label->setText(i18n("The new %1\npre-release built on %2\nhave been downloaded at:\n\n"
                                    "%3\n\n"
                                    "Press \"Open\" to show the bundle in file-manager...",
                                    qApp->applicationName(),
@@ -343,7 +350,7 @@ void OnlineVersionDlg::slotDownloadError(const QString& error)
         }
         else
         {
-            d->label->setText(i18n("The new %1 stable version %2 have been downloaded at:\n\n"
+            d->label->setText(i18n("The new %1\nstable version %2\nhave been downloaded at:\n\n"
                                    "%3\n\n"
                                    "Press \"Open\" to show the bundle in file-manager...",
                                    qApp->applicationName(),
@@ -359,7 +366,7 @@ void OnlineVersionDlg::slotDownloadError(const QString& error)
 
         if (d->preRelease)
         {
-            d->label->setText(i18n("The new pre-release %1 built on %2 have been downloaded at:\n\n"
+            d->label->setText(i18n("The new pre-release %1\nbuilt on %2\nhave been downloaded at:\n\n"
                                    "%3\n\n"
                                    "Press \"Install\" to close current session and upgrade...",
                                    qApp->applicationName(),
@@ -368,7 +375,7 @@ void OnlineVersionDlg::slotDownloadError(const QString& error)
         }
         else
         {
-            d->label->setText(i18n("The new %1 stable version %2 have been downloaded at:\n\n"
+            d->label->setText(i18n("The new %1\nstable version %2\nhave been downloaded at:\n\n"
                                    "%3\n\n"
                                    "Press \"Install\" to close current session and upgrade...",
                                    qApp->applicationName(),
@@ -392,14 +399,14 @@ void OnlineVersionDlg::slotDownloadError(const QString& error)
 
         if (d->preRelease)
         {
-            d->label->setText(i18n("Error while trying to download %1 pre-release built on %2:\n\n\"%3\"",
+            d->label->setText(i18n("Error while trying to download %1\npre-release built on %2:\n\n\"%3\"",
                                    qApp->applicationName(),
                                    QLocale().toString(d->onlineDt, QLocale::ShortFormat),
                                    error));
         }
         else
         {
-            d->label->setText(i18n("Error while trying to download %1 stable version %2:\n\n\"%3\"",
+            d->label->setText(i18n("Error while trying to download %1\nstable version %2:\n\n\"%3\"",
                                    qApp->applicationName(),
                                    d->newVersion,
                                    error));
