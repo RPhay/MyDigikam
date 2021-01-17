@@ -1144,7 +1144,7 @@ int DNGWriter::convert()
 
             if (!pre_image.save(&previewBuffer, "JPEG", 90))
             {
-                qCDebug(DIGIKAM_GENERAL_LOG) << "DNGWriter: Cannot save file to write JPEG preview. Aborted..." ;
+                qCDebug(DIGIKAM_GENERAL_LOG) << "DNGWriter: Cannot save buffer to write JPEG preview. Aborted..." ;
 
                 return PROCESSFAILED;
             }
