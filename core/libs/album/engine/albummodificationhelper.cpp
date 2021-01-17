@@ -243,7 +243,7 @@ void AlbumModificationHelper::slotAlbumDelete(PAlbum* album)
 
             int result    = QMessageBox::warning(qApp->activeWindow(), qApp->applicationName(),
                                                  i18n("<p>The folder you want to delete contains files "
-                                                      "(%1) which are not displayed in digiKam</p>"
+                                                      "(%1) which are not displayed in digiKam.</p>"
                                                       "<p>Do you want to continue?</p>", found),
                                                  QMessageBox::Yes | QMessageBox::No);
 
