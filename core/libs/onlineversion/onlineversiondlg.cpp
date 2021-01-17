@@ -158,7 +158,6 @@ OnlineVersionDlg::OnlineVersionDlg(QWidget* const parent,
                                                   QDialogButtonBox::Cancel,
                                                   page);
     d->buttons->button(QDialogButtonBox::Cancel)->setDefault(true);
-    d->buttons->button(QDialogButtonBox::Reset)->setVisible(false);
 
     grid->addWidget(d->logo,  0, 0, 3, 1);
     grid->addWidget(d->label, 0, 1, 1, 2);
@@ -185,6 +184,7 @@ OnlineVersionDlg::OnlineVersionDlg(QWidget* const parent,
     d->buttons->button(QDialogButtonBox::Reset)->setVisible(true);
     d->buttons->button(QDialogButtonBox::Reset)->setEnabled(true);
     d->buttons->button(QDialogButtonBox::Reset)->setText(i18n("Configure..."));
+    d->buttons->button(QDialogButtonBox::Reset)->setToolTip(i18n("Open setup dialog page to configure updates."));
     d->buttons->button(QDialogButtonBox::Reset)->setIcon(QIcon::fromTheme(QLatin1String("configure")));
 
     disconnect(d->buttons->button(QDialogButtonBox::Reset), SIGNAL(clicked()), 0, 0);
