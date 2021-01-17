@@ -211,9 +211,6 @@ void AlbumModificationHelper::slotAlbumDelete(PAlbum* album)
     }
 
     bool useTrash = !dialog.shouldDelete();
-    QString all;
-    QStringList mimeTypes = supportedImageMimeTypes(QIODevice::ReadOnly, all);
-
     QFileInfo fileInfo(album->fileUrl().toLocalFile());
 
     // If the trash is used no check is necessary, as the trash lists all files
@@ -221,7 +218,11 @@ void AlbumModificationHelper::slotAlbumDelete(PAlbum* album)
 
     if (!useTrash && fileInfo.isDir())
     {
+        QStringList imageTypes, audioTypes, videoTypes, mimeTypes;
         QDirIterator it(fileInfo.absoluteDir(), QDirIterator::Subdirectories);
+
+        CoreDbAccess().db()->getFilterSettings(&imageTypes, &videoTypes, &audioTypes);
+        mimeTypes = imageTypes + audioTypes + videoTypes;
 
         // Build a set of file extensions present in this album
 
@@ -234,7 +235,7 @@ void AlbumModificationHelper::slotAlbumDelete(PAlbum* album)
 
             if (currentFileInfo.isFile())
             {
-                extSet.insert(currentFileInfo.suffix());
+                extSet.insert(currentFileInfo.suffix().toLower());
             }
         }
 
@@ -248,7 +249,7 @@ void AlbumModificationHelper::slotAlbumDelete(PAlbum* album)
 
             for (auto & mimeType : mimeTypes)
             {
-                if (mimeType.contains(QString::fromLatin1("*.%1").arg(ext)))
+                if (mimeType.contains(ext))
                 {
                     found = true;
                     break;
