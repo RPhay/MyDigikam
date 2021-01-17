@@ -1138,16 +1138,11 @@ int DNGWriter::convert()
                 return PROCESSFAILED;
             }
 
-            QTemporaryFile previewFile;
+            QByteArray previewArray;
+            QBuffer previewBuffer(&previewArray);
+            previewBuffer.open(QIODevice::WriteOnly);
 
-            if (!previewFile.open())
-            {
-                qCDebug(DIGIKAM_GENERAL_LOG) << "DNGWriter: Cannot open temporary file to write JPEG preview. Aborted..." ;
-
-                return PROCESSFAILED;
-            }
-
-            if (!pre_image.save(previewFile.fileName(), "JPEG", 90))
+            if (!pre_image.save(&previewBuffer, "JPEG", 90))
             {
                 qCDebug(DIGIKAM_GENERAL_LOG) << "DNGWriter: Cannot save file to write JPEG preview. Aborted..." ;
 
@@ -1161,15 +1156,13 @@ int DNGWriter::convert()
             jpeg_preview->fPhotometricInterpretation = piYCbCr;
             jpeg_preview->fPreviewSize.v             = pre_image.height();
             jpeg_preview->fPreviewSize.h             = pre_image.width();
-            jpeg_preview->fCompressedData.Reset(host.Allocate(previewFile.size()));
+            jpeg_preview->fCompressedData.Reset(host.Allocate(previewArray.size()));
 
-            QDataStream previewStream( &previewFile );
-            previewStream.readRawData(jpeg_preview->fCompressedData->Buffer_char(), previewFile.size());
+            QDataStream previewStream(previewArray);
+            previewStream.readRawData(jpeg_preview->fCompressedData->Buffer_char(), previewArray.size());
 
-            AutoPtr<dng_preview> pp( dynamic_cast<dng_preview*>(jpeg_preview.Release()) );
+            AutoPtr<dng_preview> pp(dynamic_cast<dng_preview*>(jpeg_preview.Release()));
             previewList.Append(pp);
-
-            previewFile.remove();
         }
 
         if (d->cancel)
