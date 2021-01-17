@@ -218,60 +218,36 @@ void AlbumModificationHelper::slotAlbumDelete(PAlbum* album)
 
     if (!useTrash && fileInfo.isDir())
     {
-        QStringList imageTypes, audioTypes, videoTypes, mimeTypes;
-        QDirIterator it(fileInfo.absoluteDir(), QDirIterator::Subdirectories);
+        QStringList imageTypes, audioTypes, videoTypes, mimeTypes, foundTypes;
+        QDirIterator it(fileInfo.path(), QDir::Files, QDirIterator::Subdirectories);
 
         CoreDbAccess().db()->getFilterSettings(&imageTypes, &videoTypes, &audioTypes);
         mimeTypes = imageTypes + audioTypes + videoTypes;
 
-        // Build a set of file extensions present in this album
-
-        QSet<QString> extSet;
-
         while (it.hasNext())
         {
-            QString currentFile = it.next();
-            QFileInfo currentFileInfo(currentFile);
+            it.next();
+            QString ext = it.fileInfo().suffix().toLower();
 
-            if (currentFileInfo.isFile())
+            if (!mimeTypes.contains(ext) && !foundTypes.contains(ext))
             {
-                extSet.insert(currentFileInfo.suffix().toLower());
+                foundTypes << ext;
             }
         }
 
-        // Check if each extension is a supported mimetype
-
-        bool found = false;
-
-        for (auto & ext: extSet)
+        if (!foundTypes.isEmpty())
         {
-            found = false;
+            foundTypes.sort();
 
-            for (auto & mimeType : mimeTypes)
-            {
-                if (mimeType.contains(ext))
-                {
-                    found = true;
-                    break;
-                }
-            }
+            QString display = foundTypes.join(QLatin1String(", "));
 
-            if (!found)
-            {
-                qCDebug(DIGIKAM_GENERAL_LOG) << "Found file with file type which is not supported during album deletion:" << ext;
-                break;
-            }
-        }
+            int result      = QMessageBox::warning(qApp->activeWindow(), qApp->applicationName(),
+                                                   i18n("<p>The folder you want to delete contains files "
+                                                        "(%1) which are not displayed in digiKam</p>"
+                                                        "<p>Do you want to continue?</p>", display),
+                                                   QMessageBox::Yes | QMessageBox::No);
 
-        if (!found)
-        {
-            auto selectionResult = QMessageBox::warning(qApp->activeWindow(), qApp->applicationName(),
-                                                        i18n("The folder you want to delete contains files "
-                                                             "which are not displayed in digiKam\n"
-                                                             "Do you want to continue?"),
-                                                        QMessageBox::Yes | QMessageBox::No);
-
-            if (selectionResult != QMessageBox::Yes)
+            if (result != QMessageBox::Yes)
             {
                 return;
             }
