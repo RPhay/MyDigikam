@@ -333,7 +333,7 @@ bool OnlineVersionChecker::bundleProperties(QString& arch, QString& ext)
 
 #   if defined Q_PROCESSOR_X86_64
 
-    arch = QLatin1String("x86-64");
+    arch = QLatin1String("Win64");
 
 #   elif defined Q_PROCESSOR_ARM
 
