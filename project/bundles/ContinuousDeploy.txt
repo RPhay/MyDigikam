@@ -1,0 +1,34 @@
+Architecture and configuration to setup a continuous deployement computer.
+--------------------------------------------------------------------------
+
+1/ Host computer and local network
+
+- Intel Xeon 24 cores
+- 32 Gb of RAM
+- 2 SSD 1Tb (one to host base system, one to host VMs)
+- Host system Linux Mageia 7.1
+- VirtualBox v6:
+  * 3 VMs: one running Mageia 6.1 to compile AppImage bundle.
+           one running Mageia 7.1 to compile Windows installer.
+           one running macOS Catalina to compile PKG installer.
+  * Host must define a private local network configurated with default settings:
+           network 192.168.56.1/25
+           DHCP server 192.168.56.100/24 @[101-254]
+  * Each VM must have 2 network ifaces: one to use Internet using NAT
+                                        one to use private local network
+  * Private local network will allow to be connected to VMs locally with ssh.
+
+2/ Virtual Machines
+
+- Mageia 6.1: system is installed using AppImage procedure.
+  * @IP: 192.168.56.101.
+  * Create a crontab task to update Appimage bundle:
+      # update AppImage bundle all the days at 19h00
+      00 19 * * * root bash -l -c 'export HOME=/root && source /root/.bashrc && cd /home/gilles/Documents/7.x/project/bundles/appimage && git pull && ./update.sh 2>&1 > /tmp/appimage_update_log.txt'
+- Mageia 7.1: system is installed using MXE procedure.
+  * @IP: 192.168.56.102
+  * Create a crontab task to update Windows installer:
+      # update Windows bundle all the days at 21h00
+      00 21 * * * root bash -l -c 'export HOME=/home/gilles && source /home/gilles/.bashrc && cd /home/gilles/Documents/7.x/project/bundles/mxe && git pull && ./update.sh 2>&1 > /tmp/mxe_update_log.txt'
+- macOS Catalina: system is installed using this GitHub repository: https://github.com/myspaghetti/macos-virtualbox and using MAcports procedure.
+  * @IP: 192.168.56.103
