@@ -27,6 +27,7 @@
 // Qt includes
 
 #include <QDir>
+#include <QSysInfo>
 #include <QByteArray>
 #include <QApplication>
 #include <QStandardPaths>
@@ -63,7 +64,9 @@ public:
     bool                   updateWithDebug; ///< Flag to use version with debug symbols
     int                    redirects;       ///< Count of redirected url
 
-    QString                downloadUrl;     ///< Url for current download
+    QString                downloadUrl;     ///< Root url for current download
+    QString                checksums;       ///< Current download sha256 sums
+    QString                currentUrl;      ///< Full url of current file to download
     QString                error;           ///< Error string about current download
     QString                file;            ///< Info about file to download (version string, or filename)
     QString                downloaded;      ///< Local file path to downloaded data
@@ -129,7 +132,8 @@ void OnlineVersionDwnl::startDownload(const QString& version)
             d->file = version;
         }
 
-        url = QUrl(d->downloadUrl + d->file);
+        d->currentUrl = d->downloadUrl + d->file + QLatin1String(".sha256");
+        url           = QUrl(d->currentUrl);
     }
     else
     {
@@ -139,7 +143,7 @@ void OnlineVersionDwnl::startDownload(const QString& version)
 
         if (!OnlineVersionChecker::bundleProperties(arch, bundle))
         {
-            emit signalDownloadError(i18n("Unsupported Architecture."));
+            emit signalDownloadError(i18n("Unsupported Architecture: %1", QSysInfo::buildAbi()));
 
             qCDebug(DIGIKAM_GENERAL_LOG) << "Unsupported architecture";
 
@@ -152,7 +156,8 @@ void OnlineVersionDwnl::startDownload(const QString& version)
                       .arg(debug)
                       .arg(bundle);
 
-        url     = QUrl(d->downloadUrl + QString::fromLatin1("%1/").arg(version) + d->file);
+        d->currentUrl = d->downloadUrl + QString::fromLatin1("%1/").arg(version) + d->file + QLatin1String(".sha256");
+        url           = QUrl(d->currentUrl);
     }
 
     d->redirects = 0;
@@ -203,12 +208,60 @@ void OnlineVersionDwnl::slotDownloaded(QNetworkReply* reply)
         return;
     }
 
+    // Check if checksum arrive in first
+
+    if (reply->url().url().endsWith(QLatin1String(".sha256")))
+    {
+        QByteArray data = reply->readAll();
+
+        if (data.isEmpty())
+        {
+            qCDebug(DIGIKAM_GENERAL_LOG) << "Checksum file is empty";
+            emit signalDownloadError(i18n("Checksum file is empty."));
+
+            return;
+        }
+
+        QTextStream in(&data);
+        QString line    = in.readLine();  // first line and section 0 constains the checksum.
+        QString sums    = line.section(QLatin1Char(' '), 0, 0);
+
+        if (sums.isEmpty())
+        {
+            qCDebug(DIGIKAM_GENERAL_LOG) << "Checksum is invalid";
+            emit signalDownloadError(i18n("Checksum is invalid."));
+
+            return;
+        }
+
+        d->checksums = sums;
+        qCDebug(DIGIKAM_GENERAL_LOG) << "Checksum is" << d->checksums;
+
+        d->redirects = 0;
+        download(QUrl(d->currentUrl.remove(QLatin1String(".sha256"))));
+
+        return;
+    }
+
+    // Whole file to download arrive
+
     QByteArray data = reply->readAll();
 
     if (data.isEmpty())
     {
         qCDebug(DIGIKAM_GENERAL_LOG) << "Downloaded file is empty";
         emit signalDownloadError(i18n("Downloaded file is empty."));
+
+        return;
+    }
+
+    QCryptographicHash sha256(QCryptographicHash::Sha256);
+    sha256.addData(data);
+
+    if (d->checksums != QString::fromLatin1(sha256.result().toHex()))
+    {
+        qCDebug(DIGIKAM_GENERAL_LOG) << "Checksums error";
+        emit signalDownloadError(i18n("Checksums error."));
 
         return;
     }

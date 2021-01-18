@@ -286,4 +286,7 @@ BUGFIXES:
 265 ==> 431598 - digiKam-7.2.0-rc (14.01.2021) crashes while getting "Help > List of Detected Hardware".
 266 ==> 431660 - BQM stores output files one directory level above actual target.
 267 ==> 216412 - Show warning message before album deletion when directories containing files which are not shown by digiKam.
-268 ==> 
+268 ==> 431150 - Thumbs for faces created from .DNG images are not shown.
+269 ==> 431658 - digiKam git trash issue.
+270 ==> 
+

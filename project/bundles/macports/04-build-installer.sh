@@ -652,7 +652,7 @@ if [[ $DK_UPLOAD = 1 ]] ; then
     cat $ORIG_WD/bundle/ls.tmp | grep -E '(.pkg |.appimage |.exe )' | grep -Ev '(debug)' > $ORIG_WD/bundle/FILES
     rm $ORIG_WD/bundle/ls.tmp
     sftp -q $DK_UPLOADURL:$DK_UPLOADDIR <<< "rm FILES"
-    scp $ORIG_WD/bundle/FILES $DK_UPLOADURL:$DK_UPLOADDIR
+    rsync -r -v --progress -e ssh $BUILDDIR/bundle/FILES $DK_UPLOADURL:$DK_UPLOADDIR
 
 else
     echo -e "\n------------------------------------------------------------------"

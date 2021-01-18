@@ -1144,7 +1144,7 @@ int DNGWriter::convert()
 
             if (!pre_image.save(&previewBuffer, "JPEG", 90))
             {
-                qCDebug(DIGIKAM_GENERAL_LOG) << "DNGWriter: Cannot save file to write JPEG preview. Aborted..." ;
+                qCDebug(DIGIKAM_GENERAL_LOG) << "DNGWriter: Cannot save buffer to write JPEG preview. Aborted..." ;
 
                 return PROCESSFAILED;
             }
@@ -1154,8 +1154,9 @@ int DNGWriter::convert()
             AutoPtr<dng_jpeg_preview> jpeg_preview;
             jpeg_preview.Reset(new dng_jpeg_preview);
             jpeg_preview->fPhotometricInterpretation = piYCbCr;
-            jpeg_preview->fPreviewSize.v             = pre_image.height();
+            jpeg_preview->fYCbCrSubSampling          = dng_point(2, 2);
             jpeg_preview->fPreviewSize.h             = pre_image.width();
+            jpeg_preview->fPreviewSize.v             = pre_image.height();
             jpeg_preview->fCompressedData.Reset(host.Allocate(previewArray.size()));
 
             QDataStream previewStream(previewArray);
