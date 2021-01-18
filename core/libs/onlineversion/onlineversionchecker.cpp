@@ -316,9 +316,12 @@ bool OnlineVersionChecker::bundleProperties(QString& arch, QString& ext)
 
 #   elif defined Q_PROCESSOR_ARM
 
-/*  Apple silicon is not yet supported
+/*  Native Apple silicon is not yet supported
     arch = QLatin1String("arm-64");
 */
+
+    // NOTE: Intel 64 version work fine into Apple Rosetta 2 emulator.
+    arch = QLatin1String("x86-64");
 
 #   endif
 
