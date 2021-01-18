@@ -27,6 +27,7 @@
 // Qt includes
 
 #include <QDir>
+#include <QSysInfo>
 #include <QByteArray>
 #include <QApplication>
 #include <QStandardPaths>
@@ -142,7 +143,7 @@ void OnlineVersionDwnl::startDownload(const QString& version)
 
         if (!OnlineVersionChecker::bundleProperties(arch, bundle))
         {
-            emit signalDownloadError(i18n("Unsupported Architecture."));
+            emit signalDownloadError(i18n("Unsupported Architecture: %1", QSysInfo::buildAbi()));
 
             qCDebug(DIGIKAM_GENERAL_LOG) << "Unsupported architecture";
 

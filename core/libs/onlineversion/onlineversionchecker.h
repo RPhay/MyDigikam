@@ -55,6 +55,11 @@ public:
 
     QString preReleaseFileName() const;
 
+    /**
+     * Return true if the system and architecture are supported by the bundle workflow.
+     * 'arch' is the relevant prefix for the bundle architecture.
+     * 'ext'  is the relevant bundle file extention.
+     */
     static bool bundleProperties(QString& arch, QString& ext);
 
     /**

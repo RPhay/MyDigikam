@@ -26,6 +26,7 @@
 // Qt includes
 
 #include <QLocale>
+#include <QSysInfo>
 #include <QTextStream>
 #include <QNetworkAccessManager>
 
@@ -207,8 +208,9 @@ void OnlineVersionChecker::slotDownloadFinished(QNetworkReply* reply)
 
         if (!OnlineVersionChecker::bundleProperties(arch, ext))
         {
+            emit signalNewVersionCheckError(i18n("Unsupported Architecture: %1", QSysInfo::buildAbi()));
+
             qCDebug(DIGIKAM_GENERAL_LOG) << "Unsupported architecture";
-            emit signalNewVersionCheckError(i18n("Unsupported Architecture."));
 
             return;
         }
@@ -304,39 +306,47 @@ void OnlineVersionChecker::slotDownloadFinished(QNetworkReply* reply)
 bool OnlineVersionChecker::bundleProperties(QString& arch, QString& ext)
 {
 
-#ifdef Q_OS_MACOS
+#if defined Q_OS_MACOS
 
     ext  = QLatin1String("pkg");
 
-#   ifdef Q_PROCESSOR_X86_64
+#   if defined Q_PROCESSOR_X86_64
 
     arch = QLatin1String("x86-64");
 
-#   else
+#   elif defined Q_PROCESSOR_ARM
 
+/*  Apple silicon is not yet supported
     arch = QLatin1String("arm-64");
+*/
 
 #   endif
 
 #endif
 
-#ifdef Q_OS_WINDOWS
+#if defined Q_OS_WINDOWS
 
     ext  = QLatin1String("exe");
 
-#   ifdef Q_PROCESSOR_X86_64
+#   if defined Q_PROCESSOR_X86_64
 
     arch = QLatin1String("x86-64");
 
+#   elif defined Q_PROCESSOR_ARM
+
+/*  Windows Arm is not yet supported
+    arch = QLatin1String("arm-64");
+*/
+
 #   elif defined Q_PROCESSOR_X86_32
 
-    arch = QLatin1String("i386");
+    // 32 bits is not supported
 
 #   endif
 
 #endif
 
-#ifdef Q_OS_LINUX
+#if defined Q_OS_LINUX
 
     ext  = QLatin1String("appimage");
 
@@ -344,9 +354,15 @@ bool OnlineVersionChecker::bundleProperties(QString& arch, QString& ext)
 
     arch = QLatin1String("x86-64");
 
+#   elif defined Q_PROCESSOR_ARM
+
+/*  Linux Arm is not yet supported
+    arch = QLatin1String("arm-64");
+*/
+
 #   elif defined Q_PROCESSOR_X86_32
 
-    arch = QLatin1String("i386");
+    // 32 bits is not supported
 
 #   endif
 
