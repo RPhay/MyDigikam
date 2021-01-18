@@ -199,11 +199,6 @@ TagEditDlg::TagEditDlg(QWidget* const parent, TAlbum* const album, bool create)
 
     d->resetIconButton = new QPushButton(QIcon::fromTheme(QLatin1String("view-refresh")), i18n("Reset"), page);
 
-    if (create)
-    {
-        d->resetIconButton->hide();
-    }
-
 #ifndef HAVE_KICONTHEMES
 
     iconTextLabel->hide();
