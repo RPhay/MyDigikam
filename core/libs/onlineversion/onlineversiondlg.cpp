@@ -443,9 +443,7 @@ void OnlineVersionDlg::slotRunInstaller()
     args << QLatin1String("-e");
     args << QLatin1String("tell application \"Finder\"");
     args << QLatin1String("-e");
-    args << QString::fromUtf8("set selection to POSIX path of \"%1\"").arg(path);
-    args << QLatin1String("-e");
-    args << QLatin1String("open selection");
+    args << QString::fromUtf8("open POSIX file \"%1\"").arg(path);
     args << QLatin1String("-e");
     args << QLatin1String("end tell");
     args << QLatin1String("-e");
