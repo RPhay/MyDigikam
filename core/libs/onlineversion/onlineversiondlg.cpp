@@ -429,9 +429,31 @@ void OnlineVersionDlg::slotDownloadProgress(qint64 recv, qint64 total)
 
 void OnlineVersionDlg::slotRunInstaller()
 {
+    bool started = false;
     QString path = d->dwnloader->downloadedPath();
     qCDebug(DIGIKAM_GENERAL_LOG) << "Run installer:" << path;
-    bool started = QProcess::startDetached(path, QStringList());
+
+#ifdef Q_OS_WIN
+
+    started = QProcess::startDetached(path, QStringList());
+
+#elif defined Q_OS_MACOS
+
+    QStringList args;
+    args << QLatin1String("-e");
+    args << QLatin1String("tell application \"Finder\"");
+    args << QLatin1String("-e");
+    args << QString::fromUtf8("set selection to POSIX path of \"%1\"").arg(path);
+    args << QLatin1String("-e");
+    args << QLatin1String("open selection");
+    args << QLatin1String("-e");
+    args << QLatin1String("end tell");
+    args << QLatin1String("-e");
+    args << QLatin1String("return");
+
+    started = QProcess::startDetached(QLatin1String("/usr/bin/osascript"), args);
+
+#endif
 
     if (!started)
     {

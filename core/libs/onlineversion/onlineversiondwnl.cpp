@@ -150,11 +150,20 @@ void OnlineVersionDwnl::startDownload(const QString& version)
             return;
         }
 
-        d->file = QString::fromLatin1("digikam-%1-%2%3.%4")
-                      .arg(version)
-                      .arg(arch)
-                      .arg(debug)
-                      .arg(bundle);
+        QString os    = 
+
+#ifdef Q_OS_MACOS
+                        QLatin1String("MacOS-");
+#else
+                        QString();
+#endif
+
+        d->file       = QString::fromLatin1("digikam-%1-%2%3%4.%5")
+                            .arg(version)
+                            .arg(os)
+                            .arg(arch)
+                            .arg(debug)
+                            .arg(bundle);
 
         d->currentUrl = d->downloadUrl + QString::fromLatin1("%1/").arg(version) + d->file + QLatin1String(".sha256");
         url           = QUrl(d->currentUrl);
