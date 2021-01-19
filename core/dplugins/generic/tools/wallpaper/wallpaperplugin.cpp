@@ -4,9 +4,10 @@
  * https://www.digikam.org
  *
  * Date        : 2019-04-02
- * Description : plugin to export images as wallpaper.
+ * Description : plugin to export image as wallpaper.
  *
- * Copyright (C) 2019 by Igor Antropov <antropovi at yahoo dot com>
+ * Copyright (C) 2019      by Igor Antropov <antropovi at yahoo dot com>
+ * Copyright (C) 2019-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -20,14 +21,19 @@
  *
  * ============================================================ */
 
+#include "digikam_config.h"
 #include "wallpaperplugin.h"
 
 // Qt includes
 
-#include <QDBusMessage>
-#include <QDBusConnection>
 #include <QString>
 #include <QMessageBox>
+#include <QProcess>
+
+#ifdef HAVE_DBUS
+#   include <QDBusMessage>
+#   include <QDBusConnection>
+#endif
 
 // KDE includes
 
@@ -106,6 +112,38 @@ void WallpaperPlugin::slotWallpaper()
 
     if (!images.isEmpty())
     {
+
+#if defined Q_OS_MACOS
+
+        QStringList args;
+        args << QLatin1String("-e");
+        args << QLatin1String("tell application \"System Events\"");
+        args << QLatin1String("-e");
+        args << QLatin1String("tell current desktop");
+        args << QLatin1String("-e");
+        args << QString::fromUtf8("set picture to \"%1\"").arg(images[0].toString());
+        args << QLatin1String("-e");
+        args << QLatin1String("end tell");
+        args << QLatin1String("-e");
+        args << QLatin1String("end tell");
+        args << QLatin1String("-e");
+        args << QLatin1String("return");
+
+        if (QProcess::execute(QLatin1String("/usr/bin/osascript"), args) == 0)
+        {
+            QMessageBox::warning(nullptr,
+                                 i18nc("@title:window",
+                                       "Error while to set image as wallpaper"),
+                                 i18n("Cannot change wallpaper image from current desktop"));
+            return;
+        }
+
+#elif defined Q_OS_WIN
+
+        // TODO
+
+#elif defined HAVE_DBUS
+
         QDBusMessage message = QDBusMessage::createMethodCall(
             QLatin1String("org.kde.plasmashell"),
             QLatin1String("/PlasmaShell"),
@@ -128,11 +166,14 @@ void WallpaperPlugin::slotWallpaper()
 
         if (reply.type() == QDBusMessage::ErrorMessage)
         {
-            QMessageBox::critical(nullptr,
-                                  i18nc("@title:window",
-                                        "Error while set image as wallpaper"),
-                                  reply.errorMessage());
+            QMessageBox::warning(nullptr,
+                                 i18nc("@title:window",
+                                       "Error while to set image as wallpaper"),
+                                 reply.errorMessage());
         }
+
+#endif
+
     }
 }
 
