@@ -290,4 +290,5 @@ BUGFIXES:
 269 ==> 431658 - digiKam git trash issue.
 270 ==> 269424 - Rebuild all thumbnails misses people (faces) thumbnails.
 271 ==> 431808 - Program icon not visible.
-272 ==> 
+272 ==> 144177 - In Caption/Tags sidebar, new Tags inherit the image of their parents.
+273 ==> 
