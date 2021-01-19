@@ -189,7 +189,7 @@ SetupMisc::SetupMisc(QWidget* const parent)
 
     d->updateWithDebug = new QCheckBox(i18n("Use Version With Debug Symbols"), upOptionsGroup);
     d->updateWithDebug->setWhatsThis(i18n("If this option is enabled, a version including debug symbols will be used for updates.\n"
-                                          "This version is more heavy but can help developpers to trace dysfunctions in debugger."));
+                                          "This version is more heavy but can help developers to trace dysfunctions in debugger."));
 
     DHBox* const updateHbox2     = new DHBox(upOptionsGroup);
     QLabel* const lastCheckLabel = new QLabel(updateHbox2);

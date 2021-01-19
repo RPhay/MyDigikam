@@ -112,8 +112,8 @@ invent.kde.org \
 deino.kde.org \
 "
 
-if [[ ! -f ~/.ssh/known_hosts ]] ; then
-    touch ~/.ssh/known_hosts
+if [[ ! -f $HOME/.ssh/known_hosts ]] ; then
+    touch $HOME/.ssh/known_hosts
 fi
 
 for server in $SERVER_LIST; do
@@ -121,7 +121,7 @@ for server in $SERVER_LIST; do
     echo "Register $server"
 
     ssh-keygen -R $server
-    ssh-keyscan -H $server >> ~/.ssh/known_hosts
+    ssh-keyscan -H $server >> $HOME/.ssh/known_hosts
 
 done
 
