@@ -291,4 +291,8 @@ BUGFIXES:
 270 ==> 269424 - Rebuild all thumbnails misses people (faces) thumbnails.
 271 ==> 431808 - Program icon not visible.
 272 ==> 144177 - In Caption/Tags sidebar, new Tags inherit the image of their parents.
-273 ==> 
+273 ==> 421043 - Faces Detection crashes digiKam.
+274 ==> 427333 - Face detection crashes due to pure virtual method call in LoadingCache.
+275 ==> 429307 - Crash with face detection under Windows.
+276 ==> 427380 - Crashes when running face detection.
+277 ==> 
