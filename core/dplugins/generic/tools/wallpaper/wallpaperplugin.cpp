@@ -39,6 +39,11 @@
 
 #include <klocalizedstring.h>
 
+#ifdef Q_OS_WIN
+#   include <windows.h>
+#   include <shobjidl.h>
+#endif
+
 namespace DigikamGenericWallpaperPlugin
 {
 
@@ -140,7 +145,25 @@ void WallpaperPlugin::slotWallpaper()
 
 #elif defined Q_OS_WIN
 
-        // TODO
+        HRESULT hr                                 = CoInitialize(nullptr);
+        IDesktopWallpaper* const pDesktopWallpaper = nullptr;
+        hr                                         = CoCreateInstance(__uuidof(DesktopWallpaper),
+                                                                      nullptr,
+                                                                      CLSCTX_ALL,
+                                                                      IID_PPV_ARGS(&pDesktopWallpaper));
+        if (FAILED(hr))
+        {
+            QMessageBox::warning(nullptr,
+                                 i18nc("@title:window",
+                                       "Error while to set image as wallpaper"),
+                                 i18n("Cannot change wallpaper image from current desktop"));
+            return;
+        }
+        else
+        {
+            pDesktopWallpaper->SetWallpaper(nullptr,
+                                            images[0].toString().toStdWString().c_str());
+        }
 
 #elif defined HAVE_DBUS
 
