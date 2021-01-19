@@ -288,5 +288,6 @@ BUGFIXES:
 267 ==> 216412 - Show warning message before album deletion when directories containing files which are not shown by digiKam.
 268 ==> 431150 - Thumbs for faces created from .DNG images are not shown.
 269 ==> 431658 - digiKam git trash issue.
-270 ==> 
-
+270 ==> 269424 - Rebuild all thumbnails misses people (faces) thumbnails.
+271 ==> 431808 - Program icon not visible.
+272 ==> 
