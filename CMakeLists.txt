@@ -77,7 +77,6 @@ include(FeatureSummary)
 # KF5 Framework macros
 include(KDEInstallDirs)
 include(KDECMakeSettings)
-include(KDEFrameworkCompilerSettings)
 include(KDECompilerSettings)
 
 # ECM macros
