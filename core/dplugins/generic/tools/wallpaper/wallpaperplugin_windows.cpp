@@ -47,6 +47,43 @@
 namespace DigikamGenericWallpaperPlugin
 {
 
+void s_checkErrorCode(HRESULT status, const QString& path, const QString& context)
+{
+    if (FAILED(status))
+    {
+        // Code to catch error string from error code with Windows API.
+
+        LPWSTR bufPtr        = nullptr;
+        DWORD werr           = GetLastError();
+        FormatMessageW(FORMAT_MESSAGE_ALLOCATE_BUFFER |
+                       FORMAT_MESSAGE_FROM_SYSTEM     |
+                       FORMAT_MESSAGE_IGNORE_INSERTS,
+                       nullptr,
+                        werr,
+                       0,
+                       (LPWSTR)&bufPtr,
+                       0,
+                       nullptr);
+
+        QString errStr = (bufPtr) ? QString::fromUtf16((const ushort*)bufPtr).trimmed()
+                                  : i18n("Unknown Error %1", werr);
+        LocalFree(bufPtr);
+
+        QMessageBox::warning(nullptr,
+                             i18nc("@title:window",
+                                   "Error while to set image as wallpaper"),
+                             i18n("Cannot change wallpaper image from current desktop with\n"
+                                  "%1\n\nContext:%2\n\nError:%3",
+                                  path,
+                                  context,
+                                  errStr));
+
+        return false;
+    }
+
+    return true;
+}
+
 bool WallpaperPlugin::setWallpaper(const QString& path) const
 {
     // NOTE: IDesktopWallpaper is only defined with Windows >= 8.
@@ -74,7 +111,19 @@ bool WallpaperPlugin::setWallpaper(const QString& path) const
     CoInitializeEx(0, COINIT_APARTMENTTHREADED);
 
     IActiveDesktop* iADesktop = nullptr;
-    HRESULT status            = CoCreateInstance(CLSID_ActiveDesktop, NULL, CLSCTX_INPROC_SERVER, IID_IActiveDesktop, (void**)&iADesktop);
+    HRESULT status            = CoCreateInstance(CLSID_ActiveDesktop,
+                                                 nullptr,
+                                                 CLSCTX_INPROC_SERVER,
+                                                 IID_IActiveDesktop,
+                                                 (void**)&iADesktop);
+
+    if (!s_checkErrorCode(status, path, i18n("Cannot create desktop context.")))
+    {
+        CoUninitialize();
+
+        return false;
+    }
+
     WALLPAPEROPT wOption;
     ZeroMemory(&wOption, sizeof(WALLPAPEROPT));
     wOption.dwSize            = sizeof(WALLPAPEROPT);
@@ -101,36 +150,31 @@ bool WallpaperPlugin::setWallpaper(const QString& path) const
     }
 
     status = iADesktop->SetWallpaper(wpath, 0);
+
+    if (!s_checkErrorCode(status, path, i18n("Cannot set wall paper image path.")))
+    {
+        iADesktop->Release();
+        CoUninitialize();
+
+        return false;
+    }
+
     status = iADesktop->SetWallpaperOptions(&wOption, 0);
+
+    if (!s_checkErrorCode(status, path, i18n("Cannot set wallpaper properties.")))
+    {
+        iADesktop->Release();
+        CoUninitialize();
+
+        return false;
+    }
+
     status = iADesktop->ApplyChanges(AD_APPLY_ALL);
 
-    if (FAILED(status))
+    if (!s_checkErrorCode(status, path, i18n("Cannot apply changes to desktop wallpaper.")))
     {
-        // Code to catch error string from error code with Windows API.
-
-        LPWSTR bufPtr        = nullptr;
-        DWORD werr           = GetLastError();
-        FormatMessageW(FORMAT_MESSAGE_ALLOCATE_BUFFER |
-                       FORMAT_MESSAGE_FROM_SYSTEM     |
-                       FORMAT_MESSAGE_IGNORE_INSERTS,
-                       nullptr,
-                        werr,
-                       0,
-                       (LPWSTR)&bufPtr,
-                       0,
-                       nullptr);
-
-        QString errStr = (bufPtr) ? QString::fromUtf16((const ushort*)bufPtr).trimmed()
-                                  : i18n("Unknown Error %1", werr);
-        LocalFree(bufPtr);
-
-        QMessageBox::warning(nullptr,
-                             i18nc("@title:window",
-                                   "Error while to set image as wallpaper"),
-                             i18n("Cannot change wallpaper image from current desktop with\n"
-                                  "%1\n\n%2",
-                                  path,
-                                  errStr));
+        iADesktop->Release();
+        CoUninitialize();
 
         return false;
     }
