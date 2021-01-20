@@ -39,9 +39,15 @@
 
 #include <klocalizedstring.h>
 
+// Local includes
+
+#include "digikam_debug.h"
+
+// Windows includes
+
 #ifdef Q_OS_WIN
 #   include <windows.h>
-#   include <shobjidl.h>
+#   include <shlobj.h>
 #endif
 
 namespace DigikamGenericWallpaperPlugin
