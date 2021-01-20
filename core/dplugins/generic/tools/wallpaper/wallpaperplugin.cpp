@@ -214,30 +214,6 @@ void WallpaperPlugin::slotWallpaper()
         iADesktop->Release();
         CoUninitialize();
 
-/*
-        HRESULT hr                           = CoInitialize(nullptr);
-        IDesktopWallpaper* pDesktopWallpaper = nullptr;
-        hr                                   = CoCreateInstance(__uuidof(DesktopWallpaper),
-                                                                nullptr,
-                                                                CLSCTX_ALL,
-                                                                IID_PPV_ARGS(&pDesktopWallpaper));
-        if (FAILED(hr))
-        {
-            QMessageBox::warning(nullptr,
-                                 i18nc("@title:window",
-                                       "Error while to set image as wallpaper"),
-                                 i18n("Cannot change wallpaper image from current desktop\n%1",
-                                      images[0].toString()));
-        }
-        else
-        {
-            pDesktopWallpaper->SetWallpaper(nullptr,
-                                            images[0].toString().toStdWString().c_str());
-        }
-
-        CoUninitialize();
-*/
-
 #elif defined HAVE_DBUS
 
         QDBusMessage message = QDBusMessage::createMethodCall(
