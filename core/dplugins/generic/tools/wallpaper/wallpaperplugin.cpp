@@ -145,8 +145,60 @@ void WallpaperPlugin::slotWallpaper()
 
 #elif defined Q_OS_WIN
 
-        // NOTE: IDesktopWallpaper was only defined with Windows >= 8.
+        // NOTE: IDesktopWallpaper is only defined with Windows >= 8.
+        //       To be compatible with Windows 7, we needs to use IActiveDesktop instead.
 
+        wchar_t path[MAX_PATH];
+        QString pathStr           = images[0].toString().replace(L'/', L'\\');
+
+        if (pathStr.size() > MAX_PATH - 1)
+        {
+            qCWarning(DIGIKAM_GENERAL_LOG) << "Image path to set as wall paper is too long...";
+            return;
+        }
+
+        int pathLen               = pathStr.toWCharArray(path);
+        path[pathLen]             = L'\0'; // toWCharArray doesn't add NULL terminator
+
+        int    nStyle             = 0;
+
+        CoInitializeEx(0, COINIT_APARTMENTTHREADED);
+
+        IActiveDesktop* iADesktop = nullptr;
+        HRESULT status            = CoCreateInstance(CLSID_ActiveDesktop, NULL, CLSCTX_INPROC_SERVER, IID_IActiveDesktop, (void**)&iADesktop);
+        WALLPAPEROPT wOption;
+        ZeroMemory(&wOption, sizeof(WALLPAPEROPT));
+        wOption.dwSize            = sizeof(WALLPAPEROPT);
+
+        switch (nStyle)
+        {
+            case 1:
+            {
+                wOption.dwStyle = WPSTYLE_TILE;
+                break;
+            }
+
+            case 2:
+            {
+                wOption.dwStyle = WPSTYLE_CENTER;
+                break;
+            }
+
+            default:
+            {
+                wOption.dwStyle = WPSTYLE_STRETCH;
+                break;
+            }
+        }
+
+        status = iADesktop->SetWallpaper(path, 0);
+        status = iADesktop->SetWallpaperOptions(&wOption, 0);
+        status = iADesktop->ApplyChanges(AD_APPLY_ALL);
+
+        iADesktop->Release();
+        CoUninitialize();
+
+/*
         HRESULT hr                           = CoInitialize(nullptr);
         IDesktopWallpaper* pDesktopWallpaper = nullptr;
         hr                                   = CoCreateInstance(__uuidof(DesktopWallpaper),
@@ -168,6 +220,7 @@ void WallpaperPlugin::slotWallpaper()
         }
 
         CoUninitialize();
+*/
 
 #elif defined HAVE_DBUS
 
