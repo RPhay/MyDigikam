@@ -96,6 +96,10 @@ QList<DPluginAuthor> WallpaperPlugin::authors() const
             << DPluginAuthor(QString::fromUtf8("Igor Antropov"),
                              QString::fromUtf8("antropovi at yahoo dot com"),
                              QString::fromUtf8("(C) 2019"));
+            << DPluginAuthor(QString::fromUtf8("Gilles Caulier"),
+                             QString::fromUtf8("caulier dot gilles at gmail dot com"),
+                             QString::fromUtf8("(C) 2019-2020"),
+                             i18n("Author and Maintainer"))
 }
 
 void WallpaperPlugin::setup(QObject* const parent)
@@ -141,7 +145,9 @@ void WallpaperPlugin::slotWallpaper()
         args << QLatin1String("-e");
         args << QLatin1String("return");
 
-        if (QProcess::execute(QLatin1String("/usr/bin/osascript"), args) == 0)
+        int ret = QProcess::execute(QLatin1String("/usr/bin/osascript"), args);
+
+        if ((ret == -1) || (ret == 2))
         {
             QMessageBox::warning(nullptr,
                                  i18nc("@title:window",
@@ -158,16 +164,21 @@ void WallpaperPlugin::slotWallpaper()
         wchar_t path[MAX_PATH];
         QString pathStr           = images[0].toString().replace(L'/', L'\\');
 
-        if (pathStr.size() > MAX_PATH - 1)
+        if (pathStr.size() > (MAX_PATH - 1))
         {
-            qCWarning(DIGIKAM_GENERAL_LOG) << "Image path to set as wall paper is too long...";
+            QMessageBox::warning(nullptr,
+                                 i18nc("@title:window",
+                                       "Error while to set image as wallpaper"),
+                                 i18n("Cannot change wallpaper image from current desktop with\n"
+                                      "%1\n\nThe file path is too long.",
+                                      images[0].toString()));
             return;
         }
 
         int pathLen               = pathStr.toWCharArray(path);
         path[pathLen]             = L'\0'; // toWCharArray doesn't add NULL terminator
 
-        int    nStyle             = 0;
+        int    nStyle             = 0;     // Stretch image for the moment. TODO: see later to change geometry when setting dialog will be implemented.
 
         CoInitializeEx(0, COINIT_APARTMENTTHREADED);
 
@@ -204,11 +215,26 @@ void WallpaperPlugin::slotWallpaper()
 
         if (FAILED(status))
         {
+            // Code to catch error string from error code with Windows API.
+
+            LPWSTR bufPtr        = nullptr;
+            DWORD err            = GetLastError();
+            FormatMessageW(FORMAT_MESSAGE_ALLOCATE_BUFFER |
+                           FORMAT_MESSAGE_FROM_SYSTEM     |
+                           FORMAT_MESSAGE_IGNORE_INSERTS,
+                           nullptr, err, 0, (LPWSTR)&bufPtr, 0, nullptr);
+
+            const QString errStr = (bufPtr) ? QString::fromUtf16((const ushort*)bufPtr).trimmed()
+                                            : i18n("Unknown Error %1", err);
+            LocalFree(bufPtr);
+
             QMessageBox::warning(nullptr,
                                  i18nc("@title:window",
                                        "Error while to set image as wallpaper"),
-                                 i18n("Cannot change wallpaper image from current desktop with\n%1",
-                                      images[0].toString()));
+                                 i18n("Cannot change wallpaper image from current desktop with\n"
+                                      "%1\n\n%2",
+                                      images[0].toString(),
+                                      errStr));
         }
 
         iADesktop->Release();
@@ -222,8 +248,7 @@ void WallpaperPlugin::slotWallpaper()
             QLatin1String("org.kde.PlasmaShell"),
             QLatin1String("evaluateScript"));
 
-        message << QString::fromUtf8
-        (
+        message << QString::fromUtf8(
             "var allDesktops = desktops();"
             "for (i=0;i<allDesktops.length;i++)"
             "{"
@@ -232,7 +257,8 @@ void WallpaperPlugin::slotWallpaper()
                 "d.currentConfigGroup = Array(\"Wallpaper\", \"org.kde.image\", \"General\");"
                 "d.writeConfig(\"Image\", \"%1\")"
             "}"
-        ).arg(images[0].toString());
+        )
+        .arg(images[0].toString());
 
         QDBusMessage reply = QDBusConnection::sessionBus().call(message);
 
@@ -241,7 +267,8 @@ void WallpaperPlugin::slotWallpaper()
             QMessageBox::warning(nullptr,
                                  i18nc("@title:window",
                                        "Error while to set image as wallpaper"),
-                                 i18n("Cannot change wallpaper image from current desktop\n%1\n\n%2",
+                                 i18n("Cannot change wallpaper image from current desktop\n"
+                                      "%1\n\n%2",
                                       images[0].toString(),
                                       reply.errorMessage()));
         }
