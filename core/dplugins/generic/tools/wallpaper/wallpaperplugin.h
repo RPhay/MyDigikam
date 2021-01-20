@@ -24,6 +24,12 @@
 #ifndef DIGIKAM_WALLPAPER_PLUGIN_H
 #define DIGIKAM_WALLPAPER_PLUGIN_H
 
+// Qt includes
+
+#include <QString>
+#include <QIcon>
+#include <QList>
+
 // Local includes
 
 #include "dplugingeneric.h"
@@ -44,7 +50,7 @@ class WallpaperPlugin : public DPluginGeneric
 public:
 
     explicit WallpaperPlugin(QObject* const parent = nullptr);
-    ~WallpaperPlugin() override;
+    ~WallpaperPlugin()                   override;
 
     QString name()                 const override;
     QString iid()                  const override;
@@ -53,11 +59,15 @@ public:
     QString description()          const override;
     QList<DPluginAuthor> authors() const override;
 
-    void setup(QObject* const) override;
+    void setup(QObject* const)           override;
 
 private Q_SLOTS:
 
     void slotWallpaper();
+
+private:
+
+    bool setWallpaper(const QString& path) const;
 };
 
 } // namespace DigikamGenericWallpaperPlugin
