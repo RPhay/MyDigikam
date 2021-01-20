@@ -126,7 +126,7 @@ void WallpaperPlugin::slotWallpaper()
         args << QLatin1String("-e");
         args << QLatin1String("tell current desktop");
         args << QLatin1String("-e");
-        args << QString::fromUtf8("set picture to \"%1\"").arg(images[0].toString());
+        args << QString::fromUtf8("set picture to POSIX file \"%1\"").arg(images[0].toString());
         args << QLatin1String("-e");
         args << QLatin1String("end tell");
         args << QLatin1String("-e");
@@ -139,31 +139,35 @@ void WallpaperPlugin::slotWallpaper()
             QMessageBox::warning(nullptr,
                                  i18nc("@title:window",
                                        "Error while to set image as wallpaper"),
-                                 i18n("Cannot change wallpaper image from current desktop"));
-            return;
+                                 i18n("Cannot change wallpaper image from current desktop with\n%1",
+                                      images[0].toString()));
         }
 
 #elif defined Q_OS_WIN
 
-        HRESULT hr                                 = CoInitialize(nullptr);
-        IDesktopWallpaper* const pDesktopWallpaper = nullptr;
-        hr                                         = CoCreateInstance(__uuidof(DesktopWallpaper),
-                                                                      nullptr,
-                                                                      CLSCTX_ALL,
-                                                                      IID_PPV_ARGS(&pDesktopWallpaper));
+        // NOTE: IDesktopWallpaper was only defined with Windows >= 8.
+
+        HRESULT hr                           = CoInitialize(nullptr);
+        IDesktopWallpaper* pDesktopWallpaper = nullptr;
+        hr                                   = CoCreateInstance(__uuidof(DesktopWallpaper),
+                                                                nullptr,
+                                                                CLSCTX_ALL,
+                                                                IID_PPV_ARGS(&pDesktopWallpaper));
         if (FAILED(hr))
         {
             QMessageBox::warning(nullptr,
                                  i18nc("@title:window",
                                        "Error while to set image as wallpaper"),
-                                 i18n("Cannot change wallpaper image from current desktop"));
-            return;
+                                 i18n("Cannot change wallpaper image from current desktop\n%1",
+                                      images[0].toString()));
         }
         else
         {
             pDesktopWallpaper->SetWallpaper(nullptr,
                                             images[0].toString().toStdWString().c_str());
         }
+
+        CoUninitialize();
 
 #elif defined HAVE_DBUS
 
@@ -192,7 +196,9 @@ void WallpaperPlugin::slotWallpaper()
             QMessageBox::warning(nullptr,
                                  i18nc("@title:window",
                                        "Error while to set image as wallpaper"),
-                                 reply.errorMessage());
+                                 i18n("Cannot change wallpaper image from current desktop\n%1\n\n%2",
+                                      images[0].toString(),
+                                      reply.errorMessage()));
         }
 
 #endif
