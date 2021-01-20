@@ -53,7 +53,7 @@ bool WallpaperPlugin::setWallpaper(const QString& path) const
     //       To be compatible with Windows 7, we needs to use IActiveDesktop instead.
 
     wchar_t wpath[MAX_PATH];
-    QString wpathStr          = path.replace(L'/', L'\\');
+    QString wpathStr          = QString(path).replace(L'/', L'\\');
 
     if (wpathStr.size() > (MAX_PATH - 1))
     {
@@ -66,7 +66,7 @@ bool WallpaperPlugin::setWallpaper(const QString& path) const
         return false;
     }
 
-    int wpathLen              = wpathStr.toWCharArray(path);
+    int wpathLen              = wpathStr.toWCharArray(wpath);
     wpath[wpathLen]           = L'\0'; // toWCharArray doesn't add NULL terminator
 
     int nStyle                = 0;     // Stretch image for the moment. TODO: see later to change geometry when setting dialog will be implemented.
@@ -120,8 +120,8 @@ bool WallpaperPlugin::setWallpaper(const QString& path) const
                        0,
                        nullptr);
 
-        const QString errStr = (bufPtr) ? QString::fromUtf16((const ushort*)bufPtr).trimmed()
-                                        : i18n("Unknown Error %1", werr);
+        QString errStr = (bufPtr) ? QString::fromUtf16((const ushort*)bufPtr).trimmed()
+                                  : i18n("Unknown Error %1", werr);
         LocalFree(bufPtr);
 
         QMessageBox::warning(nullptr,
