@@ -73,7 +73,7 @@ bool s_checkErrorCode(HRESULT status, const QString& path, const QString& contex
                              i18nc("@title:window",
                                    "Error while to set image as wallpaper"),
                              i18n("Cannot change wallpaper image from current desktop with\n"
-                                  "%1\n\nContext:%2\n\nError:%3",
+                                  "%1\n\nContext: %2\n\nError: %3",
                                   path,
                                   context,
                                   errStr));
