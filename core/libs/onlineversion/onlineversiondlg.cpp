@@ -478,8 +478,8 @@ void OnlineVersionDlg::slotHelp()
 
 void OnlineVersionDlg::slotSetupUpdate()
 {
-    emit signalSetupUpdate();
     close();
+    emit signalSetupUpdate();
 }
 
 } // namespace Digikam
