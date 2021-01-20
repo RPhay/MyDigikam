@@ -201,6 +201,15 @@ void WallpaperPlugin::slotWallpaper()
         status = iADesktop->SetWallpaperOptions(&wOption, 0);
         status = iADesktop->ApplyChanges(AD_APPLY_ALL);
 
+        if (FAILED(status))
+        {
+            QMessageBox::warning(nullptr,
+                                 i18nc("@title:window",
+                                       "Error while to set image as wallpaper"),
+                                 i18n("Cannot change wallpaper image from current desktop with\n%1",
+                                      images[0].toString()));
+        }
+
         iADesktop->Release();
         CoUninitialize();
 
