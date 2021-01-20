@@ -47,7 +47,7 @@
 namespace DigikamGenericWallpaperPlugin
 {
 
-void s_checkErrorCode(HRESULT status, const QString& path, const QString& context)
+bool s_checkErrorCode(HRESULT status, const QString& path, const QString& context)
 {
     if (FAILED(status))
     {
