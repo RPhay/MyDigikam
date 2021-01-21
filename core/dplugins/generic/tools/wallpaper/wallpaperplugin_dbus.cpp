@@ -71,8 +71,8 @@ bool WallpaperPlugin::setWallpaper(const QString& path) const
         QMessageBox::warning(nullptr,
                              i18nc("@title:window",
                                    "Error while to set image as wallpaper"),
-                             i18n("Cannot change wallpaper image from current desktop\n"
-                                  "%1\n\n%2",
+                             i18n("Cannot change wallpaper image from current desktop with\n"
+                                  "%1\n\nError: %2",
                                   path,
                                   reply.errorMessage()));
 
