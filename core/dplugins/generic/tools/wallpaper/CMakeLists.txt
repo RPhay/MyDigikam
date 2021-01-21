@@ -22,16 +22,19 @@ set(wallpaperplugin_SRCS
     ${CMAKE_CURRENT_SOURCE_DIR}/wallpaperplugin.cpp
 )
 
-
 if(WIN32)
 
     set(wallpaperplugin_SRCS ${wallpaperplugin_SRCS}
                              ${CMAKE_CURRENT_SOURCE_DIR}/wallpaperplugin_windows.cpp)
 
+    set(compile_wallpaperplugin ON)
+
 elseif(APPLE)
 
     set(wallpaperplugin_SRCS ${wallpaperplugin_SRCS}
                              ${CMAKE_CURRENT_SOURCE_DIR}/wallpaperplugin_macos.cpp)
+
+    set(compile_wallpaperplugin ON)
 
 elseif(ENABLE_DBUS)
 
@@ -40,9 +43,20 @@ elseif(ENABLE_DBUS)
     set(wallpaperplugin_SRCS ${wallpaperplugin_SRCS}
                              ${CMAKE_CURRENT_SOURCE_DIR}/wallpaperplugin_dbus.cpp)
 
+    set(compile_wallpaperplugin ON)
+
 endif()
 
+if(compile_wallpaperplugin)
 
-DIGIKAM_ADD_GENERIC_PLUGIN(NAME    Wallpaper
-                           SOURCES ${wallpaperplugin_SRCS}
-)
+    message(STATUS " WallPaper plugin will be compiled......... YES")
+
+    DIGIKAM_ADD_GENERIC_PLUGIN(NAME    Wallpaper
+                               SOURCES ${wallpaperplugin_SRCS}
+    )
+
+else()
+
+    message(STATUS " WallPaper plugin will be compiled......... NO")
+
+endif()
