@@ -84,7 +84,7 @@ bool s_checkErrorCode(HRESULT status, const QString& path, const QString& contex
     return true;
 }
 
-bool WallpaperPlugin::setWallpaper(const QString& path) const
+bool WallpaperPlugin::setWallpaper(const QString& path, int layout) const
 {
     // NOTE: IDesktopWallpaper is only defined with Windows >= 8.
     //       To be compatible with Windows 7, we needs to use IActiveDesktop instead.
@@ -106,8 +106,6 @@ bool WallpaperPlugin::setWallpaper(const QString& path) const
     int wpathLen              = wpathStr.toWCharArray(wpath);
     wpath[wpathLen]           = L'\0'; // toWCharArray doesn't add NULL terminator
 
-    int nStyle                = 0;     // Stretch image for the moment. TODO: see later to change geometry when setting dialog will be implemented.
-
     CoInitializeEx(0, COINIT_APARTMENTTHREADED);
 
     IActiveDesktop* iADesktop = nullptr;
@@ -128,21 +126,21 @@ bool WallpaperPlugin::setWallpaper(const QString& path) const
     ZeroMemory(&wOption, sizeof(WALLPAPEROPT));
     wOption.dwSize            = sizeof(WALLPAPEROPT);
 
-    switch (nStyle)
+    switch (layout)
     {
-        case 1:
+        case Mosaic:
         {
             wOption.dwStyle = WPSTYLE_TILE;
             break;
         }
 
-        case 2:
+        case Centered:
         {
             wOption.dwStyle = WPSTYLE_CENTER;
             break;
         }
 
-        default:
+        default:    // *Adjusted*
         {
             wOption.dwStyle = WPSTYLE_STRETCH;
             break;

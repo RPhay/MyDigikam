@@ -20,6 +20,7 @@ include_directories(${CMAKE_CURRENT_SOURCE_DIR}
 
 set(wallpaperplugin_SRCS
     ${CMAKE_CURRENT_SOURCE_DIR}/wallpaperplugin.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/wallpaperplugindlg.cpp
 )
 
 if(WIN32)

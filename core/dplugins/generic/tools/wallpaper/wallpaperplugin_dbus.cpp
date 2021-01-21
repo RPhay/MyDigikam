@@ -42,15 +42,15 @@
 namespace DigikamGenericWallpaperPlugin
 {
 
-bool WallpaperPlugin::setWallpaper(const QString& path) const
+bool WallpaperPlugin::setWallpaper(const QString& path, int layout) const
 {
     QDBusMessage message = QDBusMessage::createMethodCall
-    (
-        QLatin1String("org.kde.plasmashell"),
-        QLatin1String("/PlasmaShell"),
-        QLatin1String("org.kde.PlasmaShell"),
-        QLatin1String("evaluateScript")
-    );
+        (
+            QLatin1String("org.kde.plasmashell"),
+            QLatin1String("/PlasmaShell"),
+            QLatin1String("org.kde.PlasmaShell"),
+            QLatin1String("evaluateScript")
+        );
 
     /**
      * Exemple of WallPaper settings from plasma-org.kde.plasma.desktop-appletsrc:
@@ -64,25 +64,32 @@ bool WallpaperPlugin::setWallpaper(const QString& path) const
      * FillMode can take these values:
      *    0 = Adjusted
      *    1 = Adjusted with apect ratio
-     *    2 = Adjusted and cropped
-     *    3 = Mosaic
+     *    2 = Adjusted and cropped      (Strech)
+     *    3 = Mosaic                    (Tile)
      *    4 = ???
      *    5 = ???
-     *    6 = Centered
+     *    6 = Centered                  (Center)
+     *
+     * [Containments][1] = screen 1
+     * [Containments][2] = screen 2
+     * [Containments][3] = screen 3
+     * etc.
      */
 
     message << QString::fromUtf8
-    (
-        "var allDesktops = desktops();"
-        "for (i=0;i<allDesktops.length;i++)"
-        "{"
-            "d = allDesktops[i];"
-            "d.wallpaperPlugin = \"org.kde.image\";"
-            "d.currentConfigGroup = Array(\"Wallpaper\", \"org.kde.image\", \"General\");"
-            "d.writeConfig(\"Image\", \"%1\")"
-        "}"
-    )
-    .arg(path);
+        (
+            "var allDesktops = desktops();"
+            "for (i=0;i<allDesktops.length;i++)"
+            "{"
+                "d = allDesktops[i];"
+                "d.wallpaperPlugin = \"org.kde.image\";"
+                "d.currentConfigGroup = Array(\"Wallpaper\", \"org.kde.image\", \"General\");"
+                "d.writeConfig(\"Image\", \"%1\");"
+                "d.writeConfig(\"FillMode\", \"%2\")"
+            "}"
+        )
+        .arg(path)
+        .arg(layout);
 
     QDBusMessage reply = QDBusConnection::sessionBus().call(message);
 

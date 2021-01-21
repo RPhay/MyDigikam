@@ -40,8 +40,15 @@
 namespace DigikamGenericWallpaperPlugin
 {
 
-bool WallpaperPlugin::setWallpaper(const QString& path) const
+bool WallpaperPlugin::setWallpaper(const QString& path, int layout) const
 {
+    /**
+     * NOTE: sound like macOS < BigSur do not provide a way to customize the wallpaper layout.
+     * Find a way to pass layout setting to osascript.
+     * Possible values are in this order from macOS control panel: Adjusted, AdjustedAspectRatio, AdjustedCropped, Centered, Mosaic.
+     */
+    Q_UNUSED(layout);
+
     QStringList args;
     args << QLatin1String("-e");
     args << QLatin1String("tell application \"System Events\"");

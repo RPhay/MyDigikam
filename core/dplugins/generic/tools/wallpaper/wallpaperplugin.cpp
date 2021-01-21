@@ -23,6 +23,10 @@
 
 #include "wallpaperplugin.h"
 
+// Qt includes
+
+#include <QPointer>
+
 // KDE includes
 
 #include <klocalizedstring.h>
@@ -30,6 +34,7 @@
 // Local includes
 
 #include "digikam_debug.h"
+#include "wallpaperplugindlg.h"
 
 namespace DigikamGenericWallpaperPlugin
 {
@@ -78,7 +83,7 @@ QList<DPluginAuthor> WallpaperPlugin::authors() const
                              QString::fromUtf8("(C) 2019"))
             << DPluginAuthor(QString::fromUtf8("Gilles Caulier"),
                              QString::fromUtf8("caulier dot gilles at gmail dot com"),
-                             QString::fromUtf8("(C) 2019-2020"),
+                             QString::fromUtf8("(C) 2019-2021"),
                              i18n("Author and Maintainer"));
 }
 
@@ -108,7 +113,22 @@ void WallpaperPlugin::slotWallpaper()
 
     if (!images.isEmpty())
     {
+
+#ifndef Q_OS_MACOS
+
+        QPointer<WallpaperPluginDlg> dlg = new WallpaperPluginDlg(this);
+
+        if (dlg->exec() == QDialog::Accepted)
+        {
+            setWallpaper(images[0].toString(), dlg->wallpaperLayout());
+        }
+
+#else
+
         setWallpaper(images[0].toString());
+
+#endif
+
     }
 }
 

@@ -49,6 +49,20 @@ class WallpaperPlugin : public DPluginGeneric
 
 public:
 
+    /**
+     * Default values for Plasma Wallpaper plugin.
+     */
+    enum
+    {
+        Adjusted            = 0,
+        AdjustedAspectRatio = 1,
+        AdjustedCropped     = 2,
+        Mosaic              = 3,
+        Centered            = 6
+    } WallpaperLayout;
+
+public:
+
     explicit WallpaperPlugin(QObject* const parent = nullptr);
     ~WallpaperPlugin()                   override;
 
@@ -67,7 +81,7 @@ private Q_SLOTS:
 
 private:
 
-    bool setWallpaper(const QString& path) const;
+    bool setWallpaper(const QString& path, int layout = AdjustedCropped) const;
 };
 
 } // namespace DigikamGenericWallpaperPlugin
