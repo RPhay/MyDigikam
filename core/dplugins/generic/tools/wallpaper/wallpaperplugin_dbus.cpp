@@ -5,6 +5,7 @@
  *
  * Date        : 2019-04-02
  * Description : plugin to export image as wallpaper - DBUS version.
+ * References  : https://bugs.kde.org/show_bug.cgi?id=217950
  *
  * Copyright (C) 2019      by Igor Antropov <antropovi at yahoo dot com>
  * Copyright (C) 2019-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
