@@ -74,6 +74,44 @@ private:
     Private* const d;
 };
 
+// ----------------------------------------------------------------------------
+
+class DIGIKAM_EXPORT DownloadInfo
+{
+public:
+
+    explicit DownloadInfo()
+      : size(0)
+    {
+    };
+
+    ~DownloadInfo()
+    {
+    };
+
+    /**
+     * The file path on the server
+     */
+    QString path;
+
+    /**
+     * The file name on the server
+     */
+    QString name;
+
+    /**
+     * The file hash as SHA256
+     */
+    QString hash;
+
+    /**
+     * The file size
+     */
+    qint64  size;
+};
+
+// ----------------------------------------------------------------------------
+
 } // namespace Digikam
 
 #endif // DIGIKAM_FILES_DOWNLOADER_H
