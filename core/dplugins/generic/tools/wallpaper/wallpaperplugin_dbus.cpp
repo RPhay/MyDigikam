@@ -52,6 +52,25 @@ bool WallpaperPlugin::setWallpaper(const QString& path) const
         QLatin1String("evaluateScript")
     );
 
+    /**
+     * Exemple of WallPaper settings from plasma-org.kde.plasma.desktop-appletsrc:
+     *
+     * [Containments][1][Wallpaper][org.kde.image][General]
+     * FillMode=2
+     * Image=file:///home/gilles/Images/M104_left.jpg
+     * height=1440
+     * width=2560
+     *
+     * FillMode can take these values:
+     *    0 = Adjusted
+     *    1 = Adjusted with apect ratio
+     *    2 = Adjusted and cropped
+     *    3 = Mosaic
+     *    4 = ???
+     *    5 = ???
+     *    6 = Centered
+     */
+
     message << QString::fromUtf8
     (
         "var allDesktops = desktops();"
