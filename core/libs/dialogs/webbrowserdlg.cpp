@@ -96,6 +96,9 @@ WebBrowserDlg::WebBrowserDlg(const QUrl& url, QWidget* const parent, bool hideDe
 #ifdef HAVE_QWEBENGINE
     d->browser = new QWebEngineView(this);
     d->browser->page()->profile()->cookieStore()->deleteAllCookies();
+    QString userAgent = d->browser->page()->profile()->httpUserAgent();
+    userAgent.replace(QLatin1String("Chrome/"), QLatin1String("QWebEngine/"));
+    d->browser->page()->profile()->setHttpUserAgent(userAgent);
 #else
     d->browser = new QWebView(this);
     d->browser->settings()->setAttribute(QWebSettings::LocalStorageEnabled, true);
