@@ -21,19 +21,11 @@
  *
  * ============================================================ */
 
-#include "digikam_config.h"
 #include "wallpaperplugin.h"
 
 // Qt includes
 
-#include <QString>
-#include <QMessageBox>
-#include <QProcess>
-
-#ifdef HAVE_DBUS
-#   include <QDBusMessage>
-#   include <QDBusConnection>
-#endif
+#include <QPointer>
 
 // KDE includes
 
@@ -42,14 +34,7 @@
 // Local includes
 
 #include "digikam_debug.h"
-
-// Windows includes
-
-#ifdef Q_OS_WIN
-#   include <windows.h>
-#   include <wininet.h>
-#   include <shlobj.h>
-#endif
+#include "wallpaperplugindlg.h"
 
 namespace DigikamGenericWallpaperPlugin
 {
@@ -95,11 +80,11 @@ QList<DPluginAuthor> WallpaperPlugin::authors() const
     return QList<DPluginAuthor>()
             << DPluginAuthor(QString::fromUtf8("Igor Antropov"),
                              QString::fromUtf8("antropovi at yahoo dot com"),
-                             QString::fromUtf8("(C) 2019"));
+                             QString::fromUtf8("(C) 2019"))
             << DPluginAuthor(QString::fromUtf8("Gilles Caulier"),
                              QString::fromUtf8("caulier dot gilles at gmail dot com"),
-                             QString::fromUtf8("(C) 2019-2020"),
-                             i18n("Author and Maintainer"))
+                             QString::fromUtf8("(C) 2019-2021"),
+                             i18n("Author and Maintainer"));
 }
 
 void WallpaperPlugin::setup(QObject* const parent)
@@ -129,149 +114,18 @@ void WallpaperPlugin::slotWallpaper()
     if (!images.isEmpty())
     {
 
-#if defined Q_OS_MACOS
+#ifndef Q_OS_MACOS
 
-        QStringList args;
-        args << QLatin1String("-e");
-        args << QLatin1String("tell application \"System Events\"");
-        args << QLatin1String("-e");
-        args << QLatin1String("tell current desktop");
-        args << QLatin1String("-e");
-        args << QString::fromUtf8("set picture to POSIX file \"%1\"").arg(images[0].toString());
-        args << QLatin1String("-e");
-        args << QLatin1String("end tell");
-        args << QLatin1String("-e");
-        args << QLatin1String("end tell");
-        args << QLatin1String("-e");
-        args << QLatin1String("return");
+        QPointer<WallpaperPluginDlg> dlg = new WallpaperPluginDlg(this);
 
-        int ret = QProcess::execute(QLatin1String("/usr/bin/osascript"), args);
-
-        if ((ret == -1) || (ret == 2))
+        if (dlg->exec() == QDialog::Accepted)
         {
-            QMessageBox::warning(nullptr,
-                                 i18nc("@title:window",
-                                       "Error while to set image as wallpaper"),
-                                 i18n("Cannot change wallpaper image from current desktop with\n%1",
-                                      images[0].toString()));
+            setWallpaper(images[0].toString(), dlg->wallpaperLayout());
         }
 
-#elif defined Q_OS_WIN
+#else
 
-        // NOTE: IDesktopWallpaper is only defined with Windows >= 8.
-        //       To be compatible with Windows 7, we needs to use IActiveDesktop instead.
-
-        wchar_t path[MAX_PATH];
-        QString pathStr           = images[0].toString().replace(L'/', L'\\');
-
-        if (pathStr.size() > (MAX_PATH - 1))
-        {
-            QMessageBox::warning(nullptr,
-                                 i18nc("@title:window",
-                                       "Error while to set image as wallpaper"),
-                                 i18n("Cannot change wallpaper image from current desktop with\n"
-                                      "%1\n\nThe file path is too long.",
-                                      images[0].toString()));
-            return;
-        }
-
-        int pathLen               = pathStr.toWCharArray(path);
-        path[pathLen]             = L'\0'; // toWCharArray doesn't add NULL terminator
-
-        int    nStyle             = 0;     // Stretch image for the moment. TODO: see later to change geometry when setting dialog will be implemented.
-
-        CoInitializeEx(0, COINIT_APARTMENTTHREADED);
-
-        IActiveDesktop* iADesktop = nullptr;
-        HRESULT status            = CoCreateInstance(CLSID_ActiveDesktop, NULL, CLSCTX_INPROC_SERVER, IID_IActiveDesktop, (void**)&iADesktop);
-        WALLPAPEROPT wOption;
-        ZeroMemory(&wOption, sizeof(WALLPAPEROPT));
-        wOption.dwSize            = sizeof(WALLPAPEROPT);
-
-        switch (nStyle)
-        {
-            case 1:
-            {
-                wOption.dwStyle = WPSTYLE_TILE;
-                break;
-            }
-
-            case 2:
-            {
-                wOption.dwStyle = WPSTYLE_CENTER;
-                break;
-            }
-
-            default:
-            {
-                wOption.dwStyle = WPSTYLE_STRETCH;
-                break;
-            }
-        }
-
-        status = iADesktop->SetWallpaper(path, 0);
-        status = iADesktop->SetWallpaperOptions(&wOption, 0);
-        status = iADesktop->ApplyChanges(AD_APPLY_ALL);
-
-        if (FAILED(status))
-        {
-            // Code to catch error string from error code with Windows API.
-
-            LPWSTR bufPtr        = nullptr;
-            DWORD err            = GetLastError();
-            FormatMessageW(FORMAT_MESSAGE_ALLOCATE_BUFFER |
-                           FORMAT_MESSAGE_FROM_SYSTEM     |
-                           FORMAT_MESSAGE_IGNORE_INSERTS,
-                           nullptr, err, 0, (LPWSTR)&bufPtr, 0, nullptr);
-
-            const QString errStr = (bufPtr) ? QString::fromUtf16((const ushort*)bufPtr).trimmed()
-                                            : i18n("Unknown Error %1", err);
-            LocalFree(bufPtr);
-
-            QMessageBox::warning(nullptr,
-                                 i18nc("@title:window",
-                                       "Error while to set image as wallpaper"),
-                                 i18n("Cannot change wallpaper image from current desktop with\n"
-                                      "%1\n\n%2",
-                                      images[0].toString(),
-                                      errStr));
-        }
-
-        iADesktop->Release();
-        CoUninitialize();
-
-#elif defined HAVE_DBUS
-
-        QDBusMessage message = QDBusMessage::createMethodCall(
-            QLatin1String("org.kde.plasmashell"),
-            QLatin1String("/PlasmaShell"),
-            QLatin1String("org.kde.PlasmaShell"),
-            QLatin1String("evaluateScript"));
-
-        message << QString::fromUtf8(
-            "var allDesktops = desktops();"
-            "for (i=0;i<allDesktops.length;i++)"
-            "{"
-                "d = allDesktops[i];"
-                "d.wallpaperPlugin = \"org.kde.image\";"
-                "d.currentConfigGroup = Array(\"Wallpaper\", \"org.kde.image\", \"General\");"
-                "d.writeConfig(\"Image\", \"%1\")"
-            "}"
-        )
-        .arg(images[0].toString());
-
-        QDBusMessage reply = QDBusConnection::sessionBus().call(message);
-
-        if (reply.type() == QDBusMessage::ErrorMessage)
-        {
-            QMessageBox::warning(nullptr,
-                                 i18nc("@title:window",
-                                       "Error while to set image as wallpaper"),
-                                 i18n("Cannot change wallpaper image from current desktop\n"
-                                      "%1\n\n%2",
-                                      images[0].toString(),
-                                      reply.errorMessage()));
-        }
+        setWallpaper(images[0].toString());
 
 #endif
 

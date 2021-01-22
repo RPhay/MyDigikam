@@ -24,6 +24,12 @@
 #ifndef DIGIKAM_WALLPAPER_PLUGIN_H
 #define DIGIKAM_WALLPAPER_PLUGIN_H
 
+// Qt includes
+
+#include <QString>
+#include <QIcon>
+#include <QList>
+
 // Local includes
 
 #include "dplugingeneric.h"
@@ -43,8 +49,22 @@ class WallpaperPlugin : public DPluginGeneric
 
 public:
 
+    /**
+     * Default values for Plasma Wallpaper plugin.
+     */
+    enum
+    {
+        Adjusted            = 0,
+        AdjustedAspectRatio = 1,
+        AdjustedCropped     = 2,
+        Mosaic              = 3,
+        Centered            = 6
+    } WallpaperLayout;
+
+public:
+
     explicit WallpaperPlugin(QObject* const parent = nullptr);
-    ~WallpaperPlugin() override;
+    ~WallpaperPlugin()                   override;
 
     QString name()                 const override;
     QString iid()                  const override;
@@ -53,11 +73,15 @@ public:
     QString description()          const override;
     QList<DPluginAuthor> authors() const override;
 
-    void setup(QObject* const) override;
+    void setup(QObject* const)           override;
 
 private Q_SLOTS:
 
     void slotWallpaper();
+
+private:
+
+    bool setWallpaper(const QString& path, int layout = AdjustedCropped) const;
 };
 
 } // namespace DigikamGenericWallpaperPlugin
