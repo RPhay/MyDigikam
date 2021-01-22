@@ -51,6 +51,9 @@ if(MINGW)
 
 elseif(APPLE)
 
+    configure_file(${CMAKE_CURRENT_SOURCE_DIR}/qtav-rules-macos.patch.cmake.in
+                   ${CMAKE_CURRENT_BINARY_DIR}/qtav-rules-macos.patch)
+
     ExternalProject_Add(ext_qtav
 
         DOWNLOAD_DIR ${EXTERNALS_DOWNLOAD_DIR}
@@ -58,7 +61,7 @@ elseif(APPLE)
         GIT_REPOSITORY https://github.com/wang-bin/QtAV.git
 #        GIT_TAG ${QTAV_VERSION}
 
-        PATCH_COMMAND ${PATCH_COMMAND} -p1 -i ${CMAKE_CURRENT_SOURCE_DIR}/qtav-rules-macos.patch
+        PATCH_COMMAND ${PATCH_COMMAND} -p1 -i ${CMAKE_CURRENT_BINARY_DIR}/qtav-rules-macos.patch
 
         CONFIGURE_COMMAND git submodule update --init &&
                           rm -rfv ${INSTALL_ROOT}/libexec/qt5/lib/QtAV.framework &&
