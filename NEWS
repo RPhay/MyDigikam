@@ -295,4 +295,5 @@ BUGFIXES:
 274 ==> 427333 - Face detection crashes due to pure virtual method call in LoadingCache.
 275 ==> 429307 - Crash with face detection under Windows.
 276 ==> 427380 - Crashes when running face detection.
-277 ==> 
+277 ==> 431907 - Authentication to Google fails with "This browser or app may not be secure."
+278 ==> 
