@@ -559,8 +559,8 @@ void DigikamApp::slotImageSelected(const ItemInfoList& selection, const ItemInfo
     qint64 listAllFileSize               = 0;
     qint64 selectionFileSize             = 0;
 
-    int numOfImagesInAlbum               = 0;
     int numImagesWithGrouped             = listAll.count();
+    int numOfImagesInViewModel           = d->view->itemCount();
     int numImagesWithoutGrouped          = d->view->allUrls(false).count();
 
     ItemInfoList selectionWithoutGrouped = d->view->selectedInfoList(true, false);
@@ -573,13 +573,6 @@ void DigikamApp::slotImageSelected(const ItemInfoList& selection, const ItemInfo
     foreach (const ItemInfo& info, listAll)
     {
         listAllFileSize += info.fileSize();
-    }
-
-    Album* const album                   = d->view->currentAlbum();
-
-    if (album && (album->type() == Album::PHYSICAL))
-    {
-        numOfImagesInAlbum = d->view->itemCount();
     }
 
     QString statusBarSelectionText;
@@ -688,11 +681,11 @@ void DigikamApp::slotImageSelected(const ItemInfoList& selection, const ItemInfo
         }
     }
 
-    if (numImagesWithGrouped < numOfImagesInAlbum)
+    if (numImagesWithGrouped < numOfImagesInViewModel)
     {
         statusBarSelectionText += QLatin1String(" - ");
         statusBarSelectionText += i18np("%1 item hidden", "%1 items hidden",
-                                        numOfImagesInAlbum - numImagesWithGrouped);
+                                        numOfImagesInViewModel - numImagesWithGrouped);
     }
 
     d->statusLabel->setAdjustedText(statusBarSelectionText);
