@@ -308,6 +308,7 @@ private Q_SLOTS:
 
 public:
 
+    int       itemCount()                                                          const;
     QUrl      currentUrl()                                                         const;
     bool      hasCurrentItem()                                                     const;
     ItemInfo  currentInfo()                                                        const;

@@ -536,6 +536,11 @@ ItemInfoList ItemIconView::allInfo(const ApplicationSettings::OperationType type
     return allInfo(allNeedGroupResolving(type));
 }
 
+int ItemIconView::itemCount() const
+{
+    return d->iconView->imageModel()->itemCount();
+}
+
 QUrl ItemIconView::currentUrl() const
 {
     const ItemInfo cInfo = currentInfo();

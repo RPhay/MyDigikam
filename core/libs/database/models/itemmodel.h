@@ -221,6 +221,7 @@ public:
     bool hasImage(qlonglong id, const QVariant& extraValue)                                                 const;
 
     bool isEmpty()                                                                                          const;
+    int  itemCount()                                                                                        const;
 
     // Drag and Drop
     DECLARE_MODEL_DRAG_DROP_METHODS

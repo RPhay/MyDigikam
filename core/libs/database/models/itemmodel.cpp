@@ -182,6 +182,11 @@ bool ItemModel::isEmpty() const
     return d->infos.isEmpty();
 }
 
+int ItemModel::itemCount() const
+{
+    return d->infos.count();
+}
+
 void ItemModel::setWatchFlags(const DatabaseFields::Set& set)
 {
     d->watchFlags = set;
