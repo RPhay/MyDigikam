@@ -89,23 +89,6 @@ bool WallpaperPlugin::setWallpaper(const QString& path, int layout) const
     // NOTE: IDesktopWallpaper is only defined with Windows >= 8.
     //       To be compatible with Windows 7, we needs to use IActiveDesktop instead.
 
-    wchar_t wpath[MAX_PATH];
-    QString wpathStr          = QString(path).replace(L'/', L'\\');
-
-    if (wpathStr.size() > (MAX_PATH - 1))
-    {
-        QMessageBox::warning(nullptr,
-                             i18nc("@title:window",
-                                   "Error while to set image as wallpaper"),
-                             i18n("Cannot change wallpaper image from current desktop with\n"
-                                  "%1\n\nThe file path is too long.",
-                                  path));
-        return false;
-    }
-
-    int wpathLen              = wpathStr.toWCharArray(wpath);
-    wpath[wpathLen]           = L'\0'; // toWCharArray doesn't add NULL terminator
-
     CoInitializeEx(0, COINIT_APARTMENTTHREADED);
 
     IActiveDesktop* iADesktop = nullptr;
@@ -147,7 +130,7 @@ bool WallpaperPlugin::setWallpaper(const QString& path, int layout) const
         }
     }
 
-    status = iADesktop->SetWallpaper(wpath, 0);
+    status = iADesktop->SetWallpaper((const wchar_t*)path.utf16(), 0);
 
     if (!s_checkErrorCode(status, path, i18n("Cannot set wall paper image path.")))
     {
