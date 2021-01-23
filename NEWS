@@ -297,4 +297,5 @@ BUGFIXES:
 276 ==> 427380 - Crashes when running face detection.
 277 ==> 431907 - Authentication to Google fails with "This browser or app may not be secure."
 278 ==> 431964 - Face tags are not read correctly on certain images with more than one Microsoft People Tags XMP metadata.
-279 ==> 
+279 ==> 431831 - How much data gets sent to digikam.org for face recognition.
+280 ==> 
