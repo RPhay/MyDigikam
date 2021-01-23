@@ -57,14 +57,13 @@ bool DMetadata::getItemFacesMap(QMultiMap<QString,QVariant>& faces) const
 
     for (int i = 1 ; ; ++i)
     {
+        QString person     = getXmpTagString(personPathTemplate.arg(i).toLatin1().constData(), false);
         QString rectString = getXmpTagString(rectPathTemplate.arg(i).toLatin1().constData(), false);
 
-        if (rectString.isEmpty())
+        if (rectString.isEmpty() && person.isEmpty())
         {
             break;
         }
-
-        QString person     = getXmpTagString(personPathTemplate.arg(i).toLatin1().constData(), false);
 
         // The WLPG tags have the format X.XX, Y.YY, W.WW, H.HH
         // That is, four decimal numbers ranging from 0-1.
