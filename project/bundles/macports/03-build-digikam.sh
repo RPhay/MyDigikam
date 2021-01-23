@@ -60,6 +60,7 @@ cmake $ORIG_WD/../3rdparty \
        -DINSTALL_ROOT=$INSTALL_PREFIX \
        -DEXTERNALS_DOWNLOAD_DIR=$DOWNLOAD_DIR \
        -DENABLE_QTWEBENGINE=$DK_QTWEBENGINE \
+       -DMACOSX_DEPLOYMENT_TARGET=$OSX_MIN_TARGET \
        -Wno-dev
 
 cmake --build . --config RelWithDebInfo --target ext_exiv2   -- -j$CPU_CORES
