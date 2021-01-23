@@ -233,6 +233,13 @@ SetupMisc::SetupMisc(QWidget* const parent)
     connect(updateNow, &QPushButton::pressed,
             this, [=]()
         {
+            if (!checkSettings())
+            {
+                return;
+            }
+
+            applySettings();
+
             if (parent)
             {
                 parent->close();
