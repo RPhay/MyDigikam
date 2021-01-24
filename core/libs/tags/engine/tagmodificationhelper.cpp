@@ -668,6 +668,11 @@ void TagModificationHelper::slotMultipleFaceTagDel(QList<TAlbum*>& tags)
                 FaceDbAccess access;
                 access.db()->deleteIdentity(uuid);
             }
+
+            // reset tag icon
+
+            QString errMsg;
+            AlbumManager::instance()->updateTAlbumIcon(tAlbum, tAlbum->standardIconName(), 0, errMsg);
         }
     }
 }
@@ -689,6 +694,11 @@ void TagModificationHelper::slotTagToFaceTag(TAlbum* tAlbum)
     if (!FaceTags::isPerson(tAlbum->id()))
     {
         FaceTags::ensureIsPerson(tAlbum->id());
+
+        // reset tag icon
+
+        QString errMsg;
+        AlbumManager::instance()->updateTAlbumIcon(tAlbum, tAlbum->standardIconName(), 0, errMsg);
     }
 }
 
