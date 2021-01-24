@@ -69,14 +69,12 @@ QList<ItemInfo> ItemInfo::fromUniqueHash(const QString& uniqueHash, qlonglong fi
 
 uint ItemInfo::hash() const
 {
-    if (m_data)
-    {
-        return ::qHash(m_data->id);
-    }
-    else
+    if (!m_data)
     {
         return ::qHash((int)0);
     }
+
+    return ::qHash(m_data->id);
 }
 
 QString ItemInfo::uniqueHash() const
