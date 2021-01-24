@@ -202,7 +202,7 @@ TimeAdjustSettings::TimeAdjustSettings(QWidget* const parent)
     d->useCustTimeInput       = new QTimeEdit(d->useSettingsBox);
     d->useCustTimeInput->setDisplayFormat(QLatin1String("hh:mm:ss"));
     d->useCustomDateTodayBtn  = new QToolButton(d->useSettingsBox);
-    d->useCustomDateTodayBtn->setIcon(QIcon::fromTheme(QLatin1String("go-jump-today")));
+    d->useCustomDateTodayBtn->setIcon(QIcon::fromTheme(QLatin1String("view-calendar")));
     d->useCustomDateTodayBtn->setToolTip(i18n("Reset to current date"));
 
     useGBLayout->addWidget(d->useApplDateBtn,         0, 0, 1, 1);

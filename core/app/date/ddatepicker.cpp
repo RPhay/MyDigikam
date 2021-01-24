@@ -117,7 +117,7 @@ void DDatePicker::initWidget(const QDate& dt)
     d->selectWeek  = new QComboBox(this);       // read only week selection
     d->selectWeek->setFocusPolicy(Qt::NoFocus);
     d->todayButton = new QToolButton(this);
-    d->todayButton->setIcon(QIcon::fromTheme(QLatin1String("go-jump-today")));
+    d->todayButton->setIcon(QIcon::fromTheme(QLatin1String("view-calendar")));
 
     d->yearForward->setToolTip(i18n("Next year"));
     d->yearBackward->setToolTip(i18n("Previous year"));

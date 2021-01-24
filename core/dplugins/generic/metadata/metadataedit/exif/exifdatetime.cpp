@@ -134,7 +134,7 @@ EXIFDateTime::EXIFDateTime(QWidget* const parent)
     d->syncIPTCDateCheck      = new QCheckBox(i18n("Sync IPTC creation date"), this);
 
     d->setTodayCreatedBtn     = new QPushButton();
-    d->setTodayCreatedBtn->setIcon(QIcon::fromTheme(QLatin1String("go-jump-today")));
+    d->setTodayCreatedBtn->setIcon(QIcon::fromTheme(QLatin1String("view-calendar")));
     d->setTodayCreatedBtn->setWhatsThis(i18n("Set creation date to today"));
 
     if (!DMetadata::supportXmp())
@@ -162,7 +162,7 @@ EXIFDateTime::EXIFDateTime(QWidget* const parent)
     d->dateOriginalSubSecEdit->setValue(0);
 
     d->setTodayOriginalBtn     = new QPushButton();
-    d->setTodayOriginalBtn->setIcon(QIcon::fromTheme(QLatin1String("go-jump-today")));
+    d->setTodayOriginalBtn->setIcon(QIcon::fromTheme(QLatin1String("view-calendar")));
     d->setTodayOriginalBtn->setWhatsThis(i18n("Set original date to today"));
 
     d->dateOriginalSel->setWhatsThis(i18n("Set here the date and time when the original image "
@@ -188,7 +188,7 @@ EXIFDateTime::EXIFDateTime(QWidget* const parent)
     d->dateDigitalizedSubSecEdit->setValue(0);
 
     d->setTodayDigitalizedBtn     = new QPushButton();
-    d->setTodayDigitalizedBtn->setIcon(QIcon::fromTheme(QLatin1String("go-jump-today")));
+    d->setTodayDigitalizedBtn->setIcon(QIcon::fromTheme(QLatin1String("view-calendar")));
     d->setTodayDigitalizedBtn->setWhatsThis(i18n("Set digitization date to today"));
 
     d->dateDigitalizedSel->setWhatsThis(i18n("Set here the date and time when the image was "

@@ -140,7 +140,7 @@ XMPOrigin::XMPOrigin(QWidget* const parent)
     d->dateDigitalizedSel->setDisplayFormat(dateTimeFormat);
 
     d->setTodayDigitalizedBtn = new QPushButton();
-    d->setTodayDigitalizedBtn->setIcon(QIcon::fromTheme(QLatin1String("go-jump-today")));
+    d->setTodayDigitalizedBtn->setIcon(QIcon::fromTheme(QLatin1String("view-calendar")));
     d->setTodayDigitalizedBtn->setWhatsThis(i18n("Set digitization date to today"));
 
     d->dateDigitalizedSel->setWhatsThis(i18n("Set here the creation date of "
@@ -161,7 +161,7 @@ XMPOrigin::XMPOrigin(QWidget* const parent)
     d->syncEXIFDateCheck  = new QCheckBox(i18n("Sync Exif creation date"), this);
 
     d->setTodayCreatedBtn = new QPushButton();
-    d->setTodayCreatedBtn->setIcon(QIcon::fromTheme(QLatin1String("go-jump-today")));
+    d->setTodayCreatedBtn->setIcon(QIcon::fromTheme(QLatin1String("view-calendar")));
     d->setTodayCreatedBtn->setWhatsThis(i18n("Set creation date to today"));
 
     d->dateCreatedSel->setWhatsThis(i18n("Set here the creation date of "
@@ -180,7 +180,7 @@ XMPOrigin::XMPOrigin(QWidget* const parent)
     d->dateVideoSel->setDisplayFormat(dateTimeFormat);
 
     d->setTodayVideoBtn = new QPushButton();
-    d->setTodayVideoBtn->setIcon(QIcon::fromTheme(QLatin1String("go-jump-today")));
+    d->setTodayVideoBtn->setIcon(QIcon::fromTheme(QLatin1String("view-calendar")));
     d->setTodayVideoBtn->setWhatsThis(i18n("Set video date to today"));
 
     d->dateVideoSel->setWhatsThis(i18n("Set here the video date of "
