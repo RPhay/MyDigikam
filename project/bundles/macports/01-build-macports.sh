@@ -53,23 +53,31 @@ export PATH=$INSTALL_PREFIX/bin:/$INSTALL_PREFIX/sbin:/$INSTALL_PREFIX/libexec/q
 # Check if /opt exists and standard Macports install path
 
 if [ -d "/opt" ] ; then
+
     if [ -d "/opt/local" ] ; then
+
         echo "---------- A standard Macports install exists on /opt/local."
         echo "           To prevent wrong links from this bundle to this repository"
         echo "           this one must be disabled (moving to /opt/local.back for ex)."
         echo "---------- Aborting..."
         exit;
+
     fi
+
 else
+
     echo "---------- /opt do not exist, creating"
 
     mkdir "/opt"
 
     if [ $? -ne 0 ] ; then
+
         echo "---------- Cannot create /opt directory."
         echo "---------- Aborting..."
         exit;
+
     fi
+
 fi
 
 #################################################################################################
@@ -129,9 +137,11 @@ if [[ $CONTINUE_INSTALL == 0 ]]; then
             sort -t. -rn -k1,1 -k2,2 -k3,3 | head -1)
 
         if [ -z $MP_LASTEST_VER ] ; then
+
             echo "---------- Cannot check the lastest Macports verion from $MP_URL"
             echo "---------- Aborting..."
             exit;
+
         fi
 
         echo "---------- Detected lastest Macports version : $MP_LASTEST_VER"
@@ -144,17 +154,21 @@ if [[ $CONTINUE_INSTALL == 0 ]]; then
     # Build Macports in temporary directory and installation
 
     if [ -d "$MP_BUILDTEMP" ] ; then
-    echo "---------- Removing existing $MP_BUILDTEMP"
-    rm -rf "$MP_BUILDTEMP"
+
+        echo "---------- Removing existing $MP_BUILDTEMP"
+        rm -rf "$MP_BUILDTEMP"
+
     fi
 
     echo "---------- Creating $MP_BUILDTEMP"
     mkdir "$MP_BUILDTEMP"
 
     if [ $? -ne 0 ] ; then
+
         echo "---------- Cannot create temporary directory $MP_BUILDTEMP to compile Macports"
         echo "---------- Aborting..."
         exit;
+
     fi
 
     cd "$MP_BUILDTEMP"
@@ -192,6 +206,16 @@ macosx_deployment_target $OSX_MIN_TARGET
 build_arch $ARCH_TARGET
 EOF
 
+    if [[ $ARCH_TARGET = "arm64" ]] ; then
+
+        # No need to build with both architectures embeded (x86 and ARM) for Apple Silicon target
+
+        cat << EOF >> "$INSTALL_PREFIX/etc/macports/variants.conf"
+-universal
+EOF
+
+    fi
+
 fi
 
 #################################################################################################
@@ -225,6 +249,7 @@ if [[ $MAJOR_OSX_VERSION -lt 11 && $MINOR_OSX_VERSION -lt 10 ]]; then
     port install clang_select
     port install clang-3.4
     port select --set clang mp-clang-3.4
+
 fi
 
 echo -e "\n"
@@ -267,10 +292,14 @@ port install \
              ImageMagick
 
 if [[ $DK_QTWEBENGINE = 1 ]] ; then
+
     export SYSTEM_VERSION_COMPAT=1
     port install qt5-qtwebengine
+
 else
+
     port install qt5-qtwebkit
+
 fi
 
 
@@ -287,11 +316,17 @@ echo -e "\n"
 #################################################################################################
 
 # Create the build dir for the 3rdparty deps
+
 if [ ! -d $BUILDING_DIR ] ; then
+
     mkdir $BUILDING_DIR
+
 fi
+
 if [ ! -d $DOWNLOAD_DIR ] ; then
+
     mkdir $DOWNLOAD_DIR
+
 fi
 
 cd $BUILDING_DIR
@@ -305,9 +340,9 @@ cmake $ORIG_WD/../3rdparty \
        -DENABLE_QTWEBENGINE=$DK_QTWEBENGINE \
        -Wno-dev
 
-#if [[ $DK_QTWEBENGINE = 0 ]] ; then
-#    cmake --build . --config RelWithDebInfo --target ext_qtwebkit    -- -j$CPU_CORES
-#fi
+if [[ $DK_QTWEBENGINE = 0 ]] ; then
+    cmake --build . --config RelWithDebInfo --target ext_qtwebkit    -- -j$CPU_CORES
+fi
 
 cmake --build . --config RelWithDebInfo --target ext_opencv      -- -j$CPU_CORES
 

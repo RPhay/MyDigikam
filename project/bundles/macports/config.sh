@@ -52,7 +52,7 @@ elif [[ $ARCH_TARGET = "arm64" ]] ; then
 
 else
 
-    echo "Unsported or invalid target architecture..."
+    echo "Unsuported or invalid target architecture..."
     exit -1
 
 fi
