@@ -101,7 +101,7 @@ bool ItemInfo::hasCoordinates() const
 {
     if (!m_data)
     {
-        return 0;
+        return false;
     }
 
     if (!m_data->positionsCached)
@@ -116,7 +116,7 @@ bool ItemInfo::hasAltitude() const
 {
     if (!m_data)
     {
-        return 0;
+        return false;
     }
 
     if (!m_data->positionsCached)

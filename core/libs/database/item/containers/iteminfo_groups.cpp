@@ -38,7 +38,7 @@ int ItemInfo::numberOfGroupedImages() const
 {
     if (!m_data)
     {
-        return false;
+        return 0;
     }
 
     return ItemInfoStatic::cache()->getImageGroupedCount(m_data->id);
@@ -88,7 +88,7 @@ void ItemInfoList::loadGroupImageIds() const
 
     for (int i = 0 ; i < infoList.size() ; ++i)
     {
-        const ItemInfo& info            = infoList.at(i);
+        const ItemInfo& info             = infoList.at(i);
         const QList<qlonglong>& groupIds = allGroupIds.at(i);
 
         if (!info.m_data)
