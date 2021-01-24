@@ -173,6 +173,7 @@ QProcessEnvironment adjustedEnvironmentForAppImage()
     QProcessEnvironment env = QProcessEnvironment::systemEnvironment();
 
     // If we are running into AppImage bundle, switch env var to the right values.
+
     if (env.contains(QLatin1String("APPIMAGE_ORIGINAL_LD_LIBRARY_PATH")) &&
         env.contains(QLatin1String("APPIMAGE_ORIGINAL_QT_PLUGIN_PATH"))  &&
         env.contains(QLatin1String("APPIMAGE_ORIGINAL_XDG_DATA_DIRS"))   &&
@@ -241,7 +242,7 @@ void tryInitDrMingw()
     }
 
     int pathLen   = pathStr.toWCharArray(path);
-    path[pathLen] = L'\0'; // toWCharArray doesn't add NULL terminator
+    path[pathLen] = L'\0';                      ///< toWCharArray doesn't add NULL terminator
     HMODULE hMod  = LoadLibraryW(path);
 
     if (!hMod)
@@ -251,6 +252,7 @@ void tryInitDrMingw()
     }
 
     // No need to call ExcHndlInit since the crash handler is installed on DllMain
+
     auto myExcHndlSetLogFileNameA = reinterpret_cast<BOOL (APIENTRY*)(const char*)>(GetProcAddress(hMod, "ExcHndlSetLogFileNameA"));
 
     if (!myExcHndlSetLogFileNameA)
@@ -259,7 +261,8 @@ void tryInitDrMingw()
         return;
     }
 
-    // Set the log file path to %LocalAppData%\kritacrash.log
+    // Set the log file path to %LocalAppData%\digikam_crash.log
+
     QString logFile = QStandardPaths::writableLocation(QStandardPaths::GenericConfigLocation).replace(L'/', L'\\') + QLatin1String("\\digikam_crash.log");
     myExcHndlSetLogFileNameA(logFile.toLocal8Bit().data());
 
