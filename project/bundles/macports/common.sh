@@ -136,9 +136,7 @@ MINOR_OSX_VERSION=$(sw_vers -productVersion | awk -F '.' '{print $1 "." $2}'| cu
 
 if   [[ $MAJOR_OSX_VERSION == "10" ]] ; then
 
-    if   [[ $MINOR_OSX_VERSION == "16" ]]
-        then OSX_CODE_NAME="BigSur"
-    elif   [[ $MINOR_OSX_VERSION == "15" ]]
+    if   [[ $MINOR_OSX_VERSION == "15" ]]
         then OSX_CODE_NAME="Catalina"
     elif [[ $MINOR_OSX_VERSION == "14" ]]
         then OSX_CODE_NAME="Mojave"
