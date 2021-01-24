@@ -38,7 +38,7 @@ double ItemInfo::currentSimilarity() const
 {
     if (!m_data)
     {
-        return 0.0;
+        return 0;
     }
 
     return m_data->currentSimilarity;
