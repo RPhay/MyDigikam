@@ -268,7 +268,7 @@ IPTCEnvelope::IPTCEnvelope(QWidget* const parent)
     d->timeSentSel->setDisplayFormat(timeFormat);
 
     d->setTodaySentBtn = new QPushButton();
-    d->setTodaySentBtn->setIcon(QIcon::fromTheme(QLatin1String("go-jump-today")));
+    d->setTodaySentBtn->setIcon(QIcon::fromTheme(QLatin1String("view-calendar")));
     d->setTodaySentBtn->setWhatsThis(i18n("Set envelope sent date to today"));
 
     d->dateSentSel->setWhatsThis(i18n("Set here the date when the service sent the material."));

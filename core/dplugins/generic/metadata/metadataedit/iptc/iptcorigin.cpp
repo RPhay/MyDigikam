@@ -147,7 +147,7 @@ IPTCOrigin::IPTCOrigin(QWidget* const parent)
     d->timeDigitalizedSel->setDisplayFormat(timeFormat);
 
     d->setTodayDigitalizedBtn = new QPushButton();
-    d->setTodayDigitalizedBtn->setIcon(QIcon::fromTheme(QLatin1String("go-jump-today")));
+    d->setTodayDigitalizedBtn->setIcon(QIcon::fromTheme(QLatin1String("view-calendar")));
     d->setTodayDigitalizedBtn->setWhatsThis(i18n("Set digitization date to today"));
 
     d->dateDigitalizedSel->setWhatsThis(i18n("Set here the creation date of "
@@ -174,7 +174,7 @@ IPTCOrigin::IPTCOrigin(QWidget* const parent)
     d->syncEXIFDateCheck  = new QCheckBox(i18n("Sync Exif creation date"), this);
 
     d->setTodayCreatedBtn = new QPushButton();
-    d->setTodayCreatedBtn->setIcon(QIcon::fromTheme(QLatin1String("go-jump-today")));
+    d->setTodayCreatedBtn->setIcon(QIcon::fromTheme(QLatin1String("view-calendar")));
     d->setTodayCreatedBtn->setWhatsThis(i18n("Set creation date to today"));
 
     d->dateCreatedSel->setWhatsThis(i18n("Set here the creation date of "

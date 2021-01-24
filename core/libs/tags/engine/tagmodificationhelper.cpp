@@ -559,10 +559,10 @@ void TagModificationHelper::slotMultipleFaceTagDel(QList<TAlbum*>& tags)
     if (tagsWithChildrenCount)
     {
         QString message = i18np("Face tag '%2' has at least one face tag child. "
-                                "Deleting it will also delete the children.\n"
+                                "Removing it will also remove the children.\n"
                                 "Do you want to continue?",
                                 "Face tags '%2' have at least one face tag child. "
-                                "Deleting it will also delete the children.\n"
+                                "Removing it will also remove the children.\n"
                                 "Do you want to continue?",
                                 tagsWithChildrenCount, tagsWithChildren);
 
@@ -654,7 +654,7 @@ void TagModificationHelper::slotMultipleFaceTagDel(QList<TAlbum*>& tags)
             props.removeProperties(TagPropertyName::person());
             props.removeProperties(TagPropertyName::faceEngineName());
             QString uuid = props.value(TagPropertyName::faceEngineUuid());
-            qCDebug(DIGIKAM_GENERAL_LOG) << "Deleting person tag properties for tag "
+            qCDebug(DIGIKAM_GENERAL_LOG) << "Remove person tag properties for tag "
                                          << tAlbum->title() << " with uuid " << uuid;
 
             if (!uuid.isEmpty())
@@ -668,6 +668,11 @@ void TagModificationHelper::slotMultipleFaceTagDel(QList<TAlbum*>& tags)
                 FaceDbAccess access;
                 access.db()->deleteIdentity(uuid);
             }
+
+            // reset tag icon
+
+            QString errMsg;
+            AlbumManager::instance()->updateTAlbumIcon(tAlbum, tAlbum->standardIconName(), 0, errMsg);
         }
     }
 }
@@ -689,6 +694,11 @@ void TagModificationHelper::slotTagToFaceTag(TAlbum* tAlbum)
     if (!FaceTags::isPerson(tAlbum->id()))
     {
         FaceTags::ensureIsPerson(tAlbum->id());
+
+        // reset tag icon
+
+        QString errMsg;
+        AlbumManager::instance()->updateTAlbumIcon(tAlbum, tAlbum->standardIconName(), 0, errMsg);
     }
 }
 

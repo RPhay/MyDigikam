@@ -149,7 +149,7 @@ IPTCProperties::IPTCProperties(QWidget* const parent)
     d->timeReleasedSel->setDisplayFormat(timeFormat);
 
     d->setTodayReleasedBtn = new QPushButton();
-    d->setTodayReleasedBtn->setIcon(QIcon::fromTheme(QLatin1String("go-jump-today")));
+    d->setTodayReleasedBtn->setIcon(QIcon::fromTheme(QLatin1String("view-calendar")));
     d->setTodayReleasedBtn->setWhatsThis(i18n("Set release date to today"));
 
     d->dateReleasedSel->setWhatsThis(i18n("Set here the earliest intended usable date of "
@@ -174,7 +174,7 @@ IPTCProperties::IPTCProperties(QWidget* const parent)
     d->timeExpiredSel->setDisplayFormat(timeFormat);
 
     d->setTodayExpiredBtn = new QPushButton();
-    d->setTodayExpiredBtn->setIcon(QIcon::fromTheme(QLatin1String("go-jump-today")));
+    d->setTodayExpiredBtn->setIcon(QIcon::fromTheme(QLatin1String("view-calendar")));
     d->setTodayExpiredBtn->setWhatsThis(i18n("Set expiration date to today"));
 
     d->dateExpiredSel->setWhatsThis(i18n("Set here the latest intended usable date of "
