@@ -211,7 +211,7 @@ EOF
         # No need to build with both architectures embeded (x86 and ARM) for Apple Silicon target
 
         cat << EOF >> "$INSTALL_PREFIX/etc/macports/variants.conf"
--universal
++universal
 EOF
 
     fi
@@ -254,8 +254,13 @@ fi
 
 echo -e "\n"
 
+if [[ $ARCH_TARGET = "x86_64" ]] ; then
+
+    port install ld64 +ld64_xcode
+
+fi
+
 port install \
-             ld64 +ld64_xcode \
              cctools +xcode \
              subversion \
              cmake \
