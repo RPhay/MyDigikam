@@ -27,6 +27,7 @@
 
 #include <QMessageBox>
 #include <QProcess>
+#include <QDir>
 
 // KDE includes
 
@@ -130,7 +131,7 @@ bool WallpaperPlugin::setWallpaper(const QString& path, int layout) const
         }
     }
 
-    status = iADesktop->SetWallpaper((const wchar_t*)path.utf16(), 0);
+    status = iADesktop->SetWallpaper((PCWSTR)QDir::toNativeSeparators(path).utf16(), 0);
 
     if (!s_checkErrorCode(status, path, i18n("Cannot set wall paper image path.")))
     {
