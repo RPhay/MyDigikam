@@ -39,6 +39,7 @@
 #include <QPointer>
 #include <QStackedLayout>
 #include <QTimer>
+#include <QPushButton>
 #include <QToolButton>
 #include <QHBoxLayout>
 #include <QAction>
@@ -785,12 +786,11 @@ QWidget* MapWidget::getControlWidget()
         QHBoxLayout* const controlWidgetHBoxLayout = new QHBoxLayout(d->controlWidget);
         controlWidgetHBoxLayout->setContentsMargins(QMargins());
 
-        QToolButton* const configurationButton = new QToolButton(d->controlWidget);
+        QPushButton* const configurationButton = new QPushButton(d->controlWidget);
+        configurationButton->setIcon(QIcon::fromTheme(QLatin1String("globe")));
         controlWidgetHBoxLayout->addWidget(configurationButton);
         configurationButton->setToolTip(i18n("Map settings"));
-        configurationButton->setIcon(QIcon::fromTheme( QLatin1String("globe") ));
         configurationButton->setMenu(d->configurationMenu);
-        configurationButton->setPopupMode(QToolButton::InstantPopup);
 
         QToolButton* const zoomInButton = new QToolButton(d->controlWidget);
         controlWidgetHBoxLayout->addWidget(zoomInButton);
