@@ -301,4 +301,5 @@ BUGFIXES:
 280 ==> 432066 - Preview does not update when changing the photo using the keyboard in geolocation editor.
 281 ==> 432048 - XMP People/Face tags with no associated regions are ignored by Digikam (Person Shown, MWG Face name, MS People Tag).
 282 ==> 432069 - Pls add the map settings also to the menu.
-283 ==> 
+283 ==> 424805 - Digikam crashes when opening preview of items from a specific album.
+284 ==> 
