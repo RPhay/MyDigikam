@@ -149,6 +149,9 @@ cp -r $MXE_INSTALL_PREFIX/bin/OpenAL32.dll                              $BUNDLED
 echo -e "\n---------- DrMinGw run-time"
 cp -r $MXE_INSTALL_PREFIX/bin/exchndl.dll                               $BUNDLEDIR/             2>/dev/null
 cp -r $MXE_INSTALL_PREFIX/bin/mgwhelp.dll                               $BUNDLEDIR/             2>/dev/null
+cp -r $MXE_INSTALL_PREFIX/bin/dbghelp.dll                               $BUNDLEDIR/             2>/dev/null
+cp -r $MXE_INSTALL_PREFIX/bin/symsrv.dll                                $BUNDLEDIR/             2>/dev/null
+cp -r $MXE_INSTALL_PREFIX/bin/symsrv.yes                                $BUNDLEDIR/             2>/dev/null
 
 echo -e "\n---------- Copy executables with recursive dependencies in bundle directory\n"
 
@@ -183,11 +186,6 @@ for app in $DLL_FILES ; do
     $ORIG_WD/rll.py --copy --installprefix $MXE_INSTALL_PREFIX --odir $BUNDLEDIR --efile $app
 
 done
-
-# Remove this dll as it require the Microsoft debug SDK. Even if this dll is redistributable we won't be relevant of this SDK.
-# This will not break DrMinGw as backtraces will generated in a text file from home directory instead into a crash-course dialog.
-
-rm -f $BUNDLEDIR/dbghelp.dll
 
 #################################################################################################
 # Cleanup symbols in binary files to free space.
