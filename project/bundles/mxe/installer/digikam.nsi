@@ -237,6 +237,7 @@
         File "${BUNDLEPATH}\*.conf"
         File "${BUNDLEPATH}\*.rcc"
         File "${BUNDLEPATH}\*.dll"
+        File "${BUNDLEPATH}\*.yes"
 
         SetOutPath "$INSTDIR\etc"
         File /r "${BUNDLEPATH}\etc\*.*"
