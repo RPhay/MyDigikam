@@ -77,6 +77,9 @@ bool DMetadata::getItemFacesMap(QMultiMap<QString,QVariant>& faces) const
         if (list.size() < 4)
         {
             qCDebug(DIGIKAM_METAENGINE_LOG) << "Cannot parse WLPG rectangle string" << rectString;
+
+            faces.insert(person, QRectF());
+
             continue;
         }
 

@@ -444,6 +444,17 @@ void ItemScanner::commitFaces()
 
         if (!rectF.isValid())
         {
+            int tagId = FaceTags::getOrCreateTagForPerson(name);
+
+            if (!tagId)
+            {
+                qCDebug(DIGIKAM_DATABASE_LOG) << "Failed to create a person tag for name" << name;
+            }
+            else
+            {
+                ItemInfo(d->scanInfo.id).setTag(tagId);
+            }
+
             continue;
         }
 
