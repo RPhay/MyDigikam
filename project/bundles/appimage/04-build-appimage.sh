@@ -379,7 +379,7 @@ libxcb-dri3.so.0 \
 #libpango-1.0.so.0
 #libpangoft2-1.0.so.0
 
-for FILE in $EXCLUDE_FILES ; do
+for FILE in $EXTRA_EXCLUDE_FILES ; do
     if [[ -f usr/lib/${FILE} ]] ; then
         echo -e "   ==> ${FILE} will be removed for the bundle"
         rm -f usr/lib/${FILE}
