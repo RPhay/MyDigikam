@@ -184,8 +184,9 @@ for app in $DLL_FILES ; do
 
 done
 
-# Remove this dll as it require the Microsoft debug SDK. Even if this dll is redistributable we won't be be relevant of this stuff.
-# This will not breal DrMinGw as backtraces will generated in a text file from home directory instead into a crash-course dialog.
+# Remove this dll as it require the Microsoft debug SDK. Even if this dll is redistributable we won't be relevant of this SDK.
+# This will not break DrMinGw as backtraces will generated in a text file from home directory instead into a crash-course dialog.
+
 rm -f $BUNDLEDIR/dbghelp.dll
 
 #################################################################################################
@@ -194,15 +195,21 @@ rm -f $BUNDLEDIR/dbghelp.dll
 echo -e "\n---------- Strip symbols in binary files\n"
 
 if [[ $DK_DEBUG = 1 ]] ; then
+
     find $BUNDLEDIR -name \*exe | grep -Ev '(digikam|showfoto|exiv2)' | xargs ${MXE_BUILDROOT}/usr/bin/${MXE_BUILD_TARGETS}-strip
     find $BUNDLEDIR -name \*dll | grep -Ev '(digikam|showfoto|exiv2)' | xargs ${MXE_BUILDROOT}/usr/bin/${MXE_BUILD_TARGETS}-strip
+
 else
+
     find $BUNDLEDIR -name \*exe | xargs ${MXE_BUILDROOT}/usr/bin/${MXE_BUILD_TARGETS}-strip
     find $BUNDLEDIR -name \*dll | xargs ${MXE_BUILDROOT}/usr/bin/${MXE_BUILD_TARGETS}-strip
+
 fi
 
 if [[ $DK_DEBUG = 1 ]] ; then
+
     DEBUG_SUF="-debug"
+
 fi
 
 if [[ $DK_VERSION = "master" ]] ; then
@@ -220,15 +227,19 @@ echo -e "\n---------- Build NSIS installer and Portable archive\n"
 mkdir -p $ORIG_WD/bundle
 
 if [ $MXE_BUILD_TARGETS == "i686-w64-mingw32.shared" ]; then
+
     TARGET_INSTALLER=digiKam-$DK_RELEASEID$DK_SUBVER-Win32$DEBUG_SUF.exe
     PORTABLE_FILE=digiKam-$DK_RELEASEID$DK_SUBVER-Win32$DEBUG_SUF.tar.xz
     CHECKSUM_FILE=digiKam-$DK_RELEASEID$DK_SUBVER-Win32$DEBUG_SUF.sum
     rm -f $ORIG_WD/bundle/*Win32$DEBUG_SUF* || true
+
 else
+
     TARGET_INSTALLER=digiKam-$DK_RELEASEID$DK_SUBVER-Win64$DEBUG_SUF.exe
     PORTABLE_FILE=digiKam-$DK_RELEASEID$DK_SUBVER-Win64$DEBUG_SUF.tar.xz
     CHECKSUM_FILE=digiKam-$DK_RELEASEID$DK_SUBVER-Win64$DEBUG_SUF.sum
     rm -f $ORIG_WD/bundle/*Win64$DEBUG_SUF* || true
+
 fi
 
 cd $ORIG_WD/installer
@@ -329,9 +340,11 @@ if [[ $DK_UPLOAD = 1 ]] ; then
     rsync -r -v --progress -e ssh $BUILDDIR/bundle/FILES $DK_UPLOADURL:$DK_UPLOADDIR
 
 else
+
     echo -e "\n------------------------------------------------------------------"
     curl https://download.kde.org/README_UPLOAD
     echo -e "------------------------------------------------------------------\n"
+
 fi
 
 #################################################################################################
