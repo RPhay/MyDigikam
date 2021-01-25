@@ -93,7 +93,7 @@ DK_VERSION=master
 #DK_SUBVER="-01"
 
 # Installer will include or not digiKam debug symbols
-DK_DEBUG=0
+DK_DEBUG=1
 
 # Option to use QtWebEngine instead QtWebkit
 DK_QTWEBENGINE=1

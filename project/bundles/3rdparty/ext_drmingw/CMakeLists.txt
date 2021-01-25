@@ -10,8 +10,8 @@ set(PREFIX_ext_drmingw "${EXTPREFIX}")
 
 ExternalProject_Add(ext_drmingw
     DOWNLOAD_DIR ${EXTERNALS_DOWNLOAD_DIR}
-    URL https://github.com/jrfonseca/drmingw/archive/0.9.1.tar.gz
-    URL_MD5 fdafc515b83adcca765dc5cae05f3828
+    URL https://github.com/jrfonseca/drmingw/archive/0.9.2.tar.gz
+    URL_MD5 08f6ab4587deeea2406a69a115d7a8c7
 
     INSTALL_DIR ${EXTPREFIX_drmingw}
 
