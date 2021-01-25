@@ -132,8 +132,8 @@ void GPSItemList::setModelAndSelectionModel(GPSItemModel* const model, QItemSele
     connect(d->model, SIGNAL(signalThumbnailForIndexAvailable(QPersistentModelIndex,QPixmap)),
             this, SLOT(slotThumbnailFromModel(QPersistentModelIndex,QPixmap)));
 
-    connect(this, SIGNAL(clicked(QModelIndex)),
-            this, SLOT(slotInternalTreeViewImageActivated(QModelIndex)));
+    connect(d->selectionModel, SIGNAL(currentChanged(QModelIndex,QModelIndex)),
+            this, SLOT(slotInternalTreeViewImageActivated(QModelIndex,QModelIndex)));
 
     if (d->imageSortProxyModel->mappedSelectionModel())
     {
@@ -237,11 +237,12 @@ QItemSelectionModel* GPSItemList::getSelectionModel() const
     return d->selectionModel;
 }
 
-void GPSItemList::slotInternalTreeViewImageActivated(const QModelIndex& index)
+void GPSItemList::slotInternalTreeViewImageActivated(const QModelIndex& current,
+                                                     const QModelIndex& /*previous*/)
 {
-    qCDebug(DIGIKAM_GENERAL_LOG) << index << d->imageSortProxyModel->mapToSource(index);
+    // qCDebug(DIGIKAM_GENERAL_LOG) << current;
 
-    emit signalImageActivated(d->imageSortProxyModel->mapToSource(index));
+    emit signalImageActivated(current);
 }
 
 GPSItemSortProxyModel* GPSItemList::getSortProxyModel() const

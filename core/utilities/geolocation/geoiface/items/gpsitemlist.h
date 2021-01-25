@@ -76,8 +76,8 @@ public Q_SLOTS:
 
 private Q_SLOTS:
 
+    void slotInternalTreeViewImageActivated(const QModelIndex& current, const QModelIndex& previous);
     void slotThumbnailFromModel(const QPersistentModelIndex& index, const QPixmap& pixmap);
-    void slotInternalTreeViewImageActivated(const QModelIndex& index);
     void slotColumnVisibilityActionTriggered(QAction* action);
 
 protected:

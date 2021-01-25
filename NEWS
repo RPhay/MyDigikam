@@ -298,4 +298,5 @@ BUGFIXES:
 277 ==> 431907 - Authentication to Google fails with "This browser or app may not be secure."
 278 ==> 431964 - Face tags are not read correctly on certain images with more than one Microsoft People Tags XMP metadata.
 279 ==> 431831 - How much data gets sent to digikam.org for face recognition.
-280 ==> 
+280 ==> 432066 - Preview does not update when changing the photo using the keyboard in geolocation editor.
+281 ==> 
