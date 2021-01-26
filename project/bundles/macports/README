@@ -138,25 +138,25 @@ All scripts should be run from within the digikam-package directory.
 * 01-build-macports.sh:
 
 This script downloads and configures a custom non-root install
-of MacPorts to /opt/digikam. The PKG will install to the same place,
+of MacPorts to /opt/digikam.org._arch_. The PKG will install to the same place,
 avoiding the confusion associated with relocation and install_name_tool. The
 custom location, as opposed to /opt/local, should allow digiKam to co-exist
 with a standard Macports installation
 
 * 02-build-extralibs.sh:
 
-This script configures, and compile a custom non-root install to /opt/digikam
+This script configures, and compile a custom non-root install to /opt/digikam.org._arch_
 of extra libraries, including KF5 frameworks, and most important photo management
 libs used by digiKam as Exiv2 and LensFun.
 
 * 03-build-digikam.sh:
 
 This script configures, and compile a custom non-root install of digiKam to
-/opt/digikam.
+/opt/digikam.org._arch_.
 
 * 04-build-installer.sh:
 
-Once you've successfully built digiKam, /opt/digikam may contain over 10GB of files.
+Once you've successfully built digiKam, /opt/digikam.org._arch_ may contain over 10GB of files.
 This script grabs the ~250MB needed to run digiKam and Showfoto,
 and places them in ./installer/opt. These include applications documentations
 and translations.
@@ -171,8 +171,8 @@ The launcher applications:
         +debug variant.
 
 This script also create the pre-install and post-install scripts that are run
-when the package is installed. They delete any pre-existing /opt/digikam,
-delete and recreate /Applications/digiKam.
+when the package is installed. They delete any pre-existing /opt/digikam.org._arch_,
+delete and recreate /Applications/digiKam.org.
 
 Finally, this script sets the version number, and runs Packages to
 put everything together in the bundle.
@@ -185,7 +185,7 @@ at startup following instruction give at this url:
 https://unix.stackexchange.com/questions/90853/how-can-i-run-ssh-add-automatically-without-password-prompt
 
 Note: the bundle can be signed with GPG. You must setup your private and public keys before
-and put your passphare to a text file (~/.gnupg/dkorg-gpg-pwd.txt) 
+and put your passphare to a text file (~/.gnupg/dkorg-gpg-pwd.txt)
 
 * rll.py
 
