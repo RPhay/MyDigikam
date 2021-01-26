@@ -459,6 +459,7 @@ There are two configuration sections : the top level and the core.
 
   - \b ENABLE_DIGIKAM_MODELTEST              : Enable ModelTest on some models for debugging (default=OFF).
   - \b ENABLE_SANITIZERS                     : Enable ASAN and UBSAN sanitizers when available (default=OFF).
+  - \b BUILD_WITH_CCACHE                     : Use ccache to speed up compilations (default=OFF)
 
  - Packaging options
 

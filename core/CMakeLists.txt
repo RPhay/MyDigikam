@@ -42,6 +42,7 @@ option(ENABLE_INTERNALMYSQL              "Build digiKam with internal MySQL serv
 # Developer options:
 option(ENABLE_DIGIKAM_MODELTEST          "Enable ModelTest on some models for debugging (default=OFF)"                        OFF)
 option(ENABLE_SANITIZERS                 "Enable ASAN and UBSAN sanitizers when available (default=OFF)"                      OFF)
+option(BUILD_WITH_CCACHE                 "Use ccache to speed up compilations"                                                OFF)
 
 # Packaging options:
 if(MINGW)
@@ -361,6 +362,12 @@ if(NOT CMAKE_SYSTEM_NAME STREQUAL FreeBSD)
     find_package(Lqr-1)
 endif()
 
+if(BUILD_WITH_CCACHE)
+    message(STATUS "Looking for ccache...")
+    find_program(CCACHE_FOUND ccache)
+    message(STATUS "ccache program found: ${CCACHE_FOUND}...")
+endif()
+
 # -- libgphoto2 rules ----------------------------------------------------------
 
 if(NOT WIN32)
@@ -518,6 +525,7 @@ MACRO_BOOL_TO_01(ENABLE_DRMINGW               HAVE_DRMINGW)
 MACRO_BOOL_TO_01(ImageMagick_Magick++_FOUND   HAVE_IMAGE_MAGICK)
 MACRO_BOOL_TO_01(X265_FOUND                   HAVE_X265)
 MACRO_BOOL_TO_01(Qt5XmlPatterns_FOUND         HAVE_QTXMLPATTERNS)
+MACRO_BOOL_TO_01(CCACHE_FOUND                 HAVE_CCACHE)
 
 # Set config files accordingly with optional dependencies
 
@@ -556,6 +564,7 @@ PRINT_LIBRARY_STATUS("libtiff"       "https://gitlab.com/libtiff/libtiff/"      
 
 PRINT_OPTIONAL_LIBRARY_STATUS("bison"             "https://www.gnu.org/software/bison/"                             "(version >= 2.5.0)"                    "digiKam will be compiled without Panorama support."                          BISON_FOUND)
 PRINT_OPTIONAL_LIBRARY_STATUS("doxygen"           "https://github.com/doxygen/doxygen"                              "(version >= 1.8.0)"                    "digiKam will be compiled without API documentation building support."        Doxygen_FOUND)
+PRINT_OPTIONAL_LIBRARY_STATUS("ccache"            "https://ccache.dev"                                              "(version >= 3.0.0)"                    "digiKam will be compiled without CCACHE build support."                      HAVE_CCACHE)
 PRINT_OPTIONAL_LIBRARY_STATUS("flex"              "https://github.com/westes/flex"                                  "(version >= 2.5.0)"                    "digiKam will be compiled without Panorama support."                          FLEX_FOUND)
 PRINT_OPTIONAL_LIBRARY_STATUS("libakonadicontact" "https://cgit.kde.org/akonadi-contacts.git/about/"                "(version >= ${AKONADI_MIN_VERSION})"   "digiKam will be compiled without KDE desktop address book support."          KF5AkonadiContact_FOUND)
 PRINT_OPTIONAL_LIBRARY_STATUS("libmagick++"       "https://www.imagemagick.org"                                     "(version >= 6.7.0)"                    "digiKam will be compiled without ImageMagick codecs."                        HAVE_IMAGE_MAGICK)
@@ -622,6 +631,16 @@ if(DIGIKAM_CAN_BE_COMPILED)
         add_definitions(-D_CRT_SECURE_NO_WARNINGS)
         add_definitions(-D_ATL_SECURE_NO_WARNINGS)
         add_definitions(-D_AFX_SECURE_NO_WARNINGS)
+    endif()
+
+    # ==========================================================================
+
+    # to use ccache in compile
+
+    if(HAVE_CCACHE)
+        message(STATUS "Using CCACHE to speed-up compilation...")
+        set_property(GLOBAL PROPERTY RULE_LAUNCH_COMPILE ccache)
+        set_property(GLOBAL PROPERTY RULE_LAUNCH_LINK    ccache)
     endif()
 
     # ==========================================================================
