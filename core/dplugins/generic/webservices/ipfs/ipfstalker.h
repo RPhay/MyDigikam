@@ -24,21 +24,11 @@
 #ifndef DIGIKAM_IPFS_TALKER_H
 #define DIGIKAM_IPFS_TALKER_H
 
-// C++ includes
-
-#include <atomic>
-#include <queue>
-
 // Qt includes
 
-#include <QNetworkAccessManager>
+#include <QObject>
 #include <QString>
-#include <QFile>
-#include <QUrl>
-
-// Local includes
-
-#include "o2.h"
+#include <QTimerEvent>
 
 namespace DigikamGenericIpfsPlugin
 {

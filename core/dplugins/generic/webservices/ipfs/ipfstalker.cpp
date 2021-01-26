@@ -25,14 +25,16 @@
 
 // Qt includes
 
+#include <QUrl>
+#include <QFile>
 #include <QQueue>
+#include <QUrlQuery>
 #include <QFileInfo>
 #include <QHttpMultiPart>
 #include <QJsonDocument>
 #include <QJsonObject>
-#include <QTimerEvent>
-#include <QUrlQuery>
-#include <QStandardPaths>
+#include <QNetworkReply>
+#include <QNetworkAccessManager>
 
 // KDE includes
 
@@ -41,8 +43,6 @@
 // Local includes
 
 #include "digikam_debug.h"
-#include "o0settingsstore.h"
-#include "o0globals.h"
 
 namespace DigikamGenericIpfsPlugin
 {
@@ -61,27 +61,27 @@ public:
 
     // The ipfs upload url
 
-    const QString                ipfsUploadUrl;
+    const QString            ipfsUploadUrl;
 
     // Work queue
 
-    QQueue<IpfsTalkerAction>     workQueue;
+    QQueue<IpfsTalkerAction> workQueue;
 
     // ID of timer triggering on idle (0ms)
 
-    int                          workTimer;
+    int                      workTimer;
 
     // Current QNetworkReply
 
-    QNetworkReply*               reply;
+    QNetworkReply*           reply;
 
     // Current image being uploaded
 
-    QFile*                       image;
+    QFile*                   image;
 
     // The QNetworkAccessManager used for connections
 
-    QNetworkAccessManager        netMngr;
+    QNetworkAccessManager    netMngr;
 };
 
 IpfsTalker::IpfsTalker(QObject* const parent)
