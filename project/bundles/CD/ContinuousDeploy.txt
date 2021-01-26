@@ -34,7 +34,8 @@ Architecture and configuration to setup a continuous deployement computer.
 
 - macOS Catalina: system is installed using this GitHub repository: https://github.com/myspaghetti/macos-virtualbox and using Macports procedure.
   * @IP: 192.168.56.103
-  * Create a crontab task to update MAcports PKG:
+  * Create a crontab task to update Macports PKG with CLI "export VISUAL=mcedit && crontab -e":
       # update macOS bundle all the days at 23h00
       00 23 * * * gilles bash -l -c 'export HOME=/USERS/gilles && source /USERS/gilles/.bash_profile && cd /Users/gilles/Documents/7.x/project/bundles/macports && git pull && sudo ./update.sh 2>&1 > /tmp/macports_update_log.txt'
-
+  * Change /etc/sudoers properties to run sudo without password:
+      "%admin ALL = (ALL) ALL" => "%admin ALL = (ALL) NOPASSWD: ALL"
