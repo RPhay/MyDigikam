@@ -3,6 +3,7 @@ digiKam 7.2.0 - Release date: 2021-01-31
 *****************************************************************************************************
 NEW FEATURES:
 
+General       : Add ccache support to speed-up compilations.
 General       : Update internal Libraw to last 0.20.2.
 General       : New Online version checker/downloader, with option to install automatically new version under macOS and Windows.
 General       : MacOS PKG installer is now compatible with Apple BigSur.
@@ -302,4 +303,5 @@ BUGFIXES:
 281 ==> 432048 - XMP People/Face tags with no associated regions are ignored by Digikam (Person Shown, MWG Face name, MS People Tag).
 282 ==> 432069 - Pls add the map settings also to the menu.
 283 ==> 424805 - Digikam crashes when opening preview of items from a specific album.
-284 ==> 
+284 ==> 431775 - Compiling with ccache issue.
+285 ==> 
