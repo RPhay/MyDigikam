@@ -264,6 +264,7 @@ port install \
              cctools +xcode \
              subversion \
              cmake \
+             ccache \
              libpng \
              jpeg \
              tiff \

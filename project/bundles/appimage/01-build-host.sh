@@ -66,6 +66,7 @@ urpmi --auto \
       fuse \
       automake \
       cmake \
+      ccache \
       gcc-c++ \
       patch \
       libdrm-devel \
