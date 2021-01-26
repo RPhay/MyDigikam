@@ -47,24 +47,27 @@
 namespace DigikamGenericIpfsPlugin
 {
 
-static const QString ipfs_upload_url = QLatin1String("https://api.globalupload.io/transport/add");
-
 class Q_DECL_HIDDEN IpfsTalker::Private
 {
 public:
 
     explicit Private()
-      : workTimer (0),
-        reply     (nullptr),
-        image     (nullptr)
+      : ipfsUploadUrl(QLatin1String("https://api.globalupload.io/transport/add")),
+        workTimer    (0),
+        reply        (nullptr),
+        image        (nullptr)
     {
     }
+
+    // The ipfs upload url
+
+    const QString                ipfsUploadUrl;
 
     // Work queue
 
     QQueue<IpfsTalkerAction>     workQueue;
 
-    // ID of timer triggering on idle (0ms).
+    // ID of timer triggering on idle (0ms)
 
     int                          workTimer;
 
@@ -301,7 +304,7 @@ void IpfsTalker::doWork()
             image.setHeader(QNetworkRequest::ContentTypeHeader, QLatin1String("image/jpeg"));
             image.setBodyDevice(d->image);
             multipart->append(image);
-            QNetworkRequest request(QUrl(QLatin1String("https://api.globalupload.io/transport/add")));
+            QNetworkRequest request(QUrl(d->ipfsUploadUrl));
             d->reply = d->netMngr.post(request, multipart);
 
             break;
