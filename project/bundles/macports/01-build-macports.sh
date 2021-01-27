@@ -242,6 +242,7 @@ echo -e "\n"
 echo "---------- Building digiKam dependencies with Macports"
 
 # With OSX less than El Capitan, we need a more recent Clang compiler than one provided by XCode.
+# This only concern x86_64 architecture.
 
 if [[ $MAJOR_OSX_VERSION -lt 11 && $MINOR_OSX_VERSION -lt 10 ]]; then
 
@@ -256,13 +257,18 @@ echo -e "\n"
 
 if [[ $ARCH_TARGET = "x86_64" ]] ; then
 
-    port install ld64 +ld64_xcode
+    # Note: subversion is used to checkout translations from KDE repositories.
+    # Subversion do not compile under arm64 and XCode drop svn supports.
+    # KDE team plan to migrate svn to git: https://phabricator.kde.org/T13514
+
+    port install \
+                 ld64 +ld64_xcode \
+                 subversion
 
 fi
 
 port install \
              cctools +xcode \
-             subversion \
              cmake \
              ccache \
              libpng \
