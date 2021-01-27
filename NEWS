@@ -296,12 +296,13 @@ BUGFIXES:
 274 ==> 427333 - Face detection crashes due to pure virtual method call in LoadingCache.
 275 ==> 429307 - Crash with face detection under Windows.
 276 ==> 427380 - Crashes when running face detection.
-277 ==> 431907 - Authentication to Google fails with "This browser or app may not be secure."
+277 ==> 431907 - Authentication to Google fails with "This browser or app may not be secure".
 278 ==> 431964 - Face tags are not read correctly on certain images with more than one Microsoft People Tags XMP metadata.
 279 ==> 431831 - How much data gets sent to digikam.org for face recognition.
 280 ==> 432066 - Preview does not update when changing the photo using the keyboard in geolocation editor.
-281 ==> 432048 - XMP People/Face tags with no associated regions are ignored by Digikam (Person Shown, MWG Face name, MS People Tag).
+281 ==> 432048 - XMP People/Face tags with no associated regions are ignored by digiKam (Person Shown, MWG Face name, MS People Tag).
 282 ==> 432069 - Pls add the map settings also to the menu.
-283 ==> 424805 - Digikam crashes when opening preview of items from a specific album.
+283 ==> 424805 - digiKam crashes when opening preview of items from a specific album.
 284 ==> 431775 - Compiling with ccache issue.
-285 ==> 
+285 ==> 432074 - digiKam's appimage failed to launch on ArchLinux.
+286 ==> 
