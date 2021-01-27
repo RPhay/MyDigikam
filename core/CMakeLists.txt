@@ -634,11 +634,10 @@ if(DIGIKAM_CAN_BE_COMPILED)
     endif()
 
     # ==========================================================================
-
-    # to use ccache in compile
+    # To use ccache in compile
 
     if(HAVE_CCACHE)
-        message(STATUS "Using CCACHE to speed-up compilation...")
+        message(STATUS "Using ccache to speed-up compilations...")
         set_property(GLOBAL PROPERTY RULE_LAUNCH_COMPILE ccache)
         set_property(GLOBAL PROPERTY RULE_LAUNCH_LINK    ccache)
     endif()
