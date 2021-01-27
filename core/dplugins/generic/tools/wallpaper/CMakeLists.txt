@@ -50,7 +50,7 @@ endif()
 
 if(compile_wallpaperplugin)
 
-    message(STATUS " WallPaper plugin will be compiled......... YES")
+    message(STATUS "WallPaper plugin will be compiled......... YES")
 
     DIGIKAM_ADD_GENERIC_PLUGIN(NAME    Wallpaper
                                SOURCES ${wallpaperplugin_SRCS}
@@ -58,6 +58,6 @@ if(compile_wallpaperplugin)
 
 else()
 
-    message(STATUS " WallPaper plugin will be compiled......... NO")
+    message(STATUS "WallPaper plugin will be compiled......... NO")
 
 endif()
