@@ -7,16 +7,40 @@ Architecture and configuration to setup a continuous deployement computer.
 - 32 Gb of RAM
 - 2 SSD 1Tb (one to host base system, one to host VMs)
 - Host system Linux Mageia 7.1
-- VirtualBox v6:
-  * 3 VMs: one running Mageia 6.1 to compile AppImage bundle.
-           one running Mageia 7.1 to compile Windows installer.
-           one running macOS Catalina to compile PKG installer.
+- VirtualBox version 6.x:
+
   * Host must define a private local network configurated with default settings:
            network 192.168.56.1/25
            DHCP server 192.168.56.100/24 @[101-254]
+
   * Each VM must have 2 network ifaces: one to use Internet using NAT
                                         one to use private local network
+
   * Private local network will allow to be connected to VMs locally with ssh.
+
+  * 3 VMs: one running Mageia 6.1 to compile AppImage bundle
+               Name: M6.
+               8 cores.
+               4Gb RAM.
+               128Mb video.
+               eth0: auto IP/DNS with DHCP                                        (VM:NAT)
+               eth1: manual IP/DNS: 192.168.56.101/24/192.168.56.1/192.168.56.100 (VM:private local Net)
+
+           one running Mageia 7.1 to compile Windows installer.
+               Name: M7.
+               8 cores.
+               4Gb RAM.
+               128Mb video.
+               eth0: auto IP/DNS with DHCP                                        (VM:NAT)
+               eth1: manual IP/DNS: 192.168.56.102/24/192.168.56.1/192.168.56.100 (VM:private local Net)
+
+           one running macOS Catalina to compile PKG installer.
+               Name: MX.
+               8 cores.
+               4Gb RAM.
+               128Mb video.
+               eth0: auto IP/DNS with DHCP                                        (VM:NAT)
+               eth1: manual IP/DNS: 192.168.56.103/24/192.168.56.1/192.168.56.100 (VM:private local Net)
 
 2/ Virtual Machines
 
