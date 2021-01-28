@@ -109,24 +109,23 @@ bool DMetadata::getItemFacesMap(QMultiMap<QString,QVariant>& faces) const
     {
         QString person = getXmpTagString(mwg_personPathTemplate.arg(i).toLatin1().constData(), false);
 
-        if (person.isEmpty())
-        {
-            break;
-        }
-
         // x and y is the center point
 
         float x = getXmpTagString(mwg_rect_x_PathTemplate.arg(i).toLatin1().constData(), false).toFloat();
         float y = getXmpTagString(mwg_rect_y_PathTemplate.arg(i).toLatin1().constData(), false).toFloat();
         float w = getXmpTagString(mwg_rect_w_PathTemplate.arg(i).toLatin1().constData(), false).toFloat();
         float h = getXmpTagString(mwg_rect_h_PathTemplate.arg(i).toLatin1().constData(), false).toFloat();
-        QRectF rect(x - w/2,
-                    y - h/2,
-                    w,
-                    h);
+
+        QRectF rect(x - w / 2, y - h / 2, w, h);
+
+        if (person.isEmpty() && !rect.isValid())
+        {
+            break;
+        }
 
         faces.insert(person, rect);
-        qCDebug(DIGIKAM_METAENGINE_LOG) << "Found new rect " << person << " "<< rect;
+
+        qCDebug(DIGIKAM_METAENGINE_LOG) << "Found new rect:" << person << rect;
     }
 
     return !faces.isEmpty();
