@@ -714,7 +714,7 @@ QList<TagProperty> CoreDB::getTagProperties() const
     return properties;
 }
 
-QList< int > CoreDB::getTagsWithProperty(const QString& property) const
+QList<int> CoreDB::getTagsWithProperty(const QString& property) const
 {
     QList<QVariant> values;
 
