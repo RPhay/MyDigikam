@@ -278,7 +278,7 @@ QMap<QString, QString> FaceTagsEditor::getSuggestedNames(qlonglong id) const
             QString region(valueList.at(2));
             QString suggestedName = FaceTags::faceNameForTag(valueList.at(0).toInt());
 
-            if (!TagRegion(region).isValid() || (suggestedName == QLatin1String("Unknown")))
+            if (!TagRegion(region).isValid() || suggestedName.isEmpty())
             {
                 continue;
             }
