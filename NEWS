@@ -4,7 +4,6 @@ digiKam 7.2.0 - Release date: 2021-01-31
 NEW FEATURES:
 
 General       : Add ccache support to speed-up compilations.
-General       : Update internal Libraw to last 0.20.2.
 General       : New Online version checker/downloader, with option to install automatically new version under macOS and Windows.
 General       : MacOS PKG installer is now compatible with Apple BigSur.
 General       : MacOS bundle is now fully relocatable.
@@ -16,6 +15,25 @@ Database      : Change database scheme under MySQL from TagsTree VIEW to TABLE w
 FaceManagement: Improve users experience in GUI for face workflow while tagging and manage faces.
 FaceManagement: Add face engine clustering support for detection and recognition processes.
 FaceManagement: Remove face engine data files from sources and bundles and add a file downloader.
+RawEngine     : Update internal Libraw to last 0.21.0:
+                Camera format support:
+                   Lossy compressed CR3 files
+                   Lossy compressed RAF files
+                   Uncompressed floating point DNG files (16-24-32 bit)
+                   Deflate compressed striped DNG files
+                   XMP and HEIF-preview extraction from CR3 files
+                Camera support;
+                   Apple iPhone 12 Max, iPhone 12 Max Pro
+                   Canon EOS R5, EOS R6, EOS 850D, EOS-1D X Mark III (lossy compressed files)
+                   FujiFilm X-S10
+                   Hasselblad CFV II 50C",
+                   Leica M10-R, Q2 Monochrom, S3, SL2-S
+                   Nikon Z 5, Z 6 II, Z 7 II
+                   Olympus E-M10 Mark IV
+                   Panasonic DC-G100 / G110, DC-S5
+                   Sony ILCE-7C (A7C), ILCE-7SM3 (A7S III)
+                   Zeiss ZX1
+                   Plus multiple DNG-recording cameraphones/drones/etc.
 
 *****************************************************************************************************
 BUGFIXES:
