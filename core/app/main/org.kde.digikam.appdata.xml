@@ -518,7 +518,7 @@
   </description>
   <url type="homepage">https://www.digikam.org/</url>
   <url type="bugtracker">https://bugs.kde.org/enter_bug.cgi?format=guided&amp;product=digikam</url>
-  <url type="help">https://docs.kde.org/trunk5/en/extragear-graphics/digikam/</url>
+  <url type="help">https://docs.kde.org/?application=digikam</url>
   <url type="donation">https://www.digikam.org/donation</url>
   <screenshots>
     <screenshot type="default">
