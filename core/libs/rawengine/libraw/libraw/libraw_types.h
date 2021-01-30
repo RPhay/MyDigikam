@@ -115,7 +115,7 @@ typedef unsigned long long UINT64;
 #endif
 #else*/
 #define DllDef
-//#endif
+#endif
 
   typedef struct
   {
