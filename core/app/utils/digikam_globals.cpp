@@ -26,6 +26,7 @@
 // Qt includes
 
 #include <QObject>
+#include <QDir>
 #include <QList>
 #include <QImageReader>
 #include <QImageWriter>
@@ -232,20 +233,21 @@ void tryInitDrMingw()
 
     qCDebug(DIGIKAM_GENERAL_LOG) << "Loading DrMinGw run-time...";
 
-    wchar_t path[MAX_PATH];
-    QString pathStr = QCoreApplication::applicationDirPath().replace(L'/', L'\\') + QLatin1String("\\exchndl.dll");
+    QString appPath = QCoreApplication::applicationDirPath();
+    QString dbgFile = QDir::toNativeSeparators(appPath + QLatin1String("/dbghelp.dll"));
+    QString excFile = QDir::toNativeSeparators(appPath + QLatin1String("/exchndl.dll"));
 
-    if (pathStr.size() > MAX_PATH - 1)
+    HMODULE hModDbg = LoadLibraryW((LPCWSTR)dbgFile.utf16());
+
+    if (!hModDbg)
     {
-        qCDebug(DIGIKAM_GENERAL_LOG) << "DrMinGw: cannot find crash handler dll.";
+        qCDebug(DIGIKAM_GENERAL_LOG) << "DrMinGw: cannot init debug help dll.";
         return;
     }
 
-    int pathLen   = pathStr.toWCharArray(path);
-    path[pathLen] = L'\0';                      ///< toWCharArray doesn't add NULL terminator
-    HMODULE hMod  = LoadLibraryW(path);
+    HMODULE hModExc = LoadLibraryW((LPCWSTR)excFile.utf16());
 
-    if (!hMod)
+    if (!hModExc)
     {
         qCDebug(DIGIKAM_GENERAL_LOG) << "DrMinGw: cannot init crash handler dll.";
         return;
@@ -253,7 +255,8 @@ void tryInitDrMingw()
 
     // No need to call ExcHndlInit since the crash handler is installed on DllMain
 
-    auto myExcHndlSetLogFileNameA = reinterpret_cast<BOOL (APIENTRY*)(const char*)>(GetProcAddress(hMod, "ExcHndlSetLogFileNameA"));
+    auto myExcHndlSetLogFileNameA = reinterpret_cast<BOOL (APIENTRY*)(const char*)>
+                                        (GetProcAddress(hModExc, "ExcHndlSetLogFileNameA"));
 
     if (!myExcHndlSetLogFileNameA)
     {
@@ -263,7 +266,8 @@ void tryInitDrMingw()
 
     // Set the log file path to %LocalAppData%\digikam_crash.log
 
-    QString logFile = QStandardPaths::writableLocation(QStandardPaths::GenericConfigLocation).replace(L'/', L'\\') + QLatin1String("\\digikam_crash.log");
+    QString logPath = QStandardPaths::writableLocation(QStandardPaths::GenericConfigLocation);
+    QString logFile = QDir::toNativeSeparators(logPath + QLatin1String("/digikam_crash.log"));
     myExcHndlSetLogFileNameA(logFile.toLocal8Bit().data());
 
     qCDebug(DIGIKAM_GENERAL_LOG) << "DrMinGw run-time loaded.";
