@@ -323,4 +323,5 @@ BUGFIXES:
 283 ==> 424805 - digiKam crashes when opening preview of items from a specific album.
 284 ==> 431775 - Compiling with ccache issue.
 285 ==> 432074 - digiKam's appimage failed to launch on ArchLinux.
-286 ==> 
+286 ==> 432312 - Detect Faces crashes when .xcf file encountered.
+287 ==> 
