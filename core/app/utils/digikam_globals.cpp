@@ -234,16 +234,7 @@ void tryInitDrMingw()
     qCDebug(DIGIKAM_GENERAL_LOG) << "Loading DrMinGw run-time...";
 
     QString appPath = QCoreApplication::applicationDirPath();
-    QString dbgFile = QDir::toNativeSeparators(appPath + QLatin1String("/dbghelp.dll"));
     QString excFile = QDir::toNativeSeparators(appPath + QLatin1String("/exchndl.dll"));
-
-    HMODULE hModDbg = LoadLibraryW((LPCWSTR)dbgFile.utf16());
-
-    if (!hModDbg)
-    {
-        qCDebug(DIGIKAM_GENERAL_LOG) << "DrMinGw: cannot init debug help dll.";
-        return;
-    }
 
     HMODULE hModExc = LoadLibraryW((LPCWSTR)excFile.utf16());
 
