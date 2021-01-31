@@ -35,6 +35,7 @@
 #include <QApplication>
 #include <QStandardPaths>
 #include <QLibrary>
+#include <QSysInfo>
 
 // KDE includes
 
@@ -232,6 +233,27 @@ void tryInitDrMingw()
 #ifdef HAVE_DRMINGW
 
     qCDebug(DIGIKAM_GENERAL_LOG) << "Loading DrMinGw run-time...";
+
+    double version  = 0.0;
+    QString product = QSysInfo::productVersion();
+
+    if (product.section(QLatin1Char(' '), 0, 0) != QLatin1String("Server"))
+    {
+        version = product.section(QLatin1Char(' '), 0, 0).toDouble();
+    }
+    else
+    {
+        version = product.section(QLatin1Char(' '), 1).toDouble();
+    }
+
+    if  (
+         ((version < 2000.0) && (version < 10.0)) ||
+         ((version > 2000.0) && (version < 2016.0))
+        )
+    {
+        qCDebug(DIGIKAM_GENERAL_LOG) << "DrMinGw: found unsupported Windows version" << version;
+        return;
+    }
 
     QString appPath = QCoreApplication::applicationDirPath();
     QString excFile = QDir::toNativeSeparators(appPath + QLatin1String("/exchndl.dll"));
