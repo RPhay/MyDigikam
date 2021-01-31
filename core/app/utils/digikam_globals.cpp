@@ -251,7 +251,7 @@ void tryInitDrMingw()
          ((version > 2000.0) && (version < 2016.0))
         )
     {
-        qCDebug(DIGIKAM_GENERAL_LOG) << "DrMinGw: found unsupported Windows version" << version;
+        qCDebug(DIGIKAM_GENERAL_LOG) << "DrMinGw: unsupported Windows version" << version;
         return;
     }
 
