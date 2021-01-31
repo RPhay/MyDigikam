@@ -29,7 +29,7 @@
 #include <QPixmap>
 #include <QUrl>
 #include <QIcon>
-#include<QScopedPointer>
+#include <QScopedPointer>
 
 // Local includes
 
@@ -323,7 +323,7 @@ void ItemFiltersHistoryModel::removeEntry(const QModelIndex& index)
 
 bool ItemFiltersHistoryModel::removeRows(int row, int /*count*/, const QModelIndex& parent)
 {
-    if (!parent.isValid())
+    if (!parent.isValid() && (row < rowCount()))
     {
         beginResetModel();
         d->rootItem->removeChild(row);
