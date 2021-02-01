@@ -51,6 +51,8 @@ add_definitions(-DDCRAW_VERBOSE)
 add_definitions(-DUSE_X3FTOOLS)
 add_definitions(-DUSE_6BY9RPI)
 
+# to force libraw to use OpenMP everywhere, especially with Macports and MXE.
+add_definitions(-DLIBRAW_FORCE_OPENMP)
 
 if(WIN32)
     # We need native UTF-16 encoding path support

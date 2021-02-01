@@ -320,6 +320,7 @@
         Delete "$INSTDIR\*.conf"
         Delete "$INSTDIR\*.rcc"
         Delete "$INSTDIR\*.dll"
+        Delete "$INSTDIR\*.yes"
 
         Delete "$INSTDIR\Uninstall.exe"
         Delete "$INSTDIR\releasenotes.html"
