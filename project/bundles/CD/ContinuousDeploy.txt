@@ -23,24 +23,24 @@ Architecture and configuration to setup a continuous deployement computer.
                8 cores.
                4Gb RAM.
                128Mb video.
-               eth0: auto IP/DNS with DHCP                                        (VM:NAT)
-               eth1: manual IP/DNS: 192.168.56.101/24/192.168.56.1/192.168.56.100 (VM:private local Net)
+               eth0: auto IP/DNS with DHCP Metric:0                                         (VM:NAT)
+               eth1: manual IP/DNS: 192.168.56.101/24/192.168.56.1/192.168.56.100 Metric:10 (VM:private local Net)
 
            one running Mageia 7.1 to compile Windows installer.
                Name: M7.
                8 cores.
                4Gb RAM.
                128Mb video.
-               eth0: auto IP/DNS with DHCP                                        (VM:NAT)
-               eth1: manual IP/DNS: 192.168.56.102/24/192.168.56.1/192.168.56.100 (VM:private local Net)
+               eth0: auto IP/DNS with DHCP Metric:0                                         (VM:NAT)
+               eth1: manual IP/DNS: 192.168.56.102/24/192.168.56.1/192.168.56.100 Metric:10 (VM:private local Net)
 
            one running macOS Catalina to compile PKG installer.
                Name: MX.
                8 cores.
                4Gb RAM.
                128Mb video.
-               eth0: auto IP/DNS with DHCP                                        (VM:NAT)
-               eth1: manual IP/DNS: 192.168.56.103/24/192.168.56.1/192.168.56.100 (VM:private local Net)
+               eth0: auto IP/DNS with DHCP                                                  (VM:NAT)
+               eth1: manual IP/DNS: 192.168.56.103/24/192.168.56.1/192.168.56.100           (VM:private local Net)
 
 2/ Virtual Machines
 
