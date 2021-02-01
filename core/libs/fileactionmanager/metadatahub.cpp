@@ -705,7 +705,7 @@ void Digikam::MetadataHub::loadFaceTags(const ItemInfo& info, const QSize& size)
             QRect  tempRect = dface.region().toRect();
             TagRegion::reverseToOrientation(tempRect, info.orientation(), size);
             QRectF faceRect = TagRegion::absoluteToRelative(tempRect, size);
-            d->faceTagsList.insert(faceName, QVariant(faceRect));
+            d->faceTagsList.insert(faceName, faceRect);
         }
     }
 }
