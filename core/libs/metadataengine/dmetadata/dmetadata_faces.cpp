@@ -40,7 +40,7 @@
 namespace Digikam
 {
 
-bool DMetadata::getItemFacesMap(QMultiMap<QString,QVariant>& faces) const
+bool DMetadata::getItemFacesMap(QMultiMap<QString, QVariant>& faces) const
 {
     faces.clear();
 

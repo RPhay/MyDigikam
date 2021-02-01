@@ -464,14 +464,7 @@ bool MetadataHub::writeTags(const QString& filePath, WriteComponent writeMode,
     bool saveFaces = settings.saveFaceTags;
     bool saveTags  = settings.saveTags;
 
-    if (saveFaces)
-    {
-        metadata->setItemFacesMap(d->faceTagsList, true);
-    }
-    else
-    {
-        metadata->setItemFacesMap(d->faceTagsList, false);
-    }
+    metadata->setItemFacesMap(d->faceTagsList, saveFaces);
 
     writeToBaloo(filePath);
 
@@ -537,7 +530,7 @@ bool MetadataHub::writeTags(DMetadata& metadata, bool saveTags)
         }
 
         tagsPathList = cleanupTags(tagsPathList);
-        newKeywords = cleanupTags(newKeywords);
+        newKeywords  = cleanupTags(newKeywords);
 
         if (!newKeywords.isEmpty())
         {
@@ -632,8 +625,8 @@ void MetadataHub::writeToBaloo(const QString& filePath, const MetaEngineSettings
         return;
     }
 
-    bool saveComment = (settings.saveComments   && d->commentsStatus   == MetadataAvailable);
-    bool saveRating  = (settings.saveRating     && d->ratingStatus     == MetadataAvailable);
+    bool saveComment = (settings.saveComments && (d->commentsStatus == MetadataAvailable));
+    bool saveRating  = (settings.saveRating   && (d->ratingStatus   == MetadataAvailable));
 
     QStringList newKeywords;
 
