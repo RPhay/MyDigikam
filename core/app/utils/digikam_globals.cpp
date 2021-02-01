@@ -234,16 +234,18 @@ void tryInitDrMingw()
 
     qCDebug(DIGIKAM_GENERAL_LOG) << "Loading DrMinGw run-time...";
 
-    double version  = 0.0;
-    QString product = QSysInfo::productVersion();
+    double version          = 0.0;
+    QStringList productList = QSysInfo::productVersion().split(QLatin1Char(' '));
 
-    if (product.section(QLatin1Char(' '), 0, 0) != QLatin1String("Server"))
+    foreach (const QString& product, productList)
     {
-        version = product.section(QLatin1Char(' '), 0, 0).toDouble();
-    }
-    else
-    {
-        version = product.section(QLatin1Char(' '), 1).toDouble();
+        bool ok = false;
+        version = product.toDouble(&ok);
+
+        if (ok)
+        {
+            break;
+        }
     }
 
     if  (
