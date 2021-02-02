@@ -677,7 +677,7 @@ void MetadataHub::applyChangeNotifications()
 {
 }
 
-void Digikam::MetadataHub::loadFaceTags(const ItemInfo& info, const QSize& size)
+void MetadataHub::loadFaceTags(const ItemInfo& info, const QSize& size)
 {
     FaceTagsEditor editor;
 /*
@@ -710,12 +710,12 @@ void Digikam::MetadataHub::loadFaceTags(const ItemInfo& info, const QSize& size)
     }
 }
 
-QMultiMap<QString, QVariant> Digikam::MetadataHub::getFaceTags()
+QMultiMap<QString, QVariant> MetadataHub::getFaceTags()
 {
     return d->faceTagsList;
 }
 
-void Digikam::MetadataHub::setFaceTags(QMultiMap<QString, QVariant> newFaceTags, QSize size)
+void MetadataHub::setFaceTags(QMultiMap<QString, QVariant> newFaceTags, QSize size)
 {
     d->faceTagsList.clear();
     QMultiMap<QString, QVariant>::iterator it;
