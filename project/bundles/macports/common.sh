@@ -48,12 +48,22 @@ if [[ $MACOS_MAJOR -lt 11 && $MACOS_MINOR -lt 9 ]]; then
 fi
 
 if [[ ! -d /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX$MACOS_MAJOR.$MACOS_MINOR.sdk ]] ; then
-    echo "XCode Target SDK minimal version is not installled in /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs"
-    echo "Downloading archive of SDK from https://github.com/alexey-lysiuk/macos-sdk, please wait..."
-    git clone https://github.com/alexey-lysiuk/macos-sdk.git $DOWNLOAD_DIR/macos-sdk.git
-    cp $DOWNLOAD_DIR/macos-sdk.git/MacOSX$MACOS_MAJOR.$MACOS_MINOR.sdk /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/
+    echo "XCode Target SDK $MACOS_MAJOR.$MACOS_MINOR as minimal version is not installed in /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs"
+
+    if [[ ! -d $DOWNLOAD_DIR/macos-sdk.git ]] ; then
+
+        echo "Downloading archive of SDK from https://github.com/alexey-lysiuk/macos-sdk, please wait..."
+        git clone https://github.com/alexey-lysiuk/macos-sdk.git $DOWNLOAD_DIR/macos-sdk.git
+
+    fi
+
+    echo "Copying SDK $MACOS_MAJOR.$MACOS_MINOR into XCode, please wait..."
+    cp -R $DOWNLOAD_DIR/macos-sdk.git/MacOSX$MACOS_MAJOR.$MACOS_MINOR.sdk /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/
+
 else
+
     echo "Check XCode Target SDK minimal version passed..."
+
 fi
 
 # Adjust the property "MinimumSDKVersion" from /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Info.plist
