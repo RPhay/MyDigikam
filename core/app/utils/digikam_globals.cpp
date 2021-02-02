@@ -233,6 +233,7 @@ void tryInitDrMingw()
 #ifdef HAVE_DRMINGW
 
     qCDebug(DIGIKAM_GENERAL_LOG) << "Loading DrMinGw run-time...";
+    qCDebug(DIGIKAM_GENERAL_LOG) << "Windows version:" << QSysInfo::productVersion();
 
     double version          = 0.0;
     QStringList productList = QSysInfo::productVersion().split(QLatin1Char(' '));
