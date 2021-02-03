@@ -624,13 +624,20 @@ QStringList DRawDecoder::supportedCamera()
 
 QString DRawDecoder::librawVersion()
 {
-    return QString::fromLatin1(LIBRAW_VERSION_STR)
-                    .remove(QLatin1String("-Release"))
-                    .remove(QLatin1String("-WorkInProgress"));
+    QString simplified = QString::fromLatin1(LIBRAW_VERSION_STR)
+                         .section(QLatin1Char('-'), 0, -2);
+
+    if (simplified.isEmpty())
+    {
+        simplified = QString::fromLatin1(LIBRAW_VERSION_STR);
+    }
+
+    return simplified;
 }
 
 int DRawDecoder::librawUseGomp()
 {
+
 #ifdef LIBRAW_USE_OPENMP
 
     return true;
@@ -640,6 +647,7 @@ int DRawDecoder::librawUseGomp()
     return false;
 
 #endif
+
 }
 
 bool DRawDecoder::isRawFile(const QUrl& url)
