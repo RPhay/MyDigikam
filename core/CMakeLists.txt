@@ -441,19 +441,38 @@ include(MacroOpenMP)
 DETECT_OPENMP()
 
 if(OPENMP_FOUND)
+
     message(STATUS "RawEngine will be compiled with OpenMP support")
+
 else()
-    message(STATUS "RawEngine will not be compiled with OpenMP support")
+
+    # to force libraw to use OpenMP with Macports and MXE.
+    if (APPLE OR MINGW)
+
+        add_definitions(-DLIBRAW_FORCE_OPENMP)
+        set(OPENMP_FOUND ON)
+        message(STATUS "RawEngine will be compiled with OpenMP support")
+
+    else()
+
+        message(STATUS "RawEngine will not be compiled with OpenMP support")
+
+    endif()
+
 endif()
 
 # Flag to use libjasper with LibRaw RedCine codec
 
 if(Jasper_FOUND)
+
     add_definitions(-DUSE_JASPER)
     include_directories(${JASPER_INCLUDE_DIR})
     message(STATUS "RawEngine will be compiled with RedCine codec")
+
 else()
+
     message(STATUS "RawEngine will not be compiled with RedCine codec")
+
 endif()
 
 # JPEG library check
@@ -461,23 +480,34 @@ endif()
 message(STATUS "Looking for LibJpeg")
 
 if(JPEG_FOUND)
+
     # JPEG lib version is done on top level through MacroJPEG.cmake
+
     if (${JPEG_LIB_VERSION} LESS 80)
+
         set(JPEG8_FOUND FALSE)
+
     else()
+
         set(JPEG8_FOUND TRUE)
+
     endif()
+
 endif()
 
 # Flag to use libjpeg with LibRaw DNG lossy codec
 
 if(JPEG8_FOUND)
+
     add_definitions(-DUSE_JPEG)
     add_definitions(-DUSE_JPEG8)
     include_directories(${JPEG_INCLUDE_DIR})
     message(STATUS "RawEngine will be compiled with DNG lossy codec")
+
 else()
+
     message(STATUS "RawEngine will not be compiled with DNG lossy codec")
+
 endif()
 
 message(STATUS "Looking for PThreads")

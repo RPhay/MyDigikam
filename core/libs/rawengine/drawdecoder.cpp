@@ -638,13 +638,21 @@ QString DRawDecoder::librawVersion()
 int DRawDecoder::librawUseGomp()
 {
 
-#ifdef LIBRAW_USE_OPENMP
+#ifdef LIBRAW_FORCE_OPENMP
 
     return true;
 
 #else
 
+#   ifdef LIBRAW_USE_OPENMP
+
+    return true;
+
+#   else
+
     return false;
+
+#   endif
 
 #endif
 
