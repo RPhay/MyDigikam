@@ -63,4 +63,7 @@ Architecture and configuration to setup a continuous deployement computer.
   * @IP: 192.168.56.103
   * Change /etc/sudoers properties to run sudo without password:
       "%admin ALL = (ALL) ALL" => "%admin ALL = (ALL) NOPASSWD: ALL"
-  * To update Macports PKG all the days at 23h00, run "macports_update.sh" script in background with screen CLI tool
+  * To update Macports PKG all the days at 23h00, run "macports_update.sh" script in background with screen CLI tool.
+  * From macOS Control Panel/Energy Saver turn off all sleeping options.
+  * From macOS Control Panel/Deskop & Screen Saver Set no image background and turn off screen saver.
+
