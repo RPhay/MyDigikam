@@ -95,7 +95,7 @@ REQUIREMENTS
 ------------
 
 To build bundle you need a macOS install in a real computer (best) or in a VM.
-This Github project have been tested to install automatically BigSur in VirtualBox and work as expected:
+This Github project have been tested to install automatically Catalina in VirtualBox and work as expected:
 
 https://github.com/myspaghetti/macos-virtualbox
 
