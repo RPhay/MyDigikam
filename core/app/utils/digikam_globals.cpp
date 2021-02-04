@@ -233,21 +233,10 @@ void tryInitDrMingw()
 #ifdef HAVE_DRMINGW
 
     qCDebug(DIGIKAM_GENERAL_LOG) << "Loading DrMinGw run-time...";
-    qCDebug(DIGIKAM_GENERAL_LOG) << "Windows version:" << QSysInfo::productVersion();
 
-    double version          = 0.0;
-    QStringList productList = QSysInfo::productVersion().split(QLatin1Char(' '));
-
-    foreach (const QString& product, productList)
-    {
-        bool ok = false;
-        version = product.toDouble(&ok);
-
-        if (ok)
-        {
-            break;
-        }
-    }
+    QRegExp versionRegExp(QLatin1String("(\\d+[.]*\\d*)"));
+    QSysInfo::productVersion().indexOf(versionRegExp);
+    double version = versionRegExp.capturedTexts().constFirst().toDouble();
 
     if  (
          ((version < 2000.0) && (version < 10.0)) ||
