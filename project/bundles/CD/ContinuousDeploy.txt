@@ -66,4 +66,13 @@ Architecture and configuration to setup a continuous deployement computer.
   * To update Macports PKG all the days at 23h00, run "macports_update.sh" script in background with screen CLI tool.
   * From macOS Control Panel/Energy Saver turn off all sleeping options.
   * From macOS Control Panel/Deskop & Screen Saver Set no image background and turn off screen saver.
+  * From macOS Control Panel/Sound Effects disable all.
+  * From macOS Control Panel/Sharing enable remote login.
+  * From macOS Control Panel/Mouse disable natural scroll direction.
+  * From macOS Control Panel/Spotlight disable all categories.
+  * From macOS Control Panel/Siri disable all.
+  * From macOS Control Panel/Security & Privacy turn off screen lock.
+  * From macOS Control Panel/Notifications disable all.
+  
+  
 
