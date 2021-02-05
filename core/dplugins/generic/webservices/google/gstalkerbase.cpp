@@ -30,11 +30,6 @@
 #include <QDateTime>
 #include <QSettings>
 
-// KDE includes
-
-#include <klocalizedstring.h>
-#include <kconfiggroup.h>
-
 // Local includes
 
 #include "digikam_debug.h"
