@@ -78,7 +78,8 @@ Architecture and configuration to setup a continuous deployement computer.
   * From macOS Control Panel/Dock & Menu Bar disable all control options in menu bar.
   * Register a valid account in AppleStore and download XCode.
   * Open XCode and wait to update components with sudo right.
-  * From a Terminal, install XCode Command Line Tools with "sudo xcode-select --install"
-  * From a Terminal, valid XCode license with "sudo xcodebuild -license"
-  
+  * From a Terminal, install XCode Command Line Tools with "sudo xcode-select --install".
+  * From a Terminal, valid XCode license with "sudo xcodebuild -license".
+  * Install Packages for macOS (http://s.sudre.free.fr/Software/Packages/about.html).
+  * 
 
