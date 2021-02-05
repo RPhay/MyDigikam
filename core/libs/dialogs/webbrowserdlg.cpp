@@ -102,7 +102,7 @@ WebBrowserDlg::WebBrowserDlg(const QUrl& url, QWidget* const parent, bool hideDe
     d->browser = new QWebEngineView(this);
     d->browser->page()->profile()->cookieStore()->deleteAllCookies();
     QString userAgent = d->browser->page()->profile()->httpUserAgent();
-    userAgent.replace(QLatin1String("Chrome/"), QLatin1String("Chromium/"));
+    userAgent.replace(QLatin1String("Chrome/"), QLatin1String("QWebEngine/"));
     d->browser->page()->profile()->setHttpUserAgent(userAgent);
 
 #else
