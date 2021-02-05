@@ -26,27 +26,9 @@
 
 // Qt includes
 
-#include <QByteArray>
-#include <QtAlgorithms>
-#include <QVBoxLayout>
-#include <QLineEdit>
-#include <QPlainTextEdit>
-#include <QList>
-#include <QVariant>
-#include <QVariantList>
-#include <QVariantMap>
-#include <QPair>
-#include <QFileInfo>
-#include <QDebug>
-#include <QApplication>
-#include <QDialogButtonBox>
-#include <QPushButton>
-#include <QMessageBox>
-#include <QUrlQuery>
+#include <QMap>
+#include <QDateTime>
 #include <QSettings>
-#include <QJsonDocument>
-#include <QJsonParseError>
-#include <QJsonObject>
 
 // KDE includes
 
@@ -55,9 +37,8 @@
 
 // Local includes
 
-#include "gdmpform.h"
-#include "webbrowserdlg.h"
 #include "digikam_debug.h"
+#include "webbrowserdlg.h"
 #include "wstoolutils.h"
 #include "o0globals.h"
 #include "o0settingsstore.h"
@@ -72,15 +53,15 @@ class Q_DECL_HIDDEN GSTalkerBase::Private
 public:
 
     explicit Private()
-      : parent(nullptr),
-        authUrl(QLatin1String("https://accounts.google.com/o/oauth2/auth")),
-        tokenUrl(QLatin1String("https://accounts.google.com/o/oauth2/token")),
-        refreshUrl(QLatin1String("https://accounts.google.com/o/oauth2/token")),
-        apikey(QLatin1String("258540448336-hgdegpohibcjasvk1p595fpvjor15pbc.apps.googleusercontent.com")),
+      : parent      (nullptr),
+        authUrl     (QLatin1String("https://accounts.google.com/o/oauth2/auth")),
+        tokenUrl    (QLatin1String("https://accounts.google.com/o/oauth2/token")),
+        refreshUrl  (QLatin1String("https://accounts.google.com/o/oauth2/token")),
+        apikey      (QLatin1String("258540448336-hgdegpohibcjasvk1p595fpvjor15pbc.apps.googleusercontent.com")),
         clientSecret(QLatin1String("iiIKTNM4ggBXiTdquAzbs2xw")),
-        o2(nullptr),
-        settings(nullptr),
-        browser(nullptr)
+        o2          (nullptr),
+        settings    (nullptr),
+        browser     (nullptr)
     {
     }
 
@@ -216,13 +197,16 @@ void GSTalkerBase::slotCatchUrl(const QUrl& url)
     QString   str = url.toString();
     QUrlQuery query(str.section(QLatin1Char('?'), -1, -1));
 
-    if (query.hasQueryItem(QLatin1String("oauth_token")))
+    if (query.hasQueryItem(QLatin1String("code")) &&
+        query.hasQueryItem(QLatin1String("state")))
     {
         QMultiMap<QString, QString> queryParams;
-        queryParams.insert(QLatin1String("oauth_token"),
-                                         query.queryItemValue(QLatin1String("oauth_token")));
-        queryParams.insert(QLatin1String("oauth_verifier"),
-                                         query.queryItemValue(QLatin1String("oauth_verifier")));
+        queryParams.insert(QLatin1String("code"),
+                                         query.queryItemValue(QLatin1String("code"),
+                                         QUrl::FullyDecoded));
+        queryParams.insert(QLatin1String("state"),
+                                         query.queryItemValue(QLatin1String("state"),
+                                         QUrl::FullyDecoded));
 
         d->o2->onVerificationReceived(queryParams);
     }

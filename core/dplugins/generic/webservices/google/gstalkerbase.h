@@ -27,11 +27,10 @@
 
 // Qt includes
 
-#include <QList>
+#include <QUrl>
 #include <QString>
 #include <QObject>
 #include <QStringList>
-#include <QDialog>
 #include <QNetworkReply>
 #include <QNetworkAccessManager>
 
