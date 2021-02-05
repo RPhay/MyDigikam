@@ -325,4 +325,5 @@ BUGFIXES:
 285 ==> 432074 - digiKam's appimage failed to launch on ArchLinux.
 286 ==> 432312 - Detect Faces crashes when .xcf file encountered.
 287 ==> 432428 - Quick search by image name in current album.
-288 ==> 
+288 ==> 432522 - digiKam 7.2.0-b2 on macOS 11 with remote mysql - failed to update DB schema.
+289 ==> 
