@@ -157,6 +157,11 @@ bool GLViewerTexture::load(const QImage& im)
  */
 bool GLViewerTexture::loadFullSize()
 {
+    if (!d->fimage.isNull())
+    {
+        return false;
+    }
+
     d->fimage     = PreviewLoadThread::loadHighQualitySynchronously(d->filename,
                                                                     PreviewSettings::RawPreviewAutomatic,
                                                                     d->iccProfile).copyQImage();
@@ -183,14 +188,8 @@ bool GLViewerTexture::loadInternal()
 {
     destroy();
 
-    if (d->fimage.isNull())
-    {
-        setData(d->qimage.mirrored(), QOpenGLTexture::DontGenerateMipMaps);
-    }
-    else
-    {
-        setData(d->fimage.mirrored(), QOpenGLTexture::DontGenerateMipMaps);
-    }
+    QImage texImg = d->fimage.isNull() ? d->qimage : d->fimage;
+    setData(texImg.mirrored(), QOpenGLTexture::DontGenerateMipMaps);
 
     setMinificationFilter(QOpenGLTexture::LinearMipMapLinear);
     setMagnificationFilter(QOpenGLTexture::Linear);
@@ -400,8 +399,8 @@ bool GLViewerTexture::setNewSize(QSize size)
     // don't allow larger textures than the original image. the image will be upsampled by
     // OpenGL if necessary and not by QImage::scale
 
-    QSize imgSize = d->fimage.isNull() ? d->qimage.size() : d->fimage.size();
-    size          = size.boundedTo(imgSize);
+    QImage texImg = d->fimage.isNull() ? d->qimage : d->fimage;
+    size          = size.boundedTo(texImg.size());
 
     if (width() == size.width())
     {
@@ -415,29 +414,13 @@ bool GLViewerTexture::setNewSize(QSize size)
 
     if (w == 0)
     {
-        if (d->fimage.isNull())
-        {
-            setData(d->qimage.mirrored(), QOpenGLTexture::DontGenerateMipMaps);
-        }
-        else
-        {
-            setData(d->fimage.mirrored(), QOpenGLTexture::DontGenerateMipMaps);
-        }
+        setData(texImg.mirrored(), QOpenGLTexture::DontGenerateMipMaps);
     }
     else
     {
-        if (d->fimage.isNull())
-        {
-            setData(d->qimage.scaled(w, h, Qt::KeepAspectRatio,
-                                     Qt::SmoothTransformation).mirrored(),
-                                     QOpenGLTexture::DontGenerateMipMaps);
-        }
-        else
-        {
-            setData(d->fimage.scaled(w, h, Qt::KeepAspectRatio,
-                                     Qt::SmoothTransformation).mirrored(),
-                                     QOpenGLTexture::DontGenerateMipMaps);
-        }
+        setData(texImg.scaled(w, h, Qt::KeepAspectRatio,
+                              Qt::SmoothTransformation).mirrored(),
+                              QOpenGLTexture::DontGenerateMipMaps);
     }
 
     setMinificationFilter(QOpenGLTexture::LinearMipMapLinear);
