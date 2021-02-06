@@ -365,7 +365,7 @@ bool MetadataHub::write(DMetadata& metadata, WriteComponent writeMode, const Met
         }
     }
 
-    dirty |= metadata.setItemFacesMap(d->faceTagsList, saveFaces);
+    dirty |= writeFaceTagsMap(metadata, saveFaces);
 
     dirty |= writeTags(metadata, saveTags);
 
@@ -464,7 +464,7 @@ bool MetadataHub::writeTags(const QString& filePath, WriteComponent writeMode,
     bool saveFaces = settings.saveFaceTags;
     bool saveTags  = settings.saveTags;
 
-    metadata->setItemFacesMap(d->faceTagsList, saveFaces);
+    writeFaceTagsMap(*metadata, saveFaces);
 
     writeToBaloo(filePath);
 
@@ -552,6 +552,26 @@ bool MetadataHub::writeTags(DMetadata& metadata, bool saveTags)
     }
 
     return dirty;
+}
+
+bool MetadataHub::writeFaceTagsMap(DMetadata& metadata, bool saveFaces)
+{
+    // add person tags to which no region is assigned to Microsoft Photo Region schema
+
+    foreach (int tagId, d->tags.keys())
+    {
+        if ((d->tags.value(tagId) == MetadataAvailable) && FaceTags::isPerson(tagId))
+        {
+            QString faceName = FaceTags::faceNameForTag(tagId);
+
+            if (!faceName.isEmpty() && !d->faceTagsList.contains(faceName))
+            {
+                d->faceTagsList.insert(faceName, QRectF());
+            }
+        }
+    }
+
+    return metadata.setItemFacesMap(d->faceTagsList, saveFaces);
 }
 
 QStringList MetadataHub::cleanupTags(const QStringList& toClean)

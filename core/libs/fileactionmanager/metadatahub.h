@@ -276,6 +276,10 @@ protected:
 
 private:
 
+    bool writeFaceTagsMap(DMetadata& metadata, bool saveFaces);
+
+private:
+
     class Private;
     Private* const d;
 
