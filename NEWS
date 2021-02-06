@@ -333,4 +333,5 @@ BUGFIXES:
 293 ==> 431366 - Translation incomplete, conversion to DE not possible. Language selection is missing.
 294 ==> 425404 - Digikam crash when making a maintenance.
 295 ==> 426733 - Renaming with tags in subtree fails.
-296 ==> 
+296 ==> 428938 - Entire program closes unexpectedly.
+297 ==> 
