@@ -330,4 +330,5 @@ BUGFIXES:
 290 ==> 432568 - Provisional tags are not displayed until another change is made.
 291 ==> 431354 - Inconsistent behavior when adding Tags/Keywords.
 292 ==> 430922 - Crashes without notification.
-293 ==> 
+293 ==> 431366 - Translation incomplete, conversion to DE not possible. Language selection is missing.
+294 ==> 
