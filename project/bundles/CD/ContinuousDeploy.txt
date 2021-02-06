@@ -61,7 +61,11 @@ Architecture and configuration to setup a continuous deployement computer.
 
 - macOS BigSur: system is installed using this GitHub repository: https://github.com/myspaghetti/macos-virtualbox and using Macports procedure.
   * @IP: 192.168.56.103
-  * From macOS Control Panel/Users & Groups and change user account shell from zsh to bash.
+  * MacOS Catalina will be installed and first run assistant will appear.
+  * Create a main user account with admin right, disable Siri, TimeScreen, Apple feedback, TimeMachine, and don't setup an AppleID
+  * From macOS Control Panel/Software Updates upgrade to macOS BigSur and disable auto up to date.
+  * MacOS BigSur will be installed and first run assistant will appear where nothing special must be changed compared to Catalina.
+  * From macOS Control Panel/Users & Groups change user account shell from zsh to bash and reboot the virtual machine.
   * From macOS Control Panel/Energy Saver turn off all sleeping options.
   * From macOS Control Panel/Deskop & Screen Saver Set no image background and turn off screen saver.
   * From macOS Control Panel/Sound Effects disable all.
