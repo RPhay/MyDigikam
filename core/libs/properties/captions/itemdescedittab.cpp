@@ -1030,23 +1030,6 @@ void ItemDescEditTab::slotModified()
     }
 }
 
-void ItemDescEditTab::slotCreateNewTag()
-{
-    if (d->newTagEdit->text().isEmpty())
-    {
-        return;
-    }
-
-    TAlbum* const created = d->tagCheckView->tagModificationHelper()->
-                            slotTagNew(d->tagCheckView->currentAlbum(), d->newTagEdit->text());
-
-    if (created)
-    {
-        //d->tagCheckView->slotSelectAlbum(created);
-        d->newTagEdit->clear();
-    }
-}
-
 void ItemDescEditTab::slotTaggingActionActivated(const TaggingAction& action)
 {
     TAlbum* assigned = nullptr;

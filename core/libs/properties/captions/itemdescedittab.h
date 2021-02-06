@@ -133,7 +133,6 @@ private Q_SLOTS:
     void slotRatingChanged(int rating);
     void slotTemplateSelected();
     void slotModified();
-    void slotCreateNewTag();
     void slotTaggingActionActivated(const TaggingAction&);
     void slotReloadForMetadataChange();
 
