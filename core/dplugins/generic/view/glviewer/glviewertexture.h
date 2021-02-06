@@ -49,7 +49,7 @@ public:
     virtual ~GLViewerTexture();
 
     bool load(const QString& fn, const QSize& size);
-    bool load(const QImage& im, const QSize& size);
+    bool load(const QImage& im);
     bool loadFullSize();
 
     GLfloat vertex_bottom() const;

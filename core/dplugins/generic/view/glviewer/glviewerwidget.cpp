@@ -699,25 +699,13 @@ GLViewerTexture* GLViewerWidget::loadImage(int file_index) const
 
         // when loadImage is called the first time, the frame is not yet fullscreen
 
-        QSize size;
-
-        if (d->firstImage)
-        {
-            //determine screensize since its not yet known by the widget
-            size = d->screenSize;
-            //qCDebug(DIGIKAM_DPLUGIN_GENERIC_LOG) << "first image:size=" << size.width();
-        }
-        else
-        {
-            size = QSize(width(), height());
-            //qCDebug(DIGIKAM_DPLUGIN_GENERIC_LOG) << "next image:size=" << size.width();
-        }
+        QSize size = d->firstImage ? d->screenSize : QSize(width(), height());
 
         // handle non-loadable images
 
         if (!d->cache[imod].texture->load(f, size))
         {
-            d->cache[imod].texture->load(d->nullImage.toImage(), size);
+            d->cache[imod].texture->load(d->nullImage.toImage());
         }
 
         d->cache[imod].texture->setViewport(size.width(), size.height());
