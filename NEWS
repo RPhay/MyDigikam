@@ -331,8 +331,9 @@ BUGFIXES:
 291 ==> 431354 - Inconsistent behavior when adding Tags/Keywords.
 292 ==> 430922 - Crashes without notification.
 293 ==> 431366 - Translation incomplete, conversion to DE not possible. Language selection is missing.
-294 ==> 425404 - Digikam crash when making a maintenance.
+294 ==> 425404 - digikam crash when making a maintenance.
 295 ==> 426733 - Renaming with tags in subtree fails.
 296 ==> 428938 - Entire program closes unexpectedly.
 297 ==> 430702 - Lost the UI while process is still working.
-298 ==> 
+298 ==> 430921 - Cannot add Edit Metadata filter to toolbar DigiKam 7.1.0.
+299 ==> 
