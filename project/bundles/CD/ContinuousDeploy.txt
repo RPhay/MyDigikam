@@ -82,6 +82,7 @@ Architecture and configuration to setup a continuous deployement computer.
   * Install Packages for macOS (http://s.sudre.free.fr/Software/Packages/about.html).
   * Install .bashrc_profile, .gitconfig, and macports_update.sh to the home directory.
   * Install your public and private ssh keys for your KDE account to your home directory.
-  * Clone digiKam git repository in your home repository (git clone git@invent.kde.org:graphics/digikam.git)
+  * Clone digiKam git repository in your home repository (git clone git@invent.kde.org:graphics/digikam.git).
+  * From local digiKam git repository, run project/bundles/macports/makeall.sh.
   * To update Macports PKG all the days at 23h00, run "macports_update.sh" script in background with screen CLI tool.
 
