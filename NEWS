@@ -329,4 +329,5 @@ BUGFIXES:
 289 ==> 432494 - Advanced search album does not search subfolders nothing.
 290 ==> 432568 - Provisional tags are not displayed until another change is made.
 291 ==> 431354 - Inconsistent behavior when adding Tags/Keywords.
-292 ==> 
+292 ==> 430922 - Crashes without notification.
+293 ==> 
