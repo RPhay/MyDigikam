@@ -245,6 +245,11 @@ bool TagCheckView::checkNewTags() const
 void TagCheckView::slotCreatedNewTagByContextMenu(TAlbum* tag)
 {
     albumModel()->setChecked(tag, true);
+
+    if (albumFilterModel())
+    {
+        albumFilterModel()->updateFilter();
+    }
 }
 
 void TagCheckView::addCustomContextMenuActions(ContextMenuHelper& cmh, Album* album)

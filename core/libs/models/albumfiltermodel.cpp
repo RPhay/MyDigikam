@@ -140,6 +140,14 @@ bool AlbumFilterModel::isFiltering() const
     return settingsFilter(m_settings);
 }
 
+void AlbumFilterModel::updateFilter()
+{
+    if (isFiltering())
+    {
+        invalidateFilter();
+    }
+}
+
 SearchTextSettings AlbumFilterModel::searchTextSettings() const
 {
     return m_settings;

@@ -327,4 +327,6 @@ BUGFIXES:
 287 ==> 432428 - Quick search by image name in current album.
 288 ==> 432522 - digiKam 7.2.0-b2 on macOS 11 with remote mysql - failed to update DB schema.
 289 ==> 432494 - Advanced search album does not search subfolders nothing.
-290 ==> 
+290 ==> 432568 - Provisional tags are not displayed until another change is made.
+291 ==> 431354 - Inconsistent behavior when adding Tags/Keywords.
+292 ==> 

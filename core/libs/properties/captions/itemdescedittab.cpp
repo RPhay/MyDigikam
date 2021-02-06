@@ -1058,6 +1058,7 @@ void ItemDescEditTab::slotTaggingActionActivated(const TaggingAction& action)
         if (assigned)
         {
             d->tagModel->setChecked(assigned, true);
+            d->tagCheckView->checkableAlbumFilterModel()->updateFilter();
         }
     }
     else if (action.shallCreateNewTag())
