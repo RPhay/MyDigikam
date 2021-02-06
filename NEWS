@@ -334,4 +334,5 @@ BUGFIXES:
 294 ==> 425404 - Digikam crash when making a maintenance.
 295 ==> 426733 - Renaming with tags in subtree fails.
 296 ==> 428938 - Entire program closes unexpectedly.
-297 ==> 
+297 ==> 430702 - Lost the UI while process is still working.
+298 ==> 
