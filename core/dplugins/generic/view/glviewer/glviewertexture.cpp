@@ -118,9 +118,9 @@ bool GLViewerTexture::load(const QString& fn, const QSize& size)
 {
     d->filename     = fn;
     d->initial_size = size;
-    d->qimage       = PreviewLoadThread::loadHighQualitySynchronously(d->filename,
-                                                                      PreviewSettings::RawPreviewAutomatic,
-                                                                      d->iccProfile).copyQImage();
+    d->qimage       = PreviewLoadThread::loadFastSynchronously(d->filename,
+                                                               qMax(size.width(), size.height()),
+                                                               d->iccProfile).copyQImage();
 
     if (d->qimage.isNull())
     {
@@ -129,7 +129,6 @@ bool GLViewerTexture::load(const QString& fn, const QSize& size)
 
     loadInternal();
     reset();
-
     d->rotate_idx = 0;
 
     return true;
@@ -147,6 +146,28 @@ bool GLViewerTexture::load(const QImage& im, const QSize& size)
 {
     d->qimage       = im;
     d->initial_size = size;
+    loadInternal();
+    reset();
+    d->rotate_idx   = 0;
+
+    return true;
+}
+
+/*!
+    \brief load full size image from disc and save it in texture
+ */
+bool GLViewerTexture::loadFullSize()
+{
+    d->qimage       = PreviewLoadThread::loadHighQualitySynchronously(d->filename,
+                                                                      PreviewSettings::RawPreviewAutomatic,
+                                                                      d->iccProfile).copyQImage();
+
+    if (d->qimage.isNull())
+    {
+        return false;
+    }
+
+    d->initial_size = d->qimage.size();
 
     loadInternal();
     reset();
@@ -170,13 +191,12 @@ bool GLViewerTexture::loadInternal()
 
     if ((w == 0) || (w > d->qimage.width()) || (h > d->qimage.height()))
     {
-        setData(d->qimage.mirrored(), QOpenGLTexture::DontGenerateMipMaps);
+        setData(d->qimage.mirrored());
     }
     else
     {
         setData(d->qimage.scaled(w, h, Qt::KeepAspectRatio,
-                                 Qt::SmoothTransformation).mirrored(),
-                                 QOpenGLTexture::DontGenerateMipMaps);
+                                 Qt::SmoothTransformation).mirrored());
     }
 
     setMinificationFilter(QOpenGLTexture::LinearMipMapLinear);
@@ -395,13 +415,12 @@ bool GLViewerTexture::setNewSize(QSize size)
 
     if (w == 0)
     {
-        setData(d->qimage.mirrored(), QOpenGLTexture::DontGenerateMipMaps);
+        setData(d->qimage.mirrored());
     }
     else
     {
         setData(d->qimage.scaled(w, h, Qt::KeepAspectRatio,
-                                 Qt::SmoothTransformation).mirrored(),
-                                 QOpenGLTexture::DontGenerateMipMaps);
+                                 Qt::SmoothTransformation).mirrored());
     }
 
     setMinificationFilter(QOpenGLTexture::LinearMipMapLinear);
