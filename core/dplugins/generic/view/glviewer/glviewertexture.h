@@ -59,7 +59,7 @@ public:
 
     void setViewport(int w, int h);
     void zoom(float delta, const QPoint& mousepos);
-    void reset();
+    void reset(bool resetFullImage = false);
     void move(const QPoint& diff);
     bool setNewSize(QSize size);
     void rotate();

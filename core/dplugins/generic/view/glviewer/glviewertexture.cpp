@@ -74,6 +74,7 @@ public:
     int                         display_x, display_y;
     QString                     filename;
     QImage                      qimage;
+    QImage                      fimage;
     DMetadata::ImageOrientation rotate_list[4];
     int                         rotate_idx;
     IccProfile                  iccProfile;
@@ -117,7 +118,8 @@ bool GLViewerTexture::load(const QString& fn, const QSize& size)
 {
     d->filename   = fn;
     d->qimage     = PreviewLoadThread::loadFastSynchronously(d->filename,
-                                                             qMax(size.width(), size.height()),
+                                                             qMax(size.width()  * 1.2,
+                                                                  size.height() * 1.2),
                                                              d->iccProfile).copyQImage();
 
     if (d->qimage.isNull())
@@ -155,11 +157,11 @@ bool GLViewerTexture::load(const QImage& im)
  */
 bool GLViewerTexture::loadFullSize()
 {
-    d->qimage     = PreviewLoadThread::loadHighQualitySynchronously(d->filename,
+    d->fimage     = PreviewLoadThread::loadHighQualitySynchronously(d->filename,
                                                                     PreviewSettings::RawPreviewAutomatic,
                                                                     d->iccProfile).copyQImage();
 
-    if (d->qimage.isNull())
+    if (d->fimage.isNull())
     {
         return false;
     }
@@ -181,7 +183,14 @@ bool GLViewerTexture::loadInternal()
 {
     destroy();
 
-    setData(d->qimage.mirrored(), QOpenGLTexture::DontGenerateMipMaps);
+    if (d->fimage.isNull())
+    {
+        setData(d->qimage.mirrored(), QOpenGLTexture::DontGenerateMipMaps);
+    }
+    else
+    {
+        setData(d->fimage.mirrored(), QOpenGLTexture::DontGenerateMipMaps);
+    }
 
     setMinificationFilter(QOpenGLTexture::LinearMipMapLinear);
     setMagnificationFilter(QOpenGLTexture::Linear);
@@ -337,7 +346,7 @@ void GLViewerTexture::move(const QPoint& diff)
 /*!
     \fn GLViewerTexture::reset()
  */
-void GLViewerTexture::reset()
+void GLViewerTexture::reset(bool resetFullImage)
 {
     d->ux           = 0;
     d->uy           = 0;
@@ -364,8 +373,13 @@ void GLViewerTexture::reset()
         zoomdelta = d->z - d->rty;
     }
 
-    QPoint p = QPoint(d->display_x / 2, d->display_y / 2);
+    QPoint p  = QPoint(d->display_x / 2, d->display_y / 2);
     zoom(1.0 - zoomdelta, p);
+
+    if (resetFullImage)
+    {
+        d->fimage = QImage();
+    }
 
     calcVertex();
 }
@@ -386,7 +400,8 @@ bool GLViewerTexture::setNewSize(QSize size)
     // don't allow larger textures than the original image. the image will be upsampled by
     // OpenGL if necessary and not by QImage::scale
 
-    size = size.boundedTo(d->qimage.size());
+    QSize imgSize = d->fimage.isNull() ? d->qimage.size() : d->fimage.size();
+    size          = size.boundedTo(imgSize);
 
     if (width() == size.width())
     {
@@ -400,13 +415,29 @@ bool GLViewerTexture::setNewSize(QSize size)
 
     if (w == 0)
     {
-        setData(d->qimage.mirrored(), QOpenGLTexture::DontGenerateMipMaps);
+        if (d->fimage.isNull())
+        {
+            setData(d->qimage.mirrored(), QOpenGLTexture::DontGenerateMipMaps);
+        }
+        else
+        {
+            setData(d->fimage.mirrored(), QOpenGLTexture::DontGenerateMipMaps);
+        }
     }
     else
     {
-        setData(d->qimage.scaled(w, h, Qt::KeepAspectRatio,
-                                 Qt::SmoothTransformation).mirrored(),
-                                 QOpenGLTexture::DontGenerateMipMaps);
+        if (d->fimage.isNull())
+        {
+            setData(d->qimage.scaled(w, h, Qt::KeepAspectRatio,
+                                     Qt::SmoothTransformation).mirrored(),
+                                     QOpenGLTexture::DontGenerateMipMaps);
+        }
+        else
+        {
+            setData(d->fimage.scaled(w, h, Qt::KeepAspectRatio,
+                                     Qt::SmoothTransformation).mirrored(),
+                                     QOpenGLTexture::DontGenerateMipMaps);
+        }
     }
 
     setMinificationFilter(QOpenGLTexture::LinearMipMapLinear);
@@ -428,6 +459,12 @@ bool GLViewerTexture::setNewSize(QSize size)
 void GLViewerTexture::rotate()
 {
     QScopedPointer<DMetadata> meta(new DMetadata);
+
+    if (!d->fimage.isNull())
+    {
+        meta->rotateExifQImage(d->fimage, (DMetadata::ImageOrientation)d->rotate_list[d->rotate_idx % 4]);
+    }
+
     meta->rotateExifQImage(d->qimage, (DMetadata::ImageOrientation)d->rotate_list[d->rotate_idx % 4]);
 
     loadInternal();
@@ -450,20 +487,21 @@ void GLViewerTexture::rotate()
  */
 void GLViewerTexture::zoomToOriginal()
 {
+    QSize imgSize = d->fimage.isNull() ? d->qimage.size() : d->fimage.size();
     float zoomfactorToOriginal;
     reset();
 
-    if (float(d->qimage.width()) / float(d->qimage.height()) > float(d->display_x) / float(d->display_y))
+    if (float(imgSize.width()) / float(imgSize.height()) > float(d->display_x) / float(d->display_y))
     {
         // Image touches right and left edge of window
 
-        zoomfactorToOriginal = float(d->display_x) / d->qimage.width();
+        zoomfactorToOriginal = float(d->display_x) / imgSize.width();
     }
     else
     {
         // Image touches upper and lower edge of window
 
-        zoomfactorToOriginal = float(d->display_y) / d->qimage.height();
+        zoomfactorToOriginal = float(d->display_y) / imgSize.height();
     }
 
     zoomfactorToOriginal *= qApp->devicePixelRatio();

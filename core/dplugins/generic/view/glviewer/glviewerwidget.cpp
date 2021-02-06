@@ -338,7 +338,7 @@ void GLViewerWidget::paintGL()
                 loadImage(d->file_idx+1);
             }
 
-            d->firstImage=false;
+            d->firstImage = false;
         }
     }
 
@@ -496,7 +496,7 @@ void GLViewerWidget::keyPressEvent(QKeyEvent* e)
 
         case Qt::Key_Z:
         {
-            d->texture->reset();
+            d->texture->reset(true);
             update();
 
             break;
@@ -858,7 +858,7 @@ void GLViewerWidget::mouseReleaseEvent(QMouseEvent*)
  */
 void GLViewerWidget::mouseDoubleClickEvent(QMouseEvent*)
 {
-    d->texture->reset();
+    d->texture->reset(true);
     update();
 }
 
@@ -887,7 +887,7 @@ void GLViewerWidget::prevImage()
 #endif
 
     d->texture = loadImage(d->file_idx);
-    d->texture->reset();
+    d->texture->reset(true);
 
 #ifdef PERFORMANCE_ANALYSIS
 
@@ -943,7 +943,7 @@ void GLViewerWidget::nextImage()
 #endif
 
     d->texture = loadImage(d->file_idx);
-    d->texture->reset();
+    d->texture->reset(true);
 
 #ifdef PERFORMANCE_ANALYSIS
 
