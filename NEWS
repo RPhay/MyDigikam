@@ -337,4 +337,5 @@ BUGFIXES:
 297 ==> 430702 - Lost the UI while process is still working.
 298 ==> 430921 - Cannot add Edit Metadata filter to toolbar DigiKam 7.1.0.
 299 ==> 432480 - Crash when trying to Import from Google Photos.
-300 ==> 
+300 ==> 339355 - for each access to a google service we must have a distinct authorization.
+301 ==> 
