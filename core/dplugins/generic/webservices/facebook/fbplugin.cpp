@@ -113,7 +113,7 @@ void FbPlugin::setup(QObject* const parent)
 
 void FbPlugin::slotFaceBook()
 {
-//    if (!reactivateToolDialog(m_toolDlg))
+    if (!reactivateToolDialog(m_toolDlg))
     {
         QPointer<QMessageBox> msgBox = new QMessageBox(QMessageBox::Information, i18n("Facebook"),
                  i18n("<p>Currently, as an open source project, we are unable to meet "
@@ -126,10 +126,10 @@ void FbPlugin::slotFaceBook()
         msgBox->exec();
         delete msgBox;
 
-//        delete m_toolDlg;
-//        m_toolDlg = new FbWindow(infoIface(sender()), nullptr);
-//        m_toolDlg->setPlugin(this);
-//        m_toolDlg->show();
+        delete m_toolDlg;
+        m_toolDlg = new FbWindow(infoIface(sender()), nullptr);
+        m_toolDlg->setPlugin(this);
+        m_toolDlg->show();
     }
 }
 
