@@ -50,6 +50,10 @@ namespace Digikam
 DPluginLoader::Private::Private()
     : pluginsLoaded(false)
 {
+    // Do not load these plugins as they are not currently working.
+
+    blacklist << QLatin1String("Generic_FaceBook_Plugin");
+    blacklist << QLatin1String("Generic_IpFs_Plugin");
 }
 
 DPluginLoader::Private::~Private()
