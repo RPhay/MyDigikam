@@ -167,10 +167,25 @@ bool DMetadata::setItemFacesMap(QMultiMap<QString, QVariant>& facesPath, bool wr
 
     QMap<QString, QVariant>::const_iterator it = facesPath.constBegin();
     int i                                      = 1;
+    int j                                      = 1;
     bool ok                                    = true;
 
     while (it != facesPath.constEnd())
     {
+        // Set tag name
+
+        setXmpTagString(winNameTagKey.arg(i).toLatin1().constData(),
+                        it.key(),
+                        MetaEngine::NormalTag);
+
+        if (!it.value().toRectF().isValid())
+        {
+            ++it;
+            ++i;
+
+            continue;
+        }
+
         qreal x, y, w, h;
         it.value().toRectF().getRect(&x, &y, &w, &h);
         qCDebug(DIGIKAM_METAENGINE_LOG) << "Set face region:" << x << y << w << h;
@@ -190,12 +205,6 @@ bool DMetadata::setItemFacesMap(QMultiMap<QString, QVariant>& facesPath, bool wr
                         rectString,
                         MetaEngine::NormalTag);
 
-        // Set tag name
-
-        setXmpTagString(winNameTagKey.arg(i).toLatin1().constData(),
-                        it.key(),
-                        MetaEngine::NormalTag);
-
         // Writing rectangle in Metadata Group format
 
         x += w / 2;
@@ -203,62 +212,63 @@ bool DMetadata::setItemFacesMap(QMultiMap<QString, QVariant>& facesPath, bool wr
 
         // Set tag name
 
-        ok &= setXmpTagString(nameTagKey.arg(i).toLatin1().constData(),
+        ok &= setXmpTagString(nameTagKey.arg(j).toLatin1().constData(),
                               it.key(),
                               MetaEngine::NormalTag);
         qCDebug(DIGIKAM_METAENGINE_LOG) << "    => set tag name:" << ok;
 
         // Set tag type as Face
 
-        ok &= setXmpTagString(typeTagKey.arg(i).toLatin1().constData(),
+        ok &= setXmpTagString(typeTagKey.arg(j).toLatin1().constData(),
                               QLatin1String("Face"),
                               MetaEngine::NormalTag);
         qCDebug(DIGIKAM_METAENGINE_LOG) << "    => set tag type:" << ok;
 
         // Set tag Area, with xmp type struct
 
-        ok &= setXmpTagString(areaTagKey.arg(i).toLatin1().constData(),
+        ok &= setXmpTagString(areaTagKey.arg(j).toLatin1().constData(),
                               QString(),
                               MetaEngine::StructureTag);
         qCDebug(DIGIKAM_METAENGINE_LOG) << "    => set area struct:" << ok;
 
         // Set stArea:x inside Area structure
 
-        ok &= setXmpTagString(areaxTagKey.arg(i).toLatin1().constData(),
+        ok &= setXmpTagString(areaxTagKey.arg(j).toLatin1().constData(),
                               QString::number(x),
                               MetaEngine::NormalTag);
         qCDebug(DIGIKAM_METAENGINE_LOG) << "    => set xpos:" << ok;
 
         // Set stArea:y inside Area structure
 
-        ok &= setXmpTagString(areayTagKey.arg(i).toLatin1().constData(),
+        ok &= setXmpTagString(areayTagKey.arg(j).toLatin1().constData(),
                               QString::number(y),
                               MetaEngine::NormalTag);
         qCDebug(DIGIKAM_METAENGINE_LOG) << "    => set ypos:" << ok;
 
         // Set stArea:w inside Area structure
 
-        ok &= setXmpTagString(areawTagKey.arg(i).toLatin1().constData(),
+        ok &= setXmpTagString(areawTagKey.arg(j).toLatin1().constData(),
                               QString::number(w),
                               MetaEngine::NormalTag);
         qCDebug(DIGIKAM_METAENGINE_LOG) << "    => set width:" << ok;
 
         // Set stArea:h inside Area structure
 
-        ok &= setXmpTagString(areahTagKey.arg(i).toLatin1().constData(),
+        ok &= setXmpTagString(areahTagKey.arg(j).toLatin1().constData(),
                               QString::number(h),
                               MetaEngine::NormalTag);
         qCDebug(DIGIKAM_METAENGINE_LOG) << "    => set heigh:" << ok;
 
         // Set stArea:unit inside Area structure  as normalized
 
-        ok &= setXmpTagString(areanormTagKey.arg(i).toLatin1().constData(),
+        ok &= setXmpTagString(areanormTagKey.arg(j).toLatin1().constData(),
                               QLatin1String("normalized"),
                               MetaEngine::NormalTag);
         qCDebug(DIGIKAM_METAENGINE_LOG) << "    => set unit:" << ok;
 
         ++it;
         ++i;
+        ++j;
     }
 
     return ok;

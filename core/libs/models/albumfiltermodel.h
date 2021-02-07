@@ -138,6 +138,11 @@ public:
     virtual bool isFiltering()                                              const;
 
     /**
+     * Force invalidateFilter() externally.
+     */
+    void updateFilter();
+
+    /**
      * Returns the usual compare result of -1, 0, or 1 for lessThan, equals and greaterThan.
      */
     template <typename T>
