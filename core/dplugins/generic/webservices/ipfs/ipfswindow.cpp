@@ -96,6 +96,7 @@ IpfsWindow::IpfsWindow(DInfoInterface* const iface, QWidget* const /*parent*/)
 
     d->list = new IpfsImagesList;
     d->list->setIface(iface);
+    d->list->loadImagesFromCurrentSelection();
     mainLayout->addWidget(d->list);
 
     /**
