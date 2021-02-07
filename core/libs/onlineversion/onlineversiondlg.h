@@ -58,6 +58,8 @@ private Q_SLOTS:
     void slotNewVersionAvailable(const QString& version);
     void slotNewVersionCheckError(const QString& error);
 
+    void slotReleaseNotesData(const QString& notes);
+
     void slotDownloadInstaller();
     void slotDownloadError(const QString& error);
     void slotDownloadProgress(qint64, qint64);

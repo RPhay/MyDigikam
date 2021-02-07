@@ -43,6 +43,7 @@
 #include <QProcess>
 #include <QDialogButtonBox>
 #include <QMessageBox>
+#include <QTextBrowser>
 
 // KDE includes
 
@@ -55,6 +56,7 @@
 #include "onlineversiondwnl.h"
 #include "dfileoperations.h"
 #include "dxmlguiwindow.h"
+#include "dexpanderbox.h"
 
 namespace Digikam
 {
@@ -70,6 +72,8 @@ public:
         label          (nullptr),
         logo           (nullptr),
         buttons        (nullptr),
+        releaseNotes   (nullptr),
+        expanderBox    (nullptr),
         checker        (nullptr),
         dwnloader      (nullptr)
     {
@@ -86,7 +90,9 @@ public:
     QLabel*               label;
     QLabel*               logo;
     QDialogButtonBox*     buttons;
+    QTextBrowser*         releaseNotes;
 
+    DExpanderBox*         expanderBox;
     OnlineVersionChecker* checker;
     OnlineVersionDwnl*    dwnloader;
 };
@@ -116,6 +122,9 @@ OnlineVersionDlg::OnlineVersionDlg(QWidget* const parent,
     connect(d->checker, SIGNAL(signalNewVersionCheckError(QString)),
             this, SLOT(slotNewVersionCheckError(QString)));
 
+    connect(d->checker, SIGNAL(signalReleaseNotesData(QString)),
+            this, SLOT(slotReleaseNotesData(QString)));
+
     connect(d->dwnloader, SIGNAL(signalDownloadError(QString)),
             this, SLOT(slotDownloadError(QString)));
 
@@ -125,6 +134,17 @@ OnlineVersionDlg::OnlineVersionDlg(QWidget* const parent,
     QWidget* const page     = new QWidget(this);
     QGridLayout* const grid = new QGridLayout(page);
     d->label                = new QLabel(page);
+
+    d->expanderBox          = new DExpanderBox(page);
+    d->releaseNotes         = new QTextBrowser(d->expanderBox);
+    d->releaseNotes->setLineWrapMode(QTextEdit::NoWrap);
+    d->expanderBox->insertItem(0,
+                               d->releaseNotes,
+                               QIcon::fromTheme(QLatin1String("dialog-information")),
+                               i18n("Release Notes"),
+                               QLatin1String("ReleasesNotes"),  // Not used
+                               false);
+    d->expanderBox->setVisible(false);
 
     if (d->preRelease)
     {
@@ -160,12 +180,14 @@ OnlineVersionDlg::OnlineVersionDlg(QWidget* const parent,
                                                   page);
     d->buttons->button(QDialogButtonBox::Cancel)->setDefault(true);
 
-    grid->addWidget(d->logo,  0, 0, 3, 1);
-    grid->addWidget(d->label, 0, 1, 1, 2);
-    grid->addWidget(d->bar,   1, 1, 1, 2);
+    grid->addWidget(d->logo,        0, 0, 3, 1);
+    grid->addWidget(d->label,       0, 1, 1, 2);
+    grid->addWidget(d->expanderBox, 1, 1, 1, 2);
+    grid->addWidget(d->bar,         2, 1, 1, 2);
     grid->setSpacing(style()->pixelMetric(QStyle::PM_DefaultLayoutSpacing));
     grid->setContentsMargins(QMargins());
     grid->setColumnStretch(2, 10);
+    grid->setRowStretch(1, 10);
 
     QVBoxLayout* const vbx = new QVBoxLayout(this);
     vbx->addWidget(page);
@@ -249,6 +271,8 @@ void OnlineVersionDlg::slotNewVersionAvailable(const QString& version)
                                d->curVersion,
                                version));
     }
+
+    d->checker->downloadReleaseNotes(d->preRelease ? QString() : version);
 }
 
 void OnlineVersionDlg::slotNewVersionCheckError(const QString& error)
@@ -281,6 +305,13 @@ void OnlineVersionDlg::slotNewVersionCheckError(const QString& error)
                                qApp->applicationName(),
                                error));
     }
+}
+
+void OnlineVersionDlg::slotReleaseNotesData(const QString& notes)
+{
+    d->releaseNotes->setText(notes);
+    d->expanderBox->setItemExpanded(0, false);
+    d->expanderBox->setVisible(true);
 }
 
 void OnlineVersionDlg::slotDownloadInstaller()

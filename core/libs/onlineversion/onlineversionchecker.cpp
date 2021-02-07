@@ -49,22 +49,24 @@ class Q_DECL_HIDDEN OnlineVersionChecker::Private
 public:
 
     explicit Private()
-      : preRelease(false),
-        redirects (0),
-        curVersion(QLatin1String(digikam_version_short)),
-        curBuildDt(digiKamBuildDate()),
-        reply     (nullptr),
-        manager   (nullptr)
+      : preRelease  (false),
+        releaseNotes(false),
+        redirects   (0),
+        curVersion  (QLatin1String(digikam_version_short)),
+        curBuildDt  (digiKamBuildDate()),
+        reply       (nullptr),
+        manager     (nullptr)
     {
     }
 
     bool                   preRelease;          ///< Flag to check pre-releases
+    bool                   releaseNotes;        ///< Flag to indicate release notes downloading
     int                    redirects;           ///< Count of redirected url
 
     QString                curVersion;          ///< Current application version string
-    QString                preReleaseFileName;  ///< Pre-release file name get from remote server.
+    QString                preReleaseFileName;  ///< Pre-release file name get from remote server
 
-    QDateTime              curBuildDt;          ///< Current application build date.
+    QDateTime              curBuildDt;          ///< Current application build date
 
     QNetworkReply*         reply;               ///< Current network request reply
     QNetworkAccessManager* manager;             ///< Network manager instance
@@ -140,6 +142,25 @@ void OnlineVersionChecker::checkForNewVersion()
     }
 
     d->redirects = 0;
+    d->releaseNotes = false;
+    download(rUrl);
+}
+
+void OnlineVersionChecker::downloadReleaseNotes(const QString& version)
+{
+    QUrl rUrl;
+
+    if (version.isEmpty())
+    {
+        rUrl = QUrl(QLatin1String("https://invent.kde.org/graphics/digikam/-/raw/master/NEWS"));
+    }
+    else
+    {
+        rUrl = QUrl(QString::fromLatin1("https://invent.kde.org/graphics/digikam/-/raw/master/project/NEWS.%1").arg(version));
+    }
+
+    d->redirects    = 0;
+    d->releaseNotes = true;
     download(rUrl);
 }
 
@@ -196,6 +217,13 @@ void OnlineVersionChecker::slotDownloadFinished(QNetworkReply* reply)
         qCWarning(DIGIKAM_GENERAL_LOG) << "No data returned from the remote connection.";
         emit signalNewVersionCheckError(i18n("No data returned from the remote connection."));
 
+        return;
+    }
+
+    if (d->releaseNotes)
+    {
+        emit signalReleaseNotesData(data);
+        d->releaseNotes = false;
         return;
     }
 
