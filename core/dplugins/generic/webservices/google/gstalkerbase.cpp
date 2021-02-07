@@ -29,6 +29,7 @@
 #include <QMap>
 #include <QDateTime>
 #include <QSettings>
+#include <QDesktopServices>
 
 // Local includes
 
@@ -55,8 +56,7 @@ public:
         apikey      (QLatin1String("258540448336-hgdegpohibcjasvk1p595fpvjor15pbc.apps.googleusercontent.com")),
         clientSecret(QLatin1String("iiIKTNM4ggBXiTdquAzbs2xw")),
         o2          (nullptr),
-        settings    (nullptr),
-        browser     (nullptr)
+        settings    (nullptr)
     {
     }
 
@@ -71,7 +71,6 @@ public:
 
     O2*            o2;
     QSettings*     settings;
-    WebBrowserDlg* browser;
 };
 
 GSTalkerBase::GSTalkerBase(QWidget* const parent, const QStringList& scope, const QString& serviceName)
@@ -93,9 +92,6 @@ GSTalkerBase::GSTalkerBase(QWidget* const parent, const QStringList& scope, cons
     d->o2->setTokenUrl(d->tokenUrl);
     d->o2->setRequestUrl(d->authUrl);
     d->o2->setRefreshTokenUrl(d->refreshUrl);
-
-    //d->o2->setUseExternalWebInterceptor(true);
-
     d->o2->setScope(m_scope.join(QLatin1String(" ")));
     d->o2->setGrantFlow(O2::GrantFlow::GrantFlowAuthorizationCode);
 
@@ -172,11 +168,6 @@ void GSTalkerBase::slotLinkingSucceeded()
         return;
     }
 
-    if (d->browser)
-    {
-        d->browser->close();
-    }
-
     qCDebug(DIGIKAM_WEBSERVICES_LOG) << "LINK to " << m_serviceName << " ok";
 
     m_accessToken       = d->o2->token();
@@ -185,44 +176,11 @@ void GSTalkerBase::slotLinkingSucceeded()
     emit signalAccessTokenObtained();
 }
 
-void GSTalkerBase::slotCatchUrl(const QUrl& url)
-{
-    qCDebug(DIGIKAM_WEBSERVICES_LOG) << "Received URL from webview:" << url;
-/*
-    QString   str = url.toString();
-    QUrlQuery query(str.section(QLatin1Char('?'), -1, -1));
-
-    if (query.hasQueryItem(QLatin1String("code")) &&
-        query.hasQueryItem(QLatin1String("state")))
-    {
-        QMultiMap<QString, QString> queryParams;
-        queryParams.insert(QLatin1String("code"),
-                                         query.queryItemValue(QLatin1String("code"),
-                                         QUrl::FullyDecoded));
-        queryParams.insert(QLatin1String("state"),
-                                         query.queryItemValue(QLatin1String("state"),
-                                         QUrl::FullyDecoded));
-
-        d->o2->onVerificationReceived(queryParams);
-    }
-*/
-}
-
 void GSTalkerBase::slotOpenBrowser(const QUrl& url)
 {
     qCDebug(DIGIKAM_WEBSERVICES_LOG) << "Open Browser... (" << url << ")";
 
-    delete d->browser;
-    d->browser = new WebBrowserDlg(url, d->parent, true);
-    d->browser->setModal(true);
-
-    connect(d->browser, SIGNAL(urlChanged(QUrl)),
-            this, SLOT(slotCatchUrl(QUrl)));
-
-    connect(d->browser, SIGNAL(closeView(bool)),
-            this, SIGNAL(signalBusy(bool)));
-
-    d->browser->show();
+    QDesktopServices::openUrl(url);
 }
 
 bool GSTalkerBase::authenticated() const

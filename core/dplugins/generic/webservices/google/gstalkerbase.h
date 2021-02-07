@@ -68,7 +68,6 @@ private Q_SLOTS:
 
     void slotLinkingFailed();
     void slotLinkingSucceeded();
-    void slotCatchUrl(const QUrl& url);
     void slotOpenBrowser(const QUrl& url);
 
 private:

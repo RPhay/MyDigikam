@@ -336,4 +336,5 @@ BUGFIXES:
 296 ==> 428938 - Entire program closes unexpectedly.
 297 ==> 430702 - Lost the UI while process is still working.
 298 ==> 430921 - Cannot add Edit Metadata filter to toolbar DigiKam 7.1.0.
-299 ==> 
+299 ==> 432480 - Crash when trying to Import from Google Photos.
+300 ==> 
