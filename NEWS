@@ -22,7 +22,7 @@ RawEngine     : Update internal Libraw to last 0.21.0:
                    Uncompressed floating point DNG files (16-24-32 bit)
                    Deflate compressed striped DNG files
                    XMP and HEIF-preview extraction from CR3 files
-                Camera support;
+                Camera model support;
                    Apple iPhone 12 Max, iPhone 12 Max Pro
                    Canon EOS R5, EOS R6, EOS 850D, EOS-1D X Mark III (lossy compressed files)
                    FujiFilm X-S10
@@ -338,4 +338,5 @@ BUGFIXES:
 298 ==> 430921 - Cannot add Edit Metadata filter to toolbar DigiKam 7.1.0.
 299 ==> 432480 - Crash when trying to Import from Google Photos.
 300 ==> 339355 - for each access to a google service we must have a distinct authorization.
-301 ==> 
+301 ==> 432619 - Batch Queue Manager does not use original album as target.
+302 ==> 
