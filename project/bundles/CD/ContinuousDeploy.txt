@@ -64,7 +64,7 @@ Architecture and configuration to setup a continuous deployement computer.
   * Apply the patch to macos-guest-virtualbox.patch and run the script to create the VM.
   * Don't touch mouse and keyboard will installing as form recognition is used to automatize all operations (aka partitions creating and formating).
   * MacOS Catalina will be installed and first run assistant must appear.
-  * Create a main user account with admin rights, disable Siri, TimeScreen, Apple feedback, TimeMachine, and don't setup an AppleID.
+  * Create a main user account with admin rights, disable Siri, TimeScreen, Analytics, Accessibility, TimeMachine, and don't setup an AppleID.
   * From macOS Control Panel/Software Updates upgrade to macOS BigSur and disable auto up to date.
   * MacOS BigSur will be installed and first run assistant will appear where nothing special must be changed compared to Catalina.
   * From macOS Control Panel/Users & Groups change user account shell from zsh to bash and reboot the virtual machine.
