@@ -47,7 +47,8 @@ class PresentationMainPage : public QWidget, Ui::PresentationMainPage
 
 public:
 
-    explicit PresentationMainPage(QWidget* const parent, PresentationContainer* const sharedData);
+    explicit PresentationMainPage(QWidget* const parent,
+                                  PresentationContainer* const sharedData);
     ~PresentationMainPage() override;
 
     void readSettings();
@@ -64,6 +65,7 @@ private Q_SLOTS:
     void slotOpenGLToggled();
     void slotEffectChanged();
     void slotDelayChanged(int);
+    void slotOffAutoDelay();
     void slotPrintCommentsToggled();
     void slotUseMillisecondsToggled();
     void slotThumbnail(const LoadingDescription&, const QPixmap&);

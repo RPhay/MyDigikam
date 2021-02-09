@@ -84,6 +84,7 @@ public:
     bool                     printFileComments;
     bool                     loop;
     bool                     shuffle;
+    bool                     offAutoDelay;
     QString                  effectName;
     QString                  effectNameGL;
 

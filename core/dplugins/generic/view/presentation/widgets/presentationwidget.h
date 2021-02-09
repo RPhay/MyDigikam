@@ -94,6 +94,7 @@ protected:
 
     bool    m_simplyShow;
     bool    m_startPainter;
+    bool    m_firstPainter;
     int     m_px;
     int     m_py;
     int     m_psx;

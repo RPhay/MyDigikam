@@ -449,13 +449,13 @@ void PresentationGL::mousePressEvent(QMouseEvent* e)
     if      (e->button() == Qt::LeftButton)
     {
         d->timer->stop();
-        d->slideCtrlWidget->setPaused(true);
+        d->slideCtrlWidget->setPaused(!d->sharedData->offAutoDelay);
         slotNext();
     }
     else if ((e->button() == Qt::RightButton) && ((d->fileIndex - 1) >= 0))
     {
         d->timer->stop();
-        d->slideCtrlWidget->setPaused(true);
+        d->slideCtrlWidget->setPaused(!d->sharedData->offAutoDelay);
         slotPrev();
     }
 }
@@ -679,6 +679,7 @@ void PresentationGL::previousFrame()
 void PresentationGL::loadImage()
 {
     QImage image = d->imageLoader->getCurrent();
+    qInfo()<< image;
     int a        = d->tex1First ? 0 : 1;
 
     if (!image.isNull())
@@ -972,6 +973,12 @@ void PresentationGL::slotTimeOut()
                 d->effect = getRandomEffect();
             }
 
+            if (d->sharedData->offAutoDelay)
+            {
+                d->effect = &PresentationGL::effectNone;
+                d->timer->stop();
+            }
+
             advanceFrame();
 
             if (d->endOfShow)
@@ -992,6 +999,9 @@ void PresentationGL::slotTimeOut()
     update();
 
     d->timer->start(d->timeout);
+
+    if (d->sharedData->offAutoDelay)
+        d->timer->stop();
 }
 
 void PresentationGL::slotMouseMoveTimeOut()

@@ -47,6 +47,8 @@
 #include <QScreen>
 #include <QWindow>
 
+#include <QDebug>
+
 // KDE includes
 
 #include <klocalizedstring.h>
@@ -279,6 +281,7 @@ PresentationWidget::PresentationWidget(PresentationContainer* const sharedData)
     m_endOfShow      = false;
     m_simplyShow     = false;
     m_startPainter   = false;
+    m_firstPainter   = true;
     d->timer         = new QTimer(this);
 
     connect(d->timer, SIGNAL(timeout()),
@@ -311,7 +314,16 @@ PresentationWidget::PresentationWidget(PresentationContainer* const sharedData)
     }
 
     d->timer->setSingleShot(true);
-    d->timer->start(500);
+
+    if (d->sharedData->offAutoDelay)
+    {
+        d->timer->stop();
+        slotTimeOut();
+    }
+    else
+    {
+        d->timer->start(500);
+    }
 
     // -- hide cursor when not moved --------------------
 
@@ -364,6 +376,7 @@ void PresentationWidget::loadNextImage()
 {
     if (!d->currImage.isNull())
     {
+        m_firstPainter = false;
         m_buffer = d->currImage;
     }
     else
@@ -671,13 +684,13 @@ void PresentationWidget::mousePressEvent(QMouseEvent* e)
     if      (e->button() == Qt::LeftButton)
     {
         d->timer->stop();
-        d->slideCtrlWidget->setPaused(true);
+        d->slideCtrlWidget->setPaused(!d->sharedData->offAutoDelay);
         slotNext();
     }
     else if ((e->button() == Qt::RightButton) && ((d->fileIndex - 1) >= 0))
     {
         d->timer->stop();
-        d->slideCtrlWidget->setPaused(true);
+        d->slideCtrlWidget->setPaused(!d->sharedData->offAutoDelay);
         slotPrev();
     }
 }
@@ -826,7 +839,7 @@ void PresentationWidget::paintEvent(QPaintEvent*)
 {
     QPainter p(this);
 
-    if (m_simplyShow)
+    if (m_simplyShow || m_firstPainter)
     {
         if (d->sharedData->printFileName)
         {
@@ -1035,7 +1048,7 @@ void PresentationWidget::slotTimeOut()
     {
         return;                     // No effect -> bye !
     }
-
+    
     int tmout = -1;
 
     if (d->effectRunning)           // Effect under progress ?
@@ -1046,25 +1059,30 @@ void PresentationWidget::slotTimeOut()
     {
         loadNextImage();
 
-        if (d->currImage.isNull() || d->sharedData->urlList.isEmpty())   // End of slideshow ?
+        if (d->sharedData->offAutoDelay)
         {
-            showEndOfShow();
-            return;
+            showCurrentImage();
         }
-
-        if (d->sharedData->effectName  == QLatin1String("Random")) // Take a random effect.
+        else
         {
-            d->effect = getRandomEffect();
-
-            if (!d->effect)
+            if (d->currImage.isNull() || d->sharedData->urlList.isEmpty())   // End of slideshow ?
             {
+                showEndOfShow();
                 return;
             }
+
+            if (d->sharedData->effectName  == QLatin1String("Random")) // Take a random effect.
+            {
+                if (d->currImage.isNull() || d->sharedData->urlList.isEmpty())   // End of slideshow ?
+                {
+                    showEndOfShow();
+                    return;
+                }
+            }
+            d->effectRunning = true;
+
+            tmout = (this->*d->effect)(true);
         }
-
-        d->effectRunning = true;
-
-        tmout = (this->*d->effect)(true);
     }
 
     if (tmout <= 0)                 // Effect finished -> delay.
@@ -1073,7 +1091,15 @@ void PresentationWidget::slotTimeOut()
         d->effectRunning = false;
     }
 
-    d->timer->start(tmout);
+    if (d->sharedData->offAutoDelay)
+    {
+        d->timer->stop();
+    }
+    else
+    {
+        d->timer->setSingleShot(true);
+        d->timer->start(tmout);
+    }
 }
 
 void PresentationWidget::showCurrentImage()

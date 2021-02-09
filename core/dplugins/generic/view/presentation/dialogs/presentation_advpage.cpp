@@ -38,7 +38,8 @@ using namespace Digikam;
 namespace DigikamGenericPresentationPlugin
 {
 
-PresentationAdvPage::PresentationAdvPage(QWidget* const parent, PresentationContainer* const sharedData)
+PresentationAdvPage::PresentationAdvPage(QWidget* const parent,
+                                         PresentationContainer* const sharedData)
     : QWidget(parent)
 {
     setupUi(this);
@@ -49,10 +50,15 @@ PresentationAdvPage::PresentationAdvPage(QWidget* const parent, PresentationCont
             this, SLOT(slotUseMillisecondsToggled()));
 
 #ifdef HAVE_OPENGL
+
     m_openGlFullScale->setEnabled(true);
+
 #else
+
     m_openGlFullScale->setEnabled(false);
+
 #endif
+
 }
 
 PresentationAdvPage::~PresentationAdvPage()
@@ -67,14 +73,18 @@ void PresentationAdvPage::readSettings()
     m_kbDisableCrossfadeCheckBox->setChecked(m_sharedData->kbDisableCrossFade);
     m_openGlFullScale->setChecked(m_sharedData->openGlFullScale);
     m_openGlFullScale->setEnabled(m_sharedData->opengl);
+    m_useMillisecondsCheckBox->setEnabled(!m_sharedData->offAutoDelay);         // MilliSeconds Checkbox in advanced page off when AutoDelay is On
 
     slotUseMillisecondsToggled();
 }
 
 void PresentationAdvPage::saveSettings()
 {
+
 #ifdef HAVE_OPENGL
+
     m_sharedData->openGlFullScale    = m_openGlFullScale->isChecked();
+
 #endif
 
     m_sharedData->useMilliseconds    = m_useMillisecondsCheckBox->isChecked();

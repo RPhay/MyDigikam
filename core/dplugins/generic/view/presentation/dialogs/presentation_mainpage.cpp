@@ -69,7 +69,7 @@ class Q_DECL_HIDDEN PresentationMainPage::Private
 public:
 
     explicit Private()
-      : sharedData(nullptr),
+      : sharedData        (nullptr),
         imagesFilesListBox(nullptr)
     {
     }
@@ -79,9 +79,10 @@ public:
     DItemsList*            imagesFilesListBox;
 };
 
-PresentationMainPage::PresentationMainPage(QWidget* const parent, PresentationContainer* const sharedData)
+PresentationMainPage::PresentationMainPage(QWidget* const parent,
+                                           PresentationContainer* const sharedData)
     : QWidget(parent),
-      d(new Private)
+      d      (new Private)
 {
     setupUi(this);
 
@@ -107,10 +108,15 @@ PresentationMainPage::PresentationMainPage(QWidget* const parent, PresentationCo
     m_previewLabel->setMinimumHeight(ICONSIZE);
 
 #ifdef HAVE_OPENGL
+
     m_openglCheckBox->setEnabled(true);
+
 #else
+
     m_openglCheckBox->setEnabled(false);
+
 #endif
+
 }
 
 PresentationMainPage::~PresentationMainPage()
@@ -120,8 +126,11 @@ PresentationMainPage::~PresentationMainPage()
 
 void PresentationMainPage::readSettings()
 {
+
 #ifdef HAVE_OPENGL
+
     m_openglCheckBox->setChecked(d->sharedData->opengl);
+
 #endif
 
     m_delaySpinBox->setValue(d->sharedData->delay);
@@ -130,6 +139,7 @@ void PresentationMainPage::readSettings()
     m_printCommentsCheckBox->setChecked(d->sharedData->printFileComments);
     m_loopCheckBox->setChecked(d->sharedData->loop);
     m_shuffleCheckBox->setChecked(d->sharedData->shuffle);
+    m_offAutoDelayCheckBox->setChecked(d->sharedData->offAutoDelay);
 
     m_delaySpinBox->setValue(d->sharedData->useMilliseconds ? d->sharedData->delay
                                                             : d->sharedData->delay / 1000);
@@ -148,8 +158,11 @@ void PresentationMainPage::readSettings()
 
 void PresentationMainPage::saveSettings()
 {
+
 #ifdef HAVE_OPENGL
+
     d->sharedData->opengl                = m_openglCheckBox->isChecked();
+
 #endif
 
     d->sharedData->delay                 = d->sharedData->useMilliseconds ? m_delaySpinBox->value()
@@ -160,6 +173,7 @@ void PresentationMainPage::saveSettings()
     d->sharedData->printFileComments     = m_printCommentsCheckBox->isChecked();
     d->sharedData->loop                  = m_loopCheckBox->isChecked();
     d->sharedData->shuffle               = m_shuffleCheckBox->isChecked();
+    d->sharedData->offAutoDelay          = m_offAutoDelayCheckBox->isChecked();
 
     if (!m_openglCheckBox->isChecked())
     {
@@ -179,7 +193,9 @@ void PresentationMainPage::saveSettings()
 
         d->sharedData->effectName = effect;
     }
+
 #ifdef HAVE_OPENGL
+
     else
     {
         QMap<QString, QString> effects;
@@ -217,7 +233,9 @@ void PresentationMainPage::saveSettings()
 
         d->sharedData->effectNameGL = effect;
     }
+
 #endif
+
 }
 
 void PresentationMainPage::showNumberImages()
@@ -228,8 +246,12 @@ void PresentationMainPage::showNumberImages()
     int transitionDuration = 2000;
 
 #ifdef HAVE_OPENGL
+
     if (m_openglCheckBox->isChecked())
+    {
         transitionDuration += 500;
+    }
+
 #endif
 
     if (numberOfImages != 0)
@@ -252,7 +274,15 @@ void PresentationMainPage::showNumberImages()
 
     emit signalTotalTimeChanged(d->totalTime);
 
-    m_label6->setText(i18np("%1 image [%2]", "%1 images [%2]", numberOfImages, totalDuration.toString()));
+    //m_label6->setText(i18np("%1 image [%2]", "%1 images [%2]", numberOfImages, totalDuration.toString()));
+    if (m_offAutoDelayCheckBox->isChecked() == false)
+    {
+        m_label6->setText(i18np("%1 image [%2]", "%1 images [%2]", numberOfImages, totalDuration.toString()));
+    }
+    else
+    {
+        m_label6->setText(i18np("%1 image", "%1 images", numberOfImages));
+    }
 }
 
 void PresentationMainPage::loadEffectNames()
@@ -281,9 +311,22 @@ void PresentationMainPage::loadEffectNames()
     }
 }
 
+void PresentationMainPage::slotOffAutoDelay()
+{
+    qInfo()<< "turn off auto delay";
+    m_delaySpinBox->setEnabled(!m_offAutoDelayCheckBox->isChecked());
+    m_delayLabel->setEnabled(!m_offAutoDelayCheckBox->isChecked());
+    m_openglCheckBox->setEnabled(!m_offAutoDelayCheckBox->isChecked());
+    m_openglCheckBox->setChecked(!m_offAutoDelayCheckBox->isChecked());
+    d->sharedData->advancedPage->m_useMillisecondsCheckBox->setEnabled(!m_offAutoDelayCheckBox->isChecked());
+    slotDelayChanged(0);
+}
+
 void PresentationMainPage::loadEffectNamesGL()
 {
+
 #ifdef HAVE_OPENGL
+
     m_effectsComboBox->clear();
 
     QStringList effects;
@@ -317,7 +360,9 @@ void PresentationMainPage::loadEffectNamesGL()
             break;
         }
     }
+
 #endif
+
 }
 
 bool PresentationMainPage::updateUrlList()
@@ -415,7 +460,9 @@ void PresentationMainPage::slotEffectChanged()
     m_printCommentsCheckBox->setEnabled(!isKB);
 
 #ifdef HAVE_OPENGL
+
     d->sharedData->advancedPage->m_openGlFullScale->setEnabled(!isKB && m_openglCheckBox->isChecked());
+
 #endif
 
     d->sharedData->captionPage->setEnabled((!isKB) && m_printCommentsCheckBox->isChecked());
@@ -496,6 +543,9 @@ void PresentationMainPage::setupConnections()
 
     connect(m_delaySpinBox, SIGNAL(valueChanged(int)),
             this, SLOT(slotDelayChanged(int)));
+
+    connect(m_offAutoDelayCheckBox, SIGNAL(toggled(bool)),
+            this, SLOT(slotOffAutoDelay()));
 
     connect(m_effectsComboBox, SIGNAL(activated(int)),
             this, SLOT(slotEffectChanged()));

@@ -61,11 +61,11 @@ public:
                const QUrl& path,
                int width,
                int height)
-        : m_imageLock(imageLock),
+        : m_imageLock   (imageLock),
           m_loadedImages(loadedImages),
-          m_path(path),
-          m_swidth(width),
-          m_sheight(height)
+          m_path        (path),
+          m_swidth      (width),
+          m_sheight     (height)
     {
     }
 
@@ -136,15 +136,15 @@ class Q_DECL_HIDDEN PresentationLoader::Private
 public:
 
     explicit Private()
-      : sharedData(nullptr),
-        loadingThreads(nullptr),
-        loadedImages(nullptr),
-        imageLock(nullptr),
-        threadLock(nullptr),
-        cacheSize(0),
-        currIndex(0),
-        swidth(0),
-        sheight(0)
+      : sharedData      (nullptr),
+        loadingThreads  (nullptr),
+        loadedImages    (nullptr),
+        imageLock       (nullptr),
+        threadLock      (nullptr),
+        cacheSize       (0),
+        currIndex       (0),
+        swidth          (0),
+        sheight         (0)
     {
     }
 
@@ -161,7 +161,9 @@ public:
     int                    sheight;
 };
 
-PresentationLoader::PresentationLoader(PresentationContainer* const sharedData, int width, int height,
+PresentationLoader::PresentationLoader(PresentationContainer* const sharedData,
+                                       int width,
+                                       int height,
                                        int beginAtIndex)
     : d(new Private)
 {

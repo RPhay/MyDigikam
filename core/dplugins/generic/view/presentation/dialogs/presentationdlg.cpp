@@ -62,10 +62,10 @@ class Q_DECL_HIDDEN PresentationDlg::Private
 public:
 
     explicit Private()
-      : buttonBox(nullptr),
-        startButton(nullptr),
-        tab(nullptr),
-        sharedData(nullptr)
+      : buttonBox   (nullptr),
+        startButton (nullptr),
+        tab         (nullptr),
+        sharedData  (nullptr)
     {
     }
 
@@ -75,9 +75,10 @@ public:
     PresentationContainer* sharedData;
 };
 
-PresentationDlg::PresentationDlg(QWidget* const parent, PresentationContainer* const sharedData)
+PresentationDlg::PresentationDlg(QWidget* const parent,
+                                 PresentationContainer* const sharedData)
     : DPluginDialog(parent, QLatin1String("Presentation Settings")),
-      d(new Private)
+      d            (new Private)
 {
     setWindowTitle(i18n("Presentation"));
     setModal(false);
@@ -106,10 +107,12 @@ PresentationDlg::PresentationDlg(QWidget* const parent, PresentationContainer* c
                    i18nc("captions for the slideshow", "Caption"));
 
 #ifdef HAVE_MEDIAPLAYER
+
     d->sharedData->soundtrackPage = new PresentationAudioPage(this, d->sharedData);
     d->tab->addTab(d->sharedData->soundtrackPage,
                    QIcon::fromTheme(QLatin1String("speaker")),
                    i18n("Soundtrack"));
+
 #endif
 
     d->sharedData->advancedPage = new PresentationAdvPage(this, d->sharedData);
@@ -179,12 +182,14 @@ void PresentationDlg::readSettings()
     d->sharedData->commentsLinesLength = grp.readEntry("Comments Lines Length", 72);
 
 #ifdef HAVE_MEDIAPLAYER
+
     // Soundtrack tab
 
     d->sharedData->soundtrackLoop             = grp.readEntry("Soundtrack Loop",                     false);
     d->sharedData->soundtrackPlay             = grp.readEntry("Soundtrack Auto Play",                false);
     d->sharedData->soundtrackPath             = QUrl::fromLocalFile(grp.readEntry("Soundtrack Path", ""));
     d->sharedData->soundtrackRememberPlaylist = grp.readEntry("Soundtrack Remember Playlist",        false);
+
 #endif
 
     // Advanced tab
@@ -224,8 +229,11 @@ void PresentationDlg::readSettings()
     d->sharedData->advancedPage->readSettings();
 
 #ifdef HAVE_MEDIAPLAYER
+
     d->sharedData->soundtrackPage->readSettings();
+
 #endif
+
 }
 
 void PresentationDlg::saveSettings()
@@ -235,7 +243,9 @@ void PresentationDlg::saveSettings()
     d->sharedData->advancedPage->saveSettings();
 
 #ifdef HAVE_MEDIAPLAYER
+
     d->sharedData->soundtrackPage->saveSettings();
+
 #endif
 
     KSharedConfigPtr config = KSharedConfig::openConfig();
@@ -271,12 +281,14 @@ void PresentationDlg::saveSettings()
     grp.writeEntry("Effect Name",              d->sharedData->effectName);
 
 #ifdef HAVE_MEDIAPLAYER
+
     // Soundtrack tab
 
     grp.writeEntry("Soundtrack Loop",              d->sharedData->soundtrackLoop);
     grp.writeEntry("Soundtrack Auto Play",         d->sharedData->soundtrackPlay);
     grp.writeEntry("Soundtrack Path",              d->sharedData->soundtrackPath.toLocalFile());
     grp.writeEntry("Soundtrack Remember Playlist", d->sharedData->soundtrackRememberPlaylist);
+
 #endif
 
     // Advanced settings

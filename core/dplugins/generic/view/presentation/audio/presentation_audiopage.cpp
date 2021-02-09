@@ -76,7 +76,7 @@ public:
       : sharedData(nullptr),
         tracksTime(nullptr),
         soundItems(nullptr),
-        timeMutex(nullptr)
+        timeMutex (nullptr)
     {
     }
 
@@ -89,9 +89,10 @@ public:
     QMutex*                                 timeMutex;
 };
 
-PresentationAudioPage::PresentationAudioPage(QWidget* const parent, PresentationContainer* const sharedData)
+PresentationAudioPage::PresentationAudioPage(QWidget* const parent,
+                                             PresentationContainer* const sharedData)
     : QWidget(parent),
-      d(new Private)
+      d      (new Private)
 {
     setupUi(this);
 

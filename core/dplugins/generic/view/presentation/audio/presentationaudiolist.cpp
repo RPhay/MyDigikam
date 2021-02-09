@@ -77,7 +77,7 @@ public:
 
 PresentationAudioListItem::PresentationAudioListItem(QListWidget* const parent, const QUrl& url)
     : QListWidgetItem(parent),
-      d(new Private)
+      d              (new Private)
 {
     d->url = url;
     setIcon(QIcon::fromTheme(QLatin1String("audio-x-generic")).pixmap(48, QIcon::Disabled));

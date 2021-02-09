@@ -53,12 +53,12 @@ class Q_DECL_HIDDEN PresentationAudioWidget::Private
 public:
 
     explicit Private()
-      : sharedData(nullptr),
-        currIndex(0),
-        canHide(true),
-        isZeroTime(false),
-        playingNext(false),
-        mediaObject(nullptr)
+      : sharedData  (nullptr),
+        currIndex   (0),
+        canHide     (true),
+        isZeroTime  (false),
+        playingNext (false),
+        mediaObject (nullptr)
     {
     }
 
@@ -74,7 +74,7 @@ public:
 
 PresentationAudioWidget::PresentationAudioWidget(QWidget* const parent, const QList<QUrl>& urls, PresentationContainer* const sharedData)
     : QWidget(parent),
-      d(new Private)
+      d      (new Private)
 {
     setupUi(this);
 

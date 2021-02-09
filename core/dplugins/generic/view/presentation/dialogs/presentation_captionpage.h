@@ -39,7 +39,8 @@ class PresentationCaptionPage : public QWidget, Ui::PresentationCaptionPage
 
 public:
 
-    explicit PresentationCaptionPage(QWidget* const parent, PresentationContainer* const sharedData);
+    explicit PresentationCaptionPage(QWidget* const parent,
+                                     PresentationContainer* const sharedData);
     ~PresentationCaptionPage() override;
 
     void readSettings();
