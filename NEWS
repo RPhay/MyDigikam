@@ -339,4 +339,5 @@ BUGFIXES:
 299 ==> 432480 - Crash when trying to Import from Google Photos.
 300 ==> 339355 - for each access to a google service we must have a distinct authorization.
 301 ==> 432619 - Batch Queue Manager does not use original album as target.
-302 ==> 
+302 ==> 124788 - Allow to turn off Presentation tool delay [patch].
+303 ==> 
