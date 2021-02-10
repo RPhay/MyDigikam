@@ -341,4 +341,5 @@ BUGFIXES:
 301 ==> 432619 - Batch Queue Manager does not use original album as target.
 302 ==> 124788 - Allow to turn off Presentation tool delay [patch].
 303 ==> 432646 - digiKam 7.2.0-rc crashes on startup (beta2 didn't).
-304 ==> 
+304 ==> 432613 - Face detection scan all album, not only the selected ones.
+305 ==> 
