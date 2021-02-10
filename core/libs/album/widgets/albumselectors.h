@@ -156,6 +156,7 @@ private:
 
     void initAlbumWidget();
     void initTagWidget();
+    void updateTabText();
 
 private:
 

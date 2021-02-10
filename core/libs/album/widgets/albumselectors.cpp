@@ -142,10 +142,14 @@ AlbumSelectors::AlbumSelectors(const QString& label,
             d->tabWidget = new QTabWidget(this);
 
             initAlbumWidget();
-            d->tabWidget->insertTab(PhysAlbum, d->albumWidget, i18n("Albums"));
+            d->tabWidget->insertTab(PhysAlbum, d->albumWidget, i18np("Albums (All)",
+                                                                     "Albums (%2)",
+                                                                     true, 0));
 
             initTagWidget();
-            d->tabWidget->insertTab(TagsAlbum, d->tagWidget, i18n("Tags"));
+            d->tabWidget->insertTab(TagsAlbum, d->tagWidget, i18np("Tags (All)",
+                                                                   "Tags (%2)",
+                                                                   false, 0));
 
             mainLayout->addWidget(d->tabWidget);
             break;
@@ -248,6 +252,8 @@ void AlbumSelectors::slotWholeAlbums(bool b)
         d->albumSelectCB->setEnabled(!b);
         d->albumClearButton->setEnabled(!b);
     }
+
+    updateTabText();
 }
 
 void AlbumSelectors::slotWholeTags(bool b)
@@ -257,6 +263,8 @@ void AlbumSelectors::slotWholeTags(bool b)
         d->tagSelectCB->setEnabled(!b);
         d->tagClearButton->setEnabled(!b);
     }
+
+    updateTabText();
 }
 
 void AlbumSelectors::slotUpdateClearButtons()
@@ -279,6 +287,8 @@ void AlbumSelectors::slotUpdateClearButtons()
     {
         emit signalSelectionChanged();
     }
+
+    updateTabText();
 }
 
 bool AlbumSelectors::wholeAlbumsChecked() const
@@ -484,6 +494,21 @@ void AlbumSelectors::saveState()
     if (d->selectionMode == All)
     {
         group.writeEntry(d->configAlbumTypeEntry, typeSelection());
+    }
+}
+
+void AlbumSelectors::updateTabText()
+{
+    if (d->selectionMode == All)
+    {
+        d->tabWidget->tabBar()->setTabText(PhysAlbum,
+                                           i18np("Albums (All)", "Albums (%2)",
+                                                 wholeAlbumsChecked(),
+                                                 selectedAlbums().count()));
+        d->tabWidget->tabBar()->setTabText(TagsAlbum,
+                                           i18np("Tags (All)", "Tags (%2)",
+                                                 wholeTagsChecked(),
+                                                 selectedTags().count()));
     }
 }
 
