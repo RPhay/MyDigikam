@@ -262,19 +262,31 @@ void OnlineVersionChecker::slotDownloadFinished(QNetworkReply* reply)
 
         if (sections.size() < 4)
         {
-            qCWarning(DIGIKAM_GENERAL_LOG) << "Invalid format returned from the remote connection.";
-            emit signalNewVersionCheckError(i18n("Invalid format returned from the remote connection."));
+            qCWarning(DIGIKAM_GENERAL_LOG) << "Invalid file name format returned from the remote connection.";
+            emit signalNewVersionCheckError(i18n("Invalid file name format returned from the remote connection."));
 
             return;
         }
+
+        // Tow possibles places exists where to find the date in file name.
+
+        // 1 - the fila name include a pre release suffix as -beta or -rc 
 
         QDateTime onlineDt   = QDateTime::fromString(sections[3], QLatin1String("yyyyMMddTHHmmss"));
         onlineDt.setTimeSpec(Qt::UTC);
 
         if (!onlineDt.isValid())
         {
-            qCWarning(DIGIKAM_GENERAL_LOG) << "Invalid pre-release date.";
-            emit signalNewVersionCheckError(i18n("Invalid pre-release date."));
+            // 2 - the file name do not include a pre release suffix
+
+            onlineDt = QDateTime::fromString(sections[2], QLatin1String("yyyyMMddTHHmmss"));
+            onlineDt.setTimeSpec(Qt::UTC);
+        }
+
+        if (!onlineDt.isValid())
+        {
+            qCWarning(DIGIKAM_GENERAL_LOG) << "Invalid pre-release date from the remote list.";
+            emit signalNewVersionCheckError(i18n("Invalid pre-release date from the remote list."));
 
             return;
         }
