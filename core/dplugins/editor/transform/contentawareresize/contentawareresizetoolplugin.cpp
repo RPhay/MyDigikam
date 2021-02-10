@@ -83,7 +83,7 @@ QList<DPluginAuthor> ContentAwareResizeToolPlugin::authors() const
                              QString::fromUtf8("(C) 2009-2010"))
             << DPluginAuthor(QString::fromUtf8("Gilles Caulier"),
                              QString::fromUtf8("caulier dot gilles at gmail dot com"),
-                             QString::fromUtf8("(C) 2009-2020"))
+                             QString::fromUtf8("(C) 2009-2021"))
             ;
 }
 

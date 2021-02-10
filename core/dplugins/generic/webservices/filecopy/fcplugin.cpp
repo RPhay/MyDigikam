@@ -85,13 +85,13 @@ QList<DPluginAuthor> FCPlugin::authors() const
                              QString::fromUtf8("(C) 2009"))
             << DPluginAuthor(QString::fromUtf8("Maik Qualmann"),
                              QString::fromUtf8("metzpinguin at gmail dot com"),
-                             QString::fromUtf8("(C) 2017-2020"))
+                             QString::fromUtf8("(C) 2017-2021"))
             << DPluginAuthor(QString::fromUtf8("Marcel Mathis"),
                              QString::fromUtf8("maeseee at gmail dot com"),
                              QString::fromUtf8("(C) 2020"))
             << DPluginAuthor(QString::fromUtf8("Gilles Caulier"),
                              QString::fromUtf8("caulier dot gilles at gmail dot com"),
-                             QString::fromUtf8("(C) 2010-2020"))
+                             QString::fromUtf8("(C) 2010-2021"))
             ;
 }
 
