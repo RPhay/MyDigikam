@@ -80,7 +80,7 @@ ToolListViewGroup::ToolListViewGroup(QTreeWidget* const parent, BatchTool::Batch
 
         case BatchTool::FiltersTool:
             setIcon(0, QIcon::fromTheme(QLatin1String("digikam")));
-            setText(0, i18n("Filters"));
+            setText(0, i18nc("Filters as a type of tools", "Filters"));
             break;
 
         case BatchTool::ConvertTool:

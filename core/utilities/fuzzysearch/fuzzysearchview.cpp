@@ -56,9 +56,9 @@ FuzzySearchView::FuzzySearchView(SearchModel* const searchModel,
     d->findDuplicatesPanel     = new FindDuplicatesView();
 
     d->tabWidget               = new QTabWidget();
-    d->tabWidget->insertTab(Private::DUPLICATES, d->findDuplicatesPanel, i18n("Duplicates"));
-    d->tabWidget->insertTab(Private::SIMILARS,   imagePanel,             i18n("Image"));
-    d->tabWidget->insertTab(Private::SKETCH,     sketchPanel,            i18n("Sketch"));
+    d->tabWidget->insertTab(Private::DUPLICATES, d->findDuplicatesPanel, i18nc("Find Duplicates Tab", "Duplicates"));
+    d->tabWidget->insertTab(Private::SIMILARS,   imagePanel,             i18nc("Similar Image Tab", "Image"));
+    d->tabWidget->insertTab(Private::SKETCH,     sketchPanel,            i18nc("Sketch Search Tab", "Sketch"));
 
     // ---------------------------------------------------------------
 

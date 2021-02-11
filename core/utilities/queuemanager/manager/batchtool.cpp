@@ -209,7 +209,7 @@ QString BatchTool::toolGroupToString() const
             return i18n("Decorate");
 
         case FiltersTool:
-            return i18n("Filters");
+            return i18nc("Filters as a type of tools", "Filters");
 
         case ConvertTool:
             return i18n("Convert");

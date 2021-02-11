@@ -306,7 +306,7 @@ SetupCamera::SetupCamera(QWidget* const parent)
 
     QStringList labels;
     labels.append(i18n("Title"));
-    labels.append(i18n("Model"));
+    labels.append(i18nc("Camera Model", "Model"));
     labels.append(i18n("Port"));
     labels.append(i18n("Path"));
     d->listView->setHeaderLabels(labels);

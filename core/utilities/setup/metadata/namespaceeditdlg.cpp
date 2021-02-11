@@ -292,7 +292,7 @@ void NamespaceEditDlg::setupTagGui(NamespaceEntry& entry)
     d->commentTipLabel->setWordWrap(true);
     d->commentTipLabel->setText(i18n("<p>To create new comment namespaces, you need to specify parameters:</p>"
                            "<p><ul><li>Namespace name with dots.<br/>"
-                           "Ex.: <i>\"Xmp.xmp.Rating\"</i></li>"
+                           "Ex.: <i>\"Xmp.xmp.Comment\"</i></li>"
                            "<li>Select the correct namespace option from list.</li></ul></p>"
                           ));
 
