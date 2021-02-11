@@ -142,14 +142,10 @@ AlbumSelectors::AlbumSelectors(const QString& label,
             d->tabWidget = new QTabWidget(this);
 
             initAlbumWidget();
-            d->tabWidget->insertTab(PhysAlbum, d->albumWidget, i18np("Albums (All)",
-                                                                     "Albums (%2)",
-                                                                     true, 0));
+            d->tabWidget->insertTab(PhysAlbum, d->albumWidget, i18n("Albums (All)"));
 
             initTagWidget();
-            d->tabWidget->insertTab(TagsAlbum, d->tagWidget, i18np("Tags (All)",
-                                                                   "Tags (%2)",
-                                                                   false, 0));
+            d->tabWidget->insertTab(TagsAlbum, d->tagWidget, i18n("Tags (0)"));
 
             mainLayout->addWidget(d->tabWidget);
             break;
@@ -502,12 +498,10 @@ void AlbumSelectors::updateTabText()
     if (d->selectionMode == All)
     {
         d->tabWidget->tabBar()->setTabText(PhysAlbum,
-                                           i18np("Albums (All)", "Albums (%2)",
-                                                 wholeAlbumsChecked(),
+                                           wholeAlbumsChecked() ? i18n("Albums (All)") : i18n("Albums (%1)",
                                                  selectedAlbums().count()));
         d->tabWidget->tabBar()->setTabText(TagsAlbum,
-                                           i18np("Tags (All)", "Tags (%2)",
-                                                 wholeTagsChecked(),
+                                           wholeTagsChecked() ? i18n("Tags (All)") : i18n("Tags (%1)",
                                                  selectedTags().count()));
     }
 }
