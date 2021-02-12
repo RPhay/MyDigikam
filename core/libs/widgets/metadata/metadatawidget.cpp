@@ -478,11 +478,6 @@ QUrl MetadataWidget::saveMetadataToFile(const QString& caption, const QString& f
 
 void MetadataWidget::setMode(int mode)
 {
-    if (getMode() == mode)
-    {
-        return;
-    }
-
     if      (mode == NONE)
     {
         d->noneAction->setChecked(true);
