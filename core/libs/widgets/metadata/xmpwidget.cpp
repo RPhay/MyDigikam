@@ -43,7 +43,7 @@ namespace Digikam
 static const char* StandardXmpEntryList[] =
 {
 
-    "acdsee",          ///< Schema for ACDSEE.
+    "acdsee",          ///< Schema for ACDSee.
     "audio",           ///< Exiv2 Audio Metadata Schema
     "aux",             ///< Schema for Additional Exif Properties.
     "crs",             ///< Camera Raw schema.
