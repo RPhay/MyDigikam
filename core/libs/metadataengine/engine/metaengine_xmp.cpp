@@ -1305,31 +1305,32 @@ bool MetaEngine::removeXmpSubjects(const QStringList& subjectsToRemove)
 MetaEngine::TagsMap MetaEngine::getXmpTagsList() const
 {
     TagsMap tagsMap;
+    d->getXMPTagsListFromPrefix(QLatin1String("acdsee"),         tagsMap);
+    d->getXMPTagsListFromPrefix(QLatin1String("audio"),          tagsMap);
+    d->getXMPTagsListFromPrefix(QLatin1String("aux"),            tagsMap);
+    d->getXMPTagsListFromPrefix(QLatin1String("crs"),            tagsMap);
     d->getXMPTagsListFromPrefix(QLatin1String("dc"),             tagsMap);
     d->getXMPTagsListFromPrefix(QLatin1String("digiKam"),        tagsMap);
-    d->getXMPTagsListFromPrefix(QLatin1String("xmp"),            tagsMap);
-    d->getXMPTagsListFromPrefix(QLatin1String("xmpRights"),      tagsMap);
-    d->getXMPTagsListFromPrefix(QLatin1String("xmpMM"),          tagsMap);
-    d->getXMPTagsListFromPrefix(QLatin1String("xmpBJ"),          tagsMap);
-    d->getXMPTagsListFromPrefix(QLatin1String("xmpTPg"),         tagsMap);
-    d->getXMPTagsListFromPrefix(QLatin1String("xmpDM"),          tagsMap);
-    d->getXMPTagsListFromPrefix(QLatin1String("MicrosoftPhoto"), tagsMap);
-    d->getXMPTagsListFromPrefix(QLatin1String("pdf"),            tagsMap);
-    d->getXMPTagsListFromPrefix(QLatin1String("photoshop"),      tagsMap);
-    d->getXMPTagsListFromPrefix(QLatin1String("crs"),            tagsMap);
-    d->getXMPTagsListFromPrefix(QLatin1String("tiff"),           tagsMap);
+    d->getXMPTagsListFromPrefix(QLatin1String("dwc"),            tagsMap);
     d->getXMPTagsListFromPrefix(QLatin1String("exif"),           tagsMap);
-    d->getXMPTagsListFromPrefix(QLatin1String("aux"),            tagsMap);
     d->getXMPTagsListFromPrefix(QLatin1String("iptc"),           tagsMap);
     d->getXMPTagsListFromPrefix(QLatin1String("iptcExt"),        tagsMap);
-    d->getXMPTagsListFromPrefix(QLatin1String("plus"),           tagsMap);
-    d->getXMPTagsListFromPrefix(QLatin1String("mwg-rs"),         tagsMap);
-    d->getXMPTagsListFromPrefix(QLatin1String("dwc"),            tagsMap);
-    d->getXMPTagsListFromPrefix(QLatin1String("lr"),             tagsMap);
-    d->getXMPTagsListFromPrefix(QLatin1String("acdsee"),         tagsMap);
-    d->getXMPTagsListFromPrefix(QLatin1String("MP"),             tagsMap);
     d->getXMPTagsListFromPrefix(QLatin1String("kipi"),           tagsMap);
+    d->getXMPTagsListFromPrefix(QLatin1String("lr"),             tagsMap);
+    d->getXMPTagsListFromPrefix(QLatin1String("MicrosoftPhoto"), tagsMap);
+    d->getXMPTagsListFromPrefix(QLatin1String("MP"),             tagsMap);
+    d->getXMPTagsListFromPrefix(QLatin1String("mwg-rs"),         tagsMap);
+    d->getXMPTagsListFromPrefix(QLatin1String("pdf"),            tagsMap);
+    d->getXMPTagsListFromPrefix(QLatin1String("photoshop"),      tagsMap);
+    d->getXMPTagsListFromPrefix(QLatin1String("plus"),           tagsMap);
+    d->getXMPTagsListFromPrefix(QLatin1String("tiff"),           tagsMap);
     d->getXMPTagsListFromPrefix(QLatin1String("video"),          tagsMap);
+    d->getXMPTagsListFromPrefix(QLatin1String("xmp"),            tagsMap);
+    d->getXMPTagsListFromPrefix(QLatin1String("xmpBJ"),          tagsMap);
+    d->getXMPTagsListFromPrefix(QLatin1String("xmpDM"),          tagsMap);
+    d->getXMPTagsListFromPrefix(QLatin1String("xmpMM"),          tagsMap);
+    d->getXMPTagsListFromPrefix(QLatin1String("xmpRights"),      tagsMap);
+    d->getXMPTagsListFromPrefix(QLatin1String("xmpTPg"),         tagsMap);
 
     return tagsMap;
 }

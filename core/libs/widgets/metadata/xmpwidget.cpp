@@ -49,10 +49,11 @@ static const char* StandardXmpEntryList[] =
     "crs",             ///< Camera Raw schema.
     "dc",              ///< Dublin Core schema.
     "digiKam",         ///< Our Xmp schema used to store private information (see MetaEngine classes for details).
-    "kipi",            ///< Xmp schema used to store private information from tools.
+    "dwc",             ///< Qualified Dublin Core schema.
     "exif",            ///< Schema for Exif-specific Properties.
     "iptc",            ///< IPTC Core schema.
     "iptcExt",         ///< IPTC Extension schema.
+    "kipi",            ///< Xmp schema used to store private information from tools.
     "lr",              ///< Adobe LightRoom schema.
     "MicrosoftPhoto",  ///< Microsoft schema.
     "MP",              ///< Microsoft Photo 1.2 schema.
