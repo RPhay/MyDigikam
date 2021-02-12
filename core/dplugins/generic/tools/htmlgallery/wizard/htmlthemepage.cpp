@@ -65,10 +65,10 @@ HTMLThemePage::HTMLThemePage(QWizard* const dialog, const QString& title)
     DHBox* const hbox = new DHBox(this);
 
     d->themeList      = new QListWidget(hbox);
-    d->themeList->setObjectName(QLatin1String("d->themeList"));
+    d->themeList->setObjectName(QLatin1String("ThemeList"));
 
     d->themeInfo      = new QTextBrowser(hbox);
-    d->themeInfo->setObjectName(QLatin1String("d->themeInfo"));
+    d->themeInfo->setObjectName(QLatin1String("ThemeInfo"));
 
     hbox->setContentsMargins(QMargins());
     hbox->setSpacing(QApplication::style()->pixelMetric(QStyle::PM_DefaultLayoutSpacing));

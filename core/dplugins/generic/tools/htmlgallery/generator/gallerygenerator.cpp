@@ -464,7 +464,7 @@ public:
         map["i18nUp"]                         = makeXsltParam(i18n("Go Up"));
         // Exif Tag
         map["i18nexifimagemake"]              = makeXsltParam(i18n("Make"));
-        map["i18nexifimagemodel"]             = makeXsltParam(i18n("Model"));
+        map["i18nexifimagemodel"]             = makeXsltParam(i18nc("Camera Model", "Model"));
         map["i18nexifimageorientation"]       = makeXsltParam(i18n("Image Orientation"));
         map["i18nexifimagexresolution"]       = makeXsltParam(i18n("Image X Resolution"));
         map["i18nexifimageyresolution"]       = makeXsltParam(i18n("Image Y Resolution"));
