@@ -344,5 +344,5 @@ BUGFIXES:
 304 ==> 432613 - Face detection scan all album, not only the selected ones.
 305 ==> 432764 - Face detection (!) with few results.
 306 ==> 431721 - The string "Filters" needs to be disambiguated between image/search context.
-307 ==> 
-
+307 ==> 432823 - Metadata Panel does not display XMP structs instead displays type="Bag".
+308 ==> 

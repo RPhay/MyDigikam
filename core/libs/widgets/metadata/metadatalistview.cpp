@@ -313,6 +313,27 @@ void MetadataListView::setIfdList(const DMetadata::MetaDataMap& ifds, const QStr
                             ++subItems;
                             filters.removeAll(it.key());
                         }
+                        else if (it.key().contains(QLatin1String("]/")))
+                        {
+                            // Special case to filter metadata tags in bag containers
+
+                            int propIndex = it.key().lastIndexOf(QLatin1Char(':'));
+                            int nameIndex = it.key().lastIndexOf(QLatin1Char('.'));
+
+                            if ((propIndex != -1) && (nameIndex != -1))
+                            {
+                                QString property  = it.key().mid(propIndex + 1);
+                                QString nameSpace = it.key().left(nameIndex + 1);
+
+                                if (it.key().startsWith(nameSpace) && it.key().endsWith(property))
+                                {
+                                    QString tagTitle = m_parent->getTagTitle(it.key());
+                                    new MetadataListViewItem(parentifDItem, it.key(), tagTitle, it.value());
+                                    ++subItems;
+                                    filters.removeAll(nameSpace + property);
+                                }
+                            }
+                        }
                     }
                 }
             }
