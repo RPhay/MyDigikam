@@ -96,7 +96,7 @@ showfoto \
 
 # Paths to search for applications above
 KDE_APP_PATHS="\
-Applications/KF5 \
+Applications/digiKam.org \
 "
 
 # Other apps - non-MacOS binaries & libraries to be included with required dylibs
