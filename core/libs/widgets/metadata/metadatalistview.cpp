@@ -325,12 +325,17 @@ void MetadataListView::setIfdList(const DMetadata::MetaDataMap& ifds, const QStr
                                 QString property  = it.key().mid(propIndex + 1);
                                 QString nameSpace = it.key().left(nameIndex + 1);
 
-                                if (it.key().startsWith(nameSpace) && it.key().endsWith(property))
+                                if (filters.contains(nameSpace + property) &&
+                                    it.key().startsWith(nameSpace) && it.key().endsWith(property))
                                 {
                                     QString tagTitle = m_parent->getTagTitle(it.key());
                                     new MetadataListViewItem(parentifDItem, it.key(), tagTitle, it.value());
                                     ++subItems;
-                                    filters.removeAll(nameSpace + property);
+
+                                    if (it.key().contains(QLatin1String("[1]")))
+                                    {
+                                        filters.removeAll(nameSpace + property);
+                                    }
                                 }
                             }
                         }

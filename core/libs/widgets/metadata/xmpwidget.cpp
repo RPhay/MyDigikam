@@ -42,6 +42,9 @@ namespace Digikam
 
 static const char* StandardXmpEntryList[] =
 {
+
+    "acdsee",          ///< Schema for ACDSEE.
+    "audio",           ///< Exiv2 Audio Metadata Schema
     "aux",             ///< Schema for Additional Exif Properties.
     "crs",             ///< Camera Raw schema.
     "dc",              ///< Dublin Core schema.
@@ -50,20 +53,21 @@ static const char* StandardXmpEntryList[] =
     "exif",            ///< Schema for Exif-specific Properties.
     "iptc",            ///< IPTC Core schema.
     "iptcExt",         ///< IPTC Extension schema.
+    "lr",              ///< Adobe LightRoom schema.
     "MicrosoftPhoto",  ///< Microsoft schema.
+    "MP",              ///< Microsoft Photo 1.2 schema.
+    "mwg-rs",          ///< Metadata Working Group schema.
     "pdf",             ///< Adobe PDF schema.
     "photoshop",       ///< Adobe Photoshop schema.
     "plus",            ///< PLUS License Data Format Schema.
     "tiff",            ///< Schema for TIFF Properties
+    "video",           ///< Exiv2 Video Metadata Schema
     "xmp",             ///< Basic schema.
     "xmpBJ",           ///< Basic Job Ticket schema.
     "xmpDM",           ///< Dynamic Media schema.
     "xmpMM",           ///< Media Management schema.
     "xmpRights",       ///< Rights Management schema.
     "xmpTPg",          ///< Paged-Text schema.
-    "lr",              ///< Adobe LightRoom schema.
-    "video",           ///< Exiv2 Video Metadata Schema
-    "audio",           ///< Exiv2 Audio Metadata Schema
 
     "-1"
 };
