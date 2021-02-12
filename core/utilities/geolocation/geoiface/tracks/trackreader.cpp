@@ -339,7 +339,7 @@ TrackReader::TrackReadResult TrackReader::loadTrackFile(const QUrl& url)
         }
         else
         {
-            parsedData.loadError = i18n("File is a GPX file, but no data points "
+            parsedData.loadError = i18n("File is a GPX file, but no track points "
                                         "with valid timestamps were found.");
         }
 
