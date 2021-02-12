@@ -343,4 +343,6 @@ BUGFIXES:
 303 ==> 432646 - digiKam 7.2.0-rc crashes on startup (beta2 didn't).
 304 ==> 432613 - Face detection scan all album, not only the selected ones.
 305 ==> 432764 - Face detection (!) with few results.
-306 ==> 
+306 ==> 431721 - The string "Filters" needs to be disambiguated between image/search context.
+307 ==> 
+
