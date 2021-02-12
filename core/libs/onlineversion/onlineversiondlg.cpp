@@ -29,6 +29,7 @@
 #include <QTimer>
 #include <QList>
 #include <QFile>
+#include <QFont>
 #include <QFileDevice>
 #include <QStyle>
 #include <QIcon>
@@ -138,6 +139,9 @@ OnlineVersionDlg::OnlineVersionDlg(QWidget* const parent,
     d->expanderBox          = new DExpanderBox(page);
     d->releaseNotes         = new QTextBrowser(d->expanderBox);
     d->releaseNotes->setLineWrapMode(QTextEdit::NoWrap);
+    QFont fnt;
+    fnt.setStyleHint(QFont::Monospace);
+    d->releaseNotes->setFont(fnt);
     d->expanderBox->insertItem(0,
                                d->releaseNotes,
                                QIcon::fromTheme(QLatin1String("dialog-information")),
