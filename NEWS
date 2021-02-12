@@ -346,4 +346,5 @@ BUGFIXES:
 306 ==> 431721 - The string "Filters" needs to be disambiguated between image/search context.
 307 ==> 432823 - Metadata Panel does not display XMP structs instead displays type="Bag".
 308 ==> 293335 - GPX file without time stamps reports no datapoints.
-309 ==> 
+309 ==> 432531 - After running DB maintenance digiKam won't start can't connect to DB then crashes.
+310 ==> 
