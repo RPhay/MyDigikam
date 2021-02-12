@@ -229,7 +229,8 @@ void OnlineVersionChecker::slotDownloadFinished(QNetworkReply* reply)
 
     if (d->preRelease)
     {
-        // NOTE: pre-release files list from files.kde.org is a simple text file of remote directory contents where we will extract build date string.
+        // NOTE: pre-release files list from files.kde.org is a simple text
+        // file of remote directory contents where we will extract build date string.
 
         QString arch;
         QString ext;
@@ -272,14 +273,16 @@ void OnlineVersionChecker::slotDownloadFinished(QNetworkReply* reply)
 
         // 1 - the fila name include a pre release suffix as -beta or -rc 
 
-        QDateTime onlineDt   = QDateTime::fromString(sections[3], QLatin1String("yyyyMMddTHHmmss"));
+        QString dtStr        = sections[3];
+        QDateTime onlineDt   = QDateTime::fromString(dtStr, QLatin1String("yyyyMMddTHHmmss"));
         onlineDt.setTimeSpec(Qt::UTC);
 
         if (!onlineDt.isValid())
         {
             // 2 - the file name do not include a pre release suffix
 
-            onlineDt = QDateTime::fromString(sections[2], QLatin1String("yyyyMMddTHHmmss"));
+            dtStr = sections[2];
+            onlineDt = QDateTime::fromString(dtStr, QLatin1String("yyyyMMddTHHmmss"));
             onlineDt.setTimeSpec(Qt::UTC);
         }
 
@@ -297,7 +300,7 @@ void OnlineVersionChecker::slotDownloadFinished(QNetworkReply* reply)
 
         if (onlineDt > d->curBuildDt)
         {
-            emit signalNewVersionAvailable(sections[3]);            // Forward pre-release build date from remote file.
+            emit signalNewVersionAvailable(dtStr);            // Forward pre-release build date from remote file.
         }
         else
         {
