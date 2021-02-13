@@ -649,10 +649,15 @@ bool ItemFilterSettings::matches(const ItemInfo& info, bool* const foundText) co
     {
         bool textMatch = false;
 
+        QRegExp textRegExp(m_textFilterSettings.text);
+        textRegExp.setPatternSyntax(QRegExp::WildcardUnix);
+        textRegExp.setCaseSensitivity(m_textFilterSettings.caseSensitive);
+
         // Image name
 
         if ((m_textFilterSettings.textFields & SearchTextFilterSettings::ImageName) &&
-            info.name().contains(m_textFilterSettings.text, m_textFilterSettings.caseSensitive))
+            (textRegExp.exactMatch(info.name())                                     ||
+            info.name().contains(m_textFilterSettings.text, m_textFilterSettings.caseSensitive)))
         {
             textMatch = true;
         }
@@ -660,7 +665,8 @@ bool ItemFilterSettings::matches(const ItemInfo& info, bool* const foundText) co
         // Image title
 
         if ((m_textFilterSettings.textFields & SearchTextFilterSettings::ImageTitle) &&
-            info.title().contains(m_textFilterSettings.text, m_textFilterSettings.caseSensitive))
+            (textRegExp.exactMatch(info.title())                                     ||
+            info.title().contains(m_textFilterSettings.text, m_textFilterSettings.caseSensitive)))
         {
             textMatch = true;
         }
@@ -668,7 +674,8 @@ bool ItemFilterSettings::matches(const ItemInfo& info, bool* const foundText) co
         // Image comment
 
         if ((m_textFilterSettings.textFields & SearchTextFilterSettings::ImageComment) &&
-            info.comment().contains(m_textFilterSettings.text, m_textFilterSettings.caseSensitive))
+            (textRegExp.exactMatch(info.comment())                                     ||
+            info.comment().contains(m_textFilterSettings.text, m_textFilterSettings.caseSensitive)))
         {
             textMatch = true;
         }
@@ -678,7 +685,8 @@ bool ItemFilterSettings::matches(const ItemInfo& info, bool* const foundText) co
         foreach (int id, info.tagIds())
         {
             if ((m_textFilterSettings.textFields & SearchTextFilterSettings::TagName) &&
-                m_tagNameHash.value(id).contains(m_textFilterSettings.text, m_textFilterSettings.caseSensitive))
+                (textRegExp.exactMatch(m_tagNameHash.value(id))                       ||
+                m_tagNameHash.value(id).contains(m_textFilterSettings.text, m_textFilterSettings.caseSensitive)))
             {
                 textMatch = true;
             }
@@ -687,7 +695,8 @@ bool ItemFilterSettings::matches(const ItemInfo& info, bool* const foundText) co
         // Album names
 
         if ((m_textFilterSettings.textFields & SearchTextFilterSettings::AlbumName) &&
-            m_albumNameHash.value(info.albumId()).contains(m_textFilterSettings.text, m_textFilterSettings.caseSensitive))
+            (textRegExp.exactMatch(m_albumNameHash.value(info.albumId()))           ||
+            m_albumNameHash.value(info.albumId()).contains(m_textFilterSettings.text, m_textFilterSettings.caseSensitive)))
         {
             textMatch = true;
         }

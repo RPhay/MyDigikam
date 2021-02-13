@@ -348,4 +348,5 @@ BUGFIXES:
 308 ==> 293335 - GPX file without time stamps reports no datapoints.
 309 ==> 432531 - After running DB maintenance digiKam won't start can't connect to DB then crashes.
 310 ==> 432878 - Rendering Intents options cannot be translated in Color Management Configuration page.
-311 ==> 
+311 ==> 432732 - Wish: Support wildcards in text filter.
+312 ==> 
