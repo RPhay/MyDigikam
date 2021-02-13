@@ -446,13 +446,13 @@ void ItemScanner::commitFaces()
         {
             int tagId = FaceTags::getOrCreateTagForPerson(name);
 
-            if (!tagId)
+            if (tagId)
             {
-                qCDebug(DIGIKAM_DATABASE_LOG) << "Failed to create a person tag for name" << name;
+                ItemInfo(d->scanInfo.id).setTag(tagId);
             }
             else
             {
-                ItemInfo(d->scanInfo.id).setTag(tagId);
+                qCDebug(DIGIKAM_DATABASE_LOG) << "Failed to create a person tag for name" << name;
             }
 
             continue;
@@ -474,12 +474,14 @@ void ItemScanner::commitFaces()
         {
             int tagId = FaceTags::getOrCreateTagForPerson(name);
 
-            if (!tagId)
+            if (tagId)
+            {
+                editor.add(d->scanInfo.id, tagId, region, false);
+            }
+            else
             {
                 qCDebug(DIGIKAM_DATABASE_LOG) << "Failed to create a person tag for name" << name;
             }
-
-            editor.add(d->scanInfo.id, tagId, region, false);
         }
     }
 }
