@@ -5,7 +5,7 @@
 # For details see the accompanying COPYING-CMAKE-SCRIPTS file.
 
 set(CMAKE_MIN_VERSION   "3.3.2")
-set(ECM_MIN_VERSION     "1.7.0")
+set(ECM_MIN_VERSION     "5.5.0")
 
 cmake_minimum_required(VERSION ${CMAKE_MIN_VERSION})
 
@@ -74,14 +74,8 @@ include(GenerateExportHeader)
 include(CheckFunctionExists)
 include(FeatureSummary)
 
-# KF5 Framework macros
-include(KDEInstallDirs)
-include(KDECMakeSettings)
-include(KDECompilerSettings)
-
 # ECM macros
 include(ECMOptionalAddSubdirectory)
-include(ECMAddTests)
 include(ECMMarkNonGuiExecutable)
 include(ECMGenerateHeaders)
 include(ECMGeneratePriFile)
@@ -89,8 +83,13 @@ include(ECMSetupVersion)
 include(ECMInstallIcons)
 include(ECMAddAppIcon)
 include(ECMPoQmTools)
-include(ECMMarkAsTest)
 include(ECMAddTests)
+include(ECMMarkAsTest)
+
+# KF5 Framework macros
+include(KDEInstallDirs)
+include(KDECMakeSettings)
+include(KDECompilerSettings)
 
 # Local macros
 include(MacroUtils)

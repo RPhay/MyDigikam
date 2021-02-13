@@ -1,5 +1,5 @@
 /** \mainpage digiKam API reference page.
-    \author (c) 2001-2020 digiKam team.
+    \author (c) 2001-2021 digiKam team.
     \brief digiKam is an advanced open-source digital photo management application that runs on Linux, Windows, and MacOS.
     \image html logo-digikam.png
 
@@ -54,7 +54,8 @@
 |│   │       └── utils                                        | View utility classes                                                    |
 |│   ├── cmake                                                | Extra Cmake scripts will be hosted here                                 |
 |│   │   ├── modules                                          | Cmake scripts to find extra dependencies                                |
-|│   │   ├── templates                                        | Cmake template files used at configuration time                         |
+|│   │   └── templates                                        | Cmake template files used at configuration time                         |
+|│   ├── data                                                 | Application data files will be hosted here                              |
 |│   │   ├── about                                            | Welcome page files (HTML + CSS)                                         |
 |│   │   ├── colorschemes                                     | GUI Color scheme files                                                  |
 |│   │   ├── database                                         | Database XML configuration files                                        |
@@ -248,12 +249,14 @@
 |└── project                                                  | Extra project parts                                                     |
 |    ├── bundles                                              | Bundles build scripts                                                   |
 |    │   ├── 3rdparty                                         | External components required to build bundles                           |
+|    │   ├── CD                                               | Continuous Deployement configurations                                   |
 |    │   ├── appimage                                         | Linux AppImage                                                          |
+|    │   ├── flatpak                                          | Linux Flatpak                                                           |
 |    │   ├── macports                                         | MacOs package                                                           |
 |    │   └── mxe                                              | Windows installer                                                       |
 |    ├── documents                                            | Project documentations                                                  |
 |    ├── release                                              | Release scripts                                                         |
-|    ├── reports                                              | Static analyzers report scripts                                         |
+|    ├── reports                                              | Static analyzers report scripts for Continuous Integration              |
 |    └── scripts                                              | 3rdparty source code management scripts                                 |
 
 \section externaldeps External Dependencies
@@ -277,7 +280,7 @@ The full list of mandatory (X) and optional (opt) external dependencies required
 | Dependency           | Status   | Version     | Project URL                                       | Remarks                                                | TODO                                                                                  |
 |----------------------|----------|-------------|---------------------------------------------------|--------------------------------------------------------|---------------------------------------------------------------------------------------|
 | CMake                |   X      | >= 3.3.2    | http://www.cmake.org                              |                                                        |                                                                                       |
-| ECM                  |   X      | >= 1.7.0    | https://cgit.kde.org/extra-cmake-modules.git/     |                                                        |                                                                                       |
+| ECM                  |   X      | >= 5.5.0    | https://cgit.kde.org/extra-cmake-modules.git/     |                                                        |                                                                                       |
 | Qt5::Core            |   X      | >= 5.9      | http://code.qt.io/cgit/qt/qtbase.git/             |                                                        |                                                                                       |
 | Qt5::Gui             |   X      | >= 5.9      | http://code.qt.io/cgit/qt/qtbase.git/             |                                                        |                                                                                       |
 | Qt5::Widgets         |   X      | >= 5.9      | http://code.qt.io/cgit/qt/qtbase.git/             |                                                        |                                                                                       |
