@@ -106,6 +106,11 @@ OnlineVersionDwnl::~OnlineVersionDwnl()
     delete d;
 }
 
+QString OnlineVersionDwnl::downloadUrl() const
+{
+    return d->downloadUrl;
+}
+
 void OnlineVersionDwnl::cancelDownload()
 {
     if (d->reply)

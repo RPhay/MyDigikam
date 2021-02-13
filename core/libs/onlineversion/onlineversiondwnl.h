@@ -52,6 +52,8 @@ public:
 
     QString downloadedPath() const;
 
+    QString downloadUrl()    const;
+
 Q_SIGNALS:
 
     void signalDownloadError(const QString& error);

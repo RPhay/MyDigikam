@@ -135,6 +135,7 @@ OnlineVersionDlg::OnlineVersionDlg(QWidget* const parent,
     QWidget* const page     = new QWidget(this);
     QGridLayout* const grid = new QGridLayout(page);
     d->label                = new QLabel(page);
+    d->label->setOpenExternalLinks(true);
 
     d->expanderBox          = new DExpanderBox(page);
     d->releaseNotes         = new QTextBrowser(d->expanderBox);
@@ -251,29 +252,31 @@ void OnlineVersionDlg::slotNewVersionAvailable(const QString& version)
         d->onlineDt = QDateTime::fromString(d->newVersion, QLatin1String("yyyyMMddTHHmmss"));
         d->onlineDt.setTimeSpec(Qt::UTC);
 
-        d->label->setText(i18n("Current %1 pre-release date is %2.\n"
-                               "New pre-release built on %3 is available.\n\n"
-                               "Press \"Download\" to get the file...\n\n"
-                               "Note: from Setup/Misc panel, you can switch to check for stable release only.\n"
-                               "Stable versions are safe to use in production.\n\n"
-                               "Press \"Configure\" if you want to show update options from setup dialog.",
+        d->label->setText(i18n("<p>Current <b>%1</b> pre-release date is <i>%2</i>.</p>"
+                               "<p>New pre-release built on <i>%3</i> is available on this <a href='%4'>repository</a>.</p>"
+                               "<p>Press <b>Download</b> to get the file...</p>"
+                               "<p>Note: from Setup/Misc panel, you can switch to check for stable release only.<br>"
+                               "Stable versions are safe to use in production.</p>"
+                               "<p>Press <b>Configure</b> if you want to show update options from setup dialog.</p>",
                                qApp->applicationName(),
                                QLocale().toString(d->curBuildDt, QLocale::ShortFormat),
-                               QLocale().toString(d->onlineDt, QLocale::ShortFormat)));
+                               QLocale().toString(d->onlineDt, QLocale::ShortFormat),
+                               d->dwnloader->downloadUrl()));
     }
     else
     {
-        d->label->setText(i18n("Current %1 stable version is %2\n"
-                               "New stable version %3 is available.\n\n"
-                               "Press \"Download\" to get the file...\n\n"
-                               "Note: from Setup/Misc panel, you can switch to check for weekly pre-release.\n"
-                               "Pre-release versions are dedicated to test quickly new features.\n"
-                               "It's not recommended to use pre-releases in production as bugs can remain,\n"
-                               "unless you know what you are doing.\n\n"
-                               "Press \"Configure\" if you want to show update options from setup dialog.",
+        d->label->setText(i18n("<p>Current <b>%1</b> stable version is <i>%2</i></p>"
+                               "<p>New stable version <i>%3</i> is available on this <a href='%4'>repository</a>.</p>"
+                               "<p>Press <b>Download</b> to get the file...</p>"
+                               "<p>Note: from Setup/Misc panel, you can switch to check for weekly pre-release.<br>"
+                               "Pre-release versions are dedicated to test quickly new features.<br>"
+                               "It's not recommended to use pre-releases in production as bugs can remain,<br>"
+                               "unless you know what you are doing.</p>"
+                               "<p>Press <b>Configure</b> if you want to show update options from setup dialog.</p>",
                                qApp->applicationName(),
                                d->curVersion,
-                               version));
+                               version,
+                               d->dwnloader->downloadUrl()));
     }
 
     d->checker->downloadReleaseNotes(d->preRelease ? QString() : version);
