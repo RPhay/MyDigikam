@@ -351,4 +351,5 @@ BUGFIXES:
 311 ==> 432732 - Wish: Support wildcards in text filter.
 312 ==> 398376 - UI problems making face management very hard.
 313 ==> 384614 - Digikam redeye does not work on some images.
-314 ==> 
+314 ==> 390487 - Open in File Manager function enhancement.
+315 ==> 
