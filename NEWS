@@ -350,4 +350,5 @@ BUGFIXES:
 310 ==> 432878 - Rendering Intents options cannot be translated in Color Management Configuration page.
 311 ==> 432732 - Wish: Support wildcards in text filter.
 312 ==> 398376 - UI problems making face management very hard.
-313 ==> 
+313 ==> 384614 - Digikam redeye does not work on some images.
+314 ==> 

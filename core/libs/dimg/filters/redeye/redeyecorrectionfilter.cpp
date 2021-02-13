@@ -54,6 +54,10 @@ public:
 
     explicit Private()
     {
+        QVariantMap params;
+        params[QLatin1String("accuracy")]  = 0.8;
+        params[QLatin1String("useyolov3")] = true;
+        facedetector.setParameters(params);
     }
 
     FaceDetector                   facedetector;
