@@ -354,4 +354,5 @@ BUGFIXES:
 314 ==> 390487 - Open in File Manager function enhancement.
 315 ==> 401941 - Beta3 / beta2 launches but hangs... Now fear for DB!
 316 ==> 400941 - Crash with segmentation fault when writing a large amount of metadata to images.
-317 ==> 
+317 ==> 341510 - Imported GPX Files generate an error when GPX-File contains 'unusual' tags.
+318 ==> 
