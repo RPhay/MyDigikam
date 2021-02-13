@@ -349,4 +349,5 @@ BUGFIXES:
 309 ==> 432531 - After running DB maintenance digiKam won't start can't connect to DB then crashes.
 310 ==> 432878 - Rendering Intents options cannot be translated in Color Management Configuration page.
 311 ==> 432732 - Wish: Support wildcards in text filter.
-312 ==> 
+312 ==> 398376 - UI problems making face management very hard.
+313 ==> 
