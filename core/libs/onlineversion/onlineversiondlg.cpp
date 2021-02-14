@@ -179,7 +179,7 @@ OnlineVersionDlg::OnlineVersionDlg(QWidget* const parent,
     }
 
     d->bar                 = new QProgressBar(page);
-    d->bar->setMaximum(0);
+    d->bar->setMaximum(1);
     d->bar->setMinimum(0);
     d->bar->setValue(0);
 
@@ -327,10 +327,6 @@ void OnlineVersionDlg::slotReleaseNotesData(const QString& notes)
 
 void OnlineVersionDlg::slotDownloadInstaller()
 {
-    d->bar->setMaximum(1);
-    d->bar->setMinimum(0);
-    d->bar->setValue(0);
-
     if (d->preRelease)
     {
         QString version = d->updateWithDebug ? i18n("built on %1 with debug symbols", QLocale().toString(d->onlineDt, QLocale::ShortFormat))
@@ -352,6 +348,10 @@ void OnlineVersionDlg::slotDownloadInstaller()
 
     d->buttons->button(QDialogButtonBox::Apply)->setEnabled(false);
     d->buttons->button(QDialogButtonBox::Reset)->setEnabled(false);
+
+    d->bar->setMaximum(1);
+    d->bar->setMinimum(0);
+    d->bar->setValue(0);
     d->bar->show();
 
     if (d->preRelease)
