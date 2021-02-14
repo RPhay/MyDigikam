@@ -140,7 +140,7 @@ OnlineVersionDlg::OnlineVersionDlg(QWidget* const parent,
     d->expanderBox          = new DExpanderBox(page);
     d->releaseNotes         = new QTextBrowser(d->expanderBox);
     d->releaseNotes->setLineWrapMode(QTextEdit::NoWrap);
-    QFont fnt;
+    QFont fnt("Monospace");
     fnt.setStyleHint(QFont::Monospace);
     d->releaseNotes->setFont(fnt);
     d->expanderBox->insertItem(0,
