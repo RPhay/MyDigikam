@@ -45,6 +45,9 @@
 #include <QDialogButtonBox>
 #include <QMessageBox>
 #include <QTextBrowser>
+#include <QMargins>
+#include <QGroupBox>
+#include <QTextDocument>
 
 // KDE includes
 
@@ -57,7 +60,6 @@
 #include "onlineversiondwnl.h"
 #include "dfileoperations.h"
 #include "dxmlguiwindow.h"
-#include "dexpanderbox.h"
 
 namespace Digikam
 {
@@ -74,7 +76,7 @@ public:
         logo           (nullptr),
         buttons        (nullptr),
         releaseNotes   (nullptr),
-        expanderBox    (nullptr),
+        notesBox       (nullptr),
         checker        (nullptr),
         dwnloader      (nullptr)
     {
@@ -93,7 +95,7 @@ public:
     QDialogButtonBox*     buttons;
     QTextBrowser*         releaseNotes;
 
-    DExpanderBox*         expanderBox;
+    QGroupBox*            notesBox;
     OnlineVersionChecker* checker;
     OnlineVersionDwnl*    dwnloader;
 };
@@ -137,19 +139,22 @@ OnlineVersionDlg::OnlineVersionDlg(QWidget* const parent,
     d->label                = new QLabel(page);
     d->label->setOpenExternalLinks(true);
 
-    d->expanderBox          = new DExpanderBox(page);
-    d->releaseNotes         = new QTextBrowser(d->expanderBox);
+    d->notesBox             = new QGroupBox(i18n("Release Notes"), page);
+    QVBoxLayout* const vlay = new QVBoxLayout(d->notesBox);
+    d->releaseNotes         = new QTextBrowser(d->notesBox);
     d->releaseNotes->setLineWrapMode(QTextEdit::NoWrap);
-    QFont fnt("Monospace");
+    QFont fnt(QLatin1String("Monospace"));
     fnt.setStyleHint(QFont::Monospace);
     d->releaseNotes->setFont(fnt);
-    d->expanderBox->insertItem(0,
-                               d->releaseNotes,
-                               QIcon::fromTheme(QLatin1String("dialog-information")),
-                               i18n("Release Notes"),
-                               QLatin1String("ReleasesNotes"),  // Not used
-                               false);
-    d->expanderBox->setVisible(false);
+    d->releaseNotes->document()->setDefaultFont(fnt);
+    QMargins m = d->releaseNotes->contentsMargins();
+    int lines  = 10;
+    d->releaseNotes->setMinimumHeight(m.top()                       +
+                                      m.bottom()                    +
+                                      d->releaseNotes->frameWidth() +
+                                      d->releaseNotes->fontMetrics().lineSpacing()*lines);
+    vlay->addWidget(d->releaseNotes);
+    d->notesBox->setVisible(false);
 
     if (d->preRelease)
     {
@@ -185,10 +190,10 @@ OnlineVersionDlg::OnlineVersionDlg(QWidget* const parent,
                                                   page);
     d->buttons->button(QDialogButtonBox::Cancel)->setDefault(true);
 
-    grid->addWidget(d->logo,        0, 0, 3, 1);
-    grid->addWidget(d->label,       0, 1, 1, 2);
-    grid->addWidget(d->expanderBox, 1, 1, 1, 2);
-    grid->addWidget(d->bar,         2, 1, 1, 2);
+    grid->addWidget(d->logo,     0, 0, 3, 1);
+    grid->addWidget(d->label,    0, 1, 1, 2);
+    grid->addWidget(d->notesBox, 1, 1, 1, 2);
+    grid->addWidget(d->bar,      2, 1, 1, 2);
     grid->setSpacing(style()->pixelMetric(QStyle::PM_DefaultLayoutSpacing));
     grid->setContentsMargins(QMargins());
     grid->setColumnStretch(2, 10);
@@ -257,7 +262,7 @@ void OnlineVersionDlg::slotNewVersionAvailable(const QString& version)
                                "<p>Press <b>Download</b> to get the file...</p>"
                                "<p>Note: from Setup/Misc panel, you can switch to check for stable release only.<br>"
                                "Stable versions are safe to use in production.</p>"
-                               "<p>Press <b>Configure</b> if you want to show update options from setup dialog.</p>",
+                               "<p>Press <b>Configure</b> if you want to customize update options from setup dialog.</p>",
                                qApp->applicationName(),
                                QLocale().toString(d->curBuildDt, QLocale::ShortFormat),
                                QLocale().toString(d->onlineDt, QLocale::ShortFormat),
@@ -272,7 +277,7 @@ void OnlineVersionDlg::slotNewVersionAvailable(const QString& version)
                                "Pre-release versions are dedicated to test quickly new features.<br>"
                                "It's not recommended to use pre-releases in production as bugs can remain,<br>"
                                "unless you know what you are doing.</p>"
-                               "<p>Press <b>Configure</b> if you want to show update options from setup dialog.</p>",
+                               "<p>Press <b>Configure</b> if you want to customize update options from setup dialog.</p>",
                                qApp->applicationName(),
                                d->curVersion,
                                version,
@@ -317,8 +322,7 @@ void OnlineVersionDlg::slotNewVersionCheckError(const QString& error)
 void OnlineVersionDlg::slotReleaseNotesData(const QString& notes)
 {
     d->releaseNotes->setText(notes);
-    d->expanderBox->setItemExpanded(0, false);
-    d->expanderBox->setVisible(true);
+    d->notesBox->setVisible(true);
 }
 
 void OnlineVersionDlg::slotDownloadInstaller()
