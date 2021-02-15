@@ -1410,10 +1410,6 @@
                 </statement>
             </dbaction>
 
-            <dbaction name="checkIfDatabaseExists">
-                <statement mode="query">SELECT Albums.relativePath, Images.name FROM Images INNER JOIN Albums ON Albums.id=Images.album WHERE Albums.id=:albumID ORDER BY Images.name;</statement>
-            </dbaction>
-
             <dbaction name="getItemURLsInAlbumByItemName">
                 <statement mode="query">SELECT Albums.relativePath, Images.name FROM Images INNER JOIN Albums ON Albums.id=Images.album WHERE Albums.id=:albumID ORDER BY Images.name;</statement>
             </dbaction>
