@@ -60,6 +60,7 @@
 #include "onlineversiondwnl.h"
 #include "dfileoperations.h"
 #include "dxmlguiwindow.h"
+#include "itempropertiestab.h"
 
 namespace Digikam
 {
@@ -73,6 +74,7 @@ public:
         updateWithDebug(false),
         bar            (nullptr),
         label          (nullptr),
+        stats          (nullptr),
         logo           (nullptr),
         buttons        (nullptr),
         releaseNotes   (nullptr),
@@ -91,6 +93,7 @@ public:
     QString               newVersion;       ///< For stable => version IDs ; for pre-release => build ISO date.
     QProgressBar*         bar;
     QLabel*               label;
+    QLabel*               stats;
     QLabel*               logo;
     QDialogButtonBox*     buttons;
     QTextBrowser*         releaseNotes;
@@ -138,6 +141,9 @@ OnlineVersionDlg::OnlineVersionDlg(QWidget* const parent,
     QGridLayout* const grid = new QGridLayout(page);
     d->label                = new QLabel(page);
     d->label->setOpenExternalLinks(true);
+    d->stats                = new QLabel(page);
+    d->stats->setAlignment(Qt::AlignRight);
+    d->stats->setVisible(false);
 
     d->notesBox             = new QGroupBox(i18n("Release Notes"), page);
     QVBoxLayout* const vlay = new QVBoxLayout(d->notesBox);
@@ -192,8 +198,9 @@ OnlineVersionDlg::OnlineVersionDlg(QWidget* const parent,
 
     grid->addWidget(d->logo,     0, 0, 1, 1);
     grid->addWidget(d->label,    0, 1, 1, 2);
-    grid->addWidget(d->notesBox, 1, 0, 1, 3);
-    grid->addWidget(d->bar,      2, 0, 1, 3);
+    grid->addWidget(d->stats,    0, 1, 1, 3);
+    grid->addWidget(d->notesBox, 1, 0, 1, 4);
+    grid->addWidget(d->bar,      2, 0, 1, 4);
     grid->setSpacing(style()->pixelMetric(QStyle::PM_DefaultLayoutSpacing));
     grid->setContentsMargins(QMargins());
     grid->setColumnStretch(2, 10);
@@ -240,6 +247,7 @@ void OnlineVersionDlg::slotNewVersionAvailable(const QString& version)
 {
     d->newVersion = version;
     d->bar->hide();
+    d->stats->hide();
 
     d->buttons->button(QDialogButtonBox::Apply)->setVisible(true);
     d->buttons->button(QDialogButtonBox::Apply)->setEnabled(true);
@@ -290,6 +298,7 @@ void OnlineVersionDlg::slotNewVersionAvailable(const QString& version)
 void OnlineVersionDlg::slotNewVersionCheckError(const QString& error)
 {
     d->bar->hide();
+    d->stats->hide();
     d->buttons->button(QDialogButtonBox::Apply)->setVisible(false);
     d->buttons->button(QDialogButtonBox::Cancel)->setText(i18n("Close"));
     d->buttons->button(QDialogButtonBox::Cancel)->setIcon(QIcon::fromTheme(QLatin1String("close")));
@@ -353,6 +362,7 @@ void OnlineVersionDlg::slotDownloadInstaller()
     d->bar->setMinimum(0);
     d->bar->setValue(0);
     d->bar->show();
+    d->stats->show();
 
     if (d->preRelease)
     {
@@ -367,6 +377,7 @@ void OnlineVersionDlg::slotDownloadInstaller()
 void OnlineVersionDlg::slotDownloadError(const QString& error)
 {
     d->bar->hide();
+    d->stats->hide();
 
     if (error.isEmpty())        // empty error want mean a complete download.
     {
@@ -467,6 +478,10 @@ void OnlineVersionDlg::slotDownloadProgress(qint64 recv, qint64 total)
     d->bar->setMaximum(total);
     d->bar->setMinimum(0);
     d->bar->setValue(recv);
+    d->stats->setText(i18n("Received:%1\n"
+                           "Total:%2",
+                           ItemPropertiesTab::humanReadableBytesCount(recv),
+                           ItemPropertiesTab::humanReadableBytesCount(total)));
 }
 
 void OnlineVersionDlg::slotRunInstaller()
