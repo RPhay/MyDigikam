@@ -356,4 +356,5 @@ BUGFIXES:
 316 ==> 400941 - Crash with segmentation fault when writing a large amount of metadata to images.
 317 ==> 341510 - Imported GPX Files generate an error when GPX-File contains 'unusual' tags.
 318 ==> 432789 - Imported Pictures (RAW, CR3, Canon M6 Mark II) doesn´t have the rigth Rotation.
-319 ==> 
+319 ==> 432957 - Some tags appear beneath "People" parent tag in People view/panel.
+320 ==> 
