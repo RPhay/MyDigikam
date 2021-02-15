@@ -48,6 +48,7 @@
 #include <QMargins>
 #include <QGroupBox>
 #include <QTextDocument>
+#include <QTimer>
 
 // KDE includes
 
@@ -78,6 +79,7 @@ public:
         logo           (nullptr),
         buttons        (nullptr),
         releaseNotes   (nullptr),
+        speedTimer     (nullptr),
         notesBox       (nullptr),
         checker        (nullptr),
         dwnloader      (nullptr)
@@ -97,6 +99,7 @@ public:
     QLabel*               logo;
     QDialogButtonBox*     buttons;
     QTextBrowser*         releaseNotes;
+    QTimer*               speedTimer;
 
     QGroupBox*            notesBox;
     OnlineVersionChecker* checker;
@@ -136,6 +139,11 @@ OnlineVersionDlg::OnlineVersionDlg(QWidget* const parent,
 
     connect(d->dwnloader, SIGNAL(signalDownloadProgress(qint64,qint64)),
             this, SLOT(slotDownloadProgress(qint64,qint64)));
+
+    d->speedTimer      = new QTimer(this);
+
+    connect(d->speedTimer, SIGNAL(timeout()),
+            this, SLOT(slotUpdateStats()));
 
     QWidget* const page     = new QWidget(this);
     QGridLayout* const grid = new QGridLayout(page);
@@ -248,6 +256,7 @@ void OnlineVersionDlg::slotNewVersionAvailable(const QString& version)
     d->newVersion = version;
     d->bar->hide();
     d->stats->hide();
+    d->speedTimer->stop();
 
     d->buttons->button(QDialogButtonBox::Apply)->setVisible(true);
     d->buttons->button(QDialogButtonBox::Apply)->setEnabled(true);
@@ -299,6 +308,7 @@ void OnlineVersionDlg::slotNewVersionCheckError(const QString& error)
 {
     d->bar->hide();
     d->stats->hide();
+    d->speedTimer->stop();
     d->buttons->button(QDialogButtonBox::Apply)->setVisible(false);
     d->buttons->button(QDialogButtonBox::Cancel)->setText(i18n("Close"));
     d->buttons->button(QDialogButtonBox::Cancel)->setIcon(QIcon::fromTheme(QLatin1String("close")));
@@ -363,6 +373,7 @@ void OnlineVersionDlg::slotDownloadInstaller()
     d->bar->setValue(0);
     d->bar->show();
     d->stats->show();
+    d->speedTimer->start(1000);
 
     if (d->preRelease)
     {
@@ -378,6 +389,7 @@ void OnlineVersionDlg::slotDownloadError(const QString& error)
 {
     d->bar->hide();
     d->stats->hide();
+    d->speedTimer->stop();
 
     if (error.isEmpty())        // empty error want mean a complete download.
     {
@@ -478,10 +490,14 @@ void OnlineVersionDlg::slotDownloadProgress(qint64 recv, qint64 total)
     d->bar->setMaximum(total);
     d->bar->setMinimum(0);
     d->bar->setValue(recv);
+}
+
+void OnlineVersionDlg::slotUpdateStats()
+{
     d->stats->setText(i18n("Received:%1\n"
                            "Total:%2",
-                           ItemPropertiesTab::humanReadableBytesCount(recv),
-                           ItemPropertiesTab::humanReadableBytesCount(total)));
+                           ItemPropertiesTab::humanReadableBytesCount(d->bar->value()),
+                           ItemPropertiesTab::humanReadableBytesCount(d->bar->maximum())));
 }
 
 void OnlineVersionDlg::slotRunInstaller()
