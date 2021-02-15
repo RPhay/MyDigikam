@@ -178,6 +178,25 @@ void DatabaseServer::stopDatabaseProcess()
         return;
     }
 
+#ifdef Q_OS_WIN
+
+    QProcess shutDownProcess;
+    QUrl mysqladminCmd = QUrl::fromLocalFile(d->mysqldCmd).adjusted(QUrl::RemoveFilename);
+    mysqladminCmd.setPath(mysqladminCmd.path() + QLatin1String("mysqladmin.exe"));
+    shutDownProcess.setProcessEnvironment(adjustedEnvironmentForAppImage());
+
+    shutDownProcess.start(mysqladminCmd.toLocalFile(), QStringList() << QLatin1String("shutdown")
+                                                                     << QLatin1String("--port=3307"));
+    shutDownProcess.waitForFinished();
+    d->databaseProcess->waitForFinished(10000);
+
+    if (d->databaseProcess->state() == QProcess::Running)
+    {
+        qCDebug(DIGIKAM_DATABASESERVER_LOG) << "Database process could not be terminated";
+    }
+
+#else
+
     d->databaseProcess->terminate();
 
     if ((d->databaseProcess->state() == QProcess::Running) && !d->databaseProcess->waitForFinished(30000))
@@ -186,6 +205,8 @@ void DatabaseServer::stopDatabaseProcess()
         d->databaseProcess->kill();
         d->databaseProcess->waitForFinished();
     }
+
+#endif
 
     delete d->databaseProcess;
     d->databaseProcess      = nullptr;
