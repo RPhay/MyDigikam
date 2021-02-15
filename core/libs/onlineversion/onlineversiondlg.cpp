@@ -190,10 +190,10 @@ OnlineVersionDlg::OnlineVersionDlg(QWidget* const parent,
                                                   page);
     d->buttons->button(QDialogButtonBox::Cancel)->setDefault(true);
 
-    grid->addWidget(d->logo,     0, 0, 3, 1);
+    grid->addWidget(d->logo,     0, 0, 1, 1);
     grid->addWidget(d->label,    0, 1, 1, 2);
-    grid->addWidget(d->notesBox, 1, 1, 1, 2);
-    grid->addWidget(d->bar,      2, 1, 1, 2);
+    grid->addWidget(d->notesBox, 1, 0, 1, 3);
+    grid->addWidget(d->bar,      2, 0, 1, 3);
     grid->setSpacing(style()->pixelMetric(QStyle::PM_DefaultLayoutSpacing));
     grid->setContentsMargins(QMargins());
     grid->setColumnStretch(2, 10);
