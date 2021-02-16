@@ -76,6 +76,10 @@ public:
         bar            (nullptr),
         label          (nullptr),
         stats          (nullptr),
+        recieved       (nullptr),
+        total          (nullptr),
+        rate           (nullptr),
+        remain         (nullptr),
         logo           (nullptr),
         buttons        (nullptr),
         releaseNotes   (nullptr),
@@ -95,7 +99,11 @@ public:
     QString                newVersion;       ///< For stable => version IDs ; for pre-release => build ISO date.
     QProgressBar*          bar;
     QLabel*                label;
-    QLabel*                stats;
+    QWidget*               stats;
+    QLabel*                recieved;
+    QLabel*                total;
+    QLabel*                rate;
+    QLabel*                remain;
     QLabel*                logo;
     QDialogButtonBox*      buttons;
     QTextBrowser*          releaseNotes;
@@ -141,22 +149,42 @@ OnlineVersionDlg::OnlineVersionDlg(QWidget* const parent,
     connect(d->dwnloader, SIGNAL(signalDownloadProgress(qint64,qint64)),
             this, SLOT(slotDownloadProgress(qint64,qint64)));
 
-    d->speedTimer      = new QTimer(this);
+    d->speedTimer            = new QTimer(this);
 
     connect(d->speedTimer, SIGNAL(timeout()),
             this, SLOT(slotUpdateStats()));
 
-    QWidget* const page     = new QWidget(this);
-    QGridLayout* const grid = new QGridLayout(page);
-    d->label                = new QLabel(page);
+    QWidget* const page      = new QWidget(this);
+    QGridLayout* const grid  = new QGridLayout(page);
+    d->label                 = new QLabel(page);
     d->label->setOpenExternalLinks(true);
-    d->stats                = new QLabel(page);
-    d->stats->setAlignment(Qt::AlignRight);
-    d->stats->setVisible(false);
 
-    d->notesBox             = new QGroupBox(i18n("Release Notes"), page);
-    QVBoxLayout* const vlay = new QVBoxLayout(d->notesBox);
-    d->releaseNotes         = new QTextBrowser(d->notesBox);
+    d->stats                 = new QWidget(page);
+    d->stats->setVisible(false);
+    d->recieved              = new QLabel(d->stats);
+    d->recieved->setAlignment(Qt::AlignRight);
+    d->total                 = new QLabel(d->stats);
+    d->total->setAlignment(Qt::AlignRight);
+    d->rate                  = new QLabel(d->stats);
+    d->rate->setAlignment(Qt::AlignRight);
+    d->remain                = new QLabel(d->stats);
+    d->remain->setAlignment(Qt::AlignRight);
+
+    QGridLayout* const grid2 = new QGridLayout(d->stats);
+    grid2->addWidget(new QLabel(i18n("Received:")), 0, 0, 1, 1);
+    grid2->addWidget(new QLabel(i18n("Total:")),    1, 0, 1, 1);
+    grid2->addWidget(new QLabel(i18n("Rate:")),     2, 0, 1, 1);
+    grid2->addWidget(new QLabel(i18n("Remain:")),   3, 0, 1, 1);
+    grid2->addWidget(d->recieved,                   0, 1, 1, 1);
+    grid2->addWidget(d->total,                      1, 1, 1, 1);
+    grid2->addWidget(d->rate,                       2, 1, 1, 1);
+    grid2->addWidget(d->remain,                     3, 1, 1, 1);
+    grid2->setMargin(0);
+    grid2->setSpacing(0);
+
+    d->notesBox              = new QGroupBox(i18n("Release Notes"), page);
+    QVBoxLayout* const vlay  = new QVBoxLayout(d->notesBox);
+    d->releaseNotes          = new QTextBrowser(d->notesBox);
     d->releaseNotes->setLineWrapMode(QTextEdit::NoWrap);
     QFont fnt(QLatin1String("Monospace"));
     fnt.setStyleHint(QFont::Monospace);
@@ -207,7 +235,7 @@ OnlineVersionDlg::OnlineVersionDlg(QWidget* const parent,
 
     grid->addWidget(d->logo,     0, 0, 1, 1);
     grid->addWidget(d->label,    0, 1, 1, 2);
-    grid->addWidget(d->stats,    0, 1, 1, 3);
+    grid->addWidget(d->stats,    0, 3, 1, 1);
     grid->addWidget(d->notesBox, 1, 0, 1, 4);
     grid->addWidget(d->bar,      2, 0, 1, 4);
     grid->setSpacing(style()->pixelMetric(QStyle::PM_DefaultLayoutSpacing));
@@ -497,17 +525,20 @@ void OnlineVersionDlg::slotDownloadProgress(qint64 recv, qint64 total)
 void OnlineVersionDlg::slotUpdateStats()
 {
     QDateTime now = QDateTime::currentDateTime();
-    qint64 rate   = d->bar->value() / (d->dwnlStart.secsTo(now));
-    qint64 remain = (d->bar->maximum() - d->bar->value()) / rate;
+    qint64 diff   = d->dwnlStart.secsTo(now);
+    qint64 rate   = 0;
+    qint64 remain = 0;
 
-    d->stats->setText(i18n("Received: %1\n"
-                           "Total: %2\n"
-                           "Rate: %3/s\n"
-                           "Remain: %4s",
-                           ItemPropertiesTab::humanReadableBytesCount(d->bar->value()),
-                           ItemPropertiesTab::humanReadableBytesCount(d->bar->maximum()),
-                           ItemPropertiesTab::humanReadableBytesCount(rate),
-                           remain));
+    if (diff)
+    {
+        rate   = d->bar->value() / (diff);
+        remain = (d->bar->maximum() - d->bar->value()) / rate;
+    }
+
+    d->recieved->setText(ItemPropertiesTab::humanReadableBytesCount(d->bar->value()));
+    d->total->setText(ItemPropertiesTab::humanReadableBytesCount(d->bar->maximum()));
+    d->rate->setText(QString::fromUtf8("%1/s").arg(ItemPropertiesTab::humanReadableBytesCount(rate)));
+    d->remain->setText(QString::fromUtf8("%1s").arg(remain));
 }
 
 void OnlineVersionDlg::slotRunInstaller()
