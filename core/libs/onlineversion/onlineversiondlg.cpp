@@ -86,24 +86,25 @@ public:
     {
     }
 
-    bool                  preRelease;
-    bool                  updateWithDebug;
+    bool                   preRelease;
+    bool                   updateWithDebug;
 
-    QString               curVersion;
-    QDateTime             curBuildDt;
-    QDateTime             onlineDt;         ///< Build date for pre-release only.
-    QString               newVersion;       ///< For stable => version IDs ; for pre-release => build ISO date.
-    QProgressBar*         bar;
-    QLabel*               label;
-    QLabel*               stats;
-    QLabel*               logo;
-    QDialogButtonBox*     buttons;
-    QTextBrowser*         releaseNotes;
-    QTimer*               speedTimer;
+    QString                curVersion;
+    QDateTime              curBuildDt;
+    QDateTime              onlineDt;         ///< Build date for pre-release only.
+    QString                newVersion;       ///< For stable => version IDs ; for pre-release => build ISO date.
+    QProgressBar*          bar;
+    QLabel*                label;
+    QLabel*                stats;
+    QLabel*                logo;
+    QDialogButtonBox*      buttons;
+    QTextBrowser*          releaseNotes;
+    QTimer*                speedTimer;
+    QDateTime              dwnlStart;
 
-    QGroupBox*            notesBox;
-    OnlineVersionChecker* checker;
-    OnlineVersionDwnl*    dwnloader;
+    QGroupBox*             notesBox;
+    OnlineVersionChecker*  checker;
+    OnlineVersionDwnl*     dwnloader;
 };
 
 OnlineVersionDlg::OnlineVersionDlg(QWidget* const parent,
@@ -374,6 +375,7 @@ void OnlineVersionDlg::slotDownloadInstaller()
     d->bar->show();
     d->stats->show();
     d->speedTimer->start(1000);
+    d->dwnlStart = QDateTime::currentDateTime();
 
     if (d->preRelease)
     {
@@ -494,10 +496,18 @@ void OnlineVersionDlg::slotDownloadProgress(qint64 recv, qint64 total)
 
 void OnlineVersionDlg::slotUpdateStats()
 {
-    d->stats->setText(i18n("Received:%1\n"
-                           "Total:%2",
+    QDateTime now = QDateTime::currentDateTime();
+    qint64 rate   = d->bar->value() / (d->dwnlStart.secsTo(now));
+    qint64 remain = (d->bar->maximum() - d->bar->value()) / rate;
+
+    d->stats->setText(i18n("Received: %1\n"
+                           "Total: %2\n"
+                           "Rate: %3/s\n"
+                           "Remain: %4s",
                            ItemPropertiesTab::humanReadableBytesCount(d->bar->value()),
-                           ItemPropertiesTab::humanReadableBytesCount(d->bar->maximum())));
+                           ItemPropertiesTab::humanReadableBytesCount(d->bar->maximum()),
+                           ItemPropertiesTab::humanReadableBytesCount(rate),
+                           remain));
 }
 
 void OnlineVersionDlg::slotRunInstaller()
