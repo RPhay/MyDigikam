@@ -535,10 +535,27 @@ void OnlineVersionDlg::slotUpdateStats()
         remain = (d->bar->maximum() - d->bar->value()) / rate;
     }
 
+    QString durationString = QString::fromUtf8("%1s").arg(remain);
+
+    if (remain)
+    {
+        unsigned int r, d, h, m, s;
+        r = qAbs(remain * 1000);
+        d = r / 86400000;
+        r = r % 86400000;
+        h = r / 3600000;
+        r = r % 3600000;
+        m = r / 60000;
+        r = r % 60000;
+        s = r / 1000;
+
+        durationString = QString().asprintf("%d.%02d:%02d:%02d", d, h, m, s);
+    }
+
     d->recieved->setText(ItemPropertiesTab::humanReadableBytesCount(d->bar->value()));
     d->total->setText(ItemPropertiesTab::humanReadableBytesCount(d->bar->maximum()));
     d->rate->setText(QString::fromUtf8("%1/s").arg(ItemPropertiesTab::humanReadableBytesCount(rate)));
-    d->remain->setText(QString::fromUtf8("%1s").arg(remain));
+    d->remain->setText(durationString);
 }
 
 void OnlineVersionDlg::slotRunInstaller()
