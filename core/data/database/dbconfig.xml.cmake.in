@@ -1396,7 +1396,7 @@
                 <statement mode="plain">CREATE TRIGGER move_tagstree AFTER UPDATE ON Tags FOR EACH ROW
                     BEGIN
                         IF (NEW.pid != OLD.pid) THEN
-                            DELETE FROM TagsTree WHERE ((id = OLD.id) OR id IN (SELECT id FROM
+                            DELETE FROM TagsTree WHERE ((id=OLD.id) OR id IN (SELECT id FROM
                               (SELECT id FROM TagsTree WHERE pid=OLD.id) AS tmpTree1))
                              AND pid IN (SELECT pid FROM
                               (SELECT pid FROM TagsTree WHERE id=OLD.id) AS tmpTree2);
@@ -2554,7 +2554,7 @@
                 <statement mode="plain">CREATE TRIGGER move_tagstree AFTER UPDATE ON Tags FOR EACH ROW
                     BEGIN
                         IF (NEW.pid != OLD.pid) THEN
-                            DELETE FROM TagsTree WHERE ((id = OLD.id) OR id IN (SELECT id FROM
+                            DELETE FROM TagsTree WHERE ((id=OLD.id) OR id IN (SELECT id FROM
                               (SELECT id FROM TagsTree WHERE pid=OLD.id) AS tmpTree1))
                              AND pid IN (SELECT pid FROM
                               (SELECT pid FROM TagsTree WHERE id=OLD.id) AS tmpTree2);
