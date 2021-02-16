@@ -76,7 +76,7 @@ public:
         bar            (nullptr),
         label          (nullptr),
         stats          (nullptr),
-        recieved       (nullptr),
+        received       (nullptr),
         total          (nullptr),
         rate           (nullptr),
         remain         (nullptr),
@@ -100,7 +100,7 @@ public:
     QProgressBar*          bar;
     QLabel*                label;
     QWidget*               stats;
-    QLabel*                recieved;
+    QLabel*                received;
     QLabel*                total;
     QLabel*                rate;
     QLabel*                remain;
@@ -161,8 +161,8 @@ OnlineVersionDlg::OnlineVersionDlg(QWidget* const parent,
 
     d->stats                 = new QWidget(page);
     d->stats->setVisible(false);
-    d->recieved              = new QLabel(d->stats);
-    d->recieved->setAlignment(Qt::AlignRight);
+    d->received              = new QLabel(d->stats);
+    d->received->setAlignment(Qt::AlignRight);
     d->total                 = new QLabel(d->stats);
     d->total->setAlignment(Qt::AlignRight);
     d->rate                  = new QLabel(d->stats);
@@ -171,14 +171,14 @@ OnlineVersionDlg::OnlineVersionDlg(QWidget* const parent,
     d->remain->setAlignment(Qt::AlignRight);
 
     QGridLayout* const grid2 = new QGridLayout(d->stats);
-    grid2->addWidget(new QLabel(i18n("Received:")), 0, 0, 1, 1);
-    grid2->addWidget(new QLabel(i18n("Total:")),    1, 0, 1, 1);
-    grid2->addWidget(new QLabel(i18n("Rate:")),     2, 0, 1, 1);
-    grid2->addWidget(new QLabel(i18n("Remain:")),   3, 0, 1, 1);
-    grid2->addWidget(d->recieved,                   0, 1, 1, 1);
-    grid2->addWidget(d->total,                      1, 1, 1, 1);
-    grid2->addWidget(d->rate,                       2, 1, 1, 1);
-    grid2->addWidget(d->remain,                     3, 1, 1, 1);
+    grid2->addWidget(new QLabel(i18n("Received:")),  0, 0, 1, 1);
+    grid2->addWidget(new QLabel(i18n("Total:")),     1, 0, 1, 1);
+    grid2->addWidget(new QLabel(i18n("Rate:")),      2, 0, 1, 1);
+    grid2->addWidget(new QLabel(i18n("Remaining:")), 3, 0, 1, 1);
+    grid2->addWidget(d->received,                    0, 1, 1, 1);
+    grid2->addWidget(d->total,                       1, 1, 1, 1);
+    grid2->addWidget(d->rate,                        2, 1, 1, 1);
+    grid2->addWidget(d->remain,                      3, 1, 1, 1);
     grid2->setMargin(0);
     grid2->setSpacing(0);
 
@@ -552,7 +552,7 @@ void OnlineVersionDlg::slotUpdateStats()
         durationString = QString().asprintf("%d.%02d:%02d:%02d", d, h, m, s);
     }
 
-    d->recieved->setText(ItemPropertiesTab::humanReadableBytesCount(d->bar->value()));
+    d->received->setText(ItemPropertiesTab::humanReadableBytesCount(d->bar->value()));
     d->total->setText(ItemPropertiesTab::humanReadableBytesCount(d->bar->maximum()));
     d->rate->setText(QString::fromUtf8("%1/s").arg(ItemPropertiesTab::humanReadableBytesCount(rate)));
     d->remain->setText(durationString);
