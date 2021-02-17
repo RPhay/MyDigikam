@@ -181,6 +181,10 @@ void DatabaseServer::stopDatabaseProcess()
 #ifdef Q_OS_WIN
 
     QProcess shutDownProcess;
+
+    // We use the same path as the server binary,
+    // mysqladmin.exe are located in the same folder under Windows.
+
     QUrl mysqladminCmd = QUrl::fromLocalFile(d->mysqldCmd).adjusted(QUrl::RemoveFilename);
     mysqladminCmd.setPath(mysqladminCmd.path() + QLatin1String("mysqladmin.exe"));
     shutDownProcess.setProcessEnvironment(adjustedEnvironmentForAppImage());
