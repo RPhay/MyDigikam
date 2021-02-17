@@ -30,6 +30,7 @@
 #include <QList>
 #include <QFile>
 #include <QFont>
+#include <QFontDatabase>
 #include <QFileDevice>
 #include <QStyle>
 #include <QIcon>
@@ -161,6 +162,10 @@ OnlineVersionDlg::OnlineVersionDlg(QWidget* const parent,
 
     d->stats                 = new QWidget(page);
     d->stats->setVisible(false);
+    QFont sfnt               = QFontDatabase::systemFont(QFontDatabase::SmallestReadableFont);
+    sfnt.setItalic(true);
+    sfnt.setStyleHint(QFont::Monospace);
+    d->stats->setFont(sfnt);
     d->received              = new QLabel(d->stats);
     d->received->setAlignment(Qt::AlignRight);
     d->total                 = new QLabel(d->stats);
