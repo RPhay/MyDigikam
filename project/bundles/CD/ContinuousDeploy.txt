@@ -18,6 +18,8 @@ Architecture and configuration to setup a continuous deployement computer.
 
   * Private local network will allow to be connected to VMs locally with ssh.
 
+  * Extension Pack installed (https://www.virtualbox.org/wiki/Downloads).
+
   * 3 VMs: one running Mageia 6.1 to compile AppImage bundle
                Name: M6.
                8 cores.

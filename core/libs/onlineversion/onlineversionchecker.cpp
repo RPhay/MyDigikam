@@ -141,7 +141,7 @@ void OnlineVersionChecker::checkForNewVersion()
         rUrl = QUrl(QLatin1String("https://invent.kde.org/websites/digikam-org/-/raw/master/data/release.yml"));
     }
 
-    d->redirects = 0;
+    d->redirects    = 0;
     d->releaseNotes = false;
     download(rUrl);
 }
@@ -203,7 +203,9 @@ void OnlineVersionChecker::slotDownloadFinished(QNetworkReply* reply)
 
     QUrl redirectUrl = reply->attribute(QNetworkRequest::RedirectionTargetAttribute).toUrl();
 
-    if (redirectUrl.isValid() && (reply->url() != redirectUrl) && (d->redirects < 10))
+    if (redirectUrl.isValid()         &&
+        (reply->url() != redirectUrl) &&
+        (d->redirects < 10))
     {
         download(redirectUrl);
 
@@ -224,6 +226,7 @@ void OnlineVersionChecker::slotDownloadFinished(QNetworkReply* reply)
     {
         emit signalReleaseNotesData(data);
         d->releaseNotes = false;
+
         return;
     }
 
@@ -271,17 +274,17 @@ void OnlineVersionChecker::slotDownloadFinished(QNetworkReply* reply)
 
         // Tow possibles places exists where to find the date in file name.
 
-        // 1 - the fila name include a pre release suffix as -beta or -rc 
+        // Check 1 - the fila name include a pre release suffix as -beta or -rc 
 
-        QString dtStr        = sections[3];
-        QDateTime onlineDt   = QDateTime::fromString(dtStr, QLatin1String("yyyyMMddTHHmmss"));
+        QString dtStr      = sections[3];
+        QDateTime onlineDt = QDateTime::fromString(dtStr, QLatin1String("yyyyMMddTHHmmss"));
         onlineDt.setTimeSpec(Qt::UTC);
 
         if (!onlineDt.isValid())
         {
-            // 2 - the file name do not include a pre release suffix
+            // Check 2 - the file name do not include a pre release suffix
 
-            dtStr = sections[2];
+            dtStr    = sections[2];
             onlineDt = QDateTime::fromString(dtStr, QLatin1String("yyyyMMddTHHmmss"));
             onlineDt.setTimeSpec(Qt::UTC);
         }
@@ -363,7 +366,7 @@ bool OnlineVersionChecker::bundleProperties(QString& arch, QString& ext)
     arch = QLatin1String("arm-64");
 */
 
-    // NOTE: Intel 64 version work fine into Apple Rosetta 2 emulator.
+    // NOTE: Intel 64 version work fine with Apple Rosetta 2 emulator.
     arch = QLatin1String("x86-64");
 
 #   endif

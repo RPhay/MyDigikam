@@ -1383,35 +1383,33 @@
 
                 <statement mode="plain">CREATE TRIGGER insert_tagstree AFTER INSERT ON Tags FOR EACH ROW
                     INSERT INTO TagsTree SELECT NEW.id, NEW.pid
-                     UNION SELECT NEW.id, pid FROM TagsTree WHERE id=NEW.pid;
+                     UNION SELECT NEW.id, pid FROM TagsTree WHERE id = NEW.pid;
                 </statement>
 
                 <statement mode="plain">CREATE TRIGGER delete_tagstree AFTER DELETE ON Tags FOR EACH ROW
                     BEGIN
-                        DELETE FROM TagsTree WHERE id IN (SELECT id FROM TagsTree WHERE pid=OLD.id);
-                        DELETE FROM TagsTree WHERE id=OLD.id;
+                        DELETE FROM TagsTree WHERE id IN (SELECT id FROM TagsTree WHERE pid = OLD.id);
+                        DELETE FROM TagsTree WHERE id = OLD.id;
                     END;
                 </statement>
 
                 <statement mode="plain">CREATE TRIGGER move_tagstree AFTER UPDATE ON Tags FOR EACH ROW
                     BEGIN
                         IF (NEW.pid != OLD.pid) THEN
-                            DELETE FROM TagsTree WHERE ((id = OLD.id) OR id IN (SELECT id FROM TagsTree WHERE pid=OLD.id))
-                             AND pid IN (SELECT pid FROM TagsTree WHERE id=OLD.id);
+                            DELETE FROM TagsTree WHERE ((id = OLD.id) OR id IN (SELECT id FROM
+                              (SELECT id FROM TagsTree WHERE pid = OLD.id) AS tmpTree1))
+                             AND pid IN (SELECT pid FROM
+                              (SELECT pid FROM TagsTree WHERE id = OLD.id) AS tmpTree2);
                             INSERT INTO TagsTree SELECT NEW.id, NEW.pid
                              UNION SELECT NEW.id, pid FROM TagsTree
-                              WHERE id=NEW.pid
+                              WHERE id = NEW.pid
                              UNION SELECT id, NEW.pid FROM TagsTree
-                              WHERE pid=NEW.id
+                              WHERE pid = NEW.id
                              UNION SELECT A.id, B.pid FROM TagsTree A, TagsTree B
                               WHERE A.pid = NEW.id AND B.id = NEW.pid;
                         END IF;
                     END;
                 </statement>
-            </dbaction>
-
-            <dbaction name="checkIfDatabaseExists">
-                <statement mode="query">SELECT Albums.relativePath, Images.name FROM Images INNER JOIN Albums ON Albums.id=Images.album WHERE Albums.id=:albumID ORDER BY Images.name;</statement>
             </dbaction>
 
             <dbaction name="getItemURLsInAlbumByItemName">
@@ -2534,7 +2532,7 @@
 
                 <statement mode="plain">CREATE TRIGGER temp_insert_tagstree AFTER INSERT ON temp_Tags
                     FOR EACH ROW INSERT INTO TagsTree SELECT NEW.id, NEW.pid
-                     UNION SELECT NEW.id, pid FROM TagsTree WHERE id=NEW.pid;
+                     UNION SELECT NEW.id, pid FROM TagsTree WHERE id = NEW.pid;
                 </statement>
 
                 <statement mode="plain">REPLACE INTO temp_Tags SELECT * FROM Tags WHERE id != 0;</statement>
@@ -2543,26 +2541,28 @@
 
                 <statement mode="plain">CREATE TRIGGER insert_tagstree AFTER INSERT ON Tags FOR EACH ROW
                     INSERT INTO TagsTree SELECT NEW.id, NEW.pid
-                     UNION SELECT NEW.id, pid FROM TagsTree WHERE id=NEW.pid;
+                     UNION SELECT NEW.id, pid FROM TagsTree WHERE id = NEW.pid;
                 </statement>
 
                 <statement mode="plain">CREATE TRIGGER delete_tagstree AFTER DELETE ON Tags FOR EACH ROW
                     BEGIN
-                        DELETE FROM TagsTree WHERE id IN (SELECT id FROM TagsTree WHERE pid=OLD.id);
-                        DELETE FROM TagsTree WHERE id=OLD.id;
+                        DELETE FROM TagsTree WHERE id IN (SELECT id FROM TagsTree WHERE pid = OLD.id);
+                        DELETE FROM TagsTree WHERE id = OLD.id;
                     END;
                 </statement>
 
                 <statement mode="plain">CREATE TRIGGER move_tagstree AFTER UPDATE ON Tags FOR EACH ROW
                     BEGIN
                         IF (NEW.pid != OLD.pid) THEN
-                            DELETE FROM TagsTree WHERE ((id = OLD.id) OR id IN (SELECT id FROM TagsTree WHERE pid=OLD.id))
-                             AND pid IN (SELECT pid FROM TagsTree WHERE id=OLD.id);
+                            DELETE FROM TagsTree WHERE ((id = OLD.id) OR id IN (SELECT id FROM
+                              (SELECT id FROM TagsTree WHERE pid = OLD.id) AS tmpTree1))
+                             AND pid IN (SELECT pid FROM
+                              (SELECT pid FROM TagsTree WHERE id = OLD.id) AS tmpTree2);
                             INSERT INTO TagsTree SELECT NEW.id, NEW.pid
                              UNION SELECT NEW.id, pid FROM TagsTree
-                              WHERE id=NEW.pid
+                              WHERE id = NEW.pid
                              UNION SELECT id, NEW.pid FROM TagsTree
-                              WHERE pid=NEW.id
+                              WHERE pid = NEW.id
                              UNION SELECT A.id, B.pid FROM TagsTree A, TagsTree B
                               WHERE A.pid = NEW.id AND B.id = NEW.pid;
                         END IF;

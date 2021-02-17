@@ -8,6 +8,7 @@ do
 
         echo "macOS bundle started at $(date)"
         cd /Users/gilles/Documents/7.x/project/bundles/macports
+        git pull
         ./update.sh
         echo "macOS bundle completed at $(date)"
 

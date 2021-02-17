@@ -93,7 +93,7 @@ OnlineVersionDwnl::OnlineVersionDwnl(QObject* const parent,
         d->downloadUrl = QLatin1String("https://download.kde.org/stable/digikam/");
     }
 
-    d->manager    = new QNetworkAccessManager(this);
+    d->manager         = new QNetworkAccessManager(this);
     d->manager->setRedirectPolicy(QNetworkRequest::ManualRedirectPolicy);
 
     connect(d->manager, SIGNAL(finished(QNetworkReply*)),
@@ -158,9 +158,13 @@ void OnlineVersionDwnl::startDownload(const QString& version)
         QString os    = 
 
 #ifdef Q_OS_MACOS
+
                         QLatin1String("MacOS-");
+
 #else
+
                         QString();
+
 #endif
 
         d->file       = QString::fromLatin1("digikam-%1-%2%3%4.%5")
@@ -215,7 +219,9 @@ void OnlineVersionDwnl::slotDownloaded(QNetworkReply* reply)
 
     QUrl redirectUrl = reply->attribute(QNetworkRequest::RedirectionTargetAttribute).toUrl();
 
-    if (redirectUrl.isValid() && (reply->url() != redirectUrl) && (d->redirects < 10))
+    if (redirectUrl.isValid()         &&
+        (reply->url() != redirectUrl) &&
+        (d->redirects < 10))
     {
         download(redirectUrl);
 

@@ -70,6 +70,8 @@ private Q_SLOTS:
     void slotHelp();
     void slotSetupUpdate();
 
+    void slotUpdateStats();
+
 private:
 
     class Private;
