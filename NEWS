@@ -358,4 +358,5 @@ BUGFIXES:
 318 ==> 432789 - Imported Pictures (RAW, CR3, Canon M6 Mark II) doesn´t have the rigth Rotation.
 319 ==> 432957 - Some tags appear beneath "People" parent tag in People view/panel.
 320 ==> 430761 - Windows digikam.exe application icon missing.
-321 ==> 
+321 ==> 433060 - Inconsistency between metadata displayed and metadata taken in account to rename.
+322 ==> 
