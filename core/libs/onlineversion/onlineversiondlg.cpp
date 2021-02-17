@@ -30,6 +30,7 @@
 #include <QList>
 #include <QFile>
 #include <QFont>
+#include <QFontMetrics>
 #include <QFontDatabase>
 #include <QFileDevice>
 #include <QStyle>
@@ -162,10 +163,14 @@ OnlineVersionDlg::OnlineVersionDlg(QWidget* const parent,
 
     d->stats                 = new QWidget(page);
     d->stats->setVisible(false);
+
     QFont sfnt               = QFontDatabase::systemFont(QFontDatabase::SmallestReadableFont);
     sfnt.setItalic(true);
     sfnt.setStyleHint(QFont::Monospace);
     d->stats->setFont(sfnt);
+    QFontMetrics fontMt(sfnt);
+    QRect fontRect           = fontMt.boundingRect(0, 0, width(), height(), 0, QLatin1String("XXXXXXXXXX"));
+
     d->received              = new QLabel(d->stats);
     d->received->setAlignment(Qt::AlignRight);
     d->total                 = new QLabel(d->stats);
@@ -186,6 +191,7 @@ OnlineVersionDlg::OnlineVersionDlg(QWidget* const parent,
     grid2->addWidget(d->remain,                      3, 2, 1, 1);
     grid2->setMargin(0);
     grid2->setSpacing(0);
+    grid2->setColumnMinimumWidth(2, fontRect.width());
 
     d->notesBox              = new QGroupBox(i18n("Release Notes"), page);
     QVBoxLayout* const vlay  = new QVBoxLayout(d->notesBox);
