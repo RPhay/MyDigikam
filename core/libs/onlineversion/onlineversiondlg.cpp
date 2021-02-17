@@ -174,7 +174,7 @@ OnlineVersionDlg::OnlineVersionDlg(QWidget* const parent,
     grid2->addWidget(new QLabel(i18n("Received:")),  0, 0, 1, 1);
     grid2->addWidget(new QLabel(i18n("Total:")),     1, 0, 1, 1);
     grid2->addWidget(new QLabel(i18n("Rate:")),      2, 0, 1, 1);
-    grid2->addWidget(new QLabel(i18n("Remaining:")), 3, 0, 1, 1);
+    grid2->addWidget(new QLabel(i18n("ETA:")),       3, 0, 1, 1);
     grid2->addWidget(d->received,                    0, 1, 1, 1);
     grid2->addWidget(d->total,                       1, 1, 1, 1);
     grid2->addWidget(d->rate,                        2, 1, 1, 1);
