@@ -40,12 +40,12 @@ class DIGIKAM_EXPORT SolidHardwareDlg : public InfoDlg
 public:
 
     explicit SolidHardwareDlg(QWidget* const parent);
-    ~SolidHardwareDlg() override;
+    ~SolidHardwareDlg()         override;
 
 private Q_SLOTS:
 
     void slotSearchTextChanged(const SearchTextSettings&);
-    void slotCopy2ClipBoard();
+    void slotCopy2ClipBoard()   override;
     void slotPopulateDevices();
 
     void slotDeviceAdded(const QString&);
