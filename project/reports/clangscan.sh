@@ -78,7 +78,7 @@ for DROP_ITEM in $KRAZY_FILTERS ; do
     echo -e "--- drop $DROP_ITEM from index.html with statistics adjustements"
 
     # List all report types including current pattern to drop.
-    REPORT_ENTRIES=( $(grep $DROP_ITEM $SCANBUILD_DIR/index.html) )
+    REPORT_ENTRIES=( $(grep $DROP_ITEM $SCANBUILD_DIR/index.html) ) || true
 
     # STAT_ENTRIES array contains the multi-entries list of statistic types to remove.
     STAT_ENTRIES=()   # clear array
