@@ -4,7 +4,7 @@
 #
 # Run Clang static analyzer on whole digiKam source code.
 # https://clang-analyzer.llvm.org/
-# Dependencies : clang static analyzer version 3.9.0 (no need clang compiler).
+# Dependencies : clang static analyzer version >= 3.9.0.
 #
 # Redistribution and use is allowed according to the terms of the BSD license.
 # For details see the accompanying COPYING-CMAKE-SCRIPTS file.
