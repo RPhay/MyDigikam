@@ -343,7 +343,7 @@ public:
 private Q_SLOTS:
 
     void slotDatesJobResult();
-    void slotDatesJobData(const QMap<QDateTime, int>& datesStatMap);
+    void slotDatesJobData(const QHash<QDateTime, int>& datesStatMap);
 
    /**
      * Scan dates from the database and updates the DAlbums.
@@ -354,7 +354,7 @@ private Q_SLOTS:
 Q_SIGNALS:
 
     void signalDAlbumsDirty(const QMap<YearMonth, int>&);
-    void signalDatesMapDirty(const QMap<QDateTime, int>&);
+    void signalDatesHashDirty(const QHash<QDateTime, int>&);
     void signalAllDAlbumsLoaded();
 
     //@}

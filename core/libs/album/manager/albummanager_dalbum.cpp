@@ -45,8 +45,8 @@ void AlbumManager::scanDAlbums()
     connect(d->dateListJob, SIGNAL(finished()),
             this, SLOT(slotDatesJobResult()));
 
-    connect(d->dateListJob, SIGNAL(foldersData(QMap<QDateTime,int>)),
-            this, SLOT(slotDatesJobData(QMap<QDateTime,int>)));
+    connect(d->dateListJob, SIGNAL(foldersData(QHash<QDateTime,int>)),
+            this, SLOT(slotDatesJobData(QHash<QDateTime,int>)));
 }
 
 AlbumList AlbumManager::allDAlbums() const
@@ -108,9 +108,9 @@ void AlbumManager::slotDatesJobResult()
     emit signalAllDAlbumsLoaded();
 }
 
-void AlbumManager::slotDatesJobData(const QMap<QDateTime, int>& datesStatMap)
+void AlbumManager::slotDatesJobData(const QHash<QDateTime, int>& datesStatHash)
 {
-    if (datesStatMap.isEmpty() || !d->rootDAlbum)
+    if (datesStatHash.isEmpty() || !d->rootDAlbum)
     {
         return;
     }
@@ -140,8 +140,8 @@ void AlbumManager::slotDatesJobData(const QMap<QDateTime, int>& datesStatMap)
 
     QMap<YearMonth, int> yearMonthMap;
 
-    for (QMap<QDateTime, int>::const_iterator it3 = datesStatMap.constBegin() ;
-         it3 != datesStatMap.constEnd() ; ++it3)
+    for (QHash<QDateTime, int>::const_iterator it3 = datesStatHash.constBegin() ;
+         it3 != datesStatHash.constEnd() ; ++it3)
     {
         YearMonth yearMonth = YearMonth(it3.key().date().year(), it3.key().date().month());
 
@@ -259,7 +259,7 @@ void AlbumManager::slotDatesJobData(const QMap<QDateTime, int>& datesStatMap)
     d->dAlbumsCount = yearMonthMap;
 
     emit signalDAlbumsDirty(yearMonthMap);
-    emit signalDatesMapDirty(datesStatMap);
+    emit signalDatesHashDirty(datesStatHash);
 }
 
 void AlbumManager::scanDAlbumsScheduled()

@@ -3244,7 +3244,7 @@ QList<QDateTime> CoreDB::getAllCreationDates() const
     return list;
 }
 
-QMap<QDateTime, int> CoreDB::getAllCreationDatesAndNumberOfImages() const
+QHash<QDateTime, int> CoreDB::getAllCreationDatesAndNumberOfImages() const
 {
     QList<QVariant> values;
     d->db->execSql(QString::fromUtf8("SELECT creationDate FROM ImageInformation "
@@ -3252,7 +3252,7 @@ QMap<QDateTime, int> CoreDB::getAllCreationDatesAndNumberOfImages() const
                                      " WHERE Images.status=1;"),
                    &values);
 
-    QMap<QDateTime, int> datesStatMap;
+    QHash<QDateTime, int> datesStatHash;
 
     foreach (const QVariant& value, values)
     {
@@ -3265,11 +3265,11 @@ QMap<QDateTime, int> CoreDB::getAllCreationDatesAndNumberOfImages() const
                 continue;
             }
 
-            QMap<QDateTime, int>::iterator it2 = datesStatMap.find(dateTime);
+            QHash<QDateTime, int>::iterator it2 = datesStatHash.find(dateTime);
 
-            if (it2 == datesStatMap.end())
+            if (it2 == datesStatHash.end())
             {
-                datesStatMap.insert(dateTime, 1);
+                datesStatHash.insert(dateTime, 1);
             }
             else
             {
@@ -3277,7 +3277,8 @@ QMap<QDateTime, int> CoreDB::getAllCreationDatesAndNumberOfImages() const
             }
         }
     }
-    return datesStatMap;
+
+    return datesStatHash;
 }
 
 QMap<int, int> CoreDB::getNumberOfImagesInAlbums() const

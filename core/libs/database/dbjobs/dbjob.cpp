@@ -99,7 +99,7 @@ void DatesJob::run()
 {
     if (m_jobInfo.isFoldersJob())
     {
-        QMap<QDateTime, int> dateNumberMap = CoreDbAccess().db()->getAllCreationDatesAndNumberOfImages();
+        QHash<QDateTime, int> dateNumberMap = CoreDbAccess().db()->getAllCreationDatesAndNumberOfImages();
 
         emit foldersData(dateNumberMap);
     }

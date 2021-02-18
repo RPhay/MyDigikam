@@ -257,8 +257,8 @@ TimelineSideBarWidget::TimelineSideBarWidget(QWidget* const parent,
 
     // ---------------------------------------------------------------
 
-    connect(AlbumManager::instance(), SIGNAL(signalDatesMapDirty(QMap<QDateTime,int>)),
-            d->timeLineWidget, SLOT(slotDatesMap(QMap<QDateTime,int>)));
+    connect(AlbumManager::instance(), SIGNAL(signalDatesHashDirty(QHash<QDateTime,int>)),
+            d->timeLineWidget, SLOT(slotDatesHash(QHash<QDateTime,int>)));
 
     connect(d->timeLineFolderView, SIGNAL(currentAlbumChanged(Album*)),
             this, SLOT(slotAlbumSelected(Album*)));

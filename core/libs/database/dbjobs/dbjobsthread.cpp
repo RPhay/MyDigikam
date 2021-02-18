@@ -160,8 +160,8 @@ void DatesDBJobsThread::datesListing(const DatesDBJobInfo& info)
 
     if (info.isFoldersJob())
     {
-        connect(j, SIGNAL(foldersData(QMap<QDateTime,int>)),
-                this, SIGNAL(foldersData(QMap<QDateTime,int>)));
+        connect(j, SIGNAL(foldersData(QHash<QDateTime,int>)),
+                this, SIGNAL(foldersData(QHash<QDateTime,int>)));
     }
     else
     {

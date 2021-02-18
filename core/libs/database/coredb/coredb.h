@@ -691,10 +691,10 @@ public:
     QList<QDateTime> getAllCreationDates()                                                                          const;
 
     /**
-     * Returns a QMap<QDateTime,int> of creationDate -> count of items
+     * Returns a QHash<QDateTime,int> of creationDate -> count of items
      * with the tag
      */
-    QMap<QDateTime, int> getAllCreationDatesAndNumberOfImages()                                                     const;
+    QHash<QDateTime, int> getAllCreationDatesAndNumberOfImages()                                                    const;
 
     // ----------- Item properties -----------
 

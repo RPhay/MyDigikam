@@ -241,7 +241,7 @@ private:
     bool                              m_isUnratedExcluded;
 
     /// --- Date filter ---
-    QMap<QDateTime, bool>             m_dayFilter;
+    QHash<QDateTime, bool>            m_dayFilter;
 
     /// --- Text filter ---
     SearchTextFilterSettings          m_textFilterSettings;
