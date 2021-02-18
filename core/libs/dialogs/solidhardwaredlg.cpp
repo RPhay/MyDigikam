@@ -300,14 +300,14 @@ void SolidHardwareDlg::slotPopulateDevices()
 
             if (device.is<Solid::GenericInterface>())
             {
-                QTreeWidgetItem* const vitem = new QTreeWidgetItem(titem, QStringList() << i18n("Properties") << i18n("Non-portable info"));
-                vitem->setData(0, Qt::UserRole, 2);
+                QTreeWidgetItem* const vitem2 = new QTreeWidgetItem(titem, QStringList() << i18n("Properties") << i18n("Non-portable info"));
+                vitem2->setData(0, Qt::UserRole, 2);
 
                 QMap<QString, QVariant> properties = device.as<Solid::GenericInterface>()->allProperties();
 
                 for (auto it = properties.constBegin() ; it != properties.constEnd() ; ++it)
                 {
-                    QTreeWidgetItem* const pitem = new QTreeWidgetItem(vitem, QStringList() << it.key() << it.value().toString());
+                    QTreeWidgetItem* const pitem = new QTreeWidgetItem(vitem2, QStringList() << it.key() << it.value().toString());
                     pitem->setData(0, Qt::UserRole, 3);
                 }
             }
