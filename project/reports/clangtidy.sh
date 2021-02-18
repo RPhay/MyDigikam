@@ -8,6 +8,11 @@
 # For details see the accompanying COPYING-CMAKE-SCRIPTS file.
 #
 
+# Halt and catch errors
+set -eE
+trap 'PREVIOUS_COMMAND=$THIS_COMMAND; THIS_COMMAND=$BASH_COMMAND' DEBUG
+trap 'echo "FAILED COMMAND: $PREVIOUS_COMMAND"' ERR
+
 . ./common.sh
 
 checksCPUCores
