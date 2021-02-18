@@ -359,4 +359,5 @@ BUGFIXES:
 319 ==> 432957 - Some tags appear beneath "People" parent tag in People view/panel.
 320 ==> 430761 - Windows digikam.exe application icon missing.
 321 ==> 433060 - Inconsistency between metadata displayed and metadata taken in account to rename.
-322 ==> 
+322 ==> 433183 - Migrate from "MySQL Server" database corrupts face/people metadata.
+323 ==> 
