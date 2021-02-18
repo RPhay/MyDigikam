@@ -30,7 +30,6 @@
 #include <QMutex>
 #include <QSqlDatabase>
 #include <QUuid>
-#include <QElapsedTimer>
 
 // KDE includes
 
@@ -84,8 +83,6 @@ public:
     QUuid               applicationIdentifier;
 
     bool                initializing;
-
-    QElapsedTimer       timer;
 };
 
 class Q_DECL_HIDDEN CoreDbAccessMutexLocker : public QMutexLocker
@@ -119,8 +116,6 @@ CoreDbAccess::CoreDbAccess()
     d->lock.mutex.lock();
     d->lock.lockCount++;
 
-    d->timer.restart();
-
     if (!d->backend->isOpen() && !d->initializing)
     {
         // avoid endless loops (e.g. recursing from CollectionManager)
@@ -136,13 +131,6 @@ CoreDbAccess::CoreDbAccess()
 
 CoreDbAccess::~CoreDbAccess()
 {
-    if (d->timer.elapsed() > 10)
-    {
-        qCDebug(DIGIKAM_COREDB_LOG) << "CoreDbAccess lock time:" << d->timer.elapsed() << "ms";
-
-        Q_ASSERT(d->timer.elapsed() < 10000);
-    }
-
     d->lock.lockCount--;
     d->lock.mutex.unlock();
 }
