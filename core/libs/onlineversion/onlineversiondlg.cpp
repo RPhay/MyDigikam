@@ -571,15 +571,18 @@ void OnlineVersionDlg::slotUpdateStats()
 
 void OnlineVersionDlg::slotRunInstaller()
 {
+
+#ifndef Q_OS_LINUX
+
     bool started = false;
     QString path = d->dwnloader->downloadedPath();
     qCDebug(DIGIKAM_GENERAL_LOG) << "Run installer:" << path;
 
-#ifdef Q_OS_WIN
+#   ifdef Q_OS_WIN
 
     started = QProcess::startDetached(path, QStringList());
 
-#elif defined Q_OS_MACOS
+#   elif defined Q_OS_MACOS
 
     QStringList args;
     args << QLatin1String("-e");
@@ -593,7 +596,7 @@ void OnlineVersionDlg::slotRunInstaller()
 
     started = QProcess::startDetached(QLatin1String("/usr/bin/osascript"), args);
 
-#endif
+#   endif
 
     if (!started)
     {
@@ -604,6 +607,9 @@ void OnlineVersionDlg::slotRunInstaller()
 
     close();
     QTimer::singleShot(3000, qApp, SLOT(quit()));
+
+#endif
+
 }
 
 void OnlineVersionDlg::slotOpenInFileManager()
