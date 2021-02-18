@@ -139,6 +139,8 @@ CoreDbAccess::~CoreDbAccess()
     if (d->timer.elapsed() > 10)
     {
         qCDebug(DIGIKAM_COREDB_LOG) << "CoreDbAccess lock time:" << d->timer.elapsed() << "ms";
+
+        Q_ASSERT(d->timer.elapsed() < 10000);
     }
 
     d->lock.lockCount--;
