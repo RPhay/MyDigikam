@@ -116,10 +116,10 @@ CoreDbAccess::CoreDbAccess()
     // You will want to call setParameters before constructing CoreDbAccess
     Q_ASSERT(d);
 
-    d->timer.restart();
-
     d->lock.mutex.lock();
     d->lock.lockCount++;
+
+    d->timer.restart();
 
     if (!d->backend->isOpen() && !d->initializing)
     {
