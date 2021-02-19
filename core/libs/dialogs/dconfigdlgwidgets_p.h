@@ -61,13 +61,13 @@ class Q_DECL_HIDDEN DConfigDlgTitle::Private
 public:
 
     explicit Private(DConfigDlgTitle* const parent)
-        : q(parent),
-          headerLayout(nullptr),
-          imageLabel(nullptr),
-          textLabel(nullptr),
-          commentLabel(nullptr),
+        : q              (parent),
+          headerLayout   (nullptr),
+          imageLabel     (nullptr),
+          textLabel      (nullptr),
+          commentLabel   (nullptr),
           autoHideTimeout(0),
-          messageType(InfoMessage)
+          messageType    (InfoMessage)
     {
     }
 

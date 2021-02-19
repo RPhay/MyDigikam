@@ -222,7 +222,7 @@ public:
      */
     explicit DConfigDlgTitle(QWidget* const parent = nullptr);
 
-    ~DConfigDlgTitle() override;
+    ~DConfigDlgTitle()                  override;
 
     /**
      * @param widget Widget displayed on the title widget.
@@ -233,13 +233,13 @@ public:
      * @return the text displayed in the title
      * @see setText()
      */
-    QString text() const;
+    QString text()          const;
 
     /**
      * @return the text displayed in the comment below the title, if any
      * @see setComment()
      */
-    QString comment() const;
+    QString comment()       const;
 
     /**
      * @return the pixmap displayed in the title
@@ -260,7 +260,7 @@ public:
      * Get the current timeout value in milliseconds
      * @return timeout value in msecs
      */
-    int autoHideTimeout() const;
+    int autoHideTimeout()   const;
 
 public Q_SLOTS:
 
@@ -331,7 +331,7 @@ protected:
 private:
 
     class Private;
-    Private *const d;
+    Private* const d;
 
     Q_PRIVATE_SLOT(d, void _k_timeoutFinished())
     Q_DISABLE_COPY(DConfigDlgTitle)

@@ -62,6 +62,7 @@ void DConfigDlgWdgPrivate::_k_slotCurrentPageChanged(const QModelIndex& current,
     }
 
     Q_Q(DConfigDlgWdg);
+
     emit q->currentPageChanged(currentItem, beforeItem);
 }
 
@@ -175,7 +176,7 @@ DConfigDlgWdgItem* DConfigDlgWdg::currentPage() const
 
 DConfigDlgTitle::DConfigDlgTitle(QWidget* const parent)
     : QWidget(parent),
-      d(new Private(this))
+      d      (new Private(this))
 {
     QFrame* const titleFrame = new QFrame(this);
     titleFrame->setAutoFillBackground(true);
@@ -189,11 +190,11 @@ DConfigDlgTitle::DConfigDlgTitle(QWidget* const parent)
     d->headerLayout->setColumnStretch(0, 1);
     d->headerLayout->setContentsMargins(6, 6, 6, 6);
 
-    d->textLabel = new QLabel(titleFrame);
+    d->textLabel    = new QLabel(titleFrame);
     d->textLabel->setVisible(false);
     d->textLabel->setTextInteractionFlags(Qt::TextSelectableByMouse | Qt::LinksAccessibleByMouse);
 
-    d->imageLabel = new QLabel(titleFrame);
+    d->imageLabel   = new QLabel(titleFrame);
     d->imageLabel->setVisible(false);
 
     d->headerLayout->addWidget(d->textLabel,  0, 0);

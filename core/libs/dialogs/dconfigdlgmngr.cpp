@@ -234,6 +234,7 @@ void DConfigDlgMngr::setupWidget(QWidget* widget, KConfigSkeletonItem* item)
                                                  );
             }
 
+            // cppcheck-suppress knownConditionTrueFalse
             if (allAutoExclusiveDirectChildren)
             {
                 d->allExclusiveGroupBoxes << widget;
@@ -364,6 +365,7 @@ bool DConfigDlgMngr::parseChildren(const QWidget* widget, bool trackChanges)
                         }
                     }
                 }
+
                 QGroupBox* const gb = qobject_cast<QGroupBox*>(childWidget);
 
                 if (!gb)

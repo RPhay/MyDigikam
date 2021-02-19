@@ -22,7 +22,6 @@
  *
  * ============================================================ */
 
-#include "dconfigdlgmodels.h"
 #include "dconfigdlgmodels_p.h"
 
 // Qt includes
@@ -39,13 +38,13 @@ namespace Digikam
 
 DConfigDlgModel::DConfigDlgModel(QObject* const parent)
     : QAbstractItemModel(parent),
-      d_ptr(nullptr)
+      d_ptr             (nullptr)
 {
 }
 
 DConfigDlgModel::DConfigDlgModel(DConfigDlgModelPrivate& dd, QObject* const parent)
     : QAbstractItemModel(parent),
-      d_ptr(&dd)
+      d_ptr             (&dd)
 {
     d_ptr->q_ptr = this;
 }
@@ -63,8 +62,8 @@ public:
 
     explicit Private()
         : checkable(false),
-          checked(false),
-          enabled(true)
+          checked  (false),
+          enabled  (true)
     {
     }
 
@@ -85,7 +84,7 @@ public:
 
 DConfigDlgWdgItem::DConfigDlgWdgItem(QWidget* widget)
     : QObject(nullptr),
-      d(new Private)
+      d      (new Private)
 {
     d->widget = widget;
 
@@ -102,7 +101,7 @@ DConfigDlgWdgItem::DConfigDlgWdgItem(QWidget* widget)
 
 DConfigDlgWdgItem::DConfigDlgWdgItem(QWidget* widget, const QString& name)
     : QObject(nullptr),
-      d(new Private)
+      d      (new Private)
 {
     d->widget = widget;
     d->name   = name;
@@ -210,7 +209,7 @@ bool DConfigDlgWdgItem::isChecked() const
 
 PageItem::PageItem(DConfigDlgWdgItem* pageWidgetItem, PageItem* parent)
     : mPageWidgetItem(pageWidgetItem),
-      mParentItem(parent)
+      mParentItem    (parent)
 {
 }
 
@@ -304,7 +303,7 @@ void PageItem::dump(int indent)
     const QString name = (mPageWidgetItem ? mPageWidgetItem->name() : QLatin1String("root"));
     qDebug("%s (%p)", qPrintable(QString(QString::fromLatin1("%1%2")).arg(prefix, name)), (void *)this);
 
-    for (int i = 0; i < mChildItems.count(); ++i)
+    for (int i = 0 ; i < mChildItems.count() ; ++i)
     {
         mChildItems[ i ]->dump(indent + 2);
     }
