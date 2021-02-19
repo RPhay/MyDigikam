@@ -22,6 +22,7 @@
  * ============================================================ */
 
 #include <QDebug>
+#include <QPainterPath>
 
 // QtAv includes
 
