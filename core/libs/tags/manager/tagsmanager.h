@@ -145,6 +145,7 @@ private Q_SLOTS:
 protected:
 
     void closeEvent(QCloseEvent* event) override;
+    void showEvent(QShowEvent* event)   override;
 
     void doLoadState()                  override;
     void doSaveState()                  override;

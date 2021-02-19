@@ -156,20 +156,6 @@ TagsManager::TagsManager()
     d->tagMngrView->setCurrentIndex(d->tagMngrView->model()->index(0, 0));
 
     StateSavingObject::loadState();
-
-    // Set main window in center of the screen
-
-    QScreen* screen = qApp->primaryScreen();
-
-    if (QWidget* const widget = qApp->activeWindow())
-    {
-        if (QWindow* const window = widget->windowHandle())
-        {
-            screen = window->screen();
-        }
-    }
-
-    move(screen->geometry().center() - rect().center());
 }
 
 TagsManager::~TagsManager()
@@ -661,6 +647,25 @@ void TagsManager::closeEvent(QCloseEvent* event)
 {
     d->listView->saveSettings();
     QMainWindow::closeEvent(event);
+}
+
+void TagsManager::showEvent(QShowEvent* event)
+{
+   // Set main window in center of the screen
+
+    QScreen* screen = qApp->primaryScreen();
+
+    if (QWidget* const widget = qApp->activeWindow())
+    {
+        if (QWindow* const window = widget->windowHandle())
+        {
+            screen = window->screen();
+        }
+    }
+
+    move(screen->geometry().center() - rect().center());
+
+    QMainWindow::showEvent(event);
 }
 
 void TagsManager::setupActions()
