@@ -361,4 +361,5 @@ BUGFIXES:
 321 ==> 433060 - Inconsistency between metadata displayed and metadata taken in account to rename.
 322 ==> 433183 - Migrate from "MySQL Server" database corrupts face/people metadata.
 323 ==> 433172 - Files do not disappear if cut.
-324 ==> 
+324 ==> 433264 - Patch for missing QPainterPath in qtavcodecs.cpp.
+325 ==> 
