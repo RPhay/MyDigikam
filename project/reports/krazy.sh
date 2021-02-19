@@ -6,7 +6,7 @@
 # https://github.com/Krazy-collection/krazy
 # Dependencies:
 #  - Perl:Tie::IxHash and Perl:XML::LibXML modules at run-time.
-#  - Saxon java xml parser to export report as HTML.
+#  - Saxon java xml parser (saxon.jar) to export report as HTML [http://saxon.sourceforge.net/].
 #
 # Redistribution and use is allowed according to the terms of the BSD license.
 # For details see the accompanying COPYING-CMAKE-SCRIPTS file.
@@ -57,7 +57,8 @@ mkdir -p $REPORT_DIR
 
 # Process XML file to generate HTML
 
-java -jar /usr/share/java/saxon/saxon.jar \
+#java -jar /usr/share/java/saxon/saxon.jar \
+java -jar /usr/share/sgml/docbook/xsl-ns-stylesheets-1.79.2/tools/lib/saxon.jar \
      -o:$REPORT_DIR/index.html \
      -im:krazy2ebn \
      ./report.krazy.xml \
