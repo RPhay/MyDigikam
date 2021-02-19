@@ -102,6 +102,7 @@ void DatesJob::run()
         const QVariantList& values = CoreDbAccess().db()->getAllCreationDates();
 
         QHash<QDateTime, int> dateNumberHash;
+        QHash<QDateTime, int>::iterator it;
 
         foreach (const QVariant& value, values)
         {
@@ -114,15 +115,15 @@ void DatesJob::run()
                     continue;
                 }
 
-                QHash<QDateTime, int>::iterator it2 = dateNumberHash.find(dateTime);
+                it = dateNumberHash.find(dateTime);
 
-                if (it2 == dateNumberHash.end())
+                if (it == dateNumberHash.end())
                 {
                     dateNumberHash.insert(dateTime, 1);
                 }
                 else
                 {
-                    it2.value()++;
+                    it.value()++;
                 }
             }
         }
