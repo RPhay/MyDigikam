@@ -599,8 +599,8 @@ void TimeLineWidget::slotDatesHash(const QHash<QDateTime, int>& datesStatHash)
     }
     else
     {
-        d->minDateTime = QDateTime(QDate(2200, 1, 1), QTime(0, 0, 0));
-        d->maxDateTime = QDateTime(QDate(1800, 1, 1), QTime(0, 0, 0));
+        d->minDateTime = datesStatHash.begin().key();
+        d->maxDateTime = datesStatHash.begin().key();
     }
 
     for (it = datesStatHash.begin(); it != datesStatHash.end() ; ++it)
