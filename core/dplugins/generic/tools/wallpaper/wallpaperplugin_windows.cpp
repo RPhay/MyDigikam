@@ -66,6 +66,7 @@ bool s_checkErrorCode(HRESULT status, const QString& path, const QString& contex
                        0,
                        nullptr);
 
+        // cppcheck-suppress knownConditionTrueFalse
         QString errStr = (bufPtr) ? QString::fromUtf16((const ushort*)bufPtr).trimmed()
                                   : i18n("Unknown Error %1", werr);
         LocalFree(bufPtr);
