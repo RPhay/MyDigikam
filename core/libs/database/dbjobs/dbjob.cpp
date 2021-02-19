@@ -99,7 +99,7 @@ void DatesJob::run()
 {
     if (m_jobInfo.isFoldersJob())
     {
-        const QVariantList& values = CoreDbAccess().db()->getAllCreationDatesOfImages();
+        const QVariantList& values = CoreDbAccess().db()->getAllCreationDates();
 
         QHash<QDateTime, int> dateNumberHash;
 

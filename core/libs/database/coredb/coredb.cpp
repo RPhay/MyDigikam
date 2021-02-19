@@ -3223,22 +3223,7 @@ qlonglong CoreDB::getItemFromAlbum(int albumID, const QString& fileName) const
     return values.first().toLongLong();
 }
 
-QList<QDateTime> CoreDB::getAllCreationDates() const
-{
-    QList<QDateTime> list;
-
-    foreach (const QVariant& value, getAllCreationDatesOfImages())
-    {
-        if (!value.isNull())
-        {
-            list << value.toDateTime();
-        }
-    }
-
-    return list;
-}
-
-QVariantList CoreDB::getAllCreationDatesOfImages() const
+QVariantList CoreDB::getAllCreationDates() const
 {
     QVariantList values;
     d->db->execSql(QString::fromUtf8("SELECT creationDate FROM ImageInformation "

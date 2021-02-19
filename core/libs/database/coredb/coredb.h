@@ -686,14 +686,9 @@ public:
     QList<qlonglong> getItemIDsInTag(int tagID, bool recursive = false)                                             const;
 
     /**
-     * Returns all creation dates found in the image metadata table
-     */
-    QList<QDateTime> getAllCreationDates()                                                                          const;
-
-    /**
      * Returns a QVariantList of creationDate of all items
      */
-    QVariantList getAllCreationDatesOfImages()                                                                      const;
+    QVariantList getAllCreationDates()                                                                              const;
 
     // ----------- Item properties -----------
 
