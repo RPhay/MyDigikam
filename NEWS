@@ -362,4 +362,6 @@ BUGFIXES:
 322 ==> 433183 - Migrate from "MySQL Server" database corrupts face/people metadata.
 323 ==> 433172 - Files do not disappear if cut.
 324 ==> 433264 - Patch for missing QPainterPath in qtavcodecs.cpp.
-325 ==> 
+325 ==> 431951 - UI lockup for upwards of 15 seconds while just scrolling album views and selecting images.
+326 ==> 432257 - Spinning Pinwheel Scrolling through Thumbnails.
+327 ==> 
