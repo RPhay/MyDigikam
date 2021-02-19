@@ -3225,15 +3225,9 @@ qlonglong CoreDB::getItemFromAlbum(int albumID, const QString& fileName) const
 
 QList<QDateTime> CoreDB::getAllCreationDates() const
 {
-    QList<QVariant> values;
-    d->db->execSql(QString::fromUtf8("SELECT creationDate FROM ImageInformation "
-                                     "INNER JOIN Images ON Images.id=ImageInformation.imageid "
-                                     " WHERE Images.status=1;"),
-                   &values);
-
     QList<QDateTime> list;
 
-    foreach (const QVariant& value, values)
+    foreach (const QVariant& value, getAllCreationDatesOfImages())
     {
         if (!value.isNull())
         {
@@ -3244,41 +3238,15 @@ QList<QDateTime> CoreDB::getAllCreationDates() const
     return list;
 }
 
-QHash<QDateTime, int> CoreDB::getAllCreationDatesAndNumberOfImages() const
+QVariantList CoreDB::getAllCreationDatesOfImages() const
 {
-    QList<QVariant> values;
+    QVariantList values;
     d->db->execSql(QString::fromUtf8("SELECT creationDate FROM ImageInformation "
                                      "INNER JOIN Images ON Images.id=ImageInformation.imageid "
                                      " WHERE Images.status=1;"),
                    &values);
 
-    QHash<QDateTime, int> datesStatHash;
-
-    foreach (const QVariant& value, values)
-    {
-        if (!value.isNull())
-        {
-            QDateTime dateTime = value.toDateTime();
-
-            if (!dateTime.isValid())
-            {
-                continue;
-            }
-
-            QHash<QDateTime, int>::iterator it2 = datesStatHash.find(dateTime);
-
-            if (it2 == datesStatHash.end())
-            {
-                datesStatHash.insert(dateTime, 1);
-            }
-            else
-            {
-                it2.value()++;
-            }
-        }
-    }
-
-    return datesStatHash;
+    return values;
 }
 
 QMap<int, int> CoreDB::getNumberOfImagesInAlbums() const

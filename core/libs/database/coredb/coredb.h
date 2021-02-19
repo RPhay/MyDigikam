@@ -691,10 +691,9 @@ public:
     QList<QDateTime> getAllCreationDates()                                                                          const;
 
     /**
-     * Returns a QHash<QDateTime,int> of creationDate -> count of items
-     * with the tag
+     * Returns a QVariantList of creationDate of all items
      */
-    QHash<QDateTime, int> getAllCreationDatesAndNumberOfImages()                                                    const;
+    QVariantList getAllCreationDatesOfImages()                                                                      const;
 
     // ----------- Item properties -----------
 
