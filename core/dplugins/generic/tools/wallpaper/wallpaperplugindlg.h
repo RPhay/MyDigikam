@@ -40,10 +40,11 @@ class WallpaperPluginDlg : public DPluginDialog
 
 public:
 
-    explicit WallpaperPluginDlg(DPlugin* const plugin, QWidget* const parent = nullptr);
+    explicit WallpaperPluginDlg(DPlugin* const plugin,
+                                QWidget* const parent = nullptr);
     ~WallpaperPluginDlg() override;
-    
-    int wallpaperLayout();
+
+    int wallpaperLayout() const;
 
 private:
 

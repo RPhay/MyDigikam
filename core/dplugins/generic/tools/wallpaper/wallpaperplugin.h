@@ -52,14 +52,14 @@ public:
     /**
      * Default values for Plasma Wallpaper plugin.
      */
-    enum
+    enum WallpaperLayout
     {
         Adjusted            = 0,
         AdjustedAspectRatio = 1,
         AdjustedCropped     = 2,
         Mosaic              = 3,
         Centered            = 6
-    } WallpaperLayout;
+    };
 
 public:
 

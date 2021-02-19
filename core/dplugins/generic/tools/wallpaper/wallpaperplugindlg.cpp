@@ -118,9 +118,9 @@ WallpaperPluginDlg::~WallpaperPluginDlg()
     delete d;
 }
 
-int WallpaperPluginDlg::wallpaperLayout()
+int WallpaperPluginDlg::wallpaperLayout() const
 {
-    return d->layoutCB->currentData().toInt();
+    return (d->layoutCB->currentData().toInt());
 }
 
 } // namespace DigikamGenericWallpaperPlugin
