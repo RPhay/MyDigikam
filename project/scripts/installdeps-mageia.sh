@@ -27,12 +27,16 @@ urpmi --auto \
       git \
       subversion \
       cmake \
+      ccache \
+      valgrind \
+      doxygen \
       extra-cmake-modules \
       gcc-c++ \
       gperf \
       ruby \
       bison \
       flex \
+      libasan-devel \
       libgomp-devel \
       lib64expat-devel \
       eigen3-devel \
@@ -76,6 +80,11 @@ urpmi --auto \
       lib64kf5notifications-devel \
       lib64kf5notifyconfig-devel \
       lib64kf5filemetadata-devel \
+      mingw32-nsis \
+      clang-analyzer \
+      intltool \
+      lzip
+      
 
 
 
