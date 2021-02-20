@@ -4429,12 +4429,16 @@ void CoreDB::clearMetadataFromImage(qlonglong imageID)
 
     changeItemInformation(imageID, QVariantList() << 0, DatabaseFields::Rating);
 
-    d->db->execSql(QString::fromUtf8("DELETE FROM ImagePositions WHERE imageid=?;"),
+
+    d->db->execSql(QString::fromUtf8("DELETE FROM ImageProperties WHERE imageid=?;"),
                    imageID);
-    fields |= DatabaseFields::ItemPositionsAll;
 
     d->db->execSql(QString::fromUtf8("DELETE FROM ImageCopyright WHERE imageid=?;"),
                    imageID);
+
+    d->db->execSql(QString::fromUtf8("DELETE FROM ImagePositions WHERE imageid=?;"),
+                   imageID);
+    fields |= DatabaseFields::ItemPositionsAll;
 
     d->db->execSql(QString::fromUtf8("DELETE FROM ImageComments WHERE imageid=?;"),
                    imageID);
