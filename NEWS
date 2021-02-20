@@ -364,4 +364,5 @@ BUGFIXES:
 324 ==> 433264 - Patch for missing QPainterPath in qtavcodecs.cpp.
 325 ==> 431951 - UI lockup for upwards of 15 seconds while just scrolling album views and selecting images.
 326 ==> 432257 - Spinning Pinwheel Scrolling through Thumbnails.
-327 ==> 
+327 ==> 433350 - 'reread metadata from file' don't clean up ImageProperties table if the related fields don't exist anymore in the file.
+328 ==> 
