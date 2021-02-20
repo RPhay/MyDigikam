@@ -30,6 +30,11 @@ if [ ! -f /opt/saxon/saxon9he.jar ] ; then
     echo "Aborted..."
     exit -1
 
+
+else
+
+    echo "Check Java Saxon 9HE XML parser  passed..."
+
 fi
 
 if [ ! -f /opt/krazy/bin/krazy2all ] ; then
@@ -38,6 +43,10 @@ if [ ! -f /opt/krazy/bin/krazy2all ] ; then
     echo "Please install Krazy from https://github.com/Krazy-collection/krazy"
     echo "Aborted..."
     exit -1
+
+else
+
+    echo "Check Krazy static analyzer passed..."
 
 fi
 
