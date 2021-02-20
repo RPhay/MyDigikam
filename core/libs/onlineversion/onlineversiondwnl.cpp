@@ -28,7 +28,12 @@
 
 #include <QDir>
 #include <QSysInfo>
+#include <QDialog>
+#include <QFuture>
+#include <QFutureWatcher>
+#include <QtConcurrent>
 #include <QByteArray>
+#include <QEventLoop>
 #include <QApplication>
 #include <QStandardPaths>
 #include <QNetworkRequest>
@@ -263,7 +268,7 @@ void OnlineVersionDwnl::slotDownloaded(QNetworkReply* reply)
         return;
     }
 
-    // Whole file to download is arrive
+    // Whole file to download is here
 
     QByteArray data = reply->readAll();
 
@@ -275,10 +280,31 @@ void OnlineVersionDwnl::slotDownloaded(QNetworkReply* reply)
         return;
     }
 
-    QCryptographicHash sha256(QCryptographicHash::Sha256);
-    sha256.addData(data);
+    // Compute checksum in a separated thread
 
-    if (d->checksums != QString::fromLatin1(sha256.result().toHex()))
+    emit signalComputeChecksum();
+
+    QString hash;
+    QEventLoop loop(this);
+    QFutureWatcher<void> fwatcher;
+
+    connect(&fwatcher, SIGNAL(finished()),
+            &loop, SLOT(quit()));
+
+    connect(static_cast<QDialog*>(parent()), SIGNAL(rejected()),
+            &fwatcher, SLOT(cancel()));
+
+    fwatcher.setFuture(QtConcurrent::run([&hash, &data]()
+        {
+            QCryptographicHash sha256(QCryptographicHash::Sha256);
+            sha256.addData(data);
+            hash = QString::fromLatin1(sha256.result().toHex());
+        }
+    ));
+
+    loop.exec();
+
+    if (d->checksums != hash)
     {
         qCDebug(DIGIKAM_GENERAL_LOG) << "Checksums error";
         emit signalDownloadError(i18n("Checksums error."));

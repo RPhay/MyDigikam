@@ -151,6 +151,9 @@ OnlineVersionDlg::OnlineVersionDlg(QWidget* const parent,
     connect(d->dwnloader, SIGNAL(signalDownloadProgress(qint64,qint64)),
             this, SLOT(slotDownloadProgress(qint64,qint64)));
 
+    connect(d->dwnloader, SIGNAL(signalComputeChecksum()),
+            this, SLOT(slotComputeChecksum()));
+
     d->speedTimer            = new QTimer(this);
 
     connect(d->speedTimer, SIGNAL(timeout()),
@@ -424,6 +427,38 @@ void OnlineVersionDlg::slotDownloadInstaller()
     {
         d->dwnloader->startDownload(d->newVersion);
     }
+}
+
+void OnlineVersionDlg::slotComputeChecksum()
+{
+    if (d->preRelease)
+    {
+        QString version = d->updateWithDebug ? i18n("built on %1 with debug symbols", QLocale().toString(d->onlineDt, QLocale::ShortFormat))
+                                             : i18n("built on %1", QLocale().toString(d->onlineDt, QLocale::ShortFormat));
+
+        d->label->setText(i18n("Verify Checksum for new %1\n%2\nin progress, please wait...",
+                               qApp->applicationName(),
+                               version));
+    }
+    else
+    {
+        QString version = d->updateWithDebug ? i18n("version %1 with debug symbols", d->newVersion)
+                                             : i18n("version %1", d->newVersion);
+
+        d->label->setText(i18n("Verify checksum for %1\nversion %2\nin progress, please wait...",
+                               qApp->applicationName(),
+                               version));
+    }
+
+    d->buttons->button(QDialogButtonBox::Apply)->setEnabled(false);
+    d->buttons->button(QDialogButtonBox::Reset)->setEnabled(false);
+
+    d->bar->setMaximum(0);
+    d->bar->setMinimum(0);
+    d->bar->setValue(0);
+    d->bar->show();
+    d->stats->hide();
+    d->speedTimer->stop();
 }
 
 void OnlineVersionDlg::slotDownloadError(const QString& error)

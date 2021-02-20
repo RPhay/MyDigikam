@@ -58,6 +58,7 @@ Q_SIGNALS:
 
     void signalDownloadError(const QString& error);
     void signalDownloadProgress(qint64 bytesReceived, qint64 bytesTotal);
+    void signalComputeChecksum();
 
 private Q_SLOTS:
 
