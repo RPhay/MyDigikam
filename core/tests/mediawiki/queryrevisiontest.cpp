@@ -102,8 +102,9 @@ class Q_DECL_HIDDEN QueryRevisionTest : public QObject
 
 public:
 
-    explicit QueryRevisionTest()
+    explicit QueryRevisionTest(QObject* const parent = nullptr)
     {
+        Q_UNUSED(parent);
         revisionCount = 0;
     }
 
