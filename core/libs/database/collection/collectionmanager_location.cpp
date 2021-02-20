@@ -155,7 +155,7 @@ CollectionLocation CollectionManager::refreshLocation(const CollectionLocation& 
         }
         else
         {
-            type = AlbumRoot::VolumeHardWired;
+            type         = AlbumRoot::VolumeHardWired;
             identifier   = d->volumeIdentifier(volume);
             specificPath = path.mid(volume.path.length() - 1);
         }
