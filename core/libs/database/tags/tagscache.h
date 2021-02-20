@@ -109,11 +109,11 @@ public:
     /**
      * Returns the tag matched exactly by the given path.
      * The path can be given with or without leading slash.
-     * Returns 0 if there is no such tag, or if tagPath is empty.
+     * Returns 0 if there is no such tag, or if path is empty.
      * If you want to create the tag if it does not yet exist,
      * use getOrCreateTag.
      */
-    int tagForPath(const QString& tagPath)                                                              const;
+    int tagForPath(const QString& path)                                                                 const;
     QList<int> tagsForPaths(const QStringList& tagPaths)                                                const;
 
     /**
