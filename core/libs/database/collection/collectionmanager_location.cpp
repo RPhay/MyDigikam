@@ -133,17 +133,19 @@ CollectionLocation CollectionManager::refreshLocation(const CollectionLocation& 
     QList<SolidVolumeInfo> volumes = d->listVolumes();
     SolidVolumeInfo volume         = d->findVolumeForUrl(fileUrl, volumes);
 
-    if (!volume.isNull())
+    if (!volume.isNull() || (newType == CollectionLocation::TypeNetwork))
     {
-        // volume.path has a trailing slash. We want to split in front of this.
-
-        QString specificPath = path.mid(volume.path.length() - 1);
-        QString identifier   = d->volumeIdentifier(volume);
         AlbumRoot::Type type;
+        QString specificPath;
+        QString identifier;
 
         if      (newType == CollectionLocation::TypeVolumeRemovable)
         {
-            type = AlbumRoot::VolumeRemovable;
+            // volume.path has a trailing slash. We want to split in front of this.
+
+            type         = AlbumRoot::VolumeRemovable;
+            identifier   = d->volumeIdentifier(volume);
+            specificPath = path.mid(volume.path.length() - 1);
         }
         else if (newType == CollectionLocation::TypeNetwork)
         {
@@ -154,6 +156,8 @@ CollectionLocation CollectionManager::refreshLocation(const CollectionLocation& 
         else
         {
             type = AlbumRoot::VolumeHardWired;
+            identifier   = d->volumeIdentifier(volume);
+            specificPath = path.mid(volume.path.length() - 1);
         }
 
         CoreDbAccess access;
