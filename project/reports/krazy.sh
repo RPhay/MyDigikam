@@ -71,6 +71,7 @@ See <a href=\"http://ebn.kde.org/krazy/reports/extragear/graphics/digikam/\">EBN
 krazy2all --export xml \
           --title $TITLE \
           --no-brief \
+          --dry-run \
           --strict all \
           --priority all \
           --verbose \
