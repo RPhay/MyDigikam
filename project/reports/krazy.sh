@@ -6,7 +6,7 @@
 # https://github.com/Krazy-collection/krazy
 # Dependencies:
 #  - Perl:Tie::IxHash and Perl:XML::LibXML modules at run-time.
-#  - Saxon java xml parser (saxon.jar) to export report as HTML [http://saxon.sourceforge.net/].
+#  - Saxon 9HE java xml parser (saxon.jar) to export report as HTML [https://www.saxonica.com/download/java.xml].
 #
 # Redistribution and use is allowed according to the terms of the BSD license.
 # For details see the accompanying COPYING-CMAKE-SCRIPTS file.
@@ -20,6 +20,28 @@ trap 'echo "FAILED COMMAND: $PREVIOUS_COMMAND"' ERR
 . ./common.sh
 
 checksCPUCores
+
+# Check run-time dependencies
+
+if [ ! -f /opt/saxon/saxon9he.jar ] ; then
+
+    echo "Java Saxon 9HE XML parser is not installed in /opt/saxon."
+    echo "Please install Saxon from https://www.saxonica.com/download/java.xml"
+    echo "Aborted..."
+    exit -1
+
+fi
+
+if [ ! -f /opt/krazy/bin/krazy2all ] ; then
+
+    echo "Krazy Static analyzer is not installed in /opt/krazy."
+    echo "Please install Krazy from https://github.com/Krazy-collection/krazy"
+    echo "Aborted..."
+    exit -1
+
+fi
+
+export PATH=$PATH:/opt/krazy/bin
 
 ORIG_WD="`pwd`"
 REPORT_DIR="${ORIG_WD}/report.krazy"
@@ -57,8 +79,7 @@ mkdir -p $REPORT_DIR
 
 # Process XML file to generate HTML
 
-#java -jar /usr/share/java/saxon/saxon.jar \
-java -jar /usr/share/sgml/docbook/xsl-ns-stylesheets-1.79.2/tools/lib/saxon.jar \
+java -jar /opt/saxon/saxon9he.jar \
      -o:$REPORT_DIR/index.html \
      -im:krazy2ebn \
      ./report.krazy.xml \
