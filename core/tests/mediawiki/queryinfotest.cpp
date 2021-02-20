@@ -26,7 +26,7 @@
 // Qt includes
 
 #include <QObject>
-#include <QtTest>
+#include <QTest>
 
 // KDE includes
 

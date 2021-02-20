@@ -26,7 +26,7 @@
 
 // Qt includes
 
-#include <QtTest>
+#include <QTest>
 
 class TestGeoCoordinates : public QObject
 {

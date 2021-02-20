@@ -28,7 +28,7 @@
 #include <QObject>
 #include <QString>
 #include <QUrl>
-#include <QtTest>
+#include <QTest>
 
 // Local includes
 

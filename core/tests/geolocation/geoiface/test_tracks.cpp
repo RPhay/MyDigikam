@@ -26,8 +26,9 @@
 // Qt includes
 
 #include <QDateTime>
-#include <QtTest>
+#include <QTest>
 #include <QDebug>
+#include <QSignalSpy>
 
 // Local includes
 

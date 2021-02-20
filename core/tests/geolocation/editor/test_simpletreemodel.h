@@ -27,7 +27,7 @@
 
 // Qt includes
 
-#include <QtTest>
+#include <QTest>
 
 class TestSimpleTreeModel : public QObject
 {

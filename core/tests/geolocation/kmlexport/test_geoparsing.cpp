@@ -26,7 +26,7 @@
 // Qt includes
 
 #include <QDateTime>
-#include <QtTest>
+#include <QTest>
 
 // Local includes
 

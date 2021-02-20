@@ -25,7 +25,7 @@
 
 // Qt incudes
 
-#include <QtTest>
+#include <QTest>
 #include <QImage>
 
 // Local includes
