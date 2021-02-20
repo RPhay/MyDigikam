@@ -169,14 +169,14 @@ public:
 
         explicit CatcherResult(const LoadingDescription& d)
             : description(d),
-              received(false)
+              received   (false)
         {
         }
 
         CatcherResult(const LoadingDescription& d, const QImage& image)
-            : image(image),
+            : image      (image),
               description(d),
-              received(true)
+              received   (true)
         {
         }
 

@@ -218,7 +218,10 @@ public:
      * is potentially slower.
      * The image should at least have storedSize().
      */
-    void storeDetailThumbnail(const QString& filePath, const QRect& detailRect, const QImage& image, bool isFace = false);
+    void storeDetailThumbnail(const QString& filePath,
+                              const QRect& detailRect,
+                              const QImage& image,
+                              bool isFace = false);
     int  storedSize() const;
 
     /**

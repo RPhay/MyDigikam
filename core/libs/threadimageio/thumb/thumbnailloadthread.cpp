@@ -93,7 +93,7 @@ LoadingDescription ThumbnailLoadThread::Private::createLoadingDescription(const 
 
 ThumbnailLoadThread::ThumbnailLoadThread(QObject* const parent)
     : ManagedLoadSaveThread(parent),
-      d(new Private)
+      d                    (new Private)
 {
     static_d->firstThreadCreated = true;
     d->creator                   = new ThumbnailCreator(static_d->storageMethod);
@@ -130,7 +130,7 @@ ThumbnailLoadThread* ThumbnailLoadThread::defaultThread()
 
 void ThumbnailLoadThread::cleanUp()
 {
-    // NOTE : Nothing to do with Qt5 and Q_GLOBAL_STATIC. Qt clean up all automatically at end of application instance.
+    // NOTE: Nothing to do with Qt5 and Q_GLOBAL_STATIC. Qt clean up all automatically at end of application instance.
     // But stopping all running tasks to prevent a crash at end.
 
     defaultIconViewThread()->stopAllTasks();
@@ -653,13 +653,13 @@ void ThumbnailLoadThread::deleteThumbnail(const QString& filePath)
 
 ThumbnailImageCatcher::ThumbnailImageCatcher(QObject* const parent)
     : QObject(parent),
-      d(new Private)
+      d      (new Private)
 {
 }
 
 ThumbnailImageCatcher::ThumbnailImageCatcher(ThumbnailLoadThread* const thread, QObject* const parent)
     : QObject(parent),
-      d(new Private)
+      d      (new Private)
 {
     setThumbnailLoadThread(thread);
 }

@@ -45,7 +45,7 @@ int ThumbnailLoadThread::Private::pixmapSizeForThumbnailSize(int thumbnailSize) 
 
 int ThumbnailLoadThread::Private::thumbnailSizeForPixmapSize(int pixmapSize) const
 {
-    // bug #206666: Do not cut off one-pixel line for highlighting border
+    // Bug #206666: Do not cut off one-pixel line for highlighting border
 
     if (hasHighlightingBorder())
     {
@@ -110,12 +110,12 @@ QList<LoadingDescription> ThumbnailLoadThread::Private::makeDescriptions(const Q
 {
     QList<LoadingDescription> descriptions;
     {
-        LoadingDescription description = createLoadingDescription(ThumbnailIdentifier(), size, QRect(1,1,1,1), false);
+        LoadingDescription description = createLoadingDescription(ThumbnailIdentifier(), size, QRect(1, 1, 1, 1), false);
         typedef QPair<ThumbnailIdentifier, QRect> IdRectPair;
 
         foreach (const IdRectPair& pair, identifiersAndRects)
         {
-            description.filePath = pair.first.filePath;
+            description.filePath                           = pair.first.filePath;
             description.previewParameters.storageReference = pair.first.id;
 
             if (!checkDescription(description))
@@ -164,9 +164,10 @@ void ThumbnailImageCatcher::Private::harvest(const LoadingDescription& descripti
             task.received = true;
         }
 
-        finished = finished && task.received;
+        finished = (finished && task.received);
     }
 
+    // cppcheck-suppress knownConditionTrueFalse
     if (finished)
     {
         state = Quitting;
