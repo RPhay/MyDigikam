@@ -4429,7 +4429,6 @@ void CoreDB::clearMetadataFromImage(qlonglong imageID)
 
     changeItemInformation(imageID, QVariantList() << 0, DatabaseFields::Rating);
 
-
     d->db->execSql(QString::fromUtf8("DELETE FROM ImageProperties WHERE imageid=?;"),
                    imageID);
 
