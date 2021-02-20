@@ -85,7 +85,7 @@ WallpaperPluginDlg::WallpaperPluginDlg(DPlugin* const plugin, QWidget* const par
     d->layoutCB             = new QComboBox(d->page);
     d->layoutCB->addItem(i18n("Adjusted"),                   WallpaperPlugin::Adjusted);
 
-#ifndef Q_OS_WINDOWS
+#ifndef Q_OS_WIN
 
     d->layoutCB->addItem(i18n("Adjusted with Aspect ratio"), WallpaperPlugin::AdjustedAspectRatio);
     d->layoutCB->addItem(i18n("Adjusted and cropped"),       WallpaperPlugin::AdjustedCropped);

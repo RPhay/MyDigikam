@@ -373,7 +373,7 @@ bool OnlineVersionChecker::bundleProperties(QString& arch, QString& ext)
 
 #endif
 
-#if defined Q_OS_WINDOWS
+#if defined Q_OS_WIN
 
     ext  = QLatin1String("exe");
 
