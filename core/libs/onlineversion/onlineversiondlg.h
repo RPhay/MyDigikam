@@ -64,6 +64,8 @@ private Q_SLOTS:
     void slotDownloadError(const QString& error);
     void slotDownloadProgress(qint64, qint64);
 
+    void slotComputeChecksum();
+
     void slotRunInstaller();
     void slotOpenInFileManager();
 
