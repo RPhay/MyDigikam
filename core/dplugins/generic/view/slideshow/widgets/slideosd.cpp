@@ -198,8 +198,6 @@ SlideOSD::SlideOSD(SlideShowSettings* const settings, SlideShowLoader* const par
     connect(d->toolBar, SIGNAL(signalScreenSelected(int)),
             d->parent, SLOT(slotScreenSelected(int)));
 
-    connect(d->toolBar, SIGNAL(signalDelaySelected(double)),
-            this, SLOT(slotChangeSlideShowDelay(double)));
     // ---------------------------------------------------------------
 
     QGridLayout* const grid = new QGridLayout(this);
@@ -353,6 +351,7 @@ void SlideOSD::slotProgressTimer()
     else
     {
         d->progressBar->setFormat(str);
+        d->progressBar->setMaximum(d->settings->delay);
 
         if (d->progressBar->value() == d->settings->delay)
         {
@@ -403,12 +402,6 @@ bool SlideOSD::isUnderMouse() const
 void SlideOSD::toggleProperties()
 {
     d->slideProps->togglePaintEnabled();
-}
-
-void SlideOSD::slotChangeSlideShowDelay(double num)
-{
-    d->settings->delay = num;
-    d->progressBar->setMaximum(num);
 }
 
 void SlideOSD::setLoadingReady(bool b)
