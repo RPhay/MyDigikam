@@ -23,6 +23,13 @@ else
     echo "Check run as root passed..."
 fi
 
+# Enable Tainted RPM media
+
+urpmi.update --no-ignore "Tainted Release"
+urpmi.update --no-ignore "Tainted Updates"
+
+# Install all RPMs
+
 urpmi --auto \
       git \
       subversion \
