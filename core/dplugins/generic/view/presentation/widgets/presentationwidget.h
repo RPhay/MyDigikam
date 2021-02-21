@@ -126,7 +126,10 @@ private:
     void         printComments();
     void         printProgress();
     void         showEndOfShow();
+    void         showOverlays();
+    void         hideOverlays();
     void         readSettings();
+
     EffectMethod getRandomEffect();
 
 private:

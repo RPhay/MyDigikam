@@ -225,7 +225,9 @@ PresentationWidget::PresentationWidget(PresentationContainer* const sharedData)
 
     d->slideCtrlWidget = new PresentationCtrlWidget(this, d->sharedData);
     d->slideCtrlWidget->hide();
-    d->slideCtrlWidget->move(d->deskWidth - d->slideCtrlWidget->width(), d->deskY);
+
+    int w = d->slideCtrlWidget->width() - 1;
+    d->slideCtrlWidget->move(d->deskX + d->deskWidth - w, d->deskY);
 
     if (!d->sharedData->loop)
     {
@@ -659,6 +661,39 @@ void PresentationWidget::showEndOfShow()
     d->slideCtrlWidget->setEnabledPrev(false);
 }
 
+void PresentationWidget::showOverlays()
+{
+    if (d->slideCtrlWidget->isHidden())
+    {
+        int w = d->slideCtrlWidget->width() - 1;
+        d->slideCtrlWidget->move(d->deskX + d->deskWidth - w, d->deskY);
+        d->slideCtrlWidget->show();
+    }
+
+#ifdef HAVE_MEDIAPLAYER
+
+    if (d->playbackWidget->isHidden())
+    {
+        d->playbackWidget->move(d->deskX, d->deskY);
+        d->playbackWidget->show();
+    }
+
+#endif
+
+}
+
+void PresentationWidget::hideOverlays()
+{
+    d->slideCtrlWidget->hide();
+
+#ifdef HAVE_MEDIAPLAYER
+
+    d->playbackWidget->hide();
+
+#endif
+
+}
+
 void PresentationWidget::keyPressEvent(QKeyEvent* event)
 {
     if (!event)
@@ -733,57 +768,13 @@ void PresentationWidget::mouseMoveEvent(QMouseEvent* e)
         }
         else
         {
-            d->slideCtrlWidget->hide();
-
-#ifdef HAVE_MEDIAPLAYER
-
-            d->playbackWidget->hide();
-
-#endif
-
+            hideOverlays();
         }
 
         return;
     }
-/*
-    int w = d->slideCtrlWidget->width();
-    int h = d->slideCtrlWidget->height();
 
-    if (pos.y() < (d->deskY + 20))
-    {
-        if (pos.x() <= (d->deskX + d->deskWidth / 2))
-        {
-            // position top left
-            d->slideCtrlWidget->move(d->deskX, d->deskY);
-        }
-        else
-        {
-            // position top right
-            d->slideCtrlWidget->move(d->deskX + d->deskWidth - w - 1, d->deskY);
-        }
-    }
-    else
-    {
-        if (pos.x() <= (d->deskX + d->deskWidth / 2))
-        {
-            // position bot left
-            d->slideCtrlWidget->move(d->deskX, d->deskY + d->deskHeight - h - 1);
-        }
-        else
-        {
-            // position bot right
-            d->slideCtrlWidget->move(d->deskX + d->deskWidth - w - 1, d->deskY + d->deskHeight - h - 1);
-        }
-    }
-*/
-    d->slideCtrlWidget->show();
-
-#ifdef HAVE_MEDIAPLAYER
-
-    d->playbackWidget->show();
-
-#endif
-
+    showOverlays();
 }
 
 void PresentationWidget::wheelEvent(QWheelEvent* e)
@@ -904,18 +895,12 @@ void PresentationWidget::startPainter()
 void PresentationWidget::slotPause()
 {
     d->timer->stop();
-
-    if (d->slideCtrlWidget->isHidden())
-    {
-        int w = d->slideCtrlWidget->width();
-        d->slideCtrlWidget->move(d->deskWidth - w - 1, 0);
-        d->slideCtrlWidget->show();
-    }
+    showOverlays();
 }
 
 void PresentationWidget::slotPlay()
 {
-    d->slideCtrlWidget->hide();
+    hideOverlays();
     slotTimeOut();
 }
 

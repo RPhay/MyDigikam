@@ -237,8 +237,8 @@ PresentationGL::PresentationGL(PresentationContainer* const sharedData)
 
 #endif
 
-    int w = d->slideCtrlWidget->width();
-    d->slideCtrlWidget->move(d->deskX + d->deskWidth - w - 1, d->deskY);
+    int w = d->slideCtrlWidget->width() - 1;
+    d->slideCtrlWidget->move(d->deskX + d->deskWidth - w, d->deskY);
 
     // -- Minimal texture size (opengl specs) --------------
 
@@ -498,28 +498,14 @@ void PresentationGL::mouseMoveEvent(QMouseEvent* e)
         }
         else
         {
-            d->slideCtrlWidget->hide();
-
-#ifdef HAVE_MEDIAPLAYER
-
-            d->playbackWidget->hide();
-
-#endif
-
+            hideOverlays();
             setFocus();
         }
 
         return;
     }
 
-    d->slideCtrlWidget->show();
-
-#ifdef HAVE_MEDIAPLAYER
-
-    d->playbackWidget->show();
-
-#endif
-
+    showOverlays();
 }
 
 void PresentationGL::wheelEvent(QWheelEvent* e)
@@ -938,6 +924,39 @@ void PresentationGL::showEndOfShow()
     }
 
     glEnd();
+}
+
+void PresentationGL::showOverlays()
+{
+    if (d->slideCtrlWidget->isHidden())
+    {
+        int w = d->slideCtrlWidget->width() - 1;
+        d->slideCtrlWidget->move(d->deskX + d->deskWidth - w, d->deskY);
+        d->slideCtrlWidget->show();
+    }
+
+#ifdef HAVE_MEDIAPLAYER
+
+    if (d->playbackWidget->isHidden())
+    {
+        d->playbackWidget->move(d->deskX, d->deskY);
+        d->playbackWidget->show();
+    }
+
+#endif
+
+}
+
+void PresentationGL::hideOverlays()
+{
+    d->slideCtrlWidget->hide();
+
+#ifdef HAVE_MEDIAPLAYER
+
+    d->playbackWidget->hide();
+
+#endif
+
 }
 
 void PresentationGL::slotTimeOut()
@@ -1750,18 +1769,12 @@ void PresentationGL::effectCube()
 void PresentationGL::slotPause()
 {
     d->timer->stop();
-
-    if (d->slideCtrlWidget->isHidden())
-    {
-        int w = d->slideCtrlWidget->width();
-        d->slideCtrlWidget->move(d->deskWidth - w - 1, 0);
-        d->slideCtrlWidget->show();
-    }
+    showOverlays();
 }
 
 void PresentationGL::slotPlay()
 {
-    d->slideCtrlWidget->hide();
+    hideOverlays();
     slotTimeOut();
 }
 
