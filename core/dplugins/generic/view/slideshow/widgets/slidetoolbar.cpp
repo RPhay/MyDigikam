@@ -251,7 +251,7 @@ void SlideToolBar::slotChangeDelayButtonPressed()
 {
     bool ok;
     double num = QInputDialog::getDouble(this, i18n("Specify delay for slide show"),
-                                         i18n("Delay:"), 1 , 0, 20, 1, &ok);
+                                         i18n("Delay:"), 1 , 1, 3600, 1, &ok);
 
     emit signalDelaySelected(num);
 }
