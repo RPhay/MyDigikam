@@ -45,6 +45,7 @@ urpmi --auto \
       python3-soupsieve \
       perl-Tie-IxHash \
       perl-libxml-perl \
+      perl-JSON-XS \
       doxygen \
       hugin \
       kate \

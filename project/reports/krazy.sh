@@ -76,6 +76,7 @@ krazy2all --export xml \
           --priority all \
           --verbose \
           --topdir ../../ \
+          --config ../../.krazy \
           --outfile ./report.krazy.xml
 
 # Clean up XML file
