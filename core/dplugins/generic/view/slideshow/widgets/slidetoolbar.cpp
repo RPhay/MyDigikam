@@ -267,7 +267,7 @@ void SlideToolBar::slotChangeDelayButtonPressed()
 
     if (ok)
     {
-        emit signalDelaySelected(delay);
+        d->settings->delay = delay;
     }
 
     if (running)

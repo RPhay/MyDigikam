@@ -64,7 +64,6 @@ Q_SIGNALS:
     void signalClose();
     void signalPlay();
     void signalPause();
-    void signalDelaySelected(int);
 
 protected:
 

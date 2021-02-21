@@ -113,7 +113,6 @@ private Q_SLOTS:
     void    slotPrev();
     void    slotNext();
     void    slotClose();
-    void    slotChangeDelay(int delay);
 
     void    slotVideoLoaded(bool);
     void    slotVideoFinished();
@@ -127,7 +126,10 @@ private:
     void         printComments();
     void         printProgress();
     void         showEndOfShow();
+    void         showOverlays();
+    void         hideOverlays();
     void         readSettings();
+
     EffectMethod getRandomEffect();
 
 private:

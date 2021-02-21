@@ -74,7 +74,6 @@ Q_SIGNALS:
     void signalPause();
     void signalUpdateSettings();
     void signalScreenSelected(int);
-    void signalDelaySelected(double);
 
 private Q_SLOTS:
 

@@ -69,7 +69,6 @@ private Q_SLOTS:
 
     void slotUpdateSettings();
     void slotProgressTimer();
-    void slotChangeSlideShowDelay(double num);
     void slotStart();
 
 private:

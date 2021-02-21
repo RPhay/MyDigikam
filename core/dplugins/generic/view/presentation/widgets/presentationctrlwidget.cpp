@@ -213,24 +213,31 @@ void PresentationCtrlWidget::keyPressEvent(QKeyEvent* event)
 
 void PresentationCtrlWidget::slotChangeDelayButtonPressed()
 {
-    emit signalPause();
-
     bool ok;
-    int min   = m_sharedData->useMilliseconds ? 100 : 1;
-    int max   = m_sharedData->useMilliseconds ? 120000 : 120;
-    int delay = m_sharedData->useMilliseconds ? m_sharedData->delay
-                                              : m_sharedData->delay / 1000;
+    bool running = (!isPaused() && m_playButton->isEnabled());
+    int min      = m_sharedData->useMilliseconds ? 100 : 1;
+    int max      = m_sharedData->useMilliseconds ? 120000 : 120;
+    int delay    = m_sharedData->useMilliseconds ? m_sharedData->delay
+                                                 : m_sharedData->delay / 1000;
 
-    delay     = QInputDialog::getInt(this, i18n("Specify delay for slide show"),
-                                     i18n("Delay:"), delay , min, max, min, &ok);
+    if (running)
+    {
+        m_playButton->animateClick();
+    }
+
+    delay = QInputDialog::getInt(this, i18n("Specify delay for slide show"),
+                                 i18n("Delay:"), delay , min, max, min, &ok);
+
+    delay = m_sharedData->useMilliseconds ? delay : delay * 1000;
 
     if (ok)
     {
-        emit signalDelaySelected(delay);
+        m_sharedData->delay = delay;
     }
-    else
+
+    if (running)
     {
-        emit signalDelaySelected(m_sharedData->delay);
+        m_playButton->animateClick();
     }
 }
 
