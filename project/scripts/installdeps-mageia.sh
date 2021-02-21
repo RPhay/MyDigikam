@@ -28,6 +28,7 @@ urpmi --auto \
       subversion \
       cmake \
       ccache \
+      icoutils \
       valgrind \
       cppcheck \
       python3-pygments \
@@ -36,6 +37,9 @@ urpmi --auto \
       perl-Tie-IxHash \
       perl-libxml-perl \
       doxygen \
+      hugin \
+      kate \
+      ktexteditor-plugins \
       extra-cmake-modules \
       gcc-c++ \
       gperf \
