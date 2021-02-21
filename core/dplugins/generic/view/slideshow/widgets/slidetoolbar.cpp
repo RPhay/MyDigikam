@@ -250,10 +250,25 @@ void SlideToolBar::slotPlayBtnToggled()
 void SlideToolBar::slotChangeDelayButtonPressed()
 {
     bool ok;
+    bool running = (!isPaused() && d->playBtn->isEnabled());
+
+    if (running)
+    {
+        d->playBtn->animateClick();
+    }
+
     double num = QInputDialog::getDouble(this, i18n("Specify delay for slide show"),
                                          i18n("Delay:"), 1 , 1, 3600, 1, &ok);
 
-    emit signalDelaySelected(num);
+    if (ok)
+    {
+        emit signalDelaySelected(num);
+    }
+
+    if (running)
+    {
+        d->playBtn->animateClick();
+    }
 }
 
 void SlideToolBar::slotNexPrevClicked()
