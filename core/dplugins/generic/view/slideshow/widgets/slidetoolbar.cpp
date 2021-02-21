@@ -62,7 +62,8 @@ public:
         setupBtn        (nullptr),
         screenSelectBtn (nullptr),
         currentlyPause  (false),
-        configDialog    (nullptr)
+        configDialog    (nullptr),
+        settings        (nullptr)
     {
     }
 
@@ -77,6 +78,7 @@ public:
     bool                  currentlyPause;
 
     SetupSlideShowDialog* configDialog;
+    SlideShowSettings*    settings;
 };
 
 SlideToolBar::SlideToolBar(SlideShowSettings* const settings, QWidget* const parent)
@@ -86,6 +88,8 @@ SlideToolBar::SlideToolBar(SlideShowSettings* const settings, QWidget* const par
     setMouseTracking(true);
     setContentsMargins(QMargins());
 
+    d->settings       = settings;
+
     d->playBtn        = new QToolButton(this);
     d->prevBtn        = new QToolButton(this);
     d->nextBtn        = new QToolButton(this);
@@ -93,10 +97,10 @@ SlideToolBar::SlideToolBar(SlideShowSettings* const settings, QWidget* const par
     d->delayBtn       = new QToolButton(this);
     d->setupBtn       = new QToolButton(this);
 
-    d->configDialog   = new SetupSlideShowDialog(settings, this);
+    d->configDialog   = new SetupSlideShowDialog(d->settings, this);
 
     d->playBtn->setCheckable(true);
-    d->playBtn->setChecked(!settings->autoPlayEnabled);
+    d->playBtn->setChecked(!d->settings->autoPlayEnabled);
     d->playBtn->setFocusPolicy(Qt::NoFocus);
     d->prevBtn->setFocusPolicy(Qt::NoFocus);
     d->nextBtn->setFocusPolicy(Qt::NoFocus);
@@ -112,8 +116,8 @@ SlideToolBar::SlideToolBar(SlideShowSettings* const settings, QWidget* const par
     d->delayBtn->setIconSize(s);
     d->setupBtn->setIconSize(s);
 
-    QString iconString = settings->autoPlayEnabled ? QLatin1String("media-playback-pause")
-                                                   : QLatin1String("media-playback-start");
+    QString iconString = d->settings->autoPlayEnabled ? QLatin1String("media-playback-pause")
+                                                      : QLatin1String("media-playback-start");
     d->playBtn->setIcon(QIcon::fromTheme(iconString));
     d->prevBtn->setIcon(QIcon::fromTheme(QLatin1String("media-skip-backward")));
     d->nextBtn->setIcon(QIcon::fromTheme(QLatin1String("media-skip-forward")));
@@ -146,7 +150,7 @@ SlideToolBar::SlideToolBar(SlideShowSettings* const settings, QWidget* const par
             act->setCheckable(true);
             group->addAction(act);
 
-            if (i == settings->slideScreen)
+            if (i == d->settings->slideScreen)
             {
                act->setChecked(true);
             }
@@ -250,6 +254,7 @@ void SlideToolBar::slotPlayBtnToggled()
 void SlideToolBar::slotChangeDelayButtonPressed()
 {
     bool ok;
+    double delay = d->settings->delay;
     bool running = (!isPaused() && d->playBtn->isEnabled());
 
     if (running)
@@ -257,12 +262,12 @@ void SlideToolBar::slotChangeDelayButtonPressed()
         d->playBtn->animateClick();
     }
 
-    double num = QInputDialog::getDouble(this, i18n("Specify delay for slide show"),
-                                         i18n("Delay:"), 1 , 1, 3600, 1, &ok);
+    delay = QInputDialog::getDouble(this, i18n("Specify delay for slide show"),
+                                          i18n("Delay:"), delay, 1, 3600, 1, &ok);
 
     if (ok)
     {
-        emit signalDelaySelected(num);
+        emit signalDelaySelected(delay);
     }
 
     if (running)
