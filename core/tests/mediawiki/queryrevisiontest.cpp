@@ -105,23 +105,23 @@ public:
     explicit QueryRevisionTest(QObject* const parent = nullptr)
     {
         Q_UNUSED(parent);
-        revisionCount = 0;
+        m_revisionCount = 0;
     }
 
 public Q_SLOTS:
 
     void revisionHandle(const QList<Revision>& revision)
     {
-        ++revisionCount;
-        revisionResults = revision;
+        ++m_revisionCount;
+        m_revisionResults = revision;
     }
 
 private Q_SLOTS:
 
     void init()
     {
-        revisionCount = 0;
-        revisionResults.clear();
+        m_revisionCount = 0;
+        m_revisionResults.clear();
     }
 
     void testrvpropall()
@@ -154,11 +154,11 @@ private Q_SLOTS:
         FakeServer::Request request = requests[0];
         QCOMPARE( requestTrue.type, request.type);
         QCOMPARE(job->error(), error);
-        QCOMPARE(revisionCount, 1);
+        QCOMPARE(m_revisionCount, 1);
         QCOMPARE(requestTrue.value, request.value);
-        QCOMPARE(revisionResults.size(), size);
+        QCOMPARE(m_revisionResults.size(), size);
 
-        QCOMPARE(revisionResults, results);
+        QCOMPARE(m_revisionResults, results);
 
         QVERIFY(fakeserver.isAllScenarioDone());
     }
@@ -280,8 +280,8 @@ private Q_SLOTS:
         }
 
         QCOMPARE(job->error(), error);
-        QCOMPARE(revisionCount, 0);
-        QCOMPARE(revisionResults.size(), 0);
+        QCOMPARE(m_revisionCount, 0);
+        QCOMPARE(m_revisionResults.size(), 0);
 
         if (scenario != QStringLiteral("error serveur"))
         {
@@ -599,12 +599,12 @@ private Q_SLOTS:
 
         FakeServer::Request request = requests[0];
         QCOMPARE(request.type, requestTrue.type);
-        QCOMPARE(revisionCount, 1);
+        QCOMPARE(m_revisionCount, 1);
         QCOMPARE(request.value, requestTrue.value);
 
         QCOMPARE(job->error(), error);
-        QCOMPARE(revisionResults.size(), size);
-        QCOMPARE(revisionResults, results);
+        QCOMPARE(m_revisionResults.size(), size);
+        QCOMPARE(m_revisionResults, results);
 
         QVERIFY(fakeserver.isAllScenarioDone());
     }
@@ -673,12 +673,12 @@ private Q_SLOTS:
 
         FakeServer::Request request = requests[0];
         QCOMPARE( requestTrue.type, request.type);
-        QCOMPARE(revisionCount, 1);
+        QCOMPARE(m_revisionCount, 1);
         QCOMPARE(requestTrue.value, request.value);
 
         QCOMPARE(job->error(), error);
-        QCOMPARE(revisionResults.size(), size);
-        QCOMPARE(revisionResults, results);
+        QCOMPARE(m_revisionResults.size(), size);
+        QCOMPARE(m_revisionResults, results);
 
         QVERIFY(fakeserver.isAllScenarioDone());
     }
@@ -714,7 +714,7 @@ private Q_SLOTS:
                                         QString(),
                                         QStringLiteral("/?format=xml&action=query&prop=revisions&pageids=2993&rvprop=timestamp%7Cuser%7Ccomment%7Ccontent"));
         QueryRevision::Properties rvprop = QueryRevision::Timestamp | QueryRevision::User | QueryRevision::Comment | QueryRevision::Content;
-        int id = 2993;
+        int id                           = 2993;
 
         Iface MediaWiki(QUrl(QStringLiteral("http://127.0.0.1:12566")));
 
@@ -733,9 +733,9 @@ private Q_SLOTS:
         QList<FakeServer::Request> requests = fakeserver.getRequest();
         QCOMPARE(requests.size(), 1);
 
-        FakeServer::Request request = requests[0];
+        FakeServer::Request request         = requests[0];
         QCOMPARE( requestTrue.type, request.type);
-        QCOMPARE(revisionCount, 0);
+        QCOMPARE(m_revisionCount, 0);
         QCOMPARE(requestTrue.value, request.value);
 
         QVERIFY(fakeserver.isAllScenarioDone());
@@ -747,7 +747,7 @@ private Q_SLOTS:
                                         QString(),
                                         QStringLiteral("/?format=xml&action=query&prop=revisions&revids=2993&rvprop=timestamp%7Cuser%7Ccomment%7Ccontent"));
         QueryRevision::Properties rvprop = QueryRevision::Timestamp |QueryRevision::User | QueryRevision::Comment | QueryRevision::Content;
-        int id = 2993;
+        int id                           = 2993;
 
         Iface MediaWiki(QUrl(QStringLiteral("http://127.0.0.1:12566")));
 
@@ -767,8 +767,8 @@ private Q_SLOTS:
         QCOMPARE(requests.size(), 1);
 
         FakeServer::Request request = requests[0];
-        QCOMPARE( requestTrue.type, request.type);
-        QCOMPARE(revisionCount, 0);
+        QCOMPARE(requestTrue.type, request.type);
+        QCOMPARE(m_revisionCount, 0);
         QCOMPARE(requestTrue.value, request.value);
 
         QVERIFY(fakeserver.isAllScenarioDone());
@@ -776,8 +776,8 @@ private Q_SLOTS:
 
 private:
 
-    int             revisionCount;
-    QList<Revision> revisionResults;
+    int             m_revisionCount;
+    QList<Revision> m_revisionResults;
 };
 
 QTEST_MAIN(QueryRevisionTest)

@@ -58,14 +58,14 @@ public Q_SLOTS:
 
     void imagesHandle(const QList<Image>& images)
     {
-        imagesReceivedList.push_back(images);
+        m_imagesReceivedList.push_back(images);
     }
 
 private Q_SLOTS:
 
     void init()
     {
-        imagesReceivedList.clear();
+        m_imagesReceivedList.clear();
     }
 
     void testConstructor()
@@ -126,7 +126,7 @@ private Q_SLOTS:
         }
 
         // Test pages received
-        QCOMPARE(imagesReceivedList, imagesExpectedList);
+        QCOMPARE(m_imagesReceivedList, imagesExpectedList);
 
         // Test fakeserver
         QVERIFY(fakeserver.isAllScenarioDone());
@@ -189,7 +189,7 @@ private Q_SLOTS:
 
 private:
 
-    QList<QList<Image> > imagesReceivedList;
+    QList<QList<Image> > m_imagesReceivedList;
 };
 
 QTEST_MAIN(QueryImagesTest)

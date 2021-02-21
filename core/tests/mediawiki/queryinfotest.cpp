@@ -59,30 +59,30 @@ public:
     explicit QueryInfoTest(QObject* const parent = nullptr)
     {
         Q_UNUSED(parent);
-        queryInfoCount = 0;
-        m_mediaWiki    = nullptr;
+        m_queryInfoCount = 0;
+        m_mediaWiki      = nullptr;
     }
 
 public Q_SLOTS:
 
     void queryInfoHandlePages(const Page& page)
     {
-        ++queryInfoCount;
-        queryInfoResultsPage = page;
+        ++m_queryInfoCount;
+        m_queryInfoResultsPage = page;
     }
 
     void queryInfoHandleProtection(const QVector<Protection>& protection)
     {
-        ++queryInfoCount;
-        queryInfoResultsProtections = protection;
+        ++m_queryInfoCount;
+        m_queryInfoResultsProtections = protection;
     }
 
 private Q_SLOTS:
 
     void initTestCase()
     {
-        queryInfoCount    = 0;
-        this->m_mediaWiki = new Iface(QUrl(QStringLiteral("http://127.0.0.1:12566")));
+        m_queryInfoCount = 0;
+        m_mediaWiki      = new Iface(QUrl(QStringLiteral("http://127.0.0.1:12566")));
     }
 
     void constructQuery()
@@ -90,7 +90,7 @@ private Q_SLOTS:
         QFETCH(QString, request);
         QFETCH(QueryInfo*, job);
 
-        queryInfoCount = 0;
+        m_queryInfoCount = 0;
         FakeServer fakeserver;
         fakeserver.startAndWait();
 
@@ -99,9 +99,9 @@ private Q_SLOTS:
         QList<FakeServer::Request> requests = fakeserver.getRequest();
         QCOMPARE(requests.size(), 1);
 
-        FakeServer::Request requestServeur = requests[0];
+        FakeServer::Request requestServeur  = requests[0];
         QCOMPARE(requestServeur.agent, m_mediaWiki->userAgent());
-        QCOMPARE(requestServeur.type, QStringLiteral("GET"));
+        QCOMPARE(requestServeur.type,  QStringLiteral("GET"));
         QCOMPARE(requestServeur.value, request);
     }
 
@@ -131,7 +131,7 @@ private Q_SLOTS:
                 << QStringLiteral("/?format=xml&action=query&prop=info&inprop=protection%7Ctalkid%7Cwatched%7Csubjectid%7Curl%7Creadable%7Cpreload&pageids=25255")
                 << j3;
 
-        QueryInfo *j4 = new QueryInfo(*m_mediaWiki);
+        QueryInfo* const j4 = new QueryInfo(*m_mediaWiki);
         j4->setRevisionId(44545);
 
         QTest::newRow("Revision Id")
@@ -146,25 +146,25 @@ private Q_SLOTS:
         QFETCH(QVector<Protection> ,protections);
 
         QueryInfo job(*m_mediaWiki);
-        queryInfoCount = 0;
+        m_queryInfoCount = 0;
         FakeServer fakeserver;
         fakeserver.addScenario(scenario);
         fakeserver.startAndWait();
 
         connect(&job, SIGNAL(page(Page)),
-                this,SLOT(queryInfoHandlePages(Page)));
+                this, SLOT(queryInfoHandlePages(Page)));
 
         connect(&job, SIGNAL(protection(QVector<Protection>)),
-                this,SLOT(queryInfoHandleProtection(QVector<Protection>)));
+                this, SLOT(queryInfoHandleProtection(QVector<Protection>)));
 
         job.exec();   // krazy:exclude=crashy
 
         QList<FakeServer::Request> requests = fakeserver.getRequest();
         QCOMPARE(requests.size(), 1);
 
-        QCOMPARE(queryInfoCount, 2);
-        QCOMPARE(queryInfoResultsPage, page);
-        QCOMPARE(queryInfoResultsProtections, protections);
+        QCOMPARE(m_queryInfoCount, 2);
+        QCOMPARE(m_queryInfoResultsPage, page);
+        QCOMPARE(m_queryInfoResultsProtections, protections);
         QVERIFY(fakeserver.isAllScenarioDone());
     }
 
@@ -220,14 +220,14 @@ private Q_SLOTS:
 
     void cleanupTestCase()
     {
-        delete this->m_mediaWiki;
+        delete m_mediaWiki;
     }
 
 private:
 
-    int                  queryInfoCount;
-    Page                 queryInfoResultsPage;
-    QVector <Protection> queryInfoResultsProtections;
+    int                  m_queryInfoCount;
+    Page                 m_queryInfoResultsPage;
+    QVector <Protection> m_queryInfoResultsProtections;
     Iface*               m_mediaWiki;
 };
 

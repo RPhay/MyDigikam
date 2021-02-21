@@ -46,27 +46,27 @@ public:
     explicit QueryImageInfoTest(QObject* const parent = nullptr)
     {
         Q_UNUSED(parent);
-        requestWithMissingTitleHasBeenSent = false;
+        m_requestWithMissingTitleHasBeenSent = false;
     }
 
 public Q_SLOTS:
 
     void resultHandle(const QList<Imageinfo>& imageinfos)
     {
-        imageinfosReceived.push_back(imageinfos);
+        m_imageinfosReceived.push_back(imageinfos);
     }
 
     void missingTitleHandle(const QList<Imageinfo>& imageinfos)
     {
         Q_UNUSED(imageinfos)
-        requestWithMissingTitleHasBeenSent = true;
+        m_requestWithMissingTitleHasBeenSent = true;
     }
 
 private Q_SLOTS:
 
     void init()
     {
-        imageinfosReceived = QList<QList<Imageinfo> >();
+        m_imageinfosReceived = QList<QList<Imageinfo> >();
     }
 
     void testQuery()
@@ -165,7 +165,7 @@ private Q_SLOTS:
             }
         }
 
-        QCOMPARE(imageinfosReceived, imageinfosExpected);
+        QCOMPARE(m_imageinfosReceived, imageinfosExpected);
     }
 
     void testMissingTitle()
@@ -203,13 +203,13 @@ private Q_SLOTS:
         QCOMPARE(job->error(), int(QueryImageinfo::MissingMandatoryParameter));
 
         // Test fakeserver
-        QCOMPARE(requestWithMissingTitleHasBeenSent, false);
+        QCOMPARE(m_requestWithMissingTitleHasBeenSent, false);
     }
 
 private:
 
-    QList<QList<Imageinfo> > imageinfosReceived;
-    bool                     requestWithMissingTitleHasBeenSent;
+    QList<QList<Imageinfo> > m_imageinfosReceived;
+    bool                     m_requestWithMissingTitleHasBeenSent;
 };
 
 QTEST_MAIN(QueryImageinfoTest)
