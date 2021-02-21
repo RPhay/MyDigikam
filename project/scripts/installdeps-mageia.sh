@@ -42,10 +42,17 @@ urpmi --auto \
       ruby \
       bison \
       flex \
+      mingw32-nsis \
+      clang-analyzer \
+      intltool \
+      lzip \
+      eigen3-devel \
+      lensfun-devel \
+      marble-devel \
+      opencv-devel \
       libasan-devel \
       libgomp-devel \
       lib64expat-devel \
-      eigen3-devel \
       lib64lcms2-devel \
       lib64qtav-devel \
       lib64ffmpeg-devel \
@@ -54,7 +61,7 @@ urpmi --auto \
       lib64sane1-devel \
       lib64jasper-devel \
       lib64xslt-devel \
-      lib64kf5calendarcore-devel \
+      lib64exiv2-devel \
       lib64xml2-devel \
       lib64jpeg-devel \
       lib64png-devel \
@@ -72,24 +79,18 @@ urpmi --auto \
       lib64qt5concurrent-devel \
       lib64qt5opengl-devel \
       lib64qt5printsupport-devel \
+      lib64qt5webengine-devel \
       lib64qt5sql-devel \
       lib64qt5svg-devel \
-      lib64exiv2-devel \
-      lensfun-devel \
-      marble-devel \
-      opencv-devel \
       lib64kf5sane-devel \
       lib64kf5xmlgui-devel \
       lib64kf5threadweaver-devel \
-      lib64qt5webengine-devel \
       lib64kf5kio-devel \
       lib64kf5notifications-devel \
       lib64kf5notifyconfig-devel \
       lib64kf5filemetadata-devel \
-      mingw32-nsis \
-      clang-analyzer \
-      intltool \
-      lzip
+      lib64kf5doctools-devel \
+      lib64kf5calendarcore-devel
       
 
 
