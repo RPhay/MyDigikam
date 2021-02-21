@@ -73,6 +73,6 @@ private:
     Private* const d;
 };
 
-}  // namespace Digikam
+} // namespace Digikam
 
 #endif // DIGIKAM_DPLUGIN_SETUP_H

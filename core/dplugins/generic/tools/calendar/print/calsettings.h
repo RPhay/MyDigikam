@@ -141,6 +141,6 @@ private:
     Private* const d;
 };
 
-}  // Namespace Digikam
+} // namespace Digikam
 
 #endif // DIGIKAM_CAL_SETTINGS_H

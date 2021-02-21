@@ -107,4 +107,4 @@ void TimeAdjustThread::cancel()
     ActionThreadBase::cancel();
 }
 
-}  // namespace DigikamGenericTimeAdjustPlugin
+} // namespace DigikamGenericTimeAdjustPlugin

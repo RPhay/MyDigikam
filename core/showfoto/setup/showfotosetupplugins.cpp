@@ -99,4 +99,4 @@ void SetupPlugins::applySettings()
     d->setupDImg->applySettings();
 }
 
-}  // namespace ShowFoto
+} // namespace ShowFoto

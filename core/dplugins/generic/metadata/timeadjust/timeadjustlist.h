@@ -71,6 +71,6 @@ public:
     void setStatus(const QMap<QUrl, int>& status);
 };
 
-}  // namespace DigikamGenericTimeAdjustPlugin
+} // namespace DigikamGenericTimeAdjustPlugin
 
 #endif // DIGIKAM_TIME_ADJUST_LIST_H

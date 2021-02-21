@@ -138,6 +138,6 @@ public:
     static int            scannedForFacesTagId();
 };
 
-}  // Namespace Digikam
+} // namespace Digikam
 
 #endif // DIGIKAM_FACE_TAGS_H

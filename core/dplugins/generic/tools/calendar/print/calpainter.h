@@ -65,6 +65,6 @@ private:
     Private* const d;
 };
 
-}  // Namespace Digikam
+} // namespace Digikam
 
 #endif // DIGIKAM_CAL_PAINTER_H

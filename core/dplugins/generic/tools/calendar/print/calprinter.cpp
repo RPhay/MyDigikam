@@ -113,4 +113,4 @@ void CalPrinter::cancel()
     d->cancelled = true;
 }
 
-}  // Namespace Digikam
+} // namespace Digikam

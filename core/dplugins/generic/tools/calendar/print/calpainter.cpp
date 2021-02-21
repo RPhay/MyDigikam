@@ -379,4 +379,4 @@ void CalPainter::paint(int month)
     }
 }
 
-}  // Namespace Digikam
+} // namespace Digikam

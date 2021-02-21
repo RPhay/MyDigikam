@@ -234,4 +234,4 @@ void DPluginSetup::slotSearchResult(int found)
     d->pluginFilter->slotSearchResult(found ? true : false);
 }
 
-}  // namespace Digikam
+} // namespace Digikam

@@ -285,4 +285,4 @@ QDebug operator<<(QDebug dbg, const FaceTagsIface& f)
     return dbg;
 }
 
-}  // Namespace Digikam
+} // namespace Digikam

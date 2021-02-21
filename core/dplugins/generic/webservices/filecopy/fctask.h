@@ -69,6 +69,6 @@ private:
     Private* const d;
 };
 
-}  // namespace DigikamGenericFileCopyPlugin
+} // namespace DigikamGenericFileCopyPlugin
 
 #endif // DIGIKAM_FC_TASK

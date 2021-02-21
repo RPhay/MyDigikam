@@ -533,4 +533,4 @@ void TimeAdjustDialog::slotUpdateTimestamps()
     d->updateTimer->start();
 }
 
-}  // namespace DigikamGenericTimeAdjustPlugin
+} // namespace DigikamGenericTimeAdjustPlugin

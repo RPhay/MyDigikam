@@ -75,4 +75,4 @@ void FCThread::cancel()
     ActionThreadBase::cancel();
 }
 
-}  // namespace DigikamGenericFileCopyPlugin
+} // namespace DigikamGenericFileCopyPlugin

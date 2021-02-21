@@ -101,6 +101,6 @@ private:
     Private* const d;
 };
 
-}  // namespace DigikamGenericTimeAdjustPlugin
+} // namespace DigikamGenericTimeAdjustPlugin
 
 #endif // DIGIKAM_TIME_ADJUST_DIALOG_H

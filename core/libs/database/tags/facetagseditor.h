@@ -193,6 +193,6 @@ private:
     Q_DISABLE_COPY(FaceTagsEditor)
 };
 
-}  // Namespace Digikam
+} // namespace Digikam
 
 #endif // DIGIKAM_FACE_TAGS_EDITOR_H

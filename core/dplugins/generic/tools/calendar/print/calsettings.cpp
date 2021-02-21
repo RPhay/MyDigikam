@@ -369,4 +369,4 @@ void CalSettings::loadSpecial(const QUrl& url, const QColor& color)
 
 #endif // HAVE_KCALENDAR
 
-}  // Namespace Digikam
+} // namespace Digikam

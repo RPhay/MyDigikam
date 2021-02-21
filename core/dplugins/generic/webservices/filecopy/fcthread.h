@@ -58,6 +58,6 @@ Q_SIGNALS:
     void signalCancelTask();
 };
 
-}  // namespace DigikamGenericFileCopyPlugin
+} // namespace DigikamGenericFileCopyPlugin
 
 #endif // DIGIKAM_FC_THREAD_H
