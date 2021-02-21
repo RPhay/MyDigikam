@@ -206,7 +206,7 @@ PresentationGL::PresentationGL(PresentationContainer* const sharedData)
 
     d->sharedData  = sharedData;
 
-    d->slideCtrlWidget = new PresentationCtrlWidget(this);
+    d->slideCtrlWidget = new PresentationCtrlWidget(this, d->sharedData);
     d->slideCtrlWidget->hide();
 
     if (!d->sharedData->loop)

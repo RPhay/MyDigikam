@@ -33,6 +33,7 @@
 // Local includes
 
 #include "ui_presentationctrlwidget.h"
+#include "presentationcontainer.h"
 
 namespace DigikamGenericPresentationPlugin
 {
@@ -44,7 +45,8 @@ class PresentationCtrlWidget : public QWidget,
 
 public:
 
-    explicit PresentationCtrlWidget(QWidget* const parent);
+    explicit PresentationCtrlWidget(QWidget* const parent,
+                                    PresentationContainer* const sharedData);
     ~PresentationCtrlWidget()            override;
 
     bool canHide()  const;
@@ -76,7 +78,8 @@ private Q_SLOTS:
 
 private:
 
-    bool         m_canHide;
+    bool                    m_canHide;
+    PresentationContainer*  m_sharedData;
 
     friend class PresentationWidget;
     friend class PresentationGL;

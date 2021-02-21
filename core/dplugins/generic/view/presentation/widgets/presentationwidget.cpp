@@ -223,7 +223,7 @@ PresentationWidget::PresentationWidget(PresentationContainer* const sharedData)
 
     d->sharedData   = sharedData;
 
-    d->slideCtrlWidget = new PresentationCtrlWidget(this);
+    d->slideCtrlWidget = new PresentationCtrlWidget(this, d->sharedData);
     d->slideCtrlWidget->hide();
     d->slideCtrlWidget->move(d->deskWidth - d->slideCtrlWidget->width(), d->deskY);
 

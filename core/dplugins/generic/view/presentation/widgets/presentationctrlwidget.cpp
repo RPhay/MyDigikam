@@ -45,8 +45,11 @@
 namespace DigikamGenericPresentationPlugin
 {
 
-PresentationCtrlWidget::PresentationCtrlWidget(QWidget* const parent)
-    : QWidget(parent)
+PresentationCtrlWidget::PresentationCtrlWidget(QWidget* const parent,
+                                               PresentationContainer* const sharedData)
+    : QWidget     (parent),
+      m_canHide   (true),
+      m_sharedData(sharedData)
 {
     setupUi(this);
     m_playButton->setCheckable(true);
@@ -62,8 +65,6 @@ PresentationCtrlWidget::PresentationCtrlWidget(QWidget* const parent)
     m_playButton->setIcon(QIcon::fromTheme(QLatin1String("media-playback-start")));
     m_stopButton->setIcon(QIcon::fromTheme(QLatin1String("media-playback-stop")));
     m_delayButton->setIcon(QIcon::fromTheme(QLatin1String("appointment-new")));
-
-    m_canHide = true;
 
     connect(m_playButton, SIGNAL(toggled(bool)),
             this, SLOT(slotPlayButtonToggled()));
@@ -215,12 +216,21 @@ void PresentationCtrlWidget::slotChangeDelayButtonPressed()
     emit signalPause();
 
     bool ok;
-    int num = QInputDialog::getInt(this, i18n("Specify delay for slide show"),
-                                   i18n("Delay:"), 1 , 1, 120, 1, &ok);
+    int min   = m_sharedData->useMilliseconds ? 100 : 1;
+    int max   = m_sharedData->useMilliseconds ? 120000 : 120;
+    int delay = m_sharedData->useMilliseconds ? m_sharedData->delay
+                                              : m_sharedData->delay / 1000;
+
+    delay     = QInputDialog::getInt(this, i18n("Specify delay for slide show"),
+                                     i18n("Delay:"), delay , min, max, min, &ok);
 
     if (ok)
     {
-        emit signalDelaySelected(num);
+        emit signalDelaySelected(delay);
+    }
+    else
+    {
+        emit signalDelaySelected(m_sharedData->delay);
     }
 }
 
