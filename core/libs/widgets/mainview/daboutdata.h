@@ -38,6 +38,7 @@ class KAboutData;
 
 namespace Digikam
 {
+
 class DXmlGuiWindow;
 
 class DIGIKAM_EXPORT DAboutData : public QObject
@@ -59,7 +60,7 @@ public:
 private:
 
     // Disable
-    DAboutData(QObject*);
+    explicit DAboutData(QObject*);
 };
 
 } // namespace Digikam
