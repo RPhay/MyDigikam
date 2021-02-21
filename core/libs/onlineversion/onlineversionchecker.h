@@ -60,7 +60,7 @@ public:
     /**
      * Return true if the system and architecture are supported by the bundle workflow.
      * 'arch' is the relevant prefix for the bundle architecture.
-     * 'ext'  is the relevant bundle file extention.
+     * 'ext'  is the relevant bundle file extension.
      */
     static bool bundleProperties(QString& arch, QString& ext);
 

@@ -28,7 +28,7 @@
 
 #include <klocalizedstring.h>
 
-// Local includes.
+// Local includes
 
 #include "panomanager.h"
 #include "panointropage.h"

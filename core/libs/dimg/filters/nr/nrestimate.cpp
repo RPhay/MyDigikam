@@ -38,7 +38,7 @@
 
 #include "digikam_opencv.h"
 
-// Qt includes.
+// Qt includes
 
 #include <QTextStream>
 #include <QFile>
