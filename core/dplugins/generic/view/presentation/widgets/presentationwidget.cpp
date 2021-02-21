@@ -811,6 +811,7 @@ void PresentationWidget::slotMouseMoveTimeOut()
 
     if ((pos.y() < (d->deskY + 20))                     ||
         (pos.y() > (d->deskY + d->deskHeight - 20 - 1)) ||
+        !d->timer->isActive()                           ||
         d->slideCtrlWidget->underMouse()
 
 #ifdef HAVE_MEDIAPLAYER
