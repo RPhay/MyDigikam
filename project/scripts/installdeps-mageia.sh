@@ -29,6 +29,12 @@ urpmi --auto \
       cmake \
       ccache \
       valgrind \
+      cppcheck \
+      python3-pygments \
+      python3-beautifulsoup4 \
+      python3-soupsieve \
+      perl-Tie-IxHash \
+      perl-libxml-perl \
       doxygen \
       extra-cmake-modules \
       gcc-c++ \
