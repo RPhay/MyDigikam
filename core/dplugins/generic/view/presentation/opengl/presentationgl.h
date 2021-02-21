@@ -116,7 +116,6 @@ private Q_SLOTS:
     void slotPrev();
     void slotNext();
     void slotClose();
-    void slotChangeDelay(int);
 
 private:
 

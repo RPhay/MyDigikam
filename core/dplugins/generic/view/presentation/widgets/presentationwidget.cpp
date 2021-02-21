@@ -247,9 +247,6 @@ PresentationWidget::PresentationWidget(PresentationContainer* const sharedData)
     connect(d->slideCtrlWidget, SIGNAL(signalClose()),
             this, SLOT(slotClose()));
 
-    connect(d->slideCtrlWidget, SIGNAL(signalDelaySelected(int)),
-            this, SLOT(slotChangeDelay(int)));
-
 #ifdef HAVE_MEDIAPLAYER
 
     // -- playback widget -------------------------------
@@ -957,22 +954,6 @@ void PresentationWidget::slotClose()
     close();
 }
 
-void PresentationWidget::slotChangeDelay(int delay)
-{
-    d->timer->stop();
-
-    if (d->slideCtrlWidget->isHidden())
-    {
-        int w = d->slideCtrlWidget->width();
-        d->slideCtrlWidget->move(d->deskWidth - w - 1, 0);
-        d->slideCtrlWidget->show();
-    }
-
-    d->sharedData->delay = d->sharedData->useMilliseconds ? delay
-                                                          : delay * 1000;
-    d->timer->start();
-}
-
 void PresentationWidget::slotVideoLoaded(bool loaded)
 {
     if (loaded)
@@ -1109,7 +1090,6 @@ void PresentationWidget::slotTimeOut()
     if (tmout <= 0)                 // Effect finished -> delay.
     {
         tmout            = d->sharedData->delay;
-        qInfo()<< "set new tmout" << tmout;
         d->effectRunning = false;
     }
 
@@ -1119,7 +1099,6 @@ void PresentationWidget::slotTimeOut()
     }
     else
     {
-        qInfo()<< "set new timer" << tmout;
         d->timer->setSingleShot(true);
         d->timer->start(tmout);
     }

@@ -113,7 +113,6 @@ private Q_SLOTS:
     void    slotPrev();
     void    slotNext();
     void    slotClose();
-    void    slotChangeDelay(int delay);
 
     void    slotVideoLoaded(bool);
     void    slotVideoFinished();
