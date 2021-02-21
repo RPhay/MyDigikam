@@ -31,7 +31,6 @@
 #include <QDirIterator>
 #include <QButtonGroup>
 #include <QCheckBox>
-#include <QGroupBox>
 #include <QComboBox>
 #include <QFile>
 #include <QGroupBox>

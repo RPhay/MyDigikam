@@ -24,12 +24,12 @@
 #ifndef DIGIKAM_VERSION_H
 #define DIGIKAM_VERSION_H
 
-// Qt includes.
+// Qt includes
 
 #include <QString>
 #include <QDateTime>
 
-// Local includes.
+// Local includes
 
 #include "digikam_export.h"
 
@@ -62,6 +62,6 @@ DIGIKAM_EXPORT const QDateTime digiKamBuildDate();
  */
 DIGIKAM_EXPORT int digiKamMakeIntegerVersion(int major, int minor, int patch);
 
-}  // namespace Digikam
+} // namespace Digikam
 
 #endif // DIGIKAM_VERSION_H

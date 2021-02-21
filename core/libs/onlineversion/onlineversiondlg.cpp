@@ -50,7 +50,6 @@
 #include <QMargins>
 #include <QGroupBox>
 #include <QTextDocument>
-#include <QTimer>
 
 // KDE includes
 

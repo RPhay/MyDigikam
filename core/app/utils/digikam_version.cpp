@@ -25,16 +25,15 @@
 
 // Qt includes
 
-#include <QLocale>
 #include <QDate>
 #include <QTime>
 #include <QLocale>
 
-// KDE includes.
+// KDE includes
 
 #include <klocalizedstring.h>
 
-// Local includes.
+// Local includes
 
 #include "digikam_gitversion.h"
 #include "digikam_builddate.h"
@@ -84,4 +83,4 @@ const QString additionalInformation()
     return ret;
 }
 
-}  // namespace Digikam
+} // namespace Digikam

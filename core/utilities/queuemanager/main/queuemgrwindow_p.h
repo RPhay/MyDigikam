@@ -37,9 +37,7 @@
 #include <QGridLayout>
 #include <QGroupBox>
 #include <QVBoxLayout>
-#include <QLabel>
 #include <QKeySequence>
-#include <QAction>
 #include <QMenuBar>
 #include <QStatusBar>
 #include <QMenu>
@@ -79,15 +77,7 @@
 #include "thumbnailsize.h"
 #include "sidebar.h"
 #include "dnotificationwrapper.h"
-#include "actionthread.h"
-#include "assignedlist.h"
-#include "queuelist.h"
-#include "queuepool.h"
-#include "queuesettingsview.h"
 #include "statusprogressbar.h"
-#include "sidebar.h"
-#include "toolsettingsview.h"
-#include "toolsview.h"
 
 namespace Digikam
 {
