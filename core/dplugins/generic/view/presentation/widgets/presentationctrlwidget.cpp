@@ -61,7 +61,7 @@ PresentationCtrlWidget::PresentationCtrlWidget(QWidget* const parent)
     m_nextButton->setIcon(QIcon::fromTheme(QLatin1String("media-skip-forward")));
     m_playButton->setIcon(QIcon::fromTheme(QLatin1String("media-playback-start")));
     m_stopButton->setIcon(QIcon::fromTheme(QLatin1String("media-playback-stop")));
-    m_delayButton->setIcon(QIcon::fromTheme(QLatin1String("preferences-system")));
+    m_delayButton->setIcon(QIcon::fromTheme(QLatin1String("appointment-new")));
 
     m_canHide = true;
 
@@ -213,11 +213,15 @@ void PresentationCtrlWidget::keyPressEvent(QKeyEvent* event)
 void PresentationCtrlWidget::slotChangeDelayButtonPressed()
 {
     emit signalPause();
+
     bool ok;
     int num = QInputDialog::getInt(this, i18n("Specify delay for slide show"),
-                                   i18n("Delay:"), 1 , 0, 20, 1, &ok);
+                                   i18n("Delay:"), 1 , 1, 120, 1, &ok);
 
-    emit signalDelaySelected(num);
+    if (ok)
+    {
+        emit signalDelaySelected(num);
+    }
 }
 
 } // namespace DigikamGenericPresentationPlugin
