@@ -39,6 +39,7 @@ urpmi --auto \
       icoutils \
       valgrind \
       cppcheck \
+      python3-mako \
       python3-pygments \
       python3-beautifulsoup4 \
       python3-soupsieve \
