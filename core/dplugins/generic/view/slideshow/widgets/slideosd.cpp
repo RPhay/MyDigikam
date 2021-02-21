@@ -8,6 +8,7 @@
  *
  * Copyright (C) 2014-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  * Copyright (C) 2019-2020 by Minh Nghia Duong <minhnghiaduong997 at gmail dot com>
+ * Copyright (C)      2021 by Phuoc Khanh Le <phuockhanhnk94 at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -54,22 +55,22 @@ class Q_DECL_HIDDEN SlideOSD::Private
 public:
 
     explicit Private()
-      : paused(false),
-        video(false),
-        blink(false),
-        ready(false),
-        refresh(1000),       ///< Progress bar refresh in ms
-        progressBar(nullptr),
-        progressTimer(nullptr),
-        labelsBox(nullptr),
-        progressBox(nullptr),
-        parent(nullptr),
-        slideProps(nullptr),
-        toolBar(nullptr),
-        ratingWidget(nullptr),
-        clWidget(nullptr),
-        plWidget(nullptr),
-        settings(nullptr)
+      : paused          (false),
+        video           (false),
+        blink           (false),
+        ready           (false),
+        refresh         (1000),       ///< Progress bar refresh in ms
+        progressBar     (nullptr),
+        progressTimer   (nullptr),
+        labelsBox       (nullptr),
+        progressBox     (nullptr),
+        parent          (nullptr),
+        slideProps      (nullptr),
+        toolBar         (nullptr),
+        ratingWidget    (nullptr),
+        clWidget        (nullptr),
+        plWidget        (nullptr),
+        settings        (nullptr)
     {
     }
 
@@ -97,7 +98,7 @@ public:
 
 SlideOSD::SlideOSD(SlideShowSettings* const settings, SlideShowLoader* const parent)
     : QWidget(parent),
-      d(new Private())
+      d      (new Private())
 {
     Qt::WindowFlags flags = Qt::FramelessWindowHint  |
                             Qt::WindowStaysOnTopHint |
@@ -108,10 +109,10 @@ SlideOSD::SlideOSD(SlideShowSettings* const settings, SlideShowLoader* const par
     setAttribute(Qt::WA_ShowWithoutActivating, true);
     setMouseTracking(true);
 
-    d->parent     = parent;
-    d->settings   = settings;
+    d->parent       = parent;
+    d->settings     = settings;
 
-    d->slideProps = new SlideProperties(d->settings, this);
+    d->slideProps   = new SlideProperties(d->settings, this);
     d->slideProps->installEventFilter(d->parent);
 
     // ---------------------------------------------------------------
@@ -197,6 +198,8 @@ SlideOSD::SlideOSD(SlideShowSettings* const settings, SlideShowLoader* const par
     connect(d->toolBar, SIGNAL(signalScreenSelected(int)),
             d->parent, SLOT(slotScreenSelected(int)));
 
+    connect(d->toolBar, SIGNAL(signalDelaySelected(double)),
+            this, SLOT(slotChangeSlideShowDelay(double)));
     // ---------------------------------------------------------------
 
     QGridLayout* const grid = new QGridLayout(this);
@@ -400,6 +403,12 @@ bool SlideOSD::isUnderMouse() const
 void SlideOSD::toggleProperties()
 {
     d->slideProps->togglePaintEnabled();
+}
+
+void SlideOSD::slotChangeSlideShowDelay(double num)
+{
+    d->settings->delay = num;
+    d->progressBar->setMaximum(num);
 }
 
 void SlideOSD::setLoadingReady(bool b)

@@ -9,6 +9,7 @@
  * Copyright (C) 2004-2005 by Renchi Raju <renchi dot raju at gmail dot com>
  * Copyright (C) 2006-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  * Copyright (C) 2019-2020 by Minh Nghia Duong <minhnghiaduong997 at gmail dot com>
+ * Copyright (C)      2021 by Phuoc Khanh Le <phuockhanhnk94 at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -49,7 +50,7 @@ class SlideToolBar : public DHBox
 public:
 
     explicit SlideToolBar(SlideShowSettings* const settings, QWidget* const parent);
-    ~SlideToolBar() override;
+    ~SlideToolBar()                  override;
 
     bool isPaused() const;
     void pause(bool val);
@@ -73,6 +74,7 @@ Q_SIGNALS:
     void signalPause();
     void signalUpdateSettings();
     void signalScreenSelected(int);
+    void signalDelaySelected(double);
 
 private Q_SLOTS:
 
@@ -81,6 +83,7 @@ private Q_SLOTS:
     void slotScreenSelected(QAction*);
     void slotMenuSlideShowConfiguration();
     void slotConfigurationAccepted();
+    void slotChangeDelayButtonPressed();
 
 private:
 

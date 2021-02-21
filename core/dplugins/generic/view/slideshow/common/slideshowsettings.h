@@ -59,8 +59,8 @@ public:
     void readFromConfig();
     void writeToConfig();
 
-    int indexOf(const QUrl&) const;
-    int count()              const;
+    int  indexOf(const QUrl&) const;
+    int  count()              const;
 
     void suffleImages();
 

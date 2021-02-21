@@ -59,26 +59,26 @@ class Q_DECL_HIDDEN SetupSlideShowDialog::Private
 public:
 
     explicit Private()
-      : startWithCurrent(nullptr),
-        loopMode(nullptr),
-        suffleMode(nullptr),
-        showName(nullptr),
-        showDate(nullptr),
-        showApertureFocal(nullptr),
-        showExpoSensitivity(nullptr),
-        showMakeModel(nullptr),
-        showLensModel(nullptr),
-        showLabels(nullptr),
-        showRating(nullptr),
-        showComment(nullptr),
-        showTitle(nullptr),
-        showTags(nullptr),
-        showCapIfNoTitle(nullptr),
-        showProgress(nullptr),
-        screenPlacement(nullptr),
-        captionFont(nullptr),
-        delayInput(nullptr),
-        settings(nullptr)
+      : startWithCurrent    (nullptr),
+        loopMode            (nullptr),
+        suffleMode          (nullptr),
+        showName            (nullptr),
+        showDate            (nullptr),
+        showApertureFocal   (nullptr),
+        showExpoSensitivity (nullptr),
+        showMakeModel       (nullptr),
+        showLensModel       (nullptr),
+        showLabels          (nullptr),
+        showRating          (nullptr),
+        showComment         (nullptr),
+        showTitle           (nullptr),
+        showTags            (nullptr),
+        showCapIfNoTitle    (nullptr),
+        showProgress        (nullptr),
+        screenPlacement     (nullptr),
+        captionFont         (nullptr),
+        delayInput          (nullptr),
+        settings            (nullptr)
     {
     }
 
@@ -111,7 +111,7 @@ public:
 
 SetupSlideShowDialog::SetupSlideShowDialog(SlideShowSettings* const settings, QWidget* const parent)
     : DPluginDialog(parent, QLatin1String("Slideshow Settings")),
-      d(new Private)
+      d            (new Private)
 {
     setWindowTitle(i18n("Slideshow Settings"));
     setModal(false);

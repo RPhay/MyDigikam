@@ -7,9 +7,10 @@
  * Description : a presentation tool.
  *
  * Copyright (C) 2006-2009 by Valerio Fuoglio <valerio dot fuoglio at gmail dot com>
- * Copyright (C) 2009      by Andi Clemens <andi dot clemens at googlemail dot com>
+ * Copyright (C)      2009 by Andi Clemens <andi dot clemens at googlemail dot com>
  * Copyright (C) 2003-2005 by Renchi Raju <renchi dot raju at gmail dot com>
  * Copyright (C) 2012-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C)      2021 by Phuoc Khanh Le <phuockhanhnk94 at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -246,6 +247,9 @@ PresentationWidget::PresentationWidget(PresentationContainer* const sharedData)
     connect(d->slideCtrlWidget, SIGNAL(signalClose()),
             this, SLOT(slotClose()));
 
+    connect(d->slideCtrlWidget, SIGNAL(signalDelaySelected(int)),
+            this, SLOT(slotChangeDelay(int)));
+
 #ifdef HAVE_MEDIAPLAYER
 
     // -- playback widget -------------------------------
@@ -287,11 +291,11 @@ PresentationWidget::PresentationWidget(PresentationContainer* const sharedData)
     connect(d->timer, SIGNAL(timeout()),
             this, SLOT(slotTimeOut()));
 
-    d->pa    = QPolygon(4);
-    m_buffer = QPixmap(size());
+    d->pa            = QPolygon(4);
+    m_buffer         = QPixmap(size());
     m_buffer.fill(Qt::black);
 
-    d->imageLoader = new PresentationLoader(d->sharedData, width(), height(), d->fileIndex);
+    d->imageLoader   = new PresentationLoader(d->sharedData, width(), height(), d->fileIndex);
 
     // --------------------------------------------------
 
@@ -377,7 +381,7 @@ void PresentationWidget::loadNextImage()
     if (!d->currImage.isNull())
     {
         m_firstPainter = false;
-        m_buffer = d->currImage;
+        m_buffer       = d->currImage;
     }
     else
     {
@@ -410,7 +414,7 @@ void PresentationWidget::loadNextImage()
         d->slideCtrlWidget->setEnabledNext(d->fileIndex < num - 1);
     }
 
-    QImage img = d->imageLoader->getCurrent();
+    QImage img        = d->imageLoader->getCurrent();
 
     QPixmap newPixmap = QPixmap::fromImage(img);
     QPixmap pixmap(width(), height());
@@ -890,6 +894,7 @@ void PresentationWidget::paintEvent(QPaintEvent*)
     }
 
     // If execution reach this line, an effect is running
+
     p.drawPixmap(0, 0, m_buffer);
 }
 
@@ -950,6 +955,22 @@ void PresentationWidget::slotNext()
 void PresentationWidget::slotClose()
 {
     close();
+}
+
+void PresentationWidget::slotChangeDelay(int delay)
+{
+    d->timer->stop();
+
+    if (d->slideCtrlWidget->isHidden())
+    {
+        int w = d->slideCtrlWidget->width();
+        d->slideCtrlWidget->move(d->deskWidth - w - 1, 0);
+        d->slideCtrlWidget->show();
+    }
+
+    d->sharedData->delay = d->sharedData->useMilliseconds ? delay
+                                                          : delay * 1000;
+    d->timer->start();
 }
 
 void PresentationWidget::slotVideoLoaded(bool loaded)
@@ -1048,7 +1069,7 @@ void PresentationWidget::slotTimeOut()
     {
         return;                     // No effect -> bye !
     }
-    
+
     int tmout = -1;
 
     if (d->effectRunning)           // Effect under progress ?
@@ -1088,6 +1109,7 @@ void PresentationWidget::slotTimeOut()
     if (tmout <= 0)                 // Effect finished -> delay.
     {
         tmout            = d->sharedData->delay;
+        qInfo()<< "set new tmout" << tmout;
         d->effectRunning = false;
     }
 
@@ -1097,6 +1119,7 @@ void PresentationWidget::slotTimeOut()
     }
     else
     {
+        qInfo()<< "set new timer" << tmout;
         d->timer->setSingleShot(true);
         d->timer->start(tmout);
     }
@@ -1249,8 +1272,8 @@ int PresentationWidget::effectSweep(bool aInit)
         d->h       = height();
         d->dx      = (d->subType == 1 ? 16 : -16);
         d->dy      = (d->subType == 3 ? 16 : -16);
-        d->x       = (d->subType == 1 ? 0 : d->w);
-        d->y       = (d->subType == 3 ? 0 : d->h);
+        d->x       = (d->subType == 1 ? 0  : d->w);
+        d->y       = (d->subType == 3 ? 0  : d->h);
     }
 
     if (d->subType == 0 || d->subType == 1)

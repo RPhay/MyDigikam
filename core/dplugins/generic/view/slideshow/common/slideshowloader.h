@@ -54,7 +54,7 @@ public:
 
     enum SlideShowViewMode
     {
-        ErrorView=0,
+        ErrorView = 0,
         ImageView,
         VideoView,
         EndView
@@ -63,7 +63,7 @@ public:
 public:
 
     explicit SlideShowLoader(SlideShowSettings* const settings);
-    ~SlideShowLoader() override;
+    ~SlideShowLoader()                          override;
 
     void setCurrentItem(const QUrl& url);
     QUrl currentItem() const;

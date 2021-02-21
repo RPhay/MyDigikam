@@ -75,21 +75,21 @@ class Q_DECL_HIDDEN SlideShowLoader::Private
 public:
 
     explicit Private()
-        : fileIndex(-1),
-          screenSaverCookie(-1),
-          mouseMoveTimer(nullptr),
-          imageView(nullptr),
+        : fileIndex         (-1),
+          screenSaverCookie (-1),
+          mouseMoveTimer    (nullptr),
+          imageView         (nullptr),
 
 #ifdef HAVE_MEDIAPLAYER
 
-          videoView(nullptr),
+          videoView         (nullptr),
 
 #endif
 
-          errorView(nullptr),
-          endView(nullptr),
-          osd(nullptr),
-          settings(nullptr)
+          errorView         (nullptr),
+          endView           (nullptr),
+          osd               (nullptr),
+          settings          (nullptr)
     {
     }
 
@@ -117,7 +117,7 @@ public:
 
 SlideShowLoader::SlideShowLoader(SlideShowSettings* const settings)
     : QStackedWidget(nullptr),
-      d(new Private)
+      d             (new Private)
 {
     d->settings = settings;
 
@@ -400,7 +400,7 @@ void SlideShowLoader::slotLoadPrevItem()
         QMimeDatabase mimeDB;
 
         if (mimeDB.mimeTypeForFile(currentItem().toLocalFile())
-                                  .name().startsWith(QLatin1String("video/")))
+                                   .name().startsWith(QLatin1String("video/")))
         {
             d->videoView->setCurrentUrl(currentItem());
             return;
@@ -442,7 +442,7 @@ void SlideShowLoader::slotImageLoaded(bool loaded)
         QMimeDatabase mimeDB;
 
         if (mimeDB.mimeTypeForFile(currentItem().toLocalFile())
-                                  .name() == QLatin1String("image/gif"))
+                                   .name() == QLatin1String("image/gif"))
         {
             d->videoView->setCurrentUrl(currentItem());
         }

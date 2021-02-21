@@ -48,7 +48,7 @@ class Q_DECL_HIDDEN SlideImage::Private
 public:
 
     explicit Private()
-      : previewThread(nullptr),
+      : previewThread       (nullptr),
         previewPreloadThread(nullptr)
     {
     }
@@ -66,7 +66,7 @@ public:
 
 SlideImage::SlideImage(QWidget* const parent)
     : QWidget(parent),
-      d(new Private)
+      d      (new Private)
 {
     setAttribute(Qt::WA_DeleteOnClose);
     setAttribute(Qt::WA_OpaquePaintEvent);

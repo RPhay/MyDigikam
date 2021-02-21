@@ -47,7 +47,7 @@ class SlideShowPlugin : public DPluginGeneric
 public:
 
     explicit SlideShowPlugin(QObject* const parent = nullptr);
-    ~SlideShowPlugin() override;
+    ~SlideShowPlugin()                   override;
 
     QString name()                 const override;
     QString iid()                  const override;

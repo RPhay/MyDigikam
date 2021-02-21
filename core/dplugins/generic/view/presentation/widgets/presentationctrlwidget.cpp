@@ -6,9 +6,9 @@
  * Date        : 2008-10-05
  * Description : a presentation tool.
  *
- * Copyright (C) 2008 by Valerio Fuoglio <valerio dot fuoglio at gmail dot com>
- *
- * Partially based on Renchi Raju's ToolBar class.
+ * Copyright (C)      2008 by Valerio Fuoglio <valerio dot fuoglio at gmail dot com>
+ * Copyright (C)      2021 by Phuoc Khanh Le <phuockhanhnk94 at gmail dot com>
+ * Copyright (C) 2012-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -32,6 +32,11 @@
 #include <QPixmap>
 #include <QApplication>
 #include <QIcon>
+#include <QInputDialog>
+
+// KDE includes
+
+#include <klocalizedstring.h>
 
 // Local includes
 
@@ -56,6 +61,7 @@ PresentationCtrlWidget::PresentationCtrlWidget(QWidget* const parent)
     m_nextButton->setIcon(QIcon::fromTheme(QLatin1String("media-skip-forward")));
     m_playButton->setIcon(QIcon::fromTheme(QLatin1String("media-playback-start")));
     m_stopButton->setIcon(QIcon::fromTheme(QLatin1String("media-playback-stop")));
+    m_delayButton->setIcon(QIcon::fromTheme(QLatin1String("preferences-system")));
 
     m_canHide = true;
 
@@ -76,6 +82,9 @@ PresentationCtrlWidget::PresentationCtrlWidget(QWidget* const parent)
 
     connect(m_stopButton, SIGNAL(clicked()),
             this, SIGNAL(signalClose()));
+
+    connect(m_delayButton, SIGNAL(clicked()),
+            this, SLOT(slotChangeDelayButtonPressed()));
 
     slotPlayButtonToggled();
 }
@@ -193,10 +202,22 @@ void PresentationCtrlWidget::keyPressEvent(QKeyEvent* event)
         }
 
         default:
+        {
             break;
+        }
     }
 
     event->accept();
+}
+
+void PresentationCtrlWidget::slotChangeDelayButtonPressed()
+{
+    emit signalPause();
+    bool ok;
+    int num = QInputDialog::getInt(this, i18n("Specify delay for slide show"),
+                                   i18n("Delay:"), 1 , 0, 20, 1, &ok);
+
+    emit signalDelaySelected(num);
 }
 
 } // namespace DigikamGenericPresentationPlugin

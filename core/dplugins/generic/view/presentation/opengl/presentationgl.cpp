@@ -6,10 +6,11 @@
  * Date        : 2004-01-19
  * Description : a presentation tool.
  *
- * Copyright (C) 2004      by Renchi Raju <renchi dot raju at gmail dot com>
+ * Copyright (C)      2004 by Renchi Raju <renchi dot raju at gmail dot com>
  * Copyright (C) 2006-2009 by Valerio Fuoglio <valerio.fuoglio@gmail.com>
- * Copyright (C) 2009      by Andi Clemens <andi dot clemens at googlemail dot com>
+ * Copyright (C)      2009 by Andi Clemens <andi dot clemens at googlemail dot com>
  * Copyright (C) 2012-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C)      2021 by Phuoc Khanh Le <phuockhanhnk94 at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -227,6 +228,9 @@ PresentationGL::PresentationGL(PresentationContainer* const sharedData)
 
     connect(d->slideCtrlWidget, SIGNAL(signalClose()),
             this, SLOT(slotClose()));
+
+    connect(d->slideCtrlWidget, SIGNAL(signalDelaySelected(int)),
+            this, SLOT(slotChangeDelay(int)));
 
 #ifdef HAVE_MEDIAPLAYER
 
@@ -636,7 +640,7 @@ void PresentationGL::advanceFrame()
     if (!d->sharedData->loop && !d->endOfShow)
     {
         d->slideCtrlWidget->setEnabledPrev(d->fileIndex > 0);
-        d->slideCtrlWidget->setEnabledNext(d->fileIndex < num - 1);
+        d->slideCtrlWidget->setEnabledNext(d->fileIndex < (num - 1));
     }
 
     d->tex1First = !d->tex1First;
@@ -679,7 +683,6 @@ void PresentationGL::previousFrame()
 void PresentationGL::loadImage()
 {
     QImage image = d->imageLoader->getCurrent();
-    qInfo()<< image;
     int a        = d->tex1First ? 0 : 1;
 
     if (!image.isNull())
@@ -1802,6 +1805,22 @@ void PresentationGL::slotClose()
     close();
 }
 
+void PresentationGL::slotChangeDelay(int delay)
+{
+    d->timer->stop();
+
+    if (d->slideCtrlWidget->isHidden())
+    {
+        int w = d->slideCtrlWidget->width();
+        d->slideCtrlWidget->move(d->deskWidth - w - 1, 0);
+        d->slideCtrlWidget->show();
+    }
+
+    d->sharedData->delay = d->sharedData->useMilliseconds ? delay
+                                                          : delay * 1000;
+    d->timer->start();
+}
+
 QPixmap PresentationGL::generateOutlinedTextPixmap(const QString& text)
 {
     QFont fn(font());
@@ -1820,8 +1839,8 @@ QPixmap PresentationGL::generateOutlinedTextPixmap(const QString& text, QFont& f
 }
 
 QPixmap PresentationGL::generateCustomOutlinedTextPixmap(const QString& text, QFont& fn,
-                                                      QColor& fgColor, QColor& bgColor,
-                                                      int opacity, bool drawTextOutline)
+                                                         QColor& fgColor, QColor& bgColor,
+                                                         int opacity, bool drawTextOutline)
 {
     QFontMetrics fm(fn);
     QRect rect = fm.boundingRect(text);
@@ -1836,7 +1855,8 @@ QPixmap PresentationGL::generateCustomOutlinedTextPixmap(const QString& text, QF
         pbg.setBrush(bgColor);
         pbg.setPen(bgColor);
         pbg.setOpacity(opacity / 10.0);
-        pbg.drawRoundedRect(0, 0, (int)pix.width(), (int)pix.height(),
+        pbg.drawRoundedRect(0,                     0,
+                            (int)pix.width(),      (int)pix.height(),
                             (int)pix.height() / 3, (int)pix.height() / 3);
     }
 
@@ -1861,7 +1881,7 @@ QPixmap PresentationGL::generateCustomOutlinedTextPixmap(const QString& text, QF
         p.fillPath(outline, Qt::black);
     }
 
-    p.fillPath(path,    QBrush(fgColor));
+    p.fillPath(path, QBrush(fgColor));
 
     p.setRenderHint(QPainter::Antialiasing, false);
     p.end();

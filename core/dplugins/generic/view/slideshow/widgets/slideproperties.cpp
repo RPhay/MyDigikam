@@ -55,7 +55,7 @@ public:
     explicit Private()
         : maxStringLen(80),
           paintEnabled(true),
-          settings(nullptr)
+          settings    (nullptr)
     {
     }
 
@@ -71,7 +71,7 @@ public:
 
 SlideProperties::SlideProperties(SlideShowSettings* const settings, QWidget* const parent)
     : QWidget(parent),
-      d(new Private)
+      d      (new Private)
 {
     setMouseTracking(true);
     d->settings = settings;

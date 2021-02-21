@@ -99,9 +99,14 @@ QList<DPluginAuthor> SlideShowPlugin::authors() const
             << DPluginAuthor(QString::fromUtf8("Minh Nghia Duong"),
                              QString::fromUtf8("minhnghiaduong997 at gmail dot com"),
                              QString::fromUtf8("(C) 2019-2021"))
+            << DPluginAuthor(QString::fromUtf8("Phuoc Khanh Le"),
+                             QString::fromUtf8("phuockhanhnk94 at gmail dot com"),
+                             QString::fromUtf8("(C) 2021"))
+            << DPluginAuthor(QString::fromUtf8("Fady Khalaf"),
+                             QString::fromUtf8("fadykhalaf01 at gmail dot com"),
+                             QString::fromUtf8("(C) 2019"))
             ;
 }
-
 void SlideShowPlugin::setup(QObject* const parent)
 {
     DPluginAction* const ac     = new DPluginAction(parent);
@@ -280,7 +285,7 @@ void SlideShowPlugin::slideshow(SlideShowSettings* const settings, bool autoPlay
     SlideShowLoader* const slide = new SlideShowLoader(settings);
     slide->setShortCutPrefixes(settings->iface->passShortcutActionsToWidget(slide));
 
-    if     (settings->imageUrl.isValid())
+    if      (settings->imageUrl.isValid())
     {
         slide->setCurrentItem(settings->imageUrl);
     }

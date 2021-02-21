@@ -9,6 +9,7 @@
  * Copyright (C) 2004-2005 by Renchi Raju <renchi dot raju at gmail dot com>
  * Copyright (C) 2006-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  * Copyright (C) 2019-2020 by Minh Nghia Duong <minhnghiaduong997 at gmail dot com>
+ * Copyright (C)      2021 by Phuoc Khanh Le <phuockhanhnk94 at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -33,6 +34,7 @@
 #include <QPixmap>
 #include <QScreen>
 #include <QMenu>
+#include <QInputDialog>
 
 // KDE includes
 
@@ -52,14 +54,15 @@ class Q_DECL_HIDDEN SlideToolBar::Private
 public:
 
     explicit Private()
-      : playBtn(nullptr),
-        stopBtn(nullptr),
-        nextBtn(nullptr),
-        prevBtn(nullptr),
-        setupBtn(nullptr),
-        screenSelectBtn(nullptr),
-        currentlyPause(false),
-        configDialog(nullptr)
+      : playBtn         (nullptr),
+        stopBtn         (nullptr),
+        nextBtn         (nullptr),
+        prevBtn         (nullptr),
+        setupBtn        (nullptr),
+        screenSelectBtn (nullptr),
+        selectDelayBtn  (nullptr),
+        currentlyPause  (false),
+        configDialog    (nullptr)
     {
     }
 
@@ -69,6 +72,7 @@ public:
     QToolButton*          prevBtn;
     QToolButton*          setupBtn;
     QToolButton*          screenSelectBtn;
+    QToolButton*          selectDelayBtn;
 
     bool                  currentlyPause;
 
@@ -77,18 +81,19 @@ public:
 
 SlideToolBar::SlideToolBar(SlideShowSettings* const settings, QWidget* const parent)
     : DHBox(parent),
-      d(new Private)
+      d    (new Private)
 {
     setMouseTracking(true);
     setContentsMargins(QMargins());
 
-    d->playBtn      = new QToolButton(this);
-    d->prevBtn      = new QToolButton(this);
-    d->nextBtn      = new QToolButton(this);
-    d->stopBtn      = new QToolButton(this);
-    d->setupBtn     = new QToolButton(this);
+    d->playBtn        = new QToolButton(this);
+    d->prevBtn        = new QToolButton(this);
+    d->nextBtn        = new QToolButton(this);
+    d->stopBtn        = new QToolButton(this);
+    d->selectDelayBtn = new QToolButton(this);
+    d->setupBtn       = new QToolButton(this);
 
-    d->configDialog = new SetupSlideShowDialog(settings, this);
+    d->configDialog   = new SetupSlideShowDialog(settings, this);
 
     d->playBtn->setCheckable(true);
     d->playBtn->setChecked(!settings->autoPlayEnabled);
@@ -97,6 +102,7 @@ SlideToolBar::SlideToolBar(SlideShowSettings* const settings, QWidget* const par
     d->nextBtn->setFocusPolicy(Qt::NoFocus);
     d->stopBtn->setFocusPolicy(Qt::NoFocus);
     d->setupBtn->setFocusPolicy(Qt::NoFocus);
+    d->selectDelayBtn->setFocusPolicy(Qt::NoFocus);
 
     QSize s(32, 32);
     d->playBtn->setIconSize(s);
@@ -104,6 +110,7 @@ SlideToolBar::SlideToolBar(SlideShowSettings* const settings, QWidget* const par
     d->nextBtn->setIconSize(s);
     d->stopBtn->setIconSize(s);
     d->setupBtn->setIconSize(s);
+    d->selectDelayBtn->setIconSize(s);
 
     QString iconString = settings->autoPlayEnabled ? QLatin1String("media-playback-pause")
                                                    : QLatin1String("media-playback-start");
@@ -112,6 +119,7 @@ SlideToolBar::SlideToolBar(SlideShowSettings* const settings, QWidget* const par
     d->nextBtn->setIcon(QIcon::fromTheme(QLatin1String("media-skip-forward")));
     d->stopBtn->setIcon(QIcon::fromTheme(QLatin1String("media-playback-stop")));
     d->setupBtn->setIcon(QIcon::fromTheme(QLatin1String("systemsettings")));
+    d->selectDelayBtn->setIcon(QIcon::fromTheme(QLatin1String("preferences-system")));
 
     int num = qApp->screens().count();
 
@@ -165,6 +173,9 @@ SlideToolBar::SlideToolBar(SlideShowSettings* const settings, QWidget* const par
 
     connect(d->stopBtn, SIGNAL(clicked()),
             this, SIGNAL(signalClose()));
+
+    connect(d->selectDelayBtn, SIGNAL(clicked()),
+            this, SLOT(slotChangeDelayButtonPressed()));
 
     connect(d->setupBtn, SIGNAL(clicked()),
             this, SLOT(slotMenuSlideShowConfiguration()));
@@ -234,6 +245,15 @@ void SlideToolBar::slotPlayBtnToggled()
 
         emit signalPlay();
     }
+}
+
+void SlideToolBar::slotChangeDelayButtonPressed()
+{
+    bool ok;
+    double num = QInputDialog::getDouble(this, i18n("Specify delay for slide show"),
+                                         i18n("Delay:"), 1 , 0, 20, 1, &ok);
+
+    emit signalDelaySelected(num);
 }
 
 void SlideToolBar::slotNexPrevClicked()
@@ -350,7 +370,9 @@ void SlideToolBar::keyPressEvent(QKeyEvent* e)
         }
 
         default:
+        {
             break;
+        }
     }
 
     e->accept();

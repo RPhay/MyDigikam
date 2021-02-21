@@ -64,29 +64,29 @@ const QString SlideShowSettings::configSlideShowCaptionFontEntry(QLatin1String("
 const QString SlideShowSettings::configSlideScreenEntry(QLatin1String("SlideScreen"));
 
 SlideShowSettings::SlideShowSettings()
-    : startWithCurrent(false),
-      exifRotate(true),
-      printName(true),
-      printDate(false),
-      printApertureFocal(false),
-      printMakeModel(false),
-      printLensModel(false),
-      printExpoSensitivity(false),
-      printComment(false),
-      printTitle(false),
-      printCapIfNoTitle(false),
-      printTags(false),
-      printLabels(false),
-      printRating(false),
-      loop(false),
-      suffle(false),
-      delay(5),
-      autoPlayEnabled(true),
-      slideScreen(-2),
-      showProgressIndicator(true),
-      captionFont(QFontDatabase::systemFont(QFontDatabase::GeneralFont)),
-      iface(nullptr),
-      plugin(nullptr)
+    : startWithCurrent      (false),
+      exifRotate            (true),
+      printName             (true),
+      printDate             (false),
+      printApertureFocal    (false),
+      printMakeModel        (false),
+      printLensModel        (false),
+      printExpoSensitivity  (false),
+      printComment          (false),
+      printTitle            (false),
+      printCapIfNoTitle     (false),
+      printTags             (false),
+      printLabels           (false),
+      printRating           (false),
+      loop                  (false),
+      suffle                (false),
+      delay                 (5),
+      autoPlayEnabled       (true),
+      slideScreen           (-2),
+      showProgressIndicator (true),
+      captionFont           (QFontDatabase::systemFont(QFontDatabase::GeneralFont)),
+      iface                 (nullptr),
+      plugin                (nullptr)
 {
 }
 
@@ -167,7 +167,7 @@ void SlideShowSettings::suffleImages()
         {
             // keep a backup of original file list at the first suffle
 
-            originalFileList = fileList;
+            originalFileList         = fileList;
 
             // suffle
 
