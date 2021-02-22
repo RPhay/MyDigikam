@@ -77,7 +77,7 @@ const QString additionalInformation()
                    "Rev.: %3",
                    QLocale().toString(digiKamBuildDate(), QLocale::ShortFormat),
                    QLatin1String(digikam_build_type),
-                   QString::fromLatin1("<a href='http://commits.kde.org/digikam/%1'>%2</a>").arg(gitVer).arg(gitVer));
+                   QString::fromLatin1("<a href='https://invent.kde.org/graphics/digikam/commit/%1'>%2</a>").arg(gitVer).arg(gitVer));
     }
 
     return ret;
