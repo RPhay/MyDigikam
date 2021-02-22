@@ -47,21 +47,21 @@ class Q_DECL_HIDDEN GLViewerTexture::Private
 public:
 
     explicit Private()
-      : rdx(0.0),
-        rdy(0.0),
-        z(0.0),
-        ux(0.0),
-        uy(0.0),
-        rtx(0.0),
-        rty(0.0),
-        vtop(0.0),
-        vbottom(0.0),
-        vleft(0.0),
-        vright(0.0),
-        display_x(0),
-        display_y(0),
+      : rdx       (0.0),
+        rdy       (0.0),
+        z         (0.0),
+        ux        (0.0),
+        uy        (0.0),
+        rtx       (0.0),
+        rty       (0.0),
+        vtop      (0.0),
+        vbottom   (0.0),
+        vleft     (0.0),
+        vright    (0.0),
+        display_x (0),
+        display_y (0),
         rotate_idx(0),
-        iface(nullptr)
+        iface     (nullptr)
     {
         rotate_list[0] = DMetadata::ORIENTATION_ROT_90;
         rotate_list[1] = DMetadata::ORIENTATION_ROT_180;
@@ -88,7 +88,7 @@ private:
 
 GLViewerTexture::GLViewerTexture(DInfoInterface* const iface)
     : QOpenGLTexture(QOpenGLTexture::TargetRectangle),
-      d(new Private)
+      d             (new Private)
 {
     d->iface                      = iface;
     ICCSettingsContainer settings = IccSettings::instance()->settings();
@@ -103,6 +103,8 @@ GLViewerTexture::GLViewerTexture(DInfoInterface* const iface)
 
 GLViewerTexture::~GLViewerTexture()
 {
+    destroy();
+
     delete d;
 }
 
@@ -187,6 +189,7 @@ bool GLViewerTexture::loadFullSize()
 bool GLViewerTexture::loadInternal()
 {
     destroy();
+    create();
 
     QImage texImg = d->fimage.isNull() ? d->qimage : d->fimage;
     setData(texImg.mirrored(), QOpenGLTexture::DontGenerateMipMaps);
@@ -411,6 +414,7 @@ bool GLViewerTexture::setNewSize(QSize size)
     int h = size.height();
 
     destroy();
+    create();
 
     if (w == 0)
     {
