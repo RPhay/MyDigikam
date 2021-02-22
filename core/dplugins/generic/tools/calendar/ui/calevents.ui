@@ -1,3 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0" >
  <class>CalEvents</class>
  <widget class="QWidget" name="CalEvents" >
@@ -37,7 +38,7 @@
       </font>
      </property>
      <property name="text" >
-      <string>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd">
+      <string>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "https://www.w3.org/TR/REC-html40/strict.dtd">
 &lt;html>&lt;head>&lt;meta name="qrichtext" content="1" />&lt;style type="text/css">
 p, li { white-space: pre-wrap; }
 &lt;/style>&lt;/head>&lt;body style=" font-family:'DejaVu Sans'; font-size:9pt; font-weight:400; font-style:italic;">
@@ -79,7 +80,7 @@ p, li { white-space: pre-wrap; }
     </widget>
    </item>
    <item>
-    <widget class="Digikam::DFileSelector" name="fhUrlRequester"/>       
+    <widget class="Digikam::DFileSelector" name="fhUrlRequester"/>
    </item>
    <item>
     <widget class="QLabel" name="fhExplainLabel" >
