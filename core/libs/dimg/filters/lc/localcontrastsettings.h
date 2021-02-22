@@ -5,7 +5,7 @@
  *
  * Date        : 2010-03-09
  * Description : Local Contrast settings view.
- *               LDR ToneMapper <http://zynaddsubfx.sourceforge.net/other/tonemapping>
+ *               LDR ToneMapper zynaddsubfx.sourceforge.net/other/tonemapping
  *
  * Copyright (C) 2010-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *

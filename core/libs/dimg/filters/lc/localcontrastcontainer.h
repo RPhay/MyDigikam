@@ -5,7 +5,7 @@
  *
  * Date        : 2009-08-09
  * Description : Local Contrast settings container
- *               LDR ToneMapper <http://zynaddsubfx.sourceforge.net/other/tonemapping>
+ *               LDR ToneMapper zynaddsubfx.sourceforge.net/other/tonemapping
  *
  * Copyright (C) 2009      by Nasca Octavian Paul <zynaddsubfx at yahoo dot com>
  * Copyright (C) 2009-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
