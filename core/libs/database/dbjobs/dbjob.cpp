@@ -133,7 +133,7 @@ void DatesJob::run()
     else
     {
         ItemLister lister;
-        lister.setListOnlyAvailable(true);
+        lister.setListOnlyAvailable(m_jobInfo.isListAvailableImagesOnly());
 
         // Send data every 200 images to be more responsive
 

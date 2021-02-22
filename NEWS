@@ -367,4 +367,5 @@ BUGFIXES:
 327 ==> 433350 - 'reread metadata from file' don't clean up ImageProperties table if the related fields don't exist anymore in the file.
 328 ==> 433311 - New or modified root album folders are always placed into local collections (= Type No 1 in table album roots).
 329 ==> 183103 - Allow to change Presentation tool delay on the fly [patch].
-330 ==> 
+330 ==> 433331 - Display Thumbnails greater than 9080 missing with removable disk Off line (Ok On Line).
+331 ==> 
