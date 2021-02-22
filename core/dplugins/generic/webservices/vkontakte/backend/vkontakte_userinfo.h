@@ -33,7 +33,7 @@
 namespace Vkontakte
 {
 
-// http://vk.com/dev/fields
+// https://vk.com/dev/fields
 class UserInfo
 {
 public:

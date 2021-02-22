@@ -31,7 +31,7 @@
 namespace Vkontakte
 {
 
-// http://vk.com/dev/groups.get
+// https://vk.com/dev/groups.get
 class GroupInfo : public QObject
 {
     Q_OBJECT

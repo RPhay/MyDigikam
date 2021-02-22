@@ -8,7 +8,7 @@
  *               facial point including points surrounding faces
  *               eyes, that can be used for detecting human eyes
  *               positions, almost all codes are ported from dlib
- *               library (http://dlib.net/)
+ *               library (dlib.net/)
  *
  * Copyright (C) 2016      by Omar Amin <Omar dot moh dot amin at gmail dot com>
  * Copyright (C) 2019      by Thanh Trung Dinh <dinhthanhtrung1996 at gmail dot com>

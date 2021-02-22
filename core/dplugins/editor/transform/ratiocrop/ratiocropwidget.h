@@ -81,15 +81,15 @@ public:
     };
 
     // Proportion : Golden Ratio and Rule of Thirds. More information at this url:
-    // http://photoinf.com/General/Robert_Berdan/Composition_and_the_Elements_of_Visual_Design.htm
+    // http://photoinf.com/General/Robert_Berdan/Composition_and_the_Elements_of_Visual_Design.htm      // krazy:exclude=insecurenet
 
     enum GuideLineType
     {
-        RulesOfThirds = 0,         // Line guides position to 1/3 width and height.
-        DiagonalMethod,            // Diagonal Method to improve composition.
-        HarmoniousTriangles,       // Harmonious Triangle to improve composition.
-        GoldenMean,                // Guides tools using Phi ratio (1.618).
-        GuideNone                  // No guide line.
+        RulesOfThirds = 0,         ///< Line guides position to 1/3 width and height.
+        DiagonalMethod,            ///< Diagonal Method to improve composition.
+        HarmoniousTriangles,       ///< Harmonious Triangle to improve composition.
+        GoldenMean,                ///< Guides tools using Phi ratio (1.618).
+        GuideNone                  ///< No guide line.
     };
 
 public:

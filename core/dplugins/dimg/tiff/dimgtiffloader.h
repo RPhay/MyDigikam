@@ -10,18 +10,18 @@
  * Copyright (C) 2006-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * Specifications & references:
- * - TIFF 6.0  : http://partners.adobe.com/public/developer/en/tiff/TIFF6.pdf
- * - TIFF/EP   : http://www.map.tu.chiba-u.ac.jp/IEC/100/TA2/recdoc/N4378.pdf
- * - TIFF/Tags : http://www.awaresystems.be/imaging/tiff/tifftags.html
- * - DNG       : https://www.adobe.com/products/dng/pdfs/dng_spec.pdf
+ * - TIFF 6.0  : partners.adobe.com/public/developer/en/tiff/TIFF6.pdf
+ * - TIFF/EP   : www.map.tu.chiba-u.ac.jp/IEC/100/TA2/recdoc/N4378.pdf
+ * - TIFF/Tags : www.awaresystems.be/imaging/tiff/tifftags.html
+ * - DNG       : www.adobe.com/products/dng/pdfs/dng_spec.pdf
  *
  * Others Linux Tiff Loader implementation using libtiff:
- * - http://websvn.kde.org/trunk/koffice/filters/krita/tiff/kis_tiff_converter.cc
- * - http://artis.inrialpes.fr/Software/TiffIO/
- * - http://cvs.graphicsmagick.org/cgi-bin/cvsweb.cgi/GraphicsMagick/coders/tiff.c
- * - http://freeimage.cvs.sourceforge.net/freeimage/FreeImage/Source/FreeImage/PluginTIFF.cpp
- * - http://freeimage.cvs.sourceforge.net/freeimage/FreeImage/Source/Metadata/XTIFF.cpp
- * - https://subversion.imagemagick.org/subversion/ImageMagick/trunk/coders/tiff.c
+ * - websvn.kde.org/trunk/koffice/filters/krita/tiff/kis_tiff_converter.cc
+ * - artis.inrialpes.fr/Software/TiffIO/
+ * - cvs.graphicsmagick.org/cgi-bin/cvsweb.cgi/GraphicsMagick/coders/tiff.c
+ * - freeimage.cvs.sourceforge.net/freeimage/FreeImage/Source/FreeImage/PluginTIFF.cpp
+ * - freeimage.cvs.sourceforge.net/freeimage/FreeImage/Source/Metadata/XTIFF.cpp
+ * - subversion.imagemagick.org/subversion/ImageMagick/trunk/coders/tiff.c
  *
  * Test images repository:
  * - http://www.remotesensing.org/libtiff/images.html

@@ -32,7 +32,7 @@
 namespace Vkontakte
 {
 
-// http://vk.com/dev/groups.get
+// https://vk.com/dev/groups.get
 // TODO: for how many groups does this method work?
 class GroupListJob : public VkontakteJob
 {

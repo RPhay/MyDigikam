@@ -64,7 +64,7 @@ public:
      *  AHD:      use Adaptive Homogeneity-Directed interpolation.
      *            This method selects the direction of interpolation so as to
      *            maximize a homogeneity metric, thus typically minimizing color artifacts.
-     *  DCB:      DCB interpolation (see http://www.linuxphoto.org/html/dcb.html for details)
+     *  DCB:      DCB interpolation (see www.linuxphoto.org/html/dcb.html for details)
      *  DHT:      DHT interpolation.
      *  AAHD:     Enhanced Adaptive AHD interpolation.
      */

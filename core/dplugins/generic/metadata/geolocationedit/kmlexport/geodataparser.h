@@ -5,7 +5,7 @@
  *
  * Date        : 2006-09-19
  * Description : GPS data file parser.
- *               (GPX format http://www.topografix.com/gpx.asp).
+ *               (GPX format https://www.topografix.com/gpx.asp).
  *
  * Copyright (C) 2006-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *

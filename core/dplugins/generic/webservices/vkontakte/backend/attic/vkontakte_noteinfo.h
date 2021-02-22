@@ -31,7 +31,7 @@
 namespace Vkontakte
 {
 
-// http://vk.com/dev/notes.getById
+// https://vk.com/dev/notes.getById
 class NoteInfo : public QObject
 {
     Q_OBJECT

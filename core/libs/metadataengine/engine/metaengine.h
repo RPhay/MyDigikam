@@ -10,7 +10,7 @@
  *               Iptc : https://www.iptc.org/std/IIM/4.1/specification/IIMV4.1.pdf
  *               Xmp  : https://www.adobe.com/devnet/xmp/pdfs/xmp_specification.pdf
  *                      https://www.iptc.org/std/Iptc4xmpCore/1.0/specification/Iptc4xmpCore_1.0-spec-XMPSchema_8.pdf
- *               Paper: http://www.metadataworkinggroup.com/pdf/mwg_guidance.pdf
+ *               Paper: www.metadataworkinggroup.com/pdf/mwg_guidance.pdf
  *
  * Copyright (C) 2006-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  * Copyright (C) 2006-2013 by Marcel Wiesweg <marcel dot wiesweg at gmx dot de>

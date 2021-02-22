@@ -21,7 +21,7 @@
  *
  * ============================================================
  *
- * See http://api.yandex.ru/ (ru)
+ * See https://api.yandex.ru/ (ru)
  * for details
  */
 

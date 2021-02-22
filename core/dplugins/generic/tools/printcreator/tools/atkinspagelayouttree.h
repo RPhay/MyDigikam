@@ -38,8 +38,8 @@
  * Palo Alto, CA 94304
  * cbatkins@hpl.hp.com
  *
- * PDF available at:
- * http://hpl.hp.com/research/isl/layout/
+ * PDF available at this url:
+ * hpl.hp.com/research/isl/layout/
  */
 
 /**

@@ -207,7 +207,8 @@ protected Q_SLOTS:
      * and other necessary information. digiKam then parses the response to get accessToken and join back to
      * O2's authentication flow by calling this method.
      *
-     * Facebook is a web service where this approach is used, because the callback url is not http://127.0.0.1/
+     * Facebook is a web service where this approach is used,
+     * because the callback url is not http://127.0.0.1/            // krazy:exclude=insecurenet
      */
     virtual void slotResponseTokenReceived(const QMap<QString, QString>& rep);
 

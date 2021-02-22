@@ -102,7 +102,7 @@ public:
     /**
      * Constructor that sets the path and the accesstoken
      *
-     * @param method For the list of methods see http://vk.com/dev/methods (in English or Russian)
+     * @param method For the list of methods see https://vk.com/dev/methods (in English or Russian)
      * @param accessToken The accessToken to access our data on vkontakte
      * @param httpPost Whether to make a POST http request instead of GET ("false" by default)
      * */

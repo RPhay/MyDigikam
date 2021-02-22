@@ -160,7 +160,7 @@ class WSAuthenticationWizard : public DWizardPage
 public:
 
     explicit WSAuthenticationWizard(QWizard* const dialog, const QString& title,
-                                    const QString& callback = QLatin1String("http://127.1.1.0:8000/"));
+                                    const QString& callback = QLatin1String("http://127.1.1.0:8000/"));     // krazy:exclude=insecurenet
     ~WSAuthenticationWizard();
 
     bool isComplete() const;

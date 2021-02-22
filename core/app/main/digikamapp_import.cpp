@@ -103,7 +103,7 @@ void DigikamApp::slotImportAddImages()
 void DigikamApp::slotImportAddFolders()
 {
     // NOTE: QFileDialog don't have an option to permit multiple selection of directories.
-    // This work around is inspired from http://www.qtcentre.org/threads/34226-QFileDialog-select-multiple-directories
+    // This work around is inspired from https://www.qtcentre.org/threads/34226-QFileDialog-select-multiple-directories
     // Check Later Qt 5.4 if a new native Qt way have been introduced.
 
     QPointer<DFileDialog> dlg = new DFileDialog(this);

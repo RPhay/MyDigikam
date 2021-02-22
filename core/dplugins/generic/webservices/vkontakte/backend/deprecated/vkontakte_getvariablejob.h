@@ -36,7 +36,7 @@ namespace Vkontakte
 {
 
 // For the info about specific variables see:
-// http://vkontakte.ru/developers.php?o=-1&p=%D5%F0%E0%ED%E5%ED%E8%E5%20%E4%E0%ED%ED%FB%F5%20%ED%E0%20%F1%E5%F0%E2%E5%F0%E0%F5%20%C2%CA%EE%ED%F2%E0%EA%F2%E5
+// https://vk.com/dev
 class GetVariableJob : public VkontakteJob
 {
 

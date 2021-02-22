@@ -33,7 +33,7 @@
 namespace Vkontakte
 {
 
-// http://vk.com/dev/photos.get
+// https://vk.com/dev/photos.get
 class PhotoInfo
 {
 public:

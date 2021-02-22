@@ -32,7 +32,7 @@
 namespace Vkontakte
 {
 
-// http://vk.com/dev/photos.getAlbums
+// https://vk.com/dev/photos.getAlbums
 class AlbumListJob : public VkontakteJob
 {
     Q_OBJECT

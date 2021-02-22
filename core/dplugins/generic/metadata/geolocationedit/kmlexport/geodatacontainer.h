@@ -113,7 +113,7 @@ public:
     static GeoDataContainer fromGeoUrl(const QString& url, bool* const parsedOkay)
     {
         // parse geo:-uri according to (only partially implemented):
-        // http://tools.ietf.org/html/draft-ietf-geopriv-geo-uri-04
+        // https://tools.ietf.org/html/draft-ietf-geopriv-geo-uri-04
         // TODO: verify that we follow the spec fully!
 
         if (!url.startsWith(QLatin1String("geo:")))
