@@ -31,7 +31,7 @@
 #include <QDialog>
 #include <QFuture>
 #include <QFutureWatcher>
-#include <QtConcurrent>
+#include <QtConcurrent>    // krazy:exclude=includes
 #include <QByteArray>
 #include <QPointer>
 #include <QEventLoop>
