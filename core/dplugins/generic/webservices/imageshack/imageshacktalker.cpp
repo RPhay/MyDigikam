@@ -78,8 +78,8 @@ public:
         userAgent       = QString::fromLatin1("digiKam-ImageShack/%1").arg(digiKamVersion());
         photoApiUrl     = QUrl(QLatin1String("https://api.imageshack.com/v2/images"));
         videoApiUrl     = QUrl(QLatin1String("http://render.imageshack.us/upload_api.php"));
-        loginApiUrl     = QUrl(QLatin1String("http://my.imageshack.us/setlogin.php"));
-        galleryUrl      = QUrl(QLatin1String("http://www.imageshack.us/gallery_api.php"));
+        loginApiUrl     = QUrl(QLatin1String("https://my.imageshack.us/setlogin.php"));
+        galleryUrl      = QUrl(QLatin1String("https://www.imageshack.us/gallery_api.php"));
         appKey          = QLatin1String("YPZ2L9WV2de2a1e08e8fbddfbcc1c5c39f94f92a");
         session         = nullptr;
         loginInProgress = false;

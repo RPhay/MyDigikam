@@ -88,7 +88,7 @@ void PhotoPostJob::handleError(const QJsonValue& data)
             "Response from the VKontakte server has unexpected format. "
             "Please report this problem against product libkvkontakte "
             "at the <a href=\"%1\">KDE bug tracker</b>.",
-            QLatin1String("http://bugs.kde.org/")));
+            QLatin1String("https://bugs.kde.org/")));
     }
     else
     {
@@ -102,7 +102,7 @@ void PhotoPostJob::handleError(const QJsonValue& data)
 bool PhotoPostJob::appendFile(QHttpMultiPart* multiPart, const QString& header, const QString& path)
 {
     QString mime = QMimeDatabase().mimeTypeForUrl(QUrl(path)).name();
-    
+
     if (mime.isEmpty())
     {
         return false;
@@ -128,7 +128,7 @@ bool PhotoPostJob::appendFile(QHttpMultiPart* multiPart, const QString& header, 
     file->setParent(multiPart); // we cannot delete the file now, so delete it with the multiPart
 
     multiPart->append(imagePart);
-    
+
     return true;
 }
 

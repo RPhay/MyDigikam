@@ -111,8 +111,8 @@ const QString YFTalker::Private::ACCESS_STRINGS[]     =
     QLatin1String("private")
 };
 
-const QString YFTalker::USERPAGE_URL         = QLatin1String("http://fotki.yandex.ru/users/%1/");
-const QString YFTalker::USERPAGE_DEFAULT_URL = QLatin1String("http://fotki.yandex.ru/");
+const QString YFTalker::USERPAGE_URL         = QLatin1String("https://fotki.yandex.ru/users/%1/");
+const QString YFTalker::USERPAGE_DEFAULT_URL = QLatin1String("https://fotki.yandex.ru/");
 
 // ------------------------------------------------------------
 

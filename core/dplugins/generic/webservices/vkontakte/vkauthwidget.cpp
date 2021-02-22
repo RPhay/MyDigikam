@@ -187,9 +187,9 @@ void VKAuthWidget::handleVkError(KJob* kjob)
 QString VKAuthWidget::albumsURL() const
 {
     if (d->vkapi->isAuthenticated() && d->userId != -1)
-        return QString::fromLatin1("http://vk.com/albums%1").arg(d->userId);
+        return QString::fromLatin1("https://vk.com/albums%1").arg(d->userId);
     else
-        return QLatin1String("http://vk.com/");
+        return QLatin1String("https://vk.com/");
 }
 
 } // namespace DigikamGenericVKontaktePlugin

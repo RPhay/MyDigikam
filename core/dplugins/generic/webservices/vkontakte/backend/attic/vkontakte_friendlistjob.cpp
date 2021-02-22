@@ -37,7 +37,7 @@ public:
     QList<UserInfoPtr> list;
 };
 
-// http://vk.com/dev/friends.get
+// https://vk.com/dev/friends.get
 FriendListJob::FriendListJob(const QString& accessToken, int uid)
     : VkontakteJob(accessToken, "friends.get"),
       d(new Private)

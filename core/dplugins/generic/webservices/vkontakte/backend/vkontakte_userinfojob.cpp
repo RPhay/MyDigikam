@@ -42,7 +42,7 @@ public:
     QStringList     fields;
 };
 
-// http://vk.com/dev/users.get
+// https://vk.com/dev/users.get
 UserInfoJob::UserInfoJob(const QString& accessToken)
     : VkontakteJob(accessToken, QLatin1String("users.get")),
       d(new Private)

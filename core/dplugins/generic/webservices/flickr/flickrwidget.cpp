@@ -293,7 +293,7 @@ FlickrWidget::~FlickrWidget()
 
 void FlickrWidget::updateLabels(const QString& /*name*/, const QString& /*url*/)
 {
-    getHeaderLbl()->setText(i18n("<b><h2><a href='http://www.flickr.com'>"
+    getHeaderLbl()->setText(i18n("<b><h2><a href='https://www.flickr.com'>"
                                  "<font color=\"#0065DE\">flick</font>"
                                  "<font color=\"#FF0084\">r</font></a>"
                                  " Export"

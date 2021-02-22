@@ -41,7 +41,7 @@ static QMap<Vkontakte::AppPermissions::Value, const char*> initAppPermissionStri
 {
     QMap<Vkontakte::AppPermissions::Value, const char*> map;
 
-    // http://vk.com/dev/permissions
+    // https://vk.com/dev/permissions
 
     map.insert(Vkontakte::AppPermissions::Notify,        "notify");
     map.insert(Vkontakte::AppPermissions::Friends,       "friends");

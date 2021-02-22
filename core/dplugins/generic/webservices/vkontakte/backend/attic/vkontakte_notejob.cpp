@@ -37,7 +37,7 @@ public:
     NoteInfoPtr noteInfo;
 };
 
-// http://vk.com/dev/notes.getById
+// https://vk.com/dev/notes.getById
 NoteJob::NoteJob(const QString& accessToken, int nid)
     : VkontakteJob(accessToken, "notes.getById"),
       d(new Private)

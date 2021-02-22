@@ -41,7 +41,7 @@ public:
     QList<PhotoInfo> list;
 };
 
-// http://vk.com/dev/photos.get
+// https://vk.com/dev/photos.get
 //
 // The API also allows to set "limit" and "offset", but that
 // does not seem to be useful.

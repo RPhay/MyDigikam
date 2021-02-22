@@ -601,7 +601,7 @@ void FlickrListViewItem::setPublic(bool status)
         // Hide the checkboxes by feeding them a bogus QVariant for the
         // CheckStateRole. This might seem like a hack, but it's described in
         // the Qt FAQ at
-        // http://www.qtsoftware.com/developer/faqs/faq.2007-04-23.8353273326.
+        // www.qtsoftware.com/developer/faqs/faq.2007-04-23.8353273326.
 
         setData(static_cast<DItemsListView::ColumnType>(FlickrList::FAMILY),  Qt::CheckStateRole, QVariant());
         setData(static_cast<DItemsListView::ColumnType>(FlickrList::FRIENDS), Qt::CheckStateRole, QVariant());

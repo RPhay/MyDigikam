@@ -137,7 +137,7 @@ PiwigoWindow::Private::Private(PiwigoWindow* const parent,
     QBuffer    buffer(&byteArray);
     img.save(&buffer, "PNG");
     logo->setText(QString::fromLatin1("<a href=\"%1\">%2</a>")
-                  .arg(QLatin1String("http://piwigo.org"))
+                  .arg(QLatin1String("https://piwigo.org"))
                   .arg(QString::fromLatin1("<img src=\"data:image/png;base64,%1\">")
                   .arg(QLatin1String(byteArray.toBase64().data()))));
 

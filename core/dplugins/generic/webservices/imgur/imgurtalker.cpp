@@ -53,7 +53,7 @@ namespace DigikamGenericImgUrPlugin
 
 static const QString imgur_auth_url       = QLatin1String("https://api.imgur.com/oauth2/authorize"),
 imgur_token_url                           = QLatin1String("https://api.imgur.com/oauth2/token");
-static const uint16_t imgur_redirect_port = 8000; // Redirect URI is http://127.0.0.1:8000
+static const uint16_t imgur_redirect_port = 8000; // Redirect URI is http://127.0.0.1:8000      // krazy:exclude=insecurenet
 
 class Q_DECL_HIDDEN ImgurTalker::Private
 {
