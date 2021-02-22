@@ -72,10 +72,10 @@ public:
 
 private:
 
-    Q_DECLARE_PRIVATE(CoreDbBackend)
-
     // Disable
-    explicit CoreDbBackend(QObject*);
+    CoreDbBackend(QObject*) = delete;
+
+    Q_DECLARE_PRIVATE(CoreDbBackend)
 };
 
 } // namespace Digikam

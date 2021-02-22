@@ -56,7 +56,7 @@ public:
 private:
 
     // Disable
-    explicit FaceDbBackend(QObject*);
+    FaceDbBackend(QObject*) = delete;
 
     Q_DECLARE_PRIVATE(BdEngineBackend)
 };

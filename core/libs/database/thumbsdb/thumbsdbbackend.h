@@ -55,7 +55,7 @@ public:
 private:
 
     // Disabled
-    explicit ThumbsDbBackend(QObject*);
+    ThumbsDbBackend(QObject*) = delete;
 
     Q_DECLARE_PRIVATE(BdEngineBackend)
 };
