@@ -723,6 +723,20 @@ SearchField* SearchField::createField(const QString& name, SearchFieldGroup* con
 
         return field;
     }
+    else if (name == QLatin1String("emptytext"))
+    {
+        SearchFieldChoice* const field = new SearchFieldChoice(parent);
+        field->setFieldName(name);
+        field->setText(i18n("Empty Text"), i18n("Return items without text in:"));
+        QStringList comments;
+        comments << QLatin1String("comment") << i18n("Caption");
+        comments << QLatin1String("author")  << i18n("Author");
+        comments << QLatin1String("title")   << i18n("Title");
+
+        field->setChoice(comments);
+
+        return field;
+    }
     else if (name == QLatin1String("aspectratioimg"))
     {
         SearchFieldText* const field = new SearchFieldText(parent);

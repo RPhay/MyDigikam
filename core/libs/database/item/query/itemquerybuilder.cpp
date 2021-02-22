@@ -836,6 +836,60 @@ bool ItemQueryBuilder::buildField(QString& sql, SearchXmlCachingReader& reader, 
         sql += QString::fromUtf8(" ?)) ");
         *boundValues << DatabaseComment::Title << fieldQuery.prepareForLike(reader.value());
     }
+    else if (name == QLatin1String("emptytext"))
+    {
+        if ((relation == SearchXml::OneOf) || (relation == SearchXml::Equal))
+        {
+            QStringList values;
+
+            if (relation == SearchXml::OneOf)
+            {
+                values = reader.valueToStringList();
+            }
+            else
+            {
+                values << reader.value();
+            }
+
+            if (values.isEmpty())
+            {
+                qCDebug(DIGIKAM_DATABASE_LOG) << "List for OneOf or Equal is empty";
+                return false;
+            }
+
+            foreach (const QString& value, values)
+            {
+                if      ((value == QLatin1String("title")) ||
+                         (value == QLatin1String("comment")))
+                {
+                    sql += QString::fromUtf8(" (Images.id NOT IN "
+                           " (SELECT imageid FROM ImageComments "
+                           "  WHERE type=? AND comment != '')) ");
+
+                    if      (value == QLatin1String("comment"))
+                    {
+                        *boundValues << DatabaseComment::Comment;
+                    }
+                    else if (value == QLatin1String("title"))
+                    {
+                        *boundValues << DatabaseComment::Title;
+                    }
+                }
+                else if (value == QLatin1String("author"))
+                {
+                    sql += QString::fromUtf8(" (Images.id NOT IN "
+                           " (SELECT imageid FROM ImageComments "
+                           "  WHERE type=? AND author != '')) ");
+                    *boundValues << DatabaseComment::Comment;
+                }
+
+                if ((relation == SearchXml::OneOf) && (value != values.last()))
+                {
+                    sql += QString::fromUtf8("OR");
+                }
+            }
+        }
+    }
     else if (name == QLatin1String("imagetagproperty"))
     {
         if (relation == SearchXml::Equal || relation == SearchXml::InTree)
