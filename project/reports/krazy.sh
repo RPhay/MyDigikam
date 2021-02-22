@@ -73,9 +73,11 @@ krazy2all --export xml \
           --strict all \
           --priority all \
           --verbose \
+          --exclude qclasses \
           --topdir ../../ \
           --config ../../.krazy \
-          --outfile ./report.krazy.xml
+          --outfile ./report.krazy.xml \
+          || true
 
 # Clean up XML file
 
