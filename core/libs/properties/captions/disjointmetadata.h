@@ -279,7 +279,7 @@ private:
 private:
 
     // Disable
-    DisjointMetadata(QObject*);
+    explicit DisjointMetadata(QObject*);
 
     class Private;
     Private* d;
