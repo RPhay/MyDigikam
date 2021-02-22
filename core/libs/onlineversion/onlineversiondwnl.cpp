@@ -33,6 +33,7 @@
 #include <QFutureWatcher>
 #include <QtConcurrent>
 #include <QByteArray>
+#include <QPointer>
 #include <QEventLoop>
 #include <QApplication>
 #include <QStandardPaths>
@@ -285,11 +286,11 @@ void OnlineVersionDwnl::slotDownloaded(QNetworkReply* reply)
     emit signalComputeChecksum();
 
     QString hash;
-    QEventLoop loop(this);
+    QPointer<QEventLoop> loop = new QEventLoop(this);
     QFutureWatcher<void> fwatcher;
 
     connect(&fwatcher, SIGNAL(finished()),
-            &loop, SLOT(quit()));
+            loop, SLOT(quit()));
 
     connect(static_cast<QDialog*>(parent()), SIGNAL(rejected()),
             &fwatcher, SLOT(cancel()));
@@ -302,7 +303,7 @@ void OnlineVersionDwnl::slotDownloaded(QNetworkReply* reply)
         }
     ));
 
-    loop.exec();
+    loop->exec();
 
     if (d->checksums != hash)
     {
@@ -312,8 +313,10 @@ void OnlineVersionDwnl::slotDownloaded(QNetworkReply* reply)
         return;
     }
 
-    QString path    = QStandardPaths::writableLocation(QStandardPaths::DownloadLocation);
-    path            = QDir::toNativeSeparators(path + QLatin1String("/") + d->file);
+    // Checksum is fine, now save data to disk
+
+    QString path = QStandardPaths::writableLocation(QStandardPaths::DownloadLocation);
+    path         = QDir::toNativeSeparators(path + QLatin1String("/") + d->file);
 
     QFile file(path);
 
