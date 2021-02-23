@@ -729,9 +729,11 @@ SearchField* SearchField::createField(const QString& name, SearchFieldGroup* con
         field->setFieldName(name);
         field->setText(i18n("Empty Text"), i18n("Return items without text in:"));
         QStringList comments;
-        comments << QLatin1String("comment") << i18n("Caption");
-        comments << QLatin1String("author")  << i18n("Author");
-        comments << QLatin1String("title")   << i18n("Title");
+        comments << QLatin1String("creator")  << i18n("Creator");
+        comments << QLatin1String("comment")  << i18n("Caption");
+        comments << QLatin1String("author")   << i18n("Author");
+        comments << QLatin1String("headline") << i18n("Headline");
+        comments << QLatin1String("title")    << i18n("Title");
 
         field->setChoice(comments);
 

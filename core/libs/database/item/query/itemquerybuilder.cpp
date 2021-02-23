@@ -857,34 +857,56 @@ bool ItemQueryBuilder::buildField(QString& sql, SearchXmlCachingReader& reader, 
                 return false;
             }
 
-            sql += QString::fromUtf8(" (Images.id NOT IN "
-                   " (SELECT imageid FROM ImageComments WHERE ");
-
-            foreach (const QString& value, values)
+            if (values.contains(QLatin1String("creator")))
             {
-                if      (value == QLatin1String("comment"))
-                {
-                    sql += QString::fromUtf8("(type=? AND comment != '') ");
-                    *boundValues << DatabaseComment::Comment;
-                }
-                else if (value == QLatin1String("title"))
-                {
-                    sql += QString::fromUtf8("(type=? AND comment != '') ");
-                    *boundValues << DatabaseComment::Title;
-                }
-                else if (value == QLatin1String("author"))
-                {
-                    sql += QString::fromUtf8("(type=? AND author != '') ");
-                    *boundValues << DatabaseComment::Comment;
-                }
+                sql += QString::fromUtf8(" (Images.id NOT IN "
+                       " (SELECT imageid FROM ImageCopyright "
+                       "  WHERE property='creator' and value != '')) ");
 
-                if (value != values.last())
+                values.removeAll(QLatin1String("creator"));
+
+                if (!values.isEmpty())
                 {
-                    sql += QString::fromUtf8("OR ");
+                    sql += QString::fromUtf8("OR");
                 }
             }
 
-            sql += QString::fromUtf8(")) ");
+            if (!values.isEmpty())
+            {
+                sql += QString::fromUtf8(" (Images.id NOT IN "
+                       " (SELECT imageid FROM ImageComments WHERE ");
+
+                foreach (const QString& value, values)
+                {
+                    if      (value == QLatin1String("headline"))
+                    {
+                        sql += QString::fromUtf8("(type=? AND comment != '') ");
+                        *boundValues << DatabaseComment::Headline;
+                    }
+                    else if (value == QLatin1String("comment"))
+                    {
+                        sql += QString::fromUtf8("(type=? AND comment != '') ");
+                        *boundValues << DatabaseComment::Comment;
+                    }
+                else if (value == QLatin1String("title"))
+                    {
+                        sql += QString::fromUtf8("(type=? AND comment != '') ");
+                        *boundValues << DatabaseComment::Title;
+                    }
+                    else if (value == QLatin1String("author"))
+                    {
+                        sql += QString::fromUtf8("(type=? AND author != '') ");
+                        *boundValues << DatabaseComment::Comment;
+                    }
+
+                    if (value != values.last())
+                    {
+                        sql += QString::fromUtf8("OR ");
+                    }
+                }
+
+                sql += QString::fromUtf8(")) ");
+            }
         }
     }
     else if (name == QLatin1String("imagetagproperty"))

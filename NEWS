@@ -368,4 +368,5 @@ BUGFIXES:
 328 ==> 433311 - New or modified root album folders are always placed into local collections (= Type No 1 in table album roots).
 329 ==> 183103 - Allow to change Presentation tool delay on the fly [patch].
 330 ==> 433331 - Display Thumbnails greater than 9080 missing with removable disk Off line (Ok On Line).
-331 ==> 
+331 ==> 424051 - Please add search for images without captions.
+332 ==> 
