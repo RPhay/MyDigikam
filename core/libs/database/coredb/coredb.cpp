@@ -1956,7 +1956,7 @@ QString CoreDB::getImageProperty(qlonglong imageID, const QString& property) con
     QList<QVariant> values;
 
     d->db->execSql(QString::fromUtf8("SELECT value FROM ImageProperties "
-                                     "WHERE imageid=? and property=?;"),
+                                     "WHERE imageid=? AND property=?;"),
                    imageID, property, &values);
 
     if (values.isEmpty())
@@ -2001,7 +2001,7 @@ QList<CopyrightInfo> CoreDB::getItemCopyright(qlonglong imageID, const QString& 
     else
     {
         d->db->execSql(QString::fromUtf8("SELECT property, value, extraValue FROM ImageCopyright "
-                                         "WHERE imageid=? and property=?;"),
+                                         "WHERE imageid=? AND property=?;"),
                        imageID, property, &values);
     }
 
@@ -3243,7 +3243,7 @@ QMap<int, int> CoreDB::getNumberOfImagesInAlbums() const
     // initialize allAbumIDs with all existing albums from db to prevent
     // wrong album image counters
 
-    d->db->execSql(QString::fromUtf8("SELECT id from Albums;"),
+    d->db->execSql(QString::fromUtf8("SELECT id FROM Albums;"),
                    &allAbumIDs);
 
     for (QList<QVariant>::const_iterator it = allAbumIDs.constBegin() ; it != allAbumIDs.constEnd() ; ++it)
@@ -3278,7 +3278,7 @@ QMap<int, int> CoreDB::getNumberOfImagesInTags() const
     // initialize allTagIDs with all existing tags from db to prevent
     // wrong tag counters
 
-    d->db->execSql(QString::fromUtf8("SELECT id from Tags;"),
+    d->db->execSql(QString::fromUtf8("SELECT id FROM Tags;"),
                    &allTagIDs);
 
     for (QList<QVariant>::const_iterator it = allTagIDs.constBegin() ; it != allTagIDs.constEnd() ; ++it)
@@ -3981,7 +3981,7 @@ QList<qlonglong> CoreDB::getItemIDsInTag(int tagID, bool recursive) const
 QString CoreDB::getAlbumRelativePath(int albumID) const
 {
     QList<QVariant> values;
-    d->db->execSql(QString::fromUtf8("SELECT relativePath from Albums WHERE id=?;"),
+    d->db->execSql(QString::fromUtf8("SELECT relativePath FROM Albums WHERE id=?;"),
                    albumID, &values);
 
     if (values.isEmpty())

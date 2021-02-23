@@ -2191,7 +2191,7 @@
                     CREATE PROCEDURE drop_index_if_exists(in tableName varchar(64), in indexName varchar(64))
                     BEGIN
                         IF((SELECT COUNT(*) AS index_exists FROM information_schema.statistics
-                            WHERE TABLE_SCHEMA = DATABASE() and table_name = CONVERT(tableName USING latin1) AND index_name = CONVERT(indexName USING latin1)) > 0)
+                            WHERE TABLE_SCHEMA = DATABASE() AND table_name = CONVERT(tableName USING latin1) AND index_name = CONVERT(indexName USING latin1)) > 0)
                         THEN
                             SET @query = CONCAT(
                                 CONVERT('DROP INDEX ' USING latin1),
