@@ -24,7 +24,7 @@
  * - subversion.imagemagick.org/subversion/ImageMagick/trunk/coders/tiff.c
  *
  * Test images repository:
- * - http://www.remotesensing.org/libtiff/images.html
+ * - www.remotesensing.org/libtiff/images.html
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General

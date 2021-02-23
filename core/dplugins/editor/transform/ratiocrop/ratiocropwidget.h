@@ -81,7 +81,7 @@ public:
     };
 
     // Proportion : Golden Ratio and Rule of Thirds. More information at this url:
-    // http://photoinf.com/General/Robert_Berdan/Composition_and_the_Elements_of_Visual_Design.htm      // krazy:exclude=insecurenet
+    // photoinf.com/General/Robert_Berdan/Composition_and_the_Elements_of_Visual_Design.htm
 
     enum GuideLineType
     {
