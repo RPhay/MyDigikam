@@ -888,7 +888,7 @@ bool ItemQueryBuilder::buildField(QString& sql, SearchXmlCachingReader& reader, 
                         sql += QString::fromUtf8("(type=? AND comment != '') ");
                         *boundValues << DatabaseComment::Comment;
                     }
-                else if (value == QLatin1String("title"))
+                    else if (value == QLatin1String("title"))
                     {
                         sql += QString::fromUtf8("(type=? AND comment != '') ");
                         *boundValues << DatabaseComment::Title;
