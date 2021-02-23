@@ -520,7 +520,7 @@ void CalSystemPrivate::julianDayToDate(qint64 jd, int* year, int* month, int* da
         case CalSystem::ThaiCalendar:
         {
             // Formula from The Calendar FAQ by Claus Tondering
-            // http://www.tondering.dk/claus/cal/node3.html#SECTION003161000000000000000
+            // www.tondering.dk/claus/cal/node3.html#SECTION003161000000000000000
 
             qint64 a = jd + 32044;
             qint64 b = ((4 * a) + 3) / 146097;
@@ -588,7 +588,7 @@ void CalSystemPrivate::julianDayToDate(qint64 jd, int* year, int* month, int* da
         case CalSystem::JulianCalendar:
         {
             // Formula from The Calendar FAQ by Claus Tondering
-            // http://www.tondering.dk/claus/cal/node3.html#SECTION003161000000000000000
+            // www.tondering.dk/claus/cal/node3.html#SECTION003161000000000000000
 
             qint64 b = 0;
             qint64 c = jd + 32082;
@@ -649,7 +649,7 @@ qint64 CalSystemPrivate::julianDayFromDate(int yr, int mth, int dy) const
         case CalSystem::ThaiCalendar:
         {
             // Formula from The Calendar FAQ by Claus Tondering
-            // http://www.tondering.dk/claus/cal/node3.html#SECTION003161000000000000000
+            // www.tondering.dk/claus/cal/node3.html#SECTION003161000000000000000
 
             int a = (14 - month) / 12;
             year  = year + 4800 - a;
@@ -714,7 +714,7 @@ qint64 CalSystemPrivate::julianDayFromDate(int yr, int mth, int dy) const
         case CalSystem::JulianCalendar:
         {
             // Formula from The Calendar FAQ by Claus Tondering
-            // http://www.tondering.dk/claus/cal/node3.html#SECTION003161000000000000000
+            // www.tondering.dk/claus/cal/node3.html#SECTION003161000000000000000
 
             int a = (14 - month) / 12;
             year  = year + 4800 - a;

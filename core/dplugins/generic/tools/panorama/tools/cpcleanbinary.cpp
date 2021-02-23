@@ -31,7 +31,7 @@ CPCleanBinary::CPCleanBinary(QObject* const)
                    QLatin1String("cpclean version "),
                    1,
                    QLatin1String("Hugin"),
-                   QLatin1String("http://hugin.sourceforge.net/download/"),
+                   QLatin1String("http://hugin.sourceforge.net/download/"),         // krazy:exclude=insecurenet
                    QLatin1String("Panorama"),
                    QStringList(QLatin1String("-h"))
                   )

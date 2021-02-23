@@ -273,7 +273,7 @@ DMetadata::CountryCodeMap DMetadata::countryCodeMap()
     CountryCodeMap countryCodeMap;
 
     // All ISO 639 language code based on 2 characters
-    // http://xml.coverpages.org/iso639a.html
+    // xml.coverpages.org/iso639a.html
 
     countryCodeMap.insert( QLatin1String("AA"), i18n("Afar"));
     countryCodeMap.insert( QLatin1String("AB"), i18n("Abkhazian"));

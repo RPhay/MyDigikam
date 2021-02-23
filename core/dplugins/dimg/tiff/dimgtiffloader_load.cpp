@@ -145,8 +145,8 @@ bool DImgTIFFLoader::load(const QString& filePath, DImgLoaderObserver* const obs
 
     // TODO: check others TIFF color-spaces here. Actually, only RGB, PALETTE and MINISBLACK
     // have been tested.
-    // Complete description of TIFFTAG_PHOTOMETRIC tag can be found at this url:
-    // http://www.awaresystems.be/imaging/tiff/tifftags/photometricinterpretation.html
+    // Complete description of TIFFTAG_PHOTOMETRIC tag can be found at this Url:
+    // www.awaresystems.be/imaging/tiff/tifftags/photometricinterpretation.html
 
     TIFFGetFieldDefaulted(tif, TIFFTAG_PHOTOMETRIC, &photometric);
 

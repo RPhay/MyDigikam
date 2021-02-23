@@ -68,7 +68,7 @@ QString TextureFilter::DisplayableName()
 
 /**
  * This method is based on the Simulate Texture Film tutorial from GimpGuru.org web site
- * available at this url : http://www.gimpguru.org/Tutorials/SimulatedTexture/
+ * available at this url : www.gimpguru.org/Tutorials/SimulatedTexture/
  */
 
 //#define INT_MULT(a,b,t)  ((t) = (a) * (b) + 0x80, ( ( (t >> 8) + t ) >> 8))

@@ -862,7 +862,7 @@ void ItemPropertiesTab::shortenedModelInfo(QString& model)
  * Instead of keeping the sequence of continued fraction terms,
  * we just keep the last partial product of these matrices.
  *
- * Details: http://stackoverflow.com/questions/95727/how-to-convert-floats-to-human-readable-fractions
+ * Details: stackoverflow.com/questions/95727/how-to-convert-floats-to-human-readable-fractions
  *
  */
 double ItemPropertiesTab::doubleToHumanReadableFraction(double val, long* num, long* den, long maxden)

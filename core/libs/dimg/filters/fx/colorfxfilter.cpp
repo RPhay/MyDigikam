@@ -421,7 +421,7 @@ void ColorFXFilter::loadLut3D(const QString& path)
     {
         qCDebug(DIGIKAM_DIMG_LOG) << "Ca not yet process Cube LUTs";
 
-        // TODO: Adobe Cube LUT http://wwwimages.adobe.com/content/dam/Adobe/en/products/speedgrade/cc/pdfs/cube-lut-specification-1.0.pdf
+        // TODO: Adobe Cube LUT wwwimages.adobe.com/content/dam/Adobe/en/products/speedgrade/cc/pdfs/cube-lut-specification-1.0.pdf
     }
     else
     {

@@ -145,7 +145,7 @@ RestorationTool::RestorationTool(QObject* const parent)
     QGridLayout* const grid  = new QGridLayout(firstPage);
     d->mainTab->addTab( firstPage, i18n("Preset") );
 
-    DActiveLabel* const cimgLogoLabel = new DActiveLabel(QUrl(QLatin1String("http://cimg.sourceforge.net")),
+    DActiveLabel* const cimgLogoLabel = new DActiveLabel(QUrl(QLatin1String("http://cimg.sourceforge.net")),    // krazy:exclude=insecurenet
                                                          QStandardPaths::locate(QStandardPaths::GenericDataLocation, QLatin1String("digikam/data/logo-cimg.png")));
     cimgLogoLabel->setToolTip(i18n("Visit CImg library website"));
 

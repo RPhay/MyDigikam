@@ -112,7 +112,7 @@ PanoIntroPage::PanoIntroPage(PanoManager* const mngr, QWizard* const dlg)
                         "stitching them into a panorama.</p>"
                         "<p>Images must be taken from the same point of view.</p>"
                         "<p>For more information, please take a look at "
-                        "<a href='http://hugin.sourceforge.net/tutorials/overview/en.shtml'>this page</a></p>"
+                        "<a href='http://hugin.sourceforge.net/tutorials/overview/en.shtml'>this page</a></p>"      // krazy:exclude=insecurenet
                         "</qt>"));
 
     QGroupBox* const binaryBox        = new QGroupBox(vbox);
@@ -216,7 +216,7 @@ PanoIntroPage::PanoIntroPage(PanoManager* const mngr, QWizard* const dlg)
     d->hdrRadioButton->setWhatsThis(i18nc("@info:whatsthis", "<b>HDR output</b>: Output in High Dynamic Range, meaning that every piece of "
                                           "information contained in the original photos are preserved. Note that you "
                                           "need another software to process the resulting panorama, like "
-                                          "<a href=\"http://qtpfsgui.sourceforge.net/\">Luminance HDR</a>"));
+                                          "<a href=\"http://qtpfsgui.sourceforge.net/\">Luminance HDR</a>"));       // krazy:exclude=insecurenet
     formatVBox->addWidget(d->hdrRadioButton);
     group->addButton(d->hdrRadioButton);
 */

@@ -32,7 +32,7 @@ AlignBinary::AlignBinary()
                    QLatin1String("align_image_stack version "),
                    1,
                    QLatin1String("Hugin"),
-                   QLatin1String("http://hugin.sourceforge.net/download/"),
+                   QLatin1String("http://hugin.sourceforge.net/download/"),     // krazy:exclude=insecurenet
                    QLatin1String("ExpoBlending"),
                    QStringList(QLatin1String("-h"))
                   )

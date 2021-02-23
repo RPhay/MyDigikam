@@ -28,7 +28,7 @@ namespace DigikamGenericPanoramaPlugin
 HuginExecutorBinary::HuginExecutorBinary(QObject* const)
     : DBinaryIface(QLatin1String("hugin_executor"),
                    QLatin1String("Hugin"),
-                   QLatin1String("http://hugin.sourceforge.net/download/"),
+                   QLatin1String("http://hugin.sourceforge.net/download/"),         // krazy:exclude=insecurenet
                    QLatin1String("Panorama"),
                    QStringList(QLatin1String("-h"))
                   )

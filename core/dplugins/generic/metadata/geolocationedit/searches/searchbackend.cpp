@@ -105,9 +105,9 @@ bool SearchBackend::search(const QString& backendName, const QString& searchTerm
     {
         d->runningBackend = backendName;
 
-        // documentation: http://www.geonames.org/export/geonames-search.html
+        // documentation: https://www.geonames.org/export/geonames-search.html
 
-        QUrl netUrl(QLatin1String("http://api.geonames.org/search"));
+        QUrl netUrl(QLatin1String("http://api.geonames.org/search"));       // krazy:exclude=insecurenet
 
         QUrlQuery q(netUrl);
         q.addQueryItem(QLatin1String("type"), QLatin1String("xml"));

@@ -269,7 +269,7 @@ void DRawDecoderWidget::setup(int advSettings)
     dcrawVersion->setTextFormat(Qt::RichText);
     dcrawVersion->setTextInteractionFlags(Qt::LinksAccessibleByMouse);
     dcrawVersion->setText(QString::fromLatin1("<a href=\"%1\">%2</a>")
-                          .arg(QLatin1String("http://www.libraw.org"))
+                          .arg(QLatin1String("https://www.libraw.org"))
                           .arg(QString::fromLatin1("libraw %1").arg(DRawDecoder::librawVersion())));
 
     demosaicingLayout->addWidget(dcrawVersion, 0, 2, 1, 1);

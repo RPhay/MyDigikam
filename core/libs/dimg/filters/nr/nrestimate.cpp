@@ -9,7 +9,7 @@
  *               described into "The Handbook of Astronomical Image Processing" book
  *               from Richard Berry and James Burnell, chapter 18.
  *               See this wiki page for details:
- *               http://community.kde.org/Digikam/SoK2012/AutoNR
+ *               community.kde.org/Digikam/SoK2012/AutoNR
  *
  * Copyright (C) 2012-2013 by Sayantan Datta <sayantan dot knz at gmail dot com>
  * Copyright (C) 2012-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>

@@ -34,7 +34,7 @@ MakeBinary::MakeBinary(QObject* const)
 
 #ifdef Q_OS_WIN
 
-                   QLatin1String("http://gnuwin32.sourceforge.net/packages/make.htm"),
+                   QLatin1String("http://gnuwin32.sourceforge.net/packages/make.htm"),          // krazy:exclude=insecurenet
 
 #else
 

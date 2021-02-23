@@ -31,7 +31,7 @@ EnblendBinary::EnblendBinary(QObject* const)
                    QLatin1String("enblend "),
                    0,
                    QLatin1String("Hugin"),
-                   QLatin1String("http://hugin.sourceforge.net/download/"),
+                   QLatin1String("http://hugin.sourceforge.net/download/"),         // krazy:exclude=insecurenet
                    QLatin1String("Panorama"),
                    QStringList(QLatin1String("-V"))
                   )

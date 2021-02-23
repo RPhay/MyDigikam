@@ -644,8 +644,8 @@ bool DImgPNGLoader::load(const QString& filePath, DImgLoaderObserver* const obse
     Source           Device used to create the image
     Comment          Miscellaneous comment; conversion from GIF comment
 
-    Extra Raw profiles tag are used by ImageMagick and defines at this URL :
-    http://search.cpan.org/src/EXIFTOOL/Image-ExifTool-5.87/html/TagNames/PNG.html#TextualData
+    Extra Raw profiles tag are used by ImageMagick and defines at this Url:
+    search.cpan.org/src/EXIFTOOL/Image-ExifTool-5.87/html/TagNames/PNG.html#TextualData
     */
 
     if (m_loadFlags & LoadICCData)

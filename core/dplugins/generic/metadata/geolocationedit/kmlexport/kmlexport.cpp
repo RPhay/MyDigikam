@@ -402,7 +402,7 @@ void KmlExport::addTrack(QDomElement& kmlAlbum)
 
         //! FIXME is there a way to be sure of the location of the icon?
 
-        addKmlTextElement(kmlIcon, QLatin1String("href"), QLatin1String("http://maps.google.com/mapfiles/kml/pal4/icon60.png"));
+        addKmlTextElement(kmlIcon, QLatin1String("href"), QLatin1String("https://maps.google.com/mapfiles/kml/pal4/icon60.png"));
 
         m_gpxParser.CreateTrackPoints(kmlFolder, *m_kmlDocument, m_TimeZone - 12, m_GPXAltitudeMode);
     }
@@ -442,7 +442,8 @@ void KmlExport::generate()
     QDomImplementation impl;
     QDomProcessingInstruction instr = m_kmlDocument->createProcessingInstruction(QLatin1String("xml"), QLatin1String("version=\"1.0\" encoding=\"UTF-8\""));
     m_kmlDocument->appendChild(instr);
-    QDomElement kmlRoot             = m_kmlDocument->createElementNS(QLatin1String("http://www.opengis.net/kml/2.2"), QLatin1String("kml"));
+    QDomElement kmlRoot             = m_kmlDocument->createElementNS(QLatin1String("http://www.opengis.net/kml/2.2"),       // krazy:exclude=insecurenet
+                                                                     QLatin1String("kml"));
     m_kmlDocument->appendChild(kmlRoot);
 
     QDomElement kmlAlbum            = addKmlElement(kmlRoot, QLatin1String("Document"));
@@ -597,7 +598,7 @@ void KmlExport::getConfig()
     // UrlDestDir have to have the trailing
 
     m_baseDestDir             = group.readEntry(QLatin1String("baseDestDir"),        QString::fromUtf8("/tmp/"));
-    m_UrlDestDir              = group.readEntry(QLatin1String("UrlDestDir"),         QString::fromUtf8("http://www.example.com/"));
+    m_UrlDestDir              = group.readEntry(QLatin1String("UrlDestDir"),         QString::fromUtf8("https://www.example.com/"));
     m_KMLFileName             = group.readEntry(QLatin1String("KMLFileName"),        QString::fromUtf8("kmldocument"));
     m_altitudeMode            = group.readEntry(QLatin1String("Altitude Mode"),      0);
 

@@ -401,7 +401,7 @@ ResizeTool::ResizeTool(QObject* const parent)
     d->resolution->setObjectName(QLatin1String("resolution"));
     d->resolution->setWhatsThis( i18n("New image resolution in pixels/inch."));
 
-    d->cimgLogoLabel        = new DActiveLabel(QUrl(QLatin1String("http://cimg.sourceforge.net")),
+    d->cimgLogoLabel        = new DActiveLabel(QUrl(QLatin1String("http://cimg.sourceforge.net")),      // krazy:exclude=insecurenet
                                                QStandardPaths::locate(QStandardPaths::GenericDataLocation,
                                                                       QLatin1String("digikam/data/logo-cimg.png")), firstPage);
     d->cimgLogoLabel->setToolTip(i18n("Visit CImg library website"));

@@ -563,7 +563,7 @@ bool MailProcess::invokeMailAgent()
                 }
 
                 // More info about command lines options with Mozilla & co:
-                // http://www.mozilla.org/docs/command-line-args.html#Syntax_Rules
+                // www.mozilla.org/docs/command-line-args.html#Syntax_Rules
 
                 case MailSettings::NETSCAPE:
                 case MailSettings::THUNDERBIRD:

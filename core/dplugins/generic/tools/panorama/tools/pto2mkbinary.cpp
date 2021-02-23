@@ -31,7 +31,7 @@ Pto2MkBinary::Pto2MkBinary(QObject* const)
                    QLatin1String("pto2mk version "),
                    2,
                    QLatin1String("Hugin"),
-                   QLatin1String("http://hugin.sourceforge.net/download/"),
+                   QLatin1String("http://hugin.sourceforge.net/download/"),         // krazy:exclude=insecurenet
                    QLatin1String("Panorama"),
                    QStringList(QLatin1String("-h"))
                   )

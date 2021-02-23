@@ -120,7 +120,7 @@ PanoLastPage::PanoLastPage(PanoManager* const mngr, QWizard* const dlg)
     d->savePtoCheckBox->setToolTip(i18nc("@info:tooltip", "Save the project file for further processing within Hugin GUI."));
     d->savePtoCheckBox->setWhatsThis(i18nc("@info:whatsthis", "<b>Save project file</b>: You can keep the project file generated to stitch "
                                           "your panorama for further tweaking within "
-                                          "<a href=\"http://hugin.sourceforge.net/\">Hugin</a> by checking this. "
+                                          "<a href=\"http://hugin.sourceforge.net/\">Hugin</a> by checking this. "          // krazy:exclude=insecurenet
                                           "This is useful if you want a different projection, modify the horizon or "
                                           "the center of the panorama, or modify the control points to get better results."));
     formatVBox->addWidget(d->savePtoCheckBox);

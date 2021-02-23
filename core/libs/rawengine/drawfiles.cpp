@@ -48,7 +48,7 @@ QMap<QString, QString> s_rawFileExtensionsdWithDesc()
     QMap<QString, QString> map;
 
     /**
-     * NOTE: extension list Version 1 and 2 are taken from http://www.cybercom.net/~dcoffin/dcraw/rawphoto.c
+     * NOTE: extension list Version 1 and 2 are taken from www.cybercom.net/~dcoffin/dcraw/rawphoto.c
      *
      *                        Ext           Descriptions From
      *                                      www.file-extensions.org

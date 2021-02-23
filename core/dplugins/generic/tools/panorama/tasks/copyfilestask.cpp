@@ -161,7 +161,8 @@ void CopyFilesTask::run(ThreadWeaver::JobPointer, ThreadWeaver::Thread*)
     if (addGPlusMetadata)
     {
         qCDebug(DIGIKAM_DPLUGIN_GENERIC_LOG) << "Adding PhotoSphere metadata...";
-        meta->registerXmpNameSpace(QLatin1String("http://ns.google.com/photos/1.0/panorama/"), QLatin1String("GPano"));
+        meta->registerXmpNameSpace(QLatin1String("http://ns.google.com/photos/1.0/panorama/"),      // krazy:exclude=insecurenet
+                                   QLatin1String("GPano"));
         meta->setXmpTagString("Xmp.GPano.UsePanoramaViewer", QLatin1String("True"));
         meta->setXmpTagString("Xmp.GPano.StitchingSoftware", QLatin1String("Panorama digiKam tool with Hugin"));
         meta->setXmpTagString("Xmp.GPano.ProjectionType",    QLatin1String("equirectangular"));

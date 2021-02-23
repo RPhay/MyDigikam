@@ -102,8 +102,8 @@ bool DImgTIFFLoader::save(const QString& filePath, DImgLoaderObserver* const obs
         //        Use horizontal differencing for images which are
         //        likely to be continuous tone. The TIFF spec says that this
         //        usually leads to better compression.
-        //        See this url for more details:
-        //        http://www.awaresystems.be/imaging/tiff/tifftags/predictor.html
+        //        See this Url for more details:
+        //        www.awaresystems.be/imaging/tiff/tifftags/predictor.html
         TIFFSetField(tif, TIFFTAG_PREDICTOR,   2);
     }
     else

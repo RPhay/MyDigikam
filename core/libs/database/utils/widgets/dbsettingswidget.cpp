@@ -174,7 +174,7 @@ void DatabaseSettingsWidget::setupMainArea()
     d->hostName->setToolTip(i18n("This is the computer name running MySQL server.\nThis can be \"localhost\" for a local server, "
                                  "or the network computer\n name (or IP address) in case of remote computer."));
 
-    QLabel* const connectOptsLabel                   = new QLabel(i18n("<a href=\"http://doc.qt.io/qt-5/"
+    QLabel* const connectOptsLabel                   = new QLabel(i18n("<a href=\"https://doc.qt.io/qt-5/"
                                                                        "qsqldatabase.html#setConnectOptions\">Connect options:</a>"));
     connectOptsLabel->setOpenExternalLinks(true);
     d->connectOpts                                   = new QLineEdit();

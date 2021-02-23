@@ -399,7 +399,7 @@ void KmlWidget::readSettings()
 
     /// UrlDestDir have to have the trailing /
     baseDestDir         = group.readEntry(QLatin1String("baseDestDir"), QString::fromUtf8("/tmp/"));
-    UrlDestDir          = group.readEntry(QLatin1String("UrlDestDir"),  QString::fromUtf8("http://www.example.com/"));
+    UrlDestDir          = group.readEntry(QLatin1String("UrlDestDir"),  QString::fromUtf8("https://www.example.com/"));
     KMLFileName         = group.readEntry(QLatin1String("KMLFileName"), QString::fromUtf8("kmldocument"));
     AltitudeMode        = group.readEntry(QLatin1String("Altitude Mode"), 0);
 

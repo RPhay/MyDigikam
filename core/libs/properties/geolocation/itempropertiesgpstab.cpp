@@ -24,7 +24,7 @@
 
 /**
  * NOTE: Good explanations about GPS (in French) can be found at this url :
- * http://www.gpspassion.com/forumsen/topic.asp?TOPIC_ID=16593
+ * www.gpspassion.com/forumsen/topic.asp?TOPIC_ID=16593
  */
 
 #include "itempropertiesgpstab.h"

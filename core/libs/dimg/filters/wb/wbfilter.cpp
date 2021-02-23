@@ -221,7 +221,7 @@ void WBFilter::autoExposureAdjustement(const DImg* const img, double& black, dou
 void WBFilter::setRGBmult(const double& temperature, const double& green, double& mr, double& mg, double& mb)
 {
     // Original implementation by Tanner Helland
-    // http://www.tannerhelland.com/4435/convert-temperature-rgb-algorithm-code/
+    // www.tannerhelland.com/4435/convert-temperature-rgb-algorithm-code/
 
     double temp = temperature / 100.0;
     double mx;

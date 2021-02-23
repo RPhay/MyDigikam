@@ -238,7 +238,7 @@ void FilmGrainFilter::filmgrainMultithreaded(uint start, uint stop)
  * https://bugs.kde.org/show_bug.cgi?id=148540
  * We use YCbCr color space to perform noise addition. Please follow this url for
  * details about this color space :
- * http://en.allexperts.com/e/y/yc/ycbcr.htm
+ * en.allexperts.com/e/y/yc/ycbcr.htm
  */
 void FilmGrainFilter::filterImage()
 {
@@ -374,7 +374,7 @@ double FilmGrainFilter::randomizeGauss(double sigma)
  * This value is added to lead noise value.
  * Poisson noise is more realist to simulate photon noise apply on analog film.
  * NOTE: see approximation of Poisson noise using Gauss algorithm from noise.c code take from :
- *       http://registry.gimp.org/node/13016
+ *       registry.gimp.org/node/13016
  *       This method is very fast compared to real Poisson noise generator.
  */
 double FilmGrainFilter::randomizePoisson(double lambda)

@@ -540,7 +540,7 @@ void FieldQueryBuilder::addPosition()
             // We refrain from putting this into SQL, but use a post hook.
 
             /*
-            Reference: http://www.usenet-replayer.com/faq/comp.infosystems.gis.html
+            Reference: www.usenet-replayer.com/faq/comp.infosystems.gis.html
             Pseudo code of the formula:
                 Position 1 (lon1, lat1), position 2 (lon2, lat2), in Radians
                 d: distance; R: radius of earth. Same unit (assume: meters)

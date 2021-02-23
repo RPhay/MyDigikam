@@ -915,10 +915,10 @@ QString ExpoBlendingThread::getProcessError(QProcess& proc) const
  * Based on [3] we can say that the value can also be 12.5 or even 14.
  * Another reference for APEX is [4] where N is 0.3, closer to the APEX specification of 2^(-7/4)=0.2973.
  *
- * [1] https://en.wikipedia.org/wiki/APEX_system
- * [2] https://en.wikipedia.org/wiki/Exposure_value
- * [3] https://en.wikipedia.org/wiki/Light_meter
- * [4] http://doug.kerr.home.att.net/pumpkin/#APEX
+ * [1] en.wikipedia.org/wiki/APEX_system
+ * [2] en.wikipedia.org/wiki/Exposure_value
+ * [3] en.wikipedia.org/wiki/Light_meter
+ * [4] doug.kerr.home.att.net/pumpkin/#APEX
  *
  * This function tries first to obtain the shutter speed from either of
  * two exif tags (there is no standard between camera manufacturers):

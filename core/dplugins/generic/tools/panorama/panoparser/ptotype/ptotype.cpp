@@ -6,7 +6,7 @@
  * Date        : 2012-02-04
  * Description : a tool to create panorama by fusion of several images.
  *               This type is based on pto file format described here:
- *               http://hugin.sourceforge.net/docs/nona/nona.txt, and
+ *               hugin.sourceforge.net/docs/nona/nona.txt, and
  *               on pto files produced by Hugin's tools.
  *
  * Copyright (C) 2012-2015 by Benjamin Girault <benjamin dot girault at gmail dot com>

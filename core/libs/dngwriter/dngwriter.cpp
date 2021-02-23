@@ -23,23 +23,23 @@
 
 /**
  * References about DNG:
- * DNG SDK tutorial:    http://www.adobeforums.com/webx/.3bc2944e
- *                      http://www.adobeforums.com/webx/.3c054bde
- * DNG review:          http://www.barrypearson.co.uk/articles/dng/index.htm
- * DNG intro:           https://www.adobe.com/digitalimag/pdfs/dng_primer.pdf
- *                       https://www.adobe.com/products/dng/pdfs/DNG_primer_manufacturers.pdf
- * DNG Specification:   https://www.adobe.com/products/dng/pdfs/dng_spec_1_2_0_0.pdf
- * TIFF/EP Spec.:       http://www.map.tu.chiba-u.ac.jp/IEC/100/TA2/recdoc/N4378.pdf
- * DNG SDK reference:   http://www.thomasdideriksen.dk/misc/File%20Formats/dng_sdk_refman.pdf
- * DNG SDK tarball:     ftp://ftp.adobe.com/pub/adobe/dng/dng_sdk_1_2.zip
- * DNG users forum:     http://www.adobeforums.com/webx/.3bb5f0ec
+ * DNG SDK tutorial:    www.adobeforums.com/webx/.3bc2944e
+ *                      www.adobeforums.com/webx/.3c054bde
+ * DNG review:          www.barrypearson.co.uk/articles/dng/index.htm
+ * DNG intro:           www.adobe.com/digitalimag/pdfs/dng_primer.pdf
+ *                      www.adobe.com/products/dng/pdfs/DNG_primer_manufacturers.pdf
+ * DNG Specification:   www.adobe.com/products/dng/pdfs/dng_spec_1_2_0_0.pdf
+ * TIFF/EP Spec.:       www.map.tu.chiba-u.ac.jp/IEC/100/TA2/recdoc/N4378.pdf
+ * DNG SDK reference:   www.thomasdideriksen.dk/misc/File%20Formats/dng_sdk_refman.pdf
+ * DNG SDK tarball:     ftp.adobe.com/pub/adobe/dng/dng_sdk_1_2.zip
+ * DNG users forum:     www.adobeforums.com/webx/.3bb5f0ec
  *
  * Applications using DNG SDK:
- * DNG4PS2:             http://dng4ps2.chat.ru/index_en.html
- * CORNERFIX:           http://sourceforge.net/projects/cornerfix
- * ADOBE DNG CONVERTER: ftp://ftp.adobe.com/pub/adobe/photoshop/cameraraw/win/4.x
- * DNGCONVERT:          https://github.com/jmue/dngconvert
- * MOVIE2DNG:           https://elphel.svn.sourceforge.net/svnroot/elphel/tools/Movie2DNG
+ * DNG4PS2:             dng4ps2.chat.ru/index_en.html
+ * CORNERFIX:           sourceforge.net/projects/cornerfix
+ * ADOBE DNG CONVERTER: ftp.adobe.com/pub/adobe/photoshop/cameraraw/win/4.x
+ * DNGCONVERT:          github.com/jmue/dngconvert
+ * MOVIE2DNG:           elphel.svn.sourceforge.net/svnroot/elphel/tools/Movie2DNG
  */
 
 #include "dngwriter_p.h"

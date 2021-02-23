@@ -378,7 +378,7 @@ bool DRawDecoder::Private::loadFromLibraw(const QString& filePath, QByteArray& i
 
             /*
              * Convert between Temperature and RGB.
-             * Base on information from http://www.brucelindbloom.com/
+             * Base on information from www.brucelindbloom.com/
              * The fit for D-illuminant between 4000K and 12000K are from CIE
              * The generalization to 2000K < T < 4000K and the blackbody fits
              * are my own and should be taken with a grain of salt.

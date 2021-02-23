@@ -10,7 +10,7 @@
  *
  * RGB<->HLS transformation algorithms are inspired from methods
  * describe at this url :
- * http://www.paris-pc-gis.com/MI_Enviro/Colors/color_models.htm
+ * www.paris-pc-gis.com/MI_Enviro/Colors/color_models.htm
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
