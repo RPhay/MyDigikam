@@ -69,7 +69,7 @@ void coordinatesToClipboard(const GeoCoordinates& coordinates,
 
     const QString kmlRepresentation = QString::fromLatin1(
       "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n"
-      "<kml xmlns=\"http://www.opengis.net/kml/2.2\">\n"
+      "<kml xmlns=\"http://www.opengis.net/kml/2.2\">\n"        // krazy:exclude=insecurenet
       "<Document>\n"
       " <Placemark>\n"
       "   <name>%1</name>\n"
@@ -87,9 +87,10 @@ void coordinatesToClipboard(const GeoCoordinates& coordinates,
 
     const QString gpxRepresentation  = QString::fromLatin1(
       "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"no\" ?>\n"
-      "<gpx xmlns=\"http://www.topografix.com/GPX/1/1\" creator=\"trippy\" version=\"0.1\"\n"
-      " xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\"\n"
-      " xsi:schemaLocation=\"http://www.topografix.com/GPX/1/1 http://www.topografix.com/GPX/1/1/gpx.xsd\">\n"
+      "<gpx xmlns=\"http://www.topografix.com/GPX/1/1\" creator=\"trippy\" version=\"0.1\"\n"       // krazy:exclude=insecurenet
+      " xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\"\n"                                  // krazy:exclude=insecurenet
+      " xsi:schemaLocation=\"http://www.topografix.com/GPX/1/1"                                     // krazy:exclude=insecurenet
+      " http://www.topografix.com/GPX/1/1/gpx.xsd\">\n"                                             // krazy:exclude=insecurenet
       "  <wpt lat=\"%1\" lon=\"%2\">\n"
       "%3"
 /*

@@ -113,7 +113,7 @@ void DAboutData::authorsRegistration(KAboutData& aboutData)
     aboutData.addAuthor ( ki18n("Michael G. Hansen").toString(),
                           ki18n("Developer and Mentoring").toString(),
                           QLatin1String("mike at mghansen dot de"),
-                          QLatin1String("http://www.mghansen.de")
+                          QLatin1String("http://www.mghansen.de")           // krazy:exclude=insecurenet
                         );
 
     aboutData.addAuthor ( ki18n("Teemu Rytilahti").toString(),
@@ -422,7 +422,7 @@ void DAboutData::authorsRegistration(KAboutData& aboutData)
     aboutData.addAuthor ( ki18n("Joern Ahrens").toString(),
                           ki18n("Developer (2004-2005)").toString(),
                           QLatin1String("kde at jokele dot de"),
-                          QLatin1String("http://www.jokele.de/")
+                          QLatin1String("http://www.jokele.de/")        // krazy:exclude=insecurenet
                         );
 
     aboutData.addAuthor ( ki18n("Tom Albers").toString(),

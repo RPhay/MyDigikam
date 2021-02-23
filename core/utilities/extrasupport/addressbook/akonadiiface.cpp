@@ -56,7 +56,7 @@
 namespace Digikam
 {
 
-// See http://techbase.kde.org/Development/AkonadiPorting/AddressBook
+// See techbase.kde.org/Development/AkonadiPorting/AddressBook
 
 AkonadiIface::AkonadiIface(QMenu* const parent)
     : QObject(parent),

@@ -246,7 +246,7 @@ CameraSelection::CameraSelection(QWidget* const parent)
     QLabel* const explanation = new QLabel(box2);
     explanation->setOpenExternalLinks(true);
     explanation->setText(i18n("<p>A complete list of camera settings to use is<br/>"
-                              "available at <a href='http://www.teaser.fr/~hfiguiere/linux/digicam.html'>"
+                              "available at <a href='https://www.figuiere.net/digicam/'>"
                               "this URL</a>.</p>"));
 
     gLayout4->setContentsMargins(spacing, spacing, spacing, spacing);

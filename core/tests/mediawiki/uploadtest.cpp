@@ -73,7 +73,7 @@ private Q_SLOTS:
     void initTestCase()
     {
         uploadCount          = 0;
-        this->m_mediaWiki    = new Iface(QUrl(QStringLiteral("http://127.0.0.1:12566")));
+        this->m_mediaWiki    = new Iface(QUrl(QStringLiteral("http://127.0.0.1:12566")));       // krazy:exclude=insecurenet
         this->m_infoScenario = QStringLiteral("<api><query><pages><page pageid=\"27697087\" ns=\"0\" title=\"API\" touched=\"2010-11-25T13:59:03Z\" lastrevid=\"367741756\" counter=\"0\" length=\"70\" redirect=\"\" starttimestamp=\"2010-11-25T16:14:51Z\" edittoken=\"cecded1f35005d22904a35cc7b736e18%2B\" talkid=\"5477418\" fullurl=\"https://en.wikipedia.org/wiki/API\" editurl=\"https://en.wikipedia.org/w/index.php?title=API&action=edit\" ><protection /></page></pages></query></api>");
         this->m_file         = new QFile(QCoreApplication::applicationFilePath() + QStringLiteral("_image.jpg"));
         this->m_file->open(QIODevice::ReadOnly);
@@ -112,7 +112,9 @@ private Q_SLOTS:
         e1->setFile(this->m_file);
         e1->setFilename(QStringLiteral("Test.jpeg"));
         e1->setComment(QStringLiteral("Test"));
-        e1->setText(QStringLiteral("{{Information|Description=Ajout du logo de l'IUP ISI, Toulouse.|Source=http://www.iupisi.ups-tlse.fr/|Date=1992-01-01|Author=iup|Permission={{PD-EEA}}|other_versions=}}"));
+        e1->setText(QStringLiteral("{{Information|Description=Ajout du logo de l'IUP ISI, Toulouse.|"
+                                   "Source=http://www.iupisi.ups-tlse.fr/"                                  // krazy:exclude=insecurenet
+                                   "|Date=1992-01-01|Author=iup|Permission={{PD-EEA}}|other_versions=}}"));
         QTest::newRow("Text")
                 << QStringLiteral("/?action=upload&format=xml")
                 << QStringLiteral("<api><upload result=\"Success\" pageid=\"12\" title=\"Talk:Main Page\" oldrevid=\"465\" newrevid=\"471\" /></api>")
@@ -125,7 +127,7 @@ private Q_SLOTS:
         QFETCH(int, error);
 
         uploadCount = 0;
-        Iface MediaWiki(QUrl(QStringLiteral("http://127.0.0.1:12566")));
+        Iface MediaWiki(QUrl(QStringLiteral("http://127.0.0.1:12566")));        // krazy:exclude=insecurenet
         FakeServer fakeserver;
 
         if (scenario != QStringLiteral("error server"))
@@ -139,7 +141,9 @@ private Q_SLOTS:
         job->setFile(this->m_file);
         job->setFilename(QStringLiteral("Test.jpeg"));
         job->setComment(QStringLiteral("Test"));
-        job->setText(QStringLiteral("{{Information|Description=Ajout du logo de l'IUP ISI, Toulouse.|Source=http://www.iupisi.ups-tlse.fr/|Date=1992-01-01|Author=iup|Permission={{PD-EEA}}|other_versions=}}"));
+        job->setText(QStringLiteral("{{Information|Description=Ajout du logo de l'IUP ISI, Toulouse.|"
+                                    "Source=http://www.iupisi.ups-tlse.fr/"         // krazy:exclude=insecurenet
+                                    "|Date=1992-01-01|Author=iup|Permission={{PD-EEA}}|other_versions=}}"));
 
         connect(job,  SIGNAL(result(KJob*)),
                 this, SLOT(uploadHandle(KJob*)));

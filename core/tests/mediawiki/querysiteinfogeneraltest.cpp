@@ -73,7 +73,7 @@ private Q_SLOTS:
 
     void QuerySiteInfoGeneralTestConnectTrue()
     {
-        Iface mediaWiki(QUrl(QStringLiteral("http://127.0.0.1:12566")));
+        Iface mediaWiki(QUrl(QStringLiteral("http://127.0.0.1:12566")));        // krazy:exclude=insecurenet
         FakeServer server;
 
         generalCount = 0;
@@ -96,7 +96,7 @@ private Q_SLOTS:
 
     void QuerySiteInfoGeneralTestAttribute()
     {
-        Iface mediaWiki(QUrl(QStringLiteral("http://127.0.0.1:12566")));
+        Iface mediaWiki(QUrl(QStringLiteral("http://127.0.0.1:12566")));        // krazy:exclude=insecurenet
         FakeServer server;
 
         generalCount = 0;
@@ -144,7 +144,7 @@ private Q_SLOTS:
 
     void QuerySiteInfoGeneralTestConnectFalseXML()
     {
-        Iface mediaWiki(QUrl(QStringLiteral("http://127.0.0.1:12566")));
+        Iface mediaWiki(QUrl(QStringLiteral("http://127.0.0.1:12566")));        // krazy:exclude=insecurenet
         FakeServer server;
 
         generalCount = 0;
@@ -167,7 +167,7 @@ private Q_SLOTS:
 
     void QuerySiteInfoGeneralTestErrortIncludeAllDenied()
     {
-        Iface mediaWiki(QUrl(QStringLiteral("http://127.0.0.1:12566")));
+        Iface mediaWiki(QUrl(QStringLiteral("http://127.0.0.1:12566")));        // krazy:exclude=insecurenet
         FakeServer server;
 
         generalCount = 0;

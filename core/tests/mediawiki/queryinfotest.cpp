@@ -82,7 +82,7 @@ private Q_SLOTS:
     void initTestCase()
     {
         m_queryInfoCount = 0;
-        m_mediaWiki      = new Iface(QUrl(QStringLiteral("http://127.0.0.1:12566")));
+        m_mediaWiki      = new Iface(QUrl(QStringLiteral("http://127.0.0.1:12566")));       // krazy:exclude=insecurenet
     }
 
     void constructQuery()

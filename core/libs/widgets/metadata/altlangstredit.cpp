@@ -57,7 +57,7 @@ public:
         /**
          * NOTE: We cannot use KLocale::allLanguagesList() here because KDE only
          * support 2 characters country codes. XMP require 2+2 characters language+country
-         * following ISO 3066 (http://babelwiki.babelzilla.org/index.php?title=Language_codes)
+         * following ISO 3066 (babelwiki.babelzilla.org/index.php?title=Language_codes)
          */
 
         // The first one from the list is the Default Language code specified by XMP paper

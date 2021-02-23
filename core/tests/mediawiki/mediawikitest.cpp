@@ -67,10 +67,14 @@ private Q_SLOTS:
         QTest::addColumn<QString>("customUserAgent");
         QTest::addColumn<QString>("userAgent");
 
-        QTest::newRow("") << QUrl(QStringLiteral("http://127.0.0.1:12566")) << QString() << QStringLiteral("MediaWiki-silk");
-        QTest::newRow("") << QUrl(QStringLiteral("commons.wikimedia.org/w/api.php")) << QString() << QStringLiteral("MediaWiki-silk");
-        QTest::newRow("") << QUrl(QStringLiteral("http://commons.wikimedia.org/w/api.php")) << QStringLiteral("test1") << QStringLiteral("test1-MediaWiki-silk");
-        QTest::newRow("") << QUrl(QStringLiteral("http://commons.wikimedia.org/w/api.php/")) << QStringLiteral("test2") << QStringLiteral("test2-MediaWiki-silk");
+        QTest::newRow("") << QUrl(QStringLiteral("http://127.0.0.1:12566"))                         // krazy:exclude=insecurenet
+                          << QString() << QStringLiteral("MediaWiki-silk");
+        QTest::newRow("") << QUrl(QStringLiteral("commons.wikimedia.org/w/api.php"))
+                          << QString() << QStringLiteral("MediaWiki-silk");
+        QTest::newRow("") << QUrl(QStringLiteral("http://commons.wikimedia.org/w/api.php"))         // krazy:exclude=insecurenet
+                          << QStringLiteral("test1") << QStringLiteral("test1-MediaWiki-silk");
+        QTest::newRow("") << QUrl(QStringLiteral("http://commons.wikimedia.org/w/api.php/"))        // krazy:exclude=insecurenet
+                          << QStringLiteral("test2") << QStringLiteral("test2-MediaWiki-silk");
     }
 };
 

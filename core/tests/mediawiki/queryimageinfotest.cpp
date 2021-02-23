@@ -73,12 +73,32 @@ private Q_SLOTS:
     {
         // Constructs the fakeserver
         FakeServer fakeserver;
-        fakeserver.setScenario(QStringLiteral("<?xml version=\"1.0\"?><api><query><normalized><n from=\"Image:Image.bmp\" to=\"File:Image.bmp\" /></normalized><pages><page ns=\"6\" title=\"File:Image.bmp\" missing=\"\" imagerepository=\"shared\"><imageinfo><ii timestamp=\"2008-06-06T22:27:45Z\" user=\"User1\" size=\"448798\" width=\"924\" height=\"1203\" url=\"http://url/File:Image.bmp\" thumburl=\"http://thumburl/File:Image.bmp\" thumbwidth=\"78\" thumbheight=\"102\" descriptionurl=\"http://descriptionurl/File:Image.bmp\" comment=\"Comment1\" sha1=\"00be23585fde01190a0f8c60fc4267ea00f3745d\" mime=\"image/bmp\"><metadata><metadata name=\"Name1\" value=\"Value1\" /><metadata name=\"Name2\" value=\"Value2\" /></metadata></ii></imageinfo></page></pages></query><query-continue><imageinfo iistart=\"2007-06-06T22:27:45Z\" /></query-continue></api>"));
-        fakeserver.addScenario(QStringLiteral("<?xml version=\"1.0\"?><api><query><normalized><n from=\"Image:Image.bmp\" to=\"File:Image.bmp\" /></normalized><pages><page ns=\"6\" title=\"File:Image.bmp\" missing=\"\" imagerepository=\"shared\"><imageinfo><ii timestamp=\"2007-06-06T22:27:45Z\" user=\"User2\" size=\"448798\" width=\"924\" height=\"1203\" url=\"http://url/File:Image.bmp\" descriptionurl=\"http://descriptionurl/File:Image.bmp\" comment=\"Comment2\" sha1=\"00be23585fde01190a0f8c60fc4267ea00f3745d\" mime=\"image/bmp\"><metadata><metadata name=\"Name1\" value=\"Value1\" /><metadata name=\"Name2\" value=\"Value2\" /></metadata></ii></imageinfo></page></pages></query></api>"));
+        fakeserver.setScenario(QStringLiteral("<?xml version=\"1.0\"?><api><query><normalized><n from=\"Image:Image.bmp\" "
+                                              "to=\"File:Image.bmp\" /></normalized><pages><page ns=\"6\" title=\"File:Image.bmp\" "
+                                              "missing=\"\" imagerepository=\"shared\"><imageinfo><ii timestamp=\"2008-06-06T22:27:45Z\" "
+                                              "user=\"User1\" size=\"448798\" width=\"924\" height=\"1203\" "
+                                              "url=\"http://url/File:Image.bmp\" "                              // krazy:exclude=insecurenet
+                                              "thumburl=\"http://thumburl/File:Image.bmp\" thumbwidth=\"78\" thumbheight=\"102\" "
+                                              "descriptionurl=\"http://descriptionurl/File:Image.bmp\" "        // krazy:exclude=insecurenet
+                                              "comment=\"Comment1\" sha1=\"00be23585fde01190a0f8c60fc4267ea00f3745d\" "
+                                              "mime=\"image/bmp\"><metadata><metadata name=\"Name1\" value=\"Value1\" "
+                                              "/><metadata name=\"Name2\" value=\"Value2\" /></metadata></ii></imageinfo></page>"
+                                              "</pages></query><query-continue><imageinfo iistart=\"2007-06-06T22:27:45Z\" "
+                                              "/></query-continue></api>"));
+        fakeserver.addScenario(QStringLiteral("<?xml version=\"1.0\"?><api><query><normalized><n from=\"Image:Image.bmp\" "
+                                              "to=\"File:Image.bmp\" /></normalized><pages><page ns=\"6\" title=\"File:Image.bmp\" "
+                                              "missing=\"\" imagerepository=\"shared\"><imageinfo><ii timestamp=\"2007-06-06T22:27:45Z\" "
+                                              "user=\"User2\" size=\"448798\" width=\"924\" height=\"1203\" "
+                                              "url=\"http://url/File:Image.bmp\" "                              // krazy:exclude=insecurenet
+                                              "descriptionurl=\"http://descriptionurl/File:Image.bmp\" "        // krazy:exclude=insecurenet
+                                              "comment=\"Comment2\" sha1=\"00be23585fde01190a0f8c60fc4267ea00f3745d\" "
+                                              "mime=\"image/bmp\"><metadata><metadata name=\"Name1\" value=\"Value1\" "
+                                              "/><metadata name=\"Name2\" value=\"Value2\" /></metadata></ii></imageinfo>"
+                                              "</page></pages></query></api>"));
         fakeserver.startAndWait();
 
         // Prepare the job
-        Iface MediaWiki(QUrl(QStringLiteral("http://127.0.0.1:12566")));
+        Iface MediaWiki(QUrl(QStringLiteral("http://127.0.0.1:12566")));        // krazy:exclude=insecurenet
         QueryImageinfo* const job = new QueryImageinfo(MediaWiki);
         job->setTitle(QStringLiteral("Image:Image.bmp"));
 
@@ -134,9 +154,9 @@ private Q_SLOTS:
                 imageinfoExpected.setTimestamp(QDateTime(QDate(2008, 06, 06), QTime(22, 27, 45, 0)));
                 imageinfoExpected.setUser(QStringLiteral("User1"));
                 imageinfoExpected.setComment(QStringLiteral("Comment1"));
-                imageinfoExpected.setUrl(QUrl(QStringLiteral("http://url/File:Image.bmp")));
-                imageinfoExpected.setDescriptionUrl(QUrl(QStringLiteral("http://descriptionurl/File:Image.bmp")));
-                imageinfoExpected.setThumbUrl(QUrl(QStringLiteral("http://thumburl/File:Image.bmp")));
+                imageinfoExpected.setUrl(QUrl(QStringLiteral("http://url/File:Image.bmp")));                        // krazy:exclude=insecurenet
+                imageinfoExpected.setDescriptionUrl(QUrl(QStringLiteral("http://descriptionurl/File:Image.bmp")));  // krazy:exclude=insecurenet
+                imageinfoExpected.setThumbUrl(QUrl(QStringLiteral("http://thumburl/File:Image.bmp")));              // krazy:exclude=insecurenet
                 imageinfoExpected.setThumbWidth(78);
                 imageinfoExpected.setThumbHeight(102);
                 imageinfoExpected.setSize(448798);
@@ -153,8 +173,8 @@ private Q_SLOTS:
                 imageinfoExpected.setTimestamp(QDateTime(QDate(2007, 06, 06), QTime(22, 27, 45, 0)));
                 imageinfoExpected.setUser(QStringLiteral("User2"));
                 imageinfoExpected.setComment(QStringLiteral("Comment2"));
-                imageinfoExpected.setUrl(QUrl(QStringLiteral("http://url/File:Image.bmp")));
-                imageinfoExpected.setDescriptionUrl(QUrl(QStringLiteral("http://descriptionurl/File:Image.bmp")));
+                imageinfoExpected.setUrl(QUrl(QStringLiteral("http://url/File:Image.bmp")));                        // krazy:exclude=insecurenet
+                imageinfoExpected.setDescriptionUrl(QUrl(QStringLiteral("http://descriptionurl/File:Image.bmp")));  // krazy:exclude=insecurenet
                 imageinfoExpected.setSize(448798);
                 imageinfoExpected.setWidth(924);
                 imageinfoExpected.setHeight(1203);
@@ -175,7 +195,7 @@ private Q_SLOTS:
         fakeserver.startAndWait();
 
         // Prepare the job
-        Iface MediaWiki(QUrl(QStringLiteral("http://127.0.0.1:12566")));
+        Iface MediaWiki(QUrl(QStringLiteral("http://127.0.0.1:12566")));    // krazy:exclude=insecurenet
         QueryImageinfo* const job = new QueryImageinfo(MediaWiki);
 
         job->setProperties(

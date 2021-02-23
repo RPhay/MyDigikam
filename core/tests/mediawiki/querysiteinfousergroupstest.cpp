@@ -86,7 +86,7 @@ private Q_SLOTS:
         fakeserver.setScenario(scenario);
         fakeserver.startAndWait();
 
-        Iface MediaWiki(QUrl(QStringLiteral("http://127.0.0.1:12566")));
+        Iface MediaWiki(QUrl(QStringLiteral("http://127.0.0.1:12566")));        // krazy:exclude=insecurenet
         QuerySiteinfoUsergroups* const job = new QuerySiteinfoUsergroups(MediaWiki);
 
         job->setIncludeNumber(includeNumber);

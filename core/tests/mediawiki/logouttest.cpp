@@ -68,7 +68,7 @@ private Q_SLOTS:
     void initTestCase()
     {
         logoutCount       = 0;
-        this->m_mediaWiki = new Iface(QUrl(QStringLiteral("http://127.0.0.1:12566")));
+        this->m_mediaWiki = new Iface(QUrl(QStringLiteral("http://127.0.0.1:12566")));      // krazy:exclude=insecurenet
         this->m_server    = new FakeServer;
         this->request     = QStringLiteral("/?format=xml&action=logout");
     }

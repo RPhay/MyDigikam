@@ -205,7 +205,7 @@ void LookupAltitudeGeonames::startNextRequest()
         lonString += requestCoordinates.lonString();
     }
 
-    QUrl netUrl(QLatin1String("http://api.geonames.org/srtm3"));
+    QUrl netUrl(QLatin1String("http://api.geonames.org/srtm3"));            // krazy:exclude=insecurenet
 
     QUrlQuery q(netUrl);
     q.addQueryItem(QLatin1String("lats"), latString);

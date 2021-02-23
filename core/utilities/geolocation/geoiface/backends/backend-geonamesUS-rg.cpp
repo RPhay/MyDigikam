@@ -121,7 +121,7 @@ void BackendGeonamesUSRG::nextPhoto()
         return;
     }
 
-    QUrl netUrl(QLatin1String("http://api.geonames.org/findNearestAddress"));
+    QUrl netUrl(QLatin1String("http://api.geonames.org/findNearestAddress"));       // krazy:exclude=insecurenet
 
     QUrlQuery q(netUrl);
     q.addQueryItem(QLatin1String("lat"),      d->jobs.first().request.first().coordinates.latString());

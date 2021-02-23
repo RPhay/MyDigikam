@@ -469,7 +469,7 @@ bool GPTalker::updatePhoto(const QString& photoPath, GSPhoto& info, /*const QStr
     docMeta.appendChild(entryElem);
     entryElem.setAttribute(
         QLatin1String("xmlns"),
-        QLatin1String("http://www.w3.org/2005/Atom"));
+        QLatin1String("http://www.w3.org/2005/Atom"));                                      // krazy:exclude=insecurenet
     QDomElement titleElem           = docMeta.createElement(QLatin1String("title"));
     entryElem.appendChild(titleElem);
     QDomText titleText              = docMeta.createTextNode(QFileInfo(path).fileName());

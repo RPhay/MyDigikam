@@ -901,14 +901,14 @@ void SmugTalker::parseResponseLogout(const QByteArray& data)
  *    <method>smugmug.images.upload</method>
  *    <ImageID>884775096</ImageID>
  *    <ImageKey>L7aq5</ImageKey>
- *    <ImageURL>http://froody.smugmug.com/Other/Test/12372176_y7yNq#884775096_L7aq5</ImageURL>
+ *    <ImageURL>http://froody.smugmug.com/Other/Test/12372176_y7yNq#884775096_L7aq5</ImageURL>          // krazy:exclude=insecurenet
  * </rsp>
  *
  * A simple put response (which we used to get) looks like:
  * <?xml version="1.0" encoding="utf-8"?>
  * <rsp stat="ok">
  *    <method>smugmug.images.upload</method>
- *    <Image id="884790545" Key="seeQa" URL="http://froody.smugmug.com/Other/Test/12372176_y7yNq#884790545_seeQa"/>
+ *    <Image id="884790545" Key="seeQa" URL="http://froody.smugmug.com/Other/Test/12372176_y7yNq#884790545_seeQa"/>     // krazy:exclude=insecurenet
  * </rsp>
  *
  * Since all we care about is success or not, we can just check the rsp stat.

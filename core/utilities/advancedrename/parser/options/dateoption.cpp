@@ -44,7 +44,7 @@ namespace Digikam
 
 static QString getDateFormatLinkText()
 {
-    const QString dateFormatLink      = QString::fromUtf8("<a href='http://qt-project.org/doc/qt-5.0/qtcore/qdatetime.html#toString'>%1</a>");
+    const QString dateFormatLink      = QString::fromUtf8("<a href='https://qt-project.org/doc/qt-5.0/qtcore/qdatetime.html#toString'>%1</a>");
     const QString dateFormatLinkDescr = i18nc("date format settings", "format settings");
 
     return dateFormatLink.arg(dateFormatLinkDescr);

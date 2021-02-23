@@ -242,7 +242,7 @@ void FbTalker::getLoggedInUser()
 // ----------------------------------------------------------------------------------------------
 
 /** Compute MD5 signature using url queries keys and values:
- *  http://wiki.developers.facebook.com/index.php/How_Facebook_Authenticates_Your_Application
+ *  wiki.developers.facebook.com/index.php/How_Facebook_Authenticates_Your_Application
  *  This method was used for the legacy authentication scheme and has been obsoleted with OAuth2 authentication.
  */
 /*

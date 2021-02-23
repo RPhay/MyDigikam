@@ -398,7 +398,7 @@ void YFTalker::updatePhotoInfo(YFPhoto& photo)
 
     doc.appendChild(instr);
     QDomElement entryElem = doc.createElement(QLatin1String("entry"));
-    entryElem.setAttribute(QLatin1String("xmlns"), QLatin1String("http://www.w3.org/2005/Atom"));
+    entryElem.setAttribute(QLatin1String("xmlns"), QLatin1String("http://www.w3.org/2005/Atom"));       // krazy:exclude=insecurenet
     entryElem.setAttribute(QLatin1String("xmlns:f"), QLatin1String("yandex:fotki"));
     doc.appendChild(entryElem);
 
@@ -495,7 +495,7 @@ void YFTalker::updateAlbumCreate(YandexFotkiAlbum& album)
 
     doc.appendChild(instr);
     QDomElement entryElem = doc.createElement(QLatin1String("entry"));
-    entryElem.setAttribute(QLatin1String("xmlns"), QLatin1String("http://www.w3.org/2005/Atom"));
+    entryElem.setAttribute(QLatin1String("xmlns"), QLatin1String("http://www.w3.org/2005/Atom"));       // krazy:exclude=insecurenet
     entryElem.setAttribute(QLatin1String("xmlns:f"), QLatin1String("yandex:fotki"));
     doc.appendChild(entryElem);
 

@@ -89,7 +89,7 @@ void FakeServer::dataAvailable()
             // It might happen that the same request cames through more than once, so you need to check that you are
             // counting each different request only once.
             //
-            // For more information, see: http://qt-project.org/forums/viewthread/25521
+            // For more information, see: qt-project.org/forums/viewthread/25521
 
             if (!m_request.contains(request))
             {

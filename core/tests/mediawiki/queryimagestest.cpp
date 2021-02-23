@@ -93,7 +93,7 @@ private Q_SLOTS:
         fakeserver.startAndWait();
 
         // Prepare the job
-        Iface MediaWiki(QUrl(QStringLiteral("http://127.0.0.1:12566")));
+        Iface MediaWiki(QUrl(QStringLiteral("http://127.0.0.1:12566")));        // krazy:exclude=insecurenet
         QueryImages* const job = new QueryImages(MediaWiki);
         job->setTitle(title);
         job->setLimit(limit);

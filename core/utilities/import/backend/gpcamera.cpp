@@ -1633,7 +1633,7 @@ bool GPCamera::cameraAbout(QString& about)
     // are converted to HTML properly
     about = Qt::convertFromPlainText(QString::fromLocal8Bit(abt.text), Qt::WhiteSpacePre);
     about.append(QString::fromUtf8("<br/><br/>To report problems about this driver, please contact "
-                 "the gphoto2 team at:<br/><br/>http://gphoto.org/bugs"));
+                 "the gphoto2 team at:<br/><br/>http://gphoto.org/bugs"));      // krazy:exclude=insecurenet
 
     return true;
 

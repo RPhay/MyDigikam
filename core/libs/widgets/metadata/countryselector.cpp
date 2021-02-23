@@ -47,7 +47,7 @@ public:
         /**
          * NOTE: We cannot use KLocale::allCountriesList() here because KDE only
          * support 2 characters country codes. XMP require 3 characters country
-         * following ISO 3166 (http://userpage.chemie.fu-berlin.de/diverse/doc/ISO_3166.html)
+         * following ISO 3166 (userpage.chemie.fu-berlin.de/diverse/doc/ISO_3166.html)
          */
 
         // Standard ISO 3166 country codes.

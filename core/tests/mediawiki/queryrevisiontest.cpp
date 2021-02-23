@@ -134,7 +134,7 @@ private Q_SLOTS:
         QFETCH(int, size);
         QFETCH(QList<Revision>, results);
 
-        Iface MediaWiki(QUrl(QStringLiteral("http://127.0.0.1:12566")));
+        Iface MediaWiki(QUrl(QStringLiteral("http://127.0.0.1:12566")));        // krazy:exclude=insecurenet
         FakeServer fakeserver;
         fakeserver.setScenario(scenario);
         fakeserver.startAndWait();
@@ -255,7 +255,7 @@ private Q_SLOTS:
         QFETCH(QString, scenario);
         QFETCH(int, error);
 
-        Iface MediaWiki(QUrl(QStringLiteral("http://127.0.0.1:12566")));
+        Iface MediaWiki(QUrl(QStringLiteral("http://127.0.0.1:12566")));        // krazy:exclude=insecurenet
         FakeServer fakeserver;
 
         if (scenario != QStringLiteral("error serveur"))
@@ -325,7 +325,7 @@ private Q_SLOTS:
 
     void testRvLimit()
     {
-        Iface MediaWiki(QUrl(QStringLiteral("http://127.0.0.1:12566")));
+        Iface MediaWiki(QUrl(QStringLiteral("http://127.0.0.1:12566")));            // krazy:exclude=insecurenet
         FakeServer::Request requestSend(QStringLiteral("GET"),
                                         QString(),
                                         QStringLiteral("/?format=xml&action=query&prop=revisions&rvlimit=2&titles=API"));
@@ -350,7 +350,7 @@ private Q_SLOTS:
 
     void testRvStartId()
     {
-        Iface MediaWiki(QUrl(QStringLiteral("http://127.0.0.1:12566")));
+        Iface MediaWiki(QUrl(QStringLiteral("http://127.0.0.1:12566")));        // krazy:exclude=insecurenet
         FakeServer::Request requestSend(QStringLiteral("GET"),
                                         QString(),
                                         QStringLiteral("/?format=xml&action=query&prop=revisions&rvstartid=2&titles=API"));
@@ -375,7 +375,7 @@ private Q_SLOTS:
 
     void testRvEndId()
     {
-        Iface MediaWiki(QUrl(QStringLiteral("http://127.0.0.1:12566")));
+        Iface MediaWiki(QUrl(QStringLiteral("http://127.0.0.1:12566")));        // krazy:exclude=insecurenet
         FakeServer::Request requestSend(QStringLiteral("GET"),
                                         QString(),
                                         QStringLiteral("/?format=xml&action=query&prop=revisions&rvendid=2&titles=API"));
@@ -400,7 +400,7 @@ private Q_SLOTS:
 
     void testRvStart()
     {
-        Iface MediaWiki(QUrl(QStringLiteral("http://127.0.0.1:12566")));
+        Iface MediaWiki(QUrl(QStringLiteral("http://127.0.0.1:12566")));        // krazy:exclude=insecurenet
         FakeServer::Request requestSend(QStringLiteral("GET"),
                                         QString(),
                                         QStringLiteral("/?format=xml&action=query&prop=revisions&rvstart=2010-09-28T15:21:07Z&titles=API"));
@@ -426,7 +426,7 @@ private Q_SLOTS:
 
     void testRvEnd()
     {
-        Iface MediaWiki(QUrl(QStringLiteral("http://127.0.0.1:12566")));
+        Iface MediaWiki(QUrl(QStringLiteral("http://127.0.0.1:12566")));        // krazy:exclude=insecurenet
         FakeServer::Request requestSend(QStringLiteral("GET"),
                                         QString(),
                                         QStringLiteral("/?format=xml&action=query&prop=revisions&rvend=2010-09-28T15:21:07Z&titles=API"));
@@ -452,7 +452,7 @@ private Q_SLOTS:
 
     void testRvUser()
     {
-        Iface MediaWiki(QUrl(QStringLiteral("http://127.0.0.1:12566")));
+        Iface MediaWiki(QUrl(QStringLiteral("http://127.0.0.1:12566")));        // krazy:exclude=insecurenet
         FakeServer::Request requestSend(QStringLiteral("GET"),
                                         QString(),
                                         QStringLiteral("/?format=xml&action=query&prop=revisions&rvuser=martine&titles=API"));
@@ -477,7 +477,7 @@ private Q_SLOTS:
 
     void testRvExcludeUser()
     {
-        Iface MediaWiki(QUrl(QStringLiteral("http://127.0.0.1:12566")));
+        Iface MediaWiki(QUrl(QStringLiteral("http://127.0.0.1:12566")));        // krazy:exclude=insecurenet
         FakeServer::Request requestSend(QStringLiteral("GET"),
                                         QString(),
                                         QStringLiteral("/?format=xml&action=query&prop=revisions&rvexcludeuser=martine&titles=API"));
@@ -502,7 +502,7 @@ private Q_SLOTS:
 
     void testRvDirOlder()
     {
-        Iface MediaWiki(QUrl(QStringLiteral("http://127.0.0.1:12566")));
+        Iface MediaWiki(QUrl(QStringLiteral("http://127.0.0.1:12566")));        // krazy:exclude=insecurenet
         FakeServer::Request requestSend(QStringLiteral("GET"),
                                         QString(),
                                         QStringLiteral("/?format=xml&action=query&prop=revisions&rvdir=older&titles=API"));
@@ -527,7 +527,7 @@ private Q_SLOTS:
 
     void testRvDirNewer()
     {
-        Iface MediaWiki(QUrl(QStringLiteral("http://127.0.0.1:12566")));
+        Iface MediaWiki(QUrl(QStringLiteral("http://127.0.0.1:12566")));        // krazy:exclude=insecurenet
         FakeServer::Request requestSend(QStringLiteral("GET"),
                                         QString(),
                                         QStringLiteral("/?format=xml&action=query&prop=revisions&rvdir=newer&titles=API"));
@@ -578,7 +578,7 @@ private Q_SLOTS:
         rev2.setContent(QStringLiteral("#REDIRECT [[Application programming interface]]{{R from abbreviation}}"));
         rev2.setParseTree(QStringLiteral("<root>#REDIRECT [[Application programming interface]]<template><title>R from abbreviation</title></template></root>"));
         results << rev2;
-        Iface MediaWiki(QUrl(QStringLiteral("http://127.0.0.1:12566")));
+        Iface MediaWiki(QUrl(QStringLiteral("http://127.0.0.1:12566")));        // krazy:exclude=insecurenet
 
         FakeServer fakeserver;
         fakeserver.setScenario(scenario);
@@ -611,7 +611,7 @@ private Q_SLOTS:
 
     void testRvSection()
     {
-        Iface MediaWiki(QUrl(QStringLiteral("http://127.0.0.1:12566")));
+        Iface MediaWiki(QUrl(QStringLiteral("http://127.0.0.1:12566")));        // krazy:exclude=insecurenet
         FakeServer::Request requestSend(QStringLiteral("GET"),
                                         QString(),
                                         QStringLiteral("/?format=xml&action=query&prop=revisions&rvsection=1&titles=API"));
@@ -652,7 +652,7 @@ private Q_SLOTS:
                                            QStringLiteral("094a45ddbbd5e90d55d79d2a23a8c921+\\"));
 
 
-        Iface MediaWiki(QUrl(QStringLiteral("http://127.0.0.1:12566")));
+        Iface MediaWiki(QUrl(QStringLiteral("http://127.0.0.1:12566")));        // krazy:exclude=insecurenet
 
         FakeServer fakeserver;
         fakeserver.setScenario(scenario);
@@ -685,7 +685,7 @@ private Q_SLOTS:
 
     void testRvExpandTemplates()
     {
-        Iface MediaWiki(QUrl(QStringLiteral("http://127.0.0.1:12566")));
+        Iface MediaWiki(QUrl(QStringLiteral("http://127.0.0.1:12566")));        // krazy:exclude=insecurenet
         FakeServer::Request requestSend(QStringLiteral("GET"),
                                         QString(),
                                         QStringLiteral("/?format=xml&action=query&prop=revisions&rvexpandtemplates=on&titles=API"));
@@ -716,7 +716,7 @@ private Q_SLOTS:
         QueryRevision::Properties rvprop = QueryRevision::Timestamp | QueryRevision::User | QueryRevision::Comment | QueryRevision::Content;
         int id                           = 2993;
 
-        Iface MediaWiki(QUrl(QStringLiteral("http://127.0.0.1:12566")));
+        Iface MediaWiki(QUrl(QStringLiteral("http://127.0.0.1:12566")));        // krazy:exclude=insecurenet
 
         FakeServer fakeserver;
         fakeserver.startAndWait();
@@ -749,7 +749,7 @@ private Q_SLOTS:
         QueryRevision::Properties rvprop = QueryRevision::Timestamp |QueryRevision::User | QueryRevision::Comment | QueryRevision::Content;
         int id                           = 2993;
 
-        Iface MediaWiki(QUrl(QStringLiteral("http://127.0.0.1:12566")));
+        Iface MediaWiki(QUrl(QStringLiteral("http://127.0.0.1:12566")));        // krazy:exclude=insecurenet
 
         FakeServer fakeserver;
         fakeserver.startAndWait();

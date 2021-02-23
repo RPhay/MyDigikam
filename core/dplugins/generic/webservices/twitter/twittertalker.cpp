@@ -100,7 +100,7 @@ public:
 /*
         scope(QLatin1String("User.Read Files.ReadWrite")),
 */
-        redirectUrl(QLatin1String("http://127.0.0.1:8000")),
+        redirectUrl(QLatin1String("http://127.0.0.1:8000")),                            // krazy:exclude=insecurenet
         uploadUrl(QLatin1String("https://upload.twitter.com/1.1/media/upload.json")),
         segmentIndex(0),
         parent(nullptr),

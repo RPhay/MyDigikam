@@ -499,7 +499,7 @@ void FbWindow::slotStartTransfer()
 void FbWindow::setProfileAID(long long userID)
 {
     // store AID of Profile Photos album
-    // http://wiki.developers.facebook.com/index.php/Profile_archive_album
+    // wiki.developers.facebook.com/index.php/Profile_archive_album
     d->profileAID = QString::number((userID << 32) + (-3 & 0xFFFFFFFF));
 }
 

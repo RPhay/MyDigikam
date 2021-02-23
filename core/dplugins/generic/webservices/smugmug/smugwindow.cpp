@@ -172,7 +172,7 @@ SmugWindow::SmugWindow(DInfoInterface* const iface,
     {
         d->loginDlg  = new WSLoginDialog(this,
                                          i18n("<qt>Enter the <b>email address</b> and <b>password</b> for your "
-                                         "<a href=\"http://www.smugmug.com\">SmugMug</a> account</qt>"));
+                                         "<a href=\"http://www.smugmug.com\">SmugMug</a> account</qt>"));       // krazy:exclude=insecurenet
     }
 */
 

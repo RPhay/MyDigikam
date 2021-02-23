@@ -191,7 +191,7 @@ SetupICC::SetupICC(QDialogButtonBox* const dlgBtnBox, QWidget* const parent)
                                                 "<li>Unchecked: Color Management is "
                                                 "disabled</li></ul>"));
 
-    DActiveLabel* const lcmsLogoLabel = new DActiveLabel(QUrl(QLatin1String("http://www.littlecms.com")),
+    DActiveLabel* const lcmsLogoLabel = new DActiveLabel(QUrl(QLatin1String("https://www.littlecms.com")),
                                                          QStandardPaths::locate(QStandardPaths::GenericDataLocation, QLatin1String("digikam/data/logo-lcms.png")),
                                                          colorPolicy);
     lcmsLogoLabel->setToolTip(i18n("Visit Little CMS project website"));

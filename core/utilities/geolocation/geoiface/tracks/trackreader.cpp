@@ -36,8 +36,8 @@
 namespace Digikam
 {
 
-static QString GPX10(QLatin1String("http://www.topografix.com/GPX/1/0"));
-static QString GPX11(QLatin1String("http://www.topografix.com/GPX/1/1"));
+static QString GPX10(QLatin1String("http://www.topografix.com/GPX/1/0"));       // krazy:exclude=insecurenet
+static QString GPX11(QLatin1String("http://www.topografix.com/GPX/1/1"));       // krazy:exclude=insecurenet
 
 class Q_DECL_HIDDEN TrackReader::Private
 {

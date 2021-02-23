@@ -9,7 +9,7 @@
  *               freely available set of images to test face recognition.
  *               It contain 10 photos of 20 different peoples from slightly
  *               different angles. See here for details:
- *               http://www.cl.cam.ac.uk/research/dtg/attarchive/facedatabase.html
+ *               www.cl.cam.ac.uk/research/dtg/attarchive/facedatabase.html
  *
  * Copyright (C) 2010 by Aditya Bhatt <adityabhatt1991 at gmail dot com>
  *
