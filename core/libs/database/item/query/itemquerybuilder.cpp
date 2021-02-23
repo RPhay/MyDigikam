@@ -343,7 +343,7 @@ bool ItemQueryBuilder::buildField(QString& sql, SearchXmlCachingReader& reader, 
             sql += QString::fromUtf8(" (Images.id IN "
                    "   (SELECT ImageTags.imageid FROM ImageTags INNER JOIN TagsTree ON ImageTags.tagid = TagsTree.id "
                    "    WHERE TagsTree.pid = (SELECT id FROM Tags WHERE name LIKE ?) "
-                   "    or ImageTags.tagid = (SELECT id FROM Tags WHERE name LIKE ?) )) ");
+                   "    OR ImageTags.tagid = (SELECT id FROM Tags WHERE name LIKE ?) )) ");
             *boundValues << tagname << tagname;
         }
         else if (relation == SearchXml::NotInTree)
@@ -351,7 +351,7 @@ bool ItemQueryBuilder::buildField(QString& sql, SearchXmlCachingReader& reader, 
             sql += QString::fromUtf8(" (Images.id NOT IN "
                    "   (SELECT ImageTags.imageid FROM ImageTags INNER JOIN TagsTree ON ImageTags.tagid = TagsTree.id "
                    "    WHERE TagsTree.pid = (SELECT id FROM Tags WHERE name LIKE ?) "
-                   "    or ImageTags.tagid = (SELECT id FROM Tags WHERE name LIKE ?) )) ");
+                   "    OR ImageTags.tagid = (SELECT id FROM Tags WHERE name LIKE ?) )) ");
             *boundValues << tagname << tagname;
         }
     }
@@ -795,7 +795,7 @@ bool ItemQueryBuilder::buildField(QString& sql, SearchXmlCachingReader& reader, 
     {
         sql += QString::fromUtf8(" (Images.id IN "
                " (SELECT imageid FROM ImageCopyright "
-               "  WHERE property='creator' and value ");
+               "  WHERE property='creator' AND value ");
         ItemQueryBuilder::addSqlRelation(sql, relation);
         sql += QString::fromUtf8(" ?)) ");
         *boundValues << fieldQuery.prepareForLike(reader.value());
@@ -861,7 +861,7 @@ bool ItemQueryBuilder::buildField(QString& sql, SearchXmlCachingReader& reader, 
             {
                 sql += QString::fromUtf8(" (Images.id NOT IN "
                        " (SELECT imageid FROM ImageCopyright "
-                       "  WHERE property='creator' and value != '')) ");
+                       "  WHERE property='creator' AND value != '')) ");
 
                 values.removeAll(QLatin1String("creator"));
 
