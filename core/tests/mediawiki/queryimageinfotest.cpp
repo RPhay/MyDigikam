@@ -228,6 +228,8 @@ private Q_SLOTS:
 
 private:
 
+    QueryImageInfoTest() = delete;
+
     QList<QList<Imageinfo> > m_imageinfosReceived;
     bool                     m_requestWithMissingTitleHasBeenSent;
 };
