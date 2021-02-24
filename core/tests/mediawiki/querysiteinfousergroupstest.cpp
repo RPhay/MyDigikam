@@ -184,14 +184,14 @@ private Q_SLOTS:
 
         ug1.setRights(ug1.rights() << QStringLiteral("permission_1_1"));
         ug2.setRights(QList<QString>());
-        QTest::newRow("Two groups with group one one right and group two no right")
+        QTest::newRow("Two groups with group one one right and group two no right")     // krazy:exclude=spelling
                 << QStringLiteral("<?xml version=\"1.0\"?><api><query><usergroups><group name=\"name_1\"><rights><permission>permission_1_1</permission></rights></group><group name=\"name_2\"><rights></rights></group></usergroups></query></api>")
                 << false
                 << int(KJob::NoError)
                 << (QList<UserGroup>() << ug1 << ug2);
 
         ug2.setRights(ug2.rights() << QStringLiteral("permission_2_1"));
-        QTest::newRow("Two groups with group one one right and group two one right")
+        QTest::newRow("Two groups with group one one right and group two one right")    // krazy:exclude=spelling
                 << QStringLiteral("<?xml version=\"1.0\"?><api><query><usergroups><group name=\"name_1\"><rights><permission>permission_1_1</permission></rights></group><group name=\"name_2\"><rights><permission>permission_2_1</permission></rights></group></usergroups></query></api>")
                 << false
                 << int(KJob::NoError)
