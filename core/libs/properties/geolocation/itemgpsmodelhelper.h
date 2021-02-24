@@ -47,20 +47,21 @@ class ItemGPSModelHelper : public GeoModelHelper
 
 public:
 
-    explicit ItemGPSModelHelper(QStandardItemModel* const itemModel, QObject* const parent = nullptr);
-    ~ItemGPSModelHelper() override;
+    explicit ItemGPSModelHelper(QStandardItemModel* const itemModel,
+                                QObject* const parent = nullptr);
+    ~ItemGPSModelHelper()                                                                  override;
 
-    QAbstractItemModel* model()                                              const override;
-    QItemSelectionModel* selectionModel()                                    const override;
+    QAbstractItemModel* model()                                                      const override;
+    QItemSelectionModel* selectionModel()                                            const override;
 
     bool itemCoordinates(const QModelIndex& index,
-                                 GeoCoordinates* const coordinates)                  const override;
+                         GeoCoordinates* const coordinates)                          const override;
 
     QPixmap pixmapFromRepresentativeIndex(const QPersistentModelIndex& index,
-                                                  const QSize& size)                       override;
+                                          const QSize& size)                               override;
 
     QPersistentModelIndex bestRepresentativeIndexFromList(const QList<QPersistentModelIndex>& list,
-                                                                  const int sortKey)       override;
+                                                          const int sortKey)               override;
 
 private Q_SLOTS:
 

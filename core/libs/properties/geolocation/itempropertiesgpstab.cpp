@@ -75,22 +75,22 @@ class Q_DECL_HIDDEN ItemPropertiesGPSTab::Private
 public:
 
     explicit Private()
-      : altLabel(nullptr),
-        latLabel(nullptr),
-        lonLabel(nullptr),
-        dateLabel(nullptr),
-        detailsBtn(nullptr),
-        detailsCombo(nullptr),
-        altitude(nullptr),
-        latitude(nullptr),
-        longitude(nullptr),
-        date(nullptr),
-        map(nullptr),
-        itemMarkerTiler(nullptr),
-        itemModel(nullptr),
-        gpsModelHelper(nullptr),
-        gpsItemInfoSorter(nullptr),
-        boundariesShouldBeAdjusted(false)
+      : altLabel                    (nullptr),
+        latLabel                    (nullptr),
+        lonLabel                    (nullptr),
+        dateLabel                   (nullptr),
+        detailsBtn                  (nullptr),
+        detailsCombo                (nullptr),
+        altitude                    (nullptr),
+        latitude                    (nullptr),
+        longitude                   (nullptr),
+        date                        (nullptr),
+        map                         (nullptr),
+        itemMarkerTiler             (nullptr),
+        itemModel                   (nullptr),
+        gpsModelHelper              (nullptr),
+        gpsItemInfoSorter           (nullptr),
+        boundariesShouldBeAdjusted  (false)
     {
     }
 
@@ -119,20 +119,20 @@ public:
 
 ItemPropertiesGPSTab::ItemPropertiesGPSTab(QWidget* const parent)
     : QWidget(parent),
-      d(new Private)
+      d      (new Private)
 {
     QGridLayout* const layout = new QGridLayout(this);
 
     // --------------------------------------------------------
 
-    QFrame* const mapPanel    = new QFrame(this);
+    QFrame* const mapPanel   = new QFrame(this);
     mapPanel->setMinimumWidth(200);
     mapPanel->setMinimumHeight(200);
     mapPanel->setFrameStyle(QFrame::StyledPanel | QFrame::Sunken);
     mapPanel->setLineWidth(style()->pixelMetric(QStyle::PM_DefaultFrameWidth));
 
-    QVBoxLayout* const vlay2  = new QVBoxLayout(mapPanel);
-    d->map                    = new MapWidget(mapPanel);
+    QVBoxLayout* const vlay2 = new QVBoxLayout(mapPanel);
+    d->map                   = new MapWidget(mapPanel);
     d->map->setAvailableMouseModes(MouseModePan | MouseModeZoomIntoGroup);
     d->map->setVisibleMouseModes(MouseModePan | MouseModeZoomIntoGroup);
     d->map->setEnabledExtraActions(ExtraActionSticky);
@@ -257,7 +257,7 @@ void ItemPropertiesGPSTab::slotGPSDetails()
     {
         case MapQuest:
         {
-            url.append(QLatin1String("http://www.mapquest.com/maps/map.adp?searchtype=address"
+            url.append(QLatin1String("https://www.mapquest.com/maps/map.adp?searchtype=address"
                                      "&formtype=address&latlongtype=decimal"));
             url.append(QLatin1String("&latitude="));
             url.append(val.setNum(info.coordinates.lat(), 'g', 12));
@@ -268,7 +268,7 @@ void ItemPropertiesGPSTab::slotGPSDetails()
 
         case GoogleMaps:
         {
-            url.append(QLatin1String("http://maps.google.com/?q="));
+            url.append(QLatin1String("https://maps.google.com/?q="));
             url.append(val.setNum(info.coordinates.lat(), 'g', 12));
             url.append(QLatin1String(","));
             url.append(val.setNum(info.coordinates.lon(), 'g', 12));
@@ -278,7 +278,7 @@ void ItemPropertiesGPSTab::slotGPSDetails()
 
         case LocAlizeMaps:
         {
-            url.append(QLatin1String("http://loc.alize.us/#/geo:"));
+            url.append(QLatin1String("https://loc.alize.us/#/geo:"));
             url.append(val.setNum(info.coordinates.lat(), 'g', 12));
             url.append(QLatin1String(","));
             url.append(val.setNum(info.coordinates.lon(), 'g', 12));
@@ -288,7 +288,7 @@ void ItemPropertiesGPSTab::slotGPSDetails()
 
         case BingMaps:
         {
-            url.append(QLatin1String("http://www.bing.com/maps/?v=2&where1="));
+            url.append(QLatin1String("https://www.bing.com/maps/?v=2&where1="));
             url.append(val.setNum(info.coordinates.lat(), 'g', 12));
             url.append(QLatin1String(","));
             url.append(val.setNum(info.coordinates.lon(), 'g', 12));
@@ -298,7 +298,7 @@ void ItemPropertiesGPSTab::slotGPSDetails()
         case OpenStreetMap:
         {
             // lat and lon would also work, but wouldn't show a marker
-            url.append(QLatin1String("http://www.openstreetmap.org/?"));
+            url.append(QLatin1String("https://www.openstreetmap.org/?"));
             url.append(QLatin1String("mlat="));
             url.append(val.setNum(info.coordinates.lat(), 'g', 12));
             url.append(QLatin1String("&mlon="));
