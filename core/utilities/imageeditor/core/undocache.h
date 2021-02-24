@@ -60,7 +60,7 @@ public:
     /**
      * Get the image data from a cache file
      */
-    DImg getData(int level) const;
+    DImg getData(int level)                  const;
 
 private:
 

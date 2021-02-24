@@ -139,7 +139,7 @@ bool UndoCache::putData(int level, const DImg& img) const
 
         QMessageBox::critical(qApp->activeWindow(), qApp->applicationName(),
                               i18n("The free disk space in the path \"%1\" for the undo "
-                                   "cache file is < 2 GiB! Undo cache is now disabled!",
+                                   "cache file is inferior to 2 GiB! Undo cache is now disabled!",
                                    QDir::toNativeSeparators(d->cacheDir)));
         d->cacheError = true;
 
