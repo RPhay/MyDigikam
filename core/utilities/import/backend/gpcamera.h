@@ -104,7 +104,7 @@ private:
 private:
 
     // Disable
-    GPCamera(QObject*);
+    GPCamera(QObject*) = delete;
 
     class Private;
     Private* const d;

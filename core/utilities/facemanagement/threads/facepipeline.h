@@ -238,7 +238,7 @@ public:
 private:
 
     // Disable
-    FacePipeline(QObject*);
+    FacePipeline(QObject*) = delete;
     FacePipeline(const FacePipeline&);
     FacePipeline& operator=(const FacePipeline&);
 

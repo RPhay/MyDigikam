@@ -47,7 +47,7 @@ class DIGIKAM_EXPORT MapDragData : public QMimeData
 public:
 
     explicit MapDragData()
-      : QMimeData(),
+      : QMimeData     (),
         draggedIndices()
     {
     }
@@ -57,7 +57,7 @@ public:
 private:
 
     // Disable
-    MapDragData(QObject*);
+    MapDragData(QObject*) = delete;
 };
 
 //  -----------------------------------------------------------------------------------
@@ -70,7 +70,7 @@ public:
 
     explicit MapDragDropHandler(QAbstractItemModel* const /*pModel*/,
                                 GPSGeoIfaceModelHelper* const parent);
-    ~MapDragDropHandler() override;
+    ~MapDragDropHandler()                                                       override;
 
     Qt::DropAction accepts(const QDropEvent* e)                                 override;
     bool dropEvent(const QDropEvent* e, const GeoCoordinates& dropCoordinates)  override;

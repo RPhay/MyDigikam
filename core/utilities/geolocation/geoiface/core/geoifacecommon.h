@@ -74,11 +74,11 @@ public:
     Q_DECLARE_FLAGS(InternalWidgetStates, InternalWidgetState)
 
     GeoIfaceInternalWidgetInfo()
-        : state(),
-          widget(),
-          backendData(),
-          backendName(),
-          currentOwner(nullptr),
+        : state         (),
+          widget        (),
+          backendData   (),
+          backendName   (),
+          currentOwner  (nullptr),
           deleteFunction(nullptr)
     {
     }
@@ -128,7 +128,7 @@ public:
 private:
 
     // Disable
-    GeoIfaceGlobalObject(QObject*);
+    GeoIfaceGlobalObject(QObject*) = delete;
     GeoIfaceGlobalObject();
     ~GeoIfaceGlobalObject() override;
 
@@ -159,16 +159,16 @@ public:
 public:
 
     GeoIfaceCluster()
-        : pixmapType(PixmapMarker),
-          tileIndicesList(),
-          markerCount(0),
-          markerSelectedCount(0),
-          coordinates(),
-          pixelPos(),
-          groupState(SelectedNone),
-          representativeMarkers(),
-          pixmapSize(),
-          pixmapOffset()
+        : pixmapType            (PixmapMarker),
+          tileIndicesList       (),
+          markerCount           (0),
+          markerSelectedCount   (0),
+          coordinates           (),
+          pixelPos              (),
+          groupState            (SelectedNone),
+          representativeMarkers (),
+          pixmapSize            (),
+          pixmapOffset          ()
     {
     }
 
@@ -212,27 +212,27 @@ class DIGIKAM_EXPORT GeoIfaceSharedData : public QSharedData
 public:
 
     GeoIfaceSharedData()
-        : QSharedData(),
-          worldMapWidget(nullptr),
-          tileGrouper(nullptr),
-          markerModel(nullptr),
-          clusterList(),
-          trackManager(nullptr),
-          showThumbnails(true),
-          thumbnailSize(GeoIfaceMinThumbnailSize),
-          thumbnailGroupingRadius(GeoIfaceMinThumbnailGroupingRadius),
-          markerGroupingRadius(GeoIfaceMinMarkerGroupingRadius),
-          previewSingleItems(true),
-          previewGroupedItems(true),
-          showNumbersOnItems(true),
-          sortKey(0),
-          modificationsAllowed(true),
-          selectionRectangle(),
-          haveMovingCluster(false),
-          currentMouseMode(),
-          availableMouseModes(),
-          visibleMouseModes(),
-          activeState(false)
+        : QSharedData               (),
+          worldMapWidget            (nullptr),
+          tileGrouper               (nullptr),
+          markerModel               (nullptr),
+          clusterList               (),
+          trackManager              (nullptr),
+          showThumbnails            (true),
+          thumbnailSize             (GeoIfaceMinThumbnailSize),
+          thumbnailGroupingRadius   (GeoIfaceMinThumbnailGroupingRadius),
+          markerGroupingRadius      (GeoIfaceMinMarkerGroupingRadius),
+          previewSingleItems        (true),
+          previewGroupedItems       (true),
+          showNumbersOnItems        (true),
+          sortKey                   (0),
+          modificationsAllowed      (true),
+          selectionRectangle        (),
+          haveMovingCluster         (false),
+          currentMouseMode          (),
+          availableMouseModes       (),
+          visibleMouseModes         (),
+          activeState               (false)
     {
     }
 
