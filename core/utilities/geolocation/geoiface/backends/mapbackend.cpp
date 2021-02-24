@@ -30,7 +30,7 @@ namespace Digikam
 MapBackend::MapBackend(const QExplicitlySharedDataPointer<GeoIfaceSharedData>& sharedData,
                        QObject* const parent)
     : QObject(parent),
-      s(sharedData)
+      s      (sharedData)
 {
 }
 

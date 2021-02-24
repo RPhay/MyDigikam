@@ -84,40 +84,40 @@ class Q_DECL_HIDDEN BackendMarble::Private
 public:
 
     explicit Private()
-      : marbleWidget(nullptr),
-        actionGroupMapTheme(nullptr),
-        actionGroupProjection(nullptr),
-        actionGroupFloatItems(nullptr),
-        actionShowCompass(nullptr),
-        actionShowScaleBar(nullptr),
-        actionShowNavigation(nullptr),
-        actionShowOverviewMap(nullptr),
-        cacheMapTheme(QLatin1String("atlas")),
-        cacheProjection(QLatin1String("spherical")),
-        cacheShowCompass(false),
-        cacheShowScaleBar(false),
-        cacheShowNavigation(false),
-        cacheShowOverviewMap(false),
-        cacheZoom(900),
+      : marbleWidget                    (nullptr),
+        actionGroupMapTheme             (nullptr),
+        actionGroupProjection           (nullptr),
+        actionGroupFloatItems           (nullptr),
+        actionShowCompass               (nullptr),
+        actionShowScaleBar              (nullptr),
+        actionShowNavigation            (nullptr),
+        actionShowOverviewMap           (nullptr),
+        cacheMapTheme                   (QLatin1String("atlas")),
+        cacheProjection                 (QLatin1String("spherical")),
+        cacheShowCompass                (false),
+        cacheShowScaleBar               (false),
+        cacheShowNavigation             (false),
+        cacheShowOverviewMap            (false),
+        cacheZoom                       (900),
         havePotentiallyMouseMovingObject(false),
-        haveMouseMovingObject(false),
-        mouseMoveClusterIndex(-1),
-        mouseMoveMarkerIndex(),
-        mouseMoveObjectCoordinates(),
-        mouseMoveCenterOffset(0, 0),
-        dragDropMarkerCount(0),
-        dragDropMarkerPos(),
-        clustersDirtyCacheProjection(),
-        clustersDirtyCacheLat(),
-        clustersDirtyCacheLon(),
-        displayedRectangle(),
-        firstSelectionScreenPoint(),
-        firstSelectionPoint(),
-        activeState(false),
-        widgetIsDocked(false),
-        blockingZoomWhileChangingTheme(false),
-        trackCache(),
-        bmLayer(nullptr)
+        haveMouseMovingObject           (false),
+        mouseMoveClusterIndex           (-1),
+        mouseMoveMarkerIndex            (),
+        mouseMoveObjectCoordinates      (),
+        mouseMoveCenterOffset           (0, 0),
+        dragDropMarkerCount             (0),
+        dragDropMarkerPos               (),
+        clustersDirtyCacheProjection    (),
+        clustersDirtyCacheLat           (),
+        clustersDirtyCacheLon           (),
+        displayedRectangle              (),
+        firstSelectionScreenPoint       (),
+        firstSelectionPoint             (),
+        activeState                     (false),
+        widgetIsDocked                  (false),
+        blockingZoomWhileChangingTheme  (false),
+        trackCache                      (),
+        bmLayer                         (nullptr)
     {
     }
 
@@ -167,7 +167,7 @@ public:
 BackendMarble::BackendMarble(const QExplicitlySharedDataPointer<GeoIfaceSharedData>& sharedData,
                              QObject* const parent)
     : MapBackend(sharedData, parent),
-      d(new Private())
+      d         (new Private())
 {
     createActions();
 }

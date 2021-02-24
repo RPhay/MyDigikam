@@ -74,9 +74,9 @@ class Q_DECL_HIDDEN BackendGeonamesRG::Private
 public:
 
     explicit Private()
-      : itemCounter(0),
-        itemCount(0),
-        mngr(nullptr)
+      : itemCounter (0),
+        itemCount   (0),
+        mngr        (nullptr)
     {
     }
 
@@ -94,7 +94,7 @@ public:
  */
 BackendGeonamesRG::BackendGeonamesRG(QObject* const parent)
     : RGBackend(parent),
-      d(new Private())
+      d        (new Private())
 {
     d->mngr = new QNetworkAccessManager(this);
 

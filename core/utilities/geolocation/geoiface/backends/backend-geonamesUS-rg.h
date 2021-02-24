@@ -48,7 +48,7 @@ class DIGIKAM_EXPORT BackendGeonamesUSRG : public RGBackend
 public:
 
     explicit BackendGeonamesUSRG(QObject* const parent);
-    ~BackendGeonamesUSRG() override;
+    ~BackendGeonamesUSRG()                                                   override;
 
     QMap<QString, QString> makeQMapFromXML(const QString& xmlData);
 

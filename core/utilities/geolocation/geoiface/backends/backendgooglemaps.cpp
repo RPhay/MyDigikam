@@ -85,26 +85,26 @@ class Q_DECL_HIDDEN BackendGoogleMaps::Private
 public:
 
     explicit Private()
-      : htmlWidget(nullptr),
-        htmlWidgetWrapper(nullptr),
-        isReady(false),
-        mapTypeActionGroup(nullptr),
-        floatItemsActionGroup(nullptr),
-        showMapTypeControlAction(nullptr),
-        showNavigationControlAction(nullptr),
-        showScaleControlAction(nullptr),
-        cacheMapType(QLatin1String("ROADMAP")),
-        cacheShowMapTypeControl(true),
-        cacheShowNavigationControl(true),
-        cacheShowScaleControl(true),
-        cacheZoom(8),
-        cacheMaxZoom(0),
-        cacheMinZoom(0),
-        cacheCenter(52.0, 6.0),
-        cacheBounds(),
-        activeState(false),
-        widgetIsDocked(false),
-        trackChangeTracker()
+      : htmlWidget                  (nullptr),
+        htmlWidgetWrapper           (nullptr),
+        isReady                     (false),
+        mapTypeActionGroup          (nullptr),
+        floatItemsActionGroup       (nullptr),
+        showMapTypeControlAction    (nullptr),
+        showNavigationControlAction (nullptr),
+        showScaleControlAction      (nullptr),
+        cacheMapType                (QLatin1String("ROADMAP")),
+        cacheShowMapTypeControl     (true),
+        cacheShowNavigationControl  (true),
+        cacheShowScaleControl       (true),
+        cacheZoom                   (8),
+        cacheMaxZoom                (0),
+        cacheMinZoom                (0),
+        cacheCenter                 (52.0, 6.0),
+        cacheBounds                 (),
+        activeState                 (false),
+        widgetIsDocked              (false),
+        trackChangeTracker          ()
     {
     }
 
@@ -134,7 +134,7 @@ public:
 BackendGoogleMaps::BackendGoogleMaps(const QExplicitlySharedDataPointer<GeoIfaceSharedData>& sharedData,
                                      QObject* const parent)
     : MapBackend(sharedData, parent),
-      d(new Private())
+      d         (new Private())
 {
     createActions();
 }

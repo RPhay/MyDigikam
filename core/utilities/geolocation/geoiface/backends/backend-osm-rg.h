@@ -47,7 +47,7 @@ class DIGIKAM_EXPORT BackendOsmRG : public RGBackend
 public:
 
     explicit BackendOsmRG(QObject* const parent);
-    ~BackendOsmRG() override;
+    ~BackendOsmRG()                                                         override;
 
     QMap<QString, QString> makeQMapFromXML(const QString& xmlData);
 
