@@ -246,7 +246,7 @@ protected:
      * Return true if this single album matches the current criteria.
      * This method can be overridden to provide custom filtering.
      *
-     * @param album album to tell if it matches the filter criteria or not.
+     * @param album the album to tell if it matches the filter criteria or not.
      */
     virtual bool matches(Album* album)                                      const;
 

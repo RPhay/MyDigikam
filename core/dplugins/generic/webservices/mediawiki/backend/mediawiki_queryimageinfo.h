@@ -95,7 +95,7 @@ public:
 
     /**
      * @brief Set which properties to get.
-     * @param properties properties to get
+     * @param properties the properties to get
      */
     void setProperties(Properties properties);
 

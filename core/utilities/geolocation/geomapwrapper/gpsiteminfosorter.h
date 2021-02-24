@@ -86,7 +86,8 @@ private:
 
 private:
 
-    GPSItemInfoSorter(); // Disable
+     // Disable
+    GPSItemInfoSorter() = delete;
 
     class Private;
     Private* const d;

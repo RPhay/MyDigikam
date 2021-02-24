@@ -122,7 +122,7 @@ public:
     /**
      * Escape the token characters to make them work in regular expressions
      *
-     * @param token token to be escaped
+     * @param token the token to be escaped
      * @return A token with escaped characters. This token can then be used in a regular expression
      */
     static QString escapeToken(const QString& token);

@@ -127,7 +127,7 @@ public:
      * Execute the search specified by search XML describing a Tag Properties search.
      * Two special add-ons: Non-unique by image id; if enabled, uses the extended ImageRecord protocol
      * to pass the property value in the record's extraValue.
-     * @param receiver receiver for the searches
+     * @param receiver the receiver for the searches
      * @param xml SearchXml describing the query
      */
     void listImageTagPropertySearch(ItemListerReceiver* const receiver,
@@ -150,9 +150,9 @@ public:
 
     /**
      * Execute the search specified by search XML
-     * @param receiver receiver for the searches
+     * @param receiver the receiver for the searches
      * @param xml SearchXml describing the query
-     * @param limit limit the count of the result set. If limit = 0, then no limit is set.
+     * @param limit the limit the count of the result set. If limit = 0, then no limit is set.
      * @param referenceImageId the id of a reference image in the search query.
      */
     void listSearch(ItemListerReceiver* const receiver,
@@ -162,7 +162,7 @@ public:
 
     /**
      * Execute the search specified by search XML describing a Haar search
-     * @param receiver receiver for the searches
+     * @param receiver the receiver for the searches
      * @param xml SearchXml describing the query
      */
     void listHaarSearch(ItemListerReceiver* const receiver,

@@ -59,7 +59,7 @@ public:
      *
      * @param model album model to work with
      * @param albumModificationHelper helper object for modifying albums
-     * @param parent parent for Qt's parent child mechanism
+     * @param parent the parent for Qt's parent child mechanism
      */
     AlbumSelectTreeView(AlbumModel* const model,
                         AlbumModificationHelper* const albumModificationHelper,

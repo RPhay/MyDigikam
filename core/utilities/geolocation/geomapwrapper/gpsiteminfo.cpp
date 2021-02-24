@@ -28,11 +28,11 @@ namespace Digikam
 {
 
 GPSItemInfo::GPSItemInfo()
-    : id(-2),
-      coordinates(),
-      rating(-1),
-      dateTime(),
-      url()
+    : id            (-2),
+      coordinates   (),
+      rating        (-1),
+      dateTime      (),
+      url           ()
 {
 }
 

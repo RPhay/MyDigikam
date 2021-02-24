@@ -68,19 +68,19 @@ class Q_DECL_HIDDEN GPSSearchView::Private
 public:
 
     explicit Private()
-      : saveBtn(nullptr),
-        nameEdit(nullptr),
-        imageInfoJob(),
-        searchGPSBar(nullptr),
-        searchTreeView(nullptr),
-        splitter(nullptr),
-        mapSearchWidget(nullptr),
-        gpsMarkerTiler(nullptr),
-        imageAlbumModel(nullptr),
-        imageFilterModel(nullptr),
-        selectionModel(nullptr),
-        searchModel(nullptr),
-        sortOrderOptionsHelper(nullptr)
+      : saveBtn                 (nullptr),
+        nameEdit                (nullptr),
+        imageInfoJob            (),
+        searchGPSBar            (nullptr),
+        searchTreeView          (nullptr),
+        splitter                (nullptr),
+        mapSearchWidget         (nullptr),
+        gpsMarkerTiler          (nullptr),
+        imageAlbumModel         (nullptr),
+        imageFilterModel        (nullptr),
+        selectionModel          (nullptr),
+        searchModel             (nullptr),
+        sortOrderOptionsHelper  (nullptr)
     {
     }
 
@@ -105,7 +105,7 @@ const QString GPSSearchView::Private::configSplitterStateEntry(QLatin1String("Sp
 
 /**
  * @brief Constructor
- * @param parent Parent object.
+ * @param parent the parent object.
  * @param searchModel The model that stores the searches.
  * @param imageFilterModel The image model used by displaying the selected images on map.
  * @param itemSelectionModel The selection model corresponding to the imageFilterModel.
@@ -115,9 +115,9 @@ GPSSearchView::GPSSearchView(QWidget* const parent,
                              SearchModificationHelper* const searchModificationHelper,
                              ItemFilterModel* const imageFilterModel,
                              QItemSelectionModel* const itemSelectionModel)
-    : QWidget(parent),
+    : QWidget          (parent),
       StateSavingObject(this),
-      d(new Private)
+      d                (new Private)
 {
     setAttribute(Qt::WA_DeleteOnClose);
 

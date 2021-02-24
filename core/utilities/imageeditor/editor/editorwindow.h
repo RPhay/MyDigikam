@@ -376,7 +376,7 @@ private:
      * Sets the format to use in the saving context. Therefore multiple sources
      * are used starting with the extension found in the save dialog.
      *
-     * @param filter filter selected in the dialog
+     * @param filter the filter selected in the dialog
      * @param targetUrl target url selected for the file to save
      * @return The valid extension which could be found, or a null string
      */

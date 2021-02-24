@@ -83,7 +83,7 @@ private:
     /**
      * Re-implemented to handle custom tool tips.
      *
-     * @param event event to process.
+     * @param event the event to process.
      */
     bool viewportEvent(QEvent* event) override;
 

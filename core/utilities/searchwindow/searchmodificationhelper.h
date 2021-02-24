@@ -64,7 +64,7 @@ public:
     /**
      * Constructor.
      *
-     * @param parent parent for qt parent child mechanism
+     * @param parent the parent for qt parent child mechanism
      * @param dialogParent paret widget for dialogs displayed by this object
      */
     SearchModificationHelper(QObject* const parent, QWidget* const dialogParent);
@@ -142,7 +142,7 @@ public Q_SLOTS:
      * Creates a new fuzzy search based on a sketch created by the user and
      * selects it in the AlbumManager after creation.
      *
-     * @param name name of the new sketch search
+     * @param name the name of the new sketch search
      * @param sketchWidget the widget containing the sketch of the user
      * @param numberOfResults max number of results to display
      * @param targetAlbums The image must be in one of these albums
@@ -161,8 +161,8 @@ public Q_SLOTS:
      * and selects it in the album manager after creation.
      *
      * @param name of the new search
-     * @param image image to base this search on
-     * @param threshold threshold for image search, 0 <= threshold <= 1
+     * @param image the image to base this search on
+     * @param threshold the threshold for image search, 0 <= threshold <= 1
      * @param maxThreshold the maximum threshold of similarity.
      * @param targetAlbums The image must be in one of these albums
      * @param overwriteIfExisting if true, an existing search with the desired

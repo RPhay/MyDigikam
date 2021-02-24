@@ -161,7 +161,7 @@ public:
     /**
      * Constructor.
      *
-     * @param parent parent for Qt's parent child mechanism
+     * @param parent the parent for Qt's parent child mechanism
      */
     explicit DateAlbumModel(QObject* const parent = nullptr);
 
@@ -172,7 +172,7 @@ public:
      * normalized to year-month-form. The day is ignored. This means the
      * returned index always points to a month DAlbum.
      *
-     * @param date date to search for (year and month)
+     * @param date the date to search for (year and month)
      * @return model index corresponding to the album with the given date or an
      *         empty index if not found
      */

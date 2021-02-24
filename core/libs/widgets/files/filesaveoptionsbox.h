@@ -47,7 +47,7 @@ public:
     /**
      * Constructor. Don't forget to call setDialog after creation of the dialog.
      *
-     * @param parent parent for Qt's parent child mechanism
+     * @param parent the parent for Qt's parent child mechanism
      */
     explicit FileSaveOptionsBox(QWidget* const parent = nullptr);
 
@@ -63,7 +63,7 @@ public:
      * filename.
      *
      * @param filename file name to discover the desired format from
-     * @param fallback fallback format to return if no format could be
+     * @param fallback the fallback format to return if no format could be
      *                 discovered based on the filename
      * @return file format guessed from the file name or the given fallback
      *         format if no format could be guessed based on the file name

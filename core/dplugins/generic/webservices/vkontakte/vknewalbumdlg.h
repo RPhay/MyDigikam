@@ -53,14 +53,14 @@ public:
     /**
      * @brief Album creation dialog
      *
-     * @param parent Parent widget
+     * @param parent the parent widget
      */
     explicit VKNewAlbumDlg(QWidget* const parent);
 
     /**
      * @brief Album editing dialog
      *
-     * @param parent Parent widget
+     * @param parent the parent widget
      * @param album Initial album properties
      */
     VKNewAlbumDlg(QWidget* const parent, const AlbumProperties& album);

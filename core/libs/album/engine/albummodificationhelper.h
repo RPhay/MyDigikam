@@ -51,7 +51,7 @@ public:
     /**
      * Constructor.
      *
-     * @param parent parent for qt parent child mechanism
+     * @param parent the parent for qt parent child mechanism
      * @param dialogParent parent widget for dialogs displayed by this object
      */
     explicit AlbumModificationHelper(QObject* const parent, QWidget* const dialogParent);
@@ -92,7 +92,7 @@ public Q_SLOTS:
      * Deletes the given album after waiting for a graphical confirmation of the
      * user.
      *
-     * @param album album to delete
+     * @param album the album to delete
      */
     void slotAlbumDelete(PAlbum* album);
     void slotAlbumDelete();
@@ -100,7 +100,7 @@ public Q_SLOTS:
     /**
      * Renames the given album. The user will be prompted for a new name.
      *
-     * @param album album to rename
+     * @param album the album to rename
      */
     void slotAlbumRename(PAlbum* album);
     void slotAlbumRename();
@@ -108,7 +108,7 @@ public Q_SLOTS:
     /**
      * Graphically edits the properties of the given album.
      *
-     * @param album album to edit
+     * @param album the album to edit
      */
     void slotAlbumEdit(PAlbum* album);
     void slotAlbumEdit();

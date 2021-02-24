@@ -167,7 +167,7 @@ public:
      * Ensures that every current match is visible by expanding all parent
      * entries.
      *
-     * @param index index to start ensuring expansion state
+     * @param index the index to start ensuring expansion state
      * @return <code>true</code> if there was a match under <code>index</code>.
      *         This return value can normally be ignored by the caller because
      *         it is only used for an internal recursion.
@@ -217,7 +217,7 @@ public:
          *
          * @param view The AbstractAlbumTreeView which generates the menu
          * @param cmh helper object to create the context menu
-         * @param album album on which the context menu will be created. May be null if
+         * @param album the album on which the context menu will be created. May be null if
          *              it is requested on no tag entry
          */
         virtual void addActions(AbstractAlbumTreeView* view,
@@ -251,7 +251,7 @@ public Q_SLOTS:
     /**
      * Selects the given album.
      *
-     * @param albums albums to select
+     * @param albums the albums to select
      * @param selectInAlbumManager the album will be set as current album, if both
      * this parameter is true and setAlbumManagerCurrentAlbum() was set to true.
      */
@@ -270,7 +270,7 @@ public Q_SLOTS:
     /**
      * Expands the complete tree under the given index.
      *
-     * @param index index to start expanding everything
+     * @param index the index to start expanding everything
      */
     void expandEverything(const QModelIndex& index);
 
@@ -385,7 +385,7 @@ private:
      * for this index in stateStore. Every album that is restored is removed
      * from the stateStore.
      *
-     * @param index index to start restoring
+     * @param index the index to start restoring
      * @param stateStore states indexed by album id
      */
     void restoreStateForHierarchy(const QModelIndex& index,
@@ -400,7 +400,7 @@ private:
     /**
      * Creates the context menu.
      *
-     * @param event event that requested the menu
+     * @param event the event that requested the menu
      */
     void contextMenuEvent(QContextMenuEvent* event)                             override;
 
@@ -419,9 +419,9 @@ private Q_SLOTS:
      * Adapt the column sizes to new contents. This can be connected to all
      * signals indicating row changes.
      *
-     * @param parent parent index of changed rows
-     * @param start start row changed under the parent
-     * @param end end row changed under the parent
+     * @param parent the parent index of changed rows
+     * @param start the start row changed under the parent
+     * @param end the end row changed under the parent
      */
     void adaptColumnsOnRowChange(const QModelIndex& parent, int start, int end);
 

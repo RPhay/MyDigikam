@@ -53,7 +53,7 @@ public:
     /**
      * Constructor.
      *
-     * @param parent parent for Qt's destruction mechanism
+     * @param parent the parent for Qt's destruction mechanism
      */
     explicit HistogramPainter(QObject* const parent);
 
@@ -131,7 +131,7 @@ public:
      * destroyed as long as you want to use the render method without a new call
      * to this method!!!
      *
-     * @param widget widget to initialize painting from
+     * @param widget the widget to initialize painting from
      */
     void initFrom(QWidget* const widget);
 

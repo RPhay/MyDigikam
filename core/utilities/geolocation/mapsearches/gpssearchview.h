@@ -57,16 +57,16 @@ public:
                   SearchModificationHelper* const searchModificationHelper,
                   ItemFilterModel* const imageFilterModel,
                   QItemSelectionModel* const itemSelectionModel);
-    ~GPSSearchView() override;
+    ~GPSSearchView()                                override;
 
     void setActive(bool state);
 
     void changeAlbumFromHistory(SAlbum* const album);
 
-    void doLoadState() override;
-    void doSaveState() override;
+    void doLoadState()                              override;
+    void doSaveState()                              override;
 
-    void setConfigGroup(const KConfigGroup& group) override;
+    void setConfigGroup(const KConfigGroup& group)  override;
 
 public Q_SLOTS:
 

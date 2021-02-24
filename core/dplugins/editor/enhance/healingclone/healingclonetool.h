@@ -49,7 +49,7 @@ public:
     /**
      * Constructor.
      *
-     * @param parent parent for qt parent child mechanism
+     * @param parent the parent for qt parent child mechanism
      */
     explicit HealingCloneTool(QObject* const parent);
 
@@ -93,7 +93,7 @@ private:
      * @param img the preview image is passed to this method by reference
      * @param srcPoint center of brush source
      * @param dstPoint center of brush destination
-     * @param radius radius of cloning brush
+     * @param radius the radius of cloning brush
      */
     void clone(DImg* const img, const QPoint& srcPoint, const QPoint& dstPoint);
     std::vector<QPoint> interpolate(const QPoint& start,const QPoint& end);

@@ -55,8 +55,8 @@ public:
 
     /**
      * Constructor
-     * @param parent parent widget
-     * @param name name to give to the widget
+     * @param parent the parent widget
+     * @param name the name to give to the widget
      */
     explicit SqueezedComboBox(QWidget* const parent = nullptr, const char* name = nullptr);
 

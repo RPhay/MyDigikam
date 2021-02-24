@@ -95,7 +95,7 @@ public:
 
     /**
      * @brief Set rights of the user group.
-     * @param rights rights of the user group
+     * @param rights the rights of the user group
      */
      void setRights(const QList<QString>& rights);
 

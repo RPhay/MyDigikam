@@ -60,8 +60,8 @@ public:
      * Saves the currently created curve to the given group with prefix as a
      * prefix for the curve point config entries.
      *
-     * @param group group to save the curve to
-     * @param prefix prefix prepended to the point numbers in the config
+     * @param group the group to save the curve to
+     * @param prefix the prefix prepended to the point numbers in the config
      */
     void saveCurve(KConfigGroup& group, const QString& prefix);
 
@@ -69,8 +69,8 @@ public:
      * Restores the curve tfrom the given group with prefix as a
      * prefix for the curve point config entries.
      *
-     * @param group group to restore the curve from
-     * @param prefix prefix prepended to the point numbers in the config
+     * @param group the group to restore the curve from
+     * @param prefix the prefix prepended to the point numbers in the config
      */
     void restoreCurve(KConfigGroup& group, const QString& prefix);
 

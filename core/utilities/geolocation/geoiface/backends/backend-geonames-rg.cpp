@@ -90,7 +90,7 @@ public:
 
 /**
  * Constructor
- * @param parent Parent object.
+ * @param parent the parent object.
  */
 BackendGeonamesRG::BackendGeonamesRG(QObject* const parent)
     : RGBackend(parent),

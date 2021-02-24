@@ -184,7 +184,7 @@ public:
     /**
      * @return true if the @p album is in the parent hierarchy
      *
-     * @param album Album to check whether it belongs in the child
+     * @param album the album to check whether it belongs in the child
      * hierarchy
      */
     bool isAncestorOf(Album* const album)   const;
@@ -523,7 +523,7 @@ public:
      * temporary search that isn't saved officially yet and is only used for
      * viewing purposes.
      *
-     * @param type type of the search to get the temporary title for
+     * @param type the type of the search to get the temporary title for
      * @param haarType there are several haar searches, so that this search type
      *                 needs a special handling
      * @return string that identifies this album uniquely as an unsaved search

@@ -47,7 +47,7 @@ public:
     /**
      * Constructor.
      *
-     * @param parent parent for Qt's parent child mechanism
+     * @param parent the parent for Qt's parent child mechanism
      * @param model tag model to display
      */
     TagFolderView(QWidget* const parent, TagModel* const model);

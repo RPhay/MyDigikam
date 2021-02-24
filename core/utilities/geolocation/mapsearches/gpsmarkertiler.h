@@ -68,26 +68,26 @@ public:
     explicit GPSMarkerTiler(QObject* const parent,
                             ItemFilterModel* const imageFilterModel,
                             QItemSelectionModel* const selectionModel);
-    ~GPSMarkerTiler() override;
+    ~GPSMarkerTiler()                                                                               override;
 
-    Tile* tileNew() override;
+    Tile* tileNew()                                                                                 override;
     virtual void tileDelete(Tile* const tile);
     void prepareTiles(const GeoCoordinates& upperLeft, const GeoCoordinates& lowerRight, int level) override;
-    void regenerateTiles() override;
-    AbstractMarkerTiler::Tile* getTile(const TileIndex& tileIndex, const bool stopIfEmpty = false) override;
-    int getTileMarkerCount(const TileIndex& tileIndex) override;
-    int getTileSelectedCount(const TileIndex& tileIndex) override;
+    void regenerateTiles()                                                                          override;
+    AbstractMarkerTiler::Tile* getTile(const TileIndex& tileIndex, const bool stopIfEmpty = false)  override;
+    int getTileMarkerCount(const TileIndex& tileIndex)                                              override;
+    int getTileSelectedCount(const TileIndex& tileIndex)                                            override;
 
-    QVariant getTileRepresentativeMarker(const TileIndex& tileIndex, const int sortKey) override;
-    QVariant bestRepresentativeIndexFromList(const QList<QVariant>& indices, const int sortKey) override;
-    QPixmap pixmapFromRepresentativeIndex(const QVariant& index, const QSize& size) override;
-    bool indicesEqual(const QVariant& a, const QVariant& b) const override;
-    GeoGroupState getTileGroupState(const TileIndex& tileIndex) override;
-    GeoGroupState getGlobalGroupState() override;
+    QVariant getTileRepresentativeMarker(const TileIndex& tileIndex, const int sortKey)             override;
+    QVariant bestRepresentativeIndexFromList(const QList<QVariant>& indices, const int sortKey)     override;
+    QPixmap pixmapFromRepresentativeIndex(const QVariant& index, const QSize& size)                 override;
+    bool indicesEqual(const QVariant& a, const QVariant& b) const                                   override;
+    GeoGroupState getTileGroupState(const TileIndex& tileIndex)                                     override;
+    GeoGroupState getGlobalGroupState()                                                             override;
 
-    void onIndicesClicked(const ClickInfo& clickInfo) override;
+    void onIndicesClicked(const ClickInfo& clickInfo)                                               override;
 
-    void setActive(const bool state) override;
+    void setActive(const bool state)                                                                override;
 
     void setRegionSelection(const GeoCoordinates::Pair& sel);
     void removeCurrentRegionSelection();

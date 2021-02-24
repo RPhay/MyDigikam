@@ -88,8 +88,8 @@ public:
     public:
 
         InternalJobs()
-            : level(0),
-              jobThread(nullptr),
+            : level           (0),
+              jobThread       (nullptr),
               dataFromDatabase()
         {
         }
@@ -100,18 +100,18 @@ public:
     };
 
     explicit Private()
-        : jobs(),
-          thumbnailLoadThread(nullptr),
-          thumbnailMap(),
-          rectList(),
-          rectLevel(),
-          activeState(true),
-          imagesHash(),
-          imageFilterModel(),
-          imageAlbumModel(),
-          selectionModel(),
+        : jobs                  (),
+          thumbnailLoadThread   (nullptr),
+          thumbnailMap          (),
+          rectList              (),
+          rectLevel             (),
+          activeState           (true),
+          imagesHash            (),
+          imageFilterModel      (),
+          imageAlbumModel       (),
+          selectionModel        (),
           currentRegionSelection(),
-          mapGlobalGroupState()
+          mapGlobalGroupState   ()
     {
     }
 
@@ -131,12 +131,13 @@ public:
 
 /**
  * @brief Constructor
- * @param parent Parent object
+ * @param parent the parent object
  */
-GPSMarkerTiler::GPSMarkerTiler(QObject* const parent, ItemFilterModel* const imageFilterModel,
+GPSMarkerTiler::GPSMarkerTiler(QObject* const parent,
+                               ItemFilterModel* const imageFilterModel,
                                QItemSelectionModel* const selectionModel)
     : AbstractMarkerTiler(parent),
-      d(new Private())
+      d                  (new Private())
 {
     resetRootTile();
 

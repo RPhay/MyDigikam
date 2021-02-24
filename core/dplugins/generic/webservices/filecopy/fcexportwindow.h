@@ -54,7 +54,7 @@ public:
     /**
      * Constructor.
      *
-     * @param parent parent QWidget
+     * @param parent the parent QWidget
      */
     explicit FCExportWindow(DInfoInterface* const iface, QWidget* const parent);
 

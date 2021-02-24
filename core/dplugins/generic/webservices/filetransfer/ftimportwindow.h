@@ -57,7 +57,7 @@ public:
     /**
      * Constructor.
      *
-     * @param parent parent widget
+     * @param parent the parent widget
      */
     explicit FTImportWindow(DInfoInterface* const iface, QWidget* const parent);
 

@@ -664,7 +664,7 @@ private:
      * Checks whether an Album has a direct child with the given name.
      *
      * @param parent album to check children for
-     * @param title title to search for
+     * @param title the title to search for
      * @return <code>true</code> if there is a child with name, else
      *         <code>false</code>
      */

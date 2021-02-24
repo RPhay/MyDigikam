@@ -225,7 +225,7 @@ public:
     ~DConfigDlgTitle()                  override;
 
     /**
-     * @param widget Widget displayed on the title widget.
+     * @param widget the widget displayed on the title widget.
      */
     void setWidget(QWidget* const widget);
 

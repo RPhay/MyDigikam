@@ -96,7 +96,7 @@ QPersistentModelIndex GeoModelHelper::bestRepresentativeIndexFromList(const QLis
  *
  * @param index Modelindex of the marker.
  * @param offset Offset of the zero point in the icon, given from the top-left.
- * @param size Size of the icon, only populated if a URL is returned.
+ * @param size the size of the icon, only populated if a URL is returned.
  * @param pixmap Holder for the pixmap of the icon.
  * @param url URL of the icon if available.
  */

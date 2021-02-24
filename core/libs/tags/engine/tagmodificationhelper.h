@@ -57,7 +57,7 @@ public:
     /**
      * Constructor.
      *
-     * @param parent parent for qt parent child mechanism
+     * @param parent the parent for qt parent child mechanism
      * @param dialogParent paret widget for dialogs displayed by this object
      */
     explicit TagModificationHelper(QObject* const parent, QWidget* const dialogParent);
@@ -82,7 +82,7 @@ public Q_SLOTS:
      * title and optionally an icon are given, then these values will be used
      * directly to create the tag.
      *
-     * @param parent parent tag album under which to create the new tags. May be
+     * @param parent the parent tag album under which to create the new tags. May be
      *               0 to use the root album
      * @param title if this isn't an empty string, then this tag name is
      *              suggested
@@ -128,7 +128,7 @@ public Q_SLOTS:
     /**
      * Delete multiple tags and prompt user only once for all
      *
-     * @param tags tags to be deleted, without root tag
+     * @param tags the tags to be deleted, without root tag
      */
     void slotMultipleTagDel(QList<TAlbum*>& tags);
 

@@ -167,7 +167,7 @@ public:
 
     /**
      * @brief Which properties to get for each revision.
-     * @param properties properties to get for each revision
+     * @param properties the properties to get for each revision
      */
     void setProperties(Properties properties);
 

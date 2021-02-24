@@ -234,7 +234,7 @@ static QColor tintHelper(const QColor& base, qreal baseLuma, const QColor& color
  * chroma of @p color is mostly inherited.
  *
  * @param base color to be tinted
- * @param color color with which to tint
+ * @param color the color with which to tint
  * @param amount how strongly to tint the base; 0.0 gives @p base,
  * 1.0 gives @p color
  */

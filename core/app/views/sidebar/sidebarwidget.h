@@ -51,7 +51,7 @@ public:
     /**
      * Constructor.
      *
-     * @param parent parent of this widget, may be null
+     * @param parent the parent of this widget, may be null
      */
     explicit SidebarWidget(QWidget* const parent);
 

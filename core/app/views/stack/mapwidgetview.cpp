@@ -99,7 +99,7 @@ public:
  * @brief Constructor
  * @param selectionModel digiKam's selection model
  * @param imageFilterModel digikam's filter model
- * @param parent Parent object
+ * @param parent the parent object
  */
 MapWidgetView::MapWidgetView(QItemSelectionModel* const selectionModel,
                              DCategorizedSortFilterProxyModel* const imageFilterModel,
