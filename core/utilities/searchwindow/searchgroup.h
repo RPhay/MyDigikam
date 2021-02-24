@@ -102,8 +102,10 @@ class SearchGroupLabel : public QWidget
 
 public:
 
-    SearchGroupLabel(SearchViewThemedPartsCache* const cache, SearchGroup::Type type, QWidget* const parent = nullptr);
-    ~SearchGroupLabel() override;
+    SearchGroupLabel(SearchViewThemedPartsCache* const cache,
+                     SearchGroup::Type type,
+                     QWidget* const parent = nullptr);
+    ~SearchGroupLabel()             override;
 
     void setGroupOperator(SearchXml::Operator op);
     void setDefaultFieldOperator(SearchXml::Operator op);
@@ -127,7 +129,7 @@ protected:
     void adjustOperatorOptions();
     void updateGroupLabel();
 
-    void paintEvent(QPaintEvent*) override;
+    void paintEvent(QPaintEvent*)   override;
 
 private:
 

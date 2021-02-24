@@ -505,10 +505,10 @@ SearchGroupLabel::SearchGroupLabel(SearchViewThemedPartsCache* const cache, Sear
 
     if (type == SearchGroup::FirstGroup)
     {
-        QLabel* const logo = new QLabel;
+        QLabel* const logo              = new QLabel;
         logo->setPixmap(QIcon::fromTheme(QLatin1String("digikam")).pixmap(QSize(48,48)));
 
-        d->optionsLabel = new DClickLabel;
+        d->optionsLabel                 = new DClickLabel;
         d->optionsLabel->setObjectName(QLatin1String("SearchGroupLabel_OptionsLabel"));
 
         connect(d->optionsLabel, SIGNAL(activated()),
@@ -559,7 +559,7 @@ SearchGroupLabel::SearchGroupLabel(SearchViewThemedPartsCache* const cache, Sear
         connect(d->groupOpLabel, SIGNAL(activated()),
                 this, SLOT(toggleGroupOperator()));
 
-        d->removeLabel = new DClickLabel(i18n("Remove Group"));
+        d->removeLabel  = new DClickLabel(i18n("Remove Group"));
         d->removeLabel->setObjectName(QLatin1String("SearchGroupLabel_RemoveLabel"));
 
         connect(d->removeLabel, SIGNAL(activated()),
@@ -603,7 +603,7 @@ void SearchGroupLabel::setExtended(bool extended)
         d->anyBox->setVisible(true);
         d->noneBox->setVisible(true);
         d->oneNotBox->setVisible(true);
-        d->optionsLabel->setText(i18n("Hide Options <<"));
+        d->optionsLabel->setText(i18n("Hide Options") + QLatin1String(" <<"));
     }
     else
     {
@@ -615,7 +615,7 @@ void SearchGroupLabel::setExtended(bool extended)
         d->anyBox->setVisible(false);
         d->noneBox->setVisible(false);
         d->oneNotBox->setVisible(false);
-        d->optionsLabel->setText(i18n("Options >>"));
+        d->optionsLabel->setText(i18n("Options") + QLatin1String(" >>"));
     }
 }
 
