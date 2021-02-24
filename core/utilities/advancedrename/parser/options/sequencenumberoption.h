@@ -51,7 +51,7 @@ public:
 private:
 
     // Disable
-    SequenceNumberDialog(QWidget*) = delete;
+    explicit SequenceNumberDialog(QWidget*) = delete;
     SequenceNumberDialog(const SequenceNumberDialog&);
     SequenceNumberDialog& operator=(const SequenceNumberDialog&);
 };

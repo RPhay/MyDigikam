@@ -122,7 +122,7 @@ private Q_SLOTS:
 private:
 
     // Disable
-    DateOptionDialog(QWidget*) = delete;
+    explicit DateOptionDialog(QWidget*) = delete;
     DateOptionDialog(const DateOptionDialog&);
     DateOptionDialog& operator=(const DateOptionDialog&);
 

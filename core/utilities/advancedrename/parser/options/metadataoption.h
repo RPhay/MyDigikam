@@ -57,7 +57,7 @@ public:
 private:
 
     // Disable
-    MetadataOptionDialog(QWidget*) = delete;
+    explicit MetadataOptionDialog(QWidget*) = delete;
     MetadataOptionDialog(const MetadataOptionDialog&);
     MetadataOptionDialog& operator=(const MetadataOptionDialog&);
 };
