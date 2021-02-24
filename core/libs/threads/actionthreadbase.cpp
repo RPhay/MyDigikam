@@ -106,16 +106,6 @@ ActionThreadBase::~ActionThreadBase()
 
     // Cleanup all jobs from memory
 
-    foreach (ActionJob* const job, d->todo.keys())
-    {
-        delete job;
-    }
-
-    foreach (ActionJob* const job, d->pending.keys())
-    {
-        delete job;
-    }
-
     foreach (ActionJob* const job, d->processed.keys())
     {
         delete job;
@@ -127,6 +117,7 @@ ActionThreadBase::~ActionThreadBase()
 void ActionThreadBase::setMaximumNumberOfThreads(int n)
 {
     d->pool->setMaxThreadCount(n);
+
     qCDebug(DIGIKAM_GENERAL_LOG) << "Using " << n << " CPU core to run threads";
 }
 
@@ -137,8 +128,7 @@ int ActionThreadBase::maximumNumberOfThreads() const
 
 void ActionThreadBase::defaultMaximumNumberOfThreads()
 {
-    const int maximumNumberOfThreads = qMax(QThread::idealThreadCount(), 1);
-    setMaximumNumberOfThreads(maximumNumberOfThreads);
+    setMaximumNumberOfThreads(QThread::idealThreadCount());
 }
 
 void ActionThreadBase::slotJobFinished()
@@ -168,9 +158,13 @@ void ActionThreadBase::slotJobFinished()
 void ActionThreadBase::cancel()
 {
     qCDebug(DIGIKAM_GENERAL_LOG) << "Cancel Main Thread";
+
     QMutexLocker lock(&d->mutex);
 
-    d->todo.clear();
+    foreach (ActionJob* const job, d->todo.keys())
+    {
+        delete job;
+    }
 
     foreach (ActionJob* const job, d->pending.keys())
     {
@@ -178,6 +172,7 @@ void ActionThreadBase::cancel()
         d->processed.insert(job, 0);
     }
 
+    d->todo.clear();
     d->pending.clear();
     d->running = false;
 
