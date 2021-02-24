@@ -53,7 +53,7 @@ public:
     /**
      * Constructor.
      *
-     * @param parent parent for qt parent child mechanism
+     * @param parent the parent for qt parent child mechanism
      * @param tagFilterModel tag model to work on
      */
     explicit TagFilterView(QWidget* const parent, TagModel* const tagFilterModel);
