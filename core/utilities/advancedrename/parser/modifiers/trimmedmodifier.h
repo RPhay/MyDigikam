@@ -43,7 +43,7 @@ public:
 private:
 
     // Disable
-    TrimmedModifier(QObject*);
+    TrimmedModifier(QObject*) = delete;
     TrimmedModifier(const TrimmedModifier&);
     TrimmedModifier& operator=(const TrimmedModifier&);
 };

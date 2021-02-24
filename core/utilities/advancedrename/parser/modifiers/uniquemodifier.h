@@ -44,21 +44,18 @@ class UniqueModifier : public Modifier
 public:
 
     explicit UniqueModifier();
-    QString parseOperation(ParseSettings& settings) override;
-    void    reset() override;
+    QString  parseOperation(ParseSettings& settings) override;
+    void     reset()                                 override;
 
 private:
 
     // Disable
-    UniqueModifier(QObject*);
+    UniqueModifier(QObject*) = delete;
     UniqueModifier(const UniqueModifier&);
     UniqueModifier& operator=(const UniqueModifier&);
 
 private:
 
-/*
-    QStringList cache;
-*/
     QMap<ParseResults::ResultsKey, QStringList> cache;
 };
 

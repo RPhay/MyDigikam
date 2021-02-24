@@ -56,7 +56,7 @@ public:
 private:
 
     // Disable
-    DatabaseOptionDialog(QWidget*);
+    DatabaseOptionDialog(QWidget*) = delete;
     DatabaseOptionDialog(const DatabaseOptionDialog&);
     DatabaseOptionDialog& operator=(const DatabaseOptionDialog&);
 };
@@ -87,7 +87,7 @@ private Q_SLOTS:
 private:
 
     // Disable
-    DatabaseOption(QObject*);
+    DatabaseOption(QObject*) = delete;
     DatabaseOption(const DatabaseOption&);
     DatabaseOption& operator=(const DatabaseOption&);
 

@@ -122,7 +122,7 @@ private Q_SLOTS:
 private:
 
     // Disable
-    DateOptionDialog(QWidget*);
+    DateOptionDialog(QWidget*) = delete;
     DateOptionDialog(const DateOptionDialog&);
     DateOptionDialog& operator=(const DateOptionDialog&);
 
@@ -148,7 +148,7 @@ protected:
 private:
 
     // Disable
-    DateOption(QObject*);
+    DateOption(QObject*) = delete;
     DateOption(const DateOption&);
     DateOption& operator=(const DateOption&);
 

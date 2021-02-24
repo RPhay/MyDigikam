@@ -57,7 +57,7 @@ public:
 private:
 
     // Disable
-    MetadataOptionDialog(QWidget*);
+    MetadataOptionDialog(QWidget*) = delete;
     MetadataOptionDialog(const MetadataOptionDialog&);
     MetadataOptionDialog& operator=(const MetadataOptionDialog&);
 };
@@ -84,7 +84,7 @@ private Q_SLOTS:
 private:
 
     // Disable
-    MetadataOption(QObject*);
+    MetadataOption(QObject*) = delete;
     MetadataOption(const MetadataOption&);
     MetadataOption& operator=(const MetadataOption&);
 

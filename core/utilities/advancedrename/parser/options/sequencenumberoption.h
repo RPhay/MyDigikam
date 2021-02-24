@@ -31,7 +31,7 @@
 
 namespace Ui
 {
-class SequenceNumberOptionDialogWidget;
+    class SequenceNumberOptionDialogWidget;
 }
 
 namespace Digikam
@@ -51,7 +51,7 @@ public:
 private:
 
     // Disable
-    SequenceNumberDialog(QWidget*);
+    SequenceNumberDialog(QWidget*) = delete;
     SequenceNumberDialog(const SequenceNumberDialog&);
     SequenceNumberDialog& operator=(const SequenceNumberDialog&);
 };
@@ -78,7 +78,7 @@ private Q_SLOTS:
 private:
 
     // Disable
-    SequenceNumberOption(QObject*);
+    SequenceNumberOption(QObject*) = delete;
     SequenceNumberOption(const SequenceNumberOption&);
     SequenceNumberOption& operator=(const SequenceNumberOption&);
 };
