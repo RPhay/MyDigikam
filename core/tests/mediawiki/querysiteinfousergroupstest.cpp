@@ -176,7 +176,7 @@ private Q_SLOTS:
                 << (QList<UserGroup>() << ug1 << ug2);
 
         ug2.setRights(ug2.rights() << QStringLiteral("permission_2_2"));
-        QTest::newRow("Two groups with group one no right and group two two rights")
+        QTest::newRow("Two groups with group one no right and group two two rights")    // krazy:exclude=spelling
                 << QStringLiteral("<?xml version=\"1.0\"?><api><query><usergroups><group name=\"name_1\"></group><group name=\"name_2\"><rights><permission>permission_2_1</permission><permission>permission_2_2</permission></rights></group></usergroups></query></api>")
                 << false
                 << int(KJob::NoError)
@@ -198,7 +198,7 @@ private Q_SLOTS:
                 << (QList<UserGroup>() << ug1 << ug2);
 
         ug2.setRights(ug2.rights() << QStringLiteral("permission_2_2"));
-        QTest::newRow("Two groups with group one one right and group two two rights")
+        QTest::newRow("Two groups with group one one right and group two two rights")   // krazy:exclude=spelling
                 << QStringLiteral("<?xml version=\"1.0\"?><api><query><usergroups><group name=\"name_1\"><rights><permission>permission_1_1</permission></rights></group><group name=\"name_2\"><rights><permission>permission_2_1</permission><permission>permission_2_2</permission></rights></group></usergroups></query></api>")
                 << false
                 << int(KJob::NoError)
@@ -220,7 +220,7 @@ private Q_SLOTS:
                 << (QList<UserGroup>() << ug1 << ug2);
 
         ug2.setRights(ug2.rights() << QStringLiteral("permission_2_2"));
-        QTest::newRow("Two groups with group one two rights and group two two rights")
+        QTest::newRow("Two groups with group one two rights and group two two rights")  // krazy:exclude=spelling
                 << QStringLiteral("<?xml version=\"1.0\"?><api><query><usergroups><group name=\"name_1\"><rights><permission>permission_1_1</permission><permission>permission_1_2</permission></rights></group><group name=\"name_2\"><rights><permission>permission_2_1</permission><permission>permission_2_2</permission></rights></group></usergroups></query></api>")
                 << false
                 << int(KJob::NoError)
