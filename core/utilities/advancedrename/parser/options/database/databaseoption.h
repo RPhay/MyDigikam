@@ -56,7 +56,7 @@ public:
 private:
 
     // Disable
-    DatabaseOptionDialog(QWidget*) = delete;
+    explicit DatabaseOptionDialog(QWidget*) = delete;
     DatabaseOptionDialog(const DatabaseOptionDialog&);
     DatabaseOptionDialog& operator=(const DatabaseOptionDialog&);
 };
