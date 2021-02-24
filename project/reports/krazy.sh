@@ -102,6 +102,6 @@ java -jar /opt/saxon/saxon9he.jar \
 cp ./krazy/style.css $REPORT_DIR/
 
 # update www.digikam.org report section.
-updateReportToWebsite "krazy" $REPORT_DIR $TITLE $(parseGitBranch)
+#updateReportToWebsite "krazy" $REPORT_DIR $TITLE $(parseGitBranch)
 
 cd $ORIG_DIR
