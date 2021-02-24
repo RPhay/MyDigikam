@@ -53,7 +53,7 @@ private Q_SLOTS:
 private:
 
     // Disable
-    PhotoJob(QObject*) = delete;
+    explicit PhotoJob(QObject*) = delete;
 
     class Private;
     Private* const d;
