@@ -53,11 +53,11 @@ class Q_DECL_HIDDEN FTExportWidget::Private
 public:
 
     explicit Private()
+      : targetLabel        (nullptr),
+        targetDialog       (nullptr),
+        targetSearchButton (nullptr),
+        imageList          (nullptr)
     {
-        targetLabel        (nullptr);
-        targetDialog       (nullptr);
-        targetSearchButton (nullptr);
-        imageList          (nullptr);
     }
 
     KUrlComboRequester* targetLabel;
