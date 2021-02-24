@@ -43,7 +43,7 @@ class KJobWithSubjob : public KJob
 
 public:
 
-     KJobWithSubjob(QObject* const parent = nullptr);
+     explicit KJobWithSubjob(QObject* const parent = nullptr);
 
 protected:
 
@@ -66,7 +66,7 @@ class KJobWithSubjobs : public KJob
 
 public:
 
-     KJobWithSubjobs(QObject* const parent = nullptr);
+     explicit KJobWithSubjobs(QObject* const parent = nullptr);
 
 protected:
 
@@ -153,7 +153,7 @@ private:
 private:
 
     // Disable
-    VkontakteJob(QObject*);
+    VkontakteJob(QObject*) = delete;
 };
 
 } // namespace Vkontakte
