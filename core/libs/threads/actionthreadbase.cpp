@@ -106,16 +106,6 @@ ActionThreadBase::~ActionThreadBase()
 
     // Cleanup all jobs from memory
 
-    foreach (ActionJob* const job, d->todo.keys())
-    {
-        delete job;
-    }
-
-    foreach (ActionJob* const job, d->pending.keys())
-    {
-        delete job;
-    }
-
     foreach (ActionJob* const job, d->processed.keys())
     {
         delete job;
@@ -170,7 +160,10 @@ void ActionThreadBase::cancel()
     qCDebug(DIGIKAM_GENERAL_LOG) << "Cancel Main Thread";
     QMutexLocker lock(&d->mutex);
 
-    d->todo.clear();
+    foreach (ActionJob* const job, d->todo.keys())
+    {
+        delete job;
+    }
 
     foreach (ActionJob* const job, d->pending.keys())
     {
@@ -178,6 +171,7 @@ void ActionThreadBase::cancel()
         d->processed.insert(job, 0);
     }
 
+    d->todo.clear();
     d->pending.clear();
     d->running = false;
 
