@@ -62,8 +62,9 @@ private Q_SLOTS:
 
 private:
 
-    // Disable
-    WorkflowDlg(QWidget*);
+    WorkflowDlg(QWidget*) = delete;
+
+private:
 
     class Private;
     Private* const d;

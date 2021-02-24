@@ -54,8 +54,9 @@ private:
 
     // Disable
     BatchToolsFactory();
-    BatchToolsFactory(QObject*);
-    ~BatchToolsFactory()                                                                override;
+    ~BatchToolsFactory() override;
+
+    BatchToolsFactory(QObject*) = delete;
 
 private:
 
