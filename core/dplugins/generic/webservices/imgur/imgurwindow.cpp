@@ -73,7 +73,7 @@ public:
 
 ImgurWindow::ImgurWindow(DInfoInterface* const iface, QWidget* const /*parent*/)
     : WSToolDialog(nullptr, QLatin1String("Imgur Dialog")),
-      d(new Private)
+      d           (new Private)
 {
     d->api = new ImgurTalker(this);
 
@@ -248,7 +248,7 @@ void ImgurWindow::slotApiAuthorized(bool success, const QString& username)
     }
 
     d->username = QString();
-    d->userLabel->setText(i18n("<Not logged in>"));
+    d->userLabel->setText(i18n("<i>Not logged in</i>"));
     d->forgetButton->setEnabled(false);
 }
 

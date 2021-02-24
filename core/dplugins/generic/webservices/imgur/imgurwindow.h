@@ -50,7 +50,7 @@ class ImgurWindow : public WSToolDialog
 public:
 
     explicit ImgurWindow(DInfoInterface* const iface, QWidget* const parent = nullptr);
-    ~ImgurWindow() override;
+    ~ImgurWindow()                      override;
 
 public:
 
@@ -80,7 +80,7 @@ public Q_SLOTS:
 
 private:
 
-    void closeEvent(QCloseEvent* e) override;
+    void closeEvent(QCloseEvent* e)     override;
     void setContinueUpload(bool state);
     void readSettings();
     void saveSettings();
