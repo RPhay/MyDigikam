@@ -117,6 +117,7 @@ ActionThreadBase::~ActionThreadBase()
 void ActionThreadBase::setMaximumNumberOfThreads(int n)
 {
     d->pool->setMaxThreadCount(n);
+
     qCDebug(DIGIKAM_GENERAL_LOG) << "Using " << n << " CPU core to run threads";
 }
 
@@ -127,8 +128,7 @@ int ActionThreadBase::maximumNumberOfThreads() const
 
 void ActionThreadBase::defaultMaximumNumberOfThreads()
 {
-    const int maximumNumberOfThreads = qMax(QThread::idealThreadCount(), 1);
-    setMaximumNumberOfThreads(maximumNumberOfThreads);
+    setMaximumNumberOfThreads(QThread::idealThreadCount());
 }
 
 void ActionThreadBase::slotJobFinished()
@@ -158,6 +158,7 @@ void ActionThreadBase::slotJobFinished()
 void ActionThreadBase::cancel()
 {
     qCDebug(DIGIKAM_GENERAL_LOG) << "Cancel Main Thread";
+
     QMutexLocker lock(&d->mutex);
 
     foreach (ActionJob* const job, d->todo.keys())
