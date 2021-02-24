@@ -59,17 +59,17 @@ class Q_DECL_HIDDEN PiwigoTalker::Private
 public:
 
     explicit Private()
-      : parent(nullptr),
-        state(GE_LOGOUT),
-        netMngr(nullptr),
-        reply(nullptr),
-        loggedIn(false),
-        chunkId(0),
-        nbOfChunks(0),
-        version(-1),
-        albumId(0),
-        photoId(0),
-        iface(nullptr)
+      : parent      (nullptr),
+        state       (GE_LOGOUT),
+        netMngr     (nullptr),
+        reply       (nullptr),
+        loggedIn    (false),
+        chunkId     (0),
+        nbOfChunks  (0),
+        version     (-1),
+        albumId     (0),
+        photoId     (0),
+        iface       (nullptr)
     {
     }
 
@@ -545,7 +545,7 @@ void PiwigoTalker::parseResponseGetVersion(const QByteArray& data)
     if (d->version < PIWIGO_VER_2_4)
     {
         d->loggedIn = false;
-        emit signalLoginFailed(i18n("Upload to Piwigo version < 2.4 is no longer supported"));
+        emit signalLoginFailed(i18n("Upload to Piwigo version inferior to 2.4 is no longer supported"));
         return;
     }
 }
@@ -727,7 +727,7 @@ void PiwigoTalker::parseResponseDoesPhotoExist(const QByteArray& data)
     }
     else
     {
-        emit signalAddPhotoFailed(i18n("Upload to Piwigo version < 2.4 is no longer supported"));
+        emit signalAddPhotoFailed(i18n("Upload to Piwigo version inferior to 2.4 is no longer supported"));
         return;
     }
 }
