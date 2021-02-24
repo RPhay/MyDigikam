@@ -78,7 +78,8 @@ private Q_SLOTS:
                                               "missing=\"\" imagerepository=\"shared\"><imageinfo><ii timestamp=\"2008-06-06T22:27:45Z\" "
                                               "user=\"User1\" size=\"448798\" width=\"924\" height=\"1203\" "
                                               "url=\"http://url/File:Image.bmp\" "                              // krazy:exclude=insecurenet
-                                              "thumburl=\"http://thumburl/File:Image.bmp\" thumbwidth=\"78\" thumbheight=\"102\" "
+                                              "thumburl=\"http://thumburl/File:Image.bmp\" "                    // krazy:exclude=insecurenet
+                                              "thumbwidth=\"78\" thumbheight=\"102\" "
                                               "descriptionurl=\"http://descriptionurl/File:Image.bmp\" "        // krazy:exclude=insecurenet
                                               "comment=\"Comment1\" sha1=\"00be23585fde01190a0f8c60fc4267ea00f3745d\" "
                                               "mime=\"image/bmp\"><metadata><metadata name=\"Name1\" value=\"Value1\" "
