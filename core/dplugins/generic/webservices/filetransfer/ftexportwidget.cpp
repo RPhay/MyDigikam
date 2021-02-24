@@ -54,10 +54,10 @@ public:
 
     explicit Private()
     {
-        targetLabel        = nullptr;
-        targetDialog       = nullptr;
-        targetSearchButton = nullptr;
-        imageList          = nullptr;
+        targetLabel        (nullptr);
+        targetDialog       (nullptr);
+        targetSearchButton (nullptr);
+        imageList          (nullptr);
     }
 
     KUrlComboRequester* targetLabel;
@@ -69,7 +69,7 @@ public:
 
 FTExportWidget::FTExportWidget(DInfoInterface* const iface, QWidget* const parent)
     : QWidget(parent),
-      d(new Private)
+      d      (new Private)
 {
     // setup remote target selection
 
@@ -78,7 +78,9 @@ FTExportWidget::FTExportWidget(DInfoInterface* const iface, QWidget* const paren
     d->targetLabel      = new KUrlComboRequester(hbox);
 
     if (d->targetLabel->button())
+    {
         d->targetLabel->button()->hide();
+    }
 
     d->targetLabel->comboBox()->setEditable(true);
 
@@ -136,7 +138,9 @@ QList<QUrl> FTExportWidget::history() const
     QList<QUrl> urls;
 
     for (int i = 0 ; i <= d->targetLabel->comboBox()->count() ; ++i)
+    {
         urls << QUrl(d->targetLabel->comboBox()->itemText(i));
+    }
 
     return urls;
 }
@@ -146,7 +150,9 @@ void FTExportWidget::setHistory(const QList<QUrl>& urls)
     d->targetLabel->comboBox()->clear();
 
     foreach (const QUrl& url, urls)
+    {
         d->targetLabel->comboBox()->addUrl(url);
+    }
 }
 
 void FTExportWidget::setTargetUrl(const QUrl& url)
@@ -169,6 +175,7 @@ void FTExportWidget::slotShowTargetDialogClicked(bool checked)
     {
         d->targetUrl = d->targetDialog->selectedUrls().isEmpty() ? QUrl() : d->targetDialog->selectedUrls().at(0);
         updateTargetLabel();
+
         emit signalTargetUrlChanged(d->targetUrl);
     }
 
@@ -178,11 +185,11 @@ void FTExportWidget::slotShowTargetDialogClicked(bool checked)
 void FTExportWidget::updateTargetLabel()
 {
     qCDebug(DIGIKAM_WEBSERVICES_LOG) << "Call for url "
-                                 << d->targetUrl.toDisplayString()
-                                 << ", valid = "
-                                 << d->targetUrl.isValid();
+                                     << d->targetUrl.toDisplayString()
+                                     << ", valid = "
+                                     << d->targetUrl.isValid();
 
-    QString urlString = i18n("<not selected>");
+    QString urlString = i18n("<i>not selected</i>");
 
     if (d->targetUrl.isValid())
     {
@@ -199,6 +206,7 @@ DItemsList* FTExportWidget::imagesList() const
 void FTExportWidget::slotLabelUrlChanged()
 {
     d->targetUrl = d->targetLabel->url();
+
     emit signalTargetUrlChanged(d->targetUrl);
 }
 

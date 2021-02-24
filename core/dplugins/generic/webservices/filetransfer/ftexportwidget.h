@@ -57,7 +57,7 @@ public:
     /**
      * Destructor.
      */
-    ~FTExportWidget() override;
+    ~FTExportWidget()               override;
 
     /**
      * Returns a pointer to the imagelist that is displayed.
@@ -67,14 +67,14 @@ public:
     /**
      * Returns the currently selected target url. Maybe invalid.
      */
-    QUrl targetUrl() const;
+    QUrl targetUrl()         const;
 
     /**
      * Sets the target url this widget should point at.
      */
     void setTargetUrl(const QUrl& url);
 
-    QList<QUrl> history() const;
+    QList<QUrl> history()    const;
     void setHistory(const QList<QUrl>& urls);
 
 private Q_SLOTS:
