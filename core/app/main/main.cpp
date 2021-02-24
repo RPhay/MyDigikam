@@ -168,18 +168,18 @@ int main(int argc, char* argv[])
     parser.addHelpOption();
     aboutData.setupCommandLine(&parser);
     parser.addOption(QCommandLineOption(QStringList() << QLatin1String("download-from"),
-                                        i18n("Open camera dialog at <path>"),
+                                        i18n("Open camera dialog at \"path\""),
                                         QLatin1String("path")));
     parser.addOption(QCommandLineOption(QStringList() << QLatin1String("download-from-udi"),
-                                        i18n("Open camera dialog for the device with Solid UDI <udi>"),
+                                        i18n("Open camera dialog for the device with Solid UDI \"udi\""),
                                         QLatin1String("udi")));
     parser.addOption(QCommandLineOption(QStringList() << QLatin1String("detect-camera"),
                                         i18n("Automatically detect and open a connected gphoto2 camera")));
     parser.addOption(QCommandLineOption(QStringList() << QLatin1String("database-directory"),
-                                        i18n("Start digikam with the SQLite database file found in the directory <dir>"),
+                                        i18n("Start digikam with the SQLite database file found in the directory \"dir\""),
                                         QLatin1String("dir")));
     parser.addOption(QCommandLineOption(QStringList() << QLatin1String("config"),
-                                        i18n("Start digikam with the configuration file <config>"),
+                                        i18n("Start digikam with the configuration file \"config\""),
                                         QLatin1String("config")));
 
     parser.process(app);
@@ -261,12 +261,13 @@ int main(int argc, char* argv[])
         {
             QMessageBox::critical(qApp->activeWindow(),
                                   qApp->applicationName(),
-                                  QLatin1String("--config ") + configFilename
-                                  + i18n("<p>The given path for the config file "
-                                         "is not valid. Either its parent "
-                                         "directory does not exist, it is a "
-                                         "directory itself or it cannot be read/"
-                                         "written to.</p>"));
+                                  QLatin1String("--config ") +
+                                  configFilename             +
+                                  i18n("<p>The given path for the config file "
+                                       "is not valid. Either its parent "
+                                       "directory does not exist, it is a "
+                                       "directory itself or it cannot be read/"
+                                       "written to.</p>"));
             qCDebug(DIGIKAM_GENERAL_LOG) << "Invalid path: --config"
                                          << configFilename;
             return 1;
@@ -335,6 +336,7 @@ int main(int argc, char* argv[])
         FaceDbAccess::cleanUpDatabase();
         SimilarityDbAccess::cleanUpDatabase();
         MetaEngine::cleanupExiv2();
+
         return 0;
     }
 
