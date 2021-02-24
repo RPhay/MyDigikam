@@ -576,8 +576,12 @@ void OnlineVersionDlg::slotUpdateStats()
 
     if (diff)
     {
-        rate   = d->bar->value() / (diff);
-        remain = (d->bar->maximum() - d->bar->value()) / rate;
+        rate = d->bar->value() / diff;
+
+        if (rate)
+        {
+            remain = (d->bar->maximum() - d->bar->value()) / rate;
+        }
     }
 
     QString durationString = QString::fromUtf8("%1s").arg(remain);
