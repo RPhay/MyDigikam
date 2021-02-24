@@ -57,7 +57,7 @@ public:
 private:
 
     // Disable
-    MapDragData(QObject*) = delete;
+    explicit MapDragData(QObject*) = delete;
 };
 
 //  -----------------------------------------------------------------------------------

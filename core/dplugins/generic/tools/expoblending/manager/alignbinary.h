@@ -45,7 +45,7 @@ public:
 private:
 
     // Disable
-    AlignBinary(QObject*) = delete;
+    explicit AlignBinary(QObject*) = delete;
 };
 
 } // namespace DigikamGenericExpoBlendingPlugin

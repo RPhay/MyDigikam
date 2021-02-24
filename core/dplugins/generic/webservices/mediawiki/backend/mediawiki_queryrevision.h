@@ -36,7 +36,6 @@
 #include "mediawiki_job.h"
 #include "mediawiki_revision.h"
 
-
 namespace MediaWiki
 {
 
@@ -108,7 +107,7 @@ public:
         TooManyParams,
 
         /**
-         * @brief There is no section section in rrevid
+         * @brief There is no section in rrevid
          */
         SectionNotFound
     };

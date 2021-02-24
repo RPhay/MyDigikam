@@ -43,7 +43,7 @@ public:
 private:
 
     // Disable
-    CaseModifier(QObject*) = delete;
+    explicit CaseModifier(QObject*) = delete;
     CaseModifier(const CaseModifier&);
     CaseModifier& operator=(const CaseModifier&);
 

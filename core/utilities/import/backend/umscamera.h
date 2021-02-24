@@ -94,7 +94,7 @@ private:
 private:
 
     // Disable
-    UMSCamera(QObject*) = delete;
+    explicit UMSCamera(QObject*) = delete;
 };
 
 } // namespace Digikam

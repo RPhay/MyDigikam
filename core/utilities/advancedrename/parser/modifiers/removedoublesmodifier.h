@@ -44,7 +44,7 @@ public:
 private:
 
     // Disable
-    RemoveDoublesModifier(QObject*) = delete;
+    explicit RemoveDoublesModifier(QObject*) = delete;
     RemoveDoublesModifier(const RemoveDoublesModifier&);
     RemoveDoublesModifier& operator=(const RemoveDoublesModifier&);
 };

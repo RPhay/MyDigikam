@@ -170,7 +170,7 @@ public:
 private:
 
     // Disable;
-    ImportSettings(QObject*) = delete;
+    explicit ImportSettings(QObject*) = delete;
 
     ImportSettings();
     ~ImportSettings()                             override;

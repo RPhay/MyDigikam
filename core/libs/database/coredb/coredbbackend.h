@@ -73,7 +73,7 @@ public:
 private:
 
     // Disable
-    CoreDbBackend(QObject*) = delete;
+    explicit CoreDbBackend(QObject*) = delete;
 
     Q_DECLARE_PRIVATE(CoreDbBackend)
 };

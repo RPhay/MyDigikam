@@ -84,7 +84,7 @@ private Q_SLOTS:
 private:
 
     // Disable
-    MetadataOption(QObject*) = delete;
+    explicit MetadataOption(QObject*) = delete;
     MetadataOption(const MetadataOption&);
     MetadataOption& operator=(const MetadataOption&);
 

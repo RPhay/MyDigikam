@@ -57,7 +57,7 @@ private:
 private:
 
     // Disable
-    RuleDialog(QWidget*) = delete;
+    explicit RuleDialog(QWidget*) = delete;
 
     class Private;
     Private* const d;

@@ -56,7 +56,7 @@ private:
     BatchToolsFactory();
     ~BatchToolsFactory() override;
 
-    BatchToolsFactory(QObject*) = delete;
+    explicit BatchToolsFactory(QObject*) = delete;
 
 private:
 

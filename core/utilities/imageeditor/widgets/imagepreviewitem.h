@@ -52,7 +52,7 @@ public:
 private:
 
     // Disable
-    ImagePreviewItem(QObject*) = delete;
+    explicit ImagePreviewItem(QObject*) = delete;
 };
 
 } // namespace Digikam

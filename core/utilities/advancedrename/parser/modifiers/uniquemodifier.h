@@ -50,7 +50,7 @@ public:
 private:
 
     // Disable
-    UniqueModifier(QObject*) = delete;
+    explicit UniqueModifier(QObject*) = delete;
     UniqueModifier(const UniqueModifier&);
     UniqueModifier& operator=(const UniqueModifier&);
 

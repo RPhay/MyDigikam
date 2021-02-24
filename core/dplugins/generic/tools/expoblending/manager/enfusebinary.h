@@ -74,7 +74,7 @@ private:
 private:
 
     // Disable
-    EnfuseBinary(QObject*) = delete;
+    explicit EnfuseBinary(QObject*) = delete;
 };
 
 } // namespace DigikamGenericExpoBlendingPlugin

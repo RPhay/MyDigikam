@@ -319,7 +319,7 @@ int OpenCVDNNFaceRecognizer::Private::predictKDTree(const cv::Mat& faceEmbedding
         return -1;
     }
 
-    // Look for K-nearest neighbor which have the cosine distance greater greater than the threshold
+    // Look for K-nearest neighbor which have the cosine distance greater than the threshold.
 
     QMap<double, QVector<int> > closestNeighbors = tree->getClosestNeighbors(faceEmbedding, threshold, 0.8, kNeighbors);
 

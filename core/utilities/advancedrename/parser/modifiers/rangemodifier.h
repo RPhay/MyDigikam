@@ -55,7 +55,7 @@ private Q_SLOTS:
 private:
 
     // Disable
-    RangeDialog(QWidget*) = delete;
+    explicit RangeDialog(QWidget*) = delete;
     RangeDialog(const RangeDialog&);
     RangeDialog& operator=(const RangeDialog&);
 };
@@ -78,7 +78,7 @@ private Q_SLOTS:
 private:
 
     // Disable
-    RangeModifier(QObject*) = delete;
+    explicit RangeModifier(QObject*) = delete;
     RangeModifier(const RangeModifier&);
     RangeModifier& operator=(const RangeModifier&);
 };

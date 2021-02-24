@@ -78,7 +78,7 @@ private Q_SLOTS:
 private:
 
     // Disable
-    SequenceNumberOption(QObject*) = delete;
+    explicit SequenceNumberOption(QObject*) = delete;
     SequenceNumberOption(const SequenceNumberOption&);
     SequenceNumberOption& operator=(const SequenceNumberOption&);
 };

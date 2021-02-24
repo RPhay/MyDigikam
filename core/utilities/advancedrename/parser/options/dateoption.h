@@ -148,7 +148,7 @@ protected:
 private:
 
     // Disable
-    DateOption(QObject*) = delete;
+    explicit DateOption(QObject*) = delete;
     DateOption(const DateOption&);
     DateOption& operator=(const DateOption&);
 

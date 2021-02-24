@@ -128,7 +128,7 @@ public:
      *
      * Only for the first image info. The property URL must be set.
      *
-     * @param width width scale
+     * @param width the width scale
      */
     void setWidthScale(unsigned int width);
 
@@ -137,7 +137,7 @@ public:
      *
      * Only for the first image info. The property URL must be set.
      *
-     * @param height height scale
+     * @param height the height scale
      */
     void setHeightScale(unsigned int height);
 

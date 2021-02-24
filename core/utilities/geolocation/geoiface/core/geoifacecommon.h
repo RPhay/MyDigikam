@@ -128,7 +128,7 @@ public:
 private:
 
     // Disable
-    GeoIfaceGlobalObject(QObject*) = delete;
+    explicit GeoIfaceGlobalObject(QObject*) = delete;
     GeoIfaceGlobalObject();
     ~GeoIfaceGlobalObject() override;
 

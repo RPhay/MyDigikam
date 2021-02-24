@@ -87,7 +87,7 @@ private Q_SLOTS:
 private:
 
     // Disable
-    DatabaseOption(QObject*) = delete;
+    explicit DatabaseOption(QObject*) = delete;
     DatabaseOption(const DatabaseOption&);
     DatabaseOption& operator=(const DatabaseOption&);
 
