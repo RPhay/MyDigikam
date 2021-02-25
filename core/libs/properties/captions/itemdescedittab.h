@@ -56,7 +56,7 @@ class ItemDescEditTab : public DVBox
 public:
 
     explicit ItemDescEditTab(QWidget* const parent);
-    ~ItemDescEditTab() override;
+    ~ItemDescEditTab()                      override;
 
     void assignPickLabel(int pickId);
     void assignColorLabel(int colorId);

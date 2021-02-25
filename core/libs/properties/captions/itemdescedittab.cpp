@@ -98,33 +98,33 @@ public:
     };
 
     explicit Private()
-      : modified(false),
-        ignoreItemAttributesWatch(false),
-        ignoreTagChanges(false),
-        togglingSearchSettings(false),
-        recentTagsBtn(nullptr),
-        assignedTagsBtn(nullptr),
-        revertBtn(nullptr),
-        openTagMngr(nullptr),
-        moreMenu(nullptr),
-        applyBtn(nullptr),
-        moreButton(nullptr),
-        applyToAllVersionsButton(nullptr),
-        lastSelectedWidget(nullptr),
-        titleEdit(nullptr),
-        captionsEdit(nullptr),
-        dateTimeEdit(nullptr),
-        tabWidget(nullptr),
-        tagsSearchBar(nullptr),
-        newTagEdit(nullptr),
-        tagCheckView(nullptr),
-        templateSelector(nullptr),
-        templateViewer(nullptr),
-        ratingWidget(nullptr),
-        colorLabelSelector(nullptr),
-        pickLabelSelector(nullptr),
-        tagModel(nullptr),
-        metadataChangeTimer(nullptr)
+      : modified                    (false),
+        ignoreItemAttributesWatch   (false),
+        ignoreTagChanges            (false),
+        togglingSearchSettings      (false),
+        recentTagsBtn               (nullptr),
+        assignedTagsBtn             (nullptr),
+        revertBtn                   (nullptr),
+        openTagMngr                 (nullptr),
+        moreMenu                    (nullptr),
+        applyBtn                    (nullptr),
+        moreButton                  (nullptr),
+        applyToAllVersionsButton    (nullptr),
+        lastSelectedWidget          (nullptr),
+        titleEdit                   (nullptr),
+        captionsEdit                (nullptr),
+        dateTimeEdit                (nullptr),
+        tabWidget                   (nullptr),
+        tagsSearchBar               (nullptr),
+        newTagEdit                  (nullptr),
+        tagCheckView                (nullptr),
+        templateSelector            (nullptr),
+        templateViewer              (nullptr),
+        ratingWidget                (nullptr),
+        colorLabelSelector          (nullptr),
+        pickLabelSelector           (nullptr),
+        tagModel                    (nullptr),
+        metadataChangeTimer         (nullptr)
     {
     }
 
@@ -178,9 +178,9 @@ public:
 
 ItemDescEditTab::ItemDescEditTab(QWidget* const parent)
     : DVBox(parent),
-      d(new Private)
+      d    (new Private)
 {
-    const int spacing = QApplication::style()->pixelMetric(QStyle::PM_DefaultLayoutSpacing);
+    const int spacing      = QApplication::style()->pixelMetric(QStyle::PM_DefaultLayoutSpacing);
 
     setContentsMargins(QMargins());
     setSpacing(spacing);
@@ -200,19 +200,19 @@ ItemDescEditTab::ItemDescEditTab(QWidget* const parent)
     QGridLayout* const grid1       = new QGridLayout(captionTagsArea);
     sv->setWidget(captionTagsArea);
 
-    d->titleEdit    = new AltLangStrEdit(captionTagsArea);
+    d->titleEdit          = new AltLangStrEdit(captionTagsArea);
     d->titleEdit->setTitle(i18n("Title:"));
     d->titleEdit->setPlaceholderText(i18n("Enter title here."));
 
-    d->captionsEdit = new CaptionEdit(captionTagsArea);
+    d->captionsEdit       = new CaptionEdit(captionTagsArea);
 
-    DHBox* const dateBox = new DHBox(captionTagsArea);
+    DHBox* const dateBox  = new DHBox(captionTagsArea);
     new QLabel(i18n("Date:"), dateBox);
-    d->dateTimeEdit      = new DDateTimeEdit(dateBox, QLatin1String("datepicker"));
+    d->dateTimeEdit       = new DDateTimeEdit(dateBox, QLatin1String("datepicker"));
 
-    DHBox* const pickBox = new DHBox(captionTagsArea);
+    DHBox* const pickBox  = new DHBox(captionTagsArea);
     new QLabel(i18n("Pick Label:"), pickBox);
-    d->pickLabelSelector = new PickLabelSelector(pickBox);
+    d->pickLabelSelector  = new PickLabelSelector(pickBox);
     pickBox->layout()->setAlignment(d->pickLabelSelector, Qt::AlignVCenter | Qt::AlignRight);
 
     DHBox* const colorBox = new DHBox(captionTagsArea);
@@ -230,16 +230,16 @@ ItemDescEditTab::ItemDescEditTab(QWidget* const parent)
     DHBox* const applyButtonBox = new DHBox(this);
     applyButtonBox->setSpacing(spacing);
 
-    d->applyBtn = new QPushButton(i18n("Apply"), applyButtonBox);
+    d->applyBtn                 = new QPushButton(i18n("Apply"), applyButtonBox);
     d->applyBtn->setIcon(QIcon::fromTheme(QLatin1String("dialog-ok-apply")));
     d->applyBtn->setEnabled(false);
     d->applyBtn->setToolTip(i18n("Apply all changes to images"));
     //buttonsBox->setStretchFactor(d->applyBtn, 10);
 
-    DHBox* const buttonsBox = new DHBox(this);
+    DHBox* const buttonsBox     = new DHBox(this);
     buttonsBox->setSpacing(spacing);
 
-    d->revertBtn = new QToolButton(buttonsBox);
+    d->revertBtn                = new QToolButton(buttonsBox);
     d->revertBtn->setIcon(QIcon::fromTheme(QLatin1String("document-revert")));
     d->revertBtn->setToolTip(i18n("Revert all changes"));
     d->revertBtn->setEnabled(false);
@@ -249,8 +249,8 @@ ItemDescEditTab::ItemDescEditTab(QWidget* const parent)
     d->applyToAllVersionsButton->setEnabled(false);
     d->applyToAllVersionsButton->setToolTip(i18n("Apply all changes to all versions of this image"));
 
-    d->moreButton = new QPushButton(i18n("More"), buttonsBox);
-    d->moreMenu   = new QMenu(captionTagsArea);
+    d->moreButton               = new QPushButton(i18n("More"), buttonsBox);
+    d->moreMenu                 = new QMenu(captionTagsArea);
     d->moreButton->setMenu(d->moreMenu);
 
     // --------------------------------------------------
@@ -298,7 +298,7 @@ ItemDescEditTab::ItemDescEditTab(QWidget* const parent)
     DHBox* const tagsSearch = new DHBox(tagsArea);
     tagsSearch->setSpacing(spacing);
 
-    d->tagsSearchBar   = new SearchTextBarDb(tagsSearch, QLatin1String("ItemDescEditTabTagsSearchBar"));
+    d->tagsSearchBar        = new SearchTextBarDb(tagsSearch, QLatin1String("ItemDescEditTabTagsSearchBar"));
 
     d->tagsSearchBar->setModel(d->tagCheckView->filteredModel(),
                                AbstractAlbumModel::AlbumIdRole,
@@ -306,7 +306,7 @@ ItemDescEditTab::ItemDescEditTab(QWidget* const parent)
 
     d->tagsSearchBar->setFilterModel(d->tagCheckView->albumFilterModel());
 
-    d->assignedTagsBtn = new QToolButton(tagsSearch);
+    d->assignedTagsBtn      = new QToolButton(tagsSearch);
     d->assignedTagsBtn->setToolTip(i18n("Tags already assigned"));
     d->assignedTagsBtn->setIcon(QIcon::fromTheme(QLatin1String("tag-assigned")));
     d->assignedTagsBtn->setCheckable(true);
@@ -337,8 +337,8 @@ ItemDescEditTab::ItemDescEditTab(QWidget* const parent)
     QGridLayout* const grid2  = new QGridLayout(infoArea);
     sv2->setWidget(infoArea);
 
-    d->templateSelector = new TemplateSelector(infoArea);
-    d->templateViewer   = new TemplateViewer(infoArea);
+    d->templateSelector       = new TemplateSelector(infoArea);
+    d->templateViewer         = new TemplateViewer(infoArea);
     d->templateViewer->setObjectName(QLatin1String("ItemDescEditTab Expander"));
 
     grid2->addWidget(d->templateSelector, 0, 0, 1, 2);
@@ -421,7 +421,9 @@ ItemDescEditTab::ItemDescEditTab(QWidget* const parent)
     d->pickLabelSelector->installEventFilter(this);
     d->colorLabelSelector->installEventFilter(this);
     d->ratingWidget->installEventFilter(this);
+
     // TODO update, what does this filter?
+
     d->tagCheckView->installEventFilter(this);
     d->newTagEdit->installEventFilter(this);
     updateRecentTags();
@@ -596,41 +598,57 @@ void ItemDescEditTab::slotAskToApplyChanges(const QList<ItemInfo>& infos, Disjoi
     if (changedFields == 1)
     {
         if      (hub->commentsChanged())
+        {
             text = i18np("You have edited the image caption. ",
                          "You have edited the captions of %1 images. ",
                          infos.count());
+        }
         else if (hub->titlesChanged())
+        {
             text = i18np("You have edited the image title. ",
                          "You have edited the titles of %1 images. ",
                          infos.count());
+        }
         else if (hub->dateTimeChanged())
+        {
             text = i18np("You have edited the date of the image. ",
                          "You have edited the date of %1 images. ",
                          infos.count());
+        }
         else if (hub->pickLabelChanged())
+        {
             text = i18np("You have edited the pick label of the image. ",
                          "You have edited the pick label of %1 images. ",
                          infos.count());
+        }
         else if (hub->colorLabelChanged())
+        {
             text = i18np("You have edited the color label of the image. ",
                          "You have edited the color label of %1 images. ",
                          infos.count());
+        }
         else if (hub->ratingChanged())
+        {
             text = i18np("You have edited the rating of the image. ",
                          "You have edited the rating of %1 images. ",
                          infos.count());
+        }
         else if (hub->tagsChanged())
+        {
             text = i18np("You have edited the tags of the image. ",
                          "You have edited the tags of %1 images. ",
                          infos.count());
+        }
 
         text += i18n("Do you want to apply your changes?");
     }
     else
     {
-        text = i18np("<p>You have edited the metadata of the image: </p><p><ul>",
-                     "<p>You have edited the metadata of %1 images: </p><p><ul>",
+        text = i18np("<p>You have edited the metadata of the image: </p>",
+                     "<p>You have edited the metadata of %1 images: </p>",
                      infos.count());
+
+        text += QLatin1String("<p><ul>");
 
         if (hub->titlesChanged())
         {
@@ -684,6 +702,7 @@ void ItemDescEditTab::slotAskToApplyChanges(const QList<ItemInfo>& infos, Disjoi
     msgBox->setEscapeButton(QMessageBox::No);
 
     // Pop-up a message in desktop notification manager
+
     DNotificationWrapper(QString(), i18n("Apply changes?"),
                          DigikamApp::instance(), DigikamApp::instance()->windowTitle());
 
@@ -703,6 +722,7 @@ void ItemDescEditTab::slotAskToApplyChanges(const QList<ItemInfo>& infos, Disjoi
     }
 
     // otherwise apply:
+
     FileActionMngr::instance()->applyMetadata(infos, hub);
 }
 
@@ -797,6 +817,7 @@ void ItemDescEditTab::setInfos(const ItemInfoList& infos)
 
     // First, we read all tags of the items into the cache with one SQL query.
     // This is faster than each item individually.
+
     d->currInfos.loadTagIds();
 
     foreach (const ItemInfo& info, d->currInfos)
@@ -848,6 +869,7 @@ void ItemDescEditTab::slotReadFromFileMetadataToDatabase()
     emit signalProgressFinished();
 
     // reload everything
+
     setInfos(d->currInfos);
 }
 
@@ -862,9 +884,13 @@ void ItemDescEditTab::slotWriteToFileMetadataFromDatabase()
     foreach (const ItemInfo& info, d->currInfos)
     {
         MetadataHub fileHub;
+
         // read in from database
+
         fileHub.load(info);
+
         // write out to file DMetadata
+
         fileHub.write(info.filePath());
 
         emit signalProgressValueChanged(i++ / (float)d->currInfos.count());
@@ -997,24 +1023,30 @@ void ItemDescEditTab::slotTemplateSelected()
 void ItemDescEditTab::slotPickLabelChanged(int pickId)
 {
     d->hub.setPickLabel(pickId);
+
     // no handling for MetadataDisjoint needed for pick label,
     // we set it to 0 when disjoint, see below
+
     slotModified();
 }
 
 void ItemDescEditTab::slotColorLabelChanged(int colorId)
 {
     d->hub.setColorLabel(colorId);
+
     // no handling for MetadataDisjoint needed for color label,
     // we set it to 0 when disjoint, see below
+
     slotModified();
 }
 
 void ItemDescEditTab::slotRatingChanged(int rating)
 {
     d->hub.setRating(rating);
+
     // no handling for MetadataDisjoint needed for rating,
     // we set it to 0 when disjoint, see below
+
     slotModified();
 }
 
@@ -1047,7 +1079,9 @@ void ItemDescEditTab::slotTaggingActionActivated(const TaggingAction& action)
     else if (action.shallCreateNewTag())
     {
         TAlbum* const parent = AlbumManager::instance()->findTAlbum(action.parentTagId());
+
         // tag is assigned automatically
+
         assigned = d->tagCheckView->tagModificationHelper()->slotTagNew(parent, action.newTagName());
     }
 
@@ -1103,16 +1137,19 @@ void ItemDescEditTab::setTagState(TAlbum* const tag, DisjointMetadata::Status st
 
 void ItemDescEditTab::updateTagsView()
 {
-    // avoid that the automatic tag toggling handles these calls and
+    // Avoid that the automatic tag toggling handles these calls and
     // modification is indicated to this widget
+
     TagCheckView::ToggleAutoTags toggle = d->tagCheckView->getToggleAutoTags();
     d->tagCheckView->setToggleAutoTags(TagCheckView::NoToggleAuto);
     d->ignoreTagChanges                 = true;
 
     // first reset the tags completely
+
     d->tagModel->resetAllCheckedAlbums();
 
-    // then update checked state for all tags of the currently selected images
+    // Then update checked state for all tags of the currently selected images
+
     const QMap<int, DisjointMetadata::Status> hubMap = d->hub.tags();
 
     for (QMap<int, DisjointMetadata::Status>::const_iterator it = hubMap.begin() ;
@@ -1237,6 +1274,7 @@ void ItemDescEditTab::slotMoreMenu()
         d->moreMenu->addAction(i18n("Read metadata from file to database"), this, SLOT(slotReadFromFileMetadataToDatabase()));
         QAction* const writeAction = d->moreMenu->addAction(i18n("Write metadata to each file"), this,
                                                             SLOT(slotWriteToFileMetadataFromDatabase()));
+
         // we do not need a "Write to file" action here because the apply button will do just that
         // if selection is a single file.
         // Adding the option will confuse users: Does the apply button not write to file?
@@ -1301,11 +1339,13 @@ void ItemDescEditTab::slotImageDateChanged(qlonglong imageId)
 }
 
 // private common code for above methods
+
 void ItemDescEditTab::metadataChange(qlonglong imageId)
 {
     if (d->ignoreItemAttributesWatch || d->modified)
     {
         // Don't lose modifications
+
         return;
     }
 
@@ -1323,6 +1363,7 @@ void ItemDescEditTab::slotReloadForMetadataChange()
 {
     // NOTE: What to do if d->modified? Reloading is no option.
     // It may be a little change the user wants to ignore, or a large conflict.
+
     if (d->currInfos.isEmpty() || d->modified)
     {
         resetMetadataChangeInfo();
@@ -1339,6 +1380,7 @@ void ItemDescEditTab::slotReloadForMetadataChange()
     else
     {
         // if image id is in our list, update
+
         foreach (const ItemInfo& info, d->currInfos)
         {
             if (d->metadataChangeIds.contains(info.id()))
