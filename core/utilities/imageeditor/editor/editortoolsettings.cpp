@@ -215,7 +215,7 @@ EditorToolSettings::EditorToolSettings(QWidget* const parent)
 
     // ---------------------------------------------------------------
 
-    d->loadBtn = new QPushButton(i18n("Load..."));
+    d->loadBtn = new QPushButton(i18nc("@action", "Load..."));
     d->loadBtn->setIcon(QIcon::fromTheme(QLatin1String("document-open")));
     d->loadBtn->setToolTip(i18n("Load all parameters from settings text file."));
 

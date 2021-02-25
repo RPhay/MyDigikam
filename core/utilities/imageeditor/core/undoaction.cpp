@@ -153,7 +153,7 @@ UndoActionIrreversible::UndoActionIrreversible(EditorCore* const core,
                                                const QString& title)
     : UndoAction(core)
 {
-    setTitle(title.isNull() ? i18n("Unknown") : title);
+    setTitle(title.isNull() ? i18nc("@title", "Unknown") : title);
 }
 
 UndoActionIrreversible::~UndoActionIrreversible()
