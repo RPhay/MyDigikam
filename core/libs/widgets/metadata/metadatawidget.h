@@ -69,6 +69,8 @@ public:
 
     void    setUserAreaWidget(QWidget* const w);
 
+public:
+
     virtual QString getTagTitle(const QString& key);
     virtual QString getTagDescription(const QString& key);
 
@@ -97,12 +99,19 @@ protected:
     void   setMetadataMap(const DMetadata::MetaDataMap& data = DMetadata::MetaDataMap());
     const  DMetadata::MetaDataMap& getMetadataMap();
 
-    void   setIfdList(const DMetadata::MetaDataMap& ifds, const QStringList& tagsFilter=QStringList());
+    void   setIfdList(const DMetadata::MetaDataMap& ifds, const QStringList& tagsFilter = QStringList());
     void   setIfdList(const DMetadata::MetaDataMap& ifds, const QStringList& keysFilter,
                       const QStringList& tagsFilter);
 
     QUrl   saveMetadataToFile(const QString& caption, const QString& fileFilter);
     bool   storeMetadataToFile(const QUrl& url, const QByteArray& metaData);
+
+    /**
+     * Call this method in children class contructors to init signal/slots connections.
+     */
+    void setup();
+
+protected:
 
     virtual void buildView();
     virtual void setMetadataEmpty();
@@ -110,18 +119,11 @@ protected:
     virtual bool    decodeMetadata()   = 0;
     virtual QString getMetadataTitle() = 0;
 
-private Q_SLOTS :
+private Q_SLOTS:
 
     void slotCopy2Clipboard();
     void slotPrintMetadata();
     void slotFilterChanged(QAction*);
-
-protected:
-
-    /**
-     * Call this method in children class contructors to init signal/slots connections.
-     */
-    void setup();
 
 private:
 

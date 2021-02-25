@@ -72,20 +72,20 @@ class Q_DECL_HIDDEN MetadataWidget::Private
 public:
 
     explicit Private()
-      : noneAction(nullptr),
-        photoAction(nullptr),
-        customAction(nullptr),
-        settingsAction(nullptr),
-        mainLayout(nullptr),
-        filterBtn(nullptr),
-        toolBtn(nullptr),
-        saveMetadata(nullptr),
-        printMetadata(nullptr),
-        copy2ClipBoard(nullptr),
-        optionsMenu(nullptr),
-        view(nullptr),
-        searchBar(nullptr),
-        metadata(nullptr)
+      : noneAction      (nullptr),
+        photoAction     (nullptr),
+        customAction    (nullptr),
+        settingsAction  (nullptr),
+        mainLayout      (nullptr),
+        filterBtn       (nullptr),
+        toolBtn         (nullptr),
+        saveMetadata    (nullptr),
+        printMetadata   (nullptr),
+        copy2ClipBoard  (nullptr),
+        optionsMenu     (nullptr),
+        view            (nullptr),
+        searchBar       (nullptr),
+        metadata        (nullptr)
     {
     }
 
@@ -119,7 +119,7 @@ public:
 
 MetadataWidget::MetadataWidget(QWidget* const parent, const QString& name)
     : QWidget(parent),
-      d(new Private)
+      d      (new Private)
 {
     setObjectName(name);
 
@@ -388,8 +388,10 @@ void MetadataWidget::slotCopy2Clipboard()
 
 void MetadataWidget::slotPrintMetadata()
 {
-    QString textmetadata = i18n("<p><big><big><b>File name: %1 (%2)</b></big></big>",
-                                d->fileName, getMetadataTitle());
+    QString textmetadata = QLatin1String("<p>");
+
+    textmetadata.append(i18n("<p><big><big><b>File name: %1 (%2)</b></big></big>",
+                             d->fileName, getMetadataTitle()));
 
     int i                 = 0;
     QTreeWidgetItem* item = nullptr;
