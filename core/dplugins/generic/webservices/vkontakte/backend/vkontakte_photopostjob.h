@@ -50,7 +50,9 @@ class PhotoPostJob : public KJob
 public:
 
     // files.size <= 5
-    explicit PhotoPostJob(Vkontakte::UploadPhotosJob::Dest dest, const QUrl& url, const QStringList& files);
+    explicit PhotoPostJob(Vkontakte::UploadPhotosJob::Dest dest,
+                          const QUrl& url,
+                          const QStringList& files);
 
     void start() override;
     QVariantMap response() const;
@@ -58,7 +60,7 @@ public:
 protected:
 
     /**
-     * Check for a return error and set the appropriate error messages 
+     * Check for a return error and set the appropriate error messages
      */
     void handleError(const QJsonValue& data);
 
@@ -81,7 +83,7 @@ private:
 private:
 
     // Disable
-    PhotoPostJob(QObject*);
+    explicit PhotoPostJob(QObject*);
 };
 
 } // namespace Vkontakte

@@ -48,10 +48,10 @@ namespace Vkontakte
 
 PhotoPostJob::PhotoPostJob(Vkontakte::UploadPhotosJob::Dest dest,
                            const QUrl& url, const QStringList& files)
-    : m_dest(dest),
-      m_url(url),
+    : m_dest (dest),
+      m_url  (url),
       m_files(files),
-      m_ok(true)
+      m_ok   (true)
 {
     setCapabilities(KJob::Killable);
 
@@ -73,9 +73,8 @@ void PhotoPostJob::handleError(const QJsonValue& data)
     else
     {
         const QVariantMap errorMap = data.toVariant().toMap();
-
-        error_code = errorMap[QLatin1String("error_code")].toInt();
-        error_msg  = errorMap[QLatin1String("error_msg")].toString();
+        error_code                 = errorMap[QLatin1String("error_code")].toInt();
+        error_msg                  = errorMap[QLatin1String("error_msg")].toString();
 
         qCWarning(DIGIKAM_WEBSERVICES_LOG) << "An error of type" << error_code << "occurred:" << error_msg;
     }
@@ -87,7 +86,7 @@ void PhotoPostJob::handleError(const QJsonValue& data)
         setErrorText(i18n(
             "Response from the VKontakte server has unexpected format. "
             "Please report this problem against product libkvkontakte "
-            "at the <a href=\"%1\">KDE bug tracker</b>.",
+            "at the <a href=\"%1\">KDE bug tracker</a>.",
             QLatin1String("https://bugs.kde.org/")));
     }
     else
