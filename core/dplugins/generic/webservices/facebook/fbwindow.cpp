@@ -112,7 +112,7 @@ public:
 
 FbWindow::FbWindow(DInfoInterface* const iface, QWidget* const /*parent*/)
     : WSToolDialog(nullptr, QLatin1String("Facebook Export Dialog")),
-      d(new Private(this, iface))
+      d           (new Private(this, iface))
 {
     d->tmpPath.clear();
     d->tmpDir = WSToolUtils::makeTemporaryDir("facebook").absolutePath() + QLatin1Char('/');
@@ -330,7 +330,7 @@ void FbWindow::slotLoginDone(int errCode, const QString& errMsg)
 
     if (errCode == 0 && d->talker->linked())
     {
-        d->albumsCoB->addItem(i18n("<auto create>"), QString());
+        d->albumsCoB->addItem(i18n("<i>auto create</i>"), QString());
         d->talker->listAlbums();    // get albums to fill combo box
     }
     else if (errCode > 0)
@@ -360,7 +360,7 @@ void FbWindow::slotListAlbumsDone(int errCode,
     }
 
     d->albumsCoB->clear();
-    d->albumsCoB->addItem(i18n("<auto create>"), QString());
+    d->albumsCoB->addItem(i18n("<i>auto create</i>"), QString());
 
     for (int i = 0 ; i < albumsList.size() ; ++i)
     {
@@ -500,6 +500,7 @@ void FbWindow::setProfileAID(long long userID)
 {
     // store AID of Profile Photos album
     // wiki.developers.facebook.com/index.php/Profile_archive_album
+
     d->profileAID = QString::number((userID << 32) + (-3 & 0xFFFFFFFF));
 }
 
@@ -508,8 +509,10 @@ QString FbWindow::getImageCaption(const QString& fileName)
     DItemInfo info(d->iface->itemInfo(QUrl::fromLocalFile(fileName)));
 
     // Facebook doesn't support image titles. Include it in descriptions if needed.
+
     QStringList descriptions = QStringList() << info.title() << info.comment();
     descriptions.removeAll(QLatin1String(""));
+
     return descriptions.join(QLatin1String("\n\n"));
 }
 
@@ -528,9 +531,11 @@ bool FbWindow::prepareImageForUpload(const QString& imgPath, QString& caption)
     }
 
     // get temporary file name
+
     d->tmpPath = d->tmpDir + QFileInfo(imgPath).baseName().trimmed() + QLatin1String(".jpg");
 
     // rescale image if requested
+
     int maxDim = d->dimensionSpB->value();
 
     if (d->resizeChB->isChecked() &&
@@ -603,6 +608,7 @@ void FbWindow::uploadNextPhoto()
 void FbWindow::slotAddPhotoDone(int errCode, const QString& errMsg)
 {
     // Remove temporary file if it was used
+
     if (!d->tmpPath.isEmpty())
     {
         QFile::remove(d->tmpPath);
@@ -643,6 +649,7 @@ void FbWindow::slotCreateAlbumDone(int errCode, const QString& errMsg, const QSt
     }
 
     // reload album list and automatically select new album
+
     d->currentAlbumID = newAlbumID;
     d->talker->listAlbums();
 }

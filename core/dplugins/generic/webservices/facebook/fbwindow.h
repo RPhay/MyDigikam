@@ -51,7 +51,7 @@ class FbWindow : public WSToolDialog
 public:
 
     explicit FbWindow(DInfoInterface* const iface, QWidget* const parent);
-    ~FbWindow() override;
+    ~FbWindow()                         override;
 
 private Q_SLOTS:
 
@@ -89,7 +89,7 @@ private:
 
     void    buttonStateChange(bool state);
 
-    void    closeEvent(QCloseEvent*) override;
+    void    closeEvent(QCloseEvent*)    override;
 
 private:
 
