@@ -135,7 +135,7 @@ bool VkontakteJob::handleError(const QJsonValue& data)
         {
             setErrorText(i18n("Response from the VKontakte server has unexpected format. "
                               "Please report this problem against product digiKam "
-                              "at the <a href=\"%1\">KDE bug tracker</b>.",
+                              "at the <a href=\"%1\">KDE bug tracker</a>.",
                          QLatin1String("https://bugs.kde.org/")));
         }
         else

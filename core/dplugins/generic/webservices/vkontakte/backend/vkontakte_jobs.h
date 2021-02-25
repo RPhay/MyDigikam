@@ -153,7 +153,7 @@ private:
 private:
 
     // Disable
-    VkontakteJob(QObject*) = delete;
+    explicit VkontakteJob(QObject*) = delete;
 };
 
 } // namespace Vkontakte
