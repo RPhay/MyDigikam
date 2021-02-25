@@ -45,11 +45,11 @@ public:
 
     explicit ShowfotoDragDropHandler(ShowfotoItemModel* const model);
 
-    ShowfotoItemModel*    model() const;
+    ShowfotoItemModel*    model()   const;
 
     bool           dropEvent(QAbstractItemView* view, const QDropEvent* e, const QModelIndex& droppedOn) override;
     Qt::DropAction accepts(const QDropEvent* e, const QModelIndex& dropIndex)                            override;
-    QStringList    mimeTypes() const                                                                     override;
+    QStringList    mimeTypes()      const                                                                override;
     QMimeData*     createMimeData(const QList<QModelIndex> &)                                            override;
 
 Q_SIGNALS:
