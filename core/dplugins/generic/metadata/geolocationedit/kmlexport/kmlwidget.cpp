@@ -92,14 +92,17 @@ KmlWidget::KmlWidget(GeolocationEdit* const dlg,
     AltitudeCB_->addItem(i18n("relative to ground"));
     AltitudeCB_->addItem(i18n("absolute"));
     AltitudeCB_->setWhatsThis(i18n("<p>Specifies how pictures are displayed"
-                                   "<dl><dt>clamp to ground (default)</dt>"
-                                   "<dd>Indicates to ignore an altitude specification</dd>"
-                                   "<dt>relative to ground</dt>"
-                                   "<dd>Sets the altitude of the element relative to the actual ground "
-                                   "elevation of a particular location.</dd>"
-                                   "<dt>absolute</dt>"
-                                   "<dd>Sets the altitude of the coordinate relative to sea level, regardless "
-                                   "of the actual elevation of the terrain beneath the element.</dd></dl></p>"));
+                                       "<dl>"
+                                           "<dt>clamp to ground (default)</dt>"
+                                               "<dd>Indicates to ignore an altitude specification</dd>"
+                                           "<dt>relative to ground</dt>"
+                                               "<dd>Sets the altitude of the element relative to the actual ground "
+                                               "elevation of a particular location.</dd>"
+                                           "<dt>absolute</dt>"
+                                               "<dd>Sets the altitude of the coordinate relative to sea level, regardless "
+                                               "of the actual elevation of the terrain beneath the element.</dd>"
+                                       "</dl>"
+                                   "</p>"));
 
     destinationDirectoryLabel_ = new QLabel(i18n("Destination Directory:"), TargetPreferenceGroupBox);
 
@@ -219,15 +222,18 @@ KmlWidget::KmlWidget(GeolocationEdit* const dlg,
     GPXAltitudeCB_->addItem(i18n("relative to ground"));
     GPXAltitudeCB_->addItem(i18n("absolute"));
     GPXAltitudeCB_->setWhatsThis(i18n("<p>Specifies how the points are displayed"
-                                      "<dl><dt>clamp to ground (default)</dt>"
-                                      "<dd>Indicates to ignore an altitude specification</dd>"
-                                      "<dt>relative to ground</dt>"
-                                      "<dd>Sets the altitude of the element relative to the actual ground "
-                                      "elevation of a particular location.</dd>"
-                                      "<dt>absolute</dt>"
-                                      "<dd>Sets the altitude of the coordinate relative to sea level, "
-                                      "regardless of the actual elevation of the terrain beneath "
-                                      "the element.</dd></dl>"));
+                                          "<dl>"
+                                              "<dt>clamp to ground (default)</dt>"
+                                                  "<dd>Indicates to ignore an altitude specification</dd>"
+                                              "<dt>relative to ground</dt>"
+                                                  "<dd>Sets the altitude of the element relative to the actual ground "
+                                                  "elevation of a particular location.</dd>"
+                                              "<dt>absolute</dt>"
+                                                  "<dd>Sets the altitude of the coordinate relative to sea level, "
+                                                  "regardless of the actual elevation of the terrain beneath "
+                                                  "the element.</dd>"
+                                          "</dl>"
+                                      "</p>"));
 
     GPXTracksGroupBoxLayout->addWidget(GPXTracksCheckBox_,     0, 0, 1, 4);
     GPXTracksGroupBoxLayout->addWidget(GPXFileLabel_,          1, 0, 1, 1);
