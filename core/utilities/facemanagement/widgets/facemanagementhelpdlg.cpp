@@ -75,7 +75,8 @@ FaceManagementHelpDlg::FaceManagementHelpDlg(QWidget* const parent)
 
     QLabel* const introText = new QLabel(infoPage);
     introText->setWordWrap(true);
-    introText->setText(i18n("<hr> The Face Workflow allows you to Detect and Recognize people "
+    introText->setText(QLatin1String("<hr>") +
+                       i18n("The Face Workflow allows you to Detect and Recognize people "
                             "in your photographs."));
 
     QLabel* const faceDetectionHeader   = new QLabel(infoPage);
@@ -98,6 +99,7 @@ FaceManagementHelpDlg::FaceManagementHelpDlg(QWidget* const parent)
     faceRecognition->setText(i18n("Face Recognition will automatically recognize people in your images."));
 
     // Link to digiKam documentation
+
     QString documentationLink = i18n(
             "https://docs.kde.org/?application=digikam&branch=trunk5&path=using-digikam.html#using-mainwindow-peopleview");
 
@@ -142,8 +144,9 @@ FaceManagementHelpDlg::FaceManagementHelpDlg(QWidget* const parent)
     detectFaceInfoLabel->setWordWrap(true);
     detectFaceInfoLabel->setText(i18n("To run face detection, select the "
                                       "<u>Detect Faces</u> option in the Face Scan panel "
-                                      "and then click on <u>Scan Collection for Faces</u> <hr>"
-                                      "<b>Caution:</b> Running Face Detection for the first time "
+                                      "and then click on <u>Scan Collection for Faces</u>") +
+                                 QLatin1String("<hr>") +
+                                 i18n("<b>Caution:</b> Running Face Detection for the first time "
                                       "can be fairly time consuming. Make sure you use the "
                                       "<u>Search In</u> tab to restrict the target of the scan."));
 
@@ -154,7 +157,7 @@ FaceManagementHelpDlg::FaceManagementHelpDlg(QWidget* const parent)
     QLabel* const skipScannedHeaderLabel = new QLabel(faceDetectionPage);
     skipScannedHeaderLabel->setWordWrap(true);
     skipScannedHeaderLabel->setAlignment(Qt::AlignHCenter | Qt::AlignVCenter);
-    skipScannedHeaderLabel->setText(i18n("<b>Skip Images Already Scanned"));
+    skipScannedHeaderLabel->setText(i18n("<b>Skip Images Already Scanned</b>"));
 
     QLabel* const skipScannedLabel       = new QLabel(faceDetectionPage);
     skipScannedLabel->setWordWrap(true);
@@ -165,7 +168,7 @@ FaceManagementHelpDlg::FaceManagementHelpDlg(QWidget* const parent)
     QLabel* const scanAgainHeaderLabel   = new QLabel(faceDetectionPage);
     scanAgainHeaderLabel->setWordWrap(true);
     scanAgainHeaderLabel->setAlignment(Qt::AlignHCenter | Qt::AlignVCenter);
-    scanAgainHeaderLabel->setText(i18n("<b>Scan Again and Merge"));
+    scanAgainHeaderLabel->setText(i18n("<b>Scan Again and Merge</b>"));
 
     QLabel* const scanAgainLabel         = new QLabel(faceDetectionPage);
     scanAgainLabel->setWordWrap(true);
