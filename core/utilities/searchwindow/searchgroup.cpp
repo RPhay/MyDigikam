@@ -134,6 +134,7 @@ void SearchGroup::setup(Type type)
     group->addField(SearchField::createField(QLatin1String("modificationdate"), group));
     group->addField(SearchField::createField(QLatin1String("digitizationdate"), group));
     group->addField(SearchField::createField(QLatin1String("filesize"),         group));
+    group->addField(SearchField::createField(QLatin1String("monthday"),         group));
 
     m_fieldLabels << label;
     m_fieldGroups << group;

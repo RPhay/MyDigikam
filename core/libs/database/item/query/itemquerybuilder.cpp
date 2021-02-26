@@ -909,6 +909,50 @@ bool ItemQueryBuilder::buildField(QString& sql, SearchXmlCachingReader& reader, 
             }
         }
     }
+    else if (name == QLatin1String("monthday"))
+    {
+        if (relation == SearchXml::Equal)
+        {
+            QList<int> values = reader.valueToIntList();
+
+            if (values.size() != 2)
+            {
+                qCWarning(DIGIKAM_DATABASE_LOG) << "Relation Interval requires a list of two values";
+                return false;
+            }
+
+            // to extract a part of the date we need different SQL code for SQLite and MySQL
+
+            if (CoreDbAccess().backend()->databaseType() == BdEngineBackend::DbType::SQLite)
+            {
+                if (values.at(1) > 0)
+                {
+                    sql += QString::fromUtf8(" (strftime('%m%d', ImageInformation.creationDate) = ?) ");
+                    QString date = QString::number(values.at(0)).rightJustified(2, QLatin1Char('0'));
+                    date        += QString::number(values.at(1)).rightJustified(2, QLatin1Char('0'));
+                    *boundValues << date;
+                }
+                else
+                {
+                    sql += QString::fromUtf8(" (strftime('%m', ImageInformation.creationDate) = ?) ");
+                    *boundValues << QString::number(values.at(0)).rightJustified(2, QLatin1Char('0'));
+                }
+            }
+            else
+            {
+                sql += QString::fromUtf8(" (MONTH(ImageInformation.creationDate) = ?");
+                *boundValues << values.at(0);
+
+                if (values.at(1) > 0)
+                {
+                    sql += QString::fromUtf8(" AND DAY(ImageInformation.creationDate) = ?");
+                    *boundValues << values.at(1);
+                }
+
+                sql += QString::fromUtf8(") ");
+            }
+        }
+    }
     else if (name == QLatin1String("imagetagproperty"))
     {
         if (relation == SearchXml::Equal || relation == SearchXml::InTree)

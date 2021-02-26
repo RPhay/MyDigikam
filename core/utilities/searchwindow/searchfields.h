@@ -556,6 +556,34 @@ protected:
     ColorLabelFilter* m_colorLabelFilter;
 };
 
+//-----------------------------------------------------------------------------
+
+class SearchFieldMonthDay : public SearchField
+{
+    Q_OBJECT
+
+public:
+
+    explicit SearchFieldMonthDay(QObject* const parent);
+
+    void setupValueWidgets(QGridLayout* layout, int row, int column) override;
+    void read(SearchXmlCachingReader& reader) override;
+    void write(SearchXmlWriter& writer) override;
+    void reset() override;
+    void setValueWidgetsVisible(bool visible) override;
+    QList<QRect> valueWidgetRects() const override;
+
+protected Q_SLOTS:
+
+    void slotIndexChanged(int);
+
+protected:
+
+    QLabel*    m_dayLabel;
+    QComboBox* m_monthBox;
+    QComboBox* m_dayBox;
+};
+
 } // namespace Digikam
 
 #endif // DIGIKAM_SEARCH_FIELDS_H

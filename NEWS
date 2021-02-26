@@ -370,4 +370,6 @@ BUGFIXES:
 330 ==> 433331 - Display Thumbnails greater than 9080 missing with removable disk Off line (Ok On Line).
 331 ==> 424051 - Please add search for images without captions.
 332 ==> 433653 - Please Add xattr support for metadata.
-333 ==> 
+333 ==> 431748 - Feature Request: Search by month/day independent of year.
+334 ==> 433573 - View - Separate Item - By Month : View by month only (not month year).
+335 ==> 
