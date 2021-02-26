@@ -369,4 +369,5 @@ BUGFIXES:
 329 ==> 183103 - Allow to change Presentation tool delay on the fly [patch].
 330 ==> 433331 - Display Thumbnails greater than 9080 missing with removable disk Off line (Ok On Line).
 331 ==> 424051 - Please add search for images without captions.
-332 ==> 
+332 ==> 433653 - Please Add xattr support for metadata.
+333 ==> 
