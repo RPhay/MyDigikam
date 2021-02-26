@@ -3260,6 +3260,7 @@ void SearchFieldMonthDay::setupValueWidgets(QGridLayout* layout, int row, int co
     m_dayLabel              = new QLabel(i18n("Day:"));
     m_dayBox                = new QComboBox;
     m_dayBox->setEditable(false);
+    m_dayBox->setEnabled(false);
 
     m_monthBox->addItem(i18n("Every Month"), 0);
 
@@ -3339,7 +3340,14 @@ QList<QRect> SearchFieldMonthDay::valueWidgetRects() const
 
 void SearchFieldMonthDay::slotIndexChanged(int index)
 {
-    setValidValueState(index > 0);
+    bool valid = (index > 0);
+    setValidValueState(valid);
+    m_dayBox->setEnabled(valid);
+
+    if (!valid)
+    {
+        m_dayBox->setCurrentIndex(0);
+    }
 }
 
 } // namespace Digikam
