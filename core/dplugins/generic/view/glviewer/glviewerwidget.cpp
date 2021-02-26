@@ -44,7 +44,7 @@
 
 #include "glviewertimer.h"
 #include "glviewertexture.h"
-#include "glviewerhelpdlg.h"
+#include "dpluginaboutdlg.h"
 #include "digikam_debug.h"
 
 // OpenGL headers is not included automatically with ARM targets
@@ -84,42 +84,42 @@ public:
 
     explicit Private()
       :
-        file_idx(0),                    ///< index of picture to be displayed
+        file_idx                (0),                    ///< index of picture to be displayed
 
-        texture(nullptr),
-        ratio_view_y(0.0F),
-        ratio_view_x(0.0F),
-        delta(0.0F),
-        vertex_height(0.0F),
-        vertex_width(0.0F),
-        vertex_left(0.0F),
-        vertex_top(0.0F),
-        vertex_right(0.0F),
-        vertex_bottom(0.0F),
-        wheelAction(zoomImage),
-        firstImage(true),
+        texture                 (nullptr),
+        ratio_view_y            (0.0F),
+        ratio_view_x            (0.0F),
+        delta                   (0.0F),
+        vertex_height           (0.0F),
+        vertex_width            (0.0F),
+        vertex_left             (0.0F),
+        vertex_top              (0.0F),
+        vertex_right            (0.0F),
+        vertex_bottom           (0.0F),
+        wheelAction             (zoomImage),
+        firstImage              (true),
 
         /**
          * while zooming is performed, the image is downsampled to d->zoomsize. This seems to
          * be the optimal way for a PentiumM 1.4G, Nvidia FX5200. For a faster setup, this might
          * not be necessary anymore
          */
-        zoomsize(QSize(1024, 768)),
+        zoomsize                (QSize(1024, 768)),
 
         /// load cursors for zooming and panning
-        moveCursor(QCursor(Qt::PointingHandCursor)),
-        zoomCursor(QCursor(QIcon::fromTheme(QLatin1String("zoom-in")).pixmap(64))),
+        moveCursor              (QCursor(Qt::PointingHandCursor)),
+        zoomCursor              (QCursor(QIcon::fromTheme(QLatin1String("zoom-in")).pixmap(64))),
 
         /// define zoomfactors for one zoom step
-        zoomfactor_scrollwheel(1.1F),
-        zoomfactor_mousemove(1.03F),
-        zoomfactor_keyboard(1.05F),
+        zoomfactor_scrollwheel  (1.1F),
+        zoomfactor_mousemove    (1.03F),
+        zoomfactor_keyboard     (1.05F),
 
         /// get path of nullImage in case QImage can't load the image
-        nullImage(QIcon::fromTheme(QLatin1String("image-jpeg")).pixmap(256)),
+        nullImage               (QIcon::fromTheme(QLatin1String("image-jpeg")).pixmap(256)),
 
-        iface(nullptr),
-        plugin(nullptr)
+        iface                   (nullptr),
+        plugin                  (nullptr)
     {
         for (int i = 0 ; i < CACHESIZE ; ++i)
         {
@@ -163,7 +163,7 @@ public:
 
 GLViewerWidget::GLViewerWidget(DPlugin* const plugin, DInfoInterface* const iface)
     : QOpenGLWidget(),
-      d(new Private)
+      d            (new Private)
 {
     setAttribute(Qt::WA_DeleteOnClose);
 
@@ -600,7 +600,7 @@ void GLViewerWidget::keyPressEvent(QKeyEvent* e)
 
         default:
         {
-            QPointer<GLViewerHelpDlg> help = new GLViewerHelpDlg(d->plugin);
+            QPointer<DPluginAboutDlg> help = new DPluginAboutDlg(d->plugin);
             help->exec();
             break;
         }

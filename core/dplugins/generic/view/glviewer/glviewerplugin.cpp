@@ -70,7 +70,24 @@ QString GLViewerPlugin::description() const
 
 QString GLViewerPlugin::details() const
 {
-    return i18n("<p>This tool preview a series of items using OpenGL effects.</p>");
+    return i18n("<p>This tool preview a series of items using OpenGL effects.</p>"
+                "<p><b>Image Access</b></p>"
+                "<ul><li>Next image: scroll-wheel down | down arrow | right arrow | PgDown | Space | n</li>"
+                "<li>Previous image: scroll-wheel up | up arrow | left arrow | PgUp | p</li>"
+                "<li>Quit: Esc</li></ul>"
+                "<p><b>Display</b></p>"
+                "<ul><li>Toggle fulls-creen to normal: f</li>"
+                "<li>Toggle scroll-wheel action: c (either zoom or change image)</li>"
+                "<li>Rotation: r</li>"
+                "<li>Reset view: double click</li>"
+                "<li>Original size: o</li></ul"
+                "<p><b>Zooming</b></p>"
+                "<ul><li>Move mouse in up-down-direction while pressing the right mouse button</li>"
+                "<li>Alternatively, press c and use the scrollwheel</li>"
+                "<li>Plus-minus</li>"
+                "<li>ctrl + scrollwheel</li></ul>"
+                "<p><b>Panning</b></p>"
+                "<ul><li>Move mouse while pressing the left button</li></ul>");
 }
 
 QList<DPluginAuthor> GLViewerPlugin::authors() const

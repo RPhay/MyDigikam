@@ -25,7 +25,6 @@ include_directories($<TARGET_PROPERTY:Qt5::Widgets,INTERFACE_INCLUDE_DIRECTORIES
 
 set(glviewerplugin_SRCS
     ${CMAKE_CURRENT_SOURCE_DIR}/glviewerplugin.cpp
-    ${CMAKE_CURRENT_SOURCE_DIR}/glviewerhelpdlg.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/glviewertexture.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/glviewertimer.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/glviewerwidget.cpp
