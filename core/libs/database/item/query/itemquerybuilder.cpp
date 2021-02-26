@@ -927,14 +927,14 @@ bool ItemQueryBuilder::buildField(QString& sql, SearchXmlCachingReader& reader, 
             {
                 if (values.at(1) > 0)
                 {
-                    sql += QString::fromUtf8(" (strftime('%m%d', ImageInformation.creationDate) = ?) ");
+                    sql += QString::fromUtf8(" (STRFTIME('%m%d', ImageInformation.creationDate) = ?) ");
                     QString date = QString::number(values.at(0)).rightJustified(2, QLatin1Char('0'));
                     date        += QString::number(values.at(1)).rightJustified(2, QLatin1Char('0'));
                     *boundValues << date;
                 }
                 else
                 {
-                    sql += QString::fromUtf8(" (strftime('%m', ImageInformation.creationDate) = ?) ");
+                    sql += QString::fromUtf8(" (STRFTIME('%m', ImageInformation.creationDate) = ?) ");
                     *boundValues << QString::number(values.at(0)).rightJustified(2, QLatin1Char('0'));
                 }
             }
