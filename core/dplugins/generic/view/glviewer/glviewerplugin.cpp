@@ -97,7 +97,7 @@ QString GLViewerPlugin::details() const
                         "</center></nobr></td>"
                     "</tr>"
 
-                    "<tr><td>Toggle fulls-creen to normal:</td>" "<td><i>f</i> key</td></tr>"
+                    "<tr><td>Toggle fullscreen to normal:</td>"  "<td><i>f</i> key</td></tr>"
                     "<tr><td>Toggle scroll-wheel action:</td>"   "<td><i>c</i> key (either zoom or change image)</td></tr>"
                     "<tr><td>Rotation:</td>"                     "<td><i>r</i> key</td></tr>"
                     "<tr><td>Reset view:</td>"                   "<td>double click</td></tr>"
