@@ -215,15 +215,15 @@ EditorToolSettings::EditorToolSettings(QWidget* const parent)
 
     // ---------------------------------------------------------------
 
-    d->loadBtn = new QPushButton(i18nc("@action", "Load..."));
+    d->loadBtn = new QPushButton(i18nc("@action: load previously saved filter settings", "Load..."));
     d->loadBtn->setIcon(QIcon::fromTheme(QLatin1String("document-open")));
     d->loadBtn->setToolTip(i18n("Load all parameters from settings text file."));
 
-    d->saveAsBtn = new QPushButton(i18n("Save As..."));
+    d->saveAsBtn = new QPushButton(i18nc("@action: save current filter settings", "Save As..."));
     d->saveAsBtn->setIcon(QIcon::fromTheme(QLatin1String("document-save-as")));
     d->saveAsBtn->setToolTip(i18n("Save all parameters to settings text file."));
 
-    d->tryBtn = new QPushButton(i18n("Try"));
+    d->tryBtn = new QPushButton(i18nc("@action: try current filter settings", "Try"));
     d->tryBtn->setIcon(QIcon::fromTheme(QLatin1String("dialog-ok-apply")));
     d->tryBtn->setToolTip(i18n("Try all settings."));
 
