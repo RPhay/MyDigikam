@@ -46,7 +46,7 @@ bool ImageWindow::imageWindowCreated()
 
 ImageWindow::ImageWindow()
     : EditorWindow(QLatin1String("Image Editor")),
-      d(new Private)
+      d           (new Private)
 {
     setXMLFile(QLatin1String("imageeditorui5.rc"));
 
@@ -365,9 +365,9 @@ void ImageWindow::slotChanged()
 {
     QString mpixels;
     QSize dims(m_canvas->imageWidth(), m_canvas->imageHeight());
-    mpixels = QLocale().toString(dims.width()*dims.height() / 1000000.0, 'f', 1);
-    QString str = (!dims.isValid()) ? i18n("Unknown") : i18n("%1x%2 (%3Mpx)",
-                                                             dims.width(), dims.height(), mpixels);
+    mpixels     = QLocale().toString(dims.width()*dims.height() / 1000000.0, 'f', 1);
+    QString str = (!dims.isValid()) ? i18nc("@title: unknown image dimension", "Unknown")
+                                    : i18n("%1x%2 (%3Mpx)", dims.width(), dims.height(), mpixels);
 
     m_resLabel->setAdjustedText(str);
 
