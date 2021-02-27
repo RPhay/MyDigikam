@@ -83,11 +83,15 @@ public:
         welcomePageView(nullptr),
 
 #ifdef HAVE_MEDIAPLAYER
+
         mediaPlayerView(nullptr),
+
 #endif //HAVE_MEDIAPLAYER
 
 #ifdef HAVE_MARBLE
+
         mapWidgetView(nullptr),
+
 #endif // HAVE_MARBLE
 
         tableView(nullptr),
@@ -110,11 +114,15 @@ public:
     QMap<int, int>    stackMap;
 
 #ifdef HAVE_MEDIAPLAYER
+
     MediaPlayerView*  mediaPlayerView;
+
 #endif //HAVE_MEDIAPLAYER
 
 #ifdef HAVE_MARBLE
+
     MapWidgetView*    mapWidgetView;
+
 #endif // HAVE_MARBLE
 
     TableView*        tableView;
@@ -145,16 +153,20 @@ StackedView::StackedView(QWidget* const parent)
     d->trashView        = new TrashView(this);
 
 #ifdef HAVE_MARBLE
+
     d->mapWidgetView    = new MapWidgetView(d->imageIconView->getSelectionModel(),
                                             d->imageIconView->imageFilterModel(), this,
                                             MapWidgetView::ApplicationDigikam);
     d->mapWidgetView->setObjectName(QLatin1String("mainwindow_mapwidgetview"));
+
 #endif // HAVE_MARBLE
 
 #ifdef HAVE_MEDIAPLAYER
+
     d->mediaPlayerView  = new MediaPlayerView(this);
     d->mediaPlayerView->setObjectName(QLatin1String("main_media_player"));
     d->mediaPlayerView->setInfoInterface(new DBInfoIface(this, QList<QUrl>()));
+
 #endif //HAVE_MEDIAPLAYER
 
     d->stackMap[addWidget(d->imageIconView)]    = IconViewMode;
@@ -164,11 +176,15 @@ StackedView::StackedView(QWidget* const parent)
     d->stackMap[addWidget(d->trashView)]        = TrashViewMode;
 
 #ifdef HAVE_MARBLE
+
     d->stackMap[addWidget(d->mapWidgetView)]    = MapWidgetMode;
+
 #endif // HAVE_MARBLE
 
 #ifdef HAVE_MEDIAPLAYER
+
     d->stackMap[addWidget(d->mediaPlayerView)]  = MediaPlayerMode;
+
 #endif //HAVE_MEDIAPLAYER
 
     setViewMode(IconViewMode);
@@ -221,6 +237,7 @@ StackedView::StackedView(QWidget* const parent)
             this, SLOT(slotPreviewLoaded(bool)));
 
 #ifdef HAVE_MEDIAPLAYER
+
     connect(d->mediaPlayerView, SIGNAL(signalNextItem()),
             this, SIGNAL(signalNextItem()));
 
@@ -229,6 +246,7 @@ StackedView::StackedView(QWidget* const parent)
 
     connect(d->mediaPlayerView, SIGNAL(signalEscapePreview()),
             this, SIGNAL(signalEscapePreview()));
+
 #endif //HAVE_MEDIAPLAYER
 }
 
@@ -266,11 +284,14 @@ ItemThumbnailBar* StackedView::thumbBar() const
 void StackedView::slotEscapePreview()
 {
 #ifdef HAVE_MEDIAPLAYER
+
     if (viewMode() == MediaPlayerMode)
     {
         d->mediaPlayerView->escapePreview();
     }
+
 #endif //HAVE_MEDIAPLAYER
+
 }
 
 DigikamItemView* StackedView::imageIconView() const
@@ -284,10 +305,12 @@ ItemPreviewView* StackedView::imagePreviewView() const
 }
 
 #ifdef HAVE_MARBLE
+
 MapWidgetView* StackedView::mapWidgetView() const
 {
     return d->mapWidgetView;
 }
+
 #endif // HAVE_MARBLE
 
 TableView* StackedView::tableView() const
@@ -301,10 +324,12 @@ TrashView* StackedView::trashView() const
 }
 
 #ifdef HAVE_MEDIAPLAYER
+
 MediaPlayerView* StackedView::mediaPlayerView() const
 {
     return d->mediaPlayerView;
 }
+
 #endif //HAVE_MEDIAPLAYER
 
 bool StackedView::isInSingleFileMode() const
@@ -332,8 +357,11 @@ void StackedView::setPreviewItem(const ItemInfo& info, const ItemInfo& previous,
         if (viewMode() == MediaPlayerMode)
         {
 #ifdef HAVE_MEDIAPLAYER
+
             d->mediaPlayerView->setCurrentItem();
+
 #endif //HAVE_MEDIAPLAYER
+
         }
         else if (viewMode() == PreviewImageMode)
         {
@@ -354,9 +382,12 @@ void StackedView::setPreviewItem(const ItemInfo& info, const ItemInfo& previous,
             }
 
 #ifdef HAVE_MEDIAPLAYER
+
             setViewMode(MediaPlayerMode);
             d->mediaPlayerView->setCurrentItem(info.fileUrl(), !previous.isNull(), !next.isNull());
+
 #endif //HAVE_MEDIAPLAYER
+
         }
         else // Static image or Raw image.
         {
@@ -364,9 +395,13 @@ void StackedView::setPreviewItem(const ItemInfo& info, const ItemInfo& previous,
 
             if (viewMode() == MediaPlayerMode)
             {
+
 #ifdef HAVE_MEDIAPLAYER
+
                 d->mediaPlayerView->setCurrentItem();
+
 #endif //HAVE_MEDIAPLAYER
+
             }
 
             d->imagePreviewView->setItemInfo(info, previous, next);
@@ -420,7 +455,9 @@ void StackedView::setViewMode(const StackedViewMode mode)
     }
 
 #ifdef HAVE_MARBLE
+
     d->mapWidgetView->setActive(mode == MapWidgetMode);
+
 #endif // HAVE_MARBLE
 
     d->tableView->slotSetActive(mode == TableViewMode);
@@ -431,10 +468,12 @@ void StackedView::setViewMode(const StackedViewMode mode)
     }
 
 #ifdef HAVE_MARBLE
+
     else if (mode == MapWidgetMode)
     {
         d->mapWidgetView->setFocus();
     }
+
 #endif // HAVE_MARBLE
 
     else if (mode == TableViewMode)

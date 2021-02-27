@@ -217,6 +217,7 @@ ImportStackedView::ImportStackedView(QWidget* const parent)
             this, SIGNAL(signalEscapePreview()));
 
 #endif //HAVE_MEDIAPLAYER
+
 }
 
 ImportStackedView::~ImportStackedView()
@@ -253,6 +254,7 @@ ImportThumbnailBar* ImportStackedView::thumbBar() const
 
 void ImportStackedView::slotEscapePreview()
 {
+
 #ifdef HAVE_MEDIAPLAYER
 
     if (viewMode() == MediaPlayerMode)
