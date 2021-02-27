@@ -67,6 +67,7 @@ urpmi --auto \
       libasan-devel \
       libgomp-devel \
       lib64llvm-devel \
+      lib64clang-devel \
       lib64expat-devel \
       lib64lcms2-devel \
       lib64qtav-devel \
