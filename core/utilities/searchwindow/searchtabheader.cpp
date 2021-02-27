@@ -255,7 +255,7 @@ SearchTabHeader::SearchTabHeader(QWidget* const parent)
 
     d->newSearchWidget->setTitle(i18n("New Search"));
     QGridLayout* const grid1  = new QGridLayout;
-    QLabel* const searchLabel = new QLabel(i18n("Search:"), this);
+    QLabel* const searchLabel = new QLabel(i18nc("@label: quick search properties", "Search:"), this);
     d->keywordEdit            = new KeywordLineEdit(this);
     d->keywordEdit->setClearButtonEnabled(true);
     d->keywordEdit->setPlaceholderText(i18n("Enter keywords here..."));

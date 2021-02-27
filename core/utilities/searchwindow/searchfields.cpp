@@ -299,17 +299,17 @@ SearchField* SearchField::createField(const QString& name, SearchFieldGroup* con
 
         foreach (const QString& fmt, CoreDbAccess().db()->getFormatStatistics(DatabaseItem::Image).keys())
         {
-            formats << fmt << i18n("%1 [Image]", fmt);
+            formats << fmt << i18nc("@label: file format", "%1 [Image]", fmt);
         }
 
         foreach (const QString& fmt, CoreDbAccess().db()->getFormatStatistics(DatabaseItem::Video).keys())
         {
-            formats << fmt << i18n("%1 [Video]", fmt);
+            formats << fmt << i18nc("@label: file format", "%1 [Video]", fmt);
         }
 
         foreach (const QString& fmt, CoreDbAccess().db()->getFormatStatistics(DatabaseItem::Audio).keys())
         {
-            formats << fmt << i18n("%1 [Audio]", fmt);
+            formats << fmt << i18nc("@label: file format", "%1 [Audio]", fmt);
         }
 
 /*
@@ -349,22 +349,22 @@ SearchField* SearchField::createField(const QString& name, SearchFieldGroup* con
 
         // Images
 
-        map.insert(DImg::COLORMODELUNKNOWN,          i18n("%1 [Image]", DImg::colorModelToString(DImg::COLORMODELUNKNOWN)));
-        map.insert(DImg::RGB,                        i18n("%1 [Image]", DImg::colorModelToString(DImg::RGB)));
-        map.insert(DImg::GRAYSCALE,                  i18n("%1 [Image]", DImg::colorModelToString(DImg::GRAYSCALE)));
-        map.insert(DImg::MONOCHROME,                 i18n("%1 [Image]", DImg::colorModelToString(DImg::MONOCHROME)));
-        map.insert(DImg::INDEXED,                    i18n("%1 [Image]", DImg::colorModelToString(DImg::INDEXED)));
-        map.insert(DImg::YCBCR,                      i18n("%1 [Image]", DImg::colorModelToString(DImg::YCBCR)));
-        map.insert(DImg::CMYK,                       i18n("%1 [Image]", DImg::colorModelToString(DImg::CMYK)));
-        map.insert(DImg::CIELAB,                     i18n("%1 [Image]", DImg::colorModelToString(DImg::CIELAB)));
-        map.insert(DImg::COLORMODELRAW,              i18n("%1 [Image]", DImg::colorModelToString(DImg::COLORMODELRAW)));
+        map.insert(DImg::COLORMODELUNKNOWN,          i18nc("@label: color model", "%1 [Image]", DImg::colorModelToString(DImg::COLORMODELUNKNOWN)));
+        map.insert(DImg::RGB,                        i18nc("@label: color model", "%1 [Image]", DImg::colorModelToString(DImg::RGB)));
+        map.insert(DImg::GRAYSCALE,                  i18nc("@label: color model", "%1 [Image]", DImg::colorModelToString(DImg::GRAYSCALE)));
+        map.insert(DImg::MONOCHROME,                 i18nc("@label: color model", "%1 [Image]", DImg::colorModelToString(DImg::MONOCHROME)));
+        map.insert(DImg::INDEXED,                    i18nc("@label: color model", "%1 [Image]", DImg::colorModelToString(DImg::INDEXED)));
+        map.insert(DImg::YCBCR,                      i18nc("@label: color model", "%1 [Image]", DImg::colorModelToString(DImg::YCBCR)));
+        map.insert(DImg::CMYK,                       i18nc("@label: color model", "%1 [Image]", DImg::colorModelToString(DImg::CMYK)));
+        map.insert(DImg::CIELAB,                     i18nc("@label: color model", "%1 [Image]", DImg::colorModelToString(DImg::CIELAB)));
+        map.insert(DImg::COLORMODELRAW,              i18nc("@label: color model", "%1 [Image]", DImg::colorModelToString(DImg::COLORMODELRAW)));
 
         // Video
 
-        map.insert(DMetadata::VIDEOCOLORMODEL_SRGB,  i18n("%1 [Video]", DMetadata::videoColorModelToString(DMetadata::VIDEOCOLORMODEL_SRGB)));
-        map.insert(DMetadata::VIDEOCOLORMODEL_BT709, i18n("%1 [Video]", DMetadata::videoColorModelToString(DMetadata::VIDEOCOLORMODEL_BT709)));
-        map.insert(DMetadata::VIDEOCOLORMODEL_BT601, i18n("%1 [Video]", DMetadata::videoColorModelToString(DMetadata::VIDEOCOLORMODEL_BT601)));
-        map.insert(DMetadata::VIDEOCOLORMODEL_OTHER, i18n("%1 [Video]", DMetadata::videoColorModelToString(DMetadata::VIDEOCOLORMODEL_OTHER)));
+        map.insert(DMetadata::VIDEOCOLORMODEL_SRGB,  i18nc("@label: color model", "%1 [Video]", DMetadata::videoColorModelToString(DMetadata::VIDEOCOLORMODEL_SRGB)));
+        map.insert(DMetadata::VIDEOCOLORMODEL_BT709, i18nc("@label: color model", "%1 [Video]", DMetadata::videoColorModelToString(DMetadata::VIDEOCOLORMODEL_BT709)));
+        map.insert(DMetadata::VIDEOCOLORMODEL_BT601, i18nc("@label: color model", "%1 [Video]", DMetadata::videoColorModelToString(DMetadata::VIDEOCOLORMODEL_BT601)));
+        map.insert(DMetadata::VIDEOCOLORMODEL_OTHER, i18nc("@label: color model", "%1 [Video]", DMetadata::videoColorModelToString(DMetadata::VIDEOCOLORMODEL_OTHER)));
         field->setChoice(map);
 
         return field;
@@ -577,7 +577,7 @@ SearchField* SearchField::createField(const QString& name, SearchFieldGroup* con
 
         SearchFieldChoice* const field = new SearchFieldChoice(parent);
         field->setFieldName(name);
-        field->setText(i18n("Flash"), i18n("Flash mode"));
+        field->setText(i18nc("@label: flash is on or off", "Flash"), i18nc("@label: flash mode used", "Flash mode"));
         QMap<int, QString> map = DMetadata::possibleValuesForEnumField(MetadataInfo::FlashMode);
         field->setChoice(map);
 
@@ -687,7 +687,7 @@ SearchField* SearchField::createField(const QString& name, SearchFieldGroup* con
     {
         SearchFieldText* const field = new SearchFieldText(parent);
         field->setFieldName(name);
-        field->setText(i18n("Creator"), i18n("Return items created by"));
+        field->setText(i18nc("@label: item creator", "Creator"), i18n("Return items created by"));
 
         return field;
     }
@@ -695,7 +695,7 @@ SearchField* SearchField::createField(const QString& name, SearchFieldGroup* con
     {
         SearchFieldText* const field = new SearchFieldText(parent);
         field->setFieldName(name);
-        field->setText(i18n("Caption"), i18n("Return items whose comment contains"));
+        field->setText(i18nc("@label: item comment", "Caption"), i18n("Return items whose comment contains"));
 
         return field;
     }
@@ -719,7 +719,7 @@ SearchField* SearchField::createField(const QString& name, SearchFieldGroup* con
     {
         SearchFieldText* const field = new SearchFieldText(parent);
         field->setFieldName(name);
-        field->setText(i18n("Title"), i18n("Return items with the IPTC title"));
+        field->setText(i18nc("@label: item title", "Title"), i18n("Return items with the IPTC title"));
 
         return field;
     }
@@ -737,11 +737,11 @@ SearchField* SearchField::createField(const QString& name, SearchFieldGroup* con
         field->setFieldName(name);
         field->setText(i18n("Empty Text"), i18n("Return items without text in:"));
         QStringList comments;
-        comments << QLatin1String("creator")  << i18n("Creator");
-        comments << QLatin1String("comment")  << i18n("Caption");
-        comments << QLatin1String("author")   << i18n("Author");
-        comments << QLatin1String("headline") << i18n("Headline");
-        comments << QLatin1String("title")    << i18n("Title");
+        comments << QLatin1String("creator")  << i18nc("@label: search items without creator property",  "Creator");
+        comments << QLatin1String("comment")  << i18nc("@label: search items without caption property",  "Caption");
+        comments << QLatin1String("author")   << i18nc("@label: search items without author property",   "Author");
+        comments << QLatin1String("headline") << i18nc("@label: search items without headline property", "Headline");
+        comments << QLatin1String("title")    << i18nc("@label: search items without title property",    "Title");
 
         field->setChoice(comments);
 
@@ -910,12 +910,12 @@ SearchField* SearchField::createField(const QString& name, SearchFieldGroup* con
         field->setFieldName(name);
         field->setText(i18n("Audio Channel Type"), i18n("Return Audio Channel Type"));
         QStringList type;
-        type << QLatin1String("Mono")       << i18n("Mono");
-        type << QLatin1String("Stereo")     << i18n("Stereo");
-        type << QLatin1String("5.1")        << i18n("5.1 Surround Sound");
-        type << QLatin1String("7.1")        << i18n("7.1 Surround Sound");
-        type << QLatin1String("16 Channel") << i18n("16 Channels Sequence");
-        type << QLatin1String("Other")      << i18n("Other Channel Type");
+        type << QLatin1String("Mono")       << i18nc("@label: audio channel type", "Mono");
+        type << QLatin1String("Stereo")     << i18nc("@label: audio channel type", "Stereo");
+        type << QLatin1String("5.1")        << i18nc("@label: audio channel type", "5.1 Surround Sound");
+        type << QLatin1String("7.1")        << i18nc("@label: audio channel type", "7.1 Surround Sound");
+        type << QLatin1String("16 Channel") << i18nc("@label: audio channel type", "16 Channels Sequence");
+        type << QLatin1String("Other")      << i18nc("@label: audio channel type", "Other Channel Type");
 
         // TODO: add more possible audio channel type
 
@@ -2164,7 +2164,7 @@ SearchFieldChoice::SearchFieldChoice(QObject* const parent)
       m_type     (QVariant::Invalid)
 {
     m_model   = new ChoiceSearchModel(this);
-    m_anyText = i18n("Any");
+    m_anyText = i18nc("@option: default kind of search options combined", "Any");
 }
 
 void SearchFieldChoice::setupValueWidgets(QGridLayout* layout, int row, int column)
