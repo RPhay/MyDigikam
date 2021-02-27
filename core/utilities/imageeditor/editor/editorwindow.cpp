@@ -1154,7 +1154,7 @@ bool EditorWindow::promptUserSave(const QUrl& url, SaveAskMode mode, bool allowC
             {
                 QString boxMessage;
                 boxMessage = i18nc("@info",
-                                   "The image <b>%1</b> has been modified.\n"
+                                   "The image \"%1\" has been modified.\n"
                                    "Do you want to save it?", url.fileName());
 
                 int result;
@@ -1304,7 +1304,7 @@ bool EditorWindow::promptUserDelete(const QUrl& url)
         }
 
         QString boxMessage = i18nc("@info",
-                                   "The image <b>%1</b> has been modified.\n"
+                                   "The image \"%1\" has been modified.\n"
                                    "All changes will be lost.", url.fileName());
 
         int result = DMessageBox::showContinueCancel(QMessageBox::Warning,
@@ -1884,7 +1884,7 @@ bool EditorWindow::showFileSaveDialog(const QUrl& initialUrl, QUrl& newURL)
     if (!newURL.isValid())
     {
         QMessageBox::critical(this, qApp->applicationName(),
-                              i18n("Cannot Save: Found file path <b>%1</b> is invalid.", newURL.toDisplayString()));
+                              i18n("Cannot Save: Found file path \"%1\" is invalid.", newURL.toDisplayString()));
         qCWarning(DIGIKAM_GENERAL_LOG) << "target URL is not valid !";
         return false;
     }
@@ -2131,8 +2131,8 @@ bool EditorWindow::startingSaveVersion(const QUrl& url, bool fork, bool saveAs, 
     {
         QMessageBox::critical(this, qApp->applicationName(),
                               i18nc("@info",
-                                    "Cannot save file <b>%1</b> to "
-                                    "the suggested version file name <b>%2</b>",
+                                    "Cannot save file \"%1\" to "
+                                    "the suggested version file name \"%2\"",
                                     url.fileName(),
                                     newURL.fileName()));
         qCWarning(DIGIKAM_GENERAL_LOG) << "target URL is not valid !";
