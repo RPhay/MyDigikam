@@ -32,9 +32,9 @@ namespace Digikam
 FuzzySearchView::FuzzySearchView(SearchModel* const searchModel,
                                  SearchModificationHelper* const searchModificationHelper,
                                  QWidget* const parent)
-    : QScrollArea(parent),
+    : QScrollArea      (parent),
       StateSavingObject(this),
-      d(new Private)
+      d                (new Private)
 {
     d->settings                 = ApplicationSettings::instance();
 

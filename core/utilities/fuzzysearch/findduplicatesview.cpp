@@ -113,7 +113,7 @@ public:
 
 FindDuplicatesView::FindDuplicatesView(QWidget* const parent)
     : QWidget(parent),
-      d(new Private)
+      d      (new Private)
 {
     setAttribute(Qt::WA_DeleteOnClose);
 
@@ -126,13 +126,13 @@ FindDuplicatesView::FindDuplicatesView(QWidget* const parent)
     d->listView           = new FindDuplicatesAlbum();
     d->listView->setSortingEnabled(false);
 
-    d->updateFingerPrtBtn = new QPushButton(i18n("Update fingerprints"));
+    d->updateFingerPrtBtn = new QPushButton(i18nc("@action", "Update fingerprints"));
     d->updateFingerPrtBtn->setIcon(QIcon::fromTheme(QLatin1String("run-build")));
-    d->updateFingerPrtBtn->setWhatsThis(i18n("Use this button to update all image fingerprints."));
+    d->updateFingerPrtBtn->setWhatsThis(i18nc("@info", "Use this button to update all image fingerprints."));
 
-    d->scanDuplicatesBtn  = new QPushButton(i18n("Find duplicates"));
+    d->scanDuplicatesBtn  = new QPushButton(i18nc("@action", "Find duplicates"));
     d->scanDuplicatesBtn->setIcon(QIcon::fromTheme(QLatin1String("edit-find")));
-    d->scanDuplicatesBtn->setWhatsThis(i18n("Use this button to scan the selected albums for "
+    d->scanDuplicatesBtn->setWhatsThis(i18nc("@info", "Use this button to scan the selected albums for "
                                             "duplicate items."));
 
     // ---------------------------------------------------------------
@@ -156,20 +156,20 @@ FindDuplicatesView::FindDuplicatesView(QWidget* const parent)
         d->similarityRange->setInterval(40, 100);
     }
 
-    d->similarityLabel         = new QLabel(i18n("Similarity range:"));
+    d->similarityLabel         = new QLabel(i18nc("@label", "Similarity range:"));
     d->similarityLabel->setBuddy(d->similarityRange);
 
-    d->restrictResultsLabel    = new QLabel(i18n("Restriction:"));
+    d->restrictResultsLabel    = new QLabel(i18nc("@label", "Restriction:"));
     d->restrictResultsLabel->setBuddy(d->searchResultRestriction);
 
     d->searchResultRestriction = new SqueezedComboBox();
-    d->searchResultRestriction->addSqueezedItem(i18nc("@label:listbox", "None"),                        HaarIface::DuplicatesSearchRestrictions::None);
-    d->searchResultRestriction->addSqueezedItem(i18nc("@label:listbox", "Restrict to reference album"), HaarIface::DuplicatesSearchRestrictions::SameAlbum);
-    d->searchResultRestriction->addSqueezedItem(i18nc("@label:listbox", "Exclude reference album"),     HaarIface::DuplicatesSearchRestrictions::DifferentAlbum);
-    d->searchResultRestriction->setToolTip(i18n("Use this option to restrict the duplicate search "
-                                                "with some criteria, as to limit search to the album "
-                                                "of reference image, or to exclude the album of "
-                                                "reference image of the search."));
+    d->searchResultRestriction->addSqueezedItem(i18nc("@label:listbox similarity restriction", "None"),                        HaarIface::DuplicatesSearchRestrictions::None);
+    d->searchResultRestriction->addSqueezedItem(i18nc("@label:listbox similarity restriction", "Restrict to reference album"), HaarIface::DuplicatesSearchRestrictions::SameAlbum);
+    d->searchResultRestriction->addSqueezedItem(i18nc("@label:listbox similarity restriction", "Exclude reference album"),     HaarIface::DuplicatesSearchRestrictions::DifferentAlbum);
+    d->searchResultRestriction->setToolTip(i18nc("@info", "Use this option to restrict the duplicate search "
+                                                          "with some criteria, as to limit search to the album "
+                                                          "of reference image, or to exclude the album of "
+                                                          "reference image of the search."));
 
     // Load the last choice from application settings.
 
@@ -179,7 +179,7 @@ FindDuplicatesView::FindDuplicatesView(QWidget* const parent)
 
     d->searchResultRestriction->setCurrentIndex(d->searchResultRestriction->findData(restrictions));
 
-    d->albumTagRelationLabel = new QLabel(i18n("Restrict to:"));
+    d->albumTagRelationLabel = new QLabel(i18nc("@label", "Restrict to:"));
     d->albumTagRelationLabel->setBuddy(d->albumTagRelation);
 
     /*
@@ -191,19 +191,22 @@ FindDuplicatesView::FindDuplicatesView(QWidget* const parent)
      */
 
     d->albumTagRelation      = new SqueezedComboBox();
-    d->albumTagRelation->addSqueezedItem(i18nc("@label:listbox", "Only selected tab") ,  HaarIface::AlbumTagRelation::NoMix);
-    d->albumTagRelation->addSqueezedItem(i18nc("@label:listbox", "One of"),              HaarIface::AlbumTagRelation::Union);
-    d->albumTagRelation->addSqueezedItem(i18nc("@label:listbox", "Both"),                HaarIface::AlbumTagRelation::Intersection);
-    d->albumTagRelation->addSqueezedItem(i18nc("@label:listbox", "Albums but not tags"), HaarIface::AlbumTagRelation::AlbumExclusive);
-    d->albumTagRelation->addSqueezedItem(i18nc("@label:listbox", "Tags but not albums"), HaarIface::AlbumTagRelation::TagExclusive);
+    d->albumTagRelation->addSqueezedItem(i18nc("@label:listbox similarity album tag relation", "Only selected tab") ,  HaarIface::AlbumTagRelation::NoMix);
+    d->albumTagRelation->addSqueezedItem(i18nc("@label:listbox similarity album tag relation", "One of"),              HaarIface::AlbumTagRelation::Union);
+    d->albumTagRelation->addSqueezedItem(i18nc("@label:listbox similarity album tag relation", "Both"),                HaarIface::AlbumTagRelation::Intersection);
+    d->albumTagRelation->addSqueezedItem(i18nc("@label:listbox similarity album tag relation", "Albums but not tags"), HaarIface::AlbumTagRelation::AlbumExclusive);
+    d->albumTagRelation->addSqueezedItem(i18nc("@label:listbox similarity album tag relation", "Tags but not albums"), HaarIface::AlbumTagRelation::TagExclusive);
     d->albumTagRelation->setCurrentIndex(ApplicationSettings::instance()->getDuplicatesAlbumTagRelation());
 
-    d->albumTagRelation->setToolTip(i18n("Use this option to decide about the relation of the selected albums and tags.<br/>"
-                                         "<i>One of</i> means that the images are either in the selected albums or tags.<br/>"
-                                         "<i>Both</i> means that the images are both in the selected albums and tags.<br/>"
-                                         "<i>Albums but not tags</i> means that images must be in the selected albums but not tags.<br/>"
-                                         "<i>Tags but not albums</i> means that images must be in the selected tags but not albums.<br/>"
-                                         "<i>Only selected tab</i> means that only the selected tab is used."));
+    QString tip = i18nc("@info",
+                        "Use this option to decide about the relation of the selected albums and tags.\n"
+                        "\"One of\" means that the images are either in the selected albums or tags.\n"
+                        "\"Both\" means that the images are both in the selected albums and tags.\n"
+                        "\"Albums but not tags\" means that images must be in the selected albums but not tags.\n"
+                        "\"Tags but not albums\" means that images must be in the selected tags but not albums.\n"
+                        "\"Only selected tab\" means that only the selected tab is used.");
+
+    d->albumTagRelation->setToolTip(tip);
 
     // Load the last choice from application settings.
 
@@ -213,9 +216,9 @@ FindDuplicatesView::FindDuplicatesView(QWidget* const parent)
 
     d->albumTagRelation->setCurrentIndex(d->albumTagRelation->findData(relation));
 
-    d->removeDuplicatesBtn   = new QPushButton(i18n("Remove Duplicates"));
+    d->removeDuplicatesBtn   = new QPushButton(i18nc("@action", "Remove Duplicates"));
     d->removeDuplicatesBtn->setIcon(QIcon::fromTheme(QLatin1String("user-trash")));
-    d->removeDuplicatesBtn->setWhatsThis(i18n("Use this button to delete all duplicate images."));
+    d->removeDuplicatesBtn->setWhatsThis(i18nc("@info", "Use this button to delete all duplicate images."));
 
     d->removeDuplicatesBtn->setEnabled(false);
 
