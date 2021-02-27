@@ -58,13 +58,13 @@ class Q_DECL_HIDDEN SoftProofDialog::Private
 public:
 
     explicit Private()
-      : switchOn(false),
-        deviceProfileBox(nullptr),
+      : switchOn         (false),
+        deviceProfileBox (nullptr),
         infoProofProfiles(nullptr),
-        buttons(nullptr),
-        gamutCheckBox(nullptr),
-        maskColorLabel(nullptr),
-        maskColorBtn(nullptr),
+        buttons          (nullptr),
+        gamutCheckBox    (nullptr),
+        maskColorLabel   (nullptr),
+        maskColorBtn     (nullptr),
         proofingIntentBox(nullptr)
     {
     }
@@ -83,7 +83,7 @@ public:
 
 SoftProofDialog::SoftProofDialog(QWidget* const parent)
     : QDialog(parent),
-      d(new Private)
+      d      (new Private)
 {
     setModal(true);
     setWindowTitle(i18n("Soft Proofing Options"));
@@ -135,8 +135,6 @@ SoftProofDialog::SoftProofDialog(QWidget* const parent)
 
     QLabel* const intentLabel      = new QLabel(i18n("Rendering intent:"));
     d->proofingIntentBox           = new IccRenderingIntentComboBox;
-
-    //TODO d->proofingIntentBox->setWhatsThis(i18n(""));
 
     intentLabel->setBuddy(d->proofingIntentBox);
 

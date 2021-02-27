@@ -64,20 +64,20 @@ class Q_DECL_HIDDEN ColorCorrectionDlg::Private
 public:
 
     explicit Private()
-      : imageProfileTitle(nullptr),
-        imageProfileDesc(nullptr),
-        previewTarget(nullptr),
-        keepProfile(nullptr),
+      : imageProfileTitle    (nullptr),
+        imageProfileDesc     (nullptr),
+        previewTarget        (nullptr),
+        keepProfile          (nullptr),
         convertToWorkingSpace(nullptr),
-        thirdOption(nullptr),
-        thirdCheckBox(nullptr),
-        imageSRGB(nullptr),
-        imageWorkingSpace(nullptr),
-        imageOtherSpace(nullptr),
-        buttons(nullptr),
-        otherProfileBox(nullptr),
-        imageProfileBox(nullptr),
-        mode(ColorCorrectionDlg::ProfileMismatch)
+        thirdOption          (nullptr),
+        thirdCheckBox        (nullptr),
+        imageSRGB            (nullptr),
+        imageWorkingSpace    (nullptr),
+        imageOtherSpace      (nullptr),
+        buttons              (nullptr),
+        otherProfileBox      (nullptr),
+        imageProfileBox      (nullptr),
+        mode                 (ColorCorrectionDlg::ProfileMismatch)
     {
     }
 
@@ -114,7 +114,7 @@ ColorCorrectionDlg::ColorCorrectionDlg(Mode mode,
                                        const QString& file,
                                        QWidget* const parent)
     : QDialog(parent),
-      d(new Private)
+      d      (new Private)
 {
     setModal(true);
 
@@ -219,7 +219,7 @@ void ColorCorrectionDlg::slotOk()
 
 QLayout* ColorCorrectionDlg::createHeading() const
 {
-    QLabel* const icon = new QLabel;
+    QLabel* const icon    = new QLabel;
     icon->setPixmap(QIcon::fromTheme(QLatin1String("fill-color")).pixmap(32));
 
     QLabel* const message = new QLabel;
@@ -784,7 +784,7 @@ void ColorCorrectionDlg::readSettings()
         }
         else
         {
-            if (settings.lastMismatchBehavior & ICCSettingsContainer::KeepProfile)
+            if      (settings.lastMismatchBehavior & ICCSettingsContainer::KeepProfile)
             {
                 d->keepProfile->setChecked(true);
                 d->keepProfile->setFocus();
@@ -811,7 +811,7 @@ void ColorCorrectionDlg::readSettings()
         }
         else
         {
-            if (settings.lastMissingProfileBehavior & ICCSettingsContainer::KeepProfile)
+            if      (settings.lastMissingProfileBehavior & ICCSettingsContainer::KeepProfile)
             {
                 d->keepProfile->setChecked(true);
                 d->keepProfile->setFocus();

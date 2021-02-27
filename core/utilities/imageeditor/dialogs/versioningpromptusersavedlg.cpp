@@ -61,7 +61,7 @@ public:
 
 VersioningPromptUserSaveDialog::VersioningPromptUserSaveDialog(QWidget* const parent)
     : QDialog(parent),
-      d(new Private)
+      d      (new Private)
 {
     setWindowTitle(i18nc("@title:window", "Save?"));
 
@@ -101,8 +101,8 @@ VersioningPromptUserSaveDialog::VersioningPromptUserSaveDialog(QWidget* const pa
     QLabel* const question    = new QLabel;
     question->setTextFormat(Qt::RichText);
     question->setText(i18nc("@label",
-                            "<qt>The current image has been changed.<br/>"
-                            "Do you wish to save your changes?</qt>"));
+                            "<p>The current image has been changed.</p>"
+                            "<p>Do you wish to save your changes?</p>"));
     QLabel* const editIcon    = new QLabel;
     editIcon->setPixmap(QIcon::fromTheme(QLatin1String("document-edit")).pixmap(style()->pixelMetric(QStyle::PM_MessageBoxIconSize, nullptr, this)));
 
