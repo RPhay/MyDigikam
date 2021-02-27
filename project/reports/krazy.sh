@@ -33,7 +33,7 @@ if [ ! -f /opt/saxon/saxon9he.jar ] ; then
 
 else
 
-    echo "Check Java Saxon 9HE XML parser  passed..."
+    echo "Check Java Saxon 9HE XML parser passed..."
 
 fi
 

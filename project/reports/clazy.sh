@@ -17,6 +17,22 @@ trap 'echo "FAILED COMMAND: $PREVIOUS_COMMAND"' ERR
 
 . ./common.sh
 
+# Check run-time dependencies
+
+if [ ! -f /usr/bin/clazy ] ; then
+
+    echo "Clazy static analyzer is not installed in /opt/clazy."
+    echo "Please install Clazy from https://github.com/KDE/clazy"
+    echo "Aborted..."
+    exit -1
+
+
+else
+
+    echo "Check Clazy static analyzer passed..."
+
+fi
+
 checksCPUCores
 
 ORIG_WD="`pwd`"

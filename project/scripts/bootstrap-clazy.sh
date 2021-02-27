@@ -24,7 +24,7 @@ export Options='-DCLAZY_AST_MATCHERS_CRASH_WORKAROUND=ON \
                 -DCLAZY_MAN_PAGE=OFF'
 
 cmake -G "$MAKEFILES_TYPE" . \
-      -DCMAKE_INSTALL_PREFIX=/opt/clazy \
+      -DCMAKE_INSTALL_PREFIX=/usr \
       -Wno-dev \
       $Options \
       ..
