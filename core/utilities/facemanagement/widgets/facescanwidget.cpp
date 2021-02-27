@@ -145,16 +145,22 @@ void FaceScanWidget::doSaveState()
     switch ((FaceScanSettings::AlreadyScannedHandling)(d->alreadyScannedBox->itemData(d->alreadyScannedBox->currentIndex()).toInt()))
     {
         case FaceScanSettings::Skip:
+        {
             handling = QLatin1String("Skip");
             break;
+        }
 
         case FaceScanSettings::Rescan:
+        {
             handling = QLatin1String("Rescan");
             break;
+        }
 
         case FaceScanSettings::Merge:
+        {
             handling = QLatin1String("Merge");
             break;
+        }
     }
 
     group.writeEntry(entryName(d->configAlreadyScannedHandling), handling);
@@ -172,7 +178,7 @@ void FaceScanWidget::setupUi()
     // ---- Workflow tab --------
 
     d->workflowWidget                   = new QWidget(this);
-    d->workflowWidget->setToolTip(i18nc("@tooltip",
+    d->workflowWidget->setToolTip(i18nc("@info:tooltip",
                                         "digiKam can search for faces in your photos.\n"
                                         "When you have identified your friends on a number of photos,\n"
                                         "it can also recognize the people shown on your photos."));
@@ -256,7 +262,7 @@ void FaceScanWidget::setupUi()
     QWidget* const settingsTab        = new QWidget(this);
     QVBoxLayout* const settingsLayout = new QVBoxLayout(settingsTab);
 
-    QGroupBox* const accuracyBox      = new QGroupBox(i18nc("@groupbox", "Face Accuracy"), settingsTab);
+    QGroupBox* const accuracyBox      = new QGroupBox(i18nc("@label", "Face Accuracy"), settingsTab);
     QGridLayout* const accuracyGrid   = new QGridLayout(accuracyBox);
 
     QLabel* const sensitivityLabel    = new QLabel(i18nc("@label left extremities of a scale", "Sensitivity"), settingsTab);

@@ -107,8 +107,8 @@ FaceManagementHelpDlg::FaceManagementHelpDlg(QWidget* const parent)
     footerText->setOpenExternalLinks(true);
     footerText->setAlignment(Qt::AlignHCenter);
     footerText->setWordWrap(false);
-    footerText->setText(i18n("<hr>For additional information, read the %1 \n"
-                             "<br>To ask questions, use our mailing list: digikam-users@kde.org \n",
+    footerText->setText(i18n("For additional information, read the %1 \n"
+                             "To ask questions, use our mailing list: digikam-users@kde.org \n",
                              QString::fromLatin1("<a href='%1'>digiKam Online Handbook</a>").arg(documentationLink)));
 
     QGridLayout* const infoPageLayout = new QGridLayout();
@@ -220,16 +220,16 @@ FaceManagementHelpDlg::FaceManagementHelpDlg(QWidget* const parent)
                                     "This will lead to the creation of a face tag "
                                     "in case a person of that name doesn't exist already. "
                                     "For best results identify 4-5 faces for each "
-                                    "person you want the scan to recognize.<br>"));
+                                    "person you want the scan to recognize."));
 
     QLabel* const recogLabel      = new QLabel(faceRecogPage);
     recogLabel->setWordWrap(true);
     recogLabel->setText(i18n("Running face recognition is similar to detection, "
                              "just select <u>Recognize Faces</u> from the "
-                             "Face Scan panel this time.<br>"
+                             "Face Scan panel this time.\n"
                              "Face recognition will work on all Unknown faces. In case "
                              "there's a face you don't wish to be recognized, "
-                             "you can mark it as ignored.<br>"
+                             "you can mark it as ignored.\n"
                              "This leads to the creation of a new <u>Ignored</u> tag, "
                              "you can later unmark the face if needed."));
 
@@ -243,7 +243,7 @@ FaceManagementHelpDlg::FaceManagementHelpDlg(QWidget* const parent)
     QLabel* const faceRecogFooter = new QLabel(faceRecogPage);
     faceRecogFooter->setWordWrap(true);
     faceRecogFooter->setText(i18n("You may select <u>Work on all processor cores</u>"
-                                  "in order to increase the speed of Face Recognition <br>"
+                                  "in order to increase the speed of Face Recognition \n"
                                   "The Face Accuracy slider allows you to control the "
                                   "accuracy of the recognition algorithm. A higher specificity "
                                   "implies higher accuracy, however this results in a smaller set "
@@ -284,8 +284,8 @@ FaceManagementHelpDlg::FaceManagementHelpDlg(QWidget* const parent)
     overlayText->setText(i18n("The results of facial recognition appear in the form "
                               "of Unconfirmed results. These results will show up in "
                               "the Unconfirmed tag, as well as in the tag of the person "
-                              "suggested for each face. <br>"
-                              "Hovering over Unconfirmed faces will display a few options: <br>"));
+                              "suggested for each face.\n"
+                              "Hovering over Unconfirmed faces will display a few options:\n"));
     overlayText->setAlignment(Qt::AlignTop);
 
     QLabel* const confirmIcon    = new QLabel(confirmFacesPage);
@@ -321,10 +321,10 @@ FaceManagementHelpDlg::FaceManagementHelpDlg(QWidget* const parent)
 
     QLabel* const sortText       = new QLabel(confirmFacesPage);
     sortText->setWordWrap(true);
-    sortText->setText(i18n("<b>Face Categorization and Sorting</b> <br>"
+    sortText->setText(i18n("<b>Face Categorization and Sorting</b>\n"
                            "By default, faces will appear categorized based on their "
                            "name. You may change this behaviour, by going to "
-                           "<u>View -> Separate Items</u>.<br>"
+                           "<u>View -> Separate Items</u>.\n"
                            "Note that using a different categorization order will "
                            "lead to Confirmed and Unconfirmed faces appearing "
                            "mixed with one another. To change this behaviour "
@@ -333,7 +333,7 @@ FaceManagementHelpDlg::FaceManagementHelpDlg(QWidget* const parent)
 
     QLabel* const improveResults = new QLabel(confirmFacesPage);
     improveResults->setWordWrap(true);
-    improveResults->setText(i18n("<br><b>Improving Results of Face Recognition</b><br>"
+    improveResults->setText(i18n("<b>Improving Results of Face Recognition</b>\n"
                                  "Apart from using the settings mentioned in the last page, "
                                  "face results may also be improved by rebuilding the training data. "
                                  "This may be done through Tools -> Maintenance -> Detect and Recognize Faces "

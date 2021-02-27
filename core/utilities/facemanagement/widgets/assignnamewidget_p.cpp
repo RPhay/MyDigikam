@@ -181,11 +181,11 @@ void AssignNameWidget::Private::checkWidgets()
 
             if (!confirmButton)
             {
-                confirmButton = createToolButton(QIcon::fromTheme(QLatin1String("dialog-ok-apply")), i18n("OK"));
+                confirmButton = createToolButton(QIcon::fromTheme(QLatin1String("dialog-ok-apply")), i18nc("@action", "OK"));
 
                 if (mode == UnconfirmedEditMode)
                 {
-                    confirmButton->setText(i18n("Confirm"));
+                    confirmButton->setText(i18nc("@action", "Confirm"));
                 }
 
                 confirmButton->setToolTip(i18nc("@info:tooltip", "Confirm that the selected person is shown here"));
@@ -196,7 +196,7 @@ void AssignNameWidget::Private::checkWidgets()
 
             if (!rejectButton)
             {
-                rejectButton = createToolButton(QIcon::fromTheme(QLatin1String("list-remove")), i18n("Remove"));
+                rejectButton = createToolButton(QIcon::fromTheme(QLatin1String("list-remove")), i18nc("@action", "Remove"));
                 rejectButton->setToolTip(i18nc("@info:tooltip", "Reject this suggestion"));
 
                 q->connect(rejectButton, SIGNAL(clicked()),
@@ -210,7 +210,7 @@ void AssignNameWidget::Private::checkWidgets()
         {
             if (!confirmButton)
             {
-                confirmButton = createToolButton(QIcon::fromTheme(QLatin1String("dialog-ok-apply")), i18n("OK"));
+                confirmButton = createToolButton(QIcon::fromTheme(QLatin1String("dialog-ok-apply")), i18nc("@action", "OK"));
                 confirmButton->setToolTip(i18nc("@info:tooltip", "Unmark this face as Ignored"));
 
                 q->connect(confirmButton, SIGNAL(clicked()),
@@ -219,7 +219,7 @@ void AssignNameWidget::Private::checkWidgets()
 
             if (!rejectButton)
             {
-                rejectButton = createToolButton(QIcon::fromTheme(QLatin1String("list-remove")), i18n("Reject"));
+                rejectButton = createToolButton(QIcon::fromTheme(QLatin1String("list-remove")), i18nc("@action", "Reject"));
                 rejectButton->setEnabled(false);
             }
 
@@ -450,6 +450,7 @@ void AssignNameWidget::Private::updateVisualStyle()
                 ).arg(styleSheetFontDescriptor(appFont))
                  .arg((mode == ConfirmedMode) ? QLatin1String("8") : QLatin1String("4"))
             );
+
             break;
         }
 
@@ -474,6 +475,7 @@ void AssignNameWidget::Private::updateVisualStyle()
                  .arg(bg.green())
                  .arg(bg.blue())
             );
+
             break;
         }
 
@@ -481,6 +483,7 @@ void AssignNameWidget::Private::updateVisualStyle()
         {
             q->setStyleSheet(QString());
             q->setFrameStyle(Raised | StyledPanel);
+
             break;
         }
     }
@@ -492,7 +495,7 @@ void AssignNameWidget::Private::setAddTagsWidgetContents(T* const widget)
     if (widget)
     {
         widget->setCurrentTag(currentTag);
-        widget->setPlaceholderText((mode == UnconfirmedEditMode) ? i18n("Who is this?")
+        widget->setPlaceholderText((mode == UnconfirmedEditMode) ? i18nc("@label", "Who is this?")
                                                                  : QString());
 
         if (confirmButton)

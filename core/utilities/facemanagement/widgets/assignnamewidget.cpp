@@ -30,7 +30,7 @@ namespace Digikam
 
 AssignNameWidget::AssignNameWidget(QWidget* const parent)
     : QFrame(parent),
-      d(new Private(this))
+      d     (new Private(this))
 {
     setObjectName(QLatin1String("assignNameWidget"));
     setVisualStyle(StyledFrame);
@@ -54,7 +54,7 @@ void AssignNameWidget::setModel(TagModel* const model,
 
     ApplicationSettings* const settings = ApplicationSettings::instance();
 
-    if (settings)
+    if      (settings)
     {
         if (filteredModel && settings->showOnlyPersonTagsInPeopleSidebar())
         {
@@ -295,11 +295,15 @@ void AssignNameWidget::keyPressEvent(QKeyEvent* e)
     {
         case Qt::Key_Enter:
         case Qt::Key_Return:
+        {
             return;
+        }
 
         case Qt::Key_Escape:
+        {
             slotReject();
             return;
+        }
     }
 
     QWidget::keyPressEvent(e);
