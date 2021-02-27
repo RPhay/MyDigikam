@@ -191,37 +191,37 @@ QString BatchTool::toolGroupToString() const
     switch (toolGroup())
     {
         case BaseTool:
-            return i18n("Base");
+            return i18nc("@title: tool group", "Base");
 
         case CustomTool:
-            return i18n("Custom");
+            return i18nc("@title: tool group", "Custom");
 
         case ColorTool:
-            return i18n("Colors");
+            return i18nc("@title: tool group", "Colors");
 
         case EnhanceTool:
-            return i18n("Enhance");
+            return i18nc("@title: tool group", "Enhance");
 
         case TransformTool:
-            return i18n("Transform");
+            return i18nc("@title: tool group", "Transform");
 
         case DecorateTool:
-            return i18n("Decorate");
+            return i18nc("@title: tool group", "Decorate");
 
         case FiltersTool:
-            return i18nc("Filters as a type of tools", "Filters");
+            return i18nc("@title: tool group", "Filters");
 
         case ConvertTool:
-            return i18n("Convert");
+            return i18nc("@title: tool group", "Convert");
 
         case MetadataTool:
-            return i18n("Metadata");
+            return i18nc("@title: tool group", "Metadata");
 
         default:
             break;
     }
 
-    return i18n("Invalid");
+    return i18nc("@title: tool group", "Invalid");
 }
 
 void BatchTool::setToolTitle(const QString& toolTitle)
@@ -629,7 +629,7 @@ void BatchTool::registerSettingsWidget()
     if (!m_settingsWidget)
     {
         QLabel* const label = new QLabel;
-        label->setText(i18n("No setting available"));
+        label->setText(i18nc("@label", "No setting available"));
         label->setAlignment(Qt::AlignCenter);
         label->setWordWrap(true);
         m_settingsWidget    = label;

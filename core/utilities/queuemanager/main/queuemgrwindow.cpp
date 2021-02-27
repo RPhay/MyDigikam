@@ -458,7 +458,7 @@ void QueueMgrWindow::refreshStatusBar()
             break;
     }
 
-    message.append(QLatin1String(" - ") + i18n("Total: "));
+    message.append(QLatin1String(" - ") + i18nc("#info: total number of items to process", "Total: "));
 
     switch (totalItems)
     {
