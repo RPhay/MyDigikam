@@ -63,6 +63,7 @@ urpmi --auto \
       eigen3-devel \
       lensfun-devel \
       marble-devel \
+      marble-data \
       opencv-devel \
       libasan-devel \
       libgomp-devel \
