@@ -71,23 +71,54 @@ QString GLViewerPlugin::description() const
 QString GLViewerPlugin::details() const
 {
     return i18n("<p>This tool preview a series of items using OpenGL effects.</p>"
-                "<p><b>Image Access</b></p>"
-                "<ul><li>Next image: scroll-wheel down | down arrow | right arrow | PgDown | Space | n</li>"
-                "<li>Previous image: scroll-wheel up | up arrow | left arrow | PgUp | p</li>"
-                "<li>Quit: Esc</li></ul>"
-                "<p><b>Display</b></p>"
-                "<ul><li>Toggle fulls-creen to normal: f</li>"
-                "<li>Toggle scroll-wheel action: c (either zoom or change image)</li>"
-                "<li>Rotation: r</li>"
-                "<li>Reset view: double click</li>"
-                "<li>Original size: o</li></ul"
-                "<p><b>Zooming</b></p>"
-                "<ul><li>Move mouse in up-down-direction while pressing the right mouse button</li>"
-                "<li>Alternatively, press c and use the scrollwheel</li>"
-                "<li>Plus-minus</li>"
-                "<li>ctrl + scrollwheel</li></ul>"
-                "<p><b>Panning</b></p>"
-                "<ul><li>Move mouse while pressing the left button</li></ul>");
+                "<p><u>Usage:</u></p>"
+
+                "<table>"
+
+                    "<tr>"
+                        "<td colspan=\"2\"><nobr><center>"
+                            "<b><h1>Item Access</h1></b>"
+                        "</center></nobr></td>"
+                    "</tr>"
+
+                    "<tr><td>Previous Item:</td>"                "<td><i>Up</i> key</td></tr>"
+                    "<tr><td></td>"                              "<td><i>PgUp</i> key</td></tr>"
+                    "<tr><td></td>"                              "<td><i>Left</i> key</td></tr>"
+                    "<tr><td></td>"                              "<td>Mouse wheel up</td></tr>"
+                    "<tr><td>Next Item:</td>"                    "<td><i>Down</i> key</td></tr>"
+                    "<tr><td></td>"                              "<td><i>PgDown</i> key</td></tr>"
+                    "<tr><td></td>"                              "<td><i>Right</i> key</td></tr>"
+                    "<tr><td></td>"                              "<td>Mouse wheel down</td></tr>"
+                    "<tr><td>Quit:</td>"                         "<td><i>Esc</i> key</td></tr>"
+
+                    "<tr>"
+                        "<td colspan=\"2\"><nobr><center>"
+                            "<b><h1>Item Display</h1></b>"
+                        "</center></nobr></td>"
+                    "</tr>"
+
+                    "<tr><td>Toggle fulls-creen to normal:</td>" "<td><i>f</i> key</td></tr>"
+                    "<tr><td>Toggle scroll-wheel action:</td>"   "<td><i>c</i> key (either zoom or change image)</td></tr>"
+                    "<tr><td>Rotation:</td>"                     "<td><i>r</i> key</td></tr>"
+                    "<tr><td>Reset view:</td>"                   "<td>double click</td></tr>"
+                    "<tr><td>Original size:</td>"                "<td><i>o</i> key</td></tr>"
+
+                    "<tr><td>Zomming:</td>"                      "<td>Move mouse in up-down-direction while pressing the right mouse button</td></tr>"
+                    "<tr><td></td>"                              "<td><i>c</i> key and use the scroll-wheel</td></tr>"
+                    "<tr><td></td>"                              "<td><i>+</i> and <i>-</i> keys</td></tr>"
+                    "<tr><td></td>"                              "<td>ctrl + scrollwheel</td></tr>"
+
+                    "<tr><td>Panning:</td>"                      "<td>Move mouse while pressing the left button</td></tr>"
+
+                    "<tr>"
+                        "<td colspan=\"2\"><nobr><center>"
+                            "<b><h1>Others</h1></b>"
+                        "</center></nobr></td>"
+                    "</tr>"
+
+                    "<tr><td>Show this help:</td>"               "<td><i>F1</i> key</td></tr>"
+
+                "</table>");
 }
 
 QList<DPluginAuthor> GLViewerPlugin::authors() const

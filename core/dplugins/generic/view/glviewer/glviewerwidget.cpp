@@ -589,19 +589,17 @@ void GLViewerWidget::keyPressEvent(QKeyEvent* e)
             break;
         }
 
-        // do noting, don't trigger the help dialog
+        // F1 show help dialog to enlighten the user
 
-        case Qt::Key_Shift:
-        {
-            break;
-        }
-
-        // key is not bound to any action, therefore show help dialog to enlighten the user
-
-        default:
+        case Qt::Key_F1:
         {
             QPointer<DPluginAboutDlg> help = new DPluginAboutDlg(d->plugin);
             help->exec();
+            break;
+        }
+
+        default:
+        {
             break;
         }
     }

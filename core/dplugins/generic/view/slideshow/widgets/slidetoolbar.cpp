@@ -42,7 +42,7 @@
 
 // Local includes
 
-#include "slidehelp.h"
+#include "dpluginaboutdlg.h"
 #include "digikam_debug.h"
 #include "setupslideshow_dialog.h"
 
@@ -327,7 +327,7 @@ void SlideToolBar::keyPressEvent(QKeyEvent* e)
                 d->playBtn->animateClick();
             }
 
-            QPointer<SlideHelp> help = new SlideHelp();
+            QPointer<DPluginAboutDlg> help = new DPluginAboutDlg(d->settings->plugin);
             help->exec();
             delete help;
 
