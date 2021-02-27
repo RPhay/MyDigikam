@@ -95,9 +95,9 @@ WorkflowList::WorkflowList(QWidget* const parent)
     setRootIsDecorated(false);
 
     QStringList titles;
-    titles.append(i18n("Title"));
-    titles.append(i18n("Tools"));
-    titles.append(i18n("Description"));
+    titles.append(i18nc("@title: batch workflow name",        "Title"));
+    titles.append(i18nc("@title: batch workflow tools list",  "Tools"));
+    titles.append(i18nc("@title: batch workflow description", "Description"));
 
     setHeaderLabels(titles);
     header()->setSectionResizeMode(0, QHeaderView::ResizeToContents);
@@ -120,9 +120,9 @@ WorkflowList::WorkflowList(QWidget* const parent)
     {
         DMessageBox::showInformationList(QMessageBox::Information,
                                          qApp->activeWindow(),
-                                         i18n("Batch Queue Manager"),
-                                         i18n("Some Workflows cannot be loaded from your config file due to an incompatible "
-                                              "version of a tool."),
+                                         i18nc("@title", "Batch Queue Manager"),
+                                         i18nc("@info", "Some Workflows cannot be loaded from your config file due to an incompatible "
+                                                        "version of a tool."),
                                          failed);
     }
 }
@@ -249,9 +249,9 @@ QMimeData* WorkflowList::mimeData(const QList<QTreeWidgetItem*> items) const    
 void WorkflowList::slotContextMenu()
 {
     QMenu popmenu(this);
-    QAction* const assignAction = new QAction(QIcon::fromTheme(QLatin1String("list-add")),    i18n("Assign Workflow to current queue"), this);
-    QAction* const propAction   = new QAction(QIcon::fromTheme(QLatin1String("configure")),   i18n("Edit Workflow"),                    this);
-    QAction* const delAction    = new QAction(QIcon::fromTheme(QLatin1String("edit-delete")), i18n("Delete Workflow"),                  this);
+    QAction* const assignAction = new QAction(QIcon::fromTheme(QLatin1String("list-add")),    i18nc("@action", "Assign Workflow to current queue"), this);
+    QAction* const propAction   = new QAction(QIcon::fromTheme(QLatin1String("configure")),   i18nc("@action", "Edit Workflow"),                    this);
+    QAction* const delAction    = new QAction(QIcon::fromTheme(QLatin1String("edit-delete")), i18nc("@action", "Delete Workflow"),                  this);
 
     popmenu.addAction(assignAction);
     popmenu.addAction(propAction);
@@ -297,10 +297,11 @@ void WorkflowList::slotContextMenu()
 
             if (item)
             {
-                int result = QMessageBox::warning(qApp->activeWindow(), i18n("Delete Workflow?"),
-                                          i18n("Are you sure you want to "
-                                               "delete the selected workflow "
-                                               "\"%1\"?", item->title()),
+                int result = QMessageBox::warning(qApp->activeWindow(),
+                                          i18nc("@title", "Delete Workflow?"),
+                                          i18nc("@info", "Are you sure you want to "
+                                                         "delete the selected workflow "
+                                                         "\"%1\"?", item->title()),
                                           QMessageBox::Yes | QMessageBox::Cancel);
 
                 if (result == QMessageBox::Yes)

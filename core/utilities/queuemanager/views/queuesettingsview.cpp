@@ -85,38 +85,38 @@ public:
 public:
 
     explicit Private()
-      : rawLoadingLabel(nullptr),
-        renamingButtonGroup(nullptr),
-        rawLoadingButtonGroup(nullptr),
-        renameOriginal(nullptr),
-        renameManual(nullptr),
-        extractJPEGButton(nullptr),
-        demosaicingButton(nullptr),
-        useOrgAlbum(nullptr),
-        asNewVersion(nullptr),
-        useMutiCoreCPU(nullptr),
-        conflictBox(nullptr),
-        albumSel(nullptr),
-        advancedRenameManager(nullptr),
-        advancedRenameWidget(nullptr),
-        rawSettings(nullptr),
-        jpgSettings(nullptr),
-        pngSettings(nullptr),
-        tifSettings(nullptr),
+      : rawLoadingLabel         (nullptr),
+        renamingButtonGroup     (nullptr),
+        rawLoadingButtonGroup   (nullptr),
+        renameOriginal          (nullptr),
+        renameManual            (nullptr),
+        extractJPEGButton       (nullptr),
+        demosaicingButton       (nullptr),
+        useOrgAlbum             (nullptr),
+        asNewVersion            (nullptr),
+        useMutiCoreCPU          (nullptr),
+        conflictBox             (nullptr),
+        albumSel                (nullptr),
+        advancedRenameManager   (nullptr),
+        advancedRenameWidget    (nullptr),
+        rawSettings             (nullptr),
+        jpgSettings             (nullptr),
+        pngSettings             (nullptr),
+        tifSettings             (nullptr),
 
 #ifdef HAVE_JASPER
 
-        j2kSettings(nullptr),
+        j2kSettings             (nullptr),
 
 #endif // HAVE_JASPER
 
 #ifdef HAVE_X265
 
-        heifSettings(nullptr),
+        heifSettings            (nullptr),
 
 #endif // HAVE_X265
 
-        pgfSettings(nullptr)
+        pgfSettings             (nullptr)
     {
     }
 
@@ -163,7 +163,7 @@ public:
 
 QueueSettingsView::QueueSettingsView(QWidget* const parent)
     : QTabWidget(parent),
-      d(new Private)
+      d         (new Private)
 {
     setTabsClosable(false);
 

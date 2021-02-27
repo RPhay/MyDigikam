@@ -49,9 +49,9 @@ class Q_DECL_HIDDEN ToolsView::Private
 public:
 
     explicit Private()
-      : baseTools(nullptr),
+      : baseTools  (nullptr),
         historyView(nullptr),
-        workflow(nullptr)
+        workflow   (nullptr)
     {
     }
 
@@ -62,7 +62,7 @@ public:
 
 ToolsView::ToolsView(QWidget* const parent)
     : QTabWidget(parent),
-      d(new Private)
+      d         (new Private)
 {
     setTabsClosable(false);
 

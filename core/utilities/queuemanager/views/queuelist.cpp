@@ -297,7 +297,7 @@ QueueListView::QueueListView(QWidget* const parent)
 {
     setIconSize(QSize(d->iconSize, d->iconSize));
     setSelectionMode(QAbstractItemView::ExtendedSelection);
-    setWhatsThis(i18n("This is the list of images to batch process."));
+    setWhatsThis(i18nc("@info", "This is the list of images to batch process."));
 
     setAcceptDrops(true);
     viewport()->setAcceptDrops(true);
@@ -314,9 +314,9 @@ QueueListView::QueueListView(QWidget* const parent)
     setContextMenuPolicy(Qt::CustomContextMenu);
 
     QStringList titles;
-    titles.append(i18n("Thumbnail"));
-    titles.append(i18n("Original"));
-    titles.append(i18n("Target"));
+    titles.append(i18nc("@title: preview item",       "Thumbnail"));
+    titles.append(i18nc("@title: original item name", "Original"));
+    titles.append(i18nc("@title: targey item name",   "Target"));
     setHeaderLabels(titles);
     header()->setSectionResizeMode(0, QHeaderView::ResizeToContents);
     header()->setSectionResizeMode(1, QHeaderView::Stretch);

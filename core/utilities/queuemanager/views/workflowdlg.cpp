@@ -58,9 +58,9 @@ class Q_DECL_HIDDEN WorkflowDlg::Private
 public:
 
     explicit Private()
-      : buttons(nullptr),
+      : buttons  (nullptr),
         titleEdit(nullptr),
-        descEdit(nullptr)
+        descEdit (nullptr)
     {
     }
 
@@ -71,7 +71,7 @@ public:
 
 WorkflowDlg::WorkflowDlg(const Workflow& wf, bool create)
     : QDialog(nullptr),
-      d(new Private)
+      d      (new Private)
 {
     setModal(true);
     setWindowTitle(create ? i18n("New Workflow") : i18n("Edit Workflow"));
@@ -105,7 +105,7 @@ WorkflowDlg::WorkflowDlg(const Workflow& wf, bool create)
     QValidator* const validator = new QRegExpValidator(reg, this);
 
     QLabel* const titleLabel    = new QLabel(page);
-    titleLabel->setText(i18n("&Title:"));
+    titleLabel->setText(i18nc("@title: batch worklow name", "&Title:"));
 
     d->titleEdit                = new QLineEdit(page);
     d->titleEdit->setClearButtonEnabled(true);
