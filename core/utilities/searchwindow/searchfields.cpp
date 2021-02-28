@@ -2689,11 +2689,13 @@ void SearchFieldAlbum::write(SearchXmlWriter& writer)
 
     if (m_operation)
     {
-        if (m_operation->itemData(m_operation->currentIndex()).toInt() == Operation::All)
+        int operation = m_operation->currentData().toInt();
+
+        if      (operation == Operation::All)
         {
             relation = SearchXml::AllOf;
         }
-        else
+        else if (operation == Operation::InTree)
         {
             relation = SearchXml::InTree;
         }
@@ -2706,15 +2708,12 @@ void SearchFieldAlbum::write(SearchXmlWriter& writer)
     }
     else
     {
-        if (relation == SearchXml::InTree)
+        if (relation != SearchXml::InTree)
         {
-            writer.writeField(m_name, relation);
-        }
-        else
-        {
-            writer.writeField(m_name, SearchXml::Equal);
+            relation = SearchXml::Equal;
         }
 
+        writer.writeField(m_name, relation);
         writer.writeValue(albumIds.first());
     }
 
