@@ -54,8 +54,8 @@ public:
     explicit Private()
     {
         syncEXIFArtistCheck = nullptr;
-        bylineEdit          = nullptr;
-        bylineTitleEdit     = nullptr;
+        creatorEdit         = nullptr;
+        creatorTitleEdit    = nullptr;
         creditEdit          = nullptr;
         sourceEdit          = nullptr;
         emailEdit           = nullptr;
@@ -65,7 +65,7 @@ public:
         postalCodeEdit      = nullptr;
         cityEdit            = nullptr;
         countryEdit         = nullptr;
-        bylineTitleCheck    = nullptr;
+        creatorTitleCheck   = nullptr;
         creditCheck         = nullptr;
         sourceCheck         = nullptr;
         emailCheck          = nullptr;
@@ -79,7 +79,7 @@ public:
     }
 
     QCheckBox*        syncEXIFArtistCheck;
-    QCheckBox*        bylineTitleCheck;
+    QCheckBox*        creatorTitleCheck;
     QCheckBox*        creditCheck;
     QCheckBox*        sourceCheck;
     QCheckBox*        contactCheck;
@@ -91,7 +91,7 @@ public:
     QCheckBox*        cityCheck;
     QCheckBox*        countryCheck;
 
-    QLineEdit*        bylineTitleEdit;
+    QLineEdit*        creatorTitleEdit;
     QLineEdit*        creditEdit;
     QLineEdit*        sourceEdit;
     QLineEdit*        emailEdit;
@@ -102,7 +102,7 @@ public:
     QLineEdit*        cityEdit;
     QLineEdit*        countryEdit;
 
-    MultiStringsEdit* bylineEdit;
+    MultiStringsEdit* creatorEdit;
 };
 
 XMPCredits::XMPCredits(QWidget* const parent)
@@ -115,16 +115,16 @@ XMPCredits::XMPCredits(QWidget* const parent)
 
     // --------------------------------------------------------
 
-    d->bylineEdit = new MultiStringsEdit(this, i18n("Byline:"),
-                                         i18n("Set here the name of content creator."));
+    d->creatorEdit         = new MultiStringsEdit(this, i18n("Creator:"),
+                                                  i18n("Set here the name of content creator."));
     d->syncEXIFArtistCheck = new QCheckBox(i18n("Sync Exif Artist"), this);
 
     // --------------------------------------------------------
 
-    d->bylineTitleCheck = new QCheckBox(i18n("Byline Title:"), this);
-    d->bylineTitleEdit  = new QLineEdit(this);
-    d->bylineTitleEdit->setClearButtonEnabled(true);
-    d->bylineTitleEdit->setWhatsThis(i18n("Set here the title of content creator."));
+    d->creatorTitleCheck = new QCheckBox(i18n("Creator Title:"), this);
+    d->creatorTitleEdit  = new QLineEdit(this);
+    d->creatorTitleEdit->setClearButtonEnabled(true);
+    d->creatorTitleEdit->setWhatsThis(i18n("Set here the title of content creator."));
 
     // --------------------------------------------------------
 
@@ -200,10 +200,10 @@ XMPCredits::XMPCredits(QWidget* const parent)
 
     // --------------------------------------------------------
 
-    grid->addWidget(d->bylineEdit,          0, 0, 1, 3);
+    grid->addWidget(d->creatorEdit,          0, 0, 1, 3);
     grid->addWidget(d->syncEXIFArtistCheck, 1, 0, 1, 3);
-    grid->addWidget(d->bylineTitleCheck,    2, 0, 1, 1);
-    grid->addWidget(d->bylineTitleEdit,     2, 1, 1, 2);
+    grid->addWidget(d->creatorTitleCheck,    2, 0, 1, 1);
+    grid->addWidget(d->creatorTitleEdit,     2, 1, 1, 2);
     grid->addWidget(contactBox,             3, 0, 1, 3);
     grid->addWidget(d->creditCheck,         4, 0, 1, 1);
     grid->addWidget(d->creditEdit,          4, 1, 1, 2);
@@ -216,8 +216,8 @@ XMPCredits::XMPCredits(QWidget* const parent)
 
     // --------------------------------------------------------
 
-    connect(d->bylineTitleCheck, SIGNAL(toggled(bool)),
-            d->bylineTitleEdit, SLOT(setEnabled(bool)));
+    connect(d->creatorTitleCheck, SIGNAL(toggled(bool)),
+            d->creatorTitleEdit, SLOT(setEnabled(bool)));
 
     connect(d->emailCheck, SIGNAL(toggled(bool)),
             d->emailEdit, SLOT(setEnabled(bool)));
@@ -248,10 +248,10 @@ XMPCredits::XMPCredits(QWidget* const parent)
 
     // --------------------------------------------------------
 
-    connect(d->bylineEdit, SIGNAL(signalModified()),
+    connect(d->creatorEdit, SIGNAL(signalModified()),
             this, SIGNAL(signalModified()));
 
-    connect(d->bylineTitleCheck, SIGNAL(toggled(bool)),
+    connect(d->creatorTitleCheck, SIGNAL(toggled(bool)),
             this, SIGNAL(signalModified()));
 
     connect(d->emailCheck, SIGNAL(toggled(bool)),
@@ -283,7 +283,7 @@ XMPCredits::XMPCredits(QWidget* const parent)
 
     // --------------------------------------------------------
 
-    connect(d->bylineTitleEdit, SIGNAL(textChanged(QString)),
+    connect(d->creatorTitleEdit, SIGNAL(textChanged(QString)),
             this, SIGNAL(signalModified()));
 
     connect(d->emailEdit, SIGNAL(textChanged(QString)),
@@ -332,7 +332,7 @@ void XMPCredits::setCheckedSyncEXIFArtist(bool c)
 QString XMPCredits::getXMPByLine() const
 {
     QStringList oldv, newv;
-    bool b = d->bylineEdit->getValues(oldv, newv);
+    bool b = d->creatorEdit->getValues(oldv, newv);
     Q_UNUSED(b);
 
     return (newv.join(QLatin1Char(';')));
@@ -347,19 +347,19 @@ void XMPCredits::readMetadata(QByteArray& xmpData)
     QStringList list;
 
     list = meta->getXmpTagStringSeq("Xmp.dc.creator", false);
-    d->bylineEdit->setValues(list);
+    d->creatorEdit->setValues(list);
 
-    d->bylineTitleEdit->clear();
-    d->bylineTitleCheck->setChecked(false);
+    d->creatorTitleEdit->clear();
+    d->creatorTitleCheck->setChecked(false);
     data = meta->getXmpTagString("Xmp.photoshop.AuthorsPosition", false);
 
     if (!data.isNull())
     {
-        d->bylineTitleEdit->setText(data);
-        d->bylineTitleCheck->setChecked(true);
+        d->creatorTitleEdit->setText(data);
+        d->creatorTitleCheck->setChecked(true);
     }
 
-    d->bylineTitleEdit->setEnabled(d->bylineTitleCheck->isChecked());
+    d->creatorTitleEdit->setEnabled(d->creatorTitleCheck->isChecked());
 
     // --------------------------------------------------------
 
@@ -521,7 +521,7 @@ void XMPCredits::applyMetadata(QByteArray& exifData, QByteArray& xmpData)
     meta->setExif(exifData);
     meta->setXmp(xmpData);
 
-    if (d->bylineEdit->getValues(oldList, newList))
+    if (d->creatorEdit->getValues(oldList, newList))
     {
         meta->setXmpTagStringSeq("Xmp.dc.creator", newList);
 
@@ -536,9 +536,9 @@ void XMPCredits::applyMetadata(QByteArray& exifData, QByteArray& xmpData)
         meta->removeXmpTag("Xmp.dc.creator");
     }
 
-    if (d->bylineTitleCheck->isChecked())
+    if (d->creatorTitleCheck->isChecked())
     {
-        meta->setXmpTagString("Xmp.photoshop.AuthorsPosition", d->bylineTitleEdit->text());
+        meta->setXmpTagString("Xmp.photoshop.AuthorsPosition", d->creatorTitleEdit->text());
     }
     else
     {
