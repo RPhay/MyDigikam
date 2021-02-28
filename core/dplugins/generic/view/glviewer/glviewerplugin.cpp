@@ -103,7 +103,7 @@ QString GLViewerPlugin::details() const
                     "<tr><td>Reset view:</td>"                   "<td>double click</td></tr>"
                     "<tr><td>Original size:</td>"                "<td><i>o</i> key</td></tr>"
 
-                    "<tr><td>Zomming:</td>"                      "<td>Move mouse in up-down-direction while pressing the right mouse button</td></tr>"
+                    "<tr><td>Zooming:</td>"                      "<td>Move mouse in up-down-direction while pressing the right mouse button</td></tr>"
                     "<tr><td></td>"                              "<td><i>c</i> key and use the scroll-wheel</td></tr>"
                     "<tr><td></td>"                              "<td><i>+</i> and <i>-</i> keys</td></tr>"
                     "<tr><td></td>"                              "<td>ctrl + scrollwheel</td></tr>"
