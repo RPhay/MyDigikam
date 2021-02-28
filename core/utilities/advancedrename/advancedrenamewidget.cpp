@@ -61,18 +61,18 @@ class Q_DECL_HIDDEN AdvancedRenameWidget::Private
 public:
 
     explicit Private() :
-        configExpandedStateDefault(true),
-        tooltipToggleButton(nullptr),
-        modifiersToolButton(nullptr),
-        optionsButton(nullptr),
-        modifiersButton(nullptr),
-        btnContainer(nullptr),
-        tooltipDialog(nullptr),
-        renameInput(nullptr),
-        parser(nullptr),
-        optionsLabel(nullptr),
-        controlWidgetsMask(AdvancedRenameWidget::DefaultControls),
-        layoutStyle(AdvancedRenameWidget::LayoutNormal)
+        configExpandedStateDefault  (true),
+        tooltipToggleButton         (nullptr),
+        modifiersToolButton         (nullptr),
+        optionsButton               (nullptr),
+        modifiersButton             (nullptr),
+        btnContainer                (nullptr),
+        tooltipDialog               (nullptr),
+        renameInput                 (nullptr),
+        parser                      (nullptr),
+        optionsLabel                (nullptr),
+        controlWidgetsMask          (AdvancedRenameWidget::DefaultControls),
+        layoutStyle                 (AdvancedRenameWidget::LayoutNormal)
     {
     }
 
@@ -105,7 +105,7 @@ const QString AdvancedRenameWidget::Private::configExpandedStateEntry(QLatin1Str
 
 AdvancedRenameWidget::AdvancedRenameWidget(QWidget* const parent)
     : QWidget(parent),
-      d(new Private)
+      d      (new Private)
 {
     setupWidgets();
 }

@@ -60,8 +60,8 @@ public:
     explicit Private()
       : allowDirectoryCreation(false),
         verticalSliderPosition(INVALID),
-        parseTimer(nullptr),
-        parser(nullptr)
+        parseTimer            (nullptr),
+        parser                (nullptr)
     {
     }
 
@@ -76,7 +76,7 @@ public:
 
 AdvancedRenameLineEdit::AdvancedRenameLineEdit(QWidget* const parent)
     : QPlainTextEdit(parent),
-      d(new Private)
+      d             (new Private)
 {
     setupWidgets();
     setupConnections();
@@ -264,9 +264,9 @@ public:
     explicit Private()
       : maxVisibleItems(10),
         maxHistoryItems(30),
-        lineEdit(nullptr),
-        proxy(nullptr),
-        highlighter(nullptr)
+        lineEdit       (nullptr),
+        proxy          (nullptr),
+        highlighter    (nullptr)
     {
     }
 
@@ -288,7 +288,7 @@ const QString AdvancedRenameInput::Private::configPatternHistoryListEntry(QLatin
 
 AdvancedRenameInput::AdvancedRenameInput(QWidget* const parent)
     : QComboBox(parent),
-      d(new Private)
+      d        (new Private)
 {
     setupWidgets();
     setupConnections();

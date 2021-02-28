@@ -52,8 +52,8 @@ public:
 
     explicit Private()
         : thumbLoadThread(nullptr),
-          overwrite(false),
-          cancel(false)
+          overwrite      (false),
+          cancel         (false)
     {
     }
 
@@ -73,7 +73,7 @@ public:
 
 AdvancedRenameProcessDialog::AdvancedRenameProcessDialog(const NewNamesList& list, QWidget* const parent)
     : DProgressDlg(parent),
-      d(new Private)
+      d           (new Private)
 {
     d->newNameList     = list;
     d->thumbLoadThread = new ThumbnailLoadThread;

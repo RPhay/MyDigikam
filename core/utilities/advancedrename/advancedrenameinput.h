@@ -50,10 +50,10 @@ class AdvancedRenameLineEdit : public QPlainTextEdit
 public:
 
     explicit AdvancedRenameLineEdit(QWidget* const parent = nullptr);
-    ~AdvancedRenameLineEdit() override;
+    ~AdvancedRenameLineEdit()                     override;
 
     void    setParser(Parser* parser);
-    Parser* parser() const;
+    Parser* parser()                        const;
 
     void setParseTimerDuration(int milliseconds);
 
@@ -70,9 +70,9 @@ Q_SIGNALS:
 
 protected:
 
-    void keyPressEvent(QKeyEvent* e) override;
-    void wheelEvent(QWheelEvent* e) override;
-    void scrollContentsBy(int dx, int dy) override;
+    void keyPressEvent(QKeyEvent* e)              override;
+    void wheelEvent(QWheelEvent* e)               override;
+    void scrollContentsBy(int dx, int dy)         override;
 
 private Q_SLOTS:
 
@@ -102,12 +102,12 @@ class AdvancedRenameInput : public QComboBox
 public:
 
     explicit AdvancedRenameInput(QWidget* const parent = nullptr);
-    ~AdvancedRenameInput() override;
+    ~AdvancedRenameInput()                            override;
 
     void setParser(Parser* parser);
     void setParseTimerDuration(int milliseconds);
 
-    QString text() const;
+    QString text()                              const;
     void    setText(const QString& text);
 
 Q_SIGNALS:
@@ -128,7 +128,7 @@ public Q_SLOTS:
 
 protected:
 
-    void changeEvent(QEvent* e) override;
+    void changeEvent(QEvent* e)                       override;
 
 private Q_SLOTS:
 

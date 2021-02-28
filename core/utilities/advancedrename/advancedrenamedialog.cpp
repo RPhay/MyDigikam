@@ -78,13 +78,13 @@ public:
 
 AdvancedRenameListItem::AdvancedRenameListItem(QTreeWidget* const view)
     : QTreeWidgetItem(view),
-      d(new Private)
+      d              (new Private)
 {
 }
 
 AdvancedRenameListItem::AdvancedRenameListItem(QTreeWidget* const view, const QUrl& url)
     : QTreeWidgetItem(view),
-      d(new Private)
+      d              (new Private)
 {
     setImageUrl(url);
 }
@@ -149,19 +149,19 @@ class Q_DECL_HIDDEN AdvancedRenameDialog::Private
 public:
 
     explicit Private()
-      : singleFileMode(false),
-        minSizeDialog(450),
-        sortActionName(nullptr),
-        sortActionDate(nullptr),
-        sortActionSize(nullptr),
-        sortActionAscending(nullptr),
-        sortActionDescending(nullptr),
-        sortGroupActions(nullptr),
-        sortGroupDirections(nullptr),
-        listView(nullptr),
-        buttons(nullptr),
+      : singleFileMode       (false),
+        minSizeDialog        (450),
+        sortActionName       (nullptr),
+        sortActionDate       (nullptr),
+        sortActionSize       (nullptr),
+        sortActionAscending  (nullptr),
+        sortActionDescending (nullptr),
+        sortGroupActions     (nullptr),
+        sortGroupDirections  (nullptr),
+        listView             (nullptr),
+        buttons              (nullptr),
         advancedRenameManager(nullptr),
-        advancedRenameWidget(nullptr)
+        advancedRenameWidget (nullptr)
     {
     }
 
@@ -200,7 +200,7 @@ const QString AdvancedRenameDialog::Private::configDialogSizeEntry(QLatin1String
 
 AdvancedRenameDialog::AdvancedRenameDialog(QWidget* const parent)
     : QDialog(parent),
-      d(new Private)
+      d      (new Private)
 {
     setWindowFlags((windowFlags() & ~Qt::Dialog) |
                    Qt::Window                    |
@@ -243,8 +243,8 @@ void AdvancedRenameDialog::setupWidgets()
 
     // --------------------------------------------------------
 
-    d->sortActionAscending  = new QAction(i18n("Ascending"), this);
-    d->sortActionDescending = new QAction(i18n("Descending"), this);
+    d->sortActionAscending  = new QAction(i18nc("@action: sort type", "Ascending"),  this);
+    d->sortActionDescending = new QAction(i18nc("@action: sort type", "Descending"), this);
 
     d->sortActionAscending->setCheckable(true);
     d->sortActionDescending->setCheckable(true);
