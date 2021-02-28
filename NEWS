@@ -374,4 +374,5 @@ BUGFIXES:
 332 ==> 433653 - Please Add xattr support for metadata.
 333 ==> 431748 - Feature Request: Search by month/day independent of year.
 334 ==> 433573 - View - Separate Item - By Month : View by month only (not month year).
-335 ==> 
+335 ==> 433727 - Does not show exif info from Panasonic FZ30 RAW file, inspite on Editor mode it's ok.
+336 ==> 

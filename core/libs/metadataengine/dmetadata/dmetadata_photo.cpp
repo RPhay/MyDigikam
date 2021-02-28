@@ -197,6 +197,7 @@ PhotoInfoContainer DMetadata::getPhotographInformation() const
         ISOSpeedTags << QLatin1String("Exif.Sony1Cs2.ISOSetting");
         ISOSpeedTags << QLatin1String("Exif.Sony2Cs2.ISOSetting");
         ISOSpeedTags << QLatin1String("Exif.Sony1MltCsA100.ISOSetting");
+        ISOSpeedTags << QLatin1String("Exif.PanasonicRaw.ISOSpeed");
         ISOSpeedTags << QLatin1String("Exif.Pentax.ISO");
         ISOSpeedTags << QLatin1String("Exif.Olympus.ISOSpeed");
         ISOSpeedTags << QLatin1String("Exif.Samsung2.ISO");
