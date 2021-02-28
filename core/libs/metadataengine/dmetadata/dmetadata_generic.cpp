@@ -230,12 +230,12 @@ QVariant DMetadata::getMetadataField(MetadataInfo::Field field) const
 
         case MetadataInfo::Make:
         {
-            QStringList exifList
-                        << QLatin1String("Exif.Image.Make")
-                        << QLatin1String("Exif.PanasonicRaw.Make");
+            QStringList exifList;
+            exifList << QLatin1String("Exif.Image.Make");
+            exifList << QLatin1String("Exif.PanasonicRaw.Make");
 
-            QStringList xmpList
-                        << QLatin1String("Xmp.tiff.Make");
+            QStringList xmpList;
+            xmpList << QLatin1String("Xmp.tiff.Make");
 
             QVariant var = fromExifOrXmpList(exifList, xmpList);
 
@@ -244,12 +244,12 @@ QVariant DMetadata::getMetadataField(MetadataInfo::Field field) const
 
         case MetadataInfo::Model:
         {
-            QStringList exifList
-                        << QLatin1String("Exif.Image.Model")
-                        << QLatin1String("Exif.PanasonicRaw.Model");
+            QStringList exifList;
+            exifList << QLatin1String("Exif.Image.Model");
+            exifList << QLatin1String("Exif.PanasonicRaw.Model");
 
-            QStringList xmpList
-                        << QLatin1String("Xmp.tiff.Model");
+            QStringList xmpList;
+            xmpList << QLatin1String("Xmp.tiff.Model");
 
             QVariant var = fromExifOrXmpList(exifList, xmpList);
 
