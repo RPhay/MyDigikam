@@ -140,19 +140,25 @@ ChangeBookmarkCommand::ChangeBookmarkCommand(BookmarksManager* const mngr,
     switch (d->type)
     {
         case Title:
+        {
             d->oldValue = d->node->title;
             setText(i18n("Title Change"));
             break;
+        }
 
         case Desc:
+        {
             d->oldValue = d->node->desc;
             setText(i18n("Comment Change"));
             break;
+        }
 
         default:    // Url
+        {
             d->oldValue = d->node->url;
             setText(i18n("Address Change"));
             break;
+        }
     }
 }
 
@@ -166,16 +172,22 @@ void ChangeBookmarkCommand::undo()
     switch (d->type)
     {
         case Title:
+        {
             d->node->title = d->oldValue;
             break;
+        }
 
         case Desc:
+        {
             d->node->desc  = d->oldValue;
             break;
+        }
 
         default:    // Url
+        {
             d->node->url   = d->oldValue;
             break;
+        }
     }
 
     emit d->manager->entryChanged(d->node);
@@ -186,16 +198,22 @@ void ChangeBookmarkCommand::redo()
     switch (d->type)
     {
         case Title:
+        {
             d->node->title = d->newValue;
             break;
+        }
 
         case Desc:
+        {
             d->node->desc  = d->newValue;
             break;
+        }
 
         default:    // Url
+        {
             d->node->url   = d->newValue;
             break;
+        }
     }
 
     emit d->manager->entryChanged(d->node);
@@ -317,10 +335,14 @@ QVariant BookmarksModel::headerData(int section, Qt::Orientation orientation, in
         switch (section)
         {
             case 0:
-                return i18n("Title");
+            {
+                return i18nc("@title: bookmark header", "Title");
+            }
 
             case 1:
-                return i18n("Comment");
+            {
+                return i18nc("@title: bookmark header", "Comment");
+            }
         }
     }
 
@@ -340,47 +362,63 @@ QVariant BookmarksModel::data(const QModelIndex& index, int role) const
     {
         case Qt::EditRole:
         case Qt::DisplayRole:
+        {
             if (bookmarkNode->type() == BookmarkNode::Separator)
             {
                 switch (index.column())
                 {
                     case 0:
+                    {
                         return QString(50, 0xB7);
+                    }
 
                     case 1:
+                    {
                         return QString();
+                    }
                 }
             }
 
             switch (index.column())
             {
                 case 0:
+                {
                     return bookmarkNode->title;
+                }
 
                 case 1:
+                {
                     return bookmarkNode->desc;
+                }
             }
+
             break;
+        }
 
         case BookmarksModel::UrlRole:
+        {
             return QUrl(bookmarkNode->url);
-            break;
+        }
 
         case BookmarksModel::UrlStringRole:
+        {
             return bookmarkNode->url;
-            break;
+        }
 
         case BookmarksModel::DateAddedRole:
+        {
             return bookmarkNode->dateAdded;
-            break;
+        }
 
         case BookmarksModel::TypeRole:
+        {
             return bookmarkNode->type();
-            break;
+        }
 
         case BookmarksModel::SeparatorRole:
+        {
             return (bookmarkNode->type() == BookmarkNode::Separator);
-            break;
+        }
 
         case Qt::DecorationRole:
         {
@@ -627,15 +665,21 @@ bool BookmarksModel::setData(const QModelIndex& index, const QVariant& value, in
         }
 
         case BookmarksModel::UrlRole:
+        {
             d->manager->setUrl(item, value.toUrl().toString());
             break;
+        }
 
         case BookmarksModel::UrlStringRole:
+        {
             d->manager->setUrl(item, value.toString());
             break;
+        }
 
         default:
+        {
             return false;
+        }
     }
 
     return true;

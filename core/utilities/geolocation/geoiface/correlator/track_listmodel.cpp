@@ -217,13 +217,19 @@ QVariant TrackListModel::headerData(int section, Qt::Orientation orientation, in
     switch (section)
     {
         case ColumnVisible:
-            return i18n("Color");
+        {
+            return i18nc("@title: track list header", "Color");
+        }
 
         case ColumnFilename:
-            return i18n("Filename");
+        {
+            return i18nc("@title: track list header", "Filename");
+        }
 
         case ColumnNPoints:
-            return i18n("#points");
+        {
+            return i18nc("@title: track list header", "#points");
+        }
     }
 
     return false;
