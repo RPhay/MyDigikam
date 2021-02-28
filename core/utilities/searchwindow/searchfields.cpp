@@ -2642,7 +2642,7 @@ void SearchFieldAlbum::read(SearchXmlCachingReader& reader)
         {
             m_operation->setCurrentIndex(Operation::OneOf);
         }
-        else
+        else if (reader.fieldRelation() == SearchXml::InTree)
         {
             m_operation->setCurrentIndex(Operation::InTree);
         }
