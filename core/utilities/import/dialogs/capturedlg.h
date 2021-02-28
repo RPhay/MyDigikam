@@ -46,9 +46,10 @@ class CaptureDlg : public QDialog
 
 public:
 
-    CaptureDlg(QWidget* const parent, CameraController* const controller,
+    CaptureDlg(QWidget* const parent,
+               CameraController* const controller,
                const QString& cameraTitle);
-    ~CaptureDlg() override;
+    ~CaptureDlg()                   override;
 
 protected:
 

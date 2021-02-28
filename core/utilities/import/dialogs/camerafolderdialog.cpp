@@ -54,7 +54,7 @@ class Q_DECL_HIDDEN CameraFolderDialog::Private
 public:
 
     explicit Private()
-      : buttons(nullptr),
+      : buttons   (nullptr),
         folderView(nullptr)
     {
     }
@@ -68,7 +68,7 @@ public:
 CameraFolderDialog::CameraFolderDialog(QWidget* const parent, const QMap<QString, int>& map,
                                        const QString& cameraName, const QString& rootPath)
     : QDialog(parent),
-      d(new Private)
+      d      (new Private)
 {
     setModal(true);
     setWindowTitle(i18nc("@title:window %1: name of the camera", "%1 - Select Camera Folder", cameraName));
@@ -89,8 +89,8 @@ CameraFolderDialog::CameraFolderDialog(QWidget* const parent, const QMap<QString
 
     logo->setPixmap(QIcon::fromTheme(QLatin1String("digikam")).pixmap(QSize(48,48)));
 
-    message->setText(i18n("<p>Please select the camera folder "
-                          "where you want to upload the images.</p>"));
+    message->setText(i18nc("@info", "Please select the camera folder "
+                                    "where you want to upload the images."));
     message->setWordWrap(true);
 
     grid->addWidget(logo,          0, 0, 1, 1);
@@ -108,7 +108,8 @@ CameraFolderDialog::CameraFolderDialog(QWidget* const parent, const QMap<QString
     d->folderView->addVirtualFolder(cameraName);
     d->folderView->addRootFolder(QLatin1String("/"));
 
-    for (QMap<QString, int>::const_iterator it = map.constBegin() ; it != map.constEnd() ; ++it)
+    for (QMap<QString, int>::const_iterator it = map.constBegin() ;
+         it != map.constEnd() ; ++it)
     {
         QString folder(it.key());
 

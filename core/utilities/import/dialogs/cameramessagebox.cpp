@@ -70,7 +70,7 @@ public:
 
 CameraItem::CameraItem(QTreeWidget* const parent, const CamItemInfo& info)
     : QTreeWidgetItem(parent),
-      d(new Private)
+      d              (new Private)
 {
     d->info = info;
     setThumb(QIcon::fromTheme(QLatin1String("view-preview")).pixmap(parent->iconSize().width(), QIcon::Disabled), false);
@@ -125,7 +125,7 @@ public:
 
     explicit Private()
         : iconSize(64),
-          ctrl(nullptr)
+          ctrl    (nullptr)
     {
     }
 
@@ -136,7 +136,7 @@ public:
 
 CameraItemList::CameraItemList(QWidget* const parent)
     : QTreeWidget(parent),
-      d(new Private)
+      d          (new Private)
 {
     setRootIsDecorated(false);
     setSelectionMode(QAbstractItemView::SingleSelection);
@@ -144,7 +144,7 @@ CameraItemList::CameraItemList(QWidget* const parent)
     setAllColumnsShowFocus(true);
     setIconSize(QSize(d->iconSize, d->iconSize));
     setColumnCount(2);
-    setHeaderLabels(QStringList() << i18n("Thumb") << i18n("File Name"));
+    setHeaderLabels(QStringList() << i18nc("@title", "Thumb") << i18nc("@title", "File Name"));
     header()->setSectionResizeMode(0, QHeaderView::ResizeToContents);
     header()->setSectionResizeMode(1, QHeaderView::Stretch);
 }

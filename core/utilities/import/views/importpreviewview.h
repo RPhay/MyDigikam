@@ -46,13 +46,13 @@ public:
 public:
 
     explicit ImportPreviewView(QWidget* const parent, Mode mode = IconViewPreview);
-    ~ImportPreviewView() override;
+    ~ImportPreviewView()                   override;
 
     void setCamItemInfo(const CamItemInfo& info     = CamItemInfo(),
                         const CamItemInfo& previous = CamItemInfo(),
                         const CamItemInfo& next     = CamItemInfo());
 
-    CamItemInfo getCamItemInfo() const;
+    CamItemInfo getCamItemInfo()     const;
 
     void reload();
     void setCamItemPath(const QString& path = QString());

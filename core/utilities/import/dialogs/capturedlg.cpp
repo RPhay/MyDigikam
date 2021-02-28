@@ -50,10 +50,10 @@ class Q_DECL_HIDDEN CaptureDlg::Private
 public:
 
     explicit Private()
-      : stopPreview(false),
-        timer(nullptr),
-        buttons(nullptr),
-        controller(nullptr),
+      : stopPreview  (false),
+        timer        (nullptr),
+        buttons      (nullptr),
+        controller   (nullptr),
         captureWidget(nullptr)
     {
     }
@@ -68,10 +68,11 @@ public:
     CaptureWidget*    captureWidget;
 };
 
-CaptureDlg::CaptureDlg(QWidget* const parent, CameraController* const controller,
+CaptureDlg::CaptureDlg(QWidget* const parent,
+                       CameraController* const controller,
                        const QString& cameraTitle)
     : QDialog(parent),
-      d(new Private)
+      d      (new Private)
 {
     d->controller          = controller;
 
@@ -127,6 +128,7 @@ CaptureDlg::CaptureDlg(QWidget* const parent, CameraController* const controller
 CaptureDlg::~CaptureDlg()
 {
     // TODO is there a need to call this even separately? As parent is set to this widget in any case, so it should be destroyed?
+
     delete d->timer;
     delete d;
 }

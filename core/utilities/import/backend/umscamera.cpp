@@ -577,8 +577,8 @@ bool UMSCamera::uploadItem(const QString& folder, const QString& itemName, const
 
 bool UMSCamera::cameraSummary(QString& summary)
 {
-    summary =  QString(i18n("<b>Mounted Camera</b> driver for USB/IEEE1394 mass storage cameras and "
-                            "Flash disk card readers.<br/><br/>"));
+    summary =  QString(i18nc("@info", "\"Mounted Camera\" driver for USB/IEEE1394 mass storage cameras and "
+                                      "Flash disk card readers.\n\n"));
 
     // we do not expect title/model/etc. to contain newlines,
     // so we just escape HTML characters
@@ -613,19 +613,19 @@ bool UMSCamera::cameraSummary(QString& summary)
 
 bool UMSCamera::cameraManual(QString& manual)
 {
-    manual = QString(i18n("For more information about the <b>Mounted Camera</b> driver, "
-                          "please read the <b>Supported Digital Still "
-                          "Cameras</b> section in the digiKam manual."));
+    manual = QString(i18nc("@info", "For more information about the \"Mounted Camera\" driver, "
+                                    "please read the \"Supported Digital Still "
+                                    "Cameras\" section in the digiKam manual."));
     return true;
 }
 
 bool UMSCamera::cameraAbout(QString& about)
 {
-    about = QString(i18n("The <b>Mounted Camera</b> driver is a simple interface to a camera disk "
-                         "mounted locally on your system.<br/><br/>"
-                         "It does not use libgphoto2 drivers.<br/><br/>"
-                         "To report any problems with this driver, please contact the digiKam team at:<br/><br/>"
-                         "https://www.digikam.org/?q=contact"));
+    about = QString(i18nc("@info", "The \"Mounted Camera\" driver is a simple interface to a camera disk "
+                                   "mounted locally on your system.\n\n"
+                                   "It does not use libgphoto2 drivers.\n\n"
+                                   "To report any problems with this driver, please contact the digiKam team at:\n\n"
+                                   "https://www.digikam.org/?q=contact"));
     return true;
 }
 
@@ -653,7 +653,8 @@ void UMSCamera::getUUIDFromSolid()
 
         Solid::Device driveDevice;
 
-        for (Solid::Device currentDevice = accessDevice; currentDevice.isValid();
+        for (Solid::Device currentDevice = accessDevice ;
+             currentDevice.isValid() ;
              currentDevice = currentDevice.parent())
         {
             if (currentDevice.is<Solid::StorageDrive>())
@@ -672,7 +673,9 @@ void UMSCamera::getUUIDFromSolid()
 
         Solid::Device volumeDevice;
 
-        for (Solid::Device currentDevice = accessDevice; currentDevice.isValid(); currentDevice = currentDevice.parent())
+        for (Solid::Device currentDevice = accessDevice ;
+             currentDevice.isValid() ;
+             currentDevice = currentDevice.parent())
         {
             if (currentDevice.is<Solid::StorageVolume>())
             {
@@ -689,7 +692,7 @@ void UMSCamera::getUUIDFromSolid()
         Solid::StorageVolume* const volume = volumeDevice.as<Solid::StorageVolume>();
 
         if (m_path.startsWith(QDir::fromNativeSeparators(access->filePath())) &&
-            QDir::fromNativeSeparators(access->filePath()) != QLatin1String("/"))
+            (QDir::fromNativeSeparators(access->filePath()) != QLatin1String("/")))
         {
             m_uuid = volume->uuid();
         }
