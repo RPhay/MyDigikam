@@ -317,7 +317,14 @@ QVariant DMetadata::getMetadataField(MetadataInfo::Field field) const
 
         case MetadataInfo::Sensitivity:
         {
-            QVariant var = fromExifOrXmp("Exif.Photo.ISOSpeedRatings", "Xmp.exif.ISOSpeedRatings");
+            QStringList exifList;
+            exifList << QLatin1String("Exif.Photo.ISOSpeedRatings");
+            exifList << QLatin1String("Exif.PanasonicRaw.ISOSpeed");
+
+            QStringList xmpList;
+            xmpList << QLatin1String("Xmp.exif.ISOSpeedRatings");
+
+            QVariant var = fromExifOrXmpList(exifList, xmpList);
 /*
             if (var.isNull())
             {
