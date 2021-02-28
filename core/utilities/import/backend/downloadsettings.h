@@ -43,17 +43,17 @@ class DownloadSettings
 public:
 
     DownloadSettings()
-      : autoRotate(true),
-        fixDateTime(false),
-        convertJpeg(false),
+      : autoRotate  (true),
+        fixDateTime (false),
+        convertJpeg (false),
         documentName(false),
-        backupRaw(false),
-        convertDng(false),
-        compressDng(true),
-        previewMode(DNGWriter::MEDIUM),
-        rating(NoRating),
-        pickLabel(NoPickLabel),
-        colorLabel(NoColorLabel)
+        backupRaw   (false),
+        convertDng  (false),
+        compressDng (true),
+        previewMode (DNGWriter::MEDIUM),
+        rating      (NoRating),
+        pickLabel   (NoPickLabel),
+        colorLabel  (NoColorLabel)
     {
     };
 

@@ -80,7 +80,7 @@ public:
 
 CameraThumbsCtrl::CameraThumbsCtrl(CameraController* const ctrl, QWidget* const parent)
     : QObject(parent),
-      d(new Private)
+      d      (new Private)
 {
     d->controller     = ctrl;
     static_d->profile = IccManager::displayProfile(parent);

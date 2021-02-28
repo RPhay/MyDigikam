@@ -51,7 +51,7 @@ public:
 
     explicit Private()
       : canceled(false),
-        running(false)
+        running (false)
     {
     }
 
@@ -67,7 +67,7 @@ public:
 
 CameraHistoryUpdater::CameraHistoryUpdater(QWidget* const parent)
     : QThread(parent),
-      d(new Private)
+      d      (new Private)
 {
     qRegisterMetaType<CHUpdateItemMap>("CHUpdateItemMap");
 }

@@ -51,7 +51,7 @@ class DIGIKAM_GUI_EXPORT CameraThumbsCtrl : public QObject
 public:
 
     explicit CameraThumbsCtrl(CameraController* const ctrl, QWidget* const parent);
-    ~CameraThumbsCtrl() override;
+    ~CameraThumbsCtrl()                                               override;
 
     /**
      * Fill item with relevant information.
@@ -71,7 +71,7 @@ public:
     /**
      * Return camera controller instance.
      */
-    CameraController* cameraController() const;
+    CameraController* cameraController()                        const;
 
 Q_SIGNALS:
 

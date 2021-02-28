@@ -1540,28 +1540,28 @@ bool GPCamera::cameraSummary(QString& summary)
     // we do not expect titel/model/etc. to contain newlines,
     // so we just escape HTML characters
     summary =  i18nc("@info List of device properties",
-                     "Title: <b>%1</b><br/>"
-                     "Model: <b>%2</b><br/>"
-                     "Port: <b>%3</b><br/>"
-                     "Path: <b>%4</b><br/><br/>",
+                     "Title: \"%1\"\n"
+                     "Model: \"%2\"\n"
+                     "Port: \"%3\"\n"
+                     "Path: \"%4\"\n\n",
                      title().toHtmlEscaped(),
                      model().toHtmlEscaped(),
                      port().toHtmlEscaped(),
                      path().toHtmlEscaped());
 
     summary += i18nc("@info List of supported device operations",
-                     "Thumbnails: <b>%1</b><br/>"
-                     "Capture image: <b>%2</b><br/>"
-                     "Delete items: <b>%3</b><br/>"
-                     "Upload items: <b>%4</b><br/>"
-                     "Create directories: <b>%5</b><br/>"
-                     "Delete Directories: <b>%6</b><br/><br/>",
-                     thumbnailSupport()    ? i18n("yes") : i18n("no"),
-                     captureImageSupport() ? i18n("yes") : i18n("no"),
-                     deleteSupport()       ? i18n("yes") : i18n("no"),
-                     uploadSupport()       ? i18n("yes") : i18n("no"),
-                     mkDirSupport()        ? i18n("yes") : i18n("no"),
-                     delDirSupport()       ? i18n("yes") : i18n("no"));
+                     "Thumbnails: \"%1\"\n"
+                     "Capture image: \"%2\"\n"
+                     "Delete items: \"%3\"\n"
+                     "Upload items: \"%4\"\n"
+                     "Create directories: \"%5\"\n"
+                     "Delete Directories: \"%6\"\n\n",
+                     thumbnailSupport()    ? i18nc("@info: gphoto backend feature", "yes") : i18nc("@info: gphoto backend feature", "no"),
+                     captureImageSupport() ? i18nc("@info: gphoto backend feature", "yes") : i18nc("@info: gphoto backend feature", "no"),
+                     deleteSupport()       ? i18nc("@info: gphoto backend feature", "yes") : i18nc("@info: gphoto backend feature", "no"),
+                     uploadSupport()       ? i18nc("@info: gphoto backend feature", "yes") : i18nc("@info: gphoto backend feature", "no"),
+                     mkDirSupport()        ? i18nc("@info: gphoto backend feature", "yes") : i18nc("@info: gphoto backend feature", "no"),
+                     delDirSupport()       ? i18nc("@info: gphoto backend feature", "yes") : i18nc("@info: gphoto backend feature", "no"));
 
     // here we need to make sure whitespace and newlines
     // are converted to HTML properly

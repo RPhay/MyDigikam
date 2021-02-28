@@ -67,12 +67,12 @@ public:
     /**
      * Return true if all member in this container are null.
      */
-    bool isNull() const;
+    bool isNull()                            const;
 
     /**
      * Return the local file system (mounted on computer) url to the camera file.
      */
-    QUrl url()    const;
+    QUrl url()                               const;
 
     /**
      * Compare for camera information equality, not including variable values.

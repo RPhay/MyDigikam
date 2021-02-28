@@ -584,11 +584,11 @@ bool UMSCamera::cameraSummary(QString& summary)
     // so we just escape HTML characters
 
     summary += i18nc("@info List of device properties",
-                     "Title: <b>%1</b><br/>"
-                     "Model: <b>%2</b><br/>"
-                     "Port: <b>%3</b><br/>"
-                     "Path: <b>%4</b><br/>"
-                     "UUID: <b>%5</b><br/><br/>",
+                     "Title: \"%1\"\n"
+                     "Model: \"%2\"\n"
+                     "Port: \"%3\"\n"
+                     "Path: \"%4\"\n"
+                     "UUID: \"%5\"\n\n",
                      title().toHtmlEscaped(),
                      model().toHtmlEscaped(),
                      port().toHtmlEscaped(),
@@ -596,18 +596,18 @@ bool UMSCamera::cameraSummary(QString& summary)
                      uuid().toHtmlEscaped());
 
     summary += i18nc("@info List of supported device operations",
-                     "Thumbnails: <b>%1</b><br/>"
-                     "Capture image: <b>%2</b><br/>"
-                     "Delete items: <b>%3</b><br/>"
-                     "Upload items: <b>%4</b><br/>"
-                     "Create directories: <b>%5</b><br/>"
-                     "Delete directories: <b>%6</b><br/><br/>",
-                     thumbnailSupport()    ? i18n("yes") : i18n("no"),
-                     captureImageSupport() ? i18n("yes") : i18n("no"),
-                     deleteSupport()       ? i18n("yes") : i18n("no"),
-                     uploadSupport()       ? i18n("yes") : i18n("no"),
-                     mkDirSupport()        ? i18n("yes") : i18n("no"),
-                     delDirSupport()       ? i18n("yes") : i18n("no"));
+                     "Thumbnails: \"%1\"\n"
+                     "Capture image: \"%2\"\n"
+                     "Delete items: \"%3\"\n"
+                     "Upload items: \"%4\"\n"
+                     "Create directories: \"%5\"\n"
+                     "Delete directories: \"%6\"\n\n",
+                     thumbnailSupport()    ? i18nc("@info: ums backend feature", "yes") : i18nc("@info: ums backend feature", "no"),
+                     captureImageSupport() ? i18nc("@info: ums backend feature", "yes") : i18nc("@info: ums backend feature", "no"),
+                     deleteSupport()       ? i18nc("@info: ums backend feature", "yes") : i18nc("@info: ums backend feature", "no"),
+                     uploadSupport()       ? i18nc("@info: ums backend feature", "yes") : i18nc("@info: ums backend feature", "no"),
+                     mkDirSupport()        ? i18nc("@info: ums backend feature", "yes") : i18nc("@info: ums backend feature", "no"),
+                     delDirSupport()       ? i18nc("@info: ums backend feature", "yes") : i18nc("@info: ums backend feature", "no"));
     return true;
 }
 

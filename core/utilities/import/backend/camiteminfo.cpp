@@ -32,17 +32,17 @@ namespace Digikam
 {
 
 CamItemInfo::CamItemInfo()
-    : size(-1),
-      width(-1),
-      height(-1),
-      readPermissions(-1),
-      writePermissions(-1),
-      downloaded(DownloadUnknown),
-      id(-1),
-      rating(0),
-      pickLabel(0),
-      colorLabel(0),
-      previewPossible(false)
+    : size              (-1),
+      width             (-1),
+      height            (-1),
+      readPermissions   (-1),
+      writePermissions  (-1),
+      downloaded        (DownloadUnknown),
+      id                (-1),
+      rating            (0),
+      pickLabel         (0),
+      colorLabel        (0),
+      previewPossible   (false)
 {
 }
 

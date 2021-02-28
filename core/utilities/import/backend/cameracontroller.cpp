@@ -129,7 +129,7 @@ CameraController::CameraController(QWidget* const parent,
                                    const QString& title, const QString& model,
                                    const QString& port, const QString& path)
     : QThread(parent),
-      d(new Private)
+      d      (new Private)
 {
     d->parent = parent;
 
