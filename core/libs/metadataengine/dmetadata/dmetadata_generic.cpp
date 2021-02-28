@@ -96,23 +96,20 @@ QVariant DMetadata::fromIptcOrXmp(const char* const iptcTagName, const char* con
     return QVariant(QVariant::String);
 }
 
-QVariant DMetadata::fromExifOrXmpList(const QStringList& exifList, const QStringList& xmpList) const
+QVariant DMetadata::fromExifOrXmpList(const QStringList& tagList) const
 {
     QVariant var;
 
-    foreach (const QString& exifTagName, exifList)
+    foreach (const QString& tagName, tagList)
     {
-        var = getExifTagVariant(exifTagName.toLatin1().constData(), false);
-
-        if (!var.isNull())
+        if      (tagName.startsWith(QLatin1String("Exif")))
         {
-            return var;
+            var = getExifTagVariant(tagName.toLatin1().constData(), false);
         }
-    }
-
-    foreach (const QString& xmpTagName, xmpList)
-    {
-        var = getXmpTagVariant(xmpTagName.toLatin1().constData());
+        else if (tagName.startsWith(QLatin1String("Xmp")))
+        {
+            var = getXmpTagVariant(tagName.toLatin1().constData());
+        }
 
         if (!var.isNull())
         {
@@ -230,28 +227,24 @@ QVariant DMetadata::getMetadataField(MetadataInfo::Field field) const
 
         case MetadataInfo::Make:
         {
-            QStringList exifList;
-            exifList << QLatin1String("Exif.Image.Make");
-            exifList << QLatin1String("Exif.PanasonicRaw.Make");
+            QStringList tagList;
+            tagList << QLatin1String("Exif.Image.Make");
+            tagList << QLatin1String("Exif.PanasonicRaw.Make");
+            tagList << QLatin1String("Xmp.tiff.Make");
 
-            QStringList xmpList;
-            xmpList << QLatin1String("Xmp.tiff.Make");
-
-            QVariant var = fromExifOrXmpList(exifList, xmpList);
+            QVariant var = fromExifOrXmpList(tagList);
 
             return QVariant(var.toString().trimmed());
         }
 
         case MetadataInfo::Model:
         {
-            QStringList exifList;
-            exifList << QLatin1String("Exif.Image.Model");
-            exifList << QLatin1String("Exif.PanasonicRaw.Model");
+            QStringList tagList;
+            tagList << QLatin1String("Exif.Image.Model");
+            tagList << QLatin1String("Exif.PanasonicRaw.Model");
+            tagList << QLatin1String("Xmp.tiff.Model");
 
-            QStringList xmpList;
-            xmpList << QLatin1String("Xmp.tiff.Model");
-
-            QVariant var = fromExifOrXmpList(exifList, xmpList);
+            QVariant var = fromExifOrXmpList(tagList);
 
             return QVariant(var.toString().trimmed());
         }
@@ -317,14 +310,12 @@ QVariant DMetadata::getMetadataField(MetadataInfo::Field field) const
 
         case MetadataInfo::Sensitivity:
         {
-            QStringList exifList;
-            exifList << QLatin1String("Exif.Photo.ISOSpeedRatings");
-            exifList << QLatin1String("Exif.PanasonicRaw.ISOSpeed");
+            QStringList tagList;
+            tagList << QLatin1String("Exif.Photo.ISOSpeedRatings");
+            tagList << QLatin1String("Exif.PanasonicRaw.ISOSpeed");
+            tagList << QLatin1String("Xmp.exif.ISOSpeedRatings");
 
-            QStringList xmpList;
-            xmpList << QLatin1String("Xmp.exif.ISOSpeedRatings");
-
-            QVariant var = fromExifOrXmpList(exifList, xmpList);
+            QVariant var = fromExifOrXmpList(tagList);
 /*
             if (var.isNull())
             {

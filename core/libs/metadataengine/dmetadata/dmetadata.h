@@ -384,7 +384,7 @@ private:
 
     QVariant fromExifOrXmp(const char* const exifTagName, const char* const xmpTagName)                                 const;
     QVariant fromIptcOrXmp(const char* const iptcTagName, const char* const xmpTagName)                                 const;
-    QVariant fromExifOrXmpList(const QStringList& exifList, const QStringList& xmpList)                                 const;
+    QVariant fromExifOrXmpList(const QStringList& tagList)                                                              const;
     bool hasValidField(const QVariantList& list)                                                                        const;
     QVariant toStringListVariant(const QStringList& list)                                                               const;
 
