@@ -200,10 +200,10 @@ XMPCredits::XMPCredits(QWidget* const parent)
 
     // --------------------------------------------------------
 
-    grid->addWidget(d->creatorEdit,          0, 0, 1, 3);
+    grid->addWidget(d->creatorEdit,         0, 0, 1, 3);
     grid->addWidget(d->syncEXIFArtistCheck, 1, 0, 1, 3);
-    grid->addWidget(d->creatorTitleCheck,    2, 0, 1, 1);
-    grid->addWidget(d->creatorTitleEdit,     2, 1, 1, 2);
+    grid->addWidget(d->creatorTitleCheck,   2, 0, 1, 1);
+    grid->addWidget(d->creatorTitleEdit,    2, 1, 1, 2);
     grid->addWidget(contactBox,             3, 0, 1, 3);
     grid->addWidget(d->creditCheck,         4, 0, 1, 1);
     grid->addWidget(d->creditEdit,          4, 1, 1, 2);
