@@ -382,7 +382,8 @@ public:
     enum Operation
     {
         All,
-        OneOf
+        OneOf,
+        InTree
     };
 
 public:

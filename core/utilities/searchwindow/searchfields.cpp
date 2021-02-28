@@ -2590,6 +2590,7 @@ void SearchFieldAlbum::setupValueWidgets(QGridLayout* layout, int row, int colum
         m_operation   = new SqueezedComboBox(m_wrapperBox);
         m_operation->addSqueezedItem(i18nc("@label:listbox", "In All"),    Operation::All);
         m_operation->addSqueezedItem(i18nc("@label:listbox", "In One of"), Operation::OneOf);
+        m_operation->addSqueezedItem(i18nc("@label:listbox", "In Tree"),   Operation::InTree);
 
         m_tagComboBox->setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Minimum);
         m_tagComboBox->setDefaultModel();
@@ -2633,13 +2634,17 @@ void SearchFieldAlbum::read(SearchXmlCachingReader& reader)
     }
     else if (m_type == TypeTag)
     {
-        if (reader.fieldRelation() == SearchXml::AllOf)
+        if      (reader.fieldRelation() == SearchXml::AllOf)
         {
             m_operation->setCurrentIndex(Operation::All);
         }
-        else
+        else if (reader.fieldRelation() == SearchXml::OneOf)
         {
             m_operation->setCurrentIndex(Operation::OneOf);
+        }
+        else if (reader.fieldRelation() == SearchXml::InTree)
+        {
+            m_operation->setCurrentIndex(Operation::InTree);
         }
 
         foreach (int id, ids)
@@ -2684,9 +2689,15 @@ void SearchFieldAlbum::write(SearchXmlWriter& writer)
 
     if (m_operation)
     {
-        if (m_operation->itemData(m_operation->currentIndex()).toInt() == Operation::All)
+        int operation = m_operation->currentData().toInt();
+
+        if      (operation == Operation::All)
         {
             relation = SearchXml::AllOf;
+        }
+        else if (operation == Operation::InTree)
+        {
+            relation = SearchXml::InTree;
         }
     }
 
@@ -2697,7 +2708,12 @@ void SearchFieldAlbum::write(SearchXmlWriter& writer)
     }
     else
     {
-        writer.writeField(m_name, SearchXml::Equal);
+        if (relation != SearchXml::InTree)
+        {
+            relation = SearchXml::Equal;
+        }
+
+        writer.writeField(m_name, relation);
         writer.writeValue(albumIds.first());
     }
 
@@ -2707,6 +2723,11 @@ void SearchFieldAlbum::write(SearchXmlWriter& writer)
 void SearchFieldAlbum::reset()
 {
     m_model->resetCheckedAlbums();
+
+    if (m_operation)
+    {
+        m_operation->setCurrentIndex(Operation::All);
+    }
 }
 
 void SearchFieldAlbum::setValueWidgetsVisible(bool visible)
