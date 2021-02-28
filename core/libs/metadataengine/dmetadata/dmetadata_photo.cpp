@@ -60,6 +60,11 @@ PhotoInfoContainer DMetadata::getPhotographInformation() const
             photoInfo.make = getXmpTagString("Xmp.tiff.Make");
         }
 
+        if (photoInfo.make.isEmpty())
+        {
+            photoInfo.make = getExifTagString("Exif.PanasonicRaw.Make");
+        }
+
         // -----------------------------------------------------------------------------------
 
         photoInfo.model    = getExifTagString("Exif.Image.Model");
@@ -67,6 +72,11 @@ PhotoInfoContainer DMetadata::getPhotographInformation() const
         if (photoInfo.model.isEmpty())
         {
             photoInfo.model = getXmpTagString("Xmp.tiff.Model");
+        }
+
+        if (photoInfo.model.isEmpty())
+        {
+            photoInfo.model = getExifTagString("Exif.PanasonicRaw.Model");
         }
 
         // -----------------------------------------------------------------------------------
