@@ -241,36 +241,36 @@ void ImportUI::setupUserArea()
     d->advBox->setObjectName(QLatin1String("Camera Settings Expander"));
 
     d->renameCustomizer = new RenameCustomizer(d->advBox, d->cameraTitle);
-    d->renameCustomizer->setWhatsThis(i18n("Set how digiKam will rename files as they are downloaded."));
-    d->advBox->addItem(d->renameCustomizer, QIcon::fromTheme(QLatin1String("insert-image")), i18n("File Renaming Options"),
+    d->renameCustomizer->setWhatsThis(i18nc("@info", "Set how digiKam will rename files as they are downloaded."));
+    d->advBox->addItem(d->renameCustomizer, QIcon::fromTheme(QLatin1String("insert-image")), i18nc("@item", "File Renaming Options"),
                        QLatin1String("RenameCustomizer"), true);
 
     // -- Albums Auto-creation options -----------------------------------------
 
     d->albumCustomizer = new AlbumCustomizer(d->advBox);
-    d->advBox->addItem(d->albumCustomizer, QIcon::fromTheme(QLatin1String("folder-new")), i18n("Auto-creation of Albums"),
+    d->advBox->addItem(d->albumCustomizer, QIcon::fromTheme(QLatin1String("folder-new")), i18nc("@item", "Auto-creation of Albums"),
                        QLatin1String("AlbumBox"), false);
 
     // -- On the Fly options ---------------------------------------------------
 
     d->advancedSettings = new AdvancedSettings(d->advBox);
-    d->advBox->addItem(d->advancedSettings, QIcon::fromTheme(QLatin1String("system-run")), i18n("On the Fly Operations (JPEG only)"),
+    d->advBox->addItem(d->advancedSettings, QIcon::fromTheme(QLatin1String("system-run")), i18nc("@item", "On the Fly Operations (JPEG only)"),
                        QLatin1String("OnFlyBox"), true);
 
     // -- DNG convert options --------------------------------------------------
 
     d->dngConvertSettings = new DNGConvertSettings(d->advBox);
-    d->advBox->addItem(d->dngConvertSettings, QIcon::fromTheme(QLatin1String("image-x-adobe-dng")), i18n("DNG Convert Options"),
+    d->advBox->addItem(d->dngConvertSettings, QIcon::fromTheme(QLatin1String("image-x-adobe-dng")), i18nc("@item", "DNG Convert Options"),
                        QLatin1String("DNGSettings"), false);
 
     // -- Scripting options ----------------------------------------------------
 
     d->scriptingSettings = new ScriptingSettings(d->advBox);
-    d->advBox->addItem(d->scriptingSettings, QIcon::fromTheme(QLatin1String("utilities-terminal")), i18n("Scripting"),
+    d->advBox->addItem(d->scriptingSettings, QIcon::fromTheme(QLatin1String("utilities-terminal")), i18nc("@item", "Scripting"),
                        QLatin1String("ScriptingBox"), false);
     d->advBox->addStretch();
 
-    d->rightSideBar->appendTab(d->advBox, QIcon::fromTheme(QLatin1String("configure")), i18n("Settings"));
+    d->rightSideBar->appendTab(d->advBox, QIcon::fromTheme(QLatin1String("configure")), i18nc("@title", "Settings"));
     d->rightSideBar->loadState();
 
     // -------------------------------------------------------------------------
@@ -431,7 +431,7 @@ void ImportUI::setupActions()
     ac->addAction(QLatin1String("importui_delete"), d->deleteAction->menuAction());
     d->cameraActions->addAction(d->deleteAction->menuAction());
 
-    d->deleteSelectedAction = new QAction(QIcon::fromTheme(QLatin1String("edit-delete")), i18nc("@action", "Delete Selected"), this);
+    d->deleteSelectedAction = new QAction(QIcon::fromTheme(QLatin1String("edit-delete")), i18nc("@action:inmenu delete item", "Delete Selected"), this);
     connect(d->deleteSelectedAction, SIGNAL(triggered()), this, SLOT(slotDeleteSelected()));
     ac->addAction(QLatin1String("importui_imagedeleteselected"), d->deleteSelectedAction);
     ac->setDefaultShortcut(d->deleteSelectedAction, Qt::Key_Delete);
@@ -439,13 +439,13 @@ void ImportUI::setupActions()
     d->deleteAction->addAction(d->deleteSelectedAction);
     d->cameraActions->addAction(d->deleteSelectedAction);
 
-    d->deleteAllAction = new QAction(QIcon::fromTheme(QLatin1String("edit-delete")), i18nc("@action", "Delete All"), this);
+    d->deleteAllAction = new QAction(QIcon::fromTheme(QLatin1String("edit-delete")), i18nc("@action:inmenu delete item", "Delete All"), this);
     connect(d->deleteAllAction, SIGNAL(triggered()), this, SLOT(slotDeleteAll()));
     ac->addAction(QLatin1String("importui_imagedeleteall"), d->deleteAllAction);
     d->deleteAction->addAction(d->deleteAllAction);
     d->cameraActions->addAction(d->deleteAllAction);
 
-    d->deleteNewAction = new QAction(QIcon::fromTheme(QLatin1String("edit-delete")), i18nc("@action", "Delete New"), this);
+    d->deleteNewAction = new QAction(QIcon::fromTheme(QLatin1String("edit-delete")), i18nc("@action:inmenu delete item", "Delete New"), this);
     connect(d->deleteNewAction, SIGNAL(triggered()), this, SLOT(slotDeleteNew()));
     ac->addAction(QLatin1String("importui_imagedeletenew"), d->deleteNewAction);
     d->deleteAction->addAction(d->deleteNewAction);
@@ -489,12 +489,12 @@ void ImportUI::setupActions()
     ac->addAction(QLatin1String("item_sort"), d->itemSortAction);
 
     // map to CamItemSortSettings enum
-    QAction* const sortByNameAction     = d->itemSortAction->addAction(i18nc("item:inmenu Sort by", "By Name"));
-    QAction* const sortByPathAction     = d->itemSortAction->addAction(i18nc("item:inmenu Sort by", "By Path"));
-    QAction* const sortByDateAction     = d->itemSortAction->addAction(i18nc("item:inmenu Sort by", "By Date"));
-    QAction* const sortByFileSizeAction = d->itemSortAction->addAction(i18nc("item:inmenu Sort by", "By Size"));
-    QAction* const sortByRatingAction   = d->itemSortAction->addAction(i18nc("item:inmenu Sort by", "By Rating"));
-    QAction* const sortByDownloadAction = d->itemSortAction->addAction(i18nc("item:inmenu Sort by", "By Download State"));
+    QAction* const sortByNameAction     = d->itemSortAction->addAction(i18nc("@item:inmenu Sort by", "By Name"));
+    QAction* const sortByPathAction     = d->itemSortAction->addAction(i18nc("@item:inmenu Sort by", "By Path"));
+    QAction* const sortByDateAction     = d->itemSortAction->addAction(i18nc("@item:inmenu Sort by", "By Date"));
+    QAction* const sortByFileSizeAction = d->itemSortAction->addAction(i18nc("@item:inmenu Sort by", "By Size"));
+    QAction* const sortByRatingAction   = d->itemSortAction->addAction(i18nc("@item:inmenu Sort by", "By Rating"));
+    QAction* const sortByDownloadAction = d->itemSortAction->addAction(i18nc("@item:inmenu Sort by", "By Download State"));
 
     connect(sortByNameAction, &QAction::triggered,
             this, [this]() { d->view->slotSortImagesBy((int)CamItemSortSettings::SortByFileName); });
@@ -518,7 +518,7 @@ void ImportUI::setupActions()
 
     // -- Item Sort Order ------------------------------------------------------------
 
-    d->itemSortOrderAction                    = new KSelectAction(i18nc("@title:inmenu", "Item Sorting &Order"), this);
+    d->itemSortOrderAction                    = new KSelectAction(i18nc("@action", "Item Sorting &Order"), this);
     d->itemSortOrderAction->setWhatsThis(i18nc("@info:whatsthis", "Defines whether items are sorted in ascending or descending manner."));
     ac->addAction(QLatin1String("item_sort_order"), d->itemSortOrderAction);
 
@@ -583,7 +583,7 @@ void ImportUI::setupActions()
 
     // ------------------------------------------------------------------------------------------------
 
-    d->viewCMViewAction = new QAction(QIcon::fromTheme(QLatin1String("video-display")), i18n("Color-Managed View"), this);
+    d->viewCMViewAction = new QAction(QIcon::fromTheme(QLatin1String("video-display")), i18nc("@action", "Color-Managed View"), this);
     d->viewCMViewAction->setCheckable(true);
     connect(d->viewCMViewAction, SIGNAL(triggered()), this, SLOT(slotToggleColorManagedView()));
     ac->addAction(QLatin1String("color_managed_view"), d->viewCMViewAction);
@@ -953,7 +953,9 @@ void ImportUI::slotCancelButton()
     d->statusProgressBar->setProgressBarMode(StatusProgressBar::TextMode,
                                              i18nc("@info:status", "Canceling current operation, please wait..."));
     d->controller->slotCancel();
+
     //d->historyUpdater->slotCancel();
+
     d->currentlyDeleting.clear();
     refreshFreeSpace();
 }
@@ -1021,8 +1023,10 @@ bool ImportUI::dialogClosed()
     if (isBusy())
     {
         d->controller->slotCancel();
+
         // will be read in slotBusy later and finishDialog
         // will be called only when everything is finished
+
         d->closed = true;
     }
     else
@@ -1093,13 +1097,15 @@ void ImportUI::slotBusy(bool val)
 
         // selection-dependent update of lockAction, markAsDownloadedAction,
         // downloadSelectedAction, downloadDelSelectedAction, deleteSelectedAction
+
         updateActions();
 
         m_animLogo->stop();
         d->statusProgressBar->setProgressValue(0);
-        d->statusProgressBar->setProgressBarMode(StatusProgressBar::TextMode, i18nc("@info:status", "Ready"));
+        d->statusProgressBar->setProgressBarMode(StatusProgressBar::TextMode, i18nc("@info:status busy state", "Ready"));
 
         // like WDestructiveClose, but after camera controller operation has safely finished
+
         if (d->closed)
         {
             finishDialog();
@@ -1165,13 +1171,16 @@ void ImportUI::slotConnected(bool val)
     else
     {
         // disable unsupported actions
+
         d->uploadAction->setEnabled(d->controller->cameraUploadSupport());
 
         d->cameraCaptureAction->setEnabled(d->controller->cameraCaptureImageSupport());
 
         d->errorWidget->hide();
         refreshFreeSpace();
+
         // FIXME ugly c&p from slotFolderList
+
         KSharedConfig::Ptr config = KSharedConfig::openConfig();
         KConfigGroup group        = config->group(d->configGroupName);
         bool useMetadata          = group.readEntry(d->configUseFileMetadata, false);
@@ -1194,6 +1203,7 @@ void ImportUI::slotFolderList(const QStringList& folderList)
     bool useMetadata          = group.readEntry(d->configUseFileMetadata, false);
 
     // when getting a list of subfolders, request their contents and also their subfolders
+
     for (QStringList::const_iterator it = folderList.constBegin() ;
          it != folderList.constEnd() ; ++it)
     {
@@ -1266,6 +1276,7 @@ void ImportUI::slotUploadItems(const QList<QUrl>& urls)
     if (d->cameraFreeSpace->isValid())
     {
         // Check if space require to upload new items in camera is enough.
+
         quint64 totalKbSize = 0;
 
         for (QList<QUrl>::const_iterator it = urls.constBegin() ; it != urls.constEnd() ; ++it)
@@ -1298,6 +1309,7 @@ void ImportUI::slotUploadItems(const QList<QUrl>& urls)
     }
 
     // since we access members here, check if the pointer is still valid
+
     if (!dlg)
     {
         return;
@@ -1331,8 +1343,8 @@ void ImportUI::slotUploadItems(const QList<QUrl>& urls)
 
         while (d->view->hasImage(uploadInfo))
         {
-            QString msg(i18nc("@info", "<qt>Camera Folder <resource>%1</resource> already contains the item <resource>%2</resource>.<br/>"
-                              "Please enter a new filename (without extension):</qt>",
+            QString msg(i18nc("@info", "Camera Folder \"%1\" already contains the item \"%2\".\n"
+                              "Please enter a new filename (without extension):",
                               QDir::toNativeSeparators(cameraFolder), fi.fileName()));
             uploadInfo.name = QInputDialog::getText(this,
                                                     i18nc("@title:window", "File already exists"),
@@ -1408,6 +1420,7 @@ void ImportUI::slotDownload(bool onlySelected, bool deleteAfter, Album* album)
     // See bug #143934: force to select all items to prevent problem
     // when !renameCustomizer->useDefault() ==> iconItem->getDownloadName()
     // can return an empty string in this case because it depends on selection.
+
     if (!onlySelected)
     {
         d->view->slotSelectAll();
@@ -1475,8 +1488,8 @@ void ImportUI::slotDownload(bool onlySelected, bool deleteAfter, Album* album)
                 album = nullptr;
             }
 
-            QString header(i18nc("@info", "<p>Please select the destination album from the digiKam library to "
-                                 "import the camera pictures into.</p>"));
+            QString header(i18nc("@info", "Please select the destination album from the digiKam library to "
+                                 "import the camera pictures into."));
 
             album = AlbumSelectDialog::selectAlbum(this, dynamic_cast<PAlbum*>(album), header);
 
@@ -1518,6 +1531,7 @@ void ImportUI::slotDownload(bool onlySelected, bool deleteAfter, Album* album)
 void ImportUI::slotDownloaded(const QString& folder, const QString& file, int status)
 {
     // Is auto-rotate option checked?
+
     bool autoRotate = downloadSettings().autoRotate;
     bool previewItems = ImportSettings::instance()->getPreviewItemsWhileDownload();
 
@@ -1552,17 +1566,20 @@ void ImportUI::slotDownloaded(const QString& folder, const QString& file, int st
     }
 
     // Download all items is complete ?
+
     if (d->statusProgressBar->progressValue() == d->statusProgressBar->progressTotalSteps())
     {
         if (d->deleteAfter)
         {
             // No need passive pop-up here, because we will ask to confirm items deletion with dialog.
+
             QTimer::singleShot(0, this, SLOT(slotDeleteAfterDownload()));
         }
         else
         {
             // Pop-up a notification to inform user when all is done,
             // and inform if auto-rotation will take place.
+
             if (autoRotate)
             {
                 DNotificationWrapper(QLatin1String("cameradownloaded"),
@@ -1635,6 +1652,7 @@ void ImportUI::slotToggleLock()
         bool lock      = true;
 
         // If item is currently locked, unlock it.
+
         if (writePerm == 0)
         {
             lock = false;
@@ -1674,6 +1692,7 @@ void ImportUI::slotUpdateDownloadName()
     foreach (const CamItemInfo& info, d->view->allItems())
     {
         CamItemInfo& refInfo = d->view->camItemInfoRef(info.folder, info.name);
+
         // qCDebug(DIGIKAM_IMPORTUI_LOG) << "slotDownloadNameChanged, old: " << refInfo.downloadName;
 
         if (refInfo.isNull())
@@ -1759,13 +1778,15 @@ void ImportUI::slotUpdateDownloadName()
         }
 
         refInfo.downloadName = newName;
+
         // qCDebug(DIGIKAM_IMPORTUI_LOG) << "slotDownloadNameChanged, new: " << refInfo.downloadName;
     }
 
     d->view->updateIconView();
 }
 
-//FIXME: the new pictures are marked by CameraHistoryUpdater which is not working yet.
+// FIXME: the new pictures are marked by CameraHistoryUpdater which is not working yet.
+
 void ImportUI::slotSelectNew()
 {
     CamItemInfoList toBeSelected;
@@ -1812,6 +1833,7 @@ void ImportUI::toggleLock(CamItemInfo& info)
 }
 
 // TODO is this really necessary? why not just use the folders from listfolders call?
+
 QMap<QString, int> ImportUI::countItemsByFolders() const
 {
     QString                      path;
@@ -1845,7 +1867,7 @@ QMap<QString, int> ImportUI::countItemsByFolders() const
 void ImportUI::setDownloaded(CamItemInfo& itemInfo, int status)
 {
     itemInfo.downloaded = status;
-    d->progressValue = 0;
+    d->progressValue    = 0;
 
     if (itemInfo.downloaded == CamItemInfo::DownloadStarted)
     {
@@ -1888,22 +1910,26 @@ void ImportUI::itemsSelectionSizeInfo(unsigned long& fSizeKB, unsigned long& dSi
                 if (settings.convertJpeg)
                 {
                     // Estimated size is around 5 x original size when JPEG=>PNG.
+
                     dSize += size * 5;
                 }
                 else if (settings.autoRotate)
                 {
                     // We need a double size to perform rotation.
+
                     dSize += size * 2;
                 }
                 else
                 {
                     // Real file size is added.
+
                     dSize += size;
                 }
             }
             else if (settings.convertDng && info.mime == QLatin1String("image/x-raw"))
             {
                 // Estimated size is around 2 x original size when RAW=>DNG.
+
                 dSize += size * 2;
             }
             else
@@ -1959,12 +1985,13 @@ void ImportUI::deleteItems(bool onlySelected, bool onlyDownloaded)
     }
 
     // If we want to delete some locked files, just give a feedback to user.
+
     if (!lockedList.isEmpty())
     {
         QString infoMsg(i18nc("@info", "The items listed below are locked by camera (read-only). "
                               "These items will not be deleted. If you really want to delete these items, "
                               "please unlock them and try again."));
-        CameraMessageBox::informationList(d->camThumbsCtrl, this, i18n("Information"), infoMsg, lockedList);
+        CameraMessageBox::informationList(d->camThumbsCtrl, this, i18nc("@title", "Information"), infoMsg, lockedList);
     }
 
     if (folders.isEmpty())
@@ -1972,17 +1999,17 @@ void ImportUI::deleteItems(bool onlySelected, bool onlyDownloaded)
         return;
     }
 
-    QString warnMsg(i18ncp("@info", "About to delete this image. "
-                           "<b>Deleted file is unrecoverable.</b> "
+    QString warnMsg(i18ncp("@info", "About to delete this image.\n"
+                           "Deleted file is unrecoverable.\n"
                            "Are you sure?",
-                           "About to delete these %1 images. "
-                           "<b>Deleted files are unrecoverable.</b> "
+                           "About to delete these %1 images.\n"
+                           "Deleted files are unrecoverable.\n"
                            "Are you sure?",
                            deleteList.count()));
 
     if (CameraMessageBox::warningContinueCancelList(d->camThumbsCtrl,
                                                     this,
-                                                    i18n("Warning"),
+                                                    i18nc("@title: confirm delete items dialog", "Warning"),
                                                     warnMsg,
                                                     deleteList,
                                                     QLatin1String("DontAskAgainToDeleteItemsFromCamera"))
@@ -1996,13 +2023,16 @@ void ImportUI::deleteItems(bool onlySelected, bool onlyDownloaded)
         d->statusProgressBar->setProgressBarMode(StatusProgressBar::ProgressBarMode);
 
         // enable cancel action.
+
         d->cameraCancelAction->setEnabled(true);
 
         for ( ; itFolder != folders.constEnd() ; ++itFolder, ++itFile)
         {
             d->controller->deleteFile(*itFolder, *itFile);
+
             // the currentlyDeleting list is used to prevent loading items which
             // will immanently be deleted into the sidebar and wasting time
+
             d->currentlyDeleting.append(*itFolder + *itFile);
         }
     }
@@ -2075,7 +2105,9 @@ bool ImportUI::downloadCameraItems(PAlbum* pAlbum, bool onlySelected, bool delet
         settings.pickLabel  = info.pickLabel;
         settings.colorLabel = info.colorLabel;
         settings.rating     = info.rating;
+
         // downloadName should already be set by now
+
         downloadName = info.downloadName;
 
         QUrl downloadUrl(url);
@@ -2096,6 +2128,7 @@ bool ImportUI::downloadCameraItems(PAlbum* pAlbum, bool onlySelected, bool delet
         {
             // when using custom renaming (e.g. by date, see bug 179902)
             // make sure that we create unique names
+
             downloadUrl = downloadUrl.adjusted(QUrl::StripTrailingSlash);
             downloadUrl.setPath(downloadUrl.path() + QLatin1Char('/') + downloadName);
             QString suggestedPath = downloadUrl.toLocalFile();
@@ -2148,10 +2181,12 @@ bool ImportUI::downloadCameraItems(PAlbum* pAlbum, bool onlySelected, bool delet
     d->statusProgressBar->setProgressBarMode(StatusProgressBar::ProgressBarMode);
 
     // enable cancel action.
+
     d->cameraCancelAction->setEnabled(true);
 
     // disable settings tab here instead of slotBusy:
     // Only needs to be disabled while downloading
+
     d->advBox->setEnabled(false);
     d->view->setEnabled(false);
 
@@ -2170,6 +2205,7 @@ bool ImportUI::createSubAlbums(QUrl& downloadUrl, const CamItemInfo& info)
     {
         success &= createDateBasedSubAlbum(downloadUrl, info);
     }
+
     if (d->albumCustomizer->autoAlbumExtEnabled())
     {
         success &= createExtBasedSubAlbum(downloadUrl, info);
@@ -2185,11 +2221,13 @@ bool ImportUI::createSubAlbum(QUrl& downloadUrl, const QString& subalbum, const 
     if (!createAutoAlbum(downloadUrl, subalbum, date, errMsg))
     {
         QMessageBox::critical(this, qApp->applicationName(), errMsg);
+
         return false;
     }
 
     downloadUrl = downloadUrl.adjusted(QUrl::StripTrailingSlash);
     downloadUrl.setPath(downloadUrl.path() + QLatin1Char('/') + subalbum);
+
     return true;
 }
 
@@ -2224,6 +2262,7 @@ bool ImportUI::createExtBasedSubAlbum(QUrl& downloadUrl, const CamItemInfo& info
 {
     // We use the target file name to compute sub-albums name to take a care about
     // conversion on the fly option.
+
     QFileInfo fi(info.downloadName.isEmpty()
                  ? info.name
                  : info.downloadName);
@@ -2281,6 +2320,7 @@ void ImportUI::slotDeleted(const QString& folder, const QString& file, bool stat
     if (status)
     {
         // do this after removeItem.
+
         d->currentlyDeleting.removeAll(folder + file);
     }
 
@@ -2349,9 +2389,11 @@ void ImportUI::slotImageSelected(const CamItemInfoList& selection, const CamItem
             d->rightSideBar->slotNoCurrentItem();
             break;
         }
+
         case 1:
         {
             // if selected item is in the list of item which will be deleted, set no current item
+
             if (!d->currentlyDeleting.contains(selection.first().folder + selection.first().name))
             {
                 updateRightSideBar(selection.first());
@@ -2360,7 +2402,7 @@ void ImportUI::slotImageSelected(const CamItemInfoList& selection, const CamItem
 
                 d->statusProgressBar->setProgressBarMode(StatusProgressBar::TextMode,
                                                          i18nc("@info:status Filename of first selected item of number of items",
-                                                               "<b>%1</b> (%2 of %3)",
+                                                               "\"%1\" (%2 of %3)",
                                                                selection.first().url().fileName(), index, num_images));
             }
             else
@@ -2375,6 +2417,7 @@ void ImportUI::slotImageSelected(const CamItemInfoList& selection, const CamItem
 
             break;
         }
+
         default:
         {
             d->statusProgressBar->setProgressBarMode(StatusProgressBar::TextMode,
@@ -2436,18 +2479,20 @@ bool ImportUI::createAutoAlbum(const QUrl& parentURL, const QString& sub,
     url.setPath(url.path() + QLatin1Char('/') + sub);
 
     // first stat to see if the album exists
+
     QFileInfo info(url.toLocalFile());
 
     if (info.exists())
     {
         // now check if its really a directory
+
         if (info.isDir())
         {
             return true;
         }
         else
         {
-            errMsg = i18nc("@info", "A file with the same name (<b>%1</b>) already exists in folder <resource>%2</resource>.",
+            errMsg = i18nc("@info", "A file with the same name (\"%1\") already exists in folder \"%2\".",
                            sub, QDir::toNativeSeparators(parentURL.toLocalFile()));
             return false;
         }
@@ -2455,15 +2500,17 @@ bool ImportUI::createAutoAlbum(const QUrl& parentURL, const QString& sub,
 
     // looks like the directory does not exist, try to create it.
     // First we make sure that the parent exists.
+
     PAlbum* parent = AlbumManager::instance()->findPAlbum(parentURL);
 
     if (!parent)
     {
-        errMsg = i18nc("@info", "Failed to find Album for path <b>%1</b>.", QDir::toNativeSeparators(parentURL.toLocalFile()));
+        errMsg = i18nc("@info", "Failed to find Album for path \"%1\".", QDir::toNativeSeparators(parentURL.toLocalFile()));
         return false;
     }
 
     // Create the album, with any parent albums required for the structure
+
     QUrl albumUrl(parentURL);
 
     foreach (const QString& folder, sub.split(QLatin1Char('/'), QString::SkipEmptyParts))
@@ -2554,7 +2601,6 @@ void ImportUI::slotOnlineVersionCheck()
     Setup::onlineVersionCheck();
 }
 
-
 void ImportUI::refreshCollectionFreeSpace()
 {
     d->albumLibraryFreeSpace->setPaths(CollectionManager::instance()->allAvailableAlbumRootPaths());
@@ -2643,7 +2689,9 @@ void ImportUI::slotSwitchedToMapView()
     d->zoomBar->setBarMode(DZoomBar::ThumbsSizeCtrl);
 
 #ifdef HAVE_MARBLE
+
     d->imageViewSelectionAction->setCurrentAction(d->mapViewAction);
+
 #endif
 
     toogleShowBar();
@@ -2678,7 +2726,9 @@ void ImportUI::toogleShowBar()
 void ImportUI::slotSetupChanged()
 {
     d->view->importFilterModel()->setStringTypeNatural(ApplicationSettings::instance()->isStringTypeNatural());
+
     // Load full-screen options
+
     KConfigGroup group = KSharedConfig::openConfig()->group(ApplicationSettings::instance()->generalConfigGroupName());
     readFullScreenSettings(group);
 
