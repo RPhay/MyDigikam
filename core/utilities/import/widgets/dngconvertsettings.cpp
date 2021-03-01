@@ -50,7 +50,7 @@ class Q_DECL_HIDDEN DNGConvertSettings::Private
 public:
 
     explicit Private()
-        : convertDng(nullptr),
+        : convertDng (nullptr),
           dngSettings(nullptr)
     {
     }
@@ -62,9 +62,9 @@ public:
 
 DNGConvertSettings::DNGConvertSettings(QWidget* const parent)
     : QWidget(parent),
-      d(new Private)
+      d      (new Private)
 {
-    const int spacing = QApplication::style()->pixelMetric(QStyle::PM_DefaultLayoutSpacing);
+    const int spacing           = QApplication::style()->pixelMetric(QStyle::PM_DefaultLayoutSpacing);
 
     QVBoxLayout* const mainVlay = new QVBoxLayout(this);
     QHBoxLayout* const convHlay = new QHBoxLayout(this);
@@ -73,8 +73,8 @@ DNGConvertSettings::DNGConvertSettings(QWidget* const parent)
     d->dngSettings              = new DNGSettings(this);
 
     QLabel* const dngLinkLabel  = new QLabel(this);
-    dngLinkLabel->setText(i18n("<p><a href='https://en.wikipedia.org/wiki/Digital_Negative_(file_format)'>"
-                               "DNG container</a></p>"));
+    dngLinkLabel->setText(i18nc("@label", "<p><a href='https://en.wikipedia.org/wiki/Digital_Negative_(file_format)'>"
+                                          "DNG container</a></p>"));
     dngLinkLabel->setAlignment(Qt::AlignLeft | Qt::AlignVCenter);
     dngLinkLabel->setOpenExternalLinks(true);
     dngLinkLabel->setWordWrap(false);
@@ -90,9 +90,9 @@ DNGConvertSettings::DNGConvertSettings(QWidget* const parent)
     mainVlay->setContentsMargins(QMargins());
     mainVlay->setSpacing(0);
 
-    setWhatsThis(i18n("Set here all options to convert RAW images to DNG container automatically "
+    setWhatsThis(i18nc("@info", "Set here all options to convert RAW images to DNG container automatically "
                       "as they are downloaded."));
-    d->convertDng->setWhatsThis(i18n("Enable this option to convert RAW images to DNG container automatically."));
+    d->convertDng->setWhatsThis(i18nc("@info", "Enable this option to convert RAW images to DNG container automatically."));
 
     setLayout(mainVlay);
 

@@ -61,10 +61,10 @@ class Q_DECL_HIDDEN MountPointInfo
 public:
 
     MountPointInfo()
-      : isValid(false),
-        kBSize(0),
-        kBUsed(0),
-        kBAvail(0)
+      : isValid (false),
+        kBSize  (0),
+        kBUsed  (0),
+        kBAvail (0)
     {
     }
 
@@ -84,15 +84,15 @@ class Q_DECL_HIDDEN FreeSpaceWidget::Private
 public:
 
     explicit Private()
-      : isValid(false),
-        percentUsed(-1),
-        dSizeKb(0),
-        kBSize(0),
-        kBUsed(0),
-        kBAvail(0),
-        timer(nullptr),
-        toolTip(nullptr),
-        mode(FreeSpaceWidget::AlbumLibrary)
+      : isValid     (false),
+        percentUsed (-1),
+        dSizeKb     (0),
+        kBSize      (0),
+        kBUsed      (0),
+        kBAvail     (0),
+        timer       (nullptr),
+        toolTip     (nullptr),
+        mode        (FreeSpaceWidget::AlbumLibrary)
     {
     }
 
@@ -119,7 +119,7 @@ public:
 
 FreeSpaceWidget::FreeSpaceWidget(QWidget* const parent, int width)
     : QWidget(parent),
-      d(new Private)
+      d      (new Private)
 {
     setAttribute(Qt::WA_DeleteOnClose);
     setFixedWidth(width);
@@ -336,11 +336,11 @@ void FreeSpaceWidget::updateToolTip()
     if (isValid())
     {
         QString value;
-        QString header = i18n("Camera Media");
+        QString header = i18nc("@title", "Camera Media");
 
         if (d->mode == FreeSpaceWidget::AlbumLibrary)
         {
-            header = i18n("Album Library");
+            header = i18nc("@title", "Album Library");
         }
 
         DToolTipStyleSheet cnt(ApplicationSettings::instance()->getToolTipsFont());

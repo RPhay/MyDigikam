@@ -56,14 +56,14 @@ class Q_DECL_HIDDEN AlbumCustomizer::Private
 public:
 
     explicit Private()
-        : autoAlbumDateCheck(nullptr),
-          autoAlbumExtCheck(nullptr),
-          folderDateLabel(nullptr),
-          customizer(nullptr),
+        : autoAlbumDateCheck (nullptr),
+          autoAlbumExtCheck  (nullptr),
+          folderDateLabel    (nullptr),
+          customizer         (nullptr),
           tooltipToggleButton(nullptr),
-          customExample(nullptr),
-          folderDateFormat(nullptr),
-          tooltipDialog(nullptr)
+          customExample      (nullptr),
+          folderDateFormat   (nullptr),
+          tooltipDialog      (nullptr)
     {
     }
 
@@ -85,28 +85,29 @@ public:
 
 AlbumCustomizer::AlbumCustomizer(QWidget* const parent)
     : QWidget(parent),
-      d(new Private)
+      d      (new Private)
 {
     const int spacing = QApplication::style()->pixelMetric(QStyle::PM_DefaultLayoutSpacing);
 
     d->tooltipDialog = new TooltipDialog(this);
-    d->tooltipDialog->setTooltip(i18n("<p>These expressions may be used to customize date format:</p>"
-                                      "<p><b>d</b>: The day as a number without a leading zero (1 to 31)</p>"
-                                      "<p><b>dd</b>: The day as a number with a leading zero (01 to 31)</p>"
-                                      "<p><b>ddd</b>: The abbreviated localized day name (e.g. 'Mon' to 'Sun')</p>"
-                                      "<p><b>dddd</b>: The long localized day name (e.g. 'Monday' to 'Sunday').</p>"
-                                      "<p><b>M</b>: The month as a number without a leading zero (1 to 12)</p>"
-                                      "<p><b>MM</b>: The month as a number with a leading zero (01 to 12)</p>"
-                                      "<p><b>MMM</b>: The abbreviated localized month name (e.g. 'Jan' to 'Dec')</p>"
-                                      "<p><b>MMMM</b>: The long localized month name (e.g. 'January' to 'December')</p>"
-                                      "<p><b>yy</b>: The year as two digit number (eg. 00 to 99)</p>"
-                                      "<p><b>yyyy</b>: The year as four digit number (eg. 2012)</p>"
-                                      "<p>All other input characters will be treated as text. Any sequence of characters "
-                                      "that are enclosed in singlequotes will be treated as text and not be used as an "
-                                      "expression. Examples, if date is 20 July 1969:</p>"
-                                      "<p><b>dd.MM.yyyy</b> : 20.07.1969</p>"
-                                      "<p><b>ddd MMMM d yy</b> : Sun July 20 69</p>"
-                                      "<p><b>'Photo shot on ' dddd</b> : Photo shot on Sunday</p>"
+    d->tooltipDialog->setTooltip(i18nc("@info",
+                                       "These expressions may be used to customize date format:\n"
+                                       "\"d\": The day as a number without a leading zero (1 to 31)\n"
+                                       "\"dd\": The day as a number with a leading zero (01 to 31)\n"
+                                       "\"ddd\": The abbreviated localized day name (e.g. 'Mon' to 'Sun')\n"
+                                       "\"dddd\": The long localized day name (e.g. 'Monday' to 'Sunday').\n"
+                                       "\"M\": The month as a number without a leading zero (1 to 12)\n"
+                                       "\"MM\": The month as a number with a leading zero (01 to 12)\n"
+                                       "\"MMM\": The abbreviated localized month name (e.g. 'Jan' to 'Dec')\n"
+                                       "\"MMMM\": The long localized month name (e.g. 'January' to 'December')\n"
+                                       "\"yy\": The year as two digit number (eg. 00 to 99)\n"
+                                       "\"yyyy\": The year as four digit number (eg. 2012)\n"
+                                       "All other input characters will be treated as text. Any sequence of characters "
+                                       "that are enclosed in singlequotes will be treated as text and not be used as an "
+                                       "expression. Examples, if date is 20 July 1969:\n"
+                                       "\"dd.MM.yyyy\" : 20.07.1969\n"
+                                       "\"ddd MMMM d yy\" : Sun July 20 69\n"
+                                       "\"'Photo shot on ' dddd\" : Photo shot on Sunday\n"
                                      ));
     d->tooltipDialog->resize(650, 530);
 
@@ -116,16 +117,16 @@ AlbumCustomizer::AlbumCustomizer(QWidget* const parent)
     DHBox* const hbox1           = new DHBox(this);
     d->folderDateLabel           = new QLabel(i18nc("@label:listbox", "Date format:"), hbox1);
     d->folderDateFormat          = new QComboBox(hbox1);
-    d->folderDateFormat->insertItem(IsoDateFormat,    i18nc("@item:inlistbox", "ISO"));
-    d->folderDateFormat->insertItem(TextDateFormat,   i18nc("@item:inlistbox", "Full Text"));
-    d->folderDateFormat->insertItem(LocalDateFormat,  i18nc("@item:inlistbox", "Local Settings"));
-    d->folderDateFormat->insertItem(CustomDateFormat, i18nc("@item:inlistbox", "Custom"));
+    d->folderDateFormat->insertItem(IsoDateFormat,    i18nc("@item:inlistbox folder date format", "ISO"));
+    d->folderDateFormat->insertItem(TextDateFormat,   i18nc("@item:inlistbox folder date format", "Full Text"));
+    d->folderDateFormat->insertItem(LocalDateFormat,  i18nc("@item:inlistbox folder date format", "Local Settings"));
+    d->folderDateFormat->insertItem(CustomDateFormat, i18nc("@item:inlistbox folder date format", "Custom"));
 
     DHBox* const hbox2     = new DHBox(this);
     d->customizer          = new QLineEdit(hbox2);
     d->tooltipToggleButton = new QToolButton(hbox2);
     d->tooltipToggleButton->setIcon(QIcon::fromTheme(QLatin1String("dialog-information")));
-    d->tooltipToggleButton->setToolTip(i18n("Show a list of all available options"));
+    d->tooltipToggleButton->setToolTip(i18nc("@info", "Show a list of all available options"));
 
     d->customExample       = new DAdjustableLabel(this);
 
@@ -138,22 +139,22 @@ AlbumCustomizer::AlbumCustomizer(QWidget* const parent)
     albumVlay->setContentsMargins(spacing, spacing, spacing, spacing);
     albumVlay->setSpacing(spacing);
 
-    setWhatsThis(i18n("Set how digiKam creates albums automatically when downloading."));
-    d->autoAlbumExtCheck->setWhatsThis(i18n("Enable this option if you want to download your "
+    setWhatsThis(i18nc("@info", "Set how digiKam creates albums automatically when downloading."));
+    d->autoAlbumExtCheck->setWhatsThis(i18nc("@info", "Enable this option if you want to download your "
                                             "pictures into automatically created file extension-based sub-albums of the destination "
                                             "album. This way, you can separate JPEG and RAW files as they are downloaded from your camera."));
-    d->autoAlbumDateCheck->setWhatsThis(i18n("Enable this option if you want to "
+    d->autoAlbumDateCheck->setWhatsThis(i18nc("@info", "Enable this option if you want to "
                                              "download your pictures into automatically created file date-based sub-albums "
                                              "of the destination album."));
-    d->folderDateFormat->setWhatsThis(i18n("<p>Select your preferred date format used to "
-                                           "create new albums. The options available are:</p>"
-                                           "<p><b>ISO</b>: the date format is in accordance with ISO 8601 "
-                                           "(YYYY-MM-DD). E.g.: <i>2006-08-24</i></p>"
-                                           "<p><b>Full Text</b>: the date format is in a user-readable string. "
-                                           "E.g.: <i>Thu Aug 24 2006</i></p>"
-                                           "<p><b>Local Settings</b>: the date format depending on KDE control panel settings.</p>"
-                                           "<p><b>Custom</b>: use a customized format for date.</p>"));
-    d->customExample->setWhatsThis(i18n("Show the result of converted date 1968-12-26 using your customized format."));
+    d->folderDateFormat->setWhatsThis(i18nc("@info", "Select your preferred date format used to\n"
+                                           "create new albums. The options available are:\n"
+                                           "\"ISO\": the date format is in accordance with ISO 8601\n"
+                                           "(YYYY-MM-DD). E.g.: 2006-08-24\n"
+                                           "\"Full Text\": the date format is in a user-readable string.\n"
+                                           "E.g.: Thu Aug 24 2006\n"
+                                           "\"Local Settings\": the date format depending on KDE control panel settings.\n"
+                                           "\"Custom\": use a customized format for date."));
+    d->customExample->setWhatsThis(i18nc("@info", "Show the result of converted date 1968-12-26 using your customized format."));
 
     // --------------------------------------------------------------------------------------
 
@@ -252,11 +253,11 @@ void AlbumCustomizer::slotCustomizerChanged()
 
         if (customDateFormatIsValid())
         {
-            d->customExample->setAdjustedText(i18nc("Example of custom date format for album naming", "Ex.: %1", date.toString(customDateFormat())));
+            d->customExample->setAdjustedText(i18nc("@info Example of custom date format for album naming", "Ex.: %1", date.toString(customDateFormat())));
         }
         else
         {
-            d->customExample->setAdjustedText(i18nc("Custom date format", "Format is not valid..."));
+            d->customExample->setAdjustedText(i18nc("@info Custom date format", "Format is not valid..."));
         }
     }
     else
