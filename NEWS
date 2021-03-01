@@ -377,4 +377,5 @@ BUGFIXES:
 334 ==> 433573 - View - Separate Item - By Month : View by month only (not month year).
 335 ==> 433727 - Does not show exif info from Panasonic FZ30 RAW file, inspite on Editor mode it's ok.
 336 ==> 433423 - 'byline' into xmp panel editor is called 'creator' into Advanced Search.
-337 ==> 
+337 ==> 433753 - Hang / crash when program is loading.
+338 ++> 
