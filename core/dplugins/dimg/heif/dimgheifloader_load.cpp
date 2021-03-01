@@ -310,6 +310,19 @@ bool DImgHEIFLoader::readHEICImageByID(struct heif_context* const heif_context,
 bool DImgHEIFLoader::readHEICImageByHandle(struct heif_image_handle* image_handle,
                                            struct heif_image* heif_image, bool loadImageData)
 {
+    int lumaBits   = heif_image_handle_get_luma_bits_per_pixel(image_handle);
+    int chromaBits = heif_image_handle_get_chroma_bits_per_pixel(image_handle);
+
+    if ((lumaBits == -1) || (chromaBits == -1))
+    {
+        qCWarning(DIGIKAM_DIMG_LOG_HEIF) << "HEIC luma or chroma bits information not valid!";
+        loadingFailed();
+        heif_image_release(heif_image);
+        heif_image_handle_release(image_handle);
+
+        return false;
+    }
+
     // Copy HEIF image into data structures.
 
     struct heif_error error;
