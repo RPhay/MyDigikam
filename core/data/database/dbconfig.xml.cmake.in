@@ -1388,7 +1388,8 @@
 
                 <statement mode="plain">CREATE TRIGGER delete_tagstree AFTER DELETE ON Tags FOR EACH ROW
                     BEGIN
-                        DELETE FROM TagsTree WHERE id IN (SELECT id FROM TagsTree WHERE pid = OLD.id);
+                        DELETE FROM TagsTree WHERE id IN (SELECT id FROM
+                          (SELECT id FROM TagsTree WHERE pid = OLD.id) AS tmpTree1);
                         DELETE FROM TagsTree WHERE id = OLD.id;
                     END;
                 </statement>
@@ -2545,7 +2546,8 @@
 
                 <statement mode="plain">CREATE TRIGGER delete_tagstree AFTER DELETE ON Tags FOR EACH ROW
                     BEGIN
-                        DELETE FROM TagsTree WHERE id IN (SELECT id FROM TagsTree WHERE pid = OLD.id);
+                        DELETE FROM TagsTree WHERE id IN (SELECT id FROM
+                          (SELECT id FROM TagsTree WHERE pid = OLD.id) AS tmpTree1);
                         DELETE FROM TagsTree WHERE id = OLD.id;
                     END;
                 </statement>

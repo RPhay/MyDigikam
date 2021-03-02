@@ -379,4 +379,5 @@ BUGFIXES:
 336 ==> 433423 - 'byline' into xmp panel editor is called 'creator' into Advanced Search.
 337 ==> 433753 - Hang / crash when program is loading.
 338 ==> 433852 - digiKam.metaengine: Cannot load metadata from file Error # 11: The file contains data of an unknown image type.
-339 ==> 
+339 ==> 433850 - Not able to delete any tags.
+340 ==> 
