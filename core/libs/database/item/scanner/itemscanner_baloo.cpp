@@ -54,6 +54,8 @@ void ItemScanner::scanBalooInfo()
 
     if (bInfo.rating != -1)
     {
+        qCDebug(DIGIKAM_DATABASE_LOG) << "Baloo rating" << bInfo.rating;
+
         if (!d->commit.imageInformationFields.testFlag(DatabaseFields::Rating))
         {
             d->commit.imageInformationFields |= DatabaseFields::Rating;
@@ -68,15 +70,12 @@ void ItemScanner::scanBalooInfo()
 
     if (!bInfo.comment.isEmpty())
     {
-        qCDebug(DIGIKAM_DATABASE_LOG) << "Comment " << bInfo.comment;
+        qCDebug(DIGIKAM_DATABASE_LOG) << "Baloo comment" << bInfo.comment;
 
-        if (!d->commit.captions.contains(QLatin1String("x-default")))
-        {
-            CaptionValues val;
-            val.caption                  = bInfo.comment;
-            d->commit.commitItemComments = true;
-            d->commit.captions.insert(QLatin1String("x-default"), val);
-        }
+        CaptionValues val;
+        val.caption                  = bInfo.comment;
+        d->commit.commitItemComments = true;
+        d->commit.captions.insert(QLatin1String("x-default"), val);
     }
 
 #endif // HAVE_KFILEMETADATA
