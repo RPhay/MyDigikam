@@ -62,17 +62,17 @@ class Q_DECL_HIDDEN CameraSelection::Private
 public:
 
     explicit Private()
-      : buttons(nullptr),
-        portButtonGroup(nullptr),
-        usbButton(nullptr),
-        serialButton(nullptr),
-        networkButton(nullptr),
+      : buttons         (nullptr),
+        portButtonGroup (nullptr),
+        usbButton       (nullptr),
+        serialButton    (nullptr),
+        networkButton   (nullptr),
         portPathComboBox(nullptr),
-        listView(nullptr),
-        titleEdit(nullptr),
-        networkEdit(nullptr),
-        umsMountURL(nullptr),
-        searchBar(nullptr)
+        listView        (nullptr),
+        titleEdit       (nullptr),
+        networkEdit     (nullptr),
+        umsMountURL     (nullptr),
+        searchBar       (nullptr)
     {
     }
 
@@ -105,16 +105,16 @@ public:
 
 CameraSelection::CameraSelection(QWidget* const parent)
     : QDialog(parent),
-      d(new Private)
+      d      (new Private)
 {
     qApp->setOverrideCursor(Qt::WaitCursor);
 
     setWindowTitle(i18n("Camera Configuration"));
     setModal(true);
 
-    const int spacing = QApplication::style()->pixelMetric(QStyle::PM_DefaultLayoutSpacing);
+    const int spacing       = QApplication::style()->pixelMetric(QStyle::PM_DefaultLayoutSpacing);
 
-    d->buttons        = new QDialogButtonBox(QDialogButtonBox::Help | QDialogButtonBox::Ok | QDialogButtonBox::Cancel, this);
+    d->buttons              = new QDialogButtonBox(QDialogButtonBox::Help | QDialogButtonBox::Ok | QDialogButtonBox::Cancel, this);
     d->buttons->button(QDialogButtonBox::Ok)->setDefault(true);
 
     d->UMSCameraNameActual  = QLatin1String("Directory Browse");   // Don't be i18n!
@@ -165,7 +165,7 @@ CameraSelection::CameraSelection(QWidget* const parent)
     d->usbButton->setWhatsThis(i18n("<p>Select this option if your camera is connected to your "
                                     "computer using a USB cable.</p>"));
 
-    d->serialButton     = new QRadioButton(i18n("Serial"), portPathBox);
+    d->serialButton     = new QRadioButton(i18nc("@item: serail port based camera", "Serial"), portPathBox);
     d->serialButton->setWhatsThis(i18n("<p>Select this option if your camera is connected to your "
                                        "computer using a serial cable.</p>"));
 

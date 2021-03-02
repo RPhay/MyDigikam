@@ -305,10 +305,10 @@ SetupCamera::SetupCamera(QWidget* const parent)
                                    "via the Gphoto interface."));
 
     QStringList labels;
-    labels.append(i18n("Title"));
-    labels.append(i18nc("Camera Model", "Model"));
-    labels.append(i18n("Port"));
-    labels.append(i18n("Path"));
+    labels.append(i18nc("@title: camera title",      "Title"));
+    labels.append(i18nc("@title: camera model",      "Model"));
+    labels.append(i18nc("@title: camera port",       "Port"));
+    labels.append(i18nc("@title: camera mount path", "Path"));
     d->listView->setHeaderLabels(labels);
     d->listView->header()->setSectionResizeMode(0, QHeaderView::ResizeToContents);
     d->listView->header()->setSectionResizeMode(1, QHeaderView::Stretch);

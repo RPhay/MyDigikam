@@ -73,7 +73,7 @@ public:
 
 CameraList::CameraList(QObject* const parent, const QString& file)
     : QObject(parent),
-      d(new Private)
+      d      (new Private)
 {
     d->file = file;
     qCDebug(DIGIKAM_GENERAL_LOG) << "Camera XML data: " << d->file;

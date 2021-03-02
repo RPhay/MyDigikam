@@ -40,9 +40,9 @@ class Q_DECL_HIDDEN CameraType::Private
 public:
 
     explicit Private()
-      : valid(false),
+      : valid         (false),
         startingNumber(1),
-        action(nullptr)
+        action        (nullptr)
     {
     }
 
