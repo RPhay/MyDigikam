@@ -61,8 +61,8 @@ public:
       : addCategoryButton(nullptr),
         delCategoryButton(nullptr),
         repCategoryButton(nullptr),
-        albumCategoryBox(nullptr),
-        categoryEdit(nullptr)
+        albumCategoryBox (nullptr),
+        categoryEdit     (nullptr)
     {
     }
 
@@ -77,7 +77,7 @@ public:
 
 SetupCategory::SetupCategory(QWidget* const parent)
     : QScrollArea(parent),
-      d(new Private)
+      d          (new Private)
 {
     QWidget* const panel    = new QWidget(viewport());
     setWidget(panel);

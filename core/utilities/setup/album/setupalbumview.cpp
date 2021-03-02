@@ -64,38 +64,38 @@ class Q_DECL_HIDDEN SetupAlbumView::Private
 public:
 
     explicit Private()
-      : useLargeThumbsOriginal(false),
-        useLargeThumbsShowedInfo(false),
-        iconShowNameBox(nullptr),
-        iconShowSizeBox(nullptr),
-        iconShowDateBox(nullptr),
-        iconShowModDateBox(nullptr),
-        iconShowResolutionBox(nullptr),
-        iconShowAspectRatioBox(nullptr),
-        iconShowTitleBox(nullptr),
-        iconShowCommentsBox(nullptr),
-        iconShowTagsBox(nullptr),
-        iconShowOverlaysBox(nullptr),
-        iconShowFullscreenBox(nullptr),
-        iconShowRatingBox(nullptr),
-        iconShowFormatBox(nullptr),
-        iconShowCoordinatesBox(nullptr),
-        previewFastPreview(nullptr),
-        previewFullView(nullptr),
-        previewRawMode(nullptr),
-        previewConvertToEightBit(nullptr),
-        previewShowIcons(nullptr),
+      : useLargeThumbsOriginal      (false),
+        useLargeThumbsShowedInfo    (false),
+        iconShowNameBox             (nullptr),
+        iconShowSizeBox             (nullptr),
+        iconShowDateBox             (nullptr),
+        iconShowModDateBox          (nullptr),
+        iconShowResolutionBox       (nullptr),
+        iconShowAspectRatioBox      (nullptr),
+        iconShowTitleBox            (nullptr),
+        iconShowCommentsBox         (nullptr),
+        iconShowTagsBox             (nullptr),
+        iconShowOverlaysBox         (nullptr),
+        iconShowFullscreenBox       (nullptr),
+        iconShowRatingBox           (nullptr),
+        iconShowFormatBox           (nullptr),
+        iconShowCoordinatesBox      (nullptr),
+        previewFastPreview          (nullptr),
+        previewFullView             (nullptr),
+        previewRawMode              (nullptr),
+        previewConvertToEightBit    (nullptr),
+        previewShowIcons            (nullptr),
         showFolderTreeViewItemsCount(nullptr),
-        largeThumbsBox(nullptr),
-        iconTreeThumbSize(nullptr),
-        iconTreeFaceSize(nullptr),
-        leftClickActionComboBox(nullptr),
-        tab(nullptr),
-        iconViewFontSelect(nullptr),
-        treeViewFontSelect(nullptr),
-        fullScreenSettings(nullptr),
-        category(nullptr),
-        mimetype(nullptr)
+        largeThumbsBox              (nullptr),
+        iconTreeThumbSize           (nullptr),
+        iconTreeFaceSize            (nullptr),
+        leftClickActionComboBox     (nullptr),
+        tab                         (nullptr),
+        iconViewFontSelect          (nullptr),
+        treeViewFontSelect          (nullptr),
+        fullScreenSettings          (nullptr),
+        category                    (nullptr),
+        mimetype                    (nullptr)
     {
     }
 
@@ -141,7 +141,7 @@ public:
 
 SetupAlbumView::SetupAlbumView(QWidget* const parent)
     : QScrollArea(parent),
-      d(new Private)
+      d          (new Private)
 {
     d->tab                     = new QTabWidget(viewport());
     setWidget(d->tab);
@@ -307,11 +307,11 @@ SetupAlbumView::SetupAlbumView(QWidget* const parent)
     QLabel* const rawPreviewLabel = new QLabel(i18nc("@label:listbox Mode of RAW preview decoding:",
                                                      "Raw images:"));
     d->previewRawMode             = new QComboBox;
-    d->previewRawMode->addItem(i18nc("@option:inlistbox Automatic choice of RAW image preview source",
+    d->previewRawMode->addItem(i18nc("@item Automatic choice of RAW image preview source",
                                      "Automatic"), PreviewSettings::RawPreviewAutomatic);
-    d->previewRawMode->addItem(i18nc("@option:inlistbox Embedded preview as RAW image preview source",
+    d->previewRawMode->addItem(i18nc("@item Embedded preview as RAW image preview source",
                                      "Embedded preview"), PreviewSettings::RawPreviewFromEmbeddedPreview);
-    d->previewRawMode->addItem(i18nc("@option:inlistbox Original, half-size data as RAW image preview source",
+    d->previewRawMode->addItem(i18nc("@item Original, half-size data as RAW image preview source",
                                      "Raw data in half size"), PreviewSettings::RawPreviewFromRawHalfSize);
 
     d->previewConvertToEightBit   = new QCheckBox(i18n("Preview image is converted to 8 bits for a faster viewing"), pwpanel);

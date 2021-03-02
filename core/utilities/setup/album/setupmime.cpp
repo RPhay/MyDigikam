@@ -61,9 +61,9 @@ public:
       : imageFileFilterLabel(nullptr),
         movieFileFilterLabel(nullptr),
         audioFileFilterLabel(nullptr),
-        imageFileFilterEdit(nullptr),
-        movieFileFilterEdit(nullptr),
-        audioFileFilterEdit(nullptr)
+        imageFileFilterEdit (nullptr),
+        movieFileFilterEdit (nullptr),
+        audioFileFilterEdit (nullptr)
     {
     }
 
@@ -78,7 +78,7 @@ public:
 
 SetupMime::SetupMime(QWidget* const parent)
     : QScrollArea(parent),
-      d(new Private)
+      d          (new Private)
 {
     QWidget* const panel      = new QWidget(viewport());
     setWidget(panel);
