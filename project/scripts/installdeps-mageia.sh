@@ -87,6 +87,7 @@ urpmi --auto \
       lib64fftw-devel \
       lib64curl-devel \
       lib64magick-devel \
+      qtbase5-common-devel \
       lib64qt5core-devel \
       lib64qt5widgets-devel \
       lib64qt5x11extras-devel \
