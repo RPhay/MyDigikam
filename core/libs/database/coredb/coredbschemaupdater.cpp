@@ -57,7 +57,7 @@ namespace Digikam
 
 int CoreDbSchemaUpdater::schemaVersion()
 {
-    return 11;
+    return 12;
 }
 
 int CoreDbSchemaUpdater::filterSettingsVersion()
@@ -737,6 +737,12 @@ bool CoreDbSchemaUpdater::updateToVersion(int targetVersion)
             // digiKam for database version 10 can work with version 11, add TagsTree table for MySQL.
 
             return performUpdateToVersion(QLatin1String("UpdateSchemaFromV10ToV11"), 11, 5);
+
+        case 12:
+
+            // digiKam for database version 11 can work with version 12, fix TagsTree triggers for MySQL.
+
+            return performUpdateToVersion(QLatin1String("UpdateSchemaFromV11ToV12"), 12, 5);
 
         default:
 

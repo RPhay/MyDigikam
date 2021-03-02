@@ -990,6 +990,10 @@
                 <!-- Nothing to do for SQLite -->
             </dbaction>
 
+            <dbaction name="UpdateSchemaFromV11ToV12" mode="transaction">
+                <!-- Nothing to do for SQLite -->
+            </dbaction>
+
             <dbaction name="UpdateThumbnailsDBSchemaFromV1ToV2" mode="transaction">
                 <statement mode="plain">CREATE TABLE CustomIdentifiers
                     (identifier TEXT,
@@ -2572,6 +2576,43 @@
 
                 <statement mode="plain">ALTER TABLE Tags DROP COLUMN lft;</statement>
                 <statement mode="plain">ALTER TABLE Tags DROP COLUMN rgt;</statement>
+            </dbaction>
+
+            <dbaction name="UpdateSchemaFromV11ToV12" mode="transaction">
+                <statement mode="plain">DROP TRIGGER IF EXISTS insert_tagstree;</statement>
+                <statement mode="plain">DROP TRIGGER IF EXISTS delete_tagstree;</statement>
+                <statement mode="plain">DROP TRIGGER IF EXISTS move_tagstree;</statement>
+
+                <statement mode="plain">CREATE TRIGGER insert_tagstree AFTER INSERT ON Tags FOR EACH ROW
+                    INSERT INTO TagsTree SELECT NEW.id, NEW.pid
+                     UNION SELECT NEW.id, pid FROM TagsTree WHERE id = NEW.pid;
+                </statement>
+
+                <statement mode="plain">CREATE TRIGGER delete_tagstree AFTER DELETE ON Tags FOR EACH ROW
+                    BEGIN
+                        DELETE FROM TagsTree WHERE id IN (SELECT id FROM
+                          (SELECT id FROM TagsTree WHERE pid = OLD.id) AS tmpTree1);
+                        DELETE FROM TagsTree WHERE id = OLD.id;
+                    END;
+                </statement>
+
+                <statement mode="plain">CREATE TRIGGER move_tagstree AFTER UPDATE ON Tags FOR EACH ROW
+                    BEGIN
+                        IF (NEW.pid != OLD.pid) THEN
+                            DELETE FROM TagsTree WHERE ((id = OLD.id) OR id IN (SELECT id FROM
+                              (SELECT id FROM TagsTree WHERE pid = OLD.id) AS tmpTree1))
+                             AND pid IN (SELECT pid FROM
+                              (SELECT pid FROM TagsTree WHERE id = OLD.id) AS tmpTree2);
+                            INSERT INTO TagsTree SELECT NEW.id, NEW.pid
+                             UNION SELECT NEW.id, pid FROM TagsTree
+                              WHERE id = NEW.pid
+                             UNION SELECT id, NEW.pid FROM TagsTree
+                              WHERE pid = NEW.id
+                             UNION SELECT A.id, B.pid FROM TagsTree A, TagsTree B
+                              WHERE A.pid = NEW.id AND B.id = NEW.pid;
+                        END IF;
+                    END;
+                </statement>
             </dbaction>
 
             <dbaction name="UpdateThumbnailsDBSchemaFromV1ToV2" mode="transaction">
