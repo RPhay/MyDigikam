@@ -80,10 +80,7 @@ BalooWrap* BalooWrap::instance()
     return BalooWrap::internalPtr;
 }
 
-void BalooWrap::setAllData(const QUrl& url,
-                           const QStringList& tags,
-                           const QString& comment,
-                           int rating)
+void BalooWrap::setSemanticInfo(const QUrl& url, const BalooInfo& bInfo)
 {
     if (!d->syncFromDigikamToBaloo)
     {
@@ -92,22 +89,22 @@ void BalooWrap::setAllData(const QUrl& url,
 
     KFileMetaData::UserMetaData md(url.toLocalFile());
 
-    if (!tags.isEmpty())
+    if (!bInfo.tags.isEmpty())
     {
-        md.setTags(tags);
+        md.setTags(bInfo.tags);
     }
 
-    if (!comment.isEmpty())
+    if (!bInfo.comment.isEmpty())
     {
-        md.setUserComment(comment);
+        md.setUserComment(bInfo.comment);
     }
 
-    if (rating != -1)
+    if (bInfo.rating != -1)
     {
         // digiKam store rating as value form 0 to 5
         // while baloo store it as value from 0 to 10
 
-        md.setRating(rating * 2);
+        md.setRating(bInfo.rating * 2);
     }
 }
 

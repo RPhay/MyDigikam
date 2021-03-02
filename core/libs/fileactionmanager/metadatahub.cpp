@@ -643,8 +643,7 @@ void MetadataHub::writeToBaloo(const QString& filePath, const MetaEngineSettings
         return;
     }
 
-    QString comment;
-    int rating       = -1;
+    BalooInfo bInfo;
 
     bool saveComment = (settings.saveComments && (d->commentsStatus == MetadataAvailable));
     bool saveRating  = (settings.saveRating   && (d->ratingStatus   == MetadataAvailable));
@@ -673,17 +672,16 @@ void MetadataHub::writeToBaloo(const QString& filePath, const MetaEngineSettings
 
     if (saveComment)
     {
-        comment = d->comments.value(QLatin1String("x-default")).caption;
+        bInfo.comment = d->comments.value(QLatin1String("x-default")).caption;
     }
 
     if (saveRating)
     {
-        rating = d->rating;
+        bInfo.rating = d->rating;
     }
 
-    newKeywords = cleanupTags(newKeywords);
-    QUrl url    = QUrl::fromLocalFile(filePath);
-    baloo->setAllData(url, newKeywords, comment, rating);
+    bInfo.tags = cleanupTags(newKeywords);
+    baloo->setSemanticInfo(QUrl::fromLocalFile(filePath), bInfo);
 
 #else
 

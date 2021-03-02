@@ -82,19 +82,17 @@ public:
     static bool                isCreated();
 
     /**
-     * @brief setAllData - generic method to set all data from digiKam to Baloo
-     * @param url        - image filepath
-     * @param tags       - tags to set to image, pass NULL to ignore
-     * @param comment    - comment set to image, pass NULL to ignore
-     * @param rating     - rating to set to image, set to -1 to ignore
+     * @brief setSemanticInfo - generic method to set all data from digiKam to Baloo
+     * @param url             - image url
+     * @param bInfo           - container class for tags, comment, rating
      */
-    void setAllData(const QUrl& url, const QStringList& tags, const QString& comment, int rating);
+    void setSemanticInfo(const QUrl& url, const BalooInfo& bInfo);
 
     /**
-     * @brief getSemanticInfo - Used by ItemScanner to retrieve all information
+     * @brief getSemanticInfo - used by ItemScanner to retrieve all information
      *                          tags, comment, rating
-     * @param url  - image url
-     * @return     - container class for tags, comment, rating
+     * @param url             - image url
+     * @return                - container class for tags, comment, rating
      */
     BalooInfo getSemanticInfo(const QUrl& url) const;
 
