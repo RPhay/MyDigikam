@@ -217,7 +217,7 @@ Setup::Setup(QWidget* const parent)
     d->page_plugins->setIcon(QIcon::fromTheme(QLatin1String("preferences-plugin")));
 
     d->miscPage  = new SetupMisc(this);
-    d->page_misc = addPage(d->miscPage, i18n("Miscellaneous"));
+    d->page_misc = addPage(d->miscPage, i18nc("@title: miscs settings section", "Miscellaneous"));
     d->page_misc->setHeader(i18n("<qt>Miscellaneous Settings<br/>"
                                  "<i>Customize behavior of the other parts of digiKam</i></qt>"));
     d->page_misc->setIcon(QIcon::fromTheme(QLatin1String("preferences-other")));

@@ -511,9 +511,9 @@ SetupICC::SetupICC(QDialogButtonBox* const dlgBtnBox, QWidget* const parent)
 
     // --------------------------------------------------------
 
-    d->tab->addTab(d->behaviorPanel, i18n("Behavior"));
-    d->tab->addTab(d->profilesPanel, i18n("Profiles"));
-    d->tab->addTab(d->advancedPanel, i18n("Advanced"));
+    d->tab->addTab(d->behaviorPanel, i18nc("@title: icc panel tab", "Behavior"));
+    d->tab->addTab(d->profilesPanel, i18nc("@title: icc panel tab", "Profiles"));
+    d->tab->addTab(d->advancedPanel, i18nc("@title: icc panel tab", "Advanced"));
 
     // --------------------------------------------------------
 

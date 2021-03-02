@@ -386,9 +386,9 @@ SetupMisc::SetupMisc(QWidget* const parent)
                                  "If Ask is selected, there will be a prompt every<br/>"
                                  "time this operation is executed."));
 
-    QLabel* const noLabel        = new QLabel(i18n("No"), groupingPanel);
-    QLabel* const yesLabel       = new QLabel(i18n("Yes"), groupingPanel);
-    QLabel* const askLabel       = new QLabel(i18n("Ask"), groupingPanel);
+    QLabel* const noLabel        = new QLabel(i18nc("@label: grouped image ops", "No"),  groupingPanel);
+    QLabel* const yesLabel       = new QLabel(i18nc("@label: grouped image ops", "Yes"), groupingPanel);
+    QLabel* const askLabel       = new QLabel(i18nc("@label: grouped image ops", "Ask"), groupingPanel);
 
     QHash<int, QLabel*> labels;
 

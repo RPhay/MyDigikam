@@ -179,11 +179,10 @@ void SetupDatabase::upgradeUniqueHashes()
 {
     int result = QMessageBox::warning(this, qApp->applicationName(),
                                       i18nc("@info",
-                                            "<p>The process of updating the file hashes takes a few minutes.</p> "
-                                            "<p>Please ensure that any important collections on removable media are connected. "
-                                            "<i>After the upgrade you cannot use your database with a digiKam version "
-                                            "prior to 2.0.</i></p> "
-                                            "<p>Do you want to begin the update?</p>"),
+                                            "The process of updating the file hashes takes a few minutes.\n"
+                                            "Please ensure that any important collections on removable media are connected.\n"
+                                            "After the upgrade you cannot use your database with a digiKam version prior to 2.0.\n"
+                                            "Do you want to begin the update?"),
                                             QMessageBox::Yes | QMessageBox::No);
 
     if (result == QMessageBox::Yes)
@@ -199,12 +198,12 @@ void SetupDatabase::createUpdateBox()
 
     d->hashesButton                 = new QPushButton(i18nc("@action:button", "Update File Hashes"));
     d->hashesButton->setWhatsThis(i18nc("@info:tooltip",
-                                        "<qt>File hashes are used to identify identical files and to display thumbnails. "
+                                        "File hashes are used to identify identical files and to display thumbnails. "
                                         "A new, improved algorithm to create the hash is now used. "
                                         "The old algorithm, though, still works quite well, so it is recommended to "
-                                        "carry out this upgrade, but not required.<br/> "
+                                        "carry out this upgrade, but not required.\n"
                                         "After the upgrade you cannot use your database with a digiKam version "
-                                        "prior to 2.0.</qt>"));
+                                        "prior to 2.0."));
 
     QPushButton* const infoHash     = new QPushButton;
     infoHash->setIcon(QIcon::fromTheme(QLatin1String("dialog-information")));
