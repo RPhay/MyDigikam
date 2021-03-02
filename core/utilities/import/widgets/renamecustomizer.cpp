@@ -62,16 +62,16 @@ class Q_DECL_HIDDEN RenameCustomizer::Private
 public:
 
     explicit Private()
-      : startIndex(1),
-        buttonGroup(nullptr),
-        renameDefaultCase(nullptr),
-        renameDefault(nullptr),
-        renameCustom(nullptr),
-        changedTimer(nullptr),
-        renameDefaultBox(nullptr),
+      : startIndex           (1),
+        buttonGroup          (nullptr),
+        renameDefaultCase    (nullptr),
+        renameDefault        (nullptr),
+        renameCustom         (nullptr),
+        changedTimer         (nullptr),
+        renameDefaultBox     (nullptr),
         renameDefaultCaseType(nullptr),
-        fileMetadataLabel(nullptr),
-        advancedRenameWidget(nullptr),
+        fileMetadataLabel    (nullptr),
+        advancedRenameWidget (nullptr),
         advancedRenameManager(nullptr)
     {
     }
@@ -101,7 +101,7 @@ public:
 
 RenameCustomizer::RenameCustomizer(QWidget* const parent, const QString& cameraTitle)
     : QWidget(parent),
-      d(new Private)
+      d      (new Private)
 {
     d->changedTimer = new QTimer(this);
     d->cameraTitle  = cameraTitle;

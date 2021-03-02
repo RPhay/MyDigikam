@@ -50,13 +50,14 @@ class Q_DECL_HIDDEN DNGConvertSettings::Private
 public:
 
     explicit Private()
-        : convertDng (nullptr),
-          dngSettings(nullptr)
+        : convertDng  (nullptr),
+          dngLink     (nullptr),
+          dngSettings (nullptr)
     {
     }
 
     QCheckBox*   convertDng;
-
+    QLabel*      dngLink;
     DNGSettings* dngSettings;
 };
 
@@ -72,15 +73,14 @@ DNGConvertSettings::DNGConvertSettings(QWidget* const parent)
     d->convertDng               = new QCheckBox(i18nc("@option:check", "Convert RAW images to"), this);
     d->dngSettings              = new DNGSettings(this);
 
-    QLabel* const dngLinkLabel  = new QLabel(this);
-    dngLinkLabel->setText(i18nc("@label", "<p><a href='https://en.wikipedia.org/wiki/Digital_Negative_(file_format)'>"
-                                          "DNG container</a></p>"));
-    dngLinkLabel->setAlignment(Qt::AlignLeft | Qt::AlignVCenter);
-    dngLinkLabel->setOpenExternalLinks(true);
-    dngLinkLabel->setWordWrap(false);
+    d->dngLink                  = new QLabel(this);
+    d->dngLink->setAlignment(Qt::AlignLeft | Qt::AlignVCenter);
+    d->dngLink->setOpenExternalLinks(true);
+    d->dngLink->setWordWrap(false);
+    d->dngLink->setText(i18nc("@label", "<p><a href='https://en.wikipedia.org/wiki/Digital_Negative_(file_format)'>DNG container</a></p>"));
 
     convHlay->addWidget(d->convertDng);
-    convHlay->addWidget(dngLinkLabel);
+    convHlay->addWidget(d->dngLink);
     convHlay->addStretch(10);
     convHlay->setContentsMargins(spacing, spacing, spacing, spacing);
     convHlay->setSpacing(0);
@@ -91,7 +91,7 @@ DNGConvertSettings::DNGConvertSettings(QWidget* const parent)
     mainVlay->setSpacing(0);
 
     setWhatsThis(i18nc("@info", "Set here all options to convert RAW images to DNG container automatically "
-                      "as they are downloaded."));
+                                "as they are downloaded."));
     d->convertDng->setWhatsThis(i18nc("@info", "Enable this option to convert RAW images to DNG container automatically."));
 
     setLayout(mainVlay);

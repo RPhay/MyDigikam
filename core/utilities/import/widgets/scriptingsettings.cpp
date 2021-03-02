@@ -52,9 +52,9 @@ class Q_DECL_HIDDEN ScriptingSettings::Private
 public:
 
     explicit Private()
-        : scriptLabel(nullptr),
-          script(nullptr),
-          tooltipDialog(nullptr),
+        : scriptLabel        (nullptr),
+          script             (nullptr),
+          tooltipDialog      (nullptr),
           tooltipToggleButton(nullptr)
     {
     }
@@ -67,11 +67,11 @@ public:
 
 ScriptingSettings::ScriptingSettings(QWidget* const parent)
     : QWidget(parent),
-      d(new Private)
+      d      (new Private)
 {
     const int spacing = QApplication::style()->pixelMetric(QStyle::PM_DefaultLayoutSpacing);
 
-    d->tooltipDialog = new TooltipDialog(this);
+    d->tooltipDialog  = new TooltipDialog(this);
     d->tooltipDialog->setTooltip(i18n("<p>These expressions may be used to customize the command line:</p>"
                                       "<p><b>%file</b>: full path of the imported file</p>"
                                       "<p><b>%filename</b>: file name of the imported file</p>"

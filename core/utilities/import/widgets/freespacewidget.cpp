@@ -346,7 +346,7 @@ void FreeSpaceWidget::updateToolTip()
         DToolTipStyleSheet cnt(ApplicationSettings::instance()->getToolTipsFont());
         QString tip = cnt.tipHeader;
 
-        tip += cnt.headBeg + header + cnt.headEnd;
+        tip        += cnt.headBeg + header + cnt.headEnd;
 
         if (d->dSizeKb > 0)
         {
