@@ -57,8 +57,13 @@ void ItemScanner::scanBalooInfo()
         if (!d->commit.imageInformationFields.testFlag(DatabaseFields::Rating))
         {
             d->commit.imageInformationFields |= DatabaseFields::Rating;
-            d->commit.imageInformationInfos.insert(0, QVariant(bInfo.rating));
         }
+        else
+        {
+            d->commit.imageInformationInfos.removeAt(0);
+        }
+
+        d->commit.imageInformationInfos.insert(0, bInfo.rating);
     }
 
     if (!bInfo.comment.isEmpty())
