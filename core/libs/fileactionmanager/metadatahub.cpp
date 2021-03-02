@@ -636,14 +636,15 @@ void MetadataHub::writeToBaloo(const QString& filePath, const MetaEngineSettings
 #ifdef HAVE_KFILEMETADATA
 
     BalooWrap* const baloo = BalooWrap::instance();
-    int rating             = -1;
-    QString* comment       = nullptr;
 
     if (!baloo->getSyncToBaloo())
     {
         qCDebug(DIGIKAM_GENERAL_LOG) << "No write to baloo +++++++++++++++++++++++++++++++++++++";
         return;
     }
+
+    QString comment;
+    int rating       = -1;
 
     bool saveComment = (settings.saveComments && (d->commentsStatus == MetadataAvailable));
     bool saveRating  = (settings.saveRating   && (d->ratingStatus   == MetadataAvailable));
@@ -672,7 +673,7 @@ void MetadataHub::writeToBaloo(const QString& filePath, const MetaEngineSettings
 
     if (saveComment)
     {
-        comment = new QString(d->comments.value(QLatin1String("x-default")).caption);
+        comment = d->comments.value(QLatin1String("x-default")).caption;
     }
 
     if (saveRating)
@@ -682,7 +683,7 @@ void MetadataHub::writeToBaloo(const QString& filePath, const MetaEngineSettings
 
     newKeywords = cleanupTags(newKeywords);
     QUrl url    = QUrl::fromLocalFile(filePath);
-    baloo->setAllData(url, &newKeywords, comment, rating);
+    baloo->setAllData(url, newKeywords, comment, rating);
 
 #else
 

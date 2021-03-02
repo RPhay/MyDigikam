@@ -81,12 +81,6 @@ public:
     static BalooWrap*          instance();
     static bool                isCreated();
 
-    void setTags(const QUrl& url, QStringList* const tags);
-
-    void setComment(const QUrl& url, QString* const comment);
-
-    void setRating(const QUrl& url, int rating);
-
     /**
      * @brief setAllData - generic method to set all data from digiKam to Baloo
      * @param url        - image filepath
@@ -94,7 +88,7 @@ public:
      * @param comment    - comment set to image, pass NULL to ignore
      * @param rating     - rating to set to image, set to -1 to ignore
      */
-    void setAllData(const QUrl& url, QStringList* const tags, QString* const comment, int rating);
+    void setAllData(const QUrl& url, const QStringList& tags, const QString& comment, int rating);
 
     /**
      * @brief getSemanticInfo - Used by ItemScanner to retrieve all information

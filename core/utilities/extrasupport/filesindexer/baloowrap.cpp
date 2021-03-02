@@ -80,24 +80,9 @@ BalooWrap* BalooWrap::instance()
     return BalooWrap::internalPtr;
 }
 
-void BalooWrap::setTags(const QUrl& url, QStringList* const tags)
-{
-    setAllData(url, tags, nullptr, -1);
-}
-
-void BalooWrap::setComment(const QUrl& url, QString* const comment)
-{
-    setAllData(url, nullptr, comment, -1);
-}
-
-void BalooWrap::setRating(const QUrl& url, int rating)
-{
-    setAllData(url, nullptr, nullptr, rating);
-}
-
 void BalooWrap::setAllData(const QUrl& url,
-                           QStringList* const tags,
-                           QString* const comment,
+                           const QStringList& tags,
+                           const QString& comment,
                            int rating)
 {
     if (!d->syncFromDigikamToBaloo)
@@ -107,14 +92,14 @@ void BalooWrap::setAllData(const QUrl& url,
 
     KFileMetaData::UserMetaData md(url.toLocalFile());
 
-    if (tags != nullptr)
+    if (!tags.isEmpty())
     {
-        md.setTags(*tags);
+        md.setTags(tags);
     }
 
-    if (comment != nullptr)
+    if (!comment.isEmpty())
     {
-        md.setUserComment(*comment);
+        md.setUserComment(comment);
     }
 
     if (rating != -1)
