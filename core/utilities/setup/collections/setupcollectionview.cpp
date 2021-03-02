@@ -501,7 +501,7 @@ void SetupCollectionModel::apply()
 
     foreach (int i, updatedItems)
     {
-        Item& item = m_collections[i];
+        Item& item  = m_collections[i];
         CollectionLocation location;
 
         int newType = CollectionLocation::TypeVolumeHardWired;
@@ -515,8 +515,8 @@ void SetupCollectionModel::apply()
             newType = CollectionLocation::TypeNetwork;
         }
 
-        location = CollectionManager::instance()->refreshLocation(item.location, newType,
-                                                                  QUrl::fromLocalFile(item.path), item.label);
+        location    = CollectionManager::instance()->refreshLocation(item.location, newType,
+                                                                     QUrl::fromLocalFile(item.path), item.label);
 
         if (location.isNull())
         {
@@ -727,48 +727,70 @@ QVariant SetupCollectionModel::data(const QModelIndex& index, int role) const
             switch (role)
             {
                 case Qt::DisplayRole:
-
+                {
                     switch (index.row())
                     {
                         case CategoryLocal:
+                        {
                             return i18n("Local Collections");
+                        }
 
                         case CategoryRemovable:
+                        {
                             return i18n("Collections on Removable Media");
+                        }
 
                         case CategoryRemote:
+                        {
                             return i18n("Collections on Network Shares");
+                        }
                     }
 
                     break;
+                }
 
                 case Qt::DecorationRole:
-
+                {
                     switch (index.row())
                     {
                         case CategoryLocal:
+                        {
                             return QIcon::fromTheme(QLatin1String("drive-harddisk"));
+                        }
 
                         case CategoryRemovable:
+                        {
                             return QIcon::fromTheme(QLatin1String("drive-removable-media"));
+                        }
 
                         case CategoryRemote:
+                        {
                             return QIcon::fromTheme(QLatin1String("network-wired-activated"));
+                        }
                     }
 
                     break;
+                }
 
                 case IsCategoryRole:
+                {
                     return true;
+                }
 
                 case CategoryButtonDisplayRole:
+                {
                     return i18n("Add Collection");
+                }
 
                 case CategoryButtonMapId:
+                {
                     return categoryButtonMapId(index);
+                }
 
                 default:
+                {
                     break;
+                }
             }
         }
     }
@@ -779,7 +801,7 @@ QVariant SetupCollectionModel::data(const QModelIndex& index, int role) const
         switch (index.column())
         {
             case ColumnName:
-
+            {
                 if ((role == Qt::DisplayRole) || (role == Qt::EditRole))
                 {
                     if (!item.label.isNull())
@@ -796,9 +818,10 @@ QVariant SetupCollectionModel::data(const QModelIndex& index, int role) const
                 }
 
                 break;
+            }
 
             case ColumnPath:
-
+            {
                 if ((role == Qt::DisplayRole) || (role == Qt::ToolTipRole))
                 {
                     if (!item.path.isNull())
@@ -813,9 +836,10 @@ QVariant SetupCollectionModel::data(const QModelIndex& index, int role) const
                 }
 
                 break;
+            }
 
             case ColumnStatus:
-
+            {
                 if (role == Qt::DecorationRole)
                 {
                     if (item.updated)
@@ -836,30 +860,43 @@ QVariant SetupCollectionModel::data(const QModelIndex& index, int role) const
                     switch (item.location.status())
                     {
                         case CollectionLocation::LocationAvailable:
+                        {
                             return QIcon::fromTheme(QLatin1String("dialog-ok-apply"));
+                        }
 
                         case CollectionLocation::LocationHidden:
+                        {
                             return QIcon::fromTheme(QLatin1String("object-locked"));
+                        }
 
                         case CollectionLocation::LocationUnavailable:
-
+                        {
                             switch (item.parentId)
                             {
                                 case CategoryLocal:
+                                {
                                     return QIcon::fromTheme(QLatin1String("drive-harddisk")).pixmap(16, QIcon::Disabled);
+                                }
 
                                 case CategoryRemovable:
+                                {
                                     return QIcon::fromTheme(QLatin1String("drive-removable-media-usb")).pixmap(16, QIcon::Disabled);
+                                }
 
                                 case CategoryRemote:
+                                {
                                     return QIcon::fromTheme(QLatin1String("network-wired-activated")).pixmap(16, QIcon::Disabled);
+                                }
                             }
 
                             break;
+                        }
 
                         case CollectionLocation::LocationNull:
                         case CollectionLocation::LocationDeleted:
+                        {
                             return QIcon::fromTheme(QLatin1String("edit-delete"));
+                        }
                     }
                 }
                 else if (role == Qt::ToolTipRole)
@@ -867,58 +904,85 @@ QVariant SetupCollectionModel::data(const QModelIndex& index, int role) const
                     switch (item.location.status())
                     {
                         case CollectionLocation::LocationUnavailable:
+                        {
                             return i18n("This collection is currently not available.");
+                        }
 
                         case CollectionLocation::LocationAvailable:
+                        {
                             return i18n("No problems found, enjoy this collection.");
+                        }
 
                         case CollectionLocation::LocationHidden:
+                        {
                             return i18n("This collection is hidden.");
+                        }
 
                         default:
+                        {
                             break;
+                        }
                     }
                 }
 
                 break;
+            }
 
             case ColumnUpdateButton:
-
+            {
                 switch (role)
                 {
                     case Qt::ToolTipRole:
+                    {
                         return i18n("Update collection");
+                    }
 
                     case IsUpdateRole:
+                    {
                         return true;
+                    }
 
                     case UpdateDecorationRole:
+                    {
                         return QIcon::fromTheme(QLatin1String("view-refresh"));
+                    }
 
                     case UpdateMapId:
+                    {
                         return buttonMapId(index);
+                    }
                 }
 
                 break;
+            }
 
             case ColumnDeleteButton:
-
+            {
                 switch (role)
                 {
                     case Qt::ToolTipRole:
+                    {
                         return i18n("Remove collection");
+                    }
 
                     case IsDeleteRole:
+                    {
                         return true;
+                    }
 
                     case DeleteDecorationRole:
+                    {
                         return QIcon::fromTheme(QLatin1String("edit-delete"));
+                    }
 
                     case DeleteMapId:
+                    {
                         return buttonMapId(index);
+                    }
                 }
 
                 break;
+            }
         }
     }
 
@@ -932,19 +996,29 @@ QVariant SetupCollectionModel::headerData(int section, Qt::Orientation orientati
         switch (section)
         {
             case ColumnName:
-                return i18n("Name");
+            {
+                return i18nc("#title: collection name",       "Name");
+            }
 
             case ColumnPath:
-                return i18n("Path");
+            {
+                return i18nc("#title: collection mount path", "Path");
+            }
 
             case ColumnStatus:
-                return i18n("Status");
+            {
+                return i18nc("#title: collection status",     "Status");
+            }
 
             case ColumnUpdateButton:
+            {
                 break;
+            }
 
             case ColumnDeleteButton:
+            {
                 break;
+            }
         }
     }
 
@@ -1005,10 +1079,14 @@ Qt::ItemFlags SetupCollectionModel::flags(const QModelIndex& index) const
         switch (index.column())
         {
             case ColumnName:
+            {
                 return (Qt::ItemIsEnabled | Qt::ItemIsSelectable | Qt::ItemIsEditable);
+            }
 
             default:
+            {
                 return (Qt::ItemIsEnabled | Qt::ItemIsSelectable);
+            }
         }
     }
 }
@@ -1125,13 +1203,19 @@ SetupCollectionModel::Category SetupCollectionModel::typeToCategory(CollectionLo
     {
         default:
         case CollectionLocation::TypeVolumeHardWired:
+        {
             return CategoryLocal;
+        }
 
         case CollectionLocation::TypeVolumeRemovable:
+        {
             return CategoryRemovable;
+        }
 
         case CollectionLocation::TypeNetwork:
+        {
             return CategoryRemote;
+        }
     }
 }
 
@@ -1207,18 +1291,24 @@ bool SetupCollectionModel::askForNewCollectionPath(int category, QString* const 
     switch (result)
     {
         case CollectionManager::LocationAllRight:
+        {
             iconName = QLatin1String("dialog-ok-apply");
             break;
+        }
 
         case CollectionManager::LocationHasProblems:
+        {
             iconName = QLatin1String("dialog-information");
             break;
+        }
 
         case CollectionManager::LocationNotAllowed:
         case CollectionManager::LocationInvalidCheck:
+        {
             QMessageBox::warning(m_dialogParentWidget, i18n("Problem Adding Collection"), messageFromManager);
             // fail
             return false;
+        }
     }
 
     // Create a dialog that displays volume information and allows to change the name of the collection
