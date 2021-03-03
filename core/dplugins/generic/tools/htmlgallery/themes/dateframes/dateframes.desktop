@@ -266,6 +266,7 @@ Name[sl]=Format datuma besedila pod sliko (glejte xsltsl.sourceforge.net/date-ti
 Name[sv]=Datumformat för rubrik (se xsltsl.sourceforge.net/date-time.html)
 Name[uk]=Формат підпису-дати (див. xsltsl.sourceforge.net/date-time.html)
 Name[x-test]=xxCaption Date Format (see xsltsl.sourceforge.net/date-time.html)xx
+Name[zh_CN]=标题日期格式 (参见 xsltsl.sourceforge.net/date-time.html)
 Type=string
 Default=%A, %b %e, %Y   %i:%M%P
 Comment=XSL Date Format String: Use the syntax given at xsltsl.sourceforge.net/date-time.html
@@ -279,6 +280,7 @@ Comment[sl]=Format XML niza datuma: Uporabite skladnjo kot na xsltsl.sourceforge
 Comment[sv]=Sträng med XSL-datumformat: Använd syntaxen som anges i xsltsl.sourceforge.net/date-time.html
 Comment[uk]=Рядок форматування дати XSL: використовуйте синтаксис, описаний на xsltsl.sourceforge.net/date-time.html
 Comment[x-test]=xxXSL Date Format String: Use the syntax given at xsltsl.sourceforge.net/date-time.htmlxx
+Comment[zh_CN]=XSL 日期格式字符串：请使用 xsltsl.sourceforge.net/date-time.html 页面介绍的语法
 
 [X-HTMLGallery Parameter shortformat]
 Name=Image List Date Format
@@ -323,3 +325,4 @@ Comment[sl]=Format XML niza datuma: Uporabite skladnjo kot na xsltsl.sourceforge
 Comment[sv]=Sträng med XSL-datumformat: Använd syntaxen som anges i xsltsl.sourceforge.net/date-time.html
 Comment[uk]=Рядок форматування дати XSL: використовуйте синтаксис, описаний на xsltsl.sourceforge.net/date-time.html
 Comment[x-test]=xxXSL Date Format String: Use the syntax given at xsltsl.sourceforge.net/date-time.htmlxx
+Comment[zh_CN]=XSL 日期格式字符串：请使用 xsltsl.sourceforge.net/date-time.html 页面介绍的语法
