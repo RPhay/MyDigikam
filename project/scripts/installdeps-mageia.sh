@@ -33,6 +33,7 @@ urpmi.update --no-ignore "Tainted Updates"
 urpmi --auto \
       git \
       subversion \
+      unrar \
       scons \
       cmake \
       ccache \
