@@ -59,25 +59,25 @@ class Q_DECL_HIDDEN SetupIOFiles::Private
 public:
 
     explicit Private()
-      : JPEGOptions(nullptr),
-        PNGOptions(nullptr),
-        TIFFOptions(nullptr),
+      : JPEGOptions             (nullptr),
+        PNGOptions              (nullptr),
+        TIFFOptions             (nullptr),
 
 #ifdef HAVE_JASPER
 
-        JPEG2000Options(nullptr),
+        JPEG2000Options         (nullptr),
 
 #endif // HAVE_JASPER
 
-        PGFOptions(nullptr),
+        PGFOptions              (nullptr),
 
 #ifdef HAVE_X265
 
-        HEIFOptions(nullptr),
+        HEIFOptions             (nullptr),
 
 #endif // HAVE_X265
 
-        showImageSettingsDialog(nullptr)
+        showImageSettingsDialog (nullptr)
     {
     }
 
@@ -144,7 +144,7 @@ const QString SetupIOFiles::Private::configShowImageSettingsDialog(QLatin1String
 
 SetupIOFiles::SetupIOFiles(QWidget* const parent)
     : QScrollArea(parent),
-      d(new Private)
+      d          (new Private)
 {
     QWidget* const panel    = new QWidget;
     QVBoxLayout* const vbox = new QVBoxLayout;
@@ -218,6 +218,7 @@ void SetupIOFiles::applySettings()
     group.writeEntry(d->configTIFFCompressionEntry,     d->TIFFOptions->getCompression());
 
 #ifdef HAVE_JASPER
+
     group.writeEntry(d->configJPEG2000CompressionEntry, d->JPEG2000Options->getCompressionValue());
     group.writeEntry(d->configJPEG2000LossLessEntry,    d->JPEG2000Options->getLossLessCompression());
 

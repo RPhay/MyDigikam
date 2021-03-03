@@ -46,11 +46,11 @@ class Q_DECL_HIDDEN SetupEditor::Private
 public:
 
     explicit Private()
-      : tab(nullptr),
-        iface(nullptr),
-        iofiles(nullptr),
-        versioning(nullptr),
-        raw(nullptr)
+      : tab         (nullptr),
+        iface       (nullptr),
+        iofiles     (nullptr),
+        versioning  (nullptr),
+        raw         (nullptr)
     {
     }
 
@@ -64,9 +64,9 @@ public:
 
 SetupEditor::SetupEditor(QWidget* const parent)
     : QScrollArea(parent),
-      d(new Private)
+      d          (new Private)
 {
-    d->tab = new QTabWidget;
+    d->tab        = new QTabWidget;
 
     // --------------------------------------------------------
 

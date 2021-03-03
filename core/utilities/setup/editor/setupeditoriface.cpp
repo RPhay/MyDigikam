@@ -61,17 +61,17 @@ public:
 
     explicit Private()
       : themebackgroundColor(nullptr),
-        expoIndicatorMode(nullptr),
-        restoreSettings(nullptr),
-        expoPreview(nullptr),
-        colorBox(nullptr),
-        backgroundColor(nullptr),
-        underExposureColor(nullptr),
-        overExposureColor(nullptr),
-        expoPreviewHisto(nullptr),
-        fullScreenSettings(nullptr),
-        underExposurePcents(nullptr),
-        overExposurePcents(nullptr)
+        expoIndicatorMode   (nullptr),
+        restoreSettings     (nullptr),
+        expoPreview         (nullptr),
+        colorBox            (nullptr),
+        backgroundColor     (nullptr),
+        underExposureColor  (nullptr),
+        overExposureColor   (nullptr),
+        expoPreviewHisto    (nullptr),
+        fullScreenSettings  (nullptr),
+        underExposurePcents (nullptr),
+        overExposurePcents  (nullptr)
     {
     }
 
@@ -120,7 +120,7 @@ const QString SetupEditorIface::Private::configRestoreSettingsEntry(QLatin1Strin
 
 SetupEditorIface::SetupEditorIface(QWidget* const parent)
     : QScrollArea(parent),
-      d(new Private)
+      d          (new Private)
 {
     const int spacing    = QApplication::style()->pixelMetric(QStyle::PM_DefaultLayoutSpacing);
     QWidget* const panel = new QWidget(viewport());

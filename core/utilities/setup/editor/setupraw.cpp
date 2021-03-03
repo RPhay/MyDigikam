@@ -56,15 +56,15 @@ class Q_DECL_HIDDEN SetupRaw::Private
 public:
 
     explicit Private()
-      : tab(nullptr),
-        behaviorPanel(nullptr),
-        settingsPanel(nullptr),
-        openSimple(nullptr),
-        openDefault(nullptr),
-        openTool(nullptr),
-        rawImportTool(nullptr),
-        toolAbout(nullptr),
-        rawSettings(nullptr)
+      : tab             (nullptr),
+        behaviorPanel   (nullptr),
+        settingsPanel   (nullptr),
+        openSimple      (nullptr),
+        openDefault     (nullptr),
+        openTool        (nullptr),
+        rawImportTool   (nullptr),
+        toolAbout       (nullptr),
+        rawSettings     (nullptr)
     {
     }
 
@@ -95,7 +95,7 @@ const QString SetupRaw::Private::nativeRawImportToolIid(QLatin1String("org.kde.d
 
 SetupRaw::SetupRaw(QTabWidget* const tab)
     : QObject(tab),
-      d(new Private)
+      d      (new Private)
 {
     d->tab = tab;
 
@@ -106,9 +106,9 @@ SetupRaw::SetupRaw(QTabWidget* const tab)
 
     QLabel* const rawExplanation      = new QLabel;
     rawExplanation->setText(i18nc("@info",
-                                  "<p>A <i>raw image file</i> contains minimally processed data "
-                                  "from the image sensor of a digital camera.</p>"
-                                  "<p>Opening a raw file requires extensive data interpretation and processing.</p>"));
+                                  "A raw image file contains minimally processed data "
+                                  "from the image sensor of a digital camera.\n"
+                                  "Opening a raw file requires extensive data interpretation and processing."));
     rawExplanation->setWordWrap(true);
     QLabel* const rawIcon        = new QLabel;
     rawIcon->setPixmap(QIcon::fromTheme(QLatin1String("camera-photo")).pixmap(48));
@@ -146,7 +146,7 @@ SetupRaw::SetupRaw(QTabWidget* const tab)
 
             if (iid == d->nativeRawImportToolIid)
             {
-                name += i18n(" (default)");
+                name += i18nc("@item: default raw plugin", " (default)");
             }
 
             d->rawImportTool->addItem(name, iid);
@@ -155,7 +155,7 @@ SetupRaw::SetupRaw(QTabWidget* const tab)
 
     d->toolAbout = new QPushButton;
     d->toolAbout->setIcon(QIcon::fromTheme(QLatin1String("help-about")));
-    d->toolAbout->setToolTip(i18n("About this Raw Import tool..."));
+    d->toolAbout->setToolTip(i18nc("@info:tooltip", "About this Raw Import tool..."));
 
     // ----------------------------------------------
 
