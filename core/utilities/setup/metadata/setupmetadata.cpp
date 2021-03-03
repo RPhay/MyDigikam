@@ -70,45 +70,45 @@ class Q_DECL_HIDDEN SetupMetadata::Private
 public:
 
     explicit Private()
-      : exifAutoRotateOriginal(false),
+      : exifAutoRotateOriginal  (false),
         exifAutoRotateShowedInfo(false),
-        clearMetadataShowedInfo(false),
-        fieldsGroup(nullptr),
-        readWriteGroup(nullptr),
-        rotationGroup(nullptr),
-        rotationAdvGroup(nullptr),
-        saveTagsBox(nullptr),
-        saveCommentsBox(nullptr),
-        saveRatingBox(nullptr),
-        savePickLabelBox(nullptr),
-        saveColorLabelBox(nullptr),
-        saveDateTimeBox(nullptr),
-        saveTemplateBox(nullptr),
-        saveFaceTags(nullptr),
-        savePosition(nullptr),
-        useLazySync(nullptr),
-        writeDngFilesBox(nullptr),
-        writeRawFilesBox(nullptr),
-        writeXMPSidecarBox(nullptr),
-        readXMPSidecarBox(nullptr),
-        sidecarFileNameBox(nullptr),
-        updateFileTimeStampBox(nullptr),
+        clearMetadataShowedInfo (false),
+        fieldsGroup             (nullptr),
+        readWriteGroup          (nullptr),
+        rotationGroup           (nullptr),
+        rotationAdvGroup        (nullptr),
+        saveTagsBox             (nullptr),
+        saveCommentsBox         (nullptr),
+        saveRatingBox           (nullptr),
+        savePickLabelBox        (nullptr),
+        saveColorLabelBox       (nullptr),
+        saveDateTimeBox         (nullptr),
+        saveTemplateBox         (nullptr),
+        saveFaceTags            (nullptr),
+        savePosition            (nullptr),
+        useLazySync             (nullptr),
+        writeDngFilesBox        (nullptr),
+        writeRawFilesBox        (nullptr),
+        writeXMPSidecarBox      (nullptr),
+        readXMPSidecarBox       (nullptr),
+        sidecarFileNameBox      (nullptr),
+        updateFileTimeStampBox  (nullptr),
         rescanImageIfModifiedBox(nullptr),
         clearMetadataIfRescanBox(nullptr),
-        writingModeCombo(nullptr),
-        rotateByFlag(nullptr),
-        rotateByContents(nullptr),
-        allowRotateByMetadata(nullptr),
-        allowLossyRotate(nullptr),
-        exifRotateBox(nullptr),
-        exifSetOrientationBox(nullptr),
-        saveToBalooBox(nullptr),
-        readFromBalooBox(nullptr),
-        tab(nullptr),
-        displaySubTab(nullptr),
-        tagsCfgPanel(nullptr),
-        advTab(nullptr),
-        extensionsEdit(nullptr)
+        writingModeCombo        (nullptr),
+        rotateByFlag            (nullptr),
+        rotateByContents        (nullptr),
+        allowRotateByMetadata   (nullptr),
+        allowLossyRotate        (nullptr),
+        exifRotateBox           (nullptr),
+        exifSetOrientationBox   (nullptr),
+        saveToBalooBox          (nullptr),
+        readFromBalooBox        (nullptr),
+        tab                     (nullptr),
+        displaySubTab           (nullptr),
+        tagsCfgPanel            (nullptr),
+        advTab                  (nullptr),
+        extensionsEdit          (nullptr)
     {
     }
 
@@ -163,7 +163,7 @@ public:
 
 SetupMetadata::SetupMetadata(QWidget* const parent)
     : QScrollArea(parent),
-      d(new Private)
+      d          (new Private)
 {
     d->tab                          = new QTabWidget(viewport());
     setWidget(d->tab);
@@ -323,25 +323,25 @@ SetupMetadata::SetupMetadata(QWidget* const parent)
     DActiveLabel* const exiv2LogoLabel = new DActiveLabel(QUrl(QLatin1String("https://www.exiv2.org")),
                                                           QStandardPaths::locate(QStandardPaths::GenericDataLocation, QLatin1String("digikam/data/logo-exiv2.png")),
                                                           infoBox);
-    exiv2LogoLabel->setWhatsThis(i18n("Visit Exiv2 project website"));
+    exiv2LogoLabel->setWhatsThis(i18nc("@info", "Visit Exiv2 project website"));
 
     QLabel* const explanation = new QLabel(infoBox);
     explanation->setOpenExternalLinks(true);
     explanation->setWordWrap(true);
     QString txt;
 
-    txt.append(i18n("<p><a href='https://en.wikipedia.org/wiki/Exif'>Exif</a> - "
-                    "a standard used by most digital cameras today to store technical "
-                    "information (like aperture and shutter speed) about an image.</p>"));
+    txt.append(i18nc("@info", "<p><a href='https://en.wikipedia.org/wiki/Exif'>Exif</a> - "
+                              "a standard used by most digital cameras today to store technical "
+                              "information (like aperture and shutter speed) about an image.</p>"));
 
-    txt.append(i18n("<p><a href='https://en.wikipedia.org/wiki/IPTC_Information_Interchange_Model'>IPTC</a> - "
-                    "an older standard used in digital photography to store "
-                    "photographer information in images.</p>"));
+    txt.append(i18nc("@info", "<p><a href='https://en.wikipedia.org/wiki/IPTC_Information_Interchange_Model'>IPTC</a> - "
+                              "an older standard used in digital photography to store "
+                              "photographer information in images.</p>"));
 
     if (MetaEngine::supportXmp())
     {
-        txt.append(i18n("<p><a href='https://en.wikipedia.org/wiki/Extensible_Metadata_Platform'>XMP</a> - "
-                        "a new standard used in digital photography, designed to replace IPTC.</p>"));
+        txt.append(i18nc("@info", "<p><a href='https://en.wikipedia.org/wiki/Extensible_Metadata_Platform'>XMP</a> - "
+                                  "a new standard used in digital photography, designed to replace IPTC.</p>"));
     }
 
     explanation->setText(txt);
@@ -446,9 +446,9 @@ SetupMetadata::SetupMetadata(QWidget* const parent)
     rotationAdvIcon->setPixmap(QIcon::fromTheme(QLatin1String("configure")).pixmap(32));
 
     d->exifRotateBox                     = new QCheckBox;
-    d->exifRotateBox->setText(i18n("Show images/thumbnails &rotated according to orientation tag."));
+    d->exifRotateBox->setText(i18nc("@option", "Show images/thumbnails &rotated according to orientation tag."));
     d->exifSetOrientationBox             = new QCheckBox;
-    d->exifSetOrientationBox->setText(i18n("Set orientation tag to normal after rotate/flip."));
+    d->exifSetOrientationBox->setText(i18nc("@option", "Set orientation tag to normal after rotate/flip."));
 
     rotationAdvLayout->addWidget(rotationAdvIcon,          0, 0, 1, 1);
     rotationAdvLayout->addWidget(rotationAdvExpl,          0, 1, 1, 1);
@@ -459,9 +459,9 @@ SetupMetadata::SetupMetadata(QWidget* const parent)
 
     // --------------------------------------------------------
 
-    QLabel* const rotationNote = new QLabel(i18n("<b>Note: These settings affect the album view "
-                                                 "and not the image editor. The image editor always "
-                                                 "changes the image data during the rotation.</b>"));
+    QLabel* const rotationNote = new QLabel(i18nc("@info", "Note: These settings affect the album view "
+                                                           "and not the image editor. The image editor always "
+                                                           "changes the image data during the rotation."));
     rotationNote->setWordWrap(true);
     rotationNote->setFrameStyle(QFrame::StyledPanel | QFrame::Raised);
 
@@ -480,8 +480,8 @@ SetupMetadata::SetupMetadata(QWidget* const parent)
     QWidget* const displayPanel      = new QWidget;
     QGridLayout* const displayLayout = new QGridLayout;
 
-    QLabel* const displayLabel       = new QLabel(i18nc("@info:label", "Select Metadata Fields to be Displayed "
-                                                                       "when using Custom Filters"));
+    QLabel* const displayLabel       = new QLabel(i18nc("@label", "Select Metadata Fields to be Displayed "
+                                                                  "when using Custom Filters"));
 
     QLabel* const displayIcon        = new QLabel;
     displayIcon->setPixmap(QIcon::fromTheme(QLatin1String("view-list-tree")).pixmap(32));
@@ -504,19 +504,19 @@ SetupMetadata::SetupMetadata(QWidget* const parent)
     QWidget* const balooPanel      = new QWidget(d->tab);
     QVBoxLayout* const balooLayout = new QVBoxLayout(balooPanel);
 
-    QGroupBox* const balooGroup    = new QGroupBox(i18n("Baloo Desktop Search"), balooPanel);
+    QGroupBox* const balooGroup    = new QGroupBox(i18nc("@option", "Baloo Desktop Search"), balooPanel);
     QVBoxLayout* const gLayout3    = new QVBoxLayout(balooGroup);
 
     d->saveToBalooBox              = new QCheckBox;
-    d->saveToBalooBox->setText(i18n("Store metadata from digiKam in Baloo"));
-    d->saveToBalooBox->setWhatsThis(i18n("Turn on this option to push rating, comments and tags "
-                                         "from digiKam into the Baloo storage"));
+    d->saveToBalooBox->setText(i18nc("@option", "Store metadata from digiKam in Baloo"));
+    d->saveToBalooBox->setWhatsThis(i18nc("@info", "Turn on this option to push rating, comments and tags "
+                                                   "from digiKam into the Baloo storage"));
 
     d->readFromBalooBox            = new QCheckBox;
-    d->readFromBalooBox->setText(i18n("Read metadata from Baloo"));
-    d->readFromBalooBox->setWhatsThis(i18n("Turn on this option if you want to apply changes to "
-                                           "rating, comments and tags made in Baloo to digiKam's metadata storage. "
-                                           "Please note that image metadata will not be edited automatically."));
+    d->readFromBalooBox->setText(i18nc("@option", "Read metadata from Baloo"));
+    d->readFromBalooBox->setWhatsThis(i18nc("@info", "Turn on this option if you want to apply changes to "
+                                                     "rating, comments and tags made in Baloo to digiKam's metadata storage. "
+                                                     "Please note that image metadata will not be edited automatically."));
 
     gLayout3->addWidget(d->saveToBalooBox);
     gLayout3->addWidget(d->readFromBalooBox);
@@ -537,11 +537,11 @@ SetupMetadata::SetupMetadata(QWidget* const parent)
     balooExplanation->setWordWrap(true);
     QString balootxt;
 
-    balootxt.append(i18n("<p><a href='https://community.kde.org/Baloo'>Baloo</a> "
-                         "provides the basis to handle all kinds of metadata on the KDE desktop in a generic fashion. "
-                         "It allows you to tag, rate and comment your files in KDE applications like Dolphin.</p> "
-                         "<p>Please set here if you want to synchronize the metadata stored by digiKam desktop-wide with the "
-                         "Baloo Desktop Search.</p> "));
+    balootxt.append(i18nc("@info", "<p><a href='https://community.kde.org/Baloo'>Baloo</a> "
+                                   "provides the basis to handle all kinds of metadata on the KDE desktop in a generic fashion. "
+                                   "It allows you to tag, rate and comment your files in KDE applications like Dolphin.</p> "
+                                   "<p>Please set here if you want to synchronize the metadata stored by digiKam desktop-wide with the "
+                                   "Baloo Desktop Search.</p> "));
 
     balooExplanation->setText(balootxt);
 
@@ -564,7 +564,7 @@ SetupMetadata::SetupMetadata(QWidget* const parent)
     //--------------Advanced Metadata Configuration --------------
 
     d->advTab = new AdvancedMetadataTab(this);
-    d->tab->insertTab(AdvancedConfig, d->advTab, i18nc("@title:tab", "Advanced"));
+    d->tab->insertTab(AdvancedConfig, d->advTab, i18nc("@title:tab advanced metadata config view", "Advanced"));
 
     //------------------------Sidecars-------------------------
 
@@ -591,9 +591,9 @@ SetupMetadata::SetupMetadata(QWidget* const parent)
     d->writeXMPSidecarBox->setEnabled(MetaEngine::supportXmp());
 
     d->writingModeCombo   = new QComboBox;
-    d->writingModeCombo->addItem(i18n("Write to XMP sidecar for read-only item only"), MetaEngine::WRITE_TO_SIDECAR_ONLY_FOR_READ_ONLY_FILES);
-    d->writingModeCombo->addItem(i18n("Write to XMP sidecar only"),                    MetaEngine::WRITE_TO_SIDECAR_ONLY);
-    d->writingModeCombo->addItem(i18n("Write to item and XMP Sidecar"),                MetaEngine::WRITE_TO_SIDECAR_AND_FILE);
+    d->writingModeCombo->addItem(i18nc("@item", "Write to XMP sidecar for read-only item only"), MetaEngine::WRITE_TO_SIDECAR_ONLY_FOR_READ_ONLY_FILES);
+    d->writingModeCombo->addItem(i18nc("@item", "Write to XMP sidecar only"),                    MetaEngine::WRITE_TO_SIDECAR_ONLY);
+    d->writingModeCombo->addItem(i18nc("@item", "Write to item and XMP Sidecar"),                MetaEngine::WRITE_TO_SIDECAR_AND_FILE);
     d->writingModeCombo->setToolTip(i18nc("@info:tooltip", "Specify the exact mode of XMP sidecar writing"));
     d->writingModeCombo->setEnabled(false);
 
@@ -625,34 +625,34 @@ SetupMetadata::SetupMetadata(QWidget* const parent)
     QGridLayout* const extensionsGrid = new QGridLayout(extensionsGroup);
 
     QLabel* extensionsGroupLabel = new QLabel(
-                i18n("<p>Add file types to be recognised as sidecars.</p>"
-                     "<p>digiKam (optionally) writes metadata to *.xmp sidecar "
-                     "files. Other programs might use different types, which "
-                     "can be specified below. digiKam will neither display these "
-                     "nor read from or write to them. But whenever a matching album "
-                     "item (e.g. \"image.dng\" for \"image.dng.pp3\") is renamed, "
-                     "moved, copied or deleted, the same operation will be done "
-                     "on these sidecar files.</p>"
-                     "<p>Multiple extensions must be separated by a semicolon "
-                     "or a space.</p>"));
+                i18nc("@info", "<p>Add file types to be recognised as sidecars.</p>"
+                      "<p>digiKam (optionally) writes metadata to *.xmp sidecar "
+                      "files. Other programs might use different types, which "
+                      "can be specified below. digiKam will neither display these "
+                      "nor read from or write to them. But whenever a matching album "
+                      "item (e.g. \"image.dng\" for \"image.dng.pp3\") is renamed, "
+                      "moved, copied or deleted, the same operation will be done "
+                      "on these sidecar files.</p>"
+                      "<p>Multiple extensions must be separated by a semicolon "
+                      "or a space.</p>"));
     extensionsGroupLabel->setWordWrap(true);
 
     QLabel* const extensionsLogo = new QLabel(extensionsGroup);
     extensionsLogo->setPixmap(QIcon::fromTheme(QLatin1String("text-x-texinfo")).pixmap(48));
 
     d->extensionsEdit            = new QLineEdit(extensionsGroup);
-    d->extensionsEdit->setWhatsThis(i18n("<p>Here you can add extra extensions "
-                                         "of sidecars files to be processed alongside "
-                                         "regular items. These files will not be visible, "
-                                         "but regarded as an extension of the main file. "
-                                         "Just write \"xyz abc\" to support files with "
-                                         "the *.xyz and *.abc extensions. The internally "
-                                         "used sidecars type *.xmp is always included.</p>"));
+    d->extensionsEdit->setWhatsThis(i18nc("@info", "<p>Here you can add extra extensions "
+                                          "of sidecars files to be processed alongside "
+                                          "regular items. These files will not be visible, "
+                                          "but regarded as an extension of the main file. "
+                                          "Just write \"xyz abc\" to support files with "
+                                          "the *.xyz and *.abc extensions. The internally "
+                                          "used sidecars type *.xmp is always included.</p>"));
     d->extensionsEdit->setClearButtonEnabled(true);
-    d->extensionsEdit->setPlaceholderText(i18n("Enter additional sidecars file extensions."));
+    d->extensionsEdit->setPlaceholderText(i18nc("@info", "Enter additional sidecars file extensions."));
 
     QLabel* const extensionsLabel = new QLabel(extensionsGroup);
-    extensionsLabel->setText(i18n("Additional &sidecar file extensions"));
+    extensionsLabel->setText(i18nc("@info", "Additional &sidecar file extensions"));
     extensionsLabel->setBuddy(d->extensionsEdit);
 
     extensionsGrid->addWidget(extensionsGroupLabel, 0, 0, 1, -1);
@@ -907,14 +907,14 @@ void SetupMetadata::slotWriteRawFilesToggled(bool b)
 
         QPointer<QMessageBox> msgBox1 = new QMessageBox(QMessageBox::Warning,
                  qApp->applicationName(),
-                 i18n("<p><b>Do you really want to enable metadata writing to RAW files?</b></p>"
-                      "<p>DigiKam delegates this task to the Exiv2 library. With different RAW "
-                      "formats, problems are known which can lead to the destruction of RAW "
-                      "files. If you decide to do so, make a backup of your RAW files.</p>"
-                      "<p><b>We strongly recommend not to enable this option.</b></p>"),
+                 i18nc("@info", "Do you really want to enable metadata writing to RAW files?\n"
+                       "digiKam delegates this task to the Exiv2 library. With different RAW\n"
+                       "formats, problems are known which can lead to the destruction of RAW\n"
+                       "files. If you decide to do so, make a backup of your RAW files.\n"
+                       "We strongly recommend not to enable this option."),
                  QMessageBox::Yes | QMessageBox::No, this);
 
-        msgBox1->button(QMessageBox::Yes)->setText(i18n("Yes I understand"));
+        msgBox1->button(QMessageBox::Yes)->setText(i18nc("@action", "Yes I understand"));
         msgBox1->setDefaultButton(QMessageBox::No);
 
         int result1 = msgBox1->exec();
@@ -924,7 +924,7 @@ void SetupMetadata::slotWriteRawFilesToggled(bool b)
         {
             QPointer<QMessageBox> msgBox2 = new QMessageBox(QMessageBox::Warning,
                      qApp->applicationName(),
-                     i18n("You would rather disable writing metadata to RAW files?"),
+                     i18nc("@info", "You would rather disable writing metadata to RAW files?"),
                      QMessageBox::Yes | QMessageBox::No, this);
 
             int result2 = msgBox2->exec();

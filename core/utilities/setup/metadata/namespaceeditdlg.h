@@ -56,7 +56,7 @@ public:
 
 public Q_SLOTS:
 
-    void accept() override;
+    void accept()       override;
 
 private Q_SLOTS:
 

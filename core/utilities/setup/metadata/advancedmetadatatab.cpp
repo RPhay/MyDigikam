@@ -57,19 +57,19 @@ class Q_DECL_HIDDEN AdvancedMetadataTab::Private
 public:
 
     explicit Private()
-      : metadataType(nullptr),
-        operationType(nullptr),
-        addButton(nullptr),
-        editButton(nullptr),
-        deleteButton(nullptr),
-        moveUpButton(nullptr),
-        moveDownButton(nullptr),
-        revertChanges(nullptr),
-        resetButton(nullptr),
-        unifyReadWrite(nullptr),
-        namespaceView(nullptr),
+      : metadataType    (nullptr),
+        operationType   (nullptr),
+        addButton       (nullptr),
+        editButton      (nullptr),
+        deleteButton    (nullptr),
+        moveUpButton    (nullptr),
+        moveDownButton  (nullptr),
+        revertChanges   (nullptr),
+        resetButton     (nullptr),
+        unifyReadWrite  (nullptr),
+        namespaceView   (nullptr),
         metadataTypeSize(0),
-        changed(false)
+        changed         (false)
     {
     }
 
@@ -93,7 +93,7 @@ public:
 
 AdvancedMetadataTab::AdvancedMetadataTab(QWidget* const parent)
     : QWidget(parent),
-      d(new Private())
+      d      (new Private())
 {
     // ---------- Advanced Configuration Panel -----------------------------
 
@@ -135,10 +135,10 @@ void AdvancedMetadataTab::slotResetToDefault()
 {
     const int result = DMessageBox::showContinueCancel(QMessageBox::Warning,
                                                        this,
-                                                       i18n("Warning"),
-                                                       i18n("This option will reset configuration to default\n"
-                                                            "All your changes will be lost.\n "
-                                                            "Do you want to continue?"));
+                                                       i18nc("@title: reset to default warning dialog", "Warning"),
+                                                       i18nc("@info", "This option will reset configuration to default\n"
+                                                                      "All your changes will be lost.\n "
+                                                                      "Do you want to continue?"));
 
     if (result != QMessageBox::Yes)
     {

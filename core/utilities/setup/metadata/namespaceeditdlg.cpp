@@ -58,38 +58,38 @@ class Q_DECL_HIDDEN NamespaceEditDlg::Private
 public:
 
     explicit Private()
-      : buttons(nullptr),
-        create(0),
-        topLabel(nullptr),
-        logo(nullptr),
-        gridLayout(nullptr),
-        page(nullptr),
-        subspaceCombo(nullptr),           ///< NamespaceEntry variables
-        specialOptsCombo(nullptr),
-        altSpecialOptsCombo(nullptr),
-        namespaceName(nullptr),
-        alternativeName(nullptr),
-        nameSpaceSeparator(nullptr),
-        isPath(nullptr),
-        ratingMappings(nullptr),
-        zeroStars(nullptr),
-        oneStar(nullptr),
-        twoStars(nullptr),
-        threeStars(nullptr),
-        fourStars(nullptr),
-        fiveStars(nullptr),
-        tagTipLabel(nullptr),             ///< Labels
-        ratingTipLabel(nullptr),
-        commentTipLabel(nullptr),
-        subspaceLabel(nullptr),
-        titleLabel(nullptr),
-        specialOptsLabel(nullptr),
+      : buttons             (nullptr),
+        create              (0),
+        topLabel            (nullptr),
+        logo                (nullptr),
+        gridLayout          (nullptr),
+        page                (nullptr),
+        subspaceCombo       (nullptr),           ///< NamespaceEntry variables
+        specialOptsCombo    (nullptr),
+        altSpecialOptsCombo (nullptr),
+        namespaceName       (nullptr),
+        alternativeName     (nullptr),
+        nameSpaceSeparator  (nullptr),
+        isPath              (nullptr),
+        ratingMappings      (nullptr),
+        zeroStars           (nullptr),
+        oneStar             (nullptr),
+        twoStars            (nullptr),
+        threeStars          (nullptr),
+        fourStars           (nullptr),
+        fiveStars           (nullptr),
+        tagTipLabel         (nullptr),           ///< Labels
+        ratingTipLabel      (nullptr),
+        commentTipLabel     (nullptr),
+        subspaceLabel       (nullptr),
+        titleLabel          (nullptr),
+        specialOptsLabel    (nullptr),
         alternativeNameLabel(nullptr),
-        altspecialOptsLabel(nullptr),
-        isTagLabel(nullptr),
-        separatorLabel(nullptr),
-        tipLabel2(nullptr),
-        nsType(NamespaceEntry::TAGS)
+        altspecialOptsLabel (nullptr),
+        isTagLabel          (nullptr),
+        separatorLabel      (nullptr),
+        tipLabel2           (nullptr),
+        nsType              (NamespaceEntry::TAGS)
     {
     }
 
@@ -138,7 +138,7 @@ NamespaceEditDlg::NamespaceEditDlg(bool create,
                                    NamespaceEntry& entry,
                                    QWidget* const parent)
     : QDialog(parent),
-      d(new Private())
+      d      (new Private())
 {
     setModal(true);
 
@@ -260,7 +260,7 @@ void NamespaceEditDlg::setupTagGui(NamespaceEntry& entry)
     // -------------------Tag Elements---------------------------------
 
     d->titleLabel    = new QLabel(d->page);
-    d->titleLabel->setText(i18n("Name:"));
+    d->titleLabel->setText(i18nc("@label: namespace name", "Name:"));
     d->namespaceName = new QLineEdit(this);
 
     //----------------- Tip Labels --------------------------------------
@@ -269,32 +269,32 @@ void NamespaceEditDlg::setupTagGui(NamespaceEntry& entry)
     d->tagTipLabel->setTextFormat(Qt::RichText);
     d->tagTipLabel->setWordWrap(true);
     d->tagTipLabel->setText(i18n("<p>To create new namespaces, you need to specify parameters:</p>"
-                           "<p><ul><li>Namespace name with dots.<br/>"
-                           "Ex.: <i>\"Xmp.digiKam.TagsList\"</i></li>"
-                           "<li>Separator parameter, used by tag paths <br/>"
-                           "Ex.: \"City/Paris\" or \"City|Paris\"</li>"
-                           "<li>Specify if only keyword or the whole path must be written.</li></ul></p>"
-                          ));
+                                 "<p><ul><li>Namespace name with dots.<br/>"
+                                 "Ex.: <i>\"Xmp.digiKam.TagsList\"</i></li>"
+                                 "<li>Separator parameter, used by tag paths <br/>"
+                                 "Ex.: \"City/Paris\" or \"City|Paris\"</li>"
+                                 "<li>Specify if only keyword or the whole path must be written.</li></ul></p>"
+    ));
 
     d->ratingTipLabel   = new QLabel(d->page);
     d->ratingTipLabel->setTextFormat(Qt::RichText);
     d->ratingTipLabel->setWordWrap(true);
     d->ratingTipLabel->setText(i18n("<p>To create new rating namespaces, you need to specify parameters:</p>"
-                           "<p><ul><li>Namespace name with dots.<br/>"
-                           "Ex.: <i>\"Xmp.xmp.Rating\"</i></li>"
-                           "<li>Rating mappings, if namespace need other values than 0-5 <br/>"
-                           "Ex.: Microsoft uses 0 1 25 50 75 99</li>"
-                           "<li>Select the correct namespace option from list.</li></ul></p>"
-                          ));
+                                    "<p><ul><li>Namespace name with dots.<br/>"
+                                    "Ex.: <i>\"Xmp.xmp.Rating\"</i></li>"
+                                    "<li>Rating mappings, if namespace need other values than 0-5 <br/>"
+                                    "Ex.: Microsoft uses 0 1 25 50 75 99</li>"
+                                    "<li>Select the correct namespace option from list.</li></ul></p>"
+    ));
 
     d->commentTipLabel   = new QLabel(d->page);
     d->commentTipLabel->setTextFormat(Qt::RichText);
     d->commentTipLabel->setWordWrap(true);
     d->commentTipLabel->setText(i18n("<p>To create new comment namespaces, you need to specify parameters:</p>"
-                           "<p><ul><li>Namespace name with dots.<br/>"
-                           "Ex.: <i>\"Xmp.xmp.Comment\"</i></li>"
-                           "<li>Select the correct namespace option from list.</li></ul></p>"
-                          ));
+                                     "<p><ul><li>Namespace name with dots.<br/>"
+                                     "Ex.: <i>\"Xmp.xmp.Comment\"</i></li>"
+                                     "<li>Select the correct namespace option from list.</li></ul></p>"
+    ));
 
     // -------------------------------------------------------
 
