@@ -907,10 +907,12 @@ void SetupMetadata::slotWriteRawFilesToggled(bool b)
 
         QPointer<QMessageBox> msgBox1 = new QMessageBox(QMessageBox::Warning,
                  qApp->applicationName(),
-                 i18nc("@info", "Do you really want to enable metadata writing to RAW files?\n"
-                       "digiKam delegates this task to the Exiv2 library. With different RAW\n"
-                       "formats, problems are known which can lead to the destruction of RAW\n"
-                       "files. If you decide to do so, make a backup of your RAW files.\n"
+                 i18nc("@info",
+                       "Do you really want to enable metadata writing to RAW files? "
+                       "digiKam delegates this task to the Exiv2 library.\n"
+                       "With different RAW formats, problems are known which can "
+                       "lead to the destruction of RAW files.\n"
+                       "If you decide to do so, make a backup of your RAW files. "
                        "We strongly recommend not to enable this option."),
                  QMessageBox::Yes | QMessageBox::No, this);
 
