@@ -402,19 +402,19 @@ void SolidHardwareDlg::slotDeviceAdded(const QString& udi)
     vitem = new QTreeWidgetItem(titem, QStringList() << i18nc("@item: universal device ID", "Udi")         << udi);
     vitem->setData(0, Qt::UserRole, 1);
 
-    vitem = new QTreeWidgetItem(titem, QStringList() << i18nc("@item: parent device ID",    "Parent Udi")  << (device.parentUdi().isEmpty()   ? i18nc("@info: device property" , "none")  : device.parentUdi()));
+    vitem = new QTreeWidgetItem(titem, QStringList() << i18nc("@item: parent device ID",    "Parent Udi")  << (device.parentUdi().isEmpty()   ? i18nc("@info: device property", "none")  : device.parentUdi()));
     vitem->setData(0, Qt::UserRole, 1);
 
-    vitem = new QTreeWidgetItem(titem, QStringList() << i18nc("@item: device constructor",  "Vendor")      << (device.vendor().isEmpty()      ? i18nc("@info: device property" "empty") : device.vendor()));
+    vitem = new QTreeWidgetItem(titem, QStringList() << i18nc("@item: device constructor",  "Vendor")      << (device.vendor().isEmpty()      ? i18nc("@info: device property", "empty") : device.vendor()));
     vitem->setData(0, Qt::UserRole, 1);
 
-    vitem = new QTreeWidgetItem(titem, QStringList() << i18nc("@item: device name",         "Product")     << (device.product().isEmpty()     ? i18nc("@info: device property" "empty") : device.product()));
+    vitem = new QTreeWidgetItem(titem, QStringList() << i18nc("@item: device name",         "Product")     << (device.product().isEmpty()     ? i18nc("@info: device property", "empty") : device.product()));
     vitem->setData(0, Qt::UserRole, 1);
 
-    vitem = new QTreeWidgetItem(titem, QStringList() << i18nc("@item: device description",  "Description") << (device.description().isEmpty() ? i18nc("@info: device property" "empty") : device.description()));
+    vitem = new QTreeWidgetItem(titem, QStringList() << i18nc("@item: device description",  "Description") << (device.description().isEmpty() ? i18nc("@info: device property", "empty") : device.description()));
     vitem->setData(0, Qt::UserRole, 1);
 
-    vitem = new QTreeWidgetItem(titem, QStringList() << i18nc("@item: device status",       "States")      << (device.emblems().isEmpty()     ? i18nc("@info: device property" "none")  : device.emblems().join(QLatin1String(", "))));
+    vitem = new QTreeWidgetItem(titem, QStringList() << i18nc("@item: device status",       "States")      << (device.emblems().isEmpty()     ? i18nc("@info: device property", "none")  : device.emblems().join(QLatin1String(", "))));
     vitem->setData(0, Qt::UserRole, 1);
 
     titem->setExpanded(true);
