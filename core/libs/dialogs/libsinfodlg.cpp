@@ -108,14 +108,14 @@ namespace Digikam
 LibsInfoDlg::LibsInfoDlg(QWidget* const parent)
     : InfoDlg(parent)
 {
-    setWindowTitle(i18n("Shared Libraries and Components Information"));
+    setWindowTitle(i18nc("@title", "Shared Libraries and Components Information"));
 
     // --------------------------------------------------------
     // By default set a list of common components information used by Showfoto and digiKam.
 
     static const char* CONTEXT         = "Component information, see help->components";
-    static const QString SUPPORTED_YES = i18nc("component is supported/available",     "Yes");
-    static const QString SUPPORTED_NO  = i18nc("component is not available/supported", "No");
+    static const QString SUPPORTED_YES = i18nc("@item: component is supported/available",     "Yes");
+    static const QString SUPPORTED_NO  = i18nc("@item: component is not available/supported", "No");
 
     QMap<QString, QString> list;
     list.insert(i18nc(CONTEXT, "Qt"),                          QLatin1String(qVersion()));
@@ -145,7 +145,7 @@ LibsInfoDlg::LibsInfoDlg(QWidget* const parent)
 
     list.insert(i18nc(CONTEXT, "Exiv2"),                       MetaEngine::Exiv2Version());
     list.insert(i18nc(CONTEXT, "Exiv2 supports XMP metadata"), MetaEngine::supportXmp() ?
-                i18n("Yes") : i18n("No"));
+                SUPPORTED_YES : SUPPORTED_NO);
 
 #ifdef HAVE_LENSFUN
     list.insert(i18nc(CONTEXT, "LensFun"),                     LensFunIface::lensFunVersion());
@@ -207,8 +207,8 @@ LibsInfoDlg::LibsInfoDlg(QWidget* const parent)
 
     // TODO: add free memory reported by kmemoryinfo at startup
 
-    listView()->setHeaderLabels(QStringList() << i18nc("Name of the component", "Component")
-                                              << i18nc("Is supported / version of the component", "Info"));
+    listView()->setHeaderLabels(QStringList() << i18nc("@title: Name of the component", "Component")
+                                              << i18nc("@title: Is supported / version of the component", "Info"));
     setInfoMap(list);
 }
 
@@ -222,17 +222,17 @@ QString LibsInfoDlg::checkTriState(int value) const
     {
         case true:
         {
-            return i18n("Yes");
+            return i18nc("@info: tri state", "Yes");
         }
 
         case false:
         {
-            return i18n("No");
+            return i18nc("@info: tri state", "No");
         }
 
         default:
         {
-            return i18n("Unknown");
+            return i18nc("@info: tri state", "Unknown");
         }
     }
 }
