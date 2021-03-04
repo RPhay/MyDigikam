@@ -126,7 +126,7 @@ ScanController::~ScanController()
 
 void ScanController::setInitializationMessage()
 {
-    QString message = i18n("Initializing database...");
+    QString message = i18nc("@info", "Initializing database...");
 
     if (d->progressDialog)
     {
@@ -150,10 +150,11 @@ void ScanController::createProgressDialog()
     }
 
     d->progressDialog = new DProgressDlg(nullptr);
-    d->progressDialog->setLabel(i18n("<b>Scanning collections, please wait...</b>"));
-    d->progressDialog->setWhatsThis(i18n("This shows the progress of the scan. "
-                                         "During the scan, all files on disk "
-                                         "are registered in a database."));
+    d->progressDialog->setLabel(i18nc("@label", "Scanning collections, please wait..."));
+    d->progressDialog->setWhatsThis(i18nc("@info",
+                                          "This shows the progress of the scan. "
+                                          "During the scan, all files on disk "
+                                          "are registered in a database."));
 
     d->progressDialog->setMaximum(1);
     d->progressDialog->setValue(0);
