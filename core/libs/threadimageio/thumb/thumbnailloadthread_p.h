@@ -31,10 +31,10 @@
 // Qt includes
 
 #include <QApplication>
-#include <QEventLoop>
-#include <QHash>
-#include <QPainter>
 #include <QMessageBox>
+#include <QEventLoop>
+#include <QPainter>
+#include <QHash>
 #include <QIcon>
 #include <QMimeType>
 #include <QMimeDatabase>
@@ -46,14 +46,11 @@
 // Local includes
 
 #include "digikam_debug.h"
-#include "dbengineparameters.h"
 #include "iccmanager.h"
 #include "iccprofile.h"
-#include "iccsettings.h"
-#include "metaenginesettings.h"
+#include "loadingcache.h"
 #include "thumbsdbaccess.h"
 #include "thumbnailsize.h"
-#include "thumbnailtask.h"
 #include "thumbnailcreator.h"
 
 namespace Digikam
