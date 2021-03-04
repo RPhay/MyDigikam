@@ -427,19 +427,23 @@ QString CollectionManager::Private::technicalDescription(const AlbumRootLocation
     QUrl url(albumLoc->identifier);
     QString queryItem;
 
-    if (url.scheme() == QLatin1String("volumeid"))
+    if      (url.scheme() == QLatin1String("volumeid"))
     {
         if      (!(queryItem = QUrlQuery(url).queryItemValue(QLatin1String("uuid"))).isNull())
         {
-            return i18nc("\"relative path\" on harddisk partition with \"UUID\"",
+            return i18nc("@info",
+                         "\"relative path\" on harddisk partition with \"UUID\"\n"
                          "Folder \"%1\" on the volume with the id \"%2\"",
-                         QDir::toNativeSeparators(albumLoc->specificPath), queryItem);
+                         QDir::toNativeSeparators(albumLoc->specificPath),
+                         queryItem);
         }
         else if (!(queryItem = QUrlQuery(url).queryItemValue(QLatin1String("label"))).isNull())
         {
-            return i18nc("\"relative path\" on harddisk partition with \"label\"",
+            return i18nc("@info",
+                         "\"relative path\" on harddisk partition with \"label\"\n"
                          "Folder \"%1\" on the volume labeled \"%2\"",
-                         QDir::toNativeSeparators(albumLoc->specificPath), queryItem);
+                         QDir::toNativeSeparators(albumLoc->specificPath),
+                         queryItem);
         }
         else if (!(queryItem = QUrlQuery(url).queryItemValue(QLatin1String("mountpath"))).isNull())
         {
@@ -450,7 +454,7 @@ QString CollectionManager::Private::technicalDescription(const AlbumRootLocation
     {
         if (!(queryItem =  QUrlQuery(url).queryItemValue(QLatin1String("mountpath"))).isNull())
         {
-            return i18nc("@info", "Shared directory mounted at <b>%1</b>", QDir::toNativeSeparators(queryItem));
+            return i18nc("@info", "Shared directory mounted at \"%1\"", QDir::toNativeSeparators(queryItem));
         }
     }
 
