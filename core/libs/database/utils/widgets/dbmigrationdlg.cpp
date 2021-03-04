@@ -73,7 +73,7 @@ public:
 
 DatabaseCopyThread::DatabaseCopyThread(QWidget* const parent)
     : QThread(parent),
-      d(new Private)
+      d      (new Private)
 {
 }
 
@@ -101,15 +101,15 @@ class Q_DECL_HIDDEN DatabaseMigrationDialog::Private
 public:
 
     explicit Private()
-      : fromDatabaseSettingsWidget(nullptr),
-        toDatabaseSettingsWidget(nullptr),
-        migrateButton(nullptr),
-        cancelButton(nullptr),
-        overallStepTitle(nullptr),
-        progressBar(nullptr),
-        progressBarSmallStep(nullptr),
-        buttons(nullptr),
-        copyThread(nullptr)
+      : fromDatabaseSettingsWidget  (nullptr),
+        toDatabaseSettingsWidget    (nullptr),
+        migrateButton               (nullptr),
+        cancelButton                (nullptr),
+        overallStepTitle            (nullptr),
+        progressBar                 (nullptr),
+        progressBarSmallStep        (nullptr),
+        buttons                     (nullptr),
+        copyThread                  (nullptr)
     {
     }
 
@@ -126,7 +126,7 @@ public:
 
 DatabaseMigrationDialog::DatabaseMigrationDialog(QWidget* const parent)
     : QDialog(parent),
-      d(new Private)
+      d      (new Private)
 {
     setupMainArea();
 }

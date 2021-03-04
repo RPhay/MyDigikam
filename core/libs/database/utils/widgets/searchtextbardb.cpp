@@ -59,7 +59,7 @@ public:
 
 SearchTextBarDb::SearchTextBarDb(QWidget* const parent, const QString& name, const QString& msg)
     : SearchTextBar(parent, name, msg),
-      d(new Private)
+      d            (new Private)
 {
 }
 

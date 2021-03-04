@@ -92,7 +92,7 @@ DBStatDlg::DBStatDlg(QWidget* const parent)
     {
         if (prm.internalServer)
         {
-            new QTreeWidgetItem(listView(), QStringList() << i18n("Database internal server")      << i18n("Yes"));
+            new QTreeWidgetItem(listView(), QStringList() << i18n("Database internal server")      << i18nc("@info: database server", "Yes"));
             new QTreeWidgetItem(listView(), QStringList() << i18n("Database internal server Path") << prm.internalServerDBPath);
         }
         else
@@ -149,7 +149,7 @@ int DBStatDlg::generateItemsList(DatabaseItem::Category category, const QString&
 
     setInfoMap(map);
 
-    ti = new QTreeWidgetItem(listView(), QStringList() << i18n("total") << QString::number(total));
+    ti = new QTreeWidgetItem(listView(), QStringList() << i18nc("@info: total number of items", "total") << QString::number(total));
     ti->setFont(0, ft);
     ti->setFont(1, ft);
 
