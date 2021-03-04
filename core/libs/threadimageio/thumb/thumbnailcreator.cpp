@@ -73,9 +73,7 @@ void ThumbnailCreator::initialize()
 
     if (QFile::exists(alphaPath))
     {
-        d->alphaImage.load(alphaPath);
-
-        if (!d->alphaImage.isNull())
+        if (d->alphaImage.load(alphaPath, "PNG"))
         {
             int max = qMax(d->alphaImage.width(), d->alphaImage.height());
             int min = qMin(d->alphaImage.width(), d->alphaImage.height());
