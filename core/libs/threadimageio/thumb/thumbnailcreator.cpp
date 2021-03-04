@@ -89,17 +89,15 @@ void ThumbnailCreator::initialize()
 
     if (d->alphaImage.isNull())
     {
-        QImage alphaImage(20, 20, QImage::Format_RGB32);
+        d->alphaImage = QImage(20, 20, QImage::Format_RGB32);
 
         // create checkerboard image
 
-        QPainter p(&alphaImage);
+        QPainter p(&d->alphaImage);
         p.fillRect( 0,  0, 20, 20, Qt::white);
         p.fillRect( 0, 10 ,10, 10, Qt::lightGray);
         p.fillRect(10,  0, 10, 10, Qt::lightGray);
         p.end();
-
-        d->alphaImage = alphaImage;
     }
 
     if (d->thumbnailStorage == FreeDesktopStandard)
