@@ -118,7 +118,7 @@ void RedEyeCorrectionFilter::filterImage()
         // Loading the shape predictor model
 
         QString path = QStandardPaths::locate(QStandardPaths::AppDataLocation,
-                                              QString::fromLatin1("facesengine/shapepredictor.dat"));
+                                              QLatin1String("facesengine/shapepredictor.dat"));
 
         QFile model(path);
 

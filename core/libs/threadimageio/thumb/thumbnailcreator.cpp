@@ -69,7 +69,7 @@ ThumbnailCreator::~ThumbnailCreator()
 void ThumbnailCreator::initialize()
 {
     QString alphaPath = QStandardPaths::locate(QStandardPaths::AppDataLocation,
-                                               QString::fromLatin1("thumbnail/background.png"));
+                                               QLatin1String("thumbnail/background.png"));
 
     if (QFile::exists(alphaPath))
     {
