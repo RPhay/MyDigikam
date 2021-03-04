@@ -409,6 +409,16 @@ QImage ThumbnailCreator::handleAlphaChannel(const QImage& qimage) const
 
                 return newImage;
             }
+            else
+            {
+                QImage newImage(qimage.size(), QImage::Format_RGB32);
+                newImage.fill(Qt::transparent);
+
+                QPainter p(&newImage);
+                p.drawImage(0, 0, qimage);
+
+                return newImage;
+            }
 
             break;
         }
