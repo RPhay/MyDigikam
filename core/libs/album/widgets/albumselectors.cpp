@@ -142,10 +142,10 @@ AlbumSelectors::AlbumSelectors(const QString& label,
             d->tabWidget = new QTabWidget(this);
 
             initAlbumWidget();
-            d->tabWidget->insertTab(PhysAlbum, d->albumWidget, i18n("Albums (All)"));
+            d->tabWidget->insertTab(PhysAlbum, d->albumWidget, i18nc("@title", "Albums (All)"));
 
             initTagWidget();
-            d->tabWidget->insertTab(TagsAlbum, d->tagWidget, i18n("Tags (0)"));
+            d->tabWidget->insertTab(TagsAlbum, d->tagWidget,   i18nc("@title", "Tags (0)"));
 
             mainLayout->addWidget(d->tabWidget);
             break;
@@ -177,11 +177,11 @@ AlbumSelectors::~AlbumSelectors()
 void AlbumSelectors::initAlbumWidget()
 {
     d->albumWidget   = new QWidget(this);
-    d->wholeAlbums   = new QCheckBox(i18n("Whole albums collection"), d->albumWidget);
+    d->wholeAlbums   = new QCheckBox(i18nc("@option", "Whole albums collection"), d->albumWidget);
     d->albumSelectCB = new AlbumTreeViewSelectComboBox(d->albumWidget);
     d->albumSelectCB->setToolTip(i18nc("@info:tooltip", "Select all albums that should be processed."));
     d->albumSelectCB->setDefaultModel();
-    d->albumSelectCB->setNoSelectionText(i18n("No Album Selected"));
+    d->albumSelectCB->setNoSelectionText(i18nc("@info", "No Album Selected"));
     d->albumSelectCB->addCheckUncheckContextMenuActions();
 
     d->albumClearButton = new ModelClearButton(d->albumSelectCB->view()->albumModel());
@@ -210,11 +210,11 @@ void AlbumSelectors::initAlbumWidget()
 void AlbumSelectors::initTagWidget()
 {
     d->tagWidget   = new QWidget(this);
-    d->wholeTags   = new QCheckBox(i18n("Whole tags collection"), d->tagWidget);
+    d->wholeTags   = new QCheckBox(i18nc("@option", "Whole tags collection"), d->tagWidget);
     d->tagSelectCB = new TagTreeViewSelectComboBox(d->tagWidget);
     d->tagSelectCB->setToolTip(i18nc("@info:tooltip", "Select all tags that should be processed."));
     d->tagSelectCB->setDefaultModel();
-    d->tagSelectCB->setNoSelectionText(i18n("No Tag Selected"));
+    d->tagSelectCB->setNoSelectionText(i18nc("@info", "No Tag Selected"));
     d->tagSelectCB->addCheckUncheckContextMenuActions();
 
     d->tagClearButton = new ModelClearButton(d->tagSelectCB->view()->albumModel());
@@ -498,10 +498,12 @@ void AlbumSelectors::updateTabText()
     if (d->selectionMode == All)
     {
         d->tabWidget->tabBar()->setTabText(PhysAlbum,
-                                           wholeAlbumsChecked() ? i18n("Albums (All)") : i18n("Albums (%1)",
+                                           wholeAlbumsChecked() ? i18nc("@title", "Albums (All)")
+                                                                : i18nc("@title", "Albums (%1)",
                                                  selectedAlbums().count()));
         d->tabWidget->tabBar()->setTabText(TagsAlbum,
-                                           wholeTagsChecked() ? i18n("Tags (All)") : i18n("Tags (%1)",
+                                           wholeTagsChecked() ? i18nc("@title", "Tags (All)")
+                                                              : i18nc("@title", "Tags (%1)",
                                                  selectedTags().count()));
     }
 }

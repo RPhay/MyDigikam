@@ -60,9 +60,9 @@ class Q_DECL_HIDDEN AlbumSelectDialog::Private
 public:
 
     explicit Private()
-      : buttons(nullptr),
-        albumSel(nullptr),
-        searchBar(nullptr)
+      : buttons     (nullptr),
+        albumSel    (nullptr),
+        searchBar   (nullptr)
     {
     }
 
@@ -75,7 +75,7 @@ public:
 
 AlbumSelectDialog::AlbumSelectDialog(QWidget* const parent, PAlbum* const albumToSelect, const QString& header)
     : QDialog(parent),
-      d(new Private)
+      d      (new Private)
 {
     setWindowTitle(i18n("Select Album"));
 

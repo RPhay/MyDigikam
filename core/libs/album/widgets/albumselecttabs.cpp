@@ -61,17 +61,17 @@ class Q_DECL_HIDDEN AlbumSelectTabs::Private
 public:
 
     explicit Private()
-      : albumModel(nullptr),
-        albumTreeView(nullptr),
-        tagModel(nullptr),
-        tagTreeView(nullptr),
-        searchModel(nullptr),
-        searchTreeView(nullptr),
-        albumSearchBar(nullptr),
-        tagSearchBar(nullptr),
-        searchSearchBar(nullptr),
-        labelsTree(nullptr),
-        labelsSearchHandler(nullptr)
+      : albumModel          (nullptr),
+        albumTreeView       (nullptr),
+        tagModel            (nullptr),
+        tagTreeView         (nullptr),
+        searchModel         (nullptr),
+        searchTreeView      (nullptr),
+        albumSearchBar      (nullptr),
+        tagSearchBar        (nullptr),
+        searchSearchBar     (nullptr),
+        labelsTree          (nullptr),
+        labelsSearchHandler (nullptr)
     {
     }
 
@@ -109,7 +109,7 @@ public:
 
 AlbumSelectTabs::AlbumSelectTabs(const QString& name, QWidget* const parent)
     : QTabWidget(parent),
-      d(new Private)
+      d         (new Private)
 {
     KSharedConfigPtr config  = KSharedConfig::openConfig();
     KConfigGroup configGroup = config->group(QLatin1String("AlbumSelectTabs") +

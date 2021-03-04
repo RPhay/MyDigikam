@@ -153,6 +153,7 @@ AlbumSelectWidget::AlbumSelectWidget(QWidget* const parent,
     d->albumModificationHelper = new AlbumModificationHelper(this, this);
 
     // TODO let this class implement StateSavingObject
+
     KConfigGroup group = KSharedConfig::openConfig()->group(objectName());
 
     QGridLayout* const grid = new QGridLayout(this);

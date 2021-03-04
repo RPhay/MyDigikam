@@ -120,7 +120,7 @@ public:
 
 AlbumPropsEdit::AlbumPropsEdit(PAlbum* const album, bool create)
     : QDialog(nullptr),
-      d(new Private)
+      d      (new Private)
 {
     setModal(true);
     setWindowTitle(create ? i18n("New Album") : i18n("Edit Album"));
@@ -152,7 +152,7 @@ AlbumPropsEdit::AlbumPropsEdit(PAlbum* const album, bool create)
     // --------------------------------------------------------
 
     QLabel* const titleLabel = new QLabel(page);
-    titleLabel->setText(i18n("&Title:"));
+    titleLabel->setText(i18nc("@label", "&Title:"));
 
     d->titleEdit = new QLineEdit(page);
     d->titleEdit->setClearButtonEnabled(true);
@@ -177,7 +177,7 @@ AlbumPropsEdit::AlbumPropsEdit(PAlbum* const album, bool create)
     parentLabel->setBuddy(d->parentCombo);
 
     QLabel* const commentsLabel = new QLabel(page);
-    commentsLabel->setText(i18n("Ca&ption:"));
+    commentsLabel->setText(i18nc("@label", "Ca&ption:"));
 
     d->commentsEdit = new QPlainTextEdit(page);
     commentsLabel->setBuddy(d->commentsEdit);
