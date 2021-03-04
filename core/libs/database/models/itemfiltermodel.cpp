@@ -26,7 +26,6 @@
  * ============================================================ */
 
 #include "itemfiltermodel_p.h"
-#include "itemfiltermodelthreads.h"
 
 // KDE includes
 
@@ -34,6 +33,7 @@
 
 // Local includes
 
+#include "itemfiltermodelthreads.h"
 #include "digikam_debug.h"
 #include "coredbaccess.h"
 #include "coredbchangesets.h"
@@ -374,21 +374,21 @@ QVariant ItemFilterModel::data(const QModelIndex& index, int role) const
         {
             if (extraData.isNull())
             {
-                return i18n("No face");
+                return i18nc("@item: filter model", "No face");
             }
 
             if      (face.type() == FaceTagsIface::UnknownName)
             {
-                return i18n("Unknown");
+                return i18nc("@item: filter model", "Unknown");
             }
             else if (face.type() == FaceTagsIface::IgnoredName)
             {
-                return i18n("Ignored");
+                return i18nc("@item: filter model", "Ignored");
             }
             else if (face.type() == FaceTagsIface::ConfirmedName)
             {
                 QString name = FaceTags::faceNameForTag(face.tagId());
-                name        += QString::fromUtf8(" [%1]").arg(i18n("Confirmed"));
+                name        += QString::fromUtf8(" [%1]").arg(i18nc("@item: filter model", "Confirmed"));
 
                 return name;
             }
