@@ -387,25 +387,16 @@ QImage ThumbnailCreator::handleAlphaChannel(const QImage& qimage) const
         {
             QImage newImage(qimage.size(), QImage::Format_RGB32);
             newImage.fill(Qt::transparent);
+            QPainter p(&newImage);
 
             if (d->removeAlphaChannel)
             {
-                QPainter p(&newImage);
                 QBrush brush(d->alphaImage);
-
                 p.fillRect(newImage.rect(), brush);
-                p.drawImage(0, 0, qimage);
-                p.end();
             }
-            else
-            {
-                QImage newImage(qimage.size(), QImage::Format_RGB32);
-                newImage.fill(Qt::transparent);
 
-                QPainter p(&newImage);
-                p.drawImage(0, 0, qimage);
-                p.end();
-            }
+            p.drawImage(0, 0, qimage);
+            p.end();
 
             return newImage;
 
