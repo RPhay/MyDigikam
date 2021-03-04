@@ -30,17 +30,18 @@
 
 // Qt includes
 
-#include <QFileInfo>
-#include <QFile>
-#include <QPainter>
-#include <QBuffer>
-#include <QIODevice>
 #include <QUrl>
+#include <QFile>
+#include <QBuffer>
+#include <QPainter>
+#include <QIODevice>
+#include <QFileInfo>
 #include <QUrlQuery>
 #include <QApplication>
 #include <QMimeDatabase>
 #include <QTemporaryFile>
 #include <QScopedPointer>
+#include <QStandardPaths>
 
 // KDE includes
 
@@ -135,6 +136,8 @@ public:
     QString                         smallThumbPath;
 
     QString                         digiKamFingerPrint;
+
+    QImage                          alphaImage;
 
     DImgLoaderObserver*             observer;
     DRawDecoding                    rawSettings;

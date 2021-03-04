@@ -381,4 +381,5 @@ BUGFIXES:
 338 ==> 433852 - digiKam.metaengine: Cannot load metadata from file Error # 11: The file contains data of an unknown image type.
 339 ==> 433850 - Not able to delete any tags.
 340 ==> 433822 - digiKam doesn't read extended (xattr) attributes.
-341 ==> 
+341 ==> 418274 - Improve Thumbnail transparency.
+342 ==> 

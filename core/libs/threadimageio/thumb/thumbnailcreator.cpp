@@ -68,6 +68,40 @@ ThumbnailCreator::~ThumbnailCreator()
 
 void ThumbnailCreator::initialize()
 {
+    QString alphaPath = QStandardPaths::locate(QStandardPaths::AppDataLocation,
+                                               QString::fromLatin1("thumbnail/background.png"));
+
+    if (QFile::exists(alphaPath))
+    {
+        d->alphaImage.load(alphaPath);
+
+        if (!d->alphaImage.isNull())
+        {
+            int max = qMax(d->alphaImage.width(), d->alphaImage.height());
+            int min = qMin(d->alphaImage.width(), d->alphaImage.height());
+
+            if ((max > ThumbnailSize::MAX) || (min < 10))
+            {
+                d->alphaImage = QImage();
+            }
+        }
+    }
+
+    if (d->alphaImage.isNull())
+    {
+        QImage alphaImage(20, 20, QImage::Format_RGB32);
+
+        // create checkerboard image
+
+        QPainter p(&alphaImage);
+        p.fillRect( 0,  0, 20, 20, Qt::white);
+        p.fillRect( 0, 10 ,10, 10, Qt::lightGray);
+        p.fillRect(10,  0, 10, 10, Qt::lightGray);
+        p.end();
+
+        d->alphaImage = alphaImage;
+    }
+
     if (d->thumbnailStorage == FreeDesktopStandard)
     {
         initThumbnailDirs();

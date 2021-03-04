@@ -385,29 +385,17 @@ QImage ThumbnailCreator::handleAlphaChannel(const QImage& qimage) const
         case QImage::Format_ARGB32:
         case QImage::Format_ARGB32_Premultiplied:
         {
+            QImage newImage(qimage.size(), QImage::Format_RGB32);
+            newImage.fill(Qt::transparent);
+
             if (d->removeAlphaChannel)
             {
-                QImage newImage(qimage.size(), QImage::Format_RGB32);
-                QImage chbImage(20, 20, QImage::Format_RGB32);
-
-                // create checkerboard brush
-
-                QPainter chb(&chbImage);
-                chb.fillRect( 0,  0, 20, 20, Qt::white);
-                chb.fillRect( 0, 10 ,10, 10, Qt::lightGray);
-                chb.fillRect(10,  0, 10, 10, Qt::lightGray);
-                QBrush chbBrush(chbImage);
-
-                // use raster paint engine
-
                 QPainter p(&newImage);
+                QBrush brush(d->alphaImage);
 
-                // blend over white, or a checkerboard?
-
-                p.fillRect(newImage.rect(), chbBrush);
+                p.fillRect(newImage.rect(), brush);
                 p.drawImage(0, 0, qimage);
-
-                return newImage;
+                p.end();
             }
             else
             {
@@ -416,9 +404,10 @@ QImage ThumbnailCreator::handleAlphaChannel(const QImage& qimage) const
 
                 QPainter p(&newImage);
                 p.drawImage(0, 0, qimage);
-
-                return newImage;
+                p.end();
             }
+
+            return newImage;
 
             break;
         }
