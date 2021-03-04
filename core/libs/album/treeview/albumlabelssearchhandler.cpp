@@ -66,11 +66,11 @@ class Q_DECL_HIDDEN AlbumLabelsSearchHandler::Private
 public:
 
     explicit Private()
-      : treeWidget(nullptr),
-        dbJobThread(nullptr),
+      : treeWidget                   (nullptr),
+        dbJobThread                  (nullptr),
         restoringSelectionFromHistory(false),
-        currentXmlIsEmpty(false),
-        albumForSelectedItems(nullptr)
+        currentXmlIsEmpty            (false),
+        albumForSelectedItems        (nullptr)
     {
     }
 
@@ -285,7 +285,7 @@ void AlbumLabelsSearchHandler::generateAlbumNameForExporting(const QList<int>& r
 
     if (!ratings.isEmpty())
     {
-        ratingsString += i18n("Rating: ");
+        ratingsString += i18nc("@info: generate album name for exporting", "Rating: ");
 
         QListIterator<int> it(ratings);
 
@@ -295,7 +295,7 @@ void AlbumLabelsSearchHandler::generateAlbumNameForExporting(const QList<int>& r
 
             if (rating == -1)
             {
-                ratingsString += i18n("No Rating");
+                ratingsString += i18nc("@info: rating label", "No Rating");
             }
             else
             {
@@ -311,7 +311,7 @@ void AlbumLabelsSearchHandler::generateAlbumNameForExporting(const QList<int>& r
 
     if (!colorsList.isEmpty())
     {
-        colorsString += i18n("Colors: ");
+        colorsString += i18nc("@info: generate album name for exporting", "Colors: ");
 
         QListIterator<int> it(colorsList);
 
@@ -320,35 +320,45 @@ void AlbumLabelsSearchHandler::generateAlbumNameForExporting(const QList<int>& r
             switch (it.next())
             {
                 case NoColorLabel:
-                    colorsString += i18n("No Color");
+                    colorsString += i18nc("@info: color label name", "No Color");
                     break;
+
                 case RedLabel:
-                    colorsString += i18n("Red");
+                    colorsString += i18nc("@info: color label name", "Red");
                     break;
+
                 case OrangeLabel:
-                    colorsString += i18n("Orange");
+                    colorsString += i18nc("@info: color label name", "Orange");
                     break;
+
                 case YellowLabel:
-                    colorsString += i18n("Yellow");
+                    colorsString += i18nc("@info: color label name", "Yellow");
                     break;
+
                 case GreenLabel:
-                    colorsString += i18n("Green");
+                    colorsString += i18nc("@info: color label name", "Green");
                     break;
+
                 case BlueLabel:
-                    colorsString += i18n("Blue");
+                    colorsString += i18nc("@info: color label name", "Blue");
                     break;
+
                 case MagentaLabel:
-                    colorsString += i18n("Magenta");
+                    colorsString += i18nc("@info: color label name", "Magenta");
                     break;
+
                 case GrayLabel:
-                    colorsString += i18n("Gray");
+                    colorsString += i18nc("@info: color label name", "Gray");
                     break;
+
                 case BlackLabel:
-                    colorsString += i18n("Black");
+                    colorsString += i18nc("@info: color label name", "Black");
                     break;
+
                 case WhiteLabel:
-                    colorsString += i18n("White");
+                    colorsString += i18nc("@info: color label name", "White");
                     break;
+
                 default:
                     break;
             }
@@ -362,7 +372,7 @@ void AlbumLabelsSearchHandler::generateAlbumNameForExporting(const QList<int>& r
 
     if (!picksList.isEmpty())
     {
-        picksString += i18n("Picks: ");
+        picksString += i18nc("@info: generate album name for exporting", "Picks: ");
 
         QListIterator<int> it(picksList);
 
@@ -371,17 +381,21 @@ void AlbumLabelsSearchHandler::generateAlbumNameForExporting(const QList<int>& r
             switch (it.next())
             {
                 case NoPickLabel:
-                    picksString += i18n("No Pick");
+                    picksString += i18nc("@info: pick label name", "No Pick");
                     break;
+
                 case RejectedLabel:
-                    picksString += i18n("Rejected");
+                    picksString += i18nc("@info: pick label name", "Rejected");
                     break;
+
                 case PendingLabel:
-                    picksString += i18n("Pending");
+                    picksString += i18nc("@info: pick label name", "Pending");
                     break;
+
                 case AcceptedLabel:
-                    picksString += i18n("Accepted");
+                    picksString += i18nc("@info: pick label name", "Accepted");
                     break;
+
                 default:
                     break;
             }
@@ -393,7 +407,7 @@ void AlbumLabelsSearchHandler::generateAlbumNameForExporting(const QList<int>& r
         }
     }
 
-    if (ratingsString.isEmpty() && picksString.isEmpty())
+    if      (ratingsString.isEmpty() && picksString.isEmpty())
     {
         name = colorsString;
     }
@@ -444,11 +458,11 @@ QString AlbumLabelsSearchHandler::getDefaultTitle() const
 {
     if (d->treeWidget->isCheckable())
     {
-        return i18n("Exported Labels");
+        return i18nc("@info: search label defaut title", "Exported Labels");
     }
     else
     {
-        return i18n("Labels Album");
+        return i18nc("@info: search label defaut title", "Labels Album");
     }
 }
 
@@ -521,6 +535,7 @@ void AlbumLabelsSearchHandler::slotResult()
         qCWarning(DIGIKAM_GENERAL_LOG) << "Failed to list urls: " << d->dbJobThread->errorsList().first();
 
         // Pop-up a message about the error.
+
         DNotificationWrapper(QString(),
                              d->dbJobThread->errorsList().first(),
                              DigikamApp::instance(),

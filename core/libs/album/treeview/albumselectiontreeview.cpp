@@ -387,6 +387,7 @@ bool AlbumSelectionTreeView::viewportEvent(QEvent* event)
     if (!album || album->isRoot() || album->isAlbumRoot())
     {
         // there was no album so we really don't want to show a tooltip.
+
         return true;
     }
 

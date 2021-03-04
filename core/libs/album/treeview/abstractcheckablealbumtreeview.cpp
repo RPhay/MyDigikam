@@ -26,11 +26,14 @@
  * ============================================================ */
 
 #include "abstractcheckablealbumtreeview.h"
-#include "abstractalbumtreeview_p.h"
 
 // KDE includes
 
 #include <kconfiggroup.h>
+
+// Local includes
+
+#include "abstractalbumtreeview_p.h"
 
 namespace Digikam
 {
@@ -59,7 +62,7 @@ const QString AbstractCheckableAlbumTreeView::Private::configRestoreCheckedEntry
 
 AbstractCheckableAlbumTreeView::AbstractCheckableAlbumTreeView(QWidget* const parent, Flags flags)
     : AbstractCountingAlbumTreeView(parent, flags & ~CreateDefaultFilterModel),
-      d(new Private)
+      d                            (new Private)
 {
     m_checkOnMiddleClick = true;
     m_restoreCheckState  = false;
@@ -179,6 +182,7 @@ void AbstractCheckableAlbumTreeView::doLoadState()
     }
 
     // initially sync with the albums that are already in the model
+
     restoreCheckStateForHierarchy(QModelIndex());
     horizontalScrollBar()->setValue(0);
 }
@@ -200,6 +204,7 @@ void AbstractCheckableAlbumTreeView::rowsInserted(const QModelIndex& parent, int
 void AbstractCheckableAlbumTreeView::restoreCheckStateForHierarchy(const QModelIndex& index)
 {
     // recurse children
+
     for (int i = 0 ; i < checkableModel()->rowCount(index) ; ++i)
     {
         const QModelIndex child = checkableModel()->index(i, 0, index);

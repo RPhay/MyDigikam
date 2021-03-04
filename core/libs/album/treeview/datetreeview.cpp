@@ -26,6 +26,9 @@
  * ============================================================ */
 
 #include "datetreeview.h"
+
+// Local includes
+
 #include "abstractalbumtreeview_p.h"
 
 namespace Digikam

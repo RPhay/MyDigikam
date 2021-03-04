@@ -26,6 +26,9 @@
  * ============================================================ */
 
 #include "albumtreeview.h"
+
+// Local includes
+
 #include "abstractalbumtreeview_p.h"
 
 namespace Digikam
@@ -53,6 +56,7 @@ AlbumTreeView::~AlbumTreeView()
 void AlbumTreeView::setAlbumModel(AlbumModel* const model)
 {
     // changing model is not implemented
+
     if (m_albumModel)
     {
         return;

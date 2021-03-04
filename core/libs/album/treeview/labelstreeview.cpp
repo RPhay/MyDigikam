@@ -66,12 +66,12 @@ class Q_DECL_HIDDEN LabelsTreeView::Private
 public:
 
     explicit Private()
-      : ratings(nullptr),
-        picks(nullptr),
-        colors(nullptr),
-        isCheckableTreeView(false),
-        isLoadingState(false),
-        iconSizeFromSetting(0)
+      : ratings             (nullptr),
+        picks               (nullptr),
+        colors              (nullptr),
+        isCheckableTreeView (false),
+        isLoadingState      (false),
+        iconSizeFromSetting (0)
     {
     }
 
@@ -100,9 +100,9 @@ const QString LabelsTreeView::Private::configColorSelectionEntry(QLatin1String("
 const QString LabelsTreeView::Private::configExpansionEntry(QLatin1String("Expansion"));
 
 LabelsTreeView::LabelsTreeView(QWidget* const parent, bool setCheckable)
-    : QTreeWidget(parent),
+    : QTreeWidget      (parent),
       StateSavingObject(this),
-      d(new Private)
+      d                (new Private)
 {
     d->regularFont         = ApplicationSettings::instance()->getTreeViewFont();
     d->iconSizeFromSetting = ApplicationSettings::instance()->getTreeViewIconSize();
@@ -369,12 +369,12 @@ void LabelsTreeView::initTreeView()
 void LabelsTreeView::initRatingsTree()
 {
     d->ratings = new QTreeWidgetItem(this);
-    d->ratings->setText(0, i18n("Rating"));
+    d->ratings->setText(0, i18nc("@item: rating tree", "Rating"));
     d->ratings->setFont(0, d->regularFont);
     d->ratings->setFlags(Qt::ItemIsEnabled);
 
     QTreeWidgetItem* const noRate = new QTreeWidgetItem(d->ratings);
-    noRate->setText(0, i18n("No Rating"));
+    noRate->setText(0, i18nc("@item: rating tree", "No Rating"));
     noRate->setFont(0, d->regularFont);
     QPixmap pix2(goldenStarPixmap().size());
     pix2.fill(Qt::transparent);
@@ -410,15 +410,15 @@ void LabelsTreeView::initRatingsTree()
 void LabelsTreeView::initPicksTree()
 {
     d->picks = new QTreeWidgetItem(this);
-    d->picks->setText(0, i18n("Pick"));
+    d->picks->setText(0, i18nc("@title: pick tree", "Pick"));
     d->picks->setFont(0, d->regularFont);
     d->picks->setFlags(Qt::ItemIsEnabled);
 
     QStringList pickSetNames;
-    pickSetNames << i18n("No Pick")
-                 << i18n("Rejected Item")
-                 << i18n("Pending Item")
-                 << i18n("Accepted Item");
+    pickSetNames << i18nc("@item: pick tree", "No Pick")
+                 << i18nc("@item: pick tree", "Rejected Item")
+                 << i18nc("@item: pick tree", "Pending Item")
+                 << i18nc("@item: pick tree", "Accepted Item");
 
     QStringList pickSetIcons;
     pickSetIcons << QLatin1String("flag-black")
@@ -438,12 +438,12 @@ void LabelsTreeView::initPicksTree()
 void LabelsTreeView::initColorsTree()
 {
     d->colors                      = new QTreeWidgetItem(this);
-    d->colors->setText(0, i18n("Color"));
+    d->colors->setText(0, i18nc("@item: color tree", "Color"));
     d->colors->setFont(0, d->regularFont);
     d->colors->setFlags(Qt::ItemIsEnabled);
 
     QTreeWidgetItem* const noColor = new QTreeWidgetItem(d->colors);
-    noColor->setText(0, i18n("No Color"));
+    noColor->setText(0, i18nc("@item: color tree", "No Color"));
     noColor->setFont(0, d->regularFont);
     noColor->setIcon(0, QIcon::fromTheme(QLatin1String("emblem-unmounted")));
 
@@ -455,11 +455,11 @@ void LabelsTreeView::initColorsTree()
              << QLatin1String("white");
 
     QStringList colorSetNames;
-    colorSetNames << i18n("Red")    << i18n("Orange")
-                  << i18n("Yellow") << i18n("Green")
-                  << i18n("Blue")   << i18n("Magenta")
-                  << i18n("Gray")   << i18n("Black")
-                  << i18n("White");
+    colorSetNames << i18nc("@item: color tree", "Red")    << i18nc("@item: color tree", "Orange")
+                  << i18nc("@item: color tree", "Yellow") << i18nc("@item: color tree", "Green")
+                  << i18nc("@item: color tree", "Blue")   << i18nc("@item: color tree", "Magenta")
+                  << i18nc("@item: color tree", "Gray")   << i18nc("@item: color tree", "Black")
+                  << i18nc("@item: color tree", "White");
 
     foreach (const QString& color, colorSet)
     {

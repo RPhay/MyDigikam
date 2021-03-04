@@ -26,6 +26,9 @@
  * ============================================================ */
 
 #include "abstractcountingalbumtreeview.h"
+
+// Local includes
+
 #include "abstractalbumtreeview_p.h"
 
 namespace Digikam
@@ -70,6 +73,7 @@ void AbstractCountingAlbumTreeView::setAlbumFilterModel(AlbumFilterModel* const 
     AbstractAlbumTreeView::setAlbumFilterModel(filterModel);
 
     // Initialize expanded/collapsed showCount state
+
     updateShowCountState(QModelIndex(), true);
 }
 
@@ -115,6 +119,7 @@ void AbstractCountingAlbumTreeView::rowsInserted(const QModelIndex& parent, int 
     AbstractAlbumTreeView::rowsInserted(parent, start, end);
 
     // initialize showCount state when items are added
+
     for (int i = start ; i <= end ; ++i)
     {
         updateShowCountState(m_albumFilterModel->index(i, 0, parent), false);

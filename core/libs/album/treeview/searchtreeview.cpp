@@ -26,6 +26,9 @@
  * ============================================================ */
 
 #include "searchtreeview.h"
+
+// Local includes
+
 #include "abstractalbumtreeview_p.h"
 
 namespace Digikam
@@ -33,7 +36,7 @@ namespace Digikam
 
 SearchTreeView::SearchTreeView(QWidget* const parent, Flags flags)
     : AbstractCheckableAlbumTreeView(parent, flags),
-      m_filteredModel(nullptr)
+      m_filteredModel               (nullptr)
 {
     setRootIsDecorated(false);
 
@@ -71,7 +74,9 @@ void SearchTreeView::setAlbumFilterModel(SearchFilterModel* const filteredModel,
 {
     m_filteredModel = filteredModel;
     AbstractCheckableAlbumTreeView::setAlbumFilterModel(filterModel);
+
     // hook in: source album model -> filtered model -> album filter model
+
     albumFilterModel()->setSourceFilterModel(m_filteredModel);
 }
 

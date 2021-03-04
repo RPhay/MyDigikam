@@ -26,6 +26,9 @@
  * ============================================================ */
 
 #include "tagtreeview.h"
+
+// Local includes
+
 #include "abstractalbumtreeview_p.h"
 
 namespace Digikam
@@ -33,7 +36,7 @@ namespace Digikam
 
 TagTreeView::TagTreeView(QWidget* const parent, Flags flags)
     : AbstractCheckableAlbumTreeView(parent, flags),
-      m_filteredModel(nullptr)
+      m_filteredModel               (nullptr)
 {
     m_modificationHelper = new TagModificationHelper(this, this);
     setRootIsDecorated(true);
@@ -62,13 +65,16 @@ void TagTreeView::setAlbumFilterModel(TagPropertiesFilterModel* const filteredMo
 {
     m_filteredModel = filteredModel;
     AbstractCheckableAlbumTreeView::setAlbumFilterModel(filterModel);
+
     // hook in: source album model -> filtered model -> album filter model
+
     albumFilterModel()->setSourceFilterModel(m_filteredModel);
 }
 
 void TagTreeView::setAlbumModel(TagModel* const model)
 {
     // changing model is not implemented
+
     if (m_albumModel)
     {
         return;
