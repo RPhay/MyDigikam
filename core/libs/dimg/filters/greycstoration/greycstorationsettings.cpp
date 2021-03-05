@@ -52,34 +52,34 @@ class Q_DECL_HIDDEN GreycstorationSettings::Private
 public:
 
     explicit Private()
-      : alphaLabel(nullptr),
-        amplitudeLabel(nullptr),
-        anisotropyLabel(nullptr),
-        btileLabel(nullptr),
-        daLabel(nullptr),
-        dlLabel(nullptr),
-        gaussianPrecLabel(nullptr),
-        interpolationLabel(nullptr),
-        iterationLabel(nullptr),
-        sharpnessLabel(nullptr),
-        sigmaLabel(nullptr),
-        tileLabel(nullptr),
-        advancedPage(nullptr),
-        generalPage(nullptr),
-        fastApproxCBox(nullptr),
-        parent(nullptr),
-        interpolationBox(nullptr),
-        alphaInput(nullptr),
-        amplitudeInput(nullptr),
-        anisotropyInput(nullptr),
-        daInput(nullptr),
-        dlInput(nullptr),
-        gaussianPrecInput(nullptr),
-        sharpnessInput(nullptr),
-        sigmaInput(nullptr),
-        btileInput(nullptr),
-        iterationInput(nullptr),
-        tileInput(nullptr)
+      : alphaLabel          (nullptr),
+        amplitudeLabel      (nullptr),
+        anisotropyLabel     (nullptr),
+        btileLabel          (nullptr),
+        daLabel             (nullptr),
+        dlLabel             (nullptr),
+        gaussianPrecLabel   (nullptr),
+        interpolationLabel  (nullptr),
+        iterationLabel      (nullptr),
+        sharpnessLabel      (nullptr),
+        sigmaLabel          (nullptr),
+        tileLabel           (nullptr),
+        advancedPage        (nullptr),
+        generalPage         (nullptr),
+        fastApproxCBox      (nullptr),
+        parent              (nullptr),
+        interpolationBox    (nullptr),
+        alphaInput          (nullptr),
+        amplitudeInput      (nullptr),
+        anisotropyInput     (nullptr),
+        daInput             (nullptr),
+        dlInput             (nullptr),
+        gaussianPrecInput   (nullptr),
+        sharpnessInput      (nullptr),
+        sigmaInput          (nullptr),
+        btileInput          (nullptr),
+        iterationInput      (nullptr),
+        tileInput           (nullptr)
     {
     }
 
@@ -121,7 +121,7 @@ public:
 
 GreycstorationSettings::GreycstorationSettings(QTabWidget* const parent)
     : QObject(static_cast<QObject*>(parent)),
-      d(new Private)
+      d      (new Private)
 {
     d->parent         = parent;
     const int spacing = QApplication::style()->pixelMetric(QStyle::PM_DefaultLayoutSpacing);
@@ -130,7 +130,7 @@ GreycstorationSettings::GreycstorationSettings(QTabWidget* const parent)
 
     d->generalPage           = new QWidget(parent);
     QGridLayout* const grid1 = new QGridLayout(d->generalPage);
-    parent->addTab(d->generalPage, i18n("General"));
+    parent->addTab(d->generalPage, i18nc("@title: general settings", "General"));
 
     d->sharpnessLabel = new QLabel(i18n("Detail preservation:"), d->generalPage);
     d->sharpnessInput = new DDoubleNumInput(d->generalPage);
@@ -194,7 +194,7 @@ GreycstorationSettings::GreycstorationSettings(QTabWidget* const parent)
 
     d->advancedPage          = new QWidget(parent);
     QGridLayout* const grid2 = new QGridLayout(d->advancedPage);
-    parent->addTab(d->advancedPage, i18n("Advanced Settings"));
+    parent->addTab(d->advancedPage, i18nc("@title", "Advanced Settings"));
 
     d->daLabel = new QLabel(i18n("Angular step:"), d->advancedPage);
     d->daInput = new DDoubleNumInput(d->advancedPage);
@@ -227,9 +227,9 @@ GreycstorationSettings::GreycstorationSettings(QTabWidget* const parent)
 
     d->interpolationLabel = new QLabel(i18n("Interpolation:"), d->advancedPage);
     d->interpolationBox   = new DComboBox(d->advancedPage);
-    d->interpolationBox->insertItem(GreycstorationContainer::NearestNeighbor, i18n("Nearest Neighbor"));
-    d->interpolationBox->insertItem(GreycstorationContainer::Linear, i18n("Linear"));
-    d->interpolationBox->insertItem(GreycstorationContainer::RungeKutta, i18n("Runge-Kutta"));
+    d->interpolationBox->insertItem(GreycstorationContainer::NearestNeighbor, i18nc("@item: interpolation", "Nearest Neighbor"));
+    d->interpolationBox->insertItem(GreycstorationContainer::Linear,          i18nc("@item: interpolation", "Linear"));
+    d->interpolationBox->insertItem(GreycstorationContainer::RungeKutta,      i18nc("@item: interpolation", "Runge-Kutta"));
     d->interpolationBox->setWhatsThis(i18n("Select the right interpolation method for the "
                                            "desired image quality."));
 
