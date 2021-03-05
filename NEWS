@@ -383,4 +383,5 @@ BUGFIXES:
 340 ==> 433822 - digiKam doesn't read extended (xattr) attributes.
 341 ==> 418274 - Improve Thumbnail transparency.
 342 ==> 433984 - digiKam does not save tags as hierarchical tags in Extended Attributes.
-343 ==> 
+343 ==> 434017 - Gone are the metadata embedded in the jpg file of some photos.
+344 ==> 
