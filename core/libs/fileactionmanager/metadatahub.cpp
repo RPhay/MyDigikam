@@ -648,7 +648,7 @@ void MetadataHub::writeToBaloo(const QString& filePath, const MetaEngineSettings
     bool saveComment = (settings.saveComments && (d->commentsStatus == MetadataAvailable));
     bool saveRating  = (settings.saveRating   && (d->ratingStatus   == MetadataAvailable));
 
-    QStringList newKeywords;
+    QStringList tagPathList;
 
     for (QMap<int, MetadataHub::Status>::iterator it = d->tags.begin() ; it != d->tags.end() ; ++it)
     {
@@ -661,11 +661,11 @@ void MetadataHub::writeToBaloo(const QString& filePath, const MetaEngineSettings
 
         if (it.value() == MetadataAvailable)
         {
-            QString tagName = TagsCache::instance()->tagName(it.key());
+            QString tagPath = TagsCache::instance()->tagPath(it.key(), TagsCache::NoLeadingSlash);
 
-            if (!tagName.isEmpty())
+            if (!tagPath.isEmpty())
             {
-                newKeywords << tagName;
+                tagPathList << tagPath;
             }
         }
     }
@@ -680,7 +680,7 @@ void MetadataHub::writeToBaloo(const QString& filePath, const MetaEngineSettings
         bInfo.rating = d->rating;
     }
 
-    bInfo.tags = cleanupTags(newKeywords);
+    bInfo.tags = cleanupTags(tagPathList);
     baloo->setSemanticInfo(QUrl::fromLocalFile(filePath), bInfo);
 
 #else

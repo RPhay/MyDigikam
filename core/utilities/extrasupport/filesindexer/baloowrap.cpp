@@ -116,21 +116,14 @@ BalooInfo BalooWrap::getSemanticInfo(const QUrl& url) const
     }
 
     KFileMetaData::UserMetaData md(url.toLocalFile());
-/*
-    Baloo::File file = job->file();
-*/
+
     BalooInfo bInfo;
 
     // Baloo have rating from 0 to 10, while digiKam have only from 0 to 5
 
-    bInfo.rating  = md.rating() / 2;
     bInfo.comment = md.userComment();
-
-    foreach (const QString& tag, md.tags())
-    {
-        bInfo.tags.append(i18n("BalooTags") +
-                          QLatin1Char('/')  + tag);
-    }
+    bInfo.rating  = md.rating() / 2;
+    bInfo.tags    = md.tags();
 
     return bInfo;
 }
