@@ -399,8 +399,6 @@ QImage ThumbnailCreator::handleAlphaChannel(const QImage& qimage) const
             p.end();
 
             return newImage;
-
-            break;
         }
 
         default: // indexed and monochrome formats
