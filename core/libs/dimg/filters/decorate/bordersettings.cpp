@@ -57,16 +57,16 @@ class Q_DECL_HIDDEN BorderSettings::Private
 public:
 
     explicit Private()
-      : preserveAspectRatio(nullptr),
-        labelBackground(nullptr),
-        labelBorderPercent(nullptr),
-        labelBorderWidth(nullptr),
-        labelForeground(nullptr),
-        firstColorButton(nullptr),
-        secondColorButton(nullptr),
-        borderType(nullptr),
-        borderPercent(nullptr),
-        borderWidth(nullptr)
+      : preserveAspectRatio (nullptr),
+        labelBackground     (nullptr),
+        labelBorderPercent  (nullptr),
+        labelBorderWidth    (nullptr),
+        labelForeground     (nullptr),
+        firstColorButton    (nullptr),
+        secondColorButton   (nullptr),
+        borderType          (nullptr),
+        borderPercent       (nullptr),
+        borderWidth         (nullptr)
     {
     }
 
@@ -121,7 +121,7 @@ const QString BorderSettings::Private::configDecorativeSecondColorEntry(QLatin1S
 
 BorderSettings::BorderSettings(QWidget* const parent)
     : QWidget(parent),
-      d(new Private)
+      d      (new Private)
 {
     const int spacing       = QApplication::style()->pixelMetric(QStyle::PM_DefaultLayoutSpacing);
 
@@ -130,8 +130,11 @@ BorderSettings::BorderSettings(QWidget* const parent)
     QLabel* const label1    = new QLabel(i18n("Type:"));
     d->borderType           = new DComboBox();
     d->borderType->addItem(i18nc("solid border type", "Solid"));
+
     // NOTE: Niepce is a real name. This is the first guy in the world to have built a camera.
+
     d->borderType->addItem(QLatin1String("Niepce"));
+
     d->borderType->addItem(i18nc("beveled border type", "Beveled"));
     d->borderType->addItem(i18n("Decorative Pine"));
     d->borderType->addItem(i18n("Decorative Wood"));

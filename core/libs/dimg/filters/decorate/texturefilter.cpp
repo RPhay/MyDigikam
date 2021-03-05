@@ -51,7 +51,7 @@ TextureFilter::TextureFilter(QObject* const parent)
 
 TextureFilter::TextureFilter(DImg* const orgImage, QObject* const parent, const TextureContainer& settings)
     : DImgThreadedFilter(orgImage, parent, QLatin1String("Texture")),
-      m_settings(settings)
+      m_settings        (settings)
 {
     initFilter();
 }
@@ -96,7 +96,7 @@ void TextureFilter::filterImage()
     int bytesDepth      = m_orgImage.bytesDepth();
     bool sixteenBit     = m_orgImage.sixteenBit();
     QString texturePath = TextureContainer::getTexturePath(m_settings.textureType);
-    
+
     qCDebug(DIGIKAM_DIMG_LOG) << "Texture File: " << texturePath;
     DImg texture(texturePath);
 

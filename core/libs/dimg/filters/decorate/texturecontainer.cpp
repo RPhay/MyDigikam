@@ -33,7 +33,7 @@ namespace Digikam
 {
 
 TextureContainer::TextureContainer()
-    : blendGain(200),
+    : blendGain  (200),
       textureType(MarbleTexture)
 {
 }

@@ -58,7 +58,7 @@ public:
 
     explicit Private()
       : textureType(nullptr),
-        blendGain(nullptr)
+        blendGain  (nullptr)
     {
     }
 
@@ -76,7 +76,7 @@ const QString TextureSettings::Private::configBlendGainEntry(QLatin1String("Blen
 
 TextureSettings::TextureSettings(QWidget* const parent)
     : QWidget(parent),
-      d(new Private)
+      d      (new Private)
 {
     const int spacing       = QApplication::style()->pixelMetric(QStyle::PM_DefaultLayoutSpacing);
 
@@ -84,34 +84,34 @@ TextureSettings::TextureSettings(QWidget* const parent)
 
     // -------------------------------------------------------------
 
-    QLabel* const label1 = new QLabel(i18n("Type:"));
+    QLabel* const label1 = new QLabel(i18nc("@label", "Type:"));
     d->textureType       = new DComboBox;
-    d->textureType->addItem(i18n("Paper"));
-    d->textureType->addItem(i18n("Paper 2"));
-    d->textureType->addItem(i18n("Fabric"));
-    d->textureType->addItem(i18n("Burlap"));
-    d->textureType->addItem(i18n("Bricks"));
-    d->textureType->addItem(i18n("Bricks 2"));
-    d->textureType->addItem(i18n("Canvas"));
-    d->textureType->addItem(i18n("Marble"));
-    d->textureType->addItem(i18n("Marble 2"));
-    d->textureType->addItem(i18n("Blue Jean"));
-    d->textureType->addItem(i18n("Cell Wood"));
-    d->textureType->addItem(i18n("Metal Wire"));
-    d->textureType->addItem(i18n("Modern"));
-    d->textureType->addItem(i18n("Wall"));
-    d->textureType->addItem(i18n("Moss"));
-    d->textureType->addItem(i18n("Stone"));
+    d->textureType->addItem(i18nc("@item: texture type", "Paper"));
+    d->textureType->addItem(i18nc("@item: texture type", "Paper 2"));
+    d->textureType->addItem(i18nc("@item: texture type", "Fabric"));
+    d->textureType->addItem(i18nc("@item: texture type", "Burlap"));
+    d->textureType->addItem(i18nc("@item: texture type", "Bricks"));
+    d->textureType->addItem(i18nc("@item: texture type", "Bricks 2"));
+    d->textureType->addItem(i18nc("@item: texture type", "Canvas"));
+    d->textureType->addItem(i18nc("@item: texture type", "Marble"));
+    d->textureType->addItem(i18nc("@item: texture type", "Marble 2"));
+    d->textureType->addItem(i18nc("@item: texture type", "Blue Jean"));
+    d->textureType->addItem(i18nc("@item: texture type", "Cell Wood"));
+    d->textureType->addItem(i18nc("@item: texture type", "Metal Wire"));
+    d->textureType->addItem(i18nc("@item: texture type", "Modern"));
+    d->textureType->addItem(i18nc("@item: texture type", "Wall"));
+    d->textureType->addItem(i18nc("@item: texture type", "Moss"));
+    d->textureType->addItem(i18nc("@item: texture type", "Stone"));
     d->textureType->setDefaultIndex(TextureContainer::PaperTexture);
-    d->textureType->setWhatsThis(i18n("Set here the texture type to apply to image."));
+    d->textureType->setWhatsThis(i18nc("@info", "Set here the texture type to apply to image."));
 
     // -------------------------------------------------------------
 
-    QLabel* const label2 = new QLabel(i18n("Relief:"));
+    QLabel* const label2 = new QLabel(i18nc("@label", "Relief:"));
     d->blendGain         = new DIntNumInput;
     d->blendGain->setRange(1, 255, 1);
     d->blendGain->setDefaultValue(200);
-    d->blendGain->setWhatsThis(i18n("Set here the relief gain used to merge texture and image."));
+    d->blendGain->setWhatsThis(i18nc("@info", "Set here the relief gain used to merge texture and image."));
 
     // -------------------------------------------------------------------
 

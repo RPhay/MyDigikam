@@ -34,22 +34,22 @@ namespace Digikam
 {
 
 BorderContainer::BorderContainer()
-    : preserveAspectRatio(true),
-      orgWidth(0),
-      orgHeight(0),
-      borderType(0),
-      borderWidth1(0),
-      borderWidth2(0),
-      borderWidth3(0),
-      borderWidth4(0),
-      borderPercent(0.1),
-      solidColor(QColor(0, 0, 0)),
-      niepceBorderColor(QColor(255, 255, 255)),
-      niepceLineColor(QColor(0, 0, 0)),
-      bevelUpperLeftColor(QColor(192, 192, 192)),
-      bevelLowerRightColor(QColor(128, 128, 128)),
-      decorativeFirstColor(QColor(0, 0, 0)),
-      decorativeSecondColor(QColor(0, 0, 0))
+    : preserveAspectRatio   (true),
+      orgWidth              (0),
+      orgHeight             (0),
+      borderType            (0),
+      borderWidth1          (0),
+      borderWidth2          (0),
+      borderWidth3          (0),
+      borderWidth4          (0),
+      borderPercent         (0.1),
+      solidColor            (QColor(0, 0, 0)),
+      niepceBorderColor     (QColor(255, 255, 255)),
+      niepceLineColor       (QColor(0, 0, 0)),
+      bevelUpperLeftColor   (QColor(192, 192, 192)),
+      bevelLowerRightColor  (QColor(128, 128, 128)),
+      decorativeFirstColor  (QColor(0, 0, 0)),
+      decorativeSecondColor (QColor(0, 0, 0))
 {
 }
 
