@@ -59,7 +59,7 @@ class Q_DECL_HIDDEN ItemPropertiesVersionsTab::Private
 public:
 
     explicit Private()
-      : versionsWidget(nullptr),
+      : versionsWidget      (nullptr),
         filtersHistoryWidget(nullptr)
     {
     }
@@ -76,13 +76,13 @@ const QString ItemPropertiesVersionsTab::Private::configActiveTab(QLatin1String(
 
 ItemPropertiesVersionsTab::ItemPropertiesVersionsTab(QWidget* const parent)
     : QTabWidget(parent),
-      d(new Private)
+      d         (new Private)
 {
     d->versionsWidget       = new VersionsWidget(this);
-    insertTab(0, d->versionsWidget, i18n("Versions"));
+    insertTab(0, d->versionsWidget, i18nc("@title", "Versions"));
 
     d->filtersHistoryWidget = new FiltersHistoryWidget(this);
-    insertTab(1, d->filtersHistoryWidget, i18n("Used Filters"));
+    insertTab(1, d->filtersHistoryWidget, i18nc("@title", "Used Filters"));
 
     connect(d->versionsWidget, SIGNAL(imageSelected(ItemInfo)),
             this, SIGNAL(imageSelected(ItemInfo)));
@@ -162,8 +162,8 @@ void ItemPropertiesVersionsTab::addShowHideOverlay()
 void ItemPropertiesVersionsTab::addOpenImageAction()
 {
     ActionVersionsOverlay* const overlay = d->versionsWidget->addActionOverlay(QIcon::fromTheme(QLatin1String("document-open")),
-                                                                               i18n("Open"),
-                                                                               i18n("Open file"));
+                                                                               i18nc("@action: open image", "Open"),
+                                                                               i18nc("@info:tooltip",  "Open file"));
 
     connect(overlay, SIGNAL(activated(ItemInfo)),
             this, SIGNAL(actionTriggered(ItemInfo)));
@@ -172,7 +172,7 @@ void ItemPropertiesVersionsTab::addOpenImageAction()
 void ItemPropertiesVersionsTab::addOpenAlbumAction(const ItemModel* referenceModel)
 {
     ActionVersionsOverlay* const overlay = d->versionsWidget->addActionOverlay(QIcon::fromTheme(QLatin1String("folder-pictures")),
-                                                                               i18n("Go To Albums"),
+                                                                               i18nc("@action: go to album", "Go To Albums"),
                                                                                i18nc("@info:tooltip", "Go to the album of this image"));
     overlay->setReferenceModel(referenceModel);
 

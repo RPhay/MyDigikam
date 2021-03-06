@@ -209,10 +209,10 @@ void ActionVersionsOverlay::Button::updateToolTip()
 
 ActionVersionsOverlay::ActionVersionsOverlay(QObject* const parent, const QIcon& icon, const QString& text, const QString& tip)
     : HoverButtonDelegateOverlay(parent),
-      m_icon(icon),
-      m_text(text),
-      m_tip(tip),
-      m_referenceModel(nullptr)
+      m_icon                    (icon),
+      m_text                    (text),
+      m_tip                     (tip),
+      m_referenceModel          (nullptr)
 {
 }
 
