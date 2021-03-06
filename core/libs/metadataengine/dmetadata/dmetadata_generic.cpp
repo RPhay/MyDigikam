@@ -735,40 +735,40 @@ QString DMetadata::valueToString(const QVariant& value, MetadataInfo::Field fiel
         {
             switch (value.toInt())
             {
-                    // Example why the English text differs from the enum names: ORIENTATION_ROT_90.
-                    // Rotation by 90 degrees is right (clockwise) rotation.
-                    // But: The enum names describe what needs to be done to get the image right again.
-                    // And an image that needs to be rotated 90 degrees is currently rotated 270 degrees = left.
+                // Example why the English text differs from the enum names: ORIENTATION_ROT_90.
+                // Rotation by 90 degrees is right (clockwise) rotation.
+                // But: The enum names describe what needs to be done to get the image right again.
+                // And an image that needs to be rotated 90 degrees is currently rotated 270 degrees = left.
 
                 case ORIENTATION_UNSPECIFIED:
-                    return i18n("Unspecified");
+                    return i18nc("@info: rotation", "Unspecified");
 
                 case ORIENTATION_NORMAL:
-                    return i18nc("Rotation of an unrotated image", "Normal");
+                    return i18nc("@info: rotation of an unrotated image", "Normal");
 
                 case ORIENTATION_HFLIP:
-                    return i18n("Flipped Horizontally");
+                    return i18nc("@info: rotation", "Flipped Horizontally");
 
                 case ORIENTATION_ROT_180:
-                    return i18n("Rotated by 180 Degrees");
+                    return i18nc("@info: rotation", "Rotated by 180 Degrees");
 
                 case ORIENTATION_VFLIP:
-                    return i18n("Flipped Vertically");
+                    return i18nc("@info: rotation", "Flipped Vertically");
 
                 case ORIENTATION_ROT_90_HFLIP:
-                    return i18n("Flipped Horizontally and Rotated Left");
+                    return i18nc("@info: rotation", "Flipped Horizontally and Rotated Left");
 
                 case ORIENTATION_ROT_90:
-                    return i18n("Rotated Left");
+                    return i18nc("@info: rotation", "Rotated Left");
 
                 case ORIENTATION_ROT_90_VFLIP:
-                    return i18n("Flipped Vertically and Rotated Left");
+                    return i18nc("@info: rotation", "Flipped Vertically and Rotated Left");
 
                 case ORIENTATION_ROT_270:
-                    return i18n("Rotated Right");
+                    return i18nc("@info: rotation", "Rotated Right");
 
                 default:
-                    return i18n("Unknown");
+                    return i18nc("@info: rotation", "Unknown");
             }
 
             break;
@@ -821,7 +821,7 @@ QString DMetadata::valueToString(const QVariant& value, MetadataInfo::Field fiel
             return exiv2Iface->createExifUserStringFromValue("Exif.Photo.SubjectDistanceRange", value);
 
         case MetadataInfo::WhiteBalanceColorTemperature:
-            return i18nc("Temperature in Kelvin", "%1 K", value.toInt());
+            return i18nc("@info: Temperature in Kelvin", "%1 K", value.toInt());
 
         case MetadataInfo::AspectRatio:
         case MetadataInfo::AudioBitRate:
@@ -843,8 +843,9 @@ QString DMetadata::valueToString(const QVariant& value, MetadataInfo::Field fiel
                 return QString();
             }
 
-            QString direction = (QLatin1Char(directionRef) == QLatin1Char('W')) ?
-                                i18nc("For use in longitude coordinate", "West") : i18nc("For use in longitude coordinate", "East");
+            QString direction = (QLatin1Char(directionRef) == QLatin1Char('W'))         ?
+                                i18nc("@info: For use in longitude coordinate", "West") :
+                                i18nc("@info: For use in longitude coordinate", "East");
 
             return QString::fromLatin1("%1%2%3%4%L5%6 %7").arg(degrees).arg(QChar(0xB0))
                         .arg(minutes).arg(QChar(0x2032))
@@ -858,8 +859,9 @@ QString DMetadata::valueToString(const QVariant& value, MetadataInfo::Field fiel
             char   directionRef;
 
             convertToUserPresentableNumbers(false, value.toDouble(), &degrees, &minutes, &seconds, &directionRef);
-            QString direction = (QLatin1Char(directionRef) == QLatin1Char('W')) ?
-                                i18nc("For use in longitude coordinate", "West") : i18nc("For use in longitude coordinate", "East");
+            QString direction = (QLatin1Char(directionRef) == QLatin1Char('W'))         ?
+                                i18nc("@info: For use in longitude coordinate", "West") :
+                                i18nc("@info: For use in longitude coordinate", "East");
 
             return QString::fromLatin1("%1%2%3%4%L5%6 %7").arg(degrees).arg(QChar(0xB0))
                         .arg(minutes).arg(QChar(0x2032))
@@ -877,8 +879,9 @@ QString DMetadata::valueToString(const QVariant& value, MetadataInfo::Field fiel
                 return QString();
             }
 
-            QString direction = (QLatin1Char(directionRef) == QLatin1Char('N')) ?
-                                i18nc("For use in latitude coordinate", "North") : i18nc("For use in latitude coordinate", "South");
+            QString direction = (QLatin1Char(directionRef) == QLatin1Char('N'))         ?
+                                i18nc("@info: For use in latitude coordinate", "North") :
+                                i18nc("@info: For use in latitude coordinate", "South");
 
             return QString::fromLatin1("%1%2%3%4%L5%6 %7").arg(degrees).arg(QChar(0xB0))
                         .arg(minutes).arg(QChar(0x2032))
@@ -892,8 +895,9 @@ QString DMetadata::valueToString(const QVariant& value, MetadataInfo::Field fiel
             char   directionRef;
 
             convertToUserPresentableNumbers(false, value.toDouble(), &degrees, &minutes, &seconds, &directionRef);
-            QString direction = (QLatin1Char(directionRef) == QLatin1Char('N')) ?
-                                i18nc("For use in latitude coordinate", "North") : i18nc("For use in latitude coordinate", "South");
+            QString direction = (QLatin1Char(directionRef) == QLatin1Char('N'))         ?
+                                i18nc("@info: For use in latitude coordinate", "North") :
+                                i18nc("@info: For use in latitude coordinate", "South");
 
             return QString::fromLatin1("%1%2%3%4%L5%6 %7").arg(degrees).arg(QChar(0xB0))
                        .arg(minutes).arg(QChar(0x2032))
@@ -906,7 +910,7 @@ QString DMetadata::valueToString(const QVariant& value, MetadataInfo::Field fiel
 
             // xgettext: no-c-format
 
-            return i18nc("Height in meters", "%1m", meters);
+            return i18nc("@info: Height in meters", "%1m", meters);
         }
 
         case MetadataInfo::PositionOrientation:
@@ -1060,8 +1064,8 @@ QMap<int, QString> DMetadata::possibleValuesForEnumField(MetadataInfo::Field fie
         case MetadataInfo::FlashMode:                        /// Int, bit mask from Exif
             // This one is a bit special.
             // We return a bit mask for binary AND searching.
-            map[0x1]  = i18n("Flash has been fired");
-            map[0x40] = i18n("Flash with red-eye reduction mode");
+            map[0x1]  = i18nc("@info", "Flash has been fired");
+            map[0x40] = i18nc("@info", "Flash with red-eye reduction mode");
             //more: TODO?
             return map;
 
