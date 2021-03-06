@@ -36,24 +36,24 @@ namespace Digikam
 {
 
 HotPixelsWeights::HotPixelsWeights()
-    : m_height(0),
-      m_width(0),
+    : m_height           (0),
+      m_width            (0),
       m_coefficientNumber(0),
-      m_twoDim(false),
-      m_polynomeOrder(0),
-      m_weightMatrices(nullptr),
-      m_positions(QList<QPoint>())
+      m_twoDim           (false),
+      m_polynomeOrder    (0),
+      m_weightMatrices   (nullptr),
+      m_positions        (QList<QPoint>())
 {
 }
 
 HotPixelsWeights::HotPixelsWeights(const HotPixelsWeights& w)
-    : m_height(0),
-      m_width(0),
+    : m_height           (0),
+      m_width            (0),
       m_coefficientNumber(0),
-      m_twoDim(false),
-      m_polynomeOrder(0),
-      m_weightMatrices(nullptr),
-      m_positions(QList<QPoint>())
+      m_twoDim           (false),
+      m_polynomeOrder    (0),
+      m_weightMatrices   (nullptr),
+      m_positions        (QList<QPoint>())
 {
     (*this) = w;
 }
@@ -165,7 +165,7 @@ HotPixelsWeights& HotPixelsWeights::operator=(const HotPixelsWeights& w)
 
         // Allocate m_positions.count() matrices
 
-        m_weightMatrices               = new double** [m_positions.count()];
+        m_weightMatrices              = new double** [m_positions.count()];
 
         for (int i = 0 ; i < m_positions.count() ; ++i)
         {
@@ -286,7 +286,7 @@ void HotPixelsWeights::calculateHotPixelsWeights()
             for (ix = 0 ; ix < m_coefficientNumber ; ++ix)
             {
                 vector1[(int)(iy * m_positions.count() + j)] += matrix[(int)(iy  * m_coefficientNumber + ix)] *
-                                                               vector0[(int)(ix * m_positions.count() + j)];
+                                                                vector0[(int)(ix * m_positions.count() + j)];
             }
         }
     }
@@ -351,7 +351,7 @@ void HotPixelsWeights::matrixInv (double* const a, const size_t size)
 
     // Copy matrix to new location.
 
-    memcpy (b.data(), a, sizeof (double) * size * size);
+    memcpy(b.data(), a, sizeof (double) * size * size);
 
     // Set destination matrix to unit matrix.
 
@@ -412,10 +412,8 @@ double HotPixelsWeights::polyTerm (const size_t i_coeff, const int x, const int 
 {
     const size_t x_power = i_coeff / ((size_t)poly_order + 1);
     const size_t y_power = i_coeff % ((size_t)poly_order + 1);
-    int result;
+    int result           = 1;
     size_t i;
-
-    result = 1;
 
     for (i = 0 ; i < x_power ; ++i)
     {

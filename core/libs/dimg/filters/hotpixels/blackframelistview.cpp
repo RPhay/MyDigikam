@@ -50,8 +50,8 @@ public:
 
     explicit Private()
       : toolTipTimer(nullptr),
-        toolTip(nullptr),
-        toolTipItem(nullptr)
+        toolTip     (nullptr),
+        toolTipItem (nullptr)
     {
     }
 
@@ -62,7 +62,7 @@ public:
 
 BlackFrameListView::BlackFrameListView(QWidget* const parent)
     : QTreeWidget(parent),
-      d(new Private)
+      d          (new Private)
 {
     setColumnCount(3);
     setRootIsDecorated(false);

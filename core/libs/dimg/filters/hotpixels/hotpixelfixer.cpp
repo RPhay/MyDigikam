@@ -72,7 +72,7 @@ HotPixelFixer::HotPixelFixer(DImg* const orgImage,
                              QObject* const parent,
                              const HotPixelContainer& settings)
     : DImgThreadedFilter(orgImage, parent, QLatin1String("HotPixels")),
-      m_settings(settings)
+      m_settings        (settings)
 {
     initFilter();
 }

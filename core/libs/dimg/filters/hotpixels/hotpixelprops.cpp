@@ -58,13 +58,13 @@ bool HotPixelProps::operator==(const HotPixelProps& p) const
      * touch (next to) each other horizontally or vertically, not diagonal corners
      */
     return (
-            (rect != p.rect)                                &&
+            (rect != p.rect)                            &&
             (
              ((x() + width())  >= p.x())                &&
              ( x()             <= (p.x() + p.width()))  &&
              ((y() + height()) >= p.y())                &&
              ( y()             <= (p.y() + p.height()))
-            )                                               &&
+            )                                           &&
             !diagonal(rect, p.rect)
            );
 }

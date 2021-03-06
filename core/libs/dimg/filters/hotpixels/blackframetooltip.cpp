@@ -51,7 +51,7 @@ public:
 
 BlackFrameToolTip::BlackFrameToolTip(QTreeWidget* const view)
     : DItemToolTip(),
-      d(new Private)
+      d           (new Private)
 {
     d->view = view;
 }

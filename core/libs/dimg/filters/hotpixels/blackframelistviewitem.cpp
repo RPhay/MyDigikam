@@ -69,9 +69,9 @@ public:
 };
 
 BlackFrameListViewItem::BlackFrameListViewItem(QTreeWidget* const parent, const QUrl& url)
-    : QObject(parent),
+    : QObject        (parent),
       QTreeWidgetItem(parent),
-      d(new Private)
+      d              (new Private)
 {
     d->blackFrameUrl = url;
     d->parser        = new BlackFrameParser(this);
@@ -178,21 +178,21 @@ void BlackFrameListViewItem::slotHotPixelsParsed(const QList<HotPixelProps>& hot
     d->toolTipStr.clear();
 
     DToolTipStyleSheet cnt;
-    QString tip = cnt.tipHeader;
+    QString tip    = cnt.tipHeader;
 
     d->toolTipStr += cnt.headBeg + header + cnt.headEnd;
 
     d->toolTipStr += cnt.cellBeg + i18n("File Name:") + cnt.cellMid;
     d->toolTipStr += d->blackFrameUrl.fileName() + cnt.cellEnd;
 
-    QString make  = info.make;
-    QString model = info.model;
+    QString make   = info.make;
+    QString model  = info.model;
     ItemPropertiesTab::shortenedMakeInfo(make);
     ItemPropertiesTab::shortenedModelInfo(model);
     d->toolTipStr += cnt.cellBeg + i18n("Make/Model:") + cnt.cellMid;
     d->toolTipStr += QString::fromUtf8("%1/%2").arg(make).arg(model) + cnt.cellEnd;
 
-    d->toolTipStr += cnt.cellBeg + i18n("Created:") + cnt.cellMid;
+    d->toolTipStr += cnt.cellBeg + i18nc("@info: creation date", "Created:") + cnt.cellMid;
     d->toolTipStr += QLocale().toString(info.dateTime, QLocale::ShortFormat) + cnt.cellEnd;
 
     d->toolTipStr += cnt.cellBeg + i18n("Serial Number:") + cnt.cellMid;

@@ -58,8 +58,8 @@ class Q_DECL_HIDDEN HotPixelSettings::Private
 public:
 
     explicit Private()
-      : blackFrameButton(nullptr),
-        filterMethodCombo(nullptr),
+      : blackFrameButton  (nullptr),
+        filterMethodCombo (nullptr),
         blackFrameListView(nullptr)
     {
     }
@@ -89,7 +89,7 @@ const QString HotPixelSettings::Private::configFilterMethodEntry(QLatin1String("
 
 HotPixelSettings::HotPixelSettings(QWidget* const parent)
     : QWidget(parent),
-      d(new Private)
+      d      (new Private)
 {
     const int spacing               = QApplication::style()->pixelMetric(QStyle::PM_DefaultLayoutSpacing);
     QGridLayout* const grid         = new QGridLayout(parent);

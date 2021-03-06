@@ -71,7 +71,7 @@ public:
 
 BlackFrameParser::BlackFrameParser(QObject* const parent)
     : QObject(parent),
-      d(new Private)
+      d      (new Private)
 {
 }
 
