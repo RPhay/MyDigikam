@@ -68,27 +68,28 @@ public:
 
     explicit Private()
       : stretchContrastCheck(nullptr),
-        label4(nullptr),
-        label5(nullptr),
-        label6(nullptr),
-        label7(nullptr),
-        label8(nullptr),
-        label9(nullptr),
-        label10(nullptr),
-        label11(nullptr),
-        lowSaturationInput(nullptr),
-        highSaturationInput(nullptr),
-        functionInput(nullptr),
-        powerInput1(nullptr),
-        blurInput1(nullptr),
-        powerInput2(nullptr),
-        blurInput2(nullptr),
-        powerInput3(nullptr),
-        blurInput3(nullptr),
-        powerInput4(nullptr),
-        blurInput4(nullptr),
-        expanderBox(nullptr)
-    {}
+        label4              (nullptr),
+        label5              (nullptr),
+        label6              (nullptr),
+        label7              (nullptr),
+        label8              (nullptr),
+        label9              (nullptr),
+        label10             (nullptr),
+        label11             (nullptr),
+        lowSaturationInput  (nullptr),
+        highSaturationInput (nullptr),
+        functionInput       (nullptr),
+        powerInput1         (nullptr),
+        blurInput1          (nullptr),
+        powerInput2         (nullptr),
+        blurInput2          (nullptr),
+        powerInput3         (nullptr),
+        blurInput3          (nullptr),
+        powerInput4         (nullptr),
+        blurInput4          (nullptr),
+        expanderBox         (nullptr)
+    {
+    }
 
     static const QString  configLowSaturationEntry;
     static const QString  configHighSaturationEntry;
@@ -157,7 +158,7 @@ const QString LocalContrastSettings::Private::configFunctionInputEntry(QLatin1St
 
 LocalContrastSettings::LocalContrastSettings(QWidget* const parent)
     : QWidget(parent),
-      d(new Private)
+      d      (new Private)
 {
     const int spacing        = QApplication::style()->pixelMetric(QStyle::PM_DefaultLayoutSpacing);
 
@@ -166,10 +167,10 @@ LocalContrastSettings::LocalContrastSettings(QWidget* const parent)
     QWidget* const firstPage = new QWidget();
     QGridLayout* const grid1 = new QGridLayout(firstPage);
 
-    QLabel* const label1 = new QLabel(i18n("Function:"), firstPage);
-    d->functionInput     = new DComboBox(firstPage);
-    d->functionInput->addItem(i18n("Power"));
-    d->functionInput->addItem(i18n("Linear"));
+    QLabel* const label1     = new QLabel(i18n("Function:"), firstPage);
+    d->functionInput         = new DComboBox(firstPage);
+    d->functionInput->addItem(i18nc("@item: function type", "Power"));
+    d->functionInput->addItem(i18nc("@item: function type", "Linear"));
     d->functionInput->setDefaultIndex(0);
     d->functionInput->setWhatsThis(i18n("<b>Function</b>: This function combines the original RGB "
                                         "channels with the desaturated blurred image. This function is used in each of "

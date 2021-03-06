@@ -63,14 +63,14 @@ public:
 
 LocalContrastFilter::LocalContrastFilter(QObject* const parent)
     : DImgThreadedFilter(parent),
-      d(new Private)
+      d                 (new Private)
 {
     initFilter();
 }
 
 LocalContrastFilter::LocalContrastFilter(DImg* const image, QObject* const parent, const LocalContrastContainer& par)
     : DImgThreadedFilter(image, parent, QLatin1String("LocalContrast")),
-      d(new Private)
+      d                 (new Private)
 {
     d->par = par;
     d->generator.seedByTime();
@@ -80,6 +80,7 @@ LocalContrastFilter::LocalContrastFilter(DImg* const image, QObject* const paren
 LocalContrastFilter::~LocalContrastFilter()
 {
     cancelFilter();
+
     delete d;
 }
 

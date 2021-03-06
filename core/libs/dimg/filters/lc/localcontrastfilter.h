@@ -50,13 +50,13 @@ private:
     struct Q_DECL_HIDDEN Args
     {
         explicit Args()
-            : start(0),
-              stop(0),
-              a(0.0),
-              data(nullptr),
-              sizex(0),
-              sizey(0),
-              blur(0.0),
+            : start          (0),
+              stop           (0),
+              a              (0.0),
+              data           (nullptr),
+              sizex          (0),
+              sizey          (0),
+              blur           (0.0),
               denormal_remove(0.0)
         {
         }
@@ -74,8 +74,9 @@ private:
 public:
 
     explicit LocalContrastFilter(QObject* const parent = nullptr);
-    explicit LocalContrastFilter(DImg* const image, QObject* const parent=nullptr, const LocalContrastContainer& par=LocalContrastContainer());
-    ~LocalContrastFilter() override;
+    explicit LocalContrastFilter(DImg* const image, QObject* const parent = nullptr,
+                                 const LocalContrastContainer& par = LocalContrastContainer());
+    ~LocalContrastFilter()                                                    override;
 
     static QString          FilterIdentifier()
     {
@@ -94,12 +95,12 @@ public:
         return 2;
     }
 
-    QString         filterIdentifier()                          const override
+    QString         filterIdentifier()                                  const override
     {
         return FilterIdentifier();
     }
 
-    FilterAction    filterAction()                                    override;
+    FilterAction    filterAction()                                            override;
 
     void                    readParameters(const FilterAction& action)        override;
 
