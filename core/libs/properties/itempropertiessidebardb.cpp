@@ -71,12 +71,12 @@ class Q_DECL_HIDDEN ItemPropertiesSideBarDB::Private
 public:
 
     explicit Private()
-      : dirtyDesceditTab(false),
-        hasPrevious(false),
-        hasNext(false),
+      : dirtyDesceditTab    (false),
+        hasPrevious         (false),
+        hasNext             (false),
         hasItemInfoOwnership(false),
-        desceditTab(nullptr),
-        versionsHistoryTab(nullptr)
+        desceditTab         (nullptr),
+        versionsHistoryTab  (nullptr)
     {
     }
 
@@ -95,13 +95,13 @@ public:
 ItemPropertiesSideBarDB::ItemPropertiesSideBarDB(QWidget* const parent, SidebarSplitter* const splitter,
                                                  Qt::Edge side, bool mimimizedDefault)
     : ItemPropertiesSideBar(parent, splitter, side, mimimizedDefault),
-      d(new Private)
+      d                    (new Private)
 {
     d->desceditTab        = new ItemDescEditTab(parent);
     d->versionsHistoryTab = new ItemPropertiesVersionsTab(parent);
 
-    appendTab(d->desceditTab,        QIcon::fromTheme(QLatin1String("edit-text-frame-update")), i18n("Captions"));
-    appendTab(d->versionsHistoryTab, QIcon::fromTheme(QLatin1String("view-catalog")),           i18n("Versions"));
+    appendTab(d->desceditTab,        QIcon::fromTheme(QLatin1String("edit-text-frame-update")), i18nc("@title: database properties", "Captions"));
+    appendTab(d->versionsHistoryTab, QIcon::fromTheme(QLatin1String("view-catalog")),           i18nc("@title: database properties", "Versions"));
 
     // ----------------------------------------------------------
 
@@ -545,7 +545,7 @@ void ItemPropertiesSideBarDB::setImagePropertiesInformation(const QUrl& url)
         if (info.fileUrl() == url)
         {
             QString str;
-            QString unavailable(i18n("<i>unavailable</i>"));
+            QString unavailable(QString::fromUtf8("<i>%1</i>").arg(i18nc("@info: item properties", "unavailable")));
             QFileInfo fileInfo(url.toLocalFile());
 
             // -- File system information -----------------------------------------
@@ -570,12 +570,12 @@ void ItemPropertiesSideBarDB::setImagePropertiesInformation(const QUrl& url)
 
             if ((commonInfo.width == 0) || (commonInfo.height == 0))
             {
-                str = i18n("Unknown");
+                str = i18nc("@info: item properties", "Unknown");
             }
             else
             {
                 QString mpixels = QLocale().toString(commonInfo.width * commonInfo.height / 1000000.0, 'f', 1);
-                str = i18nc("width x height (megapixels Mpx)", "%1x%2 (%3Mpx)",
+                str = i18nc("@info: width x height (megapixels Mpx)", "%1x%2 (%3Mpx)",
                             commonInfo.width, commonInfo.height, mpixels);
             }
 
@@ -583,7 +583,7 @@ void ItemPropertiesSideBarDB::setImagePropertiesInformation(const QUrl& url)
 
             if ((commonInfo.width == 0) || (commonInfo.height == 0))
             {
-                str = i18n("Unknown");
+                str = i18nc("@info: item properties", "Unknown");
             }
             else
             {
@@ -592,8 +592,9 @@ void ItemPropertiesSideBarDB::setImagePropertiesInformation(const QUrl& url)
 
             m_propertiesTab->setImageRatio(str);
             m_propertiesTab->setImageMime(commonInfo.format);
-            m_propertiesTab->setImageBitDepth(i18n("%1 bpp", commonInfo.colorDepth));
-            m_propertiesTab->setHasSidecar(DMetadata::hasSidecar(url.toLocalFile()) ? i18n("Yes") : i18n("No"));
+            m_propertiesTab->setImageBitDepth(i18nc("@info: item properties", "%1 bpp", commonInfo.colorDepth));
+            m_propertiesTab->setHasSidecar(DMetadata::hasSidecar(url.toLocalFile()) ? i18nc("@info: item properties", "Yes")
+                                                                                    : i18nc("@info: item properties", "No"));
             m_propertiesTab->setImageColorMode(commonInfo.colorModel.isEmpty() ? unavailable : commonInfo.colorModel);
 
             // -- Photograph information ------------------------------------------
@@ -623,12 +624,12 @@ void ItemPropertiesSideBarDB::setImagePropertiesInformation(const QUrl& url)
             }
             else
             {
-                str = i18n("%1 (%2)", photoInfo.focalLength, photoInfo.focalLength35);
+                str = i18nc("@info: item properties", "%1 (%2)", photoInfo.focalLength, photoInfo.focalLength35);
                 m_propertiesTab->setPhotoFocalLength(str);
             }
 
             m_propertiesTab->setPhotoExposureTime(photoInfo.exposureTime.isEmpty() ? unavailable : photoInfo.exposureTime);
-            m_propertiesTab->setPhotoSensitivity(photoInfo.sensitivity.isEmpty()   ? unavailable : i18n("%1 ISO", photoInfo.sensitivity));
+            m_propertiesTab->setPhotoSensitivity(photoInfo.sensitivity.isEmpty()   ? unavailable : i18nc("@info: item properties", "%1 ISO", photoInfo.sensitivity));
 
             if      (photoInfo.exposureMode.isEmpty() && photoInfo.exposureProgram.isEmpty())
             {
