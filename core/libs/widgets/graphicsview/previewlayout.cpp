@@ -86,12 +86,12 @@ SinglePhotoPreviewLayout::~SinglePhotoPreviewLayout()
     delete d;
 }
 
-void SinglePhotoPreviewLayout::setGraphicsView(GraphicsDImgView* view)
+void SinglePhotoPreviewLayout::setGraphicsView(GraphicsDImgView* const view)
 {
     d->view = view;
 }
 
-void SinglePhotoPreviewLayout::addItem(GraphicsDImgItem* item)
+void SinglePhotoPreviewLayout::addItem(GraphicsDImgItem* const item)
 {
     if (d->item)
     {
@@ -183,9 +183,9 @@ void SinglePhotoPreviewLayout::decreaseZoom(const QPoint& viewportAnchor)
         return;
     }
 
-    double zoom    = d->zoomSettings()->zoomFactor() / d->zoomMultiplier;
-    zoom           = qMax(zoom, d->minZoom);
-    zoom           = d->zoomSettings()->snappedZoomStep(zoom, d->frameSize());
+    double zoom = d->zoomSettings()->zoomFactor() / d->zoomMultiplier;
+    zoom        = qMax(zoom, d->minZoom);
+    zoom        = d->zoomSettings()->snappedZoomStep(zoom, d->frameSize());
     setZoomFactor(zoom, viewportAnchor);
 }
 
