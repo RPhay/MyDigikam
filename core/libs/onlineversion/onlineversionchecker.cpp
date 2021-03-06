@@ -120,7 +120,7 @@ QString OnlineVersionChecker::lastCheckDate()
     QDateTime dt              = group.readEntry(QLatin1String("Last Check For New Version"), QDateTime());
     QString dts               = QLocale().toString(dt, QLocale::ShortFormat);
 
-    return (!dts.isEmpty() ? dts : i18n("never"));
+    return (!dts.isEmpty() ? dts : i18nc("@info: check of new online version never done yet", "never"));
 }
 
 void OnlineVersionChecker::checkForNewVersion()

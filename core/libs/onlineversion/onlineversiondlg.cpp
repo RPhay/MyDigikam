@@ -183,14 +183,14 @@ OnlineVersionDlg::OnlineVersionDlg(QWidget* const parent,
     d->remain->setAlignment(Qt::AlignRight);
 
     QGridLayout* const grid2 = new QGridLayout(d->stats);
-    grid2->addWidget(new QLabel(i18n("Received:")),  0, 0, 1, 1);
-    grid2->addWidget(new QLabel(i18n("Total:")),     1, 0, 1, 1);
-    grid2->addWidget(new QLabel(i18n("Rate:")),      2, 0, 1, 1);
-    grid2->addWidget(new QLabel(i18n("ETA:")),       3, 0, 1, 1);
-    grid2->addWidget(d->received,                    0, 2, 1, 1);
-    grid2->addWidget(d->total,                       1, 2, 1, 1);
-    grid2->addWidget(d->rate,                        2, 2, 1, 1);
-    grid2->addWidget(d->remain,                      3, 2, 1, 1);
+    grid2->addWidget(new QLabel(i18nc("@info: download status", "Received:")),  0, 0, 1, 1);
+    grid2->addWidget(new QLabel(i18nc("@info: download status", "Total:")),     1, 0, 1, 1);
+    grid2->addWidget(new QLabel(i18nc("@info: download status", "Rate:")),      2, 0, 1, 1);
+    grid2->addWidget(new QLabel(i18nc("@info: download status", "ETA:")),       3, 0, 1, 1);
+    grid2->addWidget(d->received,                                               0, 2, 1, 1);
+    grid2->addWidget(d->total,                                                  1, 2, 1, 1);
+    grid2->addWidget(d->rate,                                                   2, 2, 1, 1);
+    grid2->addWidget(d->remain,                                                 3, 2, 1, 1);
     grid2->setMargin(0);
     grid2->setSpacing(0);
     grid2->setColumnMinimumWidth(2, fontRect.width());
@@ -319,7 +319,7 @@ void OnlineVersionDlg::slotNewVersionAvailable(const QString& version)
         d->label->setText(i18n("<p>Current <b>%1</b> pre-release date is <i>%2</i>.</p>"
                                "<p>New pre-release built on <i>%3</i> is available on this <a href='%4'>repository</a>.</p>"
                                "<p>Press <b>Download</b> to get the file...</p>"
-                               "<p>Note: from Setup/Misc panel, you can switch to check for stable release only.<br>"
+                               "<p>Note: from Setup/Misc panel, you can switch to check for stable release only.<br/>"
                                "Stable versions are safe to use in production.</p>"
                                "<p>Press <b>Configure</b> if you want to customize update options from setup dialog.</p>",
                                qApp->applicationName(),
@@ -332,9 +332,9 @@ void OnlineVersionDlg::slotNewVersionAvailable(const QString& version)
         d->label->setText(i18n("<p>Current <b>%1</b> stable version is <i>%2</i></p>"
                                "<p>New stable version <i>%3</i> is available on this <a href='%4'>repository</a>.</p>"
                                "<p>Press <b>Download</b> to get the file...</p>"
-                               "<p>Note: from Setup/Misc panel, you can switch to check for weekly pre-release.<br>"
-                               "Pre-release versions are dedicated to test quickly new features.<br>"
-                               "It's not recommended to use pre-releases in production as bugs can remain,<br>"
+                               "<p>Note: from Setup/Misc panel, you can switch to check for weekly pre-release.<br/>"
+                               "Pre-release versions are dedicated to test quickly new features.<br/>"
+                               "It's not recommended to use pre-releases in production as bugs can remain,<br/>"
                                "unless you know what you are doing.</p>"
                                "<p>Press <b>Configure</b> if you want to customize update options from setup dialog.</p>",
                                qApp->applicationName(),
@@ -471,7 +471,7 @@ void OnlineVersionDlg::slotDownloadError(const QString& error)
 
 #ifdef Q_OS_LINUX
 
-        d->buttons->button(QDialogButtonBox::Apply)->setText(i18n("Open..."));
+        d->buttons->button(QDialogButtonBox::Apply)->setText(i18nc("@action: open bundle file", "Open..."));
         d->buttons->button(QDialogButtonBox::Apply)->setIcon(QIcon::fromTheme(QLatin1String("system-file-manager")));
         d->buttons->button(QDialogButtonBox::Apply)->setEnabled(true);
 
