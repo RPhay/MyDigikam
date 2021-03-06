@@ -63,14 +63,14 @@ ItemPropertiesSideBar::ItemPropertiesSideBar(QWidget* const parent,
                                              SidebarSplitter* const splitter,
                                              Qt::Edge side,
                                              bool mimimizedDefault)
-    : Sidebar(parent, splitter, side, mimimizedDefault),
+    : Sidebar             (parent, splitter, side, mimimizedDefault),
       m_dirtyPropertiesTab(false),
-      m_dirtyMetadataTab(false),
-      m_dirtyColorTab(false),
-      m_dirtyGpsTab(false),
-      m_dirtyHistoryTab(false),
-      m_currentRect(QRect()),
-      m_image(nullptr)
+      m_dirtyMetadataTab  (false),
+      m_dirtyColorTab     (false),
+      m_dirtyGpsTab       (false),
+      m_dirtyHistoryTab   (false),
+      m_currentRect       (QRect()),
+      m_image             (nullptr)
 {
     m_propertiesStackedView  = new QStackedWidget(parent);
     m_propertiesTab          = new ItemPropertiesTab(parent);
@@ -266,13 +266,14 @@ void ItemPropertiesSideBar::setImagePropertiesInformation(const QUrl& url)
     }
 
     QString mpixels = QLocale().toString(dims.width()*dims.height()/1000000.0, 'f', 1);
-    str = (!dims.isValid()) ? i18n("Unknown") : i18n("%1x%2 (%3Mpx)",
+    str = (!dims.isValid()) ? i18nc("@info: item properties", "Unknown")
+                            : i18nc("@info: item properties", "%1x%2 (%3Mpx)",
             dims.width(), dims.height(), mpixels);
     m_propertiesTab->setItemDimensions(str);
 
     if (!dims.isValid())
     {
-        str = i18n("Unknown");
+        str = i18nc("@info: item properties", "Unknown");
     }
     else
     {
@@ -281,8 +282,9 @@ void ItemPropertiesSideBar::setImagePropertiesInformation(const QUrl& url)
 
     m_propertiesTab->setImageRatio(str);
     m_propertiesTab->setImageColorMode(colorMode.isEmpty() ? unavailable : colorMode);
-    m_propertiesTab->setImageBitDepth(bitDepth.isEmpty()   ? unavailable : i18n("%1 bpp", bitDepth));
-    m_propertiesTab->setHasSidecar(DMetadata::hasSidecar(url.toLocalFile()) ? i18n("Yes") : i18n("No"));
+    m_propertiesTab->setImageBitDepth(bitDepth.isEmpty()   ? unavailable : i18nc("@info: item properties", "%1 bpp", bitDepth));
+    m_propertiesTab->setHasSidecar(DMetadata::hasSidecar(url.toLocalFile()) ? i18nc("@info: item properties", "Yes")
+                                                                            : i18nc("@info: item properties", "No"));
 
     // -- Photograph information ------------------------------------------
 

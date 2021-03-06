@@ -56,17 +56,17 @@ public:
 
     enum MetadataTab
     {
-        EXIF=0,
+        EXIF       = 0,
         MAKERNOTE,
         IPTC,
         XMP
     };
 
     explicit Private()
-      : exifWidget(nullptr),
+      : exifWidget     (nullptr),
         makernoteWidget(nullptr),
-        iptcWidget(nullptr),
-        xmpWidget(nullptr)
+        iptcWidget     (nullptr),
+        xmpWidget      (nullptr)
     {
     }
 
@@ -78,11 +78,11 @@ public:
 
 ItemPropertiesMetadataTab::ItemPropertiesMetadataTab(QWidget* const parent)
     : QTabWidget(parent),
-      d(new Private)
+      d         (new Private)
 {
     // Exif tab area ---------------------------------------
 
-    d->exifWidget = new ExifWidget(this);
+    d->exifWidget      = new ExifWidget(this);
     insertTab(Private::EXIF, d->exifWidget, i18n("EXIF"));
 
     // Makernote tab area ----------------------------------
@@ -92,7 +92,7 @@ ItemPropertiesMetadataTab::ItemPropertiesMetadataTab(QWidget* const parent)
 
     // IPTC tab area ---------------------------------------
 
-    d->iptcWidget = new IptcWidget(this);
+    d->iptcWidget      = new IptcWidget(this);
     insertTab(Private::IPTC, d->iptcWidget, i18n("IPTC"));
 
     // XMP tab area ----------------------------------------
