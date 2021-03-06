@@ -45,9 +45,8 @@ LevelsFilter::LevelsFilter(QObject* const parent)
 LevelsFilter::LevelsFilter(DImg* const orgImage,
                            QObject* const parent,
                            const LevelsContainer& settings)
-    : DImgThreadedFilter(orgImage, parent,
-                         QLatin1String("LevelsFilter")),
-      m_settings(settings)
+    : DImgThreadedFilter(orgImage, parent, QLatin1String("LevelsFilter")),
+      m_settings        (settings)
 {
     initFilter();
 }
@@ -58,10 +57,8 @@ LevelsFilter::LevelsFilter(const LevelsContainer& settings,
                            DImg& destImage,
                            int progressBegin,
                            int progressEnd)
-    : DImgThreadedFilter(master, orgImage, destImage,
-                         progressBegin, progressEnd,
-                         QLatin1String("LevelsFilter")),
-      m_settings(settings)
+    : DImgThreadedFilter(master, orgImage, destImage, progressBegin, progressEnd, QLatin1String("LevelsFilter")),
+      m_settings        (settings)
 {
     initFilter();
     destImage = m_destImage;

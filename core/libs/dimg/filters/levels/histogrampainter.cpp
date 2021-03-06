@@ -53,15 +53,15 @@ class Q_DECL_HIDDEN HistogramPainter::Private
 public:
 
     explicit Private()
-      : histogram(nullptr),
-        widgetToInitFrom(nullptr),
-        scale(LogScaleHistogram),
-        channelType(LuminosityChannel),
-        highlightSelection(false),
-        selectionMin(0.0),
-        selectionMax(0.0),
-        showColorGuide(false),
-        showXGrid(true)
+      : histogram           (nullptr),
+        widgetToInitFrom    (nullptr),
+        scale               (LogScaleHistogram),
+        channelType         (LuminosityChannel),
+        highlightSelection  (false),
+        selectionMin        (0.0),
+        selectionMax        (0.0),
+        showColorGuide      (false),
+        showXGrid           (true)
     {
     }
 
@@ -473,7 +473,7 @@ public:
 
             p1.drawLine(xGuide, 0, xGuide, bufferPixmap.height());
 
-            QString string = i18n("x:%1", guidePos);
+            QString string = i18nc("@info: guide position on histogram", "x:%1", guidePos);
             QFontMetrics fontMt(string);
             QRect rect     = fontMt.boundingRect(0, 0, bufferPixmap.width(), bufferPixmap.height(), 0, string);
             p1.setPen(QPen(Qt::red, 1, Qt::SolidLine));
@@ -532,7 +532,7 @@ public:
 
 HistogramPainter::HistogramPainter(QObject* const parent)
     : QObject(parent),
-      d(new Private())
+      d      (new Private())
 {
 }
 

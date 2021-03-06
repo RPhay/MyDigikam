@@ -59,13 +59,13 @@ class Q_DECL_HIDDEN HistogramBox::Private
 public:
 
     explicit Private()
-      : scaleBG(nullptr),
-        linHistoButton(nullptr),
-        logHistoButton(nullptr),
-        histoBox(nullptr),
-        channelCB(nullptr),
-        hGradient(nullptr),
-        histogramWidget(nullptr)
+      : scaleBG         (nullptr),
+        linHistoButton  (nullptr),
+        logHistoButton  (nullptr),
+        histoBox        (nullptr),
+        channelCB       (nullptr),
+        hGradient       (nullptr),
+        histogramWidget (nullptr)
     {
     }
 
@@ -83,7 +83,7 @@ public:
 
 HistogramBox::HistogramBox(QWidget* const parent, HistogramBoxType type, bool selectMode)
     : QWidget(parent),
-      d(new Private)
+      d      (new Private)
 {
     d->channelCB               = new QComboBox(this);
     QLabel* const channelLabel = new QLabel(i18n("Channel:"), this);
@@ -264,12 +264,15 @@ void HistogramBox::slotScaleChanged()
 void HistogramBox::setHistogramType(HistogramBoxType type)
 {
     // all possible channels for histogram widget are defined in this map
+
     QMap<int, QPair<QString, QString> > channelDescMap;
 
     // this string will contain the WhatsThis message for the channelCB
+
     QString channelCBDescr(i18n("<p>Select the histogram channel to display:</p>"));
 
     // those pairs hold the combobox text and WhatsThis description for each channel item
+
     typedef QPair<QString, QString> ChannelPair;
 
     ChannelPair luminosityPair(i18nc("The luminosity channel", "Luminosity"), i18n(

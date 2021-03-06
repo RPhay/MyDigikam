@@ -88,10 +88,10 @@ public:
 public:
 
     explicit Private()
-      : levels(nullptr),
-        lut(nullptr),
-        sixteenBit(false),
-        dirty(false)
+      : levels      (nullptr),
+        lut         (nullptr),
+        sixteenBit  (false),
+        dirty       (false)
     {
     }
 

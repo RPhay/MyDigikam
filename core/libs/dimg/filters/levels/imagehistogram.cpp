@@ -62,8 +62,8 @@ public:
 public:
 
     explicit Private()
-      : histogram(nullptr),
-        valid(false),
+      : histogram    (nullptr),
+        valid        (false),
         histoSegments(0)
     {
     }
@@ -89,7 +89,7 @@ public:
 
 ImageHistogram::ImageHistogram(const DImg& img, QObject* const parent)
     : DynamicThread(parent),
-      d(new Private)
+      d            (new Private)
 {
     // A simple copy of reference must be enough instead a deep copy. See this BKO comment for details:
     // https://bugs.kde.org/show_bug.cgi?id=274555#c40
