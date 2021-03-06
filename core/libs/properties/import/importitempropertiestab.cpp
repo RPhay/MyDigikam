@@ -52,64 +52,64 @@ class Q_DECL_HIDDEN ImportItemPropertiesTab::Private
 public:
 
     explicit Private()
-      : file(nullptr),
-        folder(nullptr),
-        date(nullptr),
-        size(nullptr),
-        isReadable(nullptr),
-        isWritable(nullptr),
-        mime(nullptr),
-        dimensions(nullptr),
-        ratio(nullptr),
-        newFileName(nullptr),
-        downloaded(nullptr),
-        make(nullptr),
-        model(nullptr),
-        photoDate(nullptr),
-        lens(nullptr),
-        aperture(nullptr),
-        focalLength(nullptr),
-        exposureTime(nullptr),
-        sensitivity(nullptr),
-        exposureMode(nullptr),
-        flash(nullptr),
-        whiteBalance(nullptr),
-        labelFile(nullptr),
-        labelFolder(nullptr),
-        labelFileIsReadable(nullptr),
-        labelFileIsWritable(nullptr),
-        labelFileDate(nullptr),
-        labelFileSize(nullptr),
-        labelImageMime(nullptr),
-        labelImageDimensions(nullptr),
-        labelImageRatio(nullptr),
-        labelNewFileName(nullptr),
-        labelAlreadyDownloaded(nullptr),
-        labelPhotoMake(nullptr),
-        labelPhotoModel(nullptr),
-        labelPhotoDateTime(nullptr),
-        labelPhotoLens(nullptr),
-        labelPhotoAperture(nullptr),
-        labelPhotoFocalLength(nullptr),
-        labelPhotoExposureTime(nullptr),
-        labelPhotoSensitivity(nullptr),
-        labelPhotoExposureMode(nullptr),
-        labelPhotoFlash(nullptr),
-        labelPhotoWhiteBalance(nullptr),
-        aspectRatio(nullptr),
-        duration(nullptr),
-        frameRate(nullptr),
-        videoCodec(nullptr),
-        audioBitRate(nullptr),
-        audioChannelType(nullptr),
-        audioCodec(nullptr),
-        labelVideoAspectRatio(nullptr),
-        labelVideoDuration(nullptr),
-        labelVideoFrameRate(nullptr),
-        labelVideoVideoCodec(nullptr),
-        labelVideoAudioBitRate(nullptr),
-        labelVideoAudioChannelType(nullptr),
-        labelVideoAudioCodec(nullptr)
+      : file                        (nullptr),
+        folder                      (nullptr),
+        date                        (nullptr),
+        size                        (nullptr),
+        isReadable                  (nullptr),
+        isWritable                  (nullptr),
+        mime                        (nullptr),
+        dimensions                  (nullptr),
+        ratio                       (nullptr),
+        newFileName                 (nullptr),
+        downloaded                  (nullptr),
+        make                        (nullptr),
+        model                       (nullptr),
+        photoDate                   (nullptr),
+        lens                        (nullptr),
+        aperture                    (nullptr),
+        focalLength                 (nullptr),
+        exposureTime                (nullptr),
+        sensitivity                 (nullptr),
+        exposureMode                (nullptr),
+        flash                       (nullptr),
+        whiteBalance                (nullptr),
+        labelFile                   (nullptr),
+        labelFolder                 (nullptr),
+        labelFileIsReadable         (nullptr),
+        labelFileIsWritable         (nullptr),
+        labelFileDate               (nullptr),
+        labelFileSize               (nullptr),
+        labelImageMime              (nullptr),
+        labelImageDimensions        (nullptr),
+        labelImageRatio             (nullptr),
+        labelNewFileName            (nullptr),
+        labelAlreadyDownloaded      (nullptr),
+        labelPhotoMake              (nullptr),
+        labelPhotoModel             (nullptr),
+        labelPhotoDateTime          (nullptr),
+        labelPhotoLens              (nullptr),
+        labelPhotoAperture          (nullptr),
+        labelPhotoFocalLength       (nullptr),
+        labelPhotoExposureTime      (nullptr),
+        labelPhotoSensitivity       (nullptr),
+        labelPhotoExposureMode      (nullptr),
+        labelPhotoFlash             (nullptr),
+        labelPhotoWhiteBalance      (nullptr),
+        aspectRatio                 (nullptr),
+        duration                    (nullptr),
+        frameRate                   (nullptr),
+        videoCodec                  (nullptr),
+        audioBitRate                (nullptr),
+        audioChannelType            (nullptr),
+        audioCodec                  (nullptr),
+        labelVideoAspectRatio       (nullptr),
+        labelVideoDuration          (nullptr),
+        labelVideoFrameRate         (nullptr),
+        labelVideoVideoCodec        (nullptr),
+        labelVideoAudioBitRate      (nullptr),
+        labelVideoAudioChannelType  (nullptr),
+        labelVideoAudioCodec        (nullptr)
     {
     }
 
@@ -180,7 +180,7 @@ public:
 
 ImportItemPropertiesTab::ImportItemPropertiesTab(QWidget* const parent)
     : DExpanderBox(parent),
-      d(new Private)
+      d           (new Private)
 {
     setFrameStyle(QFrame::StyledPanel | QFrame::Sunken);
     setLineWidth(style()->pixelMetric(QStyle::PM_DefaultFrameWidth));
@@ -192,17 +192,17 @@ ImportItemPropertiesTab::ImportItemPropertiesTab(QWidget* const parent)
     QWidget* w1               = new QWidget(this);
     QGridLayout* glay1        = new QGridLayout(w1);
 
-    d->file                   = new DTextLabelName(i18n("File: "),         w1);
-    d->folder                 = new DTextLabelName(i18n("Folder: "),       w1);
-    d->date                   = new DTextLabelName(i18n("Date: "),         w1);
-    d->size                   = new DTextLabelName(i18n("Size: "),         w1);
-    d->isReadable             = new DTextLabelName(i18n("Readable: "),     w1);
-    d->isWritable             = new DTextLabelName(i18n("Writable: "),     w1);
-    d->mime                   = new DTextLabelName(i18n("Type: "),         w1);
-    d->dimensions             = new DTextLabelName(i18n("Dimensions: "),   w1);
-    d->ratio                  = new DTextLabelName(i18n("Aspect Ratio: "), w1);
-    d->newFileName            = new DTextLabelName(i18n("New Name: "),     w1);
-    d->downloaded             = new DTextLabelName(i18n("Downloaded: "),   w1);
+    d->file                   = new DTextLabelName(i18nc("@label: item properties", "File: "),         w1);
+    d->folder                 = new DTextLabelName(i18nc("@label: item properties", "Folder: "),       w1);
+    d->date                   = new DTextLabelName(i18nc("@label: item properties", "Date: "),         w1);
+    d->size                   = new DTextLabelName(i18nc("@label: item properties", "Size: "),         w1);
+    d->isReadable             = new DTextLabelName(i18nc("@label: item properties", "Readable: "),     w1);
+    d->isWritable             = new DTextLabelName(i18nc("@label: item properties", "Writable: "),     w1);
+    d->mime                   = new DTextLabelName(i18nc("@label: item properties", "Type: "),         w1);
+    d->dimensions             = new DTextLabelName(i18nc("@label: item properties", "Dimensions: "),   w1);
+    d->ratio                  = new DTextLabelName(i18nc("@label: item properties", "Aspect Ratio: "), w1);
+    d->newFileName            = new DTextLabelName(i18nc("@label: item properties", "New Name: "),     w1);
+    d->downloaded             = new DTextLabelName(i18nc("@label: item properties", "Downloaded: "),   w1);
 
     d->labelFile              = new DTextLabelValue(QString(), w1);
     d->labelFolder            = new DTextLabelValue(QString(), w1);
@@ -243,24 +243,24 @@ ImportItemPropertiesTab::ImportItemPropertiesTab(QWidget* const parent)
     glay1->setSpacing(0);
 
     addItem(w1, QIcon::fromTheme(QLatin1String("dialog-information")),
-            i18n("Camera File Properties"), QLatin1String("FileProperties"), true);
+            i18nc("@title", "Camera File Properties"), QLatin1String("FileProperties"), true);
 
     // --------------------------------------------------
 
     QWidget* w2               = new QWidget(this);
     QGridLayout* glay2        = new QGridLayout(w2);
 
-    d->make                   = new DTextLabelName(i18n("Make: "),          w2);
-    d->model                  = new DTextLabelName(i18n("Model: "),         w2);
-    d->photoDate              = new DTextLabelName(i18n("Created: "),       w2);
-    d->lens                   = new DTextLabelName(i18n("Lens: "),          w2);
-    d->aperture               = new DTextLabelName(i18n("Aperture: "),      w2);
-    d->focalLength            = new DTextLabelName(i18n("Focal: "),         w2);
-    d->exposureTime           = new DTextLabelName(i18n("Exposure: "),      w2);
-    d->sensitivity            = new DTextLabelName(i18n("Sensitivity: "),   w2);
-    d->exposureMode           = new DTextLabelName(i18n("Mode/Program: "),  w2);
-    d->flash                  = new DTextLabelName(i18n("Flash: "),         w2);
-    d->whiteBalance           = new DTextLabelName(i18n("White balance: "), w2);
+    d->make                   = new DTextLabelName(i18nc("@label: item properties", "Make: "),          w2);
+    d->model                  = new DTextLabelName(i18nc("@label: item properties", "Model: "),         w2);
+    d->photoDate              = new DTextLabelName(i18nc("@label: item properties", "Created: "),       w2);
+    d->lens                   = new DTextLabelName(i18nc("@label: item properties", "Lens: "),          w2);
+    d->aperture               = new DTextLabelName(i18nc("@label: item properties", "Aperture: "),      w2);
+    d->focalLength            = new DTextLabelName(i18nc("@label: item properties", "Focal: "),         w2);
+    d->exposureTime           = new DTextLabelName(i18nc("@label: item properties", "Exposure: "),      w2);
+    d->sensitivity            = new DTextLabelName(i18nc("@label: item properties", "Sensitivity: "),   w2);
+    d->exposureMode           = new DTextLabelName(i18nc("@label: item properties", "Mode/Program: "),  w2);
+    d->flash                  = new DTextLabelName(i18nc("@label: item properties", "Flash: "),         w2);
+    d->whiteBalance           = new DTextLabelName(i18nc("@label: item properties", "White balance: "), w2);
 
     d->labelPhotoMake         = new DTextLabelValue(QString(), w2);
     d->labelPhotoModel        = new DTextLabelValue(QString(), w2);
@@ -301,20 +301,20 @@ ImportItemPropertiesTab::ImportItemPropertiesTab(QWidget* const parent)
     glay2->setSpacing(0);
 
     addItem(w2, QIcon::fromTheme(QLatin1String("camera-photo")),
-            i18n("Photograph Properties"), QLatin1String("PhotographProperties"), true);
+            i18nc("@title", "Photograph Properties"), QLatin1String("PhotographProperties"), true);
 
     // --------------------------------------------------
 
     QWidget* const w3             = new QWidget(this);
     QGridLayout* const glay3      = new QGridLayout(w3);
 
-    d->aspectRatio                = new DTextLabelName(i18n("Aspect Ratio: "),       w3);
-    d->audioBitRate               = new DTextLabelName(i18n("Audio Bit Rate: "),     w3);
-    d->audioChannelType           = new DTextLabelName(i18n("Audio Channel Type: "), w3);
-    d->audioCodec                 = new DTextLabelName(i18n("Audio Codec: "),        w3);
-    d->duration                   = new DTextLabelName(i18n("Duration: "),           w3);
-    d->frameRate                  = new DTextLabelName(i18n("Frame Rate: "),         w3);
-    d->videoCodec                 = new DTextLabelName(i18n("Video Codec: "),        w3);
+    d->aspectRatio                = new DTextLabelName(i18nc("@label: item properties", "Aspect Ratio: "),       w3);
+    d->audioBitRate               = new DTextLabelName(i18nc("@label: item properties", "Audio Bit Rate: "),     w3);
+    d->audioChannelType           = new DTextLabelName(i18nc("@label: item properties", "Audio Channel Type: "), w3);
+    d->audioCodec                 = new DTextLabelName(i18nc("@label: item properties", "Audio Codec: "),        w3);
+    d->duration                   = new DTextLabelName(i18nc("@label: item properties", "Duration: "),           w3);
+    d->frameRate                  = new DTextLabelName(i18nc("@label: item properties", "Frame Rate: "),         w3);
+    d->videoCodec                 = new DTextLabelName(i18nc("@label: item properties", "Video Codec: "),        w3);
 
     d->labelVideoAspectRatio      = new DTextLabelValue(QString(), w3);
     d->labelVideoAudioBitRate     = new DTextLabelValue(QString(), w3);
@@ -343,7 +343,7 @@ ImportItemPropertiesTab::ImportItemPropertiesTab(QWidget* const parent)
     glay3->setColumnStretch(1, 10);
 
     addItem(w3, QIcon::fromTheme(QLatin1String("video-x-generic")),
-            i18n("Audio/Video Properties"), QLatin1String("VideoProperties"), true);
+            i18nc("@title", "Audio/Video Properties"), QLatin1String("VideoProperties"), true);
 
     // --------------------------------------------------
 
@@ -398,7 +398,9 @@ void ImportItemPropertiesTab::setCurrentItem(const CamItemInfo& itemInfo, DMetad
     setEnabled(true);
 
     QString str;
-    QString unknown(i18n("<i>unknown</i>"));
+    QString unknown(QString::fromUtf8("<i>%1</i>").arg(i18nc("@info: item properties", "unknown")));
+    QString unchanged(QString::fromUtf8("<i>%1</i>").arg(i18nc("@info: item properties", "unchanged")));
+    QString unavailable(QString::fromUtf8("<i>%1</i>").arg(i18nc("@info: item properties", "unavailable")));
 
     // -- Camera file system information ------------------------------------------
 
@@ -411,11 +413,11 @@ void ImportItemPropertiesTab::setCurrentItem(const CamItemInfo& itemInfo, DMetad
     }
     else if (itemInfo.readPermissions == 0)
     {
-        str = i18n("No");
+        str = i18nc("@info: item properties", "No");
     }
     else
     {
-        str = i18n("Yes");
+        str = i18nc("@info: item properties", "Yes");
     }
 
     d->labelFileIsReadable->setAdjustedText(str);
@@ -426,11 +428,11 @@ void ImportItemPropertiesTab::setCurrentItem(const CamItemInfo& itemInfo, DMetad
     }
     else if (itemInfo.writePermissions == 0)
     {
-        str = i18n("No");
+        str = i18nc("@info: item properties", "No");
     }
     else
     {
-        str = i18n("Yes");
+        str = i18nc("@info: item properties", "Yes");
     }
 
     d->labelFileIsWritable->setAdjustedText(str);
@@ -444,14 +446,14 @@ void ImportItemPropertiesTab::setCurrentItem(const CamItemInfo& itemInfo, DMetad
         d->labelFileDate->setAdjustedText(unknown);
     }
 
-    str = i18n("%1 (%2)", ItemPropertiesTab::humanReadableBytesCount(itemInfo.size), QLocale().toString(itemInfo.size));
+    str = i18nc("@info: item size", "%1 (%2)", ItemPropertiesTab::humanReadableBytesCount(itemInfo.size), QLocale().toString(itemInfo.size));
     d->labelFileSize->setAdjustedText(str);
 
     // -- Image Properties --------------------------------------------------
 
     if (itemInfo.mime == QLatin1String("image/x-raw"))
     {
-        d->labelImageMime->setAdjustedText(i18n("RAW Image"));
+        d->labelImageMime->setAdjustedText(i18nc("@label", "RAW Image"));
     }
     else
     {
@@ -473,6 +475,7 @@ void ImportItemPropertiesTab::setCurrentItem(const CamItemInfo& itemInfo, DMetad
     if ((itemInfo.width == -1) && (itemInfo.height == -1))
     {
         // delayed loading to list faster from UMSCamera
+
         if (itemInfo.mime == QLatin1String("image/x-raw"))
         {
             dims = meta->getItemDimensions();
@@ -485,11 +488,12 @@ void ImportItemPropertiesTab::setCurrentItem(const CamItemInfo& itemInfo, DMetad
     else
     {
         // if available (GPCamera), take dimensions directly from itemInfo
+
         dims = QSize(itemInfo.width, itemInfo.height);
     }
 
     mpixels = QLocale().toString(dims.width()*dims.height()/1000000.0, 'f', 1);
-    str = (!dims.isValid()) ? unknown : i18n("%1x%2 (%3Mpx)",
+    str = (!dims.isValid()) ? unknown : i18nc("@info: item resolution", "%1x%2 (%3Mpx)",
             dims.width(), dims.height(), mpixels);
     d->labelImageDimensions->setAdjustedText(str);
 
@@ -500,7 +504,7 @@ void ImportItemPropertiesTab::setCurrentItem(const CamItemInfo& itemInfo, DMetad
 
     // -- Download information ------------------------------------------
 
-    d->labelNewFileName->setAdjustedText(itemInfo.downloadName.isEmpty() ? i18n("<i>unchanged</i>") : itemInfo.downloadName);
+    d->labelNewFileName->setAdjustedText(itemInfo.downloadName.isEmpty() ? unchanged : itemInfo.downloadName);
 
     if (itemInfo.downloaded == CamItemInfo::DownloadUnknown)
     {
@@ -508,11 +512,11 @@ void ImportItemPropertiesTab::setCurrentItem(const CamItemInfo& itemInfo, DMetad
     }
     else if (itemInfo.downloaded == CamItemInfo::DownloadedYes)
     {
-        str = i18n("Yes");
+        str = i18nc("@info: item properties", "Yes");
     }
     else
     {
-        str = i18n("No");
+        str = i18nc("@info: item properties", "No");
     }
 
     d->labelAlreadyDownloaded->setAdjustedText(str);
@@ -520,7 +524,6 @@ void ImportItemPropertiesTab::setCurrentItem(const CamItemInfo& itemInfo, DMetad
     // -- Photograph information ------------------------------------------
     // Note: If something is changed here, please updated albumfiletip section too.
 
-    QString unavailable(i18n("<i>unavailable</i>"));
     PhotoInfoContainer photoInfo = meta->getPhotographInformation();
 
     if (photoInfo.isEmpty())
@@ -556,12 +559,12 @@ void ImportItemPropertiesTab::setCurrentItem(const CamItemInfo& itemInfo, DMetad
     }
     else
     {
-        str = i18n("%1 (%2)", photoInfo.focalLength, photoInfo.focalLength35mm);
+        str = i18nc("@info: focal length", "%1 (%2)", photoInfo.focalLength, photoInfo.focalLength35mm);
         d->labelPhotoFocalLength->setAdjustedText(str);
     }
 
     d->labelPhotoExposureTime->setAdjustedText(photoInfo.exposureTime.isEmpty() ? unavailable : photoInfo.exposureTime);
-    d->labelPhotoSensitivity->setAdjustedText(photoInfo.sensitivity.isEmpty()   ? unavailable : i18n("%1 ISO", photoInfo.sensitivity));
+    d->labelPhotoSensitivity->setAdjustedText(photoInfo.sensitivity.isEmpty()   ? unavailable : i18nc("@label", "%1 ISO", photoInfo.sensitivity));
 
     if (photoInfo.exposureMode.isEmpty() && photoInfo.exposureProgram.isEmpty())
     {

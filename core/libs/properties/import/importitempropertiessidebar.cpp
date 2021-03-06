@@ -54,19 +54,19 @@ class Q_DECL_HIDDEN ImportItemPropertiesSideBarImport::Private
 public:
 
     explicit Private()
-      : dirtyMetadataTab(false),
-        dirtyCameraItemTab(false),
-        dirtyGpsTab(false),
-        metaData(nullptr),
+      : dirtyMetadataTab    (false),
+        dirtyCameraItemTab  (false),
+        dirtyGpsTab         (false),
+        metaData            (nullptr),
 
 #ifdef HAVE_MARBLE
 
-        gpsTab(nullptr),
+        gpsTab              (nullptr),
 
 #endif // HAVE_MARBLE
 
-        metadataTab(nullptr),
-        cameraItemTab(nullptr)
+        metadataTab         (nullptr),
+        cameraItemTab       (nullptr)
     {
     }
 
@@ -93,7 +93,7 @@ ImportItemPropertiesSideBarImport::ImportItemPropertiesSideBarImport(QWidget* co
                                                          Qt::Edge side,
                                                          bool mimimizedDefault)
     : Sidebar(parent, splitter, side, mimimizedDefault),
-      d(new Private)
+      d      (new Private)
 {
     d->cameraItemTab = new ImportItemPropertiesTab(parent);
     d->metadataTab   = new ItemPropertiesMetadataTab(parent);
@@ -142,7 +142,7 @@ void ImportItemPropertiesSideBarImport::itemChanged(const CamItemInfo& itemInfo,
     {
         delete d->metaData;
     }
-    
+
     d->metaData           = new DMetadata(meta.data());
     d->itemInfo           = itemInfo;
     d->dirtyMetadataTab   = false;
@@ -218,6 +218,7 @@ void ImportItemPropertiesSideBarImport::doLoadState()
     /// @todo This code is taken from ItemPropertiesSideBar::doLoadState()
     ///       Ideally ImportItemPropertiesSideBarImport should be a subclass of
     ///       ItemPropertiesSideBar
+
     Sidebar::doLoadState();
 
     KConfigGroup group                  = getConfigGroup();

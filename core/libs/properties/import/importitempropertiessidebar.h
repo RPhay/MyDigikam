@@ -50,8 +50,8 @@ public:
 
     explicit ImportItemPropertiesSideBarImport(QWidget* const parent,
                                           SidebarSplitter* const splitter,
-                                          Qt::Edge side=Qt::LeftEdge,
-                                          bool mimimizedDefault=false);
+                                          Qt::Edge side = Qt::LeftEdge,
+                                          bool mimimizedDefault = false);
     ~ImportItemPropertiesSideBarImport() override;
 
     void applySettings();

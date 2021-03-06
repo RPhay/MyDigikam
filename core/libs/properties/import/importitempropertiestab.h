@@ -48,8 +48,8 @@ public:
     explicit ImportItemPropertiesTab(QWidget* const parent);
     ~ImportItemPropertiesTab() override;
 
-    void setCurrentItem(const CamItemInfo& itemInfo=CamItemInfo(),
-                        DMetadata* const meta=nullptr);
+    void setCurrentItem(const CamItemInfo& itemInfo = CamItemInfo(),
+                        DMetadata* const meta = nullptr);
 
 private:
 
