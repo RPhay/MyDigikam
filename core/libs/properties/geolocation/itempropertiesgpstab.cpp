@@ -401,7 +401,7 @@ void ItemPropertiesGPSTab::setGPSInfoList(const GPSItemInfo::List& list)
 
         if (!coordinates.hasAltitude())
         {
-            d->altitude->setAdjustedText(i18n("Undefined"));
+            d->altitude->setAdjustedText(i18nc("@label: no GPS coordinates", "Undefined"));
         }
         else
         {
