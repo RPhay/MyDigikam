@@ -385,4 +385,5 @@ BUGFIXES:
 342 ==> 433984 - digiKam does not save tags as hierarchical tags in Extended Attributes.
 343 ==> 434017 - Gone are the metadata embedded in the jpg file of some photos.
 344 ==> 434049 - Faulty logic in "updateZoomAndSize", zoom level changed after preview image changed [patch].
-345 ==> 
+345 ==> 434060 - digiKam doesn't drop deleted tags from Extended Attributes.
+346 ==>
