@@ -88,14 +88,14 @@ ItemPropertiesSideBar::ItemPropertiesSideBar(QWidget* const parent,
         m_propertiesTab->setVideoInfoDisable(true);
     }
 
-    appendTab(m_propertiesStackedView, QIcon::fromTheme(QLatin1String("configure")),        i18n("Properties"));
-    appendTab(m_metadataTab,           QIcon::fromTheme(QLatin1String("format-text-code")), i18n("Metadata")); // krazy:exclude=iconnames
-    appendTab(m_colorTab,              QIcon::fromTheme(QLatin1String("fill-color")),       i18n("Colors"));
+    appendTab(m_propertiesStackedView, QIcon::fromTheme(QLatin1String("configure")),        i18nc("@title: item properties", "Properties"));
+    appendTab(m_metadataTab,           QIcon::fromTheme(QLatin1String("format-text-code")), i18nc("@title: item properties", "Metadata")); // krazy:exclude=iconnames
+    appendTab(m_colorTab,              QIcon::fromTheme(QLatin1String("fill-color")),       i18nc("@title: item properties", "Colors"));
 
 #ifdef HAVE_MARBLE
 
     m_gpsTab = new ItemPropertiesGPSTab(parent);
-    appendTab(m_gpsTab,                QIcon::fromTheme(QLatin1String("globe")),            i18n("Map"));
+    appendTab(m_gpsTab,                QIcon::fromTheme(QLatin1String("globe")),            i18nc("@title: item properties", "Map"));
 
 #endif // HAVE_MARBLE
 
@@ -223,7 +223,7 @@ void ItemPropertiesSideBar::setImagePropertiesInformation(const QUrl& url)
     }
 
     QString str;
-    QString unavailable(i18n("<i>unavailable</i>"));
+    QString unavailable(QString::fromUtf8("<i>%1</i>").arg(i18nc("@info: item properties", "unavailable")));
     QFileInfo fileInfo(url.toLocalFile());
     QScopedPointer<DMetadata> metaData(new DMetadata(url.toLocalFile()));
 
@@ -248,10 +248,10 @@ void ItemPropertiesSideBar::setImagePropertiesInformation(const QUrl& url)
 
     if (!ext.isEmpty() && rawFilesExt.toUpper().contains(ext))
     {
-        m_propertiesTab->setImageMime(i18n("RAW Image"));
+        m_propertiesTab->setImageMime(i18nc("@info: item properties", "RAW Image"));
         bitDepth    = QLatin1String("48");
         dims        = metaData->getItemDimensions();
-        colorMode   = i18n("Uncalibrated");
+        colorMode   = i18nc("@info: item properties", "Uncalibrated");
     }
     else
     {
@@ -315,12 +315,12 @@ void ItemPropertiesSideBar::setImagePropertiesInformation(const QUrl& url)
     }
     else
     {
-        str = i18n("%1 (%2)", photoInfo.focalLength, photoInfo.focalLength35mm);
+        str = i18nc("@info: item properties", "%1 (%2)", photoInfo.focalLength, photoInfo.focalLength35mm);
         m_propertiesTab->setPhotoFocalLength(str);
     }
 
     m_propertiesTab->setPhotoExposureTime(photoInfo.exposureTime.isEmpty() ? unavailable : photoInfo.exposureTime);
-    m_propertiesTab->setPhotoSensitivity(photoInfo.sensitivity.isEmpty()   ? unavailable : i18n("%1 ISO", photoInfo.sensitivity));
+    m_propertiesTab->setPhotoSensitivity(photoInfo.sensitivity.isEmpty()   ? unavailable : i18nc("@info: item properties", "%1 ISO", photoInfo.sensitivity));
 
     if      (photoInfo.exposureMode.isEmpty() && photoInfo.exposureProgram.isEmpty())
     {
