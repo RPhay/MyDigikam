@@ -201,7 +201,7 @@ ItemDescEditTab::ItemDescEditTab(QWidget* const parent)
     sv->setWidget(captionTagsArea);
 
     d->titleEdit          = new AltLangStrEdit(captionTagsArea);
-    d->titleEdit->setTitle(i18n("Title:"));
+    d->titleEdit->setTitle(i18nc("@title: comment title string", "Title:"));
     d->titleEdit->setPlaceholderText(i18n("Enter title here."));
 
     d->captionsEdit       = new CaptionEdit(captionTagsArea);
@@ -249,7 +249,7 @@ ItemDescEditTab::ItemDescEditTab(QWidget* const parent)
     d->applyToAllVersionsButton->setEnabled(false);
     d->applyToAllVersionsButton->setToolTip(i18n("Apply all changes to all versions of this image"));
 
-    d->moreButton               = new QPushButton(i18n("More"), buttonsBox);
+    d->moreButton               = new QPushButton(i18nc("@action: more actions to apply changes", "More"), buttonsBox);
     d->moreMenu                 = new QMenu(captionTagsArea);
     d->moreButton->setMenu(d->moreMenu);
 

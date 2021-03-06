@@ -45,7 +45,7 @@ public:
 
     explicit Private()
       : altLangStrEdit(nullptr),
-        authorEdit(nullptr)
+        authorEdit    (nullptr)
     {
     }
 
@@ -61,7 +61,7 @@ public:
 
 CaptionEdit::CaptionEdit(QWidget* const parent)
     : DVBox(parent),
-      d(new Private)
+      d    (new Private)
 {
 
     d->altLangStrEdit = new AltLangStrEdit(this);
