@@ -106,7 +106,7 @@ LensFunFilter::~LensFunFilter()
 
 QString LensFunFilter::DisplayableName()
 {
-    return QString::fromUtf8(I18N_NOOP("Lens Auto-Correction Tool"));
+    return QString::fromUtf8(I18N_NOOP2("@title", "Lens Auto-Correction Tool"));
 }
 
 void LensFunFilter::filterCCAMultithreaded(uint start, uint stop)
