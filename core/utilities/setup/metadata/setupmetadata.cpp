@@ -330,18 +330,18 @@ SetupMetadata::SetupMetadata(QWidget* const parent)
     explanation->setWordWrap(true);
     QString txt;
 
-    txt.append(i18nc("@info", "<p><a href='https://en.wikipedia.org/wiki/Exif'>Exif</a> - "
-                              "a standard used by most digital cameras today to store technical "
-                              "information (like aperture and shutter speed) about an image.</p>"));
+    txt.append(QString::fromUtf8("<p><a href='https://en.wikipedia.org/wiki/Exif'>Exif</a> - %1</p>")
+               .arg(i18nc("@info", "a standard used by most digital cameras today to store technical "
+                          "information (like aperture and shutter speed) about an image.")));
 
-    txt.append(i18nc("@info", "<p><a href='https://en.wikipedia.org/wiki/IPTC_Information_Interchange_Model'>IPTC</a> - "
-                              "an older standard used in digital photography to store "
-                              "photographer information in images.</p>"));
+    txt.append(QString::fromUtf8("<p><a href='https://en.wikipedia.org/wiki/IPTC_Information_Interchange_Model'>IPTC</a> - %1</p>")
+               .arg(i18nc("@info", "an older standard used in digital photography to store "
+                          "photographer information in images.")));
 
     if (MetaEngine::supportXmp())
     {
-        txt.append(i18nc("@info", "<p><a href='https://en.wikipedia.org/wiki/Extensible_Metadata_Platform'>XMP</a> - "
-                                  "a new standard used in digital photography, designed to replace IPTC.</p>"));
+        txt.append(QString::fromUtf8("<p><a href='https://en.wikipedia.org/wiki/Extensible_Metadata_Platform'>XMP</a> - %1</p>")
+                   .arg(i18nc("@info", "a new standard used in digital photography, designed to replace IPTC.")));
     }
 
     explanation->setText(txt);
@@ -537,11 +537,11 @@ SetupMetadata::SetupMetadata(QWidget* const parent)
     balooExplanation->setWordWrap(true);
     QString balootxt;
 
-    balootxt.append(i18nc("@info", "<p><a href='https://community.kde.org/Baloo'>Baloo</a> "
-                                   "provides the basis to handle all kinds of metadata on the KDE desktop in a generic fashion. "
-                                   "It allows you to tag, rate and comment your files in KDE applications like Dolphin.</p> "
-                                   "<p>Please set here if you want to synchronize the metadata stored by digiKam desktop-wide with the "
-                                   "Baloo Desktop Search.</p> "));
+    balootxt.append(QString::fromUtf8("<p><a href='https://community.kde.org/Baloo'>Baloo</a> %1</p>")
+                    .arg(i18nc("@info", "provides the basis to handle all kinds of metadata on the KDE desktop in a generic fashion. "
+                               "It allows you to tag, rate and comment your files in KDE applications like Dolphin. "
+                               "Please set here if you want to synchronize the metadata stored by digiKam desktop-wide with the "
+                               "Baloo Desktop Search.")));
 
     balooExplanation->setText(balootxt);
 
@@ -621,33 +621,32 @@ SetupMetadata::SetupMetadata(QWidget* const parent)
 
     // --------------------------------------------------------
 
-    QGroupBox* const extensionsGroup  = new QGroupBox(sidecarsPanel);
-    QGridLayout* const extensionsGrid = new QGridLayout(extensionsGroup);
+    QGroupBox* const extensionsGroup   = new QGroupBox(sidecarsPanel);
+    QGridLayout* const extensionsGrid  = new QGridLayout(extensionsGroup);
 
-    QLabel* extensionsGroupLabel = new QLabel(
-                i18nc("@info", "<p>Add file types to be recognised as sidecars.</p>"
-                      "<p>digiKam (optionally) writes metadata to *.xmp sidecar "
-                      "files. Other programs might use different types, which "
-                      "can be specified below. digiKam will neither display these "
-                      "nor read from or write to them. But whenever a matching album "
-                      "item (e.g. \"image.dng\" for \"image.dng.pp3\") is renamed, "
-                      "moved, copied or deleted, the same operation will be done "
-                      "on these sidecar files.</p>"
-                      "<p>Multiple extensions must be separated by a semicolon "
-                      "or a space.</p>"));
+    QLabel* const extensionsGroupLabel = new QLabel(
+                i18nc("@info", "Add file types to be recognised as sidecars.\n"
+                      "digiKam (optionally) writes metadata to *.xmp sidecar\n"
+                      "files. Other programs might use different types, which\n"
+                      "can be specified below. digiKam will neither display these\n"
+                      "nor read from or write to them. But whenever a matching album\n"
+                      "item (e.g. \"image.dng\" for \"image.dng.pp3\") is renamed,\n"
+                      "moved, copied or deleted, the same operation will be done\n"
+                      "on these sidecar files.\n"
+                      "Multiple extensions must be separated by a semicolon or a space."));
     extensionsGroupLabel->setWordWrap(true);
 
     QLabel* const extensionsLogo = new QLabel(extensionsGroup);
     extensionsLogo->setPixmap(QIcon::fromTheme(QLatin1String("text-x-texinfo")).pixmap(48));
 
     d->extensionsEdit            = new QLineEdit(extensionsGroup);
-    d->extensionsEdit->setWhatsThis(i18nc("@info", "<p>Here you can add extra extensions "
-                                          "of sidecars files to be processed alongside "
-                                          "regular items. These files will not be visible, "
-                                          "but regarded as an extension of the main file. "
-                                          "Just write \"xyz abc\" to support files with "
-                                          "the *.xyz and *.abc extensions. The internally "
-                                          "used sidecars type *.xmp is always included.</p>"));
+    d->extensionsEdit->setWhatsThis(i18nc("@info", "Here you can add extra extensions\n"
+                                          "of sidecars files to be processed alongside\n"
+                                          "regular items. These files will not be visible,\n"
+                                          "but regarded as an extension of the main file.\n"
+                                          "Just write \"xyz abc\" to support files with\n"
+                                          "the *.xyz and *.abc extensions. The internally\n"
+                                          "used sidecars type *.xmp is always included."));
     d->extensionsEdit->setClearButtonEnabled(true);
     d->extensionsEdit->setPlaceholderText(i18nc("@info", "Enter additional sidecars file extensions."));
 
