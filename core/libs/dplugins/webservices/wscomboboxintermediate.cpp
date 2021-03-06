@@ -49,7 +49,7 @@ public:
 
 WSComboBoxIntermediate::WSComboBoxIntermediate(QWidget* const parent, const QString& text)
     : QComboBox(parent),
-      d(new Private)
+      d        (new Private)
 {
     d->intermediateText = text.isNull() ? i18n("Various") : text;
 

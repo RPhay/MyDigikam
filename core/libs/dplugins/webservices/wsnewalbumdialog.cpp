@@ -46,7 +46,7 @@ class Q_DECL_HIDDEN WSNewAlbumDialog::Private
 public:
 
     explicit Private(QWidget* const widget, const QString& name)
-      : toolName(name),
+      : toolName  (name),
         mainWidget(widget)
     {
         titleEdt       = new QLineEdit;
@@ -56,13 +56,13 @@ public:
 
         mainLayout     = new QVBoxLayout(mainWidget);
 
-        albumBox       = new QGroupBox(i18n("Album"), mainWidget);
+        albumBox       = new QGroupBox(i18nc("@title: album properties", "Album"), mainWidget);
         albumBoxLayout = new QGridLayout(albumBox);
 
-        titleLabel     = new QLabel(i18n("Title: "), albumBox);
-        dateLabel      = new QLabel(i18n("Time Stamp: "), albumBox);
-        descLabel      = new QLabel(i18n("Description: "), albumBox);
-        locLabel       = new QLabel(i18n("Location: "), albumBox);
+        titleLabel     = new QLabel(i18nc("@label: album properties", "Title: "),       albumBox);
+        dateLabel      = new QLabel(i18nc("@label: album properties", "Time Stamp: "),  albumBox);
+        descLabel      = new QLabel(i18nc("@label: album properties", "Description: "), albumBox);
+        locLabel       = new QLabel(i18nc("@label: album properties", "Location: "),    albumBox);
 
         buttonBox      = new QDialogButtonBox();
     }
@@ -112,16 +112,16 @@ WSNewAlbumDialog::WSNewAlbumDialog(QWidget* const parent, const QString& toolNam
             this, SLOT(reject()));
 
     d->albumBox->setLayout(d->albumBoxLayout);
-    d->albumBox->setWhatsThis(i18n("These are basic settings for the new %1 album.",d->toolName));
+    d->albumBox->setWhatsThis(i18nc("@info", "These are basic settings for the new %1 album.",d->toolName));
 
-    d->titleEdt->setToolTip(i18n("Title of the album that will be created (required)."));
+    d->titleEdt->setToolTip(i18nc("@info", "Title of the album that will be created (required)."));
 
     d->dtEdt->setDisplayFormat(QLatin1String("dd.MM.yyyy HH:mm"));
-    d->dtEdt->setWhatsThis(i18n("Date and Time of the album that will be created (optional)."));
+    d->dtEdt->setWhatsThis(i18nc("@info", "Date and Time of the album that will be created (optional)."));
 
-    d->descEdt->setToolTip(i18n("Description of the album that will be created (optional)."));
+    d->descEdt->setToolTip(i18nc("@info", "Description of the album that will be created (optional)."));
 
-    d->locEdt->setToolTip(i18n("Location of the album that will be created (optional)."));
+    d->locEdt->setToolTip(i18nc("@info", "Location of the album that will be created (optional)."));
 
     d->albumBoxLayout->addWidget(d->titleLabel, 0, 0);
     d->albumBoxLayout->addWidget(d->titleEdt,   0, 1);

@@ -52,37 +52,37 @@ class Q_DECL_HIDDEN WSSettingsWidget::Private
 public:
 
     explicit Private(DInfoInterface* const interface, const QString& name)
-        : imgList(nullptr),
-          uploadWidget(nullptr),
-          toolName(name),
-          headerLbl(nullptr),
+        : imgList           (nullptr),
+          uploadWidget      (nullptr),
+          toolName          (name),
+          headerLbl         (nullptr),
           userNameDisplayLbl(nullptr),
-          changeUserBtn(nullptr),
-          dlDimensionCoB(nullptr),
+          changeUserBtn     (nullptr),
+          dlDimensionCoB    (nullptr),
           settingsScrollArea(nullptr),
-          albumsCoB(nullptr),
-          newAlbumBtn(nullptr),
-          reloadAlbumsBtn(nullptr),
-          originalChB(nullptr),
-          resizeChB(nullptr),
-          photoIdChB(nullptr),
-          dimensionSpB(nullptr),
-          imageQualitySpB(nullptr),
-          mainLayout(nullptr),
-          settingsBox(nullptr),
-          settingsBoxLayout(nullptr),
-          albBox(nullptr),
-          albumsBoxLayout(nullptr),
-          optionsBox(nullptr),
-          optionsBoxLayout(nullptr),
-          uploadBox(nullptr),
-          uploadBoxLayout(nullptr),
-          sizeBox(nullptr),
-          sizeBoxLayout(nullptr),
-          accountBox(nullptr),
-          accountBoxLayout(nullptr),
-          iface(interface),
-          progressBar(nullptr)
+          albumsCoB         (nullptr),
+          newAlbumBtn       (nullptr),
+          reloadAlbumsBtn   (nullptr),
+          originalChB       (nullptr),
+          resizeChB         (nullptr),
+          photoIdChB        (nullptr),
+          dimensionSpB      (nullptr),
+          imageQualitySpB   (nullptr),
+          mainLayout        (nullptr),
+          settingsBox       (nullptr),
+          settingsBoxLayout (nullptr),
+          albBox            (nullptr),
+          albumsBoxLayout   (nullptr),
+          optionsBox        (nullptr),
+          optionsBoxLayout  (nullptr),
+          uploadBox         (nullptr),
+          uploadBoxLayout   (nullptr),
+          sizeBox           (nullptr),
+          sizeBoxLayout     (nullptr),
+          accountBox        (nullptr),
+          accountBoxLayout  (nullptr),
+          iface             (interface),
+          progressBar       (nullptr)
     {
     }
 
@@ -134,7 +134,7 @@ WSSettingsWidget::WSSettingsWidget(QWidget* const parent,
                                    DInfoInterface* const iface,
                                    const QString& toolName)
     : QWidget(parent),
-      d(new Private(iface, toolName))
+      d      (new Private(iface, toolName))
 {
     setObjectName(d->toolName + QLatin1String(" Widget"));
 

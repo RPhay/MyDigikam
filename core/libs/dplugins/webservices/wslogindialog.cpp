@@ -52,9 +52,9 @@ class Q_DECL_HIDDEN WSLoginDialog::Private
 public:
 
     explicit Private()
-        : headerLabel(nullptr),
-          loginEdit(nullptr),
-          passwordEdit(nullptr)
+        : headerLabel   (nullptr),
+          loginEdit     (nullptr),
+          passwordEdit  (nullptr)
     {
     }
 
@@ -68,7 +68,7 @@ WSLoginDialog::WSLoginDialog(QWidget* const parent,
                              const QString& login,
                              const QString& password)
     : QDialog(parent),
-      d(new Private)
+      d      (new Private)
 {
     setSizeGripEnabled(false);
 

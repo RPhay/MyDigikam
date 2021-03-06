@@ -47,8 +47,8 @@ public:
 
     explicit Private()
       : userComboBox(nullptr),
-        label(nullptr),
-        okButton(nullptr)
+        label       (nullptr),
+        okButton    (nullptr)
     {
     }
 
@@ -61,7 +61,7 @@ public:
 
 WSSelectUserDlg::WSSelectUserDlg(QWidget* const parent, const QString& serviceName)
     : QDialog(parent),
-      d(new Private)
+      d      (new Private)
 {
     d->serviceName = serviceName;
 

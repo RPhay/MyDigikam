@@ -41,7 +41,7 @@ class DIGIKAM_EXPORT WebWidget : public QWebView
 
 public:
 
-    explicit WebWidget(QWidget* const parent = 0);
+    explicit WebWidget(QWidget* const parent = nullptr);
     ~WebWidget();
 
 Q_SIGNALS:

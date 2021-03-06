@@ -41,7 +41,7 @@ class Q_DECL_HIDDEN ComboBoxDelegate::Private
 public:
 
     explicit Private()
-      : parent(nullptr),
+      : parent   (nullptr),
         rowEdited(-1)
     {
     }
@@ -60,7 +60,7 @@ public:
 
 ComboBoxDelegate::ComboBoxDelegate(DItemsList* const parent, const QMap<int, QString>& items)
     : QAbstractItemDelegate(parent),
-      d(new Private)
+      d                    (new Private)
 {
     d->parent = parent;
     d->items  = items;

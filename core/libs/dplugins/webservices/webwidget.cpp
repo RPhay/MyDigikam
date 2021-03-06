@@ -38,7 +38,7 @@ class Q_DECL_HIDDEN WebWidget::Private
 public:
 
     explicit Private()
-      : parent(0)
+      : parent(nullptr)
     {
     }
 
@@ -47,7 +47,7 @@ public:
 
 WebWidget::WebWidget(QWidget* const parent)
     : QWebView(parent),
-      d(new Private())
+      d       (new Private())
 {
     d->parent = parent;
 
