@@ -326,7 +326,7 @@ void SinglePhotoPreviewLayout::updateZoomAndSize()
 
     // Is currently the zoom factor set to fit to window? Then set it again to fit the new size.
 
-    if (!d->zoomSettings()->imageSize().isNull() && ((zoomFactor() <= fitZoom) || d->isFitToWindow))
+    if (!d->zoomSettings()->imageSize().isNull() && d->isFitToWindow)
     {
         fitToWindow();
     }
