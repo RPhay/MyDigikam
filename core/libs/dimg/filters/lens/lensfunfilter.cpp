@@ -356,25 +356,29 @@ bool LensFunFilter::registerSettingsToXmp(MetaEngineData& data) const
     QString str;
     LensFunContainer prm = d->iface->settings();
 
-    str.append(i18n("Camera: %1-%2",        prm.cameraMake, prm.cameraModel));
+    str.append(i18nc("@info; XMP settings", "Camera: %1-%2",        prm.cameraMake, prm.cameraModel));
     str.append(QLatin1Char('\n'));
-    str.append(i18n("Lens: %1",             prm.lensModel));
+    str.append(i18nc("@info; XMP settings", "Lens: %1",             prm.lensModel));
     str.append(QLatin1Char('\n'));
-    str.append(i18n("Subject Distance: <numid>%1</numid>", prm.subjectDistance));
+    str.append(i18nc("@info; XMP settings", "Subject Distance: <numid>%1</numid>", prm.subjectDistance));
     str.append(QLatin1Char('\n'));
-    str.append(i18n("Aperture: <numid>%1</numid>",         prm.aperture));
+    str.append(i18nc("@info; XMP settings", "Aperture: <numid>%1</numid>",         prm.aperture));
     str.append(QLatin1Char('\n'));
-    str.append(i18n("Focal Length: <numid>%1</numid>",     prm.focalLength));
+    str.append(i18nc("@info; XMP settings", "Focal Length: <numid>%1</numid>",     prm.focalLength));
     str.append(QLatin1Char('\n'));
-    str.append(i18n("Crop Factor: <numid>%1</numid>",      prm.cropFactor));
+    str.append(i18nc("@info; XMP settings", "Crop Factor: <numid>%1</numid>",      prm.cropFactor));
     str.append(QLatin1Char('\n'));
-    str.append(i18n("CCA Correction: %1",   prm.filterCCA  && d->iface->supportsCCA()       ? i18n("enabled") : i18n("disabled")));
+    str.append(i18nc("@info; XMP settings", "CCA Correction: %1",   prm.filterCCA  && d->iface->supportsCCA()       ? i18nc("@info: correction status", "enabled")
+                                                                                                                    : i18nc("@info: correction status", "disabled")));
     str.append(QLatin1Char('\n'));
-    str.append(i18n("VIG Correction: %1",   prm.filterVIG  && d->iface->supportsVig()       ? i18n("enabled") : i18n("disabled")));
+    str.append(i18nc("@info; XMP settings", "VIG Correction: %1",   prm.filterVIG  && d->iface->supportsVig()       ? i18nc("@info: correction status", "enabled")
+                                                                                                                    : i18nc("@info: correction status", "disabled")));
     str.append(QLatin1Char('\n'));
-    str.append(i18n("DST Correction: %1",   prm.filterDST && d->iface->supportsDistortion() ? i18n("enabled") : i18n("disabled")));
+    str.append(i18nc("@info; XMP settings", "DST Correction: %1",   prm.filterDST && d->iface->supportsDistortion() ? i18nc("@info: correction status", "enabled")
+                                                                                                                    : i18nc("@info: correction status", "disabled")));
     str.append(QLatin1Char('\n'));
-    str.append(i18n("GEO Correction: %1",   prm.filterGEO && d->iface->supportsGeometry()   ? i18n("enabled") : i18n("disabled")));
+    str.append(i18nc("@info; XMP settings", "GEO Correction: %1",   prm.filterGEO && d->iface->supportsGeometry()   ? i18nc("@info: correction status", "enabled")
+                                                                                                                    : i18nc("@info: correction status", "disabled")));
 
     QScopedPointer<DMetadata> meta(new DMetadata(data));
     bool ret = meta->setXmpTagString("Xmp.digiKam.LensCorrectionSettings",

@@ -62,37 +62,37 @@ class Q_DECL_HIDDEN LensFunCameraSelector::Private
 public:
 
     explicit Private()
-        : passiveMetadataUsage(false),
-          metadataUsage(nullptr),
-          metadataResult(nullptr),
-          makeLabel(nullptr),
-          modelLabel(nullptr),
-          lensLabel(nullptr),
-          focalLabel(nullptr),
-          aperLabel(nullptr),
-          distLabel(nullptr),
-          configUseMetadata(QLatin1String("UseMetadata")),
-          configCameraModel(QLatin1String("CameraModel")),
-          configCameraMake(QLatin1String("CameraMake")),
-          configLensModel(QLatin1String("LensModel")),
-          configSubjectDistance(QLatin1String("SubjectDistance")),
-          configFocalLength(QLatin1String("FocalLength")),
-          configCropFactor(QLatin1String("CropFactor")),
-          configAperture(QLatin1String("Aperture")),
-          redStyle(QLatin1String("QLabel {color: red;}")),
-          orangeStyle(QLatin1String("QLabel {color: orange;}")),
-          greenStyle(QLatin1String("QLabel {color: green;}")),
-          lensDescription(nullptr),
-          makeDescription(nullptr),
-          modelDescription(nullptr),
-          make(nullptr),
-          model(nullptr),
-          lens(nullptr),
-          focal(nullptr),
-          aperture(nullptr),
-          distance(nullptr),
-          metadata(nullptr),
-          iface(nullptr)
+        : passiveMetadataUsage  (false),
+          metadataUsage         (nullptr),
+          metadataResult        (nullptr),
+          makeLabel             (nullptr),
+          modelLabel            (nullptr),
+          lensLabel             (nullptr),
+          focalLabel            (nullptr),
+          aperLabel             (nullptr),
+          distLabel             (nullptr),
+          configUseMetadata     (QLatin1String("UseMetadata")),
+          configCameraModel     (QLatin1String("CameraModel")),
+          configCameraMake      (QLatin1String("CameraMake")),
+          configLensModel       (QLatin1String("LensModel")),
+          configSubjectDistance (QLatin1String("SubjectDistance")),
+          configFocalLength     (QLatin1String("FocalLength")),
+          configCropFactor      (QLatin1String("CropFactor")),
+          configAperture        (QLatin1String("Aperture")),
+          redStyle              (QLatin1String("QLabel {color: red;}")),
+          orangeStyle           (QLatin1String("QLabel {color: orange;}")),
+          greenStyle            (QLatin1String("QLabel {color: green;}")),
+          lensDescription       (nullptr),
+          makeDescription       (nullptr),
+          modelDescription      (nullptr),
+          make                  (nullptr),
+          model                 (nullptr),
+          lens                  (nullptr),
+          focal                 (nullptr),
+          aperture              (nullptr),
+          distance              (nullptr),
+          metadata              (nullptr),
+          iface                 (nullptr)
     {
     }
 
@@ -138,7 +138,7 @@ public:
 
 LensFunCameraSelector::LensFunCameraSelector(QWidget* const parent)
     : QWidget(parent),
-      d(new Private)
+      d      (new Private)
 {
     d->iface                = new LensFunIface();
 
@@ -177,7 +177,9 @@ LensFunCameraSelector::LensFunCameraSelector(QWidget* const parent)
     d->lensLabel            = new QLabel(i18nc("camera lens",  "Lens:"),  hbox3);
     QLabel* const space3    = new QLabel(hbox3);
     d->lensDescription      = new DAdjustableLabel(hbox3);
+
     // Workaround for layout problem with long lens names.
+
     d->lensDescription->setAdjustedText(QString(40, QLatin1Char(' ')));
     d->lensDescription->setAlignment(Qt::AlignVCenter | Qt::AlignRight);
     d->lensDescription->setWhatsThis(i18n("This is the lens description string found in image meta-data. "
@@ -566,6 +568,7 @@ void LensFunCameraSelector::refreshSettingsView()
     if (lensIdx >= 0)
     {
         // found lens model directly, best case :)
+
         d->lens->setCurrentIndex(lensIdx);
         d->lens->setEnabled(d->passiveMetadataUsage);
 
@@ -679,6 +682,7 @@ void LensFunCameraSelector::populateDeviceCombos()
         }
 
         // Fill models for current selected maker
+
         if ((*it)->Model && QLatin1String((*it)->Maker) == d->make->itemHighlighted())
         {
             LensFunIface::DevicePtr dev = *it;
@@ -820,6 +824,7 @@ void LensFunCameraSelector::slotDistanceChanged()
 } // namespace Digikam
 
 // Restore warnings
+
 #if defined(Q_CC_GNU)
 #   pragma GCC diagnostic pop
 #endif

@@ -57,14 +57,14 @@ class Q_DECL_HIDDEN AntiVignettingSettings::Private
 public:
 
     explicit Private()
-      : addVignettingCheck(nullptr),
-        maskPreviewLabel(nullptr),
-        densityInput(nullptr),
-        powerInput(nullptr),
-        innerRadiusInput(nullptr),
-        outerRadiusInput(nullptr),
-        xOffsetInput(nullptr),
-        yOffsetInput(nullptr)
+      : addVignettingCheck  (nullptr),
+        maskPreviewLabel    (nullptr),
+        densityInput        (nullptr),
+        powerInput          (nullptr),
+        innerRadiusInput    (nullptr),
+        outerRadiusInput    (nullptr),
+        xOffsetInput        (nullptr),
+        yOffsetInput        (nullptr)
     {
     }
 
@@ -102,7 +102,7 @@ const QString AntiVignettingSettings::Private::configYOffsetEntry(QLatin1String(
 
 AntiVignettingSettings::AntiVignettingSettings(QWidget* parent)
     : QWidget(parent),
-      d(new Private)
+      d      (new Private)
 {
     const int spacing       = QApplication::style()->pixelMetric(QStyle::PM_DefaultLayoutSpacing);
 

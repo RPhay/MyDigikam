@@ -74,7 +74,7 @@ const QString LensFunSettings::Private::configGeometryEntry(QLatin1String("Geome
 
 LensFunSettings::LensFunSettings(QWidget* const parent)
     : QWidget(parent),
-      d(new Private)
+      d      (new Private)
 {
     const int spacing = QApplication::style()->pixelMetric(QStyle::PM_DefaultLayoutSpacing);
 

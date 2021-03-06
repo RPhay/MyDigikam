@@ -49,9 +49,9 @@ class Q_DECL_HIDDEN LensFunIface::Private
 public:
 
     explicit Private()
-      : lfDb(nullptr),
-        lfCameras(nullptr),
-        usedLens(nullptr),
+      : lfDb      (nullptr),
+        lfCameras (nullptr),
+        usedLens  (nullptr),
         usedCamera(nullptr)
     {
     }
@@ -655,6 +655,7 @@ double LensFunIface::checkSimilarity(const QString& a, const QString& b) const
 }
 
 // Restore warnings
+
 #if defined(Q_CC_GNU)
 #   pragma GCC diagnostic pop
 #endif
