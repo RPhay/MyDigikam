@@ -162,7 +162,7 @@ public:
 
 ItemPropertiesTab::ItemPropertiesTab(QWidget* const parent)
     : DExpanderBox(parent),
-      d(new Private)
+      d           (new Private)
 {
     setFrameStyle(QFrame::StyledPanel | QFrame::Sunken);
     setLineWidth(style()->pixelMetric(QStyle::PM_DefaultFrameWidth));
@@ -174,12 +174,12 @@ ItemPropertiesTab::ItemPropertiesTab(QWidget* const parent)
     QWidget* const w1                  = new QWidget(this);
     QGridLayout* const glay1           = new QGridLayout(w1);
 
-    DTextLabelName* const file         = new DTextLabelName(i18n("File: "),        w1);
-    DTextLabelName* const folder       = new DTextLabelName(i18n("Folder: "),      w1);
-    DTextLabelName* const modifiedDate = new DTextLabelName(i18n("Date: "),        w1);
-    DTextLabelName* const size         = new DTextLabelName(i18n("Size: "),        w1);
-    DTextLabelName* const owner        = new DTextLabelName(i18n("Owner: "),       w1);
-    DTextLabelName* const permissions  = new DTextLabelName(i18n("Permissions: "), w1);
+    DTextLabelName* const file         = new DTextLabelName(i18nc("@label: item properties", "File: "),        w1);
+    DTextLabelName* const folder       = new DTextLabelName(i18nc("@label: item properties", "Folder: "),      w1);
+    DTextLabelName* const modifiedDate = new DTextLabelName(i18nc("@label: item properties", "Date: "),        w1);
+    DTextLabelName* const size         = new DTextLabelName(i18nc("@label: item properties", "Size: "),        w1);
+    DTextLabelName* const owner        = new DTextLabelName(i18nc("@label: item properties", "Owner: "),       w1);
+    DTextLabelName* const permissions  = new DTextLabelName(i18nc("@label: item properties", "Permissions: "), w1);
 
     d->labelFile                       = new DTextLabelValue(QString(), w1);
     d->labelFolder                     = new DTextLabelValue(QString(), w1);
@@ -207,19 +207,19 @@ ItemPropertiesTab::ItemPropertiesTab(QWidget* const parent)
 
     insertItem(ItemPropertiesTab::Private::FileProperties,
                w1, QIcon::fromTheme(QLatin1String("dialog-information")),
-               i18n("File Properties"), QLatin1String("FileProperties"), true);
+               i18nc("@title: item properties", "File Properties"), QLatin1String("FileProperties"), true);
 
     // --------------------------------------------------
 
     QWidget* const w2                = new QWidget(this);
     QGridLayout* const glay2         = new QGridLayout(w2);
 
-    DTextLabelName* const mime       = new DTextLabelName(i18n("Type: "),         w2);
-    DTextLabelName* const dimensions = new DTextLabelName(i18n("Dimensions: "),   w2);
-    DTextLabelName* const ratio      = new DTextLabelName(i18n("Aspect Ratio: "), w2);
-    DTextLabelName* const bitDepth   = new DTextLabelName(i18n("Bit depth: "),    w2);
-    DTextLabelName* const colorMode  = new DTextLabelName(i18n("Color mode: "),   w2);
-    DTextLabelName* const hasSidecar = new DTextLabelName(i18n("Sidecar: "),      w2);
+    DTextLabelName* const mime       = new DTextLabelName(i18nc("@label: item properties", "Type: "),         w2);
+    DTextLabelName* const dimensions = new DTextLabelName(i18nc("@label: item properties", "Dimensions: "),   w2);
+    DTextLabelName* const ratio      = new DTextLabelName(i18nc("@label: item properties", "Aspect Ratio: "), w2);
+    DTextLabelName* const bitDepth   = new DTextLabelName(i18nc("@label: item properties", "Bit depth: "),    w2);
+    DTextLabelName* const colorMode  = new DTextLabelName(i18nc("@label: item properties", "Color mode: "),   w2);
+    DTextLabelName* const hasSidecar = new DTextLabelName(i18nc("@label: item properties", "Sidecar: "),      w2);
 
     d->labelImageMime                = new DTextLabelValue(QString(), w2);
     d->labelImageDimensions          = new DTextLabelValue(QString(), w2);
@@ -247,24 +247,24 @@ ItemPropertiesTab::ItemPropertiesTab(QWidget* const parent)
 
     insertItem(ItemPropertiesTab::Private::ImageProperties,
                w2, QIcon::fromTheme(QLatin1String("view-preview")),
-               i18n("Item Properties"), QLatin1String("ItemProperties"), true);
+               i18nc("@title: item properties", "Item Properties"), QLatin1String("ItemProperties"), true);
 
     // --------------------------------------------------
 
     QWidget* const w3                  = new QWidget(this);
     QGridLayout* const glay3           = new QGridLayout(w3);
 
-    DTextLabelName* const make         = new DTextLabelName(i18n("Make: "),          w3);
-    DTextLabelName* const model        = new DTextLabelName(i18n("Model: "),         w3);
-    DTextLabelName* const photoDate    = new DTextLabelName(i18n("Created: "),       w3);
-    DTextLabelName* const lens         = new DTextLabelName(i18n("Lens: "),          w3);
-    DTextLabelName* const aperture     = new DTextLabelName(i18n("Aperture: "),      w3);
-    DTextLabelName* const focalLength  = new DTextLabelName(i18n("Focal: "),         w3);
-    DTextLabelName* const exposureTime = new DTextLabelName(i18n("Exposure: "),      w3);
-    DTextLabelName* const sensitivity  = new DTextLabelName(i18n("Sensitivity: "),   w3);
-    DTextLabelName* const exposureMode = new DTextLabelName(i18n("Mode/Program: "),  w3);
-    DTextLabelName* const flash        = new DTextLabelName(i18n("Flash: "),         w3);
-    DTextLabelName* const whiteBalance = new DTextLabelName(i18n("White balance: "), w3);
+    DTextLabelName* const make         = new DTextLabelName(i18nc("@label: item properties", "Make: "),          w3);
+    DTextLabelName* const model        = new DTextLabelName(i18nc("@label: item properties", "Model: "),         w3);
+    DTextLabelName* const photoDate    = new DTextLabelName(i18nc("@label: item properties", "Created: "),       w3);
+    DTextLabelName* const lens         = new DTextLabelName(i18nc("@label: item properties", "Lens: "),          w3);
+    DTextLabelName* const aperture     = new DTextLabelName(i18nc("@label: item properties", "Aperture: "),      w3);
+    DTextLabelName* const focalLength  = new DTextLabelName(i18nc("@label: item properties", "Focal: "),         w3);
+    DTextLabelName* const exposureTime = new DTextLabelName(i18nc("@label: item properties", "Exposure: "),      w3);
+    DTextLabelName* const sensitivity  = new DTextLabelName(i18nc("@label: item properties", "Sensitivity: "),   w3);
+    DTextLabelName* const exposureMode = new DTextLabelName(i18nc("@label: item properties", "Mode/Program: "),  w3);
+    DTextLabelName* const flash        = new DTextLabelName(i18nc("@label: item properties", "Flash: "),         w3);
+    DTextLabelName* const whiteBalance = new DTextLabelName(i18nc("@label: item properties", "White balance: "), w3);
 
     d->labelPhotoMake                  = new DTextLabelValue(QString(), w3);
     d->labelPhotoModel                 = new DTextLabelValue(QString(), w3);
@@ -307,20 +307,20 @@ ItemPropertiesTab::ItemPropertiesTab(QWidget* const parent)
 
     insertItem(ItemPropertiesTab::Private::PhotoProperties,
                w3, QIcon::fromTheme(QLatin1String("camera-photo")),
-               i18n("Photograph Properties"), QLatin1String("PhotographProperties"), true);
+               i18nc("@title: item properties", "Photograph Properties"), QLatin1String("PhotographProperties"), true);
 
     // --------------------------------------------------
 
     QWidget* const w4                      = new QWidget(this);
     QGridLayout* const glay4               = new QGridLayout(w4);
 
-    DTextLabelName* const aspectRatio      = new DTextLabelName(i18n("Aspect Ratio: "),       w4);
-    DTextLabelName* const duration         = new DTextLabelName(i18n("Duration: "),           w4);
-    DTextLabelName* const frameRate        = new DTextLabelName(i18n("Frame Rate: "),         w4);
-    DTextLabelName* const videoCodec       = new DTextLabelName(i18n("Video Codec: "),        w4);
-    DTextLabelName* const audioBitRate     = new DTextLabelName(i18n("Audio Bit Rate: "),     w4);
-    DTextLabelName* const audioChannelType = new DTextLabelName(i18n("Audio Channel Type: "), w4);
-    DTextLabelName* const audioCodec       = new DTextLabelName(i18n("Audio Codec: "),        w4);
+    DTextLabelName* const aspectRatio      = new DTextLabelName(i18nc("@label: item properties", "Aspect Ratio: "),       w4);
+    DTextLabelName* const duration         = new DTextLabelName(i18nc("@label: item properties", "Duration: "),           w4);
+    DTextLabelName* const frameRate        = new DTextLabelName(i18nc("@label: item properties", "Frame Rate: "),         w4);
+    DTextLabelName* const videoCodec       = new DTextLabelName(i18nc("@label: item properties", "Video Codec: "),        w4);
+    DTextLabelName* const audioBitRate     = new DTextLabelName(i18nc("@label: item properties", "Audio Bit Rate: "),     w4);
+    DTextLabelName* const audioChannelType = new DTextLabelName(i18nc("@label: item properties", "Audio Channel Type: "), w4);
+    DTextLabelName* const audioCodec       = new DTextLabelName(i18nc("@label: item properties", "Audio Codec: "),        w4);
 
     d->labelVideoAspectRatio               = new DTextLabelValue(QString(), w4);
     d->labelVideoDuration                  = new DTextLabelValue(QString(), w4);
@@ -351,18 +351,18 @@ ItemPropertiesTab::ItemPropertiesTab(QWidget* const parent)
 
     insertItem(ItemPropertiesTab::Private::VideoProperties,
                w4, QIcon::fromTheme(QLatin1String("video-x-generic")),
-               i18n("Audio/Video Properties"), QLatin1String("VideoProperties"), true);
+               i18nc("@title: item properties", "Audio/Video Properties"), QLatin1String("VideoProperties"), true);
 
     // --------------------------------------------------
 
     QWidget* const w5        = new QWidget(this);
     QGridLayout* const glay5 = new QGridLayout(w5);
 
-    d->caption               = new DTextLabelName(i18n("Caption: "),     w5);
-    d->pickLabel             = new DTextLabelName(i18n("Pick label: "),  w5);
-    d->colorLabel            = new DTextLabelName(i18n("Color label: "), w5);
-    d->rating                = new DTextLabelName(i18n("Rating: "),      w5);
-    d->tags                  = new DTextLabelName(i18n("Tags: "),        w5);
+    d->caption               = new DTextLabelName(i18nc("@label: item properties", "Caption: "),     w5);
+    d->pickLabel             = new DTextLabelName(i18nc("@label: item properties", "Pick label: "),  w5);
+    d->colorLabel            = new DTextLabelName(i18nc("@label: item properties", "Color label: "), w5);
+    d->rating                = new DTextLabelName(i18nc("@label: item properties", "Rating: "),      w5);
+    d->tags                  = new DTextLabelName(i18nc("@label: item properties", "Tags: "),        w5);
 
     d->labelCaption          = new DTextLabelValue(QString(), w5);
     d->labelPickLabel        = new DTextLabelValue(QString(), w5);
@@ -388,7 +388,7 @@ ItemPropertiesTab::ItemPropertiesTab(QWidget* const parent)
 
     insertItem(ItemPropertiesTab::Private::digiKamProperties,
                w5, QIcon::fromTheme(QLatin1String("edit-text-frame-update")),
-               i18n("digiKam Properties"), QLatin1String("DigikamProperties"), true);
+               i18nc("@title: item properties", "digiKam Properties"), QLatin1String("DigikamProperties"), true);
 
     // --------------------------------------------------
 
@@ -726,7 +726,7 @@ void ItemPropertiesTab::setVideoFrameRate(const QString& str)
 
     if (ok)
     {
-        frameRateString = QLocale().toString(frameRateDouble) + i18n(" fps");
+        frameRateString = QLocale().toString(frameRateDouble) + i18nc("@info: item properties", " fps");
     }
 
     d->labelVideoFrameRate->setAdjustedText(frameRateString);
@@ -926,7 +926,7 @@ bool ItemPropertiesTab::aspectRatioToString(int width, int height, QString& arSt
 
     double aratio = (double)qMax(num, den) / (double)qMin(num, den);
 
-    arString = i18nc("width : height (Aspect Ratio)", "%1:%2 (%3)",
+    arString = i18nc("@info: width : height (Aspect Ratio)", "%1:%2 (%3)",
                      (width > height) ? num : den,
                      (width > height) ? den : num,
                      QLocale().toString(aratio, 'g', 2));
@@ -959,7 +959,7 @@ QString ItemPropertiesTab::permissionsString(const QFileInfo& fi)
 QString ItemPropertiesTab::humanReadableBytesCount(qint64 bytes, bool si)
 {
     int unit        = si ? 1000 : 1024;
-    QString byteStr = i18nc("unit file size in bytes", "B");
+    QString byteStr = i18nc("@info: unit file size in bytes", "B");
     QString ret     = QString::number(bytes);
 
     if (bytes >= unit)
