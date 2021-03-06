@@ -77,8 +77,8 @@ DNGConvertSettings::DNGConvertSettings(QWidget* const parent)
     d->dngLink->setAlignment(Qt::AlignLeft | Qt::AlignVCenter);
     d->dngLink->setOpenExternalLinks(true);
     d->dngLink->setWordWrap(false);
-    d->dngLink->setText(i18nc("@label", "<p><a href='https://en.wikipedia.org/wiki/Digital_Negative_(file_format)'>DNG container</a></p>"));
-
+    d->dngLink->setText(QString::fromUtf8("<p><a href='https://en.wikipedia.org/wiki/Digital_Negative_(file_format)'>%1</a></p>")
+                        .arg(i18nc("@label", "DNG container")));
     convHlay->addWidget(d->convertDng);
     convHlay->addWidget(d->dngLink);
     convHlay->addStretch(10);
