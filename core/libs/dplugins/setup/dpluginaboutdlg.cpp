@@ -64,7 +64,7 @@ DPluginAboutDlg::DPluginAboutDlg(DPlugin* const tool, QWidget* const parent)
                    Qt::WindowMinMaxButtonsHint);
 
     setModal(false);
-    setWindowTitle(i18n("About %1 Plugin", tool->name()));
+    setWindowTitle(i18nc("@title", "About %1 Plugin", tool->name()));
 
     QDialogButtonBox* const buttons = new QDialogButtonBox(QDialogButtonBox::Ok, this);
     buttons->button(QDialogButtonBox::Ok)->setDefault(true);
@@ -81,12 +81,13 @@ DPluginAboutDlg::DPluginAboutDlg(DPlugin* const tool, QWidget* const parent)
 
     QLabel* const header            = new QLabel(page);
     header->setWordWrap(true);
-    header->setText(i18n("<font size=\"5\">%1</font><br/>"
-                         "<b>Version %2</b>"
-                         "<p>%3</p>",
-                         tool->name(),
-                         tool->version(),
-                         tool->description()));
+    header->setText(QString::fromUtf8("<font size=\"5\">%1</font><br/>"
+                                      "<b>%2 %3</b>"
+                                      "<p>%4</p>")
+                    .arg(tool->name())
+                    .arg(i18nc("@label", "Version"))
+                    .arg(tool->version())
+                    .arg(tool->description()));
 
     QTabWidget* const tab           = new QTabWidget(page);
 
@@ -97,7 +98,7 @@ DPluginAboutDlg::DPluginAboutDlg(DPlugin* const tool, QWidget* const parent)
     details->setFocusPolicy(Qt::NoFocus);
     details->setText(tool->details());
 
-    tab->addTab(details, i18n("Details"));
+    tab->addTab(details, i18nc("@title", "Details"));
 
     // --------------------------------------------------------
 
@@ -122,7 +123,7 @@ DPluginAboutDlg::DPluginAboutDlg(DPlugin* const tool, QWidget* const parent)
 
     authors->setText(alist);
 
-    tab->addTab(authors, i18n("Authors"));
+    tab->addTab(authors, i18nc("@title", "Authors"));
 
     // --------------------------------------------------------
 
@@ -133,19 +134,20 @@ DPluginAboutDlg::DPluginAboutDlg(DPlugin* const tool, QWidget* const parent)
     props->setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Expanding);
     props->setAllColumnsShowFocus(true);
     props->setColumnCount(2);
-    props->setHeaderLabels(QStringList() << i18n("Name") << i18n("Value"));
+    props->setHeaderLabels(QStringList() << i18nc("@title: DPlugin properties", "Name")
+                                         << i18nc("@title: DPlugin properties", "Value"));
 
-    new QTreeWidgetItem(props, QStringList() << i18n("Interface ID") << tool->ifaceIid());
-    new QTreeWidgetItem(props, QStringList() << i18n("Tool ID")      << tool->iid());
-    new QTreeWidgetItem(props, QStringList() << i18n("Library")      << tool->libraryFileName());
+    new QTreeWidgetItem(props, QStringList() << i18nc("@item", "Interface ID") << tool->ifaceIid());
+    new QTreeWidgetItem(props, QStringList() << i18nc("@item", "Tool ID")      << tool->iid());
+    new QTreeWidgetItem(props, QStringList() << i18nc("@item", "Library")      << tool->libraryFileName());
 
     QFileInfo fi(tool->libraryFileName());
 
-    new QTreeWidgetItem(props, QStringList() << i18n("File Size")    << ItemPropertiesTab::humanReadableBytesCount(fi.size()));
-    new QTreeWidgetItem(props, QStringList() << i18n("File Date")    << QLocale().toString(fi.lastModified(), QLocale::ShortFormat));
+    new QTreeWidgetItem(props, QStringList() << i18nc("@item", "File Size")    << ItemPropertiesTab::humanReadableBytesCount(fi.size()));
+    new QTreeWidgetItem(props, QStringList() << i18nc("@item", "File Date")    << QLocale().toString(fi.lastModified(), QLocale::ShortFormat));
 
 
-    tab->addTab(props, i18n("Properties"));
+    tab->addTab(props, i18nc("@title", "Properties"));
 
     // --------------------------------------------------------
 
@@ -160,7 +162,8 @@ DPluginAboutDlg::DPluginAboutDlg(DPlugin* const tool, QWidget* const parent)
         extra->setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Expanding);
         extra->setAllColumnsShowFocus(true);
         extra->setColumnCount(2);
-        extra->setHeaderLabels(QStringList() << i18n("Extension") << i18n("Description"));
+        extra->setHeaderLabels(QStringList() << i18nc("@title: DPlugin properties", "Extension")
+                                             << i18nc("@title: DPlugin properties", "Description"));
 
         for (QMap<QString, QString>::const_iterator it = list.constBegin() ; it != list.constEnd() ; ++it)
         {

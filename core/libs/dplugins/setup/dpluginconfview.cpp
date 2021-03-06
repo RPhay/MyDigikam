@@ -139,11 +139,11 @@ DPluginConfView::DPluginConfView(QWidget* const parent)
     header()->setSortIndicatorShown(true);
 
     QStringList labels;
-    labels.append(i18n("Name"));
-    labels.append(i18n("Categories"));
-    labels.append(i18n("Tools"));
-    labels.append(i18n("Description"));
-    labels.append(i18n("Authors"));
+    labels.append(i18nc("@title: Dplugin property", "Name"));
+    labels.append(i18nc("@title: Dplugin property", "Categories"));
+    labels.append(i18nc("@title: Dplugin property", "Tools"));
+    labels.append(i18nc("@title: Dplugin property", "Description"));
+    labels.append(i18nc("@title: Dplugin property", "Authors"));
     setHeaderLabels(labels);
 
     setAutoFillBackground(false);
