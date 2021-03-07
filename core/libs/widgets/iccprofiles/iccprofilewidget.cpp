@@ -79,7 +79,7 @@ public:
     }
 
     ICCTagInfo(const QString& title, const QString& description)
-        : m_title(title),
+        : m_title      (title),
           m_description(description)
     {
     }
@@ -125,25 +125,38 @@ public:
 
 ICCProfileWidget::ICCProfileWidget(QWidget* const parent, int w, int h)
     : MetadataWidget(parent),
-      d(new Private)
+      d             (new Private)
 {
     setup();
     dkCmsErrorAction(LCMS_ERROR_SHOW);
 
     // Set the translated ICC tags titles/descriptions list
-    d->iccTagsDescription[QLatin1String("Icc.Header.Name")]            = ICCTagInfo(i18n("Name"),             i18n("The ICC profile product name"));
-    d->iccTagsDescription[QLatin1String("Icc.Header.Description")]     = ICCTagInfo(i18n("Description"),      i18n("The ICC profile product description"));
-    d->iccTagsDescription[QLatin1String("Icc.Header.Information")]     = ICCTagInfo(i18n("Information"),      i18n("Additional ICC profile information"));
-    d->iccTagsDescription[QLatin1String("Icc.Header.Manufacturer")]    = ICCTagInfo(i18n("Manufacturer"),     i18n("Raw information about the ICC profile manufacturer"));
-    d->iccTagsDescription[QLatin1String("Icc.Header.Model")]           = ICCTagInfo(i18nc("As in Color Model", "Model"),            i18n("Raw information about the ICC profile model"));
-    d->iccTagsDescription[QLatin1String("Icc.Header.Copyright")]       = ICCTagInfo(i18n("Copyright"),        i18n("Raw information about the ICC profile copyright"));
-    d->iccTagsDescription[QLatin1String("Icc.Header.ProfileID")]       = ICCTagInfo(i18n("Profile ID"),       i18n("The ICC profile ID number"));
-    d->iccTagsDescription[QLatin1String("Icc.Header.ColorSpace")]      = ICCTagInfo(i18n("Color Space"),      i18n("The color space used by the ICC profile"));
-    d->iccTagsDescription[QLatin1String("Icc.Header.ConnectionSpace")] = ICCTagInfo(i18n("Connection Space"), i18n("The connection space used by the ICC profile"));
-    d->iccTagsDescription[QLatin1String("Icc.Header.DeviceClass")]     = ICCTagInfo(i18n("Device Class"),     i18n("The ICC profile device class"));
-    d->iccTagsDescription[QLatin1String("Icc.Header.RenderingIntent")] = ICCTagInfo(i18n("Rendering Intent"), i18n("The ICC profile rendering intent"));
-    d->iccTagsDescription[QLatin1String("Icc.Header.ProfileVersion")]  = ICCTagInfo(i18n("Profile Version"),  i18n("The ICC version used to record the profile"));
-    d->iccTagsDescription[QLatin1String("Icc.Header.CMMFlags")]        = ICCTagInfo(i18n("CMM Flags"),        i18n("The ICC profile color management flags"));
+    d->iccTagsDescription[QLatin1String("Icc.Header.Name")]            = ICCTagInfo(i18nc("@item: icc profile properties", "Name"),
+                                                                                    i18nc("@info: icc profile properties", "The ICC profile product name"));
+    d->iccTagsDescription[QLatin1String("Icc.Header.Description")]     = ICCTagInfo(i18nc("@item: icc profile properties", "Description"),
+                                                                                    i18nc("@info: icc profile properties", "The ICC profile product description"));
+    d->iccTagsDescription[QLatin1String("Icc.Header.Information")]     = ICCTagInfo(i18nc("@item: icc profile properties", "Information"),
+                                                                                    i18nc("@info: icc profile properties", "Additional ICC profile information"));
+    d->iccTagsDescription[QLatin1String("Icc.Header.Manufacturer")]    = ICCTagInfo(i18nc("@item: icc profile properties", "Manufacturer"),
+                                                                                    i18nc("@info: icc profile properties", "Raw information about the ICC profile manufacturer"));
+    d->iccTagsDescription[QLatin1String("Icc.Header.Model")]           = ICCTagInfo(i18nc("@item: icc profile properties", "Model"),
+                                                                                    i18nc("@info: icc profile properties", "Raw information about the ICC profile model"));
+    d->iccTagsDescription[QLatin1String("Icc.Header.Copyright")]       = ICCTagInfo(i18nc("@item: icc profile properties", "Copyright"),
+                                                                                    i18nc("@info: icc profile properties", "Raw information about the ICC profile copyright"));
+    d->iccTagsDescription[QLatin1String("Icc.Header.ProfileID")]       = ICCTagInfo(i18nc("@item: icc profile properties", "Profile ID"),
+                                                                                    i18nc("@info: icc profile properties", "The ICC profile ID number"));
+    d->iccTagsDescription[QLatin1String("Icc.Header.ColorSpace")]      = ICCTagInfo(i18nc("@item: icc profile properties", "Color Space"),
+                                                                                    i18nc("@info: icc profile properties", "The color space used by the ICC profile"));
+    d->iccTagsDescription[QLatin1String("Icc.Header.ConnectionSpace")] = ICCTagInfo(i18nc("@item: icc profile properties", "Connection Space"),
+                                                                                    i18nc("@info: icc profile properties", "The connection space used by the ICC profile"));
+    d->iccTagsDescription[QLatin1String("Icc.Header.DeviceClass")]     = ICCTagInfo(i18nc("@item: icc profile properties", "Device Class"),
+                                                                                    i18nc("@info: icc profile properties", "The ICC profile device class"));
+    d->iccTagsDescription[QLatin1String("Icc.Header.RenderingIntent")] = ICCTagInfo(i18nc("@item: icc profile properties", "Rendering Intent"),
+                                                                                    i18nc("@info: icc profile properties", "The ICC profile rendering intent"));
+    d->iccTagsDescription[QLatin1String("Icc.Header.ProfileVersion")]  = ICCTagInfo(i18nc("@item: icc profile properties", "Profile Version"),
+                                                                                    i18nc("@info: icc profile properties", "The ICC version used to record the profile"));
+    d->iccTagsDescription[QLatin1String("Icc.Header.CMMFlags")]        = ICCTagInfo(i18nc("@item: icc profile properties", "CMM Flags"),
+                                                                                    i18nc("@info: icc profile properties", "The ICC profile color management flags"));
 
     // Set the list of keys and tags filters.
 
@@ -164,19 +177,20 @@ ICCProfileWidget::ICCProfileWidget(QWidget* const parent, int w, int h)
     // Add CIE tongue graph to the widget area
 
     d->cieTongue = new CIETongueWidget(w, h, this);
-    d->cieTongue->setWhatsThis( i18n("<p>This area contains a CIE or chromaticity diagram. "
-                                     "A CIE diagram is a representation of all the colors "
-                                     "that a person with normal vision can see. This is represented "
-                                     "by the colored sail-shaped area. In addition you will see a "
-                                     "triangle that is superimposed on the diagram outlined in white. "
-                                     "This triangle represents the outer boundaries of the color space "
-                                     "of the device that is characterized by the inspected profile. "
-                                     "This is called the device gamut.</p>"
-                                     "<p>In addition there are black dots and yellow lines on the diagram. "
-                                     "Each black dot represents one of the measurement points that were "
-                                     "used to create this profile. The yellow line represents the "
-                                     "amount that each point is corrected by the profile, and the "
-                                     "direction of this correction.</p>"));
+    d->cieTongue->setWhatsThis(i18nc("@info: icc profile properties",
+                                     "This area contains a CIE or chromaticity diagram.\n"
+                                     "A CIE diagram is a representation of all the colors\n"
+                                     "that a person with normal vision can see. This is represented\n"
+                                     "by the colored sail-shaped area. In addition you will see a\n"
+                                     "triangle that is superimposed on the diagram outlined in white.\n"
+                                     "This triangle represents the outer boundaries of the color space\n"
+                                     "of the device that is characterized by the inspected profile.\n"
+                                     "This is called the device gamut.\n"
+                                     "In addition there are black dots and yellow lines on the diagram.\n"
+                                     "Each black dot represents one of the measurement points that were\n"
+                                     "used to create this profile. The yellow line represents the\n"
+                                     "amount that each point is corrected by the profile, and the\n"
+                                     "direction of this correction."));
 
     setUserAreaWidget(d->cieTongue);
     decodeMetadata();
@@ -236,7 +250,7 @@ void ICCProfileWidget::setUncalibratedColor()
 
 QString ICCProfileWidget::getMetadataTitle()
 {
-    return i18n("ICC Color Profile Information");
+    return i18nc("@title: icc profile properties", "ICC Color Profile Information");
 }
 
 bool ICCProfileWidget::loadFromURL(const QUrl& url)
@@ -337,39 +351,39 @@ bool ICCProfileWidget::decodeMetadata()
     switch (dkCmsGetColorSpace(hProfile))
     {
         case icSigLabData:
-            colorSpace = i18n("Lab");
+            colorSpace = i18nc("@info: icc profile color space", "Lab");
             break;
 
         case icSigLuvData:
-            colorSpace = i18n("Luv");
+            colorSpace = i18nc("@info: icc profile color space", "Luv");
             break;
 
         case icSigRgbData:
-            colorSpace = i18n("RGB");
+            colorSpace = i18nc("@info: icc profile color space", "RGB");
             break;
 
         case icSigGrayData:
-            colorSpace = i18n("GRAY");
+            colorSpace = i18nc("@info: icc profile color space", "GRAY");
             break;
 
         case icSigHsvData:
-            colorSpace = i18n("HSV");
+            colorSpace = i18nc("@info: icc profile color space", "HSV");
             break;
 
         case icSigHlsData:
-            colorSpace = i18n("HLS");
+            colorSpace = i18nc("@info: icc profile color space", "HLS");
             break;
 
         case icSigCmykData:
-            colorSpace = i18n("CMYK");
+            colorSpace = i18nc("@info: icc profile color space", "CMYK");
             break;
 
         case icSigCmyData:
-            colorSpace= i18n("CMY");
+            colorSpace= i18nc("@info: icc profile color space", "CMY");
             break;
 
         default:
-            colorSpace = i18n("Unknown");
+            colorSpace = i18nc("@info: icc profile color space", "Unknown");
             break;
     }
 
@@ -380,38 +394,38 @@ bool ICCProfileWidget::decodeMetadata()
     switch (dkCmsGetPCS(hProfile))
     {
         case icSigLabData:
-            connectionSpace = i18n("Lab");
+            connectionSpace = i18nc("@info: icc profile color space", "Lab");
             break;
 
         case icSigLuvData:
-            connectionSpace = i18n("Luv");
+            connectionSpace = i18nc("@info: icc profile color space", "Luv");
             break;
 
         case icSigRgbData:
-            connectionSpace = i18n("RGB");
+            connectionSpace = i18nc("@info: icc profile color space", "RGB");
             break;
 
         case icSigGrayData:
-            connectionSpace = i18n("GRAY");
+            connectionSpace = i18nc("@info: icc profile color space", "GRAY");
             break;
 
         case icSigHsvData:
-            connectionSpace = i18n("HSV");
+            connectionSpace = i18nc("@info: icc profile color space", "HSV");
             break;
 
         case icSigHlsData:
-            connectionSpace = i18n("HLS");
+            connectionSpace = i18nc("@info: icc profile color space", "HLS");
             break;
         case icSigCmykData:
-            connectionSpace = i18n("CMYK");
+            connectionSpace = i18nc("@info: icc profile color space", "CMYK");
             break;
 
         case icSigCmyData:
-            connectionSpace= i18n("CMY");
+            connectionSpace= i18nc("@info: icc profile color space", "CMY");
             break;
 
         default:
-            connectionSpace = i18n("Unknown");
+            connectionSpace = i18nc("@info: icc profile color space", "Unknown");
             break;
     }
 
@@ -422,35 +436,35 @@ bool ICCProfileWidget::decodeMetadata()
     switch ((int)dkCmsGetDeviceClass(hProfile))
     {
         case icSigInputClass:
-            device = i18n("Input device");
+            device = i18nc("@info: icc profile class", "Input device");
             break;
 
         case icSigDisplayClass:
-            device = i18n("Display device");
+            device = i18nc("@info: icc profile class", "Display device");
             break;
 
         case icSigOutputClass:
-            device = i18n("Output device");
+            device = i18nc("@info: icc profile class", "Output device");
             break;
 
         case icSigColorSpaceClass:
-            device = i18n("Color space");
+            device = i18nc("@info: icc profile class", "Color space");
             break;
 
         case icSigLinkClass:
-            device = i18n("Link device");
+            device = i18nc("@info: icc profile class", "Link device");
             break;
 
         case icSigAbstractClass:
-            device = i18n("Abstract");
+            device = i18nc("@info: icc profile class", "Abstract");
             break;
 
         case icSigNamedColorClass:
-            device = i18n("Named color");
+            device = i18nc("@info: icc profile class", "Named color");
             break;
 
         default:
-            device = i18n("Unknown");
+            device = i18nc("@info: icc profile class", "Unknown");
             break;
     }
 
@@ -461,23 +475,23 @@ bool ICCProfileWidget::decodeMetadata()
     switch (dkCmsTakeRenderingIntent(hProfile))
     {
         case 0:
-            intent = i18n("Perceptual");
+            intent = i18nc("@info: icc profile redering", "Perceptual");
             break;
 
         case 1:
-            intent = i18n("Relative Colorimetric");
+            intent = i18nc("@info: icc profile redering", "Relative Colorimetric");
             break;
 
         case 2:
-            intent = i18n("Saturation");
+            intent = i18nc("@info: icc profile redering", "Saturation");
             break;
 
         case 3:
-            intent = i18n("Absolute Colorimetric");
+            intent = i18nc("@info: icc profile redering", "Absolute Colorimetric");
             break;
 
         default:
-            intent = i18n("Unknown");
+            intent = i18nc("@info: icc profile redering", "Unknown");
             break;
     }
 
@@ -518,8 +532,8 @@ QString ICCProfileWidget::getTagTitle(const QString& key)
 
 void ICCProfileWidget::slotSaveMetadataToFile()
 {
-    QUrl url = saveMetadataToFile(i18n("ICC color profile File to Save"),
-                                  QString(QLatin1String("*.icc *.icm|") + i18n("ICC Files (*.icc; *.icm)")));
+    QUrl url = saveMetadataToFile(i18nc("@title: file open dialog", "ICC color profile File to Save"),
+                                  QString(QLatin1String("*.icc *.icm|") + i18nc("@info: file open filters", "ICC Files (*.icc; *.icm)")));
     storeMetadataToFile(url, d->profile.data());
 }
 

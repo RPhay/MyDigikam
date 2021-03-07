@@ -159,20 +159,20 @@ public:
 
     explicit Private()
       : profileDataAvailable(true),
-        loadingImageMode(false),
-        loadingImageSucess(false),
-        needUpdatePixmap(false),
-        uncalibratedColor(false),
-        xBias(0),
-        yBias(0),
-        pxcols(0),
-        pxrows(0),
-        progressCount(0),
-        gridside(0),
-        progressTimer(nullptr),
-        progressPix(nullptr),
-        hMonitorProfile(nullptr),
-        hXFORM(nullptr)
+        loadingImageMode    (false),
+        loadingImageSucess  (false),
+        needUpdatePixmap    (false),
+        uncalibratedColor   (false),
+        xBias               (0),
+        yBias               (0),
+        pxcols              (0),
+        pxrows              (0),
+        progressCount       (0),
+        gridside            (0),
+        progressTimer       (nullptr),
+        progressPix         (nullptr),
+        hMonitorProfile     (nullptr),
+        hXFORM              (nullptr)
     {
     }
 
@@ -204,7 +204,8 @@ public:
 };
 
 CIETongueWidget::CIETongueWidget(int w, int h, QWidget* const parent, cmsHPROFILE hMonitor)
-    : QWidget(parent), d(new Private)
+    : QWidget(parent),
+      d      (new Private)
 {
     cmsHPROFILE hXYZProfile;
     d->progressTimer = new QTimer(this);
@@ -228,7 +229,6 @@ CIETongueWidget::CIETongueWidget(int w, int h, QWidget* const parent, cmsHPROFIL
     {
         return;
     }
-
 
     d->hXFORM = dkCmsCreateTransform(hXYZProfile, TYPE_XYZ_16,
                                      d->hMonitorProfile, TYPE_RGB_8,
@@ -350,22 +350,30 @@ void CIETongueWidget::setProfile(cmsHPROFILE hProfile)
 
         if (dkCmsReadICCMatrixRGB2XYZ(&Mat, hProfile))
         {
+
 #if defined(USE_LCMS_VERSION_1000)
+
             qCDebug(DIGIKAM_WIDGETS_LOG) << "dkCmsReadICCMatrixRGB2XYZ(1): " \
             << "[" << Mat.v[0].n[0] << ", " << Mat.v[0].n[1] << ", " << Mat.v[0].n[2] << "]" \
             << "[" << Mat.v[1].n[0] << ", " << Mat.v[1].n[1] << ", " << Mat.v[1].n[2] << "]" \
             << "[" << Mat.v[2].n[0] << ", " << Mat.v[2].n[1] << ", " << Mat.v[2].n[2] << "]" ;
+
 #else
+
             qCDebug(DIGIKAM_WIDGETS_LOG) << "dkCmsReadICCMatrixRGB2XYZ(2): " \
             << "[" << Mat.Red.X << ", " << Mat.Red.Y << ", " << Mat.Red.Z << "]" \
             << "[" << Mat.Green.X << ", " << Mat.Green.Y << ", " << Mat.Green.Z << "]" \
             << "[" << Mat.Blue.X << ", " << Mat.Blue.Y << ", " << Mat.Blue.Z << "]" ;
+
 #endif
+
             // Undo chromatic adaptation
 
             if (dkCmsAdaptMatrixFromD50(&Mat, &White))
             {
+
 #if defined(USE_LCMS_VERSION_1000)
+
                 cmsCIEXYZ tmp;
 
                 tmp.X = Mat.v[0].n[0];
@@ -392,7 +400,9 @@ void CIETongueWidget::setProfile(cmsHPROFILE hProfile)
                 ScaleToWhite(&MediaWhite, &tmp);
 */
                 dkCmsXYZ2xyY(&(d->Primaries.Blue), &tmp);
+
 #else
+
                 cmsCIEXYZ tmp;
 
                 tmp.X = Mat.Red.X;
@@ -421,7 +431,9 @@ void CIETongueWidget::setProfile(cmsHPROFILE hProfile)
                 ScaleToWhite(&MediaWhite, &tmp);
 */
                 dkCmsXYZ2xyY(&(d->Primaries.Blue), &tmp);
+
 #endif
+
             }
         }
     }

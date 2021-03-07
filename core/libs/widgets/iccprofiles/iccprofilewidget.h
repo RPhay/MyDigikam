@@ -45,7 +45,7 @@ class DIGIKAM_EXPORT ICCProfileWidget : public MetadataWidget
 
 public:
 
-    explicit ICCProfileWidget(QWidget* const parent, int w=256, int h=256);
+    explicit ICCProfileWidget(QWidget* const parent, int w = 256, int h = 256);
     ~ICCProfileWidget() override;
 
     bool    loadFromURL(const QUrl& url)                  override;
@@ -68,7 +68,7 @@ public:
 
 protected Q_SLOTS:
 
-    void slotSaveMetadataToFile()                 override;
+    void slotSaveMetadataToFile()                         override;
 
 private:
 
