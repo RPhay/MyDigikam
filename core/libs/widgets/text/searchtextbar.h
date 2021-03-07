@@ -60,7 +60,8 @@ bool DIGIKAM_EXPORT operator==(const SearchTextSettings& a, const SearchTextSett
  * A text input for searching entries with visual feedback.
  * Can be used on QAbstractItemModels.
  */
-class DIGIKAM_EXPORT SearchTextBar : public QLineEdit, public StateSavingObject
+class DIGIKAM_EXPORT SearchTextBar : public QLineEdit,
+                                     public StateSavingObject
 {
     Q_OBJECT
 

@@ -92,7 +92,7 @@ SearchTextBar::SearchTextBar(QWidget* const parent, const QString& name, const Q
     setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Minimum);
     setObjectName(name + QLatin1String(" Search Text Tool"));
     setClearButtonEnabled(true);
-    setPlaceholderText(msg.isNull() ? i18n("Search...") : msg);
+    setPlaceholderText(msg.isNull() ? i18nc("@info: search text bar", "Search...") : msg);
 
     d->completer   = new ModelCompleter(this);
     setCompleter(d->completer);
@@ -275,7 +275,7 @@ void SearchTextBar::contextMenuEvent(QContextMenuEvent* e)
 
     if (d->hasCaseSensitive)
     {
-        cs = menu->addAction(i18n("Case sensitive"));
+        cs = menu->addAction(i18nc("@info: search text bar", "Case sensitive"));
         cs->setCheckable(true);
         cs->setChecked(d->settings.caseSensitive == Qt::CaseInsensitive ? false : true);
     }
