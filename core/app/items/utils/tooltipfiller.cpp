@@ -580,7 +580,7 @@ QString ToolTipFiller::albumTipContents(PAlbum* const album, int count)
 
         if (settings->getToolTipsShowAlbumTitle())
         {
-            tip += cnt.cellBeg + i18n("Name:") + cnt.cellMid;
+            tip += cnt.cellBeg + i18nc("@info: item properties", "Name:") + cnt.cellMid;
             tip += album->title() + cnt.cellEnd;
         }
 
@@ -626,7 +626,7 @@ QString ToolTipFiller::albumTipContents(PAlbum* const album, int count)
                 str = QLatin1String("---");
             }
 
-            tip += cnt.cellSpecBeg + i18n("Caption:") + cnt.cellSpecMid +
+            tip += cnt.cellSpecBeg + i18nc("@info: item properties", "Caption:") + cnt.cellSpecMid +
                    cnt.breakString(str) + cnt.cellSpecEnd;
         }
 
@@ -660,7 +660,7 @@ QString ToolTipFiller::filterActionTipContents(const FilterAction& action)
 
     // Displayable name
 
-    tip += cnt.cellBeg + i18n("Name:") + cnt.cellMid
+    tip += cnt.cellBeg + i18nc("@info: item properties", "Name:") + cnt.cellMid
         + DImgFilterManager::instance()->i18nDisplayableName(action) + cnt.cellEnd;
 
     // Category
