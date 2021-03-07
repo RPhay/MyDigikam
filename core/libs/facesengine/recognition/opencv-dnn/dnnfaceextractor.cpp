@@ -135,7 +135,7 @@ bool DNNFaceExtractor::loadModels()
     {
         try
         {
-            qCDebug(DIGIKAM_FACEDB_LOG) << nnmodel;
+            qCDebug(DIGIKAM_FACEDB_LOG) << "Extractor model:" << nnmodel;
 
             d->net = cv::dnn::readNetFromTorch(nnmodel.toStdString());
         }

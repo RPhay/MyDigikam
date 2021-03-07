@@ -68,7 +68,7 @@ bool DNNFaceDetectorYOLO::loadModels()
     {
         try
         {
-            qCDebug(DIGIKAM_FACEDB_LOG) << "nnmodel: " << nnmodel << ", nndata " << nndata;
+            qCDebug(DIGIKAM_FACEDB_LOG) << "YOLO model:" << nnmodel << ", YOLO data:" << nndata;
 
             net = cv::dnn::readNetFromDarknet(nnmodel.toStdString(), nndata.toStdString());
             net.setPreferableBackend(cv::dnn::DNN_BACKEND_DEFAULT);

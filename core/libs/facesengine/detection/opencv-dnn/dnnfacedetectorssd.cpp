@@ -62,7 +62,7 @@ bool DNNFaceDetectorSSD::loadModels()
     {
         try
         {
-            qCDebug(DIGIKAM_FACEDB_LOG) << "nnmodel: " << nnmodel << ", nndata " << nndata;
+            qCDebug(DIGIKAM_FACEDB_LOG) << "SSD model:" << nnmodel << ", SSD data:" << nndata;
 
             net = cv::dnn::readNetFromCaffe(nnmodel.toStdString(), nndata.toStdString());
         }
