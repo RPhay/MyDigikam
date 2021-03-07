@@ -266,14 +266,14 @@ ApplicationSettings::Private::~Private()
 void ApplicationSettings::Private::init()
 {
     albumCategoryNames.clear();
-    albumCategoryNames.append(i18n("Category"));
-    albumCategoryNames.append(i18n("Travel"));
-    albumCategoryNames.append(i18n("Holidays"));
-    albumCategoryNames.append(i18n("Friends"));
-    albumCategoryNames.append(i18n("Nature"));
-    albumCategoryNames.append(i18n("Party"));
-    albumCategoryNames.append(i18n("Todo"));
-    albumCategoryNames.append(i18n("Miscellaneous"));
+    albumCategoryNames.append(i18nc("@item: album categories", "Category"));
+    albumCategoryNames.append(i18nc("@item: album categories", "Travel"));
+    albumCategoryNames.append(i18nc("@item: album categories", "Holidays"));
+    albumCategoryNames.append(i18nc("@item: album categories", "Friends"));
+    albumCategoryNames.append(i18nc("@item: album categories", "Nature"));
+    albumCategoryNames.append(i18nc("@item: album categories", "Party"));
+    albumCategoryNames.append(i18nc("@item: album categories", "Todo"));
+    albumCategoryNames.append(i18nc("@item: album categories", "Miscellaneous"));
     albumCategoryNames.sort();
 
     albumSortRole                        = ApplicationSettings::ByFolder;

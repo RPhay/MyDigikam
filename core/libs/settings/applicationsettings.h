@@ -560,7 +560,7 @@ private:
 
     // Disabled
     ApplicationSettings();
-    explicit ApplicationSettings(QObject*);
+    explicit ApplicationSettings(QObject*) = delete;
     ~ApplicationSettings() override;
 
     KConfigGroup generalConfigGroup() const;
