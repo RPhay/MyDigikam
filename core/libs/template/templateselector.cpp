@@ -67,7 +67,8 @@ public:
 };
 
 TemplateSelector::TemplateSelector(QWidget* const parent)
-    : DHBox(parent), d(new Private)
+    : DHBox(parent),
+      d    (new Private)
 {
     d->label         = new QLabel(i18n("Template: "), this);
     d->templateCombo = new SqueezedComboBox(this);

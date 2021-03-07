@@ -144,7 +144,7 @@ public:
 
 TemplateViewer::TemplateViewer(QWidget* const parent)
     : DExpanderBox(parent),
-      d(new Private)
+      d           (new Private)
 {
     setFrameStyle(QFrame::NoFrame);
 
@@ -159,7 +159,7 @@ TemplateViewer::TemplateViewer(QWidget* const parent)
     d->labelCopyright    = new DTextBrowser(QString(), w1);
     d->usages            = new DTextLabelName(i18n("Usages:"), w1);
     d->labelUsages       = new DTextBrowser(QString(), w1);
-    d->source            = new DTextLabelName(i18n("Source:"), w1);
+    d->source            = new DTextLabelName(i18nc("@label: template properties", "Source:"), w1);
     d->labelSource       = new DTextBrowser(QString(), w1);
     d->instructions      = new DTextLabelName(i18n("Instructions:"), w1);
     d->labelInstructions = new DTextBrowser(QString(), w1);
@@ -199,7 +199,7 @@ TemplateViewer::TemplateViewer(QWidget* const parent)
     // ------------------------------------------------------------------
 
     DVBox* const w3              = new DVBox(this);
-    d->contactAddress            = new DTextLabelName(i18n("Address:"), w3);
+    d->contactAddress            = new DTextLabelName(i18nc("@label: template properties", "Address:"), w3);
     d->labelContactAddress       = new DTextBrowser(QString(), w3);
     d->contactPostalCode         = new DTextLabelName(i18n("Postal Code:"), w3);
     d->labelContactPostalCode    = new DTextBrowser(QString(), w3);
@@ -211,7 +211,7 @@ TemplateViewer::TemplateViewer(QWidget* const parent)
     d->labelContactCountry       = new DTextBrowser(QString(), w3);
     d->contactPhone              = new DTextLabelName(i18n("Phone:"), w3);
     d->labelContactPhone         = new DTextBrowser(QString(), w3);
-    d->contactEmail              = new DTextLabelName(i18n("Email:"), w3);
+    d->contactEmail              = new DTextLabelName(i18nc("@label: template properties", "Email:"), w3);
     d->labelContactEmail         = new DTextLabelValue(QString(), w3);
     d->contactWebUrl             = new DTextLabelName(i18n("URL:"), w3);
     d->labelContactWebUrl        = new DTextLabelValue(QString(), w3);

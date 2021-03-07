@@ -77,11 +77,11 @@ TemplateList::TemplateList(QWidget* const parent)
     setSelectionMode(QAbstractItemView::SingleSelection);
     setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Expanding);
     setAllColumnsShowFocus(true);
-    setWhatsThis(i18n("Here you can see the metadata template list managed by digiKam."));
+    setWhatsThis(i18nc("@info", "Here you can see the metadata template list managed by digiKam."));
 
     QStringList labels;
-    labels.append(i18n("Title"));
-    labels.append(i18n("Authors"));
+    labels.append(i18nc("@title: template properties", "Title"));
+    labels.append(i18nc("@title: template properties", "Authors"));
     setHeaderLabels(labels);
     header()->setSectionResizeMode(0, QHeaderView::ResizeToContents);
     header()->setSectionResizeMode(1, QHeaderView::Stretch);

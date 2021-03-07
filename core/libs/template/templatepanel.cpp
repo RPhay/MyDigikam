@@ -191,7 +191,7 @@ TemplatePanel::TemplatePanel(QWidget* const parent)
 
     // --------------------------------------------------------
 
-    QLabel* const label6 = new QLabel(i18n("Source:"), page1);
+    QLabel* const label6 = new QLabel(i18nc("@label: template properties", "Source:"), page1);
     d->sourceEdit        = new QLineEdit(page1);
     d->sourceEdit->setClearButtonEnabled(true);
     d->sourceEdit->setPlaceholderText(i18n("Enter the original owner of the photograph here."));
@@ -330,7 +330,7 @@ TemplatePanel::TemplatePanel(QWidget* const parent)
 
     // --------------------------------------------------------
 
-    QLabel* const label15 = new QLabel(i18n("Address:"), page3);
+    QLabel* const label15 = new QLabel(i18nc("@label: template properties", "Address:"), page3);
     d->contactAddressEdit = new QLineEdit(page3);
     d->contactAddressEdit->setClearButtonEnabled(true);
     d->contactAddressEdit->setPlaceholderText(i18n("Enter the address of the lead author here."));
@@ -360,7 +360,7 @@ TemplatePanel::TemplatePanel(QWidget* const parent)
 
     // --------------------------------------------------------
 
-    QLabel* const label18 = new QLabel(i18n("Email:"), page3);
+    QLabel* const label18 = new QLabel(i18nc("@label: template properties", "Email:"), page3);
     d->contactEmailEdit   = new QLineEdit(page3);
     d->contactEmailEdit->setClearButtonEnabled(true);
     d->contactEmailEdit->setPlaceholderText(i18n("Enter the email of the lead author here."));
