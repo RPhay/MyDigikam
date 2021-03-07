@@ -24,7 +24,6 @@
  *
  * ============================================================ */
 
-#include "itemviewdelegate.h"
 #include "itemviewdelegate_p.h"
 
 // C++ includes

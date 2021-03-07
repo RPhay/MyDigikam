@@ -64,7 +64,7 @@ public:
 
 DItemDelegate::DItemDelegate(QObject* const parent)
     : QAbstractItemDelegate(parent),
-      d(new Private)
+      d                    (new Private)
 {
 }
 

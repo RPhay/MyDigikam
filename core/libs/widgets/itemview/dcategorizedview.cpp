@@ -52,15 +52,15 @@ namespace Digikam
 {
 
 DCategorizedView::Private::Private(DCategorizedView* const lv)
-    : listView(lv),
-      categoryDrawer(nullptr),
-      biggestItemSize(QSize(0, 0)),
-      mouseButtonPressed(false),
-      rightMouseButtonPressed(false),
-      dragLeftViewport(false),
-      drawItemsWhileDragging(true),
-      forcedSelectionPosition(0),
-      proxyModel(nullptr)
+    : listView                  (lv),
+      categoryDrawer            (nullptr),
+      biggestItemSize           (QSize(0, 0)),
+      mouseButtonPressed        (false),
+      rightMouseButtonPressed   (false),
+      dragLeftViewport          (false),
+      drawItemsWhileDragging    (true),
+      forcedSelectionPosition   (0),
+      proxyModel                (nullptr)
 {
 }
 
@@ -567,7 +567,7 @@ void DCategorizedView::Private::drawDraggedItems()
 
 DCategorizedView::DCategorizedView(QWidget* const parent)
     : QListView(parent),
-      d(new Private(this))
+      d        (new Private(this))
 {
 }
 
@@ -918,6 +918,7 @@ void DCategorizedView::paintEvent(QPaintEvent* event)
         {
             // the visible area has been finished, we don't need to keep asking, the rest won't intersect
             // this is doable because we know that categories are correctly ordered on the list.
+
             break;
         }
     }
@@ -1472,6 +1473,7 @@ void DCategorizedView::startDrag(Qt::DropActions supportedActions)
     QListView::startDrag(supportedActions);
 
 #endif
+
 }
 
 void DCategorizedView::dragMoveEvent(QDragMoveEvent* event)
@@ -1501,6 +1503,7 @@ void DCategorizedView::dragMoveEvent(QDragMoveEvent* event)
     d->drawDraggedItems();
 
 #endif
+
 }
 
 void DCategorizedView::dragLeaveEvent(QDragLeaveEvent* event)
@@ -1516,10 +1519,12 @@ void DCategorizedView::dragLeaveEvent(QDragLeaveEvent* event)
     QListView::dragLeaveEvent(event);
 
 #endif
+
 }
 
 void DCategorizedView::dropEvent(QDropEvent* event)
 {
+
 #if defined(DOLPHIN_DRAGANDDROP)
 
     QAbstractItemView::dropEvent(event);
@@ -1529,6 +1534,7 @@ void DCategorizedView::dropEvent(QDropEvent* event)
     QListView::dropEvent(event);
 
 #endif
+
 }
 
 QModelIndex DCategorizedView::moveCursor(CursorAction cursorAction,

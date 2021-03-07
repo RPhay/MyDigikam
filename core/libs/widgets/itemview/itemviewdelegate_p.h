@@ -27,6 +27,8 @@
 #ifndef DIGIKAM_ITEM_VIEW_DELEGATE_P_H
 #define DIGIKAM_ITEM_VIEW_DELEGATE_P_H
 
+#include "itemviewdelegate.h"
+
 // Qt includes
 
 #include <QCache>

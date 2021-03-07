@@ -43,8 +43,8 @@ namespace Digikam
 {
 
 ItemDelegateOverlay::ItemDelegateOverlay(QObject* const parent)
-    : QObject(parent),
-      m_view(nullptr),
+    : QObject   (parent),
+      m_view    (nullptr),
       m_delegate(nullptr)
 {
 }
@@ -178,8 +178,8 @@ int ItemDelegateOverlay::numberOfAffectedIndexes(const QModelIndex& index) const
 // --------------------------------------------------------------------------------------------
 
 AbstractWidgetDelegateOverlay::AbstractWidgetDelegateOverlay(QObject* const parent)
-    : ItemDelegateOverlay(parent),
-      m_widget(nullptr),
+    : ItemDelegateOverlay         (parent),
+      m_widget                    (nullptr),
       m_mouseButtonPressedOnWidget(false)
 {
 }
@@ -343,9 +343,9 @@ void AbstractWidgetDelegateOverlay::widgetLeaveNotifyMultiple()
 
 QString AbstractWidgetDelegateOverlay::notifyMultipleMessage(const QModelIndex&, int number)
 {
-    return i18ncp("@info",
-                  "<i>Applying operation to<br/>the selected picture</i>",
-                  "<i>Applying operation to <br/><b>%1</b> selected pictures</i>",
+    return i18ncp("@info: item overlay",
+                  "Applying operation to\nthe selected picture",
+                  "Applying operation to \n\"%1\" selected pictures",
                   number);
 }
 
@@ -493,7 +493,7 @@ class Q_DECL_HIDDEN PersistentWidgetDelegateOverlay::Private
 public:
 
     explicit Private()
-      : persistent(false),
+      : persistent  (false),
         restoreFocus(false)
     {
     }
@@ -507,7 +507,7 @@ public:
 
 PersistentWidgetDelegateOverlay::PersistentWidgetDelegateOverlay(QObject* const parent)
     : AbstractWidgetDelegateOverlay(parent),
-      d(new Private)
+      d                            (new Private)
 {
 }
 

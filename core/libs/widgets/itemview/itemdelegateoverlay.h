@@ -110,12 +110,14 @@ protected:
 };
 
 #define REQUIRE_DELEGATE(Delegate)                                                                                                           \
+                                                                                                                                             \
 public:                                                                                                                                      \
+                                                                                                                                             \
     void setDelegate(Delegate* delegate)                                 { ItemDelegateOverlay::setDelegate(delegate);                     } \
     Delegate* delegate() const                                           { return static_cast<Delegate*>(ItemDelegateOverlay::delegate()); } \
     virtual bool acceptsDelegate(QAbstractItemDelegate*d) const override { return dynamic_cast<Delegate*>(d);                              } \
+                                                                                                                                             \
 private:
-
 
 // -------------------------------------------------------------------------------------------
 
