@@ -152,18 +152,14 @@ void FindDuplicatesAlbum::slotThumbnailLoaded(const LoadingDescription& desc,
 void FindDuplicatesAlbum::updateDuplicatesAlbumItems(const QList<SAlbum*>& sAlbumsToRebuild,
                                                      const QList<qlonglong>& deletedImages)
 {
-    QTreeWidgetItemIterator it(this);
-
-    while (*it)
+    foreach (QTreeWidgetItem* const selectedItem, selectedItems())
     {
-        FindDuplicatesAlbumItem* const item = dynamic_cast<FindDuplicatesAlbumItem*>(*it);
+        FindDuplicatesAlbumItem* const item = dynamic_cast<FindDuplicatesAlbumItem*>(selectedItem);
 
-        if (item && sAlbumsToRebuild.contains(item->album()))
+        if (sAlbumsToRebuild.contains(item->album()))
         {
             item->calculateInfos(deletedImages);
         }
-
-        ++it;
     }
 }
 
