@@ -50,7 +50,7 @@ ColumnDigikamProperties::ColumnDigikamProperties(TableViewShared* const tableVie
                                                  const SubColumn pSubColumn,
                                                  QObject* const parent)
     : TableViewColumn(tableViewShared, pConfiguration, parent),
-      subColumn(pSubColumn)
+      subColumn      (pSubColumn)
 {
 }
 
@@ -73,22 +73,22 @@ QStringList ColumnDigikamProperties::getSubColumns()
 
 TableViewColumnDescription ColumnDigikamProperties::getDescription()
 {
-    TableViewColumnDescription description(QLatin1String("digikam-properties"), i18n("digiKam properties"));
+    TableViewColumnDescription description(QLatin1String("digikam-properties"), i18nc("@title: tableview", "digiKam properties"));
     description.setIcon(QLatin1String("edit-text-frame-update"));
 
-    description.addSubColumn(TableViewColumnDescription(QLatin1String("digikam-rating"),     i18n("Rating")).setIcon(QLatin1String("draw-star")));
-    description.addSubColumn(TableViewColumnDescription(QLatin1String("digikam-picklabel"),  i18n("Pick label")).setIcon(QLatin1String("flag")));
-    description.addSubColumn(TableViewColumnDescription(QLatin1String("digikam-colorlabel"), i18n("Color label")));
+    description.addSubColumn(TableViewColumnDescription(QLatin1String("digikam-rating"),     i18nc("@title: tableview", "Rating")).setIcon(QLatin1String("draw-star")));
+    description.addSubColumn(TableViewColumnDescription(QLatin1String("digikam-picklabel"),  i18nc("@title: tableview", "Pick label")).setIcon(QLatin1String("flag")));
+    description.addSubColumn(TableViewColumnDescription(QLatin1String("digikam-colorlabel"), i18nc("@title: tableview", "Color label")));
 
     /// @todo This column will show the 'default' title. Add a configuration dialog to choose different languages.
 
-    description.addSubColumn(TableViewColumnDescription(QLatin1String("digikam-title"),      i18n("Title")));
+    description.addSubColumn(TableViewColumnDescription(QLatin1String("digikam-title"),      i18nc("@title: tableview", "Title")));
 
     /// @todo This column will show the 'default' caption. Add a configuration dialog to choose different languages.
 
-    description.addSubColumn(TableViewColumnDescription(QLatin1String("digikam-caption"),    i18n("Caption")));
+    description.addSubColumn(TableViewColumnDescription(QLatin1String("digikam-caption"),    i18nc("@title: tableview", "Caption")));
 
-    description.addSubColumn(TableViewColumnDescription(QLatin1String("digikam-tags"),       i18n("Tags")).setIcon(QLatin1String("tag")));
+    description.addSubColumn(TableViewColumnDescription(QLatin1String("digikam-tags"),       i18nc("@title: tableview", "Tags")).setIcon(QLatin1String("tag")));
 
     return description;
 }
@@ -99,32 +99,32 @@ QString ColumnDigikamProperties::getTitle() const
     {
         case SubColumnRating:
         {
-            return i18n("Rating");
+            return i18nc("@info: tableview", "Rating");
         }
 
         case SubColumnPickLabel:
         {
-            return i18n("Pick label");
+            return i18nc("@info: tableview", "Pick label");
         }
 
         case SubColumnColorLabel:
         {
-            return i18n("Color label");
+            return i18nc("@info: tableview", "Color label");
         }
 
         case SubColumnTitle:
         {
-            return i18n("Title");
+            return i18nc("@info: tableview", "Title");
         }
 
         case SubColumnCaption:
         {
-            return i18n("Caption");
+            return i18nc("@info: tableview", "Caption");
         }
 
         case SubColumnTags:
         {
-            return i18n("Tags");
+            return i18nc("@info: tableview", "Tags");
         }
     }
 
@@ -343,25 +343,25 @@ QVariant ColumnDigikamProperties::data(TableViewModel::Item* const item, const i
             {
                 case NoPickLabel:
                 {
-                    labelString = i18n("None");
+                    labelString = i18nc("@info: tableview", "None");
                     break;
                 }
 
                 case RejectedLabel:
                 {
-                    labelString = i18n("Rejected");
+                    labelString = i18nc("@info: tableview", "Rejected");
                     break;
                 }
 
                 case PendingLabel:
                 {
-                    labelString = i18n("Pending");
+                    labelString = i18nc("@info: tableview", "Pending");
                     break;
                 }
 
                 case AcceptedLabel:
                 {
-                    labelString = i18n("Accepted");
+                    labelString = i18nc("@info: tableview", "Accepted");
                     break;
                 }
 
@@ -383,61 +383,61 @@ QVariant ColumnDigikamProperties::data(TableViewModel::Item* const item, const i
             {
                 case NoColorLabel:
                 {
-                    labelString = i18n("None");
+                    labelString = i18nc("@info: tableview", "None");
                     break;
                 }
 
                 case RedLabel:
                 {
-                    labelString = i18n("Red");
+                    labelString = i18nc("@info: tableview", "Red");
                     break;
                 }
 
                 case OrangeLabel:
                 {
-                    labelString = i18n("Orange");
+                    labelString = i18nc("@info: tableview", "Orange");
                     break;
                 }
 
                 case YellowLabel:
                 {
-                    labelString = i18n("Yellow");
+                    labelString = i18nc("@info: tableview", "Yellow");
                     break;
                 }
 
                 case GreenLabel:
                 {
-                    labelString = i18n("Green");
+                    labelString = i18nc("@info: tableview", "Green");
                     break;
                 }
 
                 case BlueLabel:
                 {
-                    labelString = i18n("Blue");
+                    labelString = i18nc("@info: tableview", "Blue");
                     break;
                 }
 
                 case MagentaLabel:
                 {
-                    labelString = i18n("Magenta");
+                    labelString = i18nc("@info: tableview", "Magenta");
                     break;
                 }
 
                 case GrayLabel:
                 {
-                    labelString = i18n("Gray");
+                    labelString = i18nc("@info: tableview", "Gray");
                     break;
                 }
 
                 case BlackLabel:
                 {
-                    labelString = i18n("Black");
+                    labelString = i18nc("@info: tableview", "Black");
                     break;
                 }
 
                 case WhiteLabel:
                 {
-                    labelString = i18n("White");
+                    labelString = i18nc("@info: tableview", "White");
                     break;
                 }
 

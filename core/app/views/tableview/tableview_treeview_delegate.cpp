@@ -51,7 +51,7 @@ namespace Digikam
 
 TableViewItemDelegate::TableViewItemDelegate(TableViewShared* const tableViewShared, QObject* const parent)
     : QItemDelegate(parent),
-      s(tableViewShared)
+      s            (tableViewShared)
 {
 }
 

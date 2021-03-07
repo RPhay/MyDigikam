@@ -52,9 +52,9 @@ class Q_DECL_HIDDEN TableViewConfigurationDialog::Private
 public:
 
     explicit Private()
-      : columnIndex(0),
-        buttons(nullptr),
-        columnObject(nullptr),
+      : columnIndex              (0),
+        buttons                  (nullptr),
+        columnObject             (nullptr),
         columnConfigurationWidget(nullptr)
     {
     }
@@ -71,8 +71,8 @@ TableViewConfigurationDialog::TableViewConfigurationDialog(TableViewShared* cons
                                                            const int columnIndex,
                                                            QWidget* const parentWidget)
     : QDialog(parentWidget),
-      d(new Private()),
-      s(sharedObject)
+      d      (new Private()),
+      s      (sharedObject)
 {
     d->columnIndex               = columnIndex;
     d->columnObject              = s->tableViewModel->getColumnObject(d->columnIndex);

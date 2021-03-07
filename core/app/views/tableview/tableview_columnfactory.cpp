@@ -40,8 +40,8 @@ namespace Digikam
 TableViewColumn::TableViewColumn(TableViewShared* const tableViewShared,
                                  const TableViewColumnConfiguration& pConfiguration,
                                  QObject* const parent)
-    : QObject(parent),
-      s(tableViewShared),
+    : QObject      (parent),
+      s            (tableViewShared),
       configuration(pConfiguration)
 {
 }
@@ -55,7 +55,7 @@ TableViewColumn::~TableViewColumn()
 TableViewColumnFactory::TableViewColumnFactory(TableViewShared* const tableViewShared,
                                                QObject* const parent)
     : QObject(parent),
-      s(tableViewShared)
+      s      (tableViewShared)
 {
 }
 

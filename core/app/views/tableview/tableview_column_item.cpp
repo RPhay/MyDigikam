@@ -49,7 +49,7 @@ ColumnItemProperties::ColumnItemProperties(TableViewShared* const tableViewShare
                                            const SubColumn pSubColumn,
                                            QObject* const parent)
     : TableViewColumn(tableViewShared, pConfiguration, parent),
-      subColumn(pSubColumn)
+      subColumn      (pSubColumn)
 {
 }
 

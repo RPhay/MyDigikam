@@ -27,18 +27,18 @@ namespace Digikam
 {
 
 TableViewShared::TableViewShared()
-    : imageModel(nullptr),
-      imageFilterModel(nullptr),
-      imageFilterSelectionModel(nullptr),
-      thumbnailLoadThread(nullptr),
-      tableView(nullptr),
-      treeView(nullptr),
-      tableViewModel(nullptr),
-      tableViewSelectionModel(nullptr),
-      tableViewSelectionModelSyncer(nullptr),
-      columnFactory(nullptr),
-      itemDelegate(nullptr),
-      isActive(false)
+    : imageModel                    (nullptr),
+      imageFilterModel              (nullptr),
+      imageFilterSelectionModel     (nullptr),
+      thumbnailLoadThread           (nullptr),
+      tableView                     (nullptr),
+      treeView                      (nullptr),
+      tableViewModel                (nullptr),
+      tableViewSelectionModel       (nullptr),
+      tableViewSelectionModelSyncer (nullptr),
+      columnFactory                 (nullptr),
+      itemDelegate                  (nullptr),
+      isActive                      (false)
 {
 }
 
