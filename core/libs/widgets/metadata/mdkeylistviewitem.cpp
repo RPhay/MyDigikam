@@ -43,10 +43,10 @@ namespace Digikam
 {
 
 MdKeyListViewItem::MdKeyListViewItem(QTreeWidget* const parent, const QString& key)
-    : QObject(parent),
+    : QObject        (parent),
       QTreeWidgetItem(parent),
-      m_key(key),
-      m_decryptedKey(key)
+      m_key          (key),
+      m_decryptedKey (key)
 {
 
     // Standard Exif key descriptions.

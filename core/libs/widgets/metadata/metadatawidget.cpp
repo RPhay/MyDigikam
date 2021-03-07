@@ -129,25 +129,25 @@ MetadataWidget::MetadataWidget(QWidget* const parent, const QString& name)
     // -----------------------------------------------------------------
 
     d->filterBtn      = new QToolButton(this);
-    d->filterBtn->setToolTip(i18n("Tags filter options"));
+    d->filterBtn->setToolTip(i18nc("@info: metadata view", "Tags filter options"));
     d->filterBtn->setIcon(QIcon::fromTheme(QLatin1String("view-filter")));
     d->filterBtn->setPopupMode(QToolButton::InstantPopup);
-    d->filterBtn->setWhatsThis(i18n("Apply tags filter over metadata."));
+    d->filterBtn->setWhatsThis(i18nc("@info: metadata view", "Apply tags filter over metadata."));
 
     d->optionsMenu                  = new QMenu(d->filterBtn);
     QActionGroup* const filterGroup = new QActionGroup(this);
 
-    d->noneAction     = d->optionsMenu->addAction(i18n("No filter"));
+    d->noneAction     = d->optionsMenu->addAction(i18nc("@action: metadata view", "No filter"));
     d->noneAction->setCheckable(true);
     filterGroup->addAction(d->noneAction);
-    d->photoAction    = d->optionsMenu->addAction(i18n("Photograph"));
+    d->photoAction    = d->optionsMenu->addAction(i18nc("@action: metadata view", "Photograph"));
     d->photoAction->setCheckable(true);
     filterGroup->addAction(d->photoAction);
-    d->customAction   = d->optionsMenu->addAction(i18n("Custom"));
+    d->customAction   = d->optionsMenu->addAction(i18nc("@action: metadata view", "Custom"));
     d->customAction->setCheckable(true);
     filterGroup->addAction(d->customAction);
     d->optionsMenu->addSeparator();
-    d->settingsAction = d->optionsMenu->addAction(i18n("Settings"));
+    d->settingsAction = d->optionsMenu->addAction(i18nc("@action: metadata view", "Settings"));
     d->settingsAction->setCheckable(false);
 
     filterGroup->setExclusive(true);
@@ -156,10 +156,10 @@ MetadataWidget::MetadataWidget(QWidget* const parent, const QString& name)
     // -----------------------------------------------------------------
 
     d->toolBtn = new QToolButton(this);
-    d->toolBtn->setToolTip(i18n("Tools"));
+    d->toolBtn->setToolTip(i18nc("@info: metadata view", "Tools"));
     d->toolBtn->setIcon(QIcon::fromTheme(QLatin1String("system-run")));
     d->toolBtn->setPopupMode(QToolButton::InstantPopup);
-    d->toolBtn->setWhatsThis(i18n("Run tool over metadata tags."));
+    d->toolBtn->setWhatsThis(i18nc("@info: metadata view", "Run tool over metadata tags."));
 
     QMenu* const toolMenu = new QMenu(d->toolBtn);
     d->saveMetadata       = toolMenu->addAction(i18nc("@action:inmenu", "Save in file"));
@@ -337,7 +337,7 @@ void MetadataWidget::setIfdList(const DMetadata::MetaDataMap& ifds, const QStrin
 
 void MetadataWidget::slotCopy2Clipboard()
 {
-    QString textmetadata  = i18n("File name: %1 (%2)",d->fileName,getMetadataTitle());
+    QString textmetadata  = i18nc("@info: metadata clipboard", "File name: %1 (%2)", d->fileName, getMetadataTitle());
     int i                 = 0;
     QTreeWidgetItem* item = nullptr;
 
@@ -390,8 +390,10 @@ void MetadataWidget::slotPrintMetadata()
 {
     QString textmetadata = QLatin1String("<p>");
 
-    textmetadata.append(i18n("<p><big><big><b>File name: %1 (%2)</b></big></big>",
-                             d->fileName, getMetadataTitle()));
+    textmetadata.append(QString::fromUtf8("<p><big><big><b>%1 %2 (%3)</b></big></big>")
+                        .arg(i18nc("@title: print metadata", "File name:"))
+                        .arg(d->fileName)
+                        .arg(getMetadataTitle()));
 
     int i                 = 0;
     QTreeWidgetItem* item = nullptr;

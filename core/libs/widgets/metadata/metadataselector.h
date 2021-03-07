@@ -133,7 +133,8 @@ private:
 
 private:
 
-    MetadataSelectorView(); // Disable default constructor.
+    // Disable.
+    MetadataSelectorView() = delete;
 
     class Private;
     Private* const d;

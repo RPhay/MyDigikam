@@ -170,11 +170,11 @@ class Q_DECL_HIDDEN MetadataPanel::Private
 public:
 
     explicit Private()
-      : tab(nullptr),
-        exifViewerConfig(nullptr),
-        mknoteViewerConfig(nullptr),
-        iptcViewerConfig(nullptr),
-        xmpViewerConfig(nullptr)
+      : tab                 (nullptr),
+        exifViewerConfig    (nullptr),
+        mknoteViewerConfig  (nullptr),
+        iptcViewerConfig    (nullptr),
+        xmpViewerConfig     (nullptr)
     {
         setDefaultFilter(ExifHumanList,      defaultExifFilter);
         setDefaultFilter(MakerNoteHumanList, defaultMknoteFilter);
@@ -207,7 +207,7 @@ public:
 
 MetadataPanel::MetadataPanel(QTabWidget* const tab)
     : QObject(tab),
-      d(new Private)
+      d      (new Private)
 {
     d->tab = tab;
 

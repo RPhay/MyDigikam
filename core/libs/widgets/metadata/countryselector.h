@@ -49,6 +49,8 @@ public:
     void setCountry(const QString& countryCode);
     bool country(QString& countryCode, QString& countryName) const;
 
+public:
+
     static QString countryForCode(const QString& countryCode);
 
 private:

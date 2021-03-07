@@ -98,8 +98,8 @@ MetadataSelector::MetadataSelector(QWidget* const parent)
     setColumnCount(2);
 
     QStringList labels;
-    labels.append(i18n("Name"));
-    labels.append(i18n("Description"));
+    labels.append(i18nc("@title: metadata properties", "Name"));
+    labels.append(i18nc("@title: metadata properties", "Description"));
     setHeaderLabels(labels);
     header()->setSectionResizeMode(0, QHeaderView::ResizeToContents);
     header()->setSectionResizeMode(1, QHeaderView::Stretch);
@@ -162,8 +162,8 @@ void MetadataSelector::setTagsMap(const DMetadata::TagsMap& map)
     // present at construction time. Now that all items have a parent, we need
     // to trigger the method again.
 
-    for (QList<QTreeWidgetItem*>::const_iterator it = toplevelItems.constBegin();
-         it != toplevelItems.constEnd(); ++it)
+    for (QList<QTreeWidgetItem*>::const_iterator it = toplevelItems.constBegin() ;
+         it != toplevelItems.constEnd() ; ++it)
     {
         if (*it)
         {
@@ -288,9 +288,9 @@ MetadataSelectorView::MetadataSelectorView(QWidget* const parent)
     QGridLayout* const grid = new QGridLayout(this);
     d->selector             = new MetadataSelector(this);
     d->searchBar            = new SearchTextBar(this, QLatin1String("MetadataSelectorView"));
-    d->selectAllBtn         = new QPushButton(i18n("Select All"),this);
-    d->clearSelectionBtn    = new QPushButton(i18n("Clear"),this);
-    d->defaultSelectionBtn  = new QPushButton(i18n("Default"),this);
+    d->selectAllBtn         = new QPushButton(i18nc("@action: metadata selector", "Select All"),this);
+    d->clearSelectionBtn    = new QPushButton(i18nc("@action: metadata selector", "Clear"),this);
+    d->defaultSelectionBtn  = new QPushButton(i18nc("@action: metadata selector", "Default"),this);
 
     grid->addWidget(d->selector,            0, 0, 1, 5);
     grid->addWidget(d->searchBar,           1, 0, 1, 1);

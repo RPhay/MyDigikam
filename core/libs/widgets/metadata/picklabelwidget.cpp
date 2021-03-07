@@ -284,19 +284,19 @@ QString PickLabelWidget::labelPickName(PickLabel label)
     switch (label)
     {
         case RejectedLabel:
-            name = i18n("Rejected");
+            name = i18nc("@info: pick label name", "Rejected");
             break;
 
         case PendingLabel:
-            name = i18n("Pending");
+            name = i18nc("@info: pick label name", "Pending");
             break;
 
         case AcceptedLabel:
-            name = i18n("Accepted");
+            name = i18nc("@info: pick label name", "Accepted");
             break;
 
         default:   // NoPickLabel
-            name = i18n("None");
+            name = i18nc("@info: pick label name", "None");
             break;
     }
 
@@ -367,7 +367,7 @@ void PickLabelSelector::slotPickLabelChanged(int id)
 {
     setText(QString());
     setIcon(d->plw->buildIcon((PickLabel)id));
-    setToolTip(i18n("Pick Label: %1", d->plw->labelPickName((PickLabel)id)));
+    setToolTip(i18nc("@info: pick lablel selector", "Pick Label: %1", d->plw->labelPickName((PickLabel)id)));
     menu()->close();
 
     emit signalPickLabelChanged(id);
@@ -378,7 +378,7 @@ void PickLabelSelector::slotPickLabelChanged(int id)
 PickLabelMenuAction::PickLabelMenuAction(QMenu* const parent)
     : QMenu(parent)
 {
-    setTitle(i18n("Pick"));
+    setTitle(i18nc("@title: pick label menu", "Pick"));
     QWidgetAction* const wa    = new QWidgetAction(this);
     PickLabelWidget* const plw = new PickLabelWidget(parent);
     wa->setDefaultWidget(plw);

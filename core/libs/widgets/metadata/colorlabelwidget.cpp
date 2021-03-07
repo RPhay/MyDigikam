@@ -435,43 +435,43 @@ QString ColorLabelWidget::labelColorName(ColorLabel label)
     switch (label)
     {
         case RedLabel:
-            name = i18n("Red");
+            name = i18nc("@info: color label name", "Red");
             break;
 
         case OrangeLabel:
-            name = i18n("Orange");
+            name = i18nc("@info: color label name", "Orange");
             break;
 
         case YellowLabel:
-            name = i18n("Yellow");
+            name = i18nc("@info: color label name", "Yellow");
             break;
 
         case GreenLabel:
-            name = i18n("Green");
+            name = i18nc("@info: color label name", "Green");
             break;
 
         case BlueLabel:
-            name = i18n("Blue");
+            name = i18nc("@info: color label name", "Blue");
             break;
 
         case MagentaLabel:
-            name = i18n("Magenta");
+            name = i18nc("@info: color label name", "Magenta");
             break;
 
         case GrayLabel:
-            name = i18n("Gray");
+            name = i18nc("@info: color label name", "Gray");
             break;
 
         case BlackLabel:
-            name = i18n("Black");
+            name = i18nc("@info: color label name", "Black");
             break;
 
         case WhiteLabel:
-            name = i18n("White");
+            name = i18nc("@info: color label name", "White");
             break;
 
         default:   // NoColorLabel
-            name = i18n("None");
+            name = i18nc("@info: color label name", "None");
             break;
     }
 
@@ -542,7 +542,7 @@ void ColorLabelSelector::slotColorLabelChanged(int id)
 {
     setText(QString());
     setIcon(d->clw->buildIcon((ColorLabel)id));
-    setToolTip(i18n("Color Label: %1", d->clw->labelColorName((ColorLabel)id)));
+    setToolTip(i18nc("@info: color label selector", "Color Label: %1", d->clw->labelColorName((ColorLabel)id)));
     menu()->close();
 
     emit signalColorLabelChanged(id);
@@ -553,7 +553,7 @@ void ColorLabelSelector::slotColorLabelChanged(int id)
 ColorLabelMenuAction::ColorLabelMenuAction(QMenu* const parent)
     : QMenu(parent)
 {
-    setTitle(i18n("Color"));
+    setTitle(i18nc("@title: color label menu", "Color"));
     QWidgetAction* const wa     = new QWidgetAction(this);
     ColorLabelWidget* const clw = new ColorLabelWidget(parent);
     wa->setDefaultWidget(clw);
