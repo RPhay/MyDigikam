@@ -66,11 +66,26 @@ bool DNNFaceDetectorYOLO::loadModels()
 
     if (!nnmodel.isEmpty() && !nndata.isEmpty())
     {
-        qCDebug(DIGIKAM_FACEDB_LOG) << "nnmodel: " << nnmodel << ", nndata " << nndata;
+        try
+        {
+            qCDebug(DIGIKAM_FACEDB_LOG) << "nnmodel: " << nnmodel << ", nndata " << nndata;
 
-        net = cv::dnn::readNetFromDarknet(nnmodel.toStdString(), nndata.toStdString());
-        net.setPreferableBackend(cv::dnn::DNN_BACKEND_DEFAULT);
-        net.setPreferableTarget(cv::dnn::DNN_TARGET_CPU);
+            net = cv::dnn::readNetFromDarknet(nnmodel.toStdString(), nndata.toStdString());
+            net.setPreferableBackend(cv::dnn::DNN_BACKEND_DEFAULT);
+            net.setPreferableTarget(cv::dnn::DNN_TARGET_CPU);
+        }
+        catch (cv::Exception& e)
+        {
+            qCWarning(DIGIKAM_FACEDB_LOG) << "cv::Exception:" << e.what();
+
+            return false;
+        }
+        catch (...)
+        {
+           qCWarning(DIGIKAM_FACEDB_LOG) << "Default exception from OpenCV";
+
+           return false;
+        }
     }
     else
     {

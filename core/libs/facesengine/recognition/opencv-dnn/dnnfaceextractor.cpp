@@ -133,9 +133,24 @@ bool DNNFaceExtractor::loadModels()
                                              QString::fromLatin1("facesengine/%1").arg(name));
     if (!nnmodel.isEmpty())
     {
-        qCDebug(DIGIKAM_FACEDB_LOG) << nnmodel;
+        try
+        {
+            qCDebug(DIGIKAM_FACEDB_LOG) << nnmodel;
 
-        d->net = cv::dnn::readNetFromTorch(nnmodel.toStdString());
+            d->net = cv::dnn::readNetFromTorch(nnmodel.toStdString());
+        }
+        catch (cv::Exception& e)
+        {
+            qCWarning(DIGIKAM_FACEDB_LOG) << "cv::Exception:" << e.what();
+
+            return false;
+        }
+        catch (...)
+        {
+           qCWarning(DIGIKAM_FACEDB_LOG) << "Default exception from OpenCV";
+
+           return false;
+        }
     }
     else
     {

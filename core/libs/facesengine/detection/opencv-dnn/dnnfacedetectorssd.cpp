@@ -60,9 +60,24 @@ bool DNNFaceDetectorSSD::loadModels()
 
     if (!nnmodel.isEmpty() && !nndata.isEmpty())
     {
-        qCDebug(DIGIKAM_FACEDB_LOG) << "nnmodel: " << nnmodel << ", nndata " << nndata;
+        try
+        {
+            qCDebug(DIGIKAM_FACEDB_LOG) << "nnmodel: " << nnmodel << ", nndata " << nndata;
 
-        net = cv::dnn::readNetFromCaffe(nnmodel.toStdString(), nndata.toStdString());
+            net = cv::dnn::readNetFromCaffe(nnmodel.toStdString(), nndata.toStdString());
+        }
+        catch (cv::Exception& e)
+        {
+            qCWarning(DIGIKAM_FACEDB_LOG) << "cv::Exception:" << e.what();
+
+            return false;
+        }
+        catch (...)
+        {
+           qCWarning(DIGIKAM_FACEDB_LOG) << "Default exception from OpenCV";
+
+           return false;
+        }
     }
     else
     {
