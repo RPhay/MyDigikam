@@ -67,14 +67,14 @@ public:
 public:
 
     explicit Private()
-      : openTagMngr(nullptr),
-        tagSearchBar(nullptr),
-        tagFolderView(nullptr),
-        btnGroup(nullptr),
-        noTagsBtn(nullptr),
-        tagsBtn(nullptr),
-        noTagsWasChecked(false),
-        ExistingTagsWasChecked(false)
+      : openTagMngr             (nullptr),
+        tagSearchBar            (nullptr),
+        tagFolderView           (nullptr),
+        btnGroup                (nullptr),
+        noTagsBtn               (nullptr),
+        tagsBtn                 (nullptr),
+        noTagsWasChecked        (false),
+        ExistingTagsWasChecked  (false)
     {
     }
 
@@ -99,7 +99,7 @@ const QString TagViewSideBarWidget::Private::configTagsSourceEntry(QLatin1String
 
 TagViewSideBarWidget::TagViewSideBarWidget(QWidget* const parent, TagModel* const model)
     : SidebarWidget(parent),
-      d(new Private)
+      d            (new Private)
 {
     setObjectName(QLatin1String("TagView Sidebar"));
     setProperty("Shortcut", Qt::CTRL + Qt::SHIFT + Qt::Key_F2);

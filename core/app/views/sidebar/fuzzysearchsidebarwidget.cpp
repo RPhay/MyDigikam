@@ -53,7 +53,7 @@ class Q_DECL_HIDDEN FuzzySearchSideBarWidget::Private
 public:
 
     explicit Private()
-      : fuzzySearchView(nullptr),
+      : fuzzySearchView         (nullptr),
         searchModificationHelper(nullptr)
     {
     }
@@ -66,7 +66,7 @@ FuzzySearchSideBarWidget::FuzzySearchSideBarWidget(QWidget* const parent,
                                                    SearchModel* const searchModel,
                                                    SearchModificationHelper* const searchModificationHelper)
     : SidebarWidget(parent),
-      d(new Private)
+      d            (new Private)
 {
     setObjectName(QLatin1String("Fuzzy Search Sidebar"));
     setProperty("Shortcut", Qt::CTRL + Qt::SHIFT + Qt::Key_F7);

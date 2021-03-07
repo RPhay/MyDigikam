@@ -56,8 +56,8 @@ public:
 
     explicit Private()
       : albumModificationHelper(nullptr),
-        albumFolderView(nullptr),
-        searchTextBar(nullptr)
+        albumFolderView        (nullptr),
+        searchTextBar          (nullptr)
     {
     }
 
@@ -70,7 +70,7 @@ AlbumFolderViewSideBarWidget::AlbumFolderViewSideBarWidget(QWidget* const parent
                                                            AlbumModel* const model,
                                                            AlbumModificationHelper* const albumModificationHelper)
     : SidebarWidget(parent),
-      d(new Private)
+      d            (new Private)
 {
     setObjectName(QLatin1String("AlbumFolderView Sidebar"));
     setProperty("Shortcut", Qt::CTRL + Qt::SHIFT + Qt::Key_F1);

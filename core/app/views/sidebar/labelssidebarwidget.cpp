@@ -64,7 +64,7 @@ public:
 
 LabelsSideBarWidget::LabelsSideBarWidget(QWidget* const parent)
     : SidebarWidget(parent),
-      d(new Private)
+      d            (new Private)
 {
     setObjectName(QLatin1String("Labels Sidebar"));
     setProperty("Shortcut", Qt::CTRL + Qt::SHIFT + Qt::Key_F3);

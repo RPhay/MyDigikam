@@ -71,18 +71,18 @@ class Q_DECL_HIDDEN TimelineSideBarWidget::Private
 public:
 
     explicit Private()
-      : scaleBG(nullptr),
-        cursorCountLabel(nullptr),
-        scrollBar(nullptr),
-        timer(nullptr),
-        resetButton(nullptr),
-        saveButton(nullptr),
-        timeUnitCB(nullptr),
-        nameEdit(nullptr),
-        cursorDateLabel(nullptr),
-        searchDateBar(nullptr),
-        timeLineFolderView(nullptr),
-        timeLineWidget(nullptr),
+      : scaleBG                 (nullptr),
+        cursorCountLabel        (nullptr),
+        scrollBar               (nullptr),
+        timer                   (nullptr),
+        resetButton             (nullptr),
+        saveButton              (nullptr),
+        timeUnitCB              (nullptr),
+        nameEdit                (nullptr),
+        cursorDateLabel         (nullptr),
+        searchDateBar           (nullptr),
+        timeLineFolderView      (nullptr),
+        timeLineWidget          (nullptr),
         searchModificationHelper(nullptr)
     {
     }
@@ -121,7 +121,7 @@ TimelineSideBarWidget::TimelineSideBarWidget(QWidget* const parent,
                                              SearchModel* const searchModel,
                                              SearchModificationHelper* const searchModificationHelper)
     : SidebarWidget(parent),
-      d(new Private)
+      d            (new Private)
 {
     setObjectName(QLatin1String("TimeLine Sidebar"));
     setProperty("Shortcut", Qt::CTRL + Qt::SHIFT + Qt::Key_F5);
@@ -166,13 +166,13 @@ TimelineSideBarWidget::TimelineSideBarWidget(QWidget* const parent,
                                  "graph.</p>"));
 
     QToolButton* const linHistoButton = new QToolButton(scaleBox);
-    linHistoButton->setToolTip( i18n( "Linear" ) );
+    linHistoButton->setToolTip(i18nc("@info: timeline sidebar", "Linear"));
     linHistoButton->setIcon(QIcon::fromTheme(QLatin1String("view-object-histogram-linear")));
     linHistoButton->setCheckable(true);
     d->scaleBG->addButton(linHistoButton, TimeLineWidget::LinScale);
 
     QToolButton* const logHistoButton = new QToolButton(scaleBox);
-    logHistoButton->setToolTip( i18n( "Logarithmic" ) );
+    logHistoButton->setToolTip(i18nc("@info: timeline sidebar", "Logarithmic"));
     logHistoButton->setIcon(QIcon::fromTheme(QLatin1String("view-object-histogram-logarithmic")));
     logHistoButton->setCheckable(true);
     d->scaleBG->addButton(logHistoButton, TimeLineWidget::LogScale);

@@ -58,7 +58,7 @@ public:
 
     explicit Private()
       : searchSearchBar(nullptr),
-        searchTreeView(nullptr),
+        searchTreeView (nullptr),
         searchTabHeader(nullptr)
     {
     }
@@ -72,7 +72,7 @@ SearchSideBarWidget::SearchSideBarWidget(QWidget* const parent,
                                          SearchModel* const searchModel,
                                          SearchModificationHelper* const searchModificationHelper)
     : SidebarWidget(parent),
-      d(new Private)
+      d            (new Private)
 {
     setObjectName(QLatin1String("Search Sidebar"));
     setProperty("Shortcut", Qt::CTRL + Qt::SHIFT + Qt::Key_F6);
