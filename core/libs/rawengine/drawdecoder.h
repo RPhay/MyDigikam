@@ -275,7 +275,7 @@ public:
 private:
 
     // Disabled
-    explicit DRawDecoder(QObject*);
+    explicit DRawDecoder(QObject*) = delete;
 
     Private* const d;
 

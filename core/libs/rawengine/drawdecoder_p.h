@@ -65,7 +65,7 @@ namespace Digikam
 
 extern "C"
 {
-    int s_progressCallbackForLibRaw(void* context, enum LibRaw_progress p, int iteration, int expected);
+    int  s_progressCallbackForLibRaw(void* context, enum LibRaw_progress p, int iteration, int expected);
     void s_exifParserCallbackForLibRaw(void* context, int tag, int type, int len, unsigned int ord, void* ifp, INT64 base);
 }
 

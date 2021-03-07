@@ -213,7 +213,7 @@ public:
 
 DRawDecoderWidget::DRawDecoderWidget(QWidget* const parent, int advSettings)
     : DExpanderBox(parent),
-      d(new Private)
+      d           (new Private)
 {
     setup(advSettings);
 }
@@ -608,7 +608,7 @@ void DRawDecoderWidget::setup(int advSettings)
 
     d->inIccUrlEdit = new DFileSelector(d->colormanSettings);
     d->inIccUrlEdit->setFileDlgMode(QFileDialog::ExistingFile);
-    d->inIccUrlEdit->setFileDlgFilter(i18n("ICC Files (*.icc *.icm)"));
+    d->inIccUrlEdit->setFileDlgFilter(i18nc("@info: open file filters", "ICC Files (*.icc *.icm)"));
 
     d->outputColorSpaceLabel    = new QLabel(i18nc("@label:listbox", "Workspace:"), d->colormanSettings);
     d->outputColorSpaceComboBox = new DComboBox( d->colormanSettings );
@@ -642,7 +642,7 @@ void DRawDecoderWidget::setup(int advSettings)
 
     d->outIccUrlEdit = new DFileSelector(d->colormanSettings);
     d->outIccUrlEdit->setFileDlgMode(QFileDialog::ExistingFile);
-    d->outIccUrlEdit->setFileDlgFilter(i18n("ICC Files (*.icc *.icm)"));
+    d->outIccUrlEdit->setFileDlgFilter(i18nc("@info: open file filters", "ICC Files (*.icc *.icm)"));
 
     colormanLayout->addWidget(d->inputColorSpaceLabel,     0, 0, 1, 1);
     colormanLayout->addWidget(d->inputColorSpaceComboBox,  0, 1, 1, 2);

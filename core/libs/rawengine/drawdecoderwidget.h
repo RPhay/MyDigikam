@@ -71,7 +71,7 @@ public:
      * @param advSettings the default value is COLORSPACE
      */
     explicit DRawDecoderWidget(QWidget* const parent, int advSettings = COLORSPACE);
-    ~DRawDecoderWidget() override;
+    ~DRawDecoderWidget()                        override;
 
     DFileSelector* inputProfileUrlEdit()  const;
     DFileSelector* outputProfileUrlEdit() const;
@@ -88,8 +88,8 @@ public:
     void setSettings(const DRawDecoderSettings& settings);
     DRawDecoderSettings settings()        const;
 
-    void readSettings(KConfigGroup& group) override;
-    void writeSettings(KConfigGroup& group) override;
+    void readSettings(KConfigGroup& group)      override;
+    void writeSettings(KConfigGroup& group)     override;
 
     static void readSettings(DRawDecoderSettings& setting, KConfigGroup& group);
     static void writeSettings(const DRawDecoderSettings& setting, KConfigGroup& group);
