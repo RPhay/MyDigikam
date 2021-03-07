@@ -57,7 +57,7 @@ public:
 
 TagMngrListModel::TagMngrListModel(QObject* const parent)
     : QAbstractItemModel(parent),
-      d(new Private())
+      d                 (new Private())
 {
     QList<QVariant> rootData;
     rootData << QLatin1String("Quick List");
@@ -292,7 +292,7 @@ QVariant TagMngrListModel::headerData(int /*section*/, Qt::Orientation orientati
 {
     if ((orientation == Qt::Horizontal) && (role == Qt::DisplayRole))
     {
-        return QVariant(i18n("Quick Access List"));
+        return QVariant(i18nc("@info", "Quick Access List"));
     }
 
     return QVariant();

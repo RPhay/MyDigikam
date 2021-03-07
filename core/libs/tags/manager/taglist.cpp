@@ -53,10 +53,10 @@ class Q_DECL_HIDDEN TagList::Private
 public:
 
     explicit Private()
-      : addButton( nullptr),
-        tagList(nullptr),
+      : addButton   (nullptr),
+        tagList     (nullptr),
         tagListModel(nullptr),
-        treeView(nullptr)
+        treeView    (nullptr)
     {
     }
 
@@ -69,7 +69,7 @@ public:
 
 TagList::TagList(TagMngrTreeView* const treeView, QWidget* const parent)
     : QWidget(parent),
-      d(new Private())
+      d      (new Private())
 {
     d->treeView               = treeView;
     QVBoxLayout* const layout = new QVBoxLayout();
@@ -227,11 +227,16 @@ void TagList::slotSelectionChanged()
     TagsManagerFilterModel* const filterModel = d->treeView->getFilterModel();
 
 #if (QT_VERSION < QT_VERSION_CHECK(5, 14, 0))
+
     filterModel->setQuickListTags(QList<int>::fromSet(mySet));
+
 #else
+
     QList<int> lstFromSet(mySet.begin(), mySet.end());
     filterModel->setQuickListTags(lstFromSet);
+
 #endif
+
 }
 
 void TagList::slotTagDeleted(Album* album)
