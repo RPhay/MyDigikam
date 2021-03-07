@@ -344,6 +344,11 @@ void BackendMarble::createActions()
     actionAtlas->setText(i18n("Atlas map"));
     actionAtlas->setData(QLatin1String("atlas"));
 
+    QAction* const actionSatellite = new QAction(d->actionGroupMapTheme);
+    actionSatellite->setCheckable(true);
+    actionSatellite->setText(i18n("Satellite map"));
+    actionSatellite->setData(QLatin1String("satellite"));
+
     QAction* const actionOpenStreetmap = new QAction(d->actionGroupMapTheme);
     actionOpenStreetmap->setCheckable(true);
     actionOpenStreetmap->setText(i18n("OpenStreetMap"));
@@ -471,6 +476,10 @@ void BackendMarble::setMapTheme(const QString& newMapTheme)
     if      (newMapTheme == QLatin1String("atlas"))
     {
         d->marbleWidget->setMapThemeId(QLatin1String("earth/srtm/srtm.dgml"));
+    }
+    else if (newMapTheme == QLatin1String("satellite"))
+    {
+        d->marbleWidget->setMapThemeId(QLatin1String("earth/bluemarble/bluemarble.dgml"));
     }
     else if (newMapTheme == QLatin1String("openstreetmap"))
     {
