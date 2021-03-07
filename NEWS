@@ -387,4 +387,6 @@ BUGFIXES:
 344 ==> 434049 - Faulty logic in "updateZoomAndSize", zoom level changed after preview image changed [patch].
 345 ==> 434060 - digiKam doesn't drop deleted tags from Extended Attributes.
 346 ==> 434092 - Disappeared for some time file menu, changes etc.
-347 ==> 
+347 ==> 434103 - Window position on startup.
+348 ==> 430865 - digiKam Full screen restart with top left corner in the middle screen.
+349 ==> 
