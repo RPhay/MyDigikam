@@ -50,12 +50,12 @@ class Q_DECL_HIDDEN DFontSelect::Private
 public:
 
     explicit Private()
-      : space(nullptr),
-        label(nullptr),
-        desc(nullptr),
+      : space           (nullptr),
+        label           (nullptr),
+        desc            (nullptr),
         chooseFontButton(nullptr),
-        modeCombo(nullptr),
-        mode(DFontSelect::SystemFont)
+        modeCombo       (nullptr),
+        mode            (DFontSelect::SystemFont)
     {
     }
 
@@ -74,7 +74,7 @@ public:
 
 DFontSelect::DFontSelect(const QString& text, QWidget* const parent)
     : DHBox(parent),
-      d(new Private)
+      d    (new Private)
 {
     d->label     = new QLabel(this);
     d->label->setText(text);
