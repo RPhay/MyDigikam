@@ -386,4 +386,5 @@ BUGFIXES:
 343 ==> 434017 - Gone are the metadata embedded in the jpg file of some photos.
 344 ==> 434049 - Faulty logic in "updateZoomAndSize", zoom level changed after preview image changed [patch].
 345 ==> 434060 - digiKam doesn't drop deleted tags from Extended Attributes.
-346 ==>
+346 ==> 434092 - Disappeared for some time file menu, changes etc.
+347 ==> 
