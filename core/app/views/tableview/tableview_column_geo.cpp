@@ -71,7 +71,7 @@ ColumnGeoProperties::ColumnGeoProperties(TableViewShared* const tableViewShared,
                                          const SubColumn pSubColumn,
                                          QObject* const parent)
     : TableViewColumn(tableViewShared, pConfiguration, parent),
-      subColumn(pSubColumn)
+      subColumn      (pSubColumn)
 {
 }
 
@@ -167,7 +167,7 @@ QVariant ColumnGeoProperties::data(TableViewModel::Item* const item, const int r
     {
         case SubColumnHasCoordinates:
         {
-            return info.hasCoordinates() ? i18n("Yes") : i18n("No");
+            return info.hasCoordinates() ? i18nc("@info: tableview", "Yes") : i18nc("@info: tableview", "No");
         }
 
         case SubColumnCoordinates:

@@ -51,7 +51,7 @@ ColumnFileProperties::ColumnFileProperties(TableViewShared* const tableViewShare
                                            const SubColumn pSubColumn,
                                            QObject* const parent)
     : TableViewColumn(tableViewShared, pConfiguration, parent),
-      subColumn(pSubColumn)
+      subColumn      (pSubColumn)
 {
 }
 
@@ -241,8 +241,8 @@ ColumnFileConfigurationWidget::ColumnFileConfigurationWidget(TableViewShared* co
         {
             QFormLayout* const box1 = new QFormLayout();
             selectorSizeType        = new QComboBox(this);
-            selectorSizeType->addItem(i18n("Human readable"), QLatin1String("human"));
-            selectorSizeType->addItem(i18n("Plain"),          QLatin1String("plain"));
+            selectorSizeType->addItem(i18nc("@item: tableview", "Human readable"), QLatin1String("human"));
+            selectorSizeType->addItem(i18nc("@item: tableview", "Plain"),          QLatin1String("plain"));
             box1->addRow(i18n("Display format"), selectorSizeType);
 
             setLayout(box1);
