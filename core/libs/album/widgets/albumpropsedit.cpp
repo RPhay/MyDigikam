@@ -123,7 +123,7 @@ AlbumPropsEdit::AlbumPropsEdit(PAlbum* const album, bool create)
       d      (new Private)
 {
     setModal(true);
-    setWindowTitle(create ? i18n("New Album") : i18n("Edit Album"));
+    setWindowTitle(create ? i18nc("@title: album properties", "New Album") : i18nc("@title: album properties", "Edit Album"));
 
     d->buttons          = new QDialogButtonBox(QDialogButtonBox::Help | QDialogButtonBox::Ok | QDialogButtonBox::Cancel, this);
     d->buttons->button(QDialogButtonBox::Ok)->setDefault(true);
@@ -144,7 +144,7 @@ AlbumPropsEdit::AlbumPropsEdit(PAlbum* const album, bool create)
     }
     else
     {
-        d->topLabel->setText(i18n("<qt><b>\"%1\"<br/>Album Properties</b></qt>", album->title()));
+        d->topLabel->setText(i18nc("@label: album properties", "\"%1\"\nAlbum Properties", album->title()));
     }
 
     DLineWidget* const topLine = new DLineWidget(Qt::Horizontal);
@@ -152,7 +152,7 @@ AlbumPropsEdit::AlbumPropsEdit(PAlbum* const album, bool create)
     // --------------------------------------------------------
 
     QLabel* const titleLabel = new QLabel(page);
-    titleLabel->setText(i18nc("@label", "&Title:"));
+    titleLabel->setText(i18nc("@label: album properties", "&Title:"));
 
     d->titleEdit = new QLineEdit(page);
     d->titleEdit->setClearButtonEnabled(true);
@@ -161,39 +161,39 @@ AlbumPropsEdit::AlbumPropsEdit(PAlbum* const album, bool create)
     QRegExp titleRx(QLatin1String("[^/:]+"));
     QValidator* const titleValidator = new QRegExpValidator(titleRx, this);
     d->titleEdit->setValidator(titleValidator);
-    d->titleEdit->setPlaceholderText(i18n("Enter album title here..."));
+    d->titleEdit->setPlaceholderText(i18nc("@label: album properties", "Enter album title here..."));
 
     QLabel* const categoryLabel = new QLabel(page);
-    categoryLabel->setText(i18n("Ca&tegory:"));
+    categoryLabel->setText(i18nc("@label: album properties", "Ca&tegory:"));
 
     d->categoryCombo = new QComboBox(page);
     d->categoryCombo->setEditable(true);
     categoryLabel->setBuddy(d->categoryCombo);
 
     QLabel* const parentLabel = new QLabel(page);
-    parentLabel->setText(i18n("Ch&ild Of:"));
+    parentLabel->setText(i18nc("@label: album properties", "Ch&ild Of:"));
 
     d->parentCombo = new QComboBox(page);
     parentLabel->setBuddy(d->parentCombo);
 
     QLabel* const commentsLabel = new QLabel(page);
-    commentsLabel->setText(i18nc("@label", "Ca&ption:"));
+    commentsLabel->setText(i18nc("@label: album properties", "Ca&ption:"));
 
     d->commentsEdit = new QPlainTextEdit(page);
     commentsLabel->setBuddy(d->commentsEdit);
     d->commentsEdit->setWordWrapMode(QTextOption::WordWrap);
-    d->commentsEdit->setPlaceholderText(i18n("Enter album caption here..."));
+    d->commentsEdit->setPlaceholderText(i18nc("@label: album properties", "Enter album caption here..."));
 
     QLabel* const dateLabel = new QLabel(page);
-    dateLabel->setText(i18n("Album &date:"));
+    dateLabel->setText(i18nc("@label: album properties", "Album &date:"));
 
     d->datePicker = new AlbumDatePicker(page);
     dateLabel->setBuddy(d->datePicker);
 
     DHBox* const buttonRow            = new DHBox(page);
-    QPushButton* const dateLowButton  = new QPushButton(i18nc("Selects the date of the oldest image", "&Oldest"),  buttonRow);
-    QPushButton* const dateAvgButton  = new QPushButton(i18nc("Calculates the average date",          "&Average"), buttonRow);
-    QPushButton* const dateHighButton = new QPushButton(i18nc("Selects the date of the newest image", "Newest"),   buttonRow);
+    QPushButton* const dateLowButton  = new QPushButton(i18nc("@action: Selects the date of the oldest image", "&Oldest"),  buttonRow);
+    QPushButton* const dateAvgButton  = new QPushButton(i18nc("@action: Calculates the average date",          "&Average"), buttonRow);
+    QPushButton* const dateHighButton = new QPushButton(i18nc("@action: Selects the date of the newest image", "Newest"),   buttonRow);
 
     if (create)
     {
@@ -272,10 +272,10 @@ AlbumPropsEdit::AlbumPropsEdit(PAlbum* const album, bool create)
 
     if (create)
     {
-        d->titleEdit->setText(i18n("New Album"));
+        d->titleEdit->setText(i18nc("@label: album properties", "New Album"));
         d->datePicker->setDate(QDate::currentDate());
-        d->parentCombo->addItem(i18n("Selected Album (Default)"));
-        d->parentCombo->addItem(i18nc("top level folder of album","Root of current collection"));
+        d->parentCombo->addItem(i18nc("@item: album properties", "Selected Album (Default)"));
+        d->parentCombo->addItem(i18nc("@item: top level folder of album","Root of current collection"));
     }
     else
     {
@@ -349,7 +349,7 @@ QString AlbumPropsEdit::category() const
 
     if (name.isEmpty())
     {
-        name = i18n("Uncategorized Album");
+        name = i18nc("@info: album properties", "Uncategorized Album");
     }
 
     return name;
@@ -434,7 +434,7 @@ void AlbumPropsEdit::slotNewAlbumTextChanged(int index)
         title = CollectionManager::instance()->albumRootLabel(d->album->albumRootId());
     }
 
-    d->topLabel->setText(i18n("<qt><b>Create new Album in<br/>\"%1\"</b></qt>", title));
+    d->topLabel->setText(i18nc("@label: album properties", "Create new Album in\n\"%1\"", title));
 }
 
 void AlbumPropsEdit::slotDateLowButtonClicked()
@@ -479,8 +479,8 @@ void AlbumPropsEdit::slotDateAverageButtonClicked()
     }
     else
     {
-        QMessageBox::critical(this, i18n("Could Not Calculate Average"),
-                                    i18n("Could not calculate date average for this album."));
+        QMessageBox::critical(this, i18nc("@title: album properties", "Could Not Calculate Average"),
+                                    i18nc("@info: album properties", "Could not calculate date average for this album."));
     }
 }
 
