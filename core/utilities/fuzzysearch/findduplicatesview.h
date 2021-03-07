@@ -81,8 +81,7 @@ private:
 
     void enableControlWidgets(bool);
 
-    void updateAlbumsBox();
-    void updateTagsBox();
+    void updateSimilarityRangeInterval();
 
     void resetAlbumsAndTags();
 

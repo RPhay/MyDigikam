@@ -147,8 +147,7 @@ FindDuplicatesView::FindDuplicatesView(QWidget* const parent)
     if (d->settings)
     {
         d->similarityRange->setRange(d->settings->getMinimumSimilarityBound(), 100);
-        d->similarityRange->setInterval(d->settings->getDuplicatesSearchLastMinSimilarity(),
-                                        d->settings->getDuplicatesSearchLastMaxSimilarity());
+        updateSimilarityRangeInterval();
     }
     else
     {
@@ -403,8 +402,7 @@ void FindDuplicatesView::slotAlbumAdded(Album* a)
         salbum->setExtraData(this, item);
     }
 
-    d->similarityRange->setInterval(d->settings->getDuplicatesSearchLastMinSimilarity(),
-                                    d->settings->getDuplicatesSearchLastMaxSimilarity());
+    updateSimilarityRangeInterval();
 }
 
 void FindDuplicatesView::slotAlbumDeleted(Album* a)
@@ -424,8 +422,7 @@ void FindDuplicatesView::slotAlbumDeleted(Album* a)
         delete item;
     }
 
-    d->similarityRange->setInterval(d->settings->getDuplicatesSearchLastMinSimilarity(),
-                                    d->settings->getDuplicatesSearchLastMaxSimilarity());
+    updateSimilarityRangeInterval();
 }
 
 void FindDuplicatesView::slotSearchUpdated(SAlbum* a)
@@ -640,6 +637,12 @@ void FindDuplicatesView::slotSetSelectedAlbums(const QList<TAlbum*>& albums)
     {
         slotFindDuplicates();
     }
+}
+
+void FindDuplicatesView::updateSimilarityRangeInterval()
+{
+    d->similarityRange->setInterval(d->settings->getDuplicatesSearchLastMinSimilarity(),
+                                    d->settings->getDuplicatesSearchLastMaxSimilarity());
 }
 
 void FindDuplicatesView::resetAlbumsAndTags()
