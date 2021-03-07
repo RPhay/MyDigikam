@@ -143,7 +143,7 @@ TagEditDlg::TagEditDlg(QWidget* const parent, TAlbum* const album, bool create)
     // --------------------------------------------------------
 
     QLabel* const titleLabel = new QLabel(page);
-    titleLabel->setText(i18n("&Title:"));
+    titleLabel->setText(i18nc("@label: tag properties", "&Title:"));
 
     d->titleEdit             = new SearchTextBar(page, QLatin1String("TagEditDlgTitleEdit"), i18n("Enter tag name here..."));
     d->titleEdit->setCaseSensitive(false);

@@ -506,7 +506,7 @@ void TagsPopupMenu::slotAboutToShow()
 
     AlbumManager* const man = AlbumManager::instance();
 
-    if ((d->mode == REMOVE) || (d->mode == DISPLAY))
+    if      ((d->mode == REMOVE) || (d->mode == DISPLAY))
     {
         if (d->selectedImageIDs.isEmpty())
         {
@@ -615,7 +615,6 @@ void TagsPopupMenu::slotAboutToShow()
     }
     else
     {
-
         TAlbum* const album = man->findTAlbum(0);
 
         if (!album)
