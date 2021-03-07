@@ -41,12 +41,12 @@ class Q_DECL_HIDDEN DModelFactory::Private
 public:
 
     explicit Private()
-     :  albumModel(nullptr),
-        tagModel(nullptr),
-        tagFilterModel(nullptr),
-        tagFacesModel(nullptr),
-        searchModel(nullptr),
-        dateAlbumModel(nullptr),
+     :  albumModel       (nullptr),
+        tagModel         (nullptr),
+        tagFilterModel   (nullptr),
+        tagFacesModel    (nullptr),
+        searchModel      (nullptr),
+        dateAlbumModel   (nullptr),
         imageVersionModel(nullptr)
     {
     }
@@ -60,8 +60,8 @@ public:
     ItemVersionsModel* imageVersionModel;
 };
 
-DModelFactory::DModelFactory() :
-    d(new Private)
+DModelFactory::DModelFactory()
+    : d(new Private)
 {
     d->tagModel          = new TagModel(AbstractAlbumModel::IncludeRootAlbum);
     d->tagFacesModel     = new TagModel(AbstractAlbumModel::IgnoreRootAlbum);
@@ -75,6 +75,7 @@ DModelFactory::DModelFactory() :
     d->imageVersionModel = new ItemVersionsModel();
 
     // set icons initially
+
     slotApplicationSettingsChanged();
 
     connect(ApplicationSettings::instance(), SIGNAL(setupChanged()),
