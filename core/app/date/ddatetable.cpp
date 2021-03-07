@@ -50,14 +50,14 @@ namespace Digikam
 
 DDateTable::DDateTable(const QDate& date, QWidget* const parent)
     : QWidget(parent),
-      d(new Private(this))
+      d      (new Private(this))
 {
     initWidget(date);
 }
 
 DDateTable::DDateTable(QWidget* const parent)
     : QWidget(parent),
-      d(new Private(this))
+      d      (new Private(this))
 {
     initWidget(QDate::currentDate());
 }

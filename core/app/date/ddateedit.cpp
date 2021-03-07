@@ -505,9 +505,9 @@ void DDateEdit::setupKeywords()
     // Create the keyword list. This will be used to match against when the user
     // enters information.
 
-    d->keywordMap.insert(i18n("tomorrow"),   1);
-    d->keywordMap.insert(i18n("today"),      0);
-    d->keywordMap.insert(i18n("yesterday"), -1);
+    d->keywordMap.insert(i18nc("@item: date keyword", "tomorrow"),   1);
+    d->keywordMap.insert(i18nc("@item: date keyword", "today"),      0);
+    d->keywordMap.insert(i18nc("@item: date keyword", "yesterday"), -1);
 
     QString dayName;
 

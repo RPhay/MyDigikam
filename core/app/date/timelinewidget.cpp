@@ -61,21 +61,21 @@ public :
 public:
 
     explicit Private()
-      : validMouseEvent(false),
-        selMouseEvent(false),
-        maxCountByDay(1),
-        maxCountByWeek(1),
-        maxCountByMonth(1),
-        maxCountByYear(1),
-        topMargin(3),
-        bottomMargin(20),
-        barWidth(20),
-        nbItems(10),
-        startPos(96),
-        slotNextTimer(nullptr),
-        slotPreviousTimer(nullptr),
-        timeUnit(TimeLineWidget::Month),
-        scaleMode(TimeLineWidget::LinScale)
+      : validMouseEvent     (false),
+        selMouseEvent       (false),
+        maxCountByDay       (1),
+        maxCountByWeek      (1),
+        maxCountByMonth     (1),
+        maxCountByYear      (1),
+        topMargin           (3),
+        bottomMargin        (20),
+        barWidth            (20),
+        nbItems             (10),
+        startPos            (96),
+        slotNextTimer       (nullptr),
+        slotPreviousTimer   (nullptr),
+        timeUnit            (TimeLineWidget::Month),
+        scaleMode           (TimeLineWidget::LinScale)
     {
     }
 
@@ -118,7 +118,7 @@ public:
 
 TimeLineWidget::TimeLineWidget(QWidget* const parent)
     : QWidget(parent),
-      d(new Private)
+      d      (new Private)
 {
     setAttribute(Qt::WA_DeleteOnClose);
     setMouseTracking(true);
@@ -318,19 +318,19 @@ int TimeLineWidget::cursorInfo(QString& infoDate) const
         {
             int weekNb    = date.weekNumber();
             QDate endDate = date.addDays(7);
-            infoDate      = i18nc("Week #weeknumber - month name - year string\nStart:\tEnd: ",
+            infoDate      = i18nc("@info: week #weeknumber - month name - year string\nStart:\tEnd: ",
                                   "Week #%1 - %2 %3\n%4\t%5",
                                   weekNb,
                                   QLocale().standaloneMonthName(date.month(), QLocale::LongFormat),
                                   QLocale().toString(date, QLatin1String("yyyy")),
-                                  i18n("Start: ") + QLocale().toString(date, QLatin1String("dd")),
-                                  i18n("End: ")   + QLocale().toString(endDate, QLatin1String("dd")));
+                                  i18nc("@info: week properties", "Start: ") + QLocale().toString(date, QLatin1String("dd")),
+                                  i18nc("@info: week properties", "End: ")   + QLocale().toString(endDate, QLatin1String("dd")));
             break;
         }
 
         case Month:
         {
-            infoDate = i18nc("month-name year-string",
+            infoDate = i18nc("@info: month-name year-string",
                              "%1 %2",
                              QLocale().standaloneMonthName(date.month(), QLocale::LongFormat),
                              QLocale().toString(date, QLatin1String("yyyy")));

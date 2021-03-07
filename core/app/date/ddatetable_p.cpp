@@ -45,16 +45,16 @@ namespace Digikam
 {
 
 DDateTable::Private::Private(DDateTable* const qq)
-    : QObject(qq),
-      q(qq),
-      weekDayFirstOfMonth(0),
-      numDaysThisMonth(0),
-      numWeekRows(0),
-      numDayColumns(0),
-      fontsize(0),
-      popupMenuEnabled(false),
-      useCustomColors(false),
-      hoveredPos(-1)
+    : QObject               (qq),
+      q                     (qq),
+      weekDayFirstOfMonth   (0),
+      numDaysThisMonth      (0),
+      numWeekRows           (0),
+      numDayColumns         (0),
+      fontsize              (0),
+      popupMenuEnabled      (false),
+      useCustomColors       (false),
+      hoveredPos            (-1)
 {
     setDate(QDate::currentDate());
 }

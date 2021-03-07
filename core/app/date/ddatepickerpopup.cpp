@@ -135,15 +135,15 @@ void DDatePickerPopup::buildMenu()
 
     if (d->items & Words)
     {
-        addAction(i18n("&Today"),       this, SLOT(slotToday()));
-        addAction(i18n("To&morrow"),    this, SLOT(slotTomorrow()));
-        addAction(i18n("Next &Week"),   this, SLOT(slotNextWeek()));
-        addAction(i18n("Next M&onth"),  this, SLOT(slotNextMonth()));
-        addAction(i18n("Y&esterday"),   this, SLOT(slotYesterday()));
-        addAction(i18n("Last &Monday"), this, SLOT(slotPrevMonday()));
-        addAction(i18n("Last &Friday"), this, SLOT(slotPrevFriday()));
-        addAction(i18n("Last &Week"),   this, SLOT(slotPrevWeek()));
-        addAction(i18n("Last M&onth"),  this, SLOT(slotPrevMonth()));
+        addAction(i18nc("@item: date menu", "&Today"),       this, SLOT(slotToday()));
+        addAction(i18nc("@item: date menu", "To&morrow"),    this, SLOT(slotTomorrow()));
+        addAction(i18nc("@item: date menu", "Next &Week"),   this, SLOT(slotNextWeek()));
+        addAction(i18nc("@item: date menu", "Next M&onth"),  this, SLOT(slotNextMonth()));
+        addAction(i18nc("@item: date menu", "Y&esterday"),   this, SLOT(slotYesterday()));
+        addAction(i18nc("@item: date menu", "Last &Monday"), this, SLOT(slotPrevMonday()));
+        addAction(i18nc("@item: date menu", "Last &Friday"), this, SLOT(slotPrevFriday()));
+        addAction(i18nc("@item: date menu", "Last &Week"),   this, SLOT(slotPrevWeek()));
+        addAction(i18nc("@item: date menu", "Last M&onth"),  this, SLOT(slotPrevMonth()));
 
         if (d->items & NoDate)
         {
@@ -153,7 +153,7 @@ void DDatePickerPopup::buildMenu()
 
     if (d->items & NoDate)
     {
-        addAction(i18n("No Date"), this, SLOT(slotNoDate()));
+        addAction(i18nc("@item: date menu", "No Date"), this, SLOT(slotNoDate()));
     }
 }
 

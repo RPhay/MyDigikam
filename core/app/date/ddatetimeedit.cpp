@@ -51,7 +51,7 @@ public:
 
 DDateTimeEdit::DDateTimeEdit(QWidget* const parent, const QString& name)
     : DHBox(parent),
-      d(new Private)
+      d    (new Private)
 {
     setObjectName(name);
 

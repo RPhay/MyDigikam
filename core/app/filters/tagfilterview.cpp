@@ -78,14 +78,14 @@ TagFilterView::TagFilterView(QWidget* const parent, TagModel* const tagFilterMod
 {
     d->tagFilterModel             = tagFilterModel;
 
-    d->restoreTagFiltersAction    = new KSelectAction(i18n("Restore Tag Filters"), this);
-    d->onRestoreTagFiltersAction  = d->restoreTagFiltersAction->addAction(i18n("On"));
-    d->offRestoreTagFiltersAction = d->restoreTagFiltersAction->addAction(i18n("Off"));
+    d->restoreTagFiltersAction    = new KSelectAction(i18nc("@action: tag filter", "Restore Tag Filters"), this);
+    d->onRestoreTagFiltersAction  = d->restoreTagFiltersAction->addAction(i18nc("@action: tag filter", "On"));
+    d->offRestoreTagFiltersAction = d->restoreTagFiltersAction->addAction(i18nc("@action: tag filter", "Off"));
 
-    d->tagFilterModeAction        = new KSelectAction(i18n("Tag Filter Mode"), this);
-    d->ignoreTagAction            = d->tagFilterModeAction->addAction(i18n("Ignore This Tag"));
-    d->includeTagAction           = d->tagFilterModeAction->addAction(QIcon::fromTheme(QLatin1String("list-add")),    i18n("Must Have This Tag"));
-    d->excludeTagAction           = d->tagFilterModeAction->addAction(QIcon::fromTheme(QLatin1String("list-remove")), i18n("Must Not Have This Tag"));
+    d->tagFilterModeAction        = new KSelectAction(i18nc("@action: tag filter", "Tag Filter Mode"), this);
+    d->ignoreTagAction            = d->tagFilterModeAction->addAction(i18nc("@action: tag filter", "Ignore This Tag"));
+    d->includeTagAction           = d->tagFilterModeAction->addAction(QIcon::fromTheme(QLatin1String("list-add")),    i18nc("@action: tag filter", "Must Have This Tag"));
+    d->excludeTagAction           = d->tagFilterModeAction->addAction(QIcon::fromTheme(QLatin1String("list-remove")), i18nc("@action: tag filter", "Must Not Have This Tag"));
 
     connect(tagModificationHelper(), SIGNAL(aboutToDeleteTag(TAlbum*)),
             this, SLOT(slotDeleteTagByContextMenu(TAlbum*)));
