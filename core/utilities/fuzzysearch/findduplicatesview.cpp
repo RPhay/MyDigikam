@@ -76,7 +76,7 @@ public:
         similarityRange        (nullptr),
         searchResultRestriction(nullptr),
         albumTagRelation       (nullptr),
-        scanDuplicatesBtn      (nullptr),
+        findDuplicatesBtn      (nullptr),
         updateFingerPrtBtn     (nullptr),
         removeDuplicatesBtn    (nullptr),
         listView               (nullptr),
@@ -96,7 +96,7 @@ public:
     SqueezedComboBox*    searchResultRestriction;
     SqueezedComboBox*    albumTagRelation;
 
-    QPushButton*         scanDuplicatesBtn;
+    QPushButton*         findDuplicatesBtn;
     QPushButton*         updateFingerPrtBtn;
     QPushButton*         removeDuplicatesBtn;
 
@@ -130,9 +130,9 @@ FindDuplicatesView::FindDuplicatesView(QWidget* const parent)
     d->updateFingerPrtBtn->setIcon(QIcon::fromTheme(QLatin1String("run-build")));
     d->updateFingerPrtBtn->setWhatsThis(i18nc("@info", "Use this button to update all image fingerprints."));
 
-    d->scanDuplicatesBtn  = new QPushButton(i18nc("@action", "Find duplicates"));
-    d->scanDuplicatesBtn->setIcon(QIcon::fromTheme(QLatin1String("edit-find")));
-    d->scanDuplicatesBtn->setWhatsThis(i18nc("@info", "Use this button to scan the selected albums for "
+    d->findDuplicatesBtn  = new QPushButton(i18nc("@action", "Find duplicates"));
+    d->findDuplicatesBtn->setIcon(QIcon::fromTheme(QLatin1String("edit-find")));
+    d->findDuplicatesBtn->setWhatsThis(i18nc("@info", "Use this button to scan the selected albums for "
                                             "duplicate items."));
 
     // ---------------------------------------------------------------
@@ -234,7 +234,7 @@ FindDuplicatesView::FindDuplicatesView(QWidget* const parent)
     mainLayout->addWidget(d->restrictResultsLabel,    4, 0, 1,  2);
     mainLayout->addWidget(d->searchResultRestriction, 4, 2, 1, -1);
     mainLayout->addWidget(d->updateFingerPrtBtn,      5, 0, 1, -1);
-    mainLayout->addWidget(d->scanDuplicatesBtn,       6, 0, 1, -1);
+    mainLayout->addWidget(d->findDuplicatesBtn,       6, 0, 1, -1);
     mainLayout->addWidget(d->removeDuplicatesBtn,     7, 0, 1, -1);
 
     mainLayout->setRowStretch(0, 10);
@@ -248,7 +248,7 @@ FindDuplicatesView::FindDuplicatesView(QWidget* const parent)
     connect(d->updateFingerPrtBtn, SIGNAL(clicked()),
             this, SLOT(slotUpdateFingerPrints()));
 
-    connect(d->scanDuplicatesBtn, SIGNAL(clicked()),
+    connect(d->findDuplicatesBtn, SIGNAL(clicked()),
             this, SLOT(slotFindDuplicates()));
 
     connect(d->removeDuplicatesBtn, SIGNAL(clicked()),
@@ -459,7 +459,7 @@ void FindDuplicatesView::enableControlWidgets(bool val)
     d->searchResultRestriction->setEnabled(val);
     d->removeDuplicatesBtn->setEnabled(val);
     d->updateFingerPrtBtn->setEnabled(val);
-    d->scanDuplicatesBtn->setEnabled(val);
+    d->findDuplicatesBtn->setEnabled(val);
     d->albumTagRelation->setEnabled(val);
     d->similarityRange->setEnabled(val);
     d->albumSelectors->setEnabled(val);
@@ -568,7 +568,7 @@ void FindDuplicatesView::slotDuplicatesAlbumActived()
 void FindDuplicatesView::slotCheckForValidSettings()
 {
     bool valid = (d->albumSelectors->selectedAlbums().count() || d->albumSelectors->selectedTags().count());
-    d->scanDuplicatesBtn->setEnabled(valid);
+    d->findDuplicatesBtn->setEnabled(valid);
 }
 
 void FindDuplicatesView::slotUpdateFingerPrints()
@@ -594,7 +594,7 @@ void FindDuplicatesView::slotSetSelectedAlbum(PAlbum* album)
     d->searchResultRestriction->setCurrentIndex(d->searchResultRestriction->findData(HaarIface::DuplicatesSearchRestrictions::None));
     slotCheckForValidSettings();
 
-    if (d->scanDuplicatesBtn->isEnabled())
+    if (d->findDuplicatesBtn->isEnabled())
     {
         slotFindDuplicates();
     }
@@ -616,7 +616,7 @@ void FindDuplicatesView::slotSetSelectedAlbums(const QList<PAlbum*>& albums)
     d->searchResultRestriction->setCurrentIndex(d->searchResultRestriction->findData(HaarIface::DuplicatesSearchRestrictions::None));
     slotCheckForValidSettings();
 
-    if (d->scanDuplicatesBtn->isEnabled())
+    if (d->findDuplicatesBtn->isEnabled())
     {
         slotFindDuplicates();
     }
@@ -636,7 +636,7 @@ void FindDuplicatesView::slotSetSelectedAlbums(const QList<TAlbum*>& albums)
     d->searchResultRestriction->setCurrentIndex(d->searchResultRestriction->findData(HaarIface::DuplicatesSearchRestrictions::None));
     slotCheckForValidSettings();
 
-    if (d->scanDuplicatesBtn->isEnabled())
+    if (d->findDuplicatesBtn->isEnabled())
     {
         slotFindDuplicates();
     }
