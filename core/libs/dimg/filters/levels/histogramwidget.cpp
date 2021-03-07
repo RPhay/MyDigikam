@@ -504,12 +504,12 @@ void HistogramWidget::paintEvent(QPaintEvent*)
         if (d->state == HistogramWidget::Private::HistogramDataLoading)
         {
             p1.drawText(0, 0, width(), height(), Qt::AlignCenter,
-                        i18n("Loading image..."));
+                        i18nc("@info: histogram", "Loading image..."));
         }
         else
         {
             p1.drawText(0, 0, width(), height(), Qt::AlignCenter,
-                        i18n("Histogram calculation..."));
+                        i18nc("@info: histogram", "Histogram calculation..."));
         }
 
         p1.end();
@@ -526,7 +526,7 @@ void HistogramWidget::paintEvent(QPaintEvent*)
         p1.drawRect(0, 0, width() - 1, height() - 1);
         p1.setPen(palette().color(QPalette::Active, QPalette::Text));
         p1.drawText(0, 0, width(), height(), Qt::AlignCenter,
-                    i18n("Histogram\ncalculation\nfailed."));
+                    i18nc("@info: histogram", "Histogram\ncalculation\nfailed."));
         p1.end();
 
         return;
