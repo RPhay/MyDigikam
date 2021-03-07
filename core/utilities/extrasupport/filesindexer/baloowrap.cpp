@@ -89,23 +89,13 @@ void BalooWrap::setSemanticInfo(const QUrl& url, const BalooInfo& bInfo)
 
     KFileMetaData::UserMetaData md(url.toLocalFile());
 
-    if (!bInfo.tags.isEmpty())
-    {
-        md.setTags(bInfo.tags);
-    }
+    md.setTags(bInfo.tags);
+    md.setUserComment(bInfo.comment);
 
-    if (!bInfo.comment.isEmpty())
-    {
-        md.setUserComment(bInfo.comment);
-    }
+    // digiKam store rating as value form 0 to 5
+    // while baloo store it as value from 0 to 10
 
-    if (bInfo.rating != -1)
-    {
-        // digiKam store rating as value form 0 to 5
-        // while baloo store it as value from 0 to 10
-
-        md.setRating(bInfo.rating * 2);
-    }
+    md.setRating((bInfo.rating == -1) ? 0 : bInfo.rating * 2);
 }
 
 BalooInfo BalooWrap::getSemanticInfo(const QUrl& url) const
