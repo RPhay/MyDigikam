@@ -224,6 +224,7 @@ public:
     QTimer*                       thumbSizeTimer;
 
     // left side bar
+
     AlbumFolderViewSideBarWidget* albumFolderSideBar;
     TagViewSideBarWidget*         tagViewSideBar;
     LabelsSideBarWidget*          labelsSideBar;

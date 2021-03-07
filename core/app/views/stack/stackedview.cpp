@@ -72,30 +72,30 @@ class Q_DECL_HIDDEN StackedView::Private
 public:
 
     explicit Private()
-      : needUpdateBar(false),
+      : needUpdateBar   (false),
         syncingSelection(false),
-        dockArea(nullptr),
-        splitter(nullptr),
-        imageIconView(nullptr),
-        thumbBar(nullptr),
+        dockArea        (nullptr),
+        splitter        (nullptr),
+        imageIconView   (nullptr),
+        thumbBar        (nullptr),
         imagePreviewView(nullptr),
-        thumbBarDock(nullptr),
-        welcomePageView(nullptr),
+        thumbBarDock    (nullptr),
+        welcomePageView (nullptr),
 
 #ifdef HAVE_MEDIAPLAYER
 
-        mediaPlayerView(nullptr),
+        mediaPlayerView (nullptr),
 
 #endif //HAVE_MEDIAPLAYER
 
 #ifdef HAVE_MARBLE
 
-        mapWidgetView(nullptr),
+        mapWidgetView   (nullptr),
 
 #endif // HAVE_MARBLE
 
-        tableView(nullptr),
-        trashView(nullptr)
+        tableView       (nullptr),
+        trashView       (nullptr)
     {
     }
 
@@ -131,7 +131,7 @@ public:
 
 StackedView::StackedView(QWidget* const parent)
     : QStackedWidget(parent),
-      d(new Private)
+      d             (new Private)
 {
     d->imageIconView    = new DigikamItemView(this);
     d->imagePreviewView = new ItemPreviewView(this);

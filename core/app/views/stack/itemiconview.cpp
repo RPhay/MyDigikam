@@ -373,8 +373,10 @@ void ItemIconView::setupConnections()
             d->rightSideBar, SLOT(slotNoCurrentItem()));
 
 #ifdef HAVE_MARBLE
+
     connect(d->gpsSearchSideBar, SIGNAL(signalMapSoloItems(QList<qlonglong>,QString)),
             d->iconView->imageFilterModel(), SLOT(setIdWhitelist(QList<qlonglong>,QString)));
+
 #endif // HAVE_MARBLE
 
     // -- Filter Bars Connections ---------------------------------

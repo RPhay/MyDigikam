@@ -70,16 +70,16 @@ class Q_DECL_HIDDEN MapWidgetView::Private
 public:
 
     explicit Private()
-       : vbox(nullptr),
-         mapWidget(nullptr),
-         imageFilterModel(nullptr),
-         imageModel(nullptr),
-         importFilterModel(nullptr),
-         importModel(nullptr),
-         selectionModel(nullptr),
-         mapViewModelHelper(nullptr),
-         gpsItemInfoSorter(nullptr),
-         application(MapWidgetView::ApplicationDigikam)
+       : vbox               (nullptr),
+         mapWidget          (nullptr),
+         imageFilterModel   (nullptr),
+         imageModel         (nullptr),
+         importFilterModel  (nullptr),
+         importModel        (nullptr),
+         selectionModel     (nullptr),
+         mapViewModelHelper (nullptr),
+         gpsItemInfoSorter  (nullptr),
+         application        (MapWidgetView::ApplicationDigikam)
     {
     }
 
@@ -105,9 +105,9 @@ MapWidgetView::MapWidgetView(QItemSelectionModel* const selectionModel,
                              DCategorizedSortFilterProxyModel* const imageFilterModel,
                              QWidget* const parent,
                              const MapWidgetView::Application application)
-    : QWidget(parent),
+    : QWidget          (parent),
       StateSavingObject(this),
-      d(new Private())
+      d                (new Private())
 {
     d->application    = application;
     d->selectionModel = selectionModel;

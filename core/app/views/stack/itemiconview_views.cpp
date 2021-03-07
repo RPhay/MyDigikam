@@ -123,7 +123,7 @@ void ItemIconView::slotTogglePreviewMode(const ItemInfo& info)
         {
             QModelIndex index = d->iconView->indexForInfo(info);
             d->iconView->showIndexNotification(index,
-                                               i18nc("@info", "<i>The storage location of this image<br/>is currently not available</i>"));
+                                               i18nc("@info: item icon view", "The storage location of this image\nis currently not available"));
         }
     }
     else
@@ -206,7 +206,7 @@ void ItemIconView::setToolsIconView(DCategorizedView* const view)
 {
     d->rightSideBar->appendTab(view,
                                QIcon::fromTheme(QLatin1String("document-edit")),
-                               i18n("Tools"));
+                               i18nc("@title: item icon view", "Tools"));
 }
 
 void ItemIconView::refreshView()
@@ -261,7 +261,7 @@ void ItemIconView::slotShowContextMenuOnInfo(QContextMenuEvent* event, const Ite
 
     // --------------------------------------------------------
 
-    QAction* const viewAction = new QAction(i18nc("View the selected image", "Preview"), this);
+    QAction* const viewAction = new QAction(i18nc("@action: View the selected image", "Preview"), this);
     viewAction->setIcon(QIcon::fromTheme(QLatin1String("view-preview")));
     viewAction->setEnabled(selectedImageIds.count() == 1);
     cmHelper.addAction(viewAction);
