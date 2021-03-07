@@ -116,7 +116,7 @@ public:
 
 FileSaveOptionsBox::FileSaveOptionsBox(QWidget* const parent)
     : QStackedWidget(parent),
-      d(new Private)
+      d             (new Private)
 {
     setAttribute(Qt::WA_DeleteOnClose);
 

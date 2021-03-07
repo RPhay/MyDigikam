@@ -45,10 +45,10 @@ class Q_DECL_HIDDEN FileSaveConflictBox::Private
 public:
 
     explicit Private()
-      : conflictLabel(nullptr),
-        conflictButtonGroup(nullptr),
-        storeDiffButton(nullptr),
-        overwriteButton(nullptr)
+      : conflictLabel       (nullptr),
+        conflictButtonGroup (nullptr),
+        storeDiffButton     (nullptr),
+        overwriteButton     (nullptr)
     {
     }
 
@@ -62,7 +62,7 @@ public:
 
 FileSaveConflictBox::FileSaveConflictBox(QWidget* const parent)
     : QWidget(parent),
-      d(new Private)
+      d      (new Private)
 {
     setAttribute(Qt::WA_DeleteOnClose);
 

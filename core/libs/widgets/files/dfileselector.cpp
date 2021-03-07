@@ -43,9 +43,9 @@ class Q_DECL_HIDDEN DFileSelector::Private
 public:
 
     explicit Private()
-      : edit(nullptr),
-        btn(nullptr),
-        fdMode(QFileDialog::ExistingFile),
+      : edit     (nullptr),
+        btn      (nullptr),
+        fdMode   (QFileDialog::ExistingFile),
         fdOptions(QFileDialog::Options())
     {
     }
@@ -61,7 +61,7 @@ public:
 
 DFileSelector::DFileSelector(QWidget* const parent)
     : DHBox(parent),
-      d(new Private)
+      d    (new Private)
 {
     d->edit    = new QLineEdit(this);
     d->btn     = new QPushButton(i18n("Browse..."), this);

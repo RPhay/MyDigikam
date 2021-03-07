@@ -55,7 +55,7 @@ public:
 
 DBinarySearch::DBinarySearch(QWidget* const parent)
     : QTreeWidget(parent),
-      d(new Private)
+      d          (new Private)
 {
     setIconSize(QSize(16, 16));
     setAlternatingRowColors(true);
@@ -66,8 +66,8 @@ DBinarySearch::DBinarySearch(QWidget* const parent)
     setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Expanding);
     setColumnCount(5);
     setHeaderLabels(QStringList() << QLatin1String("")
-                                  << i18n("Binary")
-                                  << i18n("Version")
+                                  << i18nc("@title: binary properties", "Binary")
+                                  << i18nc("@title: binary properties", "Version")
                                   << QLatin1String("")
                                   << QLatin1String(""));
 
