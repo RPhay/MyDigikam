@@ -249,11 +249,11 @@ void ContextMenuHelper::addStandardActionThumbnail(const imageIds& ids, Album* a
     {
         if      (album->type() == Album::PHYSICAL)
         {
-            d->setThumbnailAction = new QAction(i18n("Set as Album Thumbnail"), this);
+            d->setThumbnailAction = new QAction(i18nc("@action: context menu", "Set as Album Thumbnail"), this);
         }
         else if (album->type() == Album::TAG)
         {
-            d->setThumbnailAction = new QAction(i18n("Set as Tag Thumbnail"), this);
+            d->setThumbnailAction = new QAction(i18nc("@action: context menu", "Set as Tag Thumbnail"), this);
         }
 
         addAction(d->setThumbnailAction);
@@ -267,7 +267,7 @@ void ContextMenuHelper::addOpenAndNavigateActions(const imageIds& ids, bool ligh
     {
         setSelectedIds(ids);
         QAction* const openImageFile = new QAction(QIcon::fromTheme(QLatin1String("quickopen-file")),
-                                                   i18n("Open..."), this);
+                                                   i18nc("@action: file open dialog", "Open..."), this);
         addAction(openImageFile);
 
         connect(openImageFile, SIGNAL(triggered()),
@@ -287,7 +287,7 @@ void ContextMenuHelper::addOpenAndNavigateActions(const imageIds& ids, bool ligh
     if (!d->selectedItems.isEmpty())
     {
         QAction* const openFileMngr = new QAction(QIcon::fromTheme(QLatin1String("folder-open")),
-                                                  i18n("Open in File Manager"), this);
+                                                  i18nc("@action: context menu", "Open in File Manager"), this);
         addAction(openFileMngr);
 
         connect(openFileMngr, SIGNAL(triggered()),
@@ -308,7 +308,7 @@ void ContextMenuHelper::addServicesMenu(const QList<QUrl>& selectedItems)
 
     if (selectedItems.length() == 1)
     {
-        QAction* const openWith = new QAction(i18n("Open With"), this);
+        QAction* const openWith = new QAction(i18nc("@action: context menu", "Open With"), this);
         addAction(openWith);
 
         connect(openWith, SIGNAL(triggered()),
@@ -325,7 +325,7 @@ void ContextMenuHelper::addServicesMenu(const QList<QUrl>& selectedItems)
         qDeleteAll(servicesMenu->actions());
 
         QAction* const serviceAction = servicesMenu->menuAction();
-        serviceAction->setText(i18n("Open With"));
+        serviceAction->setText(i18nc("@action: context menu", "Open With"));
 
         foreach (const KService::Ptr& service, offers)
         {
@@ -339,7 +339,7 @@ void ContextMenuHelper::addServicesMenu(const QList<QUrl>& selectedItems)
 #   ifdef HAVE_KIO
 
         servicesMenu->addSeparator();
-        servicesMenu->addAction(i18n("Other..."));
+        servicesMenu->addAction(i18nc("@action: open item with other application", "Other..."));
 
         addAction(serviceAction);
 
@@ -348,7 +348,7 @@ void ContextMenuHelper::addServicesMenu(const QList<QUrl>& selectedItems)
     }
     else
     {
-        QAction* const serviceAction = new QAction(i18n("Open With..."), this);
+        QAction* const serviceAction = new QAction(i18nc("@action: context menu", "Open With..."), this);
         addAction(serviceAction);
 
         connect(serviceAction, SIGNAL(triggered()),
@@ -477,7 +477,7 @@ bool ContextMenuHelper::imageIdsHaveSameCategory(const imageIds& ids, DatabaseIt
 void ContextMenuHelper::addActionNewTag(TagModificationHelper* helper, TAlbum* tag)
 {
     QAction* const newTagAction = new QAction(QIcon::fromTheme(QLatin1String("tag-new")),
-                                              i18n("New Tag..."), this);
+                                              i18nc("@action: context menu", "New Tag..."), this);
     addAction(newTagAction);
     helper->bindTag(newTagAction, tag);
 
@@ -488,7 +488,7 @@ void ContextMenuHelper::addActionNewTag(TagModificationHelper* helper, TAlbum* t
 void ContextMenuHelper::addActionDeleteTag(TagModificationHelper* helper, TAlbum* tag)
 {
     QAction* const deleteTagAction = new QAction(QIcon::fromTheme(QLatin1String("edit-delete")),
-                                                 i18n("Delete Tag"), this);
+                                                 i18nc("@action: context menu", "Delete Tag"), this);
     addAction(deleteTagAction);
     helper->bindTag(deleteTagAction, tag);
 
@@ -499,7 +499,7 @@ void ContextMenuHelper::addActionDeleteTag(TagModificationHelper* helper, TAlbum
 void ContextMenuHelper::addActionDeleteTags(TagModificationHelper* helper, const QList<TAlbum*>& tags)
 {
     QAction* const deleteTagsAction = new QAction(QIcon::fromTheme(QLatin1String("edit-delete")),
-                                                  i18n("Delete Tags"), this);
+                                                  i18nc("@action: context menu", "Delete Tags"), this);
     addAction(deleteTagsAction);
     helper->bindMultipleTags(deleteTagsAction, tags);
 
@@ -510,7 +510,7 @@ void ContextMenuHelper::addActionDeleteTags(TagModificationHelper* helper, const
 void ContextMenuHelper::addActionTagToFaceTag(TagModificationHelper* helper, TAlbum* tag)
 {
     QAction* const tagToFaceTagAction = new QAction(QIcon::fromTheme(QLatin1String("smiley")),
-                                                    i18n("Mark As Face Tag"), this);
+                                                    i18nc("@action: context menu", "Mark As Face Tag"), this);
     addAction(tagToFaceTagAction);
     helper->bindTag(tagToFaceTagAction, tag);
 
@@ -521,7 +521,7 @@ void ContextMenuHelper::addActionTagToFaceTag(TagModificationHelper* helper, TAl
 void ContextMenuHelper::addActionTagsToFaceTags(TagModificationHelper* helper, const QList<TAlbum*>& tags)
 {
     QAction* const tagToFaceTagsAction = new QAction(QIcon::fromTheme(QLatin1String("smiley")),
-                                                     i18n("Mark As Face Tags"), this);
+                                                     i18nc("@action: context menu", "Mark As Face Tags"), this);
     addAction(tagToFaceTagsAction);
     helper->bindMultipleTags(tagToFaceTagsAction, tags);
 
@@ -532,7 +532,7 @@ void ContextMenuHelper::addActionTagsToFaceTags(TagModificationHelper* helper, c
 void ContextMenuHelper::addActionEditTag(TagModificationHelper* helper, TAlbum* tag)
 {
     QAction* const editTagAction = new QAction(QIcon::fromTheme(QLatin1String("tag-properties")),
-                                               i18nc("Edit Tag Properties", "Properties..."), this);
+                                               i18nc("@action: edit tag properties", "Properties..."), this);
 
     // This is only for the user to give a hint for the shortcut key
 
@@ -547,10 +547,10 @@ void ContextMenuHelper::addActionEditTag(TagModificationHelper* helper, TAlbum* 
 void ContextMenuHelper::addActionDeleteFaceTag(TagModificationHelper* helper, TAlbum* tag)
 {
     QAction* const deleteFaceTagAction = new QAction(QIcon::fromTheme(QLatin1String("tag")),
-                                                     i18n("Unmark Tag As Face"), this);
-    deleteFaceTagAction->setWhatsThis(i18n("Removes the face property from the selected tag "
-                                           "and the face region from the contained images. "
-                                           "Can also untag the images if wished."));
+                                                     i18nc("@action: context menu", "Unmark Tag As Face"), this);
+    deleteFaceTagAction->setWhatsThis(i18nc("@info: context menu", "Removes the face property from the selected tag "
+                                            "and the face region from the contained images. "
+                                            "Can also untag the images if wished."));
     addAction(deleteFaceTagAction);
     helper->bindTag(deleteFaceTagAction, tag);
 
@@ -561,10 +561,10 @@ void ContextMenuHelper::addActionDeleteFaceTag(TagModificationHelper* helper, TA
 void ContextMenuHelper::addActionDeleteFaceTags(TagModificationHelper* helper, const QList<TAlbum*>& tags)
 {
     QAction* const deleteFaceTagsAction = new QAction(QIcon::fromTheme(QLatin1String("tag")),
-                                                      i18n("Unmark Tags As Face"), this);
-    deleteFaceTagsAction->setWhatsThis(i18n("Removes the face property from the selected tags "
-                                            "and the face region from the contained images. "
-                                            "Can also untag the images if wished."));
+                                                      i18nc("@action: context menu", "Unmark Tags As Face"), this);
+    deleteFaceTagsAction->setWhatsThis(i18nc("@info: context menu", "Removes the face property from the selected tags "
+                                             "and the face region from the contained images. "
+                                             "Can also untag the images if wished."));
     addAction(deleteFaceTagsAction);
     helper->bindMultipleTags(deleteFaceTagsAction, tags);
 
@@ -615,7 +615,7 @@ void ContextMenuHelper::addActionRenameAlbum(AlbumModificationHelper* helper, PA
 void ContextMenuHelper::addActionResetAlbumIcon(AlbumModificationHelper* helper, PAlbum* album)
 {
     QAction* const action = new QAction(QIcon::fromTheme(QLatin1String("view-refresh")),
-                                        i18n("Reset Album Icon"), this);
+                                        i18nc("@action: context menu", "Reset Album Icon"), this);
     addAction(action, !album->isRoot());
     helper->bindAlbum(action, album);
 
@@ -628,7 +628,7 @@ void ContextMenuHelper::addAssignTagsMenu(const imageIds& ids)
     setSelectedIds(ids);
 
     QMenu* const assignTagsPopup = new TagsPopupMenu(ids, TagsPopupMenu::RECENTLYASSIGNED, d->parent);
-    assignTagsPopup->menuAction()->setText(i18n("A&ssign Tag"));
+    assignTagsPopup->menuAction()->setText(i18nc("@action: context menu", "A&ssign Tag"));
     assignTagsPopup->menuAction()->setIcon(QIcon::fromTheme(QLatin1String("tag")));
     d->parent->addMenu(assignTagsPopup);
 
@@ -644,7 +644,7 @@ void ContextMenuHelper::addRemoveTagsMenu(const imageIds& ids)
     setSelectedIds(ids);
 
     QMenu* const removeTagsPopup = new TagsPopupMenu(ids, TagsPopupMenu::REMOVE, d->parent);
-    removeTagsPopup->menuAction()->setText(i18n("R&emove Tag"));
+    removeTagsPopup->menuAction()->setText(i18nc("@action: context menu", "R&emove Tag"));
     removeTagsPopup->menuAction()->setIcon(QIcon::fromTheme(QLatin1String("tag")));
     d->parent->addMenu(removeTagsPopup);
 
@@ -678,7 +678,7 @@ void ContextMenuHelper::addRemoveTagsMenu(const imageIds& ids)
 
 void ContextMenuHelper::addLabelsAction()
 {
-    QMenu* const menuLabels           = new QMenu(i18n("Assign Labe&ls"), d->parent);
+    QMenu* const menuLabels           = new QMenu(i18nc("@action: context menu", "Assign Labe&ls"), d->parent);
     PickLabelMenuAction* const pmenu  = new PickLabelMenuAction(d->parent);
     ColorLabelMenuAction* const cmenu = new ColorLabelMenuAction(d->parent);
     RatingMenuAction* const rmenu     = new RatingMenuAction(d->parent);
@@ -721,7 +721,7 @@ void ContextMenuHelper::slotDeselectAllAlbumItems()
 
 void ContextMenuHelper::addImportMenu()
 {
-    QMenu* const menuImport       = new QMenu(i18n("Import"), d->parent);
+    QMenu* const menuImport       = new QMenu(i18nc("@action: context menu", "Import"), d->parent);
     KXMLGUIClient* const client   = const_cast<KXMLGUIClient*>(d->stdActionCollection->parentGUIClient());
     QList<DPluginAction*> actions = DPluginLoader::instance()->pluginsActions(DPluginAction::GenericImport,
                                     dynamic_cast<KXmlGuiWindow*>(client));
@@ -735,7 +735,7 @@ void ContextMenuHelper::addImportMenu()
     }
     else
     {
-        QAction* const notools = new QAction(i18n("No import tool available"), this);
+        QAction* const notools = new QAction(i18nc("@action: context menu", "No import tool available"), this);
         notools->setEnabled(false);
         menuImport->addAction(notools);
     }
@@ -745,7 +745,7 @@ void ContextMenuHelper::addImportMenu()
 
 void ContextMenuHelper::addExportMenu()
 {
-    QMenu* const menuExport       = new QMenu(i18n("Export"), d->parent);
+    QMenu* const menuExport       = new QMenu(i18nc("@action: context menu", "Export"), d->parent);
     KXMLGUIClient* const client   = const_cast<KXMLGUIClient*>(d->stdActionCollection->parentGUIClient());
     QList<DPluginAction*> actions = DPluginLoader::instance()->pluginsActions(DPluginAction::GenericExport,
                                     dynamic_cast<KXmlGuiWindow*>(client));
@@ -766,7 +766,7 @@ void ContextMenuHelper::addExportMenu()
     }
     else
     {
-        QAction* const notools = new QAction(i18n("No export tool available"), this);
+        QAction* const notools = new QAction(i18nc("@action: context menu", "No export tool available"), this);
         notools->setEnabled(false);
         menuExport->addAction(notools);
     }
@@ -814,8 +814,8 @@ void ContextMenuHelper::addGotoMenu(const imageIds& ids)
         return;
     }
 
-    d->gotoAlbumAction    = new QAction(QIcon::fromTheme(QLatin1String("folder-pictures")), i18n("Album"), this);
-    d->gotoDateAction     = new QAction(QIcon::fromTheme(QLatin1String("view-calendar")),   i18n("Date"),  this);
+    d->gotoAlbumAction    = new QAction(QIcon::fromTheme(QLatin1String("folder-pictures")), i18nc("@action: context menu", "Album"), this);
+    d->gotoDateAction     = new QAction(QIcon::fromTheme(QLatin1String("view-calendar")),   i18nc("@action: context menu", "Date"),  this);
     QMenu* const gotoMenu = new QMenu(d->parent);
     gotoMenu->addAction(d->gotoAlbumAction);
     gotoMenu->addAction(d->gotoDateAction);
@@ -823,7 +823,7 @@ void ContextMenuHelper::addGotoMenu(const imageIds& ids)
     TagsPopupMenu* const gotoTagsPopup = new TagsPopupMenu(d->selectedIds, TagsPopupMenu::DISPLAY, gotoMenu);
     QAction* const gotoTag             = gotoMenu->addMenu(gotoTagsPopup);
     gotoTag->setIcon(QIcon::fromTheme(QLatin1String("tag")));
-    gotoTag->setText(i18n("Tag"));
+    gotoTag->setText(i18nc("@action: context menu", "Tag"));
 
     // Disable the goto Tag popup menu, if there are no tags at all.
 
@@ -866,7 +866,7 @@ void ContextMenuHelper::addGotoMenu(const imageIds& ids)
 
     QAction* const gotoMenuAction = gotoMenu->menuAction();
     gotoMenuAction->setIcon(QIcon::fromTheme(QLatin1String("go-jump")));
-    gotoMenuAction->setText(i18n("Go To"));
+    gotoMenuAction->setText(i18nc("@action: context menu", "Go To"));
 
     connect(gotoTagsPopup, SIGNAL(signalTagActivated(int)),
             this, SIGNAL(signalGotoTag(int)));
@@ -876,7 +876,7 @@ void ContextMenuHelper::addGotoMenu(const imageIds& ids)
 
 void ContextMenuHelper::addQueueManagerMenu()
 {
-    QMenu* const bqmMenu = new QMenu(i18n("Batch Queue Manager"), d->parent);
+    QMenu* const bqmMenu = new QMenu(i18nc("@action: context menu", "Batch Queue Manager"), d->parent);
     bqmMenu->menuAction()->setIcon(QIcon::fromTheme(QLatin1String("run-build")));
     bqmMenu->addAction(d->stdActionCollection->action(QLatin1String("image_add_to_current_queue")));
     bqmMenu->addAction(d->stdActionCollection->action(QLatin1String("image_add_to_new_queue")));
@@ -887,7 +887,7 @@ void ContextMenuHelper::addQueueManagerMenu()
         !QueueMgrWindow::queueManagerWindow()->queuesMap().isEmpty())
     {
         QueueMgrWindow* const qmw = QueueMgrWindow::queueManagerWindow();
-        QMenu* const queueMenu    = new QMenu(i18n("Add to Existing Queue"), bqmMenu);
+        QMenu* const queueMenu    = new QMenu(i18nc("@action: context menu", "Add to Existing Queue"), bqmMenu);
 
         // queueActions is used by the exec() method to emit an appropriate signal.
         // Reset the map before filling in the actions.
@@ -931,7 +931,7 @@ void ContextMenuHelper::setAlbumModel(AbstractCheckableAlbumModel* model)
 void ContextMenuHelper::addAlbumCheckUncheckActions(Album* album)
 {
     bool     enabled   = false;
-    QString  allString = i18n("All Albums");
+    QString  allString = i18nc("@action: context menu", "All Albums");
     QVariant albumData;
 
     if (album)
@@ -941,31 +941,31 @@ void ContextMenuHelper::addAlbumCheckUncheckActions(Album* album)
 
         if (album->type() == Album::TAG)
         {
-            allString = i18n("All Tags");
+            allString = i18nc("@action: context menu", "All Tags");
         }
     }
 
-    QMenu* const selectTagsMenu         = new QMenu(i18nc("select tags menu", "Select"));
+    QMenu* const selectTagsMenu         = new QMenu(i18nc("@action: select tags menu", "Select"));
     addSubMenu(selectTagsMenu);
 
     selectTagsMenu->addAction(allString, d->albumModel, SLOT(checkAllAlbums()));
     selectTagsMenu->addSeparator();
-    QAction* const selectChildrenAction = selectTagsMenu->addAction(i18n("Children"), this, SLOT(slotSelectChildren()));
-    QAction* const selectParentsAction  = selectTagsMenu->addAction(i18n("Parents"),  this, SLOT(slotSelectParents()));
+    QAction* const selectChildrenAction = selectTagsMenu->addAction(i18nc("@action: context menu", "Children"), this, SLOT(slotSelectChildren()));
+    QAction* const selectParentsAction  = selectTagsMenu->addAction(i18nc("@action: context menu", "Parents"),  this, SLOT(slotSelectParents()));
     selectChildrenAction->setData(albumData);
     selectParentsAction->setData(albumData);
 
-    QMenu* const deselectTagsMenu       = new QMenu(i18nc("deselect tags menu", "Deselect"));
+    QMenu* const deselectTagsMenu       = new QMenu(i18nc("@action: deselect tags menu", "Deselect"));
     addSubMenu(deselectTagsMenu);
 
     deselectTagsMenu->addAction(allString, d->albumModel, SLOT(resetAllCheckedAlbums()));
     deselectTagsMenu->addSeparator();
-    QAction* const deselectChildrenAction = deselectTagsMenu->addAction(i18n("Children"), this, SLOT(slotDeselectChildren()));
-    QAction* const deselectParentsAction  = deselectTagsMenu->addAction(i18n("Parents"),  this, SLOT(slotDeselectParents()));
+    QAction* const deselectChildrenAction = deselectTagsMenu->addAction(i18nc("@action: context menu", "Children"), this, SLOT(slotDeselectChildren()));
+    QAction* const deselectParentsAction  = deselectTagsMenu->addAction(i18nc("@action: context menu", "Parents"),  this, SLOT(slotDeselectParents()));
     deselectChildrenAction->setData(albumData);
     deselectParentsAction->setData(albumData);
 
-    d->parent->addAction(i18n("Invert Selection"), d->albumModel, SLOT(invertCheckedAlbums()));
+    d->parent->addAction(i18nc("@action: context menu", "Invert Selection"), d->albumModel, SLOT(invertCheckedAlbums()));
 
     selectChildrenAction->setEnabled(enabled);
     selectParentsAction->setEnabled(enabled);
@@ -1034,7 +1034,7 @@ void ContextMenuHelper::addGroupMenu(const imageIds& ids, const QList<QAction*>&
         actions << extraMenuItems;
     }
 
-    QMenu* const menu = new QMenu(i18n("Group"));
+    QMenu* const menu = new QMenu(i18nc("@action: group items", "Group"));
 
     foreach (QAction* const action, actions)
     {
