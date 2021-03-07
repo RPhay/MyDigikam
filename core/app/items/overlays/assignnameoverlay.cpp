@@ -96,7 +96,7 @@ public:
 
 AssignNameOverlay::AssignNameOverlay(QObject* const parent)
     : PersistentWidgetDelegateOverlay(parent),
-      d(new Private)
+      d                              (new Private)
 {
     d->filteredModel.setSourceAlbumModel(&d->tagModel);
     d->filterModel.setSourceFilterModel(&d->filteredModel);

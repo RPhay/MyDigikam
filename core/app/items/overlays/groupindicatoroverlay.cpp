@@ -128,11 +128,11 @@ bool GroupIndicatorOverlay::checkIndex(const QModelIndex& index) const
 
         if (index.data(ItemFilterModel::GroupIsOpenRole).toBool())
         {
-            tip += i18n("Group is open.");
+            tip += i18nc("@info:tooltip", "Group is open.");
         }
         else
         {
-            tip += i18n("Group is closed.");
+            tip += i18nc("@info:tooltip", "Group is closed.");
         }
 
         m_widget->setToolTip(tip);
