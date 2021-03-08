@@ -26,10 +26,11 @@
 
 // Qt includes
 
-#include <QString>
-#include <QStandardPaths>
+#include <QDir>
 #include <QList>
 #include <QRect>
+#include <QString>
+#include <QStandardPaths>
 
 // Local includes
 
@@ -57,6 +58,9 @@ bool DNNFaceDetectorSSD::loadModels()
                                              QString::fromLatin1("facesengine/%1").arg(model));
     QString nndata  = QStandardPaths::locate(QStandardPaths::AppDataLocation,
                                              QString::fromLatin1("facesengine/%1").arg(data));
+
+    nnmodel         = QDir::toNativeSeparators(nnmodel);
+    nndata          = QDir::toNativeSeparators(nndata);
 
     if (!nnmodel.isEmpty() && !nndata.isEmpty())
     {

@@ -26,11 +26,11 @@
 
 // Qt includes
 
-#include <QString>
 #include <QFile>
+#include <QTime>
+#include <QString>
 #include <QDataStream>
 #include <QStandardPaths>
-#include <QTime>
 
 // Local includes
 
