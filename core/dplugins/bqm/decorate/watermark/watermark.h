@@ -46,23 +46,25 @@ class WaterMark : public BatchTool
 public:
 
     explicit WaterMark(QObject* const parent = nullptr);
-    ~WaterMark() override;
+    ~WaterMark()                                            override;
 
-    BatchToolSettings defaultSettings() override;
+    BatchToolSettings defaultSettings()                     override;
 
-    BatchTool* clone(QObject* const parent=nullptr) const override { return new WaterMark(parent); };
+    BatchTool* clone(QObject* const parent = nullptr) const override { return new WaterMark(parent); };
 
-    void registerSettingsWidget() override;
+    void registerSettingsWidget()                           override;
 
 private Q_SLOTS:
 
-    void slotSettingsChanged() override;
-    void slotAssignSettings2Widget() override;
+    void slotSettingsChanged()                              override;
+    void slotAssignSettings2Widget()                        override;
 
 private:
 
-    bool toolOperations() override;
-    int  queryFontSize(const QString& text, const QFont& font, int length) const;
+    bool toolOperations()                                   override;
+    int  queryFontSize(const QString& text,
+                       const QFont& font,
+                       int length)                    const;
 
 private:
 

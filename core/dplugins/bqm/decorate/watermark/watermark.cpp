@@ -88,31 +88,31 @@ public:
 public:
 
     explicit Private()
-      : textSettingsGroupBox(nullptr),
-        imageSettingsGroupBox(nullptr),
-        useAbsoluteImageSizeGroupBox(nullptr),
-        useImageRadioButton(nullptr),
-        ignoreWatermarkAspectCheckBox(nullptr),
-        useAbsoluteSizeCheckBox(nullptr),
-        useBackgroundCheckBox(nullptr),
-        denseRepetitionCheckBox(nullptr),
-        randomizeRotationCheckBox(nullptr),
-        useTextRadioButton(nullptr),
-        imageFileUrlRequester(nullptr),
-        textEdit(nullptr),
-        placementPositionComboBox(nullptr),
-        placementTypeComboBox(nullptr),
-        rotationComboBox(nullptr),
-        sparsityFactorSpinBox(nullptr),
-        extendedFontChooserWidget(nullptr),
-        fontColorButton(nullptr),
-        backgroundColorButton(nullptr),
-        textOpacity(nullptr),
-        backgroundOpacity(nullptr),
-        xMarginInput(nullptr),
-        yMarginInput(nullptr),
-        waterMarkSizePercent(nullptr),
-        changeSettings(true)
+      : textSettingsGroupBox            (nullptr),
+        imageSettingsGroupBox           (nullptr),
+        useAbsoluteImageSizeGroupBox    (nullptr),
+        useImageRadioButton             (nullptr),
+        ignoreWatermarkAspectCheckBox   (nullptr),
+        useAbsoluteSizeCheckBox         (nullptr),
+        useBackgroundCheckBox           (nullptr),
+        denseRepetitionCheckBox         (nullptr),
+        randomizeRotationCheckBox       (nullptr),
+        useTextRadioButton              (nullptr),
+        imageFileUrlRequester           (nullptr),
+        textEdit                        (nullptr),
+        placementPositionComboBox       (nullptr),
+        placementTypeComboBox           (nullptr),
+        rotationComboBox                (nullptr),
+        sparsityFactorSpinBox           (nullptr),
+        extendedFontChooserWidget       (nullptr),
+        fontColorButton                 (nullptr),
+        backgroundColorButton           (nullptr),
+        textOpacity                     (nullptr),
+        backgroundOpacity               (nullptr),
+        xMarginInput                    (nullptr),
+        yMarginInput                    (nullptr),
+        waterMarkSizePercent            (nullptr),
+        changeSettings                  (true)
     {
     }
 
@@ -150,7 +150,7 @@ public:
 
 WaterMark::WaterMark(QObject* const parent)
     : BatchTool(QLatin1String("WaterMark"), DecorateTool, parent),
-      d(new Private)
+      d        (new Private)
 {
 }
 
@@ -357,11 +357,11 @@ void WaterMark::registerSettingsWidget()
 
     QLabel* const label4         = new QLabel(vbox);
     d->placementPositionComboBox = new QComboBox(vbox);
-    d->placementPositionComboBox->insertItem(Private::TopLeft,     i18n("Top left"));
-    d->placementPositionComboBox->insertItem(Private::TopRight,    i18n("Top right"));
-    d->placementPositionComboBox->insertItem(Private::BottomLeft,  i18n("Bottom left"));
-    d->placementPositionComboBox->insertItem(Private::BottomRight, i18n("Bottom right"));
-    d->placementPositionComboBox->insertItem(Private::Center,      i18n("Center"));
+    d->placementPositionComboBox->insertItem(Private::TopLeft,     i18nc("@item: placement position", "Top left"));
+    d->placementPositionComboBox->insertItem(Private::TopRight,    i18nc("@item: placement position", "Top right"));
+    d->placementPositionComboBox->insertItem(Private::BottomLeft,  i18nc("@item: placement position", "Bottom left"));
+    d->placementPositionComboBox->insertItem(Private::BottomRight, i18nc("@item: placement position", "Bottom right"));
+    d->placementPositionComboBox->insertItem(Private::Center,      i18nc("@item: placement position", "Center"));
     label4->setText(i18n("Placement Position:"));
 
     QLabel* const labelRotation  = new QLabel(vbox);
