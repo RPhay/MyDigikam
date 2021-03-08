@@ -220,14 +220,9 @@ void ThemeManager::populateThemeMenu()
         actionMap.insert(name, ac);
     }
 
-    // Sort the list
-
-    QStringList actionMapKeys = actionMap.keys();
-    actionMapKeys.sort();
-
-    foreach (const QString& name, actionMapKeys)
+    foreach (QAction* const menuAction, actionMap.values())
     {
-        d->themeMenuAction->addAction(actionMap.value(name));
+        d->themeMenuAction->addAction(menuAction);
     }
 
     updateCurrentDesktopDefaultThemePreview();
