@@ -49,7 +49,7 @@ LensAutoFixToolPlugin::~LensAutoFixToolPlugin()
 
 QString LensAutoFixToolPlugin::name() const
 {
-    return i18n("Lens Auto-Correction");
+    return i18nc("@title", "Lens Auto-Correction");
 }
 
 QString LensAutoFixToolPlugin::iid() const
@@ -64,12 +64,12 @@ QIcon LensAutoFixToolPlugin::icon() const
 
 QString LensAutoFixToolPlugin::description() const
 {
-    return i18n("A tool to fix automatically lens artifacts");
+    return i18nc("@info", "A tool to fix automatically lens artifacts");
 }
 
 QString LensAutoFixToolPlugin::details() const
 {
-    return i18n("<p>This Image Editor tool can fix automatically lens artifacts over an image.</p>");
+    return i18nc("@info", "This Image Editor tool can fix automatically lens artifacts over an image.");
 }
 
 QList<DPluginAuthor> LensAutoFixToolPlugin::authors() const

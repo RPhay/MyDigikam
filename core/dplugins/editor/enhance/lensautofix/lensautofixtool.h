@@ -38,21 +38,21 @@ class LensAutoFixTool : public EditorToolThreaded
 public:
 
     explicit LensAutoFixTool(QObject* const parent);
-    ~LensAutoFixTool() override;
+    ~LensAutoFixTool()          override;
 
 private Q_SLOTS:
 
     void slotLensChanged();
-    void slotResetSettings() override;
+    void slotResetSettings()    override;
 
 private:
 
-    void readSettings() override;
-    void writeSettings() override;
-    void preparePreview() override;
-    void prepareFinal() override;
-    void setPreviewImage() override;
-    void setFinalImage() override;
+    void readSettings()         override;
+    void writeSettings()        override;
+    void preparePreview()       override;
+    void prepareFinal()         override;
+    void setPreviewImage()      override;
+    void setFinalImage()        override;
 
 private:
 
