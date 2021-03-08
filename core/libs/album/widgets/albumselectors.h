@@ -48,6 +48,12 @@ public:
         All
     };
 
+    enum SelectionType
+    {
+        SingleSelection=0,
+        MultipleSelection
+    };
+
 public:
 
     /**
@@ -103,12 +109,12 @@ public:
     /** Select Physical Album from list. If singleSelection is true, only this one is
      *  selected from tree-view and all others are deselected.
      */
-    void setAlbumSelected(Album* const album, bool singleSelection = true);
+    void setAlbumSelected(Album* const album, SelectionType type);
 
     /** Select Tag Album from list. If singleSelection is true, only this one is
      *  selected from tree-view and all others are deselected.
      */
-    void setTagSelected(Album* const album, bool singleSelection = true);
+    void setTagSelected(Album* const album, SelectionType type);
 
     /**
      * Sets the search type selection with the AlbumType.

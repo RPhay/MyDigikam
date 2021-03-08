@@ -364,11 +364,11 @@ AlbumList AlbumSelectors::selectedAlbumsAndTags() const
     return albums;
 }
 
-void AlbumSelectors::setAlbumSelected(Album* const album, bool singleSelection)
+void AlbumSelectors::setAlbumSelected(Album* const album, SelectionType type)
 {
     if (d->albumWidget && album)
     {
-        if (singleSelection)
+        if (type == SingleSelection)
         {
             d->albumSelectCB->model()->resetCheckedAlbums();
         }
@@ -378,11 +378,11 @@ void AlbumSelectors::setAlbumSelected(Album* const album, bool singleSelection)
     }
 }
 
-void AlbumSelectors::setTagSelected(Album* const album, bool singleSelection)
+void AlbumSelectors::setTagSelected(Album* const album, SelectionType type)
 {
     if (d->tagWidget && album)
     {
-        if (singleSelection)
+        if (type == SingleSelection)
         {
             d->tagSelectCB->model()->resetCheckedAlbums();
         }

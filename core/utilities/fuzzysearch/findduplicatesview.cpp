@@ -585,7 +585,7 @@ void FindDuplicatesView::slotSetSelectedAlbum(PAlbum* album)
 
     // @ODD: Why is singleton set to true? resetAlbumsAndTags already clears the selection.
 
-    d->albumSelectors->setAlbumSelected(album, true);
+    d->albumSelectors->setAlbumSelected(album, AlbumSelectors::SingleSelection);
     d->albumSelectors->setTypeSelection(AlbumSelectors::AlbumType::PhysAlbum);
     d->albumTagRelation->setCurrentIndex(d->albumTagRelation->findData(HaarIface::AlbumTagRelation::NoMix));
     d->searchResultRestriction->setCurrentIndex(d->searchResultRestriction->findData(HaarIface::DuplicatesSearchRestrictions::None));
@@ -603,9 +603,12 @@ void FindDuplicatesView::slotSetSelectedAlbums(const QList<PAlbum*>& albums)
 
     resetAlbumsAndTags();
 
+    const AlbumSelectors::SelectionType type = albums.size() == 1 ? AlbumSelectors::SingleSelection
+                                                                  : AlbumSelectors::MultipleSelection;
+
     foreach (PAlbum* const album, albums)
     {
-        d->albumSelectors->setAlbumSelected(album, false);
+        d->albumSelectors->setAlbumSelected(album, type);
     }
 
     d->albumSelectors->setTypeSelection(AlbumSelectors::AlbumType::PhysAlbum);
@@ -623,9 +626,12 @@ void FindDuplicatesView::slotSetSelectedAlbums(const QList<TAlbum*>& albums)
 {
     resetAlbumsAndTags();
 
+    const AlbumSelectors::SelectionType type = albums.size() == 1 ? AlbumSelectors::SingleSelection
+                                                                  : AlbumSelectors::MultipleSelection;
+
     foreach (TAlbum* const album, albums)
     {
-        d->albumSelectors->setTagSelected(album, false);
+        d->albumSelectors->setTagSelected(album, type);
     }
 
     d->albumSelectors->setTypeSelection(AlbumSelectors::AlbumType::TagsAlbum);
