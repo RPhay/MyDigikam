@@ -43,7 +43,7 @@ class CurvesAdjustPlugin : public DPluginBqm
 public:
 
     explicit CurvesAdjustPlugin(QObject* const parent = nullptr);
-    ~CurvesAdjustPlugin() override;
+    ~CurvesAdjustPlugin()                override;
 
     QString name()                 const override;
     QString iid()                  const override;
@@ -52,7 +52,7 @@ public:
     QString description()          const override;
     QList<DPluginAuthor> authors() const override;
 
-    void setup(QObject* const) override;
+    void setup(QObject* const)           override;
 };
 
 } // namespace DigikamBqmCurvesAdjustPlugin
