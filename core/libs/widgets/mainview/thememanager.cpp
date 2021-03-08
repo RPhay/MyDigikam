@@ -182,7 +182,7 @@ void ThemeManager::populateThemeMenu()
     action->setCheckable(true);
     d->themeMenuAction->addAction(action);
 
-    QStringList schemeFiles;
+    QMap<QString, QAction*> actionMap;
     QStringList dirs;
 
     // digiKam colors scheme
@@ -199,25 +199,17 @@ void ThemeManager::populateThemeMenu()
 
         while (it.hasNext())
         {
-            schemeFiles.append(it.next());
+            const QString filePath  = it.next();
+            KSharedConfigPtr config = KSharedConfig::openConfig(filePath);
+            QIcon icon              = d->createSchemePreviewIcon(config);
+            KConfigGroup group(config, "General");
+            const QString name      = group.readEntry("Name", it.fileInfo().baseName());
+            QAction* const ac       = new QAction(name, d->themeMenuActionGroup);
+            d->themeMap.insert(name, filePath);
+            ac->setIcon(icon);
+            ac->setCheckable(true);
+            actionMap.insert(name, ac);
         }
-    }
-
-    QMap<QString, QAction*> actionMap;
-
-    for (int i = 0 ; i < schemeFiles.size() ; ++i)
-    {
-        const QString filename  = schemeFiles.at(i);
-        const QFileInfo info(filename);
-        KSharedConfigPtr config = KSharedConfig::openConfig(filename);
-        QIcon icon              = d->createSchemePreviewIcon(config);
-        KConfigGroup group(config, "General");
-        const QString name      = group.readEntry("Name", info.baseName());
-        QAction* const ac       = new QAction(name, d->themeMenuActionGroup);
-        d->themeMap.insert(name, filename);
-        ac->setIcon(icon);
-        ac->setCheckable(true);
-        actionMap.insert(name, ac);
     }
 
     foreach (QAction* const menuAction, actionMap.values())
