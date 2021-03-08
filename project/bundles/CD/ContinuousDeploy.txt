@@ -95,3 +95,9 @@ Architecture and configuration to setup a continuous deployement computer.
   * From local digiKam git repository, run project/bundles/macports/makeall.sh.
   * To update Macports PKG all the days at 23h00, run "macports_update.sh" script in background with screen CLI tool.
 
+- To start VM without GUI from command line:
+
+  * VBoxManage startvm --type headless M6
+  * VBoxManage startvm --type headless M7
+  * VBoxManage startvm --type headless MX
+
