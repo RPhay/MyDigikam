@@ -43,7 +43,7 @@ class RotatePlugin : public DPluginBqm
 public:
 
     explicit RotatePlugin(QObject* const parent = nullptr);
-    ~RotatePlugin() override;
+    ~RotatePlugin()                      override;
 
     QString name()                 const override;
     QString iid()                  const override;
@@ -52,7 +52,7 @@ public:
     QString description()          const override;
     QList<DPluginAuthor> authors() const override;
 
-    void setup(QObject* const) override;
+    void setup(QObject* const)           override;
 };
 
 } // namespace DigikamBqmRotatePlugin

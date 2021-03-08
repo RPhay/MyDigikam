@@ -54,10 +54,10 @@ public:
 
     explicit Private()
       : CUSTOM_ANGLE(DImg::ROT270 + 1),
-        label(nullptr),
-        useExif(nullptr),
-        comboBox(nullptr),
-        frSettings(nullptr)
+        label       (nullptr),
+        useExif     (nullptr),
+        comboBox    (nullptr),
+        frSettings  (nullptr)
     {
     }
 
@@ -74,7 +74,7 @@ public:
 
 Rotate::Rotate(QObject* const parent)
     : BatchTool(QLatin1String("Rotate"), TransformTool, parent),
-      d(new Private)
+      d        (new Private)
 {
 }
 
@@ -87,16 +87,16 @@ void Rotate::registerSettingsWidget()
 {
 
     DVBox* const vbox = new DVBox;
-    d->useExif        = new QCheckBox(i18n("Use Exif Orientation"), vbox);
+    d->useExif        = new QCheckBox(i18nc("@title", "Use Exif Orientation"), vbox);
 
     d->label     = new QLabel(vbox);
     d->comboBox  = new DComboBox(vbox);
-    d->comboBox->insertItem(DImg::ROT90,     i18n("90 degrees"));
-    d->comboBox->insertItem(DImg::ROT180,    i18n("180 degrees"));
-    d->comboBox->insertItem(DImg::ROT270,    i18n("270 degrees"));
-    d->comboBox->insertItem(d->CUSTOM_ANGLE, i18n("Custom"));
+    d->comboBox->insertItem(DImg::ROT90,     i18nc("@item: angle", "90 degrees"));
+    d->comboBox->insertItem(DImg::ROT180,    i18nc("@item: angle", "180 degrees"));
+    d->comboBox->insertItem(DImg::ROT270,    i18nc("@item: angle", "270 degrees"));
+    d->comboBox->insertItem(d->CUSTOM_ANGLE, i18nc("@item: angle", "Custom"));
     d->comboBox->setDefaultIndex(DImg::ROT90);
-    d->label->setText(i18n("Angle:"));
+    d->label->setText(i18nc("@label", "Angle:"));
 
     d->frSettings       = new FreeRotationSettings(vbox);
 
