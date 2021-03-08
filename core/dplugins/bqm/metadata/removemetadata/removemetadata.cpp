@@ -65,13 +65,13 @@ public:
 public:
 
     explicit Private()
-      : removeExif(nullptr),
-        removeIptc(nullptr),
-        removeXmp(nullptr),
-        exifComboBox(nullptr),
-        iptcComboBox(nullptr),
-        xmpComboBox(nullptr),
-        changeSettings(true)
+      : removeExif      (nullptr),
+        removeIptc      (nullptr),
+        removeXmp       (nullptr),
+        exifComboBox    (nullptr),
+        iptcComboBox    (nullptr),
+        xmpComboBox     (nullptr),
+        changeSettings  (true)
     {
     }
 
@@ -88,7 +88,7 @@ public:
 
 RemoveMetadata::RemoveMetadata(QObject* const parent)
     : BatchTool(QLatin1String("RemoveMetadata"), MetadataTool, parent),
-      d(new Private)
+      d        (new Private)
 {
 }
 
@@ -116,13 +116,13 @@ void RemoveMetadata::registerSettingsWidget()
 
     d->removeXmp             = new QCheckBox(i18n("Xmp:"), panel);
     d->xmpComboBox           = new QComboBox(panel);
-    d->xmpComboBox->addItem(i18n("Completely"),            Private::ALL);
-    d->xmpComboBox->addItem(i18n("Date"),                  Private::DATE);
-    d->xmpComboBox->addItem(i18n("DigiKam"),               Private::DIGIKAM);
-    d->xmpComboBox->addItem(i18n("DigiKam image history"), Private::HISTORY);
-    d->xmpComboBox->addItem(i18n("Dublin Core"),           Private::DUBLIN);
-    d->xmpComboBox->addItem(i18n("Exif"),                  Private::EXIF);
-    d->xmpComboBox->addItem(i18n("Video"),                 Private::VIDEO);
+    d->xmpComboBox->addItem(i18nc("@item: xmp namespace", "Completely"),            Private::ALL);
+    d->xmpComboBox->addItem(i18nc("@item: xmp namespace", "Date"),                  Private::DATE);
+    d->xmpComboBox->addItem(i18nc("@item: xmp namespace", "DigiKam"),               Private::DIGIKAM);
+    d->xmpComboBox->addItem(i18nc("@item: xmp namespace", "DigiKam image history"), Private::HISTORY);
+    d->xmpComboBox->addItem(i18nc("@item: xmp namespace", "Dublin Core"),           Private::DUBLIN);
+    d->xmpComboBox->addItem(i18nc("@item: xmp namespace", "Exif"),                  Private::EXIF);
+    d->xmpComboBox->addItem(i18nc("@item: xmp namespace", "Video"),                 Private::VIDEO);
 
     grid->addWidget(d->removeExif,   0, 0, 1, 1);
     grid->addWidget(d->exifComboBox, 0, 1, 1, 2);
