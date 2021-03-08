@@ -72,7 +72,6 @@ public:
     void setActive(bool val);
     void setItemInfo(const ItemInfo& info);
 
-    void newDuplicatesSearch(PAlbum* const album);
     void newDuplicatesSearch(const QList<PAlbum*>& albums);
     void newDuplicatesSearch(const QList<TAlbum*>& albums);
 

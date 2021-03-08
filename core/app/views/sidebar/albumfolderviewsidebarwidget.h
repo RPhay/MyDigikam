@@ -66,7 +66,7 @@ public Q_SLOTS:
 
 Q_SIGNALS:
 
-    void signalFindDuplicates(PAlbum* album);
+    void signalFindDuplicates(const QList<PAlbum*>& albums);
 
 private:
 

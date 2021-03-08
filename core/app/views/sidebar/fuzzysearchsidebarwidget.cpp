@@ -132,11 +132,6 @@ const QString FuzzySearchSideBarWidget::getCaption()
     return i18nc("Fuzzy Search images, as duplicates, sketch, searches by similarities", "Similarity");
 }
 
-void FuzzySearchSideBarWidget::newDuplicatesSearch(PAlbum* album)
-{
-    d->fuzzySearchView->newDuplicatesSearch(album);
-}
-
 void FuzzySearchSideBarWidget::newDuplicatesSearch(const QList<PAlbum*>& albums)
 {
     d->fuzzySearchView->newDuplicatesSearch(albums);

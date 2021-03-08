@@ -93,8 +93,8 @@ AlbumFolderViewSideBarWidget::AlbumFolderViewSideBarWidget(QWidget* const parent
     layout->setContentsMargins(0, 0, spacing, 0);
 
     // setup connection
-    connect(d->albumFolderView, SIGNAL(signalFindDuplicates(PAlbum*)),
-            this, SIGNAL(signalFindDuplicates(PAlbum*)));
+    connect(d->albumFolderView, SIGNAL(signalFindDuplicates(QList<PAlbum*>)),
+            this, SIGNAL(signalFindDuplicates(QList<PAlbum*>)));
 }
 
 AlbumFolderViewSideBarWidget::~AlbumFolderViewSideBarWidget()

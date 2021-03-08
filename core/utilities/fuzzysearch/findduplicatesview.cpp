@@ -574,29 +574,6 @@ void FindDuplicatesView::slotUpdateFingerPrints()
     tool->start();
 }
 
-void FindDuplicatesView::slotSetSelectedAlbum(PAlbum* album)
-{
-    if (!album)
-    {
-        return;
-    }
-
-    resetAlbumsAndTags();
-
-    // @ODD: Why is singleton set to true? resetAlbumsAndTags already clears the selection.
-
-    d->albumSelectors->setAlbumSelected(album, AlbumSelectors::SingleSelection);
-    d->albumSelectors->setTypeSelection(AlbumSelectors::AlbumType::PhysAlbum);
-    d->albumTagRelation->setCurrentIndex(d->albumTagRelation->findData(HaarIface::AlbumTagRelation::NoMix));
-    d->searchResultRestriction->setCurrentIndex(d->searchResultRestriction->findData(HaarIface::DuplicatesSearchRestrictions::None));
-    slotCheckForValidSettings();
-
-    if (d->findDuplicatesBtn->isEnabled())
-    {
-        slotFindDuplicates();
-    }
-}
-
 void FindDuplicatesView::slotSetSelectedAlbums(const QList<PAlbum*>& albums)
 {
     // @ODD: Why is singleton set to true? resetAlbumsAndTags already clears the selection.

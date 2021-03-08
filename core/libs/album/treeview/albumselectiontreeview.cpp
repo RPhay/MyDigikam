@@ -255,7 +255,7 @@ void AlbumSelectionTreeView::setEnableToolTips(bool enable)
 
 void AlbumSelectionTreeView::slotFindDuplicates()
 {
-    emit signalFindDuplicates(d->albumModificationHelper->boundAlbum(sender()));
+    emit signalFindDuplicates(QList<PAlbum*> { d->albumModificationHelper->boundAlbum(sender()) });
 }
 
 void AlbumSelectionTreeView::slotScanForFaces()

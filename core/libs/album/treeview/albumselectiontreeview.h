@@ -69,7 +69,7 @@ Q_SIGNALS:
      *
      * @param album the album to find duplicates in
      */
-    void signalFindDuplicates(PAlbum* album);
+    void signalFindDuplicates(const QList<PAlbum*>& albums);
 
 private Q_SLOTS:
 

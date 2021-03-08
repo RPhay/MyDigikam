@@ -108,8 +108,8 @@ ItemIconView::ItemIconView(QWidget* const parent, DModelFactory* const modelColl
                                                               d->albumModificationHelper);
     d->leftSideBarWidgets << d->albumFolderSideBar;
 
-    connect(d->albumFolderSideBar, SIGNAL(signalFindDuplicates(PAlbum*)),
-            this, SLOT(slotNewDuplicatesSearch(PAlbum*)));
+    connect(d->albumFolderSideBar, SIGNAL(signalFindDuplicates(QList<PAlbum*>)),
+            this, SLOT(slotNewDuplicatesSearch(QList<PAlbum*>)));
 
     // Tags sidebar tab contents.
 

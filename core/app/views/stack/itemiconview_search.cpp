@@ -44,12 +44,6 @@ void ItemIconView::slotNewAdvancedSearch()
     d->searchSideBar->newAdvancedSearch();
 }
 
-void ItemIconView::slotNewDuplicatesSearch(PAlbum* album)
-{
-    slotLeftSideBarActivate(d->fuzzySearchSideBar);
-    d->fuzzySearchSideBar->newDuplicatesSearch(album);
-}
-
 void ItemIconView::slotNewDuplicatesSearch(const QList<PAlbum*>& albums)
 {
     slotLeftSideBarActivate(d->fuzzySearchSideBar);

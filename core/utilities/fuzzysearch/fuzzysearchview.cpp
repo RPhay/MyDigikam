@@ -206,16 +206,6 @@ void FuzzySearchView::setCurrentAlbum(SAlbum* const album)
     d->searchTreeView->setCurrentAlbums(QList<Album*>() << album);
 }
 
-void FuzzySearchView::newDuplicatesSearch(PAlbum* const album)
-{
-    if (album)
-    {
-        d->findDuplicatesPanel->slotSetSelectedAlbum(album);
-    }
-
-    d->tabWidget->setCurrentIndex(Private::DUPLICATES);
-}
-
 void FuzzySearchView::newDuplicatesSearch(const QList<PAlbum*>& albums)
 {
     if (!albums.isEmpty())

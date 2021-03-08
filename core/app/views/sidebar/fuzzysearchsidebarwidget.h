@@ -56,7 +56,6 @@ public:
     const QIcon   getIcon()                                          override;
     const QString getCaption()                                       override;
 
-    void newDuplicatesSearch(PAlbum* album);
     void newDuplicatesSearch(const QList<PAlbum*>& albums);
     void newDuplicatesSearch(const QList<TAlbum*>& albums);
     void newSimilarSearch(const ItemInfo& imageInfo);
