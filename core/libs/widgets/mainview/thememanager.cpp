@@ -203,7 +203,8 @@ void ThemeManager::populateThemeMenu()
             KSharedConfigPtr config = KSharedConfig::openConfig(filePath);
             QIcon icon              = d->createSchemePreviewIcon(config);
             KConfigGroup group(config, "General");
-            const QString name      = group.readEntry("Name", it.fileInfo().baseName());
+            const QString name      = group.readEntry("Name",
+                                                      it.fileInfo().baseName());
             QAction* const ac       = new QAction(name, d->themeMenuActionGroup);
             d->themeMap.insert(name, filePath);
             ac->setIcon(icon);
