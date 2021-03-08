@@ -55,13 +55,13 @@ void Flip::registerSettingsWidget()
     DVBox* const vbox      = new DVBox;
     QLabel* const label    = new QLabel(vbox);
     m_comboBox             = new QComboBox(vbox);
-    m_comboBox->insertItem(DImg::HORIZONTAL, i18n("Horizontal"));
-    m_comboBox->insertItem(DImg::VERTICAL,   i18n("Vertical"));
-    label->setText(i18n("Flip:"));
+    m_comboBox->insertItem(DImg::HORIZONTAL, i18nc("@item: orientation", "Horizontal"));
+    m_comboBox->insertItem(DImg::VERTICAL,   i18nc("@item: orientation", "Vertical"));
+    label->setText(i18nc("@label", "Flip:"));
     QLabel* const space    = new QLabel(vbox);
     vbox->setStretchFactor(space, 10);
 
-    m_settingsWidget = vbox;
+    m_settingsWidget       = vbox;
 
     setNeedResetExifOrientation(true);
 
@@ -126,6 +126,7 @@ bool Flip::toolOperations()
     }
 
     DImgBuiltinFilter filter;
+
     switch (flip)
     {
         case DImg::HORIZONTAL:
@@ -135,6 +136,7 @@ bool Flip::toolOperations()
             filter = DImgBuiltinFilter(DImgBuiltinFilter::FlipVertically);
             break;
     }
+
     applyFilter(&filter);
 
     return (savefromDImg());

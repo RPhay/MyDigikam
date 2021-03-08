@@ -43,7 +43,7 @@ class FlipPlugin : public DPluginBqm
 public:
 
     explicit FlipPlugin(QObject* const parent = nullptr);
-    ~FlipPlugin() override;
+    ~FlipPlugin()                        override;
 
     QString name()                 const override;
     QString iid()                  const override;
@@ -52,7 +52,7 @@ public:
     QString description()          const override;
     QList<DPluginAuthor> authors() const override;
 
-    void setup(QObject* const) override;
+    void setup(QObject* const)           override;
 };
 
 } // namespace DigikamBqmFlipPlugin
