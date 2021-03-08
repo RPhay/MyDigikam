@@ -102,19 +102,19 @@ void RemoveMetadata::registerSettingsWidget()
     QWidget* const panel     = new QWidget;
     QGridLayout* const grid  = new QGridLayout(panel);
 
-    d->removeExif            = new QCheckBox(i18n("Exif:"), panel);
+    d->removeExif            = new QCheckBox(i18nc("@title", "Exif:"), panel);
     d->exifComboBox          = new QComboBox(panel);
-    d->exifComboBox->addItem(i18n("Completely"), Private::ALL);
-    d->exifComboBox->addItem(i18n("Date"),       Private::DATE);
-    d->exifComboBox->addItem(i18n("GPS"),        Private::GPS);
-    d->exifComboBox->addItem(i18n("XPKeywords"), Private::XPKEYWORDS);
+    d->exifComboBox->addItem(i18nc("@item: exif namespace", "Completely"), Private::ALL);
+    d->exifComboBox->addItem(i18nc("@item: exif namespace", "Date"),       Private::DATE);
+    d->exifComboBox->addItem(i18nc("@item: exif namespace", "GPS"),        Private::GPS);
+    d->exifComboBox->addItem(i18nc("@item: exif namespace", "XPKeywords"), Private::XPKEYWORDS);
 
-    d->removeIptc            = new QCheckBox(i18n("Iptc:"), panel);
+    d->removeIptc            = new QCheckBox(i18nc("@title", "Iptc:"), panel);
     d->iptcComboBox          = new QComboBox(panel);
-    d->iptcComboBox->addItem(i18n("Completely"), Private::ALL);
-    d->iptcComboBox->addItem(i18n("Date"),       Private::DATE);
+    d->iptcComboBox->addItem(i18nc("@item: iptc namespace", "Completely"), Private::ALL);
+    d->iptcComboBox->addItem(i18nc("@item: iptc namespace", "Date"),       Private::DATE);
 
-    d->removeXmp             = new QCheckBox(i18n("Xmp:"), panel);
+    d->removeXmp             = new QCheckBox(i18nc("@title", "Xmp:"), panel);
     d->xmpComboBox           = new QComboBox(panel);
     d->xmpComboBox->addItem(i18nc("@item: xmp namespace", "Completely"),            Private::ALL);
     d->xmpComboBox->addItem(i18nc("@item: xmp namespace", "Date"),                  Private::DATE);
@@ -215,7 +215,7 @@ bool RemoveMetadata::toolOperations()
 {
     if (!isLastChainedTool())
     {
-        setErrorDescription(i18n("Remove Metadata: Not the last tool in the list."));
+        setErrorDescription(i18nc("@info", "Remove Metadata: Not the last tool in the list."));
         return false;
     }
 
