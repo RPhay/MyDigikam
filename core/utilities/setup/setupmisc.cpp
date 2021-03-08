@@ -296,12 +296,9 @@ SetupMisc::SetupMisc(QWidget* const parent)
 
     QStringList styleList = QStyleFactory::keys();
 
-    for (int i = 0 ; i < styleList.count() ; ++i)
+    for (int i = 0 ; i < styleList.size() ; ++i)
     {
-        if (styleList.at(i).compare(QLatin1String("windowsvista"), Qt::CaseInsensitive) != 0)
-        {
-            d->applicationStyle->addItem(styleList.at(i), styleList.at(i).toLower());
-        }
+        d->applicationStyle->addItem(styleList.at(i), styleList.at(i).toLower());
     }
 
 #ifndef HAVE_APPSTYLE_SUPPORT

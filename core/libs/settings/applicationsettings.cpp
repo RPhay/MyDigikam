@@ -246,14 +246,7 @@ void ApplicationSettings::readSettings()
 
 #ifdef HAVE_APPSTYLE_SUPPORT
 
-    QString applicationStyle             = qApp->style()->objectName();
-
-    if (applicationStyle.compare(QLatin1String("windowsvista"), Qt::CaseInsensitive) == 0)
-    {
-        applicationStyle                 = QLatin1String("Fusion");
-    }
-
-    setApplicationStyle(group.readEntry(d->configApplicationStyleEntry, applicationStyle));
+    setApplicationStyle(group.readEntry(d->configApplicationStyleEntry, qApp->style()->objectName()));
 
 #else
 
