@@ -41,23 +41,23 @@ class RestorationTool : public EditorToolThreaded
 public:
 
     explicit RestorationTool(QObject* const parent);
-    ~RestorationTool() override;
+    ~RestorationTool()          override;
 
 private Q_SLOTS:
 
-    void slotSaveAsSettings() override;
-    void slotLoadSettings() override;
-    void slotResetSettings() override;
+    void slotSaveAsSettings()   override;
+    void slotLoadSettings()     override;
+    void slotResetSettings()    override;
     void slotResetValues(int);
 
 private:
 
-    void readSettings() override;
-    void writeSettings() override;
-    void preparePreview() override;
-    void prepareFinal() override;
-    void setPreviewImage() override;
-    void setFinalImage() override;
+    void readSettings()         override;
+    void writeSettings()        override;
+    void preparePreview()       override;
+    void prepareFinal()         override;
+    void setPreviewImage()      override;
+    void setFinalImage()        override;
 
 private:
 

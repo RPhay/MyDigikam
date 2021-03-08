@@ -62,7 +62,7 @@ public:
 
     enum RestorationFilteringPreset
     {
-        ReduceUniformNoise=0,
+        ReduceUniformNoise = 0,
         ReduceJPEGArtefacts,
         ReduceTexturing,
         Custom
@@ -71,11 +71,11 @@ public:
 public:
 
     explicit Private()
-      : mainTab(nullptr),
-        restorationTypeCB(nullptr),
-        settingsWidget(nullptr),
-        previewWidget(nullptr),
-        gboxSettings(nullptr)
+      : mainTab             (nullptr),
+        restorationTypeCB   (nullptr),
+        settingsWidget      (nullptr),
+        previewWidget       (nullptr),
+        gboxSettings        (nullptr)
     {
     }
 
@@ -124,7 +124,7 @@ const QString RestorationTool::Private::configBTileEntry(QLatin1String("BTile"))
 
 RestorationTool::RestorationTool(QObject* const parent)
     : EditorToolThreaded(parent),
-      d(new Private)
+      d                 (new Private)
 {
     setObjectName(QLatin1String("restoration"));
 

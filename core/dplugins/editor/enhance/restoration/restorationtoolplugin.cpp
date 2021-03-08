@@ -49,7 +49,7 @@ RestoreToolPlugin::~RestoreToolPlugin()
 
 QString RestoreToolPlugin::name() const
 {
-    return i18n("Restoration");
+    return i18nc("@title", "Restoration");
 }
 
 QString RestoreToolPlugin::iid() const
@@ -64,12 +64,12 @@ QIcon RestoreToolPlugin::icon() const
 
 QString RestoreToolPlugin::description() const
 {
-    return i18n("A tool to restore an image using Greystoration algorithm");
+    return i18nc("@info", "A tool to restore an image using Greystoration algorithm");
 }
 
 QString RestoreToolPlugin::details() const
 {
-    return i18n("<p>This Image Editor tool can restore an image using Greystoration algorithm.</p>");
+    return i18nc("@info", "This Image Editor tool can restore an image using Greystoration algorithm.");
 }
 
 QList<DPluginAuthor> RestoreToolPlugin::authors() const
