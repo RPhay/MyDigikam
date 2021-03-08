@@ -125,16 +125,16 @@ void ThemeManager::slotChangePalette()
         theme = currentDesktopdefaultTheme();
     }
 
-    QString filename        = d->themeMap.value(theme);
-    KSharedConfigPtr config = KSharedConfig::openConfig(filename);
+    QString filePath        = d->themeMap.value(theme);
+    KSharedConfigPtr config = KSharedConfig::openConfig(filePath);
 
     // hint for the style to synchronize the color scheme with the window manager/compositor
 
-    qApp->setProperty("KDE_COLOR_SCHEME_PATH", filename);
+    qApp->setProperty("KDE_COLOR_SCHEME_PATH", filePath);
     qApp->setPalette(SchemeManager::createApplicationPalette(config));
     qApp->style()->polish(qApp);
 
-    qCDebug(DIGIKAM_WIDGETS_LOG) << theme << " :: " << filename;
+    qCDebug(DIGIKAM_WIDGETS_LOG) << theme << " :: " << filePath;
 
     emit signalThemeChanged();
 }
