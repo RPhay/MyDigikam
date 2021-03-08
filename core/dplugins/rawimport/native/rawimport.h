@@ -46,7 +46,7 @@ class RawImport : public EditorToolThreaded
 public:
 
     explicit RawImport(const QUrl& url, QObject* const parent);
-    ~RawImport() override;
+    ~RawImport()                                    override;
 
     DRawDecoding rawDecodingSettings()      const;
     DImg         postProcessedImage()       const;

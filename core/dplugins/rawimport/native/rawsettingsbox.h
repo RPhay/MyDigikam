@@ -45,9 +45,9 @@ class RawSettingsBox : public EditorToolSettings
 public:
 
     explicit RawSettingsBox(const QUrl& url, QWidget* const parent);
-    ~RawSettingsBox() override;
+    ~RawSettingsBox()                   override;
 
-    void setBusy(bool b) override;
+    void setBusy(bool b)                override;
 
     CurvesWidget* curvesWidget() const;
     DRawDecoding  settings()     const;

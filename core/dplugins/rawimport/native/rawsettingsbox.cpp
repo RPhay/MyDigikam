@@ -74,17 +74,17 @@ public:
 public:
 
     explicit Private()
-      : optionGroupName(QLatin1String("RAW Import Settings")),
-        optionHistogramChannelEntry(QLatin1String("Histogram Channel")),
-        optionHistogramScaleEntry(QLatin1String("Histogram Scale")),
-        optionBrightnessEntry(QLatin1String("Brightness")),
-        optionContrastEntry(QLatin1String("Contrast")),
-        optionGammaEntry(QLatin1String("Gamma")),
-        optionSaturationEntry(QLatin1String("Saturation")),
-        optionMainExposureEntry(QLatin1String("MainExposure")),
-        optionCurvePrefix(QLatin1String("RawCurve")),
-        optionSettingsPageEntry(QLatin1String("Settings Page")),
-        optionDecodingSettingsTabEntry(QLatin1String("Decoding Settings Tab"))
+      : optionGroupName                 (QLatin1String("RAW Import Settings")),
+        optionHistogramChannelEntry     (QLatin1String("Histogram Channel")),
+        optionHistogramScaleEntry       (QLatin1String("Histogram Scale")),
+        optionBrightnessEntry           (QLatin1String("Brightness")),
+        optionContrastEntry             (QLatin1String("Contrast")),
+        optionGammaEntry                (QLatin1String("Gamma")),
+        optionSaturationEntry           (QLatin1String("Saturation")),
+        optionMainExposureEntry         (QLatin1String("MainExposure")),
+        optionCurvePrefix               (QLatin1String("RawCurve")),
+        optionSettingsPageEntry         (QLatin1String("Settings Page")),
+        optionDecodingSettingsTabEntry  (QLatin1String("Decoding Settings Tab"))
     {
         infoBox                = nullptr;
         advExposureBox         = nullptr;
@@ -155,7 +155,7 @@ public:
 
 RawSettingsBox::RawSettingsBox(const QUrl& url, QWidget* const parent)
     : EditorToolSettings(parent),
-      d(new Private)
+      d                 (new Private)
 {
     setButtons(Default | Ok | Cancel);
     setTools(Histogram);
@@ -184,7 +184,7 @@ RawSettingsBox::RawSettingsBox(const QUrl& url, QWidget* const parent)
     d->abortBtn->setToolTip(i18n("Abort the current Raw image preview."));
 
     d->updateBtn = new QPushButton(d->rawdecodingBox);
-    d->updateBtn->setText(i18n("Update"));
+    d->updateBtn->setText(i18nc("@action: refresh RAW preview", "Update"));
     d->updateBtn->setIcon(QIcon::fromTheme(QLatin1String("view-refresh")));
     d->updateBtn->setEnabled(false);
     d->updateBtn->setToolTip(i18n("Generate a Raw image preview using current settings."));

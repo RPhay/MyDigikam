@@ -37,7 +37,7 @@ namespace DigikamRawImportNativePlugin
 {
 
 RawPostProcessing::RawPostProcessing(DImg* const orgImage, QObject* const parent, const DRawDecoding& settings)
-    : DImgThreadedFilter(parent),
+    : DImgThreadedFilter (parent),
       m_customRawSettings(settings)
 
 {

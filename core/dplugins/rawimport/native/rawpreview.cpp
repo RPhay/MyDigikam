@@ -54,8 +54,8 @@ public:
 
     explicit Private()
       : currentFitWindowZoom(0.0),
-        thread(nullptr),
-        item(nullptr)
+        thread              (nullptr),
+        item                (nullptr)
     {
     }
 
@@ -73,7 +73,7 @@ public:
 
 RawPreview::RawPreview(const QUrl& url, QWidget* const parent)
     : GraphicsDImgView(parent),
-      d(new Private)
+      d               (new Private)
 {
     d->item   = new ImagePreviewItem();
     setItem(d->item);

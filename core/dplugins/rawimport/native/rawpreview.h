@@ -51,7 +51,7 @@ class  RawPreview : public GraphicsDImgView
 public:
 
     explicit RawPreview(const QUrl& url, QWidget* const parent);
-    ~RawPreview() override;
+    ~RawPreview()                    override;
 
     DImg& demosaicedImage()    const;
     DImg  postProcessedImage() const;

@@ -43,7 +43,7 @@ class RawImportNativePlugin : public DPluginRawImport
 public:
 
     explicit RawImportNativePlugin(QObject* const parent = nullptr);
-    ~RawImportNativePlugin() override;
+    ~RawImportNativePlugin()                                   override;
 
     QString name()                                       const override;
     QString iid()                                        const override;
