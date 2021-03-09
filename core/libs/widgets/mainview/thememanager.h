@@ -59,6 +59,8 @@ public:
     void    setThemeMenuAction(QMenu* const action);
     void    registerThemeActions(DXmlGuiWindow* const win);
 
+    void    updateThemeMenu();
+
 Q_SIGNALS:
 
     void signalThemeChanged();
@@ -66,7 +68,6 @@ Q_SIGNALS:
 private Q_SLOTS:
 
     void slotChangePalette();
-    void slotSettingsChanged();
 
 private:
 

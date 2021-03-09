@@ -54,6 +54,7 @@
 #include "digikam_config.h"
 #include "dlayoutbox.h"
 #include "dfontselect.h"
+#include "thememanager.h"
 #include "applicationsettings.h"
 #include "systemsettingswidget.h"
 #include "onlineversionchecker.h"
@@ -508,7 +509,11 @@ void SetupMisc::applySettings()
 
 #ifdef HAVE_APPSTYLE_SUPPORT
 
-    settings->setApplicationStyle(d->applicationStyle->currentText());
+    if (settings->getApplicationStyle().compare(d->applicationStyle->currentText(), Qt::CaseInsensitive) != 0)
+    {
+        settings->setApplicationStyle(d->applicationStyle->currentText());
+        ThemeManager::instance()->updateThemeMenu();
+    }
 
 #endif
 

@@ -120,7 +120,9 @@ void ThemeManager::slotChangePalette()
 
     QString theme(currentThemeName());
 
-    if ((theme == defaultThemeName()) || theme.isEmpty())
+    if (theme.isEmpty()                                                                              ||
+        (theme == defaultThemeName())                                                                ||
+        (qApp->style()->objectName().compare(QLatin1String("windowsvista"), Qt::CaseInsensitive) == 0))
     {
         theme = currentDesktopdefaultTheme();
     }
@@ -170,53 +172,58 @@ void ThemeManager::populateThemeMenu()
 
     QString theme(currentThemeName());
 
+    d->themeMap.clear();
     d->themeMenuAction->clear();
     delete d->themeMenuActionGroup;
 
     d->themeMenuActionGroup = new QActionGroup(d->themeMenuAction);
 
-    connect(d->themeMenuActionGroup, SIGNAL(triggered(QAction*)),
-            this, SLOT(slotChangePalette()));
-
     QAction* const action   = new QAction(defaultThemeName(), d->themeMenuActionGroup);
     action->setCheckable(true);
+    action->setChecked(true);
     d->themeMenuAction->addAction(action);
 
-    QMap<QString, QAction*> actionMap;
-    QStringList dirs;
-
-    // digiKam colors scheme
-
-    dirs << QStandardPaths::locateAll(QStandardPaths::GenericDataLocation,
-                                      QLatin1String("digikam/colorschemes"),
-                                      QStandardPaths::LocateDirectory);
-
-    qCDebug(DIGIKAM_WIDGETS_LOG) << "Paths to color scheme : " << dirs;
-
-    foreach (const QString& dir, dirs)
+    if (qApp->style()->objectName().compare(QLatin1String("windowsvista"), Qt::CaseInsensitive) != 0)
     {
-        QDirIterator it(dir, QStringList() << QLatin1String("*.colors"));
+        QMap<QString, QAction*> actionMap;
+        QStringList dirs;
 
-        while (it.hasNext())
+        // digiKam colors scheme
+
+        dirs << QStandardPaths::locateAll(QStandardPaths::GenericDataLocation,
+                                          QLatin1String("digikam/colorschemes"),
+                                          QStandardPaths::LocateDirectory);
+
+        qCDebug(DIGIKAM_WIDGETS_LOG) << "Paths to color scheme : " << dirs;
+
+        foreach (const QString& dir, dirs)
         {
-            const QString filePath  = it.next();
-            KSharedConfigPtr config = KSharedConfig::openConfig(filePath);
-            QIcon icon              = d->createSchemePreviewIcon(config);
-            KConfigGroup group(config, "General");
-            const QString name      = group.readEntry("Name",
-                                                      it.fileInfo().baseName());
-            QAction* const ac       = new QAction(name, d->themeMenuActionGroup);
-            d->themeMap.insert(name, filePath);
-            ac->setIcon(icon);
-            ac->setCheckable(true);
-            actionMap.insert(name, ac);
+            QDirIterator it(dir, QStringList() << QLatin1String("*.colors"));
+
+            while (it.hasNext())
+            {
+                const QString filePath  = it.next();
+                KSharedConfigPtr config = KSharedConfig::openConfig(filePath);
+                QIcon icon              = d->createSchemePreviewIcon(config);
+                KConfigGroup group(config, "General");
+                const QString name      = group.readEntry("Name",
+                                                          it.fileInfo().baseName());
+                QAction* const ac       = new QAction(name, d->themeMenuActionGroup);
+                d->themeMap.insert(name, filePath);
+                ac->setIcon(icon);
+                ac->setCheckable(true);
+                actionMap.insert(name, ac);
+            }
+        }
+
+        foreach (QAction* const menuAction, actionMap.values())
+        {
+            d->themeMenuAction->addAction(menuAction);
         }
     }
 
-    foreach (QAction* const menuAction, actionMap.values())
-    {
-        d->themeMenuAction->addAction(menuAction);
-    }
+    connect(d->themeMenuActionGroup, SIGNAL(triggered(QAction*)),
+            this, SLOT(slotChangePalette()));
 
     updateCurrentDesktopDefaultThemePreview();
     setCurrentTheme(theme);
@@ -246,7 +253,7 @@ QString ThemeManager::currentDesktopdefaultTheme() const
     return group.readEntry("ColorScheme");
 }
 
-void ThemeManager::slotSettingsChanged()
+void ThemeManager::updateThemeMenu()
 {
     populateThemeMenu();
     slotChangePalette();
