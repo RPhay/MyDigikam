@@ -69,6 +69,7 @@ PresentationContainer::PresentationContainer()
       enableCache                   (false),
       kbDisableFadeInOut            (false),
       kbDisableCrossFade            (false),
+      kbEnableSameSpeed             (false),
       cacheSize                     (0),
 
       iface                         (nullptr)

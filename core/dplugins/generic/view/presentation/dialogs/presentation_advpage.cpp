@@ -71,6 +71,7 @@ void PresentationAdvPage::readSettings()
     m_useMillisecondsCheckBox->setChecked(m_sharedData->useMilliseconds);
     m_kbDisableFadeCheckBox->setChecked(m_sharedData->kbDisableFadeInOut);
     m_kbDisableCrossfadeCheckBox->setChecked(m_sharedData->kbDisableCrossFade);
+    m_enableKenBurnsSameSpeed->setChecked(m_sharedData->kbEnableSameSpeed);
     m_openGlFullScale->setChecked(m_sharedData->openGlFullScale);
     m_openGlFullScale->setEnabled(m_sharedData->opengl);
     m_useMillisecondsCheckBox->setEnabled(!m_sharedData->offAutoDelay);         // MilliSeconds Checkbox in advanced page off when AutoDelay is On
@@ -91,6 +92,7 @@ void PresentationAdvPage::saveSettings()
     m_sharedData->enableMouseWheel   = m_enableMouseWheelCheckBox->isChecked();
     m_sharedData->kbDisableFadeInOut = m_kbDisableFadeCheckBox->isChecked();
     m_sharedData->kbDisableCrossFade = m_kbDisableCrossfadeCheckBox->isChecked();
+    m_sharedData->kbEnableSameSpeed  = m_enableKenBurnsSameSpeed->isChecked();
 }
 
 void PresentationAdvPage::slotUseMillisecondsToggled()

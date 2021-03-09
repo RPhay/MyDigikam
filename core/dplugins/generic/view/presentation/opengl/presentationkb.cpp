@@ -278,6 +278,7 @@ PresentationKB::PresentationKB(PresentationContainer* const sharedData)
     d->image[0]        = new KBImage(nullptr);
     d->image[1]        = new KBImage(nullptr);
     d->step            = 1.0 / ((float)(d->delay * frameRate));
+    d->enableSameSpeed = d->sharedData->kbEnableSameSpeed;
     d->imageLoadThread = new KBImageLoader(d->sharedData, width(), height());
     d->timer           = new QTimer(this);
 
@@ -411,8 +412,14 @@ void PresentationKB::moveSlot()
             d->imageLoadThread->requestNewImage();
             d->endOfShow = !d->haveImages;
         }
-
-        d->effect->advanceTime(d->step);
+        if (d->enableSameSpeed)
+        {
+            d->effect->advanceTime(d->stepSameSpeed);
+        }
+        else
+        {
+            d->effect->advanceTime(d->step);
+        }
     }
 
     update();
@@ -461,12 +468,15 @@ void PresentationKB::startSlideShowOnce()
 {
     // when the image loader thread is ready, it will already have loaded
     // the first image
-
     if ((d->initialized == false) && d->imageLoadThread->ready())
     {
         setupNewImage(0);                      // setup the first image and
         d->imageLoadThread->requestNewImage(); // load the next one in background
         setNewKBEffect();                      // set the initial effect
+        if (d->enableSameSpeed)
+        {
+            d->stepSameSpeed = d->step / d->imageLoadThread->imageAspect();
+        }
 
         d->initialized = true;
     }
@@ -612,7 +622,7 @@ void PresentationKB::readSettings()
     if (d->forceFrameRate > 120)
     {
         d->forceFrameRate = 120;
-    }
+    } 
 }
 
 void PresentationKB::endOfShow()

@@ -124,6 +124,13 @@
         </property>
        </widget>
       </item>
+       <item>
+         <widget class="QCheckBox" name="m_enableKenBurnsSameSpeed">
+          <property name="text">
+           <string>Use &amp;same speed for visual effects</string>
+          </property>
+         </widget>
+        </item>
      </layout>
     </widget>
    </item>

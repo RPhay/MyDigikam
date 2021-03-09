@@ -110,6 +110,7 @@ public:
     bool                     enableCache;
     bool                     kbDisableFadeInOut;
     bool                     kbDisableCrossFade;
+    bool                     kbEnableSameSpeed;
     uint                     cacheSize;
 
     DInfoInterface*          iface;

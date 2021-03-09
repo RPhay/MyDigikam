@@ -74,11 +74,13 @@ public:
         numKBEffectRepeated (0),
         initialized         (false),
         step                (0.0),
+        stepSameSpeed       (0.0),
         endOfShow           (false),
         showingEnd          (false),
         delay               (0),
         disableFadeInOut    (false),
         disableCrossFade    (false),
+        enableSameSpeed     (false),
         forceFrameRate      (0),
         sharedData          (nullptr),
         playbackWidget      (nullptr)
@@ -105,6 +107,7 @@ public:
     bool                     zoomIn;
     bool                     initialized;
     float                    step;
+    float                    stepSameSpeed;
 
     bool                     endOfShow;
     bool                     showingEnd;
@@ -112,6 +115,7 @@ public:
     int                      delay;
     bool                     disableFadeInOut;
     bool                     disableCrossFade;
+    bool                     enableSameSpeed;
     unsigned                 forceFrameRate;
 
     PresentationContainer*   sharedData;
