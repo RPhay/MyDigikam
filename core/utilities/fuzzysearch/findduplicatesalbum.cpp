@@ -73,13 +73,15 @@ FindDuplicatesAlbum::FindDuplicatesAlbum(QWidget* const parent)
     setAllColumnsShowFocus(true);
     setIconSize(QSize(d->iconSize, d->iconSize));
     setSortingEnabled(true);
-    setColumnCount(3);
+    setColumnCount(4);
     setHeaderLabels(QStringList() << i18n("Ref. images")
+                                  << i18n("Ref. albums")
                                   << i18n("Items")
                                   << i18n("Avg. similarity"));
-    header()->setSectionResizeMode(0, QHeaderView::Stretch);
-    header()->setSectionResizeMode(1, QHeaderView::ResizeToContents);
+    header()->setSectionResizeMode(0, QHeaderView::Interactive);
+    header()->setSectionResizeMode(1, QHeaderView::Interactive);
     header()->setSectionResizeMode(2, QHeaderView::ResizeToContents);
+    header()->setSectionResizeMode(3, QHeaderView::ResizeToContents);
     setWhatsThis(i18n("This shows all found duplicate items."));
 
     connect(d->thumbLoadThread, SIGNAL(signalThumbnailLoaded(LoadingDescription,QPixmap)),

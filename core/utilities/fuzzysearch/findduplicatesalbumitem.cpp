@@ -33,6 +33,7 @@
 
 #include "digikam_debug.h"
 #include "album.h"
+#include "albummanager.h"
 #include "coredbsearchxml.h"
 #include "deletedialog.h"
 #include "itemviewutilities.h"
@@ -77,6 +78,12 @@ FindDuplicatesAlbumItem::FindDuplicatesAlbumItem(QTreeWidget* const parent, SAlb
         qlonglong refImage = d->album->title().toLongLong();
         d->refImgInfo      = ItemInfo(refImage);
         setText(Column::REFERENCE_IMAGE, d->refImgInfo.name());
+
+        PAlbum *const physicalAlbum = AlbumManager::instance()->findPAlbum(d->refImgInfo.albumId());
+        if (physicalAlbum)
+        {
+            setText(Column::REFERENCE_ALBUM, physicalAlbum->folderPath());
+        }
 
         calculateInfos();
     }
