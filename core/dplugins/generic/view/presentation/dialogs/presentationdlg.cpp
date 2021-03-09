@@ -80,14 +80,14 @@ PresentationDlg::PresentationDlg(QWidget* const parent,
     : DPluginDialog(parent, QLatin1String("Presentation Settings")),
       d            (new Private)
 {
-    setWindowTitle(i18n("Presentation"));
+    setWindowTitle(i18nc("@title", "Presentation"));
     setModal(false);
 
     d->sharedData = sharedData;
 
     m_buttons->addButton(QDialogButtonBox::Close);
     m_buttons->addButton(QDialogButtonBox::Ok);
-    m_buttons->button(QDialogButtonBox::Ok)->setText(i18n("Start"));
+    m_buttons->button(QDialogButtonBox::Ok)->setText(i18nc("@action: play presentation", "Start"));
     m_buttons->button(QDialogButtonBox::Ok)->setToolTip(i18nc("@info:tooltip", "Start Presentation"));
     m_buttons->button(QDialogButtonBox::Ok)->setIcon(QIcon::fromTheme(QLatin1String("media-playback-start")));
     m_buttons->button(QDialogButtonBox::Ok)->setDefault(true);
@@ -99,26 +99,26 @@ PresentationDlg::PresentationDlg(QWidget* const parent,
     d->sharedData->mainPage = new PresentationMainPage(this, d->sharedData);
     d->tab->addTab(d->sharedData->mainPage,
                    QIcon::fromTheme(QLatin1String("view-presentation")),
-                   i18n("Main Settings"));
+                   i18nc("@title: main settings for the presentation", "Main Settings"));
 
     d->sharedData->captionPage = new PresentationCaptionPage(this, d->sharedData);
     d->tab->addTab(d->sharedData->captionPage,
                    QIcon::fromTheme(QLatin1String("draw-freehand")),
-                   i18nc("captions for the slideshow", "Caption"));
+                   i18nc("@title: caption settings for the presentation", "Caption"));
 
 #ifdef HAVE_MEDIAPLAYER
 
     d->sharedData->soundtrackPage = new PresentationAudioPage(this, d->sharedData);
     d->tab->addTab(d->sharedData->soundtrackPage,
                    QIcon::fromTheme(QLatin1String("speaker")),
-                   i18n("Soundtrack"));
+                   i18nc("@title: soundtrack settings for the presentation", "Soundtrack"));
 
 #endif
 
     d->sharedData->advancedPage = new PresentationAdvPage(this, d->sharedData);
     d->tab->addTab(d->sharedData->advancedPage,
                    QIcon::fromTheme(QLatin1String("configure")),
-                   i18n("Advanced"));
+                   i18nc("@title: avanced presentation settings", "Advanced"));
 
     QVBoxLayout* const mainLayout = new QVBoxLayout(this);
     mainLayout->addWidget(d->tab);

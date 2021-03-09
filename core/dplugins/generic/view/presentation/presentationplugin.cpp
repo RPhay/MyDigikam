@@ -53,7 +53,7 @@ void PresentationPlugin::cleanUp()
 
 QString PresentationPlugin::name() const
 {
-    return i18n("Presentation");
+    return i18nc("@title", "Presentation");
 }
 
 QString PresentationPlugin::iid() const
@@ -68,14 +68,14 @@ QIcon PresentationPlugin::icon() const
 
 QString PresentationPlugin::description() const
 {
-    return i18n("A tool to render presentation");
+    return i18nc("@info", "A tool to render presentation");
 }
 
 QString PresentationPlugin::details() const
 {
-    return i18n("<p>This tool render a series of items as an advanced slide-show.</p>"
-                "<p>Plenty of transition effects are available are ones based on OpenGL and the famous Ken Burns effect.</p>"
-                "<p>You can add a sound-track in background while your presentation.</p>");
+    return i18nc("@info", "This tool render a series of items as an advanced slide-show.\n"
+                 "Plenty of transition effects are available are ones based on OpenGL and the famous Ken Burns effect.\n"
+                 "You can add a sound-track in background while your presentation.");
 }
 
 QList<DPluginAuthor> PresentationPlugin::authors() const
