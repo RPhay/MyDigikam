@@ -389,4 +389,5 @@ BUGFIXES:
 346 ==> 434092 - Disappeared for some time file menu, changes etc.
 347 ==> 434103 - Window position on startup.
 348 ==> 430865 - digiKam Full screen restart with top left corner in the middle screen.
-349 ==> 
+349 ==> 195555 - Add a new option to use a constant scrolling speed with Kenburns effect [patch].
+350 ==> 
