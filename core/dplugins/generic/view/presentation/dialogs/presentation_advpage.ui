@@ -97,7 +97,7 @@
      <property name="title">
       <string>&amp;Ken Burns effect</string>
      </property>
-     <layout class="QHBoxLayout" name="horizontalLayout_2">
+     <layout class="QVBoxLayout" name="verticalLayout_5">
       <item>
        <widget class="QCheckBox" name="m_kbDisableFadeCheckBox">
         <property name="sizePolicy">
