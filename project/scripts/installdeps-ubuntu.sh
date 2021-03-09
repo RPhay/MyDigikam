@@ -1,3 +1,14 @@
+#!/bin/bash
+
+# Script to install dependencies under Mageia Linux to compile digiKam.
+# This script must be run as sudo
+#
+# Copyright (c) 2021 by Surya K M <suryakm_is20 dot rvitm@rvei dot edu dot in>
+#
+# Redistribution and use is allowed according to the terms of the BSD license.
+# For details see the accompanying COPYING-CMAKE-SCRIPTS file.
+#
+
 #Installing cmake
 sudo snap install cmake
 
