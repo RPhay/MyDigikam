@@ -26,7 +26,6 @@
 
 // Qt includes
 
-#include <QDir>
 #include <QMutex>
 #include <QString>
 #include <QDataStream>
@@ -131,8 +130,6 @@ bool DNNFaceExtractor::loadModels()
     QString name    = QLatin1String("openface_nn4.small2.v1.t7");
     QString nnmodel = QStandardPaths::locate(QStandardPaths::AppDataLocation,
                                              QString::fromLatin1("facesengine/%1").arg(name));
-
-    nnmodel         = QDir::toNativeSeparators(nnmodel);
 
     if (!nnmodel.isEmpty())
     {
