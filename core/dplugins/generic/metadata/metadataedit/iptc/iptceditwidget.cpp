@@ -116,44 +116,44 @@ public:
 
 IPTCEditWidget::IPTCEditWidget(MetadataEditDialog* const parent)
     : DConfigDlgWdg(parent),
-      d(new Private)
+      d            (new Private)
 {
     d->dlg           = parent;
 
     d->contentPage   = new IPTCContent(this);
-    d->page_content  = addPage(d->contentPage, i18n("Content"));
+    d->page_content  = addPage(d->contentPage, i18nc("@item", "Content"));
     d->page_content->setIcon(QIcon::fromTheme(QLatin1String("draw-text")));
 
     d->originPage  = new IPTCOrigin(this);
-    d->page_origin = addPage(d->originPage, i18n("Origin"));
+    d->page_origin = addPage(d->originPage, i18nc("@item", "Origin"));
     d->page_origin->setIcon(QIcon::fromTheme(QLatin1String("globe")));
 
     d->creditsPage  = new IPTCCredits(this);
-    d->page_credits = addPage(d->creditsPage, i18n("Credits"));
+    d->page_credits = addPage(d->creditsPage, i18nc("@item", "Credits"));
     d->page_credits->setIcon(QIcon::fromTheme(QLatin1String("address-book-new")));
 
     d->subjectsPage  = new IPTCSubjects(this);
-    d->page_subjects = addPage(d->subjectsPage, i18n("Subjects"));
+    d->page_subjects = addPage(d->subjectsPage, i18nc("@item", "Subjects"));
     d->page_subjects->setIcon(QIcon::fromTheme(QLatin1String("feed-subscribe")));
 
     d->keywordsPage  = new IPTCKeywords(this);
-    d->page_keywords = addPage(d->keywordsPage, i18n("Keywords"));
+    d->page_keywords = addPage(d->keywordsPage, i18nc("@item", "Keywords"));
     d->page_keywords->setIcon(QIcon::fromTheme(QLatin1String("bookmark-new")));
 
     d->categoriesPage  = new IPTCCategories(this);
-    d->page_categories = addPage(d->categoriesPage, i18n("Categories"));
+    d->page_categories = addPage(d->categoriesPage, i18nc("@item", "Categories"));
     d->page_categories->setIcon(QIcon::fromTheme(QLatin1String("folder-pictures")));
 
     d->statusPage  = new IPTCStatus(this);
-    d->page_status = addPage(d->statusPage, i18n("Status"));
+    d->page_status = addPage(d->statusPage, i18nc("@item", "Status"));
     d->page_status->setIcon(QIcon::fromTheme(QLatin1String("view-task")));
 
     d->propertiesPage  = new IPTCProperties(this);
-    d->page_properties = addPage(d->propertiesPage, i18n("Properties"));
+    d->page_properties = addPage(d->propertiesPage, i18nc("@item", "Properties"));
     d->page_properties->setIcon(QIcon::fromTheme(QLatin1String("draw-freehand")));
 
     d->envelopePage  = new IPTCEnvelope(this);
-    d->page_envelope = addPage(d->envelopePage, i18n("Envelope"));
+    d->page_envelope = addPage(d->envelopePage, i18nc("@item", "Envelope"));
     d->page_envelope->setIcon(QIcon::fromTheme(QLatin1String("mail-mark-unread")));
 
     // ---------------------------------------------------------------
@@ -219,24 +219,24 @@ void IPTCEditWidget::saveSettings()
 
 void IPTCEditWidget::slotItemChanged()
 {
-    d->page_content->setHeader(d->dlg->currentItemTitleHeader(i18n("<qt>Content Information<br/>"
-                     "<i>Use this panel to describe the visual content of the image</i></qt>")));
-    d->page_origin->setHeader(d->dlg->currentItemTitleHeader(i18n("<qt>Origin Information<br/>"
-                    "<i>Use this panel for formal descriptive information about the image</i></qt>")));
-    d->page_credits->setHeader(d->dlg->currentItemTitleHeader(i18n("<qt>Credit Information<br/>"
-                     "<i>Use this panel to record copyright information about the image</i></qt>")));
-    d->page_subjects->setHeader(d->dlg->currentItemTitleHeader(i18n("<qt>Subject Information<br/>"
-                      "<i>Use this panel to record subject information about the image</i></qt>")));
-    d->page_keywords->setHeader(d->dlg->currentItemTitleHeader(i18n("<qt>Keyword Information<br/>"
-                      "<i>Use this panel to record keywords relevant to the image</i></qt>")));
-    d->page_categories->setHeader(d->dlg->currentItemTitleHeader(i18n("<qt>Category Information<br/>"
-                        "<i>Use this panel to record categories relevant to the image</i></qt>")));
-    d->page_status->setHeader(d->dlg->currentItemTitleHeader(i18n("<qt>Status Information<br/>"
-                    "<i>Use this panel to record workflow information</i></qt>")));
-    d->page_properties->setHeader(d->dlg->currentItemTitleHeader(i18n("<qt>Status Properties<br/>"
-                      "<i>Use this panel to record workflow properties</i></qt>")));
-    d->page_envelope->setHeader(d->dlg->currentItemTitleHeader(i18n("<qt>Envelope Information<br/>"
-                      "<i>Use this panel to record editorial details</i></qt>")));
+    d->page_content->setHeader(d->dlg->currentItemTitleHeader(i18nc("@info", "Content Information\n"
+                     "Use this panel to describe the visual content of the image")));
+    d->page_origin->setHeader(d->dlg->currentItemTitleHeader(i18nc("@info", "Origin Information\n"
+                     "Use this panel for formal descriptive information about the image")));
+    d->page_credits->setHeader(d->dlg->currentItemTitleHeader(i18nc("@info", "Credit Information\n"
+                     "Use this panel to record copyright information about the image")));
+    d->page_subjects->setHeader(d->dlg->currentItemTitleHeader(i18nc("@info", "Subject Information\n"
+                     "Use this panel to record subject information about the image")));
+    d->page_keywords->setHeader(d->dlg->currentItemTitleHeader(i18nc("@info", "Keyword Information\n"
+                     "Use this panel to record keywords relevant to the image")));
+    d->page_categories->setHeader(d->dlg->currentItemTitleHeader(i18nc("@info", "Category Information\n"
+                     "Use this panel to record categories relevant to the image")));
+    d->page_status->setHeader(d->dlg->currentItemTitleHeader(i18nc("@info", "Status Information\n"
+                     "Use this panel to record workflow information")));
+    d->page_properties->setHeader(d->dlg->currentItemTitleHeader(i18nc("@info", "Status Properties\n"
+                     "Use this panel to record workflow properties")));
+    d->page_envelope->setHeader(d->dlg->currentItemTitleHeader(i18nc("@info", "Envelope Information\n"
+                     "Use this panel to record editorial details")));
 
     QScopedPointer<DMetadata> meta(new DMetadata);
     meta->load((*d->dlg->currentItem()).toLocalFile());

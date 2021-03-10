@@ -59,56 +59,56 @@ class Q_DECL_HIDDEN XMPProperties::Private
 public:
 
     explicit Private()
-      : originalTransCheck(nullptr),
-        priorityCB(nullptr),
-        objectTypeCB(nullptr),
-        objectAttributeEdit(nullptr),
-        originalTransEdit(nullptr),
-        priorityCheck(nullptr),
+      : originalTransCheck  (nullptr),
+        priorityCB          (nullptr),
+        objectTypeCB        (nullptr),
+        objectAttributeEdit (nullptr),
+        originalTransEdit   (nullptr),
+        priorityCheck       (nullptr),
         objectAttributeCheck(nullptr),
-        sceneEdit(nullptr),
-        objectTypeEdit(nullptr),
-        languageEdit(nullptr),
-        objectAttributeCB(nullptr)
+        sceneEdit           (nullptr),
+        objectTypeEdit      (nullptr),
+        languageEdit        (nullptr),
+        objectAttributeCB   (nullptr)
     {
-        sceneCodeMap.insert( QLatin1String("010100"), i18n("Headshot") );
-        sceneCodeMap.insert( QLatin1String("010200"), i18n("Half-length") );
-        sceneCodeMap.insert( QLatin1String("010300"), i18n("Full-length") );
-        sceneCodeMap.insert( QLatin1String("010400"), i18nc("Side view of a person", "Profile") );
-        sceneCodeMap.insert( QLatin1String("010500"), i18n("Rear view") );
-        sceneCodeMap.insert( QLatin1String("010600"), i18n("Single") );
-        sceneCodeMap.insert( QLatin1String("010700"), i18n("Couple") );
-        sceneCodeMap.insert( QLatin1String("010800"), i18n("Two") );
-        sceneCodeMap.insert( QLatin1String("010900"), i18nc("group of people", "Group") );
-        sceneCodeMap.insert( QLatin1String("011000"), i18n("General view") );
-        sceneCodeMap.insert( QLatin1String("011100"), i18n("Panoramic view") );
-        sceneCodeMap.insert( QLatin1String("011200"), i18n("Aerial view") );
-        sceneCodeMap.insert( QLatin1String("011300"), i18n("Under-water") );
-        sceneCodeMap.insert( QLatin1String("011400"), i18n("Night scene") );
-        sceneCodeMap.insert( QLatin1String("011500"), i18n("Satellite") );
-        sceneCodeMap.insert( QLatin1String("011600"), i18n("Exterior view") );
-        sceneCodeMap.insert( QLatin1String("011700"), i18n("Interior view") );
-        sceneCodeMap.insert( QLatin1String("011800"), i18n("Close-up") );
-        sceneCodeMap.insert( QLatin1String("011900"), i18n("Action") );
-        sceneCodeMap.insert( QLatin1String("012000"), i18n("Performing") );
-        sceneCodeMap.insert( QLatin1String("012100"), i18n("Posing") );
-        sceneCodeMap.insert( QLatin1String("012200"), i18n("Symbolic") );
-        sceneCodeMap.insert( QLatin1String("012300"), i18n("Off-beat") );
-        sceneCodeMap.insert( QLatin1String("012400"), i18n("Movie scene") );
+        sceneCodeMap.insert( QLatin1String("010100"), i18nc("@item: scene code", "Headshot") );
+        sceneCodeMap.insert( QLatin1String("010200"), i18nc("@item: scene code", "Half-length") );
+        sceneCodeMap.insert( QLatin1String("010300"), i18nc("@item: scene code", "Full-length") );
+        sceneCodeMap.insert( QLatin1String("010400"), i18nc("@item: side view of a person", "Profile") );
+        sceneCodeMap.insert( QLatin1String("010500"), i18nc("@item: scene code", "Rear view") );
+        sceneCodeMap.insert( QLatin1String("010600"), i18nc("@item: scene code", "Single") );
+        sceneCodeMap.insert( QLatin1String("010700"), i18nc("@item: scene code", "Couple") );
+        sceneCodeMap.insert( QLatin1String("010800"), i18nc("@item: scene code", "Two") );
+        sceneCodeMap.insert( QLatin1String("010900"), i18nc("@item: group of people", "Group") );
+        sceneCodeMap.insert( QLatin1String("011000"), i18nc("@item: scene code", "General view") );
+        sceneCodeMap.insert( QLatin1String("011100"), i18nc("@item: scene code", "Panoramic view") );
+        sceneCodeMap.insert( QLatin1String("011200"), i18nc("@item: scene code", "Aerial view") );
+        sceneCodeMap.insert( QLatin1String("011300"), i18nc("@item: scene code", "Under-water") );
+        sceneCodeMap.insert( QLatin1String("011400"), i18nc("@item: scene code", "Night scene") );
+        sceneCodeMap.insert( QLatin1String("011500"), i18nc("@item: scene code", "Satellite") );
+        sceneCodeMap.insert( QLatin1String("011600"), i18nc("@item: scene code", "Exterior view") );
+        sceneCodeMap.insert( QLatin1String("011700"), i18nc("@item: scene code", "Interior view") );
+        sceneCodeMap.insert( QLatin1String("011800"), i18nc("@item: scene code", "Close-up") );
+        sceneCodeMap.insert( QLatin1String("011900"), i18nc("@item: scene code", "Action") );
+        sceneCodeMap.insert( QLatin1String("012000"), i18nc("@item: scene code", "Performing") );
+        sceneCodeMap.insert( QLatin1String("012100"), i18nc("@item: scene code", "Posing") );
+        sceneCodeMap.insert( QLatin1String("012200"), i18nc("@item: scene code", "Symbolic") );
+        sceneCodeMap.insert( QLatin1String("012300"), i18nc("@item: scene code", "Off-beat") );
+        sceneCodeMap.insert( QLatin1String("012400"), i18nc("@item: scene code", "Movie scene") );
 
-        typeCodeMap.insert( QLatin1String("Advisory"),           i18n("Advisory") );
-        typeCodeMap.insert( QLatin1String("Alert"),              i18n("Alert") );
-        typeCodeMap.insert( QLatin1String("Catalog"),            i18n("Catalog") );
-        typeCodeMap.insert( QLatin1String("Data"),               i18n("Data") );
-        typeCodeMap.insert( QLatin1String("Document"),           i18nc("type is a document", "Document") );
-        typeCodeMap.insert( QLatin1String("DTD"),                i18n("DTD") );
-        typeCodeMap.insert( QLatin1String("Maintenance"),        i18n("Maintenance") );
-        typeCodeMap.insert( QLatin1String("News"),               i18n("News") );
-        typeCodeMap.insert( QLatin1String("NewsManagementMode"), i18n("News Management Mode") );
-        typeCodeMap.insert( QLatin1String("Package"),            i18n("Package") );
-        typeCodeMap.insert( QLatin1String("Schema"),             i18n("Schema") );
-        typeCodeMap.insert( QLatin1String("Topic"),              i18n("Topic") );
-        typeCodeMap.insert( QLatin1String("TopicSet"),           i18n("Topic Set") );
+        typeCodeMap.insert( QLatin1String("Advisory"),           i18nc("@item: type code", "Advisory") );
+        typeCodeMap.insert( QLatin1String("Alert"),              i18nc("@item: type code", "Alert") );
+        typeCodeMap.insert( QLatin1String("Catalog"),            i18nc("@item: type code", "Catalog") );
+        typeCodeMap.insert( QLatin1String("Data"),               i18nc("@item: type code", "Data") );
+        typeCodeMap.insert( QLatin1String("Document"),           i18nc("@item: type is a document", "Document") );
+        typeCodeMap.insert( QLatin1String("DTD"),                i18nc("@item: type code", "DTD") );
+        typeCodeMap.insert( QLatin1String("Maintenance"),        i18nc("@item: type code", "Maintenance") );
+        typeCodeMap.insert( QLatin1String("News"),               i18nc("@item: type code", "News") );
+        typeCodeMap.insert( QLatin1String("NewsManagementMode"), i18nc("@item: type code", "News Management Mode") );
+        typeCodeMap.insert( QLatin1String("Package"),            i18nc("@item: type code", "Package") );
+        typeCodeMap.insert( QLatin1String("Schema"),             i18nc("@item: type code", "Schema") );
+        typeCodeMap.insert( QLatin1String("Topic"),              i18nc("@item: type code", "Topic") );
+        typeCodeMap.insert( QLatin1String("TopicSet"),           i18nc("@item: type code", "Topic Set") );
 
         DMetadata::CountryCodeMap map = DMetadata::countryCodeMap();
 
@@ -146,14 +146,14 @@ public:
 
 XMPProperties::XMPProperties(QWidget* const parent)
     : QWidget(parent),
-      d(new Private)
+      d      (new Private)
 {
     QGridLayout* const grid = new QGridLayout(this);
 
     // --------------------------------------------------------
 
-    d->languageEdit = new MultiValuesEdit(this, i18n("Language:"),
-                          i18n("Select here the language of content."));
+    d->languageEdit = new MultiValuesEdit(this, i18nc("@option", "Language:"),
+                          i18nc("@info", "Select here the language of content."));
 
     QStringList list;
 
@@ -167,24 +167,24 @@ XMPProperties::XMPProperties(QWidget* const parent)
 
     // --------------------------------------------------------
 
-    d->priorityCheck = new MetadataCheckBox(i18n("Priority:"), this);
+    d->priorityCheck = new MetadataCheckBox(i18nc("@option", "Priority:"), this);
     d->priorityCB    = new QComboBox(this);
-    d->priorityCB->insertItem(0, i18nc("editorial urgency of content", "0: None"));
-    d->priorityCB->insertItem(1, i18nc("editorial urgency of content", "1: High"));
+    d->priorityCB->insertItem(0, i18nc("@item: editorial urgency of content", "0: None"));
+    d->priorityCB->insertItem(1, i18nc("@item: editorial urgency of content", "1: High"));
     d->priorityCB->insertItem(2, QLatin1String("2"));
     d->priorityCB->insertItem(3, QLatin1String("3"));
     d->priorityCB->insertItem(4, QLatin1String("4"));
-    d->priorityCB->insertItem(5, i18nc("editorial urgency of content", "5: Normal"));
+    d->priorityCB->insertItem(5, i18nc("@item: editorial urgency of content", "5: Normal"));
     d->priorityCB->insertItem(6, QLatin1String("6"));
     d->priorityCB->insertItem(7, QLatin1String("7"));
-    d->priorityCB->insertItem(8, i18nc("editorial urgency of content", "8: Low"));
-    d->priorityCB->insertItem(9, i18nc("editorial urgency of content", "9: User-defined"));
-    d->priorityCB->setWhatsThis(i18n("Select here the editorial urgency of content."));
+    d->priorityCB->insertItem(8, i18nc("@item: editorial urgency of content", "8: Low"));
+    d->priorityCB->insertItem(9, i18nc("@item: editorial urgency of content", "9: User-defined"));
+    d->priorityCB->setWhatsThis(i18nc("@info", "@info: Select here the editorial urgency of content."));
 
     // --------------------------------------------------------
 
-    d->sceneEdit = new MultiValuesEdit(this, i18n("Scene:"),
-                       i18n("Select here the scene type of the content."));
+    d->sceneEdit = new MultiValuesEdit(this, i18nc("@option", "Scene:"),
+                       i18nc("@info", "Select here the scene type of the content."));
 
     QStringList list2;
 
@@ -198,8 +198,8 @@ XMPProperties::XMPProperties(QWidget* const parent)
 
     // --------------------------------------------------------
 
-    d->objectTypeEdit = new MultiValuesEdit(this, i18n("Type:"),
-                            i18n("Select here the editorial type of the content."));
+    d->objectTypeEdit = new MultiValuesEdit(this, i18nc("@option", "Type:"),
+                            i18nc("@info", "Select here the editorial type of the content."));
 
     QStringList list3;
 
@@ -213,42 +213,42 @@ XMPProperties::XMPProperties(QWidget* const parent)
 
     // --------------------------------------------------------
 
-    d->objectAttributeCheck = new MetadataCheckBox(i18n("Attribute:"), this);
+    d->objectAttributeCheck = new MetadataCheckBox(i18nc("@option", "Attribute:"), this);
     d->objectAttributeCB    = new SqueezedComboBox(this);
     d->objectAttributeEdit  = new QLineEdit(this);
     d->objectAttributeEdit->setClearButtonEnabled(true);
-    d->objectAttributeEdit->setWhatsThis(i18n("Set here the editorial attribute description of the content."));
+    d->objectAttributeEdit->setWhatsThis(i18nc("@info", "Set here the editorial attribute description of the content."));
 
-    d->objectAttributeCB->setWhatsThis(i18n("Select here the editorial attribute of the content."));
-    d->objectAttributeCB->addSqueezedItem(QLatin1String("001 - ") + i18nc("editorial content attribute", "Current"));
-    d->objectAttributeCB->addSqueezedItem(QLatin1String("002 - ") + i18nc("editorial content attribute", "Analysis"));
-    d->objectAttributeCB->addSqueezedItem(QLatin1String("003 - ") + i18nc("editorial content attribute", "Archive material"));
-    d->objectAttributeCB->addSqueezedItem(QLatin1String("004 - ") + i18nc("editorial content attribute", "Background"));
-    d->objectAttributeCB->addSqueezedItem(QLatin1String("005 - ") + i18nc("editorial content attribute", "Feature"));
-    d->objectAttributeCB->addSqueezedItem(QLatin1String("006 - ") + i18nc("editorial content attribute", "Forecast"));
-    d->objectAttributeCB->addSqueezedItem(QLatin1String("007 - ") + i18nc("editorial content attribute", "History"));
-    d->objectAttributeCB->addSqueezedItem(QLatin1String("008 - ") + i18nc("editorial content attribute", "Obituary"));
-    d->objectAttributeCB->addSqueezedItem(QLatin1String("009 - ") + i18nc("editorial content attribute", "Opinion"));
-    d->objectAttributeCB->addSqueezedItem(QLatin1String("010 - ") + i18nc("editorial content attribute", "Polls & Surveys"));
-    d->objectAttributeCB->addSqueezedItem(QLatin1String("011 - ") + i18nc("editorial content attribute", "Profile"));
-    d->objectAttributeCB->addSqueezedItem(QLatin1String("012 - ") + i18nc("editorial content attribute", "Results Listings & Table"));
-    d->objectAttributeCB->addSqueezedItem(QLatin1String("013 - ") + i18nc("editorial content attribute", "Side bar & Supporting information"));
-    d->objectAttributeCB->addSqueezedItem(QLatin1String("014 - ") + i18nc("editorial content attribute", "Summary"));
-    d->objectAttributeCB->addSqueezedItem(QLatin1String("015 - ") + i18nc("editorial content attribute", "Transcript & Verbatim"));
-    d->objectAttributeCB->addSqueezedItem(QLatin1String("016 - ") + i18nc("editorial content attribute", "Interview"));
-    d->objectAttributeCB->addSqueezedItem(QLatin1String("017 - ") + i18nc("editorial content attribute", "From the Scene"));
-    d->objectAttributeCB->addSqueezedItem(QLatin1String("018 - ") + i18nc("editorial content attribute", "Retrospective"));
-    d->objectAttributeCB->addSqueezedItem(QLatin1String("019 - ") + i18nc("editorial content attribute", "Statistics"));
-    d->objectAttributeCB->addSqueezedItem(QLatin1String("020 - ") + i18nc("editorial content attribute", "Update"));
-    d->objectAttributeCB->addSqueezedItem(QLatin1String("021 - ") + i18nc("editorial content attribute", "Wrap-up"));
-    d->objectAttributeCB->addSqueezedItem(QLatin1String("022 - ") + i18nc("editorial content attribute", "Press Release"));
+    d->objectAttributeCB->setWhatsThis(i18nc("@info", "Select here the editorial attribute of the content."));
+    d->objectAttributeCB->addSqueezedItem(QLatin1String("001 - ") + i18nc("@item: editorial content attribute", "Current"));
+    d->objectAttributeCB->addSqueezedItem(QLatin1String("002 - ") + i18nc("@item: editorial content attribute", "Analysis"));
+    d->objectAttributeCB->addSqueezedItem(QLatin1String("003 - ") + i18nc("@item: editorial content attribute", "Archive material"));
+    d->objectAttributeCB->addSqueezedItem(QLatin1String("004 - ") + i18nc("@item: editorial content attribute", "Background"));
+    d->objectAttributeCB->addSqueezedItem(QLatin1String("005 - ") + i18nc("@item: editorial content attribute", "Feature"));
+    d->objectAttributeCB->addSqueezedItem(QLatin1String("006 - ") + i18nc("@item: editorial content attribute", "Forecast"));
+    d->objectAttributeCB->addSqueezedItem(QLatin1String("007 - ") + i18nc("@item: editorial content attribute", "History"));
+    d->objectAttributeCB->addSqueezedItem(QLatin1String("008 - ") + i18nc("@item: editorial content attribute", "Obituary"));
+    d->objectAttributeCB->addSqueezedItem(QLatin1String("009 - ") + i18nc("@item: editorial content attribute", "Opinion"));
+    d->objectAttributeCB->addSqueezedItem(QLatin1String("010 - ") + i18nc("@item: editorial content attribute", "Polls & Surveys"));
+    d->objectAttributeCB->addSqueezedItem(QLatin1String("011 - ") + i18nc("@item: editorial content attribute", "Profile"));
+    d->objectAttributeCB->addSqueezedItem(QLatin1String("012 - ") + i18nc("@item: editorial content attribute", "Results Listings & Table"));
+    d->objectAttributeCB->addSqueezedItem(QLatin1String("013 - ") + i18nc("@item: editorial content attribute", "Side bar & Supporting information"));
+    d->objectAttributeCB->addSqueezedItem(QLatin1String("014 - ") + i18nc("@item: editorial content attribute", "Summary"));
+    d->objectAttributeCB->addSqueezedItem(QLatin1String("015 - ") + i18nc("@item: editorial content attribute", "Transcript & Verbatim"));
+    d->objectAttributeCB->addSqueezedItem(QLatin1String("016 - ") + i18nc("@item: editorial content attribute", "Interview"));
+    d->objectAttributeCB->addSqueezedItem(QLatin1String("017 - ") + i18nc("@item: editorial content attribute", "From the Scene"));
+    d->objectAttributeCB->addSqueezedItem(QLatin1String("018 - ") + i18nc("@item: editorial content attribute", "Retrospective"));
+    d->objectAttributeCB->addSqueezedItem(QLatin1String("019 - ") + i18nc("@item: editorial content attribute", "Statistics"));
+    d->objectAttributeCB->addSqueezedItem(QLatin1String("020 - ") + i18nc("@item: editorial content attribute", "Update"));
+    d->objectAttributeCB->addSqueezedItem(QLatin1String("021 - ") + i18nc("@item: editorial content attribute", "Wrap-up"));
+    d->objectAttributeCB->addSqueezedItem(QLatin1String("022 - ") + i18nc("@item: editorial content attribute", "Press Release"));
 
     // --------------------------------------------------------
 
-    d->originalTransCheck = new QCheckBox(i18n("Reference:"), this);
+    d->originalTransCheck = new QCheckBox(i18nc("@option", "Reference:"), this);
     d->originalTransEdit  = new QLineEdit(this);
     d->originalTransEdit->setClearButtonEnabled(true);
-    d->originalTransEdit->setWhatsThis(i18n("Set here the original content transmission reference."));
+    d->originalTransEdit->setWhatsThis(i18nc("@info", "Set here the original content transmission reference."));
 
     // --------------------------------------------------------
 

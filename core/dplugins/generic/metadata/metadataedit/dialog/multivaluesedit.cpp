@@ -53,9 +53,9 @@ public:
       : addValueButton(nullptr),
         delValueButton(nullptr),
         repValueButton(nullptr),
-        valueBox(nullptr),
-        valueCheck(nullptr),
-        dataList(nullptr)
+        valueBox      (nullptr),
+        valueCheck    (nullptr),
+        dataList      (nullptr)
     {
     }
 
@@ -74,7 +74,7 @@ public:
 
 MultiValuesEdit::MultiValuesEdit(QWidget* const parent, const QString& title, const QString& desc)
     : QWidget(parent),
-      d(new Private)
+      d      (new Private)
 {
     QGridLayout* const grid = new QGridLayout(this);
 

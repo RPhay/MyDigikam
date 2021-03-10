@@ -46,9 +46,9 @@ public:
       : addValueButton(nullptr),
         delValueButton(nullptr),
         repValueButton(nullptr),
-        valueCheck(nullptr),
-        valueEdit(nullptr),
-        valueBox(nullptr)
+        valueCheck    (nullptr),
+        valueEdit     (nullptr),
+        valueBox      (nullptr)
     {
     }
 
@@ -70,7 +70,7 @@ MultiStringsEdit::MultiStringsEdit(QWidget* const parent,
                                    const QString& desc,
                                    int size)
     : QWidget(parent),
-      d(new Private)
+      d      (new Private)
 {
     QGridLayout* const grid = new QGridLayout(this);
 

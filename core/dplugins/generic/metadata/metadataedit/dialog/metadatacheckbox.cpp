@@ -30,7 +30,7 @@ namespace DigikamGenericMetadataEditPlugin
 
 MetadataCheckBox::MetadataCheckBox(const QString& text, QWidget* const parent)
     : QCheckBox(text, parent),
-      m_valid(true)
+      m_valid  (true)
 {
     connect(this, SIGNAL(toggled(bool)),
             this, SLOT(slotValid()));

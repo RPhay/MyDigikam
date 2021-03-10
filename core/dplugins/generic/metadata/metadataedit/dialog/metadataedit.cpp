@@ -63,13 +63,13 @@ class Q_DECL_HIDDEN MetadataEditDialog::Private
 public:
 
     explicit Private()
-      : isReadOnly(false),
-        tabWidget(nullptr),
-        tabExif(nullptr),
-        tabIptc(nullptr),
-        tabXmp(nullptr),
-        catcher(nullptr),
-        iface(nullptr)
+      : isReadOnly  (false),
+        tabWidget   (nullptr),
+        tabExif     (nullptr),
+        tabIptc     (nullptr),
+        tabXmp      (nullptr),
+        catcher     (nullptr),
+        iface   (nullptr)
     {
     }
 
@@ -93,11 +93,11 @@ public:
 
 MetadataEditDialog::MetadataEditDialog(QWidget* const parent, DInfoInterface* const iface)
     : DPluginDialog(parent, QLatin1String("Metadata Edit Dialog")),
-      d(new Private)
+      d            (new Private)
 {
     d->iface = iface;
 
-    setWindowTitle(i18n("Metadata Editor"));
+    setWindowTitle(i18nc("@title", "Metadata Editor"));
     setModal(true);
 
     ThumbnailLoadThread* const thread = new ThumbnailLoadThread;
@@ -118,9 +118,9 @@ MetadataEditDialog::MetadataEditDialog(QWidget* const parent, DInfoInterface* co
     m_buttons = new QDialogButtonBox(btns, this);
     m_buttons->button(QDialogButtonBox::Ok)->setDefault(true);
     m_buttons->button(QDialogButtonBox::Apply)->setEnabled(false);
-    m_buttons->button(QDialogButtonBox::No)->setText(i18nc("@action:button",  "Next"));
+    m_buttons->button(QDialogButtonBox::No)->setText(i18nc("@action: button",  "Next"));
     m_buttons->button(QDialogButtonBox::No)->setIcon(QIcon::fromTheme(QLatin1String("go-next")));
-    m_buttons->button(QDialogButtonBox::Yes)->setText(i18nc("@action:button", "Previous"));
+    m_buttons->button(QDialogButtonBox::Yes)->setText(i18nc("@action: button", "Previous"));
     m_buttons->button(QDialogButtonBox::Yes)->setIcon(QIcon::fromTheme(QLatin1String("go-previous")));
 
     if (d->urls.count() <= 1)
@@ -133,9 +133,9 @@ MetadataEditDialog::MetadataEditDialog(QWidget* const parent, DInfoInterface* co
     d->tabExif   = new EXIFEditWidget(this);
     d->tabIptc   = new IPTCEditWidget(this);
     d->tabXmp    = new XMPEditWidget(this);
-    d->tabWidget->addTab(d->tabExif, i18n("Edit EXIF"));
-    d->tabWidget->addTab(d->tabIptc, i18n("Edit IPTC"));
-    d->tabWidget->addTab(d->tabXmp,  i18n("Edit XMP"));
+    d->tabWidget->addTab(d->tabExif, i18nc("@item", "Edit EXIF"));
+    d->tabWidget->addTab(d->tabIptc, i18nc("@item", "Edit IPTC"));
+    d->tabWidget->addTab(d->tabXmp,  i18nc("@item", "Edit XMP"));
 
     QVBoxLayout* const vbx = new QVBoxLayout(this);
     vbx->addWidget(d->tabWidget);
@@ -316,7 +316,7 @@ void MetadataEditDialog::slotItemChanged()
     d->tabIptc->slotItemChanged();
     d->tabXmp->slotItemChanged();
 
-    setWindowTitle(i18n("%1 (%2/%3) - Edit Metadata",
+    setWindowTitle(i18nc("@title", "%1 (%2/%3) - Edit Metadata",
         (*d->currItem).fileName(),
         d->urls.indexOf(*(d->currItem))+1,
         d->urls.count()));

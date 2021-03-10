@@ -123,7 +123,7 @@ public:
 
 IPTCProperties::IPTCProperties(QWidget* const parent)
     : QWidget(parent),
-      d(new Private)
+      d      (new Private)
 {
     QGridLayout* const grid = new QGridLayout(this);
     QString dateFormat      = QLocale().dateFormat(QLocale::ShortFormat);
@@ -220,10 +220,10 @@ IPTCProperties::IPTCProperties(QWidget* const parent)
 
     d->objectCycleCheck = new MetadataCheckBox(i18n("Cycle:"), this);
     d->objectCycleCB    = new QComboBox(this);
-    d->objectCycleCB->insertItem(0, i18n("Morning"));
-    d->objectCycleCB->insertItem(1, i18n("Afternoon"));
-    d->objectCycleCB->insertItem(2, i18n("Evening"));
-    d->objectCycleCB->setWhatsThis(i18n("Select here the editorial cycle of content."));
+    d->objectCycleCB->insertItem(0, i18nc("@item: object cycle", "Morning"));
+    d->objectCycleCB->insertItem(1, i18nc("@item: object cycle", "Afternoon"));
+    d->objectCycleCB->insertItem(2, i18nc("@item: object cycle", "Evening"));
+    d->objectCycleCB->setWhatsThis(i18nc("@info", "Select here the editorial cycle of content."));
 
     // --------------------------------------------------------
 

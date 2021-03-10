@@ -43,7 +43,7 @@ class MetadataEditPlugin : public DPluginGeneric
 public:
 
     explicit MetadataEditPlugin(QObject* const parent = nullptr);
-    ~MetadataEditPlugin() override;
+    ~MetadataEditPlugin()                override;
 
     QString name()                 const override;
     QString iid()                  const override;

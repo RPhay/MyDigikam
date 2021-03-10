@@ -56,10 +56,10 @@ public:
       : addValueButton(nullptr),
         delValueButton(nullptr),
         repValueButton(nullptr),
-        valueEdit(nullptr),
-        valueBox(nullptr),
-        valueCheck(nullptr),
-        dataList(nullptr)
+        valueEdit     (nullptr),
+        valueBox      (nullptr),
+        valueCheck    (nullptr),
+        dataList      (nullptr)
     {
     }
 
@@ -80,7 +80,7 @@ public:
 
 ObjectAttributesEdit::ObjectAttributesEdit(QWidget* const parent, int size)
     : QWidget(parent),
-      d(new Private)
+      d      (new Private)
 {
     QGridLayout* const grid = new QGridLayout(this);
 

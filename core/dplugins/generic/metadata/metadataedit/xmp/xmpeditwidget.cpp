@@ -116,12 +116,12 @@ public:
 
 XMPEditWidget::XMPEditWidget(MetadataEditDialog* const parent)
     : DConfigDlgWdg(parent),
-      d(new Private)
+      d            (new Private)
 {
     d->dlg           = parent;
 
     d->contentPage   = new XMPContent(this);
-    d->page_content  = addPage(d->contentPage, i18n("Content"));
+    d->page_content  = addPage(d->contentPage, i18nc("@item: xmp content", "Content"));
     d->page_content->setIcon(QIcon::fromTheme(QLatin1String("draw-text")));
 
     d->originPage  = new XMPOrigin(this);

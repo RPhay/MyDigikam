@@ -48,7 +48,7 @@ MetadataEditPlugin::~MetadataEditPlugin()
 
 QString MetadataEditPlugin::name() const
 {
-    return i18n("Metadata Edit");
+    return i18nc("@title", "Metadata Edit");
 }
 
 QString MetadataEditPlugin::iid() const
@@ -63,14 +63,14 @@ QIcon MetadataEditPlugin::icon() const
 
 QString MetadataEditPlugin::description() const
 {
-    return i18n("A tool to edit items metadata");
+    return i18nc("@info", "A tool to edit items metadata");
 }
 
 QString MetadataEditPlugin::details() const
 {
-    return i18n("<p>This tool permit to changes plenty of metadata from items.</p>"
-                "<p>Most common Exif, Iptc, and Xmp tags used in photography are listed for editing with standardized values.</p>"
-                "<p>For photo agencies, pre-configured subjects can be used to describe the items contents based on Iptc reference codes.</p>");
+    return i18nc("@info", "This tool permit to changes plenty of metadata from items.\n\n"
+                 "Most common Exif, Iptc, and Xmp tags used in photography are listed for editing with standardized values.\n\n"
+                 "For photo agencies, pre-configured subjects can be used to describe the items contents based on Iptc reference codes.");
 }
 
 QList<DPluginAuthor> MetadataEditPlugin::authors() const

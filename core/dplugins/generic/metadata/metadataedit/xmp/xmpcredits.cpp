@@ -107,7 +107,7 @@ public:
 
 XMPCredits::XMPCredits(QWidget* const parent)
     : QWidget(parent),
-      d(new Private)
+      d      (new Private)
 {
     const int spacing = QApplication::style()->pixelMetric(QStyle::PM_DefaultLayoutSpacing);
 
@@ -115,7 +115,7 @@ XMPCredits::XMPCredits(QWidget* const parent)
 
     // --------------------------------------------------------
 
-    d->creatorEdit         = new MultiStringsEdit(this, i18n("Creator:"),
+    d->creatorEdit         = new MultiStringsEdit(this, i18nc("@option: name of content creator", "Creator:"),
                                                   i18n("Set here the name of content creator."));
     d->syncEXIFArtistCheck = new QCheckBox(i18n("Sync Exif Artist"), this);
 

@@ -35,7 +35,7 @@ namespace DigikamGenericMetadataEditPlugin
 
 LimitedTextEdit::LimitedTextEdit(QWidget* const parent)
     : QPlainTextEdit(parent),
-      m_maxLength(0)
+      m_maxLength   (0)
 {
 }
 

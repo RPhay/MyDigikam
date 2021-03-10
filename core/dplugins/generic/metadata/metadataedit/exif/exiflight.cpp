@@ -58,7 +58,7 @@ public:
     {
     }
     FlashMode(int id, const QString& desc)
-      : m_id(id),
+      : m_id  (id),
         m_desc(desc)
     {
     }
@@ -141,7 +141,7 @@ public:
 
 EXIFLight::EXIFLight(QWidget* const parent)
     : QWidget(parent),
-      d(new Private)
+      d      (new Private)
 {
     QGridLayout* const grid = new QGridLayout(this);
 
@@ -202,9 +202,9 @@ EXIFLight::EXIFLight(QWidget* const parent)
 
     d->whiteBalanceCheck = new MetadataCheckBox(i18n("White balance:"), this);
     d->whiteBalanceCB    = new QComboBox(this);
-    d->whiteBalanceCB->insertItem(0, i18n("Auto"));
-    d->whiteBalanceCB->insertItem(1, i18n("Manual"));
-    d->whiteBalanceCB->setWhatsThis(i18n("Select here the white balance mode set by the camera when "
+    d->whiteBalanceCB->insertItem(0, i18nc("@item: white balance", "Auto"));
+    d->whiteBalanceCB->insertItem(1, i18nc("@item: white balance", "Manual"));
+    d->whiteBalanceCB->setWhatsThis(i18nc("@info", "Select here the white balance mode set by the camera when "
                                          "the picture was taken."));
 
     // --------------------------------------------------------

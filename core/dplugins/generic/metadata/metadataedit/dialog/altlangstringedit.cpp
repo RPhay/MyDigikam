@@ -44,7 +44,7 @@ public:
 
     explicit Private()
       : valueCheck(nullptr),
-        editor(nullptr)
+        editor    (nullptr)
 
     {
     }
@@ -56,7 +56,7 @@ public:
 
 AltLangStringsEdit::AltLangStringsEdit(QWidget* const parent, const QString& title, const QString& desc)
     : QWidget(parent),
-      d(new Private)
+      d      (new Private)
 {
     d->valueCheck = new MetadataCheckBox(title, this);
     d->editor     = new AltLangStrEdit(this);

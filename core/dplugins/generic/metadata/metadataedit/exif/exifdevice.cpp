@@ -120,7 +120,7 @@ public:
 
 EXIFDevice::EXIFDevice(QWidget* const parent)
     : QWidget(parent),
-      d(new Private)
+      d      (new Private)
 {
     QGridLayout* const grid = new QGridLayout(this);
 
@@ -299,24 +299,24 @@ EXIFDevice::EXIFDevice(QWidget* const parent)
 
     // --------------------------------------------------------
 
-    d->sceneTypeCheck = new MetadataCheckBox(i18n("Scene capture type:"), this);
+    d->sceneTypeCheck = new MetadataCheckBox(i18nc("@option", "Scene capture type:"), this);
     d->sceneTypeCB    = new QComboBox(this);
-    d->sceneTypeCB->insertItem(0, i18n("Standard"));
-    d->sceneTypeCB->insertItem(1, i18n("Landscape"));
-    d->sceneTypeCB->insertItem(2, i18n("Portrait"));
-    d->sceneTypeCB->insertItem(3, i18n("Night scene"));
-    d->sceneTypeCB->setWhatsThis(i18n("Select here the type of scene used by the camera "
-                                      "to take the picture."));
+    d->sceneTypeCB->insertItem(0, i18nc("@item: scene type", "Standard"));
+    d->sceneTypeCB->insertItem(1, i18nc("@item: scene type", "Landscape"));
+    d->sceneTypeCB->insertItem(2, i18nc("@item: scene type", "Portrait"));
+    d->sceneTypeCB->insertItem(3, i18nc("@item: scene type", "Night scene"));
+    d->sceneTypeCB->setWhatsThis(i18nc("@info", "Select here the type of scene used by the camera "
+                                       "to take the picture."));
 
     // --------------------------------------------------------
 
-    d->subjectDistanceTypeCheck = new MetadataCheckBox(i18n("Subject distance type:"), this);
+    d->subjectDistanceTypeCheck = new MetadataCheckBox(i18nc("@option", "Subject distance type:"), this);
     d->subjectDistanceTypeCB    = new QComboBox(this);
-    d->subjectDistanceTypeCB->insertItem(1, i18n("Unknown"));
-    d->subjectDistanceTypeCB->insertItem(2, i18n("Macro"));
-    d->subjectDistanceTypeCB->insertItem(3, i18n("Close view"));
-    d->subjectDistanceTypeCB->insertItem(4, i18n("Distant view"));
-    d->subjectDistanceTypeCB->setWhatsThis(i18n("Select here the type of distance between "
+    d->subjectDistanceTypeCB->insertItem(1, i18nc("@item: subject distance", "Unknown"));
+    d->subjectDistanceTypeCB->insertItem(2, i18nc("@item: subject distance", "Macro"));
+    d->subjectDistanceTypeCB->insertItem(3, i18nc("@item: subject distance", "Close view"));
+    d->subjectDistanceTypeCB->insertItem(4, i18nc("@item: subject distance", "Distant view"));
+    d->subjectDistanceTypeCB->setWhatsThis(i18nc("@info", "Select here the type of distance between "
                                                 "the subject and the image input equipment."));
 
     // --------------------------------------------------------
