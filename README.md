@@ -2,10 +2,10 @@
 
 | CI Job        | Status                                                                                                                                                                                                  |
 |---------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| Linux Build   | [![Linux Build Status](https://build.kde.org/job/Extragear/job/digikam/job/kf5-qt5%20SUSEQt5.14/badge/icon)](https://build.kde.org/job/Extragear/job/digikam/job/kf5-qt5%20SUSEQt5.14/)                 |
+| Linux Build   | [![Linux Build Status](https://build.kde.org/job/Extragear/job/digikam/job/kf5-qt5%20SUSEQt5.15/badge/icon)](https://build.kde.org/job/Extragear/job/digikam/job/kf5-qt5%20SUSEQt5.15/)                 |
 | FreeBSD Build | [![FreeBSD Build Status](https://build.kde.org/job/Extragear/job/digikam/job/kf5-qt5%20FreeBSDQt5.15/badge/icon)](https://build.kde.org/job/Extragear/job/digikam/job/kf5-qt5%20FreeBSDQt5.15/)         |
-| Windows Build | [![Windows build Status](https://build.kde.org/job/Extragear/job/digikam/job/kf5-qt5%20WindowsMSVCQt5.14/badge/icon)](https://build.kde.org/job/Extragear/job/digikam/job/kf5-qt5%20WindowsMSVCQt5.14/) |
-| Flatpak Build | [![FlatPak Build Status](https://binary-factory.kde.org/view/Flatpak/job/Digikam_flatpak/badge/icon)](https://binary-factory.kde.org/view/Flatpak/job/Digikam_flatpak/)                                 |
+| Windows Build | [![Windows build Status](https://build.kde.org/job/Extragear/job/digikam/job/kf5-qt5%20WindowsMSVCQt5.15/badge/icon)](https://build.kde.org/job/Extragear/job/digikam/job/kf5-qt5%20WindowsMSVCQt5.15/) |
+| Flatpak Build | [![FlatPak Build Status](https://binary-factory.kde.org/view/Flatpak/job/Digikam_x86_64_flatpak/badge/icon)](https://binary-factory.kde.org/view/Flatpak/job/Digikam_x86_64_flatpak/)                                 |
 | Coverity Scan | [![Coverity Scan Status](https://scan.coverity.com/projects/285/badge.svg)](https://scan.coverity.com/projects/digikam)                                                                                 |
 
 If you are reading this on Github, be aware that this is just a mirror. Our real code repository [is located here](https://invent.kde.org/graphics/digikam)
