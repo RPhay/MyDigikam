@@ -63,7 +63,7 @@ void KMLGeoDataParser::CreateTrackLine(QDomElement& parent, QDomDocument& root, 
     // add the linetrack
 
     QDomElement kmlPlacemark  = addKmlElement(parent, QLatin1String("Placemark"));
-    addKmlTextElement(kmlPlacemark, QLatin1String("name"), i18n("Track"));
+    addKmlTextElement(kmlPlacemark, QLatin1String("name"), i18nc("@item: linetrack over the map", "Track"));
     QDomElement kmlLineString = addKmlElement(kmlPlacemark, QLatin1String("LineString"));
     addKmlTextElement(kmlLineString, QLatin1String("coordinates"), lineString());
     addKmlTextElement(kmlPlacemark, QLatin1String("styleUrl"), QLatin1String("#linetrack"));
@@ -89,7 +89,7 @@ void KMLGeoDataParser::CreateTrackPoints(QDomElement& parent, QDomDocument& root
     // create the points
 
     QDomElement kmlPointsFolder = addKmlElement(parent, QLatin1String("Folder"));
-    addKmlTextElement(kmlPointsFolder, QLatin1String("name"),       i18n("Points"));
+    addKmlTextElement(kmlPointsFolder, QLatin1String("name"),       i18nc("@item: points over the map", "Points"));
     addKmlTextElement(kmlPointsFolder, QLatin1String("visibility"), QLatin1String("0"));
     addKmlTextElement(kmlPointsFolder, QLatin1String("open"),       QLatin1String("0"));
     int i                       = 0;
@@ -101,7 +101,9 @@ void KMLGeoDataParser::CreateTrackPoints(QDomElement& parent, QDomDocument& root
     for (GeoDataMap::ConstIterator it = m_GeoDataMap.constBegin() ; it != end ; ++it, ++i)
     {
         QDomElement kmlPointPlacemark = addKmlElement(kmlPointsFolder, QLatin1String("Placemark"));
-        addKmlTextElement(kmlPointPlacemark, QLatin1String("name"), QString::fromUtf8("%1 %2 ").arg(i18n("Point")).arg(i));
+        addKmlTextElement(kmlPointPlacemark, QLatin1String("name"), QString::fromUtf8("%1 %2 ")
+                                                                    .arg(i18nc("@item: point coordinates", "Point"))
+                                                                    .arg(i));
         addKmlTextElement(kmlPointPlacemark, QLatin1String("styleUrl"), QLatin1String("#track"));
         QDomElement kmlTimeStamp      = addKmlElement(kmlPointPlacemark, QLatin1String("TimeStamp"));
 

@@ -73,8 +73,8 @@ QString PresentationPlugin::description() const
 
 QString PresentationPlugin::details() const
 {
-    return i18nc("@info", "This tool render a series of items as an advanced slide-show.\n"
-                 "Plenty of transition effects are available are ones based on OpenGL and the famous Ken Burns effect.\n"
+    return i18nc("@info", "This tool render a series of items as an advanced slide-show.\n\n"
+                 "Plenty of transition effects are available are ones based on OpenGL and the famous Ken Burns effect.\n\n"
                  "You can add a sound-track in background while your presentation.");
 }
 

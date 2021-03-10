@@ -61,25 +61,25 @@ class Q_DECL_HIDDEN GPSItemDetails::Private
 public:
 
     explicit Private()
-        : imageModel(nullptr),
-          previewManager(nullptr),
-          cbCoordinates(nullptr),
-          leLatitude(nullptr),
-          leLongitude(nullptr),
-          cbAltitude(nullptr),
-          leAltitude(nullptr),
-          cbSpeed(nullptr),
-          leSpeed(nullptr),
-          cbNSatellites(nullptr),
-          leNSatellites(nullptr),
-          cbFixType(nullptr),
-          comboFixType(nullptr),
-          cbDop(nullptr),
-          leDop(nullptr),
-          pbApply(nullptr),
-          externalEnabledState(true),
-          activeState(false),
-          haveDelayedState(false)
+        : imageModel            (nullptr),
+          previewManager        (nullptr),
+          cbCoordinates         (nullptr),
+          leLatitude            (nullptr),
+          leLongitude           (nullptr),
+          cbAltitude            (nullptr),
+          leAltitude            (nullptr),
+          cbSpeed               (nullptr),
+          leSpeed               (nullptr),
+          cbNSatellites         (nullptr),
+          leNSatellites         (nullptr),
+          cbFixType             (nullptr),
+          comboFixType          (nullptr),
+          cbDop                 (nullptr),
+          leDop                 (nullptr),
+          pbApply               (nullptr),
+          externalEnabledState  (true),
+          activeState           (false),
+          haveDelayedState      (false)
     {
     }
 
@@ -111,7 +111,7 @@ public:
 
 GPSItemDetails::GPSItemDetails(QWidget* const parent, GPSItemModel* const imageModel)
     : QWidget(parent),
-      d(new Private())
+      d      (new Private())
 {
     d->imageModel = imageModel;
 
