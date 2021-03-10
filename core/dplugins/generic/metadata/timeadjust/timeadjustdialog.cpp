@@ -79,11 +79,11 @@ public:
 
     explicit Private()
       : settingsView(nullptr),
-        updateTimer(nullptr),
-        progressBar(nullptr),
-        listView(nullptr),
-        thread(nullptr),
-        iface(nullptr)
+        updateTimer (nullptr),
+        progressBar (nullptr),
+        listView    (nullptr),
+        thread      (nullptr),
+        iface       (nullptr)
     {
     }
 
@@ -105,9 +105,9 @@ public:
 
 TimeAdjustDialog::TimeAdjustDialog(QWidget* const parent, DInfoInterface* const iface)
     : DPluginDialog(parent, QLatin1String("Time Adjust Dialog")),
-      d(new Private)
+      d            (new Private)
 {
-    setWindowTitle(i18n("Adjust Time & Date"));
+    setWindowTitle(i18nc("@title", "Adjust Time & Date"));
     setMinimumSize(900, 500);
     setModal(true);
 
@@ -441,7 +441,7 @@ void TimeAdjustDialog::slotApplyClicked()
     TimeAdjustContainer prm = d->settingsView->settings();
 
     d->progressBar->show();
-    d->progressBar->progressScheduled(i18n("Adjust Time and Date"), true, true);
+    d->progressBar->progressScheduled(i18nc("@info", "Adjust Time and Date"), true, true);
     d->progressBar->progressThumbnailChanged(QIcon::fromTheme(QLatin1String("appointment-new")).pixmap(22, 22));
     d->progressBar->setMaximum(d->itemsUsedMap.keys().size());
     d->thread->setSettings(prm);
@@ -472,15 +472,15 @@ void TimeAdjustDialog::setBusy(bool busy)
 {
     if (busy)
     {
-        m_buttons->button(QDialogButtonBox::Close)->setText(i18n("Cancel"));
+        m_buttons->button(QDialogButtonBox::Close)->setText(i18nc("@action", "Cancel"));
         m_buttons->button(QDialogButtonBox::Close)->setIcon(QIcon::fromTheme(QLatin1String("dialog-cancel")));
-        m_buttons->button(QDialogButtonBox::Close)->setToolTip(i18n("Cancel current operation"));
+        m_buttons->button(QDialogButtonBox::Close)->setToolTip(i18nc("@info", "Cancel current operation"));
     }
     else
     {
-        m_buttons->button(QDialogButtonBox::Close)->setText(i18n("Close"));
+        m_buttons->button(QDialogButtonBox::Close)->setText(i18nc("@action", "Close"));
         m_buttons->button(QDialogButtonBox::Close)->setIcon(QIcon::fromTheme(QLatin1String("window-close")));
-        m_buttons->button(QDialogButtonBox::Close)->setToolTip(i18n("Close window"));
+        m_buttons->button(QDialogButtonBox::Close)->setToolTip(i18nc("@info", "Close window"));
     }
 
     m_buttons->button(QDialogButtonBox::Ok)->setEnabled(!busy);

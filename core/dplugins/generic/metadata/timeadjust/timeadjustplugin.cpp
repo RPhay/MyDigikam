@@ -48,7 +48,7 @@ TimeAdjustPlugin::~TimeAdjustPlugin()
 
 QString TimeAdjustPlugin::name() const
 {
-    return i18n("Time Adjust");
+    return i18nc("@title", "Time Adjust");
 }
 
 QString TimeAdjustPlugin::iid() const
@@ -63,14 +63,14 @@ QIcon TimeAdjustPlugin::icon() const
 
 QString TimeAdjustPlugin::description() const
 {
-    return i18n("A tool to adjust items date-time");
+    return i18nc("@info", "A tool to adjust items date-time");
 }
 
 QString TimeAdjustPlugin::details() const
 {
-    return i18n("<p>This tool permit to adjust date time-stamp of items in batch.</p>"
-                "<p>Many source of original time-stamp can be selected from original items, or a from a common file.</p>"
-                "<p>Many metadata time-stamp can be adjusted or left untouched. The adjustment can be an offset of time or a specific date.</p>");
+    return i18nc("@info", "This tool permit to adjust date time-stamp of items in batch.\n\n"
+                 "Many source of original time-stamp can be selected from original items, or a from a common file.\n\n"
+                 "Many metadata time-stamp can be adjusted or left untouched. The adjustment can be an offset of time or a specific date.");
 }
 
 QList<DPluginAuthor> TimeAdjustPlugin::authors() const
