@@ -390,4 +390,6 @@ BUGFIXES:
 347 ==> 434103 - Window position on startup.
 348 ==> 430865 - digiKam Full screen restart with top left corner in the middle screen.
 349 ==> 195555 - Add a new option to use a constant scrolling speed with Kenburns effect [patch].
-350 ==> 
+350 ==> 338034 - SETUP : Individual databases for each "collection".
+351 ==> 
+
