@@ -67,7 +67,7 @@ ExpoBlendingWizard::ExpoBlendingWizard(ExpoBlendingManager* const mngr, QWidget*
       d         (new Private)
 {
     setModal(false);
-    setWindowTitle(i18nc("@title:window", "Stacked Images Tool"));
+    setWindowTitle(i18nc("@title: window", "Stacked Images Tool"));
 
     d->mngr              = mngr;
     d->introPage         = new ExpoBlendingIntroPage(d->mngr, this);

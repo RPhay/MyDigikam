@@ -133,7 +133,7 @@ ExpoBlendingDlg::ExpoBlendingDlg(ExpoBlendingManager* const mngr, QWidget* const
     d->mngr = mngr;
 
     setModal(false);
-    setWindowTitle(i18n("Exposure Blending"));
+    setWindowTitle(i18nc("@title", "Exposure Blending"));
 
     const int spacing                = QApplication::style()->pixelMetric(QStyle::PM_DefaultLayoutSpacing);
 
@@ -141,19 +141,19 @@ ExpoBlendingDlg::ExpoBlendingDlg(ExpoBlendingManager* const mngr, QWidget* const
     d->buttonBox->button(QDialogButtonBox::Close)->setDefault(true);
 
     d->startButton                   = new QPushButton(this);
-    d->startButton->setText(i18nc("@action:button", "&Save"));
+    d->startButton->setText(i18nc("@action: button", "&Save"));
     d->startButton->setIcon(QIcon::fromTheme(QLatin1String("document-save")));
-    d->startButton->setToolTip(i18nc("@info:tooltip", "Process and save selected items."));
+    d->startButton->setToolTip(i18nc("@info: tooltip", "Process and save selected items."));
     d->buttonBox->addButton(d->startButton, QDialogButtonBox::ActionRole);
 
     d->previewButton                 = new QPushButton(this);
-    d->previewButton->setText(i18nc("@action:button", "&Preview"));
+    d->previewButton->setText(i18nc("@action: button", "&Preview"));
     d->previewButton->setIcon(QIcon::fromTheme(QLatin1String("system-run")));
-    d->previewButton->setToolTip(i18nc("@info:tooltip", "Process a preview of bracketed images stack with current settings."));
+    d->previewButton->setToolTip(i18nc("@info: tooltip", "Process a preview of bracketed images stack with current settings."));
     d->buttonBox->addButton(d->previewButton, QDialogButtonBox::ActionRole);
 
     QPushButton* const defaultButton = new QPushButton(this);
-    defaultButton->setText(i18nc("@action:button", "&Default"));
+    defaultButton->setText(i18nc("@action: button", "&Default"));
     defaultButton->setIcon(QIcon::fromTheme(QLatin1String("document-revert")));
     defaultButton->setToolTip(i18nc("@info:tooltip", "Revert current settings to default values."));
     d->buttonBox->addButton(defaultButton, QDialogButtonBox::ResetRole);
@@ -161,7 +161,7 @@ ExpoBlendingDlg::ExpoBlendingDlg(ExpoBlendingManager* const mngr, QWidget* const
     // ---------------------------------------------------------------
 
     d->previewWidget                 = new DPreviewManager(this);
-    d->previewWidget->setButtonText(i18nc("@action:button", "Details..."));
+    d->previewWidget->setButtonText(i18nc("@action: button", "Details..."));
 
     // ---------------------------------------------------------------
 
@@ -179,7 +179,7 @@ ExpoBlendingDlg::ExpoBlendingDlg(ExpoBlendingManager* const mngr, QWidget* const
     // ---------------------------------------------------------------
 
     QGroupBox* const enfuse          = new QGroupBox(rightPanel);
-    enfuse->setTitle(i18n("Enfuse Settings"));
+    enfuse->setTitle(i18nc("@title", "Enfuse Settings"));
     QVBoxLayout* const elay          = new QVBoxLayout(enfuse);
     enfuse->setLayout(elay);
 
@@ -191,7 +191,7 @@ ExpoBlendingDlg::ExpoBlendingDlg(ExpoBlendingManager* const mngr, QWidget* const
     // ---------------------------------------------------------------
 
     QGroupBox* const save            = new QGroupBox(rightPanel);
-    save->setTitle(i18n("Save Result"));
+    save->setTitle(i18nc("@title", "Save Result"));
     QVBoxLayout* const slay = new QVBoxLayout(save);
     save->setLayout(slay);
 
@@ -201,7 +201,7 @@ ExpoBlendingDlg::ExpoBlendingDlg(ExpoBlendingManager* const mngr, QWidget* const
     QHBoxLayout* const hbox          = new QHBoxLayout(save);
 
     QLabel* const customLabel        = new QLabel(save);
-    customLabel->setText(i18nc("@label:textbox", "File Name Template: "));
+    customLabel->setText(i18nc("@label: textbox", "File Name Template: "));
     hbox->addWidget(customLabel);
 
     d->templateFileName              = new QLineEdit(save);
@@ -322,7 +322,7 @@ void ExpoBlendingDlg::slotPreviewButtonClicked()
     DMessageBox::showInformationList(QMessageBox::Information,
                                      qApp->activeWindow(),
                                      qApp->applicationName(),
-                                     i18nc("@title:window", "Enfuse Processing Messages"),
+                                     i18nc("@title: window", "Enfuse Processing Messages"),
                                      d->output.split(QLatin1Char('\n')));
 }
 
@@ -517,7 +517,7 @@ void ExpoBlendingDlg::saveItem(const QUrl& temp, const EnfuseSettings& settings)
 
         if (!QFile::rename(temp.toLocalFile(), newUrl.toLocalFile()))
         {
-            QMessageBox::critical(this, QString(), i18n("Failed to save image to %1.", QDir::toNativeSeparators(newUrl.toLocalFile())));
+            QMessageBox::critical(this, QString(), i18nc("@info", "Failed to save image to %1.", QDir::toNativeSeparators(newUrl.toLocalFile())));
             d->enfuseStack->setOnItem(settings.previewUrl, false);
             d->enfuseStack->processedItem(settings.previewUrl, false);
             return;
@@ -560,14 +560,14 @@ void ExpoBlendingDlg::slotExpoBlendingAction(const DigikamGenericExpoBlendingPlu
             case EXPOBLENDING_ENFUSEPREVIEW:
             {
                 busy(true);
-                d->previewWidget->setBusy(true, i18n("Processing preview of bracketed images..."));
+                d->previewWidget->setBusy(true, i18nc("@info", "Processing preview of bracketed images..."));
                 break;
             }
 
             case EXPOBLENDING_ENFUSEFINAL:
             {
                 busy(true);
-                d->previewWidget->setBusy(true, i18n("Processing output of bracketed images..."));
+                d->previewWidget->setBusy(true, i18nc("@info", "Processing output of bracketed images..."));
                 d->enfuseStack->processingItem(ad.enfuseSettings.previewUrl, true);
                 break;
             }
@@ -594,7 +594,7 @@ void ExpoBlendingDlg::slotExpoBlendingAction(const DigikamGenericExpoBlendingPlu
 
                 case EXPOBLENDING_LOAD:
                 {
-                    d->previewWidget->setText(i18n("Failed to load processed image."), Qt::red);
+                    d->previewWidget->setText(i18nc("@info", "Failed to load processed image."), Qt::red);
                     busy(false);
                     break;
                 }
@@ -604,7 +604,7 @@ void ExpoBlendingDlg::slotExpoBlendingAction(const DigikamGenericExpoBlendingPlu
                     d->output = ad.message;
                     d->previewWidget->setBusy(false);
                     d->previewWidget->setButtonVisible(true);
-                    d->previewWidget->setText(i18n("Failed to process preview of bracketed images."), Qt::red);
+                    d->previewWidget->setText(i18nc("@info", "Failed to process preview of bracketed images."), Qt::red);
                     busy(false);
                     break;
                 }
@@ -615,7 +615,7 @@ void ExpoBlendingDlg::slotExpoBlendingAction(const DigikamGenericExpoBlendingPlu
                     d->output = ad.message;
                     d->previewWidget->setBusy(false);
                     d->previewWidget->setButtonVisible(true);
-                    d->previewWidget->setText(i18n("Failed to process output of bracketed images."), Qt::red);
+                    d->previewWidget->setText(i18nc("@info", "Failed to process output of bracketed images."), Qt::red);
                     d->enfuseStack->processingItem(ad.enfuseSettings.previewUrl, false);
                     d->enfuseStack->setOnItem(ad.enfuseSettings.previewUrl, false);
                     busy(false);
@@ -677,16 +677,16 @@ void ExpoBlendingDlg::setRejectButtonMode(QDialogButtonBox::StandardButton butto
 {
     if      (button == QDialogButtonBox::Close)
     {
-        d->buttonBox->button(QDialogButtonBox::Close)->setText(i18n("Close"));
+        d->buttonBox->button(QDialogButtonBox::Close)->setText(i18nc("@action", "Close"));
         d->buttonBox->button(QDialogButtonBox::Close)->setIcon(QIcon::fromTheme(QLatin1String("window-close")));
-        d->buttonBox->button(QDialogButtonBox::Close)->setToolTip(i18n("Close window"));
+        d->buttonBox->button(QDialogButtonBox::Close)->setToolTip(i18nc("@info", "Close window"));
         d->propagateReject = true;
     }
     else if (button == QDialogButtonBox::Cancel)
     {
-        d->buttonBox->button(QDialogButtonBox::Close)->setText(i18n("Cancel"));
+        d->buttonBox->button(QDialogButtonBox::Close)->setText(i18nc("@action", "Cancel"));
         d->buttonBox->button(QDialogButtonBox::Close)->setIcon(QIcon::fromTheme(QLatin1String("dialog-cancel")));
-        d->buttonBox->button(QDialogButtonBox::Close)->setToolTip(i18n("Cancel current operation"));
+        d->buttonBox->button(QDialogButtonBox::Close)->setToolTip(i18nc("@info", "Cancel current operation"));
         d->propagateReject = false;
     }
     else

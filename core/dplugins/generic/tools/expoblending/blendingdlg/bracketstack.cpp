@@ -91,6 +91,7 @@ bool BracketStackItem::operator< (const QTreeWidgetItem& other) const
     int column     = treeWidget()->sortColumn();
     double thisEv  = text(column).toDouble();
     double otherEv = other.text(column).toDouble();
+
     return (thisEv < otherEv);
 }
 

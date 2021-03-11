@@ -69,24 +69,25 @@ ExpoBlendingIntroPage::ExpoBlendingIntroPage(ExpoBlendingManager* const mngr, QW
     QLabel* const title = new QLabel(vbox);
     title->setWordWrap(true);
     title->setOpenExternalLinks(true);
-    title->setText(i18n("<qt>"
-                        "<p><h1><b>Welcome to Stacked Images Tool</b></h1></p>"
-                        "<p>This tool fuses bracketed images with different exposure to make pseudo "
-                        "<a href='https://en.wikipedia.org/wiki/High_dynamic_range_imaging'>HDR image</a>.</p>"
-                        "<p>It can also be used to <a href='https://en.wikipedia.org/wiki/Focus_stacking'>merge focus bracketed stack</a> "
-                        "to get a single image with increased depth of field.</p>"
-                        "<p>This assistant will help you to configure how to import images before "
-                        "merging them to a single one.</p>"
-                        "<p>Bracketed images must be taken with the same camera, "
-                        "in the same conditions, and if possible using a tripod.</p>"
-                        "<p>For more information, please take a look at "
-                        "<a href='https://en.wikipedia.org/wiki/Bracketing'>this page</a></p>"
-                        "</qt>"));
+    title->setText(i18nc("@info",
+                         "<qt>"
+                         "<p><h1><b>Welcome to Stacked Images Tool</b></h1></p>"
+                         "<p>This tool fuses bracketed images with different exposure to make pseudo "
+                         "<a href='https://en.wikipedia.org/wiki/High_dynamic_range_imaging'>HDR image</a>.</p>"
+                         "<p>It can also be used to <a href='https://en.wikipedia.org/wiki/Focus_stacking'>merge focus bracketed stack</a> "
+                         "to get a single image with increased depth of field.</p>"
+                         "<p>This assistant will help you to configure how to import images before "
+                         "merging them to a single one.</p>"
+                         "<p>Bracketed images must be taken with the same camera, "
+                         "in the same conditions, and if possible using a tripod.</p>"
+                         "<p>For more information, please take a look at "
+                         "<a href='https://en.wikipedia.org/wiki/Bracketing'>this page</a></p>"
+                         "</qt>"));
 
     QGroupBox* const binaryBox      = new QGroupBox(vbox);
     QGridLayout* const binaryLayout = new QGridLayout;
     binaryBox->setLayout(binaryLayout);
-    binaryBox->setTitle(i18nc("@title:group", "Exposure Blending Binaries"));
+    binaryBox->setTitle(i18nc("@title: group", "Exposure Blending Binaries"));
     d->binariesWidget = new DBinarySearch(binaryBox);
     d->binariesWidget->addBinary(d->mngr->alignBinary());
     d->binariesWidget->addBinary(d->mngr->enfuseBinary());

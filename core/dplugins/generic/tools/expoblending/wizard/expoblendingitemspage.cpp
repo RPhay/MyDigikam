@@ -61,7 +61,7 @@ public:
 };
 
 ItemsPage::ItemsPage(ExpoBlendingManager* const mngr, QWizard* const dlg)
-    : DWizardPage(dlg, i18nc("@title:window", "<b>Set Bracketed Images</b>")),
+    : DWizardPage(dlg, i18nc("@title: window", "<b>Set Bracketed Images</b>")),
       d          (new Private)
 {
     d->mngr = mngr;
@@ -69,16 +69,17 @@ ItemsPage::ItemsPage(ExpoBlendingManager* const mngr, QWizard* const dlg)
     DVBox* const vbox    = new DVBox(this);
     QLabel* const label1 = new QLabel(vbox);
     label1->setWordWrap(true);
-    label1->setText(i18n("<qt>"
-                         "<p>Set here the list of your bracketed images to fuse. Please follow these conditions:</p>"
-                         "<ul><li>At least 2 images from the same subject must be added to the stack.</li>"
-                         "<li>Do not mix images with different color depth.</li>"
-                         "<li>All images must have the same dimensions.</li></ul>"
-                         "</qt>"));
+    label1->setText(i18nc("@info",
+                          "<qt>"
+                          "<p>Set here the list of your bracketed images to fuse. Please follow these conditions:</p>"
+                          "<ul><li>At least 2 images from the same subject must be added to the stack.</li>"
+                          "<li>Do not mix images with different color depth.</li>"
+                          "<li>All images must have the same dimensions.</li></ul>"
+                          "</qt>"));
 
     d->list = new DItemsList(vbox);
     d->list->setObjectName(QLatin1String("ExpoBlending ImagesList"));
-    d->list->listView()->setColumn(DItemsListView::User1, i18nc("@title:column", "Exposure (EV)"), true);
+    d->list->listView()->setColumn(DItemsListView::User1, i18nc("@title: column", "Exposure (EV)"), true);
     d->list->slotAddImages(d->mngr->itemsList());
 
     setPageWidget(vbox);

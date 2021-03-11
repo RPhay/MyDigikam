@@ -45,17 +45,17 @@ QString EnfuseSettings::asCommentString() const
 {
     QString ret;
 
-    ret.append(hardMask ? i18n("Hardmask: enabled") : i18n("Hardmask: disabled"));
+    ret.append(hardMask ? i18nc("@info", "Hardmask: enabled") : i18nc("@info", "Hardmask: disabled"));
     ret.append(QLatin1Char('\n'));
-    ret.append(ciecam02 ? i18n("CIECAM02: enabled") : i18n("CIECAM02: disabled"));
+    ret.append(ciecam02 ? i18nc("@info", "CIECAM02: enabled") : i18nc("@info", "CIECAM02: disabled"));
     ret.append(QLatin1Char('\n'));
-    ret.append(autoLevels ? i18n("Levels: auto")    : i18n("Levels: %1", QString::number(levels)));
+    ret.append(autoLevels ? i18nc("@info", "Levels: auto")    : i18nc("@info", "Levels: <numid>%1</numid>", levels));
     ret.append(QLatin1Char('\n'));
-    ret.append(i18n("Exposure: <numid>%1</numid>",   exposure));
+    ret.append(i18nc("@info", "Exposure: <numid>%1</numid>",   exposure));
     ret.append(QLatin1Char('\n'));
-    ret.append(i18n("Saturation: <numid>%1</numid>", saturation));
+    ret.append(i18nc("@info", "Saturation: <numid>%1</numid>", saturation));
     ret.append(QLatin1Char('\n'));
-    ret.append(i18n("Contrast: <numid>%1</numid>",   contrast));
+    ret.append(i18nc("@info", "Contrast: <numid>%1</numid>",   contrast));
 
     return ret;
 }

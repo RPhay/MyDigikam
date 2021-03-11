@@ -56,7 +56,7 @@ public:
 };
 
 ExpoBlendingLastPage::ExpoBlendingLastPage(ExpoBlendingManager* const mngr, QWizard* const dlg)
-    : DWizardPage(dlg, i18nc("@title:window", "Pre-Processing is Complete")),
+    : DWizardPage(dlg, i18nc("@title: window", "Pre-Processing is Complete")),
       d          (new Private)
 {
     d->mngr                 = mngr;
@@ -64,16 +64,17 @@ ExpoBlendingLastPage::ExpoBlendingLastPage(ExpoBlendingManager* const mngr, QWiz
     QLabel* const title     = new QLabel(vbox);
     title->setOpenExternalLinks(true);
     title->setWordWrap(true);
-    title->setText(i18n("<qt>"
-                        "<p><h1><b>Bracketed Images Pre-Processing is Done</b></h1></p>"
-                        "<p>Congratulations. Your images are ready to be fused. </p>"
-                        "<p>To perform this operation, <b>%1</b> program from "
-                        "<a href='%2'>Enblend</a> "
-                        "project will be used.</p>"
-                        "<p>Press \"Finish\" button to fuse your items and make a pseudo HDR image.</p>"
-                        "</qt>",
-                        QDir::toNativeSeparators(d->mngr->enfuseBinary().path()),
-                        d->mngr->enfuseBinary().url().url()));
+    title->setText(i18nc("@info",
+                         "<qt>"
+                         "<p><h1><b>Bracketed Images Pre-Processing is Done</b></h1></p>"
+                         "<p>Congratulations. Your images are ready to be fused. </p>"
+                         "<p>To perform this operation, <b>%1</b> program from "
+                         "<a href='%2'>Enblend</a> "
+                         "project will be used.</p>"
+                         "<p>Press \"Finish\" button to fuse your items and make a pseudo HDR image.</p>"
+                         "</qt>",
+                         QDir::toNativeSeparators(d->mngr->enfuseBinary().path()),
+                         d->mngr->enfuseBinary().url().url()));
 
     vbox->setStretchFactor(new QWidget(vbox), 10);
 

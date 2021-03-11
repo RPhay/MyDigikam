@@ -86,7 +86,7 @@ public:
 };
 
 ExpoBlendingPreProcessPage::ExpoBlendingPreProcessPage(ExpoBlendingManager* const mngr, QWizard* const dlg)
-    : DWizardPage(dlg, i18nc("@title:window", "<b>Pre-Processing Bracketed Images</b>")),
+    : DWizardPage(dlg, i18nc("@title: window", "<b>Pre-Processing Bracketed Images</b>")),
       d          (new Private)
 {
     d->mngr                 = mngr;
@@ -99,7 +99,7 @@ ExpoBlendingPreProcessPage::ExpoBlendingPreProcessPage(ExpoBlendingManager* cons
 
     KSharedConfigPtr config = KSharedConfig::openConfig();
     KConfigGroup group      = config->group("ExpoBlending Settings");
-    d->alignCheckBox        = new QCheckBox(i18nc("@option:check", "Align bracketed images"), vbox);
+    d->alignCheckBox        = new QCheckBox(i18nc("@option: check", "Align bracketed images"), vbox);
     d->alignCheckBox->setChecked(group.readEntry("Auto Alignment", true));
 
     vbox->setStretchFactor(new QWidget(vbox), 2);
@@ -140,29 +140,31 @@ ExpoBlendingPreProcessPage::~ExpoBlendingPreProcessPage()
 
 void ExpoBlendingPreProcessPage::resetTitle()
 {
-    d->title->setText(i18n("<qt>"
-                           "<p>Now, we will pre-process bracketed images before fusing them.</p>"
-                           "<p>To perform auto-alignment, the <b>%1</b> program from the "
-                           "<a href='%2'>%3</a> project will be used. "
-                           "Alignment must be performed if you have not used a tripod to take bracketed images. "
-                           "Alignment operations can take a while.</p>"
-                           "<p>Pre-processing operations include Raw demosaicing. Raw images will be converted "
-                           "to 16-bit sRGB images with auto-gamma.</p>"
-                           "<p>Press \"Next\" to start pre-processing.</p>"
-                           "</qt>",
-                           QDir::toNativeSeparators(d->mngr->alignBinary().path()),
-                           d->mngr->alignBinary().url().url(),
-                           d->mngr->alignBinary().projectName()));
+    d->title->setText(i18nc("@info",
+                            "<qt>"
+                            "<p>Now, we will pre-process bracketed images before fusing them.</p>"
+                            "<p>To perform auto-alignment, the <b>%1</b> program from the "
+                            "<a href='%2'>%3</a> project will be used. "
+                            "Alignment must be performed if you have not used a tripod to take bracketed images. "
+                            "Alignment operations can take a while.</p>"
+                            "<p>Pre-processing operations include Raw demosaicing. Raw images will be converted "
+                            "to 16-bit sRGB images with auto-gamma.</p>"
+                            "<p>Press \"Next\" to start pre-processing.</p>"
+                            "</qt>",
+                            QDir::toNativeSeparators(d->mngr->alignBinary().path()),
+                            d->mngr->alignBinary().url().url(),
+                            d->mngr->alignBinary().projectName()));
     d->detailsText->hide();
     d->alignCheckBox->show();
 }
 
 void ExpoBlendingPreProcessPage::process()
 {
-    d->title->setText(i18n("<qt>"
-                           "<p>Pre-processing is under progress, please wait.</p>"
-                           "<p>This can take a while...</p>"
-                           "</qt>"));
+    d->title->setText(i18nc("@info",
+                            "<qt>"
+                            "<p>Pre-processing is under progress, please wait.</p>"
+                            "<p>This can take a while...</p>"
+                            "</qt>"));
 
     d->alignCheckBox->hide();
     d->progressTimer->start(300);
@@ -216,11 +218,12 @@ void ExpoBlendingPreProcessPage::slotExpoBlendingAction(const DigikamGenericExpo
             {
                 case(EXPOBLENDING_PREPROCESSING):
                 {
-                    d->title->setText(i18n("<qt>"
-                                           "<p>Pre-processing has failed.</p>"
-                                           "<p>Please check your bracketed images stack...</p>"
-                                           "<p>See processing messages below.</p>"
-                                           "</qt>"));
+                    d->title->setText(i18nc("@info",
+                                            "<qt>"
+                                            "<p>Pre-processing has failed.</p>"
+                                            "<p>Please check your bracketed images stack...</p>"
+                                            "<p>See processing messages below.</p>"
+                                            "</qt>"));
                     d->progressTimer->stop();
                     d->alignCheckBox->hide();
                     d->detailsText->show();
