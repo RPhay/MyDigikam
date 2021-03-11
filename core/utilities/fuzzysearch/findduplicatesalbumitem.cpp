@@ -82,7 +82,7 @@ FindDuplicatesAlbumItem::FindDuplicatesAlbumItem(QTreeWidget* const parent, SAlb
         PAlbum *const physicalAlbum = AlbumManager::instance()->findPAlbum(d->refImgInfo.albumId());
         if (physicalAlbum)
         {
-            setText(Column::REFERENCE_ALBUM, physicalAlbum->folderPath());
+            setText(Column::REFERENCE_ALBUM, physicalAlbum->prettyUrl());
         }
 
         calculateInfos();
