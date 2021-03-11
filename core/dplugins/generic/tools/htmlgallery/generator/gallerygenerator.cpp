@@ -74,12 +74,12 @@ public:
 public:
 
     explicit Private()
-      : that(nullptr),
-        info(nullptr),
+      : that    (nullptr),
+        info    (nullptr),
         warnings(false),
-        cancel(false),
-        pview(nullptr),
-        pbar(nullptr)
+        cancel  (false),
+        pview   (nullptr),
+        pbar    (nullptr)
     {
     }
 
@@ -108,7 +108,7 @@ public:
 
         if (!theme)
         {
-            logError( i18n("Could not find theme in '%1'", info->theme()) );
+            logError(i18nc("@info", "Could not find theme in '%1'", info->theme()) );
             return false;
         }
 
@@ -120,11 +120,11 @@ public:
 
     bool createDir(const QString& dirName)
     {
-        logInfo(i18n("Create directories"));
+        logInfo(i18nc("@info", "Create directories"));
 
         if (!QDir().mkpath(dirName))
         {
-            logError(i18n("Could not create folder '%1'", QDir::toNativeSeparators(dirName)));
+            logError(i18nc("@info", "Could not create folder '%1'", QDir::toNativeSeparators(dirName)));
             return false;
         }
 
@@ -133,7 +133,7 @@ public:
 
     bool copyTheme()
     {
-        logInfo(i18n("Copying theme"));
+        logInfo(i18nc("@info", "Copying theme"));
 
         QUrl srcUrl  = QUrl::fromLocalFile(theme->directory());
         QUrl destUrl = info->destUrl().adjusted(QUrl::StripTrailingSlash);
@@ -148,7 +148,7 @@ public:
 
         if (!ok)
         {
-            logError(i18n("Could not copy theme"));
+            logError(i18nc("@info", "Could not copy theme"));
             return false;
         }
 
@@ -157,7 +157,7 @@ public:
 
     bool generateImagesAndXML()
     {
-        logInfo(i18n("Generate images and XML files"));
+        logInfo(i18nc("@info", "Generate images and XML files"));
         QString baseDestDir = info->destUrl().toLocalFile();
 
         if (!createDir(baseDestDir))
@@ -170,7 +170,7 @@ public:
 
         if (!xmlWriter.open(xmlFileName))
         {
-            logError(i18n("Could not create gallery.xml"));
+            logError(i18nc("@info", "Could not create gallery.xml"));
             return false;
         }
 
@@ -282,7 +282,7 @@ public:
 
         // Generate images
 
-        logInfo(i18n("Generating files for \"%1\"", title));
+        logInfo(i18nc("@info", "Generating files for \"%1\"", title));
         GalleryElementFunctor functor(that, info, destDir);
         QFuture<void> future = QtConcurrent::map(imageElementList, functor);
         QFutureWatcher<void> watcher;
@@ -317,7 +317,7 @@ public:
 
     bool generateHTML()
     {
-        logInfo(i18n("Generating HTML files"));
+        logInfo(i18nc("@info", "Generating HTML files"));
 
         QString xsltFileName                                 = theme->directory() + QLatin1String("/template.xsl");
         CWrapper<xsltStylesheetPtr, xsltFreeStylesheet> xslt = xsltParseStylesheetFile((const xmlChar*)
@@ -325,7 +325,7 @@ public:
 
         if (!xslt)
         {
-            logError(i18n("Could not load XSL file '%1'", xsltFileName));
+            logError(i18nc("@info", "Could not load XSL file '%1'", xsltFileName));
             return false;
         }
 
@@ -334,7 +334,7 @@ public:
 
         if (!xmlGallery)
         {
-            logError(i18n("Could not load XML file '%1'", xmlFileName));
+            logError(i18nc("@info", "Could not load XML file '%1'", xmlFileName));
             return false;
         }
 
@@ -370,7 +370,7 @@ public:
 
         if (!xmlOutput)
         {
-            logError(i18n("Error processing XML file"));
+            logError(i18nc("@info", "Error processing XML file"));
             return false;
         }
 
@@ -379,7 +379,7 @@ public:
 
         if (xsltSaveResultToFilename(destFileName.toUtf8().data(), xmlOutput, xslt, 0) == -1)
         {
-            logError(i18n("Could not open '%1' for writing", destFileName));
+            logError(i18nc("@info", "Could not open '%1' for writing", destFileName));
             return false;
         }
 
@@ -406,7 +406,7 @@ public:
             return true;
         }
 
-        logInfo(i18n("Downloading remote files for \"%1\"", collectionName));
+        logInfo(i18nc("@info", "Downloading remote files for \"%1\"", collectionName));
 
         pbar->setMaximum(list.count());
         int count = 0;
@@ -423,7 +423,7 @@ public:
 
             if (!tempFile.open())
             {
-                logError(i18n("Could not open temporary file"));
+                logError(i18nc("@info", "Could not open temporary file"));
                 return false;
             }
 
@@ -438,7 +438,7 @@ public:
             }
             else
             {
-                logWarning(i18n("Could not download %1", url.toDisplayString()));
+                logWarning(i18nc("@info", "Could not download %1", url.toDisplayString()));
                 hash->insert(url, QString());
             }
 
@@ -457,30 +457,30 @@ public:
      */
     void addI18nParameters(XsltParameterMap& map)
     {
-        map["i18nPrevious"]                   = makeXsltParam(i18n("Previous"));
-        map["i18nNext"]                       = makeXsltParam(i18n("Next"));
-        map["i18nCollectionList"]             = makeXsltParam(i18n("Album List"));
-        map["i18nOriginalImage"]              = makeXsltParam(i18n("Original Image"));
-        map["i18nUp"]                         = makeXsltParam(i18n("Go Up"));
+        map["i18nPrevious"]                   = makeXsltParam(i18nc("@info: xslt param", "Previous"));
+        map["i18nNext"]                       = makeXsltParam(i18nc("@info: xslt param", "Next"));
+        map["i18nCollectionList"]             = makeXsltParam(i18nc("@info: xslt param", "Album List"));
+        map["i18nOriginalImage"]              = makeXsltParam(i18nc("@info: xslt param", "Original Image"));
+        map["i18nUp"]                         = makeXsltParam(i18nc("@info: xslt param", "Go Up"));
         // Exif Tag
-        map["i18nexifimagemake"]              = makeXsltParam(i18n("Make"));
-        map["i18nexifimagemodel"]             = makeXsltParam(i18nc("Camera Model", "Model"));
-        map["i18nexifimageorientation"]       = makeXsltParam(i18n("Image Orientation"));
-        map["i18nexifimagexresolution"]       = makeXsltParam(i18n("Image X Resolution"));
-        map["i18nexifimageyresolution"]       = makeXsltParam(i18n("Image Y Resolution"));
-        map["i18nexifimageresolutionunit"]    = makeXsltParam(i18n("Image Resolution Unit"));
-        map["i18nexifimagedatetime"]          = makeXsltParam(i18n("Image Date Time"));
-        map["i18nexifimageycbcrpositioning"]  = makeXsltParam(i18n("YCBCR Positioning"));
-        map["i18nexifphotoexposuretime"]      = makeXsltParam(i18n("Exposure Time"));
-        map["i18nexifphotofnumber"]           = makeXsltParam(i18n("F Number"));
-        map["i18nexifphotoexposureprogram"]   = makeXsltParam(i18n("Exposure Index"));
-        map["i18nexifphotoisospeedratings"]   = makeXsltParam(i18n("ISO Speed Ratings"));
-        map["i18nexifphotoshutterspeedvalue"] = makeXsltParam(i18n("Shutter Speed Value"));
-        map["i18nexifphotoaperturevalue"]     = makeXsltParam(i18n("Aperture Value"));
-        map["i18nexifphotofocallength"]       = makeXsltParam(i18n("Focal Length"));
-        map["i18nexifgpsaltitude"]            = makeXsltParam(i18n("GPS Altitude"));
-        map["i18nexifgpslatitude"]            = makeXsltParam(i18n("GPS Latitude"));
-        map["i18nexifgpslongitude"]           = makeXsltParam(i18n("GPS Longitude"));
+        map["i18nexifimagemake"]              = makeXsltParam(i18nc("@info: xslt param", "Make"));
+        map["i18nexifimagemodel"]             = makeXsltParam(i18nc("@info: Camera Model", "Model"));
+        map["i18nexifimageorientation"]       = makeXsltParam(i18nc("@info: xslt param", "Image Orientation"));
+        map["i18nexifimagexresolution"]       = makeXsltParam(i18nc("@info: xslt param", "Image X Resolution"));
+        map["i18nexifimageyresolution"]       = makeXsltParam(i18nc("@info: xslt param", "Image Y Resolution"));
+        map["i18nexifimageresolutionunit"]    = makeXsltParam(i18nc("@info: xslt param", "Image Resolution Unit"));
+        map["i18nexifimagedatetime"]          = makeXsltParam(i18nc("@info: xslt param", "Image Date Time"));
+        map["i18nexifimageycbcrpositioning"]  = makeXsltParam(i18nc("@info: xslt param", "YCBCR Positioning"));
+        map["i18nexifphotoexposuretime"]      = makeXsltParam(i18nc("@info: xslt param", "Exposure Time"));
+        map["i18nexifphotofnumber"]           = makeXsltParam(i18nc("@info: xslt param", "F Number"));
+        map["i18nexifphotoexposureprogram"]   = makeXsltParam(i18nc("@info: xslt param", "Exposure Index"));
+        map["i18nexifphotoisospeedratings"]   = makeXsltParam(i18nc("@info: xslt param", "ISO Speed Ratings"));
+        map["i18nexifphotoshutterspeedvalue"] = makeXsltParam(i18nc("@info: xslt param", "Shutter Speed Value"));
+        map["i18nexifphotoaperturevalue"]     = makeXsltParam(i18nc("@info: xslt param", "Aperture Value"));
+        map["i18nexifphotofocallength"]       = makeXsltParam(i18nc("@info: xslt param", "Focal Length"));
+        map["i18nexifgpsaltitude"]            = makeXsltParam(i18nc("@info: xslt param", "GPS Altitude"));
+        map["i18nexifgpslatitude"]            = makeXsltParam(i18nc("@info: xslt param", "GPS Latitude"));
+        map["i18nexifgpslongitude"]           = makeXsltParam(i18nc("@info: xslt param", "GPS Longitude"));
     }
 
     /**
@@ -575,7 +575,7 @@ public:
 
 GalleryGenerator::GalleryGenerator(GalleryInfo* const info)
     : QObject(),
-      d(new Private)
+      d      (new Private)
 {
     d->that     = this;
     d->info     = info;
@@ -654,6 +654,7 @@ QString GalleryGenerator::webifyFileName(const QString& fname)
     QString fileName = fname.toLower();
 
     // Remove potentially troublesome chars
+
     return fileName.replace(QRegExp(QLatin1String("[^-0-9a-z]+")), QLatin1String("_"));
 }
 

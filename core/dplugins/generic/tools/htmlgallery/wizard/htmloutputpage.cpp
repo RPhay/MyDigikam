@@ -77,7 +77,7 @@ HTMLOutputPage::HTMLOutputPage(QWizard* const dialog, const QString& title)
 
     d->titleLabel = new QLabel(main);
     d->titleLabel->setWordWrap(false);
-    d->titleLabel->setText(i18n("Gallery Title:"));
+    d->titleLabel->setText(i18nc("@label", "Gallery Title:"));
 
     d->imageSelectionTitle   = new QLineEdit(main);
     d->titleLabel->setBuddy(d->imageSelectionTitle);
@@ -86,10 +86,10 @@ HTMLOutputPage::HTMLOutputPage(QWizard* const dialog, const QString& title)
 
     QLabel* const textLabel1 = new QLabel(main);
     textLabel1->setWordWrap(false);
-    textLabel1->setText(i18n("Destination Folder:"));
+    textLabel1->setText(i18nc("@label", "Destination Folder:"));
 
     d->destUrl = new DFileSelector(main);
-    d->destUrl->setFileDlgTitle(i18n("Destination Folder"));
+    d->destUrl->setFileDlgTitle(i18nc("@title", "Destination Folder"));
     d->destUrl->setFileDlgMode(QFileDialog::Directory);
     d->destUrl->setFileDlgOptions(QFileDialog::ShowDirsOnly);
     textLabel1->setBuddy(d->destUrl);
@@ -98,11 +98,11 @@ HTMLOutputPage::HTMLOutputPage(QWizard* const dialog, const QString& title)
 
     QLabel* const browserLabel = new QLabel(main);
     browserLabel->setWordWrap(false);
-    browserLabel->setText(i18n("Open in Browser:"));
+    browserLabel->setText(i18nc("@label", "Open in Browser:"));
     d->openInBrowser           = new QComboBox(main);
-    d->openInBrowser->addItem(i18n("None"),                 GalleryConfig::NOBROWSER);
-    d->openInBrowser->addItem(i18n("Internal"),             GalleryConfig::INTERNAL);
-    d->openInBrowser->addItem(i18n("Default from Desktop"), GalleryConfig::DESKTOP);
+    d->openInBrowser->addItem(i18nc("@item: open in browser", "None"),                 GalleryConfig::NOBROWSER);
+    d->openInBrowser->addItem(i18nc("@item: open in browser", "Internal"),             GalleryConfig::INTERNAL);
+    d->openInBrowser->addItem(i18nc("@item: open in browser", "Default from Desktop"), GalleryConfig::DESKTOP);
     d->openInBrowser->setEditable(false);
     browserLabel->setBuddy(d->openInBrowser);
 
