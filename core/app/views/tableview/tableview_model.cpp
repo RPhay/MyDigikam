@@ -393,6 +393,12 @@ void TableViewModel::addColumnAt(const TableViewColumnConfiguration& configurati
 
     connect(newColumn, SIGNAL(signalAllDataChanged()),
             this, SLOT(slotColumnAllDataChanged()));
+
+    const QModelIndex changedIndexTopLeft     = index(0, 0, QModelIndex());
+    const QModelIndex changedIndexBottomRight = index(rowCount(QModelIndex())-1,
+                                                      columnCount(QModelIndex())-1, QModelIndex());
+
+    emit dataChanged(changedIndexTopLeft, changedIndexBottomRight);
 }
 
 void TableViewModel::slotColumnDataChanged(const qlonglong imageId)
@@ -438,6 +444,12 @@ void TableViewModel::removeColumnAt(const int columnIndex)
     endRemoveColumns();
 
     delete removedColumn;
+
+    const QModelIndex changedIndexTopLeft     = index(0, 0, QModelIndex());
+    const QModelIndex changedIndexBottomRight = index(rowCount(QModelIndex())-1,
+                                                      columnCount(QModelIndex())-1, QModelIndex());
+
+    emit dataChanged(changedIndexTopLeft, changedIndexBottomRight);
 }
 
 TableViewColumn* TableViewModel::getColumnObject(const int columnIndex)
