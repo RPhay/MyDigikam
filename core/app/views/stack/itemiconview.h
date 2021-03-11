@@ -262,7 +262,7 @@ public Q_SLOTS:
 
     void slotNewKeywordSearch();
     void slotNewAdvancedSearch();
-    void slotNewDuplicatesSearch(const QList<PAlbum*>& albums);
+    void slotNewDuplicatesSearch(const QList<PAlbum*>& albums = {});
     void slotNewDuplicatesSearch(const QList<TAlbum*>& albums);
     void slotImageFindSimilar();
     void slotImageScanForFaces();
