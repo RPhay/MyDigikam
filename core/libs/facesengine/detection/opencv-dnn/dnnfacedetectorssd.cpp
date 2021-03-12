@@ -34,6 +34,7 @@
 // Local includes
 
 #include "digikam_debug.h"
+#include "digikam_config.h"
 
 namespace Digikam
 {
@@ -64,7 +65,15 @@ bool DNNFaceDetectorSSD::loadModels()
         {
             qCDebug(DIGIKAM_FACEDB_LOG) << "SSD model:" << nnmodel << ", SSD data:" << nndata;
 
-            net = cv::dnn::readNetFromCaffe(nnmodel.toUtf8().constData(), nndata.toUtf8().constData());
+#ifdef Q_OS_WIN
+
+            net = cv::dnn::readNetFromCaffe((const char*)nnmodel.utf16(), (const char*)nndata.utf16());
+
+#else
+
+            net = cv::dnn::readNetFromCaffe(nnmodel.toStdString(), nndata.toStdString());
+#endif
+
         }
         catch (cv::Exception& e)
         {
