@@ -393,4 +393,5 @@ BUGFIXES:
 350 ==> 338034 - SETUP : Individual databases for each "collection".
 351 ==> 434275 - Row height determined by number of tags even if they are not visible.
 352 ==> 434302 - Sub-folders not selected when parent folder is selected.
-353 ==> 
+353 ==> 376690 - Irritating behavior of list when moving images.
+354 ==> 
