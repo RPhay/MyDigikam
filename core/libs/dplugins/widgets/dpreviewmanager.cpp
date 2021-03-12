@@ -54,15 +54,15 @@ class Q_DECL_HIDDEN DPreviewManager::Private
 public:
 
     explicit Private()
-      : busy(false),
-        textLabel(nullptr),
-        thumbLabel(nullptr),
-        button(nullptr),
-        progressCount(0),
-        progressPix(nullptr),
-        progressTimer(nullptr),
-        progressLabel(nullptr),
-        preview(nullptr)
+      : busy            (false),
+        textLabel       (nullptr),
+        thumbLabel      (nullptr),
+        button          (nullptr),
+        progressCount   (0),
+        progressPix     (nullptr),
+        progressTimer   (nullptr),
+        progressLabel   (nullptr),
+        preview         (nullptr)
     {
     }
 
@@ -83,7 +83,7 @@ public:
 
 DPreviewManager::DPreviewManager(QWidget* const parent)
     : QStackedWidget(parent),
-      d(new Private)
+      d             (new Private)
 {
     setAttribute(Qt::WA_DeleteOnClose);
     setMinimumSize(QSize(400, 300));
@@ -139,12 +139,12 @@ DPreviewManager::DPreviewManager(QWidget* const parent)
     vboxLay->setStretchFactor(hbox, 5);
     vboxLay->setStretchFactor(space6, 10);
 
-    d->preview = new DPreviewImage(this);
+    d->preview                 = new DPreviewImage(this);
 
     insertWidget(MessageMode, vbox);
     insertWidget(PreviewMode, d->preview);
 
-    d->progressTimer = new QTimer(this);
+    d->progressTimer           = new QTimer(this);
 
     connect(d->progressTimer, &QTimer::timeout,
             this, &DPreviewManager::slotProgressTimerDone);
@@ -169,7 +169,7 @@ void DPreviewManager::setImage(const QImage& img, bool fit)
 
     if (!d->preview->setImage(img))
     {
-        setText(i18n( "Failed to load image" ));
+        setText(i18nc("@info", "Failed to load image"));
         return;
     }
 
@@ -187,7 +187,7 @@ bool DPreviewManager::load(const QUrl& file, bool fit)
 
     if (!d->preview->load(file))
     {
-        setText(i18n( "Failed to load image" ));
+        setText(i18nc("@info", "Failed to load image"));
         return false;
     }
 

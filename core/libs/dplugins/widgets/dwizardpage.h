@@ -45,7 +45,7 @@ class DIGIKAM_EXPORT DWizardPage : public QWizardPage
 public:
 
     explicit DWizardPage(QWizard* const dlg, const QString& title);
-    ~DWizardPage() override;
+    ~DWizardPage()                override;
 
 public:
 

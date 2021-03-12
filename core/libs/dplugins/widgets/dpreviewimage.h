@@ -166,7 +166,7 @@ public Q_SLOTS:
      * \param percentage is the percentage of the highlighted area that is shown.
      * \param hideColor is the color to use to hide the highlighted area of the image.
      */
-    void slotSetHighlightShown(int percentage, QColor highLightColor = Qt::white);
+    void slotSetHighlightShown(int percentage, const QColor& highLightColor = Qt::white);
 
     /**
      * This function removes the highlight area.
@@ -175,14 +175,14 @@ public Q_SLOTS:
 
 protected:
 
-    void wheelEvent(QWheelEvent*) override;
-    void mousePressEvent(QMouseEvent*) override;
-    void mouseReleaseEvent(QMouseEvent*) override;
-    void mouseMoveEvent(QMouseEvent*) override;
-    void enterEvent(QEvent*) override;
-    void leaveEvent(QEvent*) override;
-    bool eventFilter(QObject*, QEvent*) override;
-    void resizeEvent(QResizeEvent*) override;
+    void wheelEvent(QWheelEvent*)           override;
+    void mousePressEvent(QMouseEvent*)      override;
+    void mouseReleaseEvent(QMouseEvent*)    override;
+    void mouseMoveEvent(QMouseEvent*)       override;
+    void enterEvent(QEvent*)                override;
+    void leaveEvent(QEvent*)                override;
+    bool eventFilter(QObject*, QEvent*)     override;
+    void resizeEvent(QResizeEvent*)         override;
 
     void updateSelVisibility();
     void updateHighlight();

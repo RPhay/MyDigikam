@@ -59,9 +59,9 @@ public:
 
     bool load(const QUrl& file, bool fit = true);
     void setImage(const QImage& img, bool fit = true);
-    void setText(const QString& text, const QColor& color=Qt::white);
-    void setBusy(bool b, const QString& text=QString());
-    void setThumbnail(const QPixmap& preview=QPixmap());
+    void setText(const QString& text, const QColor& color = Qt::white);
+    void setBusy(bool b, const QString& text = QString());
+    void setThumbnail(const QPixmap& preview = QPixmap());
     void setButtonText(const QString& text);
     void setButtonVisible(bool b);
     void setSelectionAreaPossible(bool b);

@@ -45,7 +45,7 @@ namespace Digikam
 
 DWizardDlg::DWizardDlg(QWidget* const parent, const QString& objName)
     : QWizard(parent),
-      m_tool(nullptr)
+      m_tool (nullptr)
 {
     setWizardStyle(QWizard::ClassicStyle);
     setObjectName(objName);
@@ -64,7 +64,7 @@ void DWizardDlg::setPlugin(DPlugin* const tool)
     if (m_tool)
     {
         setOption(QWizard::HaveHelpButton);
-        setButtonText(QWizard::HelpButton, i18n("About..."));
+        setButtonText(QWizard::HelpButton, i18nc("@action: button", "About..."));
 
         connect(button(QWizard::HelpButton), SIGNAL(clicked()),
                 this, SLOT(slotAboutPlugin()));

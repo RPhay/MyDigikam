@@ -62,14 +62,14 @@ class Q_DECL_HIDDEN DSelectionItem::Private
 public:
 
     explicit Private()
-      : maxX(0.0),
-        maxY(0.0),
-        hasMaxX(false),
-        hasMaxY(false),
-        hasMax(false),
-        invZoom(1.0),
-        selMargin(0.0),
-        showAnchors(true)
+      : maxX        (0.0),
+        maxY        (0.0),
+        hasMaxX     (false),
+        hasMaxY     (false),
+        hasMax      (false),
+        invZoom     (1.0),
+        selMargin   (0.0),
+        showAnchors (true)
     {
     }
 
@@ -97,7 +97,7 @@ public:
 
 DSelectionItem::DSelectionItem(const QRectF& rect)
     : QGraphicsItem(),
-      d(new Private)
+      d            (new Private)
 {
     d->selMargin = selMargin;
     setRect(rect);
@@ -365,6 +365,7 @@ void DSelectionItem::updateAnchors()
         else
         {
             // Only the top & bottom lines & middle line plus two corners are drawn
+
             d->anchorTop    = QLineF(d->rect.topLeft() + moveDown,
                                      d->rect.topRight() + moveDown);
             d->anchorBottom = QLineF(d->rect.bottomLeft() - moveDown,
@@ -386,6 +387,7 @@ void DSelectionItem::updateAnchors()
         if (horizontalCondition)
         {
             // Only the left & right lines & middle line plus two corners are drawn
+
             d->anchorTop            = QLineF(d->rect.topLeft() + QPointF(0.0, d->rect.height() / 2.0),
                                              d->rect.topRight() + QPointF(0.0, d->rect.height() / 2.0));
             d->anchorBottom         = QLineF();
@@ -436,22 +438,22 @@ public:
 
     explicit Private()
         : mouseDragAction(NONE),
-          lastdx(0),
-          lastdy(0),
-          scene(nullptr),
-          pixmapItem(nullptr),
-          selection(nullptr),
+          lastdx         (0),
+          lastdy         (0),
+          scene          (nullptr),
+          pixmapItem     (nullptr),
+          selection      (nullptr),
           enableSelection(false),
-          mouseZone(DSelectionItem::None),
-          zoomInAction(nullptr),
-          zoomOutAction(nullptr),
-          zoom2FitAction(nullptr),
-          toolBar(nullptr),
-          highLightLeft(nullptr),
-          highLightRight(nullptr),
-          highLightTop(nullptr),
+          mouseZone      (DSelectionItem::None),
+          zoomInAction   (nullptr),
+          zoomOutAction  (nullptr),
+          zoom2FitAction (nullptr),
+          toolBar        (nullptr),
+          highLightLeft  (nullptr),
+          highLightRight (nullptr),
+          highLightTop   (nullptr),
           highLightBottom(nullptr),
-          highLightArea(nullptr)
+          highLightArea  (nullptr)
     {
     }
 
@@ -480,7 +482,7 @@ public:
 
 DPreviewImage::DPreviewImage(QWidget* const parent)
     : QGraphicsView(parent),
-      d(new Private)
+      d            (new Private)
 {
     setAttribute(Qt::WA_DeleteOnClose);
     setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Expanding);
@@ -532,22 +534,22 @@ DPreviewImage::DPreviewImage(QWidget* const parent)
 
     // create context menu
 
-    d->zoomInAction = new QAction(QIcon::fromTheme(QLatin1String("zoom-in")), i18n("Zoom In"), this);
-    d->zoomInAction->setToolTip(i18n("Zoom In"));
+    d->zoomInAction = new QAction(QIcon::fromTheme(QLatin1String("zoom-in")), i18nc("@action", "Zoom In"), this);
+    d->zoomInAction->setToolTip(i18nc("@info", "Zoom In"));
     d->zoomInAction->setShortcut(Qt::Key_Plus);
 
     connect(d->zoomInAction, &QAction::triggered,
             this, &DPreviewImage::slotZoomIn);
 
-    d->zoomOutAction = new QAction(QIcon::fromTheme(QLatin1String("zoom-out")), i18n("Zoom Out"), this);
-    d->zoomOutAction->setToolTip(i18n("Zoom Out"));
+    d->zoomOutAction = new QAction(QIcon::fromTheme(QLatin1String("zoom-out")), i18nc("@action", "Zoom Out"), this);
+    d->zoomOutAction->setToolTip(i18nc("@info", "Zoom Out"));
     d->zoomOutAction->setShortcut(Qt::Key_Minus);
 
     connect(d->zoomOutAction, &QAction::triggered,
             this, &DPreviewImage::slotZoomOut);
 
-    d->zoom2FitAction = new QAction(QIcon::fromTheme(QLatin1String("zoom-fit-best")), i18n("Zoom to Fit"), this);
-    d->zoom2FitAction->setToolTip(i18n("Zoom to Fit"));
+    d->zoom2FitAction = new QAction(QIcon::fromTheme(QLatin1String("zoom-fit-best")), i18nc("@action", "Zoom to Fit"), this);
+    d->zoom2FitAction->setToolTip(i18nc("@info", "Zoom to Fit"));
     d->zoom2FitAction->setShortcut(Qt::Key_Asterisk);
 
     connect(d->zoom2FitAction, &QAction::triggered,
@@ -719,6 +721,7 @@ void DPreviewImage::slotSetHighlightArea(float tl_x, float tl_y, float br_x, flo
     QRectF rect;
 
     // Left  reason for rect: setCoords(x1,y1,x2,y2) != setRect(x1,x2, width, height)
+
     rect.setCoords(0,
                    0,
                    tl_x * d->scene->width(),
@@ -726,6 +729,7 @@ void DPreviewImage::slotSetHighlightArea(float tl_x, float tl_y, float br_x, flo
     d->highLightLeft->setRect(rect);
 
     // Right
+
     rect.setCoords(br_x * d->scene->width(),
                    0,
                    d->scene->width(),
@@ -733,6 +737,7 @@ void DPreviewImage::slotSetHighlightArea(float tl_x, float tl_y, float br_x, flo
     d->highLightRight->setRect(rect);
 
     // Top
+
     rect.setCoords(tl_x * d->scene->width(),
                    0,
                    br_x * d->scene->width(),
@@ -740,6 +745,7 @@ void DPreviewImage::slotSetHighlightArea(float tl_x, float tl_y, float br_x, flo
     d->highLightTop->setRect(rect);
 
     // Bottom
+
     rect.setCoords(tl_x * d->scene->width(),
                    br_y * d->scene->height(),
                    br_x * d->scene->width(),
@@ -747,6 +753,7 @@ void DPreviewImage::slotSetHighlightArea(float tl_x, float tl_y, float br_x, flo
     d->highLightBottom->setRect(rect);
 
     // Area
+
     rect.setCoords(tl_x * d->scene->width(),
                    tl_y* d->scene->height(),
                    br_x * d->scene->width(),
@@ -758,11 +765,13 @@ void DPreviewImage::slotSetHighlightArea(float tl_x, float tl_y, float br_x, flo
     d->highLightRight->show();
     d->highLightTop->show();
     d->highLightBottom->show();
+
     // the highlight area is hidden until setHighlightShown is called.
+
     d->highLightArea->hide();
 }
 
-void DPreviewImage::slotSetHighlightShown(int percentage, QColor highLightColor)
+void DPreviewImage::slotSetHighlightShown(int percentage, const QColor& highLightColor)
 {
     if (percentage >= 100)
     {
@@ -822,9 +831,10 @@ void DPreviewImage::mousePressEvent(QMouseEvent* e)
 
         if (e->modifiers() != Qt::ControlModifier && d->enableSelection)
         {
-            if (!d->selection->isVisible() || !d->selection->contains(scenePoint))
+            if      (!d->selection->isVisible() || !d->selection->contains(scenePoint))
             {
                 // Beginning of a selection area change
+
                 d->mouseDragAction = Private::DRAWSELECTION;
                 d->selection->setVisible(true);
                 d->selection->setRect(QRectF(scenePoint, QSizeF(0, 0)));
@@ -835,18 +845,22 @@ void DPreviewImage::mousePressEvent(QMouseEvent* e)
                      d->mouseZone != DSelectionItem::Move)
             {
                 // Modification of the selection area
+
                 d->mouseDragAction = Private::EXPANDORSHRINK;
             }
             else
             {
                 // Selection movement called by QGraphicsView
+
                 d->mouseDragAction = Private::MOVESELECTION;
             }
+
             updateHighlight();
         }
         else
         {
             // Beginning of moving around the picture
+
             d->mouseDragAction = Private::LOOKAROUND;
             setCursor(Qt::ClosedHandCursor);
         }
@@ -863,6 +877,7 @@ void DPreviewImage::mouseReleaseEvent(QMouseEvent* e)
         {
             // Stop and setup the selection area
             // Only one case: small rectangle that we drop
+
             if ((d->selection->rect().width()  < 0.001) ||
                 (d->selection->rect().height() < 0.001))
             {
@@ -907,10 +922,13 @@ void DPreviewImage::mouseMoveEvent(QMouseEvent* e)
             switch (d->mouseZone)
             {
                 case DSelectionItem::None:
+                {
                     // should not be here :)
                     break;
+                }
 
                 case DSelectionItem::Top:
+                {
                     if (scenePoint.y() < rect.bottom())
                     {
                         rect.setTop(scenePoint.y());
@@ -920,9 +938,12 @@ void DPreviewImage::mouseMoveEvent(QMouseEvent* e)
                         d->mouseZone = DSelectionItem::Bottom;
                         rect.setTop(rect.bottom());
                     }
+
                     break;
+                }
 
                 case DSelectionItem::TopRight:
+                {
                     if (scenePoint.x() > rect.left())
                     {
                         rect.setRight(scenePoint.x());
@@ -953,9 +974,12 @@ void DPreviewImage::mouseMoveEvent(QMouseEvent* e)
 
                         rect.setTop(rect.bottom());
                     }
+
                     break;
+                }
 
                 case DSelectionItem::Right:
+                {
                     if (scenePoint.x() > rect.left())
                     {
                         rect.setRight(scenePoint.x());
@@ -965,9 +989,12 @@ void DPreviewImage::mouseMoveEvent(QMouseEvent* e)
                         d->mouseZone = DSelectionItem::Left;
                         rect.setRight(rect.left());
                     }
+
                     break;
+                }
 
                 case DSelectionItem::BottomRight:
+                {
                     if (scenePoint.x() > rect.left())
                     {
                         rect.setRight(scenePoint.x());
@@ -998,9 +1025,12 @@ void DPreviewImage::mouseMoveEvent(QMouseEvent* e)
 
                         rect.setBottom(rect.top());
                     }
+
                     break;
+                }
 
                 case DSelectionItem::Bottom:
+                {
                     if (scenePoint.y() > rect.top())
                     {
                         rect.setBottom(scenePoint.y());
@@ -1010,9 +1040,12 @@ void DPreviewImage::mouseMoveEvent(QMouseEvent* e)
                         d->mouseZone = DSelectionItem::Top;
                         rect.setBottom(rect.top());
                     }
+
                     break;
+                }
 
                 case DSelectionItem::BottomLeft:
+                {
                     if (scenePoint.x() < rect.right())
                     {
                         rect.setLeft(scenePoint.x());
@@ -1043,9 +1076,12 @@ void DPreviewImage::mouseMoveEvent(QMouseEvent* e)
 
                         rect.setBottom(rect.top());
                     }
+
                     break;
+                }
 
                 case DSelectionItem::Left:
+                {
                     if (scenePoint.x() < rect.right())
                     {
                         rect.setLeft(scenePoint.x());
@@ -1055,9 +1091,12 @@ void DPreviewImage::mouseMoveEvent(QMouseEvent* e)
                         d->mouseZone = DSelectionItem::Right;
                         rect.setLeft(rect.right());
                     }
+
                     break;
+                }
 
                 case DSelectionItem::TopLeft:
+                {
                     if (scenePoint.x() < rect.right())
                     {
                         rect.setLeft(scenePoint.x());
@@ -1088,11 +1127,15 @@ void DPreviewImage::mouseMoveEvent(QMouseEvent* e)
 
                         rect.setTop(rect.bottom());
                     }
+
                     break;
+                }
 
                 case DSelectionItem::Move:
+                {
                     rect.translate(d->selection->fixTranslation(scenePoint - d->lastMousePoint));
                     break;
+                }
             }
 
             d->selection->setRect(rect);
@@ -1105,44 +1148,64 @@ void DPreviewImage::mouseMoveEvent(QMouseEvent* e)
         switch (d->mouseZone)
         {
             case DSelectionItem::None:
+            {
                 setCursor(Qt::CrossCursor);
                 break;
+            }
 
             case DSelectionItem::Top:
+            {
                 setCursor(Qt::SizeVerCursor);
                 break;
+            }
 
             case DSelectionItem::TopRight:
+            {
                 setCursor(Qt::SizeBDiagCursor);
                 break;
+            }
 
             case DSelectionItem::Right:
+            {
                 setCursor(Qt::SizeHorCursor);
                 break;
+            }
 
             case DSelectionItem::BottomRight:
+            {
                 setCursor(Qt::SizeFDiagCursor);
                 break;
+            }
 
             case DSelectionItem::Bottom:
+            {
                 setCursor(Qt::SizeVerCursor);
                 break;
+            }
 
             case DSelectionItem::BottomLeft:
+            {
                 setCursor(Qt::SizeBDiagCursor);
                 break;
+            }
 
             case DSelectionItem::Left:
+            {
                 setCursor(Qt::SizeHorCursor);
                 break;
+            }
 
             case DSelectionItem::TopLeft:
+            {
                 setCursor(Qt::SizeFDiagCursor);
                 break;
+            }
 
             case DSelectionItem::Move:
+            {
                 setCursor(Qt::SizeAllCursor);
                 break;
+            }
         }
     }
     else
@@ -1169,7 +1232,7 @@ bool DPreviewImage::eventFilter(QObject* obj, QEvent* ev)
 {
     if (obj == d->toolBar)
     {
-        if (ev->type() == QEvent::Enter)
+        if      (ev->type() == QEvent::Enter)
         {
             setCursor(Qt::ArrowCursor);
         }
@@ -1182,7 +1245,7 @@ bool DPreviewImage::eventFilter(QObject* obj, QEvent* ev)
     }
     else if (obj == verticalScrollBar() && verticalScrollBar()->isVisible())
     {
-        if (ev->type() == QEvent::Enter)
+        if      (ev->type() == QEvent::Enter)
         {
             setCursor(Qt::ArrowCursor);
         }
@@ -1195,7 +1258,7 @@ bool DPreviewImage::eventFilter(QObject* obj, QEvent* ev)
     }
     else if (obj == horizontalScrollBar() && horizontalScrollBar()->isVisible())
     {
-        if (ev->type() == QEvent::Enter)
+        if      (ev->type() == QEvent::Enter)
         {
             setCursor(Qt::ArrowCursor);
         }
@@ -1215,6 +1278,7 @@ void DPreviewImage::resizeEvent(QResizeEvent* e)
     if (!d->zoom2FitAction->isEnabled())
     {
         // Fit the image to the new size...
+
         fitInView(d->pixmapItem->boundingRect(), Qt::KeepAspectRatio);
         d->selection->saveZoom(transform().m11());
     }
@@ -1224,8 +1288,8 @@ void DPreviewImage::resizeEvent(QResizeEvent* e)
 
 void DPreviewImage::updateSelVisibility()
 {
-    if ((d->selection->rect().width()  > 0.001) &&
-        (d->selection->rect().height() > 0.001) &&
+    if ((d->selection->rect().width()                       > 0.001) &&
+        (d->selection->rect().height()                      > 0.001) &&
         ((d->scene->width() - d->selection->rect().width()  > 0.1) ||
         (d->scene->height() - d->selection->rect().height() > 0.1)))
     {
@@ -1244,7 +1308,9 @@ void DPreviewImage::updateHighlight()
     if (d->selection->isVisible())
     {
         QRectF rect;
+
         // Left
+
         rect.setCoords(0,
                        0,
                        d->selection->rect().left(),
@@ -1252,6 +1318,7 @@ void DPreviewImage::updateHighlight()
         d->highLightLeft->setRect(rect);
 
         // Right
+
         rect.setCoords(d->selection->rect().right(),
                        0,
                        d->scene->width(),
@@ -1259,6 +1326,7 @@ void DPreviewImage::updateHighlight()
         d->highLightRight->setRect(rect);
 
         // Top
+
         rect.setCoords(d->selection->rect().left(),
                        0,
                        d->selection->rect().right(),
@@ -1266,6 +1334,7 @@ void DPreviewImage::updateHighlight()
         d->highLightTop->setRect(rect);
 
         // Bottom
+
         rect.setCoords(d->selection->rect().left(),
                        d->selection->rect().bottom(),
                        d->selection->rect().right(),

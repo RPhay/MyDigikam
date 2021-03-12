@@ -46,9 +46,9 @@ namespace Digikam
 {
 
 DPluginDialog::DPluginDialog(QWidget* const parent, const QString& objName)
-    : QDialog(parent),
+    : QDialog  (parent),
       m_buttons(nullptr),
-      m_tool(nullptr)
+      m_tool   (nullptr)
 {
     setObjectName(objName);
     setWindowFlags((windowFlags() & ~Qt::Dialog) |
@@ -72,7 +72,7 @@ void DPluginDialog::setPlugin(DPlugin* const tool)
     if (m_tool)
     {
         QPushButton* const help = m_buttons->addButton(QDialogButtonBox::Help);
-        help->setText(i18n("About..."));
+        help->setText(i18nc("@action: button", "About..."));
 
         connect(help, SIGNAL(clicked()),
                 this, SLOT(slotAboutPlugin()));
