@@ -143,7 +143,8 @@ public:
     void setColumn(ColumnType column, const QString& label, bool enable);
 
     DItemsListViewItem* findItem(const QUrl& url);
-    QModelIndex indexFromItem(DItemsListViewItem* item, int column = 0) const;
+    QModelIndex indexFromItem(DItemsListViewItem* item,
+                              int column = 0)   const;
     DItemsListViewItem* getCurrentItem()        const;
 
     DInfoInterface* iface()                     const;
@@ -177,7 +178,8 @@ private:
 
 private:
 
-    int m_iconSize;
+    int              m_iconSize;
+    QTreeWidgetItem* m_itemDraged;
 };
 
 // -------------------------------------------------------------------------
@@ -241,9 +243,9 @@ public:
      */
     bool                checkSelection();
 
-    int                 iconSize()                              const;
+    int                 iconSize()                                  const;
 
-    DItemsListView*     listView()                              const;
+    DItemsListView*     listView()                                  const;
 
     void                processing(const QUrl& url);
     void                processed(const QUrl& url, bool success);
@@ -303,7 +305,8 @@ private:
 
 private:
 
-    DItemsList(); // Disable default constructor.
+    // Disable
+    DItemsList() = delete;
 
     class Private;
     Private* const d;
