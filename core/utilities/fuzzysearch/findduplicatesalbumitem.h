@@ -48,9 +48,10 @@ public:
     enum Column
     {
       REFERENCE_IMAGE = 0,
-      REFERENCE_ALBUM = 1,
-      RESULT_COUNT    = 2,
-      AVG_SIMILARITY  = 3
+      REFERENCE_DATE  = 1,
+      REFERENCE_ALBUM = 2,
+      RESULT_COUNT    = 3,
+      AVG_SIMILARITY  = 4
     };
 
 public:
