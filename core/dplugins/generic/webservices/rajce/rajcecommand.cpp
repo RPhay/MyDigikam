@@ -31,6 +31,7 @@
 #include <QNetworkReply>
 #include <QNetworkAccessManager>
 #include <QCryptographicHash>
+#include <QXmlQuery>
 #include <QXmlResultItems>
 #include <QFileInfo>
 #include <QUrl>

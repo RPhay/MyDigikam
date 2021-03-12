@@ -29,12 +29,13 @@
 #include <QImage>
 #include <QObject>
 #include <QString>
-#include <QXmlQuery>
 
 // Local includes
 
 #include "rajcesession.h"
 #include "rajcempform.h"
+
+class QXmlQuery;
 
 namespace DigikamGenericRajcePlugin
 {
