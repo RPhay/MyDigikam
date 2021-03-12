@@ -96,8 +96,8 @@ public:
 };
 
 PanoIntroPage::PanoIntroPage(PanoManager* const mngr, QWizard* const dlg)
-    : DWizardPage(dlg, i18nc("@title: window", "<b>Welcome to Panorama Tool</b>")),
-      d(new Private(mngr))
+    : DWizardPage(dlg, QString::fromLatin1("<b>%1</b>").arg(i18nc("@title: window", "Welcome to Panorama Tool"))),
+      d          (new Private(mngr))
 {
     DVBox* const vbox   = new DVBox(this);
 
@@ -178,7 +178,7 @@ PanoIntroPage::PanoIntroPage(PanoManager* const mngr, QWizard* const dlg)
 
     d->addGPlusMetadataCheckBox     = new QCheckBox(i18nc("@option:check", "Add Photosphere Metadata"), d->settingsGroupBox);
     d->addGPlusMetadataCheckBox->setToolTip(i18nc("@info:tooltip", "Add Exif metadata to the output panorama image for Google+ 3D viewer"));
-    d->addGPlusMetadataCheckBox->setWhatsThis(i18nc("@info:whatsthis", "<b>Add Photosphere Metadata</b>: Enabling this allows the program to add "
+    d->addGPlusMetadataCheckBox->setWhatsThis(i18nc("@info:whatsthis", "\"Add Photosphere Metadata\": Enabling this allows the program to add "
                                                     "metadata to the output image such that when uploaded to Google+, the "
                                                     "Google+ 3D viewer is activated and the panorama can be seen in 3D. Note "
                                                     "that this feature is most interesting for large panoramas."));
@@ -197,7 +197,7 @@ PanoIntroPage::PanoIntroPage(PanoManager* const mngr, QWizard* const dlg)
     // xgettext: no-c-format
     d->jpegRadioButton->setToolTip(i18nc("@info: tooltip", "Selects a JPEG output with 90% compression rate "
                                          "(lossy compression, smaller size)."));
-    d->jpegRadioButton->setWhatsThis(i18nc("@info:whatsthis", "<b>JPEG output</b>: Using JPEG output, the panorama file will be smaller "
+    d->jpegRadioButton->setWhatsThis(i18nc("@info:whatsthis", "\"JPEG output\": Using JPEG output, the panorama file will be smaller "
                                            "at the cost of information loss during compression. This is the easiest "
                                            "way to share the result, or print it online or in a shop."));
     formatVBox->addWidget(d->jpegRadioButton);
@@ -206,7 +206,7 @@ PanoIntroPage::PanoIntroPage(PanoManager* const mngr, QWizard* const dlg)
     d->tiffRadioButton          = new QRadioButton(i18nc("@option: radio", "TIFF output"), d->formatGroupBox);
     d->tiffRadioButton->setToolTip(i18nc("@info: tooltip", "Selects a TIFF output compressed using the LZW algorithm "
                                          "(lossless compression, bigger size)."));
-    d->tiffRadioButton->setWhatsThis(i18nc("@info: whatsthis", "<b>TIFF output</b>: Using TIFF output, you get the same color depth than "
+    d->tiffRadioButton->setWhatsThis(i18nc("@info: whatsthis", "\"TIFF output\": Using TIFF output, you get the same color depth than "
                                            "your original photos using RAW images at the cost of a bigger panorama file."));
     formatVBox->addWidget(d->tiffRadioButton);
     group->addButton(d->tiffRadioButton);
@@ -216,7 +216,7 @@ PanoIntroPage::PanoIntroPage(PanoManager* const mngr, QWizard* const dlg)
     d->hdrRadioButton           = new QRadioButton(i18nc("@option: radio", "HDR output"), d->formatGroupBox);
     d->hdrRadioButton->setToolTip(i18nc("@info: tooltip", "Selects an High Dynamic Range (HDR) image, that can be processed further "
                                         "with a dedicated software."));
-    d->hdrRadioButton->setWhatsThis(i18nc("@info: whatsthis", "<b>HDR output</b>: Output in High Dynamic Range, meaning that every piece of "
+    d->hdrRadioButton->setWhatsThis(i18nc("@info: whatsthis", "\"HDR output\": Output in High Dynamic Range, meaning that every piece of "
                                           "information contained in the original photos are preserved. Note that you "
                                           "need another software to process the resulting panorama, like "
                                           "<a href=\"http://qtpfsgui.sourceforge.net/\">Luminance HDR</a>"));       // krazy:exclude=insecurenet
