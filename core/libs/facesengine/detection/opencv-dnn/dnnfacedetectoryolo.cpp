@@ -40,6 +40,7 @@
 // Local includes
 
 #include "digikam_debug.h"
+#include "digikam_config.h"
 
 namespace Digikam
 {
@@ -70,7 +71,15 @@ bool DNNFaceDetectorYOLO::loadModels()
         {
             qCDebug(DIGIKAM_FACEDB_LOG) << "YOLO model:" << nnmodel << ", YOLO data:" << nndata;
 
-            net = cv::dnn::readNetFromDarknet(nnmodel.toUtf8().constData(), nndata.toUtf8().constData());
+#ifdef Q_OS_WIN
+
+            net = cv::dnn::readNetFromDarknet((const char*)nnmodel.utf16(), (const char*)nndata.utf16());
+
+#else
+
+            net = cv::dnn::readNetFromDarknet(nnmodel.toStdString(), nndata.toStdString());
+#endif
+
             net.setPreferableBackend(cv::dnn::DNN_BACKEND_DEFAULT);
             net.setPreferableTarget(cv::dnn::DNN_TARGET_CPU);
         }

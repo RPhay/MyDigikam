@@ -35,6 +35,7 @@
 // Local includes
 
 #include "digikam_debug.h"
+#include "digikam_config.h"
 #include "recognitionpreprocessor.h"
 
 namespace Digikam
@@ -137,7 +138,15 @@ bool DNNFaceExtractor::loadModels()
         {
             qCDebug(DIGIKAM_FACEDB_LOG) << "Extractor model:" << nnmodel;
 
-            d->net = cv::dnn::readNetFromTorch(nnmodel.toUtf8().constData());
+#ifdef Q_OS_WIN
+
+            d->net = cv::dnn::readNetFromTorch((const char*)nnmodel.utf16());
+
+#else
+
+            d->net = cv::dnn::readNetFromTorch(nnmodel.toStdString());
+#endif
+
         }
         catch (cv::Exception& e)
         {
