@@ -96,7 +96,7 @@ public:
 };
 
 PanoIntroPage::PanoIntroPage(PanoManager* const mngr, QWizard* const dlg)
-    : DWizardPage(dlg, i18nc("@title:window", "<b>Welcome to Panorama Tool</b>")),
+    : DWizardPage(dlg, i18nc("@title: window", "<b>Welcome to Panorama Tool</b>")),
       d(new Private(mngr))
 {
     DVBox* const vbox   = new DVBox(this);
@@ -104,21 +104,24 @@ PanoIntroPage::PanoIntroPage(PanoManager* const mngr, QWizard* const dlg)
     QLabel* const title = new QLabel(vbox);
     title->setWordWrap(true);
     title->setOpenExternalLinks(true);
-    title->setText(i18n("<qt>"
-                        "<p><h1><b>Welcome to Panorama Tool</b></h1></p>"
-                        "<p>This tool stitches several images together to create a panorama, making the "
-                        "seam between images not visible.</p>"
-                        "<p>This assistant will help you to configure how to import images before "
-                        "stitching them into a panorama.</p>"
-                        "<p>Images must be taken from the same point of view.</p>"
-                        "<p>For more information, please take a look at "
-                        "<a href='http://hugin.sourceforge.net/tutorials/overview/en.shtml'>this page</a></p>"      // krazy:exclude=insecurenet
-                        "</qt>"));
+    title->setText(QString::fromUtf8("<qt>"
+                                     "<p><h1><b>%1</b></h1></p>"
+                                     "<p>%2</p>"
+                                     "<p>%3</p>"
+                                     "<p>%4</p>"
+                                     "<p>%5 <a href='http://hugin.sourceforge.net/tutorials/overview/en.shtml'>%6</a></p>"      // krazy:exclude=insecurenet
+                                     "</qt>")
+                   .arg(i18nc("@info", "Welcome to Panorama Tool"))
+                   .arg(i18nc("@info", "This tool stitches several images together to create a panorama, making the seam between images not visible."))
+                   .arg(i18nc("@info", "This assistant will help you to configure how to import images before stitching them into a panorama."))
+                   .arg(i18nc("@info", "Images must be taken from the same point of view."))
+                   .arg(i18nc("@info", "For more information, please take a look at "))
+                   .arg(i18nc("@info", "this page")));
 
     QGroupBox* const binaryBox        = new QGroupBox(vbox);
     QGridLayout* const binaryLayout   = new QGridLayout;
     binaryBox->setLayout(binaryLayout);
-    binaryBox->setTitle(i18nc("@title:group", "Panorama Binaries"));
+    binaryBox->setTitle(i18nc("@title: group", "Panorama Binaries"));
     d->binariesWidget = new DBinarySearch(binaryBox);
     d->binariesWidget->addBinary(d->mngr->autoOptimiserBinary());
     d->binariesWidget->addBinary(d->mngr->cpCleanBinary());
@@ -183,16 +186,16 @@ PanoIntroPage::PanoIntroPage(PanoManager* const mngr, QWizard* const dlg)
     vbox->addWidget(d->settingsGroupBox);
 */
     QVBoxLayout* const formatVBox = new QVBoxLayout();
-    d->formatGroupBox             = new QGroupBox(i18nc("@title:group", "File Format"), vbox);
+    d->formatGroupBox             = new QGroupBox(i18nc("@title: group", "File Format"), vbox);
     d->formatGroupBox->setLayout(formatVBox);
     QButtonGroup* const group     = new QButtonGroup();
 
-    d->jpegRadioButton            = new QRadioButton(i18nc("@option:radio", "JPEG output"), d->formatGroupBox);
+    d->jpegRadioButton            = new QRadioButton(i18nc("@option: radio", "JPEG output"), d->formatGroupBox);
 
     // The following comment is to get the next string extracted for translation
 
     // xgettext: no-c-format
-    d->jpegRadioButton->setToolTip(i18nc("@info:tooltip", "Selects a JPEG output with 90% compression rate "
+    d->jpegRadioButton->setToolTip(i18nc("@info: tooltip", "Selects a JPEG output with 90% compression rate "
                                          "(lossy compression, smaller size)."));
     d->jpegRadioButton->setWhatsThis(i18nc("@info:whatsthis", "<b>JPEG output</b>: Using JPEG output, the panorama file will be smaller "
                                            "at the cost of information loss during compression. This is the easiest "
@@ -200,20 +203,20 @@ PanoIntroPage::PanoIntroPage(PanoManager* const mngr, QWizard* const dlg)
     formatVBox->addWidget(d->jpegRadioButton);
     group->addButton(d->jpegRadioButton);
 
-    d->tiffRadioButton          = new QRadioButton(i18nc("@option:radio", "TIFF output"), d->formatGroupBox);
-    d->tiffRadioButton->setToolTip(i18nc("@info:tooltip", "Selects a TIFF output compressed using the LZW algorithm "
+    d->tiffRadioButton          = new QRadioButton(i18nc("@option: radio", "TIFF output"), d->formatGroupBox);
+    d->tiffRadioButton->setToolTip(i18nc("@info: tooltip", "Selects a TIFF output compressed using the LZW algorithm "
                                          "(lossless compression, bigger size)."));
-    d->tiffRadioButton->setWhatsThis(i18nc("@info:whatsthis", "<b>TIFF output</b>: Using TIFF output, you get the same color depth than "
+    d->tiffRadioButton->setWhatsThis(i18nc("@info: whatsthis", "<b>TIFF output</b>: Using TIFF output, you get the same color depth than "
                                            "your original photos using RAW images at the cost of a bigger panorama file."));
     formatVBox->addWidget(d->tiffRadioButton);
     group->addButton(d->tiffRadioButton);
 
 /*
     // TODO HDR
-    d->hdrRadioButton           = new QRadioButton(i18nc("@option:radio", "HDR output"), d->formatGroupBox);
-    d->hdrRadioButton->setToolTip(i18nc("@info:tooltip", "Selects an High Dynamic Range (HDR) image, that can be processed further "
+    d->hdrRadioButton           = new QRadioButton(i18nc("@option: radio", "HDR output"), d->formatGroupBox);
+    d->hdrRadioButton->setToolTip(i18nc("@info: tooltip", "Selects an High Dynamic Range (HDR) image, that can be processed further "
                                         "with a dedicated software."));
-    d->hdrRadioButton->setWhatsThis(i18nc("@info:whatsthis", "<b>HDR output</b>: Output in High Dynamic Range, meaning that every piece of "
+    d->hdrRadioButton->setWhatsThis(i18nc("@info: whatsthis", "<b>HDR output</b>: Output in High Dynamic Range, meaning that every piece of "
                                           "information contained in the original photos are preserved. Note that you "
                                           "need another software to process the resulting panorama, like "
                                           "<a href=\"http://qtpfsgui.sourceforge.net/\">Luminance HDR</a>"));       // krazy:exclude=insecurenet
