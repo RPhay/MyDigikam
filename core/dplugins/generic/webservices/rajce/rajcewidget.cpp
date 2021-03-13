@@ -110,7 +110,7 @@ public:
 
 RajceWidget::RajceWidget(DInfoInterface* const iface, QWidget* const parent)
     : WSSettingsWidget(parent, iface, QLatin1String("Rajce.net")),
-      d(new Private)
+      d               (new Private)
 {
     d->iface             = iface;
     d->talker            = new RajceTalker(this);

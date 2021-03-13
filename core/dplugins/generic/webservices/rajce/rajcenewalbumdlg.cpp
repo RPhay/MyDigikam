@@ -40,15 +40,15 @@ namespace DigikamGenericRajcePlugin
 
 RajceNewAlbumDlg::RajceNewAlbumDlg(QWidget* const parent)
     : WSNewAlbumDialog(parent,
-      QLatin1String("Rajce.net"))
+      QLatin1String   ("Rajce.net"))
 {
     getLocEdit()->hide();
     getDateTimeEdit()->hide();
 
-    QGroupBox* const privBox = new QGroupBox(i18n("Visibility"), getMainWidget());
-    privBox->setWhatsThis(i18n("Set the visibility of the album"));
+    QGroupBox* const privBox = new QGroupBox(i18nc("@option", "Visibility"), getMainWidget());
+    privBox->setWhatsThis(i18nc("@info", "Set the visibility of the album"));
 
-    QLabel* const lbl   = new QLabel(i18n("Public"), privBox);
+    QLabel* const lbl   = new QLabel(i18nc("@label: properties", "Public"), privBox);
 
     m_albumVisible = new QCheckBox;
     m_albumVisible->setChecked(true);

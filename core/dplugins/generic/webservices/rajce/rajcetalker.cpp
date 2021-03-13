@@ -59,8 +59,8 @@ public:
 
     explicit Private()
       : queueAccess(QMutex::Recursive),
-        netMngr(nullptr),
-        reply(nullptr)
+        netMngr    (nullptr),
+        reply      (nullptr)
     {
     }
 
@@ -76,7 +76,7 @@ public:
 
 RajceTalker::RajceTalker(QWidget* const parent)
     : QObject(parent),
-      d(new Private)
+      d      (new Private)
 {
     d->tmpDir  = WSToolUtils::makeTemporaryDir("rajce").absolutePath() + QLatin1Char('/');
     d->netMngr = new QNetworkAccessManager(this);
