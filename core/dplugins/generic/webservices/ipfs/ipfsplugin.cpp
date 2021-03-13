@@ -53,7 +53,7 @@ void IpfsPlugin::cleanUp()
 
 QString IpfsPlugin::name() const
 {
-    return i18n("IPFS");
+    return i18nc("@title", "IPFS");
 }
 
 QString IpfsPlugin::iid() const
@@ -68,13 +68,14 @@ QIcon IpfsPlugin::icon() const
 
 QString IpfsPlugin::description() const
 {
-    return i18n("A tool to export to IPFS web-service");
+    return i18nc("@info", "A tool to export to IPFS web-service");
 }
 
 QString IpfsPlugin::details() const
 {
-    return i18n("<p>This tool permit to export items to IPFS web-service.</p>"
-                "<p>See IPFS web site for details: <a href='https://ipfs.io/'>https://ipfs.io/</a></p>");
+    return i18nc("@info", "This tool permit to export items to IPFS web-service.\n\n"
+                 "See IPFS web site for details: %1",
+                 QLatin1String("<a href='https://ipfs.io/'>https://ipfs.io/</a>"));
 }
 
 QList<DPluginAuthor> IpfsPlugin::authors() const
