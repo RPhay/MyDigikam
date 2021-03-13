@@ -49,7 +49,7 @@ void UnifiedPlugin::cleanUp()
 
 QString UnifiedPlugin::name() const
 {
-    return i18n("Unified");
+    return i18nc("@title", "Unified");
 }
 
 QString UnifiedPlugin::iid() const
@@ -64,13 +64,13 @@ QIcon UnifiedPlugin::icon() const
 
 QString UnifiedPlugin::description() const
 {
-    return i18n("A tool to export items to web-services");
+    return i18nc("@info", "A tool to export items to web-services");
 }
 
 QString UnifiedPlugin::details() const
 {
-    return i18n("<p>This tool permit to export items to many web-services.</p>"
-                "<p>This is a unified tool, grouping many tools in one.</p>");
+    return i18nc("@info", "This tool permit to export items to many web-services.\n\n"
+                 "This is a unified tool, grouping many tools in one.");
 }
 
 QList<DPluginAuthor> UnifiedPlugin::authors() const

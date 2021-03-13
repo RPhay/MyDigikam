@@ -47,7 +47,7 @@ class UnifiedPlugin : public DPluginGeneric
 public:
 
     explicit UnifiedPlugin(QObject* const parent = 0);
-    ~UnifiedPlugin();
+    ~UnifiedPlugin()                     override;
 
     QString name()                 const override;
     QString iid()                  const override;
@@ -56,8 +56,8 @@ public:
     QString description()          const override;
     QList<DPluginAuthor> authors() const override;
 
-    void setup(QObject* const) override;
-    void cleanUp()             override;
+    void setup(QObject* const)           override;
+    void cleanUp()                       override;
 
 private Q_SLOTS:
 
