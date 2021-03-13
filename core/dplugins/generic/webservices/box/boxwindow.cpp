@@ -57,9 +57,9 @@ public:
     explicit Private()
       : imagesCount(0),
         imagesTotal(0),
-        widget(nullptr),
-        albumDlg(nullptr),
-        talker(nullptr)
+        widget     (nullptr),
+        albumDlg   (nullptr),
+        talker     (nullptr)
     {
     }
 
@@ -77,7 +77,7 @@ public:
 BOXWindow::BOXWindow(DInfoInterface* const iface,
                      QWidget* const /*parent*/)
     : WSToolDialog(nullptr, QLatin1String("Box Export Dialog")),
-      d(new Private)
+      d           (new Private)
 {
     d->widget = new BOXWidget(this, iface, QLatin1String("Box"));
 
@@ -85,10 +85,10 @@ BOXWindow::BOXWindow(DInfoInterface* const iface,
 
     setMainWidget(d->widget);
     setModal(false);
-    setWindowTitle(i18n("Export to Box"));
+    setWindowTitle(i18nc("@title", "Export to Box"));
 
-    startButton()->setText(i18n("Start Upload"));
-    startButton()->setToolTip(i18n("Start upload to Box"));
+    startButton()->setText(i18nc("@action", "Start Upload"));
+    startButton()->setToolTip(i18nc("@action", "Start upload to Box"));
 
     d->widget->setMinimumSize(700, 500);
 
@@ -249,20 +249,20 @@ void BOXWindow::slotStartTransfer()
 
     if (d->widget->imagesList()->imageUrls().isEmpty())
     {
-        QMessageBox::critical(this, i18nc("@title:window", "Error"),
-                              i18n("No image selected. Please select which images should be uploaded."));
+        QMessageBox::critical(this, i18nc("@title: window", "Error"),
+                              i18nc("@info", "No image selected. Please select which images should be uploaded."));
         return;
     }
 
     if (!(d->talker->authenticated()))
     {
         QPointer<QMessageBox> warn = new QMessageBox(QMessageBox::Warning,
-                i18n("Warning"),
-                i18n("Authentication failed. Click \"Continue\" to authenticate."),
+                i18nc("@title: dialog", "Warning"),
+                i18nc("@info", "Authentication failed. Click \"Continue\" to authenticate."),
                 QMessageBox::Yes | QMessageBox::No);
 
-        (warn->button(QMessageBox::Yes))->setText(i18n("Continue"));
-        (warn->button(QMessageBox::No))->setText(i18n("Cancel"));
+        (warn->button(QMessageBox::Yes))->setText(i18nc("@action: button", "Continue"));
+        (warn->button(QMessageBox::No))->setText(i18nc("@action: button", "Cancel"));
 
         if (warn->exec() == QMessageBox::Yes)
         {
@@ -290,11 +290,11 @@ void BOXWindow::slotStartTransfer()
     d->imagesTotal = d->transferQueue.count();
     d->imagesCount = 0;
 
-    d->widget->progressBar()->setFormat(i18n("%v / %m"));
+    d->widget->progressBar()->setFormat(i18nc("@info: progress bar", "%v / %m"));
     d->widget->progressBar()->setMaximum(d->imagesTotal);
     d->widget->progressBar()->setValue(0);
     d->widget->progressBar()->show();
-    d->widget->progressBar()->progressScheduled(i18n("Box export"), true, true);
+    d->widget->progressBar()->progressScheduled(i18nc("@info", "Box export"), true, true);
     d->widget->progressBar()->progressThumbnailChanged(
         QIcon::fromTheme(QLatin1String("dk-box")).pixmap(22, 22));
 
@@ -330,10 +330,10 @@ void BOXWindow::uploadNextPhoto()
 
 void BOXWindow::slotAddPhotoFailed(const QString& msg)
 {
-    if (QMessageBox::question(this, i18n("Uploading Failed"),
-                              i18n("Failed to upload photo to Box."
-                                   "\n%1\n"
-                                   "Do you want to continue?", msg))
+    if (QMessageBox::question(this, i18nc("@title", "Uploading Failed"),
+                              i18nc("@info", "Failed to upload photo to Box."
+                                    "\n%1\n"
+                                    "Do you want to continue?", msg))
         != QMessageBox::Yes)
     {
         d->transferQueue.clear();
@@ -389,8 +389,8 @@ void BOXWindow::slotSignalLinkingFailed()
     slotSetUserName(QLatin1String(""));
     d->widget->getAlbumsCoB()->clear();
 
-    if (QMessageBox::question(this, i18n("Login Failed"),
-                              i18n("Authentication failed. Do you want to try again?"))
+    if (QMessageBox::question(this, i18nc("@title", "Login Failed"),
+                              i18nc("@info", "Authentication failed. Do you want to try again?"))
         == QMessageBox::Yes)
     {
         d->talker->link();
@@ -405,12 +405,12 @@ void BOXWindow::slotSignalLinkingSucceeded()
 
 void BOXWindow::slotListAlbumsFailed(const QString& msg)
 {
-    QMessageBox::critical(this, QString(), i18n("Box call failed:\n%1", msg));
+    QMessageBox::critical(this, QString(), i18nc("@info", "Box call failed:\n%1", msg));
 }
 
 void BOXWindow::slotCreateFolderFailed(const QString& msg)
 {
-    QMessageBox::critical(this, QString(), i18n("Box call failed:\n%1", msg));
+    QMessageBox::critical(this, QString(), i18nc("@info", "Box call failed:\n%1", msg));
 }
 
 void BOXWindow::slotCreateFolderSucceeded()

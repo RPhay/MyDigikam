@@ -53,7 +53,7 @@ void BoxPlugin::cleanUp()
 
 QString BoxPlugin::name() const
 {
-    return i18n("Box");
+    return i18nc("@title", "Box");
 }
 
 QString BoxPlugin::iid() const
@@ -68,13 +68,13 @@ QIcon BoxPlugin::icon() const
 
 QString BoxPlugin::description() const
 {
-    return i18n("A tool to export to Box web-service");
+    return i18nc("@info", "A tool to export to Box web-service");
 }
 
 QString BoxPlugin::details() const
 {
-    return i18n("<p>This tool permit to export items to Box web-service.</p>"
-                "<p>See Box web site for details: <a href='https://box.com/'>https://box.com/</a></p>");
+    return i18nc("@info", "This tool permit to export items to Box web-service.\n\n"
+                "See Box web site for details: %1", QLatin1String("<a href='https://box.com/'>https://box.com/</a>\n"));
 }
 
 QList<DPluginAuthor> BoxPlugin::authors() const
