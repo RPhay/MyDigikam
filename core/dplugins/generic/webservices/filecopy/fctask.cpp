@@ -61,7 +61,7 @@ public:
 FCTask::FCTask(const QUrl& srcUrl,
                const FCContainer& settings)
     : ActionJob(),
-      d(new Private)
+      d        (new Private)
 {
     d->srcUrl   = srcUrl;
     d->settings = settings;
@@ -122,8 +122,11 @@ void FCTask::run()
     else if ((d->settings.behavior == FCContainer::FullSymLink) ||
              (d->settings.behavior == FCContainer::RelativeSymLink))
     {
+
 #ifdef Q_OS_WIN
+
         dest.setPath(dest.path() + QLatin1String(".lnk"));
+
 #endif
 
         if (d->settings.behavior == FCContainer::FullSymLink)

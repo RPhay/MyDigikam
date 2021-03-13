@@ -53,7 +53,7 @@ public:
 
     explicit Private()
       : exportWidget(nullptr),
-        thread(nullptr)
+        thread      (nullptr)
     {
     }
 
@@ -85,7 +85,7 @@ const QString FCExportWindow::Private::REMOVE_METADATA         = QLatin1String("
 
 FCExportWindow::FCExportWindow(DInfoInterface* const iface, QWidget* const /*parent*/)
     : WSToolDialog(nullptr, QLatin1String("FileCopy Export Dialog")),
-      d(new Private)
+      d           (new Private)
 {
     d->exportWidget = new FCExportWidget(iface, this);
     setMainWidget(d->exportWidget);
@@ -226,6 +226,7 @@ void FCExportWindow::slotCopy()
     saveSettings();
 
     // start copying and react on signals
+
     setEnabled(false);
 
     if (d->thread)

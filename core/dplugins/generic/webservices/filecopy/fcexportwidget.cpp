@@ -57,19 +57,19 @@ class Q_DECL_HIDDEN FCExportWidget::Private
 public:
 
     explicit Private()
-      : selector(nullptr),
-        imageList(nullptr),
-        overwrite(nullptr),
-        targetButtonGroup(nullptr),
-        fileCopyButton(nullptr),
-        symLinkButton(nullptr),
-        relativeButton(nullptr),
-        imageChangeGroupBox(nullptr),
-        changeImagesProp(nullptr),
-        removeMetadataProp(nullptr),
-        imageCompression(nullptr),
-        imageResize(nullptr),
-        imageFormat(nullptr)
+      : selector            (nullptr),
+        imageList           (nullptr),
+        overwrite           (nullptr),
+        targetButtonGroup   (nullptr),
+        fileCopyButton      (nullptr),
+        symLinkButton       (nullptr),
+        relativeButton      (nullptr),
+        imageChangeGroupBox (nullptr),
+        changeImagesProp    (nullptr),
+        removeMetadataProp  (nullptr),
+        imageCompression    (nullptr),
+        imageResize         (nullptr),
+        imageFormat         (nullptr)
     {
     }
 
@@ -95,7 +95,7 @@ public:
 
 FCExportWidget::FCExportWidget(DInfoInterface* const iface, QWidget* const parent)
     : QWidget(parent),
-      d(new Private)
+      d      (new Private)
 {
     // setup local target selection
 

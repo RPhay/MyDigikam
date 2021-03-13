@@ -54,7 +54,7 @@ void FCPlugin::cleanUp()
 
 QString FCPlugin::name() const
 {
-    return i18n("FileCopy");
+    return i18nc("@title", "File Copy");
 }
 
 QString FCPlugin::iid() const
@@ -69,12 +69,12 @@ QIcon FCPlugin::icon() const
 
 QString FCPlugin::description() const
 {
-    return i18n("A tool to export items to a local storage");
+    return i18nc("@info", "A tool to export items to a local storage");
 }
 
 QString FCPlugin::details() const
 {
-    return i18n("<p>This tool permit to export items to a local storage.</p>");
+    return i18nc("@info", "This tool permit to export items to a local storage.");
 }
 
 QList<DPluginAuthor> FCPlugin::authors() const

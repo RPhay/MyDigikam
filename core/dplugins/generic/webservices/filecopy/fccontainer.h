@@ -52,12 +52,12 @@ public:
 public:
 
     FCContainer()
-      : behavior(CopyFile),
-        imageFormat(JPEG),
-        imageResize(1024),
-        imageCompression(75),
-        overwrite(false),
-        removeMetadata(false),
+      : behavior             (CopyFile),
+        imageFormat          (JPEG),
+        imageResize          (1024),
+        imageCompression     (75),
+        overwrite            (false),
+        removeMetadata       (false),
         changeImageProperties(false)
     {
     };
