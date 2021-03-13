@@ -102,7 +102,7 @@ public:
         progressBar        = nullptr;
         iface              = nullptr;
         imgList            = nullptr;
-        defaultMessage     = i18n("Select an image");
+        defaultMessage     = i18nc("@info", "Select an image");
         loginGBox          = nullptr;
         userGBox           = nullptr;
     }
@@ -159,7 +159,7 @@ public:
 
 MediaWikiWidget::MediaWikiWidget(DInfoInterface* const iface, QWidget* const parent)
     : QWidget(parent),
-      d(new Private)
+      d      (new Private)
 {
     setObjectName(QLatin1String("MediaWikiWidget"));
 
@@ -170,7 +170,7 @@ MediaWikiWidget::MediaWikiWidget(DInfoInterface* const iface, QWidget* const par
     // -------------------------------------------------------------------
 
     d->headerLbl = new QLabel(this);
-    d->headerLbl->setWhatsThis(i18n("This is a clickable link to open the MediaWiki home page in a web browser."));
+    d->headerLbl->setWhatsThis(i18nc("@info", "This is a clickable link to open the MediaWiki home page in a web browser."));
     d->headerLbl->setOpenExternalLinks(true);
     d->headerLbl->setFocusPolicy(Qt::NoFocus);
 
@@ -180,21 +180,21 @@ MediaWikiWidget::MediaWikiWidget(DInfoInterface* const iface, QWidget* const par
     d->imgList->setAllowRAW(true);
     d->imgList->setIface(d->iface);
     d->imgList->loadImagesFromCurrentSelection();
-    d->imgList->listView()->setWhatsThis(i18n("This is the list of images to upload to the wiki."));
+    d->imgList->listView()->setWhatsThis(i18nc("@info", "This is the list of images to upload to the wiki."));
 
     // --------------------- Upload tab ----------------------------------
 
-    QScrollArea* const wrapperScroll = new QScrollArea(this);
-    DVBox* const wrapperPan          = new DVBox(wrapperScroll->viewport());
+    QScrollArea* const wrapperScroll   = new QScrollArea(this);
+    DVBox* const wrapperPan            = new DVBox(wrapperScroll->viewport());
     wrapperScroll->setWidget(wrapperPan);
     wrapperScroll->setWidgetResizable(true);
     wrapperScroll->setVisible(false);
 
-    QWidget* const wrapper           = new QWidget(wrapperPan);
-    QHBoxLayout* const wrapperLayout = new QHBoxLayout(wrapper);
+    QWidget* const wrapper             = new QWidget(wrapperPan);
+    QHBoxLayout* const wrapperLayout   = new QHBoxLayout(wrapper);
 
-    QScrollArea* const upload = new QScrollArea(wrapper);
-    DVBox* const pan          = new DVBox(upload->viewport());
+    QScrollArea* const upload          = new QScrollArea(wrapper);
+    DVBox* const pan                   = new DVBox(upload->viewport());
     pan->setAutoFillBackground(true);
 
     upload->setWidget(pan);
@@ -205,7 +205,7 @@ MediaWikiWidget::MediaWikiWidget(DInfoInterface* const iface, QWidget* const par
     QVBoxLayout* const uploadBoxLayout = new QVBoxLayout(uploadPanel);
 
     d->fileBox = new QWidget(uploadBox);
-    d->fileBox->setWhatsThis(i18n("This is the login form to your account on the chosen wiki."));
+    d->fileBox->setWhatsThis(i18nc("@info", "This is the login form to your account on the chosen wiki."));
     QGridLayout* const fileBoxLayout = new QGridLayout(d->fileBox);
 
     loadItemInfoFirstLoad();
@@ -226,17 +226,17 @@ MediaWikiWidget::MediaWikiWidget(DInfoInterface* const iface, QWidget* const par
     d->longitudeEdit = new QLineEdit(d->defaultMessage, d->fileBox);
 
     QLabel* const titleLabel     = new QLabel(d->fileBox);
-    titleLabel->setText(i18n("Title:"));
+    titleLabel->setText(i18nc("@label: properties", "Title:"));
     QLabel* const dateLabel      = new QLabel(d->fileBox);
-    dateLabel->setText(i18n("Date:"));
+    dateLabel->setText(i18nc("@label: properties", "Date:"));
     QLabel* const descLabel      = new QLabel(d->fileBox);
-    descLabel->setText(i18n("Description:"));
+    descLabel->setText(i18nc("@label: properties", "Description:"));
     QLabel* const categoryLabel  = new QLabel(d->fileBox);
-    categoryLabel->setText(i18n("Categories:"));
+    categoryLabel->setText(i18nc("@label: properties", "Categories:"));
     QLabel* const latitudeLabel  = new QLabel(d->fileBox);
-    latitudeLabel->setText(i18n("Latitude:"));
+    latitudeLabel->setText(i18nc("@label: properties", "Latitude:"));
     QLabel* const longitudeLabel = new QLabel(d->fileBox);
-    longitudeLabel->setText(i18n("Longitude:"));
+    longitudeLabel->setText(i18nc("@label: properties", "Longitude:"));
 
     uploadBoxLayout->setSpacing(spacing);
     uploadBoxLayout->addWidget(d->fileBox, 0, Qt::AlignTop);
@@ -264,36 +264,37 @@ MediaWikiWidget::MediaWikiWidget(DInfoInterface* const iface, QWidget* const par
     // --------------------- Account area ----------------------------------
 
     d->userGBox = new QGroupBox(panel2);
-    d->userGBox->setTitle(i18n("Account"));
-    d->userGBox->setWhatsThis(i18n("This is the login form to your MediaWiki account."));
+    d->userGBox->setTitle(i18nc("@option", "Account"));
+    d->userGBox->setWhatsThis(i18nc("@info", "This is the login form to your MediaWiki account."));
 
     QGridLayout* const loginBoxLayout = new QGridLayout(d->userGBox);
     d->userGBox->setLayout(loginBoxLayout);
 
     d->wikiSelect                 = new QComboBox(d->userGBox);
     d->wikiSelect->setSizeAdjustPolicy(QComboBox::AdjustToMinimumContentsLength);
-    QPushButton* const newWikiBtn = new QPushButton(QIcon::fromTheme(QLatin1String("list-add")), i18n("New"), d->userGBox);
-    newWikiBtn->setToolTip(i18n("Add a wiki to this list"));
+    QPushButton* const newWikiBtn = new QPushButton(QIcon::fromTheme(QLatin1String("list-add")),
+                                                    i18nc("@option: button", "New"), d->userGBox);
+    newWikiBtn->setToolTip(i18nc("@info", "Add a wiki to this list"));
     d->nameEdit                   = new QLineEdit(d->userGBox);
     d->passwdEdit                 = new QLineEdit(d->userGBox);
     d->passwdEdit->setEchoMode(QLineEdit::Password);
 
-    d->wikiSelect->addItem(i18n("Wikimedia Commons"),  QLatin1String("https://commons.wikimedia.org/w/api.php"));
-    d->wikiSelect->addItem(i18n("Wikimedia Meta"),     QLatin1String("https://meta.wikimedia.org/w/api.php"));
-    d->wikiSelect->addItem(i18n("Wikipedia"),          QLatin1String("https://en.wikipedia.org/w/api.php"));
-    d->wikiSelect->addItem(i18n("Wikibooks"),          QLatin1String("https://en.wikibooks.org/w/api.php"));
-    d->wikiSelect->addItem(i18n("Wikinews"),           QLatin1String("https://en.wikinews.org/w/api.php"));
-    d->wikiSelect->addItem(i18n("Wikiquote"),          QLatin1String("https://en.wikiquote.org/w/api.php"));
-    d->wikiSelect->addItem(i18n("Wikisource"),         QLatin1String("https://en.wikinews.org/w/api.php"));
-    d->wikiSelect->addItem(i18n("Wiktionary"),         QLatin1String("https://en.wiktionary.org/w/api.php"));
-    d->wikiSelect->addItem(i18n("MediaWiki"),          QLatin1String("https://www.MediaWiki.org/w/api.php"));
-    d->wikiSelect->addItem(i18n("Wikia Foto"),         QLatin1String("https://foto.wikia.com/api.php"));
-    d->wikiSelect->addItem(i18n("Wikia Uncyclopedia"), QLatin1String("https://uncyclopedia.wikia.com/api.php"));
+    d->wikiSelect->addItem(i18nc("@item", "Wikimedia Commons"),  QLatin1String("https://commons.wikimedia.org/w/api.php"));
+    d->wikiSelect->addItem(i18nc("@item", "Wikimedia Meta"),     QLatin1String("https://meta.wikimedia.org/w/api.php"));
+    d->wikiSelect->addItem(i18nc("@item", "Wikipedia"),          QLatin1String("https://en.wikipedia.org/w/api.php"));
+    d->wikiSelect->addItem(i18nc("@item", "Wikibooks"),          QLatin1String("https://en.wikibooks.org/w/api.php"));
+    d->wikiSelect->addItem(i18nc("@item", "Wikinews"),           QLatin1String("https://en.wikinews.org/w/api.php"));
+    d->wikiSelect->addItem(i18nc("@item", "Wikiquote"),          QLatin1String("https://en.wikiquote.org/w/api.php"));
+    d->wikiSelect->addItem(i18nc("@item", "Wikisource"),         QLatin1String("https://en.wikinews.org/w/api.php"));
+    d->wikiSelect->addItem(i18nc("@item", "Wiktionary"),         QLatin1String("https://en.wiktionary.org/w/api.php"));
+    d->wikiSelect->addItem(i18nc("@item", "MediaWiki"),          QLatin1String("https://www.MediaWiki.org/w/api.php"));
+    d->wikiSelect->addItem(i18nc("@item", "Wikia Foto"),         QLatin1String("https://foto.wikia.com/api.php"));
+    d->wikiSelect->addItem(i18nc("@item", "Wikia Uncyclopedia"), QLatin1String("https://uncyclopedia.wikia.com/api.php"));
 
     d->wikiSelect->setEditable(false);
 
     QLabel* const wikiLabel = new QLabel(d->userGBox);
-    wikiLabel->setText(i18n("Wiki:"));
+    wikiLabel->setText(i18nc("@label", "Wiki:"));
 
     // --------------------- New wiki area ----------------------------------
 
@@ -304,21 +305,22 @@ MediaWikiWidget::MediaWikiWidget(DInfoInterface* const iface, QWidget* const par
     d->newWikiSv->setVisible(false);
 
     QWidget* const newWikiBox        = new QWidget(newWikiPanel);
-    newWikiBox->setWhatsThis(i18n("These are options for adding a Wiki."));
+    newWikiBox->setWhatsThis(i18nc("@info", "These are options for adding a Wiki."));
 
     QGridLayout* const newWikiLayout = new QGridLayout(newWikiBox);
 
     QLabel* const newWikiNameLabel   = new QLabel(newWikiPanel);
-    newWikiNameLabel->setText(i18n("Name:"));
+    newWikiNameLabel->setText(i18nc("@label: name of wiki area", "Name:"));
 
     QLabel* const newWikiUrlLabel    = new QLabel(newWikiPanel);
-    newWikiUrlLabel->setText(i18n("API URL:"));
+    newWikiUrlLabel->setText(i18nc("@label", "API URL:"));
 
     d->newWikiNameEdit            = new QLineEdit(newWikiPanel);
     d->newWikiUrlEdit             = new QLineEdit(newWikiPanel);
 
-    QPushButton* const addWikiBtn = new QPushButton(QIcon::fromTheme(QLatin1String("list-add")), i18n("Add"), newWikiPanel);
-    addWikiBtn->setToolTip(i18n("Add a new wiki"));
+    QPushButton* const addWikiBtn = new QPushButton(QIcon::fromTheme(QLatin1String("list-add")),
+                                                    i18nc("@action: button", "Add"), newWikiPanel);
+    addWikiBtn->setToolTip(i18nc("@info", "Add a new wiki"));
 
     newWikiLayout->addWidget(newWikiNameLabel,   0, 0, 1, 1);
     newWikiLayout->addWidget(d->newWikiNameEdit, 0, 1, 1, 1);
@@ -327,15 +329,15 @@ MediaWikiWidget::MediaWikiWidget(DInfoInterface* const iface, QWidget* const par
     newWikiLayout->addWidget(addWikiBtn,         2, 1, 1, 1);
 
     QLabel* const nameLabel     = new QLabel(d->userGBox);
-    nameLabel->setText(i18n( "Login:" ));
+    nameLabel->setText(i18nc("@label", "Login:" ));
 
     QLabel* const passwdLabel   = new QLabel(d->userGBox);
-    passwdLabel->setText(i18n("Password:"));
+    passwdLabel->setText(i18nc("@label", "Password:"));
 
     QPushButton* const loginBtn = new QPushButton(d->userGBox);
     loginBtn->setAutoDefault(true);
     loginBtn->setDefault(true);
-    loginBtn->setText(i18n("&Log in"));
+    loginBtn->setText(i18nc("@action", "&Log in"));
 
     loginBoxLayout->addWidget(wikiLabel,     0, 0, 1, 1);
     loginBoxLayout->addWidget(d->wikiSelect, 0, 1, 1, 1);
@@ -351,21 +353,22 @@ MediaWikiWidget::MediaWikiWidget(DInfoInterface* const iface, QWidget* const par
     // --------------------- Login info area ----------------------------------
 
     d->loginGBox = new QGroupBox(panel2);
-    d->loginGBox->setTitle(i18n("Login Information"));
+    d->loginGBox->setTitle(i18nc("@option", "Login Information"));
 
     QGridLayout* const linfoBoxLayout = new QGridLayout(d->loginGBox);
     d->loginGBox->setLayout(linfoBoxLayout);
 
     QLabel* const wikiNameLbl = new QLabel(d->loginGBox);
-    wikiNameLbl->setText(i18nc("Name of the wiki the user is currently logged on", "Logged on: "));
+    wikiNameLbl->setText(i18nc("@label: name of the wiki the user is currently logged on", "Logged on: "));
     d->wikiNameDisplayLbl     = new QLabel(d->loginGBox);
 
     QLabel* const userNameLbl = new QLabel(d->loginGBox);
-    userNameLbl->setText(i18nc("Username which is used to connect to the wiki", "Logged as: "));
+    userNameLbl->setText(i18nc("@label: username which is used to connect to the wiki", "Logged as: "));
     d->userNameDisplayLbl     = new QLabel(d->loginGBox);
 
-    d->changeUserBtn          = new QPushButton(QIcon::fromTheme(QLatin1String("system-switch-user")), i18n("Change Account"), d->loginGBox);
-    d->changeUserBtn->setToolTip(i18n("Logout and change the account used for transfer"));
+    d->changeUserBtn          = new QPushButton(QIcon::fromTheme(QLatin1String("system-switch-user")),
+                                                i18nc("@action: button", "Change Account"), d->loginGBox);
+    d->changeUserBtn->setToolTip(i18nc("@info", "Logout and change the account used for transfer"));
 
     linfoBoxLayout->addWidget(wikiNameLbl,           0, 0, 1, 1);
     linfoBoxLayout->addWidget(d->wikiNameDisplayLbl, 0, 1, 1, 1);
@@ -377,67 +380,67 @@ MediaWikiWidget::MediaWikiWidget(DInfoInterface* const iface, QWidget* const par
     // --------------------- Info area ----------------------------------
 
     QGroupBox* const textGBox = new QGroupBox(panel2);
-    textGBox->setTitle(i18n("Information"));
-    textGBox->setWhatsThis(i18n("This is the login form to your account on the chosen wiki."));
+    textGBox->setTitle(i18nc("@option", "Information"));
+    textGBox->setWhatsThis(i18nc("@info", "This is the login form to your account on the chosen wiki."));
 
     QGridLayout* const textBoxLayout = new QGridLayout(textGBox);
     textGBox->setLayout(textBoxLayout);
 
-    QLabel* const authorLbl  = new QLabel(i18n("Author:"), textGBox);
+    QLabel* const authorLbl  = new QLabel(i18nc("@label", "Author:"), textGBox);
     d->authorEdit            = new QLineEdit(textGBox);
 
-    QLabel* const sourceLbl  = new QLabel(i18n("Source:"), textGBox);
+    QLabel* const sourceLbl  = new QLabel(i18nc("@label: source file", "Source:"), textGBox);
     d->sourceEdit            = new QLineEdit(textGBox);
 
-    QLabel* const licenseLbl = new QLabel(i18n("License:"), textGBox);
+    QLabel* const licenseLbl = new QLabel(i18nc("@label", "License:"), textGBox);
     d->licenseComboBox       = new QComboBox(textGBox);
     d->licenseComboBox->setSizeAdjustPolicy(QComboBox::AdjustToMinimumContentsLength);
 
-    d->licenseComboBox->addItem(i18n("Own work, Creative Commons Attribution-Share Alike 4.0"),
+    d->licenseComboBox->addItem(i18nc("@item", "Own work, Creative Commons Attribution-Share Alike 4.0"),
                                        QLatin1String("{{self|cc-by-sa-4.0}}"));
-    d->licenseComboBox->addItem(i18n("Own work, multi-license with CC-BY-SA-3.0 and GFDL"),
+    d->licenseComboBox->addItem(i18nc("@item", "Own work, multi-license with CC-BY-SA-3.0 and GFDL"),
                                        QLatin1String("{{self|cc-by-sa-3.0|GFDL|migration=redundant}}"));
-    d->licenseComboBox->addItem(i18n("Own work, multi-license with CC-BY-SA-3.0 and older"),
+    d->licenseComboBox->addItem(i18nc("@item", "Own work, multi-license with CC-BY-SA-3.0 and older"),
                                        QLatin1String("{{self|cc-by-sa-3.0,2.5,2.0,1.0}}"));
-    d->licenseComboBox->addItem(i18n("Own work, Creative Commons Attribution-Share Alike 3.0"),
+    d->licenseComboBox->addItem(i18nc("@item", "Own work, Creative Commons Attribution-Share Alike 3.0"),
                                        QLatin1String("{{self|cc-by-sa-3.0}}"));
-    d->licenseComboBox->addItem(i18n("Own work, Creative Commons Attribution 3.0"),
+    d->licenseComboBox->addItem(i18nc("@item", "Own work, Creative Commons Attribution 3.0"),
                                        QLatin1String("{{self|cc-by-3.0}}"));
-    d->licenseComboBox->addItem(i18n("Own work, release into public domain under the CC-Zero license"),
+    d->licenseComboBox->addItem(i18nc("@item", "Own work, release into public domain under the CC-Zero license"),
                                        QLatin1String("{{self|cc-zero}}"));
-    d->licenseComboBox->addItem(i18n("Author died more than 100 years ago"),
+    d->licenseComboBox->addItem(i18nc("@item", "Author died more than 100 years ago"),
                                        QLatin1String("{{PD-old}}"));
-    d->licenseComboBox->addItem(i18n("Photo of a two-dimensional work whose author died more than 100 years ago"),
+    d->licenseComboBox->addItem(i18nc("@item", "Photo of a two-dimensional work whose author died more than 100 years ago"),
                                        QLatin1String("{{PD-art}}"));
-    d->licenseComboBox->addItem(i18n("First published in the United States before 1923"),
+    d->licenseComboBox->addItem(i18nc("@item", "First published in the United States before 1923"),
                                        QLatin1String("{{PD-US}}"));
-    d->licenseComboBox->addItem(i18n("Work of a U.S. government agency"),
+    d->licenseComboBox->addItem(i18nc("@item", "Work of a U.S. government agency"),
                                        QLatin1String("{{PD-USGov}}"));
-    d->licenseComboBox->addItem(i18n("Simple typefaces, individual words or geometric shapes"),
+    d->licenseComboBox->addItem(i18nc("@item", "Simple typefaces, individual words or geometric shapes"),
                                        QLatin1String("{{PD-text}}"));
-    d->licenseComboBox->addItem(i18n("Logos with only simple typefaces, individual words or geometric shapes"),
+    d->licenseComboBox->addItem(i18nc("@item", "Logos with only simple typefaces, individual words or geometric shapes"),
                                        QLatin1String("{{PD-textlogo}}"));
-    d->licenseComboBox->addItem(i18n("No license specified (not recommended for public wiki sites)"),
+    d->licenseComboBox->addItem(i18nc("@item", "No license specified (not recommended for public wiki sites)"),
                                        QLatin1String(""));
 
-    QLabel* const genCatLbl = new QLabel(i18n("Generic categories:"), textGBox);
+    QLabel* const genCatLbl = new QLabel(i18nc("@label", "Generic categories:"), textGBox);
     d->genCatEdit           = new QTextEdit(textGBox);
     d->genCatEdit->setTabChangesFocus(1);
-    d->genCatEdit->setWhatsThis(i18n("This is a place to enter categories that will be added to all the files."));
+    d->genCatEdit->setWhatsThis(i18nc("@info", "This is a place to enter categories that will be added to all the files."));
     d->genCatEdit->setAcceptRichText(false);
 
-    QLabel* const genTxtLbl = new QLabel(i18n("Generic text:"), textGBox);
+    QLabel* const genTxtLbl = new QLabel(i18nc("@label", "Generic text:"), textGBox);
     d->genTxtEdit           = new QTextEdit(textGBox);
     d->genTxtEdit->setTabChangesFocus(1);
-    d->genTxtEdit->setWhatsThis(i18n("This is a place to enter text that will be added to all the files, "
-                                     "below the Information template."));
+    d->genTxtEdit->setWhatsThis(i18nc("@info", "This is a place to enter text that will be added to all the files, "
+                                      "below the Information template."));
     d->genTxtEdit->setAcceptRichText(false);
 
-    QLabel* const genComLbl = new QLabel(i18n("Upload comments:"), textGBox);
+    QLabel* const genComLbl = new QLabel(i18nc("@label", "Upload comments:"), textGBox);
     d->genComEdit           = new QTextEdit(textGBox);
     d->genComEdit->setTabChangesFocus(1);
-    d->genComEdit->setWhatsThis(i18n("This is a place to enter text that will be used as upload comments. "
-                                     "The default of 'Uploaded via digiKam uploader' will be used if empty."));
+    d->genComEdit->setWhatsThis(i18nc("@info", "This is a place to enter text that will be used as upload comments. "
+                                      "The default of 'Uploaded via digiKam uploader' will be used if empty."));
     d->genComEdit->setAcceptRichText(false);
 
     textBoxLayout->addWidget(authorLbl,          1, 0, 1, 1);
@@ -458,14 +461,14 @@ MediaWikiWidget::MediaWikiWidget(DInfoInterface* const iface, QWidget* const par
     // --------------------- Options area ----------------------------------
 
     QGroupBox* const optGBox = new QGroupBox(panel2);
-    optGBox->setTitle(i18n("Options"));
-    optGBox->setWhatsThis(i18n("These are options that will be applied to photos before upload."));
+    optGBox->setTitle(i18nc("@option", "Options"));
+    optGBox->setWhatsThis(i18nc("@info", "These are options that will be applied to photos before upload."));
 
     QGridLayout* const optionsBoxLayout = new QGridLayout(optGBox);
     optGBox->setLayout(optionsBoxLayout);
 
     d->resizeChB = new QCheckBox(optGBox);
-    d->resizeChB->setText(i18n("Resize photos before uploading"));
+    d->resizeChB->setText(i18nc("@option", "Resize photos before uploading"));
     d->resizeChB->setChecked(false);
 
     d->dimensionSpB            = new QSpinBox(optGBox);
@@ -475,7 +478,7 @@ MediaWikiWidget::MediaWikiWidget(DInfoInterface* const iface, QWidget* const par
     d->dimensionSpB->setValue(1600);
     d->dimensionSpB->setSizePolicy(QSizePolicy::Fixed, QSizePolicy::Fixed);
     d->dimensionSpB->setEnabled(false);
-    QLabel* const dimensionLbl = new QLabel(i18n("Maximum size:"), optGBox);
+    QLabel* const dimensionLbl = new QLabel(i18nc("@label", "Maximum size:"), optGBox);
 
     d->imageQualitySpB         = new QSpinBox(optGBox);
     d->imageQualitySpB->setMinimum(0);
@@ -483,14 +486,14 @@ MediaWikiWidget::MediaWikiWidget(DInfoInterface* const iface, QWidget* const par
     d->imageQualitySpB->setSingleStep(1);
     d->imageQualitySpB->setValue(85);
     d->imageQualitySpB->setSizePolicy(QSizePolicy::Fixed, QSizePolicy::Fixed);
-    QLabel* const imageQualityLbl = new QLabel(i18n("JPEG quality:"), optGBox);
+    QLabel* const imageQualityLbl = new QLabel(i18nc("@label", "JPEG quality:"), optGBox);
 
     d->removeMetaChB = new QCheckBox(optGBox);
-    d->removeMetaChB->setText(i18n("Remove metadata from file"));
+    d->removeMetaChB->setText(i18nc("@option", "Remove metadata from file"));
     d->removeMetaChB->setChecked(false);
 
     d->removeGeoChB = new QCheckBox(optGBox);
-    d->removeGeoChB->setText(i18n("Remove coordinates from file"));
+    d->removeGeoChB->setText(i18nc("@option", "Remove coordinates from file"));
     d->removeGeoChB->setChecked(false);
 
     optionsBoxLayout->addWidget(d->resizeChB,       0, 0, 1, 2);
@@ -507,8 +510,8 @@ MediaWikiWidget::MediaWikiWidget(DInfoInterface* const iface, QWidget* const par
     // ------------------------------------------------------------------------
 
     QTabWidget* const tabWidget = new QTabWidget;
-    tabWidget->addTab(upload, i18n("Items Properties"));
-    tabWidget->addTab(config, i18n("Upload Settings"));
+    tabWidget->addTab(upload, i18nc("@item", "Items Properties"));
+    tabWidget->addTab(config, i18nc("@item", "Upload Settings"));
     tabWidget->setMinimumWidth(350);
 
     // ------------------------------------------------------------------------
@@ -564,12 +567,14 @@ MediaWikiWidget::MediaWikiWidget(DInfoInterface* const iface, QWidget* const par
     // Problem: textChanged() is also called when the text is changed by setText()
     // textEdited() would be better, but QTextEdit does not have this.
     // Solution for the moment: we do not setText() when the selection changes
+
     connect(d->categoryEdit, SIGNAL(textChanged()),
             this, SLOT(slotApplyCategories()));
 
     // Problem: textChanged() is also called when the text is changed by setText()
     // textEdited() would be better, but QTextEdit does not have this.
     // Solution for the moment: we do not setText() when the selection changes
+
     connect(d->descEdit, SIGNAL(textChanged()),
             this, SLOT(slotApplyDescription()));
 

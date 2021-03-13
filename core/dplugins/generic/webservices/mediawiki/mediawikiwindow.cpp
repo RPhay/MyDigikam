@@ -93,7 +93,7 @@ public:
 
 MediaWikiWindow::MediaWikiWindow(DInfoInterface* const iface, QWidget* const /*parent*/)
     : WSToolDialog(nullptr, QLatin1String("MediaWiki export dialog")),
-      d(new Private)
+      d           (new Private)
 {
     d->tmpPath.clear();
     d->tmpDir       = WSToolUtils::makeTemporaryDir("MediaWiki").absolutePath() + QLatin1Char('/');

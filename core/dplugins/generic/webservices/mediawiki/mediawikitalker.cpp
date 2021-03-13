@@ -72,7 +72,7 @@ MediaWikiTalker::MediaWikiTalker(DInfoInterface* const iface,
                                  Iface* const MediaWiki,
                                  QObject* const parent)
     : KJob(parent),
-      d(new Private)
+      d   (new Private)
 {
     d->interface = iface;
     d->MediaWiki = MediaWiki;

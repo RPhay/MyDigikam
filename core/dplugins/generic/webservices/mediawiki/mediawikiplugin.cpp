@@ -53,7 +53,7 @@ void MediaWikiPlugin::cleanUp()
 
 QString MediaWikiPlugin::name() const
 {
-    return i18n("MediaWiki");
+    return i18nc("@title", "MediaWiki");
 }
 
 QString MediaWikiPlugin::iid() const
@@ -68,13 +68,14 @@ QIcon MediaWikiPlugin::icon() const
 
 QString MediaWikiPlugin::description() const
 {
-    return i18n("A tool to export to MediaWiki web-service");
+    return i18nc("@info", "A tool to export to MediaWiki web-service");
 }
 
 QString MediaWikiPlugin::details() const
 {
-    return i18n("<p>This tool permit to export items to MediaWiki web-service.</p>"
-                "<p>See MediaWiki web site for details: <a href='https://www.mediawiki.org/'>https://www.mediawiki.org/</a></p>");
+    return i18nc("@info", "This tool permit to export items to MediaWiki web-service.\n\n"
+                 "See MediaWiki web site for details: %1",
+                 QLatin1String("<a href='https://www.mediawiki.org/'>https://www.mediawiki.org/</a>"));
 }
 
 QList<DPluginAuthor> MediaWikiPlugin::authors() const
