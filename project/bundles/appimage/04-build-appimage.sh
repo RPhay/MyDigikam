@@ -152,6 +152,9 @@ find  /usr/${LIBSUFFIX}/libgphoto2_port -name "*.so" -type f -exec cp {} ./usr/l
 cp -r /usr/${LIBSUFFIX}/sane              ./usr/lib
 cp -r /etc/sane.d                         ./usr/etc
 
+# copy ImageMagick codecs (even with 64 bits, magick .so files are stored in /usr/lib)
+cp -r /usr/lib/ImageMagick*               ./usr/lib
+
 # copy i18n
 
 # Qt translations files
