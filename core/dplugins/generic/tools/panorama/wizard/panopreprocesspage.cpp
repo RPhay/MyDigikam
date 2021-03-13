@@ -101,8 +101,8 @@ public:
 };
 
 PanoPreProcessPage::PanoPreProcessPage(PanoManager* const mngr, QWizard* const dlg)
-    : DWizardPage(dlg, i18nc("@title:window", "<b>Pre-Processing Images</b>")),
-      d(new Private)
+    : DWizardPage(dlg, QString::fromLatin1("<b>%1</b>").arg(i18nc("@title: window", "Pre-Processing Images"))),
+      d          (new Private)
 {
     d->mngr                 = mngr;
     d->progressTimer        = new QTimer(this);
@@ -115,11 +115,11 @@ PanoPreProcessPage::PanoPreProcessPage(PanoManager* const mngr, QWizard* const d
     KSharedConfigPtr config = KSharedConfig::openConfig();
     KConfigGroup group      = config->group("Panorama Settings");
 
-    d->celesteCheckBox      = new QCheckBox(i18nc("@option:check", "Detect moving skies"), vbox);
+    d->celesteCheckBox      = new QCheckBox(i18nc("@option: check", "Detect moving skies"), vbox);
     d->celesteCheckBox->setChecked(group.readEntry("Celeste", false));
-    d->celesteCheckBox->setToolTip(i18nc("@info:tooltip", "Automatic detection of clouds to prevent wrong keypoints matching "
+    d->celesteCheckBox->setToolTip(i18nc("@info: tooltip", "Automatic detection of clouds to prevent wrong keypoints matching "
                                          "between images due to moving clouds."));
-    d->celesteCheckBox->setWhatsThis(i18nc("@info:whatsthis", "<b>Detect moving skies</b>: During the control points selection and matching, "
+    d->celesteCheckBox->setWhatsThis(i18nc("@info: whatsthis", "\"Detect moving skies\": During the control points selection and matching, "
                                            "this option discards any points that are associated to a possible cloud. This "
                                            "is useful to prevent moving clouds from altering the control points matching "
                                            "process."));
@@ -158,10 +158,12 @@ void PanoPreProcessPage::process()
 {
     QMutexLocker lock(&d->progressMutex);
 
-    d->title->setText(i18n("<qt>"
-                           "<p>Pre-processing is in progress, please wait.</p>"
-                           "<p>This can take a while...</p>"
-                           "</qt>"));
+    d->title->setText(QString::fromUtf8("<qt>"
+                                        "<p>%1</p>"
+                                        "<p>%2</p>"
+                                        "</qt>")
+                                        .arg(i18nc("@info", "Pre-processing is in progress, please wait."))
+                                        .arg(i18nc("@info", "This can take a while...")));
 
     d->celesteCheckBox->hide();
     d->progressTimer->start(300);
@@ -196,18 +198,19 @@ void PanoPreProcessPage::process()
 
 void PanoPreProcessPage::initializePage()
 {
-    d->title->setText(i18n("<qt>"
-                           "<p>Now, we will pre-process images before stitching them.</p>"
-                           "<p>Pre-processing operations include Raw demosaicing. Raw images will be converted "
-                           "to 16-bit sRGB images with auto-gamma.</p>"
-                           "<p>Pre-processing also include a calculation of some control points to match "
-                           "overlaps between images. For that purpose, the <b>%1</b> program from the "
-                           "<a href='%2'>%3</a> project will be used.</p>"
-                           "<p>Press \"Next\" to start pre-processing.</p>"
-                           "</qt>",
-                           QDir::toNativeSeparators(d->mngr->cpFindBinary().path()),
-                           d->mngr->cpFindBinary().url().url(),
-                           d->mngr->cpFindBinary().projectName()));
+    d->title->setText(QString::fromUtf8("<qt>"
+                                        "<p>%1</p>"
+                                        "<p>%2</p>"
+                                        "<p>%3</p>"
+                                        "<p>%4</p>"
+                                        "</qt>")
+                      .arg(i18nc("@info", "Now, we will pre-process images before stitching them."))
+                      .arg(i18nc("@info", "Pre-processing operations include Raw demosaicing. Raw images will be converted "
+                                          "to 16-bit sRGB images with auto-gamma."))
+                      .arg(i18nc("@info", "Pre-processing also include a calculation of some control points to match "
+                                          "overlaps between images. For that purpose, the \"%1\" program will be used.",
+                                          QDir::toNativeSeparators(d->mngr->cpFindBinary().path())))
+                      .arg(i18nc("@info", "Press the \"Next\" button to start pre-processing.")));
 
     d->detailsText->hide();
     d->celesteCheckBox->show();
@@ -299,10 +302,13 @@ void PanoPreProcessPage::slotPanoAction(const DigikamGenericPanoramaPlugin::Pano
 
                     if (d->detailsText->isHidden())  // Ensures only the first failed task is shown
                     {
-                        d->title->setText(i18n("<qt>"
-                                                "<h1>Pre-processing has failed.</h1>"
-                                                "<p>See processing messages below.</p>"
-                                                "</qt>"));
+                        d->title->setText(QString::fromUtf8("<qt>"
+                                                            "<p>%1</p>"
+                                                            "<p>%2</p>"
+                                                            "</qt>")
+                                                            .arg(i18nc("@info", "Pre-processing has failed."))
+                                                            .arg(i18nc("@info", "See processing messages below.")));
+
                         d->progressTimer->stop();
                         d->celesteCheckBox->hide();
                         d->detailsText->show();
