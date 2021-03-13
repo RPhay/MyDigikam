@@ -45,7 +45,7 @@ class YFPlugin : public DPluginGeneric
 public:
 
     explicit YFPlugin(QObject* const parent = nullptr);
-    ~YFPlugin() override;
+    ~YFPlugin()                          override;
 
     QString name()                 const override;
     QString iid()                  const override;

@@ -53,7 +53,7 @@ void YFPlugin::cleanUp()
 
 QString YFPlugin::name() const
 {
-    return i18n("YandexFotki");
+    return i18nc("@title", "YandexFotki");
 }
 
 QString YFPlugin::iid() const
@@ -68,13 +68,14 @@ QIcon YFPlugin::icon() const
 
 QString YFPlugin::description() const
 {
-    return i18n("A tool to export to YandexFotki web-service");
+    return i18nc("@info", "A tool to export to YandexFotki web-service");
 }
 
 QString YFPlugin::details() const
 {
-    return i18n("<p>This tool permit to export items to YandexFotki web-service.</p>"
-                "<p>See YandexFotki web site for details: <a href='https://fotki.yandex.ru/'>https://fotki.yandex.ru/</a></p>");
+    return i18nc("@info", "This tool permit to export items to YandexFotki web-service.\n\n"
+                 "See YandexFotki web site for details: %1",
+                 QLatin1String("<a href='https://fotki.yandex.ru/'>https://fotki.yandex.ru/</a>"));
 }
 
 QList<DPluginAuthor> YFPlugin::authors() const
