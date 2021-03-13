@@ -140,11 +140,12 @@ bool DNNFaceExtractor::loadModels()
 
 #ifdef Q_OS_WIN
 
-            d->net = cv::dnn::readNetFromTorch((const char*)nnmodel.utf16());
+            d->net = cv::dnn::readNetFromTorch(nnmodel.toLocal8Bit().constData());
 
 #else
 
             d->net = cv::dnn::readNetFromTorch(nnmodel.toStdString());
+
 #endif
 
         }

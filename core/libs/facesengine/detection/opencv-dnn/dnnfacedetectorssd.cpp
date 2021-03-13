@@ -67,11 +67,14 @@ bool DNNFaceDetectorSSD::loadModels()
 
 #ifdef Q_OS_WIN
 
-            net = cv::dnn::readNetFromCaffe((const char*)nnmodel.utf16(), (const char*)nndata.utf16());
+            net = cv::dnn::readNetFromCaffe(nnmodel.toLocal8Bit().constData(),
+                                            nndata.toLocal8Bit().constData());
 
 #else
 
-            net = cv::dnn::readNetFromCaffe(nnmodel.toStdString(), nndata.toStdString());
+            net = cv::dnn::readNetFromCaffe(nnmodel.toStdString(),
+                                            nndata.toStdString());
+
 #endif
 
         }

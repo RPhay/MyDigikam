@@ -73,11 +73,14 @@ bool DNNFaceDetectorYOLO::loadModels()
 
 #ifdef Q_OS_WIN
 
-            net = cv::dnn::readNetFromDarknet((const char*)nnmodel.utf16(), (const char*)nndata.utf16());
+            net = cv::dnn::readNetFromDarknet(nnmodel.toLocal8Bit().constData(),
+                                              nndata.toLocal8Bit().constData());
 
 #else
 
-            net = cv::dnn::readNetFromDarknet(nnmodel.toStdString(), nndata.toStdString());
+            net = cv::dnn::readNetFromDarknet(nnmodel.toStdString(),
+                                              nndata.toStdString());
+
 #endif
 
             net.setPreferableBackend(cv::dnn::DNN_BACKEND_DEFAULT);
