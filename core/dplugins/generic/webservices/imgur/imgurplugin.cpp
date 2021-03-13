@@ -53,7 +53,7 @@ void ImgUrPlugin::cleanUp()
 
 QString ImgUrPlugin::name() const
 {
-    return i18n("ImgUr");
+    return i18nc("@title", "ImgUr");
 }
 
 QString ImgUrPlugin::iid() const
@@ -68,14 +68,15 @@ QIcon ImgUrPlugin::icon() const
 
 QString ImgUrPlugin::description() const
 {
-    return i18n("A tool to export to ImgUr web-service");
+    return i18nc("@info", "A tool to export to ImgUr web-service");
 }
 
 QString ImgUrPlugin::details() const
 {
-    return i18n("<p>This tool permit to export items to ImgUr web-service.</p>"
-                "<p>You can export items as anonymous or with an user account.</p>"
-                "<p>See ImgUr web site for details: <a href='https://imgur.com/'>https://imgur.com/</a></p>");
+    return i18nc("@info", "This tool permit to export items to ImgUr web-service.\n\n"
+                 "You can export items as anonymous or with an user account.\n\n"
+                 "See ImgUr web site for details: %1",
+                 QLatin1String("<a href='https://imgur.com/'>https://imgur.com/</a>"));
 }
 
 QList<DPluginAuthor> ImgUrPlugin::authors() const
