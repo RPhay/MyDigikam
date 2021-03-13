@@ -675,7 +675,7 @@ void SmugWindow::slotUserChangeRequest(bool /*anonymous*/)
     qCDebug(DIGIKAM_WEBSERVICES_LOG) << "Slot Change User Request";
 
     QPointer<QMessageBox> warn = new QMessageBox(QMessageBox::Warning,
-                                                 i18n("Warning"),
+                                                 i18nc("@title: window", "Warning"),
                                                  i18n("You will be logged out of your account, "
                                                  "click \"Continue\" to authenticate for another account."),
                                                  QMessageBox::Yes | QMessageBox::No);
