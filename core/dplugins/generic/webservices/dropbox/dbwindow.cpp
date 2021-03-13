@@ -76,7 +76,7 @@ public:
 
 DBWindow::DBWindow(DInfoInterface* const iface, QWidget* const /*parent*/)
     : WSToolDialog(nullptr, QLatin1String("Dropbox Export Dialog")),
-      d(new Private)
+      d           (new Private)
 {
     d->widget   = new DBWidget(this, iface, QLatin1String("Dropbox"));
     d->widget->imagesList()->setIface(iface);
