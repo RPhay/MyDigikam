@@ -92,24 +92,24 @@ public:
 public:
 
     explicit Private()
-      : clientId(QLatin1String("lkRgRsucipXsUEvKh0ECblreC")),
-        clientSecret(QLatin1String("6EThTiPQHZTMo7F83iLHrfNO89fkDVvM9hVWaYH9D49xEOyMBe")),
-        authUrl(QLatin1String("https://api.twitter.com/oauth/authenticate")),
-        requestTokenUrl(QLatin1String("https://api.twitter.com/oauth/request_token")),
-        accessTokenUrl(QLatin1String("https://api.twitter.com/oauth/access_token")),
+      : clientId        (QLatin1String("lkRgRsucipXsUEvKh0ECblreC")),
+        clientSecret    (QLatin1String("6EThTiPQHZTMo7F83iLHrfNO89fkDVvM9hVWaYH9D49xEOyMBe")),
+        authUrl         (QLatin1String("https://api.twitter.com/oauth/authenticate")),
+        requestTokenUrl (QLatin1String("https://api.twitter.com/oauth/request_token")),
+        accessTokenUrl  (QLatin1String("https://api.twitter.com/oauth/access_token")),
 /*
-        scope(QLatin1String("User.Read Files.ReadWrite")),
+        scope           (QLatin1String("User.Read Files.ReadWrite")),
 */
-        redirectUrl(QLatin1String("http://127.0.0.1:8000")),                            // krazy:exclude=insecurenet
-        uploadUrl(QLatin1String("https://upload.twitter.com/1.1/media/upload.json")),
-        segmentIndex(0),
-        parent(nullptr),
-        netMngr(nullptr),
-        reply(nullptr),
-        state(TW_USERNAME),
-        settings(nullptr),
-        o1Twitter(nullptr),
-        requestor(nullptr)
+        redirectUrl     (QLatin1String("http://127.0.0.1:8000")),                            // krazy:exclude=insecurenet
+        uploadUrl       (QLatin1String("https://upload.twitter.com/1.1/media/upload.json")),
+        segmentIndex    (0),
+        parent          (nullptr),
+        netMngr         (nullptr),
+        reply           (nullptr),
+        state           (TW_USERNAME),
+        settings        (nullptr),
+        o1Twitter       (nullptr),
+        requestor       (nullptr)
     {
     }
 
@@ -864,7 +864,7 @@ void TwTalker::parseCheckUploadStatus(const QByteArray& data)
         emit signalBusy(false);
         emit signalAddPhotoFailed(i18n("Failed to upload photo\n"
                                        "Code: %1, name: %2, message: %3",
-                                       QString::number(error[QLatin1String("code")].toInt()),
+                                       error[QLatin1String("code")].toInt(),
                                        error[QLatin1String("name")].toString(),
                                        error[QLatin1String("message")].toString()));
         return;
