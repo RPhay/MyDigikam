@@ -50,8 +50,8 @@ GSWidget::GSWidget(QWidget* const parent,
                    const GoogleService& service,
                    const QString& serviceName)
     : WSSettingsWidget(parent, iface, serviceName),
-      m_service(service),
-      m_tagsBGrp(nullptr)
+      m_service       (service),
+      m_tagsBGrp      (nullptr)
 {
     QGroupBox* const leafBox = new QGroupBox(QLatin1String(""), getSettingsBox());
 

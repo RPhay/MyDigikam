@@ -53,19 +53,19 @@ class Q_DECL_HIDDEN ReplaceDialog::Private
 public:
 
     explicit Private()
-      : bAdd(nullptr),
-        bAddAll(nullptr),
-        bReplace(nullptr),
-        bReplaceAll(nullptr),
-        iface(nullptr),
-        lbSrc(nullptr),
-        lbDest(nullptr),
-        netMngr(nullptr),
-        progressPix(nullptr),
-        thumbLoadThread(ThumbnailLoadThread::defaultThread()),
-        progressCount(0),
-        progressTimer(nullptr),
-        result(-1)
+      : bAdd            (nullptr),
+        bAddAll         (nullptr),
+        bReplace        (nullptr),
+        bReplaceAll     (nullptr),
+        iface           (nullptr),
+        lbSrc           (nullptr),
+        lbDest          (nullptr),
+        netMngr         (nullptr),
+        progressPix     (nullptr),
+        thumbLoadThread (ThumbnailLoadThread::defaultThread()),
+        progressCount   (0),
+        progressTimer   (nullptr),
+        result          (-1)
     {
     }
 
@@ -93,7 +93,7 @@ ReplaceDialog::ReplaceDialog(QWidget* const parent,
                              const QUrl& src,
                              const QUrl& dest)
     : QDialog(parent),
-      d(new Private)
+      d      (new Private)
 {
     setObjectName(QLatin1String("ReplaceDialog"));
 
@@ -181,7 +181,7 @@ ReplaceDialog::ReplaceDialog(QWidget* const parent,
     gridLayout->addWidget(lb2, 2, 0, 1, 1);
 
     QLabel* const lb3 = new QLabel(this);
-    lb3->setText(i18n("Source"));
+    lb3->setText(i18nc("@label: source file", "Source"));
     lb3->setAlignment(Qt::AlignHCenter);
     gridLayout->addWidget(lb3, 2, 2, 1, 1);
 

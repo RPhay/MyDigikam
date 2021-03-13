@@ -74,10 +74,10 @@ public:
 };
 
 GSTalkerBase::GSTalkerBase(QWidget* const parent, const QStringList& scope, const QString& serviceName)
-    : m_scope(scope),
-      m_reply(nullptr),
+    : m_scope      (scope),
+      m_reply      (nullptr),
       m_serviceName(serviceName),
-      d(new Private)
+      d            (new Private)
 {
     d->parent = parent;
 

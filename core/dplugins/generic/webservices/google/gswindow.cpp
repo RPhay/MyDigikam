@@ -145,10 +145,10 @@ GSWindow::GSWindow(DInfoInterface* const iface,
     {
         case GoogleService::GDrive:
         {
-            setWindowTitle(i18n("Export to Google Drive"));
+            setWindowTitle(i18nc("@title", "Export to Google Drive"));
 
-            startButton()->setText(i18n("Start Upload"));
-            startButton()->setToolTip(i18n("Start upload to Google Drive"));
+            startButton()->setText(i18nc("@action", "Start Upload"));
+            startButton()->setToolTip(i18nc("@info", "Start upload to Google Drive"));
 
             d->widget->setMinimumSize(700, 500);
 
@@ -192,19 +192,19 @@ GSWindow::GSWindow(DInfoInterface* const iface,
         {
             if (d->service == GoogleService::GPhotoExport)
             {
-                setWindowTitle(i18n("Export to Google Photos Service"));
+                setWindowTitle(i18nc("@title", "Export to Google Photos Service"));
 
-                startButton()->setText(i18n("Start Upload"));
-                startButton()->setToolTip(i18n("Start upload to Google Photos Service"));
+                startButton()->setText(i18nc("@action", "Start Upload"));
+                startButton()->setToolTip(i18nc("@info", "Start upload to Google Photos Service"));
 
                 d->widget->setMinimumSize(700, 500);
             }
             else
             {
-                setWindowTitle(i18n("Import from Google Photos Service"));
+                setWindowTitle(i18nc("@title", "Import from Google Photos Service"));
 
-                startButton()->setText(i18n("Start Download"));
-                startButton()->setToolTip(i18n("Start download from Google Photos service"));
+                startButton()->setText(i18nc("@action", "Start Download"));
+                startButton()->setToolTip(i18nc("@info", "Start download from Google Photos service"));
 
                 d->widget->setMinimumSize(300, 400);
             }
@@ -368,7 +368,7 @@ void GSWindow::slotListPhotosDoneForDownload(int errCode,
     if (errCode == 0)
     {
         QMessageBox::critical(this, i18nc("@title:window", "Error"),
-                              i18n("Google Photos call failed: %1\n", errMsg));
+                              i18nc("@info", "Google Photos call failed: %1\n", errMsg));
         return;
     }
 
@@ -390,10 +390,10 @@ void GSWindow::slotListPhotosDoneForDownload(int errCode,
     d->imagesTotal    = d->transferQueue.count();
     d->imagesCount    = 0;
 
-    d->widget->progressBar()->setFormat(i18n("%v / %m"));
+    d->widget->progressBar()->setFormat(i18nc("@info: progress bar", "%v / %m"));
     d->widget->progressBar()->show();
 
-    d->renamingOpt   = 0;
+    d->renamingOpt    = 0;
 
     // start download with first photo in queue
 
@@ -408,8 +408,8 @@ void GSWindow::slotListAlbumsDone(int code, const QString& errMsg, const QList <
 
             if (code == 0)
             {
-                QMessageBox::critical(this, i18nc("@title:window", "Error"),
-                                      i18n("Google Drive call failed: %1\n", errMsg));
+                QMessageBox::critical(this, i18nc("@title: window", "Error"),
+                                      i18nc("@info", "Google Drive call failed: %1\n", errMsg));
                 return;
             }
 
@@ -435,7 +435,7 @@ void GSWindow::slotListAlbumsDone(int code, const QString& errMsg, const QList <
             if (code == 0)
             {
                 QMessageBox::critical(this, i18nc("@title:window", "Error"),
-                                      i18n("Google Photos call failed: %1\n", errMsg));
+                                      i18nc("@info", "Google Photos call failed: %1\n", errMsg));
                 return;
             }
 
@@ -495,8 +495,8 @@ void GSWindow::slotStartTransfer()
         case GoogleService::GPhotoExport:
             if (d->widget->imagesList()->imageUrls().isEmpty())
             {
-                QMessageBox::critical(this, i18nc("@title:window", "Error"),
-                                      i18n("No image selected. Please select which images should be uploaded."));
+                QMessageBox::critical(this, i18nc("@title: window", "Error"),
+                                      i18nc("@info", "No image selected. Please select which images should be uploaded."));
                 return;
             }
             break;
@@ -511,12 +511,12 @@ void GSWindow::slotStartTransfer()
             if (!(d->talker->authenticated()))
             {
                 QPointer<QMessageBox> warn = new QMessageBox(QMessageBox::Warning,
-                                 i18n("Warning"),
-                                 i18n("Authentication failed. Click \"Continue\" to authenticate."),
+                                 i18nc("@title: window", "Warning"),
+                                 i18nc("@info", "Authentication failed. Click \"Continue\" to authenticate."),
                                  QMessageBox::Yes | QMessageBox::No);
 
-                (warn->button(QMessageBox::Yes))->setText(i18n("Continue"));
-                (warn->button(QMessageBox::No))->setText(i18n("Cancel"));
+                (warn->button(QMessageBox::Yes))->setText(i18nc("@action", "Continue"));
+                (warn->button(QMessageBox::No))->setText(i18nc("@action", "Cancel"));
 
                 if (warn->exec() == QMessageBox::Yes)
                 {
@@ -536,12 +536,12 @@ void GSWindow::slotStartTransfer()
             if (!(d->gphotoTalker->authenticated()))
             {
                 QPointer<QMessageBox> warn = new QMessageBox(QMessageBox::Warning,
-                                 i18n("Warning"),
-                                 i18n("Authentication failed. Click \"Continue\" to authenticate."),
+                                 i18nc("@title: window", "Warning"),
+                                 i18nc("@info", "Authentication failed. Click \"Continue\" to authenticate."),
                                  QMessageBox::Yes | QMessageBox::No);
 
-                (warn->button(QMessageBox::Yes))->setText(i18n("Continue"));
-                (warn->button(QMessageBox::No))->setText(i18n("Cancel"));
+                (warn->button(QMessageBox::Yes))->setText(i18nc("@action", "Continue"));
+                (warn->button(QMessageBox::No))->setText(i18nc("@action", "Cancel"));
 
                 if (warn->exec() == QMessageBox::Yes)
                 {
@@ -611,7 +611,7 @@ void GSWindow::slotStartTransfer()
     d->imagesTotal    = d->transferQueue.count();
     d->imagesCount    = 0;
 
-    d->widget->progressBar()->setFormat(i18n("%v / %m"));
+    d->widget->progressBar()->setFormat(i18nc("@info: progress bar", "%v / %m"));
     d->widget->progressBar()->setMaximum(d->imagesTotal);
     d->widget->progressBar()->setValue(0);
     d->widget->progressBar()->show();
@@ -619,13 +619,13 @@ void GSWindow::slotStartTransfer()
     switch (d->service)
     {
         case GoogleService::GDrive:
-            d->widget->progressBar()->progressScheduled(i18n("Google Drive export"), true, true);
+            d->widget->progressBar()->progressScheduled(i18nc("@info", "Google Drive export"), true, true);
             d->widget->progressBar()->progressThumbnailChanged(
                 QIcon::fromTheme(QLatin1String("dk-googledrive")).pixmap(22, 22));
             break;
 
         default:
-            d->widget->progressBar()->progressScheduled(i18n("Google Photo export"), true, true);
+            d->widget->progressBar()->progressScheduled(i18nc("@info", "Google Photo export"), true, true);
             d->widget->progressBar()->progressThumbnailChanged(
                 QIcon::fromTheme((QLatin1String("dk-googlephoto"))).pixmap(22, 22));
             break;
@@ -943,13 +943,13 @@ void GSWindow::slotGetPhotoDone(int errCode, const QString& errMsg,
         else
         {
             QPointer<QMessageBox> warn = new QMessageBox(QMessageBox::Warning,
-                             i18n("Warning"),
-                             i18n("Failed to save photo: %1\n"
-                                  "Do you want to continue?", errText),
+                             i18nc("@title: window", "Warning"),
+                             i18nc("@info", "Failed to save photo: %1\n"
+                                   "Do you want to continue?", errText),
                              QMessageBox::Yes | QMessageBox::No);
 
-            (warn->button(QMessageBox::Yes))->setText(i18n("Continue"));
-            (warn->button(QMessageBox::No))->setText(i18n("Cancel"));
+            (warn->button(QMessageBox::Yes))->setText(i18nc("@action", "Continue"));
+            (warn->button(QMessageBox::No))->setText(i18nc("@action", "Cancel"));
 
             if (warn->exec() != QMessageBox::Yes)
             {
@@ -964,13 +964,13 @@ void GSWindow::slotGetPhotoDone(int errCode, const QString& errMsg,
     else
     {
         QPointer<QMessageBox> warn = new QMessageBox(QMessageBox::Warning,
-                         i18n("Warning"),
-                         i18n("Failed to download photo: %1\n"
+                         i18nc("@title: window", "Warning"),
+                         i18nc("@info", "Failed to download photo: %1\n"
                               "Do you want to continue?", errMsg),
                          QMessageBox::Yes | QMessageBox::No);
 
-        (warn->button(QMessageBox::Yes))->setText(i18n("Continue"));
-        (warn->button(QMessageBox::No))->setText(i18n("Cancel"));
+        (warn->button(QMessageBox::Yes))->setText(i18nc("@action", "Continue"));
+        (warn->button(QMessageBox::No))->setText(i18nc("@action", "Cancel"));
 
         if (warn->exec() != QMessageBox::Yes)
         {
@@ -991,8 +991,8 @@ void GSWindow::slotGetPhotoDone(int errCode, const QString& errMsg,
 
     if (!QFile::rename(tmpUrl.toLocalFile(), newUrl.toLocalFile()))
     {
-        QMessageBox::critical(this, i18nc("@title:window", "Error"),
-                              i18n("Failed to save image to %1",
+        QMessageBox::critical(this, i18nc("@title: window", "Error"),
+                              i18nc("@info", "Failed to save image to %1",
                                    newUrl.toLocalFile()));
     }
 
@@ -1012,14 +1012,14 @@ void GSWindow::slotAddPhotoDone(int err, const QString& msg)
         d->widget->imagesList()->processed(d->transferQueue.first().first,false);
 
         QPointer<QMessageBox> warn = new QMessageBox(QMessageBox::Warning,
-                         i18n("Warning"),
-                         i18n("Failed to upload photo to %1.\n%2\n"
+                         i18nc("@title: window", "Warning"),
+                         i18nc("@info", "Failed to upload photo to %1.\n%2\n"
                               "Do you want to continue?",
                               d->toolName, msg),
                          QMessageBox::Yes | QMessageBox::No);
 
-        (warn->button(QMessageBox::Yes))->setText(i18n("Continue"));
-        (warn->button(QMessageBox::No))->setText(i18n("Cancel"));
+        (warn->button(QMessageBox::Yes))->setText(i18nc("@action", "Continue"));
+        (warn->button(QMessageBox::No))->setText(i18nc("@action", "Cancel"));
 
         if (warn->exec() != QMessageBox::Yes)
         {
@@ -1062,13 +1062,13 @@ void GSWindow::slotUploadPhotoDone(int err, const QString& msg, const QStringLis
     if (err == 0)
     {
         QPointer<QMessageBox> warn = new QMessageBox(QMessageBox::Warning,
-                                                     i18n("Warning"),
-                                                     i18n("Failed to finish uploading photo to %1.\n%2\n"
-                                                          "No image uploaded to your account.",
-                                                          d->toolName, msg),
+                                                     i18nc("@title: window", "Warning"),
+                                                     i18nc("@info", "Failed to finish uploading photo to %1.\n%2\n"
+                                                           "No image uploaded to your account.",
+                                                           d->toolName, msg),
                                                      QMessageBox::Yes);
 
-        (warn->button(QMessageBox::Yes))->setText(i18n("OK"));
+        (warn->button(QMessageBox::Yes))->setText(i18nc("@action", "OK"));
 
         d->uploadQueue.clear();
         d->widget->progressBar()->hide();
@@ -1160,6 +1160,7 @@ void GSWindow::slotReloadAlbumsRequest()
             break;
     }
 }
+
 void GSWindow::slotAccessTokenObtained()
 {
     switch (d->service)
@@ -1199,8 +1200,8 @@ void GSWindow::slotCreateFolderDone(int code, const QString& msg, const QString&
         {
             if (code == 0)
             {
-                QMessageBox::critical(this, i18nc("@title:window", "Error"),
-                                      i18n("Google Drive call failed:\n%1", msg));
+                QMessageBox::critical(this, i18nc("@title: window", "Error"),
+                                      i18nc("@info", "Google Drive call failed:\n%1", msg));
             }
             else
             {
@@ -1216,8 +1217,8 @@ void GSWindow::slotCreateFolderDone(int code, const QString& msg, const QString&
         {
             if (code == 0)
             {
-                QMessageBox::critical(this, i18nc("@title:window", "Error"),
-                                      i18n("Google Photos call failed:\n%1", msg));
+                QMessageBox::critical(this, i18nc("@title: window", "Error"),
+                                      i18nc("@info", "Google Photos call failed:\n%1", msg));
             }
             else
             {
@@ -1254,13 +1255,13 @@ void GSWindow::slotTransferCancel()
 void GSWindow::slotUserChangeRequest()
 {
     QPointer<QMessageBox> warn = new QMessageBox(QMessageBox::Warning,
-                                                    i18n("Warning"),
-                                                    i18n("You will be logged out of your account, "
-                                                    "click \"Continue\" to authenticate for another account"),
+                                                    i18nc("@title: window", "Warning"),
+                                                    i18nc("@info", "You will be logged out of your account, "
+                                                          "click \"Continue\" to authenticate for another account"),
                                                     QMessageBox::Yes | QMessageBox::No);
 
-    (warn->button(QMessageBox::Yes))->setText(i18n("Continue"));
-    (warn->button(QMessageBox::No))->setText(i18n("Cancel"));
+    (warn->button(QMessageBox::Yes))->setText(i18nc("@action", "Continue"));
+    (warn->button(QMessageBox::No))->setText(i18nc("@action", "Cancel"));
 
     if (warn->exec() == QMessageBox::Yes)
     {

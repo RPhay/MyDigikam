@@ -47,10 +47,10 @@ class GSPhoto
 public:
 
     GSPhoto()
-      : id(QLatin1String("-1")),
+      : id(QLatin1String    ("-1")),
         gpsLon(QLatin1String("")),
         gpsLat(QLatin1String("")),
-        canComment(true)
+        canComment          (true)
     {
     }
 

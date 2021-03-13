@@ -50,8 +50,8 @@ class Q_DECL_HIDDEN GSNewAlbumDlg::Private
 public:
 
     explicit Private()
-      : publicRBtn(nullptr),
-        unlistedRBtn(nullptr),
+      : publicRBtn   (nullptr),
+        unlistedRBtn (nullptr),
         protectedRBtn(nullptr)
     {
     }
@@ -66,7 +66,7 @@ GSNewAlbumDlg::GSNewAlbumDlg(QWidget* const parent,
                              const QString& serviceName,
                              const QString& toolName)
     : WSNewAlbumDialog(parent, toolName),
-      d(new Private)
+      d               (new Private)
 {
     d->serviceName           = serviceName;
     const int spacing        = QApplication::style()->pixelMetric(QStyle::PM_DefaultLayoutSpacing);
