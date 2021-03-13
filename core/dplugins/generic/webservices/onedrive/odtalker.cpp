@@ -75,12 +75,12 @@ public:
 public:
 
     explicit Private()
-      : state(OD_USERNAME),
-        parent(nullptr),
-        netMngr(nullptr),
-        reply(nullptr),
+      : state   (OD_USERNAME),
+        parent  (nullptr),
+        netMngr (nullptr),
+        reply   (nullptr),
         settings(nullptr),
-        browser(nullptr)
+        browser (nullptr)
     {
         clientId     = QLatin1String("4c20a541-2ca8-4b98-8847-a375e4d33f34");
         clientSecret = QLatin1String("wtdcaXADCZ0|tcDA7633|@*");
@@ -125,7 +125,7 @@ public:
 };
 
 ODTalker::ODTalker(QWidget* const parent)
-    : d(new Private)
+    : d           (new Private)
 {
     d->parent   = parent;
     d->netMngr  = new QNetworkAccessManager(this);

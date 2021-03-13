@@ -53,7 +53,7 @@ void ODPlugin::cleanUp()
 
 QString ODPlugin::name() const
 {
-    return i18n("OneDrive");
+    return i18nc("@title", "OneDrive");
 }
 
 QString ODPlugin::iid() const
@@ -68,13 +68,14 @@ QIcon ODPlugin::icon() const
 
 QString ODPlugin::description() const
 {
-    return i18n("A tool to export to OneDrive web-service");
+    return i18nc("@info", "A tool to export to OneDrive web-service");
 }
 
 QString ODPlugin::details() const
 {
-    return i18n("<p>This tool permit to export items to OneDrive web-service.</p>"
-                "<p>See OneDrive web site for details: <a href='https://onedrive.live.com/'>https://onedrive.live.com/</a></p>");
+    return i18nc("@info", "This tool permit to export items to OneDrive web-service.\n\n"
+                 "See OneDrive web site for details: %1",
+                 QLatin1String("<a href='https://onedrive.live.com/'>https://onedrive.live.com/</a>"));
 }
 
 QList<DPluginAuthor> ODPlugin::authors() const

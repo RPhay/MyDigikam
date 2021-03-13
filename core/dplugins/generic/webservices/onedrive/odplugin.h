@@ -45,7 +45,7 @@ class ODPlugin : public DPluginGeneric
 public:
 
     explicit ODPlugin(QObject* const parent = nullptr);
-    ~ODPlugin() override;
+    ~ODPlugin()                          override;
 
     QString name()                 const override;
     QString iid()                  const override;
