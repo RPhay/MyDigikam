@@ -854,7 +854,7 @@ void FlickrWindow::slotListPhotoSetsFailed(const QString& msg)
 void FlickrWindow::slotAddPhotoFailed(const QString& msg)
 {
     QPointer<QMessageBox> warn = new QMessageBox(QMessageBox::Warning,
-                     i18n("Warning"),
+                     i18nc("@title: dialog", "Warning"),
                      i18n("Failed to upload photo into %1. %2\nDo you want to continue?",
                           d->serviceName, msg),
                      QMessageBox::Yes | QMessageBox::No);

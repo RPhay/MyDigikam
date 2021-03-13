@@ -53,7 +53,7 @@ void FlickrPlugin::cleanUp()
 
 QString FlickrPlugin::name() const
 {
-    return i18n("Flickr");
+    return i18nc("@title", "Flickr");
 }
 
 QString FlickrPlugin::iid() const
@@ -68,13 +68,14 @@ QIcon FlickrPlugin::icon() const
 
 QString FlickrPlugin::description() const
 {
-    return i18n("A tool to export to Flickr web-service");
+    return i18nc("@info", "A tool to export to Flickr web-service");
 }
 
 QString FlickrPlugin::details() const
 {
-    return i18n("<p>This tool permit to export items to Flickr web-service.</p>"
-                "<p>See Flickr web site for details: <a href='https://www.flickr.com/'>https://www.flickr.com/</a></p>");
+    return i18nc("@info", "This tool permit to export items to Flickr web-service."
+                 "See Flickr web site for details: %1",
+                 QLatin1String("<a href='https://www.flickr.com/'>https://www.flickr.com/</a>"));
 }
 
 QList<DPluginAuthor> FlickrPlugin::authors() const
