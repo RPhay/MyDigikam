@@ -31,7 +31,7 @@ ImageShackWidget::ImageShackWidget(QWidget* const parent,
                                    DInfoInterface* const iface,
                                    const QString& toolName)
     : WSSettingsWidget(parent, iface, toolName),
-      d(new Private)
+      d               (new Private)
 {
     d->session            = session;
     d->iface              = iface;
@@ -50,13 +50,13 @@ ImageShackWidget::ImageShackWidget(QWidget* const parent,
     QGridLayout* const tagsLayout = new QGridLayout(tagsBox);
 
     d->privateImagesChb    = new QCheckBox(tagsBox);
-    d->privateImagesChb->setText(i18n("Make private"));
+    d->privateImagesChb->setText(i18nc("@option", "Make private"));
     d->privateImagesChb->setChecked(false);
 
     d->tagsFld             = new QLineEdit(tagsBox);
-    QLabel* const tagsLbl = new QLabel(i18n("Tags (optional):"), tagsBox);
+    QLabel* const tagsLbl  = new QLabel(i18nc("@label", "Tags (optional):"), tagsBox);
 
-    d->remBarChb           = new QCheckBox(i18n("Remove information bar on thumbnails"));
+    d->remBarChb           = new QCheckBox(i18nc("@option", "Remove information bar on thumbnails"));
     d->remBarChb->setChecked(false);
 
     tagsLayout->addWidget(d->privateImagesChb, 0, 0);

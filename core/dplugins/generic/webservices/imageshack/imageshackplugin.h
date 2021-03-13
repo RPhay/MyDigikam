@@ -45,7 +45,7 @@ class ImageShackPlugin : public DPluginGeneric
 public:
 
     explicit ImageShackPlugin(QObject* const parent = nullptr);
-    ~ImageShackPlugin() override;
+    ~ImageShackPlugin()                  override;
 
     QString name()                 const override;
     QString iid()                  const override;
@@ -54,8 +54,8 @@ public:
     QString description()          const override;
     QList<DPluginAuthor> authors() const override;
 
-    void setup(QObject* const) override;
-    void cleanUp()             override;
+    void setup(QObject* const)           override;
+    void cleanUp()                       override;
 
 private Q_SLOTS:
 

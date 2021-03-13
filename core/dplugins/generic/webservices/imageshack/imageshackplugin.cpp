@@ -53,7 +53,7 @@ void ImageShackPlugin::cleanUp()
 
 QString ImageShackPlugin::name() const
 {
-    return i18n("ImageShack");
+    return i18nc("@title", "ImageShack");
 }
 
 QString ImageShackPlugin::iid() const
@@ -68,13 +68,14 @@ QIcon ImageShackPlugin::icon() const
 
 QString ImageShackPlugin::description() const
 {
-    return i18n("A tool to export to ImageShack web-service");
+    return i18nc("@info", "A tool to export to ImageShack web-service");
 }
 
 QString ImageShackPlugin::details() const
 {
-    return i18n("<p>This tool permit to export items to ImageShack web-service.</p>"
-                "<p>See ImageShack web site for details: <a href='https://imageshack.us/'>https://imageshack.us/</a></p>");
+    return i18nc("@info", "This tool permit to export items to ImageShack web-service.\n\n"
+                 "See ImageShack web site for details: %1",
+                 QLatin1String("<a href='https://imageshack.us/'>https://imageshack.us/</a>"));
 }
 
 QList<DPluginAuthor> ImageShackPlugin::authors() const
