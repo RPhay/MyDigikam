@@ -52,7 +52,7 @@ public:
         importSearchBtn = nullptr;
     }
 
-    DItemsList* imageList;
+    DItemsList*  imageList;
     QWidget*     uploadWidget;
     DFileDialog* importDlg;
     QPushButton* importSearchBtn;
@@ -60,12 +60,13 @@ public:
 
 FTImportWidget::FTImportWidget(QWidget* const parent, DInfoInterface* const iface)
     : QWidget(parent),
-      d(new Private)
+      d      (new Private)
 {
     d->importSearchBtn = new QPushButton(i18n("Select import location..."), this);
     d->importSearchBtn->setIcon(QIcon::fromTheme(QLatin1String("folder-remote")));
 
     // setup image list
+
     d->imageList = new DItemsList(this);
     d->imageList->setObjectName(QLatin1String("FTImport ImagesList"));
     d->imageList->setAllowRAW(true);
@@ -76,9 +77,11 @@ FTImportWidget::FTImportWidget(QWidget* const parent, DInfoInterface* const ifac
                                                 "into the current album."));
 
     // setup upload widget
+
     d->uploadWidget = iface->uploadWidget(this);
 
     // layout dialog
+
     QVBoxLayout* const layout = new QVBoxLayout(this);
     layout->addWidget(d->importSearchBtn);
     layout->addWidget(d->imageList);

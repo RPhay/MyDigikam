@@ -60,7 +60,7 @@ public:
 
 FTImportWindow::FTImportWindow(DInfoInterface* const iface, QWidget* const /*parent*/)
     : WSToolDialog(nullptr, QLatin1String("Kio Import Dialog")),
-      d(new Private)
+      d           (new Private)
 {
     d->iface        = iface;
     d->importWidget = new FTImportWidget(this, d->iface);
@@ -104,6 +104,7 @@ void FTImportWindow::slotImport()
         qCDebug(DIGIKAM_WEBSERVICES_LOG) << "starting to import urls: " << d->importWidget->sourceUrls();
 
         // start copying and react on signals
+
         setEnabled(false);
 
         KIO::CopyJob* const copyJob = KIO::copy(d->importWidget->imagesList()->imageUrls(), url);
@@ -155,7 +156,7 @@ void FTImportWindow::slotSourceAndTargetUpdated()
     bool hasTarget      = !d->iface->uploadUrl().isEmpty();
 
     qCDebug(DIGIKAM_WEBSERVICES_LOG) << "switching import button activity with: hasUrlToImport = "
-                                 << hasUrlToImport << ", hasTarget = " << hasTarget;
+                                     << hasUrlToImport << ", hasTarget = " << hasTarget;
 
     startButton()->setEnabled(hasUrlToImport && hasTarget);
 }

@@ -69,7 +69,7 @@ const QString FTExportWindow::Private::CONFIG_GROUP         = QLatin1String("Kio
 
 FTExportWindow::FTExportWindow(DInfoInterface* const iface, QWidget* const /*parent*/)
     : WSToolDialog(nullptr, QLatin1String("Kio Export Dialog")),
-      d(new Private)
+      d           (new Private)
 {
     d->exportWidget = new FTExportWidget(iface, this);
     setMainWidget(d->exportWidget);
@@ -161,8 +161,8 @@ void FTExportWindow::updateUploadButton()
     startButton()->setEnabled(listNotEmpty && d->exportWidget->targetUrl().isValid());
 
     qCDebug(DIGIKAM_WEBSERVICES_LOG) << "Updated upload button with listNotEmpty = "
-                                 << listNotEmpty << ", targetUrl().isValid() = "
-                                 << d->exportWidget->targetUrl().isValid();
+                                     << listNotEmpty << ", targetUrl().isValid() = "
+                                     << d->exportWidget->targetUrl().isValid();
 }
 
 void FTExportWindow::slotCopyingDone(KIO::Job* job,
@@ -203,6 +203,7 @@ void FTExportWindow::slotUpload()
     saveSettings();
 
     // start copying and react on signals
+
     setEnabled(false);
     KIO::CopyJob* const copyJob = KIO::copy(d->exportWidget->imagesList()->imageUrls(),
                                             d->exportWidget->targetUrl());

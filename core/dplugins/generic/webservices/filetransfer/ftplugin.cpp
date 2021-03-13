@@ -55,7 +55,7 @@ void FTPlugin::cleanUp()
 
 QString FTPlugin::name() const
 {
-    return i18n("FileTransfer");
+    return i18nc("@title", "File Transfer");
 }
 
 QString FTPlugin::iid() const
@@ -70,13 +70,13 @@ QIcon FTPlugin::icon() const
 
 QString FTPlugin::description() const
 {
-    return i18n("A tool to export and import items with a remote location");
+    return i18nc("@info", "A tool to export and import items with a remote location");
 }
 
 QString FTPlugin::details() const
 {
-    return i18n("<p>This tool permit to export and import items with a remote location.</p>"
-                "<p>Many protocols can be used, as FTP, SFTP, SAMBA, etc.</p>");
+    return i18nc("@info", "This tool permit to export and import items with a remote location.\n\n"
+                 "Many protocols can be used, as FTP, SFTP, SAMBA, etc.");
 }
 
 QList<DPluginAuthor> FTPlugin::authors() const

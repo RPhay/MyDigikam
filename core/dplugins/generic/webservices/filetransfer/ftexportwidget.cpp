@@ -93,6 +93,7 @@ FTExportWidget::FTExportWidget(DInfoInterface* const iface, QWidget* const paren
     d->targetSearchButton->setIcon(QIcon::fromTheme(QLatin1String("folder-remote")));
 
     // setup image list
+
     d->imageList = new DItemsList(this);
     d->imageList->setObjectName(QLatin1String("FTExport ImagesList"));
     d->imageList->setIface(iface);
@@ -102,6 +103,7 @@ FTExportWidget::FTExportWidget(DInfoInterface* const iface, QWidget* const paren
                                                 "to the specified target."));
 
     // layout dialog
+
     QVBoxLayout* const layout = new QVBoxLayout(this);
 
     layout->addWidget(hbox);
