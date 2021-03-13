@@ -83,7 +83,7 @@ public:
 
 AuthenticationDialog::AuthenticationDialog(QWidget* const parent)
     : QDialog(parent),
-      d(new Private)
+      d      (new Private)
 {
     d->displayMode                    = QLatin1String("page");
 
@@ -109,7 +109,7 @@ AuthenticationDialog::AuthenticationDialog(QWidget* const parent)
 
     d->progressBar              = new QProgressBar(this);
     d->progressBar->setRange(0, 100);
-    QLabel* const progressLabel = new QLabel(i18n("Loading Page:"), this);
+    QLabel* const progressLabel = new QLabel(i18nc("@label", "Loading Page:"), this);
     progressLayout->addWidget(progressLabel);
     progressLayout->addWidget(d->progressBar);
 
@@ -189,10 +189,10 @@ void AuthenticationDialog::start()
 void AuthenticationDialog::showErrorDialog()
 {
     hide();
-    const QString details = i18n("<b>VKontakte Error Description:</b> %1<br>"
-                                 "<b>VKontakte Error:</b> %2<br>", d->errorDescription, d->error);
-    QMessageBox::warning(this, i18n("Authentication with VKontakte was not successful."),
-                         details, i18nc("@title:window", "Authentication Problem"));
+    const QString details = i18nc("@info", "VKontakte Error Description: %1\n"
+                                  "VKontakte Error: %2\n", d->errorDescription, d->error);
+    QMessageBox::warning(this, i18nc("@title", "Authentication with VKontakte was not successful."),
+                         details, i18nc("@title: window", "Authentication Problem"));
     emit canceled();
     close();
 }
@@ -237,8 +237,8 @@ void AuthenticationDialog::loadFinished(bool ok)
         hide();
 
         QMessageBox::critical(parentWidget(),
-                              i18n("There was a network error when trying to authenticate with VKontakte web service."),
-                              i18nc("@title:window", "Network Error"));
+                              i18nc("@info", "There was a network error when trying to authenticate with VKontakte web service."),
+                              i18nc("@title: window", "Network Error"));
 
         emit canceled();
         close();
