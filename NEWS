@@ -394,4 +394,5 @@ BUGFIXES:
 351 ==> 434275 - Row height determined by number of tags even if they are not visible.
 352 ==> 434302 - Sub-folders not selected when parent folder is selected.
 353 ==> 376690 - Irritating behavior of list when moving images.
-354 ==> 
+354 ==> 434112 - digiKam-7.2* crashes at first start after install while starting main view.
+355 ==> 
