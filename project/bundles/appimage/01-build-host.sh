@@ -101,6 +101,7 @@ urpmi --auto \
       inotify-tools-devel \
       openssl-devel \
       cups-devel \
+      imagemagick \
       openal-soft-devel \
       libical-devel \
       libcap-devel \
