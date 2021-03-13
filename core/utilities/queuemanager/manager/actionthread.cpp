@@ -77,7 +77,7 @@ void ActionThread::setSettings(const QueueSettings& settings)
     }
     else
     {
-        defaultMaximumNumberOfThreads();
+        setDefaultMaximumNumberOfThreads();
     }
 }
 

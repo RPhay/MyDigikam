@@ -68,7 +68,7 @@ void MaintenanceThread::setUseMultiCore(const bool b)
     }
     else
     {
-        defaultMaximumNumberOfThreads();
+        setDefaultMaximumNumberOfThreads();
         //setMaximumNumberOfThreads(qMax( maximumNumberOfThreads() / 2, 1));
     }
 }

@@ -87,7 +87,7 @@ ActionThreadBase::ActionThreadBase(QObject* const parent)
 {
     d->pool = new QThreadPool(this);
 
-    defaultMaximumNumberOfThreads();
+    setDefaultMaximumNumberOfThreads();
 }
 
 ActionThreadBase::~ActionThreadBase()
@@ -126,7 +126,7 @@ int ActionThreadBase::maximumNumberOfThreads() const
     return d->pool->maxThreadCount();
 }
 
-void ActionThreadBase::defaultMaximumNumberOfThreads()
+void ActionThreadBase::setDefaultMaximumNumberOfThreads()
 {
     setMaximumNumberOfThreads(QThread::idealThreadCount());
 }
