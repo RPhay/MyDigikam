@@ -69,7 +69,7 @@ public:
 VKAuthWidget::VKAuthWidget(QWidget* const parent,
                            Vkontakte::VkApi* const vkapi)
     : QGroupBox(i18n("Account"), parent),
-      d(new Private)
+      d        (new Private)
 {
     d->vkapi = vkapi;
 
@@ -77,7 +77,7 @@ VKAuthWidget::VKAuthWidget(QWidget* const parent,
 
     QGridLayout* const accountBoxLayout = new QGridLayout(this);
     QLabel* const loginDescLabel        = new QLabel(this);
-    loginDescLabel->setText(i18n("Name:"));
+    loginDescLabel->setText(i18nc("@label: account properties", "Name:"));
     loginDescLabel->setWhatsThis(i18n("Your VKontakte login"));
 
     d->loginLabel       = new QLabel(this);

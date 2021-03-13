@@ -72,7 +72,7 @@ public:
 
 VKNewAlbumDlg::VKNewAlbumDlg(QWidget* const parent)
     : QDialog(parent),
-      d(new Private)
+      d      (new Private)
 {
     initDialog(false);
 }
@@ -123,7 +123,7 @@ void VKNewAlbumDlg::initDialog(bool editing)
 
 
     QFormLayout* const albumBoxLayout   = new QFormLayout;
-    albumBoxLayout->addRow(i18n("Title:"),   d->titleEdit);
+    albumBoxLayout->addRow(i18nc("@option: album properties", "Title:"),   d->titleEdit);
     albumBoxLayout->addRow(i18n("Summary:"), d->summaryEdit);
     albumBox->setLayout(albumBoxLayout);
 

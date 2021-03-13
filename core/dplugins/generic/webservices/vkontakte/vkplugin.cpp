@@ -53,7 +53,7 @@ void VKontaktePlugin::cleanUp()
 
 QString VKontaktePlugin::name() const
 {
-    return i18n("VKontakte");
+    return i18nc("@title", "VKontakte");
 }
 
 QString VKontaktePlugin::iid() const
@@ -68,13 +68,14 @@ QIcon VKontaktePlugin::icon() const
 
 QString VKontaktePlugin::description() const
 {
-    return i18n("A tool to export to VKontakte web-service");
+    return i18nc("@info", "A tool to export to VKontakte web-service");
 }
 
 QString VKontaktePlugin::details() const
 {
-    return i18n("<p>This tool permit to export items to VKontakte web-service.</p>"
-                "<p>See VKontakte web site for details: <a href='https://vk.com/'>https://vk.com/</a></p>");
+    return i18nc("@info", "This tool permit to export items to VKontakte web-service.\n\n"
+                 "See VKontakte web site for details: %1",
+                 QLatin1String("<a href='https://vk.com/'>https://vk.com/</a>"));
 }
 
 QList<DPluginAuthor> VKontaktePlugin::authors() const

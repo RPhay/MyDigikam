@@ -84,32 +84,32 @@ public:
 
 VKAlbumChooser::VKAlbumChooser(QWidget* const parent,
                                Vkontakte::VkApi* const vkapi)
-    : QGroupBox(i18nc("@title:group Header above controls for managing albums", "Album"), parent),
-      d(new Private)
+    : QGroupBox(i18nc("@title: group Header above controls for managing albums", "Album"), parent),
+      d        (new Private)
 {
     d->vkapi              = vkapi;
 
-    setWhatsThis(i18n("This is the VKontakte album that will be used for the transfer."));
+    setWhatsThis(i18nc("@info", "This is the VKontakte album that will be used for the transfer."));
     QVBoxLayout* const albumsBoxLayout = new QVBoxLayout(this);
 
     d->albumsCombo        = new QComboBox(this);
     d->albumsCombo->setEditable(false);
 
     d->newAlbumButton     = new QPushButton(QIcon::fromTheme(QLatin1String("list-add")),
-                                           i18n("New Album"), this);
-    d->newAlbumButton->setToolTip(i18n("Create new VKontakte album"));
+                                            i18nc("@action", "New Album"), this);
+    d->newAlbumButton->setToolTip(i18nc("@info", "Create new VKontakte album"));
 
     d->reloadAlbumsButton = new QPushButton(QIcon::fromTheme(QLatin1String("view-refresh")),
-                                           i18nc("reload albums list", "Reload"), this);
-    d->reloadAlbumsButton->setToolTip(i18n("Reload albums list"));
+                                           i18nc("@action: reload albums list", "Reload"), this);
+    d->reloadAlbumsButton->setToolTip(i18nc("@info", "Reload albums list"));
 
     d->editAlbumButton    = new QToolButton(this);
-    d->editAlbumButton->setToolTip(i18n("Edit selected album"));
+    d->editAlbumButton->setToolTip(i18nc("@info", "Edit selected album"));
     d->editAlbumButton->setEnabled(false);
     d->editAlbumButton->setIcon(QIcon::fromTheme(QLatin1String("document-edit")));
 
     d->deleteAlbumButton  = new QToolButton(this);
-    d->deleteAlbumButton->setToolTip(i18n("Delete selected album"));
+    d->deleteAlbumButton->setToolTip(i18nc("@info", "Delete selected album"));
     d->deleteAlbumButton->setEnabled(false);
     d->deleteAlbumButton->setIcon(QIcon::fromTheme(QLatin1String("edit-delete")));
 
@@ -326,9 +326,9 @@ void VKAlbumChooser::slotDeleteAlbumRequest()
         return;
     }
 
-    if (QMessageBox::question(this, i18nc("@title:window", "Confirm Album Deletion"),
-                              i18n("<qt>Are you sure you want to remove the album <b>%1</b> "
-                                   "including all photos in it?</qt>", album.title))
+    if (QMessageBox::question(this, i18nc("@title: window", "Confirm Album Deletion"),
+                              i18nc("@info", "Are you sure you want to remove the album \"%1\" "
+                                    "including all photos in it?", album.title))
             != QMessageBox::Yes)
     {
         return;
@@ -440,8 +440,9 @@ void VKAlbumChooser::updateBusyStatus(bool busy)
 void VKAlbumChooser::handleVkError(KJob* kjob)
 {
     QMessageBox::critical(this,
-                          i18nc("@title:window", "Request to VKontakte failed"),
-                          kjob == nullptr ? i18n("Internal error: Null pointer to KJob instance.") : kjob->errorText());
+                          i18nc("@title: window", "Request to VKontakte failed"),
+                          (kjob == nullptr) ? i18nc("@info", "Internal error: Null pointer to KJob instance.")
+                                            : kjob->errorText());
 }
 
 } // namespace DigikamGenericVKontaktePlugin
