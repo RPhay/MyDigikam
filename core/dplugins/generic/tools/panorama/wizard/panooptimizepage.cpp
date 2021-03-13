@@ -104,8 +104,8 @@ public:
 };
 
 PanoOptimizePage::PanoOptimizePage(PanoManager* const mngr, QWizard* const dlg)
-    : DWizardPage(dlg, i18nc("@title:window", "<b>Optimization</b>")),
-      d(new Private)
+    : DWizardPage(dlg, QString::fromLatin1("<b>%1</b>").arg(i18nc("@title: window", "Optimization"))),
+      d          (new Private)
 {
     d->mngr                         = mngr;
     d->progressTimer                = new QTimer(this);
@@ -118,30 +118,30 @@ PanoOptimizePage::PanoOptimizePage(PanoManager* const mngr, QWizard* const dlg)
     KSharedConfigPtr config         = KSharedConfig::openConfig();
     KConfigGroup group              = config->group("Panorama Settings");
 
-    d->horizonCheckbox              = new QCheckBox(i18nc("@option:check", "Level horizon"), vbox);
+    d->horizonCheckbox              = new QCheckBox(i18nc("@option: check", "Level horizon"), vbox);
     d->horizonCheckbox->setChecked(group.readEntry("Horizon", true));
-    d->horizonCheckbox->setToolTip(i18nc("@info:tooltip", "Detect the horizon and adapt the project to make it horizontal."));
-    d->horizonCheckbox->setWhatsThis(i18nc("@info:whatsthis", "<b>Level horizon</b>: Detect the horizon and adapt the projection so that "
+    d->horizonCheckbox->setToolTip(i18nc("@info: tooltip", "Detect the horizon and adapt the project to make it horizontal."));
+    d->horizonCheckbox->setWhatsThis(i18nc("@info: whatsthis", "\"Level horizon\": Detect the horizon and adapt the projection so that "
                                            "the detected horizon is an horizontal line in the final panorama"));
 /*
     if (!d->mngr->gPano())
     {
-        d->projectionAndSizeCheckbox = new QCheckBox(i18nc("@option:check", "Automatic projection and output aspect"), vbox);
+        d->projectionAndSizeCheckbox = new QCheckBox(i18nc("@option: check", "Automatic projection and output aspect"), vbox);
         d->projectionAndSizeCheckbox->setChecked(group.readEntry("Output Projection And Size", true));
-        d->projectionAndSizeCheckbox->setToolTip(i18nc("@info:tooltip", "Adapt the projection of the panorama and the area rendered on the "
+        d->projectionAndSizeCheckbox->setToolTip(i18nc("@info: tooltip", "Adapt the projection of the panorama and the area rendered on the "
                                                        "resulting projection so that every photo fits in the resulting "
                                                        "panorama."));
-        d->projectionAndSizeCheckbox->setWhatsThis(i18nc("@info:whatsthis", "<b>Automatic projection and output aspect</b>: Automatically "
+        d->projectionAndSizeCheckbox->setWhatsThis(i18nc("@info: whatsthis", "\"Automatic projection and output aspect\": Automatically "
                                                          "adapt the projection and the area rendered of the panorama to "
                                                          "get every photos into the panorama."));
     }
     else
     {
-        d->projectionAndSizeCheckbox = new QCheckBox(i18nc("@option:check", "Automatic output aspect"), vbox);
+        d->projectionAndSizeCheckbox = new QCheckBox(i18nc("@option: check", "Automatic output aspect"), vbox);
         d->projectionAndSizeCheckbox->setChecked(group.readEntry("Output Projection And Size", true));
-        d->projectionAndSizeCheckbox->setToolTip(i18nc("@info:tooltip", "Adapt the area rendered on the resulting projection so that "
+        d->projectionAndSizeCheckbox->setToolTip(i18nc("@info: tooltip", "Adapt the area rendered on the resulting projection so that "
                                                        "every photo fits in the resulting panorama."));
-        d->projectionAndSizeCheckbox->setWhatsThis(i18nc("@info:whatsthis", "<b>Automatic output aspect</b>: Automatically adapt the area "
+        d->projectionAndSizeCheckbox->setWhatsThis(i18nc("@info: whatsthis", "\"Automatic output aspect\": Automatically adapt the area "
                                                          "rendered of the panorama to get every photos into the panorama."));
     }
 */
@@ -188,10 +188,13 @@ void PanoOptimizePage::process()
 {
     QMutexLocker lock(&d->progressMutex);
 
-    d->title->setText(i18n("<qt>"
-                           "<p>Optimization is in progress, please wait.</p>"
-                           "<p>This can take a while...</p>"
-                           "</qt>"));
+    d->title->setText(QString::fromUtf8("<qt>"
+                                        "<p>%1</p>"
+                                        "<p>%2</p>"
+                                        "</qt>")
+                      .arg(i18nc("@info", "Optimization is in progress, please wait."))
+                      .arg(i18nc("@info", "This can take a while...")));
+
     d->horizonCheckbox->hide();
 /*
     d->projectionAndSizeCheckbox->hide();
@@ -217,17 +220,18 @@ void PanoOptimizePage::process()
 
 void PanoOptimizePage::initializePage()
 {
-    d->title->setText(i18n("<qt>"
-                           "<p>The optimization step according to your settings is ready to be performed.</p>"
-                           "<p>This step can include an automatic leveling of the horizon, and also "
-                           "an automatic projection selection and size</p>"
-                           "<p>To perform this operation, the <command>%1</command> program from the "
-                           "<a href='%2'>%3</a> project will be used.</p>"
-                           "<p>Press the \"Next\" button to run the optimization.</p>"
-                           "</qt>",
-                           QDir::toNativeSeparators(d->mngr->autoOptimiserBinary().path()),
-                           d->mngr->autoOptimiserBinary().url().url(),
-                           d->mngr->autoOptimiserBinary().projectName()));
+    d->title->setText(QString::fromUtf8("<qt>"
+                                        "<p>%1</p>"
+                                        "<p>%2</p>"
+                                        "<p>%3</p>"
+                                        "<p>%4</p>"
+                                        "</qt>")
+                      .arg(i18nc("@info", "The optimization step according to your settings is ready to be performed."))
+                      .arg(i18nc("@info", "This step can include an automatic leveling of the horizon, and also "
+                                          "an automatic projection selection and size."))
+                      .arg(i18nc("@info", "To perform this operation, the \"%1\" program will be used.",
+                                          QDir::toNativeSeparators(d->mngr->autoOptimiserBinary().path())))
+                      .arg(i18nc("@info", "Press the \"Next\" button to run the optimization.")));
 
 /*
     QPair<double, int> result = d->mngr->cpFindUrlData().standardDeviation();
@@ -324,10 +328,12 @@ void PanoOptimizePage::slotPanoAction(const DigikamGenericPanoramaPlugin::PanoAc
 
                     if (d->detailsText->isHidden())
                     {
-                        d->title->setText(i18n("<qt>"
-                                               "<h1>Optimization has failed.</h1>"
-                                               "<p>See processing messages below.</p>"
-                                               "</qt>"));
+                        d->title->setText(QString::fromUtf8("<qt>"
+                                                            "<p>%1</p>"
+                                                            "<p>%2</p>"
+                                                            "</qt>")
+                                                            .arg(i18nc("@info", "Optimization has failed."))
+                                                            .arg(i18nc("@info", "See processing messages below.")));
                         d->progressTimer->stop();
                         d->horizonCheckbox->hide();
 /*

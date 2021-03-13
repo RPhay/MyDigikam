@@ -79,7 +79,7 @@ public:
     {
     }
 
-    PanoManager*        mngr;
+    PanoManager*    mngr;
 /*
     QCheckBox*      addGPlusMetadataCheckBox;
 */
