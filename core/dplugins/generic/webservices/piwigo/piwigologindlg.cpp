@@ -53,10 +53,10 @@ class Q_DECL_HIDDEN PiwigoLoginDlg::Private
 public:
 
     explicit Private()
-      : pUrlEdit(nullptr),
+      : pUrlEdit     (nullptr),
         pUsernameEdit(nullptr),
         pPasswordEdit(nullptr),
-        pPiwigo(nullptr)
+        pPiwigo      (nullptr)
     {
     }
 
@@ -71,7 +71,7 @@ PiwigoLoginDlg::PiwigoLoginDlg(QWidget* const pParent,
                                PiwigoSession* const pPiwigo,
                                const QString& title)
     : QDialog(pParent, Qt::Dialog),
-      d(new Private)
+      d      (new Private)
 {
     d->pPiwigo = pPiwigo;
 

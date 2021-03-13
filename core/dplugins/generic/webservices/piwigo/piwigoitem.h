@@ -39,7 +39,7 @@ class PiwigoAlbum
 public:
 
     explicit PiwigoAlbum()
-      : m_refNum(-1),
+      : m_refNum      (-1),
         m_parentRefNum(-1)
     {
     }

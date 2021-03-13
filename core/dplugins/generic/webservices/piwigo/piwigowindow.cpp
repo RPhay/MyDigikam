@@ -99,19 +99,19 @@ public:
 
 PiwigoWindow::Private::Private(PiwigoWindow* const parent,
                                DInfoInterface* const interface)
-    : widget(new QWidget(parent)),
-      albumView(nullptr),
-      confButton(nullptr),
+    : widget        (new QWidget(parent)),
+      albumView     (nullptr),
+      confButton    (nullptr),
       resizeCheckBox(nullptr),
-      widthSpinBox(nullptr),
-      heightSpinBox(nullptr),
+      widthSpinBox  (nullptr),
+      heightSpinBox (nullptr),
       qualitySpinBox(nullptr),
-      talker(nullptr),
-      pPiwigo(nullptr),
-      iface(interface),
-      progressDlg(nullptr),
-      uploadCount(0),
-      uploadTotal(0)
+      talker        (nullptr),
+      pPiwigo       (nullptr),
+      iface         (interface),
+      progressDlg   (nullptr),
+      uploadCount   (0),
+      uploadTotal   (0)
 {
     parent->setMainWidget(widget);
     parent->setModal(false);

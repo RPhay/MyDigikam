@@ -53,7 +53,7 @@ void PiwigoPlugin::cleanUp()
 
 QString PiwigoPlugin::name() const
 {
-    return i18n("Piwigo");
+    return i18nc("@title", "Piwigo");
 }
 
 QString PiwigoPlugin::iid() const
@@ -68,13 +68,14 @@ QIcon PiwigoPlugin::icon() const
 
 QString PiwigoPlugin::description() const
 {
-    return i18n("A tool to export to Piwigo web-service");
+    return i18nc("@info", "A tool to export to Piwigo web-service");
 }
 
 QString PiwigoPlugin::details() const
 {
-    return i18n("<p>This tool permit to export items to Piwigo web-service.</p>"
-                "<p>See Piwigo web site for details: <a href='https://piwigo.org/'>https://piwigo.org/</a></p>");
+    return i18nc("@info", "This tool permit to export items to Piwigo web-service."
+                 "See Piwigo web site for details: %1",
+                 QLatin1String("<a href='https://piwigo.org/'>https://piwigo.org/</a></p>"));
 }
 
 QList<DPluginAuthor> PiwigoPlugin::authors() const

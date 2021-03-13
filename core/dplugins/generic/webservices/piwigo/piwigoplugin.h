@@ -45,7 +45,7 @@ class PiwigoPlugin : public DPluginGeneric
 public:
 
     explicit PiwigoPlugin(QObject* const parent = nullptr);
-    ~PiwigoPlugin() override;
+    ~PiwigoPlugin()                      override;
 
     QString name()                 const override;
     QString iid()                  const override;
