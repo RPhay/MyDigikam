@@ -43,7 +43,7 @@
 
 // Local includes
 
-#include "myactionthread.h"
+#include "rawtopngconverterthread.h"
 
 class Q_DECL_HIDDEN ProcessorDlg::Private
 {
@@ -60,17 +60,17 @@ public:
     {
     }
 
-    int                  count;
+    int                      count;
 
-    QWidget*             page;
-    QLabel*              items;
-    QDialogButtonBox*    buttons;
-    QScrollArea*         progressView;
+    QWidget*                 page;
+    QLabel*                  items;
+    QDialogButtonBox*        buttons;
+    QScrollArea*             progressView;
 
-    QList<QUrl>          list;
+    QList<QUrl>              list;
 
-    QSpinBox*            usedCore;
-    MyActionThread*      thread;
+    QSpinBox*                usedCore;
+    RAWToPNGConverterThread* thread;
 };
 
 ProcessorDlg::ProcessorDlg(const QList<QUrl>& list, QWidget* const parent)
@@ -81,7 +81,7 @@ ProcessorDlg::ProcessorDlg(const QList<QUrl>& list, QWidget* const parent)
     setWindowTitle(QString::fromUtf8("Convert RAW files To PNG"));
 
     d->buttons               = new QDialogButtonBox(QDialogButtonBox::Apply | QDialogButtonBox::Close, this);
-    d->thread                = new MyActionThread(this);
+    d->thread                = new RAWToPNGConverterThread(this);
     d->list                  = list;
     d->count                 = d->list.count();
     qDebug() << d->list;

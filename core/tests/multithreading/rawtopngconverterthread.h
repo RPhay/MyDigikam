@@ -36,14 +36,14 @@
 
 using namespace Digikam;
 
-class MyActionThread : public ActionThreadBase
+class RAWToPNGConverterThread : public ActionThreadBase
 {
     Q_OBJECT
 
 public:
 
-    explicit MyActionThread(QObject* const parent);
-    ~MyActionThread() override;
+    explicit RAWToPNGConverterThread(QObject* const parent);
+    ~RAWToPNGConverterThread() override;
 
     void convertRAWtoPNG(const QList<QUrl>& list, const DRawDecoderSettings& settings, int priority=0);
 

@@ -15,7 +15,7 @@ include_directories(
 set(multicorerawtopng_SRCS
     ${CMAKE_CURRENT_SOURCE_DIR}/main.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/processordlg.cpp
-    ${CMAKE_CURRENT_SOURCE_DIR}/myactionthread.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/rawtopngconverterthread.cpp
 )
 
 add_executable(multicorerawtopng ${multicorerawtopng_SRCS})

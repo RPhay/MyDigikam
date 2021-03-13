@@ -22,7 +22,7 @@
  *
  * ============================================================ */
 
-#include "myactionthread.h"
+#include "rawtopngconverterthread.h"
 
 // Qt includes
 
@@ -115,17 +115,17 @@ protected:
 
 // ----------------------------------------------------------------------------------------------------
 
-MyActionThread::MyActionThread(QObject* const parent)
+RAWToPNGConverterThread::RAWToPNGConverterThread(QObject* const parent)
     : ActionThreadBase(parent)
 {
-    setObjectName(QLatin1String("MyActionThread"));
+    setObjectName(QLatin1String("RAWToPNGConverterThread"));
 }
 
-MyActionThread::~MyActionThread()
+RAWToPNGConverterThread::~RAWToPNGConverterThread()
 {
 }
 
-void MyActionThread::convertRAWtoPNG(const QList<QUrl>& list, const DRawDecoderSettings& settings, int priority)
+void RAWToPNGConverterThread::convertRAWtoPNG(const QList<QUrl>& list, const DRawDecoderSettings& settings, int priority)
 {
     ActionJobCollection collection;
 
@@ -152,7 +152,7 @@ void MyActionThread::convertRAWtoPNG(const QList<QUrl>& list, const DRawDecoderS
     appendJobs(collection);
 }
 
-void MyActionThread::slotJobDone()
+void RAWToPNGConverterThread::slotJobDone()
 {
     Mytask* const task = dynamic_cast<Mytask*>(sender());
     if (!task) return;
@@ -167,7 +167,7 @@ void MyActionThread::slotJobDone()
     }
 }
 
-void MyActionThread::slotJobProgress(int p)
+void RAWToPNGConverterThread::slotJobProgress(int p)
 {
     Mytask* const task = dynamic_cast<Mytask*>(sender());
     if (!task) return;
@@ -175,7 +175,7 @@ void MyActionThread::slotJobProgress(int p)
     emit progress(task->fileUrl, p);
 }
 
-void MyActionThread::slotJobStarted()
+void RAWToPNGConverterThread::slotJobStarted()
 {
     Mytask* const task = dynamic_cast<Mytask*>(sender());
     if (!task) return;
@@ -183,4 +183,4 @@ void MyActionThread::slotJobStarted()
     emit starting(task->fileUrl);
 }
 
-#include "myactionthread.moc"
+#include "rawtopngconverterthread.moc"
