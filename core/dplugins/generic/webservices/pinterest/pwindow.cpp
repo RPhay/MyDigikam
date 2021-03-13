@@ -77,7 +77,7 @@ public:
 PWindow::PWindow(DInfoInterface* const iface,
                  QWidget* const /*parent*/)
     : WSToolDialog(nullptr, QLatin1String("Pinterest Export Dialog")),
-      d(new Private)
+      d           (new Private)
 {
     d->widget = new PWidget(this, iface, QLatin1String("Pinterest"));
 
@@ -257,7 +257,7 @@ void PWindow::slotStartTransfer()
     if (!(d->talker->authenticated()))
     {
         QPointer<QMessageBox> warn = new QMessageBox(QMessageBox::Warning,
-            i18n("Warning"),
+            i18nc("@title: window", "Warning"),
             i18n("Authentication failed. Click \"Continue\" to authenticate."),
             QMessageBox::Yes | QMessageBox::No);
 

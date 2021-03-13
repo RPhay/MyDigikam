@@ -53,7 +53,7 @@ void PPlugin::cleanUp()
 
 QString PPlugin::name() const
 {
-    return i18n("Pinterest");
+    return i18nc("@title", "Pinterest");
 }
 
 QString PPlugin::iid() const
@@ -68,13 +68,14 @@ QIcon PPlugin::icon() const
 
 QString PPlugin::description() const
 {
-    return i18n("A tool to export to Pinterest web-service");
+    return i18nc("@info", "A tool to export to Pinterest web-service");
 }
 
 QString PPlugin::details() const
 {
-    return i18n("<p>This tool permit to export items to Pinterest web-service.</p>"
-                "<p>See Pinterest web site for details: <a href='https://www.pinterest.com/'>https://www.pinterest.com/</a></p>");
+    return i18nc("@info", "This tool permit to export items to Pinterest web-service.\n\n"
+                 "See Pinterest web site for details: %1",
+                 QLatin1String("<a href='https://www.pinterest.com/'>https://www.pinterest.com/</a>"));
 }
 
 QList<DPluginAuthor> PPlugin::authors() const

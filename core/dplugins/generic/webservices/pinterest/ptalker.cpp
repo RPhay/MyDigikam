@@ -76,12 +76,12 @@ public:
 public:
 
     explicit Private()
-      : parent(nullptr),
-        netMngr(nullptr),
-        reply(nullptr),
+      : parent  (nullptr),
+        netMngr (nullptr),
+        reply   (nullptr),
         settings(nullptr),
-        state(P_USERNAME),
-        browser(nullptr)
+        state   (P_USERNAME),
+        browser (nullptr)
     {
         clientId     = QLatin1String("4983380570301022071");
         clientSecret = QLatin1String("2a698db679125930d922a2dfb897e16b668a67c6f614593636e83fc3d8d9b47d");
