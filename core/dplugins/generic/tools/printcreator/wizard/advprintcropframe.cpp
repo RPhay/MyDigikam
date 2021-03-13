@@ -51,13 +51,13 @@ class Q_DECL_HIDDEN AdvPrintCropFrame::Private
 public:
 
     explicit Private()
-      : photo(nullptr),
+      : photo    (nullptr),
         mouseDown(false),
-        image(nullptr),
-        imageX(0),
-        imageY(0),
-        color(Qt::red),
-        drawRec(true)
+        image    (nullptr),
+        imageX   (0),
+        imageY   (0),
+        color    (Qt::red),
+        drawRec  (true)
     {
     }
 
@@ -77,7 +77,7 @@ public:
 
 AdvPrintCropFrame::AdvPrintCropFrame(QWidget* const parent)
     : QWidget(parent),
-      d(new Private)
+      d      (new Private)
 {
 }
 

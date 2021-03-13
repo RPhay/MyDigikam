@@ -52,9 +52,9 @@ public:
 
     explicit Private(QWizard* const dialog)
       : imageGetOption(nullptr),
-        hbox(nullptr),
-        binSearch(nullptr),
-        iface(nullptr)
+        hbox          (nullptr),
+        binSearch     (nullptr),
+        iface         (nullptr)
     {
         wizard = dynamic_cast<AdvPrintWizard*>(dialog);
 
@@ -74,7 +74,7 @@ public:
 
 AdvPrintIntroPage::AdvPrintIntroPage(QWizard* const dialog, const QString& title)
     : DWizardPage(dialog, title),
-      d(new Private(dialog))
+      d          (new Private(dialog))
 {
     DVBox* const vbox  = new DVBox(this);
     QLabel* const desc = new QLabel(vbox);

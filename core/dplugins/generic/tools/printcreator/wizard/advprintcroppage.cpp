@@ -66,7 +66,7 @@ public:
 
     explicit Private(QWizard* const dialog)
       : settings(nullptr),
-        iface(nullptr)
+        iface   (nullptr)
     {
         cropUi = new CropUI(dialog);
         wizard = dynamic_cast<AdvPrintWizard*>(dialog);
@@ -86,7 +86,7 @@ public:
 
 AdvPrintCropPage::AdvPrintCropPage(QWizard* const wizard, const QString& title)
     : DWizardPage(wizard, title),
-      d(new Private(wizard))
+      d          (new Private(wizard))
 {
     d->cropUi->BtnCropRotateRight->setIcon(QIcon::fromTheme(QLatin1String("object-rotate-right"))
                                            .pixmap(16, 16));

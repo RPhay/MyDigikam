@@ -57,7 +57,7 @@
 namespace DigikamGenericPrintCreatorPlugin
 {
 
-static const char* const CUSTOM_PAGE_LAYOUT_NAME = I18N_NOOP("Custom");
+static const char* const CUSTOM_PAGE_LAYOUT_NAME = I18N_NOOP2("@info layout page", "Custom");
 
 class Q_DECL_HIDDEN AdvPrintPhotoPage::Private
 {
@@ -65,7 +65,8 @@ public:
 
     template <class Ui_Class>
 
-    class Q_DECL_HIDDEN WizardUI : public QWidget, public Ui_Class
+    class Q_DECL_HIDDEN WizardUI : public QWidget,
+                                   public Ui_Class
     {
     public:
 
@@ -82,10 +83,10 @@ public:
 
     explicit Private(QWizard* const dialog)
       : pageSetupDlg(nullptr),
-        printer(nullptr),
-        wizard(nullptr),
-        settings(nullptr),
-        iface(nullptr)
+        printer     (nullptr),
+        wizard      (nullptr),
+        settings    (nullptr),
+        iface       (nullptr)
     {
         photoUi = new PhotoUI(dialog);
         wizard  = dynamic_cast<AdvPrintWizard*>(dialog);
@@ -109,7 +110,7 @@ public:
 
 AdvPrintPhotoPage::AdvPrintPhotoPage(QWizard* const wizard, const QString& title)
     : DWizardPage(wizard, title),
-      d(new Private(wizard))
+      d          (new Private(wizard))
 {
     d->photoUi->BtnPreviewPageUp->setIcon(QIcon::fromTheme(QLatin1String("go-next"))
                                           .pixmap(16, 16));
@@ -119,7 +120,7 @@ AdvPrintPhotoPage::AdvPrintPhotoPage(QWizard* const wizard, const QString& title
     // ----------------------
 
     d->photoUi->m_printer_choice->setEditable(false);
-    d->photoUi->m_printer_choice->setWhatsThis(i18n("Select your preferred print output."));
+    d->photoUi->m_printer_choice->setWhatsThis(i18nc("@info", "Select your preferred print output."));
 
     // Populate hardcoded printers
 

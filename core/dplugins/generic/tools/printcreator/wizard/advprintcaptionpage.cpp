@@ -70,7 +70,7 @@ public:
 
     explicit Private(QWizard* const dialog)
       : settings(nullptr),
-        iface(nullptr)
+        iface   (nullptr)
     {
         captionUi = new CaptionUI(dialog);
         wizard    = dynamic_cast<AdvPrintWizard*>(dialog);
@@ -90,7 +90,7 @@ public:
 
 AdvPrintCaptionPage::AdvPrintCaptionPage(QWizard* const wizard, const QString& title)
     : DWizardPage(wizard, title),
-      d(new Private(wizard))
+      d          (new Private(wizard))
 {
     QMap<AdvPrintSettings::CaptionType, QString> map                = AdvPrintSettings::captionTypeNames();
     QMap<AdvPrintSettings::CaptionType, QString>::const_iterator it = map.constBegin();
@@ -127,8 +127,8 @@ AdvPrintCaptionPage::AdvPrintCaptionPage(QWizard* const wizard, const QString& t
     d->captionUi->mPrintList->setAllowDuplicate(true);
     d->captionUi->mPrintList->setControlButtonsPlacement(DItemsList::NoControlButtons);
     d->captionUi->mPrintList->listView()->setColumn(DItemsListView::User1,
-                                        i18nc("@title:column", "Caption"),
-                                        true);
+                                                    i18nc("@title: column", "Caption"),
+                                                    true);
 
     // -----------------------------------
 

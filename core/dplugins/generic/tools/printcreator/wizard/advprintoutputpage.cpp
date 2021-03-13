@@ -53,12 +53,12 @@ public:
 
     explicit Private(QWizard* const dialog)
       : labelImagesFormat(nullptr),
-        destUrl(nullptr),
-        conflictBox(nullptr),
-        imagesFormat(nullptr),
-        fileBrowserCB(nullptr),
-        wizard(nullptr),
-        settings(nullptr)
+        destUrl          (nullptr),
+        conflictBox      (nullptr),
+        imagesFormat     (nullptr),
+        fileBrowserCB    (nullptr),
+        wizard           (nullptr),
+        settings         (nullptr)
     {
         wizard = dynamic_cast<AdvPrintWizard*>(dialog);
 
@@ -79,7 +79,7 @@ public:
 
 AdvPrintOutputPage::AdvPrintOutputPage(QWizard* const dialog, const QString& title)
     : DWizardPage(dialog, title),
-      d(new Private(dialog))
+      d          (new Private(dialog))
 {
     QWidget* const main  = new QWidget(this);
 

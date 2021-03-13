@@ -74,17 +74,17 @@ class Q_DECL_HIDDEN AdvPrintWizard::Private
 public:
 
     explicit Private()
-      : introPage(nullptr),
-        albumsPage(nullptr),
-        photoPage(nullptr),
-        captionPage(nullptr),
-        cropPage(nullptr),
-        outputPage(nullptr),
-        finalPage(nullptr),
-        settings(nullptr),
+      : introPage    (nullptr),
+        albumsPage   (nullptr),
+        photoPage    (nullptr),
+        captionPage  (nullptr),
+        cropPage     (nullptr),
+        outputPage   (nullptr),
+        finalPage    (nullptr),
+        settings     (nullptr),
         previewThread(nullptr),
-        iface(nullptr),
-        tempPath(nullptr)
+        iface        (nullptr),
+        tempPath     (nullptr)
     {
     }
 
@@ -104,7 +104,7 @@ public:
 
 AdvPrintWizard::AdvPrintWizard(QWidget* const parent, DInfoInterface* const iface)
     : DWizardDlg(parent, QLatin1String("PrintCreatorDialog")),
-      d(new Private)
+      d         (new Private)
 {
     setWindowTitle(i18n("Print Creator"));
 

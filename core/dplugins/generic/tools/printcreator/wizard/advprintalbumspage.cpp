@@ -38,10 +38,10 @@ class Q_DECL_HIDDEN AdvPrintAlbumsPage::Private
 public:
 
     explicit Private(QWizard* const dialog)
-      : albumSupport(false),
+      : albumSupport (false),
         albumSelector(nullptr),
-        wizard(nullptr),
-        iface(nullptr)
+        wizard       (nullptr),
+        iface        (nullptr)
     {
         wizard = dynamic_cast<AdvPrintWizard*>(dialog);
 
@@ -59,7 +59,7 @@ public:
 
 AdvPrintAlbumsPage::AdvPrintAlbumsPage(QWizard* const dialog, const QString& title)
     : DWizardPage(dialog, title),
-      d(new Private(dialog))
+      d          (new Private(dialog))
 {
     if (d->iface)
     {
