@@ -49,7 +49,7 @@ DistortionFXToolPlugin::~DistortionFXToolPlugin()
 
 QString DistortionFXToolPlugin::name() const
 {
-    return i18n("Distortion Effects");
+    return i18nc("@title", "Distortion Effects");
 }
 
 QString DistortionFXToolPlugin::iid() const
@@ -64,12 +64,12 @@ QIcon DistortionFXToolPlugin::icon() const
 
 QString DistortionFXToolPlugin::description() const
 {
-    return i18n("A tool to apply distortion effects to an image");
+    return i18nc("@info", "A tool to apply distortion effects to an image");
 }
 
 QString DistortionFXToolPlugin::details() const
 {
-    return i18n("<p>This Image Editor tool can apply distortion effects to an image.</p>");
+    return i18nc("@info", "This Image Editor tool can apply distortion effects to an image.");
 }
 
 QList<DPluginAuthor> DistortionFXToolPlugin::authors() const

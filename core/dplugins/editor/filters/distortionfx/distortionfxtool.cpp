@@ -60,14 +60,14 @@ class Q_DECL_HIDDEN DistortionFXTool::Private
 public:
 
     explicit Private()
-      : effectTypeLabel(nullptr),
-        levelLabel(nullptr),
-        iterationLabel(nullptr),
-        effectType(nullptr),
-        levelInput(nullptr),
-        iterationInput(nullptr),
-        previewWidget(nullptr),
-        gboxSettings(nullptr)
+      : effectTypeLabel (nullptr),
+        levelLabel      (nullptr),
+        iterationLabel  (nullptr),
+        effectType      (nullptr),
+        levelInput      (nullptr),
+        iterationInput  (nullptr),
+        previewWidget   (nullptr),
+        gboxSettings    (nullptr)
     {
     }
 
@@ -98,7 +98,7 @@ const QString DistortionFXTool::Private::configLevelAdjustmentEntry(QLatin1Strin
 
 DistortionFXTool::DistortionFXTool(QObject* const parent)
     : EditorToolThreaded(parent),
-      d(new Private)
+      d                 (new Private)
 {
     setObjectName(QLatin1String("distortionfx"));
 
