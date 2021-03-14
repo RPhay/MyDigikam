@@ -49,7 +49,7 @@ ShearToolPlugin::~ShearToolPlugin()
 
 QString ShearToolPlugin::name() const
 {
-    return i18n("Shear Image");
+    return i18nc("@title", "Shear Image");
 }
 
 QString ShearToolPlugin::iid() const
@@ -64,12 +64,12 @@ QIcon ShearToolPlugin::icon() const
 
 QString ShearToolPlugin::description() const
 {
-    return i18n("A tool to shear an image");
+    return i18nc("@info", "A tool to shear an image");
 }
 
 QString ShearToolPlugin::details() const
 {
-    return i18n("<p>This Image Editor tool can shear an image.</p>");
+    return i18nc("@info", "This Image Editor tool can shear an image.");
 }
 
 QList<DPluginAuthor> ShearToolPlugin::authors() const

@@ -40,21 +40,21 @@ class ShearTool : public EditorToolThreaded
 public:
 
     explicit ShearTool(QObject* const parent);
-    ~ShearTool() override;
+    ~ShearTool()                override;
 
 private Q_SLOTS:
 
-    void slotResetSettings() override;
+    void slotResetSettings()    override;
     void slotColorGuideChanged();
 
 private:
 
-    void readSettings() override;
-    void writeSettings() override;
-    void preparePreview() override;
-    void prepareFinal() override;
-    void setPreviewImage() override;
-    void setFinalImage() override;
+    void readSettings()         override;
+    void writeSettings()        override;
+    void preparePreview()       override;
+    void prepareFinal()         override;
+    void setPreviewImage()      override;
+    void setFinalImage()        override;
 
 private:
 

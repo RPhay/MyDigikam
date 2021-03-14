@@ -56,15 +56,15 @@ class Q_DECL_HIDDEN ShearTool::Private
 public:
 
     explicit Private()
-      : newWidthLabel(nullptr),
-        newHeightLabel(nullptr),
-        antialiasInput(nullptr),
-        mainHAngleInput(nullptr),
-        mainVAngleInput(nullptr),
-        fineHAngleInput(nullptr),
-        fineVAngleInput(nullptr),
-        previewWidget(nullptr),
-        gboxSettings(nullptr)
+      : newWidthLabel       (nullptr),
+        newHeightLabel      (nullptr),
+        antialiasInput      (nullptr),
+        mainHAngleInput     (nullptr),
+        mainVAngleInput     (nullptr),
+        fineHAngleInput     (nullptr),
+        fineVAngleInput     (nullptr),
+        previewWidget       (nullptr),
+        gboxSettings        (nullptr)
     {
     }
 
@@ -101,7 +101,7 @@ const QString ShearTool::Private::configFineVAngleEntry(QLatin1String("Fine VAng
 
 ShearTool::ShearTool(QObject* const parent)
     : EditorToolThreaded(parent),
-      d(new Private)
+      d                 (new Private)
 {
     setObjectName(QLatin1String("sheartool"));
 
