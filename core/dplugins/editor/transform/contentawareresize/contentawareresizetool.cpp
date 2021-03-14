@@ -72,34 +72,35 @@ public:
 public:
 
     explicit Private()
-      : orgWidth(0),
-        orgHeight(0),
-        prevW(0),
-        prevH(0),
-        prevWP(0.0),
-        prevHP(0.0),
-        preserveRatioBox(nullptr),
-        weightMaskBox(nullptr),
-        preserveSkinTones(nullptr),
-        previewWidget(nullptr),
-        gboxSettings(nullptr),
-        wInput(nullptr),
-        hInput(nullptr),
-        stepInput(nullptr),
-        maskPenSize(nullptr),
-        sideSwitchInput(nullptr),
-        wpInput(nullptr),
-        hpInput(nullptr),
-        mixedRescaleInput(nullptr),
-        rigidityInput(nullptr),
-        funcInput(nullptr),
-        resizeOrderInput(nullptr),
-        expanderBox(nullptr),
-        redMaskTool(nullptr),
-        greenMaskTool(nullptr),
-        eraseMaskTool(nullptr),
-        maskGroup(nullptr)
-    {}
+      : orgWidth            (0),
+        orgHeight           (0),
+        prevW               (0),
+        prevH               (0),
+        prevWP              (0.0),
+        prevHP              (0.0),
+        preserveRatioBox    (nullptr),
+        weightMaskBox       (nullptr),
+        preserveSkinTones   (nullptr),
+        previewWidget       (nullptr),
+        gboxSettings        (nullptr),
+        wInput              (nullptr),
+        hInput              (nullptr),
+        stepInput           (nullptr),
+        maskPenSize         (nullptr),
+        sideSwitchInput     (nullptr),
+        wpInput             (nullptr),
+        hpInput             (nullptr),
+        mixedRescaleInput   (nullptr),
+        rigidityInput       (nullptr),
+        funcInput           (nullptr),
+        resizeOrderInput    (nullptr),
+        expanderBox         (nullptr),
+        redMaskTool         (nullptr),
+        greenMaskTool       (nullptr),
+        eraseMaskTool       (nullptr),
+        maskGroup           (nullptr)
+    {
+    }
 
     static const QString configGroupName;
     static const QString configStepEntry;
@@ -164,7 +165,7 @@ const QString ContentAwareResizeTool::Private::configPreserveTonesEntry(QLatin1S
 
 ContentAwareResizeTool::ContentAwareResizeTool(QObject* const parent)
     : EditorToolThreaded(parent),
-      d(new Private)
+      d                 (new Private)
 {
     setObjectName(QLatin1String("liquidrescale"));
 
@@ -184,6 +185,7 @@ ContentAwareResizeTool::ContentAwareResizeTool(QObject* const parent)
     QGridLayout* const grid = new QGridLayout(d->gboxSettings->plainPage());
 
     // Initialize data
+
     ImageIface iface;
     d->orgWidth  = iface.originalSize().width();
     d->orgHeight = iface.originalSize().height();
@@ -535,7 +537,7 @@ void ContentAwareResizeTool::slotValuesChanged()
 
     QString s(sender()->objectName());
 
-    if (s == QLatin1String("wInput"))
+    if      (s == QLatin1String("wInput"))
     {
         double val  = d->wInput->value();
         double pval = val / (double)(d->orgWidth) * 100.0;
@@ -654,14 +656,14 @@ void ContentAwareResizeTool::contentAwareResizeCore(DImg* const image, int targe
     settings.rigidity            = d->rigidityInput->value();
     settings.mask                = mask;
     settings.func                = (ContentAwareContainer::EnergyFunction)d->funcInput->currentIndex();
-    settings.resize_order        = d->resizeOrderInput->currentIndex() == 0 ? Qt::Horizontal : Qt::Vertical;
+    settings.resize_order        = (d->resizeOrderInput->currentIndex() == 0) ? Qt::Horizontal : Qt::Vertical;
     setFilter(new ContentAwareFilter(image, this, settings));
 }
 
 void ContentAwareResizeTool::preparePreview()
 {
-    if (d->prevW  != d->wInput->value()  || d->prevH  != d->hInput->value() ||
-        d->prevWP != d->wpInput->value() || d->prevHP != d->hpInput->value())
+    if ((d->prevW  != d->wInput->value())  || (d->prevH  != d->hInput->value()) ||
+        (d->prevWP != d->wpInput->value()) || (d->prevHP != d->hpInput->value()))
     {
         slotValuesChanged();
     }
@@ -672,8 +674,8 @@ void ContentAwareResizeTool::preparePreview()
     int w                   = iface->previewSize().width();
     int h                   = iface->previewSize().height();
     DImg imTemp             = iface->original()->smoothScale(w, h, Qt::KeepAspectRatio);
-    int new_w               = (int)(w*d->wpInput->value()/100.0);
-    int new_h               = (int)(h*d->hpInput->value()/100.0);
+    int new_w               = (int)(w*d->wpInput->value() / 100.0);
+    int new_h               = (int)(h*d->hpInput->value() / 100.0);
 
     if (d->mixedRescaleInput->value()<100.0) // mixed rescale
     {
@@ -696,8 +698,8 @@ void ContentAwareResizeTool::preparePreview()
 
 void ContentAwareResizeTool::prepareFinal()
 {
-    if (d->prevW  != d->wInput->value()  || d->prevH  != d->hInput->value() ||
-        d->prevWP != d->wpInput->value() || d->prevHP != d->hpInput->value())
+    if ((d->prevW  != d->wInput->value())  || (d->prevH  != d->hInput->value()) ||
+        (d->prevWP != d->wpInput->value()) || (d->prevHP != d->hpInput->value()))
     {
         slotValuesChanged();
     }
@@ -788,7 +790,7 @@ void ContentAwareResizeTool::slotMaskColorChanged(int type)
 {
     d->previewWidget->setEraseMode(type == Private::eraseMask);
 
-    if (type == Private::redMask)
+    if      (type == Private::redMask)
     {
         d->previewWidget->setPaintColor(QColor(255, 0, 0));
     }

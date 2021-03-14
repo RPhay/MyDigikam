@@ -49,7 +49,7 @@ ContentAwareResizeToolPlugin::~ContentAwareResizeToolPlugin()
 
 QString ContentAwareResizeToolPlugin::name() const
 {
-    return i18n("Liquid Rescale");
+    return i18nc("@title", "Liquid Rescale");
 }
 
 QString ContentAwareResizeToolPlugin::iid() const
@@ -64,12 +64,12 @@ QIcon ContentAwareResizeToolPlugin::icon() const
 
 QString ContentAwareResizeToolPlugin::description() const
 {
-    return i18n("A tool to resize an image with content analysis");
+    return i18nc("@info", "A tool to resize an image with content analysis");
 }
 
 QString ContentAwareResizeToolPlugin::details() const
 {
-    return i18n("<p>This Image Editor tool can resize an image with content analysis.</p>");
+    return i18nc("@info", "This Image Editor tool can resize an image with content analysis.");
 }
 
 QList<DPluginAuthor> ContentAwareResizeToolPlugin::authors() const

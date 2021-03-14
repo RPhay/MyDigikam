@@ -42,20 +42,23 @@ class ContentAwareResizeTool : public EditorToolThreaded
 public:
 
     explicit ContentAwareResizeTool(QObject* const parent);
-    ~ContentAwareResizeTool() override;
+    ~ContentAwareResizeTool()           override;
 
 private:
 
-    void writeSettings() override;
-    void readSettings() override;
-    void preparePreview() override;
-    void prepareFinal() override;
-    void setPreviewImage() override;
-    void setFinalImage() override;
-    void renderingFinished() override;
+    void writeSettings()                override;
+    void readSettings()                 override;
+    void preparePreview()               override;
+    void prepareFinal()                 override;
+    void setPreviewImage()              override;
+    void setFinalImage()                override;
+    void renderingFinished()            override;
     void blockWidgetSignals(bool b);
     void disableSettings();
-    void contentAwareResizeCore(DImg* const image, int target_width, int target_height, const QImage& mask);
+    void contentAwareResizeCore(DImg* const image,
+                                int target_width,
+                                int target_height,
+                                const QImage& mask);
     void enableMaskSettings(bool b);
     void enableContentAwareSettings(bool b);
     bool eventFilter(QObject*, QEvent*) override;
