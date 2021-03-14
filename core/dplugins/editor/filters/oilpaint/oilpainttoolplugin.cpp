@@ -49,7 +49,7 @@ OilPaintToolPlugin::~OilPaintToolPlugin()
 
 QString OilPaintToolPlugin::name() const
 {
-    return i18n("Oil Paint");
+    return i18nc("@title", "Oil Paint");
 }
 
 QString OilPaintToolPlugin::iid() const
@@ -64,12 +64,12 @@ QIcon OilPaintToolPlugin::icon() const
 
 QString OilPaintToolPlugin::description() const
 {
-    return i18n("A tool to emulate oil painting");
+    return i18nc("@info", "A tool to emulate oil painting");
 }
 
 QString OilPaintToolPlugin::details() const
 {
-    return i18n("<p>This Image Editor tool can emulate oil painting over an image.</p>");
+    return i18nc("@info", "This Image Editor tool can emulate oil painting over an image.");
 }
 
 QList<DPluginAuthor> OilPaintToolPlugin::authors() const

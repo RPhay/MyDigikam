@@ -55,9 +55,9 @@ public:
 
     explicit Private()
       : brushSizeInput(nullptr),
-        smoothInput(nullptr),
-        previewWidget(nullptr),
-        gboxSettings(nullptr)
+        smoothInput   (nullptr),
+        previewWidget (nullptr),
+        gboxSettings  (nullptr)
     {
     }
 
@@ -80,7 +80,7 @@ const QString OilPaintTool::Private::configSmoothAdjustmentEntry(QLatin1String("
 
 OilPaintTool::OilPaintTool(QObject* const parent)
     : EditorToolThreaded(parent),
-      d(new Private)
+      d                 (new Private)
 {
     setObjectName(QLatin1String("oilpaint"));
 
