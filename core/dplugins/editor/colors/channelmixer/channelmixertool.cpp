@@ -64,9 +64,9 @@ class Q_DECL_HIDDEN ChannelMixerTool::Private
 public:
 
     explicit Private()
-      : settingsView(nullptr),
+      : settingsView (nullptr),
         previewWidget(nullptr),
-        gboxSettings(nullptr)
+        gboxSettings (nullptr)
     {
     }
 
@@ -88,7 +88,7 @@ const QString ChannelMixerTool::Private::configHistogramScaleEntry(QLatin1String
 
 ChannelMixerTool::ChannelMixerTool(QObject* const parent)
     : EditorToolThreaded(parent),
-      d(new Private)
+      d                 (new Private)
 {
     setObjectName(QLatin1String("channelmixer"));
 

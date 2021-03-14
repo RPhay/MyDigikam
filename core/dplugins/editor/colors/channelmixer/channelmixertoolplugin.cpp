@@ -49,7 +49,7 @@ ChannelMixerToolPlugin::~ChannelMixerToolPlugin()
 
 QString ChannelMixerToolPlugin::name() const
 {
-    return i18n("Channel Mixer");
+    return i18nc("@title", "Channel Mixer");
 }
 
 QString ChannelMixerToolPlugin::iid() const
@@ -64,12 +64,12 @@ QIcon ChannelMixerToolPlugin::icon() const
 
 QString ChannelMixerToolPlugin::description() const
 {
-    return i18n("A tool to mix color channel");
+    return i18nc("@info", "A tool to mix color channel");
 }
 
 QString ChannelMixerToolPlugin::details() const
 {
-    return i18n("<p>This Image Editor tool can mix color channels from image.</p>");
+    return i18nc("@info", "This Image Editor tool can mix color channels from image.");
 }
 
 QList<DPluginAuthor> ChannelMixerToolPlugin::authors() const
