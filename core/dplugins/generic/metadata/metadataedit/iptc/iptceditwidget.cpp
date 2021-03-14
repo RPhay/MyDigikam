@@ -121,39 +121,39 @@ IPTCEditWidget::IPTCEditWidget(MetadataEditDialog* const parent)
     d->dlg           = parent;
 
     d->contentPage   = new IPTCContent(this);
-    d->page_content  = addPage(d->contentPage, i18nc("@item", "Content"));
+    d->page_content  = addPage(d->contentPage, i18nc("@item: iptc", "Content"));
     d->page_content->setIcon(QIcon::fromTheme(QLatin1String("draw-text")));
 
     d->originPage  = new IPTCOrigin(this);
-    d->page_origin = addPage(d->originPage, i18nc("@item", "Origin"));
+    d->page_origin = addPage(d->originPage, i18nc("@item: iptc", "Origin"));
     d->page_origin->setIcon(QIcon::fromTheme(QLatin1String("globe")));
 
     d->creditsPage  = new IPTCCredits(this);
-    d->page_credits = addPage(d->creditsPage, i18nc("@item", "Credits"));
+    d->page_credits = addPage(d->creditsPage, i18nc("@item: iptc", "Credits"));
     d->page_credits->setIcon(QIcon::fromTheme(QLatin1String("address-book-new")));
 
     d->subjectsPage  = new IPTCSubjects(this);
-    d->page_subjects = addPage(d->subjectsPage, i18nc("@item", "Subjects"));
+    d->page_subjects = addPage(d->subjectsPage, i18nc("@item: iptc", "Subjects"));
     d->page_subjects->setIcon(QIcon::fromTheme(QLatin1String("feed-subscribe")));
 
     d->keywordsPage  = new IPTCKeywords(this);
-    d->page_keywords = addPage(d->keywordsPage, i18nc("@item", "Keywords"));
+    d->page_keywords = addPage(d->keywordsPage, i18nc("@item: iptc", "Keywords"));
     d->page_keywords->setIcon(QIcon::fromTheme(QLatin1String("bookmark-new")));
 
     d->categoriesPage  = new IPTCCategories(this);
-    d->page_categories = addPage(d->categoriesPage, i18nc("@item", "Categories"));
+    d->page_categories = addPage(d->categoriesPage, i18nc("@item: iptc", "Categories"));
     d->page_categories->setIcon(QIcon::fromTheme(QLatin1String("folder-pictures")));
 
     d->statusPage  = new IPTCStatus(this);
-    d->page_status = addPage(d->statusPage, i18nc("@item", "Status"));
+    d->page_status = addPage(d->statusPage, i18nc("@item: iptc", "Status"));
     d->page_status->setIcon(QIcon::fromTheme(QLatin1String("view-task")));
 
     d->propertiesPage  = new IPTCProperties(this);
-    d->page_properties = addPage(d->propertiesPage, i18nc("@item", "Properties"));
+    d->page_properties = addPage(d->propertiesPage, i18nc("@item: iptc", "Properties"));
     d->page_properties->setIcon(QIcon::fromTheme(QLatin1String("draw-freehand")));
 
     d->envelopePage  = new IPTCEnvelope(this);
-    d->page_envelope = addPage(d->envelopePage, i18nc("@item", "Envelope"));
+    d->page_envelope = addPage(d->envelopePage, i18nc("@item: iptc", "Envelope"));
     d->page_envelope->setIcon(QIcon::fromTheme(QLatin1String("mail-mark-unread")));
 
     // ---------------------------------------------------------------
