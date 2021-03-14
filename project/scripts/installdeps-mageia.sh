@@ -1,7 +1,16 @@
 #!/bin/bash
 
-# Script to install dependencies under Mageia Linux to compile digiKam.
+# Script to install dependencies under Mageia Linux to compile and hack digiKam.
 # This script must be run as sudo
+#
+# Requirements installed are:
+#
+# - Developement packages to compile source code.
+# - API doc compilation.
+# - Hanbook compilation.
+# - Cross-compiling dependencies for Windows.
+# - Run-time dependencies.
+# - Debug dependencies.
 #
 # Copyright (c) 2015-2021 by Gilles Caulier  <caulier dot gilles at gmail dot com>
 #
@@ -111,6 +120,3 @@ urpmi --auto \
       lib64kf5doctools-devel \
       lib64kf5calendarcore-devel
       
-
-
-
