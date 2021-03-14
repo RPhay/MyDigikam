@@ -49,7 +49,7 @@ public:
 
     enum RatioAspect               // Constrained Aspect Ratio list. See RatioCropWidget::setSelectionAspectRatioType()
     {                              // method for crop-value implementations.
-        RATIOCUSTOM=0,             // Custom aspect ratio.
+        RATIOCUSTOM = 0,           // Custom aspect ratio.
         RATIO01X01,                // 1:1
         RATIO02x01,                // 2:1
         RATIO02x03,                // 2:3

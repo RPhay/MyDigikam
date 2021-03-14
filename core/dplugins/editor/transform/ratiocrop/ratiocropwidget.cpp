@@ -84,25 +84,25 @@ public:
     };
 
     explicit Private()
-      : drawGoldenSection(false),
-        drawGoldenSpiralSection(false),
-        drawGoldenSpiral(false),
-        drawGoldenTriangle(false),
-        flipHorGoldenGuide(false),
-        flipVerGoldenGuide(false),
-        moving(false),
-        autoOrientation(false),
-        preciseCrop(false),
-        isDrawingSelection(false),
-        guideLinesType(0),
-        guideSize(1),
-        currentAspectRatioType(0),
-        currentResizing(ResizingNone),
-        currentOrientation(0),
-        currentWidthRatioValue(0),
-        currentHeightRatioValue(0),
-        pixmap(nullptr),
-        iface(nullptr)
+      : drawGoldenSection       (false),
+        drawGoldenSpiralSection (false),
+        drawGoldenSpiral        (false),
+        drawGoldenTriangle      (false),
+        flipHorGoldenGuide      (false),
+        flipVerGoldenGuide      (false),
+        moving                  (false),
+        autoOrientation         (false),
+        preciseCrop             (false),
+        isDrawingSelection      (false),
+        guideLinesType          (0),
+        guideSize               (1),
+        currentAspectRatioType  (0),
+        currentResizing         (ResizingNone),
+        currentOrientation      (0),
+        currentWidthRatioValue  (0),
+        currentHeightRatioValue (0),
+        pixmap                  (nullptr),
+        iface                   (nullptr)
     {
     }
 
@@ -159,7 +159,7 @@ public:
 
 RatioCropWidget::RatioCropWidget(int w, int h, QWidget* const parent)
     : QWidget(parent),
-      d(new Private)
+      d      (new Private)
 {
     d->isDrawingSelection = true;
     d->bgColor            = palette().color(QPalette::Window);
@@ -167,7 +167,8 @@ RatioCropWidget::RatioCropWidget(int w, int h, QWidget* const parent)
 }
 
 RatioCropWidget::RatioCropWidget(int w, int h, bool initDrawing, QWidget* const parent)
-    : QWidget(parent), d(new Private)
+    : QWidget(parent),
+      d      (new Private)
 {
     d->isDrawingSelection = initDrawing;
     setup(w, h);
@@ -235,6 +236,7 @@ void RatioCropWidget::resizeEvent(QResizeEvent* e)
                        d->preview.width(), d->preview.height());
 
     // Drawing the gray overlay
+
     {
         DImg image = d->preview.copy();
         uchar* ptr = image.bits();
@@ -304,6 +306,7 @@ int RatioCropWidget::getMaxWidthRange() const
     if (d->currentAspectRatioType != RATIONONE)
     {
         // Compute max width taking aspect ratio into account
+
         int t = d->currentWidthRatioValue > d->currentHeightRatioValue ? 1 : 0;
         int h = d->image.height() - d->regionSelection.top();
         int w = (int)rint((h + t) * d->currentWidthRatioValue /
@@ -316,6 +319,7 @@ int RatioCropWidget::getMaxWidthRange() const
     }
 
     // Return max width adjusted if a precise crop is wanted
+
     return computePreciseSize(maxW, (int)d->currentWidthRatioValue);
 }
 
@@ -326,6 +330,7 @@ int RatioCropWidget::getMaxHeightRange() const
     if (d->currentAspectRatioType != RATIONONE)
     {
         // Compute max height taking aspect ratio into account
+
         int t = d->currentHeightRatioValue > d->currentWidthRatioValue ? 1 : 0;
         int w = d->image.width() - d->regionSelection.left();
         int h = (int)rint((w + t) * d->currentHeightRatioValue /
@@ -338,6 +343,7 @@ int RatioCropWidget::getMaxHeightRange() const
     }
 
     // Return max height adjusted if a precise crop is wanted
+
     return computePreciseSize(maxH, (int)d->currentHeightRatioValue);
 }
 
@@ -365,8 +371,10 @@ int RatioCropWidget::getHeightStep() const
     }
 }
 
-// Draw a new centered selection with half width (if orientation = Landscape)
-// or with half height (if orientation = Portrait)
+/**
+ * Draw a new centered selection with half width (if orientation = Landscape)
+ * or with half height (if orientation = Portrait)
+ */
 void RatioCropWidget::resetSelection()
 {
     d->regionSelection.setWidth(d->image.width()/2);
@@ -379,6 +387,7 @@ void RatioCropWidget::resetSelection()
 void RatioCropWidget::setCenterSelection(int centerType)
 {
     // Adjust selection size if bigger than real image
+
     if (d->regionSelection.height() > d->image.height())
     {
         d->regionSelection.setHeight(d->image.height());
@@ -392,6 +401,7 @@ void RatioCropWidget::setCenterSelection(int centerType)
     }
 
     // Set center point for selection
+
     QPoint center = d->image.center();
 
     switch (centerType)
@@ -408,12 +418,15 @@ void RatioCropWidget::setCenterSelection(int centerType)
     d->regionSelection.moveCenter(center);
 
     // Repaint
+
     updatePixmap();
     update();
     regionSelectionChanged();
 }
 
-// Draw a new centered selection with max size
+/**
+ * Draw a new centered selection with max size
+ */
 void RatioCropWidget::maxAspectSelection()
 {
     d->regionSelection.setWidth(d->image.width());
@@ -428,8 +441,8 @@ void RatioCropWidget::maxAspectSelection()
 }
 
 void RatioCropWidget::setGoldenGuideTypes(bool drawGoldenSection,  bool drawGoldenSpiralSection,
-                                               bool drawGoldenSpiral,   bool drawGoldenTriangle,
-                                               bool flipHorGoldenGuide, bool flipVerGoldenGuide)
+                                          bool drawGoldenSpiral,   bool drawGoldenTriangle,
+                                          bool flipHorGoldenGuide, bool flipVerGoldenGuide)
 {
     d->drawGoldenSection       = drawGoldenSection;
     d->drawGoldenSpiralSection = drawGoldenSpiralSection;
@@ -480,6 +493,7 @@ void RatioCropWidget::setSelectionAspectRatioType(int aspectRatioType)
     d->currentAspectRatioType = aspectRatioType;
 
     // Set ratio values
+
     switch (aspectRatioType)
     {
         case RATIO01X01:
@@ -562,6 +576,7 @@ void RatioCropWidget::setSelectionAspectRatioValue(int widthRatioValue, int heig
     int gdc = widthRatioValue;
 
     // Compute greatest common divisor using Euclidean algorithm
+
     for (int tmp, mod = heightRatioValue; mod != 0; mod = tmp % mod)
     {
         tmp = gdc;
@@ -573,16 +588,17 @@ void RatioCropWidget::setSelectionAspectRatioValue(int widthRatioValue, int heig
     d->currentAspectRatioType  = RATIOCUSTOM;
 
     // Fix orientation
+
     if (d->autoOrientation)
     {
-        if (heightRatioValue > widthRatioValue &&
-            d->currentOrientation == Landscape)
+        if      ((heightRatioValue > widthRatioValue) &&
+                 (d->currentOrientation == Landscape))
         {
             d->currentOrientation = Portrait;
             emit signalSelectionOrientationChanged(d->currentOrientation);
         }
-        else if (widthRatioValue > heightRatioValue &&
-                 d->currentOrientation == Portrait)
+        else if ((widthRatioValue > heightRatioValue) &&
+                 (d->currentOrientation == Portrait))
         {
             d->currentOrientation = Landscape;
             emit signalSelectionOrientationChanged(d->currentOrientation);
@@ -599,13 +615,14 @@ void RatioCropWidget::setSelectionAspectRatioValue(int widthRatioValue, int heig
 void RatioCropWidget::reverseRatioValues()
 {
     // Reverse ratio values if needed
-    if ((d->currentWidthRatioValue > d->currentHeightRatioValue  &&
-         d->currentOrientation == Portrait)                      ||
-         (d->currentHeightRatioValue > d->currentWidthRatioValue &&
-          d->currentOrientation == Landscape))
+
+    if (((d->currentWidthRatioValue > d->currentHeightRatioValue)  &&
+         (d->currentOrientation == Portrait))                      ||
+         ((d->currentHeightRatioValue > d->currentWidthRatioValue) &&
+          (d->currentOrientation == Landscape)))
     {
-        float tmp = d->currentWidthRatioValue;
-        d->currentWidthRatioValue = d->currentHeightRatioValue;
+        float tmp                  = d->currentWidthRatioValue;
+        d->currentWidthRatioValue  = d->currentHeightRatioValue;
         d->currentHeightRatioValue = tmp;
     }
 }
@@ -614,6 +631,7 @@ bool RatioCropWidget::preciseCropAvailable() const
 {
     // Define when precise crop feature can be used
     // No needed when aspect ratio is 1:1
+
     switch (d->currentAspectRatioType)
     {
         case RATIONONE:
@@ -702,6 +720,7 @@ QPoint RatioCropWidget::convertPoint(int x, int y, bool localToReal) const
 int RatioCropWidget::computePreciseSize(int size, int step) const
 {
     // Adjust size if precise crop is wanted
+
     if (d->preciseCrop && preciseCropAvailable())
     {
         size = int(size / step) * step;
@@ -713,6 +732,7 @@ int RatioCropWidget::computePreciseSize(int size, int step) const
 void RatioCropWidget::applyAspectRatio(bool useHeight, bool repaintWidget)
 {
     // Save selection area for re-adjustment after changing width and height.
+
     QRect oldRegionSelection = d->regionSelection;
 
     if (!useHeight)  // Width changed.
@@ -755,6 +775,7 @@ void RatioCropWidget::applyAspectRatio(bool useHeight, bool repaintWidget)
     }
 
     // If we change selection size by a corner, re-adjust the opposite corner position.
+
     switch (d->currentResizing)
     {
         case Private::ResizingTopLeft:
@@ -819,9 +840,11 @@ void RatioCropWidget::regionSelectionMoved()
 void RatioCropWidget::regionSelectionChanged()
 {
     // Compute the intersection of selection region and image region
+
     QRect cut = d->regionSelection & d->image;
 
     // Adjust selection size if it was cropped
+
     if (d->regionSelection.width() > cut.width())
     {
         d->regionSelection = cut;
@@ -893,9 +916,11 @@ void RatioCropWidget::drawGoldenMean(QPainter& p, const QRect& R1,
     p.setRenderHint(QPainter::Antialiasing);
 
     // Drawing Golden sections.
+
     if (d->drawGoldenSection)
     {
         // horizontal lines:
+
         p.drawLine(R1.left(), R2.top(),
                    R2.right(), R2.top());
 
@@ -903,6 +928,7 @@ void RatioCropWidget::drawGoldenMean(QPainter& p, const QRect& R1,
                    R2.right(), R1.top() + R2.height());
 
         // vertical lines:
+
         p.drawLine(R1.right(), R1.top(),
                    R1.right(), R1.bottom());
 
@@ -911,6 +937,7 @@ void RatioCropWidget::drawGoldenMean(QPainter& p, const QRect& R1,
     }
 
     // Drawing Golden triangle guides.
+
     if (d->drawGoldenTriangle)
     {
         p.drawLine(R1.left(),  R1.bottom(),
@@ -924,6 +951,7 @@ void RatioCropWidget::drawGoldenMean(QPainter& p, const QRect& R1,
     }
 
     // Drawing Golden spiral sections.
+
     if (d->drawGoldenSpiralSection)
     {
         p.drawLine(R1.topRight(),   R1.bottomRight());
@@ -936,6 +964,7 @@ void RatioCropWidget::drawGoldenMean(QPainter& p, const QRect& R1,
     }
 
     // Drawing Golden Spiral.
+
     if (d->drawGoldenSpiral)
     {
         p.drawArc(R1.left(),
@@ -978,16 +1007,19 @@ void RatioCropWidget::drawGoldenMean(QPainter& p, const QRect& R1,
 void RatioCropWidget::updatePixmap()
 {
     // Updated local selection region.
+
     d->localRegionSelection.setTopLeft(convertPoint(d->regionSelection.topLeft(), false));
     d->localRegionSelection.setBottomRight(convertPoint(d->regionSelection.bottomRight(), false));
 
     // Updated dragging corners region.
+
     d->localTopLeftCorner.setRect(d->localRegionSelection.left(),          d->localRegionSelection.top(),        8, 8);
     d->localBottomLeftCorner.setRect(d->localRegionSelection.left(),       d->localRegionSelection.bottom() - 7, 8, 8);
     d->localTopRightCorner.setRect(d->localRegionSelection.right() - 7,    d->localRegionSelection.top(),        8, 8);
     d->localBottomRightCorner.setRect(d->localRegionSelection.right() - 7, d->localRegionSelection.bottom() - 7, 8, 8);
 
     // Drawing background.
+
     d->pixmap->fill(d->bgColor);
 
     if (d->preview.isNull())
@@ -1004,12 +1036,14 @@ void RatioCropWidget::updatePixmap()
     p.drawPixmap(d->rect.x(), d->rect.y(), d->grayOverLay);
 
     // Stop here if no selection to draw
+
     if (d->regionSelection.isEmpty() || !d->isDrawingSelection)
     {
         return;
     }
 
     // Now draw the image.
+
     p.drawPixmap(d->localRegionSelection.left(), d->localRegionSelection.top(), d->previewPixmap,
                  sx, sy, dw, dh);
 
@@ -1030,6 +1064,7 @@ void RatioCropWidget::updatePixmap()
     // Constraint drawing only on local selection region.
     // This is needed because arcs and incurved lines can draw
     // outside a little of local selection region.
+
     p.setClipping(true);
     p.setClipRect(d->localRegionSelection);
 
@@ -1051,6 +1086,7 @@ void RatioCropWidget::updatePixmap()
         case DiagonalMethod:
         {
             // Move coordinates to top, left
+
             p.translate(d->localRegionSelection.topLeft().x(), d->localRegionSelection.topLeft().y());
 
             int w = d->localRegionSelection.width();
@@ -1067,15 +1103,18 @@ void RatioCropWidget::updatePixmap()
         case HarmoniousTriangles:
         {
             // Move coordinates to local center selection.
+
             p.translate(d->localRegionSelection.center().x(), d->localRegionSelection.center().y());
 
             // Flip horizontal.
+
             if (d->flipHorGoldenGuide)
             {
                 p.scale(-1, 1);
             }
 
             // Flip vertical.
+
             if (d->flipVerGoldenGuide)
             {
                 p.scale(1, -1);
@@ -1096,15 +1135,18 @@ void RatioCropWidget::updatePixmap()
         case GoldenMean:
         {
             // Move coordinates to local center selection.
+
             p.translate(d->localRegionSelection.center().x(), d->localRegionSelection.center().y());
 
             // Flip horizontal.
+
             if (d->flipHorGoldenGuide)
             {
                 p.scale(-1, 1);
             }
 
             // Flip vertical.
+
             if (d->flipVerGoldenGuide)
             {
                 p.scale(1, -1);
@@ -1114,14 +1156,17 @@ void RatioCropWidget::updatePixmap()
             int h   = d->localRegionSelection.height();
 
             // lengths for the golden mean and half the sizes of the region:
+
             int w_g = (int)(w*INVPHI);
             int h_g = (int)(h*INVPHI);
             int w_2 = w/2;
             int h_2 = h/2;
 
             QRect R1(-w_2, -h_2, w_g, h);
+
             // w - 2*w_2 corrects for one-pixel difference
             // so that R2.right() is really at the right end of the region
+
             QRect R2(w_g-w_2, h_2-h_g, w-w_g+1-(w - 2*w_2), h_g);
 
             QRect R3((int)(w_2 - R2.width()*INVPHI), -h_2,
@@ -1214,6 +1259,7 @@ void RatioCropWidget::setCursorResizing()
 void RatioCropWidget::placeSelection(const QPoint& pm, bool symmetric, const QPoint& center)
 {
     // Set orientation
+
     if (d->autoOrientation)
     {
         QPoint rel = pm - opposite();
@@ -1242,10 +1288,13 @@ void RatioCropWidget::placeSelection(const QPoint& pm, bool symmetric, const QPo
     // If a symmetric selection is wanted, place opposite corner to
     // the center, double selection size and move it to old center after
     // computing aspect ratio.
+
     switch (d->currentResizing)
     {
         case Private::ResizingTopLeft:
+
             // Place corners to the proper position
+
             d->regionSelection.setTopLeft(pm);
 
             if (symmetric)
@@ -1256,6 +1305,7 @@ void RatioCropWidget::placeSelection(const QPoint& pm, bool symmetric, const QPo
             break;
 
         case Private::ResizingTopRight:
+
             d->regionSelection.setTopRight(pm);
 
             if (symmetric)
@@ -1266,6 +1316,7 @@ void RatioCropWidget::placeSelection(const QPoint& pm, bool symmetric, const QPo
             break;
 
         case Private::ResizingBottomLeft:
+
             d->regionSelection.setBottomLeft(pm);
 
             if (symmetric)
@@ -1276,6 +1327,7 @@ void RatioCropWidget::placeSelection(const QPoint& pm, bool symmetric, const QPo
             break;
 
         case Private::ResizingBottomRight:
+
             d->regionSelection.setBottomRight(pm);
 
             if (symmetric)
@@ -1299,6 +1351,7 @@ void RatioCropWidget::placeSelection(const QPoint& pm, bool symmetric, const QPo
     }
 
     // Repaint
+
     updatePixmap();
     update();
 }
@@ -1318,13 +1371,15 @@ void RatioCropWidget::mousePressEvent(QMouseEvent* e)
 
             // Find the closest corner
 
-            QPoint points[] = { d->regionSelection.topLeft(),
+            QPoint points[] = {
+                                d->regionSelection.topLeft(),
                                 d->regionSelection.topRight(),
                                 d->regionSelection.bottomLeft(),
                                 d->regionSelection.bottomRight()
                               };
 
-            int resizings[] = { Private::ResizingTopLeft,
+            int resizings[] = {
+                                Private::ResizingTopLeft,
                                 Private::ResizingTopRight,
                                 Private::ResizingBottomLeft,
                                 Private::ResizingBottomRight
@@ -1338,7 +1393,7 @@ void RatioCropWidget::mousePressEvent(QMouseEvent* e)
                 QPoint point = points[i];
                 dist2        = distance(pmVirtual, point);
 
-                if (dist2 < dist || d->currentResizing == Private::ResizingNone)
+                if ((dist2 < dist) || (d->currentResizing == Private::ResizingNone))
                 {
                     dist               = dist2;
                     d->currentResizing = resizings[i];
@@ -1352,7 +1407,7 @@ void RatioCropWidget::mousePressEvent(QMouseEvent* e)
         }
         else
         {
-            if (d->localTopLeftCorner.contains(pm))
+            if      (d->localTopLeftCorner.contains(pm))
             {
                 d->currentResizing = Private::ResizingTopLeft;
             }
@@ -1391,7 +1446,7 @@ void RatioCropWidget::mousePressEvent(QMouseEvent* e)
 
 void RatioCropWidget::mouseReleaseEvent(QMouseEvent*)
 {
-    if (d->currentResizing != Private::ResizingNone)
+    if      (d->currentResizing != Private::ResizingNone)
     {
         setCursor(Qt::ArrowCursor);
         regionSelectionChanged();
@@ -1447,7 +1502,7 @@ void RatioCropWidget::mouseMoveEvent(QMouseEvent* e)
             QPoint opp = symmetric ? center : opposite();
             QPoint dir = pmVirtual - opp;
 
-            if (dir.x() > 0 && dir.y() > 0 && d->currentResizing != Private::ResizingBottomRight)
+            if      (dir.x() > 0 && dir.y() > 0 && d->currentResizing != Private::ResizingBottomRight)
             {
                 d->currentResizing = Private::ResizingBottomRight;
                 d->regionSelection.setTopLeft(opp);
@@ -1473,7 +1528,7 @@ void RatioCropWidget::mouseMoveEvent(QMouseEvent* e)
             }
             else
             {
-                if (dir.x() == 0 && dir.y() == 0)
+                if      (dir.x() == 0 && dir.y() == 0)
                 {
                     setCursor(Qt::SizeAllCursor);
                 }
@@ -1492,8 +1547,8 @@ void RatioCropWidget::mouseMoveEvent(QMouseEvent* e)
     }
     else
     {
-        if (d->localTopLeftCorner.contains(e->x(), e->y()) ||
-            d->localBottomRightCorner.contains(e->x(), e->y()))
+        if      (d->localTopLeftCorner.contains(e->x(), e->y()) ||
+                 d->localBottomRightCorner.contains(e->x(), e->y()))
         {
             setCursor(Qt::SizeFDiagCursor);
         }

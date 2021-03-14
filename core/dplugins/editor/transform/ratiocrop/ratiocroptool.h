@@ -46,26 +46,26 @@ class RatioCropTool : public EditorTool
 public:
 
     explicit RatioCropTool(QObject* const parent);
-    ~RatioCropTool() override;
+    ~RatioCropTool()                            override;
 
 private:
 
-    void  readSettings() override;
-    void  writeSettings() override;
+    void  readSettings()                        override;
+    void  writeSettings()                       override;
 
-    void  finalRendering() override;
+    void  finalRendering()                      override;
     void  updateCropInfo();
     void  applyRatioChanges(int a);
     void  blockWidgetSignals(bool b);
     void  setRatioCBText(int orientation);
     void  setInputRange(const QRect& rect);
-    void  setBackgroundColor(const QColor& bg) override;
+    void  setBackgroundColor(const QColor& bg)  override;
     QRect getNormalizedRegion() const;
 
 private Q_SLOTS:
 
     void slotMaxAspectRatio();
-    void slotResetSettings() override;
+    void slotResetSettings()                    override;
 
     void slotCenterWidth();
     void slotCenterHeight();

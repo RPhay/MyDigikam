@@ -71,36 +71,36 @@ class Q_DECL_HIDDEN RatioCropTool::Private
 public:
 
     explicit Private()
-      : originalIsLandscape(false),
-        customLabel(nullptr),
-        orientLabel(nullptr),
-        colorGuideLabel(nullptr),
-        resLabel(nullptr),
-        centerWidth(nullptr),
-        centerHeight(nullptr),
-        goldenSectionBox(nullptr),
-        goldenSpiralSectionBox(nullptr),
-        goldenSpiralBox(nullptr),
-        goldenTriangleBox(nullptr),
-        flipHorBox(nullptr),
-        flipVerBox(nullptr),
-        autoOrientation(nullptr),
-        preciseCrop(nullptr),
-        ratioCB(nullptr),
-        orientCB(nullptr),
-        guideLinesCB(nullptr),
-        customRatioDInput(nullptr),
-        customRatioNInput(nullptr),
-        guideSize(nullptr),
-        heightInput(nullptr),
-        widthInput(nullptr),
-        xInput(nullptr),
-        yInput(nullptr),
-        guideColorBt(nullptr),
-        ratioCropWidget(nullptr),
-        expbox(nullptr),
-        gboxSettings(nullptr),
-        histogramBox(nullptr)
+      : originalIsLandscape     (false),
+        customLabel             (nullptr),
+        orientLabel             (nullptr),
+        colorGuideLabel         (nullptr),
+        resLabel                (nullptr),
+        centerWidth             (nullptr),
+        centerHeight            (nullptr),
+        goldenSectionBox        (nullptr),
+        goldenSpiralSectionBox  (nullptr),
+        goldenSpiralBox         (nullptr),
+        goldenTriangleBox       (nullptr),
+        flipHorBox              (nullptr),
+        flipVerBox              (nullptr),
+        autoOrientation         (nullptr),
+        preciseCrop             (nullptr),
+        ratioCB                 (nullptr),
+        orientCB                (nullptr),
+        guideLinesCB            (nullptr),
+        customRatioDInput       (nullptr),
+        customRatioNInput       (nullptr),
+        guideSize               (nullptr),
+        heightInput             (nullptr),
+        widthInput              (nullptr),
+        xInput                  (nullptr),
+        yInput                  (nullptr),
+        guideColorBt            (nullptr),
+        ratioCropWidget         (nullptr),
+        expbox                  (nullptr),
+        gboxSettings            (nullptr),
+        histogramBox            (nullptr)
     {
     }
 
@@ -210,7 +210,7 @@ const QString RatioCropTool::Private::configHistogramScaleEntry(QLatin1String("H
 
 RatioCropTool::RatioCropTool(QObject* const parent)
     : EditorTool(parent),
-      d(new Private)
+      d         (new Private)
 {
     setObjectName(QLatin1String("aspectratiocrop"));
     setToolName(i18n("Aspect Ratio Crop"));
@@ -425,7 +425,7 @@ RatioCropTool::RatioCropTool(QObject* const parent)
     QWidget* const compositionGuide = new QWidget(d->expbox);
     QGridLayout* const grid2        = new QGridLayout(compositionGuide);
 
-    QLabel* const labelGuideLines = new QLabel(i18n("Form:"), compositionGuide);
+    QLabel* const labelGuideLines = new QLabel(i18nc("@label: guide lines", "Form:"), compositionGuide);
     d->guideLinesCB               = new DComboBox(compositionGuide);
     d->guideLinesCB->addItem(i18n("Rules of Thirds"));
     d->guideLinesCB->addItem(i18n("Diagonal Method"));

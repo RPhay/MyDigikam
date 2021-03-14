@@ -49,7 +49,7 @@ RatioCropToolPlugin::~RatioCropToolPlugin()
 
 QString RatioCropToolPlugin::name() const
 {
-    return i18n("Aspect Ratio Crop");
+    return i18nc("@title", "Aspect Ratio Crop");
 }
 
 QString RatioCropToolPlugin::iid() const
@@ -64,12 +64,12 @@ QIcon RatioCropToolPlugin::icon() const
 
 QString RatioCropToolPlugin::description() const
 {
-    return i18n("A tool to crop an image with ratio");
+    return i18nc("@info", "A tool to crop an image with ratio");
 }
 
 QString RatioCropToolPlugin::details() const
 {
-    return i18n("<p>This Image Editor tool can crop an image with ratio.</p>");
+    return i18nc("@info", "This Image Editor tool can crop an image with ratio.");
 }
 
 QList<DPluginAuthor> RatioCropToolPlugin::authors() const
