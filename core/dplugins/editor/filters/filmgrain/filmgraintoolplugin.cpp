@@ -49,7 +49,7 @@ FilmGrainToolPlugin::~FilmGrainToolPlugin()
 
 QString FilmGrainToolPlugin::name() const
 {
-    return i18n("Film Grain");
+    return i18nc("@title", "Film Grain");
 }
 
 QString FilmGrainToolPlugin::iid() const
@@ -64,12 +64,12 @@ QIcon FilmGrainToolPlugin::icon() const
 
 QString FilmGrainToolPlugin::description() const
 {
-    return i18n("A tool to add film grain over an image");
+    return i18nc("@info", "A tool to add film grain over an image");
 }
 
 QString FilmGrainToolPlugin::details() const
 {
-    return i18n("<p>This Image Editor tool can add film grain over an image.</p>");
+    return i18nc("@info", "This Image Editor tool can add film grain over an image.");
 }
 
 QList<DPluginAuthor> FilmGrainToolPlugin::authors() const

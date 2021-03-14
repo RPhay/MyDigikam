@@ -56,10 +56,10 @@ class Q_DECL_HIDDEN FilmGrainTool::Private
 public:
 
     explicit Private()
-      : configGroupName(QLatin1String("filmgrain Tool")),
-        settingsView(nullptr),
-        previewWidget(nullptr),
-        gboxSettings(nullptr)
+      : configGroupName (QLatin1String("filmgrain Tool")),
+        settingsView    (nullptr),
+        previewWidget   (nullptr),
+        gboxSettings    (nullptr)
     {
     }
 
@@ -73,7 +73,7 @@ public:
 
 FilmGrainTool::FilmGrainTool(QObject* const parent)
     : EditorToolThreaded(parent),
-      d(new Private)
+      d                 (new Private)
 {
     setObjectName(QLatin1String("filmgrain"));
     setInitPreview(true);
