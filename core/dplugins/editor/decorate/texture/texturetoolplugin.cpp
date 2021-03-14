@@ -49,7 +49,7 @@ TextureToolPlugin::~TextureToolPlugin()
 
 QString TextureToolPlugin::name() const
 {
-    return i18n("Texture");
+    return i18nc("@title", "Texture");
 }
 
 QString TextureToolPlugin::iid() const
@@ -64,12 +64,12 @@ QIcon TextureToolPlugin::icon() const
 
 QString TextureToolPlugin::description() const
 {
-    return i18n("A tool to apply a texture over an image");
+    return i18nc("@info", "A tool to apply a texture over an image");
 }
 
 QString TextureToolPlugin::details() const
 {
-    return i18n("<p>This Image Editor tool can apply a texture over an image.</p>");
+    return i18nc("@info", "This Image Editor tool can apply a texture over an image.");
 }
 
 QList<DPluginAuthor> TextureToolPlugin::authors() const

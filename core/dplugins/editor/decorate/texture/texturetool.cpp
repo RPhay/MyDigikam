@@ -55,9 +55,9 @@ public:
 
     explicit Private()
       : configGroupName(QLatin1String("texture Tool")),
-        settingsView(nullptr),
-        previewWidget(nullptr),
-        gboxSettings(nullptr)
+        settingsView   (nullptr),
+        previewWidget  (nullptr),
+        gboxSettings   (nullptr)
     {
     }
 
@@ -72,7 +72,7 @@ public:
 
 TextureTool::TextureTool(QObject* const parent)
     : EditorToolThreaded(parent),
-      d(new Private)
+      d                 (new Private)
 {
     setObjectName(QLatin1String("texture"));
 
