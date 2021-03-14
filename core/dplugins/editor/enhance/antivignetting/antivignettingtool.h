@@ -41,20 +41,20 @@ class AntiVignettingTool : public EditorToolThreaded
 public:
 
     explicit AntiVignettingTool(QObject* const parent);
-    ~AntiVignettingTool() override;
+    ~AntiVignettingTool()       override;
 
 private Q_SLOTS:
 
-    void slotResetSettings() override;
+    void slotResetSettings()    override;
 
 private:
 
-    void writeSettings() override;
-    void readSettings() override;
-    void preparePreview() override;
-    void prepareFinal() override;
-    void setPreviewImage() override;
-    void setFinalImage() override;
+    void writeSettings()        override;
+    void readSettings()         override;
+    void preparePreview()       override;
+    void prepareFinal()         override;
+    void setPreviewImage()      override;
+    void setFinalImage()        override;
 
 private:
 

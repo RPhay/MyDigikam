@@ -43,7 +43,7 @@ class AntiVignettingToolPlugin : public DPluginEditor
 public:
 
     explicit AntiVignettingToolPlugin(QObject* const parent = nullptr);
-    ~AntiVignettingToolPlugin() override;
+    ~AntiVignettingToolPlugin()          override;
 
     QString name()                 const override;
     QString iid()                  const override;
@@ -52,7 +52,7 @@ public:
     QString description()          const override;
     QList<DPluginAuthor> authors() const override;
 
-    void setup(QObject* const) override;
+    void setup(QObject* const)           override;
 
 private Q_SLOTS:
 

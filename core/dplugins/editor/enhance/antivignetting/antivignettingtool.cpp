@@ -59,9 +59,9 @@ public:
 
     explicit Private()
       : configGroupName(QLatin1String("antivignetting Tool")),
-        settingsView(nullptr),
-        previewWidget(nullptr),
-        gboxSettings(nullptr)
+        settingsView   (nullptr),
+        previewWidget  (nullptr),
+        gboxSettings   (nullptr)
     {
     }
 
@@ -74,7 +74,7 @@ public:
 
 AntiVignettingTool::AntiVignettingTool(QObject* const parent)
     : EditorToolThreaded(parent),
-      d(new Private)
+      d                 (new Private)
 {
     setObjectName(QLatin1String("antivignetting"));
     setToolName(i18n("Vignetting Correction"));

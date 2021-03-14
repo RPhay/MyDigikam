@@ -49,7 +49,7 @@ AntiVignettingToolPlugin::~AntiVignettingToolPlugin()
 
 QString AntiVignettingToolPlugin::name() const
 {
-    return i18n("Vignetting Correction");
+    return i18nc("@title", "Vignetting Correction");
 }
 
 QString AntiVignettingToolPlugin::iid() const
@@ -64,12 +64,12 @@ QIcon AntiVignettingToolPlugin::icon() const
 
 QString AntiVignettingToolPlugin::description() const
 {
-    return i18n("A tool to correct vignetting");
+    return i18nc("@info", "A tool to correct vignetting");
 }
 
 QString AntiVignettingToolPlugin::details() const
 {
-    return i18n("<p>This Image Editor tool correct vignetting from an image.</p>");
+    return i18nc("@info", "This Image Editor tool correct vignetting from an image.");
 }
 
 QList<DPluginAuthor> AntiVignettingToolPlugin::authors() const
