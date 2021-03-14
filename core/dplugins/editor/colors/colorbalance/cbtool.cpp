@@ -53,9 +53,9 @@ class Q_DECL_HIDDEN CBTool::Private
 public:
 
     explicit Private()
-      : cbSettings(nullptr),
+      : cbSettings   (nullptr),
         previewWidget(nullptr),
-        gboxSettings(nullptr)
+        gboxSettings (nullptr)
     {
     }
 
@@ -76,7 +76,7 @@ const QString CBTool::Private::configHistogramScaleEntry(QLatin1String("Histogra
 
 CBTool::CBTool(QObject* const parent)
     : EditorToolThreaded(parent),
-      d(new Private)
+      d                 (new Private)
 {
     setObjectName(QLatin1String("colorbalance"));
     setInitPreview(true);

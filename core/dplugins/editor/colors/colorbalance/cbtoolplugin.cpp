@@ -49,7 +49,7 @@ CBToolPlugin::~CBToolPlugin()
 
 QString CBToolPlugin::name() const
 {
-    return i18n("Color Balance");
+    return i18nc("@title", "Color Balance");
 }
 
 QString CBToolPlugin::iid() const
@@ -64,12 +64,12 @@ QIcon CBToolPlugin::icon() const
 
 QString CBToolPlugin::description() const
 {
-    return i18n("A tool to adjust color balance");
+    return i18nc("@info", "A tool to adjust color balance");
 }
 
 QString CBToolPlugin::details() const
 {
-    return i18n("<p>This Image Editor tool can adjust color balance from image.</p>");
+    return i18nc("@info", "This Image Editor tool can adjust color balance from image.");
 }
 
 QList<DPluginAuthor> CBToolPlugin::authors() const
