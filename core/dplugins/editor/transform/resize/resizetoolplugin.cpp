@@ -49,7 +49,7 @@ ResizeToolPlugin::~ResizeToolPlugin()
 
 QString ResizeToolPlugin::name() const
 {
-    return i18n("Resize Image");
+    return i18nc("@title", "Resize Image");
 }
 
 QString ResizeToolPlugin::iid() const
@@ -64,12 +64,12 @@ QIcon ResizeToolPlugin::icon() const
 
 QString ResizeToolPlugin::description() const
 {
-    return i18n("A tool to resize an image");
+    return i18nc("@action", "A tool to resize an image");
 }
 
 QString ResizeToolPlugin::details() const
 {
-    return i18n("<p>This Image Editor tool can resize an image.</p>");
+    return i18nc("@action", "This Image Editor tool can resize an image.");
 }
 
 QList<DPluginAuthor> ResizeToolPlugin::authors() const

@@ -110,27 +110,27 @@ public:
     };
 
     explicit Private()
-      : orgWidth(0),
-        orgHeight(0),
-        prevW(0),
-        prevH(0),
-        prevWP(0.0),
-        prevHP(0.0),
-        restorationTips(nullptr),
-        presetCBox(nullptr),
-        units(nullptr),
-        preserveRatioBox(nullptr),
+      : orgWidth            (0),
+        orgHeight           (0),
+        prevW               (0),
+        prevH               (0),
+        prevWP              (0.0),
+        prevHP              (0.0),
+        restorationTips     (nullptr),
+        presetCBox          (nullptr),
+        units               (nullptr),
+        preserveRatioBox    (nullptr),
         useGreycstorationBox(nullptr),
-        mainTab(nullptr),
-        cimgLogoLabel(nullptr),
-        previewWidget(nullptr),
-        wInput(nullptr),
-        hInput(nullptr),
-        resolution(nullptr),
-        wpInput(nullptr),
-        hpInput(nullptr),
-        gboxSettings(nullptr),
-        settingsWidget(nullptr)
+        mainTab             (nullptr),
+        cimgLogoLabel       (nullptr),
+        previewWidget       (nullptr),
+        wInput              (nullptr),
+        hInput              (nullptr),
+        resolution          (nullptr),
+        wpInput             (nullptr),
+        hpInput             (nullptr),
+        gboxSettings        (nullptr),
+        settingsWidget      (nullptr)
     {
     }
 
@@ -277,7 +277,7 @@ const QString ResizeTool::Private::configBTileEntry(QLatin1String("BTile"));
 
 ResizeTool::ResizeTool(QObject* const parent)
     : EditorToolThreaded(parent),
-      d(new Private)
+      d                 (new Private)
 {
     setObjectName(QLatin1String("resizeimage"));
 
