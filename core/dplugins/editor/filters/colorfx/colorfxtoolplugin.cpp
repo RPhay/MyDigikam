@@ -49,7 +49,7 @@ ColorFXToolPlugin::~ColorFXToolPlugin()
 
 QString ColorFXToolPlugin::name() const
 {
-    return i18n("Color Effects");
+    return i18nc("@title", "Color Effects");
 }
 
 QString ColorFXToolPlugin::iid() const
@@ -64,12 +64,12 @@ QIcon ColorFXToolPlugin::icon() const
 
 QString ColorFXToolPlugin::description() const
 {
-    return i18n("A tool to apply color effects to an image");
+    return i18nc("@info", "A tool to apply color effects to an image");
 }
 
 QString ColorFXToolPlugin::details() const
 {
-    return i18n("<p>This Image Editor tool can apply color effects to an image.</p>");
+    return i18nc("@info", "This Image Editor tool can apply color effects to an image.");
 }
 
 QList<DPluginAuthor> ColorFXToolPlugin::authors() const

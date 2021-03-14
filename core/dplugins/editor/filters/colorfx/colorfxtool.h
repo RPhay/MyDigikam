@@ -43,21 +43,21 @@ class ColorFxTool : public EditorToolThreaded
 public:
 
     explicit ColorFxTool(QObject* const parent);
-    ~ColorFxTool() override;
+    ~ColorFxTool()              override;
 
 private:
 
-    void readSettings() override;
-    void writeSettings() override;
-    void preparePreview() override;
-    void prepareFinal() override;
-    void setPreviewImage() override;
-    void setFinalImage() override;
+    void readSettings()         override;
+    void writeSettings()        override;
+    void preparePreview()       override;
+    void prepareFinal()         override;
+    void setPreviewImage()      override;
+    void setFinalImage()        override;
 
 private Q_SLOTS:
 
-    void slotInit() override;
-    void slotResetSettings() override;
+    void slotInit()             override;
+    void slotResetSettings()    override;
     void slotColorSelectedFromTarget(const Digikam::DColor& color);
 
 private:
