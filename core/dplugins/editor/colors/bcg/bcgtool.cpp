@@ -55,9 +55,9 @@ class Q_DECL_HIDDEN BCGTool::Private
 public:
 
     explicit Private()
-      : settingsView(nullptr),
+      : settingsView (nullptr),
         previewWidget(nullptr),
-        gboxSettings(nullptr)
+        gboxSettings (nullptr)
     {
     }
 
@@ -78,7 +78,7 @@ const QString BCGTool::Private::configHistogramScaleEntry(QLatin1String("Histogr
 
 BCGTool::BCGTool(QObject* const parent)
     : EditorToolThreaded(parent),
-      d(new Private)
+      d                 (new Private)
 {
     setObjectName(QLatin1String("bcgadjust"));
     setToolVersion(1);
