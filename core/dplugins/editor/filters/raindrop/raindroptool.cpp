@@ -54,11 +54,11 @@ class Q_DECL_HIDDEN RainDropTool::Private
 public:
 
     explicit Private()
-      : dropInput(nullptr),
-        amountInput(nullptr),
-        coeffInput(nullptr),
-        previewWidget(nullptr),
-        gboxSettings(nullptr)
+      : dropInput       (nullptr),
+        amountInput     (nullptr),
+        coeffInput      (nullptr),
+        previewWidget   (nullptr),
+        gboxSettings    (nullptr)
     {
     }
 
@@ -84,7 +84,7 @@ const QString RainDropTool::Private::configCoeffAdjustmentEntry(QLatin1String("C
 
 RainDropTool::RainDropTool(QObject* const parent)
     : EditorToolThreaded(parent),
-      d(new Private)
+      d                 (new Private)
 {
     setObjectName(QLatin1String("raindrops"));
 

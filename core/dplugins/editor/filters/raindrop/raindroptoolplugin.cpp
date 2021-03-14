@@ -49,7 +49,7 @@ RainDropToolPlugin::~RainDropToolPlugin()
 
 QString RainDropToolPlugin::name() const
 {
-    return i18n("Raindrops");
+    return i18nc("@title", "Raindrops");
 }
 
 QString RainDropToolPlugin::iid() const
@@ -64,12 +64,12 @@ QIcon RainDropToolPlugin::icon() const
 
 QString RainDropToolPlugin::description() const
 {
-    return i18n("A tool to add rain drops over an image");
+    return i18nc("@info", "A tool to add rain drops over an image");
 }
 
 QString RainDropToolPlugin::details() const
 {
-    return i18n("<p>This Image Editor tool can add rain drops over an image.</p>");
+    return i18nc("@info", "This Image Editor tool can add rain drops over an image.");
 }
 
 QList<DPluginAuthor> RainDropToolPlugin::authors() const
