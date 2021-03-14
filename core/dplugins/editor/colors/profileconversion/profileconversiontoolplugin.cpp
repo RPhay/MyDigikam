@@ -55,7 +55,7 @@ ProfileConversionToolPlugin::~ProfileConversionToolPlugin()
 
 QString ProfileConversionToolPlugin::name() const
 {
-    return i18n("Color Profile Conversion");
+    return i18nc("@title", "Color Profile Conversion");
 }
 
 QString ProfileConversionToolPlugin::iid() const
@@ -70,12 +70,12 @@ QIcon ProfileConversionToolPlugin::icon() const
 
 QString ProfileConversionToolPlugin::description() const
 {
-    return i18n("A tool to convert image to a color space");
+    return i18nc("@info", "A tool to convert image to a color space");
 }
 
 QString ProfileConversionToolPlugin::details() const
 {
-    return i18n("<p>This Image Editor tool can convert image to a different color space.</p>");
+    return i18nc("@info", "This Image Editor tool can convert image to a different color space.");
 }
 
 QList<DPluginAuthor> ProfileConversionToolPlugin::authors() const
@@ -102,7 +102,7 @@ void ProfileConversionToolPlugin::setup(QObject* const parent)
             this, SLOT(slotUpdateColorSpaceMenu()));
 
     ac->setMenu(m_profileMenuAction);
-    ac->setText(i18n("Color Spaces"));
+    ac->setText(i18nc("@action", "Color Spaces"));
     ac->setObjectName(QLatin1String("editorwindow_colormanagement"));
     ac->setActionCategory(DPluginAction::EditorColors);
 
@@ -131,7 +131,7 @@ void ProfileConversionToolPlugin::slotConvertToColorSpace(const IccProfile& prof
     if (iface.originalIccProfile().isNull())
     {
         QMessageBox::critical(qApp->activeWindow(), qApp->applicationName(),
-                              i18n("This image is not color managed."));
+                              i18nc("@info", "This image is not color managed."));
         return;
     }
 
@@ -148,7 +148,7 @@ void ProfileConversionToolPlugin::slotUpdateColorSpaceMenu()
 
     if (!IccSettings::instance()->isEnabled())
     {
-        QAction* const action = new QAction(i18n("Color Management is disabled..."), this);
+        QAction* const action = new QAction(i18nc("@action", "Color Management is disabled..."), this);
         m_profileMenuAction->addAction(action);
 
         if (editor)

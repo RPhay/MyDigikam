@@ -44,7 +44,7 @@ class ProfileConversionToolPlugin : public DPluginEditor
 public:
 
     explicit ProfileConversionToolPlugin(QObject* const parent = nullptr);
-    ~ProfileConversionToolPlugin() override;
+    ~ProfileConversionToolPlugin()       override;
 
     QString name()                 const override;
     QString iid()                  const override;
@@ -53,7 +53,7 @@ public:
     QString description()          const override;
     QList<DPluginAuthor> authors() const override;
 
-    void setup(QObject* const) override;
+    void setup(QObject* const)           override;
 
 private Q_SLOTS:
 

@@ -59,9 +59,9 @@ class Q_DECL_HIDDEN ProfileConversionTool::Private
 public:
 
     explicit Private()
-      : profilesBox(nullptr),
+      : profilesBox  (nullptr),
         previewWidget(nullptr),
-        gboxSettings(nullptr)
+        gboxSettings (nullptr)
     {
     }
 
@@ -103,10 +103,9 @@ IccTransform ProfileConversionTool::Private::getTransform(const IccProfile& in, 
 
 ProfileConversionTool::ProfileConversionTool(QObject* const parent)
     : EditorToolThreaded(parent),
-      d(new Private)
+      d                 (new Private)
 {
     setObjectName(QLatin1String("profile conversion"));
-    //TODO setToolHelp(QLatin1String("colormanagement.anchor"));
 
     // -------------------------------------------------------------
 
