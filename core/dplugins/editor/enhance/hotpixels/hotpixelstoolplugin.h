@@ -43,7 +43,7 @@ class HotPixelsToolPlugin : public DPluginEditor
 public:
 
     explicit HotPixelsToolPlugin(QObject* const parent = nullptr);
-    ~HotPixelsToolPlugin() override;
+    ~HotPixelsToolPlugin()               override;
 
     QString name()                 const override;
     QString iid()                  const override;

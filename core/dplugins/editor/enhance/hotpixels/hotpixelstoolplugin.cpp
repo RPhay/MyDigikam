@@ -49,7 +49,7 @@ HotPixelsToolPlugin::~HotPixelsToolPlugin()
 
 QString HotPixelsToolPlugin::name() const
 {
-    return i18n("Hot Pixels");
+    return i18nc("@title", "Hot Pixels");
 }
 
 QString HotPixelsToolPlugin::iid() const
@@ -64,12 +64,12 @@ QIcon HotPixelsToolPlugin::icon() const
 
 QString HotPixelsToolPlugin::description() const
 {
-    return i18n("A tool to fix hot pixels");
+    return i18nc("@info", "A tool to fix hot pixels");
 }
 
 QString HotPixelsToolPlugin::details() const
 {
-    return i18n("<p>This Image Editor tool can fix hot pixels from an image.</p>");
+    return i18nc("@info", "This Image Editor tool can fix hot pixels from an image.");
 }
 
 QList<DPluginAuthor> HotPixelsToolPlugin::authors() const

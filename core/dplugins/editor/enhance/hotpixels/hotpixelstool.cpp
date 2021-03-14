@@ -60,8 +60,8 @@ public:
 
     explicit Private()
       : previewWidget(nullptr),
-        gboxSettings(nullptr),
-        hpSettings(nullptr)
+        gboxSettings (nullptr),
+        hpSettings   (nullptr)
     {
     }
 
@@ -74,7 +74,7 @@ public:
 
 HotPixelsTool::HotPixelsTool(QObject* const parent)
     : EditorToolThreaded(parent),
-      d(new Private)
+      d                 (new Private)
 {
     setObjectName(QLatin1String("hotpixels"));
     setToolName(i18n("Hot Pixels"));
