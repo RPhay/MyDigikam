@@ -70,18 +70,18 @@ class Q_DECL_HIDDEN InsertTextTool::Private
 public:
 
     explicit Private()
-      : alignTextMode(0),
-        defaultSizeFont(0),
-        borderText(nullptr),
-        transparentText(nullptr),
-        alignButtonGroup(nullptr),
-        textRotation(nullptr),
-        textOpacity(nullptr),
-        fontColorButton(nullptr),
-        fontChooserWidget(nullptr),
-        textEdit(nullptr),
-        previewWidget(nullptr),
-        gboxSettings(nullptr)
+      : alignTextMode       (0),
+        defaultSizeFont     (0),
+        borderText          (nullptr),
+        transparentText     (nullptr),
+        alignButtonGroup    (nullptr),
+        textRotation        (nullptr),
+        textOpacity         (nullptr),
+        fontColorButton     (nullptr),
+        fontChooserWidget   (nullptr),
+        textEdit            (nullptr),
+        previewWidget       (nullptr),
+        gboxSettings        (nullptr)
     {
     }
 
@@ -130,7 +130,7 @@ const QString InsertTextTool::Private::configPositionHintEntry(QLatin1String("Po
 
 InsertTextTool::InsertTextTool(QObject* const parent)
     : EditorTool(parent),
-      d(new Private)
+      d         (new Private)
 {
     setObjectName(QLatin1String("inserttext"));
 
@@ -363,7 +363,7 @@ void InsertTextTool::slotResetSettings()
     d->fontColorButton->setColor(Qt::black);
     d->textOpacity->slotReset();
     QFont defaultFont;
-    d->textFont = defaultFont; // Reset to default KDE font.
+    d->textFont = defaultFont;           // Reset to default KDE font.
     d->textFont.setPointSize(d->defaultSizeFont);
     d->fontChooserWidget->setFont(d->textFont);
     d->borderText->setChecked(false);

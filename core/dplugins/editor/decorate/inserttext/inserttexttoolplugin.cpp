@@ -49,7 +49,7 @@ InsertTextToolPlugin::~InsertTextToolPlugin()
 
 QString InsertTextToolPlugin::name() const
 {
-    return i18n("Insert Text");
+    return i18nc("@title", "Insert Text");
 }
 
 QString InsertTextToolPlugin::iid() const
@@ -64,12 +64,12 @@ QIcon InsertTextToolPlugin::icon() const
 
 QString InsertTextToolPlugin::description() const
 {
-    return i18n("A tool to insert text over an image");
+    return i18nc("@info", "A tool to insert text over an image");
 }
 
 QString InsertTextToolPlugin::details() const
 {
-    return i18n("<p>This Image Editor tool can insert text over an image.</p>");
+    return i18nc("@info", "This Image Editor tool can insert text over an image.");
 }
 
 QList<DPluginAuthor> InsertTextToolPlugin::authors() const
