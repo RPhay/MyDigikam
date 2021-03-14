@@ -49,7 +49,7 @@ InvertToolPlugin::~InvertToolPlugin()
 
 QString InvertToolPlugin::name() const
 {
-    return i18n("Invert Colors");
+    return i18nc("@title", "Invert Colors");
 }
 
 QString InvertToolPlugin::iid() const
@@ -64,12 +64,12 @@ QIcon InvertToolPlugin::icon() const
 
 QString InvertToolPlugin::description() const
 {
-    return i18n("A tool to invert image colors");
+    return i18nc("@info", "A tool to invert image colors");
 }
 
 QString InvertToolPlugin::details() const
 {
-    return i18n("<p>This Image Editor tool can invert colors from image.</p>");
+    return i18nc("@info", "This Image Editor tool can invert colors from image.");
 }
 
 QList<DPluginAuthor> InvertToolPlugin::authors() const
