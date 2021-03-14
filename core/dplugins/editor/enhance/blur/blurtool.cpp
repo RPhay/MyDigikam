@@ -52,9 +52,9 @@ class Q_DECL_HIDDEN BlurTool::Private
 public:
 
     explicit Private()
-      : radiusInput(nullptr),
+      : radiusInput  (nullptr),
         previewWidget(nullptr),
-        gboxSettings(nullptr)
+        gboxSettings (nullptr)
     {
     }
 
@@ -73,7 +73,7 @@ const QString BlurTool::Private::configRadiusAdjustmentEntry(QLatin1String("Radi
 
 BlurTool::BlurTool(QObject* const parent)
     : EditorToolThreaded(parent),
-      d(new Private)
+      d                 (new Private)
 {
     setObjectName(QLatin1String("gaussianblur"));
     setToolHelp(QLatin1String("blursharpentool.anchor"));

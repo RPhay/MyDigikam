@@ -49,7 +49,7 @@ BlurToolPlugin::~BlurToolPlugin()
 
 QString BlurToolPlugin::name() const
 {
-    return i18n("Blur");
+    return i18nc("@title", "Blur");
 }
 
 QString BlurToolPlugin::iid() const
@@ -64,12 +64,12 @@ QIcon BlurToolPlugin::icon() const
 
 QString BlurToolPlugin::description() const
 {
-    return i18n("A tool to blur an image");
+    return i18nc("@info", "A tool to blur an image");
 }
 
 QString BlurToolPlugin::details() const
 {
-    return i18n("<p>This Image Editor tool can blur an image.</p>");
+    return i18nc("@info", "This Image Editor tool can blur an image.");
 }
 
 QList<DPluginAuthor> BlurToolPlugin::authors() const
