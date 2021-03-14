@@ -49,7 +49,7 @@ LocalContrastToolPlugin::~LocalContrastToolPlugin()
 
 QString LocalContrastToolPlugin::name() const
 {
-    return i18n("Local Contrast");
+    return i18nc("@title", "Local Contrast");
 }
 
 QString LocalContrastToolPlugin::iid() const
@@ -64,12 +64,12 @@ QIcon LocalContrastToolPlugin::icon() const
 
 QString LocalContrastToolPlugin::description() const
 {
-    return i18n("A tool to emulate tone mapping");
+    return i18nc("@info", "A tool to emulate tone mapping");
 }
 
 QString LocalContrastToolPlugin::details() const
 {
-    return i18n("<p>This Image Editor tool can emulate tone mapping over an image.</p>");
+    return i18nc("@info", "This Image Editor tool can emulate tone mapping over an image.");
 }
 
 QList<DPluginAuthor> LocalContrastToolPlugin::authors() const

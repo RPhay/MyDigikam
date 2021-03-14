@@ -60,9 +60,9 @@ class Q_DECL_HIDDEN LocalContrastTool::Private
 public:
 
     explicit Private()
-      : settingsView(nullptr),
+      : settingsView (nullptr),
         previewWidget(nullptr),
-        gboxSettings(nullptr)
+        gboxSettings (nullptr)
     {
     }
 
@@ -83,7 +83,7 @@ const QString LocalContrastTool::Private::configHistogramScaleEntry(QLatin1Strin
 
 LocalContrastTool::LocalContrastTool(QObject* const parent)
     : EditorToolThreaded(parent),
-      d(new Private)
+      d                 (new Private)
 {
     setObjectName(QLatin1String("localcontrast"));
 
