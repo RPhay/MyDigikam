@@ -56,14 +56,14 @@ class Q_DECL_HIDDEN BlurFXTool::Private
 public:
 
     explicit Private()
-      : effectTypeLabel(nullptr),
-        distanceLabel(nullptr),
-        levelLabel(nullptr),
-        effectType(nullptr),
-        distanceInput(nullptr),
-        levelInput(nullptr),
-        previewWidget(nullptr),
-        gboxSettings(nullptr)
+      : effectTypeLabel (nullptr),
+        distanceLabel   (nullptr),
+        levelLabel      (nullptr),
+        effectType      (nullptr),
+        distanceInput   (nullptr),
+        levelInput      (nullptr),
+        previewWidget   (nullptr),
+        gboxSettings    (nullptr)
     {
     }
 
@@ -95,7 +95,7 @@ const QString BlurFXTool::Private::configLevelAdjustmentEntry(QLatin1String("Lev
 
 BlurFXTool::BlurFXTool(QObject* const parent)
     : EditorToolThreaded(parent),
-      d(new Private)
+      d                 (new Private)
 {
     setObjectName(QLatin1String("blurfx"));
 

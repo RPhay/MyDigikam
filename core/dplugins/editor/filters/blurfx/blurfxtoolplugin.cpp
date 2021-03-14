@@ -49,7 +49,7 @@ BlurFXToolPlugin::~BlurFXToolPlugin()
 
 QString BlurFXToolPlugin::name() const
 {
-    return i18n("Blur Effects");
+    return i18nc("@title", "Blur Effects");
 }
 
 QString BlurFXToolPlugin::iid() const
@@ -64,12 +64,12 @@ QIcon BlurFXToolPlugin::icon() const
 
 QString BlurFXToolPlugin::description() const
 {
-    return i18n("A tool to apply blur effects to an image");
+    return i18nc("@info", "A tool to apply blur effects to an image");
 }
 
 QString BlurFXToolPlugin::details() const
 {
-    return i18n("<p>This Image Editor tool can apply blur effects to an image.</p>");
+    return i18nc("@info", "This Image Editor tool can apply blur effects to an image.");
 }
 
 QList<DPluginAuthor> BlurFXToolPlugin::authors() const
