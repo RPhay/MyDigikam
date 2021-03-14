@@ -49,7 +49,7 @@ AutoCorrectionToolPlugin::~AutoCorrectionToolPlugin()
 
 QString AutoCorrectionToolPlugin::name() const
 {
-    return i18n("Color Auto-Correction");
+    return i18nc("@title", "Color Auto-Correction");
 }
 
 QString AutoCorrectionToolPlugin::iid() const
@@ -64,12 +64,12 @@ QIcon AutoCorrectionToolPlugin::icon() const
 
 QString AutoCorrectionToolPlugin::description() const
 {
-    return i18n("A tool to fix colors automatically");
+    return i18nc("@info", "A tool to fix colors automatically");
 }
 
 QString AutoCorrectionToolPlugin::details() const
 {
-    return i18n("<p>This Image Editor tool can adjust colors automatically from image.</p>");
+    return i18nc("@info", "This Image Editor tool can adjust colors automatically from image.");
 }
 
 QList<DPluginAuthor> AutoCorrectionToolPlugin::authors() const
