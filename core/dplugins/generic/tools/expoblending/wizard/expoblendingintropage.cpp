@@ -69,20 +69,21 @@ ExpoBlendingIntroPage::ExpoBlendingIntroPage(ExpoBlendingManager* const mngr, QW
     QLabel* const title = new QLabel(vbox);
     title->setWordWrap(true);
     title->setOpenExternalLinks(true);
-    title->setText(i18nc("@info",
-                         "<qt>"
-                         "<p><h1><b>Welcome to Stacked Images Tool</b></h1></p>"
-                         "<p>This tool fuses bracketed images with different exposure to make pseudo "
-                         "<a href='https://en.wikipedia.org/wiki/High_dynamic_range_imaging'>HDR image</a>.</p>"
-                         "<p>It can also be used to <a href='https://en.wikipedia.org/wiki/Focus_stacking'>merge focus bracketed stack</a> "
-                         "to get a single image with increased depth of field.</p>"
-                         "<p>This assistant will help you to configure how to import images before "
-                         "merging them to a single one.</p>"
-                         "<p>Bracketed images must be taken with the same camera, "
-                         "in the same conditions, and if possible using a tripod.</p>"
-                         "<p>For more information, please take a look at "
-                         "<a href='https://en.wikipedia.org/wiki/Bracketing'>this page</a></p>"
-                         "</qt>"));
+    title->setText(QString::fromUtf8("<qt>"
+                                     "<p><h1><b>%1</b></h1></p>"
+                                     "<p>%2</p>"
+                                     "<p>%3</p>"
+                                     "<p>%4</p>"
+                                     "<p>%5</p>"
+                                     "<p>%6 <a href='https://en.wikipedia.org/wiki/Bracketing'>%7</a></p>"
+                                     "</qt>")
+                   .arg(i18nc("@info", "Welcome to Stacked Images Tool"))
+                   .arg(i18nc("@info", "This tool fuses bracketed images with different exposure to make pseudo HDR Image"))
+                   .arg(i18nc("@info", "It can also be used to merge focus bracketed stack to get a single image with increased depth of field."))
+                   .arg(i18nc("@info", "This assistant will help you to configure how to import images before merging them to a single one."))
+                   .arg(i18nc("@info", "Bracketed images must be taken with the same camera, in the same conditions, and if possible using a tripod."))
+                   .arg(i18nc("@info", "For more information, please take a look at"))
+                   .arg(i18nc("@info", "this page")));
 
     QGroupBox* const binaryBox      = new QGroupBox(vbox);
     QGridLayout* const binaryLayout = new QGridLayout;
