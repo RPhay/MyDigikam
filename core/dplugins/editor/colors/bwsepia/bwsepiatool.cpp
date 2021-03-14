@@ -57,8 +57,8 @@ public:
 
     explicit Private()
       : bwsepiaSettings(nullptr),
-        previewWidget(nullptr),
-        gboxSettings(nullptr)
+        previewWidget  (nullptr),
+        gboxSettings   (nullptr)
     {
     }
 
@@ -81,7 +81,7 @@ const QString BWSepiaTool::Private::configHistogramScaleEntry(QLatin1String("His
 
 BWSepiaTool::BWSepiaTool(QObject* const parent)
     : EditorToolThreaded(parent),
-      d(new Private)
+      d                 (new Private)
 {
     setObjectName(QLatin1String("convertbw"));
     setToolHelp(QLatin1String("blackandwhitetool.anchor"));

@@ -49,7 +49,7 @@ BWSepiaToolPlugin::~BWSepiaToolPlugin()
 
 QString BWSepiaToolPlugin::name() const
 {
-    return i18n("Black and White");
+    return i18nc("@title", "Black and White");
 }
 
 QString BWSepiaToolPlugin::iid() const
@@ -64,12 +64,12 @@ QIcon BWSepiaToolPlugin::icon() const
 
 QString BWSepiaToolPlugin::description() const
 {
-    return i18n("A tool to convert to black and white");
+    return i18nc("@info", "A tool to convert to black and white");
 }
 
 QString BWSepiaToolPlugin::details() const
 {
-    return i18n("<p>This Image Editor tool can convert image to black and white.</p>");
+    return i18nc("@info", "This Image Editor tool can convert image to black and white.");
 }
 
 QList<DPluginAuthor> BWSepiaToolPlugin::authors() const
