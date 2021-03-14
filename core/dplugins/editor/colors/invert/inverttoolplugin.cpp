@@ -104,7 +104,7 @@ void InvertToolPlugin::slotInvert()
     ImageIface iface;
     InvertFilter invert(iface.original(), nullptr);
     invert.startFilterDirectly();
-    iface.setOriginal(i18n("Invert"), invert.filterAction(), invert.getTargetImage());
+    iface.setOriginal(i18nc("@title", "Invert"), invert.filterAction(), invert.getTargetImage());
 
     qApp->restoreOverrideCursor();
 }

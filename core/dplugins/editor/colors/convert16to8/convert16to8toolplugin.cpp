@@ -104,7 +104,7 @@ void Convert16To8ToolPlugin::slotConvert16To8()
     {
         QMessageBox::critical(qApp->activeWindow(),
                               qApp->applicationName(),
-                              i18n("This image is already using a depth of 8 bits / color / pixel."));
+                              i18nc("@info", "This image is already using a depth of 8 bits / color / pixel."));
         return;
     }
     else
@@ -112,7 +112,7 @@ void Convert16To8ToolPlugin::slotConvert16To8()
         if (DMessageBox::showContinueCancel(QMessageBox::Warning,
                                             qApp->activeWindow(),
                                             qApp->applicationName(),
-                                            i18n("Performing this operation will reduce image color quality. "
+                                            i18nc("@info", "Performing this operation will reduce image color quality. "
                                             "Do you want to continue?"),
                                             QLatin1String("ToolColor16To8Bits"))
             == QMessageBox::Cancel)

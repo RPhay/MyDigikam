@@ -102,12 +102,13 @@ void Convert8To16ToolPlugin::slotConvert8To16()
     if (iface.originalSixteenBit())
     {
         QMessageBox::critical(qApp->activeWindow(), qApp->applicationName(),
-                              i18n("This image is already using a depth of 16 bits / color / pixel."));
+                              i18nc("@info", "This image is already using a depth of 16 bits / color / pixel."));
         return;
     }
 
     qApp->setOverrideCursor(Qt::WaitCursor);
     iface.convertOriginalColorDepth(64);
-    qApp->restoreOverrideCursor();}
+    qApp->restoreOverrideCursor();
+}
 
 } // namespace DigikamEditorConvert8To16ToolPlugin
