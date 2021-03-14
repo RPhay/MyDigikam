@@ -42,22 +42,26 @@ class PerspectiveTool : public EditorTool
 public:
 
     explicit PerspectiveTool(QObject* const parent);
-    ~PerspectiveTool() override;
+    ~PerspectiveTool()                          override;
 
 private Q_SLOTS:
 
     void slotInverseTransformationChanged(bool b);
-    void slotResetSettings() override;
-    void slotUpdateInfo(const QRect& newSize, float topLeftAngle, float topRightAngle,
-                        float bottomLeftAngle, float bottomRightAngle, bool valid);
+    void slotResetSettings()                    override;
+    void slotUpdateInfo(const QRect& newSize,
+                        float topLeftAngle,
+                        float topRightAngle,
+                        float bottomLeftAngle,
+                        float bottomRightAngle,
+                        bool valid);
     void slotColorGuideChanged();
 
 private:
 
-    void readSettings() override;
-    void writeSettings() override;
-    void finalRendering() override;
-    void setBackgroundColor(const QColor& bg) override;
+    void readSettings()                         override;
+    void writeSettings()                        override;
+    void finalRendering()                       override;
+    void setBackgroundColor(const QColor& bg)   override;
 
 private:
 

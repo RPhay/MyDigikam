@@ -72,21 +72,21 @@ public:
 public:
 
     explicit Private()
-      : antiAliasing(false),
-        drawWhileMoving(true),
-        drawGrid(false),
-        inverseTransformation(false),
-        validPerspective(true),
-        data(nullptr),
-        width(0),
-        height(0),
-        origW(0),
-        origH(0),
-        currentResizing(ResizingNone),
-        guideSize(1),
-        guideColor(Qt::red),
-        pixmap(nullptr),
-        iface(nullptr)
+      : antiAliasing            (false),
+        drawWhileMoving         (true),
+        drawGrid                (false),
+        inverseTransformation   (false),
+        validPerspective        (true),
+        data                    (nullptr),
+        width                   (0),
+        height                  (0),
+        origW                   (0),
+        origH                   (0),
+        currentResizing         (ResizingNone),
+        guideSize               (1),
+        guideColor              (Qt::red),
+        pixmap                  (nullptr),
+        iface                   (nullptr)
     {
     }
 
@@ -140,7 +140,7 @@ public:
 
 PerspectiveWidget::PerspectiveWidget(int w, int h, QWidget* const parent)
     : QWidget(parent),
-      d(new Private)
+      d      (new Private)
 {
     setAttribute(Qt::WA_DeleteOnClose);
     setMinimumSize(w, h);

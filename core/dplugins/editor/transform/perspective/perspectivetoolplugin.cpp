@@ -49,7 +49,7 @@ PerspectiveToolPlugin::~PerspectiveToolPlugin()
 
 QString PerspectiveToolPlugin::name() const
 {
-    return i18n("Perspective");
+    return i18nc("@title", "Perspective");
 }
 
 QString PerspectiveToolPlugin::iid() const
@@ -64,12 +64,12 @@ QIcon PerspectiveToolPlugin::icon() const
 
 QString PerspectiveToolPlugin::description() const
 {
-    return i18n("A tool to adjust perspective");
+    return i18nc("@info", "A tool to adjust perspective");
 }
 
 QString PerspectiveToolPlugin::details() const
 {
-    return i18n("<p>This Image Editor tool can adjust perspective from an image.</p>");
+    return i18nc("@info", "This Image Editor tool can adjust perspective from an image.");
 }
 
 QList<DPluginAuthor> PerspectiveToolPlugin::authors() const

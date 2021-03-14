@@ -43,7 +43,7 @@ class PerspectiveToolPlugin : public DPluginEditor
 public:
 
     explicit PerspectiveToolPlugin(QObject* const parent = nullptr);
-    ~PerspectiveToolPlugin() override;
+    ~PerspectiveToolPlugin()             override;
 
     QString name()                 const override;
     QString iid()                  const override;

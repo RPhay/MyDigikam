@@ -58,17 +58,17 @@ class Q_DECL_HIDDEN PerspectiveTool::Private
 public:
 
     explicit Private()
-      : newWidthLabel(nullptr),
-        newHeightLabel(nullptr),
-        topLeftAngleLabel(nullptr),
-        topRightAngleLabel(nullptr),
-        bottomLeftAngleLabel(nullptr),
-        bottomRightAngleLabel(nullptr),
-        drawWhileMovingCheckBox(nullptr),
-        drawGridCheckBox(nullptr),
-        inverseTransformation(nullptr),
-        previewWidget(nullptr),
-        gboxSettings(nullptr)
+      : newWidthLabel           (nullptr),
+        newHeightLabel          (nullptr),
+        topLeftAngleLabel       (nullptr),
+        topRightAngleLabel      (nullptr),
+        bottomLeftAngleLabel    (nullptr),
+        bottomRightAngleLabel   (nullptr),
+        drawWhileMovingCheckBox (nullptr),
+        drawGridCheckBox        (nullptr),
+        inverseTransformation   (nullptr),
+        previewWidget           (nullptr),
+        gboxSettings            (nullptr)
     {
     }
 
@@ -101,7 +101,7 @@ const QString PerspectiveTool::Private::configInverseTransformationEntry(QLatin1
 
 PerspectiveTool::PerspectiveTool(QObject* const parent)
     : EditorTool(parent),
-      d(new Private)
+      d         (new Private)
 {
     setObjectName(QLatin1String("perspective"));
 
