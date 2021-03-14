@@ -49,7 +49,7 @@ EmbossToolPlugin::~EmbossToolPlugin()
 
 QString EmbossToolPlugin::name() const
 {
-    return i18n("Emboss");
+    return i18nc("@title", "Emboss");
 }
 
 QString EmbossToolPlugin::iid() const
@@ -64,12 +64,12 @@ QIcon EmbossToolPlugin::icon() const
 
 QString EmbossToolPlugin::description() const
 {
-    return i18n("A tool to emboss an image");
+    return i18nc("@info", "A tool to emboss an image");
 }
 
 QString EmbossToolPlugin::details() const
 {
-    return i18n("<p>This Image Editor tool can emboss an image.</p>");
+    return i18nc("@info", "This Image Editor tool can emboss an image.");
 }
 
 QList<DPluginAuthor> EmbossToolPlugin::authors() const

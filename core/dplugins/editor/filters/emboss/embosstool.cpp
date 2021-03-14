@@ -53,9 +53,9 @@ class Q_DECL_HIDDEN EmbossTool::Private
 public:
 
     explicit Private()
-      : depthInput(nullptr),
+      : depthInput   (nullptr),
         previewWidget(nullptr),
-        gboxSettings(nullptr)
+        gboxSettings (nullptr)
     {
     }
 
@@ -74,7 +74,7 @@ const QString EmbossTool::Private::configDepthAdjustmentEntry(QLatin1String("Dep
 
 EmbossTool::EmbossTool(QObject* const parent)
     : EditorToolThreaded(parent),
-      d(new Private)
+      d                 (new Private)
 {
     setObjectName(QLatin1String("emboss"));
     setInitPreview(true);
