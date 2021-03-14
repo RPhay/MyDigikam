@@ -61,9 +61,9 @@ class Q_DECL_HIDDEN AdjustCurvesTool::Private
 public:
 
     explicit Private()
-      : settingsView(nullptr),
+      : settingsView (nullptr),
         previewWidget(nullptr),
-        gboxSettings(nullptr)
+        gboxSettings (nullptr)
     {
     }
 
@@ -85,7 +85,7 @@ const QString AdjustCurvesTool::Private::configHistogramScaleEntry(QLatin1String
 
 AdjustCurvesTool::AdjustCurvesTool(QObject* const parent)
     : EditorToolThreaded(parent),
-      d(new Private)
+      d                 (new Private)
 {
     setObjectName(QLatin1String("adjustcurves"));
 
@@ -112,8 +112,8 @@ AdjustCurvesTool::AdjustCurvesTool(QObject* const parent)
     // -------------------------------------------------------------
 
     ImageIface iface;
-    QVBoxLayout* vbox = new QVBoxLayout(d->gboxSettings->plainPage());
-    d->settingsView   = new CurvesSettings(d->gboxSettings->plainPage(), iface.original());
+    QVBoxLayout* const vbox = new QVBoxLayout(d->gboxSettings->plainPage());
+    d->settingsView         = new CurvesSettings(d->gboxSettings->plainPage(), iface.original());
     d->gboxSettings->histogramBox()->setContentsMargins(d->settingsView->curvesLeftOffset(), 0, 0, 0);
     vbox->addWidget(d->settingsView);
     vbox->addStretch(10);
@@ -198,6 +198,7 @@ void AdjustCurvesTool::readSettings()
     KConfigGroup group        = config->group(d->configGroupName);
 
     // we need to call the set methods here, otherwise the curve will not be updated correctly
+
     d->gboxSettings->histogramBox()->setChannel((ChannelType)group.readEntry(d->configHistogramChannelEntry,
             (int)LuminosityChannel));
     d->gboxSettings->histogramBox()->setScale((HistogramScale)group.readEntry(d->configHistogramScaleEntry,
@@ -236,7 +237,7 @@ void AdjustCurvesTool::preparePreview()
 
     d->gboxSettings->histogramBox()->histogram()->stopHistogramComputation();
 
-    DImg preview = d->previewWidget->getOriginalRegionImage(true);
+    DImg preview             = d->previewWidget->getOriginalRegionImage(true);
     setFilter(new CurvesFilter(&preview, this, settings));
 }
 
@@ -269,6 +270,7 @@ void AdjustCurvesTool::slotLoadSettings()
     d->settingsView->loadSettings();
 
     // Refresh the current curves config.
+
     slotChannelChanged();
     slotPreview();
 }

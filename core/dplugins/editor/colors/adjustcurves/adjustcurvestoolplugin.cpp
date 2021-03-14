@@ -49,7 +49,7 @@ AdjustCurvesToolPlugin::~AdjustCurvesToolPlugin()
 
 QString AdjustCurvesToolPlugin::name() const
 {
-    return i18n("Adjust Curves");
+    return i18nc("@title", "Adjust Curves");
 }
 
 QString AdjustCurvesToolPlugin::iid() const
@@ -64,12 +64,12 @@ QIcon AdjustCurvesToolPlugin::icon() const
 
 QString AdjustCurvesToolPlugin::description() const
 {
-    return i18n("A tool to adjust color curves");
+    return i18nc("@info", "A tool to adjust color curves");
 }
 
 QString AdjustCurvesToolPlugin::details() const
 {
-    return i18n("<p>This Image Editor tool can adjust the color curves from image.</p>");
+    return i18nc("@info", "This Image Editor tool can adjust the color curves from image.");
 }
 
 QList<DPluginAuthor> AdjustCurvesToolPlugin::authors() const
