@@ -49,7 +49,7 @@ LocalContrastToolPlugin::~LocalContrastToolPlugin()
 
 QString LocalContrastToolPlugin::name() const
 {
-    return i18n("Noise Reduction");
+    return i18nc("@title", "Noise Reduction");
 }
 
 QString LocalContrastToolPlugin::iid() const
@@ -64,12 +64,12 @@ QIcon LocalContrastToolPlugin::icon() const
 
 QString LocalContrastToolPlugin::description() const
 {
-    return i18n("A tool to remove photograph noise using wavelets");
+    return i18nc("@info", "A tool to remove photograph noise using wavelets");
 }
 
 QString LocalContrastToolPlugin::details() const
 {
-    return i18n("<p>This Image Editor tool can reduce noise in image.</p>");
+    return i18nc("@info", "This Image Editor tool can reduce noise in image.");
 }
 
 QList<DPluginAuthor> LocalContrastToolPlugin::authors() const

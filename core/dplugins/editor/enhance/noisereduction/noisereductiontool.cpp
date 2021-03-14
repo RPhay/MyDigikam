@@ -54,9 +54,9 @@ public:
 
     explicit Private()
       : configGroupName(QLatin1String("noisereduction Tool")),
-        nrSettings(nullptr),
-        previewWidget(nullptr),
-        gboxSettings(nullptr)
+        nrSettings     (nullptr),
+        previewWidget  (nullptr),
+        gboxSettings  (nullptr)
     {
     }
 
@@ -69,7 +69,7 @@ public:
 
 NoiseReductionTool::NoiseReductionTool(QObject* const parent)
     : EditorToolThreaded(parent),
-      d(new Private)
+      d                 (new Private)
 {
     setObjectName(QLatin1String("noisereduction"));
     setToolName(i18n("Noise Reduction"));
