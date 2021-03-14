@@ -61,7 +61,7 @@ public:
 };
 
 ItemsPage::ItemsPage(ExpoBlendingManager* const mngr, QWizard* const dlg)
-    : DWizardPage(dlg, i18nc("@title: window", "<b>Set Bracketed Images</b>")),
+    : DWizardPage(dlg, QString::fromLatin1("<b>%1</b>").arg(i18nc("@title:window", "Set Bracketed Images"))),
       d          (new Private)
 {
     d->mngr = mngr;
@@ -69,13 +69,17 @@ ItemsPage::ItemsPage(ExpoBlendingManager* const mngr, QWizard* const dlg)
     DVBox* const vbox    = new DVBox(this);
     QLabel* const label1 = new QLabel(vbox);
     label1->setWordWrap(true);
-    label1->setText(i18nc("@info",
-                          "<qt>"
-                          "<p>Set here the list of your bracketed images to fuse. Please follow these conditions:</p>"
-                          "<ul><li>At least 2 images from the same subject must be added to the stack.</li>"
-                          "<li>Do not mix images with different color depth.</li>"
-                          "<li>All images must have the same dimensions.</li></ul>"
-                          "</qt>"));
+    label1->setText(QString::fromUtf8("<qt>"
+                                      "<p>%1</p>"
+                                      "<ul><li>%2</li>"
+                                      "<li>%3</li>"
+                                      "<li>%4</li></ul>"
+                                      "<p>%5</p>"
+                                      "</qt>")
+                   .arg(i18nc("@info", "Set here the list of your bracketed images to fuse. Please follow these conditions"))
+                   .arg(i18nc("@info", "At least 2 images from the same subject must be added to the stack."))
+                   .arg(i18nc("@info", "Do not mix images with different color depth."))
+                   .arg(i18nc("@info", "All images must have the same dimensions.")));
 
     d->list = new DItemsList(vbox);
     d->list->setObjectName(QLatin1String("ExpoBlending ImagesList"));
