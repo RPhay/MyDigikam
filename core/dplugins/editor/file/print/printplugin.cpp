@@ -50,7 +50,7 @@ PrintToolPlugin::~PrintToolPlugin()
 
 QString PrintToolPlugin::name() const
 {
-    return i18n("Print Image");
+    return i18nc("@title", "Print Image");
 }
 
 QString PrintToolPlugin::iid() const
@@ -65,12 +65,12 @@ QIcon PrintToolPlugin::icon() const
 
 QString PrintToolPlugin::description() const
 {
-    return i18n("A tool to print an image");
+    return i18nc("@info", "A tool to print an image");
 }
 
 QString PrintToolPlugin::details() const
 {
-    return i18n("<p>This Image Editor tool can print an image.</p>");
+    return i18nc("@info", "This Image Editor tool can print an image.");
 }
 
 QList<DPluginAuthor> PrintToolPlugin::authors() const

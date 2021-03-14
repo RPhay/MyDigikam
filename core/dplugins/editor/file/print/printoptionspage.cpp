@@ -58,11 +58,11 @@ static inline double unitToInches(PrintOptionsPage::Unit unit)
     }
     else if (unit == PrintOptionsPage::Centimeters)
     {
-        return 1 / 2.54;
+        return (1 / 2.54);
     }
     else   // Millimeters
     {
-        return 1 / 25.4;
+        return (1 / 25.4);
     }
 }
 
