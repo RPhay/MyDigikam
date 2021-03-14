@@ -49,7 +49,7 @@ LensDistortionToolPlugin::~LensDistortionToolPlugin()
 
 QString LensDistortionToolPlugin::name() const
 {
-    return i18n("Lens Distortion");
+    return i18nc("@title", "Lens Distortion");
 }
 
 QString LensDistortionToolPlugin::iid() const
@@ -64,12 +64,12 @@ QIcon LensDistortionToolPlugin::icon() const
 
 QString LensDistortionToolPlugin::description() const
 {
-    return i18n("A tool to adjust lens distortions");
+    return i18nc("@info", "A tool to adjust lens distortions");
 }
 
 QString LensDistortionToolPlugin::details() const
 {
-    return i18n("<p>This Image Editor tool can adjust lens distortions from an image.</p>");
+    return i18nc("@info", "This Image Editor tool can adjust lens distortions from an image.");
 }
 
 QList<DPluginAuthor> LensDistortionToolPlugin::authors() const

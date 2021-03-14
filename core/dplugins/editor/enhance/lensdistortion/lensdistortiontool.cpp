@@ -61,12 +61,12 @@ public:
 
     explicit Private()
       : maskPreviewLabel(nullptr),
-        mainInput(nullptr),
-        edgeInput(nullptr),
-        rescaleInput(nullptr),
-        brightenInput(nullptr),
-        previewWidget(nullptr),
-        gboxSettings(nullptr)
+        mainInput       (nullptr),
+        edgeInput       (nullptr),
+        rescaleInput    (nullptr),
+        brightenInput   (nullptr),
+        previewWidget   (nullptr),
+        gboxSettings    (nullptr)
     {
     }
 
@@ -99,7 +99,7 @@ const QString LensDistortionTool::Private::configBrightenEntry(QLatin1String("Br
 
 LensDistortionTool::LensDistortionTool(QObject* const parent)
     : EditorToolThreaded(parent),
-      d(new Private)
+      d                 (new Private)
 {
     setObjectName(QLatin1String("lensdistortion"));
 
