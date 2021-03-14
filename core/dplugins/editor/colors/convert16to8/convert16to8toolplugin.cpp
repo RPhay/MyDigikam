@@ -50,7 +50,7 @@ Convert16To8ToolPlugin::~Convert16To8ToolPlugin()
 
 QString Convert16To8ToolPlugin::name() const
 {
-    return i18n("Convert to 8 bits");
+    return i18nc("@title", "Convert to 8 bits");
 }
 
 QString Convert16To8ToolPlugin::iid() const
@@ -65,12 +65,12 @@ QIcon Convert16To8ToolPlugin::icon() const
 
 QString Convert16To8ToolPlugin::description() const
 {
-    return i18n("A tool to convert color depth to 8 bits");
+    return i18nc("@info", "A tool to convert color depth to 8 bits");
 }
 
 QString Convert16To8ToolPlugin::details() const
 {
-    return i18n("<p>This Image Editor tool can convert image color depth to 8 bits.</p>");
+    return i18nc("@info", "This Image Editor tool can convert image color depth to 8 bits.");
 }
 
 QList<DPluginAuthor> Convert16To8ToolPlugin::authors() const
