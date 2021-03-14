@@ -64,9 +64,9 @@ class Q_DECL_HIDDEN RedEyeTool::Private
 public:
 
     explicit Private()
-      : settingsView(nullptr),
+      : settingsView (nullptr),
         previewWidget(nullptr),
-        gboxSettings(nullptr)
+        gboxSettings (nullptr)
     {
     }
 
@@ -87,7 +87,7 @@ const QString RedEyeTool::Private::configHistogramScaleEntry(QLatin1String("Hist
 
 RedEyeTool::RedEyeTool(QObject* const parent)
     : EditorToolThreaded(parent),
-      d(new Private)
+      d                 (new Private)
 {
     setObjectName(QLatin1String("redeye"));
     setToolHelp(QLatin1String("redeyecorrectiontool.anchor"));

@@ -49,7 +49,7 @@ RedEyeToolPlugin::~RedEyeToolPlugin()
 
 QString RedEyeToolPlugin::name() const
 {
-    return i18n("Red Eye");
+    return i18nc("@title", "Red Eye");
 }
 
 QString RedEyeToolPlugin::iid() const
@@ -64,12 +64,12 @@ QIcon RedEyeToolPlugin::icon() const
 
 QString RedEyeToolPlugin::description() const
 {
-    return i18n("A tool to automatically detect and correct red eye effect");
+    return i18nc("@info", "A tool to automatically detect and correct red eye effect");
 }
 
 QString RedEyeToolPlugin::details() const
 {
-    return i18n("<p>This Image Editor tool can reduce red eye effect on image.</p>");
+    return i18nc("@info", "This Image Editor tool can reduce red eye effect on image.");
 }
 
 QList<DPluginAuthor> RedEyeToolPlugin::authors() const
@@ -94,8 +94,8 @@ void RedEyeToolPlugin::setup(QObject* const parent)
     DPluginAction* const ac = new DPluginAction(parent);
     ac->setIcon(icon());
     ac->setText(i18nc("@action", "Red Eye..."));
-    ac->setWhatsThis(i18n("This filter can be used to correct red eyes in a photo. "
-                          "Select a region including the eyes to use this option."));
+    ac->setWhatsThis(i18nc("@info", "This filter can be used to correct red eyes in a photo. "
+                           "Select a region including the eyes to use this option."));
     ac->setObjectName(QLatin1String("editorwindow_enhance_redeye"));
     ac->setActionCategory(DPluginAction::EditorEnhance);
 
