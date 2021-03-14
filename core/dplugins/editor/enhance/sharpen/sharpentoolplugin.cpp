@@ -49,7 +49,7 @@ SharpenToolPlugin::~SharpenToolPlugin()
 
 QString SharpenToolPlugin::name() const
 {
-    return i18n("Sharpen");
+    return i18nc("@title", "Sharpen");
 }
 
 QString SharpenToolPlugin::iid() const
@@ -64,12 +64,12 @@ QIcon SharpenToolPlugin::icon() const
 
 QString SharpenToolPlugin::description() const
 {
-    return i18n("A tool to sharp an image");
+    return i18nc("@info", "A tool to sharp an image");
 }
 
 QString SharpenToolPlugin::details() const
 {
-    return i18n("<p>This Image Editor tool can sharp an image.</p>");
+    return i18nc("@info", "This Image Editor tool can sharp an image.");
 }
 
 QList<DPluginAuthor> SharpenToolPlugin::authors() const

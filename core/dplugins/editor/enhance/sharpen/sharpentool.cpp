@@ -63,9 +63,9 @@ public:
 
     explicit Private()
       : configGroupName(QLatin1String("sharpen Tool")),
-        sharpSettings(nullptr),
-        previewWidget(nullptr),
-        gboxSettings(nullptr)
+        sharpSettings  (nullptr),
+        previewWidget  (nullptr),
+        gboxSettings   (nullptr)
     {
     }
 
@@ -78,7 +78,7 @@ public:
 
 SharpenTool::SharpenTool(QObject* const parent)
     : EditorToolThreaded(parent),
-      d(new Private)
+      d                 (new Private)
 {
     setObjectName(QLatin1String("sharpen"));
     setToolHelp(QLatin1String("blursharpentool.anchor"));
