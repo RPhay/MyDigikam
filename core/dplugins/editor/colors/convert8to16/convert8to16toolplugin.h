@@ -43,7 +43,7 @@ class Convert8To16ToolPlugin : public DPluginEditor
 public:
 
     explicit Convert8To16ToolPlugin(QObject* const parent = nullptr);
-    ~Convert8To16ToolPlugin() override;
+    ~Convert8To16ToolPlugin()            override;
 
     QString name()                 const override;
     QString iid()                  const override;
@@ -52,7 +52,7 @@ public:
     QString description()          const override;
     QList<DPluginAuthor> authors() const override;
 
-    void setup(QObject* const) override;
+    void setup(QObject* const)           override;
 
 private Q_SLOTS:
 
