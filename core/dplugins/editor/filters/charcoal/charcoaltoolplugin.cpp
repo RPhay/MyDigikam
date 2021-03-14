@@ -49,7 +49,7 @@ CharcoalToolPlugin::~CharcoalToolPlugin()
 
 QString CharcoalToolPlugin::name() const
 {
-    return i18n("Charcoal Drawing");
+    return i18nc("@title", "Charcoal Drawing");
 }
 
 QString CharcoalToolPlugin::iid() const
@@ -64,12 +64,12 @@ QIcon CharcoalToolPlugin::icon() const
 
 QString CharcoalToolPlugin::description() const
 {
-    return i18n("A tool to emulate charcoal drawing");
+    return i18nc("@info", "A tool to emulate charcoal drawing");
 }
 
 QString CharcoalToolPlugin::details() const
 {
-    return i18n("<p>This Image Editor tool can emulate charcoal drawing to an image.</p>");
+    return i18nc("@info", "This Image Editor tool can emulate charcoal drawing to an image.");
 }
 
 QList<DPluginAuthor> CharcoalToolPlugin::authors() const
