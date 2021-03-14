@@ -49,7 +49,7 @@ HSLToolPlugin::~HSLToolPlugin()
 
 QString HSLToolPlugin::name() const
 {
-    return i18n("HSL Correction");
+    return i18nc("@title", "HSL Correction");
 }
 
 QString HSLToolPlugin::iid() const
@@ -64,12 +64,12 @@ QIcon HSLToolPlugin::icon() const
 
 QString HSLToolPlugin::description() const
 {
-    return i18n("A tool to fix Hue / Saturation / Lightness");
+    return i18nc("@info", "A tool to fix Hue / Saturation / Lightness");
 }
 
 QString HSLToolPlugin::details() const
 {
-    return i18n("<p>This Image Editor tool can adjust Hue / Saturation / Lightness from image.</p>");
+    return i18nc("@info", "This Image Editor tool can adjust Hue / Saturation / Lightness from image.");
 }
 
 QList<DPluginAuthor> HSLToolPlugin::authors() const

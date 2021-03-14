@@ -54,9 +54,9 @@ class Q_DECL_HIDDEN HSLTool::Private
 public:
 
     explicit Private()
-      : hslSettings(nullptr),
+      : hslSettings  (nullptr),
         previewWidget(nullptr),
-        gboxSettings(nullptr)
+        gboxSettings (nullptr)
     {
     }
 
@@ -77,7 +77,7 @@ const QString HSLTool::Private::configHistogramScaleEntry(QLatin1String("Histogr
 
 HSLTool::HSLTool(QObject* const parent)
     : EditorToolThreaded(parent),
-      d(new Private)
+      d                 (new Private)
 {
     setObjectName(QLatin1String("adjusthsl"));
     setToolHelp(QLatin1String("hsladjusttool.anchor"));
