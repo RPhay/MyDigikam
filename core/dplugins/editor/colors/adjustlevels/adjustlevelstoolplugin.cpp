@@ -49,7 +49,7 @@ AdjustLevelsToolPlugin::~AdjustLevelsToolPlugin()
 
 QString AdjustLevelsToolPlugin::name() const
 {
-    return i18n("Adjust Levels");
+    return i18nc("@title", "Adjust Levels");
 }
 
 QString AdjustLevelsToolPlugin::iid() const
@@ -64,12 +64,12 @@ QIcon AdjustLevelsToolPlugin::icon() const
 
 QString AdjustLevelsToolPlugin::description() const
 {
-    return i18n("A tool to adjust color levels");
+    return i18nc("@info", "A tool to adjust color levels");
 }
 
 QString AdjustLevelsToolPlugin::details() const
 {
-    return i18n("<p>This Image Editor tool can adjust the color levels from image.</p>");
+    return i18nc("@info", "This Image Editor tool can adjust the color levels from image.");
 }
 
 QList<DPluginAuthor> AdjustLevelsToolPlugin::authors() const

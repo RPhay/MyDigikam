@@ -41,17 +41,17 @@ class AdjustLevelsTool : public EditorToolThreaded
 public:
 
     explicit AdjustLevelsTool(QObject* const parent);
-    ~AdjustLevelsTool() override;
+    ~AdjustLevelsTool()                     override;
 
 private Q_SLOTS:
 
-    void slotSaveAsSettings() override;
-    void slotLoadSettings() override;
-    void slotResetSettings() override;
+    void slotSaveAsSettings()               override;
+    void slotLoadSettings()                 override;
+    void slotResetSettings()                override;
     void slotResetCurrentChannel();
     void slotAutoLevels();
-    void slotChannelChanged() override;
-    void slotScaleChanged() override;
+    void slotChannelChanged()               override;
+    void slotScaleChanged()                 override;
     void slotAdjustSliders();
     void slotGammaInputchanged(double val);
     void slotAdjustMinInputSpinBox(double val);
@@ -66,17 +66,17 @@ private Q_SLOTS:
 
 private:
 
-    void readSettings() override;
-    void writeSettings() override;
-    void preparePreview() override;
-    void prepareFinal() override;
+    void readSettings()                     override;
+    void writeSettings()                    override;
+    void preparePreview()                   override;
+    void prepareFinal()                     override;
     void abortPreview();
-    void setPreviewImage() override;
-    void setFinalImage() override;
+    void setPreviewImage()                  override;
+    void setFinalImage()                    override;
 
     void adjustSliders(int minIn, double gamIn, int maxIn, int minOut, int maxOut);
     void adjustSlidersAndSpinboxes(int minIn, double gamIn, int maxIn, int minOut, int maxOut);
-    bool eventFilter(QObject*, QEvent*) override;
+    bool eventFilter(QObject*, QEvent*)     override;
 
 private:
 
