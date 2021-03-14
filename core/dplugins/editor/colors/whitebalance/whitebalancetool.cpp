@@ -58,9 +58,9 @@ class Q_DECL_HIDDEN WhiteBalanceTool::Private
 public:
 
     explicit Private()
-      : settingsView(nullptr),
+      : settingsView (nullptr),
         previewWidget(nullptr),
-        gboxSettings(nullptr)
+        gboxSettings (nullptr)
     {
     }
 
@@ -82,7 +82,8 @@ const QString WhiteBalanceTool::Private::configHistogramScaleEntry(QLatin1String
 // --------------------------------------------------------
 
 WhiteBalanceTool::WhiteBalanceTool(QObject* const parent)
-    : EditorToolThreaded(parent), d(new Private)
+    : EditorToolThreaded(parent),
+      d                 (new Private)
 {
     setObjectName(QLatin1String("whitebalance"));
     setToolName(i18n("White Balance"));

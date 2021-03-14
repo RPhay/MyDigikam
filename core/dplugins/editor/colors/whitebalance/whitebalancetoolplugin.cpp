@@ -49,7 +49,7 @@ WhiteBalanceToolPlugin::~WhiteBalanceToolPlugin()
 
 QString WhiteBalanceToolPlugin::name() const
 {
-    return i18n("White Balance");
+    return i18nc("@title", "White Balance");
 }
 
 QString WhiteBalanceToolPlugin::iid() const
@@ -64,12 +64,12 @@ QIcon WhiteBalanceToolPlugin::icon() const
 
 QString WhiteBalanceToolPlugin::description() const
 {
-    return i18n("A tool to adjust white balance");
+    return i18nc("@info", "A tool to adjust white balance");
 }
 
 QString WhiteBalanceToolPlugin::details() const
 {
-    return i18n("<p>This Image Editor tool can adjust the white balance from image.</p>");
+    return i18nc("@info", "This Image Editor tool can adjust the white balance from image.");
 }
 
 QList<DPluginAuthor> WhiteBalanceToolPlugin::authors() const
