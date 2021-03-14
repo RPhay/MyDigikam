@@ -49,7 +49,7 @@ BorderToolPlugin::~BorderToolPlugin()
 
 QString BorderToolPlugin::name() const
 {
-    return i18n("Add Border");
+    return i18nc("@title", "Add Border");
 }
 
 QString BorderToolPlugin::iid() const
@@ -64,12 +64,12 @@ QIcon BorderToolPlugin::icon() const
 
 QString BorderToolPlugin::description() const
 {
-    return i18n("A tool to add a border around image");
+    return i18nc("@info", "A tool to add a border around image");
 }
 
 QString BorderToolPlugin::details() const
 {
-    return i18n("<p>This Image Editor tool can add decorative border around image.</p>");
+    return i18nc("@info", "This Image Editor tool can add decorative border around image.");
 }
 
 QList<DPluginAuthor> BorderToolPlugin::authors() const

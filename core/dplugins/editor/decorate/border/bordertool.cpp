@@ -54,9 +54,9 @@ public:
 
     explicit Private()
       : configGroupName(QLatin1String("border Tool")),
-        gboxSettings(nullptr),
-        previewWidget(nullptr),
-        settingsView(nullptr)
+        gboxSettings   (nullptr),
+        previewWidget  (nullptr),
+        settingsView   (nullptr)
     {
     }
 
@@ -69,7 +69,7 @@ public:
 
 BorderTool::BorderTool(QObject* const parent)
     : EditorToolThreaded(parent),
-      d(new Private)
+      d                 (new Private)
 {
     setObjectName(QLatin1String("border"));
     setToolName(i18n("Add Border"));
