@@ -49,7 +49,7 @@ FreeRotationToolPlugin::~FreeRotationToolPlugin()
 
 QString FreeRotationToolPlugin::name() const
 {
-    return i18n("Free Rotation");
+    return i18nc("@title", "Free Rotation");
 }
 
 QString FreeRotationToolPlugin::iid() const
@@ -64,12 +64,12 @@ QIcon FreeRotationToolPlugin::icon() const
 
 QString FreeRotationToolPlugin::description() const
 {
-    return i18n("A tool to rotate an image");
+    return i18nc("@info", "A tool to rotate an image");
 }
 
 QString FreeRotationToolPlugin::details() const
 {
-    return i18n("<p>This Image Editor tool can rotate an image with an arbitrary angle.</p>");
+    return i18nc("@info", "This Image Editor tool can rotate an image with an arbitrary angle.");
 }
 
 QList<DPluginAuthor> FreeRotationToolPlugin::authors() const
@@ -97,21 +97,21 @@ void FreeRotationToolPlugin::setup(QObject* const parent)
 
     addAction(ac);
 
-    QAction* const point1Action = new QAction(i18n("Free Rotation Set Point 1"), parent);
+    QAction* const point1Action = new QAction(i18nc("@action", "Free Rotation Set Point 1"), parent);
     point1Action->setObjectName(QLatin1String("editorwindow_transform_freerotation_point1"));
     point1Action->setShortcut(Qt::CTRL + Qt::SHIFT + Qt::Key_1);
 
     connect(point1Action, SIGNAL(triggered(bool)),
             this, SIGNAL(signalPoint1Action()));
 
-    QAction* const point2Action = new QAction(i18n("Free Rotation Set Point 2"), parent);
+    QAction* const point2Action = new QAction(i18nc("@action", "Free Rotation Set Point 2"), parent);
     point2Action->setObjectName(QLatin1String("editorwindow_transform_freerotation_point2"));
     point2Action->setShortcut(Qt::CTRL + Qt::SHIFT + Qt::Key_2);
 
     connect(point2Action, SIGNAL(triggered(bool)),
             this, SIGNAL(signalPoint2Action()));
 
-    QAction* const autoAdjustAction = new QAction(i18n("Free Rotation Auto Adjust"), parent);
+    QAction* const autoAdjustAction = new QAction(i18nc("@action", "Free Rotation Auto Adjust"), parent);
     autoAdjustAction->setObjectName(QLatin1String("editorwindow_transform_freerotation_autoadjust"));
     autoAdjustAction->setShortcut(Qt::CTRL + Qt::SHIFT + Qt::Key_R);
 

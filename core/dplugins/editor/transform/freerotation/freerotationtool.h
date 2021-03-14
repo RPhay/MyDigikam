@@ -45,7 +45,7 @@ class FreeRotationTool : public EditorToolThreaded
 public:
 
     explicit FreeRotationTool(QObject* const parent);
-    ~FreeRotationTool() override;
+    ~FreeRotationTool()         override;
 
 public Q_SLOTS:
 
@@ -55,17 +55,17 @@ public Q_SLOTS:
 
 private Q_SLOTS:
 
-    void slotResetSettings() override;
+    void slotResetSettings()    override;
     void slotColorGuideChanged();
 
 private:
 
-    void readSettings() override;
-    void writeSettings() override;
-    void preparePreview() override;
-    void prepareFinal() override;
-    void setPreviewImage() override;
-    void setFinalImage() override;
+    void readSettings()         override;
+    void writeSettings()        override;
+    void preparePreview()       override;
+    void prepareFinal()         override;
+    void setPreviewImage()      override;
+    void setFinalImage()        override;
 
     QString centerString(const QString& str, int maxLength = -1)         const;
     QString repeatString(const QString& str, int times)                  const;

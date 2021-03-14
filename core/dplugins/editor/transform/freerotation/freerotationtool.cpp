@@ -64,16 +64,16 @@ class Q_DECL_HIDDEN FreeRotationTool::Private
 public:
 
     explicit Private()
-      : configGroupName(QLatin1String("freerotation Tool")),
-        newHeightLabel(nullptr),
-        newWidthLabel(nullptr),
-        autoAdjustBtn(nullptr),
-        autoAdjustPoint1Btn(nullptr),
-        autoAdjustPoint2Btn(nullptr),
-        settingsView(nullptr),
-        expanderBox(nullptr),
-        gboxSettings(nullptr),
-        previewWidget(nullptr)
+      : configGroupName     (QLatin1String("freerotation Tool")),
+        newHeightLabel      (nullptr),
+        newWidthLabel       (nullptr),
+        autoAdjustBtn       (nullptr),
+        autoAdjustPoint1Btn (nullptr),
+        autoAdjustPoint2Btn (nullptr),
+        settingsView        (nullptr),
+        expanderBox         (nullptr),
+        gboxSettings        (nullptr),
+        previewWidget       (nullptr)
     {
     }
 
@@ -98,7 +98,7 @@ public:
 
 FreeRotationTool::FreeRotationTool(QObject* const parent)
     : EditorToolThreaded(parent),
-      d(new Private)
+      d                 (new Private)
 {
     setObjectName(QLatin1String("freerotation"));
 
