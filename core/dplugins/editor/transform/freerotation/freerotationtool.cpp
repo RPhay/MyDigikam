@@ -148,7 +148,6 @@ FreeRotationTool::FreeRotationTool(QObject* const parent)
     d->autoAdjustPoint2Btn->setSizePolicy(QSizePolicy::MinimumExpanding,
                                           QSizePolicy::MinimumExpanding);
 
-    d->autoAdjustPoint1Btn->setShortcut(QKeySequence(Qt::Key_1));
     d->autoAdjustPoint1Btn->setToolTip(btnWhatsThis);
     d->autoAdjustPoint1Btn->setWhatsThis(btnWhatsThis);
     d->autoAdjustPoint2Btn->setToolTip(btnWhatsThis);
@@ -170,11 +169,15 @@ FreeRotationTool::FreeRotationTool(QObject* const parent)
     const int offset = (pm1.width() * 2) + 10;
 
 #if (QT_VERSION >= QT_VERSION_CHECK(5, 11, 0))
+
     int minWidth1    = fm.horizontalAdvance(invalidText) + offset;
     int minWidth2    = fm.horizontalAdvance(validText) + offset;
+
 #else
+
     int minWidth1    = fm.width(invalidText) + offset;
     int minWidth2    = fm.width(validText) + offset;
+
 #endif
 
     int minWidth     = qMax<int>(minWidth1, minWidth2);
