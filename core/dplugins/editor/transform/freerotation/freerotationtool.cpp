@@ -389,6 +389,7 @@ QString FreeRotationTool::centerString(const QString& str, int maxLength) const
 
     // fill with additional whitespace, to match the original label length and center
     // the text, without moving the button icon
+
     int diff = qAbs<int>(max - str.count());
 
     if (diff > 0)
@@ -422,6 +423,7 @@ QString FreeRotationTool::centerString(const QString& str, int maxLength) const
 void FreeRotationTool::updatePoints()
 {
     // set labels
+
     QString tmp = generateButtonLabel(d->autoAdjustPoint1);
     d->autoAdjustPoint1Btn->setText(tmp);
 
@@ -429,6 +431,7 @@ void FreeRotationTool::updatePoints()
     d->autoAdjustPoint2Btn->setText(tmp);
 
     // set points in preview widget, don't add invalid points
+
     QPolygon points;
 
     if (pointIsValid(d->autoAdjustPoint1))
@@ -449,6 +452,7 @@ void FreeRotationTool::updatePoints()
     d->previewWidget->setPoints(points, true);
 
     // enable / disable adjustment buttons
+
     bool valid  = (pointIsValid(d->autoAdjustPoint1)  &&
                    pointIsValid(d->autoAdjustPoint2)) &&
                   (d->autoAdjustPoint1 != d->autoAdjustPoint2);
@@ -477,8 +481,9 @@ void FreeRotationTool::slotAutoAdjustP2Clicked()
 
 void FreeRotationTool::slotAutoAdjustClicked()
 {
-    // we need to check manually here if the button is enabled, because this slot can be called
-    // with an action now
+    // we need to check manually here if the button is enabled,
+    // because this slot can be called with an action now
+
     if (!d->autoAdjustBtn->isEnabled())
     {
         return;
@@ -499,13 +504,16 @@ void FreeRotationTool::slotAutoAdjustClicked()
     }
 
     // we need to add the calculated angle to the currently set angle
+
     angle                  = d->settingsView->settings().angle + angle;
 
     // convert the angle to a string so we can easily split it up
+
     QString angleStr       = QString::number(angle, 'f', 2);
     QStringList anglesList = angleStr.split(QLatin1Char('.'));
 
     // try to set the angle widgets with the extracted values
+
     if (anglesList.count() == 2)
     {
         bool ok       = false;
@@ -553,6 +561,7 @@ QPixmap FreeRotationTool::generateBtnPixmap(const QString& label, const QColor& 
 double FreeRotationTool::calculateAutoAngle() const
 {
     // check if all points are valid
+
     if (!pointIsValid(d->autoAdjustPoint1) && !pointIsValid(d->autoAdjustPoint2))
     {
         return 0.0;
