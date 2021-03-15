@@ -398,4 +398,5 @@ BUGFIXES:
 355 ==> 432760 - New items for people entries without seeing the mentioned photos.
 356 ==> 434423 - Digikam displaying incorrect lens info in 'Properties - Photograph Properties'.
 357 ==> 434446 - "Set point" shortcut removed in ImageEditor in digikam version 6.4.0.
-358 ==> 
+358 ==> 433997 - digiKam does not open.
+359 ==> 
