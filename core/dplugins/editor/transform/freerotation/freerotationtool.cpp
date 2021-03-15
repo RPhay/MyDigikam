@@ -122,25 +122,27 @@ FreeRotationTool::FreeRotationTool(QObject* const parent)
     d->gboxSettings->setTools(EditorToolSettings::ColorGuide);
 
     QLabel* const label1 = new QLabel(i18n("New width:"));
-    d->newWidthLabel     = new QLabel(temp.setNum( iface.originalSize().width()) + i18n(" px"));
+    d->newWidthLabel     = new QLabel(temp.setNum(iface.originalSize().width()) + i18n(" px"));
     d->newWidthLabel->setAlignment( Qt::AlignBottom | Qt::AlignRight );
 
     QLabel* const label2 = new QLabel(i18n("New height:"));
-    d->newHeightLabel    = new QLabel(temp.setNum( iface.originalSize().height()) + i18n(" px"));
-    d->newHeightLabel->setAlignment( Qt::AlignBottom | Qt::AlignRight );
+    d->newHeightLabel    = new QLabel(temp.setNum(iface.originalSize().height()) + i18n(" px"));
+    d->newHeightLabel->setAlignment(Qt::AlignBottom | Qt::AlignRight);
 
     // -------------------------------------------------------------
 
     QString btnWhatsThis = i18n("Select a point in the preview widget, "
                                 "then click this button to assign the point for auto-correction.");
 
-    QPixmap pm1 = generateBtnPixmap(QLatin1String("1"), Qt::black);
+    QColor textColor     = qApp->palette().color(QPalette::Active, QPalette::Text);
+
+    QPixmap pm1 = generateBtnPixmap(QLatin1String("1"), textColor);
     d->autoAdjustPoint1Btn = new QPushButton;
     d->autoAdjustPoint1Btn->setIcon(pm1);
     d->autoAdjustPoint1Btn->setSizePolicy(QSizePolicy::MinimumExpanding,
                                           QSizePolicy::MinimumExpanding);
 
-    QPixmap pm2 = generateBtnPixmap(QLatin1String("2"), Qt::black);
+    QPixmap pm2 = generateBtnPixmap(QLatin1String("2"), textColor);
     d->autoAdjustPoint2Btn = new QPushButton;
     d->autoAdjustPoint2Btn->setIcon(pm2);
     d->autoAdjustPoint2Btn->setSizePolicy(QSizePolicy::MinimumExpanding,
