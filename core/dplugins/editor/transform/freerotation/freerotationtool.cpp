@@ -123,7 +123,7 @@ FreeRotationTool::FreeRotationTool(QObject* const parent)
 
     QLabel* const label1 = new QLabel(i18n("New width:"));
     d->newWidthLabel     = new QLabel(temp.setNum(iface.originalSize().width()) + i18n(" px"));
-    d->newWidthLabel->setAlignment( Qt::AlignBottom | Qt::AlignRight );
+    d->newWidthLabel->setAlignment(Qt::AlignBottom | Qt::AlignRight);
 
     QLabel* const label2 = new QLabel(i18n("New height:"));
     d->newHeightLabel    = new QLabel(temp.setNum(iface.originalSize().height()) + i18n(" px"));
@@ -353,8 +353,8 @@ void FreeRotationTool::setPreviewImage()
         QSize newSize = tool->getNewSize();
         int new_w     = (newSize.width()  == -1) ? iface->originalSize().width()  : newSize.width();
         int new_h     = (newSize.height() == -1) ? iface->originalSize().height() : newSize.height();
-        d->newWidthLabel->setText(temp.setNum(new_w)  + i18n(" px") );
-        d->newHeightLabel->setText(temp.setNum(new_h) + i18n(" px") );
+        d->newWidthLabel->setText(temp.setNum(new_w)  + i18n(" px"));
+        d->newHeightLabel->setText(temp.setNum(new_h) + i18n(" px"));
     }
 }
 
@@ -404,7 +404,7 @@ QString FreeRotationTool::centerString(const QString& str, int maxLength) const
         if (diff != 0)
         {
             // too long?
-            if (tmp.count() > maxLength)
+            if      (tmp.count() > maxLength)
             {
                 tmp.chop(diff);
             }
@@ -571,7 +571,7 @@ bool FreeRotationTool::pointIsValid(const QPoint& p) const
 {
     bool valid = true;
 
-    if (p.x() == -1 || p.y() == -1)
+    if ((p.x() == -1) || (p.y() == -1))
     {
         valid = false;
     }
@@ -583,7 +583,7 @@ QString FreeRotationTool::repeatString(const QString& str, int times) const
 {
     QString tmp;
 
-    for (int i = 0; i < times; ++i)
+    for (int i = 0 ; i < times ; ++i)
     {
         tmp.append(str);
     }
