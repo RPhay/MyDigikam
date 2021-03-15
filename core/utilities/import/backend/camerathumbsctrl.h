@@ -51,7 +51,7 @@ class DIGIKAM_GUI_EXPORT CameraThumbsCtrl : public QObject
 public:
 
     explicit CameraThumbsCtrl(CameraController* const ctrl, QWidget* const parent);
-    ~CameraThumbsCtrl()                                               override;
+    ~CameraThumbsCtrl()                                                override;
 
     /**
      * Fill item with relevant information.
@@ -71,7 +71,7 @@ public:
     /**
      * Return camera controller instance.
      */
-    CameraController* cameraController()                        const;
+    CameraController* cameraController()                         const;
 
 Q_SIGNALS:
 
@@ -87,8 +87,8 @@ private:
     /// Cache management methods.
     void removeItemFromCache(const QUrl& url);
     void putItemToCache(const QUrl& url, const CamItemInfo&, const QPixmap& thumb);
-    bool hasItemFromCache(const QUrl& url) const;
-    const CachedItem* retrieveItemFromCache(const QUrl& url) const;
+    bool hasItemFromCache(const QUrl& url)                       const;
+    const CachedItem* retrieveItemFromCache(const QUrl& url)     const;
 
 private:
 

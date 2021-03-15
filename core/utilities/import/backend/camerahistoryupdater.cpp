@@ -75,6 +75,7 @@ CameraHistoryUpdater::CameraHistoryUpdater(QWidget* const parent)
 CameraHistoryUpdater::~CameraHistoryUpdater()
 {
     // clear updateItems, stop processing
+
     slotCancel();
 
     // stop thread
@@ -155,6 +156,7 @@ void CameraHistoryUpdater::proccessMap(const QByteArray& id, CHUpdateItemMap& ma
     do
     {
         // We query database to check if (*it).have been already downloaded from camera.
+
         switch (CoreDbDownloadHistory::status(QString::fromUtf8(id), (*it).name, (*it).size, (*it).ctime))
         {
             case CoreDbDownloadHistory::NotDownloaded:
