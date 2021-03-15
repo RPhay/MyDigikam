@@ -208,10 +208,10 @@ FreeRotationTool::FreeRotationTool(QObject* const parent)
 
     const int cmargin = QApplication::style()->pixelMetric(QStyle::PM_DefaultChildMargin);
 
-    containerLayout2->addWidget(autoDescr,              0, 0, 1,-1);
-    containerLayout2->addWidget(d->autoAdjustPoint1Btn, 1, 0, 1, 1);
-    containerLayout2->addWidget(d->autoAdjustBtn,       1, 2, 2, 1);
-    containerLayout2->addWidget(d->autoAdjustPoint2Btn, 2, 0, 1, 1);
+    containerLayout2->addWidget(autoDescr,              0, 0, 1, -1);
+    containerLayout2->addWidget(d->autoAdjustPoint1Btn, 1, 0, 1,  1);
+    containerLayout2->addWidget(d->autoAdjustBtn,       1, 2, 2,  1);
+    containerLayout2->addWidget(d->autoAdjustPoint2Btn, 2, 0, 1,  1);
     containerLayout2->setColumnStretch(1, 10);
     containerLayout2->setContentsMargins(cmargin, cmargin, cmargin, cmargin);
     autoAdjustContainer->setLayout(containerLayout2);
@@ -233,12 +233,12 @@ FreeRotationTool::FreeRotationTool(QObject* const parent)
     const int spacing = d->gboxSettings->spacingHint();
 
     QGridLayout* const grid2 = new QGridLayout;
-    grid2->addWidget(label1,            0, 0, 1, 1);
-    grid2->addWidget(d->newWidthLabel,  0, 1, 1, 1);
-    grid2->addWidget(label2,            1, 0, 1, 1);
-    grid2->addWidget(d->newHeightLabel, 1, 1, 1, 1);
-    grid2->addWidget(line,              2, 0, 1,-1);
-    grid2->addWidget(d->expanderBox,    3, 0, 1,-1);
+    grid2->addWidget(label1,            0, 0, 1,  1);
+    grid2->addWidget(d->newWidthLabel,  0, 1, 1,  1);
+    grid2->addWidget(label2,            1, 0, 1,  1);
+    grid2->addWidget(d->newHeightLabel, 1, 1, 1,  1);
+    grid2->addWidget(line,              2, 0, 1, -1);
+    grid2->addWidget(d->expanderBox,    3, 0, 1, -1);
     grid2->setRowStretch(3, 10);
     grid2->setContentsMargins(spacing, spacing, spacing, spacing);
     grid2->setSpacing(spacing);
