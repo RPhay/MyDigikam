@@ -396,4 +396,5 @@ BUGFIXES:
 353 ==> 376690 - Irritating behavior of list when moving images.
 354 ==> 434112 - digiKam-7.2* crashes at first start after install while starting main view.
 355 ==> 432760 - New items for people entries without seeing the mentioned photos.
-356 ==> 
+356 ==> 434423 - Digikam displaying incorrect lens info in 'Properties - Photograph Properties'.
+357 ==> 

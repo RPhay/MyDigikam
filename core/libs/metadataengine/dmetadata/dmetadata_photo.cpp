@@ -262,7 +262,9 @@ QString DMetadata::getLensDescription() const
     lensExifTags.append(QLatin1String("Exif.Photo.0xFDEA"));          // Non-standard Exif tag set by Camera Raw.
     lensExifTags.append(QLatin1String("Exif.OlympusEq.LensType"));    // Olympus Cameras Makernote.
     lensExifTags.append(QLatin1String("Exif.OlympusEq.LensModel"));   // Olympus Cameras Makernote.
+
     // Check Makernotes first.
+
     lensExifTags.append(QLatin1String("Exif.Photo.LensModel"));       // Sony Cameras Makernote and others.
 
     // TODO : add Fuji camera Makernotes.
@@ -277,10 +279,11 @@ QString DMetadata::getLensDescription() const
         // To prevent undecoded tag values from Exiv2 as "(65535)"
         // or the value "----" from Exif.Photo.LensModel
 
-        if (!lens.isEmpty()                     &&
-            (lens != QLatin1String("----"))     &&
-            (lens != QLatin1String("65535"))    &&
-            !(lens.startsWith(QLatin1Char('(')) &&
+        if (!lens.isEmpty()                        &&
+            (lens != QLatin1String("----"))        &&
+            (lens != QLatin1String("65535"))       &&
+            (lens != QLatin1String("Manual lens")) &&
+            !(lens.startsWith(QLatin1Char('('))    &&
               lens.endsWith(QLatin1Char(')'))
              )
            )
