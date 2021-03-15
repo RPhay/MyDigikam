@@ -64,7 +64,7 @@ See [AUTHORS](AUTHORS) file for details.
 
 # Related URLs
 
-http://www.digikam.org
+https://www.digikam.org
 
 # Contact
 
@@ -76,7 +76,7 @@ If you want contribute to digiKam developments write an email to:
 
 digikam-devel@kde.org
 
-IRC channel from irc.freenode.org server: [#digikam](http://webchat.freenode.net/?channels=digikam)
+IRC channel from irc.freenode.org server: [#digikam](https://webchat.freenode.net/?channels=digikam)
 
 # Bug reports
 
@@ -88,7 +88,7 @@ or a devel wish.
 
 The current bugs and devel wishes reported to the bugzilla servers can be seen at this url:
 
-* [digiKam](http://bugs.kde.org/buglist.cgi?product=digikam&bug_status=UNCONFIRMED&bug_status=NEW&bug_status=ASSIGNED&bug_status=REOPENED)
+* [digiKam](https://bugs.kde.org/buglist.cgi?product=digikam&bug_status=UNCONFIRMED&bug_status=NEW&bug_status=ASSIGNED&bug_status=REOPENED)
 
 Extra Bugzilla servers for shared libs used by digiKam :
 
@@ -126,7 +126,7 @@ Usual CMake options :
   * `release`                  : generate stripped and optimized bin files. For packaging.
 * `-DCMAKE_INSTALL_PREFIX=/usr`: install program in /usr.
 
-More details can be found [at this url](http://techbase.kde.org/Development/Tutorials/CMake#Environment_Variables)
+More details can be found [at this url](https://community.kde.org/Guidelines_and_HOWTOs/CMake)
 
 Note: To know KDE install path on your computer, use `kf5-config --prefix` command line like this (with full debug object enabled):
 
