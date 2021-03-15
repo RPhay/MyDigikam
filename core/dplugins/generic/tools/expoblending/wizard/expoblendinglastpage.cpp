@@ -72,7 +72,7 @@ ExpoBlendingLastPage::ExpoBlendingLastPage(ExpoBlendingManager* const mngr, QWiz
                                      "</qt>")
                    .arg(i18nc("@info", "Bracketed Images Pre-Processing is Done"))
                    .arg(i18nc("@info", "Congratulations. Your images are ready to be fused."))
-                   .arg(i18nc("@info", "To perform this operation, Emblend program from will be used."))
+                   .arg(i18nc("@info", "To perform this operation, Enblend program from will be used."))
                    .arg(i18nc("@info", "Press \"Finish\" button to fuse your items and make a pseudo HDR image.")));
 
     vbox->setStretchFactor(new QWidget(vbox), 10);
