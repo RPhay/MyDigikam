@@ -68,6 +68,7 @@
 #include <exiv2/exv_conf.h>
 #include <exiv2/error.hpp>
 #include <exiv2/image.hpp>
+#include <exiv2/bmffimage.hpp>
 #include <exiv2/jpgimage.hpp>
 #include <exiv2/datasets.hpp>
 #include <exiv2/tags.hpp>
