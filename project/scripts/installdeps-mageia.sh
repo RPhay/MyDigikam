@@ -70,6 +70,12 @@ urpmi --auto \
       clang-analyzer \
       intltool \
       lzip \
+      gzip \
+      unzip \
+      wget \
+      coreutils \
+      dmg2img \
+      tesseract \
       eigen3-devel \
       lensfun-devel \
       marble-devel \
