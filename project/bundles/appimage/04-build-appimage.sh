@@ -163,6 +163,7 @@ echo -e "------------- Copy ImageMagick codecs\n"
 # NOTE: even with 64 bits, magick .so files are stored in /usr/lib
 
 cp -r /usr/lib64/ImageMagick*             ./usr/lib
+cp -r /etc/ImageMagick*                   ./usr/etc
 
 echo -e "------------- Copy I18n\n"
 
