@@ -108,7 +108,8 @@ rm -fr ./usr/plugins/ktexteditor
 rm -fr ./usr/plugins/kf5/parts
 rm -fr ./usr/plugins/konsolepart.so
 
-# copy runtime data files
+echo -e "------------- Copy runtime data files\n"
+
 cp -r /usr/share/digikam                  ./usr/share
 cp -r /usr/share/showfoto                 ./usr/share
 cp $ORIG_WD/icon-rcc/breeze.rcc           ./usr/share/digikam
@@ -132,33 +133,43 @@ cp -r /usr/share/dbus-1/interfaces/kf5*   ./usr/share/dbus-1/interfaces/
 cp -r /usr/share/dbus-1/services/*kde*    ./usr/share/dbus-1/services/
 cp -r /usr/${LIBSUFFIX}/libexec/kf5       ./usr/lib/libexec/
 
-# AppImage stream data file
+echo -e "------------- Copy AppImage stream data file\n"
+
 cp -r /usr/share/metainfo/org.kde.digikam.appdata.xml   ./usr/share/metainfo/digikam.appdata.xml
 cp -r /usr/share/metainfo/org.kde.showfoto.appdata.xml  ./usr/share/metainfo/showfoto.appdata.xml
 
-# QWebEngine bin data files.
 # NOTE: no ressources data are provided with QtWebKit
+
 if [[ $DK_QTWEBENGINE = 1 ]] ; then
+
+    echo -e "------------- Copy QWebEngine bin data files\n"
 
     cp -r /usr/resources ./usr
 
 fi
 
-# copy libgphoto2 drivers
+echo -e "------------- Copy libgphoto2 drivers\n"
+
 find  /usr/${LIBSUFFIX}/libgphoto2      -name "*.so" -type f -exec cp {} ./usr/lib/libgphoto2 \;      2>/dev/null
 find  /usr/${LIBSUFFIX}/libgphoto2_port -name "*.so" -type f -exec cp {} ./usr/lib/libgphoto2_port \; 2>/dev/null
 
-# copy sane backends
+echo -e "------------- Copy sane backends\n"
+
 cp -r /usr/${LIBSUFFIX}/sane              ./usr/lib
 cp -r /etc/sane.d                         ./usr/etc
 
-# copy ImageMagick codecs (even with 64 bits, magick .so files are stored in /usr/lib)
-cp -r /usr/lib/ImageMagick*               ./usr/lib
+echo -e "------------- Copy ImageMagick codecs\n"
 
-# copy i18n
+# NOTE: even with 64 bits, magick .so files are stored in /usr/lib
+
+cp -r /usr/lib64/ImageMagick*             ./usr/lib
+
+echo -e "------------- Copy I18n\n"
 
 # Qt translations files
 if [[ -e /usr/translations ]]; then
+
+    echo -e "------------- Copy Qt translations files\n"
 
     cp -r /usr/translations ./usr
     # optimizations
@@ -175,32 +186,38 @@ if [[ -e /usr/translations ]]; then
 
 fi
 
-# KF5 translations files
+echo -e "------------- Copy KF5 translations files\n"
+
 FILES=$(cat $ORIG_WD/logs/build-extralibs.full.log | grep /usr/share/locale | grep -e .qm -e .mo | cut -d' ' -f3)
 
 for FILE in $FILES ; do
     cp --parents $FILE ./
 done
 
-# digiKam translations files
+echo -e "------------- Copy digiKam translations files\n"
+
 FILES=$(cat $ORIG_WD/logs/build-digikam.full.log | grep /usr/share/locale | grep -e .qm -e .mo | cut -d' ' -f3)
 
 for FILE in $FILES ; do
     cp --parents $FILE ./
 done
 
-# digiKam icons files
+echo -e "---------- Copy digiKam icons files\n"
+
 FILES=$(cat $ORIG_WD/logs/build-digikam.full.log | grep /usr/share/icons/ | cut -d' ' -f3)
 
 for FILE in $FILES ; do
+    echo $FILE
     cp --parents $FILE ./
 done
 
-# Marble data and plugins files
+echo -e "---------- Copy Marble data and plugins files\n"
 
 cp -r /usr/${LIBSUFFIX}/marble/plugins/ ./usr/bin/
 
 cp -r /usr/share/marble/data            ./usr/bin/
+
+echo -e "---------- Copy system libraries for binary compatibility\n"
 
 # otherwise segfaults!?
 cp $(ldconfig -p | grep /$LIBSUFFIX/libsasl2.so.3      | cut -d ">" -f 2 | xargs) ./usr/lib/
@@ -223,6 +240,8 @@ cp $(ldconfig -p | grep /${LIBSUFFIX}/libEGL.so.1      | cut -d ">" -f 2 | xargs
 # For Fedora 20
 cp $(ldconfig -p | grep /${LIBSUFFIX}/libfreetype.so.6 | cut -d ">" -f 2 | xargs) ./usr/lib/
 
+echo -e "---------- Copy target binaries\n"
+
 cp /usr/bin/digikam                 ./usr/bin
 cp /usr/bin/showfoto                ./usr/bin
 cp /usr/bin/kbuildsycoca5           ./usr/bin
@@ -230,18 +249,22 @@ cp /usr/bin/solid-hardware5         ./usr/bin
 
 if [[ $DK_QTWEBENGINE = 1 ]] ; then
 
-    # QtWebEngine runtime process
+    echo -e "---------- Copy QtWebEngine runtime process\n"
+
     [[ -e /usr/libexec/QtWebEngineProcess ]] && cp /usr/libexec/QtWebEngineProcess ./usr/bin
 
 else
 
-    # QtWebKit runtime process
+    echo -e "---------- Copy QtWebKit runtime process\n"
+
     [[ -e /usr/libexec/QtWebNetworkProcess ]] && cp /usr/libexec/QtWebNetworkProcess ./usr/bin
     [[ -e /usr/libexec/QtWebProcess ]]        && cp /usr/libexec/QtWebProcess        ./usr/bin
     [[ -e /usr/libexec/QtWebStorageProcess ]] && cp /usr/libexec/QtWebStorageProcess ./usr/bin
     [[ -e /usr/libexec/QtWebPluginProcess ]]  && cp /usr/libexec/QtWebPluginProcess  ./usr/bin
 
 fi
+
+echo -e "---------- Copy Solid binary\n"
 
 # For Solid action when camera is connected to computer
 cp /usr/bin/qdbus                   ./usr/share/digikam/utils
