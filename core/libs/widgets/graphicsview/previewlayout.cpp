@@ -44,7 +44,7 @@ public:
     explicit Private()
       : view(nullptr),
         item(nullptr),
-        isFitToWindow(false),
+        isFitToWindow(true),
         previousZoom(1),
         zoomMultiplier(1.2),
         maxZoom(12.0),

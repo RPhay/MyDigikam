@@ -358,7 +358,6 @@ void GPSItemDetails::slotSetCurrentImage(const QModelIndex& index)
         if (item)
         {
             d->previewManager->previewItem()->setPath(item->url().toLocalFile(), true);
-            d->previewManager->fitToWindow();
             gpsData = item->gpsData();
         }
     }
@@ -389,7 +388,6 @@ void GPSItemDetails::slotModelDataChanged(const QModelIndex& topLeft, const QMod
         if (item)
         {
             d->previewManager->previewItem()->setPath(item->url().toLocalFile(), true);
-            d->previewManager->fitToWindow();
             gpsData = item->gpsData();
         }
 
