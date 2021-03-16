@@ -178,18 +178,21 @@ public:
     /**
      * Return true if Exiv2 library initialization is done properly.
      * This method must be called before using libMetaEngine with multithreading.
-     * It initialize several non re-entrancy code from Adobe XMP SDK
+     * It initialize several non re-entrancy code from Adobe XMP SDK, and register
+     * a function to cleanup automatically all XMP SDK memory allocation.
      * See Bug #166424 for details.
      */
     static bool initializeExiv2();
 
     /**
-     * Return true if library can handle Xmp metadata.
+     * Return true if Exiv2 library is compiled with Xmp metadata support.
      */
     static bool supportXmp();
 
     /**
-     * Return true if library support Bmff based files (CR3, HEIF, HEIC, and AVIF).
+     * Return true if library support Base Media File Format (aka CR3, HEIF, HEIC, and AVIF).
+     * Note: use this function only after to call initializeExiv2(), else false will aways returned.
+     * The function return true only if Exiv2 >= 0.27.4 compiled with BMFF support.
      */
     static bool supportBmff();
 
