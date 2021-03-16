@@ -70,7 +70,5 @@ int main(int argc, char** argv)
     img.putImageData(nrf.getTargetImage().bits());
     img.save(outFilePath, QLatin1String("PNG"));
 
-    MetaEngine::cleanupExiv2();
-
     return 0;
 }

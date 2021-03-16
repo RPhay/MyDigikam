@@ -329,9 +329,6 @@ MainWindow::MainWindow(QCommandLineParser* const cmdLineArgs, QWidget* const par
 
 MainWindow::~MainWindow()
 {
-    // clean up the Exiv2 memory:
-    MetaEngine::cleanupExiv2();
-
     if (d->progressBar)
     {
         delete d->progressBar;

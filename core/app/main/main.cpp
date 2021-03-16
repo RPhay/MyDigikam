@@ -335,7 +335,6 @@ int main(int argc, char* argv[])
         ThumbsDbAccess::cleanUpDatabase();
         FaceDbAccess::cleanUpDatabase();
         SimilarityDbAccess::cleanUpDatabase();
-        MetaEngine::cleanupExiv2();
 
         return 0;
     }
@@ -411,7 +410,6 @@ int main(int argc, char* argv[])
     ThumbsDbAccess::cleanUpDatabase();
     FaceDbAccess::cleanUpDatabase();
     SimilarityDbAccess::cleanUpDatabase();
-    MetaEngine::cleanupExiv2();
 
 #ifdef Q_OS_WIN
 

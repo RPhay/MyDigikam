@@ -67,7 +67,6 @@ void CommentReadWriteTest::initTestCase()
 
 void CommentReadWriteTest::cleanupTestCase()
 {
-    MetaEngine::cleanupExiv2();
 }
 
 void CommentReadWriteTest::testSimpleReadAfterWrite()

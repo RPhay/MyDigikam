@@ -68,7 +68,5 @@ int main(int argc, char** argv)
     img.crop(rect);
     img.save(outFilePath, QLatin1String("PNG"));
 
-    MetaEngine::cleanupExiv2();
-
     return 0;
 }

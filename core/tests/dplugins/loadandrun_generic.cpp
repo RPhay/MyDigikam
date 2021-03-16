@@ -170,8 +170,6 @@ int main(int argc, char* argv[])
                 }
             }
         }
-
-        MetaEngine::cleanupExiv2();
     }
     else
     {

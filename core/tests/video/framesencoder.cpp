@@ -70,7 +70,5 @@ int main(int argc, char** argv)
 
     app.exec();
 
-    MetaEngine::cleanupExiv2();
-
     return 0;
 }

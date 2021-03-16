@@ -51,7 +51,6 @@ void RatingReadWriteTest::initTestCase()
 
 void RatingReadWriteTest::cleanupTestCase()
 {
-    MetaEngine::cleanupExiv2();
 }
 
 void RatingReadWriteTest::testSimpleReadAfterWrite()

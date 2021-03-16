@@ -226,10 +226,6 @@ void DImgAbstractHistoryTest::cleanupBaseTestCase()
     delete m_im;
     QFile file(m_tempFile);
     file.remove();
-
-    // clean up the Exiv2 memory:
-
-    MetaEngine::cleanupExiv2();
 }
 
 void DImgAbstractHistoryTest::slotImageLoaded(const QString&, bool)

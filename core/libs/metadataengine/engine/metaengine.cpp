@@ -84,6 +84,7 @@ MetaEngine& MetaEngine::operator=(const MetaEngine& metadata)
 
 bool MetaEngine::initializeExiv2()
 {
+
 #ifdef _XMP_SUPPORT_
 
     if (!Exiv2::XmpParser::initialize())
@@ -91,25 +92,33 @@ bool MetaEngine::initializeExiv2()
         return false;
     }
 
+    /**
+     * It cleans up memory used by Adobe XMP SDK automatically at application exit.
+     * See Bug #166424 for details.
+     */
+    ::atexit(Exiv2::XmpParser::terminate);
+
 #endif // _XMP_SUPPORT_
+
+#if EXIV2_TEST_VERSION(0,27,4)
+
+    // For BMFF based files support (CR3, HEIF, HEIC, and AVIF)
+
+    s_metaEngineSupportBmff = Exiv2::enableBMFF(true);
+
+#endif
 
     return true;
 }
 
-bool MetaEngine::cleanupExiv2()
+bool MetaEngine::supportBmff()
 {
-    // Fix memory leak if Exiv2 support XMP.
-#ifdef _XMP_SUPPORT_
-
-    Exiv2::XmpParser::terminate();
-
-#endif // _XMP_SUPPORT_
-
-    return true;
+    return s_metaEngineSupportBmff;
 }
 
 bool MetaEngine::supportXmp()
 {
+
 #ifdef _XMP_SUPPORT_
 
     return true;
@@ -119,6 +128,7 @@ bool MetaEngine::supportXmp()
     return false;
 
 #endif // _XMP_SUPPORT_
+
 }
 
 bool MetaEngine::supportMetadataWriting(const QString& /*typeMime*/)
@@ -154,6 +164,7 @@ bool MetaEngine::supportMetadataWriting(const QString& /*typeMime*/)
 
 QString MetaEngine::Exiv2Version()
 {
+
 #if EXIV2_TEST_VERSION(0,27,0)
 
     return QString::fromStdString(Exiv2::versionString());
@@ -163,6 +174,7 @@ QString MetaEngine::Exiv2Version()
     return QLatin1String(Exiv2::version());
 
 #endif
+
 }
 
 //-- General methods ----------------------------------------------

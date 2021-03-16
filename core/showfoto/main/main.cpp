@@ -212,12 +212,12 @@ int main(int argc, char* argv[])
 
     int ret = app.exec();
 
-    MetaEngine::cleanupExiv2();
-
 #ifdef Q_OS_WIN
+
     // Necessary to open native open with dialog on windows
 
     CoUninitialize();
+
 #endif
 
 #ifdef HAVE_IMAGE_MAGICK

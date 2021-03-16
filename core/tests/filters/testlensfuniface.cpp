@@ -67,7 +67,5 @@ int main(int argc, char** argv)
         valRet = true;
     }
 
-    MetaEngine::cleanupExiv2();
-
     return valRet;
 }

@@ -110,7 +110,5 @@ int main(int argc, char** argv)
     LoadSaveThreadTest app(argc, argv);
     int ret = app.exec();
 
-    MetaEngine::cleanupExiv2();
-
     return ret;
 }

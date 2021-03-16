@@ -62,7 +62,6 @@ void TagsReadWriteTest::initTestCase()
 
 void TagsReadWriteTest::cleanupTestCase()
 {
-    MetaEngine::cleanupExiv2();
 }
 
 void TagsReadWriteTest::testSimpleReadAfterWrite()

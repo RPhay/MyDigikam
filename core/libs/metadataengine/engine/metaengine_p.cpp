@@ -69,6 +69,12 @@ namespace Digikam
  */
 QMutex s_metaEngineMutex(QMutex::Recursive);
 
+/**
+ * Boolean value about Bmff based file support (CR3, HEIF, HEIC, and AVIF).
+ * Initialized at run time by initializeExiv2().
+ */
+bool s_metaEngineSupportBmff = false;
+
 MetaEngine::Private::Private()
     : writeRawFiles         (false),
       writeDngFiles         (false),

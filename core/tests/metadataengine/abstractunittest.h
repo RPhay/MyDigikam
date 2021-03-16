@@ -46,7 +46,7 @@ class AbstractUnitTest : public QObject
 public:
 
     AbstractUnitTest(QObject* const parent = nullptr)
-        : QObject(parent),
+        : QObject              (parent),
           m_originalImageFolder(QFINDTESTDATA("data/")) ///< Original files come with source code.
     {
     }
@@ -81,7 +81,6 @@ protected Q_SLOTS:
 
     virtual void cleanupTestCase()
     {
-        MetaEngine::cleanupExiv2();
     }
 
 protected:

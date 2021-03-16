@@ -67,7 +67,5 @@ int main(int argc, char** argv)
 
     DPluginLoader::instance()->cleanUp();
 
-    MetaEngine::cleanupExiv2();
-
     return 0;
 }

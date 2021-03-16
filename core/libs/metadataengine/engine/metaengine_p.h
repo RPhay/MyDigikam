@@ -111,6 +111,7 @@ namespace Digikam
 {
 
 extern QMutex s_metaEngineMutex;
+extern bool   s_metaEngineSupportBmff;
 
 // --------------------------------------------------------------------------
 

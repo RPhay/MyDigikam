@@ -113,7 +113,7 @@ LibsInfoDlg::LibsInfoDlg(QWidget* const parent)
     // --------------------------------------------------------
     // By default set a list of common components information used by Showfoto and digiKam.
 
-    static const char* CONTEXT         = "Component information, see help->components";
+    static const char* CONTEXT         = "@item: Component information, see help->components";
     static const QString SUPPORTED_YES = i18nc("@item: component is supported/available",     "Yes");
     static const QString SUPPORTED_NO  = i18nc("@item: component is not available/supported", "No");
 
@@ -142,9 +142,10 @@ LibsInfoDlg::LibsInfoDlg(QWidget* const parent)
     list.insert(i18nc(CONTEXT, "Rajce support"),               SUPPORTED_YES);
 #endif
 
-
     list.insert(i18nc(CONTEXT, "Exiv2"),                       MetaEngine::Exiv2Version());
     list.insert(i18nc(CONTEXT, "Exiv2 supports XMP metadata"), MetaEngine::supportXmp() ?
+                SUPPORTED_YES : SUPPORTED_NO);
+    list.insert(i18nc(CONTEXT, "Exiv2 supports Base Media"),   MetaEngine::supportBmff() ?
                 SUPPORTED_YES : SUPPORTED_NO);
 
 #ifdef HAVE_LENSFUN
