@@ -177,7 +177,7 @@ void RajceWidget::updateLabels(const QString&, const QString&)
           QString::fromLatin1(".rajce.net'>"
                               "<font color=\"#9ACD32\">Rajce.net</font>"
                               "</a></h2></b>")
-        : QString::fromLatin1("<b><h2><a href='http://www.rajce.net'>"
+        : QString::fromLatin1("<b><h2><a href='https://www.rajce.net'>"
                               "<font color=\"#9ACD32\">Rajce.net</font>"
                               "</a></h2></b>");
 
