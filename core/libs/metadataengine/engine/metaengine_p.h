@@ -84,12 +84,17 @@
 #   define _XMP_SUPPORT_ 1
 #endif
 
+#ifndef EXIV2_TEST_VERSION
+#    define EXIV2_TEST_VERSION(major,minor,patch) \
+         ( EXIV2_VERSION >= EXIV2_MAKE_VERSION(major,minor,patch) )
+#endif
+
 #if EXIV2_TEST_VERSION(0,27,99)
 #   define AutoPtr UniquePtr
 #endif
 
 #if EXIV2_TEST_VERSION(0,27,4)
-#include <exiv2/bmffimage.hpp>
+#   include <exiv2/bmffimage.hpp>
 #endif
 
 // With exiv2 > 0.20.0, all makernote header files have been removed to increase binary compatibility.
