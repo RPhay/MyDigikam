@@ -399,4 +399,5 @@ BUGFIXES:
 356 ==> 434423 - Digikam displaying incorrect lens info in 'Properties - Photograph Properties'.
 357 ==> 434446 - "Set point" shortcut removed in ImageEditor in digikam version 6.4.0.
 358 ==> 433997 - digiKam does not open.
-359 ==> 
+359 ==> 434299 - No entries in Imagemagick Loader when in Appimage.
+360 ==> 
