@@ -195,13 +195,13 @@ bool MetaEngine::Private::saveToXMPSidecar(const QFileInfo& finfo) const
 #endif
 
     }
-    catch(Exiv2::AnyError& e)
+    catch (Exiv2::AnyError& e)
     {
         printExiv2ExceptionError(QLatin1String("Cannot save metadata to XMP sidecar using Exiv2 "), e);
 
         return false;
     }
-    catch(...)
+    catch (...)
     {
         qCCritical(DIGIKAM_METAENGINE_LOG) << "Default exception from Exiv2";
 
@@ -313,13 +313,13 @@ bool MetaEngine::Private::saveToFile(const QFileInfo& finfo) const
 #endif
 
     }
-    catch(Exiv2::AnyError& e)
+    catch (Exiv2::AnyError& e)
     {
         printExiv2ExceptionError(QLatin1String("Cannot save metadata to image using Exiv2 "), e);
 
         return false;
     }
-    catch(...)
+    catch (...)
     {
         qCCritical(DIGIKAM_METAENGINE_LOG) << "Default exception from Exiv2";
 
@@ -527,11 +527,11 @@ bool MetaEngine::Private::saveOperations(const QFileInfo& finfo, Exiv2::Image::A
 
         return true;
     }
-    catch(Exiv2::AnyError& e)
+    catch (Exiv2::AnyError& e)
     {
         printExiv2ExceptionError(QLatin1String("Cannot save metadata using Exiv2 "), e);
     }
-    catch(...)
+    catch (...)
     {
         qCCritical(DIGIKAM_METAENGINE_LOG) << "Default exception from Exiv2";
     }
@@ -611,11 +611,11 @@ QString MetaEngine::Private::convertCommentValue(const Exiv2::Exifdatum& exifDat
             return detectEncodingAndDecode(comment);
         }
     }
-    catch(Exiv2::AnyError& e)
+    catch (Exiv2::AnyError& e)
     {
         printExiv2ExceptionError(QLatin1String("Cannot convert Comment using Exiv2 "), e);
     }
-    catch(...)
+    catch (...)
     {
         qCCritical(DIGIKAM_METAENGINE_LOG) << "Default exception from Exiv2";
     }
@@ -832,11 +832,11 @@ int MetaEngine::Private::getXMPTagsListFromPrefix(const QString& pf, MetaEngine:
             }
         }
     }
-    catch(Exiv2::AnyError& e)
+    catch (Exiv2::AnyError& e)
     {
         printExiv2ExceptionError(QLatin1String("Cannot get Xmp tags list using Exiv2 "), e);
     }
-    catch(...)
+    catch (...)
     {
         qCCritical(DIGIKAM_METAENGINE_LOG) << "Default exception from Exiv2";
     }
@@ -974,11 +974,11 @@ QString MetaEngine::Private::extractIptcTagString(const Exiv2::IptcData& iptcDat
             value = QString::fromStdString(os.str());
         }
     }
-    catch(Exiv2::AnyError& e)
+    catch (Exiv2::AnyError& e)
     {
         printExiv2ExceptionError(QLatin1String("Cannot decode Iptc tag string with right encoding using Exiv2 "), e);
     }
-    catch(...)
+    catch (...)
     {
         qCCritical(DIGIKAM_METAENGINE_LOG) << "Default exception from Exiv2";
     }

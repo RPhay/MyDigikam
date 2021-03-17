@@ -292,7 +292,7 @@ void FunnelReal::Private::loadTrainingData(const QString& path)
     {
         qCritical(DIGIKAM_FACESENGINE_LOG) << "Error loading Congealing/Funnel training data:" << e.what();
     }
-    catch(...)
+    catch (...)
     {
         qCritical(DIGIKAM_FACESENGINE_LOG) << "Default exception";
     }

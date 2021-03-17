@@ -147,11 +147,11 @@ bool MetaEngine::load(const QString& filePath)
 
         hasLoaded = true;
     }
-    catch(Exiv2::AnyError& e)
+    catch (Exiv2::AnyError& e)
     {
         d->printExiv2ExceptionError(QString::fromUtf8("Cannot load metadata from file %1").arg(getFilePath()), e);
     }
-    catch(...)
+    catch (...)
     {
         qCCritical(DIGIKAM_METAENGINE_LOG) << "Default exception from Exiv2";
     }
@@ -220,11 +220,11 @@ bool MetaEngine::loadFromSidecarAndMerge(const QString& filePath)
             }
         }
     }
-    catch(Exiv2::AnyError& e)
+    catch (Exiv2::AnyError& e)
     {
         d->printExiv2ExceptionError(QString::fromUtf8("Cannot load XMP sidecar from file %1").arg(getFilePath()), e);
     }
-    catch(...)
+    catch (...)
     {
         qCCritical(DIGIKAM_METAENGINE_LOG) << "Default exception from Exiv2";
     }
