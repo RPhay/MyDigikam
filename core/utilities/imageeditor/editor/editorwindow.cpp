@@ -617,7 +617,7 @@ void EditorWindow::slotAboutToShowUndoMenu()
     m_undoAction->menu()->clear();
     QStringList titles = m_canvas->interface()->getUndoHistory();
 
-    for (int i = 0; i < titles.size(); ++i)
+    for (int i = 0 ; i < titles.size() ; ++i)
     {
         QAction* const action = m_undoAction->menu()->addAction(titles.at(i));
         int id                = i + 1;
@@ -632,7 +632,7 @@ void EditorWindow::slotAboutToShowRedoMenu()
     m_redoAction->menu()->clear();
     QStringList titles = m_canvas->interface()->getRedoHistory();
 
-    for (int i = 0; i < titles.size(); ++i)
+    for (int i = 0 ; i < titles.size() ; ++i)
     {
         QAction* const action = m_redoAction->menu()->addAction(titles.at(i));
         int id                = i + 1;

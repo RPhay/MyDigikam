@@ -280,7 +280,7 @@ void DZoomBar::slotZoomSelected(int index)
     bool ok     = false;
     double zoom = d->zoomCombo->itemData(index).toDouble(&ok) / 100.0;
 
-    if (ok && zoom > 0.0)
+    if (ok && (zoom > 0.0))
     {
         emit signalZoomValueEdited(zoom);
     }
@@ -292,7 +292,7 @@ void DZoomBar::slotZoomTextChanged()
     bool ok     = false;
     double zoom = QLocale().toDouble(txt, &ok) / 100.0;
 
-    if (ok && zoom > 0.0 && zoom <= 48.0)
+    if (ok && (zoom > 0.0) && (zoom <= 48.0))
     {
         emit signalZoomValueEdited(zoom);
     }
