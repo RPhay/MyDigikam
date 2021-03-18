@@ -564,7 +564,7 @@ void FbTalker::slotFinished(QNetworkReply* reply)
 
     QByteArray buffer = reply->readAll();
 
-    switch(d->state)
+    switch (d->state)
     {
         case (Private::FB_GETLOGGEDINUSER):
             parseResponseGetLoggedInUser(buffer);

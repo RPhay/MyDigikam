@@ -367,7 +367,7 @@ void ImgurTalker::doWork()
         return; // Wait for the signalAuthorized() signal.
     }
 
-    switch(work.type)
+    switch (work.type)
     {
         case ImgurTalkerActionType::ACCT_INFO:
         {

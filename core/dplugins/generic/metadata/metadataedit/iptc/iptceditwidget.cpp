@@ -306,7 +306,7 @@ void IPTCEditWidget::slotModified()
 
 void IPTCEditWidget::showPage(int page)
 {
-    switch(page)
+    switch (page)
     {
         case 0:
             setCurrentPage(d->page_content);

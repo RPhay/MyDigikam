@@ -760,7 +760,7 @@ void SmugTalker::slotFinished(QNetworkReply* reply)
 
     QByteArray buffer = reply->readAll();
 
-    switch(d->state)
+    switch (d->state)
     {
         case (Private::SMUG_LOGIN):
             parseResponseLogin(buffer);

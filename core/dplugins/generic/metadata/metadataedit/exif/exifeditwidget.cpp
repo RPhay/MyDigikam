@@ -257,7 +257,7 @@ void EXIFEditWidget::slotModified()
 
 void EXIFEditWidget::showPage(int page)
 {
-    switch(page)
+    switch (page)
     {
         case 0:
             setCurrentPage(d->page_caption);

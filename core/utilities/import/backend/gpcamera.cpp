@@ -445,7 +445,7 @@ bool GPCamera::getFreeSpace(unsigned long& kBSize, unsigned long& kBAvail)
     {
         if (sinfos[i].fields & GP_STORAGEINFO_FILESYSTEMTYPE)
         {
-            switch(sinfos[i].fstype)
+            switch (sinfos[i].fstype)
             {
                 case GP_STORAGEINFO_FST_UNDEFINED:
                     qCDebug(DIGIKAM_IMPORTUI_LOG) << "Storage fstype: undefined";

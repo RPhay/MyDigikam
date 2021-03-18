@@ -392,7 +392,7 @@ void ImageShackWindow::uploadNextItem()
 
     qCDebug(DIGIKAM_WEBSERVICES_LOG) << "Album ID is "<< d->widget->d->galleriesCob->itemData(gidx).toString();
 
-    switch(gidx)
+    switch (gidx)
     {
         case 0:
             d->talker->uploadItem(imgPath, opts);

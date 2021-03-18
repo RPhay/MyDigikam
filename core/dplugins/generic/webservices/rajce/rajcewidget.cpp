@@ -303,7 +303,7 @@ void RajceWidget::slotProgressStarted(unsigned commandType)
 {
     QString text;
 
-    switch(commandType)
+    switch (commandType)
     {
         case Login:       text = i18n("Logging in %v%");     break;
         case Logout:      text = i18n("Logging out %v%");    break;

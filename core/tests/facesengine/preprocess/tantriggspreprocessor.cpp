@@ -136,7 +136,7 @@ cv::Mat TanTriggsPreprocessor::normalize(const cv::Mat& src)
 
     cv::Mat dst;
 
-    switch(src.channels())
+    switch (src.channels())
     {
         case 1:
             cv::normalize(src, dst, 0, 255, cv::NORM_MINMAX, CV_8UC1);

@@ -632,7 +632,7 @@ QVariant ShowfotoItemModel::data(const QModelIndex& index, int role) const
         return QVariant();
     }
 
-    switch(role)
+    switch (role)
     {
         case Qt::DisplayRole:
         case Qt::ToolTipRole:

@@ -219,7 +219,7 @@ LibsInfoDlg::~LibsInfoDlg()
 
 QString LibsInfoDlg::checkTriState(int value) const
 {
-    switch(value)
+    switch (value)
     {
         case true:
         {
