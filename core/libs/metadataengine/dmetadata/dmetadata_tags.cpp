@@ -67,16 +67,22 @@ bool DMetadata::getItemTagsPath(QStringList& tagsPath,
                     switch (currentOpts)
                     {
                         case NamespaceEntry::TAG_XMPBAG:
+                        {
                             tagsPath = getXmpTagStringBag(nameSpace, false);
                             break;
+                        }
 
                         case NamespaceEntry::TAG_XMPSEQ:
+                        {
                             tagsPath = getXmpTagStringSeq(nameSpace, false);
                             break;
+                        }
 
                         case NamespaceEntry::TAG_ACDSEE:
+                        {
                             getACDSeeTagsPath(tagsPath);
                             break;
+                        }
 
                         // not used here, to suppress warnings
                         case NamespaceEntry::COMMENT_XMP:
@@ -84,7 +90,9 @@ bool DMetadata::getItemTagsPath(QStringList& tagsPath,
                         case NamespaceEntry::COMMENT_ATLLANGLIST:
                         case NamespaceEntry::NO_OPTS:
                         default:
+                        {
                             break;
+                        }
                     }
 
                     if      (!tagsPath.isEmpty())

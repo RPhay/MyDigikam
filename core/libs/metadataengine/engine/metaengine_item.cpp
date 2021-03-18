@@ -65,7 +65,9 @@ bool MetaEngine::setItemProgramId(const QString& program, const QString& version
             Exiv2::ExifData::const_iterator it = exifData.findKey(key);
 
             if (it == exifData.end())
+            {
                 d->exifMetadata()["Exif.Image.Software"] = std::string(software.toLatin1().constData());
+            }
         }
 
         // set program info into XMP tags.
@@ -322,15 +324,19 @@ MetaEngine::ImageOrientation MetaEngine::getItemOrientation() const
 
             //qCDebug(DIGIKAM_METAENGINE_LOG) << "Orientation => Exif.MinoltaCs7D.Rotation =>" << (int)orientation;
 
-            switch(orientation)
+            switch (orientation)
             {
                 case 76:
+                {
                     imageOrient = ORIENTATION_ROT_90;
                     break;
+                }
 
                 case 82:
+                {
                     imageOrient = ORIENTATION_ROT_270;
                     break;
+                }
             }
 
             return imageOrient;
@@ -345,15 +351,19 @@ MetaEngine::ImageOrientation MetaEngine::getItemOrientation() const
 
             //qCDebug(DIGIKAM_METAENGINE_LOG) << "Orientation => Exif.MinoltaCs5D.Rotation =>" << (int)orientation;
 
-            switch(orientation)
+            switch (orientation)
             {
                 case 76:
+                {
                     imageOrient = ORIENTATION_ROT_90;
                     break;
+                }
 
                 case 82:
+                {
                     imageOrient = ORIENTATION_ROT_270;
                     break;
+                }
             }
 
             return imageOrient;
@@ -499,7 +509,7 @@ MetaEngine::ImageColorWorkSpace MetaEngine::getItemColorWorkSpace() const
 
             if (!interopIndex.isNull())
             {
-                if (interopIndex == QLatin1String("R03"))
+                if      (interopIndex == QLatin1String("R03"))
                 {
                     return WORKSPACE_ADOBERGB;
                 }
@@ -520,7 +530,7 @@ MetaEngine::ImageColorWorkSpace MetaEngine::getItemColorWorkSpace() const
 
         if (getExifTagLong("Exif.Nikon3.ColorSpace", nikonColorSpace))
         {
-            if (nikonColorSpace == 1)
+            if      (nikonColorSpace == 1)
             {
                 return WORKSPACE_SRGB;
             }
@@ -544,7 +554,7 @@ MetaEngine::ImageColorWorkSpace MetaEngine::getItemColorWorkSpace() const
 
         if (getExifTagLong("Exif.Canon.ColorSpace", canonColorSpace))
         {
-            if (canonColorSpace == 1)
+            if      (canonColorSpace == 1)
             {
                 return WORKSPACE_SRGB;
             }
@@ -934,7 +944,7 @@ QDateTime MetaEngine::getItemDateTime() const
 
             for (it = dateMap.constBegin() ; it != dateMap.constEnd() ; ++it)
             {
-                if (!it.key().isValid())
+                if      (!it.key().isValid())
                 {
                     continue;
                 }
@@ -968,7 +978,9 @@ QDateTime MetaEngine::getItemDateTime() const
 bool MetaEngine::setImageDateTime(const QDateTime& dateTime, bool setDateTimeDigitized) const
 {
     if (!dateTime.isValid())
+    {
         return false;
+    }
 
     QMutexLocker lock(&s_metaEngineMutex);
 
@@ -986,7 +998,9 @@ bool MetaEngine::setImageDateTime(const QDateTime& dateTime, bool setDateTimeDig
         d->exifMetadata()["Exif.Photo.DateTimeOriginal"] = exifdatetime;
 
         if (setDateTimeDigitized)
+        {
             d->exifMetadata()["Exif.Photo.DateTimeDigitized"] = exifdatetime;
+        }
 
 #ifdef _XMP_SUPPORT_
 
@@ -1164,7 +1178,7 @@ QDateTime MetaEngine::getDigitizationDateTime(bool fallbackToCreationTime) const
 
             for (it = dateMap.constBegin() ; it != dateMap.constEnd() ; ++it)
             {
-                if (!it.key().isValid())
+                if      (!it.key().isValid())
                 {
                     continue;
                 }
@@ -1193,9 +1207,13 @@ QDateTime MetaEngine::getDigitizationDateTime(bool fallbackToCreationTime) const
     }
 
     if (fallbackToCreationTime)
+    {
         return getItemDateTime();
+    }
     else
+    {
         return QDateTime();
+    }
 }
 
 bool MetaEngine::getItemPreview(QImage& preview) const

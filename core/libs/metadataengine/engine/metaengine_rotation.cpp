@@ -83,22 +83,34 @@ MetaEngineRotation matrix(MetaEngineRotation::TransformationAction action)
     switch (action)
     {
         case MetaEngineRotation::NoTransformation:
+        {
             return identity;
+        }
 
         case MetaEngineRotation::FlipHorizontal:
+        {
             return flipHorizontal;
+        }
 
         case MetaEngineRotation::FlipVertical:
+        {
             return flipVertical;
+        }
 
         case MetaEngineRotation::Rotate90:
+        {
             return rotate90;
+        }
 
         case MetaEngineRotation::Rotate180:
+        {
             return rotate180;
+        }
 
         case MetaEngineRotation::Rotate270:
+        {
             return rotate270;
+        }
     }
 
     return identity;
@@ -109,31 +121,49 @@ MetaEngineRotation matrix(MetaEngine::ImageOrientation exifOrientation)
     switch (exifOrientation)
     {
         case MetaEngine::ORIENTATION_NORMAL:
+        {
             return identity;
+        }
 
         case MetaEngine::ORIENTATION_HFLIP:
+        {
             return flipHorizontal;
+        }
 
         case MetaEngine::ORIENTATION_ROT_180:
+        {
             return rotate180;
+        }
 
         case MetaEngine::ORIENTATION_VFLIP:
+        {
             return flipVertical;
+        }
 
         case MetaEngine::ORIENTATION_ROT_90_HFLIP:
+        {
             return rotate90flipHorizontal;
+        }
 
         case MetaEngine::ORIENTATION_ROT_90:
+        {
             return rotate90;
+        }
 
         case MetaEngine::ORIENTATION_ROT_90_VFLIP:
+        {
             return rotate90flipVertical;
+        }
 
         case MetaEngine::ORIENTATION_ROT_270:
+        {
             return rotate270;
+        }
 
         case MetaEngine::ORIENTATION_UNSPECIFIED:
+        {
             return identity;
+        }
     }
 
     return identity;
@@ -315,37 +345,53 @@ QMatrix MetaEngineRotation::toMatrix(MetaEngine::ImageOrientation orientation)
     {
         case MetaEngine::ORIENTATION_NORMAL:
         case MetaEngine::ORIENTATION_UNSPECIFIED:
+        {
             break;
+        }
 
         case MetaEngine::ORIENTATION_HFLIP:
+        {
             matrix.scale(-1, 1);
             break;
+        }
 
         case MetaEngine::ORIENTATION_ROT_180:
+        {
             matrix.rotate(180);
             break;
+        }
 
         case MetaEngine::ORIENTATION_VFLIP:
+        {
             matrix.scale(1, -1);
             break;
+        }
 
         case MetaEngine::ORIENTATION_ROT_90_HFLIP:
+        {
             matrix.scale(-1, 1);
             matrix.rotate(90);
             break;
+        }
 
         case MetaEngine::ORIENTATION_ROT_90:
+        {
             matrix.rotate(90);
             break;
+        }
 
         case MetaEngine::ORIENTATION_ROT_90_VFLIP:
+        {
             matrix.scale(1, -1);
             matrix.rotate(90);
             break;
+        }
 
         case MetaEngine::ORIENTATION_ROT_270:
+        {
             matrix.rotate(270);
             break;
+        }
     }
 
     return matrix;

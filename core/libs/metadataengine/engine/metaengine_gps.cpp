@@ -828,9 +828,9 @@ QString MetaEngine::convertToGPSCoordinateString(const long int numeratorDegrees
         denSecs = 1;
     }
 
-    if ((denominatorDegrees == 1) &&
-        (denominatorMinutes == 1) &&
-        (denSecs            == 1))
+    if      ((denominatorDegrees == 1) &&
+             (denominatorMinutes == 1) &&
+             (denSecs            == 1))
     {
         // use form DDD,MM,SSk
 

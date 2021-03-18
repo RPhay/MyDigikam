@@ -1124,7 +1124,9 @@ QVariant MetaEngine::getXmpTagVariant(const char* xmpTagName, bool rationalAsLis
                 }
 
                 default:
+                {
                     break;
+                }
             }
         }
     }

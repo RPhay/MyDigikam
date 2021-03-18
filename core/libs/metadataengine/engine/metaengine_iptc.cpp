@@ -729,7 +729,7 @@ QStringList MetaEngine::getIptcSubjects() const
             for (Exiv2::IptcData::const_iterator it = iptcData.begin() ; it != iptcData.end() ; ++it)
             {
                 QString tagValue = d->extractIptcTagString(iptcData, *it);
-                QString key = QString::fromStdString(it->key());
+                QString key      = QString::fromStdString(it->key());
 
                 if (key == QLatin1String("Iptc.Application2.Subject"))
                 {

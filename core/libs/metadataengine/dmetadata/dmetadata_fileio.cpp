@@ -57,7 +57,7 @@ bool DMetadata::load(const QString& filePath)
        )
     {
         // Non video or audio file, process with Exiv2 backend, or libraw if fail with RAW files, or libheif.
-        // Never process video file Exiv2, the backend is very unstable.
+        // Never process video file with Exiv2, the backend is very unstable.
 
         if (!(hasLoaded = MetaEngine::load(filePath)))
         {

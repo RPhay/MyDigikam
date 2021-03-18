@@ -327,31 +327,45 @@ bool DMetadata::loadUsingFFmpeg(const QString& filePath)
             switch (codec->channels)
             {
                 case 0:
+                {
                     break;
+                }
 
                 case 1:
+                {
                     data = QLatin1String("Mono");
                     break;
+                }
 
                 case 2:
+                {
                     data = QLatin1String("Stereo");
                     break;
+                }
 
                 case 6:
+                {
                     data = QLatin1String("5.1");
                     break;
+                }
 
                 case 8:
+                {
                     data = QLatin1String("7.1");
                     break;
+                }
 
                 case 16:
+                {
                     data = QLatin1String("16 Channel");
                     break;
+                }
 
                 default:
+                {
                     data = QLatin1String("Other");
                     break;
+                }
             }
 
             if (!data.isEmpty())
@@ -437,27 +451,37 @@ bool DMetadata::loadUsingFFmpeg(const QString& filePath)
             switch (codec->color_space)
             {
                 case AVCOL_SPC_RGB:
+                {
                     cm = VIDEOCOLORMODEL_SRGB;
                     break;
+                }
 
                 case AVCOL_SPC_BT470BG:
                 case AVCOL_SPC_SMPTE170M:
                 case AVCOL_SPC_SMPTE240M:
+                {
                     cm = VIDEOCOLORMODEL_BT601;
                     break;
+                }
 
                 case AVCOL_SPC_BT709:
+                {
                     cm = VIDEOCOLORMODEL_BT709;
                     break;
+                }
 
                 case AVCOL_SPC_UNSPECIFIED:
                 case AVCOL_SPC_RESERVED:
                 case AVCOL_SPC_NB:
+                {
                     cm = VIDEOCOLORMODEL_UNKNOWN;
                     break;
+                }
 
                 default:
+                {
                     break;
+                }
             }
 
             // See XMP Dynamic Media properties from Adobe.
@@ -478,21 +502,29 @@ bool DMetadata::loadUsingFFmpeg(const QString& filePath)
             switch (codec->field_order)
             {
                 case AV_FIELD_PROGRESSIVE:
+                {
                     fo = QLatin1String("Progressive");
                     break;
+                }
 
                 case AV_FIELD_TT:                       // Top coded first, top displayed first
                 case AV_FIELD_BT:                       // Bottom coded first, top displayed first
+                {
                     fo = QLatin1String("Upper");
                     break;
+                }
 
                 case AV_FIELD_BB:                       // Bottom coded first, bottom displayed first
                 case AV_FIELD_TB:                       // Top coded first, bottom displayed first
+                {
                     fo = QLatin1String("Lower");
                     break;
+                }
 
                 default:
+                {
                     break;
+                }
             }
 
             if (!fo.isEmpty())
@@ -621,23 +653,33 @@ bool DMetadata::loadUsingFFmpeg(const QString& filePath)
                     switch (val)
                     {
                         case 0:
+                        {
                             ori = ORIENTATION_NORMAL;
                             break;
+                        }
 
                         case 90:
+                        {
                             ori = ORIENTATION_ROT_90;
                             break;
+                        }
 
                         case 180:
+                        {
                             ori = ORIENTATION_ROT_180;
                             break;
+                        }
 
                         case 270:
+                        {
                             ori = ORIENTATION_ROT_270;
                             break;
+                        }
 
                         default:
+                        {
                             break;
+                        }
                     }
 
                     setXmpTagString("Xmp.video.Orientation", QString::number(ori));
@@ -1700,23 +1742,33 @@ QString DMetadata::videoColorModelToString(VIDEOCOLORMODEL videoColorModel)
     switch (videoColorModel)
     {
         case VIDEOCOLORMODEL_SRGB:
+        {
             cs = QLatin1String("sRGB");
             break;
+        }
 
         case VIDEOCOLORMODEL_BT601:
+        {
             cs = QLatin1String("CCIR-601");
             break;
+        }
 
         case VIDEOCOLORMODEL_BT709:
+        {
             cs = QLatin1String("CCIR-709");
             break;
+        }
 
         case VIDEOCOLORMODEL_OTHER:
+        {
             cs = QLatin1String("Other");
             break;
+        }
 
         default: // VIDEOCOLORMODEL_UNKNOWN
+        {
             break;
+        }
     }
 
     return cs;

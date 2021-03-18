@@ -108,7 +108,9 @@ IccProfile DMetadata::getIccProfile() const
         }
 
         default:
+        {
             break;
+        }
     }
 
     return IccProfile();

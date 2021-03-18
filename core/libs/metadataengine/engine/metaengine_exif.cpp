@@ -522,7 +522,9 @@ bool MetaEngine::setExifTagVariant(const char* exifTagName, const QVariant& val,
         case QVariant::Bool:
         case QVariant::LongLong:
         case QVariant::ULongLong:
+        {
             return setExifTagLong(exifTagName, val.toInt());
+        }
 
         case QVariant::Double:
         {
@@ -587,13 +589,19 @@ bool MetaEngine::setExifTagVariant(const char* exifTagName, const QVariant& val,
 
         case QVariant::String:
         case QVariant::Char:
+        {
             return setExifTagString(exifTagName, val.toString());
+        }
 
         case QVariant::ByteArray:
+        {
             return setExifTagData(exifTagName, val.toByteArray());
+        }
 
         default:
+        {
             break;
+        }
     }
 
     return false;
@@ -614,12 +622,16 @@ QString MetaEngine::createExifUserStringFromValue(const char* exifTagName, const
             case QVariant::Bool:
             case QVariant::LongLong:
             case QVariant::ULongLong:
+            {
                 datum = (int32_t)val.toInt();
                 break;
+            }
 
             case QVariant::UInt:
+            {
                 datum = (uint32_t)val.toUInt();
                 break;
+            }
 
             case QVariant::Double:
             {
@@ -673,11 +685,15 @@ QString MetaEngine::createExifUserStringFromValue(const char* exifTagName, const
             case QVariant::ByteArray:
             case QVariant::String:
             case QVariant::Char:
+            {
                 datum = (std::string)val.toString().toLatin1().constData();
                 break;
+            }
 
             default:
+            {
                 break;
+            }
         }
 
         std::ostringstream os;
@@ -862,7 +878,9 @@ QVariant MetaEngine::getExifTagVariant(const char* exifTagName, bool rationalAsL
                 }
 
                 default:
+                {
                     break;
+                }
             }
         }
     }

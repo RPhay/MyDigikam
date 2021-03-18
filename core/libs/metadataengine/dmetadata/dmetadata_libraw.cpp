@@ -236,29 +236,34 @@ bool DMetadata::loadUsingRawEngine(const QString& filePath)
             switch (identify->orientation)
             {
                 case DRawInfo::ORIENTATION_180:
-
+                {
                     orientation = ORIENTATION_ROT_180;
                     break;
+                }
 
                 case DRawInfo::ORIENTATION_Mirror90CCW:
-
+                {
                     orientation = ORIENTATION_ROT_90_HFLIP;
                     break;
+                }
 
                 case DRawInfo::ORIENTATION_90CCW:
-
+                {
                     orientation = ORIENTATION_ROT_270;
                     break;
+                }
 
                 case DRawInfo::ORIENTATION_90CW:
-
+                {
                     orientation = ORIENTATION_ROT_90;
                     break;
+                }
 
                 default:
-
+                {
                     orientation = ORIENTATION_NORMAL;
                     break;
+                }
             }
 
             setExifTagLong("Exif.Image.Orientation", orientation);

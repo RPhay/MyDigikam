@@ -286,25 +286,33 @@ bool MetaEngine::save(const QString& imageFilePath, bool setVersion) const
 
     qCDebug(DIGIKAM_METAENGINE_LOG) << "MetaEngine::metadataWritingMode" << d->metadataWritingMode;
 
-    switch(d->metadataWritingMode)
+    switch (d->metadataWritingMode)
     {
         case WRITE_TO_SIDECAR_ONLY:
+        {
             writeToSidecar = true;
             break;
+        }
 
         case WRITE_TO_FILE_ONLY:
+        {
             writeToFile    = true;
             break;
+        }
 
         case WRITE_TO_SIDECAR_AND_FILE:
+        {
             writeToFile    = true;
             writeToSidecar = true;
             break;
+        }
 
         case WRITE_TO_SIDECAR_ONLY_FOR_READ_ONLY_FILES:
+        {
             writeToFile                     = true;
             writeToSidecarIfFileNotPossible = true;
             break;
+        }
     }
 
     if (writeToFile)

@@ -330,24 +330,34 @@ bool DMetadata::setItemColorLabel(int colorId, const DMetadataSettingsContainer&
                     switch (colorId)
                     {
                         case BlueLabel:
+                        {
                             LRLabel = QLatin1String("Blue");
                             break;
+                        }
 
                         case GreenLabel:
+                        {
                             LRLabel = QLatin1String("Green");
                             break;
+                        }
 
                         case RedLabel:
+                        {
                             LRLabel = QLatin1String("Red");
                             break;
+                        }
 
                         case YellowLabel:
+                        {
                             LRLabel = QLatin1String("Yellow");
                             break;
+                        }
 
                         case MagentaLabel:
+                        {
                             LRLabel = QLatin1String("Purple");
                             break;
+                        }
                     }
 
                     if (!LRLabel.isEmpty())
@@ -457,28 +467,40 @@ bool DMetadata::setItemRating(int rating, const DMetadataSettingsContainer& sett
                     switch (rating)
                     {
                         case 0:
+                        {
                             ratePercents = 0;
                             break;
+                        }
 
                         case 1:
+                        {
                             ratePercents = 1;
                             break;
+                        }
 
                         case 2:
+                        {
                             ratePercents = 25;
                             break;
+                        }
 
                         case 3:
+                        {
                             ratePercents = 50;
                             break;
+                        }
 
                         case 4:
+                        {
                             ratePercents = 75;
                             break;
+                        }
 
                         case 5:
+                        {
                             ratePercents = 99;
                             break;
+                        }
                     }
 
                     if (!setExifTagLong(nameSpace, ratePercents))

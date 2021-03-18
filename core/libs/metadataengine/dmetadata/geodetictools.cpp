@@ -47,16 +47,16 @@ GeodeticCalculator::GeodeticCalculator(const Ellipsoid& e)
       m_destinationValid(false),
       m_directionValid  (false)
 {
-    m_semiMajorAxis = m_ellipsoid.semiMajorAxis();
-    m_semiMinorAxis = m_ellipsoid.semiMinorAxis();
+    m_semiMajorAxis       = m_ellipsoid.semiMajorAxis();
+    m_semiMinorAxis       = m_ellipsoid.semiMinorAxis();
 
     // constants
 
-    TOLERANCE_0     = 5.0e-15,
-    TOLERANCE_1     = 5.0e-14,
-    TOLERANCE_2     = 5.0e-13,
-    TOLERANCE_3     = 7.0e-3;
-    TOLERANCE_CHECK = 1E-8;
+    TOLERANCE_0           = 5.0e-15,
+    TOLERANCE_1           = 5.0e-14,
+    TOLERANCE_2           = 5.0e-13,
+    TOLERANCE_3           = 7.0e-3;
+    TOLERANCE_CHECK       = 1E-8;
 
     // calculation of GPNHRI parameters
 
@@ -69,11 +69,11 @@ GeodeticCalculator::GeodeticCalculator(const Ellipsoid& e)
 
     // Calculation of GNPARC parameters
 
-    const double E2 = m_eccentricitySquared;
-    const double E4 = E2*E2;
-    const double E6 = E4*E2;
-    const double E8 = E6*E2;
-    const double EX = E8*E2;
+    const double E2       = m_eccentricitySquared;
+    const double E4       = E2*E2;
+    const double E6       = E4*E2;
+    const double E8       = E6*E2;
+    const double EX       = E8*E2;
 
     A =  1.0+0.75*E2+0.703125*E4+0.68359375 *E6+0.67291259765625*E8+0.6661834716796875 *EX;
     B =      0.75*E2+0.9375  *E4+1.025390625*E6+1.07666015625   *E8+1.1103057861328125 *EX;
