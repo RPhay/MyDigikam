@@ -77,8 +77,8 @@ export CAMLIBS=$DIR/usr/lib/libgphoto2
 export IOLIBS=$DIR/usr/lib/libgphoto2_port
 
 # ImageMagick run-time environnement
-export MAGICK_CODER_MODULE_PATH=$DIR/usr/lib/ImageMagick-6.9.10/modules-Q16/coders
-export MAGICK_CODER_FILTER_PATH=$DIR/usr/lib/ImageMagick-6.9.10/modules-Q16/filters
+export MAGICK_CODER_MODULE_PATH=$DIR/usr/lib/modules-Q16/coders
+export MAGICK_CODER_FILTER_PATH=$DIR/usr/lib/modules-Q16/filters
 
 # QtWebEngine crash with some video card drivers
 # https://github.com/qutebrowser/qutebrowser/issues/2368
