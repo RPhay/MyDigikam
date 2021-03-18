@@ -401,5 +401,5 @@ BUGFIXES:
 358 ==> 433997 - digiKam does not open.
 359 ==> 434299 - No entries in Imagemagick Loader when in Appimage.
 360 ==> 434574 - F4 to play video on external VLC player crashes VLC.
-361 ==> 
-
+361 ==> 434594 - Copy of jpeg file with empty caption (but caption in sidecar) shows caption.
+362 ==> 
