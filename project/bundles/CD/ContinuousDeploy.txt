@@ -71,7 +71,7 @@ Architecture and configuration to setup a continuous deployement computer.
   * MacOS BigSur will be installed and first run assistant will appear where nothing special must be changed compared to Catalina.
   * From macOS Control Panel/Users & Groups change user account shell from zsh to bash and reboot the virtual machine.
   * From macOS Control Panel/Energy Saver turn off all sleeping options.
-  * From macOS Control Panel/Deskop & Screen Saver Set no image background and turn off screen saver.
+  * From macOS Control Panel/Desktop & Screen Saver Set no image background and turn off screen saver.
   * From macOS Control Panel/Sound Effects disable all.
   * From macOS Control Panel/Sharing enable remote login.
   * From macOS Control Panel/Mouse disable natural scroll direction.
@@ -82,7 +82,6 @@ Architecture and configuration to setup a continuous deployement computer.
   * From macOS Control Panel/Display disable mirroring option in menu bar.
   * From macOS Control Panel/Keyboard disable input option in menu bar.
   * From macOS Control Panel/Dock & Menu Bar disable all control options in menu bar.
-  * Change /etc/sudoers properties to run sudo without password: "%admin ALL = (ALL) ALL" => "%admin ALL = (ALL) NOPASSWD: ALL"
   * Register a valid account in AppleStore and download XCode.
   * Open XCode and wait to update components with sudo right.
   * From a Terminal, install XCode Command Line Tools with "sudo xcode-select --install".
@@ -93,6 +92,7 @@ Architecture and configuration to setup a continuous deployement computer.
   * Install your public and private ssh keys for your KDE account to your home directory.
   * Clone digiKam git repository in your home repository (git clone git@invent.kde.org:graphics/digikam.git).
   * From local digiKam git repository, run project/bundles/macports/makeall.sh.
+  * Change /etc/sudoers properties to run sudo without password: "%admin ALL = (ALL) ALL" => "%admin ALL = (ALL) NOPASSWD: ALL"
   * To update Macports PKG all the days at 23h00, run "macports_update.sh" script in background with screen CLI tool.
 
 - To start VM without GUI from command line:
@@ -101,3 +101,8 @@ Architecture and configuration to setup a continuous deployement computer.
   * VBoxManage startvm --type headless M7
   * VBoxManage startvm --type headless MX
 
+- To stop VM without GUI from command line:
+
+  * VBoxManage controlvm M6 acpipowerbutton
+  * VBoxManage controlvm M7 acpipowerbutton
+  * VBoxManage controlvm MX acpipowerbutton
