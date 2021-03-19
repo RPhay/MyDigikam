@@ -46,7 +46,9 @@ public:
     Exiv2::IptcData iptcMetadata;
 
 #ifdef _XMP_SUPPORT_
+
     Exiv2::XmpData  xmpMetadata;
+
 #endif
 
 };

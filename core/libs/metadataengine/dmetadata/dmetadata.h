@@ -390,8 +390,9 @@ private:
 
 private:
 
-    // Libheif helper methods.
-
+    /**
+     * Libheif helper methods.
+     */
     bool loadUsingLibheif(const QString& filePath);
 };
 

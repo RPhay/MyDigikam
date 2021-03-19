@@ -477,22 +477,22 @@ protected:
      */
     Ellipsoid m_ellipsoid;
 
-    /*
+    /**
      * The semi major axis of the referenced ellipsoid.
      */
     double m_semiMajorAxis;
 
-    /*
+    /**
      * The semi minor axis of the referenced ellipsoid.
      */
     double m_semiMinorAxis;
 
-    /*
+    /**
      * The eccentricity squared of the referenced ellipsoid.
      */
     double m_eccentricitySquared;
 
-    /*
+    /**
      * The maximum orthodromic distance that could be calculated onto the referenced ellipsoid.
      */
     double m_maxOrthodromicDistance;

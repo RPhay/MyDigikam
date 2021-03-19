@@ -95,7 +95,7 @@ public:
 private:
 
     // Hidden copy constructor and assignment operator.
-    MetaEnginePreviews(const MetaEnginePreviews&);
+    MetaEnginePreviews(const MetaEnginePreviews&) = delete;
     MetaEnginePreviews& operator=(const MetaEnginePreviews&);
 
     class Private;

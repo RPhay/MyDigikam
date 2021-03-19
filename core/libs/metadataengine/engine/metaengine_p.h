@@ -114,8 +114,8 @@
 namespace Digikam
 {
 
-extern QMutex s_metaEngineMutex;
-extern bool   s_metaEngineSupportBmff;
+extern QMutex s_metaEngineMutex;            ///< Mutex to fix no re-entrancy from Exiv2.
+extern bool   s_metaEngineSupportBmff;      ///< Flag for Exiv2 Base Media File Format support.
 
 // --------------------------------------------------------------------------
 
@@ -157,6 +157,8 @@ public:
     Exiv2::IptcData&       iptcMetadata();
     std::string&           itemComments();
 
+public:
+
 #ifdef _XMP_SUPPORT_
 
     const Exiv2::XmpData&  xmpMetadata()                                          const;
@@ -165,6 +167,8 @@ public:
     void loadSidecarData(Exiv2::Image::AutoPtr xmpsidecar);
 
 #endif
+
+public:
 
     /**
      * Helper method to decode IPTC tag string contents following characters encoding preset.

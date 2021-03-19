@@ -62,31 +62,47 @@ public:
 
 public:
 
-    /// Constructs the identity matrix (the matrix describing no transformation)
+    /**
+     * Constructs the identity matrix (the matrix describing no transformation)
+     */
     MetaEngineRotation();
 
-    /// Returns the matrix corresponding to the given TransformationAction
+    /**
+     * Returns the matrix corresponding to the given TransformationAction
+     */
     explicit MetaEngineRotation(TransformationAction action);
 
-    /// Returns the matrix corresponding to the given TransformationAction
+    /**
+     * Returns the matrix corresponding to the given TransformationAction
+     */
     explicit MetaEngineRotation(MetaEngine::ImageOrientation exifOrientation);
 
-    bool operator==(const MetaEngineRotation& ma) const;
-    bool operator!=(const MetaEngineRotation& ma) const;
+    bool operator==(const MetaEngineRotation& ma)   const;
+    bool operator!=(const MetaEngineRotation& ma)   const;
 
-    /// Returns true of this matrix describes no transformation (is the identity matrix)
-    bool isNoTransform() const;
+    /**
+     * Returns true of this matrix describes no transformation (is the identity matrix)
+     */
+    bool isNoTransform()                            const;
 
     MetaEngineRotation& operator*=(const MetaEngineRotation& ma);
 
-    /// Applies the given transform to this matrix
+    /**
+     * Applies the given transform to this matrix
+     */
     MetaEngineRotation& operator*=(TransformationAction action);
 
-    /// Applies the given transform actions to this matrix
+    /**
+     * Applies the given transform actions to this matrix
+     */
     MetaEngineRotation& operator*=(QList<TransformationAction> actions);
 
-    /// Applies the given Exif orientation flag to this matrix
+    /**
+     * Applies the given Exif orientation flag to this matrix
+     */
     MetaEngineRotation& operator*=(MetaEngine::ImageOrientation exifOrientation);
+
+    MetaEngineRotation(int m11, int m12, int m21, int m22);
 
     /**
      * Returns the actions described by this matrix. The order matters.
@@ -94,21 +110,23 @@ public:
      * by Exif rotation flags and the transform actions above.
      * If isNoTransform() or the matrix is not supported returns an empty list.
      */
-    QList<TransformationAction> transformations() const;
+    QList<TransformationAction> transformations()   const;
 
     /**
      * Returns the Exif orientation flag describing this matrix.
      * Returns ORIENTATION_UNSPECIFIED if no flag matches this matrix.
      */
-    MetaEngine::ImageOrientation exifOrientation() const;
+    MetaEngine::ImageOrientation exifOrientation()  const;
 
-    /// Returns a QMatrix representing this matrix
-    QMatrix toMatrix() const;
+    /**
+     * Returns a QMatrix representing this matrix
+     */
+    QMatrix toMatrix()                              const;
 
-    /// Returns a QMatrix for the given Exif orientation
+    /**
+     * Returns a QMatrix for the given Exif orientation
+     */
     static QMatrix toMatrix(MetaEngine::ImageOrientation orientation);
-
-    MetaEngineRotation(int m11, int m12, int m21, int m22);
 
 protected:
 
