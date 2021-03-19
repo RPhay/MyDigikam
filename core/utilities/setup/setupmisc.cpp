@@ -295,11 +295,11 @@ SetupMisc::SetupMisc(QWidget* const parent)
     d->applicationStyle       = new QComboBox(appStyleHbox);
     d->applicationStyle->setToolTip(i18n("Set this option to choose the default window decoration and looks."));
 
-    QStringList styleList = QStyleFactory::keys();
-
-    for (int i = 0 ; i < styleList.size() ; ++i)
+    foreach (const QString& style, QStyleFactory::keys())
     {
-        d->applicationStyle->addItem(styleList.at(i), styleList.at(i).toLower());
+        QString sitem = style;
+        sitem[0]      = sitem[0].toUpper();
+        d->applicationStyle->addItem(sitem, sitem.toLower());
     }
 
 #ifndef HAVE_APPSTYLE_SUPPORT
