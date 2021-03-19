@@ -396,10 +396,11 @@ BUGFIXES:
 353 ==> 376690 - Irritating behavior of list when moving images.
 354 ==> 434112 - digiKam-7.2* crashes at first start after install while starting main view.
 355 ==> 432760 - New items for people entries without seeing the mentioned photos.
-356 ==> 434423 - Digikam displaying incorrect lens info in 'Properties - Photograph Properties'.
+356 ==> 434423 - digiKam displaying incorrect lens info in 'Properties - Photograph Properties'.
 357 ==> 434446 - "Set point" shortcut removed in ImageEditor in digikam version 6.4.0.
 358 ==> 433997 - digiKam does not open.
 359 ==> 434299 - No entries in Imagemagick Loader when in Appimage.
 360 ==> 434574 - F4 to play video on external VLC player crashes VLC.
 361 ==> 434594 - Copy of jpeg file with empty caption (but caption in sidecar) shows caption.
-362 ==> 
+362 ==> 434566 - Application crashes C:\Program Files\digiKam\plugins\digikam\dimg\DImg_QImage_Plugin.dll.
+363 ==> 
