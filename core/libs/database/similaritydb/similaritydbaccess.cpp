@@ -212,7 +212,9 @@ void SimilarityDbAccess::setParameters(const DbEngineParameters& parameters)
 bool SimilarityDbAccess::checkReadyForUse(InitializationObserver* const observer)
 {
     if (!DbEngineAccess::checkReadyForUse(d->lastError))
+    {
         return false;
+    }
 
     // create an object with private shortcut constructor
 

@@ -221,6 +221,7 @@ void CoreDbAccess::setParameters(const DbEngineParameters& parameters, Applicati
     }
 
     // Kill the old database error handler
+
     if (d->backend)
     {
         d->backend->setDbEngineErrorHandler(nullptr);
@@ -265,13 +266,16 @@ void CoreDbAccess::setParameters(const DbEngineParameters& parameters, Applicati
 bool CoreDbAccess::checkReadyForUse(InitializationObserver* const observer)
 {
     if (!DbEngineAccess::checkReadyForUse(d->lastError))
+    {
         return false;
+    }
 
     if (!DbEngineConfig::checkReadyForUse())
     {
         d->lastError = DbEngineConfig::errorMessage();
 
         // Make sure the application does not continue to run
+
         if (observer)
         {
             observer->finishedSchemaUpdate(InitializationObserver::UpdateErrorMustAbort);
@@ -405,6 +409,7 @@ CoreDbAccessUnlock::CoreDbAccessUnlock(CoreDbAccess* const)
     count = CoreDbAccess::d->lock.lockCount;
 
     // set lock count to 0
+
     CoreDbAccess::d->lock.lockCount = 0;
 
     // unlock

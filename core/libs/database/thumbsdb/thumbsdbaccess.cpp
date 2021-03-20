@@ -210,7 +210,9 @@ void ThumbsDbAccess::setParameters(const DbEngineParameters& parameters)
 bool ThumbsDbAccess::checkReadyForUse(InitializationObserver* const observer)
 {
     if (!DbEngineAccess::checkReadyForUse(d->lastError))
+    {
         return false;
+    }
 
     // create an object with private shortcut constructor
 
