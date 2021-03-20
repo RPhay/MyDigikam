@@ -1280,7 +1280,7 @@ QList<QPair<int, int> > ItemModelIncrementalUpdater::toContiguousPairs(const QLi
 
     for (int i = 1 ; i < indices.size() ; ++i)
     {
-        const int &index = indices.at(i);
+        const int& index = indices.at(i);
 
         if (index == pair.second + 1)
         {

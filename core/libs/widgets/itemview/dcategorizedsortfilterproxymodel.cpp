@@ -105,7 +105,7 @@ bool DCategorizedSortFilterProxyModel::sortCategoriesByNaturalComparison() const
     return d->sortCategoriesByNaturalComparison;
 }
 
-bool DCategorizedSortFilterProxyModel::lessThan(const QModelIndex &left, const QModelIndex &right) const
+bool DCategorizedSortFilterProxyModel::lessThan(const QModelIndex& left, const QModelIndex& right) const
 {
     if (d->categorizedModel)
     {
@@ -124,12 +124,12 @@ bool DCategorizedSortFilterProxyModel::lessThan(const QModelIndex &left, const Q
     return subSortLessThan(left, right);
 }
 
-bool DCategorizedSortFilterProxyModel::subSortLessThan(const QModelIndex &left, const QModelIndex &right) const
+bool DCategorizedSortFilterProxyModel::subSortLessThan(const QModelIndex& left, const QModelIndex& right) const
 {
     return QSortFilterProxyModel::lessThan(left, right);
 }
 
-int DCategorizedSortFilterProxyModel::compareCategories(const QModelIndex &left, const QModelIndex &right) const
+int DCategorizedSortFilterProxyModel::compareCategories(const QModelIndex& left, const QModelIndex& right) const
 {
     QVariant l = (left.model()  ? left.model()->data(left,   CategorySortRole) : QVariant());
     QVariant r = (right.model() ? right.model()->data(right, CategorySortRole) : QVariant());

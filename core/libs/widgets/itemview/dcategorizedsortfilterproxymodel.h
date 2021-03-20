@@ -137,7 +137,7 @@ protected:
      * @warning You usually won't need to reimplement this method when subclassing
      *          from DCategorizedSortFilterProxyModel.
      */
-    bool lessThan(const QModelIndex &left, const QModelIndex &right) const override;
+    bool lessThan(const QModelIndex& left, const QModelIndex& right) const override;
 
     /**
      * This method has a similar purpose as lessThan() has on QSortFilterProxyModel.
@@ -145,7 +145,7 @@ protected:
      *
      * @return Returns true if the item @p left is less than the item @p right when sorting.
      */
-    virtual bool subSortLessThan(const QModelIndex &left, const QModelIndex &right) const;
+    virtual bool subSortLessThan(const QModelIndex& left, const QModelIndex& right) const;
 
     /**
      * This method compares the category of the @p left index with the category
@@ -182,7 +182,7 @@ protected:
      *         a positive value if the category of @p left should be placed after the
      *         category of @p right.
      */
-    virtual int compareCategories(const QModelIndex &left, const QModelIndex &right) const;
+    virtual int compareCategories(const QModelIndex& left, const QModelIndex& right) const;
 
 private:
 

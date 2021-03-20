@@ -328,7 +328,7 @@ QModelIndex TagMngrListModel::index(int row, int column, const QModelIndex& pare
     }
 }
 
-QModelIndex TagMngrListModel::parent(const QModelIndex &index) const
+QModelIndex TagMngrListModel::parent(const QModelIndex& index) const
 {
     if (!index.isValid())
     {
@@ -346,7 +346,7 @@ QModelIndex TagMngrListModel::parent(const QModelIndex &index) const
     return createIndex(parentItem->row(), 0, parentItem);
 }
 
-int TagMngrListModel::rowCount(const QModelIndex &parent) const
+int TagMngrListModel::rowCount(const QModelIndex& parent) const
 {
     ListItem* parentItem = nullptr;
 

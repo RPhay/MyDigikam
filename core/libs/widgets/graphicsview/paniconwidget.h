@@ -74,7 +74,7 @@ public:
     /**
      * Open the popup window at position pos.
      */
-    void popup(const QPoint & pos);
+    void popup(const QPoint& pos);
 
     /**
      * Execute the popup window.
