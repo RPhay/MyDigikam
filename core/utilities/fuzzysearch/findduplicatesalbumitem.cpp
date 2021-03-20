@@ -80,7 +80,7 @@ FindDuplicatesAlbumItem::FindDuplicatesAlbumItem(QTreeWidget* const parent, SAlb
         setText(Column::REFERENCE_IMAGE, d->refImgInfo.name());
         setText(Column::REFERENCE_DATE,  d->refImgInfo.dateTime().toString(Qt::ISODate));
 
-        PAlbum *const physicalAlbum = AlbumManager::instance()->findPAlbum(d->refImgInfo.albumId());
+        PAlbum* const physicalAlbum = AlbumManager::instance()->findPAlbum(d->refImgInfo.albumId());
         if (physicalAlbum)
         {
             setText(Column::REFERENCE_ALBUM, physicalAlbum->prettyUrl());

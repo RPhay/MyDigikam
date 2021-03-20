@@ -261,7 +261,7 @@ void GPSMarkerTiler::prepareTiles(const GeoCoordinates& upperLeft, const GeoCoor
     jobInfo.setLng1(lng1);
     jobInfo.setLng2(lng2);
 
-    GPSDBJobsThread *const currentJob = DBJobsManager::instance()->startGPSJobThread(jobInfo);
+    GPSDBJobsThread* const currentJob = DBJobsManager::instance()->startGPSJobThread(jobInfo);
 
     Private::InternalJobs currentJobInfo;
 
