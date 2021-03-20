@@ -296,7 +296,7 @@ bool DMetadata::setItemTagsPath(const QStringList& tagsPath, const DMetadataSett
     return true;
 }
 
-bool DMetadata::getACDSeeTagsPath(QStringList &tagsPath) const
+bool DMetadata::getACDSeeTagsPath(QStringList& tagsPath) const
 {
     // Try to get Tags Path list from ACDSee 8 Pro categories.
 
@@ -349,7 +349,7 @@ bool DMetadata::getACDSeeTagsPath(QStringList &tagsPath) const
     return false;
 }
 
-bool DMetadata::setACDSeeTagsPath(const QStringList &tagsPath) const
+bool DMetadata::setACDSeeTagsPath(const QStringList& tagsPath) const
 {
     // Converting Tags path list to ACDSee 8 Pro categories.
 

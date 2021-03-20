@@ -88,7 +88,7 @@ void ImageShackWidget::updateLabels(const QString& /*name*/, const QString& /*ur
     }
 }
 
-void ImageShackWidget::slotGetGalleries(const QStringList &gTexts, const QStringList &gNames)
+void ImageShackWidget::slotGetGalleries(const QStringList& gTexts, const QStringList& gNames)
 {
     d->galleriesCob->clear();
 
