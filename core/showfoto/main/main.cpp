@@ -179,9 +179,24 @@ int main(int argc, char* argv[])
         QIcon::setThemeName(iconTheme);
     }
 
+    // Workaround for the automatic icon theme color
+    // in KF-5.80, depending on the color scheme.
+
+    if      (QIcon::themeName() == QLatin1String("breeze-dark"))
+    {
+        qApp->setPalette(QPalette(Qt::darkGray));
+    }
+    else if (QIcon::themeName() == QLatin1String("breeze"))
+    {
+        qApp->setPalette(QPalette(Qt::white));
+    }
+
 #ifdef Q_OS_WIN
+
     // Necessary to open native open with dialog on windows
+
     CoInitializeEx(NULL, COINIT_APARTMENTTHREADED | COINIT_DISABLE_OLE1DDE);
+
 #endif
 
     ShowFoto::ShowFoto* const w = new ShowFoto::ShowFoto(urlList);
@@ -222,7 +237,9 @@ int main(int argc, char* argv[])
 
 #ifdef HAVE_IMAGE_MAGICK
 #   if MagickLibVersion >= 0x693
+
     TerminateMagick();
+
 #   endif
 #endif
 
