@@ -397,7 +397,7 @@ void SmugWindow::writeSettings()
     grp.writeEntry("Image Quality",   d->widget->m_imageQualitySpB->value());
 }
 
-void SmugWindow::slotLoginProgress(int step, int maxStep, const QString &label)
+void SmugWindow::slotLoginProgress(int step, int maxStep, const QString& label)
 {
     DProgressWdg* const progressBar = d->widget->progressBar();
 
@@ -414,7 +414,7 @@ void SmugWindow::slotLoginProgress(int step, int maxStep, const QString &label)
     progressBar->setValue(step);
 }
 
-void SmugWindow::slotLoginDone(int errCode, const QString &errMsg)
+void SmugWindow::slotLoginDone(int errCode, const QString& errMsg)
 {
     setUiInProgressState(false);
 
@@ -451,7 +451,7 @@ void SmugWindow::slotLoginDone(int errCode, const QString &errMsg)
     }
 }
 
-void SmugWindow::slotListAlbumsDone(int errCode, const QString &errMsg,
+void SmugWindow::slotListAlbumsDone(int errCode, const QString& errMsg,
                                     const QList <SmugAlbum>& albumsList)
 {
     if (errCode != 0)
@@ -489,7 +489,7 @@ void SmugWindow::slotListAlbumsDone(int errCode, const QString &errMsg,
     }
 }
 
-void SmugWindow::slotListPhotosDone(int errCode, const QString &errMsg,
+void SmugWindow::slotListPhotosDone(int errCode, const QString& errMsg,
                                     const QList <SmugPhoto>& photosList)
 {
     if (errCode != 0)
@@ -521,7 +521,7 @@ void SmugWindow::slotListPhotosDone(int errCode, const QString &errMsg,
     downloadNextPhoto();
 }
 
-void SmugWindow::slotListAlbumTmplDone(int errCode, const QString &errMsg,
+void SmugWindow::slotListAlbumTmplDone(int errCode, const QString& errMsg,
                                        const QList <SmugAlbumTmpl>& albumTList)
 {
     // always put at least default <none> subcategory
@@ -597,7 +597,7 @@ void SmugWindow::slotListCategoriesDone(int errCode,
 }
 
 void SmugWindow::slotListSubCategoriesDone(int errCode,
-                                           const QString &errMsg,
+                                           const QString& errMsg,
                                            const QList <SmugCategory>& categoriesList)
 {
     // always put at least default <none> subcategory

@@ -138,7 +138,7 @@ void AlbumManager::slotAlbumsJobResult()
     d->albumListJob = nullptr;
 }
 
-void AlbumManager::slotAlbumsJobData(const QMap<int, int> &albumsStatMap)
+void AlbumManager::slotAlbumsJobData(const QMap<int, int>& albumsStatMap)
 {
     if (albumsStatMap.isEmpty())
     {

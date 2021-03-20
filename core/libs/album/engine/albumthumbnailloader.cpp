@@ -461,7 +461,7 @@ void AlbumThumbnailLoader::addUrl(Album* const album, qlonglong id)
 
         // insert new entry to map, add album globalID
 
-        QList<int> &list = d->idAlbumMap[QPair<qlonglong, QString>(id, faceRectStr)];
+        QList<int>& list = d->idAlbumMap[QPair<qlonglong, QString>(id, faceRectStr)];
         list.removeAll(album->globalID());
         list.append(album->globalID());
     }

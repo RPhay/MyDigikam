@@ -108,7 +108,7 @@ Q_SIGNALS:
      *
      * @param pages list of all images used on pages
      */
-    void images(const QList<Image> & images);
+    void images(const QList<Image>& images);
 
 private Q_SLOTS:
 

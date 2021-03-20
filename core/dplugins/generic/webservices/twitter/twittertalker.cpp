@@ -268,7 +268,7 @@ void TwTalker::slotOpenBrowser(const QUrl& url)
     QDesktopServices::openUrl(url);
 }
 
-QMap<QString, QString> TwTalker::ParseUrlParameters(const QString &url)
+QMap<QString, QString> TwTalker::ParseUrlParameters(const QString& url)
 {
     QMap<QString, QString> urlParameters;
 

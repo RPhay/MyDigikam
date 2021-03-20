@@ -306,7 +306,7 @@ void ImageShackWindow::slotBusy(bool val)
     }
 }
 
-void ImageShackWindow::slotJobInProgress(int step, int maxStep, const QString &format)
+void ImageShackWindow::slotJobInProgress(int step, int maxStep, const QString& format)
 {
     if (maxStep > 0)
     {
@@ -340,7 +340,7 @@ void ImageShackWindow::slotLoginDone(int errCode, const QString& errMsg)
     }
 }
 
-void ImageShackWindow::slotGetGalleriesDone(int errCode, const QString &errMsg)
+void ImageShackWindow::slotGetGalleriesDone(int errCode, const QString& errMsg)
 {
     slotBusy(false);
     d->widget->d->progressBar->setVisible(false);

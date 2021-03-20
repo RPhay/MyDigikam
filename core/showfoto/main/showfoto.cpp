@@ -267,7 +267,7 @@ void ShowFoto::slotOpenFolder()
     }
 }
 
-void ShowFoto::openUrls(const QList<QUrl> &urls)
+void ShowFoto::openUrls(const QList<QUrl>& urls)
 {
     if (urls.isEmpty())
     {

@@ -67,8 +67,8 @@ Q_SIGNALS:
     void signalJobInProgress(int step,
                              int maxStep = 0,
                              const QString& label = QString());
-    void signalLoginDone(int errCode,  const QString &errMsg);
-    void signalGetGalleriesDone(int errCode, const QString &errMsg);
+    void signalLoginDone(int errCode,  const QString& errMsg);
+    void signalGetGalleriesDone(int errCode, const QString& errMsg);
 
     void signalAddPhotoDone(int errCode, const QString& errMsg);
     void signalUpdateGalleries(const QStringList& gTexts,

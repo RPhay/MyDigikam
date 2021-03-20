@@ -596,7 +596,7 @@ void GPSMarkerTiler::slotMapImagesJobResult()
 
     if (d->jobs.at(foundIndex).jobThread->hasErrors())
     {
-        const QString &err = d->jobs.at(foundIndex).jobThread->errorsList().first();
+        const QString& err = d->jobs.at(foundIndex).jobThread->errorsList().first();
 
         qCWarning(DIGIKAM_GENERAL_LOG) << "Failed to list images in selected area: "
                                        << err;

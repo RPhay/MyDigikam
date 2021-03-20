@@ -60,7 +60,7 @@ private Q_SLOTS:
     void slotLoginDone(int errCode, const QString& errMsg);
     void slotAddPhotoDone(int errCode, const QString& errMsg);
     void slotCreateAlbumDone(int errCode, const QString& errMsg,
-                             const QString &newAlbumID);
+                             const QString& newAlbumID);
     void slotListAlbumsDone(int errCode, const QString& errMsg,
                             const QList<FbAlbum>& albumsList);
 

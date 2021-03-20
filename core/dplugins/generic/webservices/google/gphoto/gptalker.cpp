@@ -568,7 +568,7 @@ void GPTalker::cancel()
     emit signalBusy(false);
 }
 
-void GPTalker::slotError(const QString & error)
+void GPTalker::slotError(const QString& error)
 {
     QString transError;
     int     errorNo = 0;

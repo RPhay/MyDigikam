@@ -51,7 +51,7 @@ public:
                            const QModelIndex& dropIndex) override;
 
     QStringList mimeTypes() const override;
-    QMimeData* createMimeData(const QList<Album*> &)     override;
+    QMimeData* createMimeData(const QList<Album*>&)      override;
 };
 
 } // namespace Digikam

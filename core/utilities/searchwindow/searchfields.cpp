@@ -2359,7 +2359,7 @@ public:
     virtual void write(SearchXmlWriter &writer);
     virtual void reset();
 
-    void setChoice(const QMap<int, QString> &map);
+    void setChoice(const QMap<int, QString>& map);
     void setAnyText(const QString& string);
 
     virtual void setupValueWidgets(QGridLayout *layout, int row, int column);
@@ -2372,7 +2372,7 @@ protected Q_SLOTS:
 
 protected:
 
-    void setValues(const QList<int> &values);
+    void setValues(const QList<int>& values);
     void setValues(int value, SearchXml::Relation relation);
 
     QList<int> values() const;

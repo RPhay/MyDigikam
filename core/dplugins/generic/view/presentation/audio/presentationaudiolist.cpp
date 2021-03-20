@@ -219,7 +219,7 @@ void PresentationAudioList::dropEvent(QDropEvent* e)
     QList<QUrl> list = e->mimeData()->urls();
     QList<QUrl> urls;
 
-    foreach (const QUrl &url, list)
+    foreach (const QUrl& url, list)
     {
         QFileInfo fi(url.toLocalFile());
 

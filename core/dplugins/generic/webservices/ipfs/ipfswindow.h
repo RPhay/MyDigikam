@@ -69,7 +69,7 @@ public Q_SLOTS:
     void apiProgress(unsigned int percent, const IpfsTalkerAction& action);
     void apiRequestPin(const QUrl& url);
     void apiSuccess(const IpfsTalkerResult& result);
-    void apiError(const QString &msg, const IpfsTalkerAction& action);
+    void apiError(const QString& msg, const IpfsTalkerAction& action);
     void apiBusy(bool busy);
 
 private:

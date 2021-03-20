@@ -75,7 +75,7 @@ public Q_SLOTS:
     void slotApiProgress(unsigned int percent, const ImgurTalkerAction& action);
     void slotApiRequestPin(const QUrl& url);
     void slotApiSuccess(const ImgurTalkerResult& result);
-    void slotApiError(const QString &msg, const ImgurTalkerAction& action);
+    void slotApiError(const QString& msg, const ImgurTalkerAction& action);
     void slotApiBusy(bool busy);
 
 private:

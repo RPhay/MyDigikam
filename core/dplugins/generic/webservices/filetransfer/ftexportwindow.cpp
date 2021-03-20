@@ -149,7 +149,7 @@ void FTExportWindow::slotImageListChanged()
     updateUploadButton();
 }
 
-void FTExportWindow::slotTargetUrlChanged(const QUrl & target)
+void FTExportWindow::slotTargetUrlChanged(const QUrl& target)
 {
     Q_UNUSED(target);
     updateUploadButton();

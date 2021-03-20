@@ -184,7 +184,7 @@ void FCExportWindow::slotImageListChanged()
     updateUploadButton();
 }
 
-void FCExportWindow::slotTargetUrlChanged(const QUrl & target)
+void FCExportWindow::slotTargetUrlChanged(const QUrl& target)
 {
     Q_UNUSED(target);
     updateUploadButton();

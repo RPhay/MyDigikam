@@ -228,12 +228,12 @@ void DMetadataSettingsContainer::addMapping(const QString& key)
     d->writeMappings[key] = QList<NamespaceEntry>();
 }
 
-QList<NamespaceEntry> &DMetadataSettingsContainer::getReadMapping(const QString& key) const
+QList<NamespaceEntry>& DMetadataSettingsContainer::getReadMapping(const QString& key) const
 {
     return d->readMappings[key];
 }
 
-QList<NamespaceEntry> &DMetadataSettingsContainer::getWriteMapping(const QString& key) const
+QList<NamespaceEntry>& DMetadataSettingsContainer::getWriteMapping(const QString& key) const
 {
     return d->writeMappings[key];
 }

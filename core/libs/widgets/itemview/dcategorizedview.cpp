@@ -1393,7 +1393,7 @@ void DCategorizedView::mouseReleaseEvent(QMouseEvent* event)
                 selectionModel())
             {
                 QItemSelection selection      = selectionModel()->selection();
-                const QVector<int> &indexList = d->categoriesIndexes[category];
+                const QVector<int>& indexList = d->categoriesIndexes[category];
 
                 foreach (int row, indexList)
                 {

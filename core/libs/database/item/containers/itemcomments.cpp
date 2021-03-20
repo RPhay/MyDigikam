@@ -116,7 +116,7 @@ public:
         }
     }
 
-    void adjustStoredIndexes(QSet<int> &set, int removedIndex)
+    void adjustStoredIndexes(QSet<int>& set, int removedIndex)
     {
         QSet<int> newSet;
 

@@ -57,7 +57,7 @@ public:
                            const QModelIndex& dropIndex)        override;
 
     QStringList    mimeTypes() const                            override;
-    QMimeData*     createMimeData(const QList<QModelIndex> &)   override;
+    QMimeData*     createMimeData(const QList<QModelIndex>&)    override;
 
 private:
 

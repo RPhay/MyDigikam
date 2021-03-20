@@ -49,7 +49,7 @@ bool DBJobsThread::hasErrors()
     return !m_errorsList.isEmpty();
 }
 
-QList<QString> &DBJobsThread::errorsList()
+QList<QString>& DBJobsThread::errorsList()
 {
     return m_errorsList;
 }
