@@ -90,9 +90,9 @@ private:
     explicit LoadingCacheInterface();
     ~LoadingCacheInterface();
 
-    // Hidden copy constructor and assignment operator.
-    LoadingCacheInterface(const LoadingCacheInterface&);
-    LoadingCacheInterface& operator=(const LoadingCacheInterface&);
+    // Disable
+    LoadingCacheInterface(const LoadingCacheInterface&)            = delete;
+    LoadingCacheInterface& operator=(const LoadingCacheInterface&) = delete;
 };
 
 } // namespace Digikam

@@ -71,9 +71,9 @@ protected:
 
 private:
 
-    // Hidden copy constructor and assignment operator.
-    LoadSaveTask(const LoadSaveTask&);
-    LoadSaveTask& operator=(const LoadSaveTask&);
+    // Disable
+    LoadSaveTask(const LoadSaveTask&)            = delete;
+    LoadSaveTask& operator=(const LoadSaveTask&) = delete;
 };
 
 //---------------------------------------------------------------------------------------------------
@@ -121,9 +121,9 @@ protected:
 
 private:
 
-    // Hidden copy constructor and assignment operator.
-    LoadingTask(const LoadingTask&);
-    LoadingTask& operator=(const LoadingTask&);
+    // Disable
+    LoadingTask(const LoadingTask&)            = delete;
+    LoadingTask& operator=(const LoadingTask&) = delete;
 };
 
 //---------------------------------------------------------------------------------------------------
@@ -173,9 +173,9 @@ protected:
 
 private:
 
-    // Hidden copy constructor and assignment operator.
-    SharedLoadingTask(const SharedLoadingTask&);
-    SharedLoadingTask& operator=(const SharedLoadingTask&);
+    // Disable
+    SharedLoadingTask(const SharedLoadingTask&)            = delete;
+    SharedLoadingTask& operator=(const SharedLoadingTask&) = delete;
 };
 
 //---------------------------------------------------------------------------------------------------
@@ -220,9 +220,9 @@ private:
 
 private:
 
-    // Hidden copy constructor and assignment operator.
-    SavingTask(const SavingTask&);
-    SavingTask& operator=(const SavingTask&);
+    // Disable
+    SavingTask(const SavingTask&)            = delete;
+    SavingTask& operator=(const SavingTask&) = delete;
 };
 
 } // namespace Digikam

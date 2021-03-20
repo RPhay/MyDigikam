@@ -247,9 +247,9 @@ protected:
 
 private:
 
-    // Hidden copy constructor and assignment operator.
-    LoadSaveThread(const LoadSaveThread&);
-    LoadSaveThread& operator=(const LoadSaveThread&);
+    // Disable
+    LoadSaveThread(const LoadSaveThread&)            = delete;
+    LoadSaveThread& operator=(const LoadSaveThread&) = delete;
 
 private:
 
