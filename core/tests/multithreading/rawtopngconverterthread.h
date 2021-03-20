@@ -22,8 +22,8 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_MY_ACTION_THREAD_H
-#define DIGIKAM_MY_ACTION_THREAD_H
+#ifndef DIGIKAM_RAW_TO_PNG_CONVERT_THREAD_H
+#define DIGIKAM_RAW_TO_PNG_CONVERT_THREAD_H
 
 // Qt includes
 
@@ -61,4 +61,4 @@ private Q_SLOTS:
     void slotJobStarted();
 };
 
-#endif // DIGIKAM_MY_ACTION_THREAD_H
+#endif // DIGIKAM_RAW_TO_PNG_CONVERT_THREAD_H
