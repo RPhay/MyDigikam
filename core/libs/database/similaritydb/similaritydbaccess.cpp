@@ -81,7 +81,7 @@ class Q_DECL_HIDDEN SimilarityDbAccessMutexLocker : public QMutexLocker
 public:
 
     explicit SimilarityDbAccessMutexLocker(SimilarityDbAccessStaticPriv* const dd)
-        : QMutexLocker(&d->lock.mutex),
+        : QMutexLocker(&dd->lock.mutex),
           d           (dd)
     {
         d->lock.lockCount++;
