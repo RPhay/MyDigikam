@@ -153,7 +153,7 @@ protected:
 private:
 
     // Disable
-    explicit TagsManager(QWidget*);
+    explicit TagsManager(QWidget*) = delete;
 
     void setupActions();
 

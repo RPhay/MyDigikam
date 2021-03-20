@@ -92,9 +92,9 @@ private:
 
 private:
 
-    // Hidden copy constructor and assignment operator
-    KDNode(const KDNode&);
-    KDNode& operator=(const KDNode&);
+    // Disable
+    KDNode(const KDNode&)            = delete;
+    KDNode& operator=(const KDNode&) = delete;
 
 private:
 

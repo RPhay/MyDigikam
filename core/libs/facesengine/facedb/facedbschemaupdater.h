@@ -63,9 +63,9 @@ private:
 
 private:
 
-    // Hidden copy constructor and assignment operator.
-    FaceDbSchemaUpdater(const FaceDbSchemaUpdater&);
-    FaceDbSchemaUpdater& operator=(const FaceDbSchemaUpdater&);
+    // Disable
+    FaceDbSchemaUpdater(const FaceDbSchemaUpdater&)            = delete;
+    FaceDbSchemaUpdater& operator=(const FaceDbSchemaUpdater&) = delete;
 
 private:
 

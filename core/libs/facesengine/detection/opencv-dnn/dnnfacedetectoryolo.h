@@ -61,9 +61,9 @@ private:
 
 private:
 
-    // Hidden copy constructor and assignment operator.
-    DNNFaceDetectorYOLO(const DNNFaceDetectorYOLO&);
-    DNNFaceDetectorYOLO& operator=(const DNNFaceDetectorYOLO&);
+    // Disable
+    DNNFaceDetectorYOLO(const DNNFaceDetectorYOLO&)            = delete;
+    DNNFaceDetectorYOLO& operator=(const DNNFaceDetectorYOLO&) = delete;
 };
 
 } // namespace Digikam

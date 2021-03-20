@@ -72,8 +72,9 @@ private:
 
 private:
 
-    OpenCVDNNFaceDetector(const OpenCVDNNFaceDetector&);            // Disable
-    OpenCVDNNFaceDetector& operator=(const OpenCVDNNFaceDetector&); // Disable
+    // Disable
+    OpenCVDNNFaceDetector(const OpenCVDNNFaceDetector&)            = delete;
+    OpenCVDNNFaceDetector& operator=(const OpenCVDNNFaceDetector&) = delete;
 
 private:
 

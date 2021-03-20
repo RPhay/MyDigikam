@@ -86,9 +86,9 @@ protected:
 
 private:
 
-    // Hidden copy constructor and assignment operator.
-    DNNFaceDetectorBase(const DNNFaceDetectorBase&);
-    DNNFaceDetectorBase& operator=(const DNNFaceDetectorBase&);
+    // Disable
+    DNNFaceDetectorBase(const DNNFaceDetectorBase&)            = delete;
+    DNNFaceDetectorBase& operator=(const DNNFaceDetectorBase&) = delete;
 };
 
 } // namespace Digikam

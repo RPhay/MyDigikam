@@ -97,7 +97,7 @@ protected:
 private:
 
     // Disable
-    TagMngrTreeView(QWidget*);
+    TagMngrTreeView(QWidget*) = delete;
 
 private:
 

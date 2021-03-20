@@ -55,9 +55,9 @@ public:
 
 private:
 
-    // Hidden copy constructor and assignment operator.
-    RecognitionPreprocessor(const RecognitionPreprocessor&);
-    RecognitionPreprocessor& operator=(const RecognitionPreprocessor&);
+    // Disable
+    RecognitionPreprocessor(const RecognitionPreprocessor&)            = delete;
+    RecognitionPreprocessor& operator=(const RecognitionPreprocessor&) = delete;
 
 private:
 

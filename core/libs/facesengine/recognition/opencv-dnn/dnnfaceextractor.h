@@ -80,8 +80,8 @@ public:
 
 private:
 
-    /// Hidden assignment operator.
-    DNNFaceExtractor& operator=(const DNNFaceExtractor&);
+    /// Disable
+    DNNFaceExtractor& operator=(const DNNFaceExtractor&) = delete;
 
 private:
 

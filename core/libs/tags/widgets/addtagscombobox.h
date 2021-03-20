@@ -113,7 +113,7 @@ protected:
 
 private:
 
-    // make private
+    // Disable
     void setEditable(bool editable);
 
 private:

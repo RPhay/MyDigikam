@@ -62,9 +62,9 @@ public:
 
 private:
 
-    // Hidden copy constructor and assignment operator.
-    RecognitionTrainingProvider(const RecognitionTrainingProvider&);
-    RecognitionTrainingProvider& operator=(const RecognitionTrainingProvider&);
+    // Disable
+    RecognitionTrainingProvider(const RecognitionTrainingProvider&)            = delete;
+    RecognitionTrainingProvider& operator=(const RecognitionTrainingProvider&) = delete;
 };
 
 } // namespace Digikam

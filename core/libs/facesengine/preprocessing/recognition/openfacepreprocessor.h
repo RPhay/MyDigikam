@@ -69,9 +69,9 @@ private:
 
 private:
 
-    // Hidden copy constructor and assignment operator.
-    OpenfacePreprocessor(const OpenfacePreprocessor&);
-    OpenfacePreprocessor& operator=(const OpenfacePreprocessor&);
+    // Disable
+    OpenfacePreprocessor(const OpenfacePreprocessor&)            = delete;
+    OpenfacePreprocessor& operator=(const OpenfacePreprocessor&) = delete;
 };
 
 } // namespace Digikam

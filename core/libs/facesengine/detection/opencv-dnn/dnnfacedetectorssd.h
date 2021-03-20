@@ -54,9 +54,9 @@ private:
 
 private:
 
-    // Hidden copy constructor and assignment operator.
-    DNNFaceDetectorSSD(const DNNFaceDetectorSSD&);
-    DNNFaceDetectorSSD& operator=(const DNNFaceDetectorSSD&);
+    // Disable
+    DNNFaceDetectorSSD(const DNNFaceDetectorSSD&)            = delete;
+    DNNFaceDetectorSSD& operator=(const DNNFaceDetectorSSD&) = delete;
 };
 
 } // namespace Digikam

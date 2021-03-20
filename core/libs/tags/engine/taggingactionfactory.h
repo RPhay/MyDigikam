@@ -108,8 +108,8 @@ public:
 private:
 
     // Disable
-    TaggingActionFactory(const TaggingActionFactory&);
-    TaggingActionFactory& operator=(const TaggingActionFactory&);
+    TaggingActionFactory(const TaggingActionFactory&)            = delete;
+    TaggingActionFactory& operator=(const TaggingActionFactory&) = delete;
 
     class Private;
     Private* const d;

@@ -200,8 +200,8 @@ public:
 
 private:
 
-    // Hidden assignment operator.
-    FacialRecognitionWrapper& operator=(const FacialRecognitionWrapper&);
+    // Disable
+    FacialRecognitionWrapper& operator=(const FacialRecognitionWrapper&) = delete;
 
 private:
 
