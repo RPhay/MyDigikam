@@ -49,11 +49,11 @@ private:
 
 public:
 
-    ColumnFlags getColumnFlags()                                                                             const override;
-    QString getTitle()                                                                                       const override;
-    QVariant data(TableViewModel::Item* const item, const int role)                                          const override;
-    bool paint(QPainter*const painter, const QStyleOptionViewItem& option, TableViewModel::Item* const item) const override;
-    QSize sizeHint(const QStyleOptionViewItem& option, TableViewModel::Item* const item)                     const override;
+    ColumnFlags getColumnFlags()                                                                              const override;
+    QString getTitle()                                                                                        const override;
+    QVariant data(TableViewModel::Item* const item, const int role)                                           const override;
+    bool paint(QPainter* const painter, const QStyleOptionViewItem& option, TableViewModel::Item* const item) const override;
+    QSize sizeHint(const QStyleOptionViewItem& option, TableViewModel::Item* const item)                      const override;
     void updateThumbnailSize() override;
 
     static bool CreateFromConfiguration(TableViewShared* const tableViewShared,

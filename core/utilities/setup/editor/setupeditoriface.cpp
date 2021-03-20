@@ -140,9 +140,9 @@ SetupEditorIface::SetupEditorIface(QWidget* const parent)
     d->themebackgroundColor->setWhatsThis(i18n("Enable this option to use the background theme "
                                                "color in the image editor area."));
 
-    d->colorBox                       = new DHBox(interfaceOptionsGroup);
-    QLabel*const backgroundColorlabel = new QLabel(i18n("&Background color:"), d->colorBox);
-    d->backgroundColor                = new DColorSelector(d->colorBox);
+    d->colorBox                        = new DHBox(interfaceOptionsGroup);
+    QLabel* const backgroundColorlabel = new QLabel(i18n("&Background color:"), d->colorBox);
+    d->backgroundColor                 = new DColorSelector(d->colorBox);
     backgroundColorlabel->setBuddy(d->backgroundColor);
     d->backgroundColor->setWhatsThis(i18n("Customize the background color to use "
                                           "in the image editor area."));

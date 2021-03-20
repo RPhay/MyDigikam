@@ -78,7 +78,7 @@ public:
 
 public:
 
-    explicit ImportStackedView(QWidget*const parent = nullptr);
+    explicit ImportStackedView(QWidget* const parent = nullptr);
     ~ImportStackedView() override;
 
     void setDockArea(QMainWindow*);

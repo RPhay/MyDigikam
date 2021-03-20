@@ -187,7 +187,7 @@ private:
 private:
 
     class Private;
-    Private *const d;
+    Private* const d;
 
     friend class Private;
 };

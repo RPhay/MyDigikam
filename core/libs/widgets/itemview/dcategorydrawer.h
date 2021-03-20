@@ -174,7 +174,7 @@ protected:
 private:
 
     class Private;
-    Private *const d;
+    Private* const d;
 };
 
 } // namespace Digikam
