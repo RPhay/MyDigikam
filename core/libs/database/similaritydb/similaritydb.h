@@ -249,9 +249,9 @@ private:
 
 private:
 
-    // Hidden copy constructor and assignment operator.
-    SimilarityDb(const SimilarityDb&);
-    SimilarityDb& operator=(const SimilarityDb&);
+    // Disable
+    SimilarityDb(const SimilarityDb&)            = delete;
+    SimilarityDb& operator=(const SimilarityDb&) = delete;
 
     class Private;
     Private* const d;

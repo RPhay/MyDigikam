@@ -58,15 +58,14 @@ private:
 
 // ------------------------------------------------------------------------------------------------
 
-class DIGIKAM_DATABASE_EXPORT ItemListerValueListReceiver
-    : public ItemListerReceiver
+class DIGIKAM_DATABASE_EXPORT ItemListerValueListReceiver : public ItemListerReceiver
 {
 public:
 
     explicit ItemListerValueListReceiver();
 
     void receive(const ItemListerRecord& record) override;
-    void error(const QString& errMsg) override;
+    void error(const QString& errMsg)            override;
 
 public:
 
@@ -80,8 +79,7 @@ private:
 
 // ------------------------------------------------------------------------------------------------
 
-class DIGIKAM_DATABASE_EXPORT ItemListerJobReceiver
-    : public ItemListerValueListReceiver
+class DIGIKAM_DATABASE_EXPORT ItemListerJobReceiver : public ItemListerValueListReceiver
 {
 public:
 
@@ -101,8 +99,7 @@ private:
 
 // ------------------------------------------------------------------------------------------------
 
-class DIGIKAM_DATABASE_EXPORT ItemListerJobPartsSendingReceiver
-    : public ItemListerJobReceiver
+class DIGIKAM_DATABASE_EXPORT ItemListerJobPartsSendingReceiver : public ItemListerJobReceiver
 {
 public:
 
@@ -122,8 +119,7 @@ private:
 
 // ------------------------------------------------------------------------------------------------
 
-class DIGIKAM_DATABASE_EXPORT ItemListerJobGrowingPartsSendingReceiver
-    : public ItemListerJobPartsSendingReceiver
+class DIGIKAM_DATABASE_EXPORT ItemListerJobGrowingPartsSendingReceiver : public ItemListerJobPartsSendingReceiver
 {
 public:
 

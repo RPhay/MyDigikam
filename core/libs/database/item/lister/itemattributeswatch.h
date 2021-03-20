@@ -100,7 +100,7 @@ private:
 
     // Disable
     ItemAttributesWatch();
-    explicit ItemAttributesWatch(QObject*);
+    explicit ItemAttributesWatch(QObject*) = delete;
     ~ItemAttributesWatch() override;
 
     static ItemAttributesWatch* m_instance;

@@ -105,7 +105,7 @@ private Q_SLOTS:
 private:
 
     // Disable
-    explicit ItemInfoCache(QObject*);
+    explicit ItemInfoCache(QObject*) = delete;
 
     QList<AlbumShortInfo>::const_iterator findAlbum(int id);
     void                                  checkAlbums();

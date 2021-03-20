@@ -390,9 +390,9 @@ public:
 
 private:
 
-    // Hidden copy constructor and assignment operator.
-    ItemModel(const ItemModel&);
-    ItemModel& operator=(const ItemModel&);
+    // Disable
+    ItemModel(const ItemModel&)            = delete;
+    ItemModel& operator=(const ItemModel&) = delete;
 
     Private* const d;
 };

@@ -50,7 +50,7 @@ public:
      *  Note that setKeepsFilePathCache is enabled per default.
      */
     explicit ItemThumbnailModel(QObject* const parent);
-    ~ItemThumbnailModel() override;
+    ~ItemThumbnailModel()                                                             override;
 
     /**
      * Enable thumbnail loading and set the thread that shall be used.
@@ -89,7 +89,7 @@ public:
      * If it still needs to be loaded, returns a null QVariant and emits
      * thumbnailAvailable() as soon as it is available.
      */
-    QVariant data(const QModelIndex& index, int role = Qt::DisplayRole) const override;
+    QVariant data(const QModelIndex& index, int role = Qt::DisplayRole)         const override;
 
     /**
      * You can override the current thumbnail size by giving an integer value for ThumbnailRole.
@@ -137,9 +137,9 @@ protected Q_SLOTS:
 
 private:
 
-    // Hidden copy constructor and assignment operator.
-    ItemThumbnailModel(const ItemThumbnailModel&);
-    ItemThumbnailModel& operator=(const ItemThumbnailModel&);
+    // Disable
+    ItemThumbnailModel(const ItemThumbnailModel&)            = delete;
+    ItemThumbnailModel& operator=(const ItemThumbnailModel&) = delete;
 
     class Private;
     Private* const d;

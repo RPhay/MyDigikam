@@ -165,7 +165,7 @@ Q_SIGNALS:
 private:
 
     // Disable
-    explicit ItemFilterModelPrivate(QObject*);
+    explicit ItemFilterModelPrivate(QObject*) = delete;
 };
 
 } // namespace Digikam
