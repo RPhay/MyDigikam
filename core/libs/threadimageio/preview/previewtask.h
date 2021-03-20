@@ -41,7 +41,8 @@ class PreviewLoadingTask : public SharedLoadingTask
 {
 public:
 
-    explicit PreviewLoadingTask(LoadSaveThread* const thread, const LoadingDescription& description);
+    explicit PreviewLoadingTask(LoadSaveThread* const thread,
+                                const LoadingDescription& description);
     ~PreviewLoadingTask() override;
 
     void execute() override;
@@ -62,9 +63,9 @@ private:
 
 private:
 
-    // Hidden copy constructor and assignment operator.
-    PreviewLoadingTask(const PreviewLoadingTask&);
-    PreviewLoadingTask& operator=(const PreviewLoadingTask&);
+    // Disable
+    PreviewLoadingTask(const PreviewLoadingTask&)            = delete;
+    PreviewLoadingTask& operator=(const PreviewLoadingTask&) = delete;
 };
 
 } // namespace Digikam

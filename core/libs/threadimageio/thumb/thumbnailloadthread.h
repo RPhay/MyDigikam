@@ -267,9 +267,9 @@ private Q_SLOTS:
 
 private:
 
-    // Hidden copy constructor and assignment operator.
-    ThumbnailLoadThread(const ThumbnailLoadThread&);
-    ThumbnailLoadThread& operator=(const ThumbnailLoadThread&);
+    // Disable
+    ThumbnailLoadThread(const ThumbnailLoadThread&)            = delete;
+    ThumbnailLoadThread& operator=(const ThumbnailLoadThread&) = delete;
 
 private:
 
@@ -296,7 +296,8 @@ public:
      */
 
     explicit ThumbnailImageCatcher(QObject* const parent = nullptr);
-    explicit ThumbnailImageCatcher(ThumbnailLoadThread* const thread, QObject* const parent = nullptr);
+    explicit ThumbnailImageCatcher(ThumbnailLoadThread* const thread,
+                                   QObject* const parent = nullptr);
     ~ThumbnailImageCatcher() override;
 
     ThumbnailLoadThread* thread() const;
@@ -336,9 +337,9 @@ protected Q_SLOTS:
 
 private:
 
-    // Hidden copy constructor and assignment operator.
-    ThumbnailImageCatcher(const ThumbnailImageCatcher&);
-    ThumbnailImageCatcher& operator=(const ThumbnailImageCatcher&);
+    // Disable
+    ThumbnailImageCatcher(const ThumbnailImageCatcher&)            = delete;
+    ThumbnailImageCatcher& operator=(const ThumbnailImageCatcher&) = delete;
 
 private:
 

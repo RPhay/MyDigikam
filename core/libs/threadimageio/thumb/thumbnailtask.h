@@ -61,9 +61,9 @@ private:
 
 private:
 
-    // Hidden copy constructor and assignment operator.
-    ThumbnailLoadingTask(const ThumbnailLoadingTask&);
-    ThumbnailLoadingTask& operator=(const ThumbnailLoadingTask&);
+    // Disable
+    ThumbnailLoadingTask(const ThumbnailLoadingTask&)            = delete;
+    ThumbnailLoadingTask& operator=(const ThumbnailLoadingTask&) = delete;
 };
 
 } // namespace Digikam

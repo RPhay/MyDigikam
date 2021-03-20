@@ -237,10 +237,9 @@ private:
 
 private:
 
-    // Hidden copy constructor and assignment operator.
-
-    ThumbnailCreator(const ThumbnailCreator&);
-    ThumbnailCreator& operator=(const ThumbnailCreator&);
+    // Disable
+    ThumbnailCreator(const ThumbnailCreator&)            = delete;
+    ThumbnailCreator& operator=(const ThumbnailCreator&) = delete;
 
 private:
 

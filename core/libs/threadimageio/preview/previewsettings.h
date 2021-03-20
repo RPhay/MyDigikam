@@ -64,10 +64,13 @@ public:
 
 public:
 
-    explicit PreviewSettings(Quality quality = HighQualityPreview, RawLoading rawLoading = RawPreviewAutomatic);
+    explicit PreviewSettings(Quality quality = HighQualityPreview,
+                             RawLoading rawLoading = RawPreviewAutomatic);
     ~PreviewSettings();
 
     bool operator==(const PreviewSettings& other) const;
+
+public:
 
     static PreviewSettings fastPreview();
     static PreviewSettings highQualityPreview();

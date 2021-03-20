@@ -122,9 +122,9 @@ protected:
 
 private:
 
-    // Hidden copy constructor and assignment operator.
-    PreviewLoadThread(const PreviewLoadThread&);
-    PreviewLoadThread& operator=(const PreviewLoadThread&);
+    // Disable
+    PreviewLoadThread(const PreviewLoadThread&)            = delete;
+    PreviewLoadThread& operator=(const PreviewLoadThread&) = delete;
 };
 
 } // namespace Digikam
