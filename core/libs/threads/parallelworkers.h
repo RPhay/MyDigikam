@@ -111,9 +111,9 @@ protected:
 
 private:
 
-    // Hidden copy constructor and assignment operator.
-    ParallelWorkers(const ParallelWorkers&);
-    ParallelWorkers& operator=(const ParallelWorkers&);
+    // Disable
+    ParallelWorkers(const ParallelWorkers&)            = delete;
+    ParallelWorkers& operator=(const ParallelWorkers&) = delete;
 };
 
 // -------------------------------------------------------------------------------------------------
@@ -210,9 +210,9 @@ public:
 
 private:
 
-    // Hidden copy constructor and assignment operator.
-    ParallelAdapter(const ParallelAdapter&);
-    ParallelAdapter& operator=(const ParallelAdapter&);
+    // Disable
+    ParallelAdapter(const ParallelAdapter&)            = delete;
+    ParallelAdapter& operator=(const ParallelAdapter&) = delete;
 };
 
 } // namespace Digikam

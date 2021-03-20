@@ -67,9 +67,9 @@ protected:
 private:
 
     // Disable
-    explicit ThreadManager(QObject*);
-    ThreadManager(const ThreadManager&);
-    ThreadManager& operator=(const ThreadManager&);
+    explicit ThreadManager(QObject*)               = delete;
+    ThreadManager(const ThreadManager&)            = delete;
+    ThreadManager& operator=(const ThreadManager&) = delete;
 
 private:
 

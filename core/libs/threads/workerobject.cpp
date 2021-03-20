@@ -96,7 +96,9 @@ void WorkerObject::wait()
     }
 }
 
-bool WorkerObject::connectAndSchedule(const QObject* sender, const char* signal, const char* method,
+bool WorkerObject::connectAndSchedule(const QObject* sender,
+                                      const char* signal,
+                                      const char* method,
                                       Qt::ConnectionType type) const
 {
     connect(sender, signal,
@@ -106,8 +108,10 @@ bool WorkerObject::connectAndSchedule(const QObject* sender, const char* signal,
     return (QObject::connect(sender, signal, method, type));
 }
 
-bool WorkerObject::connectAndSchedule(const QObject* sender, const char* signal,
-                                      const WorkerObject* receiver, const char* method,
+bool WorkerObject::connectAndSchedule(const QObject* sender,
+                                      const char* signal,
+                                      const WorkerObject* receiver,
+                                      const char* method,
                                       Qt::ConnectionType type)
 {
     connect(sender, signal,
@@ -117,8 +121,10 @@ bool WorkerObject::connectAndSchedule(const QObject* sender, const char* signal,
     return (QObject::connect(sender, signal, receiver, method, type));
 }
 
-bool WorkerObject::disconnectAndSchedule(const QObject* sender, const char* signal,
-                                         const WorkerObject* receiver, const char* method)
+bool WorkerObject::disconnectAndSchedule(const QObject* sender,
+                                         const char* signal,
+                                         const WorkerObject* receiver,
+                                         const char* method)
 {
     disconnect(sender, signal,
                receiver, SLOT(schedule()));

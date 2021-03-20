@@ -154,9 +154,9 @@ protected:
 
 private:
 
-    // Hidden copy constructor and assignment operator.
-    DynamicThread(const DynamicThread&);
-    DynamicThread& operator=(const DynamicThread&);
+    // Disable
+    DynamicThread(const DynamicThread&)            = delete;
+    DynamicThread& operator=(const DynamicThread&) = delete;
 
 private:
 
