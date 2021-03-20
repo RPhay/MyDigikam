@@ -46,9 +46,9 @@ public:
 
 private:
 
-    // Hidden copy constructor and assignment operator.
-    SharedLoadSaveThread(const SharedLoadSaveThread&);
-    SharedLoadSaveThread& operator=(const SharedLoadSaveThread&);
+    // Disable
+    SharedLoadSaveThread(const SharedLoadSaveThread&)            = delete;
+    SharedLoadSaveThread& operator=(const SharedLoadSaveThread&) = delete;
 };
 
 } // namespace Digikam

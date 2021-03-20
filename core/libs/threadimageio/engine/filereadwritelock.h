@@ -107,8 +107,8 @@ protected:
 
 private:
 
-    // Disabled
-    SafeTemporaryFile(QObject*);
+    // Disable
+    SafeTemporaryFile(QObject*) = delete;
 
     QString m_templ;
 };

@@ -52,9 +52,9 @@ public:
 
 private:
 
-    // Hidden copy constructor and assignment operator.
-    LoadingProcessListener(const LoadingProcessListener&);
-    LoadingProcessListener& operator=(const LoadingProcessListener&);
+    // Disable
+    LoadingProcessListener(const LoadingProcessListener&)            = delete;
+    LoadingProcessListener& operator=(const LoadingProcessListener&) = delete;
 };
 
 // --------------------------------------------------------------------------------------------------------------
@@ -73,9 +73,9 @@ public:
 
 private:
 
-    // Hidden copy constructor and assignment operator.
-    LoadingProcess(const LoadingProcess&);
-    LoadingProcess& operator=(const LoadingProcess&);
+    // Disable
+    LoadingProcess(const LoadingProcess&)            = delete;
+    LoadingProcess& operator=(const LoadingProcess&) = delete;
 };
 
 // --------------------------------------------------------------------------------------------------------------
@@ -111,10 +111,10 @@ protected:
 
 private:
 
-    // Hidden copy constructor and assignment operator.
-    LoadingCacheFileWatch(const LoadingCacheFileWatch&);
-    LoadingCacheFileWatch& operator=(const LoadingCacheFileWatch&);
-    LoadingCacheFileWatch(QObject*);
+    // Disable
+    LoadingCacheFileWatch(const LoadingCacheFileWatch&)            = delete;
+    LoadingCacheFileWatch& operator=(const LoadingCacheFileWatch&) = delete;
+    LoadingCacheFileWatch(QObject*)                                = delete;
 };
 
 // --------------------------------------------------------------------------------------------------------------
@@ -291,12 +291,13 @@ private:
 
     // Disabled
     LoadingCache();
-    explicit LoadingCache(QObject*);
+    explicit LoadingCache(QObject*)              = delete;
     ~LoadingCache() override;
 
-    // Hidden copy constructor and assignment operator.
-    LoadingCache(const LoadingCache&);
-    LoadingCache& operator=(const LoadingCache&);
+    LoadingCache(const LoadingCache&)            = delete;
+    LoadingCache& operator=(const LoadingCache&) = delete;
+
+private:
 
     friend class LoadingCacheFileWatch;
     friend class CacheLock;

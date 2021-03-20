@@ -215,9 +215,11 @@ private:
 
     void removeLoadingTasks(const LoadingDescription& description, LoadingTaskFilter filter);
 
-    // Hidden copy constructor and assignment operator.
-    ManagedLoadSaveThread(const ManagedLoadSaveThread&);
-    ManagedLoadSaveThread& operator=(const ManagedLoadSaveThread&);
+private:
+
+    // Disable
+    ManagedLoadSaveThread(const ManagedLoadSaveThread&)            = delete;
+    ManagedLoadSaveThread& operator=(const ManagedLoadSaveThread&) = delete;
 };
 
 } // namespace Digikam
