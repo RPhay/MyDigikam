@@ -77,8 +77,8 @@ public:
 
 private:
 
-    // Hidden assignment operator.
-    DbEngineActionType& operator=(const DbEngineActionType&);
+    // Disable
+    DbEngineActionType& operator=(const DbEngineActionType&) = delete;
 
     class Private;
     Private* const d;
