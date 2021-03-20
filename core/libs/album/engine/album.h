@@ -323,12 +323,10 @@ protected:
 
 private:
 
-    /**
-     * Disable copy and default constructor
-     */
-    Album();
+     // Disable
+    Album()                         = delete;
+    Album& operator==(const Album&) = delete;
     Q_DISABLE_COPY(Album)
-    Album& operator==(const Album&);
 
 private:
 
@@ -583,8 +581,8 @@ public:
 
 private:
 
-    // disable copying and construction without an album
-    AlbumIterator();
+    // Disable
+    AlbumIterator() = delete;
     Q_DISABLE_COPY(AlbumIterator)
 
 private:

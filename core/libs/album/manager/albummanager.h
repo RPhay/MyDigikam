@@ -831,7 +831,7 @@ private:
 
     // Disable
     AlbumManager();
-    explicit AlbumManager(QObject*);
+    explicit AlbumManager(QObject*) = delete;
     ~AlbumManager() override;
 
     friend class AlbumManagerCreator;

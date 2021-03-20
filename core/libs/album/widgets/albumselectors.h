@@ -43,14 +43,14 @@ public:
 
     enum AlbumType
     {
-        PhysAlbum=0,
+        PhysAlbum = 0,
         TagsAlbum,
         All
     };
 
     enum SelectionType
     {
-        SingleSelection=0,
+        SingleSelection = 0,
         MultipleSelection
     };
 

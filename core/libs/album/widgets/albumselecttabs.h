@@ -45,10 +45,10 @@ class AlbumSelectTabs : public QTabWidget
 public:
 
     explicit AlbumSelectTabs(const QString& name, QWidget* const parent = nullptr);
-    ~AlbumSelectTabs() override;
+    ~AlbumSelectTabs()                                      override;
 
-    AlbumList selectedAlbums() const;
-    void enableVirtualAlbums(bool flag=true);
+    AlbumList selectedAlbums()                        const;
+    void enableVirtualAlbums(bool flag = true);
 
     QList<AbstractCheckableAlbumModel*> albumModels() const;
     AlbumLabelsSearchHandler* albumLabelsHandler()    const;

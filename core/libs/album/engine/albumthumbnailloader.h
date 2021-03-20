@@ -199,7 +199,7 @@ private:
 
     // Disable
     AlbumThumbnailLoader();
-    explicit AlbumThumbnailLoader(QObject*);
+    explicit AlbumThumbnailLoader(QObject*) = delete;
     ~AlbumThumbnailLoader() override;
 
     void    addUrl(Album* const album, qlonglong id);
