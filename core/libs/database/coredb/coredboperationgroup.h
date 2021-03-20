@@ -80,9 +80,9 @@ public:
 
 private:
 
-    // Hidden copy constructor and assignment operator.
-    CoreDbOperationGroup(const CoreDbOperationGroup&);
-    CoreDbOperationGroup& operator=(const CoreDbOperationGroup&);
+    // Disable
+    CoreDbOperationGroup(const CoreDbOperationGroup&)            = delete;
+    CoreDbOperationGroup& operator=(const CoreDbOperationGroup&) = delete;
 
     class Private;
     Private* const d;

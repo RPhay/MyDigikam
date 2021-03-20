@@ -289,11 +289,11 @@ Q_SIGNALS:
 
 private:
 
+    // Disable
+    CollectionScanner(QObject*) = delete;
+
     class Private;
     Private* const d;
-
-    // Disable
-    CollectionScanner(QObject*);
 };
 
 } // namespace Digikam

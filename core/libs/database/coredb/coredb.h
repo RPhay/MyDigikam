@@ -1400,9 +1400,9 @@ protected:
 
 private:
 
-    /// Hidden copy constructor and assignment operator.
-    CoreDB(const CoreDB&);
-    CoreDB& operator=(const CoreDB&);
+    // Disable
+    CoreDB(const CoreDB&)            = delete;
+    CoreDB& operator=(const CoreDB&) = delete;
 
     void readSettings();
     void writeSettings();

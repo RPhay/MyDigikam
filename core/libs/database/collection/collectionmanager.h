@@ -90,7 +90,7 @@ private:
 
     // Disabled
     CollectionManager();
-    explicit CollectionManager(QObject*);
+    explicit CollectionManager(QObject*) = delete;
     ~CollectionManager() override;
 
     void clearLocations();

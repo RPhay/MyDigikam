@@ -151,7 +151,7 @@ typedef uint16_t ImageMetadataMinSizeType;
 
 enum ItemPositionsField
 {
-    ItemPositionsNone  = 0,
+    ItemPositionsNone   = 0,
     Latitude            = 1 << 0,
     LatitudeNumber      = 1 << 1,
     Longitude           = 1 << 2,
@@ -309,7 +309,7 @@ template<typename FieldName> class DatabaseFieldsEnumIteratorSetOnly
 public:
 
     explicit DatabaseFieldsEnumIteratorSetOnly(const FieldName setValues)
-      : i(),
+      : i     (),
         values(setValues)
     {
         if (! (*i & values) )
@@ -498,12 +498,15 @@ private:
     int removeAllFields(const Key& key)                                                                                             \
     {                                                                                                                               \
         int removedCount = 0;                                                                                                       \
+                                                                                                                                    \
         for (DatabaseFieldsEnumIteratorSetOnly<Key> it(key) ; !it.atEnd() ; ++it)                                                   \
         {                                                                                                                           \
-            removedCount+=remove(*it);                                                                                              \
+            removedCount += remove(*it);                                                                                            \
         }                                                                                                                           \
+                                                                                                                                    \
         return removedCount;                                                                                                        \
     }                                                                                                                               \
+                                                                                                                                    \
     T take(const Key& key)                                     { return QHash<unsigned int, T>::take(method(key));                } \
                                                                                                                                     \
     bool contains(const Key& key) const                        { return QHash<unsigned int, T>::contains(method(key));            } \

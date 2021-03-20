@@ -78,7 +78,7 @@ public:
     /**
      * Retrieve a pointer to the album database
      */
-    CoreDB* db() const;
+    CoreDB* db()             const;
 
     /**
      * Retrieve a pointer to the database backend
@@ -143,6 +143,7 @@ public:
 
 private:
 
+    // Disable
     explicit CoreDbAccess(bool);
 
     friend class CoreDbAccessUnlock;

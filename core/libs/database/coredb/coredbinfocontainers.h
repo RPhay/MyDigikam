@@ -37,10 +37,10 @@ class ImageCommonContainer
 public:
 
     explicit ImageCommonContainer()
-      : fileSize(0),
-        rating(-1),
-        width(0),
-        height(0),
+      : fileSize  (0),
+        rating    (-1),
+        width     (0),
+        height    (0),
         colorDepth(0)
     {
     }

@@ -113,7 +113,8 @@ bool testRelation(T v1, T v2, Relation rel)
     return false;
 }
 
-/** General default values for groupOperator() and defaultFieldOperator()
+/**
+ * General default values for groupOperator() and defaultFieldOperator()
  */
 inline SearchXml::Operator standardGroupOperator()
 {

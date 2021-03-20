@@ -49,8 +49,8 @@ class AlbumRootInfo
 public:
 
     explicit AlbumRootInfo()
-      : id(0),
-        type(AlbumRoot::UndefinedType),
+      : id    (0),
+        type  (AlbumRoot::UndefinedType),
         status(0)
     {
     };
@@ -81,9 +81,9 @@ public:
 public:
 
     explicit AlbumInfo()
-      : id(0),
+      : id         (0),
         albumRootId(0),
-        iconId(0)
+        iconId     (0)
     {
     };
 
@@ -129,8 +129,8 @@ public:
 public:
 
     explicit TagInfo()
-      : id(0),
-        pid(0),
+      : id    (0),
+        pid   (0),
         iconId(0)
     {
     };
@@ -170,7 +170,7 @@ public:
 public:
 
     explicit SearchInfo()
-      : id(0),
+      : id  (0),
         type(DatabaseSearch::UndefinedType)
     {
     };
@@ -203,7 +203,7 @@ class AlbumShortInfo
 public:
 
     explicit AlbumShortInfo()
-      : id(0),
+      : id         (0),
         albumRootId(0)
     {
     };
@@ -227,7 +227,7 @@ class TagShortInfo
 public:
 
     explicit TagShortInfo()
-      : id(0),
+      : id (0),
         pid(0)
     {
     };
@@ -251,8 +251,8 @@ class ItemShortInfo
 public:
 
     explicit ItemShortInfo()
-      : id(0),
-        albumID(0),
+      : id         (0),
+        albumID    (0),
         albumRootID(0)
     {
     };
@@ -278,9 +278,9 @@ class ItemScanInfo
 public:
 
     explicit ItemScanInfo()
-      : id(0),
-        albumID(0),
-        status(DatabaseItem::UndefinedStatus),
+      : id      (0),
+        albumID (0),
+        status  (DatabaseItem::UndefinedStatus),
         category(DatabaseItem::UndefinedCategory),
         fileSize(0)
     {
@@ -310,9 +310,9 @@ class CommentInfo
 public:
 
     explicit CommentInfo()
-      : id(-1),
+      : id     (-1),
         imageId(-1),
-        type(DatabaseComment::UndefinedType)
+        type   (DatabaseComment::UndefinedType)
     {
     };
 
@@ -387,8 +387,8 @@ public:
 
     explicit ImageRelation()
       : subjectId(0),
-        objectId(0),
-        type(DatabaseRelation::UndefinedType)
+        objectId (0),
+        type     (DatabaseRelation::UndefinedType)
     {
     }
 
@@ -430,7 +430,7 @@ public:
 
     explicit ImageTagProperty()
       : imageId(-1),
-        tagId(-1)
+        tagId  (-1)
     {
     };
 

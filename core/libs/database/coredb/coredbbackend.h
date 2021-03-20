@@ -48,7 +48,8 @@ public:
                            const QString& backendName = QLatin1String("digikamDatabase-"));
     ~CoreDbBackend() override;
 
-    /** Sets the global database watch
+    /**
+     * Sets the global database watch
      */
     void setCoreDbWatch(CoreDbWatch* watch);
 

@@ -166,7 +166,7 @@ public:
 private:
 
     // Disabled
-    explicit CoreDbWatch(QObject*);
+    explicit CoreDbWatch(QObject*) = delete;
 
     Private* const d;
 };
