@@ -59,12 +59,12 @@ class Q_DECL_HIDDEN CoreDbAccessStaticPriv
 public:
 
     CoreDbAccessStaticPriv()
-        : backend(nullptr),
-          db(nullptr),
-          databaseWatch(nullptr),
+        : backend              (nullptr),
+          db                   (nullptr),
+          databaseWatch        (nullptr),
           // Create a unique identifier for this application (as an application accessing a database
           applicationIdentifier(QUuid::createUuid()),
-          initializing(false)
+          initializing         (false)
     {
     };
 
@@ -85,13 +85,17 @@ public:
     bool                initializing;
 };
 
+CoreDbAccessStaticPriv* CoreDbAccess::d = nullptr;
+
+// -----------------------------------------------------------------------------
+
 class Q_DECL_HIDDEN CoreDbAccessMutexLocker : public QMutexLocker
 {
 public:
 
-    explicit CoreDbAccessMutexLocker(CoreDbAccessStaticPriv* const d)
-        : QMutexLocker(&d->lock.mutex),
-          d(d)
+    explicit CoreDbAccessMutexLocker(CoreDbAccessStaticPriv* const dd)
+        : QMutexLocker(&dd->lock.mutex),
+          d           (dd)
     {
         d->lock.lockCount++;
     }
@@ -106,11 +110,12 @@ public:
     CoreDbAccessStaticPriv* const d;
 };
 
-CoreDbAccessStaticPriv* CoreDbAccess::d = nullptr;
+// -----------------------------------------------------------------------------
 
 CoreDbAccess::CoreDbAccess()
 {
     // You will want to call setParameters before constructing CoreDbAccess
+
     Q_ASSERT(d);
 
     d->lock.mutex.lock();
@@ -119,6 +124,7 @@ CoreDbAccess::CoreDbAccess()
     if (!d->backend->isOpen() && !d->initializing)
     {
         // avoid endless loops (e.g. recursing from CollectionManager)
+
         d->initializing = true;
 
         d->backend->open(d->parameters);
@@ -139,6 +145,7 @@ CoreDbAccess::CoreDbAccess(bool)
 {
     // private constructor, when mutex is locked and
     // backend should not be checked
+
     d->lock.mutex.lock();
     d->lock.lockCount++;
 }
@@ -274,6 +281,7 @@ bool CoreDbAccess::checkReadyForUse(InitializationObserver* const observer)
     }
 
     // create an object with private shortcut constructor
+
     CoreDbAccess access(false);
 
     if (!d->backend)
@@ -301,9 +309,11 @@ bool CoreDbAccess::checkReadyForUse(InitializationObserver* const observer)
     }
 
     // avoid endless loops (if called methods create new CoreDbAccess objects)
+
     d->initializing = true;
 
     // update schema
+
     CoreDbSchemaUpdater updater(access.db(), access.backend(), access.parameters());
     updater.setCoreDbAccess(&access);
     updater.setObserver(observer);
@@ -318,9 +328,11 @@ bool CoreDbAccess::checkReadyForUse(InitializationObserver* const observer)
     }
 
     // set identifier again
+
     d->databaseWatch->setDatabaseIdentifier(d->db->databaseUuid().toString());
 
     // initialize CollectionManager
+
     CollectionManager::instance()->refresh();
 
     d->initializing = false;
@@ -362,21 +374,26 @@ void CoreDbAccess::cleanUpDatabase()
 CoreDbAccessUnlock::CoreDbAccessUnlock()
 {
     // acquire lock
+
     CoreDbAccess::d->lock.mutex.lock();
 
     // store lock count
+
     count = CoreDbAccess::d->lock.lockCount;
 
     // set lock count to 0
+
     CoreDbAccess::d->lock.lockCount = 0;
 
     // unlock
+
     for (int i = 0 ; i < count ; ++i)
     {
         CoreDbAccess::d->lock.mutex.unlock();
     }
 
     // drop lock acquired in first line. Mutex is now free.
+
     CoreDbAccess::d->lock.mutex.unlock();
 }
 
@@ -384,12 +401,14 @@ CoreDbAccessUnlock::CoreDbAccessUnlock(CoreDbAccess* const)
 {
     // With the passed pointer, we have assured that the mutex is acquired
     // Store lock count
+
     count = CoreDbAccess::d->lock.lockCount;
 
     // set lock count to 0
     CoreDbAccess::d->lock.lockCount = 0;
 
     // unlock
+
     for (int i = 0 ; i < count ; ++i)
     {
         CoreDbAccess::d->lock.mutex.unlock();
@@ -401,12 +420,14 @@ CoreDbAccessUnlock::CoreDbAccessUnlock(CoreDbAccess* const)
 CoreDbAccessUnlock::~CoreDbAccessUnlock()
 {
     // lock as often as it was locked before
+
     for (int i = 0 ; i < count ; ++i)
     {
         CoreDbAccess::d->lock.mutex.lock();
     }
 
     // update lock count
+
     CoreDbAccess::d->lock.lockCount += count;
 }
 

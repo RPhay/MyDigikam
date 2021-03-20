@@ -78,9 +78,9 @@ class Q_DECL_HIDDEN ThumbsDbAccessMutexLocker : public QMutexLocker
 {
 public:
 
-    explicit ThumbsDbAccessMutexLocker(ThumbsDbAccessStaticPriv* const d)
-        : QMutexLocker(&d->lock.mutex),
-          d           (d)
+    explicit ThumbsDbAccessMutexLocker(ThumbsDbAccessStaticPriv* const dd)
+        : QMutexLocker(&dd->lock.mutex),
+          d           (dd)
     {
         d->lock.lockCount++;
     }

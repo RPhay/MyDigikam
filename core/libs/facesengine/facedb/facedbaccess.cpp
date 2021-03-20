@@ -51,9 +51,9 @@ class Q_DECL_HIDDEN FaceDbAccessStaticPriv
 public:
 
     explicit FaceDbAccessStaticPriv()
-        : backend       (nullptr),
-          db            (nullptr),
-          initializing  (false)
+        : backend     (nullptr),
+          db          (nullptr),
+          initializing(false)
     {
     }
 
@@ -73,15 +73,15 @@ public:
 
 FaceDbAccessStaticPriv* FaceDbAccess::d = nullptr;
 
-// ----------------------------------------------------------------
+// -----------------------------------------------------------------------------
 
 class Q_DECL_HIDDEN FaceDbAccessMutexLocker : public QMutexLocker
 {
 public:
 
-    explicit FaceDbAccessMutexLocker(FaceDbAccessStaticPriv* const d)
-        : QMutexLocker(&d->lock.mutex),
-          d(d)
+    explicit FaceDbAccessMutexLocker(FaceDbAccessStaticPriv* const dd)
+        : QMutexLocker(&dd->lock.mutex),
+          d           (dd)
     {
         d->lock.lockCount++;
     }
@@ -91,10 +91,12 @@ public:
         d->lock.lockCount--;
     }
 
+public:
+
     FaceDbAccessStaticPriv* const d;
 };
 
-// ----------------------------------------------------------------
+// -----------------------------------------------------------------------------
 
 FaceDbAccess::FaceDbAccess()
 {
