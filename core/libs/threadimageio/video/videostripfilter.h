@@ -45,10 +45,9 @@ public:
 
 private:
 
-    // Hidden copy constructor and assignment operator.
-    VideoStripFilter(const VideoStripFilter&);
-    VideoStripFilter& operator=(const VideoStripFilter&);
-
+    // Disable
+    VideoStripFilter(const VideoStripFilter&)            = delete;
+    VideoStripFilter& operator=(const VideoStripFilter&) = delete;
 };
 
 } // namespace Digikam

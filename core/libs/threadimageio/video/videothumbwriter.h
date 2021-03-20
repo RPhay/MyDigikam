@@ -63,9 +63,9 @@ public:
 
 private:
 
-    // Hidden copy constructor and assignment operator.
-    VideoThumbWriter(const VideoThumbWriter&);
-    VideoThumbWriter& operator=(const VideoThumbWriter&);
+    // Disable
+    VideoThumbWriter(const VideoThumbWriter&)            = delete;
+    VideoThumbWriter& operator=(const VideoThumbWriter&) = delete;
 };
 
 } // namespace Digikam

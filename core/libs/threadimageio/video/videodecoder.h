@@ -62,9 +62,9 @@ public:
 
 private:
 
-    // Hidden copy constructor and assignment operator.
-    VideoDecoder(const VideoDecoder&);
-    VideoDecoder& operator=(const VideoDecoder&);
+    // Disable
+    VideoDecoder(const VideoDecoder&)            = delete;
+    VideoDecoder& operator=(const VideoDecoder&) = delete;
 
 private:
 

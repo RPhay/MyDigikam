@@ -77,9 +77,9 @@ private:
 
 private:
 
-    // Hidden copy constructor and assignment operator.
-    VideoThumbnailer(const VideoThumbnailer&);
-    VideoThumbnailer& operator=(const VideoThumbnailer&);
+    // Disable
+    VideoThumbnailer(const VideoThumbnailer&)            = delete;
+    VideoThumbnailer& operator=(const VideoThumbnailer&) = delete;
 
 private:
 
