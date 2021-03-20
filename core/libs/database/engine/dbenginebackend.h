@@ -550,7 +550,7 @@ private:
     Q_DECLARE_PRIVATE(BdEngineBackend)
 
     // Disable
-    BdEngineBackend(QObject*);
+    BdEngineBackend(QObject*) = delete;
 };
 
 } // namespace Digikam

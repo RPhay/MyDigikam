@@ -54,7 +54,7 @@ Q_SIGNALS:
 private:
 
     // Disable
-    explicit DBJob(QObject*);
+    explicit DBJob(QObject*) = delete;
 };
 
 // ----------------------------------------------
@@ -112,7 +112,7 @@ private:
 private:
 
     // Disable
-    DatesJob(QObject*);
+    DatesJob(QObject*) = delete;
 };
 
 // ----------------------------------------------

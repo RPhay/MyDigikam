@@ -99,7 +99,7 @@ public Q_SLOTS:
 private:
 
     // Disable
-    DbEngineErrorHandler(QObject*);
+    DbEngineErrorHandler(QObject*) = delete;
 };
 
 } // namespace Digikam

@@ -65,7 +65,7 @@ Q_SIGNALS:
 private:
 
     // Disable
-    DbEngineConnectionChecker(QObject*);
+    DbEngineConnectionChecker(QObject*) = delete;
 
     class Private;
     Private* const d;
@@ -96,7 +96,7 @@ private Q_SLOTS:
 private:
 
     // Disabled
-    DbEngineGuiErrorHandler(QObject*);
+    DbEngineGuiErrorHandler(QObject*) = delete;
 
     class Private;
     Private* const d;
