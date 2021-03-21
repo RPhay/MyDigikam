@@ -60,7 +60,9 @@ protected:
 private:
 
     // Disable
-    ThumbsTask(QObject*);
+    ThumbsTask(QObject*) = delete;
+
+private:
 
     class Private;
     Private* const d;

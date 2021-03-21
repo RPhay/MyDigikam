@@ -90,7 +90,9 @@ protected:
 private:
 
     // Disable
-    DatabaseTask(QObject*);
+    DatabaseTask(QObject*) = delete;
+
+private:
 
     class Private;
     Private* const d;

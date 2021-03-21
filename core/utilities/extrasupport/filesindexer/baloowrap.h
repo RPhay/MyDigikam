@@ -107,7 +107,9 @@ public:
 private:
 
     // Disable
-    explicit BalooWrap(QObject*);
+    explicit BalooWrap(QObject*) = delete;
+
+private:
 
     class Private;
     Private* const d;

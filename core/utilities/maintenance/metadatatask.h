@@ -63,7 +63,9 @@ protected:
 private:
 
     // Disable
-    MetadataTask(QObject*);
+    MetadataTask(QObject*) = delete;
+
+private:
 
     class Private;
     Private* const d;

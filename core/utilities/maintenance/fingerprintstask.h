@@ -62,7 +62,9 @@ protected:
 private:
 
     // Disable
-    FingerprintsTask(QObject*);
+    FingerprintsTask(QObject*) = delete;
+
+private:
 
     class Private;
     Private* const d;

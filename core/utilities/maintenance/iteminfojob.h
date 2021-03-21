@@ -64,7 +64,9 @@ private Q_SLOTS:
 private:
 
     // Disabme
-    ItemInfoJob(QObject*);
+    ItemInfoJob(QObject*) = delete;
+
+private:
 
     class Private;
     Private* const d;
