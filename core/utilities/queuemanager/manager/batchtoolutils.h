@@ -54,7 +54,7 @@ class BatchToolSet
 public:
 
     explicit BatchToolSet();
-    ~BatchToolSet()                          = default;;
+    ~BatchToolSet()                          = default;
 
     /**
      * Equality operator which check index, version, name, and group data. Settings member is ignored.

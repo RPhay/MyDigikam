@@ -140,7 +140,9 @@ private Q_SLOTS:
 private:
 
     // Disable
-    QueueMgrWindow(QWidget*);
+    QueueMgrWindow(QWidget*) = delete;
+
+private:
 
     class Private;
     Private* const d;

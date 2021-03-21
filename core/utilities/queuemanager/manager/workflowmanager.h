@@ -102,7 +102,7 @@ private:
 
     // Disable
     WorkflowManager();
-    WorkflowManager(QObject*);
+    WorkflowManager(QObject*) = delete;
     ~WorkflowManager()                                override;
 
 private:

@@ -49,7 +49,7 @@ public:
 
     ItemInfoSet(int id, const ItemInfo& inf)
         : queueId(id),
-          info(inf)
+          info   (inf)
     {
     };
 

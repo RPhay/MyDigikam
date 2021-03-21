@@ -42,10 +42,10 @@ class DIGIKAM_GUI_EXPORT DPluginConfViewBqm : public DPluginConfView
 
 public:
 
-    explicit DPluginConfViewBqm(QWidget* const parent=nullptr);
+    explicit DPluginConfViewBqm(QWidget* const parent = nullptr);
     ~DPluginConfViewBqm() override;
 
-    void loadPlugins() override;
+    void loadPlugins()    override;
 };
 
 } // namespace Digikam

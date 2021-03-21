@@ -52,41 +52,45 @@ public:
     /**
      * Destructor
      */
-    ~DPluginBqm() override;
+    ~DPluginBqm()                                             override;
 
 public:
 
-    bool hasVisibilityProperty() const override;
+    bool hasVisibilityProperty()                        const override;
 
     /**
      * Holds whether the plugin can be seen in parent view.
      */
-    void setVisible(bool b) override;
+    void setVisible(bool b)                                   override;
 
     /**
      * Return all plugin tools registered in setup() method with addTool() for a given parent.
      */
-    QList<BatchTool*> tools(QObject* const parent) const;
+    QList<BatchTool*> tools(QObject* const parent)      const;
 
     /**
      * Return the amount of tools registered.
      */
-    int count() const override;
+    int count()                                         const override;
 
     /**
      * Return a plugin tool instance found by name in plugin tools list for a given parent.
      */
-    BatchTool* findToolByName(const QString& name, QObject* const parent) const;
+    BatchTool* findToolByName(const QString& name,
+                              QObject* const parent)    const;
 
     /**
      * Return a list of batch tool group categories as strings registered in this plugin.
      */
-    QStringList categories() const override;
+    QStringList categories()                            const override;
 
     /**
      * Return the plugin interface identifier.
      */
-    QString ifaceIid() const override { return QLatin1String(DIGIKAM_DPLUGIN_BQM_IID); };
+    QString ifaceIid()                                  const override
+    {
+        return QLatin1String(DIGIKAM_DPLUGIN_BQM_IID);
+    };
 
 Q_SIGNALS:
 

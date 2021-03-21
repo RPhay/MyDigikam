@@ -87,7 +87,7 @@ protected:
 private:
 
     // Disable
-    SearchFieldGroup(QWidget*);
+    SearchFieldGroup(QWidget*) = delete;
 };
 
 // -----------------------------------------------------------------------

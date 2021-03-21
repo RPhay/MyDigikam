@@ -62,6 +62,7 @@ private Q_SLOTS:
 
 private:
 
+    // Disable
     explicit WorkflowDlg(QWidget*) = delete;
 
 private:

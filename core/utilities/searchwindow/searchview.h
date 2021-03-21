@@ -158,9 +158,11 @@ protected:
 private:
 
     // Disable.
-    SearchView(QWidget*);
-    SearchView(const SearchView&);
-    SearchView& operator=(const SearchView&);
+    SearchView(QWidget*)                     = delete;
+    SearchView(const SearchView&)            = delete;
+    SearchView& operator=(const SearchView&) = delete;
+
+private:
 
     class Private;
     Private* const d;
