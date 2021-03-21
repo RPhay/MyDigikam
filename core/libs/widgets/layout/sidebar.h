@@ -82,10 +82,10 @@ public:
      * @param popup A popup menu which should be displayed if the button is clicked
      * @param not_used_yet will be used for a popup text in the future
      */
-    int appendButton(const QPixmap& pic,
-                     int id = -1,
-                     QMenu* const popup = nullptr,
-                     const QString& not_used_yet = QString());
+    void appendButton(const QPixmap& pic,
+                      int id = -1,
+                      QMenu* const popup = nullptr,
+                      const QString& not_used_yet = QString());
 
     /**
      * remove a button with the given ID
@@ -98,9 +98,9 @@ public:
      * @param id an arbitrary ID which can be used later on to identify the tab
      * @param text if a mode with text is used it will be the tab text, otherwise a mouse over hint
      */
-    int appendTab(const QPixmap& pic,
-                  int id = -1,
-                  const QString& text = QString());
+    void appendTab(const QPixmap& pic,
+                   int id = -1,
+                   const QString& text = QString());
 
     /**
      * remove a tab with a given ID
@@ -288,7 +288,7 @@ public:
     explicit DMultiTabBarFrame(QWidget* const parent, Qt::Edge pos);
     ~DMultiTabBarFrame()                override;
 
-    int appendTab(const QPixmap&, int = -1, const QString& = QString());
+    void appendTab(const QPixmap&, int = -1, const QString& = QString());
     DMultiTabBarTab* tab(int) const;
     void removeTab(int);
     void setPosition(Qt::Edge pos);
