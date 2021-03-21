@@ -81,12 +81,15 @@ public:
 
 private:
 
-    // Hidden copy constructor and assignment operator.
-    DWItemDelegatePool(const DWItemDelegatePool&);
-    DWItemDelegatePool& operator=(const DWItemDelegatePool&);
+    // Disable
+    DWItemDelegatePool(const DWItemDelegatePool&)            = delete;
+    DWItemDelegatePool& operator=(const DWItemDelegatePool&) = delete;
+
+private:
 
     friend class DWItemDelegate;
     friend class DWItemDelegatePrivate;
+
     DWItemDelegatePoolPrivate* const d;
 };
 
@@ -113,9 +116,9 @@ public:
 
 private:
 
-    // Hidden copy constructor and assignment operator.
-    DWItemDelegatePoolPrivate(const DWItemDelegatePoolPrivate&);
-    DWItemDelegatePoolPrivate& operator=(const DWItemDelegatePoolPrivate&);
+    // Disable
+    DWItemDelegatePoolPrivate(const DWItemDelegatePoolPrivate&)            = delete;
+    DWItemDelegatePoolPrivate& operator=(const DWItemDelegatePoolPrivate&) = delete;
 };
 
 } // namespace Digikam

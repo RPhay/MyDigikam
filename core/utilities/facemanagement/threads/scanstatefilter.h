@@ -71,9 +71,9 @@ protected:
 
 private:
 
-    // Hidden copy constructor and assignment operator.
-    ScanStateFilter(const ScanStateFilter&);
-    ScanStateFilter& operator=(const ScanStateFilter&);
+    // Disable
+    ScanStateFilter(const ScanStateFilter&)            = delete;
+    ScanStateFilter& operator=(const ScanStateFilter&) = delete;
 };
 
 } // namespace Digikam

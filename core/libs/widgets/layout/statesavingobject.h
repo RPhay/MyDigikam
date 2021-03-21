@@ -194,9 +194,11 @@ protected:
 
 private:
 
-    // Hidden copy constructor and assignment operator.
-    StateSavingObject(const StateSavingObject&);
-    StateSavingObject& operator=(const StateSavingObject&);
+    // Disable
+    StateSavingObject(const StateSavingObject&)            = delete;
+    StateSavingObject& operator=(const StateSavingObject&) = delete;
+
+private:
 
     class Private;
     Private* const d;

@@ -61,9 +61,9 @@ protected:
 
 private:
 
-    // Hidden copy constructor and assignment operator.
-    FacePreviewLoader(const FacePreviewLoader&);
-    FacePreviewLoader& operator=(const FacePreviewLoader&);
+    // Disable
+    FacePreviewLoader(const FacePreviewLoader&)            = delete;
+    FacePreviewLoader& operator=(const FacePreviewLoader&) = delete;
 };
 
 } // namespace Digikam

@@ -49,9 +49,9 @@ public:
 
 private:
 
-    // Hidden copy constructor and assignment operator.
-    FunnelReal(const FunnelReal&);
-    FunnelReal& operator=(const FunnelReal&);
+    // Disable
+    FunnelReal(const FunnelReal&)            = delete;
+    FunnelReal& operator=(const FunnelReal&) = delete;
 
 private:
 

@@ -296,9 +296,11 @@ public:
 
 private:
 
-    // Hidden copy constructor and assignment operator.
-    ImportItemModel(const ImportItemModel&);
-    ImportItemModel& operator=(const ImportItemModel&);
+    // Disable
+    ImportItemModel(const ImportItemModel&)            = delete;
+    ImportItemModel& operator=(const ImportItemModel&) = delete;
+
+private:
 
     Private* const d;
 };

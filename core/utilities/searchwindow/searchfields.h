@@ -125,9 +125,9 @@ protected:
 
 private:
 
-    // Hidden copy constructor and assignment operator.
-    SearchField(const SearchField&);
-    SearchField& operator=(const SearchField&);
+    // Disable
+    SearchField(const SearchField&)            = delete;
+    SearchField& operator=(const SearchField&) = delete;
 };
 
 //-----------------------------------------------------------------------------
@@ -213,9 +213,9 @@ protected:
 
 private:
 
-    // Hidden copy constructor and assignment operator.
-    SearchFieldRangeInt(const SearchFieldRangeInt&);
-    SearchFieldRangeInt& operator=(const SearchFieldRangeInt&);
+    // Disable
+    SearchFieldRangeInt(const SearchFieldRangeInt&)            = delete;
+    SearchFieldRangeInt& operator=(const SearchFieldRangeInt&) = delete;
 };
 
 //-----------------------------------------------------------------------------
@@ -261,9 +261,9 @@ protected:
 
 private:
 
-    // Hidden copy constructor and assignment operator.
-    SearchFieldRangeDouble(const SearchFieldRangeDouble&);
-    SearchFieldRangeDouble& operator=(const SearchFieldRangeDouble&);
+    // Disable
+    SearchFieldRangeDouble(const SearchFieldRangeDouble&)            = delete;
+    SearchFieldRangeDouble& operator=(const SearchFieldRangeDouble&) = delete;
 };
 
 //-----------------------------------------------------------------------------
@@ -310,9 +310,9 @@ protected:
 
 private:
 
-    // Hidden copy constructor and assignment operator.
-    SearchFieldRangeDate(const SearchFieldRangeDate&);
-    SearchFieldRangeDate& operator=(const SearchFieldRangeDate&);
+    // Disable
+    SearchFieldRangeDate(const SearchFieldRangeDate&)            = delete;
+    SearchFieldRangeDate& operator=(const SearchFieldRangeDate&) = delete;
 };
 
 //-----------------------------------------------------------------------------
@@ -353,9 +353,9 @@ protected:
 
 private:
 
-    // Hidden copy constructor and assignment operator.
-    SearchFieldChoice(const SearchFieldChoice&);
-    SearchFieldChoice& operator=(const SearchFieldChoice&);
+    // Disable
+    SearchFieldChoice(const SearchFieldChoice&)            = delete;
+    SearchFieldChoice& operator=(const SearchFieldChoice&) = delete;
 };
 
 //-----------------------------------------------------------------------------
@@ -443,9 +443,9 @@ protected:
 
 private:
 
-    // Hidden copy constructor and assignment operator.
-    SearchFieldRating(const SearchFieldRating&);
-    SearchFieldRating& operator=(const SearchFieldRating&);
+    // Disable
+    SearchFieldRating(const SearchFieldRating&)            = delete;
+    SearchFieldRating& operator=(const SearchFieldRating&) = delete;
 };
 
 //-----------------------------------------------------------------------------

@@ -98,9 +98,11 @@ protected:
 
 private:
 
-    // Hidden copy constructor and assignment operator.
-    ImportIconView(const ImportIconView&);
-    ImportIconView& operator=(const ImportIconView&);
+    // Disable
+    ImportIconView(const ImportIconView&)            = delete;
+    ImportIconView& operator=(const ImportIconView&) = delete;
+
+private:
 
     class Private;
     Private* const d;

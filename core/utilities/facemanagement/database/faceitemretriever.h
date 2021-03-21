@@ -50,9 +50,9 @@ protected:
 
 private:
 
-    // Hidden copy constructor and assignment operator.
-    FaceItemRetriever(const FaceItemRetriever&);
-    FaceItemRetriever& operator=(const FaceItemRetriever&);
+    // Disable
+    FaceItemRetriever(const FaceItemRetriever&)            = delete;
+    FaceItemRetriever& operator=(const FaceItemRetriever&) = delete;
 };
 
 } // namespace Digikam

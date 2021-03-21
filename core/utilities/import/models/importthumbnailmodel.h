@@ -89,9 +89,11 @@ private Q_SLOTS:
 
 private:
 
-    // Hidden copy constructor and assignment operator.
-    ImportThumbnailModel(const ImportThumbnailModel&);
-    ImportThumbnailModel& operator=(const ImportThumbnailModel&);
+    // Disable
+    ImportThumbnailModel(const ImportThumbnailModel&)            = delete;
+    ImportThumbnailModel& operator=(const ImportThumbnailModel&) = delete;
+
+private:
 
     class Private;
     Private* const d;

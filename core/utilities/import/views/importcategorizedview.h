@@ -210,9 +210,11 @@ private:
 
 private:
 
-    // Hidden copy constructor and assignment operator.
-    ImportCategorizedView(const ImportCategorizedView&);
-    ImportCategorizedView& operator=(const ImportCategorizedView&);
+    // Disable
+    ImportCategorizedView(const ImportCategorizedView&)            = delete;
+    ImportCategorizedView& operator=(const ImportCategorizedView&) = delete;
+
+private:
 
     class Private;
     Private* const d;

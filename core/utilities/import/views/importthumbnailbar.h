@@ -72,9 +72,11 @@ protected:
 
 private:
 
-    // Hidden copy constructor and assignment operator.
-    ImportThumbnailBar(const ImportThumbnailBar&);
-    ImportThumbnailBar& operator=(const ImportThumbnailBar&);
+    // Disable
+    ImportThumbnailBar(const ImportThumbnailBar&)            = delete;
+    ImportThumbnailBar& operator=(const ImportThumbnailBar&) = delete;
+
+private:
 
     class Private;
     Private* const d;

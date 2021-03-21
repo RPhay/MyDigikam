@@ -64,9 +64,9 @@ private Q_SLOTS:
 
 private:
 
-    // Hidden copy constructor and assignment operator.
-    FilesDownloader(const FilesDownloader&);
-    FilesDownloader& operator=(const FilesDownloader&);
+    // Disable
+    FilesDownloader(const FilesDownloader&)            = delete;
+    FilesDownloader& operator=(const FilesDownloader&) = delete;
 
 private:
 

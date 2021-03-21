@@ -79,9 +79,11 @@ private:
 
 private:
 
-    // Hidden copy constructor and assignment operator.
-    ImageQualityParser(const ImageQualityParser&);
-    ImageQualityParser& operator=(const ImageQualityParser&);
+    // Disable
+    ImageQualityParser(const ImageQualityParser&)            = delete;
+    ImageQualityParser& operator=(const ImageQualityParser&) = delete;
+
+private:
 
     class Private;
     Private* const d;

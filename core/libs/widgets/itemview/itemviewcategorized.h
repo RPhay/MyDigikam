@@ -220,9 +220,11 @@ private Q_SLOTS:
 
 private:
 
-    // Hidden copy constructor and assignment operator.
-    ItemViewCategorized(const ItemViewCategorized&);
-    ItemViewCategorized& operator=(const ItemViewCategorized&);
+    // Disable
+    ItemViewCategorized(const ItemViewCategorized&)            = delete;
+    ItemViewCategorized& operator=(const ItemViewCategorized&) = delete;
+
+private:
 
     void ensureSelectionAfterChanges();
 

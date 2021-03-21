@@ -139,9 +139,11 @@ public:
 
     private:
 
-        // Hidden copy constructor and assignment operator.
-        NonEmptyIterator(const NonEmptyIterator&);
-        NonEmptyIterator& operator=(const NonEmptyIterator&);
+        // Disable
+        NonEmptyIterator(const NonEmptyIterator&)            = delete;
+        NonEmptyIterator& operator=(const NonEmptyIterator&) = delete;
+
+    private:
 
         class Private;
         Private* const d;
