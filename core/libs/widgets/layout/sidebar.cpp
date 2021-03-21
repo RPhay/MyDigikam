@@ -26,13 +26,8 @@
 
 #include "sidebar.h"
 
-// C++ includes
-
-#include <cmath>
-
 // Qt includes
 
-#include <QDataStream>
 #include <QDragEnterEvent>
 #include <QEvent>
 #include <QPixmap>
@@ -145,7 +140,7 @@ DMultiTabBarTab* DMultiTabBarFrame::tab(int id) const
     return nullptr;
 }
 
-int DMultiTabBarFrame::appendTab(const QPixmap& pic, int id, const QString& text)
+void DMultiTabBarFrame::appendTab(const QPixmap& pic, int id, const QString& text)
 {
     DMultiTabBarTab* const tab = new DMultiTabBarTab(pic, text, id, this, d->position, d->style);
     d->tabs.append(tab);
@@ -154,8 +149,6 @@ int DMultiTabBarFrame::appendTab(const QPixmap& pic, int id, const QString& text
 
     d->mainLayout->insertWidget(d->tabs.size()-1, tab);
     tab->show();
-
-    return 0;
 }
 
 void DMultiTabBarFrame::removeTab(int id)
@@ -661,7 +654,7 @@ DMultiTabBar::~DMultiTabBar()
     delete d;
 }
 
-int DMultiTabBar::appendButton(const QPixmap &pic, int id, QMenu *popup, const QString&)
+void DMultiTabBar::appendButton(const QPixmap &pic, int id, QMenu *popup, const QString&)
 {
     DMultiTabBarButton* const btn = new DMultiTabBarButton(pic, QString(), id, this);
 
@@ -670,11 +663,9 @@ int DMultiTabBar::appendButton(const QPixmap &pic, int id, QMenu *popup, const Q
     btn->setFixedWidth(btn->height());
     btn->setMenu(popup);
     d->buttons.append(btn);
-    d->layout->insertWidget(0,btn);
+    d->layout->insertWidget(0, btn);
     btn->show();
     d->btnTabSep->show();
-
-    return 0;
 }
 
 void DMultiTabBar::updateSeparator()
@@ -701,11 +692,9 @@ void DMultiTabBar::updateSeparator()
     }
 }
 
-int DMultiTabBar::appendTab(const QPixmap& pic, int id, const QString& text)
+void DMultiTabBar::appendTab(const QPixmap& pic, int id, const QString& text)
 {
-    d->internal->appendTab(pic,id,text);
-
-    return 0;
+    d->internal->appendTab(pic, id, text);
 }
 
 DMultiTabBarButton* DMultiTabBar::button(int id) const

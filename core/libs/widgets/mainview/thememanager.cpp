@@ -244,7 +244,6 @@ void ThemeManager::updateCurrentDesktopDefaultThemePreview()
     }
 }
 
-
 QString ThemeManager::currentDesktopdefaultTheme() const
 {
     KSharedConfigPtr config = KSharedConfig::openConfig(QLatin1String("kdeglobals"));

@@ -403,4 +403,5 @@ BUGFIXES:
 360 ==> 434574 - F4 to play video on external VLC player crashes VLC.
 361 ==> 434594 - Copy of jpeg file with empty caption (but caption in sidecar) shows caption.
 362 ==> 434566 - Application crashes C:\Program Files\digiKam\plugins\digikam\dimg\DImg_QImage_Plugin.dll.
-363 ==> 
+363 ==> 434714 - digiKam-7.2.0-20210320T221224 breaks digiKam launch on macOS 10.14.6 Mojave.
+364 ==> 
