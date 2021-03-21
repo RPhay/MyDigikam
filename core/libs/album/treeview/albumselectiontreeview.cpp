@@ -127,8 +127,8 @@ class Q_DECL_HIDDEN AlbumSelectionTreeView::Private::AlbumSelectionTreeViewConte
 
 public:
 
-    explicit AlbumSelectionTreeViewContextMenuElement(AlbumSelectionTreeView::Private* const d)
-        : d(d)
+    explicit AlbumSelectionTreeViewContextMenuElement(AlbumSelectionTreeView::Private* const dd)
+        : d(dd)
     {
     }
 

@@ -279,8 +279,8 @@ class Q_DECL_HIDDEN ChangingDB
 
 public:
 
-    explicit ChangingDB(CollectionManager::Private* const d)
-        : d(d)
+    explicit ChangingDB(CollectionManager::Private* const dd)
+        : d(dd)
     {
         d->changingDB = true;
     }

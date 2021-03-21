@@ -31,8 +31,8 @@
 namespace Digikam
 {
 
-ItemFilterModelWorker::ItemFilterModelWorker(ItemFilterModel::ItemFilterModelPrivate* const d)
-    : d(d)
+ItemFilterModelWorker::ItemFilterModelWorker(ItemFilterModel::ItemFilterModelPrivate* const dd)
+    : d(dd)
 {
 }
 

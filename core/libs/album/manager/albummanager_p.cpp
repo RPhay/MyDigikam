@@ -101,8 +101,8 @@ QString AlbumManager::Private::labelForAlbumRootAlbum(const CollectionLocation& 
 
 // -----------------------------------------------------------------------------------
 
-ChangingDB::ChangingDB(AlbumManager::Private* const d)
-    : d(d)
+ChangingDB::ChangingDB(AlbumManager::Private* const dd)
+    : d(dd)
 {
     d->changingDB = true;
 }

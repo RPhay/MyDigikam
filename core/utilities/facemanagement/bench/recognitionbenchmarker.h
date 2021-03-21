@@ -38,7 +38,7 @@ class Q_DECL_HIDDEN RecognitionBenchmarker : public WorkerObject
 
 public:
 
-    explicit RecognitionBenchmarker(FacePipeline::Private* const d);
+    explicit RecognitionBenchmarker(FacePipeline::Private* const dd);
     QString result() const;
 
 public Q_SLOTS:

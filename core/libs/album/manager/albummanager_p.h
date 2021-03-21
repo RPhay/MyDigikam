@@ -197,7 +197,7 @@ public:
     QMap<int, int>              tAlbumsCount;
     QMap<YearMonth, int>        dAlbumsCount;
     QMap<int, int>              fAlbumsCount;
-    // Unconfirmed face counts
+    /// Unconfirmed face counts
     QMap<int, int>              uAlbumsCount;
     QList<int>                  toUpdatedFaces;
 
@@ -212,7 +212,7 @@ class Q_DECL_HIDDEN ChangingDB
 {
 public:
 
-    explicit ChangingDB(AlbumManager::Private* const d);
+    explicit ChangingDB(AlbumManager::Private* const dd);
     ~ChangingDB();
 
     AlbumManager::Private* const d;

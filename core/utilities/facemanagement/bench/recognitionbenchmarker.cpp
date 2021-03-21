@@ -38,8 +38,8 @@ RecognitionBenchmarker::Statistics::Statistics()
 {
 }
 
-RecognitionBenchmarker::RecognitionBenchmarker(FacePipeline::Private* const d)
-    : d(d)
+RecognitionBenchmarker::RecognitionBenchmarker(FacePipeline::Private* const dd)
+    : d(dd)
 {
 }
 

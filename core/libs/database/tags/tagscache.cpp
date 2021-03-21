@@ -262,8 +262,8 @@ class Q_DECL_HIDDEN ChangingDB
 {
 public:
 
-    explicit ChangingDB(TagsCache::Private* const d)
-        : d(d)
+    explicit ChangingDB(TagsCache::Private* const dd)
+        : d(dd)
     {
         d->changingDB = true;
     }

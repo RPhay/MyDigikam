@@ -105,9 +105,9 @@ public:
 
 #ifdef HAVE_DBUS
 
-DBusSignalListenerThread::DBusSignalListenerThread(CoreDbWatch* const q, CoreDbWatch::Private* const d)
-    : q(q),
-      d(d)
+DBusSignalListenerThread::DBusSignalListenerThread(CoreDbWatch* const qq, CoreDbWatch::Private* const dd)
+    : q(qq),
+      d(dd)
 {
     start();
 }

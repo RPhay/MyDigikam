@@ -98,8 +98,8 @@ public:
     {
     public:
 
-        explicit ChangesetContainer(CoreDbBackendPrivate* const d)
-            : d(d)
+        explicit ChangesetContainer(CoreDbBackendPrivate* const dd)
+            : d(dd)
         {
         }
 
@@ -121,6 +121,7 @@ public:
             {
                 d->sendToWatch(changeset);
             }
+
             changesets.clear();
         }
 

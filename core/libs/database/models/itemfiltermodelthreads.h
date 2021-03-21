@@ -45,7 +45,7 @@ class DIGIKAM_DATABASE_EXPORT ItemFilterModelWorker : public WorkerObject
 
 public:
 
-    explicit ItemFilterModelWorker(ItemFilterModel::ItemFilterModelPrivate* const d);
+    explicit ItemFilterModelWorker(ItemFilterModel::ItemFilterModelPrivate* const dd);
 
     bool checkVersion(const ItemFilterModelTodoPackage& package);
 
