@@ -26,13 +26,8 @@
 
 #include "sidebar.h"
 
-// C++ includes
-
-#include <cmath>
-
 // Qt includes
 
-#include <QDataStream>
 #include <QDragEnterEvent>
 #include <QEvent>
 #include <QPixmap>
@@ -670,7 +665,7 @@ int DMultiTabBar::appendButton(const QPixmap &pic, int id, QMenu *popup, const Q
     btn->setFixedWidth(btn->height());
     btn->setMenu(popup);
     d->buttons.append(btn);
-    d->layout->insertWidget(0,btn);
+    d->layout->insertWidget(0, btn);
     btn->show();
     d->btnTabSep->show();
 
@@ -703,7 +698,7 @@ void DMultiTabBar::updateSeparator()
 
 int DMultiTabBar::appendTab(const QPixmap& pic, int id, const QString& text)
 {
-    d->internal->appendTab(pic,id,text);
+    d->internal->appendTab(pic, id, text);
 
     return 0;
 }
