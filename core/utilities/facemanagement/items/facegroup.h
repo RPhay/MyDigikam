@@ -146,9 +146,9 @@ protected Q_SLOTS:
 private:
 
     // Disable
-    FaceGroup();
-    FaceGroup(const FaceGroup&);
-    FaceGroup& operator=(const FaceGroup&);
+    FaceGroup()                            = delete;
+    FaceGroup(const FaceGroup&)            = delete;
+    FaceGroup& operator=(const FaceGroup&) = delete;
 
 private:
 

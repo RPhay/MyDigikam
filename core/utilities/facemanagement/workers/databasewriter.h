@@ -59,8 +59,8 @@ protected:
 private:
 
     // Disable
-    DatabaseWriter(const DatabaseWriter&);
-    DatabaseWriter& operator=(const DatabaseWriter&);
+    DatabaseWriter(const DatabaseWriter&)            = delete;
+    DatabaseWriter& operator=(const DatabaseWriter&) = delete;
 };
 
 } // namespace Digikam

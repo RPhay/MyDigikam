@@ -195,9 +195,11 @@ public:
 
 private:
 
-    // Hidden copy constructor and assignment operator.
-    ImageIface(const ImageIface&);
-    ImageIface& operator=(const ImageIface&);
+    // Disable
+    ImageIface(const ImageIface&)            = delete;
+    ImageIface& operator=(const ImageIface&) = delete;
+
+private:
 
     class Private;
     Private* const d;

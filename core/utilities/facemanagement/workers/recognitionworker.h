@@ -66,8 +66,8 @@ protected:
 private:
 
     // Disable
-    RecognitionWorker(const RecognitionWorker&);
-    RecognitionWorker& operator=(const RecognitionWorker&);
+    RecognitionWorker(const RecognitionWorker&)            = delete;
+    RecognitionWorker& operator=(const RecognitionWorker&) = delete;
 };
 
 } // namespace Digikam

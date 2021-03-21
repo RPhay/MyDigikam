@@ -66,9 +66,9 @@ protected:
 private:
 
     // Disable
-    FaceItem();
-    FaceItem(const FaceItem&);
-    FaceItem& operator=(const FaceItem&);
+    FaceItem()                           = delete;
+    FaceItem(const FaceItem&)            = delete;
+    FaceItem& operator=(const FaceItem&) = delete;
 };
 
 } // namespace Digikam

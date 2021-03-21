@@ -67,9 +67,9 @@ protected:
 private:
 
     // Disable
-    ParallelPipes(QObject*);
-    ParallelPipes(const ParallelPipes&);
-    ParallelPipes& operator=(const ParallelPipes&);
+    ParallelPipes(QObject*)                        = delete;
+    ParallelPipes(const ParallelPipes&)            = delete;
+    ParallelPipes& operator=(const ParallelPipes&) = delete;
 };
 
 } // namespace Digikam

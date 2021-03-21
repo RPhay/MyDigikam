@@ -61,8 +61,8 @@ protected:
 private:
 
     // Disable
-    DetectionWorker(const DetectionWorker&);
-    DetectionWorker& operator=(const DetectionWorker&);
+    DetectionWorker(const DetectionWorker&)            = delete;
+    DetectionWorker& operator=(const DetectionWorker&) = delete;
 };
 
 } // namespace Digikam

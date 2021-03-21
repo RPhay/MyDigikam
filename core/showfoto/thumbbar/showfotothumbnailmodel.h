@@ -124,9 +124,11 @@ protected Q_SLOTS:
 
 private:
 
-    // Hidden copy constructor and assignment operator.
-    ShowfotoThumbnailModel(const ShowfotoThumbnailModel&);
-    ShowfotoThumbnailModel& operator=(const ShowfotoThumbnailModel&);
+    // Disable
+    ShowfotoThumbnailModel(const ShowfotoThumbnailModel&)            = delete;
+    ShowfotoThumbnailModel& operator=(const ShowfotoThumbnailModel&) = delete;
+
+private:
 
     class Private;
     Private* const d;

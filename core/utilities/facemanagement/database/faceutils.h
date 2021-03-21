@@ -149,8 +149,8 @@ protected:
 private:
 
     // Disable
-    FaceUtils(const FaceUtils&);
-    FaceUtils& operator=(const FaceUtils&);
+    FaceUtils(const FaceUtils&)            = delete;
+    FaceUtils& operator=(const FaceUtils&) = delete;
 };
 
 } // Namespace Digikam
