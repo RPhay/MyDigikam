@@ -75,6 +75,7 @@ extern "C"
 
 #include <QImageReader>
 #include <QByteArray>
+#include <QUuid>
 #include <QFile>
 #include <QFileInfo>
 #include <QScopedPointer>
@@ -438,7 +439,9 @@ bool JpegRotator::exifTransform(const MetaEngineRotation& matrix)
 
     for (int i = 0 ; i < actions.size() ; ++i)
     {
-        SafeTemporaryFile* const temp = new SafeTemporaryFile(dir + QLatin1String("/JpegRotator-XXXXXX.digikamtempfile.jpg"));
+        QString random                = QUuid::createUuid().toString().mid(1, 8);
+        SafeTemporaryFile* const temp = new SafeTemporaryFile(dir + QLatin1String("/JpegRotator-XXXXXX-") +
+                                                              random + QLatin1String(".digikamtempfile.jpg"));
         temp->setAutoRemove(false);
         temp->open();
         QString tempFile = temp->safeFilePath();

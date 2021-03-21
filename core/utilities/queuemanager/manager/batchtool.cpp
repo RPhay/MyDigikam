@@ -418,7 +418,6 @@ bool BatchTool::isLastChainedTool() const
 
 void BatchTool::setOutputUrlFromInputUrl()
 {
-    QString randomString(QUuid::createUuid().toString());
     QString path(workingUrl().toLocalFile());
     QString suffix = outputSuffix();
 
@@ -428,8 +427,9 @@ void BatchTool::setOutputUrlFromInputUrl()
         suffix = fi.suffix();
     }
 
-    SafeTemporaryFile temp(path + QLatin1String("/BatchTool-XXXXXX-") + randomString.mid(1, 8) +
-                           QLatin1String(".digikamtempfile.") + suffix);
+    QString random = QUuid::createUuid().toString().mid(1, 8);
+    SafeTemporaryFile temp(path + QLatin1String("/BatchTool-XXXXXX-") +
+                           random + QLatin1String(".digikamtempfile.") + suffix);
 
     temp.setAutoRemove(false);
     temp.open();
