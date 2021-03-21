@@ -67,11 +67,11 @@ public:
      * Initialize with given RGBA values
      */
     DColor(int red, int green, int blue, int alpha, bool sixteenBit)
-        : m_red(red),
-          m_green(green),
-          m_blue(blue),
-          m_alpha(alpha),
-          m_sixteenBit(sixteenBit)
+        : m_red         (red),
+          m_green       (green),
+          m_blue        (blue),
+          m_alpha       (alpha),
+          m_sixteenBit  (sixteenBit)
     {
     };
 

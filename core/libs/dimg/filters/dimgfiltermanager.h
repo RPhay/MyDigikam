@@ -107,10 +107,11 @@ public:
 
 private:
 
-    DImgFilterManager();                                    ///< Disable
-    ~DImgFilterManager() override;                                   ///< Disable
-    DImgFilterManager(const DImgFilterManager&);            ///< Disable
-    DImgFilterManager& operator=(const DImgFilterManager&); ///< Disable
+    // Disable
+    DImgFilterManager();
+    ~DImgFilterManager()                                            override;
+    DImgFilterManager(const DImgFilterManager&)            = delete;
+    DImgFilterManager& operator=(const DImgFilterManager&) = delete;
 
 private:
 

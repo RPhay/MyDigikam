@@ -199,8 +199,8 @@ public:
      */
     enum ImageAlignment
     {
-        ImageLeft, ///< Display the pixmap on the left
-        ImageRight ///< Display the pixmap on the right
+        ImageLeft,      ///< Display the pixmap on the left
+        ImageRight      ///< Display the pixmap on the right
     };
     Q_ENUM(ImageAlignment)
 

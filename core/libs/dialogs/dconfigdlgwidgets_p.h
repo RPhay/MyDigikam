@@ -85,10 +85,10 @@ public:
 
         switch (messageType)
         {
-            //FIXME: we need the usability color styles to implement different
-            //       yet palette appropriate colours for the different use cases!
-            //       also .. should we include an icon here,
-            //       perhaps using the imageLabel?
+            // FIXME: we need the usability color styles to implement different
+            //        yet palette appropriate colours for the different use cases!
+            //        also .. should we include an icon here,
+            //        perhaps using the imageLabel?
 
             case InfoMessage:
             case WarningMessage:

@@ -126,12 +126,12 @@ class DIGIKAM_EXPORT DImg::Private : public QSharedData
 public:
 
     explicit Private()
-      : null(true),
-        alpha(false),
-        sixteenBit(false),
-        width(0),
-        height(0),
-        data(nullptr),
+      : null        (true),
+        alpha       (false),
+        sixteenBit  (false),
+        width       (0),
+        height      (0),
+        data        (nullptr),
         lanczos_func(nullptr)
     {
     }
@@ -257,6 +257,7 @@ public:
         }
 
         // In others cases, ImageMagick or QImage will be used to try to open file.
+
         return DImg::QIMAGE;
     }
 

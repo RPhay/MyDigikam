@@ -99,10 +99,12 @@ public:
     int size()                                                              const;
 
     bool operator==(const DImageHistory& other)                             const;
+
     bool operator!=(const DImageHistory& other)                             const
     {
         return !operator==(other);
     }
+
     bool operator<(const DImageHistory& other)                              const;
     bool operator>(const DImageHistory& other)                              const;
 

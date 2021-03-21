@@ -42,8 +42,8 @@ class DIGIKAM_EXPORT NormalizeFilter : public DImgThreadedFilter
 public:
 
     explicit NormalizeFilter(QObject* const parent = nullptr);
-    NormalizeFilter(DImg* const orgImage, const DImg* const refImage, QObject* const parent=nullptr);
-    ~NormalizeFilter() override;
+    NormalizeFilter(DImg* const orgImage, const DImg* const refImage, QObject* const parent = nullptr);
+    ~NormalizeFilter()                                                        override;
 
     static QString          FilterIdentifier()
     {
@@ -62,12 +62,12 @@ public:
 
     static QString DisplayableName();
 
-    QString         filterIdentifier()                          const override
+    QString         filterIdentifier()                                  const override
     {
         return FilterIdentifier();
     }
 
-    FilterAction    filterAction()                                    override;
+    FilterAction    filterAction()                                            override;
 
     void                    readParameters(const FilterAction& action)        override;
 

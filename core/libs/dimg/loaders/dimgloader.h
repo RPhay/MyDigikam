@@ -146,7 +146,8 @@ protected:
 
 private:
 
-    DImgLoader();
+    // Disable
+    DImgLoader() = delete;
 
 private:
 

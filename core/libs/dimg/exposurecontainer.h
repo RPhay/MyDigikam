@@ -42,12 +42,12 @@ public:
 
     explicit ExposureSettingsContainer()
         : underExposureIndicator(false),
-          overExposureIndicator(false),
-          exposureIndicatorMode(true),
-          underExposurePercent(1.0),
-          overExposurePercent(1.0),
-          underExposureColor(Qt::white),
-          overExposureColor(Qt::black)
+          overExposureIndicator (false),
+          exposureIndicatorMode (true),
+          underExposurePercent  (1.0),
+          overExposurePercent   (1.0),
+          underExposureColor    (Qt::white),
+          overExposureColor     (Qt::black)
     {
     };
 

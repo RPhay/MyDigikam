@@ -138,8 +138,9 @@ protected:
 
 private:
 
-    DConfigDlgWdgModelPrivate(const DConfigDlgWdgModelPrivate&);            // Disable
-    DConfigDlgWdgModelPrivate& operator=(const DConfigDlgWdgModelPrivate&); // Disable
+    // Disable
+    DConfigDlgWdgModelPrivate(const DConfigDlgWdgModelPrivate&)            = delete;
+    DConfigDlgWdgModelPrivate& operator=(const DConfigDlgWdgModelPrivate&) = delete;
 };
 
 } // namespace Digikam

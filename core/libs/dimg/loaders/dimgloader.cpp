@@ -46,7 +46,7 @@ namespace Digikam
 {
 
 DImgLoader::DImgLoader(DImg* const image)
-    : m_image(image),
+    : m_image    (image),
       m_loadFlags(LoadAll)
 {
 }
@@ -72,6 +72,7 @@ int DImgLoader::granularity(DImgLoaderObserver* const observer, int total, float
     // Progress slice is the part of 100% concerned with the current granularity
     // (E.g. in a loop only the values from 10% to 90% are used, then progressSlice is 0.8)
     // Current default is 1/20, that is progress info every 5%
+
     int granularity = 0;
 
     if (observer)
@@ -174,6 +175,7 @@ qint64 DImgLoader::checkAllocation(qint64 fullSize)
 
     // Do extra check if allocating serious amounts of memory.
     // At the time of writing (2011), I consider 100 MB as "serious".
+
     if (fullSize > (qint64)(100 * 1024 * 1024))
     {
         KMemoryInfo memory = KMemoryInfo::currentInfo();
