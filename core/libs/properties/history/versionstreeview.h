@@ -82,9 +82,9 @@ protected:
 
 private:
 
-    // Hidden copy constructor and assignment operator.
-    VersionsTreeView(const VersionsTreeView&);
-    VersionsTreeView& operator=(const VersionsTreeView&);
+    // Disable
+    VersionsTreeView(const VersionsTreeView&)            = delete;
+    VersionsTreeView& operator=(const VersionsTreeView&) = delete;
 };
 
 } // namespace Digikam

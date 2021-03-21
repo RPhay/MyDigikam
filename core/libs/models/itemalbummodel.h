@@ -108,9 +108,11 @@ protected:
 
 private:
 
-    // Hidden copy constructor and assignment operator.
-    ItemAlbumModel(const ItemAlbumModel&);
-    ItemAlbumModel& operator=(const ItemAlbumModel&);
+    // Disable
+    ItemAlbumModel(const ItemAlbumModel&)            = delete;
+    ItemAlbumModel& operator=(const ItemAlbumModel&) = delete;
+
+private:
 
     class Private;
     Private* const d;

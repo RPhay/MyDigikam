@@ -116,9 +116,9 @@ protected:
 
 private:
 
-    // Hidden copy constructor and assignment operator.
-    JpegRotator(const JpegRotator&);
-    JpegRotator& operator=(const JpegRotator&);
+    // Disable
+    JpegRotator(const JpegRotator&)            = delete;
+    JpegRotator& operator=(const JpegRotator&) = delete;
 };
 
 DIGIKAM_EXPORT bool loadJPEGScaled(QImage& image, const QString& path, int maximumSize);
