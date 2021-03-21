@@ -49,14 +49,14 @@ public:
 
 private:
 
-    // Disable
-    explicit UniqueModifier(QObject*) = delete;
-    UniqueModifier(const UniqueModifier&);
-    UniqueModifier& operator=(const UniqueModifier&);
+    QMap<ParseResults::ResultsKey, QStringList> cache;
 
 private:
 
-    QMap<ParseResults::ResultsKey, QStringList> cache;
+    // Disable
+    explicit UniqueModifier(QObject*)                = delete;
+    UniqueModifier(const UniqueModifier&)            = delete;
+    UniqueModifier& operator=(const UniqueModifier&) = delete;
 };
 
 } // namespace Digikam

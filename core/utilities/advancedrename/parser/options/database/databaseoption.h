@@ -56,9 +56,9 @@ public:
 private:
 
     // Disable
-    explicit DatabaseOptionDialog(QWidget*) = delete;
-    DatabaseOptionDialog(const DatabaseOptionDialog&);
-    DatabaseOptionDialog& operator=(const DatabaseOptionDialog&);
+    explicit DatabaseOptionDialog(QWidget*)                      = delete;
+    DatabaseOptionDialog(const DatabaseOptionDialog&)            = delete;
+    DatabaseOptionDialog& operator=(const DatabaseOptionDialog&) = delete;
 };
 
 // --------------------------------------------------------
@@ -86,11 +86,6 @@ private Q_SLOTS:
 
 private:
 
-    // Disable
-    explicit DatabaseOption(QObject*) = delete;
-    DatabaseOption(const DatabaseOption&);
-    DatabaseOption& operator=(const DatabaseOption&);
-
     QString parseDatabase(const QString& keyword, ParseSettings& settings);
     void addDbKeysCollection(DbKeysCollection* key);
 
@@ -100,6 +95,13 @@ private:
 private:
 
     DbOptionKeysMap m_map;
+
+private:
+
+    // Disable
+    explicit DatabaseOption(QObject*)                = delete;
+    DatabaseOption(const DatabaseOption&)            = delete;
+    DatabaseOption& operator=(const DatabaseOption&) = delete;
 };
 
 } // namespace Digikam

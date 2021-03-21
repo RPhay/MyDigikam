@@ -48,9 +48,9 @@ protected:
 private:
 
     // Disable
-    Modifier(QObject*);
-    Modifier(const Modifier&);
-    Modifier& operator=(const Modifier&);
+    Modifier(QObject*)                   = delete;
+    Modifier(const Modifier&)            = delete;
+    Modifier& operator=(const Modifier&) = delete;
 
 private:
 

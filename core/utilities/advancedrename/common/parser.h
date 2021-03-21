@@ -78,9 +78,6 @@ protected:
 
 private:
 
-    Parser(const Parser&);
-    Parser& operator=(const Parser&);
-
     ParseResults results(ParseSettings& settings);
 
     /**
@@ -90,6 +87,12 @@ private:
      * @return  a ParseResults object with invalid modifiers (modifiers that have a wrong position in the parse string)
      */
     ParseResults applyModifiers(const QString& parseString, ParseResults& results);
+
+private:
+
+    // Disable
+    Parser(const Parser&)            = delete;
+    Parser& operator=(const Parser&) = delete;
 
 private:
 

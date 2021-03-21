@@ -153,9 +153,6 @@ private Q_SLOTS:
 
 private:
 
-    AdvancedRenameWidget(const AdvancedRenameWidget&);
-    AdvancedRenameWidget& operator=(const AdvancedRenameWidget&);
-
     void createToolTip();
 
     void   registerParserControls();
@@ -167,6 +164,12 @@ private:
 
     void readSettings();
     void writeSettings();
+
+private:
+
+    // Disable
+    AdvancedRenameWidget(const AdvancedRenameWidget&)            = delete;
+    AdvancedRenameWidget& operator=(const AdvancedRenameWidget&) = delete;
 
 private:
 

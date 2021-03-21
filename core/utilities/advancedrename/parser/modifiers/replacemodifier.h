@@ -53,9 +53,9 @@ public:
 private:
 
     // Disable
-    explicit ReplaceDialog(QWidget*) = delete;
-    ReplaceDialog(const ReplaceDialog&);
-    ReplaceDialog& operator=(const ReplaceDialog&);
+    explicit ReplaceDialog(QWidget*)               = delete;
+    ReplaceDialog(const ReplaceDialog&)            = delete;
+    ReplaceDialog& operator=(const ReplaceDialog&) = delete;
 };
 
 // --------------------------------------------------------
@@ -76,9 +76,9 @@ private Q_SLOTS:
 private:
 
     // Disable
-    explicit ReplaceModifier(QObject*) = delete;
-    ReplaceModifier(const ReplaceModifier&);
-    ReplaceModifier& operator=(const ReplaceModifier&);
+    explicit ReplaceModifier(QObject*)                 = delete;
+    ReplaceModifier(const ReplaceModifier&)            = delete;
+    ReplaceModifier& operator=(const ReplaceModifier&) = delete;
 };
 
 } // namespace Digikam

@@ -47,9 +47,6 @@ public:
 
 private:
 
-    RuleDialog(const RuleDialog&);
-    RuleDialog& operator=(const RuleDialog&);
-
     void setDialogTitle(const QString& title);
     void setDialogDescription(const QString& description);
     void setDialogIcon(const QPixmap& pixmap);
@@ -57,7 +54,11 @@ private:
 private:
 
     // Disable
-    explicit RuleDialog(QWidget*) = delete;
+    explicit RuleDialog(QWidget*)            = delete;
+    RuleDialog(const RuleDialog&)            = delete;
+    RuleDialog& operator=(const RuleDialog&) = delete;
+
+private:
 
     class Private;
     Private* const d;

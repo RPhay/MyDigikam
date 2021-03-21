@@ -169,12 +169,14 @@ protected Q_SLOTS:
 
 private:
 
-    // Disable
-    Rule(QObject*);
-    Rule(const Rule&);
-    Rule& operator=(const Rule&);
-
     QPushButton* createButton(const QString& name, const QIcon& icon);
+
+private:
+
+    // Disable
+    Rule(QObject*)               = delete;
+    Rule(const Rule&)            = delete;
+    Rule& operator=(const Rule&) = delete;
 
 private:
 

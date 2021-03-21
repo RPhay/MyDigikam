@@ -45,8 +45,9 @@ protected:
 
 private:
 
-    CommonKeys(const CommonKeys&);
-    CommonKeys& operator=(const CommonKeys&);
+    // Disable
+    CommonKeys(const CommonKeys&)            = delete;
+    CommonKeys& operator=(const CommonKeys&) = delete;
 };
 
 } // namespace Digikam

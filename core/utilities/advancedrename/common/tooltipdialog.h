@@ -45,8 +45,9 @@ public:
 
 private:
 
-    TooltipDialog(const TooltipDialog&);
-    TooltipDialog& operator=(const TooltipDialog&);
+    // Disable
+    TooltipDialog(const TooltipDialog&)            = delete;
+    TooltipDialog& operator=(const TooltipDialog&) = delete;
 
 private:
 

@@ -44,9 +44,9 @@ public:
 private:
 
     // Disable
-    explicit RemoveDoublesModifier(QObject*) = delete;
-    RemoveDoublesModifier(const RemoveDoublesModifier&);
-    RemoveDoublesModifier& operator=(const RemoveDoublesModifier&);
+    explicit RemoveDoublesModifier(QObject*)                       = delete;
+    RemoveDoublesModifier(const RemoveDoublesModifier&)            = delete;
+    RemoveDoublesModifier& operator=(const RemoveDoublesModifier&) = delete;
 };
 
 } // namespace Digikam

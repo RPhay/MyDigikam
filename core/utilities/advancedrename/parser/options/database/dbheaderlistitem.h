@@ -49,8 +49,8 @@ private Q_SLOTS:
 
 private:
 
-    DbHeaderListItem(const DbHeaderListItem&);
-    DbHeaderListItem& operator=(const DbHeaderListItem&);
+    DbHeaderListItem(const DbHeaderListItem&)            = delete;
+    DbHeaderListItem& operator=(const DbHeaderListItem&) = delete;
 };
 
 } // namespace Digikam

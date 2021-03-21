@@ -55,9 +55,9 @@ private Q_SLOTS:
 private:
 
     // Disable
-    explicit RangeDialog(QWidget*) = delete;
-    RangeDialog(const RangeDialog&);
-    RangeDialog& operator=(const RangeDialog&);
+    explicit RangeDialog(QWidget*)             = delete;
+    RangeDialog(const RangeDialog&)            = delete;
+    RangeDialog& operator=(const RangeDialog&) = delete;
 };
 
 // --------------------------------------------------------
@@ -78,9 +78,9 @@ private Q_SLOTS:
 private:
 
     // Disable
-    explicit RangeModifier(QObject*) = delete;
-    RangeModifier(const RangeModifier&);
-    RangeModifier& operator=(const RangeModifier&);
+    explicit RangeModifier(QObject*)               = delete;
+    RangeModifier(const RangeModifier&)            = delete;
+    RangeModifier& operator=(const RangeModifier&) = delete;
 };
 
 } // namespace Digikam

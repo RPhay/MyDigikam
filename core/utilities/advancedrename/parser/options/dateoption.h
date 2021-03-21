@@ -81,8 +81,8 @@ public:
 
 private:
 
-    DateFormat(const DateFormat&);
-    DateFormat& operator=(const DateFormat&);
+    DateFormat(const DateFormat&)            = delete;
+    DateFormat& operator=(const DateFormat&) = delete;
 
 private:
 
@@ -145,16 +145,16 @@ protected:
 
     QString parseOperation(ParseSettings& settings) override;
 
-private:
-
-    // Disable
-    explicit DateOption(QObject*) = delete;
-    DateOption(const DateOption&);
-    DateOption& operator=(const DateOption&);
-
 private Q_SLOTS:
 
     void slotTokenTriggered(const QString& token)   override;
+
+private:
+
+    // Disable
+    explicit DateOption(QObject*)            = delete;
+    DateOption(const DateOption&)            = delete;
+    DateOption& operator=(const DateOption&) = delete;
 };
 
 } // namespace Digikam

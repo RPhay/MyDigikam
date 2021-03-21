@@ -67,13 +67,17 @@ public:
     void  setGeometry(const QRect& rect)          override;
     QSize sizeHint()                        const override;
 
-private:
 
-    DynamicLayout(const DynamicLayout&);
-    DynamicLayout& operator=(const DynamicLayout&);
+private:
 
     int reLayout(const QRect& rect,
                  bool testOnly)             const;
+
+private:
+
+    // Disable
+    DynamicLayout(const DynamicLayout&)            = delete;
+    DynamicLayout& operator=(const DynamicLayout&) = delete;
 
 private:
 

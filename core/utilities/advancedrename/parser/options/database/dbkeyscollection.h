@@ -103,13 +103,13 @@ protected:
 
 private:
 
-    DbKeysCollection(const DbKeysCollection&);
-    DbKeysCollection& operator=(const DbKeysCollection&);
+    DbKeyIdsMap idsMap;
+    QString     name;
 
 private:
 
-    DbKeyIdsMap idsMap;
-    QString     name;
+    DbKeysCollection(const DbKeysCollection&)            = delete;
+    DbKeysCollection& operator=(const DbKeysCollection&) = delete;
 };
 
 } // namespace Digikam

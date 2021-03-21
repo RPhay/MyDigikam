@@ -52,9 +52,9 @@ protected:
 private:
 
     // Disable
-    CameraNameOption(QObject*);
-    CameraNameOption(const CameraNameOption&);
-    CameraNameOption& operator=(const CameraNameOption&);
+    CameraNameOption(QObject*)                           = delete;
+    CameraNameOption(const CameraNameOption&)            = delete;
+    CameraNameOption& operator=(const CameraNameOption&) = delete;
 };
 
 } // namespace Digikam

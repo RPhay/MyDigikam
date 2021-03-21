@@ -52,9 +52,9 @@ protected:
 private:
 
     // Disable
-    FilePropertiesOption(QObject*);
-    FilePropertiesOption(const FilePropertiesOption&);
-    FilePropertiesOption& operator=(const FilePropertiesOption&);
+    FilePropertiesOption(QObject*)                               = delete;
+    FilePropertiesOption(const FilePropertiesOption&)            = delete;
+    FilePropertiesOption& operator=(const FilePropertiesOption&) = delete;
 };
 
 } // namespace Digikam

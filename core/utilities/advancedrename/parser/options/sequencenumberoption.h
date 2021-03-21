@@ -51,9 +51,9 @@ public:
 private:
 
     // Disable
-    explicit SequenceNumberDialog(QWidget*) = delete;
-    SequenceNumberDialog(const SequenceNumberDialog&);
-    SequenceNumberDialog& operator=(const SequenceNumberDialog&);
+    explicit SequenceNumberDialog(QWidget*)                      = delete;
+    SequenceNumberDialog(const SequenceNumberDialog&)            = delete;
+    SequenceNumberDialog& operator=(const SequenceNumberDialog&) = delete;
 };
 
 // --------------------------------------------------------
@@ -78,9 +78,9 @@ private Q_SLOTS:
 private:
 
     // Disable
-    explicit SequenceNumberOption(QObject*) = delete;
-    SequenceNumberOption(const SequenceNumberOption&);
-    SequenceNumberOption& operator=(const SequenceNumberOption&);
+    explicit SequenceNumberOption(QObject*)                      = delete;
+    SequenceNumberOption(const SequenceNumberOption&)            = delete;
+    SequenceNumberOption& operator=(const SequenceNumberOption&) = delete;
 };
 
 } // namespace Digikam

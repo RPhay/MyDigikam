@@ -54,13 +54,6 @@ public:
 
 private:
 
-    explicit TooltipCreator()
-    {
-    };
-
-    TooltipCreator(const TooltipCreator&);
-    TooltipCreator& operator=(const TooltipCreator&);
-
     /// common methods
 
     QString markOption(const QString& str);
@@ -70,12 +63,19 @@ private:
 
     QString additionalInformation();
 
-
     /// parse object related methods
 
     QString createEntries(const RulesList& data);
     QString createSection(const QString& sectionName, const RulesList& data, bool lastSection = false);
     QString createHeader(const QString& str);
+
+private:
+
+    // Disable
+    explicit TooltipCreator()                        = default;
+    TooltipCreator(const TooltipCreator&)            = delete;
+    TooltipCreator& operator=(const TooltipCreator&) = delete;
+
 };
 
 } // namespace Digikam

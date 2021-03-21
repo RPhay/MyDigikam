@@ -53,9 +53,9 @@ protected:
 private:
 
     // Disable
-    DirectoryNameOption(QObject*);
-    DirectoryNameOption(const DirectoryNameOption&);
-    DirectoryNameOption& operator=(const DirectoryNameOption&);
+    DirectoryNameOption(QObject*)                              = delete;
+    DirectoryNameOption(const DirectoryNameOption&)            = delete;
+    DirectoryNameOption& operator=(const DirectoryNameOption&) = delete;
 };
 
 } // namespace Digikam

@@ -78,8 +78,9 @@ public:
 
 private:
 
-    AdvancedRenameListItem(const AdvancedRenameListItem&);
-    AdvancedRenameListItem& operator=(const AdvancedRenameListItem&);
+    // Disable
+    AdvancedRenameListItem(const AdvancedRenameListItem&)            = delete;
+    AdvancedRenameListItem& operator=(const AdvancedRenameListItem&) = delete;
 
 private:
 
@@ -120,9 +121,6 @@ private Q_SLOTS:
 
 private:
 
-    AdvancedRenameDialog(const AdvancedRenameDialog&);
-    AdvancedRenameDialog& operator=(const AdvancedRenameDialog&);
-
     void setupWidgets();
     void setupConnections();
 
@@ -132,6 +130,12 @@ private:
     bool checkNewNames() const;
 
     NewNamesList filterNewNames() const;
+
+private:
+
+    // Disable
+    AdvancedRenameDialog(const AdvancedRenameDialog&)            = delete;
+    AdvancedRenameDialog& operator=(const AdvancedRenameDialog&) = delete;
 
 private:
 

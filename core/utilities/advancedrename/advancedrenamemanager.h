@@ -109,11 +109,6 @@ Q_SIGNALS:
 
 private:
 
-    // Disable
-    AdvancedRenameManager(QObject*);
-    AdvancedRenameManager(const AdvancedRenameManager&);
-    AdvancedRenameManager& operator=(const AdvancedRenameManager&);
-
     void addFile(const QString& filename)                               const;
     void addFile(const QString& filename, const QDateTime& datetime)    const;
     bool initialize();
@@ -124,6 +119,13 @@ private:
 
     void clearMappings();
     void clearAll();
+
+private:
+
+    // Disable
+    AdvancedRenameManager(QObject*)                                = delete;
+    AdvancedRenameManager(const AdvancedRenameManager&)            = delete;
+    AdvancedRenameManager& operator=(const AdvancedRenameManager&) = delete;
 
 private:
 

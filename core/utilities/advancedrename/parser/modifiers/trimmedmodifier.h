@@ -43,9 +43,9 @@ public:
 private:
 
     // Disable
-    explicit TrimmedModifier(QObject*) = delete;
-    TrimmedModifier(const TrimmedModifier&);
-    TrimmedModifier& operator=(const TrimmedModifier&);
+    explicit TrimmedModifier(QObject*)                 = delete;
+    TrimmedModifier(const TrimmedModifier&)            = delete;
+    TrimmedModifier& operator=(const TrimmedModifier&) = delete;
 };
 
 } // namespace Digikam

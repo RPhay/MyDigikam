@@ -71,9 +71,9 @@ private Q_SLOTS:
 private:
 
     // Disable
-    explicit DefaultValueModifier(QObject*) = delete;
-    DefaultValueModifier(const DefaultValueModifier&);
-    DefaultValueModifier& operator=(const DefaultValueModifier&);
+    explicit DefaultValueModifier(QObject*)                      = delete;
+    DefaultValueModifier(const DefaultValueModifier&)            = delete;
+    DefaultValueModifier& operator=(const DefaultValueModifier&) = delete;
 };
 
 } // namespace Digikam

@@ -48,9 +48,9 @@ protected:
 private:
 
     // Disable
-    Option(QObject*);
-    Option(const Option&);
-    Option& operator=(const Option&);
+    Option(QObject*)                 = delete;
+    Option(const Option&)            = delete;
+    Option& operator=(const Option&) = delete;
 
 private:
 

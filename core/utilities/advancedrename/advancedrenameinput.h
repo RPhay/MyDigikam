@@ -81,11 +81,13 @@ private Q_SLOTS:
 
 private:
 
-    AdvancedRenameLineEdit(const AdvancedRenameLineEdit&);
-    AdvancedRenameLineEdit& operator=(const AdvancedRenameLineEdit&);
-
     void setupWidgets();
     void setupConnections();
+
+private:
+
+    AdvancedRenameLineEdit(const AdvancedRenameLineEdit&)            = delete;
+    AdvancedRenameLineEdit& operator=(const AdvancedRenameLineEdit&) = delete;
 
 private:
 
@@ -137,15 +139,18 @@ private Q_SLOTS:
 
 private:
 
-    AdvancedRenameInput(const AdvancedRenameInput&);
-    AdvancedRenameInput& operator=(const AdvancedRenameInput&);
-
     void readSettings();
     void writeSettings();
     void enableHighlighter(bool enable);
 
     void setupWidgets();
     void setupConnections();
+
+private:
+
+    // Disable
+    AdvancedRenameInput(const AdvancedRenameInput&)            = delete;
+    AdvancedRenameInput& operator=(const AdvancedRenameInput&) = delete;
 
 private:
 

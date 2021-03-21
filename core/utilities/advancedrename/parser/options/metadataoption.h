@@ -57,9 +57,9 @@ public:
 private:
 
     // Disable
-    explicit MetadataOptionDialog(QWidget*) = delete;
-    MetadataOptionDialog(const MetadataOptionDialog&);
-    MetadataOptionDialog& operator=(const MetadataOptionDialog&);
+    explicit MetadataOptionDialog(QWidget*)                      = delete;
+    MetadataOptionDialog(const MetadataOptionDialog&)            = delete;
+    MetadataOptionDialog& operator=(const MetadataOptionDialog&) = delete;
 };
 
 // --------------------------------------------------------
@@ -83,12 +83,14 @@ private Q_SLOTS:
 
 private:
 
-    // Disable
-    explicit MetadataOption(QObject*) = delete;
-    MetadataOption(const MetadataOption&);
-    MetadataOption& operator=(const MetadataOption&);
-
     QString parseMetadata(const QString& token, ParseSettings& settings);
+
+private:
+
+    // Disable
+    explicit MetadataOption(QObject*)                = delete;
+    MetadataOption(const MetadataOption&)            = delete;
+    MetadataOption& operator=(const MetadataOption&) = delete;
 };
 
 } // namespace Digikam

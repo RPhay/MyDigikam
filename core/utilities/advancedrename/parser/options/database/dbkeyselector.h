@@ -52,13 +52,14 @@ public:
 
 private:
 
-    DbKeySelectorItem(const DbKeySelectorItem&);
-    DbKeySelectorItem& operator=(const DbKeySelectorItem&);
+    QString m_key;
+    QString m_description;
 
 private:
 
-    QString m_key;
-    QString m_description;
+    // Disable
+    DbKeySelectorItem(const DbKeySelectorItem&)            = delete;
+    DbKeySelectorItem& operator=(const DbKeySelectorItem&) = delete;
 };
 
 // ------------------------------------------------------------------------------------
@@ -77,8 +78,9 @@ public:
 
 private:
 
-    DbKeySelector(const DbKeySelector&);
-    DbKeySelector& operator=(const DbKeySelector&);
+    // Disable
+    DbKeySelector(const DbKeySelector&)            = delete;
+    DbKeySelector& operator=(const DbKeySelector&) = delete;
 };
 
 // ------------------------------------------------------------------------------------
@@ -101,10 +103,13 @@ private Q_SLOTS:
 
 private:
 
-    DbKeySelectorView(const DbKeySelectorView&);
-    DbKeySelectorView& operator=(const DbKeySelectorView&);
-
     void removeChildlessHeaders();
+
+private:
+
+    // Disable
+    DbKeySelectorView(const DbKeySelectorView&)            = delete;
+    DbKeySelectorView& operator=(const DbKeySelectorView&) = delete;
 
 private:
 

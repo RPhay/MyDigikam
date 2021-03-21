@@ -52,9 +52,6 @@ public:
 
 private:
 
-    AdvancedRenameProcessDialog(const AdvancedRenameProcessDialog&);
-    AdvancedRenameProcessDialog& operator=(const AdvancedRenameProcessDialog&);
-
     void abort();
     void complete();
     void processOne();
@@ -74,6 +71,12 @@ private Q_SLOTS:
 
     void slotRenameImages();
     void slotGotThumbnail(const LoadingDescription& desc, const QPixmap& pix);
+
+private:
+
+    // Disable
+    AdvancedRenameProcessDialog(const AdvancedRenameProcessDialog&)            = delete;
+    AdvancedRenameProcessDialog& operator=(const AdvancedRenameProcessDialog&) = delete;
 
 private:
 

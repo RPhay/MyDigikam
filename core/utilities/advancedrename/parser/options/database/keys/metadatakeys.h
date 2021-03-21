@@ -46,8 +46,9 @@ protected:
 
 private:
 
-    MetadataKeys(const MetadataKeys&);
-    MetadataKeys& operator=(const MetadataKeys&);
+    // Disable
+    MetadataKeys(const MetadataKeys&)            = delete;
+    MetadataKeys& operator=(const MetadataKeys&) = delete;
 };
 
 } // namespace Digikam

@@ -41,8 +41,9 @@ public:
 
 private:
 
-    DefaultRenameParser(const DefaultRenameParser&);
-    DefaultRenameParser& operator=(const DefaultRenameParser&);
+    // Disable
+    DefaultRenameParser(const DefaultRenameParser&)            = delete;
+    DefaultRenameParser& operator=(const DefaultRenameParser&) = delete;
 };
 
 } // namespace Digikam

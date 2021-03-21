@@ -46,8 +46,9 @@ protected:
 
 private:
 
-    PositionKeys(const PositionKeys&);
-    PositionKeys& operator=(const PositionKeys&);
+    // Disable
+    PositionKeys(const PositionKeys&)            = delete;
+    PositionKeys& operator=(const PositionKeys&) = delete;
 };
 
 } // namespace Digikam
