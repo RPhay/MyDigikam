@@ -50,17 +50,13 @@ class DIGIKAM_GUI_EXPORT SyncJob : public QObject
 
 public:
 
-    /** Load the image or icon for the tag thumbnail.
+    /**
+     * Load the image or icon for the tag thumbnail.
      */
     static QPixmap getTagThumbnail(TAlbum* const album);
     static QPixmap getTagThumbnail(const QString& name, int size);
 
 private:
-
-    // Disable
-    SyncJob();
-    explicit SyncJob(QObject*);
-    ~SyncJob() override;
 
     void enterWaitingLoop()                          const;
     void quitWaitingLoop()                           const;
@@ -71,6 +67,13 @@ private Q_SLOTS:
 
     void slotGotThumbnailFromIcon(Album* album, const QPixmap& pix);
     void slotLoadThumbnailFailed(Album* album);
+
+private:
+
+    // Disable
+    SyncJob();
+    explicit SyncJob(QObject*) = delete;
+    ~SyncJob() override;
 
 private:
 

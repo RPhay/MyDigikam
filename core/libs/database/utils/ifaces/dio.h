@@ -108,11 +108,6 @@ Q_SIGNALS:
 
 private:
 
-    // Disable
-    DIO();
-    explicit DIO(QObject*);
-    ~DIO() override;
-
     void processJob(IOJobData* const data);
     void createJob(IOJobData* const data);
 
@@ -125,6 +120,13 @@ private Q_SLOTS:
     void slotResult();
     void slotOneProccessed(const QUrl& url);
     void slotCancel(ProgressItem* item);
+
+private:
+
+    // Disable
+    DIO();
+    explicit DIO(QObject*) = delete;
+    ~DIO() override;
 
 private:
 

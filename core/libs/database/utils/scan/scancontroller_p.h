@@ -86,7 +86,7 @@ private Q_SLOTS:
 private:
 
     // Disable
-    explicit ScanControllerLoadingCacheFileWatch(QObject*);
+    explicit ScanControllerLoadingCacheFileWatch(QObject*) = delete;
 };
 
 // ------------------------------------------------------------------------------

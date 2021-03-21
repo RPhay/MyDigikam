@@ -43,7 +43,7 @@ public:
 private:
 
     // Disable
-    explicit MysqlInitBinary(QObject*);
+    explicit MysqlInitBinary(QObject*) = delete;
 };
 
 } // namespace Digikam

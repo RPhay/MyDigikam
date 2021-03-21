@@ -188,8 +188,8 @@ public:
 
     explicit Private()
       : state (Inactive),
-        thread(nullptr),
-        active(true)
+        active(true),
+        thread(nullptr)
     {
     }
 

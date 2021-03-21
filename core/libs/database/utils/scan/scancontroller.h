@@ -372,10 +372,12 @@ private:
 
 private:
 
-    // Hidden copy constructor and assignment operator.
-    ScanController(QObject*);
-    ScanController(const ScanController&);
-    ScanController& operator=(const ScanController&);
+    // Disable
+    ScanController(QObject*)                         = delete;
+    ScanController(const ScanController&)            = delete;
+    ScanController& operator=(const ScanController&) = delete;
+
+private:
 
     friend class ScanControllerCreator;
 
