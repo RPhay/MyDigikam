@@ -75,9 +75,11 @@ public:
 
 private:
 
-    // Hidden copy constructor and assignment operator.
-    Iface(const Iface&);
-    Iface& operator=(const Iface&);
+    // Disable
+    Iface(const Iface&)            = delete;
+    Iface& operator=(const Iface&) = delete;
+
+private:
 
     class Private;
     Private* const d;

@@ -60,9 +60,11 @@ private:
 
 private:
 
-    // Hidden copy constructor and assignment operator.
-    PresentationLoader(const PresentationLoader&);
-    PresentationLoader& operator=(const PresentationLoader&);
+    // Disable
+    PresentationLoader(const PresentationLoader&)            = delete;
+    PresentationLoader& operator=(const PresentationLoader&) = delete;
+
+private:
 
     class Private;
     Private* const d;

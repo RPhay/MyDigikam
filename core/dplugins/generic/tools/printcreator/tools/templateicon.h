@@ -79,9 +79,11 @@ public:
 
 private:
 
-    // Hidden copy constructor and assignment operator.
-    TemplateIcon(const TemplateIcon&);
-    TemplateIcon& operator=(const TemplateIcon&);
+    // Disable
+    TemplateIcon(const TemplateIcon&)            = delete;
+    TemplateIcon& operator=(const TemplateIcon&) = delete;
+
+private:
 
     class Private;
     Private* const d;

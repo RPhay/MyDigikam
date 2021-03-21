@@ -88,9 +88,11 @@ public:
 
 private:
 
-    // Hidden copy constructor and assignment operator.
-    ImageLevels(const ImageLevels&);
-    ImageLevels& operator=(const ImageLevels&);
+    // Disable
+    ImageLevels(const ImageLevels&)            = delete;
+    ImageLevels& operator=(const ImageLevels&) = delete;
+
+private:
 
     class Private;
     Private* const d;

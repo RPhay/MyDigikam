@@ -49,9 +49,11 @@ public:
 
 private:
 
-    // Hidden copy constructor and assignment operator.
-    PTOFile(const PTOFile&);
-    PTOFile& operator=(const PTOFile&);
+    // Disable
+    PTOFile(const PTOFile&)            = delete;
+    PTOFile& operator=(const PTOFile&) = delete;
+
+private:
 
     class Private;
     Private* const d;

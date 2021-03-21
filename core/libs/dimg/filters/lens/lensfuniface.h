@@ -136,9 +136,11 @@ private:
 
 private:
 
-    // Hidden copy constructor and assignment operator.
-    LensFunIface(const LensFunIface&);
-    LensFunIface& operator=(const LensFunIface&);
+    // Disable
+    LensFunIface(const LensFunIface&)            = delete;
+    LensFunIface& operator=(const LensFunIface&) = delete;
+
+private:
 
     class Private;
     Private* const d;

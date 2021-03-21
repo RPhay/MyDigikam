@@ -62,9 +62,11 @@ private:
 
 private:
 
-    // Hidden copy constructor and assignment operator.
-    PiwigoSession(const PiwigoSession&);
-    PiwigoSession& operator=(const PiwigoSession&);
+    // Disable
+    PiwigoSession(const PiwigoSession&)            = delete;
+    PiwigoSession& operator=(const PiwigoSession&) = delete;
+
+private:
 
     class Private;
     Private* const d;

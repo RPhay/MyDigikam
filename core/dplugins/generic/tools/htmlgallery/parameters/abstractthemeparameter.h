@@ -69,9 +69,11 @@ public:
 
 private:
 
-    // Hidden copy constructor and assignment operator.
-    AbstractThemeParameter(const AbstractThemeParameter&);
-    AbstractThemeParameter& operator=(const AbstractThemeParameter&);
+    // Disable
+    AbstractThemeParameter(const AbstractThemeParameter&)            = delete;
+    AbstractThemeParameter& operator=(const AbstractThemeParameter&) = delete;
+
+private:
 
     class Private;
     Private* const d;

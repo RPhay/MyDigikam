@@ -103,10 +103,6 @@ public:
 
 private:
 
-    // Hidden copy constructor and assignment operator.
-    ItemScanner(const ItemScanner&);
-    ItemScanner& operator=(const ItemScanner&);
-
     static bool hasValidField(const QVariantList& list);
     static bool lessThanForIdentity(const ItemScanInfo& a, const ItemScanInfo& b);
 
@@ -359,6 +355,12 @@ public:
      * @brief scanBalooInfo - retrieve tags, comments and rating from Baloo Desktop service.
      */
     void scanBalooInfo();
+
+private:
+
+    // Disable
+    ItemScanner(const ItemScanner&)            = delete;
+    ItemScanner& operator=(const ItemScanner&) = delete;
 
 private:
 

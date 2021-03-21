@@ -78,12 +78,6 @@ public:
                        const QDate& startDate,
                        const QDate& endDate);
 
-private:
-
-    /// Hidden copy constructor and assignment operator.
-    ItemLister(const ItemLister&);
-    ItemLister& operator=(const ItemLister&);
-
     // -----------------------------------------------------------------------------
 
     /** @name Operations with PAlbum
@@ -212,6 +206,12 @@ private:
                         const QList<qlonglong>& imageIds);
 
     //@}
+
+private:
+
+    // Disable
+    ItemLister(const ItemLister&)            = delete;
+    ItemLister& operator=(const ItemLister&) = delete;
 
 private:
 

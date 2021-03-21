@@ -78,10 +78,12 @@ public:
 
 private:
 
+    // Disable
     GalleryTheme();
-    // Hidden copy constructor and assignment operator
-    GalleryTheme(const GalleryTheme&);
-    GalleryTheme& operator=(const GalleryTheme&);
+    GalleryTheme(const GalleryTheme&)            = delete;
+    GalleryTheme& operator=(const GalleryTheme&) = delete;
+
+private:
 
     class Private;
     Private* const d;

@@ -77,9 +77,11 @@ private:
 
 private:
 
-    // Hidden copy constructor and assignment operator.
-    AtkinsPageLayout(const AtkinsPageLayout&);
-    AtkinsPageLayout& operator=(const AtkinsPageLayout&);
+    // Disable
+    AtkinsPageLayout(const AtkinsPageLayout&)            = delete;
+    AtkinsPageLayout& operator=(const AtkinsPageLayout&) = delete;
+
+private:
 
     class Private;
     Private* const d;
