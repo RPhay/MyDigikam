@@ -1,4 +1,4 @@
-digiKam 7.2.0 - Release date: 2021-02-28
+digiKam 7.2.0 - Release date: 2021-03-22
 
 *****************************************************************************************************
 NEW FEATURES:
@@ -405,4 +405,3 @@ BUGFIXES:
 362 ==> 434566 - Application crashes C:\Program Files\digiKam\plugins\digikam\dimg\DImg_QImage_Plugin.dll.
 363 ==> 434714 - digiKam-7.2.0-20210320T221224 breaks digiKam launch on macOS 10.14.6 Mojave.
 364 ==> 434716 - Serious Problems while rotating multiple Images with Synch Services (QMAP, Synology, etc.).
-365 ==> 
