@@ -90,7 +90,7 @@ class ImportLockOverlay : public AbstractWidgetDelegateOverlay
 public:
 
     explicit ImportLockOverlay(QObject* const parent);
-    ImportOverlayWidget* buttonWidget() const;
+    ImportOverlayWidget* buttonWidget()       const;
 
 protected:
 
@@ -117,7 +117,7 @@ class ImportDownloadOverlay : public AbstractWidgetDelegateOverlay
 public:
 
     explicit ImportDownloadOverlay(QObject* const parent);
-    ImportOverlayWidget* buttonWidget()               const;
+    ImportOverlayWidget* buttonWidget()       const;
 
 protected:
 
@@ -167,6 +167,8 @@ protected:
 
     void updatePosition();
     void updateRating();
+
+protected:
 
     QPersistentModelIndex m_index;
 };

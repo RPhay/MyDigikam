@@ -120,7 +120,10 @@ private Q_SLOTS:
 
 private:
 
-    EditorToolSettings(); // Disable
+    // Disable
+    EditorToolSettings() = delete;
+
+private:
 
     class Private;
     Private* const d;

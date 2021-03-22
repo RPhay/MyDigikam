@@ -142,7 +142,7 @@ Q_SIGNALS:
 private:
 
     // Disable
-    DKCamera(QObject*);
+    DKCamera(QObject*) = delete;
 };
 
 } // namespace Digikam

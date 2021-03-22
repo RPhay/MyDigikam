@@ -58,7 +58,9 @@ public:
             qDeleteAll(children);
         }
 
-        QString data;
+    public:
+
+        QString                     data;
 
     private:
 

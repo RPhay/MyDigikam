@@ -225,7 +225,7 @@ private:
     const QExplicitlySharedDataPointer<GeoIfaceSharedData> s;
 
     class Private;
-    Private* const d;
+    Private* const                                         d;
 
     Q_DISABLE_COPY(MapWidget)
 };

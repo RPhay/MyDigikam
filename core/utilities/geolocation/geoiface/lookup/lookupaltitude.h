@@ -60,8 +60,8 @@ public:
 
         explicit Request()
           : coordinates(),
-            success(false),
-            data()
+            success    (false),
+            data       ()
         {
         }
 

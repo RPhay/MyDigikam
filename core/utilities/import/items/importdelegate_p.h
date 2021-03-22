@@ -47,15 +47,15 @@ class Q_DECL_HIDDEN ImportDelegate::ImportDelegatePrivate : public ItemViewImpor
 public:
 
     explicit ImportDelegatePrivate()
-      : contentWidth(0),
-        drawImageFormat(false),
-        drawCoordinates(false),
-        drawFocusFrame(true),
-        drawMouseOverFrame(true),
-        ratingOverThumbnail(false),
-        categoryDrawer(nullptr),
-        currentView(nullptr),
-        currentModel(nullptr)
+      : contentWidth        (0),
+        drawImageFormat     (false),
+        drawCoordinates     (false),
+        drawFocusFrame      (true),
+        drawMouseOverFrame  (true),
+        ratingOverThumbnail (false),
+        categoryDrawer      (nullptr),
+        currentView         (nullptr),
+        currentModel        (nullptr)
     {
         actualPixmapRectCache.setMaxCost(250);
     }

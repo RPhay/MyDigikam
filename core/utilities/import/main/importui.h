@@ -242,10 +242,12 @@ private Q_SLOTS:
 private:
 
     // Disable
-    ImportUI(QWidget*);
+    ImportUI(QWidget*) = delete;
+
+private:
 
     class Private;
-    Private* const d;
+    Private* const   d;
 
     static ImportUI* m_instance;
 };

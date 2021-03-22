@@ -204,10 +204,12 @@ private:
     // Disable
     EditorCore(QObject*);
 
+private:
+
     static EditorCore* m_defaultInstance;
 
     class Private;
-    Private* const d;
+    Private* const     d;
 };
 
 } // namespace Digikam

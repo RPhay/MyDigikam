@@ -69,13 +69,13 @@ public:
     public:
 
         explicit TrackPoint()
-          : dateTime(),
-            coordinates(),
-            nSatellites(-1),
-            hDop(-1),
-            pDop(-1),
-            fixType(-1),
-            speed(-1)
+          : dateTime    (),
+            coordinates (),
+            nSatellites (-1),
+            hDop        (-1),
+            pDop        (-1),
+            fixType     (-1),
+            speed       (-1)
         {
         }
 
@@ -109,11 +109,11 @@ public:
     public:
 
         explicit Track()
-          : url(),
-            points(),
-            id(0),
-            color(Qt::red),
-            flags(FlagDefault)
+          : url     (),
+            points  (),
+            id      (0),
+            color   (Qt::red),
+            flags   (FlagDefault)
         {
             qRegisterMetaType<TrackChanges>("TrackChanges");
         }

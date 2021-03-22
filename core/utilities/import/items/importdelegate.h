@@ -69,9 +69,9 @@ public:
     void setSpacing(int spacing)                                                                       override;
     void setDefaultViewOptions(const QStyleOptionViewItem& option)                                     override;
     bool acceptsToolTip(const QPoint& pos, const QRect& visualRect,
-                                const QModelIndex& index, QRect* tooltipRect = nullptr)                  const override;
+                                const QModelIndex& index, QRect* tooltipRect = nullptr)          const override;
     bool acceptsActivation(const QPoint& pos, const QRect& visualRect,
-                                   const QModelIndex& index, QRect* activationRect = nullptr)            const override;
+                                   const QModelIndex& index, QRect* activationRect = nullptr)    const override;
 
     QRect pixmapRect()                                                                           const override;
     QRect imageInformationRect()                                                                 const override;

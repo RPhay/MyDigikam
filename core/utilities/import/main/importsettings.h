@@ -175,6 +175,8 @@ private:
     ImportSettings();
     ~ImportSettings()                             override;
 
+private:
+
     void init();
 
 private:

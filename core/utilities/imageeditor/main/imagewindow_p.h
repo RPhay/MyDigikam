@@ -159,19 +159,19 @@ class Q_DECL_HIDDEN ImageWindow::Private
 public:
 
     Private()
-      : configShowThumbbarEntry(QLatin1String("Show Thumbbar")),
-        configHorizontalThumbbarEntry(QLatin1String("HorizontalThumbbar")),
-        viewContainer(nullptr),
-        toMainWindowAction(nullptr),
-        fileDeletePermanentlyAction(nullptr),
-        fileDeletePermanentlyDirectlyAction(nullptr),
-        fileTrashDirectlyAction(nullptr),
-        imageInfoModel(nullptr),
-        imageFilterModel(nullptr),
-        dragDropHandler(nullptr),
-        thumbBar(nullptr),
-        thumbBarDock(nullptr),
-        rightSideBar(nullptr)
+      : configShowThumbbarEntry             (QLatin1String("Show Thumbbar")),
+        configHorizontalThumbbarEntry       (QLatin1String("HorizontalThumbbar")),
+        viewContainer                       (nullptr),
+        toMainWindowAction                  (nullptr),
+        fileDeletePermanentlyAction         (nullptr),
+        fileDeletePermanentlyDirectlyAction (nullptr),
+        fileTrashDirectlyAction             (nullptr),
+        imageInfoModel                      (nullptr),
+        imageFilterModel                    (nullptr),
+        dragDropHandler                     (nullptr),
+        thumbBar                            (nullptr),
+        thumbBarDock                        (nullptr),
+        rightSideBar                        (nullptr)
     {
     }
 

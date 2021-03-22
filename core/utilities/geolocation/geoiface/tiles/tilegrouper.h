@@ -56,7 +56,7 @@ private:
 private:
 
     class Private;
-    const QScopedPointer<Private> d;
+    const QScopedPointer<Private>                          d;
 
     const QExplicitlySharedDataPointer<GeoIfaceSharedData> s;
 };

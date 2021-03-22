@@ -48,8 +48,8 @@ public:
     public:
 
         explicit TrackReadResult()
-          : track(),
-            isValid(false),
+          : track    (),
+            isValid  (false),
             loadError()
         {
         }
@@ -62,9 +62,9 @@ public:
     };
 
     explicit TrackReader(TrackReadResult* const dataTarget);
-    ~TrackReader() override;
+    ~TrackReader()                                          override;
 
-    bool characters(const QString& ch)              override;
+    bool characters(const QString& ch)                      override;
 
     bool endElement(const QString& namespaceURI,
                             const QString& localName,

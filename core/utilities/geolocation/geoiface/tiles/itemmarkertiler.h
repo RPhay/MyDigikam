@@ -66,13 +66,13 @@ public:
     void onIndicesClicked(const ClickInfo& clickInfo)                                                     override;
     void onIndicesMoved(const TileIndex::List& tileIndicesList,
                                 const GeoCoordinates& targetCoordinates,
-                                const QPersistentModelIndex& targetSnapIndex)                                     override;
+                                const QPersistentModelIndex& targetSnapIndex)                             override;
 
     void setMarkerGeoModelHelper(GeoModelHelper* const modelHelper);
     void removeMarkerIndexFromGrid(const QModelIndex& markerIndex, const bool ignoreSelection = false);
     void addMarkerIndexToGrid(const QPersistentModelIndex& markerIndex);
 
-    void setActive(const bool state)                                                                              override;
+    void setActive(const bool state)                                                                      override;
 
 private Q_SLOTS:
 

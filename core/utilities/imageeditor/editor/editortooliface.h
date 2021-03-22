@@ -86,12 +86,14 @@ public Q_SLOTS:
 private:
 
     // Disable
-    EditorToolIface(QObject*);
+    EditorToolIface(QObject*) = delete;
+
+private:
 
     static EditorToolIface* m_iface;
 
     class Private;
-    Private* const d;
+    Private* const          d;
 };
 
 } // namespace Digikam

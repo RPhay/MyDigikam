@@ -132,10 +132,12 @@ private:
     GeoIfaceGlobalObject();
     ~GeoIfaceGlobalObject() override;
 
+    Q_DISABLE_COPY(GeoIfaceGlobalObject)
+
+private:
+
     class Private;
     Private* const d;
-
-    Q_DISABLE_COPY(GeoIfaceGlobalObject)
 
     friend class GeoIfaceGlobalObjectCreator;
 };
