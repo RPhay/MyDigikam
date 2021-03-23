@@ -73,8 +73,8 @@ typedef struct
     int          iImage;
     pt_mask_type type;
 
-    int       iPointsCount;
-    pt_point* points;
+    int          iPointsCount;
+    pt_point*    points;
 } pt_script_mask;
 
 typedef struct

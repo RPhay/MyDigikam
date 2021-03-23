@@ -62,7 +62,7 @@ private:
 private:
 
     // Disable
-    CreatePreviewTask();
+    CreatePreviewTask() = delete;
 
     Q_DISABLE_COPY(CreatePreviewTask)
 };

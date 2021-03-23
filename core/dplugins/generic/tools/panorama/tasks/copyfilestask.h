@@ -66,7 +66,7 @@ private:
 private:
 
     // Disable
-    CopyFilesTask();
+    CopyFilesTask() = delete;
 
     Q_DISABLE_COPY(CopyFilesTask)
 };

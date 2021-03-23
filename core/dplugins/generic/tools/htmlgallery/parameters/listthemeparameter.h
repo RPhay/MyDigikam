@@ -39,11 +39,11 @@ class ListThemeParameter : public AbstractThemeParameter
 public:
 
     explicit ListThemeParameter();
-    ~ListThemeParameter() override;
+    ~ListThemeParameter()                                                          override;
 
     void     init(const QByteArray& internalName, const KConfigGroup* configGroup) override;
-    QWidget* createWidget(QWidget* parent, const QString& value) const override;
-    QString  valueFromWidget(QWidget*)                           const override;
+    QWidget* createWidget(QWidget* parent, const QString& value)             const override;
+    QString  valueFromWidget(QWidget*)                                       const override;
 
 private:
 

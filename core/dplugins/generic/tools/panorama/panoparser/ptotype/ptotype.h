@@ -69,11 +69,11 @@ struct PTOType
             bool              savePositions;      ///< for TIFF
 
             FileFormat()
-              : fileType(JPEG),
-                quality(90),
+              : fileType         (JPEG),
+                quality          (90),
                 compressionMethod(LZW),
-                cropped(false),
-                savePositions(false)
+                cropped          (false),
+                savePositions    (false)
             {
             }
         };
@@ -106,13 +106,13 @@ struct PTOType
         QStringList    unmatchedParameters;
 
         Project()
-          : size(0, 0),
-            crop(0, 0, 0, 0),
-            projection(RECTILINEAR),
-            fieldOfView(0),
-            exposure(0),
-            hdr(false),
-            bitDepth(UINT8),
+          : size                  (0, 0),
+            crop                  (0, 0, 0, 0),
+            projection            (RECTILINEAR),
+            fieldOfView           (0),
+            exposure              (0),
+            hdr                   (false),
+            bitDepth              (UINT8),
             photometricReferenceId(0)
         {
         }
@@ -150,10 +150,10 @@ struct PTOType
         QStringList  unmatchedParameters;
 
         Stitcher()
-          : gamma(1),
-            interpolator(POLY3),
-            speedUp(FAST),
-            huberSigma(0),
+          : gamma                (1),
+            interpolator         (POLY3),
+            speedUp              (FAST),
+            huberSigma           (0),
             photometricHuberSigma(0)
         {
         }
@@ -221,13 +221,13 @@ struct PTOType
         struct LensParameter
         {
             LensParameter()
-              : value(T()),
+              : value      (T()),
                 referenceId(-1)
             {
             }
 
             explicit LensParameter(const T& v)
-              : value(v),
+              : value      (v),
                 referenceId(-1)
             {
             }
@@ -312,42 +312,42 @@ struct PTOType
         QStringList                   unmatchedParameters;
 
         Image()
-          : size(0, 0),
-            id(0),
-            lensProjection(RECTILINEAR),
-            fieldOfView(0),
-            yaw(0),
-            pitch(0),
-            roll(0),
-            lensBarrelCoefficientA(0),
-            lensBarrelCoefficientB(0),
-            lensBarrelCoefficientC(0),
-            lensCenterOffsetX(0),
-            lensCenterOffsetY(0),
-            lensShearX(0),
-            lensShearY(0),
-            exposure(0),
-            whiteBalanceRed(1),
-            whiteBalanceBlue(1),
-            vignettingMode(PANO_NONE),
-            vignettingCorrectionI(0),
-            vignettingCorrectionJ(0),
-            vignettingCorrectionK(0),
-            vignettingCorrectionL(0),
-            vignettingOffsetX(0),
-            vignettingOffsetY(0),
-            photometricEMoRA(0),
-            photometricEMoRB(0),
-            photometricEMoRC(0),
-            photometricEMoRD(0),
-            photometricEMoRE(0),
-            mosaicCameraPositionX(0),
-            mosaicCameraPositionY(0),
-            mosaicCameraPositionZ(0),
-            mosaicProjectionPlaneYaw(0),
+          : size                      (0, 0),
+            id                        (0),
+            lensProjection            (RECTILINEAR),
+            fieldOfView               (0),
+            yaw                       (0),
+            pitch                     (0),
+            roll                      (0),
+            lensBarrelCoefficientA    (0),
+            lensBarrelCoefficientB    (0),
+            lensBarrelCoefficientC    (0),
+            lensCenterOffsetX         (0),
+            lensCenterOffsetY         (0),
+            lensShearX                (0),
+            lensShearY                (0),
+            exposure                  (0),
+            whiteBalanceRed           (1),
+            whiteBalanceBlue          (1),
+            vignettingMode            (PANO_NONE),
+            vignettingCorrectionI     (0),
+            vignettingCorrectionJ     (0),
+            vignettingCorrectionK     (0),
+            vignettingCorrectionL     (0),
+            vignettingOffsetX         (0),
+            vignettingOffsetY         (0),
+            photometricEMoRA          (0),
+            photometricEMoRB          (0),
+            photometricEMoRC          (0),
+            photometricEMoRD          (0),
+            photometricEMoRE          (0),
+            mosaicCameraPositionX     (0),
+            mosaicCameraPositionY     (0),
+            mosaicCameraPositionZ     (0),
+            mosaicProjectionPlaneYaw  (0),
             mosaicProjectionPlanePitch(0),
-            crop(0, 0, 0, 0),
-            stackNumber(0)
+            crop                      (0, 0, 0, 0),
+            stackNumber               (0)
         {
         }
     };

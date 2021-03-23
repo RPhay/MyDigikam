@@ -64,7 +64,9 @@ private Q_SLOTS:
 private:
 
     // Disable
-    explicit DMediaServerDlg(QWidget*);
+    explicit DMediaServerDlg(QWidget*) = delete;
+
+private:
 
     class Private;
     Private* const d;

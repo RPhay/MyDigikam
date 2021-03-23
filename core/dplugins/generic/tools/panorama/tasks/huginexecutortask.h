@@ -55,7 +55,7 @@ private:
 private:
 
     // Disable
-    HuginExecutorTask();
+    HuginExecutorTask() = delete;
 
     Q_DISABLE_COPY(HuginExecutorTask)
 };

@@ -136,7 +136,6 @@ private:
                                   const QString& tag,
                                   const QString& text) const;
 
-
 private:
 
     bool                        m_localTarget;

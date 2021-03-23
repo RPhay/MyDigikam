@@ -59,7 +59,7 @@ private:
 private:
 
     // Disable
-    CompileMKTask();
+    CompileMKTask() = delete;
 
     Q_DISABLE_COPY(CompileMKTask)
 };

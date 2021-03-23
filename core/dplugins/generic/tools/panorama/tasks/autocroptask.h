@@ -57,7 +57,7 @@ private:
 private:
 
     // Disable
-    AutoCropTask();
+    AutoCropTask() = delete;
 
     Q_DISABLE_COPY(AutoCropTask)
 };

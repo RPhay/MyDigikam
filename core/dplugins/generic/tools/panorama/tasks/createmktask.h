@@ -57,7 +57,7 @@ private:
 private:
 
     // Disable
-    CreateMKTask();
+    CreateMKTask() = delete;
 
     Q_DISABLE_COPY(CreateMKTask)
 };

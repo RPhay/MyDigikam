@@ -60,7 +60,7 @@ protected:
 private:
 
     // Disable
-    PanoTask();
+    PanoTask() = delete;
 
     Q_DISABLE_COPY(PanoTask)
 };

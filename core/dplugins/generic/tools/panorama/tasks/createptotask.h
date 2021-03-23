@@ -67,7 +67,7 @@ private:
 private:
 
     // Disable
-    CreatePtoTask();
+    CreatePtoTask() = delete;
 
     Q_DISABLE_COPY(CreatePtoTask)
 };

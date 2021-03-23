@@ -56,7 +56,7 @@ private:
 private:
 
     // Disable
-    OptimisationTask();
+    OptimisationTask() = delete;
 
     Q_DISABLE_COPY(OptimisationTask)
 };

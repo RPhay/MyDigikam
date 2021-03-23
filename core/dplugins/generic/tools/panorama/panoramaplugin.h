@@ -43,7 +43,7 @@ class PanoramaPlugin : public DPluginGeneric
 public:
 
     explicit PanoramaPlugin(QObject* const parent = nullptr);
-    ~PanoramaPlugin() override;
+    ~PanoramaPlugin()                    override;
 
     QString name()                 const override;
     QString iid()                  const override;

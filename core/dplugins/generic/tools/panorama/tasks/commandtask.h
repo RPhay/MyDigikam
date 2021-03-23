@@ -63,7 +63,7 @@ private:
 private:
 
     // Disable
-    CommandTask();
+    CommandTask() = delete;
 
     Q_DISABLE_COPY(CommandTask)
 };

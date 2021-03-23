@@ -64,7 +64,9 @@ protected:
 private:
 
     // Disable
-    TimeAdjustTask(QObject*);
+    TimeAdjustTask(QObject*) = delete;
+
+private:
 
     class Private;
     Private* const d;

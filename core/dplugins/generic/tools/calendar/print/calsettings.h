@@ -130,8 +130,8 @@ private:
 
     // Disable
     explicit CalSettings(QObject* const parent);
-    CalSettings(CalSettings const&);
-    CalSettings& operator=(CalSettings const&);
+    CalSettings(CalSettings const&)             = delete;
+    CalSettings& operator=(CalSettings const&)  = delete;
 
 private:
 

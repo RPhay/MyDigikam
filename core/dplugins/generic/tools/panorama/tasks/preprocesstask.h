@@ -71,7 +71,7 @@ private:
 private:
 
     // Disable
-    PreProcessTask();
+    PreProcessTask() = delete;
 
     Q_DISABLE_COPY(PreProcessTask)
 };

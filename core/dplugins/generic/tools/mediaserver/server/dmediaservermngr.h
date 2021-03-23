@@ -95,7 +95,7 @@ private:
 
     // Disable
     DMediaServerMngr();
-    explicit DMediaServerMngr(QObject*);
+    explicit DMediaServerMngr(QObject*) = delete;
     ~DMediaServerMngr() override;
 
 private:

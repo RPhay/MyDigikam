@@ -60,7 +60,7 @@ private:
 private:
 
     // Disable
-    CompileMKStepTask();
+    CompileMKStepTask() = delete;
 
     Q_DISABLE_COPY(CompileMKStepTask)
 };

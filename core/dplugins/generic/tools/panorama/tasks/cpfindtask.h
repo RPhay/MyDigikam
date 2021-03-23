@@ -54,7 +54,7 @@ private:
 private:
 
     // Disable
-    CpFindTask();
+    CpFindTask() = delete;
 
     Q_DISABLE_COPY(CpFindTask)
 };
