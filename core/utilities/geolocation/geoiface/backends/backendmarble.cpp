@@ -31,6 +31,7 @@
 #include <QMouseEvent>
 #include <QPointer>
 #include <QAction>
+#include <QStandardItemModel>
 
 // KDE includes
 
@@ -47,6 +48,7 @@
 #include <marble/ViewportParams.h>
 #include <marble/AbstractFloatItem.h>
 #include <marble/MarbleWidgetPopupMenu.h>
+#include <marble/MapThemeManager.h>
 
 // Local includes
 
@@ -92,7 +94,7 @@ public:
         actionShowScaleBar              (nullptr),
         actionShowNavigation            (nullptr),
         actionShowOverviewMap           (nullptr),
-        cacheMapTheme                   (QLatin1String("atlas")),
+        cacheMapTheme                   (QLatin1String("earth/srtm/srtm.dgml")),
         cacheProjection                 (QLatin1String("spherical")),
         cacheShowCompass                (false),
         cacheShowScaleBar               (false),
@@ -117,7 +119,8 @@ public:
         widgetIsDocked                  (false),
         blockingZoomWhileChangingTheme  (false),
         trackCache                      (),
-        bmLayer                         (nullptr)
+        bmLayer                         (nullptr),
+        marbleMapThemeManager           (nullptr)
     {
     }
 
@@ -149,6 +152,7 @@ public:
     int                                       clustersDirtyCacheProjection;
     qreal                                     clustersDirtyCacheLat;
     qreal                                     clustersDirtyCacheLon;
+    QStringList                               mainMarbleThemes;
 
     GeoCoordinates::Pair                      displayedRectangle;
     QPoint                                    firstSelectionScreenPoint;
@@ -162,6 +166,7 @@ public:
     QHash<quint64, Marble::GeoDataLineString> trackCache;
 
     BackendMarbleLayer*                       bmLayer;
+    Marble::MapThemeManager*                  marbleMapThemeManager;
 };
 
 BackendMarble::BackendMarble(const QExplicitlySharedDataPointer<GeoIfaceSharedData>& sharedData,
@@ -169,6 +174,7 @@ BackendMarble::BackendMarble(const QExplicitlySharedDataPointer<GeoIfaceSharedDa
     : MapBackend(sharedData, parent),
       d         (new Private())
 {
+    d->marbleMapThemeManager = new Marble::MapThemeManager(this);
     createActions();
 }
 
@@ -339,20 +345,49 @@ void BackendMarble::createActions()
     connect(d->actionGroupMapTheme, &QActionGroup::triggered,
             this, &BackendMarble::slotMapThemeActionTriggered);
 
-    QAction* const actionAtlas = new QAction(d->actionGroupMapTheme);
-    actionAtlas->setCheckable(true);
-    actionAtlas->setText(i18n("Atlas map"));
-    actionAtlas->setData(QLatin1String("atlas"));
 
-    QAction* const actionSatellite = new QAction(d->actionGroupMapTheme);
-    actionSatellite->setCheckable(true);
-    actionSatellite->setText(i18n("Satellite map"));
-    actionSatellite->setData(QLatin1String("satellite"));
+    QList<QPair<QString, QString>> mainThemes;
+    mainThemes.append({i18n("Atlas map"), QLatin1String("earth/srtm/srtm.dgml")});
+    mainThemes.append({i18n("Satellite map"), QLatin1String("earth/bluemarble/bluemarble.dgml")});
+    mainThemes.append({i18n("OpenStreetMap"), QLatin1String("earth/openstreetmap/openstreetmap.dgml")});
+    for (auto& theme : mainThemes)
+    {
+        QAction* const mapAction = new QAction(d->actionGroupMapTheme);
+        mapAction->setCheckable(true);
+        mapAction->setText(theme.first);
+        mapAction->setData(theme.second);
+        d->mainMarbleThemes.append(theme.second);
+    }
 
-    QAction* const actionOpenStreetmap = new QAction(d->actionGroupMapTheme);
-    actionOpenStreetmap->setCheckable(true);
-    actionOpenStreetmap->setText(i18n("OpenStreetMap"));
-    actionOpenStreetmap->setData(QLatin1String("openstreetmap"));
+    QStringList blackListedMarbleThemes {
+        QLatin1String("earth/behaim1492/behaim1492.dgml"),
+        QLatin1String("earth/citylights/citylights.dgml"),
+        QLatin1String("earth/plain/plain.dgml"),
+        QLatin1String("earth/political/political.dgml"),
+        QLatin1String("earth/precip-dec/precip-dec.dgml"),
+        QLatin1String("earth/precip-july/precip-july.dgml"),
+        QLatin1String("earth/schagen1689/schagen1689.dgml"),
+        QLatin1String("earth/sentinel2/sentinel2.dgml"),
+        QLatin1String("earth/temp-dec/temp-dec.dgml"),
+        QLatin1String("earth/temp-july/temp-july.dgml")};
+
+    // add all available marble earth themes
+    auto* themeModel = d->marbleMapThemeManager->mapThemeModel();
+    for (int i = 0; i < themeModel->rowCount(); ++i)
+    {
+        auto* item = themeModel->item(i);
+        auto themeId = item->data(Qt::UserRole + 1).toString();
+        auto themeName = item->data(Qt::DisplayRole).toString();
+        if (d->mainMarbleThemes.contains(themeId)
+            || blackListedMarbleThemes.contains(themeId)
+            || !themeId.startsWith(QLatin1String("earth/"))) {
+            continue;
+        }
+        QAction* const mapAction = new QAction(d->actionGroupMapTheme);
+        mapAction->setCheckable(true);
+        mapAction->setText(themeName);
+        mapAction->setData(themeId);
+    }
 
     // projection:
 
@@ -413,11 +448,27 @@ void BackendMarble::addActionsToConfigurationMenu(QMenu* const configurationMenu
     configurationMenu->addSeparator();
 
     const QList<QAction*> mapThemeActions = d->actionGroupMapTheme->actions();
-
-    for (int i = 0 ; i < mapThemeActions.count() ; ++i)
+    QMenu* const extraMarbleMenu          = new QMenu(i18n("Other Marble Themes"), configurationMenu);
+    for (auto* action : mapThemeActions)
     {
-        configurationMenu->addAction(mapThemeActions.at(i));
+        if (d->mainMarbleThemes.contains(action->data().toString()))
+        {
+            configurationMenu->addAction(action);
+        }
+        else
+        {
+            extraMarbleMenu->addAction(action);
+        }
     }
+    if (extraMarbleMenu->isEmpty())
+    {
+        delete extraMarbleMenu;
+    }
+    else
+    {
+        configurationMenu->addMenu(extraMarbleMenu);
+    }
+
 
     configurationMenu->addSeparator();
 
@@ -458,7 +509,29 @@ QString BackendMarble::getMapTheme() const
 
 void BackendMarble::setMapTheme(const QString& newMapTheme)
 {
-    d->cacheMapTheme = newMapTheme;
+    // convert old ids to themeIds
+    if (newMapTheme == QLatin1String("atlas"))
+    {
+        d->cacheMapTheme = QLatin1String("earth/srtm/srtm.dgml");
+    }
+    else if (newMapTheme == QLatin1String("satellite"))
+    {
+        d->cacheMapTheme = QLatin1String("earth/bluemarble/bluemarble.dgml");
+    }
+    else if (newMapTheme == QLatin1String("openstreetmap"))
+    {
+        d->cacheMapTheme = QLatin1String("earth/openstreetmap/openstreetmap.dgml");
+    }
+    else if (!d->marbleMapThemeManager->mapThemeIds().contains(newMapTheme))
+    {
+        // fall back to atlas
+        d->cacheMapTheme = QLatin1String("earth/srtm/srtm.dgml");
+    }
+    else
+    {
+        d->cacheMapTheme = newMapTheme;
+    }
+
 
     if (!d->marbleWidget)
     {
@@ -473,18 +546,7 @@ void BackendMarble::setMapTheme(const QString& newMapTheme)
 
     const int oldMarbleZoom           = d->cacheZoom;
 
-    if      (newMapTheme == QLatin1String("atlas"))
-    {
-        d->marbleWidget->setMapThemeId(QLatin1String("earth/srtm/srtm.dgml"));
-    }
-    else if (newMapTheme == QLatin1String("satellite"))
-    {
-        d->marbleWidget->setMapThemeId(QLatin1String("earth/bluemarble/bluemarble.dgml"));
-    }
-    else if (newMapTheme == QLatin1String("openstreetmap"))
-    {
-        d->marbleWidget->setMapThemeId(QLatin1String("earth/openstreetmap/openstreetmap.dgml"));
-    }
+    d->marbleWidget->setMapThemeId(d->cacheMapTheme);
 
     // the float items are reset when the theme is changed:
 
