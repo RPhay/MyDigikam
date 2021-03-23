@@ -1106,6 +1106,18 @@ void AbstractCheckableAlbumModel::resetAllCheckedAlbums()
 
 void AbstractCheckableAlbumModel::setDataForChildren(const QModelIndex& parent, const QVariant& value, int role)
 {
+    Album* const album = albumForIndex(parent);
+
+    if (album)
+    {
+        TAlbum* const t = dynamic_cast<TAlbum*>(album);
+
+        if (t && t->isInternalTag())
+        {
+            return;
+        }
+    }
+
     setData(parent, value, role);
 
     for (int row = 0 ; row < rowCount(parent) ; ++row)
@@ -1158,6 +1170,13 @@ void AbstractCheckableAlbumModel::invertCheckedAlbums(const QModelIndex& parent)
 
     if (album)
     {
+        TAlbum* const t = dynamic_cast<TAlbum*>(album);
+
+        if (t && t->isInternalTag())
+        {
+            return;
+        }
+
         toggleChecked(album);
     }
 
