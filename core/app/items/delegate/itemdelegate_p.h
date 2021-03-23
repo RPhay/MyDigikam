@@ -87,9 +87,9 @@ public:
     bool                  ratingOverThumbnail;
 
     QCache<int, QRect>    actualPixmapRectCache;
-    ItemCategoryDrawer*  categoryDrawer;
+    ItemCategoryDrawer*   categoryDrawer;
 
-    ItemCategorizedView* currentView;
+    ItemCategorizedView*  currentView;
     QAbstractItemModel*   currentModel;
 
 public:

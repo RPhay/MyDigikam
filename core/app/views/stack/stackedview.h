@@ -49,11 +49,15 @@ class TableView;
 class TrashView;
 
 #ifdef HAVE_MEDIAPLAYER
+
 class MediaPlayerView;
+
 #endif //HAVE_MEDIAPLAYER
 
 #ifdef HAVE_MARBLE
+
 class MapWidgetView;
+
 #endif // HAVE_MARBLE
 
 class StackedView : public QStackedWidget
@@ -91,11 +95,15 @@ public:
     TrashView*        trashView()        const;
 
 #ifdef HAVE_MEDIAPLAYER
+
     MediaPlayerView*  mediaPlayerView()  const;
+
 #endif //HAVE_MEDIAPLAYER
 
 #ifdef HAVE_MARBLE
+
     MapWidgetView*    mapWidgetView()    const;
+
 #endif // HAVE_MARBLE
 
     /**

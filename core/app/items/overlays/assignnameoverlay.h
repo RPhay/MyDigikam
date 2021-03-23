@@ -84,7 +84,8 @@ protected:
 
 private:
 
-    AssignNameOverlay(); // Disable default constructor.
+    // Disable
+    AssignNameOverlay() = delete;
 
 private:
 

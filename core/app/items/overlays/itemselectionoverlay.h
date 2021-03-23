@@ -47,7 +47,7 @@ public:
 
 protected:
 
-    QIcon icon() override;
+    QIcon icon()            override;
     void updateToolTip()    override;
 };
 
@@ -64,7 +64,7 @@ public:
 
 protected:
 
-    ItemViewHoverButton* createButton() override;
+    ItemViewHoverButton* createButton()         override;
     void updateButton(const QModelIndex& index) override;
 
 protected Q_SLOTS:

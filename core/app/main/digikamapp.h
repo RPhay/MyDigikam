@@ -266,7 +266,9 @@ private Q_SLOTS:
 private:
 
     // Disable
-    DigikamApp(QWidget*);
+    DigikamApp(QWidget*) = delete;
+
+private:
 
     class Private;
     Private* const d;

@@ -52,7 +52,9 @@ protected:
 private:
 
     // Disable
-    DigikamItemDelegate(QObject*);
+    DigikamItemDelegate(QObject*) = delete;
+
+private:
 
     Q_DECLARE_PRIVATE(DigikamItemDelegate)
 };

@@ -46,14 +46,14 @@ class DigikamItemView : public ItemCategorizedView,
 public:
 
     explicit DigikamItemView(QWidget* const parent = nullptr);
-    ~DigikamItemView()                                                              override;
+    ~DigikamItemView()                                                                             override;
 
     ItemViewUtilities* utilities()                                                           const;
 
     int  fitToWidthIcons();
     bool getFaceMode()                                                                       const;
 
-    void setThumbnailSize(const ThumbnailSize& size)                                 override;
+    void setThumbnailSize(const ThumbnailSize& size)                                               override;
 
     ItemInfoList  allItemInfos(bool grouping = false)                                        const;
     ItemInfoList  selectedItemInfos(bool grouping = false)                                   const;
@@ -129,7 +129,7 @@ protected:
     bool hasHiddenGroupedImages(const ItemInfo& info)                    const override;
 
     ItemInfoList imageInfos(const QList<QModelIndex>& indexes,
-                            ApplicationSettings::OperationType type)      const;
+                            ApplicationSettings::OperationType type)     const;
 
 private Q_SLOTS:
 

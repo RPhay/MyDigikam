@@ -68,7 +68,7 @@ public:
 private:
 
     // Disable
-    explicit DItemDrag(QObject*);
+    explicit DItemDrag(QObject*) = delete;
 };
 
 // ------------------------------------------------------------------------
@@ -93,7 +93,7 @@ public:
 private:
 
     // Disable
-    explicit DAlbumDrag(QObject*);
+    explicit DAlbumDrag(QObject*) = delete;
 };
 
 // ------------------------------------------------------------------------
@@ -118,7 +118,7 @@ public:
 private:
 
     // Disable
-    explicit DTagListDrag(QObject*);
+    explicit DTagListDrag(QObject*) = delete;
 };
 
 // ------------------------------------------------------------------------
@@ -143,7 +143,7 @@ public:
 private:
 
     // Disable
-    explicit DCameraItemListDrag(QObject*);
+    explicit DCameraItemListDrag(QObject*) = delete;
 };
 
 // ------------------------------------------------------------------------
@@ -168,7 +168,7 @@ public:
 private:
 
     // Disable
-    explicit DCameraDragObject(QObject*);
+    explicit DCameraDragObject(QObject*) = delete;
 };
 
 } // namespace Digikam

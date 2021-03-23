@@ -72,6 +72,8 @@ private:
     // Disable
     explicit DModelFactory(QObject*) = delete;
 
+private:
+
     class Private;
     Private* const d;
 };

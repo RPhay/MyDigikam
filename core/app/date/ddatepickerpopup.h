@@ -131,7 +131,10 @@ private:
 
 private:
 
-    DDatePickerPopup(); // Disable
+    // Disable
+    DDatePickerPopup() = delete;
+
+private:
 
     class Private;
     Private* const d;

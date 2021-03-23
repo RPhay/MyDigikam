@@ -47,29 +47,29 @@ class ItemDelegate : public ItemViewDelegate
 public:
 
     explicit ItemDelegate(QObject* const parent = nullptr);
-    ~ItemDelegate() override;
+    ~ItemDelegate()                                                                                    override;
 
     void setView(ItemCategorizedView* view);
 
-    ItemCategoryDrawer* categoryDrawer() const;
+    ItemCategoryDrawer* categoryDrawer()                                                         const;
 
-    QRect commentsRect()                             const;
-    QRect tagsRect()                                 const;
-    QRect actualPixmapRect(const QModelIndex& index) const;
-    QRect groupIndicatorRect()                       const;
-    QRect coordinatesIndicatorRect()                 const;
+    QRect commentsRect()                                                                         const;
+    QRect tagsRect()                                                                             const;
+    QRect actualPixmapRect(const QModelIndex& index)                                             const;
+    QRect groupIndicatorRect()                                                                   const;
+    QRect coordinatesIndicatorRect()                                                             const;
 
     int calculatethumbSizeToFit(int ws);
 
     void setSpacing(int spacing) override;
-    void setDefaultViewOptions(const QStyleOptionViewItem& option) override;
+    void setDefaultViewOptions(const QStyleOptionViewItem& option)                                     override;
     bool acceptsToolTip(const QPoint& pos, const QRect& visualRect,
-                                const QModelIndex& index, QRect* tooltipRect = nullptr) const override;
+                                const QModelIndex& index, QRect* tooltipRect = nullptr)          const override;
     bool acceptsActivation(const QPoint& pos, const QRect& visualRect,
-                                   const QModelIndex& index, QRect* activationRect = nullptr) const override;
+                                   const QModelIndex& index, QRect* activationRect = nullptr)    const override;
 
-    QRect pixmapRect()           const override;
-    QRect imageInformationRect() const override;
+    QRect pixmapRect()                                                                           const override;
+    QRect imageInformationRect()                                                                 const override;
 
     void paint(QPainter* painter, const QStyleOptionViewItem& option, const QModelIndex& index)  const override;
     QPixmap pixmapForDrag(const QStyleOptionViewItem& option, const QList<QModelIndex>& indexes) const override;
@@ -104,10 +104,10 @@ protected:
      */
     virtual void clearModelDataCaches();
 
-    virtual QPixmap thumbnailPixmap(const QModelIndex& index) const;
+    virtual QPixmap thumbnailPixmap(const QModelIndex& index)               const;
 
     bool onActualPixmapRect(const QPoint& pos, const QRect& visualRect,
-                            const QModelIndex& index, QRect* actualRect) const;
+                            const QModelIndex& index, QRect* actualRect)    const;
     void updateActualPixmapRect(const QModelIndex& index, const QRect& rect);
 
     void invalidatePaintingCache() override;

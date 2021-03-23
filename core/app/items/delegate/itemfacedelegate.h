@@ -58,7 +58,9 @@ protected:
 private:
 
     // Disable
-    ItemFaceDelegate(QObject*);
+    ItemFaceDelegate(QObject*) = delete;
+
+private:
 
     Q_DECLARE_PRIVATE(ItemFaceDelegate)
 };

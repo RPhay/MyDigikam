@@ -63,7 +63,9 @@ protected:
 private:
 
     // Disable
-    ItemPreviewCanvas(QObject*);
+    ItemPreviewCanvas(QObject*) = delete;
+
+private:
 
     class Private;
     Private* const d;
