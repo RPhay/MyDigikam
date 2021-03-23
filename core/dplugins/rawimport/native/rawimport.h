@@ -75,7 +75,7 @@ private Q_SLOTS:
     void slotUpdatePreview();
     void slotAbort()                                override;
 
-    void slotOk() override;
+    void slotOk()                                   override;
     void slotCancel()                               override;
 
 private:

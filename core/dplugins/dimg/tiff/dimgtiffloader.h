@@ -66,14 +66,14 @@ class DImgTIFFLoader : public DImgLoader
 public:
 
     explicit DImgTIFFLoader(DImg* const image);
-    ~DImgTIFFLoader() override;
+    ~DImgTIFFLoader()                                                      override;
 
     bool load(const QString& filePath, DImgLoaderObserver* const observer) override;
     bool save(const QString& filePath, DImgLoaderObserver* const observer) override;
 
-    bool hasAlpha()   const override;
-    bool sixteenBit() const override;
-    bool isReadOnly() const override;
+    bool hasAlpha()                                                  const override;
+    bool sixteenBit()                                                const override;
+    bool isReadOnly()                                                const override;
 
 private:
 

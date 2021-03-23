@@ -123,13 +123,18 @@ protected:
 protected:
 
     ItemViewShowfotoDelegatePrivate* const d_ptr;
+
+protected:
+
     ItemViewShowfotoDelegate(ItemViewShowfotoDelegatePrivate& dd, QObject* const parent);
 
 private:
 
     // Disable.
-    ItemViewShowfotoDelegate(const ItemViewShowfotoDelegate&);
-    ItemViewShowfotoDelegate& operator=(const ItemViewShowfotoDelegate&);
+    ItemViewShowfotoDelegate(const ItemViewShowfotoDelegate&)            = delete;
+    ItemViewShowfotoDelegate& operator=(const ItemViewShowfotoDelegate&) = delete;
+
+private:
 
     Q_DECLARE_PRIVATE(ItemViewShowfotoDelegate)
 };

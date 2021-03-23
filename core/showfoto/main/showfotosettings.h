@@ -146,8 +146,10 @@ private:
 
     // Disable
     ShowfotoSettings();
-    explicit ShowfotoSettings(QObject*);
+    explicit ShowfotoSettings(QObject*) = delete;
     ~ShowfotoSettings() override;
+
+private:
 
     void init();
 

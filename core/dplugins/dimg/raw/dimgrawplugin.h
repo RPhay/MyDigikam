@@ -50,7 +50,7 @@ class DImgRAWPlugin : public DPluginDImg
 public:
 
     explicit DImgRAWPlugin(QObject* const parent = nullptr);
-    ~DImgRAWPlugin() override;
+    ~DImgRAWPlugin()                                                                              override;
 
     QString name()                                                                          const override;
     QString iid()                                                                           const override;

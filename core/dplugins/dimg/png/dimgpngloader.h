@@ -43,14 +43,14 @@ class DImgPNGLoader : public DImgLoader
 public:
 
     explicit DImgPNGLoader(DImg* const image);
-    ~DImgPNGLoader() override;
+    ~DImgPNGLoader()                                                       override;
 
     bool load(const QString& filePath, DImgLoaderObserver* const observer) override;
     bool save(const QString& filePath, DImgLoaderObserver* const observer) override;
 
-    bool hasAlpha()   const override;
-    bool sixteenBit() const override;
-    bool isReadOnly() const override;
+    bool hasAlpha()                                                  const override;
+    bool sixteenBit()                                                const override;
+    bool isReadOnly()                                                const override;
 
 private:
 
