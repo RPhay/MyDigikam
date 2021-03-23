@@ -98,6 +98,11 @@ cv::Mat OpenCVDNNFaceDetector::prepareForDetection(const DImg& inputImage, cv::S
         cvtColor(cvImageWrapper, cvImage, cv::COLOR_RGB2BGR);
     }
 
+    if (type == CV_16UC4)
+    {
+        cvImage.convertTo(cvImage, CV_8UC3, 1 / 256.0);
+    }
+
     return prepareForDetection(cvImage, paddedSize);
 }
 

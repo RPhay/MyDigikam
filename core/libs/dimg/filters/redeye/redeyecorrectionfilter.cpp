@@ -157,7 +157,7 @@ void RedEyeCorrectionFilter::filterImage()
 
     if (type == CV_16UC4)
     {
-        gray.convertTo(gray, CV_8UC1, 1 / 255.0);
+        gray.convertTo(gray, CV_8UC1, 1 / 256.0);
     }
 
     QList<QRectF> qrectfdets         = d->facedetector.detectFaces(m_orgImage);
