@@ -76,9 +76,9 @@ private:
 private:
 
     // Disable
-    explicit RajceCommand(QObject*);
-    RajceCommand(const RajceCommand&);
-    RajceCommand& operator=(const RajceCommand&);
+    explicit RajceCommand(QObject*)              = delete;
+    RajceCommand(const RajceCommand&)            = delete;
+    RajceCommand& operator=(const RajceCommand&) = delete;
 
 private:
 
@@ -104,7 +104,7 @@ protected:
 private:
 
     // Disable
-    explicit LoginCommand(QObject*);
+    explicit LoginCommand(QObject*) = delete;
 };
 
 // -----------------------------------------------------------------------
@@ -125,7 +125,7 @@ protected:
 private:
 
     // Disable
-    explicit OpenAlbumCommand(QObject*);
+    explicit OpenAlbumCommand(QObject*) = delete;
 };
 
 // -----------------------------------------------------------------------
@@ -149,7 +149,7 @@ protected:
 private:
 
     // Disable
-    explicit CreateAlbumCommand(QObject*);
+    explicit CreateAlbumCommand(QObject*) = delete;
 };
 
 // -----------------------------------------------------------------------
@@ -170,7 +170,7 @@ protected:
 private:
 
     // Disable
-    explicit CloseAlbumCommand(QObject*);
+    explicit CloseAlbumCommand(QObject*) = delete;
 };
 
 // -----------------------------------------------------------------------
@@ -191,7 +191,7 @@ protected:
 private:
 
     // Disable
-    explicit AlbumListCommand(QObject*);
+    explicit AlbumListCommand(QObject*) = delete;
 };
 
 // -----------------------------------------------------------------------
@@ -223,7 +223,7 @@ protected:
 private:
 
     // Disable
-    explicit AddPhotoCommand(QObject*);
+    explicit AddPhotoCommand(QObject*) = delete;
 
 private:
 

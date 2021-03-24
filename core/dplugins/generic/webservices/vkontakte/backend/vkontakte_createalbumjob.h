@@ -54,7 +54,9 @@ protected:
 private:
 
     // Disable
-    CreateAlbumJob(QObject*);
+    CreateAlbumJob(QObject*) = delete;
+
+private:
 
     class Private;
     Private* const d;

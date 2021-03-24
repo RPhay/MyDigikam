@@ -61,32 +61,32 @@ public:
 
     friend inline int operator !=( const vlong& x, const vlong& y )
     {
-        return x.cf( y ) != 0;
+        return (x.cf( y ) != 0);
     }
 
     friend inline int operator ==( const vlong& x, const vlong& y )
     {
-        return x.cf( y ) == 0;
+        return (x.cf( y ) == 0);
     }
 
     friend inline int operator >=( const vlong& x, const vlong& y )
     {
-        return x.cf( y ) >= 0;
+        return (x.cf( y ) >= 0);
     }
 
     friend inline int operator <=( const vlong& x, const vlong& y )
     {
-        return x.cf( y ) <= 0;
+        return (x.cf( y ) <= 0);
     }
 
     friend inline int operator > ( const vlong& x, const vlong& y )
     {
-        return x.cf( y ) > 0;
+        return (x.cf( y ) > 0);
     }
 
     friend inline int operator < ( const vlong& x, const vlong& y )
     {
-        return x.cf( y ) < 0;
+        return (x.cf( y ) < 0);
     }
 
 public:
@@ -148,7 +148,7 @@ public:
     CCryptoProviderRSA();
     virtual ~CCryptoProviderRSA();
 
-    virtual void Encrypt(const char*, std::size_t,char*, std::size_t&);
+    virtual void Encrypt(const char*, std::size_t, char*, std::size_t&);
     virtual void ImportPublicKey(const char*);
 };
 

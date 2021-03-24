@@ -64,7 +64,7 @@ private:
 private:
 
     // Disable
-    SavePhotoJob(QObject*);
+    SavePhotoJob(QObject*) = delete;
 };
 
 } // namespace Vkontakte

@@ -83,7 +83,7 @@ private:
 private:
 
     // Disable
-    explicit PhotoPostJob(QObject*);
+    explicit PhotoPostJob(QObject*) = delete;
 };
 
 } // namespace Vkontakte

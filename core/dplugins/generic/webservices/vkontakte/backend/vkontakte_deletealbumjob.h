@@ -46,7 +46,7 @@ protected:
 private:
 
     // Disable
-    DeleteAlbumJob(QObject*);
+    DeleteAlbumJob(QObject*) = delete;
 };
 
 } // namespace Vkontakte

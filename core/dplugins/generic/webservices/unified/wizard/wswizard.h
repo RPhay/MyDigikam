@@ -53,10 +53,10 @@ public:
     ~WSWizard();
 
     bool validateCurrentPage() override;
-    int  nextId() const override;
+    int  nextId() const        override;
 
-    DInfoInterface*     iface()    const;
-    WSSettings*         settings() const;
+    DInfoInterface*     iface()              const;
+    WSSettings*         settings()           const;
 
     /*
      * Instance of WSAuthentication (which wraps instance of WSTalker) and correspondent QSettings

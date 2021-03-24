@@ -48,23 +48,23 @@ public:
 public:
 
     explicit YFPhoto();
-    ~YFPhoto()  = default;
+    ~YFPhoto() = default;
 
     YFPhoto(const YFPhoto& other);
 
 public:
 
-    const QString& urn() const
+    const QString& urn()                const
     {
         return m_urn;
     }
 
-    const QString& author() const
+    const QString& author()             const
     {
         return m_author;
     }
 
-    const QString& title() const
+    const QString& title()              const
     {
         return m_title;
     }
@@ -74,7 +74,7 @@ public:
         m_title = title;
     }
 
-    const QString& summary() const
+    const QString& summary()            const
     {
         return m_summary;
     }
@@ -84,27 +84,27 @@ public:
         m_summary = summary;
     }
 
-    const QDateTime& publishedDate() const
+    const QDateTime& publishedDate()    const
     {
         return m_publishedDate;
     }
 
-    const QDateTime& editedDate() const
+    const QDateTime& editedDate()       const
     {
         return m_editedDate;
     }
 
-    const QDateTime& updatedDate() const
+    const QDateTime& updatedDate()      const
     {
         return m_updatedDate;
     }
 
-    const QDateTime& createdDate() const
+    const QDateTime& createdDate()      const
     {
         return m_createdDate;
     }
 
-    Access access() const
+    Access access()                     const
     {
         return m_access;
     }
@@ -114,7 +114,7 @@ public:
         m_access = access;
     }
 
-    bool isHideOriginal() const
+    bool isHideOriginal()               const
     {
         return m_hideOriginal;
     }
@@ -124,7 +124,7 @@ public:
         m_hideOriginal = hideOriginal;
     }
 
-    bool isDisableComments() const
+    bool isDisableComments()            const
     {
         return m_disableComments;
     }
@@ -134,7 +134,7 @@ public:
         m_disableComments = disableComments;
     }
 
-    bool isAdult() const
+    bool isAdult()                      const
     {
         return m_adult;
     }
@@ -144,7 +144,7 @@ public:
         m_adult = adult;
     }
 
-    QString localUrl() const
+    QString localUrl()                  const
     {
         return m_localUrl;
     }
@@ -154,7 +154,7 @@ public:
         m_localUrl = localUrl;
     }
 
-    QString originalUrl() const
+    QString originalUrl()               const
     {
         return m_originalUrl;
     }
@@ -164,12 +164,12 @@ public:
         m_originalUrl = originalUrl;
     }
 
-    QString remoteUrl() const
+    QString remoteUrl()                 const
     {
         return m_remoteUrl;
     }
 
-    QString toString() const
+    QString toString()                  const
     {
         return m_title;
     }

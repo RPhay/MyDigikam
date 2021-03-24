@@ -35,7 +35,7 @@ class TwUser
 public:
 
     TwUser()
-      : id(0),
+      : id        (0),
         uploadPerm(false)
     {
     }

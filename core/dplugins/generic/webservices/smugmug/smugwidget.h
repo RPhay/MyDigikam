@@ -118,7 +118,7 @@ private:
 
     DInfoInterface* m_iface;
     DProgressWdg*   m_progressBar;
-    DItemsList*    m_imgList;
+    DItemsList*     m_imgList;
     QWidget*        m_uploadWidget;
 
     friend class SmugWindow;

@@ -49,28 +49,29 @@ enum RajceCommandType
 
 enum RajceErrorCode
 {
-/** Taken from the semi-official documentation:
- *  https://docs.google.com/View?id=ajkd99k8zcw6_120ctqvnjd5#Chybov_k_dy
+/**
+ * Taken from the semi-official documentation:
+ * https://docs.google.com/View?id=ajkd99k8zcw6_120ctqvnjd5#Chybov_k_dy
  */
-    UnknownError = 1,               //  1 Unknown error.
-    InvalidCommand,                 //  2 Invalid command.
-    InvalidCredentials,             //  3 Invalid credentials.
-    InvalidSessionToken,            //  4 Invalid session token.
-    InvalidOrRepeatedColumnName,    //  5 Unknown or repeated column name {colName}.
-    InvalidAlbumId,                 //  6 Invalid album ID.
-    AlbumDoesntExistOrNoPrivileges, //  7 The album doesn't exist or is not owned by the logged in user.
-    InvalidAlbumToken,              //  8 Invalid album token.
-    AlbumNameEmpty,                 //  9 Album can't have an empty name.
-    FailedToCreateAlbum,            // 10 Failed to create an album (probably a serverside error).
-    AlbumDoesntExist,               // 11 Album doesn't exist.
-    UnknownApplication,             // 12 Nonexistent application.
-    InvalidApplicationKey,          // 13 Invalid application key.
-    FileNotAttached,                // 14 A file is not attached.
-    NewerVersionExists,             // 15 A newer version already exists {version}.
-    SavingFileFailed,               // 16 Failed to save the file.
-    UnsupportedFileExtension,       // 17 Unsupported file extension {extension}.
-    UnknownClientVersion,           // 18 Unknown client version.
-    NonexistentTarget               // 19 Unknown target.
+    UnknownError = 1,               ///<  1 Unknown error.
+    InvalidCommand,                 ///<  2 Invalid command.
+    InvalidCredentials,             ///<  3 Invalid credentials.
+    InvalidSessionToken,            ///<  4 Invalid session token.
+    InvalidOrRepeatedColumnName,    ///<  5 Unknown or repeated column name {colName}.
+    InvalidAlbumId,                 ///<  6 Invalid album ID.
+    AlbumDoesntExistOrNoPrivileges, ///<  7 The album doesn't exist or is not owned by the logged in user.
+    InvalidAlbumToken,              ///<  8 Invalid album token.
+    AlbumNameEmpty,                 ///<  9 Album can't have an empty name.
+    FailedToCreateAlbum,            ///< 10 Failed to create an album (probably a serverside error).
+    AlbumDoesntExist,               ///< 11 Album doesn't exist.
+    UnknownApplication,             ///< 12 Nonexistent application.
+    InvalidApplicationKey,          ///< 13 Invalid application key.
+    FileNotAttached,                ///< 14 A file is not attached.
+    NewerVersionExists,             ///< 15 A newer version already exists {version}.
+    SavingFileFailed,               ///< 16 Failed to save the file.
+    UnsupportedFileExtension,       ///< 17 Unsupported file extension {extension}.
+    UnknownClientVersion,           ///< 18 Unknown client version.
+    NonexistentTarget               ///< 19 Unknown target.
 };
 
 class RajceSession

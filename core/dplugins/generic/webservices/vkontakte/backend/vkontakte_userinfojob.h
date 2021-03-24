@@ -89,7 +89,9 @@ protected:
 private:
 
     // Disable
-    UserInfoJob(QObject*);
+    UserInfoJob(QObject*) = delete;
+
+private:
 
     class Private;
     Private* const d;

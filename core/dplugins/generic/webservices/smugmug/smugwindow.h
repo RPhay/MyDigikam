@@ -52,7 +52,7 @@ public:
 
     explicit SmugWindow(DInfoInterface* const iface,
                         QWidget* const parent,
-                        bool import=false,
+                        bool import = false,
                         const QString& nickName = QString());
     ~SmugWindow() override;
 

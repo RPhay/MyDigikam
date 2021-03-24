@@ -55,6 +55,8 @@ private:
     // Disable
     explicit PhotoJob(QObject*) = delete;
 
+private:
+
     class Private;
     Private* const d;
 };

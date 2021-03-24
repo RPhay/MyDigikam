@@ -64,7 +64,7 @@ private:
 private:
 
     // Disable
-    GetPhotoUploadServerJob(QObject*);
+    GetPhotoUploadServerJob(QObject*) = delete;
 };
 
 } // namespace Vkontakte

@@ -74,13 +74,13 @@ class SmugAlbum
 public:
 
     explicit SmugAlbum()
-      : id(-1),
-        categoryID(-1),
+      : id           (-1),
+        categoryID   (-1),
         subCategoryID(-1),
-        isPublic(true),
-        canShare(true),
-        imageCount(0),
-        tmplID(-1)
+        isPublic     (true),
+        canShare     (true),
+        imageCount   (0),
+        tmplID       (-1)
     {
     }
 

@@ -84,7 +84,9 @@ private Q_SLOTS:
 private:
 
     // Disable
-    UploadPhotosJob(QObject*);
+    UploadPhotosJob(QObject*) = delete;
+
+private:
 
     class Private;
     Private* const d;

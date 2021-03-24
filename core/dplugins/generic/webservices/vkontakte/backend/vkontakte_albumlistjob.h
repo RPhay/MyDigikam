@@ -52,7 +52,9 @@ protected:
 private:
 
     // Disable
-    AlbumListJob(QObject*);
+    AlbumListJob(QObject*) = delete;
+
+private:
 
     class Private;
     Private* const d;

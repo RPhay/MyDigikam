@@ -49,7 +49,9 @@ protected:
 private:
 
     // Disable
-    GetApplicationPermissionsJob(QObject*);
+    GetApplicationPermissionsJob(QObject*) = delete;
+
+private:
 
     class Private;
     Private* const d;
