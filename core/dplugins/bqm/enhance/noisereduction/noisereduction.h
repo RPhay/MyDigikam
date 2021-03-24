@@ -45,7 +45,7 @@ public:
 
     BatchToolSettings defaultSettings() override;
 
-    BatchTool* clone(QObject* const parent=nullptr) const override { return new NoiseReduction(parent); };
+    BatchTool* clone(QObject* const parent = nullptr) const override { return new NoiseReduction(parent); };
 
     void registerSettingsWidget()       override;
 

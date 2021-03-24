@@ -74,7 +74,7 @@ public:
 
     explicit RainDropFilter(QObject* const parent = nullptr);
     explicit RainDropFilter(DImg* const orgImage,
-                            QObject* const parent=nullptr,
+                            QObject* const parent = nullptr,
                             int drop=80,
                             int amount=150,
                             int coeff=30,

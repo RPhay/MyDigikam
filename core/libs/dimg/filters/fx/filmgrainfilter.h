@@ -104,7 +104,7 @@ class DIGIKAM_EXPORT FilmGrainFilter : public DImgThreadedFilter
 public:
 
     explicit FilmGrainFilter(QObject* const parent = nullptr);
-    explicit FilmGrainFilter(DImg* const orgImage, QObject* const parent=nullptr, const FilmGrainContainer& settings=FilmGrainContainer());
+    explicit FilmGrainFilter(DImg* const orgImage, QObject* const parent = nullptr, const FilmGrainContainer& settings=FilmGrainContainer());
     // Constructor for slave mode: execute immediately in current thread with specified master filter
     explicit FilmGrainFilter(DImgThreadedFilter* const parentFilter, const DImg& orgImage, const DImg& destImage,
                              int progressBegin=0, int progressEnd=100,

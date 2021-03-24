@@ -63,7 +63,7 @@ private:
 public:
 
     explicit SharpenFilter(QObject* const parent = nullptr);
-    explicit SharpenFilter(DImg* const orgImage, QObject* const parent=nullptr, double radius=0.0, double sigma=1.0);
+    explicit SharpenFilter(DImg* const orgImage, QObject* const parent = nullptr, double radius=0.0, double sigma=1.0);
 
     /**
      * Constructor for slave mode: execute immediately in current thread with specified master filter

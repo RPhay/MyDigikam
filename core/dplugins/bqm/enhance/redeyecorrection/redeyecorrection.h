@@ -46,7 +46,7 @@ public:
 
     BatchToolSettings defaultSettings() override;
 
-    BatchTool* clone(QObject* const parent=nullptr) const override { return new RedEyeCorrection(parent); };
+    BatchTool* clone(QObject* const parent = nullptr) const override { return new RedEyeCorrection(parent); };
 
     void registerSettingsWidget() override;
 

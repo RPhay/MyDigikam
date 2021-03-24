@@ -47,7 +47,7 @@ public:
         return BatchToolSettings();
     };
 
-    BatchTool* clone(QObject* const parent=nullptr) const override { return new Convert16to8(parent); };
+    BatchTool* clone(QObject* const parent = nullptr) const override { return new Convert16to8(parent); };
 
 private:
 

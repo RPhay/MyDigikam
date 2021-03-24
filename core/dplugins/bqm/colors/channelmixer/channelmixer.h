@@ -45,7 +45,7 @@ public:
 
     BatchToolSettings defaultSettings() override;
 
-    BatchTool* clone(QObject* const parent=nullptr) const override { return new ChannelMixer(parent); };
+    BatchTool* clone(QObject* const parent = nullptr) const override { return new ChannelMixer(parent); };
 
     void registerSettingsWidget() override;
 

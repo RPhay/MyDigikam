@@ -83,7 +83,7 @@ public:
 
 public:
 
-    explicit InsertTextWidget(int w, int h, QWidget* const parent=nullptr);
+    explicit InsertTextWidget(int w, int h, QWidget* const parent = nullptr);
     ~InsertTextWidget() override;
 
     ImageIface* imageIface() const;

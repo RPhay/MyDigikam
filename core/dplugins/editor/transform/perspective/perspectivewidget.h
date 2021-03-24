@@ -52,7 +52,7 @@ class PerspectiveWidget : public QWidget
 
 public:
 
-    PerspectiveWidget(int width, int height, QWidget* const parent=nullptr);
+    PerspectiveWidget(int width, int height, QWidget* const parent = nullptr);
     ~PerspectiveWidget() override;
 
     QRect  getTargetSize()        const;

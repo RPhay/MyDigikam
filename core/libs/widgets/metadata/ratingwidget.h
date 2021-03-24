@@ -142,7 +142,7 @@ class DIGIKAM_EXPORT RatingMenuAction : public QMenu
 
 public:
 
-    explicit RatingMenuAction(QMenu* const parent=nullptr);
+    explicit RatingMenuAction(QMenu* const parent = nullptr);
     ~RatingMenuAction() override;
 
 Q_SIGNALS:

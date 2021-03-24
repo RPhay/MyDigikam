@@ -77,7 +77,7 @@ public:
 
 public:
 
-    explicit WSSettings(QObject* const parent=nullptr);
+    explicit WSSettings(QObject* const parent = nullptr);
     ~WSSettings() override;
 
     ///@{

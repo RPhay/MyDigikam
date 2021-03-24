@@ -43,7 +43,7 @@ public:
 
     BatchToolSettings defaultSettings() override;
 
-    BatchTool* clone(QObject* const parent=nullptr) const override { return new Blur(parent); };
+    BatchTool* clone(QObject* const parent = nullptr) const override { return new Blur(parent); };
 
     void registerSettingsWidget() override;
 

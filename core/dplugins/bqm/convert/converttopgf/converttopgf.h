@@ -45,7 +45,7 @@ public:
     QString outputSuffix() const override;
     BatchToolSettings defaultSettings() override;
 
-    BatchTool* clone(QObject* const parent=nullptr) const override { return new ConvertToPGF(parent); };
+    BatchTool* clone(QObject* const parent = nullptr) const override { return new ConvertToPGF(parent); };
 
     void registerSettingsWidget() override;
 

@@ -45,7 +45,7 @@ class DIGIKAM_EXPORT EmbossFilter : public DImgThreadedFilter
 public:
 
     explicit EmbossFilter(QObject* const parent = nullptr);
-    explicit EmbossFilter(DImg* const orgImage, QObject* const parent=nullptr, int depth=30);
+    explicit EmbossFilter(DImg* const orgImage, QObject* const parent = nullptr, int depth=30);
     ~EmbossFilter() override;
 
     static QString          FilterIdentifier()

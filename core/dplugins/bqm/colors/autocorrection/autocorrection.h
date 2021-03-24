@@ -46,7 +46,7 @@ public:
 
     BatchToolSettings defaultSettings() override;
 
-    BatchTool* clone(QObject* const parent=nullptr) const override { return new AutoCorrection(parent); };
+    BatchTool* clone(QObject* const parent = nullptr) const override { return new AutoCorrection(parent); };
 
     void registerSettingsWidget() override;
 

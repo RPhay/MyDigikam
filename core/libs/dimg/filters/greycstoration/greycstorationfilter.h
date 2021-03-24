@@ -166,7 +166,7 @@ public:
      * you need to call in order: setSettings(), setMode(), optionally setInPaintingMask(),
      * setOriginalImage(), and necessary setup() at end.
      */
-    explicit GreycstorationFilter(QObject* const parent=nullptr);
+    explicit GreycstorationFilter(QObject* const parent = nullptr);
 
     /**
      * Contructor with all arguments. Ready to use.

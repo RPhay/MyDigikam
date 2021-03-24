@@ -40,7 +40,7 @@ class DIGIKAM_EXPORT DNGSettings : public QWidget
 
 public:
 
-    explicit DNGSettings(QWidget* const parent=nullptr);
+    explicit DNGSettings(QWidget* const parent = nullptr);
     ~DNGSettings() override;
 
     void setCompressLossLess(bool b);

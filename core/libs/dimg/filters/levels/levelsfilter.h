@@ -77,7 +77,7 @@ public:
 
     explicit LevelsFilter(QObject* const parent = nullptr);
     explicit LevelsFilter(DImg* const orgImage,
-                          QObject* const parent=nullptr,
+                          QObject* const parent = nullptr,
                           const LevelsContainer& settings=LevelsContainer());
     explicit LevelsFilter(const LevelsContainer& settings,
                           DImgThreadedFilter* const master,

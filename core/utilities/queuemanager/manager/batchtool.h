@@ -272,7 +272,7 @@ public:
      * Clone this tool without to create settings widget.
      * It's a safe construction of tools instance used in multithreading (ActionThread) to process items in parallel.
      */
-    virtual BatchTool* clone(QObject* const parent=nullptr) const = 0;
+    virtual BatchTool* clone(QObject* const parent = nullptr) const = 0;
 
 Q_SIGNALS:
 

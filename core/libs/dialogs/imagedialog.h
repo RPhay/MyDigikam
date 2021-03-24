@@ -48,7 +48,7 @@ class DIGIKAM_EXPORT ImageDialogPreview : public QScrollArea
 
 public:
 
-    explicit ImageDialogPreview(QWidget* const parent=nullptr);
+    explicit ImageDialogPreview(QWidget* const parent = nullptr);
     ~ImageDialogPreview() override;
 
     QSize sizeHint() const override;

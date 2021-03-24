@@ -42,7 +42,7 @@ class DIGIKAM_EXPORT OilPaintFilter : public DImgThreadedFilter
 public:
 
     explicit OilPaintFilter(QObject* const parent = nullptr);
-    explicit OilPaintFilter(DImg* const orgImage, QObject* const parent=nullptr, int brushSize=1, int smoothness=30);
+    explicit OilPaintFilter(DImg* const orgImage, QObject* const parent = nullptr, int brushSize=1, int smoothness=30);
     ~OilPaintFilter() override;
 
     static QString          FilterIdentifier()

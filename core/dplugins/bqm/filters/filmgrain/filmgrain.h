@@ -45,7 +45,7 @@ public:
 
     BatchToolSettings defaultSettings() override;
 
-    BatchTool* clone(QObject* const parent=nullptr) const override { return new FilmGrain(parent); };
+    BatchTool* clone(QObject* const parent = nullptr) const override { return new FilmGrain(parent); };
 
     void registerSettingsWidget() override;
 

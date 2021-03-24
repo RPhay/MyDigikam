@@ -50,7 +50,7 @@ class DIGIKAM_EXPORT DFileSelector : public DHBox
 
 public:
 
-    explicit DFileSelector(QWidget* const parent=nullptr);
+    explicit DFileSelector(QWidget* const parent = nullptr);
     ~DFileSelector() override;
 
     QLineEdit* lineEdit() const;

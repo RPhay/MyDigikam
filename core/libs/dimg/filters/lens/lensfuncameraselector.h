@@ -48,7 +48,7 @@ public:
 
 public:
 
-    explicit LensFunCameraSelector(QWidget* const parent=nullptr);
+    explicit LensFunCameraSelector(QWidget* const parent = nullptr);
     ~LensFunCameraSelector() override;
 
     void setEnabledUseMetadata(bool b);

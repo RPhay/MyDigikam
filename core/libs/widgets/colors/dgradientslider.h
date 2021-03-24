@@ -43,7 +43,7 @@ class DIGIKAM_EXPORT DGradientSlider : public QWidget
 
 public:
 
-    explicit DGradientSlider(QWidget* const parent=nullptr);
+    explicit DGradientSlider(QWidget* const parent = nullptr);
     ~DGradientSlider() override;
 
     void   showMiddleCursor(bool b);

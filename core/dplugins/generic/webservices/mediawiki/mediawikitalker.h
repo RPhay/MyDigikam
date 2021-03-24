@@ -57,7 +57,7 @@ class MediaWikiTalker : public KJob
 
 public:
 
-    explicit MediaWikiTalker(DInfoInterface* const iface, Iface* const MediaWiki, QObject* const parent=nullptr);
+    explicit MediaWikiTalker(DInfoInterface* const iface, Iface* const MediaWiki, QObject* const parent = nullptr);
     ~MediaWikiTalker() override;
 
 public:

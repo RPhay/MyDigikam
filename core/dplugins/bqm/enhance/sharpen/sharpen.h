@@ -44,7 +44,7 @@ public:
 
     BatchToolSettings defaultSettings() override;
 
-    BatchTool* clone(QObject* const parent=nullptr) const override { return new Sharpen(parent); };
+    BatchTool* clone(QObject* const parent = nullptr) const override { return new Sharpen(parent); };
 
     void registerSettingsWidget() override;
 

@@ -90,7 +90,7 @@ class DIGIKAM_EXPORT FreeRotationFilter : public DImgThreadedFilter
 public:
 
     explicit FreeRotationFilter(QObject* const parent = nullptr);
-    explicit FreeRotationFilter(DImg* const orgImage, QObject* const parent=nullptr,
+    explicit FreeRotationFilter(DImg* const orgImage, QObject* const parent = nullptr,
                                 const FreeRotationContainer& settings=FreeRotationContainer());
 
     ~FreeRotationFilter() override;

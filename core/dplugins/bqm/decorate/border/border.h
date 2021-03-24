@@ -45,7 +45,7 @@ public:
 
     BatchToolSettings defaultSettings() override;
 
-    BatchTool* clone(QObject* const parent=nullptr) const override { return new Border(parent); };
+    BatchTool* clone(QObject* const parent = nullptr) const override { return new Border(parent); };
 
     void registerSettingsWidget() override;
 

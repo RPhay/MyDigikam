@@ -54,7 +54,7 @@ public:
 
 public:
 
-    explicit StatusProgressBar(QWidget* const parent=nullptr);
+    explicit StatusProgressBar(QWidget* const parent = nullptr);
     ~StatusProgressBar() override;
 
     void setAlignment(Qt::Alignment a);
