@@ -43,7 +43,7 @@ class LocalContrastPlugin : public DPluginBqm
 public:
 
     explicit LocalContrastPlugin(QObject* const parent = nullptr);
-    ~LocalContrastPlugin() override;
+    ~LocalContrastPlugin()               override;
 
     QString name()                 const override;
     QString iid()                  const override;
@@ -52,7 +52,7 @@ public:
     QString description()          const override;
     QList<DPluginAuthor> authors() const override;
 
-    void setup(QObject* const) override;
+    void setup(QObject* const)           override;
 };
 
 } // namespace DigikamBqmLocalContrastPlugin

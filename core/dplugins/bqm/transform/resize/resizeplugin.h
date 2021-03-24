@@ -43,7 +43,7 @@ class ResizePlugin : public DPluginBqm
 public:
 
     explicit ResizePlugin(QObject* const parent = nullptr);
-    ~ResizePlugin() override;
+    ~ResizePlugin()                      override;
 
     QString name()                 const override;
     QString iid()                  const override;

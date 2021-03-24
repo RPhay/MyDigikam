@@ -41,13 +41,13 @@ class BWConvert : public BatchTool
 public:
 
     explicit BWConvert(QObject* const parent = nullptr);
-    ~BWConvert() override;
+    ~BWConvert()                                            override;
 
-    BatchToolSettings defaultSettings() override;
+    BatchToolSettings defaultSettings()                     override;
 
     BatchTool* clone(QObject* const parent = nullptr) const override { return new BWConvert(parent); };
 
-    void registerSettingsWidget() override;
+    void registerSettingsWidget()                           override;
 
 public Q_SLOTS:
 
@@ -55,12 +55,12 @@ public Q_SLOTS:
 
 private:
 
-    bool toolOperations() override;
+    bool toolOperations()                                   override;
 
 private Q_SLOTS:
 
-    void slotAssignSettings2Widget() override;
-    void slotSettingsChanged() override;
+    void slotAssignSettings2Widget()                        override;
+    void slotSettingsChanged()                              override;
 
 private:
 

@@ -43,7 +43,7 @@ class FilmGrainPlugin : public DPluginBqm
 public:
 
     explicit FilmGrainPlugin(QObject* const parent = nullptr);
-    ~FilmGrainPlugin() override;
+    ~FilmGrainPlugin()                   override;
 
     QString name()                 const override;
     QString iid()                  const override;
@@ -52,7 +52,7 @@ public:
     QString description()          const override;
     QList<DPluginAuthor> authors() const override;
 
-    void setup(QObject* const) override;
+    void setup(QObject* const)           override;
 };
 
 } // namespace DigikamBqmFilmGrainPlugin

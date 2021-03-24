@@ -43,7 +43,7 @@ class ConvertToDngPlugin : public DPluginBqm
 public:
 
     explicit ConvertToDngPlugin(QObject* const parent = nullptr);
-    ~ConvertToDngPlugin() override;
+    ~ConvertToDngPlugin()                override;
 
     QString name()                 const override;
     QString iid()                  const override;
@@ -52,7 +52,7 @@ public:
     QString description()          const override;
     QList<DPluginAuthor> authors() const override;
 
-    void setup(QObject* const) override;
+    void setup(QObject* const)           override;
 };
 
 } // namespace DigikamBqmConvertToDngPlugin

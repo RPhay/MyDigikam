@@ -43,7 +43,7 @@ class TimeAdjustPlugin : public DPluginBqm
 public:
 
     explicit TimeAdjustPlugin(QObject* const parent = nullptr);
-    ~TimeAdjustPlugin() override;
+    ~TimeAdjustPlugin()                  override;
 
     QString name()                 const override;
     QString iid()                  const override;
@@ -52,7 +52,7 @@ public:
     QString description()          const override;
     QList<DPluginAuthor> authors() const override;
 
-    void setup(QObject* const) override;
+    void setup(QObject* const)           override;
 };
 
 } // namespace DigikamBqmTimeAdjustPlugin

@@ -40,23 +40,23 @@ class ConvertToPNG : public BatchTool
 public:
 
     explicit ConvertToPNG(QObject* const parent = nullptr);
-    ~ConvertToPNG() override;
+    ~ConvertToPNG()                                         override;
 
-    QString outputSuffix() const override;
-    BatchToolSettings defaultSettings() override;
+    QString outputSuffix()                            const override;
+    BatchToolSettings defaultSettings()                     override;
 
     BatchTool* clone(QObject* const parent = nullptr) const override { return new ConvertToPNG(parent); };
 
-    void registerSettingsWidget() override;
+    void registerSettingsWidget()                           override;
 
 private Q_SLOTS:
 
-    void slotSettingsChanged() override;
-    void slotAssignSettings2Widget() override;
+    void slotSettingsChanged()                              override;
+    void slotAssignSettings2Widget()                        override;
 
 private:
 
-    bool toolOperations() override;
+    bool toolOperations()                                   override;
 
 private:
 

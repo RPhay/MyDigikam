@@ -43,7 +43,7 @@ class Convert16To8Plugin : public DPluginBqm
 public:
 
     explicit Convert16To8Plugin(QObject* const parent = nullptr);
-    ~Convert16To8Plugin() override;
+    ~Convert16To8Plugin()                override;
 
     QString name()                 const override;
     QString iid()                  const override;
@@ -52,7 +52,7 @@ public:
     QString description()          const override;
     QList<DPluginAuthor> authors() const override;
 
-    void setup(QObject* const) override;
+    void setup(QObject* const)           override;
 };
 
 } // namespace DigikamBqmConvert16To8Plugin

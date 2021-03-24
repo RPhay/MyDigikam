@@ -40,22 +40,22 @@ class Sharpen : public BatchTool
 public:
 
     explicit Sharpen(QObject* const parent = nullptr);
-    ~Sharpen() override;
+    ~Sharpen()                                              override;
 
-    BatchToolSettings defaultSettings() override;
+    BatchToolSettings defaultSettings()                     override;
 
     BatchTool* clone(QObject* const parent = nullptr) const override { return new Sharpen(parent); };
 
-    void registerSettingsWidget() override;
+    void registerSettingsWidget()                           override;
 
 private:
 
-    bool toolOperations() override;
+    bool toolOperations()                                   override;
 
 private Q_SLOTS:
 
-    void slotAssignSettings2Widget() override;
-    void slotSettingsChanged() override;
+    void slotAssignSettings2Widget()                        override;
+    void slotSettingsChanged()                              override;
 
 private:
 

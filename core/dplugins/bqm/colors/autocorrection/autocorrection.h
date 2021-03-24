@@ -42,22 +42,22 @@ class AutoCorrection : public BatchTool
 public:
 
     explicit AutoCorrection(QObject* const parent = nullptr);
-    ~AutoCorrection() override;
+    ~AutoCorrection()                                       override;
 
-    BatchToolSettings defaultSettings() override;
+    BatchToolSettings defaultSettings()                     override;
 
     BatchTool* clone(QObject* const parent = nullptr) const override { return new AutoCorrection(parent); };
 
-    void registerSettingsWidget() override;
+    void registerSettingsWidget()                           override;
 
 private:
 
-    bool toolOperations() override;
+    bool toolOperations()                                   override;
 
 private Q_SLOTS:
 
-    void slotAssignSettings2Widget() override;
-    void slotSettingsChanged() override;
+    void slotAssignSettings2Widget()                        override;
+    void slotSettingsChanged()                              override;
 
 private:
 

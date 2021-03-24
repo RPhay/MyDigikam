@@ -40,13 +40,13 @@ class Crop : public BatchTool
 public:
 
     explicit Crop(QObject* const parent = nullptr);
-    ~Crop() override;
+    ~Crop()                                                 override;
 
-    BatchToolSettings defaultSettings() override;
+    BatchToolSettings defaultSettings()                     override;
 
     BatchTool* clone(QObject* const parent = nullptr) const override { return new Crop(parent); };
 
-    void registerSettingsWidget() override;
+    void registerSettingsWidget()                           override;
 
 Q_SIGNALS:
 
@@ -54,13 +54,13 @@ Q_SIGNALS:
 
 private Q_SLOTS:
 
-    void slotAssignSettings2Widget() override;
-    void slotSettingsChanged() override;
+    void slotAssignSettings2Widget()                        override;
+    void slotSettingsChanged()                              override;
     void slotDisableParameters(bool);
 
 private:
 
-    bool toolOperations() override;
+    bool toolOperations()                                   override;
 
 private:
 

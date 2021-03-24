@@ -43,7 +43,7 @@ class ConvertToJp2Plugin : public DPluginBqm
 public:
 
     explicit ConvertToJp2Plugin(QObject* const parent = nullptr);
-    ~ConvertToJp2Plugin() override;
+    ~ConvertToJp2Plugin()                override;
 
     QString name()                 const override;
     QString iid()                  const override;
@@ -52,7 +52,7 @@ public:
     QString description()          const override;
     QList<DPluginAuthor> authors() const override;
 
-    void setup(QObject* const) override;
+    void setup(QObject* const)           override;
 };
 
 } // namespace DigikamBqmConvertToJp2Plugin

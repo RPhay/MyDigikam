@@ -43,7 +43,7 @@ class RedEyeCorrectionPlugin : public DPluginBqm
 public:
 
     explicit RedEyeCorrectionPlugin(QObject* const parent = nullptr);
-    ~RedEyeCorrectionPlugin() override;
+    ~RedEyeCorrectionPlugin()            override;
 
     QString name()                 const override;
     QString iid()                  const override;
@@ -52,7 +52,7 @@ public:
     QString description()          const override;
     QList<DPluginAuthor> authors() const override;
 
-    void setup(QObject* const) override;
+    void setup(QObject* const)           override;
 };
 
 } // namespace DigikamBqmRestorationPlugin

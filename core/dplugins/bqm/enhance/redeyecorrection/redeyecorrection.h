@@ -42,24 +42,24 @@ class RedEyeCorrection : public BatchTool
 public:
 
     explicit RedEyeCorrection(QObject* const parent = nullptr);
-    ~RedEyeCorrection() override;
+    ~RedEyeCorrection()                                     override;
 
-    BatchToolSettings defaultSettings() override;
+    BatchToolSettings defaultSettings()                     override;
 
     BatchTool* clone(QObject* const parent = nullptr) const override { return new RedEyeCorrection(parent); };
 
-    void registerSettingsWidget() override;
+    void registerSettingsWidget()                           override;
 
-    void cancel() override;
+    void cancel()                                           override;
 
 private:
 
-    bool toolOperations() override;
+    bool toolOperations()                                   override;
 
 private Q_SLOTS:
 
-    void slotAssignSettings2Widget() override;
-    void slotSettingsChanged() override;
+    void slotAssignSettings2Widget()                        override;
+    void slotSettingsChanged()                              override;
 
 private:
 

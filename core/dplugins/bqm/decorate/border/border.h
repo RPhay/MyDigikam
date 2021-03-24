@@ -41,22 +41,22 @@ class Border : public BatchTool
 public:
 
     explicit Border(QObject* const parent = nullptr);
-    ~Border() override;
+    ~Border()                                               override;
 
-    BatchToolSettings defaultSettings() override;
+    BatchToolSettings defaultSettings()                     override;
 
     BatchTool* clone(QObject* const parent = nullptr) const override { return new Border(parent); };
 
-    void registerSettingsWidget() override;
+    void registerSettingsWidget()                           override;
 
 private Q_SLOTS:
 
-    void slotSettingsChanged() override;
-    void slotAssignSettings2Widget() override;
+    void slotSettingsChanged()                              override;
+    void slotAssignSettings2Widget()                        override;
 
 private:
 
-    bool toolOperations() override;
+    bool toolOperations()                                   override;
 
 private:
 

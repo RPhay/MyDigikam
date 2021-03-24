@@ -43,7 +43,7 @@ class ColorFXPlugin : public DPluginBqm
 public:
 
     explicit ColorFXPlugin(QObject* const parent = nullptr);
-    ~ColorFXPlugin() override;
+    ~ColorFXPlugin()                     override;
 
     QString name()                 const override;
     QString iid()                  const override;
@@ -52,7 +52,7 @@ public:
     QString description()          const override;
     QList<DPluginAuthor> authors() const override;
 
-    void setup(QObject* const) override;
+    void setup(QObject* const)           override;
 };
 
 } // namespace DigikamBqmColorFXPlugin

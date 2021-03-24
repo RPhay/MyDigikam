@@ -43,7 +43,7 @@ class UserScriptPlugin : public DPluginBqm
 public:
 
     explicit UserScriptPlugin(QObject* const parent = nullptr);
-    ~UserScriptPlugin() override;
+    ~UserScriptPlugin()                  override;
 
     QString name()                 const override;
     QString iid()                  const override;
@@ -52,7 +52,7 @@ public:
     QString description()          const override;
     QList<DPluginAuthor> authors() const override;
 
-    void setup(QObject* const) override;
+    void setup(QObject* const)           override;
 };
 
 } // namespace DigikamBqmUserScriptPlugin

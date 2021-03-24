@@ -43,7 +43,7 @@ class IccConvertPlugin : public DPluginBqm
 public:
 
     explicit IccConvertPlugin(QObject* const parent = nullptr);
-    ~IccConvertPlugin() override;
+    ~IccConvertPlugin()                  override;
 
     QString name()                 const override;
     QString iid()                  const override;
@@ -52,7 +52,7 @@ public:
     QString description()          const override;
     QList<DPluginAuthor> authors() const override;
 
-    void setup(QObject* const) override;
+    void setup(QObject* const)           override;
 };
 
 } // namespace DigikamBqmIccConvertPlugin

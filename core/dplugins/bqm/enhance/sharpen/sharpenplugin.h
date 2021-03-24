@@ -43,7 +43,7 @@ class SharpenPlugin : public DPluginBqm
 public:
 
     explicit SharpenPlugin(QObject* const parent = nullptr);
-    ~SharpenPlugin() override;
+    ~SharpenPlugin()                     override;
 
     QString name()                 const override;
     QString iid()                  const override;
@@ -52,7 +52,7 @@ public:
     QString description()          const override;
     QList<DPluginAuthor> authors() const override;
 
-    void setup(QObject* const) override;
+    void setup(QObject* const)           override;
 };
 
 } // namespace DigikamBqmSharpenPlugin

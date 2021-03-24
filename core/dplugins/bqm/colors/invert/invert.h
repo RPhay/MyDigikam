@@ -40,9 +40,9 @@ class Invert : public BatchTool
 public:
 
     explicit Invert(QObject* const parent = nullptr);
-    ~Invert() override;
+    ~Invert()                                               override;
 
-    BatchToolSettings defaultSettings() override
+    BatchToolSettings defaultSettings()                     override
     {
         return BatchToolSettings();
     };
@@ -51,12 +51,12 @@ public:
 
 private:
 
-    bool toolOperations() override;
+    bool toolOperations()                                   override;
 
 private Q_SLOTS:
 
-    void slotAssignSettings2Widget() override {};
-    void slotSettingsChanged() override       {};
+    void slotAssignSettings2Widget()                        override {};
+    void slotSettingsChanged()                              override {};
 };
 
 } // namespace DigikamBqmInvertPlugin

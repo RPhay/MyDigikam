@@ -43,7 +43,7 @@ class BlurPlugin : public DPluginBqm
 public:
 
     explicit BlurPlugin(QObject* const parent = nullptr);
-    ~BlurPlugin() override;
+    ~BlurPlugin()                        override;
 
     QString name()                 const override;
     QString iid()                  const override;
@@ -52,7 +52,7 @@ public:
     QString description()          const override;
     QList<DPluginAuthor> authors() const override;
 
-    void setup(QObject* const) override;
+    void setup(QObject* const)           override;
 };
 
 } // namespace DigikamBqmBlurPlugin

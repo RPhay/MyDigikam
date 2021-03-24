@@ -43,7 +43,7 @@ class AntiVignettingPlugin : public DPluginBqm
 public:
 
     explicit AntiVignettingPlugin(QObject* const parent = nullptr);
-    ~AntiVignettingPlugin() override;
+    ~AntiVignettingPlugin()              override;
 
     QString name()                 const override;
     QString iid()                  const override;

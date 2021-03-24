@@ -43,7 +43,7 @@ class ChannelMixerPlugin : public DPluginBqm
 public:
 
     explicit ChannelMixerPlugin(QObject* const parent = nullptr);
-    ~ChannelMixerPlugin() override;
+    ~ChannelMixerPlugin()                override;
 
     QString name()                 const override;
     QString iid()                  const override;
@@ -52,7 +52,7 @@ public:
     QString description()          const override;
     QList<DPluginAuthor> authors() const override;
 
-    void setup(QObject* const) override;
+    void setup(QObject* const)           override;
 };
 
 } // namespace DigikamBqmChannelMixerPlugin
