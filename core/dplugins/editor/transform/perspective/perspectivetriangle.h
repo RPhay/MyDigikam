@@ -37,7 +37,7 @@ class PerspectiveTriangle
 public:
 
     PerspectiveTriangle(const QPoint& A, const QPoint& B, const QPoint& C);
-    ~PerspectiveTriangle() {};
+    ~PerspectiveTriangle() = default;
 
     float angleABC() const;
     float angleACB() const;

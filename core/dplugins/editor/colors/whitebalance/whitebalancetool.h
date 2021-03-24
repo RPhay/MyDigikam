@@ -43,13 +43,13 @@ class WhiteBalanceTool : public EditorToolThreaded
 public:
 
     explicit WhiteBalanceTool(QObject* const parent);
-    ~WhiteBalanceTool() override;
+    ~WhiteBalanceTool()         override;
 
 private Q_SLOTS:
 
-    void slotSaveAsSettings() override;
-    void slotLoadSettings() override;
-    void slotResetSettings() override;
+    void slotSaveAsSettings()   override;
+    void slotLoadSettings()     override;
+    void slotResetSettings()    override;
     void slotPickerColorButtonActived();
     void slotColorSelectedFromOriginal(const Digikam::DColor&);
     void slotColorSelectedFromTarget(const Digikam::DColor&);
@@ -57,12 +57,12 @@ private Q_SLOTS:
 
 private:
 
-    void readSettings() override;
-    void writeSettings() override;
-    void preparePreview() override;
-    void prepareFinal() override;
-    void setPreviewImage() override;
-    void setFinalImage() override;
+    void readSettings()         override;
+    void writeSettings()        override;
+    void preparePreview()       override;
+    void prepareFinal()         override;
+    void setPreviewImage()      override;
+    void setFinalImage()        override;
 
 private:
 

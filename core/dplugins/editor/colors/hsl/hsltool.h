@@ -41,20 +41,20 @@ class HSLTool : public EditorToolThreaded
 public:
 
     explicit HSLTool(QObject* const parent);
-    ~HSLTool() override;
+    ~HSLTool()                  override;
 
 private Q_SLOTS:
 
-    void slotResetSettings() override;
+    void slotResetSettings()    override;
 
 private:
 
-    void readSettings() override;
-    void writeSettings() override;
-    void preparePreview() override;
-    void prepareFinal() override;
-    void setPreviewImage() override;
-    void setFinalImage() override;
+    void readSettings()         override;
+    void writeSettings()        override;
+    void preparePreview()       override;
+    void prepareFinal()         override;
+    void setPreviewImage()      override;
+    void setFinalImage()        override;
 
 private:
 

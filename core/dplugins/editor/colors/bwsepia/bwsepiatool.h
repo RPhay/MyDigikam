@@ -41,24 +41,24 @@ class BWSepiaTool : public EditorToolThreaded
 public:
 
     explicit BWSepiaTool(QObject* const parent);
-    ~BWSepiaTool() override;
+    ~BWSepiaTool()              override;
 
 private Q_SLOTS:
 
-    void slotInit() override;
-    void slotSaveAsSettings() override;
-    void slotLoadSettings() override;
-    void slotResetSettings() override;
+    void slotInit()             override;
+    void slotSaveAsSettings()   override;
+    void slotLoadSettings()     override;
+    void slotResetSettings()    override;
 
 private:
 
-    void readSettings() override;
-    void writeSettings() override;
-    void preparePreview() override;
-    void prepareFinal() override;
-    void setPreviewImage() override;
-    void setFinalImage() override;
-    void slotScaleChanged() override;
+    void readSettings()         override;
+    void writeSettings()        override;
+    void preparePreview()       override;
+    void prepareFinal()         override;
+    void setPreviewImage()      override;
+    void setFinalImage()        override;
+    void slotScaleChanged()     override;
 
 private:
 

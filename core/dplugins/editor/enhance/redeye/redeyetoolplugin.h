@@ -43,7 +43,7 @@ class RedEyeToolPlugin : public DPluginEditor
 public:
 
     explicit RedEyeToolPlugin(QObject* const parent = nullptr);
-    ~RedEyeToolPlugin() override;
+    ~RedEyeToolPlugin()                  override;
 
     QString name()                 const override;
     QString iid()                  const override;

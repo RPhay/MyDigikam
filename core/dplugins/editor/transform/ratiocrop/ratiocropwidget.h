@@ -47,24 +47,24 @@ class RatioCropWidget : public QWidget
 
 public:
 
-    enum RatioAspect               // Constrained Aspect Ratio list. See RatioCropWidget::setSelectionAspectRatioType()
-    {                              // method for crop-value implementations.
-        RATIOCUSTOM = 0,           // Custom aspect ratio.
-        RATIO01X01,                // 1:1
-        RATIO02x01,                // 2:1
-        RATIO02x03,                // 2:3
-        RATIO03X01,                // 3:1
-        RATIO03X04,                // 3:4
-        RATIO04X01,                // 4:1
-        RATIO04X05,                // 4:5
-        RATIO05x07,                // 5:7
-        RATIO07x10,                // 7:10
-        RATIO08x05,                // 8:5
-        RATIO16x09,                // 19:9
-        RATIODINA0,                // DIN A
-        RATIOGOLDEN,               // Golden ratio : 1:1.618
-        RATIOCURRENT,              // Current loaded image aspect ratio
-        RATIONONE                  // No aspect ratio.
+    enum RatioAspect               ///< Constrained Aspect Ratio list. See RatioCropWidget::setSelectionAspectRatioType() method for crop-value implementations.
+    {
+        RATIOCUSTOM = 0,           ///< Custom aspect ratio.
+        RATIO01X01,                ///< 1:1
+        RATIO02x01,                ///< 2:1
+        RATIO02x03,                ///< 2:3
+        RATIO03X01,                ///< 3:1
+        RATIO03X04,                ///< 3:4
+        RATIO04X01,                ///< 4:1
+        RATIO04X05,                ///< 4:5
+        RATIO05x07,                ///< 5:7
+        RATIO07x10,                ///< 7:10
+        RATIO08x05,                ///< 8:5
+        RATIO16x09,                ///< 19:9
+        RATIODINA0,                ///< DIN A
+        RATIOGOLDEN,               ///< Golden ratio : 1:1.618
+        RATIOCURRENT,              ///< Current loaded image aspect ratio
+        RATIONONE                  ///< No aspect ratio.
     };
 
     enum Orient
@@ -75,9 +75,9 @@ public:
 
     enum CenterType
     {
-        CenterWidth = 0,           // Center selection to the center of image width.
-        CenterHeight,              // Center selection to the center of image height.
-        CenterImage                // Center selection to the center of image.
+        CenterWidth = 0,           ///< Center selection to the center of image width.
+        CenterHeight,              ///< Center selection to the center of image height.
+        CenterImage                ///< Center selection to the center of image.
     };
 
     // Proportion : Golden Ratio and Rule of Thirds. More information at this url:
@@ -114,23 +114,23 @@ public:
                               bool drawGoldenSpiral,   bool drawGoldenTriangle,
                               bool flipHorGoldenGuide, bool flipVerGoldenGuide);
 
-    int   getOriginalImageWidth()  const;
-    int   getOriginalImageHeight() const;
-    QRect getRegionSelection()     const;
+    int   getOriginalImageWidth()   const;
+    int   getOriginalImageHeight()  const;
+    QRect getRegionSelection()      const;
 
-    int   getMinWidthRange()  const;
-    int   getMinHeightRange() const;
-    int   getMaxWidthRange()  const;
-    int   getMaxHeightRange() const;
-    int   getWidthStep()      const;
-    int   getHeightStep()     const;
+    int   getMinWidthRange()        const;
+    int   getMinHeightRange()       const;
+    int   getMaxWidthRange()        const;
+    int   getMaxHeightRange()       const;
+    int   getWidthStep()            const;
+    int   getHeightStep()           const;
 
-    bool  preciseCropAvailable() const;
+    bool  preciseCropAvailable()    const;
 
     void  resetSelection();
     void  maxAspectSelection();
 
-    ImageIface* imageIface() const;
+    ImageIface* imageIface()        const;
 
 public Q_SLOTS:
 
@@ -146,11 +146,11 @@ Q_SIGNALS:
 
 protected:
 
-    void paintEvent(QPaintEvent*) override;
-    void mousePressEvent(QMouseEvent*) override;
-    void mouseReleaseEvent(QMouseEvent*) override;
-    void mouseMoveEvent(QMouseEvent*) override;
-    void resizeEvent(QResizeEvent*) override;
+    void paintEvent(QPaintEvent*)           override;
+    void mousePressEvent(QMouseEvent*)      override;
+    void mouseReleaseEvent(QMouseEvent*)    override;
+    void mouseMoveEvent(QMouseEvent*)       override;
+    void resizeEvent(QResizeEvent*)         override;
 
 private:
 
@@ -181,9 +181,9 @@ private:
                           const QRect& R6, const QRect& R7);
 
     void setup(int width, int height,
-               int widthRatioValue=1, int heightRatioValue=1,
-               int aspectRatio=RATIO01X01, int orient=Landscape,
-               int guideLinesType=GuideNone);
+               int widthRatioValue = 1, int heightRatioValue = 1,
+               int aspectRatio = RATIO01X01, int orient = Landscape,
+               int guideLinesType = GuideNone);
 
 private:
 

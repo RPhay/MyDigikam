@@ -43,7 +43,7 @@ class InsertTextTool : public EditorTool
 public:
 
     explicit InsertTextTool(QObject* const parent);
-    ~InsertTextTool() override;
+    ~InsertTextTool()                           override;
 
 Q_SIGNALS:
 
@@ -51,17 +51,17 @@ Q_SIGNALS:
 
 private Q_SLOTS:
 
-    void slotResetSettings() override;
+    void slotResetSettings()                    override;
     void slotFontPropertiesChanged(const QFont& font);
     void slotUpdatePreview();
     void slotAlignModeChanged(int mode);
 
 private:
 
-    void readSettings() override;
-    void writeSettings() override;
-    void finalRendering() override;
-    void setBackgroundColor(const QColor& bg) override;
+    void readSettings()                         override;
+    void writeSettings()                        override;
+    void finalRendering()                       override;
+    void setBackgroundColor(const QColor& bg)   override;
 
 private:
 

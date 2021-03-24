@@ -42,20 +42,20 @@ class BCGTool : public EditorToolThreaded
 public:
 
     explicit BCGTool(QObject* const parent);
-    ~BCGTool() override;
+    ~BCGTool()                  override;
 
 private Q_SLOTS:
 
-    void slotResetSettings() override;
+    void slotResetSettings()    override;
 
 private:
 
-    void readSettings() override;
-    void writeSettings() override;
-    void preparePreview() override;
-    void prepareFinal() override;
-    void setPreviewImage() override;
-    void setFinalImage() override;
+    void readSettings()         override;
+    void writeSettings()        override;
+    void preparePreview()       override;
+    void prepareFinal()         override;
+    void setPreviewImage()      override;
+    void setFinalImage()        override;
 
 private:
 

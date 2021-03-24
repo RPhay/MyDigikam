@@ -173,9 +173,7 @@ private:
 
     // Disable
     PrintConfig();
-    explicit PrintConfig(QObject*);
-
-    friend class PrintConfigHelper;
+    explicit PrintConfig(QObject*) = delete;
 
 private:
 
@@ -188,6 +186,8 @@ private:
     bool   mPrintKeepRatio;
     bool   mPrintColorManaged;
     bool   mPrintAutoRotate;
+
+    friend class PrintConfigHelper;
 };
 
 } // namespace DigikamEditorPrintToolPlugin
