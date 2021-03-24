@@ -9,4 +9,5 @@ BUGFIXES:
 
 001 ==> 434750 - Yolov3 doesn't work on png Images.
 002 ==> 434795 - Advanced search seems to notice internal tags.
-003 ==> 
+003 ==> 356065 - Baloo metadata not written out by Album.
+004 ==> 
