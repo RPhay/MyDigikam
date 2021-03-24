@@ -93,6 +93,9 @@ protected:
     QVariant     decorationRoleData(Album* a)            const override;
     Album*       albumForId(int id)                      const override;
     QVariant     fontRoleData(Album* a)                  const override;
+    bool         setData(const QModelIndex& index,
+                         const QVariant& value,
+                         int role = Qt::EditRole)              override;
 
 private:
 

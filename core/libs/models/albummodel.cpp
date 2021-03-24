@@ -249,6 +249,18 @@ void TagModel::setTagCount(TagCountMode mode)
     }
 }
 
+bool TagModel::setData(const QModelIndex& index, const QVariant& value, int role)
+{
+    TAlbum* const album = albumForIndex(index);
+
+    if (album && album->isInternalTag())
+    {
+        return false;
+    }
+
+    return AbstractCheckableAlbumModel::setData(index, value, role);
+}
+
 // ------------------------------------------------------------------
 
 SearchModel::SearchModel(QObject* const parent)
