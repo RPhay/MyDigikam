@@ -98,7 +98,9 @@ private:
 private:
 
     // Disable
-    explicit ImageShackTalker(QObject*);
+    explicit ImageShackTalker(QObject*) = delete;
+
+private:
 
     class Private;
     Private* const d;

@@ -26,7 +26,6 @@
 
 // Local includes
 
-
 #include "mediawiki_job.h"
 #include "mediawiki_usergroup.h"
 

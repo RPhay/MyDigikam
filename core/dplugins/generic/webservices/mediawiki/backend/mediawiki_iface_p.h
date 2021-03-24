@@ -41,9 +41,9 @@ class Q_DECL_HIDDEN Iface::Private
 public:
 
     Private(const QUrl& url, const QString& userAgent, QNetworkAccessManager* const manager)
-        : url(url),
+        : url      (url),
           userAgent(userAgent),
-          manager(manager)
+          manager  (manager)
     {
     }
 

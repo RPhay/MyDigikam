@@ -34,7 +34,7 @@
 namespace MediaWiki
 {
 
-class Q_DECL_HIDDEN Page::PagePrivate
+class Q_DECL_HIDDEN Page::Private
 {
 public:
 
@@ -55,7 +55,7 @@ public:
 };
 
 Page::Page()
-    : d(new PagePrivate())
+    : d(new Private())
 {
 }
 
@@ -65,13 +65,14 @@ Page::~Page()
 }
 
 Page::Page( const Page& other)
-    : d(new PagePrivate(*(other.d)))
+    : d(new Private(*(other.d)))
 {
 }
 
 Page& Page::operator=(const Page& other)
 {
     *d = *other.d;
+
     return *this;
 }
 

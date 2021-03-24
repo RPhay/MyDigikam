@@ -58,12 +58,14 @@ struct ImgurTalkerAction
         QString imgpath;
         QString title;
         QString description;
-    } upload;
+    }
+    upload;
 
     struct
     {
         QString username;
-    } account;
+    }
+    account;
 };
 
 struct ImgurTalkerResult
@@ -86,12 +88,14 @@ struct ImgurTalkerResult
         uint       size;
         uint       views;
         qulonglong bandwidth;
-    } image;
+    }
+    image;
 
     struct ImgurAccount
     {
         QString username;
-    } account;
+    }
+    account;
 };
 
 // ----------------------------------------------------------------

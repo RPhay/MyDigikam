@@ -83,7 +83,7 @@ public:
 public:
 
     explicit FlickrList(QWidget* const parent = nullptr);
-    ~FlickrList() override;
+    ~FlickrList()                               override;
 
     void setPublic(Qt::CheckState);
     void setFamily(Qt::CheckState);
@@ -137,7 +137,7 @@ public:
                                 bool, bool, bool,
                                 FlickrList::SafetyLevel,
                                 FlickrList::ContentType);
-    ~FlickrListViewItem() override;
+    ~FlickrListViewItem()                       override;
 
     void setPublic(bool);
     void setFamily(bool);
@@ -153,14 +153,14 @@ public:
     /**
      * Returns the list of extra tags that the user specified for this image.
      */
-    QStringList extraTags() const;
+    QStringList extraTags()               const;
 
     /**
      * This method should be called when one of the checkboxes is clicked.
      */
     void toggled();
 
-    void updateItemWidgets() override;
+    void updateItemWidgets()                    override;
 
 private:
 

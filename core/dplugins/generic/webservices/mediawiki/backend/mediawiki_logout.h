@@ -28,7 +28,6 @@
 
 #include "mediawiki_job.h"
 
-
 namespace MediaWiki
 {
 
@@ -56,7 +55,7 @@ public:
     /**
      * @brief Destroys the Logout job.
      */
-    ~Logout() override;
+    ~Logout()    override;
 
     /**
      * @brief Starts the job asynchronously.

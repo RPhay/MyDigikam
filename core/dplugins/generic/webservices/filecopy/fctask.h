@@ -47,7 +47,7 @@ public:
 
     explicit FCTask(const QUrl& srcUrl,
                     const FCContainer& settings);
-    ~FCTask() override;
+    ~FCTask()  override;
 
 Q_SIGNALS:
 
@@ -60,7 +60,9 @@ protected:
 private:
 
     // Disable
-    explicit FCTask(QObject*);
+    explicit FCTask(QObject*) = delete;
+
+private:
 
     bool imageResize(const QString& orgPath, const QString& destPath);
     void deleteTargetFile(const QString& filePath);

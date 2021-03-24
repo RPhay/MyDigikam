@@ -30,10 +30,6 @@
 #include <QString>
 #include <QUrl>
 
-// Local includes
-
-
-
 namespace MediaWiki
 {
 

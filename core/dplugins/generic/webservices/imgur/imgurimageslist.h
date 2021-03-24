@@ -58,7 +58,7 @@ public:
 public:
 
     explicit ImgurImagesList(QWidget* const parent = nullptr);
-    ~ImgurImagesList() override {}
+    ~ImgurImagesList() override = default;
 
     QList<const ImgurImageListViewItem*> getPendingItems();
 
@@ -76,7 +76,7 @@ class ImgurImageListViewItem : public DItemsListViewItem
 public:
 
     explicit ImgurImageListViewItem(DItemsListView* const view, const QUrl& url);
-    ~ImgurImageListViewItem() override {}
+    ~ImgurImageListViewItem() override = default;
 
     void setTitle(const QString& str);
     QString Title()          const;

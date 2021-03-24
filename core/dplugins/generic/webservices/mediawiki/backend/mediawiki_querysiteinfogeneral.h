@@ -32,7 +32,6 @@
 
 // Local includes
 
-
 #include "mediawiki_job.h"
 #include "mediawiki_generalinfo.h"
 

@@ -28,10 +28,6 @@
 
 #include <kjob.h>
 
-// Local includes
-
-
-
 namespace MediaWiki
 {
 

@@ -115,12 +115,15 @@ public:
      * @param password the QObject parent
      * @param parent the QObject parent
      */
-    explicit Login(Iface& MediaWiki, const QString& login, const QString& password, QObject* const parent = nullptr);
+    explicit Login(Iface& MediaWiki,
+                   const QString& login,
+                   const QString& password,
+                   QObject* const parent = nullptr);
 
     /**
      * @brief Destroys the Login job.
      */
-    ~Login() override;
+    ~Login()     override;
 
     /**
      * @brief Starts the job asynchronously.

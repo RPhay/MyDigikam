@@ -30,7 +30,7 @@
 namespace MediaWiki
 {
 
-class Q_DECL_HIDDEN Revision::RevisionPrivate
+class Q_DECL_HIDDEN Revision::Private
 {
 public:
 
@@ -47,7 +47,7 @@ public:
 };
 
 Revision::Revision()
-    : d(new RevisionPrivate())
+    : d(new Private())
 {
     d->minorRevision = false;
     d->revId         = -1;
@@ -61,13 +61,14 @@ Revision::~Revision()
 }
 
 Revision::Revision( const Revision& other)
-    : d(new RevisionPrivate(*(other.d)))
+    : d(new Private(*(other.d)))
 {
 }
 
 Revision& Revision::operator=(const Revision& other)
 {
     *d = *other.d;
+
     return *this;
 }
 

@@ -30,7 +30,7 @@
 namespace MediaWiki
 {
 
-class Q_DECL_HIDDEN UserGroup::UserGroupPrivate
+class Q_DECL_HIDDEN UserGroup::Private
 {
 public:
 
@@ -42,13 +42,13 @@ public:
 };
 
 UserGroup::UserGroup()
-    : d(new UserGroupPrivate())
+    : d(new Private())
 {
     d->number = -1;
 }
 
 UserGroup::UserGroup(const UserGroup& other)
-    : d(new UserGroupPrivate(*(other.d)))
+    : d(new Private(*(other.d)))
 {
 }
 
@@ -60,6 +60,7 @@ UserGroup::~UserGroup()
 UserGroup& UserGroup::operator=(const UserGroup& other)
 {
     *d = *other.d;
+
     return *this;
 }
 

@@ -239,8 +239,8 @@ public:
 
 private:
 
-    class PagePrivate;
-    PagePrivate* const d;
+    class Private;
+    Private* const d;
 };
 
 } // namespace MediaWiki

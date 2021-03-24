@@ -189,8 +189,8 @@ public:
 
 private:
 
-    class RevisionPrivate;
-    RevisionPrivate* const d;
+    class Private;
+    Private* const d;
 };
 
 } // namespace MediaWiki

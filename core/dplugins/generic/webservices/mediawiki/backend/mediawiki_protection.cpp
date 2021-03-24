@@ -30,7 +30,7 @@
 namespace MediaWiki
 {
 
-class Q_DECL_HIDDEN Protection::ProtectionPrivate
+class Q_DECL_HIDDEN Protection::Private
 {
 public:
 
@@ -41,7 +41,7 @@ public:
 };
 
 Protection::Protection()
-    : d(new ProtectionPrivate())
+    : d(new Private())
 {
 }
 
@@ -51,13 +51,14 @@ Protection::~Protection()
 }
 
 Protection::Protection(const Protection& other)
-    : d(new ProtectionPrivate(*(other.d)))
+    : d(new Private(*(other.d)))
 {
 }
 
 Protection& Protection::operator=(const Protection& other)
 {
     *d = *other.d;
+
     return *this;
 }
 

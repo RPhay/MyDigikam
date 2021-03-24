@@ -122,8 +122,8 @@ public:
 
 private:
 
-    class ProtectionPrivate;
-    ProtectionPrivate* const d;
+    class Private;
+    Private* const d;
 };
 
 } // namespace MediaWiki

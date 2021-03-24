@@ -47,7 +47,7 @@ class MediaWikiWindow : public WSToolDialog
 public:
 
     explicit MediaWikiWindow(DInfoInterface* const iface, QWidget* const parent);
-    ~MediaWikiWindow() override;
+    ~MediaWikiWindow()                            override;
 
 public:
 
@@ -60,7 +60,10 @@ private Q_SLOTS:
     void slotProgressCanceled();
     void slotStartTransfer();
     void slotChangeUserClicked();
-    void slotDoLogin(const QString& login, const QString& pass, const QString& wikiName, const QUrl& wikiUrl);
+    void slotDoLogin(const QString& login,
+                     const QString& pass,
+                     const QString& wikiName,
+                     const QUrl& wikiUrl);
     void slotEndUpload();
     int  slotLoginHandle(KJob* loginJob);
 
