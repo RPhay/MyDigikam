@@ -56,8 +56,8 @@ public:
 
     void blockCaptionButtons(bool block=true);
 
-    void initializePage() override;
-    bool validatePage() override;
+    void initializePage()  override;
+    bool validatePage()    override;
 
     static QString captionFormatter(AdvPrintPhoto* const photo);
 

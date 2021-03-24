@@ -46,7 +46,7 @@ class GLViewerTexture : public QOpenGLTexture
 public:
 
     explicit GLViewerTexture(DInfoInterface* const iface);
-    virtual ~GLViewerTexture();
+    ~GLViewerTexture();
 
     bool load(const QString& fn, const QSize& size);
     bool load(const QImage& im);
@@ -72,8 +72,10 @@ private:
 
 private:
 
-    // No copy constructor
-    GLViewerTexture(const GLViewerTexture&);
+    // Disable
+    GLViewerTexture(const GLViewerTexture&) = delete;
+
+private:
 
     class Private;
     Private* const d;

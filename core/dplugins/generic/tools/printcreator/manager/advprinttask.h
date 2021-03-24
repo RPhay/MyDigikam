@@ -73,7 +73,9 @@ Q_SIGNALS:
 private:
 
     // Disable
-    explicit AdvPrintTask(QObject*);
+    explicit AdvPrintTask(QObject*) = delete;
+
+private:
 
     void run()          override;
 

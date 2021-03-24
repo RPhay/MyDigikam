@@ -62,6 +62,8 @@ public:
     AtkinsPageLayoutTree(const AtkinsPageLayoutTree&);
     ~AtkinsPageLayoutTree();
 
+    AtkinsPageLayoutTree& operator=(const AtkinsPageLayoutTree& other);
+
     int    addImage(double aspectRatio,
                     double relativeArea);
     QRectF drawingArea(int index,
@@ -71,8 +73,6 @@ public:
     double score(AtkinsPageLayoutNode* const root,
                  int nodeCount);
     double G() const;
-
-    AtkinsPageLayoutTree& operator=(const AtkinsPageLayoutTree& other);
 
 private:
 

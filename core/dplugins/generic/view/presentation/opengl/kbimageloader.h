@@ -69,7 +69,9 @@ protected:
 private:
 
     // Disable
-    explicit KBImageLoader(QObject*);
+    explicit KBImageLoader(QObject*) = delete;
+
+private:
 
     class Private;
     Private* const d;

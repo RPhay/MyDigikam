@@ -135,7 +135,9 @@ private:
 private:
 
     // Disable
-    explicit PresentationWidget(QWidget*);
+    explicit PresentationWidget(QWidget*) = delete;
+
+private:
 
     class Private;
     Private* const d;

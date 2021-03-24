@@ -76,7 +76,7 @@ private:
 private:
 
     // Disable
-    explicit ImageResizeJob(QObject*);
+    explicit ImageResizeJob(QObject*) = delete;
 };
 
 } // namespace DigikamGenericSendByMailPlugin

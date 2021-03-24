@@ -93,7 +93,9 @@ private Q_SLOTS:
 private:
 
     // Disable
-    explicit GLViewerWidget(QWidget*);
+    explicit GLViewerWidget(QWidget*) = delete;
+
+private:
 
     class Private;
     Private* const d;

@@ -73,6 +73,8 @@ public:
     AtkinsPageLayoutNode(const AtkinsPageLayoutNode&);
     ~AtkinsPageLayoutNode();
 
+    AtkinsPageLayoutNode& operator=(const AtkinsPageLayoutNode&);
+
     double aspectRatio()  const;
     double relativeArea() const;
     double division()     const;
@@ -109,8 +111,6 @@ public:
      * Section 2.2.2
      */
     void computeDivisions();
-
-    AtkinsPageLayoutNode& operator=(const AtkinsPageLayoutNode&);
 
 private:
 

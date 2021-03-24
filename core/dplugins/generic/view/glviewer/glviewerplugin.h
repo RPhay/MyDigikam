@@ -43,7 +43,7 @@ class GLViewerPlugin : public DPluginGeneric
 public:
 
     explicit GLViewerPlugin(QObject* const parent = nullptr);
-    ~GLViewerPlugin() override;
+    ~GLViewerPlugin()                    override;
 
     QString name()                 const override;
     QString iid()                  const override;

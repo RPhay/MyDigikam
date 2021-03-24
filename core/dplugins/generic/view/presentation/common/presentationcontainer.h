@@ -45,7 +45,9 @@ class PresentationCaptionPage;
 class PresentationAdvPage;
 
 #ifdef HAVE_MEDIAPLAYER
+
 class PresentationAudioPage;
+
 #endif
 
 class PresentationContainer
@@ -68,7 +70,9 @@ public:
     PresentationCaptionPage* captionPage;
 
 #ifdef HAVE_MEDIAPLAYER
+
     PresentationAudioPage*   soundtrackPage;
+
 #endif
 
     PresentationAdvPage*     advancedPage;
