@@ -45,7 +45,10 @@ public:
     QString outputSuffix()                            const override;
     BatchToolSettings defaultSettings()                     override;
 
-    BatchTool* clone(QObject* const parent = nullptr) const override { return new ConvertToPNG(parent); };
+    BatchTool* clone(QObject* const parent = nullptr) const override
+    {
+        return new ConvertToPNG(parent);
+    };
 
     void registerSettingsWidget()                           override;
 

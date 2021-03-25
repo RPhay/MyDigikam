@@ -47,7 +47,10 @@ public:
         return BatchToolSettings();
     };
 
-    BatchTool* clone(QObject* const parent = nullptr) const override { return new Invert(parent); };
+    BatchTool* clone(QObject* const parent = nullptr) const override
+    {
+        return new Invert(parent);
+    };
 
 private:
 

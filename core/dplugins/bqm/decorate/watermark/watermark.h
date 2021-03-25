@@ -50,7 +50,10 @@ public:
 
     BatchToolSettings defaultSettings()                     override;
 
-    BatchTool* clone(QObject* const parent = nullptr) const override { return new WaterMark(parent); };
+    BatchTool* clone(QObject* const parent = nullptr) const override
+    {
+        return new WaterMark(parent);
+    };
 
     void registerSettingsWidget()                           override;
 

@@ -45,7 +45,10 @@ public:
 
     BatchToolSettings defaultSettings()                     override;
 
-    BatchTool* clone(QObject* const parent = nullptr) const override { return new HotPixels(parent); };
+    BatchTool* clone(QObject* const parent = nullptr) const override
+    {
+        return new HotPixels(parent);
+    };
 
     void registerSettingsWidget()                           override;
 

@@ -44,7 +44,10 @@ public:
 
     BatchToolSettings defaultSettings()                     override;
 
-    BatchTool* clone(QObject* const parent = nullptr) const override { return new Rotate(parent); };
+    BatchTool* clone(QObject* const parent = nullptr) const override
+    {
+        return new Rotate(parent);
+    };
 
     void registerSettingsWidget()                           override;
 

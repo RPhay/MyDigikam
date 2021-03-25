@@ -45,7 +45,10 @@ public:
 
     BatchToolSettings defaultSettings()                     override;
 
-    BatchTool* clone(QObject* const parent = nullptr) const override { return new ColorFX(parent); };
+    BatchTool* clone(QObject* const parent = nullptr) const override
+    {
+        return new ColorFX(parent);
+    };
 
     void registerSettingsWidget()                           override;
 
