@@ -8,7 +8,7 @@ General       : New Online version checker/downloader, with release notes viewer
 General       : MacOS PKG installer is now compatible with Apple BigSur.
 General       : MacOS bundle is now fully relocatable.
 General       : Check and fix source codes with Clazy static analyzer.
-General       : All bundles updated to last KF5 framework version 5.74.
+General       : All bundles updated to last KF5 framework version 5.78.
 General       : All bundles updated to last OpenCV version 4.4.0.
 General       : Add a static QCollator class for fast item sorting.
 AdvancedSearch: Add search for empty title, caption, author or creator fields.
