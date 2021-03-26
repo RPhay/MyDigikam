@@ -25,7 +25,7 @@ RawEngine     : Update internal Libraw to last 0.21.0:
                    Uncompressed floating point DNG files (16-24-32 bit)
                    Deflate compressed striped DNG files
                    XMP and HEIF-preview extraction from CR3 files
-                Camera model support;
+                Camera model support:
                    Apple iPhone 12 Max, iPhone 12 Max Pro
                    Canon EOS R5, EOS R6, EOS 850D, EOS-1D X Mark III (lossy compressed files)
                    FujiFilm X-S10
