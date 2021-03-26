@@ -49,6 +49,11 @@ BCGCorrection::~BCGCorrection()
 {
 }
 
+BatchTool* BCGCorrection::clone(QObject* const parent) const
+{
+    return new BCGCorrection(parent);
+}
+
 void BCGCorrection::registerSettingsWidget()
 {
     m_settingsWidget = new QWidget;

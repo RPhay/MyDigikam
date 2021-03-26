@@ -56,6 +56,11 @@ AutoCorrection::~AutoCorrection()
 {
 }
 
+BatchTool* AutoCorrection::clone(QObject* const parent) const
+{
+    return new AutoCorrection(parent);
+}
+
 void AutoCorrection::registerSettingsWidget()
 {
     DVBox* const vbox   = new DVBox;

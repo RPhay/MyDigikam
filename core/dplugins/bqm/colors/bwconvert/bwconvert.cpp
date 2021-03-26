@@ -49,6 +49,11 @@ BWConvert::~BWConvert()
 {
 }
 
+BatchTool* BWConvert::clone(QObject* const parent) const
+{
+    return new BWConvert(parent);
+}
+
 void BWConvert::registerSettingsWidget()
 {
     m_settingsWidget = new QWidget;
@@ -65,6 +70,7 @@ void BWConvert::slotResetSettingsToDefault()
 {
     // We need to call this method there to reset all curves points.
     // Curves values are cleaned with default settings passed after.
+
     m_settingsView->resetToDefault();
     BatchTool::slotResetSettingsToDefault();
 }
