@@ -41,13 +41,18 @@ namespace DigikamBqmTexturePlugin
 {
 
 Texture::Texture(QObject* const parent)
-    : BatchTool(QLatin1String("Texture"), DecorateTool, parent)
+    : BatchTool(QLatin1String("Texture"), DecorateTool, parent),
+      m_settingsView(nullptr)
 {
-    m_settingsView = nullptr;
 }
 
 Texture::~Texture()
 {
+}
+
+BatchTool* Texture::clone(QObject* const parent) const
+{
+    return new Texture(parent);
 }
 
 void Texture::registerSettingsWidget()

@@ -41,13 +41,18 @@ namespace DigikamBqmBorderPlugin
 {
 
 Border::Border(QObject* const parent)
-    : BatchTool(QLatin1String("Border"), DecorateTool, parent)
+    : BatchTool(QLatin1String("Border"), DecorateTool, parent),
+      m_settingsView(nullptr)
 {
-    m_settingsView = nullptr;
 }
 
 Border::~Border()
 {
+}
+
+BatchTool* Border::clone(QObject* const parent) const
+{
+    return new Border(parent);
 }
 
 void Border::registerSettingsWidget()

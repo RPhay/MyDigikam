@@ -63,8 +63,8 @@ public:
 public:
 
     explicit Private()
-      : comboBox(nullptr),
-        textEdit(nullptr),
+      : comboBox      (nullptr),
+        textEdit      (nullptr),
         changeSettings(true)
     {
     }
@@ -84,6 +84,11 @@ UserScript::UserScript(QObject* const parent)
 UserScript::~UserScript()
 {
     delete d;
+}
+
+BatchTool* UserScript::clone(QObject* const parent) const
+{
+    return new UserScript(parent);
 }
 
 void UserScript::registerSettingsWidget()
@@ -167,22 +172,31 @@ QString UserScript::outputSuffix () const
     switch (filetype)
     {
         case Private::JPEG:
+        {
             return QLatin1String("jpg");
             break;
+        }
 
         case Private::PNG:
+        {
             return QLatin1String("png");
             break;
+        }
 
         case Private::TIFF:
+        {
             return QLatin1String("tif");
             break;
+        }
 
         default:
+        {
             break;
+        }
     }
 
     // Return "": use original type
+
     return (BatchTool::outputSuffix());
 }
 
@@ -197,15 +211,21 @@ bool UserScript::toolOperations()
     }
 
     // Replace all occurrences of $INPUT and $OUTPUT in script to file names. Case sensitive.
+
 #ifndef Q_OS_WIN
+
     script.replace(QLatin1String("$INPUT"),  QLatin1Char('"') + inputUrl().toLocalFile()  + QLatin1Char('"'));
     script.replace(QLatin1String("$OUTPUT"), QLatin1Char('"') + outputUrl().toLocalFile() + QLatin1Char('"'));
+
 #else
+
     script.replace(QLatin1String("$INPUT"),  QLatin1Char('"') + QDir::toNativeSeparators(inputUrl().toLocalFile())  + QLatin1Char('"'));
     script.replace(QLatin1String("$OUTPUT"), QLatin1Char('"') + QDir::toNativeSeparators(outputUrl().toLocalFile()) + QLatin1Char('"'));
+
 #endif // Q_OS_WIN
 
     // Empties d->image, not to pass it to the next tool in chain
+
     setImageData(DImg());
 
     QProcess process(this);
@@ -216,6 +236,7 @@ bool UserScript::toolOperations()
                                                       TagsCache::NoHiddenTags).join(QLatin1Char(';'));
 
     // Populate env variables from metadata
+
     env.insert(QLatin1String("COLORLABEL"), QString::number(imageInfo().colorLabel()));
     env.insert(QLatin1String("PICKLABEL"),  QString::number(imageInfo().pickLabel()));
     env.insert(QLatin1String("RATING"),     QString::number(imageInfo().rating()));
@@ -226,14 +247,19 @@ bool UserScript::toolOperations()
     process.setProcessEnvironment(env);
 
     // call the shell script
+
 #ifndef Q_OS_WIN
+
     process.start(QLatin1String("/bin/sh"), QStringList() << QLatin1String("-c") << script);
+
 #else
+
     script.replace(QLatin1Char('\n'), QLatin1String(" & "));
 
     process.setNativeArguments(QLatin1String("/C ") + script);
 
     process.start(QLatin1String("cmd.exe"));
+
 #endif // Q_OS_WIN
 
     if (!process.waitForFinished(60000))
@@ -243,7 +269,7 @@ bool UserScript::toolOperations()
         return false;
     }
 
-    if (process.exitCode() == -2)
+    if      (process.exitCode() == -2)
     {
         setErrorDescription(i18n("User Script: Failed to start script."));
         return false;

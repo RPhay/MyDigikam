@@ -159,6 +159,11 @@ WaterMark::~WaterMark()
     delete d;
 }
 
+BatchTool* WaterMark::clone(QObject* const parent) const
+{
+    return new WaterMark(parent);
+}
+
 void WaterMark::registerSettingsWidget()
 {
     const int spacing = QApplication::style()->pixelMetric(QStyle::PM_DefaultLayoutSpacing);
@@ -519,7 +524,7 @@ void WaterMark::slotAssignSettings2Widget()
 
 void WaterMark::slotSettingsChanged()
 {
-    if (d->useImageRadioButton->isChecked())
+    if      (d->useImageRadioButton->isChecked())
     {
         d->textSettingsGroupBox->setVisible(false);
         d->imageSettingsGroupBox->setVisible(true);
@@ -610,7 +615,7 @@ bool WaterMark::toolOperations()
 
     image().exifRotate(inputUrl().toLocalFile());
 
-    float ratio = (float)image().height()/image().width();
+    float ratio = (float)image().height() / image().width();
 
     if ((rotationAngle == DImg::ANGLE::ROT90) || (rotationAngle == DImg::ANGLE::ROT270))
     {
@@ -627,7 +632,7 @@ bool WaterMark::toolOperations()
 
             if (tempSize < 35)
             {
-                tempSize *= 1.5 ;
+                tempSize *= 1.5;
             }
 
             size          = (tempSize < 100) ? tempSize : 100;
@@ -671,24 +676,34 @@ bool WaterMark::toolOperations()
         switch (placementPosition)
         {
             case Private::TopLeft:
+            {
                 alignMode = Qt::AlignLeft;
                 break;
+            }
 
             case Private::TopRight:
+            {
                 alignMode = Qt::AlignRight;
                 break;
+            }
 
             case Private::BottomLeft:
+            {
                 alignMode = Qt::AlignLeft;
                 break;
+            }
 
             case Private::Center:
+            {
                 alignMode = Qt::AlignCenter;
                 break;
+            }
 
-            default :    // BottomRight
+            default:    // BottomRight
+            {
                 alignMode = Qt::AlignRight;
                 break;
+            }
         }
 
         if (!useAbsoluteSize)
@@ -765,12 +780,13 @@ bool WaterMark::toolOperations()
         switch (placementPosition)
         {
             case Private::TopLeft:
-
+            {
                 watermarkRect.moveTopLeft(QPoint(marginW, marginH));
                 break;
+            }
 
             case Private::TopRight:
-
+            {
                 if ((rotationAngle == DImg::ANGLE::ROT270) || (rotationAngle == DImg::ANGLE::ROT90))
                 {
                     xAdditionalValue += watermarkRect.width() - watermarkRect.height();
@@ -778,9 +794,10 @@ bool WaterMark::toolOperations()
 
                 watermarkRect.moveTopRight(QPoint(image().width() + xAdditionalValue - 1 - marginW, marginH));
                 break;
+            }
 
             case Private::BottomLeft:
-
+            {
                 if ((rotationAngle == DImg::ANGLE::ROT90) || (rotationAngle == DImg::ANGLE::ROT270))
                 {
                     yAdditionalValue += watermarkRect.height() - watermarkRect.width();
@@ -788,9 +805,10 @@ bool WaterMark::toolOperations()
 
                 watermarkRect.moveBottomLeft(QPoint(marginW, image().height() + yAdditionalValue - 1 - marginH));
                 break;
+            }
 
             case Private::Center:
-
+            {
                 if ((rotationAngle == DImg::ANGLE::ROT90) || (rotationAngle == DImg::ANGLE::ROT270))
                 {
                     xAdditionalValue += (watermarkRect.width()  - watermarkRect.height()) / 2;
@@ -800,10 +818,11 @@ bool WaterMark::toolOperations()
                 watermarkRect.moveCenter(QPoint((int)(image().width()  / 2 + xAdditionalValue),
                                                 (int)(image().height() / 2 + yAdditionalValue)));
                 break;
+            }
 
-            default :    // BottomRight
-
-                if (rotationAngle == DImg::ANGLE::ROT90 || rotationAngle == DImg::ANGLE::ROT270)
+            default:    // BottomRight
+            {
+                if ((rotationAngle == DImg::ANGLE::ROT90) || (rotationAngle == DImg::ANGLE::ROT270))
                 {
                     xAdditionalValue += watermarkRect.width() - watermarkRect.height();
                     yAdditionalValue += watermarkRect.height() - watermarkRect.width();
@@ -812,6 +831,7 @@ bool WaterMark::toolOperations()
                 watermarkRect.moveBottomRight(QPoint(image().width()  + xAdditionalValue - 1 - marginW,
                                                      image().height() + yAdditionalValue - 1 - marginH));
                 break;
+            }
         }
 
         image().bitBlendImage(composer,
@@ -827,7 +847,7 @@ bool WaterMark::toolOperations()
         float spacingFactor               = (denseRepetition) ? DENSE_SPACING_FACTOR : SPARSE_SPACING_FACTOR;
         spacingFactor                    *= userSparsityFactor;
 
-        if (placementType == Private::SystematicRepetition)
+        if      (placementType == Private::SystematicRepetition)
         {
             if ((rotationAngle == DImg::ANGLE::ROT270) || (rotationAngle == DImg::ANGLE::ROT90))
             {
