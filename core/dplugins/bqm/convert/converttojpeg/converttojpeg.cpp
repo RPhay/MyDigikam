@@ -43,13 +43,18 @@ namespace DigikamBqmConvertToJpegPlugin
 {
 
 ConvertToJPEG::ConvertToJPEG(QObject* const parent)
-    : BatchTool(QLatin1String("ConvertToJPEG"), ConvertTool, parent)
+    : BatchTool(QLatin1String("ConvertToJPEG"), ConvertTool, parent),
+      m_changeSettings(true)
 {
-    m_changeSettings = true;
 }
 
 ConvertToJPEG::~ConvertToJPEG()
 {
+}
+
+BatchTool* ConvertToJPEG::clone(QObject* const parent) const
+{
+    return new ConvertToJPEG(parent);
 }
 
 void ConvertToJPEG::registerSettingsWidget()

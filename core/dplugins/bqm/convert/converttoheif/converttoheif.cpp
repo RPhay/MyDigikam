@@ -43,13 +43,18 @@ namespace DigikamBqmConvertToHeifPlugin
 {
 
 ConvertToHEIF::ConvertToHEIF(QObject* const parent)
-    : BatchTool(QLatin1String("ConvertToHEIF"), ConvertTool, parent)
+    : BatchTool(QLatin1String("ConvertToHEIF"), ConvertTool, parent),
+      m_changeSettings(true)
 {
-    m_changeSettings = true;
 }
 
 ConvertToHEIF::~ConvertToHEIF()
 {
+}
+
+BatchTool* ConvertToHEIF::clone(QObject* const parent) const
+{
+    return new ConvertToHEIF(parent);
 }
 
 void ConvertToHEIF::registerSettingsWidget()

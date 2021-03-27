@@ -45,13 +45,18 @@ namespace DigikamBqmConvertToPngPlugin
 {
 
 ConvertToPNG::ConvertToPNG(QObject* const parent)
-    : BatchTool(QLatin1String("ConvertToPNG"), ConvertTool, parent)
+    : BatchTool(QLatin1String("ConvertToPNG"), ConvertTool, parent),
+      m_changeSettings(true)
 {
-    m_changeSettings = true;
 }
 
 ConvertToPNG::~ConvertToPNG()
 {
+}
+
+BatchTool* ConvertToPNG::clone(QObject* const parent) const
+{
+    return new ConvertToPNG(parent);
 }
 
 void ConvertToPNG::registerSettingsWidget()

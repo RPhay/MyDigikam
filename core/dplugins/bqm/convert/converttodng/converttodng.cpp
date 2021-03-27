@@ -36,13 +36,18 @@ namespace DigikamBqmConvertToDngPlugin
 {
 
 ConvertToDNG::ConvertToDNG(QObject* const parent)
-    : BatchTool(QLatin1String("ConvertToDNG"), ConvertTool, parent)
+    : BatchTool(QLatin1String("ConvertToDNG"), ConvertTool, parent),
+      m_changeSettings(true)
 {
-    m_changeSettings = true;
 }
 
 ConvertToDNG::~ConvertToDNG()
 {
+}
+
+BatchTool* ConvertToDNG::clone(QObject* const parent) const
+{
+    return new ConvertToDNG(parent);
 }
 
 void ConvertToDNG::registerSettingsWidget()
