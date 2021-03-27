@@ -12,4 +12,5 @@ BUGFIXES:
 003 ==> 356065 - Baloo metadata not written out by Album.
 004 ==> 433226 - Crash - searching new entries.
 005 ==> 435021 - Rename does not support both comma and semicolon.
-006 ==> 
+006 ==> 435020 - Check for new version doesn't find updated released version.
+007 ==> 
