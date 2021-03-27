@@ -11,4 +11,5 @@ BUGFIXES:
 002 ==> 434795 - Advanced search seems to notice internal tags.
 003 ==> 356065 - Baloo metadata not written out by Album.
 004 ==> 433226 - Crash - searching new entries.
-005 ==> 
+005 ==> 435021 - Rename does not support both comma and semicolon.
+006 ==> 
