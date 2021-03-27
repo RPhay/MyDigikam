@@ -111,25 +111,6 @@ public:
     bool indexImage(qlonglong imageid, const QImage& image);
     bool indexImage(qlonglong imageid, const DImg& image);
 
-    /**
-     * Searches the database for the best matches for the specified query image.
-     * The numberOfResults best matches are returned.
-     */
-    QList<qlonglong> bestMatchesForImage(qlonglong imageid,
-                                         const QList<int>& targetAlbums,
-                                         int numberOfResults = 20,
-                                         SketchType type = ScannedSketch);
-
-    QList<qlonglong> bestMatchesForImage(const QImage& image,
-                                         const QList<int>& targetAlbums,
-                                         int numberOfResults = 20,
-                                         SketchType type=ScannedSketch);
-
-    QList<qlonglong> bestMatchesForFile(const QString& filename,
-                                        const QList<int>& targetAlbums,
-                                        int numberOfResults = 20,
-                                        SketchType type = ScannedSketch);
-
     QMap<qlonglong, double> bestMatchesForSignature(const QString& signature,
                                                     const QList<int>& targetAlbums,
                                                     int numberOfResults = 20,
@@ -200,16 +181,6 @@ public:
         double requiredPercentage,
         double maximumPercentage,
         DuplicatesSearchRestrictions searchResultRestriction = DuplicatesSearchRestrictions::None,
-        HaarProgressObserver* const observer = nullptr
-    );
-
-    /**
-     * Calls findDuplicates with all images in the given album ids
-     */
-    QMap<double, QMap<qlonglong, QList<qlonglong> > > findDuplicatesInAlbums(
-        const QList<int>& albums2Scan,
-        double requiredPercentage,
-        double maximumPercentage,
         HaarProgressObserver* const observer = nullptr
     );
 

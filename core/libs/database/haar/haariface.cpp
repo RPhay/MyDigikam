@@ -161,37 +161,6 @@ QString HaarIface::signatureAsText(const QImage& image)
     return QString::fromUtf8(array.toBase64());
 }
 
-QList<qlonglong> HaarIface::bestMatchesForImage(const QImage& image,
-                                                const QList<int>& targetAlbums,
-                                                int numberOfResults,
-                                                SketchType type)
-{
-    d->createLoadingBuffer();
-    d->data->fillPixelData(image);
-
-    Haar::Calculator haar;
-    haar.transform(d->data);
-    Haar::SignatureData sig;
-    haar.calcHaar(d->data, &sig);
-
-    return bestMatches(&sig, numberOfResults, targetAlbums, type).values();
-}
-
-QList<qlonglong> HaarIface::bestMatchesForImage(qlonglong imageid,
-                                                const QList<int>& targetAlbums,
-                                                int numberOfResults,
-                                                SketchType type)
-{
-    Haar::SignatureData sig;
-
-    if (!retrieveSignatureFromDB(imageid, &sig))
-    {
-        return QList<qlonglong>();
-    }
-
-    return bestMatches(&sig, numberOfResults, targetAlbums, type).values();
-}
-
 QPair<double, QMap<qlonglong, double> > HaarIface::bestMatchesForImageWithThreshold(const QString& imagePath,
                                                                                     double requiredPercentage,
                                                                                     double maximumPercentage,
@@ -270,21 +239,6 @@ QPair<double, QMap<qlonglong, double> > HaarIface::bestMatchesForImageWithThresh
                                         searchResultRestriction,
                                         type);
     }
-}
-
-QList<qlonglong> HaarIface::bestMatchesForFile(const QString& filename,
-                                               const QList<int>& targetAlbums,
-                                               int numberOfResults,
-                                               SketchType type)
-{
-    QImage image = loadQImage(filename);
-
-    if (image.isNull())
-    {
-        return QList<qlonglong>();
-    }
-
-    return bestMatchesForImage(image, targetAlbums, numberOfResults, type);
 }
 
 QMap<qlonglong,double> HaarIface::bestMatchesForSignature(const QString& signature,
@@ -844,27 +798,6 @@ void HaarIface::rebuildDuplicatesAlbums(const QList<int>& albums2Scan,
             access.db()->addSearch(DatabaseSearch::DuplicatesSearch, it.key(), it.value());
         }
     }
-}
-
-QMap<double, QMap<qlonglong, QList<qlonglong> > > HaarIface::findDuplicatesInAlbums(const QList<int>& albums2Scan,
-                                                                                    double requiredPercentage,
-                                                                                    double maximumPercentage,
-                                                                                    HaarProgressObserver* const observer)
-{
-    QSet<qlonglong> idList;
-
-    // Get all items DB id from all albums and all collections
-
-    foreach (int albumId, albums2Scan)
-    {
-        idList.unite(CoreDbAccess().db()->getItemIDsInAlbum(albumId).toSet());
-    }
-
-    return findDuplicates(idList,
-                          requiredPercentage,
-                          maximumPercentage,
-                          DuplicatesSearchRestrictions::None,
-                          observer);
 }
 
 QMap<double, QMap<qlonglong, QList<qlonglong> > > HaarIface::findDuplicatesInAlbumsAndTags(const QList<int>& albums2Scan,

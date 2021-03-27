@@ -73,19 +73,6 @@ public:
     SearchesDBJobsThread* job;
 };
 
-DuplicatesFinder::DuplicatesFinder(const QList<qlonglong>& imageIds, int minSimilarity, int maxSimilarity,
-                                   int searchResultRestriction, ProgressItem* const parent)
-    : MaintenanceTool(QLatin1String("DuplicatesFinder"), parent),
-      d(new Private)
-{
-    d->minSimilarity            = minSimilarity;
-    d->maxSimilarity            = maxSimilarity;
-
-    d->isAlbumUpdate            = true;
-    d->imageIdList              = imageIds;
-    d->searchResultRestriction  = searchResultRestriction;
-}
-
 DuplicatesFinder::DuplicatesFinder(const AlbumList& albums, const AlbumList& tags, int albumTagRelation,int minSimilarity,
                                    int maxSimilarity, int searchResultRestriction, ProgressItem* const parent)
     : MaintenanceTool(QLatin1String("DuplicatesFinder"), parent),
@@ -104,21 +91,6 @@ DuplicatesFinder::DuplicatesFinder(const AlbumList& albums, const AlbumList& tag
     foreach (Album* const a, tags)
     {
         d->tagsIdList << a->id();
-    }
-}
-
-DuplicatesFinder::DuplicatesFinder(const int minSimilarity, int maxSimilarity,
-                                   int searchResultRestriction, ProgressItem* const parent)
-    : MaintenanceTool(QLatin1String("DuplicatesFinder"), parent),
-      d(new Private)
-{
-    d->minSimilarity            = minSimilarity;
-    d->maxSimilarity            = maxSimilarity;
-    d->searchResultRestriction  = searchResultRestriction;
-
-    foreach (Album* const a, AlbumManager::instance()->allPAlbums())
-    {
-        d->albumsIdList << a->id();
     }
 }
 
