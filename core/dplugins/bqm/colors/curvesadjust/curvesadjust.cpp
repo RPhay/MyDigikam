@@ -58,6 +58,11 @@ CurvesAdjust::~CurvesAdjust()
 {
 }
 
+BatchTool* CurvesAdjust::clone(QObject* const parent) const
+{
+    return new CurvesAdjust(parent);
+}
+
 void CurvesAdjust::registerSettingsWidget()
 {
     DVBox* const vbox          = new DVBox;

@@ -40,13 +40,18 @@ namespace DigikamBqmHSLCorrectionPlugin
 {
 
 HSLCorrection::HSLCorrection(QObject* const parent)
-    : BatchTool(QLatin1String("HSLCorrection"), ColorTool, parent)
+    : BatchTool(QLatin1String("HSLCorrection"), ColorTool, parent),
+      m_settingsView(nullptr)
 {
-    m_settingsView = nullptr;
 }
 
 HSLCorrection::~HSLCorrection()
 {
+}
+
+BatchTool* HSLCorrection::clone(QObject* const parent) const
+{
+    return new HSLCorrection(parent);
 }
 
 void HSLCorrection::registerSettingsWidget()

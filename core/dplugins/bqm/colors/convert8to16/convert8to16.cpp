@@ -44,6 +44,16 @@ Convert8to16::~Convert8to16()
 {
 }
 
+BatchToolSettings Convert8to16::defaultSettings()
+{
+    return BatchToolSettings();
+}
+
+BatchTool* Convert8to16::clone(QObject* const parent) const
+{
+    return new Convert8to16(parent);
+}
+
 bool Convert8to16::toolOperations()
 {
     if (!loadToDImg())

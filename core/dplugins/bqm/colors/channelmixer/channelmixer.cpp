@@ -41,13 +41,18 @@ namespace DigikamBqmChannelMixerPlugin
 {
 
 ChannelMixer::ChannelMixer(QObject* const parent)
-    : BatchTool(QLatin1String("ChannelMixer"), ColorTool, parent)
+    : BatchTool(QLatin1String("ChannelMixer"), ColorTool, parent),
+      m_settingsView(nullptr)
 {
-    m_settingsView = nullptr;
 }
 
 ChannelMixer::~ChannelMixer()
 {
+}
+
+BatchTool* ChannelMixer::clone(QObject* const parent) const
+{
+    return new ChannelMixer(parent);
 }
 
 void ChannelMixer::registerSettingsWidget()

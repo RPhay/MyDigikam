@@ -40,13 +40,18 @@ namespace DigikamBqmWhiteBalancePlugin
 {
 
 WhiteBalance::WhiteBalance(QObject* const parent)
-    : BatchTool(QLatin1String("WhiteBalance"), ColorTool, parent)
+    : BatchTool(QLatin1String("WhiteBalance"), ColorTool, parent),
+      m_settingsView(nullptr)
 {
-    m_settingsView = nullptr;
 }
 
 WhiteBalance::~WhiteBalance()
 {
+}
+
+BatchTool* WhiteBalance::clone(QObject* const parent) const
+{
+    return new WhiteBalance(parent);
 }
 
 void WhiteBalance::registerSettingsWidget()

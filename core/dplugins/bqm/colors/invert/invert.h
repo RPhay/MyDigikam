@@ -42,15 +42,9 @@ public:
     explicit Invert(QObject* const parent = nullptr);
     ~Invert()                                               override;
 
-    BatchToolSettings defaultSettings()                     override
-    {
-        return BatchToolSettings();
-    };
+    BatchToolSettings defaultSettings()                     override;
 
-    BatchTool* clone(QObject* const parent = nullptr) const override
-    {
-        return new Invert(parent);
-    };
+    BatchTool* clone(QObject* const parent = nullptr) const override;
 
 private:
 

@@ -55,6 +55,11 @@ IccConvert::~IccConvert()
 {
 }
 
+BatchTool* IccConvert::clone(QObject* const parent) const
+{
+    return new IccConvert(parent);
+}
+
 void IccConvert::registerSettingsWidget()
 {
     DVBox* const vbox   = new DVBox;

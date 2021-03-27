@@ -48,6 +48,16 @@ Invert::~Invert()
 {
 }
 
+BatchToolSettings Invert::defaultSettings()
+{
+    return BatchToolSettings();
+}
+
+BatchTool* Invert::clone(QObject* const parent) const
+{
+    return new Invert(parent);
+}
+
 bool Invert::toolOperations()
 {
     if (!loadToDImg())
