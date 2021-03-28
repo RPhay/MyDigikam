@@ -41,8 +41,7 @@ public:
     explicit DuplicatesProgressObserver(SearchesJob* const thread);
     ~DuplicatesProgressObserver()       override;
 
-    void totalNumberToScan(int number)  override;
-    void processedNumber(int number)    override;
+    void imageProcessed()               override;
     bool isCanceled()                   override;
 
 private:

@@ -41,14 +41,9 @@ DuplicatesProgressObserver::~DuplicatesProgressObserver()
     m_job = nullptr;
 }
 
-void DuplicatesProgressObserver::totalNumberToScan(int number)
+void DuplicatesProgressObserver::imageProcessed()
 {
-    emit m_job->totalSize(number);
-}
-
-void DuplicatesProgressObserver::processedNumber(int number)
-{
-    emit m_job->processedSize(number);
+    emit m_job->signalImageProcessed();
 }
 
 bool DuplicatesProgressObserver::isCanceled()

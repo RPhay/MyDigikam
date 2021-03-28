@@ -877,17 +877,6 @@ QMap<double, QMap<qlonglong, QList<qlonglong> > > HaarIface::findDuplicates(cons
     QList<qlonglong>                        imageIdList;
     QSet<qlonglong>                         resultsCandidates;
 
-    int                                     total        = 0;
-    int                                     progress     = 0;
-    int                                     progressStep = 20;
-
-    if (observer)
-    {
-        total        = images2Scan.count();
-        progressStep = qMax(progressStep, total / 100);
-        observer->totalNumberToScan(total);
-    }
-
     // create signature cache map for fast lookup
 
     d->setSignatureCacheEnabled(true, images2Scan);
@@ -955,23 +944,10 @@ QMap<double, QMap<qlonglong, QList<qlonglong> > > HaarIface::findDuplicates(cons
             d->signatureCache->remove(*it);
         }
 
-        ++progress;
-
-        if (observer && (progressStep != 0))
+        if (observer)
         {
-            if ((progress == total) ||
-                (remainder((double)progress, (double)progressStep) == 0.0))
-            {
-                observer->processedNumber(progress);
-            }
+            observer->imageProcessed();
         }
-    }
-
-    // make sure the progress bar is really set to 100% when search is finished
-
-    if (observer)
-    {
-        observer->processedNumber(total);
     }
 
     // disable cache

@@ -228,11 +228,11 @@ void SearchesDBJobsThread::searchesListing(const SearchesDBJobInfo& info)
 
     if (info.isDuplicatesJob())
     {
-        connect(j, SIGNAL(totalSize(int)),
-                this, SIGNAL(totalSize(int)));
+        m_processedImages = 0;
+        m_totalImages2Scan = info.imageIds().count();
 
-        connect(j, SIGNAL(processedSize(int)),
-                this, SIGNAL(processedSize(int)));
+        connect(j, &SearchesJob::signalImageProcessed,
+                this, &SearchesDBJobsThread::slotImageProcessed);
     }
     else
     {
@@ -244,6 +244,11 @@ void SearchesDBJobsThread::searchesListing(const SearchesDBJobInfo& info)
     collection.insert(j, 0);
 
     appendJobs(collection);
+}
+
+void SearchesDBJobsThread::slotImageProcessed()
+{
+    emit signalProgress((++m_processedImages * 100) / m_totalImages2Scan);
 }
 
 } // namespace Digikam

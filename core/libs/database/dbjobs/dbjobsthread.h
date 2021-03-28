@@ -171,10 +171,17 @@ public:
      */
     void searchesListing(const SearchesDBJobInfo& info);
 
+public Q_SLOTS:
+
+    void slotImageProcessed();
+
 Q_SIGNALS:
 
-    void processedSize(int number);
-    void totalSize(int number);
+    void signalProgress(int percentage);
+
+private:
+    int m_processedImages;
+    int m_totalImages2Scan;
 };
 
 // ---------------------------------------------

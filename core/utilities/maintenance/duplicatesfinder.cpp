@@ -121,25 +121,16 @@ void DuplicatesFinder::slotStart()
     connect(d->job, SIGNAL(finished()),
             this, SLOT(slotDone()));
 
-    connect(d->job, SIGNAL(totalSize(int)),
-            this, SLOT(slotDuplicatesSearchTotalAmount(int)));
-
-    connect(d->job, SIGNAL(processedSize(int)),
-            this, SLOT(slotDuplicatesSearchProcessedAmount(int)));
+    connect(d->job, SIGNAL(signalProgress(int)),
+            this, SLOT(slotDuplicatesProgress(int)));
 
     connect(this, SIGNAL(progressItemCanceled(ProgressItem*)),
             this, SIGNAL(signalComplete()));
 }
 
-void DuplicatesFinder::slotDuplicatesSearchTotalAmount(int amount)
+void DuplicatesFinder::slotDuplicatesProgress(int percentage)
 {
-    setTotalItems(amount);
-}
-
-void DuplicatesFinder::slotDuplicatesSearchProcessedAmount(int amount)
-{
-    setCompletedItems(amount);
-    updateProgress();
+    setProgress(percentage);
 }
 
 void DuplicatesFinder::slotDone()

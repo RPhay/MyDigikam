@@ -189,8 +189,7 @@ public:
 
 Q_SIGNALS:
 
-    void processedSize(int);
-    void totalSize(int);
+    void signalImageProcessed();
 
 protected:
 
