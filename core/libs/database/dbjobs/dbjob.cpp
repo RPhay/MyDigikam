@@ -295,6 +295,18 @@ SearchesJob::SearchesJob(const SearchesDBJobInfo& jobInfo)
 {
 }
 
+SearchesJob::SearchesJob(const SearchesDBJobInfo& jobInfo,
+                         const QSet<qlonglong>::const_iterator& begin,
+                         const QSet<qlonglong>::const_iterator& end,
+                         HaarIface* iface)
+    : DBJob    (),
+      m_jobInfo(jobInfo),
+      m_begin(begin),
+      m_end(end),
+      m_iface(iface)
+{
+}
+
 SearchesJob::~SearchesJob()
 {
 }
@@ -358,25 +370,24 @@ void SearchesJob::runFindDuplicates()
         return;
     }
 
-    if (m_jobInfo.minThreshold() == 0)
-    {
-        m_jobInfo.setMinThreshold(0.4);
-    }
-
     DuplicatesProgressObserver observer(this);
 
-    // Rebuild the duplicate albums
+    if (!m_iface)
+    {
+        qCDebug(DIGIKAM_DBJOB_LOG) << "Invalid HaarIface pointer";
+        return;
+    }
 
-    HaarIface iface;
+    auto restriction = static_cast<HaarIface::DuplicatesSearchRestrictions>(m_jobInfo.searchResultRestriction());
+    auto results = m_iface->findDuplicates(m_jobInfo.imageIds(),
+                                           m_begin,
+                                           m_end,
+                                           m_jobInfo.minThreshold(),
+                                           m_jobInfo.maxThreshold(),
+                                           restriction,
+                                           &observer);
 
-    iface.rebuildDuplicatesAlbums(m_jobInfo.imageIds().toList(),
-                                  m_jobInfo.isAlbumUpdate(),
-                                  m_jobInfo.minThreshold(),
-                                  m_jobInfo.maxThreshold(),
-                                  static_cast<HaarIface::DuplicatesSearchRestrictions>(m_jobInfo.searchResultRestriction()),
-                                  &observer);
-
-    emit signalDone();
+    emit signalDuplicatesResults(results);
 }
 
 bool SearchesJob::isCanceled() const

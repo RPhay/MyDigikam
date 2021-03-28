@@ -27,12 +27,21 @@
 
 #include "haariface_p.h"
 
+#include <functional>
+
 namespace Digikam
 {
 
 HaarIface::HaarIface()
     : d(new Private())
 {
+    qRegisterMetaType<DuplicatesResultsMap>("HaarIface::DuplicatesResultsMap");
+}
+
+HaarIface::HaarIface(const QSet<qlonglong>& images2Scan)
+    : HaarIface()
+{
+    d->rebuildSignatureCache(images2Scan);
 }
 
 HaarIface::~HaarIface()
@@ -636,20 +645,8 @@ QMap<QString, QString> HaarIface::writeSAlbumQueries(const DuplicatesResultsMap&
     return queries;
 }
 
-void HaarIface::rebuildDuplicatesAlbums(const QList<qlonglong>& imageIds,
-                                        bool isAlbumUpdate,
-                                        double requiredPercentage,
-                                        double maximumPercentage,
-                                        DuplicatesSearchRestrictions
-                                            searchResultRestriction,
-                                        HaarProgressObserver* const observer)
+void HaarIface::rebuildDuplicatesAlbums(const DuplicatesResultsMap& results, bool isAlbumUpdate)
 {
-    DuplicatesResultsMap results = findDuplicates(imageIds.toSet(),
-                                                  requiredPercentage,
-                                                  maximumPercentage,
-                                                  searchResultRestriction,
-                                                  observer);
-
     // Build search XML from the results. Store list of ids of similar images.
 
     QMap<QString, QString> queries = writeSAlbumQueries(results);
@@ -774,17 +771,21 @@ QSet<qlonglong> HaarIface::imagesFromAlbumsAndTags(const QList<int>& albums2Scan
 }
 
 HaarIface::DuplicatesResultsMap HaarIface::findDuplicates(const QSet<qlonglong>& images2Scan,
+                                                          const QSet<qlonglong>::const_iterator& rangeBegin,
+                                                          const QSet<qlonglong>::const_iterator& rangeEnd,
                                                           double requiredPercentage,
                                                           double maximumPercentage,
                                                           DuplicatesSearchRestrictions searchResultRestriction,
                                                           HaarProgressObserver* const observer)
 {
-    DuplicatesResultsMap resultsMap;
-    DuplicatesResultsMap::iterator similarity_it;
+    DuplicatesResultsMap                    resultsMap;
+    DuplicatesResultsMap::iterator          similarity_it;
     QSet<qlonglong>::const_iterator         it;
     QPair<double, QMap<qlonglong, double> > bestMatches;
     QList<qlonglong>                        imageIdList;
     QSet<qlonglong>                         resultsCandidates;
+    const bool                              singleThread = rangeBegin == images2Scan.cbegin() &&
+                                                           rangeEnd == images2Scan.cend();
 
     // create signature cache map for fast lookup
 
@@ -793,7 +794,7 @@ HaarIface::DuplicatesResultsMap HaarIface::findDuplicates(const QSet<qlonglong>&
         d->rebuildSignatureCache(images2Scan);
     }
 
-    for (it = images2Scan.constBegin() ; it != images2Scan.constEnd() ; ++it)
+    for (it = rangeBegin; it != rangeEnd ; ++it)
     {
         if (observer && observer->isCanceled())
         {
@@ -851,7 +852,7 @@ HaarIface::DuplicatesResultsMap HaarIface::findDuplicates(const QSet<qlonglong>&
         // from the cached signature map as well,
         // to greatly improve speed
 
-        if (!resultsCandidates.contains(*it))
+        if (singleThread && !resultsCandidates.contains(*it))
         {
             d->signatureCache()->remove(*it);
         }

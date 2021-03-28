@@ -30,6 +30,7 @@
 
 // Qt includes
 
+#include <QSet>
 #include <QString>
 #include <QMap>
 #include <QList>
@@ -99,6 +100,7 @@ public:
 public:
 
     explicit HaarIface();
+    HaarIface(const QSet<qlonglong>& images2Scan);
     ~HaarIface();
 
     static int preferredSize();
@@ -179,6 +181,8 @@ public:
      */
     DuplicatesResultsMap findDuplicates(
         const QSet<qlonglong>& images2Scan,
+        const QSet<qlonglong>::const_iterator& rangeBegin,
+        const QSet<qlonglong>::const_iterator& rangeEnd,
         double requiredPercentage,
         double maximumPercentage,
         DuplicatesSearchRestrictions searchResultRestriction = DuplicatesSearchRestrictions::None,
@@ -193,20 +197,10 @@ public:
                                                    AlbumTagRelation relation);
 
     /**
-     * This method rebuilds the given SAlbums by searching duplicates and replacing the SAlbums by the updated versions.
-     * @param imageIds The set of images to scan for duplicates.
-     * @param requiredPercentage The minimum similarity for duplicate recognition.
-     * @param maximumPercentage The maximum similarity for duplicate recognition.
-     * @param observer The progress observer.
+     * This method rebuilds the given SAlbums using the given results.
+     * @param results Map of duplicates images found over a list of images.
      */
-    void rebuildDuplicatesAlbums(
-        const QList<qlonglong>& imageIds,
-        bool isAlbumUpdate,
-        double requiredPercentage,
-        double maximumPercentage,
-        DuplicatesSearchRestrictions searchResultRestriction = DuplicatesSearchRestrictions::None,
-        HaarProgressObserver* const observer = nullptr
-    );
+    static void rebuildDuplicatesAlbums(const DuplicatesResultsMap& results, bool isAlbumUpdate);
 
     /**
      * Retrieve the Haar signature from database using image id.
@@ -236,7 +230,7 @@ private:
      * This method writes the search results to the SearchXml structure.
      * @param searchResults The results to write as XML.
      */
-    QMap<QString, QString> writeSAlbumQueries(const DuplicatesResultsMap& searchResults);
+    static QMap<QString, QString> writeSAlbumQueries(const DuplicatesResultsMap& searchResults);
 
     QMultiMap<double, qlonglong> bestMatches(Haar::SignatureData* const data,
                                              int numberOfResults,

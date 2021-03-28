@@ -222,26 +222,51 @@ SearchesDBJobsThread::~SearchesDBJobsThread()
 
 void SearchesDBJobsThread::searchesListing(const SearchesDBJobInfo& info)
 {
-    SearchesJob* const j = new SearchesJob(info);
-
-    connectFinishAndErrorSignals(j);
+    ActionJobCollection collection;
 
     if (info.isDuplicatesJob())
     {
+        m_results.clear();
+        m_haarIface.reset(new HaarIface(info.imageIds()));
+        m_isAlbumUpdate = info.isAlbumUpdate();
         m_processedImages = 0;
         m_totalImages2Scan = info.imageIds().count();
 
-        connect(j, &SearchesJob::signalImageProcessed,
-                this, &SearchesDBJobsThread::slotImageProcessed);
+        const int threadsCount = m_totalImages2Scan < 200 ? 1 : qMax(1, maximumNumberOfThreads());
+        const int images2ScanPerThread = m_totalImages2Scan / threadsCount;
+
+        QSet<qlonglong>::const_iterator begin = info.imageIds().cbegin();
+        QSet<qlonglong>::const_iterator end;
+
+        for (int i = 0; i < threadsCount; ++i)
+        {
+            // The last thread should read until the end of the list.
+
+            end = (i == threadsCount - 1) ? info.imageIds().cend() : begin + images2ScanPerThread;
+
+            SearchesJob *const job = new SearchesJob(info, begin, end, m_haarIface.get());
+
+            begin = end;
+
+            connect(job, &SearchesJob::signalDuplicatesResults,
+                    this, &SearchesDBJobsThread::slotDuplicatesResults);
+
+            connect(job, &SearchesJob::signalImageProcessed,
+                    this, &SearchesDBJobsThread::slotImageProcessed);
+
+            collection.insert(job, 0);
+        }
     }
     else
     {
-        connect(j, SIGNAL(data(QList<ItemListerRecord>)),
-                this, SIGNAL(data(QList<ItemListerRecord>)));
-    }
+        SearchesJob* const job = new SearchesJob(info);
+        connectFinishAndErrorSignals(job);
 
-    ActionJobCollection collection;
-    collection.insert(j, 0);
+        connect(job, SIGNAL(data(QList<ItemListerRecord>)),
+                this, SIGNAL(data(QList<ItemListerRecord>)));
+
+        collection.insert(job, 0);
+    }
 
     appendJobs(collection);
 }
@@ -249,6 +274,46 @@ void SearchesDBJobsThread::searchesListing(const SearchesDBJobInfo& info)
 void SearchesDBJobsThread::slotImageProcessed()
 {
     emit signalProgress((++m_processedImages * 100) / m_totalImages2Scan);
+}
+
+void SearchesDBJobsThread::slotDuplicatesResults(const HaarIface::DuplicatesResultsMap& incoming)
+{
+    auto containsImage = [&](qlonglong imageId) -> bool {
+        for (const auto searchAlbum : m_results.values())
+        {
+            for (const auto imagesList : searchAlbum.values())
+            {
+                if (imagesList.contains(imageId))
+                {
+                    return true;
+                }
+            }
+        }
+        return false;
+    };
+
+    for (const auto score : incoming.keys())
+    {
+        for (const auto searchAlbum : incoming.values(score))
+        {
+            for (const auto imageKey : searchAlbum.keys())
+            {
+                if (!containsImage(imageKey))
+                {
+                    m_results.insert(score, searchAlbum);
+                }
+            }
+        }
+    }
+
+    if (m_processedImages != m_totalImages2Scan)
+    {
+        return;
+    }
+
+    HaarIface::rebuildDuplicatesAlbums(m_results, m_isAlbumUpdate);
+
+    emit finished();
 }
 
 } // namespace Digikam

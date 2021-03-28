@@ -174,14 +174,18 @@ public:
 public Q_SLOTS:
 
     void slotImageProcessed();
+    void slotDuplicatesResults(const HaarIface::DuplicatesResultsMap&);
 
 Q_SIGNALS:
 
     void signalProgress(int percentage);
 
 private:
-    int m_processedImages;
-    int m_totalImages2Scan;
+    HaarIface::DuplicatesResultsMap m_results;
+    QScopedPointer<HaarIface>       m_haarIface;
+    bool                            m_isAlbumUpdate;
+    int                             m_processedImages;
+    int                             m_totalImages2Scan;
 };
 
 // ---------------------------------------------
