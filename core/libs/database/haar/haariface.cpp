@@ -682,8 +682,7 @@ void HaarIface::getBestAndWorstPossibleScore(Haar::SignatureData* const sig,
 }
 
 
-QMap<QString, QString> HaarIface::writeSAlbumQueries(const QMap<double,
-                                                     QMap<qlonglong, QList<qlonglong> > >& searchResults)
+QMap<QString, QString> HaarIface::writeSAlbumQueries(const DuplicatesResultsMap& searchResults)
 {
     // Build search XML from the results. Store list of ids of similar images.
 
@@ -691,7 +690,7 @@ QMap<QString, QString> HaarIface::writeSAlbumQueries(const QMap<double,
 
     // Iterate over the similarity
 
-    for (QMap<double, QMap<qlonglong, QList<qlonglong> > >::const_iterator similarity_it = searchResults.constBegin() ;
+    for (DuplicatesResultsMap::const_iterator similarity_it = searchResults.constBegin() ;
          similarity_it != searchResults.constEnd() ; ++similarity_it)
     {
         double similarity                                    = similarity_it.key() * 100;
@@ -733,11 +732,11 @@ void HaarIface::rebuildDuplicatesAlbums(const QList<qlonglong>& imageIds,
                                             searchResultRestriction,
                                         HaarProgressObserver* const observer)
 {
-    QMap<double, QMap<qlonglong, QList<qlonglong> > > results = findDuplicates(imageIds.toSet(),
-                                                                               requiredPercentage,
-                                                                               maximumPercentage,
-                                                                               searchResultRestriction,
-                                                                               observer);
+    DuplicatesResultsMap results = findDuplicates(imageIds.toSet(),
+                                                  requiredPercentage,
+                                                  maximumPercentage,
+                                                  searchResultRestriction,
+                                                  observer);
 
     // Build search XML from the results. Store list of ids of similar images.
 
@@ -863,15 +862,14 @@ QSet<qlonglong> HaarIface::imagesFromAlbumsAndTags(const QList<int>& albums2Scan
     return images;
 }
 
-QMap<double, QMap<qlonglong, QList<qlonglong> > > HaarIface::findDuplicates(const QSet<qlonglong>& images2Scan,
-                                                                            double requiredPercentage,
-                                                                            double maximumPercentage,
-                                                                            DuplicatesSearchRestrictions
-                                                                                searchResultRestriction,
-                                                                            HaarProgressObserver* const observer)
+HaarIface::DuplicatesResultsMap HaarIface::findDuplicates(const QSet<qlonglong>& images2Scan,
+                                                          double requiredPercentage,
+                                                          double maximumPercentage,
+                                                          DuplicatesSearchRestrictions searchResultRestriction,
+                                                          HaarProgressObserver* const observer)
 {
-    QMap<double, QMap<qlonglong, QList<qlonglong> > > resultsMap;
-    QMap<double, QMap<qlonglong, QList<qlonglong> > >::iterator similarity_it;
+    DuplicatesResultsMap resultsMap;
+    DuplicatesResultsMap::iterator similarity_it;
     QSet<qlonglong>::const_iterator         it;
     QPair<double, QMap<qlonglong, double> > bestMatches;
     QList<qlonglong>                        imageIdList;

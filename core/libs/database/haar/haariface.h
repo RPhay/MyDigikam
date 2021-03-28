@@ -94,6 +94,8 @@ public:
         TagExclusive    = 4
     };
 
+    using DuplicatesResultsMap = QMultiMap<double, QMap<qlonglong, QList<qlonglong> > >;
+
 public:
 
     explicit HaarIface();
@@ -170,12 +172,12 @@ public:
                                       double* const highestAndWorstScore);
 
     /**
-     * Fill a map of duplicates images found over a list of image to scan.
+     * Fill a map of duplicates images found over a list of images to scan.
      * For each map item, the result values is list of candidate images which are duplicates of the key image.
      * All images are referenced by id from database.
      * The threshold is in the range 0..1, with 1 meaning identical signature.
      */
-    QMap<double, QMap<qlonglong, QList<qlonglong> > > findDuplicates(
+    DuplicatesResultsMap findDuplicates(
         const QSet<qlonglong>& images2Scan,
         double requiredPercentage,
         double maximumPercentage,
@@ -234,7 +236,7 @@ private:
      * This method writes the search results to the SearchXml structure.
      * @param searchResults The results to write as XML.
      */
-    QMap<QString, QString> writeSAlbumQueries(const QMap<double, QMap<qlonglong, QList<qlonglong> > >& searchResults);
+    QMap<QString, QString> writeSAlbumQueries(const DuplicatesResultsMap& searchResults);
 
     QMultiMap<double, qlonglong> bestMatches(Haar::SignatureData* const data,
                                              int numberOfResults,
