@@ -204,6 +204,9 @@ private:
 
     // Disable
     SearchesJob(QObject*);
+
+    void runSearches();
+    void runFindDuplicates();
 };
 
 } // namespace Digikam

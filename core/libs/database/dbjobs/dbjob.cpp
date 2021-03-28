@@ -301,75 +301,80 @@ SearchesJob::~SearchesJob()
 
 void SearchesJob::run()
 {
-    if (!m_jobInfo.isDuplicatesJob())
+    m_jobInfo.isDuplicatesJob() ? runFindDuplicates() : runSearches();
+}
+
+void SearchesJob::runSearches()
+{
+    QList<SearchInfo> infos;
+
+    foreach (int id, m_jobInfo.searchIds())
     {
-        QList<SearchInfo> infos;
+        infos << CoreDbAccess().db()->getSearchInfo(id);
+    }
 
-        foreach (int id, m_jobInfo.searchIds())
+    ItemLister lister;
+    lister.setListOnlyAvailable(m_jobInfo.isListAvailableImagesOnly());
+
+    // Send data every 200 images to be more responsive
+
+    ItemListerJobPartsSendingReceiver receiver(this, 200);
+
+    foreach (const SearchInfo &info, infos)
+    {
+        if (info.type == DatabaseSearch::HaarSearch)
         {
-            infos << CoreDbAccess().db()->getSearchInfo(id);
+            lister.listHaarSearch(&receiver, info.query);
         }
-
-        ItemLister lister;
-        lister.setListOnlyAvailable(m_jobInfo.isListAvailableImagesOnly());
-
-        // Send data every 200 images to be more responsive
-
-        ItemListerJobPartsSendingReceiver receiver(this, 200);
-
-        foreach (const SearchInfo& info, infos)
+        else
         {
-            if (info.type == DatabaseSearch::HaarSearch)
+            bool ok;
+            qlonglong referenceImageId = info.name.toLongLong(&ok);
+
+            if (ok)
             {
-                lister.listHaarSearch(&receiver, info.query);
+                lister.listSearch(&receiver, info.query, 0, referenceImageId);
             }
             else
             {
-                bool ok;
-                qlonglong referenceImageId = info.name.toLongLong(&ok);
-
-                if (ok)
-                {
-                    lister.listSearch(&receiver, info.query, 0, referenceImageId);
-                }
-                else
-                {
-                    lister.listSearch(&receiver, info.query, 0, -1);
-                }
-            }
-
-            if (!receiver.hasError)
-            {
-                receiver.sendData();
+                lister.listSearch(&receiver, info.query, 0, -1);
             }
         }
+
+        if (!receiver.hasError)
+        {
+            receiver.sendData();
+        }
     }
-    else
+
+    emit signalDone();
+}
+
+void SearchesJob::runFindDuplicates()
+{
+    if (m_jobInfo.imageIds().isEmpty())
     {
-        if (m_jobInfo.imageIds().isEmpty())
-        {
-            qCDebug(DIGIKAM_DBJOB_LOG) << "No image ids passed for duplicates search";
-            return;
-        }
-
-        if (m_jobInfo.minThreshold() == 0)
-        {
-            m_jobInfo.setMinThreshold(0.4);
-        }
-
-        DuplicatesProgressObserver observer(this);
-
-        // Rebuild the duplicate albums
-
-        HaarIface iface;
-
-        iface.rebuildDuplicatesAlbums(m_jobInfo.imageIds().toList(),
-                                      m_jobInfo.isAlbumUpdate(),
-                                      m_jobInfo.minThreshold(),
-                                      m_jobInfo.maxThreshold(),
-                                      static_cast<HaarIface::DuplicatesSearchRestrictions>(m_jobInfo.searchResultRestriction()),
-                                      &observer);
+        qCDebug(DIGIKAM_DBJOB_LOG) << "No image ids passed for duplicates search";
+        return;
     }
+
+    if (m_jobInfo.minThreshold() == 0)
+    {
+        m_jobInfo.setMinThreshold(0.4);
+    }
+
+    DuplicatesProgressObserver observer(this);
+
+    // Rebuild the duplicate albums
+
+    HaarIface iface;
+
+    iface.rebuildDuplicatesAlbums(m_jobInfo.imageIds().toList(),
+                                  m_jobInfo.isAlbumUpdate(),
+                                  m_jobInfo.minThreshold(),
+                                  m_jobInfo.maxThreshold(),
+                                  static_cast<HaarIface::DuplicatesSearchRestrictions>(m_jobInfo.searchResultRestriction()),
+                                  &observer);
 
     emit signalDone();
 }
