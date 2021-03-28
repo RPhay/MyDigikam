@@ -48,13 +48,18 @@ namespace DigikamBqmSharpenPlugin
 {
 
 Sharpen::Sharpen(QObject* const parent)
-    : BatchTool(QLatin1String("Sharpen"), EnhanceTool, parent)
+    : BatchTool(QLatin1String("Sharpen"), EnhanceTool, parent),
+      m_settingsView(nullptr)
 {
-    m_settingsView = nullptr;
 }
 
 Sharpen::~Sharpen()
 {
+}
+
+BatchTool* Sharpen::clone(QObject* const parent) const
+{
+    return new Sharpen(parent);
 }
 
 void Sharpen::registerSettingsWidget()
@@ -74,24 +79,30 @@ BatchToolSettings Sharpen::defaultSettings()
     SharpContainer defaultPrm = m_settingsView->defaultSettings();
 
     // sharpen method
+
     settings.insert(QLatin1String("SharpenFilterType"),    (int)defaultPrm.method);
 
     // simple sharp
+
     settings.insert(QLatin1String("SimpleSharpRadius"),    (int)defaultPrm.ssRadius);
 
     // unsharp mask
+
     settings.insert(QLatin1String("UnsharpMaskRadius"),    (double)defaultPrm.umRadius);
     settings.insert(QLatin1String("UnsharpMaskAmount"),    (double)defaultPrm.umAmount);
     settings.insert(QLatin1String("UnsharpMaskThreshold"), (double)defaultPrm.umThreshold);
     settings.insert(QLatin1String("UnsharpMaskLuma"),      (bool)defaultPrm.umLumaOnly);
 
 #ifdef HAVE_EIGEN3
+
     // refocus
+
     settings.insert(QLatin1String("RefocusRadius"),        (double)defaultPrm.rfRadius);
     settings.insert(QLatin1String("RefocusCorrelation"),   (double)defaultPrm.rfCorrelation);
     settings.insert(QLatin1String("RefocusNoise"),         (double)defaultPrm.rfNoise);
     settings.insert(QLatin1String("RefocusGauss"),         (double)defaultPrm.rfGauss);
     settings.insert(QLatin1String("RefocusMatrixSize"),    (int)defaultPrm.rfMatrix);
+
 #endif // HAVE_EIGEN3
 
     return settings;
@@ -102,24 +113,30 @@ void Sharpen::slotAssignSettings2Widget()
     SharpContainer prm;
 
     // sharpen method
+
     prm.method        = settings()[QLatin1String("SharpenFilterType")].toInt();
 
     // simple sharp
+
     prm.ssRadius      = settings()[QLatin1String("SimpleSharpRadius")].toInt();
 
     // unsharp mask
+
     prm.umRadius      = settings()[QLatin1String("UnsharpMaskRadius")].toDouble();
     prm.umAmount      = settings()[QLatin1String("UnsharpMaskAmount")].toDouble();
     prm.umThreshold   = settings()[QLatin1String("UnsharpMaskThreshold")].toDouble();
     prm.umLumaOnly    = settings()[QLatin1String("UnsharpMaskLuma")].toBool();
 
 #ifdef HAVE_EIGEN3
+
     // refocus
+
     prm.rfRadius      = settings()[QLatin1String("RefocusRadius")].toDouble();
     prm.rfCorrelation = settings()[QLatin1String("RefocusCorrelation")].toDouble();
     prm.rfNoise       = settings()[QLatin1String("RefocusNoise")].toDouble();
     prm.rfGauss       = settings()[QLatin1String("RefocusGauss")].toDouble();
     prm.rfMatrix      = settings()[QLatin1String("RefocusMatrixSize")].toInt();
+
 #endif // HAVE_EIGEN3
 
     m_settingsView->setSettings(prm);
@@ -131,24 +148,30 @@ void Sharpen::slotSettingsChanged()
     SharpContainer prm = m_settingsView->settings();
 
     // sharpen method
+
     settings.insert(QLatin1String("SharpenFilterType"),    (int)prm.method);
 
     // simple sharp
+
     settings.insert(QLatin1String("SimpleSharpRadius"),    (int)prm.ssRadius);
 
     // unsharp mask
+
     settings.insert(QLatin1String("UnsharpMaskRadius"),    (double)prm.umRadius);
     settings.insert(QLatin1String("UnsharpMaskAmount"),    (double)prm.umAmount);
     settings.insert(QLatin1String("UnsharpMaskThreshold"), (double)prm.umThreshold);
     settings.insert(QLatin1String("UnsharpMaskLuma"),      (bool)prm.umLumaOnly);
 
 #ifdef HAVE_EIGEN3
+
     // refocus
+
     settings.insert(QLatin1String("RefocusRadius"),        (double)prm.rfRadius);
     settings.insert(QLatin1String("RefocusCorrelation"),   (double)prm.rfCorrelation);
     settings.insert(QLatin1String("RefocusNoise"),         (double)prm.rfNoise);
     settings.insert(QLatin1String("RefocusGauss"),         (double)prm.rfGauss);
     settings.insert(QLatin1String("RefocusMatrixSize"),    (int)prm.rfMatrix);
+
 #endif // HAVE_EIGEN3
 
     BatchTool::slotSettingsChanged(settings);
@@ -186,7 +209,7 @@ bool Sharpen::toolOperations()
 
         case SharpContainer::UnsharpMask:
         {
-            double r     = settings()[QLatin1String("UnsharpMaskRadius")].toDouble();
+            double r  = settings()[QLatin1String("UnsharpMaskRadius")].toDouble();
             double a  = settings()[QLatin1String("UnsharpMaskAmount")].toDouble();
             double th = settings()[QLatin1String("UnsharpMaskThreshold")].toDouble();
             bool    l = settings()[QLatin1String("UnsharpMaskLuma")].toBool();
@@ -198,7 +221,9 @@ bool Sharpen::toolOperations()
 
         case SharpContainer::Refocus:
         {
+
 #ifdef HAVE_EIGEN3
+
             double radius      = settings()[QLatin1String("RefocusRadius")].toDouble();
             double correlation = settings()[QLatin1String("RefocusCorrelation")].toDouble();
             double noise       = settings()[QLatin1String("RefocusNoise")].toDouble();
@@ -207,7 +232,9 @@ bool Sharpen::toolOperations()
 
             RefocusFilter filter(&image(), nullptr, matrixSize, radius, gauss, correlation, noise);
             applyFilter(&filter);
+
 #endif // HAVE_EIGEN3
+
             break;
         }
     }

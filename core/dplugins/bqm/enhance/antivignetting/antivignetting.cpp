@@ -50,6 +50,11 @@ AntiVignetting::~AntiVignetting()
 {
 }
 
+BatchTool* AntiVignetting::clone(QObject* const parent) const
+{
+    return new AntiVignetting(parent);
+}
+
 void AntiVignetting::registerSettingsWidget()
 {
     m_settingsWidget = new QWidget;

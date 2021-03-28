@@ -45,7 +45,7 @@ namespace Digikam
 
 Restoration::Restoration(QObject* const parent)
     : BatchTool(QLatin1String("Restoration"), EnhanceTool, parent),
-      m_comboBox(nullptr),
+      m_comboBox (nullptr),
       m_cimgIface(nullptr)
 {
 }
@@ -54,9 +54,14 @@ Restoration::~Restoration()
 {
 }
 
+BatchTool* Restoration::clone(QObject* const parent) const
+{
+    return new Restoration(parent);
+}
+
 void Restoration::registerSettingsWidget()
 {
-    DVBox* const vbox = new DVBox;
+    DVBox* const vbox                 = new DVBox;
 
     DActiveLabel* const cimgLogoLabel = new DActiveLabel(QUrl(QLatin1String("http://cimg.sourceforge.net")),    // krazy:exclude=insecurenet
                                                          QStandardPaths::locate(QStandardPaths::GenericDataLocation, QLatin1String("digikam/data/logo-cimg.png")),
@@ -78,7 +83,7 @@ void Restoration::registerSettingsWidget()
     QLabel* const space = new QLabel(vbox);
     vbox->setStretchFactor(space, 10);
 
-    m_settingsWidget = vbox;
+    m_settingsWidget    = vbox;
 
     connect(m_comboBox, SIGNAL(activated(int)),
             this, SLOT(slotSettingsChanged()));
@@ -90,6 +95,7 @@ BatchToolSettings Restoration::defaultSettings()
 {
     BatchToolSettings settings;
     settings.insert(QLatin1String("RestorationMethod"), ReduceUniformNoise);
+
     return settings;
 }
 

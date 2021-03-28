@@ -50,6 +50,11 @@ LocalContrast::~LocalContrast()
 {
 }
 
+BatchTool* LocalContrast::clone(QObject* const parent) const
+{
+    return new LocalContrast(parent);
+}
+
 void LocalContrast::registerSettingsWidget()
 {
     m_settingsWidget = new QWidget;

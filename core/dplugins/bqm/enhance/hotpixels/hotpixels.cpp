@@ -51,6 +51,11 @@ HotPixels::~HotPixels()
 {
 }
 
+BatchTool* HotPixels::clone(QObject* const parent) const
+{
+    return new HotPixels(parent);
+}
+
 void HotPixels::registerSettingsWidget()
 {
     m_settingsWidget = new QWidget;

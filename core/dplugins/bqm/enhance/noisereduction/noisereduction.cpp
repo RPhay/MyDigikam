@@ -50,6 +50,11 @@ NoiseReduction::~NoiseReduction()
 {
 }
 
+BatchTool* NoiseReduction::clone(QObject* const parent) const
+{
+    return new NoiseReduction(parent);
+}
+
 void NoiseReduction::registerSettingsWidget()
 {
     m_settingsWidget = new QWidget;

@@ -53,7 +53,7 @@ class Q_DECL_HIDDEN LensAutoFix::Private
 public:
 
     explicit Private()
-        : settingsView(nullptr),
+        : settingsView  (nullptr),
           cameraSelector(nullptr),
           changeSettings(true)
     {
@@ -67,7 +67,7 @@ public:
 
 LensAutoFix::LensAutoFix(QObject* const parent)
     : BatchTool(QLatin1String("LensAutoFix"), EnhanceTool, parent),
-      d(new Private)
+      d        (new Private)
 {
     setToolTitle(i18n("Lens Auto-Correction"));
     setToolDescription(i18n("Fix automatically lens distortions"));
@@ -79,9 +79,14 @@ LensAutoFix::~LensAutoFix()
     delete d;
 }
 
+BatchTool* LensAutoFix::clone(QObject* const parent) const
+{
+    return new LensAutoFix(parent);
+}
+
 void LensAutoFix::registerSettingsWidget()
 {
-    const int spacing = QApplication::style()->pixelMetric(QStyle::PM_DefaultLayoutSpacing);
+    const int spacing  = QApplication::style()->pixelMetric(QStyle::PM_DefaultLayoutSpacing);
 
     m_settingsWidget   = new QWidget;
     QLabel* const note = new QLabel(i18n("<b>Use Metadata</b> option will parse images' information at "
