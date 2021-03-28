@@ -193,21 +193,26 @@ qreal GPSDBJobInfo::lng2() const
 
 // ---------------------------------------------
 
-SearchesDBJobInfo::SearchesDBJobInfo()
+SearchesDBJobInfo::SearchesDBJobInfo(QList<int>&& searchIds)
     : DBJobInfo                 (),
       m_duplicates              (false),
       m_albumUpdate             (false),
-      m_albumTagRelation        (0),
       m_searchResultRestriction (0),
-      m_searchIds               (QList<int>()),
-      m_minThreshold            (0),
+      m_searchIds               (std::move(searchIds)),
+      m_minThreshold            (0.4),
       m_maxThreshold            (1)
 {
 }
 
-void SearchesDBJobInfo::setDuplicatesJob()
+SearchesDBJobInfo::SearchesDBJobInfo(QSet<qlonglong>&& imageIds, bool isAlbumUpdate)
+    : DBJobInfo                 (),
+      m_duplicates              (true),
+      m_albumUpdate             (isAlbumUpdate),
+      m_searchResultRestriction (0),
+      m_imageIds                (std::move(imageIds)),
+      m_minThreshold            (0.4),
+      m_maxThreshold            (1)
 {
-    m_duplicates = true;
 }
 
 bool SearchesDBJobInfo::isDuplicatesJob() const
@@ -215,24 +220,9 @@ bool SearchesDBJobInfo::isDuplicatesJob() const
     return m_duplicates;
 }
 
-void SearchesDBJobInfo::setAlbumUpdate()
-{
-    m_albumUpdate = true;
-}
-
 bool SearchesDBJobInfo::isAlbumUpdate() const
 {
     return m_albumUpdate;
-}
-
-void SearchesDBJobInfo::setAlbumTagRelation(int type)
-{
-    m_albumTagRelation = type;
-}
-
-int SearchesDBJobInfo::albumTagRelation() const
-{
-    return m_albumTagRelation;
 }
 
 void SearchesDBJobInfo::setSearchResultRestriction(int type)
@@ -245,24 +235,19 @@ int SearchesDBJobInfo::searchResultRestriction() const
     return m_searchResultRestriction;
 }
 
-void SearchesDBJobInfo::setSearchId(int id)
-{
-    m_searchIds = QList<int>() << id;
-}
-
-void SearchesDBJobInfo::setSearchIds(const QList<int>& ids)
-{
-    m_searchIds = ids;
-}
-
-QList<int> SearchesDBJobInfo::searchIds() const
+const QList<int>& SearchesDBJobInfo::searchIds() const
 {
     return m_searchIds;
 }
 
+const QSet<qlonglong>& SearchesDBJobInfo::imageIds() const
+{
+    return m_imageIds;
+}
+
 void SearchesDBJobInfo::setMinThreshold(double t)
 {
-    m_minThreshold = t;
+    m_minThreshold = qBound(0.4, t, 1.0);
 }
 
 double SearchesDBJobInfo::minThreshold() const
@@ -272,42 +257,12 @@ double SearchesDBJobInfo::minThreshold() const
 
 void SearchesDBJobInfo::setMaxThreshold(double t)
 {
-    m_maxThreshold = t;
+    m_maxThreshold = qBound(0.4, t, 1.0);
 }
 
 double SearchesDBJobInfo::maxThreshold() const
 {
     return m_maxThreshold;
-}
-
-void SearchesDBJobInfo::setAlbumsIds(const QList<int>& albumsIds)
-{
-    m_albumsIds = albumsIds;
-}
-
-QList<int> SearchesDBJobInfo::albumsIds() const
-{
-    return m_albumsIds;
-}
-
-void SearchesDBJobInfo::setImageIds(const QList<qlonglong>& imageIds)
-{
-    m_imageIds = imageIds;
-}
-
-QList<qlonglong> SearchesDBJobInfo::imageIds() const
-{
-    return m_imageIds;
-}
-
-void SearchesDBJobInfo::setTagsIds(const QList<int>& tagsIds)
-{
-    m_tagsIds = tagsIds;
-}
-
-QList<int> SearchesDBJobInfo::tagsIds() const
-{
-    return m_tagsIds;
 }
 
 // ---------------------------------------------

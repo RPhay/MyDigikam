@@ -185,31 +185,11 @@ public:
     );
 
     /**
-     * Calls findDuplicates with all images in the given album and tag ids
+     * Collects all images from the given album and tag ids according to their relation.
      */
-    QMap<double, QMap<qlonglong, QList<qlonglong> > > findDuplicatesInAlbumsAndTags(
-        const QList<int>& albums2Scan,
-        const QList<int>& tags2Scan,
-        AlbumTagRelation relation,
-        double requiredPercentage,
-        double maximumPercentage,
-        DuplicatesSearchRestrictions searchResultRestriction = DuplicatesSearchRestrictions::None,
-        HaarProgressObserver* const observer = nullptr
-    );
-
-    /**
-     * Rebuilds the special search albums in the database that contain a list of possible candidates
-     * for duplicate images (one album per group of duplicates)
-     */
-    void rebuildDuplicatesAlbums(
-        const QList<int>& albums2Scan,
-        const QList<int>& tags2Scan,
-        AlbumTagRelation relation,
-        double requiredPercentage,
-        double maximumPercentage,
-        DuplicatesSearchRestrictions searchResultRestriction = DuplicatesSearchRestrictions::None,
-        HaarProgressObserver* const observer = nullptr
-    );
+    static QSet<qlonglong> imagesFromAlbumsAndTags(const QList<int>& albums2Scan,
+                                                   const QList<int>& tags2Scan,
+                                                   AlbumTagRelation relation);
 
     /**
      * This method rebuilds the given SAlbums by searching duplicates and replacing the SAlbums by the updated versions.
@@ -220,6 +200,7 @@ public:
      */
     void rebuildDuplicatesAlbums(
         const QList<qlonglong>& imageIds,
+        bool isAlbumUpdate,
         double requiredPercentage,
         double maximumPercentage,
         DuplicatesSearchRestrictions searchResultRestriction = DuplicatesSearchRestrictions::None,

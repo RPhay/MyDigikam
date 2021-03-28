@@ -68,7 +68,6 @@ public:
     int                   searchResultRestriction;
     bool                  isAlbumUpdate;
     QList<int>            albumsIdList;
-    QList<qlonglong>      imageIdList;
     QList<int>            tagsIdList;
     SearchesDBJobsThread* job;
 };
@@ -108,24 +107,14 @@ void DuplicatesFinder::slotStart()
 
     double minThresh = d->minSimilarity / 100.0;
     double maxThresh = d->maxSimilarity / 100.0;
-    SearchesDBJobInfo jobInfo;
-    jobInfo.setDuplicatesJob();
+
+    const HaarIface::AlbumTagRelation relation = static_cast<HaarIface::AlbumTagRelation>(d->albumTagRelation);
+    QSet<qlonglong> imageIds = HaarIface::imagesFromAlbumsAndTags(d->albumsIdList, d->tagsIdList, relation);
+    SearchesDBJobInfo jobInfo(std::move(imageIds), d->isAlbumUpdate);
+
     jobInfo.setMinThreshold(minThresh);
     jobInfo.setMaxThreshold(maxThresh);
-    jobInfo.setAlbumsIds(d->albumsIdList);
-    jobInfo.setImageIds(d->imageIdList);
-    jobInfo.setAlbumTagRelation(d->albumTagRelation);
     jobInfo.setSearchResultRestriction(d->searchResultRestriction);
-
-    if (d->isAlbumUpdate)
-    {
-        jobInfo.setAlbumUpdate();
-    }
-
-    if (!d->tagsIdList.isEmpty())
-    {
-        jobInfo.setTagsIds(d->tagsIdList);
-    }
 
     d->job = DBJobsManager::instance()->startSearchesJobThread(jobInfo);
 

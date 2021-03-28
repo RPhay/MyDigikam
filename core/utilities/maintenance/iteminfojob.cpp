@@ -114,8 +114,8 @@ void ItemInfoJob::allItemsFromAlbum(Album* const album)
     }
     else if (album->type() == Album::SEARCH)
     {
-        SearchesDBJobInfo jobInfo;
-        jobInfo.setSearchId(url.searchId());
+        QList<int> searchIds = QList<int>() << url.searchId();
+        SearchesDBJobInfo jobInfo(std::move(searchIds));
 
         d->jobThread = DBJobsManager::instance()->startSearchesJobThread(jobInfo);
     }

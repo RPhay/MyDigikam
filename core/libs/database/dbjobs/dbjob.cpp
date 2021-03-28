@@ -346,11 +346,9 @@ void SearchesJob::run()
     }
     else
     {
-        if (m_jobInfo.albumsIds().isEmpty() &&
-            m_jobInfo.tagsIds().isEmpty()   &&
-            m_jobInfo.imageIds().isEmpty())
+        if (m_jobInfo.imageIds().isEmpty())
         {
-            qCDebug(DIGIKAM_DBJOB_LOG) << "No album, tag or image ids passed for duplicates search";
+            qCDebug(DIGIKAM_DBJOB_LOG) << "No image ids passed for duplicates search";
             return;
         }
 
@@ -365,24 +363,12 @@ void SearchesJob::run()
 
         HaarIface iface;
 
-        if (m_jobInfo.isAlbumUpdate())
-        {
-            iface.rebuildDuplicatesAlbums(m_jobInfo.imageIds(),
-                                          m_jobInfo.minThreshold(),
-                                          m_jobInfo.maxThreshold(),
-                                          static_cast<HaarIface::DuplicatesSearchRestrictions>(m_jobInfo.searchResultRestriction()),
-                                          &observer);
-        }
-        else
-        {
-            iface.rebuildDuplicatesAlbums(m_jobInfo.albumsIds(),
-                                          m_jobInfo.tagsIds(),
-                                          static_cast<HaarIface::AlbumTagRelation>(m_jobInfo.albumTagRelation()),
-                                          m_jobInfo.minThreshold(),
-                                          m_jobInfo.maxThreshold(),
-                                          static_cast<HaarIface::DuplicatesSearchRestrictions>(m_jobInfo.searchResultRestriction()),
-                                          &observer);
-        }
+        iface.rebuildDuplicatesAlbums(m_jobInfo.imageIds().toList(),
+                                      m_jobInfo.isAlbumUpdate(),
+                                      m_jobInfo.minThreshold(),
+                                      m_jobInfo.maxThreshold(),
+                                      static_cast<HaarIface::DuplicatesSearchRestrictions>(m_jobInfo.searchResultRestriction()),
+                                      &observer);
     }
 
     emit signalDone();

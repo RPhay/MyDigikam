@@ -726,6 +726,7 @@ QMap<QString, QString> HaarIface::writeSAlbumQueries(const QMap<double,
 }
 
 void HaarIface::rebuildDuplicatesAlbums(const QList<qlonglong>& imageIds,
+                                        bool isAlbumUpdate,
                                         double requiredPercentage,
                                         double maximumPercentage,
                                         DuplicatesSearchRestrictions
@@ -738,81 +739,44 @@ void HaarIface::rebuildDuplicatesAlbums(const QList<qlonglong>& imageIds,
                                                                                searchResultRestriction,
                                                                                observer);
 
-    QMap<QString, QString> queries = writeSAlbumQueries(results);
-
-    // Write the new search albums to the database
-
-    {
-        CoreDbAccess access;
-        CoreDbTransaction transaction(&access);
-
-        // Update existing searches by deleting and adding them.
-
-        for (QMap<QString, QString>::const_iterator it = queries.constBegin() ;
-             it != queries.constEnd() ; ++it)
-        {
-            access.db()->deleteSearch(it.key().toInt());
-            access.db()->addSearch(DatabaseSearch::DuplicatesSearch, it.key(), it.value());
-        }
-    }
-}
-
-void HaarIface::rebuildDuplicatesAlbums(const QList<int>& albums2Scan,
-                                        const QList<int>& tags2Scan,
-                                        AlbumTagRelation relation,
-                                        double requiredPercentage,
-                                        double maximumPercentage,
-                                        DuplicatesSearchRestrictions
-                                            searchResultRestriction,
-                                        HaarProgressObserver* const observer)
-{
-    // Carry out search. This takes long.
-
-    QMap<double, QMap<qlonglong, QList<qlonglong> > > results = findDuplicatesInAlbumsAndTags(albums2Scan,
-                                                                                              tags2Scan,
-                                                                                              relation,
-                                                                                              requiredPercentage,
-                                                                                              maximumPercentage,
-                                                                                              searchResultRestriction,
-                                                                                              observer);
-
     // Build search XML from the results. Store list of ids of similar images.
 
     QMap<QString, QString> queries = writeSAlbumQueries(results);
 
-    // Write search albums to database
+    // Write the new search albums to the database.
 
+    CoreDbAccess access;
+    CoreDbTransaction transaction(&access);
+
+    // Full rebuild: delete all old searches.
+
+    if (!isAlbumUpdate)
     {
-        CoreDbAccess access;
-        CoreDbTransaction transaction(&access);
-
-        // delete all old searches
-
         access.db()->deleteSearches(DatabaseSearch::DuplicatesSearch);
+    }
 
-        // create new groups
+    // Create new groups, or update existing searches.
 
-        for (QMap<QString, QString>::const_iterator it = queries.constBegin() ;
-             it != queries.constEnd() ; ++it)
+    for (QMap<QString, QString>::const_iterator it = queries.constBegin() ;
+         it != queries.constEnd() ; ++it)
+    {
+        if (isAlbumUpdate)
         {
-            access.db()->addSearch(DatabaseSearch::DuplicatesSearch, it.key(), it.value());
+            access.db()->deleteSearch(it.key().toInt());
         }
+
+        access.db()->addSearch(DatabaseSearch::DuplicatesSearch, it.key(), it.value());
     }
 }
 
-QMap<double, QMap<qlonglong, QList<qlonglong> > > HaarIface::findDuplicatesInAlbumsAndTags(const QList<int>& albums2Scan,
-                                                                                           const QList<int>& tags2Scan,
-                                                                                           AlbumTagRelation relation,
-                                                                                           double requiredPercentage,
-                                                                                           double maximumPercentage,
-                                                                                           DuplicatesSearchRestrictions
-                                                                                               searchResultRestriction,
-                                                                                           HaarProgressObserver* const observer)
+QSet<qlonglong> HaarIface::imagesFromAlbumsAndTags(const QList<int>& albums2Scan,
+                                                   const QList<int>& tags2Scan,
+                                                   AlbumTagRelation relation)
 {
     QSet<qlonglong> imagesFromAlbums;
     QSet<qlonglong> imagesFromTags;
 
-    QSet<qlonglong> idList;
+    QSet<qlonglong> images;
 
     // Get all items DB id from all albums and all collections
 
@@ -834,7 +798,7 @@ QMap<double, QMap<qlonglong, QList<qlonglong> > > HaarIface::findDuplicatesInAlb
         {
             // ({} UNION A) UNION T = A UNION T
 
-            idList.unite(imagesFromAlbums).unite(imagesFromTags);
+            images.unite(imagesFromAlbums).unite(imagesFromTags);
             break;
         }
 
@@ -842,7 +806,7 @@ QMap<double, QMap<qlonglong, QList<qlonglong> > > HaarIface::findDuplicatesInAlb
         {
             // ({} UNION A) INTERSECT T = A INTERSECT T
 
-            idList.unite(imagesFromAlbums).intersect(imagesFromTags);
+            images.unite(imagesFromAlbums).intersect(imagesFromTags);
             break;
         }
 
@@ -850,7 +814,7 @@ QMap<double, QMap<qlonglong, QList<qlonglong> > > HaarIface::findDuplicatesInAlb
         {
             // ({} UNION A) = A
 
-            idList.unite(imagesFromAlbums);
+            images.unite(imagesFromAlbums);
 
             // (A INTERSECT T) = A'
 
@@ -858,7 +822,7 @@ QMap<double, QMap<qlonglong, QList<qlonglong> > > HaarIface::findDuplicatesInAlb
 
             // A\A' = albums without tags
 
-            idList.subtract(imagesFromAlbums);
+            images.subtract(imagesFromAlbums);
             break;
         }
 
@@ -866,7 +830,7 @@ QMap<double, QMap<qlonglong, QList<qlonglong> > > HaarIface::findDuplicatesInAlb
         {
             // ({} UNION T) = TT
 
-            idList.unite(imagesFromTags);
+            images.unite(imagesFromTags);
 
             // (A INTERSECT T) = A' = T'
 
@@ -874,7 +838,7 @@ QMap<double, QMap<qlonglong, QList<qlonglong> > > HaarIface::findDuplicatesInAlb
 
             // T\T' = tags without albums
 
-            idList.subtract(imagesFromAlbums);
+            images.subtract(imagesFromAlbums);
             break;
         }
 
@@ -885,18 +849,18 @@ QMap<double, QMap<qlonglong, QList<qlonglong> > > HaarIface::findDuplicatesInAlb
                 qCWarning(DIGIKAM_GENERAL_LOG) << "Duplicates search: Both the albums and the tags "
                                                   "list are non-empty but the album/tag relation "
                                                   "stated a NoMix. Skipping duplicates search";
-                return QMap<double, QMap<qlonglong, QList<qlonglong> > >();
+                return {};
             }
             else
             {
                 // ({} UNION A) UNION T = A UNION T = A Xor T
 
-                idList.unite(imagesFromAlbums).unite(imagesFromTags);
+                images.unite(imagesFromAlbums).unite(imagesFromTags);
             }
         }
     }
 
-    return findDuplicates(idList, requiredPercentage, maximumPercentage, searchResultRestriction, observer);
+    return images;
 }
 
 QMap<double, QMap<qlonglong, QList<qlonglong> > > HaarIface::findDuplicates(const QSet<qlonglong>& images2Scan,

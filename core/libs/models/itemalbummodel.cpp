@@ -425,14 +425,12 @@ void ItemAlbumModel::startListJob(const QList<Album*>& albums)
     {
         d->extraValueJob = false;
 
-        SearchesDBJobInfo jobInfo;
+        SearchesDBJobInfo jobInfo(std::move(ids));
 
         if (d->listOnlyAvailableImages)
         {
             jobInfo.setListAvailableImagesOnly();
         }
-
-        jobInfo.setSearchIds(ids);
 
         d->jobThread = DBJobsManager::instance()->startSearchesJobThread(jobInfo);
     }
