@@ -32,6 +32,21 @@ else
     echo "Check run as root passed..."
 fi
 
+# Check OS name and version.
+
+OS_NAME=$(awk '/DISTRIB_ID=/' /etc/*-release | sed 's/DISTRIB_ID=//' | sed 's/\"//' | sed 's/\"//' | tr '[:upper:]' '[:lower:]')
+OS_ARCH=$(uname -m | sed 's/x86_//;s/i[3-6]86/32/')
+OS_VERSION=$(awk '/DISTRIB_RELEASE=/' /etc/*-release | sed 's/DISTRIB_RELEASE=//' | sed 's/[.]0/./')
+
+echo $OS_NAME
+echo $OS_ARCH
+echo $OS_VERSION
+
+if [[ "$OS_NAME" != "mageia" ]] ; then
+    echo "Not running Linux Mageia..."
+    exit -1
+fi
+
 # Enable Tainted RPM media
 
 urpmi.update --no-ignore "Tainted Release"
@@ -123,6 +138,10 @@ urpmi --auto \
       lib64kf5notifications-devel \
       lib64kf5notifyconfig-devel \
       lib64kf5filemetadata-devel \
-      lib64kf5doctools-devel \
       lib64kf5calendarcore-devel
-      
+
+if   [[ $OS_VERSION == 8 ]] ; then
+    urpmi --auto lib64kf5doctools-devel
+elif [[ $OS_VERSION == 7 ]] ; then
+    urpmi --auto lib64kdoctools-devel
+fi
