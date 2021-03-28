@@ -92,9 +92,9 @@ public:
     /**
      * Read the QByteArray into the Haar::SignatureData.
      */
-    void read(const QByteArray& array, Haar::SignatureData* const data);
+    void read(const QByteArray& array, Haar::SignatureData& data);
 
-    QByteArray write(Haar::SignatureData* const data);
+    QByteArray write(Haar::SignatureData& data);
 };
 
 // -----------------------------------------------------------------------------------------------------
@@ -108,21 +108,34 @@ public:
 
 public:
 
-    void createLoadingBuffer();
-    void createWeightBin();
-    void setSignatureCacheEnabled(bool cache, const QSet<qlonglong>& imageIds);
-    void setSignatureCacheEnabled(bool cache);
+    void rebuildSignatureCache(const QSet<qlonglong>& imageIds = {});
+    bool hasSignatureCache() const;
+
+    bool retrieveSignatureFromCache(qlonglong imageId, Haar::SignatureData& data);
+
+    void setImageDataFromImage(const QImage& image);
+    void setImageDataFromImage(const DImg& image);
+
+    SignatureCache*  signatureCache() const;
+    AlbumCache*      albumCache() const;
+    Haar::ImageData* imageData() const;
+
+    void setAlbumRootsToSearch(const QSet<int>& albumRootIds);
+    const QSet<int>& albumRootsToSearch() const;
 
 public:
 
-    bool             useSignatureCache;
-    Haar::ImageData* data;
-    Haar::WeightBin* bin;
-    SignatureCache*  signatureCache;
-    AlbumCache*      albumCache;
+    const static QString            signatureQuery;
+    const static Haar::WeightBin    weightBin;
 
-    QString          signatureQuery;
-    QSet<int>        albumRootsToSearch;
+private:
+
+    QScopedPointer<SignatureCache>  m_signatureCache;
+    QScopedPointer<AlbumCache>      m_albumCache;
+
+    QScopedPointer<Haar::ImageData> m_data;
+
+    QSet<int>                       m_albumRootsToSearch;
 };
 
 } // namespace Digikam

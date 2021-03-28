@@ -212,7 +212,7 @@ public:
      * Retrieve the Haar signature from database using image id.
      * Return true if item signature exist else false.
      */
-    bool retrieveSignatureFromDB(qlonglong imageid, Haar::SignatureData* const sig);
+    bool retrieveSignatureFromDB(qlonglong imageid, Haar::SignatureData& sig);
 
     /**
      * Give a list of albumRoots to which the search shall be limited.
@@ -267,10 +267,10 @@ private:
                                            qlonglong originalImageId = -1,
                                            int albumId = -1);
 
-    double calculateScore(Haar::SignatureData& querySig,
-                          Haar::SignatureData& targetSig,
+    double calculateScore(const Haar::SignatureData& querySig,
+                          const Haar::SignatureData& targetSig,
                           Haar::Weights& weights,
-                          Haar::SignatureMap** const queryMaps);
+                          std::reference_wrapper<Haar::SignatureMap>* const queryMaps);
 
 private:
 
