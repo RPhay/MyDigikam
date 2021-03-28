@@ -62,12 +62,12 @@ public:
 public:
 
     explicit Private()
-      : labelPreset(nullptr),
-        useCustom(nullptr),
-        scaleDown(nullptr),
-        usePercent(nullptr),
-        customLength(nullptr),
-        presetCBox(nullptr),
+      : labelPreset   (nullptr),
+        useCustom     (nullptr),
+        scaleDown     (nullptr),
+        usePercent    (nullptr),
+        customLength  (nullptr),
+        presetCBox    (nullptr),
         changeSettings(true)
     {
     }
@@ -96,28 +96,40 @@ int Resize::Private::presetLengthValue(WidthPreset preset)
     switch (preset)
     {
         case Private::Tiny:
+        {
             length = 480;
             break;
+        }
 
         case Private::Small:
+        {
             length = 640;
             break;
+        }
 
         case Private::Medium:
+        {
             length = 800;
             break;
+        }
 
         case Private::Big:
+        {
             length = 1024;
             break;
+        }
 
         case Private::Large:
+        {
             length = 1280;
             break;
+        }
 
         default:   // Private::Huge
+        {
             length = 1600;
             break;
+        }
     }
 
     return length;
@@ -127,13 +139,18 @@ int Resize::Private::presetLengthValue(WidthPreset preset)
 
 Resize::Resize(QObject* const parent)
     : BatchTool(QLatin1String("Resize"), TransformTool, parent),
-      d(new Private)
+      d        (new Private)
 {
 }
 
 Resize::~Resize()
 {
     delete d;
+}
+
+BatchTool* Resize::clone(QObject* const parent) const
+{
+    return new Resize(parent);
 }
 
 void Resize::registerSettingsWidget()
@@ -187,6 +204,7 @@ BatchToolSettings Resize::defaultSettings()
     settings.insert(QLatin1String("UsePercent"),   false);
     settings.insert(QLatin1String("LengthCustom"), 1024);
     settings.insert(QLatin1String("LengthPreset"), Private::Medium);
+
     return settings;
 }
 
@@ -255,7 +273,7 @@ bool Resize::toolOperations()
 
     int longest = qMax(image().width(), image().height());
 
-    if (!useCustom)
+    if      (!useCustom)
     {
         length = d->presetLengthValue(preset);
     }

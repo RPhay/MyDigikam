@@ -130,7 +130,6 @@ make MXE_TARGETS=$MXE_BUILD_TARGETS \
      qtbase \
      qttranslations \
      qtimageformats \
-     qtwebkit \
      qttools \
      qtwinextras \
      qtscript \
@@ -139,6 +138,8 @@ make MXE_TARGETS=$MXE_BUILD_TARGETS \
      openal \
      libical \
      imagemagick
+
+#     qtwebkit \
 
 echo -e "\n"
 

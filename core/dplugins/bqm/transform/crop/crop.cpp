@@ -52,11 +52,11 @@ class Q_DECL_HIDDEN Crop::Private
 public:
 
     explicit Private()
-      : autoCrop(nullptr),
-        heightInput(nullptr),
-        widthInput(nullptr),
-        xInput(nullptr),
-        yInput(nullptr),
+      : autoCrop      (nullptr),
+        heightInput   (nullptr),
+        widthInput    (nullptr),
+        xInput        (nullptr),
+        yInput        (nullptr),
         changeSettings(true)
     {
     }
@@ -75,13 +75,18 @@ public:
 
 Crop::Crop(QObject* const parent)
     : BatchTool(QLatin1String("Crop"), TransformTool, parent),
-      d(new Private)
+      d        (new Private)
 {
 }
 
 Crop::~Crop()
 {
     delete d;
+}
+
+BatchTool* Crop::clone(QObject* const parent) const
+{
+    return new Crop(parent);
 }
 
 void Crop::registerSettingsWidget()
@@ -170,7 +175,9 @@ void Crop::slotDisableParameters(bool b)
     d->heightInput->setDisabled(b);
 
     if (b)
+    {
         emit signalAutoCrop();
+    }
 }
 
 BatchToolSettings Crop::defaultSettings()
@@ -181,6 +188,7 @@ BatchToolSettings Crop::defaultSettings()
     settings.insert(QLatin1String("widthInput"),  800);
     settings.insert(QLatin1String("heightInput"), 600);
     settings.insert(QLatin1String("AutoCrop"),    false);
+
     return settings;
 }
 

@@ -83,6 +83,11 @@ Rotate::~Rotate()
     delete d;
 }
 
+BatchTool* Rotate::clone(QObject* const parent) const
+{
+    return new Rotate(parent);
+}
+
 void Rotate::registerSettingsWidget()
 {
 
@@ -131,6 +136,7 @@ BatchToolSettings Rotate::defaultSettings()
     settings.insert(QLatin1String("angle"),     defaultPrm.angle);
     settings.insert(QLatin1String("antiAlias"), defaultPrm.antiAlias);
     settings.insert(QLatin1String("autoCrop"),  defaultPrm.autoCrop);
+
     return settings;
 }
 
@@ -188,21 +194,26 @@ bool Rotate::toolOperations()
             switch (rotation)
             {
                 case DImg::ROT90:
+                {
                     return rotator.exifTransform(MetaEngineRotation::Rotate90);
-                    break;
+                }
 
                 case DImg::ROT180:
+                {
                     return rotator.exifTransform(MetaEngineRotation::Rotate180);
-                    break;
+                }
 
                 case DImg::ROT270:
+                {
                     return rotator.exifTransform(MetaEngineRotation::Rotate270);
-                    break;
+                }
 
                 default:
+                {
                     // there is no lossless method to turn JPEG image with a custom angle.
                     // fall through
                     break;
+                }
             }
         }
     }
@@ -217,6 +228,7 @@ bool Rotate::toolOperations()
     if (useExif)
     {
         // Exif rotation is currently not recorded to image history
+
         image().rotateAndFlip(image().exifOrientation(inputUrl().toLocalFile()));
     }
     else
@@ -229,18 +241,21 @@ bool Rotate::toolOperations()
                 applyFilter(&filter);
                 break;
             }
+
             case DImg::ROT180:
             {
                 DImgBuiltinFilter filter(DImgBuiltinFilter::Rotate180);
                 applyFilter(&filter);
                 break;
             }
+
             case DImg::ROT270:
             {
                 DImgBuiltinFilter filter(DImgBuiltinFilter::Rotate270);
                 applyFilter(&filter);
                 break;
             }
+
             default:      // Custom value
             {
                 FreeRotationFilter fr(&image(), nullptr, prm);

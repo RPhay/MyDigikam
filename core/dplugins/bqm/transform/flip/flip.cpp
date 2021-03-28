@@ -45,9 +45,18 @@ namespace DigikamBqmFlipPlugin
 {
 
 Flip::Flip(QObject* const parent)
-    : BatchTool(QLatin1String("Flip"), TransformTool, parent)
+    : BatchTool(QLatin1String("Flip"), TransformTool, parent),
+      m_comboBox(nullptr)
 {
-    m_comboBox = nullptr;
+}
+
+Flip::~Flip()
+{
+}
+
+BatchTool* Flip::clone(QObject* const parent) const
+{
+    return new Flip(parent);
 }
 
 void Flip::registerSettingsWidget()
@@ -71,14 +80,11 @@ void Flip::registerSettingsWidget()
     BatchTool::registerSettingsWidget();
 }
 
-Flip::~Flip()
-{
-}
-
 BatchToolSettings Flip::defaultSettings()
 {
     BatchToolSettings settings;
     settings.insert(QLatin1String("Flip"), DImg::HORIZONTAL);
+
     return settings;
 }
 
@@ -106,17 +112,23 @@ bool Flip::toolOperations()
         switch (flip)
         {
             case DImg::HORIZONTAL:
+            {
                 return rotator.exifTransform(MetaEngineRotation::FlipHorizontal);
                 break;
+            }
 
             case DImg::VERTICAL:
+            {
                 return rotator.exifTransform(MetaEngineRotation::FlipVertical);
                 break;
+            }
 
             default:
+            {
                 qCDebug(DIGIKAM_DPLUGIN_BQM_LOG) << "Unknown flip action";
                 return false;
                 break;
+            }
         }
     }
 
@@ -130,11 +142,16 @@ bool Flip::toolOperations()
     switch (flip)
     {
         case DImg::HORIZONTAL:
+        {
             filter = DImgBuiltinFilter(DImgBuiltinFilter::FlipHorizontally);
             break;
+        }
+
         case DImg::VERTICAL:
+        {
             filter = DImgBuiltinFilter(DImgBuiltinFilter::FlipVertically);
             break;
+        }
     }
 
     applyFilter(&filter);
