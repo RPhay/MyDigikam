@@ -97,6 +97,11 @@ RemoveMetadata::~RemoveMetadata()
     delete d;
 }
 
+BatchTool* RemoveMetadata::clone(QObject* const parent) const
+{
+    return new RemoveMetadata(parent);
+}
+
 void RemoveMetadata::registerSettingsWidget()
 {
     QWidget* const panel     = new QWidget;

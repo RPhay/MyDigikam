@@ -45,14 +45,19 @@ namespace DigikamBqmAssignTemplatePlugin
 {
 
 AssignTemplate::AssignTemplate(QObject* const parent)
-    : BatchTool(QLatin1String("AssignTemplate"), MetadataTool, parent)
+    : BatchTool(QLatin1String("AssignTemplate"), MetadataTool, parent),
+      m_templateSelector(nullptr),
+      m_templateViewer(nullptr)
 {
-    m_templateSelector = nullptr;
-    m_templateViewer   = nullptr;
 }
 
 AssignTemplate::~AssignTemplate()
 {
+}
+
+BatchTool* AssignTemplate::clone(QObject* const parent) const
+{
+    return new AssignTemplate(parent);
 }
 
 void AssignTemplate::registerSettingsWidget()
@@ -81,7 +86,7 @@ void AssignTemplate::slotAssignSettings2Widget()
 
     Template t;
 
-    if (title == Template::removeTemplateTitle())
+    if      (title == Template::removeTemplateTitle())
     {
         t.setTemplateTitle(Template::removeTemplateTitle());
     }

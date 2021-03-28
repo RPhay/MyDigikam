@@ -45,11 +45,10 @@ namespace DigikamBqmTimeAdjustPlugin
 {
 
 TimeAdjust::TimeAdjust(QObject* const parent)
-    : BatchTool(QLatin1String("TimeAdjust"), MetadataTool, parent)
+    : BatchTool(QLatin1String("TimeAdjust"), MetadataTool, parent),
+      m_taWidget      (nullptr),
+      m_changeSettings(true)
 {
-    m_taWidget       = nullptr;
-    m_changeSettings = true;
-
     setToolTitle(i18n("Time Adjust"));
     setToolDescription(i18n("Adjust Date Time Stamp of Image"));
     setToolIconName(QLatin1String("appointment-new"));
@@ -57,6 +56,11 @@ TimeAdjust::TimeAdjust(QObject* const parent)
 
 TimeAdjust::~TimeAdjust()
 {
+}
+
+BatchTool* TimeAdjust::clone(QObject* const parent) const
+{
+    return new TimeAdjust(parent);
 }
 
 void TimeAdjust::registerSettingsWidget()
@@ -218,40 +222,55 @@ bool TimeAdjust::toolOperations()
             switch (prm.metadataSource)
             {
                 case TimeAdjustContainer::EXIFIPTCXMP:
+                {
                     orgDateTime = meta->getItemDateTime();
                     break;
+                }
 
                 case TimeAdjustContainer::EXIFCREATED:
+                {
                     orgDateTime = QDateTime::fromString(meta->getExifTagString("Exif.Image.DateTime"),
                                                         exifDateTimeFormat);
                     break;
+                }
 
                 case TimeAdjustContainer::EXIFORIGINAL:
+                {
                     orgDateTime = QDateTime::fromString(meta->getExifTagString("Exif.Photo.DateTimeOriginal"),
                                                         exifDateTimeFormat);
                     break;
+                }
 
                 case TimeAdjustContainer::EXIFDIGITIZED:
+                {
                     orgDateTime = QDateTime::fromString(meta->getExifTagString("Exif.Photo.DateTimeDigitized"),
                                                         exifDateTimeFormat);
                     break;
+                }
 
                 case TimeAdjustContainer::IPTCCREATED:
+                {
                     orgDateTime = QDateTime(QDate::fromString(meta->getIptcTagString("Iptc.Application2.DateCreated"),
                                                               Qt::ISODate),
                                             QTime::fromString(meta->getIptcTagString("Iptc.Application2.TimeCreated"),
                                                               Qt::ISODate));
                     break;
+                }
 
                 case TimeAdjustContainer::XMPCREATED:
+                {
                     orgDateTime = QDateTime::fromString(meta->getXmpTagString("Xmp.xmp.CreateDate"),
                                                         xmpDateTimeFormat);
                     break;
+                }
 
                 default:
+                {
                     // orgDateTime stays invalid
                     break;
+                }
             };
+
             break;
         }
 

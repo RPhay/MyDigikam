@@ -44,10 +44,7 @@ public:
 
     BatchToolSettings defaultSettings()                     override;
 
-    BatchTool* clone(QObject* const parent = nullptr) const override
-    {
-        return new RemoveMetadata(parent);
-    };
+    BatchTool* clone(QObject* const parent = nullptr) const override;
 
     void registerSettingsWidget()                           override;
 

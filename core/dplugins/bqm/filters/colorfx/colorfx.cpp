@@ -33,13 +33,18 @@ namespace DigikamBqmColorFXPlugin
 {
 
 ColorFX::ColorFX(QObject* const parent)
-    : BatchTool(QLatin1String("ColorFX"), FiltersTool, parent)
+    : BatchTool(QLatin1String("ColorFX"), FiltersTool, parent),
+      m_settingsView(nullptr)
 {
-    m_settingsView = nullptr;
 }
 
 ColorFX::~ColorFX()
 {
+}
+
+BatchTool* ColorFX::clone(QObject* const parent) const
+{
+    return new ColorFX(parent);
 }
 
 void ColorFX::registerSettingsWidget()
