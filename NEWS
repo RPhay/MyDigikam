@@ -14,4 +14,5 @@ BUGFIXES:
 005 ==> 435021 - Rename does not support both comma and semicolon.
 006 ==> 435020 - Check for new version doesn't find updated released version.
 007 ==> 435065 - After upgrade from digikam 7.1 to 7.2, digikam won't start.
-008 ==> 
+008 ==> 434960 - Libksane impossible to cross-compile for Windows.
+009 ==> 
