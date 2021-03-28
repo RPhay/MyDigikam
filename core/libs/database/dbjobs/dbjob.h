@@ -185,7 +185,7 @@ public:
     explicit SearchesJob(const SearchesDBJobInfo& jobInfo);
     ~SearchesJob()  override;
 
-    bool isCanceled();
+    bool isCanceled() const;
 
 Q_SIGNALS:
 

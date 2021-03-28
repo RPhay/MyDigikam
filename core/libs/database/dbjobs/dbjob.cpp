@@ -388,7 +388,7 @@ void SearchesJob::run()
     emit signalDone();
 }
 
-bool SearchesJob::isCanceled()
+bool SearchesJob::isCanceled() const
 {
     return m_cancel;
 }
