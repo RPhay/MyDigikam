@@ -46,7 +46,7 @@ ImageQualityParser::~ImageQualityParser()
 void ImageQualityParser::readImage() const
 {
     DColor col;
-    int j = 0;
+    int j   = 0;
 
     d->img8 = d->image;
     d->img8.convertToEightBit();                        // Convert to 8 bits color depth.

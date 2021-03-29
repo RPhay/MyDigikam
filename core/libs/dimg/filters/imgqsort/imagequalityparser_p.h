@@ -61,27 +61,25 @@ class Q_DECL_HIDDEN ImageQualityParser::Private
 public:
 
     explicit Private()
-      : clusterCount(30),                   ///< used for k-means clustering algorithm in noise detection
-        size(512)
+      : clusterCount     (30),               ///< used for k-means clustering algorithm in noise detection
+        size             (512),
+        edgeThresh       (1),
+        ratio            (3),
+        kernel_size      (3),
+        lowThreshold     (0.4),
+        blurrejected     (0.0),
+        blur             (0.0),
+        acceptedThreshold(0.0),
+        pendingThreshold (0.0),
+        rejectedThreshold(0.0),
+        label            (nullptr),
+        running          (true)
     {
         for (int c = 0 ; c < 3 ; ++c)
         {
             fimg[c] = nullptr;
         }
 
-        // Setting the default values
-
-        edgeThresh        = 1;
-        lowThreshold      = 0.4;
-        ratio             = 3;
-        kernel_size       = 3;
-        blurrejected      = 0.0;
-        blur              = 0.0;
-        acceptedThreshold = 0.0;
-        pendingThreshold  = 0.0;
-        rejectedThreshold = 0.0;
-        label             = nullptr;
-        running           = true;
     }
 
     float*                fimg[3];

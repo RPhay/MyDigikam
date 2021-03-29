@@ -49,7 +49,7 @@ void ImageQualityParser::exposureAmount(double& under, double& over) const
     {
         for (int y = 0 ; d->running && (y < mask.height()) ; ++y)
         {
-            if (mask.pixelColor(x, y) == Qt::white)
+            if      (mask.pixelColor(x, y) == Qt::white)
             {
                 ++overCount;
             }

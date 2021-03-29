@@ -54,22 +54,22 @@ class Q_DECL_HIDDEN ImageQualitySettings::Private
 public:
 
     explicit Private()
-      : optionsView(nullptr),
-        enableSorter(nullptr),
-        useFullImage(nullptr),
-        detectBlur(nullptr),
-        detectNoise(nullptr),
-        detectCompression(nullptr),
-        detectExposure(nullptr),
-        setRejected(nullptr),
-        setPending(nullptr),
-        setAccepted(nullptr),
-        setSpeed(nullptr),
+      : optionsView         (nullptr),
+        enableSorter        (nullptr),
+        useFullImage        (nullptr),
+        detectBlur          (nullptr),
+        detectNoise         (nullptr),
+        detectCompression   (nullptr),
+        detectExposure      (nullptr),
+        setRejected         (nullptr),
+        setPending          (nullptr),
+        setAccepted         (nullptr),
+        setSpeed            (nullptr),
         setRejectedThreshold(nullptr),
-        setPendingThreshold(nullptr),
+        setPendingThreshold (nullptr),
         setAcceptedThreshold(nullptr),
-        setBlurWeight(nullptr),
-        setNoiseWeight(nullptr),
+        setBlurWeight       (nullptr),
+        setNoiseWeight      (nullptr),
         setCompressionWeight(nullptr)
     {
     }
@@ -98,7 +98,7 @@ public:
 
 ImageQualitySettings::ImageQualitySettings(QWidget* const parent)
     : QWidget(parent),
-      d(new Private)
+      d      (new Private)
 {
     QVBoxLayout* const layout = new QVBoxLayout(this);
 
