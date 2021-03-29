@@ -64,12 +64,12 @@ public:
 public:
 
     explicit SearchBackend(QObject* const parent);
-    ~SearchBackend() override;
+    ~SearchBackend()                                      override;
 
     bool search(const QString& backendName, const QString& searchTerm);
-    SearchResult::List getResults() const;
-    QString getErrorMessage() const;
-    QList<QPair<QString, QString> >  getBackends() const;
+    SearchResult::List getResults()                 const;
+    QString getErrorMessage()                       const;
+    QList<QPair<QString, QString> >  getBackends()  const;
 
 Q_SIGNALS:
 

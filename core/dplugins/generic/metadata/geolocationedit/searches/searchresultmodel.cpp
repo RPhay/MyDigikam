@@ -43,7 +43,7 @@ namespace DigikamGenericGeolocationEditPlugin
 
 static bool RowRangeLessThan(const QPair<int, int>& a, const QPair<int, int>& b)
 {
-    return a.first < b.first;
+    return (a.first < b.first);
 }
 
 class Q_DECL_HIDDEN SearchResultModel::Private
@@ -71,7 +71,7 @@ public:
 
 SearchResultModel::SearchResultModel(QObject* const parent)
     : QAbstractItemModel(parent),
-      d(new Private())
+      d                 (new Private())
 {
 }
 
@@ -112,7 +112,9 @@ QVariant SearchResultModel::data(const QModelIndex& index, int role) const
         switch (role)
         {
             case Qt::DisplayRole:
+            {
                 return d->searchResults.at(rowNumber).result.name;
+            }
 
             case Qt::DecorationRole:
             {
@@ -122,7 +124,9 @@ QVariant SearchResultModel::data(const QModelIndex& index, int role) const
             }
 
             default:
+            {
                 return QVariant();
+            }
         }
     }
 
@@ -134,6 +138,7 @@ QModelIndex SearchResultModel::index(int row, int column, const QModelIndex& par
     if (parent.isValid())
     {
         // there are no child items, only top level items
+
         return QModelIndex();
     }
 
@@ -150,6 +155,7 @@ QModelIndex SearchResultModel::parent(const QModelIndex& index) const
     Q_UNUSED(index)
 
     // we have only top level items
+
     return QModelIndex();
 }
 
@@ -193,6 +199,7 @@ Qt::ItemFlags SearchResultModel::flags(const QModelIndex& index) const
 void SearchResultModel::addResults(const SearchBackend::SearchResult::List& results)
 {
     // first check which items are not duplicates
+
     QList<int> nonDuplicates;
 
     for (int i = 0 ; i < results.count() ; ++i)
@@ -245,13 +252,15 @@ SearchResultModel::SearchResultItem SearchResultModel::resultItem(const QModelIn
 bool SearchResultModel::getMarkerIcon(const QModelIndex& index, QPoint* const offset, QSize* const size, QPixmap* const pixmap, QUrl* const url) const
 {
     // determine the id of the marker
+
     const int markerNumber    = index.row();
     const bool itemIsSelected = d->selectionModel ? d->selectionModel->isSelected(index) : false;
     QPixmap markerPixmap      = itemIsSelected    ? d->markerSelected                    : d->markerNormal;
 
     // if the caller requests a URL and the marker will not get
     // a special label, return a URL. Otherwise, return a pixmap.
-    const bool returnViaUrl = url && (markerNumber > 26);
+
+    const bool returnViaUrl   = url && (markerNumber > 26);
 
     if (returnViaUrl)
     {
@@ -300,6 +309,7 @@ void SearchResultModel::clearResults()
 void SearchResultModel::removeRowsByIndexes(const QModelIndexList& rowsList)
 {
     // extract the row numbers first:
+
     QList<int> rowNumbers;
 
     foreach (const QModelIndex& index, rowsList)
@@ -318,11 +328,13 @@ void SearchResultModel::removeRowsByIndexes(const QModelIndexList& rowsList)
     std::sort(rowNumbers.begin(), rowNumbers.end());
 
     // now delete the rows, starting with the last row:
+
     for (int i = rowNumbers.count()-1 ; i >= 0 ; --i)
     {
         const int rowNumber = rowNumbers.at(i);
 
         /// @todo This is very slow for several indexes, because the views update after every removal
+
         beginRemoveRows(QModelIndex(), rowNumber, rowNumber);
         d->searchResults.removeAt(rowNumber);
         endRemoveRows();
@@ -332,6 +344,7 @@ void SearchResultModel::removeRowsByIndexes(const QModelIndexList& rowsList)
 void SearchResultModel::removeRowsBySelection(const QItemSelection& selectionList)
 {
     // extract the row numbers first:
+
     QList<QPair<int, int> > rowRanges;
 
     foreach (const QItemSelectionRange& range, selectionList)
@@ -340,14 +353,17 @@ void SearchResultModel::removeRowsBySelection(const QItemSelection& selectionLis
     }
 
     // we expect the ranges to be sorted here
+
     std::sort(rowRanges.begin(), rowRanges.end(), RowRangeLessThan);
 
     // now delete the rows, starting with the last row:
+
     for (int i = rowRanges.count()-1 ; i >= 0 ; --i)
     {
         const QPair<int, int> currentRange = rowRanges.at(i);
 
         /// @todo This is very slow for several indexes, because the views update after every removal
+
         beginRemoveRows(QModelIndex(), currentRange.first, currentRange.second);
 
         for (int j = currentRange.second ; j >= currentRange.first ; --j)

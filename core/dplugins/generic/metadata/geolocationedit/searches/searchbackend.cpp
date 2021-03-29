@@ -48,7 +48,7 @@ public:
 
     explicit Private()
       : netReply(nullptr),
-        mngr(nullptr)
+        mngr    (nullptr)
     {
     }
 
@@ -63,7 +63,7 @@ public:
 
 SearchBackend::SearchBackend(QObject* const parent)
     : QObject(parent),
-      d(new Private())
+      d      (new Private())
 {
     d->mngr = new QNetworkAccessManager(this);
 
@@ -177,6 +177,7 @@ void SearchBackend::slotFinished(QNetworkReply* reply)
             }
 
             // now parse the strings:
+
             qreal lat;
             qreal lon;
             bool okay = false;
@@ -209,8 +210,8 @@ void SearchBackend::slotFinished(QNetworkReply* reply)
     else if (d->runningBackend == QLatin1String("geonames.org"))
     {
         QDomDocument doc;
-        doc.setContent(resultString); // error-handling
-        QDomElement docElement = doc.documentElement(); // error-handling
+        doc.setContent(resultString);                       // error-handling
+        QDomElement docElement = doc.documentElement();     // error-handling
         qCDebug(DIGIKAM_DPLUGIN_GENERIC_LOG)<<docElement.toElement().tagName();
 
         for (QDomNode resultNode = docElement.firstChild() ; !resultNode.isNull() ; resultNode = resultNode.nextSibling())
@@ -242,7 +243,7 @@ void SearchBackend::slotFinished(QNetworkReply* reply)
                     continue;
                 }
 
-                if (resultSubElement.tagName() == QLatin1String("lat"))
+                if      (resultSubElement.tagName() == QLatin1String("lat"))
                 {
                     latString = resultSubElement.text();
                 }
@@ -266,6 +267,7 @@ void SearchBackend::slotFinished(QNetworkReply* reply)
             }
 
             // now parse the strings:
+
             qreal lat;
             qreal lon;
             bool okay = false;

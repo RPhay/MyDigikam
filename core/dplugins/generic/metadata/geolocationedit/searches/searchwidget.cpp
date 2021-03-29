@@ -86,7 +86,7 @@ public:
         gpsBookmarkOwner                              = nullptr;
         actionBookmark                                = nullptr;
         mapWidget                                     = nullptr;
-        gpsItemModel                                 = nullptr;
+        gpsItemModel                                  = nullptr;
         gosImageSelectionModel                        = nullptr;
         searchTermLineEdit                            = nullptr;
         searchButton                                  = nullptr;
@@ -110,7 +110,7 @@ public:
 
     // Map
     MapWidget*               mapWidget;
-    GPSItemModel*           gpsItemModel;
+    GPSItemModel*            gpsItemModel;
     QItemSelectionModel*     gosImageSelectionModel;
     QLineEdit*               searchTermLineEdit;
     QPushButton*             searchButton;
@@ -141,19 +141,20 @@ public:
 SearchWidget::SearchWidget(GPSBookmarkOwner* const gpsBookmarkOwner,
                            GPSItemModel* const gpsItemModel,
                            QItemSelectionModel* const gosImageSelectionModel,
-                           QWidget* const parent
-                          )
+                           QWidget* const parent)
     : QWidget(parent),
-      d(new Private())
+      d      (new Private())
 {
     d->gpsBookmarkOwner       = gpsBookmarkOwner;
-    d->gpsItemModel          = gpsItemModel;
+    d->gpsItemModel           = gpsItemModel;
     d->gosImageSelectionModel = gosImageSelectionModel;
     d->searchBackend          = new SearchBackend(this);
     d->searchResultsModel     = new SearchResultModel(this);
 
 #ifdef GPSSYNC_MODELTEST
+
     new ModelTest(d->searchResultsModel, this);
+
 #endif
 
     d->searchResultsSelectionModel = new QItemSelectionModel(d->searchResultsModel);
@@ -211,6 +212,7 @@ SearchWidget::SearchWidget(GPSBookmarkOwner* const gpsBookmarkOwner,
     }
 
     // add stretch after the controls:
+
     QHBoxLayout* const hBoxLayout = reinterpret_cast<QHBoxLayout*>(actionHBox->layout());
 
     if (hBoxLayout)
@@ -292,6 +294,7 @@ void SearchWidget::slotSearchCompleted()
 void SearchWidget::slotTriggerSearch()
 {
     // this is necessary since this slot is also connected to QLineEdit::returnPressed
+
     if (d->searchTermLineEdit->text().isEmpty() || d->searchInProgress)
     {
         return;
@@ -349,7 +352,7 @@ void SearchWidget::slotVisibilityChanged(bool state)
 void SearchWidget::slotUpdateActionAvailability()
 {
     const int nSelectedResults       = QItemSelectionModel_selectedRowsCount(d->searchResultsSelectionModel);
-    const bool haveOneSelectedResult = nSelectedResults == 1;
+    const bool haveOneSelectedResult = (nSelectedResults == 1);
     const bool haveSelectedImages    = !d->gosImageSelectionModel->selectedRows().isEmpty();
 
     d->actionCopyCoordinates->setEnabled(haveOneSelectedResult);
@@ -382,7 +385,8 @@ bool SearchWidget::eventFilter(QObject *watched, QEvent *event)
             slotUpdateActionAvailability();
 
             // construct the context-menu:
-            QMenu* const menu = new QMenu(d->treeView);
+
+            QMenu* const menu          = new QMenu(d->treeView);
             menu->addAction(d->actionCopyCoordinates);
             menu->addAction(d->actionMoveImagesToThisResult);
             menu->addAction(d->actionRemovedSelectedSearchResultsFromList);
@@ -433,7 +437,7 @@ void SearchWidget::slotMoveSelectedImagesToThisResult()
 {
     const QModelIndex currentIndex                        = d->searchResultsSelectionModel->currentIndex();
     const SearchResultModel::SearchResultItem currentItem = d->searchResultsModel->resultItem(currentIndex);
-    const GeoCoordinates& targetCoordinates      = currentItem.result.coordinates;
+    const GeoCoordinates& targetCoordinates               = currentItem.result.coordinates;
     const QModelIndexList selectedImageIndices            = d->gosImageSelectionModel->selectedRows();
 
     if (selectedImageIndices.isEmpty())
@@ -446,7 +450,7 @@ void SearchWidget::slotMoveSelectedImagesToThisResult()
     for (int i = 0 ; i < selectedImageIndices.count() ; ++i)
     {
         const QPersistentModelIndex itemIndex = selectedImageIndices.at(i);
-        GPSItemContainer* const item              = d->gpsItemModel->itemFromIndex(itemIndex);
+        GPSItemContainer* const item          = d->gpsItemModel->itemFromIndex(itemIndex);
 
         GPSUndoCommand::UndoInfo undoInfo(itemIndex);
         undoInfo.readOldDataFromItem(item);
