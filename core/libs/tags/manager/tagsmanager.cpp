@@ -674,6 +674,7 @@ void TagsManager::setupActions()
     d->mainToolbar = new QToolBar(this);
     d->mainToolbar->setMovable(false);
     d->mainToolbar->setFloatable(false);
+    d->mainToolbar->setContextMenuPolicy(Qt::PreventContextMenu);
     d->mainToolbar->layout()->setContentsMargins(QApplication::style()->pixelMetric(QStyle::PM_DefaultChildMargin),
                                                  QApplication::style()->pixelMetric(QStyle::PM_DefaultChildMargin),
                                                  QApplication::style()->pixelMetric(QStyle::PM_DefaultChildMargin),
