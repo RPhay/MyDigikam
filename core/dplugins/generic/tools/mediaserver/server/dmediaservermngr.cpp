@@ -181,7 +181,7 @@ QList<QUrl> DMediaServerMngr::itemsList() const
     {
         QList<QList<QUrl> > ulst = d->collectionMap.values();
 
-        foreach (QList<QUrl> urls, ulst)
+        foreach (const QList<QUrl>& urls, ulst)
         {
             ret << urls;
         }

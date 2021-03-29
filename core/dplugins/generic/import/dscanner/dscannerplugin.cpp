@@ -131,6 +131,7 @@ void DigitalScannerPlugin::slotDigitalScanner()
 
         if (dev.isEmpty())
         {
+            QMessageBox::warning(nullptr, qApp->applicationName(), i18n("No available scanner device."));
             return;
         }
 
