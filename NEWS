@@ -14,7 +14,8 @@ BUGFIXES:
 004 ==> 433226 - Crash - searching new entries.
 005 ==> 435021 - Rename does not support both comma and semicolon.
 006 ==> 435020 - Check for new version doesn't find updated released version.
-007 ==> 435065 - After upgrade from digikam 7.1 to 7.2, digikam won't start.
+007 ==> 435065 - After upgrade from digiKam 7.1 to 7.2, digiKam won't start.
 008 ==> 434960 - Libksane impossible to cross-compile for Windows.
 009 ==> 417064 - Import menu has no option to acquire images from scanner.
-010 ==> 
+010 ==> 194341 - digiKam crashed with seg fault.
+011 ==> 
