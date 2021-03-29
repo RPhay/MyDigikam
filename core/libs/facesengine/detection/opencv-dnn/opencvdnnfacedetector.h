@@ -41,8 +41,8 @@ namespace Digikam
 
 enum DetectorNNModel
 {
-    SSDMOBILENET = 0,   /// SSD MobileNet neural network inference.
-    YOLO                /// YOLO neural network inference.
+    SSDMOBILENET = 0,   ///< SSD MobileNet neural network inference.
+    YOLO                ///< YOLO neural network inference.
 };
 
 class OpenCVDNNFaceDetector
@@ -68,7 +68,7 @@ public:
 
 private:
 
-    cv::Mat prepareForDetection(cv::Mat& cvImage, cv::Size& paddedSize) const;
+    cv::Mat prepareForDetection(cv::Mat& cvImage, cv::Size& paddedSize)              const;
 
 private:
 

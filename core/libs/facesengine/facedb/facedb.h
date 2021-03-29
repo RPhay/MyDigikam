@@ -56,7 +56,7 @@ public:
     ~FaceDb();
 
     BdEngineBackend::QueryState setSetting(const QString& keyword, const QString& value);
-    QString setting(const QString& keyword) const;
+    QString setting(const QString& keyword)                                     const;
 
     /**
      * Returns true if the integrity of the database is preserved.
@@ -72,16 +72,16 @@ public:
 
     // --- Identity management (facedb_identity.cpp)
 
-    int  addIdentity()                      const;
-    int  getNumberOfIdentities()            const;
+    int  addIdentity()                                                          const;
+    int  getNumberOfIdentities()                                                const;
 
     void updateIdentity(const Identity& p);
     void deleteIdentity(int id);
     void deleteIdentity(const QString& uuid);
     void clearIdentities();
 
-    QList<Identity> identities()            const;
-    QList<int>      identityIds()           const;
+    QList<Identity> identities()                                                const;
+    QList<int>      identityIds()                                               const;
 
 public:
 
@@ -93,19 +93,21 @@ public:
      * @param label
      * @return id of newly inserted entry
      */
-    int insertFaceVector(const cv::Mat& faceEmbedding, const int label, const QString& context) const;
+    int insertFaceVector(const cv::Mat& faceEmbedding,
+                         const int label,
+                         const QString& context)                                const;
 
     /**
      * @brief reconstructTree: reconstruct KD-Tree from data in the database
      * @return
      */
-    KDTree* reconstructTree() const;
+    KDTree* reconstructTree()                                                   const;
 
     /**
      * @brief trainData: extract train data from database
      * @return
      */
-    cv::Ptr<cv::ml::TrainData> trainData() const;
+    cv::Ptr<cv::ml::TrainData> trainData()                                      const;
 
     /**
      * @brief insertToTreeDb : insert a new node to spatial database
@@ -114,7 +116,8 @@ public:
      * @param faceEmbedding
      * @return true if successed
      */
-    bool insertToTreeDb(const int nodeID, const cv::Mat& faceEmbedding) const;
+    bool insertToTreeDb(const int nodeID,
+                        const cv::Mat& faceEmbedding)                           const;
 
     /**
      * @brief getClosestNeighbors : return a list of closest neighbor, limited by maxNbNeighbors and sqRange
@@ -130,9 +133,9 @@ public:
     QMap<double, QVector<int> > getClosestNeighborsTreeDb(const cv::Mat& position,
                                                           float sqRange,
                                                           float cosThreshold,
-                                                          int maxNbNeighbors) const;
+                                                          int maxNbNeighbors)   const;
 
-    void clearTreeDb() const;
+    void clearTreeDb()                                                          const;
 
     /**
      * @brief clearDNNTraining : clear all trained data in the database
@@ -143,8 +146,13 @@ public:
 
 private:
 
-    void updateRangeTreeDb(int nodeId, cv::Mat& minRange, cv::Mat& maxRange, const cv::Mat& position) const;
-    int findParentTreeDb(const cv::Mat& nodePos, bool& leftChild, int& parentSplitAxis) const;
+    void updateRangeTreeDb(int nodeId,
+                           cv::Mat& minRange,
+                           cv::Mat& maxRange,
+                           const cv::Mat& position)                             const;
+    int findParentTreeDb(const cv::Mat& nodePos,
+                         bool& leftChild,
+                         int& parentSplitAxis)                                  const;
 
     class DataNode;
 
@@ -164,7 +172,7 @@ private:
                                      const cv::Mat& position,
                                      float sqRange,
                                      float cosThreshold,
-                                     int maxNbNeighbors) const;
+                                     int maxNbNeighbors)                        const;
 
 private:
 
