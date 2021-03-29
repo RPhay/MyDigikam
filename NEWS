@@ -16,4 +16,5 @@ BUGFIXES:
 006 ==> 435020 - Check for new version doesn't find updated released version.
 007 ==> 435065 - After upgrade from digikam 7.1 to 7.2, digikam won't start.
 008 ==> 434960 - Libksane impossible to cross-compile for Windows.
-009 ==> 
+009 ==> 417064 - Import menu has no option to acquire images from scanner.
+010 ==> 
