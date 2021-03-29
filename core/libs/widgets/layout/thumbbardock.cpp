@@ -59,8 +59,8 @@ DragHandle::DragHandle(QDockWidget* const parent)
 {
     d->parent = parent;
 
-    setToolTip(i18n("Drag to reposition"));
     setCursor(Qt::PointingHandCursor);
+    setToolTip(i18n("Drag to reposition"));
 
     // When the dock location changes, check if the orientation has changed.
 
@@ -159,6 +159,7 @@ ThumbBarDock::ThumbBarDock(QWidget* const parent, Qt::WindowFlags flags)
     // Use a DragHandle as title bar widget.
 
     setTitleBarWidget(new DragHandle(this));
+    setContextMenuPolicy(Qt::PreventContextMenu);
 }
 
 ThumbBarDock::~ThumbBarDock()
