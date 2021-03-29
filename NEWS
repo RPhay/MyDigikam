@@ -19,4 +19,6 @@ BUGFIXES:
 009 ==> 417064 - Import menu has no option to acquire images from scanner.
 010 ==> 194341 - digiKam crashed with seg fault.
 011 ==> 140750 - Image malformed in digiKam.
-012 ==> 
+012 ==> 205140 - digiKam crash using digital scanner.
+013 ==> 205198 - digiKam crash when trying to save a scanned image.
+014 ==> 
