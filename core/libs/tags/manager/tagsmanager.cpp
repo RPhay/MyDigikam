@@ -32,6 +32,7 @@
 #include <QHBoxLayout>
 #include <QSplitter>
 #include <QApplication>
+#include <QPushButton>
 #include <QToolBar>
 #include <QScreen>
 #include <QWindow>
@@ -91,8 +92,8 @@ public:
         splitter        (nullptr),
         treeWindow      (nullptr),
         mainToolbar     (nullptr),
-        organizeAction  (nullptr),
-        syncexportAction(nullptr),
+        organizeButton  (nullptr),
+        syncexportButton(nullptr),
         tagProperties   (nullptr),
         addAction       (nullptr),
         delAction       (nullptr),
@@ -112,8 +113,8 @@ public:
     QSplitter*       splitter;
     QWidget*         treeWindow;
     QToolBar*        mainToolbar;
-    QMenu*           organizeAction;
-    QMenu*           syncexportAction;
+    QPushButton*     organizeButton;
+    QPushButton*     syncexportButton;
     QAction*         tagProperties;
     QAction*         addAction;
     QAction*         delAction;
@@ -695,11 +696,17 @@ void TagsManager::setupActions()
     d->delAction                 = new QAction(QIcon::fromTheme(QLatin1String("list-remove")),
                                                QLatin1String(""), this);
 
+    d->organizeButton            = new QPushButton(i18nc("@action: button", "Organize"), this);
+    d->organizeButton->setIcon(QIcon::fromTheme(QLatin1String("autocorrection")));
+
+    d->syncexportButton          = new QPushButton(i18nc("@action: button", "Sync &Export"), this);
+    d->syncexportButton->setIcon(QIcon::fromTheme(QLatin1String("network-server-database")));
+
     /**
      * organize group
      */
-    d->organizeAction            = new QMenu(i18nc("@title:menu", "Organize"), this);
-    d->organizeAction->setIcon(QIcon::fromTheme(QLatin1String("autocorrection")));
+    QMenu* const organizeAction  = new QMenu(d->organizeButton);
+    d->organizeButton->setMenu(organizeAction);
 
     d->titleEdit                 = new QAction(QIcon::fromTheme(QLatin1String("document-edit")),
                                                i18n("Edit Tag Title"), this);
@@ -776,20 +783,21 @@ void TagsManager::setupActions()
     connect(markUnused, SIGNAL(triggered()),
             this, SLOT(slotMarkNotAssignedTags()));
 
-    d->organizeAction->addAction(d->titleEdit);
-    d->organizeAction->addAction(resetIcon);
-    d->organizeAction->addAction(createTagAddr);
-    d->organizeAction->addAction(markUnused);
-    d->organizeAction->addAction(invSel);
-    d->organizeAction->addAction(expandTree);
-    d->organizeAction->addAction(expandSel);
-    d->organizeAction->addAction(delTagFromImg);
+    organizeAction->addAction(d->titleEdit);
+    organizeAction->addAction(resetIcon);
+    organizeAction->addAction(createTagAddr);
+    organizeAction->addAction(markUnused);
+    organizeAction->addAction(invSel);
+    organizeAction->addAction(expandTree);
+    organizeAction->addAction(expandSel);
+    organizeAction->addAction(delTagFromImg);
 
     /**
      * Sync & Export Group
      */
-    d->syncexportAction     = new QMenu(i18n("Sync &Export"), this);
-    d->syncexportAction->setIcon(QIcon::fromTheme(QLatin1String("network-server-database")));
+
+    QMenu* const syncexportAction  = new QMenu(d->syncexportButton);
+    d->syncexportButton->setMenu(syncexportAction);
 
     QAction* const wrDbImg  = new QAction(QIcon::fromTheme(QLatin1String("view-refresh")),
                                           i18n("Write Tags from Database to Image"), this);
@@ -817,14 +825,14 @@ void TagsManager::setupActions()
     connect(wipeAll, SIGNAL(triggered()),
             this, SLOT(slotWipeAll()));
 
-    d->syncexportAction->addAction(wrDbImg);
-    d->syncexportAction->addAction(readTags);
-    d->syncexportAction->addAction(wipeAll);
+    syncexportAction->addAction(wrDbImg);
+    syncexportAction->addAction(readTags);
+    syncexportAction->addAction(wipeAll);
 
     d->mainToolbar->addAction(d->addAction);
     d->mainToolbar->addAction(d->delAction);
-    d->mainToolbar->addAction(d->organizeAction->menuAction());
-    d->mainToolbar->addAction(d->syncexportAction->menuAction());
+    d->mainToolbar->addWidget(d->organizeButton);
+    d->mainToolbar->addWidget(d->syncexportButton);
     d->mainToolbar->addAction(new DLogoAction(this));
     addToolBar(d->mainToolbar);
 
