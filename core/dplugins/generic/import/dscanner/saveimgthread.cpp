@@ -111,8 +111,8 @@ void SaveImgThread::run()
 {
     emit signalProgress(d->newUrl, 10);
 
-    bool sixteenBit   = (d->frmt == KSaneWidget::FormatRGB_16_C ||
-                         d->frmt == KSaneWidget::FormatGrayScale16);
+    bool sixteenBit   = ((d->frmt == KSaneWidget::FormatRGB_16_C) ||
+                         (d->frmt == KSaneWidget::FormatGrayScale16));
     DImg img((uint)d->width, (uint)d->height, sixteenBit, false);
     int progress;
 
@@ -121,11 +121,11 @@ void SaveImgThread::run()
         uchar* src = (uchar*)d->ksaneData.data();
         uchar* dst = img.bits();
 
-        for (int h = 0; h < d->height; ++h)
+        for (int h = 0 ; h < d->height ; ++h)
         {
-            for (int w = 0; w < d->width; ++w)
+            for (int w = 0 ; w < d->width ; ++w)
             {
-                if (d->frmt == KSaneWidget::FormatRGB_8_C) // Color
+                if      (d->frmt == KSaneWidget::FormatRGB_8_C)     // Color 8 bits
                 {
                     dst[0]  = src[2];    // Blue
                     dst[1]  = src[1];    // Green
@@ -135,7 +135,7 @@ void SaveImgThread::run()
                     dst    += 4;
                     src    += 3;
                 }
-                else if (d->frmt == KSaneWidget::FormatGrayScale8) // Gray
+                else if (d->frmt == KSaneWidget::FormatGrayScale8)  // Gray
                 {
                     dst[0]  = src[0];    // Blue
                     dst[1]  = src[0];    // Green
@@ -145,9 +145,9 @@ void SaveImgThread::run()
                     dst    += 4;
                     src    += 1;
                 }
-                else if (d->frmt == KSaneWidget::FormatBlackWhite) // Lineart
+                else if (d->frmt == KSaneWidget::FormatBlackWhite)  // Lineart
                 {
-                    for (int i = 0; i < 8; ++i)
+                    for (int i = 0 ; i < 8 ; ++i)
                     {
                         if (*src & (1 << (7 - i)))
                         {
@@ -185,11 +185,11 @@ void SaveImgThread::run()
         unsigned short* src = reinterpret_cast<unsigned short*>(d->ksaneData.data());
         unsigned short* dst = reinterpret_cast<unsigned short*>(img.bits());
 
-        for (int h = 0; h < d->height; ++h)
+        for (int h = 0 ; h < d->height ; ++h)
         {
-            for (int w = 0; w < d->width; ++w)
+            for (int w = 0 ; w < d->width ; ++w)
             {
-                if (d->frmt == KSaneWidget::FormatRGB_16_C) // Color16
+                if      (d->frmt == KSaneWidget::FormatRGB_16_C)    // Color 16 bits
                 {
                     dst[0]  = src[2];    // Blue
                     dst[1]  = src[1];    // Green
@@ -213,7 +213,7 @@ void SaveImgThread::run()
 
             progress = 10 + (int)(((double)h * 50.0) / d->height);
 
-            if (progress % 5 == 0)
+            if ((progress % 5) == 0)
             {
                 emit signalProgress(d->newUrl, progress);
             }
