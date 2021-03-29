@@ -58,9 +58,9 @@ public:
                           GPSItemModel* const gpsItemModel,
                           QItemSelectionModel* const gpsImageSelectionModel,
                           QWidget* const parent);
-    ~SearchWidget() override;
+    ~SearchWidget()                                                               override;
 
-    GeoModelHelper* getModelHelper() const;
+    GeoModelHelper* getModelHelper()                                        const;
 
     void saveSettingsToGroup(KConfigGroup* const group);
     void readSettingsFromGroup(const KConfigGroup* const group);
@@ -81,7 +81,7 @@ private Q_SLOTS:
 
 protected:
 
-    bool eventFilter(QObject* watched, QEvent* event) override;
+    bool eventFilter(QObject* watched, QEvent* event)                             override;
 
 Q_SIGNALS:
 

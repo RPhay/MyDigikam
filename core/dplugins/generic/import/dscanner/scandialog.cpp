@@ -130,7 +130,7 @@ void ScanDialog::slotSaveImage(QByteArray& ksane_data, int width, int height, in
     QStringList writableMimetypes;
     QList<QByteArray> supported = QImageWriter::supportedMimeTypes();
 
-    foreach (QByteArray mimeType, supported)
+    foreach (const QByteArray& mimeType, supported)
     {
         writableMimetypes.append(QLatin1String(mimeType));
     }
@@ -198,6 +198,7 @@ void ScanDialog::slotSaveImage(QByteArray& ksane_data, int width, int height, in
                                   i18n("The target image file format \"%1\" is unsupported.", format));
             qCWarning(DIGIKAM_DPLUGIN_GENERIC_LOG) << "target image file format " << format << " is unsupported!";
             delete imageFileSaveDialog;
+
             return;
         }
     }
@@ -210,6 +211,7 @@ void ScanDialog::slotSaveImage(QByteArray& ksane_data, int width, int height, in
                               QDir::toNativeSeparators(newURL.toLocalFile().section(QLatin1Char('/'), -2, -2))));
         qCWarning(DIGIKAM_DPLUGIN_GENERIC_LOG) << "target URL is not valid !";
         delete imageFileSaveDialog;
+
         return;
     }
 
@@ -227,6 +229,7 @@ void ScanDialog::slotSaveImage(QByteArray& ksane_data, int width, int height, in
         if (result != QMessageBox::Yes)
         {
             delete imageFileSaveDialog;
+
             return;
         }
     }
@@ -264,7 +267,7 @@ void ScanDialog::slotThreadDone(const QUrl& url, bool success)
         QMessageBox::critical(nullptr, i18n("File Not Saved"), i18n("Cannot save \"%1\" file", url.fileName()));
     }
 
-    d->progress->setProgressText(QLatin1String(""));
+    d->progress->setProgressText(QString());
     QApplication::restoreOverrideCursor();
     setEnabled(true);
 

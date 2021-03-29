@@ -60,16 +60,16 @@ class Q_DECL_HIDDEN SearchResultModelHelper::Private
 public:
 
     explicit Private()
-      : model(nullptr),
+      : model         (nullptr),
         selectionModel(nullptr),
-        imageModel(nullptr),
-        visible(true)
+        imageModel    (nullptr),
+        visible       (true)
     {
     }
 
     SearchResultModel*   model;
     QItemSelectionModel* selectionModel;
-    GPSItemModel*       imageModel;
+    GPSItemModel*        imageModel;
     bool                 visible;
 };
 
@@ -78,7 +78,7 @@ SearchResultModelHelper::SearchResultModelHelper(SearchResultModel* const result
                                                  GPSItemModel* const imageModel,
                                                  QObject* const parent)
     : GeoModelHelper(parent),
-      d(new Private())
+      d             (new Private())
 {
     d->model          = resultModel;
     d->selectionModel = selectionModel;
@@ -126,12 +126,12 @@ bool SearchResultModelHelper::itemIcon(const QModelIndex& index,
 
 GeoModelHelper::PropertyFlags SearchResultModelHelper::modelFlags() const
 {
-    return FlagSnaps | (d->visible ? FlagVisible:FlagNull);
+    return (FlagSnaps | (d->visible ? FlagVisible:FlagNull));
 }
 
 GeoModelHelper::PropertyFlags SearchResultModelHelper::itemFlags(const QModelIndex& /*index*/) const
 {
-    return FlagVisible | FlagSnaps;
+    return (FlagVisible | FlagSnaps);
 }
 
 void SearchResultModelHelper::snapItemsTo(const QModelIndex& targetIndex,
@@ -144,7 +144,7 @@ void SearchResultModelHelper::snapItemsTo(const QModelIndex& targetIndex,
     for (int i = 0 ; i < snappedIndices.count() ; ++i)
     {
         const QPersistentModelIndex itemIndex = snappedIndices.at(i);
-        GPSItemContainer* const item              = d->imageModel->itemFromIndex(itemIndex);
+        GPSItemContainer* const item          = d->imageModel->itemFromIndex(itemIndex);
 
         GPSUndoCommand::UndoInfo undoInfo(itemIndex);
         undoInfo.readOldDataFromItem(item);
