@@ -18,4 +18,5 @@ BUGFIXES:
 008 ==> 434960 - Libksane impossible to cross-compile for Windows.
 009 ==> 417064 - Import menu has no option to acquire images from scanner.
 010 ==> 194341 - digiKam crashed with seg fault.
-011 ==> 
+011 ==> 140750 - Image malformed in digiKam.
+012 ==> 
