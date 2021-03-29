@@ -133,13 +133,12 @@ make MXE_TARGETS=$MXE_BUILD_TARGETS \
      qttools \
      qtwinextras \
      qtscript \
+     qtwebkit \
      x265 \
      ffmpeg \
      openal \
      libical \
      imagemagick
-
-#     qtwebkit \
 
 echo -e "\n"
 
