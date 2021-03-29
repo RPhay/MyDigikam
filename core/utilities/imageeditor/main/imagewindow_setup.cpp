@@ -217,7 +217,6 @@ void ImageWindow::setupUserArea()
 
     d->thumbBarDock     = new ThumbBarDock(d->viewContainer, Qt::Tool);
     d->thumbBarDock->setObjectName(QLatin1String("editor_thumbbar"));
-    d->thumbBarDock->setWindowTitle(i18n("Image Editor Thumbnail Dock"));
 
     d->thumbBar         = new ItemThumbnailBar(d->thumbBarDock);
     d->thumbBar->setModels(d->imageInfoModel, d->imageFilterModel);

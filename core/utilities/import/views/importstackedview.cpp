@@ -109,7 +109,6 @@ ImportStackedView::ImportStackedView(QWidget* const parent)
     d->thumbBar->installOverlays();
     d->thumbBarDock->setWidget(d->thumbBar);
     d->thumbBarDock->setObjectName(QLatin1String("import_thumbbar"));
-    d->thumbBarDock->setWindowTitle(i18n("Import Thumbnail Dock"));
 
 #ifdef HAVE_MARBLE
 
