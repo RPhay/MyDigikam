@@ -24,6 +24,25 @@ index 62229199..5c4fa073 100644
  namespace KIO
  {
  class Connection;
+diff --git a/src/filewidgets/kfilewidget.cpp b/src/filewidgets/kfilewidget.cpp
+index ab25e093..c31bd7ab 100644
+--- a/src/filewidgets/kfilewidget.cpp
++++ b/src/filewidgets/kfilewidget.cpp
+@@ -260,12 +260,12 @@ public:
+     bool m_confirmOverwrite = false;
+     bool m_differentHierarchyLevelItemsEntered = false;
+ 
+-    const std::array<KIconLoader::StdSizes, 6> m_stdIconSizes = {KIconLoader::SizeSmall,
++    const std::array<KIconLoader::StdSizes, 6> m_stdIconSizes = {{KIconLoader::SizeSmall,
+                                                                  KIconLoader::SizeSmallMedium,
+                                                                  KIconLoader::SizeMedium,
+                                                                  KIconLoader::SizeLarge,
+                                                                  KIconLoader::SizeHuge,
+-                                                                 KIconLoader::SizeEnormous};
++                                                                 KIconLoader::SizeEnormous}};
+ 
+     QSlider *m_iconSizeSlider = nullptr;
+     QAction *m_zoomOutAction = nullptr;
 diff --git a/src/kcms/kio/CMakeLists.txt b/src/kcms/kio/CMakeLists.txt
 index a45b6155..15b6f2ac 100644
 --- a/src/kcms/kio/CMakeLists.txt
