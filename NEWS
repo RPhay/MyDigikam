@@ -5,7 +5,7 @@ NEW FEATURES:
 
 General: Digital Scanner plugin is now available under Windows.
 General: Use Exiv2 0.27.4 in all bundles with Base Media File metadata support.
-General: Use KF5 framework 5.80 in all bundles.
+General: Use KF5 framework 5.80 and KAPP 20.12.3 in all bundles.
 
 *****************************************************************************************************
 BUGFIXES:
@@ -25,4 +25,5 @@ BUGFIXES:
 013 ==> 205198 - digiKam crash when trying to save a scanned image.
 014 ==> 435089 - Tags Manager toolbar icon buttons do nothing.
 015 ==> 435091 - Right-clicking Tags Manager toolbar shows unlabeled checkbox; unclear how to restore toolbar.
-016 ==> 
+016 ==> 435139 - Error while opening the database. digikam will try to automatically reconnect to the database.
+017 ==> 
