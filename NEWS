@@ -28,4 +28,5 @@ BUGFIXES:
 015 ==> 435091 - Right-clicking Tags Manager toolbar shows unlabeled checkbox; unclear how to restore toolbar.
 016 ==> 435139 - Error while opening the database. digikam will try to automatically reconnect to the database.
 017 ==> 372435 - Use multiple cpu cores for duplicate search [patch].
-018 ==> 
+018 ==> 383563 - Many tags disappeared from mariadb database.
+019 ==> 
