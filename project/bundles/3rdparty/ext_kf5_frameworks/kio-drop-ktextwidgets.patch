@@ -1,9 +1,9 @@
 diff --git a/autotests/jobtest.h b/autotests/jobtest.h
-index ceb4e279..0c2169b7 100644
+index b195a3ef..c9b930cf 100644
 --- a/autotests/jobtest.h
 +++ b/autotests/jobtest.h
 @@ -12,6 +12,8 @@
- #include <QObject>
+ #include <QString>
  #include <kio/job.h>
  
 +#undef stat
@@ -12,7 +12,7 @@ index ceb4e279..0c2169b7 100644
  {
      Q_OBJECT
 diff --git a/src/core/slaveinterface.h b/src/core/slaveinterface.h
-index 4b743d4b..32cbb944 100644
+index 62229199..5c4fa073 100644
 --- a/src/core/slaveinterface.h
 +++ b/src/core/slaveinterface.h
 @@ -19,6 +19,8 @@
@@ -23,33 +23,17 @@ index 4b743d4b..32cbb944 100644
 +
  namespace KIO
  {
- 
-diff --git a/src/filewidgets/kfilewidget.cpp b/src/filewidgets/kfilewidget.cpp
-index 1ae071ac..dd6bcd87 100644
---- a/src/filewidgets/kfilewidget.cpp
-+++ b/src/filewidgets/kfilewidget.cpp
-@@ -285,9 +285,9 @@ public:
-     bool confirmOverwrite : 1;
-     bool differentHierarchyLevelItemsEntered;
- 
--    const std::array<KIconLoader::StdSizes, 6> stdIconSizes =
-+    const std::array<KIconLoader::StdSizes, 6> stdIconSizes {
-             {KIconLoader::SizeSmall, KIconLoader::SizeSmallMedium, KIconLoader::SizeMedium,
--             KIconLoader::SizeLarge, KIconLoader::SizeHuge, KIconLoader::SizeEnormous};
-+             KIconLoader::SizeLarge, KIconLoader::SizeHuge, KIconLoader::SizeEnormous}};
- 
-     QSlider *iconSizeSlider;
-     QAction *zoomOutAction;
+ class Connection;
 diff --git a/src/kcms/kio/CMakeLists.txt b/src/kcms/kio/CMakeLists.txt
-index 104fdaf7..c8005c3a 100644
+index a45b6155..15b6f2ac 100644
 --- a/src/kcms/kio/CMakeLists.txt
 +++ b/src/kcms/kio/CMakeLists.txt
 @@ -1,7 +1,7 @@
  
  add_subdirectory( uasproviders )
  
--find_package(KF5TextWidgets ${KF5_DEP_VERSION} REQUIRED)
-+#find_package(KF5TextWidgets ${KF5_DEP_VERSION} REQUIRED)
+-find_package(KF5TextWidgets ${KF_DEP_VERSION} REQUIRED)
++#find_package(KF5TextWidgets ${KF_DEP_VERSION} REQUIRED)
  
  ########### next target ###############
  
@@ -63,73 +47,57 @@ index 104fdaf7..c8005c3a 100644
      KF5::I18n)
  
 diff --git a/src/kcms/kio/netpref.cpp b/src/kcms/kio/netpref.cpp
-index 960925cd..d50216f8 100644
+index a7668e80..c446569f 100644
 --- a/src/kcms/kio/netpref.cpp
 +++ b/src/kcms/kio/netpref.cpp
-@@ -6,11 +6,11 @@
- #include <QCheckBox>
- #include <QGroupBox>
- #include <QFormLayout>
-+#include <QSpinBox>
+@@ -41,26 +41,26 @@ KIOPreferences::KIOPreferences(QWidget *parent, const QVariantList &)
+     mainLayout->addWidget(gb_Timeout);
  
- // KDE
- #include <ioslave_defaults.h>
- #include <KLocalizedString>
--#include <KPluralHandlingSpinBox>
- #include <KConfig>
- #include <KPluginFactory>
- #include <KConfigGroup>
-@@ -39,29 +39,29 @@ KIOPreferences::KIOPreferences(QWidget *parent, const QVariantList &)
-     mainLayout->addWidget( gb_Timeout );
+     QFormLayout *timeoutLayout = new QFormLayout(gb_Timeout);
+-    sb_socketRead = new KPluralHandlingSpinBox(this);
+-    sb_socketRead->setSuffix(ki18np(" second", " seconds"));
++    sb_socketRead = new QSpinBox(this);
++    sb_socketRead->setSuffix(ki18np(" second", " seconds").toString());
+     connect(sb_socketRead, QOverload<int>::of(&QSpinBox::valueChanged), this, &KIOPreferences::configChanged);
+     timeoutLayout->addRow(i18n("Soc&ket read:"), sb_socketRead);
  
-     QFormLayout* timeoutLayout = new QFormLayout(gb_Timeout);
--    sb_socketRead = new KPluralHandlingSpinBox( this );
--    sb_socketRead->setSuffix( ki18np( " second", " seconds" ) );
-+    sb_socketRead = new QSpinBox( this );
-+    sb_socketRead->setSuffix( ki18np( " second", " seconds" ).toString() );
-     connect(sb_socketRead, QOverload<int>::of(&QSpinBox::valueChanged),
-             this, &KIOPreferences::configChanged);
-     timeoutLayout->addRow(i18n( "Soc&ket read:" ), sb_socketRead);
- 
--    sb_proxyConnect = new KPluralHandlingSpinBox( this );
-+    sb_proxyConnect = new QSpinBox( this );
+-    sb_proxyConnect = new KPluralHandlingSpinBox(this);
++    sb_proxyConnect = new QSpinBox(this);
      sb_proxyConnect->setValue(0);
--    sb_proxyConnect->setSuffix( ki18np( " second", " seconds" ) );
-+    sb_proxyConnect->setSuffix( ki18np( " second", " seconds" ).toString() );
-     connect(sb_proxyConnect, QOverload<int>::of(&QSpinBox::valueChanged),
-             this, &KIOPreferences::configChanged);
-     timeoutLayout->addRow(i18n( "Pro&xy connect:" ), sb_proxyConnect);
+-    sb_proxyConnect->setSuffix(ki18np(" second", " seconds"));
++    sb_proxyConnect->setSuffix(ki18np(" second", " seconds").toString());
+     connect(sb_proxyConnect, QOverload<int>::of(&QSpinBox::valueChanged), this, &KIOPreferences::configChanged);
+     timeoutLayout->addRow(i18n("Pro&xy connect:"), sb_proxyConnect);
  
--    sb_serverConnect = new KPluralHandlingSpinBox( this );
-+    sb_serverConnect = new QSpinBox( this );
+-    sb_serverConnect = new KPluralHandlingSpinBox(this);
++    sb_serverConnect = new QSpinBox(this);
      sb_serverConnect->setValue(0);
--    sb_serverConnect->setSuffix( ki18np( " second", " seconds" ) );
-+    sb_serverConnect->setSuffix( ki18np( " second", " seconds" ).toString() );
-     connect(sb_serverConnect, QOverload<int>::of(&QSpinBox::valueChanged),
-             this, &KIOPreferences::configChanged);
+-    sb_serverConnect->setSuffix(ki18np(" second", " seconds"));
++    sb_serverConnect->setSuffix(ki18np(" second", " seconds").toString());
+     connect(sb_serverConnect, QOverload<int>::of(&QSpinBox::valueChanged), this, &KIOPreferences::configChanged);
      timeoutLayout->addRow(i18n("Server co&nnect:"), sb_serverConnect);
  
--    sb_serverResponse = new KPluralHandlingSpinBox( this );
-+    sb_serverResponse = new QSpinBox( this );
+-    sb_serverResponse = new KPluralHandlingSpinBox(this);
++    sb_serverResponse = new QSpinBox(this);
      sb_serverResponse->setValue(0);
--    sb_serverResponse->setSuffix( ki18np( " second", " seconds" ) );
-+    sb_serverResponse->setSuffix( ki18np( " second", " seconds" ).toString() );
-     connect(sb_serverResponse, QOverload<int>::of(&QSpinBox::valueChanged),
-             this, &KIOPreferences::configChanged);
+-    sb_serverResponse->setSuffix(ki18np(" second", " seconds"));
++    sb_serverResponse->setSuffix(ki18np(" second", " seconds").toString());
+     connect(sb_serverResponse, QOverload<int>::of(&QSpinBox::valueChanged), this, &KIOPreferences::configChanged);
      timeoutLayout->addRow(i18n("&Server response:"), sb_serverResponse);
-@@ -88,8 +88,8 @@ KIOPreferences::KIOPreferences(QWidget *parent, const QVariantList &)
+ 
+@@ -86,8 +86,8 @@ KIOPreferences::KIOPreferences(QWidget *parent, const QVariantList &)
      auto partialLayout = new QFormLayout(partialWidget);
      partialLayout->setContentsMargins(20, 0, 0, 0); // indent below mark partial
  
--    sb_globalMinimumKeepSize = new KPluralHandlingSpinBox( this );
--    sb_globalMinimumKeepSize->setSuffix( ki18np( " byte", " bytes" ) );
-+    sb_globalMinimumKeepSize = new QSpinBox( this );
-+    sb_globalMinimumKeepSize->setSuffix( ki18np( " byte", " bytes" ).toString() );
-     connect(sb_globalMinimumKeepSize, QOverload<int>::of(&QSpinBox::valueChanged),
-             this, &KIOPreferences::configChanged);
-     partialLayout->addRow(i18nc( "@label:spinbox", "If cancelled, automatically delete partially uploaded files smaller than:" ),
+-    sb_globalMinimumKeepSize = new KPluralHandlingSpinBox(this);
+-    sb_globalMinimumKeepSize->setSuffix(ki18np(" byte", " bytes"));
++    sb_globalMinimumKeepSize = new QSpinBox(this);
++    sb_globalMinimumKeepSize->setSuffix(ki18np(" byte", " bytes").toString());
+     connect(sb_globalMinimumKeepSize, QOverload<int>::of(&QSpinBox::valueChanged), this, &KIOPreferences::configChanged);
+     partialLayout->addRow(i18nc("@label:spinbox", "If cancelled, automatically delete partially uploaded files smaller than:"), sb_globalMinimumKeepSize);
+ 
 diff --git a/src/kcms/kio/netpref.h b/src/kcms/kio/netpref.h
-index 8a41b5cf..74c5738e 100644
+index 6e1ff0a2..c97fb0d4 100644
 --- a/src/kcms/kio/netpref.h
 +++ b/src/kcms/kio/netpref.h
 @@ -6,7 +6,7 @@
@@ -141,47 +109,49 @@ index 8a41b5cf..74c5738e 100644
  
  class KIOPreferences : public KCModule
  {
-@@ -29,14 +29,14 @@ private:
-     QGroupBox* gb_Ftp;
-     QGroupBox* gb_Timeout;
-     QCheckBox* cb_globalMarkPartial;
--    KPluralHandlingSpinBox* sb_globalMinimumKeepSize;
-+    QSpinBox* sb_globalMinimumKeepSize;
-     QCheckBox* cb_ftpEnablePasv;
-     QCheckBox* cb_ftpMarkPartial;
+@@ -32,14 +32,14 @@ private:
+     QGroupBox *gb_Ftp;
+     QGroupBox *gb_Timeout;
+     QCheckBox *cb_globalMarkPartial;
+-    KPluralHandlingSpinBox *sb_globalMinimumKeepSize;
++    QSpinBox *sb_globalMinimumKeepSize;
+     QCheckBox *cb_ftpEnablePasv;
+     QCheckBox *cb_ftpMarkPartial;
  
--    KPluralHandlingSpinBox* sb_socketRead;
--    KPluralHandlingSpinBox* sb_proxyConnect;
--    KPluralHandlingSpinBox* sb_serverConnect;
--    KPluralHandlingSpinBox* sb_serverResponse;
-+    QSpinBox* sb_socketRead;
-+    QSpinBox* sb_proxyConnect;
-+    QSpinBox* sb_serverConnect;
-+    QSpinBox* sb_serverResponse;
+-    KPluralHandlingSpinBox *sb_socketRead;
+-    KPluralHandlingSpinBox *sb_proxyConnect;
+-    KPluralHandlingSpinBox *sb_serverConnect;
+-    KPluralHandlingSpinBox *sb_serverResponse;
++    QSpinBox *sb_socketRead;
++    QSpinBox *sb_proxyConnect;
++    QSpinBox *sb_serverConnect;
++    QSpinBox *sb_serverResponse;
  };
  
  #endif // NETPREF_H
 diff --git a/src/widgets/renamedialog.cpp b/src/widgets/renamedialog.cpp
-index ac2feef9..c5d2c542 100644
+index 58994c7c..3a88bc87 100644
 --- a/src/widgets/renamedialog.cpp
 +++ b/src/widgets/renamedialog.cpp
-@@ -412,16 +412,16 @@ RenameDialog::RenameDialog(QWidget *parent, const QString &_caption,
-         if ((d->dest.isLocalFile() && !(_options & RenameDialog_DestIsDirectory))
-             && (d->src.isLocalFile() && !(_options & RenameDialog_SourceIsDirectory))) {
+@@ -413,10 +413,10 @@ RenameDialog::RenameDialog(QWidget *parent,
  
+         // check files contents for local files
+         if ((d->dest.isLocalFile() && !(_options & RenameDialog_DestIsDirectory)) && (d->src.isLocalFile() && !(_options & RenameDialog_SourceIsDirectory))) {
 -            const CompareFilesResult CompareFilesResult = compareFiles(d->src.toLocalFile(), d->dest.toLocalFile());
 +            const CompareFilesResult res = compareFiles(d->src.toLocalFile(), d->dest.toLocalFile());
  
              QString text;
 -            switch (CompareFilesResult) {
 +            switch (res) {
-                 case CompareFilesResult::Identical: text = i18n("The files are identical."); break;
-                 case CompareFilesResult::PartiallyIdentical: text = i18n("The files seem identical."); break;
-                 case CompareFilesResult::Different: text = i18n("The files are different."); break;
+             case CompareFilesResult::Identical:
+                 text = i18n("The files are identical.");
+                 break;
+@@ -428,7 +428,7 @@ RenameDialog::RenameDialog(QWidget *parent,
+                 break;
              }
-             QLabel* filesIdenticalLabel = createLabel(this, text, true);
+             QLabel *filesIdenticalLabel = createLabel(this, text, true);
 -            if (CompareFilesResult == CompareFilesResult::PartiallyIdentical) {
 +            if (res == CompareFilesResult::PartiallyIdentical) {
-                 QLabel* pixmapLabel = new QLabel(this);
-                 pixmapLabel->setPixmap(QIcon::fromTheme(QStringLiteral("help-about")).pixmap(QSize(16,16)));
+                 QLabel *pixmapLabel = new QLabel(this);
+                 pixmapLabel->setPixmap(QIcon::fromTheme(QStringLiteral("help-about")).pixmap(QSize(16, 16)));
                  pixmapLabel->setToolTip(
