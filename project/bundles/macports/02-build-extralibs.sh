@@ -97,8 +97,10 @@ cmake --build . --config RelWithDebInfo --target ext_kxmlgui             -- -j$C
 cmake --build . --config RelWithDebInfo --target ext_kbookmarks          -- -j$CPU_CORES
 cmake --build . --config RelWithDebInfo --target ext_kimageformats       -- -j$CPU_CORES
 
+# Extra support for digiKam
+
 # libksane support
-#cmake --build . --config RelWithDebInfo --target ext_libksane            -- -j$CPU_CORES
+cmake --build . --config RelWithDebInfo --target ext_libksane            -- -j$CPU_CORES
 
 # Geolocation support
 cmake --build . --config RelWithDebInfo --target ext_marble              -- -j$CPU_CORES
