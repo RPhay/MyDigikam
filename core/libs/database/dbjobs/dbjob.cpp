@@ -301,9 +301,9 @@ SearchesJob::SearchesJob(const SearchesDBJobInfo& jobInfo,
                          HaarIface* iface)
     : DBJob    (),
       m_jobInfo(jobInfo),
-      m_begin(begin),
-      m_end(end),
-      m_iface(iface)
+      m_begin  (begin),
+      m_end    (end),
+      m_iface  (iface)
 {
 }
 

@@ -228,11 +228,11 @@ void SearchesDBJobsThread::searchesListing(const SearchesDBJobInfo& info)
     {
         m_results.clear();
         m_haarIface.reset(new HaarIface(info.imageIds()));
-        m_isAlbumUpdate = info.isAlbumUpdate();
-        m_processedImages = 0;
+        m_isAlbumUpdate    = info.isAlbumUpdate();
+        m_processedImages  = 0;
         m_totalImages2Scan = info.imageIds().count();
 
-        const int threadsCount = m_totalImages2Scan < 200 ? 1 : qMax(1, maximumNumberOfThreads());
+        const int threadsCount         = (m_totalImages2Scan < 200) ? 1 : qMax(1, maximumNumberOfThreads());
         const int images2ScanPerThread = m_totalImages2Scan / threadsCount;
 
         QSet<qlonglong>::const_iterator begin = info.imageIds().cbegin();
@@ -244,7 +244,7 @@ void SearchesDBJobsThread::searchesListing(const SearchesDBJobInfo& info)
 
             end = (i == threadsCount - 1) ? info.imageIds().cend() : begin + images2ScanPerThread;
 
-            SearchesJob *const job = new SearchesJob(info, begin, end, m_haarIface.get());
+            SearchesJob* const job = new SearchesJob(info, begin, end, m_haarIface.get());
 
             begin = end;
 
@@ -278,7 +278,8 @@ void SearchesDBJobsThread::slotImageProcessed()
 
 void SearchesDBJobsThread::slotDuplicatesResults(const HaarIface::DuplicatesResultsMap& incoming)
 {
-    auto containsImage = [&](qlonglong imageId) -> bool {
+    auto containsImage = [&](qlonglong imageId) -> bool
+    {
         for (const auto searchAlbum : m_results.values())
         {
             for (const auto imagesList : searchAlbum.values())
@@ -289,6 +290,7 @@ void SearchesDBJobsThread::slotDuplicatesResults(const HaarIface::DuplicatesResu
                 }
             }
         }
+
         return false;
     };
 

@@ -141,7 +141,7 @@ void HaarIface::Private::rebuildSignatureCache(const QSet<qlonglong>& imageIds)
 
     if (!imageIds.isEmpty())
     {
-        for (auto it = itemAlbumHash.begin(); it != itemAlbumHash.end();)
+        for (auto it = itemAlbumHash.begin() ; it != itemAlbumHash.end() ; )
         {
             if (!imageIds.contains(it.key()))
             {

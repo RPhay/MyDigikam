@@ -494,7 +494,7 @@ QMap<qlonglong, double> HaarIface::searchDatabase(Haar::SignatureData* const que
         d->rebuildSignatureCache();
     }
 
-    for (auto it = d->signatureCache()->cbegin(); it != d->signatureCache()->cend(); ++it)
+    for (auto it = d->signatureCache()->cbegin() ; it != d->signatureCache()->cend() ; ++it)
     {
         // If the image is the original one or
         // No restrictions apply or
@@ -507,7 +507,7 @@ QMap<qlonglong, double> HaarIface::searchDatabase(Haar::SignatureData* const que
                                  originalAlbumId, targetAlbums, searchResultRestriction))
         {
             const Haar::SignatureData& data = it.value();
-            scores[imageId] = calculateScore(*querySig, data, weights, queryMaps);
+            scores[imageId]                 = calculateScore(*querySig, data, weights, queryMaps);
         }
     }
 
@@ -794,7 +794,7 @@ HaarIface::DuplicatesResultsMap HaarIface::findDuplicates(const QSet<qlonglong>&
         d->rebuildSignatureCache(images2Scan);
     }
 
-    for (it = rangeBegin; it != rangeEnd ; ++it)
+    for (it = rangeBegin ; it != rangeEnd ; ++it)
     {
         if (observer && observer->isCanceled())
         {
