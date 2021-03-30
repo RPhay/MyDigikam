@@ -131,7 +131,8 @@ void DigitalScannerPlugin::slotDigitalScanner()
 
         if (dev.isEmpty())
         {
-            QMessageBox::warning(nullptr, qApp->applicationName(), i18n("No available scanner device."));
+            QMessageBox::warning(nullptr, qApp->applicationName(), i18n("There is no scanner device available.\n"
+                                                                        "Please check your configuration"));
             return;
         }
 
@@ -139,7 +140,8 @@ void DigitalScannerPlugin::slotDigitalScanner()
         {
             // could not open a scanner
 
-            QMessageBox::warning(nullptr, qApp->applicationName(), i18n("Cannot open scanner device."));
+            QMessageBox::warning(nullptr, qApp->applicationName(), i18n("Cannot open scanner device \"%1\".\n"
+                                                                        "Please check your configuration", dev));
             return;
         }
 
