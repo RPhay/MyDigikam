@@ -130,7 +130,7 @@ int main(int argc, char** argv)
 
     if (!list.isEmpty())
     {
-        foreach (Identity id, list)
+        foreach (const Identity& id, list)
         {
             qDebug() << "Identity " << id.attribute(QString::fromLatin1("name")) << " recognized";
         }

@@ -273,16 +273,22 @@ void FileActionMngrDatabaseWorker::editGroup(int groupAction, const ItemInfo& pi
             switch (groupAction)
             {
                 case AddToGroup:
+                {
                     info.addToGroup(pick);
                     break;
+                }
 
                 case RemoveFromGroup:
+                {
                     info.removeFromGroup();
                     break;
+                }
 
                 case Ungroup:
+                {
                     info.clearGroup();
                     break;
+                }
             }
 
             infos.dbProcessedOne();
