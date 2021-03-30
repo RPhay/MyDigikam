@@ -3,9 +3,10 @@ digiKam 7.3.0 - Release date: 2021-xx-xx
 *****************************************************************************************************
 NEW FEATURES:
 
-General: Digital Scanner plugin is now available under Windows.
-General: Use Exiv2 0.27.4 in all bundles with Base Media File metadata support.
-General: Use KF5 framework 5.80 and KAPP 20.12.3 in all bundles.
+General : Digital Scanner plugin is now available under Windows.
+General : Use Exiv2 0.27.4 in all bundles with Base Media File metadata support.
+General : Use KF5 framework 5.80 and KAPP 20.12.3 in all bundles.
+Searches: Find duplicates items is now process in parallel using multi-cores.
 
 *****************************************************************************************************
 BUGFIXES:
@@ -26,4 +27,5 @@ BUGFIXES:
 014 ==> 435089 - Tags Manager toolbar icon buttons do nothing.
 015 ==> 435091 - Right-clicking Tags Manager toolbar shows unlabeled checkbox; unclear how to restore toolbar.
 016 ==> 435139 - Error while opening the database. digikam will try to automatically reconnect to the database.
-017 ==> 
+017 ==> 372435 - Use multiple cpu cores for duplicate search [patch].
+018 ==> 
