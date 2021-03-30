@@ -65,10 +65,6 @@ function(GetKF5ApplicationMd5Sums
                         OUTPUT_STRIP_TRAILING_WHITESPACE
         )
 
-        if(NOT ${wgetresult} MATCHES 0)
-            message(WARNING "Cannot download MD5 sum for ${name}!")
-        endif()
-
     elseif(APPLE)
 
         # Extract MD5 sums of KF5 application directly from server.
@@ -93,10 +89,6 @@ function(GetKF5ApplicationMd5Sums
                         OUTPUT_STRIP_TRAILING_WHITESPACE
         )
 
-        if(NOT ${wgetresult} MATCHES 0)
-            message(WARNING "Cannot download MD5 sum for ${name}!")
-        endif()
-
     else() # Linux
 
         # Extract MD5 sums of KF5 application directly from server.
@@ -112,10 +104,6 @@ function(GetKF5ApplicationMd5Sums
                         md5sm
                         OUTPUT_STRIP_TRAILING_WHITESPACE
         )
-
-        if(NOT ${wgetresult} MATCHES 0)
-            message(WARNING "Cannot download MD5 sum for ${name}!")
-        endif()
 
     endif()
 

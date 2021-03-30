@@ -30,10 +30,6 @@ function(InstallKF5Component
                         OUTPUT_STRIP_TRAILING_WHITESPACE
         )
 
-        if(NOT ${wgetresult} MATCHES 0)
-            message(WARNING "Cannot download MD5 sum for ${name}!")
-        endif()
-
         message(STATUS "--------------------------------")
         message(STATUS "KF5 component    : ${name}")
         message(STATUS "Component version: ${version}")
@@ -105,10 +101,6 @@ function(InstallKF5Component
                         OUTPUT_STRIP_TRAILING_WHITESPACE
         )
 
-        if(NOT ${wgetresult} MATCHES 0)
-            message(WARNING "Cannot download MD5 sum for ${name}!")
-        endif()
-
         message(STATUS "--------------------------------")
         message(STATUS "KF5 component    : ${name}")
         message(STATUS "Component version: ${version}")
@@ -158,10 +150,6 @@ function(InstallKF5Component
                         md5sm
                         OUTPUT_STRIP_TRAILING_WHITESPACE
         )
-
-        if(NOT ${wgetresult} MATCHES 0)
-            message(WARNING "Cannot download MD5 sum for ${name}!")
-        endif()
 
         message(STATUS "--------------------------------")
         message(STATUS "KF5 component    : ${name}")
