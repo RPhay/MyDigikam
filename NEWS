@@ -4,6 +4,8 @@ digiKam 7.3.0 - Release date: 2021-xx-xx
 NEW FEATURES:
 
 General: Digital Scanner plugin is now available under Windows.
+General: Use Exiv2 0.27.4 in all bundles with Base Media File metadata support.
+General: Use KF5 framework 5.80 in all bundles.
 
 *****************************************************************************************************
 BUGFIXES:
