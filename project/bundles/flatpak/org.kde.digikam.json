@@ -194,7 +194,7 @@
                 "-DEXIV2_ENABLE_WIN_UNICODE=OFF"
             ],
             "builddir": true,
-            "sources": [ { "type": "git", "url": "https://github.com/Exiv2/exiv2.git", "tag": "v0.27.3" } ]
+            "sources": [ { "type": "git", "url": "https://github.com/Exiv2/exiv2.git", "tag": "0.27-maintenance" } ]
         },
         {
             "name": "marble",
