@@ -63,11 +63,13 @@ public:
 public:
 
     // --- Backend parameters (facesengine_interface_setup.cpp) --------------------------
+
     void applyParameters();
 
 public:
 
     // --- Faces Training management (facesengine_interface_training.cpp) ----------------------------------
+
     void trainIdentityBatch(const QList<Identity>& identitiesToBeTrained,
                             TrainingDataProvider* const data,
                             const QString& trainingContext);

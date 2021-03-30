@@ -119,7 +119,7 @@ void transpose(std::vector<std::vector<float> >& src,
 
 float trace(const std::vector<std::vector<float> >& src)
 {
-    float result = 0.0f;
+    float result = 0.0F;
 
     for (unsigned int i = 0 ; i < src.size() ; ++i)
     {
@@ -140,39 +140,41 @@ bool svd3(std::vector<std::vector<float> >& a,
           std::vector<std::vector<float> >& v,
           std::vector<float >& rv1)
 {
-    const float one     = 1.0f;
+    const float one     = 1.0F;
     const long max_iter = 300;
 
     // a is a square matrix
 
     // columns
+
     const long n        = (long)a.size();
 
     // rows
+
     const long m        = (long)a.size();
 
     const float eps     = std::numeric_limits<float>::epsilon();
     long nm             = 0;
     long l              = 0;
-    float g             = 0.0f;
-    float scale         = 0.0f;
-    float anorm         = 0.0f;
+    float g             = 0.0F;
+    float scale         = 0.0F;
+    float anorm         = 0.0F;
     bool flag           = false;
-    float c             = 0.0f;
-    float f             = 0.0f;
-    float h             = 0.0f;
-    float s             = 0.0f;
-    float x             = 0.0f;
-    float y             = 0.0f;
-    float z             = 0.0f;
+    float c             = 0.0F;
+    float f             = 0.0F;
+    float h             = 0.0F;
+    float s             = 0.0F;
+    float x             = 0.0F;
+    float y             = 0.0F;
+    float z             = 0.0F;
 
     for (long i = 0 ; i < n ; ++i)
     {
         l      = i + 1;
         rv1[i] = scale * g;
-        g      = 0.0f;
-        s      = 0.0f;
-        scale  = 0.0f;
+        g      = 0.0F;
+        s      = 0.0F;
+        scale  = 0.0F;
 
         if (i < m)
         {
@@ -218,10 +220,10 @@ bool svd3(std::vector<std::vector<float> >& a,
             }
         }
 
-        w[i]  = scale *g;
-        g     = 0.0f;
-        s     = 0.0f;
-        scale = 0.0f;
+        w[i]  = scale * g;
+        g     = 0.0F;
+        s     = 0.0F;
+        scale = 0.0F;
 
         if ((i < m) && (i < n-1))
         {
@@ -277,7 +279,7 @@ bool svd3(std::vector<std::vector<float> >& a,
     {
         if (i < (n-1))
         {
-            if (g != 0.0f)
+            if (g != 0.0F)
             {
                 for (long j = l ; j < n ; ++j)
                 {
@@ -286,7 +288,7 @@ bool svd3(std::vector<std::vector<float> >& a,
 
                 for (long j = l ; j < n ; ++j)
                 {
-                    s = 0.0f;
+                    s = 0.0F;
 
                     for (long k = l ; k < n ; ++k)
                     {
@@ -368,13 +370,13 @@ bool svd3(std::vector<std::vector<float> >& a,
             {
                 nm = l - 1;
 
-                if (std::abs(rv1[l]) <= eps * anorm)
+                if (std::abs(rv1[l]) <= (eps * anorm))
                 {
                     flag = false;
                     break;
                 }
 
-                if (std::abs(w[nm]) <= eps * anorm)
+                if (std::abs(w[nm]) <= (eps * anorm))
                 {
                     break;
                 }
@@ -382,8 +384,8 @@ bool svd3(std::vector<std::vector<float> >& a,
 
             if (flag)
             {
-                c = 0.0f;
-                s = 1.0f;
+                c = 0.0F;
+                s = 1.0F;
 
                 for (long i = l ; i <= k ; ++i)
                 {
@@ -506,6 +508,7 @@ void svd(const std::vector<std::vector<float> >& m,
 {
 
     // initialization
+
     u.resize(2);
     w.resize(2);
     v.resize(2);
@@ -525,7 +528,7 @@ void svd(const std::vector<std::vector<float> >& m,
 
     std::vector<float> W(2);
     std::vector<float> rv1(2);
-    svd3(u,W,v,rv1);
+    svd3(u, W, v, rv1);
 
     // get w from W
 

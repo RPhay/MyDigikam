@@ -83,6 +83,7 @@ std::vector<cv::Rect> getEyes(const FullObjectDetection& shape)
         int tlx, tly, brx, bry;
 
         // initializing
+
         std::vector<float> firstpoint = shape.part(start);
         tlx                           = (int)firstpoint[0];
         brx                           = (int)firstpoint[0];

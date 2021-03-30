@@ -108,7 +108,6 @@ void FacialRecognitionWrapper::train(const Identity& identityToBeTrained,
 
 // -------------------------------------------------------------------------------------
 
-
 void FacialRecognitionWrapper::clearAllTraining(const QString& trainingContext)
 {
     if (!d || !d->dbAvailable)

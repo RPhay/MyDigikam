@@ -108,7 +108,7 @@ cv::Mat RecognitionPreprocessor::Private::preprocess(const cv::Mat& image) const
 
 RecognitionPreprocessor::RecognitionPreprocessor()
     : FacePreprocessor(),
-      d(new Private)
+      d               (new Private)
 {
 }
 

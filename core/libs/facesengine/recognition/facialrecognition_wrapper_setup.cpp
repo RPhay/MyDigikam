@@ -32,7 +32,7 @@ namespace Digikam
 void FacialRecognitionWrapper::Private::applyParameters()
 {
     int k           = 5;
-    float threshold = 0.6;
+    float threshold = 0.6F;
 
     if      (parameters.contains(QLatin1String("k-nearest")))
     {
