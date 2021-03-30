@@ -66,9 +66,18 @@ index a45b6155..15b6f2ac 100644
      KF5::I18n)
  
 diff --git a/src/kcms/kio/netpref.cpp b/src/kcms/kio/netpref.cpp
-index a7668e80..c446569f 100644
+index a7668e80..d98b290d 100644
 --- a/src/kcms/kio/netpref.cpp
 +++ b/src/kcms/kio/netpref.cpp
+@@ -12,7 +12,7 @@
+ #include <KConfigGroup>
+ #include <KLocalizedString>
+ #include <KPluginFactory>
+-#include <KPluralHandlingSpinBox>
++#include <QSpinBox>
+ #include <ioslave_defaults.h>
+ 
+ // Local
 @@ -41,26 +41,26 @@ KIOPreferences::KIOPreferences(QWidget *parent, const QVariantList &)
      mainLayout->addWidget(gb_Timeout);
  
