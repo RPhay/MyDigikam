@@ -1,13 +1,10 @@
 diff --git a/CMakeLists.txt b/CMakeLists.txt
-index ca17576..f5f7266 100644
+index ca17576..cb2118f 100644
 --- a/CMakeLists.txt
 +++ b/CMakeLists.txt
-@@ -43,15 +43,15 @@ find_package(Qt5 ${REQUIRED_QT_VERSION} NO_MODULE REQUIRED Core Widgets)
- # Required KF5 frameworks
- find_package(KF5I18n ${KF5_VERSION} REQUIRED)
+@@ -45,13 +45,13 @@ find_package(KF5I18n ${KF5_VERSION} REQUIRED)
  
--if (NOT WIN32)
-+if (NOT WIN32 AND NOT APPLE)
+ if (NOT WIN32)
      find_package(KF5WidgetsAddons ${KF5_VERSION} REQUIRED)
 -    find_package(KF5TextWidgets ${KF5_VERSION} REQUIRED)
 +#    find_package(KF5TextWidgets ${KF5_VERSION} REQUIRED)
@@ -24,15 +21,6 @@ index ca17576..f5f7266 100644
  
      # Check if sane API is available.
      find_package(Sane REQUIRED)
-@@ -59,7 +59,7 @@ if (NOT WIN32)
-     message(STATUS "SANE_INCLUDE_DIR: ${SANE_INCLUDE_DIR}")
-     message(STATUS "SANE_LIBRARY:     ${SANE_LIBRARY}")
-     # macro_log_feature(SANE_FOUND "SANE development toolkit" "Scanner Access Now Easy (SANE) development package" "http://www.sane-project.org" TRUE "" "Needed by libksane")
--endif (NOT WIN32)
-+endif ()
- 
- # Subdirectories
- if (SANE_FOUND)
 diff --git a/src/CMakeLists.txt b/src/CMakeLists.txt
 index 7672337..db1c101 100644
 --- a/src/CMakeLists.txt
