@@ -706,8 +706,8 @@ void TagsManager::setupActions()
     /**
      * organize group
      */
-    QMenu* const organizeAction  = new QMenu(d->organizeButton);
-    d->organizeButton->setMenu(organizeAction);
+    QMenu* const organizeMenu    = new QMenu(d->organizeButton);
+    d->organizeButton->setMenu(organizeMenu);
 
     d->titleEdit                 = new QAction(QIcon::fromTheme(QLatin1String("document-edit")),
                                                i18n("Edit Tag Title"), this);
@@ -784,30 +784,30 @@ void TagsManager::setupActions()
     connect(markUnused, SIGNAL(triggered()),
             this, SLOT(slotMarkNotAssignedTags()));
 
-    organizeAction->addAction(d->titleEdit);
-    organizeAction->addAction(resetIcon);
-    organizeAction->addAction(createTagAddr);
-    organizeAction->addAction(markUnused);
-    organizeAction->addAction(invSel);
-    organizeAction->addAction(expandTree);
-    organizeAction->addAction(expandSel);
-    organizeAction->addAction(delTagFromImg);
+    organizeMenu->addAction(d->titleEdit);
+    organizeMenu->addAction(resetIcon);
+    organizeMenu->addAction(createTagAddr);
+    organizeMenu->addAction(markUnused);
+    organizeMenu->addAction(invSel);
+    organizeMenu->addAction(expandTree);
+    organizeMenu->addAction(expandSel);
+    organizeMenu->addAction(delTagFromImg);
 
     /**
      * Sync & Export Group
      */
 
-    QMenu* const syncexportAction  = new QMenu(d->syncexportButton);
-    d->syncexportButton->setMenu(syncexportAction);
+    QMenu* const syncexportMenu = new QMenu(d->syncexportButton);
+    d->syncexportButton->setMenu(syncexportMenu);
 
-    QAction* const wrDbImg  = new QAction(QIcon::fromTheme(QLatin1String("view-refresh")),
-                                          i18n("Write Tags from Database to Image"), this);
+    QAction* const wrDbImg      = new QAction(QIcon::fromTheme(QLatin1String("view-refresh")),
+                                              i18n("Write Tags from Database to Image"), this);
 
-    QAction* const readTags = new QAction(QIcon::fromTheme(QLatin1String("tag-new")),
-                                          i18n("Read Tags from Image"), this);
+    QAction* const readTags     = new QAction(QIcon::fromTheme(QLatin1String("tag-new")),
+                                              i18n("Read Tags from Image"), this);
 
-    QAction* const wipeAll  = new QAction(QIcon::fromTheme(QLatin1String("draw-eraser")),
-                                          i18n("Wipe all tags from Database only"), this);
+    QAction* const wipeAll      = new QAction(QIcon::fromTheme(QLatin1String("draw-eraser")),
+                                              i18n("Wipe all tags from Database only"), this);
 
     setHelpText(wrDbImg, i18n("Write Tags Metadata to Image."));
 
@@ -826,9 +826,9 @@ void TagsManager::setupActions()
     connect(wipeAll, SIGNAL(triggered()),
             this, SLOT(slotWipeAll()));
 
-    syncexportAction->addAction(wrDbImg);
-    syncexportAction->addAction(readTags);
-    syncexportAction->addAction(wipeAll);
+    syncexportMenu->addAction(wrDbImg);
+    syncexportMenu->addAction(readTags);
+    syncexportMenu->addAction(wipeAll);
 
     d->mainToolbar->addAction(d->addAction);
     d->mainToolbar->addAction(d->delAction);

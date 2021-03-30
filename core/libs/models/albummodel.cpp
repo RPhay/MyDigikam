@@ -251,9 +251,9 @@ void TagModel::setTagCount(TagCountMode mode)
 
 bool TagModel::setData(const QModelIndex& index, const QVariant& value, int role)
 {
-    TAlbum* const album = albumForIndex(index);
+    TAlbum* const talbum = albumForIndex(index);
 
-    if (album && album->isInternalTag())
+    if (talbum && talbum->isInternalTag())
     {
         return false;
     }
