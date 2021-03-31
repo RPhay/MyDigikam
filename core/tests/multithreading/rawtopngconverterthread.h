@@ -22,8 +22,8 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_RAW_TO_PNG_CONVERT_THREAD_H
-#define DIGIKAM_RAW_TO_PNG_CONVERT_THREAD_H
+#ifndef DIGIKAM_RAW_TO_PNG_CONVERTER_THREAD_H
+#define DIGIKAM_RAW_TO_PNG_CONVERTER_THREAD_H
 
 // Qt includes
 
@@ -45,7 +45,9 @@ public:
     explicit RAWToPNGConverterThread(QObject* const parent);
     ~RAWToPNGConverterThread() override;
 
-    void convertRAWtoPNG(const QList<QUrl>& list, const DRawDecoderSettings& settings, int priority=0);
+    void convertRAWtoPNG(const QList<QUrl>& list,
+                         const DRawDecoderSettings& settings,
+                         int priority = 0);
 
 Q_SIGNALS:
 
@@ -61,4 +63,4 @@ private Q_SLOTS:
     void slotJobStarted();
 };
 
-#endif // DIGIKAM_RAW_TO_PNG_CONVERT_THREAD_H
+#endif // DIGIKAM_RAW_TO_PNG_CONVERTER_THREAD_H

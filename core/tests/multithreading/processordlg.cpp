@@ -75,7 +75,7 @@ public:
 
 ProcessorDlg::ProcessorDlg(const QList<QUrl>& list, QWidget* const parent)
     : QDialog(parent),
-      d(new Private)
+      d      (new Private)
 {
     setModal(false);
     setWindowTitle(QString::fromUtf8("Convert RAW files To PNG"));

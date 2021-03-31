@@ -155,7 +155,11 @@ void RAWToPNGConverterThread::convertRAWtoPNG(const QList<QUrl>& list, const DRa
 void RAWToPNGConverterThread::slotJobDone()
 {
     Mytask* const task = dynamic_cast<Mytask*>(sender());
-    if (!task) return;
+
+    if (!task)
+    {
+        return;
+    }
 
     if (task->errString.isEmpty())
     {
@@ -170,7 +174,11 @@ void RAWToPNGConverterThread::slotJobDone()
 void RAWToPNGConverterThread::slotJobProgress(int p)
 {
     Mytask* const task = dynamic_cast<Mytask*>(sender());
-    if (!task) return;
+
+    if (!task)
+    {
+        return;
+    }
 
     emit progress(task->fileUrl, p);
 }
@@ -178,7 +186,11 @@ void RAWToPNGConverterThread::slotJobProgress(int p)
 void RAWToPNGConverterThread::slotJobStarted()
 {
     Mytask* const task = dynamic_cast<Mytask*>(sender());
-    if (!task) return;
+
+    if (!task)
+    {
+        return;
+    }
 
     emit starting(task->fileUrl);
 }
