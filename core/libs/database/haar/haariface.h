@@ -100,7 +100,7 @@ public:
 public:
 
     explicit HaarIface();
-    HaarIface(const QSet<qlonglong>& images2Scan);
+    explicit HaarIface(const QSet<qlonglong>& images2Scan);
     ~HaarIface();
 
     static int preferredSize();
