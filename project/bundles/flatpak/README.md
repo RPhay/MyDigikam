@@ -5,7 +5,7 @@ Bundle is processed daily by the continuous integration script used by KDE serve
 Bundle is deployed automatically on KDE Applications Flatpak testing repository.
 
 - Front page;      https://kde.org/applications/en/graphics/org.kde.digikam
-- Status;          https://binary-factory.kde.org/view/Flatpak/job/Digikam_flatpak/
+- Status;          https://binary-factory.kde.org/view/Flatpak/job/Digikam_x86_64_flatpak/
 - Configuration:   https://invent.kde.org/kde/flatpak-kde-applications/-/blob/master/org.kde.digikam.remoteapp  (hook)
                    ./org.kde.digikam.json
 - Repository:      https://distribute.kde.org/kdeapps.flatpakrepo
