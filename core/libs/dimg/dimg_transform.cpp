@@ -61,7 +61,7 @@ void DImg::resize(int w, int h)
         return;
     }
 
-    DImg image = smoothScale(w, h);
+    DImg image   = smoothScale(w, h);
 
     delete [] m_priv->data;
     m_priv->data = image.stripImageData();
@@ -281,7 +281,7 @@ void DImg::rotate(ANGLE angle)
     }
 }
 
-// 15-11-2005: This method have been tested indeep with valgrind by Gilles.
+// NOTE: This method have been tested in-deep with valgrind.
 
 void DImg::flip(FLIP direction)
 {
@@ -305,6 +305,7 @@ void DImg::flip(FLIP direction)
                 unsigned short* data = reinterpret_cast<unsigned short*>(bits());
 
                 // can be done inplace
+
                 uint wHalf = (w / 2);
 
                 for (uint y = 0 ; y < h ; ++y)
@@ -430,44 +431,60 @@ bool DImg::rotateAndFlip(int orientation)
     {
         case DMetadata::ORIENTATION_NORMAL:
         case DMetadata::ORIENTATION_UNSPECIFIED:
+        {
             return false;
+        }
 
         case DMetadata::ORIENTATION_HFLIP:
+        {
             flip(DImg::HORIZONTAL);
             rotatedOrFlipped = true;
             break;
+        }
 
         case DMetadata::ORIENTATION_ROT_180:
+        {
             rotate(DImg::ROT180);
             rotatedOrFlipped = true;
             break;
+        }
 
         case DMetadata::ORIENTATION_VFLIP:
+        {
             flip(DImg::VERTICAL);
             rotatedOrFlipped = true;
             break;
+        }
 
         case DMetadata::ORIENTATION_ROT_90_HFLIP:
+        {
             rotate(DImg::ROT90);
             flip(DImg::HORIZONTAL);
             rotatedOrFlipped = true;
             break;
+        }
 
         case DMetadata::ORIENTATION_ROT_90:
+        {
             rotate(DImg::ROT90);
             rotatedOrFlipped = true;
             break;
+        }
 
         case DMetadata::ORIENTATION_ROT_90_VFLIP:
+        {
             rotate(DImg::ROT90);
             flip(DImg::VERTICAL);
             rotatedOrFlipped = true;
             break;
+        }
 
         case DMetadata::ORIENTATION_ROT_270:
+        {
             rotate(DImg::ROT270);
             rotatedOrFlipped = true;
             break;
+        }
     }
 
     return rotatedOrFlipped;
@@ -481,44 +498,60 @@ bool DImg::reverseRotateAndFlip(int orientation)
     {
         case DMetadata::ORIENTATION_NORMAL:
         case DMetadata::ORIENTATION_UNSPECIFIED:
+        {
             return false;
+        }
 
         case DMetadata::ORIENTATION_HFLIP:
+        {
             flip(DImg::HORIZONTAL);
             rotatedOrFlipped = true;
             break;
+        }
 
         case DMetadata::ORIENTATION_ROT_180:
+        {
             rotate(DImg::ROT180);
             rotatedOrFlipped = true;
             break;
+        }
 
         case DMetadata::ORIENTATION_VFLIP:
+        {
             flip(DImg::VERTICAL);
             rotatedOrFlipped = true;
             break;
+        }
 
         case DMetadata::ORIENTATION_ROT_90_HFLIP:
+        {
             flip(DImg::HORIZONTAL);
             rotate(DImg::ROT270);
             rotatedOrFlipped = true;
             break;
+        }
 
         case DMetadata::ORIENTATION_ROT_90:
+        {
             rotate(DImg::ROT270);
             rotatedOrFlipped = true;
             break;
+        }
 
         case DMetadata::ORIENTATION_ROT_90_VFLIP:
+        {
             flip(DImg::VERTICAL);
             rotate(DImg::ROT270);
             rotatedOrFlipped = true;
             break;
+        }
 
         case DMetadata::ORIENTATION_ROT_270:
+        {
             rotate(DImg::ROT90);
             rotatedOrFlipped = true;
             break;
+        }
     }
 
     return rotatedOrFlipped;
@@ -530,28 +563,40 @@ bool DImg::transform(int transformAction)
     {
         case MetaEngineRotation::NoTransformation:
         default:
+        {
             return false;
             break;
+        }
 
         case MetaEngineRotation::FlipHorizontal:
+        {
             flip(DImg::HORIZONTAL);
             break;
+        }
 
         case MetaEngineRotation::FlipVertical:
+        {
             flip(DImg::VERTICAL);
             break;
+        }
 
         case MetaEngineRotation::Rotate90:
+        {
             rotate(DImg::ROT90);
             break;
+        }
 
         case MetaEngineRotation::Rotate180:
+        {
             rotate(DImg::ROT180);
             break;
+        }
 
         case MetaEngineRotation::Rotate270:
+        {
             rotate(DImg::ROT270);
             break;
+        }
     }
 
     return true;
@@ -560,6 +605,7 @@ bool DImg::transform(int transformAction)
 bool DImg::wasExifRotated()
 {
     QVariant rotated(attribute(QLatin1String("exifRotated")));
+
     return (rotated.isValid() && rotated.toBool());
 }
 

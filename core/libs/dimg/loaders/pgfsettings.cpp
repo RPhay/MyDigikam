@@ -50,10 +50,10 @@ class Q_DECL_HIDDEN PGFSettings::Private
 public:
 
     explicit Private()
-      : PGFGrid(nullptr),
+      : PGFGrid            (nullptr),
         labelPGFcompression(nullptr),
-        PGFLossLess(nullptr),
-        PGFcompression(nullptr)
+        PGFLossLess        (nullptr),
+        PGFcompression     (nullptr)
     {
     }
 
@@ -68,7 +68,7 @@ public:
 
 PGFSettings::PGFSettings(QWidget* const parent)
     : QWidget(parent),
-      d(new Private)
+      d      (new Private)
 {
     setAttribute(Qt::WA_DeleteOnClose);
 

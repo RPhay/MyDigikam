@@ -214,7 +214,7 @@ bool DImgLoader::readMetadata(const QString& filePath)
     }
 
     QScopedPointer<DMetadata> metaDataFromFile(new DMetadata);
-    
+
     if (!metaDataFromFile->load(filePath))
     {
         m_image->setMetadata(MetaEngineData());

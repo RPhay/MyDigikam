@@ -51,12 +51,12 @@ class Q_DECL_HIDDEN JPEGSettings::Private
 public:
 
     explicit Private()
-      : JPEGGrid(nullptr),
+      : JPEGGrid            (nullptr),
         labelJPEGcompression(nullptr),
-        labelWarning(nullptr),
-        labelSubSampling(nullptr),
-        subSamplingCB(nullptr),
-        JPEGcompression(nullptr)
+        labelWarning        (nullptr),
+        labelSubSampling    (nullptr),
+        subSamplingCB       (nullptr),
+        JPEGcompression     (nullptr)
     {
     }
 
@@ -73,7 +73,7 @@ public:
 
 JPEGSettings::JPEGSettings(QWidget* const parent)
     : QWidget(parent),
-      d(new Private)
+      d      (new Private)
 {
     setAttribute(Qt::WA_DeleteOnClose);
 

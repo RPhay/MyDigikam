@@ -158,7 +158,7 @@ private:
 
 /**
  * Allows safe multiplication of requested pixel number and bytes per pixel, avoiding particularly
- * 32bit overflow and exceeding the size_t type
+ * 32 bits overflow and exceeding the size_t type
  */
 template <typename Type>
 Q_INLINE_TEMPLATE Type* DImgLoader::new_failureTolerant(quint64 w, quint64 h, uint typesPerPixel)
@@ -183,15 +183,21 @@ Q_INLINE_TEMPLATE Type* DImgLoader::new_failureTolerant(size_t size)
     switch (res)
     {
         case 0:       // parse failure from supported platform
+        {
             return nullptr;
             break;
+        }
 
         case -1:      // unsupported platform
+        {
             // We will try to continue to allocate
             break;
+        }
 
         default:     // parse done with success from supported platform
+        {
             break;
+        }
     }
 
     Type* const reserved = new (std::nothrow) Type[size];

@@ -69,7 +69,7 @@ void DImg::convertDepth(int depth)
         return;
     }
 
-    if (depth == 32)
+    if      (depth == 32)
     {
         // downgrading from 16 bit to 8 bit
 
@@ -130,6 +130,7 @@ void DImg::fill(const DColor& color)
     }
 
     // caching
+
     uint dim = width() * height() * 4;
 
     if (sixteenBit())

@@ -184,12 +184,14 @@ void DImg::prepareMetadataToSave(const QString& intendedDestPath, const QString&
         }
 
         // Only store a new preview if it is worth it - the original should be significantly larger than the preview
+
         createNewPreview = (2 * (uint)previewSize.width() <= width());
     }
 
     if (createNewPreview)
     {
         // Create the preview QImage
+
         QImage preview;
         {
             if (!IccManager::isSRGB(*this))
@@ -212,6 +214,7 @@ void DImg::prepareMetadataToSave(const QString& intendedDestPath, const QString&
             else
             {
                 // Ensure that preview is not upscaled
+
                 if (previewSize.width() >= (int)width())
                 {
                     preview = copyQImage();
@@ -426,32 +429,50 @@ QString DImg::colorModelToString(COLORMODEL colorModel)
     switch (colorModel)
     {
         case RGB:
+        {
             return i18nc("Color Model: RGB", "RGB");
+        }
 
         case GRAYSCALE:
+        {
             return i18nc("Color Model: Grayscale", "Grayscale");
+        }
 
         case MONOCHROME:
+        {
             return i18nc("Color Model: Monochrome", "Monochrome");
+        }
 
         case INDEXED:
+        {
             return i18nc("Color Model: Indexed", "Indexed");
+        }
 
         case YCBCR:
+        {
             return i18nc("Color Model: YCbCr", "YCbCr");
+        }
 
         case CMYK:
+        {
             return i18nc("Color Model: CMYK", "CMYK");
+        }
 
         case CIELAB:
+        {
             return i18nc("Color Model: CIE L*a*b*", "CIE L*a*b*");
+        }
 
         case COLORMODELRAW:
+        {
             return i18nc("Color Model: Uncalibrated (RAW)", "Uncalibrated (RAW)");
+        }
 
         case COLORMODELUNKNOWN:
         default:
+        {
             return i18nc("Color Model: Unknown", "Unknown");
+        }
     }
 }
 
@@ -487,9 +508,11 @@ QByteArray DImg::createUniqueHash(const QString& filePath, const QByteArray& ba)
     QCryptographicHash md5(QCryptographicHash::Md5);
 
     // First, read the Exif data into the hash
+
     md5.addData(ba);
 
     // Second, read in the first 8KB of the file
+
     QFile qfile(filePath);
 
     char databuf[8192];

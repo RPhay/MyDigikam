@@ -50,10 +50,10 @@ class Q_DECL_HIDDEN JP2KSettings::Private
 public:
 
     explicit Private()
-      : JPEG2000Grid(nullptr),
+      : JPEG2000Grid            (nullptr),
         labelJPEG2000compression(nullptr),
-        JPEG2000LossLess(nullptr),
-        JPEG2000compression(nullptr)
+        JPEG2000LossLess        (nullptr),
+        JPEG2000compression     (nullptr)
     {
     }
 
@@ -68,7 +68,7 @@ public:
 
 JP2KSettings::JP2KSettings(QWidget* const parent)
     : QWidget(parent),
-      d(new Private)
+      d      (new Private)
 {
     setAttribute(Qt::WA_DeleteOnClose);
 

@@ -100,7 +100,7 @@ bool DImageHistory::isEmpty() const
 
 bool DImageHistory::isValid() const
 {
-    if (d->entries.isEmpty())
+    if      (d->entries.isEmpty())
     {
         return false;
     }
@@ -197,9 +197,9 @@ DImageHistory& DImageHistory::operator<<(const FilterAction& action)
     Entry entry;
     entry.action = action;
     d->entries << entry;
-
-    //qCDebug(DIGIKAM_DIMG_LOG) << "Entry added, total count " << d->entries.count();
-
+/*
+    qCDebug(DIGIKAM_DIMG_LOG) << "Entry added, total count " << d->entries.count();
+*/
     return *this;
 }
 
@@ -637,7 +637,9 @@ QString DImageHistory::toXml() const
 
 DImageHistory DImageHistory::fromXml(const QString& xml) //DImageHistory
 {
-    //qCDebug(DIGIKAM_DIMG_LOG) << "Parsing image history XML";
+/*
+    qCDebug(DIGIKAM_DIMG_LOG) << "Parsing image history XML";
+*/
 
     DImageHistory h;
 
@@ -733,8 +735,9 @@ DImageHistory DImageHistory::fromXml(const QString& xml) //DImageHistory
         }
         else if (stream.name() == QLatin1String("filter"))
         {
-            //qCDebug(DIGIKAM_DIMG_LOG) << "Parsing filter tag";
-
+/*
+            qCDebug(DIGIKAM_DIMG_LOG) << "Parsing filter tag";
+*/
             FilterAction::Category c  = FilterAction::ComplexFilter;
             QStringRef categoryString = stream.attributes().value(QLatin1String("filterCategory"));
 
@@ -796,11 +799,14 @@ DImageHistory DImageHistory::fromXml(const QString& xml) //DImageHistory
 
     if (stream.hasError())
     {
-        //TODO: error handling
+        // TODO: error handling
+
         qCDebug(DIGIKAM_DIMG_LOG) << "An error occurred during parsing: " << stream.errorString();
     }
 
-    //qCDebug(DIGIKAM_DIMG_LOG) << "Parsing done";
+/*
+    qCDebug(DIGIKAM_DIMG_LOG) << "Parsing done";
+*/
     return h;
 }
 

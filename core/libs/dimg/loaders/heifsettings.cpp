@@ -50,10 +50,10 @@ class Q_DECL_HIDDEN HEIFSettings::Private
 public:
 
     explicit Private()
-      : HEIFGrid(nullptr),
+      : HEIFGrid            (nullptr),
         labelHEIFcompression(nullptr),
-        HEIFLossLess(nullptr),
-        HEIFcompression(nullptr)
+        HEIFLossLess        (nullptr),
+        HEIFcompression     (nullptr)
     {
     }
 
@@ -68,7 +68,7 @@ public:
 
 HEIFSettings::HEIFSettings(QWidget* const parent)
     : QWidget(parent),
-      d(new Private)
+      d      (new Private)
 {
     setAttribute(Qt::WA_DeleteOnClose);
 

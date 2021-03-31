@@ -543,40 +543,64 @@ DColorComposer* DColorComposer::getComposer(DColorComposer::CompositingOperation
     switch (rule)
     {
         case PorterDuffNone:
+        {
             return new DColorComposerPorterDuffNone;
+        }
 
         case PorterDuffClear:
+        {
             return new DColorComposerPorterDuffClear;
+        }
 
         case PorterDuffSrc:
+        {
             return new DColorComposerPorterDuffSrc;
+        }
 
         case PorterDuffSrcOver:
+        {
             return new DColorComposerPorterDuffSrcOver;
+        }
 
         case PorterDuffDstOver:
+        {
             return new DColorComposerPorterDuffDstOver;
+        }
 
         case PorterDuffSrcIn:
+        {
             return new DColorComposerPorterDuffSrcIn;
+        }
 
         case PorterDuffDstIn:
+        {
             return new DColorComposerPorterDuffDstIn;
+        }
 
         case PorterDuffSrcOut:
+        {
             return new DColorComposerPorterDuffSrcOut;
+        }
 
         case PorterDuffDstOut:
+        {
             return new DColorComposerPorterDuffDstOut;
+        }
 
         case PorterDuffSrcAtop:
+        {
             return new DColorComposerPorterDuffDstOut;
+        }
 
         case PorterDuffDstAtop:
+        {
             return new DColorComposerPorterDuffDstOut;
+        }
 
         case PorterDuffXor:
+        {
             return new DColorComposerPorterDuffDstOut;
+        }
     }
 
     return nullptr;

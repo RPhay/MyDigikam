@@ -49,9 +49,9 @@ class Q_DECL_HIDDEN PNGSettings::Private
 public:
 
     explicit Private()
-      : PNGGrid(nullptr),
+      : PNGGrid            (nullptr),
         labelPNGcompression(nullptr),
-        PNGcompression(nullptr)
+        PNGcompression     (nullptr)
     {
     }
 
@@ -64,7 +64,7 @@ public:
 
 PNGSettings::PNGSettings(QWidget* parent)
     : QWidget(parent),
-      d(new Private)
+      d      (new Private)
 {
     setAttribute(Qt::WA_DeleteOnClose);
 
