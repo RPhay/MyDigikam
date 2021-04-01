@@ -1,6 +1,6 @@
 RESUME
 ------
-These scripts build a binary digiKam AppImage bundle for Linux using Mageia version 6 64 bits.
+These scripts build a binary digiKam AppImage bundle for Linux using Mageia 64 bits.
 
 
 AUTHORS
@@ -70,14 +70,14 @@ Note : the bundle is rellocable.
 REQUIREMENTS
 ------------
 
-- For technical reasons about compatibility with libc, Mageia 6 is used to be compatible
-  at run-time under other Linux distributions. NOTE: we have tested Centos 6 in the pass but
+- For technical reasons about compatibility with libc, Mageia 7 is used to be compatible
+  at run-time under other Linux distributions. NOTE: we have tested Centos in the pass but
   this distribution is really a puzzle to group all required multimedia packages.
 
-- Create a fresh Mageia 6 environment in a Virtual Machine:
+- Create a fresh Mageia 7 environment in a Virtual Machine:
   Install the distribution using official ISO from http://distrib-coffee.ipsl.jussieu.fr/pub/linux/Mageia/iso/
   or another mirror.
-  Use a static 50Gb virtual disk with separated partitions as 35Gb for /, 4Gb for swap, and 12Gb for /home.
+  Use a static 80Gb virtual disk with separated partitions as 50Gb for /, 8Gb for swap, and 23Gb for /home.
 - Install the customized group of packages (no Plasma or Gnome desktop) with development tools.
   Install the light XFCE desktop (not Qt5 based desktop).
   Setup the Internet repositories and install update.
