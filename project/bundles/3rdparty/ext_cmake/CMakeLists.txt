@@ -11,7 +11,7 @@ SET(EXTPREFIX_cmake "${EXTPREFIX}")
 ExternalProject_Add(ext_cmake
 
     GIT_REPOSITORY https://gitlab.kitware.com/cmake/cmake.git
-    GIT_TAG v3.18.2
+    GIT_TAG v3.20.0
 
     INSTALL_DIR ${EXTPREFIX_cmake}
 
