@@ -19,8 +19,8 @@ ENDIF()
 ExternalProject_Add(ext_qt
     DOWNLOAD_DIR ${EXTERNALS_DOWNLOAD_DIR}
 
-    URL https://download.qt.io/official_releases/qt/5.15/5.15.0/single/qt-everywhere-src-5.15.0.tar.xz
-    URL_MD5 610a228dba6ef469d14d145b71ab3b88
+    URL https://download.qt.io/official_releases/qt/5.15/5.15.2/single/qt-everywhere-src-5.15.2.tar.xz
+    URL_MD5 e1447db4f06c841d8947f0a6ce83a7b5
 
     CMAKE_ARGS -DOPENSSL_LIBS='-L${EXTPREFIX_qt}/lib -lssl -lcrypto -lpthread -ldl'
 
