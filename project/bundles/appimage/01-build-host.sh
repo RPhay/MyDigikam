@@ -142,8 +142,7 @@ urpmi --auto \
       ${LIBSUFFIX}fftw-devel \
       ${LIBSUFFIX}curl-devel \
       ${LIBSUFFIX}magick-devel \
-      ${LIBSUFFIX}wayland-devel \
-      ${LIBSUFFIX}wayland-egl1-devel
+      ${LIBSUFFIX}wayland-devel
 
 #################################################################################################
 
