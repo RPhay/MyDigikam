@@ -62,7 +62,7 @@ HostAdjustments()
 {
 
 # Check if we are inside Mageia 6 or not.
-grep -r "Mageia release 6" /etc/mageia-release || exit 1
+grep -r "Mageia release 7" /etc/mageia-release || exit 1
 
 # That's not always set correctly in Mageia 6 ?
 export LC_ALL=en_US.UTF-8
