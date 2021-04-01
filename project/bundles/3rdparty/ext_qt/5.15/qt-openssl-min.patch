@@ -1,0 +1,13 @@
+diff --git a/src/network/configure.json b/src/network/configure.json
+index 271ff164ac..cddd3989b9 100644
+--- a/qtbase/src/network/configure.json
++++ b/qtbase/src/network/configure.json
+@@ -61,7 +61,7 @@
+             "export": "openssl",
+             "test": {
+                 "tail": [
+-                    "#if !defined(OPENSSL_VERSION_NUMBER) || OPENSSL_VERSION_NUMBER-0 < 0x10101000L",
++                    "#if !defined(OPENSSL_VERSION_NUMBER) || OPENSSL_VERSION_NUMBER-0 < 0x10100000L",
+                     "#  error OpenSSL >= 1.1.1 is required",
+                     "#endif",
+                     "#if !defined(OPENSSL_NO_EC) && !defined(SSL_CTRL_SET_CURVES)",
