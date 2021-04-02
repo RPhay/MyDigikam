@@ -244,9 +244,19 @@ void ApplicationSettings::readSettings()
     d->showOnlyPersonTagsInPeopleSidebar = group.readEntry(d->configShowOnlyPersonTagsInPeopleSidebarEntry,           true);
     d->stringComparisonType              = (StringComparisonType) group.readEntry(d->configStringComparisonTypeEntry, (int) Natural);
 
+#ifdef Q_OS_WIN
+
+    QString defaultStyle = QLatin1String("Fusion");
+
+#else
+
+    QString defaultStyle = qApp->style()->objectName();
+
+#endif
+
 #ifdef HAVE_APPSTYLE_SUPPORT
 
-    setApplicationStyle(group.readEntry(d->configApplicationStyleEntry, qApp->style()->objectName()));
+    setApplicationStyle(group.readEntry(d->configApplicationStyleEntry, defaultStyle));
 
 #else
 
