@@ -281,33 +281,23 @@ void SearchesDBJobsThread::slotImageProcessed()
 
 void SearchesDBJobsThread::slotDuplicatesResults(const HaarIface::DuplicatesResultsMap& incoming)
 {
-    auto containsImage = [&](qlonglong imageId) -> bool
+    auto searchResults = [&](qlonglong imageId) -> HaarIface::DuplicatesResultsMap::iterator
     {
-        for (const auto searchAlbum : m_results.values())
+        for (auto it = m_results.begin(); it != m_results.end(); ++it)
         {
-            for (const auto imagesList : searchAlbum.values())
+            if ((imageId == it.key()) || (it->second.contains(imageId)))
             {
-                if (imagesList.contains(imageId))
-                {
-                    return true;
-                }
+                return it;
             }
         }
-
-        return false;
+        return m_results.end();
     };
 
-    for (const auto score : incoming.keys())
+    for (const auto referenceImage : incoming.keys())
     {
-        for (const auto searchAlbum : incoming.values(score))
+        if (searchResults(referenceImage) == m_results.end())
         {
-            for (const auto imageKey : searchAlbum.keys())
-            {
-                if (!containsImage(imageKey))
-                {
-                    m_results.insert(score, searchAlbum);
-                }
-            }
+            m_results.insert(referenceImage, incoming.value(referenceImage));
         }
     }
 

@@ -95,7 +95,7 @@ public:
         TagExclusive    = 4
     };
 
-    using DuplicatesResultsMap = QMultiMap<double, QMap<qlonglong, QList<qlonglong> > >;
+    using DuplicatesResultsMap = QMap<qlonglong, QPair<double, QList<qlonglong> > >;
 
 public:
 

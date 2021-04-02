@@ -609,37 +609,25 @@ QMap<QString, QString> HaarIface::writeSAlbumQueries(const DuplicatesResultsMap&
 
     QMap<QString, QString> queries;
 
-    // Iterate over the similarity
-
-    for (DuplicatesResultsMap::const_iterator similarity_it = searchResults.constBegin() ;
-         similarity_it != searchResults.constEnd() ; ++similarity_it)
+    for (auto it = searchResults.cbegin() ; it != searchResults.cend(); ++it)
     {
-        double similarity                                    = similarity_it.key() * 100;
-        QMap<qlonglong, QList<qlonglong> > sameSimilarityMap = similarity_it.value();
+        SearchXmlWriter writer;
+        writer.writeGroup();
+        writer.writeField(QLatin1String("imageid"), SearchXml::OneOf);
+        writer.writeValue(it->second);
+        writer.finishField();
 
-        // Iterate ofer
+        // Add the average similarity as field
 
-        for (QMap<qlonglong, QList<qlonglong> >::const_iterator it = sameSimilarityMap.constBegin() ;
-             it != sameSimilarityMap.constEnd() ; ++it)
-        {
-            SearchXmlWriter writer;
-            writer.writeGroup();
-            writer.writeField(QLatin1String("imageid"), SearchXml::OneOf);
-            writer.writeValue(it.value());
-            writer.finishField();
+        writer.writeField(QLatin1String("noeffect_avgsim"), SearchXml::Equal);
+        writer.writeValue(it->first * 100);
+        writer.finishField();
+        writer.finishGroup();
+        writer.finish();
 
-            // Add the average similarity as field
+        // Use the id of the first duplicate as name of the search
 
-            writer.writeField(QLatin1String("noeffect_avgsim"), SearchXml::Equal);
-            writer.writeValue(similarity);
-            writer.finishField();
-            writer.finishGroup();
-            writer.finish();
-
-            // Use the id of the first duplicate as name of the search
-
-            queries.insert(QString::number(it.key()), writer.xml());
-        }
+        queries.insert(QString::number(it.key()), writer.xml());
     }
 
     return queries;
@@ -778,11 +766,12 @@ HaarIface::DuplicatesResultsMap HaarIface::findDuplicates(const QSet<qlonglong>&
                                                           DuplicatesSearchRestrictions searchResultRestriction,
                                                           HaarProgressObserver* const observer)
 {
+    static const QList<int>                 emptyTargetAlbums;
     DuplicatesResultsMap                    resultsMap;
-    DuplicatesResultsMap::iterator          similarity_it;
-    QSet<qlonglong>::const_iterator         it;
+    DuplicatesResultsMap::iterator          resultsIterator;
+    QSet<qlonglong>::const_iterator         images2ScanIterator;
     QPair<double, QMap<qlonglong, double> > bestMatches;
-    QList<qlonglong>                        imageIdList;
+    QList<qlonglong>                        duplicates;
     QSet<qlonglong>                         resultsCandidates;
     const bool                              singleThread = rangeBegin == images2Scan.cbegin() &&
                                                            rangeEnd == images2Scan.cend();
@@ -794,57 +783,36 @@ HaarIface::DuplicatesResultsMap HaarIface::findDuplicates(const QSet<qlonglong>&
         d->rebuildSignatureCache(images2Scan);
     }
 
-    for (it = rangeBegin ; it != rangeEnd ; ++it)
+    for (images2ScanIterator = rangeBegin ; images2ScanIterator != rangeEnd ; ++images2ScanIterator)
     {
         if (observer && observer->isCanceled())
         {
             break;
         }
 
-        if (!resultsCandidates.contains(*it))
+        if (!resultsCandidates.contains(*images2ScanIterator))
         {
-            QList<int> targetAlbums;
-
             // find images with required similarity
 
-            bestMatches = bestMatchesForImageWithThreshold(*it,
+            bestMatches = bestMatchesForImageWithThreshold(*images2ScanIterator,
                                                            requiredPercentage,
                                                            maximumPercentage,
-                                                           targetAlbums,
+                                                           emptyTargetAlbums,
                                                            searchResultRestriction,
                                                            ScannedSketch);
 
             // We need only the image ids from the best matches map.
 
-            imageIdList = bestMatches.second.keys();
+            duplicates = bestMatches.second.keys();
 
-            if (!imageIdList.isEmpty())
+            // the list will usually contain one image: the original. Filter out.
+
+            if (!(duplicates.isEmpty()) && !((duplicates.count() == 1) && (duplicates.first() == *images2ScanIterator)))
             {
-                // the list will usually contain one image: the original. Filter out.
+                resultsMap.insert(*images2ScanIterator, qMakePair(bestMatches.first, duplicates));
 
-                if (!((imageIdList.count() == 1) && (imageIdList.first() == *it)))
-                {
-                    // make a lookup for the average similarity
-
-                    similarity_it = resultsMap.find(bestMatches.first);
-
-                    // If there is an entry for this similarity, add the result set.
-                    // Else, create a new similarity entry.
-
-                    if (similarity_it != resultsMap.end())
-                    {
-                        similarity_it->insert(*it, imageIdList);
-                    }
-                    else
-                    {
-                        QMap<qlonglong, QList<qlonglong> > result;
-                        result.insert(*it, imageIdList);
-                        resultsMap.insert(bestMatches.first, result);
-                    }
-
-                    resultsCandidates << *it;
-                    resultsCandidates.unite(imageIdList.toSet());
-                }
+                resultsCandidates << *images2ScanIterator;
+                resultsCandidates.unite(duplicates.toSet());
             }
         }
 
@@ -852,9 +820,9 @@ HaarIface::DuplicatesResultsMap HaarIface::findDuplicates(const QSet<qlonglong>&
         // from the cached signature map as well,
         // to greatly improve speed
 
-        if (singleThread && !resultsCandidates.contains(*it))
+        if (singleThread && !resultsCandidates.contains(*images2ScanIterator))
         {
-            d->signatureCache()->remove(*it);
+            d->signatureCache()->remove(*images2ScanIterator);
         }
 
         if (observer)
