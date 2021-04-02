@@ -19,6 +19,7 @@ ExternalProject_Add(ext_openssl
                -DCMAKE_POSITION_INDEPENDENT_CODE=TRUE
                -DWITH_APPS=OFF
                -DWITH_DOCS=OFF
+               -DWITH_TESTS=OFF
                ${GLOBAL_PROFILE}
 
     BUILD_COMMAND ${BUILD_CLI}
