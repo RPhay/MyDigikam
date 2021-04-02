@@ -30,8 +30,6 @@ ExternalProject_Add(ext_qt
 #               && ${PATCH_COMMAND} -p1 -i ${CMAKE_CURRENT_SOURCE_DIR}/qt-icu-hack.patch
 
     CONFIGURE_COMMAND <SOURCE_DIR>/configure
-                  -I /opt/openssl/include
-                  -L /opt/openssl/lib
                   -prefix ${EXTPREFIX_qt}
                   -verbose
                   -release
@@ -43,6 +41,9 @@ ExternalProject_Add(ext_qt
                   -fontconfig
                   -system-freetype                  # Use system font rendering lib https://doc.qt.io/qt-5/qtgui-attribution-freetype.html
                   -openssl-linked                   # hard link to static version of ssl libraries
+                  OPENSSL_INCDIR="/opt/openssl/include"
+                  OPENSSL_LIBDIR="/opt/openssl/lib"
+                  OPENSSL_LIBS="-lssl -lcrypto"
                   -nomake tests                     # Do not build test codes
                   -nomake examples                  # Do not build basis example codes
                   -no-compile-examples              # Do not build extra example codes
