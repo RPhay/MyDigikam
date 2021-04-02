@@ -22,14 +22,16 @@ ExternalProject_Add(ext_qt
     URL https://download.qt.io/official_releases/qt/5.15/5.15.2/single/qt-everywhere-src-5.15.2.tar.xz
     URL_MD5 e1447db4f06c841d8947f0a6ce83a7b5
 
-    CMAKE_ARGS -DOPENSSL_LIBS='-L${EXTPREFIX_qt}/lib -lssl -lcrypto -lpthread -ldl'
+#    CMAKE_ARGS -DOPENSSL_LIBS='-L/opt/openssl/lib -lssl -lcrypto -lpthread -ldl'
+#                  ICU_LIBS="-I${EXTPREFIX}/local/ -L${EXTPREFIX}/local/lib -licui18n -licuuc -licudata"
 
 
     PATCH_COMMAND ${PATCH_COMMAND} -p1 -i ${CMAKE_CURRENT_SOURCE_DIR}/qt-appimage-support.patch
 #               && ${PATCH_COMMAND} -p1 -i ${CMAKE_CURRENT_SOURCE_DIR}/qt-icu-hack.patch
 
     CONFIGURE_COMMAND <SOURCE_DIR>/configure
-                  ICU_LIBS="-I${EXTPREFIX}/local/ -L${EXTPREFIX}/local/lib -licui18n -licuuc -licudata"
+                  -I /opt/openssl/include
+                  -L /opt/openssl/lib
                   -prefix ${EXTPREFIX_qt}
                   -verbose
                   -release
@@ -40,7 +42,7 @@ ExternalProject_Add(ext_qt
                   -iconv                            # International string conversion
                   -fontconfig
                   -system-freetype                  # Use system font rendering lib https://doc.qt.io/qt-5/qtgui-attribution-freetype.html
-                  -openssl-linked                   # hard link ssl libraries
+                  -openssl-linked                   # hard link to static version of ssl libraries
                   -nomake tests                     # Do not build test codes
                   -nomake examples                  # Do not build basis example codes
                   -no-compile-examples              # Do not build extra example codes
