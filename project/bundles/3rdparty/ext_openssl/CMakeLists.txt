@@ -1,4 +1,4 @@
-# Script to build OpenSSL.
+# Script to build static version of OpenSSL.
 #
 # Copyright (c) 2015-2021 by Gilles Caulier  <caulier dot gilles at gmail dot com>
 #
@@ -6,7 +6,7 @@
 # For details see the accompanying COPYING-CMAKE-SCRIPTS file.
 #
 
-SET(EXTPREFIX_openssl "${EXTPREFIX}")
+SET(EXTPREFIX_openssl "/opt/openssl")
 
 ExternalProject_Add(ext_openssl
 
