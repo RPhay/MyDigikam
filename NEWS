@@ -33,4 +33,5 @@ BUGFIXES:
 020 ==> 435231 - Loading .FITS images for astrophotography.
 021 ==> 435250 - No Photograph Properties for DNG files.
 022 ==> 374783 - Window location is not restored correctly after restart.
-023 ==> 
+023 ==> 435239 - Malfunctioning group.
+024 ==> 
