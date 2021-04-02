@@ -291,7 +291,8 @@ void TagsJob::run()
 
 SearchesJob::SearchesJob(const SearchesDBJobInfo& jobInfo)
     : DBJob    (),
-      m_jobInfo(jobInfo)
+      m_jobInfo(jobInfo),
+      m_iface  (nullptr)
 {
 }
 

@@ -143,7 +143,7 @@ class DIGIKAM_DATABASE_EXPORT SearchesDBJobInfo : public DBJobInfo
 {
 public:
 
-    SearchesDBJobInfo(QList<int>&& searchIds);
+    explicit SearchesDBJobInfo(QList<int>&& searchIds);
     SearchesDBJobInfo(QSet<qlonglong>&& imageIds, bool isAlbumUpdate);
 
     bool isDuplicatesJob()            const;

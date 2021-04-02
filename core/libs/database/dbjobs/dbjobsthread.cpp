@@ -212,7 +212,10 @@ void GPSDBJobsThread::GPSListing(const GPSDBJobInfo& info)
 // -------------------------------------------------
 
 SearchesDBJobsThread::SearchesDBJobsThread(QObject* const parent)
-    : DBJobsThread(parent)
+    : DBJobsThread(parent),
+      m_isAlbumUpdate(false),
+      m_processedImages(0),
+      m_totalImages2Scan(0)
 {
 }
 
