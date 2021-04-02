@@ -265,7 +265,19 @@ QString DMetadata::getLensDescription() const
 
     // Check Makernotes first.
 
-    lensExifTags.append(QLatin1String("Exif.Photo.LensModel"));       // Sony Cameras Makernote and others.
+    // Sony Cameras Makernote and others.
+
+    QString make      = getExifTagString("Exif.Image.Make");
+    QString lensModel = QLatin1String("Exif.Photo.LensModel");
+
+    if (make.contains(QLatin1String("SONY"), Qt::CaseInsensitive))
+    {
+        lensExifTags.prepend(lensModel);
+    }
+    else
+    {
+        lensExifTags.append(lensModel);
+    }
 
     // TODO : add Fuji camera Makernotes.
 
@@ -282,7 +294,6 @@ QString DMetadata::getLensDescription() const
         if (!lens.isEmpty()                        &&
             (lens != QLatin1String("----"))        &&
             (lens != QLatin1String("65535"))       &&
-            (lens != QLatin1String("Manual lens")) &&
             !(lens.startsWith(QLatin1Char('('))    &&
               lens.endsWith(QLatin1Char(')'))
              )
