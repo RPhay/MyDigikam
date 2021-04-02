@@ -32,4 +32,5 @@ BUGFIXES:
 019 ==> 424618 - When clicking on maps digiKam crash.
 020 ==> 435231 - Loading .FITS images for astrophotography.
 021 ==> 435250 - No Photograph Properties for DNG files.
-022 ==> 
+022 ==> 374783 - Window location is not restored correctly after restart.
+023 ==> 
