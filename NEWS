@@ -34,4 +34,5 @@ BUGFIXES:
 021 ==> 435250 - No Photograph Properties for DNG files.
 022 ==> 435239 - Malfunctioning group.
 023 ==> 435267 - Hierarchical Keywords.
-024 ==> 
+024 ==> 435272 - No entries in recogition databases.
+025 ==> 
