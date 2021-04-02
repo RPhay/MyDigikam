@@ -256,7 +256,12 @@ QVariant DMetadata::getMetadataField(MetadataInfo::Field field) const
 
         case MetadataInfo::Aperture:
         {
-            QVariant var = fromExifOrXmp("Exif.Photo.FNumber", "Xmp.exif.FNumber");
+            QStringList tagList;
+            tagList << QLatin1String("Exif.Photo.FNumber");
+            tagList << QLatin1String("Exif.Image.FNumber");
+            tagList << QLatin1String("Xmp.exif.FNumber");
+
+            QVariant var = fromExifOrXmpList(tagList);
 
             if (var.isNull())
             {
@@ -273,7 +278,12 @@ QVariant DMetadata::getMetadataField(MetadataInfo::Field field) const
 
         case MetadataInfo::FocalLength:
         {
-            return fromExifOrXmp("Exif.Photo.FocalLength", "Xmp.exif.FocalLength");
+            QStringList tagList;
+            tagList << QLatin1String("Exif.Photo.FocalLength");
+            tagList << QLatin1String("Exif.Image.FocalLength");
+            tagList << QLatin1String("Xmp.exif.FocalLength");
+
+            return fromExifOrXmpList(tagList);
         }
 
         case MetadataInfo::FocalLengthIn35mm:
@@ -283,7 +293,12 @@ QVariant DMetadata::getMetadataField(MetadataInfo::Field field) const
 
         case MetadataInfo::ExposureTime:
         {
-            QVariant var = fromExifOrXmp("Exif.Photo.ExposureTime", "Xmp.exif.ExposureTime");
+            QStringList tagList;
+            tagList << QLatin1String("Exif.Photo.ExposureTime");
+            tagList << QLatin1String("Exif.Image.ExposureTime");
+            tagList << QLatin1String("Xmp.exif.ExposureTime");
+
+            QVariant var = fromExifOrXmpList(tagList);
 
             if (var.isNull())
             {
@@ -312,6 +327,7 @@ QVariant DMetadata::getMetadataField(MetadataInfo::Field field) const
         {
             QStringList tagList;
             tagList << QLatin1String("Exif.Photo.ISOSpeedRatings");
+            tagList << QLatin1String("Exif.Image.ISOSpeedRatings");
             tagList << QLatin1String("Exif.PanasonicRaw.ISOSpeed");
             tagList << QLatin1String("Xmp.exif.ISOSpeedRatings");
 

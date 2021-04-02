@@ -89,6 +89,11 @@ PhotoInfoContainer DMetadata::getPhotographInformation() const
 
         if (photoInfo.aperture.isEmpty())
         {
+            photoInfo.aperture = getExifTagString("Exif.Image.FNumber");
+        }
+
+        if (photoInfo.aperture.isEmpty())
+        {
             photoInfo.aperture = getExifTagString("Exif.Photo.ApertureValue");
         }
 
@@ -105,6 +110,11 @@ PhotoInfoContainer DMetadata::getPhotographInformation() const
         // -----------------------------------------------------------------------------------
 
         photoInfo.exposureTime = getExifTagString("Exif.Photo.ExposureTime");
+
+        if (photoInfo.exposureTime.isEmpty())
+        {
+            photoInfo.exposureTime = getExifTagString("Exif.Image.ExposureTime");
+        }
 
         if (photoInfo.exposureTime.isEmpty())
         {
@@ -152,6 +162,11 @@ PhotoInfoContainer DMetadata::getPhotographInformation() const
         // -----------------------------------------------------------------------------------
 
         photoInfo.focalLength     = getExifTagString("Exif.Photo.FocalLength");
+
+        if (photoInfo.focalLength.isEmpty())
+        {
+            photoInfo.focalLength = getXmpTagString("Exif.Image.FocalLength");
+        }
 
         if (photoInfo.focalLength.isEmpty())
         {

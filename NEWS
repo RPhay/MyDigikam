@@ -31,4 +31,5 @@ BUGFIXES:
 018 ==> 383563 - Many tags disappeared from mariadb database.
 019 ==> 424618 - When clicking on maps digiKam crash.
 020 ==> 435231 - Loading .FITS images for astrophotography.
-021 ==> 
+021 ==> 435250 - No Photograph Properties for DNG files.
+022 ==> 
