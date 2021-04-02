@@ -36,4 +36,5 @@ BUGFIXES:
 023 ==> 435267 - Hierarchical Keywords.
 024 ==> 435272 - No entries in recogition databases.
 025 ==> 435275 - Themes Management.
-026 ==> 
+026 ==> 435277 - Translation bug: german translation.
+027 ==> 
