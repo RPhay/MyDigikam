@@ -109,10 +109,19 @@ bool DImgImageMagickLoader::load(const QString& filePath, DImgLoaderObserver* co
             qCDebug(DIGIKAM_DIMG_LOG) << "IM Depth        :" << image.depth();
             qCDebug(DIGIKAM_DIMG_LOG) << "IM Format       :" << image.format().c_str();
 
-            int depth             = image.depth();
-            Blob* const pixelBlob = new Blob;
-            image.write(pixelBlob, "BGRA", depth);
-            qCDebug(DIGIKAM_DIMG_LOG) << "IM blob size    :" << pixelBlob->length();
+            m_sixteenBit     = (image.depth() == 16);
+            StorageType type = m_sixteenBit ? ShortPixel : CharPixel;
+            uchar* data      = new_failureTolerant(image.columns(), image.rows(), m_sixteenBit ? 8 : 4);
+
+            if (!data)
+            {
+                qCWarning(DIGIKAM_DIMG_LOG_QIMAGE) << "Failed to allocate memory for loading" << filePath;
+                loadingFailed();
+
+                return false;
+            }
+
+            image.write(0, 0, image.columns(), image.rows(), "BGRA", type, (void*)data);
 
             if (observer)
             {
@@ -137,7 +146,7 @@ bool DImgImageMagickLoader::load(const QString& filePath, DImgLoaderObserver* co
 
             imageWidth()  = image.columns();
             imageHeight() = image.rows();
-            imageData()   = (uchar*)pixelBlob->data();
+            imageData()   = data;
 
 #if MagickLibVersion < 0x700
 
@@ -149,12 +158,10 @@ bool DImgImageMagickLoader::load(const QString& filePath, DImgLoaderObserver* co
 
 #endif
 
-            m_sixteenBit  = (depth == 16);
-
             // We considering that PNG is the most representative format of an image loaded by ImageMagick
             imageSetAttribute(QLatin1String("format"),             QLatin1String("PNG"));
             imageSetAttribute(QLatin1String("originalColorModel"), DImg::RGB);
-            imageSetAttribute(QLatin1String("originalBitDepth"),   depth);
+            imageSetAttribute(QLatin1String("originalBitDepth"),   m_sixteenBit ? 16 : 8);
             imageSetAttribute(QLatin1String("originalSize"),       QSize(image.columns(), image.rows()));
         }
         else

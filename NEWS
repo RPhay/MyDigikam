@@ -30,4 +30,5 @@ BUGFIXES:
 017 ==> 372435 - Use multiple cpu cores for duplicate search [patch].
 018 ==> 383563 - Many tags disappeared from mariadb database.
 019 ==> 424618 - When clicking on maps digiKam crash.
-020 ==> 
+020 ==> 435231 - Loading .FITS images for astrophotography.
+021 ==> 
