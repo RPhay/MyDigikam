@@ -33,4 +33,5 @@ BUGFIXES:
 020 ==> 435231 - Loading .FITS images for astrophotography.
 021 ==> 435250 - No Photograph Properties for DNG files.
 022 ==> 435239 - Malfunctioning group.
-023 ==> 
+023 ==> 435267 - Hierarchical Keywords.
+024 ==> 
