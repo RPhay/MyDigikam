@@ -95,6 +95,8 @@ WebBrowserDlg::WebBrowserDlg(const QUrl& url, QWidget* const parent, bool hideDe
       d(new Private)
 {
     setModal(false);
+    setAttribute(Qt::WA_DeleteOnClose, true);
+
     d->home    = url;
 
 #ifdef HAVE_QWEBENGINE
