@@ -74,7 +74,8 @@ public:
         minBlendSize(20),
         iconTagThumbThread(nullptr),
         iconFaceThumbThread(nullptr),
-        iconAlbumThumbThread(nullptr)
+        iconAlbumThumbThread(nullptr),
+        fallBackIcon(QIcon::fromTheme(QLatin1String("dialog-cancel")))
     {
     }
 
@@ -85,6 +86,8 @@ public:
     ThumbnailLoadThread*                 iconTagThumbThread;
     ThumbnailLoadThread*                 iconFaceThumbThread;
     ThumbnailLoadThread*                 iconAlbumThumbThread;
+
+    QIcon                                fallBackIcon;
 
     IdAlbumMap                           idAlbumMap;
 
@@ -245,8 +248,8 @@ QPixmap AlbumThumbnailLoader::loadIcon(const QString& name, int size) const
 
     if (!pix)
     {
-        d->iconCache.insert(qMakePair(name, size), new QPixmap(QIcon::fromTheme(name).pixmap(size)));
-        pix = d->iconCache[qMakePair(name, size)];
+        pix = new QPixmap(QIcon::fromTheme(name, d->fallBackIcon).pixmap(size));
+        d->iconCache.insert(qMakePair(name, size), pix);
     }
 
     return (*pix); // ownership of the pointer is kept by the icon cache.

@@ -62,6 +62,5 @@ BUGFIXES:
 049 ==> 333671 - digiKam crashed when trying to store a new version of an image after editing
 050 ==> 334852 - digiKam crashed while downloading photos from camera.
 051 ==> 335529 - digiKam crashes, when deleting an empty sub-directory.
-052 ==> 
-
-
+052 ==> 435188 - Face tag icons not automatically generated, lots of QPixmap::scaled: Pixmap is a null pixmap errors on console.
+053 ==> 
