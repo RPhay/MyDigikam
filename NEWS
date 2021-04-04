@@ -79,8 +79,16 @@ BUGFIXES:
 066 ==> 344216 - digiKam crashed while creating tag.
 067 ==> 347450 - digiKam crash.
 068 ==> 347786 - digiKam crashes when image is saved by external editor.
-069 ==> 
-070 ==> 
-071 ==> 
-
-
+069 ==> 340855 - CANVAS: Wrong preview in sharpen tool after crop.
+070 ==> 340649 - digiKam doesn't show thumbnails in preview on my Canon 450D (PTP).
+071 ==> 340793 - Can't see thumbnails while importing from camera. Failed to load image message.
+072 ==> 339650 - Crash when selecting different thumbnail.
+073 ==> 339348 - Crashes when hugin creates (or deletes) temporary images in one of its album folders.
+074 ==> 339151 - Always crashes when "save as" is requires no matter what I've made before.
+075 ==> 338144 - Crash when browsing / arranging albums.
+076 ==> 338949 - Importer window files selection takes ages.
+077 ==> 338858 - Crash before downloading all pictures.
+078 ==> 339068 - Crash when tagging images and creating a new tag with another tag selected.
+079 ==> 339070 - Crash when moving one tag onto an other, to make it a sub-tag.
+080 ==> 
+081 ==> 
