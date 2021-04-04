@@ -107,6 +107,5 @@ BUGFIXES:
 093 ==> 213628 - Editor, resize: try shows picture very blurred.
 094 ==> 337987 - No auto-rotation when importing pictures.
 095 ==> 338482 - digiKam crash when importing pictures if no album was selected in the main window.
-096 ==> 
-
-
+096 ==> 435303 - digiKam crashes when selecting 2 times Item opening Web Window in Help menu.
+097 ==> 
