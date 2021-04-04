@@ -63,4 +63,24 @@ BUGFIXES:
 050 ==> 334852 - digiKam crashed while downloading photos from camera.
 051 ==> 335529 - digiKam crashes, when deleting an empty sub-directory.
 052 ==> 435188 - Face tag icons not automatically generated, lots of QPixmap::scaled: Pixmap is a null pixmap errors on console.
-053 ==> 
+053 ==> 335630 - digiKam crashes when clicking image editor.
+054 ==> 335667 - digiKam crash on tag delete.
+055 ==> 336259 - digiKam crashed during opening the edit action (F4) to open picture for edit.
+056 ==> 395037 - Altitude is not setted on CR2 files.
+057 ==> 307408 - Not possible to deselect ZoomR and 23 HQ export module but keep flickr.
+058 ==> 421903 - Add IPTC/XMP location metadata to advanced search.
+059 ==> 343066 - Downloading pictures from iPhone.
+060 ==> 343053 - File's timestamp of imported pictures not preserved.
+061 ==> 346012 - Long freezes of interface when performing BQM color autocorrection.
+062 ==> 340965 - Watermark placement and offset in saved workflow not saved.
+063 ==> 128472 - Aspect ratio tool enchancements - auto orientation, new selection.
+064 ==> 345427 - digiKam crashed when generating panorama pic.
+065 ==> 343298 - digiKam crash when selecting multiple photos in order to tag them.
+066 ==> 344216 - digiKam crashed while creating tag.
+067 ==> 347450 - digiKam crash.
+068 ==> 347786 - digiKam crashes when image is saved by external editor.
+069 ==> 
+070 ==> 
+071 ==> 
+
+
