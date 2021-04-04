@@ -61,10 +61,10 @@ echo "Elaspsed time for script execution : $(($difftimelps / 3600 )) hours $((($
 HostAdjustments()
 {
 
-# Check if we are inside Mageia 6 or not.
-grep -r "Mageia release 7" /etc/mageia-release || exit 1
+# Check if we are inside Mageia host or not.
+grep -r "Mageia release" /etc/mageia-release || exit 1
 
-# That's not always set correctly in Mageia 6 ?
+# That's not always set correctly in Mageia 6 at least?
 export LC_ALL=en_US.UTF-8
 export LANG=en_us.UTF-8
 
