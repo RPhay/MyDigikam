@@ -149,7 +149,7 @@ QMap<QString, QString> s_rawFileExtensionsdWithDesc()
     /**
      * NOTE: VERSION 6
      */
-    map.insert(QLatin1String("ori"),  i18n("Olympus Digital Camera HiRes Raw Image Format"));
+    map.insert(QLatin1String("ori"),  i18n("Olympus Digital Camera Raw Image Format"));
 
 /*
     TODO: check if these format are supported
