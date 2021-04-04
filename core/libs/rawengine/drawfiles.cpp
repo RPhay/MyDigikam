@@ -146,6 +146,11 @@ QMap<QString, QString> s_rawFileExtensionsdWithDesc()
      */
     map.insert(QLatin1String("cr3"),  i18n("Canon Digital Camera RAW Image Format version 3.0"));
 
+    /**
+     * NOTE: VERSION 6
+     */
+    map.insert(QLatin1String("ori"),  i18n("Olympus Digital Camera Raw Image Format"));
+
 /*
     TODO: check if these format are supported
 
@@ -165,7 +170,7 @@ int s_rawFileExtensionsVersion()
     /**
      * NOTE: increment this number whenever you change the above strings
      */
-    return 5;
+    return 6;
 }
 
 } // namespace Digikam

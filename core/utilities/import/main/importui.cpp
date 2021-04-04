@@ -91,7 +91,6 @@
 #include "capturedlg.h"
 #include "collectionlocation.h"
 #include "collectionmanager.h"
-#include "collectionscanner.h"
 #include "componentsinfodlg.h"
 #include "dlogoaction.h"
 #include "coredbdownloadhistory.h"
@@ -104,7 +103,6 @@
 #include "importview.h"
 #include "imagedialog.h"
 #include "dnotificationwrapper.h"
-#include "newitemsfinder.h"
 #include "parsesettings.h"
 #include "renamecustomizer.h"
 #include "scancontroller.h"
@@ -1053,23 +1051,6 @@ void ImportUI::finishDialog()
         }
     }
 
-    if (!d->foldersToScan.isEmpty())
-    {
-        // TODO is this note valid anymore with new progress handling?
-        // When a directory is created, a watch is put on it to spot new files
-        // but it can occur that the file is copied there before the watch is
-        // completely setup. That is why as an extra safeguard run CollectionScanner
-        // over the folders we used. Bug: 119201
-
-        d->statusProgressBar->setProgressBarMode(StatusProgressBar::TextMode,
-                                                 i18nc("@info:status", "Scanning for new files, please wait..."));
-
-        NewItemsFinder* const tool = new NewItemsFinder(NewItemsFinder::ScheduleCollectionScan, d->foldersToScan.values());
-        tool->start();
-
-        d->foldersToScan.clear();
-    }
-
     deleteLater();
 
     if (!d->lastDestURL.isEmpty())
@@ -1600,9 +1581,9 @@ void ImportUI::slotDownloaded(const QString& folder, const QString& file, int st
 }
 
 void ImportUI::slotDownloadComplete(const QString&, const QString&,
-                                    const QString& destFolder, const QString&)
+                                    const QString& destFolder, const QString& destFile)
 {
-    ScanController::instance()->scheduleCollectionScanRelaxed(destFolder);
+    ScanController::instance()->scannedInfo(destFolder + QLatin1Char('/') + destFile);
     autoRotateItems();
 }
 
@@ -2117,8 +2098,6 @@ bool ImportUI::downloadCameraItems(PAlbum* pAlbum, bool onlySelected, bool delet
             return false;
         }
 
-        d->foldersToScan << downloadUrl.toLocalFile();
-
         if (downloadName.isEmpty())
         {
             downloadUrl = downloadUrl.adjusted(QUrl::StripTrailingSlash);
@@ -2457,13 +2436,10 @@ void ImportUI::autoRotateItems()
     }
 
     ItemInfoList list;
-    CollectionScanner scanner;
 
     foreach (const QString& downloadPath, d->autoRotateItemsList)
     {
-        qlonglong id = scanner.scanFile(downloadPath,
-                                        CollectionScanner::NormalScan);
-        list << ItemInfo(id);
+        list << ItemInfo::fromLocalFile(downloadPath);
     }
 
     FileActionMngr::instance()->transform(list, MetaEngineRotation::NoTransformation);

@@ -90,5 +90,22 @@ BUGFIXES:
 077 ==> 338858 - Crash before downloading all pictures.
 078 ==> 339068 - Crash when tagging images and creating a new tag with another tag selected.
 079 ==> 339070 - Crash when moving one tag onto an other, to make it a sub-tag.
-080 ==> 
-081 ==> 
+080 ==> 435340 - Writing empty region lists.
+081 ==> 435202 - Newly imported images do not show in database.
+082 ==> 337258 - Crash during album browsing.
+083 ==> 337607 - Crash while browsing albums.
+084 ==> 338358 - Segmentation fault in libthread_db.so.1 saving jpeg in new version after editing.
+085 ==> 338600 - digiKam crashes in sqlite with segfault when importing.
+086 ==> 342750 - Crash while try to export.
+087 ==> 338025 - Geolocation doens't show map.
+088 ==> 338007 - Lookup missing altitude values is broken.
+089 ==> 337689 - Color profile settings is lost at next BQM session.
+090 ==> 435345 - Olympus *.ori images.
+091 ==> 336164 - Option to disable tags import from new images metadata.
+092 ==> 331975 - ShowPhoto crashes if SD Card is removed.
+093 ==> 213628 - Editor, resize: try shows picture very blurred.
+094 ==> 337987 - No auto-rotation when importing pictures.
+095 ==> 338482 - digiKam crash when importing pictures if no album was selected in the main window.
+096 ==> 
+
+

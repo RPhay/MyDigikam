@@ -157,6 +157,11 @@ bool DMetadata::setItemFacesMap(QMultiMap<QString, QVariant>& facesPath, bool wr
         }
     }
 
+    if (facesPath.isEmpty())
+    {
+        return true;
+    }
+
     setXmpTagString(qxmpTagName.toLatin1().constData(),
                     QString(),
                     MetaEngine::ArrayBagTag);
