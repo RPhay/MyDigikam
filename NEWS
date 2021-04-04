@@ -100,5 +100,5 @@ BUGFIXES:
 087 ==> 338025 - Geolocation doens't show map.
 088 ==> 338007 - Lookup missing altitude values is broken.
 089 ==> 337689 - Color profile settings is lost at next BQM session.
-090 ==> 
+090 ==> 435345 - Olympus *.ori images.
 091 ==> 
