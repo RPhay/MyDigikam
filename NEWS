@@ -42,4 +42,14 @@ BUGFIXES:
 029 ==> 427757 - No Icon.
 030 ==> 431808 - Program icon not visible.
 031 ==> 432982 - Program icons are missing.
-032 ==> 
+032 ==> 425962 - Error still present.
+033 ==> 418162 - Additional empty popup in geolocation dialog.
+034 ==> 424683 - Map view crashes immediately.
+035 ==> 425125 - User Comment shown as "binary comment".
+036 ==> 425878 - No thumbnails forthcoming.
+037 ==> 425726 - Album Folder only allows *PICTURES* folder digikam does not see any folder in /home directory.
+038 ==> 427477 - /mnt directory not visible in Linux file system / Collection cannot be added from removable media.
+039 ==> 428270 - digiKam sees only root folder.
+040 ==> 429604 - Adding a keyword to a group of pictures by right sidebar only adds it to the group head
+041 ==> 
+
