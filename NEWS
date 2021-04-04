@@ -108,4 +108,5 @@ BUGFIXES:
 094 ==> 337987 - No auto-rotation when importing pictures.
 095 ==> 338482 - digiKam crash when importing pictures if no album was selected in the main window.
 096 ==> 435303 - digiKam crashes when selecting 2 times Item opening Web Window in Help menu.
-097 ==> 
+097 ==> 435351 - What is the database table KDTree.
+098 ==> 
