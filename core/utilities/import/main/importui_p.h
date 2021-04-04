@@ -162,7 +162,6 @@ public:
 
     QStringList                        autoRotateItemsList;
     QStringList                        currentlyDeleting;
-    QSet<QString>                      foldersToScan;
 
     QMenu*                             downloadMenu;
     QMenu*                             deleteMenu;

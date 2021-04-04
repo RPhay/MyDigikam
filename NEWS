@@ -91,4 +91,5 @@ BUGFIXES:
 078 ==> 339068 - Crash when tagging images and creating a new tag with another tag selected.
 079 ==> 339070 - Crash when moving one tag onto an other, to make it a sub-tag.
 080 ==> 435340 - Writing empty region lists.
-081 ==> 
+081 ==> 435202 - Newly imported images do not show in database.
+082 ==> 
