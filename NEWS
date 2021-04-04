@@ -51,5 +51,7 @@ BUGFIXES:
 038 ==> 427477 - /mnt directory not visible in Linux file system / Collection cannot be added from removable media.
 039 ==> 428270 - digiKam sees only root folder.
 040 ==> 429604 - Adding a keyword to a group of pictures by right sidebar only adds it to the group head
-041 ==> 
+041 ==> 431928 - "Save to original album" does not work in Batch Queue Manager.
+042 ==> 430053 - Clarify dialogs when removing unused face tags.
+043 ==> 
 
