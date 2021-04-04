@@ -1600,9 +1600,9 @@ void ImportUI::slotDownloaded(const QString& folder, const QString& file, int st
 }
 
 void ImportUI::slotDownloadComplete(const QString&, const QString&,
-                                    const QString& destFolder, const QString&)
+                                    const QString& destFolder, const QString& destFile)
 {
-    ScanController::instance()->scheduleCollectionScanRelaxed(destFolder);
+    ScanController::instance()->scannedInfo(destFolder + QLatin1Char('/') + destFile);
     autoRotateItems();
 }
 
