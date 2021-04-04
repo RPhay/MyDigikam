@@ -40,4 +40,5 @@ BUGFIXES:
 027 ==> 435314 - digiKam 7.3.0 doesn't respect the MySQL (MariaDB) database folder stipulated on settings, after migration from SQLITE.
 028 ==> 435179 - Face write to database with wrong user (''@'%') MariaDB backend.
 029 ==> 427757 - No Icon.
-030 ==> 
+030 ==> 431808 - Program icon not visible.
+031 ==> 
