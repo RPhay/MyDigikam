@@ -41,4 +41,5 @@ BUGFIXES:
 028 ==> 435179 - Face write to database with wrong user (''@'%') MariaDB backend.
 029 ==> 427757 - No Icon.
 030 ==> 431808 - Program icon not visible.
-031 ==> 
+031 ==> 432982 - Program icons are missing.
+032 ==> 
