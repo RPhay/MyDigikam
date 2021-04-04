@@ -263,7 +263,7 @@ find_package(Eigen3)                               # For Refocus tool.
 
 # -- ImageMagick rules --------------------------------------------------------
 
-find_package(ImageMagick COMPONENTS Magick++ MagickCore)
+find_package(ImageMagick COMPONENTS Magick++ MagickCore MagickWand)
 
 if(ImageMagick_Magick++_FOUND)
     add_definitions(${ImageMagick_Magick++_DEFINITIONS})
