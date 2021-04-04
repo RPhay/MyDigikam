@@ -53,5 +53,15 @@ BUGFIXES:
 040 ==> 429604 - Adding a keyword to a group of pictures by right sidebar only adds it to the group head
 041 ==> 431928 - "Save to original album" does not work in Batch Queue Manager.
 042 ==> 430053 - Clarify dialogs when removing unused face tags.
-043 ==> 
+043 ==> 369334 - When deleting folder, it should warn about non-image files.
+044 ==> 342760 - digiKam crashes when saving star rating to database.
+045 ==> 347915 - digiKam crash when cancelling erasing photo after a request download and erase.
+046 ==> 335370 - Unecpected crash when deleting a tag.
+047 ==> 339916 - SCAN : on startup, scanning collection stops advancing (i.e. at 88%) and digikam shows 100% cpu for one core.
+048 ==> 330104 - digiKam crash while browsing.
+049 ==> 333671 - digiKam crashed when trying to store a new version of an image after editing
+050 ==> 334852 - digiKam crashed while downloading photos from camera.
+051 ==> 335529 - digiKam crashes, when deleting an empty sub-directory.
+052 ==> 
+
 
