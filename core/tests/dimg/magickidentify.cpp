@@ -50,6 +50,9 @@ int main(int argc, char** argv)
                                             "Exif.Photo.ColorSpace:%[colorspace]\n"
                                             "Exif.Image.CameraLabel:%[label]\n"
                                             "Exif.Image.Orientation:%[orientation]\n"
+                                            "Exif.Photo.UserComment:%[comment]"
+                                            "Exif.Image.DateTime:%[date:create]"
+                                            "Exif.Image.DateTimeOriginal:%[date:create]"
                                         "__PROPERTIES__\n"
                                             "%[*]"
                                         );
@@ -62,7 +65,7 @@ int main(int argc, char** argv)
 
         for (int i = 0 ; i < msize; ++i)
         {
-            metadata[i]     = new char[256];
+            metadata[i]     = (char*)malloc(sizeof(char));
             metadata[i][0]  = '\0';
         }
 
@@ -94,7 +97,8 @@ int main(int argc, char** argv)
 
         for (int i = 0 ; i < msize; ++i)
         {
-            delete metadata[i];
+            // ImageMgick use malloc to allocate memory.
+            free (metadata[i]);
         }
 
         delete [] metadata;
