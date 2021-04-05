@@ -40,6 +40,19 @@ int main(int argc, char** argv)
     const int msize                   = 20;
     MagickCore::ImageInfo* image_info = nullptr;
     ExceptionInfo ex                  = *AcquireExceptionInfo();
+    const QString filters             = QLatin1String(
+                                        "__EXIF__\n"
+                                            "Exif.Image.ImageLength:%[height]\n"
+                                            "Exif.Image.ImageWidth:%[width]\n"
+                                            "Exif.Image.Compression:%[compression]\n"
+                                            "Exif.Image.BitsPerSample:%[bit-depth]\n"
+                                            "Exif.Image.ImageDescription:%[caption]\n"
+                                            "Exif.Photo.ColorSpace:%[colorspace]\n"
+                                            "Exif.Image.CameraLabel:%[label]\n"
+                                            "Exif.Image.Orientation:%[orientation]\n"
+                                        "__PROPERTIES__\n"
+                                            "%[*]"
+                                        );
 
     QApplication app(argc, argv);
 
@@ -62,10 +75,10 @@ int main(int argc, char** argv)
         int identargc       = argc + 2;
 
         char** identargv    = new char*[identargc];
-        identargv[0] = argv[0];
-        identargv[1] = (char*)"-format";
-        identargv[2] = (char*)"%[*:*]";
-        identargv[3] = argv[1];
+        identargv[0]        = argv[0];
+        identargv[1]        = (char*)"-format";
+        identargv[2]        = filters.toLatin1().data();
+        identargv[3]        = argv[1];
 
         IdentifyImageCommand(image_info, identargc, identargv, metadata, &ex);
 
