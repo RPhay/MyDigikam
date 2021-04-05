@@ -37,6 +37,7 @@ int main(int argc, char** argv)
 {
     MagickCoreGenesis((char*)nullptr, MagickFalse);
 
+    const int msize                   = 20;
     MagickCore::ImageInfo* image_info = nullptr;
     ExceptionInfo ex                  = *AcquireExceptionInfo();
 
@@ -44,12 +45,12 @@ int main(int argc, char** argv)
 
     try
     {
-        char** metadata                   = (char**)malloc(256 * sizeof(char*));
+        char** metadata     = new char*[msize];
 
-        for (int i = 0 ; i < 256; ++i)
+        for (int i = 0 ; i < msize; ++i)
         {
-            metadata[i]    = (char*)malloc(256 * sizeof(char));
-            metadata[i][0] = '\0';
+            metadata[i]     = new char[256];
+            metadata[i][0]  = '\0';
         }
 
         image_info          = CloneImageInfo((ImageInfo*)nullptr);
@@ -57,21 +58,34 @@ int main(int argc, char** argv)
         image_info->ping    = MagickTrue;
         image_info->verbose = MagickTrue;
         image_info->debug   = MagickTrue;
-        IdentifyImageCommand(image_info, argc, argv, metadata, &ex);
 
-        for (int i = 0 ; i < 256; ++i)
+        int identargc       = argc + 2;
+
+        char** identargv    = new char*[identargc];
+        identargv[0] = argv[0];
+        identargv[1] = (char*)"-format";
+        identargv[2] = (char*)"%[*:*]";
+        identargv[3] = argv[1];
+
+        IdentifyImageCommand(image_info, identargc, identargv, metadata, &ex);
+
+        for (int i = 0 ; i < msize; ++i)
         {
-            printf("%i: %s\n", i, metadata[i]);
+            if (metadata[i][0] != '\0')
+            {
+                printf("%s\n", metadata[i]);
+            }
         }
 
         DestroyImageInfo(image_info);
 
-        for (int i = 0 ; i < 256; ++i)
+        for (int i = 0 ; i < msize; ++i)
         {
-            free(metadata[i]);
+            delete metadata[i];
         }
 
-        free (metadata);
+        delete [] metadata;
+        delete [] identargv;
     }
     catch (Exception& error_)
     {
