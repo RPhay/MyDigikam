@@ -103,57 +103,74 @@ bool AlbumManager::setDatabase(const DbEngineParameters& params, bool priority, 
         addFakeConnection();
     }
 
-    if (params.internalServer)
+    QString databaseError;
+
+    if      (params.internalServer && suggestedAlbumRoot.isEmpty())
     {
         if (!QFileInfo::exists(params.internalServerMysqlServCmd) &&
             QStandardPaths::findExecutable(params.internalServerMysqlServCmd).isEmpty())
         {
-            QApplication::restoreOverrideCursor();
+            databaseError = i18n("The MySQL binary tools are not found, please "
+                                 "set the correct location in the next dialog.");
+        }
+    }
+    else if (params.isSQLite() && suggestedAlbumRoot.isEmpty())
+    {
+        if (!QFileInfo::exists(params.databaseNameCore))
+        {
+            databaseError = i18n("The SQLite core database are not found, please "
+                                 "set the correct location in the next dialog.");
+        }
+    }
 
-            QMessageBox::critical(qApp->activeWindow(), qApp->applicationName(),
-                                  i18n("<p>The MySQL binary tools are not found, please "
-                                       "set the correct location in the next dialog.</p>"
-                                      ));
+    if (!databaseError.isEmpty())
+    {
+        QApplication::restoreOverrideCursor();
 
-            // We cannot use Setup::execSinglePage() as this already requires a core database.
+        QMessageBox::critical(qApp->activeWindow(),
+                              qApp->applicationName(), databaseError);
 
-            QPointer<QDialog> setup                  = new QDialog(qApp->activeWindow());
-            QVBoxLayout* const layout                = new QVBoxLayout(setup);
-            DatabaseSettingsWidget* const dbsettings = new DatabaseSettingsWidget(setup);
-            QDialogButtonBox* const buttons          = new QDialogButtonBox(QDialogButtonBox::Ok |
-                                                                            QDialogButtonBox::Cancel, setup);
-            buttons->button(QDialogButtonBox::Ok)->setDefault(true);
+        // We cannot use Setup::execSinglePage() as this already requires a core database.
 
-            layout->addWidget(dbsettings);
-            layout->addStretch(10);
-            layout->addWidget(buttons);
+        QPointer<QDialog> setup                  = new QDialog(qApp->activeWindow());
+        QVBoxLayout* const layout                = new QVBoxLayout(setup);
+        DatabaseSettingsWidget* const dbsettings = new DatabaseSettingsWidget(setup);
+        QDialogButtonBox* const buttons          = new QDialogButtonBox(QDialogButtonBox::Ok |
+                                                                        QDialogButtonBox::Cancel, setup);
+        buttons->button(QDialogButtonBox::Ok)->setDefault(true);
 
-            connect(buttons->button(QDialogButtonBox::Ok), SIGNAL(clicked()),
-                    setup, SLOT(accept()));
+        layout->addWidget(dbsettings);
+        layout->addStretch(10);
+        layout->addWidget(buttons);
 
-            connect(buttons->button(QDialogButtonBox::Cancel), SIGNAL(clicked()),
-                    setup, SLOT(reject()));
+        connect(buttons->button(QDialogButtonBox::Ok), SIGNAL(clicked()),
+                setup, SLOT(accept()));
 
-            ApplicationSettings* const settings = ApplicationSettings::instance();
-            dbsettings->setParametersFromSettings(settings);
+        connect(buttons->button(QDialogButtonBox::Cancel), SIGNAL(clicked()),
+                setup, SLOT(reject()));
 
-            if ((setup->exec() != QDialog::Accepted) || !setup)
-            {
-                delete setup;
+        ApplicationSettings* const settings = ApplicationSettings::instance();
+        dbsettings->setParametersFromSettings(settings);
 
-                return false;
-            }
-
-            DbEngineParameters dbParams = dbsettings->getDbEngineParameters();
-            settings->setDbEngineParameters(dbParams);
-            settings->saveSettings();
-            changeDatabase(dbParams);
-
+        if ((setup->exec() != QDialog::Accepted) || !setup)
+        {
             delete setup;
 
-            return true;
+            return false;
         }
 
+        DbEngineParameters dbParams = dbsettings->getDbEngineParameters();
+        settings->setDbEngineParameters(dbParams);
+        settings->saveSettings();
+        changeDatabase(dbParams);
+
+        delete setup;
+
+        return true;
+    }
+
+    if (params.internalServer)
+    {
         DatabaseServerError result = DatabaseServerStarter::instance()->startServerManagerProcess(params);
 
         if (result.getErrorType() != DatabaseServerError::NoErrors)
