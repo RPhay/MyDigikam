@@ -189,7 +189,7 @@ LoadingCache::LoadingCache()
     : d(new Private(this))
 {
     KMemoryInfo memory = KMemoryInfo::currentInfo();
-    setCacheSize(qBound(60, int(memory.megabytes(KMemoryInfo::TotalRam)*0.05), 200));
+    setCacheSize(qBound(60, int(memory.megabytes(KMemoryInfo::TotalRam)*0.05), 400));
     setThumbnailCacheSize(5, 100); // the pixmap number should not be based on system memory, it's graphics memory
 
     // good place to call it here as LoadingCache is a singleton
@@ -250,7 +250,7 @@ bool LoadingCache::isCacheable(const DImg& img) const
 {
     // return whether image fits in cache
 
-    return (quint64)d->imageCache.maxCost() >= (img.numBytes() / 1024);
+    return ((quint64)d->imageCache.maxCost() >= (img.numBytes() / 1024));
 }
 
 void LoadingCache::addLoadingProcess(LoadingProcess* const process)
