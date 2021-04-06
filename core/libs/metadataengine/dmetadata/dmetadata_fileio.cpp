@@ -56,14 +56,17 @@ bool DMetadata::load(const QString& filePath)
         !mimeDB.mimeTypeForFile(filePath).name().startsWith(QLatin1String("audio/"))
        )
     {
-        // Non video or audio file, process with Exiv2 backend, or libraw if fail with RAW files, or libheif.
+        // Non video or audio file, process with Exiv2 backend, or libraw if fail with RAW files, or libheif, or ImageMagick.
         // Never process video file with Exiv2, the backend is very unstable.
 
         if (!(hasLoaded = MetaEngine::load(filePath)))
         {
             if (!(hasLoaded = loadUsingRawEngine(filePath)))
             {
-                hasLoaded = loadUsingLibheif(filePath);
+                if (!(hasLoaded = loadUsingLibheif(filePath)))
+                {
+                    hasLoaded = loadUsingImageMagick(filePath);
+                }
             }
         }
     }

@@ -1107,7 +1107,6 @@ public:
      */
     bool removeXmpTag(const char* xmpTagName) const;
 
-
     /**
      * Register a namespace which Exiv2 doesn't know yet. This is only needed
      * when new Xmp properties are added manually. 'uri' is the namespace url and prefix the

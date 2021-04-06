@@ -394,6 +394,13 @@ private:
      * Libheif helper methods.
      */
     bool loadUsingLibheif(const QString& filePath);
+
+private:
+
+    /**
+     * ImageMagick helper methods.
+     */
+    bool loadUsingImageMagick(const QString& filePath);
 };
 
 } // namespace Digikam

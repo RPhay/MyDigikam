@@ -3,7 +3,7 @@
  * This file is a part of digiKam project
  * https://www.digikam.org
  *
- * Date        : 2017-09-24
+ * Date        : 2020-09-24
  * Description : Test ImageMagick loader to QImage.
  *
  * Copyright (C) 2020-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>

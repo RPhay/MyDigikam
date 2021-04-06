@@ -3,7 +3,7 @@ digiKam 7.3.0 - Release date: 2021-xx-xx
 *****************************************************************************************************
 NEW FEATURES:
 
-General : Better support of astro FITS image format.
+General : Better support of astro FITS image format inluding metadata extraction support to populate the database.
 General : Digital Scanner plugin is now available under Windows.
 General : Use Exiv2 0.27.4 in all bundles with Base Media File metadata support.
 General : Use KF5 framework 5.80 and KAPP 20.12.3 in all bundles.
@@ -110,4 +110,5 @@ BUGFIXES:
 096 ==> 435303 - digiKam crashes when selecting 2 times Item opening Web Window in Help menu.
 097 ==> 435351 - What is the database table KDTree.
 098 ==> 435387 - Crashes after not able to connect to database.
-099 ==> 
+099 ==> 417431 - No metadata are displayed from non supported Exiv2 file formats.
+100 ==> 
