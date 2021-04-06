@@ -179,10 +179,10 @@ bool DImgPNGLoader::load(const QString& filePath, DImgLoaderObserver* const obse
     public:
 
         CleanupData()
-          : data(nullptr),
+          : data (nullptr),
             lines(nullptr),
-            file(nullptr),
-            cmod(0)
+            file (nullptr),
+            cmod (0)
         {
         }
 

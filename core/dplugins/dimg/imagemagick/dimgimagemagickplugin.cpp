@@ -307,6 +307,7 @@ QStringList DImgImageMagickPlugin::decoderFormats() const
     }
 
     // Remove known formats that are not stable.
+
     formats.removeAll(QLatin1String("XCF"));
 
     return formats;
