@@ -110,6 +110,8 @@ private:
     CoreDbSchemaUpdater(const CoreDbSchemaUpdater&)            = delete;
     CoreDbSchemaUpdater& operator=(const CoreDbSchemaUpdater&) = delete;
 
+private:
+
     class Private;
     Private* const d;
 };

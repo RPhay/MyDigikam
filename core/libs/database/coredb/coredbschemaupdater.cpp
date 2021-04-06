@@ -62,7 +62,7 @@ int CoreDbSchemaUpdater::schemaVersion()
 
 int CoreDbSchemaUpdater::filterSettingsVersion()
 {
-    return 12;
+    return 13;
 }
 
 int CoreDbSchemaUpdater::uniqueHashVersion()
@@ -72,7 +72,7 @@ int CoreDbSchemaUpdater::uniqueHashVersion()
 
 bool CoreDbSchemaUpdater::isUniqueHashUpToDate()
 {
-    return CoreDbAccess().db()->getUniqueHashVersion() >= uniqueHashVersion();
+    return (CoreDbAccess().db()->getUniqueHashVersion() >= uniqueHashVersion());
 }
 
 // --------------------------------------------------------------------------------------
@@ -310,8 +310,7 @@ bool CoreDbSchemaUpdater::startUpdates()
         // Version 1 is 0.6 (no db), Version 2 is 0.7 (SQLite 2),
         // Version 3 is 0.8-0.9,
         // Version 3 wrote the setting "DBVersion", "1",
-        // Version 4 is 0.10, the digikam3.db file copied to digikam4.db,
-        //  no schema changes.
+        // Version 4 is 0.10, the digikam3.db file copied to digikam4.db, no schema changes.
         // Version 4 writes "4", and from now on version x writes "x".
         // Version 5 includes the schema changes from 0.9 to 0.10
         // Version 6 brought new tables for history and ImageTagProperties, with version 2.0
@@ -368,6 +367,7 @@ bool CoreDbSchemaUpdater::beginWrapSchemaUpdateStep()
                                 QDir::toNativeSeparators(currentDBFile.filePath()));
         d->observer->error(errorMsg);
         d->observer->finishedSchemaUpdate(InitializationObserver::UpdateErrorMustAbort);
+
         return false;
     }
 
@@ -400,6 +400,7 @@ bool CoreDbSchemaUpdater::endWrapSchemaUpdateStep(bool stepOperationSuccess, con
 
     qCDebug(DIGIKAM_COREDB_LOG) << "Core database: success updating to version " << d->currentVersion.toInt();
     d->backend->commitTransaction();
+
     return true;
 }
 
@@ -487,6 +488,7 @@ void CoreDbSchemaUpdater::defaultFilterSettings(QStringList& defaultItemFilter, 
                       << QLatin1String("jpc") << QLatin1String("pgx")
                       << QLatin1String("tif") << QLatin1String("tiff")                           // TIFF
                       << QLatin1String("png")                                                    // PNG
+                      << QLatin1String("fit") << QLatin1String("fts")  << QLatin1String("fits")  // Flexible Image Transport System (https://fr.wikipedia.org/wiki/Flexible_Image_Transport_System)
                       << QLatin1String("gif") << QLatin1String("xpm")  << QLatin1String("ppm")
                       << QLatin1String("pnm") << QLatin1String("pgf")  << QLatin1String("bmp")
                       << QLatin1String("pcx") << QLatin1String("heic") << QLatin1String("heif")
@@ -593,6 +595,7 @@ bool CoreDbSchemaUpdater::createIndices()
 {
     // TODO: see which more indices are needed
     // create indices
+
     return d->backend->execDBAction(d->backend->getDBAction(QLatin1String("CreateIndices")));
 }
 
@@ -627,7 +630,8 @@ bool CoreDbSchemaUpdater::updateUniqueHash()
 
         scanner.completeScan();
 
-        // earlier digikam does not know about the hash
+        // earlier digiKam does not know about the hash
+
         if (d->currentRequiredVersion.toInt() < 6)
         {
             d->currentRequiredVersion = 6;
@@ -699,55 +703,63 @@ bool CoreDbSchemaUpdater::updateToVersion(int targetVersion)
     switch (targetVersion)
     {
         case 6:
-
+        {
             // digiKam for database version 5 can work with version 6, though not using the new features
             // Note: We do not upgrade the uniqueHash
 
             return performUpdateToVersion(QLatin1String("UpdateSchemaFromV5ToV6"), 6, 5);
+        }
 
         case 7:
-
+        {
             // digiKam for database version 5 and 6 can work with version 7, though not using the support for video files.
 
             return performUpdateToVersion(QLatin1String("UpdateSchemaFromV6ToV7"), 7, 5);
 
             // NOTE: If you add a new update step, please check the d->currentVersion at the bottom of updateV4toV7
             // If the update already comes with createTables, createTriggers, we don't need the extra update here
+        }
 
         case 8:
-
+        {
             // digiKam for database version 7 can work with version 8, now using COLLATE utf8_general_ci for MySQL.
 
             return performUpdateToVersion(QLatin1String("UpdateSchemaFromV7ToV9"), 8, 5);
+        }
 
         case 9:
-
+        {
             // digiKam for database version 8 can work with version 9, now using COLLATE utf8_general_ci for MySQL.
 
             return performUpdateToVersion(QLatin1String("UpdateSchemaFromV7ToV9"), 9, 5);
+        }
 
         case 10:
-
+        {
             // digiKam for database version 9 can work with version 10, remove ImageHaarMatrix table and add manualOrder column.
 
             return performUpdateToVersion(QLatin1String("UpdateSchemaFromV9ToV10"), 10, 5);
+        }
 
         case 11:
-
+        {
             // digiKam for database version 10 can work with version 11, add TagsTree table for MySQL.
 
             return performUpdateToVersion(QLatin1String("UpdateSchemaFromV10ToV11"), 11, 5);
+        }
 
         case 12:
-
+        {
             // digiKam for database version 11 can work with version 12, fix TagsTree triggers for MySQL.
 
             return performUpdateToVersion(QLatin1String("UpdateSchemaFromV11ToV12"), 12, 5);
+        }
 
         default:
-
+        {
             qCDebug(DIGIKAM_COREDB_LOG) << "Core database: unsupported update to version" << targetVersion;
             return false;
+        }
     }
 }
 
@@ -830,6 +842,7 @@ bool CoreDbSchemaUpdater::copyV3toV4(const QString& digikam3DBPath, const QStrin
 static QStringList cleanUserFilterString(const QString& filterString)
 {
     // splits by either ; or space, removes "*.", trims
+
     QStringList filterList;
 
     QString wildcard(QLatin1String("*."));
@@ -1094,7 +1107,7 @@ bool CoreDbSchemaUpdater::updateV4toV7()
             name = i18n("Last Search (0.9)");
         }
 
-        if (QUrlQuery(url).queryItemValue(QLatin1String("type")) == QLatin1String("datesearch"))
+        if      (QUrlQuery(url).queryItemValue(QLatin1String("type")) == QLatin1String("datesearch"))
         {
             d->albumDB->updateSearch((*it).id, DatabaseSearch::TimeLineSearch, name, query);
         }
@@ -1130,8 +1143,8 @@ bool CoreDbSchemaUpdater::updateV4toV7()
 
     configItemFilter   = cleanUserFilterString(group.readEntry(QLatin1String("File Filter"),       QString())).toSet();
     configItemFilter  += cleanUserFilterString(group.readEntry(QLatin1String("Raw File Filter"),   QString())).toSet();
-    configVideoFilter   = cleanUserFilterString(group.readEntry(QLatin1String("Movie File Filter"), QString())).toSet();
-    configAudioFilter   = cleanUserFilterString(group.readEntry(QLatin1String("Audio File Filter"), QString())).toSet();
+    configVideoFilter  = cleanUserFilterString(group.readEntry(QLatin1String("Movie File Filter"), QString())).toSet();
+    configAudioFilter  = cleanUserFilterString(group.readEntry(QLatin1String("Audio File Filter"), QString())).toSet();
 
     // remove those that are included in the default filter
 
@@ -1182,7 +1195,7 @@ bool CoreDbSchemaUpdater::updateV4toV7()
                                 "UPDATE ImageInformation SET "
                                 " creationDate=(SELECT datetime FROM ImagesV3 WHERE ImagesV3.id=ImageInformation.imageid) "
                                 "WHERE imageid IN (SELECT id FROM ImagesV3);")
-                           )
+                            )
        )
     {
         return false;
@@ -1270,6 +1283,7 @@ bool CoreDbSchemaUpdater::updateV4toV7()
     d->currentRequiredVersion = 5;
     d->currentVersion         = 7;
     qCDebug(DIGIKAM_COREDB_LOG) << "Core database: returning true from updating to 5";
+
     return true;
 }
 
