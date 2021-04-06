@@ -70,7 +70,26 @@ int main(int argc, char** argv)
                                             "Exif.Photo.UserComment=%[comment]\n"
                                             "Exif.Image.DateTime=%[date:create]\n"
                                             "Exif.Image.DateTimeOriginal=%[date:create]\n"
+                                            "Xmp.IMProperties.IMVersion=%[version]\n"
+                                            "Xmp.IMProperties.IMCopyright=%[copyright]\n"
+                                            "Xmp.IMProperties.IMBaseName=%[basename]\n"
+                                            "Xmp.IMProperties.IMExtension=%[extension]\n"
+                                            "Xmp.IMProperties.IMCodec=%[magick]\n"
+                                            "Xmp.IMProperties.IMChannels=%[channels]\n"
+                                            "Xmp.IMProperties.IMInterlace=%[interlace]\n"
+                                            "Xmp.IMProperties.IMProfiles=%[profiles]\n"
+                                            "Xmp.IMProperties.IMQuality=%[quality]\n"
+                                            "Xmp.IMProperties.IMRendering=%[rendering-intent]\n"
+                                            "Xmp.IMProperties.IMResolutionX=%[resolution.x]\n"
+                                            "Xmp.IMProperties.IMResolutionY=%[resolution.y]\n"
+                                            "Xmp.IMProperties.IMResolutionUnits=%[units]\n"
+                                            "Xmp.IMProperties.IMScene=%[scene]\n"
                                             "%[*]\n"    // Extra properties from IM/
+
+// Values calculated (not specified in IM doc) and take a while
+//                                            "Xmp.IMProperties.IMColors=%[colors]\n"
+//                                            "Xmp.IMProperties.IMGamma=%[gamma]\n"
+
                                         );
 
     try
@@ -130,10 +149,43 @@ int main(int argc, char** argv)
             key = tupple.section(QLatin1Char('='), 0, 0);
             val = tupple.section(QLatin1Char('='), 1, 1);
 
-            if (!key.startsWith(QLatin1String("Exif")))
+            if (val.startsWith(QLatin1Char('\'')))
             {
+                val = val.section(QLatin1Char('\''), 1, 1);             // Drop tag description string on the right side (stage1).
+                val = val.remove(QLatin1Char('\''));
+            }
+
+            if (val.contains(QLatin1String(" / ")))
+            {
+                val = val.section(QLatin1String(" / "), 0, 0);          // Drop tag description string on the right side (stage2).
+            }
+
+            if (key.isEmpty()                                 ||
+                key.startsWith(QLatin1String("comment"))      ||
+                key.startsWith(QLatin1String("date:create"))  ||
+                key.startsWith(QLatin1String("date:modify")))
+            {
+                // These tags are already handled with Exif or key or val are empty.
+
+                continue;
+            }
+
+            if (val.isEmpty())
+            {
+                val = QLatin1String("None");        // Mimic IM "none" strings, not i18n
+            }
+
+            if (!key.startsWith(QLatin1String("Exif")) &&
+                !key.startsWith(QLatin1String("Xmp")))
+            {
+                // Create a dedicated XMP namespace to store extra IM properties.
+
                 key = QLatin1String("Xmp.IMProperties.") + key.remove(QLatin1Char(':'));
             }
+
+            key = key.remove(QLatin1Char('-'));
+            key = key.remove(QLatin1Char('_'));
+            val = val.simplified();
 
             qDebug() << key << " :: " << val;
         }
