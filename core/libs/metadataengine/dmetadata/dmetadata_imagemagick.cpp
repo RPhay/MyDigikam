@@ -28,6 +28,7 @@
 #include <QString>
 #include <QStringList>
 #include <QFileInfo>
+#include <QMimeDatabase>
 
 // Local includes
 
@@ -54,14 +55,28 @@ bool DMetadata::loadUsingImageMagick(const QString& filePath)
 
 #ifdef HAVE_IMAGE_MAGICK
 
+    QString mimeType(QMimeDatabase().mimeTypeForFile(filePath).name());
+
+    // Ignore non image formats.
+
+    if (
+        mimeType.startsWith(QLatin1String("video/")) ||
+        mimeType.startsWith(QLatin1String("audio/"))
+       )
+    {
+        return false;
+    }
+
     QFileInfo fileInfo(filePath);
     QString rawFilesExt  = DRawDecoder::rawFiles();
     QString ext          = fileInfo.suffix().toUpper();
 
     if (
         !fileInfo.exists() || ext.isEmpty() ||
-        rawFilesExt.toUpper().contains(ext) ||                              // Igonre RAW files
-        (ext == QLatin1String("HEIF")) || (ext == QLatin1String("HEIC"))    // Ignore HEIF files
+        rawFilesExt.toUpper().contains(ext) ||    // Igonre RAW files
+        (ext == QLatin1String("HEIF"))      ||    // Ignore HEIF files
+        (ext == QLatin1String("HEIC"))      ||    // Ignore HEIC files
+        (ext == QLatin1String("XCF"))             // Ignore XCF files
        )
     {
         return false;
