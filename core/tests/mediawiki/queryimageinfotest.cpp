@@ -46,7 +46,6 @@ public:
     explicit QueryImageInfoTest(QObject* const parent = nullptr)
     {
         Q_UNUSED(parent);
-        m_requestWithMissingTitleHasBeenSent = false;
     }
 
 public Q_SLOTS:
@@ -229,10 +228,13 @@ private Q_SLOTS:
 
 private:
 
+    // Disable
     QueryImageInfoTest() = delete;
 
+private:
+
     QList<QList<Imageinfo> > m_imageinfosReceived;
-    bool                     m_requestWithMissingTitleHasBeenSent;
+    bool                     m_requestWithMissingTitleHasBeenSent = false;
 };
 
 QTEST_MAIN(QueryImageinfoTest)
