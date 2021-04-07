@@ -112,4 +112,5 @@ BUGFIXES:
 098 ==> 435387 - Crashes after not able to connect to database.
 099 ==> 417431 - No metadata are displayed from non supported Exiv2 file formats.
 100 ==> 435453 - Documentation of digiKam not available.
-101 ==> 
+101 ==> 137060 - Image and Photograph Properties Incomplete.
+102 ==> 
