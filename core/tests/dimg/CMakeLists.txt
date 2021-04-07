@@ -72,18 +72,6 @@ if(ImageMagick_Magick++_FOUND)
                           ${COMMON_TEST_LINK}
     )
 
-    # ---
-
-    set(magickidentify_SRCS ${CMAKE_CURRENT_SOURCE_DIR}/magickidentify.cpp)
-    add_executable(magickidentify ${magickidentify_SRCS})
-
-    target_link_libraries(magickidentify
-
-                          digikamcore
-
-                          ${COMMON_TEST_LINK}
-    )
-
 endif()
 
 #------------------------------------------------------------------------
