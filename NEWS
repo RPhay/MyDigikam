@@ -124,4 +124,6 @@ BUGFIXES:
 110 ==> 370443 - jp2 metadata: Unrecognized UUID EXIF box.
 111 ==> 265726 - digiKam doesn't detect lens type.
 112 ==> 301087 - Browsing through my pic collection shows dozends of wrongs orientated jpg's.
-113 ==> 
+113 ==> 364880 - digiKam crashes when rotating a picture.
+114 ==> 
+
