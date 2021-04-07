@@ -73,7 +73,7 @@ bool DMetadata::loadUsingImageMagick(const QString& filePath)
 
     if (
         !fileInfo.exists() || ext.isEmpty() ||
-        rawFilesExt.toUpper().contains(ext) ||    // Igonre RAW files
+        rawFilesExt.toUpper().contains(ext) ||    // Ignore RAW files
         (ext == QLatin1String("HEIF"))      ||    // Ignore HEIF files
         (ext == QLatin1String("HEIC"))      ||    // Ignore HEIC files
         (ext == QLatin1String("XCF"))             // Ignore XCF files
@@ -82,7 +82,6 @@ bool DMetadata::loadUsingImageMagick(const QString& filePath)
         return false;
     }
 
-    const int msize                   = 256;
     MagickCore::ImageInfo* image_info = nullptr;
     ExceptionInfo ex                  = *AcquireExceptionInfo();
 
@@ -121,7 +120,7 @@ bool DMetadata::loadUsingImageMagick(const QString& filePath)
                                             "Xmp.IMAttributes.Interlace=%[interlace]\n"             // Text
                                             "Xmp.IMAttributes.Profiles=%[profiles]\n"               // Text
 /*
-    NOTE: igonre these attributes as these break IM identify call.
+    NOTE: ignore these attributes as these break IM identify call.
 
                                             "Xmp.IMAttributes.ProfileICC=%[profile:icc]\n"          // Text
                                             "Xmp.IMAttributes.ProfileICM=%[profile:icm]\n"          // Text
@@ -131,19 +130,19 @@ bool DMetadata::loadUsingImageMagick(const QString& filePath)
 */
 
 /*
-   NOTE: Values calculated which introduce non negligible time latency:
+   NOTE: values calculated which introduce non negligible time latency:
 
                                             %[colors]                   (not specified in IM doc)
-                                            %[entropy]                  (specified as CALCULATED in dox)
-                                            %[kurtosis]                 (specified as CALCULATED in dox)
-                                            %[max]                      (specified as CALCULATED in dox)
-                                            %[mean]                     (specified as CALCULATED in dox)
-                                            %[median]                   (specified as CALCULATED in dox)
-                                            %[min]                      (specified as CALCULATED in dox)
-                                            %[opaque]                   (specified as CALCULATED in dox)
-                                            %[skewness]                 (specified as CALCULATED in dox)
-                                            %[standard-deviation]       (specified as CALCULATED in dox)
-                                            %[type]                     (specified as CALCULATED in dox)
+                                            %[entropy]                  (specified as CALCULATED in doc)
+                                            %[kurtosis]                 (specified as CALCULATED in doc)
+                                            %[max]                      (specified as CALCULATED in doc)
+                                            %[mean]                     (specified as CALCULATED in doc)
+                                            %[median]                   (specified as CALCULATED in doc)
+                                            %[min]                      (specified as CALCULATED in doc)
+                                            %[opaque]                   (specified as CALCULATED in doc)
+                                            %[skewness]                 (specified as CALCULATED in doc)
+                                            %[standard-deviation]       (specified as CALCULATED in doc)
+                                            %[type]                     (specified as CALCULATED in doc)
 */
 
                                             "Xmp.IMAttributes.Quality=%[quality]\n"                 // Text
@@ -160,11 +159,12 @@ bool DMetadata::loadUsingImageMagick(const QString& filePath)
     {
         // Allocate metadata container for IM.
 
+        const int msize     = 256;                  // Number of internal metadata entries prepared for IM.
         char** metadata     = new char*[msize];
 
         for (int i = 0 ; i < msize ; ++i)
         {
-            // NOTE: prepare metadata items with null pointer which will be allocated by ImageMagick.
+            // NOTE: prepare metadata items with null pointers which will be allocated with malloc on demand by ImageMagick.
 
             metadata[i] = nullptr;
         }
@@ -177,16 +177,17 @@ bool DMetadata::loadUsingImageMagick(const QString& filePath)
         image_info->verbose = MagickTrue;
         image_info->debug   = MagickTrue;
 
-        // Insert percent escape format for IM identification
+        // Insert percent escape format for IM identification call.
 
-        int identargc       = 4;
-        char** identargv    = new char*[identargc];
-        identargv[0]        = (char*)"identify";
-        identargv[1]        = (char*)"-format";
-        identargv[2]        = filters.toLatin1().data();
-        identargv[3]        = filePath.toLatin1().data();
+        int identargc       = 4;                            // Number or arguments passed to IM identification call.
+        char** identargv    = new char*[identargc];         // Container to store arguments.
+        identargv[0]        = (char*)"identify";            // String content is not important but must be present.
+        identargv[1]        = (char*)"-format";             // We will pass percent escape options.
+        identargv[2]        = filters.toLatin1().data();    // Percent escape format description.
+        identargv[3]        = filePath.toLatin1().data();   // The file path to parse (even if this also passed through IM::ImageInfo container).
 
-        // Call ImageMagick core identification
+        // Call ImageMagick core identification.
+        // This is a fast IM C API call, not the IM CLI tool process.
 
         if (IdentifyImageCommand(image_info, identargc, identargv, metadata, &ex) == MagickTrue)
         {
