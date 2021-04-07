@@ -306,6 +306,12 @@ QStringList DImgImageMagickPlugin::decoderFormats() const
         formats.append(QLatin1String("JPE"));
     }
 
+    if (formats.contains(QLatin1String("FITS")))
+    {
+        formats.append(QLatin1String("FTS"));
+        formats.append(QLatin1String("FIT"));
+    }
+
     // Remove known formats that are not stable.
 
     formats.removeAll(QLatin1String("XCF"));
@@ -355,6 +361,11 @@ QStringList DImgImageMagickPlugin::encoderFormats() const
     {
         qCWarning(DIGIKAM_DIMG_LOG) << "ImageMagickInfo exception:" << error.what();
         return QStringList();
+    }
+
+    if (formats.contains(QLatin1String("FITS")))
+    {
+        formats.append(QLatin1String("FTS"));
     }
 
     return formats;
