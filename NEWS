@@ -113,4 +113,6 @@ BUGFIXES:
 099 ==> 417431 - No metadata are displayed from non supported Exiv2 file formats.
 100 ==> 435453 - Documentation of digiKam not available.
 101 ==> 137060 - Image and Photograph Properties Incomplete.
-102 ==> 
+102 ==> 326409 - Some EXIF tags are not read.
+103 ==> 
+
