@@ -49,7 +49,7 @@ QString NamespaceEntry::DM_RATING_CONTAINER()
 
 QString NamespaceEntry::DM_COMMENT_CONTAINER()
 {
-    return QString::fromUtf8(I18N_NOOP("Comment"));
+    return QString::fromUtf8(I18N_NOOP("Caption"));
 }
 
 QString NamespaceEntry::DM_COLORLABEL_CONTAINER()
