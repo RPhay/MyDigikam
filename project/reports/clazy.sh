@@ -67,7 +67,13 @@ no-qstring-allocations,\
 no-qstring-arg,\
 no-qstring-insensitive-allocation,\
 no-qstring-ref,\
-no-function-args-by-value\
+no-function-args-by-value,\
+qt6-deprecated-api-fixes,\
+qt6-header-fixes,\
+qt6-qhash-signature,\
+qt6-qlatin1stringchar-to-u,\
+qt6-fwd-fixes,\
+missing-qobject-macro\
 "
 
 echo "IGNORE DIRECTORIES:     $CLAZY_IGNORE_DIRS"
