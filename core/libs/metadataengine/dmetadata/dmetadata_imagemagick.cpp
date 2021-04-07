@@ -28,7 +28,6 @@
 #include <QString>
 #include <QStringList>
 #include <QFileInfo>
-#include <QMimeDatabase>
 
 // Local includes
 
@@ -54,18 +53,6 @@ bool DMetadata::loadUsingImageMagick(const QString& filePath)
 {
 
 #ifdef HAVE_IMAGE_MAGICK
-
-    QString mimeType(QMimeDatabase().mimeTypeForFile(filePath).name());
-
-    // Ignore non image formats.
-
-    if (
-        mimeType.startsWith(QLatin1String("video/")) ||
-        mimeType.startsWith(QLatin1String("audio/"))
-       )
-    {
-        return false;
-    }
 
     QFileInfo fileInfo(filePath);
     QString rawFilesExt  = DRawDecoder::rawFiles();
