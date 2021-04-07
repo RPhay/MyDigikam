@@ -59,13 +59,24 @@ bool DMetadata::load(const QString& filePath)
     {
         // Process images only with Exiv2 backend first, or libraw in second for RAW files, or with libheif, or at end with ImageMagick.
         // Never process video files with Exiv2, the backend is very unstable.
-
+/*
+        qCDebug(DIGIKAM_METAENGINE_LOG) << "Loading metadata with Exiv2 from" << filePath;
+*/
         if (!(hasLoaded = MetaEngine::load(filePath)))
         {
+/*
+            qCDebug(DIGIKAM_METAENGINE_LOG) << "Loading metadata with LibRaw from" << filePath;
+*/
             if (!(hasLoaded = loadUsingRawEngine(filePath)))
             {
+/*
+                qCDebug(DIGIKAM_METAENGINE_LOG) << "Loading metadata with LibHeif from" << filePath;
+*/
                 if (!(hasLoaded = loadUsingLibheif(filePath)))
                 {
+/*
+                    qCDebug(DIGIKAM_METAENGINE_LOG) << "Loading metadata with ImageMagick from" << filePath;
+*/
                     hasLoaded = loadUsingImageMagick(filePath);
                 }
             }

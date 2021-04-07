@@ -51,6 +51,7 @@ namespace Digikam
 
 bool DMetadata::loadUsingImageMagick(const QString& filePath)
 {
+    bool ret = false;
 
 #ifdef HAVE_IMAGE_MAGICK
 
@@ -265,12 +266,15 @@ bool DMetadata::loadUsingImageMagick(const QString& filePath)
                     setXmpTagString(key.toLatin1().constData(), val);
                 }
             }
+
+            ret = true;
         }
         else
         {
             qCWarning(DIGIKAM_METAENGINE_LOG) << "Cannot parse metadata from ["
                                               << filePath
                                               << "] with ImageMagick identify";
+            ret = false;
         }
 
         // Clear memory
@@ -296,11 +300,12 @@ bool DMetadata::loadUsingImageMagick(const QString& filePath)
                                           << filePath
                                           << "] due to ImageMagick exception:"
                                           << error_.what();
+        ret = false;
     }
 
 #endif // HAVE_IMAGE_MAGICK
 
-    return false;
+    return ret;
 }
 
 } // namespace Digikam

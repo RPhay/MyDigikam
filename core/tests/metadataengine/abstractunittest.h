@@ -34,8 +34,14 @@
 
 // Local includes
 
+#include "digikam_config.h"
 #include "dmetadata.h"
 #include "wstoolutils.h"
+
+#ifdef HAVE_IMAGE_MAGICK
+#   include <Magick++.h>
+using namespace Magick;
+#endif
 
 using namespace Digikam;
 
@@ -57,6 +63,14 @@ protected Q_SLOTS:
 
     virtual void initTestCase()
     {
+
+#ifdef HAVE_IMAGE_MAGICK
+
+        qDebug() << "Init ImageMagick";
+        InitializeMagick(nullptr);
+
+#endif
+
         MetaEngine::initializeExiv2();
         qDebug() << "Using Exiv2 Version:" << MetaEngine::Exiv2Version();
         m_tempPath = QString::fromLatin1(QTest::currentAppName());
@@ -75,6 +89,16 @@ protected Q_SLOTS:
     virtual void cleanup()
     {
         WSToolUtils::removeTemporaryDir(m_tempPath.toLatin1().data());
+
+#ifdef HAVE_IMAGE_MAGICK
+#   if MagickLibVersion >= 0x693
+
+        qDebug() << "Terminate ImageMagick";
+        TerminateMagick();
+
+#   endif
+#endif
+
     }
 
     /// Re-implemented from QTest framework
