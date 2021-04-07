@@ -30,6 +30,7 @@
 #include <QByteArray>
 #include <QTextStream>
 #include <QDataStream>
+#include <QFileInfo>
 #include <qplatformdefs.h>
 
 // Local includes
@@ -170,6 +171,18 @@ void s_readHEICMetadata(struct heif_context* const heif_context, heif_item_id im
 
 bool DMetadata::loadUsingLibheif(const QString& filePath)
 {
+    QFileInfo fileInfo(filePath);
+    QString ext = fileInfo.suffix().toUpper();
+
+    if (
+        !fileInfo.exists() || ext.isEmpty() ||
+        (ext != QLatin1String("HEIF"))      ||
+        (ext != QLatin1String("HEIC"))
+       )
+    {
+        return false;
+    }
+
     FILE* file = fopen(QFile::encodeName(filePath).constData(), "rb");
 
 #ifdef Q_OS_WIN
@@ -308,6 +321,5 @@ bool DMetadata::loadUsingLibheif(const QString& filePath)
 
     return ret;
 }
-
 
 } // namespace Digikam
