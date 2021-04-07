@@ -266,6 +266,12 @@ bool DMetadata::loadUsingImageMagick(const QString& filePath)
                 }
             }
         }
+        else
+        {
+            qCWarning(DIGIKAM_METAENGINE_LOG) << "Cannot parse metadata from ["
+                                              << filePath
+                                              << "] with ImageMagick identify";
+        }
 
         // Clear memory
 
