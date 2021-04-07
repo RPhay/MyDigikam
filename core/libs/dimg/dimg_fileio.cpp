@@ -287,6 +287,7 @@ bool DImg::save(const QString& filePath, const QString& format, DImgLoaderObserv
     if (plug)
     {
         DImgLoader* const loader = plug->loader(&copyForSave);
+        copyForSave.setAttribute(QLatin1String("format"), frm);
         copyForSave.setAttribute(QLatin1String("savedFormat-isReadOnly"), loader->isReadOnly());
         bool ret                 = loader->save(filePath, observer);
         delete loader;
