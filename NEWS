@@ -123,4 +123,5 @@ BUGFIXES:
 109 ==> 435476 - Wrong term "Comments" in Edit Metadata dialog.
 110 ==> 370443 - jp2 metadata: Unrecognized UUID EXIF box.
 111 ==> 265726 - digiKam doesn't detect lens type.
-112 ==> 
+112 ==> 301087 - Browsing through my pic collection shows dozends of wrongs orientated jpg's.
+113 ==> 
