@@ -116,4 +116,6 @@ BUGFIXES:
 102 ==> 326409 - Some EXIF tags are not read.
 103 ==> 146864 - Lesser XMP support in digiKam.
 104 ==> 228021 - digiKam not writing metadata in XMP.
-105 ==> 
+105 ==> 221460 - Xmp subject tags imported in wrong order.
+106 ==> 
+
