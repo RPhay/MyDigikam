@@ -52,19 +52,21 @@ bool DMetadata::loadUsingImageMagick(const QString& filePath)
 
 #ifdef HAVE_IMAGE_MAGICK
 
-    const int msize                   = 20;
+    const int msize                   = 256;
     MagickCore::ImageInfo* image_info = nullptr;
     ExceptionInfo ex                  = *AcquireExceptionInfo();
 
     // Syntax description of IM percent escape formats: https://imagemagick.org/script/escape.php
 
-    const QString filters             = QLatin1String(
+    const QString filters             = QLatin1String
+                                        (
+                                            // Standard XMP namespaces
+
                                             "Xmp.tiff.ImageLength=%[height]\n"                      // Text
                                             "Xmp.tiff.ImageWidth=%[width]\n"                        // Text
                                             "Xmp.tiff.Compression=%[compression]\n"                 // Text
                                             "Xmp.tiff.BitsPerSample=%[bit-depth]\n"                 // Seq
                                             "Xmp.tiff.ImageDescription=%[caption]\n"                // LangAlt
-                                            "Xmp.xmp.Label=%[label]\n"                              // Text
                                             "Xmp.tiff.Orientation=%[orientation]\n"                 // Text
                                             "Xmp.tiff.DateTime=%[date:create]\n"                    // Text
                                             "Xmp.tiff.XResolution=%[resolution.x]\n"                // Text
@@ -73,24 +75,56 @@ bool DMetadata::loadUsingImageMagick(const QString& filePath)
                                             "Xmp.exif.UserComment=%[comment]\n"                     // LangAlt
                                             "Xmp.exif.ColorSpace=%[colorspace]\n"                   // Text
                                             "Xmp.exif.DateTimeOriginal=%[date:create]\n"            // Text
-                                            "Xmp.IMProperties.IMVersion=%[version]\n"               // Text
-                                            "Xmp.IMProperties.IMCopyright=%[copyright]\n"           // Text
-                                            "Xmp.IMProperties.IMBaseName=%[basename]\n"             // Text
-                                            "Xmp.IMProperties.IMExtension=%[extension]\n"           // Text
-                                            "Xmp.IMProperties.IMCodec=%[magick]\n"                  // Text
-                                            "Xmp.IMProperties.IMChannels=%[channels]\n"             // Text
-                                            "Xmp.IMProperties.IMInterlace=%[interlace]\n"           // Text
-                                            "Xmp.IMProperties.IMProfiles=%[profiles]\n"             // Text
-                                            "Xmp.IMProperties.IMQuality=%[quality]\n"               // Text
-                                            "Xmp.IMProperties.IMRendering=%[rendering-intent]\n"    // Text
-                                            "Xmp.IMProperties.IMScene=%[scene]\n"                   // Text
-                                            "%[*]\n"    // Extra properties from IM                 // Text
+                                            "Xmp.exifEX.Gamma=%[gamma]\n"                           // Text
+                                            "Xmp.xmp.CreateDate=%[date:create]\n"                   // Text
+                                            "Xmp.xmp.ModifyDate=%[date:modify]\n"                   // Text
+                                            "Xmp.xmp.Label=%[label]\n"                              // Text
 
-// Values calculated (not specified in IM doc) and take a while
-//                                            "Xmp.IMProperties.IMColors=%[colors]\n"
-//                                            "Xmp.IMProperties.IMGamma=%[gamma]\n"
+                                            // ImageMagick Attributes namepsace
 
+                                            "Xmp.IMAttributes.Version=%[version]\n"                 // Text
+                                            "Xmp.IMAttributes.Copyright=%[copyright]\n"             // Text
+                                            "Xmp.IMAttributes.BaseName=%[basename]\n"               // Text
+                                            "Xmp.IMAttributes.Extension=%[extension]\n"             // Text
+                                            "Xmp.IMAttributes.Codec=%[magick]\n"                    // Text
+                                            "Xmp.IMAttributes.Channels=%[channels]\n"               // Text
+                                            "Xmp.IMAttributes.Interlace=%[interlace]\n"             // Text
+                                            "Xmp.IMAttributes.Profiles=%[profiles]\n"               // Text
+/*
+    NOTE: igonre these attributes as these break IM identify call.
+
+                                            "Xmp.IMAttributes.ProfileICC=%[profile:icc]\n"          // Text
+                                            "Xmp.IMAttributes.ProfileICM=%[profile:icm]\n"          // Text
+                                            "Xmp.IMAttributes.XPrintSize=%[printsize.x]\n"          // Text
+                                            "Xmp.IMAttributes.YPrintSize=%[printsize.y]\n"          // Text
+                                            "Xmp.IMAttributes.Size=%[size]\n"                       // Text
+*/
+
+/*
+   NOTE: Values calculated which introduce non negligible time latency:
+
+                                            %[colors]                   (not specified in IM doc)
+                                            %[entropy]                  (specified as CALCULATED in dox)
+                                            %[kurtosis]                 (specified as CALCULATED in dox)
+                                            %[max]                      (specified as CALCULATED in dox)
+                                            %[mean]                     (specified as CALCULATED in dox)
+                                            %[median]                   (specified as CALCULATED in dox)
+                                            %[min]                      (specified as CALCULATED in dox)
+                                            %[opaque]                   (specified as CALCULATED in dox)
+                                            %[skewness]                 (specified as CALCULATED in dox)
+                                            %[standard-deviation]       (specified as CALCULATED in dox)
+                                            %[type]                     (specified as CALCULATED in dox)
+*/
+
+                                            "Xmp.IMAttributes.Quality=%[quality]\n"                 // Text
+                                            "Xmp.IMAttributes.Rendering=%[rendering-intent]\n"      // Text
+                                            "Xmp.IMAttributes.Scene=%[scene]\n"                     // Text
+
+                                            // ImageMagick Properties namespace
+
+                                            "%[*]\n"                                                // Text
                                         );
+
 
     try
     {
@@ -98,12 +132,11 @@ bool DMetadata::loadUsingImageMagick(const QString& filePath)
 
         char** metadata     = new char*[msize];
 
-        for (int i = 0 ; i < msize; ++i)
+        for (int i = 0 ; i < msize ; ++i)
         {
-            // NOTE: prepare metadata items with empty strings.
+            // NOTE: prepare metadata items with null pointer which will be allocated by ImageMagick.
 
-            metadata[i]     = (char*)malloc(sizeof(char));
-            metadata[i][0]  = '\0';
+            metadata[i] = nullptr;
         }
 
         // Prepare image info for IM isentification
@@ -118,94 +151,101 @@ bool DMetadata::loadUsingImageMagick(const QString& filePath)
 
         int identargc       = 4;
         char** identargv    = new char*[identargc];
-        identargv[0]        = (char*)"dmetadata";
+        identargv[0]        = (char*)"identify";
         identargv[1]        = (char*)"-format";
         identargv[2]        = filters.toLatin1().data();
         identargv[3]        = filePath.toLatin1().data();
 
-        // Call IM core identification
+        // Call ImageMagick core identification
 
-        IdentifyImageCommand(image_info, identargc, identargv, metadata, &ex);
-
-        // Post process metadata
-
-        registerXmpNameSpace(QLatin1String("https://imagemagick.org/"), QLatin1String("IMProperties"));
-
-        QString                 output;
-        MetaEngine::MetaDataMap tagsMap;
-
-        for (int i = 0 ; i < msize ; ++i)
+        if (IdentifyImageCommand(image_info, identargc, identargv, metadata, &ex) == MagickTrue)
         {
-            if (metadata[i][0] != '\0')
+            // Post process metadata
+
+            registerXmpNameSpace(QLatin1String("https://imagemagick.org/IMAttributes"), QLatin1String("IMAttributes"));
+            registerXmpNameSpace(QLatin1String("https://imagemagick.org/IMProperties"), QLatin1String("IMProperties"));
+
+            QString output;
+            int lbytes = 0;
+
+            for (int i = 0 ; i < msize ; ++i)
             {
-                output.append(QString::fromUtf8(metadata[i]));
-            }
-        }
-
-        QStringList lines = output.split(QLatin1Char('\n'));
-        QString key;
-        QString val;
-
-        foreach (const QString& tupple, lines)
-        {
-            key = tupple.section(QLatin1Char('='), 0, 0);
-            val = tupple.section(QLatin1Char('='), 1, 1);
-
-            if (val.startsWith(QLatin1Char('\'')))
-            {
-                val = val.section(QLatin1Char('\''), 1, 1);             // Drop tag description string on the right side (stage1).
-                val = val.remove(QLatin1Char('\''));
-            }
-
-            if (val.contains(QLatin1String(" / ")))
-            {
-                val = val.section(QLatin1String(" / "), 0, 0);          // Drop tag description string on the right side (stage2).
+                if (metadata[i])
+                {
+                    QString tmp = QString::fromUtf8(metadata[i]);
+                    output.append(tmp);
+                    lbytes     += tmp.size();
+/*
+                    qCDebug(DIGIKAM_METAENGINE_LOG) << "Append new metadata line of" << tmp.size() << "bytes";
+                    qCDebug(DIGIKAM_METAENGINE_LOG) << metadata[i];
+*/
+                }
             }
 
-            if (key.isEmpty()                                 ||
-                key.startsWith(QLatin1String("comment"))      ||
-                key.startsWith(QLatin1String("date:create"))  ||
-                key.startsWith(QLatin1String("date:modify")))
+            QStringList lines = output.split(QLatin1Char('\n'));
+/*
+            qCDebug(DIGIKAM_METAENGINE_LOG) << "Total metadata lines parsed:" << lines.count() << "Total bytes:" << lbytes;
+*/
+            QString key;
+            QString val;
+
+            foreach (const QString& tupple, lines)
             {
-                // These tags are already handled with Exif or key or val are empty.
+                key = tupple.section(QLatin1Char('='), 0, 0);
+                val = tupple.section(QLatin1Char('='), 1, 1);
 
-                continue;
-            }
+                if (val.startsWith(QLatin1Char('\'')))
+                {
+                    val = val.section(QLatin1Char('\''), 1, 1);             // Drop tag description string on the right side (stage1).
+                    val = val.remove(QLatin1Char('\''));
+                }
 
-            if (val.isEmpty())
-            {
-                val = QLatin1String("None");        // Mimic IM "none" strings, not i18n
-            }
+                if (val.contains(QLatin1String(" / ")))
+                {
+                    val = val.section(QLatin1String(" / "), 0, 0);          // Drop tag description string on the right side (stage2).
+                }
 
-            if (!key.startsWith(QLatin1String("Xmp")))
-            {
-                // Create a dedicated XMP namespace to store extra IM properties.
+                if (key.isEmpty()                                 ||
+                    key.startsWith(QLatin1String("comment"))      ||
+                    key.startsWith(QLatin1String("date:create"))  ||
+                    key.startsWith(QLatin1String("date:modify")))
+                {
+                    // These tags are already handled with Exif or key or val are empty.
 
-                key = QLatin1String("Xmp.IMProperties.") + key.remove(QLatin1Char(':'));
-            }
+                    continue;
+                }
 
-            key = key.remove(QLatin1Char('-'));
-            key = key.remove(QLatin1Char('_'));
-            val = val.simplified();
+                if (val.isEmpty())
+                {
+                    val = QLatin1String("None");        // Mimic IM "none" strings, not i18n
+                }
 
-            // Register XMP tags in container
+                if (!key.startsWith(QLatin1String("Xmp.")))
+                {
+                    // Create a dedicated XMP namespace to store ImageMagick properties.
 
-            if      (
-                     key == QLatin1String("Xmp.tiff.ImageDescription") ||
-                     key == QLatin1String("Xmp.exif.UserComment")
-                    )
-            {
-                setXmpTagStringLangAlt(key.toLatin1().constData(), val, QString());
-            }
-            else if (
-                     key == QLatin1String("Xmp.tiff.BitsPerSample")
-                    )
-            {
-                setXmpTagStringSeq(key.toLatin1().constData(), QStringList() << val);
-            }
-            else
-            {
-                setXmpTagString(key.toLatin1().constData(), val);
+                    key = QLatin1String("Xmp.IMProperties.") + key.remove(QLatin1Char(':'));
+                }
+
+                key = key.remove(QLatin1Char('-'));
+                key = key.remove(QLatin1Char('_'));
+                val = val.simplified();
+
+                // Register XMP tags in container
+
+                if      (key == QLatin1String("Xmp.tiff.ImageDescription") ||
+                         key == QLatin1String("Xmp.exif.UserComment"))
+                {
+                    setXmpTagStringLangAlt(key.toLatin1().constData(), val, QString());
+                }
+                else if (key == QLatin1String("Xmp.tiff.BitsPerSample"))
+                {
+                    setXmpTagStringSeq(key.toLatin1().constData(), QStringList() << val);
+                }
+                else
+                {
+                    setXmpTagString(key.toLatin1().constData(), val);
+                }
             }
         }
 
@@ -215,9 +255,12 @@ bool DMetadata::loadUsingImageMagick(const QString& filePath)
 
         for (int i = 0 ; i < msize ; ++i)
         {
-            // NOTE: IM use realloc to change memory allocation.
+            if (metadata[i])
+            {
+                // Note: IM use malloc(), not new operator. Do not use delete operator here.
 
-            free (metadata[i]);
+                free (metadata[i]);
+            }
         }
 
         delete [] metadata;
@@ -225,10 +268,10 @@ bool DMetadata::loadUsingImageMagick(const QString& filePath)
     }
     catch (Exception& error_)
     {
-        qWarning() << "Cannot read metadata from ["
-                   << filePath
-                   << "] due to ImageMagick exception:"
-                   << error_.what();
+        qCWarning(DIGIKAM_METAENGINE_LOG) << "Cannot read metadata from ["
+                                          << filePath
+                                          << "] due to ImageMagick exception:"
+                                          << error_.what();
     }
 
 
