@@ -27,11 +27,13 @@
 
 #include <QString>
 #include <QStringList>
+#include <QFileInfo>
 
 // Local includes
 
 #include "digikam_config.h"
 #include "digikam_debug.h"
+#include "drawdecoder.h"
 
 // ImageMagick includes
 
@@ -51,6 +53,19 @@ bool DMetadata::loadUsingImageMagick(const QString& filePath)
 {
 
 #ifdef HAVE_IMAGE_MAGICK
+
+    QFileInfo fileInfo(filePath);
+    QString rawFilesExt  = DRawDecoder::rawFiles();
+    QString ext          = fileInfo.suffix().toUpper();
+
+    if (
+        !fileInfo.exists() || ext.isEmpty() ||
+        rawFilesExt.toUpper().contains(ext) ||                              // Igonre RAW files
+        (ext == QLatin1String("HEIF")) || (ext == QLatin1String("HEIC"))    // Ignore HEIF files
+       )
+    {
+        return false;
+    }
 
     const int msize                   = 256;
     MagickCore::ImageInfo* image_info = nullptr;
@@ -273,7 +288,6 @@ bool DMetadata::loadUsingImageMagick(const QString& filePath)
                                           << "] due to ImageMagick exception:"
                                           << error_.what();
     }
-
 
 #endif // HAVE_IMAGE_MAGICK
 

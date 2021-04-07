@@ -3,7 +3,7 @@
  * This file is a part of digiKam project
  * https://www.digikam.org
  *
- * Date        : 2018-02-26
+ * Date        : 2019-02-26
  * Description : item metadata interface - video helpers.
  *
  * References  :
