@@ -185,7 +185,6 @@ Q_INLINE_TEMPLATE Type* DImgLoader::new_failureTolerant(size_t size)
         case 0:       // parse failure from supported platform
         {
             return nullptr;
-            break;
         }
 
         case -1:      // unsupported platform

@@ -63,9 +63,9 @@ public:
 
     /**
      * Return a relative value which determines the granularity, the frequency
-     *  with which the DImgLoaderObserver is checked and progress is posted.
-     *  Standard is 1.0. Values < 1 mean less granularity (fewer checks),
-     *  values > 1 mean higher granularity (more checks).
+     * with which the DImgLoaderObserver is checked and progress is posted.
+     * Standard is 1.0. Values < 1 mean less granularity (fewer checks),
+     * values > 1 mean higher granularity (more checks).
      */
     virtual float granularity()
     {
