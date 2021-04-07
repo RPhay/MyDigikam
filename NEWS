@@ -115,5 +115,5 @@ BUGFIXES:
 101 ==> 137060 - Image and Photograph Properties Incomplete.
 102 ==> 326409 - Some EXIF tags are not read.
 103 ==> 146864 - Lesser XMP support in digiKam.
-104 ==> 
-
+104 ==> 228021 - digiKam not writing metadata in XMP.
+105 ==> 
