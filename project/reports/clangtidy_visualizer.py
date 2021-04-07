@@ -1,7 +1,7 @@
 #!/usr/bin/python
 
-# Copyright (c) 2019 by Austin Hale, <ah at unc dot edu>
-# Copyright (c) 2020 by Gilles Caulier, <caulier dot gilles at gmail dot com>
+# Copyright (c) 2019      by Austin Hale, <ah at unc dot edu>
+# Copyright (c) 2020-2021 by Gilles Caulier, <caulier dot gilles at gmail dot com>
 #
 # Export Clang tidy lint static analyzer output to HTML reports.
 #

@@ -565,7 +565,6 @@ bool DImg::transform(int transformAction)
         default:
         {
             return false;
-            break;
         }
 
         case MetaEngineRotation::FlipHorizontal:
