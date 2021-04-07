@@ -52,12 +52,13 @@ bool DMetadata::load(const QString& filePath)
     bool hasLoaded = false;
     QMimeDatabase mimeDB;
 
-    if (!mimeDB.mimeTypeForFile(filePath).name().startsWith(QLatin1String("video/")) &&
+    if (
+        !mimeDB.mimeTypeForFile(filePath).name().startsWith(QLatin1String("video/")) &&
         !mimeDB.mimeTypeForFile(filePath).name().startsWith(QLatin1String("audio/"))
        )
     {
-        // Non video or audio file, process with Exiv2 backend, or libraw if fail with RAW files, or libheif, or ImageMagick.
-        // Never process video file with Exiv2, the backend is very unstable.
+        // Process images only with Exiv2 backend first, or libraw in second for RAW files, or with libheif, or at end with ImageMagick.
+        // Never process video files with Exiv2, the backend is very unstable.
 
         if (!(hasLoaded = MetaEngine::load(filePath)))
         {
@@ -72,7 +73,7 @@ bool DMetadata::load(const QString& filePath)
     }
     else
     {
-        // No image file, process with ffmpeg backend.
+        // No image files (aka video or audio), process with ffmpeg backend.
 
         hasLoaded  = loadUsingFFmpeg(filePath);
         hasLoaded |= loadFromSidecarAndMerge(filePath);
