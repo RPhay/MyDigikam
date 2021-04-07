@@ -1664,8 +1664,9 @@
             </dbaction>
 
             <dbaction name="CreateFaceDBFaceMatrices" mode="transaction">
-                <statement mode="plain">DROP TABLE IF EXISTS FaceMatrices;
-                </statement>
+                <statement mode="plain">SET FOREIGN_KEY_CHECKS=0;</statement>
+                <statement mode="plain">DROP TABLE IF EXISTS FaceMatrices;</statement>
+                <statement mode="plain">SET FOREIGN_KEY_CHECKS=1;</statement>
                 <statement mode="plain">CREATE TABLE FaceMatrices
                     (id INTEGER PRIMARY KEY AUTO_INCREMENT,
                     identity INTEGER NOT NULL,
