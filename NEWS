@@ -125,5 +125,6 @@ BUGFIXES:
 111 ==> 265726 - digiKam doesn't detect lens type.
 112 ==> 301087 - Browsing through my pic collection shows dozends of wrongs orientated jpg's.
 113 ==> 364880 - digiKam crashes when rotating a picture.
-114 ==> 
+114 ==> 367913 - digiKam crash on rotate image (right or left) action.
+115 ==> 
 
