@@ -111,4 +111,5 @@ BUGFIXES:
 097 ==> 435351 - What is the database table KDTree.
 098 ==> 435387 - Crashes after not able to connect to database.
 099 ==> 417431 - No metadata are displayed from non supported Exiv2 file formats.
-100 ==> 
+100 ==> 435453 - Documentation of digiKam not available.
+101 ==> 
