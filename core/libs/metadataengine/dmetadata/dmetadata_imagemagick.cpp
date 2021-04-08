@@ -183,8 +183,8 @@ bool DMetadata::loadUsingImageMagick(const QString& filePath)
         {
             // Post process metadata
 
-            registerXmpNameSpace(QLatin1String("https://imagemagick.org/IMAttributes"), QLatin1String("IMAttributes"));
-            registerXmpNameSpace(QLatin1String("https://imagemagick.org/IMProperties"), QLatin1String("IMProperties"));
+            registerXmpNameSpace(QLatin1String("https://imagemagick.org/IMAttributes/"), QLatin1String("IMAttributes"));
+            registerXmpNameSpace(QLatin1String("https://imagemagick.org/IMProperties/"), QLatin1String("IMProperties"));
 
             QString output;
             int lbytes = 0;
