@@ -74,48 +74,46 @@ bool DMetadata::loadUsingImageMagick(const QString& filePath)
     ExceptionInfo ex                  = *AcquireExceptionInfo();
 
     // Syntax description of IM percent escape formats: https://imagemagick.org/script/escape.php
+    // WARNING: this string is limited to 1024 characters internally in Image Magick.
+    //          Over this size will corrupt memory at run time in Image Magick core.
+    //          It's recommended to use reduced option forms in favor of long versions.
 
     const QString filters             = QLatin1String
                                         (
-                                            // Standard XMP namespaces
+                                            // Standard XMP namespaces                                 Exiv2 Type   IM long option
 
-                                            "Xmp.tiff.ImageLength=%[height]\n"                      // Text
-                                            "Xmp.tiff.ImageWidth=%[width]\n"                        // Text
-                                            "Xmp.tiff.Compression=%[compression]\n"                 // Text
+                                            "Xmp.tiff.ImageLength=%h\n"                             // Text         %[height]
+                                            "Xmp.tiff.ImageWidth=%w\n"                              // Text         %[width]
+                                            "Xmp.tiff.Compression=%C\n"                             // Text         %[compression]
                                             "Xmp.tiff.BitsPerSample=%[bit-depth]\n"                 // Seq
                                             "Xmp.tiff.ImageDescription=%[caption]\n"                // LangAlt
                                             "Xmp.tiff.Orientation=%[orientation]\n"                 // Text
                                             "Xmp.tiff.DateTime=%[date:create]\n"                    // Text
-                                            "Xmp.tiff.XResolution=%[resolution.x]\n"                // Text
-                                            "Xmp.tiff.YResolution=%[resolution.y]\n"                // Text
-                                            "Xmp.tiff.ResolutionUnit=%[units]\n"                    // Text
-                                            "Xmp.exif.UserComment=%[comment]\n"                     // LangAlt
-                                            "Xmp.exif.ColorSpace=%[colorspace]\n"                   // Text
-                                            "Xmp.exif.DateTimeOriginal=%[date:create]\n"            // Text
+                                            "Xmp.tiff.XResolution=%x\n"                             // Text         %[resolution.x]
+                                            "Xmp.tiff.YResolution=%y\n"                             // Text         %[resolution.y]
+                                            "Xmp.tiff.ResolutionUnit=%U\n"                          // Text         %[units]
+                                            "Xmp.exif.UserComment=%c\n"                             // LangAlt      %[comment]
+                                            "Xmp.exif.ColorSpace=%r\n"                              // Text         %[colorspace]
                                             "Xmp.exifEX.Gamma=%[gamma]\n"                           // Text
-                                            "Xmp.xmp.CreateDate=%[date:create]\n"                   // Text
                                             "Xmp.xmp.ModifyDate=%[date:modify]\n"                   // Text
-                                            "Xmp.xmp.Label=%[label]\n"                              // Text
+                                            "Xmp.xmp.Label=%l\n"                                    // Text         %[label]
 
-                                            // ImageMagick Attributes namepsace
+                                            // ImageMagick Attributes namepsace ("Xmp.IMA." post converted by "Xmp.IMAttributes.")
 
-                                            "Xmp.IMAttributes.Version=%[version]\n"                 // Text
-                                            "Xmp.IMAttributes.Copyright=%[copyright]\n"             // Text
-                                            "Xmp.IMAttributes.BaseName=%[basename]\n"               // Text
-                                            "Xmp.IMAttributes.Extension=%[extension]\n"             // Text
-                                            "Xmp.IMAttributes.Codec=%[magick]\n"                    // Text
-                                            "Xmp.IMAttributes.Channels=%[channels]\n"               // Text
-                                            "Xmp.IMAttributes.Interlace=%[interlace]\n"             // Text
-                                            "Xmp.IMAttributes.Profiles=%[profiles]\n"               // Text
-/*
-    NOTE: ignore these attributes as these break IM identify call.
-
-                                            "Xmp.IMAttributes.ProfileICC=%[profile:icc]\n"          // Text
-                                            "Xmp.IMAttributes.ProfileICM=%[profile:icm]\n"          // Text
-                                            "Xmp.IMAttributes.XPrintSize=%[printsize.x]\n"          // Text
-                                            "Xmp.IMAttributes.YPrintSize=%[printsize.y]\n"          // Text
-                                            "Xmp.IMAttributes.Size=%[size]\n"                       // Text
-*/
+                                            "Xmp.IMA.Version=%[version]\n"                          // Text
+                                            "Xmp.IMA.Copyright=%[copyright]\n"                      // Text
+                                            "Xmp.IMA.BaseName=%t\n"                                 // Text         %[basename]
+                                            "Xmp.IMA.Extension=%e\n"                                // Text         %[extension]
+                                            "Xmp.IMA.Codec=%m\n"                                    // Text         %[magick]
+                                            "Xmp.IMA.Channels=%[channels]\n"                        // Text
+                                            "Xmp.IMA.Interlace=%[interlace]\n"                      // Text
+                                            "Xmp.IMA.Transparency=%A\n"                             // Text
+                                            "Xmp.IMA.Profiles=%[profiles]\n"                        // Text
+                                            "Xmp.IMA.ProfileICC=%[profile:icc]\n"                   // Text
+                                            "Xmp.IMA.ProfileICM=%[profile:icm]\n"                   // Text
+                                            "Xmp.IMA.XPrintSize=%[printsize.x]\n"                   // Text
+                                            "Xmp.IMA.YPrintSize=%[printsize.y]\n"                   // Text
+                                            "Xmp.IMA.Size=%B\n"                                     // Text         %[size]
 
 /*
    NOTE: values calculated which introduce non negligible time latency:
@@ -133,15 +131,14 @@ bool DMetadata::loadUsingImageMagick(const QString& filePath)
                                             %[type]                     (specified as CALCULATED in doc)
 */
 
-                                            "Xmp.IMAttributes.Quality=%[quality]\n"                 // Text
-                                            "Xmp.IMAttributes.Rendering=%[rendering-intent]\n"      // Text
-                                            "Xmp.IMAttributes.Scene=%[scene]\n"                     // Text
+                                            "Xmp.IMA.Quality=%Q\n"                                  // Text         %[quality]
+                                            "Xmp.IMA.Rendering=%[rendering-intent]\n"               // Text
+                                            "Xmp.IMA.Scenes=%n\n"                                   // Text         %[scene]
 
                                             // ImageMagick Properties namespace
 
                                             "%[*]\n"                                                // Text
                                         );
-
 
     try
     {
@@ -178,6 +175,9 @@ bool DMetadata::loadUsingImageMagick(const QString& filePath)
 
         // Call ImageMagick core identification.
         // This is a fast IM C API call, not the IM CLI tool process.
+
+        // NOTE: to hack with CLI IM tool
+        qCDebug(DIGIKAM_METAENGINE_LOG) << "IM identify escape format string (" << filters.size() << "bytes):" << Qt::endl << filters << Qt::endl;
 
         if (IdentifyImageCommand(image_info, identargc, identargv, metadata, &ex) == MagickTrue)
         {
@@ -241,6 +241,11 @@ bool DMetadata::loadUsingImageMagick(const QString& filePath)
                     val = QLatin1String("None");        // Mimic IM "none" strings, not i18n
                 }
 
+                if (key.startsWith(QLatin1String("Xmp.IMA.")))
+                {
+                    key.replace(QLatin1String("Xmp.IMA."), QLatin1String("Xmp.IMAttributes."));
+                }
+
                 if (!key.startsWith(QLatin1String("Xmp.")))
                 {
                     // Create a dedicated XMP namespace to store ImageMagick properties.
@@ -267,6 +272,14 @@ bool DMetadata::loadUsingImageMagick(const QString& filePath)
                 {
                     setXmpTagString(key.toLatin1().constData(), val);
                 }
+            }
+
+            QString dt = getXmpTagString("Xmp.tiff.DateTime");
+
+            if (!dt.isEmpty())
+            {
+                setXmpTagString("Xmp.exif.DateTimeOriginal", dt);
+                setXmpTagString("Xmp.xmp.CreateDate",        dt);
             }
 
             ret = true;
