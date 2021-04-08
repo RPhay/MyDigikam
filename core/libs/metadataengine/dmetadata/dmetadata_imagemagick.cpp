@@ -75,7 +75,7 @@ bool DMetadata::loadUsingImageMagick(const QString& filePath)
 
     // Syntax description of IM percent escape formats: https://imagemagick.org/script/escape.php
     // WARNING: this string is limited to 1024 characters internally in Image Magick.
-    //          Over this size will corrupt memory at run time in Image Magick core.
+    //          Over this size, this will corrupt memory at run time in Image Magick core.
     //          It's recommended to use reduced option forms in favor of long versions.
 
     const QString filters             = QLatin1String
@@ -98,7 +98,7 @@ bool DMetadata::loadUsingImageMagick(const QString& filePath)
                                             "Xmp.xmp.ModifyDate=%[date:modify]\n"                   // Text
                                             "Xmp.xmp.Label=%l\n"                                    // Text         %[label]
 
-                                            // ImageMagick Attributes namepsace ("Xmp.IMA." post converted by "Xmp.IMAttributes.")
+                                            // ImageMagick Attributes namepsace ("Xmp.IMA." post converted by "Xmp.IMAttributes to optimize size.")
 
                                             "Xmp.IMA.Version=%[version]\n"                          // Text
                                             "Xmp.IMA.Copyright=%[copyright]\n"                      // Text
@@ -142,6 +142,13 @@ bool DMetadata::loadUsingImageMagick(const QString& filePath)
 
     try
     {
+        if (filters.size() >= 1024)
+        {
+            qCWarning(DIGIKAM_METAENGINE_LOG) << "Size of percent escape format passed to Image Magick interface"
+                                                 "is largest than 1024 bytes and metadat cannot be parsed!";
+            return ret;
+        }
+
         // Allocate metadata container for IM.
 
         const int msize     = 256;                  // Number of internal metadata entries prepared for IM.
@@ -175,10 +182,10 @@ bool DMetadata::loadUsingImageMagick(const QString& filePath)
 
         // Call ImageMagick core identification.
         // This is a fast IM C API call, not the IM CLI tool process.
-
+/*
         // NOTE: to hack with CLI IM tool
         qCDebug(DIGIKAM_METAENGINE_LOG) << "IM identify escape format string (" << filters.size() << "bytes):" << Qt::endl << filters << Qt::endl;
-
+*/
         if (IdentifyImageCommand(image_info, identargc, identargv, metadata, &ex) == MagickTrue)
         {
             // Post process metadata
