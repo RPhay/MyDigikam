@@ -1109,7 +1109,7 @@ public:
 
     /**
      * Register a namespace which Exiv2 doesn't know yet. This is only needed
-     * when new Xmp properties are added manually. 'uri' is the namespace url and prefix the
+     * when new Xmp properties are added manually. 'uri' is the namespace url and 'prefix' the
      * string used to construct new Xmp key (ex. "Xmp.digiKam.tagList").
      * NOTE: If the Xmp metadata is read from an item, namespaces are decoded and registered
      * by Exiv2 at the same time.
