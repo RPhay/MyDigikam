@@ -39,8 +39,9 @@ class DIGIKAM_EXPORT MakerNoteWidget : public MetadataWidget
 
 public:
 
-    explicit MakerNoteWidget(QWidget* const parent, const QString& name=QString());
-    ~MakerNoteWidget() override;
+    explicit MakerNoteWidget(QWidget* const parent,
+                             const QString& name = QString());
+    ~MakerNoteWidget()                              override;
 
     bool loadFromURL(const QUrl& url)               override;
 
@@ -51,7 +52,7 @@ public:
 
 protected Q_SLOTS:
 
-    void slotSaveMetadataToFile()           override;
+    void slotSaveMetadataToFile()                   override;
 
 private:
 

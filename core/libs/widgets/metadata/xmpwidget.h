@@ -38,24 +38,25 @@ class DIGIKAM_EXPORT XmpWidget : public MetadataWidget
 
 public:
 
-    explicit XmpWidget(QWidget* const parent, const QString& name=QString());
-    ~XmpWidget() override;
+    explicit XmpWidget(QWidget* const parent,
+                       const QString& name = QString());
+    ~XmpWidget()                                    override;
 
-    bool loadFromURL(const QUrl& url) override;
+    bool loadFromURL(const QUrl& url)               override;
 
-    QString getTagDescription(const QString& key) override;
-    QString getTagTitle(const QString& key) override;
+    QString getTagDescription(const QString& key)   override;
+    QString getTagTitle(const QString& key)         override;
 
-    QString getMetadataTitle() override;
+    QString getMetadataTitle()                      override;
 
 protected Q_SLOTS:
 
-    void slotSaveMetadataToFile() override;
+    void slotSaveMetadataToFile()                   override;
 
 private:
 
-    bool decodeMetadata() override;
-    void buildView() override;
+    bool decodeMetadata()                           override;
+    void buildView()                                override;
 
 private:
 

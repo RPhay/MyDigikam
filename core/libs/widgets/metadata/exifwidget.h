@@ -42,8 +42,8 @@ class DIGIKAM_EXPORT ExifWidget : public MetadataWidget
 
 public:
 
-    explicit ExifWidget(QWidget* const parent, const QString& name=QString());
-    ~ExifWidget() override;
+    explicit ExifWidget(QWidget* const parent, const QString& name = QString());
+    ~ExifWidget()                                   override;
 
     bool loadFromURL(const QUrl& url)               override;
 
@@ -54,7 +54,7 @@ public:
 
 protected Q_SLOTS:
 
-    void slotSaveMetadataToFile()           override;
+    void slotSaveMetadataToFile()                   override;
 
 private:
 

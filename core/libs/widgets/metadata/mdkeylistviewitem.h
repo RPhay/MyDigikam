@@ -39,14 +39,15 @@
 namespace Digikam
 {
 
-class DIGIKAM_EXPORT MdKeyListViewItem : public QObject, public QTreeWidgetItem
+class DIGIKAM_EXPORT MdKeyListViewItem : public QObject,
+                                         public QTreeWidgetItem
 {
     Q_OBJECT
 
 public:
 
     MdKeyListViewItem(QTreeWidget* const parent, const QString& key);
-    ~MdKeyListViewItem() override;
+    ~MdKeyListViewItem()              override;
 
     QString getKey()            const;
     QString getDecryptedKey()   const;
