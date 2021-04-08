@@ -188,6 +188,18 @@ MdKeyListViewItem::MdKeyListViewItem(QTreeWidget* const parent, const QString& k
     {
         m_decryptedKey = i18n("XMP Extended Video schema");
     }
+    else if (key == QLatin1String("exifEX"))
+    {
+        m_decryptedKey = i18n("Exif 2.3 metadata for XMP");
+    }
+    else if (key == QLatin1String("IMAttributes"))
+    {
+        m_decryptedKey = i18n("Image Magick Attributes");
+    }
+    else if (key == QLatin1String("IMProperties"))
+    {
+        m_decryptedKey = i18n("Image Magick Properties");
+    }
 
     // Reset all item flags: item is not selectable.
 
