@@ -126,5 +126,10 @@ BUGFIXES:
 112 ==> 301087 - Browsing through my pic collection shows dozends of wrongs orientated jpg's.
 113 ==> 364880 - digiKam crashes when rotating a picture.
 114 ==> 367913 - digiKam crash on rotate image (right or left) action.
-115 ==> 
+115 ==> 134862 - Display altitude value as a decimal number (no fraction).
+116 ==> 136674 - Manually enter GPS Data for Pictures/Tags.
+117 ==> 157552 - Negative altitudes are not shown in metadata GPS sidebar.
+118 ==> 167139 - Crash if Exif.GPSInfo.GPSAltitude is empty.
+119 ==> 
+ 
 
