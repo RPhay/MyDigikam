@@ -80,41 +80,44 @@ bool DMetadata::loadUsingImageMagick(const QString& filePath)
 
     const QString filters             = QLatin1String
                                         (
-                                            // Standard XMP namespaces                                 Exiv2 Type   IM long option
+                                            // Standard XMP namespaces                                 Exiv2 Type   IM long option      Exiftool tags
 
-                                            "Xmp.tiff.ImageLength=%h\n"                             // Text         %[height]
-                                            "Xmp.tiff.ImageWidth=%w\n"                              // Text         %[width]
-                                            "Xmp.tiff.Compression=%C\n"                             // Text         %[compression]
-                                            "Xmp.tiff.BitsPerSample=%[bit-depth]\n"                 // Seq
-                                            "Xmp.tiff.ImageDescription=%[caption]\n"                // LangAlt
-                                            "Xmp.tiff.Orientation=%[orientation]\n"                 // Text
-                                            "Xmp.tiff.DateTime=%[date:create]\n"                    // Text
-                                            "Xmp.tiff.XResolution=%x\n"                             // Text         %[resolution.x]
-                                            "Xmp.tiff.YResolution=%y\n"                             // Text         %[resolution.y]
-                                            "Xmp.tiff.ResolutionUnit=%U\n"                          // Text         %[units]
-                                            "Xmp.exif.UserComment=%c\n"                             // LangAlt      %[comment]
-                                            "Xmp.exif.ColorSpace=%r\n"                              // Text         %[colorspace]
-                                            "Xmp.exifEX.Gamma=%[gamma]\n"                           // Text
-                                            "Xmp.xmp.ModifyDate=%[date:modify]\n"                   // Text
-                                            "Xmp.xmp.Label=%l\n"                                    // Text         %[label]
+                                            "Xmp.tiff.ImageLength=%h\n"                             // Text         %[height]           MIFF.rows
+                                            "Xmp.tiff.ImageWidth=%w\n"                              // Text         %[width]            MIFF.columns
+                                            "Xmp.tiff.Compression=%C\n"                             // Text         %[compression]      MIFF.compression
+                                            "Xmp.tiff.BitsPerSample=%[bit-depth]\n"                 // Seq          -                   -
+                                            "Xmp.tiff.ImageDescription=%[caption]\n"                // LangAlt      -                   -
+                                            "Xmp.tiff.Orientation=%[orientation]\n"                 // Text         -                   -
+                                            "Xmp.tiff.DateTime=%[date:create]\n"                    // Text         -                   -
+                                            "Xmp.tiff.XResolution=%x\n"                             // Text         %[resolution.x]     MIFF.resolution
+                                            "Xmp.tiff.YResolution=%y\n"                             // Text         %[resolution.y]     MIFF.resolution
+                                            "Xmp.tiff.ResolutionUnit=%U\n"                          // Text         %[units]            -
+                                            "Xmp.exif.UserComment=%c\n"                             // LangAlt      %[comment]          -
+                                            "Xmp.exif.ColorSpace=%r\n"                              // Text         %[colorspace]       MIFF.colorspace
+                                            "Xmp.exifEX.Gamma=%[gamma]\n"                           // Text         -                   MIFF.gamma
+                                            "Xmp.xmp.ModifyDate=%[date:modify]\n"                   // Text         -                   -
+                                            "Xmp.xmp.Label=%l\n"                                    // Text         %[label]            MIFF.label
 
-                                            // ImageMagick Attributes namepsace ("Xmp.IMA." post converted by "Xmp.IMAttributes to optimize size.")
+                                            // ImageMagick Attributes namespace.
+                                            // See Exiftool MIFF namespace for details: https://exiftool.org/TagNames/MIFF.html
 
-                                            "Xmp.IMA.Version=%[version]\n"                          // Text
-                                            "Xmp.IMA.Copyright=%[copyright]\n"                      // Text
-                                            "Xmp.IMA.BaseName=%t\n"                                 // Text         %[basename]
-                                            "Xmp.IMA.Extension=%e\n"                                // Text         %[extension]
-                                            "Xmp.IMA.Codec=%m\n"                                    // Text         %[magick]
-                                            "Xmp.IMA.Channels=%[channels]\n"                        // Text
-                                            "Xmp.IMA.Interlace=%[interlace]\n"                      // Text
-                                            "Xmp.IMA.Transparency=%A\n"                             // Text
-                                            "Xmp.IMA.Profiles=%[profiles]\n"                        // Text
-                                            "Xmp.IMA.ProfileICC=%[profile:icc]\n"                   // Text
-                                            "Xmp.IMA.ProfileICM=%[profile:icm]\n"                   // Text
-                                            "Xmp.IMA.XPrintSize=%[printsize.x]\n"                   // Text
-                                            "Xmp.IMA.YPrintSize=%[printsize.y]\n"                   // Text
-                                            "Xmp.IMA.Size=%B\n"                                     // Text         %[size]
-
+                                            "Xmp.MIFF.Version=%[version]\n"                         // Text         -                   -
+                                            "Xmp.MIFF.Copyright=%[copyright]\n"                     // Text         -                   -
+                                            "Xmp.MIFF.BaseName=%t\n"                                // Text         %[basename]         -
+                                            "Xmp.MIFF.Extension=%e\n"                               // Text         %[extension]        -
+                                            "Xmp.MIFF.Codec=%m\n"                                   // Text         %[magick]           -
+                                            "Xmp.MIFF.Channels=%[channels]\n"                       // Text         -                   -
+                                            "Xmp.MIFF.Interlace=%[interlace]\n"                     // Text         -                   -
+                                            "Xmp.MIFF.Transparency=%A\n"                            // Text         -                   -
+                                            "Xmp.MIFF.Profiles=%[profiles]\n"                       // Text         -                   -
+                                            "Xmp.MIFF.ProfileICC=%[profile:icc]\n"                  // Text         -                   MIFF.profile-icc
+                                            "Xmp.MIFF.ProfileICM=%[profile:icm]\n"                  // Text         -                   -
+                                            "Xmp.MIFF.XPrintSize=%[printsize.x]\n"                  // Text         -                   -
+                                            "Xmp.MIFF.YPrintSize=%[printsize.y]\n"                  // Text         -                   -
+                                            "Xmp.MIFF.Size=%B\n"                                    // Text         %[size]             -
+                                            "Xmp.MIFF.Quality=%Q\n"                                 // Text         %[quality]          -
+                                            "Xmp.MIFF.Rendering=%[rendering-intent]\n"              // Text                             MIFF.rendering-intent
+                                            "Xmp.MIFF.Scene=%n\n"                                   // Text         %[scene]            MIFF.Scene
 /*
    NOTE: values calculated which introduce non negligible time latency:
 
@@ -131,13 +134,9 @@ bool DMetadata::loadUsingImageMagick(const QString& filePath)
                                             %[type]                     (specified as CALCULATED in doc)
 */
 
-                                            "Xmp.IMA.Quality=%Q\n"                                  // Text         %[quality]
-                                            "Xmp.IMA.Rendering=%[rendering-intent]\n"               // Text
-                                            "Xmp.IMA.Scenes=%n\n"                                   // Text         %[scene]
+                                            // ImageMagick Properties namespace (MIFP)
 
-                                            // ImageMagick Properties namespace
-
-                                            "%[*]\n"                                                // Text
+                                            "%[*]\n"                                                // Text         -                   -
                                         );
 
     try
@@ -190,8 +189,8 @@ bool DMetadata::loadUsingImageMagick(const QString& filePath)
         {
             // Post process metadata
 
-            registerXmpNameSpace(QLatin1String("https://imagemagick.org/IMAttributes/"), QLatin1String("IMAttributes"));
-            registerXmpNameSpace(QLatin1String("https://imagemagick.org/IMProperties/"), QLatin1String("IMProperties"));
+            registerXmpNameSpace(QLatin1String("https://imagemagick.org/MIFF/"), QLatin1String("MIFF")); // Magick Image File Format (Attributes)
+            registerXmpNameSpace(QLatin1String("https://imagemagick.org/MIFP/"), QLatin1String("MIFP")); // Magick Image File Properties
 
             QString output;
             int lbytes = 0;
@@ -248,16 +247,11 @@ bool DMetadata::loadUsingImageMagick(const QString& filePath)
                     val = QLatin1String("None");        // Mimic IM "none" strings, not i18n
                 }
 
-                if (key.startsWith(QLatin1String("Xmp.IMA.")))
-                {
-                    key.replace(QLatin1String("Xmp.IMA."), QLatin1String("Xmp.IMAttributes."));
-                }
-
                 if (!key.startsWith(QLatin1String("Xmp.")))
                 {
                     // Create a dedicated XMP namespace to store ImageMagick properties.
 
-                    key = QLatin1String("Xmp.IMProperties.") + key.remove(QLatin1Char(':'));
+                    key = QLatin1String("Xmp.MIFP.") + key.remove(QLatin1Char(':'));
                 }
 
                 key = key.remove(QLatin1Char('-'));
