@@ -132,4 +132,5 @@ BUGFIXES:
 118 ==> 167139 - Crash if Exif.GPSInfo.GPSAltitude is empty.
 119 ==> 435505 - Albums and keywords are always sorted alphabetically in descending order.
 120 ==> 435541 - Cannot delete "Current search" from 8 "Current Search" labels.
-121 ==> 
+121 ==> 136260 - EXIF, IPTC, and XMP editor embedded to Captions/Tags sidebar.
+122 ==> 
