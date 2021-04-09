@@ -121,17 +121,19 @@ bool DMetadata::loadUsingImageMagick(const QString& filePath)
 /*
    NOTE: values calculated which introduce non negligible time latency:
 
-                                            %[colors]                   (not specified in IM doc)
-                                            %[entropy]                  (specified as CALCULATED in doc)
-                                            %[kurtosis]                 (specified as CALCULATED in doc)
-                                            %[max]                      (specified as CALCULATED in doc)
-                                            %[mean]                     (specified as CALCULATED in doc)
-                                            %[median]                   (specified as CALCULATED in doc)
-                                            %[min]                      (specified as CALCULATED in doc)
-                                            %[opaque]                   (specified as CALCULATED in doc)
-                                            %[skewness]                 (specified as CALCULATED in doc)
-                                            %[standard-deviation]       (specified as CALCULATED in doc)
-                                            %[type]                     (specified as CALCULATED in doc)
+                                            %k                     (not specified in IM doc)        // Text         %[colors]           MIFF.colors
+                                            %[entropy]             (specified as CALCULATED in doc) // Text                             -
+                                            %[kurtosis]            (specified as CALCULATED in doc) // Text                             -
+                                            %[max]                 (specified as CALCULATED in doc) // Text                             -
+                                            %[mean]                (specified as CALCULATED in doc) // Text                             -
+                                            %[median]              (specified as CALCULATED in doc) // Text                             -
+                                            %[min]                 (specified as CALCULATED in doc) // Text                             -
+                                            %[opaque]              (specified as CALCULATED in doc) // Text                             -
+                                            %[skewness]            (specified as CALCULATED in doc) // Text                             -
+                                            %[standard-deviation]  (specified as CALCULATED in doc) // Text                             -
+                                            %[type]                (specified as CALCULATED in doc) // Text                             -
+                                            %#                     (specified as CALCULATED in doc) // Text         -                   MIFF.signature
+                                            %@                     (specified as CALCULATED in doc) // Text         %[bounding-box]     -
 */
 
                                             // ImageMagick Properties namespace (MIFP)
@@ -144,7 +146,7 @@ bool DMetadata::loadUsingImageMagick(const QString& filePath)
         if (filters.size() >= 1024)
         {
             qCWarning(DIGIKAM_METAENGINE_LOG) << "Size of percent escape format passed to Image Magick interface"
-                                                 "is largest than 1024 bytes and metadat cannot be parsed!";
+                                                 "is largest than 1024 bytes and metadata cannot be parsed!";
             return ret;
         }
 
