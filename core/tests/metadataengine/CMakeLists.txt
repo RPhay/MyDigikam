@@ -14,6 +14,19 @@ include_directories(
     $<TARGET_PROPERTY:KF5::I18n,INTERFACE_INCLUDE_DIRECTORIES>
 )
 
+#------------------------------------------------------------------------
+
+set(dmetadataloader_cli_SRCS ${CMAKE_CURRENT_SOURCE_DIR}/dmetadataloader_cli.cpp)
+add_executable(dmetadataloader_cli ${dmetadataloader_cli_SRCS})
+ecm_mark_nongui_executable(dmetadataloader_cli)
+
+target_link_libraries(dmetadataloader_cli
+
+                      digikamcore
+
+                      ${COMMON_TEST_LINK}
+)
+
 # ----------------------------------------------------------------------------------
 
 QT5_WRAP_CPP(MOC_files ${CMAKE_CURRENT_SOURCE_DIR}/abstractunittest.h)
