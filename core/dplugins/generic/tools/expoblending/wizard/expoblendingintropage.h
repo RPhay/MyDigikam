@@ -48,6 +48,10 @@ Q_SIGNALS:
 
     void signalExpoBlendingIntroPageIsValid(bool);
 
+private Q_SLOTS:
+
+    void slotExpoBlendingIntroPageIsValid();
+
 private:
 
     class Private;

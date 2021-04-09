@@ -128,7 +128,7 @@ ExpoBlendingIntroPage::ExpoBlendingIntroPage(ExpoBlendingManager* const mngr, QW
     connect(d->binariesWidget, SIGNAL(signalBinariesFound(bool)),
             this, SIGNAL(signalExpoBlendingIntroPageIsValid(bool)));
 
-    QTimer::singleShot(1000, this, SIGNAL(signalExpoBlendingIntroPageIsValid(d->binariesWidget->allBinariesFound())));
+    QTimer::singleShot(1000, this, SLOT(slotExpoBlendingIntroPageIsValid()));
 }
 
 ExpoBlendingIntroPage::~ExpoBlendingIntroPage()
@@ -139,6 +139,11 @@ ExpoBlendingIntroPage::~ExpoBlendingIntroPage()
 bool ExpoBlendingIntroPage::binariesFound()
 {
     return d->binariesWidget->allBinariesFound();
+}
+
+void ExpoBlendingIntroPage::slotExpoBlendingIntroPageIsValid()
+{
+    emit signalExpoBlendingIntroPageIsValid(binariesFound());
 }
 
 } // namespace DigikamGenericExpoBlendingPlugin
