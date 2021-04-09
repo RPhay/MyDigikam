@@ -130,6 +130,5 @@ BUGFIXES:
 116 ==> 136674 - Manually enter GPS Data for Pictures/Tags.
 117 ==> 157552 - Negative altitudes are not shown in metadata GPS sidebar.
 118 ==> 167139 - Crash if Exif.GPSInfo.GPSAltitude is empty.
-119 ==> 
- 
-
+119 ==> 435505 - Albums and keywords are always sorted alphabetically in descending order.
+120 ==> 
