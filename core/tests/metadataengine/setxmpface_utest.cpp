@@ -6,7 +6,7 @@
  * Date        : 2013-02-21
  * Description : an unit-test to set and clear faces in Picassa format with DMetadata
  *
- * Copyright (C) 2013 by Veaceslav Munteanu <veaceslav dot munteanu90 at gmail dot com>
+ * Copyright (C) 2013      by Veaceslav Munteanu <veaceslav dot munteanu90 at gmail dot com>
  * Copyright (C) 2019-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
@@ -22,7 +22,7 @@
  *
  * ============================================================ */
 
-#include "setxmpfacetest.h"
+#include "setxmpface_utest.h"
 
 // Qt includes
 

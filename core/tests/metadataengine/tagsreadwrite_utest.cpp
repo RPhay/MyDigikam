@@ -21,7 +21,7 @@
  *
  * ============================================================ */
 
-#include "tagsreadwritetest.h"
+#include "tagsreadwrite_utest.h"
 
 // Qt includes
 

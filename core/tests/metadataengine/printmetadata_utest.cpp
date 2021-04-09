@@ -21,7 +21,7 @@
  *
  * ============================================================ */
 
-#include "printmetadatatest.h"
+#include "printmetadata_utest.h"
 
 // Qt includes
 

@@ -22,7 +22,7 @@
  *
  * ============================================================ */
 
-#include "createxmpsidecartest.h"
+#include "createxmpsidecar_utest.h"
 
 // Qt includes
 

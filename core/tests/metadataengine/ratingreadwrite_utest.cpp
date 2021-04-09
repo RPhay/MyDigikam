@@ -21,7 +21,7 @@
  *
  * ============================================================ */
 
-#include "ratingreadwritetest.h"
+#include "ratingreadwrite_utest.h"
 
 // Qt includes
 

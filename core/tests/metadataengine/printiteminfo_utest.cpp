@@ -21,7 +21,7 @@
  *
  * ============================================================ */
 
-#include "printiteminfotest.h"
+#include "printiteminfo_utest.h"
 
 // Qt includes
 

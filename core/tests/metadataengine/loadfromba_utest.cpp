@@ -21,7 +21,7 @@
  *
  * ============================================================ */
 
-#include "loadfrombatest.h"
+#include "loadfromba_utest.h"
 
 // Qt includes
 

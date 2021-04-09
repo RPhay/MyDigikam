@@ -22,7 +22,7 @@
  *
  * ============================================================ */
 
-#include "patchpreviewtest.h"
+#include "patchpreview_utest.h"
 
 // Qt includes
 

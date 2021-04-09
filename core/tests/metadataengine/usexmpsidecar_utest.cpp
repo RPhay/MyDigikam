@@ -21,7 +21,7 @@
  *
  * ============================================================ */
 
-#include "usexmpsidecartest.h"
+#include "usexmpsidecar_utest.h"
 
 // Qt includes
 

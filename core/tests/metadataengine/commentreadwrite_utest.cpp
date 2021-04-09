@@ -21,7 +21,7 @@
  *
  * ============================================================ */
 
-#include "commentreadwritetest.h"
+#include "commentreadwrite_utest.h"
 
 // Qt includes
 

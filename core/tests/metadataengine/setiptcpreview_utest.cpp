@@ -21,7 +21,7 @@
  *
  * ============================================================ */
 
-#include "setiptcpreviewtest.h"
+#include "setiptcpreview_utest.h"
 
 // Qt includes
 

@@ -21,7 +21,7 @@
  *
  * ============================================================ */
 
-#include "erasemetadatatagtest.h"
+#include "erasemetadatatag_utest.h"
 
 // Qt includes
 

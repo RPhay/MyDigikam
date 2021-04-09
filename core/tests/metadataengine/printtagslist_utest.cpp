@@ -21,7 +21,7 @@
  *
  * ============================================================ */
 
-#include "printtagslisttest.h"
+#include "printtagslist_utest.h"
 
 // Qt includes
 

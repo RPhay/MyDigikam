@@ -21,7 +21,7 @@
  *
  * ============================================================ */
 
-#include "metareaderthreadtest.h"
+#include "metareaderthread_utest.h"
 
 // Qt includes
 
