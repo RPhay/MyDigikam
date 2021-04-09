@@ -97,10 +97,10 @@ void EditableSearchTreeView::addCustomContextMenuActions(ContextMenuHelper& cmh,
     if (searchAlbum)
     {
         activate = !searchAlbum->isTemporarySearch();
+        d->deleteSearchAction->setEnabled(true);
     }
 
     d->renameSearchAction->setEnabled(activate);
-    d->deleteSearchAction->setEnabled(activate);
 
     cmh.addAction(d->renameSearchAction);
     cmh.addAction(d->deleteSearchAction);

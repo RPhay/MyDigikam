@@ -84,7 +84,7 @@ void SearchModificationHelper::slotSearchDelete(SAlbum* searchAlbum)
     int result = QMessageBox::warning(d->dialogParent, i18n("Delete Search?"),
                                       i18n("Are you sure you want to "
                                            "delete the selected search "
-                                           "\"%1\"?", searchAlbum->title()),
+                                           "\"%1\"?", searchAlbum->displayTitle()),
                                       QMessageBox::Yes | QMessageBox::Cancel);
 
 

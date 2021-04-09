@@ -131,4 +131,5 @@ BUGFIXES:
 117 ==> 157552 - Negative altitudes are not shown in metadata GPS sidebar.
 118 ==> 167139 - Crash if Exif.GPSInfo.GPSAltitude is empty.
 119 ==> 435505 - Albums and keywords are always sorted alphabetically in descending order.
-120 ==> 
+120 ==> 435541 - Cannot delete "Current search" from 8 "Current Search" labels.
+121 ==> 
