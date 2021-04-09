@@ -21,7 +21,7 @@
  *
  * ============================================================ */
 
-#include "applytagstest.h"
+#include "applytags_utest.h"
 
 // Qt includes
 

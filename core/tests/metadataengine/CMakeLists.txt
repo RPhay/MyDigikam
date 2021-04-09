@@ -55,11 +55,11 @@ macro(METADATAENGINE_TESTS_BUILD)
 
 endmacro()
 
+METADATAENGINE_TESTS_BUILD(applytags_utest.cpp)
 METADATAENGINE_TESTS_BUILD(tagsreadwritetest.cpp)
 METADATAENGINE_TESTS_BUILD(ratingreadwritetest.cpp)
 METADATAENGINE_TESTS_BUILD(commentreadwritetest.cpp)
 METADATAENGINE_TESTS_BUILD(patchpreviewtest.cpp)
-METADATAENGINE_TESTS_BUILD(applytagstest.cpp)
 METADATAENGINE_TESTS_BUILD(loadfrombatest.cpp)
 METADATAENGINE_TESTS_BUILD(usexmpsidecartest.cpp)
 METADATAENGINE_TESTS_BUILD(setiptcpreviewtest.cpp)
