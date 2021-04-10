@@ -52,20 +52,54 @@ int main(int argc, char** argv)
 
     QFileInfo input(QString::fromUtf8(argv[1]));
 
-    // create our ExifTool object
+    // Create ExifTool parser instance.
 
-    ExifTool* const et = new ExifTool();
+    ExifTool* const parser = new ExifTool();
 
-    // read metadata from the image
+    // Read metadata from the file.
 
-    TagInfo* const info = et->ImageInfo(input.filePath().toLatin1().constData(), nullptr, 5);
+    TagInfo* const info    = parser->ImageInfo(input.filePath().toLatin1().constData(), nullptr, 5);
 
-    if (info)
+    if      (info)
     {
-        // print returned information
+        // Print returned tags.
+
+        const int section1 = -30;
+        const int section2 = -70;
+        const int section3 = -60;
+
+        qDebug().noquote()
+                 << QString::fromLatin1("%1").arg(QLatin1String("id"),                        section1) << "|"
+                 << QString::fromLatin1("%1").arg(QLatin1String("group1.group2.group3.name"), section2) << "="
+                 << QString::fromLatin1("%1").arg(QLatin1String("value"),                     section3)
+                 << QLatin1String("description")
+                 << Qt::endl;
 
         for (TagInfo* it = info ; it ; it = it->next)
         {
+            QString name    = QString::fromLatin1(it->name).simplified();;
+            QString id      = QString::fromLatin1(it->id).simplified();;
+            QString desc    = QString::fromLatin1(it->desc).simplified();;
+            QString value   = QString::fromLatin1(it->value).simplified();
+            QString grp0    = QString::fromLatin1(it->group[0]).simplified();;
+            QString grp1    = QString::fromLatin1(it->group[1]).simplified();;
+            QString grp2    = QString::fromLatin1(it->group[2]).simplified();;
+
+            QString tagName = QString::fromLatin1("%1.%2.%3.%4")
+                              .arg(grp0)
+                              .arg(grp1)
+                              .arg(grp2)
+                              .arg(name)
+                              .simplified();
+
+            qDebug().noquote()
+                 << QString::fromLatin1("%1 | %2 = %3 %4")
+                    .arg(id,      section1)
+                    .arg(tagName, section2)
+                    .arg(value,   section3)
+                    .arg(desc);
+
+/*
             qDebug() << it->name << "=" << it->value;
             qDebug() << "   group[0] =" << (it->group[0] ? it->group[0] : "<null>");  // family 0 group name
             qDebug() << "   group[1] =" << (it->group[1] ? it->group[1] : "<null>");  // family 1 group name
@@ -78,27 +112,26 @@ int main(int argc, char** argv)
             qDebug() << "   num      =" << (it->num      ? it->num      : "<null>");  // "numerical" value
             qDebug() << "   numLen   =" << it->numLen;                                // length of numerical value
             qDebug() << "   copyNum  =" << it->copyNum;                               // copy number for this tag name
+*/
         }
-
-        // we are responsible for deleting the information when done
 
         delete info;
     }
-    else if (et->LastComplete() <= 0)
+    else if (parser->LastComplete() <= 0)
     {
         qWarning() << "Cannot load" << input.filePath();
     }
 
-    // print exiftool stderr messages
+    // Print ExifTool errors.
 
-    char* const err = et->GetError();
+    QString err = QString::fromLatin1(parser->GetError());
 
-    if (err)
+    if (!err.isEmpty())
     {
         qWarning() << err;
     }
 
-    delete et;      // delete our ExifTool object
+    delete parser;
 
     return 0;
 }
