@@ -90,8 +90,10 @@ public: // File I/O helpers
     /**
      * Re-implemented from MetaEngine to use libraw identify, libheif,
      * ffmpeg probe, and ImageMAgick identify methods if Exiv2 failed.
+     * If backend is non null, return the backend used to populate metadata (Exiv2).
+     * See MetaEngine::Backend enum for details.
      */
-    bool load(const QString& filePath);
+    bool load(const QString& filePath, Backend* backend = nullptr);
     bool save(const QString& filePath, bool setVersion = false)                                                         const;
     bool applyChanges(bool setVersion = false)                                                                          const;
 

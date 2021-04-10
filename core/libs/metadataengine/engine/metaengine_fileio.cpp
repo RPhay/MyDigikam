@@ -89,8 +89,49 @@ bool MetaEngine::hasSidecar(const QString& path)
     return QFileInfo::exists(sidecarFilePathForFile(path));
 }
 
-bool MetaEngine::load(const QString& filePath)
+QString MetaEngine::backendName(Backend t)
 {
+    switch (t)
+    {
+        case LibRawBackend:
+        {
+            return QLatin1String("LibRaw");
+        }
+
+        case LibHeifBackend:
+        {
+            return QLatin1String("LibHeif");
+        }
+
+        case ImageMagickBackend:
+        {
+            return QLatin1String("ImageMagick");
+        }
+
+        case FFMpegBackend:
+        {
+            return QLatin1String("FFMpeg");
+        }
+
+        case NoBackend:
+        {
+            return QLatin1String("No Backend");
+        }
+
+        default:
+        {
+            return QLatin1String("Exiv2");
+        }
+    }
+}
+
+bool MetaEngine::load(const QString& filePath, Backend* backend)
+{
+    if (backend)
+    {
+        *backend = NoBackend;
+    }
+
     if (filePath.isEmpty())
     {
         return false;
@@ -146,6 +187,11 @@ bool MetaEngine::load(const QString& filePath)
 #endif // _XMP_SUPPORT_
 
         hasLoaded = true;
+
+        if (backend && hasLoaded)
+        {
+            *backend = Exiv2Backend;
+        }
     }
     catch (Exiv2::AnyError& e)
     {

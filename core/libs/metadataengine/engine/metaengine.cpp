@@ -65,6 +65,7 @@ MetaEngine::MetaEngine(const QString& filePath)
     : d(new Private)
 {
     // NOTE: use dynamic binding as this virtual method can be re-implemented in derived classes.
+
     this->load(filePath);
 }
 

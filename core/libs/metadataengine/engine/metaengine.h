@@ -118,6 +118,19 @@ public:
     };
 
     /**
+     * Metadata Backend used to populate information.
+     */
+    enum Backend
+    {
+        Exiv2Backend       = 0,   ///< Default backend used by MetaEngine
+        LibRawBackend,            ///< DMetadata only
+        LibHeifBackend,           ///< DMetadata only
+        ImageMagickBackend,       ///< DMetadata only
+        FFMpegBackend,            ///< DMetadata only
+        NoBackend                 ///< No backend used (aka file cannot be read)
+    };
+
+    /**
      * A map used to store Tags Key and Tags Value.
      */
     typedef QMap<QString, QString> MetaDataMap;
@@ -354,10 +367,18 @@ public:
     static bool hasSidecar(const QString& path);
 
     /**
+     * Return a litteral string of backend name used to parse metadata from file.
+     * See Backend enum for details.
+     */
+    static QString backendName(Backend t);
+
+    /**
      * Load all metadata (Exif, Iptc, Xmp, and JFIF Comments) from a picture (JPEG, RAW, TIFF, PNG,
      * DNG, etc...). Return true if metadata have been loaded successfully from file.
+     * If backend is non null, return the backend used to populate metadata (Exiv2).
+     * See Backend enum for details.
      */
-    bool load(const QString& filePath);
+    bool load(const QString& filePath, Backend* backend = nullptr);
 
     /**
      * Load metadata from a sidecar file and merge.
