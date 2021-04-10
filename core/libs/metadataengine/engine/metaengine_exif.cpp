@@ -1222,7 +1222,8 @@ MetaEngine::MetaDataMap MetaEngine::getExifTagsDataList(const QStringList& exifK
                 double num = (*md).toRational().first;
                 double den = (*md).toRational().second;
 
-                tagValue   = QString::fromLatin1("%1 deg").arg(num / den);
+                tagValue   = (den == 0.0) ? QString::fromStdString(md->print())
+                                          : QString::fromLatin1("%1 deg").arg(num / den);
             }
             else if (key == QLatin1String("Exif.GPSInfo.GPSSpeed"))
             {
@@ -1231,7 +1232,8 @@ MetaEngine::MetaDataMap MetaEngine::getExifTagsDataList(const QStringList& exifK
                 double num = (*md).toRational().first;
                 double den = (*md).toRational().second;
 
-                tagValue   = QString::number(num / den);
+                tagValue   = (den == 0.0) ? QString::fromStdString(md->print())
+                                          : tagValue = QString::number(num / den);
             }
             else if (key == QLatin1String("Exif.Image.0x935c"))
             {
