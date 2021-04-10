@@ -1,17 +1,25 @@
-//------------------------------------------------------------------------------
-// File:        ExifTool.cpp
-//
-// Description: C++ library interface to Perl exiftool application script
-//
-// License:     Copyright 2013-2019, Phil Harvey (philharvey66 at gmail.com)
-//
-//              This is software, in whole or part, is free for use in
-//              non-commercial applications, provided that this copyright notice
-//              is retained.  A licensing fee may be required for use in a
-//              commercial application.
-//
-// Created:     2013-11-23 - Phil Harvey
-//------------------------------------------------------------------------------
+/* ============================================================
+ *
+ * This file is a part of digiKam project
+ * https://www.digikam.org
+ *
+ * Date        : 2013-11-23
+ * Description : C++ library interface to Perl exiftool application script
+ *
+ * Copyright (C) 2013-2019 by Phil Harvey, <philharvey66 at gmail dot com>
+ *
+ * This program is free software; you can redistribute it
+ * and/or modify it under the terms of the GNU General
+ * Public License as published by the Free Software Foundation;
+ * either version 2, or (at your option)
+ * any later version.
+ *
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+ * ============================================================ */
 
 #include <stdio.h>
 #include <stdlib.h>
