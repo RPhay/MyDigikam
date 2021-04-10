@@ -1214,6 +1214,25 @@ MetaEngine::MetaDataMap MetaEngine::getExifTagsDataList(const QStringList& exifK
 
                 tagValue = d->convertCommentValue(*md);
             }
+            else if ((key == QLatin1String("Exif.GPSInfo.GPSTrack"))      ||
+                     (key == QLatin1String("Exif.GPSInfo.GPSImgDirection")))
+            {
+                // NOTE: special cases to render contents of these GPS info tags. See bug #435317.
+
+                double num = (*md).toRational().first;
+                double den = (*md).toRational().second;
+
+                tagValue   = QString::fromLatin1("%1 deg").arg(num / den);
+            }
+            else if (key == QLatin1String("Exif.GPSInfo.GPSSpeed"))
+            {
+                // NOTE: special cases to render contents of these GPS info tags. See bug #435317.
+
+                double num = (*md).toRational().first;
+                double den = (*md).toRational().second;
+
+                tagValue   = QString::number(num / den);
+            }
             else if (key == QLatin1String("Exif.Image.0x935c"))
             {
                 tagValue = QString::number(md->value().size());
