@@ -70,3 +70,5 @@ METADATAENGINE_TESTS_BUILD(setiptcpreview_utest.cpp)
 METADATAENGINE_TESTS_BUILD(setxmpface_utest.cpp)
 METADATAENGINE_TESTS_BUILD(tagsreadwrite_utest.cpp)
 METADATAENGINE_TESTS_BUILD(usexmpsidecar_utest.cpp)
+
+add_subdirectory(exiftool)

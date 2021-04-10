@@ -21,6 +21,8 @@
  *
  * ============================================================ */
 
+// Qt includes
+
 #include <QFileInfo>
 #include <QString>
 #include <QTextStream>
