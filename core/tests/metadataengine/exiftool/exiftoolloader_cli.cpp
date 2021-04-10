@@ -64,55 +64,76 @@ int main(int argc, char** argv)
     {
         // Print returned tags.
 
-        const int section1 = -30;
+//        const int section1 = -30;
         const int section2 = -70;
         const int section3 = -60;
 
         qDebug().noquote()
-                 << QString::fromLatin1("%1").arg(QLatin1String("id"),                        section1) << "|"
-                 << QString::fromLatin1("%1").arg(QLatin1String("group1.group2.group3.name"), section2) << "="
+//                 << QString::fromLatin1("%1").arg(QLatin1String("id"),                        section1) << "|"
+                 << QLatin1String(" ")
+                 << QString::fromLatin1("%1").arg(QLatin1String("group0.group1.group2.name"), section2) << "="
                  << QString::fromLatin1("%1").arg(QLatin1String("value"),                     section3)
-                 << QLatin1String("description")
+//                 << QLatin1String("description")
                  << Qt::endl;
 
         for (TagInfo* it = info ; it ; it = it->next)
         {
-            QString name    = QString::fromLatin1(it->name).simplified();;
-            QString id      = QString::fromLatin1(it->id).simplified();;
-            QString desc    = QString::fromLatin1(it->desc).simplified();;
+            QString name    = QString::fromLatin1(it->name).simplified();
+            QString id      = QString::fromLatin1(it->id).simplified();
+            QString desc    = QString::fromLatin1(it->desc).simplified();
             QString value   = QString::fromLatin1(it->value).simplified();
-            QString grp0    = QString::fromLatin1(it->group[0]).simplified();;
-            QString grp1    = QString::fromLatin1(it->group[1]).simplified();;
-            QString grp2    = QString::fromLatin1(it->group[2]).simplified();;
+            QString grp0    = QString::fromLatin1(it->group[0]).simplified();
+            QString grp1    = QString::fromLatin1(it->group[1]).simplified();
+            QString grp2    = QString::fromLatin1(it->group[2]).simplified();
 
-            QString tagName = QString::fromLatin1("%1.%2.%3.%4")
-                              .arg(grp0)
-                              .arg(grp1)
-                              .arg(grp2)
-                              .arg(name)
-                              .simplified();
+            // Tags to ignore
+
+            if (
+                (grp0.isEmpty()                      && grp1.isEmpty()                      && grp2.isEmpty())                      ||
+                ((grp0 == QLatin1String("ExifTool")) && (grp1 == QLatin1String("ExifTool")) && (grp2 == QLatin1String("ExifTool"))) ||
+                ((grp0 == QLatin1String("File"))     && (grp1 == QLatin1String("File"))     && (grp2 == QLatin1String("Other")))    ||
+                ((grp0 == QLatin1String("File"))     && (grp1 == QLatin1String("System"))   && (grp2 == QLatin1String("Other")))    ||
+                ((grp0 == QLatin1String("File"))     && (grp1 == QLatin1String("System"))   && (grp2 == QLatin1String("Time")))
+               )
+            {
+                continue;
+            }
+
+            // Tags to translate To Exiv2 naming scheme
+
+            QString tagName;
+            QString translated = QLatin1String("*");
+
+            if      ((grp0 == QLatin1String("EXIF")) && (grp1 == QLatin1String("IFD0")) && (grp2 == QLatin1String("Image")))
+            {
+                tagName = QString::fromLatin1("Exif.Image.%1").arg(name);
+            }
+            else if ((grp0 == QLatin1String("EXIF")) && (grp1 == QLatin1String("IFD1")) && (grp2 == QLatin1String("Image")))
+            {
+                tagName = QString::fromLatin1("Exif.Image.%1").arg(name);
+            }
+            else
+            {
+                // Original from ExifTool
+
+                translated = QLatin1String(" ");
+                tagName    = QString::fromLatin1("%1.%2.%3.%4")
+                             .arg(grp0)
+                             .arg(grp1)
+                             .arg(grp2)
+                             .arg(name)
+                             .simplified();
+            }
 
             qDebug().noquote()
-                 << QString::fromLatin1("%1 | %2 = %3 %4")
-                    .arg(id,      section1)
+//                 << QString::fromLatin1("%1 |").arg(id, section1)
+                 << QString::fromLatin1("%1 %2 = %3")
+                    .arg(translated)
                     .arg(tagName, section2)
                     .arg(value,   section3)
-                    .arg(desc);
+//                 << QString::fromLatin1("%1").arg(desc)
+                 ;
 
-/*
-            qDebug() << it->name << "=" << it->value;
-            qDebug() << "   group[0] =" << (it->group[0] ? it->group[0] : "<null>");  // family 0 group name
-            qDebug() << "   group[1] =" << (it->group[1] ? it->group[1] : "<null>");  // family 1 group name
-            qDebug() << "   group[2] =" << (it->group[2] ? it->group[2] : "<null>");  // family 2 group name
-            qDebug() << "   name     =" << (it->name     ? it->name     : "<null>");  // tag name
-            qDebug() << "   desc     =" << (it->desc     ? it->desc     : "<null>");  // tag description
-            qDebug() << "   id       =" << (it->id       ? it->id       : "<null>");  // tag ID
-            qDebug() << "   value    =" << (it->value    ? it->value    : "<null>");  // converted value
-            qDebug() << "   valueLen =" << it->valueLen;                              // length of value in bytes (not including null terminator)
-            qDebug() << "   num      =" << (it->num      ? it->num      : "<null>");  // "numerical" value
-            qDebug() << "   numLen   =" << it->numLen;                                // length of numerical value
-            qDebug() << "   copyNum  =" << it->copyNum;                               // copy number for this tag name
-*/
         }
 
         delete info;
