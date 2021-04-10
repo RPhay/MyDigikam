@@ -66,6 +66,7 @@ AlbumManager::Private::Private()
       dbFakeConnection        (false),
       showOnlyAvailableAlbums (false),
       longTimeMessageBoxResult(-1),
+      askMergeMessageBoxResult(-1),
       albumListJob            (nullptr),
       dateListJob             (nullptr),
       tagListJob              (nullptr),
