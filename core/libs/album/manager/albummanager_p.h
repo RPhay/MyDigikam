@@ -157,6 +157,7 @@ public:
     bool                        showOnlyAvailableAlbums;
 
     int                         longTimeMessageBoxResult;
+    int                         askMergeMessageBoxResult;
 
     AlbumsDBJobsThread*         albumListJob;
     DatesDBJobsThread*          dateListJob;

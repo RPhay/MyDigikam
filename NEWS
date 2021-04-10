@@ -134,5 +134,5 @@ BUGFIXES:
 120 ==> 435541 - Cannot delete "Current search" from 8 "Current Search" labels.
 121 ==> 136260 - EXIF, IPTC, and XMP editor embedded to Captions/Tags sidebar.
 122 ==> 202709 - Sharing images among computers and update of local databases.
-123 ==> 
-
+123 ==> 435578 - Merge tags dialog missing "Merge all" option.
+124 ==> 
