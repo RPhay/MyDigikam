@@ -80,14 +80,14 @@ class DIGIKAM_EXPORT DownloadInfo
 {
 public:
 
-    explicit DownloadInfo()
-      : size(0)
-    {
-    };
+    DownloadInfo(const QString& _path,
+                 const QString& _name,
+                 const QString& _hash,
+                 const qint64&  _size);
+    DownloadInfo(const DownloadInfo& other);
+    ~DownloadInfo();
 
-    ~DownloadInfo()
-    {
-    };
+    DownloadInfo& operator=(const DownloadInfo& other);
 
     /**
      * The file path on the server
