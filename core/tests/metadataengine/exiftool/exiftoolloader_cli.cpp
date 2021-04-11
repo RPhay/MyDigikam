@@ -65,9 +65,9 @@ int main(int argc, char** argv)
     {
         // Print returned tags.
 
-        const int section1 = -50;
-        const int section2 = -30;
-        const int section3 = -30;
+        const int section1 = -55;   // ExifTool Tag name
+        const int section2 = -35;   // Exiv2 tag name
+        const int section3 = -30;   // Tag value as string.
 
         ExifToolTranslator translator;
 
