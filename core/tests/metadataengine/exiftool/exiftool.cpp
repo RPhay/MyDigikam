@@ -51,8 +51,9 @@ static int  sBrokenPipe           = -1;
 int         ExifTool::sNoSigPipe  = 0;
 int         ExifTool::sNoWatchdog = 0;
 
-//------------------------------------------------------------------------------
-// SIGPIPE handler
+/**
+ * SIGPIPE handler
+ */
 static void sigPipeAction(int /*sig*/)
 {
     sBrokenPipe = 1;
@@ -118,14 +119,16 @@ static int unescape(char *str)
     return((int)(dst - str));
 }
 
-//------------------------------------------------------------------------------
-// get current hi-resolution time
+/**
+ * get current hi-resolution time
+ */
 static double getTime()
 {
     struct timeval tv;
     struct timezone tz;
     gettimeofday(&tv,&tz);
-    return(tv.tv_sec + 1e-6 * tv.tv_usec);
+
+    return (tv.tv_sec + 1e-6 * tv.tv_usec);
 }
 
 //==============================================================================
@@ -231,81 +234,112 @@ ExifTool::ExifTool(const char *exec, const char *arg1)
     }
 }
 
-//------------------------------------------------------------------------------
-// Terminate exiftool application process and close files
+/**
+ * Terminate exiftool application process and close files
+ */
 ExifTool::~ExifTool()
 {
     delete mWriteInfo;
     delete [] mCmdQueue;
     mCmdQueue = NULL;
+
     Command("-stay_open\nfalse\n");
+
     close(mTo);
+
     // wait for the exiftool process to terminate
-    while (IsRunning()) {
+
+    while (IsRunning())
+    {
         // keep reading exiftool output so the process won't be blocked,
         // and wait until all commands complete unless we get an error
-        if (Complete() < 0) {
-            kill(mPid, SIGINT);     // pull the plug
-            waitpid(mPid, NULL, 0); // avoid zombie process
+
+        if (Complete() < 0)
+        {
+            kill(mPid, SIGINT);         // pull the plug
+            waitpid(mPid, NULL, 0);     // avoid zombie process
             break;
         }
-        usleep(100);    // relax
+
+        usleep(100);                    // relax
     }
-    if (mWatchdog > 0) {
-        kill(mWatchdog, SIGINT);    // kill our watchdog process
-        waitpid(mWatchdog, NULL, 0);// avoid zombie
+
+    if (mWatchdog > 0)
+    {
+        kill(mWatchdog, SIGINT);        // kill our watchdog process
+        waitpid(mWatchdog, NULL, 0);    // avoid zombie
     }
 }
 
-//------------------------------------------------------------------------------
-// Extract metadata from specified image
-// Inputs:  file - source file name
-//          opts - string of exiftool options, separated by newlines
-//          timeout - maximum wait time (floating point seconds)
-// Returns: linked list of tag information structures for extracted information
-// - valid options: "-b\n" - extract binary data (other options may mess up ExifToolTagInfo parsing)
-// - waits for exiftool command to complete, then parses returned messages
-//   to generate the ExifToolTagInfo list
-// - caller is responsible for deleting returned ExifToolTagInfo ("delete info;")
-ExifToolTagInfo * ExifTool::ImageInfo(const char *file, const char *opts, double timeout)
+/**
+ * Extract metadata from specified image
+ * Inputs:  file - source file name
+ *          opts - string of exiftool options, separated by newlines
+ *          timeout - maximum wait time (floating point seconds)
+ * Returns: linked list of tag information structures for extracted information
+ * - valid options: "-b\n" - extract binary data (other options may mess up ExifToolTagInfo parsing)
+ * - waits for exiftool command to complete, then parses returned messages
+ *   to generate the ExifToolTagInfo list
+ * - caller is responsible for deleting returned ExifToolTagInfo ("delete info;")
+ */
+ExifToolTagInfo* ExifTool::ImageInfo(const char* file, const char* opts, double timeout)
 {
     int cmdNum = ExtractInfo(file, opts);
 
     // error unless command number is > 0
-    if (cmdNum <= 0) return (ExifToolTagInfo *)NULL;
+
+    if (cmdNum <= 0)
+    {
+        return (ExifToolTagInfo*)NULL;
+    }
 
     return GetInfo(cmdNum, timeout);
 }
 
-//------------------------------------------------------------------------------
-// Send command to extract information from one or more files
-// Inputs: file - source file name(s)
-//         opts - exiftool options, separated by newlines
-// Returns: command number (>0), or error (<0)
+/**
+ * Send command to extract information from one or more files
+ * Inputs: file - source file name(s)
+ *         opts - exiftool options, separated by newlines
+ * Returns: command number (>0), or error (<0)
+ */
 int ExifTool::ExtractInfo(const char *file, const char *opts)
 {
-    if (!file) return -5;
+    if (!file)
+    {
+        return -5;
+    }
 
     // prepare command arguments for exiftool
+
     int flen = (int)strlen(file);
     int olen = opts ? (int)strlen(opts) : 0;
 
-    char *buff = new char[flen + olen + 64];
-    if (!buff) return -3;       // out of memory!
+    char* const buff = new char[flen + olen + 64];
+
+    if (!buff)
+    {
+        return -3;       // out of memory!
+    }
+
     memcpy(buff, file, flen);
 
     // extract information using exiftool -php option
     // (also add "-l -G:0:1:2:4 -D" to get more details for ExifToolTagInfo structure)
+
     strcpy(buff + flen, "\n-php\n-l\n-G:0:1:2:4\n-D\n-sep\n, \n");
 
     // add extra options specified by the caller
-    if (opts) {
+
+    if (opts)
+     {
         strcat(buff, opts);
         strcat(buff, "\n"); // (to be safe; blank lines are ignored)
     }
 
     // send the command to exiftool
+
     int cmdNum = Command(buff);
+
     delete [] buff;
 
     return cmdNum;
@@ -468,51 +502,92 @@ ExifToolTagInfo *ExifTool::GetInfo(int cmdNum, double timeout)
     return infoList;
 }
 
-//------------------------------------------------------------------------------
-// Set the new value for a tag
-// Inputs:  tag = tag name (may contain leading group names and trailing '#')
-//          value = tag value data
-//          len = length of value in bytes (defaults to strlen(value))
-// Returns: number of tags set, or <0 on memory error
-// - must call WriteInfo() at some point after this to actually write the new values
-// - call with tag=NULL to reset previous new values
-// - call with value=NULL to delete tag
-int ExifTool::SetNewValue(const char *tag, const char *value, int len)
+/**
+ * Set the new value for a tag
+ * Inputs:  tag = tag name (may contain leading group names and trailing '#')
+ *          value = tag value data
+ *          len = length of value in bytes (defaults to strlen(value))
+ * Returns: number of tags set, or <0 on memory error
+ * - must call WriteInfo() at some point after this to actually write the new values
+ * - call with tag=NULL to reset previous new values
+ * - call with value=NULL to delete tag
+ */
+int ExifTool::SetNewValue(const char* tag, const char* value, int len)
 {
     int numSet = 0;
-    if (tag) {
-        ExifToolTagInfo *info = new ExifToolTagInfo;
-        if (!info) return -3;
+
+    if (tag)
+    {
+        ExifToolTagInfo* const info = new ExifToolTagInfo;
+
+        if (!info)
+        {
+            return -3;
+        }
+
         info->name = new char[strlen(tag) + 1];
-        if (!info->name) { delete info; return -3; }
+
+        if (!info->name)
+        {
+            delete info;
+            return -3;
+        }
+
         strcpy(info->name, tag);
-        if (value) {
-            if (len < 0) {
+
+        if (value)
+        {
+            if (len < 0)
+            {
                 // cppcheck-suppress knownConditionTrueFalse
-                if (value) len = (int)strlen(value);
-                else len = 0;
+                if (value)
+                {
+                    len = (int)strlen(value);
+                }
+                else
+                {
+                    len = 0;
+                }
             }
-            if (len) {
+
+            if (len)
+            {
                 info->value = new char[len+1];
-                if (!info->value) { delete info; return -3; }
+
+                if (!info->value)
+                {
+                    delete info;
+                    return -3;
+                }
+
                 memcpy(info->value, value, len);
+
                 // add null terminator (but note that we don't use it)
+
                 info->value[len] = '\0';
                 info->valueLen = len;
             }
         }
+
         // place at the end of the linked list
-        ExifToolTagInfo **pt = &mWriteInfo;
-        while (*pt) {
+
+        ExifToolTagInfo** pt = &mWriteInfo;
+
+        while (*pt)
+        {
             ++numSet;
             pt = &((*pt)->next);
         }
+
         *pt = info;
         ++numSet;
-    } else {
+    }
+    else
+    {
         delete mWriteInfo;
         mWriteInfo = NULL;
     }
+
     return numSet;
 }
 
