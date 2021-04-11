@@ -763,25 +763,48 @@ int ExifTool::Complete(double timeout)
     return mLastComplete = cmdNum;
 }
 
-//------------------------------------------------------------------------------
-// Get specified summary message
-// Inputs: msg - message string in summary output
-// Returns: corresponding number from summary statistics, or -1 if the
-//          specified message wasn't found
-int ExifTool::GetSummary(const char *msg)
+/**
+ * Get specified summary message
+ * Inputs: msg - message string in summary output
+ * Returns: corresponding number from summary statistics, or -1 if the
+ *          specified message wasn't found
+ */
+int ExifTool::GetSummary(const char* msg)
 {
-    for (int out=0; out<2; ++out) {
+    for (int out = 0 ; out < 2 ; ++out)
+    {
         // check stderr first because it isn't likely to be too long
-        char *str = out ? GetOutput() : GetError();
-        if (!str) continue;
-        char *pt = strstr(str, msg);
-        if (!pt || pt - str < 2 || pt[-1] != ' ' || !isdigit(pt[-2])) continue;
+        char* const str = out ? GetOutput() : GetError();
+
+        if (!str)
+        {
+            continue;
+        }
+
+        char* pt = strstr(str, msg);
+
+        if (!pt || (pt - str < 2) || (pt[-1] != ' ') || !isdigit(pt[-2]))
+        {
+            continue;
+        }
+
         char ch = pt[strlen(msg)];
-        if (ch != '\n' && ch != '\r') continue; // message must end with a newline
+
+        if ((ch != '\n') && (ch != '\r'))
+        {
+            continue; // message must end with a newline
+        }
+
         pt -= 2;
-        while (pt > str && isdigit(pt[-1])) --pt;
+
+        while ((pt > str) && isdigit(pt[-1]))
+        {
+            --pt;
+        }
+
         return atoi(pt);
     }
+
     return -1;  // message not found
 }
 
