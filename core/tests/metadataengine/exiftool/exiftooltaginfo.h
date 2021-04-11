@@ -29,6 +29,9 @@
 
 #include <stdlib.h>
 
+namespace Digikam
+{
+
 struct ExifToolTagInfo
 {
     ExifToolTagInfo();
@@ -45,5 +48,7 @@ struct ExifToolTagInfo
     int              copyNum;   ///< copy number for this tag name
     ExifToolTagInfo* next;      ///< next ExifToolTagInfo in linked list
 };
+
+} // namespace Digikam
 
 #endif // DIGIKAM_EXIF_TOOL_TAG_INFO_H_

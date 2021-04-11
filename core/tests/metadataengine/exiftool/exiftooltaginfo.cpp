@@ -24,6 +24,9 @@
 
 #include "exiftooltaginfo.h"
 
+namespace Digikam
+{
+
 ExifToolTagInfo::ExifToolTagInfo()
     : name      (NULL),
       desc      (NULL),
@@ -72,3 +75,4 @@ ExifToolTagInfo::~ExifToolTagInfo()
     }
 }
 
+} // namespace Digikam

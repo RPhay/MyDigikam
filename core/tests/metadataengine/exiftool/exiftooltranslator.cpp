@@ -23,11 +23,43 @@
 
 #include "exiftooltranslator.h"
 
+namespace Digikam
+{
+
 ExifToolTranslator::ExifToolTranslator()
 {
+    m_map.insert(QLatin1String("EXIF.IFD0.Image.ImageDescription"),     QLatin1String("Exif.Image.ImageDescription"));
+    m_map.insert(QLatin1String("EXIF.IFD0.Image.Orientation"),          QLatin1String("Exif.Image.Orientation"));
+    m_map.insert(QLatin1String("EXIF.IFD0.Image.XResolution"),          QLatin1String("Exif.Image.XResolution"));
+    m_map.insert(QLatin1String("EXIF.IFD0.Image.YResolution"),          QLatin1String("Exif.Image.YResolution"));
+    m_map.insert(QLatin1String("EXIF.IFD0.Image.ResolutionUnit"),       QLatin1String("Exif.Image.ResolutionUnit"));
+    m_map.insert(QLatin1String("EXIF.IFD0.Image.Software"),             QLatin1String("Exif.Image.Software"));
+    m_map.insert(QLatin1String("EXIF.IFD0.Time.ModifyDate"),            QLatin1String(""));
+    m_map.insert(QLatin1String("EXIF.ExifIFD.Image.ColorSpace"),        QLatin1String("Exif.Photo.ColorSpace"));
+    m_map.insert(QLatin1String("EXIF.ExifIFD.Image.ExifImageWidth"),    QLatin1String("Exif.Photo.PixelXDimension"));
+    m_map.insert(QLatin1String("EXIF.ExifIFD.Image.ExifImageHeight"),   QLatin1String("Exif.Photo.PixelYDimension"));
+    m_map.insert(QLatin1String("EXIF.IFD1.Image.Compression"),          QLatin1String("Exif.Image.Compression"));
+    m_map.insert(QLatin1String("EXIF.IFD1.Image.ThumbnailOffset"),      QLatin1String(""));
+    m_map.insert(QLatin1String("EXIF.IFD1.Image.ThumbnailLength"),      QLatin1String(""));
+    m_map.insert(QLatin1String("EXIF.IFD1.Image.XResolution"),          QLatin1String(""));
+    m_map.insert(QLatin1String("EXIF.IFD1.Image.YResolution"),          QLatin1String(""));
+    m_map.insert(QLatin1String("EXIF.IFD1.Image.ResolutionUnit"),       QLatin1String(""));
 }
 
 ExifToolTranslator::~ExifToolTranslator()
 {
 }
 
+QString ExifToolTranslator::translateToExiv2(const QString& tagName) const
+{
+    QHash<QString, QString>::const_iterator it = m_map.find(tagName);
+
+    if (it != m_map.constEnd())
+    {
+        return it.value();
+    }
+
+    return QString();
+}
+
+} // namespace Digikam

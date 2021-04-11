@@ -25,6 +25,9 @@
 #ifndef DIGIKAM_EXIF_TOOL_PIPE_H
 #define DIGIKAM_EXIF_TOOL_PIPE_H
 
+namespace Digikam
+{
+
 class ExifToolPipe
 {
 public:
@@ -52,5 +55,7 @@ private:
     int     mStringLen; ///< length of returned string
     int     mPid;       ///< process id for other side of the pipe
 };
+
+} // namespace Digikam
 
 #endif // DIGIKAM_EXIF_TOOL_PIPE_H__

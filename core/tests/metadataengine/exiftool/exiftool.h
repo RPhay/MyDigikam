@@ -25,6 +25,8 @@
 #ifndef DIGIKAM_EXIF_TOOL_H
 #define DIGIKAM_EXIF_TOOL_H_
 
+// Local includes
+
 #include "exiftooltaginfo.h"
 #include "exiftoolpipe.h"
 
@@ -49,6 +51,9 @@
 #define SUMMARY_HARD_LINK_ERRORS        "hard links could not be created"
 #define SUMMARY_SYMBOLIC_LINKS_CREATED  "symbolic links created"
 #define SUMMARY_SYMBOLIC_LINK_ERRORS    "symbolic links could not be created"
+
+namespace Digikam
+{
 
 class ExifTool
 {
@@ -101,5 +106,7 @@ private:
     int           mCmdNum;      // last command number
     int           mWaitTime;    // time to wait (microsec) if no commands in queue
 };
+
+} // namespace Digikam
 
 #endif // DIGIKAM_EXIF_TOOL_H

@@ -29,6 +29,9 @@
 #include <QString>
 #include <QHash>
 
+namespace Digikam
+{
+
 class ExifToolTranslator
 {
 public:
@@ -36,9 +39,18 @@ public:
     ExifToolTranslator();
     ~ExifToolTranslator();
 
+    QString translateToExiv2(const QString& tagName) const;
+
 private:
 
+    /**
+     * Internal map to translate ExifTool Tag names to Exiv2 Tags
+     * Key   = ExifTool tag name properties "group0.group1.group2.name"
+     * value = Exiv2 tag name properties "family.group.name"
+     */
     QHash<QString, QString> m_map;
 };
+
+} // namespace Digikam
 
 #endif // DIGIKAM_EXIF_TOOL_TRANSLATOR_H_

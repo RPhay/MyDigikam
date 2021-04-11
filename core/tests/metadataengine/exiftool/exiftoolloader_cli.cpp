@@ -34,6 +34,7 @@
 
 #include "dmetadata.h"
 #include "exiftool.h"
+#include "exiftooltranslator.h"
 
 using namespace Digikam;
 
@@ -64,74 +65,43 @@ int main(int argc, char** argv)
     {
         // Print returned tags.
 
-//        const int section1 = -30;
-        const int section2 = -70;
-        const int section3 = -60;
+        const int section1 = -50;
+        const int section2 = -30;
+        const int section3 = -30;
+
+        ExifToolTranslator translator;
 
         qDebug().noquote()
-//                 << QString::fromLatin1("%1").arg(QLatin1String("id"),                        section1) << "|"
-                 << QLatin1String(" ")
-                 << QString::fromLatin1("%1").arg(QLatin1String("group0.group1.group2.name"), section2) << "="
-                 << QString::fromLatin1("%1").arg(QLatin1String("value"),                     section3)
-//                 << QLatin1String("description")
+                 << QString::fromLatin1("%1").arg(QLatin1String("ExiTool::group0.group1.group2.name"), section1) << ":"
+                 << QString::fromLatin1("%1").arg(QLatin1String("Exiv2::family.group.name"),           section2) << "="
+                 << QString::fromLatin1("%1").arg(QLatin1String("value"),                              section3)
                  << Qt::endl;
 
         for (ExifToolTagInfo* it = info ; it ; it = it->next)
         {
-            QString name    = QString::fromLatin1(it->name).simplified();
-            QString id      = QString::fromLatin1(it->id).simplified();
-            QString desc    = QString::fromLatin1(it->desc).simplified();
-            QString value   = QString::fromLatin1(it->value).simplified();
-            QString grp0    = QString::fromLatin1(it->group[0]).simplified();
-            QString grp1    = QString::fromLatin1(it->group[1]).simplified();
-            QString grp2    = QString::fromLatin1(it->group[2]).simplified();
+            QString id    = QString::fromLatin1(it->id).simplified();
+            QString desc  = QString::fromLatin1(it->desc).simplified();
+            QString grp0  = QString::fromLatin1(it->group[0]).simplified();
+            QString grp1  = QString::fromLatin1(it->group[1]).simplified();
+            QString grp2  = QString::fromLatin1(it->group[2]).simplified();
+            QString name  = QString::fromLatin1(it->name).simplified();
+            QString value = QString::fromLatin1(it->value).simplified().left(-section3);
 
-            // Tags to ignore
-
-            if (
-                (grp0.isEmpty()                      && grp1.isEmpty()                      && grp2.isEmpty())                      ||
-                ((grp0 == QLatin1String("ExifTool")) && (grp1 == QLatin1String("ExifTool")) && (grp2 == QLatin1String("ExifTool"))) ||
-                ((grp0 == QLatin1String("File"))     && (grp1 == QLatin1String("File"))     && (grp2 == QLatin1String("Other")))    ||
-                ((grp0 == QLatin1String("File"))     && (grp1 == QLatin1String("System"))   && (grp2 == QLatin1String("Other")))    ||
-                ((grp0 == QLatin1String("File"))     && (grp1 == QLatin1String("System"))   && (grp2 == QLatin1String("Time")))
-               )
+            if (value.size() == -section3)
             {
-                continue;
+                value = value.left(-section3 - 3) + QLatin1String("...");
             }
 
             // Tags to translate To Exiv2 naming scheme
 
-            QString tagName;
-            QString translated = QLatin1String("*");
-
-            if      ((grp0 == QLatin1String("EXIF")) && (grp1 == QLatin1String("IFD0")) && (grp2 == QLatin1String("Image")))
-            {
-                tagName = QString::fromLatin1("Exif.Image.%1").arg(name);
-            }
-            else if ((grp0 == QLatin1String("EXIF")) && (grp1 == QLatin1String("IFD1")) && (grp2 == QLatin1String("Image")))
-            {
-                tagName = QString::fromLatin1("Exif.Image.%1").arg(name);
-            }
-            else
-            {
-                // Original from ExifTool
-
-                translated = QLatin1String(" ");
-                tagName    = QString::fromLatin1("%1.%2.%3.%4")
-                             .arg(grp0)
-                             .arg(grp1)
-                             .arg(grp2)
-                             .arg(name)
-                             .simplified();
-            }
+            QString tagNameExifTool = QString::fromLatin1("%1.%2.%3.%4").arg(grp0).arg(grp1).arg(grp2).arg(name).simplified();
+            QString tagNameExiv2    = translator.translateToExiv2(tagNameExifTool);
 
             qDebug().noquote()
-//                 << QString::fromLatin1("%1 |").arg(id, section1)
-                 << QString::fromLatin1("%1 %2 = %3")
-                    .arg(translated)
-                    .arg(tagName, section2)
-                    .arg(value,   section3)
-//                 << QString::fromLatin1("%1").arg(desc)
+                 << QString::fromLatin1("%1 : %2 = %3")
+                    .arg(tagNameExifTool, section1)
+                    .arg(tagNameExiv2,    section2)
+                    .arg(value,           section3)
                  ;
 
         }

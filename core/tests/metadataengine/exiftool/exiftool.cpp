@@ -24,6 +24,8 @@
 
 #include "exiftool.h"
 
+// C includes
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
@@ -34,6 +36,9 @@
 #include <ctype.h>
 #include <sys/time.h>
 #include <sys/wait.h>
+
+namespace Digikam
+{
 
 const int   kOutBlockSize = 65536;  // size increment for exiftool stdout buffer
 const int   kErrBlockSize = 4096;   // size increment for exiftool stderr buffer
@@ -794,3 +799,4 @@ int ExifTool::IsRunning()
     return 1;   // yes!
 }
 
+} // namespace Digikam
