@@ -21,7 +21,7 @@
  *
  * ============================================================ */
 
-#include "TagInfo.h"
+#include "exiftooltaginfo.h"
 
 TagInfo::TagInfo()
     : name      (NULL),

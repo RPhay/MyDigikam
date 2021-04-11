@@ -21,7 +21,7 @@
  *
  * ============================================================ */
 
-#include "ExifToolPipe.h"
+#include "exiftoolpipe.h"
 
 #include <stdio.h>
 #include <string.h>

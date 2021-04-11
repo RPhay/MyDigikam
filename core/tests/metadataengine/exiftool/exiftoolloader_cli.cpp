@@ -33,7 +33,7 @@
 // Local includes
 
 #include "dmetadata.h"
-#include "ExifTool.h"
+#include "exiftool.h"
 
 using namespace Digikam;
 

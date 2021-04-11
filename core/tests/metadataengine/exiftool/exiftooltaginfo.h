@@ -21,8 +21,8 @@
  *
  * ============================================================ */
 
-#ifndef __TAGINFO_H__
-#define __TAGINFO_H__
+#ifndef __EXIFTOOLTAGINFO_H__
+#define __EXIFTOOLTAGINFO_H__
 
 #include <stdlib.h>
 
@@ -43,4 +43,4 @@ struct TagInfo
     TagInfo* next;      ///< next TagInfo in linked list
 };
 
-#endif // __TAGINFO_H__
+#endif // __EXIFTOOLTAGINFO_H__

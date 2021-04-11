@@ -21,7 +21,7 @@
  *
  * ============================================================ */
 
-#include "ExifTool.h"
+#include "exiftool.h"
 
 #include <stdio.h>
 #include <stdlib.h>

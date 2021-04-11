@@ -24,8 +24,8 @@
 #ifndef __EXIFTOOL_H__
 #define __EXIFTOOL_H__
 
-#include "TagInfo.h"
-#include "ExifToolPipe.h"
+#include "exiftooltaginfo.h"
+#include "exiftoolpipe.h"
 
 #define NOW     0
 #define NEVER   1e9
