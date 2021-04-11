@@ -143,7 +143,7 @@ bool FilesDownloader::checkDownloadFiles() const
 {
     foreach (const DownloadInfo& info, d->files)
     {
-        if (!exists(info))
+        if (!downloadExists(info))
         {
             return false;
         }
@@ -173,7 +173,7 @@ void FilesDownloader::startDownload()
 
     foreach (const DownloadInfo& info, d->files)
     {
-        if (!exists(info))
+        if (!downloadExists(info))
         {
             size += info.size;
         }
@@ -227,7 +227,7 @@ void FilesDownloader::slotDownload()
         {
             d->currentInfo = d->files.takeFirst();
 
-            if (!exists(d->currentInfo))
+            if (!downloadExists(d->currentInfo))
             {
                 download();
 
@@ -276,14 +276,6 @@ void FilesDownloader::nextDownload()
     QTimer::singleShot(100, this, SLOT(slotDownload()));
 }
 
-bool FilesDownloader::exists(const DownloadInfo& info) const
-{
-    QString path = QStandardPaths::locate(QStandardPaths::AppDataLocation,
-                                          QString::fromLatin1("facesengine/%1").arg(info.name));
-
-    return (!path.isEmpty() && (QFileInfo(path).size() == info.size));
-}
-
 void FilesDownloader::createRequest(const QUrl& url)
 {
     d->nameLabel->setText(d->currentInfo.name);
@@ -298,6 +290,14 @@ void FilesDownloader::createRequest(const QUrl& url)
 
     connect(d->reply, SIGNAL(sslErrors(QList<QSslError>)),
             d->reply, SLOT(ignoreSslErrors()));
+}
+
+bool FilesDownloader::downloadExists(const DownloadInfo& info) const
+{
+    QString path = QStandardPaths::locate(QStandardPaths::AppDataLocation,
+                                          QString::fromLatin1("facesengine/%1").arg(info.name));
+
+    return (!path.isEmpty() && (QFileInfo(path).size() == info.size));
 }
 
 void FilesDownloader::reject()
