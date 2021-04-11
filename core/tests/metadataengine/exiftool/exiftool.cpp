@@ -732,34 +732,77 @@ int ExifTool::Command(const char *cmd)
     return mCmdNum;
 }
 
-//------------------------------------------------------------------------------
-// Wait for a command to complete (up to specified timeout)
-// Inputs:  timeout - maximum wait time (floating point seconds)
-// Returns: command number on success, 0 on timeout, or <0 on error
+/**
+ * Wait for a command to complete (up to specified timeout)
+ * Inputs:  timeout - maximum wait time (floating point seconds)
+ * Returns: command number on success, 0 on timeout, or <0 on error
+ */
 int ExifTool::Complete(double timeout)
 {
-    if (mCmdQueue) Command();       // try to send queued commands (if any)
+    if (mCmdQueue)
+    {
+        Command();       // try to send queued commands (if any)
+    }
+
     double doneTime = getTime() + timeout;
     int cmdNum;
-    for (;;) {
+
+    for ( ; ; )
+    {
         cmdNum = mStdout.Read();
-        if (cmdNum) break;
-        if (getTime() >= doneTime) break;
-        if (mCmdQueue) cmdNum = Command();  // keep sending queued commands
-        if (cmdNum <= 0) usleep(mWaitTime); // chill and have a beer
+
+        if (cmdNum)
+        {
+            break;
+        }
+
+        if (getTime() >= doneTime)
+        {
+            break;
+        }
+
+        if (mCmdQueue)
+        {
+            cmdNum = Command();  // keep sending queued commands
+        }
+
+        if (cmdNum <= 0)
+        {
+            usleep(mWaitTime);   // chill and have a beer
+        }
     }
-    if (cmdNum > 0) {
+
+    if (cmdNum > 0)
+    {
         // get errors from the same command (we know they must be coming,
         // so loop as quickly as possible to read them, but impose a
         // 1-second timeout just in case)
+
         doneTime = getTime() + 1;
-        for (;;) {
+
+        for ( ; ; )
+        {
             int n = mStderr.Read();
-            if (n == cmdNum) break;
-            if (n < 0) { cmdNum = n; break; }
-            if (getTime() >= doneTime) { cmdNum = -4; break; }
+
+            if (n == cmdNum)
+            {
+                break;
+            }
+
+            if (n < 0)
+            {
+                cmdNum = n;
+                break;
+            }
+
+            if (getTime() >= doneTime)
+            {
+                cmdNum = -4;
+                break;
+            }
         }
     }
+
     return mLastComplete = cmdNum;
 }
 
