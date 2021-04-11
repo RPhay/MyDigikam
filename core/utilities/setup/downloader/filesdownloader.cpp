@@ -6,7 +6,7 @@
  * Date        : 2020-11-14
  * Description : Files downloader
  *
- * Copyright (C) 2020 by Maik Qualmann <metzpinguin at gmail dot com>
+ * Copyright (C) 2020-2021 by Maik Qualmann <metzpinguin at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -171,9 +171,12 @@ void FilesDownloader::startDownload()
     path                      = QDir::toNativeSeparators(path + QLatin1String("/facesengine"));
     qint64 size               = 0;
 
-    for (int i = 0 ; i < d->files.size() ; ++i)
+    foreach (const DownloadInfo& info, d->files)
     {
-        size += d->files.at(i).size;
+        if (!exists(info))
+        {
+            size += info.size;
+        }
     }
 
     QString total             = ItemPropertiesTab::humanReadableBytesCount(size);

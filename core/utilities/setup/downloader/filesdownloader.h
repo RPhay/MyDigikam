@@ -6,7 +6,7 @@
  * Date        : 2020-11-14
  * Description : Files downloader
  *
- * Copyright (C) 2020 by Maik Qualmann <metzpinguin at gmail dot com>
+ * Copyright (C) 2020-2021 by Maik Qualmann <metzpinguin at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
