@@ -17,6 +17,7 @@ set(exiftoolloader_cli_SRCS ${CMAKE_CURRENT_SOURCE_DIR}/exiftoolloader_cli.cpp
                             ${CMAKE_CURRENT_SOURCE_DIR}/exiftool.cpp
                             ${CMAKE_CURRENT_SOURCE_DIR}/exiftoolpipe.cpp
                             ${CMAKE_CURRENT_SOURCE_DIR}/exiftooltaginfo.cpp
+                            ${CMAKE_CURRENT_SOURCE_DIR}/exiftooltranslator.cpp
 )
 
 add_executable(exiftoolloader_cli ${exiftoolloader_cli_SRCS})
