@@ -363,7 +363,7 @@ TagInfo *ExifTool::GetInfo(int cmdNum, double timeout)
             // create new TagInfo structure for this tag
             next = new TagInfo;
             if (!next) break;
-            // extract tag/group names                    
+            // extract tag/group names
             int g = 0;
             for (;;) {
                 char ch = *p1;
@@ -475,6 +475,7 @@ int ExifTool::SetNewValue(const char *tag, const char *value, int len)
         strcpy(info->name, tag);
         if (value) {
             if (len < 0) {
+                // cppcheck-suppress knownConditionTrueFalse
                 if (value) len = (int)strlen(value);
                 else len = 0;
             }
@@ -680,7 +681,10 @@ int ExifTool::Command(const char *cmd)
                 // enlarge queue and add new command
                 int newSize = mCmdQueueLen + len2 + kCmdBlockSize;
                 char *queue = new char[newSize];
-                if (!queue) return -3;          // out of memory!
+                if (!queue) {
+                    delete [] cmd2;     // free memory for this command
+                    return -3;          // out of memory!
+                }
                 memcpy(queue, mCmdQueue, mCmdQueueLen);
                 delete [] mCmdQueue;
                 mCmdQueue = queue;
