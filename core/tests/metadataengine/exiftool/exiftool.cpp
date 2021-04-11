@@ -40,15 +40,15 @@
 namespace Digikam
 {
 
-const int   kOutBlockSize = 65536;  // size increment for exiftool stdout buffer
-const int   kErrBlockSize = 4096;   // size increment for exiftool stderr buffer
-const int   kCmdBlockSize = 8192;   // size increment for exiftool command buffer
+const int   kOutBlockSize         = 65536;      ///< size increment for exiftool stdout buffer
+const int   kErrBlockSize         = 4096;       ///< size increment for exiftool stderr buffer
+const int   kCmdBlockSize         = 8192;       ///< size increment for exiftool command buffer
 
-const char *kDefaultExec = "exiftool";
+const char* kDefaultExec          = "exiftool";
 
-static int  sBrokenPipe = -1;
+static int  sBrokenPipe           = -1;
 
-int         ExifTool::sNoSigPipe = 0;
+int         ExifTool::sNoSigPipe  = 0;
 int         ExifTool::sNoWatchdog = 0;
 
 //------------------------------------------------------------------------------
@@ -144,7 +144,7 @@ ExifTool::ExifTool(const char *exec, const char *arg1)
       mWaitTime     (1000)
 {
     int to[2], from[2], err[2];
-    const char *args[7];
+    const char* args[7];
     args[0] = NULL;
     args[1] = kDefaultExec;
     args[2] = "-stay_open";
@@ -785,17 +785,24 @@ int ExifTool::GetSummary(const char *msg)
     return -1;  // message not found
 }
 
-//------------------------------------------------------------------------------
-// Check to see if exiftool process is still running
+/// Check to see if exiftool process is still running
 int ExifTool::IsRunning()
 {
     int status;
-    if (mPid == -1) return 0;
-    if (waitpid(mPid, &status, WNOHANG)) {
+
+    if (mPid == -1)
+    {
+        return 0;
+    }
+
+    if (waitpid(mPid, &status, WNOHANG))
+    {
         // no more child process
+
         mPid = -1;
         return 0;
     }
+
     return 1;   // yes!
 }
 

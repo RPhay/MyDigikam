@@ -72,9 +72,9 @@ int main(int argc, char** argv)
         ExifToolTranslator translator;
 
         qDebug().noquote()
-                 << QString::fromLatin1("%1").arg(QLatin1String("ExiTool::group0.group1.group2.name"), section1) << ":"
-                 << QString::fromLatin1("%1").arg(QLatin1String("Exiv2::family.group.name"),           section2) << "="
-                 << QString::fromLatin1("%1").arg(QLatin1String("value"),                              section3)
+                 << QString::fromLatin1("%1").arg(QLatin1String("ExifTool::group0.group1.group2.name"), section1) << ":"
+                 << QString::fromLatin1("%1").arg(QLatin1String("Exiv2::family.group.name"),            section2) << "="
+                 << QString::fromLatin1("%1").arg(QLatin1String("String Converted Value"),              section3)
                  << Qt::endl;
 
         for (ExifToolTagInfo* it = info ; it ; it = it->next)

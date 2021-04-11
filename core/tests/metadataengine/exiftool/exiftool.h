@@ -62,49 +62,52 @@ public:
     ExifTool(const char* exec = NULL, const char* arg1 = NULL);
     virtual ~ExifTool();
 
-    ExifToolTagInfo *ImageInfo(const char *file, const char *opts=NULL, double timeout=NEVER);
+    ExifToolTagInfo* ImageInfo(const char* file, const char* opts = NULL, double timeout = NEVER);
 
-    int     ExtractInfo(const char *file, const char *opts=NULL);
-    ExifToolTagInfo *GetInfo(int cmdNum=0, double timeout=NEVER);
+    int ExtractInfo(const char* file, const char* opts = NULL);
+    ExifToolTagInfo* GetInfo(int cmdNum = 0, double timeout = NEVER);
 
-    int     SetNewValue(const char *tag=NULL, const char *value=NULL, int len=-1);
-    int     WriteInfo(const char *file, const char *opts=NULL, ExifToolTagInfo *info=NULL);
+    int   SetNewValue(const char* tag = NULL, const char* value = NULL, int len = -1);
+    int   WriteInfo(const char* file, const char* opts = NULL, ExifToolTagInfo* info = NULL);
 
-    int     Command(const char *cmd=NULL);
-    int     Complete(double timeout=NEVER);
+    int   Command(const char* cmd = NULL);
+    int   Complete(double timeout = NEVER);
 
-    int     IsRunning();
-    int     LastComplete()  { return mLastComplete; }
-    int     LastCommand()   { return mCmdNum; } // (undocumented)
-    void    SetLastComplete(int lastComplete) { mLastComplete = lastComplete; }
-    void    SetWaitTime(int waitTime) { mWaitTime = waitTime; }
+    int   IsRunning();
+    int   LastComplete()                    { return mLastComplete;         }
+    int   LastCommand()                     { return mCmdNum;               }                             // (undocumented)
+    void  SetLastComplete(int lastComplete) { mLastComplete = lastComplete; }
+    void  SetWaitTime(int waitTime)         { mWaitTime = waitTime;         }
 
-    char *  GetOutput()     { return mLastComplete > 0 ? mStdout.GetString() : NULL; }
-    int     GetOutputLen()  { return mLastComplete > 0 ? mStdout.GetStringLen() : 0; }
-    char *  GetError()      { return mLastComplete > 0 ? mStderr.GetString() : NULL; }
-    int     GetErrorLen()   { return mLastComplete > 0 ? mStderr.GetStringLen() : 0; } // (undocumented)
+    char* GetOutput()                       { return (mLastComplete > 0) ? mStdout.GetString() : NULL; }
+    int   GetOutputLen()                    { return (mLastComplete > 0) ? mStdout.GetStringLen() : 0; }
+    char* GetError()                        { return (mLastComplete > 0) ? mStderr.GetString() : NULL; }
+    int   GetErrorLen()                     { return (mLastComplete > 0) ? mStderr.GetStringLen() : 0; }  // (undocumented)
 
-    int     GetSummary(const char *msg);
+    int   GetSummary(const char* msg);
+
+public:
 
     // flags to allow some ExifTool features to be disabled
     // (must be set before creating ExifTool object)
-    static int  sNoSigPipe;     // set to disable SIGPIPE handler
-    static int  sNoWatchdog;    // set to disable watchdog process
+
+    static int  sNoSigPipe;         ///< set to disable SIGPIPE handler
+    static int  sNoWatchdog;        ///< set to disable watchdog process
 
 private:
 
-    ExifToolPipe  mStdout;      // buffer for exiftool stdout read pipe
-    ExifToolPipe  mStderr;      // buffer for exiftool stderr read pipe
-    int           mTo;          // write pipe for exiftool stdin
-    int           mPid;         // exiftool application process ID
-    int           mWatchdog;    // watchdog process ID
-    ExifToolTagInfo     * mWriteInfo;   // tag information to write
-    char        * mCmdQueue;    // queued command arguments (NULL if nothing queued)
-    int           mCmdQueueLen; // length of data in command queue
-    int           mCmdQueueSize;// size of command queue
-    int           mLastComplete;// result of last Complete() call
-    int           mCmdNum;      // last command number
-    int           mWaitTime;    // time to wait (microsec) if no commands in queue
+    ExifToolPipe     mStdout;       ///< buffer for exiftool stdout read pipe
+    ExifToolPipe     mStderr;       ///< buffer for exiftool stderr read pipe
+    int              mTo;           ///< write pipe for exiftool stdin
+    int              mPid;          ///< exiftool application process ID
+    int              mWatchdog;     ///< watchdog process ID
+    ExifToolTagInfo* mWriteInfo;    ///< tag information to write
+    char*            mCmdQueue;     ///< queued command arguments (NULL if nothing queued)
+    int              mCmdQueueLen;  ///< length of data in command queue
+    int              mCmdQueueSize; ///< size of command queue
+    int              mLastComplete; ///< result of last Complete() call
+    int              mCmdNum;       ///< last command number
+    int              mWaitTime;     ///< time to wait (microsec) if no commands in queue
 };
 
 } // namespace Digikam

@@ -109,8 +109,8 @@ int ExifToolPipe::Read()
 
         if (remaining < kMinRemaining)
         {
-            int newSize = mSize + mLen + mBlockSize;
-            char* pt    = new char[newSize];
+            int newSize    = mSize + mLen + mBlockSize;
+            char* const pt = new char[newSize];
 
             if (!pt)
             {
@@ -176,8 +176,8 @@ int ExifToolPipe::Read()
         // response should end with "{ready#####}\n" or "{ready#####}\r\n"
         // - continue searching from where we left off
 
-        char* pt  = mBuff + mSearchPos;
-        char* end = mBuff + mLen;
+        char* pt        = mBuff + mSearchPos;
+        char* const end = mBuff + mLen;
 
         for (;;)
         {
@@ -189,16 +189,16 @@ int ExifToolPipe::Read()
                 break;
             }
 
-            if (end-pt >= 13 && pt[11] == '}' &&
+            if ((end-pt >= 13) && (pt[11] == '}') &&
                 // must end with newline, or CR+LF in Windows
-                (pt[12] == '\n' || (pt[12] == '\r' && end-pt >= 14 && pt[13] == '\n')))
+                ((pt[12] == '\n') || ((pt[12] == '\r') && (end-pt >= 14) && (pt[13] == '\n'))))
             {
                 // validate and extract command number
                 int cmdNum = 0;
 
                 for (int i = 0 ; i < 5 ; ++i)
                 {
-                    unsigned d = pt[i+6] -'0';
+                    unsigned d = pt[i+6] - '0';
 
                     if (d > 9)
                     {
