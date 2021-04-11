@@ -6,7 +6,7 @@
  * Date        : 2013-11-23
  * Description : Piped output from exiftool application
  *
- * Copyright (C) 2013-2019 by Phil Harvey, <philharvey66 at gmail dot com>
+ * Copyright (C) 2013-2019 by Phil Harvey <philharvey66 at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -21,33 +21,41 @@
  *
  * ============================================================ */
 
+#include "ExifToolPipe.h"
+
 #include <stdio.h>
 #include <string.h>
 #include <unistd.h>
 #include <fcntl.h>
 #include <errno.h>
 #include <sys/wait.h>
-#include "ExifToolPipe.h"
 
-//------------------------------------------------------------------------------
-// ExifToolPipe constructor
+/// ExifToolPipe constructor
 ExifToolPipe::ExifToolPipe()
-            : mFile(-1), mBuff(NULL), mSize(0), mLen(0), mPos(0), mSearchPos(0),
-              mBlockSize(0), mString(NULL), mStringLen(0), mPid(-1)
+    : mFile     (-1),
+      mBuff     (NULL),
+      mSize     (0),
+      mLen      (0),
+      mPos      (0),
+      mSearchPos(0),
+      mBlockSize(0),
+      mString   (NULL),
+      mStringLen(0),
+      mPid      (-1)
 {
 }
 
-//------------------------------------------------------------------------------
-// Destructor -- close the input file and delete the buffer
+/// Destructor -- close the input file and delete the buffer
 ExifToolPipe::~ExifToolPipe()
 {
     if (mFile >= 0) close(mFile);
     Free();
 }
 
-//------------------------------------------------------------------------------
-// Initialize the ExifTool pipe object
-// - sets input file to non-blocking
+/**
+ * Initialize the ExifTool pipe object
+ * - sets input file to non-blocking
+ */
 void ExifToolPipe::Init(int fd, int pid, int initialSize)
 {
     mFile = fd;
@@ -62,10 +70,11 @@ void ExifToolPipe::Init(int fd, int pid, int initialSize)
     fcntl(fd, F_SETFL, flags);
 }
 
-//------------------------------------------------------------------------------
-// Read exiftool response for specified command number
-// returns: command number on success, 0 if no response available, <0 on error
-// - this routine returns immediately
+/**
+ * Read exiftool response for specified command number
+ * returns: command number on success, 0 if no response available, <0 on error
+ * - this routine returns immediately
+ */
 int ExifToolPipe::Read()
 {
     const int   kMinRemaining = 1024;   // enlarge buffer if less than this free
@@ -158,8 +167,7 @@ int ExifToolPipe::Read()
     return 0;       // no complete response available
 }
 
-//------------------------------------------------------------------------------
-// Free buffer memory
+/// Free buffer memory
 void ExifToolPipe::Free()
 {
     delete [] mBuff;
@@ -167,8 +175,7 @@ void ExifToolPipe::Free()
     mLen = mSize = mPos = mSearchPos = mStringLen = 0;
 }
 
-//------------------------------------------------------------------------------
-// Remove previous response from buffer
+/// Remove previous response from buffer
 void ExifToolPipe::Flush()
 {
     if (mPos) {
@@ -183,5 +190,3 @@ void ExifToolPipe::Flush()
     mString = NULL;
     mStringLen = 0;
 }
-
-// end

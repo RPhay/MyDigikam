@@ -6,7 +6,7 @@
  * Date        : 2013-11-23
  * Description : C++ library interface to Perl exiftool application script
  *
- * Copyright (C) 2013-2019 by Phil Harvey, <philharvey66 at gmail dot com>
+ * Copyright (C) 2013-2019 by Phil Harvey <philharvey66 at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -21,6 +21,8 @@
  *
  * ============================================================ */
 
+#include "ExifTool.h"
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
@@ -31,7 +33,6 @@
 #include <ctype.h>
 #include <sys/time.h>
 #include <sys/wait.h>
-#include "ExifTool.h"
 
 const int   kOutBlockSize = 65536;  // size increment for exiftool stdout buffer
 const int   kErrBlockSize = 4096;   // size increment for exiftool stderr buffer
@@ -46,7 +47,7 @@ int         ExifTool::sNoWatchdog = 0;
 
 //------------------------------------------------------------------------------
 // SIGPIPE handler
-static void sigPipeAction(int sig)
+static void sigPipeAction(int /*sig*/)
 {
     sBrokenPipe = 1;
 }
@@ -127,8 +128,14 @@ static double getTime()
 // Inputs: exec - path name to executable file (ie. "perl" or "exiftool")
 //         arg1 - optional first argument (ie. "exiftool" if exec="perl")
 ExifTool::ExifTool(const char *exec, const char *arg1)
-        : mWatchdog(-1), mWriteInfo(NULL), mCmdQueue(NULL), mCmdQueueLen(0),
-          mCmdQueueSize(0), mLastComplete(0), mCmdNum(0), mWaitTime(1000)
+    : mWatchdog     (-1),
+      mWriteInfo    (NULL),
+      mCmdQueue     (NULL),
+      mCmdQueueLen  (0),
+      mCmdQueueSize (0),
+      mLastComplete (0),
+      mCmdNum       (0),
+      mWaitTime     (1000)
 {
     int to[2], from[2], err[2];
     const char *args[7];
@@ -785,6 +792,4 @@ int ExifTool::IsRunning()
     }
     return 1;   // yes!
 }
-
-// end
 

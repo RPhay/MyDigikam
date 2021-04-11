@@ -6,7 +6,7 @@
  * Date        : 2013-11-23
  * Description : C++ library interface to Perl exiftool application script
  *
- * Copyright (C) 2013-2019 by Phil Harvey, <philharvey66 at gmail dot com>
+ * Copyright (C) 2013-2019 by Phil Harvey <philharvey66 at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -24,8 +24,8 @@
 #ifndef __EXIFTOOL_H__
 #define __EXIFTOOL_H__
 
-#include "ExifToolPipe.h"
 #include "TagInfo.h"
+#include "ExifToolPipe.h"
 
 #define NOW     0
 #define NEVER   1e9
@@ -52,7 +52,8 @@
 class ExifTool
 {
 public:
-            ExifTool(const char *exec=NULL, const char *arg1=NULL);
+
+    ExifTool(const char* exec = NULL, const char* arg1 = NULL);
     virtual ~ExifTool();
 
     TagInfo *ImageInfo(const char *file, const char *opts=NULL, double timeout=NEVER);
@@ -85,6 +86,7 @@ public:
     static int  sNoWatchdog;    // set to disable watchdog process
 
 private:
+
     ExifToolPipe  mStdout;      // buffer for exiftool stdout read pipe
     ExifToolPipe  mStderr;      // buffer for exiftool stderr read pipe
     int           mTo;          // write pipe for exiftool stdin
