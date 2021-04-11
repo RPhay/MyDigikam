@@ -38,7 +38,9 @@ ExifToolTagInfo::ExifToolTagInfo()
       copyNum   (0),
       next      (NULL)
 {
-    group[0] = group[1] = group[2] = NULL;
+    group[0] = NULL;
+    group[1] = NULL;
+    group[2] = NULL;
 }
 
 /// delete entire linked list of ExifToolTagInfo objects
@@ -68,8 +70,8 @@ ExifToolTagInfo::~ExifToolTagInfo()
 
         // remove next entry from the list, then delete it
 
-        next          = info->next;
-        info->next    = (ExifToolTagInfo *)NULL;
+        next                  = info->next;
+        info->next            = (ExifToolTagInfo*)NULL;
 
         delete info;
     }
