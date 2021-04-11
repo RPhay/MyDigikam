@@ -58,7 +58,6 @@ public:
 
     explicit Private()
       : downloadUrl(QLatin1String("https://files.kde.org/digikam/")),
-        index      (0),
         redirects  (0),
         buttons    (nullptr),
         progress   (nullptr),
@@ -73,8 +72,8 @@ public:
     QString                error;
 
     QList<DownloadInfo>    files;
+    DownloadInfo           currentInfo;
 
-    int                    index;
     int                    redirects;
 
     QDialogButtonBox*      buttons;
@@ -142,9 +141,9 @@ FilesDownloader::~FilesDownloader()
 
 bool FilesDownloader::checkDownloadFiles() const
 {
-    for (int i = 0 ; i < d->files.size() ; ++i)
+    foreach (const DownloadInfo& info, d->files)
     {
-        if (!exists(i))
+        if (!exists(info))
         {
             return false;
         }
@@ -221,9 +220,11 @@ void FilesDownloader::slotDownload()
 
     if (d->error.isEmpty())
     {
-        for ( ; d->index < d->files.size() ; d->index++)
+        while (!d->files.isEmpty())
         {
-            if (!exists(d->index))
+            d->currentInfo = d->files.takeFirst();
+
+            if (!exists(d->currentInfo))
             {
                 download();
 
@@ -242,7 +243,7 @@ void FilesDownloader::slotDownload()
                               i18n("An error occurred during the download.\n\n"
                                    "File: %1\n\n%2\n\n"
                                    "The download will continue at the next start.",
-                                   d->files.at(d->index).name, d->error));
+                                   d->currentInfo.name, d->error));
 
         close();
     }
@@ -259,9 +260,9 @@ void FilesDownloader::download()
                 this, SLOT(slotDownloaded(QNetworkReply*)));
     }
 
-    QUrl request(d->downloadUrl             +
-                 d->files.at(d->index).path +
-                 d->files.at(d->index).name);
+    QUrl request(d->downloadUrl      +
+                 d->currentInfo.path +
+                 d->currentInfo.name);
 
     d->redirects = 0;
     createRequest(request);
@@ -272,19 +273,18 @@ void FilesDownloader::nextDownload()
     QTimer::singleShot(100, this, SLOT(slotDownload()));
 }
 
-bool FilesDownloader::exists(int index) const
+bool FilesDownloader::exists(const DownloadInfo& info) const
 {
-    QString file = d->files.at(index).name;
     QString path = QStandardPaths::locate(QStandardPaths::AppDataLocation,
-                                          QString::fromLatin1("facesengine/%1").arg(file));
+                                          QString::fromLatin1("facesengine/%1").arg(info.name));
 
-    return (!path.isEmpty() && (QFileInfo(path).size() == d->files.at(index).size));
+    return (!path.isEmpty() && (QFileInfo(path).size() == info.size));
 }
 
 void FilesDownloader::createRequest(const QUrl& url)
 {
-    d->nameLabel->setText(d->files.at(d->index).name);
-    d->progress->setMaximum(d->files.at(d->index).size);
+    d->nameLabel->setText(d->currentInfo.name);
+    d->progress->setMaximum(d->currentInfo.size);
     d->progress->setValue(0);
 
     d->redirects++;
@@ -346,7 +346,7 @@ void FilesDownloader::slotDownloaded(QNetworkReply* reply)
 
     sha256.addData(data);
 
-    if (d->files.at(d->index).hash != QString::fromLatin1(sha256.result().toHex()))
+    if (d->currentInfo.hash != QString::fromLatin1(sha256.result().toHex()))
     {
         d->error = i18n("Checksum is incorrect.");
 
@@ -365,13 +365,13 @@ void FilesDownloader::slotDownloaded(QNetworkReply* reply)
         QDir().mkpath(path);
     }
 
-    QFile file(path + QLatin1Char('/') + d->files.at(d->index).name);
+    QFile file(path + QLatin1Char('/') + d->currentInfo.name);
 
     if (file.open(QIODevice::WriteOnly))
     {
         qint64 written = file.write(data);
 
-        if (written != d->files.at(d->index).size)
+        if (written != d->currentInfo.size)
         {
             d->error = i18n("File write error.");
         }
@@ -390,7 +390,7 @@ void FilesDownloader::slotDownloaded(QNetworkReply* reply)
 
 void FilesDownloader::slotDownloadProgress(qint64 bytesReceived, qint64 bytesTotal)
 {
-    if (d->reply && (bytesReceived > d->files.at(d->index).size))
+    if (d->reply && (bytesReceived > d->currentInfo.size))
     {
         d->reply->abort();
         d->reply = nullptr;
@@ -407,6 +407,11 @@ void FilesDownloader::slotDownloadProgress(qint64 bytesReceived, qint64 bytesTot
 }
 
 //-----------------------------------------------------------------------------
+
+DownloadInfo::DownloadInfo()
+    : size(0)
+{
+}
 
 DownloadInfo::DownloadInfo(const QString& _path,
                            const QString& _name,

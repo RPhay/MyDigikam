@@ -36,50 +36,13 @@
 namespace Digikam
 {
 
-class DIGIKAM_EXPORT FilesDownloader : public QDialog
-{
-    Q_OBJECT
-
-public:
-
-    explicit FilesDownloader(QWidget* const parent = nullptr);
-    ~FilesDownloader() override;
-
-    bool checkDownloadFiles() const;
-    void startDownload();
-
-private:
-
-    void download();
-    void nextDownload();
-    bool exists(int index) const;
-    void createRequest(const QUrl& url);
-
-private Q_SLOTS:
-
-    void reject() override;
-    void slotDownload();
-    void slotDownloaded(QNetworkReply* reply);
-    void slotDownloadProgress(qint64 bytesReceived, qint64 bytesTotal);
-
-private:
-
-    // Disable
-    FilesDownloader(const FilesDownloader&)            = delete;
-    FilesDownloader& operator=(const FilesDownloader&) = delete;
-
-private:
-
-    class Private;
-    Private* const d;
-};
-
 // ----------------------------------------------------------------------------
 
 class DIGIKAM_EXPORT DownloadInfo
 {
 public:
 
+    DownloadInfo();
     DownloadInfo(const QString& _path,
                  const QString& _name,
                  const QString& _hash,
@@ -111,6 +74,44 @@ public:
 };
 
 // ----------------------------------------------------------------------------
+
+class DIGIKAM_EXPORT FilesDownloader : public QDialog
+{
+    Q_OBJECT
+
+public:
+
+    explicit FilesDownloader(QWidget* const parent = nullptr);
+    ~FilesDownloader() override;
+
+    bool checkDownloadFiles() const;
+    void startDownload();
+
+private:
+
+    void download();
+    void nextDownload();
+    void createRequest(const QUrl& url);
+    bool exists(const DownloadInfo& info) const;
+
+private Q_SLOTS:
+
+    void reject() override;
+    void slotDownload();
+    void slotDownloaded(QNetworkReply* reply);
+    void slotDownloadProgress(qint64 bytesReceived, qint64 bytesTotal);
+
+private:
+
+    // Disable
+    FilesDownloader(const FilesDownloader&)            = delete;
+    FilesDownloader& operator=(const FilesDownloader&) = delete;
+
+private:
+
+    class Private;
+    Private* const d;
+};
 
 } // namespace Digikam
 
