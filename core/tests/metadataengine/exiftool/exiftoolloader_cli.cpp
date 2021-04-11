@@ -58,7 +58,7 @@ int main(int argc, char** argv)
 
     // Read metadata from the file.
 
-    TagInfo* const info    = parser->ImageInfo(input.filePath().toLatin1().constData(), nullptr, 5);
+    ExifToolTagInfo* const info    = parser->ImageInfo(input.filePath().toLatin1().constData(), nullptr, 5);
 
     if      (info)
     {
@@ -76,7 +76,7 @@ int main(int argc, char** argv)
 //                 << QLatin1String("description")
                  << Qt::endl;
 
-        for (TagInfo* it = info ; it ; it = it->next)
+        for (ExifToolTagInfo* it = info ; it ; it = it->next)
         {
             QString name    = QString::fromLatin1(it->name).simplified();
             QString id      = QString::fromLatin1(it->id).simplified();

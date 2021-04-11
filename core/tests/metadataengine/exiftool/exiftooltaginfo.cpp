@@ -7,6 +7,7 @@
  * Description : Tag information object
  *
  * Copyright (C) 2013-2019 by Phil Harvey <philharvey66 at gmail dot com>
+ * Copyright (C) 2020-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -23,7 +24,7 @@
 
 #include "exiftooltaginfo.h"
 
-TagInfo::TagInfo()
+ExifToolTagInfo::ExifToolTagInfo()
     : name      (NULL),
       desc      (NULL),
       id        (NULL),
@@ -37,8 +38,8 @@ TagInfo::TagInfo()
     group[0] = group[1] = group[2] = NULL;
 }
 
-/// delete entire linked list of TagInfo objects
-TagInfo::~TagInfo()
+/// delete entire linked list of ExifToolTagInfo objects
+ExifToolTagInfo::~ExifToolTagInfo()
 {
     // delete our members
 
@@ -60,12 +61,12 @@ TagInfo::~TagInfo()
 
     while (next)
     {
-        TagInfo* info = next;
+        ExifToolTagInfo* info = next;
 
         // remove next entry from the list, then delete it
 
         next          = info->next;
-        info->next    = (TagInfo *)NULL;
+        info->next    = (ExifToolTagInfo *)NULL;
 
         delete info;
     }

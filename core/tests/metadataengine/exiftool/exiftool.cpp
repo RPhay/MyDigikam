@@ -7,6 +7,7 @@
  * Description : C++ library interface to Perl exiftool application script
  *
  * Copyright (C) 2013-2019 by Phil Harvey <philharvey66 at gmail dot com>
+ * Copyright (C) 2020-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -257,16 +258,16 @@ ExifTool::~ExifTool()
 //          opts - string of exiftool options, separated by newlines
 //          timeout - maximum wait time (floating point seconds)
 // Returns: linked list of tag information structures for extracted information
-// - valid options: "-b\n" - extract binary data (other options may mess up TagInfo parsing)
+// - valid options: "-b\n" - extract binary data (other options may mess up ExifToolTagInfo parsing)
 // - waits for exiftool command to complete, then parses returned messages
-//   to generate the TagInfo list
-// - caller is responsible for deleting returned TagInfo ("delete info;")
-TagInfo * ExifTool::ImageInfo(const char *file, const char *opts, double timeout)
+//   to generate the ExifToolTagInfo list
+// - caller is responsible for deleting returned ExifToolTagInfo ("delete info;")
+ExifToolTagInfo * ExifTool::ImageInfo(const char *file, const char *opts, double timeout)
 {
     int cmdNum = ExtractInfo(file, opts);
 
     // error unless command number is > 0
-    if (cmdNum <= 0) return (TagInfo *)NULL;
+    if (cmdNum <= 0) return (ExifToolTagInfo *)NULL;
 
     return GetInfo(cmdNum, timeout);
 }
@@ -289,7 +290,7 @@ int ExifTool::ExtractInfo(const char *file, const char *opts)
     memcpy(buff, file, flen);
 
     // extract information using exiftool -php option
-    // (also add "-l -G:0:1:2:4 -D" to get more details for TagInfo structure)
+    // (also add "-l -G:0:1:2:4 -D" to get more details for ExifToolTagInfo structure)
     strcpy(buff + flen, "\n-php\n-l\n-G:0:1:2:4\n-D\n-sep\n, \n");
 
     // add extra options specified by the caller
@@ -306,19 +307,19 @@ int ExifTool::ExtractInfo(const char *file, const char *opts)
 }
 
 //------------------------------------------------------------------------------
-// Read exiftool output and convert to list of TagInfo structures
+// Read exiftool output and convert to list of ExifToolTagInfo structures
 // Inputs:  cmdNum - command number (0 to process next output in series,
 //                      or -1 to process previously completed command)
 //          timeout - maximum wait time (floating point seconds)
 // Returns: linked list of tag information structures for extracted information
 // - waits up to timeout time for exiftool command to complete
-// - caller is responsible for deleting returned TagInfo ("delete info;")
+// - caller is responsible for deleting returned ExifToolTagInfo ("delete info;")
 // - after return, GetError() may be called to get exiftool errors
-TagInfo *ExifTool::GetInfo(int cmdNum, double timeout)
+ExifToolTagInfo *ExifTool::GetInfo(int cmdNum, double timeout)
 {
-    TagInfo *info = (TagInfo *)NULL;
-    TagInfo *next = (TagInfo *)NULL;
-    TagInfo *infoList = (TagInfo *)NULL;
+    ExifToolTagInfo *info = (ExifToolTagInfo *)NULL;
+    ExifToolTagInfo *next = (ExifToolTagInfo *)NULL;
+    ExifToolTagInfo *infoList = (ExifToolTagInfo *)NULL;
 
     // wait for specified command to complete
     if (cmdNum >= 0) {
@@ -348,7 +349,7 @@ TagInfo *ExifTool::GetInfo(int cmdNum, double timeout)
         p0 = strchr(p0, '"');
         if (!p0) {
             // no quote on line, so this must be the end of the tag info,
-            // so fill in necessary members of this TagInfo structure
+            // so fill in necessary members of this ExifToolTagInfo structure
             if (info) {
                 // (name and value are guaranteed to exist)
                 if (!info->value) {
@@ -367,8 +368,8 @@ TagInfo *ExifTool::GetInfo(int cmdNum, double timeout)
         char *p1 = ++p0;
         if (!mode) {    // looking for new tag
             if (next) delete next;  // delete old unused structure if necessary
-            // create new TagInfo structure for this tag
-            next = new TagInfo;
+            // create new ExifToolTagInfo structure for this tag
+            next = new ExifToolTagInfo;
             if (!next) break;
             // extract tag/group names
             int g = 0;
@@ -475,7 +476,7 @@ int ExifTool::SetNewValue(const char *tag, const char *value, int len)
 {
     int numSet = 0;
     if (tag) {
-        TagInfo *info = new TagInfo;
+        ExifToolTagInfo *info = new ExifToolTagInfo;
         if (!info) return -3;
         info->name = new char[strlen(tag) + 1];
         if (!info->name) { delete info; return -3; }
@@ -496,7 +497,7 @@ int ExifTool::SetNewValue(const char *tag, const char *value, int len)
             }
         }
         // place at the end of the linked list
-        TagInfo **pt = &mWriteInfo;
+        ExifToolTagInfo **pt = &mWriteInfo;
         while (*pt) {
             ++numSet;
             pt = &((*pt)->next);
@@ -519,8 +520,8 @@ int ExifTool::SetNewValue(const char *tag, const char *value, int len)
 // - each option argument must be terminated with a newline
 // - file may be one or more file names separated by newlines
 // - must call Complete() after this to check the return messages
-// - ignores "SourceFile" entries in input TagInfo list
-int ExifTool::WriteInfo(const char *file, const char *opts, TagInfo *info)
+// - ignores "SourceFile" entries in input ExifToolTagInfo list
+int ExifTool::WriteInfo(const char *file, const char *opts, ExifToolTagInfo *info)
 {
     if (!file) return -5;
 

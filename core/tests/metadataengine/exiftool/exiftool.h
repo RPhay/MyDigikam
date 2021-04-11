@@ -7,6 +7,7 @@
  * Description : C++ library interface to Perl exiftool application script
  *
  * Copyright (C) 2013-2019 by Phil Harvey <philharvey66 at gmail dot com>
+ * Copyright (C) 2020-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -21,8 +22,8 @@
  *
  * ============================================================ */
 
-#ifndef __EXIFTOOL_H__
-#define __EXIFTOOL_H__
+#ifndef DIGIKAM_EXIF_TOOL_H
+#define DIGIKAM_EXIF_TOOL_H_
 
 #include "exiftooltaginfo.h"
 #include "exiftoolpipe.h"
@@ -56,13 +57,13 @@ public:
     ExifTool(const char* exec = NULL, const char* arg1 = NULL);
     virtual ~ExifTool();
 
-    TagInfo *ImageInfo(const char *file, const char *opts=NULL, double timeout=NEVER);
+    ExifToolTagInfo *ImageInfo(const char *file, const char *opts=NULL, double timeout=NEVER);
 
     int     ExtractInfo(const char *file, const char *opts=NULL);
-    TagInfo *GetInfo(int cmdNum=0, double timeout=NEVER);
+    ExifToolTagInfo *GetInfo(int cmdNum=0, double timeout=NEVER);
 
     int     SetNewValue(const char *tag=NULL, const char *value=NULL, int len=-1);
-    int     WriteInfo(const char *file, const char *opts=NULL, TagInfo *info=NULL);
+    int     WriteInfo(const char *file, const char *opts=NULL, ExifToolTagInfo *info=NULL);
 
     int     Command(const char *cmd=NULL);
     int     Complete(double timeout=NEVER);
@@ -92,7 +93,7 @@ private:
     int           mTo;          // write pipe for exiftool stdin
     int           mPid;         // exiftool application process ID
     int           mWatchdog;    // watchdog process ID
-    TagInfo     * mWriteInfo;   // tag information to write
+    ExifToolTagInfo     * mWriteInfo;   // tag information to write
     char        * mCmdQueue;    // queued command arguments (NULL if nothing queued)
     int           mCmdQueueLen; // length of data in command queue
     int           mCmdQueueSize;// size of command queue
@@ -101,4 +102,4 @@ private:
     int           mWaitTime;    // time to wait (microsec) if no commands in queue
 };
 
-#endif // __EXIFTOOL_H__
+#endif // DIGIKAM_EXIF_TOOL_H
