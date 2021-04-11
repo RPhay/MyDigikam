@@ -39,7 +39,8 @@ public:
     ExifToolTranslator();
     ~ExifToolTranslator();
 
-    QString translateToExiv2(const QString& tagName) const;
+    QString translateToExiv2(const QString& tagName)    const;
+    QString translateToExifTool(const QString& tagName) const;
 
 private:
 

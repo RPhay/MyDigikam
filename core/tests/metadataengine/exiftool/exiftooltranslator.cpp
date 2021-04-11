@@ -141,4 +141,9 @@ QString ExifToolTranslator::translateToExiv2(const QString& tagName) const
     return QString();
 }
 
+QString ExifToolTranslator::translateToExifTool(const QString& tagName) const
+{
+    return m_map.key(tagName);
+}
+
 } // namespace Digikam

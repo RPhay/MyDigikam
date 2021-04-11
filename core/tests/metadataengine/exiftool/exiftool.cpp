@@ -59,64 +59,105 @@ static void sigPipeAction(int /*sig*/)
     sBrokenPipe = 1;
 }
 
-//------------------------------------------------------------------------------
-// Unescape C-style escape sequences in a null-terminated string
-// (as found in values of exiftool -php output)
-// Returns: number of bytes in unescaped data (including null terminator)
-// - on return string contains binary data which may have embedded zero bytes
-static int unescape(char *str)
+/**
+ * Unescape C-style escape sequences in a null-terminated string
+ * (as found in values of exiftool -php output)
+ * Returns: number of bytes in unescaped data (including null terminator)
+ * - on return string contains binary data which may have embedded zero bytes
+ */
+static int unescape(char* str)
 {
-    char *src = strchr(str, '\\');
+    char* src = strchr(str, '\\');
+
     // return string length without converting if string doesn't contain escapes
-    if (!src) return((int)(strlen(str) + 1));
-    char *dst = src;
-    for (;;) {
+
+    if (!src)
+    {
+        return ((int)(strlen(str) + 1));
+    }
+
+    char* dst = src;
+
+    for ( ; ; )
+    {
         char ch = *(src++);
-        if (ch == '\\') {
+
+        if (ch == '\\')
+        {
             // must un-escape this character
+
             ch = *(src++);
-            switch (ch) {
+
+            switch (ch)
+            {
                 case 'x':
+
                     // decode 2-digit hex character
+
                     ch = 0;
-                    for (int i=0; i<2; ++i) {
+
+                    for (int i = 0 ; i < 2 ; ++i)
+                    {
                         char nibble = *(src++);
-                        if (nibble >= '0' && nibble <= '9') {
+
+                        if      (nibble >= '0' && nibble <= '9')
+                        {
                             nibble -= '0';
-                        } else if (nibble >= 'A' && nibble <= 'F') {
+                        }
+                        else if (nibble >= 'A' && nibble <= 'F')
+                        {
                             nibble -= 'A' - 10;
-                        } else if (nibble >= 'a' && nibble <= 'f') {
+                        }
+                        else if (nibble >= 'a' && nibble <= 'f')
+                        {
                             nibble -= 'a' - 10;
-                        } else {
+                        }
+                        else
+                        {
                             ch = 0; // (shouldn't happen)
                             break;
                         }
+
                         ch = (ch << 4) + nibble;
                     }
+
                     break;
+
                 case 't':
                     ch = '\t';
                     break;
+
                 case 'n':
                     ch = '\n';
                     break;
+
                 case 'r':
                     ch = '\r';
                     break;
+
                 case '\0':  // (shouldn't happen, but just to be safe)
                     *(dst++) = ch;
                     return((int)(dst - str));
+
                 default:
                     // pass any other character straight through
                     break;
             }
+
             *(dst++) = ch;
-        } else {
+        }
+        else
+        {
             *(dst++) = ch;
-            if (!ch) break;
+
+            if (!ch)
+            {
+                break;
+            }
         }
     }
-    return((int)(dst - str));
+
+    return ((int)(dst - str));
 }
 
 /**
@@ -126,17 +167,17 @@ static double getTime()
 {
     struct timeval tv;
     struct timezone tz;
-    gettimeofday(&tv,&tz);
+    gettimeofday(&tv, &tz);
 
     return (tv.tv_sec + 1e-6 * tv.tv_usec);
 }
 
-//==============================================================================
-// ExifTool object constructor
-//------------------------------------------------------------------------------
-// Inputs: exec - path name to executable file (ie. "perl" or "exiftool")
-//         arg1 - optional first argument (ie. "exiftool" if exec="perl")
-ExifTool::ExifTool(const char *exec, const char *arg1)
+/**
+ * ExifTool object constructor
+ * Inputs: exec - path name to executable file (ie. "perl" or "exiftool")
+ *         arg1 - optional first argument (ie. "exiftool" if exec="perl")
+ */
+ExifTool::ExifTool(const char* exec, const char* arg1)
     : mWatchdog     (-1),
       mWriteInfo    (NULL),
       mCmdQueue     (NULL),
@@ -148,44 +189,57 @@ ExifTool::ExifTool(const char *exec, const char *arg1)
 {
     int to[2], from[2], err[2];
     const char* args[7];
-    args[0] = NULL;
-    args[1] = kDefaultExec;
-    args[2] = "-stay_open";
-    args[3] = "true";
-    args[4] = "-@";
-    args[5] = "-";
-    args[6] = NULL;
 
+    args[0]      = NULL;
+    args[1]      = kDefaultExec;
+    args[2]      = "-stay_open";
+    args[3]      = "true";
+    args[4]      = "-@";
+    args[5]      = "-";
+    args[6]      = NULL;
     int firstArg = 1;
-    if (arg1) {
+
+    if (arg1)
+    {
         args[1] = arg1;
         --firstArg;
     }
+
     args[firstArg] = exec ? exec : kDefaultExec;
 
     // set up handler for SIGPIPE if not done already
-    if (sBrokenPipe == -1 && !sNoSigPipe) {
+
+    if ((sBrokenPipe == -1) && !sNoSigPipe)
+    {
         struct sigaction act1;
         sigemptyset(&act1.sa_mask);
-        act1.sa_flags = SA_SIGINFO;
+        act1.sa_flags   = SA_SIGINFO;
         act1.sa_handler =  sigPipeAction;
-        if (sigaction(SIGPIPE, &act1, (struct sigaction *)NULL) < 0) {
+
+        if (sigaction(SIGPIPE, &act1, (struct sigaction*)NULL) < 0)
+        {
             sBrokenPipe = -2;   // error!
-        } else {
+        }
+        else
+        {
             sBrokenPipe = 0;
         }
     }
 
     // create our pipes
+
     pipe(to);
     pipe(from);
     pipe(err);
 
     // fork and exec exiftool
+
     mPid = fork();
 
-    if (mPid == 0) {
+    if (mPid == 0)
+    {
         // this is our exiftool thread
+
         close(to[1]);
         close(from[0]);
         close(err[0]);
@@ -196,38 +250,61 @@ ExifTool::ExifTool(const char *exec, const char *arg1)
         close(from[1]);
         close(err[1]);
         execvp(args[firstArg], (char * const *)args + firstArg);
+
         // (if execvp succeeds, it will never return)
+
         exit(0);
-    } else {
+    }
+    else
+    {
         // this is our working thread
+
         close(to[0]);
         close(from[1]);
         close(err[1]);
+
         // allocate memory for exiftool response and error messages
+
         mStdout.Init(from[0], mPid, kOutBlockSize);
         mStderr.Init(err[0], mPid, kErrBlockSize);
-        mTo = to[1];
+        mTo       = to[1];
+
         // set output exiftool argument pipe to non-blocking
+
         int flags = fcntl(mTo, F_GETFL, 0);
         fcntl(mTo, F_SETFL, flags | O_NONBLOCK);
+
         // create a watchdog process to monitor the main program thread and
         // terminate the exiftool process if necessary when the program exits
         // (otherwise exiftool processes may be left running if an ExifTool
         // object wasn't properly deleted)
-        if (mPid != -1 && !sNoWatchdog) {
-            int pid = getpid(); // pid of this process
+
+        if ((mPid != -1) && !sNoWatchdog)
+        {
+            int pid   = getpid(); // pid of this process
             mWatchdog = fork();
-            if (!mWatchdog) {
+
+            if (!mWatchdog)
+            {
                 // monitor the main program and clean up if it dies
                 // (under normal conditions this watchdog process
                 // is killed in the destructor)
-                for (;;) {
+
+                for ( ; ; )
+                {
                     sleep(1);
+
                     // if the main thread dies, our parent PID will change
-                    if (getppid() == pid) continue;
+
+                    if (getppid() == pid)
+                    {
+                        continue;
+                    }
+
                     // our parent has died, so send a SIGINT to exiftool
+
                     kill(mPid, SIGINT);
-                    exit(0);    // exit the watchdog process
+                    exit(0);                // exit the watchdog process
                 }
             }
         }
