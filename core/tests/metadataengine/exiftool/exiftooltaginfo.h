@@ -25,6 +25,8 @@
 #ifndef DIGIKAM_EXIF_TOOL_TAG_INFO_H
 #define DIGIKAM_EXIF_TOOL_TAG_INFO_H
 
+// C includes
+
 #include <stdlib.h>
 
 struct ExifToolTagInfo
