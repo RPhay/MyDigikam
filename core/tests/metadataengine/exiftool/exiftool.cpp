@@ -808,7 +808,9 @@ int ExifTool::GetSummary(const char* msg)
     return -1;  // message not found
 }
 
-/// Check to see if exiftool process is still running
+/**
+ * Check to see if exiftool process is still running
+ */
 int ExifTool::IsRunning()
 {
     int status;
@@ -827,6 +829,46 @@ int ExifTool::IsRunning()
     }
 
     return 1;   // yes!
+}
+
+int ExifTool::LastComplete()
+{
+    return mLastComplete;
+}
+
+int ExifTool::LastCommand()
+{
+    return mCmdNum;
+}
+
+void ExifTool::SetLastComplete(int lastComplete)
+{
+    mLastComplete = lastComplete;
+}
+
+void ExifTool::SetWaitTime(int waitTime)
+{
+    mWaitTime = waitTime;
+}
+
+char* ExifTool::GetOutput()
+{
+    return (mLastComplete > 0) ? mStdout.GetString() : NULL;
+}
+
+int ExifTool::GetOutputLen()
+{
+    return (mLastComplete > 0) ? mStdout.GetStringLen() : 0;
+}
+
+char* ExifTool::GetError()
+{
+    return (mLastComplete > 0) ? mStderr.GetString() : NULL;
+}
+
+int ExifTool::GetErrorLen()
+{
+    return (mLastComplete > 0) ? mStderr.GetStringLen() : 0;
 }
 
 } // namespace Digikam

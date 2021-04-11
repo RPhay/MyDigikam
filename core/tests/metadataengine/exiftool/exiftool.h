@@ -74,15 +74,15 @@ public:
     int   Complete(double timeout = NEVER);
 
     int   IsRunning();
-    int   LastComplete()                    { return mLastComplete;         }
-    int   LastCommand()                     { return mCmdNum;               }                             // (undocumented)
-    void  SetLastComplete(int lastComplete) { mLastComplete = lastComplete; }
-    void  SetWaitTime(int waitTime)         { mWaitTime = waitTime;         }
+    int   LastComplete();
+    int   LastCommand();            ///< undocumented
+    void  SetLastComplete(int lastComplete);
+    void  SetWaitTime(int waitTime);
 
-    char* GetOutput()                       { return (mLastComplete > 0) ? mStdout.GetString() : NULL; }
-    int   GetOutputLen()                    { return (mLastComplete > 0) ? mStdout.GetStringLen() : 0; }
-    char* GetError()                        { return (mLastComplete > 0) ? mStderr.GetString() : NULL; }
-    int   GetErrorLen()                     { return (mLastComplete > 0) ? mStderr.GetStringLen() : 0; }  // (undocumented)
+    char* GetOutput();
+    int   GetOutputLen();
+    char* GetError();
+    int   GetErrorLen();            ///< undocumented
 
     int   GetSummary(const char* msg);
 

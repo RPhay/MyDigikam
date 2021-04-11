@@ -55,11 +55,11 @@ int main(int argc, char** argv)
 
     // Create ExifTool parser instance.
 
-    ExifTool* const parser = new ExifTool();
+    ExifTool* const parser      = new ExifTool();
 
     // Read metadata from the file.
 
-    ExifToolTagInfo* const info    = parser->ImageInfo(input.filePath().toLatin1().constData(), nullptr, 5);
+    ExifToolTagInfo* const info = parser->ImageInfo(input.filePath().toLatin1().constData(), nullptr, 5);
 
     if      (info)
     {
