@@ -29,7 +29,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-#include <unistd.h>
+#include <unistd.h>     // NOTE: Posix only, not available with MSVC
 #include <signal.h>
 #include <fcntl.h>
 #include <errno.h>
@@ -146,7 +146,7 @@ static int unescape(char* str)
                 {
                     *(dst++) = ch;
 
-                    return((int)(dst - str));
+                    return ((int)(dst - str));
                 }
 
                 default:

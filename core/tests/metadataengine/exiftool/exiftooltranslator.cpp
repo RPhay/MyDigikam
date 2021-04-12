@@ -113,8 +113,20 @@ ExifToolTranslator::ExifToolTranslator()
     // Xmp x group
     m_mapETtoExiv2.insert(QLatin1String("XMP.XMP-x.Document.XMPToolkit"),                QLatin1String(""));
     // Xmp tiff Group
-    m_mapETtoExiv2.insert(QLatin1String("XMP.XMP-tiff.Image.Software"),                  QLatin1String("Xmp.tiff.Software"));
     m_mapETtoExiv2.insert(QLatin1String("XMP.XMP-tiff.Time.DateTime"),                   QLatin1String("Xmp.tiff.DateTime"));
+    m_mapETtoExiv2.insert(QLatin1String("XMP.XMP-tiff.Image.Software"),                  QLatin1String("Xmp.tiff.Software"));
+    m_mapETtoExiv2.insert(QLatin1String("XMP.XMP-tiff.Image.XResolution"),               QLatin1String("Xmp.tiff.XResolution"));
+    m_mapETtoExiv2.insert(QLatin1String("XMP.XMP-tiff.Image.YResolution"),               QLatin1String("Xmp.tiff.YResolution"));
+    m_mapETtoExiv2.insert(QLatin1String("XMP.XMP-tiff.Image.ResolutionUnit"),            QLatin1String("Xmp.tiff.ResolutionUnit"));
+    m_mapETtoExiv2.insert(QLatin1String("XMP.XMP-tiff.Image.ImageWidth"),                QLatin1String("Xmp.tiff.ImageWidth"));
+    m_mapETtoExiv2.insert(QLatin1String("XMP.XMP-tiff.Image.ImageHeight"),               QLatin1String("Xmp.tiff.ImageLength"));
+    m_mapETtoExiv2.insert(QLatin1String("XMP.XMP-tiff.Image.BitsPerSample"),             QLatin1String("Xmp.tiff.BitsPerSample"));
+    m_mapETtoExiv2.insert(QLatin1String("XMP.XMP-tiff.Image.PhotometricInterpretation"), QLatin1String("Xmp.tiff.PhotometricInterpretation"));
+    m_mapETtoExiv2.insert(QLatin1String("XMP.XMP-tiff.Image.SamplesPerPixel"),           QLatin1String("Xmp.tiff.SamplesPerPixel"));
+    m_mapETtoExiv2.insert(QLatin1String("XMP.XMP-tiff.Image.PlanarConfiguration"),       QLatin1String("Xmp.tiff.PlanarConfiguration"));
+    m_mapETtoExiv2.insert(QLatin1String("XMP.XMP-tiff.Image.Orientation"),               QLatin1String("Xmp.tiff.Orientation"));
+    m_mapETtoExiv2.insert(QLatin1String("XMP.XMP-tiff.Image.NativeDigest"),              QLatin1String("Xmp.tiff.NativeDigest"));
+    m_mapETtoExiv2.insert(QLatin1String("XMP.XMP-tiff.Image.Compression"),               QLatin1String("Xmp.tiff.Compression"));
     // Xmp xmp Group
     m_mapETtoExiv2.insert(QLatin1String("XMP.XMP-xmp.Image.CreatorTool"),                QLatin1String("Xmp.xmp.CreatorTool"));
     m_mapETtoExiv2.insert(QLatin1String("XMP.XMP-xmp.Image.Rating"),                     QLatin1String("Xmp.xmp.Rating"));
@@ -123,9 +135,15 @@ ExifToolTranslator::ExifToolTranslator()
     m_mapETtoExiv2.insert(QLatin1String("XMP.XMP-xmp.Time.MetadataDate"),                QLatin1String("Xmp.xmp.MetadataDate"));
     // Xmp exif Group
     m_mapETtoExiv2.insert(QLatin1String("XMP.XMP-exif.Time.DateTimeOriginal"),           QLatin1String("Xmp.exif.DateTimeOriginal"));
+    m_mapETtoExiv2.insert(QLatin1String("XMP.XMP-exif.Image.ColorSpace"),                QLatin1String("Xmp.exif.ColorSpace"));
+    m_mapETtoExiv2.insert(QLatin1String("XMP.XMP-exif.Image.ExifImageWidth"),            QLatin1String("Xmp.exif.PixelXDimension"));
+    m_mapETtoExiv2.insert(QLatin1String("XMP.XMP-exif.Image.ExifImageHeight"),           QLatin1String("Xmp.exif.PixelYDimension"));
+    m_mapETtoExiv2.insert(QLatin1String("XMP.XMP-exif.Image.NativeDigest"),              QLatin1String("Xmp.exif.NativeDigest"));
     // Xmp photoshop Group
     m_mapETtoExiv2.insert(QLatin1String("XMP.XMP-photoshop.Time.DateCreated"),           QLatin1String("Xmp.photoshop.DateCreated"));
     m_mapETtoExiv2.insert(QLatin1String("XMP.XMP-photoshop.Image.Urgency"),              QLatin1String("Xmp.photoshop.Urgency"));
+    m_mapETtoExiv2.insert(QLatin1String("XMP.XMP-photoshop.Image.ColorMode"),            QLatin1String("Xmp.photoshop.ColorMode"));
+    m_mapETtoExiv2.insert(QLatin1String("XMP.XMP-photoshop.Image.History"),              QLatin1String("Xmp.photoshop.History"));
     // Xmp digiKam group
     m_mapETtoExiv2.insert(QLatin1String("XMP.XMP-tmp0.Unknown.PickLabel"),               QLatin1String("Xmp.digiKam.PickLabel"));
     m_mapETtoExiv2.insert(QLatin1String("XMP.XMP-tmp0.Unknown.ColorLabel"),              QLatin1String("Xmp.digiKam.ColorLabel"));
@@ -137,6 +155,9 @@ ExifToolTranslator::ExifToolTranslator()
     m_mapETtoExiv2.insert(QLatin1String("XMP.XMP-mwg-rs.Image.RegionList"),              QLatin1String("Xmp.mwg-rs.Regions"));
     // Xmp xmpMM Group
     m_mapETtoExiv2.insert(QLatin1String("XMP.XMP-xmpMM.Other.DocumentID"),               QLatin1String("Xmp.xmpMM.DocumentID"));
+    m_mapETtoExiv2.insert(QLatin1String("XMP.XMP-xmpMM.Other.InstanceID"),               QLatin1String("Xmp.xmpMM.InstanceID"));
+    m_mapETtoExiv2.insert(QLatin1String("XMP.XMP-xmpMM.Other.DerivedFromInstanceID"),    QLatin1String("Xmp.xmpMM.DerivedFrom/stRef:instanceID"));
+    m_mapETtoExiv2.insert(QLatin1String("XMP.XMP-xmpMM.Other.DerivedFromDocumentID"),    QLatin1String("Xmp.xmpMM.DerivedFrom/stRef:documentID"));
     // Xmp MP group
     m_mapETtoExiv2.insert(QLatin1String("XMP.XMP-MP.Image.RegionInfoRegions"),           QLatin1String("Xmp.MP.RegionInfo"));
     // Xmp lr group
@@ -144,6 +165,7 @@ ExifToolTranslator::ExifToolTranslator()
     // Xmp dc Group
     m_mapETtoExiv2.insert(QLatin1String("XMP.XMP-dc.Image.Subject"),                     QLatin1String("Xmp.dc.subject"));
     m_mapETtoExiv2.insert(QLatin1String("XMP.XMP-dc.Image.Description"),                 QLatin1String("Xmp.dc.description"));
+    m_mapETtoExiv2.insert(QLatin1String("XMP.XMP-dc.Image.Format"),                      QLatin1String("Xmp.dc.format"));
 
     // --- Create the inverse map
 

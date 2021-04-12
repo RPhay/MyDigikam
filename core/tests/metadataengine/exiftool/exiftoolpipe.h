@@ -35,27 +35,28 @@ public:
     ExifToolPipe();
     ~ExifToolPipe();
 
-    void    Init(int fd,
-                 int pid,
-                 int initialSize);
-    int     Read();                 ///< read exiftool response
-    void    Free();                 ///< free buffer memory
-    void    Flush();                ///< remove previous response from buffer
-    char*   GetString();
-    int     GetStringLen();
+    void  Init(int fd,
+               int pid,
+               int initialSize);
+
+    int   Read();                 ///< read exiftool response
+    void  Free();                 ///< free buffer memory
+    void  Flush();                ///< remove previous response from buffer
+    char* GetString();
+    int   GetStringLen();
 
 private:
 
-    int     mFile;                  ///< read file descriptor
-    char*   mBuff;                  ///< buffer pointer
-    int     mSize;                  ///< buffer size
-    int     mLen;                   ///< length of data in buffer
-    int     mPos;                   ///< current read position in buffer
-    int     mSearchPos;             ///< current search position in buffer
-    int     mBlockSize;             ///< initial buffer size
-    char*   mString;                ///< returned string from last Read()
-    int     mStringLen;             ///< length of returned string
-    int     mPid;                   ///< process id for other side of the pipe
+    int   mFile;                  ///< read file descriptor
+    char* mBuff;                  ///< buffer pointer
+    int   mSize;                  ///< buffer size
+    int   mLen;                   ///< length of data in buffer
+    int   mPos;                   ///< current read position in buffer
+    int   mSearchPos;             ///< current search position in buffer
+    int   mBlockSize;             ///< initial buffer size
+    char* mString;                ///< returned string from last Read()
+    int   mStringLen;             ///< length of returned string
+    int   mPid;                   ///< process id for other side of the pipe
 };
 
 } // namespace Digikam

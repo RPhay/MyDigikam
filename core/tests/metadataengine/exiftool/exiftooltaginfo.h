@@ -34,8 +34,12 @@ namespace Digikam
 
 struct ExifToolTagInfo
 {
+public:
+
     ExifToolTagInfo();
     virtual ~ExifToolTagInfo();
+
+public:
 
     char*            group[3];  ///< family 0-2 group names
     char*            name;      ///< tag name
