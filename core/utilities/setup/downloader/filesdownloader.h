@@ -92,7 +92,9 @@ private:
     void download();
     void nextDownload();
     void createRequest(const QUrl& url);
+    void printDownloadInfo(const QUrl& url);
     bool downloadExists(const DownloadInfo& info) const;
+
 
 private Q_SLOTS:
 
