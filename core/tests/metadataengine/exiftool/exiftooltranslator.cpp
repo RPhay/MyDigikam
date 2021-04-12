@@ -28,7 +28,7 @@ namespace Digikam
 
 ExifToolTranslator::ExifToolTranslator()
 {
-    // --- Exif table
+    // --- EXIF Table -------------------------------------------------------------------
 
     // Exif Iop Group
     m_mapETtoExiv2.insert(QLatin1String("EXIF.InteropIFD.Image.InteropIndex"),           QLatin1String("Exif.Iop.InteroperabilityIndex"));
@@ -88,7 +88,7 @@ ExifToolTranslator::ExifToolTranslator()
     m_mapETtoExiv2.insert(QLatin1String("EXIF.IFD1.Image.YResolution"),                  QLatin1String("Exif.Thumbnail.YResolution"));
     m_mapETtoExiv2.insert(QLatin1String("EXIF.IFD1.Image.ResolutionUnit"),               QLatin1String("Exif.Thumbnail.ResolutionUnit"));
 
-    // --- Iptc table
+    // --- IPTC Table -------------------------------------------------------------------
 
     // Iptc Envelope Group
     m_mapETtoExiv2.insert(QLatin1String("IPTC.IPTC.Other.CodedCharacterSet"),            QLatin1String("Iptc.Envelope.CharacterSet"));
@@ -101,30 +101,44 @@ ExifToolTranslator::ExifToolTranslator()
     m_mapETtoExiv2.insert(QLatin1String("IPTC.IPTC.Time.DateCreated"),                   QLatin1String("Iptc.Application2.DateCreated"));
     m_mapETtoExiv2.insert(QLatin1String("IPTC.IPTC.Time.TimeCreated"),                   QLatin1String("Iptc.Application2.TimeCreated"));
 
-    // --- Xmp table
+    // --- XMP Table --------------------------------------------------------------------
 
+    // Xmp x group
     m_mapETtoExiv2.insert(QLatin1String("XMP.XMP-x.Document.XMPToolkit"),                QLatin1String(""));
+    // Xmp tiff Group
     m_mapETtoExiv2.insert(QLatin1String("XMP.XMP-tiff.Image.Software"),                  QLatin1String("Xmp.tiff.Software"));
     m_mapETtoExiv2.insert(QLatin1String("XMP.XMP-tiff.Time.DateTime"),                   QLatin1String("Xmp.tiff.DateTime"));
+    // Xmp xmp Group
     m_mapETtoExiv2.insert(QLatin1String("XMP.XMP-xmp.Image.CreatorTool"),                QLatin1String("Xmp.xmp.CreatorTool"));
     m_mapETtoExiv2.insert(QLatin1String("XMP.XMP-xmp.Image.Rating"),                     QLatin1String("Xmp.xmp.Rating"));
     m_mapETtoExiv2.insert(QLatin1String("XMP.XMP-xmp.Time.CreateDate"),                  QLatin1String("Xmp.xmp.CreateDate"));
     m_mapETtoExiv2.insert(QLatin1String("XMP.XMP-xmp.Time.ModifyDate"),                  QLatin1String("Xmp.xmp.ModifyDate"));
     m_mapETtoExiv2.insert(QLatin1String("XMP.XMP-xmp.Time.MetadataDate"),                QLatin1String("Xmp.xmp.MetadataDate"));
+    // Xmp exif Group
     m_mapETtoExiv2.insert(QLatin1String("XMP.XMP-exif.Time.DateTimeOriginal"),           QLatin1String("Xmp.exif.DateTimeOriginal"));
+    // Xmp photoshop Group
     m_mapETtoExiv2.insert(QLatin1String("XMP.XMP-photoshop.Time.DateCreated"),           QLatin1String("Xmp.photoshop.DateCreated"));
     m_mapETtoExiv2.insert(QLatin1String("XMP.XMP-photoshop.Image.Urgency"),              QLatin1String("Xmp.photoshop.Urgency"));
+    // Xmp digiKam group
     m_mapETtoExiv2.insert(QLatin1String("XMP.XMP-tmp0.Unknown.PickLabel"),               QLatin1String("Xmp.digiKam.PickLabel"));
     m_mapETtoExiv2.insert(QLatin1String("XMP.XMP-tmp0.Unknown.ColorLabel"),              QLatin1String("Xmp.digiKam.ColorLabel"));
     m_mapETtoExiv2.insert(QLatin1String("XMP.XMP-tmp0.Unknown.TagsList"),                QLatin1String("Xmp.digiKam.TagsList"));
+    // Xmp microsoft Group
     m_mapETtoExiv2.insert(QLatin1String("XMP.XMP-microsoft.Image.RatingPercent"),        QLatin1String("Xmp.MicrosoftPhoto.Rating"));
     m_mapETtoExiv2.insert(QLatin1String("XMP.XMP-microsoft.Image.LastKeywordXMP"),       QLatin1String("Xmp.MicrosoftPhoto.LastKeywordXMP"));
+    // Xmp mwg-rs Group
     m_mapETtoExiv2.insert(QLatin1String("XMP.XMP-mwg-rs.Image.RegionList"),              QLatin1String("Xmp.mwg-rs.Regions"));
+    // Xmp xmpMM Group
+    m_mapETtoExiv2.insert(QLatin1String("XMP.XMP-xmpMM.Other.DocumentID"),               QLatin1String("Xmp.xmpMM.DocumentID"));
+    // Xmp MP group
     m_mapETtoExiv2.insert(QLatin1String("XMP.XMP-MP.Image.RegionInfoRegions"),           QLatin1String("Xmp.MP.RegionInfo"));
+    // Xmp lr group
     m_mapETtoExiv2.insert(QLatin1String("XMP.XMP-lr.Image.HierarchicalSubject"),         QLatin1String("Xmp.lr.hierarchicalSubject"));
+    // Xmp dc Group
     m_mapETtoExiv2.insert(QLatin1String("XMP.XMP-dc.Image.Subject"),                     QLatin1String("Xmp.dc.subject"));
+    m_mapETtoExiv2.insert(QLatin1String("XMP.XMP-dc.Image.Description"),                 QLatin1String("Xmp.dc.description"));
 
-    // Create the inverse map
+    // --- Create the inverse map
 
     QHash<QString, QString>::const_iterator it = m_mapETtoExiv2.constBegin();
 

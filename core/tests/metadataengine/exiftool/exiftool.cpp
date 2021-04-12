@@ -706,6 +706,161 @@ int ExifTool::SetNewValue(const char* tag, const char* value, int len)
     return numSet;
 }
 
+/**
+ * Send command to exiftool
+ * Inputs:  cmd - exiftool command arguments (separated by newlines)
+ * Returns: command number (1-99999), error (<0),
+ *          or 0 if cmd is NULL and the queue is empty
+ * - set cmd to NULL to continue writing previously queued commands
+ * - this routine always returns immediately, and queues command if it couldn't send
+ */
+int ExifTool::Command(const char* cmd)
+{
+    int n;
+
+    // check to make sure our exiftool process is still running
+
+    if (!IsRunning())
+    {
+        return -1;
+    }
+
+    // must first try to send previously queued command
+
+    if (mCmdQueue)
+    {
+        n = (int)write(mTo, mCmdQueue, mCmdQueueLen);
+
+        if (n < 0)
+        {
+            if (errno != EAGAIN)
+            {
+                return -2; // write error!
+            }
+
+            n = 0;
+        }
+
+        if      (n == mCmdQueueLen)
+        {
+            delete [] mCmdQueue;
+
+            mCmdQueue     = NULL;
+            mCmdQueueSize = 0;
+        }
+        else if (n != 0)
+        {
+            memmove(mCmdQueue, mCmdQueue + n, mCmdQueueLen - n);
+        }
+
+        mCmdQueueLen -= n;
+    }
+
+    if (cmd)
+    {
+        // increment to next command number
+
+        int cmdNum = mCmdNum + 1;
+
+        if (cmdNum > 99999)
+        {
+            cmdNum = 1;
+        }
+
+        // compose full command string (cmd2)
+
+        char buf2[64];
+        int len          = (int)strlen(cmd);
+        int len2         = sprintf(buf2, "\n-echo4\n{ready%.5d}\n-execute%.5d\n", cmdNum, cmdNum);
+        char* const cmd2 = new char[len + len2];
+
+        if (!cmd2)
+        {
+            return -3;        // out of memory!
+        }
+
+        memcpy(cmd2, cmd, len);
+        memcpy(cmd2+len, buf2, len2);
+        len2 += len;    // len2 is now the length of the complete command
+
+        // add command to the queue if not empty
+
+        if (mCmdQueue)
+        {
+            if (mCmdQueueLen + len2 > mCmdQueueSize)
+            {
+                // enlarge queue and add new command
+
+                int newSize       = mCmdQueueLen + len2 + kCmdBlockSize;
+                char* const queue = new char[newSize];
+
+                if (!queue)
+                {
+                    delete [] cmd2;     // free memory for this command
+                    return -3;          // out of memory!
+                }
+
+                memcpy(queue, mCmdQueue, mCmdQueueLen);
+
+                delete [] mCmdQueue;
+
+                mCmdQueue     = queue;
+                mCmdQueueSize = newSize;
+            }
+
+            // copy this command into the queue
+
+            memcpy(mCmdQueue + mCmdQueueLen, cmd2, len2);
+            mCmdQueueLen += len2;
+
+            delete [] cmd2;     // free memory for this command
+        }
+        else
+        {
+            // write the command
+
+            n = (int)write(mTo, cmd2, len2);
+
+            if (n < 0)
+            {
+                if (errno != EAGAIN)
+                {
+                    return -2; // write error!
+                }
+
+                n = 0;
+            }
+
+            if (n == len2)
+            {
+                delete [] cmd2; // success! delete the buffered command
+            }
+            else
+            {
+                // don't bother allocating any new memory,
+                // just use our cmd2 string as the new queue
+
+                if (n)
+                {
+                    memmove(cmd2, cmd2 + n, len2 - n);
+                }
+
+                mCmdQueue     = cmd2;
+                mCmdQueueLen  = len2 - n;
+                mCmdQueueSize = len2;
+            }
+        }
+
+        mCmdNum = cmdNum;
+    }
+    else if (!mCmdQueue)
+    {
+        return 0;   // cmd is NULL, and queue is empty
+    }
+
+    return mCmdNum;
+}
+
 //------------------------------------------------------------------------------
 // Read exiftool output and convert to list of ExifToolTagInfo structures
 // Inputs:  cmdNum - command number (0 to process next output in series,
@@ -990,93 +1145,6 @@ int ExifTool::WriteInfo(const char *file, const char *opts, ExifToolTagInfo *inf
     int cmdNum = Command(buff);
     delete [] buff;
     return cmdNum;
-}
-
-//------------------------------------------------------------------------------
-// Send command to exiftool
-// Inputs:  cmd - exiftool command arguments (separated by newlines)
-// Returns: command number (1-99999), error (<0),
-//          or 0 if cmd is NULL and the queue is empty
-// - set cmd to NULL to continue writing previously queued commands
-// - this routine always returns immediately, and queues command if it couldn't send
-int ExifTool::Command(const char *cmd)
-{
-    int n;
-    // check to make sure our exiftool process is still running
-    if (!IsRunning()) return -1;
-    // must first try to send previously queued command
-    if (mCmdQueue) {
-        n = (int)write(mTo, mCmdQueue, mCmdQueueLen);
-        if (n < 0) {
-            if (errno != EAGAIN) return -2; // write error!
-            n = 0;
-        }
-        if (n == mCmdQueueLen) {
-            delete [] mCmdQueue;
-            mCmdQueue = NULL;
-            mCmdQueueSize = 0;
-        } else if (n != 0) {
-            memmove(mCmdQueue, mCmdQueue+n, mCmdQueueLen-n);
-        }
-        mCmdQueueLen -= n;
-    }
-    if (cmd) {
-        // increment to next command number
-        int cmdNum = mCmdNum + 1;
-        if (cmdNum > 99999) cmdNum = 1;
-
-        // compose full command string (cmd2)
-        char buf2[64];
-        int len = (int)strlen(cmd);
-        int len2 = sprintf(buf2, "\n-echo4\n{ready%.5d}\n-execute%.5d\n", cmdNum, cmdNum);
-        char *cmd2 = new char[len + len2];
-        if (!cmd2) return -3;        // out of memory!
-        memcpy(cmd2, cmd, len);
-        memcpy(cmd2+len, buf2, len2);
-        len2 += len;    // len2 is now the length of the complete command
-
-        // add command to the queue if not empty
-        if (mCmdQueue) {
-            if (mCmdQueueLen + len2 > mCmdQueueSize) {
-                // enlarge queue and add new command
-                int newSize = mCmdQueueLen + len2 + kCmdBlockSize;
-                char *queue = new char[newSize];
-                if (!queue) {
-                    delete [] cmd2;     // free memory for this command
-                    return -3;          // out of memory!
-                }
-                memcpy(queue, mCmdQueue, mCmdQueueLen);
-                delete [] mCmdQueue;
-                mCmdQueue = queue;
-                mCmdQueueSize = newSize;
-            }
-            // copy this command into the queue
-            memcpy(mCmdQueue+mCmdQueueLen, cmd2, len2);
-            mCmdQueueLen += len2;
-            delete [] cmd2;     // free memory for this command
-        } else {
-            // write the command
-            n = (int)write(mTo, cmd2, len2);
-            if (n < 0) {
-                if (errno != EAGAIN) return -2; // write error!
-                n = 0;
-            }
-            if (n == len2) {
-                delete [] cmd2; // success! delete the buffered command
-            } else {
-                // don't bother allocating any new memory,
-                // just use our cmd2 string as the new queue
-                if (n) memmove(cmd2, cmd2+n, len2-n);
-                mCmdQueue = cmd2;
-                mCmdQueueLen = len2 - n;
-                mCmdQueueSize = len2;
-            }
-        }
-        mCmdNum = cmdNum;
-    } else if (!mCmdQueue) {
-        return 0;   // cmd is NULL, and queue is empty
-    }
-    return mCmdNum;
 }
 
 } // namespace Digikam

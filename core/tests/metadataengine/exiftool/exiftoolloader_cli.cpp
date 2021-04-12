@@ -68,14 +68,16 @@ int main(int argc, char** argv)
         const int section1 = -55;   // ExifTool Tag name
         const int section2 = -45;   // Exiv2 tag name
         const int section3 = -30;   // Tag value as string.
+        QString sep        = QString().fill(QLatin1Char('-'), qAbs(section1 + section2 + section3) + 6);
 
         ExifToolTranslator translator;
 
+        qDebug().noquote() << sep;
         qDebug().noquote()
-                 << QString::fromLatin1("%1").arg(QLatin1String("ExifTool::group0.group1.group2.name"), section1) << ":"
-                 << QString::fromLatin1("%1").arg(QLatin1String("Exiv2::family.group.name"),            section2) << "="
+                 << QString::fromLatin1("%1").arg(QLatin1String("ExifTool::group0.group1.group2.name"), section1) << "|"
+                 << QString::fromLatin1("%1").arg(QLatin1String("Exiv2::family.group.name"),            section2) << "|"
                  << QString::fromLatin1("%1").arg(QLatin1String("String Converted Value"),              section3);
-        qDebug().noquote() << QString().fill(QLatin1Char('-'), qAbs(section1 + section2 + section3) + 6);
+        qDebug().noquote() << sep;
 
         for (ExifToolTagInfo* it = info ; it ; it = it->next)
         {
@@ -99,13 +101,15 @@ int main(int argc, char** argv)
             QString tagNameExiv2    = translator.translateToExiv2(tagNameExifTool);
 
             qDebug().noquote()
-                 << QString::fromLatin1("%1 : %2 = %3")
+                 << QString::fromLatin1("%1 | %2 | %3")
                     .arg(tagNameExifTool, section1)
                     .arg(tagNameExiv2,    section2)
                     .arg(value,           section3)
                  ;
 
         }
+
+        qDebug().noquote() << sep;
 
         delete info;
     }
