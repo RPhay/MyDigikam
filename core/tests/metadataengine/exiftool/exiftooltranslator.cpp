@@ -48,6 +48,7 @@ ExifToolTranslator::ExifToolTranslator()
     m_mapETtoExiv2.insert(QLatin1String("EXIF.InteropIFD.Image.InteropIndex"),           QLatin1String("Exif.Iop.InteroperabilityIndex"));
     m_mapETtoExiv2.insert(QLatin1String("EXIF.InteropIFD.Image.InteropVersion"),         QLatin1String("Exif.Iop.InteroperabilityVersion"));
     // Exif Image Group
+    m_mapETtoExiv2.insert(QLatin1String("EXIF.IFD0.Image.DocumentName"),                 QLatin1String("Exif.Image.DocumentName"));
     m_mapETtoExiv2.insert(QLatin1String("EXIF.IFD0.Image.ImageWidth"),                   QLatin1String("Exif.Image.ImageWidth"));
     m_mapETtoExiv2.insert(QLatin1String("EXIF.IFD0.Image.ImageHeight"),                  QLatin1String("Exif.Image.ImageLength"));
     m_mapETtoExiv2.insert(QLatin1String("EXIF.IFD0.Image.BitsPerSample"),                QLatin1String("Exif.Image.BitsPerSample"));
@@ -67,8 +68,11 @@ ExifToolTranslator::ExifToolTranslator()
     m_mapETtoExiv2.insert(QLatin1String("EXIF.IFD0.Image.YCbCrPositioning"),             QLatin1String("Exif.Image.YCbCrPositioning"));
     m_mapETtoExiv2.insert(QLatin1String("EXIF.IFD0.Camera.Make"),                        QLatin1String("Exif.Image.Make"));
     m_mapETtoExiv2.insert(QLatin1String("EXIF.IFD0.Camera.Model"),                       QLatin1String("Exif.Image.Model"));
-    m_mapETtoExiv2.insert(QLatin1String("EXIF.IFD0.Time.ModifyDate"),                    QLatin1String(""));
+    m_mapETtoExiv2.insert(QLatin1String("EXIF.IFD0.Time.ModifyDate"),                    QLatin1String("..."));        // TODO: do not exist yet in Exiv2
+    m_mapETtoExiv2.insert(QLatin1String("EXIF.IFD0.Time.PreviewDateTime"),               QLatin1String("..."));        // TODO: do not exist yet in Exiv2
     // Exif Photo Group
+    m_mapETtoExiv2.insert(QLatin1String("EXIF.ExifIFD.Image.ImageUniqueID"),             QLatin1String("Exif.Photo.ImageUniqueID"));
+    m_mapETtoExiv2.insert(QLatin1String("EXIF.ExifIFD.Image.UserComment"),               QLatin1String("Exif.Photo.UserComment"));
     m_mapETtoExiv2.insert(QLatin1String("EXIF.ExifIFD.Image.ColorSpace"),                QLatin1String("Exif.Photo.ColorSpace"));
     m_mapETtoExiv2.insert(QLatin1String("EXIF.ExifIFD.Image.ExifImageWidth"),            QLatin1String("Exif.Photo.PixelXDimension"));
     m_mapETtoExiv2.insert(QLatin1String("EXIF.ExifIFD.Image.ExifImageHeight"),           QLatin1String("Exif.Photo.PixelYDimension"));
@@ -103,16 +107,27 @@ ExifToolTranslator::ExifToolTranslator()
     m_mapETtoExiv2.insert(QLatin1String("EXIF.ExifIFD.Time.CreateDate"),                 QLatin1String("Exif.Photo.DateTimeDigitized"));
     // Exif Thumbnail Group
     m_mapETtoExiv2.insert(QLatin1String("EXIF.IFD1.Image.Compression"),                  QLatin1String("Exif.Thumbnail.Compression"));
-    m_mapETtoExiv2.insert(QLatin1String("EXIF.IFD1.Image.ThumbnailOffset"),              QLatin1String(""));
-    m_mapETtoExiv2.insert(QLatin1String("EXIF.IFD1.Image.ThumbnailLength"),              QLatin1String("Exif.Thumbnail.JPEGInterchangeFormatLength"));
     m_mapETtoExiv2.insert(QLatin1String("EXIF.IFD1.Image.XResolution"),                  QLatin1String("Exif.Thumbnail.XResolution"));
     m_mapETtoExiv2.insert(QLatin1String("EXIF.IFD1.Image.YResolution"),                  QLatin1String("Exif.Thumbnail.YResolution"));
     m_mapETtoExiv2.insert(QLatin1String("EXIF.IFD1.Image.ResolutionUnit"),               QLatin1String("Exif.Thumbnail.ResolutionUnit"));
+    m_mapETtoExiv2.insert(QLatin1String("EXIF.IFD1.Image.ThumbnailLength"),              QLatin1String("Exif.Thumbnail.JPEGInterchangeFormatLength"));
+    m_mapETtoExiv2.insert(QLatin1String("EXIF.IFD1.Image.ThumbnailOffset"),              QLatin1String("..."));        // TODO: do not exist yet in Exiv2
+    m_mapETtoExiv2.insert(QLatin1String("EXIF.IFD1.Preview.ThumbnailImage"),             QLatin1String("..."));        // TODO: do not exist yet in Exiv2
+    // Exif GPSInfo Group
+    m_mapETtoExiv2.insert(QLatin1String("EXIF.GPS.Location.GPSVersionID"),               QLatin1String("Exif.GPSInfo.GPSVersionID"));
+    m_mapETtoExiv2.insert(QLatin1String("EXIF.GPS.Location.GPSMapDatum"),                QLatin1String("Exif.GPSInfo.GPSMapDatum"));
+    m_mapETtoExiv2.insert(QLatin1String("EXIF.GPS.Location.GPSLatitudeRef"),             QLatin1String("Exif.GPSInfo.GPSLatitudeRef"));
+    m_mapETtoExiv2.insert(QLatin1String("EXIF.GPS.Location.GPSLatitude"),                QLatin1String("Exif.GPSInfo.GPSLatitude"));
+    m_mapETtoExiv2.insert(QLatin1String("EXIF.GPS.Location.GPSLongitudeRef"),            QLatin1String("Exif.GPSInfo.GPSLongitudeRef"));
+    m_mapETtoExiv2.insert(QLatin1String("EXIF.GPS.Location.GPSLongitude"),               QLatin1String("Exif.GPSInfo.GPSLongitude"));
+    m_mapETtoExiv2.insert(QLatin1String("EXIF.GPS.Location.GPSAltitudeRef"),             QLatin1String("Exif.GPSInfo.GPSAltitudeRef"));
+    m_mapETtoExiv2.insert(QLatin1String("EXIF.GPS.Location.GPSAltitude"),                QLatin1String("Exif.GPSInfo.GPSAltitude"));
 
     // --- IPTC Table -------------------------------------------------------------------
 
     // Iptc Envelope Group
     m_mapETtoExiv2.insert(QLatin1String("IPTC.IPTC.Other.CodedCharacterSet"),            QLatin1String("Iptc.Envelope.CharacterSet"));
+    m_mapETtoExiv2.insert(QLatin1String("IPTC.IPTC.Other.EnvelopeRecordVersion"),        QLatin1String("Iptc.Envelope.ModelVersion"));
     // Iptc Application2 Group
     m_mapETtoExiv2.insert(QLatin1String("IPTC.IPTC.Other.ApplicationRecordVersion"),     QLatin1String("Iptc.Application2.RecordVersion"));
     m_mapETtoExiv2.insert(QLatin1String("IPTC.IPTC.Other.Caption-Abstract"),             QLatin1String("Iptc.Application2.Caption"));
@@ -125,7 +140,7 @@ ExifToolTranslator::ExifToolTranslator()
     // --- XMP Table --------------------------------------------------------------------
 
     // Xmp x group
-    m_mapETtoExiv2.insert(QLatin1String("XMP.XMP-x.Document.XMPToolkit"),                QLatin1String(""));
+    m_mapETtoExiv2.insert(QLatin1String("XMP.XMP-x.Document.XMPToolkit"),                QLatin1String("..."));        // TODO: do not exist yet in Exiv2
     // Xmp tiff Group
     m_mapETtoExiv2.insert(QLatin1String("XMP.XMP-tiff.Time.DateTime"),                   QLatin1String("Xmp.tiff.DateTime"));
     m_mapETtoExiv2.insert(QLatin1String("XMP.XMP-tiff.Image.Software"),                  QLatin1String("Xmp.tiff.Software"));
@@ -141,7 +156,9 @@ ExifToolTranslator::ExifToolTranslator()
     m_mapETtoExiv2.insert(QLatin1String("XMP.XMP-tiff.Image.Orientation"),               QLatin1String("Xmp.tiff.Orientation"));
     m_mapETtoExiv2.insert(QLatin1String("XMP.XMP-tiff.Image.NativeDigest"),              QLatin1String("Xmp.tiff.NativeDigest"));
     m_mapETtoExiv2.insert(QLatin1String("XMP.XMP-tiff.Image.Compression"),               QLatin1String("Xmp.tiff.Compression"));
-    // Xmp xmp Group
+    m_mapETtoExiv2.insert(QLatin1String("XMP.XMP-tiff.Camera.Make"),                     QLatin1String("Xmp.tiff.Make"));
+    m_mapETtoExiv2.insert(QLatin1String("XMP.XMP-tiff.Camera.Model"),                    QLatin1String("Xmp.tiff.Model"));
+    // Xmp xmp group
     m_mapETtoExiv2.insert(QLatin1String("XMP.XMP-xmp.Image.CreatorTool"),                QLatin1String("Xmp.xmp.CreatorTool"));
     m_mapETtoExiv2.insert(QLatin1String("XMP.XMP-xmp.Image.Rating"),                     QLatin1String("Xmp.xmp.Rating"));
     m_mapETtoExiv2.insert(QLatin1String("XMP.XMP-xmp.Time.CreateDate"),                  QLatin1String("Xmp.xmp.CreateDate"));
@@ -153,15 +170,32 @@ ExifToolTranslator::ExifToolTranslator()
     m_mapETtoExiv2.insert(QLatin1String("XMP.XMP-exif.Image.ExifImageWidth"),            QLatin1String("Xmp.exif.PixelXDimension"));
     m_mapETtoExiv2.insert(QLatin1String("XMP.XMP-exif.Image.ExifImageHeight"),           QLatin1String("Xmp.exif.PixelYDimension"));
     m_mapETtoExiv2.insert(QLatin1String("XMP.XMP-exif.Image.NativeDigest"),              QLatin1String("Xmp.exif.NativeDigest"));
+    m_mapETtoExiv2.insert(QLatin1String("XMP.XMP-exif.Location.GPSVersionID"),           QLatin1String("Xmp.exif.GPSVersionID"));
+    m_mapETtoExiv2.insert(QLatin1String("XMP.XMP-exif.Location.GPSMapDatum"),            QLatin1String("Xmp.exif.GPSMapDatum"));
+    m_mapETtoExiv2.insert(QLatin1String("XMP.XMP-exif.Location.GPSAltitudeRef"),         QLatin1String("Xmp.exif.GPSAltitudeRef"));
+    m_mapETtoExiv2.insert(QLatin1String("XMP.XMP-exif.Location.GPSAltitude"),            QLatin1String("Xmp.exif.GPSAltitude"));
+    m_mapETtoExiv2.insert(QLatin1String("XMP.XMP-exif.Location.GPSLatitude"),            QLatin1String("Xmp.exif.GPSLatitude"));
+    m_mapETtoExiv2.insert(QLatin1String("XMP.XMP-exif.Location.GPSLongitude"),           QLatin1String("Xmp.exif.GPSLongitude"));
+    m_mapETtoExiv2.insert(QLatin1String("XMP.XMP-exif.Image.GPSLatitudeRef"),            QLatin1String("Xmp.exif.GPSLatitudeRef"));
+    m_mapETtoExiv2.insert(QLatin1String("XMP.XMP-exif.Image.GPSLongitudeRef"),           QLatin1String("Xmp.exif.GPSLongitudeRef"));
+    m_mapETtoExiv2.insert(QLatin1String("XMP.XMP-exif.Image.UserComment"),               QLatin1String("Xmp.exif.UserComment"));
     // Xmp photoshop Group
     m_mapETtoExiv2.insert(QLatin1String("XMP.XMP-photoshop.Time.DateCreated"),           QLatin1String("Xmp.photoshop.DateCreated"));
     m_mapETtoExiv2.insert(QLatin1String("XMP.XMP-photoshop.Image.Urgency"),              QLatin1String("Xmp.photoshop.Urgency"));
     m_mapETtoExiv2.insert(QLatin1String("XMP.XMP-photoshop.Image.ColorMode"),            QLatin1String("Xmp.photoshop.ColorMode"));
     m_mapETtoExiv2.insert(QLatin1String("XMP.XMP-photoshop.Image.History"),              QLatin1String("Xmp.photoshop.History"));
     // Xmp digiKam group
+    m_mapETtoExiv2.insert(QLatin1String("XMP.XMP-digiKam.Image.PickLabel"),              QLatin1String("Xmp.digiKam.PickLabel"));
+    m_mapETtoExiv2.insert(QLatin1String("XMP.XMP-digiKam.Image.ColorLabel"),             QLatin1String("Xmp.digiKam.ColorLabel"));
+    m_mapETtoExiv2.insert(QLatin1String("XMP.XMP-digiKam.Image.TagsList"),               QLatin1String("Xmp.digiKam.TagsList"));
+    m_mapETtoExiv2.insert(QLatin1String("XMP.XMP-digiKam.Image.ImageUniqueID"),          QLatin1String("Xmp.digiKam.ImageUniqueID"));
+    m_mapETtoExiv2.insert(QLatin1String("XMP.XMP-digiKam.Image.ImageHistory"),           QLatin1String("Xmp.digiKam.ImageHistory"));
+    m_mapETtoExiv2.insert(QLatin1String("XMP.XMP-digiKam.Image.CaptionsAuthorNames"),    QLatin1String("Xmp.digiKam.CaptionsAuthorNames"));
+    m_mapETtoExiv2.insert(QLatin1String("XMP.XMP-digiKam.Time.CaptionsDateTimeStamps"),  QLatin1String("Xmp.digiKam.CaptionsDateTimeStamps"));
     m_mapETtoExiv2.insert(QLatin1String("XMP.XMP-tmp0.Unknown.PickLabel"),               QLatin1String("Xmp.digiKam.PickLabel"));
     m_mapETtoExiv2.insert(QLatin1String("XMP.XMP-tmp0.Unknown.ColorLabel"),              QLatin1String("Xmp.digiKam.ColorLabel"));
     m_mapETtoExiv2.insert(QLatin1String("XMP.XMP-tmp0.Unknown.TagsList"),                QLatin1String("Xmp.digiKam.TagsList"));
+    m_mapETtoExiv2.insert(QLatin1String("XMP.XMP-kipi.Unknown.PanoramaInputFiles"),      QLatin1String("Xmp.digiKam.PanoramaInputFiles"));
     // Xmp microsoft Group
     m_mapETtoExiv2.insert(QLatin1String("XMP.XMP-microsoft.Image.RatingPercent"),        QLatin1String("Xmp.MicrosoftPhoto.Rating"));
     m_mapETtoExiv2.insert(QLatin1String("XMP.XMP-microsoft.Image.LastKeywordXMP"),       QLatin1String("Xmp.MicrosoftPhoto.LastKeywordXMP"));
