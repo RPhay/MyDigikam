@@ -1201,122 +1201,207 @@ ExifToolTagInfo* ExifTool::GetInfo(int cmdNum, double timeout)
  * - must call Complete() after this to check the return messages
  * - ignores "SourceFile" entries in input ExifToolTagInfo list
  */
-int ExifTool::WriteInfo(const char *file, const char *opts, ExifToolTagInfo *info)
+int ExifTool::WriteInfo(const char* file, const char* opts, ExifToolTagInfo* info)
 {
-    if (!file) return -5;
+    if (!file)
+    {
+        return -5;
+    }
 
     const int kBlockSize = 65536;
-    char *buff = new char[kBlockSize];
-    if (!buff) return -3;
+    char* buff           = new char[kBlockSize];
+
+    if (!buff)
+    {
+        return -3;
+    }
+
     // get length of all options (plus 12 extra characters for "-ex\n-sep\n, \n")
-    int olen = (int)((opts ? strlen(opts)+1 : 0) + 12);
-    int size = kBlockSize;
+
+    int olen             = (int)((opts ? strlen(opts) + 1 : 0) + 12);
+    int size             = kBlockSize;
     strcpy(buff, file);
-    int pos = (int)strlen(file);
-    buff[pos++] = '\n';
-    int escaped = 0;
+    int pos              = (int)strlen(file);
+    buff[pos++]          = '\n';
+    int escaped          = 0;
 
     // use internal new value list if not specified
-    if (!info) info = mWriteInfo;
+
+    if (!info)
+    {
+        info = mWriteInfo;
+    }
 
     // prepare assignment arguments for exiftool, looping through all tags to write
-    while (info) {
-        if (!info->name || strlen(info->name) > 100 || !strcmp(info->name, "SourceFile")) {
+
+    while (info)
+    {
+        if (!info->name || (strlen(info->name) > 100) || !strcmp(info->name, "SourceFile"))
+        {
             info = info->next;
             continue;
         }
+
         // construct the tag name
+
         char tag[1024];
         tag[0] = '\0';
-        for (int i=0; i<3; ++i) {
-            if (info->group[i] && strlen(info->group[i]) < 100) {
-                char *pt = strchr(tag, '\0');
-                *(pt++) = '0' + i;          // leading family number
-                strcpy(pt, info->group[i]); // group name
-                strcat(tag,":");            // colon separator
+
+        for (int i = 0 ; i < 3 ; ++i)
+        {
+            if (info->group[i] && (strlen(info->group[i]) < 100))
+            {
+                char* pt = strchr(tag, '\0');
+                *(pt++)  = '0' + i;          // leading family number
+                strcpy(pt, info->group[i]);  // group name
+                strcat(tag, ":");            // colon separator
             }
         }
+
         strcat(tag, info->name);
+
         // which value are we writing (converted or numerical?)
-        char *val = info->value;
+
+        char* val  = info->value;
         int valLen = info->valueLen;
-        if (!val) {
-            val = info->num;
+
+        if (!val)
+        {
+            val    = info->num;
             valLen = info->numLen;
-            if (val) strcat(tag, "#");  // write numerical value
-        }
-        int tagLen = (int)strlen(tag);
-        int origLen = valLen;
-        // count the number of characters in the value that need escaping
-        if (val) {
-            char *pt = val;
-            char *end = pt + origLen;
-            int count = 0;
-            while (pt < end) {
-                char ch = *(pt++);
-                if (ch==10 || ch=='&' || ch=='\0') ++count;
+
+            if (val)
+            {
+                strcat(tag, "#");  // write numerical value
             }
+        }
+
+        int tagLen  = (int)strlen(tag);
+        int origLen = valLen;
+
+        // count the number of characters in the value that need escaping
+
+        if (val)
+        {
+            char* pt  = val;
+            char* end = pt + origLen;
+            int count = 0;
+
+            while (pt < end)
+            {
+                char ch = *(pt++);
+
+                if ((ch == 10) || (ch == '&') || (ch == '\0'))
+                {
+                    ++count;
+                }
+            }
+
             valLen += count * 4;   // 4 extra bytes for each escaped character
         }
+
         // prepare exiftool argument (format is: "-TAG=VALUE\n")
+
         int n = tagLen + valLen + 3;
+
         // expand buffer if necessary
-        if (pos + n + olen > size) {
-            size += n + kBlockSize;
-            char *buf2 = new char[size];
-            if (!buf2) { delete [] buff; return -3; }
+
+        if (pos + n + olen > size)
+        {
+            size      += n + kBlockSize;
+            char* buf2 = new char[size];
+
+            if (!buf2)
+            {
+                delete [] buff;
+                return -3;
+            }
+
             memcpy(buf2, buff, pos);
             delete [] buff;
-            buff = buf2;
+            buff       = buf2;
         }
+
         buff[pos++] = '-';
-        memcpy(buff+pos, tag, tagLen);
-        pos += tagLen;
+        memcpy(buff + pos, tag, tagLen);
+        pos        += tagLen;
         buff[pos++] = '=';
-        if (valLen == origLen) {
-            if (val) {
-                memcpy(buff+pos, val, valLen);
+
+        if (valLen == origLen)
+        {
+            if (val)
+            {
+                memcpy(buff + pos, val, valLen);
                 pos += valLen;
             }
-        } else {
+        }
+        else
+        {
             // escape newlines and '&' characters in the value
-            char *pt = val;
-            char *end = pt + origLen;
-            char *dst = buff + pos;
-            while (pt < end) {
+
+            char* pt  = val;
+            char* end = pt   + origLen;
+            char* dst = buff + pos;
+
+            while (pt < end)
+            {
                 char ch = *(pt++);
-                if (ch == 10) {
+
+                if      (ch == 10)
+                {
                     memcpy(dst, "&#10;", 5);
                     dst += 5;
-                } else if (ch == 0) {
+                }
+                else if (ch == 0)
+                {
                     memcpy(dst, "&#00;", 5);
                     dst += 5;
-                } else if (ch == '&') {
+                }
+                else if (ch == '&')
+                {
                     memcpy(dst, "&amp;", 5);
                     dst += 5;
-                } else {
+                }
+                else
+                {
                     *(dst++) = ch;
                 }
             }
-            pos = (int)(dst - buff);
+
+            pos     = (int)(dst - buff);
             escaped = 1;
         }
+
         buff[pos++] = '\n';
-        info = info->next;
+        info        = info->next;
     }
+
     // get exiftool to unescape our newlines if necessary
-    if (escaped) { strcpy(buff+pos, "-ex\n");  pos += 4; }
-    // split concatenated lists back into individual items
-    strcpy(buff+pos, "-sep\n, \n");  pos += 8;
-    // add user-defined options last
-    if (opts) {
-        strcpy(buff+pos, opts);
-        pos += strlen(opts);
-        buff[pos++] = '\n'; // (just in case)
-        buff[pos] = '\0';
+
+    if (escaped)
+    {
+        strcpy(buff + pos, "-ex\n");
+        pos += 4;
     }
+
+    // split concatenated lists back into individual items
+
+    strcpy(buff + pos, "-sep\n, \n");
+    pos += 8;
+
+    // add user-defined options last
+
+    if (opts)
+    {
+        strcpy(buff + pos, opts);
+        pos        += strlen(opts);
+        buff[pos++] = '\n'; // (just in case)
+        buff[pos]   = '\0';
+    }
+
     int cmdNum = Command(buff);
     delete [] buff;
+
     return cmdNum;
 }
 

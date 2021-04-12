@@ -34,8 +34,13 @@ ExifToolTranslator::ExifToolTranslator()
     m_mapETtoExiv2.insert(QLatin1String("EXIF.InteropIFD.Image.InteropIndex"),           QLatin1String("Exif.Iop.InteroperabilityIndex"));
     m_mapETtoExiv2.insert(QLatin1String("EXIF.InteropIFD.Image.InteropVersion"),         QLatin1String("Exif.Iop.InteroperabilityVersion"));
     // Exif Image Group
-    m_mapETtoExiv2.insert(QLatin1String("EXIF.IFD0.Camera.Make"),                        QLatin1String("Exif.Image.Make"));
-    m_mapETtoExiv2.insert(QLatin1String("EXIF.IFD0.Camera.Model"),                       QLatin1String("Exif.Image.Model"));
+    m_mapETtoExiv2.insert(QLatin1String("EXIF.IFD0.Image.ImageWidth"),                   QLatin1String("Exif.Image.ImageWidth"));
+    m_mapETtoExiv2.insert(QLatin1String("EXIF.IFD0.Image.ImageHeight"),                  QLatin1String("Exif.Image.ImageLength"));
+    m_mapETtoExiv2.insert(QLatin1String("EXIF.IFD0.Image.BitsPerSample"),                QLatin1String("Exif.Image.BitsPerSample"));
+    m_mapETtoExiv2.insert(QLatin1String("EXIF.IFD0.Image.Compression"),                  QLatin1String("Exif.Image.Compression"));
+    m_mapETtoExiv2.insert(QLatin1String("EXIF.IFD0.Image.PhotometricInterpretation"),    QLatin1String("Exif.Image.PhotometricInterpretation"));
+    m_mapETtoExiv2.insert(QLatin1String("EXIF.IFD0.Image.SamplesPerPixel"),              QLatin1String("Exif.Image.SamplesPerPixel"));
+    m_mapETtoExiv2.insert(QLatin1String("EXIF.IFD0.Image.PlanarConfiguration"),          QLatin1String("Exif.Image.PlanarConfiguration"));
     m_mapETtoExiv2.insert(QLatin1String("EXIF.IFD0.Image.ProcessingSoftware"),           QLatin1String("Exif.Image.ProcessingSoftware"));
     m_mapETtoExiv2.insert(QLatin1String("EXIF.IFD0.Image.Rating"),                       QLatin1String("Exif.Image.Rating"));
     m_mapETtoExiv2.insert(QLatin1String("EXIF.IFD0.Image.RatingPercent"),                QLatin1String("Exif.Image.RatingPercent"));
@@ -46,6 +51,8 @@ ExifToolTranslator::ExifToolTranslator()
     m_mapETtoExiv2.insert(QLatin1String("EXIF.IFD0.Image.ResolutionUnit"),               QLatin1String("Exif.Image.ResolutionUnit"));
     m_mapETtoExiv2.insert(QLatin1String("EXIF.IFD0.Image.Software"),                     QLatin1String("Exif.Image.Software"));
     m_mapETtoExiv2.insert(QLatin1String("EXIF.IFD0.Image.YCbCrPositioning"),             QLatin1String("Exif.Image.YCbCrPositioning"));
+    m_mapETtoExiv2.insert(QLatin1String("EXIF.IFD0.Camera.Make"),                        QLatin1String("Exif.Image.Make"));
+    m_mapETtoExiv2.insert(QLatin1String("EXIF.IFD0.Camera.Model"),                       QLatin1String("Exif.Image.Model"));
     m_mapETtoExiv2.insert(QLatin1String("EXIF.IFD0.Time.ModifyDate"),                    QLatin1String(""));
     // Exif Photo Group
     m_mapETtoExiv2.insert(QLatin1String("EXIF.ExifIFD.Image.ColorSpace"),                QLatin1String("Exif.Photo.ColorSpace"));
