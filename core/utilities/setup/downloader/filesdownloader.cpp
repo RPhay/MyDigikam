@@ -278,9 +278,9 @@ void FilesDownloader::nextDownload()
 
 void FilesDownloader::createRequest(const QUrl& url)
 {
-    d->nameLabel->setText(d->currentInfo.name);
     d->progress->setMaximum(d->currentInfo.size);
     d->progress->setValue(0);
+    printDownloadInfo(url);
 
     d->redirects++;
     d->reply = d->netMngr->get(QNetworkRequest(url));
@@ -290,6 +290,16 @@ void FilesDownloader::createRequest(const QUrl& url)
 
     connect(d->reply, SIGNAL(sslErrors(QList<QSslError>)),
             d->reply, SLOT(ignoreSslErrors()));
+}
+
+void FilesDownloader::printDownloadInfo(const QUrl& url)
+{
+    QString text = QString::fromUtf8("%1 (%2//%3)")
+                   .arg(d->currentInfo.name)
+                   .arg(url.scheme())
+                   .arg(url.host());
+
+    d->nameLabel->setText(text);
 }
 
 bool FilesDownloader::downloadExists(const DownloadInfo& info) const
