@@ -136,4 +136,6 @@ BUGFIXES:
 122 ==> 202709 - Sharing images among computers and update of local databases.
 123 ==> 435578 - Merge tags dialog missing "Merge all" option.
 124 ==> 435317 - GPS image direction incorrectly formatted.
-125 ==> 
+125 ==> 435527 - Lightroom Face tags don't display properly.
+126 ==> 435455 - Migration cannot drop or create FaceMatrices table [patch].
+127 ==> 
