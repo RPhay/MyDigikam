@@ -864,7 +864,7 @@ int ExifTool::Command(const char* cmd)
 /**
  * Read exiftool output and convert to list of ExifToolTagInfo structures
  * Inputs:  cmdNum - command number (0 to process next output in series,
- *                      or -1 to process previously completed command)
+ *                   or -1 to process previously completed command)
  *          timeout - maximum wait time (floating point seconds)
  * Returns: linked list of tag information structures for extracted information
  * - waits up to timeout time for exiftool command to complete
@@ -885,9 +885,15 @@ ExifToolTagInfo* ExifTool::GetInfo(int cmdNum, double timeout)
         {
             int n = Complete(timeout);
 
-            if (n <= 0) return info;
+            if (n <= 0)
+            {
+                return info;
+            }
 
-            if (n == cmdNum || !cmdNum) break;
+            if ((n == cmdNum) || !cmdNum)
+            {
+                break;
+            }
         }
     }
     else if (mLastComplete <= 0)
@@ -899,24 +905,31 @@ ExifToolTagInfo* ExifTool::GetInfo(int cmdNum, double timeout)
 
     char* pt = mStdout.GetString();
 
-    if (!pt) return info;
+    if (!pt)
+    {
+        return info;
+    }
 
     int mode = 0;   // 0=looking for tag name, 1=tag properties
 
     for ( ; ; )
     {
         // find the end of this line
+
         char* p0 = pt;
         pt       = strchr(pt, '\n');
 
-        if (!pt) break;
+        if (!pt)
+        {
+            break;
+        }
 
         *pt      = '\0'; // null terminate this line
-        ++pt;       // continue at next line
+        ++pt;            // continue at next line
 
         // scan for opening quote
 
-        p0 = strchr(p0, '"');
+        p0       = strchr(p0, '"');
 
         if (!p0)
         {
@@ -931,7 +944,10 @@ ExifToolTagInfo* ExifTool::GetInfo(int cmdNum, double timeout)
                 {
                     info->value = new char[1];
 
-                    if (!info->value) break;
+                    if (!info->value)
+                    {
+                        break;
+                    }
 
                     info->value[0] = '\0';
                 }
@@ -943,7 +959,8 @@ ExifToolTagInfo* ExifTool::GetInfo(int cmdNum, double timeout)
                 }
             }
 
-            mode = 0;               // look for next tag name
+            mode = 0;         // look for next tag name
+
             continue;
         }
 
@@ -953,13 +970,19 @@ ExifToolTagInfo* ExifTool::GetInfo(int cmdNum, double timeout)
         {
             // looking for new tag
 
-            if (next) delete next;  // delete old unused structure if necessary
+            if (next)
+            {
+                delete next;  // delete old unused structure if necessary
+            }
 
             // create new ExifToolTagInfo structure for this tag
 
             next = new ExifToolTagInfo;
 
-            if (!next) break;
+            if (!next)
+            {
+                break;
+            }
 
             // extract tag/group names
 
@@ -974,7 +997,10 @@ ExifToolTagInfo* ExifTool::GetInfo(int cmdNum, double timeout)
                     int n           = (int)(p1 - p0);
                     char* const str = new char[n + 1];
 
-                    if (!str) break;
+                    if (!str)
+                    {
+                        break;
+                    }
 
                     memcpy(str, p0, n);
                     str[n] = '\0';
@@ -991,8 +1017,9 @@ ExifToolTagInfo* ExifTool::GetInfo(int cmdNum, double timeout)
 
                         if (!memcmp(str, "Copy", 4))
                         {
-                            next->copyNum = atoi(str+4);
-                            delete [] str; // done with this string
+                            next->copyNum = atoi(str + 4);
+
+                            delete [] str;      // done with this string
                         }
                     }
                     else
@@ -1007,27 +1034,45 @@ ExifToolTagInfo* ExifTool::GetInfo(int cmdNum, double timeout)
                 ++p1;
             }
 
-            if (!next->name) continue;
+            if (!next->name)
+            {
+                continue;
+            }
 
-            // file name given by line like:  "SourceFile" => "images/a.jpg",
+            // file name given by line like: "SourceFile" => "images/a.jpg".
 
             if (!strcmp(next->name, "SourceFile"))
             {
                 char* p2 = pt - 2;
 
-                if (*p2 == '\r') --p2; // skip Windows CR
+                if (*p2 == '\r')
+                {
+                    --p2; // skip Windows CR
+                }
 
-                if (*p2 == ',') --p2;
+                if (*p2 == ',')
+                {
+                    --p2;
+                }
 
-                if (*p2 != '"') continue;
+                if (*p2 != '"')
+                {
+                    continue;
+                }
 
                 int n = (int)(p2 - p1 - 6);
 
-                if (n < 0) continue;
+                if (n < 0)
+                {
+                    continue;
+                }
 
                 char* const str = new char[n+1];
 
-                if (!str) break;
+                if (!str)
+                {
+                    break;
+                }
 
                 memcpy(str, p1 + 6, n);
                 str[n]         = '\0';
@@ -1059,24 +1104,45 @@ ExifToolTagInfo* ExifTool::GetInfo(int cmdNum, double timeout)
 
             p1 = strchr(p0, '"');
 
-            if (!p1) break;             // (shouldn't happen)
+            if (!p1)
+            {
+                break;      // (shouldn't happen)
+            }
 
-            *p1 = '\0';                 // null terminate property name
-            p1 += 5;                    // step to start of value
+            *p1 = '\0';     // null terminate property name
+            p1 += 5;        // step to start of value
 
-            if (p1 >= pt) break;        // (shouldn't happen);
+            if (p1 >= pt)
+            {
+                break;      // (shouldn't happen);
+            }
 
-            if (*p1 == '"') ++p1;       // skip quote if it exists
+            if (*p1 == '"')
+            {
+                ++p1;       // skip quote if it exists
+            }
 
             char* p2 = pt - 1;
 
-            if (p2[-1] == '\r') --p2;   // skip Windows CR
+            if (p2[-1] == '\r')
+            {
+                --p2;       // skip Windows CR
+            }
 
-            if (p2[-1] == ',') --p2;    // skip trailing comma
+            if (p2[-1] == ',')
+            {
+                --p2;       // skip trailing comma
+            }
 
-            if (p2[-1] == '"') --p2;    // skip trailing quote
+            if (p2[-1] == '"')
+            {
+                --p2;       // skip trailing quote
+            }
 
-            if (p2 < p1) break;         // (shouldn't happen)
+            if (p2 < p1)
+            {
+                break;      // (shouldn't happen)
+            }
 
             *p2   = '\0';               // null terminate property value
             int n = unescape(p1);       // unescape characters in property value
@@ -1107,13 +1173,19 @@ ExifToolTagInfo* ExifTool::GetInfo(int cmdNum, double timeout)
 
             *dst = new char[n];
 
-            if (!*dst) break;
+            if (!*dst)
+            {
+                break;
+            }
 
             memcpy(*dst, p1, n);    // copy property value
         }
     }
 
-    if (next) delete next;
+    if (next)
+    {
+        delete next;
+    }
 
     return infoList;
 }
