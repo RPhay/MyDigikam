@@ -313,7 +313,7 @@ void FilesDownloader::createRequest(const QUrl& url)
 
 void FilesDownloader::printDownloadInfo(const QUrl& url)
 {
-    QString text = QString::fromUtf8("%1 (%2//%3)")
+    QString text = QString::fromUtf8("%1 (%2://%3)")
                    .arg(d->currentInfo.name)
                    .arg(url.scheme())
                    .arg(url.host());
