@@ -49,7 +49,13 @@ private:
      * Key   = ExifTool tag name properties "group0.group1.group2.name"
      * value = Exiv2 tag name properties "family.group.name"
      */
-    QHash<QString, QString> m_map;
+    QHash<QString, QString> m_mapETtoExiv2;
+
+    /**
+     * Same than previous map but in inverse order.
+     */
+    QHash<QString, QString> m_mapExiv2toET;
+
 };
 
 } // namespace Digikam

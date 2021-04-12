@@ -63,7 +63,7 @@ static void sigPipeAction(int /*sig*/)
  * Unescape C-style escape sequences in a null-terminated string
  * (as found in values of exiftool -php output)
  * Returns: number of bytes in unescaped data (including null terminator)
- * - on return string contains binary data which may have embedded zero bytes
+ * on return string contains binary data which may have embedded zero bytes
  */
 static int unescape(char* str)
 {
@@ -91,7 +91,7 @@ static int unescape(char* str)
             switch (ch)
             {
                 case 'x':
-
+                {
                     // decode 2-digit hex character
 
                     ch = 0;
@@ -122,26 +122,39 @@ static int unescape(char* str)
                     }
 
                     break;
+                }
 
                 case 't':
+                {
                     ch = '\t';
                     break;
+                }
 
                 case 'n':
+                {
                     ch = '\n';
                     break;
+                }
 
                 case 'r':
+                {
                     ch = '\r';
                     break;
+                }
 
                 case '\0':  // (shouldn't happen, but just to be safe)
+                {
                     *(dst++) = ch;
+
                     return((int)(dst - str));
+                }
 
                 default:
+                {
                     // pass any other character straight through
+
                     break;
+                }
             }
 
             *(dst++) = ch;
@@ -249,7 +262,7 @@ ExifTool::ExifTool(const char* exec, const char* arg1)
         close(to[0]);
         close(from[1]);
         close(err[1]);
-        execvp(args[firstArg], (char * const *)args + firstArg);
+        execvp(args[firstArg], (char* const*)args + firstArg);
 
         // (if execvp succeeds, it will never return)
 
@@ -422,6 +435,277 @@ int ExifTool::ExtractInfo(const char *file, const char *opts)
     return cmdNum;
 }
 
+/**
+ * Wait for a command to complete (up to specified timeout)
+ * Inputs:  timeout - maximum wait time (floating point seconds)
+ * Returns: command number on success, 0 on timeout, or <0 on error
+ */
+int ExifTool::Complete(double timeout)
+{
+    if (mCmdQueue)
+    {
+        Command();       // try to send queued commands (if any)
+    }
+
+    double doneTime = getTime() + timeout;
+    int cmdNum;
+
+    for ( ; ; )
+    {
+        cmdNum = mStdout.Read();
+
+        if (cmdNum)
+        {
+            break;
+        }
+
+        if (getTime() >= doneTime)
+        {
+            break;
+        }
+
+        if (mCmdQueue)
+        {
+            cmdNum = Command();  // keep sending queued commands
+        }
+
+        if (cmdNum <= 0)
+        {
+            usleep(mWaitTime);   // chill and have a beer
+        }
+    }
+
+    if (cmdNum > 0)
+    {
+        // get errors from the same command (we know they must be coming,
+        // so loop as quickly as possible to read them, but impose a
+        // 1-second timeout just in case)
+
+        doneTime = getTime() + 1;
+
+        for ( ; ; )
+        {
+            int n = mStderr.Read();
+
+            if (n == cmdNum)
+            {
+                break;
+            }
+
+            if (n < 0)
+            {
+                cmdNum = n;
+                break;
+            }
+
+            if (getTime() >= doneTime)
+            {
+                cmdNum = -4;
+                break;
+            }
+        }
+    }
+
+    return mLastComplete = cmdNum;
+}
+
+/**
+ * Get specified summary message
+ * Inputs: msg - message string in summary output
+ * Returns: corresponding number from summary statistics, or -1 if the
+ *          specified message wasn't found
+ */
+int ExifTool::GetSummary(const char* msg)
+{
+    for (int out = 0 ; out < 2 ; ++out)
+    {
+        // check stderr first because it isn't likely to be too long
+        char* const str = out ? GetOutput() : GetError();
+
+        if (!str)
+        {
+            continue;
+        }
+
+        char* pt = strstr(str, msg);
+
+        if (!pt || (pt - str < 2) || (pt[-1] != ' ') || !isdigit(pt[-2]))
+        {
+            continue;
+        }
+
+        char ch = pt[strlen(msg)];
+
+        if ((ch != '\n') && (ch != '\r'))
+        {
+            continue; // message must end with a newline
+        }
+
+        pt -= 2;
+
+        while ((pt > str) && isdigit(pt[-1]))
+        {
+            --pt;
+        }
+
+        return atoi(pt);
+    }
+
+    return -1;  // message not found
+}
+
+/**
+ * Check to see if exiftool process is still running
+ */
+int ExifTool::IsRunning()
+{
+    int status;
+
+    if (mPid == -1)
+    {
+        return 0;
+    }
+
+    if (waitpid(mPid, &status, WNOHANG))
+    {
+        // no more child process
+
+        mPid = -1;
+        return 0;
+    }
+
+    return 1;   // yes!
+}
+
+int ExifTool::LastComplete()
+{
+    return mLastComplete;
+}
+
+int ExifTool::LastCommand()
+{
+    return mCmdNum;
+}
+
+void ExifTool::SetLastComplete(int lastComplete)
+{
+    mLastComplete = lastComplete;
+}
+
+void ExifTool::SetWaitTime(int waitTime)
+{
+    mWaitTime = waitTime;
+}
+
+char* ExifTool::GetOutput()
+{
+    return (mLastComplete > 0) ? mStdout.GetString() : NULL;
+}
+
+int ExifTool::GetOutputLen()
+{
+    return (mLastComplete > 0) ? mStdout.GetStringLen() : 0;
+}
+
+char* ExifTool::GetError()
+{
+    return (mLastComplete > 0) ? mStderr.GetString() : NULL;
+}
+
+int ExifTool::GetErrorLen()
+{
+    return (mLastComplete > 0) ? mStderr.GetStringLen() : 0;
+}
+
+/**
+ * Set the new value for a tag
+ * Inputs:  tag = tag name (may contain leading group names and trailing '#')
+ *          value = tag value data
+ *          len = length of value in bytes (defaults to strlen(value))
+ * Returns: number of tags set, or <0 on memory error
+ * - must call WriteInfo() at some point after this to actually write the new values
+ * - call with tag=NULL to reset previous new values
+ * - call with value=NULL to delete tag
+ */
+int ExifTool::SetNewValue(const char* tag, const char* value, int len)
+{
+    int numSet = 0;
+
+    if (tag)
+    {
+        ExifToolTagInfo* const info = new ExifToolTagInfo;
+
+        if (!info)
+        {
+            return -3;
+        }
+
+        info->name = new char[strlen(tag) + 1];
+
+        if (!info->name)
+        {
+            delete info;
+            return -3;
+        }
+
+        strcpy(info->name, tag);
+
+        if (value)
+        {
+            if (len < 0)
+            {
+                // cppcheck-suppress knownConditionTrueFalse
+                if (value)
+                {
+                    len = (int)strlen(value);
+                }
+                else
+                {
+                    len = 0;
+                }
+            }
+
+            if (len)
+            {
+                info->value = new char[len+1];
+
+                if (!info->value)
+                {
+                    delete info;
+                    return -3;
+                }
+
+                memcpy(info->value, value, len);
+
+                // add null terminator (but note that we don't use it)
+
+                info->value[len] = '\0';
+                info->valueLen = len;
+            }
+        }
+
+        // place at the end of the linked list
+
+        ExifToolTagInfo** pt = &mWriteInfo;
+
+        while (*pt)
+        {
+            ++numSet;
+            pt = &((*pt)->next);
+        }
+
+        *pt = info;
+        ++numSet;
+    }
+    else
+    {
+        delete mWriteInfo;
+        mWriteInfo = NULL;
+    }
+
+    return numSet;
+}
+
 //------------------------------------------------------------------------------
 // Read exiftool output and convert to list of ExifToolTagInfo structures
 // Inputs:  cmdNum - command number (0 to process next output in series,
@@ -577,95 +861,6 @@ ExifToolTagInfo *ExifTool::GetInfo(int cmdNum, double timeout)
     }
     if (next) delete next;
     return infoList;
-}
-
-/**
- * Set the new value for a tag
- * Inputs:  tag = tag name (may contain leading group names and trailing '#')
- *          value = tag value data
- *          len = length of value in bytes (defaults to strlen(value))
- * Returns: number of tags set, or <0 on memory error
- * - must call WriteInfo() at some point after this to actually write the new values
- * - call with tag=NULL to reset previous new values
- * - call with value=NULL to delete tag
- */
-int ExifTool::SetNewValue(const char* tag, const char* value, int len)
-{
-    int numSet = 0;
-
-    if (tag)
-    {
-        ExifToolTagInfo* const info = new ExifToolTagInfo;
-
-        if (!info)
-        {
-            return -3;
-        }
-
-        info->name = new char[strlen(tag) + 1];
-
-        if (!info->name)
-        {
-            delete info;
-            return -3;
-        }
-
-        strcpy(info->name, tag);
-
-        if (value)
-        {
-            if (len < 0)
-            {
-                // cppcheck-suppress knownConditionTrueFalse
-                if (value)
-                {
-                    len = (int)strlen(value);
-                }
-                else
-                {
-                    len = 0;
-                }
-            }
-
-            if (len)
-            {
-                info->value = new char[len+1];
-
-                if (!info->value)
-                {
-                    delete info;
-                    return -3;
-                }
-
-                memcpy(info->value, value, len);
-
-                // add null terminator (but note that we don't use it)
-
-                info->value[len] = '\0';
-                info->valueLen = len;
-            }
-        }
-
-        // place at the end of the linked list
-
-        ExifToolTagInfo** pt = &mWriteInfo;
-
-        while (*pt)
-        {
-            ++numSet;
-            pt = &((*pt)->next);
-        }
-
-        *pt = info;
-        ++numSet;
-    }
-    else
-    {
-        delete mWriteInfo;
-        mWriteInfo = NULL;
-    }
-
-    return numSet;
 }
 
 //------------------------------------------------------------------------------
@@ -882,188 +1077,6 @@ int ExifTool::Command(const char *cmd)
         return 0;   // cmd is NULL, and queue is empty
     }
     return mCmdNum;
-}
-
-/**
- * Wait for a command to complete (up to specified timeout)
- * Inputs:  timeout - maximum wait time (floating point seconds)
- * Returns: command number on success, 0 on timeout, or <0 on error
- */
-int ExifTool::Complete(double timeout)
-{
-    if (mCmdQueue)
-    {
-        Command();       // try to send queued commands (if any)
-    }
-
-    double doneTime = getTime() + timeout;
-    int cmdNum;
-
-    for ( ; ; )
-    {
-        cmdNum = mStdout.Read();
-
-        if (cmdNum)
-        {
-            break;
-        }
-
-        if (getTime() >= doneTime)
-        {
-            break;
-        }
-
-        if (mCmdQueue)
-        {
-            cmdNum = Command();  // keep sending queued commands
-        }
-
-        if (cmdNum <= 0)
-        {
-            usleep(mWaitTime);   // chill and have a beer
-        }
-    }
-
-    if (cmdNum > 0)
-    {
-        // get errors from the same command (we know they must be coming,
-        // so loop as quickly as possible to read them, but impose a
-        // 1-second timeout just in case)
-
-        doneTime = getTime() + 1;
-
-        for ( ; ; )
-        {
-            int n = mStderr.Read();
-
-            if (n == cmdNum)
-            {
-                break;
-            }
-
-            if (n < 0)
-            {
-                cmdNum = n;
-                break;
-            }
-
-            if (getTime() >= doneTime)
-            {
-                cmdNum = -4;
-                break;
-            }
-        }
-    }
-
-    return mLastComplete = cmdNum;
-}
-
-/**
- * Get specified summary message
- * Inputs: msg - message string in summary output
- * Returns: corresponding number from summary statistics, or -1 if the
- *          specified message wasn't found
- */
-int ExifTool::GetSummary(const char* msg)
-{
-    for (int out = 0 ; out < 2 ; ++out)
-    {
-        // check stderr first because it isn't likely to be too long
-        char* const str = out ? GetOutput() : GetError();
-
-        if (!str)
-        {
-            continue;
-        }
-
-        char* pt = strstr(str, msg);
-
-        if (!pt || (pt - str < 2) || (pt[-1] != ' ') || !isdigit(pt[-2]))
-        {
-            continue;
-        }
-
-        char ch = pt[strlen(msg)];
-
-        if ((ch != '\n') && (ch != '\r'))
-        {
-            continue; // message must end with a newline
-        }
-
-        pt -= 2;
-
-        while ((pt > str) && isdigit(pt[-1]))
-        {
-            --pt;
-        }
-
-        return atoi(pt);
-    }
-
-    return -1;  // message not found
-}
-
-/**
- * Check to see if exiftool process is still running
- */
-int ExifTool::IsRunning()
-{
-    int status;
-
-    if (mPid == -1)
-    {
-        return 0;
-    }
-
-    if (waitpid(mPid, &status, WNOHANG))
-    {
-        // no more child process
-
-        mPid = -1;
-        return 0;
-    }
-
-    return 1;   // yes!
-}
-
-int ExifTool::LastComplete()
-{
-    return mLastComplete;
-}
-
-int ExifTool::LastCommand()
-{
-    return mCmdNum;
-}
-
-void ExifTool::SetLastComplete(int lastComplete)
-{
-    mLastComplete = lastComplete;
-}
-
-void ExifTool::SetWaitTime(int waitTime)
-{
-    mWaitTime = waitTime;
-}
-
-char* ExifTool::GetOutput()
-{
-    return (mLastComplete > 0) ? mStdout.GetString() : NULL;
-}
-
-int ExifTool::GetOutputLen()
-{
-    return (mLastComplete > 0) ? mStdout.GetStringLen() : 0;
-}
-
-char* ExifTool::GetError()
-{
-    return (mLastComplete > 0) ? mStderr.GetString() : NULL;
-}
-
-int ExifTool::GetErrorLen()
-{
-    return (mLastComplete > 0) ? mStderr.GetStringLen() : 0;
 }
 
 } // namespace Digikam
