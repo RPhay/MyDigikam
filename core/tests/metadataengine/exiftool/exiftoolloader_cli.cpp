@@ -83,12 +83,20 @@ int main(int argc, char** argv)
 
         for (ExifToolTagInfo* it = info ; it ; it = it->next)
         {
-            QString id      = QString::fromLatin1(it->id).simplified();                       // Tag ID (what is that?)
-            QString desc    = QString::fromLatin1(it->desc).simplified();                     // Description
             QString grp0    = QString::fromLatin1(it->group[0]).simplified();                 // Tag group section 0
             QString grp1    = QString::fromLatin1(it->group[1]).simplified();                 // Tag group section 1
             QString grp2    = QString::fromLatin1(it->group[2]).simplified();                 // Tag group section 2
             QString name    = QString::fromLatin1(it->name).simplified();                     // Tag name
+
+            QString tagNameExifTool = QString::fromLatin1("%1.%2.%3.%4").arg(grp0).arg(grp1).arg(grp2).arg(name).simplified();
+
+            if (ExifToolTranslator::instance()->isBlackListedGroup(tagNameExifTool))
+            {
+                continue;
+            }
+
+            QString id      = QString::fromLatin1(it->id).simplified();                       // Tag ID (what is that?)
+            QString desc    = QString::fromLatin1(it->desc).simplified();                     // Description
             QString value   = QString::fromLatin1(it->value).simplified().left(-section3);    // Tag value as string converted
             QByteArray data = QByteArray(it->num, it->numLen);
 
@@ -99,8 +107,7 @@ int main(int argc, char** argv)
 
             // Tags to translate To Exiv2 naming scheme
 
-            QString tagNameExifTool = QString::fromLatin1("%1.%2.%3.%4").arg(grp0).arg(grp1).arg(grp2).arg(name).simplified();
-            QString tagNameExiv2    = ExifToolTranslator::instance()->translateToExiv2(tagNameExifTool);
+            QString tagNameExiv2 = ExifToolTranslator::instance()->translateToExiv2(tagNameExifTool);
 
             qDebug().noquote()
                  << QString::fromLatin1("%1 | %2 | %3")
