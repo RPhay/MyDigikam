@@ -100,15 +100,15 @@ static int unescape(char* str)
                     {
                         char nibble = *(src++);
 
-                        if      (nibble >= '0' && nibble <= '9')
+                        if      ((nibble >= '0') && (nibble <= '9'))
                         {
                             nibble -= '0';
                         }
-                        else if (nibble >= 'A' && nibble <= 'F')
+                        else if ((nibble >= 'A') && (nibble <= 'F'))
                         {
                             nibble -= 'A' - 10;
                         }
-                        else if (nibble >= 'a' && nibble <= 'f')
+                        else if ((nibble >= 'a') && (nibble <= 'f'))
                         {
                             nibble -= 'a' - 10;
                         }
@@ -256,9 +256,9 @@ ExifTool::ExifTool(const char* exec, const char* arg1)
         close(to[1]);
         close(from[0]);
         close(err[0]);
-        dup2(to[0], STDIN_FILENO);
+        dup2(to[0],   STDIN_FILENO);
         dup2(from[1], STDOUT_FILENO);
-        dup2(err[1], STDERR_FILENO);
+        dup2(err[1],  STDERR_FILENO);
         close(to[0]);
         close(from[1]);
         close(err[1]);
@@ -266,7 +266,7 @@ ExifTool::ExifTool(const char* exec, const char* arg1)
 
         // (if execvp succeeds, it will never return)
 
-        exit(0);
+        exit(0);        // NOTE: check if it's compatible with the Digikam::DMetadata uses.
     }
     else
     {
@@ -279,7 +279,7 @@ ExifTool::ExifTool(const char* exec, const char* arg1)
         // allocate memory for exiftool response and error messages
 
         mStdout.Init(from[0], mPid, kOutBlockSize);
-        mStderr.Init(err[0], mPid, kErrBlockSize);
+        mStderr.Init(err[0],  mPid, kErrBlockSize);
         mTo       = to[1];
 
         // set output exiftool argument pipe to non-blocking
@@ -520,6 +520,7 @@ int ExifTool::GetSummary(const char* msg)
     for (int out = 0 ; out < 2 ; ++out)
     {
         // check stderr first because it isn't likely to be too long
+
         char* const str = out ? GetOutput() : GetError();
 
         if (!str)
@@ -571,6 +572,7 @@ int ExifTool::IsRunning()
         // no more child process
 
         mPid = -1;
+
         return 0;
     }
 
@@ -672,6 +674,7 @@ int ExifTool::SetNewValue(const char* tag, const char* value, int len)
                 if (!info->value)
                 {
                     delete info;
+
                     return -3;
                 }
 
@@ -680,7 +683,7 @@ int ExifTool::SetNewValue(const char* tag, const char* value, int len)
                 // add null terminator (but note that we don't use it)
 
                 info->value[len] = '\0';
-                info->valueLen = len;
+                info->valueLen   = len;
             }
         }
 
@@ -779,8 +782,8 @@ int ExifTool::Command(const char* cmd)
             return -3;        // out of memory!
         }
 
-        memcpy(cmd2, cmd, len);
-        memcpy(cmd2+len, buf2, len2);
+        memcpy(cmd2,       cmd, len);
+        memcpy(cmd2 + len, buf2, len2);
         len2 += len;    // len2 is now the length of the complete command
 
         // add command to the queue if not empty
@@ -1092,7 +1095,7 @@ ExifToolTagInfo* ExifTool::GetInfo(int cmdNum, double timeout)
             }
             else
             {
-                infoList = next;
+                infoList   = next;
             }
 
             info = next;
@@ -1400,6 +1403,7 @@ int ExifTool::WriteInfo(const char* file, const char* opts, ExifToolTagInfo* inf
     }
 
     int cmdNum = Command(buff);
+
     delete [] buff;
 
     return cmdNum;

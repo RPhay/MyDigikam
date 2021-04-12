@@ -36,7 +36,9 @@
 namespace Digikam
 {
 
-/// ExifToolPipe constructor
+/**
+ * ExifToolPipe constructor.
+ */
 ExifToolPipe::ExifToolPipe()
     : mFile     (-1),
       mBuff     (NULL),
@@ -51,7 +53,9 @@ ExifToolPipe::ExifToolPipe()
 {
 }
 
-/// Destructor -- close the input file and delete the buffer
+/**
+ * Destructor -- close the input file and delete the buffer.
+ */
 ExifToolPipe::~ExifToolPipe()
 {
     if (mFile >= 0)
@@ -94,7 +98,7 @@ int ExifToolPipe::Read()
 {
     const int kMinRemaining = 1024;   // enlarge buffer if less than this free
 
-    Flush();    // remove previous response from buffer
+    Flush();                          // remove previous response from buffer
 
     // keep reading until we get a complete response or there is no more to read
 
@@ -114,7 +118,7 @@ int ExifToolPipe::Read()
 
             if (!pt)
             {
-                return -3; // out of memory!
+                return -3;            // out of memory!
             }
 
             if (mSize)
@@ -137,7 +141,7 @@ int ExifToolPipe::Read()
         {
             if (errno != EAGAIN)
             {
-                return -2; // read error!
+                return -2;            // read error!
             }
 
             bytesRead = 0;
@@ -179,7 +183,7 @@ int ExifToolPipe::Read()
         char* pt        = mBuff + mSearchPos;
         char* const end = mBuff + mLen;
 
-        for (;;)
+        for ( ; ; )
         {
             pt = (char *)memmem(pt, end-pt, "{ready", 6);
 
@@ -198,7 +202,7 @@ int ExifToolPipe::Read()
 
                 for (int i = 0 ; i < 5 ; ++i)
                 {
-                    unsigned d = pt[i+6] - '0';
+                    unsigned d = pt[i + 6] - '0';
 
                     if (d > 9)
                     {
@@ -244,7 +248,9 @@ int ExifToolPipe::Read()
     return 0;       // no complete response available
 }
 
-/// Free buffer memory
+/**
+ * Free buffer memory
+ */
 void ExifToolPipe::Free()
 {
     delete [] mBuff;
@@ -258,19 +264,21 @@ void ExifToolPipe::Free()
     mStringLen = 0;
 }
 
-/// Remove previous response from buffer
+/**
+ * Remove previous response from buffer
+ */
 void ExifToolPipe::Flush()
 {
     if (mPos)
     {
         if (mLen > mPos)
         {
-            memmove(mBuff, mBuff+mPos, mLen-mPos);
+            memmove(mBuff, mBuff + mPos, mLen - mPos);
             mLen -= mPos;
         }
         else
         {
-            mLen = 0;
+            mLen  = 0;
         }
 
         mPos       = 0;

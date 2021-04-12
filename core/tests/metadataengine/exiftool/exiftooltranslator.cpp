@@ -225,6 +225,8 @@ public:
         mapETtoExiv2.insert(QLatin1String("XMP.XMP-dc.Image.Subject"),                     QLatin1String("Xmp.dc.subject"));
         mapETtoExiv2.insert(QLatin1String("XMP.XMP-dc.Image.Description"),                 QLatin1String("Xmp.dc.description"));
         mapETtoExiv2.insert(QLatin1String("XMP.XMP-dc.Image.Format"),                      QLatin1String("Xmp.dc.format"));
+        // Xmp rdf Group
+        mapETtoExiv2.insert(QLatin1String("XMP.XMP-rdf.Document.About"),                   QLatin1String("..."));        // TODO: do not exist yet in Exiv2
 
         // --- Create the inverse map of tag names
 
@@ -247,7 +249,8 @@ public:
                        << QLatin1String("ICC_Profile.")                 // Icc profile section      (do not exist yet in Exiv2)
                        << QLatin1String("Composite.")                   // Exif extended section ?  (do not exist yet in Exiv2)
                        << QLatin1String("Photoshop.")                   // Exif App15 section ?     (do not exist yet in Exiv2)
-                       ;
+                       << QLatin1String("APP14.")                       // Exif App14 section ?     (do not exist yet in Exiv2)
+                      ;
     }
 
 public:
