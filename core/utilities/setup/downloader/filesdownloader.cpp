@@ -28,6 +28,7 @@
 #include <QDir>
 #include <QLabel>
 #include <QTimer>
+#include <QPointer>
 #include <QByteArray>
 #include <QMessageBox>
 #include <QPushButton>
@@ -242,11 +243,29 @@ void FilesDownloader::slotDownload()
     }
     else
     {
-        QMessageBox::critical(this, qApp->applicationName(),
-                              i18n("An error occurred during the download.\n\n"
-                                   "File: %1\n\n%2\n\n"
-                                   "The download will continue at the next start.",
-                                   d->currentInfo.name, d->error));
+        QPointer<QMessageBox> msgBox = new QMessageBox(QMessageBox::Critical,
+                 i18n("Download error"),
+                 i18n("An error occurred during the download.\n\n"
+                      "File: %1\n\n%2\n\n"
+                      "You can try again or continue the "
+                      "download at the next start.",
+                      d->currentInfo.name, d->error),
+                 QMessageBox::Yes | QMessageBox::Cancel,
+                 qApp->activeWindow());
+
+        msgBox->button(QMessageBox::Yes)->setText(i18n("Try again"));
+        msgBox->button(QMessageBox::Yes)->setIcon(QIcon::fromTheme(QLatin1String("edit-download")));
+
+        int result = msgBox->exec();
+        delete msgBox;
+
+        if (result == QMessageBox::Yes)
+        {
+            d->error.clear();
+            download();
+
+            return;
+        }
 
         close();
     }
@@ -294,7 +313,7 @@ void FilesDownloader::createRequest(const QUrl& url)
 
 void FilesDownloader::printDownloadInfo(const QUrl& url)
 {
-    QString text = QString::fromUtf8("%1 (%2//%3)")
+    QString text = QString::fromUtf8("%1 (%2://%3)")
                    .arg(d->currentInfo.name)
                    .arg(url.scheme())
                    .arg(url.host());

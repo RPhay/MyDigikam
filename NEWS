@@ -138,4 +138,6 @@ BUGFIXES:
 124 ==> 435317 - GPS image direction incorrectly formatted.
 125 ==> 435527 - Lightroom Face tags don't display properly.
 126 ==> 435455 - Migration cannot drop or create FaceMatrices table [patch].
-127 ==> 
+127 ==> 435612 - Face Engine file download time out.
+128 ==> 435639 - Connection timed out error when downloading shapepredictor.dat (Downloading required files) after upgrade from 7.1.0 to 7.2.0.
+129 ==> 
