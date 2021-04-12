@@ -26,6 +26,20 @@
 namespace Digikam
 {
 
+class Q_DECL_HIDDEN ExifToolTranslatorCreator
+{
+public:
+
+    ExifToolTranslator object;
+};
+
+Q_GLOBAL_STATIC(ExifToolTranslatorCreator, creator)
+
+ExifToolTranslator* ExifToolTranslator::instance()
+{
+    return &creator->object;
+}
+
 ExifToolTranslator::ExifToolTranslator()
 {
     // --- EXIF Table -------------------------------------------------------------------

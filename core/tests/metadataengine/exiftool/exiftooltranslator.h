@@ -36,8 +36,7 @@ class ExifToolTranslator
 {
 public:
 
-    ExifToolTranslator();
-    ~ExifToolTranslator();
+    static ExifToolTranslator* instance();
 
     QString translateToExiv2(const QString& tagName)    const;
     QString translateToExifTool(const QString& tagName) const;
@@ -56,6 +55,15 @@ private:
      */
     QHash<QString, QString> m_mapExiv2toET;
 
+private:
+
+    // Disable
+    ExifToolTranslator();
+    ~ExifToolTranslator();
+
+private:
+
+    friend class ExifToolTranslatorCreator;
 };
 
 } // namespace Digikam

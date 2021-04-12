@@ -57,6 +57,10 @@ int main(int argc, char** argv)
 
     ExifTool* const parser      = new ExifTool();
 
+    // Post creation of hash tables for tag translations
+
+    ExifToolTranslator::instance();
+
     // Read metadata from the file.
 
     ExifToolTagInfo* const info = parser->ImageInfo(input.filePath().toLatin1().constData(), nullptr, 5);
@@ -69,8 +73,6 @@ int main(int argc, char** argv)
         const int section2 = -45;   // Exiv2 tag name
         const int section3 = -30;   // Tag value as string.
         QString sep        = QString().fill(QLatin1Char('-'), qAbs(section1 + section2 + section3) + 6);
-
-        ExifToolTranslator translator;
 
         qDebug().noquote() << sep;
         qDebug().noquote()
@@ -98,7 +100,7 @@ int main(int argc, char** argv)
             // Tags to translate To Exiv2 naming scheme
 
             QString tagNameExifTool = QString::fromLatin1("%1.%2.%3.%4").arg(grp0).arg(grp1).arg(grp2).arg(name).simplified();
-            QString tagNameExiv2    = translator.translateToExiv2(tagNameExifTool);
+            QString tagNameExiv2    = ExifToolTranslator::instance()->translateToExiv2(tagNameExifTool);
 
             qDebug().noquote()
                  << QString::fromLatin1("%1 | %2 | %3")
