@@ -756,7 +756,7 @@ int ExifTool::Command(const char* cmd)
         mCmdQueueLen -= n;
     }
 
-    if (cmd)
+    if      (cmd)
     {
         // increment to next command number
 
@@ -861,173 +861,274 @@ int ExifTool::Command(const char* cmd)
     return mCmdNum;
 }
 
-//------------------------------------------------------------------------------
-// Read exiftool output and convert to list of ExifToolTagInfo structures
-// Inputs:  cmdNum - command number (0 to process next output in series,
-//                      or -1 to process previously completed command)
-//          timeout - maximum wait time (floating point seconds)
-// Returns: linked list of tag information structures for extracted information
-// - waits up to timeout time for exiftool command to complete
-// - caller is responsible for deleting returned ExifToolTagInfo ("delete info;")
-// - after return, GetError() may be called to get exiftool errors
-ExifToolTagInfo *ExifTool::GetInfo(int cmdNum, double timeout)
+/**
+ * Read exiftool output and convert to list of ExifToolTagInfo structures
+ * Inputs:  cmdNum - command number (0 to process next output in series,
+ *                      or -1 to process previously completed command)
+ *          timeout - maximum wait time (floating point seconds)
+ * Returns: linked list of tag information structures for extracted information
+ * - waits up to timeout time for exiftool command to complete
+ * - caller is responsible for deleting returned ExifToolTagInfo ("delete info;")
+ * - after return, GetError() may be called to get exiftool errors
+ */
+ExifToolTagInfo* ExifTool::GetInfo(int cmdNum, double timeout)
 {
-    ExifToolTagInfo *info = (ExifToolTagInfo *)NULL;
-    ExifToolTagInfo *next = (ExifToolTagInfo *)NULL;
-    ExifToolTagInfo *infoList = (ExifToolTagInfo *)NULL;
+    ExifToolTagInfo* info     = (ExifToolTagInfo*)NULL;
+    ExifToolTagInfo* next     = (ExifToolTagInfo*)NULL;
+    ExifToolTagInfo* infoList = (ExifToolTagInfo*)NULL;
 
     // wait for specified command to complete
-    if (cmdNum >= 0) {
-        for (;;) {
+
+    if      (cmdNum >= 0)
+    {
+        for ( ; ; )
+        {
             int n = Complete(timeout);
+
             if (n <= 0) return info;
+
             if (n == cmdNum || !cmdNum) break;
         }
-    } else if (mLastComplete <= 0) {
+    }
+    else if (mLastComplete <= 0)
+    {
         return info;
     }
 
     // parse the response string, line by line
-    char *pt = mStdout.GetString();
+
+    char* pt = mStdout.GetString();
+
     if (!pt) return info;
 
     int mode = 0;   // 0=looking for tag name, 1=tag properties
 
-    for (;;) {
+    for ( ; ; )
+    {
         // find the end of this line
-        char *p0 = pt;
-        pt = strchr(pt, '\n');
+        char* p0 = pt;
+        pt       = strchr(pt, '\n');
+
         if (!pt) break;
-        *pt = '\0'; // null terminate this line
+
+        *pt      = '\0'; // null terminate this line
         ++pt;       // continue at next line
+
         // scan for opening quote
+
         p0 = strchr(p0, '"');
-        if (!p0) {
+
+        if (!p0)
+        {
             // no quote on line, so this must be the end of the tag info,
             // so fill in necessary members of this ExifToolTagInfo structure
-            if (info) {
+
+            if (info)
+            {
                 // (name and value are guaranteed to exist)
-                if (!info->value) {
+
+                if (!info->value)
+                {
                     info->value = new char[1];
+
                     if (!info->value) break;
+
                     info->value[0] = '\0';
                 }
-                if (!info->num) {
-                    info->num = info->value;
+
+                if (!info->num)
+                {
+                    info->num    = info->value;
                     info->numLen = info->valueLen;
                 }
             }
+
             mode = 0;               // look for next tag name
             continue;
         }
-        char *p1 = ++p0;
-        if (!mode) {    // looking for new tag
+
+        char* p1 = ++p0;
+
+        if (!mode)
+        {
+            // looking for new tag
+
             if (next) delete next;  // delete old unused structure if necessary
+
             // create new ExifToolTagInfo structure for this tag
+
             next = new ExifToolTagInfo;
+
             if (!next) break;
+
             // extract tag/group names
+
             int g = 0;
-            for (;;) {
+
+            for ( ; ; )
+            {
                 char ch = *p1;
-                if (ch == '"' || ch == ':') {
-                    int n = (int)(p1 - p0);
-                    char *str = new char[n + 1];
+
+                if ((ch == '"') || (ch == ':'))
+                {
+                    int n           = (int)(p1 - p0);
+                    char* const str = new char[n + 1];
+
                     if (!str) break;
+
                     memcpy(str, p0, n);
                     str[n] = '\0';
-                    if (ch == '"') {
+
+                    if (ch == '"')
+                    {
                         next->name = str;   // save tag name
                         break;
                     }
-                    if (g > 2) {
+
+                    if (g > 2)
+                    {
                         // get copy number
-                        if (!memcmp(str, "Copy", 4)) {
+
+                        if (!memcmp(str, "Copy", 4))
+                        {
                             next->copyNum = atoi(str+4);
                             delete [] str; // done with this string
                         }
-                    } else {
+                    }
+                    else
+                    {
                         next->group[g] = str;   // save group name
                     }
+
                     ++g;
                     p0 = p1 + 1;
                 }
+
                 ++p1;
             }
+
             if (!next->name) continue;
+
             // file name given by line like:  "SourceFile" => "images/a.jpg",
-            if (!strcmp(next->name,"SourceFile")) {
-                char *p2 = pt - 2;
+
+            if (!strcmp(next->name, "SourceFile"))
+            {
+                char* p2 = pt - 2;
+
                 if (*p2 == '\r') --p2; // skip Windows CR
+
                 if (*p2 == ',') --p2;
+
                 if (*p2 != '"') continue;
+
                 int n = (int)(p2 - p1 - 6);
+
                 if (n < 0) continue;
-                char *str = new char[n+1];
+
+                char* const str = new char[n+1];
+
                 if (!str) break;
-                memcpy(str, p1+6, n);
-                str[n] = '\0';
-                next->value = next->num = str;
+
+                memcpy(str, p1 + 6, n);
+                str[n]         = '\0';
+                next->value    = next->num    = str;
                 next->valueLen = next->numLen = n;
-            } else {
+            }
+            else
+            {
                 mode = 1;   // read tag properties next
             }
+
             // add to linked list of information
-            if (info) {
+
+            if (info)
+            {
                 info->next = next;
-            } else {
+            }
+            else
+            {
                 infoList = next;
             }
+
             info = next;
             next = NULL;
-        } else {
+        }
+        else
+        {
             // isolate the property name
+
             p1 = strchr(p0, '"');
-            if (!p1) break;         // (shouldn't happen)
-            *p1 = '\0';             // null terminate property name
-            p1 += 5;                // step to start of value
-            if (p1 >= pt) break;    // (shouldn't happen);
-            if (*p1 == '"') ++p1;   // skip quote if it exists
-            char *p2 = pt - 1;
-            if (p2[-1] == '\r') --p2;// skip Windows CR
-            if (p2[-1] == ',') --p2;// skip trailing comma
-            if (p2[-1] == '"') --p2;// skip trailing quote
-            if (p2 < p1) break;     // (shouldn't happen)
-            *p2 = '\0';             // null terminate property value
-            int n = unescape(p1);   // unescape characters in property value
-            char **dst;
-            if (!strcmp(p0, "desc")) {
+
+            if (!p1) break;             // (shouldn't happen)
+
+            *p1 = '\0';                 // null terminate property name
+            p1 += 5;                    // step to start of value
+
+            if (p1 >= pt) break;        // (shouldn't happen);
+
+            if (*p1 == '"') ++p1;       // skip quote if it exists
+
+            char* p2 = pt - 1;
+
+            if (p2[-1] == '\r') --p2;   // skip Windows CR
+
+            if (p2[-1] == ',') --p2;    // skip trailing comma
+
+            if (p2[-1] == '"') --p2;    // skip trailing quote
+
+            if (p2 < p1) break;         // (shouldn't happen)
+
+            *p2   = '\0';               // null terminate property value
+            int n = unescape(p1);       // unescape characters in property value
+            char** dst;
+
+            if      (!strcmp(p0, "desc"))
+            {
                 dst = &info->desc;
-            } else if (!strcmp(p0, "id")) {
+            }
+            else if (!strcmp(p0, "id"))
+            {
                 dst = &info->id;
-            } else if (!strcmp(p0, "num")) {
-                dst = &info->num;
+            }
+            else if (!strcmp(p0, "num"))
+            {
+                dst          = &info->num;
                 info->numLen = n - 1;   // save length too (could be binary data)
-            } else if (!strcmp(p0, "val")) {
-                dst = &info->value;
+            }
+            else if (!strcmp(p0, "val"))
+            {
+                dst            = &info->value;
                 info->valueLen = n - 1; // save length too (could be binary data)
-            } else {
+            }
+            else
+            {
                 continue;   // (shouldn't happen)
             }
+
             *dst = new char[n];
+
             if (!*dst) break;
+
             memcpy(*dst, p1, n);    // copy property value
         }
     }
+
     if (next) delete next;
+
     return infoList;
 }
 
-//------------------------------------------------------------------------------
-// Write metadata to specified image
-// Inputs:  file - one or more directory and/or file names, separated by newlines
-//          opts - extra exiftool options, separated by newlines
-//          info - pointer to linked list of tags to write (overrides SetNewValue() calls)
-// Returns: >0 command number, <0=error
-// - each option argument must be terminated with a newline
-// - file may be one or more file names separated by newlines
-// - must call Complete() after this to check the return messages
-// - ignores "SourceFile" entries in input ExifToolTagInfo list
+/**
+ * Write metadata to specified image
+ * Inputs:  file - one or more directory and/or file names, separated by newlines
+ *          opts - extra exiftool options, separated by newlines
+ *          info - pointer to linked list of tags to write (overrides SetNewValue() calls)
+ * Returns: >0 command number, <0=error
+ * - each option argument must be terminated with a newline
+ * - file may be one or more file names separated by newlines
+ * - must call Complete() after this to check the return messages
+ * - ignores "SourceFile" entries in input ExifToolTagInfo list
+ */
 int ExifTool::WriteInfo(const char *file, const char *opts, ExifToolTagInfo *info)
 {
     if (!file) return -5;
