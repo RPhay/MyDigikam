@@ -266,11 +266,13 @@ public:
                        << QLatin1String("ExifTool.ExifTool.ExifTool.")  // Internal info from ExifTool
                        << QLatin1String("File.System.")                 // Info from file system
                        << QLatin1String("File.File.")                   // Info from file system
-                       << QLatin1String("JFIF.JFIF.")                   // JFIF section             (do not exist yet in Exiv2)
-                       << QLatin1String("ICC_Profile.")                 // Icc profile section      (do not exist yet in Exiv2)
-                       << QLatin1String("Composite.")                   // Exif extended section ?  (do not exist yet in Exiv2)
-                       << QLatin1String("Photoshop.")                   // Exif App15 section ?     (do not exist yet in Exiv2)
-                       << QLatin1String("APP14.")                       // Exif App14 section ?     (do not exist yet in Exiv2)
+                       << QLatin1String("JFIF.JFIF.")                   // JFIF section                 (do not exist yet in Exiv2)
+                       << QLatin1String("ICC_Profile.")                 // Icc profile section          (do not exist yet in Exiv2)
+                       << QLatin1String("Composite.")                   // Exif extended section ?      (do not exist yet in Exiv2)
+                       << QLatin1String("Photoshop.")                   // Exif App15 section ?         (do not exist yet in Exiv2)
+                       << QLatin1String("APP14.")                       // Exif App14 section ?         (do not exist yet in Exiv2)
+                       << QLatin1String("PrintIM.")                     // Exif Print section           (do not exist yet in Exiv2)
+                       << QLatin1String("MakerNotes.")                  // Exif Maker-notes section
                       ;
     }
 
