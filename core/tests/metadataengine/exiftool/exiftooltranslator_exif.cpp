@@ -38,6 +38,8 @@ void ExifToolTranslator::Private::populateExifHashTable()
     // Exif Image Group
 
     mapETtoExiv2.insert(QLatin1String("EXIF.IFD0.Author.Copyright"),                   QLatin1String("Exif.Image.Copyright"));
+    mapETtoExiv2.insert(QLatin1String("EXIF.IFD0.Camera.Make"),                        QLatin1String("Exif.Image.Make"));
+    mapETtoExiv2.insert(QLatin1String("EXIF.IFD0.Camera.Model"),                       QLatin1String("Exif.Image.Model"));
     mapETtoExiv2.insert(QLatin1String("EXIF.IFD0.Image.DocumentName"),                 QLatin1String("Exif.Image.DocumentName"));
     mapETtoExiv2.insert(QLatin1String("EXIF.IFD0.Image.ImageWidth"),                   QLatin1String("Exif.Image.ImageWidth"));
     mapETtoExiv2.insert(QLatin1String("EXIF.IFD0.Image.ImageHeight"),                  QLatin1String("Exif.Image.ImageLength"));
@@ -56,13 +58,14 @@ void ExifToolTranslator::Private::populateExifHashTable()
     mapETtoExiv2.insert(QLatin1String("EXIF.IFD0.Image.ResolutionUnit"),               QLatin1String("Exif.Image.ResolutionUnit"));
     mapETtoExiv2.insert(QLatin1String("EXIF.IFD0.Image.Software"),                     QLatin1String("Exif.Image.Software"));
     mapETtoExiv2.insert(QLatin1String("EXIF.IFD0.Image.YCbCrPositioning"),             QLatin1String("Exif.Image.YCbCrPositioning"));
-    mapETtoExiv2.insert(QLatin1String("EXIF.IFD0.Camera.Make"),                        QLatin1String("Exif.Image.Make"));
-    mapETtoExiv2.insert(QLatin1String("EXIF.IFD0.Camera.Model"),                       QLatin1String("Exif.Image.Model"));
+    mapETtoExiv2.insert(QLatin1String("EXIF.IFD0.Image.Padding"),                      QLatin1String("..."));        // TODO: do not exist yet in Exiv2
     mapETtoExiv2.insert(QLatin1String("EXIF.IFD0.Time.ModifyDate"),                    QLatin1String("..."));        // TODO: do not exist yet in Exiv2
     mapETtoExiv2.insert(QLatin1String("EXIF.IFD0.Time.PreviewDateTime"),               QLatin1String("..."));        // TODO: do not exist yet in Exiv2
 
     // Exif Photo Group
 
+    mapETtoExiv2.insert(QLatin1String("EXIF.ExifIFD.Image.OffsetSchema"),              QLatin1String("..."));        // TODO: do not exist yet in Exiv2
+    mapETtoExiv2.insert(QLatin1String("EXIF.ExifIFD.Image.Padding"),                   QLatin1String("..."));        // TODO: do not exist yet in Exiv2
     mapETtoExiv2.insert(QLatin1String("EXIF.ExifIFD.Image.BrightnessValue"),           QLatin1String("Exif.Photo.BrightnessValue"));
     mapETtoExiv2.insert(QLatin1String("EXIF.ExifIFD.Image.ImageUniqueID"),             QLatin1String("Exif.Photo.ImageUniqueID"));
     mapETtoExiv2.insert(QLatin1String("EXIF.ExifIFD.Image.UserComment"),               QLatin1String("Exif.Photo.UserComment"));
@@ -113,6 +116,8 @@ void ExifToolTranslator::Private::populateExifHashTable()
 
     mapETtoExiv2.insert(QLatin1String("EXIF.IFD1.Camera.Make"),                        QLatin1String("Exif.Thumbnail.Make"));
     mapETtoExiv2.insert(QLatin1String("EXIF.IFD1.Camera.Model"),                       QLatin1String("Exif.Thumbnail.Model"));
+    mapETtoExiv2.insert(QLatin1String("EXIF.IFD1.Image.ImageWidth"),                   QLatin1String("Exif.Thumbnail.ImageWidth"));
+    mapETtoExiv2.insert(QLatin1String("EXIF.IFD1.Image.ImageHeight"),                  QLatin1String("Exif.Thumbnail.ImageLength"));
     mapETtoExiv2.insert(QLatin1String("EXIF.IFD1.Image.ImageDescription"),             QLatin1String("Exif.Thumbnail.ImageDescription"));
     mapETtoExiv2.insert(QLatin1String("EXIF.IFD1.Image.Software"),                     QLatin1String("Exif.Thumbnail.Software"));
     mapETtoExiv2.insert(QLatin1String("EXIF.IFD1.Image.Compression"),                  QLatin1String("Exif.Thumbnail.Compression"));
