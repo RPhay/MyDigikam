@@ -21,65 +21,52 @@
  *
  * ============================================================ */
 
-#include "exiftooltranslator.h"
-
-// Qt includes
-
-#include <QHash>
-#include <QStringList>
-
-// Local includes
-
 #include "exiftooltranslator_p.h"
 
 namespace Digikam
 {
 
-ExifToolTranslator::ExifToolTranslator()
-    : d(new Private)
+class Q_DECL_HIDDEN ExifToolTranslatorCreator
 {
+public:
+
+    ExifToolTranslator object;
+};
+
+Q_GLOBAL_STATIC(ExifToolTranslatorCreator, creator)
+
+ExifToolTranslator* ExifToolTranslator::instance()
+{
+    return &creator->object;
 }
 
-ExifToolTranslator::~ExifToolTranslator()
-{
-    delete d;
-}
+// --------------------------------------------------------------------------
 
-bool ExifToolTranslator::isBlackListedGroup(const QString& group) const
+ExifToolTranslator::Private::Private()
 {
-    foreach (const QString& bgrp, d->ignoreGroupsET)
+    // --- Create the hash-table of tag names (ExifTool to Exiv2).
+
+    populateExifHashTable();
+    populateIptcHashTable();
+    populateXmpHashTable();
+
+    // --- Create the ignred list of ExiTool tag names.
+
+    populateIgnoredGroups();
+
+    // --- Create the reverse hash-table of tag names (Exiv2 to ExifTool).
+
+    QHash<QString, QString>::const_iterator it = mapETtoExiv2.constBegin();
+
+    while (it != mapETtoExiv2.constEnd())
     {
-        if (group.startsWith(bgrp))
-        {
-            return true;
-        }
+        mapExiv2toET.insert(it.value(), it.key());
+        ++it;
     }
-
-    return false;
 }
 
-QString ExifToolTranslator::translateToExiv2(const QString& tagName) const
+ExifToolTranslator::Private::~Private()
 {
-    QHash<QString, QString>::iterator it = d->mapETtoExiv2.find(tagName);
-
-    if (it != d->mapETtoExiv2.end())
-    {
-        return it.value();
-    }
-
-    return QString();
-}
-
-QString ExifToolTranslator::translateToExifTool(const QString& tagName) const
-{
-    QHash<QString, QString>::iterator it = d->mapExiv2toET.find(tagName);
-
-    if (it != d->mapExiv2toET.end())
-    {
-        return it.value();
-    }
-
-    return QString();
 }
 
 } // namespace Digikam

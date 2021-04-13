@@ -38,40 +38,8 @@ class Q_DECL_HIDDEN ExifToolTranslator::Private
 {
 public:
 
-    explicit Private()
-    {
-        populateExifHashTable();
-        populateIptcHashTable();
-        populateXmpHashTable();
-
-        // --- Create the inverse map of tag names
-
-        QHash<QString, QString>::const_iterator it = mapETtoExiv2.constBegin();
-
-        while (it != mapETtoExiv2.constEnd())
-        {
-            mapExiv2toET.insert(it.value(), it.key());
-            ++it;
-        }
-
-        // --- Init list of ignored groups from ExifTool.
-
-        ignoreGroupsET
-                       << QLatin1String("...")                          // Internal info from ExifTool
-                       << QLatin1String("ExifTool.ExifTool.ExifTool.")  // Internal info from ExifTool
-                       << QLatin1String("File.System.")                 // Info from file system
-                       << QLatin1String("File.File.")                   // Info from file system
-                       << QLatin1String("MakerNotes.")                  // Exif Maker-note sections
-                       << QLatin1String("JFIF.JFIF.")                   // JFIF section                         (do not exist yet in Exiv2)
-                       << QLatin1String("ICC_Profile.")                 // Icc profile section                  (do not exist yet in Exiv2)
-                       << QLatin1String("Composite.")                   // Exif extended section ?              (do not exist yet in Exiv2)
-                       << QLatin1String("APP14.")                       // JPEG APP14 section                   (do not exist yet in Exiv2)
-                       << QLatin1String("PrintIM.")                     // JPEG APP6::EPPIM section             (do not exist yet in Exiv2)
-                       << QLatin1String("Photoshop.")                   // JPEG APP13::PhotoshopIRB section     (do not exist yet in Exiv2)
-                       << QLatin1String("FlashPix.")                    // JPEG APP2::FPXR section              (do not exist yet in Exiv2)
-                       << QLatin1String("MPF.")                         // JPEG APP2::MPF section               (do not exist yet in Exiv2)
-                      ;
-    }
+    explicit Private();
+    ~Private();
 
 public:
 
@@ -97,6 +65,7 @@ private:
     void populateExifHashTable();
     void populateIptcHashTable();
     void populateXmpHashTable();
+    void populateIgnoredGroups();
 };
 
 } // namespace Digikam

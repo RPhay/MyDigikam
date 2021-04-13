@@ -18,9 +18,11 @@ set(exiftoolloader_cli_SRCS ${CMAKE_CURRENT_SOURCE_DIR}/exiftoolloader_cli.cpp
                             ${CMAKE_CURRENT_SOURCE_DIR}/exiftoolpipe.cpp
                             ${CMAKE_CURRENT_SOURCE_DIR}/exiftooltaginfo.cpp
                             ${CMAKE_CURRENT_SOURCE_DIR}/exiftooltranslator.cpp
+                            ${CMAKE_CURRENT_SOURCE_DIR}/exiftooltranslator_p.cpp
                             ${CMAKE_CURRENT_SOURCE_DIR}/exiftooltranslator_exif.cpp
                             ${CMAKE_CURRENT_SOURCE_DIR}/exiftooltranslator_iptc.cpp
                             ${CMAKE_CURRENT_SOURCE_DIR}/exiftooltranslator_xmp.cpp
+                            ${CMAKE_CURRENT_SOURCE_DIR}/exiftooltranslator_ignoredgroups.cpp
 )
 
 add_executable(exiftoolloader_cli ${exiftoolloader_cli_SRCS})
