@@ -367,7 +367,7 @@ public:
     static bool hasSidecar(const QString& path);
 
     /**
-     * Return a litteral string of backend name used to parse metadata from file.
+     * Return a string of backend name used to parse metadata from file.
      * See Backend enum for details.
      */
     static QString backendName(Backend t);
