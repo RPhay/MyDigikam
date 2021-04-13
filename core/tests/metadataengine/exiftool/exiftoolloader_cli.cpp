@@ -74,7 +74,7 @@ int main(int argc, char** argv)
         QTextStream stream(&output);
         QStringList ignoredETTags;
 
-        const int section1 = -55;   // ExifTool Tag name
+        const int section1 = -60;   // ExifTool Tag name
         const int section2 = -45;   // Exiv2 tag name
         const int section3 = -30;   // Tag value as string.
         QString sep        = QString().fill(QLatin1Char('-'), qAbs(section1 + section2 + section3) + 6);

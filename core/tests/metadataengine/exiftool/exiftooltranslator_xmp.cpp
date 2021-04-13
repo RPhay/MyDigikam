@@ -107,6 +107,8 @@ void ExifToolTranslator::Private::populateXmpHashTable()
     mapETtoExiv2.insert(QLatin1String("XMP.XMP-tmp0.Unknown.PickLabel"),                        QLatin1String("Xmp.digiKam.PickLabel"));
     mapETtoExiv2.insert(QLatin1String("XMP.XMP-tmp0.Unknown.ColorLabel"),                       QLatin1String("Xmp.digiKam.ColorLabel"));
     mapETtoExiv2.insert(QLatin1String("XMP.XMP-tmp0.Unknown.TagsList"),                         QLatin1String("Xmp.digiKam.TagsList"));
+    mapETtoExiv2.insert(QLatin1String("XMP.XMP-tmp0.Unknown.ImageUniqueID"),                    QLatin1String("Xmp.digiKam.ImageUniqueID"));
+    mapETtoExiv2.insert(QLatin1String("XMP.XMP-tmp0.Unknown.ImageHistory"),                     QLatin1String("Xmp.digiKam.ImageHistory"));
     mapETtoExiv2.insert(QLatin1String("XMP.XMP-tmp0.Unknown.CaptionsAuthorNames"),              QLatin1String("Xmp.digiKam.CaptionsAuthorNames"));
     mapETtoExiv2.insert(QLatin1String("XMP.XMP-tmp0.Unknown.CaptionsDateTimeStamps"),           QLatin1String("Xmp.digiKam.CaptionsDateTimeStamps"));
     mapETtoExiv2.insert(QLatin1String("XMP.XMP-kipi.Unknown.PanoramaInputFiles"),               QLatin1String("Xmp.digiKam.PanoramaInputFiles"));

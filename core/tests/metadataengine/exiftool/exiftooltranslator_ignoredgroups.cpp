@@ -44,6 +44,7 @@ void ExifToolTranslator::Private::populateIgnoredGroups()
                    << QLatin1String("Photoshop.")                   // JPEG APP13::PhotoshopIRB section     (do not exist yet in Exiv2)
                    << QLatin1String("FlashPix.")                    // JPEG APP2::FPXR section              (do not exist yet in Exiv2)
                    << QLatin1String("MPF.")                         // JPEG APP2::MPF section               (do not exist yet in Exiv2)
+                   << QLatin1String("PNG.")                         // PNG header chunk
                   ;
 }
 

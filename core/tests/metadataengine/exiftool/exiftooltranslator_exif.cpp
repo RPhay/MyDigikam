@@ -58,10 +58,11 @@ void ExifToolTranslator::Private::populateExifHashTable()
     mapETtoExiv2.insert(QLatin1String("EXIF.IFD0.Image.ResolutionUnit"),               QLatin1String("Exif.Image.ResolutionUnit"));
     mapETtoExiv2.insert(QLatin1String("EXIF.IFD0.Image.Software"),                     QLatin1String("Exif.Image.Software"));
     mapETtoExiv2.insert(QLatin1String("EXIF.IFD0.Image.YCbCrPositioning"),             QLatin1String("Exif.Image.YCbCrPositioning"));
+    mapETtoExiv2.insert(QLatin1String("EXIF.IFD0.Image.DNGPrivateData"),               QLatin1String("Exif.Image.DNGPrivateData"));
+    mapETtoExiv2.insert(QLatin1String("EXIF.IFD0.Image.Predictor"),                    QLatin1String("Exif.Image.Predictor"));
     mapETtoExiv2.insert(QLatin1String("EXIF.IFD0.Image.Padding"),                      QLatin1String("..."));        // TODO: do not exist yet in Exiv2
     mapETtoExiv2.insert(QLatin1String("EXIF.IFD0.Time.ModifyDate"),                    QLatin1String("..."));        // TODO: do not exist yet in Exiv2
     mapETtoExiv2.insert(QLatin1String("EXIF.IFD0.Time.PreviewDateTime"),               QLatin1String("..."));        // TODO: do not exist yet in Exiv2
-
     // Exif Photo Group
 
     mapETtoExiv2.insert(QLatin1String("EXIF.ExifIFD.Image.OffsetSchema"),              QLatin1String("..."));        // TODO: do not exist yet in Exiv2
@@ -150,6 +151,8 @@ void ExifToolTranslator::Private::populateExifHashTable()
     mapETtoExiv2.insert(QLatin1String("EXIF.GPS.Location.GPSStatus"),                  QLatin1String("Exif.GPSInfo.GPSStatus"));
     mapETtoExiv2.insert(QLatin1String("EXIF.GPS.Location.GPSTrack"),                   QLatin1String("Exif.GPSInfo.GPSTrack"));
     mapETtoExiv2.insert(QLatin1String("EXIF.GPS.Location.GPSTrackRef"),                QLatin1String("Exif.GPSInfo.GPSTrackRef"));
+    mapETtoExiv2.insert(QLatin1String("EXIF.GPS.Location.GPSImgDirection"),            QLatin1String("Exif.GPSInfo.Exif.GPSInfo.GPSImgDirection"));
+    mapETtoExiv2.insert(QLatin1String("EXIF.GPS.Location.GPSImgDirectionRef"),         QLatin1String("Exif.GPSInfo.Exif.GPSInfo.GPSImgDirectionRef"));
     mapETtoExiv2.insert(QLatin1String("EXIF.GPS.Time.GPSDateStamp"),                   QLatin1String("Exif.GPSInfo.GPSDateStamp"));
     mapETtoExiv2.insert(QLatin1String("EXIF.GPS.Time.GPSTimeStamp"),                   QLatin1String("Exif.GPSInfo.GPSTimeStamp"));
 }
