@@ -21,8 +21,8 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_META_READER_THREAD_TEST_H
-#define DIGIKAM_META_READER_THREAD_TEST_H
+#ifndef DIGIKAM_META_READER_THREAD_UTEST_H
+#define DIGIKAM_META_READER_THREAD_UTEST_H
 
 // Qt includes
 
@@ -140,4 +140,4 @@ private Q_SLOTS:
     void testMetaReaderThread();
 };
 
-#endif // DIGIKAM_META_READER_THREAD_TEST_H
+#endif // DIGIKAM_META_READER_THREAD_UTEST_H

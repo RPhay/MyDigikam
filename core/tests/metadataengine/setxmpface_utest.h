@@ -22,8 +22,8 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_SET_XMP_FACE_TEST_H
-#define DIGIKAM_SET_XMP_FACE_TEST_H
+#ifndef DIGIKAM_SET_XMP_FACE_UTEST_H
+#define DIGIKAM_SET_XMP_FACE_UTEST_H
 
 // Local includes
 
@@ -54,4 +54,4 @@ private Q_SLOTS:
     void testSetXmpFace();
 };
 
-#endif // DIGIKAM_SET_XMP_FACE_TEST_H
+#endif // DIGIKAM_SET_XMP_FACE_UTEST_H

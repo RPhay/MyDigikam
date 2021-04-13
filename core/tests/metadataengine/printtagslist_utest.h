@@ -21,8 +21,8 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_PRINT_TAGS_LIST_TEST_H
-#define DIGIKAM_PRINT_TAGS_LIST_TEST_H
+#ifndef DIGIKAM_PRINT_TAGS_LIST_UTEST_H
+#define DIGIKAM_PRINT_TAGS_LIST_UTEST_H
 
 // Local includes
 
@@ -52,4 +52,4 @@ private Q_SLOTS:
     void testPrintAllAvailableXmpTags();
 };
 
-#endif // DIGIKAM_PRINT_TAGS_LIST_TEST_H
+#endif // DIGIKAM_PRINT_TAGS_LIST_UTEST_H
