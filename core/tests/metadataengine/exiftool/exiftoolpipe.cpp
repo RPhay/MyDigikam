@@ -289,7 +289,7 @@ void ExifToolPipe::Flush()
     mStringLen = 0;
 }
 
-char* ExifToolPipe::GetString()
+char* ExifToolPipe::GetString() const
 {
     return (
             (mString && mString[0]) ? mString
@@ -297,7 +297,7 @@ char* ExifToolPipe::GetString()
            );
 }
 
-int ExifToolPipe::GetStringLen()
+int ExifToolPipe::GetStringLen() const
 {
     return mStringLen;
 }

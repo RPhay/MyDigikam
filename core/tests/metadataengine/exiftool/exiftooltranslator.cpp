@@ -21,16 +21,12 @@
  *
  * ============================================================ */
 
-#include "exiftooltranslator.h"
+#include "exiftooltranslator_p.h"
 
 // Qt includes
 
 #include <QHash>
 #include <QStringList>
-
-// Local includes
-
-#include "exiftooltranslator_p.h"
 
 namespace Digikam
 {
@@ -45,7 +41,7 @@ ExifToolTranslator::~ExifToolTranslator()
     delete d;
 }
 
-bool ExifToolTranslator::isBlackListedGroup(const QString& group) const
+bool ExifToolTranslator::isIgnoredGroup(const QString& group) const
 {
     foreach (const QString& bgrp, d->ignoreGroupsET)
     {

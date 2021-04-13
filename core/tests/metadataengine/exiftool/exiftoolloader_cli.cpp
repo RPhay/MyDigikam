@@ -102,7 +102,7 @@ int main(int argc, char** argv)
             QString name            = QString::fromLatin1(it->name).simplified();                     // Tag name
             QString tagNameExifTool = QString::fromLatin1("%1.%2.%3.%4").arg(grp0).arg(grp1).arg(grp2).arg(name).simplified();
 
-            if (ExifToolTranslator::instance()->isBlackListedGroup(tagNameExifTool))
+            if (ExifToolTranslator::instance()->isIgnoredGroup(tagNameExifTool))
             {
                 if (!tagNameExifTool.startsWith(QLatin1String("...")))
                 {
@@ -141,7 +141,7 @@ int main(int argc, char** argv)
             stream << tag << Qt::endl;
         }
 
-        stream << sep;
+        stream << sep << Qt::endl;
         ignoredETTags.removeDuplicates();
         stream << "Ignored ExifTool Tags:" << Qt::endl;
 

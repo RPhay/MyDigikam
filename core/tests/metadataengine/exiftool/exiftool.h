@@ -87,17 +87,17 @@ public:
     int   Complete(double timeout = NEVER);
 
     int   IsRunning();
-    int   LastComplete();
-    int   LastCommand();            ///< undocumented
+    int   LastComplete()              const;
+    int   LastCommand()               const;
     void  SetLastComplete(int lastComplete);
     void  SetWaitTime(int waitTime);
 
-    char* GetOutput();
-    int   GetOutputLen();
-    char* GetError();
-    int   GetErrorLen();            ///< undocumented
+    char* GetOutput()                 const;
+    int   GetOutputLen()              const;
+    char* GetError()                  const;
+    int   GetErrorLen()               const;
 
-    int   GetSummary(const char* msg);
+    int   GetSummary(const char* msg) const;
 
 public:
 

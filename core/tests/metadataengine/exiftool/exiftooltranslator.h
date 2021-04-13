@@ -41,7 +41,7 @@ public:
     QString translateToExiv2(const QString& tagName)    const;
     QString translateToExifTool(const QString& tagName) const;
 
-    bool isBlackListedGroup(const QString& group)       const;
+    bool isIgnoredGroup(const QString& group)           const;
 
 private:
 

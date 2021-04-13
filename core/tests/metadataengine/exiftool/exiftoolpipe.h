@@ -39,24 +39,24 @@ public:
                int pid,
                int initialSize);
 
-    int   Read();                 ///< read exiftool response
-    void  Free();                 ///< free buffer memory
-    void  Flush();                ///< remove previous response from buffer
-    char* GetString();
-    int   GetStringLen();
+    int   Read();                 ///< Read exiftool response
+    void  Free();                 ///< Free buffer memory
+    void  Flush();                ///< Remove previous response from buffer
+    char* GetString()    const;
+    int   GetStringLen() const;
 
 private:
 
-    int   mFile;                  ///< read file descriptor
-    char* mBuff;                  ///< buffer pointer
-    int   mSize;                  ///< buffer size
-    int   mLen;                   ///< length of data in buffer
-    int   mPos;                   ///< current read position in buffer
-    int   mSearchPos;             ///< current search position in buffer
-    int   mBlockSize;             ///< initial buffer size
-    char* mString;                ///< returned string from last Read()
-    int   mStringLen;             ///< length of returned string
-    int   mPid;                   ///< process id for other side of the pipe
+    int   mFile;                  ///< Read file descriptor
+    char* mBuff;                  ///< Buffer pointer
+    int   mSize;                  ///< Buffer size
+    int   mLen;                   ///< Length of data in buffer
+    int   mPos;                   ///< Current read position in buffer
+    int   mSearchPos;             ///< Current search position in buffer
+    int   mBlockSize;             ///< Initial buffer size
+    char* mString;                ///< Returned string from last Read()
+    int   mStringLen;             ///< Length of returned string
+    int   mPid;                   ///< Process id for other side of the pipe
 };
 
 } // namespace Digikam

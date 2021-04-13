@@ -178,7 +178,7 @@ static int unescape(char* str)
  */
 static double getTime()
 {
-    struct timeval tv;
+    struct timeval  tv;
     struct timezone tz;
     gettimeofday(&tv, &tz);
 
@@ -200,9 +200,9 @@ ExifTool::ExifTool(const char* exec, const char* arg1)
       mCmdNum       (0),
       mWaitTime     (1000)
 {
-    int to[2];
-    int from[2];
-    int err[2];
+    int         to[2];
+    int         from[2];
+    int         err[2];
     const char* args[7];
 
     args[0]      = NULL;
@@ -210,7 +210,7 @@ ExifTool::ExifTool(const char* exec, const char* arg1)
     args[2]      = "-stay_open";
     args[3]      = "true";
     args[4]      = "-@";
-    args[5]      = "-";
+    args[5]      = "-";             // krazy:exclude=doublequote_chars
     args[6]      = NULL;
     int firstArg = 1;
 
@@ -521,7 +521,7 @@ int ExifTool::Complete(double timeout)
  * Returns: corresponding number from summary statistics, or -1 if the
  *          specified message wasn't found
  */
-int ExifTool::GetSummary(const char* msg)
+int ExifTool::GetSummary(const char* msg) const
 {
     for (int out = 0 ; out < 2 ; ++out)
     {
@@ -585,12 +585,12 @@ int ExifTool::IsRunning()
     return 1;   // yes!
 }
 
-int ExifTool::LastComplete()
+int ExifTool::LastComplete() const
 {
     return mLastComplete;
 }
 
-int ExifTool::LastCommand()
+int ExifTool::LastCommand() const
 {
     return mCmdNum;
 }
@@ -605,22 +605,22 @@ void ExifTool::SetWaitTime(int waitTime)
     mWaitTime = waitTime;
 }
 
-char* ExifTool::GetOutput()
+char* ExifTool::GetOutput() const
 {
     return ((mLastComplete > 0) ? mStdout.GetString() : NULL);
 }
 
-int ExifTool::GetOutputLen()
+int ExifTool::GetOutputLen() const
 {
     return ((mLastComplete > 0) ? mStdout.GetStringLen() : 0);
 }
 
-char* ExifTool::GetError()
+char* ExifTool::GetError() const
 {
     return ((mLastComplete > 0) ? mStderr.GetString() : NULL);
 }
 
-int ExifTool::GetErrorLen()
+int ExifTool::GetErrorLen() const
 {
     return ((mLastComplete > 0) ? mStderr.GetStringLen() : 0);
 }
@@ -785,12 +785,12 @@ int ExifTool::Command(const char* cmd)
 
         if (!cmd2)
         {
-            return -3;        // out of memory!
+            return -3;          // out of memory!
         }
 
         memcpy(cmd2,       cmd, len);
         memcpy(cmd2 + len, buf2, len2);
-        len2 += len;    // len2 is now the length of the complete command
+        len2 += len;            // len2 is now the length of the complete command
 
         // add command to the queue if not empty
 
