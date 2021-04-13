@@ -60,7 +60,11 @@ ExifToolTranslator::Private::Private()
 
     while (it != mapETtoExiv2.constEnd())
     {
-        mapExiv2toET.insert(it.value(), it.key());
+        if (it.value() != QLatin1String("..."))           // Ignore Exiv2 tags not yet defined
+        {
+            mapExiv2toET.insert(it.value(), it.key());
+        }
+
         ++it;
     }
 }
