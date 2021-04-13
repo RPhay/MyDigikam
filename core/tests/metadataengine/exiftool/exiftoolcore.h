@@ -22,8 +22,8 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_EXIF_TOOL_H
-#define DIGIKAM_EXIF_TOOL_H_
+#ifndef DIGIKAM_EXIF_TOOL_CORE_H
+#define DIGIKAM_EXIF_TOOL_CORE_H_
 
 // Local includes
 
@@ -55,13 +55,13 @@
 namespace Digikam
 {
 
-class ExifTool
+class ExifToolCore
 {
 public:
 
-    ExifTool(const char* exec = NULL,
+    ExifToolCore(const char* exec = NULL,
              const char* arg1 = NULL);
-    virtual ~ExifTool();
+    virtual ~ExifToolCore();
 
 public:
 
@@ -102,28 +102,28 @@ public:
 public:
 
     /**
-     * Flags to allow some ExifTool features to be disabled
-     * (must be set before creating ExifTool object)
+     * Flags to allow some ExifToolCore features to be disabled
+     * (must be set before creating ExifToolCore object)
      */
-    static int       sNoSigPipe;    ///< set to disable SIGPIPE handler
-    static int       sNoWatchdog;   ///< set to disable watchdog process
+    static int       sNoSigPipe;    ///< Set to disable SIGPIPE handler
+    static int       sNoWatchdog;   ///< Set to disable watchdog process
 
 private:
 
-    ExifToolPipe     mStdout;       ///< buffer for exiftool stdout read pipe
-    ExifToolPipe     mStderr;       ///< buffer for exiftool stderr read pipe
-    int              mTo;           ///< write pipe for exiftool stdin
-    int              mPid;          ///< exiftool application process ID
-    int              mWatchdog;     ///< watchdog process ID
-    ExifToolTagInfo* mWriteInfo;    ///< tag information to write
-    char*            mCmdQueue;     ///< queued command arguments (NULL if nothing queued)
-    int              mCmdQueueLen;  ///< length of data in command queue
-    int              mCmdQueueSize; ///< size of command queue
-    int              mLastComplete; ///< result of last Complete() call
-    int              mCmdNum;       ///< last command number
-    int              mWaitTime;     ///< time to wait (microsec) if no commands in queue
+    ExifToolPipe     mStdout;       ///< Buffer for exiftool stdout read pipe
+    ExifToolPipe     mStderr;       ///< Buffer for exiftool stderr read pipe
+    int              mTo;           ///< Write pipe for exiftool stdin
+    int              mPid;          ///< Exiftool application process ID
+    int              mWatchdog;     ///< Watchdog process ID
+    ExifToolTagInfo* mWriteInfo;    ///< Tag information to write
+    char*            mCmdQueue;     ///< Queued command arguments (NULL if nothing queued)
+    int              mCmdQueueLen;  ///< Length of data in command queue
+    int              mCmdQueueSize; ///< Size of command queue
+    int              mLastComplete; ///< Result of last Complete() call
+    int              mCmdNum;       ///< Last command number
+    int              mWaitTime;     ///< Time to wait (microsec) if no commands in queue
 };
 
 } // namespace Digikam
 
-#endif // DIGIKAM_EXIF_TOOL_H
+#endif // DIGIKAM_EXIF_TOOL_CORE_H

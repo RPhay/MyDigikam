@@ -14,7 +14,7 @@ include_directories(
 #------------------------------------------------------------------------
 
 set(exiftoolloader_cli_SRCS ${CMAKE_CURRENT_SOURCE_DIR}/exiftoolloader_cli.cpp
-                            ${CMAKE_CURRENT_SOURCE_DIR}/exiftool.cpp
+                            ${CMAKE_CURRENT_SOURCE_DIR}/exiftoolcore.cpp
                             ${CMAKE_CURRENT_SOURCE_DIR}/exiftoolpipe.cpp
                             ${CMAKE_CURRENT_SOURCE_DIR}/exiftooltaginfo.cpp
                             ${CMAKE_CURRENT_SOURCE_DIR}/exiftooltranslator.cpp

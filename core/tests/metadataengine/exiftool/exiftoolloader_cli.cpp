@@ -34,7 +34,7 @@
 // Local includes
 
 #include "dmetadata.h"
-#include "exiftool.h"
+#include "exiftoolcore.h"
 #include "exiftooltranslator.h"
 
 using namespace Digikam;
@@ -56,7 +56,7 @@ int main(int argc, char** argv)
 
     // Create ExifTool parser instance.
 
-    ExifTool* const parser      = new ExifTool();
+    ExifToolCore* const parser  = new ExifToolCore();
 
     // Post creation of hash tables for tag translations
 

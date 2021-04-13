@@ -22,7 +22,7 @@
  *
  * ============================================================ */
 
-#include "exiftool.h"
+#include "exiftoolcore.h"
 
 // C includes
 
@@ -40,16 +40,16 @@
 namespace Digikam
 {
 
-const int   kOutBlockSize         = 65536;      ///< size increment for exiftool stdout buffer
-const int   kErrBlockSize         = 4096;       ///< size increment for exiftool stderr buffer
-const int   kCmdBlockSize         = 8192;       ///< size increment for exiftool command buffer
+const int   kOutBlockSize             = 65536;      ///< size increment for exiftool stdout buffer
+const int   kErrBlockSize             = 4096;       ///< size increment for exiftool stderr buffer
+const int   kCmdBlockSize             = 8192;       ///< size increment for exiftool command buffer
 
-const char* kDefaultExec          = "exiftool";
+const char* kDefaultExec              = "exiftool";
 
-static int  sBrokenPipe           = -1;
+static int  sBrokenPipe               = -1;
 
-int         ExifTool::sNoSigPipe  = 0;
-int         ExifTool::sNoWatchdog = 0;
+int         ExifToolCore::sNoSigPipe  = 0;
+int         ExifToolCore::sNoWatchdog = 0;
 
 /**
  * SIGPIPE handler
@@ -190,7 +190,7 @@ static double getTime()
  * Inputs: exec - path name to executable file (ie. "perl" or "exiftool")
  *         arg1 - optional first argument (ie. "exiftool" if exec="perl")
  */
-ExifTool::ExifTool(const char* exec, const char* arg1)
+ExifToolCore::ExifToolCore(const char* exec, const char* arg1)
     : mWatchdog     (-1),
       mWriteInfo    (NULL),
       mCmdQueue     (NULL),
@@ -332,7 +332,7 @@ ExifTool::ExifTool(const char* exec, const char* arg1)
 /**
  * Terminate exiftool application process and close files
  */
-ExifTool::~ExifTool()
+ExifToolCore::~ExifToolCore()
 {
     delete mWriteInfo;
     delete [] mCmdQueue;
@@ -378,7 +378,7 @@ ExifTool::~ExifTool()
  *   to generate the ExifToolTagInfo list
  * - caller is responsible for deleting returned ExifToolTagInfo ("delete info;")
  */
-ExifToolTagInfo* ExifTool::ImageInfo(const char* file, const char* opts, double timeout)
+ExifToolTagInfo* ExifToolCore::ImageInfo(const char* file, const char* opts, double timeout)
 {
     int cmdNum = ExtractInfo(file, opts);
 
@@ -398,7 +398,7 @@ ExifToolTagInfo* ExifTool::ImageInfo(const char* file, const char* opts, double 
  *         opts - exiftool options, separated by newlines
  * Returns: command number (>0), or error (<0)
  */
-int ExifTool::ExtractInfo(const char *file, const char *opts)
+int ExifToolCore::ExtractInfo(const char *file, const char *opts)
 {
     if (!file)
     {
@@ -407,9 +407,8 @@ int ExifTool::ExtractInfo(const char *file, const char *opts)
 
     // prepare command arguments for exiftool
 
-    int flen = (int)strlen(file);
-    int olen = opts ? (int)strlen(opts) : 0;
-
+    int flen         = (int)strlen(file);
+    int olen         = opts ? (int)strlen(opts) : 0;
     char* const buff = new char[flen + olen + 64];
 
     if (!buff)
@@ -446,7 +445,7 @@ int ExifTool::ExtractInfo(const char *file, const char *opts)
  * Inputs:  timeout - maximum wait time (floating point seconds)
  * Returns: command number on success, 0 on timeout, or <0 on error
  */
-int ExifTool::Complete(double timeout)
+int ExifToolCore::Complete(double timeout)
 {
     if (mCmdQueue)
     {
@@ -521,7 +520,7 @@ int ExifTool::Complete(double timeout)
  * Returns: corresponding number from summary statistics, or -1 if the
  *          specified message wasn't found
  */
-int ExifTool::GetSummary(const char* msg) const
+int ExifToolCore::GetSummary(const char* msg) const
 {
     for (int out = 0 ; out < 2 ; ++out)
     {
@@ -564,7 +563,7 @@ int ExifTool::GetSummary(const char* msg) const
 /**
  * Check to see if exiftool process is still running
  */
-int ExifTool::IsRunning()
+int ExifToolCore::IsRunning()
 {
     int status;
 
@@ -585,42 +584,42 @@ int ExifTool::IsRunning()
     return 1;   // yes!
 }
 
-int ExifTool::LastComplete() const
+int ExifToolCore::LastComplete() const
 {
     return mLastComplete;
 }
 
-int ExifTool::LastCommand() const
+int ExifToolCore::LastCommand() const
 {
     return mCmdNum;
 }
 
-void ExifTool::SetLastComplete(int lastComplete)
+void ExifToolCore::SetLastComplete(int lastComplete)
 {
     mLastComplete = lastComplete;
 }
 
-void ExifTool::SetWaitTime(int waitTime)
+void ExifToolCore::SetWaitTime(int waitTime)
 {
     mWaitTime = waitTime;
 }
 
-char* ExifTool::GetOutput() const
+char* ExifToolCore::GetOutput() const
 {
     return ((mLastComplete > 0) ? mStdout.GetString() : NULL);
 }
 
-int ExifTool::GetOutputLen() const
+int ExifToolCore::GetOutputLen() const
 {
     return ((mLastComplete > 0) ? mStdout.GetStringLen() : 0);
 }
 
-char* ExifTool::GetError() const
+char* ExifToolCore::GetError() const
 {
     return ((mLastComplete > 0) ? mStderr.GetString() : NULL);
 }
 
-int ExifTool::GetErrorLen() const
+int ExifToolCore::GetErrorLen() const
 {
     return ((mLastComplete > 0) ? mStderr.GetStringLen() : 0);
 }
@@ -635,7 +634,7 @@ int ExifTool::GetErrorLen() const
  * - call with tag=NULL to reset previous new values
  * - call with value=NULL to delete tag
  */
-int ExifTool::SetNewValue(const char* tag, const char* value, int len)
+int ExifToolCore::SetNewValue(const char* tag, const char* value, int len)
 {
     int numSet = 0;
 
@@ -723,7 +722,7 @@ int ExifTool::SetNewValue(const char* tag, const char* value, int len)
  * - set cmd to NULL to continue writing previously queued commands
  * - this routine always returns immediately, and queues command if it couldn't send
  */
-int ExifTool::Command(const char* cmd)
+int ExifToolCore::Command(const char* cmd)
 {
     int n;
 
@@ -880,7 +879,7 @@ int ExifTool::Command(const char* cmd)
  * - caller is responsible for deleting returned ExifToolTagInfo ("delete info;")
  * - after return, GetError() may be called to get exiftool errors
  */
-ExifToolTagInfo* ExifTool::GetInfo(int cmdNum, double timeout)
+ExifToolTagInfo* ExifToolCore::GetInfo(int cmdNum, double timeout)
 {
     ExifToolTagInfo* info     = (ExifToolTagInfo*)NULL;
     ExifToolTagInfo* next     = (ExifToolTagInfo*)NULL;
@@ -1210,7 +1209,7 @@ ExifToolTagInfo* ExifTool::GetInfo(int cmdNum, double timeout)
  * - must call Complete() after this to check the return messages
  * - ignores "SourceFile" entries in input ExifToolTagInfo list
  */
-int ExifTool::WriteInfo(const char* file, const char* opts, ExifToolTagInfo* info)
+int ExifToolCore::WriteInfo(const char* file, const char* opts, ExifToolTagInfo* info)
 {
     if (!file)
     {
