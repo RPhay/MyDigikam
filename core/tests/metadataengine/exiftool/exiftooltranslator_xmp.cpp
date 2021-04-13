@@ -71,6 +71,7 @@ void ExifToolTranslator::Private::populateXmpHashTable()
 
     // Xmp exif Group
 
+    mapETtoExiv2.insert(QLatin1String("XMP.XMP-exif.Image.ExifVersion"),                        QLatin1String("Xmp.exif.ExifVersion"));
     mapETtoExiv2.insert(QLatin1String("XMP.XMP-exif.Time.DateTimeOriginal"),                    QLatin1String("Xmp.exif.DateTimeOriginal"));
     mapETtoExiv2.insert(QLatin1String("XMP.XMP-exif.Time.DateTimeDigitized"),                   QLatin1String("Xmp.exif.DateTimeDigitized"));
     mapETtoExiv2.insert(QLatin1String("XMP.XMP-exif.Image.ColorSpace"),                         QLatin1String("Xmp.exif.ColorSpace"));
@@ -93,6 +94,7 @@ void ExifToolTranslator::Private::populateXmpHashTable()
     mapETtoExiv2.insert(QLatin1String("XMP.XMP-photoshop.Image.Urgency"),                       QLatin1String("Xmp.photoshop.Urgency"));
     mapETtoExiv2.insert(QLatin1String("XMP.XMP-photoshop.Image.ColorMode"),                     QLatin1String("Xmp.photoshop.ColorMode"));
     mapETtoExiv2.insert(QLatin1String("XMP.XMP-photoshop.Image.History"),                       QLatin1String("Xmp.photoshop.History"));
+    mapETtoExiv2.insert(QLatin1String("XMP.XMP-photoshop.Image.LegacyIPTCDigest"),              QLatin1String("Xmp.photoshop.LegacyIPTCDigest"));
 
     // Xmp digiKam group
 
@@ -128,6 +130,14 @@ void ExifToolTranslator::Private::populateXmpHashTable()
     mapETtoExiv2.insert(QLatin1String("XMP.XMP-xmpMM.Other.InstanceID"),                        QLatin1String("Xmp.xmpMM.InstanceID"));
     mapETtoExiv2.insert(QLatin1String("XMP.XMP-xmpMM.Other.DerivedFromInstanceID"),             QLatin1String("Xmp.xmpMM.DerivedFrom/stRef:instanceID"));
     mapETtoExiv2.insert(QLatin1String("XMP.XMP-xmpMM.Other.DerivedFromDocumentID"),             QLatin1String("Xmp.xmpMM.DerivedFrom/stRef:documentID"));
+    mapETtoExiv2.insert(QLatin1String("XMP.XMP-xmpMM.Other.OriginalDocumentID"),                QLatin1String("Xmp.xmpMM.OriginalDocumentID"));
+    mapETtoExiv2.insert(QLatin1String("XMP.XMP-xmpMM.Other.PreservedFileName"),                 QLatin1String("Xmp.xmpMM.PreservedFileName"));
+    // History is a sequence of values must be backported with post processing.
+    mapETtoExiv2.insert(QLatin1String("XMP.XMP-xmpMM.Other.HistoryAction"),                     QLatin1String("..."));
+    mapETtoExiv2.insert(QLatin1String("XMP.XMP-xmpMM.Other.HistoryChanged"),                    QLatin1String("..."));
+    mapETtoExiv2.insert(QLatin1String("XMP.XMP-xmpMM.Other.HistoryInstanceID"),                 QLatin1String("..."));
+    mapETtoExiv2.insert(QLatin1String("XMP.XMP-xmpMM.Other.HistorySoftwareAgent"),              QLatin1String("..."));
+    mapETtoExiv2.insert(QLatin1String("XMP.XMP-xmpMM.Time.HistoryWhen"),                        QLatin1String("..."));
 
     // Xmp MP group
 
@@ -143,6 +153,8 @@ void ExifToolTranslator::Private::populateXmpHashTable()
     mapETtoExiv2.insert(QLatin1String("XMP.XMP-dc.Image.Description"),                          QLatin1String("Xmp.dc.description"));
     mapETtoExiv2.insert(QLatin1String("XMP.XMP-dc.Image.Format"),                               QLatin1String("Xmp.dc.format"));
     mapETtoExiv2.insert(QLatin1String("XMP.XMP-dc.Image.Title"),                                QLatin1String("Xmp.dc.title"));
+    mapETtoExiv2.insert(QLatin1String("XMP.XMP-dc.Author.Creator"),                             QLatin1String("Xmp.dc.creator"));
+    mapETtoExiv2.insert(QLatin1String("XMP.XMP-dc.Author.Rights"),                              QLatin1String("Xmp.dc.rights"));
 
     // Xmp rdf Group
 
@@ -160,6 +172,10 @@ void ExifToolTranslator::Private::populateXmpHashTable()
     mapETtoExiv2.insert(QLatin1String("XMP.XMP-iptcExt.Location.LocationCreatedCity"),          QLatin1String("Xmp.iptcExt.LocationCreated"));
     mapETtoExiv2.insert(QLatin1String("XMP.XMP-iptcExt.Location.LocationCreatedCountryName"),   QLatin1String("Xmp.iptcExt.CountryName"));
     mapETtoExiv2.insert(QLatin1String("XMP.XMP-iptcExt.Location.LocationCreatedProvinceState"), QLatin1String("Xmp.iptcExt.ProvinceState"));
+
+    // Xmp crs Group
+
+    mapETtoExiv2.insert(QLatin1String("XMP.XMP-crs.Image.AlreadyApplied"),                      QLatin1String("Xmp.crs.AlreadyApplied"));
 }
 
 } // namespace Digikam

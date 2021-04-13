@@ -42,11 +42,13 @@ void ExifToolTranslator::Private::populateIptcHashTable()
     mapETtoExiv2.insert(QLatin1String("IPTC.IPTC.Other.OriginatingProgram"),           QLatin1String("Iptc.Application2.Program"));
     mapETtoExiv2.insert(QLatin1String("IPTC.IPTC.Other.ProgramVersion"),               QLatin1String("Iptc.Application2.ProgramVersion"));
     mapETtoExiv2.insert(QLatin1String("IPTC.IPTC.Other.Keywords"),                     QLatin1String("Iptc.Application2.Keywords"));
+    mapETtoExiv2.insert(QLatin1String("IPTC.IPTC.Other.ObjectName"),                   QLatin1String("Iptc.Application2.ObjectName"));
+    mapETtoExiv2.insert(QLatin1String("IPTC.IPTC.Author.By-line"),                     QLatin1String("Iptc.Application2.Byline"));
+    mapETtoExiv2.insert(QLatin1String("IPTC.IPTC.Author.CopyrightNotice"),             QLatin1String("Iptc.Application2.Copyright"));
     mapETtoExiv2.insert(QLatin1String("IPTC.IPTC.Time.DateCreated"),                   QLatin1String("Iptc.Application2.DateCreated"));
     mapETtoExiv2.insert(QLatin1String("IPTC.IPTC.Time.TimeCreated"),                   QLatin1String("Iptc.Application2.TimeCreated"));
     mapETtoExiv2.insert(QLatin1String("IPTC.IPTC.Time.DigitalCreationDate"),           QLatin1String("Iptc.Application2.DigitizationDate"));
     mapETtoExiv2.insert(QLatin1String("IPTC.IPTC.Time.DigitalCreationTime"),           QLatin1String("Iptc.Application2.DigitizationTime"));
-    mapETtoExiv2.insert(QLatin1String("IPTC.IPTC.Other.ObjectName"),                   QLatin1String("Iptc.Application2.ObjectName"));
 }
 
 } // namespace Digikam

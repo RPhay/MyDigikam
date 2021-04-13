@@ -38,6 +38,7 @@ void ExifToolTranslator::Private::populateExifHashTable()
     // Exif Image Group
 
     mapETtoExiv2.insert(QLatin1String("EXIF.IFD0.Author.Copyright"),                   QLatin1String("Exif.Image.Copyright"));
+    mapETtoExiv2.insert(QLatin1String("EXIF.IFD0.Author.XPAuthor"),                    QLatin1String("Exif.Image.XPAuthor"));
     mapETtoExiv2.insert(QLatin1String("EXIF.IFD0.Camera.Make"),                        QLatin1String("Exif.Image.Make"));
     mapETtoExiv2.insert(QLatin1String("EXIF.IFD0.Camera.Model"),                       QLatin1String("Exif.Image.Model"));
     mapETtoExiv2.insert(QLatin1String("EXIF.IFD0.Image.DocumentName"),                 QLatin1String("Exif.Image.DocumentName"));
@@ -63,10 +64,12 @@ void ExifToolTranslator::Private::populateExifHashTable()
     mapETtoExiv2.insert(QLatin1String("EXIF.IFD0.Image.Padding"),                      QLatin1String("..."));        // TODO: do not exist yet in Exiv2
     mapETtoExiv2.insert(QLatin1String("EXIF.IFD0.Time.ModifyDate"),                    QLatin1String("..."));        // TODO: do not exist yet in Exiv2
     mapETtoExiv2.insert(QLatin1String("EXIF.IFD0.Time.PreviewDateTime"),               QLatin1String("..."));        // TODO: do not exist yet in Exiv2
+
     // Exif Photo Group
 
     mapETtoExiv2.insert(QLatin1String("EXIF.ExifIFD.Image.OffsetSchema"),              QLatin1String("..."));        // TODO: do not exist yet in Exiv2
     mapETtoExiv2.insert(QLatin1String("EXIF.ExifIFD.Image.Padding"),                   QLatin1String("..."));        // TODO: do not exist yet in Exiv2
+
     mapETtoExiv2.insert(QLatin1String("EXIF.ExifIFD.Image.BrightnessValue"),           QLatin1String("Exif.Photo.BrightnessValue"));
     mapETtoExiv2.insert(QLatin1String("EXIF.ExifIFD.Image.ImageUniqueID"),             QLatin1String("Exif.Photo.ImageUniqueID"));
     mapETtoExiv2.insert(QLatin1String("EXIF.ExifIFD.Image.UserComment"),               QLatin1String("Exif.Photo.UserComment"));
@@ -112,6 +115,8 @@ void ExifToolTranslator::Private::populateExifHashTable()
     mapETtoExiv2.insert(QLatin1String("EXIF.ExifIFD.Camera.SensingMethod"),            QLatin1String("Exif.Photo.SensingMethod"));
     mapETtoExiv2.insert(QLatin1String("EXIF.ExifIFD.Time.DateTimeOriginal"),           QLatin1String("Exif.Photo.DateTimeOriginal"));
     mapETtoExiv2.insert(QLatin1String("EXIF.ExifIFD.Time.CreateDate"),                 QLatin1String("Exif.Photo.DateTimeDigitized"));
+    mapETtoExiv2.insert(QLatin1String("EXIF.ExifIFD.Time.SubSecTimeDigitized"),        QLatin1String("Exif.Photo.SubSecTimeDigitized"));
+    mapETtoExiv2.insert(QLatin1String("EXIF.ExifIFD.Time.SubSecTimeOriginal"),         QLatin1String("Exif.Photo.SubSecTimeOriginal"));
 
     // Exif Thumbnail Group
 
