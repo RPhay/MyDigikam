@@ -59,16 +59,29 @@ class ExifTool
 {
 public:
 
-    ExifTool(const char* exec = NULL, const char* arg1 = NULL);
+    ExifTool(const char* exec = NULL,
+             const char* arg1 = NULL);
     virtual ~ExifTool();
 
-    ExifToolTagInfo* ImageInfo(const char* file, const char* opts = NULL, double timeout = NEVER);
+public:
 
-    int ExtractInfo(const char* file, const char* opts = NULL);
-    ExifToolTagInfo* GetInfo(int cmdNum = 0, double timeout = NEVER);
+    ExifToolTagInfo* ImageInfo(const char* file,
+                               const char* opts = NULL,
+                               double timeout = NEVER);
 
-    int   SetNewValue(const char* tag = NULL, const char* value = NULL, int len = -1);
-    int   WriteInfo(const char* file, const char* opts = NULL, ExifToolTagInfo* info = NULL);
+    int ExtractInfo(const char* file,
+                    const char* opts = NULL);
+
+    ExifToolTagInfo* GetInfo(int cmdNum = 0,
+                             double timeout = NEVER);
+
+    int   SetNewValue(const char* tag = NULL,
+                      const char* value = NULL,
+                      int len = -1);
+
+    int   WriteInfo(const char* file,
+                    const char* opts = NULL,
+                    ExifToolTagInfo* info = NULL);
 
     int   Command(const char* cmd = NULL);
     int   Complete(double timeout = NEVER);
@@ -88,11 +101,12 @@ public:
 
 public:
 
-    // flags to allow some ExifTool features to be disabled
-    // (must be set before creating ExifTool object)
-
-    static int  sNoSigPipe;         ///< set to disable SIGPIPE handler
-    static int  sNoWatchdog;        ///< set to disable watchdog process
+    /**
+     * Flags to allow some ExifTool features to be disabled
+     * (must be set before creating ExifTool object)
+     */
+    static int       sNoSigPipe;    ///< set to disable SIGPIPE handler
+    static int       sNoWatchdog;   ///< set to disable watchdog process
 
 private:
 

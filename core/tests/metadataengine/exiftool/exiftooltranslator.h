@@ -35,6 +35,7 @@ class ExifToolTranslator
 {
 public:
 
+    /// This class is a singleton to optimize time loading of intenal hash-tables.
     static ExifToolTranslator* instance();
 
     QString translateToExiv2(const QString& tagName)    const;

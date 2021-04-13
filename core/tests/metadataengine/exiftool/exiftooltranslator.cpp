@@ -59,6 +59,7 @@ public:
         mapETtoExiv2.insert(QLatin1String("EXIF.InteropIFD.Image.InteropIndex"),           QLatin1String("Exif.Iop.InteroperabilityIndex"));
         mapETtoExiv2.insert(QLatin1String("EXIF.InteropIFD.Image.InteropVersion"),         QLatin1String("Exif.Iop.InteroperabilityVersion"));
         // Exif Image Group
+        mapETtoExiv2.insert(QLatin1String("EXIF.IFD0.Author.Copyright"),                   QLatin1String("Exif.Image.Copyright"));
         mapETtoExiv2.insert(QLatin1String("EXIF.IFD0.Image.DocumentName"),                 QLatin1String("Exif.Image.DocumentName"));
         mapETtoExiv2.insert(QLatin1String("EXIF.IFD0.Image.ImageWidth"),                   QLatin1String("Exif.Image.ImageWidth"));
         mapETtoExiv2.insert(QLatin1String("EXIF.IFD0.Image.ImageHeight"),                  QLatin1String("Exif.Image.ImageLength"));
@@ -99,6 +100,12 @@ public:
         mapETtoExiv2.insert(QLatin1String("EXIF.ExifIFD.Image.FileSource"),                QLatin1String("Exif.Photo.FileSource"));
         mapETtoExiv2.insert(QLatin1String("EXIF.ExifIFD.Image.SceneType"),                 QLatin1String("Exif.Photo.SceneType"));
         mapETtoExiv2.insert(QLatin1String("EXIF.ExifIFD.Image.CustomRendered"),            QLatin1String("Exif.Photo.CustomRendered"));
+        mapETtoExiv2.insert(QLatin1String("EXIF.ExifIFD.Image.LensInfo"),                  QLatin1String("Exif.Photo.LensSpecification"));
+        mapETtoExiv2.insert(QLatin1String("EXIF.ExifIFD.Image.LensModel"),                 QLatin1String("Exif.Photo.LensModel"));
+        mapETtoExiv2.insert(QLatin1String("EXIF.ExifIFD.Image.RecommendedExposureIndex"),  QLatin1String("Exif.Photo.RecommendedExposureIndex"));
+        mapETtoExiv2.insert(QLatin1String("EXIF.ExifIFD.Image.SensitivityType"),           QLatin1String("Exif.Photo.SensitivityType"));
+        mapETtoExiv2.insert(QLatin1String("EXIF.ExifIFD.Image.ApertureValue"),             QLatin1String("Exif.Photo.ApertureValue"));
+        mapETtoExiv2.insert(QLatin1String("EXIF.ExifIFD.Image.ShutterSpeedValue"),         QLatin1String("Exif.Photo.ShutterSpeedValue"));
         mapETtoExiv2.insert(QLatin1String("EXIF.ExifIFD.Camera.ExposureProgram"),          QLatin1String("Exif.Photo.ExposureProgram"));
         mapETtoExiv2.insert(QLatin1String("EXIF.ExifIFD.Camera.MaxApertureValue"),         QLatin1String("Exif.Photo.MaxApertureValue"));
         mapETtoExiv2.insert(QLatin1String("EXIF.ExifIFD.Camera.MeteringMode"),             QLatin1String("Exif.Photo.MeteringMode"));
@@ -115,18 +122,23 @@ public:
         mapETtoExiv2.insert(QLatin1String("EXIF.ExifIFD.Camera.Sharpness"),                QLatin1String("Exif.Photo.Sharpness"));
         mapETtoExiv2.insert(QLatin1String("EXIF.ExifIFD.Camera.SubjectDistanceRange"),     QLatin1String("Exif.Photo.SubjectDistanceRange"));
         mapETtoExiv2.insert(QLatin1String("EXIF.ExifIFD.Camera.WhiteBalance"),             QLatin1String("Exif.Photo.WhiteBalance"));
+        mapETtoExiv2.insert(QLatin1String("EXIF.ExifIFD.Camera.FocalPlaneResolutionUnit"), QLatin1String("Exif.Photo.FocalPlaneResolutionUnit"));
+        mapETtoExiv2.insert(QLatin1String("EXIF.ExifIFD.Camera.FocalPlaneXResolution"),    QLatin1String("Exif.Photo.FocalPlaneXResolution"));
+        mapETtoExiv2.insert(QLatin1String("EXIF.ExifIFD.Camera.FocalPlaneYResolution"),    QLatin1String("Exif.Photo.FocalPlaneYResolution"));
+        mapETtoExiv2.insert(QLatin1String("EXIF.ExifIFD.Camera.SensingMethod"),            QLatin1String("Exif.Photo.SensingMethod"));
+
+//        mapETtoExiv2.insert(QLatin1String(""), QLatin1String(""));
+
         mapETtoExiv2.insert(QLatin1String("EXIF.ExifIFD.Time.DateTimeOriginal"),           QLatin1String("Exif.Photo.DateTimeOriginal"));
         mapETtoExiv2.insert(QLatin1String("EXIF.ExifIFD.Time.CreateDate"),                 QLatin1String("Exif.Photo.DateTimeDigitized"));
-        mapETtoExiv2.insert(QLatin1String("EXIF.ExifIFD.Image.LensInfo"),                  QLatin1String("Exif.Photo.LensSpecification"));
-        mapETtoExiv2.insert(QLatin1String("EXIF.ExifIFD.Image.LensModel"),                 QLatin1String("Exif.Photo.LensModel"));
-        mapETtoExiv2.insert(QLatin1String("EXIF.ExifIFD.Image.RecommendedExposureIndex"),  QLatin1String("Exif.Photo.RecommendedExposureIndex"));
-        mapETtoExiv2.insert(QLatin1String("EXIF.ExifIFD.Image.SensitivityType"),           QLatin1String("Exif.Photo.SensitivityType"));
         // Exif Thumbnail Group
         mapETtoExiv2.insert(QLatin1String("EXIF.IFD1.Image.Compression"),                  QLatin1String("Exif.Thumbnail.Compression"));
         mapETtoExiv2.insert(QLatin1String("EXIF.IFD1.Image.XResolution"),                  QLatin1String("Exif.Thumbnail.XResolution"));
         mapETtoExiv2.insert(QLatin1String("EXIF.IFD1.Image.YResolution"),                  QLatin1String("Exif.Thumbnail.YResolution"));
         mapETtoExiv2.insert(QLatin1String("EXIF.IFD1.Image.ResolutionUnit"),               QLatin1String("Exif.Thumbnail.ResolutionUnit"));
         mapETtoExiv2.insert(QLatin1String("EXIF.IFD1.Image.ThumbnailLength"),              QLatin1String("Exif.Thumbnail.JPEGInterchangeFormatLength"));
+        mapETtoExiv2.insert(QLatin1String("EXIF.IFD1.Image.Orientation"),                  QLatin1String("Exif.Thumbnail.Orientation"));
+        mapETtoExiv2.insert(QLatin1String("EXIF.IFD1.Image.YCbCrPositioning"),             QLatin1String("Exif.Thumbnail.YCbCrPositioning"));
         mapETtoExiv2.insert(QLatin1String("EXIF.IFD1.Image.ThumbnailOffset"),              QLatin1String("..."));        // TODO: do not exist yet in Exiv2
         mapETtoExiv2.insert(QLatin1String("EXIF.IFD1.Preview.ThumbnailImage"),             QLatin1String("..."));        // TODO: do not exist yet in Exiv2
         // Exif GPSInfo Group
@@ -202,15 +214,15 @@ public:
         mapETtoExiv2.insert(QLatin1String("XMP.XMP-exif.Image.ExifImageWidth"),            QLatin1String("Xmp.exif.PixelXDimension"));
         mapETtoExiv2.insert(QLatin1String("XMP.XMP-exif.Image.ExifImageHeight"),           QLatin1String("Xmp.exif.PixelYDimension"));
         mapETtoExiv2.insert(QLatin1String("XMP.XMP-exif.Image.NativeDigest"),              QLatin1String("Xmp.exif.NativeDigest"));
+        mapETtoExiv2.insert(QLatin1String("XMP.XMP-exif.Image.GPSLatitudeRef"),            QLatin1String("Xmp.exif.GPSLatitudeRef"));
+        mapETtoExiv2.insert(QLatin1String("XMP.XMP-exif.Image.GPSLongitudeRef"),           QLatin1String("Xmp.exif.GPSLongitudeRef"));
+        mapETtoExiv2.insert(QLatin1String("XMP.XMP-exif.Image.UserComment"),               QLatin1String("Xmp.exif.UserComment"));
         mapETtoExiv2.insert(QLatin1String("XMP.XMP-exif.Location.GPSVersionID"),           QLatin1String("Xmp.exif.GPSVersionID"));
         mapETtoExiv2.insert(QLatin1String("XMP.XMP-exif.Location.GPSMapDatum"),            QLatin1String("Xmp.exif.GPSMapDatum"));
         mapETtoExiv2.insert(QLatin1String("XMP.XMP-exif.Location.GPSAltitudeRef"),         QLatin1String("Xmp.exif.GPSAltitudeRef"));
         mapETtoExiv2.insert(QLatin1String("XMP.XMP-exif.Location.GPSAltitude"),            QLatin1String("Xmp.exif.GPSAltitude"));
         mapETtoExiv2.insert(QLatin1String("XMP.XMP-exif.Location.GPSLatitude"),            QLatin1String("Xmp.exif.GPSLatitude"));
         mapETtoExiv2.insert(QLatin1String("XMP.XMP-exif.Location.GPSLongitude"),           QLatin1String("Xmp.exif.GPSLongitude"));
-        mapETtoExiv2.insert(QLatin1String("XMP.XMP-exif.Image.GPSLatitudeRef"),            QLatin1String("Xmp.exif.GPSLatitudeRef"));
-        mapETtoExiv2.insert(QLatin1String("XMP.XMP-exif.Image.GPSLongitudeRef"),           QLatin1String("Xmp.exif.GPSLongitudeRef"));
-        mapETtoExiv2.insert(QLatin1String("XMP.XMP-exif.Image.UserComment"),               QLatin1String("Xmp.exif.UserComment"));
         // Xmp photoshop Group
         mapETtoExiv2.insert(QLatin1String("XMP.XMP-photoshop.Time.DateCreated"),           QLatin1String("Xmp.photoshop.DateCreated"));
         mapETtoExiv2.insert(QLatin1String("XMP.XMP-photoshop.Image.Urgency"),              QLatin1String("Xmp.photoshop.Urgency"));
@@ -266,13 +278,15 @@ public:
                        << QLatin1String("ExifTool.ExifTool.ExifTool.")  // Internal info from ExifTool
                        << QLatin1String("File.System.")                 // Info from file system
                        << QLatin1String("File.File.")                   // Info from file system
-                       << QLatin1String("JFIF.JFIF.")                   // JFIF section                 (do not exist yet in Exiv2)
-                       << QLatin1String("ICC_Profile.")                 // Icc profile section          (do not exist yet in Exiv2)
-                       << QLatin1String("Composite.")                   // Exif extended section ?      (do not exist yet in Exiv2)
-                       << QLatin1String("Photoshop.")                   // Exif App15 section ?         (do not exist yet in Exiv2)
-                       << QLatin1String("APP14.")                       // Exif App14 section ?         (do not exist yet in Exiv2)
-                       << QLatin1String("PrintIM.")                     // Exif Print section           (do not exist yet in Exiv2)
-                       << QLatin1String("MakerNotes.")                  // Exif Maker-notes section
+                       << QLatin1String("MakerNotes.")                  // Exif Maker-note sections
+                       << QLatin1String("JFIF.JFIF.")                   // JFIF section                         (do not exist yet in Exiv2)
+                       << QLatin1String("ICC_Profile.")                 // Icc profile section                  (do not exist yet in Exiv2)
+                       << QLatin1String("Composite.")                   // Exif extended section ?              (do not exist yet in Exiv2)
+                       << QLatin1String("APP14.")                       // JPEG APP14 section                   (do not exist yet in Exiv2)
+                       << QLatin1String("PrintIM.")                     // JPEG APP6::EPPIM section             (do not exist yet in Exiv2)
+                       << QLatin1String("Photoshop.")                   // JPEG APP13::PhotoshopIRB section     (do not exist yet in Exiv2)
+                       << QLatin1String("FlashPix.")                    // JPEG APP2::FPXR section              (do not exist yet in Exiv2)
+                       << QLatin1String("MPF.")                         // JPEG APP2::MPF section               (do not exist yet in Exiv2)
                       ;
     }
 
