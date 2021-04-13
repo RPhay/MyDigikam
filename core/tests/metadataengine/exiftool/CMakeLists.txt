@@ -13,23 +13,40 @@ include_directories(
 
 #------------------------------------------------------------------------
 
-set(exiftoolloader_cli_SRCS ${CMAKE_CURRENT_SOURCE_DIR}/exiftoolloader_cli.cpp
-                            ${CMAKE_CURRENT_SOURCE_DIR}/exiftoolcore.cpp
-                            ${CMAKE_CURRENT_SOURCE_DIR}/exiftoolpipe.cpp
-                            ${CMAKE_CURRENT_SOURCE_DIR}/exiftooltaginfo.cpp
-                            ${CMAKE_CURRENT_SOURCE_DIR}/exiftooltranslator.cpp
-                            ${CMAKE_CURRENT_SOURCE_DIR}/exiftooltranslator_p.cpp
-                            ${CMAKE_CURRENT_SOURCE_DIR}/exiftooltranslator_exif.cpp
-                            ${CMAKE_CURRENT_SOURCE_DIR}/exiftooltranslator_iptc.cpp
-                            ${CMAKE_CURRENT_SOURCE_DIR}/exiftooltranslator_xmp.cpp
-                            ${CMAKE_CURRENT_SOURCE_DIR}/exiftooltranslator_ignoredgroups.cpp
+set(libexiftool_SRCS ${CMAKE_CURRENT_SOURCE_DIR}/exiftoolcore.cpp
+                     ${CMAKE_CURRENT_SOURCE_DIR}/exiftoolpipe.cpp
+                     ${CMAKE_CURRENT_SOURCE_DIR}/exiftooltaginfo.cpp
+                     ${CMAKE_CURRENT_SOURCE_DIR}/exiftooltranslator.cpp
+                     ${CMAKE_CURRENT_SOURCE_DIR}/exiftooltranslator_p.cpp
+                     ${CMAKE_CURRENT_SOURCE_DIR}/exiftooltranslator_exif.cpp
+                     ${CMAKE_CURRENT_SOURCE_DIR}/exiftooltranslator_iptc.cpp
+                     ${CMAKE_CURRENT_SOURCE_DIR}/exiftooltranslator_xmp.cpp
+                     ${CMAKE_CURRENT_SOURCE_DIR}/exiftooltranslator_ignoredgroups.cpp
 )
 
+add_library(libexiftool STATIC ${libexiftool_SRCS})
+
+#------------------------------------------------------------------------
+
+set(exiftoolloader_cli_SRCS ${CMAKE_CURRENT_SOURCE_DIR}/exiftoolloader_cli.cpp)
 add_executable(exiftoolloader_cli ${exiftoolloader_cli_SRCS})
 ecm_mark_nongui_executable(exiftoolloader_cli)
 
 target_link_libraries(exiftoolloader_cli
+                      libexiftool
+                      digikamcore
 
+                      ${COMMON_TEST_LINK}
+)
+
+#------------------------------------------------------------------------
+
+set(exiftoolexport_cli_SRCS ${CMAKE_CURRENT_SOURCE_DIR}/exiftoolexport_cli.cpp)
+add_executable(exiftoolexport_cli ${exiftoolexport_cli_SRCS})
+ecm_mark_nongui_executable(exiftoolexport_cli)
+
+target_link_libraries(exiftoolexport_cli
+                      libexiftool
                       digikamcore
 
                       ${COMMON_TEST_LINK}

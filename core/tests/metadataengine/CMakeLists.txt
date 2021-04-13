@@ -30,8 +30,8 @@ target_link_libraries(dmetadataloader_cli
 # ----------------------------------------------------------------------------------
 
 QT5_WRAP_CPP(MOC_files ${CMAKE_CURRENT_SOURCE_DIR}/abstractunittest.h)
-add_library(libmetadatenginetest STATIC ${MOC_files})
-target_link_libraries(libmetadatenginetest ${COMMON_TEST_LINK})
+add_library(libmetadataenginetest STATIC ${MOC_files})
+target_link_libraries(libmetadataenginetest ${COMMON_TEST_LINK})
 
 macro(METADATAENGINE_TESTS_BUILD)
 
@@ -48,7 +48,7 @@ macro(METADATAENGINE_TESTS_BUILD)
                   LINK_LIBRARIES
 
                   digikamcore
-                  libmetadatenginetest
+                  libmetadataenginetest
 
                   ${COMMON_TEST_LINK}
     )
