@@ -71,6 +71,7 @@ void ExifToolTranslator::Private::populateXmpHashTable()
     // Xmp exif Group
 
     mapETtoExiv2.insert(QLatin1String("XMP.XMP-exif.Time.DateTimeOriginal"),           QLatin1String("Xmp.exif.DateTimeOriginal"));
+    mapETtoExiv2.insert(QLatin1String("XMP.XMP-exif.Time.DateTimeDigitized"),          QLatin1String("Xmp.exif.DateTimeDigitized"));
     mapETtoExiv2.insert(QLatin1String("XMP.XMP-exif.Image.ColorSpace"),                QLatin1String("Xmp.exif.ColorSpace"));
     mapETtoExiv2.insert(QLatin1String("XMP.XMP-exif.Image.ExifImageWidth"),            QLatin1String("Xmp.exif.PixelXDimension"));
     mapETtoExiv2.insert(QLatin1String("XMP.XMP-exif.Image.ExifImageHeight"),           QLatin1String("Xmp.exif.PixelYDimension"));
@@ -139,6 +140,20 @@ void ExifToolTranslator::Private::populateXmpHashTable()
     // Xmp rdf Group
 
     mapETtoExiv2.insert(QLatin1String("XMP.XMP-rdf.Document.About"),                   QLatin1String("..."));        // TODO: do not exist yet in Exiv2
+
+    // Xmp video Group
+
+    mapETtoExiv2.insert(QLatin1String("XMP.XMP-video.Unknown.DateTimeDigitized"),      QLatin1String("Xmp.video.DateTimeDigitized"));
+    mapETtoExiv2.insert(QLatin1String("XMP.XMP-video.Unknown.DateTimeOriginal"),       QLatin1String("Xmp.video.DateTimeOriginal"));
+    mapETtoExiv2.insert(QLatin1String("XMP.XMP-video.Unknown.DateUTC"),                QLatin1String("Xmp.video.DateUTC"));
+    mapETtoExiv2.insert(QLatin1String("XMP.XMP-video.Unknown.ModificationDate"),       QLatin1String("Xmp.video.ModificationDate"));
+/*
+    mapETtoExiv2.insert(QLatin1String(""),      QLatin1String(""));
+    mapETtoExiv2.insert(QLatin1String(""),      QLatin1String(""));
+    mapETtoExiv2.insert(QLatin1String(""),      QLatin1String(""));
+    mapETtoExiv2.insert(QLatin1String(""),      QLatin1String(""));
+    mapETtoExiv2.insert(QLatin1String(""),      QLatin1String(""));
+*/
 }
 
 } // namespace Digikam
