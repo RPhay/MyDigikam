@@ -833,7 +833,9 @@ int ExifToolCore::Command(const char* cmd)
             {
                 if (errno != EAGAIN)
                 {
-                    return -2; // write error!
+                    delete [] cmd2;
+
+                    return -2;      // write error!
                 }
 
                 n = 0;
