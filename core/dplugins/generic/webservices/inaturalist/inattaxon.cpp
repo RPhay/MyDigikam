@@ -120,13 +120,24 @@ QString Taxon::htmlName() const
     {
         // The scientific name is italisized but ssp, var, x aren't.
         QStringList split = name().split(QLatin1Char(' '));
-        assert(split.count() == 3);
-        QString txt = rank() == subspecies ? QLatin1String(" ssp. ") :
-                      rank() == variety ? QLatin1String(" var. ")
-                      : QLatin1String(" x ");
-        result += QLatin1String("<i>") + split[0] + QLatin1Char(' ') +
-                  split[1] + QLatin1String("</i>") + txt +
-                  QLatin1String("<i>") + split[2] + QLatin1String("</i>");
+
+        if (split.count() == 3)
+        {
+            QString txt = rank() == subspecies ? QLatin1String(" ssp. ") :
+                          rank() == variety ? QLatin1String(" var. ")
+                          : QLatin1String(" x ");
+            result += QLatin1String("<i>") + split[0] + QLatin1Char(' ') +
+                      split[1] + QLatin1String("</i>") + txt +
+                      QLatin1String("<i>") + split[2] + QLatin1String("</i>");
+        }
+        else
+        {
+            assert(split.count() == 4);
+            result += QLatin1String("<i>") + split[0] + QLatin1Char(' ') +
+                      split[1] + QLatin1String("</i>") + QLatin1Char(' ') +
+                      split[2] + QLatin1Char(' ') +
+                      QLatin1String("<i>") + split[3] + QLatin1String("</i>");
+        }
     }
     else
     {
