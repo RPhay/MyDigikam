@@ -795,7 +795,7 @@ int ExifToolCore::Command(const char* cmd)
 
         if (mCmdQueue)
         {
-            if (mCmdQueueLen + len2 > mCmdQueueSize)
+            if ((mCmdQueueLen + len2) > mCmdQueueSize)
             {
                 // enlarge queue and add new command
 
@@ -826,6 +826,8 @@ int ExifToolCore::Command(const char* cmd)
         else
         {
             // write the command
+
+            printf("ExifTool command: %s\n", cmd2);
 
             n = (int)write(mTo, cmd2, len2);
 
