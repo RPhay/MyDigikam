@@ -72,7 +72,8 @@ public:
     {
         COPYVALUE = 0,
         ADDVALUE,
-        SUBVALUE
+        SUBVALUE,
+        INTERVAL
     };
 
 public:
@@ -83,13 +84,14 @@ public:
     /// Check if at least one option is selected
     bool atLeastOneUpdateToProcess()                                const;
 
-    QDateTime calculateAdjustedDate(const QDateTime& originalTime)  const;
+    QDateTime calculateAdjustedDate(const QDateTime& originalTime);
     QDateTime getDateTimeFromUrl(const QUrl& url)                   const;
 
 public:
 
     QDateTime customDate;
     QDateTime customTime;
+    QDateTime intervalTime;
     QDateTime adjustmentTime;
 
     bool      updIfAvailable;

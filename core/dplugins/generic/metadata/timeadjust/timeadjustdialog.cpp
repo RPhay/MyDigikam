@@ -92,6 +92,7 @@ public:
     QMap<QUrl, QDateTime> itemsUsedMap;           // Map of item urls and Used Timestamps.
     QMap<QUrl, QDateTime> itemsUpdatedMap;        // Map of item urls and Updated Timestamps.
     QMap<QUrl, int>       itemsStatusMap;         // Map of item urls and status flag.
+    QList<QUrl>           itemsSortedList;        // List of item urls sorted in original order.
 
     QTimer*               updateTimer;
 
@@ -127,7 +128,7 @@ TimeAdjustDialog::TimeAdjustDialog(QWidget* const parent, DInfoInterface* const 
 
     QGridLayout* const mainLayout = new QGridLayout(mainWidget);
     d->listView                   = new TimeAdjustList(mainWidget);
-    d->settingsView               = new TimeAdjustSettings(mainWidget);
+    d->settingsView               = new TimeAdjustSettings(mainWidget, true);
     d->progressBar                = new DProgressWdg(mainWidget);
     d->progressBar->reset();
     d->progressBar->hide();
@@ -191,13 +192,14 @@ TimeAdjustDialog::TimeAdjustDialog(QWidget* const parent, DInfoInterface* const 
     setBusy(false);
     readSettings();
 
-    foreach (const QUrl& url, d->iface->currentSelectedItems())
-    {
-        d->itemsUsedMap.insert(url, QDateTime());
-    }
-
     d->listView->setIface(d->iface);
     d->listView->loadImagesFromCurrentSelection();
+
+    foreach (const QUrl& url, d->listView->imageUrls())
+    {
+        d->itemsSortedList << url;
+        d->itemsUsedMap.insert(url, QDateTime());
+    }
 
     slotReadTimestamps();
 }
@@ -285,7 +287,7 @@ void TimeAdjustDialog::saveSettings()
 
 void TimeAdjustDialog::slotReadTimestamps()
 {
-    foreach (const QUrl& url, d->itemsUsedMap.keys())
+    foreach (const QUrl& url, d->itemsSortedList)
     {
         d->itemsUsedMap.insert(url, QDateTime());
     }
@@ -323,7 +325,7 @@ void TimeAdjustDialog::slotReadTimestamps()
             QDateTime dateTime(d->settingsView->settings().customDate.date(),
                                d->settingsView->settings().customTime.time());
 
-            foreach (const QUrl& url, d->itemsUsedMap.keys())
+            foreach (const QUrl& url, d->itemsSortedList)
             {
                 d->itemsUsedMap.insert(url, dateTime);
             }
@@ -339,7 +341,7 @@ void TimeAdjustDialog::readApplicationTimestamps()
 {
     QList<QUrl> floatingDateItems;
 
-    foreach (const QUrl& url, d->itemsUsedMap.keys())
+    foreach (const QUrl& url, d->itemsSortedList)
     {
         DItemInfo info(d->iface->itemInfo(url));
 
@@ -359,7 +361,7 @@ void TimeAdjustDialog::readFileNameTimestamps()
 {
     TimeAdjustContainer prm = d->settingsView->settings();
 
-    foreach (const QUrl& url, d->itemsUsedMap.keys())
+    foreach (const QUrl& url, d->itemsSortedList)
     {
         d->itemsUsedMap.insert(url, prm.getDateTimeFromUrl(url));
     }
@@ -367,7 +369,7 @@ void TimeAdjustDialog::readFileNameTimestamps()
 
 void TimeAdjustDialog::readFileTimestamps()
 {
-    foreach (const QUrl& url, d->itemsUsedMap.keys())
+    foreach (const QUrl& url, d->itemsSortedList)
     {
         QFileInfo fileInfo(url.toLocalFile());
         d->itemsUsedMap.insert(url, fileInfo.lastModified());
@@ -376,7 +378,7 @@ void TimeAdjustDialog::readFileTimestamps()
 
 void TimeAdjustDialog::readMetadataTimestamps()
 {
-    foreach (const QUrl& url, d->itemsUsedMap.keys())
+    foreach (const QUrl& url, d->itemsSortedList)
     {
         QScopedPointer<DMetadata> meta(new DMetadata);
 
@@ -518,7 +520,7 @@ void TimeAdjustDialog::updateListView()
     // TODO : this loop can take a while, especially when items mist is huge.
     //        Moving this loop code to ActionThread is the right way for the future.
 
-    foreach (const QUrl& url, d->itemsUsedMap.keys())
+    foreach (const QUrl& url, d->itemsSortedList)
     {
         d->itemsUpdatedMap.insert(url, prm.calculateAdjustedDate(d->itemsUsedMap.value(url)));
     }
