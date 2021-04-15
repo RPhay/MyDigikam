@@ -66,7 +66,8 @@ public:
     /**
      * Setup the ExifTool configuration. This function must be called before start().
      */
-    void setProgram(const QString& etExePath, const QString& perlExePath = QString());
+    void setProgram(const QString& etExePath,
+                    const QString& perlExePath = QString());
 
     /**
      * Starts exiftool in a new process.
@@ -92,12 +93,12 @@ public:
     /**
      * Return true if ExifToolProcess is running (process state == Running)
      */
-    bool isRunning()                        const;
+    bool                   isRunning()      const;
 
     /**
      * Return true if a command is running
      */
-    bool isBusy()                           const;
+    bool                   isBusy()         const;
 
     /**
      * Returns the native process identifier for the running process, if available.
@@ -131,13 +132,13 @@ public:
      * Blocks until the process has started and the started() signal has been emitted,
      * or until msecs milliseconds have passed.
      */
-    bool waitForStarted(int msecs = 30000);
+    bool waitForStarted(int msecs = 30000)  const;
 
     /**
      * Blocks until the process has finished and the finished() signal has been emitted,
      * or until msecs milliseconds have passed.
      */
-    bool waitForFinished(int msecs = 30000);
+    bool waitForFinished(int msecs = 30000) const;
 
     /**
      * Send a command to exiftool process
@@ -152,23 +153,26 @@ private:
 private Q_SLOTS:
 
     void slotStarted();
-    void slotFinished(int exitCode, QProcess::ExitStatus exitStatus);
     void slotStateChanged(QProcess::ProcessState newState);
     void slotErrorOccurred(QProcess::ProcessError error);
     void slotReadyReadStandardOutput();
     void slotReadyReadStandardError();
+    void slotFinished(int exitCode,
+                      QProcess::ExitStatus exitStatus);
 
 private:
 
     void readOutput(const QProcess::ProcessChannel channel);
-    void setProcessErrorAndEmit(QProcess::ProcessError error, const QString& description);
+    void setProcessErrorAndEmit(QProcess::ProcessError error,
+                                const QString& description);
 
 Q_SIGNALS:
 
     void signalStarted();
-    void signalFinished(int exitCode, QProcess::ExitStatus exitStatus);
     void signalStateChanged(QProcess::ProcessState newState);
     void signalErrorOccurred(QProcess::ProcessError error);
+    void signalFinished(int exitCode,
+                        QProcess::ExitStatus exitStatus);
 
     void signalCmdCompleted(int cmdId,
                             int execTime,
@@ -190,28 +194,30 @@ private:
 
 private:
 
-    static const int        CMD_ID_MIN;
-    static const int        CMD_ID_MAX;
+    static const int       CMD_ID_MIN;
+    static const int       CMD_ID_MAX;
 
-    static       QMutex     m_cmdIdMutex;
-    static       int        m_nextCmdId;     ///< Unique identifier, even in a multi-instances or multi-thread environment
+    static       QMutex    m_cmdIdMutex;
+    static       int       m_nextCmdId;     ///< Unique identifier, even in a multi-instances or multi-thread environment
 
-    QString                 m_etExePath;
-    QString                 m_perlExePath;
-    QProcess*               m_process;
+private:
 
-    QElapsedTimer           m_execTimer;
-    QList<Command>          m_cmdQueue;
-    int                     m_cmdRunning;
+    QString                m_etExePath;
+    QString                m_perlExePath;
+    QProcess*              m_process;
 
-    int                     m_outAwait[2];   ///< [0] StandardOutput | [1] ErrorOutput
-    bool                    m_outReady[2];   ///< [0] StandardOutput | [1] ErrorOutput
-    QByteArray              m_outBuff[2];    ///< [0] StandardOutput | [1] ErrorOutput
+    QElapsedTimer          m_execTimer;
+    QList<Command>         m_cmdQueue;
+    int                    m_cmdRunning;
 
-    bool                    m_writeChannelIsClosed;
+    int                    m_outAwait[2];   ///< [0] StandardOutput | [1] ErrorOutput
+    bool                   m_outReady[2];   ///< [0] StandardOutput | [1] ErrorOutput
+    QByteArray             m_outBuff[2];    ///< [0] StandardOutput | [1] ErrorOutput
 
-    QProcess::ProcessError  m_processError;
-    QString                 m_errorString;
+    bool                   m_writeChannelIsClosed;
+
+    QProcess::ProcessError m_processError;
+    QString                m_errorString;
 };
 
 } // namespace Digikam

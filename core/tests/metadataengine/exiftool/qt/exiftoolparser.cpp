@@ -120,15 +120,14 @@ void ExifToolParser::slotCmdCompleted(int /*cmdId*/,
     QJsonObject   jsonObject  = jsonArray.at(0).toObject();
     QVariantMap   metadataMap = jsonObject.toVariantMap();
 
-    QStringList tagsLst;
-    TagsMap outMap;
+    TagsMap parsedMap;
     TagsMap ignoredMap;
 
     for (QVariantMap::const_iterator it = metadataMap.constBegin() ;
         it != metadataMap.constEnd() ; ++it)
     {
-        QString tagNameExifTool;
-        QString tagType;
+        QString     tagNameExifTool;
+        QString     tagType;
         QStringList sections    = it.key().split(QLatin1Char(':'));
 
         if      (sections.size() == 5)
@@ -233,10 +232,10 @@ void ExifToolParser::slotCmdCompleted(int /*cmdId*/,
             var = data;
         }
 
-        outMap.insert(tagNameExiv2, QVariantList() << tagNameExifTool << var << tagType);
+        parsedMap.insert(tagNameExiv2, QVariantList() << tagNameExifTool << var << tagType);
     }
 
-    emit signalExifToolMetadata(outMap, ignoredMap);
+    emit signalExifToolMetadata(parsedMap, ignoredMap);
 }
 
 } // namespace Digikam

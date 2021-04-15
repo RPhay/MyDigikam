@@ -46,16 +46,16 @@ QMutex       ExifToolProcess::m_cmdIdMutex;
 int          ExifToolProcess::m_nextCmdId   = CMD_ID_MIN;
 
 ExifToolProcess::ExifToolProcess(QObject* const parent)
-    : QObject              (parent),
+    : QObject               (parent),
       m_cmdRunning          (0),
       m_writeChannelIsClosed(true),
       m_processError        (QProcess::UnknownError)
 {
-    m_outAwait[0]          = false;
-    m_outAwait[1]          = false;
-    m_outReady[0]          = false;
-    m_outReady[1]          = false;
-    m_process              = new QProcess(this);
+    m_outAwait[0] = false;
+    m_outAwait[1] = false;
+    m_outReady[0] = false;
+    m_outReady[1] = false;
+    m_process     = new QProcess(this);
 
     connect(m_process, &QProcess::started,
             this, &ExifToolProcess::slotStarted);
@@ -115,7 +115,8 @@ void ExifToolProcess::start()
 
     // Check if Exiftool program exists and have execution permissions
 
-    if (!QFile::exists(m_etExePath) || !(QFile::permissions(m_etExePath) & QFile::ExeUser))
+    if (!QFile::exists(m_etExePath) ||
+        !(QFile::permissions(m_etExePath) & QFile::ExeUser))
     {
         setProcessErrorAndEmit(QProcess::FailedToStart,
                                QString::fromLatin1("ExifTool does not exists or exec permission is missing"));
@@ -230,12 +231,12 @@ QProcess::ExitStatus ExifToolProcess::exitStatus() const
     return m_process->exitStatus();
 }
 
-bool ExifToolProcess::waitForStarted(int msecs)
+bool ExifToolProcess::waitForStarted(int msecs) const
 {
     return m_process->waitForStarted(msecs);
 }
 
-bool ExifToolProcess::waitForFinished(int msecs)
+bool ExifToolProcess::waitForFinished(int msecs) const
 {
     return m_process->waitForFinished(msecs);
 }
