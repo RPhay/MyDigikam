@@ -49,6 +49,9 @@ private:
     ExifToolTranslator();
     ~ExifToolTranslator();
 
+    ExifToolTranslator(const ExifToolTranslator&)            = delete;
+    ExifToolTranslator& operator=(const ExifToolTranslator&) = delete;
+
 private:
 
     friend class ExifToolTranslatorCreator;
