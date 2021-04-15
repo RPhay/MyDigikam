@@ -46,10 +46,14 @@
 #include <QString>
 #include <QByteArray>
 
+// Local includes
+
+#include "digikam_export.h"
+
 namespace Digikam
 {
 
-class QExifToolProcess : public QObject
+class DIGIKAM_EXPORT QExifToolProcess : public QObject
 {
     Q_OBJECT
 
