@@ -162,6 +162,11 @@ int main(int argc, char** argv)
 
                 if (ExifToolTranslator::instance()->isIgnoredGroup(tagNameExifTool))
                 {
+                    if (!tagNameExifTool.startsWith(QLatin1String("...")))
+                    {
+                        ignoredETTags.append(tagNameExifTool);
+                    }
+
                     continue;
                 }
 
@@ -194,18 +199,34 @@ int main(int argc, char** argv)
                     }
                     else if (tagType == QLatin1String("undef"))
                     {
-                        if (tagNameExiv2 == QLatin1String("Exif.Photo.ComponentsConfiguration"))
+                        if (
+                            (tagNameExiv2 == QLatin1String("Exif.Photo.ComponentsConfiguration")) ||
+                            (tagNameExiv2 == QLatin1String("Exif.Photo.SceneType"))               ||
+                            (tagNameExiv2 == QLatin1String("Exif.Photo.FileSource"))
+                            )
                         {
-                            var = data.remove(QLatin1Char(' ')).toLatin1();
+                            QByteArray conv;
+                            QStringList vals = data.split(QLatin1Char(' '));
+
+                            foreach (const QString& v, vals)
+                            {
+                                conv.append(QString::fromLatin1("0x%1").arg(v.toInt(), 2, 16).toLatin1());
+                            }
+
+                            var = QByteArray::fromHex(conv);
                         }
                         else
                         {
                             var = data.toLatin1();
                         }
 
-                        meta.setExifTagVariant(tagNameExiv2.toLatin1().constData(), var);
+                        qDebug().noquote()
+                                 << QString::fromLatin1("%1").arg(tagNameExiv2, -45)
+                                 << QString::fromLatin1("%1").arg(tagType,      -16)
+                                 << QString::fromLatin1("%1").arg(data,         -20)
+                                 << var;
 
-                        qDebug() << tagNameExiv2 << tagType << data <<  var;
+                        meta.setExifTagVariant(tagNameExiv2.toLatin1().constData(), var);
                     }
                     else if (
                              (tagType == QLatin1String("double"))      ||
@@ -216,6 +237,15 @@ int main(int argc, char** argv)
                     {
                         var = data.toDouble();
                         meta.setExifTagVariant(tagNameExiv2.toLatin1().constData(), var);
+                    }
+                    else
+                    {
+                        ignoredETTags.append(
+                                 QString::fromLatin1("%1, %2, %3, %4")
+                                    .arg(tagNameExifTool)
+                                    .arg(tagNameExiv2)
+                                    .arg(tagType)
+                                    .arg(data));
                     }
                 }
                 else if (tagNameExiv2.startsWith(QLatin1String("Iptc.")))
@@ -247,6 +277,13 @@ int main(int argc, char** argv)
             else
             {
                 qWarning() << "Exiv2 has no XMP support...";
+            }
+
+            qDebug() << "-- Ignored ExifTool Tags --";
+
+            foreach (const QString& itag, ignoredETTags)
+            {
+                qDebug() << "   " << itag;
             }
 
             DImg file(1, 1, false);
