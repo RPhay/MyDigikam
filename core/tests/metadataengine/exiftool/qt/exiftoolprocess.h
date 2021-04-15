@@ -64,9 +64,9 @@ public:
 public:
 
     /**
-     * IMPORTANT: This function must be called before start().
+     * Setup the ExifTool configuration. This function must be called before start().
      */
-    void setProgram(const QString& etExePath, const QString& perlExePath= QString());
+    void setProgram(const QString& etExePath, const QString& perlExePath = QString());
 
     /**
      * Starts exiftool in a new process.
@@ -190,27 +190,28 @@ private:
 
 private:
 
-    static       QMutex     _cmdIdMutex;
     static const int        CMD_ID_MIN;
     static const int        CMD_ID_MAX;
-    static       int        _nextCmdId;     ///< Unique identifier, even in a multi-instances or multi-thread environment
 
-    QString                 _etExePath;
-    QString                 _perlExePath;
-    QProcess*               _process;
+    static       QMutex     m_cmdIdMutex;
+    static       int        m_nextCmdId;     ///< Unique identifier, even in a multi-instances or multi-thread environment
 
-    QElapsedTimer           _execTimer;
-    QList<Command>          _cmdQueue;
-    int                     _cmdRunning;
+    QString                 m_etExePath;
+    QString                 m_perlExePath;
+    QProcess*               m_process;
 
-    int                     _outAwait[2];   ///< [0] StandardOutput | [1] ErrorOutput
-    bool                    _outReady[2];   ///< [0] StandardOutput | [1] ErrorOutput
-    QByteArray              _outBuff[2];    ///< [0] StandardOutput | [1] ErrorOutput
+    QElapsedTimer           m_execTimer;
+    QList<Command>          m_cmdQueue;
+    int                     m_cmdRunning;
 
-    bool                    _writeChannelIsClosed;
+    int                     m_outAwait[2];   ///< [0] StandardOutput | [1] ErrorOutput
+    bool                    m_outReady[2];   ///< [0] StandardOutput | [1] ErrorOutput
+    QByteArray              m_outBuff[2];    ///< [0] StandardOutput | [1] ErrorOutput
 
-    QProcess::ProcessError  _processError;
-    QString                 _errorString;
+    bool                    m_writeChannelIsClosed;
+
+    QProcess::ProcessError  m_processError;
+    QString                 m_errorString;
 };
 
 } // namespace Digikam
