@@ -91,7 +91,8 @@ public Q_SLOTS:
 
     /**
      * Kills the current process, causing it to exit immediately.
-     * On Windows, kill() uses TerminateProcess, and on Unix and macOS, the SIGKILL signal is sent to the process.
+     * On Windows, kill() uses TerminateProcess, and on Unix and macOS,
+     * the SIGKILL signal is sent to the process.
      */
     void kill();
 
@@ -108,7 +109,8 @@ public:
     bool isBusy()                           const;
 
     /**
-     * Returns the native process identifier for the running process, if available. If no process is currently running, 0 is returned.
+     * Returns the native process identifier for the running process, if available.
+     * If no process is currently running, 0 is returned.
      */
     qint64                 processId()      const;
 
@@ -135,12 +137,14 @@ public:
     int                    exitCode()       const;
 
     /**
-     * Blocks until the process has started and the started() signal has been emitted, or until msecs milliseconds have passed.
+     * Blocks until the process has started and the started() signal has been emitted,
+     * or until msecs milliseconds have passed.
      */
     bool waitForStarted(int msecs = 30000);
 
     /**
-     * Blocks until the process has finished and the finished() signal has been emitted, or until msecs milliseconds have passed.
+     * Blocks until the process has finished and the finished() signal has been emitted,
+     * or until msecs milliseconds have passed.
      */
     bool waitForFinished(int msecs = 30000);
 
@@ -184,6 +188,11 @@ private:
 
     struct Command
     {
+        Command()
+            : id(0)
+        {
+        }
+
         int        id;
         QByteArray argsStr;
     };

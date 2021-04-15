@@ -56,13 +56,13 @@ int          QExifToolProcess::_nextCmdId   = CMD_ID_MIN;
 QExifToolProcess::QExifToolProcess(QObject* const parent)
     : QObject              (parent),
       _cmdRunning          (0),
-      _writeChannelIsClosed(true)
+      _writeChannelIsClosed(true),
+      _processError        (QProcess::UnknownError)
 {
     _outAwait[0]          = false;
     _outAwait[1]          = false;
     _outReady[0]          = false;
     _outReady[1]          = false;
-    _processError         = QProcess::UnknownError;
     _process              = new QProcess(this);
 
     connect(_process, &QProcess::started,
