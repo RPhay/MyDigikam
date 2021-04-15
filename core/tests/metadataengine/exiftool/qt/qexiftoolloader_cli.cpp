@@ -37,7 +37,7 @@
 
 // Local includes
 
-#include "qexiftoolprocess.h"
+#include "exiftoolprocess.h"
 #include "exiftooltranslator.h"
 
 using namespace Digikam;
@@ -66,7 +66,7 @@ int main(int argc, char** argv)
 
     // Create ExifTool parser instance.
 
-    QExifToolProcess* const parser  = new QExifToolProcess();
+    ExifToolProcess* const parser  = new ExifToolProcess();
 
 #if defined Q_OS_LINUX || defined Q_OS_MACOS
 
@@ -80,7 +80,7 @@ int main(int argc, char** argv)
 
     // Connect at least cmdCompleted signal to slot
 
-    QObject::connect(parser, &QExifToolProcess::signalCmdCompleted,
+    QObject::connect(parser, &ExifToolProcess::signalCmdCompleted,
                      [=](int /*cmdId*/, int /*execTime*/, const QByteArray& stdOut, const QByteArray& /*stdErr*/)  // clazy:exclude=function-args-by-ref
         {
             // Print returned and sorted tags.
@@ -194,7 +194,7 @@ int main(int argc, char** argv)
         }
     );
 
-    // Read metadata from the file. Start QExifToolProcess
+    // Read metadata from the file. Start ExifToolProcess
 
     parser->start();
 
@@ -213,7 +213,7 @@ int main(int argc, char** argv)
     cmdArgs << "-n";
     cmdArgs << fileInfo.filePath().toUtf8();
 
-    // Send command to QExifToolProcess
+    // Send command to ExifToolProcess
 
     parser->command(cmdArgs); // See additional notes
 

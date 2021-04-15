@@ -35,7 +35,7 @@
 namespace Digikam
 {
 
-class QExifToolProcess;
+class ExifToolProcess;
 
 class ExifToolParser : public QObject
 {
@@ -76,7 +76,7 @@ private Q_SLOTS:
 
 private:
 
-    QExifToolProcess* m_proc;
+    ExifToolProcess* m_proc;
 };
 
 } // namespace Digikam

@@ -14,7 +14,7 @@ include_directories(
 
 #------------------------------------------------------------------------
 
-set(exiftoolqt_SRCS ${CMAKE_CURRENT_SOURCE_DIR}/qexiftoolprocess.cpp
+set(exiftoolqt_SRCS ${CMAKE_CURRENT_SOURCE_DIR}/exiftoolprocess.cpp
                     ${CMAKE_CURRENT_SOURCE_DIR}/exiftoolparser.cpp
 )
 

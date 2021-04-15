@@ -11,30 +11,21 @@
  * Copyright (C) 2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  * Copyright (c) 2021 by Philippe Vianney-Liaud <https://github.com/philvl>
  *
- * MIT License
+ * This program is free software; you can redistribute it
+ * and/or modify it under the terms of the GNU General
+ * Public License as published by the Free Software Foundation;
+ * either version 2, or (at your option)
+ * any later version.
  *
- * Permission is hereby granted, free of charge, to any person obtaining a copy
- * of this software and associated documentation files (the "Software"), to deal
- * in the Software without restriction, including without limitation the rights
- * to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
- * copies of the Software, and to permit persons to whom the Software is
- * furnished to do so, subject to the following conditions:
- *
- * The above copyright notice and this permission notice shall be included in all
- * copies or substantial portions of the Software.
- *
- * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
- * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
- * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
- * AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
- * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
- * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
- * SOFTWARE.
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_QEXIFTOOL_PROCESS_H
-#define DIGIKAM_QEXIFTOOL_PROCESS_H
+#ifndef DIGIKAM_EXIFTOOL_PROCESS_H
+#define DIGIKAM_EXIFTOOL_PROCESS_H
 
 // Qt Core
 
@@ -53,22 +44,22 @@
 namespace Digikam
 {
 
-class DIGIKAM_EXPORT QExifToolProcess : public QObject
+class DIGIKAM_EXPORT ExifToolProcess : public QObject
 {
     Q_OBJECT
 
 public:
 
     /**
-     * Constructs a QExifToolProcess object with the given parent.
+     * Constructs a ExifToolProcess object with the given parent.
      */
-    explicit QExifToolProcess(QObject* const parent = nullptr);
+    explicit ExifToolProcess(QObject* const parent = nullptr);
 
     /**
-     * Destructs the QExifToolProcess object, i.e., killing the process.
+     * Destructs the ExifToolProcess object, i.e., killing the process.
      * Note that this function will not return until the process is terminated.
      */
-    ~QExifToolProcess();
+    ~ExifToolProcess();
 
 public:
 
@@ -99,7 +90,7 @@ public Q_SLOTS:
 public:
 
     /**
-     * Return true if QExifToolProcess is running (process state == Running)
+     * Return true if ExifToolProcess is running (process state == Running)
      */
     bool isRunning()                        const;
 
@@ -224,4 +215,4 @@ private:
 
 } // namespace Digikam
 
-#endif // DIGIKAM_QEXIFTOOL_PROCESS_H
+#endif // DIGIKAM_EXIFTOOL_PROCESS_H
