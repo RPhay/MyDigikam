@@ -42,6 +42,9 @@
 #include <QElapsedTimer>
 #include <QProcess>
 #include <QMutex>
+#include <QList>
+#include <QString>
+#include <QByteArray>
 
 namespace Digikam
 {

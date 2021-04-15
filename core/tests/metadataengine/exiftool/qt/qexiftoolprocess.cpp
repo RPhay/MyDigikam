@@ -147,7 +147,7 @@ void QExifToolProcess::start()
     if (!_perlExePath.isEmpty())
     {
         program = _perlExePath;
-        args <<  _etExePath;
+        args << _etExePath;
     }
 
     //-- Advanced options
@@ -163,11 +163,11 @@ void QExifToolProcess::start()
     // Clear queue before start
 
     _cmdQueue.clear();
-    _cmdRunning = 0;
+    _cmdRunning           = 0;
 
     // Clear errors
 
-    _processError = QProcess::UnknownError;
+    _processError         = QProcess::UnknownError;
     _errorString.clear();
 
     // Start ExifTool process
@@ -395,7 +395,7 @@ void QExifToolProcess::readOutput(const QProcess::ProcessChannel channel)
             line.remove(line.size()-2, 1); // Remove '\r' character
         }
 /*
-        qDebug() << channel << line;
+        qCDebug(DIGIKAM_METAENGINE_LOG) << channel << line;
 */
         if (!_outAwait[channel])
         {
