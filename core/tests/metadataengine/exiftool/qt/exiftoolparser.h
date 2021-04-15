@@ -4,7 +4,7 @@
  * https://www.digikam.org
  *
  * Date        : 2013-11-28
- * Description : ExifTool JSON analyzer
+ * Description : ExifTool JSON parser
  *
  * Copyright (C) 2013-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
@@ -21,32 +21,49 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_EXIFTOOL_JSON_H
-#define DIGIKAM_EXIFTOOL_JSON_H
+#ifndef DIGIKAM_EXIFTOOL_PARSER_H
+#define DIGIKAM_EXIFTOOL_PARSER_H
 
 // Qt Core
 
 #include <QObject>
 #include <QString>
+#include <QByteArray>
 
 namespace Digikam
 {
 
-class ExifToolJson : public QObject
+class QExifToolProcess;
+class MetaEngine;
+
+class ExifToolParser : public QObject
 {
     Q_OBJECT
 
 public:
 
-    explicit ExifToolJson(QObject* const parent = nullptr);
-    ~ExifToolJson();
+    explicit ExifToolParser(QObject* const parent = nullptr);
+    ~ExifToolParser();
 
-public:
+    bool parse(const QString& path, MetaEngine* meta = nullptr);
+
+Q_SIGNALS:
+
+    void signalExifToolMetadata();
 
 private Q_SLOTS:
 
+    void slotCmdCompleted(int cmdId,
+                          int execTime,
+                          const QByteArray& cmdOutputChannel,
+                          const QByteArray& cmdErrorChannel);
+
+private:
+
+    QExifToolProcess* m_proc;
+    MetaEngine*       m_meta;
 };
 
 } // namespace Digikam
 
-#endif // DIGIKAM_EXIFTOOL_JSON_H
+#endif // DIGIKAM_EXIFTOOL_PARSER_H

@@ -8,13 +8,14 @@ APPLY_COMMON_POLICIES()
 
 include_directories(
     $<TARGET_PROPERTY:Qt5::Core,INTERFACE_INCLUDE_DIRECTORIES>
+    $<TARGET_PROPERTY:Qt5::Gui,INTERFACE_INCLUDE_DIRECTORIES>
     $<TARGET_PROPERTY:Qt5::Test,INTERFACE_INCLUDE_DIRECTORIES>
 )
 
 #------------------------------------------------------------------------
 
 set(exiftoolqt_SRCS ${CMAKE_CURRENT_SOURCE_DIR}/qexiftoolprocess.cpp
-                    ${CMAKE_CURRENT_SOURCE_DIR}/exiftooljson.cpp
+                    ${CMAKE_CURRENT_SOURCE_DIR}/exiftoolparser.cpp
 )
 
 add_library(exiftoolqt STATIC ${exiftoolqt_SRCS})
