@@ -13,7 +13,7 @@ include_directories(
 
 #------------------------------------------------------------------------
 
-set(exiftoolqt_SRCS ${CMAKE_CURRENT_SOURCE_DIR}/ZExifToolProcess.cpp)
+set(exiftoolqt_SRCS ${CMAKE_CURRENT_SOURCE_DIR}/qexiftoolprocess.cpp)
 
 add_library(exiftoolqt STATIC ${exiftoolqt_SRCS})
 

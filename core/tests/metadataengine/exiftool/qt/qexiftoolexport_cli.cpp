@@ -40,7 +40,7 @@
 #include "dimg.h"
 #include "dpluginloader.h"
 #include "metaengine.h"
-#include "ZExifToolProcess.h"
+#include "qexiftoolprocess.h"
 #include "exiftooltranslator.h"
 
 using namespace Digikam;
@@ -103,7 +103,7 @@ int main(int argc, char** argv)
 
     // Create ExifTool parser instance.
 
-    ZExifToolProcess* const parser  = new ZExifToolProcess();
+    QExifToolProcess* const parser  = new QExifToolProcess();
 
 #if defined Q_OS_LINUX || defined Q_OS_MACOS
 
@@ -117,7 +117,7 @@ int main(int argc, char** argv)
 
     // Connect at least cmdCompleted signal to slot
 
-    QObject::connect(parser, &ZExifToolProcess::cmdCompleted,
+    QObject::connect(parser, &QExifToolProcess::cmdCompleted,
                      [=](int /*cmdId*/, int /*execTime*/, const QByteArray& stdOut, const QByteArray& /*stdErr*/)  // clazy:exclude=function-args-by-ref
         {
             // Convert JSON array as QVariantMap
@@ -294,7 +294,7 @@ int main(int argc, char** argv)
         }
     );
 
-    // Read metadata from the file. Start ZExifToolProcess
+    // Read metadata from the file. Start QExifToolProcess
 
     parser->start();
 
@@ -313,7 +313,7 @@ int main(int argc, char** argv)
     cmdArgs << "-n";
     cmdArgs << fileInfo.filePath().toUtf8();
 
-    // Send command to ZExifToolProcess
+    // Send command to QExifToolProcess
 
     parser->command(cmdArgs); // See additional notes
 

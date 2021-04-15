@@ -3,11 +3,13 @@
  * This file is a part of digiKam project
  * https://www.digikam.org
  *
- * Date        : 2020-03-18
- * Description : ZExifTool - Qt5 and Qt6 interface for exiftool.
+ * Date        : 2021-02-18
+ * Description : Qt5 and Qt6 interface for exiftool.
+ *               Based on ZExifTool Qt interface published at 18 Feb 2021
+ *               https://github.com/philvl/ZExifTool
  *
  * Copyright (C) 2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
- * Copyright (c) 2020 by Philippe Vianney-Liaud <https://github.com/philvl>
+ * Copyright (c) 2021 by Philippe Vianney-Liaud <https://github.com/philvl>
  *
  * MIT License
  *
@@ -31,8 +33,8 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_Z_EXIFTOOL_PROCESS_H
-#define DIGIKAM_Z_EXIFTOOL_PROCESS_H
+#ifndef DIGIKAM_QEXIFTOOL_PROCESS_H
+#define DIGIKAM_QEXIFTOOL_PROCESS_H
 
 // Qt Core
 
@@ -41,22 +43,25 @@
 #include <QProcess>
 #include <QMutex>
 
-class ZExifToolProcess : public QObject
+namespace Digikam
+{
+
+class QExifToolProcess : public QObject
 {
     Q_OBJECT
 
 public:
 
     /**
-     * Constructs a ZExifToolProcess object with the given parent.
+     * Constructs a QExifToolProcess object with the given parent.
      */
-    explicit ZExifToolProcess(QObject* const parent = nullptr);
+    explicit QExifToolProcess(QObject* const parent = nullptr);
 
     /**
-     * Destructs the ZExifToolProcess object, i.e., killing the process.
+     * Destructs the QExifToolProcess object, i.e., killing the process.
      * Note that this function will not return until the process is terminated.
      */
-    ~ZExifToolProcess();
+    ~QExifToolProcess();
 
 public:
 
@@ -86,7 +91,7 @@ public Q_SLOTS:
 public:
 
     /**
-     * Return true if ZExifToolProcess is running (process state == Running)
+     * Return true if QExifToolProcess is running (process state == Running)
      */
     bool isRunning()                        const;
 
@@ -200,4 +205,6 @@ private:
     QString                 _errorString;
 };
 
-#endif // DIGIKAM_Z_EXIFTOOL_PROCESS_H
+} // namespace Digikam
+
+#endif // DIGIKAM_QEXIFTOOL_PROCESS_H

@@ -3,11 +3,13 @@
  * This file is a part of digiKam project
  * https://www.digikam.org
  *
- * Date        : 2020-03-18
- * Description : ZExifTool - Qt5 and Qt6 interface for exiftool.
+ * Date        : 2021-02-18
+ * Description : Qt5 and Qt6 interface for exiftool.
+ *               Based on ZExifTool Qt interface published at 18 Feb 2021
+ *               https://github.com/philvl/ZExifTool
  *
  * Copyright (C) 2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
- * Copyright (c) 2020 by Philippe Vianney-Liaud <https://github.com/philvl>
+ * Copyright (c) 2021 by Philippe Vianney-Liaud <https://github.com/philvl>
  *
  * MIT License
  *
@@ -31,21 +33,24 @@
  *
  * ============================================================ */
 
-#include "ZExifToolProcess.h"
+#include "qexiftoolprocess.h"
 
 // Qt includes
 
 #include <QFile>
 #include <QDebug>
 
+namespace Digikam
+{
+
 // Init static variables
 
-QMutex       ZExifToolProcess::_cmdIdMutex;
-const int    ZExifToolProcess::CMD_ID_MIN   = 1;
-const int    ZExifToolProcess::CMD_ID_MAX   = 2000000000;
-int          ZExifToolProcess::_nextCmdId   = CMD_ID_MIN;
+QMutex       QExifToolProcess::_cmdIdMutex;
+const int    QExifToolProcess::CMD_ID_MIN   = 1;
+const int    QExifToolProcess::CMD_ID_MAX   = 2000000000;
+int          QExifToolProcess::_nextCmdId   = CMD_ID_MIN;
 
-ZExifToolProcess::ZExifToolProcess(QObject* const parent)
+QExifToolProcess::QExifToolProcess(QObject* const parent)
     : QObject(parent)
 {
     _cmdRunning   = 0;
@@ -55,35 +60,35 @@ ZExifToolProcess::ZExifToolProcess(QObject* const parent)
     _processError = QProcess::UnknownError;
     _process      = new QProcess(this);
 
-    connect(_process, &QProcess::started, this, &ZExifToolProcess::onStarted);
+    connect(_process, &QProcess::started, this, &QExifToolProcess::onStarted);
 
 #if QT_VERSION >= 0x060000
 
-    connect(_process, &QProcess::finished, this, &ZExifToolProcess::onFinished);
+    connect(_process, &QProcess::finished, this, &QExifToolProcess::onFinished);
 
 #else
 
-    connect(_process, QOverload<int, QProcess::ExitStatus>::of(&QProcess::finished), this, &ZExifToolProcess::onFinished);
+    connect(_process, QOverload<int, QProcess::ExitStatus>::of(&QProcess::finished), this, &QExifToolProcess::onFinished);
 
 #endif
 
-    connect(_process, &QProcess::stateChanged,  this, &ZExifToolProcess::onStateChanged);
-    connect(_process, &QProcess::errorOccurred, this, &ZExifToolProcess::onErrorOccurred);
-    connect(_process, &QProcess::readyReadStandardOutput, this, &ZExifToolProcess::onReadyReadStandardOutput);
-    connect(_process, &QProcess::readyReadStandardError,  this, &ZExifToolProcess::onReadyReadStandardError);
+    connect(_process, &QProcess::stateChanged,  this, &QExifToolProcess::onStateChanged);
+    connect(_process, &QProcess::errorOccurred, this, &QExifToolProcess::onErrorOccurred);
+    connect(_process, &QProcess::readyReadStandardOutput, this, &QExifToolProcess::onReadyReadStandardOutput);
+    connect(_process, &QProcess::readyReadStandardError,  this, &QExifToolProcess::onReadyReadStandardError);
 }
 
-ZExifToolProcess::~ZExifToolProcess()
+QExifToolProcess::~QExifToolProcess()
 {
 }
 
-void ZExifToolProcess::setProgram(const QString& etExePath, const QString& perlExePath)
+void QExifToolProcess::setProgram(const QString& etExePath, const QString& perlExePath)
 {
     // Check if ExifTool is starting or running
 
     if (_process->state() != QProcess::NotRunning)
     {
-        qWarning("ZExifToolProcess::setProgram: ExifTool is already running");
+        qWarning("QExifToolProcess::setProgram: ExifTool is already running");
         return;
     }
 
@@ -91,13 +96,13 @@ void ZExifToolProcess::setProgram(const QString& etExePath, const QString& perlE
     _perlExePath = perlExePath;
 }
 
-void ZExifToolProcess::start()
+void QExifToolProcess::start()
 {
     // Check if ExifTool is starting or running
 
     if (_process->state() != QProcess::NotRunning)
     {
-        qWarning("ZExifToolProcess::start: ExifTool is already running");
+        qWarning("QExifToolProcess::start: ExifTool is already running");
         return;
     }
 
@@ -154,7 +159,7 @@ void ZExifToolProcess::start()
     _process->start(program, args, QProcess::ReadWrite);
 }
 
-void ZExifToolProcess::terminate()
+void QExifToolProcess::terminate()
 {
     if (_process->state() == QProcess::Running)
     {
@@ -174,52 +179,52 @@ void ZExifToolProcess::terminate()
     }
 }
 
-void ZExifToolProcess::kill()
+void QExifToolProcess::kill()
 {
     _process->kill();
 }
 
-bool ZExifToolProcess::isRunning() const
+bool QExifToolProcess::isRunning() const
 {
     return (_process->state() == QProcess::Running);
 }
 
-bool ZExifToolProcess::isBusy() const
+bool QExifToolProcess::isBusy() const
 {
     return (_cmdRunning ? true : false);
 }
 
-qint64 ZExifToolProcess::processId() const
+qint64 QExifToolProcess::processId() const
 {
     return _process->processId();
 }
 
-QProcess::ProcessState ZExifToolProcess::state() const
+QProcess::ProcessState QExifToolProcess::state() const
 {
     return _process->state();
 }
 
-QProcess::ProcessError ZExifToolProcess::error() const
+QProcess::ProcessError QExifToolProcess::error() const
 {
     return _processError;
 }
 
-QString ZExifToolProcess::errorString() const
+QString QExifToolProcess::errorString() const
 {
     return _errorString;
 }
 
-QProcess::ExitStatus ZExifToolProcess::exitStatus() const
+QProcess::ExitStatus QExifToolProcess::exitStatus() const
 {
     return _process->exitStatus();
 }
 
-bool ZExifToolProcess::waitForStarted(int msecs)
+bool QExifToolProcess::waitForStarted(int msecs)
 {
     return _process->waitForStarted(msecs);
 }
 
-bool ZExifToolProcess::waitForFinished(int msecs)
+bool QExifToolProcess::waitForFinished(int msecs)
 {
     return _process->waitForFinished(msecs);
 }
@@ -228,7 +233,7 @@ bool ZExifToolProcess::waitForFinished(int msecs)
  * Send a command to exiftool process
  * Return 0: ExitTool not running, write channel is closed or args is empty
  */
-int ZExifToolProcess::command(const QByteArrayList& args)
+int QExifToolProcess::command(const QByteArrayList& args)
 {
     if(_process->state() != QProcess::Running || _writeChannelIsClosed || args.isEmpty())
     {
@@ -289,7 +294,7 @@ int ZExifToolProcess::command(const QByteArrayList& args)
     return cmdId;
 }
 
-void ZExifToolProcess::execNextCmd()
+void QExifToolProcess::execNextCmd()
 {
     if ((_process->state() != QProcess::Running) || _writeChannelIsClosed)
     {
@@ -320,12 +325,12 @@ void ZExifToolProcess::execNextCmd()
     _process->write(command.argsStr);
 }
 
-void ZExifToolProcess::onStarted()
+void QExifToolProcess::onStarted()
 {
     emit started();
 }
 
-void ZExifToolProcess::onFinished(int exitCode, QProcess::ExitStatus exitStatus)
+void QExifToolProcess::onFinished(int exitCode, QProcess::ExitStatus exitStatus)
 {
 /*
     qDebug() << "ExifTool process finished" << exitCode << exitStatus;
@@ -334,27 +339,27 @@ void ZExifToolProcess::onFinished(int exitCode, QProcess::ExitStatus exitStatus)
     emit finished(exitCode, exitStatus);
 }
 
-void ZExifToolProcess::onStateChanged(QProcess::ProcessState newState)
+void QExifToolProcess::onStateChanged(QProcess::ProcessState newState)
 {
     emit stateChanged(newState);
 }
 
-void ZExifToolProcess::onErrorOccurred(QProcess::ProcessError error)
+void QExifToolProcess::onErrorOccurred(QProcess::ProcessError error)
 {
     setProcessErrorAndEmit(error, _process->errorString());
 }
 
-void ZExifToolProcess::onReadyReadStandardOutput()
+void QExifToolProcess::onReadyReadStandardOutput()
 {
     readOutput(QProcess::StandardOutput);
 }
 
-void ZExifToolProcess::onReadyReadStandardError()
+void QExifToolProcess::onReadyReadStandardError()
 {
     readOutput(QProcess::StandardError);
 }
 
-void ZExifToolProcess::readOutput(const QProcess::ProcessChannel channel)
+void QExifToolProcess::readOutput(const QProcess::ProcessChannel channel)
 {
     _process->setReadChannel(channel);
 
@@ -399,7 +404,7 @@ void ZExifToolProcess::readOutput(const QProcess::ProcessChannel channel)
 
     if ((_cmdRunning != _outAwait[QProcess::StandardOutput]) || (_cmdRunning != _outAwait[QProcess::StandardError]))
     {
-        qCritical().nospace() << "ZExifToolProcess::readOutput: Sync error between CmdID("
+        qCritical().nospace() << "QExifToolProcess::readOutput: Sync error between CmdID("
                               << _cmdRunning
                               << "), outChannel("
                               << _outAwait[0]
@@ -417,10 +422,12 @@ void ZExifToolProcess::readOutput(const QProcess::ProcessChannel channel)
     execNextCmd();   // Exec next command
 }
 
-void ZExifToolProcess::setProcessErrorAndEmit(QProcess::ProcessError error, const QString& description)
+void QExifToolProcess::setProcessErrorAndEmit(QProcess::ProcessError error, const QString& description)
 {
     _processError = error;
     _errorString  =  description;
 
     emit errorOccurred(error);
 }
+
+} // namespace Digikam
