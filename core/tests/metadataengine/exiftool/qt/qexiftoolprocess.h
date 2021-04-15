@@ -137,9 +137,10 @@ public:
      */
     bool waitForFinished(int msecs = 30000);
 
-/*
-    bool waitForCompleted(int msecs = 30000); // TODO: Need to be implemented
-*/
+    /**
+     * Send a command to exiftool process
+     * Return 0: ExitTool not running, write channel is closed or args is empty
+     */
     int command(const QByteArrayList& args);
 
 private:
@@ -148,12 +149,12 @@ private:
 
 private Q_SLOTS:
 
-    void onStarted();
-    void onFinished(int exitCode, QProcess::ExitStatus exitStatus);
-    void onStateChanged(QProcess::ProcessState newState);
-    void onErrorOccurred(QProcess::ProcessError error);
-    void onReadyReadStandardOutput();
-    void onReadyReadStandardError();
+    void slotStarted();
+    void slotFinished(int exitCode, QProcess::ExitStatus exitStatus);
+    void slotStateChanged(QProcess::ProcessState newState);
+    void slotErrorOccurred(QProcess::ProcessError error);
+    void slotReadyReadStandardOutput();
+    void slotReadyReadStandardError();
 
 private:
 
@@ -162,15 +163,15 @@ private:
 
 Q_SIGNALS:
 
-    void started();
-    void finished(int exitCode, QProcess::ExitStatus exitStatus);
-    void stateChanged(QProcess::ProcessState newState);
-    void errorOccurred(QProcess::ProcessError error);
+    void signalStarted();
+    void signalFinished(int exitCode, QProcess::ExitStatus exitStatus);
+    void signalStateChanged(QProcess::ProcessState newState);
+    void signalErrorOccurred(QProcess::ProcessError error);
 
-    void cmdCompleted(int cmdId,
-                      int execTime,
-                      const QByteArray& cmdOutputChannel,
-                      const QByteArray& cmdErrorChannel);
+    void signalCmdCompleted(int cmdId,
+                            int execTime,
+                            const QByteArray& cmdOutputChannel,
+                            const QByteArray& cmdErrorChannel);
 
 private:
 

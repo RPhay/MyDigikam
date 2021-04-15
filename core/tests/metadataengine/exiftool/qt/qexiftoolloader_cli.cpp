@@ -80,7 +80,7 @@ int main(int argc, char** argv)
 
     // Connect at least cmdCompleted signal to slot
 
-    QObject::connect(parser, &QExifToolProcess::cmdCompleted,
+    QObject::connect(parser, &QExifToolProcess::signalCmdCompleted,
                      [=](int /*cmdId*/, int /*execTime*/, const QByteArray& stdOut, const QByteArray& /*stdErr*/)  // clazy:exclude=function-args-by-ref
         {
             // Print returned and sorted tags.

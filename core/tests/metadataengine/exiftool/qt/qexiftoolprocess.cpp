@@ -60,22 +60,32 @@ QExifToolProcess::QExifToolProcess(QObject* const parent)
     _processError = QProcess::UnknownError;
     _process      = new QProcess(this);
 
-    connect(_process, &QProcess::started, this, &QExifToolProcess::onStarted);
+    connect(_process, &QProcess::started,
+            this, &QExifToolProcess::slotStarted);
 
 #if QT_VERSION >= 0x060000
 
-    connect(_process, &QProcess::finished, this, &QExifToolProcess::onFinished);
+    connect(_process, &QProcess::finished,
+            this, &QExifToolProcess::slotFinished);
 
 #else
 
-    connect(_process, QOverload<int, QProcess::ExitStatus>::of(&QProcess::finished), this, &QExifToolProcess::onFinished);
+    connect(_process, QOverload<int, QProcess::ExitStatus>::of(&QProcess::finished),
+            this, &QExifToolProcess::slotFinished);
 
 #endif
 
-    connect(_process, &QProcess::stateChanged,  this, &QExifToolProcess::onStateChanged);
-    connect(_process, &QProcess::errorOccurred, this, &QExifToolProcess::onErrorOccurred);
-    connect(_process, &QProcess::readyReadStandardOutput, this, &QExifToolProcess::onReadyReadStandardOutput);
-    connect(_process, &QProcess::readyReadStandardError,  this, &QExifToolProcess::onReadyReadStandardError);
+    connect(_process, &QProcess::stateChanged,
+            this, &QExifToolProcess::slotStateChanged);
+
+    connect(_process, &QProcess::errorOccurred,
+            this, &QExifToolProcess::slotErrorOccurred);
+
+    connect(_process, &QProcess::readyReadStandardOutput,
+            this, &QExifToolProcess::slotReadyReadStandardOutput);
+
+    connect(_process, &QProcess::readyReadStandardError,
+            this, &QExifToolProcess::slotReadyReadStandardError);
 }
 
 QExifToolProcess::~QExifToolProcess()
@@ -129,7 +139,7 @@ void QExifToolProcess::start()
 
     if (!_perlExePath.isEmpty())
     {
-        program= _perlExePath;
+        program = _perlExePath;
         args <<  _etExePath;
     }
 
@@ -156,6 +166,7 @@ void QExifToolProcess::start()
     // Start ExifTool process
 
     _writeChannelIsClosed = false;
+
     _process->start(program, args, QProcess::ReadWrite);
 }
 
@@ -229,10 +240,6 @@ bool QExifToolProcess::waitForFinished(int msecs)
     return _process->waitForFinished(msecs);
 }
 
-/**
- * Send a command to exiftool process
- * Return 0: ExitTool not running, write channel is closed or args is empty
- */
 int QExifToolProcess::command(const QByteArrayList& args)
 {
     if(_process->state() != QProcess::Running || _writeChannelIsClosed || args.isEmpty())
@@ -320,41 +327,44 @@ void QExifToolProcess::execNextCmd()
     // Exec Command
 
     _execTimer.start();
+
     Command command = _cmdQueue.takeFirst();
     _cmdRunning     = command.id;
+
     _process->write(command.argsStr);
 }
 
-void QExifToolProcess::onStarted()
+void QExifToolProcess::slotStarted()
 {
-    emit started();
+    emit signalStarted();
 }
 
-void QExifToolProcess::onFinished(int exitCode, QProcess::ExitStatus exitStatus)
+void QExifToolProcess::slotFinished(int exitCode, QProcess::ExitStatus exitStatus)
 {
 /*
     qDebug() << "ExifTool process finished" << exitCode << exitStatus;
 */
     _cmdRunning = 0;
-    emit finished(exitCode, exitStatus);
+
+    emit signalFinished(exitCode, exitStatus);
 }
 
-void QExifToolProcess::onStateChanged(QProcess::ProcessState newState)
+void QExifToolProcess::slotStateChanged(QProcess::ProcessState newState)
 {
-    emit stateChanged(newState);
+    emit signalStateChanged(newState);
 }
 
-void QExifToolProcess::onErrorOccurred(QProcess::ProcessError error)
+void QExifToolProcess::slotErrorOccurred(QProcess::ProcessError error)
 {
     setProcessErrorAndEmit(error, _process->errorString());
 }
 
-void QExifToolProcess::onReadyReadStandardOutput()
+void QExifToolProcess::slotReadyReadStandardOutput()
 {
     readOutput(QProcess::StandardOutput);
 }
 
-void QExifToolProcess::onReadyReadStandardError()
+void QExifToolProcess::slotReadyReadStandardError()
 {
     readOutput(QProcess::StandardError);
 }
@@ -414,7 +424,7 @@ void QExifToolProcess::readOutput(const QProcess::ProcessChannel channel)
     }
     else
     {
-        emit cmdCompleted(_cmdRunning, _execTimer.elapsed(), _outBuff[QProcess::StandardOutput], _outBuff[QProcess::StandardError]);
+        emit signalCmdCompleted(_cmdRunning, _execTimer.elapsed(), _outBuff[QProcess::StandardOutput], _outBuff[QProcess::StandardError]);
     }
 
     _cmdRunning = 0; // No command is running
@@ -427,7 +437,7 @@ void QExifToolProcess::setProcessErrorAndEmit(QProcess::ProcessError error, cons
     _processError = error;
     _errorString  =  description;
 
-    emit errorOccurred(error);
+    emit signalErrorOccurred(error);
 }
 
 } // namespace Digikam
