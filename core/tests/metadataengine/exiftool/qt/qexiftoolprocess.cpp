@@ -38,7 +38,10 @@
 // Qt includes
 
 #include <QFile>
-#include <QDebug>
+
+// Local includes
+
+#include "digikam_debug.h"
 
 namespace Digikam
 {
@@ -100,7 +103,7 @@ void QExifToolProcess::setProgram(const QString& etExePath, const QString& perlE
 
     if (_process->state() != QProcess::NotRunning)
     {
-        qWarning("QExifToolProcess::setProgram: ExifTool is already running");
+        qCWarning(DIGIKAM_METAENGINE_LOG) << "QExifToolProcess::setProgram(): ExifTool is already running";
         return;
     }
 
@@ -114,7 +117,7 @@ void QExifToolProcess::start()
 
     if (_process->state() != QProcess::NotRunning)
     {
-        qWarning("QExifToolProcess::start: ExifTool is already running");
+        qCWarning(DIGIKAM_METAENGINE_LOG) << "QExifToolProcess::start(): ExifTool is already running";
         return;
     }
 
@@ -122,7 +125,8 @@ void QExifToolProcess::start()
 
     if (!QFile::exists(_etExePath) || !(QFile::permissions(_etExePath) & QFile::ExeUser))
     {
-        setProcessErrorAndEmit(QProcess::FailedToStart, QString::fromLatin1("ExifTool does not exists or exec permission is missing"));
+        setProcessErrorAndEmit(QProcess::FailedToStart,
+                               QString::fromLatin1("ExifTool does not exists or exec permission is missing"));
         return;
     }
 
@@ -130,7 +134,8 @@ void QExifToolProcess::start()
 
     if (!_perlExePath.isEmpty() && (!QFile::exists(_perlExePath) || !(QFile::permissions(_perlExePath) & QFile::ExeUser)))
     {
-        setProcessErrorAndEmit(QProcess::FailedToStart, QString::fromLatin1("Perl does not exists or exec permission is missing"));
+        setProcessErrorAndEmit(QProcess::FailedToStart,
+                               QString::fromLatin1("Perl does not exists or exec permission is missing"));
         return;
     }
 
@@ -350,7 +355,7 @@ void QExifToolProcess::slotStarted()
 void QExifToolProcess::slotFinished(int exitCode, QProcess::ExitStatus exitStatus)
 {
 /*
-    qDebug() << "ExifTool process finished" << exitCode << exitStatus;
+    qCDebug(DIGIKAM_METAENGINE_LOG) << "ExifTool process finished" << exitCode << exitStatus;
 */
     _cmdRunning = 0;
 
@@ -425,13 +430,13 @@ void QExifToolProcess::readOutput(const QProcess::ProcessChannel channel)
         (_cmdRunning != _outAwait[QProcess::StandardError])
        )
     {
-        qCritical().nospace() << "QExifToolProcess::readOutput: Sync error between CmdID("
-                              << _cmdRunning
-                              << "), outChannel("
-                              << _outAwait[0]
-                              << ") and errChannel("
-                              << _outAwait[1]
-                              << ")";
+        qCCritical(DIGIKAM_METAENGINE_LOG) << "QExifToolProcess::readOutput: Sync error between CmdID("
+                                           << _cmdRunning
+                                           << "), outChannel("
+                                           << _outAwait[0]
+                                           << ") and errChannel("
+                                           << _outAwait[1]
+                                           << ")";
     }
     else
     {
