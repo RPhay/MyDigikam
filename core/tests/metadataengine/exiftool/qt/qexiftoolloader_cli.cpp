@@ -23,21 +23,17 @@
 
 // Qt includes
 
-#include <QFileInfo>
 #include <QString>
 #include <QStringList>
 #include <QTextStream>
 #include <QCoreApplication>
 #include <QDebug>
 #include <QVariant>
-#include <QJsonDocument>
-#include <QJsonArray>
-#include <QJsonObject>
 #include <QObject>
 
 // Local includes
 
-#include "exiftoolprocess.h"
+#include "exiftoolparser.h"
 #include "exiftooltranslator.h"
 
 using namespace Digikam;
@@ -53,40 +49,20 @@ int main(int argc, char** argv)
         return -1;
     }
 
-    QFileInfo fileInfo(QString::fromUtf8(argv[1]));
-
-    if (!fileInfo.exists())
-    {
-        return false;
-    }
-
-    // Post creation of hash tables for tag translations
-
-    ExifToolTranslator::instance();
-
     // Create ExifTool parser instance.
 
-    ExifToolProcess* const parser  = new ExifToolProcess();
-
-#if defined Q_OS_LINUX || defined Q_OS_MACOS
-
-    parser->setProgram(QLatin1String("/usr/bin/exiftool"));
-
-#elif defined Q_OS_WINDOWS
-
-    parser->setProgram(QLatin1String("exiftool.exe"));
-
-#endif
+    ExifToolParser* const parser = new ExifToolParser();
 
     // Connect at least cmdCompleted signal to slot
 
-    QObject::connect(parser, &ExifToolProcess::signalCmdCompleted,
-                     [=](int /*cmdId*/, int /*execTime*/, const QByteArray& stdOut, const QByteArray& /*stdErr*/)  // clazy:exclude=function-args-by-ref
+    QObject::connect(parser, &ExifToolParser::signalExifToolMetadata,
+                     [=](const ExifToolParser::TagsMap& parsed, const ExifToolParser::TagsMap& ignored)  // clazy:exclude=function-args-by-ref
         {
             // Print returned and sorted tags.
 
-            QString output;
+            QString     output;
             QTextStream stream(&output);
+            QStringList tagsLst;
 
             const int section1 = -60;   // ExifTool Tag name
             const int section2 = -45;   // Exiv2 tag name
@@ -104,56 +80,12 @@ int main(int argc, char** argv)
                    << sep
                    << Qt::endl;
 
-            // Convert JSON array as QVariantMap
-
-            QJsonDocument jsonDoc     = QJsonDocument::fromJson(stdOut);
-            QJsonArray    jsonArray   = jsonDoc.array();
-            QJsonObject   jsonObject  = jsonArray.at(0).toObject();
-            QVariantMap   metadataMap = jsonObject.toVariantMap();
-
-            QStringList ignoredETTags;
-            QStringList tagsLst;
-
-            for (QVariantMap::const_iterator it = metadataMap.constBegin() ;
-                it != metadataMap.constEnd() ; ++it)
+            for (ExifToolParser::TagsMap::const_iterator it = parsed.constBegin() ;
+                it != parsed.constEnd() ; ++it)
             {
-                QString tagNameExifTool;
-                QString tagType;
-                QStringList sections    = it.key().split(QLatin1Char(':'));
-
-                if      (sections.size() == 5)
-                {
-                    tagNameExifTool = QString::fromLatin1("%1.%2.%3.%4")
-                                          .arg(sections[0])
-                                          .arg(sections[1])
-                                          .arg(sections[2])
-                                          .arg(sections[4]);
-                    tagType         = sections[3];
-                }
-                else if (sections.size() == 4)
-                {
-                    tagNameExifTool = QString::fromLatin1("%1.%2.%3.%4")
-                                          .arg(sections[0])
-                                          .arg(sections[1])
-                                          .arg(sections[2])
-                                          .arg(sections[3]);
-                }
-                else
-                {
-                    continue;
-                }
-
-                if (ExifToolTranslator::instance()->isIgnoredGroup(tagNameExifTool))
-                {
-                    if (!tagNameExifTool.startsWith(QLatin1String("...")))
-                    {
-                        ignoredETTags.append(tagNameExifTool.section(QLatin1Char('.'), 0, -2));
-                    }
-
-                    continue;
-                }
-
-                QString data = it.value().toString();
+                QString tagNameExifTool = it.value()[0].toString();
+                QString tagType         = it.value()[2].toString();
+                QString data            = it.value()[1].toString();
 
                 if (data.size() > -section3)
                 {
@@ -162,7 +94,7 @@ int main(int argc, char** argv)
 
                 // Tags to translate To Exiv2 naming scheme
 
-                QString tagNameExiv2 = ExifToolTranslator::instance()->translateToExiv2(tagNameExifTool);
+                QString tagNameExiv2    = it.key();
 
                 tagsLst
                         << QString::fromLatin1("%1 | %2 | %3")
@@ -180,12 +112,14 @@ int main(int argc, char** argv)
             }
 
             stream << sep << Qt::endl;
-            ignoredETTags.removeDuplicates();
             stream << "Ignored ExifTool Tags:" << Qt::endl;
 
-            foreach (const QString& itag, ignoredETTags)
+            QStringList itagsLst = ignored.keys();
+            itagsLst.sort();
+
+            foreach (const QString& tag, itagsLst)
             {
-                stream << "   " << itag << Qt::endl;
+                stream << "   " << tag << Qt::endl;
             }
 
             qDebug().noquote() << output;
@@ -196,26 +130,10 @@ int main(int argc, char** argv)
 
     // Read metadata from the file. Start ExifToolProcess
 
-    parser->start();
-
-    if (!parser->waitForStarted(500))
+    if (!parser->parse(QString::fromUtf8(argv[1])))
     {
-        parser->kill();
         return -1;
     }
-
-    // Build command (get metadata as JSON array)
-
-    QByteArrayList cmdArgs;
-    cmdArgs << "-json";
-    cmdArgs << "-binary";
-    cmdArgs << "-G:0:1:2:4:6";
-    cmdArgs << "-n";
-    cmdArgs << fileInfo.filePath().toUtf8();
-
-    // Send command to ExifToolProcess
-
-    parser->command(cmdArgs); // See additional notes
 
     app.exec();
 
