@@ -43,8 +43,7 @@ namespace Digikam
 {
 
 ExifToolParser::ExifToolParser(QObject* const parent)
-    : QObject(parent),
-      m_meta (nullptr)
+    : QObject(parent)
 {
     // Post creation of hash tables for tag translations
 
@@ -75,7 +74,7 @@ ExifToolParser::~ExifToolParser()
     delete m_proc;
 }
 
-bool ExifToolParser::parse(const QString& path, MetaEngine* meta)
+bool ExifToolParser::parse(const QString& path)
 {
     QFileInfo fileInfo(path);
 
@@ -83,8 +82,6 @@ bool ExifToolParser::parse(const QString& path, MetaEngine* meta)
     {
         return false;
     }
-
-    m_meta = meta;
 
     // Read metadata from the file. Start QExifToolProcess
 
@@ -124,8 +121,9 @@ void ExifToolParser::slotCmdCompleted(int /*cmdId*/,
     QJsonObject   jsonObject  = jsonArray.at(0).toObject();
     QVariantMap   metadataMap = jsonObject.toVariantMap();
 
-    QStringList ignoredETTags;
     QStringList tagsLst;
+    TagsMap outMap;
+    TagsMap ignoredMap;
 
     for (QVariantMap::const_iterator it = metadataMap.constBegin() ;
         it != metadataMap.constEnd() ; ++it)
@@ -156,34 +154,28 @@ void ExifToolParser::slotCmdCompleted(int /*cmdId*/,
             continue;
         }
 
+        QString data = it.value().toString();
+
         if (ExifToolTranslator::instance()->isIgnoredGroup(tagNameExifTool))
         {
             if (!tagNameExifTool.startsWith(QLatin1String("...")))
             {
-                ignoredETTags.append(tagNameExifTool);
+                ignoredMap.insert(tagNameExifTool, QVariantList() << QString() << data << tagType);
             }
 
             continue;
         }
 
-        QString data = it.value().toString();
-
         // Tags to translate To Exiv2 naming scheme
 
         QString tagNameExiv2 = ExifToolTranslator::instance()->translateToExiv2(tagNameExifTool);
+        QVariant var;
 
         if      (tagNameExiv2.startsWith(QLatin1String("Exif.")))
         {
-            QVariant var;
-
             if      (tagType == QLatin1String("string"))
             {
                 var = data;
-
-                if (m_meta)
-                {
-                    m_meta->setExifTagVariant(tagNameExiv2.toLatin1().constData(), var);
-                }
             }
             else if (
                      (tagType == QLatin1String("int8u"))  ||
@@ -195,11 +187,6 @@ void ExifToolParser::slotCmdCompleted(int /*cmdId*/,
                     )
             {
                 var = data.toLongLong();
-
-                if (m_meta)
-                {
-                    m_meta->setExifTagVariant(tagNameExiv2.toLatin1().constData(), var);
-                }
             }
             else if (tagType == QLatin1String("undef"))
             {
@@ -207,7 +194,7 @@ void ExifToolParser::slotCmdCompleted(int /*cmdId*/,
                     (tagNameExiv2 == QLatin1String("Exif.Photo.ComponentsConfiguration")) ||
                     (tagNameExiv2 == QLatin1String("Exif.Photo.SceneType"))               ||
                     (tagNameExiv2 == QLatin1String("Exif.Photo.FileSource"))
-                    )
+                   )
                 {
                     QByteArray conv;
                     QStringList vals = data.split(QLatin1Char(' '));
@@ -223,17 +210,6 @@ void ExifToolParser::slotCmdCompleted(int /*cmdId*/,
                 {
                     var = data.toLatin1();
                 }
-
-                qDebug().noquote()
-                         << QString::fromLatin1("%1").arg(tagNameExiv2, -45)
-                         << QString::fromLatin1("%1").arg(tagType,      -16)
-                         << QString::fromLatin1("%1").arg(data,         -20)
-                         << var;
-
-                if (m_meta)
-                {
-                    m_meta->setExifTagVariant(tagNameExiv2.toLatin1().constData(), var);
-                }
             }
             else if (
                      (tagType == QLatin1String("double"))      ||
@@ -243,39 +219,25 @@ void ExifToolParser::slotCmdCompleted(int /*cmdId*/,
                     )
             {
                 var = data.toDouble();
-
-                if (m_meta)
-                {
-                    m_meta->setExifTagVariant(tagNameExiv2.toLatin1().constData(), var);
-                }
             }
             else
             {
-                ignoredETTags.append(
-                         QString::fromLatin1("%1, %2, %3, %4")
-                            .arg(tagNameExifTool)
-                            .arg(tagNameExiv2)
-                            .arg(tagType)
-                            .arg(data));
+                ignoredMap.insert(tagNameExiv2, QVariantList() << tagNameExifTool << data << tagType);
             }
         }
         else if (tagNameExiv2.startsWith(QLatin1String("Iptc.")))
         {
-            if (m_meta)
-            {
-                m_meta->setIptcTagString(tagNameExiv2.toLatin1().constData(), data);
-            }
+            var = data;
         }
         else if (tagNameExiv2.startsWith(QLatin1String("Xmp.")))
         {
-            if (m_meta)
-            {
-                m_meta->setXmpTagString(tagNameExiv2.toLatin1().constData(), data);
-            }
+            var = data;
         }
+
+        outMap.insert(tagNameExiv2, QVariantList() << tagNameExifTool << var << tagType);
     }
 
-    emit signalExifToolMetadata();
+    emit signalExifToolMetadata(outMap, ignoredMap);
 }
 
 } // namespace Digikam

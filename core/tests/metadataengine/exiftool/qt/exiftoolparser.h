@@ -26,6 +26,8 @@
 
 // Qt Core
 
+#include <QVariant>
+#include <QHash>
 #include <QObject>
 #include <QString>
 #include <QByteArray>
@@ -34,7 +36,6 @@ namespace Digikam
 {
 
 class QExifToolProcess;
-class MetaEngine;
 
 class ExifToolParser : public QObject
 {
@@ -42,14 +43,29 @@ class ExifToolParser : public QObject
 
 public:
 
+    /**
+     * A map used to store Tags Key and a list of Tags properties:
+     * With Exiv2 tag name as key as parsed map of tags:
+     *  -   ExifTool tag name   (QString).
+     *  -   ExifTool Tag value  (QVariant).
+     *  -   ExifTool Tag type   (QString).
+     * With ExifTool tag name as key as ignored map of tags:
+     *  -   Exiv2 tag name      (QString).
+     *  -   ExifTool Tag value  (QString).
+     *  -   ExifTool Tag type   (QString).
+     */
+    typedef QHash<QString, QVariantList> TagsMap;
+
+public:
+
     explicit ExifToolParser(QObject* const parent = nullptr);
     ~ExifToolParser();
 
-    bool parse(const QString& path, MetaEngine* meta = nullptr);
+    bool parse(const QString& path);
 
 Q_SIGNALS:
 
-    void signalExifToolMetadata();
+    void signalExifToolMetadata(const TagsMap& parsed, const TagsMap& ignored);
 
 private Q_SLOTS:
 
@@ -61,7 +77,6 @@ private Q_SLOTS:
 private:
 
     QExifToolProcess* m_proc;
-    MetaEngine*       m_meta;
 };
 
 } // namespace Digikam
