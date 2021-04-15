@@ -26,5 +26,5 @@ add_library(exiftoolcommon STATIC ${exiftoolcommon_SRCS})
 
 #------------------------------------------------------------------------
 
-#add_subdirectory(cpp)
+add_subdirectory(cpp)
 add_subdirectory(qt)

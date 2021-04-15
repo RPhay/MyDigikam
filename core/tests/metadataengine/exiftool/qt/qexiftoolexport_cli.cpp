@@ -32,6 +32,7 @@
 #include <QVariant>
 #include <QJsonDocument>
 #include <QJsonArray>
+#include <QJsonObject>
 #include <QObject>
 
 // Local includes
@@ -96,6 +97,10 @@ int main(int argc, char** argv)
         return false;
     }
 
+    // Post creation of hash tables for tag translations
+
+    ExifToolTranslator::instance();
+
     // Create ExifTool parser instance.
 
     ZExifToolProcess* const parser  = new ZExifToolProcess();
@@ -109,11 +114,6 @@ int main(int argc, char** argv)
     parser->setProgram(QLatin1String("exiftool.exe"));
 
 #endif
-
-    // Post creation of hash tables for tag translations
-
-    ExifToolTranslator::instance();
-
 
     // Connect at least cmdCompleted signal to slot
 
@@ -257,9 +257,7 @@ int main(int argc, char** argv)
         }
     );
 
-    // Read metadata from the file.
-
-    // Start ZExifToolProcess
+    // Read metadata from the file. Start ZExifToolProcess
 
     parser->start();
 

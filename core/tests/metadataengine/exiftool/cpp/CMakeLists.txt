@@ -34,17 +34,3 @@ target_link_libraries(exiftoolloader_cli
                       ${COMMON_TEST_LINK}
 )
 
-#------------------------------------------------------------------------
-
-set(exiftoolexport_cli_SRCS ${CMAKE_CURRENT_SOURCE_DIR}/exiftoolexport_cli.cpp)
-add_executable(exiftoolexport_cli ${exiftoolexport_cli_SRCS})
-ecm_mark_nongui_executable(exiftoolexport_cli)
-
-target_link_libraries(exiftoolexport_cli
-                      exiftoolcpp
-                      exiftoolcommon
-                      digikamcore
-
-                      ${COMMON_TEST_LINK}
-)
-
