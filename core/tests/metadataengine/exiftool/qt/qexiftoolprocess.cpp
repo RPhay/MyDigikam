@@ -51,14 +51,16 @@ const int    QExifToolProcess::CMD_ID_MAX   = 2000000000;
 int          QExifToolProcess::_nextCmdId   = CMD_ID_MIN;
 
 QExifToolProcess::QExifToolProcess(QObject* const parent)
-    : QObject(parent)
+    : QObject              (parent),
+      _cmdRunning          (0),
+      _writeChannelIsClosed(true)
 {
-    _cmdRunning   = 0;
-    _outAwait[0]  = _outAwait[1]= false;
-    _outReady[0]  = _outReady[1]= false;
-    _writeChannelIsClosed= true;
-    _processError = QProcess::UnknownError;
-    _process      = new QProcess(this);
+    _outAwait[0]          = false;
+    _outAwait[1]          = false;
+    _outReady[0]          = false;
+    _outReady[1]          = false;
+    _processError         = QProcess::UnknownError;
+    _process              = new QProcess(this);
 
     connect(_process, &QProcess::started,
             this, &QExifToolProcess::slotStarted);
@@ -242,7 +244,7 @@ bool QExifToolProcess::waitForFinished(int msecs)
 
 int QExifToolProcess::command(const QByteArrayList& args)
 {
-    if(_process->state() != QProcess::Running || _writeChannelIsClosed || args.isEmpty())
+    if ((_process->state() != QProcess::Running) || _writeChannelIsClosed || args.isEmpty())
     {
         return 0;
     }
@@ -250,11 +252,11 @@ int QExifToolProcess::command(const QByteArrayList& args)
     // ThreadSafe incrementation of _nextCmdId
 
     _cmdIdMutex.lock();
-    const int cmdId= _nextCmdId;
+    const int cmdId = _nextCmdId;
 
     if (_nextCmdId++ >= CMD_ID_MAX)
     {
-        _nextCmdId= CMD_ID_MIN;
+        _nextCmdId = CMD_ID_MIN;
     }
 
     _cmdIdMutex.unlock();
@@ -269,21 +271,24 @@ int QExifToolProcess::command(const QByteArrayList& args)
 
     for (const QByteArray& arg : args)
     {
-        cmdStr.append(arg+'\n');
+        cmdStr.append(arg + '\n');
     }
 
     //-- Advanced options
 
-    cmdStr.append("-echo1\n{await"+cmdIdStr+"}\n"); // Echo text to stdout before processing is complete
-    cmdStr.append("-echo2\n{await"+cmdIdStr+"}\n"); // Echo text to stderr before processing is complete
+    cmdStr.append("-echo1\n{await" + cmdIdStr + "}\n");     // Echo text to stdout before processing is complete
+    cmdStr.append("-echo2\n{await" + cmdIdStr + "}\n");     // Echo text to stderr before processing is complete
 
-    if (cmdStr.contains("-q") || cmdStr.toLower().contains("-quiet") || cmdStr.contains("-T") || cmdStr.toLower().contains("-table"))
+    if (cmdStr.contains("-q")               ||
+        cmdStr.toLower().contains("-quiet") ||
+        cmdStr.contains("-T")               ||
+        cmdStr.toLower().contains("-table"))
     {
-        cmdStr.append("-echo3\n{ready}\n");         // Echo text to stdout after processing is complete
+        cmdStr.append("-echo3\n{ready}\n");                 // Echo text to stdout after processing is complete
     }
 
-    cmdStr.append("-echo4\n{ready}\n");             // Echo text to stderr after processing is complete
-    cmdStr.append("-execute\n");                    // Execute command and echo {ready} to stdout after processing is complete
+    cmdStr.append("-echo4\n{ready}\n");                     // Echo text to stderr after processing is complete
+    cmdStr.append("-execute\n");                            // Execute command and echo {ready} to stdout after processing is complete
 
     // TODO: if -binary user, {ready} can not be present in the new line
 
@@ -320,9 +325,12 @@ void QExifToolProcess::execNextCmd()
 
     // Clear internal buffers
 
-    _outBuff[0]  =  _outBuff[1] =  QByteArray();
-    _outAwait[0] = _outAwait[1] = false;
-    _outReady[0] = _outReady[1] = false;
+    _outBuff[0]  = QByteArray();
+    _outBuff[1]  = QByteArray();
+    _outAwait[0] = false;
+    _outAwait[1] = false;
+    _outReady[0] = false;
+    _outReady[1] = false;
 
     // Exec Command
 
@@ -388,7 +396,7 @@ void QExifToolProcess::readOutput(const QProcess::ProcessChannel channel)
         {
             if (line.startsWith("{await") && line.endsWith("}\n"))
             {
-                _outAwait[channel] = line.mid(6, line.size()-8).toInt();
+                _outAwait[channel] = line.mid(6, line.size() - 8).toInt();
             }
 
             continue;
@@ -412,7 +420,10 @@ void QExifToolProcess::readOutput(const QProcess::ProcessChannel channel)
         return;
     }
 
-    if ((_cmdRunning != _outAwait[QProcess::StandardOutput]) || (_cmdRunning != _outAwait[QProcess::StandardError]))
+    if (
+        (_cmdRunning != _outAwait[QProcess::StandardOutput]) ||
+        (_cmdRunning != _outAwait[QProcess::StandardError])
+       )
     {
         qCritical().nospace() << "QExifToolProcess::readOutput: Sync error between CmdID("
                               << _cmdRunning
@@ -424,7 +435,10 @@ void QExifToolProcess::readOutput(const QProcess::ProcessChannel channel)
     }
     else
     {
-        emit signalCmdCompleted(_cmdRunning, _execTimer.elapsed(), _outBuff[QProcess::StandardOutput], _outBuff[QProcess::StandardError]);
+        emit signalCmdCompleted(_cmdRunning,
+                                _execTimer.elapsed(),
+                                _outBuff[QProcess::StandardOutput],
+                                _outBuff[QProcess::StandardError]);
     }
 
     _cmdRunning = 0; // No command is running
