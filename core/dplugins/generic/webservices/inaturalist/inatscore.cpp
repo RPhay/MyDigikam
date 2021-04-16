@@ -26,11 +26,10 @@
 
 #include <QHash>
 #include <QVector>
-#include <QDebug>
 
-// KDE includes
+// Local includes
 
-#include <klocalizedstring.h>
+#include "digikam_debug.h"
 
 namespace DigikamGenericINatPlugin
 {
@@ -54,9 +53,9 @@ public:
 
 
 ComputerVisionScore::ComputerVisionScore(double frequencyScore,
-        double visionScore,
-        double combinedScore,
-        const Taxon& taxon)
+                                         double visionScore,
+                                         double combinedScore,
+                                         const Taxon& taxon)
     : d(new Private)
 {
     d->frequencyScore = frequencyScore;
@@ -65,7 +64,8 @@ ComputerVisionScore::ComputerVisionScore(double frequencyScore,
     d->taxon          = taxon;
 }
 
-ComputerVisionScore::ComputerVisionScore() : d(new Private)
+ComputerVisionScore::ComputerVisionScore()
+    : d(new Private)
 {
 }
 
@@ -75,10 +75,10 @@ ComputerVisionScore::ComputerVisionScore(const ComputerVisionScore& other)
     *d = *other.d;
 }
 
-ComputerVisionScore&
-ComputerVisionScore::operator=(const ComputerVisionScore& other)
+ComputerVisionScore& ComputerVisionScore::operator=(const ComputerVisionScore& other)
 {
     *d = *other.d;
+
     return *this;
 }
 
@@ -114,12 +114,12 @@ const Taxon& ComputerVisionScore::getTaxon() const
 
 bool ComputerVisionScore::visuallySimilar() const
 {
-    return d->visionScore > 0.0;
+    return (d->visionScore > 0.0);
 }
 
 bool ComputerVisionScore::seenNearby() const
 {
-    return d->frequencyScore > 0.0;
+    return (d->frequencyScore > 0.0);
 }
 
 } // namespace DigikamGenericINatPlugin

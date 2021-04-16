@@ -64,12 +64,15 @@ namespace DigikamGenericINatPlugin
 {
 
 #ifndef HAVE_QWEBENGINE
-// derived class that exposes protected function allCookies()
+
+/**
+ * Derived class that exposes protected function allCookies().
+ */
 class InatBrowserCookieJar : public QNetworkCookieJar
 {
 public:
 
-    InatBrowserCookieJar(QObject* parent = nullptr)
+    InatBrowserCookieJar(QObject* const parent = nullptr)
         : QNetworkCookieJar(parent)
     {
     }
@@ -83,6 +86,7 @@ public:
         return allCookies();
     }
 };
+
 #endif // !defined HAVE_QWEBENGINE
 
 class Q_DECL_HIDDEN INatBrowserDlg::Private
@@ -100,21 +104,21 @@ public:
 
 public:
 
-    const QUrl         home;
+    const QUrl                        home;
 
 #ifdef HAVE_QWEBENGINE
 
-    QWebEngineView*    browser;
+    QWebEngineView*                   browser;
 
 #else
 
-    QWebView*          browser;
+    QWebView*                         browser;
 
 #endif
 
-    QString            username;
-    QToolBar*          toolbar;
-    bool               apiKeyFound;
+    QString                           username;
+    QToolBar*                         toolbar;
+    bool                              apiKeyFound;
 
     QHash<QByteArray, QNetworkCookie> cookies;
 };
@@ -123,16 +127,15 @@ INatBrowserDlg::INatBrowserDlg(const QString& username,
                                const QList<QNetworkCookie>& cookies,
                                QWidget* const parent)
     : QDialog(parent),
-      d(new Private)
+      d      (new Private)
 {
     setModal(false);
     d->username = username;
 
 #ifdef HAVE_QWEBENGINE
 
-    d->browser = new QWebEngineView(this);
-    QWebEngineCookieStore* cookieJar = d->browser->page()->profile()->
-                                       cookieStore();
+    d->browser                             = new QWebEngineView(this);
+    QWebEngineCookieStore* const cookieJar = d->browser->page()->profile()->cookieStore();
     cookieJar->deleteAllCookies();
 
     connect(cookieJar, SIGNAL(cookieAdded(const QNetworkCookie&)),
@@ -143,10 +146,9 @@ INatBrowserDlg::INatBrowserDlg(const QString& username,
 
 #else
 
-    d->browser = new QWebView(this);
-    d->browser->settings()->setAttribute(QWebSettings::LocalStorageEnabled,
-                                         true);
-    QNetworkCookieJar* cookieJar = new InatBrowserCookieJar();
+    d->browser                         = new QWebView(this);
+    d->browser->settings()->setAttribute(QWebSettings::LocalStorageEnabled, true);
+    QNetworkCookieJar* const cookieJar = new InatBrowserCookieJar();
     d->browser->page()->networkAccessManager()->setCookieJar(cookieJar);
 
 #endif
@@ -158,11 +160,17 @@ INatBrowserDlg::INatBrowserDlg(const QString& username,
         if (filterCookie(cookie, false, now))
         {
             qCDebug(DIGIKAM_WEBSERVICES_LOG) << "Setting cookie" << cookie;
+
 #ifdef HAVE_QWEBENGINE
+
             cookieJar->setCookie(cookie);
+
 #else
+
             cookieJar->insertCookie(cookie);
+
 #endif
+
         }
     }
 
@@ -187,8 +195,7 @@ INatBrowserDlg::INatBrowserDlg(const QString& username,
 
 #endif
 
-    QAction* const gohome  = new QAction(QIcon::fromTheme(QLatin1String(
-            "go-home")),
+    QAction* const gohome  = new QAction(QIcon::fromTheme(QLatin1String("go-home")),
                                          i18n("Home"), this);
     gohome->setToolTip(i18n("Go back to Home page"));
     d->toolbar->addAction(gohome);
@@ -196,8 +203,7 @@ INatBrowserDlg::INatBrowserDlg(const QString& username,
     // ----------------------
 
     QGridLayout* const grid = new QGridLayout(this);
-    grid->setSpacing(QApplication::style()->pixelMetric(QStyle::
-                     PM_DefaultLayoutSpacing));
+    grid->setSpacing(QApplication::style()->pixelMetric(QStyle::PM_DefaultLayoutSpacing));
     grid->addWidget(d->toolbar, 0, 0, 1, 1);
     grid->addWidget(d->browser, 1, 0, 1, 3);
     grid->setColumnStretch(1, 10);
@@ -232,7 +238,7 @@ INatBrowserDlg::~INatBrowserDlg()
 
 void INatBrowserDlg::closeEvent(QCloseEvent* e)
 {
-    emit closeView(false);
+    emit signalCloseView(false);
 
     if (!d->apiKeyFound)
     {
@@ -253,16 +259,24 @@ void INatBrowserDlg::slotLoadingFinished(bool status)
 
     qCDebug(DIGIKAM_WEBSERVICES_LOG) << "Url" << url << "loaded.";
 
-    if (status && url == d->home.toString())
+    if (status && (url == d->home.toString()))
     {
+
 #ifdef HAVE_QWEBENGINE
-        d->browser->page()->toPlainText([this](const QString& text)
-        {
-            emit signalWebText(text);
-        });
+
+        d->browser->page()->toPlainText(
+            [this](const QString& text)
+                {
+                    emit signalWebText(text);
+                }
+        );
+
 #else
+
         emit signalWebText(d->browser->page()->mainFrame()->toPlainText());
+
 #endif
+
     }
     else if (!d->username.isEmpty() &&
              url == QLatin1String("https://www.inaturalist.org/users/sign_in"))
@@ -270,11 +284,17 @@ void INatBrowserDlg::slotLoadingFinished(bool status)
         QString script = QString(QLatin1String("document.getElementById(\"user_"
                                                "email\").value=\"%1\";")).
                          arg(d->username);
+
 #ifdef HAVE_QWEBENGINE
+
         d->browser->page()->runJavaScript(script);
+
 #else
+
         d->browser->page()->mainFrame()->evaluateJavaScript(script);
+
 #endif
+
     }
 }
 
@@ -285,19 +305,25 @@ void INatBrowserDlg::slotWebText(const QString& text)
     QJsonParseError err;
     QJsonDocument doc = QJsonDocument::fromJson(text.toUtf8(), &err);
 
-    if (err.error == QJsonParseError::NoError && doc.isObject() &&
+    if ((err.error == QJsonParseError::NoError) && doc.isObject() &&
         doc.object().contains(key))
     {
+
 #ifdef HAVE_QWEBENGINE
+
         emit signalApiToken(doc.object()[key].toString(),
                             filterCookies(d->cookies.values(), false));
+
 #else
-        const InatBrowserCookieJar* jar =
-            dynamic_cast<const InatBrowserCookieJar*>
+
+        const InatBrowserCookieJar* jar = dynamic_cast<const InatBrowserCookieJar*>
             (d->browser->page()->networkAccessManager()->cookieJar());
+
         emit signalApiToken(doc.object()[key].toString(),
                             filterCookies(jar->getAllCookies(), false));
+
 #endif
+
         d->apiKeyFound = true;
         close();
     }
@@ -311,6 +337,7 @@ void INatBrowserDlg::slotGoHome()
 static QByteArray cookieKey(const QNetworkCookie& cookie)
 {
     static const char sep('\n');
+
     return cookie.name() + sep + cookie.domain().toUtf8() +
            sep + cookie.path().toUtf8();
 }
@@ -320,12 +347,11 @@ bool INatBrowserDlg::filterCookie(const QNetworkCookie& cookie,
                                   const QDateTime& now)
 {
     return cookie.isSessionCookie() ? keepSessionCookies
-           : cookie.expirationDate() > now;
+                                    : (cookie.expirationDate() > now);
 }
 
-QList<QNetworkCookie>
-INatBrowserDlg::filterCookies(const QList<QNetworkCookie>& cookies,
-                              bool keepSessionCookies)
+QList<QNetworkCookie> INatBrowserDlg::filterCookies(const QList<QNetworkCookie>& cookies,
+                                                    bool keepSessionCookies)
 {
     QList<QNetworkCookie> result;
     QDateTime now(QDateTime::currentDateTime());

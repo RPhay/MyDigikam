@@ -22,8 +22,8 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_WEB_BROWSER_DLG_H
-#define DIGIKAM_WEB_BROWSER_DLG_H
+#ifndef DIGIKAM_INAT_WEB_BROWSER_DLG_H
+#define DIGIKAM_INAT_WEB_BROWSER_DLG_H
 
 // Qt include
 
@@ -57,15 +57,17 @@ public:
     static bool filterCookie(const QNetworkCookie& cookie,
                              bool keepSessionCookies, const QDateTime&);
 
-    // filter out expired cookies and, if requested, session cookies
+    /**
+     * filter out expired cookies and, if requested, session cookies
+     */
     static QList<QNetworkCookie> filterCookies(const QList<QNetworkCookie>&,
-            bool keepSessionCookies = true);
+                                               bool keepSessionCookies = true);
 
 Q_SIGNALS:
 
     void signalApiToken(const QString&, const QList<QNetworkCookie>&);
     void signalWebText(const QString&);
-    void closeView(bool val);
+    void signalCloseView(bool val);
 
 private Q_SLOTS:
 
@@ -88,4 +90,4 @@ private:
 
 } // namespace DigikamGenericINatPlugin
 
-#endif // DIGIKAM_WEB_BROWSER_DLG_H
+#endif // DIGIKAM_INAT_WEB_BROWSER_DLG_H

@@ -32,7 +32,6 @@
 
 #include "inattaxon.h"
 
-
 namespace DigikamGenericINatPlugin
 {
 
@@ -51,19 +50,19 @@ public:
 
     ComputerVisionScore& operator=(const ComputerVisionScore&);
 
-    bool isValid() const;
+    bool isValid()              const;
 
-    bool visuallySimilar() const;
+    bool visuallySimilar()      const;
 
-    bool seenNearby() const;
+    bool seenNearby()           const;
 
-    double getFrequencyScore() const;
+    double getFrequencyScore()  const;
 
-    double getVisionScore() const;
+    double getVisionScore()     const;
 
-    double getCombinedScore() const;
+    double getCombinedScore()   const;
 
-    const Taxon& getTaxon() const;
+    const Taxon& getTaxon()     const;
 
 private:
 

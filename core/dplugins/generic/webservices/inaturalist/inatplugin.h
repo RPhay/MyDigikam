@@ -45,7 +45,7 @@ class INatPlugin : public DPluginGeneric
 public:
 
     explicit INatPlugin(QObject* const parent = nullptr);
-    ~INatPlugin() override;
+    ~INatPlugin()                        override;
 
     QString name()                 const override;
     QString iid()                  const override;
