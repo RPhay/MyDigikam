@@ -144,4 +144,5 @@ BUGFIXES:
 129 ==> 435564 - The similarity finder uses about half the CPU clock speed.
 130 ==> 435701 - Exif date change.
 131 ==> 394544 - New tool to export to inaturalist.
-132 ==> 
+132 ==> 435808 - Themes not available and default theme corrupt.
+133 ==> 
