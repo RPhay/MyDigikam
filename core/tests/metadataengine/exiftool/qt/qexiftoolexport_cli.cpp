@@ -49,9 +49,9 @@ void s_printMetadataMap(const MetaEngine::MetaDataMap& map)
 {
     QString output;
     QTextStream stream(&output);
-    stream << Qt::endl;
+    stream << endl;
 
-    qDebug() << "Found" << map.size() << "tags:" << Qt::endl;
+    qDebug() << "Found" << map.size() << "tags:" << endl;
 
     for (MetaEngine::MetaDataMap::const_iterator it = map.constBegin() ;
          it != map.constEnd() ; ++it)
@@ -70,7 +70,7 @@ void s_printMetadataMap(const MetaEngine::MetaDataMap& map)
             tagVal.append(QString::fromLatin1("... (%1 bytes)").arg(value.length()));
         }
 
-        stream << tagName << " : " << tagVal << Qt::endl;
+        stream << tagName << " : " << tagVal << endl;
     }
 
     qDebug().noquote() << output;

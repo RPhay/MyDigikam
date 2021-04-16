@@ -78,7 +78,7 @@ int main(int argc, char** argv)
                    << QString::fromLatin1("%1").arg(QLatin1String("String Value"),                        section3)
                    << Qt::endl
                    << sep
-                   << Qt::endl;
+                   << endl;
 
             for (ExifToolParser::TagsMap::const_iterator it = parsed.constBegin() ;
                 it != parsed.constEnd() ; ++it)
@@ -108,18 +108,18 @@ int main(int argc, char** argv)
 
             foreach (const QString& tag, tagsLst)
             {
-                stream << tag << Qt::endl;
+                stream << tag << endl;
             }
 
-            stream << sep << Qt::endl;
-            stream << "Ignored ExifTool Tags:" << Qt::endl;
+            stream << sep << endl;
+            stream << "Ignored ExifTool Tags:" << endl;
 
             QStringList itagsLst = ignored.keys();
             itagsLst.sort();
 
             foreach (const QString& tag, itagsLst)
             {
-                stream << "   " << tag << Qt::endl;
+                stream << "   " << tag << endl;
             }
 
             qDebug().noquote() << output;

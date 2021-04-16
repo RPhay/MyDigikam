@@ -89,7 +89,7 @@ int main(int argc, char** argv)
                << QString::fromLatin1("%1").arg(QLatin1String("String Converted Value"),              section3)
                << Qt::endl
                << sep
-               << Qt::endl;
+               << endl;
 
         // Print returned and sorted tags.
 
@@ -139,16 +139,16 @@ int main(int argc, char** argv)
 
         foreach (const QString& tag, tagsLst)
         {
-            stream << tag << Qt::endl;
+            stream << tag << endl;
         }
 
-        stream << sep << Qt::endl;
+        stream << sep << endl;
         ignoredETTags.removeDuplicates();
-        stream << "Ignored ExifTool Tags:" << Qt::endl;
+        stream << "Ignored ExifTool Tags:" << endl;
 
         foreach (const QString& itag, ignoredETTags)
         {
-            stream << "   " << itag << Qt::endl;
+            stream << "   " << itag << endl;
         }
 
         qDebug().noquote() << output;
