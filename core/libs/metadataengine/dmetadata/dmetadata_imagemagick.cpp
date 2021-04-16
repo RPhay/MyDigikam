@@ -185,7 +185,7 @@ bool DMetadata::loadUsingImageMagick(const QString& filePath)
         // This is a fast IM C API call, not the IM CLI tool process.
 /*
         // NOTE: to hack with CLI IM tool
-        qCDebug(DIGIKAM_METAENGINE_LOG) << "IM identify escape format string (" << filters.size() << "bytes):" << Qt::endl << filters << Qt::endl;
+        qCDebug(DIGIKAM_METAENGINE_LOG) << "IM identify escape format string (" << filters.size() << "bytes):" << Qt::endl << filters << endl;
 */
         if (IdentifyImageCommand(image_info, identargc, identargv, metadata, &ex) == MagickTrue)
         {
