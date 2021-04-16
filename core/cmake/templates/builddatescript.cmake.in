@@ -7,56 +7,7 @@
 # For details see the accompanying COPYING-CMAKE-SCRIPTS file.
 #
 
-set(CMAKE_BACKWARDS_COMPATIBILITY "2.4")
-
-if(MSVC)
-
-    # Get the date under Windows if MSVC compiler, else set to "unknown"
-
-    # See: https://stackoverflow.com/questions/203090/how-do-i-get-current-date-time-on-the-windows-command-line-in-a-suitable-format
-
-    execute_process(COMMAND cmd /c for /f "tokens=1,2,3,4,5,6 usebackq delims=:/ " %a in ('%date% %time%') do echo %c%b%aT%d%e%f
-                    OUTPUT_VARIABLE MYBUILDDATE_OUT)
-
-    if(MYBUILDDATE_OUT)
-
-        # Remove the newline that tools returns
-        string(STRIP ${MYBUILDDATE_OUT} MYBUILDDATE_OUT)
-        string(REPLACE "\n" ";" MYBUILDDATE_LIST ${MYBUILDDATE_OUT})
-        list(GET MYBUILDDATE_LIST 1 MYBUILDDATE)
-
-    else()
-
-        set(MYBUILDDATE unknown)
-
-    endif()
-
-else()
-
-    # Under Linux, macOS and MXE, see if we have Unix date CLI tool installed
-
-    find_program(DATEEXEC date)
-
-    # Get the date, else set to "unknown"
-
-    if(DATEEXEC)
-
-        execute_process(COMMAND ${DATEEXEC} -u +%Y%m%dT%H%M%S OUTPUT_VARIABLE MYBUILDDATE)
-
-        if(MYBUILDDATE)
-
-            # Remove the newline that date tool returns
-            string(STRIP ${MYBUILDDATE} MYBUILDDATE)
-
-        endif()
-
-    else()
-
-        set(MYBUILDDATE unknown)
-
-    endif()
-
-endif()
+STRING(TIMESTAMP MYBUILDDATE "%Y%m%dT%H%M%S" UTC)
 
 # Configure the revision header
 

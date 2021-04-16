@@ -21,8 +21,8 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_SET_IPTC_PREVIEW_TEST_H
-#define DIGIKAM_SET_IPTC_PREVIEW_TEST_H
+#ifndef DIGIKAM_SET_IPTC_PREVIEW_UTEST_H
+#define DIGIKAM_SET_IPTC_PREVIEW_UTEST_H
 
 // Local includes
 
@@ -45,4 +45,4 @@ private Q_SLOTS:
     void testSetIptcPreview();
 };
 
-#endif // DIGIKAM_SET_IPTC_PREVIEW_TEST_H
+#endif // DIGIKAM_SET_IPTC_PREVIEW_UTEST_H

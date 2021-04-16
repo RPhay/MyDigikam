@@ -44,7 +44,7 @@ class DIGIKAM_EXPORT TimeAdjustSettings : public QScrollArea
 
 public:
 
-    explicit TimeAdjustSettings(QWidget* const parent = nullptr);
+    explicit TimeAdjustSettings(QWidget* const parent, bool timeAdjustTool = false);
     ~TimeAdjustSettings() override;
 
 public:

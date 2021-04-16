@@ -186,12 +186,14 @@ bool MetaEngine::load(const QString& filePath, Backend* backend)
 
 #endif // _XMP_SUPPORT_
 
-        hasLoaded = true;
 
-        if (backend && hasLoaded)
+        if (backend)
         {
             *backend = Exiv2Backend;
         }
+
+        hasLoaded = true;
+
     }
     catch (Exiv2::AnyError& e)
     {

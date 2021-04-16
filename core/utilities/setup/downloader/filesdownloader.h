@@ -6,7 +6,7 @@
  * Date        : 2020-11-14
  * Description : Files downloader
  *
- * Copyright (C) 2020 by Maik Qualmann <metzpinguin at gmail dot com>
+ * Copyright (C) 2020-2021 by Maik Qualmann <metzpinguin at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -36,58 +36,21 @@
 namespace Digikam
 {
 
-class DIGIKAM_EXPORT FilesDownloader : public QDialog
-{
-    Q_OBJECT
-
-public:
-
-    explicit FilesDownloader(QWidget* const parent = nullptr);
-    ~FilesDownloader() override;
-
-    bool checkDownloadFiles() const;
-    void startDownload();
-
-private:
-
-    void download();
-    void nextDownload();
-    bool exists(int index) const;
-    void createRequest(const QUrl& url);
-
-private Q_SLOTS:
-
-    void reject() override;
-    void slotDownload();
-    void slotDownloaded(QNetworkReply* reply);
-    void slotDownloadProgress(qint64 bytesReceived, qint64 bytesTotal);
-
-private:
-
-    // Disable
-    FilesDownloader(const FilesDownloader&)            = delete;
-    FilesDownloader& operator=(const FilesDownloader&) = delete;
-
-private:
-
-    class Private;
-    Private* const d;
-};
-
 // ----------------------------------------------------------------------------
 
 class DIGIKAM_EXPORT DownloadInfo
 {
 public:
 
-    explicit DownloadInfo()
-      : size(0)
-    {
-    };
+    DownloadInfo();
+    DownloadInfo(const QString& _path,
+                 const QString& _name,
+                 const QString& _hash,
+                 const qint64&  _size);
+    DownloadInfo(const DownloadInfo& other);
+    ~DownloadInfo();
 
-    ~DownloadInfo()
-    {
-    };
+    DownloadInfo& operator=(const DownloadInfo& other);
 
     /**
      * The file path on the server
@@ -111,6 +74,46 @@ public:
 };
 
 // ----------------------------------------------------------------------------
+
+class DIGIKAM_EXPORT FilesDownloader : public QDialog
+{
+    Q_OBJECT
+
+public:
+
+    explicit FilesDownloader(QWidget* const parent = nullptr);
+    ~FilesDownloader() override;
+
+    bool checkDownloadFiles() const;
+    void startDownload();
+
+private:
+
+    void download();
+    void nextDownload();
+    void createRequest(const QUrl& url);
+    void printDownloadInfo(const QUrl& url);
+    bool downloadExists(const DownloadInfo& info) const;
+
+
+private Q_SLOTS:
+
+    void reject() override;
+    void slotDownload();
+    void slotDownloaded(QNetworkReply* reply);
+    void slotDownloadProgress(qint64 bytesReceived, qint64 bytesTotal);
+
+private:
+
+    // Disable
+    FilesDownloader(const FilesDownloader&)            = delete;
+    FilesDownloader& operator=(const FilesDownloader&) = delete;
+
+private:
+
+    class Private;
+    Private* const d;
+};
 
 } // namespace Digikam
 

@@ -21,8 +21,8 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_APPLY_TAGS_TEST_H
-#define DIGIKAM_APPLY_TAGS_TEST_H
+#ifndef DIGIKAM_APPLY_TAGS_UTEST_H
+#define DIGIKAM_APPLY_TAGS_UTEST_H
 
 // Local includes
 
@@ -53,4 +53,4 @@ private Q_SLOTS:
     void testApplyTagsToMetadata();
 };
 
-#endif // DIGIKAM_APPLY_TAGS_TEST_H
+#endif // DIGIKAM_APPLY_TAGS_UTEST_H

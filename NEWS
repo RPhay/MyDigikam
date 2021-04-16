@@ -136,4 +136,10 @@ BUGFIXES:
 122 ==> 202709 - Sharing images among computers and update of local databases.
 123 ==> 435578 - Merge tags dialog missing "Merge all" option.
 124 ==> 435317 - GPS image direction incorrectly formatted.
-125 ==> 
+125 ==> 435527 - Lightroom Face tags don't display properly.
+126 ==> 435455 - Migration cannot drop or create FaceMatrices table [patch].
+127 ==> 435612 - Face Engine file download time out.
+128 ==> 435639 - Connection timed out error when downloading shapepredictor.dat (Downloading required files) after upgrade from 7.1.0 to 7.2.0.
+129 ==> 435564 - The similarity finder uses about half the CPU clock speed.
+130 ==> 435701 - Exif date change.
+131 ==> 

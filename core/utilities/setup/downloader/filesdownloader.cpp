@@ -6,7 +6,7 @@
  * Date        : 2020-11-14
  * Description : Files downloader
  *
- * Copyright (C) 2020 by Maik Qualmann <metzpinguin at gmail dot com>
+ * Copyright (C) 2020-2021 by Maik Qualmann <metzpinguin at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -28,6 +28,7 @@
 #include <QDir>
 #include <QLabel>
 #include <QTimer>
+#include <QPointer>
 #include <QByteArray>
 #include <QMessageBox>
 #include <QPushButton>
@@ -58,7 +59,6 @@ public:
 
     explicit Private()
       : downloadUrl(QLatin1String("https://files.kde.org/digikam/")),
-        index      (0),
         redirects  (0),
         buttons    (nullptr),
         progress   (nullptr),
@@ -72,9 +72,9 @@ public:
 
     QString                error;
 
-    QList<DownloadInfo*>   files;
+    QList<DownloadInfo>    files;
+    DownloadInfo           currentInfo;
 
-    int                    index;
     int                    redirects;
 
     QDialogButtonBox*      buttons;
@@ -89,43 +89,43 @@ FilesDownloader::FilesDownloader(QWidget* const parent)
     : QDialog(parent),
       d      (new Private)
 {
-    d->files << new DownloadInfo();
-    d->files.last()->path = QLatin1String("facesengine/shape-predictor/");
-    d->files.last()->name = QLatin1String("shapepredictor.dat");
-    d->files.last()->hash = QLatin1String("6f3d2a59dc30c7c9166983224dcf5732b25de734fff1e36ff1f3047ef90ed82b");
-    d->files.last()->size = 67740572;
+    d->files << DownloadInfo(QLatin1String("facesengine/shape-predictor/"),
+                             QLatin1String("shapepredictor.dat"),
+                             QLatin1String("6f3d2a59dc30c7c9166983224dcf5732b25de734fff1e36ff1f3047ef90ed82b"),
+                             67740572
+                            );
 
     if (qApp->applicationName() == QLatin1String("digikam"))
     {
-        d->files << new DownloadInfo();
-        d->files.last()->path = QLatin1String("facesengine/dnnface/");
-        d->files.last()->name = QLatin1String("openface_nn4.small2.v1.t7");
-        d->files.last()->hash = QLatin1String("9b72d54aeb24a64a8135dca8e792f7cc675c99a884a6940350a6cedcf7b7ba08");
-        d->files.last()->size = 31510785;
+        d->files << DownloadInfo(QLatin1String("facesengine/dnnface/"),
+                                 QLatin1String("openface_nn4.small2.v1.t7"),
+                                 QLatin1String("9b72d54aeb24a64a8135dca8e792f7cc675c99a884a6940350a6cedcf7b7ba08"),
+                                 31510785
+                                );
 
-        d->files << new DownloadInfo();
-        d->files.last()->path = QLatin1String("facesengine/dnnface/");
-        d->files.last()->name = QLatin1String("deploy.prototxt");
-        d->files.last()->hash = QLatin1String("f62621cac923d6f37bd669298c428bb7ee72233b5f8c3389bb893e35ebbcf795");
-        d->files.last()->size = 28092;
+        d->files << DownloadInfo(QLatin1String("facesengine/dnnface/"),
+                                 QLatin1String("deploy.prototxt"),
+                                 QLatin1String("f62621cac923d6f37bd669298c428bb7ee72233b5f8c3389bb893e35ebbcf795"),
+                                 28092
+                                );
 
-        d->files << new DownloadInfo();
-        d->files.last()->path = QLatin1String("facesengine/dnnface/");
-        d->files.last()->name = QLatin1String("res10_300x300_ssd_iter_140000_fp16.caffemodel");
-        d->files.last()->hash = QLatin1String("510ffd2471bd81e3fcc88a5beb4eae4fb445ccf8333ebc54e7302b83f4158a76");
-        d->files.last()->size = 5351047;
+        d->files << DownloadInfo(QLatin1String("facesengine/dnnface/"),
+                                 QLatin1String("res10_300x300_ssd_iter_140000_fp16.caffemodel"),
+                                 QLatin1String("510ffd2471bd81e3fcc88a5beb4eae4fb445ccf8333ebc54e7302b83f4158a76"),
+                                 5351047
+                                );
 
-        d->files << new DownloadInfo();
-        d->files.last()->path = QLatin1String("facesengine/dnnface/");
-        d->files.last()->name = QLatin1String("yolov3-face.cfg");
-        d->files.last()->hash = QLatin1String("f6563bd6923fd6500d2c2d6025f32ebdba916a85e5c9798351d916909f62aaf5");
-        d->files.last()->size = 8334;
+        d->files << DownloadInfo(QLatin1String("facesengine/dnnface/"),
+                                 QLatin1String("yolov3-face.cfg"),
+                                 QLatin1String("f6563bd6923fd6500d2c2d6025f32ebdba916a85e5c9798351d916909f62aaf5"),
+                                 8334
+                                );
 
-        d->files << new DownloadInfo();
-        d->files.last()->path = QLatin1String("facesengine/dnnface/");
-        d->files.last()->name = QLatin1String("yolov3-wider_16000.weights");
-        d->files.last()->hash = QLatin1String("a88f3b3882e3cce1e553a81d42beef6202cb9afc3db88e7944f9ffbcc369e7df");
-        d->files.last()->size = 246305388;
+        d->files << DownloadInfo(QLatin1String("facesengine/dnnface/"),
+                                 QLatin1String("yolov3-wider_16000.weights"),
+                                 QLatin1String("a88f3b3882e3cce1e553a81d42beef6202cb9afc3db88e7944f9ffbcc369e7df"),
+                                 246305388
+                                );
     }
 }
 
@@ -137,17 +137,14 @@ FilesDownloader::~FilesDownloader()
         d->reply = nullptr;
     }
 
-    qDeleteAll(d->files);
-    d->files.clear();
-
     delete d;
 }
 
 bool FilesDownloader::checkDownloadFiles() const
 {
-    for (int i = 0 ; i < d->files.size() ; ++i)
+    foreach (const DownloadInfo& info, d->files)
     {
-        if (!exists(i))
+        if (!downloadExists(info))
         {
             return false;
         }
@@ -175,9 +172,12 @@ void FilesDownloader::startDownload()
     path                      = QDir::toNativeSeparators(path + QLatin1String("/facesengine"));
     qint64 size               = 0;
 
-    for (int i = 0 ; i < d->files.size() ; ++i)
+    foreach (const DownloadInfo& info, d->files)
     {
-        size += d->files.at(i)->size;
+        if (!downloadExists(info))
+        {
+            size += info.size;
+        }
     }
 
     QString total             = ItemPropertiesTab::humanReadableBytesCount(size);
@@ -224,9 +224,11 @@ void FilesDownloader::slotDownload()
 
     if (d->error.isEmpty())
     {
-        for ( ; d->index < d->files.size() ; d->index++)
+        while (!d->files.isEmpty())
         {
-            if (!exists(d->index))
+            d->currentInfo = d->files.takeFirst();
+
+            if (!downloadExists(d->currentInfo))
             {
                 download();
 
@@ -241,11 +243,29 @@ void FilesDownloader::slotDownload()
     }
     else
     {
-        QMessageBox::critical(this, qApp->applicationName(),
-                              i18n("An error occurred during the download.\n\n"
-                                   "File: %1\n\n%2\n\n"
-                                   "The download will continue at the next start.",
-                                   d->files.at(d->index)->name, d->error));
+        QPointer<QMessageBox> msgBox = new QMessageBox(QMessageBox::Critical,
+                 i18n("Download error"),
+                 i18n("An error occurred during the download.\n\n"
+                      "File: %1\n\n%2\n\n"
+                      "You can try again or continue the "
+                      "download at the next start.",
+                      d->currentInfo.name, d->error),
+                 QMessageBox::Yes | QMessageBox::Cancel,
+                 qApp->activeWindow());
+
+        msgBox->button(QMessageBox::Yes)->setText(i18n("Try again"));
+        msgBox->button(QMessageBox::Yes)->setIcon(QIcon::fromTheme(QLatin1String("edit-download")));
+
+        int result = msgBox->exec();
+        delete msgBox;
+
+        if (result == QMessageBox::Yes)
+        {
+            d->error.clear();
+            download();
+
+            return;
+        }
 
         close();
     }
@@ -262,9 +282,9 @@ void FilesDownloader::download()
                 this, SLOT(slotDownloaded(QNetworkReply*)));
     }
 
-    QUrl request(d->downloadUrl              +
-                 d->files.at(d->index)->path +
-                 d->files.at(d->index)->name);
+    QUrl request(d->downloadUrl      +
+                 d->currentInfo.path +
+                 d->currentInfo.name);
 
     d->redirects = 0;
     createRequest(request);
@@ -275,20 +295,11 @@ void FilesDownloader::nextDownload()
     QTimer::singleShot(100, this, SLOT(slotDownload()));
 }
 
-bool FilesDownloader::exists(int index) const
-{
-    QString file = d->files.at(index)->name;
-    QString path = QStandardPaths::locate(QStandardPaths::AppDataLocation,
-                                          QString::fromLatin1("facesengine/%1").arg(file));
-
-    return (!path.isEmpty() && (QFileInfo(path).size() == d->files.at(index)->size));
-}
-
 void FilesDownloader::createRequest(const QUrl& url)
 {
-    d->nameLabel->setText(d->files.at(d->index)->name);
-    d->progress->setMaximum(d->files.at(d->index)->size);
+    d->progress->setMaximum(d->currentInfo.size);
     d->progress->setValue(0);
+    printDownloadInfo(url);
 
     d->redirects++;
     d->reply = d->netMngr->get(QNetworkRequest(url));
@@ -298,6 +309,24 @@ void FilesDownloader::createRequest(const QUrl& url)
 
     connect(d->reply, SIGNAL(sslErrors(QList<QSslError>)),
             d->reply, SLOT(ignoreSslErrors()));
+}
+
+void FilesDownloader::printDownloadInfo(const QUrl& url)
+{
+    QString text = QString::fromUtf8("%1 (%2://%3)")
+                   .arg(d->currentInfo.name)
+                   .arg(url.scheme())
+                   .arg(url.host());
+
+    d->nameLabel->setText(text);
+}
+
+bool FilesDownloader::downloadExists(const DownloadInfo& info) const
+{
+    QString path = QStandardPaths::locate(QStandardPaths::AppDataLocation,
+                                          QString::fromLatin1("facesengine/%1").arg(info.name));
+
+    return (!path.isEmpty() && (QFileInfo(path).size() == info.size));
 }
 
 void FilesDownloader::reject()
@@ -349,7 +378,7 @@ void FilesDownloader::slotDownloaded(QNetworkReply* reply)
 
     sha256.addData(data);
 
-    if (d->files.at(d->index)->hash != QString::fromLatin1(sha256.result().toHex()))
+    if (d->currentInfo.hash != QString::fromLatin1(sha256.result().toHex()))
     {
         d->error = i18n("Checksum is incorrect.");
 
@@ -368,13 +397,13 @@ void FilesDownloader::slotDownloaded(QNetworkReply* reply)
         QDir().mkpath(path);
     }
 
-    QFile file(path + QLatin1Char('/') + d->files.at(d->index)->name);
+    QFile file(path + QLatin1Char('/') + d->currentInfo.name);
 
     if (file.open(QIODevice::WriteOnly))
     {
         qint64 written = file.write(data);
 
-        if (written != d->files.at(d->index)->size)
+        if (written != d->currentInfo.size)
         {
             d->error = i18n("File write error.");
         }
@@ -393,7 +422,7 @@ void FilesDownloader::slotDownloaded(QNetworkReply* reply)
 
 void FilesDownloader::slotDownloadProgress(qint64 bytesReceived, qint64 bytesTotal)
 {
-    if (d->reply && (bytesReceived > d->files.at(d->index)->size))
+    if (d->reply && (bytesReceived > d->currentInfo.size))
     {
         d->reply->abort();
         d->reply = nullptr;
@@ -407,6 +436,48 @@ void FilesDownloader::slotDownloadProgress(qint64 bytesReceived, qint64 bytesTot
 
     d->progress->setMaximum(bytesTotal);
     d->progress->setValue(bytesReceived);
+}
+
+//-----------------------------------------------------------------------------
+
+DownloadInfo::DownloadInfo()
+    : size(0)
+{
+}
+
+DownloadInfo::DownloadInfo(const QString& _path,
+                           const QString& _name,
+                           const QString& _hash,
+                           const qint64&  _size)
+    : size(0)
+{
+    path = _path;
+    name = _name;
+    hash = _hash;
+    size = _size;
+}
+
+DownloadInfo::DownloadInfo(const DownloadInfo& other)
+    : size(0)
+{
+    path = other.path;
+    name = other.name;
+    hash = other.hash;
+    size = other.size;
+}
+
+DownloadInfo::~DownloadInfo()
+{
+}
+
+DownloadInfo& DownloadInfo::operator=(const DownloadInfo& other)
+{
+    path = other.path;
+    name = other.name;
+    hash = other.hash;
+    size = other.size;
+
+    return *this;
 }
 
 } // namespace Digikam

@@ -21,8 +21,8 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_RATING_READ_WRITE_TEST_H
-#define DIGIKAM_RATING_READ_WRITE_TEST_H
+#ifndef DIGIKAM_RATING_READ_WRITE_UTEST_H
+#define DIGIKAM_RATING_READ_WRITE_UTEST_H
 
 // Qt includes
 
@@ -70,4 +70,4 @@ private Q_SLOTS:
     void testReadFromDisabledNamespaces();
 };
 
-#endif // DIGIKAM_RATING_READ_WRITE_TEST_H
+#endif // DIGIKAM_RATING_READ_WRITE_UTEST_H

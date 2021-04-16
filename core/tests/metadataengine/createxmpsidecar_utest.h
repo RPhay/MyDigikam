@@ -22,8 +22,8 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_CREATE_XMP_SIDECAR_TEST_H
-#define DIGIKAM_CREATE_XMP_SIDECAR_TEST_H
+#ifndef DIGIKAM_CREATE_XMP_SIDECAR_UTEST_H
+#define DIGIKAM_CREATE_XMP_SIDECAR_UTEST_H
 
 // Local includes
 
@@ -49,4 +49,4 @@ private Q_SLOTS:
     void testCreateXmpSidecar();
 };
 
-#endif // DIGIKAM_CREATE_XMP_SIDECAR_TEST_H
+#endif // DIGIKAM_CREATE_XMP_SIDECAR_UTEST_H

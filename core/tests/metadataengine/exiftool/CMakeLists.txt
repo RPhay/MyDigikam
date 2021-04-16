@@ -14,19 +14,17 @@ include_directories(
 
 #------------------------------------------------------------------------
 
-set(exiftoolloader_cli_SRCS ${CMAKE_CURRENT_SOURCE_DIR}/exiftoolloader_cli.cpp
-                            ${CMAKE_CURRENT_SOURCE_DIR}/ExifTool.cpp
-                            ${CMAKE_CURRENT_SOURCE_DIR}/ExifToolPipe.cpp
-                            ${CMAKE_CURRENT_SOURCE_DIR}/TagInfo.cpp
+set(exiftoolcommon_SRCS ${CMAKE_CURRENT_SOURCE_DIR}/common/exiftooltranslator.cpp
+                        ${CMAKE_CURRENT_SOURCE_DIR}/common/exiftooltranslator_p.cpp
+                        ${CMAKE_CURRENT_SOURCE_DIR}/common/exiftooltranslator_exif.cpp
+                        ${CMAKE_CURRENT_SOURCE_DIR}/common/exiftooltranslator_iptc.cpp
+                        ${CMAKE_CURRENT_SOURCE_DIR}/common/exiftooltranslator_xmp.cpp
+                        ${CMAKE_CURRENT_SOURCE_DIR}/common/exiftooltranslator_ignoredgroups.cpp
 )
 
-add_executable(exiftoolloader_cli ${exiftoolloader_cli_SRCS})
-ecm_mark_nongui_executable(exiftoolloader_cli)
+add_library(exiftoolcommon STATIC ${exiftoolcommon_SRCS})
 
-target_link_libraries(exiftoolloader_cli
+#------------------------------------------------------------------------
 
-                      digikamcore
-
-                      ${COMMON_TEST_LINK}
-)
-
+add_subdirectory(cpp)
+add_subdirectory(qt)

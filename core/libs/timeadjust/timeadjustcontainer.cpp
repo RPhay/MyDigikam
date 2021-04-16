@@ -28,6 +28,7 @@ namespace Digikam
 TimeAdjustContainer::TimeAdjustContainer()
     : customDate    (QDateTime::currentDateTime()),
       customTime    (QDateTime::currentDateTime()),
+      intervalTime  (QDateTime()),
       adjustmentTime(QDateTime()),
       updIfAvailable(true),
       updEXIFModDate(false),
@@ -64,9 +65,10 @@ bool TimeAdjustContainer::atLeastOneUpdateToProcess() const
            );
 }
 
-QDateTime TimeAdjustContainer::calculateAdjustedDate(const QDateTime& originalTime) const
+QDateTime TimeAdjustContainer::calculateAdjustedDate(const QDateTime& originalTime)
 {
-    int sign = 0;
+    int sign          = 0;
+    QDateTime newTime = originalTime;
 
     switch (adjustmentType)
     {
@@ -78,6 +80,20 @@ QDateTime TimeAdjustContainer::calculateAdjustedDate(const QDateTime& originalTi
             sign = -1;
             break;
 
+        case INTERVAL:
+        {
+            if (intervalTime.isNull())
+            {
+                intervalTime = newTime;
+            }
+            else
+            {
+                newTime = intervalTime;
+            }
+
+            sign = 1;
+            break;
+        }
         default: // COPYVALUE
             return originalTime;
     }
@@ -87,7 +103,14 @@ QDateTime TimeAdjustContainer::calculateAdjustedDate(const QDateTime& originalTi
     seconds     += 60*60*adjustmentTime.time().hour();
     seconds     += 24*60*60*adjustmentDays;
 
-    return originalTime.addSecs(sign * seconds);
+    newTime      = newTime.addSecs(sign * seconds);
+
+    if (adjustmentType == INTERVAL)
+    {
+        intervalTime = newTime;
+    }
+
+    return newTime;
 }
 
 QDateTime TimeAdjustContainer::getDateTimeFromUrl(const QUrl& url) const

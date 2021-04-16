@@ -137,7 +137,7 @@ public:
     DExpanderBox*          settingsExpander;
 };
 
-TimeAdjustSettings::TimeAdjustSettings(QWidget* const parent)
+TimeAdjustSettings::TimeAdjustSettings(QWidget* const parent, bool timeAdjustTool)
     : QScrollArea(parent),
       d          (new Private)
 {
@@ -238,6 +238,12 @@ TimeAdjustSettings::TimeAdjustSettings(QWidget* const parent)
     d->adjTypeChooser->insertItem(TimeAdjustContainer::COPYVALUE, i18nc("copy timestamp as well",             "Copy value"));
     d->adjTypeChooser->insertItem(TimeAdjustContainer::ADDVALUE,  i18nc("add a fixed timestamp to date",      "Add"));
     d->adjTypeChooser->insertItem(TimeAdjustContainer::SUBVALUE,  i18nc("subtract a fixed timestamp to date", "Subtract"));
+
+    if (timeAdjustTool)
+    {
+        d->adjTypeChooser->insertItem(TimeAdjustContainer::INTERVAL,  i18nc("interval time stamp to the next image", "Interval"));
+    }
+
     d->adjDaysInput             = new QSpinBox(d->adjustSettingsBox);
     d->adjDaysInput->setRange(0, 9999);
     d->adjDaysInput->setSingleStep(1);
